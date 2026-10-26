@@ -1,0 +1,325 @@
+{
+  "checks": [
+    {
+      "name": "fresh-tie",
+      "answer": 0,
+      "counts": {
+        "4": 3,
+        "0": 3
+      }
+    },
+    {
+      "name": "fresh-edge-count-counterexample",
+      "answer": 0,
+      "counts": {
+        "0": 2,
+        "1": 3
+      }
+    },
+    {
+      "name": "quiz",
+      "answer": 5,
+      "counts": {
+        "5": 4,
+        "0": 6,
+        "3": 6
+      }
+    },
+    {
+      "name": "minimum-isolated",
+      "answer": 1,
+      "counts": {
+        "1": 0
+      }
+    },
+    {
+      "name": "minimum-connected",
+      "answer": 0,
+      "counts": {
+        "0": 0
+      }
+    }
+  ],
+  "randomChecks": 300,
+  "seed": 281555,
+  "nonmutation": true,
+  "servedSHA256": {
+    "index.html": "be821ee5405e80388f46ea6753f0682c8a2750cf7a2d71c99563d0b9d2265d7f",
+    "style.css": "1d4a022c994c55a1603401b92350d86d1f66b9291aa0674d1c8f402c092a9331",
+    "app.js": "c5dbd64b22f77e1a7fd88ebc0c3ddc5316caab292a487b747951506f6521a929",
+    "core.js": "aad84d6f8b57b785c9d590eac8bc3353f89cf84a7bfd7512b5b6c490d6a9e83b",
+    "copy.js": "126cf74eb350ae71e737e306af665642c55b283961fbcc69ce9221d647f4623c",
+    "solution.py": "8d6ccfe9705684b6b1750923419e324644d26f10ab10284c94ac558b2c60f9a2",
+    "python-code.js": "2631acde1cd10cd0ae487a44b101a09668bf8ce69e0cc71138d82d66f892786c"
+  },
+  "canonicalLineEvents": [
+    {
+      "group": 0,
+      "component": [
+        -1,
+        -1,
+        0,
+        0,
+        -1,
+        -1
+      ],
+      "saved": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "size": 2,
+      "boundary": [
+        0
+      ],
+      "node": 3
+    },
+    {
+      "group": 0,
+      "component": [
+        -1,
+        -1,
+        0,
+        0,
+        -1,
+        -1
+      ],
+      "saved": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "size": 2,
+      "boundary": [
+        0
+      ],
+      "owner": 0,
+      "node": 3
+    },
+    {
+      "group": 0,
+      "component": [
+        -1,
+        -1,
+        0,
+        0,
+        -1,
+        -1
+      ],
+      "saved": [
+        2,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "size": 2,
+      "boundary": [
+        0
+      ],
+      "owner": 0,
+      "node": 3
+    },
+    {
+      "group": 1,
+      "component": [
+        -1,
+        -1,
+        0,
+        0,
+        1,
+        -1
+      ],
+      "saved": [
+        2,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "size": 1,
+      "boundary": [
+        1
+      ],
+      "owner": 0,
+      "node": 4
+    },
+    {
+      "group": 1,
+      "component": [
+        -1,
+        -1,
+        0,
+        0,
+        1,
+        -1
+      ],
+      "saved": [
+        2,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "size": 1,
+      "boundary": [
+        1
+      ],
+      "owner": 1,
+      "node": 4
+    },
+    {
+      "group": 1,
+      "component": [
+        -1,
+        -1,
+        0,
+        0,
+        1,
+        -1
+      ],
+      "saved": [
+        2,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "size": 1,
+      "boundary": [
+        1
+      ],
+      "owner": 1,
+      "node": 4
+    },
+    {
+      "group": 2,
+      "component": [
+        -1,
+        -1,
+        0,
+        0,
+        1,
+        2
+      ],
+      "saved": [
+        2,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "size": 1,
+      "boundary": [],
+      "owner": 1,
+      "node": 5
+    },
+    {
+      "group": 3,
+      "component": [
+        -1,
+        -1,
+        0,
+        0,
+        1,
+        2
+      ],
+      "saved": [
+        2,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "size": 1,
+      "boundary": [],
+      "owner": 1,
+      "answer": 0,
+      "node": 5
+    },
+    {
+      "group": 3,
+      "component": [
+        -1,
+        -1,
+        0,
+        0,
+        1,
+        2
+      ],
+      "saved": [
+        2,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "size": 1,
+      "boundary": [],
+      "owner": 1,
+      "answer": 0,
+      "node": 0
+    },
+    {
+      "group": 3,
+      "component": [
+        -1,
+        -1,
+        0,
+        0,
+        1,
+        2
+      ],
+      "saved": [
+        2,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "size": 1,
+      "boundary": [],
+      "owner": 1,
+      "answer": 0,
+      "node": 1
+    },
+    {
+      "group": 3,
+      "component": [
+        -1,
+        -1,
+        0,
+        0,
+        1,
+        2
+      ],
+      "saved": [
+        2,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "size": 1,
+      "boundary": [],
+      "owner": 1,
+      "answer": 0,
+      "node": 1
+    }
+  ]
+}

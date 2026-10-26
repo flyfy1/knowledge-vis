@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "exhaustiveAndSeededCases": 31849,
+  "exhaustive": "all undirected graphs n=2..5 and every nonempty proper seed subset, reversed order",
+  "randomSeed": 928,
+  "seededCases": 180,
+  "maxNBoundaries": 4,
+  "officialExamples": 3,
+  "inputMutation": false,
+  "baselineExecutedFromDisplayedCode": true,
+  "mirrorExact": true,
+  "sourceSha256": "8d6ccfe9705684b6b1750923419e324644d26f10ab10284c94ac558b2c60f9a2"
+}

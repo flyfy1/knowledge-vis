@@ -1,0 +1,698 @@
+{
+  "host": "linux",
+  "browser": "156.0.8078.4",
+  "presets": [
+    {
+      "lang": "en",
+      "p": 0,
+      "removed": 0,
+      "final": [
+        1,
+        2
+      ],
+      "frames": 2
+    },
+    {
+      "lang": "en",
+      "p": 0,
+      "removed": 1,
+      "final": [
+        0
+      ],
+      "frames": 1
+    },
+    {
+      "lang": "en",
+      "p": 1,
+      "removed": 0,
+      "final": [
+        1
+      ],
+      "frames": 1
+    },
+    {
+      "lang": "en",
+      "p": 1,
+      "removed": 1,
+      "final": [
+        0
+      ],
+      "frames": 1
+    },
+    {
+      "lang": "en",
+      "p": 2,
+      "removed": 0,
+      "final": [
+        1,
+        2,
+        3
+      ],
+      "frames": 3
+    },
+    {
+      "lang": "en",
+      "p": 2,
+      "removed": 1,
+      "final": [
+        0
+      ],
+      "frames": 1
+    },
+    {
+      "lang": "en",
+      "p": 3,
+      "removed": 0,
+      "final": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "frames": 3
+    },
+    {
+      "lang": "en",
+      "p": 3,
+      "removed": 1,
+      "final": [
+        0,
+        2,
+        3
+      ],
+      "frames": 3
+    },
+    {
+      "lang": "en",
+      "p": 4,
+      "removed": 0,
+      "final": [
+        1,
+        4
+      ],
+      "frames": 2
+    },
+    {
+      "lang": "en",
+      "p": 4,
+      "removed": 1,
+      "final": [
+        0,
+        2,
+        3
+      ],
+      "frames": 2
+    },
+    {
+      "lang": "en",
+      "p": 5,
+      "removed": 2,
+      "final": [
+        0
+      ],
+      "frames": 1
+    },
+    {
+      "lang": "en",
+      "p": 5,
+      "removed": 0,
+      "final": [
+        2
+      ],
+      "frames": 1
+    },
+    {
+      "lang": "en",
+      "p": 6,
+      "removed": 2,
+      "final": [],
+      "frames": 1
+    },
+    {
+      "lang": "en",
+      "p": 7,
+      "removed": 1,
+      "final": [
+        0,
+        2
+      ],
+      "frames": 2
+    },
+    {
+      "lang": "en",
+      "p": 7,
+      "removed": 0,
+      "final": [
+        1,
+        3
+      ],
+      "frames": 2
+    },
+    {
+      "lang": "zh",
+      "p": 0,
+      "removed": 0,
+      "final": [
+        1,
+        2
+      ],
+      "frames": 2
+    },
+    {
+      "lang": "zh",
+      "p": 0,
+      "removed": 1,
+      "final": [
+        0
+      ],
+      "frames": 1
+    },
+    {
+      "lang": "zh",
+      "p": 1,
+      "removed": 0,
+      "final": [
+        1
+      ],
+      "frames": 1
+    },
+    {
+      "lang": "zh",
+      "p": 1,
+      "removed": 1,
+      "final": [
+        0
+      ],
+      "frames": 1
+    },
+    {
+      "lang": "zh",
+      "p": 2,
+      "removed": 0,
+      "final": [
+        1,
+        2,
+        3
+      ],
+      "frames": 3
+    },
+    {
+      "lang": "zh",
+      "p": 2,
+      "removed": 1,
+      "final": [
+        0
+      ],
+      "frames": 1
+    },
+    {
+      "lang": "zh",
+      "p": 3,
+      "removed": 0,
+      "final": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "frames": 3
+    },
+    {
+      "lang": "zh",
+      "p": 3,
+      "removed": 1,
+      "final": [
+        0,
+        2,
+        3
+      ],
+      "frames": 3
+    },
+    {
+      "lang": "zh",
+      "p": 4,
+      "removed": 0,
+      "final": [
+        1,
+        4
+      ],
+      "frames": 2
+    },
+    {
+      "lang": "zh",
+      "p": 4,
+      "removed": 1,
+      "final": [
+        0,
+        2,
+        3
+      ],
+      "frames": 2
+    },
+    {
+      "lang": "zh",
+      "p": 5,
+      "removed": 2,
+      "final": [
+        0
+      ],
+      "frames": 1
+    },
+    {
+      "lang": "zh",
+      "p": 5,
+      "removed": 0,
+      "final": [
+        2
+      ],
+      "frames": 1
+    },
+    {
+      "lang": "zh",
+      "p": 6,
+      "removed": 2,
+      "final": [],
+      "frames": 1
+    },
+    {
+      "lang": "zh",
+      "p": 7,
+      "removed": 1,
+      "final": [
+        0,
+        2
+      ],
+      "frames": 2
+    },
+    {
+      "lang": "zh",
+      "p": 7,
+      "removed": 0,
+      "final": [
+        1,
+        3
+      ],
+      "frames": 2
+    }
+  ],
+  "layouts": [
+    {
+      "lang": "en",
+      "width": 320,
+      "noPageOverflow": true,
+      "controls48": true
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "noPageOverflow": true,
+      "controls48": true
+    },
+    {
+      "lang": "en",
+      "width": 736,
+      "noPageOverflow": true,
+      "controls48": true
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "noPageOverflow": true,
+      "controls48": true
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "noPageOverflow": true,
+      "controls48": true
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "noPageOverflow": true,
+      "controls48": true
+    },
+    {
+      "lang": "zh",
+      "width": 736,
+      "noPageOverflow": true,
+      "controls48": true
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "noPageOverflow": true,
+      "controls48": true
+    }
+  ],
+  "selectFit": [
+    {
+      "lang": "en",
+      "label": "A",
+      "width": 284,
+      "textWidth": 10.224014282226562,
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "stack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "arrowReserve": 24
+    },
+    {
+      "lang": "en",
+      "label": "B",
+      "width": 284,
+      "textWidth": 10.4000244140625,
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "stack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "arrowReserve": 24
+    },
+    {
+      "lang": "en",
+      "label": "C",
+      "width": 284,
+      "textWidth": 10.112014770507812,
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "stack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "arrowReserve": 24
+    },
+    {
+      "lang": "en",
+      "label": "D",
+      "width": 284,
+      "textWidth": 11.680023193359375,
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "stack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "arrowReserve": 24
+    },
+    {
+      "lang": "en",
+      "label": "E",
+      "width": 284,
+      "textWidth": 8.896011352539062,
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "stack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "arrowReserve": 24
+    },
+    {
+      "lang": "en",
+      "label": "F",
+      "width": 284,
+      "textWidth": 8.30401611328125,
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "stack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "arrowReserve": 24
+    },
+    {
+      "lang": "en",
+      "label": "G",
+      "width": 284,
+      "textWidth": 11.648025512695312,
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "stack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "arrowReserve": 24
+    },
+    {
+      "lang": "en",
+      "label": "H",
+      "width": 284,
+      "textWidth": 11.85601806640625,
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "stack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "arrowReserve": 24
+    },
+    {
+      "lang": "zh",
+      "label": "A",
+      "width": 284,
+      "textWidth": 10.224014282226562,
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "stack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "arrowReserve": 24
+    },
+    {
+      "lang": "zh",
+      "label": "B",
+      "width": 284,
+      "textWidth": 10.4000244140625,
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "stack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "arrowReserve": 24
+    },
+    {
+      "lang": "zh",
+      "label": "C",
+      "width": 284,
+      "textWidth": 10.112014770507812,
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "stack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "arrowReserve": 24
+    },
+    {
+      "lang": "zh",
+      "label": "D",
+      "width": 284,
+      "textWidth": 11.680023193359375,
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "stack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "arrowReserve": 24
+    },
+    {
+      "lang": "zh",
+      "label": "E",
+      "width": 284,
+      "textWidth": 8.896011352539062,
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "stack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "arrowReserve": 24
+    },
+    {
+      "lang": "zh",
+      "label": "F",
+      "width": 284,
+      "textWidth": 8.30401611328125,
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "stack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "arrowReserve": 24
+    },
+    {
+      "lang": "zh",
+      "label": "G",
+      "width": 284,
+      "textWidth": 11.648025512695312,
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "stack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "arrowReserve": 24
+    },
+    {
+      "lang": "zh",
+      "label": "H",
+      "width": 284,
+      "textWidth": 11.85601806640625,
+      "padding": 30,
+      "font": "16px \"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "stack": "\"PingFang SC\", \"Microsoft YaHei\", system-ui, sans-serif",
+      "arrowReserve": 24
+    }
+  ],
+  "clipboard": [
+    {
+      "lang": "en",
+      "attempt": 0,
+      "sentinelVerified": true,
+      "automatic": true,
+      "nativeFallback": true,
+      "shortcut": "Control+C",
+      "newlineConversion": "none observed: exact equality"
+    },
+    {
+      "lang": "en",
+      "attempt": 1,
+      "sentinelVerified": true,
+      "automatic": true,
+      "nativeFallback": true,
+      "shortcut": "Control+C",
+      "newlineConversion": "none observed: exact equality"
+    },
+    {
+      "lang": "zh",
+      "attempt": 0,
+      "sentinelVerified": true,
+      "automatic": true,
+      "nativeFallback": true,
+      "shortcut": "Control+C",
+      "newlineConversion": "none observed: exact equality"
+    },
+    {
+      "lang": "zh",
+      "attempt": 1,
+      "sentinelVerified": true,
+      "automatic": true,
+      "nativeFallback": true,
+      "shortcut": "Control+C",
+      "newlineConversion": "none observed: exact equality"
+    }
+  ],
+  "contrast": [
+    {
+      "selector": "body",
+      "fg": "rgb(232, 237, 244)",
+      "bg": "rgb(13, 17, 23)",
+      "opacity": "1",
+      "ratio": 16.086987125379448
+    },
+    {
+      "selector": ".hint",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(13, 17, 23)",
+      "opacity": "1",
+      "ratio": 7.7443462241265095
+    },
+    {
+      "selector": "#next",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "opacity": "1",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": "#prev",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(28, 35, 48)",
+      "opacity": "1",
+      "ratio": 6.449407898769069
+    },
+    {
+      "selector": ".lang-toggle button.active",
+      "fg": "rgb(13, 17, 23)",
+      "bg": "rgb(110, 231, 255)",
+      "opacity": "1",
+      "ratio": 13.100679028115637
+    },
+    {
+      "selector": ".current",
+      "fg": "rgb(110, 231, 255)",
+      "bg": "rgb(22, 27, 34)",
+      "opacity": "1",
+      "ratio": 11.974898815275662
+    },
+    {
+      "selector": "td.pending",
+      "fg": "rgb(154, 167, 184)",
+      "bg": "rgb(22, 27, 34)",
+      "opacity": "1",
+      "ratio": 7.078851579017443
+    },
+    {
+      "selector": "a",
+      "fg": "rgb(110, 231, 255)",
+      "bg": "rgb(13, 17, 23)",
+      "opacity": "1",
+      "ratio": 13.100679028115637
+    }
+  ],
+  "semantics": [
+    {
+      "lang": "en",
+      "val": "0",
+      "text": "Recheck which groups have exactly one boundary source. The answer is 5. Group {1,2} has boundary {0,3}: deleting either still leaves both members infected. Group {4,6} has only source 5, so deleting 5 saves two clean nodes. Group {7} has no source and was already safe, so it contributes no saving. Without deletion B=3+2+2=7; M(5)=7−1−2=4, while M(0)=M(3)=7−1=6. Smallest index decides only when savings tie."
+    },
+    {
+      "lang": "en",
+      "val": "5",
+      "text": "Correct. The answer is 5. Group {1,2} has boundary {0,3}: deleting either still leaves both members infected. Group {4,6} has only source 5, so deleting 5 saves two clean nodes. Group {7} has no source and was already safe, so it contributes no saving. Without deletion B=3+2+2=7; M(5)=7−1−2=4, while M(0)=M(3)=7−1=6. Smallest index decides only when savings tie."
+    },
+    {
+      "lang": "en",
+      "val": "3",
+      "text": "Recheck which groups have exactly one boundary source. The answer is 5. Group {1,2} has boundary {0,3}: deleting either still leaves both members infected. Group {4,6} has only source 5, so deleting 5 saves two clean nodes. Group {7} has no source and was already safe, so it contributes no saving. Without deletion B=3+2+2=7; M(5)=7−1−2=4, while M(0)=M(3)=7−1=6. Smallest index decides only when savings tie."
+    },
+    {
+      "lang": "en",
+      "state": "Official example 1, deleted 0, terminal",
+      "round": "Round 0/0: 1 infected nodes, indices [1]. Stopped: no new infection is possible.",
+      "best": "Checked 2/2 candidates; without deletion B=2 infected nodes. Best index so far 0, saving 0 clean nodes, leaving 1 infected. Scan complete: return this index.",
+      "rule": "saved(r) = sum of sizes of clean groups whose boundary is exactly {r}. B = k + sum of sizes of all clean groups with nonempty boundaries. M(r) = B − 1 − saved(r). B counts final infected nodes without deletion; −1 accounts for the deleted source itself."
+    },
+    {
+      "lang": "zh",
+      "val": "0",
+      "text": "重新检查哪些组只有一个边界源。 答案为 5。{1,2} 的边界是 {0,3}，删 0 或 3 仍会感染这两台；{4,6} 的边界只有 {5}，删 5 保护两台；{7} 的边界为空，本来就健康，不算任何候选收益。不删除时 B=3+2+2=7；M(5)=7−1−2=4，M(0)=M(3)=7−1=6。最小编号只在收益相同时才决定胜负。"
+    },
+    {
+      "lang": "zh",
+      "val": "5",
+      "text": "正确。 答案为 5。{1,2} 的边界是 {0,3}，删 0 或 3 仍会感染这两台；{4,6} 的边界只有 {5}，删 5 保护两台；{7} 的边界为空，本来就健康，不算任何候选收益。不删除时 B=3+2+2=7；M(5)=7−1−2=4，M(0)=M(3)=7−1=6。最小编号只在收益相同时才决定胜负。"
+    },
+    {
+      "lang": "zh",
+      "val": "3",
+      "text": "重新检查哪些组只有一个边界源。 答案为 5。{1,2} 的边界是 {0,3}，删 0 或 3 仍会感染这两台；{4,6} 的边界只有 {5}，删 5 保护两台；{7} 的边界为空，本来就健康，不算任何候选收益。不删除时 B=3+2+2=7；M(5)=7−1−2=4，M(0)=M(3)=7−1=6。最小编号只在收益相同时才决定胜负。"
+    },
+    {
+      "lang": "zh",
+      "state": "Official example 1, deleted 0, terminal",
+      "round": "第 0/0 轮：感染 1 台，编号 [1]。已停止：没有新感染。",
+      "best": "已检查 2/2 个候选；不删除时感染 B=2 台。目前最佳编号 0，保护 0 个健康节点，最终感染 1 台。扫描完成，返回此编号。",
+      "rule": "saved(r) = 所有边界恰为 {r} 的健康组大小之和。B = k + 所有非空边界健康组的大小之和。M(r) = B − 1 − saved(r)。B 是不删除时最终感染台数；−1 是删掉的感染源本身。"
+    }
+  ],
+  "related": [
+    {
+      "lang": "en",
+      "id": 803,
+      "label": "#803: track connected groups after restoration",
+      "url": "http://127.0.0.1:18770/leetcode/803/#step2",
+      "destinationText": "2 · Restore one brick: what reconnects?How does one restoration give the fall count for the corresponding hit? A component is a group of bricks joined by paths through four-neighbor bricks. Add a virtual roof node connected to every top-row brick. R is the size of its component, including the virtual node.Keep example 1. Remove only the hit (1,0), retaining the two bricks on its right as records. Only (0,0) reaches the roof, so R_before=2. Restore (1,0) and connect its neighbors: all four bricks now reach the roof, so R_after=5. Three bricks joined, including the restored brick itself. The other two are the original fallen bricks.result[i] = max(0, R_after − R_before − 1)Invariant: before undoing hit i, the bookkeeping wall contains the original bricks except those at hits[0…i]. The roof group contains exactly its roof-reachable bricks. Restoring hits[i] can only add paths. If it reaches the roof, the growth includes itself and every old group it connects: subtract one. If it stays disconnected, R is unchanged and max turns −1 into 0. An originally empty cell is skipped with answer 0. The wall then excludes only hits[0…i−1], preserving the invariant. At termination all answers are stored at their original indices.Why retain bricks that physically fell? They are the groups that reconnect when their support is restored. If a later hit targets a brick that fell earlier, reverse processing restores it first; it stays disconnected, R does not grow, and the answer is correctly 0. Initially disconnected groups never contribute growth: even with all original bricks restored they cannot reach the roof. Bricks that fell earlier remain unreachable as forward deletions cannot add paths; retaining them cannot change the reachable set. The bookkeeping wall is not the physical forward wall.How do we maintain these groups cheaply? A disjoint-set union structure (DSU) gives each group a representative: find follows parent pointers to it; union merges two different groups. Only the representative stores the group’s size. Attach the smaller group to the larger and shorten paths during find to avoid recounting whole groups. The simulation below uses searches to generate connectivity snapshots; it shows neither DSU pointer operations nor Python execution.#685: see union-find merge groups →Keep one preset fixed. Select “Restore next hit,” compare before and after, then inspect R and the history ledger. Each frame completes one restoration and its neighbor connections; no restorations are omitted. Changing preset restarts this experiment; the prediction exercise is independent.Preset (changing restarts)ABCDEA · One supportOfficial example 1; forward hits=[[1,0]]Back one restoreRestore next hitReset bookkeepingRestore allReverse hits processed: 0/1 · Initial: all hits removed; none restoredAfter initialization R=2. Both views show the initial bookkeeping wall.Cells: S=brick connected to roof (solid underline); U=brick disconnected from roof (dashed underline); ·=empty. A cyan inner outline marks the restored location only. Headers are zero-based row/column coordinates. R includes the virtual roof, so even an empty wall has R=1.Bookkeeping before · R=2row / col01230S···1·UU·Bookkeeping after · R=2row / col01230S···1·UU·result in original hit order (? not yet computed)[?]Retained reverse-order ledgerInitialization: remove all hit positions, R=2."
+    },
+    {
+      "lang": "en",
+      "id": 924,
+      "label": "#924: remove the source while keeping the node",
+      "url": "http://127.0.0.1:18770/leetcode/924/#step2",
+      "destinationText": "2 · Which whole group is saved?How can we determine a candidate’s savings without repeating the spread? A connected component is a maximal group of mutually reachable nodes: paths join its computers, and no edge leads outside it. The default network has {0,1,2} and {3,4}. If even one seed remains inside a group, infection follows paths to every member. Seeds outside cannot enter. Thus the group ends entirely infected or entirely healthy.#803: restore bricks and track roof connectivityFor each group, keep size, its node count, and count, its number of seeds in the original initial list. If count=0 it was already healthy and stays so. If count=1, removing its sole seed saves all size nodes. If count≥2, at least one seed remains after a removal, saving 0 nodes. Every other group keeps its seeds. In the default graph, clearing 0 saves 3 nodes; clearing 3 saves 2.saved(r) = size[component[r]] if count[component[r]]=1; otherwise 0. M(r) = T − saved(r). T is the final infected count before removing any seed.Why not choose a seed from the largest group? In “Two-seed trap”, {0,1,2,3} has seeds 0 and 3, while {4,5,6} has only seed 4. Clearing 0 leaves seed 3 to infect the whole four-node group, giving M=7. Clearing 4 saves the three-node group, giving M=4. A large group is useful only if it can be saved!This uses the network from step 0. Group discovery is complete; each action checks the next candidate in initial. Compare the current candidate’s saving with the best index so far: they may differ. Checked rows remain visible; untested savings stay unknown.Group 0: nodes [0,1,2]; size=3; original seeds [0]; count=1.Group 1: nodes [3,4]; size=2; original seeds [3]; count=1.← Undo one candidateCheck next candidate →Reset candidate scanCheck all candidatesChecked 0/2 candidates; before removal T=5. No best candidate yet.Cleared indexSaved (nodes)Final infected M (nodes)0 ? Pending?3 ? Pending?On narrow screens, scroll tables sideways; with the table focused, use the left and right arrow keys.Two invariants—facts that stay true—establish correctness. During traversal, label each node when discovered so it enters the stack once. When the stack empties, every reachable node belongs to that group, with no omitted member or cross-group edge. During candidate scanning, the recorded best index always has the largest saving among checked candidates, breaking ties by the smallest index. The first candidate establishes the record; each update preserves it by accepting only a larger saving or an equal saving with a smaller index. After all candidates, this is the global answer."
+    },
+    {
+      "lang": "zh",
+      "id": 803,
+      "label": "#803：恢复节点后如何追踪连通组",
+      "url": "http://127.0.0.1:18770/leetcode/803/#step2",
+      "destinationText": "2 · 补回一块，哪些砖重新连接？这一步要回答：一次补砖怎样给出原来那次敲击的掉落数？“连通块”是能沿四邻砖互相走到的一组砖；加一个虚拟屋顶节点，把它连到所有第 0 行砖。R 表示屋顶所在连通块的大小，包含这个虚拟节点。仍用例 1：先只移除敲中的 (1,0)，保留右侧两块作记录。此时只有 (0,0) 连着屋顶，所以 R前=2。补回 (1,0) 并连接四邻后，4 块砖都接屋顶，R后=5。新接入 3 块，其中 1 块是补回的砖；其余 2 块才是原先掉落的砖。result[i] = max(0, R后 − R前 − 1)不变量：倒序处理 i 之前，记录墙保留原始砖，但移除了 hits[0…i]；屋顶组恰好包含这面记录墙上所有能到屋顶的砖。补回 hits[i] 只会增加路径：若补砖接到屋顶，增量含它和所有刚被接通的旧组，减 1 得掉落数；若它仍悬空，R 不变，max 把 −1 变成 0。原来就是空位时不补，直接记 0。补完后记录墙只移除了 hits[0…i−1]，因此不变量延续；倒序结束时所有答案按原下标写好。为什么不按正序把“已掉落的砖”也从记录墙里删掉？它们就是日后补回支撑时要接通的整组。若后来又敲到一块早已掉落的砖，倒序时先补它，它仍悬空，R 不增加，正确得到 0。初始悬空的组也不会贡献增量：即使所有原始砖恢复，它们仍到不了屋顶。正序已掉落的砖此后仍不可达，因为继续删除不能增加路径；保留它们不会改变可达集合。记录墙不是正序物理墙。如何快速维护这些组？并查集（DSU）给每组一个代表：find 沿 parent 指针找到代表；union 把两个不同组接在一起。size 只在代表处记录组大小。小组接到大组，并在 find 时把路径缩短，可避免每次重新数整组。下面用搜索生成可视化快照，展示等价的连通关系，不展示 DSU 指针操作，也不运行 Python。#685：看并查集如何合组 →固定预设，点“补回下一处”，对比左/上方的补前与右/下方的补后，再看 R 与历史账本。每帧是一整次恢复并连接邻居后的状态；无省略步骤。换预设会重置此实验，练习答案不受影响。预设（切换会重置）ABCDEA · 单支撑官方例 1；原序 hits=[[1,0]]退回上一步补回下一处重置记录墙补回全部已完成 0/1 次逆序处理 · 初始：只移除全部 hits，尚未恢复初始化后 R=2。两个视图均为初始记录墙。格子：S=有砖且接屋顶（实线）；U=有砖但未接屋顶（虚线）；·=空。青色内框仅标出本次补回位置。表头是从 0 开始的行列坐标。R 包含虚拟屋顶，所以全空也为 1。补前记录墙 · R=2行 / 列01230S···1·UU·补后记录墙 · R=2行 / 列01230S···1·UU·按原敲击顺序的 result（? 尚未求出）[?]保留的逆序账本初始化：全部敲击位置移除，R=2。"
+    },
+    {
+      "lang": "zh",
+      "id": 924,
+      "label": "#924：只移除感染源，节点仍然存在",
+      "url": "http://127.0.0.1:18770/leetcode/924/#step2",
+      "destinationText": "2 · 哪一整组能获救？这一步要回答：怎样一次判断某个候选究竟能挽救几台电脑？连通分量是一个最大的互相可达节点组，也就是沿边可以互相走到、且没有边通向组外的一组电脑。默认网络分成 {0,1,2} 和 {3,4}。只要组内还剩一个感染源，沿任意路径逐边传播就会感染整组；组外的感染源又进不来。因此这组最终只能全部感染或全部健康。#803：倒序恢复与屋顶连通块对每组只需记 size（节点台数）和 count（原 initial 中的感染源个数）。count=0：原本就健康，清除别处不会改变它；count=1：清除唯一感染源后整组健康，挽救 size 台；count≥2：清除一个还剩至少一个，挽救 0 台。其他组的感染源数完全不变。默认图清除 0 挽救 3 台，清除 3 挽救 2 台。saved(r) = size[component[r]]，当 count[component[r]]=1；否则为 0。M(r) = T − saved(r)。T 是未清除任何感染源时最终感染的总台数。为什么不能直接选最大组里的感染源？在“双源陷阱”中，{0,1,2,3} 有感染源 0 和 3，{4,5,6} 只有 4。清除 0 后，3 仍会感染整个四节点组，M=7；清除 4 才能挽救三节点组，M=4。组大不等于能获救！下面仍用第 0 步的网络。分组已完成；每次检查 initial 中的下一个候选。观察“当前候选”的收益与“目前最佳编号”的收益，两者未必相同。已检查的行保留，未检查的收益显示问号。组 0：节点 [0,1,2]；size=3；原感染源 [0]；count=1。组 1：节点 [3,4]；size=2；原感染源 [3]；count=1。← 撤回一个候选检查下一个候选 →重置候选扫描检查全部候选已检查 0/2 个候选；未清除时 T=5。尚无最佳候选。清除编号挽救（台）最终感染 M（台）0 ? 待检查?3 ? 待检查?窄屏表格可以横向滚动；键盘聚焦表格后按左右方向键。正确性来自两条不变量（始终成立的事实）：遍历时，一发现节点就标上组号，每个节点只进栈一次；栈清空时，沿边能到达的节点全部已归组，没有遗漏也没有跨组边。扫描候选时，记录的最佳编号始终是已检查候选中挽救最多、并列编号最小的那个。初始尚无候选，第一项建立记录；每次仅在收益更大或同收益且编号更小时更新，所以检查完全部候选后即为全局答案。"
+    }
+  ],
+  "focus": {
+    "width": "3px",
+    "color": "rgb(154, 167, 184)"
+  },
+  "errors": [],
+  "localRequestsOnly": true,
+  "blockedStorage": true,
+  "offlineSource": true,
+  "contrastCalibration": {
+    "blackWhite": 21,
+    "red": 0.2126,
+    "green": 0.7152,
+    "blue": 0.0722,
+    "nearThreshold": 4.492948073111701
+  },
+  "cssBytes": 11889
+}
