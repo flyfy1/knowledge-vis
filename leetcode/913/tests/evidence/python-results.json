@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "canonicalCases": 833,
+  "exhaustive": "all valid simple undirected graphs n=3..5",
+  "historyOracleGraphs": 31,
+  "seed": 913,
+  "randomCases": 180,
+  "maxN": 50,
+  "allTinyStatesHistoryChecked": true,
+  "officialResults": [
+    0,
+    1
+  ],
+  "sourceParity": true,
+  "duplicateKeys": false,
+  "seconds": 1.0186985170003027
+}
