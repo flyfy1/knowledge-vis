@@ -1,0 +1,38 @@
+{
+  "kind": "bounded source/archived-evidence audit; no browser rerun or policy adoption",
+  "sourceSha256": "0075faaa73aef51ec54192dffbaa04987f05100aafe84a4f9f062d9411c4086f",
+  "candidate": "f3eec8c23092990d0309b8f227d5e2a2cf233d1d",
+  "probe": "Execute unchanged archived Solution.numSquarefulPerms using list subclass whose __iter__ increments visits; n=1,6,12 with all values2. No timing or asymptotic inference from measurements.",
+  "rows": [
+    {
+      "n": 1,
+      "k": 1,
+      "visits": 1,
+      "answer": 1
+    },
+    {
+      "n": 6,
+      "k": 1,
+      "visits": 6,
+      "answer": 1
+    },
+    {
+      "n": 12,
+      "k": 1,
+      "visits": 12,
+      "answer": 1
+    }
+  ],
+  "files": {
+    "specs/leetcode-explainers.md": "7fe59194a1ab1eb838a865a6cefcfbd98d527fe7657d1614c959b73c86dc404e",
+    "specs/leetcode-rendered-state-contract.md": "816990a6035d174692115767e5332be077ba79d3400bdcfc3f5f2e6f47c0002c",
+    "specs/leetcode-review-gates.md": "e962d37d8bc0c4b690ea35ae8bc728ffe138e9b1d768054c98b9654fadcde789",
+    "specs/reviews/878-round1-outcome-20261026/878-review-1-e7e2fb2d.md": "e31c64dc10db97cce546c45649ccbc0448f2dd924762019e131cd3905384ba77",
+    "specs/reviews/878-round1-outcome-20261026/candidate/copy.js": "bc2b91e32cd7584ae27ae8e51cf1a3589e338d1e83d0b0cc00ce3a2c788dcdff",
+    "specs/reviews/878-round1-outcome-20261026/candidate/index.html": "0250eaef438d21022509586ecbf888d61e312646e12fcb6ee75ab9cd5e1add0d",
+    "specs/reviews/996-outcome-20261026/996-review-1-1d9a6502.md": "c0fe98c88964cbb0487414bc4e74292c8790c1528f0772096db8e89e16fb8fa0",
+    "specs/reviews/996-outcome-20261026/round1-solution.py": "0075faaa73aef51ec54192dffbaa04987f05100aafe84a4f9f062d9411c4086f",
+    "specs/reviews/996-outcome-20261026/preprocess-boundary.json": "9b9e7b03a72472a48208dee99e9d31ca8f6a4a47344cbbcd5a65b17cc705c555",
+    "specs/reviews/996-outcome-20261026/round1-cost-lines.txt": "272cec383184344044e780db021242d14ea75f705f4ce3c9f584c076f66c332e"
+  }
+}

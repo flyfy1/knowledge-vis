@@ -1,0 +1,50 @@
+{
+  "observedAt": "2026-10-26T00:05:08.076148+00:00",
+  "readOnly": true,
+  "queueLength": 984,
+  "queueSha256": "434e5df4289eb8084c994f7a9bfe9920331ebcd4675beb7d2d511c1749d1fb7a",
+  "following1032": [
+    "1036",
+    "1044",
+    "1063",
+    "1067",
+    "1074",
+    "1088"
+  ],
+  "centralHead": "7d87ea225d4409c386bf72f105e01819811a607f",
+  "current": {
+    "problem_id": "882",
+    "stage": "author",
+    "started_at": "2026-10-25T23:56:28.012210+00:00",
+    "run_id": "882-author-ca9a8c1069d9"
+  },
+  "854ReceiptStatus": "waiting-for-natural-boundary",
+  "854OperatorAlive": true,
+  "localPriorPreparationSearch": "No existing1036/1044 source-preparation files found before selection",
+  "targets": [
+    {
+      "id": "1036",
+      "queueIndex": 213,
+      "problemRecord": null,
+      "runIds": [],
+      "runDirectories": [],
+      "reservations": [],
+      "lessonExists": false,
+      "trackedLessonPaths": [],
+      "lanePaths": [],
+      "laneBranches": []
+    },
+    {
+      "id": "1044",
+      "queueIndex": 214,
+      "problemRecord": null,
+      "runIds": [],
+      "runDirectories": [],
+      "reservations": [],
+      "lessonExists": false,
+      "trackedLessonPaths": [],
+      "lanePaths": [],
+      "laneBranches": []
+    }
+  ]
+}

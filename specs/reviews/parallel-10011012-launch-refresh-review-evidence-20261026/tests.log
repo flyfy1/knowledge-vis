@@ -1,0 +1,11 @@
+test_exact_identity_and_postpush (__main__.Refresh.test_exact_identity_and_postpush) ... ok
+test_exact_review_scope (__main__.Refresh.test_exact_review_scope) ... ok
+test_four_substitutions_only (__main__.Refresh.test_four_substitutions_only) ... ok
+test_preflight_unchanged (__main__.Refresh.test_preflight_unchanged) ... ok
+test_preserved_base_and_receipt (__main__.Refresh.test_preserved_base_and_receipt) ... ok
+test_targets_resources_no_execution (__main__.Refresh.test_targets_resources_no_execution) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.010s
+
+OK

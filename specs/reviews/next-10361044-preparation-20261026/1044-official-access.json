@@ -1,0 +1,31 @@
+{
+  "observedAt": "2026-10-26T00:05:27.063900+00:00",
+  "source": "https://leetcode.com/graphql/",
+  "officialUrl": "https://leetcode.com/problems/longest-duplicate-substring/",
+  "httpStatus": 200,
+  "access": "ordinary public unauthenticated GraphQL GET; no bypass",
+  "requestCount": 1,
+  "request": {
+    "query": "query questionData($titleSlug: String!) { question(titleSlug: $titleSlug) { questionId questionFrontendId title titleSlug content difficulty isPaidOnly exampleTestcases sampleTestCase metaData codeSnippets { lang langSlug code } topicTags { name slug } } }",
+    "variables": {
+      "titleSlug": "longest-duplicate-substring"
+    },
+    "operationName": "questionData"
+  },
+  "requestMethod": "GET",
+  "requestUrl": "https://leetcode.com/graphql/?query=query+questionData%28%24titleSlug%3A+String%21%29+%7B+question%28titleSlug%3A+%24titleSlug%29+%7B+questionId+questionFrontendId+title+titleSlug+content+difficulty+isPaidOnly+exampleTestcases+sampleTestCase+metaData+codeSnippets+%7B+lang+langSlug+code+%7D+topicTags+%7B+name+slug+%7D+%7D+%7D&variables=%7B%22titleSlug%22%3A%22longest-duplicate-substring%22%7D&operationName=questionData",
+  "responseFile": "1044-official-response.json",
+  "responseSha256": "d188af450c0c10d61a9c4c7a981dc99fa888a4291b894ba04baba21438cf30f4",
+  "responseBytes": 4497,
+  "frozenCatalogSnapshotAt": "2026-10-18T08:59:47.124517+00:00",
+  "frozenCatalogRecord": {
+    "id": 1044,
+    "slug": "longest-duplicate-substring",
+    "title": "Longest Duplicate Substring",
+    "paidOnly": false,
+    "officialUrl": "https://leetcode.com/problems/longest-duplicate-substring/",
+    "categories": [
+      "algorithms"
+    ]
+  }
+}

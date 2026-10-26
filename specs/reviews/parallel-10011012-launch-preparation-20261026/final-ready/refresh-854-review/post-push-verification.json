@@ -1,0 +1,433 @@
+{
+  "observedAt": "2026-10-26T00:15:34.760656+00:00",
+  "remoteHead": "b3336f7dc7243e7d15f336ab490eb6c3a0824304",
+  "allFrozenIdentityFieldsMatch": true,
+  "comparedFields": [
+    "base",
+    "central_head",
+    "central_current",
+    "central_session",
+    "central_runner_pid",
+    "central_native",
+    "policy_sha256",
+    "854_bridge_handoff_receipt_sha256",
+    "approved_854_bridge_handoff_pins_sha256"
+  ],
+  "rawPreflightSha256": "c261114f685d2d6671faf3488495002b4a89930835f5c9cb7ea2da81305b83d5",
+  "preflightSha256": "63295fc43653f73801b9ef39fb4b96fe107ba1ab1c9bcae399081fd370ce2d97",
+  "summary": {
+    "observed_at": "2026-10-26T00:15:34.760656+00:00",
+    "base": "048d217b1313ec068fbf41fe3703f5f3e83dcc90",
+    "central_head": "b3336f7dc7243e7d15f336ab490eb6c3a0824304",
+    "central_expected_head": "b3336f7dc7243e7d15f336ab490eb6c3a0824304",
+    "central_current": {
+      "problem_id": "854",
+      "stage": "review",
+      "started_at": "2026-10-26T00:11:43.941515+00:00",
+      "run_id": "854-review-dcc68f3629c0"
+    },
+    "central_status": "running",
+    "central_runner_pid": 1984564,
+    "central_session": "01a1758c-7fc0-7b21-9f8d-9c75db7c79b1",
+    "central_native": {
+      "pid": 1988405,
+      "ppid": 1988398,
+      "args": [
+        "/home/songyy/.npm-global/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-arm64/vendor/aarch64-unknown-linux-musl/bin/codex",
+        "exec",
+        "-m",
+        "gpt-6.1-sol",
+        "-c",
+        "model_reasoning_effort=\"medium\"",
+        "-c",
+        "approval_policy=\"never\"",
+        "--sandbox",
+        "danger-full-access",
+        "--json",
+        "-o",
+        "/home/songyy/projects/leetcode-hard-campaign-state-20261018/runs/854-review-dcc68f3629c0/final.json",
+        "--output-schema",
+        "/home/songyy/projects/leetcode-hard-campaign-state-20261018/runs/854-review-dcc68f3629c0/schema.json",
+        "-C",
+        "/home/songyy/projects/leetcode-hard-campaign-20261018",
+        "-"
+      ]
+    },
+    "shared_tree_matches_base": true,
+    "policy_sha256": "816990a6035d174692115767e5332be077ba79d3400bdcfc3f5f2e6f47c0002c",
+    "campaign_workers": [
+      {
+        "pid": 1984564,
+        "ppid": 1,
+        "args": [
+          "/usr/bin/python3",
+          "/home/songyy/projects/leetcode-hard-campaign-20261018/scripts/leetcode_campaign.py",
+          "--repo",
+          "/home/songyy/projects/leetcode-hard-campaign-20261018",
+          "--state-dir",
+          "/home/songyy/projects/leetcode-hard-campaign-state-20261018",
+          "--ids",
+          "51,52,60,65,4,10,23,25,30,32,37,41,42,44,68,76,84,85,87,115,123,124,126,127,132,135,140,149,154,158,174,185,188,212,214,218,220,224,233,239,248,262,265,269,272,273,282,295,296,297,301,302,305,312,315,317,321,327,329,330,332,335,336,352,354,358,363,381,391,403,407,410,411,420,425,428,431,432,440,446,458,460,465,466,471,472,479,480,483,488,489,493,499,502,514,517,527,546,548,552,564,568,569,571,579,587,588,591,600,601,615,618,629,630,631,632,639,642,644,656,660,664,668,675,679,683,685,689,691,699,710,711,715,716,719,726,727,730,732,736,741,745,749,753,757,759,761,765,768,770,772,773,774,778,780,782,793,798,801,803,805,810,815,818,827,828,829,834,839,843,847,850,854,857,862,864,871,878,879,882,887,891,895,899,902,903,906,913,920,924,927,928,936,940,943,952,956,960,964,968,972,975,980,982,987,992,995,996,1000,1001,1012,1028,1032,1036,1044,1063,1067,1074,1088,1092,1095,1096,1097,1106,1121,1125,1127,1147,1153,1157,1159,1163,1168,1172,1178,1183,1187,1192,1194,1199,1203,1206,1210,1216,1220,1223,1224,1225,1231,1235,1240,1246,1250,1255,1259,1263,1269,1274,1278,1284,1289,1293,1298,1301,1307,1312,1316,1320,1326,1330,1335,1336,1340,1345,1349,1354,1359,1363,1368,1369,1373,1377,1383,1384,1388,1392,1397,1402,1406,1411,1412,1416,1420,1425,1434,1439,1444,1449,1453,1458,1463,1467,1473,1478,1479,1483,1489,1494,1499,1505,1510,1515,1516,1520,1521,1526,1531,1537,1542,1547,1548,1553,1563,1568,1569,1575,1579,1585,1591,1595,1597,1601,1606,1610,1611,1617,1622,1627,1632,1635,1639,1643,1645,1649,1651,1655,1659,1665,1671,1675,1681,1687,1691,1692,1697,1703,1707,1713,1714,1719,1723,1724,1728,1735,1739,1745,1751,1755,1761,1766,1767,1770,1771,1776,1782,1787,1788,1793,1799,1803,1808,1815,1819,1825,1830,1835,1840,1842,1847,1851,1857,1862,1866,1872,1879,1883,1889,1892,1896,1900,1912,1916,1917,1919,1923,1924,1928,1931,1932,1938,1944,1948,1955,1956,1960,1964,1970,1972,1977,1982,1987,1994,1998,2003,2004,2005,2009,2010,2014,2019,2025,2030,2035,2040,2045,2050,2056,2060,2065,2071,2076,2081,2088,2092,2097,2102,2106,2111,2117,2118,2122,2123,2127,2132,2136,2141,2143,2147,2151,2153,2156,2157,2158,2163,2167,2172,2173,2179,2183,2188,2193,2197,2199,2203,2204,2209,2213,2218,2223,2227,2234,2242,2246,2247,2251,2252,2253,2254,2258,2262,2263,2267,2272,2276,2277,2281,2286,2290,2296,2301,2302,2306,2307,2312,2313,2318,2321,2322,2328,2334,2338,2344,2350,2354,2355,2360,2361,2362,2366,2371,2376,2382,2386,2392,2398,2402,2403,2407,2412,2416,2421,2426,2430,2435,2440,2444,2448,2449,2454,2458,2459,2463,2468,2472,2474,2478,2479,2484,2488,2493,2494,2499,2503,2508,2509,2514,2518,2519,2524,2528,2532,2534,2538,2543,2547,2551,2552,2561,2565,2569,2573,2577,2581,2584,2585,2589,2603,2604,2608,2612,2613,2617,2630,2642,2646,2647,2650,2659,2663,2675,2681,2691,2699,2701,2702,2709,2713,2714,2719,2720,2732,2736,2742,2751,2752,2753,2756,2759,2763,2781,2790,2791,2792,2793,2801,2809,2813,2814,2818,2819,2827,2835,2836,2842,2846,2851,2858,2862,2867,2868,2872,2876,2897,2902,2911,2912,2916,2920,2921,2926,2927,2931,2935,2940,2941,2945,2949,2953,2954,2959,2963,2968,2969,2972,2973,2977,2983,2991,2994,2995,2999,3003,3008,3009,3013,3017,3018,3022,3027,3031,3036,3037,3041,3045,3049,3052,3057,3060,3061,3068,3072,3077,3082,3086,3088,3093,3098,3102,3103,3104,3108,3113,3116,3117,3123,3130,3134,3139,3141,3145,3149,3154,3156,3161,3165,3171,3177,3181,3187,3188,3193,3197,3203,3209,3213,3214,3219,3225,3229,3231,3235,3236,3241,3244,3245,3250,3251,3256,3257,3260,3261,3266,3267,3268,3269,3272,3273,3276,3277,3279,3283,3287,3288,3292,3298,3299,3303,3307,3311,3312,3313,3317,3320,3321,3327,3329,3333,3336,3337,3343,3347,3348,3351,3352,3357,3359,3363,3367,3368,3369,3373,3374,3378,3382,3383,3384,3385,3389,3390,3395,3398,3399,3401,3405,3406,3410,3414,3416,3420,3425,3426,3430,3435,3441,3444,3445,3448,3449,3451,3454,3455,3459,3463,3464,3470,3474,3480,3482,3485,3486,3490,3495,3500,3501,3504,3505,3506,3509,3510,3515,3518,3519,3525,3526,3530,3533,3534,3538,3539,3544,3547,3548,3549,3553,3554,3559,3562,3563,3569,3574,3575,3579,3585,3590,3594,3600,3605,3609,3614,3615,3617,3620,3621,3624,3625,3630,3632,3636,3640,3646,3651,3655,3661,3666,3671,3673,3677,3681,3686,3691,3695,3699,3700,3704,3710,3715,3721,3725,3729,3734,3735,3739,3743,3748,3749,3753,3757,3762,3764,3768,3772,3777,3782,3785,3786,3791,3797,3801,3802,3806,3812,3816,3821,3826,3830,3832,3836,3841,3845,3850,3855,3859,3864,3869,3873,3878,3883,3886,3887,3888,3892,3897,3901,3906,3910,3911,3915,3916,3920,3924,3928,3929,3930,3934,3939,3943,3944,3948,3949,3953,3956,3957,3962,3966,3967,3971,3972,3973,3977,3981,3985,3989,3990,3995,3999,4003,4004,4005,4007,4009,4013,4017,4018,4023,4027,4028,4029,4033,4037,4041,4042,4046,4047,4051,4055,4059,4060,4064,4068,4073,4077,4081,4082,4086",
+          "--port",
+          "18770",
+          "--publish-root",
+          "/home/songyy/projects/visual-site",
+          "--public-base",
+          "https://visual.integ.life",
+          "--publish-every",
+          "20",
+          "--max-rounds",
+          "6"
+        ]
+      }
+    ],
+    "mem_available_kib": 1890752,
+    "loadavg": [
+      0.4814453125,
+      1.064453125,
+      1.19482421875
+    ],
+    "reservations": [
+      {
+        "file": "lane-964-reservation.json",
+        "id": "964",
+        "status": "imported"
+      },
+      {
+        "file": "lane-689-reservation.json",
+        "id": "689",
+        "status": "imported"
+      },
+      {
+        "file": "lane-493-reservation.json",
+        "id": "493",
+        "status": "imported"
+      },
+      {
+        "file": "lane-675-reservation.json",
+        "id": "675",
+        "status": "imported"
+      },
+      {
+        "file": "lane-514-reservation.json",
+        "id": "514",
+        "status": "imported"
+      },
+      {
+        "file": "lane-940-reservation.json",
+        "id": "940",
+        "status": "imported"
+      },
+      {
+        "file": "lane-591-reservation.json",
+        "id": "591",
+        "status": "imported"
+      },
+      {
+        "file": "lane-996-reservation.json",
+        "id": "996",
+        "status": "imported"
+      },
+      {
+        "file": "lane-691-reservation.json",
+        "id": "691",
+        "status": "imported"
+      },
+      {
+        "file": "lane-719-reservation.json",
+        "id": "719",
+        "status": "imported"
+      },
+      {
+        "file": "lane-730-reservation.json",
+        "id": "730",
+        "status": "imported"
+      },
+      {
+        "file": "lane-975-reservation.json",
+        "id": "975",
+        "status": "imported"
+      },
+      {
+        "file": "lane-920-reservation.json",
+        "id": "920",
+        "status": "imported"
+      },
+      {
+        "file": "lane-903-reservation.json",
+        "id": "903",
+        "status": "imported"
+      },
+      {
+        "file": "lane-732-reservation.json",
+        "id": "732",
+        "status": "imported"
+      },
+      {
+        "file": "lane-668-reservation.json",
+        "id": "668",
+        "status": "imported"
+      },
+      {
+        "file": "lane-1000-reservation.json",
+        "id": "1000",
+        "status": "imported"
+      },
+      {
+        "file": "lane-685-reservation.json",
+        "id": "685",
+        "status": "imported"
+      },
+      {
+        "file": "lane-679-reservation.json",
+        "id": "679",
+        "status": "imported"
+      },
+      {
+        "file": "lane-630-reservation.json",
+        "id": "630",
+        "status": "imported"
+      },
+      {
+        "file": "lane-992-reservation.json",
+        "id": "992",
+        "status": "imported"
+      },
+      {
+        "file": "lane-956-reservation.json",
+        "id": "956",
+        "status": "imported"
+      },
+      {
+        "file": "lane-587-reservation.json",
+        "id": "587",
+        "status": "imported"
+      },
+      {
+        "file": "lane-726-reservation.json",
+        "id": "726",
+        "status": "imported"
+      },
+      {
+        "file": "lane-715-reservation.json",
+        "id": "715",
+        "status": "imported"
+      },
+      {
+        "file": "lane-632-reservation.json",
+        "id": "632",
+        "status": "imported"
+      },
+      {
+        "file": "lane-995-reservation.json",
+        "id": "995",
+        "status": "imported"
+      },
+      {
+        "file": "lane-987-reservation.json",
+        "id": "987",
+        "status": "imported"
+      },
+      {
+        "file": "lane-805-reservation.json",
+        "id": "805",
+        "status": "imported"
+      },
+      {
+        "file": "lane-600-reservation.json",
+        "id": "600",
+        "status": "imported"
+      },
+      {
+        "file": "lane-629-reservation.json",
+        "id": "629",
+        "status": "imported"
+      },
+      {
+        "file": "lane-639-reservation.json",
+        "id": "639",
+        "status": "imported"
+      },
+      {
+        "file": "lane-546-reservation.json",
+        "id": "546",
+        "status": "imported"
+      },
+      {
+        "file": "lane-972-reservation.json",
+        "id": "972",
+        "status": "imported"
+      },
+      {
+        "file": "lane-803-reservation.json",
+        "id": "803",
+        "status": "imported"
+      },
+      {
+        "file": "lane-664-reservation.json",
+        "id": "664",
+        "status": "imported"
+      },
+      {
+        "file": "lane-982-reservation.json",
+        "id": "982",
+        "status": "imported"
+      },
+      {
+        "file": "lane-968-reservation.json",
+        "id": "968",
+        "status": "imported"
+      },
+      {
+        "file": "lane-517-reservation.json",
+        "id": "517",
+        "status": "imported"
+      },
+      {
+        "file": "lane-699-reservation.json",
+        "id": "699",
+        "status": "imported"
+      },
+      {
+        "file": "lane-980-reservation.json",
+        "id": "980",
+        "status": "imported"
+      },
+      {
+        "file": "lane-552-reservation.json",
+        "id": "552",
+        "status": "imported"
+      },
+      {
+        "file": "lane-960-reservation.json",
+        "id": "960",
+        "status": "imported"
+      }
+    ],
+    "stop_exists": false,
+    "queue_length": 984,
+    "targets": [
+      {
+        "id": "1001",
+        "port": 18801,
+        "in_queue": true,
+        "problem_record": null,
+        "runs": [],
+        "reservation_exists": false,
+        "repo_exists": false,
+        "state_exists": false,
+        "branch_exists": false,
+        "port_listeners": [],
+        "bind_available": true
+      },
+      {
+        "id": "1012",
+        "port": 18802,
+        "in_queue": true,
+        "problem_record": null,
+        "runs": [],
+        "reservation_exists": false,
+        "repo_exists": false,
+        "state_exists": false,
+        "branch_exists": false,
+        "port_listeners": [],
+        "bind_available": true
+      }
+    ],
+    "dispatcher_preparation_source": "d36d073f970fd50d1cabbce310d8e3294829a53a",
+    "854_bridge_handoff_receipt_sha256": "b806def3f37922cfda0d48e1f23afe52f7b450bed84d1a7abab0e71a7eef83b0",
+    "current_phase_worktree_paths": [
+      "?? specs/reviews/854-evidence/854-review-2-771efac1/bridge-browser.json",
+      "?? specs/reviews/854-evidence/854-review-2-771efac1/browser-results.json",
+      "?? specs/reviews/854-evidence/854-review-2-771efac1/cold-desktop.png",
+      "?? specs/reviews/854-evidence/854-review-2-771efac1/cold-proof-2.png",
+      "?? specs/reviews/854-evidence/854-review-2-771efac1/cold-proof-3.png",
+      "?? specs/reviews/854-evidence/854-review-2-771efac1/cold-proof-4.png",
+      "?? specs/reviews/854-evidence/854-review-2-771efac1/cold-reveal.png",
+      "?? specs/reviews/854-evidence/854-review-2-771efac1/core-results.json",
+      "?? specs/reviews/854-evidence/854-review-2-771efac1/en-1440-zoom1-controls.png",
+      "?? specs/reviews/854-evidence/854-review-2-771efac1/en-1440-zoom1-reassignment.png",
+      "?? specs/reviews/854-evidence/854-review-2-771efac1/en-1440-zoom1-trace.png",
+      "?? specs/reviews/854-evidence/854-review-2-771efac1/en-1440-zoom2-controls.png",
+      "?? specs/reviews/854-evidence/854-review-2-771efac1/en-1440-zoom2-reassignment.png",
+      "?? specs/reviews/854-evidence/854-review-2-771efac1/en-1440-zoom2-trace.png",
+      "?? specs/reviews/854-evidence/854-review-2-771efac1/en-320-zoom1-controls.png",
+      "?? specs/reviews/854-evidence/854-review-2-771efac1/en-320-zoom1-reassignment.png",
+      "?? specs/reviews/854-evidence/854-review-2-771efac1/en-320-zoom1-trace.png",
+      "?? specs/reviews/854-evidence/854-review-2-771efac1/en-320-zoom2-controls.png",
+      "?? specs/reviews/854-evidence/854-review-2-771efac1/en-320-zoom2-trace.png",
+      "?? specs/reviews/854-evidence/854-review-2-771efac1/en-390-zoom1-controls.png",
+      "?? specs/reviews/854-evidence/854-review-2-771efac1/en-390-zoom1-trace.png",
+      "?? specs/reviews/854-evidence/854-review-2-771efac1/en-390-zoom2-controls.png",
+      "?? specs/reviews/854-evidence/854-review-2-771efac1/en-390-zoom2-trace.png",
+      "?? specs/reviews/854-evidence/854-review-2-771efac1/en-736-zoom1-controls.png",
+      "?? specs/reviews/854-evidence/854-review-2-771efac1/en-736-zoom1-trace.png",
+      "?? specs/reviews/854-evidence/854-review-2-771efac1/en-736-zoom2-controls.png",
+      "?? specs/reviews/854-evidence/854-review-2-771efac1/en-736-zoom2-trace.png",
+      "?? specs/reviews/854-evidence/854-review-2-771efac1/en-desktop-top.png",
+      "?? specs/reviews/854-evidence/854-review-2-771efac1/en-exercise.png",
+      "?? specs/reviews/854-evidence/854-review-2-771efac1/forced-colors.png",
+      "?? specs/reviews/854-evidence/854-review-2-771efac1/independent-checks.json",
+      "?? specs/reviews/854-evidence/854-review-2-771efac1/independent-en-320-middle.png",
+      "?? specs/reviews/854-evidence/854-review-2-771efac1/independent-zh-320-middle.png",
+      "?? specs/reviews/854-evidence/854-review-2-771efac1/keyboard-focus.png",
+      "?? specs/reviews/854-evidence/854-review-2-771efac1/solution-results.json",
+      "?? specs/reviews/854-evidence/854-review-2-771efac1/zh-1440-zoom1-controls.png",
+      "?? specs/reviews/854-evidence/854-review-2-771efac1/zh-1440-zoom1-reassignment.png",
+      "?? specs/reviews/854-evidence/854-review-2-771efac1/zh-1440-zoom1-trace.png",
+      "?? specs/reviews/854-evidence/854-review-2-771efac1/zh-1440-zoom2-controls.png",
+      "?? specs/reviews/854-evidence/854-review-2-771efac1/zh-1440-zoom2-reassignment.png",
+      "?? specs/reviews/854-evidence/854-review-2-771efac1/zh-1440-zoom2-trace.png",
+      "?? specs/reviews/854-evidence/854-review-2-771efac1/zh-320-zoom1-controls.png",
+      "?? specs/reviews/854-evidence/854-review-2-771efac1/zh-320-zoom1-reassignment.png",
+      "?? specs/reviews/854-evidence/854-review-2-771efac1/zh-320-zoom1-trace.png",
+      "?? specs/reviews/854-evidence/854-review-2-771efac1/zh-320-zoom2-controls.png",
+      "?? specs/reviews/854-evidence/854-review-2-771efac1/zh-320-zoom2-trace.png",
+      "?? specs/reviews/854-evidence/854-review-2-771efac1/zh-390-zoom1-controls.png",
+      "?? specs/reviews/854-evidence/854-review-2-771efac1/zh-390-zoom1-trace.png",
+      "?? specs/reviews/854-evidence/854-review-2-771efac1/zh-390-zoom2-controls.png",
+      "?? specs/reviews/854-evidence/854-review-2-771efac1/zh-390-zoom2-trace.png",
+      "?? specs/reviews/854-evidence/854-review-2-771efac1/zh-736-zoom1-controls.png",
+      "?? specs/reviews/854-evidence/854-review-2-771efac1/zh-736-zoom1-trace.png",
+      "?? specs/reviews/854-evidence/854-review-2-771efac1/zh-736-zoom2-controls.png",
+      "?? specs/reviews/854-evidence/854-review-2-771efac1/zh-736-zoom2-trace.png",
+      "?? specs/reviews/854-evidence/854-review-2-771efac1/zh-desktop-top.png",
+      "?? specs/reviews/854-evidence/854-review-2-771efac1/zh-exercise.png",
+      "?? specs/reviews/854-review-2-771efac1.md"
+    ],
+    "allowed_dirty_scope": {
+      "stage": "review",
+      "report": "specs/reviews/854-review-2-771efac1.md",
+      "evidence": "specs/reviews/854-evidence/854-review-2-771efac1",
+      "trackedChangesAllowed": false
+    },
+    "current_prompt_sha256": "98ae4903a4a86ac2cd79c28d21e9d0c2e257239fe3b42ea777d5fdd81d6d0b91",
+    "approved_854_bridge_handoff_pins_sha256": "2b6a396c630e912348d480ad295674745f73e672ca1c7007e1f79a78fbad041d",
+    "verified_policy_before_import": {
+      "scripts/import_leetcode_lane.py": "8642a573383d052ce6e227bd8c2374f9c50f2fc1e8e9b312a6186607015344e0",
+      "scripts/leetcode_campaign.py": "a1258a0e7eba60e1d813bf0f9ede57a71f92cd504f6afb7bd0553d68d41c65ed",
+      "scripts/leetcode_publish.py": "7292c88e2ae035667a1bc723b076fb3d8d3d8562dc8428f3f66f74dc60f764d8",
+      "scripts/leetcode_registry.py": "a23b9b9e4feec966969c0b4c60f16e19cc2616ea0e1b2e587d15605e739349d6",
+      "specs/leetcode-explainers.md": "7fe59194a1ab1eb838a865a6cefcfbd98d527fe7657d1614c959b73c86dc404e",
+      "specs/leetcode-review-gates.md": "e962d37d8bc0c4b690ea35ae8bc728ffe138e9b1d768054c98b9654fadcde789",
+      "specs/leetcode-rendered-state-contract.md": "816990a6035d174692115767e5332be077ba79d3400bdcfc3f5f2e6f47c0002c",
+      "scripts/campaign-prompts/author.md": "5f7feaa56f9f8f1f3f434e1fe4576cc2a10da21594c9aef829cab86e69dae06b",
+      "scripts/campaign-prompts/review.md": "129537defd8df8fda1c84c3bea80b62c8c717275f558128d8b62b02319838a1b",
+      "scripts/campaign-prompts/fix.md": "176376ca977b1b8e0f4444612efdf91b8a7d49e1f1c614e8985544828bb774d4",
+      "specs/reviews/workflow-copy-repair-requests-20261026/780.md": "79235a599df5139b2e8dc1c2a51fe673fd7b28bf46b2d3a3bbec34a1b22e280b",
+      "specs/reviews/workflow-copy-repair-requests-20261026/793.md": "ff52e23452b5099a60fc80e9a9fe1bed1e0840d4408c66793509335edb7536e5",
+      "specs/reviews/workflow-copy-repair-requests-20261026/798.md": "da3da5361f94e48e2a91ddb39e537146f2aff9939b7220b17a368f884d151318",
+      "specs/reviews/workflow-copy-repair-requests-20261026/801.md": "8bf72192c53809c60cf6bedf2379af8c185ce775346f4de59d0eee598af4b83a",
+      "specs/reviews/workflow-copy-repair-requests-20261026/815.md": "5c9697057a2218726823f12e58494fedde6221d5d19d87da9a1a8a25cd76977a",
+      "specs/reviews/workflow-copy-repair-requests-20261026/903.md": "5227f5ede9949c1bc677c06fa8c6a2a940dabf4e43b41829ef8be64750ad0476",
+      "specs/reviews/workflow-copy-repair-requests-20261026/920.md": "70b97c693528cb26a70d8f1ad8497c9d96812ab551704090f6d24057146e666e",
+      "specs/reviews/workflow-copy-repair-requests-20261026/940.md": "56df85c64f2ae135ce2d8323c052eba978bb50b231d899c840b2a07a0e6a5981",
+      "specs/reviews/workflow-copy-repair-requests-20261026/956.md": "635cfac82ede95dbb081fa8ced9935b28d0234fed4928ea9b5d10bd7d2f7e77f",
+      "specs/reviews/workflow-copy-repair-requests-20261026/README.md": "9c7747a2a299d19d3c3b329fa9d4a423fe2403141e3b4fd6484878bb8ee7584a",
+      "scripts/register_leetcode_lesson.py": "7ba274cd733a36528d98c85fe87b46d5535bc34898567b0c14f36fda37f81310",
+      "scripts/leetcode_static_versions.py": "f92eca0575bfcf74a4b68b9d011470e99415f12b671328bba1cebf035ddfd12e"
+    },
+    "verified_static_dependency_sha256": "f92eca0575bfcf74a4b68b9d011470e99415f12b671328bba1cebf035ddfd12e",
+    "no_mutation": true
+  }
+}

@@ -1,0 +1,33 @@
+--- specs/reviews/parallel-10011012-launch-preparation-20261026/launch.pending.py
++++ launch.py
+@@ -1,12 +1,11 @@
+ """One-time operator launch; never publish or change central progress/source."""
+-raise RuntimeError('Disabled preparation: await completed #854 bridge adoption, frozen identities and separate root review.')
+ import datetime,fcntl,hashlib,json,os,pathlib,socket,subprocess,sys,time
+ ROOT=pathlib.Path('/home/songyy/projects')
+ REPO=ROOT/'leetcode-hard-campaign-20261018'
+ STATE=ROOT/'leetcode-hard-campaign-state-20261018'
+-BASE='__PENDING_854BRIDGE_BASE__'
+-CENTRAL_HEAD='__PENDING_854BRIDGE_CENTRAL_HEAD__'
+-CENTRAL_RUN='__PENDING_854BRIDGE_CENTRAL_RUN__'
++BASE='048d217b1313ec068fbf41fe3703f5f3e83dcc90'
++CENTRAL_HEAD='048d217b1313ec068fbf41fe3703f5f3e83dcc90'
++CENTRAL_RUN='854-fix-4964d1606702'
+ POLICY='816990a6035d174692115767e5332be077ba79d3400bdcfc3f5f2e6f47c0002c'
+ 
+ def read(p): return json.loads(p.read_text())
+@@ -63,11 +62,11 @@
+     s=read(STATE/'progress.json')
+     assert s['status']=='running' and not (STATE/'STOP').exists()
+     assert s['expected_head']==CENTRAL_HEAD and git('rev-parse','HEAD')==CENTRAL_HEAD
+-    assert s['current']['problem_id']=='__PENDING_854BRIDGE_PROBLEM__'
+-    assert s['current']['stage']=='__PENDING_854BRIDGE_STAGE__' and s['current']['run_id']==CENTRAL_RUN
++    assert s['current']['problem_id']=='854'
++    assert s['current']['stage']=='fix' and s['current']['run_id']==CENTRAL_RUN
+     run=next(r for r in s['runs'] if r['id']==CENTRAL_RUN)
+     events=[json.loads(line) for line in (pathlib.Path(run['directory'])/'events.jsonl').read_text().splitlines() if line.startswith('{')]
+-    assert any(e.get('type')=='thread.started' and e.get('thread_id')=='__PENDING_854BRIDGE_SESSION__' for e in events)
++    assert any(e.get('type')=='thread.started' and e.get('thread_id')=='01a17588-eeec-7b71-91f6-8bdbffe0305e' for e in events)
+     assert len(s['queue'])==984
+     for pid in ['1001','1012']:
+         assert pid in s['queue'] and pid not in s['problems']

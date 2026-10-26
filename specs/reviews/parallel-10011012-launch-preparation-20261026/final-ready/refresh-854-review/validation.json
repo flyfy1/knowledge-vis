@@ -1,0 +1,21 @@
+{
+  "frozenAt": "2026-10-26T00:16:07.349189+00:00",
+  "status": "observation-refresh-awaiting-independent-review-and-dispatch",
+  "testsPassed": 6,
+  "launchExecuted": false,
+  "piMutation": false,
+  "files": {
+    "README.md": "b1aeb75f76177df9d87845202f3001f8e2cf1f66767be7df42a81ea507c70ae7",
+    "launch.diff": "e44f37187a6b9d3131d6aa641717fb4505b305ade983ba147090d79d626602e3",
+    "launch.py": "d727a95043beb254ce4559ea5ec7de0795c22a515a2e3998a932414ee55ba96b",
+    "post-push-preflight.json.gz": "c31ac4673e6723d5929ff4cc05faae7d640db7fc5b0f001468c9b1b7c243b625",
+    "post-push-verification.json": "9f8d74f252e6fb0e72ad471640f4e6ac7cd9835d00aa4094db169730e6ce9d14",
+    "preflight-summary.json": "75744ec7ec2dd72c07a81690548400e1b96f7b4c9f8734b9f7d0ccde9527ba1a",
+    "preflight.json.gz": "421113c1bb83824a1a1ea7e57cbcd2d7e2fd126b64517b5df03183da7e575e55",
+    "preflight.py": "63295fc43653f73801b9ef39fb4b96fe107ba1ab1c9bcae399081fd370ce2d97",
+    "preflight.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "substitutions.json": "5f5454b50022bf39b93d6d5e96d823594769d1e7c142682c5e11e855d31dcb46",
+    "test_refresh.py": "ca452a4a555c7af153b4803156627fc0b73c1891c362cfae6d2757427701d78e",
+    "tests.log": "730a36f6ac9f5f927f83e1c593d2f0785b5d20ff1fd2d15d94f8e8e4ed84e05b"
+  }
+}

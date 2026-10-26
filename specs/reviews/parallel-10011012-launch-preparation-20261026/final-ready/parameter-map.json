@@ -1,0 +1,110 @@
+{
+  "status": "final-proposal-awaiting-independent-review-separate-dispatch",
+  "sources": {
+    "launch.py": {
+      "path": "specs/reviews/parallel-10011012-launch-preparation-20261026/launch.pending.py",
+      "sha256": "59c7ed8b1ecea2c5a35711f72855ac6357aadfb8ffc8a5147e5d14ed214cd366"
+    },
+    "preflight.py": {
+      "path": "specs/reviews/parallel-10011012-launch-preparation-20261026/preflight.pending.py",
+      "sha256": "8a2e5724bd0eea2c8dbc16e98ceb48ec604eee84cf16b93365b41f2dc64dd522"
+    }
+  },
+  "removedDisableLine": "raise RuntimeError('Disabled preparation: await completed #854 bridge adoption, frozen identities and separate root review.')\n",
+  "substitutions": {
+    "launch.py": [
+      {
+        "from": "BASE='__PENDING_854BRIDGE_BASE__'",
+        "to": "BASE='048d217b1313ec068fbf41fe3703f5f3e83dcc90'"
+      },
+      {
+        "from": "CENTRAL_HEAD='__PENDING_854BRIDGE_CENTRAL_HEAD__'",
+        "to": "CENTRAL_HEAD='048d217b1313ec068fbf41fe3703f5f3e83dcc90'"
+      },
+      {
+        "from": "CENTRAL_RUN='__PENDING_854BRIDGE_CENTRAL_RUN__'",
+        "to": "CENTRAL_RUN='854-fix-4964d1606702'"
+      },
+      {
+        "from": "'__PENDING_854BRIDGE_PROBLEM__'",
+        "to": "'854'"
+      },
+      {
+        "from": "'__PENDING_854BRIDGE_STAGE__'",
+        "to": "'fix'"
+      },
+      {
+        "from": "'__PENDING_854BRIDGE_SESSION__'",
+        "to": "'01a17588-eeec-7b71-91f6-8bdbffe0305e'"
+      }
+    ],
+    "preflight.py": [
+      {
+        "from": "__PENDING_854BRIDGE_BASE__",
+        "to": "048d217b1313ec068fbf41fe3703f5f3e83dcc90"
+      },
+      {
+        "from": "__PENDING_854BRIDGE_RECEIPT_SHA256__",
+        "to": "b806def3f37922cfda0d48e1f23afe52f7b450bed84d1a7abab0e71a7eef83b0"
+      },
+      {
+        "from": "__PENDING_854BRIDGE_PINS_PATH__",
+        "to": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/854-bridge-adoption-20261026-185d4ba0-dispatch/pins.json"
+      },
+      {
+        "from": "__PENDING_854BRIDGE_PINS_SHA256__",
+        "to": "2b6a396c630e912348d480ad295674745f73e672ca1c7007e1f79a78fbad041d"
+      }
+    ]
+  },
+  "runtime": {
+    "base": "048d217b1313ec068fbf41fe3703f5f3e83dcc90",
+    "centralHead": "048d217b1313ec068fbf41fe3703f5f3e83dcc90",
+    "run": "854-fix-4964d1606702",
+    "problem": "854",
+    "stage": "fix",
+    "session": "01a17588-eeec-7b71-91f6-8bdbffe0305e"
+  },
+  "externalNativeProof": {
+    "runner": 1984564,
+    "native": {
+      "pid": 1984809,
+      "ppid": 1984802,
+      "args": [
+        "/home/songyy/.npm-global/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-arm64/vendor/aarch64-unknown-linux-musl/bin/codex",
+        "exec",
+        "-m",
+        "gpt-6.1-sol",
+        "-c",
+        "model_reasoning_effort=\"medium\"",
+        "-c",
+        "approval_policy=\"never\"",
+        "--sandbox",
+        "danger-full-access",
+        "--json",
+        "-o",
+        "/home/songyy/projects/leetcode-hard-campaign-state-20261018/runs/854-fix-4964d1606702/final.json",
+        "--output-schema",
+        "/home/songyy/projects/leetcode-hard-campaign-state-20261018/runs/854-fix-4964d1606702/schema.json",
+        "-C",
+        "/home/songyy/projects/leetcode-hard-campaign-20261018",
+        "-"
+      ]
+    }
+  },
+  "receiptSha256": "b806def3f37922cfda0d48e1f23afe52f7b450bed84d1a7abab0e71a7eef83b0",
+  "externalPinsPath": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/854-bridge-adoption-20261026-185d4ba0-dispatch/pins.json",
+  "externalPinsSha256": "2b6a396c630e912348d480ad295674745f73e672ca1c7007e1f79a78fbad041d",
+  "preflightRawSha256": "3130e00a4a2f7df74fd1d13ed688243f074a8c5017f00586af0970d48e938daa",
+  "artifacts": {
+    "launch.py": "b67d0a53fb067e21aa7a1f506f77d11343af8abe3ba1e7a9f6acc0073b987a46",
+    "preflight.py": "63295fc43653f73801b9ef39fb4b96fe107ba1ab1c9bcae399081fd370ce2d97",
+    "preflight.json.gz": "329028156187245b9d9cb24c7750daecf24080f2d45364351ab6dec1c0dc91fe",
+    "preflight-summary.json": "97ac4b21dd57a72370d61d327827fdaf1d6edae0b6902f1ad1a685bd4fe8e1fe",
+    "handoff-receipt.json.gz": "a4ad508c742ebd2f4d8d92966f95806a534bfbd481d56d91a46b559688e01e89",
+    "handoff-capture.json": "e828abbc12193bbda3bf44a2b5a43aa0335342168ecf9a3dbef16632f1a80def"
+  },
+  "launchExecuted": false,
+  "piPersistentMutation": false,
+  "authorContextInjection": false
+}

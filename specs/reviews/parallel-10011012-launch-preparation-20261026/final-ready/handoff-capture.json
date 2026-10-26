@@ -1,0 +1,131 @@
+{
+  "observedAt": "2026-10-26T00:09:12.797164+00:00",
+  "operatorAbsent": true,
+  "receiptSha256": "b806def3f37922cfda0d48e1f23afe52f7b450bed84d1a7abab0e71a7eef83b0",
+  "dispatch": {
+    "pid": 1979827,
+    "directory": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/854-bridge-adoption-20261026-185d4ba0-dispatch",
+    "args": [
+      "/usr/bin/python3",
+      "-B",
+      "/home/songyy/projects/leetcode-hard-campaign-state-20261018/854-bridge-adoption-20261026-185d4ba0-dispatch/operate.py",
+      "--dispatch",
+      "root-reviewed-854-bridge-adoption-20261026",
+      "--pins",
+      "/home/songyy/projects/leetcode-hard-campaign-state-20261018/854-bridge-adoption-20261026-185d4ba0-dispatch/pins.json",
+      "--manifest",
+      "/home/songyy/projects/leetcode-hard-campaign-state-20261018/854-bridge-adoption-20261026-185d4ba0-dispatch/payload-manifest.json",
+      "--campaign-helper",
+      "/home/songyy/projects/leetcode-hard-campaign-state-20261018/854-bridge-adoption-20261026-185d4ba0-dispatch/campaign-helper.py",
+      "--reopen-helper",
+      "/home/songyy/projects/leetcode-hard-campaign-state-20261018/854-bridge-adoption-20261026-185d4ba0-dispatch/reopen-helper.py"
+    ],
+    "hashes": {
+      "operate.py": "22236e0fb21250ad29b5a33c4784ff347aecf9de277f8dac924c389e2e45cf42",
+      "pins.json": "2b6a396c630e912348d480ad295674745f73e672ca1c7007e1f79a78fbad041d",
+      "payload-manifest.json": "35cb72e2f7e5003a9c33865d57ec678a190f61392c36f2ebd95962e64e53535d",
+      "campaign-helper.py": "f0c4ac708a4b0209c7a6522787b38a04923ac922d61d8afa0dbecf7b8ad61698",
+      "reopen-helper.py": "a268466fe6101841437c730e0e7448961be4637ee60d9fe4a760c0ea6fca3424"
+    }
+  },
+  "externalPinsPath": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/854-bridge-adoption-20261026-185d4ba0-dispatch/pins.json",
+  "externalHashes": {
+    "operate.py": "22236e0fb21250ad29b5a33c4784ff347aecf9de277f8dac924c389e2e45cf42",
+    "pins.json": "2b6a396c630e912348d480ad295674745f73e672ca1c7007e1f79a78fbad041d",
+    "payload-manifest.json": "35cb72e2f7e5003a9c33865d57ec678a190f61392c36f2ebd95962e64e53535d",
+    "campaign-helper.py": "f0c4ac708a4b0209c7a6522787b38a04923ac922d61d8afa0dbecf7b8ad61698",
+    "reopen-helper.py": "a268466fe6101841437c730e0e7448961be4637ee60d9fe4a760c0ea6fca3424"
+  },
+  "base": "048d217b1313ec068fbf41fe3703f5f3e83dcc90",
+  "head": "048d217b1313ec068fbf41fe3703f5f3e83dcc90",
+  "remoteHead": "048d217b1313ec068fbf41fe3703f5f3e83dcc90",
+  "freshAgent": {
+    "current": {
+      "problem_id": "854",
+      "stage": "fix",
+      "started_at": "2026-10-26T00:07:50.180789+00:00",
+      "run_id": "854-fix-4964d1606702"
+    },
+    "session_id": "01a17588-eeec-7b71-91f6-8bdbffe0305e",
+    "native_codex_pids": [
+      1984809
+    ],
+    "events": [
+      {
+        "type": "thread.started",
+        "thread_id": "01a17588-eeec-7b71-91f6-8bdbffe0305e"
+      },
+      {
+        "type": "turn.started"
+      }
+    ]
+  },
+  "current": {
+    "problem_id": "854",
+    "stage": "fix",
+    "started_at": "2026-10-26T00:07:50.180789+00:00",
+    "run_id": "854-fix-4964d1606702"
+  },
+  "sourceCandidate": "27b9930daf25f9fb1651038bff1605969cb27f01",
+  "sourceReview": {
+    "candidate": "27b9930daf25f9fb1651038bff1605969cb27f01",
+    "revision": "47d97f6bf07dd1f4b8c7e1ca493ca3d21b3b9c7b",
+    "report_path": "specs/reviews/854-bridge-review-20261026.md",
+    "report_sha256": "13a61dde9645bf34465152bb811f15f35dd532c01e65a692ebba8cc26040334d",
+    "outcome": "accepted",
+    "required_open": [],
+    "receipt_path": "specs/reviews/854-bridge-review-evidence-20261026/root-review-receipt.json",
+    "receipt_sha256": "911e37983fe1a2a934244f94e1fbba3d4772d99158f35a3b41278771b86a4de8"
+  },
+  "verifiedPayloadAtBase": {
+    "leetcode/854/BRIDGE-SELF-CHECK.md": "f37648faee52c603a56663f6f6e982c7aaa58e0572a79039b9693ce7bc75441c",
+    "leetcode/854/BRIEF.md": "af2893fe04a470c63624db9795b714bf0869e44a0d57a4bbc4be0ec03d5fe887",
+    "leetcode/854/app.js": "092d5296027fcc349572608ea70d7efcc33eca116210999cec37e779a2094f44",
+    "leetcode/854/copy.js": "c670f28f5990932a7b02ae20b3dee9e73ac693d4a3c1759feccb32cfc3e139f3",
+    "leetcode/854/index.html": "0441b7ffb565f14c50226b0f7dec5649dd96a53f309e190186ea347e33802010",
+    "leetcode/854/style.css": "663ba1e76209dd9d74a0d7652f1e05432c344f2c4acdf68843662377a7296b12",
+    "leetcode/854/tests/README.md": "13213949f4671a8e890b62b94647280483ea6564aaed2981c359c0b9051b33db",
+    "leetcode/854/tests/bridge-evidence/bridge-browser.json": "44b933135c85cde1064b8cec81b76923d8713bab5c9ac45478e3a5a2d4df68de",
+    "leetcode/854/tests/bridge-evidence/browser-run.log": "1ab40b27911b35b0a2be363aa0cef357f8890581eecd2afec90144e143bf36a9",
+    "leetcode/854/tests/bridge-evidence/clip-capture-initial.log": "ab66effd1b9cb77b921c4d09360f9764fe686fa4fa2d4ac00253a5bbaf8f2a05",
+    "leetcode/854/tests/bridge-evidence/contrast-capture-initial.log": "6960b49cc29f8bd3c5847e839ce4e852528cc7c12ae5276579722b1376653111",
+    "leetcode/854/tests/bridge-evidence/en-1440-zoom1-reassignment.png": "c104e258c5685930caa5e4ad708f0e15c290a5f7a60f31c397a45c230c54ac58",
+    "leetcode/854/tests/bridge-evidence/en-1440-zoom2-reassignment.png": "d4e4f0d9cfa5d7c76f51d37436a47ed54cff0bd5630ed2eaa965490258b9231a",
+    "leetcode/854/tests/bridge-evidence/en-320-zoom1-reassignment.png": "eccbab0f930480508a56e3dc660a6b0e572fd9e8b66bd307c747d68102a3cec6",
+    "leetcode/854/tests/bridge-evidence/focus-capture-initial.log": "1987bbe0e807c2b11935abe4388247784166414bf3fa5e8177fdef21bb366827",
+    "leetcode/854/tests/bridge-evidence/forced-colors.png": "c3b5511ae9b7313cd9a811907708edc74d96f2e1e1206dc34558a4e9f37a13ac",
+    "leetcode/854/tests/bridge-evidence/manifest.json": "559c6fee2b42c363f908059234e8c44f4adfa4c401d73ff85e17ec76ec5d1e6b",
+    "leetcode/854/tests/bridge-evidence/metadata-validation.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "leetcode/854/tests/bridge-evidence/unchanged-source.json": "14472f11846660ea429fa16ed8206b0b4bc4e84ef6200296f8f296e6f523b233",
+    "leetcode/854/tests/bridge-evidence/validation.json": "76bb30d96209574843abf2285b5d81f83bdfc43f28485c3fc22aec5a0318b64f",
+    "leetcode/854/tests/bridge-evidence/zh-1440-zoom1-reassignment.png": "910a3d2665d36ba7b1823b850ba3e59b06a7772012bf172b3e9bf66313ece496",
+    "leetcode/854/tests/bridge-evidence/zh-1440-zoom2-reassignment.png": "5f5d92f1e529236143ee665440d68b3251863efeaf7e3631de9a06e9c769c1f2",
+    "leetcode/854/tests/bridge-evidence/zh-320-zoom1-reassignment.png": "a2eba695d89c0c09e8a73a5f2b36a7cefad5e46efae580d9a17eda15d1053f57",
+    "leetcode/854/tests/build_page.py": "a8eb49d5135fd4d3ed58fa77e00f9ddfd21e0bdb3d0c9fe4a5db418d61e90bac",
+    "leetcode/854/tests/test_bridge_browser.cjs": "d0c779baa4e8c9173e32f94afd7db4f5d5c42ae4627e7efea39603e2bdb911a4",
+    "specs/proposals/leetcode-tagged-cycle-teaching-20261026.md": "44350b8e045341d24a3b2acae1a8c5a56cb148057c94beb09b3c515be797a943",
+    "specs/proposals/leetcode-tagged-cycle-teaching-evidence-20261026/result.json": "4ecee1fa750d28f7724bf0bff9ec4cef421576cc508fbe84ada08d60e1a1c820",
+    "specs/proposals/leetcode-tagged-cycle-teaching-evidence-20261026/verify.py": "175630afba8ec9edc8cffce172528b120fca3e08ccad25714bfcb1f772f6f89a",
+    "specs/reviews/854-outcome-20261026.md": "06998d3d30c7ebc2b11bf0c70a3108e3f196d3da578c094f946d77335498a2c9",
+    "specs/reviews/854-outcome-20261026/854-review-1-9601268b.md": "4e2a60a96948e7a6d51783423ac5d91162b57f878a9e73d4267ff81bcc7cd705",
+    "specs/reviews/854-tagged-cycle-design-review-20261026.md": "d2c5b1f747501fe3f092a883e7465b4d55795fb7e38b65843be7e721ec13d3a9",
+    "specs/reviews/854-tagged-cycle-revision-request-20261026.md": "a70c0e1f7b42883ebb1d8545df8975e5d7dc7f53947e7f8e41ccc2a5d77da923"
+  },
+  "protectedFilesAtBase": {
+    "solution.py": "7a53ef8ea9d60d8282785d804b24c53bd0005f9b8881779ad7fa63606c514068",
+    "python-code.js": "36b61694050f9499e8d02a2078002bba5e295769447d44afdfcc1c48de845238",
+    "core.js": "d33efab4b0e02bc1c47d060cc27c59ba054767da502c4f2955ce9dff2ce47dc0",
+    "lesson-entry.json": "7ba6fb81eabb97640a8664d7c97e50ccfde754bfabcf1b7272813c8c968a91bc"
+  },
+  "allPinnedRuntimeBytesVerified": true,
+  "queuePreserved": true,
+  "queueLength": 984,
+  "995EntryPreserved": true,
+  "995Status": "changes_required",
+  "854Status": "changes_required",
+  "ledgerSha256": "163b32ba940e02a8f17c1ccaf5e9a9f6dfcd606491007d096faa9b971b45eda6",
+  "pendingRelease": null,
+  "noLaneProcesses": true,
+  "stopAbsent": true,
+  "readOnly": true
+}
