@@ -1,0 +1,74 @@
+{
+  "status": "PASS",
+  "evidence": [
+    {
+      "lang": "en",
+      "preset": "3",
+      "read": "Checked 2/2 candidates; without deletion B=5 infected nodes. Best index so far 1, saving 1 clean nodes, leaving 3 infected. Scan complete: return this index.",
+      "groups": "Clean group 0: nodes [2,3], size=2; boundary sources [0,1], distinct source count=2; sole owner=none.Clean group 1: nodes [4], size=1; boundary sources [1], distinct source count=1; sole owner=1.",
+      "ledger": "Deleted indexClean nodes savedFinal infected M (nodes)0 041 ← Current candidate13"
+    },
+    {
+      "lang": "en",
+      "preset": "4",
+      "read": "Checked 2/2 candidates; without deletion B=5 infected nodes. Best index so far 0, saving 2 clean nodes, leaving 2 infected. Scan complete: return this index.",
+      "groups": "Clean group 0: nodes [2,3], size=2; boundary sources [0], distinct source count=1; sole owner=0.Clean group 1: nodes [4], size=1; boundary sources [1], distinct source count=1; sole owner=1.",
+      "ledger": "Deleted indexClean nodes savedFinal infected M (nodes)0 221 ← Current candidate13"
+    },
+    {
+      "lang": "en",
+      "preset": "6",
+      "read": "Checked 1/1 candidates; without deletion B=4 infected nodes. Best index so far 2, saving 3 clean nodes, leaving 0 infected. Scan complete: return this index.",
+      "groups": "Clean group 0: nodes [0,1], size=2; boundary sources [2], distinct source count=1; sole owner=2.Clean group 1: nodes [3], size=1; boundary sources [2], distinct source count=1; sole owner=2.",
+      "ledger": "Deleted indexClean nodes savedFinal infected M (nodes)2 ← Current candidate30"
+    },
+    {
+      "lang": "en",
+      "preset": "7",
+      "read": "Checked 2/2 candidates; without deletion B=4 infected nodes. Best index so far 0, saving 1 clean nodes, leaving 2 infected. Scan complete: return this index.",
+      "groups": "Clean group 0: nodes [2], size=1; boundary sources [0], distinct source count=1; sole owner=0.Clean group 1: nodes [3], size=1; boundary sources [1], distinct source count=1; sole owner=1.",
+      "ledger": "Deleted indexClean nodes savedFinal infected M (nodes)1 120 ← Current candidate12"
+    },
+    {
+      "lang": "en",
+      "midTraceLocalePreserved": true,
+      "keyboardRadioAndReveal": true,
+      "keyboardDiagramScroll": true
+    },
+    {
+      "lang": "zh",
+      "preset": "3",
+      "read": "已检查 2/2 个候选；不删除时感染 B=5 台。目前最佳编号 1，保护 1 个健康节点，最终感染 3 台。扫描完成，返回此编号。",
+      "groups": "健康组 0：节点 [2,3]，size=2；边界源 [0,1]，不同源个数=2；唯一拥有者=无。健康组 1：节点 [4]，size=1；边界源 [1]，不同源个数=1；唯一拥有者=1。",
+      "ledger": "删除编号保护的健康节点（台）最终感染 M（台）0 041 ← 当前候选13"
+    },
+    {
+      "lang": "zh",
+      "preset": "4",
+      "read": "已检查 2/2 个候选；不删除时感染 B=5 台。目前最佳编号 0，保护 2 个健康节点，最终感染 2 台。扫描完成，返回此编号。",
+      "groups": "健康组 0：节点 [2,3]，size=2；边界源 [0]，不同源个数=1；唯一拥有者=0。健康组 1：节点 [4]，size=1；边界源 [1]，不同源个数=1；唯一拥有者=1。",
+      "ledger": "删除编号保护的健康节点（台）最终感染 M（台）0 221 ← 当前候选13"
+    },
+    {
+      "lang": "zh",
+      "preset": "6",
+      "read": "已检查 1/1 个候选；不删除时感染 B=4 台。目前最佳编号 2，保护 3 个健康节点，最终感染 0 台。扫描完成，返回此编号。",
+      "groups": "健康组 0：节点 [0,1]，size=2；边界源 [2]，不同源个数=1；唯一拥有者=2。健康组 1：节点 [3]，size=1；边界源 [2]，不同源个数=1；唯一拥有者=2。",
+      "ledger": "删除编号保护的健康节点（台）最终感染 M（台）2 ← 当前候选30"
+    },
+    {
+      "lang": "zh",
+      "preset": "7",
+      "read": "已检查 2/2 个候选；不删除时感染 B=4 台。目前最佳编号 0，保护 1 个健康节点，最终感染 2 台。扫描完成，返回此编号。",
+      "groups": "健康组 0：节点 [2]，size=1；边界源 [0]，不同源个数=1；唯一拥有者=0。健康组 1：节点 [3]，size=1；边界源 [1]，不同源个数=1；唯一拥有者=1。",
+      "ledger": "删除编号保护的健康节点（台）最终感染 M（台）1 120 ← 当前候选12"
+    },
+    {
+      "lang": "zh",
+      "midTraceLocalePreserved": true,
+      "keyboardRadioAndReveal": true,
+      "keyboardDiagramScroll": true
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,9 @@
+Author self-check harness corrections, 2026-10-26:
+1. Initial core test mistook numeric mathematical sets such as {5} for localization
+placeholders; restricted placeholder matching to identifier names. Runtime unchanged.
+2. Initial browser test timed out at browser.cjs:46 clicking disabled #end in official
+example 1, after deletion left a terminal round-0 state. A valid endpoint is not a
+runtime defect. Revised optional end clicks to check enabled state first. Runtime unchanged.
+3. Supplemental keyboard test initially required graph scrolling at 390px, where
+300px graph fits and no horizontal scroll exists. Moved that assertion to the
+320px viewport, where the diagram intentionally overflows inside its scroll frame.

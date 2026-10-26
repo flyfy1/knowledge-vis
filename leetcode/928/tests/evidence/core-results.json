@@ -1,0 +1,188 @@
+{
+  "status": "PASS",
+  "cases": 1137,
+  "intermediateRounds": 3513,
+  "cleanPartitionAndReachability": true,
+  "boundarySets": true,
+  "prefixBestPairs": true,
+  "copyKeys": 85,
+  "presets": [
+    {
+      "initial": [
+        0,
+        1
+      ],
+      "totals": [
+        2,
+        1
+      ],
+      "scores": [
+        {
+          "node": 0,
+          "saved": 0,
+          "final": 2
+        },
+        {
+          "node": 1,
+          "saved": 1,
+          "final": 1
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "initial": [
+        0,
+        1
+      ],
+      "totals": [
+        1,
+        1
+      ],
+      "scores": [
+        {
+          "node": 0,
+          "saved": 0,
+          "final": 1
+        },
+        {
+          "node": 1,
+          "saved": 0,
+          "final": 1
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "initial": [
+        0,
+        1
+      ],
+      "totals": [
+        3,
+        1
+      ],
+      "scores": [
+        {
+          "node": 0,
+          "saved": 0,
+          "final": 3
+        },
+        {
+          "node": 1,
+          "saved": 2,
+          "final": 1
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "initial": [
+        0,
+        1
+      ],
+      "totals": [
+        4,
+        3
+      ],
+      "scores": [
+        {
+          "node": 0,
+          "saved": 0,
+          "final": 4
+        },
+        {
+          "node": 1,
+          "saved": 1,
+          "final": 3
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "initial": [
+        0,
+        1
+      ],
+      "totals": [
+        2,
+        3
+      ],
+      "scores": [
+        {
+          "node": 0,
+          "saved": 2,
+          "final": 2
+        },
+        {
+          "node": 1,
+          "saved": 1,
+          "final": 3
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "initial": [
+        2,
+        0
+      ],
+      "totals": [
+        1,
+        1
+      ],
+      "scores": [
+        {
+          "node": 2,
+          "saved": 0,
+          "final": 1
+        },
+        {
+          "node": 0,
+          "saved": 0,
+          "final": 1
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "initial": [
+        2
+      ],
+      "totals": [
+        0
+      ],
+      "scores": [
+        {
+          "node": 2,
+          "saved": 3,
+          "final": 0
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "initial": [
+        1,
+        0
+      ],
+      "totals": [
+        2,
+        2
+      ],
+      "scores": [
+        {
+          "node": 1,
+          "saved": 1,
+          "final": 2
+        },
+        {
+          "node": 0,
+          "saved": 1,
+          "final": 2
+        }
+      ],
+      "answer": 0
+    }
+  ]
+}
