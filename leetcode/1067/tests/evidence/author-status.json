@@ -1,0 +1,15 @@
+{
+  "problemId": 1067,
+  "authorStatus": "blocked",
+  "independentReviewStatus": "not performed",
+  "reason": "Official premium statement and language templates unavailable: public GraphQL content and codeSnippets are null.",
+  "nextInput": "Authorized official statement, constraints, examples/outputs, exceptions, actual language selector and submission templates.",
+  "preflight": {
+    "command": "python3 -B scripts/register_leetcode_lesson.py 1067 --validate-only",
+    "exitCode": 2,
+    "result": "Metadata validation failed: missing leetcode/1067/lesson-entry.json",
+    "interpretation": "Incomplete candidate; no readiness or registration claimed."
+  },
+  "runtimeChecks": "Not run: no implementation without verified official contract.",
+  "evidence": "access-summary.json"
+}

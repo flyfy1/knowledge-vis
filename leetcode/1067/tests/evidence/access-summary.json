@@ -1,0 +1,42 @@
+{
+  "observedAt": "2026-10-26T07:50:51.389754+00:00",
+  "officialUrl": "https://leetcode.com/problems/digit-count-in-range/",
+  "access": "Ordinary unauthenticated HTTPS, no credentials",
+  "authorStatus": "blocked",
+  "independentReview": "not performed",
+  "official-page": {
+    "status": 403,
+    "url": "https://leetcode.com/problems/digit-count-in-range/"
+  },
+  "official-graphql": {
+    "status": 200,
+    "url": "https://leetcode.com/graphql/"
+  },
+  "observations": {
+    "questionFrontendId": "1067",
+    "isPaidOnly": true,
+    "contentAvailable": false,
+    "codeSnippetsAvailable": false,
+    "metadata": {
+      "name": "digitsCount",
+      "params": [
+        {
+          "name": "d",
+          "type": "integer"
+        },
+        {
+          "name": "low",
+          "type": "integer"
+        },
+        {
+          "name": "high",
+          "type": "integer"
+        }
+      ],
+      "return": {
+        "type": "integer"
+      }
+    },
+    "sampleInputsOnly": "1\n1\n13\n3\n100\n250"
+  }
+}
