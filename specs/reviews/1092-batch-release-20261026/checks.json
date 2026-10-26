@@ -1,0 +1,20 @@
+{
+  "completed": true,
+  "selectedCount": 20,
+  "productionMatchesReceipt": true,
+  "pendingNull": true,
+  "releasedCount": 178,
+  "stageRemoved": true,
+  "unrelatedHashesUnchanged": true,
+  "productionReleaseMetadataUnchanged": true,
+  "allReleasedReceiptsMatch": true,
+  "initialStageFullyHashVerified": true,
+  "exactPendingToCompletedPayload": true,
+  "verification": {
+    "lessons": 20,
+    "ignoredKnownBeaconFailures": 0,
+    "ignoredCloudflareRumRequests": 60,
+    "retiredRedirectDocuments": 0
+  },
+  "observerMadePublicRequests": false
+}
