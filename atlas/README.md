@@ -4,6 +4,9 @@ Start with [WORKFLOW](../WORKFLOW.md), [UI/bilingual policy](../UI-I18N-SPEC.md)
 
 ## Current state
 
+- **Bayes measurement direction:** existing graph concept now opens its probability/measurement introduction rather than advanced odds; S1’s neutral card-reader evidence pool explains fixed likelihoods versus prior-dependent posterior. Counts38/50/14 unchanged. [Contract](../specs/atlas-bayes-measurement.md), [evidence](../specs/reviews/atlas-bayes-measurement-20261026/verification.md). PreviousMonteCarlofa0b7ee8 isorigin-installed; publicverificationremainsblocked.
+
+
 - **Variance → Monte Carlo error:** existing relation/repeated-run model reused; one two-station uncertainty route and paused fixed-N comparisons repair deterministic/CI claims. Currentcounts38/50/14. [Contract](../specs/atlas-estimation-error.md), [evidence](../specs/reviews/atlas-estimation-error-20261026/verification.md). Publication is separately recorded; previousvolt-second3c576204 isinstalledat origin,notpubliclyverified.
 
 

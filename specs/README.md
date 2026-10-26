@@ -6,6 +6,8 @@ workflow. Acceptance evidence and current deployment are separate statuses.
 
 ## Current requirements
 
+- [Bayes measurement direction](atlas-bayes-measurement.md): neutral S1 reader, same-state evidence-pool normalization and definition-first graph entry.
+
 - [Variance → Monte Carlo error scale](atlas-estimation-error.md): existing repeated-run experiment, truthful known-reference band, fixed-N prefix comparisons and distinct variance/SE meanings.
 
 - [Integral → inductor voltage-area balance](atlas-volt-second.md): one sourced bridge, existing Buck seek/play and signed voltage area versus nonzero current.

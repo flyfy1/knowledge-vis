@@ -406,11 +406,17 @@ function s1Readout() {
   $('s1-readout').innerHTML = t('s1ro', {
     prior: pctTxt(s1.prior), post: pctTxt(post), mult: fmt(post / s1.prior, 1)
   });
+  const c=freqCounts(1,s1.prior,CASE.sens,CASE.fpr);
+  $('s1-mixture-yes').style.width=(c.ppv*100)+'%';$('s1-mixture-no').style.width=((1-c.ppv)*100)+'%';
+  const caption=t('s1poolCaption',{yes:fmt(c.ppv*100,2)+'%',no:fmt((1-c.ppv)*100,2)+'%'});$('s1-pool-caption').textContent=caption;$('s1-mixture').setAttribute('aria-label',caption);$('s1-mixture').dataset.posterior=c.ppv;
+  $('s1-joint-a').textContent='≈ '+fmt(c.tp*100,3)+'%';$('s1-joint-b').textContent='≈ '+fmt(c.fp*100,3)+'%';$('s1-evidence').textContent='≈ '+fmt(c.pool*100,3)+'%';$('s1-normalization').textContent=t('s1formula',{post:fmt(c.ppv*100,2)+'%'});
+  document.querySelectorAll('[data-measurement-prior]').forEach(b=>{const active=Math.abs(s1.prior-Number(b.dataset.measurementPrior))<1e-12;b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active));});
 }
 $('s1-prior').addEventListener('input', e => {
   s1.prior = sliderToPrior(parseInt(e.target.value, 10) / 1000);
   s1Draw(); s1Readout();
 });
+document.querySelectorAll('[data-measurement-prior]').forEach(b=>b.addEventListener('click',()=>{const p=Number(b.dataset.measurementPrior);if(![.01,.1].includes(p))return;const input=$('s1-prior');input.value=Math.round(1000*Math.log(p/.001)/Math.log(500));input.dispatchEvent(new Event('input',{bubbles:true}));}));
 s1.prior = sliderToPrior(parseInt($('s1-prior').value, 10) / 1000);
 onLangRefresh(() => { s1Draw(); s1Readout(); });
 onRefit(() => s1Draw());

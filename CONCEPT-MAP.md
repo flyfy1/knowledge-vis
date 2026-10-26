@@ -75,7 +75,8 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | 31 | 相干解调的对账 / Coherent demodulation | modulation#step2 | Δf 与 φ 两笔账：拍频与 cos φ 标度 |
 | 32 | 反馈回路结构 / The feedback loop | control#step2 | 传感器 → 控制器 → 电机 → 再回到传感器 |
 | 33 | P / D / I 各管什么 / What P, D and I each do | control#step3 / #step4 / #step5 | P 太软倒太硬晃；D 提前刹车；I 站得稳还要站得直 |
-| 34 | 先验 × 似然比 = 后验（赔率式）/ Posterior = prior × likelihood ratio | bayes#step2 | 换上赔率眼镜，乘法变位移 |
+| 34 | 先验赔率 × 似然比 = 后验赔率 / Posterior odds = prior odds × likelihood ratio | bayes#step2 | 换上赔率眼镜，乘法变位移 |
+| 34a | 贝叶斯测量：似然与后验方向 / Measurement likelihood versus posterior | bayes#step1 | 星标卡读卡器：固定90%/9%条件概率，随先验改变的亮灯池组成与归一化 |
 | 35 | 序贯更新：后验变先验 / Sequential updating | bayes#step3 | 一条条加证据，整条赔率链打出来 |
 | 36 | 连续后验（抛币 Beta）/ Continuous posteriors (the coin) | bayes#step4 | 每抛一次曲线收紧一点；宽度 = 还剩多少不知道 |
 | 37 | 先验洗刷 / Priors wash out | bayes#step5 | 两条先验喂同一序列，均值差 0.300 → 0.010 |
