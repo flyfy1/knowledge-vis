@@ -1,0 +1,624 @@
+{
+  "status": "passed",
+  "mazeCases": [
+    {
+      "case": "official-source-corner",
+      "blocked": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "source": [
+        0,
+        0
+      ],
+      "target": [
+        0,
+        2
+      ],
+      "answer": false,
+      "closedCells": [
+        [
+          0,
+          0
+        ]
+      ],
+      "boundaryWitness": [
+        {
+          "cell": [
+            1,
+            0
+          ],
+          "reason": "blocked"
+        },
+        {
+          "cell": [
+            -1,
+            0
+          ],
+          "reason": "outside-million-grid"
+        },
+        {
+          "cell": [
+            0,
+            1
+          ],
+          "reason": "blocked"
+        },
+        {
+          "cell": [
+            0,
+            -1
+          ],
+          "reason": "outside-million-grid"
+        }
+      ]
+    },
+    {
+      "case": "official-empty-far-grid",
+      "blocked": [],
+      "source": [
+        0,
+        0
+      ],
+      "target": [
+        999999,
+        999999
+      ],
+      "answer": true,
+      "pathVertices": [
+        [
+          0,
+          0
+        ],
+        [
+          999999,
+          0
+        ],
+        [
+          999999,
+          999999
+        ]
+      ]
+    },
+    {
+      "case": "target-corner-trap",
+      "blocked": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "source": [
+        0,
+        2
+      ],
+      "target": [
+        0,
+        0
+      ],
+      "answer": false,
+      "closedCells": [
+        [
+          0,
+          0
+        ]
+      ],
+      "boundaryWitness": [
+        {
+          "cell": [
+            1,
+            0
+          ],
+          "reason": "blocked"
+        },
+        {
+          "cell": [
+            -1,
+            0
+          ],
+          "reason": "outside-million-grid"
+        },
+        {
+          "cell": [
+            0,
+            1
+          ],
+          "reason": "blocked"
+        },
+        {
+          "cell": [
+            0,
+            -1
+          ],
+          "reason": "outside-million-grid"
+        }
+      ]
+    },
+    {
+      "case": "no-diagonal-escape",
+      "blocked": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "source": [
+        0,
+        0
+      ],
+      "target": [
+        1,
+        1
+      ],
+      "answer": false,
+      "closedCells": [
+        [
+          0,
+          0
+        ]
+      ],
+      "boundaryWitness": [
+        {
+          "cell": [
+            1,
+            0
+          ],
+          "reason": "blocked"
+        },
+        {
+          "cell": [
+            -1,
+            0
+          ],
+          "reason": "outside-million-grid"
+        },
+        {
+          "cell": [
+            0,
+            1
+          ],
+          "reason": "blocked"
+        },
+        {
+          "cell": [
+            0,
+            -1
+          ],
+          "reason": "outside-million-grid"
+        }
+      ]
+    },
+    {
+      "case": "one-wall-detour",
+      "blocked": [
+        [
+          0,
+          1
+        ]
+      ],
+      "source": [
+        0,
+        0
+      ],
+      "target": [
+        0,
+        2
+      ],
+      "answer": true,
+      "pathVertices": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ]
+      ]
+    },
+    {
+      "case": "interior-target-trap",
+      "blocked": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "source": [
+        0,
+        0
+      ],
+      "target": [
+        2,
+        2
+      ],
+      "answer": false,
+      "closedCells": [
+        [
+          2,
+          2
+        ]
+      ],
+      "boundaryWitness": [
+        {
+          "cell": [
+            3,
+            2
+          ],
+          "reason": "blocked"
+        },
+        {
+          "cell": [
+            1,
+            2
+          ],
+          "reason": "blocked"
+        },
+        {
+          "cell": [
+            2,
+            3
+          ],
+          "reason": "blocked"
+        },
+        {
+          "cell": [
+            2,
+            1
+          ],
+          "reason": "blocked"
+        }
+      ]
+    },
+    {
+      "case": "upper-grid-boundary-trap",
+      "blocked": [
+        [
+          999998,
+          999999
+        ],
+        [
+          999999,
+          999998
+        ]
+      ],
+      "source": [
+        999999,
+        999999
+      ],
+      "target": [
+        0,
+        0
+      ],
+      "answer": false,
+      "closedCells": [
+        [
+          999999,
+          999999
+        ]
+      ],
+      "boundaryWitness": [
+        {
+          "cell": [
+            1000000,
+            999999
+          ],
+          "reason": "outside-million-grid"
+        },
+        {
+          "cell": [
+            999998,
+            999999
+          ],
+          "reason": "blocked"
+        },
+        {
+          "cell": [
+            999999,
+            1000000
+          ],
+          "reason": "outside-million-grid"
+        },
+        {
+          "cell": [
+            999999,
+            999998
+          ],
+          "reason": "blocked"
+        }
+      ]
+    },
+    {
+      "case": "two-cell-trap",
+      "blocked": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          2,
+          4
+        ]
+      ],
+      "source": [
+        2,
+        2
+      ],
+      "target": [
+        0,
+        0
+      ],
+      "answer": false,
+      "closedCells": [
+        [
+          2,
+          2
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "boundaryWitness": [
+        {
+          "cell": [
+            3,
+            2
+          ],
+          "reason": "blocked"
+        },
+        {
+          "cell": [
+            1,
+            2
+          ],
+          "reason": "blocked"
+        },
+        {
+          "cell": [
+            2,
+            1
+          ],
+          "reason": "blocked"
+        },
+        {
+          "cell": [
+            3,
+            3
+          ],
+          "reason": "blocked"
+        },
+        {
+          "cell": [
+            1,
+            3
+          ],
+          "reason": "blocked"
+        },
+        {
+          "cell": [
+            2,
+            4
+          ],
+          "reason": "blocked"
+        }
+      ]
+    },
+    {
+      "case": "target-inside-same-enclosure",
+      "blocked": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          2,
+          4
+        ]
+      ],
+      "source": [
+        2,
+        2
+      ],
+      "target": [
+        2,
+        3
+      ],
+      "answer": true,
+      "pathVertices": [
+        [
+          2,
+          2
+        ],
+        [
+          2,
+          3
+        ]
+      ]
+    }
+  ],
+  "mazeMethod": "Actual million-grid axis-aligned path certificates or exact closed-set boundary certificates; no arbitrary finite crop or enclosure-size threshold.",
+  "substringCases": [
+    {
+      "s": "banana",
+      "maximumLength": 3,
+      "allAcceptedLongestWords": [
+        "ana"
+      ],
+      "occurrenceStarts": {
+        "ana": [
+          1,
+          3
+        ]
+      }
+    },
+    {
+      "s": "abcd",
+      "maximumLength": 0,
+      "allAcceptedLongestWords": [
+        ""
+      ],
+      "occurrenceStarts": {}
+    },
+    {
+      "s": "aaaa",
+      "maximumLength": 3,
+      "allAcceptedLongestWords": [
+        "aaa"
+      ],
+      "occurrenceStarts": {
+        "aaa": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "s": "ababab",
+      "maximumLength": 4,
+      "allAcceptedLongestWords": [
+        "abab"
+      ],
+      "occurrenceStarts": {
+        "abab": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "s": "abcdabefcd",
+      "maximumLength": 2,
+      "allAcceptedLongestWords": [
+        "ab",
+        "cd"
+      ],
+      "occurrenceStarts": {
+        "ab": [
+          0,
+          4
+        ],
+        "cd": [
+          2,
+          8
+        ]
+      }
+    },
+    {
+      "s": "aa",
+      "maximumLength": 1,
+      "allAcceptedLongestWords": [
+        "a"
+      ],
+      "occurrenceStarts": {
+        "a": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "s": "ab",
+      "maximumLength": 0,
+      "allAcceptedLongestWords": [
+        ""
+      ],
+      "occurrenceStarts": {}
+    },
+    {
+      "s": "aabaaba",
+      "maximumLength": 4,
+      "allAcceptedLongestWords": [
+        "aaba"
+      ],
+      "occurrenceStarts": {
+        "aaba": [
+          0,
+          3
+        ]
+      }
+    },
+    {
+      "s": "mississippi",
+      "maximumLength": 4,
+      "allAcceptedLongestWords": [
+        "issi"
+      ],
+      "occurrenceStarts": {
+        "issi": [
+          1,
+          4
+        ]
+      }
+    }
+  ],
+  "substringMethod": "All literal substrings/starting positions cross-checked against all starting-position pairs; no hashing or optimized solution.",
+  "exhaustiveBinaryStrings": 124,
+  "maximumExhaustiveLength": 6
+}

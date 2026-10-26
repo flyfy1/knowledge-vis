@@ -1,0 +1,110 @@
+{
+  "at": "2026-10-26T00:08:57.369962+00:00",
+  "status": "completed-resumed",
+  "head": "048d217b1313ec068fbf41fe3703f5f3e83dcc90",
+  "remote_head": "048d217b1313ec068fbf41fe3703f5f3e83dcc90",
+  "boundary_head": "1dbe9f79cc5b12f6d50107fd20686184d9b4430f",
+  "current": {
+    "problem_id": "854",
+    "stage": "fix",
+    "started_at": "2026-10-26T00:07:50.180789+00:00",
+    "run_id": "854-fix-4964d1606702"
+  },
+  "runner": 1984564,
+  "native": 1984809,
+  "session": "01a17588-eeec-7b71-91f6-8bdbffe0305e",
+  "exact32_payload": [
+    "leetcode/854/BRIDGE-SELF-CHECK.md",
+    "leetcode/854/BRIEF.md",
+    "leetcode/854/app.js",
+    "leetcode/854/copy.js",
+    "leetcode/854/index.html",
+    "leetcode/854/style.css",
+    "leetcode/854/tests/README.md",
+    "leetcode/854/tests/bridge-evidence/bridge-browser.json",
+    "leetcode/854/tests/bridge-evidence/browser-run.log",
+    "leetcode/854/tests/bridge-evidence/clip-capture-initial.log",
+    "leetcode/854/tests/bridge-evidence/contrast-capture-initial.log",
+    "leetcode/854/tests/bridge-evidence/en-1440-zoom1-reassignment.png",
+    "leetcode/854/tests/bridge-evidence/en-1440-zoom2-reassignment.png",
+    "leetcode/854/tests/bridge-evidence/en-320-zoom1-reassignment.png",
+    "leetcode/854/tests/bridge-evidence/focus-capture-initial.log",
+    "leetcode/854/tests/bridge-evidence/forced-colors.png",
+    "leetcode/854/tests/bridge-evidence/manifest.json",
+    "leetcode/854/tests/bridge-evidence/metadata-validation.log",
+    "leetcode/854/tests/bridge-evidence/unchanged-source.json",
+    "leetcode/854/tests/bridge-evidence/validation.json",
+    "leetcode/854/tests/bridge-evidence/zh-1440-zoom1-reassignment.png",
+    "leetcode/854/tests/bridge-evidence/zh-1440-zoom2-reassignment.png",
+    "leetcode/854/tests/bridge-evidence/zh-320-zoom1-reassignment.png",
+    "leetcode/854/tests/build_page.py",
+    "leetcode/854/tests/test_bridge_browser.cjs",
+    "specs/proposals/leetcode-tagged-cycle-teaching-20261026.md",
+    "specs/proposals/leetcode-tagged-cycle-teaching-evidence-20261026/result.json",
+    "specs/proposals/leetcode-tagged-cycle-teaching-evidence-20261026/verify.py",
+    "specs/reviews/854-outcome-20261026.md",
+    "specs/reviews/854-outcome-20261026/854-review-1-9601268b.md",
+    "specs/reviews/854-tagged-cycle-design-review-20261026.md",
+    "specs/reviews/854-tagged-cycle-revision-request-20261026.md"
+  ],
+  "four_protected_unchanged": {
+    "solution.py": "7a53ef8ea9d60d8282785d804b24c53bd0005f9b8881779ad7fa63606c514068",
+    "python-code.js": "36b61694050f9499e8d02a2078002bba5e295769447d44afdfcc1c48de845238",
+    "core.js": "d33efab4b0e02bc1c47d060cc27c59ba054767da502c4f2955ce9dff2ce47dc0",
+    "lesson-entry.json": "7ba6fb81eabb97640a8664d7c97e50ccfde754bfabcf1b7272813c8c968a91bc"
+  },
+  "prior_acceptance_and_runs_preserved": true,
+  "queued995_preserved": true,
+  "854_and995_publication_ineligible": true,
+  "queue_preserved": true,
+  "ledger_preserved": true,
+  "released_count": 138,
+  "post_reopen_plan": {
+    "next_problem_id": "854",
+    "registration_ids": [],
+    "publication_bound": {
+      "eligible": [
+        "1000",
+        "857",
+        "862",
+        "864",
+        "871",
+        "878",
+        "879",
+        "982",
+        "987",
+        "992",
+        "996"
+      ],
+      "incoming": [],
+      "registration_ids": [],
+      "reopened_upper_bound_ids": [
+        "854"
+      ],
+      "upper_bound_ids": [
+        "1000",
+        "854",
+        "857",
+        "862",
+        "864",
+        "871",
+        "878",
+        "879",
+        "982",
+        "987",
+        "992",
+        "996"
+      ],
+      "upper_bound": 12
+    }
+  },
+  "stop_absent": true,
+  "operator_exited": true,
+  "hashes": {
+    "receipt.json": "b806def3f37922cfda0d48e1f23afe52f7b450bed84d1a7abab0e71a7eef83b0",
+    "progress.json": "0ea291aece9844c9a81315ba2183feea7f482140657bfec093d7048776f93818",
+    "releases.json": "163b32ba940e02a8f17c1ccaf5e9a9f6dfcd606491007d096faa9b971b45eda6",
+    "operator.log": "e6fddc5d54bfb69dc740e81a967b7e05fbd642d6681c0bc4d493a1d4b093e6c8",
+    "prior-import-receipt.json": "483b6b7723bd84fa174afe8f7e58051653ebe56b2e793ad1694f5f4a4f7e9cbe"
+  }
+}

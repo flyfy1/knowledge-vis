@@ -1,0 +1,23 @@
+{
+  "preparedAt": "2026-10-26T00:07:59.000283+00:00",
+  "status": "dispatcher-reference-only",
+  "oracleCommand": "python3 -B specs/reviews/next-10361044-preparation-20261026/check-examples.py",
+  "mazeCertificates": 9,
+  "explicitSubstringCases": 9,
+  "exhaustiveTinyBinaryStrings": 124,
+  "accessBlockers": [],
+  "authorContextInjection": false,
+  "piMutation": false,
+  "files": {
+    "1036-official-access.json": "754db4634942a961023b1bcc08dde8f5d28292388f9511b3c71d06a69da35b8b",
+    "1036-official-response.json": "ae88d9da26536219c42ad61f87171a12e1a6230c3b6f507f267d07415928c905",
+    "1036.md": "f2b040c2c67623b4cfb0a8430c00e232ffc7482923a18dca0148ff4c524a3bfa",
+    "1044-official-access.json": "75d737e0f9738057fb68469aa5b4575efe8807924ad5a6263ba0b52dc748697a",
+    "1044-official-response.json": "d188af450c0c10d61a9c4c7a981dc99fa888a4291b894ba04baba21438cf30f4",
+    "1044.md": "8d9d60e02faa511a8b14c580f699da97b9879c44328591c8228983e5aa5041a3",
+    "README.md": "f8550e7eb3870ec1dd815336f863165bfea3965c05c39689293b384e22fafe98",
+    "check-examples.py": "3c6d5c635491679d52768c6c85efc8a35c785f33a7552735fc93ee5608cc922f",
+    "example-checks.json": "bfcf1c024e1591a08b2fe8be1c3cc69154750c75dd649c61cac21cfff60e7568",
+    "target-detail.json": "db69424f1dda3efd21d8a5ef33b221eaa59fedcabe6dba7438fa336d1d4c6d7b"
+  }
+}
