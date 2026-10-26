@@ -1991,3 +1991,12 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Monotone erasure invariant | `leetcode/936/#step2` | Removing constraints cannot disable a legal window; reverse the productive erasures. |
 
 <!-- /leetcode-936-campaign -->
+
+
+<!-- leetcode-943-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Subset and endpoint DP | `leetcode/943/#step2` | Keep the minimum chain length for each selected subset and last word; reconstruct with predecessor pointers. |
+
+<!-- /leetcode-943-campaign -->
