@@ -2020,3 +2020,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | Read before mutation | `leetcode/1001/#step1` | Answer each query before removing adjacent lamps. |
 
 <!-- /leetcode-1001-campaign -->
+
+
+<!-- leetcode-1012-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Unique-digit complement counting | `leetcode/1012/#step2` | Subtract disjoint unique-digit blocks from the positive integer range. |
+| Equal-prefix counting invariant | `leetcode/1012/#step3` | Count smaller prefixes and stop the equal path at its first repeated digit. |
+
+<!-- /leetcode-1012-campaign -->

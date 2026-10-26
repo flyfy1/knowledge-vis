@@ -4455,6 +4455,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(L + Q) expected time; O(U) auxiliary space plus O(Q) output, U distinct lamps"
   },
   {
+    "id": 1012,
+    "title": {
+      "zh": "至少有 1 位重复的数字",
+      "en": "Numbers With Repeated Digits"
+    },
+    "desc": {
+      "zh": "用不重复数字的互斥分组，推导前缀计数与停止条件。",
+      "en": "Count disjoint unique-digit blocks and derive the equal-prefix stopping rule."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "组合计数",
+        "en": "Combinatorics"
+      },
+      {
+        "zh": "数位前缀",
+        "en": "Digit prefixes"
+      }
+    ],
+    "path": "1012/",
+    "leetcodeUrl": "https://leetcode.com/problems/numbers-with-repeated-digits/",
+    "language": "Python",
+    "complexity": "O(D²) time; O(D) auxiliary space, D = decimal digit count (fixed base 10)"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
