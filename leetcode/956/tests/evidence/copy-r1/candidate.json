@@ -1,0 +1,74 @@
+{
+  "candidate": "956-copy-r1-20261026",
+  "status": "self-checked; fixed awaiting separate independent review",
+  "finding": "956-COPY-R1",
+  "createdAt": "2026-10-26T05:03:25.001865+00:00",
+  "workspaceBase": "16d04a66f071a35569a32d781cc66b45d24992d5",
+  "historicalAcceptedBase": "61c1660d36c3e2b77aa2249c0daeeb60133cb0ae",
+  "runtimeBefore": {
+    "app.js": "cbc1e41b73a33919084ade648c6505fd6bac0ec9719430b6235520181b2e4c32",
+    "copy.js": "872ece4bb291745e20d74708b0ece42a7ed4ef58ed3613dc01ba13e68e53fb5d",
+    "core.js": "f7b79cc1dff4ee82c9d09d7a6763d22b21046846ce41a06474f68cf5e70ce396",
+    "index.html": "e5a0add8198360b9e3ae4655e82433c32fa5c896d56e7f651f62271959ab6cce",
+    "python-code.js": "0274b9fc2ac70541067a7a61a5073fedb890d05b1e1ba9f9a2ad1180a2028ab3",
+    "solution.py": "87fc37cd8f9a07072d49ad9759cbfdf14f922e0ebdcf92f96d28df6504cd41ce",
+    "style.css": "53e25a13dac7c5589bcda2fda95fa0a7e24c8ed86ee706dede700b99304b897a",
+    "lesson-entry.json": "73aa84b4b535278027176b6fa2d68250bfeddbf37d7af901fc3f25195bc8e9b2"
+  },
+  "runtimeAfter": {
+    "app.js": "cbc1e41b73a33919084ade648c6505fd6bac0ec9719430b6235520181b2e4c32",
+    "copy.js": "432e0ed9a3e671326f398bc3d225a0e5e38f666668259935457e030ff6885ec1",
+    "core.js": "f7b79cc1dff4ee82c9d09d7a6763d22b21046846ce41a06474f68cf5e70ce396",
+    "index.html": "e5a0add8198360b9e3ae4655e82433c32fa5c896d56e7f651f62271959ab6cce",
+    "python-code.js": "0274b9fc2ac70541067a7a61a5073fedb890d05b1e1ba9f9a2ad1180a2028ab3",
+    "solution.py": "87fc37cd8f9a07072d49ad9759cbfdf14f922e0ebdcf92f96d28df6504cd41ce",
+    "style.css": "53e25a13dac7c5589bcda2fda95fa0a7e24c8ed86ee706dede700b99304b897a",
+    "lesson-entry.json": "73aa84b4b535278027176b6fa2d68250bfeddbf37d7af901fc3f25195bc8e9b2"
+  },
+  "runtimeChanged": [
+    "copy.js"
+  ],
+  "unchangedAgainstAcceptedBase": [
+    "app.js",
+    "core.js",
+    "index.html",
+    "solution.py",
+    "python-code.js",
+    "style.css"
+  ],
+  "metadataChanged": false,
+  "checks": {
+    "red": "node leetcode/956/tests/copy-r1.cjs: exit 1 on original rendered footer",
+    "green": "node leetcode/956/tests/copy-r1.cjs: exit 0",
+    "preflight": "python3 -B scripts/register_leetcode_lesson.py 956 --validate-only: exit 0; empty stdout/stderr"
+  },
+  "files": {
+    "app.js": "cbc1e41b73a33919084ade648c6505fd6bac0ec9719430b6235520181b2e4c32",
+    "copy.js": "432e0ed9a3e671326f398bc3d225a0e5e38f666668259935457e030ff6885ec1",
+    "core.js": "f7b79cc1dff4ee82c9d09d7a6763d22b21046846ce41a06474f68cf5e70ce396",
+    "index.html": "e5a0add8198360b9e3ae4655e82433c32fa5c896d56e7f651f62271959ab6cce",
+    "python-code.js": "0274b9fc2ac70541067a7a61a5073fedb890d05b1e1ba9f9a2ad1180a2028ab3",
+    "solution.py": "87fc37cd8f9a07072d49ad9759cbfdf14f922e0ebdcf92f96d28df6504cd41ce",
+    "style.css": "53e25a13dac7c5589bcda2fda95fa0a7e24c8ed86ee706dede700b99304b897a",
+    "lesson-entry.json": "73aa84b4b535278027176b6fa2d68250bfeddbf37d7af901fc3f25195bc8e9b2",
+    "BRIEF.md": "02073be7666d61fe1ff78d3608a0b86d0a07cde24bba12daceaa255363aa126f",
+    "tests/SELF-CHECK.md": "193c5a0c12a848fa670bc583b8cef8d1bb49046b01f3bee36aec931690f8f6b7",
+    "tests/README.md": "ef2a8e2ed03019bd23977711a64322e5d2e03965f17d91b8da098fa2beec6d6f",
+    "tests/copy-r1.cjs": "f7304b817326919f22b2db49ba05d903b4b15fba726bdb751ab92c4de2fce720",
+    "tests/evidence/copy-r1/before.json": "6e88ebbad3c064711878ea4a6b0271eee51dc168cef818546a553ec128afd8af",
+    "tests/evidence/copy-r1/browser-results.json": "ca9427f7519fbb49a389fbf9afda78f1eb75b9a28dd7aab1aa47070cff1a415b",
+    "tests/evidence/copy-r1/download-en.py": "87fc37cd8f9a07072d49ad9759cbfdf14f922e0ebdcf92f96d28df6504cd41ce",
+    "tests/evidence/copy-r1/download-zh.py": "87fc37cd8f9a07072d49ad9759cbfdf14f922e0ebdcf92f96d28df6504cd41ce",
+    "tests/evidence/copy-r1/en-footer-320.png": "48a362e446d656053c1f138243992f1d06076639c10545c20d86a6724381a5f2",
+    "tests/evidence/copy-r1/en-footer-zoom200.png": "2c6c703c9f65a253e414dc7e465b53949d1cbd34919035b1c0a3c7c34d444ee9",
+    "tests/evidence/copy-r1/exact-runtime.diff": "f046fd15e19e1cb54669e18a6a051ad09b8f67980a02a8b82521a514ca5d8c69",
+    "tests/evidence/copy-r1/green.txt": "436ce4c044d511e2b29235d796b8376fa0ced36cfc877d924ace97f3e5d5a284",
+    "tests/evidence/copy-r1/harness-label-failure.txt": "a9f629e32c1e882e1698848546a6503aa6d819a8d30892197f9fdf30f434d386",
+    "tests/evidence/copy-r1/harness-scroll-failure.txt": "d9b75596daa2737a4e6107383c22a4e3c525a775e37ecb2ab75315afbd9566f7",
+    "tests/evidence/copy-r1/preflight.txt": "13b8261b64303482e59add5c3b74f1b2aadee0f66f2a7f392a8d78f5d4a77e22",
+    "tests/evidence/copy-r1/python-focused.txt": "bdd7e897fa3810bb97443ea98b99c8470818c70357417f1dc16bf7d014b989c2",
+    "tests/evidence/copy-r1/red.txt": "0258d3dd52a6c099a74b14844cfa047269f6b866a74425349edca2d261aaa30b",
+    "tests/evidence/copy-r1/zh-footer-320.png": "0502fb4c95df11694d56662fff3ed80596948d7494ca95d77ec5b01a828dfcc8",
+    "tests/evidence/copy-r1/zh-footer-zoom200.png": "e8ed65b1f7066276702f13ed71d872748c79e5224df9fbacf078d90c49490ea0"
+  }
+}

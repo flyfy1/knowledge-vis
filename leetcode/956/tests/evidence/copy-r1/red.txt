@@ -1,0 +1,12 @@
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
++ actual - expected
+
++ '作者自查候选 · 独立评审待进行 · 本地模拟，无上传、无在线提交。'
+- '本地模拟，无上传、无在线提交。'
+    at /home/songyy/projects/leetcode-hard-campaign-20261018/leetcode/956/tests/copy-r1.cjs:19:44 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: '作者自查候选 · 独立评审待进行 · 本地模拟，无上传、无在线提交。',
+  expected: '本地模拟，无上传、无在线提交。',
+  operator: 'strictEqual'
+}

@@ -1,0 +1,8 @@
+AssertionError [ERR_ASSERTION]: false == true
+    at /home/songyy/projects/leetcode-hard-campaign-20261018/leetcode/956/tests/copy-r1.cjs:41:3 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: '=='
+}
