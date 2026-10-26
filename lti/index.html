@@ -128,6 +128,25 @@
       <label><span><span data-i18n="s2aLab">a · 累加器的衰减（仅累加器用）</span> <span class="val" id="s2-a-val">0.70</span></span>
         <input type="range" id="s2-a" min="0.3" max="0.95" step="0.01" value="0.7"></label>
     </div>
+    <section class="sound-lab" aria-labelledby="sound-title">
+      <h3 id="sound-title" data-i18n="soundTitle">同一段信号，听听系统改了什么</h3>
+      <p data-i18n="soundIntro"></p>
+      <div class="btn-row">
+        <button type="button" class="btn" id="s2-audio-input" aria-pressed="false" data-i18n="soundInput">▶ 播放输入</button>
+        <button type="button" class="btn" id="s2-audio-output" aria-pressed="false" data-i18n="soundOutput">▶ 播放处理后</button>
+        <button type="button" class="btn" id="s2-audio-stop" disabled data-i18n="soundStop">■ 停止</button>
+      </div>
+      <label class="sound-volume" for="s2-audio-volume"><span data-i18n="soundVolume">试听音量</span> <output id="s2-audio-volume-value">50%</output>
+        <input id="s2-audio-volume" type="range" min="0" max="100" step="5" value="50">
+      </label>
+      <p class="readout" id="s2-audio-status" role="status" aria-live="polite"></p>
+      <progress id="s2-audio-progress" value="0" max="1.8665"></progress><span id="s2-audio-time" aria-hidden="true">0 / 1.87 s</span>
+      <p class="hint" data-i18n="soundPlot"></p>
+      <div class="stage"><canvas id="s2-audio-wave" height="230" style="height:230px" role="img" data-i18n-aria="soundWave"></canvas></div>
+      <p class="hint" data-i18n="soundTry"></p>
+      <details><summary data-i18n="soundMappingTitle"></summary><p data-i18n="soundMapping"></p><p data-i18n="soundChanging"></p><p data-i18n="soundLevel"></p><p><a href="https://www.w3.org/TR/2021/REC-webaudio-20210617/" data-i18n="soundReference"></a></p></details>
+      <noscript>试听需要 JavaScript；图中信号与系统关系仍可阅读。 / Sound requires JavaScript; the model explanation remains available.</noscript>
+    </section>
     <div class="stage"><canvas id="s2-io" height="330" style="height:330px"></canvas></div>
     <div class="btn-row">
       <label class="chk"><input type="checkbox" id="s2-copies" checked> <span data-i18n="s2copies">显示每一份「缩放平移的 h」</span></label>
@@ -287,7 +306,9 @@
 
 <footer class="site-foot" data-i18n="foot">visual.integ.life · 冲激与 LTI Impulse &amp; LTI —— 一步一交互系列</footer>
 
-<script src="app.js?v=w2a"></script>
+<script src="audio-model.js?v=lti-sound-1"></script>
+<script src="audio.js?v=lti-sound-1"></script>
+<script src="app.js?v=lti-sound-1"></script>
 <script src="../lesson-shell.js?v=20261018"></script>
 </body>
 </html>
