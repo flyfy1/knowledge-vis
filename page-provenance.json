@@ -255,15 +255,16 @@
     },
     "bayes": {
       "developer": "Codex",
-      "edition": "codex-bayes-measurement-20261026",
+      "edition": "codex-bayes-evidence-identity-20261026",
       "kind": "revised",
-      "sourceRevision": "ce20ae377c52ab8e81629283f31ec3ea84a3e94f",
+      "sourceRevision": "51f098fdd5a7d733901823008af03eebfe89c639",
       "originalSourceRevision": "e9774b0ae7e253005b0469f559f2e30138e1b50b",
       "scope": {
-        "zh": "第1步的假想读卡器、似然与后验方向、同一先验的亮灯池组成及图谱入口。",
-        "en": "Step1 hypothetical reader, likelihood/posterior direction, same-prior lamp-pool composition and graph entry."
+        "zh": "保留第1步读卡器与图谱入口；修正第3步条件独立的上限说法，以同一账本比较新测量与复制记录。",
+        "en": "Retains Step1 reader and graph entry; corrects Step3 independence-bound claim and compares new measurements with copies in one ledger."
       },
-      "retainedContributions": "Original course, probability functions and other chapters retained; original tool identity not reclassified"
+      "retainedContributions": "Original course, probability functions and unrelated chapters retained; original tool identity not reclassified",
+      "previousRevision": "ce20ae377c52ab8e81629283f31ec3ea84a3e94f"
     }
   },
   "exceptions": {
