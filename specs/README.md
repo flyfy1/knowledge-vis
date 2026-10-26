@@ -6,6 +6,9 @@ workflow. Acceptance evidence and current deployment are separate statuses.
 
 ## Current requirements
 
+- [Eigen-direction teaching/interaction contract](../eigen/BRIEF.md): definition-first graph entry, same-state arrow/remainder geometry, approximation and signed eigenvalue boundaries, arbitrary direction controls and recurrence acceptance.
+
+
 - [Power-converter visual contract](../power-converters/BRIEF.md): model-driven conducting paths, signed current/energy, bounded playback and mobile/accessible verification; [current acceptance](reviews/power-converters-flow-20261026.md).
 
 

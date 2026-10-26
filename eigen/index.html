@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>特征值与特征向量 · 矩阵不转的那些方向</title>
-<link rel="stylesheet" href="style.css?v=w2a">
-<script src="i18n.js?v=w3a"></script>
+<link rel="stylesheet" href="style.css?v=9cb812198f89">
+<script src="i18n.js?v=1adc9a2ba152"></script>
 <link rel="stylesheet" href="../lesson-shell.css?v=20261018">
 </head>
 <body>
@@ -61,7 +61,7 @@
 <section class="step" id="step1" data-step="1">
   <div class="step-inner">
     <p class="step-kicker" data-i18n="s1k">第 1 步 · 亲手实验</p>
-    <h2 data-i18n="s1t">拖一根箭头，找到不转的方向</h2>
+    <h2 data-i18n="s1t">转动输入箭头，找出不偏离原直线的方向</h2>
     <p class="explain" data-i18n-html="s1e"></p>
     <p class="formula" data-i18n="s1formula">Av = λv</p>
     <div class="btn-row" id="s1-presets">
@@ -71,14 +71,20 @@
       <button class="btn" data-preset="2" data-i18n="s1p3">A 带负 λ</button>
     </div>
     <div class="stage">
-      <canvas id="s1-canvas" class="drag" height="430" tabindex="0" style="height:430px"></canvas>
+      <canvas id="s1-canvas" class="drag" height="430" tabindex="0" role="img" data-responsive-height aria-describedby="s1-keyboard s1-legend"></canvas>
     </div>
+    <div class="controls direction-controls"><label for="s1-angle"><span data-i18n="s1angleLabel"></span><output id="s1-angle-value" for="s1-angle"></output><input type="range" id="s1-angle" min="0" max="360" step="any" value="20" aria-describedby="s1-keyboard"></label><button type="button" id="s1-reset" class="btn" data-i18n="s1reset"></button></div>
+    <p class="hint" id="s1-legend" data-i18n="s1legend"></p>
+    <p class="hint" id="s1-keyboard" data-i18n="s1keyboard"></p>
     <div class="stage">
       <canvas id="s1-curve" height="150" style="height:150px"></canvas>
     </div>
     <p class="readout" id="s1-readout"></p>
     <p class="readout" id="s1-found" style="display:none"></p>
     <p class="hint" data-i18n-html="s1hint"></p>
+    <details class="direction-check"><summary data-i18n="s1check"></summary><p data-i18n="s1answer"></p></details>
+    <details class="direction-check"><summary data-i18n="s1algebra"></summary><p data-i18n="s1derivation"></p><p><a href="https://textbooks.math.gatech.edu/ila/eigenvectors.html" data-i18n="s1sourceEigen"></a> · <a href="https://textbooks.math.gatech.edu/ila/projections.html" data-i18n="s1sourceProjection"></a></p></details>
+    <p class="hint"><a href="#step5" data-i18n="s1continue"></a></p>
   </div>
 </section>
 
@@ -258,7 +264,7 @@
 
 <footer class="site-foot" data-i18n="foot">visual.integ.life · 特征值与特征向量 Eigenvalues & Eigenvectors —— 一步一交互系列</footer>
 
-<script src="app.js?v=w2a"></script>
+<script src="app.js?v=74c0dbe3f876"></script>
 <script src="../lesson-shell.js?v=20261018"></script>
 </body>
 </html>

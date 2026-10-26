@@ -1,0 +1,12 @@
+'use strict';
+const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),assert=require('node:assert/strict'),root=path.resolve(__dirname,'..'),src=fs.readFileSync(path.join(root,'app.js'),'utf8');
+const probe=vm.runInNewContext(src.slice(src.indexOf('function matVec('),src.indexOf('const DELTA_TOL'))+';directionProbe',{Math,Number,TypeError,RangeError});
+const near=(a,b,t=1e-10)=>assert.ok(Math.abs(a-b)<=t*Math.max(1,Math.abs(a),Math.abs(b)),a+' vs '+b);
+for(const[A,v,lambda]of [[[[2,1],[1,2]],[1,1],3],[[[2,1],[1,2]],[-1,1],1],[[[.5,1.5],[1.5,.5]],[-1,1],-1],[[[0,0],[0,0]],[1,-2],0],[[[1,0],[0,0]],[0,1],0]]){const s=probe(A,v);assert.ok(s.numericallyAligned);near(s.signed,lambda);if(lambda===0)assert.equal(s.ang,null);else near(s.ang,0);}
+const angle=d=>[Math.cos(d*Math.PI/180),Math.sin(d*Math.PI/180)],A=[[2,1],[1,2]],red=probe(A,angle(44.8));assert.ok(red.ang<1&&!red.numericallyAligned);assert.ok(red.residualNorm>.001);near(red.signed,2.9999756307053946);
+let cases=0;
+for(const M of [A,[[3,.5],[.5,1]],[[.5,1.5],[1.5,.5]],[[1,2],[0,3]],[[0,-1],[1,0]]])for(let d=0;d<=360;d+=1.25)for(const scale of [.2,1,5,-2]){const u=angle(d).map(x=>x*scale),s=probe(M,u),cross=u[0]*s.Av[1]-u[1]*s.Av[0];near(s.projection[0]+s.residual[0],s.Av[0]);near(s.projection[1]+s.residual[1],s.Av[1]);near(u[0]*s.residual[0]+u[1]*s.residual[1],0);near(s.residualNorm,Math.abs(cross)/Math.hypot(...u));assert.ok(s.ang>=0&&s.ang<=90);const independentDistance=Math.abs(M[1][0]*u[0]*u[0]+(M[1][1]-M[0][0])*u[0]*u[1]-M[0][1]*u[1]*u[1])/Math.hypot(...u);near(s.residualNorm,independentDistance);cases++;}
+const offgrid=.5*Math.atan2(1,2)*180/Math.PI;assert.ok(probe([[3,.5],[.5,1]],angle(offgrid)).numericallyAligned);assert.ok(!probe([[3,.5],[.5,1]],angle(Math.round(offgrid*10)/10)).numericallyAligned);
+for(const [M,v]of [[A,[0,0]],[A,[NaN,1]],[[[Infinity,1],[1,2]],[1,1]],[[[1],[1,2]],[1,1]],[A,[1]]])assert.throws(()=>probe(M,v));
+const dictsrc=fs.readFileSync(path.join(root,'i18n.js'),'utf8'),dict=vm.runInNewContext(dictsrc.slice(dictsrc.indexOf('const STR'),dictsrc.indexOf('\n};')+3)+';STR');assert.deepEqual(Object.keys(dict.zh).sort(),Object.keys(dict.en).sort());for(const lang of ['en','zh']){assert.ok(dict[lang].s1found.includes(lang==='en'?'Near':'接近'));assert.ok(!dict[lang].s1found.includes(lang==='en'?'v is an eigenvector':'v 是特征向量'));assert.ok(dict[lang].s1derivation.includes('64'));}
+console.log(JSON.stringify({status:'pass',cases,originalNearFalsePositiveCorrected:true,offGridPreserved:true,zeroOutputAngle:null}));

@@ -33,6 +33,9 @@ Start with [WORKFLOW](../WORKFLOW.md), [UI/bilingual policy](../UI-I18N-SPEC.md)
 
 ## Iteration index
 
+- [Eigen-direction learning repair](../eigen/BRIEF.md): existing eigen concept now opens its definition experiment; one shared direction control links v, Av and transverse remainder, with signed/near-versus-numerical interpretation. [Current evidence](../specs/reviews/eigen-direction-20261026/verification.md). No graph nodes/routes or simulation clock added.
+
+
 - [Signal-domain bounded correction](../specs/reviews/signal-domain-verification-20261026.md):known bandlimit vs display interpolation, MAπ boundary, discrete/continuous transform seam, source/negative findings and scoped final evidence.
 
 - [Final-state integration / cold-start handoff](../specs/reviews/math-physics-integration-verification-20261026.md):three morning paths, risk-selected final-state evidence, cumulative file ledger and remaining limits.
@@ -197,7 +200,7 @@ One phase drives all views. Time is phase/angular frequency. Parameter changes p
 
 1. **Observe the existing math/physics tasks with real learners/devices/speech.** Agent prediction and browser checks do not establish comprehension or real accessibility. The slope→pinhole loop is now implemented,not just an inventory.
 2. **Continue from tested optics conditions.** Both the normal→Snell/TIR connection and the existing thin-lens near-focus corrections are implemented. The existing trig/tangent domain/display/keyboard audit is now completed too. Reuse these bounded domain/approximation/reading contracts when selecting the next evidence-based gap; do not reopen them as unreviewed candidates.
-3. **Keep remaining audits bounded.** The sampling/frequency-response/linked Z5 domain short audit is recorded above; it does not certify all Fourier/Z/modulation/audio paths. The eigen source-step/task mismatch remains a candidate to reproduce. Other untouched state/source gaps need actual evidence,not automatic bug labels or another framework.
+3. **Keep remaining audits bounded.** The sampling/frequency-response/linked Z5 domain short audit is recorded above; it does not certify all Fourier/Z/modulation/audio paths. The eigen source-step/task mismatch has been reproduced and repaired in the bounded direction experiment above; it is no longer an untested candidate. Other untouched state/source gaps need actual evidence,not automatic bug labels or another framework.
 
 ## Concurrent-work guardrails
 
