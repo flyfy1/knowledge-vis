@@ -52,7 +52,7 @@ commit SHA, independent review result, and deployment URL here.
 
 ## Local handoff
 
-- Commit: `cb9b65e8f3cd9d3430f4236d065e5af3ecb7f1a3` (`Clarify galaxy list connection counts`).
-- Branch: `main`, one commit ahead of `origin/main`.
+- Implementation commit: `9e13e1a4beab5b2ff00273108f1d1fdce02862bb` (`Clarify galaxy list connection counts`).
+- Branch: `main`, one implementation commit ahead of `origin/main` before this handoff-only record.
 - Push, merge review, and deployment: intentionally pending; no production files or
   remote state were changed in this iteration.
