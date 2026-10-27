@@ -2181,3 +2181,13 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | subset enumeration | `leetcode/1178/#step2` | Visit every submask with (sub - 1) & mask. |
 
 <!-- /leetcode-1178-campaign -->
+
+
+<!-- leetcode-1187-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Last-value DP invariant | `leetcode/1187/#step1` | Minimum replacements for each possible final value of a processed prefix. |
+| Smallest feasible replacement | `leetcode/1187/#step2` | Sorted arr2 and binary search preserve the most future room. |
+
+<!-- /leetcode-1187-campaign -->
