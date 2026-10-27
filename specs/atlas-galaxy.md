@@ -135,3 +135,18 @@ link; it is not a new physics engine, prerequisite ranking or mastery signal.
 Apply the supplied integration patch deliberately in an isolated integration checkout. Browser acceptance tests must only inspect the already-integrated runtime; they must not apply/revert patches or rewrite shared atlas/index/spec files. Preserve concurrent Eigen source corrections and spec-index additions when wiring entries.
 
 Integration keyboard guard: Alt/Ctrl/Meta keyboard combinations retain browser shortcuts; only unmodified camera keys are handled. The explicitly documented Ctrl/Meta+wheel gesture remains a camera zoom action.
+
+## Codex iteration — list orientation (2026-10-28)
+
+The concept list exposes each node's **direct connection count** beside its editorial topic
+and includes the same count in the button's accessible name. This is a graph-degree cue for
+choosing a next concept when the 3D scene is unavailable, filtered, or still loading. It is
+not a ranking, importance score, mastery signal, prerequisite count, or distance estimate.
+Counts derive from the authoritative `data.js` edges after invalid endpoints have been
+discarded by `graphModel`; each undirected edge contributes one to both endpoint counts.
+
+Acceptance: both locales show the localized count for every real node, isolated nodes show
+zero, search and topic filtering retain the count, and the low-power/WebGL fallback list
+remains complete. The 3D renderer and graph layout remain unchanged. Verify the count from
+the same data used for the rendered graph and keep the existing list, keyboard, focus,
+source-link and no-JavaScript contracts intact.
