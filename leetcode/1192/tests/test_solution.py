@@ -26,3 +26,10 @@ def test_seeded():
         edges += [[a,b] for a in range(n) for b in range(a+2,n) if r.random()<.2]
         if len(edges)<n-1: continue
         got=sorted(tuple(sorted(x)) for x in Solution().criticalConnections(n,edges)); assert got==oracle(n,edges)
+
+def test_official_depth_boundary_without_recursion_error():
+    n = 100_000
+    edges = [[i, i + 1] for i in range(n - 1)]
+    got = Solution().criticalConnections(n, edges)
+    assert len(got) == n - 1
+    assert {tuple(sorted(edge)) for edge in got} == {tuple(edge) for edge in edges}
