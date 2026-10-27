@@ -4883,6 +4883,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(W·L + P·2^7) time; O(W) space"
   },
   {
+    "id": 1187,
+    "title": {
+      "zh": "让数组严格递增",
+      "en": "Make Array Strictly Increasing"
+    },
+    "desc": {
+      "zh": "从相邻约束推导按最后值压缩的动态规划。",
+      "en": "Derive last-value dynamic programming from adjacent constraints."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "动态规划",
+        "en": "Dynamic programming"
+      },
+      {
+        "zh": "二分查找",
+        "en": "Binary search"
+      }
+    ],
+    "path": "1187/",
+    "leetcodeUrl": "https://leetcode.com/problems/make-array-strictly-increasing/",
+    "language": "Python",
+    "complexity": "O(nm log m) time; O(m) space"
+  },
+  {
     "id": 2916,
     "leetcodeUrl": "https://leetcode.com/problems/subarrays-distinct-element-sum-of-squares-ii/",
     "title": {
