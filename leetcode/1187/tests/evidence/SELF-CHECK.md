@@ -23,3 +23,16 @@ Logic and metadata commands:
 - `python3 -B scripts/register_leetcode_lesson.py 1187 --validate-only` → exit 0 (safe validation; no registration run).
 
 These are author repair checks only; no independent acceptance is claimed.
+
+Repair evidence for L1187-R5 (2026-10-27, Asia/Singapore):
+
+- Root cause: changing `#preset` rebuilt `trace` but left `choice`, `revealed`, checked radio state, and the Example 1 prediction/feedback text alive. The feedback therefore described a previous input after the arrays had changed.
+- Fix mapping: `app.js` now clears `choice`, `revealed`, and checked prediction radios on preset change; it derives the selected-example question and answer from the new trace (while preserving Example 1's hand-prefix question), and computes correctness/result text from that same selected quantity. `copy.js` adds localized selected-example wording and the `-1` option/result; `index.html` renders that option.
+- Failing feedback loop before the fix: `NODE_PATH=/home/songyy/projects/integ-games/node_modules node /tmp/check1187-fail.cjs` → `RED: expected stale feedback to be cleared` after reveal on Example 1 then selecting Example 2.
+- All-preset bilingual regression: `NODE_PATH=/home/songyy/projects/integ-games/node_modules node /tmp/check1187-all.cjs` → `1187 all preset prediction answers passed in en and zh at 320px`.
+- Bilingual regression after the fix: `NODE_PATH=/home/songyy/projects/integ-games/node_modules node /tmp/check1187-fixed.cjs` → `1187 prediction preset regression passed in en and zh`. It checked reveal, preset change invalidation, relabeled prompt, radio clearing, and Example 2's independent answer 2 in both locales.
+- Preset-label correction: the prior `p3` label said impossible although the independent core/Python result is 2; it now says answer 2 in both locales, and the all-preset browser check covers it.
+- Existing logic regressions: `python3 leetcode/1187/tests/test_solution.py` → `1187 solution exhaustive + seeded checks passed`; `node leetcode/1187/tests/test_core.cjs` → `1187 core trace checks passed`.
+- Metadata preflight: `python3 -B scripts/register_leetcode_lesson.py 1187 --validate-only` → exit 0.
+
+This is author self-check evidence for a new candidate and does not claim independent acceptance.
