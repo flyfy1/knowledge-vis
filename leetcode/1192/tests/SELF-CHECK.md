@@ -1,0 +1,1 @@
+Author self-check evidence (not independent review): Python canonical solution matched an independently implemented edge-removal oracle on official examples and seeded small graphs. Browser checks remain recorded in this folder after execution.
