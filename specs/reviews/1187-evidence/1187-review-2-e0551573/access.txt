@@ -1,0 +1,22 @@
+prev true {
+  opacity: '0.72',
+  color: 'rgb(154, 167, 184)',
+  background: 'rgb(22, 27, 34)'
+}
+reset true {
+  opacity: '0.72',
+  color: 'rgb(154, 167, 184)',
+  background: 'rgb(22, 27, 34)'
+}
+next false {
+  opacity: '1',
+  color: 'rgb(13, 17, 23)',
+  background: 'rgb(110, 231, 255)'
+}
+end false {
+  opacity: '1',
+  color: 'rgb(232, 237, 244)',
+  background: 'rgb(28, 35, 48)'
+}
+focus1 
+focus6 
