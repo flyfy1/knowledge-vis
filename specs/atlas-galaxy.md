@@ -126,6 +126,19 @@ Commands: see `atlas/galaxy/README.md`. Automated evidence and screenshot inspec
 Parent owns independent review, integration, main merge, publication and production verification.
 No worker push/deploy. Original dirty checkout remains untouched.
 
+## Codex iteration — relation-type line legend (2026-10-28)
+
+The 3D scene now uses the existing relation types as a visual key: foundation, representation,
+application and connection edges each keep a stable color in the renderer and the adjacent
+legend. Selecting a concept still raises incident edges to a shared bright highlight, while the
+amber dashed shortest-path trace remains distinct. The graph data, layout distances, path rules,
+fallback list, and low-power allocation policy are unchanged. The colors explain what a line
+means; they do not rank importance or claim a physical distance.
+
+Acceptance: every source relation type appears in the legend in both locales, every rendered
+edge receives its type color before selection, selected edges use the shared highlight, and the
+full list remains available in low-power/WebGL fallback.
+
 ## Integrated test safety
 
 Current concept-to-task navigation follows [Galaxy signal connector](galaxy-signal-connector.md).

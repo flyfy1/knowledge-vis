@@ -7,6 +7,7 @@ const $=id=>document.getElementById(id),D=window.ATLAS||{nodes:[],edges:[],group
 for(const edge of model.edges){degree.set(edge.from,(degree.get(edge.from)||0)+1);degree.set(edge.to,(degree.get(edge.to)||0)+1);}
 const palette=['#a9adff','#8ee5e1','#8bbdff','#f4bd85','#e4a4cd'];
 const colors=Object.fromEntries(D.groups.map((g,i)=>[g.id,palette[i%palette.length]]));
+const edgeColors={foundation:'#9cc9ff',representation:'#d0b7ff',application:'#ffc27d',connection:'#8be4d2'};
 let lang;try{lang=localStorage.getItem('knowledge-lang');}catch{}
 if(!['zh','en'].includes(lang))lang=navigator.language.startsWith('zh')?'zh':'en';
 const t=(key,values={})=>Object.entries(values).reduce((s,[k,v])=>s.replace('{'+k+'}',v),STR[lang][key]||key);
@@ -58,7 +59,7 @@ function renderList(){const q=state.q.trim().toLowerCase();const nodes=model.nod
 function render(){document.documentElement.lang=lang==='zh'?'zh-CN':'en';document.querySelectorAll('[data-t]').forEach(e=>{const value=t(e.dataset.t);if(e.tagName==='H1'){e.replaceChildren();value.split('\n').forEach((line,i)=>{if(i)e.append(document.createElement('br'));e.append(document.createTextNode(line));});}else e.textContent=value;});document.querySelectorAll('[data-lang]').forEach(e=>e.setAttribute('aria-pressed',e.dataset.lang===lang));
  $('search').placeholder=t('placeholder');$('search').value=state.q;$('group').replaceChildren();const all=make('option','',t('all'));all.value='all';$('group').append(all);D.groups.forEach(g=>{const option=make('option','',g.label[lang]);option.value=g.id;$('group').append(option);});$('group').value=state.group;
  $('counts').textContent=t('counts',{n:model.nodes.length,e:model.edges.length,g:D.groups.length});
- $('legend').replaceChildren();for(const g of D.groups){const el=make('span','',g.label[lang]);const dot=make('i');dot.style.setProperty('--color',colors[g.id]);el.prepend(dot);$('legend').append(el);} $('legend').append(make('span','', '— '+t('lineLegend')),make('span','', '┄ '+t('pathLegend')));
+ $('legend').replaceChildren();for(const g of D.groups){const el=make('span','',g.label[lang]);const dot=make('i');dot.style.setProperty('--color',colors[g.id]);el.prepend(dot);$('legend').append(el);} for(const [id,type] of Object.entries(D.types)){const el=make('span','edge-key',type[lang]);const dot=make('i');dot.style.setProperty('--color',edgeColors[id]||'#6b89b1');el.prepend(dot);$('legend').append(el);} $('legend').append(make('span','', '┄ '+t('pathLegend')));
  $('map2d').href='./?view=graph'+(state.node?'&node='+encodeURIComponent(state.node):'');$('atlas-link').href='./'+(state.node?'?node='+encodeURIComponent(state.node):'');
  $('mode').textContent=t(state.low||failure?'enable3d':'lowPower');$('mode').setAttribute('aria-pressed',state.low||failure);$('mode').disabled=loading;
  $('render-status').textContent=t(state.low?'quiet':failure?'failed':loading?'loading':'live');$('fallback-note').textContent=state.low?t('lowPowerReason'):failure?t('failureReason'):'';$('fallback-note').hidden=!state.low&&!failure;
