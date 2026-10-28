@@ -36,3 +36,8 @@
 Step 3 now sequences the open-system experiment in a bilingual hint: open the cup to see the
 CO₂ leave and the reading fall, then attach the collection balloon to return that same gas and
 restore the reading. The conservation model and controls remain unchanged.
+
+## Codex oxygen-entry bridge — 2026-10-28
+
+Step 4 now sequences the air toggle from off to on so learners see incoming oxygen as the cause
+of solid mass gain, then include that oxygen in the whole-system ledger.
