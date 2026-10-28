@@ -53,7 +53,9 @@ function ratio(a,b){return b?((a-b)/b*100):0;}
 // A compact reaction-coordinate model for the catalyst bridge. The curve is a
 // teaching aid (not a second rate calculation): the current threshold and a
 // lower catalysed threshold are shown against the same energy coordinate.
-function energyProfileData(threshold,base=CONST.BASE_THRESHOLD){const gate=clamp(Number(threshold),10,100),uncat=clamp(Number(base),10,100),cat=clamp(Math.min(gate,CONST.CAT_THRESHOLD),10,100);const points=[];for(let i=0;i<=40;i++){const x=i/40;const shoulder=0.22+0.03*Math.sin(x*Math.PI);const peak=Math.exp(-((x-.5)**2)/.018);const product=x>.68?-.08:0;points.push({x,y:shoulder+.62*peak+product});}return {points,gate,uncat,cat};}
+function energyProfileData(threshold,base=CONST.BASE_THRESHOLD){const gate=clamp(Number(threshold),10,100),uncat=clamp(Number(base),10,100),cat=clamp(Math.min(gate,CONST.CAT_THRESHOLD),10,100);
+  const profile=barrier=>{const peak=barrier/100,points=[];for(let i=0;i<=40;i++){const x=i/40;const shoulder=0.22+0.03*Math.sin(x*Math.PI);const crest=Math.exp(-((x-.5)**2)/.018);const product=x>.68?-.08:0;points.push({x,y:shoulder+(peak-shoulder)*crest+product});}return points;};
+  return {points:profile(gate),catalystPoints:profile(cat),gate,uncat,cat};}
 const API={CONST,seeded,speedScale,makeParticles,surfaceLayout,exposedSites,initialState,advanceState,metricWindow,surfaceCounts,simulateWindow,statsFor,longRunStats,relativeSpeed,ratio,energyProfileData};
 if(typeof window!=='undefined')window.REACTION_RATES=API;if(typeof module!=='undefined')module.exports=API;
 
@@ -81,8 +83,8 @@ function drawTrace(){const c=$('s1-trace');if(!c)return;const LW=900,LH=200;cons
 function drawEnergy(){const c=$('s4-energy');if(!c||!sims.s4)return;const LW=900,LH=220;const {ctx,k}=fitCanvas(c,LW,LH);const px=v=>v/k;ctx.clearRect(0,0,LW,LH);ctx.fillStyle='#0d1621';ctx.fillRect(0,0,LW,LH);
   const L=px(56),R=LW-px(18),T=px(22),B=LH-px(38),w=R-L,h=B-T;const d=energyProfileData(sims.s4.threshold);const X=x=>L+x*w;const Y=e=>B-(e+0.16)/(1.08)*h;
   ctx.strokeStyle='#2c3b50';ctx.lineWidth=px(1);ctx.beginPath();ctx.moveTo(L,T);ctx.lineTo(L,B);ctx.lineTo(R,B);ctx.stroke();ctx.fillStyle='#9aaabd';ctx.font=px(12)+'px system-ui';ctx.fillText(t('energyAxisX'),R-px(110),B+px(24));ctx.save();ctx.translate(px(14),(T+B)/2);ctx.rotate(-Math.PI/2);ctx.fillText(t('energyAxisY'),0,0);ctx.restore();
-  const drawProfile=(color,dash,barrier,label,offset)=>{ctx.setLineDash(dash.map(px));ctx.strokeStyle=color;ctx.lineWidth=px(3);ctx.beginPath();d.points.forEach((p,i)=>i?ctx.lineTo(X(p.x),Y(p.y)):ctx.moveTo(X(p.x),Y(p.y)));ctx.stroke();ctx.setLineDash([]);ctx.strokeStyle=color;ctx.lineWidth=px(1.5);ctx.setLineDash([px(6),px(5)]);ctx.beginPath();ctx.moveTo(L,Y(barrier/100));ctx.lineTo(R,Y(barrier/100));ctx.stroke();ctx.setLineDash([]);ctx.fillStyle=color;ctx.font='bold '+px(12)+'px system-ui';ctx.fillText(label,R-px(150),T+px(offset));};
-  drawProfile('#ff7a93',[],d.gate,t('energyUncat'),12);drawProfile('#7ee2a8',[5,4],d.cat,t('energyCat'),30);
+  const drawProfile=(color,dash,barrier,label,offset,points)=>{ctx.setLineDash(dash.map(px));ctx.strokeStyle=color;ctx.lineWidth=px(3);ctx.beginPath();points.forEach((p,i)=>i?ctx.lineTo(X(p.x),Y(p.y)):ctx.moveTo(X(p.x),Y(p.y)));ctx.stroke();ctx.setLineDash([]);ctx.strokeStyle=color;ctx.lineWidth=px(1.5);ctx.setLineDash([px(6),px(5)]);ctx.beginPath();ctx.moveTo(L,Y(barrier/100));ctx.lineTo(R,Y(barrier/100));ctx.stroke();ctx.setLineDash([]);ctx.fillStyle=color;ctx.font='bold '+px(12)+'px system-ui';ctx.fillText(label,R-px(150),T+px(offset));};
+  drawProfile('#ff7a93',[],d.gate,t('energyUncat'),12,d.points);drawProfile('#7ee2a8',[5,4],d.cat,t('energyCat'),30,d.catalystPoints);
   ctx.fillStyle='#9aaabd';ctx.font=px(11)+'px system-ui';ctx.fillText(t('energyReactants'),L+px(4),B-px(8));ctx.fillText(t('energyProducts'),R-px(64),B-px(8));
 }
 // Comparison values depend only on constants and slider values: computed off the frame loop, then cached.

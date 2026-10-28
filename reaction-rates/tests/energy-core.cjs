@@ -9,6 +9,7 @@ assert.equal(high.cat, 60);
 assert.equal(catalysed.gate, 60);
 assert.equal(catalysed.cat, 60, 'catalyst cannot raise the current gate');
 assert.ok(high.points.some(p => p.y > 0.7), 'profile contains a visible transition-state peak');
+assert.ok(Math.max(...high.catalystPoints.map(p => p.y)) < Math.max(...high.points.map(p => p.y)), 'catalysed profile lowers the peak');
 assert.ok(high.points.at(-1).y < high.points[20].y, 'products sit lower than the transition state');
 const low = api.energyProfileData(35);
 assert.equal(low.cat, 35);
