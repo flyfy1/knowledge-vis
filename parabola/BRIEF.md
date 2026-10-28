@@ -26,3 +26,8 @@
 ## 交付
 - 自查：node --check、键集比对、方程格式断言、交点三情形断言、无头浏览器实测（含组合路径与 390）。
 - 报告 ~/workspace/parabola-lab/build-report.md。
+
+## Codex intersection bridge — 2026-10-28
+
+Step 3 now asks learners to compare the vertex with the x-axis before moving h/k, making the
+2/1/0 intersection outcomes follow directly from the parameter position.
