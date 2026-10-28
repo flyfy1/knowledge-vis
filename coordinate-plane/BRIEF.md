@@ -98,3 +98,7 @@
 ## 交付
 - 自查：node --check、双语键集/占位符比对、fmtCoord 与 quadrant 断言（上列 7 类 + 13 例）、step1 候选数断言、无头浏览器实测（冷走复述 + 组合路径：拖点×切语言、答题×改语言、动画中改参、390）。
 - 报告：~/workspace/coordinate-plane-lab/build-report.md（构建报告，含 step3 换位消隐/同步二选一的实际选择与理由）。
+
+## Codex coordinate-swap bridge — 2026-10-29
+
+Step 3 now isolates one coordinate at a time: changing x moves the swap twin's y, changing y moves its x, and only x=y leaves the two points together. The relationship is observable before the learner names the diagonal exception.
