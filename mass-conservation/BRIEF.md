@@ -51,3 +51,8 @@ conservation distinction explicit.
 
 Step 2 now frames an intentionally changed coefficient as a diagnostic: atom counts and the
 balance warn together, then both recover when the equation is balanced.
+
+## Codex boundary summary bridge — 2026-10-28
+
+The final step now gives one boundary question for explaining apparent mass changes: what gas left,
+or what entered from air?
