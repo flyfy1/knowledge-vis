@@ -1056,4 +1056,13 @@ window.KNOWLEDGE_PAGES = [
     category: "physics", stage: "junior", status: "live", path: "momentum-collision/"
   },
 
+
+  {
+    slug: "network-flow",
+    title: { zh: "网络流 · 一封消息的旅程", en: "Network Flow · A Message’s Journey" },
+    desc: { zh: "从分包、延迟与带宽，到路由、TCP 握手和拥塞控制：一封消息如何穿过不可靠的网络，逐层拼成可靠的字节流。", en: "From packetization, latency and bandwidth to routing, TCP handshakes and congestion control: watch an unreliable network become a reliable byte stream layer by layer." },
+    tags: [{ zh: "计算机网络", en: "Computer Networks" }, { zh: "TCP", en: "TCP" }, { zh: "拥塞控制", en: "Congestion Control" }],
+    category: "computing", stage: "university", status: "live", path: "network-flow/"
+  },
+
 ];
