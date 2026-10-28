@@ -41,3 +41,8 @@ and asks learners to compare the latter with x².
 
 Step 4 now connects the three routes to the same accumulation: geometric estimate, squeezed error,
 and exact antiderivative evaluation.
+
+## Codex exact-value bridge — 2026-10-28
+
+Step 4 now connects the three routes to the same accumulation: geometric estimate, squeezed error,
+and exact antiderivative evaluation.
