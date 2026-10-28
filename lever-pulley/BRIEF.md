@@ -43,3 +43,8 @@
 ## 交付
 - 自查：node --check、双语键集/占位符比对、上文「标准断言值」全组、滑轮段数图文一致断言、无头浏览器实测（含组合路径、答题锁定、切语言×状态、390 宽、console）。
 - 构建报告 ~/workspace/lever-pulley-lab/build-report.md。
+
+## Codex rope-count bridge — 2026-10-28
+
+Step 4 now sequences rope counting before reading F=G/n, then ties the force gain to the reduced
+lift for the same pulled length.
