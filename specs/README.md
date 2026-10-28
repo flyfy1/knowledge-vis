@@ -96,3 +96,4 @@ that existing pages have completed that process.
 - [Convolution S2 index/support contract](convolution-support.md): shared selected output, reversed/shifted indices, zero extension, decimal fidelity and passive reading recovery.
 - [Acid–base common-ion composition chart](acid-base-composition.md): same-state before/after composition and pH comparison for the weak-acid common-ion control.
 - [Coordinate-plane step 6 midpoint, components and distance](coordinate-plane-distance.md): same-state vector decomposition, midpoint, distance and slope with bilingual drag/slider controls.
+- [Linguistics phonology visual chain](linguistics-phonology.md): articulation features, minimal pairs, syllable slots and contextual voicing assimilation with bilingual controls.
