@@ -56,6 +56,6 @@ Safari, screen-reader speech and independent learner study remain outside this s
 
 ## Local handoff
 
-- Implementation commit: pending until the working tree is verified.
+- Implementation commit: `9dc17374` (`Bridge frozen bubble paper conditions`).
 - Push/deployment: intentionally pending.
 - Built-By attribution follows the repository rule; exact task model identifier is unavailable.
