@@ -33,3 +33,9 @@
 ## 交付
 - 自查证据：node --check、键集/占位符比对输出、第 3 步总和守恒（任意切点 a×b=(a1+a2)×b 数值断言一组）、第 4 步 12×13=156 四块和断言。
 - 报告写 ~/workspace/area-model-lab/build-report.md：做了什么、自查结果、截图（有无头浏览器条件则附桌面+390 各一，没有就注明未附及替代验证）。
+
+## Codex teaching bridge — 2026-10-28
+
+Step 2 now foregrounds the invariant while the cut moves: one block grows, the other shrinks,
+but their sum remains the whole area. This connects the slider motion to the distributive-law
+conclusion without changing the area calculations.
