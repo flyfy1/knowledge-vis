@@ -84,6 +84,8 @@ const STR = {
     "nav4": "4 换一段弧",
     "s4k": "第 4 步",
     "s4t": "换一段弧：角跳成它的补角",
+    "s4bridge": "先看优弧上的角，再把 P 拖过 A/B 换到劣弧：同一条弦不变，但两段弧上的角会互补。",
+    "s4bridge": "Start with the angle on the major arc, then drag P across A/B to the minor arc: the chord stays fixed, but the two arc angles become supplementary.",
     "s4e": "这一步要回答：P 跑到另一段弧（劣弧）上去，还是同一个角吗？A、B 不动，拖 P 跨过 A 或 B。跨界一瞬间，P「对着」的弧换成了另一段，图上高亮随之互换；影子点 P′ 停在对面那段弧上同步显示。先把名词补齐：大于半圆的那段弧叫<strong>优弧</strong>；大于 180° 的角叫<strong>优角</strong>（reflex angle）；两个角的和是 180°，就说它们<strong>互补</strong>。预期：角会从 40° 跳成 140°，但两角之和恒为 180°。第 2 步留的减法版证明在这里回收一句：P 在劣弧上时辅助线拆出的是差，作图法换成相减，∠AOB（优角）= 2∠APB 仍然成立。",
     "nav5": "5 自测",
     "s5k": "第 5 步",
