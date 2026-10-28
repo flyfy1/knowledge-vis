@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>图算法 · 让边带你走</title>
+  <link rel="stylesheet" href="style.css?v=g1">
+  <script src="i18n.js?v=g1"></script>
+  <script src="app.js?v=g1" defer></script>
+</head>
+<body>
+  <header class="site-head">
+    <div class="head-main">
+      <p class="backline"><a href="/" data-i18n="back">← 知识索引</a></p>
+      <h1 data-i18n="pageTitle">图算法 · 让边带你走</h1>
+      <p class="tagline" data-i18n="tagline">BFS 把“先到的层”放进队列，DFS 把“还没走完的路”压进栈。编辑一条边，亲眼看见 frontier 如何改变。</p>
+    </div>
+    <div class="lang-toggle" id="langToggle" role="group" aria-label="Language">
+      <button type="button" data-lang="zh">中</button>
+      <button type="button" data-lang="en">EN</button>
+    </div>
+  </header>
+
+  <nav class="step-nav" id="stepNav" aria-label="steps">
+    <a class="nav-step" href="#step0" data-nav="0" data-i18n="nav0">0 图是地图</a>
+    <a class="nav-step" href="#step1" data-nav="1" data-i18n="nav1">1 队列与栈</a>
+    <a class="nav-step" href="#step2" data-nav="2" data-i18n="nav2">2 改一条边</a>
+    <a class="nav-step" href="#step3" data-nav="3" data-i18n="nav3">3 复杂度</a>
+    <a class="nav-step" href="#step4" data-nav="4" data-i18n="nav4">4 收束</a>
+  </nav>
+
+  <main>
+    <section class="step" id="step0" data-step="0">
+      <div class="step-inner">
+        <p class="step-kicker" data-i18n="s0k">第 0 步 · 钩子</p>
+        <h2 data-i18n="s0t">先把图当成一张可改的地图</h2>
+        <p class="explain" data-i18n-html="s0e">节点是地点，边是可以走的路。拖动节点改变布局；点击边或用下方按钮打开/关闭一条路。你会在下一步看到：<strong>同一张图，选择不同的容器，就会得到不同的走法。</strong></p>
+        <div class="stage graph-stage"><canvas id="graph-canvas" height="420" aria-label="editable graph"></canvas></div>
+        <div class="controls edit-controls">
+          <label><span data-i18n="fromLab">起点</span><select id="fromNode"></select></label>
+          <label><span data-i18n="toLab">终点</span><select id="toNode"></select></label>
+          <button class="btn" id="toggleEdge" data-i18n="toggleEdge">切换这条边</button>
+          <button class="btn" id="resetGraph" data-i18n="resetGraph">恢复示例图</button>
+        </div>
+        <p class="readout" id="graphReadout"></p>
+        <p class="hint" data-i18n-html="s0hint">小提示：边是无向的。点击任意节点可把它设为起点；拖动只改变画面位置，不会改变算法数据。</p>
+      </div>
+    </section>
+
+    <section class="step" id="step1" data-step="1">
+      <div class="step-inner">
+        <p class="step-kicker" data-i18n="s1k">第 1 步 · 核心动作</p>
+        <h2 data-i18n="s1t">队列让 BFS 一层一层，栈让 DFS 一条路走到底</h2>
+        <p class="explain" data-i18n-html="s1e">每次只做一个可观察动作：从容器取出一个节点，再把尚未访问的邻居放进去。<strong>队列 FIFO</strong> 保证先发现的层先处理；<strong>栈 LIFO</strong> 会把最新的分支先推到底。</p>
+        <div class="btn-row" role="group" aria-label="algorithm">
+          <div class="seg-toggle" id="algoToggle">
+            <button type="button" data-algo="bfs" class="active" data-i18n="bfs">BFS · 队列</button>
+            <button type="button" data-algo="dfs" data-i18n="dfs">DFS · 栈</button>
+          </div>
+          <button class="btn primary" id="stepOnce" data-i18n="stepOnce">走一步</button>
+          <button class="btn" id="play" data-i18n="play">连续播放</button>
+          <button class="btn" id="resetRun" data-i18n="resetRun">重置遍历</button>
+        </div>
+        <div class="stage graph-stage"><canvas id="run-canvas" height="420" aria-label="graph traversal"></canvas></div>
+        <div class="state-grid">
+          <div class="state-box"><h3 data-i18n="containerTitle">当前容器</h3><div id="containerState" class="chips"></div></div>
+          <div class="state-box"><h3 data-i18n="visitedTitle">已访问顺序</h3><div id="visitedState" class="chips"></div></div>
+        </div>
+        <p class="readout" id="runReadout"></p>
+        <p class="hint" data-i18n-html="s1hint">观察同一个节点何时进入队列/栈，何时从容器取出。真正改变顺序的是容器规则，不是“BFS 更聪明”这句口号。</p>
+      </div>
+    </section>
+
+    <section class="step" id="step2" data-step="2">
+      <div class="step-inner">
+        <p class="step-kicker" data-i18n="s2k">第 2 步 · 因果实验</p>
+        <h2 data-i18n="s2t">只改一条边，frontier 就会改写</h2>
+        <p class="explain" data-i18n-html="s2e">先重置遍历，再切换一条边，然后继续单步。把注意力放在<strong>第一个不同的容器状态</strong>：它就是结构改动传到算法行为的因果链。</p>
+        <div class="compare">
+          <div class="compare-card"><span class="label" data-i18n="edgeHint">当前改动</span><strong id="edgeChange">—</strong></div>
+          <div class="compare-card"><span class="label" data-i18n="frontierHint">下一批 frontier</span><strong id="frontierChange">—</strong></div>
+          <div class="compare-card"><span class="label" data-i18n="goalHint">实验目标</span><strong data-i18n="goalText">找到第一次分叉</strong></div>
+        </div>
+        <div class="stage mini-stage"><canvas id="causal-canvas" height="220"></canvas></div>
+        <p class="readout" id="causalReadout"></p>
+        <p class="hint" data-i18n-html="s2hint">恢复示例图即可回到固定基线；你可以反复切换同一条边，比较 BFS 和 DFS 的第一处差异。</p>
+      </div>
+    </section>
+
+    <section class="step" id="step3" data-step="3">
+      <div class="step-inner">
+        <p class="step-kicker" data-i18n="s3k">第 3 步 · 记账</p>
+        <h2 data-i18n="s3t">复杂度来自“每个节点和每条边被看几次”</h2>
+        <p class="explain" data-i18n-html="s3e">用邻接表实现时，BFS 和 DFS 都会把每个节点入队/入栈一次，并扫描每条边的邻接项一次。于是工作量随 <strong>V + E</strong> 增长；容器不同，复杂度相同，顺序不同。</p>
+        <div class="formula-box"><p class="formula big">T(V,E) = O(V + E)</p><p class="formula-note" data-i18n="formulaNote">V：节点数 · E：边数 · 无向图的邻接表会看到 2E 个邻接项</p></div>
+        <div class="metrics" id="metrics"></div>
+        <div class="bar-chart" id="barChart" aria-label="complexity bars"></div>
+        <p class="hint" data-i18n-html="s3hint">把一条边关掉，E 会减 1（无向图的邻接项减 2），但仍然是同一个增长形状。复杂度描述的是规模趋势，不是这一次运行的秒表。</p>
+      </div>
+    </section>
+
+    <section class="step" id="step4" data-step="4">
+      <div class="step-inner">
+        <p class="step-kicker" data-i18n="s4k">第 4 步 · 收束</p>
+        <h2 data-i18n="s4t">把选择写成一句可复用的规则</h2>
+        <p class="explain" data-i18n-html="s4e">需要“离起点几步远”的层次答案时，选 BFS；需要沿着一条分支深入、做回溯或找连通块时，选 DFS。两者都依赖<strong>已访问集合</strong>，所以不会在环里无限打转。</p>
+        <div class="finale"><strong data-i18n="finalRule">可迁移规则：</strong><span data-i18n="finalText">容器决定顺序，已访问集合保证终止，邻接表决定 O(V+E)。先画 frontier，再写代码。</span></div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-foot" data-i18n="foot">图算法 · 可编辑的小图，能复算的每一步</footer>
+</body>
+</html>

@@ -22,6 +22,7 @@
 window.KNOWLEDGE_CATEGORIES = [
   { id: "physics", name: { zh: "物理与电路", en: "Physics & Circuits" } },
   { id: "signal",      name: { zh: "信号与系统", en: "Signals & Systems" } },
+  { id: "engineering", name: { zh: "工程与控制", en: "Engineering & Control" } },
   { id: "probability", name: { zh: "概率与统计", en: "Probability & Statistics" } },
   { id: "computing",   name: { zh: "计算与智能", en: "Computing & AI" } },
   { id: "math",        name: { zh: "数学基础",   en: "Mathematical Foundations" } },
@@ -981,5 +982,69 @@ window.KNOWLEDGE_PAGES = [
     stage: "senior",
     status: "live",
     path: "reaction-rates/"
-  }
+  },
+  {
+    slug: "bayes-diagnostics",
+    title: { zh: "贝叶斯诊断 · 阳性结果说明什么？", en: "Bayes Diagnostics · What Does a Positive Mean?" },
+    desc: { zh: "把先验、灵敏度、特异度和后验放进 1,000 人频数树，亲眼看见阳性结果的分母如何改变。", en: "Tune prevalence, sensitivity and specificity in a 1,000-person frequency tree and see how a positive result changes the denominator." },
+    tags: [{ zh: "贝叶斯推断", en: "Bayesian Inference" }, { zh: "诊断测试", en: "Diagnostic Testing" }, { zh: "条件概率", en: "Conditional Probability" }],
+    category: "probability", stage: "senior", status: "live", path: "bayes-diagnostics/"
+  },
+  {
+    slug: "population-ecology",
+    title: { zh: "种群生态学 · 增长如何被反馈改变", en: "Population Ecology · Growth Reshaped by Feedback" },
+    desc: { zh: "从内禀增长率 r 和承载力 K 走到捕食者—猎物耦合，拖动参数，追踪资源反馈如何把增长改写成波动。", en: "Move from intrinsic rate r and carrying capacity K to predator–prey coupling, then trace how resource feedback reshapes growth into waves." },
+    tags: [{ zh: "逻辑斯蒂增长", en: "Logistic Growth" }, { zh: "承载力", en: "Carrying Capacity" }, { zh: "捕食者—猎物", en: "Predator–Prey" }],
+    category: "biology", stage: "senior", status: "live", path: "population-ecology/"
+  },
+  {
+    slug: "feedback-control",
+    title: { zh: "反馈控制 · 先看差多少，再决定推多少", en: "Feedback Control · See the Error, Then Act" },
+    desc: { zh: "从设定值与误差走到 P、I、D：调参时同时看响应、超调、稳态误差和噪声代价。", en: "Trace setpoint and error into P, I and D, then tune while watching response, overshoot, steady-state error and noise cost." },
+    tags: [{ zh: "P/I/D", en: "P/I/D" }, { zh: "动态系统", en: "Dynamic Systems" }, { zh: "稳定性", en: "Stability" }],
+    category: "engineering", stage: "senior", status: "live", path: "feedback-control/"
+  },
+  {
+    slug: "genetics-probability",
+    title: { zh: "遗传与概率 · 从配子到表型", en: "Genetics & Probability · From Gametes to Phenotypes" },
+    desc: { zh: "从等位基因分离到 Punnett 方格、独立分配和条件概率，亲手把 3:1 与 9:3:3:1 拆成一条可追踪的因果链。", en: "Trace segregation, Punnett squares, independent assortment and conditional probability until 3:1 and 9:3:3:1 become causal, recomputable outcomes." },
+    tags: [{ zh: "孟德尔遗传", en: "Mendelian Genetics" }, { zh: "Punnett 方格", en: "Punnett Squares" }, { zh: "条件概率", en: "Conditional Probability" }],
+    category: "probability", stage: "senior", status: "live", path: "genetics-probability/"
+  },
+  {
+    slug: "supply-demand",
+    title: { zh: "供需与市场均衡 · 价格线如何相交", en: "Supply & Demand · Where the Market Clears" },
+    desc: { zh: "从 Qd = Qs 的交点出发，拖动税、补贴和曲线斜率，追踪楔子、弹性、剩余与无谓损失。", en: "Start at Qd = Qs, then tune taxes, subsidies and curve slopes to trace wedges, elasticity, surplus and deadweight loss." },
+    tags: [{ zh: "市场均衡", en: "Market Equilibrium" }, { zh: "弹性", en: "Elasticity" }, { zh: "剩余", en: "Surplus" }],
+    category: "math", stage: "university", status: "live", path: "supply-demand/"
+  },
+  {
+    slug: "graph-algorithms",
+    title: { zh: "图算法 · 让边带你走", en: "Graph Algorithms · Let Edges Lead" },
+    desc: { zh: "在一张可编辑的小图上对比 BFS 队列与 DFS 栈，切换一条边，观察 frontier 和 O(V+E) 如何同步改变。", en: "Compare BFS queues and DFS stacks on an editable graph; toggle one edge and watch the frontier and O(V+E) accounting update together." },
+    tags: [{ zh: "BFS", en: "BFS" }, { zh: "DFS", en: "DFS" }, { zh: "复杂度", en: "Complexity" }],
+    category: "computing", stage: "university", status: "live", path: "graph-algorithms/"
+  },
+  {
+    slug: "membrane-transport",
+    title: { zh: "膜运输 · 梯度如何变成通量", en: "Membrane Transport · From Gradient to Flux" },
+    desc: { zh: "拖动内外浓度、通透性和 ATP 泵，追踪梯度如何变成净通量、渗透压和细胞体积变化。", en: "Tune inside/outside concentration, permeability and ATP pumping to trace gradients into net flux, osmosis and cell-volume change." },
+    tags: [{ zh: "扩散", en: "Diffusion" }, { zh: "渗透", en: "Osmosis" }, { zh: "主动运输", en: "Active Transport" }],
+    category: "biology", stage: "senior", status: "live", path: "membrane-transport/"
+  },
+  {
+    slug: "orbital-motion",
+    title: { zh: "轨道运动 · 椭圆、速度与凌日", en: "Orbital Motion · Ellipses, Speed & Transits" },
+    desc: { zh: "把偏心率、轨道相位、速度变化和凌日对齐放在同一张可拖动因果图中。", en: "Put eccentricity, orbital phase, speed variation and transit alignment on one draggable causal map." },
+    tags: [{ zh: "开普勒定律", en: "Kepler's Laws" }, { zh: "轨道速度", en: "Orbital Speed" }, { zh: "凌日", en: "Transits" }],
+    category: "earth", stage: "university", status: "live", path: "orbital-motion/"
+  },
+  {
+    slug: "geology-plate-tectonics",
+    title: { zh: "板块构造 · 边界如何留下证据", en: "Plate Tectonics · How Boundaries Leave Evidence" },
+    desc: { zh: "区分张裂、汇聚和转换边界，再把相对运动连到洋脊、海沟与地震证据。", en: "Distinguish divergent, convergent and transform boundaries, then connect relative motion to ridges, trenches and earthquake evidence." },
+    tags: [{ zh: "板块边界", en: "Plate Boundaries" }, { zh: "地质时间", en: "Geologic Time" }, { zh: "地震证据", en: "Earthquake Evidence" }],
+    category: "earth", stage: "senior", status: "live", path: "geology-plate-tectonics/"
+  },
+
 ];
