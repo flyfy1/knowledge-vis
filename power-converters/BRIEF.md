@@ -44,3 +44,17 @@ Current capacitor-rate implementation source:4791138bb6bf0e89dbb665c9268784e63b7
 [Current incremental contract](../specs/atlas-volt-second.md) supersedes earlier unchanged-inductor-display statements only for this explicitBuckview. Preserve original model.js,flow.js,sharedplot(),Boost and capacitor view. One pure area companion reads existingBuckparameters, yields clippedconstantsegments/signedVs andΔi, not newcurrentstate. Existingseek/play owns time; optionallocalpresets dispatchsamehandler andkeepfocus. Periodnet0 meanscurrentreturnsinitialnonzero valley, notzero. Definevoltagepassivepolarity,Vµs→Vs conversion andvoltagearea≠energy. Existingsteadyassumption nottransientsimulation. Use sameCodexsourceeditioncontract and scopedtests.
 
 Current Buck voltage-area implementation source:4f1992891a6996c1aaffedb78053ad2b538ebc7d. Static revised-edition source links this accepted increment; prior capacitor source4791138b and original flow source24a3d727 remain historical contributions.
+
+## Codex feedback iteration — 2026-10-28
+
+Step 0 keeps a reserved, bilingual feedback line below the 12 W readout. Moving the output
+voltage slider now states the causal observation in plain language: lower voltage needs more
+current at fixed power, higher voltage needs less, and 12 V corresponds to 1 A. The line is a
+polite live region for this learner-controlled change; Buck/Boost playback readouts remain
+quiet to avoid per-frame announcements. Its mobile height is reserved so the feedback does
+not move deep-linked steps or disrupt the sticky step navigation.
+
+Acceptance: at 320, 390, 768 and 1440 px in both locales, changing 12 → 6 → 24 V updates the
+localized direction sentence and preserves the `#step4` anchor position and zero horizontal
+overflow. The 12 W model, all converter paths, numerical state and existing reset/navigation
+contracts remain unchanged.

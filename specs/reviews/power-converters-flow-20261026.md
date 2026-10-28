@@ -25,3 +25,19 @@ Independent reviewer `/root/power_review` performed a cold rendered walkthrough 
 The reviewer actually operated and inspected 390px English, 320px Chinese and desktop scenes. Buck OFF retained the diode loop while stored energy fell; Boost ON isolated capacitor/load flow; held-time duty edits changed topology; charging appeared within Buck ON as expected. Final inspected screenshots and independent scripts are in `power-converters-flow-evidence-20261026/`. Scripts target the local review port 18791. Automated suites accept BASE_URL; screenshot matrices accept REVIEW_OUTPUT_DIR. Use installed Playwright through NODE_PATH if needed.
 
 Limits: browser emulation in Chrome, not a physical phone or screen-reader session. No real electronics, measured mobile frame-rate claim, startup/transient solver, capacitor voltage integration, discontinuous conduction, losses or feedback model. No push or deployment. Production release and shared attribution remain with the integration task.
+
+## Codex feedback iteration — 2026-10-28
+
+The existing cold-start flow answered the step-0 question through changing numbers, but the
+learner had to infer the direction. The page now adds a short bilingual sentence beneath the
+12 W readout: at lower voltage, current rises; at higher voltage, current falls; 12 V is 1 A.
+The sentence is updated only by the output-voltage slider and is exposed as a polite live
+region. Converter playback remains outside live announcements so a running trace cannot flood
+assistive output. A reserved mobile line prevents the new sentence from shifting `#step4` after
+deep-link navigation.
+
+Scope is page-owned `app.js`/`style.css` plus the existing browser test. `model.js`, `flow.js`,
+`voltage-area.js`, topology, timing and routes are unchanged. Acceptance adds English/Chinese
+6 V and 24 V direction checks, live-region semantics, stable `#step4` framing and the existing
+320/390/768/1440, flow, lifecycle, accessibility and responsive suites. No credentials,
+external runtime assets, push or deployment are involved.
