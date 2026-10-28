@@ -30,3 +30,9 @@
 ## 注册建议（Alberto 执行）
 - title zh「质量守恒 · 原子一个都不丢」/ en "Mass Conservation · Not a Single Atom Lost"；tags：原子重排 / Atom Rearrangement、配平 / Balancing、气体逸出 / Escaping Gas；category chemistry，stage junior。
 - CONCEPT-MAP 拟行：#step1 原子重排计数、#step3 敞口逸出。
+
+## Codex teaching bridge — 2026-10-28
+
+Step 3 now sequences the open-system experiment in a bilingual hint: open the cup to see the
+CO₂ leave and the reading fall, then attach the collection balloon to return that same gas and
+restore the reading. The conservation model and controls remain unchanged.
