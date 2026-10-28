@@ -45,6 +45,10 @@ gain, model mapping, lifecycle and automatic-play policy are unchanged.
 - Updated `tests/audio-browser.cjs` — pass locally and against `https://visual.integ.life`:
   initial idle status, native user-gesture playback, lifecycle/fallback matrix, mobile controls,
   and JavaScript-disabled status/control visibility all pass.
+- The scoped LTI provenance check — pass: the static header, inventory entry and implementation
+  commit all match. The broader `tests/page-provenance-core.cjs` remains a pre-existing repository
+  blocker: it hard-codes 23 pages while `page-provenance.json` already contains 26 (`26 !== 23`)
+  before this iteration; unrelated inventory entries were left untouched.
 - `git diff --check` — pass.
 
 The browser evidence uses installed desktop Chrome and mobile viewport/touch emulation; it does
@@ -53,6 +57,6 @@ speech or independent learning outcomes.
 
 ## Local handoff
 
-- Implementation commit: pending until the working tree is verified.
+- Implementation commit: `295e8349` (`Clarify LTI audio fallback`).
 - Push/deployment: intentionally pending until local acceptance is complete.
 - Built-By attribution follows the repository rule; exact task model identifier is unavailable.

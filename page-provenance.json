@@ -234,12 +234,12 @@
     },
     "lti": {
       "developer": "Codex",
-      "edition": "codex-lti-audio-20261026",
+      "edition": "codex-lti-audio-20261028",
       "kind": "revised",
-      "sourceRevision": "78c9aaab96d0cee3efde398d3d73ad804e408127",
+      "sourceRevision": "295e83496a6870dba4a388fc20515ba59a63f2f7",
       "scope": {
-        "zh": "第2步同模型输入与处理后试听、音量与音频生命周期",
-        "en": "Step2 same-model input/output audition, volume and audio lifecycle"
+        "zh": "第2步同模型输入与处理后试听、音量与音频生命周期；无脚本回退状态",
+        "en": "Step2 same-model input/output audition, volume and audio lifecycle; script-free fallback state"
       },
       "originalAuthorship": "not asserted; prior contributions retained"
     },
