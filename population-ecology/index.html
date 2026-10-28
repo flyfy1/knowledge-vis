@@ -6,6 +6,7 @@
   <title>种群生态学 · 从增长到反馈</title>
   <meta name="description" content="用 logistic growth、承载力与捕食反馈理解种群数量如何变化。">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../page-provenance.css">
   <script src="app.js" defer></script>
 </head>
 <body>
@@ -15,6 +16,11 @@
       <p class="eyebrow" data-i18n="eyebrow">生态学 × 动力系统</p>
       <h1 data-i18n="title">种群生态学：增长如何被反馈改变</h1>
       <p class="tagline" data-i18n="tagline">先让种群增长，再把有限资源和捕食者放回系统。拖动参数，观察“多一点个体”怎样改变下一刻的增长。</p>
+      <details class="page-provenance" data-developer="Codex" data-edition="codex-phase-plane-20261029" data-source-revision="c21cdb49">
+        <summary><span class="provenance-zh" lang="zh-CN">Codex 开发 · 相图增强</span><span class="provenance-en" lang="en">Developed with Codex · Phase-plane edition</span></summary>
+        <p><span class="provenance-zh" lang="zh-CN">本次把捕食—猎物时间轨迹折成相图，补上起点、终点和文本读数。</span><span class="provenance-en" lang="en">This edition folds the predator–prey time trace into a phase plane with start/end markers and a text readout.</span></p>
+        <p><span class="provenance-zh" lang="zh-CN">源码基线：</span><span class="provenance-en" lang="en">Source baseline: </span><code>c21cdb49</code></p>
+      </details>
     </div>
     <div class="lang-toggle" id="langToggle"><button type="button" data-lang="zh">中</button><button type="button" data-lang="en">EN</button></div>
   </header>
@@ -72,6 +78,12 @@
         <div class="stage"><canvas id="feedbackCanvas" height="310" aria-label="predator prey feedback chart"></canvas></div>
         <div class="legend"><span><i class="dot prey"></i><span data-i18n="prey">猎物 N</span></span><span><i class="dot predator"></i><span data-i18n="predator">捕食者 P</span></span></div>
         <p class="readout" id="feedbackReadout" aria-live="polite"></p>
+        <div class="phase-card">
+          <h3 data-i18n="phaseTitle">把时间曲线折成相图</h3>
+          <p class="phase-explain" data-i18n="phaseExplain">同一组数据换一个坐标系：横轴是猎物 N，纵轴是捕食者 P。轨迹绕圈，说明两个种群的峰值错开，而不是同时涨跌。</p>
+          <div class="stage phase-stage"><canvas id="phaseCanvas" height="280" aria-label="prey predator phase plane"></canvas></div>
+          <p class="readout" id="phaseReadout" aria-live="polite"></p>
+        </div>
         <p class="hint" data-i18n-html="s2hint"><strong>注意：</strong>这不是“捕食者越多，猎物越少”的静态答案；反馈会把下一时刻的两个数量一起改变。</p>
         <a class="next-link" href="#step3" data-i18n="next3">继续：做一次误解检查 →</a>
       </div>
