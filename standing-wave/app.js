@@ -32,6 +32,19 @@ function spatialInfo(x,lam){
 }
 function ampRope(x, lam) { return spatialInfo(x,lam).amplitude; }
 function classifyPt(x, lam) { return spatialInfo(x,lam).kind; }
+/* Distance-to-landmark probe used by Step 1: return the nearest node and
+   antinode in the same coordinate system as the canvas. Keeping the
+   candidates analytic makes the readout a measurement of the plotted model,
+   not a rounded visual guess. */
+function nearestLandmarks(x, lam) {
+  if (![x, lam].every(Number.isFinite) || lam <= 0) throw new RangeError('Invalid phase landmark');
+  const nearest = (offset, period) => {
+    const n = Math.round((x - offset) / period);
+    const position = offset + n * period;
+    return { position, distance: Math.abs(x - position) };
+  };
+  return { node: nearest(lam / 4, lam / 2), antinode: nearest(0, lam / 2) };
+}
 /* 弦：入射 + 固定端反射（相位翻转 π → 取负） */
 function yInc(tt, x, lam) { return AMP * Math.sin(omega() * tt - waveK(lam) * x); }
 function yRefl(tt, x, lam) { return -AMP * Math.sin(omega() * tt + waveK(lam) * x); }
@@ -289,11 +302,13 @@ function render1() {
 }
 function readout1() {
   const st=S.s1,info=spatialInfo(st.px,st.lam),cls=info.kind;
+  const landmarks = nearestLandmarks(st.px, st.lam);
   ro('s1-readout',t('s1ro',{x:fmtBoundary(st.px),xr:fmtBoundary(st.px/st.lam),amp:fmtBoundary(info.amplitude),meas:fmtBoundary(measuredAmp('s1'))}));
   ro('s1-cls',t(cls==='node'?'clsNode':cls==='anti'?'clsAnti':'clsGen',{amp:fmtBoundary(info.amplitude)}));
   $('s1-cls').style.color=cls==='node'?pink:cls==='anti'?green:muted;
   ro('s1-phase',t(info.phase===null?'phaseNode':info.phase===0?'phaseSame':'phaseOpposite',{c:fmtBoundary(info.coefficient)}));
   ro('s1-now',t('phaseValues',{time:fmtBoundary(st.t),p:fmtBoundary(ySumRope(st.t,st.px,st.lam)),q:fmtBoundary(ySumRope(st.t,0,st.lam))}));
+  ro('s1-spacing',t('phaseSpacing',{node:fmtBoundary(landmarks.node.distance),antinode:fmtBoundary(landmarks.antinode.distance),period:fmtBoundary(st.lam/2)}));
 }
 
 /* ---------- 弦图（第 2/3/4 步共用框）：世界 x∈[0,8] → 640 ---------- */
@@ -566,6 +581,6 @@ requestAnimationFrame(tick);
 // Read-only inspection surface for numerical review; UI remains the mutation path.
 window.STANDING = {
   get state() { return JSON.parse(JSON.stringify(S)); },
-  yRight, yLeft, ySumRope, yAnalytic, ampRope, classifyPt, spatialInfo,
+  yRight, yLeft, ySumRope, yAnalytic, ampRope, classifyPt, spatialInfo, nearestLandmarks,
   yInc, yRefl, yStr, ampStr, modeQ, modeN, modeInfo, fmtBoundary, lamN, fN, f1, modeShape, respAmp, fmtNum
 };
