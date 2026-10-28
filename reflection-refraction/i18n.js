@@ -53,6 +53,8 @@ const STR = {
     "s2hint": "折射率n=c/v，是真空光速c与介质中光的相速度v之比，无量纲。本页把空气取n=1.00、水取1.33作为理想、均匀、无吸收介质的固定值；未模拟色散。图只算光线方向，不算传播时间或反射/透射能量比例。",
     "s3k": "第 3 步",
     "s3t": "反过来：水到空气，与全反射",
+    "s3bridge": "先点 30°、临界角、60°：折射线逐渐靠近界面，临界角时沿界面，超过它就消失而只剩反射。",
+    "s3bridge": "Try 30°, the critical angle and 60°: the refracted ray approaches the surface, runs along it at critical, then disappears above critical while reflection remains.",
     "s3e": "这一步要回答：水中的光何时不能再折射进空气？这里两角仍从垂直水面的<strong>法线</strong>量起。斜入射且未到临界时，折射角更大；正入射0°时两角都为0°。折射角达到90°、极限光线沿界面时的入射角叫<strong>临界角</strong>。入射角严格超过它，空气中没有传播折射光线，光在理想界面全反射回水里。依次试30°、精确临界预设、60°，先预测有无折射线，再观察。",
     "s3angLab": "入射角（水的一侧，也可拖光源点）",
     "s3p30": "入射 30°",

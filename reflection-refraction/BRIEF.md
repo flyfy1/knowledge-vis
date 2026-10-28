@@ -33,3 +33,8 @@ Independent source/design review preceded these amendments; see specs/reviews/re
 S2 question: with air1/water1.33 and a normal-relative incidence, predict0° versus oblique30°; compare same-ray readout with sinθ2=(n1/n2)sinθ1. S3 question: can sine exceed1? Predict30°/exactcritical/60°, then use original presets. Both steps define normal/index/arcsin locally, unitsdegrees/indexdimensionless. S3 keyboardarrows0.1°,continuouspointer,exactcritical preset distinct from rounded48.8°. Model assumes homogeneous nonabsorbing media/no dispersion; line colour/width does not encode power and no propagation-time animation exists. S4 is explicitly a fixed-vertical-reference apparent-depth illustration.
 
 Reading-context recovery reuses knowledgeGeometryReading v1 lesson discriminator forS2/S3signedangle/sideonly, validates finite bounds and sign,merges unknownowner fields,debounces180ms and flushespagehide. No answer/quiz/learnerprofile or localstorage key. Other steps retain existing initialization; Historyfailure degrades to current in-memory interaction. No parameter transport to/fromtrig.
+
+## Codex critical-angle bridge — 2026-10-28
+
+Step 3 now sequences 30°, the computed critical angle and 60° so the ordinary-refraction to
+critical to total-reflection transition is visible as one parameter change.
