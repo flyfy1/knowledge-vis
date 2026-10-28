@@ -5,3 +5,10 @@ const strong=api.equilibrium(.1,1,0),weak=api.equilibrium(.001,1,0);assert(stron
 const dilute=api.equilibrium(.01,.1,0);assert(dilute.ratio>e0.ratio);assert(dilute.h<e0.h);
 const common=api.equilibrium(.01,1,.2);assert(common.ratio<e0.ratio);assert(common.pH>e0.pH);
 let s=api.initialState({ka:.01,c:1,seed:4});for(let i=0;i<120;i++)s=api.advanceState(s);assert(s.elapsed>3.9);assert(s.eq.pH===e0.pH);console.log('acid-base core ok');
+const buffered = api.initialState({ ka: 0.01, c: 1, common: 0.8 });
+const chart = api.compositionData(buffered);
+assert.equal(chart.before.dissociated, e0.ratio);
+assert.equal(chart.after.dissociated, api.equilibrium(.01, 1, .8).ratio);
+assert.equal(chart.delta, chart.after.dissociated - chart.before.dissociated);
+assert(chart.delta < 0);
+console.log('acid-base composition chart core: PASS');

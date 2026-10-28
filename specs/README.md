@@ -94,3 +94,4 @@ that existing pages have completed that process.
 - [Sampling S2 signed alias/sample-pair contract](sampling-pair.md): original versus folded sine at shared sample and nonsample times; bandlimit and finite-record limits retained.
 
 - [Convolution S2 index/support contract](convolution-support.md): shared selected output, reversed/shifted indices, zero extension, decimal fidelity and passive reading recovery.
+- [Acid–base common-ion composition chart](acid-base-composition.md): same-state before/after composition and pH comparison for the weak-acid common-ion control.

@@ -13,3 +13,9 @@
 
 ## Scope and limits
 The model assumes fixed temperature, ideal concentrations, and ignores water autoionization and activity corrections. The particle layer is illustrative; the quadratic readout is the quantitative anchor.
+
+## Composition-chart revision · 2026-10-29
+- The common-ion step now pairs the particle simulation with a before/after composition chart.
+- The chart plots the analytic dissociated share and pH for the same Ka and total concentration with no added A⁻ versus the selected common-ion concentration.
+- Changing the slider redraws both the particles and chart; the chart is explanatory, while `equilibrium()` remains the quantitative source of truth.
+- Boundary: the chart does not treat the extra common ion as part of the weak-acid total C; it shows the weak-acid dissociation fraction and the separate pH response.
