@@ -87,3 +87,14 @@ and [W3C Web Audio Recommendation](https://www.w3.org/TR/2021/REC-webaudio-20210
 
 Independent cold review supported moving this unchanged panel next to the decay
 control to reduce travel during a finite clip. Positional “above” copy was removed.
+
+## Codex fallback-continuity iteration — 2026-10-28
+
+The local and production audio suites already confirmed user-gesture playback, native
+`AudioContext` progress, lifecycle disposal and unsupported/denied recovery. A separate
+JavaScript-disabled check exposed a small accessibility gap: `#s2-audio-status` was empty and
+the playback/volume controls still looked active even though no handlers could run. The panel
+now starts with the localized idle status (“not playing; choose a playback button”), and its
+`noscript` branch hides inert audio controls while placing a bilingual explanation beside the
+panel. The surrounding LTI explanation remains readable. No Web Audio scheduling, model,
+mapping, gain, route or automatic-play behavior changed.

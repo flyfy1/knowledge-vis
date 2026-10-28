@@ -138,7 +138,7 @@
     <section class="sound-lab" aria-labelledby="sound-title">
       <h3 id="sound-title" data-i18n="soundTitle">同一段信号，听听系统改了什么</h3>
       <p data-i18n="soundIntro"></p>
-      <div class="btn-row">
+      <div class="btn-row sound-controls">
         <button type="button" class="btn" id="s2-audio-input" aria-pressed="false" data-i18n="soundInput">▶ 播放输入</button>
         <button type="button" class="btn" id="s2-audio-output" aria-pressed="false" data-i18n="soundOutput">▶ 播放处理后</button>
         <button type="button" class="btn" id="s2-audio-stop" disabled data-i18n="soundStop">■ 停止</button>
@@ -146,13 +146,13 @@
       <label class="sound-volume" for="s2-audio-volume"><span data-i18n="soundVolume">试听音量</span> <output id="s2-audio-volume-value">50%</output>
         <input id="s2-audio-volume" type="range" min="0" max="100" step="5" value="50">
       </label>
-      <p class="readout" id="s2-audio-status" role="status" aria-live="polite"></p>
+      <p class="readout" id="s2-audio-status" role="status" aria-live="polite" data-i18n="soundIdle">尚未播放 · 点击一个播放按钮开始。</p>
       <progress id="s2-audio-progress" value="0" max="1.8665"></progress><span id="s2-audio-time" aria-hidden="true">0 / 1.87 s</span>
       <p class="hint" data-i18n="soundPlot"></p>
       <div class="stage"><canvas id="s2-audio-wave" height="230" style="height:230px" role="img" data-i18n-aria="soundWave"></canvas></div>
       <p class="hint" data-i18n="soundTry"></p>
       <details><summary data-i18n="soundMappingTitle"></summary><p data-i18n="soundMapping"></p><p data-i18n="soundChanging"></p><p data-i18n="soundLevel"></p><p><a href="https://www.w3.org/TR/2021/REC-webaudio-20210617/" data-i18n="soundReference"></a></p></details>
-      <noscript>试听需要 JavaScript；图中信号与系统关系仍可阅读。 / Sound requires JavaScript; the model explanation remains available.</noscript>
+      <noscript><style>.sound-lab .sound-controls,.sound-lab .sound-volume,.sound-lab #s2-audio-progress,.sound-lab #s2-audio-time{display:none}</style><p class="hint sound-no-js">试听需要 JavaScript；启用后点击“播放输入”或“播放处理后”。其余正文仍可阅读。 / Sound requires JavaScript; enable it before clicking Play. The surrounding explanation remains readable.</p></noscript>
     </section>
     <div class="stage"><canvas id="s2-io" height="330" style="height:330px"></canvas></div>
     <div class="btn-row">
