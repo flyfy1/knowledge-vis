@@ -1,0 +1,25 @@
+'use strict';
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const path = require('node:path');
+const M = require('../model.js');
+
+assert.equal(M.pressure(1, 300, 10).toFixed(3), '249.420');
+assert.ok(M.pressure(1, 300, 20) < M.pressure(1, 300, 10));
+const iso = M.process({ n: 1, T: 300, Vi: 10, Vf: 20, type: 'isothermal' });
+assert.ok(Math.abs(iso.dU) < 1e-9, 'ideal-gas isothermal ΔU is zero');
+assert.ok(iso.Q > 0 && iso.W > 0 && Math.abs(iso.Q - iso.W) < 1e-9);
+const adi = M.process({ n: 1, T: 300, Vi: 10, Vf: 20, type: 'adiabatic', gamma: 1.4 });
+assert.ok(Math.abs(adi.Q) < 1e-9, 'adiabatic Q is zero');
+assert.ok(adi.Tf < adi.Ti && adi.W > 0 && adi.dU < 0);
+assert.ok(Math.abs(adi.dU + adi.W) < 1e-9, 'first-law ledger closes');
+assert.equal(adi.samples.length, 49);
+const engine = M.engineCycle({ Th: 600, Tc: 300, compression: 2 });
+assert.ok(engine.efficiency > 0 && engine.efficiency < engine.carnot + 1e-9);
+assert.ok(engine.Wnet > 0 && engine.Qin > engine.Qout);
+assert.equal(M.carnotEfficiency(600, 300), 0.5);
+const html = fs.readFileSync(path.join(__dirname, '../index.html'), 'utf8');
+for (const id of ['state-canvas', 'pv-canvas', 'compare-canvas', 'engine-canvas']) assert.match(html, new RegExp(`id="${id}"`));
+const i18n = fs.readFileSync(path.join(__dirname, '../i18n.js'), 'utf8');
+assert.match(i18n, /const STR\s*=\s*\{/);
+console.log('PASS: ideal-gas state law, isothermal/adiabatic paths, first-law closure, engine bound, bilingual shell');
