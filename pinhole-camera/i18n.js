@@ -65,6 +65,8 @@ const STR = {
     "cImage": "倒像",
     "s2k": "第 2 步",
     "s2t": "像的大小，谁说了算",
+    "s2bridge": "先保持物高不变，试 u=v、u=2v、v=2u：像高只跟距离比一起变，孔心交叉决定倒像方向。",
+    "s2bridge": "Keep object height fixed and try u=v, u=2v and v=2u: image height follows the distance ratio, while the hole crossing sets inversion.",
     "s2e": "这一步要回答：屏上的像比蜡烛大还是小，由什么决定？先把四个量正式命名（就是字面意思）：蜡烛的高度叫<strong>物高 H</strong>，蜡烛到小孔的距离叫<strong>物距 u</strong>，小孔到屏的距离叫<strong>像距 v</strong>，像的高度叫<strong>像高 h</strong>。拖焰尖改 H、拖挡板改 u、拖屏改 v（每个量都有滑杆）。图是按比例缩小的示意，数字按真实比例算（单位 cm）。",
     "s2hLab": "物高 H（也可拖图中的焰尖）",
     "s2uLab": "物距 u（也可拖图中的挡板）",

@@ -47,3 +47,8 @@
 显示worldheight固定420、screen36…354覆盖完整参数域，标尺位于像下，保持同viewport比例尺/拖动映射不随参数变。独立孔径场景明确H72/u140/v170，几何光斑外沿与孔心尺寸分开，衍射边界就近限定。
 
 原生键盘/拖动/预设/重置保持。跨直线课用本条history记录恢复S2 H/u/v，不存quiz/掌握/时间戳，未知字段保留、非法schema拒绝、History失败只降级本页内交互；其他步骤重建仍按原行为初始化。native控件与模型同步。见pinhole-camera/tests/geometry-{core,browser}.cjs与specs/reviews/pinhole-geometry-verification-20261026.md。
+
+## Codex ratio bridge — 2026-10-28
+
+Step 2 now sequences the equal, half-size and double-size distance ratios so image height and
+inversion read as separate consequences of the same straight-ray geometry.
