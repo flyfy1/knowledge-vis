@@ -43,3 +43,8 @@
 
 Step 4 now sequences P from the major arc to the minor arc, making the supplementary-angle
 change follow from the same fixed chord.
+
+## Codex diameter bridge — 2026-10-28
+
+Step 3 now frames the 90° result as the 180° central-angle case, then invites P to move on both
+semicircles so the Thales result follows from the existing half-angle rule.
