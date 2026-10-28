@@ -48,6 +48,6 @@ screen-reader speech and independent review remain outside this self-check.
 
 ## Local handoff
 
-- Implementation commit: pending local commit at handoff.
+- Implementation commit: `69635b28` (`Clarify converter power feedback`).
 - Push, merge review, deployment and production verification: intentionally pending.
 - Built-By attribution follows the repository rule; exact task model identifier is unavailable.
