@@ -1047,4 +1047,13 @@ window.KNOWLEDGE_PAGES = [
     category: "earth", stage: "senior", status: "live", path: "geology-plate-tectonics/"
   },
 
+
+  {
+    slug: "momentum-collision",
+    title: { zh: "动量与碰撞 · 速度不是全部", en: "Momentum & Collisions · Speed Is Not the Whole Story" },
+    desc: { zh: "从 p = m·v 到 J = F·Δt，拖动质量、速度、力和时间，追踪碰撞守恒与安全停下的力。", en: "From p = m·v to J = F·Δt, tune mass, speed, force and time to trace collision conservation and safer stopping." },
+    tags: [{ zh: "动量", en: "Momentum" }, { zh: "冲量", en: "Impulse" }, { zh: "碰撞", en: "Collisions" }],
+    category: "physics", stage: "junior", status: "live", path: "momentum-collision/"
+  },
+
 ];
