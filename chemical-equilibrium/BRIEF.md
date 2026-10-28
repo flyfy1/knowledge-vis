@@ -30,3 +30,9 @@
 ## 注册建议（Alberto 执行）
 - title zh「化学平衡 · 人数不变，人还在跑」/ en "Chemical Equilibrium · Still Moving at Balance"；tags：动态平衡 / Dynamic Equilibrium、勒夏特列 / Le Chatelier、速率相等 / Equal Rates；category chemistry，stage senior。
 - CONCEPT-MAP 拟行：#step1 平衡=速率相等、#step2 勒夏特列移动。
+
+## Codex teaching bridge — 2026-10-28
+
+Step 1 now states the observed sequence before the simulation: pure A gives forward events first,
+B accumulation lets reverse events catch up, and only then do the headcounts flatten. This
+connects the playback controls to the equal-rates conclusion without changing the seeded model.
