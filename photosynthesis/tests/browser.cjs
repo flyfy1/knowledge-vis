@@ -32,6 +32,10 @@ const out=process.env.PHOTO_EVIDENCE||path.join(__dirname,'evidence');fs.mkdirSy
   const after=await metrics();assert.equal(after.height,initial.height);assert(after.canvas.every(c=>c.cssHeight===300));
   if(!cfg.noCanvas)assert(after.canvas.every(c=>c.bufferHeight===300*cfg.dpr));
   await page.locator('[data-bet=o2]').click();assert(await page.locator('[data-bet=o2]').evaluate(b=>b.classList.contains('correct')));
+  const bridge=page.locator('#s1-bridge');assert(await bridge.isVisible());
+  assert((await bridge.innerText()).includes(cfg.en?'step 0':'第 0 步'));
+  await page.locator('[data-term=o2]').click();assert((await page.locator('#ledger').innerText()).includes(cfg.en?'by-product':'副产品'));
+  await page.locator('[data-term=h2o]').click();assert((await page.locator('#ledger').innerText()).includes(cfg.en?'roots':'根'));
   if(!cfg.noCanvas){
    await page.locator('#s0-play').click();await page.waitForTimeout(850);
    assert(await page.evaluate(()=>PHOTOSYNTHESIS.state.s0.released>0));

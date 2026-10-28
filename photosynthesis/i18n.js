@@ -24,6 +24,7 @@ const STR = {
 
     s1k: '第 1 步 · 原料与产品', s1t: '一笔原子账：进来什么，出去什么',
     s1e: '光合作用的方程式点得动：<strong>点每一项</strong>，看它从哪来、到哪去。左右两边逐项数原子——和<a href="../mass-conservation/#step1">质量守恒那页的原子对账（第 1 步）</a>同一本账：原子一个不多、一个不少。',
+    s1bridge: '第 0 步的气泡就是氧气：先点「6 O₂」看它作为副产品放回空气，再点「6 H₂O」追它从哪里来。',
     eqCO2: '6 CO₂', eqH2O: '6 H₂O', eqLight: '光 · 叶绿体', eqSugar: 'C₆H₁₂O₆（糖）', eqO2: '6 O₂',
     srcCO2: '二氧化碳：从空气经叶片气孔进来。', srcH2O: '水：根从土壤吸上来，经茎运到叶。',
     srcLight: '光与叶绿体：光是能量来源，叶绿体是车间（<a href="../cell-structure/#step2">细胞那页讲叶绿体等细胞器分工</a>）——没有光，整间厂停工。',
@@ -94,6 +95,7 @@ const STR = {
 
     s1k: 'Step 1 · Materials & Products', s1t: 'An atom ledger: what comes in, what goes out',
     s1e: 'The equation is clickable: <strong>click each term</strong> to see where it comes from and where it goes. Count atoms term by term — the same ledger as <a href="../mass-conservation/#step1">the atom count on the Mass Conservation page (step 1)</a>: not one atom more, not one less.',
+    s1bridge: 'The bubbles in step 0 are oxygen: click “6 O₂” first to see it released as a by-product, then click “6 H₂O” to trace where its oxygen comes from.',
     eqCO2: '6 CO₂', eqH2O: '6 H₂O', eqLight: 'Light · Chloroplast', eqSugar: 'C₆H₁₂O₆ (sugar)', eqO2: '6 O₂',
     srcCO2: 'Carbon dioxide: enters from the air through the leaf’s stomata.',
     srcH2O: 'Water: absorbed by the roots from the soil and carried up to the leaf.',
