@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>分布、期望与方差 · 随机变量的画像</title>
+  <meta name="description" content="用一个可调分布，从概率柱形图走到期望、方差与尾部概率。">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-head">
+    <div class="head-main">
+      <p class="backline"><a href="../" data-i18n="back">← 知识索引</a></p>
+      <p class="eyebrow" data-i18n="eyebrow">概率 · 一条可重算的因果链</p>
+      <h1 data-i18n="title">分布、期望与方差 · 随机变量的画像</h1>
+      <p class="tagline" data-i18n="tagline">随机不是“什么都可能”，而是一张有重量的地图：概率先铺开，期望指出重心，方差量出散布，最后把这些量交给一个决策问题。</p>
+    </div>
+    <div class="lang-toggle" role="group" aria-label="Language">
+      <button type="button" data-lang="zh">中</button>
+      <button type="button" data-lang="en">EN</button>
+    </div>
+  </header>
+
+  <nav class="step-nav" aria-label="Lesson steps">
+    <a href="#step0" data-i18n="nav0">0 先看分布</a>
+    <a href="#step1" data-i18n="nav1">1 期望是重心</a>
+    <a href="#step2" data-i18n="nav2">2 方差是散布</a>
+    <a href="#step3" data-i18n="nav3">3 读尾部概率</a>
+    <a href="#step4" data-i18n="nav4">4 拆掉误解</a>
+  </nav>
+
+  <main>
+    <section class="step hero-step" id="step0">
+      <div class="step-inner">
+        <p class="step-kicker" data-i18n="s0k">第 0 步 · 钩子</p>
+        <h2 data-i18n="s0t">先别急着算平均：每个结果都有自己的重量</h2>
+        <p class="explain" data-i18n="s0e">下面每根柱子代表一个结果，柱子的高度就是它的概率。拖动参数，让“随机”从一句话变成一张可读的图。</p>
+        <div class="stage chart-stage">
+          <svg id="distribution-chart" viewBox="0 0 860 360" role="img" aria-labelledby="chart-title chart-desc">
+            <title id="chart-title">Probability distribution</title>
+            <desc id="chart-desc">Adjustable probability bars with mean and threshold markers.</desc>
+          </svg>
+          <div class="chart-legend" aria-live="polite">
+            <span class="legend-chip"><i class="swatch swatch-bar"></i><span data-i18n="legendProbability">概率 P(X = x)</span></span>
+            <span class="legend-chip"><i class="swatch swatch-mean"></i><span data-i18n="legendMean">期望 E[X]</span></span>
+            <span class="legend-chip"><i class="swatch swatch-threshold"></i><span data-i18n="legendThreshold">阈值</span></span>
+          </div>
+        </div>
+        <div class="preset-row" role="group" aria-label="Distribution presets">
+          <span class="preset-label" data-i18n="presetLabel">先试一个形状：</span>
+          <button class="btn preset" data-preset="balanced" data-i18n="presetBalanced">对称</button>
+          <button class="btn preset" data-preset="right" data-i18n="presetRight">右偏</button>
+          <button class="btn preset" data-preset="left" data-i18n="presetLeft">左偏</button>
+          <button class="btn preset" data-preset="wide" data-i18n="presetWide">更分散</button>
+        </div>
+        <p class="hint" data-i18n="s0hint">柱高不是“结果会落在这里”，而是长期重复实验后落在这里的比例。先看形状，再问形状的数字摘要。</p>
+        <a class="btn primary" href="#step1" data-i18n="start">跟着重心走 ↓</a>
+      </div>
+    </section>
+
+    <section class="step" id="step1">
+      <div class="step-inner">
+        <p class="step-kicker" data-i18n="s1k">第 1 步 · 加权平均</p>
+        <h2 data-i18n="s1t">期望不是“最常见的数”，而是概率加权的重心</h2>
+        <p class="explain" data-i18n="s1e">把每个结果乘上自己的概率，再把这些贡献相加。竖线会落在图的重心处：它可以不对应任何一根最高的柱子。</p>
+        <p class="formula">E[X] = Σ x · P(X = x)</p>
+        <div class="controls" aria-label="Distribution controls">
+          <label><span><span data-i18n="centerLabel">中心位置</span> <output id="center-value">5.0</output></span><input id="center" type="range" min="1" max="9" step="0.1" value="5"></label>
+          <label><span><span data-i18n="spreadLabel">分散程度</span> <output id="spread-value">1.7</output></span><input id="spread" type="range" min="0.6" max="3.5" step="0.1" value="1.7"></label>
+          <label><span><span data-i18n="skewLabel">偏斜方向</span> <output id="skew-value">0.0</output></span><input id="skew" type="range" min="-1" max="1" step="0.1" value="0"></label>
+        </div>
+        <div class="metric-grid">
+          <article class="metric-card accent"><span class="metric-label" data-i18n="meanMetric">期望 E[X]</span><strong id="mean-value">5.00</strong><span data-i18n="meanUnit">结果单位</span></article>
+          <article class="metric-card"><span class="metric-label" data-i18n="modeMetric">众数（最高柱）</span><strong id="mode-value">5</strong><span data-i18n="modeUnit">最常出现的结果</span></article>
+          <article class="metric-card"><span class="metric-label" data-i18n="meanGapMetric">重心与众数差</span><strong id="mean-gap-value">0.00</strong><span data-i18n="meanGapUnit">偏斜会把它拉开</span></article>
+        </div>
+        <p class="readout" id="mean-readout" aria-live="polite"></p>
+        <p class="hint" data-i18n="s1hint">把“期望 = 最可能值”当成定义，会在偏斜分布上出错。期望是把每根柱子按重量放到跷跷板上后，能让它平衡的位置。</p>
+      </div>
+    </section>
+
+    <section class="step" id="step2">
+      <div class="step-inner">
+        <p class="step-kicker" data-i18n="s2k">第 2 步 · 距离重心多远</p>
+        <h2 data-i18n="s2t">方差把“散不散”变成一个数</h2>
+        <p class="explain" data-i18n="s2e">每个结果离期望越远，平方后的代价越大。方差是这些距离的概率加权平均；标准差把它换回原来的单位，更适合直接读。</p>
+        <p class="formula">Var(X) = E[(X − E[X])²] &nbsp; · &nbsp; σ = √Var(X)</p>
+        <div class="spread-visual" aria-hidden="true">
+          <div class="spread-track"><span class="spread-band" id="spread-band"></span><span class="spread-mean" id="spread-mean"></span></div>
+          <div class="spread-axis"><span>0</span><span>2</span><span>4</span><span>6</span><span>8</span><span>10</span></div>
+        </div>
+        <div class="metric-grid two">
+          <article class="metric-card"><span class="metric-label" data-i18n="varianceMetric">方差 Var(X)</span><strong id="variance-value">2.89</strong><span data-i18n="varianceUnit">平方单位</span></article>
+          <article class="metric-card accent"><span class="metric-label" data-i18n="sdMetric">标准差 σ</span><strong id="sd-value">1.70</strong><span data-i18n="sdUnit">结果单位</span></article>
+        </div>
+        <p class="readout" id="spread-readout" aria-live="polite"></p>
+        <p class="hint" data-i18n="s2hint">同一个期望可以配上很窄或很宽的分布，所以“平均水平相同”不等于“风险相同”。</p>
+      </div>
+    </section>
+
+    <section class="step" id="step3">
+      <div class="step-inner">
+        <p class="step-kicker" data-i18n="s3k">第 3 步 · 从摘要回到问题</p>
+        <h2 data-i18n="s3t">真正要问的，常常是“至少这么大”的概率</h2>
+        <p class="explain" data-i18n="s3e">拖动阈值，图中右侧的柱子会被圈出来。尾部概率把整张分布接到一个行动门槛：库存够不够、延迟会不会超时、成绩能否过线。</p>
+        <p class="formula">P(X ≥ k) = Σ<sub>x ≥ k</sub> P(X = x)</p>
+        <div class="controls threshold-control">
+          <label><span><span data-i18n="thresholdLabel">阈值 k</span> <output id="threshold-value">7</output></span><input id="threshold" type="range" min="0" max="10" step="1" value="7"></label>
+        </div>
+        <div class="tail-meter"><div class="tail-fill" id="tail-fill"></div><span id="tail-percent">15.0%</span></div>
+        <div class="metric-grid two">
+          <article class="metric-card accent"><span class="metric-label" data-i18n="tailMetric">右尾概率</span><strong id="tail-value">15.0%</strong><span data-i18n="tailUnit">达到或超过阈值</span></article>
+          <article class="metric-card"><span class="metric-label" data-i18n="zMetric">离期望的标准差数</span><strong id="z-value">1.18σ</strong><span data-i18n="zUnit">阈值的位置</span></article>
+        </div>
+        <p class="readout" id="tail-readout" aria-live="polite"></p>
+        <p class="hint" data-i18n="s3hint">不要把“期望是 5”翻译成“每次都会接近 5”。期望描述的是大量重复后的重心，尾部概率描述的是这一次是否跨过门槛。</p>
+      </div>
+    </section>
+
+    <section class="step" id="step4">
+      <div class="step-inner">
+        <p class="step-kicker" data-i18n="s4k">第 4 步 · 误解检查</p>
+        <h2 data-i18n="s4t">哪一句最准确？先猜，再让分布回答</h2>
+        <p class="explain" data-i18n="s4e">当前图形会随你的参数变化。选一句你认为正确的解释，反馈会指出它把哪一个量混在了一起。</p>
+        <div class="quiz" role="group" aria-label="Concept check">
+          <button class="quiz-option" data-choice="mode" data-i18n="quizMode">期望就是最高的柱子</button>
+          <button class="quiz-option" data-choice="mean" data-i18n="quizMean">期望是概率加权的重心</button>
+          <button class="quiz-option" data-choice="tail" data-i18n="quizTail">知道期望，就知道每次结果</button>
+        </div>
+        <div class="feedback" id="feedback" role="status" aria-live="polite" hidden></div>
+        <details class="formula-box"><summary data-i18n="formulaSummary">把整条链写成四行</summary><p><code>ΣP(X=x)=1</code> → <code>E[X]=ΣxP(X=x)</code> → <code>Var(X)=Σ(x−E[X])²P(X=x)</code> → <code>P(X≥k)=Σ<sub>x≥k</sub>P(X=x)</code></p></details>
+        <div class="btn-row"><button class="btn" id="reset" data-i18n="reset">恢复默认分布</button></div>
+        <p class="sources" data-i18n="sources">概念依据：随机变量的离散分布、期望与方差定义；图形用有限个结果近似展示，所有数值由当前柱高重新计算。</p>
+      </div>
+    </section>
+  </main>
+
+  <footer><span data-i18n="footer">一个分布不是答案，它是让答案可以重算的起点。</span></footer>
+  <script src="model.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
