@@ -47,3 +47,11 @@ Source check: Original paper text retrieved through its author-uploaded Research
 See `../specs/reviews/frozen-bubble-learning-20261026.md` for the current verification and before/after evidence. The earlier verification report describes the baseline, not this revision.
 
 Integration cold-reader correction: English storyboard directions must use the exact visible button label “Grow”, not “Growing”; include instruction-to-control label agreement in teaching acceptance.
+
+## Codex 论文条件桥接迭代（2026-10-28）
+
+第 2 步的研究资料卡后新增双语桥接提示，把资料卡中的 A/B 条件直接映射到下面的
+“整体寒冷”与“暖空气 + 冷底座”。提示先要求在同一示意时刻比较可见的冰晶路径和
+冻结前沿，再回到热与液体运动的解释；不提前引入潜热、表面张力或马兰戈尼流等术语，
+也不改变论文条件、动画模型、滚动布局或物理边界。教学回归断言提示在中英文、移动端
+与桌面端都位于研究卡和比较控件之间。
