@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>神经动作电位 · 一次脉冲如何跑过神经元</title>
+  <meta name="description" content="用膜电位、阈值、离子通道和不应期理解神经动作电位。">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="site-head">
+    <div class="head-main">
+      <p class="backline"><a href="../" data-i18n="back">← 知识索引</a></p>
+      <p class="eyebrow" data-i18n="eyebrow">生物学 × 神经信号</p>
+      <h1 data-i18n="title">动作电位：一次脉冲如何跑过神经元</h1>
+      <p class="tagline" data-i18n="tagline">先把膜电位推到阈值，再跟着 Na⁺、K⁺ 通道走完一次尖峰。拖动参数，看“全或无”和不应期从曲线里出现。</p>
+    </div>
+    <div class="lang-toggle" id="langToggle"><button type="button" data-lang="zh">中</button><button type="button" data-lang="en">EN</button></div>
+  </header>
+
+  <nav class="step-nav" id="stepNav" aria-label="lesson steps">
+    <a class="nav-step active" href="#step0" data-i18n="nav0">0 找到阈值</a>
+    <a class="nav-step" href="#step1" data-i18n="nav1">1 看尖峰分期</a>
+    <a class="nav-step" href="#step2" data-i18n="nav2">2 追踪不应期</a>
+    <a class="nav-step" href="#step3" data-i18n="nav3">3 收束检查</a>
+  </nav>
+
+  <main>
+    <section class="step" id="step0" data-step="0">
+      <div class="step-inner">
+        <p class="step-kicker" data-i18n="s0k">第 0 步 · 阈值是分水岭</p>
+        <h2 data-i18n="s0title">刺激更强，尖峰会变得更高吗？</h2>
+        <p class="explain" data-i18n-html="s0explain">静息膜电位约为 <strong>−70 mV</strong>。小刺激只留下一个小小的局部电位；一旦跨过阈值，电压门控 Na⁺ 通道会把它推成完整尖峰。把刺激来回推过阈值，找出“全或无”的分界。</p>
+        <div class="panel controls">
+          <label><span data-i18n="stimulusLab">刺激强度</span><output id="stimulusOut">0.70</output><input id="stimulus" type="range" min="0" max="1" step="0.01" value="0.70"></label>
+          <label><span data-i18n="thresholdLab">阈值</span><output id="thresholdOut">0.55</output><input id="threshold" type="range" min="0.35" max="0.85" step="0.01" value="0.55"></label>
+          <label><span data-i18n="windowLab">观察窗口</span><output id="windowOut">12 ms</output><input id="window" type="range" min="8" max="20" step="1" value="12"></label>
+        </div>
+        <div class="stage"><canvas id="membraneCanvas" height="320" aria-label="membrane voltage waveform"></canvas></div>
+        <div class="readout-grid">
+          <p class="readout"><span data-i18n="peakLabel">峰值膜电位</span><strong id="peakVoltage">—</strong></p>
+          <p class="readout"><span data-i18n="stateLabel">响应类型</span><strong id="spikeState">—</strong></p>
+          <p class="readout"><span data-i18n="latencyLabel">到达阈值</span><strong id="latency">—</strong></p>
+        </div>
+        <p class="formula">V<sub>m</sub> ≥ V<sub>threshold</sub> → Na⁺ influx → spike</p>
+        <p class="hint" data-i18n-html="s0hint"><strong>因果链：</strong>刺激使膜去极化 → 超过阈值 → Na⁺ 内流的正反馈把电压推到约 +30 mV。</p>
+        <a class="next-link" href="#step1" data-i18n="next1">继续：把尖峰拆成三个阶段 →</a>
+      </div>
+    </section>
+
+    <section class="step" id="step1" data-step="1">
+      <div class="step-inner">
+        <p class="step-kicker" data-i18n="s1k">第 1 步 · 离子通道接力</p>
+        <h2 data-i18n="s1title">同一条曲线，为什么会先上冲再跌落？</h2>
+        <p class="explain" data-i18n-html="s1explain">Na⁺ 通道先快开，电位迅速上升；随后 Na⁺ 通道失活、K⁺ 通道打开，K⁺ 外流让膜电位下降，甚至短暂低于静息值。移动时间游标，把曲线和通道状态对齐。</p>
+        <div class="panel controls compact">
+          <label><span data-i18n="timeLab">尖峰内时刻</span><output id="phaseTimeOut">2.2 ms</output><input id="phaseTime" type="range" min="0" max="8" step="0.1" value="2.2"></label>
+          <label><span data-i18n="leakLab">漏电流</span><output id="leakOut">0.10</output><input id="leak" type="range" min="0" max="0.4" step="0.01" value="0.10"></label>
+        </div>
+        <div class="stage"><canvas id="phaseCanvas" height="300" aria-label="action potential phases chart"></canvas></div>
+        <div class="channel-grid">
+          <article class="channel-card na"><span class="channel-icon">Na⁺</span><div><b data-i18n="naTitle">快速内流</b><p data-i18n="naBody">去极化段打开，随后失活。</p></div><strong id="naState">—</strong></article>
+          <article class="channel-card k"><span class="channel-icon">K⁺</span><div><b data-i18n="kTitle">延迟外流</b><p data-i18n="kBody">复极化与超极化由它主导。</p></div><strong id="kState">—</strong></article>
+          <article class="channel-card leak"><span class="channel-icon">Cl⁻</span><div><b data-i18n="leakTitle">背景漏电</b><p data-i18n="leakBody">把膜电位轻轻拉回静息线。</p></div><strong id="leakState">—</strong></article>
+        </div>
+        <p class="readout" id="phaseReadout" aria-live="polite"></p>
+        <a class="next-link" href="#step2" data-i18n="next2">继续：发得太近会发生什么？ →</a>
+      </div>
+    </section>
+
+    <section class="step" id="step2" data-step="2">
+      <div class="step-inner">
+        <p class="step-kicker" data-i18n="s2k">第 2 步 · 不应期设定上限</p>
+        <h2 data-i18n="s2title">为什么神经信号不会无限加速？</h2>
+        <p class="explain" data-i18n-html="s2explain">一次尖峰后，Na⁺ 通道需要从失活状态恢复，K⁺ 通道也要关回去。绝对不应期内无法再发，随后是相对不应期——更强的刺激才可能触发下一次。拖动频率与不应期，数一秒最多能发几次。</p>
+        <div class="panel controls">
+          <label><span data-i18n="freqLab">输入刺激频率</span><output id="frequencyOut">40 Hz</output><input id="frequency" type="range" min="1" max="160" step="1" value="40"></label>
+          <label><span data-i18n="refractoryLab">不应期</span><output id="refractoryOut">3.0 ms</output><input id="refractory" type="range" min="1" max="12" step="0.5" value="3"></label>
+        </div>
+        <div class="stage"><canvas id="trainCanvas" height="280" aria-label="spike train and refractory period chart"></canvas></div>
+        <div class="readout-grid">
+          <p class="readout"><span data-i18n="inputLabel">输入脉冲数</span><strong id="inputPulses">—</strong></p>
+          <p class="readout"><span data-i18n="outputLabel">成功动作电位</span><strong id="outputPulses">—</strong></p>
+          <p class="readout"><span data-i18n="maxRateLabel">理论上限</span><strong id="maxRate">—</strong></p>
+        </div>
+        <p class="hint" data-i18n-html="s2hint"><strong>关键差异：</strong>频率编码通常改变“单位时间发几次”，而不是把每个动作电位的峰值越堆越高。</p>
+        <a class="next-link" href="#step3" data-i18n="next3">继续：做一次概念检查 →</a>
+      </div>
+    </section>
+
+    <section class="step" id="step3" data-step="3">
+      <div class="step-inner">
+        <p class="step-kicker" data-i18n="s3k">第 3 步 · 收束</p>
+        <h2 data-i18n="s3title">把曲线读成一句因果解释</h2>
+        <p class="explain" data-i18n="s3explain">选出正确说法。反馈会指出你混淆了阈值、峰值和频率编码中的哪一层。</p>
+        <div class="quiz" id="quiz">
+          <p class="quiz-question" data-i18n="quizQ">当刺激已经超过阈值时，再把刺激强度加倍，单个动作电位会：</p>
+          <div class="quiz-options">
+            <button type="button" data-answer="wrong" data-i18n="qA">峰值也加倍</button>
+            <button type="button" data-answer="correct" data-i18n="qB">峰值近似不变，但可能改变发放频率</button>
+            <button type="button" data-answer="wrong" data-i18n="qC">完全不再产生动作电位</button>
+          </div>
+          <p class="quiz-feedback" id="quizFeedback" aria-live="polite"></p>
+        </div>
+        <div class="finish"><strong data-i18n="finishTitle">因果链闭合：</strong><span data-i18n="finishBody">阈值触发 Na⁺ 正反馈，K⁺ 外流完成复极化，不应期把“全或无”的尖峰排成可编码的脉冲列。</span></div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-foot" data-i18n="foot">双语交互切片 · 神经动作电位</footer>
+</body>
+</html>
