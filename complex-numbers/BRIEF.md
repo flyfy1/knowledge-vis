@@ -62,3 +62,7 @@
 ### 未读项目材料的独立页面试走修复
 
 Step6互链原把所有旋转矩阵概称无实特征方向，并将纯旋转概称螺旋；0°/180°有反例。终章实际教学以此条修订为准：明确让读者在eigen#step2选择既有“旋转缩放：复λ”具体预设，只有这一例声称非实特征值/无实特征方向，不自动选择、不泛化所有旋转。未引入“共轭”等本课刻意延后的术语，目标页/原数学模型不改。该互链契约已同步修正；原错误表述保留于失败证据和旧版本。
+
+## Codex coordinate-to-polar bridge — 2026-10-29
+
+Step 1 now sequences three presets: `3+4i` ties coordinates to modulus 5, a pure real point isolates direction, and a unit-circle point isolates changing direction at fixed modulus.
