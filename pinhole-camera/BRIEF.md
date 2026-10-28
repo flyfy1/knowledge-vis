@@ -52,3 +52,7 @@
 
 Step 2 now sequences the equal, half-size and double-size distance ratios so image height and
 inversion read as separate consequences of the same straight-ray geometry.
+
+## Codex aperture tradeoff bridge — 2026-10-28
+
+Step 3 now sequences small to large aperture so brightness and geometric blur appear as a direct tradeoff.

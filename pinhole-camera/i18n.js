@@ -78,6 +78,8 @@ const STR = {
     "s2hint": "结论：<strong>孔心光线的理想尺寸比 h/H=v/u</strong>；像的正尺寸来自对应边成比例。有限孔径会使一个物点摊成光斑，其外沿不是这里定义的孔心像高，下一步另看。可展开下方数学连接，把斜率、相似三角形与倒像的符号联系起来。",
     "s3k": "第 3 步",
     "s3t": "孔开大，像为什么糊了",
+    "s3bridge": "先把孔径调小再调大：小孔让斑更窄但更暗，大孔让光更多却把每个物点摊得更开。",
+    "s3bridge": "Make the aperture small, then large: a small hole makes spots narrower but darker; a large hole admits more light while spreading each point wider.",
     "s3e": "这一步要回答：把孔开大，像为什么会变糊？小孔时，蜡烛上一个点发出的光只能从孔心一带穿过，落在屏上还是一个点。孔开大后，同一个点发出的光能从孔的上缘、中心、下缘各处穿过，落到屏上就摊开成一小片亮区——这叫<strong>光斑</strong>。拖孔径滑杆，看焰顶、焰底两点的光斑各摊多宽、又叠了多少。说明一句口径：图上每个物点只画 3 条代表光线（分别穿孔的上缘、中心、下缘）；真实的光有无数条，摊成的是一整片光斑——只画 3 条，是为了看清「摊开」这件事。",
     "s3dLab": "孔径（孔的大小）",
     "s3ro": "本步另用固定场景：H={H} cm、物距u={u} cm、像距v={v} cm。光斑宽 d(u+v)/u≈{w} cm（d={d} cm）；两光斑中心相距 H·v/u≈{sep} cm。{overlap}",
