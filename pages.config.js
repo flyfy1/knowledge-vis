@@ -1135,4 +1135,12 @@ window.KNOWLEDGE_PAGES = [
     category: "physics", stage: "university", status: "live", path: "thermodynamics/"
   },
 
+  {
+    slug: "buffer-capacity",
+    title: { zh: "缓冲溶液 · 把 pH 稳住", en: "Buffer Capacity · Holding pH Steady" },
+    desc: { zh: "调节酸碱加入量、浓度与 pKa，观察共轭对如何吸收扰动，以及缓冲容量何时耗尽。", en: "Tune acid/base additions, concentration and pKa to see a conjugate pair absorb disturbance and reveal when capacity runs out." },
+    tags: [{ zh: "缓冲溶液", en: "Buffer Solutions" }, { zh: "pH", en: "pH" }, { zh: "共轭酸碱对", en: "Conjugate Pairs" }],
+    category: "chemistry", stage: "senior", status: "live", path: "buffer-capacity/"
+  },
+
 ];
