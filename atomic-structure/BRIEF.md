@@ -36,3 +36,8 @@ lookup table and Z range remain unchanged.
 
 Step 2 now sequences the preset and electron controls: choose Na or Cl, then change one electron
 to see the inner layer fill before the outer arrangement changes.
+
+## Codex outer-layer bridge — 2026-10-28
+
+Step 3 now tells learners to inspect the outer layer first: a full layer is stable, while the
+remaining gap explains the tendency to gain or lose electrons.
