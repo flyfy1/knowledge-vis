@@ -65,3 +65,13 @@ NODE_PATH=/Users/songyy/Documents/integ-life/integ-games/node_modules \
 > 历史后续候选更新：以下trig/tan审查已由[round13](tangent-domain-verification-20261026.md)完成，原候选不是仍待重做的任务。真实学习者/设备/读屏仍未验证；见[当前开发索引](../../atlas/README.md)。
 
 无实机手机、读屏语音或人类学习效果验证，也非全站科学/无障碍认证。下一步先观察真实学习者/设备/读屏；内容回到现有trig/tan定义域、近90°与画面范围及键盘入口，先审再定修复，不先称其有bug或继续堆光学节点。
+
+## Codex teaching bridge — 2026-10-28
+
+Step 3 adds a bilingual hint that sequences the learner action: catch the real image at `v`,
+then switch to the virtual-image scene and compare why a screen cannot intercept it. Existing
+focus geometry, signed lens formula, screen readout and quiz state are unchanged.
+
+Verification: `node --check lens/app.js`; `node lens/tests/focus-core.cjs`; focused browser checks
+for the bridge in English and Chinese plus the existing lens browser regression. Physical phone,
+Safari and screen-reader speech remain unverified.

@@ -29,3 +29,10 @@
 
 ## Round12 current contract
 Independent design gate precedes this amendment; see specs/reviews/lens-focus-design-20261026.md. Strict unroundedu=f/2f; finite nearby images stay real/virtual even offscreen. imageOf retainsoldm=v/u only asdistance ratio for compatibility; signedmagnification isM=−v/u,imgH=MH. Exactfocus has no finiteimageheight/M. Invalid/nonrepresentablefiniteinputs returntypeinvalid,nullfields; noNaN label masqueradingas∞. AllS1/S2native controls acceptcontinuouspointervalues; S2keyboardarrows0.1unit,othercontinuouscontrols1unit; Home/Endnative. Displayroundedvalues do not decidebranches; u−f is shown. Thirdprincipalray unavailableatf and maybeoffviewelsewhere; omitratherthaninventit. At u<f nearF lies onbackwardextension,notpriorphysicalraypath. S3schematic sharp onlyp===v; noirradiance/PSF/eye-solverclaim. ReadinghistoryreusesknowledgeGeometryReading/lesson:lens forknobs/raytogglesonly,noquiztracking. No newgraphnode/page/controller.
+
+## Codex teaching bridge — 2026-10-28
+
+Step 3 now gives a short bilingual sequence before the screen control: first catch the real
+image by moving the screen to `v`, then switch to the magnifier scene to compare why a virtual
+image cannot be caught. This makes the control action follow the real-ray versus backward-
+extension explanation; the lens model, geometry and screen readout remain unchanged.
