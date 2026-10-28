@@ -1041,6 +1041,13 @@ window.KNOWLEDGE_PAGES = [
     category: "biology", stage: "senior", status: "live", path: "membrane-transport/"
   },
   {
+    slug: "action-potential",
+    title: { zh: "神经动作电位 · 一次脉冲如何跑过神经元", en: "Action Potentials · How One Pulse Travels" },
+    desc: { zh: "从静息电位推过阈值，跟着 Na⁺ 内流、K⁺ 外流和不应期走完一次尖峰，再数一秒最多能发几次。", en: "Push resting voltage past threshold, follow Na⁺ in, K⁺ out and refractoriness through one spike, then count the maximum spikes per second." },
+    tags: [{ zh: "膜电位", en: "Membrane Voltage" }, { zh: "离子通道", en: "Ion Channels" }, { zh: "不应期", en: "Refractoriness" }],
+    category: "biology", stage: "senior", status: "live", path: "action-potential/"
+  },
+  {
     slug: "orbital-motion",
     title: { zh: "轨道运动 · 椭圆、速度与凌日", en: "Orbital Motion · Ellipses, Speed & Transits" },
     desc: { zh: "把偏心率、轨道相位、速度变化和凌日对齐放在同一张可拖动因果图中。", en: "Put eccentricity, orbital phase, speed variation and transit alignment on one draggable causal map." },
