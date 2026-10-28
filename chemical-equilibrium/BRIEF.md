@@ -51,3 +51,8 @@ quantity: the final B share shows the balance point moving, while speed is a sep
 
 Step 4 now sequences the comparison from no catalyst to catalyst and asks learners to compare both
 time to balance and final B share. This keeps speed and endpoint as separate observed quantities.
+
+## Codex synthesis bridge — 2026-10-28
+
+The final step now maps each preceding interaction to one claim: equal rates explain the flat
+line, material shifts balance, temperature changes the endpoint, and a catalyst changes speed only.
