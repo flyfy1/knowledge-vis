@@ -102,3 +102,12 @@
 ## Codex coordinate-swap bridge — 2026-10-29
 
 Step 3 now isolates one coordinate at a time: changing x moves the swap twin's y, changing y moves its x, and only x=y leaves the two points together. The relationship is observable before the learner names the diagonal exception.
+
+## Codex extension · step 6 midpoint and distance (2026-10-29)
+
+- **已知**：平面上的两个整数点 A、B，已有坐标读法与勾股距离接口。
+- **唯一问题**：同一条线段怎样同时读出方向分量、长度和正中央？
+- **输入与求量**：拖动 A/B 或调整四个坐标滑杆；页面实时求 Δx、Δy、|AB|、斜率与中点 M。
+- **控件操作与预期观察**：青色箭头从 A 指向 B；「显示横、纵分量」切换橙色直角分解；拖动端点后，分量变号/改值，距离和中点按同一组坐标同步重算。滑杆是拖拽的等价入口，重置清空当前过程并回到基准点。
+- **结论适用条件**：距离公式是欧氏平面模型中的勾股关系；竖直线的斜率没有有限值。整数格是练习入口，公式也适用于分数坐标。
+- **术语首现**：向量（从 A 指向 B 的有向线段）；中点（把线段分成相等两段的点）；斜率（纵向变化量除以横向变化量，竖直线除外）。

@@ -28,6 +28,7 @@
   <a href="#step3" class="nav-step" data-nav="3" data-i18n="nav3">3 顺序不能反</a>
   <a href="#step4" class="nav-step" data-nav="4" data-i18n="nav4">4 四象限</a>
   <a href="#step5" class="nav-step" data-nav="5" data-i18n="nav5">5 自测与终章</a>
+  <a href="#step6" class="nav-step" data-nav="6" data-i18n="nav6">6 中点与距离</a>
 </nav>
 
 <main>
@@ -212,10 +213,30 @@
   </div>
 </section>
 
+<section class="step" id="step6" data-step="6">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s6k">第 6 步 · 中点与距离</p>
+    <h2 data-i18n="s6t">把一条线拆成：方向、长度与中点</h2>
+    <p class="explain" data-i18n-html="s6e"></p>
+    <div class="stage"><canvas id="s6-canvas" height="420" data-i18n-aria="s6canvasLabel" role="img"></canvas></div>
+    <div class="controls">
+      <label><span><span data-i18n="s6AxLab"></span> <span class="val" id="s6-ax-val">−3</span></span><input id="s6-ax" type="range" min="-6" max="6" step="1" value="-3"></label>
+      <label><span><span data-i18n="s6AyLab"></span> <span class="val" id="s6-ay-val">−2</span></span><input id="s6-ay" type="range" min="-6" max="6" step="1" value="-2"></label>
+      <label><span><span data-i18n="s6BxLab"></span> <span class="val" id="s6-bx-val">4</span></span><input id="s6-bx" type="range" min="-6" max="6" step="1" value="4"></label>
+      <label><span><span data-i18n="s6ByLab"></span> <span class="val" id="s6-by-val">3</span></span><input id="s6-by" type="range" min="-6" max="6" step="1" value="3"></label>
+    </div>
+    <div class="btn-row"><button class="btn big active" id="s6-components" data-i18n="s6components">显示横、纵分量</button><button class="btn big" id="s6-reset" data-i18n="reset">重置本步</button></div>
+    <p class="readout" id="s6-ro" aria-live="polite"></p>
+    <p class="readout" id="s6-check" aria-live="polite"></p>
+    <p class="hint" data-i18n-html="s6hint"></p>
+  </div>
+</section>
+
 </main>
 
 <footer class="site-foot" data-i18n="foot">visual.integ.life · 坐标系与点的位置 Coordinate Plane —— 一步一交互系列</footer>
 
 <script src="app.js?v=cp1"></script>
+<script src="distance.js"></script>
 </body>
 </html>
