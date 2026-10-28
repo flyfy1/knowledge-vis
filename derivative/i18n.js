@@ -48,6 +48,7 @@ zh: {
 
   s2k: '第 2 步 · 每点一个导数',
   s2t: '每个点都有自己的导数：把斜率收集成新函数',
+  s2bridge: '先把 P 放在 x=0，再拖到 x=1 或 x=-1：测得斜率会随位置改变，但始终靠向同一个规律值 2x。',
   s2e: 'P 换个位置，这个点的导数就变：x = 0 处曲线几乎是平的，往两边走切线越来越陡。拖动 P 沿 y = x² 滑动（x 从 −2 到 2），每个停点都用同一套办法实测一次：取 Δ = 0.001 的割线斜率当近似，再和规律值 2x 对账。下面第二幅图会把你测过的每个点的导数描成点列——看它们排成什么形状。',
   s2xLab: 'P 点的横坐标 x（拖 P 或拖滑杆）',
   s2ro: '在 x = <span>{x}</span> 处：实测（Δ = 0.001 的割线斜率）≈ <b>{meas}</b>；规律值 2x = <span>{exact}</span>。测得值只比 2x 多 0.001——那正是 Δ 还没缩完留下的尾巴，Δ 再小它还会更小。所以判定这一点的导数 = <b>{exact}</b>：实测是逼近，不冒充精确值。',
@@ -144,6 +145,7 @@ en: {
 
   s2k: 'Step 2 · A derivative at every point',
   s2t: 'Every point has its own derivative: collecting slopes into a new function',
+  s2bridge: 'Put P at x=0 first, then move to x=1 or x=-1: the measured slope changes with position but keeps approaching the rule value 2x.',
   s2e: 'Move P and the derivative at that point changes: near x = 0 the curve is almost flat, and the tangent steepens as you move out to either side. Drag P along y = x² (x from −2 to 2); at each stop, measure the same way as before — the secant slope with Δ = 0.001 as an approximation — and check it against the pattern value 2x. The second plot below records the derivative of every point you visit as a scatter — watch what shape they form.',
   s2xLab: 'x-coordinate of P (drag P or the slider)',
   s2ro: 'At x = <span>{x}</span>: measured (secant slope with Δ = 0.001) ≈ <b>{meas}</b>; pattern value 2x = <span>{exact}</span>. The measured value exceeds 2x by only 0.001 — precisely the tail left by Δ not being fully shrunk; a smaller Δ would shrink it further. So the derivative at this point is judged to be <b>{exact}</b>: the measurement approaches it, it does not impersonate the exact value.',

@@ -26,3 +26,8 @@
 ## 交付
 - 自查：node --check、键集比对、上述数值断言组、无头浏览器实测（含组合路径与 390）。
 - 报告 ~/workspace/derivative-lab/build-report.md。
+
+## Codex derivative-position bridge — 2026-10-28
+
+Step 2 now sequences P at x=0, x=1 and x=-1 so learners see the measured slope change with
+position while still approaching the rule value 2x.
