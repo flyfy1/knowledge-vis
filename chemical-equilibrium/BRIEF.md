@@ -41,3 +41,8 @@ connects the playback controls to the equal-rates conclusion without changing th
 
 Step 2 now previews the response sequence: settle first, add A, watch forward events briefly lead,
 then see reverse events catch up before the new level flattens. The seeded disturbance model is unchanged.
+
+## Codex temperature bridge — 2026-10-28
+
+Step 3 now directs the comparison from baseline to warm/cool conditions and names the measured
+quantity: the final B share shows the balance point moving, while speed is a separate question.
