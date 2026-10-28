@@ -38,3 +38,8 @@
 ## 交付
 - 自查：node --check、键集/占位符比对、无头浏览器实测（构建者报告里写明测法与条数）、纯逻辑断言（多组圆心角 × 多个 P 位置的实算圆周角 = 圆心角/2 容差内、直径情形 = 90°、两段弧互补和 = 180°、证明步四组等式在圆心角 80° 与 100° 下均成立）。
 - 报告 ~/workspace/circle-angles-lab/build-report.md。
+
+## Codex arc-switch bridge — 2026-10-28
+
+Step 4 now sequences P from the major arc to the minor arc, making the supplementary-angle
+change follow from the same fixed chord.
