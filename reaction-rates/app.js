@@ -50,7 +50,11 @@ function statsFor(opts){return simulateWindow(opts,900,opts.seed??19).metrics;}
 function longRunStats(opts,seeds=CONST.COMPARE_SEEDS,frames=CONST.COMPARE_FRAMES){let rate=0,coll=0,succ=0,speed=0;seeds.forEach(sd=>{let s=initialState({...opts,seed:sd});for(let i=0;i<frames;i++)s=advanceState(s);rate+=s.successes/s.elapsed;coll+=s.collisions/s.elapsed;succ+=s.successes;speed+=metricWindow(s).avgSpeed;});
   const n=seeds.length,cr=coll/n;return {rate:rate/n,collisionRate:cr,share:cr?rate/n/cr*100:0,avgSpeed:speed/n,seeds:n,seconds:frames*CONST.DT};}
 function ratio(a,b){return b?((a-b)/b*100):0;}
-const API={CONST,seeded,speedScale,makeParticles,surfaceLayout,exposedSites,initialState,advanceState,metricWindow,surfaceCounts,simulateWindow,statsFor,longRunStats,relativeSpeed,ratio};
+// A compact reaction-coordinate model for the catalyst bridge. The curve is a
+// teaching aid (not a second rate calculation): the current threshold and a
+// lower catalysed threshold are shown against the same energy coordinate.
+function energyProfileData(threshold,base=CONST.BASE_THRESHOLD){const gate=clamp(Number(threshold),10,100),uncat=clamp(Number(base),10,100),cat=clamp(Math.min(gate,CONST.CAT_THRESHOLD),10,100);const points=[];for(let i=0;i<=40;i++){const x=i/40;const shoulder=0.22+0.03*Math.sin(x*Math.PI);const peak=Math.exp(-((x-.5)**2)/.018);const product=x>.68?-.08:0;points.push({x,y:shoulder+.62*peak+product});}return {points,gate,uncat,cat};}
+const API={CONST,seeded,speedScale,makeParticles,surfaceLayout,exposedSites,initialState,advanceState,metricWindow,surfaceCounts,simulateWindow,statsFor,longRunStats,relativeSpeed,ratio,energyProfileData};
 if(typeof window!=='undefined')window.REACTION_RATES=API;if(typeof module!=='undefined')module.exports=API;
 
 // ---------- page ----------
@@ -74,6 +78,13 @@ function drawTrace(){const c=$('s1-trace');if(!c)return;const LW=900,LH=200;cons
   ctx.fillText('0',L-px(14),B+px(4));ctx.fillText(String(nice),L-px(40),T+px(4));ctx.fillText(span+t('seconds'),Rr-px(30),B+px(18));ctx.fillText(t('traceX'),L+px(4),B+px(18));ctx.fillText(t('traceY'),L+px(6),T-px(8));
   series.forEach(sr=>{if(sr.pts.length<2)return;ctx.setLineDash(sr.dash);ctx.strokeStyle=sr.col;ctx.lineWidth=px(2);ctx.beginPath();sr.pts.forEach((p,i)=>i?ctx.lineTo(X(p[0]),Y(p[1])):ctx.moveTo(X(p[0]),Y(p[1])));ctx.stroke();});ctx.setLineDash([]);
   ctx.font=px(11)+'px system-ui';ctx.fillStyle='#7ee2a8';ctx.fillText(t('traceNow',{n:s.count}),Rr-px(200),T-px(8));if(s1Ghost){ctx.fillStyle='#9aaabd';ctx.fillText(t('traceGhost',{n:s1Ghost.count}),Rr-px(200),T+px(8));}}
+function drawEnergy(){const c=$('s4-energy');if(!c||!sims.s4)return;const LW=900,LH=220;const {ctx,k}=fitCanvas(c,LW,LH);const px=v=>v/k;ctx.clearRect(0,0,LW,LH);ctx.fillStyle='#0d1621';ctx.fillRect(0,0,LW,LH);
+  const L=px(56),R=LW-px(18),T=px(22),B=LH-px(38),w=R-L,h=B-T;const d=energyProfileData(sims.s4.threshold);const X=x=>L+x*w;const Y=e=>B-(e+0.16)/(1.08)*h;
+  ctx.strokeStyle='#2c3b50';ctx.lineWidth=px(1);ctx.beginPath();ctx.moveTo(L,T);ctx.lineTo(L,B);ctx.lineTo(R,B);ctx.stroke();ctx.fillStyle='#9aaabd';ctx.font=px(12)+'px system-ui';ctx.fillText(t('energyAxisX'),R-px(110),B+px(24));ctx.save();ctx.translate(px(14),(T+B)/2);ctx.rotate(-Math.PI/2);ctx.fillText(t('energyAxisY'),0,0);ctx.restore();
+  const drawProfile=(color,dash,barrier,label,offset)=>{ctx.setLineDash(dash.map(px));ctx.strokeStyle=color;ctx.lineWidth=px(3);ctx.beginPath();d.points.forEach((p,i)=>i?ctx.lineTo(X(p.x),Y(p.y)):ctx.moveTo(X(p.x),Y(p.y)));ctx.stroke();ctx.setLineDash([]);ctx.strokeStyle=color;ctx.lineWidth=px(1.5);ctx.setLineDash([px(6),px(5)]);ctx.beginPath();ctx.moveTo(L,Y(barrier/100));ctx.lineTo(R,Y(barrier/100));ctx.stroke();ctx.setLineDash([]);ctx.fillStyle=color;ctx.font='bold '+px(12)+'px system-ui';ctx.fillText(label,R-px(150),T+px(offset));};
+  drawProfile('#ff7a93',[],d.gate,t('energyUncat'),12);drawProfile('#7ee2a8',[5,4],d.cat,t('energyCat'),30);
+  ctx.fillStyle='#9aaabd';ctx.font=px(11)+'px system-ui';ctx.fillText(t('energyReactants'),L+px(4),B-px(8));ctx.fillText(t('energyProducts'),R-px(64),B-px(8));
+}
 // Comparison values depend only on constants and slider values: computed off the frame loop, then cached.
 function compareFor(key,opts){if(cache[key])return cache[key];if(!pending[key]){pending[key]=1;setTimeout(()=>{cache[key]=longRunStats(opts);delete pending[key];refresh();},30);}return null;}
 // Rates over less than 1 s of simulated time are too noisy to print.
@@ -88,7 +99,7 @@ function updateStep2(){const s=sims.s2,m=metricWindow(s);render('s2-canvas',s);r
 function updateStep3(){const s=sims.s3,m=metricWindow(s),sc=surfaceCounts(s);render('s3-canvas',s);runBtn('s3');$('s3-ro').textContent=t('s3ro',{shape:t(s.surface),active:sc.active,total:sc.total,v:s.threshold,rate:fmtRate(m,m.rate)});
   const ex=sf=>exposedSites(surfaceLayout(sf,1).sites).filter(Boolean).length;const b=compareFor('block',{surface:'block'}),p=compareFor('powder',{surface:'powder'});
   $('s3-compare').textContent=b&&p?t('s3compare',{a:ex('block'),b:ex('powder'),total:sc.total,r1:b.rate.toFixed(2),r2:p.rate.toFixed(2),seeds:b.seeds,sec:b.seconds}):t('computing');document.querySelectorAll('[data-surface]').forEach(x=>x.classList.toggle('active',x.dataset.surface===s.surface));}
-function updateStep4(){const s=sims.s4,m=metricWindow(s);render('s4-canvas',s);runBtn('s4');$('s4-threshold-val').textContent=t('thresholdVal',{v:s.threshold});$('s4-ro').textContent=t('s4ro',{v:s.threshold,speed:m.avgSpeed.toFixed(2),ready:m.share.toFixed(0),rate:fmtRate(m,m.rate)});
+function updateStep4(){const s=sims.s4,m=metricWindow(s);render('s4-canvas',s);drawEnergy();runBtn('s4');$('s4-threshold-val').textContent=t('thresholdVal',{v:s.threshold});$('s4-ro').textContent=t('s4ro',{v:s.threshold,speed:m.avgSpeed.toFixed(2),ready:m.share.toFixed(0),rate:fmtRate(m,m.rate)});
   const hi=compareFor('c32',{count:32}),lo=compareFor('thr35',{count:32,threshold:CONST.CAT_THRESHOLD});$('s4-compare').textContent=hi&&lo?t('s4compare',{a:CONST.BASE_THRESHOLD,b:CONST.CAT_THRESHOLD,r1:hi.rate.toFixed(2),r2:lo.rate.toFixed(2),speed:hi.avgSpeed.toFixed(2),speed2:lo.avgSpeed.toFixed(2),seeds:hi.seeds}):t('computing');
   $('s4-cat').textContent=s.threshold===CONST.CAT_THRESHOLD?t('catOff'):t('catOn');}
 const UPDATERS={s0:updateStep0,s1:updateStep1,s2:updateStep2,s3:updateStep3,s4:updateStep4};
