@@ -29,3 +29,7 @@
 ## 注册建议（Alberto 执行）
 - title zh「反应速率 · 数一数成功碰撞」/ en "Reaction Rates · Counting Successful Collisions"；tags：有效碰撞 / Effective Collisions、活化能 / Activation Energy、催化剂 / Catalysts；category chemistry，stage senior。
 - CONCEPT-MAP 拟行：#step0 有效碰撞、#step4 催化剂降门槛。
+
+## Codex threshold-versus-speed bridge — 2026-10-29
+
+Step 4 now asks learners to hold particle motion steady while lowering only the activation threshold, then toggle the catalyst to compare the gate change without conflating it with a speed change.
