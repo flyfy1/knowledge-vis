@@ -41,3 +41,8 @@ to see the inner layer fill before the outer arrangement changes.
 
 Step 3 now tells learners to inspect the outer layer first: a full layer is stable, while the
 remaining gap explains the tendency to gain or lose electrons.
+
+## Codex comparison bridge — 2026-10-28
+
+Step 4 now invites an He/Ne/Na/Cl comparison so the filled-shell rule and the gain-or-loss
+trend can be read across concrete presets.
