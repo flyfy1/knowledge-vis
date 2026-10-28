@@ -1,0 +1,17 @@
+const assert=require('assert');
+const c=require('../app.js');
+const base=c.climateState(280,.30,0,0);
+const doubled=c.climateState(560,.30,0,0);
+const highWater=c.climateState(560,.30,1,0);
+const darker=c.climateState(560,.25,0,0);
+assert(Math.abs(base.co2Forcing)<1e-9,'280 ppm is baseline forcing');
+assert(doubled.co2Forcing>3.5 && doubled.co2Forcing<4.0,'doubling has ~3.7 W/m² forcing');
+assert(doubled.temp>base.temp,'more CO2 warms in the model');
+assert(highWater.temp>doubled.temp,'water vapour feedback amplifies warming');
+assert(darker.absorbed>doubled.absorbed && darker.temp>doubled.temp,'lower albedo absorbs more and warms');
+const budget=c.carbonBudget(40,55);
+assert(Math.abs(budget.atmosphere-18)<1e-9,'atmospheric remainder is emissions minus uptake');
+assert(Math.abs(budget.ocean+budget.land-budget.sink)<1e-9,'sinks partition cleanly');
+assert(budget.ppmPerYear>0,'atmospheric remainder maps to ppm/year');
+assert(c.feedbackSummary(true,true,false).gain>c.feedbackSummary(false,false,false).gain,'active feedback gains exceed baseline');
+console.log('climate-feedback core ok');
