@@ -36,3 +36,8 @@ makes area, while velocity × time width makes distance.
 
 Step 3 now separates A(x), the accumulated amount, from A′(x), the current accumulation rate,
 and asks learners to compare the latter with x².
+
+## Codex exact-value bridge — 2026-10-28
+
+Step 4 now connects the three routes to the same accumulation: geometric estimate, squeezed error,
+and exact antiderivative evaluation.
