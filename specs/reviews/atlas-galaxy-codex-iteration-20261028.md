@@ -91,8 +91,8 @@ contract test covers both localized fallback messages and the HTML/CSS hook.
 
 ## Local handoff — iteration 2
 
-- Implementation commit: pending local commit at handoff; record the exact SHA below after
-  the source, test, spec and worklog files are committed.
+- Implementation commit: `a55f5635b30491ad9b6cca74ea2f4fd1498650ea` (`Explain galaxy fallback states`).
+- Metadata handoff commit: pending; this follow-up records the implementation SHA and final clean-tree state.
 - Branch remains `main`; push, merge review, deployment and production verification remain
   intentionally pending. The only browser network target was the local static server.
 - Manual limits remain: no physical phone, Safari or screen-reader speech test; independent
