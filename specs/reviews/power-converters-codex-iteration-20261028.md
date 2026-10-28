@@ -49,5 +49,6 @@ screen-reader speech and independent review remain outside this self-check.
 ## Local handoff
 
 - Implementation commit: `69635b28` (`Clarify converter power feedback`).
+- Metadata handoff commit: `20d4f785` (`Record converter feedback handoff`); final SHA record follows in the clean local tree.
 - Push, merge review, deployment and production verification: intentionally pending.
 - Built-By attribution follows the repository rule; exact task model identifier is unavailable.
