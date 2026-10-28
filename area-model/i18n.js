@@ -48,6 +48,7 @@ const STR = {
 
     "s3k": "第 3 步",
     "s3t": "两位数 × 两位数：一块地切成四块",
+    "s3bridge": "先逐块看 10×10、10×3、2×10、2×3，再把四块相加；竖式的每一行就是这些面积的账。",
     "s3e": "这一步要回答：12 × 13 的竖式，为什么算出来是对的？把 12 拆成 10 + 2、13 拆成 10 + 3（整十加零头），横竖各切一刀，地就被切成四块。切线停在 10，是因为整十那部分最好算。点「逐块点亮算一遍」，一块一块看面积；最后对照竖式账——<strong>竖式</strong>就是把乘法列成一列、分步写下来的算法，它的每一步其实都在算其中一块或几块地。",
     "s3aLab": "第一个数（地的宽）",
     "s3bLab": "第二个数（地的高）",
@@ -124,6 +125,7 @@ const STR = {
 
     "s3k": "Step 3",
     "s3t": "Two digits × two digits: one plot in four pieces",
+    "s3bridge": "Read the four blocks first — 10×10, 10×3, 2×10, 2×3 — then add them; each written row is part of that area ledger.",
     "s3e": "Question: why does the vertical algorithm for 12 × 13 give the right answer? Split 12 into 10 + 2 and 13 into 10 + 3 (a round ten plus a remainder), cut once vertically and once horizontally, and the land falls into four plots. The cuts sit at 10 because the round-ten part is the easiest to compute. Press “Light up the plots one by one” and read each area; then compare with the vertical ledger — <strong>vertical multiplication</strong> is just the written, step-by-step algorithm, and every step of it computes one or a few of these plots.",
     "s3aLab": "First number (plot width)",
     "s3bLab": "Second number (plot height)",

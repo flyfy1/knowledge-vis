@@ -39,3 +39,8 @@
 Step 2 now foregrounds the invariant while the cut moves: one block grows, the other shrinks,
 but their sum remains the whole area. This connects the slider motion to the distributive-law
 conclusion without changing the area calculations.
+
+## Codex four-block bridge — 2026-10-28
+
+Step 3 now previews the four area terms before the animation: 10×10, 10×3, 2×10 and 2×3.
+The hint connects each written multiplication row to one part of the same rectangle.
