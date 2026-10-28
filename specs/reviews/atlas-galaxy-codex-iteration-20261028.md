@@ -112,3 +112,16 @@ Verification for this iteration: `node --check atlas/galaxy/app.mjs`,
 `node atlas/galaxy/tests/fallback-contract.cjs`, and the targeted Galaxy Playwright browser suite
 covering desktop, mobile, low-power, WebGL fallback, keyboard, path and language behavior.
 Physical phone, Safari and screen-reader speech remain manual review items.
+
+## Release handoff — relation-type line legend
+
+- Implementation commit `49f5c7be` was pushed to `origin/main` without force-push.
+- Deployment copied only `atlas/galaxy/app.mjs` and `atlas/galaxy/renderer.mjs` to
+  `songyy-pi:/home/songyy/projects/visual-site/` with an explicit no-`--delete` rsync.
+  `visual-site.service` remained active; local and remote SHA-256 values matched:
+  `app.mjs` `7026565666b4aa008fad406055ff59406d36dbf5bdae2e6fb7e33ec4fb916623`,
+  `renderer.mjs` `c09fcc166e044ae93980c4185ba733370e9bd856764866da51847e43f28f1dd8`.
+- Online smoke at `https://visual.integ.life/atlas/galaxy.html` returned HTTP 200 and passed
+  four relation legend keys in English and Chinese, 390px low-power list fallback with all 39
+  concepts, and zero page errors or failed requests.
+- Physical phone, Safari and screen-reader speech remain manual review items.
