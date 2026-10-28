@@ -1,0 +1,11 @@
+'use strict';
+const assert=require('node:assert/strict');
+const api=require('../app.js');
+const {ARRAY,binaryInit,binaryStep,binarySearch,pathOf,worstBinaryComparisons,linearSearch}=api;
+let s=binaryInit(ARRAY,43);let r=binaryStep(s);assert.equal(r.event.mid,7);assert.equal(r.event.value,31);assert.equal(r.event.dir,'r');assert.deepEqual([r.state.lo,r.state.hi],[8,15]);
+let hit=binarySearch(ARRAY,43);assert.equal(hit.state.result,'found');assert.equal(hit.state.found,10);assert.equal(hit.state.values[hit.state.found],43);assert.equal(hit.state.comparisons,4);assert.equal(pathOf(hit),'rlreq');
+let miss=binarySearch(ARRAY,42);assert.equal(miss.state.result,'miss');assert.equal(miss.state.found,-1);assert.ok(miss.state.comparisons<=5);assert.ok(miss.steps.every(x=>x.dir!=='eq'));
+assert.equal(worstBinaryComparisons(1),1);assert.equal(worstBinaryComparisons(32),6);assert.equal(worstBinaryComparisons(1024),11);assert.equal(worstBinaryComparisons(0),0);
+let linear=linearSearch(ARRAY,999);assert.equal(linear.found,-1);assert.equal(linear.comparisons,ARRAY.length);
+let repeated=binarySearch([1,1,1],1);assert.equal(repeated.state.result,'found');assert.equal(repeated.state.values[repeated.state.found],1);
+console.log('binary-search core ok');
