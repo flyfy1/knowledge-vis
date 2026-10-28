@@ -42,6 +42,6 @@ Android, Safari, screen-reader speech, and independent review remain outside thi
 
 ## Local handoff
 
-- Implementation commit: pending until the working tree is verified.
+- Implementation commit: `4365b674` (`Connect photosynthesis observation to ledger`).
 - Push/deployment: intentionally pending.
 - Built-By attribution follows the repository rule; exact task model identifier is unavailable.
