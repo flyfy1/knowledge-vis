@@ -48,3 +48,7 @@
 
 Step 4 now sequences rope counting before reading F=G/n, then ties the force gain to the reduced
 lift for the same pulled length.
+
+## Codex rope-count bridge — 2026-10-28
+
+Step 4 now sequences rope counting before reading F=G/n and ties force gain to reduced lift for the same pulled length.
