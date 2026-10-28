@@ -2,6 +2,7 @@ import * as THREE from 'three';
 import {OrbitControls} from '../../day-night-rotation/vendor/three/addons/controls/OrbitControls.js';
 
 export function createGalaxy({host,labels,model,positions,colors,lang,onSelect,onCamera,onFailure,onReset=()=>{},reduced=false}) {
+  const edgeColors={foundation:0x9cc9ff,representation:0xd0b7ff,application:0xffc27d,connection:0x8be4d2};
   const renderer=new THREE.WebGLRenderer({alpha:true,antialias:true,powerPreference:'low-power'});
   renderer.setPixelRatio(Math.min(devicePixelRatio||1,matchMedia('(max-width:760px)').matches?1.25:1.7));
   renderer.setClearColor(0x080d19,0);renderer.outputColorSpace=THREE.SRGBColorSpace;
@@ -32,7 +33,7 @@ export function createGalaxy({host,labels,model,positions,colors,lang,onSelect,o
     const a=new THREE.Vector3().fromArray(positions.get(e.from)),b=new THREE.Vector3().fromArray(positions.get(e.to));
     const middle=a.clone().add(b).multiplyScalar(.5);middle.z+=Math.min(a.distanceTo(b)*.12,3);
     const geometry=new THREE.BufferGeometry().setFromPoints(new THREE.QuadraticBezierCurve3(a,middle,b).getPoints(20));
-    const line=new THREE.Line(geometry,new THREE.LineBasicMaterial({color:0x6b89b1,transparent:true,opacity:.22,depthWrite:false}));scene.add(line);
+    const line=new THREE.Line(geometry,new THREE.LineBasicMaterial({color:edgeColors[e.type]||0x6b89b1,transparent:true,opacity:.28,depthWrite:false}));scene.add(line);
     const trace=new THREE.Line(geometry,new THREE.LineDashedMaterial({color:0xffca84,transparent:true,opacity:1,dashSize:.65,gapSize:.38,depthTest:false}));trace.computeLineDistances();trace.visible=false;scene.add(trace);edgeObjects.push({e,line,trace});
   }
   const groupPositions=new Map();
@@ -89,7 +90,7 @@ export function createGalaxy({host,labels,model,positions,colors,lang,onSelect,o
   function focus(){if(!selected)return;const offset=camera.position.clone().sub(controls.target).normalize().multiplyScalar(mobile?75:65);controls.target.copy(meshes.get(selected).position);camera.position.copy(controls.target).add(offset);controls.update();request();onCamera(snapshot());}
   function setSelection(id,route=[]){selected=meshes.has(id)?id:null;path=route;neighbors=new Set(model.adjacency.get(id)||[]);const pathSet=new Set(path);
     for(const [key,mesh]of meshes){const lit=!selected||key===selected||neighbors.has(key)||pathSet.has(key);mesh.material.emissiveIntensity=key===selected?.5:lit?.2:.025;mesh.material.color.set(colors[model.nodes.find(n=>n.id===key).group]||'#b4d9ff').multiplyScalar(lit?1:.6);labelMap.get(key).classList.toggle('selected',key===selected);}
-    for(const {e,line,trace} of edgeObjects){const related=e.from===id||e.to===id;line.material.opacity=related?.8:.14;line.material.color.set(related?0xaadfff:0x6b89b1);trace.visible=path.some((n,i)=>i>0&&((n===e.from&&path[i-1]===e.to)||(n===e.to&&path[i-1]===e.from)));}request();
+    for(const {e,line,trace} of edgeObjects){const related=e.from===id||e.to===id;line.material.opacity=related?.88:.28;line.material.color.set(related?0xe7f8ff:(edgeColors[e.type]||0x6b89b1));trace.visible=path.some((n,i)=>i>0&&((n===e.from&&path[i-1]===e.to)||(n===e.to&&path[i-1]===e.from)));}request();
   }
   function setLanguage(language,groups,canvasLabel){currentLang=language;canvas.setAttribute('aria-label',canvasLabel);for(const n of model.nodes)labelMap.get(n.id).textContent=n.title[currentLang];for(const g of groups)if(groupLabels.has(g.id))groupLabels.get(g.id).textContent=g.label[currentLang];request();}
   function setTouch(value){interactive=value;controls.enabled=value;controls.enableZoom=mobile&&value;canvas.style.touchAction=mobile&&value?'none':'pan-y';}

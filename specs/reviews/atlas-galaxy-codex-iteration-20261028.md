@@ -97,3 +97,18 @@ contract test covers both localized fallback messages and the HTML/CSS hook.
   intentionally pending. The only browser network target was the local static server.
 - Manual limits remain: no physical phone, Safari or screen-reader speech test; independent
   review and publication remain parent-owned.
+
+## Codex iteration 3 — relation-type line legend
+
+The overview previously rendered every non-path edge with the same blue line, so the spatial
+map showed that concepts were connected but did not explain which documented relation type each
+line represented. The renderer now assigns stable colors to the four existing relation types,
+and the localized legend repeats those colors beside the topic keys. Selection still brightens
+incident edges and shortest paths remain amber dashed traces. No data, layout, camera, fallback,
+or low-power behavior changed.
+
+Verification for this iteration: `node --check atlas/galaxy/app.mjs`,
+`node --check atlas/galaxy/renderer.mjs`, `node atlas/galaxy/tests/core.cjs`,
+`node atlas/galaxy/tests/fallback-contract.cjs`, and the targeted Galaxy Playwright browser suite
+covering desktop, mobile, low-power, WebGL fallback, keyboard, path and language behavior.
+Physical phone, Safari and screen-reader speech remain manual review items.
