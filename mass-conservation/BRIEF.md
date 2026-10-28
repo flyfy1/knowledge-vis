@@ -41,3 +41,8 @@ restore the reading. The conservation model and controls remain unchanged.
 
 Step 4 now sequences the air toggle from off to on so learners see incoming oxygen as the cause
 of solid mass gain, then include that oxygen in the whole-system ledger.
+
+## Codex atom-ledger bridge — 2026-10-28
+
+Step 1 now sequences formula reading before element counting, making the rearrangement versus
+conservation distinction explicit.
