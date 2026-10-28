@@ -1,7 +1,7 @@
 'use strict';
-const{chromium}=require('playwright'),assert=require('node:assert/strict'),fs=require('fs'),path=require('path');
+const{chromium}=require('./playwright.cjs'),assert=require('node:assert/strict'),fs=require('fs'),path=require('path');
 const base=process.env.ATLAS_BASE_URL||'http://127.0.0.1:18925',out=process.env.CONNECTOR_EVIDENCE||'/tmp/galaxy-connector';fs.mkdirSync(out,{recursive:true});const report={errors:[],checks:[],physicalDevice:false};
-(async()=>{const b=await chromium.launch({headless:true,channel:'chrome'});try{
+(async()=>{const b=await chromium.launch({headless:process.env.PLAYWRIGHT_HEADLESS!=='0',channel:process.env.PLAYWRIGHT_BROWSER||'chromium'});try{
  const p=await b.newPage({viewport:{width:1280,height:900},locale:'en-US'});p.setDefaultTimeout(12000);p.on('pageerror',e=>report.errors.push(e.message));
  const ready=async(page,gl=false)=>{await page.waitForFunction(()=>window.GalaxyDiagnostics);if(gl)await page.waitForFunction(()=>!GalaxyDiagnostics.stats().disposed);};
  const heading=async page=>{await page.waitForFunction(()=>document.activeElement.id==='route-task-title');assert.ok(await page.locator('#route-task-title').evaluate(e=>{const r=e.getBoundingClientRect();return r.top>=0&&r.bottom<=innerHeight}));};
