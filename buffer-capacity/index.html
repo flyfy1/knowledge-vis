@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="category" content="chemistry">
+  <meta name="stage" content="senior">
+  <title>缓冲溶液 · 抵抗酸碱扰动</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="i18n.js"></script>
+</head>
+<body>
+  <header class="site-head">
+    <div class="head-main">
+      <p class="backline"><a href="../" data-i18n="back"></a></p>
+      <h1 data-i18n="pageTitle"></h1>
+      <p class="tagline" data-i18n="tagline"></p>
+    </div>
+    <div class="lang-toggle" id="langToggle" role="group" aria-label="Language">
+      <button type="button" data-lang="zh">中</button><button type="button" data-lang="en">EN</button>
+    </div>
+  </header>
+  <nav class="step-nav" id="stepNav" data-i18n-aria="navLabel">
+    <a class="nav-step" href="#step0" data-i18n="nav0"></a>
+    <a class="nav-step" href="#step1" data-i18n="nav1"></a>
+    <a class="nav-step" href="#step2" data-i18n="nav2"></a>
+    <a class="nav-step" href="#step3" data-i18n="nav3"></a>
+    <a class="nav-step" href="#step4" data-i18n="nav4"></a>
+  </nav>
+  <main>
+    <section class="step" id="step0" data-step="0">
+      <div class="step-inner">
+        <p class="step-kicker" data-i18n="s0k"></p><h2 data-i18n="s0t"></h2>
+        <p class="explain" data-i18n-html="s0e"></p>
+        <div class="stage"><canvas id="s0-canvas" height="270" role="img" data-i18n-aria="canvasLabel"></canvas></div>
+        <div class="btn-row">
+          <button class="btn big" type="button" id="s0-acid" data-i18n="addAcid"></button>
+          <button class="btn big" type="button" id="s0-base" data-i18n="addBase"></button>
+          <button class="btn" type="button" id="s0-reset" data-i18n="reset"></button>
+        </div>
+        <p class="readout" id="s0-ro" aria-live="polite"></p>
+        <div class="misconception" id="s0-feedback" aria-live="polite"></div>
+      </div>
+    </section>
+    <section class="step" id="step1" data-step="1">
+      <div class="step-inner">
+        <p class="step-kicker" data-i18n="s1k"></p><h2 data-i18n="s1t"></h2>
+        <p class="explain" data-i18n-html="s1e"></p>
+        <div class="stage"><canvas id="s1-canvas" height="270" role="img" data-i18n-aria="canvasLabel"></canvas></div>
+        <div class="controls">
+          <label><span data-i18n="pKaLab"></span><output id="s1-pka-val"></output><input id="s1-pka" type="range" min="2" max="9" step="0.5" value="4.8"></label>
+          <label><span data-i18n="ratioLab"></span><output id="s1-ratio-val"></output><input id="s1-ratio" type="range" min="0.1" max="10" step="0.1" value="1"></label>
+        </div>
+        <p class="readout" id="s1-ro" aria-live="polite"></p>
+        <div class="misconception" id="s1-feedback" aria-live="polite"></div>
+      </div>
+    </section>
+    <section class="step" id="step2" data-step="2">
+      <div class="step-inner">
+        <p class="step-kicker" data-i18n="s2k"></p><h2 data-i18n="s2t"></h2>
+        <p class="explain" data-i18n-html="s2e"></p>
+        <div class="stage"><canvas id="s2-canvas" height="330" role="img" data-i18n-aria="curveLabel"></canvas></div>
+        <div class="controls">
+          <label><span data-i18n="acidLab"></span><output id="s2-acid-val"></output><input id="s2-acid-range" type="range" min="0" max="1.8" step="0.05" value="0"></label>
+          <label><span data-i18n="baseLab"></span><output id="s2-base-val"></output><input id="s2-base-range" type="range" min="0" max="1.8" step="0.05" value="0"></label>
+        </div>
+        <button class="btn" type="button" id="s2-reset" data-i18n="reset"></button>
+        <p class="readout" id="s2-ro" aria-live="polite"></p>
+        <div class="misconception" id="s2-feedback" aria-live="polite"></div>
+      </div>
+    </section>
+    <section class="step" id="step3" data-step="3">
+      <div class="step-inner">
+        <p class="step-kicker" data-i18n="s3k"></p><h2 data-i18n="s3t"></h2>
+        <p class="explain" data-i18n-html="s3e"></p>
+        <div class="stage"><canvas id="s3-canvas" height="300" role="img" data-i18n-aria="capacityLabel"></canvas></div>
+        <div class="controls">
+          <label><span data-i18n="concLab"></span><output id="s3-conc-val"></output><input id="s3-conc" type="range" min="0.02" max="0.5" step="0.01" value="0.1"></label>
+        </div>
+        <div class="btn-row"><button class="btn big" type="button" id="s3-acid" data-i18n="addAcid"></button><button class="btn big" type="button" id="s3-base" data-i18n="addBase"></button><button class="btn" type="button" id="s3-reset" data-i18n="reset"></button></div>
+        <p class="readout" id="s3-ro" aria-live="polite"></p>
+        <div class="misconception" id="s3-feedback" aria-live="polite"></div>
+      </div>
+    </section>
+    <section class="step" id="step4" data-step="4">
+      <div class="step-inner">
+        <p class="step-kicker" data-i18n="s4k"></p><h2 data-i18n="s4t"></h2>
+        <p class="explain" data-i18n-html="s4e"></p>
+        <div class="finale"><h3 data-i18n="modelTitle"></h3><p data-i18n="modelBody"></p><a href="../acid-base-equilibrium/#step1" data-i18n="linkAcid"></a><a href="../chemical-equilibrium/#step2" data-i18n="linkEq"></a></div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-foot" data-i18n="foot"></footer>
+  <script src="app.js"></script>
+</body>
+</html>
