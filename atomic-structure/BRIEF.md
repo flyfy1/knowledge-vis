@@ -51,3 +51,7 @@ trend can be read across concrete presets.
 
 Step 5 now restates the chain from proton identity through electron arrangement to outer-layer
 stability and gain/loss tendency.
+
+## Codex quiz bridge — 2026-10-28
+
+Step 5 now gives a bilingual reminder of the identity → arrangement → outer-layer chain before the quiz.
