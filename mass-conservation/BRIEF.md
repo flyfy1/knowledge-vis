@@ -46,3 +46,8 @@ of solid mass gain, then include that oxygen in the whole-system ledger.
 
 Step 1 now sequences formula reading before element counting, making the rearrangement versus
 conservation distinction explicit.
+
+## Codex coefficient bridge — 2026-10-28
+
+Step 2 now frames an intentionally changed coefficient as a diagnostic: atom counts and the
+balance warn together, then both recover when the equation is balanced.
