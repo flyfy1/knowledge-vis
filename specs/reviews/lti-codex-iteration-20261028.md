@@ -58,5 +58,20 @@ speech or independent learning outcomes.
 ## Local handoff
 
 - Implementation commit: `295e8349` (`Clarify LTI audio fallback`).
-- Push/deployment: intentionally pending until local acceptance is complete.
+- Provenance commit: `7000e70c` (`Refresh LTI fallback provenance`); pushed to `origin/main`
+  without force-push. The remote `main` tip is `7000e70c` at the time of deployment.
+- Deployment target: `songyy-pi:/home/songyy/projects/visual-site/`, served by the active
+  `visual-site.service`. An explicit, no-`--delete` rsync transferred only
+  `lti/index.html`, `lti/app.js`, `lti/audio.js`, `lti/audio-model.js`, `lti/i18n.js` and
+  `lti/style.css`. Local and remote SHA-256 values matched for all six files.
+- Online evidence: `https://visual.integ.life/lti/` returned HTTP 200. The full
+  `LTI_BASE_URL=https://visual.integ.life node lti/tests/audio-browser.cjs` suite passed with
+  no page errors or failed requests, including user-gesture native AudioContext playback,
+  stop/disposal, navigation/background cleanup, unsupported/denied/late/interrupted recovery,
+  mobile touch/focus checks, and the new JavaScript-disabled idle-status/hidden-controls
+  fallback. The deployed page exposes edition `codex-lti-audio-20261028` and source
+  revision `295e8349`.
+- Remaining limits are unchanged: the global provenance inventory check still has its existing
+  `26 !== 23` blocker, which was not changed or included in this release; physical hearing,
+  phones, Safari, screen-reader speech and independent learning outcomes remain unverified.
 - Built-By attribution follows the repository rule; exact task model identifier is unavailable.
