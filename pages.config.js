@@ -949,6 +949,23 @@ window.KNOWLEDGE_PAGES = [
     path: "chemical-equilibrium/"
   },
   {
+    slug: "acid-base-equilibrium",
+    title: { zh: "酸碱平衡 · 分子在两边来回走", en: "Acid–Base Equilibrium · Molecules Move Both Ways" },
+    desc: {
+      zh: "从 HA ⇌ H⁺ + A⁻ 的粒子往返出发，拖动 Ka、稀释和共同离子，亲眼看解离比例与 pH 如何一起改写。",
+      en: "Start with particles moving through HA ⇌ H⁺ + A⁻, then drag Ka, dilution and a common ion to see dissociation and pH change together."
+    },
+    tags: [
+      { zh: "酸碱平衡", en: "Acid–Base Equilibrium" },
+      { zh: "Ka", en: "Ka" },
+      { zh: "共同离子效应", en: "Common-Ion Effect" }
+    ],
+    category: "chemistry",
+    stage: "senior",
+    status: "live",
+    path: "acid-base-equilibrium/"
+  },
+  {
     slug: "reaction-rates",
     title: { zh: "反应速率 · 数一数成功碰撞", en: "Reaction Rates · Counting Successful Collisions" },
     desc: {
