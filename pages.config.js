@@ -31,6 +31,35 @@ window.KNOWLEDGE_CATEGORIES = [
   { id: "language",    name: { zh: "语言与语言学", en: "Language & Linguistics" } },
   { id: "earth",       name: { zh: "地球与太空", en: "Earth & Space" } },
   { id: "leetcode",    name: { zh: "LeetCode 专区", en: "LeetCode" } }
+
+  {
+    slug: "climate-feedback",
+    title: { zh: "气候反馈 · 一笔一笔对上能量账", en: "Climate Feedback · Balance the Energy Ledger" },
+    desc: { zh: "从 CO₂ 辐射强迫到冰雪、水汽和碳循环反馈，拖动旋钮追踪一条可检验的变暖因果链。", en: "Trace a testable warming chain from CO₂ forcing through ice, water-vapour and carbon-cycle feedbacks." },
+    tags: [{ zh: "辐射强迫", en: "Radiative Forcing" }, { zh: "气候反馈", en: "Climate Feedback" }, { zh: "碳循环", en: "Carbon Cycle" }],
+    category: "earth", stage: "senior", status: "live", path: "climate-feedback/"
+  },
+  {
+    slug: "linear-transform",
+    title: { zh: "二维线性变换 · 矩阵如何挪动平面", en: "2D Linear Transformations · How Matrices Move the Plane" },
+    desc: { zh: "拖动矩阵四个参数，观察网格、基向量、行列式面积和特征方向如何一起变化。", en: "Tune four matrix entries and watch the grid, basis vectors, determinant area and eigen-directions move together." },
+    tags: [{ zh: "矩阵", en: "Matrices" }, { zh: "行列式", en: "Determinants" }, { zh: "基向量", en: "Basis Vectors" }],
+    category: "math", stage: "university", status: "live", path: "linear-transform/"
+  },
+  {
+    slug: "probability-distribution",
+    title: { zh: "概率分布 · 随机性也有形状", en: "Probability Distributions · Randomness Has a Shape" },
+    desc: { zh: "在离散与连续分布之间切换，拖动参数，看概率质量、密度、均值与方差如何重排。", en: "Switch between discrete and continuous distributions, then tune parameters to see mass, density, mean and variance reorganize." },
+    tags: [{ zh: "概率分布", en: "Probability Distributions" }, { zh: "均值与方差", en: "Mean & Variance" }, { zh: "随机变量", en: "Random Variables" }],
+    category: "probability", stage: "senior", status: "live", path: "probability-distribution/"
+  },
+  {
+    slug: "thermodynamics",
+    title: { zh: "热力学 · 一口气追踪能量", en: "Thermodynamics · Track Energy Through a Gas" },
+    desc: { zh: "拖动活塞、切换等温与绝热过程，从 P–V 曲线面积走到第一定律和卡诺效率上限。", en: "Move the piston, compare isothermal and adiabatic paths, then connect P–V area to the first law and Carnot's efficiency ceiling." },
+    tags: [{ zh: "第一定律", en: "First Law" }, { zh: "P–V 图", en: "P–V Diagram" }, { zh: "热机", en: "Heat Engines" }],
+    category: "physics", stage: "university", status: "live", path: "thermodynamics/"
+  },
 ];
 
 /* 学段注册表（2026-10-16 增设）：与分类正交的第二维度，索引页有独立筛选行。
