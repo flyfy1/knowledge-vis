@@ -14,4 +14,10 @@ const feedback = model.simulatePredatorPrey({n0:48,p0:10,r:.35,K:80,a:.35,m:.25,
 assert.equal(feedback.length, 31);
 assert.ok(feedback.every(x => Number.isFinite(x.prey) && Number.isFinite(x.predator)));
 assert.ok(feedback.every(x => x.prey >= 0 && x.predator >= 0));
+const phase = model.phaseSummary(feedback);
+assert.ok(phase.maxPrey >= phase.minPrey);
+assert.ok(phase.maxPredator >= phase.minPredator);
+assert.ok(['clockwise', 'counterclockwise', 'nearly-flat'].includes(phase.orientation));
+const flat = model.phaseSummary([{prey: 4, predator: 2}, {prey: 6, predator: 3}]);
+assert.equal(flat.orientation, 'nearly-flat');
 console.log('population ecology model checks passed');
