@@ -46,3 +46,8 @@ then see reverse events catch up before the new level flattens. The seeded distu
 
 Step 3 now directs the comparison from baseline to warm/cool conditions and names the measured
 quantity: the final B share shows the balance point moving, while speed is a separate question.
+
+## Codex catalyst bridge — 2026-10-28
+
+Step 4 now sequences the comparison from no catalyst to catalyst and asks learners to compare both
+time to balance and final B share. This keeps speed and endpoint as separate observed quantities.
