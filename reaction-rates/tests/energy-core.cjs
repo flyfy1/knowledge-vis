@@ -1,0 +1,15 @@
+'use strict';
+const assert = require('node:assert/strict');
+const api = require('../app.js');
+const high = api.energyProfileData(90);
+const catalysed = api.energyProfileData(60);
+assert.equal(high.points.length, 41, 'reaction coordinate has 41 sample points');
+assert.equal(high.gate, 90);
+assert.equal(high.cat, 60);
+assert.equal(catalysed.gate, 60);
+assert.equal(catalysed.cat, 60, 'catalyst cannot raise the current gate');
+assert.ok(high.points.some(p => p.y > 0.7), 'profile contains a visible transition-state peak');
+assert.ok(high.points.at(-1).y < high.points[20].y, 'products sit lower than the transition state');
+const low = api.energyProfileData(35);
+assert.equal(low.cat, 35);
+console.log('reaction-rates energy profile core: ok');

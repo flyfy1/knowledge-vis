@@ -33,3 +33,8 @@
 ## Codex threshold-versus-speed bridge — 2026-10-29
 
 Step 4 now asks learners to hold particle motion steady while lowering only the activation threshold, then toggle the catalyst to compare the gate change without conflating it with a speed change.
+
+## Energy-profile bridge — 2026-10-29
+- Step 4 now includes a labelled reaction-coordinate sketch beside the live particle simulation.
+- Pink = current uncatalysed threshold, green dashed = lower catalysed threshold; the sketch never substitutes for measured collision counts.
+- `energyProfileData` is a pure, tested helper exposed through the page API.
