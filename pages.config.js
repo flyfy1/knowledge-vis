@@ -1019,6 +1019,13 @@ window.KNOWLEDGE_PAGES = [
     category: "math", stage: "university", status: "live", path: "supply-demand/"
   },
   {
+    slug: "binary-search",
+    title: { zh: "二分查找 · 每次砍掉一半", en: "Binary Search · Halve the Candidates" },
+    desc: { zh: "在有序数组里单步追踪 lo、mid、hi：每次比较排除一半候选，再用滑杆看 O(n) 与 O(log n) 的增长差距。", en: "Step through lo, mid and hi on a sorted array: each comparison removes half the candidates, then compare O(n) and O(log n) as n grows." },
+    tags: [{ zh: "二分查找", en: "Binary Search" }, { zh: "不变量", en: "Invariants" }, { zh: "复杂度", en: "Complexity" }],
+    category: "computing", stage: "university", status: "live", path: "binary-search/"
+  },
+  {
     slug: "graph-algorithms",
     title: { zh: "图算法 · 让边带你走", en: "Graph Algorithms · Let Edges Lead" },
     desc: { zh: "在一张可编辑的小图上对比 BFS 队列与 DFS 栈，切换一条边，观察 frontier 和 O(V+E) 如何同步改变。", en: "Compare BFS queues and DFS stacks on an editable graph; toggle one edge and watch the frontier and O(V+E) accounting update together." },
