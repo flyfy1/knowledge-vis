@@ -76,6 +76,8 @@ const STR = {
     "cCosWave": "cos 波（站位）",
     "s4k": "第 4 步 · tan 登场",
     "s4t": "tan 是斜率，站上 x = 1 的墙",
+    "s4bridge": "先点 89.9°、90°、90.1° 依次比较：有限值、未定义、有限负值是三种不同状态。",
+    "s4bridge": "Compare 89.9°, 90° and 90.1°: finite, undefined and finite negative are three different states.",
     "s4e": "这一步要回答：<strong>tan 是什么，点逼近 90° 时它会怎样？</strong>还剩最后一个。把原点和点的连线<strong>延长</strong>，让它撞上 x = 1 这面竖墙：撞点离地面的高度，就是 <strong>tan θ</strong>——它其实就是这条线的斜率，也就是 sin 除以 cos。拖动点（或拖滑杆）逼近 90°，看撞点怎么冲上天；再拖过 90°，看它从哪里回来。",
     "s4th": "角度 θ（°）",
     "s4near": "逼近 90°：",

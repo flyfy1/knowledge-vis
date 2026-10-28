@@ -11,3 +11,8 @@ Finitevaluequotientcomputedfromunroundedcoordinates; roundedoperandstringsarenot
 ReadinghistoryreusesknowledgeGeometryReading v1 lesson:trig for S1θ/unit,S4θ,S6θ/chain; validatesboundedfinitephase/enum/bool,mergesforeignfields,debouncespreview180ms;nativepointerends/handledkeyup/change/preset/unit/chain/playcommitsavesynchronously,links/pagehidearesupplemental. S6documentrebuildrestorespaused/currentpoint,notoldtrace;RAMbfcachemayretainitsowntrace; noquiz/mastery/profile. Otherwave/audio algorithms retainexistingbehavior.
 
 Reuseexistingtokens/controls/loop. 48pxtargets,3pxfocus,EN/ZH320/2x/forcedcolors,actualkeyboard/pointer/touch/navigation checks; no newgraphnode/controller/page/dependency. Sources/tests/independentreviewandlimits in verificationreport.
+
+## Codex tangent-state bridge — 2026-10-28
+
+Step 4 now previews the three states around the pole: finite, undefined, and finite negative.
+This helps separate the domain break from a value merely leaving the visible canvas.
