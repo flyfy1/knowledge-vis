@@ -29,3 +29,7 @@
 - space-diagonal/{index.html,app.js,i18n.js,style.css}（结构照 pythagoras 页）。
 - 自查证据：node --check、键集比对、桌面与 390 宽截图各 1 张（旋转到能同时看见两条对角线的角度）、一组自选棱长的读数独立复算记录。
 - 报告写 ~/codex-review/3dtrial-report.md：做了什么、3D 效果自评（深度感是否清楚、两条对角线是否易区分）、性能与代码量、若推广到「定积分旋转体」这类曲面 3D 的可行性判断。完成写 ~/codex-review/3dtrial.DONE。
+
+## Codex parameter-isolation bridge — 2026-10-28
+
+Step 1 now gives a two-pass experiment: hold `b,c` and change `a` to see both `e` and `d` respond, then hold `a,b` and change `c` to see `e` stay fixed while `d` changes. This makes the two Pythagoras steps inspectable before the learner reads the ledger.
