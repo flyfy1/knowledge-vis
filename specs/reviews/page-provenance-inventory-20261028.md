@@ -30,5 +30,15 @@ authoritative `page-provenance.json` contained 26 entries, and a repository scan
   all registered pages in English/Chinese at desktop and 320px widths, visible source links,
   keyboard/200% text, route and Back/reload state, no-JS disclosure, forced colors, and the
   unregistered Fourier negative control.
-- No runtime deployment was performed. Physical devices, Safari and screen-reader speech remain
-  outside this static provenance gate.
+
+## Release handoff
+
+- `a4735905` was pushed to `origin/main` without force-push.
+- The only site resource changed by this repair, `page-provenance.json`, was copied to
+  `songyy-pi:/home/songyy/projects/visual-site/` with an explicit no-`--delete` rsync. The
+  active `visual-site.service` remained healthy, and the local/Pi SHA-256 matched:
+  `a64d4ae125da023f7f914c9067dfa7a7dce2446a70e02ced45d7d8afad3893c9`.
+- Production smoke passed at `https://visual.integ.life`: the site and inventory returned HTTP
+  200, and the full Playwright provenance suite passed for all 26 registered pages with no
+  browser errors or failed requests. The live inventory reports `schemaVersion: 1` and 26 pages.
+- Physical devices, Safari and screen-reader speech remain outside this static provenance gate.
