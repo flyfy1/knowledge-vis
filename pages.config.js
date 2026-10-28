@@ -28,6 +28,7 @@ window.KNOWLEDGE_CATEGORIES = [
   { id: "math",        name: { zh: "数学基础",   en: "Mathematical Foundations" } },
   { id: "chemistry",   name: { zh: "化学", en: "Chemistry" } },
   { id: "biology",     name: { zh: "生物", en: "Biology" } },
+  { id: "language",    name: { zh: "语言与语言学", en: "Language & Linguistics" } },
   { id: "earth",       name: { zh: "地球与太空", en: "Earth & Space" } },
   { id: "leetcode",    name: { zh: "LeetCode 专区", en: "LeetCode" } }
 ];
@@ -1077,6 +1078,21 @@ window.KNOWLEDGE_PAGES = [
     desc: { zh: "从分包、延迟与带宽，到路由、TCP 握手和拥塞控制：一封消息如何穿过不可靠的网络，逐层拼成可靠的字节流。", en: "From packetization, latency and bandwidth to routing, TCP handshakes and congestion control: watch an unreliable network become a reliable byte stream layer by layer." },
     tags: [{ zh: "计算机网络", en: "Computer Networks" }, { zh: "TCP", en: "TCP" }, { zh: "拥塞控制", en: "Congestion Control" }],
     category: "computing", stage: "university", status: "live", path: "network-flow/"
+  },
+
+  {
+    slug: "linguistics-phonology",
+    title: { zh: "语音与音位 · 从口腔到对立", en: "Speech Sounds & Phonemes · From Mouth to Contrast" },
+    desc: {
+      zh: "从发音动作、最小对立到音节槽位和复数同化，点击一个特征，追踪它怎样改变结构与意义。",
+      en: "From articulation and minimal pairs to syllable slots and plural assimilation, change one feature and trace how structure and meaning move."
+    },
+    tags: [
+      { zh: "语音学", en: "Phonetics" },
+      { zh: "音位", en: "Phonemes" },
+      { zh: "音节结构", en: "Syllable Structure" }
+    ],
+    category: "language", stage: "senior", status: "live", path: "linguistics-phonology/"
   },
 
 ];
