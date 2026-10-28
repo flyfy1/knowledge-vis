@@ -12,7 +12,7 @@ const STR = {
     back: '← 知识索引',
     pageTitle: '坐标系与点的位置 · 给每个位置一个地址',
     tagline: '位置可以被数钉死：一条线上的位置用一个数，平面上的位置用一对数。这一对数有顺序——先横后纵，写反了就是另一个地址。这一页从数轴开始，把坐标系这张「地址网」一格一格铺给你看。',
-    nav0: '0 一维地址', nav1: '1 一个数不够', nav2: '2 坐标系登场', nav3: '3 顺序不能反', nav4: '4 四象限', nav5: '5 自测与终章',
+    nav0: '0 一维地址', nav1: '1 一个数不够', nav2: '2 坐标系登场', nav3: '3 顺序不能反', nav4: '4 四象限', nav5: '5 自测与终章', nav6: '6 中点与距离',
     start: '开始探索 ↓',
     foot: 'visual.integ.life · 坐标系与点的位置 Coordinate Plane —— 一步一交互系列',
 
@@ -117,14 +117,25 @@ const STR = {
     s5neg: '还有一件事：数轴上 0 的左边那半截，还有一整页的故事——负数是怎么住进数轴的，那页正在路上。',
     s5lkLf0: '坐标动起来：点排成一条直线——一次函数的爬坡，从你会读的坐标开始 →',
     s5lkLf2: '把坐标代进方程验算：(x, y) 不只是地址，还能拿去算 →',
-    s5lkPyth: '用坐标算距离：两点之间的距离，横纵差进了勾股定理 →'
+    s5lkPyth: '用坐标算距离：两点之间的距离，横纵差进了勾股定理 →',
+    s6k: '第 6 步 · 中点与距离',
+    s6t: '把一条线拆成：方向、长度与中点',
+    s6e: '这一步要回答：两点之间的直线，怎样同时读出方向、长度和正中央？拖动 A、B 或使用滑杆。青色箭头是从 A 指向 B 的向量；橙色虚线把它拆成横向 Δx 与纵向 Δy；绿色点 M 是中点，坐标是两端坐标逐项取平均。距离用勾股定理把两个分量合成，斜率则是 Δy/Δx；竖直线没有有限斜率。',
+    s6canvasLabel: '可拖动的两点、向量分量和中点；读数见图下',
+    s6AxLab: 'A 的横坐标 x', s6AyLab: 'A 的纵坐标 y', s6BxLab: 'B 的横坐标 x', s6ByLab: 'B 的纵坐标 y',
+    s6components: '显示横、纵分量',
+    s6ro: 'A = <b>{a}</b>，B = <b>{b}</b>；Δx = <b>{dx}</b>，Δy = <b>{dy}</b>；距离 |AB| = <b>{dist}</b>；中点 M = <b>{mid}</b>；斜率 = <b>{slope}</b>。',
+    s6vertical: '未定义（竖直线）',
+    s6check: '平方核对：|AB|² = <b>{lhs}</b>；分量平方和 {rhs}。',
+    s6hint: '结论：一条线段不是只有一个「长度」；它还带着方向分量。交换 A、B 会让 Δx、Δy 和斜率变号，但距离不变，中点也不变。这里的整数格只是练习入口，分数坐标遵循同一套公式。',
+
   },
   en: {
     docTitle: 'The Coordinate Plane · x First, Then y — Every Point Has an Address — One Interaction at a Time',
     back: '← Knowledge Index',
     pageTitle: 'The Coordinate Plane · An Address for Every Position',
     tagline: 'A position can be pinned down by numbers: one number for a position on a line, a pair of numbers for a position on a plane. And the pair has an order — across first, then up; swap them and you land at a different address. Starting from the number line, this page lays out the coordinate grid one cell at a time.',
-    nav0: '0 One Number', nav1: '1 One Is Not Enough', nav2: '2 The Grid Arrives', nav3: '3 Order Matters', nav4: '4 Four Quadrants', nav5: '5 Quiz & Wrap-up',
+    nav0: '0 One Number', nav1: '1 One Is Not Enough', nav2: '2 The Grid Arrives', nav3: '3 Order Matters', nav4: '4 Four Quadrants', nav5: '5 Quiz & Wrap-up', nav6: '6 Midpoint & Distance',
     start: 'Start exploring ↓',
     foot: 'visual.integ.life · Coordinate Plane 坐标系与点的位置 — One Interaction at a Time series',
 
@@ -229,7 +240,18 @@ const STR = {
     s5neg: 'One more thing: the left half of the number line, the part left of 0, has a whole page of its own story — how negative numbers moved into the number line. That page is on its way.',
     s5lkLf0: 'Coordinates in motion: points line up into a straight line — the linear-function ramp starts from coordinates you can read →',
     s5lkLf2: 'Coordinates at work: plug (x, y) into an equation and check it — an address you can also compute with →',
-    s5lkPyth: 'Measuring with coordinates: the distance between two points feeds the coordinate differences into the Pythagorean theorem →'
+    s5lkPyth: 'Measuring with coordinates: the distance between two points feeds the coordinate differences into the Pythagorean theorem →',
+    s6k: 'Step 6 · Midpoint & Distance',
+    s6t: 'Split a segment into direction, length and midpoint',
+    s6e: 'This step answers: how can one straight segment reveal its direction, length and exact centre at the same time? Drag A or B, or use the sliders. The cyan arrow is the vector from A to B; the orange dashed path splits it into horizontal Δx and vertical Δy; the green point M is the midpoint, found by averaging the two endpoint coordinates component by component. The distance combines the two components with the Pythagorean theorem; slope is Δy/Δx, while a vertical line has no finite slope.',
+    s6canvasLabel: 'Draggable endpoints with vector components and midpoint; readout below',
+    s6AxLab: 'A x-coordinate', s6AyLab: 'A y-coordinate', s6BxLab: 'B x-coordinate', s6ByLab: 'B y-coordinate',
+    s6components: 'Show horizontal and vertical components',
+    s6ro: 'A = <b>{a}</b>, B = <b>{b}</b>; Δx = <b>{dx}</b>, Δy = <b>{dy}</b>; distance |AB| = <b>{dist}</b>; midpoint M = <b>{mid}</b>; slope = <b>{slope}</b>.',
+    s6vertical: 'undefined (vertical line)',
+    s6check: 'Square check: |AB|² = <b>{lhs}</b>; component squares {rhs}.',
+    s6hint: 'Conclusion: a segment carries more than a single length; it also carries direction components. Swap A and B and Δx, Δy and slope change sign, while the distance and midpoint stay fixed. Integer lattice points are only the entry ramp — the same formulas work for fractional coordinates.',
+
   }
 };
 
