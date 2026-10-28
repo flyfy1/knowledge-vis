@@ -34,3 +34,11 @@ NODE_PATH=/path/to/existing/node_modules node photosynthesis/tests/browser.cjs
 To replay the historical failure, supply the downloaded old public script as `DEPLOYED_APP=/path/to/app.js` and run `tests/reproduce.cjs`; the harness loads the exact delivery-base HTML/CSS/i18n with that old script. The saved reproduction is explicitly a local asset replay, not a physical-device result. Do not run an unbounded animation with that script; only three resize events are needed.
 
 Independent review and physical Android validation remain with integration/review; current results are Codex self-check.
+
+## Teaching-continuity follow-up (2026-10-28)
+
+The repaired scroll path remains unchanged. A small Codex follow-up adds an explicit bridge
+above the step-1 ledger: the step-0 bubbles are identified as oxygen, then the learner is told
+to click `6 O₂` before `6 H₂O` to trace the product back to its source. The bridge is authored
+in both languages, stays in normal document flow, and is covered by the page browser suite;
+it does not change the equation, model, canvas lifecycle, or fallback behavior.
