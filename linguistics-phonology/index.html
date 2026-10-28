@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>语音与音位 · 从口腔到对立</title>
+  <link rel="stylesheet" href="style.css?v=lp1">
+  <script src="i18n.js?v=lp1"></script>
+</head>
+<body>
+<header class="site-head">
+  <div class="head-main">
+    <p class="backline"><a href="../" data-i18n="back">← 知识索引</a></p>
+    <h1 data-i18n="pageTitle">语音与音位 · 从口腔到对立</h1>
+    <p class="tagline" data-i18n="tagline">把“听起来像什么”拆成三层：发音动作、音位对立、语境中的实际变体。拖动、点击、替换，观察一个细小的特征怎样改变意义。</p>
+  </div>
+  <div class="lang-toggle" id="langToggle" role="group" aria-label="Language">
+    <button type="button" data-lang="zh">中</button><button type="button" data-lang="en">EN</button>
+  </div>
+</header>
+<nav class="step-nav" aria-label="步骤导航">
+  <a class="nav-step" href="#step0" data-nav="0" data-i18n="nav0">0 发音动作</a>
+  <a class="nav-step" href="#step1" data-nav="1" data-i18n="nav1">1 音位对立</a>
+  <a class="nav-step" href="#step2" data-nav="2" data-i18n="nav2">2 音节骨架</a>
+  <a class="nav-step" href="#step3" data-nav="3" data-i18n="nav3">3 语境变体</a>
+  <a class="nav-step" href="#step4" data-nav="4" data-i18n="nav4">4 自测</a>
+</nav>
+<main>
+<section class="step" id="step0" data-step="0">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s0k">第 0 步 · 发音动作</p>
+    <h2 data-i18n="s0t">同一个声道，改变一个开关就换了音</h2>
+    <p class="explain" data-i18n-html="s0e"></p>
+    <div class="stage articulation-stage">
+      <div class="sound-picker" id="soundPicker" role="group" aria-label="sound picker"></div>
+      <div class="articulation-grid">
+        <div class="mouth-card">
+          <div class="mouth-label" data-i18n="mouthLabel">口腔侧视图 · 舌位与声带</div>
+          <div class="mouth" id="mouth" aria-label="articulation diagram">
+            <span class="palate"></span><span class="tongue" id="tongue"></span><span class="lips" id="lips"></span>
+            <span class="vocal-folds" id="vocalFolds"><i></i><i></i></span>
+            <span class="air-arrow" id="airArrow">→</span>
+          </div>
+          <p class="diagram-caption" id="diagramCaption"></p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-title" data-i18n="featuresTitle">特征面板</div>
+          <div id="featureList" class="feature-list"></div>
+          <p class="readout" id="s0Readout"></p>
+        </div>
+      </div>
+    </div>
+    <p class="hint" data-i18n-html="s0hint"></p>
+    <a class="btn primary" href="#step1" data-i18n="next">继续：寻找最小对立 ↓</a>
+  </div>
+</section>
+<section class="step" id="step1" data-step="1">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s1k">第 1 步 · 音位对立</p>
+    <h2 data-i18n="s1t">只改一个特征，词义就能换轨</h2>
+    <p class="explain" data-i18n-html="s1e"></p>
+    <div class="stage contrast-stage">
+      <div class="pair-tabs" id="pairTabs" role="group" aria-label="minimal pair"></div>
+      <div class="word-contrast" id="wordContrast"></div>
+      <div class="contrast-track"><div class="track-line"></div><div class="track-node left" id="leftNode"></div><div class="track-node right" id="rightNode"></div></div>
+      <p class="readout" id="s1Readout"></p>
+    </div>
+    <p class="hint" data-i18n-html="s1hint"></p>
+    <a class="btn" href="#step2" data-i18n="next2">继续：拆开一个音节 ↓</a>
+  </div>
+</section>
+<section class="step" id="step2" data-step="2">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s2k">第 2 步 · 音节骨架</p>
+    <h2 data-i18n="s2t">音节不是一团声音：它有可见的槽位</h2>
+    <p class="explain" data-i18n-html="s2e"></p>
+    <div class="stage syllable-stage">
+      <div class="word-picker" id="wordPicker" role="group" aria-label="word picker"></div>
+      <div class="syllable-shell">
+        <div class="slot-labels"><span data-i18n="onset">起首 Onset</span><span data-i18n="nucleus">核 Nucleus</span><span data-i18n="coda">韵尾 Coda</span></div>
+        <div class="syllable-slots" id="syllableSlots"></div>
+      </div>
+      <div class="legend"><span class="legend-dot onset-dot"></span><span data-i18n="onsetLegend">起首：核之前的辅音</span><span class="legend-dot nucleus-dot"></span><span data-i18n="nucleusLegend">核：音节的峰值</span><span class="legend-dot coda-dot"></span><span data-i18n="codaLegend">韵尾：核之后的辅音</span></div>
+      <p class="readout" id="s2Readout"></p>
+    </div>
+    <p class="hint" data-i18n-html="s2hint"></p>
+    <a class="btn" href="#step3" data-i18n="next3">继续：看语境怎样改写表面音 ↓</a>
+  </div>
+</section>
+<section class="step" id="step3" data-step="3">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s3k">第 3 步 · 语境变体</p>
+    <h2 data-i18n="s3t">规则把同一个后缀，送到不同的表面位置</h2>
+    <p class="explain" data-i18n-html="s3e"></p>
+    <div class="stage rule-stage">
+      <div class="controls">
+        <label><span data-i18n="rootLabel">词根最后一个音</span><select id="rootSelect"><option value="voiceless" data-i18n="root_cat">cat /k/（清音）</option><option value="voiced" data-i18n="root_dog">dog /g/（浊音）</option></select></label>
+        <label><span data-i18n="suffixLabel">复数后缀的底层形式</span><select id="suffixSelect"><option value="s" data-i18n="suffix_s">/s/</option><option value="z" data-i18n="suffix_z">/z/</option></select></label>
+      </div>
+      <div class="rule-chain" id="ruleChain"></div>
+      <p class="readout" id="s3Readout"></p>
+      <button class="btn big" id="replayRule" type="button" data-i18n="replay">▶ 重放规则</button>
+    </div>
+    <p class="hint" data-i18n-html="s3hint"></p>
+    <a class="btn" href="#step4" data-i18n="next4">继续：自测 ↓</a>
+  </div>
+</section>
+<section class="step" id="step4" data-step="4">
+  <div class="step-inner">
+    <p class="step-kicker" data-i18n="s4k">第 4 步 · 自测</p>
+    <h2 data-i18n="s4t">把“特征 → 对立 → 变体”说完整</h2>
+    <p class="explain" data-i18n-html="s4e"></p>
+    <div class="quiz-card">
+      <p class="quiz-question" id="quizQuestion"></p>
+      <div class="quiz-options" id="quizOptions"></div>
+      <p class="readout" id="quizReadout"></p>
+      <button class="btn" id="newQuiz" type="button" data-i18n="newQuiz">换一道题</button>
+    </div>
+    <div class="takeaway"><strong data-i18n="takeawayTitle">三句话带走</strong><ol><li data-i18n-html="take1"></li><li data-i18n-html="take2"></li><li data-i18n-html="take3"></li></ol></div>
+  </div>
+</section>
+</main>
+<footer class="site-foot" data-i18n="foot">visual.integ.life · 语音与音位 Phonology — 一步一交互系列</footer>
+<script src="app.js?v=lp1"></script>
+</body>
+</html>
