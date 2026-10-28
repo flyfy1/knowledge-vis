@@ -69,6 +69,8 @@ const STR = {
 
     s3k: '第 3 步 · 落点与交点',
     s3t: '落点与交点：弧线在哪里碰到地面',
+    s3bridge: '先看顶点相对 x 轴的位置，再拖 h/k：穿过 x 轴是两个落点，刚好碰到是一个，整条在上方或下方则没有。',
+    s3bridge: 'Check the vertex against the x-axis, then move h/k: crossing gives two landing points, touching gives one, and staying on one side gives none.',
     s3e: '这一步要回答：抛物线和 x 轴（地面）交在哪里、有几个交点？交点就是 y = 0 的地方——投篮情境里，球落地的那一刻。拖 h、k 滑杆或切换开口方向，把弧线摆出两交点、一交点、无交点三种情形；再点（或拖动）弧线放一面探针旗，逐点看高度。',
     s3aLab: '开口方向 a',
     s3aUp: 'a = 1（开口向上）',
