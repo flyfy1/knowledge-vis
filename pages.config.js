@@ -1053,6 +1053,13 @@ window.KNOWLEDGE_PAGES = [
     tags: [{ zh: "板块边界", en: "Plate Boundaries" }, { zh: "地质时间", en: "Geologic Time" }, { zh: "地震证据", en: "Earthquake Evidence" }],
     category: "earth", stage: "senior", status: "live", path: "geology-plate-tectonics/"
   },
+  {
+    slug: "climate-energy",
+    title: { zh: "气候能量账本 · 太阳光如何变成温度", en: "Climate Energy Ledger · How Sunlight Becomes Temperature" },
+    desc: { zh: "从纬度入射、表面反照到红外出射，沿着一束光走完整个气候能量链。", en: "Trace one beam through latitude, surface albedo and infrared escape to balance the climate energy ledger." },
+    tags: [{ zh: "能量平衡", en: "Energy Balance" }, { zh: "反照率", en: "Albedo" }, { zh: "温室效应", en: "Greenhouse Effect" }],
+    category: "earth", stage: "senior", status: "live", path: "climate-energy/"
+  },
 
 
   {

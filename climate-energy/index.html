@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>气候能量账本 · 太阳光如何变成温度</title>
+  <link rel="stylesheet" href="../lesson-shell.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-head">
+  <div class="head-top">
+    <a class="back-link" href="/" data-i18n="back">← 知识索引</a>
+    <div class="lang-toggle"><button data-lang="zh">中</button><button data-lang="en">EN</button></div>
+  </div>
+  <h1 data-i18n="title">气候能量账本 · 太阳光如何变成温度</h1>
+  <p class="tagline" data-i18n="tagline">从纬度、反照率到温室效应，沿着一束光走完整个地球系统的能量链。</p>
+</header>
+<nav class="step-nav">
+  <a href="#step0" data-i18n="nav0">0 纬度与入射</a>
+  <a href="#step1" data-i18n="nav1">1 反照率</a>
+  <a href="#step2" data-i18n="nav2">2 温室效应</a>
+  <a href="#step3" data-i18n="nav3">3 证据链</a>
+</nav>
+<main>
+  <section class="step" id="step0" data-step="0">
+    <div class="step-inner">
+      <p class="step-kicker" data-i18n="s0k">第 0 步 · 纬度与入射</p>
+      <h2 data-i18n="s0t">同一颗太阳，不同的光斑</h2>
+      <p class="explain" data-i18n-html="s0e">地球接收到的太阳功率近似是<strong>太阳常数 × 投影面积</strong>。纬度升高时，光线更斜，同一束能量摊在更大的地面上，所以单位面积获得的能量减少。</p>
+      <div class="stage"><canvas id="latitudeCanvas" height="330"></canvas></div>
+      <label class="control"><span data-i18n="latitude">纬度</span><b id="latitudeVal">0°</b><input id="latitude" type="range" min="0" max="75" value="0"></label>
+      <div class="metrics two"><div><span data-i18n="sunAngle">太阳高度角</span><strong id="sunAngleVal">90°</strong></div><div><span data-i18n="insolation">相对入射功率</span><strong id="insolationVal">100%</strong></div></div>
+      <p class="readout" id="latitudeReadout" aria-live="polite"></p>
+      <button class="btn primary" data-scroll="#step1" data-i18n="start">继续：追踪能量 ↓</button>
+    </div>
+  </section>
+
+  <section class="step" id="step1" data-step="1">
+    <div class="step-inner">
+      <p class="step-kicker" data-i18n="s1k">第 1 步 · 反照率</p>
+      <h2 data-i18n="s1t">白色表面会把光退回去</h2>
+      <p class="explain" data-i18n-html="s1e">反照率 <em>α</em> 是被反射的比例。雪、云和沙漠的 α 较高，森林和海洋较低；剩下的 <strong>1 − α</strong> 才进入地表—大气系统。</p>
+      <div class="stage"><canvas id="albedoCanvas" height="270"></canvas></div>
+      <label class="control"><span data-i18n="albedo">反照率 α</span><b id="albedoVal">30%</b><input id="albedo" type="range" min="5" max="85" value="30"></label>
+      <div class="metrics three"><div><span data-i18n="incoming">入射</span><strong id="incomingVal">100</strong><small data-i18n="units">相对单位</small></div><div><span data-i18n="reflected">反射回太空</span><strong id="reflectedVal">30</strong><small data-i18n="units">相对单位</small></div><div><span data-i18n="absorbed">被吸收</span><strong id="absorbedVal">70</strong><small data-i18n="units">相对单位</small></div></div>
+      <p class="readout" id="albedoReadout" aria-live="polite"></p>
+    </div>
+  </section>
+
+  <section class="step" id="step2" data-step="2">
+    <div class="step-inner">
+      <p class="step-kicker" data-i18n="s2k">第 2 步 · 温室效应</p>
+      <h2 data-i18n="s2t">逃出去的热，决定平衡温度</h2>
+      <p class="explain" data-i18n-html="s2e">地表吸收短波后，会以红外辐射散热。温室气体让一部分红外被吸收、再向各方向重发射；系统必须升温到<strong>向外的能量 = 吸收的能量</strong>才会稳定。</p>
+      <div class="stage"><canvas id="greenhouseCanvas" height="300"></canvas></div>
+      <label class="control"><span data-i18n="greenhouse">温室气体遮挡率</span><b id="greenhouseVal">55%</b><input id="greenhouse" type="range" min="0" max="90" value="55"></label>
+      <div class="metrics three"><div><span data-i18n="effectiveTemp">有效辐射温度</span><strong id="effectiveTempVal">255 K</strong><small data-i18n="topOfAtmosphere">大气顶</small></div><div><span data-i18n="surfaceTemp">模型地表温度</span><strong id="surfaceTempVal">273 K</strong><small data-i18n="kelvin">开尔文</small></div><div><span data-i18n="escape">直接逃逸红外</span><strong id="escapeVal">45%</strong><small data-i18n="ofHeat">占出射热</small></div></div>
+      <p class="readout" id="greenhouseReadout" aria-live="polite"></p>
+      <p class="hint" data-i18n="s2h">这是辐射平衡的教学模型：它展示方向和反馈，不替代真实气候模型中的云、海洋和环流。</p>
+    </div>
+  </section>
+
+  <section class="step" id="step3" data-step="3">
+    <div class="step-inner">
+      <p class="step-kicker" data-i18n="s3k">第 3 步 · 证据链</p>
+      <h2 data-i18n="s3t">把每个旋钮连回真实世界</h2>
+      <p class="explain" data-i18n="s3e">选择三张能组成因果链的证据卡：纬度改变入射，表面改变反射，大气改变出射。点“检查”后，再用一句话解释哪一环改变了能量账本。</p>
+      <div class="evidence" id="evidence"></div>
+      <div class="btn-row"><button class="btn primary" id="shuffle" data-i18n="shuffle">重新组合证据</button><button class="btn" id="check" data-i18n="check">检查我的链条</button></div>
+      <p class="readout" id="checkReadout" aria-live="polite"></p>
+      <p class="finale" data-i18n-html="finale">气候的第一条守恒关系很朴素：<strong>吸收的太阳能 = 向外散掉的热</strong>。纬度、反照率和温室效应，只是在账本的不同位置改变同一个平衡。</p>
+    </div>
+  </section>
+</main>
+<footer data-i18n="foot">气候能量账本 · 一束光，四次交互。所有数值为教学模型。</footer>
+<script src="i18n.js"></script><script src="app.js"></script>
+</body>
+</html>
