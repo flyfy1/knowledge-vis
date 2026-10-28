@@ -1,0 +1,11 @@
+{
+  "name": "knowledge-vis",
+  "private": true,
+  "scripts": {
+    "test:atlas-galaxy:core": "node atlas/galaxy/tests/core.cjs",
+    "test:atlas-galaxy:list": "node atlas/galaxy/tests/list-core.cjs",
+    "test:atlas-galaxy:fallback": "node atlas/galaxy/tests/fallback-contract.cjs",
+    "test:atlas-galaxy:browser": "node atlas/galaxy/tests/browser.cjs",
+    "test:atlas-galaxy:integration": "node atlas/galaxy/tests/integration.cjs"
+  }
+}

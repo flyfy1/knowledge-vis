@@ -26,15 +26,18 @@ From repository root:
 ```sh
 node atlas/galaxy/tests/core.cjs
 python3 -m http.server 18783 --bind 127.0.0.1
-NODE_PATH=/Users/songyy/Documents/integ-life/integ-games/node_modules \
-  ATLAS_BASE_URL=http://127.0.0.1:18783 \
+set -a; . ./.env.example; set +a
+ATLAS_BASE_URL=http://127.0.0.1:18783 \
   GALAXY_EVIDENCE=/tmp/atlas-galaxy-evidence \
   node atlas/galaxy/tests/browser.cjs
 ```
 
-Playwright is reused read-only from the already installed local workspace; point `NODE_PATH`
-at your existing installation on another machine. Chrome is required by the browser suite.
-Run browser suites serially against this lightweight static server.
+The browser checks use the repository's Playwright loader. It prefers a project install,
+then `PLAYWRIGHT_NODE_PATH`/`NODE_PATH`, then the Mac mini's existing shared Codex runtime.
+The checked-in `.env.example` records the non-sensitive defaults (`ATLAS_BASE_URL`, evidence
+directory, Chromium channel and headless mode); load those values in the shell before running.
+Playwright's Chromium component is required by the browser suite. Run browser suites serially
+against this lightweight static server.
 
 Tests cover graph determinism and shortest paths, exact real graph counts, label/UI screenshots,
 selection/neighbor/path navigation, Back and real lesson anchors, keyboard camera controls,

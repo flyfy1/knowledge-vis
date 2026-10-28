@@ -150,3 +150,24 @@ zero, search and topic filtering retain the count, and the low-power/WebGL fallb
 remains complete. The 3D renderer and graph layout remain unchanged. Verify the count from
 the same data used for the rendered graph and keep the existing list, keyboard, focus,
 source-link and no-JavaScript contracts intact.
+
+## Codex iteration — fallback explanation and browser harness (2026-10-28)
+
+When the device defaults to low-power mode, the fallback note must say that the lighter list
+is deliberate for responsiveness and that the learner can opt into 3D. When WebGL setup or
+context recovery fails, the note must say that the complete concept, relationship and source
+list remains available. These are separate localized messages in English and Chinese; the
+existing renderer status, list counts, graph data and 3D controls are unchanged.
+
+The Galaxy browser checks use Playwright through `atlas/galaxy/tests/playwright.cjs`, which
+prefers a project or caller-provided runtime and then the Mac mini's shared installation.
+`.env.example` contains only non-sensitive base URL, evidence path, browser channel and
+headless defaults. The browser readiness helper waits for the first rendered frame and GPU
+resource allocation before asserting remount stability, avoiding a false pass/fail during the
+dynamic renderer import.
+
+Acceptance: the static fallback contract passes; the Chromium suite covers the low-power note
+in both locales, the renderer-failure note, 80 desktop/mobile/lifecycle checks, and stable
+55-geometry/1-texture resource counts across four remounts. Official Playwright Chromium is
+installed in the Mac mini's user cache; no credentials, runtime network requests or security
+settings are introduced. Physical phone, Safari and screen-reader speech remain manual review.

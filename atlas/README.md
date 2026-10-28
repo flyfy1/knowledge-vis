@@ -8,9 +8,11 @@ Start with [WORKFLOW](../WORKFLOW.md), [UI/bilingual policy](../UI-I18N-SPEC.md)
   localized direct-connection count on every concept card and in its accessible name. The
   count is derived from the same valid graph edges used by the renderer, so low-power/WebGL
   fallback remains useful without implying importance, mastery, or prerequisite order.
-  [Iteration log](../specs/reviews/atlas-galaxy-codex-iteration-20261028.md). Browser
-  verification is pending because this checkout has no Playwright runtime; core/layout
-  verification passes.
+  The follow-up fallback explanation iteration adds localized low-power and renderer-failure
+  guidance, plus a shared Playwright loader and non-sensitive `.env.example` defaults.
+  [Iteration log](../specs/reviews/atlas-galaxy-codex-iteration-20261028.md). Core/layout,
+  static fallback, 80-check Chromium browser regression and read-only integration smoke pass;
+  physical phone, Safari and screen-reader speech remain manual review.
 
 - **Bayes measurement direction:** existing graph concept now opens its probability/measurement introduction rather than advanced odds; S1’s neutral card-reader evidence pool explains fixed likelihoods versus prior-dependent posterior. Counts38/50/14 unchanged. [Contract](../specs/atlas-bayes-measurement.md), [evidence](../specs/reviews/atlas-bayes-measurement-20261026/verification.md). PreviousMonteCarlofa0b7ee8 isorigin-installed; publicverificationremainsblocked.
 
