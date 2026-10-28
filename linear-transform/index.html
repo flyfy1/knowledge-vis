@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>二维线性变换 · 一步一交互</title>
+  <link rel="stylesheet" href="../lesson-shell.css">
+  <link rel="stylesheet" href="../page-provenance.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="i18n.js"></script>
+</head>
+<body>
+  <header class="site-head">
+    <div class="head-main">
+      <p class="backline"><a href="../" data-i18n="back">← 知识索引</a></p>
+      <h1 data-i18n="pageTitle">二维线性变换 · 基向量怎样带着整个平面走</h1>
+      <p class="tagline" data-i18n="tagline">把平面上的每个点都看成两根基向量的组合。拖动矩阵，亲眼看见网格被拉伸、剪切或翻面；行列式读出面积怎样变，退化时一整片平面怎样压成一条线。</p>
+      <details class="page-provenance"><summary>Codex lesson · Linear map lab</summary><p data-i18n="provenance">本页用纯二维实矩阵讲解基向量、行列式与可逆性；数值读数四舍五入，计算仍用浮点真值。</p></details>
+    </div>
+    <div class="lang-toggle" id="langToggle" role="group" aria-label="Language"><button type="button" data-lang="zh">中</button><button type="button" data-lang="en">EN</button></div>
+  </header>
+
+  <nav class="step-nav" id="stepNav" aria-label="Steps">
+    <a href="#step0" class="nav-step" data-nav="0" data-i18n="nav0">0 网格变形</a>
+    <a href="#step1" class="nav-step" data-nav="1" data-i18n="nav1">1 基向量记账</a>
+    <a href="#step2" class="nav-step" data-nav="2" data-i18n="nav2">2 行列式读面积</a>
+    <a href="#step3" class="nav-step" data-nav="3" data-i18n="nav3">3 可逆还是坍缩</a>
+    <a href="#step4" class="nav-step" data-nav="4" data-i18n="nav4">4 组合与自测</a>
+  </nav>
+
+  <main>
+    <section class="step" id="step0" data-step="0">
+      <div class="step-inner">
+        <p class="step-kicker" data-i18n="s0k">第 0 步 · 钩子</p>
+        <h2 data-i18n="s0t">四个数，拖动整个平面</h2>
+        <p class="explain" data-i18n-html="s0e"></p>
+        <p class="formula">A = <span id="matrix0">[[1.20, 0.35], [−0.20, 0.80]]</span></p>
+        <div class="stage"><canvas id="grid-canvas" height="430" role="img" data-i18n-aria="gridAria"></canvas></div>
+        <div class="matrix-controls" id="matrix-controls">
+          <label><span>a <output id="a-val">1.20</output></span><input id="a" type="range" min="-2" max="2" step="0.05" value="1.2"></label>
+          <label><span>b <output id="b-val">0.35</output></span><input id="b" type="range" min="-2" max="2" step="0.05" value="0.35"></label>
+          <label><span>c <output id="c-val">−0.20</output></span><input id="c" type="range" min="-2" max="2" step="0.05" value="-0.2"></label>
+          <label><span>d <output id="d-val">0.80</output></span><input id="d" type="range" min="-2" max="2" step="0.05" value="0.8"></label>
+        </div>
+        <div class="btn-row"><button class="btn" data-preset="identity" data-i18n="pIdentity">单位矩阵</button><button class="btn" data-preset="shear" data-i18n="pShear">剪切</button><button class="btn" data-preset="flip" data-i18n="pFlip">翻面</button><button class="btn" data-preset="reset" data-i18n="pReset">回到示例</button></div>
+        <p class="readout" id="grid-readout"></p>
+        <p class="hint" data-i18n-html="s0hint"></p>
+        <a class="btn primary" href="#step1" data-i18n="start">开始探索 ↓</a>
+      </div>
+    </section>
+
+    <section class="step" id="step1" data-step="1">
+      <div class="step-inner">
+        <p class="step-kicker" data-i18n="s1k">第 1 步 · 记账</p>
+        <h2 data-i18n="s1t">每个点，都是两根基向量的合成</h2>
+        <p class="explain" data-i18n-html="s1e"></p>
+        <p class="formula">p = x e₁ + y e₂ &nbsp;→&nbsp; A p = x(Ae₁) + y(Ae₂)</p>
+        <div class="stage"><canvas id="basis-canvas" height="400" role="img" data-i18n-aria="basisAria"></canvas></div>
+        <div class="controls two-col">
+          <label><span data-i18n="xLab">x：e₁ 的份数</span><output id="x-val">1.50</output><input id="x-coord" type="range" min="-2.5" max="2.5" step="0.05" value="1.5"></label>
+          <label><span data-i18n="yLab">y：e₂ 的份数</span><output id="y-val">0.80</output><input id="y-coord" type="range" min="-2.5" max="2.5" step="0.05" value="0.8"></label>
+        </div>
+        <p class="readout" id="basis-readout"></p>
+        <p class="hint" data-i18n-html="s1hint"></p>
+      </div>
+    </section>
+
+    <section class="step" id="step2" data-step="2">
+      <div class="step-inner">
+        <p class="step-kicker" data-i18n="s2k">第 2 步 · 行列式</p>
+        <h2 data-i18n="s2t">行列式是有符号的面积倍率</h2>
+        <p class="explain" data-i18n-html="s2e"></p>
+        <p class="formula">det A = ad − bc</p>
+        <div class="stage split-stage"><canvas id="det-canvas" height="320" role="img" data-i18n-aria="detAria"></canvas><div class="det-meter"><div class="meter-label" data-i18n="areaLabel">单位正方形 → 变换后的平行四边形</div><div class="meter"><span id="area-meter"></span></div><p id="det-readout" class="big-readout"></p><p id="orientation-readout"></p></div></div>
+        <div class="btn-row"><button class="btn" data-preset="positive" data-i18n="detPositive">正向：det &gt; 0</button><button class="btn" data-preset="negative" data-i18n="detNegative">翻面：det &lt; 0</button><button class="btn" data-preset="zero" data-i18n="detZero">零面积：det = 0</button></div>
+        <p class="hint" data-i18n-html="s2hint"></p>
+      </div>
+    </section>
+
+    <section class="step" id="step3" data-step="3">
+      <div class="step-inner">
+        <p class="step-kicker" data-i18n="s3k">第 3 步 · 可逆性</p>
+        <h2 data-i18n="s3t">det = 0：平面被压成一条线</h2>
+        <p class="explain" data-i18n-html="s3e"></p>
+        <div class="stage"><canvas id="inverse-canvas" height="360" role="img" data-i18n-aria="inverseAria"></canvas></div>
+        <div class="btn-row"><button class="btn" id="invert-btn" data-i18n="invertBtn">试着反变换</button><button class="btn" id="invert-reset" data-i18n="invertReset">清空</button></div>
+        <p class="readout" id="inverse-readout"></p>
+        <div class="cards"><article class="card"><h3 data-i18n="invCard1H">det ≠ 0</h3><p data-i18n="invCard1">两根输出基向量不共线，每个结果都有唯一的输入；逆矩阵存在。</p></article><article class="card"><h3 data-i18n="invCard2H">det = 0</h3><p data-i18n="invCard2">两根输出基向量落在同一条线上，信息被压扁；不同输入可能撞到同一个结果。</p></article></div>
+        <p class="hint" data-i18n-html="s3hint"></p>
+      </div>
+    </section>
+
+    <section class="step" id="step4" data-step="4">
+      <div class="step-inner">
+        <p class="step-kicker" data-i18n="s4k">第 4 步 · 组合与自测</p>
+        <h2 data-i18n="s4t">先做 A，再做 B：顺序真的会改变结果</h2>
+        <p class="explain" data-i18n-html="s4e"></p>
+        <div class="stage"><canvas id="compose-canvas" height="320" role="img" data-i18n-aria="composeAria"></canvas></div>
+        <div class="btn-row"><button class="btn active" id="order-ab" data-i18n="orderAB">A → B</button><button class="btn" id="order-ba" data-i18n="orderBA">B → A</button></div>
+        <p class="readout" id="compose-readout"></p>
+        <div class="quiz" id="quiz"><h3 data-i18n="quizH">小测：哪一个读数是 det(A)？</h3><div class="btn-row"><button class="btn quiz-option" data-answer="1.03" data-i18n="quizA">1.03</button><button class="btn quiz-option" data-answer="0.83" data-i18n="quizB">0.83</button><button class="btn quiz-option" data-answer="-1.00" data-i18n="quizC">−1.00</button></div><p class="readout" id="quiz-feedback"></p></div>
+        <div class="cards"><article class="card"><h3 data-i18n="final1H">矩阵就是规则</h3><p data-i18n="final1">只要知道两根基向量去了哪里，线性变换对整个平面的作用就被决定了。</p></article><article class="card"><h3 data-i18n="final2H">行列式就是账本</h3><p data-i18n="final2">它记录面积倍率和方向是否翻转；det 为零时，账本显示信息丢失。</p></article><article class="card"><h3 data-i18n="final3H">下一站：特征方向</h3><p data-i18n-html="final3">有些向量经过 A 只改变长度、不改变所在直线——那就是 <a href="../eigen/#step1">特征向量</a>。</p></article></div>
+        <p class="finale" data-i18n-html="finale"></p>
+      </div>
+    </section>
+  </main>
+  <footer class="site-foot"><span data-i18n="foot">visual.integ.life · 二维线性变换 Linear Maps</span></footer>
+  <script src="app.js"></script>
+</body>
+</html>
