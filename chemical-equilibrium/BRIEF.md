@@ -36,3 +36,8 @@
 Step 1 now states the observed sequence before the simulation: pure A gives forward events first,
 B accumulation lets reverse events catch up, and only then do the headcounts flatten. This
 connects the playback controls to the equal-rates conclusion without changing the seeded model.
+
+## Codex disturbance bridge — 2026-10-28
+
+Step 2 now previews the response sequence: settle first, add A, watch forward events briefly lead,
+then see reverse events catch up before the new level flattens. The seeded disturbance model is unchanged.
