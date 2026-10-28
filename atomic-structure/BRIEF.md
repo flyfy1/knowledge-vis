@@ -46,3 +46,8 @@ remaining gap explains the tendency to gain or lose electrons.
 
 Step 4 now invites an He/Ne/Na/Cl comparison so the filled-shell rule and the gain-or-loss
 trend can be read across concrete presets.
+
+## Codex causal summary bridge — 2026-10-28
+
+Step 5 now restates the chain from proton identity through electron arrangement to outer-layer
+stability and gain/loss tendency.
