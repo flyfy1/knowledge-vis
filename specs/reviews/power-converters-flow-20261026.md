@@ -41,3 +41,21 @@ Scope is page-owned `app.js`/`style.css` plus the existing browser test. `model.
 6 V and 24 V direction checks, live-region semantics, stable `#step4` framing and the existing
 320/390/768/1440, flow, lifecycle, accessibility and responsive suites. No credentials,
 external runtime assets, push or deployment are involved.
+
+## Codex iteration — explicit switch phase bridge (2026-10-28)
+
+Power-converters already rendered a detailed dynamic loop path, but the causal text began with
+the route itself. The path now starts with a localized ON/OFF statement that names the switch
+state before the route and energy explanation. Numeric model, playback clock, sampled state,
+diagrams and fallback behavior are unchanged.
+
+Verification:
+
+- `node --check power-converters/app.js`
+- `node power-converters/tests/model.cjs`
+- `node power-converters/tests/flow-lifecycle.cjs`
+- `node power-converters/tests/review-accessibility.cjs`
+- `node power-converters/tests/review-responsive.cjs`
+- Power-converters browser suite with the local Playwright runtime
+
+Physical phone, Safari and screen-reader speech remain unverified.

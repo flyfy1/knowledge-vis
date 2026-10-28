@@ -58,3 +58,10 @@ Acceptance: at 320, 390, 768 and 1440 px in both locales, changing 12 → 6 → 
 localized direction sentence and preserves the `#step4` anchor position and zero horizontal
 overflow. The 12 W model, all converter paths, numerical state and existing reset/navigation
 contracts remain unchanged.
+
+## Switch phase bridge — 2026-10-28
+
+The Buck/Boost path readout now begins with a localized ON/OFF phase sentence. It names the
+switch state before the causal loop description, so a paused learner can connect the visible
+switch position to the conducting path and energy direction. The model, sampled time, playback,
+and diagram geometry remain unchanged.
