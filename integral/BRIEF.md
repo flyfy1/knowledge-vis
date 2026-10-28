@@ -26,3 +26,8 @@
 ## 交付
 - 自查：node --check、键集比对、上述断言组、无头浏览器实测（含组合路径与 390）。
 - 报告 ~/workspace/integral-lab/build-report.md。
+
+## Codex unit bridge — 2026-10-28
+
+Step 2 now explicitly connects the same strip accumulation to two units: curve height × width
+makes area, while velocity × time width makes distance.
