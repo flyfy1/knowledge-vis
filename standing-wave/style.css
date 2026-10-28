@@ -202,4 +202,4 @@ canvas.dragc:active{cursor:grabbing}
 @media(max-width:500px){.site-head{flex-wrap:wrap}.head-main{min-width:0;max-width:100%}}
 
 /* S1 comparison uses existing course tokens and figures. */
-#step1{overflow-wrap:anywhere}#step1 button,#step1 input{min-height:48px}#step1 :focus-visible{outline:3px solid var(--accent);outline-offset:3px}.phase-relation{border-left:3px solid var(--accent2);padding:12px;background:var(--panel2)}.phase-source summary,.phase-source a{min-height:48px;display:flex;align-items:center}.phase-source a{color:var(--accent)}
+#step1{overflow-wrap:anywhere}#step1 button,#step1 input{min-height:48px}#step1 :focus-visible{outline:3px solid var(--accent);outline-offset:3px}.phase-relation{border-left:3px solid var(--accent2);padding:12px;background:var(--panel2)}.phase-spacing{border-left:3px solid var(--good);padding:10px 12px;background:rgba(126,226,168,.06)}.phase-source summary,.phase-source a{min-height:48px;display:flex;align-items:center}.phase-source a{color:var(--accent)}
