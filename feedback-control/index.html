@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="category" content="engineering">
+  <meta name="stage" content="senior">
+  <title>反馈控制 · 先看差多少，再决定推多少</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="sim-core.js"></script>
+  <script src="i18n.js"></script>
+</head>
+<body>
+  <header class="site-head">
+    <div class="head-main">
+      <p class="backline"><a href="../" data-i18n="back"></a></p>
+      <h1 data-i18n="pageTitle"></h1>
+      <p class="tagline" data-i18n="tagline"></p>
+    </div>
+    <div class="lang-toggle" role="group" aria-label="Language">
+      <button type="button" data-lang="zh">中</button><button type="button" data-lang="en">EN</button>
+    </div>
+  </header>
+  <nav class="step-nav" id="stepNav" data-i18n-aria="navLabel">
+    <a class="nav-step" href="#step0" data-i18n="nav0"></a><a class="nav-step" href="#step1" data-i18n="nav1"></a>
+    <a class="nav-step" href="#step2" data-i18n="nav2"></a><a class="nav-step" href="#step3" data-i18n="nav3"></a>
+    <a class="nav-step" href="#step4" data-i18n="nav4"></a><a class="nav-step" href="#step5" data-i18n="nav5"></a>
+  </nav>
+  <main>
+    <section class="step" id="step0" data-step="0"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s0k"></p><h2 data-i18n="s0t"></h2><p class="explain" data-i18n-html="s0e"></p>
+      <div class="stage"><canvas id="setpointCanvas" width="900" height="250" role="img" data-i18n-aria="s0t"></canvas></div>
+      <div class="controls"><label><span data-i18n="setpoint"></span><output id="setpointValue"></output><input id="setpoint" type="range" min="0.5" max="4" step="0.1" value="1"></label></div>
+      <p class="readout" id="setpointReadout" aria-live="polite"></p><p class="hint" data-i18n="s0note"></p>
+    </div></section>
+
+    <section class="step" id="step1" data-step="1"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s1k"></p><h2 data-i18n="s1t"></h2><p class="explain" data-i18n-html="s1e"></p>
+      <div class="stage"><canvas id="pCanvas" width="900" height="330" role="img" data-i18n-aria="s1t"></canvas></div>
+      <div class="controls"><label><span data-i18n="kp"></span><output id="kpValue"></output><input id="kp" type="range" min="0" max="10" step="0.1" value="2.4"></label></div>
+      <div class="btn-row"><button class="btn" id="pReset" type="button" data-i18n="reset"></button><button class="btn" id="pBaseline" type="button" data-i18n="compareP"></button></div>
+      <p class="readout" id="pReadout" aria-live="polite"></p><p class="hint" data-i18n="s1hint"></p>
+    </div></section>
+
+    <section class="step" id="step2" data-step="2"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s2k"></p><h2 data-i18n="s2t"></h2><p class="explain" data-i18n-html="s2e"></p>
+      <div class="stage"><canvas id="iCanvas" width="900" height="330" role="img" data-i18n-aria="s2t"></canvas></div>
+      <div class="controls"><label><span data-i18n="kp"></span><output id="piKpValue"></output><input id="piKp" type="range" min="0" max="10" step="0.1" value="2.4"></label><label><span data-i18n="ki"></span><output id="kiValue"></output><input id="ki" type="range" min="0" max="5" step="0.1" value="0"></label></div>
+      <div class="btn-row"><button class="btn" id="disturbance" type="button" data-i18n="disturbanceOff"></button><button class="btn" id="iReset" type="button" data-i18n="reset"></button></div>
+      <p class="readout" id="iReadout" aria-live="polite"></p><p class="hint" data-i18n="s2hint"></p>
+    </div></section>
+
+    <section class="step" id="step3" data-step="3"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s3k"></p><h2 data-i18n="s3t"></h2><p class="explain" data-i18n-html="s3e"></p>
+      <div class="stage"><canvas id="dCanvas" width="900" height="330" role="img" data-i18n-aria="s3t"></canvas></div>
+      <div class="controls"><label><span data-i18n="kp"></span><output id="pidKpValue"></output><input id="pidKp" type="range" min="0" max="10" step="0.1" value="2.4"></label><label><span data-i18n="ki"></span><output id="pidKiValue"></output><input id="pidKi" type="range" min="0" max="5" step="0.1" value="0"></label><label><span data-i18n="kd"></span><output id="kdValue"></output><input id="kd" type="range" min="0" max="5" step="0.1" value="0"></label></div>
+      <div class="btn-row"><button class="btn" id="dReset" type="button" data-i18n="reset"></button></div>
+      <p class="readout" id="dReadout" aria-live="polite"></p><p class="hint" data-i18n="s3hint"></p>
+    </div></section>
+
+    <section class="step" id="step4" data-step="4"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s4k"></p><h2 data-i18n="s4t"></h2><p class="explain" data-i18n-html="s4e"></p>
+      <div class="stage"><canvas id="labCanvas" width="900" height="330" role="img" data-i18n-aria="s4t"></canvas></div>
+      <div class="controls lab-controls"><label><span data-i18n="setpointShort"></span><output id="labSetpointValue"></output><input id="labSetpoint" type="range" min="0.5" max="4" step="0.1" value="1"></label><label><span data-i18n="kp"></span><output id="labKpValue"></output><input id="labKp" type="range" min="0" max="10" step="0.1" value="3.2"></label><label><span data-i18n="ki"></span><output id="labKiValue"></output><input id="labKi" type="range" min="0" max="5" step="0.1" value="1.2"></label><label><span data-i18n="kd"></span><output id="labKdValue"></output><input id="labKd" type="range" min="0" max="5" step="0.1" value="1.4"></label></div>
+      <div class="btn-row"><button class="btn" data-preset="soft" type="button" data-i18n="presetSoft"></button><button class="btn primary" data-preset="balanced" type="button" data-i18n="presetBalanced"></button><button class="btn" data-preset="fast" type="button" data-i18n="presetFast"></button><button class="btn" id="labRun" type="button" data-i18n="runAgain"></button></div>
+      <p class="readout" id="labReadout" aria-live="polite"></p>
+      <div class="quiz" aria-live="polite"><p class="quiz-prompt" data-i18n="quizPrompt"></p><div class="quiz-options"><label><input type="radio" name="quiz" value="a"><span data-i18n="quizA"></span></label><label><input type="radio" name="quiz" value="b"><span data-i18n="quizB"></span></label><label><input type="radio" name="quiz" value="c"><span data-i18n="quizC"></span></label></div><button class="btn" id="checkQuiz" type="button" data-i18n="check"></button><p class="quiz-feedback" id="quizFeedback"></p></div>
+    </div></section>
+
+    <section class="step" id="step5" data-step="5"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s5k"></p><h2 data-i18n="s5t"></h2><p class="explain" data-i18n-html="s5e"></p>
+      <div class="finale"><p class="formula" data-i18n="formula"></p><p data-i18n="boundary"></p><a href="../control/#step2">↗ 反馈回路 / Feedback loop</a><a href="../laplace/#step4">↗ 极点与稳定性 / Poles & stability</a></div>
+    </div></section>
+  </main>
+  <footer class="site-foot" data-i18n="foot"></footer>
+  <script src="app.js"></script>
+</body>
+</html>

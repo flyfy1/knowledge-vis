@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>种群生态学 · 从增长到反馈</title>
+  <meta name="description" content="用 logistic growth、承载力与捕食反馈理解种群数量如何变化。">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="site-head">
+    <div class="head-main">
+      <p class="backline"><a href="../" data-i18n="back">← 知识索引</a></p>
+      <p class="eyebrow" data-i18n="eyebrow">生态学 × 动力系统</p>
+      <h1 data-i18n="title">种群生态学：增长如何被反馈改变</h1>
+      <p class="tagline" data-i18n="tagline">先让种群增长，再把有限资源和捕食者放回系统。拖动参数，观察“多一点个体”怎样改变下一刻的增长。</p>
+    </div>
+    <div class="lang-toggle" id="langToggle"><button type="button" data-lang="zh">中</button><button type="button" data-lang="en">EN</button></div>
+  </header>
+  <nav class="step-nav" id="stepNav">
+    <a class="nav-step active" href="#step0" data-i18n="nav0">0 先看增长</a>
+    <a class="nav-step" href="#step1" data-i18n="nav1">1 承载力反馈</a>
+    <a class="nav-step" href="#step2" data-i18n="nav2">2 捕食者介入</a>
+    <a class="nav-step" href="#step3" data-i18n="nav3">3 收束检查</a>
+  </nav>
+  <main>
+    <section class="step" id="step0" data-step="0">
+      <div class="step-inner">
+        <p class="step-kicker" data-i18n="s0k">第 0 步 · 从一条曲线开始</p>
+        <h2 data-i18n="s0title">没有限制时，增长为什么会越来越快？</h2>
+        <p class="explain" data-i18n-html="s0explain">每个个体都能留下后代，增长率 <strong>r</strong> 会把现有数量放大。先把资源限制关掉，感受指数增长；再调回 logistic 模型，看曲线如何弯下来。</p>
+        <div class="panel controls">
+          <label><span data-i18n="n0Lab">初始数量 N₀</span><output id="n0Out">12</output><input id="n0" type="range" min="2" max="80" value="12"></label>
+          <label><span data-i18n="rLab">内禀增长率 r</span><output id="rOut">0.35</output><input id="r" type="range" min="0.05" max="0.9" step="0.05" value="0.35"></label>
+          <label><span data-i18n="kLab">承载力 K</span><output id="kOut">80</output><input id="k" type="range" min="20" max="140" step="5" value="80"></label>
+          <label><span data-i18n="timeLab">观察时刻 t</span><output id="timeOut">20</output><input id="time" type="range" min="0" max="40" step="1" value="20"></label>
+        </div>
+        <div class="stage"><canvas id="populationCanvas" height="310" aria-label="population over time chart"></canvas></div>
+        <div class="readout-grid">
+          <p class="readout"><span data-i18n="nowLabel">当前数量</span><strong id="nowN">—</strong></p>
+          <p class="readout"><span data-i18n="rateLabel">此刻净增长</span><strong id="nowRate">—</strong></p>
+          <p class="readout"><span data-i18n="gapLabel">距离 K</span><strong id="gapK">—</strong></p>
+        </div>
+        <p class="formula" id="logisticFormula">dN/dt = rN(1 − N/K)</p>
+        <p class="hint" data-i18n-html="s0hint"><strong>因果链：</strong>更多个体 → 资源被分摊得更薄 → 每个个体的净增长下降。</p>
+        <a class="next-link" href="#step1" data-i18n="next1">继续：把“资源变少”画成反馈 →</a>
+      </div>
+    </section>
+
+    <section class="step" id="step1" data-step="1">
+      <div class="step-inner">
+        <p class="step-kicker" data-i18n="s1k">第 1 步 · 承载力不是墙</p>
+        <h2 data-i18n="s1title">K 附近，为什么增长会停下来？</h2>
+        <p class="explain" data-i18n-html="s1explain">把横轴换成种群数量 N，纵轴画出 <strong>dN/dt</strong>。曲线的正负告诉你：数量低于 K 时会增长，超过 K 时会回落。</p>
+        <div class="stage"><canvas id="rateCanvas" height="300" aria-label="per capita growth rate chart"></canvas></div>
+        <p class="readout" id="rateReadout" aria-live="polite"></p>
+        <div class="callout"><b>↳</b><span data-i18n-html="s1hint">K 是反馈平衡点，不是永远不能越过的硬墙。扰动会让 N 在 K 两侧来回移动。</span></div>
+        <a class="next-link" href="#step2" data-i18n="next2">继续：加入捕食者 →</a>
+      </div>
+    </section>
+
+    <section class="step" id="step2" data-step="2">
+      <div class="step-inner">
+        <p class="step-kicker" data-i18n="s2k">第 2 步 · 两个种群互相改写</p>
+        <h2 data-i18n="s2title">捕食者为什么会让猎物曲线起伏？</h2>
+        <p class="explain" data-i18n-html="s2explain">同一个 logistic 反馈旁边，加入捕食压力。猎物多时捕食者增长，猎物少时捕食者又会下降，两个延迟叠在一起就形成波动。</p>
+        <div class="panel controls compact">
+          <label><span data-i18n="predLab">捕食压力 a</span><output id="predOut">0.35</output><input id="pred" type="range" min="0" max="0.8" step="0.05" value="0.35"></label>
+          <label><span data-i18n="mortLab">捕食者死亡率 m</span><output id="mortOut">0.25</output><input id="mort" type="range" min="0.08" max="0.5" step="0.01" value="0.25"></label>
+        </div>
+        <div class="stage"><canvas id="feedbackCanvas" height="310" aria-label="predator prey feedback chart"></canvas></div>
+        <div class="legend"><span><i class="dot prey"></i><span data-i18n="prey">猎物 N</span></span><span><i class="dot predator"></i><span data-i18n="predator">捕食者 P</span></span></div>
+        <p class="readout" id="feedbackReadout" aria-live="polite"></p>
+        <p class="hint" data-i18n-html="s2hint"><strong>注意：</strong>这不是“捕食者越多，猎物越少”的静态答案；反馈会把下一时刻的两个数量一起改变。</p>
+        <a class="next-link" href="#step3" data-i18n="next3">继续：做一次误解检查 →</a>
+      </div>
+    </section>
+
+    <section class="step" id="step3" data-step="3">
+      <div class="step-inner">
+        <p class="step-kicker" data-i18n="s3k">第 3 步 · 收束</p>
+        <h2 data-i18n="s3title">把曲线读成一句因果解释</h2>
+        <p class="explain" data-i18n="s3explain">选出你认为正确的说法。反馈会指出你混淆了“数量”“增长率”还是“平衡点”。</p>
+        <div class="quiz" id="quiz">
+          <p class="quiz-question" data-i18n="quizQ">当 N = K 时，logistic 模型的净增长 dN/dt 是：</p>
+          <div class="quiz-options"><button type="button" data-answer="wrong" data-i18n="qA">最大，因为个体最多</button><button type="button" data-answer="correct" data-i18n="qB">0，因为资源反馈抵消了增长</button><button type="button" data-answer="wrong" data-i18n="qC">负值，因为承载力会杀死个体</button></div>
+          <p class="quiz-feedback" id="quizFeedback" aria-live="polite"></p>
+        </div>
+        <div class="finish"><strong data-i18n="finishTitle">因果链闭合：</strong><span data-i18n="finishBody">增长率 r 产生变化，K 把资源反馈接回数量 N，捕食者再把两个种群的变化耦合起来。</span></div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-foot" data-i18n="foot">双语交互切片 · 种群生态学</footer>
+</body>
+</html>

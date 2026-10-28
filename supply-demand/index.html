@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>供需与市场均衡 · 价格如何找到交点</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-head">
+    <div class="head-main">
+      <p class="backline"><a href="../">← 知识索引 / Knowledge index</a></p>
+      <h1 data-i18n="pageTitle"></h1>
+      <p class="tagline" data-i18n="tagline"></p>
+    </div>
+    <div class="lang-toggle" id="langToggle" aria-label="Language / 语言">
+      <button type="button" data-lang="zh">中</button>
+      <button type="button" data-lang="en">EN</button>
+    </div>
+  </header>
+
+  <nav class="step-nav" aria-label="Step navigation">
+    <a href="#step0" data-i18n="nav0"></a>
+    <a href="#step1" data-i18n="nav1"></a>
+    <a href="#step2" data-i18n="nav2"></a>
+    <a href="#step3" data-i18n="nav3"></a>
+    <a href="#step4" data-i18n="nav4"></a>
+  </nav>
+
+  <main>
+    <section class="step" id="step0">
+      <div class="step-inner">
+        <p class="step-kicker" data-i18n="s0k"></p>
+        <h2 data-i18n="s0t"></h2>
+        <p class="explain" data-i18n-html="s0e"></p>
+        <div class="stage"><canvas id="market-canvas" height="390" role="img" data-i18n-aria="canvasLabel"></canvas></div>
+        <div class="readout-grid" id="base-readout"></div>
+        <p class="hint" data-i18n="s0hint"></p>
+      </div>
+    </section>
+
+    <section class="step" id="step1">
+      <div class="step-inner">
+        <p class="step-kicker" data-i18n="s1k"></p>
+        <h2 data-i18n="s1t"></h2>
+        <p class="explain" data-i18n-html="s1e"></p>
+        <div class="stage"><canvas id="policy-canvas" height="390" role="img" data-i18n-aria="canvasLabel"></canvas></div>
+        <div class="controls">
+          <label><span data-i18n="taxLab"></span><output id="tax-val"></output><input id="tax" type="range" min="0" max="30" step="1" value="0"></label>
+          <label><span data-i18n="subsidyLab"></span><output id="subsidy-val"></output><input id="subsidy" type="range" min="0" max="30" step="1" value="0"></label>
+        </div>
+        <div class="readout-grid" id="policy-readout"></div>
+        <p class="feedback" id="policy-feedback" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <section class="step" id="step2">
+      <div class="step-inner">
+        <p class="step-kicker" data-i18n="s2k"></p>
+        <h2 data-i18n="s2t"></h2>
+        <p class="explain" data-i18n-html="s2e"></p>
+        <div class="stage"><canvas id="elasticity-canvas" height="390" role="img" data-i18n-aria="canvasLabel"></canvas></div>
+        <div class="controls">
+          <label><span data-i18n="elasticLab"></span><output id="elastic-val"></output><input id="elastic" type="range" min="20" max="180" step="5" value="100"></label>
+          <label><span data-i18n="demandLab"></span><output id="demand-val"></output><input id="demand" type="range" min="30" max="90" step="1" value="60"></label>
+        </div>
+        <div class="readout-grid" id="elastic-readout"></div>
+        <p class="feedback" id="elastic-feedback" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <section class="step" id="step3">
+      <div class="step-inner">
+        <p class="step-kicker" data-i18n="s3k"></p>
+        <h2 data-i18n="s3t"></h2>
+        <p class="explain" data-i18n-html="s3e"></p>
+        <div class="stage"><canvas id="surplus-canvas" height="390" role="img" data-i18n-aria="canvasLabel"></canvas></div>
+        <div class="controls">
+          <label><span data-i18n="buyerLab"></span><output id="buyer-val"></output><input id="buyer" type="range" min="10" max="90" step="1" value="50"></label>
+          <label><span data-i18n="sellerLab"></span><output id="seller-val"></output><input id="seller" type="range" min="10" max="90" step="1" value="50"></label>
+        </div>
+        <div class="readout-grid" id="surplus-readout"></div>
+        <p class="feedback" id="surplus-feedback" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <section class="step" id="step4">
+      <div class="step-inner">
+        <p class="step-kicker" data-i18n="s4k"></p>
+        <h2 data-i18n="s4t"></h2>
+        <p class="explain" data-i18n-html="s4e"></p>
+        <div class="quiz" id="quiz">
+          <p class="quiz-prompt" data-i18n="quizPrompt"></p>
+          <div class="quiz-options">
+            <button type="button" data-answer="move">A. <span data-i18n="quizA"></span></button>
+            <button type="button" data-answer="curve">B. <span data-i18n="quizB"></span></button>
+            <button type="button" data-answer="tax">C. <span data-i18n="quizC"></span></button>
+          </div>
+          <p class="feedback" id="quiz-feedback" aria-live="polite"></p>
+        </div>
+        <div class="finale">
+          <h3 data-i18n="modelTitle"></h3>
+          <p data-i18n="modelBody"></p>
+          <p class="legend-note" data-i18n="scope"></p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-foot" data-i18n="foot"></footer>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>贝叶斯诊断 · 先验到后验</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-head">
+    <div class="head-main">
+      <a class="backline" href="../index.html" data-i18n="back">← 知识索引</a>
+      <p class="eyebrow" data-i18n="eyebrow">诊断测试 · 频数视角</p>
+      <h1 data-i18n="title">一张阳性报告，真的说明什么？</h1>
+      <p class="tagline" data-i18n="tagline">把先验、似然和后验拆成一棵可拨动的频数树：先看人群，再看测试，最后才回答“这个人有病的概率是多少”。</p>
+    </div>
+    <div class="lang-toggle" role="group" aria-label="Language">
+      <button type="button" data-lang="zh" aria-pressed="true">中</button>
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+  </header>
+  <nav class="step-nav" aria-label="Lesson steps">
+    <a href="#step-prior" data-i18n="navPrior">1 先验</a><a href="#step-likelihood" data-i18n="navLikelihood">2 似然</a><a href="#step-posterior" data-i18n="navPosterior">3 后验</a><a href="#step-misconception" data-i18n="navMisconception">4 误解反馈</a>
+  </nav>
+  <main>
+    <section class="lesson-card hero-card" id="step-prior">
+      <div class="step-kicker" data-i18n="step1Kicker">STEP 1 · START WITH THE POPULATION</div>
+      <div class="card-grid two-col"><div>
+        <h2 data-i18n="priorTitle">先验：检查之前，人群里有多少人真的患病？</h2>
+        <p class="body-copy" data-i18n="priorCopy">先验概率不是“猜测准确度”，而是测试前对目标人群的基线了解。拖动它，频数树的第一层会同步变化。</p>
+        <div class="control-block"><div class="control-label"><span data-i18n="priorLabel">患病率 P(H)</span><output id="priorOut">1%</output></div><input id="prior" type="range" min="1" max="30" step="1" value="1"><div class="range-hint" id="priorHint"><span data-i18n="priorMin">1%（低基线）</span><span data-i18n="priorMax">30%</span></div></div>
+        <div class="metric-row" id="priorMetrics" aria-live="polite"></div>
+      </div><div class="population-card">
+        <div class="population-heading"><span data-i18n="populationTitle">先看 1,000 人</span><span class="pill" id="populationPill">1%</span></div><div class="population-bars" id="populationBars"></div><p class="caption" data-i18n="populationCaption">每个色块代表 10 人；这一层还没有看检测结果。</p>
+      </div></div>
+      <div class="lesson-link" data-i18n="priorTakeaway">关键：先验决定“真实患病组”有多大，但不会单独决定某次检测的结果。</div>
+    </section>
+    <section class="lesson-card" id="step-likelihood">
+      <div class="step-kicker" data-i18n="step2Kicker">STEP 2 · LET THE TEST SPLIT THE GROUPS</div><h2 data-i18n="likelihoodTitle">似然：测试如何把两组人分开？</h2><p class="body-copy" data-i18n="likelihoodCopy">灵敏度只问“在有病的人里，亮阳性的比例是多少？”特异度只问“在没病的人里，测成阴性的比例是多少？”它们是条件概率，方向不能互换。</p>
+      <div class="card-grid controls-grid"><div class="control-block"><div class="control-label"><span data-i18n="sensLabel">灵敏度 P(+|H)</span><output id="sensOut">90%</output></div><input id="sens" type="range" min="50" max="100" step="1" value="90"><div class="range-hint"><span data-i18n="sensMin">50%</span><span data-i18n="sensMax">100%</span></div></div><div class="control-block"><div class="control-label"><span data-i18n="specLabel">特异度 P(−|¬H)</span><output id="specOut">91%</output></div><input id="spec" type="range" min="50" max="100" step="1" value="91"><div class="range-hint"><span data-i18n="specMin">50%</span><span data-i18n="specMax">100%</span></div></div></div>
+      <div class="likelihood-grid"><div class="mini-card true-positive"><span class="mini-label" data-i18n="tpLabel">真阳性</span><strong id="tpCount">9</strong><small data-i18n="tpHint">有病且阳性</small></div><div class="mini-card false-negative"><span class="mini-label" data-i18n="fnLabel">假阴性</span><strong id="fnCount">1</strong><small data-i18n="fnHint">有病却阴性</small></div><div class="mini-card false-positive"><span class="mini-label" data-i18n="fpLabel">假阳性</span><strong id="fpCount">89</strong><small data-i18n="fpHint">无病却阳性</small></div><div class="mini-card true-negative"><span class="mini-label" data-i18n="tnLabel">真阴性</span><strong id="tnCount">901</strong><small data-i18n="tnHint">无病且阴性</small></div></div><div class="test-note" id="likelihoodNote" aria-live="polite"></div>
+    </section>
+    <section class="lesson-card" id="step-posterior">
+      <div class="step-kicker" data-i18n="step3Kicker">STEP 3 · READ THE POSTERIOR</div><h2 data-i18n="posteriorTitle">后验：在看见结果之后，目标人群变成哪一组？</h2><p class="body-copy" data-i18n="posteriorCopy">后验是“已经看到证据后”的概率。选择一个结果，频数图会把对应的分母圈出来：阳性看 TP / (TP + FP)，阴性看 TN / (TN + FN)。</p>
+      <div class="result-switch" role="group" aria-label="Test result"><button id="positiveBtn" class="result-button active" type="button" data-result="positive"><span data-i18n="positive">我拿到阳性</span><b id="positiveValue">9.2%</b></button><button id="negativeBtn" class="result-button" type="button" data-result="negative"><span data-i18n="negative">我拿到阴性</span><b id="negativeValue">99.9%</b></button></div>
+      <div class="posterior-layout"><div class="tree-panel"><div class="tree-title"><span data-i18n="treeTitle">1,000 人频数树</span><span id="treeDenom" class="tree-denom"></span></div><div id="tree" class="tree" aria-live="polite"></div></div><aside class="formula-panel"><div class="formula-label" data-i18n="formulaLabel">同一个分母，决定你在问谁</div><div id="formula" class="formula"></div><div id="posteriorReadout" class="posterior-readout"></div><div id="posteriorFeedback" class="feedback" role="status"></div></aside></div>
+      <div class="lesson-link" data-i18n="posteriorTakeaway">看见阳性后，最容易犯的错是把灵敏度当成后验。灵敏度的分母是“所有有病的人”；后验的分母是“所有阳性的人”。</div>
+    </section>
+    <section class="lesson-card" id="step-misconception"><div class="step-kicker" data-i18n="step4Kicker">STEP 4 · CATCH THE MISCONCEPTION</div><h2 data-i18n="misconceptionTitle">把直觉押在一边，验证它</h2><p class="body-copy" data-i18n="misconceptionCopy">先选答案，再看频数图里的分母。每次反馈都指出“哪一层混了”：先验、似然，还是后验。</p><div class="quiz-card"><p class="quiz-question" data-i18n="quizQuestion">如果阳性，真实患病的概率就是灵敏度 90%，对吗？</p><div class="quiz-options" id="quizOptions"><button type="button" data-answer="yes" data-i18n="quizYes">对，灵敏度就是阳性后的概率</button><button type="button" data-answer="no" data-i18n="quizNo">不对，要用 TP ÷（TP + FP）</button></div><div id="quizFeedback" class="quiz-feedback" role="status" aria-live="polite"></div></div><button class="reset-button" id="resetBtn" type="button" data-i18n="reset">重置这张诊断卡</button></section>
+  </main>
+  <footer class="site-foot"><span data-i18n="footer">Bayes · 诊断测试频数视角</span><span>·</span><span data-i18n="footerNote">这是一个教学模型，不是医疗建议。</span></footer>
+  <script src="i18n.js"></script><script src="app.js"></script>
+</body>
+</html>

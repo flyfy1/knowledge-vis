@@ -1,0 +1,17 @@
+'use strict';
+const assert = require('node:assert/strict');
+const model = require('../app.js');
+
+const near = (a, b, eps = 1e-9) => assert.ok(Math.abs(a - b) < eps, `${a} not near ${b}`);
+near(model.logisticValue(0, 12, .35, 80), 12);
+near(model.logisticRate(80, .35, 80), 0);
+assert.ok(model.logisticRate(20, .35, 80) > 0);
+assert.ok(model.logisticRate(100, .35, 80) < 0);
+const curve = model.simulateLogistic({n0:12, r:.35, K:80, steps:40, dt:.5});
+assert.equal(curve.length, 41);
+assert.ok(curve.at(-1).n > curve[0].n && curve.at(-1).n < 80);
+const feedback = model.simulatePredatorPrey({n0:48,p0:10,r:.35,K:80,a:.35,m:.25,steps:30,dt:.2});
+assert.equal(feedback.length, 31);
+assert.ok(feedback.every(x => Number.isFinite(x.prey) && Number.isFinite(x.predator)));
+assert.ok(feedback.every(x => x.prey >= 0 && x.predator >= 0));
+console.log('population ecology model checks passed');
