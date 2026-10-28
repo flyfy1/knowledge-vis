@@ -16,6 +16,9 @@ const out=process.env.LESSON_SCREENSHOTS||'/tmp/frozen-learning-after';fs.mkdirS
     assert.equal(await p.locator('[data-i18n]').evaluateAll(es=>es.filter(e=>!e.textContent.trim()||e.textContent==='undefined').length),0);
     assert.ok(await p.locator('.research-source').evaluate(e=>Boolean(e.compareDocumentPosition(document.querySelector('.comparison'))&Node.DOCUMENT_POSITION_FOLLOWING)));
     assert.match(await p.locator('.research-source').textContent(),/Ahmadi.*How soap bubbles freeze/s);
+    const bridge=p.locator('#research-bridge');assert(await bridge.isVisible());
+    assert((await bridge.innerText()).includes(lang==='zh'?'对照表':'source card'));
+    assert.ok(await bridge.evaluate(e=>Boolean(e.compareDocumentPosition(document.querySelector('.comparison'))&Node.DOCUMENT_POSITION_FOLLOWING)));
     await p.locator('#growth-reset').click();await p.locator('#seed').click();
     await p.locator('#growth-time').evaluate(e=>{e.value=10;e.dispatchEvent(new Event('input',{bubbles:true}));});
     await p.locator('#undercooling').evaluate(e=>{e.value=2;e.dispatchEvent(new Event('input',{bubbles:true}));});
