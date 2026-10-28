@@ -1,26 +1,9 @@
-# 神经动作电位 · brief
+# Action potential brief
 
-## One-line promise
+A bilingual causal visual for `stimulus → threshold → Na⁺ positive feedback → K⁺ repolarization → refractory period → spike frequency`. Learners move a stimulus across threshold, scrub the Na⁺/K⁺ phase handoff, and compare input frequency with the refractory ceiling. The final quiz targets the common error that a stronger suprathreshold stimulus makes one action potential taller.
 
-让学习者把动作电位读成一条可追踪的因果链：膜电位跨过阈值，Na⁺ 内流触发尖峰，K⁺ 外流完成复极化，不应期把尖峰排列成频率编码。
+## Teaching contract
 
-## Audience and use
-
-- 高中生物到大学初阶神经科学学习者。
-- 5–8 分钟自学切片；每一步都能拖动参数并看到同一模型的后果。
-- 中文默认、英文可切换；画布上同时保留单位和颜色图例。
-
-## Required interactions
-
-1. 调整刺激强度与阈值，比较局部电位和完整动作电位，读取峰值与阈值延迟。
-2. 在尖峰画布中移动时间游标，关联 Na⁺ 快速内流、K⁺ 延迟外流与超极化阶段。
-3. 调整输入刺激频率和不应期，比较输入脉冲列与成功动作电位数，理解理论发放上限。
-4. 用一道误解检查确认单个动作电位近似全或无，强度主要通过频率编码。
-
-## Model boundary
-
-页面使用分段的教学模型来突出通道时序，不声称这是完整 Hodgkin–Huxley 求解器。参数值是定性教学近似：静息约 −70 mV、尖峰约 +35 mV、短暂超极化约 −80 mV。
-
-## Verification
-
-运行 `node tests/action-potential.cjs` 检查阈值分水岭、波形阶段、不应期过滤和双语/控件结构。
+- A subthreshold stimulus produces a graded local voltage, while a suprathreshold stimulus produces an approximately fixed peak.
+- Na⁺ opening drives depolarization; Na⁺ inactivation and delayed K⁺ opening explain repolarization and hyperpolarization.
+- The refractory period limits spike frequency, so stronger input can change the count per second rather than the height of each spike.
