@@ -38,3 +38,8 @@ Reading-context recovery reuses knowledgeGeometryReading v1 lesson discriminator
 
 Step 3 now sequences 30°, the computed critical angle and 60° so the ordinary-refraction to
 critical to total-reflection transition is visible as one parameter change.
+
+## Codex apparent-depth bridge — 2026-10-28
+
+Step 4 now sequences one outgoing ray and its backward extension so the eye's shallower fish
+position follows directly from the ray path.
