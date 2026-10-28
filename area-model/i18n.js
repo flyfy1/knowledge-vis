@@ -36,6 +36,7 @@ const STR = {
 
     "s2k": "第 2 步",
     "s2t": "切一刀：难算的乘法拆成两块好算的",
+    "s2bridge": "先看总面积，再拖切线：左块变大、右块变小，但两块相加始终回到同一个总数。",
     "s2e": "这一步要回答：13 × 7 这种不好直接算的乘法，怎么算得又快又对？整块地是 13 列 × 7 行。拖动画布上的竖切线（或用滑杆），把地切成左右两块，分别数两块的面积再相加。盯住三件事：左块、右块、总和——切线走到哪，总和都不许变。这种「切开分别算、再相加」的办法叫<strong>分配律</strong>（distributive law）：切在 10 处，就是 (10 + 3) × 7 = 10 × 7 + 3 × 7。",
     "s2cutLab": "切线位置（在第几列后切开）",
     "s2leftT": "左块",
@@ -111,6 +112,7 @@ const STR = {
 
     "s2k": "Step 2",
     "s2t": "One cut: split a hard product into two easy plots",
+    "s2bridge": "Watch the total first, then move the cut: the left block grows, the right shrinks, and their sum returns to the same whole area.",
     "s2e": "Question: how do you work out a product like 13 × 7 quickly and correctly? The whole plot is 13 columns × 7 rows. Drag the vertical cut line on the canvas (or use the slider) to split the land into a left and a right plot, count each plot's area, and add them. Watch three numbers — left, right, total: wherever the cut goes, the total must not change. This “cut, compute separately, then add” method is the <strong>distributive law</strong>: cut at 10, it reads (10 + 3) × 7 = 10 × 7 + 3 × 7.",
     "s2cutLab": "Cut position (after which column)",
     "s2leftT": "Left plot",
