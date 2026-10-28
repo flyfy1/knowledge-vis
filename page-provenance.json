@@ -118,8 +118,8 @@
       "kind": "revised",
       "sourceRevision": "752217ab5f3090fb306f9c7d06de4d978896728e",
       "scope": {
-        "zh": "第2步带符号别名与同时间样点/非样点对账；保留已有带限、插值和奈奎斯特解释",
-        "en": "Step2 signed aliases and same-time sample/nonsample comparison; existing bandlimit, interpolation and Nyquist explanations retained"
+        "zh": "第2步带符号别名、共享时刻样点与非样点对账；保留已有带限与插值解释",
+        "en": "Step2 signed alias and shared-time sample/nonsample comparison; prior bandlimit and interpolation explanations retained"
       },
       "originalAuthorship": "not asserted; prior contributions retained",
       "previousRevision": "1d90150cf9c1db194769dff92dc4178ce7779fb0",
@@ -263,7 +263,7 @@
       "originalSourceRevision": "e9774b0ae7e253005b0469f559f2e30138e1b50b",
       "scope": {
         "zh": "保留第1步读卡器与图谱入口；修正第3步条件独立的上限说法，以同一账本比较新测量与复制记录。",
-        "en": "Retains Step1 reader and graph entry; corrects Step3 independence-bound claim and compares new measurements with copies in one ledger."
+        "en": "retains Step1 reader and graph entry; corrects Step3 independence-bound claim and compares new measurements with copies in one ledger."
       },
       "retainedContributions": "Original course, probability functions and unrelated chapters retained; original tool identity not reclassified",
       "previousRevision": "ce20ae377c52ab8e81629283f31ec3ea84a3e94f"
@@ -275,8 +275,8 @@
       "sourceRevision": "595ee8e6dc5b07855ce1cba8799eead33b1dd760",
       "originalSourceRevision": "844643ca8e16939c93826f8ddcd550cb9ebd1a4c",
       "scope": {
-        "zh": "第3步同点连续相位对照、带符号到达相位、严格近抵消判定、暂停恢复和图谱入口",
-        "en": "Step3 same-point continuous phase comparison, signed arrival phase, strict near-cancellation classification, paused reading recovery and graph entry"
+        "zh": "连续相位、近抵消判定及图谱连接",
+        "en": "continuous phase comparison, near-cancellation classification and graph connection"
       },
       "retainedContributions": "Original844643ca commit credits Alberto/Muse; original course, yAt/ySum and other contributors retained; no original Codex authorship asserted"
     },
@@ -287,8 +287,8 @@
       "sourceRevision": "b3ed3863bb03d41a20078418eb047da8d36e44ad",
       "originalSourceRevision": "794f6825ffe3904a6f4c26ea7f0b9c298c100690",
       "scope": {
-        "zh": "第1步同钟双点相位、精确波节与解析预测；保留已验收第2步严格边界及暂停恢复",
-        "en": "Step1 shared-clock spatial phase, exact nodes and analytic predictions; accepted Step2 strict boundaries and paused recovery retained"
+        "zh": "双点相位、精确波节与解析预测",
+        "en": "two-point phase, precise nodes and analytic prediction"
       },
       "retainedContributions": "Original794f6825 Muse/Alberto course, wave functions and unrelated chapters retained; no original Codex authorship asserted",
       "previousRevision": "19873a1aa6d006f6b74e94bc8ceefb27fbda5f3a"
@@ -301,8 +301,8 @@
       "originalSourceRevision": "185078dd7537487de76392d5a5abafbd141209c6",
       "retainedMaintenanceRevision": "0cdb17003e8c160e6b30ac2ca9ddcb1c7d319a4f",
       "scope": {
-        "zh": "仅第2步输出索引、翻转平移对齐、零延拓重叠、小数精度与暂停恢复",
-        "en": "Step2 output indices, reversed/shifted alignment, zero-extended overlap, decimal fidelity and paused reading recovery"
+        "zh": "第2步的索引对齐、零延拓、小数输入与阅读恢复",
+        "en": "Step2 index alignment, zero extension, decimals and reading recovery"
       },
       "retainedContributions": "Original185078dd andmaintenance0cdb1700 Muse contributors retained; no original whole-course Codex authorship asserted"
     }

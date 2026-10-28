@@ -55,3 +55,18 @@ Atlas signal-route revision refreshes the existing Atlas record to97c65af4a90e0d
 The Galaxy→signal connector refreshes Atlas and Galaxy toaf4141a8d81f76e21c38ac9f5d9cc58e37ed9a78 with matching scoped editions. Original3D and integration links are retained; inventory remains21. Feature metadata directs publication checks to visual-release.json instead of retaining a stale worker deployment assertion. See [connector spec](galaxy-signal-connector.md).
 
 The existing sine→harmonic-motion reading revision refreshes Atlas/Galaxy tob653f3e7d8b6c8a0fd3f368b5e820e5c41396a6b. Inventory remains21; previous count/status paragraphs are historical, while JSON/static headers and visual-release.json respectively govern current source/publication. [Reading contract](atlas-relation-reading.md). The frozen39905de2 release package is not modified or implicitly expanded by this revision.
+
+## Inventory validation repair — 2026-10-28 Codex
+
+The repository inventory now contains 26 registered revised pages. The old core check still
+asserted a historical count of 23, so it stopped before validating the current records. The
+core check now derives paths from `page-provenance.json`, rejects duplicate inventory paths,
+recursively discovers every static HTML file carrying the provenance disclosure, and requires
+the discovered set to equal the inventory set. This keeps unverified pages unlabelled while
+making future additions fail with the actual missing or extra path.
+
+That dynamic check also found five older scope strings that no longer matched the text visible
+in their existing static headers (`sampling`, `bayes`, `interference`, `standing-wave`, and
+`convolution`). Their inventory scope metadata was reconciled to the already-visible wording;
+no page behavior, route, source revision, or unverified page was changed. See the detailed
+[inventory repair record](reviews/page-provenance-inventory-20261028.md).
