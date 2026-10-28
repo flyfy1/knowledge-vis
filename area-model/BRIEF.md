@@ -44,3 +44,8 @@ conclusion without changing the area calculations.
 
 Step 3 now previews the four area terms before the animation: 10×10, 10×3, 2×10 and 2×3.
 The hint connects each written multiplication row to one part of the same rectangle.
+
+## Codex factor bridge — 2026-10-28
+
+Step 4 now explains the trial action before the slider: an exact tiling gives a factor pair,
+while a final gap rules that width out. The factor model and collection logic remain unchanged.

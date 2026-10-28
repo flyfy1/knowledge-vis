@@ -60,6 +60,7 @@ const STR = {
 
     "s4k": "第 4 步",
     "s4t": "反过来：知道面积，找边长",
+    "s4bridge": "试一个宽：能整齐铺满 24 个方格，就找到一组因数；留下缺口的宽度可以排除。",
     "s4e": "这一步要回答：只告诉你面积是 24，长和宽可能是多少？拖「试边长」滑杆，把宽从 1 试到 12，画布会照这个宽去拼面积 24 的长方形：正好拼满，就是一组答案；拼不满（最后一行缺格），这个宽就被淘汰。整数答案一共只有四组，试着把它们集齐。乘起来正好等于 24 的两个边长，成对出现，叫<strong>因数对</strong>（factor pair）。",
     "s4wLab": "试边长：宽 w",
     "s4roFound": "宽 {w}、高 {h}：正好拼满，{w} × {h} = 24 ✓ 这是一对因数：{pair}。",
@@ -137,6 +138,7 @@ const STR = {
 
     "s4k": "Step 4",
     "s4t": "Backwards: given the area, find the sides",
+    "s4bridge": "Try one width: an exact tiling of 24 unit squares gives a factor pair; gaps rule that width out.",
     "s4e": "Question: if all you are told is that the area is 24, what could the length and width be? Drag the “try a side” slider to test widths from 1 to 12; the canvas tries to tile a rectangle of area 24 with that width. If it tiles exactly, you have found an answer; if it cannot (the last row is left with gaps), that width is ruled out. There are only four integer answers — try to collect them all. Two side lengths whose product is exactly 24 always show up as a pair: a <strong>factor pair</strong>.",
     "s4wLab": "Try a side: width w",
     "s4roFound": "Width {w}, height {h}: it tiles exactly, {w} × {h} = 24 ✓ A factor pair: {pair}.",
