@@ -31,3 +31,8 @@
 Step 1 now tells the learner to press +1 once and observe the identity change: one added proton
 changes the element, while a neutron changes mass without changing identity. The nucleus model,
 lookup table and Z range remain unchanged.
+
+## Codex layer-filling bridge — 2026-10-28
+
+Step 2 now sequences the preset and electron controls: choose Na or Cl, then change one electron
+to see the inner layer fill before the outer arrangement changes.
