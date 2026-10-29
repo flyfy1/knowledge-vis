@@ -14,3 +14,7 @@ The browser smoke pass is queued for the deployed revision because this managed
 checkout cannot bind a local HTTP port; deployment QA must verify the same
 filter, paging, Back/Forward, language, and mobile-width paths against the live
 HTTPS site.
+
+The deployed smoke pass also covered next-page navigation and category/topic
+filters. It exposed stale page-status text after a filter reduced the result to
+one page; the renderer now clears that live status whenever pagination hides.
