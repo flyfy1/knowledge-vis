@@ -28,6 +28,7 @@ window.KNOWLEDGE_CATEGORIES = [
   { id: "math",        name: { zh: "数学基础",   en: "Mathematical Foundations" } },
   { id: "chemistry",   name: { zh: "化学", en: "Chemistry" } },
   { id: "biology",     name: { zh: "生物", en: "Biology" } },
+  { id: "psychology",  name: { zh: "心理与认知", en: "Psychology & Cognition" } },
   { id: "language",    name: { zh: "语言与语言学", en: "Language & Linguistics" } },
   { id: "earth",       name: { zh: "地球与太空", en: "Earth & Space" } },
   { id: "leetcode",    name: { zh: "LeetCode 专区", en: "LeetCode" } }
@@ -1187,6 +1188,29 @@ window.KNOWLEDGE_PAGES = [
     desc: { zh: "拖动尺度因子、哈勃常数和红移，沿着 d=aχ、v=H₀d、λ=(1+z)λ₀ 读懂膨胀宇宙。", en: "Tune the scale factor, Hubble constant and redshift to read an expanding universe through d=aχ, v=H₀d and λ=(1+z)λ₀." },
     tags: [{ zh: "尺度因子", en: "Scale Factor" }, { zh: "哈勃定律", en: "Hubble Law" }, { zh: "红移", en: "Redshift" }],
     category: "earth", stage: "university", status: "live", path: "cosmology-expansion/"
+  },
+
+
+  {
+    slug: "distributed-systems",
+    title: { zh: "分布式系统 · 多个副本如何像一个值", en: "Distributed Systems · How Replicas Behave Like One Value" },
+    desc: { zh: "拖动副本数、读写 quorum 和网络分区，观察复制、一致性与可用性如何互相牵制。", en: "Tune replica count, read/write quorums and partitions to see replication, consistency and availability trade-offs." },
+    tags: [{ zh: "副本", en: "Replication" }, { zh: "一致性", en: "Consistency" }, { zh: "Quorum", en: "Quorum" }],
+    category: "computing", stage: "university", status: "live", path: "distributed-systems/"
+  },
+  {
+    slug: "psychology-cognition",
+    title: { zh: "心理与认知 · 注意、记忆与干扰", en: "Psychology & Cognition · Attention, Memory & Interference" },
+    desc: { zh: "用工作记忆容量、注意瓶颈、提取线索和前摄/后摄干扰，理解“记不住”背后的可计算机制。", en: "Use working-memory capacity, attention bottlenecks, retrieval cues and proactive/retroactive interference to model why recall changes." },
+    tags: [{ zh: "工作记忆", en: "Working Memory" }, { zh: "注意", en: "Attention" }, { zh: "提取", en: "Retrieval" }],
+    category: "psychology", stage: "senior", status: "live", path: "psychology-cognition/"
+  },
+  {
+    slug: "music-theory",
+    title: { zh: "音乐理论 · 从音程到终止", en: "Music Theory · From Intervals to Cadence" },
+    desc: { zh: "从半音距离和频率比走到音阶级数、和弦功能与终止，建立可计算的听觉理论直觉。", en: "Move from semitone distance and frequency ratios to scale degrees, chord function and cadence with a computable theory intuition." },
+    tags: [{ zh: "音程", en: "Intervals" }, { zh: "和弦功能", en: "Chord Function" }, { zh: "终止", en: "Cadence" }],
+    category: "math", stage: "senior", status: "live", path: "music-theory/"
   },
 
 ];
