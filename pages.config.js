@@ -1235,5 +1235,26 @@ window.KNOWLEDGE_PAGES = [
     tags: [{ zh: "正运动学", en: "Forward Kinematics" }, { zh: "逆运动学", en: "Inverse Kinematics" }, { zh: "Jacobian", en: "Jacobian" }],
     category: "computing", stage: "university", status: "live", path: "advanced-robotics/"
   },
+  {
+    slug: "public-health",
+    title: { zh: "公共卫生 · 从曲线到干预", en: "Public Health · From Curves to Interventions" },
+    desc: { zh: "用传播曲线、R₀、检测指标与干预取舍，建立流行病学的教学模型直觉。", en: "Build an epidemiology intuition with epidemic curves, R₀, test metrics and intervention trade-offs." },
+    tags: [{ zh: "传播曲线", en: "Epidemic Curves" }, { zh: "R₀ 与 Rₑ", en: "R₀ & Rₑ" }, { zh: "敏感度与特异度", en: "Sensitivity & Specificity" }],
+    category: "biology", stage: "senior", status: "live", path: "public-health/"
+  },
+  {
+    slug: "computer-graphics",
+    title: { zh: "计算机图形学 · 从坐标到画面", en: "Computer Graphics · From Coordinates to Pixels" },
+    desc: { zh: "拖动坐标变换、光栅化和漫反射，走完一条简化的 2D 渲染管线。", en: "Tune coordinate transforms, rasterization and diffuse shading through a compact 2D rendering pipeline." },
+    tags: [{ zh: "坐标变换", en: "Coordinate Transforms" }, { zh: "光栅化", en: "Rasterization" }, { zh: "漫反射", en: "Diffuse Shading" }],
+    category: "computing", stage: "university", status: "live", path: "computer-graphics/"
+  },
+  {
+    slug: "mechanism-auction",
+    title: { zh: "机制设计与拍卖 · 报价如何改变结果", en: "Mechanism Design & Auctions · How Bids Change Outcomes" },
+    desc: { zh: "比较第一价与第二价拍卖，追踪赢家、付款和收益，理解规则如何塑造激励。", en: "Compare first- and second-price auctions, then trace winners, payments and utilities to see how rules shape incentives." },
+    tags: [{ zh: "第一价拍卖", en: "First-Price Auction" }, { zh: "第二价拍卖", en: "Second-Price Auction" }, { zh: "激励", en: "Incentives" }],
+    category: "math", stage: "university", status: "live", path: "mechanism-auction/"
+  },
 
 ];
