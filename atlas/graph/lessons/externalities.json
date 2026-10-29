@@ -1,0 +1,59 @@
+{
+ "slug": "externalities",
+ "conceptId": "externalities",
+ "group": "math",
+ "note": "No economics group in the atlas; group set to math as supply-demand does on the site. Edge sources are existing site pages merged separately.",
+ "title": {
+  "zh": "外部性与公地悲剧",
+  "en": "Externalities & the tragedy of the commons"
+ },
+ "description": {
+  "zh": "当部分成本落在第三方身上，市场按私人成本多生产，无谓损失 = ½·e·(Q_m − Q*)；税率等于边际外部损害的庇古税使福利最大；公地被过度使用；科斯：无成本谈判下权利归谁不影响效率。线性模型，损害为常数。",
+  "en": "When part of the cost falls on a third party the market over-produces, with deadweight loss ½·e·(Q_m − Q*); a Pigouvian tax equal to the marginal damage maximises welfare; commons are overused; Coase: with costless bargaining who holds the right does not change efficiency. A linear model with constant damage."
+ },
+ "formula": "DWL = ½ · e · (Q_m − Q*)",
+ "source": "../externalities/#step3",
+ "edges": [
+  {
+   "from": "supply-demand",
+   "to": "externalities",
+   "type": "application",
+   "label": {
+    "zh": "价格漏掉了一部分成本",
+    "en": "The price leaves out part of the cost"
+   },
+   "reason": {
+    "zh": "供需均衡只反映买卖双方的私人成本与好处；加上外部损害后社会成本线高于供给线，均衡就偏离社会最优。",
+    "en": "Supply–demand equilibrium reflects only the buyers’ and sellers’ private costs and benefits; adding external damage lifts the social cost line above supply and moves equilibrium away from the social optimum."
+   },
+   "source": "../externalities/#step1"
+  },
+  {
+   "from": "game-theory",
+   "to": "externalities",
+   "type": "connection",
+   "label": {
+    "zh": "公地悲剧是多人博弈",
+    "en": "The commons is a many-player game"
+   },
+   "reason": {
+    "zh": "每个牧民各自最优的选择合起来使总利润下降，这是纳什均衡劣于合作结果的又一例。",
+    "en": "Each herder’s individually best choice adds up to lower total profit, another case of a Nash equilibrium worse than the cooperative outcome."
+   },
+   "source": "../externalities/#step4"
+  }
+ ],
+ "routes": [
+  {
+   "title": {
+    "zh": "为什么污染和过度捕捞很难靠市场自己解决？",
+    "en": "Why are pollution and overfishing so hard for markets to fix by themselves?"
+   },
+   "nodes": [
+    "externalities",
+    "supply-demand",
+    "game-theory"
+   ]
+  }
+ ]
+}

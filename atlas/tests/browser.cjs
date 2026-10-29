@@ -13,8 +13,8 @@ let checks=0;function ok(v,m){assert.ok(v,m);checks++;}
   p.on('request',r=>{if(r.frame()===p.mainFrame()&&p.url().includes('/atlas/'))requests.push(r.url());});
   await p.goto(base+'/atlas/');
   const data=await p.evaluate(()=>window.ATLAS);
-  assert.equal(data.nodes.length,39);assert.equal(data.edges.length,51);
-  assert.equal(new Set(data.nodes.map(n=>n.id)).size,39);
+  assert.ok(data.nodes.length>=39);assert.ok(data.edges.length>=51);
+  assert.equal(new Set(data.nodes.map(n=>n.id)).size,data.nodes.length);
   for(const e of data.edges){ok(data.nodes.some(n=>n.id===e.from)&&data.nodes.some(n=>n.id===e.to),'edge endpoints');ok(e.reason.en&&e.reason.zh&&e.source,'edge evidence');}
   for(const r of data.trails)for(let i=1;i<r.nodes.length;i++)ok(data.edges.some(e=>[e.from,e.to].includes(r.nodes[i-1])&&[e.from,e.to].includes(r.nodes[i])),'route adjacent concepts are connected');
   // Validate actual internal section destinations independently of UI selection.

@@ -19,7 +19,30 @@ function validate(d,{checkFiles=true}={}){
  function bilingual(x,at){if(!x||!nonempty(x.zh)||!nonempty(x.en))fail(at+': bilingual text missing');}
  for(const g of d.groups||[])bilingual(g.label,'group '+g.id);
  for(const[k,v]of Object.entries(d.types||{}))bilingual(v,'type '+k);
- for(const n of d.nodes||[]){if(!groups.has(n.group))fail('node '+n.id+': invalid group');bilingual(n.title,'node '+n.id+' title');bilingual(n.description,'node '+n.id+' description');if(!nonempty(n.formula)||!nonempty(n.source))fail('node '+n.id+': formula/source missing');if(n.help){bilingual(n.help.title,'node '+n.id+' help title');bilingual(n.help.body,'node '+n.id+' help body');if(!Array.isArray(n.help.sources)||!n.help.sources.length)fail('node '+n.id+': help evidence missing');else for(const s of n.help.sources){bilingual(s.label,'node '+n.id+' help source label');if(!nonempty(s.href))fail('node '+n.id+': help source missing');}}}
+ for(const n of d.nodes||[]){if(!groups.has(n.group))fail('node '+n.id+': invalid group');bilingual(n.title,'node '+n.id+' title');bilingual(n.description,'node '+n.id+' description');if((n.formula!==undefined&&!nonempty(n.formula))||!nonempty(n.source))fail('node '+n.id+': formula/source missing');if(n.help){bilingual(n.help.title,'node '+n.id+' help title');bilingual(n.help.body,'node '+n.id+' help body');if(!Array.isArray(n.help.sources)||!n.help.sources.length)fail('node '+n.id+': help evidence missing');else for(const s of n.help.sources){bilingual(s.label,'node '+n.id+' help source label');if(!nonempty(s.href))fail('node '+n.id+': help source missing');}}}
+ // P0: stage / lessons / aliases / questions (generator guarantees; validator enforces).
+ const STAGES=new Set(['primary','junior','senior','university']);
+ let liveSlugs=null;
+ function livePages(){if(liveSlugs)return liveSlugs;liveSlugs=new Set();try{const ctx={window:{}};vm.runInNewContext(fs.readFileSync(path.join(root,'pages.config.js'),'utf8'),ctx);for(const pg of ctx.window.KNOWLEDGE_PAGES||[])if(pg.status==='live')liveSlugs.add(pg.slug);}catch(_){}return liveSlugs;}
+ for(const n of d.nodes||[]){
+  if(n.stage!==undefined&&!STAGES.has(n.stage))fail('node '+n.id+': invalid stage');
+  if(n.aliases!==undefined){if(!Array.isArray(n.aliases))fail('node '+n.id+': aliases must be an array');else for(const a of n.aliases)bilingual(a,'node '+n.id+' alias');}
+  if(n.lessons!==undefined){if(!Array.isArray(n.lessons))fail('node '+n.id+': lessons must be an array');else for(const l of n.lessons){if(!livePages().has(l.slug))fail('node '+n.id+': lesson slug not live: '+l.slug);if(checkFiles&&l.step!==undefined&&l.step!==null){const f=path.join(root,l.slug,'index.html');if(!fs.existsSync(f)||!fs.readFileSync(f,'utf8').includes('id="step'+l.step+'"'))fail('node '+n.id+': lesson step anchor missing: '+l.slug+'#step'+l.step);}}}
+ }
+ if(d.questions!==undefined){
+  if(!Array.isArray(d.questions))fail('questions: array missing');
+  else for(const q of d.questions){
+   if(!nonempty(q.id))fail('question: id missing');
+   bilingual(q.question,'question '+q.id);
+   if(!Array.isArray(q.chain)||!q.chain.length)fail('question '+q.id+': chain missing');
+   else{for(const id of q.chain)if(!nodes.has(id))fail('question '+q.id+': unknown chain node '+id);
+    for(let i=1;i<q.chain.length;i++){const a=q.chain[i-1],b=q.chain[i];if(!(d.edges||[]).some(e=>(e.from===a&&e.to===b)||(e.from===b&&e.to===a)))fail('question '+q.id+': disconnected chain '+a+'/'+b);}}
+   if(!q.target||!nodes.has(q.target.node)||!(q.chain||[]).includes(q.target.node))fail('question '+q.id+': target node not in chain');
+   if(checkFiles&&q.target&&typeof q.target.href==='string'){const m=q.target.href.match(/^\.\.\/([^/]+)\/#step(\d+)$/);if(m){const f=path.join(root,m[1],'index.html');if(!fs.existsSync(f)||!fs.readFileSync(f,'utf8').includes('id="step'+m[2]+'"'))fail('question '+q.id+': target anchor missing: '+q.target.href);}}
+   if(Array.isArray(q.prompts))for(const pr of q.prompts){bilingual(pr.ask,'question '+q.id+' prompt');if(pr.expect!==undefined)bilingual(pr.expect,'question '+q.id+' prompt expect');}
+   if(q.reveal!==undefined)bilingual(q.reveal,'question '+q.id+' reveal');
+  }
+ }
  for(const e of d.edges||[]){if(!nodes.has(e.from)||!nodes.has(e.to))fail('edge '+e.id+': invalid endpoint');if(!Object.hasOwn(d.types||{},e.type))fail('edge '+e.id+': invalid type');bilingual(e.label,'edge '+e.id+' label');bilingual(e.reason,'edge '+e.id+' reason');if(!nonempty(e.source))fail('edge '+e.id+': source missing');if(e.prerequisite!==undefined&&typeof e.prerequisite!=='boolean')fail('edge '+e.id+': prerequisite must be explicit boolean');}
  for(const t of d.trails||[]){bilingual(t.title,'trail '+t.id+' title');if(t.backgroundNote){bilingual(t.backgroundNote,'trail '+t.id+' background note');if(!nonempty(t.backgroundSource))fail('trail '+t.id+': background source missing');}if(!Array.isArray(t.nodes)||t.nodes.length<2){fail('trail '+t.id+': stops missing');continue;}for(const id of [...t.nodes,...(t.background||[])])if(!nodes.has(id))fail('trail '+t.id+': invalid node '+id);for(let i=1;i<t.nodes.length;i++){const a=t.nodes[i-1],b=t.nodes[i];if(!(d.edges||[]).some(e=>(e.from===a&&e.to===b)||(e.from===b&&e.to===a)))fail('trail '+t.id+': disconnected stops '+a+'/'+b);}}
  for(const e of d.edges)if(e.reading!==undefined){

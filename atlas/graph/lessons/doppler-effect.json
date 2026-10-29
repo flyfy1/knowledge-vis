@@ -1,0 +1,9 @@
+{"slug":"doppler-effect","conceptId":"doppler-effect","group":"waves",
+"title":{"zh":"多普勒效应","en":"The Doppler effect"},
+"description":{"zh":"运动声源的波前被挤密或拉疏，给出前后方听者的频率、掠过曲线与马赫锥；源动、听者静止、静止介质的几何模型。","en":"A moving source's wavefronts bunch up or stretch out, giving heard frequency ahead and behind, a pass-by curve and the Mach cone; a geometric model with moving source, still listener and still medium."},
+"formula":"f′ = f/(1 − (v/c) cosθ)","source":"../doppler-effect/#step2",
+"edges":[
+{"from":"superposition","to":"doppler-effect","type":"connection","label":{"zh":"波前叠加成不等间距","en":"Wavefronts form unequal spacing"},"reason":{"zh":"运动源每个波前的圆心不同，叠起来前密后疏，间距决定听到的频率。","en":"Each wavefront of a moving source has a different centre, so the set is dense ahead and sparse behind, and the spacing sets the heard frequency."},"source":"../doppler-effect/#step1"},
+{"from":"doppler-effect","to":"spectrum","type":"application","label":{"zh":"掠过时频率随时间变","en":"Frequency changes with time in a pass-by"},"reason":{"zh":"车辆掠过的音调曲线是一个随时间变化的频率，适合用频谱/时频的视角读。","en":"The pitch curve of a pass-by is a frequency that varies in time, a natural subject for spectra and time–frequency reading."},"source":"../doppler-effect/#step3"},
+{"from":"doppler-effect","to":"fourier","type":"connection","label":{"zh":"频率是波的基本属性","en":"Frequency is a basic property of a wave"},"reason":{"zh":"多普勒移动的是频率，傅里叶页把任意信号拆成频率。","en":"The Doppler effect shifts frequency, and the Fourier lesson splits any signal into frequencies."},"source":"../doppler-effect/#step1"}],
+"routes":[{"title":{"zh":"为什么救护车驶过音调会变？","en":"Why does an ambulance change pitch as it passes?"},"nodes":["superposition","doppler-effect","spectrum"]}]}

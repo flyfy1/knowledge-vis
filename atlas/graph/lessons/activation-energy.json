@@ -1,0 +1,73 @@
+{
+ "slug": "activation-energy",
+ "conceptId": "activation-energy",
+ "group": "systems",
+ "note": "group systems is the closest existing atlas group (rates and responses); the page is chemical kinetics",
+ "title": {
+  "zh": "活化能与阿伦尼乌斯",
+  "en": "Activation energy and the Arrhenius law"
+ },
+ "description": {
+  "zh": "能量山、玻尔兹曼因子、k = A·e^(−Eₐ/RT)、催化剂与逆反应；最简形式，忽略取向因子与熵。",
+  "en": "Energy hill, Boltzmann factor, k = A·e^(−Eₐ/RT), catalysts and the reverse reaction in the simplest form, ignoring orientation factors and entropy."
+ },
+ "formula": "k = A e^(−Eₐ/RT)",
+ "source": "../activation-energy/#step2",
+ "edges": [
+  {
+   "from": "activation-energy",
+   "to": "montecarlo",
+   "type": "connection",
+   "label": {
+    "zh": "只有分布的尾部起作用",
+    "en": "Only the tail of a distribution matters"
+   },
+   "reason": {
+    "zh": "反应速率由能量分布尾部那一小部分分子决定，估计稀有事件需要大量样本。",
+    "en": "The rate is set by the small tail of the energy distribution, and estimating a rare event takes a very large sample."
+   },
+   "source": "../activation-energy/#step1"
+  },
+  {
+   "from": "probability",
+   "to": "activation-energy",
+   "type": "application",
+   "label": {
+    "zh": "分子能量的概率",
+    "en": "A probability over molecular energies"
+   },
+   "reason": {
+    "zh": "能量足够的分子比例就是一个概率 e^(−Eₐ/RT)，速率常数把这个概率乘上碰撞频率。",
+    "en": "The fraction of molecules with enough energy is a probability, e^(−Eₐ/RT), and the rate constant multiplies it by a collision frequency."
+   },
+   "source": "../activation-energy/#step2"
+  },
+  {
+   "from": "activation-energy",
+   "to": "feedback",
+   "type": "connection",
+   "label": {
+    "zh": "温度对速率的正反馈",
+    "en": "Temperature feeding back on rate"
+   },
+   "reason": {
+    "zh": "放热反应让温度升高、速率变快，可能自我加速，是反馈的化学例子。",
+    "en": "An exothermic reaction warms itself and speeds up, a chemical example of positive feedback."
+   },
+   "source": "../activation-energy/#step4"
+  }
+ ],
+ "routes": [
+  {
+   "title": {
+    "zh": "为什么升温能让反应快这么多？",
+    "en": "Why does warming speed a reaction up so much?"
+   },
+   "nodes": [
+    "probability",
+    "activation-energy",
+    "montecarlo"
+   ]
+  }
+ ]
+}

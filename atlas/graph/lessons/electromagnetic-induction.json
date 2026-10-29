@@ -1,0 +1,9 @@
+{"slug":"electromagnetic-induction","conceptId":"electromagnetic-induction","group":"circuits","note":"group circuits is the closest existing atlas group",
+"title":{"zh":"电磁感应与发电","en":"Electromagnetic induction and generators"},
+"description":{"zh":"磁通量、法拉第定律、楞次定律与转动线圈发电；偶极子近似的教学模型，不含自感与电阻。","en":"Flux, Faraday's law, Lenz's law and a spinning-coil generator in a dipole-approximation teaching model without self-inductance or resistance."},
+"formula":"ε = −N dΦ/dt","source":"../electromagnetic-induction/#step1",
+"edges":[
+{"from":"derivative","to":"electromagnetic-induction","type":"application","label":{"zh":"电压是磁通量的变化率","en":"Voltage is the rate of change of flux"},"reason":{"zh":"ε = −N dΦ/dt 直接是磁通量对时间的导数。","en":"ε = −N dΦ/dt is literally the time derivative of the flux."},"source":"../electromagnetic-induction/#step1"},
+{"from":"electromagnetic-induction","to":"oscillation","type":"connection","label":{"zh":"转动线圈给出正弦","en":"A spinning coil gives a sine"},"reason":{"zh":"匀速转动使磁通量按余弦变化，感应电动势是同频率的正弦波。","en":"Uniform rotation makes the flux a cosine, so the emf is a sine at the same frequency."},"source":"../electromagnetic-induction/#step4"},
+{"from":"electric-fields","to":"electromagnetic-induction","type":"connection","label":{"zh":"静电场与感应电场","en":"Electrostatic versus induced fields"},"reason":{"zh":"静止电荷的电场有势；变化磁场产生的电动势则沿回路绕圈。","en":"Electrostatic fields have a potential; the emf from a changing magnetic field circulates around the loop."},"source":"../electromagnetic-induction/#step2"}],
+"routes":[{"title":{"zh":"变化的磁场怎样变成电压？","en":"How does a changing magnetic field become a voltage?"},"nodes":["derivative","electromagnetic-induction","oscillation"]}]}

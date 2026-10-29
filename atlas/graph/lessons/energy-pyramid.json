@@ -1,0 +1,10 @@
+{"slug":"energy-pyramid","conceptId":"energy-pyramid","group":"systems",
+"note":"group systems is the closest of the five atlas groups (flows through stages); the page is ecology",
+"title":{"zh":"能量金字塔与营养级","en":"The energy pyramid and trophic levels"},
+"description":{"zh":"生产者固定阳光、逐级约一成传递、顶级捕食者所需面积、三种金字塔与饮食的土地账；示例量级的教学模型。","en":"Producers fixing sunlight, roughly ten percent passing up each level, the area top predators need, three kinds of pyramid and the land ledger of diets; a teaching model with example magnitudes."},
+"formula":"E_k = E_producers × eff^(k−1)","source":"../energy-pyramid/#step1",
+"edges":[
+{"from":"work-energy","to":"energy-pyramid","type":"application","label":{"zh":"能量只会被消耗，不会凭空增加","en":"Energy is spent, never created"},"reason":{"zh":"每传一级一部分变成热散失，能量金字塔上小下大是能量守恒与耗散的结果。","en":"A share is lost as heat at each step, so the energy pyramid narrows upward as a result of conservation with dissipation."},"source":"../energy-pyramid/#step1"},
+{"from":"energy-pyramid","to":"feedback","type":"connection","label":{"zh":"低一级的供给限制高一级的数量","en":"Supply below limits numbers above"},"reason":{"zh":"下一级提供的能量决定上一级能养活多少个体，是一种由资源供给形成的限制。","en":"The energy a level supplies caps how many individuals the level above can sustain, a resource-supply constraint."},"source":"../energy-pyramid/#step2"},
+{"from":"energy-pyramid","to":"integral","type":"connection","label":{"zh":"年产量是速率的累积","en":"Annual production is an accumulated rate"},"reason":{"zh":"每年产量 = 生物量 × 更替率，说明某一时刻的存量与单位时间的流量是两个不同的量。","en":"Annual production = biomass × turnover, showing that a stock at one moment and a flow per unit time are different quantities."},"source":"../energy-pyramid/#step3"}],
+"routes":[{"title":{"zh":"为什么顶级捕食者那么少？","en":"Why are top predators so rare?"},"nodes":["work-energy","energy-pyramid","feedback"]}]}

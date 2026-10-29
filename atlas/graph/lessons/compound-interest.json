@@ -1,0 +1,58 @@
+{
+ "slug": "compound-interest",
+ "conceptId": "compound-interest",
+ "group": "math",
+ "note": "Edges use existing atlas nodes probability and montecarlo only where real; compound-interest is a new concept id.",
+ "title": {
+  "zh": "复利与贴现",
+  "en": "Compound interest & discounting"
+ },
+ "description": {
+  "zh": "利息也生利息使钱按倍数增长 A = P(1+r)ᵗ；计息再细也趋近上限 P·e^{rt}；翻倍时间约 72/r 年；把未来的钱折现 PV = FV/(1+r)ᵗ；定期存入与贷款是同一规则的两个方向。固定利率模型，不含通胀、税费，非投资建议。",
+  "en": "Interest that earns interest makes money grow by multiples, A = P(1+r)ᵗ; finer compounding approaches the ceiling P·e^{rt}; doubling takes about 72/r years; future money is discounted by PV = FV/(1+r)ᵗ; regular saving and loans are the same rule run in two directions. A fixed-rate model without inflation or fees, not financial advice."
+ },
+ "formula": "A = P(1 + r/m)^{mt} → P e^{rt}",
+ "source": "../compound-interest/#step1",
+ "edges": [
+  {
+   "from": "compound-interest",
+   "to": "montecarlo",
+   "type": "connection",
+   "label": {
+    "zh": "把确定的账换成随机的账",
+    "en": "From a certain ledger to a random one"
+   },
+   "reason": {
+    "zh": "复利假设利率确定；真实回报有波动时，可以用大量随机抽样估计终值的分布，这是蒙特卡洛的典型用法。",
+    "en": "Compounding assumes a certain rate; when real returns fluctuate, many random draws can estimate the distribution of the final value, a typical use of Monte Carlo."
+   },
+   "source": "../compound-interest/#step4"
+  },
+  {
+   "from": "compound-interest",
+   "to": "variance",
+   "type": "connection",
+   "label": {
+    "zh": "风险让期望不等于全部",
+    "en": "Risk means the expected value is not everything"
+   },
+   "reason": {
+    "zh": "确定利率下终值只有一个数；回报有波动时需要同时看平均和方差，同样的平均增长率下波动越大，复利终值越低。",
+    "en": "At a certain rate the final value is a single number; with fluctuating returns you need both the mean and the variance, and for the same average return more volatility lowers the compounded result."
+   },
+   "source": "../compound-interest/#step5"
+  }
+ ],
+ "routes": [
+  {
+   "title": {
+    "zh": "为什么越早开始存钱越划算？",
+    "en": "Why is it so much better to start saving early?"
+   },
+   "nodes": [
+    "compound-interest",
+    "montecarlo"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,10 @@
+{"slug":"enzymes","conceptId":"enzymes","group":"systems",
+"note":"group systems is the closest of the five atlas groups (input–response with saturation); the page is biochemistry",
+"title":{"zh":"酶：生物催化剂","en":"Enzymes: biological catalysts"},
+"description":{"zh":"锁钥配合、米氏饱和曲线、温度与 pH 的最适点、竞争性与非竞争性抑制；单底物稳态教学模型。","en":"Lock-and-key specificity, the Michaelis–Menten saturation curve, temperature and pH optima, and competitive versus non-competitive inhibition in a single-substrate steady-state teaching model."},
+"formula":"v = Vmax[S]/(Kₘ + [S])","source":"../enzymes/#step1",
+"edges":[
+{"from":"activation-energy","to":"enzymes","type":"application","label":{"zh":"生物版的催化剂","en":"The biological catalyst"},"reason":{"zh":"酶降低反应的活化能，使反应在体温下就能很快进行。","en":"An enzyme lowers a reaction's activation energy so it runs quickly at body temperature."},"source":"../enzymes/#step0"},
+{"from":"enzymes","to":"feedback","type":"connection","label":{"zh":"饱和是一种非线性","en":"Saturation is a nonlinearity"},"reason":{"zh":"速率随底物浓度先线性后饱和，是系统中常见的饱和非线性，抑制剂可被视为负反馈的一个分子实现。","en":"The rate rises linearly with substrate and then saturates, a common nonlinearity in systems, and inhibitors can act as a molecular form of negative feedback."},"source":"../enzymes/#step4"},
+{"from":"derivative","to":"enzymes","type":"connection","label":{"zh":"曲线的斜率与渐近线","en":"Slope and asymptote of a curve"},"reason":{"zh":"米氏曲线在 [S] = 0 处斜率为 Vmax/Kₘ，在大 [S] 处趋于水平的渐近线 Vmax。","en":"The Michaelis–Menten curve has slope Vmax/Kₘ at [S] = 0 and flattens toward the asymptote Vmax at large [S]."},"source":"../enzymes/#step1"}],
+"routes":[{"title":{"zh":"为什么酶也会“忙不过来”？","en":"Why can an enzyme get \"too busy\"?"},"nodes":["activation-energy","enzymes","feedback"]}]}

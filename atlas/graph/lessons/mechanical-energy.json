@@ -1,0 +1,59 @@
+{
+ "slug": "mechanical-energy",
+ "conceptId": "mechanical-energy",
+ "group": "systems",
+ "note": "Edges use atlas node work-energy.",
+ "title": {
+  "zh": "机械能守恒",
+  "en": "Conservation of mechanical energy"
+ },
+ "description": {
+  "zh": "无摩擦时动能与重力势能之和守恒，速度由高度差决定；有摩擦时减少的机械能变成热，E_p + E_k + Q 仍守恒；同一本账给出圆环的最低高度 2.5R、弹簧弹起高度和刹车距离 v²/(2μg)。质点模型，无空气阻力。",
+  "en": "Without friction the sum of kinetic and gravitational potential energy is conserved and speed follows from the height difference; with friction the lost mechanical energy becomes heat and E_p + E_k + Q is still conserved; the same ledger gives the minimum loop height 2.5R, the height of a spring launch and the braking distance v²/(2μg). A point-mass model without air resistance."
+ },
+ "formula": "E_p + E_k = mgh + ½mv² = const",
+ "source": "../mechanical-energy/#step1",
+ "edges": [
+  {
+   "from": "work-energy",
+   "to": "mechanical-energy",
+   "type": "application",
+   "label": {
+    "zh": "功改变能量，摩擦做的功变成热",
+    "en": "Work changes energy; friction’s work becomes heat"
+   },
+   "reason": {
+    "zh": "外力或摩擦力做的功等于能量的变化；只有重力和弹力做功时机械能守恒，摩擦做功则把机械能转为内能。",
+    "en": "The work of outside forces or friction equals the change in energy; mechanical energy is conserved when only gravity and elastic forces do work, while friction turns it into internal energy."
+   },
+   "source": "../mechanical-energy/#step2"
+  },
+  {
+   "from": "mechanical-energy",
+   "to": "net-force",
+   "type": "connection",
+   "label": {
+    "zh": "同一结果可以从力和能量两条路得到",
+    "en": "The same result by forces or by energy"
+   },
+   "reason": {
+    "zh": "用牛顿第二定律沿轨道积分和用能量守恒得到同一个速度 √(2g(h₀ − h))，能量法不必知道轨道的形状。",
+    "en": "Integrating Newton’s second law along the track and using energy conservation give the same speed √(2g(h₀ − h)); the energy method does not need the shape of the track."
+   },
+   "source": "../mechanical-energy/#step1"
+  }
+ ],
+ "routes": [
+  {
+   "title": {
+    "zh": "过山车为什么翻得过圆环？",
+    "en": "Why does a roller coaster get round the loop?"
+   },
+   "nodes": [
+    "mechanical-energy",
+    "work-energy",
+    "net-force"
+   ]
+  }
+ ]
+}

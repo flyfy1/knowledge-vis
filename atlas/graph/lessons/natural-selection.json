@@ -1,0 +1,10 @@
+{"slug":"natural-selection","conceptId":"natural-selection","group":"measurement",
+"note":"group measurement is the closest of the five atlas groups (randomness and estimation); the page is evolutionary biology",
+"title":{"zh":"自然选择与遗传漂变","en":"Natural selection and genetic drift"},
+"description":{"zh":"胡椒蛾双色模型：存活率差异、世代递推、优势比决定速度、环境变化的滞后，并与小种群的随机漂变对比；单倍体单基因的教学模型。","en":"A two-colour peppered-moth model: survival differences, generation-by-generation recursion, advantage ratio setting the speed, lag behind a changing environment, and contrast with drift in small populations; a haploid single-gene teaching model."},
+"formula":"logit p′ = logit p + ln(w_dark/w_light)","source":"../natural-selection/#step2",
+"edges":[
+{"from":"probability","to":"natural-selection","type":"application","label":{"zh":"存活是概率事件","en":"Survival is a chance event"},"reason":{"zh":"每只蛾以概率 w 存活，种群比例是大量随机事件的平均，小种群里随机性很明显。","en":"Each moth survives with probability w, and the population share is an average of many random events, with chance clearly visible in small populations."},"source":"../natural-selection/#step0"},
+{"from":"variance","to":"natural-selection","type":"connection","label":{"zh":"抽样方差 p(1−p)/N","en":"Sampling variance p(1−p)/N"},"reason":{"zh":"遗传漂变的大小由单代抽样方差 p(1−p)/N 累积而来，种群越小越大。","en":"The size of drift builds up from the one-generation sampling variance p(1−p)/N, larger for smaller populations."},"source":"../natural-selection/#step4"},
+{"from":"natural-selection","to":"feedback","type":"connection","label":{"zh":"环境反过来塑造种群","en":"The environment shapes the population"},"reason":{"zh":"选择让种群跟随环境变化，但响应有滞后，是一阶系统跟随输入的生物版本。","en":"Selection makes the population follow the environment with a lag, a biological counterpart of a first-order system following an input."},"source":"../natural-selection/#step3"}],
+"routes":[{"title":{"zh":"为什么环境一变，种群的颜色就跟着变？","en":"Why does a population's colour change when the environment does?"},"nodes":["probability","natural-selection","feedback"]}]}

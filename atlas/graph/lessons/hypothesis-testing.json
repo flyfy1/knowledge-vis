@@ -1,0 +1,59 @@
+{
+ "slug": "hypothesis-testing",
+ "conceptId": "hypothesis-testing",
+ "group": "uncertainty",
+ "note": "Uses the atlas uncertainty group. Edges use the atlas nodes bayes and probability.",
+ "title": {
+  "zh": "假设检验与 p 值",
+  "en": "Hypothesis testing & p-values"
+ },
+ "description": {
+  "zh": "以抛硬币为例：p 值是零假设为真时出现至少同样极端结果的概率；α 是第一类错误的预算，功效 1 − β 随效应与样本量上升；同时做多次检验总会碰到“显著”，需要校正。精确二项检验模型，p 值不是假设为真的概率。",
+  "en": "With coin flips: the p-value is the probability, if the null is true, of a result at least as extreme; α is the budget for type I errors, power 1 − β grows with effect and sample size, and running many tests always turns up something “significant”, so corrections are needed. An exact binomial test model; a p-value is not the probability that the hypothesis is true."
+ },
+ "formula": "p = P(result at least as extreme | H₀)",
+ "source": "../hypothesis-testing/#step0",
+ "edges": [
+  {
+   "from": "probability",
+   "to": "hypothesis-testing",
+   "type": "application",
+   "label": {
+    "zh": "用概率分布判断“是否太罕见”",
+    "en": "Using a distribution to judge “too rare”"
+   },
+   "reason": {
+    "zh": "检验把“如果硬币公平，这个结果有多罕见”换成一个由二项分布算出的概率，这是概率分布在推断上的直接应用。",
+    "en": "A test turns “how rare would this result be if the coin were fair” into a probability computed from the binomial distribution, a direct use of probability distributions in inference."
+   },
+   "source": "../hypothesis-testing/#step0"
+  },
+  {
+   "from": "bayes",
+   "to": "hypothesis-testing",
+   "type": "connection",
+   "label": {
+    "zh": "两个不同的问题",
+    "en": "Two different questions"
+   },
+   "reason": {
+    "zh": "p 值回答“若假设为真，数据这么极端的概率”；贝叶斯回答“给定数据，假设为真的概率”，需要先验。两者经常被混为一谈。",
+    "en": "A p-value answers “if the hypothesis is true, how probable is data this extreme”; Bayes answers “given the data, how probable is the hypothesis”, which needs a prior. The two are often confused."
+   },
+   "source": "../hypothesis-testing/#step5"
+  }
+ ],
+ "routes": [
+  {
+   "title": {
+    "zh": "“p < 0.05”到底说明了什么？",
+    "en": "What does “p < 0.05” really tell us?"
+   },
+   "nodes": [
+    "hypothesis-testing",
+    "bayes",
+    "probability"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,59 @@
+{
+ "slug": "double-slit",
+ "conceptId": "double-slit",
+ "group": "waves",
+ "note": "Edges use existing atlas nodes interference and superposition.",
+ "title": {
+  "zh": "双缝实验",
+  "en": "The double-slit experiment"
+ },
+ "description": {
+  "zh": "双缝条纹间距 Δy = λL/d，被单缝 sinc² 包络罩住；一颗颗粒子的落点累积成条纹，知道走了哪条缝则条纹消失（V² + D² ≤ 1）；物质波长 λ = h/(mv)。理想相干远场模型，不对“测量”做解释。",
+  "en": "Double-slit fringes are spaced Δy = λL/d under a single-slit sinc² envelope; single particles build the fringes dot by dot, and knowing which slit was used erases them (V² + D² ≤ 1); matter waves have λ = h/(mv). An ideal coherent far-field model that offers no interpretation of measurement."
+ },
+ "formula": "Δy = λL/d",
+ "source": "../double-slit/#step2",
+ "edges": [
+  {
+   "from": "interference",
+   "to": "double-slit",
+   "type": "application",
+   "label": {
+    "zh": "路程差决定明暗",
+    "en": "Path difference decides bright and dark"
+   },
+   "reason": {
+    "zh": "两条缝到屏上一点的路程差等于波长整数倍时加强、半整数倍时抵消，这是干涉的路程差规则在双缝上的应用。",
+    "en": "The path difference from two slits to a screen point being a whole number of wavelengths reinforces and half-integers cancel, the path-difference rule of interference applied to a double slit."
+   },
+   "source": "../double-slit/#step0"
+  },
+  {
+   "from": "double-slit",
+   "to": "superposition",
+   "type": "connection",
+   "label": {
+    "zh": "概率幅相加",
+    "en": "Amplitudes add"
+   },
+   "reason": {
+    "zh": "单个粒子也走出干涉条纹，说明两条路径的“振幅”先相加再取平方；一旦路径可区分，就改为概率相加，条纹消失。",
+    "en": "Single particles still build interference fringes, which shows that the amplitudes of two paths add before squaring; once the paths are distinguishable, probabilities add instead and the fringes vanish."
+   },
+   "source": "../double-slit/#step3"
+  }
+ ],
+ "routes": [
+  {
+   "title": {
+    "zh": "为什么一个电子也会“同时”走两条缝？",
+    "en": "Why does a single electron behave as if it takes both slits?"
+   },
+   "nodes": [
+    "double-slit",
+    "interference",
+    "superposition"
+   ]
+  }
+ ]
+}

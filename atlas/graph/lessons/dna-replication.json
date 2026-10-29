@@ -1,0 +1,58 @@
+{
+ "slug": "dna-replication",
+ "conceptId": "dna-replication",
+ "group": "systems",
+ "note": "group systems is the closest of the five atlas groups (information flowing through a process); the page is molecular biology",
+ "title": {
+  "zh": "DNA 复制、转录与翻译",
+  "en": "DNA replication, transcription and translation"
+ },
+ "description": {
+  "zh": "碱基配对、半保留复制、转录、翻译与点突变分类；标准密码表，忽略链方向与大量酶学细节。",
+  "en": "Base pairing, semi-conservative replication, transcription, translation and point-mutation classes using the standard code, ignoring strand direction and most enzymology."
+ },
+ "formula": "mRNA codon (3 bases) → amino acid",
+ "source": "../dna-replication/#step3",
+ "edges": [
+  {
+   "from": "dna-replication",
+   "to": "probability",
+   "type": "connection",
+   "label": {
+    "zh": "基因的传递与遗传学",
+    "en": "Passing genes on"
+   },
+   "reason": {
+    "zh": "遗传与概率页讲基因如何概率性地传给后代，本页讲这些基因在分子层面如何被复制和读出。",
+    "en": "The genetics-and-probability lesson covers how genes are passed on by chance; this page covers how those genes are copied and read out at the molecular level."
+   },
+   "source": "../dna-replication/#step1"
+  },
+  {
+   "from": "montecarlo",
+   "to": "dna-replication",
+   "type": "connection",
+   "label": {
+    "zh": "随机变异",
+    "en": "Random variation"
+   },
+   "reason": {
+    "zh": "点突变是随机发生的，其后果（同义、错义、无义）由遗传密码表决定。",
+    "en": "Point mutations arise at random, and their consequences (silent, missense, nonsense) are set by the genetic code table."
+   },
+   "source": "../dna-replication/#step4"
+  }
+ ],
+ "routes": [
+  {
+   "title": {
+    "zh": "基因里的信息怎样变成蛋白质？",
+    "en": "How does the information in a gene become a protein?"
+   },
+   "nodes": [
+    "probability",
+    "dna-replication"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,58 @@
+{
+ "slug": "blackbody-radiation",
+ "conceptId": "blackbody-radiation",
+ "group": "OTHER",
+ "note": "No thermal-physics group in the atlas; group left OTHER. Edge sources point to existing site pages merged separately.",
+ "title": {
+  "zh": "黑体辐射",
+  "en": "Blackbody radiation"
+ },
+ "description": {
+  "zh": "理想黑体的辐射光谱由温度决定：峰值波长 λmax = b/T，总功率 σT⁴；经典理论在短波发散（紫外灾难），普朗克的能量量子 hν 让光谱收敛。理想黑体模型，真实物体发射率小于 1。",
+  "en": "The spectrum of an ideal blackbody is set by its temperature: peak wavelength λmax = b/T, total power σT⁴; classical theory diverges at short wavelengths (the ultraviolet catastrophe) and Planck’s energy quantum hν tames the spectrum. An ideal-blackbody model; real objects have emissivity below 1."
+ },
+ "formula": "M(λ,T) = 2πhc²/λ⁵ · 1/(e^{hc/λkT} − 1)",
+ "source": "../blackbody-radiation/#step5",
+ "edges": [
+  {
+   "from": "blackbody-radiation",
+   "to": "photoelectric-effect",
+   "type": "connection",
+   "label": {
+    "zh": "两处都出现能量量子",
+    "en": "Energy quanta appear in both"
+   },
+   "reason": {
+    "zh": "黑体辐射里 hν 的能量份解决了紫外发散，光电效应里同样的 hν 解释了光电子的最大动能，二者互相印证量子化。",
+    "en": "The energy unit hν resolves the ultraviolet divergence in blackbody radiation, and the same hν explains the maximum photoelectron energy, so the two support each other."
+   },
+   "source": "../blackbody-radiation/#step5"
+  },
+  {
+   "from": "kinetic-theory",
+   "to": "blackbody-radiation",
+   "type": "foundation",
+   "label": {
+    "zh": "温度是热能尺度 kT",
+    "en": "Temperature sets the thermal scale kT"
+   },
+   "reason": {
+    "zh": "黑体辐射把一份光量子能量与热能 kT 比较，kT 正是气体动理论里温度对应的微观能量尺度。",
+    "en": "Blackbody radiation compares one light quantum with the thermal energy kT, the same microscopic energy scale that temperature has in kinetic theory."
+   },
+   "source": "../blackbody-radiation/#step5"
+  }
+ ],
+ "routes": [
+  {
+   "title": {
+    "zh": "为什么经典物理需要量子？",
+    "en": "Why did classical physics need the quantum?"
+   },
+   "nodes": [
+    "blackbody-radiation",
+    "photoelectric-effect"
+   ]
+  }
+ ]
+}

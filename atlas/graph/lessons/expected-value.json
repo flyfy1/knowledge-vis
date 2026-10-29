@@ -1,0 +1,73 @@
+{
+ "slug": "expected-value",
+ "conceptId": "expected-value",
+ "group": "math",
+ "note": "Edges use existing atlas nodes probability, montecarlo and variance.",
+ "title": {
+  "zh": "期望",
+  "en": "Expected value"
+ },
+ "description": {
+  "zh": "期望 E = Σ p·x 是长期平均的公平价：判断下注是否值得（净期望 = E − 价格）、E[X+Y] = E[X] + E[Y] 的可加性、保险为什么用较差的期望换取更小的波动，以及圣彼得堡悖论。风险中性的独立重复模型。",
+  "en": "The expected value E = Σ p·x is the fair price of a long-run average: whether a bet is worth it (net expectation = E − price), the additivity E[X+Y] = E[X] + E[Y], why insurance trades a worse expectation for less variation, and the St. Petersburg paradox. A risk-neutral model of independent repeated plays."
+ },
+ "formula": "E = Σ p·x",
+ "source": "../expected-value/#step1",
+ "edges": [
+  {
+   "from": "probability",
+   "to": "expected-value",
+   "type": "foundation",
+   "label": {
+    "zh": "概率加权平均",
+    "en": "A probability-weighted average"
+   },
+   "reason": {
+    "zh": "期望把每个结果按概率加权后相加，是概率分布最基本的一个数字。",
+    "en": "The expected value adds each outcome weighted by its probability, the most basic single number of a probability distribution."
+   },
+   "source": "../expected-value/#step0"
+  },
+  {
+   "from": "expected-value",
+   "to": "montecarlo",
+   "type": "application",
+   "label": {
+    "zh": "长期平均逼近期望",
+    "en": "Long-run averages approach it"
+   },
+   "reason": {
+    "zh": "重复抽样的平均值按 σ/√n 逼近期望，蒙特卡洛估计就是用这个事实把平均值当作期望的估计。",
+    "en": "The average of repeated draws approaches the expectation with error about σ/√n, the fact Monte Carlo estimation uses to take the average as an estimate of the expectation."
+   },
+   "source": "../expected-value/#step2"
+  },
+  {
+   "from": "expected-value",
+   "to": "variance",
+   "type": "connection",
+   "label": {
+    "zh": "期望之外还要看波动",
+    "en": "Beyond the mean, the spread"
+   },
+   "reason": {
+    "zh": "保险与彩票的例子说明期望相同或更差时，波动（方差）仍会改变决定，所以期望和方差要一起看。",
+    "en": "The insurance and lottery examples show that with equal or worse expectation the spread (variance) can still change the decision, so expectation and variance go together."
+   },
+   "source": "../expected-value/#step4"
+  }
+ ],
+ "routes": [
+  {
+   "title": {
+    "zh": "一个有风险的选择，怎样算值不值？",
+    "en": "How do you judge whether a risky choice is worth it?"
+   },
+   "nodes": [
+    "expected-value",
+    "probability",
+    "variance"
+   ]
+  }
+ ]
+}

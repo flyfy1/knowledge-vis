@@ -1,0 +1,58 @@
+{
+ "slug": "titration-curves",
+ "conceptId": "titration-curves",
+ "group": "measurement",
+ "title": {
+  "zh": "滴定曲线与指示剂",
+  "en": "Titration curves and indicators"
+ },
+ "description": {
+  "zh": "强酸、弱酸被强碱滴定的 pH 曲线、突跃、半等当点与指示剂选择；理想一元酸模型，忽略活度与 CO₂。",
+  "en": "pH curves for strong and weak acids titrated by a strong base: the leap, half equivalence and indicator choice, in an ideal monoprotic model ignoring activity and CO₂."
+ },
+ "formula": "pH = pKₐ at half equivalence",
+ "source": "../titration-curves/#step2",
+ "edges": [
+  {
+   "from": "derivative",
+   "to": "titration-curves",
+   "type": "application",
+   "label": {
+    "zh": "突跃就是斜率最大处",
+    "en": "The leap is where the slope peaks"
+   },
+   "reason": {
+    "zh": "等当点处 dpH/dV 最大，所以判断终点就是找曲线斜率的峰。",
+    "en": "dpH/dV is largest at the equivalence point, so locating the end point means finding the peak of the curve's slope."
+   },
+   "source": "../titration-curves/#step1"
+  },
+  {
+   "from": "titration-curves",
+   "to": "estimate",
+   "type": "application",
+   "label": {
+    "zh": "用终点读数估算浓度",
+    "en": "Estimating a concentration from the end point"
+   },
+   "reason": {
+    "zh": "c酸 = c碱·V碱/V酸，一次读数的误差随终点判断而变化。",
+    "en": "c_acid = c_base·V_base/V_acid, and the error of one reading depends on how well the end point is judged."
+   },
+   "source": "../titration-curves/#step4"
+  }
+ ],
+ "routes": [
+  {
+   "title": {
+    "zh": "怎样判断滴定终点？",
+    "en": "How do you decide where a titration ends?"
+   },
+   "nodes": [
+    "derivative",
+    "titration-curves",
+    "estimate"
+   ]
+  }
+ ]
+}

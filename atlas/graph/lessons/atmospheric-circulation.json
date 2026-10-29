@@ -1,0 +1,58 @@
+{
+ "slug": "atmospheric-circulation",
+ "conceptId": "atmospheric-circulation",
+ "group": "OTHER",
+ "note": "No earth-science group in the atlas; group left OTHER. Edge sources are existing site pages (seasons-orbit, climate-energy) whose own fragments are merged separately.",
+ "title": {
+  "zh": "大气环流与季风",
+  "en": "Atmospheric circulation & monsoons"
+ },
+ "description": {
+  "zh": "赤道受热多、极地受热少推动空气环流，地球自转的科里奥利偏转把它拧成三圈与信风、西风带；陆海温差让季风随季节反向。理想化无大陆模型，数值为示意。",
+  "en": "More heating at the equator than the poles drives overturning, Coriolis deflection twists it into three cells with trade winds and westerlies, and land–sea contrast reverses monsoons with the season. An idealised model without continents; numbers are schematic."
+ },
+ "formula": "f = 2Ω sin φ",
+ "source": "../atmospheric-circulation/#step2",
+ "edges": [
+  {
+   "from": "seasons-orbit",
+   "to": "atmospheric-circulation",
+   "type": "application",
+   "label": {
+    "zh": "直射点移动 → 雨带与季风移动",
+    "en": "Overhead Sun moves → rain belt and monsoon move"
+   },
+   "reason": {
+    "zh": "太阳直射点随季节南北移动，受热最强的纬度跟着移动，上升气流带与季风方向也随之变化。",
+    "en": "The overhead Sun moves north and south with the seasons, so the latitude of strongest heating shifts and with it the rising-air belt and monsoon direction."
+   },
+   "source": "../atmospheric-circulation/#step5"
+  },
+  {
+   "from": "climate-energy",
+   "to": "atmospheric-circulation",
+   "type": "foundation",
+   "label": {
+    "zh": "纬度受热差 → 环流的动力",
+    "en": "Latitude heating gap → the engine of circulation"
+   },
+   "reason": {
+    "zh": "单位面积受热随纬度按 cos φ 下降，由此产生的赤道—极地温差是大气环流的能量来源。",
+    "en": "Heat per area falls roughly as cos φ with latitude, and the resulting equator–pole contrast is the energy source of atmospheric circulation."
+   },
+   "source": "../atmospheric-circulation/#step0"
+  }
+ ],
+ "routes": [
+  {
+   "title": {
+    "zh": "为什么赤道多雨、副热带多沙漠？",
+    "en": "Why is the equator rainy and the subtropics desert-prone?"
+   },
+   "nodes": [
+    "atmospheric-circulation",
+    "seasons-orbit"
+   ]
+  }
+ ]
+}

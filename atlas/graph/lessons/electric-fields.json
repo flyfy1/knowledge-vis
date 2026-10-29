@@ -1,0 +1,9 @@
+{"slug":"electric-fields","conceptId":"electric-fields","group":"circuits","note":"group circuits is the closest of the five existing atlas groups; the page is electrostatics, not circuits",
+"title":{"zh":"电场与电势","en":"Electric fields and potential"},
+"description":{"zh":"静止点电荷的电场、叠加、场线、等势线与试探电荷运动；二维教学模型，k = 1，真空，不含导体与磁场。","en":"Fields of stationary point charges: superposition, field lines, equipotentials and a released test charge. A 2D teaching model with k = 1 in vacuum, without conductors or magnetism."},
+"formula":"E = kq/r², E = −∇V","source":"../electric-fields/#step2",
+"edges":[
+{"from":"superposition","to":"electric-fields","type":"application","label":{"zh":"场的叠加","en":"Fields superpose"},"reason":{"zh":"多个电荷的电场逐点矢量相加，是叠加原理的一个具体例子。","en":"The fields of several charges add as vectors point by point, a concrete case of the superposition principle."},"source":"../electric-fields/#step1"},
+{"from":"vectors","to":"electric-fields","type":"representation","label":{"zh":"场是矢量场","en":"A field is a vector field"},"reason":{"zh":"每一点的 E 都有大小和方向，用箭头表示并按矢量相加。","en":"E has a size and direction at every point, drawn as arrows and added as vectors."},"source":"../electric-fields/#step0"},
+{"from":"electric-fields","to":"work-energy","type":"connection","label":{"zh":"势能与动能互换","en":"Potential and kinetic energy trade"},"reason":{"zh":"试探电荷运动中动能加势能保持不变，与功能关系同一账本。","en":"A test charge's kinetic plus potential energy stays constant, the same ledger as the work–energy relation."},"source":"../electric-fields/#step4"}],
+"routes":[{"title":{"zh":"怎样把看不见的力画成图？","en":"How do you draw an invisible force?"},"nodes":["vectors","electric-fields","superposition"]}]}

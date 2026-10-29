@@ -1,0 +1,59 @@
+{
+ "slug": "markov-chains",
+ "conceptId": "markov-chains",
+ "group": "uncertainty",
+ "note": "Uses the atlas uncertainty group. Edges use atlas nodes probability and eigen.",
+ "title": {
+  "zh": "马尔可夫链",
+  "en": "Markov chains"
+ },
+ "description": {
+  "zh": "下一步只取决于当前状态；n 步转移是转移矩阵的 n 次幂；正常的链收敛到稳态 π（πP = π），速度由第二特征值 |λ₂| 决定；有吸收态的链（赌徒）没有中间稳态。有限状态、一阶、时间齐次模型。",
+  "en": "The next step depends only on the current state; n-step transitions are the n-th power of the transition matrix; an ordinary chain converges to a steady state π (πP = π) at a speed set by the second eigenvalue |λ₂|; a chain with absorbing states (the gambler) has no middle steady state. A finite, first-order, time-homogeneous model."
+ },
+ "formula": "πP = π",
+ "source": "../markov-chains/#step3",
+ "edges": [
+  {
+   "from": "probability",
+   "to": "markov-chains",
+   "type": "application",
+   "label": {
+    "zh": "条件概率链起来",
+    "en": "Conditional probabilities chained together"
+   },
+   "reason": {
+    "zh": "转移概率就是“已知今天、明天各状态的条件概率”，把它们一步步相乘相加就得到多步转移。",
+    "en": "A transition probability is the conditional probability of each state tomorrow given today, and multiplying and adding them step by step gives multi-step transitions."
+   },
+   "source": "../markov-chains/#step0"
+  },
+  {
+   "from": "eigen",
+   "to": "markov-chains",
+   "type": "connection",
+   "label": {
+    "zh": "特征值决定收敛速度",
+    "en": "Eigenvalues set the convergence speed"
+   },
+   "reason": {
+    "zh": "转移矩阵的稳态是特征值 1 对应的左特征向量，其余特征值的大小 |λ₂| 决定与稳态的距离按 |λ₂|ⁿ 衰减。",
+    "en": "The steady state is the left eigenvector for eigenvalue 1, and the size of the next eigenvalue |λ₂| makes the distance to it decay like |λ₂|ⁿ."
+   },
+   "source": "../markov-chains/#step4"
+  }
+ ],
+ "routes": [
+  {
+   "title": {
+    "zh": "为什么随机游走会有稳定的长期比例？",
+    "en": "Why does a random walk have a stable long-run share?"
+   },
+   "nodes": [
+    "markov-chains",
+    "eigen",
+    "probability"
+   ]
+  }
+ ]
+}
