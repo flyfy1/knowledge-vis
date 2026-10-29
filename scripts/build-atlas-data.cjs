@@ -322,9 +322,12 @@ if (args.has('--check')) {
   console.log(`WROTE atlas/data.js: ${report.counts.nodes} nodes, ${report.counts.edges} edges, ${report.counts.questions} questions, ${report.sizeBytes} bytes.`);
 }
 if (args.has('--bump-versions')) {
-  const date = new Date().toISOString().slice(0, 10).replace(/-/g, '');
+  // SGT date (repo convention) + short sha of the last commit that touched
+  // atlas/data.js (the referenced file), so re-running the bump is stable.
+  const date = new Date(Date.now() + 8 * 3600 * 1000).toISOString().slice(0, 10).replace(/-/g, '');
   let sha = '';
-  try { sha = execSync('git rev-parse --short HEAD', { cwd: root }).toString().trim(); } catch (_) {}
+  try { sha = execSync('git log -1 --format=%h -- atlas/data.js', { cwd: root }).toString().trim(); } catch (_) {}
+  if (!sha) { try { sha = execSync('git rev-parse --short HEAD', { cwd: root }).toString().trim(); } catch (_) {} }
   const v = `${date}-${sha}`;
   for (const htmlFile of [path.join(root, 'atlas', 'index.html'), path.join(root, 'atlas', 'galaxy.html')]) {
     if (!fs.existsSync(htmlFile)) continue;
