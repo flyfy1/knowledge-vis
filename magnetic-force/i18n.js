@@ -1,7 +1,7 @@
 const STR={
 zh:{
 pageTitle:'磁场与洛伦兹力 · 力总是垂直于速度',tagline:'从一个带电粒子在磁场里“拐弯”出发，推出圆半径、周期，再用它称离子质量、挑选速度。',
-nav0:'0 力垂直于速度',nav1:'1 画圆',nav2:'2 周期与速度无关',nav3:'3 称离子质量',nav4:'4 电场加磁场',nav5:'5 回顾自测',
+nav0:'0 力垂直于速度',nav1:'1 画圆',nav2:'2 周期与速度无关',nav3:'3 称离子质量',nav4:'4 电场加磁场',nav5:'5 回顾自测',slit:'狭缝',
 lAng:'速度方向角',lQ:'电荷 q',lB:'磁感应强度 B',lV:'速率 v',lM:'质量 m',lMu:'未知离子质量 m',lE:'电场 E',bPlay:'播放 / 暂停',bReset:'重置：清除轨迹并回到起点',
 s0t:'磁场里的力：总是垂直于速度',
 s0e:'这一步要回答：带电粒子在磁场里受的力朝哪个方向？<strong>洛伦兹力</strong> F = q v × B。本页磁场 B 垂直指出屏幕（画面里的小点），粒子在屏幕平面内运动，所以 F 的大小是 q v B，方向垂直于速度 v。圆点是正电荷，青色箭头是速度 v，橙色箭头是力 F，虚线弧是力会把它带出的方向。',
@@ -34,7 +34,7 @@ lk0:'电场页：对照电场力 qE 如何做功、与磁力怎样不同',lk1:'�
 },
 en:{
 pageTitle:'Magnetic Force · The Force Is Always Sideways to the Velocity',tagline:'Start with a charged particle bending in a magnetic field, derive its radius and period, then use them to weigh ions and pick out a speed.',
-nav0:'0 Sideways force',nav1:'1 Circles',nav2:'2 Period vs speed',nav3:'3 Weigh an ion',nav4:'4 Add an E field',nav5:'5 Recap & check',
+nav0:'0 Sideways force',nav1:'1 Circles',nav2:'2 Period vs speed',nav3:'3 Weigh an ion',nav4:'4 Add an E field',nav5:'5 Recap & check',slit:'slit',
 lAng:'Velocity angle',lQ:'Charge q',lB:'Magnetic field B',lV:'Speed v',lM:'Mass m',lMu:'Unknown ion mass m',lE:'Electric field E',bPlay:'Play / Pause',bReset:'Reset: clear the trail and go back to the start',
 s0t:'The force in a magnetic field is always sideways to the velocity',
 s0e:'This step answers: which way does a magnetic field push a moving charge? The <strong>Lorentz force</strong> is F = q v × B. Here B points straight out of the screen (the small dots) and the particle moves in the screen plane, so |F| = q v B and F is perpendicular to the velocity v. The dot is a positive charge, the cyan arrow is v, the orange arrow is F, and the dashed arc shows where the force starts to carry it.',

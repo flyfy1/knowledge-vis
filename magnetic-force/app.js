@@ -81,7 +81,7 @@ DRAW[3]=function(x,w,h){const k=Math.min((w-40)/(2*MODEL.landing(4,1,1,0.5)),(h-
   const draw=(m,col,lw)=>{const r=MODEL.radius(m,1,1,S.b3);x.strokeStyle=col;x.lineWidth=lw;x.beginPath();for(let u=0;u<=Math.PI+1e-9;u+=0.05){const px=ox+(r-r*Math.cos(u))*kk,py=oy-r*Math.sin(u)*kk;if(u)x.lineTo(px,py);else x.moveTo(px,py)}x.stroke()};
   line(x,ox,oy,w-10,oy,C.muted,1);for(let i=0;i<=8;i++){const px=ox+i*kk;if(px<w-10){line(x,px,oy,px,oy+4,C.muted,1);txt(x,String(i),px,oy+16,C.muted,11,'center')}}
   [1,2,3].forEach(m=>draw(m,'rgba(160,170,185,.6)',1.5));draw(S.mu,C.acc2,3);
-  const lx=ox+MODEL.landing(S.mu,1,1,S.b3)*kk;dot(x,lx,oy,6,C.acc2);txt(x,'x',lx,oy-10,C.acc2,12,'center');dot(x,ox,oy,5,C.acc3);txt(x,'slit',ox,oy+16,C.muted,11)};
+  const lx=ox+MODEL.landing(S.mu,1,1,S.b3)*kk;dot(x,lx,oy,6,C.acc2);txt(x,'x',lx,oy-10,C.acc2,12,'center');dot(x,ox,oy,5,C.acc3);txt(x,t('slit'),ox,oy+16,C.muted,11)};
 function r3(){const x=MODEL.landing(S.mu,1,1,S.b3);ro('s3-ro',t('r3',{x:fx(x,3),m:fx(MODEL.mass(x,1,1,S.b3),2),ms:fx(S.mu,1)}))}
 DRAW[4]=function(x,w,h){const k=Math.min((w-40)/9,40),ox=20,oy=h/2,T=Math.min(9/Math.max(S.v4,S.e4/1),2*Math.PI*3);
   for(let i=0;i<=8;i++)for(let j=-3;j<=3;j++){txt(x,'·',ox+i*k,oy+j*45,'rgba(110,231,255,.35)',16,'center')}

@@ -1,7 +1,7 @@
 const STR={
 zh:{
 pageTitle:'分子构型 · 电子对互相躲开',tagline:'中心原子周围的电子对彼此排斥，自己排成最分散的队形；水为什么弯、甲烷为什么是正四面体，都从这里来。',
-nav0:'0 排成最散',nav1:'1 能量下降',nav2:'2 孤对电子',nav3:'3 真实分子',nav4:'4 极性',nav5:'5 回顾自测',
+nav0:'0 排成最散',nav1:'1 能量下降',nav2:'2 孤对电子',nav3:'3 真实分子',nav4:'4 极性',nav5:'5 回顾自测',iter:'迭代',
 lN:'电子对（区域）数 N',lYaw:'旋转视角',lIt:'已迭代步数',lL:'其中孤对电子数',bReplay:'重播：从随机起点再排一次',bNew:'换一个随机起点',bNew5:'换 5 个新的随机起点',mCo2:'CO₂',mBf3:'BF₃',mCh4:'CH₄',mNh3:'NH₃',mH2o:'H₂O',mSf4:'SF₄',mSf6:'SF₆',mXef2:'XeF₂',
 s0t:'N 个电子对，怎么排才离得最远？',
 s0e:'这一步要回答：中心原子周围的电子对（价层电子对互斥模型，VSEPR）会排成什么形状？每个电子对是一个带负电的“电子区域”（一个单键、一个双键、一个孤对电子都各算一个区域），它们彼此排斥，所以在以中心原子为球心的球面上散得尽可能开。右图把 N 个点放在球面上，每对点按 1/r² 的力互相推开（r 是两点间距离），点“重播”看它们从随机位置逐步挪到最稳的位置。拖动画布或旋转滑块可以转动视角。',
@@ -37,7 +37,7 @@ lk0:'原子结构页：价电子（最外层电子）从哪里来',lk1:'电场�
 },
 en:{
 pageTitle:'Molecular Shapes · Electron Pairs Keeping Out of Each Other\'s Way',tagline:'Electron pairs around a central atom repel one another and settle into the most spread-out arrangement; that is why water is bent and methane is a regular tetrahedron.',
-nav0:'0 Spread out',nav1:'1 Energy falls',nav2:'2 Lone pairs',nav3:'3 Real molecules',nav4:'4 Polarity',nav5:'5 Recap & check',
+nav0:'0 Spread out',nav1:'1 Energy falls',nav2:'2 Lone pairs',nav3:'3 Real molecules',nav4:'4 Polarity',nav5:'5 Recap & check',iter:'iter',
 lN:'Electron pairs (regions) N',lYaw:'Rotate view',lIt:'Iterations done',lL:'Of which lone pairs',bReplay:'Replay: settle again from a random start',bNew:'Try a different random start',bNew5:'Draw 5 new random starts',mCo2:'CO₂',mBf3:'BF₃',mCh4:'CH₄',mNh3:'NH₃',mH2o:'H₂O',mSf4:'SF₄',mSf6:'SF₆',mXef2:'XeF₂',
 s0t:'N electron pairs: how do they sit farthest apart?',
 s0e:'This step answers: what shape do the electron pairs around a central atom take (the valence-shell electron-pair repulsion model, VSEPR)? Each pair is a negatively charged "electron region" (a single bond, a double bond or a lone pair each count as one region), and they repel one another, so they spread out as far as possible on a sphere centred on the atom. The plot places N points on a sphere that push each other apart with a 1/r² force (r is the distance between two points); press replay to watch them move from random positions to the most stable arrangement. Drag the canvas or use the rotation slider to turn the view.',
