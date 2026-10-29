@@ -1690,3 +1690,48 @@ Atlas ordinary route `optics` connects existing unit-circle to one canonical `sn
 | --- | --- | --- |
 | 哈希 · 把任意输入压成固定指纹 / Hashing · Squeezing Any Input Into a Fixed Fingerprint | hashing#step0 | 哈希 · 把任意输入压成固定指纹 |
 | 极限与 ε–δ · 你说多近，我就能多近 / Limits and ε–δ · Name How Close, and I Can Get That Close | limits-epsilon#step0 | 极限与 ε–δ · 你说多近，我就能多近 |
+
+
+## 夜班新增（2026-10-30，批量注册；仅探针验证、待独立复评）
+
+| 概念（中 / EN） | 专讲 slug#step | 那一步讲清什么 |
+| --- | --- | --- |
+| 大气环流与季风 · 风从哪里来 / Atmospheric Circulation & Monsoons · Where Winds Come From | atmospheric-circulation#step0 | Uneven heating |
+| 拍卖 · 报价与真话 / Auctions · Bidding and Telling the Truth | auctions#step0 | First price |
+| 二项分布到正态 · 钉板上长出的钟形 / Binomial to Normal · The Bell Curve Growing on a Pegboard | binomial-normal#step0 | Paths |
+| 黑体辐射 · 热的物体为什么发光 / Blackbody Radiation · Why Hot Things Glow | blackbody-radiation#step0 | Colour and T |
+| 碳循环 · 大气里的碳去了哪里 / The Carbon Cycle · Where the Atmosphere’s Carbon Goes | carbon-cycle#step0 | Stocks and flows |
+| 卡诺循环 · 热机的效率上限 / The Carnot Cycle · The Ceiling on Heat-Engine Efficiency | carnot-cycle#step0 | Work is area |
+| 混沌与三体 · 初始差一丝，结果天壤 / Chaos and the Three-Body Problem · Tiny Differences, Huge Outcomes | chaos-threebody#step0 | Sensitivity |
+| 卷积神经网络的特征图 · 小窗口怎样“看”图 / CNN Feature Maps · How a Small Window “Sees” an Image | cnn-feature-maps#step0 | Sliding window |
+| 复利与贴现 · 时间是钱的形状 / Compound Interest & Discounting · Time Is the Shape of Money | compound-interest#step0 | Simple vs compound |
+| 排列与组合 · 数清楚有多少种 / Permutations & Combinations · Counting How Many Ways | counting-permutations#step0 | Multiply steps |
+| 双缝实验 · 一颗一颗的粒子，也走出干涉条纹 / The Double-Slit Experiment · Single Particles Still Build Fringes | double-slit#step0 | Fringe spacing |
+| 期望 · 彩票、骰子、保险放在同一台秤上 / Expected Value · Lotteries, Dice and Insurance on One Scale | expected-value#step0 | Weighted sum |
+| 外部性与公地悲剧 · 账记在谁头上 / Externalities & the Tragedy of the Commons · Who Pays the Bill | externalities#step0 | Private market |
+| 眼睛与眼镜 · 为什么近视要戴凹透镜 / The Eye and Glasses · Why Short-Sightedness Needs a Concave Lens | eye-vision#step0 | Eye as camera |
+| 引力透镜 · 宇宙里的凸透镜 / Gravitational Lensing · A Cosmic Convex Lens | gravitational-lensing#step0 | Bending of light |
+| 万有引力与轨道 · 横着扔出去，会落下、绕圈还是飞走 / Gravity and Orbits · Throw It Sideways: Fall, Circle or Escape | gravity-orbits#step0 | Inverse square |
+| 假设检验与 p 值 · 法庭模型判硬币冤不冤 / Hypothesis Testing & p-Values · A Courtroom for a Coin | hypothesis-testing#step0 | The p-value |
+| 马尔可夫链 · 下一步只看现在 / Markov Chains · The Next Step Depends Only on Now | markov-chains#step0 | One step |
+| 机械能守恒 · 过山车的能量账本 / Conservation of Mechanical Energy · The Roller Coaster’s Energy Ledger | mechanical-energy#step0 | Trade-off |
+| 牛顿运动定律 · F = ma 是调出来的 / Newton’s Laws of Motion · F = ma, Tuned by Hand | newton-laws#step0 | 牛顿运动定律 · F = ma 是调出来的 |
+| 牛顿法求根 · 沿切线一刀跳向零点 / Newton’s Method · Leap to the Root Along a Tangent | newton-method#step0 | 牛顿法求根 · 沿切线一刀跳向零点 |
+| 微分方程相图 · 捕食者与猎物的回路 / ODE Phase Portraits · Predators and Prey in a Loop | ode-phase-portraits#step0 | 微分方程相图 · 捕食者与猎物的回路 |
+| 欧姆定律 · 电流是调出来的 / Ohm’s Law · Current You Tune by Hand | ohms-law#step0 | 欧姆定律 · 电流是调出来的 |
+| 泊松过程 · 随机到达的规律 / The Poisson Process · The Pattern in Random Arrivals | poisson-process#step0 | 泊松过程 · 随机到达的规律 |
+| 囚徒困境与演化博弈 · 合作怎样活下来 / The Prisoner’s Dilemma & Evolutionary Games · How Cooperation Survives | prisoners-dilemma#step0 | 囚徒困境与演化博弈 · 合作怎样活下来 |
+| 抛体与圆周 · 一直在掉，但总掉不到地上 / Projectiles & Circular Motion · Always Falling, Never Landing | projectile-circular#step0 | 抛体与圆周 · 一直在掉，但总掉不到地上 |
+| 量子隧穿 · 穿墙的是概率，不是子弹 / Quantum Tunnelling · What Passes Through the Wall Is a Probability | quantum-tunneling#step0 | 量子隧穿 · 穿墙的是概率，不是子弹 |
+| 回归与相关 · 散点云里拉一条最贴的线 / Regression & Correlation · The Best Line Through a Cloud | regression-correlation#step0 | 回归与相关 · 散点云里拉一条最贴的线 |
+| 狭义相对论 · 同时性的线倾斜了 / Special Relativity · The Lines of “Now” Tilt | relativity#step0 | 狭义相对论 · 同时性的线倾斜了 |
+| 风险池化与保险 · 一万人各摊一点 / Risk Pooling & Insurance · Ten Thousand People Each Chip In | risk-pooling#step0 | 风险池化与保险 · 一万人各摊一点 |
+| RSA 公钥加密 · 乘起来容易，拆开来难 / RSA Public-Key Encryption · Easy to Multiply, Hard to Split | rsa-encryption#step0 | RSA 公钥加密 · 乘起来容易，拆开来难 |
+| 地震波探地心 · 地核是被波“照”出来的 / Seismic Waves · The Core Was “Lit Up” by Waves | seismic-waves#step0 | 地震波探地心 · 地核是被波“照”出来的 |
+| 数列与求和 · 叠砖与棋盘麦粒 / Sequences & Series · Stacked Bricks and Chessboard Grains | sequences-series#step0 | 数列与求和 · 叠砖与棋盘麦粒 |
+| 串联与并联 · 电流的分与合 / Series & Parallel · Splitting and Merging Current | series-parallel#step0 | 串联与并联 · 电流的分与合 |
+| 最短路 · 从起点像洪水一样漫开 / Shortest Path · Flooding Out From the Start | shortest-path#step0 | 最短路 · 从起点像洪水一样漫开 |
+| 立体几何 · 转一转，再切一刀 / Solid Geometry · Turn It, Then Cut It | solid-geometry#step0 | 立体几何 · 转一转，再切一刀 |
+| 声音是波 · 看见自己的声音 / Sound Is a Wave · Seeing Your Own Voice | sound-waves#step0 | 声音是波 · 看见自己的声音 |
+| 泰勒级数 · 把曲线一项项贴上去 / Taylor Series · Patch the Curve Term by Term | taylor-series#step0 | 泰勒级数 · 把曲线一项项贴上去 |
+| 向量 · 有方向的量 / Vectors · Quantities With a Direction | vectors#step0 | 向量 · 有方向的量 |
