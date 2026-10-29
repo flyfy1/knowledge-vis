@@ -1,0 +1,1 @@
+'use strict';const assert=require('node:assert/strict');const c=require('../app.js');assert.equal(c.properDistance(1.5,40),60);assert.equal(c.hubbleVelocity(70,120),8400);assert.equal(c.observedWavelength(500,.5),750);console.log('cosmology-expansion core: ok');
