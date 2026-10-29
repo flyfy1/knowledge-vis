@@ -70,7 +70,7 @@ function r0(){const idx=Math.min(S.fi,S.traj0.length-1),p=S.traj0[idx],q=MODEL.c
 TICK[0]=function(dt){if(!S.play0)return false;S.fi+=Math.max(1,Math.round(dt*40));if(S.fi>=S.traj0.length-1){S.fi=S.traj0.length-1;S.play0=false}redraw(0);r0();return S.play0};
 function runs1(){if(!S.runs1||S.runs1.n!==S.n1||S.runs1.seed!==S.seed1){const q=MODEL.charges(S.n1,0),rs=[];for(let i=0;i<5;i++)rs.push(MODEL.run(q,S.seed1*101+i*13+3,400,10));S.runs1={n:S.n1,seed:S.seed1,rs:rs}}return S.runs1.rs}
 DRAW[1]=function(x,w,h){const A=areas(w,h),rs=runs1(),it=S.it1,r=rs[0],R=Math.min(A.a.w,A.a.h)*0.36,snap=r.traj[Math.round(it/10)];draw3d(x,A.a,snap,snap.map(()=>ST(false)),R);
-  const p=A.b,e0=Math.max(...rs.map(a=>a.es[0])),emin=Math.min(...rs.map(a=>a.E)),Y=e=>p.y+p.h*(1-(e-emin*0.98)/(e0*1.02-emin*0.98)),X=i=>p.x+p.w*i/400;x.strokeStyle=C.line;x.strokeRect(p.x,p.y,p.w,p.h);txt(x,'E',p.x+4,p.y+13,C.muted,12);txt(x,'iter',p.x+p.w-4,p.y+p.h+14,C.muted,12,'right');
+  const p=A.b,e0=Math.max(...rs.map(a=>a.es[0])),emin=Math.min(...rs.map(a=>a.E)),Y=e=>p.y+p.h*(1-(e-emin*0.98)/(e0*1.02-emin*0.98)),X=i=>p.x+p.w*i/400;x.strokeStyle=C.line;x.strokeRect(p.x,p.y,p.w,p.h);txt(x,'E',p.x+4,p.y+13,C.muted,12);txt(x,t('iter'),p.x+p.w-4,p.y+p.h+14,C.muted,12,'right');
   const cols=[C.acc2,C.acc,C.good,C.acc3,C.vio];rs.forEach((a,k)=>{x.strokeStyle=cols[k];x.lineWidth=k===0?2.5:1.5;x.beginPath();a.es.forEach((e,i)=>i?x.lineTo(X(i),Y(e)):x.moveTo(X(i),Y(e)));x.stroke()});
   x.setLineDash([4,4]);line(x,p.x,Y(emin),p.x+p.w,Y(emin),C.muted,1);x.setLineDash([]);dot(x,X(it),Y(r.es[it]),6,C.text)};
 function r1(){const rs=runs1(),emin=Math.min(...rs.map(a=>a.E)),k=rs.filter(a=>a.E-emin<0.001).length;ro('s1-ro',t('r1',{n:S.n1,it:S.it1,e:fx(rs[0].es[S.it1],4),emin:fx(emin,4),k:k}))}

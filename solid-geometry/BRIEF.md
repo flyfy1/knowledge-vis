@@ -1,6 +1,6 @@
 # BRIEF：立体几何（solid-geometry）· Solid Geometry
 - category `math`，stage `junior`（均已在 pages.config.js 注册）。Built-By: Claude Sonnet 5.5 via Mini Claude Code（self-check，无独立评审）。模板页 cell-structure + water-cycle；共用生成脚本。可见标识：页脚双语署名（provenance 规范对 Claude 版无明确要求，此处存疑，仅记录）。
-- 去重：three-views（同批初中）讲正/左/俯视图；space-diagonal 是未登记的 3D 试验页（长方体对角线）；本页是欧拉公式、表面积体积缩放、平面截面、切片求体积、展开图，核心不同（重合 <15%）。
+- 去重：three-views（同批初中）讲正/左/俯视图；space-diagonal 是已登记的 3D 试验页（长方体对角线）；本页是欧拉公式、表面积体积缩放、平面截面、切片求体积、展开图，核心不同（重合 <15%）。
 - 核心直觉：V−E+F=2；S∝k²、V∝k³；平面截立方体 3–6 边形（垂直体对角线 三角形→正六边形→三角形）；切片法金字塔 1/3；展开图滚动法。
 
 ## 步骤（每步五必填项：已知 / 唯一问题 / 输入与求量 / 控件与预期观察 / 适用条件）
