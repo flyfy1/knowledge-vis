@@ -1,0 +1,1 @@
+'use strict';const assert=require('node:assert/strict');const n=require('../app.js');assert.deepEqual(n.factorize(84),[2,2,3,7]);assert.equal(n.divisorCount(84),12);assert.equal(n.gcd(48,30),6);assert.equal(n.lcm(48,30),240);assert.equal(n.combination(5,2),10);assert.equal(n.combination(10,3),120);console.log('number-combinatorics core: ok');

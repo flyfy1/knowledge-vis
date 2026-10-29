@@ -1143,4 +1143,27 @@ window.KNOWLEDGE_PAGES = [
     category: "chemistry", stage: "senior", status: "live", path: "buffer-capacity/"
   },
 
+
+  {
+    slug: "quantum-basics",
+    title: { zh: "量子基础 · 可能性先于结果", en: "Quantum Basics · Possibility Before Outcome" },
+    desc: { zh: "从振幅、测量、相位到干涉，拖动一个量子比特的状态，观察概率如何先于结果出现。", en: "From amplitudes and measurement to phase and interference, tune one qubit and watch probability appear before the outcome." },
+    tags: [{ zh: "振幅", en: "Amplitudes" }, { zh: "测量", en: "Measurement" }, { zh: "干涉", en: "Interference" }],
+    category: "physics", stage: "university", status: "live", path: "quantum-basics/"
+  },
+  {
+    slug: "number-combinatorics",
+    title: { zh: "数论与组合 · 把结构算出来", en: "Number Theory & Counting · Compute the Structure" },
+    desc: { zh: "用质因数分解、欧几里得算法、gcd/lcm 和 Pascal 行，把“数有多少种”变成可追踪的结构。", en: "Use prime factors, Euclid's algorithm, gcd/lcm and Pascal rows to turn counting into a traceable structure." },
+    tags: [{ zh: "质因数", en: "Prime Factors" }, { zh: "最大公因数", en: "GCD" }, { zh: "组合数", en: "Combinations" }],
+    category: "math", stage: "junior", status: "live", path: "number-combinatorics/"
+  },
+  {
+    slug: "materials-science",
+    title: { zh: "材料科学 · 应力如何变成断裂", en: "Materials Science · When Stress Becomes Fracture" },
+    desc: { zh: "比较钢、铝和工程塑料的应力–应变响应，追踪屈服、塑性、韧性和断裂的工程取舍。", en: "Compare steel, aluminium and polymer stress–strain responses, then trace the engineering trade-offs among yield, plasticity, toughness and fracture." },
+    tags: [{ zh: "应力–应变", en: "Stress–Strain" }, { zh: "屈服", en: "Yield" }, { zh: "韧性", en: "Toughness" }],
+    category: "physics", stage: "university", status: "live", path: "materials-science/"
+  },
+
 ];
