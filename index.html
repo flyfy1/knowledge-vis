@@ -319,6 +319,7 @@
     stageBox.hidden = isLeetCode;
     topicBox.hidden = isLeetCode;
     pagination.hidden = true;
+    pageStatus.textContent = '';
     searchSection.hidden = !isLeetCode;
     grid.setAttribute('aria-live', isLeetCode ? 'off' : 'polite');
     if (isLeetCode) { renderLessons(); return; }
