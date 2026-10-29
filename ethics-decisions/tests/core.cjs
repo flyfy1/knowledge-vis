@@ -1,0 +1,1 @@
+'use strict';const assert=require('node:assert/strict');const core=require('../app.js');assert.equal(core.expectedValue(80,20,75),55);assert.equal(core.autonomyStatus(80,10),'choice');assert.equal(core.autonomyStatus(80,60),'reconfirm');assert.equal(core.fairnessGap(80,30),50);console.log('ethics-decisions core: ok');
