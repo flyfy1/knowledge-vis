@@ -1,0 +1,58 @@
+{
+ "slug": "eye-vision",
+ "conceptId": "eye-vision",
+ "group": "optics",
+ "note": "Edges: snell and pinhole-ratio are existing atlas nodes; eye-vision is a new concept id.",
+ "title": {
+  "zh": "眼睛与眼镜",
+  "en": "The eye and glasses"
+ },
+ "description": {
+  "zh": "把眼睛简化成薄透镜加视网膜：调节改变屈光力使像回到视网膜；眼轴偏长焦点落在网膜前是近视，凹透镜（P < 0）矫正，远视相反；瞳孔越小景深越大。简约眼模型，非验光建议。",
+  "en": "A reduced eye is a thin lens plus a retina: accommodation changes the lens power to bring the image back onto the retina; an axis that is too long puts the focus in front of the retina (myopia), corrected by a concave lens (P < 0), and hyperopia is the opposite; a smaller pupil gives a larger depth of field. A reduced-eye model, not an eye test."
+ },
+ "formula": "1/v = 1/f − 1/u",
+ "source": "../eye-vision/#step2",
+ "edges": [
+  {
+   "from": "snell",
+   "to": "eye-vision",
+   "type": "application",
+   "label": {
+    "zh": "折射让晶状体会聚光线",
+    "en": "Refraction lets the lens converge light"
+   },
+   "reason": {
+    "zh": "晶状体的会聚作用来自光在曲面界面上的折射；曲率越大屈光力越强，这就是调节的物理基础。",
+    "en": "The lens converges light by refraction at curved interfaces; more curvature means more power, which is the physical basis of accommodation."
+   },
+   "source": "../eye-vision/#step1"
+  },
+  {
+   "from": "pinhole-ratio",
+   "to": "eye-vision",
+   "type": "connection",
+   "label": {
+    "zh": "小瞳孔像小孔一样增加景深",
+    "en": "A small pupil acts like a pinhole and deepens the field"
+   },
+   "reason": {
+    "zh": "同样的失焦，孔径越小模糊斑越小：瞳孔缩小就像小孔成像一样，让更大范围的物距都显得清晰。",
+    "en": "For the same defocus a smaller aperture gives a smaller blur spot; a constricted pupil acts like a pinhole and keeps a wider range of distances looking sharp."
+   },
+   "source": "../eye-vision/#step4"
+  }
+ ],
+ "routes": [
+  {
+   "title": {
+    "zh": "为什么近视要戴凹透镜？",
+    "en": "Why does short-sightedness need a concave lens?"
+   },
+   "nodes": [
+    "eye-vision",
+    "snell"
+   ]
+  }
+ ]
+}

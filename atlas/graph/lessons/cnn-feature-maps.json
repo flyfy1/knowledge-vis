@@ -1,0 +1,59 @@
+{
+ "slug": "cnn-feature-maps",
+ "conceptId": "cnn-feature-maps",
+ "group": "OTHER",
+ "note": "No machine-learning group in the atlas; group left OTHER. Edge to the atlas node convolution is real: a 2-D kernel is the same flip-free sliding weighted sum.",
+ "title": {
+  "zh": "CNN 特征图",
+  "en": "CNN feature maps"
+ },
+ "description": {
+  "zh": "3×3 卷积核在图像上滑动，对应相乘求和得到特征图；不同的核响应不同的边缘，ReLU、池化与堆叠把边缘拼成更复杂的特征，核也可以由梯度下降学出。合成小图、单通道的教学模型。",
+  "en": "A 3×3 kernel slides over an image, multiplying and summing to give a feature map; different kernels respond to different edges, ReLU, pooling and stacking assemble edges into richer features, and kernels can be learned by gradient descent. A teaching model with small synthetic images and one channel."
+ },
+ "formula": "out(i,j) = Σₐ Σ_b k(a,b)·x(i+a, j+b)",
+ "source": "../cnn-feature-maps/#step0",
+ "edges": [
+  {
+   "from": "convolution",
+   "to": "cnn-feature-maps",
+   "type": "application",
+   "label": {
+    "zh": "一维滑动求和 → 二维图像",
+    "en": "1-D sliding sum → 2-D images"
+   },
+   "reason": {
+    "zh": "图像卷积层做的仍是“滑动窗口、对应相乘、求和”，只是窗口变成二维，且按 CNN 惯例不翻转核。",
+    "en": "An image convolution layer still does “slide a window, multiply matching entries, sum”, only in two dimensions and, by CNN convention, without flipping the kernel."
+   },
+   "source": "../cnn-feature-maps/#step0"
+  },
+  {
+   "from": "cnn-feature-maps",
+   "to": "derivative",
+   "type": "connection",
+   "label": {
+    "zh": "边缘核是差分，近似导数",
+    "en": "Edge kernels are differences, approximating derivatives"
+   },
+   "reason": {
+    "zh": "左负右正的边缘核计算左右像素之差，是对图像亮度求导数的离散近似，所以平坦处输出 0。",
+    "en": "A left-negative, right-positive edge kernel computes the difference between neighbouring pixels, a discrete approximation of the brightness derivative, so flat regions give 0."
+   },
+   "source": "../cnn-feature-maps/#step2"
+  }
+ ],
+ "routes": [
+  {
+   "title": {
+    "zh": "卷积神经网络是怎么“看”图的？",
+    "en": "How does a convolutional network “see” a picture?"
+   },
+   "nodes": [
+    "cnn-feature-maps",
+    "convolution",
+    "derivative"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,10 @@
+{"slug":"periodic-trends","conceptId":"periodic-trends","group":"math",
+"note":"group math is the closest of the five atlas groups; the page is chemistry",
+"title":{"zh":"元素周期律","en":"Periodic trends"},
+"description":{"zh":"前四周期主族元素的原子半径、电离能、电负性热图与趋势，用斯莱特有效核电荷解释；含例外，不含过渡金属。","en":"Atomic radius, ionisation energy and electronegativity heat maps and trends for main-group elements of periods 1–4, explained with Slater effective nuclear charge; includes exceptions, no transition metals."},
+"formula":"r ∝ n*²/Zeff","source":"../periodic-trends/#step2",
+"edges":[
+{"from":"periodic-trends","to":"molecular-shapes","type":"application","label":{"zh":"电负性差决定键偶极","en":"Electronegativity differences set bond dipoles"},"reason":{"zh":"分子构型页用电负性差给出键偶极，进而判断分子极性。","en":"The molecular-shapes lesson uses electronegativity differences as bond dipoles to decide molecular polarity."},"source":"../periodic-trends/#step0"},
+{"from":"electric-fields","to":"periodic-trends","type":"application","label":{"zh":"核电荷吸引电子","en":"Nuclear charge attracts electrons"},"reason":{"zh":"有效核电荷越大，对外层电子的静电吸引越强，半径越小。","en":"A larger effective nuclear charge attracts outer electrons more strongly and shrinks the radius."},"source":"../periodic-trends/#step2"},
+{"from":"periodic-trends","to":"gaussian","type":"connection","label":{"zh":"趋势与例外并存","en":"Trend with scatter"},"reason":{"zh":"拟合直线给出总体趋势，残差显示个体偏离，是回归思想的小例子。","en":"The fitted line gives the overall trend and the residuals show individual deviations, a small example of regression thinking."},"source":"../periodic-trends/#step2"}],
+"routes":[{"title":{"zh":"为什么越往右原子越小？","en":"Why do atoms get smaller toward the right?"},"nodes":["electric-fields","periodic-trends","molecular-shapes"]}]}

@@ -1,0 +1,9 @@
+{"slug":"resonance","conceptId":"resonance-mechanical","group":"waves","note":"conceptId suffixed because atlas node 'resonance' already exists; this page is the driven damped mass-spring view of it",
+"title":{"zh":"共振：被推着的弹簧振子","en":"Resonance: the driven, damped mass-spring"},
+"description":{"zh":"固有频率、阻尼比、稳态振幅、共振曲线与相位滞后；线性单自由度模型。","en":"Natural frequency, damping ratio, steady-state amplitude, the resonance curve and phase lag in a linear one-degree-of-freedom model."},
+"formula":"A = F/√((ω₀²−Ω²)² + (2ζω₀Ω)²)","source":"../resonance/#step3",
+"edges":[
+{"from":"oscillation","to":"resonance-mechanical","type":"application","label":{"zh":"给振动加上阻尼和推力","en":"Add damping and a push to an oscillation"},"reason":{"zh":"自由振动加上阻尼与周期推力，就得到稳态振幅随频率变化的共振曲线。","en":"Adding damping and a periodic push to free oscillation gives a steady-state amplitude that varies with frequency: the resonance curve."},"source":"../resonance/#step2"},
+{"from":"resonance-mechanical","to":"resonance","type":"connection","label":{"zh":"同一现象的力学版","en":"The mechanical version of the same effect"},"reason":{"zh":"本页用质量与弹簧演示图谱中“共振”节点所说的频率选择性。","en":"This page shows the frequency selectivity that the atlas resonance node describes, using a mass and a spring."},"source":"../resonance/#step3"},
+{"from":"resonance-mechanical","to":"freqresp","type":"connection","label":{"zh":"共振峰就是频率响应","en":"The resonance peak is a frequency response"},"reason":{"zh":"A(Ω) 与 φ(Ω) 正是该振子作为线性系统的幅频与相频响应。","en":"A(Ω) and φ(Ω) are exactly this oscillator's amplitude and phase frequency response as a linear system."},"source":"../resonance/#step4"}],
+"routes":[{"title":{"zh":"为什么推秋千要踩中节拍？","en":"Why must you push a swing in time?"},"nodes":["oscillation","resonance-mechanical","freqresp"]}]}

@@ -1,0 +1,59 @@
+{
+ "slug": "counting-permutations",
+ "conceptId": "counting-permutations",
+ "group": "math",
+ "note": "Edges: probability and bayes exist in the atlas; counting-permutations is a new concept id.",
+ "title": {
+  "zh": "排列与组合",
+  "en": "Permutations & combinations"
+ },
+ "description": {
+  "zh": "分步相乘得到 n! 与 nPr = n!/(n−k)!；顺序不算数时除以 k! 得 nCr；等可能时概率 = 符合的方法数 ÷ 总方法数，生日问题是典型例子。独立选择、等可能结果的计数模型。",
+  "en": "Multiplying the choices at each step gives n! and nPr = n!/(n−k)!; dividing by k! when order does not matter gives nCr; with equally likely outcomes probability = favourable ways ÷ total ways, the birthday problem being a classic example. A counting model of independent choices and equally likely outcomes."
+ },
+ "formula": "nCr = n! / (k!(n−k)!)",
+ "source": "../counting-permutations/#step3",
+ "edges": [
+  {
+   "from": "counting-permutations",
+   "to": "probability",
+   "type": "foundation",
+   "label": {
+    "zh": "等可能时概率靠数",
+    "en": "With equally likely outcomes, probability is counting"
+   },
+   "reason": {
+    "zh": "等可能结果下概率就是符合条件的方法数除以总方法数，所以排列组合是计算古典概率的基础。",
+    "en": "With equally likely outcomes, probability is favourable ways divided by total ways, so permutations and combinations underlie classical probability."
+   },
+   "source": "../counting-permutations/#step5"
+  },
+  {
+   "from": "counting-permutations",
+   "to": "bayes",
+   "type": "connection",
+   "label": {
+    "zh": "频数表里的计数",
+    "en": "Counts in a frequency table"
+   },
+   "reason": {
+    "zh": "贝叶斯公式的自然频数写法就是数“符合条件的人”占“满足条件的人”的比例，用的正是同样的计数思想。",
+    "en": "The natural-frequency form of Bayes’ rule counts the people who meet a condition as a share of those in a group, the same counting idea."
+   },
+   "source": "../counting-permutations/#step4"
+  }
+ ],
+ "routes": [
+  {
+   "title": {
+    "zh": "怎样不靠猜，数出一个概率？",
+    "en": "How do you get a probability by counting, not guessing?"
+   },
+   "nodes": [
+    "counting-permutations",
+    "probability",
+    "bayes"
+   ]
+  }
+ ]
+}

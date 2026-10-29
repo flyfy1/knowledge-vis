@@ -1,0 +1,58 @@
+{
+ "slug": "chaos-threebody",
+ "conceptId": "chaos-threebody",
+ "group": "systems",
+ "note": "Edges use existing atlas nodes feedback and oscillation where they exist; chaos-threebody is a new concept id.",
+ "title": {
+  "zh": "混沌与三体",
+  "en": "Chaos and the three-body problem"
+ },
+ "description": {
+  "zh": "确定的规则也能产生无法长期预测的行为：误差按 e^{λt} 放大（λ > 0），可预测期限只与精度的对数成正比；洛伦兹吸引子与三体 8 字轨道是典型例子。数值模型，长轨迹细节不可信。",
+  "en": "Deterministic rules can produce behaviour that cannot be predicted long term: errors grow like e^{λt} with λ > 0, and the prediction horizon is proportional only to the logarithm of the precision; the Lorenz attractor and the three-body figure-8 are typical examples. A numerical model; fine detail of long trajectories is not trustworthy."
+ },
+ "formula": "δ(t) ≈ δ₀ e^{λt}",
+ "source": "../chaos-threebody/#step3",
+ "edges": [
+  {
+   "from": "oscillation",
+   "to": "chaos-threebody",
+   "type": "connection",
+   "label": {
+    "zh": "非线性系统的另一面",
+    "en": "The other side of nonlinear systems"
+   },
+   "reason": {
+    "zh": "线性振动的行为规则可预测；加上非线性后，同样用微分方程描述的系统可以出现对初值极度敏感的混沌。",
+    "en": "Linear oscillation is regular and predictable; add nonlinearity and systems described by the same kind of differential equations can become chaotic, extremely sensitive to the starting point."
+   },
+   "source": "../chaos-threebody/#step2"
+  },
+  {
+   "from": "feedback",
+   "to": "chaos-threebody",
+   "type": "connection",
+   "label": {
+    "zh": "反馈会放大也会压制误差",
+    "en": "Feedback can amplify or damp errors"
+   },
+   "reason": {
+    "zh": "反馈使误差按 e^{λt} 变化：λ < 0 时压制（稳定），λ > 0 时放大（混沌），是同一个指数在两种符号下的结果。",
+    "en": "Feedback makes errors evolve like e^{λt}: damped for λ < 0 (stable) and amplified for λ > 0 (chaos), the same exponent with two signs."
+   },
+   "source": "../chaos-threebody/#step1"
+  }
+ ],
+ "routes": [
+  {
+   "title": {
+    "zh": "为什么天气只能预报几天？",
+    "en": "Why can weather be forecast only a few days ahead?"
+   },
+   "nodes": [
+    "chaos-threebody",
+    "feedback"
+   ]
+  }
+ ]
+}

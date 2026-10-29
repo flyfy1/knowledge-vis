@@ -1,0 +1,401 @@
+{
+  "generatedAt": "2026-10-29T23:54:22.664Z",
+  "counts": {
+    "groups": 10,
+    "nodes": 140,
+    "edges": 220,
+    "trails": 14,
+    "questions": 89,
+    "fragments": 103
+  },
+  "conflicts": [
+    {
+      "kind": "edge",
+      "id": "oscillation:resonance",
+      "kept": "resonance",
+      "dropped": "core"
+    },
+    {
+      "kind": "edge",
+      "id": "resonance:freqresp",
+      "kept": "core",
+      "dropped": "resonance"
+    }
+  ],
+  "suspendedEdges": [
+    {
+      "id": "climate-energy:atmospheric-circulation",
+      "owner": "atmospheric-circulation",
+      "missing": [
+        "climate-energy"
+      ]
+    },
+    {
+      "id": "auctions:game-theory",
+      "owner": "auctions",
+      "missing": [
+        "game-theory"
+      ]
+    },
+    {
+      "id": "backpropagation:gradient-descent",
+      "owner": "backpropagation",
+      "missing": [
+        "gradient-descent"
+      ]
+    },
+    {
+      "id": "photosynthesis:carbon-cycle",
+      "owner": "carbon-cycle",
+      "missing": [
+        "photosynthesis"
+      ]
+    },
+    {
+      "id": "carbon-cycle:climate-energy",
+      "owner": "carbon-cycle",
+      "missing": [
+        "climate-energy"
+      ]
+    },
+    {
+      "id": "decision-trees:estimate",
+      "owner": "decision-trees",
+      "missing": [
+        "estimate"
+      ]
+    },
+    {
+      "id": "supply-demand:externalities",
+      "owner": "externalities",
+      "missing": [
+        "supply-demand"
+      ]
+    },
+    {
+      "id": "game-theory:externalities",
+      "owner": "externalities",
+      "missing": [
+        "game-theory"
+      ]
+    },
+    {
+      "id": "newton-method:binary-search",
+      "owner": "newton-method",
+      "missing": [
+        "binary-search"
+      ]
+    },
+    {
+      "id": "prisoners-dilemma:game-theory",
+      "owner": "prisoners-dilemma",
+      "missing": [
+        "game-theory"
+      ]
+    },
+    {
+      "id": "velocity-vt:projectile-circular",
+      "owner": "projectile-circular",
+      "missing": [
+        "velocity-vt"
+      ]
+    },
+    {
+      "id": "recursion-divide:exp-log",
+      "owner": "recursion-divide",
+      "missing": [
+        "exp-log"
+      ]
+    },
+    {
+      "id": "recursion-divide:binary-search",
+      "owner": "recursion-divide",
+      "missing": [
+        "binary-search"
+      ]
+    },
+    {
+      "id": "rsa-encryption:hashing",
+      "owner": "rsa-encryption",
+      "missing": [
+        "hashing"
+      ]
+    },
+    {
+      "id": "exp-log:rsa-encryption",
+      "owner": "rsa-encryption",
+      "missing": [
+        "exp-log"
+      ]
+    },
+    {
+      "id": "graph-algorithms:shortest-path",
+      "owner": "shortest-path",
+      "missing": [
+        "graph-algorithms"
+      ]
+    },
+    {
+      "id": "titration-curves:estimate",
+      "owner": "titration-curves",
+      "missing": [
+        "estimate"
+      ]
+    }
+  ],
+  "suspendedQuestions": [
+    {
+      "id": "q-auctions-0",
+      "lesson": "auctions",
+      "problems": [
+        "no edge between auctions and game-theory",
+        "unknown chain node game-theory"
+      ]
+    },
+    {
+      "id": "q-backpropagation-0",
+      "lesson": "backpropagation",
+      "problems": [
+        "no edge between backpropagation and gradient-descent",
+        "unknown chain node gradient-descent"
+      ]
+    },
+    {
+      "id": "q-binomial-normal-0",
+      "lesson": "binomial-normal",
+      "problems": [
+        "no edge between gaussian and probability"
+      ]
+    },
+    {
+      "id": "q-carbon-cycle-0",
+      "lesson": "carbon-cycle",
+      "problems": [
+        "no edge between carbon-cycle and climate-energy",
+        "unknown chain node climate-energy"
+      ]
+    },
+    {
+      "id": "q-cnn-feature-maps-0",
+      "lesson": "cnn-feature-maps",
+      "problems": [
+        "no edge between convolution and derivative"
+      ]
+    },
+    {
+      "id": "q-double-slit-0",
+      "lesson": "double-slit",
+      "problems": [
+        "no edge between interference and superposition"
+      ]
+    },
+    {
+      "id": "q-expected-value-0",
+      "lesson": "expected-value",
+      "problems": [
+        "no edge between probability and variance"
+      ]
+    },
+    {
+      "id": "q-externalities-0",
+      "lesson": "externalities",
+      "problems": [
+        "no edge between externalities and supply-demand",
+        "no edge between supply-demand and game-theory",
+        "unknown chain node supply-demand",
+        "unknown chain node game-theory"
+      ]
+    },
+    {
+      "id": "q-markov-chains-0",
+      "lesson": "markov-chains",
+      "problems": [
+        "no edge between eigen and probability"
+      ]
+    },
+    {
+      "id": "q-prisoners-dilemma-0",
+      "lesson": "prisoners-dilemma",
+      "problems": [
+        "no edge between game-theory and prisoners-dilemma",
+        "unknown chain node game-theory"
+      ]
+    },
+    {
+      "id": "q-recursion-divide-0",
+      "lesson": "recursion-divide",
+      "problems": [
+        "no edge between recursion-divide and binary-search",
+        "no edge between binary-search and exp-log",
+        "unknown chain node binary-search",
+        "unknown chain node exp-log"
+      ]
+    },
+    {
+      "id": "q-rsa-encryption-0",
+      "lesson": "rsa-encryption",
+      "problems": [
+        "no edge between exp-log and rsa-encryption",
+        "no edge between rsa-encryption and hashing",
+        "unknown chain node exp-log",
+        "unknown chain node hashing"
+      ]
+    },
+    {
+      "id": "q-shortest-path-0",
+      "lesson": "shortest-path",
+      "problems": [
+        "no edge between graph-algorithms and shortest-path",
+        "unknown chain node graph-algorithms"
+      ]
+    },
+    {
+      "id": "q-titration-curves-0",
+      "lesson": "titration-curves",
+      "problems": [
+        "no edge between titration-curves and estimate",
+        "unknown chain node estimate"
+      ]
+    }
+  ],
+  "reversePairs": [
+    "blood-circulation:blood-circulation + blood-circulation:blood-circulation",
+    "carnot-cycle:work-energy + work-energy:carnot-cycle",
+    "combustion-triangle:combustion-triangle + combustion-triangle:combustion-triangle",
+    "dissolution-saturation:dissolution-saturation + dissolution-saturation:dissolution-saturation",
+    "equation-balancing:equation-balancing + equation-balancing:equation-balancing",
+    "food-web:food-web + food-web:food-web",
+    "molecules-atoms:molecules-atoms + molecules-atoms:molecules-atoms",
+    "ph-scale:ph-scale + ph-scale:ph-scale",
+    "resonance:resonance + resonance:resonance",
+    "vectors:vectors + vectors:vectors"
+  ],
+  "unregisteredLessons": [],
+  "coverageGaps": [
+    "frozen-bubble",
+    "atlas",
+    "mandelbrot",
+    "ztransform",
+    "gradient-descent",
+    "entropy",
+    "modulation",
+    "sorting",
+    "fractions",
+    "pythagoras",
+    "area-model",
+    "perimeter-area",
+    "division-remainder",
+    "symmetry-rotation",
+    "parabola",
+    "velocity-vt",
+    "lens",
+    "exp-log",
+    "circle-angles",
+    "standing-wave",
+    "negative-numbers",
+    "space-diagonal",
+    "coordinate-plane",
+    "particles-states",
+    "atomic-structure",
+    "lever-pulley",
+    "equations-balance",
+    "day-night-rotation",
+    "mass-conservation",
+    "cell-structure",
+    "photosynthesis",
+    "population-growth",
+    "chemical-equilibrium",
+    "acid-base-equilibrium",
+    "reaction-rates",
+    "bayes-diagnostics",
+    "population-ecology",
+    "feedback-control",
+    "genetics-probability",
+    "supply-demand",
+    "binary-search",
+    "graph-algorithms",
+    "membrane-transport",
+    "action-potential",
+    "orbital-motion",
+    "geology-plate-tectonics",
+    "climate-energy",
+    "momentum-collision",
+    "network-flow",
+    "linguistics-phonology",
+    "climate-feedback",
+    "linear-transform",
+    "probability-distribution",
+    "thermodynamics",
+    "buffer-capacity",
+    "quantum-basics",
+    "number-combinatorics",
+    "materials-science",
+    "game-theory",
+    "neuroscience-basics",
+    "cosmology-expansion",
+    "distributed-systems",
+    "psychology-cognition",
+    "music-theory",
+    "ethics-decisions",
+    "statistical-inference",
+    "advanced-robotics",
+    "public-health",
+    "computer-graphics",
+    "mechanism-auction",
+    "probability-frequency",
+    "hashing",
+    "limits-epsilon"
+  ],
+  "decisionsApplied": [
+    {
+      "slug": "resonance",
+      "conceptId": "resonance-mechanical",
+      "attachTo": "resonance",
+      "switchSource": true
+    },
+    {
+      "slug": "vectors",
+      "conceptId": "vectors-lesson",
+      "attachTo": "vectors",
+      "switchSource": false
+    }
+  ],
+  "legacyStepAnchors": [
+    {
+      "node": "power",
+      "slug": "power-converters",
+      "claimedStep": 0
+    },
+    {
+      "node": "inductor",
+      "slug": "power-converters",
+      "claimedStep": 1
+    },
+    {
+      "node": "capacitor",
+      "slug": "power-converters",
+      "claimedStep": 2
+    },
+    {
+      "node": "switch-diode",
+      "slug": "power-converters",
+      "claimedStep": 3
+    },
+    {
+      "node": "pwm",
+      "slug": "power-converters",
+      "claimedStep": 3
+    },
+    {
+      "node": "buck",
+      "slug": "power-converters",
+      "claimedStep": 4
+    },
+    {
+      "node": "boost",
+      "slug": "power-converters",
+      "claimedStep": 5
+    }
+  ],
+  "sizeBytes": 286129
+}

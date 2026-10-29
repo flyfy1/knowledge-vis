@@ -1,0 +1,58 @@
+{
+ "slug": "carbon-cycle",
+ "conceptId": "carbon-cycle",
+ "group": "OTHER",
+ "note": "No earth-science group in the atlas; group left OTHER. Edges point to existing site pages (photosynthesis, climate-energy) merged separately.",
+ "title": {
+  "zh": "碳循环",
+  "en": "The carbon cycle"
+ },
+ "description": {
+  "zh": "用大气、陆地、表层海洋、深海与化石燃料五个碳库的账本，展示自然流量平衡、排放累积、碳的去向守恒，以及停排后下降缓慢。五库玩具模型，只显示趋势，不是预测。",
+  "en": "A five-reservoir ledger (air, land, surface ocean, deep ocean, fossil fuels) shows balanced natural flows, accumulating emissions, conservation of where the carbon goes, and the slow decline after emissions stop. A five-box toy model for trends, not a forecast."
+ },
+ "formula": "ΔA = E − uptake(land) − uptake(ocean)",
+ "source": "../carbon-cycle/#step2",
+ "edges": [
+  {
+   "from": "photosynthesis",
+   "to": "carbon-cycle",
+   "type": "application",
+   "label": {
+    "zh": "叶片尺度 → 全球尺度",
+    "en": "Leaf scale → global scale"
+   },
+   "reason": {
+    "zh": "光合作用每年把约 120 GtC 从空气移入植物，与呼吸大致相抵，是碳循环里最大的陆地流量。",
+    "en": "Photosynthesis moves about 120 GtC a year from air into plants, roughly cancelled by respiration, the largest land flux in the carbon cycle."
+   },
+   "source": "../carbon-cycle/#step1"
+  },
+  {
+   "from": "carbon-cycle",
+   "to": "climate-energy",
+   "type": "connection",
+   "label": {
+    "zh": "大气二氧化碳 → 温室效应",
+    "en": "Atmospheric CO₂ → greenhouse effect"
+   },
+   "reason": {
+    "zh": "碳循环决定大气二氧化碳的浓度，浓度又改变红外逸出，是气候能量账本里的温室项。",
+    "en": "The carbon cycle sets the concentration of atmospheric CO₂, which changes infrared escape, the greenhouse term in the climate energy ledger."
+   },
+   "source": "../carbon-cycle/#step2"
+  }
+ ],
+ "routes": [
+  {
+   "title": {
+    "zh": "为什么停止排放后二氧化碳降得很慢？",
+    "en": "Why does CO₂ fall so slowly after emissions stop?"
+   },
+   "nodes": [
+    "carbon-cycle",
+    "climate-energy"
+   ]
+  }
+ ]
+}

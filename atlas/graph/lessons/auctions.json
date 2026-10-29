@@ -1,0 +1,58 @@
+{
+ "slug": "auctions",
+ "conceptId": "auctions",
+ "group": "OTHER",
+ "note": "No economics group in the atlas; group left OTHER. Edge endpoints are site pages (mechanism-auction, game-theory) merged separately, plus montecarlo which exists in the atlas.",
+ "title": {
+  "zh": "拍卖：报价与真话",
+  "en": "Auctions: bidding and telling the truth"
+ },
+ "description": {
+  "zh": "第一价格拍卖要压价，第二价格拍卖里说真话是占优策略；英式与第二价格等价、荷式与第一价格等价，平均收益相等；真值不确定时出现赢家的诅咒。单件物品、对称风险中性竞标者的模型。",
+  "en": "First-price auctions call for shading, truth-telling is dominant in second-price auctions, English matches second price and Dutch matches first price, and average revenue is equal; with an uncertain true value the winner’s curse appears. A single-item model with symmetric risk-neutral bidders."
+ },
+ "formula": "E[revenue] = 100·(n−1)/(n+1)",
+ "source": "../auctions/#step2",
+ "edges": [
+  {
+   "from": "auctions",
+   "to": "game-theory",
+   "type": "application",
+   "label": {
+    "zh": "占优策略的拍卖实例",
+    "en": "Dominant strategy in an auction"
+   },
+   "reason": {
+    "zh": "第二价格拍卖里，无论对手怎么报，说真话都不比别的报价差，是占优策略的一个具体例子。",
+    "en": "In a second-price auction, telling the truth is never worse than any other bid whatever the rival does, a concrete dominant strategy."
+   },
+   "source": "../auctions/#step1"
+  },
+  {
+   "from": "montecarlo",
+   "to": "auctions",
+   "type": "application",
+   "label": {
+    "zh": "用随机抽样验证收益相等",
+    "en": "Simulation checks revenue equivalence"
+   },
+   "reason": {
+    "zh": "多轮随机抽取估值并累计平均，两种规则的平均收益靠近同一个理论值，这是蒙特卡洛估计的直接应用。",
+    "en": "Drawing values at random over many rounds and averaging brings both rules to the same theoretical value, a direct use of Monte Carlo estimation."
+   },
+   "source": "../auctions/#step2"
+  }
+ ],
+ "routes": [
+  {
+   "title": {
+    "zh": "怎样的拍卖规则能让人说真话？",
+    "en": "Which auction rule makes people bid truthfully?"
+   },
+   "nodes": [
+    "auctions",
+    "game-theory"
+   ]
+  }
+ ]
+}
