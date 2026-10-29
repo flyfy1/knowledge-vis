@@ -1724,6 +1724,279 @@ window.KNOWLEDGE_PAGES = [
     desc: { zh: "把“无限接近”变成一场有规则的博弈：对方先给出 ε（允许的误差），你要找出 δ（x 离 a 多近就够了）。", en: "Turn \"gets arbitrarily close\" into a game with rules: the opponent gives ε (the allowed error) and you must find δ (how close x must be to a)." },
     tags: [{ zh: "数学基础", en: "Mathematical Foundations" }],
     category: "math", stage: "university", status: "live", path: "limits-epsilon/"
+  },
+  {
+    slug: "atmospheric-circulation",
+    title: { zh: "大气环流与季风 · 风从哪里来", en: "Atmospheric Circulation & Monsoons · Where Winds Come From" },
+    desc: { zh: "赤道多晒、极地少晒，空气因此转圈；地球自转把圈拧成三圈和信风，陆海温差又让风随季节掉头。", en: "The equator gets more sun than the poles, so air turns over in loops; Earth’s spin twists them into three cells and trade winds, and land–sea contrast flips the wind with the season." },
+    tags: [{ zh: "地球与太空", en: "Earth & Space" }],
+    category: "earth", stage: "senior", status: "live", path: "atmospheric-circulation/"
+  },
+  {
+    slug: "auctions",
+    title: { zh: "拍卖 · 报价与真话", en: "Auctions · Bidding and Telling the Truth" },
+    desc: { zh: "同一件东西，四种拍法：为什么第二价格拍卖里说真话最划算，而第一价格拍卖里要“压价”？", en: "One item, four auction rules: why is telling the truth best in a second-price auction, while a first-price auction makes you shade your bid?" },
+    tags: [{ zh: "数学基础", en: "Mathematical Foundations" }],
+    category: "math", stage: "senior", status: "live", path: "auctions/"
+  },
+  {
+    slug: "binomial-normal",
+    title: { zh: "二项分布到正态 · 钉板上长出的钟形", en: "Binomial to Normal · The Bell Curve Growing on a Pegboard" },
+    desc: { zh: "小球在钉板上一层层向左或向右，落点的柱状图随层数增加，越来越像那口钟。", en: "A ball goes left or right at every peg; as the rows increase, the histogram of landing bins looks more and more like the bell." },
+    tags: [{ zh: "概率与统计", en: "Probability & Statistics" }],
+    category: "probability", stage: "senior", status: "live", path: "binomial-normal/"
+  },
+  {
+    slug: "blackbody-radiation",
+    title: { zh: "黑体辐射 · 热的物体为什么发光", en: "Blackbody Radiation · Why Hot Things Glow" },
+    desc: { zh: "温度越高，颜色从红变白再变蓝；经典理论在紫外一端失败，普朗克的“能量一份一份”把它救了回来。", en: "Hotter things glow from red to white to blue; classical theory fails in the ultraviolet, and Planck’s idea that energy comes in lumps rescues it." },
+    tags: [{ zh: "物理与电路", en: "Physics & Circuits" }],
+    category: "physics", stage: "senior", status: "live", path: "blackbody-radiation/"
+  },
+  {
+    slug: "carbon-cycle",
+    title: { zh: "碳循环 · 大气里的碳去了哪里", en: "The Carbon Cycle · Where the Atmosphere’s Carbon Goes" },
+    desc: { zh: "用五个“碳库”的账本，看自然流转为什么平衡、一点点人为排放为什么会累积，又为什么停止排放后降得很慢。", en: "A ledger of five carbon reservoirs shows why natural flows balance, why a small extra emission accumulates, and why the atmosphere falls slowly after emissions stop." },
+    tags: [{ zh: "地球与太空", en: "Earth & Space" }],
+    category: "earth", stage: "senior", status: "live", path: "carbon-cycle/"
+  },
+  {
+    slug: "carnot-cycle",
+    title: { zh: "卡诺循环 · 热机的效率上限", en: "The Carnot Cycle · The Ceiling on Heat-Engine Efficiency" },
+    desc: { zh: "在 p–V 图上走完四步一圈，净功就是围出的面积；效率只由热源和冷源两个温度决定。", en: "Four steps around a p–V loop: the net work is the enclosed area, and the efficiency depends only on the hot and cold temperatures." },
+    tags: [{ zh: "物理与电路", en: "Physics & Circuits" }],
+    category: "physics", stage: "university", status: "live", path: "carnot-cycle/"
+  },
+  {
+    slug: "chaos-threebody",
+    title: { zh: "混沌与三体 · 初始差一丝，结果天壤", en: "Chaos and the Three-Body Problem · Tiny Differences, Huge Outcomes" },
+    desc: { zh: "规则完全确定，结果却无法长期预测：从一个迭代公式，到洛伦兹的蝴蝶，再到三颗星的追逐。", en: "The rules are fully deterministic, yet long-term prediction fails: from a one-line map to Lorenz’s butterfly to three stars chasing each other." },
+    tags: [{ zh: "物理与电路", en: "Physics & Circuits" }],
+    category: "physics", stage: "university", status: "live", path: "chaos-threebody/"
+  },
+  {
+    slug: "cnn-feature-maps",
+    title: { zh: "卷积神经网络的特征图 · 小窗口怎样“看”图", en: "CNN Feature Maps · How a Small Window “Sees” an Image" },
+    desc: { zh: "一个 3×3 的小窗口在图上滑动，边缘、模糊、锐化各是一组数字；把它们堆起来，再让机器自己学出这组数字。", en: "A 3×3 window slides across an image; edges, blur and sharpening are just different sets of nine numbers. Stack them, then let the machine learn the numbers itself." },
+    tags: [{ zh: "计算与智能", en: "Computing & AI" }],
+    category: "computing", stage: "university", status: "live", path: "cnn-feature-maps/"
+  },
+  {
+    slug: "compound-interest",
+    title: { zh: "复利与贴现 · 时间是钱的形状", en: "Compound Interest & Discounting · Time Is the Shape of Money" },
+    desc: { zh: "利息也生利息，钱就按倍数生长；反过来，未来的钱折成今天的价值，就是贴现。", en: "When interest earns interest, money grows by multiples; run it backwards and a future amount is worth less today, which is discounting." },
+    tags: [{ zh: "数学基础", en: "Mathematical Foundations" }],
+    category: "math", stage: "senior", status: "live", path: "compound-interest/"
+  },
+  {
+    slug: "counting-permutations",
+    title: { zh: "排列与组合 · 数清楚有多少种", en: "Permutations & Combinations · Counting How Many Ways" },
+    desc: { zh: "分步计数画成树，排列与组合只差一句话：顺序算不算数。", en: "Count in steps and draw the tree; permutations and combinations differ by one sentence: does the order matter?" },
+    tags: [{ zh: "概率与统计", en: "Probability & Statistics" }],
+    category: "probability", stage: "senior", status: "live", path: "counting-permutations/"
+  },
+  {
+    slug: "double-slit",
+    title: { zh: "双缝实验 · 一颗一颗的粒子，也走出干涉条纹", en: "The Double-Slit Experiment · Single Particles Still Build Fringes" },
+    desc: { zh: "一颗一颗发射电子，条纹自己长出来；一旦知道它走了哪条缝，条纹就消失。", en: "Fire particles one at a time and fringes grow by themselves; the moment you know which slit one took, the fringes vanish." },
+    tags: [{ zh: "物理与电路", en: "Physics & Circuits" }],
+    category: "physics", stage: "university", status: "live", path: "double-slit/"
+  },
+  {
+    slug: "expected-value",
+    title: { zh: "期望 · 彩票、骰子、保险放在同一台秤上", en: "Expected Value · Lotteries, Dice and Insurance on One Scale" },
+    desc: { zh: "期望是长期平均的公平价：用它判断一次下注值不值，也看清为什么买保险明知吃亏还值得。", en: "Expected value is the fair price of a long-run average: use it to judge a bet, and to see why insurance can be worth buying even at a loss on average." },
+    tags: [{ zh: "概率与统计", en: "Probability & Statistics" }],
+    category: "probability", stage: "senior", status: "live", path: "expected-value/"
+  },
+  {
+    slug: "externalities",
+    title: { zh: "外部性与公地悲剧 · 账记在谁头上", en: "Externalities & the Tragedy of the Commons · Who Pays the Bill" },
+    desc: { zh: "工厂排污的代价落在别人身上，市场就会多生产；庇古税、产权与协商是把这笔账拉回价格里的几种办法。", en: "When a factory’s pollution costs fall on others, the market produces too much; a Pigouvian tax, property rights and bargaining are ways to pull that bill back into the price." },
+    tags: [{ zh: "数学基础", en: "Mathematical Foundations" }],
+    category: "math", stage: "university", status: "live", path: "externalities/"
+  },
+  {
+    slug: "eye-vision",
+    title: { zh: "眼睛与眼镜 · 为什么近视要戴凹透镜", en: "The Eye and Glasses · Why Short-Sightedness Needs a Concave Lens" },
+    desc: { zh: "眼睛是一台自带变焦的照相机：晶状体把光聚在视网膜上；聚到视网膜前面就是近视，凹透镜把焦点推回去。", en: "The eye is a camera with a built-in zoom: the lens focuses light on the retina; when focus lands in front of it you are short-sighted and a concave lens pushes it back." },
+    tags: [{ zh: "物理与电路", en: "Physics & Circuits" }],
+    category: "physics", stage: "junior", status: "live", path: "eye-vision/"
+  },
+  {
+    slug: "gravitational-lensing",
+    title: { zh: "引力透镜 · 宇宙里的凸透镜", en: "Gravitational Lensing · A Cosmic Convex Lens" },
+    desc: { zh: "大质量天体弯曲时空，路过的光跟着偏折：遥远光源被放大、分成两个像，甚至拉成一个光环。", en: "A massive object bends spacetime and passing light follows: a distant source is magnified, split into two images, even smeared into a ring." },
+    tags: [{ zh: "地球与太空", en: "Earth & Space" }],
+    category: "earth", stage: "university", status: "live", path: "gravitational-lensing/"
+  },
+  {
+    slug: "gravity-orbits",
+    title: { zh: "万有引力与轨道 · 横着扔出去，会落下、绕圈还是飞走", en: "Gravity and Orbits · Throw It Sideways: Fall, Circle or Escape" },
+    desc: { zh: "平方反比的引力加上一点横向速度：轨道从坠落变成椭圆、圆，再到逃逸；开普勒三定律从模拟里自己浮现。", en: "An inverse-square pull plus some sideways speed: the path turns from a crash into an ellipse, a circle, then an escape; Kepler’s three laws emerge from the simulation." },
+    tags: [{ zh: "地球与太空", en: "Earth & Space" }],
+    category: "earth", stage: "senior", status: "live", path: "gravity-orbits/"
+  },
+  {
+    slug: "hypothesis-testing",
+    title: { zh: "假设检验与 p 值 · 法庭模型判硬币冤不冤", en: "Hypothesis Testing & p-Values · A Courtroom for a Coin" },
+    desc: { zh: "先假定硬币公平（无罪推定），再问“如果公平，出现这么极端的结果有多罕见”；显著性水平是愿意冤枉好人的预算。", en: "Presume the coin is fair (innocent until proven guilty), then ask how rare a result this extreme would be if it were; the significance level is the budget for convicting an innocent coin." },
+    tags: [{ zh: "概率与统计", en: "Probability & Statistics" }],
+    category: "probability", stage: "university", status: "live", path: "hypothesis-testing/"
+  },
+  {
+    slug: "markov-chains",
+    title: { zh: "马尔可夫链 · 下一步只看现在", en: "Markov Chains · The Next Step Depends Only on Now" },
+    desc: { zh: "天气、网页浏览、赌徒的本金：只要“明天只取决于今天”，转移矩阵的幂次里就会浮现一个稳态。", en: "Weather, web browsing, a gambler’s fortune: whenever “tomorrow depends only on today”, a steady state emerges from the powers of the transition matrix." },
+    tags: [{ zh: "概率与统计", en: "Probability & Statistics" }],
+    category: "probability", stage: "university", status: "live", path: "markov-chains/"
+  },
+  {
+    slug: "mechanical-energy",
+    title: { zh: "机械能守恒 · 过山车的能量账本", en: "Conservation of Mechanical Energy · The Roller Coaster’s Energy Ledger" },
+    desc: { zh: "动能和重力势能此消彼长、总数不变；一旦有摩擦，少掉的机械能变成热，账本照样是平的。", en: "Kinetic and gravitational potential energy trade off while the total stays fixed; add friction and the missing mechanical energy shows up as heat, so the ledger still balances." },
+    tags: [{ zh: "物理与电路", en: "Physics & Circuits" }],
+    category: "physics", stage: "junior", status: "live", path: "mechanical-energy/"
+  },
+  {
+    slug: "newton-laws",
+    title: { zh: "牛顿运动定律 · F = ma 是调出来的", en: "Newton’s Laws of Motion · F = ma, Tuned by Hand" },
+    desc: { zh: "在斜面和平地上推箱子：受力箭头与加速度实时对账，F=ma 不是背出来的，是调出来的。", en: "Push a box on ice, on a rough floor and on a ramp: the force arrows and the acceleration stay in step, so F = ma is something you tune, not memorise." },
+    tags: [{ zh: "物理与电路", en: "Physics & Circuits" }],
+    category: "physics", stage: "senior", status: "live", path: "newton-laws/"
+  },
+  {
+    slug: "newton-method",
+    title: { zh: "牛顿法求根 · 沿切线一刀跳向零点", en: "Newton’s Method · Leap to the Root Along a Tangent" },
+    desc: { zh: "用切线代替曲线，每一刀都把误差的位数翻倍；失败的几种情形也画给你看。", en: "Replace the curve by its tangent and jump to where the tangent hits zero; each jump roughly doubles the correct digits. The ways it fails are drawn too." },
+    tags: [{ zh: "数学基础", en: "Mathematical Foundations" }],
+    category: "math", stage: "university", status: "live", path: "newton-method/"
+  },
+  {
+    slug: "ode-phase-portraits",
+    title: { zh: "微分方程相图 · 捕食者与猎物的回路", en: "ODE Phase Portraits · Predators and Prey in a Loop" },
+    desc: { zh: "兔子与狐狸此消彼长：时间曲线看过程，相平面看全貌，每条轨线是一种命运。", en: "Rabbits and foxes rise and fall together: time curves show the story, the phase plane shows the whole picture, and each trajectory is a fate." },
+    tags: [{ zh: "数学基础", en: "Mathematical Foundations" }],
+    category: "math", stage: "university", status: "live", path: "ode-phase-portraits/"
+  },
+  {
+    slug: "ohms-law",
+    title: { zh: "欧姆定律 · 电流是调出来的", en: "Ohm’s Law · Current You Tune by Hand" },
+    desc: { zh: "电压推、电阻挡：I = U/R 不是背的，是在滑杆上一格一格调出来的。", en: "Voltage pushes, resistance holds back: I = V/R isn’t something to memorise but something you tune on a slider." },
+    tags: [{ zh: "物理与电路", en: "Physics & Circuits" }],
+    category: "physics", stage: "junior", status: "live", path: "ohms-law/"
+  },
+  {
+    slug: "poisson-process",
+    title: { zh: "泊松过程 · 随机到达的规律", en: "The Poisson Process · The Pattern in Random Arrivals" },
+    desc: { zh: "放射性计数、排队来人：事件随机到达，却有精确的统计规律——间隔是指数分布，窗口里的个数是泊松分布。", en: "Radioactive counts, people joining a queue: arrivals are random yet follow exact statistics — gaps are exponential, counts per window are Poisson." },
+    tags: [{ zh: "概率与统计", en: "Probability & Statistics" }],
+    category: "probability", stage: "university", status: "live", path: "poisson-process/"
+  },
+  {
+    slug: "prisoners-dilemma",
+    title: { zh: "囚徒困境与演化博弈 · 合作怎样活下来", en: "The Prisoner’s Dilemma & Evolutionary Games · How Cooperation Survives" },
+    desc: { zh: "一次博弈里背叛划算；重复博弈、种群演化里，“以牙还牙”式的合作可以活下来——条件是什么，页面里一格一格调出来。", en: "In a one-shot game, defecting pays; in repeated games and evolving populations tit-for-tat style cooperation can survive — and the page lets you tune the conditions." },
+    tags: [{ zh: "数学基础", en: "Mathematical Foundations" }],
+    category: "math", stage: "university", status: "live", path: "prisoners-dilemma/"
+  },
+  {
+    slug: "projectile-circular",
+    title: { zh: "抛体与圆周 · 一直在掉，但总掉不到地上", en: "Projectiles & Circular Motion · Always Falling, Never Landing" },
+    desc: { zh: "把速度劈成水平、竖直两份，各走各的；圆周运动需要不停“拽向圆心”；卫星就是水平速度大到掉下去的曲线总绕着地球转的炮弹。", en: "Split velocity into a horizontal and a vertical part that do not disturb each other; circular motion needs a steady pull toward the centre; a satellite is a cannonball whose fall keeps curving round the Earth." },
+    tags: [{ zh: "物理与电路", en: "Physics & Circuits" }],
+    category: "physics", stage: "senior", status: "live", path: "projectile-circular/"
+  },
+  {
+    slug: "quantum-tunneling",
+    title: { zh: "量子隧穿 · 穿墙的是概率，不是子弹", en: "Quantum Tunnelling · What Passes Through the Wall Is a Probability" },
+    desc: { zh: "波撞上能量更高的墙：大部分被反弹，一小撮穿了过去——扫描隧道显微镜就靠这一小撮。", en: "A wave hits a wall higher than its energy: most of it bounces back and a small share gets through — and the scanning tunnelling microscope runs on that small share." },
+    tags: [{ zh: "物理与电路", en: "Physics & Circuits" }],
+    category: "physics", stage: "university", status: "live", path: "quantum-tunneling/"
+  },
+  {
+    slug: "regression-correlation",
+    title: { zh: "回归与相关 · 散点云里拉一条最贴的线", en: "Regression & Correlation · The Best Line Through a Cloud" },
+    desc: { zh: "一堆点，一条线，一个数：相关系数 r 说“多贴”，最小二乘线说“怎么贴最好”，还有几个让人上当的陷阱。", en: "A cloud of points, a line and a number: the correlation r says how tightly they follow, the least-squares line says how best to fit them, and a few traps that fool people." },
+    tags: [{ zh: "概率与统计", en: "Probability & Statistics" }],
+    category: "probability", stage: "senior", status: "live", path: "regression-correlation/"
+  },
+  {
+    slug: "relativity",
+    title: { zh: "狭义相对论 · 同时性的线倾斜了", en: "Special Relativity · The Lines of “Now” Tilt" },
+    desc: { zh: "光速对谁都一样，于是时间会变慢、长度会缩短、“同时”变得因人而异——时空图把这些画给你看。", en: "The speed of light is the same for everyone, so clocks run slow, lengths shrink and “at the same time” depends on who is looking — a spacetime diagram draws it all." },
+    tags: [{ zh: "物理与电路", en: "Physics & Circuits" }],
+    category: "physics", stage: "university", status: "live", path: "relativity/"
+  },
+  {
+    slug: "risk-pooling",
+    title: { zh: "风险池化与保险 · 一万人各摊一点", en: "Risk Pooling & Insurance · Ten Thousand People Each Chip In" },
+    desc: { zh: "个人遇到的是 0 或 10000 元的赌局；一万人合在一起，却变成一笔几乎可以预先算好的账——大数定律的商业形态，以及它失灵的地方。", en: "One person faces a gamble of $0 or $10,000; ten thousand together face an account that can be worked out ahead of time — the law of large numbers as a business, and where it fails." },
+    tags: [{ zh: "概率与统计", en: "Probability & Statistics" }],
+    category: "probability", stage: "university", status: "live", path: "risk-pooling/"
+  },
+  {
+    slug: "rsa-encryption",
+    title: { zh: "RSA 公钥加密 · 乘起来容易，拆开来难", en: "RSA Public-Key Encryption · Easy to Multiply, Hard to Split" },
+    desc: { zh: "把两个大质数相乘只要一步，从乘积倒推两个质数却要天文数字的步数——这种不对称，让“公开的锁、私藏的钥匙”成为可能。", en: "Multiplying two big primes takes one step; recovering them from the product takes an astronomical number — and that asymmetry makes a public lock and a private key possible." },
+    tags: [{ zh: "计算与智能", en: "Computing & AI" }],
+    category: "computing", stage: "university", status: "live", path: "rsa-encryption/"
+  },
+  {
+    slug: "seismic-waves",
+    title: { zh: "地震波探地心 · 地核是被波“照”出来的", en: "Seismic Waves · The Core Was “Lit Up” by Waves" },
+    desc: { zh: "地震发出的 P 波和 S 波一前一后到达；它们在地球里拐弯、被挡住的方式，让人从没去过的地核有了名字、大小和状态。", en: "An earthquake sends out P and S waves that arrive one after the other; how they bend and get blocked inside the Earth gave the core — which nobody has visited — a size, a name and a state." },
+    tags: [{ zh: "地球与太空", en: "Earth & Space" }],
+    category: "earth", stage: "senior", status: "live", path: "seismic-waves/"
+  },
+  {
+    slug: "sequences-series",
+    title: { zh: "数列与求和 · 叠砖与棋盘麦粒", en: "Sequences & Series · Stacked Bricks and Chessboard Grains" },
+    desc: { zh: "叠砖每层多一块是等差，棋盘麦粒每格翻倍是等比；倒序相加当场拼出求和公式，等比求和则告诉你“无限多项”能不能有尽头。", en: "Bricks with one more per layer are arithmetic, grains that double per square are geometric; add a row backwards to build the sum formula on the spot, and see whether infinitely many terms can add up." },
+    tags: [{ zh: "数学基础", en: "Mathematical Foundations" }],
+    category: "math", stage: "senior", status: "live", path: "sequences-series/"
+  },
+  {
+    slug: "series-parallel",
+    title: { zh: "串联与并联 · 电流的分与合", en: "Series & Parallel · Splitting and Merging Current" },
+    desc: { zh: "一条河上两个水闸首尾相接是串联，河水分成两条支流再汇合是并联——电流和电压分别怎样分？粒子流速画出来。", en: "Two sluice gates on one river end to end are in series; a river that splits into two branches and rejoins is in parallel — how do current and voltage divide? The flowing dots show it." },
+    tags: [{ zh: "物理与电路", en: "Physics & Circuits" }],
+    category: "physics", stage: "junior", status: "live", path: "series-parallel/"
+  },
+  {
+    slug: "shortest-path",
+    title: { zh: "最短路 · 从起点像洪水一样漫开", en: "Shortest Path · Flooding Out From the Start" },
+    desc: { zh: "迪杰斯特拉算法每次“确认”离起点最近的那个点：最短路径是被“漫到”的顺序逼出来的；也看它怎样在带权地图上绕开泥地，以及什么时候会出错。", en: "Dijkstra’s algorithm “settles” the nearest node at a time: the shortest paths are forced out by the order in which the flood reaches things; see how it detours around mud on a weighted map and when it breaks." },
+    tags: [{ zh: "计算与智能", en: "Computing & AI" }],
+    category: "computing", stage: "university", status: "live", path: "shortest-path/"
+  },
+  {
+    slug: "solid-geometry",
+    title: { zh: "立体几何 · 转一转，再切一刀", en: "Solid Geometry · Turn It, Then Cut It" },
+    desc: { zh: "把立方体转到不同角度看，用平面一刀切下去，截面从三角形变成六边形；体积与表面积怎样随尺寸变化，展开图又能不能折回立方体。", en: "View a cube from different angles, then slice it with a plane and watch the cross-section go from triangle to hexagon; see how surface area and volume scale and whether a net folds back into a cube." },
+    tags: [{ zh: "数学基础", en: "Mathematical Foundations" }],
+    category: "math", stage: "junior", status: "live", path: "solid-geometry/"
+  },
+  {
+    slug: "sound-waves",
+    title: { zh: "声音是波 · 看见自己的声音", en: "Sound Is a Wave · Seeing Your Own Voice" },
+    desc: { zh: "声音是空气一疏一密的传播：音调管波形的疏密，响度管振幅，音色管波形的形状；速度、波长、频率用 v = fλ 连在一起。本页不播放声音，只画波。", en: "Sound is a pattern of squeezing and loosening carried through air: frequency sets how close the pattern is, amplitude the loudness, and the wave’s shape the timbre; v = fλ ties speed, wavelength and frequency together. This page plays no sound, it only draws the waves." },
+    tags: [{ zh: "物理与电路", en: "Physics & Circuits" }],
+    category: "physics", stage: "junior", status: "live", path: "sound-waves/"
+  },
+  {
+    slug: "taylor-series",
+    title: { zh: "泰勒级数 · 把曲线一项项贴上去", en: "Taylor Series · Patch the Curve Term by Term" },
+    desc: { zh: "多项式一项项加上去，曲线在一点附近被逐段贴合到重合；这是“局部”的逼近，与傅里叶“整体”的逼近恰成对照。", en: "Add a polynomial term by term and the curve gets matched ever farther around one point; this is a “local” approximation, the counterpart of Fourier’s “global” one." },
+    tags: [{ zh: "数学基础", en: "Mathematical Foundations" }],
+    category: "math", stage: "university", status: "live", path: "taylor-series/"
+  },
+  {
+    slug: "vectors",
+    title: { zh: "向量 · 有方向的量", en: "Vectors · Quantities With a Direction" },
+    desc: { zh: "力的合成是箭头首尾相接，坐标里加法就是分量各自相加；点积让两个箭头“投影”出一个数。", en: "Combining forces is joining arrows head to tail; in coordinates, addition just adds the components; the dot product turns two arrows’ “projection” into a number." },
+    tags: [{ zh: "数学基础", en: "Mathematical Foundations" }],
+    category: "math", stage: "senior", status: "live", path: "vectors/"
   }
 
 ];
