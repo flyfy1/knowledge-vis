@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="category" content="biology"><meta name="stage" content="junior">
+<title>血液循环</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="style.css">
+<script src="i18n.js"></script>
+</head>
+<body>
+<header class="site-head"><div class="head-main">
+<p class="backline"><a href="../" data-i18n="back"></a></p>
+<div class="badges"><span class="badge" data-i18n="catBadge"></span><span class="badge" data-i18n="stageBadge"></span></div>
+<h1 data-i18n="pageTitle"></h1><p class="tagline" data-i18n="tagline"></p>
+</div><div class="lang-toggle" id="langToggle" role="group" data-i18n-aria="languageLabel"><button type="button" data-lang="zh">中</button><button type="button" data-lang="en">EN</button></div></header>
+<nav class="step-nav" data-i18n-aria="navLabel"><a class="nav-step" href="#step0" data-nav="0" data-i18n="nav0"></a><a class="nav-step" href="#step1" data-nav="1" data-i18n="nav1"></a><a class="nav-step" href="#step2" data-nav="2" data-i18n="nav2"></a><a class="nav-step" href="#step3" data-nav="3" data-i18n="nav3"></a><a class="nav-step" href="#step4" data-nav="4" data-i18n="nav4"></a><a class="nav-step" href="#step5" data-nav="5" data-i18n="nav5"></a></nav>
+<main>
+<section class="step" id="step0" data-step="0"><div class="step-inner">
+<p class="step-kicker" data-i18n="s0k"></p><h2 data-i18n="s0t"></h2><p class="explain" data-i18n-html="s0e"></p>
+<div class="stage"><p class="stage-title" data-i18n="s0stage"></p><canvas id="s0-cv" height="360" tabindex="0" role="img" data-i18n-aria="s0canvas"></canvas></div>
+<div class="controls"><label for="s0-hr"><span><span data-i18n="s0hr"></span> <output id="s0-hr-o" for="s0-hr"></output></span><input id="s0-hr" data-step="0" type="range" min="40" max="180" step="5" value="75"></label></div>
+<div class="btn-row"><button type="button" class="btn primary" id="s0-play" data-step="0" data-i18n="s0play"></button><button type="button" class="btn" id="s0-next" data-step="0" data-i18n="s0next"></button><button type="button" class="btn" id="s0-reset" data-step="0" data-i18n="s0reset"></button></div>
+<p class="readout" id="s0-ro" aria-live="polite"></p><p class="readout" data-i18n="s0result"></p>
+</div></section>
+<section class="step" id="step1" data-step="1"><div class="step-inner">
+<p class="step-kicker" data-i18n="s1k"></p><h2 data-i18n="s1t"></h2><p class="explain" data-i18n-html="s1e"></p>
+<div class="stage"><p class="stage-title" data-i18n="s1stage"></p><canvas id="s1-cv" height="340" tabindex="0" role="img" data-i18n-aria="s1canvas"></canvas></div>
+<div class="controls"><label for="s1-hr"><span><span data-i18n="s1hr"></span> <output id="s1-hr-o" for="s1-hr"></output></span><input id="s1-hr" data-step="1" type="range" min="40" max="180" step="5" value="75"></label><label for="s1-ph"><span><span data-i18n="s1ph"></span> <output id="s1-ph-o" for="s1-ph"></output></span><input id="s1-ph" data-step="1" type="range" min="0" max="100" step="1" value="0"></label></div>
+<div class="btn-row"><button type="button" class="btn primary" id="s1-play" data-step="1" data-i18n="s1play"></button></div>
+<p class="readout" id="s1-ro" aria-live="polite"></p><p class="readout" data-i18n="s1result"></p>
+</div></section>
+<section class="step" id="step2" data-step="2"><div class="step-inner">
+<p class="step-kicker" data-i18n="s2k"></p><h2 data-i18n="s2t"></h2><p class="explain" data-i18n-html="s2e"></p>
+<div class="stage"><p class="stage-title" data-i18n="s2stage"></p><canvas id="s2-cv" height="320" tabindex="0" role="img" data-i18n-aria="s2canvas"></canvas></div>
+<div class="controls"><label for="s2-seg"><span data-i18n="s2seg"></span><select id="s2-seg" data-step="2"></select></label><label for="s2-q"><span><span data-i18n="s2q"></span> <output id="s2-q-o" for="s2-q"></output></span><input id="s2-q" data-step="2" type="range" min="3" max="10" step="0.5" value="5"></label></div>
+<p class="readout" id="s2-ro" aria-live="polite"></p><p class="readout" data-i18n="s2result"></p>
+</div></section>
+<section class="step" id="step3" data-step="3"><div class="step-inner">
+<p class="step-kicker" data-i18n="s3k"></p><h2 data-i18n="s3t"></h2><p class="explain" data-i18n-html="s3e"></p>
+<div class="stage"><p class="stage-title" data-i18n="s3stage"></p><canvas id="s3-cv" height="320" tabindex="0" role="img" data-i18n-aria="s3canvas"></canvas></div>
+<div class="controls"><label for="s3-hr"><span><span data-i18n="s3hr"></span> <output id="s3-hr-o" for="s3-hr"></output></span><input id="s3-hr" data-step="3" type="range" min="40" max="180" step="5" value="75"></label><label for="s3-sv"><span><span data-i18n="s3sv"></span> <output id="s3-sv-o" for="s3-sv"></output></span><input id="s3-sv" data-step="3" type="range" min="40" max="120" step="5" value="70"></label><label for="s3-r"><span><span data-i18n="s3r"></span> <output id="s3-r-o" for="s3-r"></output></span><input id="s3-r" data-step="3" type="range" min="10" max="30" step="1" value="18"></label></div>
+<p class="readout" id="s3-ro" aria-live="polite"></p><p class="readout" data-i18n="s3result"></p>
+</div></section>
+<section class="step" id="step4" data-step="4"><div class="step-inner">
+<p class="step-kicker" data-i18n="s4k"></p><h2 data-i18n="s4t"></h2><p class="explain" data-i18n-html="s4e"></p>
+<div class="stage"><p class="stage-title" data-i18n="s4stage"></p><canvas id="s4-cv" height="320" tabindex="0" role="img" data-i18n-aria="s4canvas"></canvas></div>
+<div class="controls"><label for="s4-e"><span><span data-i18n="s4e"></span> <output id="s4-e-o" for="s4-e"></output></span><input id="s4-e" data-step="4" type="range" min="0" max="100" step="5" value="0"></label></div>
+<p class="readout" id="s4-ro" aria-live="polite"></p><p class="readout" data-i18n="s4result"></p>
+</div></section>
+<section class="step" id="step5" data-step="5"><div class="step-inner"><div class="finale">
+<p class="step-kicker" data-i18n="s5k"></p><h2 data-i18n="s5t"></h2><p class="explain" data-i18n="s5e"></p>
+<div class="cards3"><div class="value-card"><h3 data-i18n="f1t"></h3><p data-i18n="f1b"></p></div><div class="value-card"><h3 data-i18n="f2t"></h3><p data-i18n="f2b"></p></div><div class="value-card"><h3 data-i18n="f3t"></h3><p data-i18n="f3b"></p></div></div>
+<h3 class="model-h" data-i18n="modelT"></h3><p data-i18n="model1"></p><p data-i18n="model2"></p><p data-i18n="model3"></p>
+<h3 class="model-h" data-i18n="nextT"></h3>
+<div class="links"><a href="../pressure/#step0" data-i18n="l1"></a><a href="../pressure/#step2" data-i18n="l2"></a><a href="../cell-structure/#step0" data-i18n="l3"></a></div>
+</div></div></section>
+</main><footer class="site-foot" data-i18n="foot"></footer>
+<script src="app.js"></script>
+</body></html>

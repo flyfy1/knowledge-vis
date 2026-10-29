@@ -1256,5 +1256,474 @@ window.KNOWLEDGE_PAGES = [
     tags: [{ zh: "第一价拍卖", en: "First-Price Auction" }, { zh: "第二价拍卖", en: "Second-Price Auction" }, { zh: "激励", en: "Incentives" }],
     category: "math", stage: "university", status: "live", path: "mechanism-auction/"
   },
+  {
+    slug: "activation-energy",
+    title: { zh: "活化能 · 反应要翻过的那座山", en: "Activation Energy · The Hill a Reaction Has to Climb" },
+    desc: { zh: "反应物要先爬上一座能量山才能变成生成物：山多高、有多少分子爬得上去，决定了反应有多快。", en: "Reactants must climb an energy hill before they become products: how high the hill is, and how many molecules can climb it, decides how fast the reaction goes." },
+    tags: [{ zh: "化学", en: "Chemistry" }],
+    category: "chemistry", stage: "senior", status: "live", path: "activation-energy/"
+  },
+  {
+    slug: "blood-circulation",
+    title: { zh: "血液循环", en: "Blood Circulation" },
+    desc: { zh: "一滴血从左心室出发，先去全身再回心脏，再去肺里换气——两个环路接在同一颗心脏上，红和蓝只代表含氧量多少。", en: "A drop of blood leaves the left ventricle, visits the whole body, returns to the heart, then goes to the lungs — two loops on one heart, with red and blue showing only oxygen content." },
+    tags: [{ zh: "生物", en: "Biology" }],
+    category: "biology", stage: "junior", status: "live", path: "blood-circulation/"
+  },
+  {
+    slug: "buoyancy-archimedes",
+    title: { zh: "浮力与阿基米德", en: "Buoyancy & Archimedes" },
+    desc: { zh: "把物体慢慢浸入水里，弹簧秤读数一路掉下去——掉的那部分恰好等于被它排开的水的重量。", en: "Lower an object into water and the spring scale reading keeps dropping — by exactly the weight of the water it pushes aside." },
+    tags: [{ zh: "物理与电路", en: "Physics & Circuits" }],
+    category: "physics", stage: "junior", status: "live", path: "buoyancy-archimedes/"
+  },
+  {
+    slug: "combustion-triangle",
+    title: { zh: "燃烧三要素", en: "The Fire Triangle" },
+    desc: { zh: "可燃物、氧气、够高的温度——三条腿缺一不可。灭火不是把火「打」死，而是把其中一条腿抽掉。", en: "Fuel, oxygen and enough heat: you need all three. Putting a fire out does not mean beating it — it means taking one leg away." },
+    tags: [{ zh: "化学", en: "Chemistry" }],
+    category: "chemistry", stage: "junior", status: "live", path: "combustion-triangle/"
+  },
+  {
+    slug: "conic-sections",
+    title: { zh: "圆锥曲线", en: "Conic Sections" },
+    desc: { zh: "圆、椭圆、抛物线、双曲线看起来毫不相干，其实是同一个圆锥被不同角度的平面切出来的一家人，一个离心率 e 就能把它们连成一条线。", en: "Circle, ellipse, parabola and hyperbola look unrelated, yet they are one family cut from the same cone by planes at different angles — and a single number, the eccentricity e, strings them on one line." },
+    tags: [{ zh: "数学基础", en: "Mathematical Foundations" }],
+    category: "math", stage: "senior", status: "live", path: "conic-sections/"
+  },
+  {
+    slug: "contour-lines",
+    title: { zh: "等高线", en: "Contour Lines" },
+    desc: { zh: "地图上那些一圈圈的曲线，是把山体按相同高度一层层切开、再从正上方看下去的样子——圈越密的地方越陡。", en: "The rings on a map come from slicing a hill at equal heights and looking straight down: where the rings crowd together, the ground is steep." },
+    tags: [{ zh: "地球与太空", en: "Earth & Space" }],
+    category: "earth", stage: "junior", status: "live", path: "contour-lines/"
+  },
+  {
+    slug: "density",
+    title: { zh: "密度", en: "Density" },
+    desc: { zh: "同样大的铁块和木块，天平一称就分出高下——「每立方厘米里装了多少质量」就是密度。", en: "An iron block and a wood block of the same size: one weighing tells them apart. Density is how much mass fits in each cubic centimetre." },
+    tags: [{ zh: "物理与电路", en: "Physics & Circuits" }],
+    category: "physics", stage: "junior", status: "live", path: "density/"
+  },
+  {
+    slug: "dissolution-saturation",
+    title: { zh: "溶解与饱和", en: "Dissolution & Saturation" },
+    desc: { zh: "一勺勺往水里加盐，开始全化掉，加到某个点再也不化——这个「装满」的状态叫饱和，它不是不动了，而是溶解和结晶一样快。", en: "Add salt to water spoon by spoon: at first it all disappears, then at some point it will not dissolve any more. That “full” state is saturation — not frozen, but dissolving and crystallising at the same speed." },
+    tags: [{ zh: "化学", en: "Chemistry" }],
+    category: "chemistry", stage: "junior", status: "live", path: "dissolution-saturation/"
+  },
+  {
+    slug: "dna-replication",
+    title: { zh: "DNA 复制与翻译 · 拉链、抄写和流水线", en: "DNA Replication and Translation · A Zipper, a Copy and an Assembly Line" },
+    desc: { zh: "碱基像拉链两两配对；复制时每条链都当模板，抄写出 mRNA，核糖体再按密码子一格一格造出蛋白质。", en: "Bases pair up like a zipper; in replication each strand is a template, transcription copies a gene into mRNA, and the ribosome builds a protein codon by codon." },
+    tags: [{ zh: "生物", en: "Biology" }],
+    category: "biology", stage: "senior", status: "live", path: "dna-replication/"
+  },
+  {
+    slug: "doppler-effect",
+    title: { zh: "多普勒效应 · 驶近变尖，驶远变沉", en: "The Doppler Effect · Higher as It Approaches, Lower as It Leaves" },
+    desc: { zh: "一个发声的源在运动，波前被挤密或拉疏；从波前的间距算出听到的频率，再到掠过时的音调曲线和超音速的马赫锥。", en: "A sound source moves, and its wavefronts bunch up or stretch out; from the wavefront spacing work out the heard frequency, then the pitch curve of a pass-by and the Mach cone." },
+    tags: [{ zh: "物理与电路", en: "Physics & Circuits" }],
+    category: "physics", stage: "senior", status: "live", path: "doppler-effect/"
+  },
+  {
+    slug: "electric-fields",
+    title: { zh: "电场 · 看不见的力画成图", en: "Electric Fields · Drawing an Invisible Force" },
+    desc: { zh: "从一个点电荷的场出发，叠加、画场线、画等势面，最后放一个电荷看它怎么动。", en: "Start with one point charge, then add fields, draw field lines and equipotentials, and finally release a charge to watch it move." },
+    tags: [{ zh: "物理与电路", en: "Physics & Circuits" }],
+    category: "physics", stage: "senior", status: "live", path: "electric-fields/"
+  },
+  {
+    slug: "electrochemistry",
+    title: { zh: "电化学 · 电子沿导线跑，还是被电推着跑", en: "Electrochemistry · Electrons Running Down the Wire, or Pushed Along" },
+    desc: { zh: "氧化还原反应被拆成两个半电池：自发时电子沿导线流出电流（原电池），外加电压反推时就是电解池。", en: "A redox reaction is split into two half-cells: spontaneously it drives a current through the wire (a galvanic cell), and an applied opposing voltage turns it into an electrolytic cell." },
+    tags: [{ zh: "化学", en: "Chemistry" }],
+    category: "chemistry", stage: "senior", status: "live", path: "electrochemistry/"
+  },
+  {
+    slug: "electromagnetic-induction",
+    title: { zh: "电磁感应 · 磁通量一变，电压就来", en: "Electromagnetic Induction · Change the Flux, Get a Voltage" },
+    desc: { zh: "让磁铁穿过线圈，看磁通量的变化率怎样变成电压，再看楞次定律如何定方向、转动线圈如何发电。", en: "Pass a magnet through a coil, see how the rate of change of flux becomes a voltage, then how Lenz\\" },
+    tags: [{ zh: "物理与电路", en: "Physics & Circuits" }],
+    category: "physics", stage: "senior", status: "live", path: "electromagnetic-induction/"
+  },
+  {
+    slug: "energy-pyramid",
+    title: { zh: "能量金字塔 · 为什么顶级捕食者那么少", en: "The Energy Pyramid · Why Top Predators Are Rare" },
+    desc: { zh: "阳光的能量一级一级往上传，每上一级只剩一成左右；顶级食肉动物为什么稀有、人吃素为什么养得活更多人，都能算出来。", en: "Sunlight\\" },
+    tags: [{ zh: "生物", en: "Biology" }],
+    category: "biology", stage: "junior", status: "live", path: "energy-pyramid/"
+  },
+  {
+    slug: "enzymes",
+    title: { zh: "酶 · 生物体内的催化剂", en: "Enzymes · Catalysts of the Living World" },
+    desc: { zh: "酶用一个形状合适的“口袋”把底物拉到一起，让反应在体温下就能飞快进行：从锁钥配合，到饱和、温度、pH 和抑制剂。", en: "An enzyme pulls substrates together in a pocket of the right shape so reactions run fast at body temperature: from lock-and-key fit to saturation, temperature, pH and inhibitors." },
+    tags: [{ zh: "生物", en: "Biology" }],
+    category: "biology", stage: "senior", status: "live", path: "enzymes/"
+  },
+  {
+    slug: "equation-balancing",
+    title: { zh: "化学方程式配平", en: "Balancing Chemical Equations" },
+    desc: { zh: "化学反应不会凭空多出或消失原子，所以方程式两边每种原子数必须相等——配平就是调系数，把每杆小天平都调平。", en: "Reactions never create or destroy atoms, so every element must have equal counts on both sides — balancing means adjusting coefficients until every little scale is level." },
+    tags: [{ zh: "化学", en: "Chemistry" }],
+    category: "chemistry", stage: "junior", status: "live", path: "equation-balancing/"
+  },
+  {
+    slug: "food-web",
+    title: { zh: "食物网", en: "Food Webs" },
+    desc: { zh: "草、兔、狐连成网——吃与被吃把能量一层层往上送，网里任何一个结点变了，别处也会跟着变。", en: "Grass, rabbit, fox joined into a web — eating and being eaten passes energy up level by level, and a change at any node ripples to others." },
+    tags: [{ zh: "生物", en: "Biology" }],
+    category: "biology", stage: "junior", status: "live", path: "food-web/"
+  },
+  {
+    slug: "isomers",
+    title: { zh: "同分异构体 · 同一组原子，不同的拼法", en: "Isomers · The Same Atoms, Put Together Differently" },
+    desc: { zh: "分子式相同、原子连接方式不同，就是不同的分子：数骨架、判断“画法不同还是分子不同”，再看单键与双键怎样让镜像般的异构体分得开。", en: "Same molecular formula, different connections between atoms, means different molecules: count the skeletons, tell \"drawn differently\" from \"really different\", and see why double bonds keep cis and trans apart." },
+    tags: [{ zh: "化学", en: "Chemistry" }],
+    category: "chemistry", stage: "senior", status: "live", path: "isomers/"
+  },
+  {
+    slug: "kinetic-theory",
+    title: { zh: "气体压强的微观图景 · 撞墙的账本", en: "The Microscopic Picture of Gas Pressure · A Ledger of Wall Hits" },
+    desc: { zh: "盒子里的粒子乱撞：压强是撞墙的冲量账，温度是平均动能，速率分布自己从碰撞里长出来。", en: "Particles in a box bounce around: pressure is a ledger of wall impulses, temperature is mean kinetic energy, and the speed distribution grows out of collisions." },
+    tags: [{ zh: "物理与电路", en: "Physics & Circuits" }],
+    category: "physics", stage: "university", status: "live", path: "kinetic-theory/"
+  },
+  {
+    slug: "latitude-longitude",
+    title: { zh: "经纬网", en: "Latitude & Longitude" },
+    desc: { zh: "地球是个球，没有「上下左右」的格子——但只要说「北纬多少度、东经多少度」，就能在地球表面上定位任意一点。", en: "Earth is a sphere with no built-in grid — yet “so many degrees north, so many east” pins down any point on its surface." },
+    tags: [{ zh: "地球与太空", en: "Earth & Space" }],
+    category: "earth", stage: "junior", status: "live", path: "latitude-longitude/"
+  },
+  {
+    slug: "magnetic-force",
+    title: { zh: "磁场与洛伦兹力 · 力总是垂直于速度", en: "Magnetic Force · The Force Is Always Sideways to the Velocity" },
+    desc: { zh: "从一个带电粒子在磁场里“拐弯”出发，推出圆半径、周期，再用它称离子质量、挑选速度。", en: "Start with a charged particle bending in a magnetic field, derive its radius and period, then use them to weigh ions and pick out a speed." },
+    tags: [{ zh: "物理与电路", en: "Physics & Circuits" }],
+    category: "physics", stage: "senior", status: "live", path: "magnetic-force/"
+  },
+  {
+    slug: "meiosis",
+    title: { zh: "减数分裂 · 洗牌、切半，造配子", en: "Meiosis · Shuffle, Halve, Make Gametes" },
+    desc: { zh: "染色体成对配对、交换片段、先分开同源染色体再分开姐妹染色单体：一个二倍体细胞变成四个互不完全相同的单倍体配子。", en: "Chromosomes pair up, swap pieces, first separate the homologs and then the sister chromatids: one diploid cell becomes four haploid gametes that are not all alike." },
+    tags: [{ zh: "生物", en: "Biology" }],
+    category: "biology", stage: "senior", status: "live", path: "meiosis/"
+  },
+  {
+    slug: "molecular-shapes",
+    title: { zh: "分子构型 · 电子对互相躲开", en: "Molecular Shapes · Electron Pairs Keeping Out of Each Other\\" },
+    desc: { zh: "中心原子周围的电子对彼此排斥，自己排成最分散的队形；水为什么弯、甲烷为什么是正四面体，都从这里来。", en: "Electron pairs around a central atom repel one another and settle into the most spread-out arrangement; that is why water is bent and methane is a regular tetrahedron." },
+    tags: [{ zh: "化学", en: "Chemistry" }],
+    category: "chemistry", stage: "senior", status: "live", path: "molecular-shapes/"
+  },
+  {
+    slug: "molecules-atoms",
+    title: { zh: "分子与原子", en: "Molecules & Atoms" },
+    desc: { zh: "水烧开、水通电都是「水变了」，可一个是分子换了位置，一个是分子被拆开重组——原子不变，分子才变。", en: "Boiling water and electrolysing water both “change the water”, but one only moves the molecules and the other tears them apart and rebuilds — atoms stay, molecules change." },
+    tags: [{ zh: "化学", en: "Chemistry" }],
+    category: "chemistry", stage: "junior", status: "live", path: "molecules-atoms/"
+  },
+  {
+    slug: "natural-selection",
+    title: { zh: "自然选择 · 胡椒蛾的颜色为什么翻转", en: "Natural Selection · Why the Peppered Moth Flipped Colour" },
+    desc: { zh: "同一种蛾有浅色和深色两种；鸟看得见的先被吃掉，剩下的繁殖——树皮颜色一变，几代之后种群的颜色比例就跟着翻转。", en: "One species of moth comes in light and dark forms; birds eat what they can see, the survivors breed, and when the bark colour changes the colour ratio flips within a few generations." },
+    tags: [{ zh: "生物", en: "Biology" }],
+    category: "biology", stage: "senior", status: "live", path: "natural-selection/"
+  },
+  {
+    slug: "patterns-sequences",
+    title: { zh: "找规律 · 不画也能报出第 100 个", en: "Patterns · Name the 100th Without Drawing It" },
+    desc: { zh: "用火柴棒摆图形：数出前几个，找到“每次多几根”，就能直接算出任意第 n 个。", en: "Build shapes from matchsticks: count the first few, find how many are added each time, then compute any figure n directly." },
+    tags: [{ zh: "数学基础", en: "Mathematical Foundations" }],
+    category: "math", stage: "primary", status: "live", path: "patterns-sequences/"
+  },
+  {
+    slug: "periodic-trends",
+    title: { zh: "元素周期律 · 周期表上的渐变", en: "Periodic Trends · Gradients Across the Periodic Table" },
+    desc: { zh: "把原子半径、电离能、电负性涂成热图：沿周期、沿族有规律的渐变，由核电荷和电子层数解释，也有少数例外。", en: "Colour atomic radius, ionisation energy and electronegativity onto the table: they change in regular gradients along periods and groups, explained by nuclear charge and the number of shells, with a few exceptions." },
+    tags: [{ zh: "化学", en: "Chemistry" }],
+    category: "chemistry", stage: "senior", status: "live", path: "periodic-trends/"
+  },
+  {
+    slug: "ph-scale",
+    title: { zh: "pH 标度", en: "The pH Scale" },
+    desc: { zh: "酸得多厉害、碱得多厉害，用一条 0 到 14 的刻度就能说清——pH 每差 1，酸碱的「劲」差 10 倍。", en: "How acidic or alkaline something is can be placed on one 0-to-14 ruler — and each step of 1 on it is a factor of 10." },
+    tags: [{ zh: "化学", en: "Chemistry" }],
+    category: "chemistry", stage: "junior", status: "live", path: "ph-scale/"
+  },
+  {
+    slug: "photoelectric-effect",
+    title: { zh: "光电效应 · 光是一份一份的", en: "The Photoelectric Effect · Light Comes in Packets" },
+    desc: { zh: "光照金属：频率不到门槛，再亮也打不出电子；过了门槛，电子的最大动能只随频率走，亮度只决定个数。", en: "Light on a metal: below a threshold frequency no electrons come out however bright it is; above it, the electrons\\" },
+    tags: [{ zh: "物理与电路", en: "Physics & Circuits" }],
+    category: "physics", stage: "university", status: "live", path: "photoelectric-effect/"
+  },
+  {
+    slug: "pressure",
+    title: { zh: "压强", en: "Pressure" },
+    desc: { zh: "穿雪鞋不陷、图钉尖头易摁——同样的力，作用面积越小，压得越狠。「每单位面积上的压力」就是压强。", en: "Snowshoes keep you on top; a thumbtack tip goes in easily. The same force pressed on a smaller area pushes harder: force per unit area is pressure." },
+    tags: [{ zh: "物理与电路", en: "Physics & Circuits" }],
+    category: "physics", stage: "junior", status: "live", path: "pressure/"
+  },
+  {
+    slug: "resonance",
+    title: { zh: "共振 · 踩中节拍，小推也能荡高", en: "Resonance · Push in Time and a Small Force Goes a Long Way" },
+    desc: { zh: "从弹簧的固有节拍出发，看阻尼怎样让振动衰减，再看周期性的推力在什么频率下把振幅推到最高。", en: "Start from a spring\\" },
+    tags: [{ zh: "物理与电路", en: "Physics & Circuits" }],
+    category: "physics", stage: "senior", status: "live", path: "resonance/"
+  },
+  {
+    slug: "seasons-orbit",
+    title: { zh: "地球公转与四季", en: "Earth’s Orbit & the Seasons" },
+    desc: { zh: "夏天不是因为地球离太阳近，而是因为地轴斜着——绕太阳一圈，南北半球轮流把「脸」朝向太阳，昼夜长短也跟着轮流占上风。", en: "Summer is not because Earth is closer to the Sun, but because its axis is tilted: around the orbit the hemispheres take turns facing the Sun, and day length swings with them." },
+    tags: [{ zh: "地球与太空", en: "Earth & Space" }],
+    category: "earth", stage: "junior", status: "live", path: "seasons-orbit/"
+  },
+  {
+    slug: "titration-curves",
+    title: { zh: "滴定曲线 · 终点附近 pH 的“悬崖”", en: "Titration Curves · The pH Cliff Near the End Point" },
+    desc: { zh: "往酸里一滴滴加碱：pH 先缓慢爬升，在等当点附近陡然跳升；指示剂变色要对准这个跳升。", en: "Add base to acid drop by drop: pH creeps up, then leaps near the equivalence point; the indicator must change colour right on that leap." },
+    tags: [{ zh: "化学", en: "Chemistry" }],
+    category: "chemistry", stage: "senior", status: "live", path: "titration-curves/"
+  },
+  {
+    slug: "attention-mechanism",
+    title: { zh: "注意力机制 · 每个词决定看谁", en: "Attention · Every Word Decides Where to Look" },
+    desc: { zh: "从「查询与键的点积」到 softmax 权重、加权求和，再到整句的注意力矩阵：每个词怎样决定「看谁多一点」。", en: "From the dot product of query and key, through softmax weights and a weighted sum, to a whole-sentence attention matrix: how each word decides whom to look at." },
+    tags: [{ zh: "计算与智能", en: "Computing & AI" }],
+    category: "computing", stage: "university", status: "live", path: "attention-mechanism/"
+  },
+  {
+    slug: "averaging-leveling",
+    title: { zh: "平均数 · 移多补少", en: "Averages · Level by Pouring" },
+    desc: { zh: "高低不齐的水杯互相倒一倒，水位齐平的那个高度就是平均数。", en: "Pour water between uneven cups until they are level: the common level is the mean." },
+    tags: [{ zh: "数学基础", en: "Mathematical Foundations" }],
+    category: "math", stage: "primary", status: "live", path: "averaging-leveling/"
+  },
+  {
+    slug: "backpropagation",
+    title: { zh: "反向传播 · 误差沿网络回流", en: "Backpropagation · Error Flows Back Through the Network" },
+    desc: { zh: "输出错了，每个权重该负多少责任？用最小的网络，从「推一下看变化」走到链式法则、梯度下降，再看深层网络里梯度为什么会消失。", en: "When the output is wrong, how much blame does each weight carry? Use the smallest network to go from “nudge and see” to the chain rule and gradient descent, then see why gradients vanish in deep networks." },
+    tags: [{ zh: "计算与智能", en: "Computing & AI" }],
+    category: "computing", stage: "university", status: "live", path: "backpropagation/"
+  },
+  {
+    slug: "bandit-arms",
+    title: { zh: "多臂老虎机 · 探索还是利用", en: "Multi-Armed Bandits · Explore or Exploit" },
+    desc: { zh: "五台看不出差别的机器，每台的中奖率你看不见：先亲手拉几次，再看贪心、ε-贪心、UCB 和汤普森采样怎样在「多试试」与「拉最好的」之间取舍。", en: "Five machines that look alike, each with a payout rate you cannot see: pull a few by hand, then watch greedy, ε-greedy, UCB and Thompson sampling trade off “try more” against “pull the best”." },
+    tags: [{ zh: "概率与统计", en: "Probability & Statistics" }],
+    category: "probability", stage: "university", status: "live", path: "bandit-arms/"
+  },
+  {
+    slug: "bar-charts",
+    title: { zh: "条形图 · 让数字站成一排比高矮", en: "Bar Charts · Numbers Standing in a Row" },
+    desc: { zh: "一排柱子把数字变成长度：读得出谁高谁矮，也看得出平均线把高出和不足补平。", en: "A row of bars turns numbers into lengths: see who is taller, and watch the average line balance the highs against the lows." },
+    tags: [{ zh: "数学基础", en: "Mathematical Foundations" }],
+    category: "math", stage: "primary", status: "live", path: "bar-charts/"
+  },
+  {
+    slug: "chicken-rabbit",
+    title: { zh: "鸡兔同笼 · 先假设，差额会说话", en: "Chickens & Rabbits · Assume First, Let the Gap Speak" },
+    desc: { zh: "知道头数和脚数，先假设“全是鸡”，多出来的脚恰好暴露了兔子有几只。", en: "Know the heads and the feet: assume they are all chickens, and the extra feet give away how many rabbits there are." },
+    tags: [{ zh: "数学基础", en: "Mathematical Foundations" }],
+    category: "math", stage: "primary", status: "live", path: "chicken-rabbit/"
+  },
+  {
+    slug: "circle-intro",
+    title: { zh: "圆的认识 · 圆规、半径与 π", en: "The Circle · Compass, Radius and π" },
+    desc: { zh: "圆规一转画出圆；把圆周拉直量一量，周长总是直径的 3 倍多一点——这个倍数就是 π。", en: "A compass sweeps out a circle; unroll its edge and it is always a little over 3 diameters long: that multiple is π." },
+    tags: [{ zh: "数学基础", en: "Mathematical Foundations" }],
+    category: "math", stage: "primary", status: "live", path: "circle-intro/"
+  },
+  {
+    slug: "clock-angles",
+    title: { zh: "时钟与角度 · 两根针的赛跑", en: "Clocks & Angles · A Race Between Two Hands" },
+    desc: { zh: "时针慢、分针快：知道它们各转多快，就能算出任意时刻两针的夹角，也能找到它们重合的时刻。", en: "The hour hand is slow and the minute hand is fast: know how fast each turns and you can find the angle between them at any time, and when they overlap." },
+    tags: [{ zh: "数学基础", en: "Mathematical Foundations" }],
+    category: "math", stage: "primary", status: "live", path: "clock-angles/"
+  },
+  {
+    slug: "decision-trees",
+    title: { zh: "决策树与信息增益", en: "Decision Trees and Information Gain" },
+    desc: { zh: "每一刀都问一个是非题：怎样挑最能降低混乱度的那一刀，一刀接一刀长成一棵树，又为什么不能长得太深。", en: "Each cut asks a yes/no question: how to pick the cut that reduces disorder the most, grow a tree one cut at a time, and why it should not grow too deep." },
+    tags: [{ zh: "计算与智能", en: "Computing & AI" }],
+    category: "computing", stage: "university", status: "live", path: "decision-trees/"
+  },
+  {
+    slug: "embeddings",
+    title: { zh: "词向量 · 把词摆成地图", en: "Word Embeddings · Words as a Map" },
+    desc: { zh: "一个词怎样变成一串数字？数字怎样衡量相似、做类比，机器又怎样不靠手工特征，从「常和谁在一起」里学出它们。", en: "How does a word become a list of numbers? How do the numbers measure similarity and solve analogies, and how can a machine learn them from “who a word keeps company with” instead of hand-made features?" },
+    tags: [{ zh: "计算与智能", en: "Computing & AI" }],
+    category: "computing", stage: "university", status: "live", path: "embeddings/"
+  },
+  {
+    slug: "float-sink",
+    title: { zh: "浮与沉 · 排开的水托住了谁", en: "Float & Sink · What the Displaced Water Holds Up" },
+    desc: { zh: "同一块橡皮泥，捏成球会沉、捏成船会浮：决定浮沉的，是它排开了多少水。", en: "The same plasticine sinks as a ball but floats as a boat: what decides it is how much water it pushes aside." },
+    tags: [{ zh: "物理与电路", en: "Physics & Circuits" }],
+    category: "physics", stage: "primary", status: "live", path: "float-sink/"
+  },
+  {
+    slug: "inequalities",
+    title: { zh: "不等式 · 天平倾斜，答案是一整段", en: "Inequalities · A Tilted Scale Has a Whole Range of Answers" },
+    desc: { zh: "天平不平的时候，答案不是一个数而是一段范围：在数轴上涂阴影，乘负数时要把不等号翻过来。", en: "When the scale tilts, the answer is a range, not one number: shade it on the number line, and flip the sign when you multiply by a negative." },
+    tags: [{ zh: "数学基础", en: "Mathematical Foundations" }],
+    category: "math", stage: "junior", status: "live", path: "inequalities/"
+  },
+  {
+    slug: "intervals-fences",
+    title: { zh: "间隔与植树 · 段数和点数差一", en: "Intervals & Fences · Gaps and Posts Differ by One" },
+    desc: { zh: "路边种树、锯木头、爬楼梯：数“点”和数“段”总是差一个，看清两头种不种就不会数错。", en: "Planting trees, sawing logs, climbing stairs: counting “points” and counting “gaps” differ by one, and checking the ends tells you which way." },
+    tags: [{ zh: "数学基础", en: "Mathematical Foundations" }],
+    category: "math", stage: "primary", status: "live", path: "intervals-fences/"
+  },
+  {
+    slug: "inverse-proportion",
+    title: { zh: "反比例函数 · 此消彼长", en: "Inverse Proportion · One Up, One Down" },
+    desc: { zh: "长方形面积不变，长越长宽越矮；乘积不变的两个量，图像是一条永远碰不到坐标轴的双曲线。", en: "A rectangle of fixed area gets shorter as it gets longer; two quantities with a constant product graph as a hyperbola that never touches the axes." },
+    tags: [{ zh: "数学基础", en: "Mathematical Foundations" }],
+    category: "math", stage: "junior", status: "live", path: "inverse-proportion/"
+  },
+  {
+    slug: "llm-sampling",
+    title: { zh: "大语言模型如何逐词生成", en: "How an LLM Writes Word by Word" },
+    desc: { zh: "每一步都是一张概率条：温度把它捏尖或摊平，top-k / top-p 砍掉长尾，再随机抽一个词，一个接一个写下去。", en: "Every step is a probability bar chart: temperature sharpens or flattens it, top-k and top-p trim the tail, then one word is drawn at random and appended, again and again." },
+    tags: [{ zh: "计算与智能", en: "Computing & AI" }],
+    category: "computing", stage: "university", status: "live", path: "llm-sampling/"
+  },
+  {
+    slug: "magnets",
+    title: { zh: "磁铁 · 铁屑显出看不见的线", en: "Magnets · Iron Filings Reveal Unseen Lines" },
+    desc: { zh: "撒一层铁屑，磁感线自己显形：它们从 N 极出发、回到 S 极，同极相斥、异极相吸。", en: "Sprinkle iron filings and the field lines show themselves: they leave the N pole and return to the S pole; like poles repel, unlike poles attract." },
+    tags: [{ zh: "物理与电路", en: "Physics & Circuits" }],
+    category: "physics", stage: "primary", status: "live", path: "magnets/"
+  },
+  {
+    slug: "mean-median-mode",
+    title: { zh: "平均数、中位数、众数之争 · 三个“平均”三个故事", en: "Mean, Median, Mode · Three “Averages”, Three Stories" },
+    desc: { zh: "同一组工资，三个“平均”说出三种故事；极端值一进来，只有中位数不慌。", en: "The same list of salaries, three “averages” and three stories; once an extreme value arrives, only the median stays calm." },
+    tags: [{ zh: "概率与统计", en: "Probability & Statistics" }],
+    category: "probability", stage: "junior", status: "live", path: "mean-median-mode/"
+  },
+  {
+    slug: "moon-phases",
+    title: { zh: "月相 · 从地球看被照亮的那一半", en: "Moon Phases · The Lit Half, Seen from Earth" },
+    desc: { zh: "月亮永远有半边被太阳照亮；我们每晚看到多少，取决于它在轨道上跑到了哪里。", en: "Half the Moon is always lit by the Sun; how much of it we see each night depends on where it is on its orbit." },
+    tags: [{ zh: "地球与太空", en: "Earth & Space" }],
+    category: "earth", stage: "primary", status: "live", path: "moon-phases/"
+  },
+  {
+    slug: "overfitting",
+    title: { zh: "过拟合", en: "Overfitting" },
+    desc: { zh: "用多项式去拟合带噪声的点：曲线越灵活，训练误差越小，可没见过的数据上的误差却会先降后升。看清拐点，再看数据量、换批数据和正则化怎样改变它。", en: "Fit noisy points with a polynomial: the more flexible the curve, the smaller the training error, yet the error on unseen data first falls and then rises. Find the turning point, then see how data size, resampling and regularisation change it." },
+    tags: [{ zh: "计算与智能", en: "Computing & AI" }],
+    category: "computing", stage: "university", status: "live", path: "overfitting/"
+  },
+  {
+    slug: "pagerank",
+    title: { zh: "PageRank · 随机冲浪者最后停在哪", en: "PageRank · Where the Random Surfer Ends Up" },
+    desc: { zh: "被链接得最多的网页就最重要吗？用一个随机冲浪者把「重要」变成概率，再用迭代算出来，看阻尼系数和一条新链接怎样改变排名。", en: "Is the most linked-to page the most important? Turn “important” into a probability with a random surfer, compute it by iteration, and see how the damping factor and one new link change the ranking." },
+    tags: [{ zh: "计算与智能", en: "Computing & AI" }],
+    category: "computing", stage: "university", status: "live", path: "pagerank/"
+  },
+  {
+    slug: "place-value",
+    title: { zh: "位值与计数器 · 满十进一", en: "Place Value & the Counting Frame · Ten Makes One" },
+    desc: { zh: "同一个数字站在不同的位置，代表的大小差十倍、百倍：计数器上每一列的珠子满十就换成下一列的一颗。", en: "The same digit stands for ten or a hundred times more one place to the left: on a counting frame, ten beads in a column trade for one bead in the next." },
+    tags: [{ zh: "数学基础", en: "Mathematical Foundations" }],
+    category: "math", stage: "primary", status: "live", path: "place-value/"
+  },
+  {
+    slug: "polygon-angles",
+    title: { zh: "多边形内角和 · 撕下来拼一拼", en: "Polygon Angle Sums · Tear and Rearrange" },
+    desc: { zh: "三角形的三个角拼在一起是平角 180°；任何多边形都能剖成三角形，内角和就是 (n − 2) × 180°。", en: "A triangle’s three angles fit together into a straight angle of 180°; any polygon can be cut into triangles, so its interior angles add up to (n − 2) × 180°." },
+    tags: [{ zh: "数学基础", en: "Mathematical Foundations" }],
+    category: "math", stage: "junior", status: "live", path: "polygon-angles/"
+  },
+  {
+    slug: "probability-frequency",
+    title: { zh: "概率与频率 · 转得越多，越贴近概率", en: "Probability & Frequency · The More Spins, the Closer to the Probability" },
+    desc: { zh: "一次转盘结果说不准，但转的次数越多，红色出现的频率就越稳定地围着它的概率打转。", en: "One spin cannot be predicted, but with more spins the frequency of red settles ever more steadily around its probability." },
+    tags: [{ zh: "概率与统计", en: "Probability & Statistics" }],
+    category: "probability", stage: "junior", status: "live", path: "probability-frequency/"
+  },
+  {
+    slug: "real-number-line",
+    title: { zh: "实数与数轴 · √2 落在哪一点", en: "Real Numbers & the Number Line · Where √2 Lands" },
+    desc: { zh: "把单位正方形的对角线转到数轴上，√2 就落在一个确定的点；它不能写成分数，却可以越逼越近。", en: "Swing the diagonal of a unit square onto the number line and √2 lands at one definite point; it cannot be written as a fraction, yet we can close in on it forever." },
+    tags: [{ zh: "数学基础", en: "Mathematical Foundations" }],
+    category: "math", stage: "junior", status: "live", path: "real-number-line/"
+  },
+  {
+    slug: "recursion-divide",
+    title: { zh: "递归与分治 · 把大问题劈成小问题", en: "Recursion and Divide-and-Conquer · Splitting a Big Problem Into Small Ones" },
+    desc: { zh: "从函数调用自己，到汉诺塔、递归树和归并排序：为什么有的递归瞬间完成，有的一辈子也算不完。", en: "From a function calling itself to Towers of Hanoi, recursion trees and merge sort: why some recursions finish instantly and others could not finish in a lifetime." },
+    tags: [{ zh: "计算与智能", en: "Computing & AI" }],
+    category: "computing", stage: "university", status: "live", path: "recursion-divide/"
+  },
+  {
+    slug: "similarity-scaling",
+    title: { zh: "相似与缩放 · 长度、面积、体积各变几倍", en: "Similarity & Scaling · Lengths, Areas and Volumes Each Change Differently" },
+    desc: { zh: "投影仪把图像放大 k 倍：边长变 k 倍，面积变 k² 倍，体积变 k³ 倍，而形状和角度不变。", en: "A projector enlarges a picture k times: lengths grow k times, areas k² times, volumes k³ times, while shape and angles stay the same." },
+    tags: [{ zh: "数学基础", en: "Mathematical Foundations" }],
+    category: "math", stage: "junior", status: "live", path: "similarity-scaling/"
+  },
+  {
+    slug: "simple-circuits",
+    title: { zh: "简单电路 · 电流要走一圈", en: "Simple Circuits · Current Must Go Round" },
+    desc: { zh: "电池、开关和灯泡连成一个完整的圈，灯才会亮；断开一处，整圈的电流同时停下。", en: "A battery, a switch and a bulb joined into one complete loop make the bulb light; break it anywhere and the current stops all round at once." },
+    tags: [{ zh: "物理与电路", en: "Physics & Circuits" }],
+    category: "physics", stage: "primary", status: "live", path: "simple-circuits/"
+  },
+  {
+    slug: "simultaneous-equations",
+    title: { zh: "二元一次方程组 · 两条直线的交点", en: "Simultaneous Equations · Where Two Lines Meet" },
+    desc: { zh: "一个方程有无数个解，再加一个方程就把解“钉”在两条直线的交点上；代入和加减是把它算出来的两种办法。", en: "One equation has endless solutions; a second equation pins the answer to where two lines cross. Substitution and elimination are two ways to calculate it." },
+    tags: [{ zh: "数学基础", en: "Mathematical Foundations" }],
+    category: "math", stage: "junior", status: "live", path: "simultaneous-equations/"
+  },
+  {
+    slug: "sound-vibration",
+    title: { zh: "声音从振动来 · 米粒会跳的鼓", en: "Sound from Vibration · A Drum with Jumping Rice" },
+    desc: { zh: "敲一下鼓，鼓面来回振动，鼓面上的米粒跳起来：声音就是物体的振动通过空气传到耳朵。", en: "Strike a drum and the drumhead vibrates, tossing the rice on it: sound is an object’s vibration carried through the air to your ear." },
+    tags: [{ zh: "物理与电路", en: "Physics & Circuits" }],
+    category: "physics", stage: "primary", status: "live", path: "sound-vibration/"
+  },
+  {
+    slug: "three-views",
+    title: { zh: "三视图 · 三张影子拼回立体", en: "Three Views · Three Shadows Rebuild a Solid" },
+    desc: { zh: "把积木从正面、侧面、上面各看一眼，得到三张平面图；三张图对齐起来，就能还原出立体的样子。", en: "Look at a stack of blocks from the front, the left and above to get three flat pictures; line them up and you can rebuild the solid." },
+    tags: [{ zh: "数学基础", en: "Mathematical Foundations" }],
+    category: "math", stage: "junior", status: "live", path: "three-views/"
+  },
+  {
+    slug: "water-cycle",
+    title: { zh: "水的循环 · 一滴水的旅行", en: "The Water Cycle · One Drop’s Journey" },
+    desc: { zh: "太阳晒海、水汽上升成云、雨落回山、河流入海：水在海洋、空气和陆地之间不断流动，但总量不变。", en: "The Sun warms the sea, vapour rises into cloud, rain falls on the hills and rivers run to the sea: water moves between ocean, air and land, but the total stays the same." },
+    tags: [{ zh: "地球与太空", en: "Earth & Space" }],
+    category: "earth", stage: "primary", status: "live", path: "water-cycle/"
+  },
+  {
+    slug: "wavelets",
+    title: { zh: "小波 · 让窗口随频率伸缩", en: "Wavelets · Windows That Stretch With Frequency" },
+    desc: { zh: "傅里叶谱说得出「有哪些频率」，说不出「何时」。从加窗口、到让窗口随频率伸缩，再到用最少的数描述突变。", en: "A Fourier spectrum says which frequencies are present, but not when. Add a window, let the window stretch with frequency, then describe sharp changes with very few numbers." },
+    tags: [{ zh: "信号与系统", en: "Signals & Systems" }],
+    category: "signal", stage: "university", status: "live", path: "wavelets/"
+  },
+  {
+    slug: "hashing",
+    title: { zh: "哈希 · 把任意输入压成固定指纹", en: "Hashing · Squeezing Any Input Into a Fixed Fingerprint" },
+    desc: { zh: "任意长度的输入变成固定长度的指纹：雪崩效应、哈希表里的冲突、生日悖论，以及指纹到底要多少位才够。", en: "Any-length input becomes a fixed-length fingerprint: the avalanche effect, collisions in hash tables, the birthday paradox, and how many bits a fingerprint really needs." },
+    tags: [{ zh: "计算与智能", en: "Computing & AI" }],
+    category: "computing", stage: "university", status: "live", path: "hashing/"
+  },
+  {
+    slug: "limits-epsilon",
+    title: { zh: "极限与 ε–δ · 你说多近，我就能多近", en: "Limits and ε–δ · Name How Close, and I Can Get That Close" },
+    desc: { zh: "把“无限接近”变成一场有规则的博弈：对方先给出 ε（允许的误差），你要找出 δ（x 离 a 多近就够了）。", en: "Turn \"gets arbitrarily close\" into a game with rules: the opponent gives ε (the allowed error) and you must find δ (how close x must be to a)." },
+    tags: [{ zh: "数学基础", en: "Mathematical Foundations" }],
+    category: "math", stage: "university", status: "live", path: "limits-epsilon/"
+  }
 
 ];

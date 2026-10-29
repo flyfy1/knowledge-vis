@@ -1605,3 +1605,88 @@ Outgoing first-use links: `interference/#step1` (path difference), `reflection-r
 | 临界/无实折射解 | reflection-refraction#critical-proof | 仅n₁>n₂有θc=arcsin(n₂/n₁)；相等为沿界面极限，严格超过才进入无传播折射线分支。原S3控制与读数同源。 |
 
 Atlas ordinary route `optics` connects existing unit-circle to one canonical `snell` node; it is not a prerequisite certification. [Scope/evidence](specs/reviews/refraction-normal-verification-20261026.md).
+
+
+## 夜班新增（2026-10-30，批量注册；仅探针验证、待独立复评）
+
+| 概念（中 / EN） | 专讲 slug#step | 那一步讲清什么 |
+| --- | --- | --- |
+| 活化能 · 反应要翻过的那座山 / Activation Energy · The Hill a Reaction Has to Climb | activation-energy#step0 | Energy hill |
+| 血液循环 / Blood Circulation | blood-circulation#step0 | 血液循环 |
+| 浮力与阿基米德 / Buoyancy & Archimedes | buoyancy-archimedes#step0 | 浮力与阿基米德 |
+| 燃烧三要素 / The Fire Triangle | combustion-triangle#step0 | 燃烧三要素 |
+| 圆锥曲线 / Conic Sections | conic-sections#step0 | 圆锥曲线 |
+| 等高线 / Contour Lines | contour-lines#step0 | 等高线 |
+| 密度 / Density | density#step0 | 密度 |
+| 溶解与饱和 / Dissolution & Saturation | dissolution-saturation#step0 | 溶解与饱和 |
+| DNA 复制与翻译 · 拉链、抄写和流水线 / DNA Replication and Translation · A Zipper, a Copy and an Assembly Line | dna-replication#step0 | Base pairing |
+| 多普勒效应 · 驶近变尖，驶远变沉 / The Doppler Effect · Higher as It Approaches, Lower as It Leaves | doppler-effect#step0 | Still source |
+| 电场 · 看不见的力画成图 / Electric Fields · Drawing an Invisible Force | electric-fields#step0 | 电场 · 看不见的力画成图 |
+| 电化学 · 电子沿导线跑，还是被电推着跑 / Electrochemistry · Electrons Running Down the Wire, or Pushed Along | electrochemistry#step0 | Galvanic cell |
+| 电磁感应 · 磁通量一变，电压就来 / Electromagnetic Induction · Change the Flux, Get a Voltage | electromagnetic-induction#step0 | Flux |
+| 能量金字塔 · 为什么顶级捕食者那么少 / The Energy Pyramid · Why Top Predators Are Rare | energy-pyramid#step0 | Sunlight in |
+| 酶 · 生物体内的催化剂 / Enzymes · Catalysts of the Living World | enzymes#step0 | Lock and key |
+| 化学方程式配平 / Balancing Chemical Equations | equation-balancing#step0 | 化学方程式配平 |
+| 食物网 / Food Webs | food-web#step0 | 食物网 |
+| 同分异构体 · 同一组原子，不同的拼法 / Isomers · The Same Atoms, Put Together Differently | isomers#step0 | One formula, two molecules |
+| 气体压强的微观图景 · 撞墙的账本 / The Microscopic Picture of Gas Pressure · A Ledger of Wall Hits | kinetic-theory#step0 | Pressure = wall hits |
+| 经纬网 / Latitude & Longitude | latitude-longitude#step0 | 经纬网 |
+| 磁场与洛伦兹力 · 力总是垂直于速度 / Magnetic Force · The Force Is Always Sideways to the Velocity | magnetic-force#step0 | Sideways force |
+| 减数分裂 · 洗牌、切半，造配子 / Meiosis · Shuffle, Halve, Make Gametes | meiosis#step0 | Paired chromosomes |
+| 分子构型 · 电子对互相躲开 / Molecular Shapes · Electron Pairs Keeping Out of Each Other\ | molecular-shapes#step0 | Spread out |
+| 分子与原子 / Molecules & Atoms | molecules-atoms#step0 | 分子与原子 |
+| 自然选择 · 胡椒蛾的颜色为什么翻转 / Natural Selection · Why the Peppered Moth Flipped Colour | natural-selection#step0 | Who gets eaten |
+| 找规律 · 不画也能报出第 100 个 / Patterns · Name the 100th Without Drawing It | patterns-sequences#step0 | 找规律 · 不画也能报出第 100 个 |
+| 元素周期律 · 周期表上的渐变 / Periodic Trends · Gradients Across the Periodic Table | periodic-trends#step0 | Heat map |
+| pH 标度 / The pH Scale | ph-scale#step0 | pH 标度 |
+| 光电效应 · 光是一份一份的 / The Photoelectric Effect · Light Comes in Packets | photoelectric-effect#step0 | Light on metal |
+| 压强 / Pressure | pressure#step0 | 压强 |
+| 共振 · 踩中节拍，小推也能荡高 / Resonance · Push in Time and a Small Force Goes a Long Way | resonance#step0 | Natural frequency |
+| 地球公转与四季 / Earth’s Orbit & the Seasons | seasons-orbit#step0 | 地球公转与四季 |
+| 滴定曲线 · 终点附近 pH 的“悬崖” / Titration Curves · The pH Cliff Near the End Point | titration-curves#step0 | Adding base |
+
+
+## 夜班新增（2026-10-30，批量注册；仅探针验证、待独立复评）
+
+| 概念（中 / EN） | 专讲 slug#step | 那一步讲清什么 |
+| --- | --- | --- |
+| 注意力机制 · 每个词决定看谁 / Attention · Every Word Decides Where to Look | attention-mechanism#step0 | 注意力机制 · 每个词决定看谁 |
+| 平均数 · 移多补少 / Averages · Level by Pouring | averaging-leveling#step0 | 平均数 · 移多补少 |
+| 反向传播 · 误差沿网络回流 / Backpropagation · Error Flows Back Through the Network | backpropagation#step0 | 反向传播 · 误差沿网络回流 |
+| 多臂老虎机 · 探索还是利用 / Multi-Armed Bandits · Explore or Exploit | bandit-arms#step0 | 多臂老虎机 · 探索还是利用 |
+| 条形图 · 让数字站成一排比高矮 / Bar Charts · Numbers Standing in a Row | bar-charts#step0 | 条形图 · 让数字站成一排比高矮 |
+| 鸡兔同笼 · 先假设，差额会说话 / Chickens & Rabbits · Assume First, Let the Gap Speak | chicken-rabbit#step0 | 鸡兔同笼 · 先假设，差额会说话 |
+| 圆的认识 · 圆规、半径与 π / The Circle · Compass, Radius and π | circle-intro#step0 | 圆的认识 · 圆规、半径与 π |
+| 时钟与角度 · 两根针的赛跑 / Clocks & Angles · A Race Between Two Hands | clock-angles#step0 | 时钟与角度 · 两根针的赛跑 |
+| 决策树与信息增益 / Decision Trees and Information Gain | decision-trees#step0 | 决策树与信息增益 |
+| 词向量 · 把词摆成地图 / Word Embeddings · Words as a Map | embeddings#step0 | 词向量 · 把词摆成地图 |
+| 浮与沉 · 排开的水托住了谁 / Float & Sink · What the Displaced Water Holds Up | float-sink#step0 | 浮与沉 · 排开的水托住了谁 |
+| 不等式 · 天平倾斜，答案是一整段 / Inequalities · A Tilted Scale Has a Whole Range of Answers | inequalities#step0 | 不等式 · 天平倾斜，答案是一整段 |
+| 间隔与植树 · 段数和点数差一 / Intervals & Fences · Gaps and Posts Differ by One | intervals-fences#step0 | 间隔与植树 · 段数和点数差一 |
+| 反比例函数 · 此消彼长 / Inverse Proportion · One Up, One Down | inverse-proportion#step0 | 反比例函数 · 此消彼长 |
+| 大语言模型如何逐词生成 / How an LLM Writes Word by Word | llm-sampling#step0 | 大语言模型如何逐词生成 |
+| 磁铁 · 铁屑显出看不见的线 / Magnets · Iron Filings Reveal Unseen Lines | magnets#step0 | 磁铁 · 铁屑显出看不见的线 |
+| 平均数、中位数、众数之争 · 三个“平均”三个故事 / Mean, Median, Mode · Three “Averages”, Three Stories | mean-median-mode#step0 | 平均数、中位数、众数之争 · 三个“平均”三个故事 |
+| 月相 · 从地球看被照亮的那一半 / Moon Phases · The Lit Half, Seen from Earth | moon-phases#step0 | 月相 · 从地球看被照亮的那一半 |
+| 过拟合 / Overfitting | overfitting#step0 | 过拟合 |
+| PageRank · 随机冲浪者最后停在哪 / PageRank · Where the Random Surfer Ends Up | pagerank#step0 | PageRank · 随机冲浪者最后停在哪 |
+| 位值与计数器 · 满十进一 / Place Value & the Counting Frame · Ten Makes One | place-value#step0 | 位值与计数器 · 满十进一 |
+| 多边形内角和 · 撕下来拼一拼 / Polygon Angle Sums · Tear and Rearrange | polygon-angles#step0 | 多边形内角和 · 撕下来拼一拼 |
+| 概率与频率 · 转得越多，越贴近概率 / Probability & Frequency · The More Spins, the Closer to the Probability | probability-frequency#step0 | 概率与频率 · 转得越多，越贴近概率 |
+| 实数与数轴 · √2 落在哪一点 / Real Numbers & the Number Line · Where √2 Lands | real-number-line#step0 | 实数与数轴 · √2 落在哪一点 |
+| 递归与分治 · 把大问题劈成小问题 / Recursion and Divide-and-Conquer · Splitting a Big Problem Into Small Ones | recursion-divide#step0 | 递归与分治 · 把大问题劈成小问题 |
+| 相似与缩放 · 长度、面积、体积各变几倍 / Similarity & Scaling · Lengths, Areas and Volumes Each Change Differently | similarity-scaling#step0 | 相似与缩放 · 长度、面积、体积各变几倍 |
+| 简单电路 · 电流要走一圈 / Simple Circuits · Current Must Go Round | simple-circuits#step0 | 简单电路 · 电流要走一圈 |
+| 二元一次方程组 · 两条直线的交点 / Simultaneous Equations · Where Two Lines Meet | simultaneous-equations#step0 | 二元一次方程组 · 两条直线的交点 |
+| 声音从振动来 · 米粒会跳的鼓 / Sound from Vibration · A Drum with Jumping Rice | sound-vibration#step0 | 声音从振动来 · 米粒会跳的鼓 |
+| 三视图 · 三张影子拼回立体 / Three Views · Three Shadows Rebuild a Solid | three-views#step0 | 三视图 · 三张影子拼回立体 |
+| 水的循环 · 一滴水的旅行 / The Water Cycle · One Drop’s Journey | water-cycle#step0 | 水的循环 · 一滴水的旅行 |
+| 小波 · 让窗口随频率伸缩 / Wavelets · Windows That Stretch With Frequency | wavelets#step0 | 小波 · 让窗口随频率伸缩 |
+
+
+## 夜班新增（2026-10-30，批量注册；仅探针验证、待独立复评）
+
+| 概念（中 / EN） | 专讲 slug#step | 那一步讲清什么 |
+| --- | --- | --- |
+| 哈希 · 把任意输入压成固定指纹 / Hashing · Squeezing Any Input Into a Fixed Fingerprint | hashing#step0 | 哈希 · 把任意输入压成固定指纹 |
+| 极限与 ε–δ · 你说多近，我就能多近 / Limits and ε–δ · Name How Close, and I Can Get That Close | limits-epsilon#step0 | 极限与 ε–δ · 你说多近，我就能多近 |
