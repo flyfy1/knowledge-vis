@@ -1166,4 +1166,27 @@ window.KNOWLEDGE_PAGES = [
     category: "physics", stage: "university", status: "live", path: "materials-science/"
   },
 
+
+  {
+    slug: "game-theory",
+    title: { zh: "博弈论 · 先看对手会怎么选", en: "Game Theory · Look at the Other Choice First" },
+    desc: { zh: "在 2×2 收益矩阵里找最佳回应、占优策略和纳什均衡，再看混合策略如何把不确定性算出来。", en: "Use a 2×2 payoff matrix to find best responses, dominant strategies and Nash equilibria, then compute mixed-strategy uncertainty." },
+    tags: [{ zh: "收益矩阵", en: "Payoff Matrix" }, { zh: "纳什均衡", en: "Nash Equilibrium" }, { zh: "最佳回应", en: "Best Response" }],
+    category: "math", stage: "university", status: "live", path: "game-theory/"
+  },
+  {
+    slug: "neuroscience-basics",
+    title: { zh: "神经科学基础 · 从静息到脉冲", en: "Neuroscience Basics · From Rest to Spike" },
+    desc: { zh: "从 K⁺/Na⁺ 漏通道和静息电位走到阈值、全或无尖峰与不应期频率上限。", en: "Trace K⁺/Na⁺ leak balance into resting potential, threshold, all-or-none spikes and the refractory firing ceiling." },
+    tags: [{ zh: "静息电位", en: "Resting Potential" }, { zh: "阈值", en: "Threshold" }, { zh: "不应期", en: "Refractory Period" }],
+    category: "biology", stage: "senior", status: "live", path: "neuroscience-basics/"
+  },
+  {
+    slug: "cosmology-expansion",
+    title: { zh: "宇宙膨胀 · 空间本身在变大", en: "Cosmic Expansion · Space Itself Gets Larger" },
+    desc: { zh: "拖动尺度因子、哈勃常数和红移，沿着 d=aχ、v=H₀d、λ=(1+z)λ₀ 读懂膨胀宇宙。", en: "Tune the scale factor, Hubble constant and redshift to read an expanding universe through d=aχ, v=H₀d and λ=(1+z)λ₀." },
+    tags: [{ zh: "尺度因子", en: "Scale Factor" }, { zh: "哈勃定律", en: "Hubble Law" }, { zh: "红移", en: "Redshift" }],
+    category: "earth", stage: "university", status: "live", path: "cosmology-expansion/"
+  },
+
 ];
