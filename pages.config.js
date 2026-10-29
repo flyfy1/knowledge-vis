@@ -1213,4 +1213,27 @@ window.KNOWLEDGE_PAGES = [
     category: "math", stage: "senior", status: "live", path: "music-theory/"
   },
 
+
+  {
+    slug: "ethics-decisions",
+    title: { zh: "伦理决策 · 把取舍说清楚", en: "Ethical Decisions · Make the Trade-off Visible" },
+    desc: { zh: "用后果、权利、公平与同意四个镜头拆开决策，不替你给出道德或政策答案。", en: "Use consequences, rights, fairness and consent to unpack a decision without pretending to supply a moral or policy verdict." },
+    tags: [{ zh: "后果", en: "Consequences" }, { zh: "自主同意", en: "Consent" }, { zh: "公平", en: "Fairness" }],
+    category: "psychology", stage: "senior", status: "live", path: "ethics-decisions/"
+  },
+  {
+    slug: "statistical-inference",
+    title: { zh: "统计推断 · 从样本到判断", en: "Statistical Inference · From Sample to Judgment" },
+    desc: { zh: "从抽样分布走到置信区间、z 分数和 p 值，区分“数据有多不确定”和“假设有多不寻常”。", en: "Move from sampling distributions to confidence intervals, z-scores and p-values, separating data uncertainty from how unusual a hypothesis looks." },
+    tags: [{ zh: "抽样分布", en: "Sampling Distribution" }, { zh: "置信区间", en: "Confidence Interval" }, { zh: "p 值", en: "p-value" }],
+    category: "probability", stage: "senior", status: "live", path: "statistical-inference/"
+  },
+  {
+    slug: "advanced-robotics",
+    title: { zh: "高阶机器人学 · 从角度到末端", en: "Advanced Robotics · From Angles to the End Effector" },
+    desc: { zh: "拖动平面二连杆的关节角，追踪正/逆运动学、Jacobian 速度映射与奇异位形。", en: "Tune a planar two-link arm and trace forward/inverse kinematics, Jacobian velocity mapping and singular configurations." },
+    tags: [{ zh: "正运动学", en: "Forward Kinematics" }, { zh: "逆运动学", en: "Inverse Kinematics" }, { zh: "Jacobian", en: "Jacobian" }],
+    category: "computing", stage: "university", status: "live", path: "advanced-robotics/"
+  },
+
 ];
