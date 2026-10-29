@@ -35,6 +35,12 @@
   .chip:hover{color:var(--text);border-color:var(--cyan-d)}
   .chip.on{background:var(--cyan);border-color:var(--cyan);color:#08131a;font-weight:700}
   .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:18px;margin-top:8px}
+  .pagination{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:10px;margin-top:28px}
+  .pagination button{appearance:none;min-width:48px;min-height:48px;padding:8px 16px;font:inherit;color:var(--cyan);
+    background:var(--panel2);border:1px solid var(--line);border-radius:12px;cursor:pointer}
+  .pagination button:hover:not(:disabled){border-color:var(--cyan-d);color:var(--text)}
+  .pagination button:disabled{color:var(--dim);cursor:not-allowed;opacity:.55}
+  .page-status{min-width:180px;color:var(--dim);font-size:13.5px;text-align:center}
   a.card,div.card{display:block;background:linear-gradient(180deg,var(--panel),var(--panel2));
     border:1px solid var(--line);border-radius:16px;padding:22px 22px 18px;
     text-decoration:none;color:var(--text);position:relative;overflow:hidden}
@@ -106,6 +112,7 @@
     <p class="intro" data-i18n-html="intro">把难懂的知识点，做成<b>可以上手玩的交互页</b>：每页一个主题，由浅入深，一步一个交互，玩到最后就懂了。</p>
     <div class="chips" id="catChips" role="group" aria-label="Category filter / 分类筛选"></div>
     <div class="chips" id="stageChips" role="group" aria-label="Stage filter / 学段筛选" style="margin-top:10px"></div>
+    <div class="chips" id="topicChips" role="group" aria-label="Topic filter / 主题筛选" style="margin-top:10px"></div>
   </header>
 
   <section id="leetcodeSearch" class="leetcode-search" hidden aria-labelledby="searchLabel">
@@ -122,6 +129,11 @@
     </div>
   </section>
   <main id="grid" class="grid" aria-live="polite"></main>
+  <nav id="pagination" class="pagination" aria-label="Page navigation / 页面导航" hidden>
+    <button id="prevPage" type="button"></button>
+    <span id="pageStatus" class="page-status" role="status" aria-live="polite"></span>
+    <button id="nextPage" type="button"></button>
+  </nav>
   <noscript><p class="empty">这个索引页需要 JavaScript 才能列出条目。</p></noscript>
 
   <footer data-i18n-html="footerText">新增条目登记在 <b>pages.config.js</b> 配置里；每页都是纯静态、可离线打开的单页。</footer>
@@ -142,7 +154,8 @@
       clearSearch:'清空搜索', loading:'正在读取课程列表…', loadError:'暂时无法读取课程列表，请重试。', retry:'重试',
       count:'找到 {shown} / {total} 篇可用课程', noMatches:'没有匹配的课程。试试题号、题名或知识点，或清空搜索。',
       emptyCollection:'课程列表目前为空。', hard:'困难', explore:'开始推导 →', official:'LeetCode 原题 ↗',
-      emptyFilter: '这个组合下还没有条目，敬请期待。',
+      emptyFilter: '这个组合下还没有条目，敬请期待。', topicAll: '全部主题', prevPage: '上一页', nextPage: '下一页',
+      pageStatus: '第 {page} / {pages} 页 · 显示 {shown} / {total} 个主题',
       footerText: '新增条目登记在 <b>pages.config.js</b> 配置里；每页都是纯静态、可离线打开的单页。'
     },
     en: {
@@ -154,7 +167,8 @@
       clearSearch:'Clear search', loading:'Loading lessons…', loadError:'The lesson list could not be loaded. Please retry.', retry:'Retry',
       count:'{shown} of {total} available lessons', noMatches:'No matching lessons. Try an ID, title or topic, or clear the search.',
       emptyCollection:'This collection currently has no lessons.', hard:'Hard', explore:'Explore the lesson →', official:'View on LeetCode ↗',
-      emptyFilter: 'Nothing under this combination yet — stay tuned.',
+      emptyFilter: 'Nothing under this combination yet — stay tuned.', topicAll: 'All topics', prevPage: 'Previous', nextPage: 'Next',
+      pageStatus: 'Page {page} of {pages} · showing {shown} of {total} topics',
       footerText: 'New entries are registered in the <b>pages.config.js</b> config; every page is a single static page that also works offline.'
     }
   };
@@ -183,11 +197,19 @@
   var grid = document.getElementById('grid');
   var chipsBox = document.getElementById('catChips');
   var stageBox = document.getElementById('stageChips');
+  var topicBox = document.getElementById('topicChips');
+  var pagination = document.getElementById('pagination');
+  var prevPage = document.getElementById('prevPage');
+  var nextPage = document.getElementById('nextPage');
+  var pageStatus = document.getElementById('pageStatus');
   var categories = window.KNOWLEDGE_CATEGORIES || [];
   var stages = window.KNOWLEDGE_STAGES || [];
   var pages = (window.KNOWLEDGE_PAGES || []).slice();
   var activeCat = 'all';
   var activeStage = 'all';
+  var activeTopic = 'all';
+  var currentPage = 1;
+  var pageSize = 12;
 
   function catName(id) {
     for (var i = 0; i < categories.length; i++) if (categories[i].id === id) return pick(categories[i].name);
@@ -231,7 +253,11 @@
         b.type = 'button';
         b.className = 'chip';
         b.dataset.stage = d.id;
-        b.addEventListener('click', function(){ activeStage = d.id; renderStageChips(); renderCards(); });
+        b.addEventListener('click', function(){
+          if (activeStage === d.id) return;
+          activeStage = d.id; activeTopic = 'all'; currentPage = 1;
+          saveView(true); renderStageChips(); renderCards();
+        });
         stageBox.appendChild(b);
       });
     }
@@ -243,10 +269,56 @@
     });
   }
 
+  function topicKey(tag) {
+    if (tag == null) return '';
+    if (typeof tag === 'string') return tag;
+    return tag.en || tag.zh || '';
+  }
+  function topicName(key) {
+    for (var i = 0; i < pages.length; i++) {
+      var tags = pages[i].tags || [];
+      for (var j = 0; j < tags.length; j++) if (topicKey(tags[j]) === key) return pick(tags[j]);
+    }
+    return key;
+  }
+  function basePageList() {
+    var list = pages.slice().sort(function(a, b){
+      return (a.status === 'live' ? 0 : 1) - (b.status === 'live' ? 0 : 1);
+    });
+    if (activeCat !== 'all') list = list.filter(function(pg){ return pg.category === activeCat; });
+    if (activeStage !== 'all') list = list.filter(function(pg){ return pageStage(pg) === activeStage; });
+    return list;
+  }
+  function renderTopicChips(list) {
+    if (activeCat === 'leetcode') { topicBox.hidden = true; return; }
+    var seen = {};
+    (list || basePageList()).forEach(function(pg){
+      (pg.tags || []).forEach(function(tag){ var key = topicKey(tag); if (key) seen[key] = true; });
+    });
+    var defs = Object.keys(seen).sort(function(a, b){ return topicName(a).localeCompare(topicName(b), lang === 'zh' ? 'zh' : 'en'); });
+    if (activeTopic !== 'all' && !seen[activeTopic]) activeTopic = 'all';
+    topicBox.hidden = defs.length === 0;
+    topicBox.innerHTML = '';
+    var all = document.createElement('button');
+    all.type = 'button'; all.className = 'chip'; all.dataset.topic = 'all'; all.textContent = t('topicAll');
+    all.addEventListener('click', function(){ selectTopic('all'); });
+    topicBox.appendChild(all);
+    defs.forEach(function(key){
+      var b = document.createElement('button'); b.type = 'button'; b.className = 'chip'; b.dataset.topic = key;
+      b.textContent = topicName(key); b.addEventListener('click', function(){ selectTopic(key); }); topicBox.appendChild(b);
+    });
+    topicBox.querySelectorAll('button').forEach(function(b){
+      b.classList.toggle('on', b.dataset.topic === activeTopic);
+      b.setAttribute('aria-pressed', String(b.dataset.topic === activeTopic));
+    });
+  }
+
   function renderCards() {
     grid.innerHTML = '';
     var isLeetCode = activeCat === 'leetcode';
     stageBox.hidden = isLeetCode;
+    topicBox.hidden = isLeetCode;
+    pagination.hidden = true;
     searchSection.hidden = !isLeetCode;
     grid.setAttribute('aria-live', isLeetCode ? 'off' : 'polite');
     if (isLeetCode) { renderLessons(); return; }
@@ -256,18 +328,22 @@
       grid.appendChild(p0);
       return;
     }
-    var list = pages.slice().sort(function(a, b){
-      return (a.status === 'live' ? 0 : 1) - (b.status === 'live' ? 0 : 1);
+    var base = basePageList();
+    renderTopicChips(base);
+    var list = activeTopic === 'all' ? base : base.filter(function(pg){
+      return (pg.tags || []).some(function(tag){ return topicKey(tag) === activeTopic; });
     });
-    if (activeCat !== 'all') list = list.filter(function(pg){ return pg.category === activeCat; });
-    if (activeStage !== 'all') list = list.filter(function(pg){ return pageStage(pg) === activeStage; });
     if (!list.length) {
       var p1 = document.createElement('p');
       p1.className = 'empty'; p1.textContent = t('emptyFilter');
       grid.appendChild(p1);
       return;
     }
-    list.forEach(function(pg){
+    var totalPages = Math.max(1, Math.ceil(list.length / pageSize));
+    currentPage = Math.min(Math.max(1, currentPage), totalPages);
+    var start = (currentPage - 1) * pageSize;
+    var visible = list.slice(start, start + pageSize);
+    visible.forEach(function(pg){
       var live = pg.status === 'live';
       var el = document.createElement(live ? 'a' : 'div');
       el.className = 'card' + (live ? '' : ' planned');
@@ -302,6 +378,17 @@
       el.querySelectorAll('.tag').forEach(function(tagEl, i){ tagEl.textContent = pick(pg.tags[i]); });
       grid.appendChild(el);
     });
+    if (totalPages > 1) {
+      pagination.hidden = false;
+      prevPage.textContent = t('prevPage');
+      nextPage.textContent = t('nextPage');
+      prevPage.disabled = currentPage <= 1;
+      nextPage.disabled = currentPage >= totalPages;
+      prevPage.setAttribute('aria-label', t('prevPage'));
+      nextPage.setAttribute('aria-label', t('nextPage'));
+      pageStatus.textContent = t('pageStatus').replace('{page}', currentPage).replace('{pages}', totalPages)
+        .replace('{shown}', visible.length).replace('{total}', list.length);
+    }
   }
 
 
@@ -316,6 +403,12 @@
     var url = new URL(location.href);
     if (activeCat === 'all') url.searchParams.delete('category');
     else url.searchParams.set('category', activeCat);
+    if (activeStage === 'all') url.searchParams.delete('stage');
+    else url.searchParams.set('stage', activeStage);
+    if (activeTopic === 'all') url.searchParams.delete('topic');
+    else url.searchParams.set('topic', activeTopic);
+    if (currentPage <= 1) url.searchParams.delete('page');
+    else url.searchParams.set('page', String(currentPage));
     var query = composing ? compositionQuery : searchInput.value;
     if (activeCat === 'leetcode' && query) url.searchParams.set('q', query);
     else url.searchParams.delete('q');
@@ -324,11 +417,23 @@
   function readView() {
     var url = new URL(location.href), category = url.searchParams.get('category');
     activeCat = categories.some(function(c) { return c.id === category; }) ? category : 'all';
+    var stage = url.searchParams.get('stage');
+    activeStage = stages.some(function(s) { return s.id === stage; }) ? stage : 'all';
+    var topic = url.searchParams.get('topic');
+    activeTopic = topic || 'all';
+    var parsedPage = Number.parseInt(url.searchParams.get('page') || '1', 10);
+    currentPage = Number.isFinite(parsedPage) && parsedPage > 0 ? parsedPage : 1;
     if (activeCat === 'leetcode') searchInput.value = url.searchParams.get('q') || '';
   }
   function selectCategory(id) {
     if (activeCat === id) return;
-    activeCat = id; saveView(true); renderChips(); renderCards();
+    activeCat = id; activeTopic = 'all'; currentPage = 1;
+    saveView(true); renderChips(); renderCards();
+  }
+  function selectTopic(key) {
+    if (activeTopic === key) return;
+    activeTopic = key; currentPage = 1;
+    saveView(true); renderCards();
   }
   function validateLessons(data) {
     var ids = new Set();
@@ -428,6 +533,15 @@
   });
   document.getElementById('retryLessons').addEventListener('click',function() {
     searchInput.focus(); loadLessons(); renderCards();
+  });
+  prevPage.addEventListener('click', function(){
+    if (currentPage <= 1) return;
+    currentPage -= 1; saveView(true); renderCards();
+    prevPage.focus();
+  });
+  nextPage.addEventListener('click', function(){
+    currentPage += 1; saveView(true); renderCards();
+    nextPage.focus();
   });
   window.addEventListener('popstate',function() { composing = false; readView(); renderChips(); renderCards(); });
   readView();
