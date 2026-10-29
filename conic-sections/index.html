@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="category" content="math"><meta name="stage" content="senior">
+<title>圆锥曲线</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="style.css">
+<script src="i18n.js"></script>
+</head>
+<body>
+<header class="site-head"><div class="head-main">
+<p class="backline"><a href="../" data-i18n="back"></a></p>
+<div class="badges"><span class="badge" data-i18n="catBadge"></span><span class="badge" data-i18n="stageBadge"></span></div>
+<h1 data-i18n="pageTitle"></h1><p class="tagline" data-i18n="tagline"></p>
+</div><div class="lang-toggle" id="langToggle" role="group" data-i18n-aria="languageLabel"><button type="button" data-lang="zh">中</button><button type="button" data-lang="en">EN</button></div></header>
+<nav class="step-nav" data-i18n-aria="navLabel"><a class="nav-step" href="#step0" data-nav="0" data-i18n="nav0"></a><a class="nav-step" href="#step1" data-nav="1" data-i18n="nav1"></a><a class="nav-step" href="#step2" data-nav="2" data-i18n="nav2"></a><a class="nav-step" href="#step3" data-nav="3" data-i18n="nav3"></a><a class="nav-step" href="#step4" data-nav="4" data-i18n="nav4"></a><a class="nav-step" href="#step5" data-nav="5" data-i18n="nav5"></a></nav>
+<main>
+<section class="step" id="step0" data-step="0"><div class="step-inner">
+<p class="step-kicker" data-i18n="s0k"></p><h2 data-i18n="s0t"></h2><p class="explain" data-i18n-html="s0e"></p>
+<div class="stage"><p class="stage-title" data-i18n="s0stage"></p><canvas id="s0-cv" height="340" tabindex="0" role="img" data-i18n-aria="s0canvas"></canvas></div>
+<div class="controls"><label for="s0-phi"><span><span data-i18n="s0phi"></span> <output id="s0-phi-o" for="s0-phi"></output></span><input id="s0-phi" data-step="0" type="range" min="0" max="90" step="1" value="90"></label></div>
+<p class="readout" id="s0-ro" aria-live="polite"></p><p class="readout" data-i18n="s0result"></p>
+</div></section>
+<section class="step" id="step1" data-step="1"><div class="step-inner">
+<p class="step-kicker" data-i18n="s1k"></p><h2 data-i18n="s1t"></h2><p class="explain" data-i18n-html="s1e"></p>
+<div class="stage"><p class="stage-title" data-i18n="s1stage"></p><canvas id="s1-cv" height="340" tabindex="0" role="img" data-i18n-aria="s1canvas"></canvas></div>
+<div class="controls"><label for="s1-e"><span><span data-i18n="s1elab"></span> <output id="s1-e-o" for="s1-e"></output></span><input id="s1-e" data-step="1" type="range" min="0" max="2.5" step="0.05" value="0.6"></label><label for="s1-p"><span><span data-i18n="s1p"></span> <output id="s1-p-o" for="s1-p"></output></span><input id="s1-p" data-step="1" type="range" min="-100" max="100" step="1" value="40"></label></div>
+<p class="readout" id="s1-ro" aria-live="polite"></p><p class="readout" data-i18n="s1result"></p>
+</div></section>
+<section class="step" id="step2" data-step="2"><div class="step-inner">
+<p class="step-kicker" data-i18n="s2k"></p><h2 data-i18n="s2t"></h2><p class="explain" data-i18n-html="s2e"></p>
+<div class="stage"><p class="stage-title" data-i18n="s2stage"></p><canvas id="s2-cv" height="320" tabindex="0" role="img" data-i18n-aria="s2canvas"></canvas></div>
+<div class="controls"><label for="s2-a"><span><span data-i18n="s2a"></span> <output id="s2-a-o" for="s2-a"></output></span><input id="s2-a" data-step="2" type="range" min="2" max="5" step="0.1" value="4"></label><label for="s2-c"><span><span data-i18n="s2c"></span> <output id="s2-c-o" for="s2-c"></output></span><input id="s2-c" data-step="2" type="range" min="0" max="7" step="0.1" value="2.5"></label><label for="s2-t"><span><span data-i18n="s2tlab"></span> <output id="s2-t-o" for="s2-t"></output></span><input id="s2-t" data-step="2" type="range" min="-100" max="100" step="1" value="0"></label></div>
+<div class="btn-row"><button type="button" class="btn" id="s2-clear" data-step="2" data-i18n="s2clear"></button></div>
+<p class="readout" id="s2-ro" aria-live="polite"></p><p class="readout" data-i18n="s2result"></p>
+</div></section>
+<section class="step" id="step3" data-step="3"><div class="step-inner">
+<p class="step-kicker" data-i18n="s3k"></p><h2 data-i18n="s3t"></h2><p class="explain" data-i18n-html="s3e"></p>
+<div class="stage"><p class="stage-title" data-i18n="s3stage"></p><canvas id="s3-cv" height="320" tabindex="0" role="img" data-i18n-aria="s3canvas"></canvas></div>
+<div class="controls"><label for="s3-mode"><span data-i18n="s3mode"></span><select id="s3-mode" data-step="3"></select></label><label for="s3-r"><span><span data-i18n="s3r"></span> <output id="s3-r-o" for="s3-r"></output></span><input id="s3-r" data-step="3" type="range" min="-100" max="100" step="1" value="40"></label><label for="s3-many" class="chk"><input id="s3-many" data-step="3" type="checkbox"> <span data-i18n="s3many"></span></label></div>
+<p class="readout" id="s3-ro" aria-live="polite"></p><p class="readout" data-i18n="s3result"></p>
+</div></section>
+<section class="step" id="step4" data-step="4"><div class="step-inner">
+<p class="step-kicker" data-i18n="s4k"></p><h2 data-i18n="s4t"></h2><p class="explain" data-i18n-html="s4e"></p>
+<div class="stage"><p class="stage-title" data-i18n="s4stage"></p><canvas id="s4-cv" height="340" tabindex="0" role="img" data-i18n-aria="s4canvas"></canvas></div>
+<div class="controls"><label for="s4-a"><span><span data-i18n="s4a"></span> <output id="s4-a-o" for="s4-a"></output></span><input id="s4-a" data-step="4" type="range" min="-3" max="3" step="0.1" value="1"></label><label for="s4-b"><span><span data-i18n="s4b"></span> <output id="s4-b-o" for="s4-b"></output></span><input id="s4-b" data-step="4" type="range" min="-3" max="3" step="0.1" value="0"></label><label for="s4-c"><span><span data-i18n="s4c"></span> <output id="s4-c-o" for="s4-c"></output></span><input id="s4-c" data-step="4" type="range" min="-3" max="3" step="0.1" value="1"></label><label for="s4-e"><span><span data-i18n="s4elab"></span> <output id="s4-e-o" for="s4-e"></output></span><input id="s4-e" data-step="4" type="range" min="-3" max="3" step="0.1" value="0"></label></div>
+<div class="btn-row"><button type="button" class="btn" id="s4-reset" data-step="4" data-i18n="s4reset"></button></div>
+<p class="readout" id="s4-ro" aria-live="polite"></p><p class="readout" data-i18n="s4result"></p>
+</div></section>
+<section class="step" id="step5" data-step="5"><div class="step-inner"><div class="finale">
+<p class="step-kicker" data-i18n="s5k"></p><h2 data-i18n="s5t"></h2><p class="explain" data-i18n="s5e"></p>
+<div class="cards3"><div class="value-card"><h3 data-i18n="f1t"></h3><p data-i18n="f1b"></p></div><div class="value-card"><h3 data-i18n="f2t"></h3><p data-i18n="f2b"></p></div><div class="value-card"><h3 data-i18n="f3t"></h3><p data-i18n="f3b"></p></div></div>
+<h3 class="model-h" data-i18n="modelT"></h3><p data-i18n="model1"></p><p data-i18n="model2"></p><p data-i18n="model3"></p>
+<h3 class="model-h" data-i18n="nextT"></h3>
+<div class="links"><a href="../parabola/#step0" data-i18n="l1"></a><a href="../eigen/#step4" data-i18n="l2"></a><a href="../circle-angles/#step0" data-i18n="l3"></a></div>
+</div></div></section>
+</main><footer class="site-foot" data-i18n="foot"></footer>
+<script src="app.js"></script>
+</body></html>

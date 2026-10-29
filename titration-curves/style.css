@@ -1,0 +1,45 @@
+:root{--canvas:#0a0e14;--surface:#111925;--stage:#0d1520;--ink:#eaf4f8;--muted:#a8bac4;--link:#67d7f9;--primary:#67d7f9;--selected:#f6a45b;--success:#74dfaa;--border:#294052;--radius:14px;--gutter:clamp(16px,4vw,42px);--max:980px;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--canvas);color:var(--ink);line-height:1.65;overflow-x:hidden}
+a{color:var(--link)}
+button,input,select{font:inherit}
+button{color:var(--ink);background:#172536;border:1px solid #36536a;border-radius:10px;min-height:44px;padding:8px 14px;cursor:pointer}
+button:hover,button.active{border-color:var(--primary);background:#1c4053}
+button:focus-visible,a:focus-visible,input:focus-visible,canvas:focus-visible{outline:3px solid var(--selected);outline-offset:3px}
+.site-head{max-width:var(--max);margin:auto;padding:28px var(--gutter) 18px;display:flex;justify-content:space-between;gap:20px}
+.site-head>div:first-child{min-width:0}
+.backline{margin:0 0 10px}
+.badges{display:flex;gap:8px;flex-wrap:wrap}
+.badge{font-size:.78rem;color:var(--link);border:1px solid var(--border);border-radius:999px;padding:2px 9px}
+h1{font-size:clamp(1.8rem,5vw,3rem);line-height:1.12;margin:14px 0 8px;background:linear-gradient(90deg,#67d7f9,#f6a45b);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+h2{font-size:clamp(1.3rem,3vw,1.9rem);line-height:1.2;margin:8px 0 12px}
+.tagline{color:var(--muted);max-width:680px;margin:0}
+.lang-toggle{display:flex;align-items:flex-start;gap:4px;flex:0 0 auto}
+.lang-toggle button{min-height:40px;padding:6px 12px;border-radius:8px}
+.step-nav{position:sticky;top:0;z-index:5;background:rgba(10,14,20,.95);border-block:1px solid var(--border);display:flex;gap:6px;overflow-x:auto;padding:8px max(var(--gutter),calc((100% - var(--max))/2));scrollbar-width:thin}
+.step-nav a{white-space:nowrap;text-decoration:none;padding:6px 10px;border-radius:8px;color:var(--muted);border:1px solid transparent}
+.step-nav a.active{background:#183745;color:var(--ink);border-color:var(--primary)}
+main{max-width:var(--max);margin:auto}
+.step{padding:48px var(--gutter);border-bottom:1px solid #182532;scroll-margin-top:56px}
+.step-inner{max-width:860px;margin:auto}
+.step-kicker{color:var(--primary);font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;margin:0}
+.explain{color:#d3e1e7;max-width:800px}
+.explain strong,.task strong{color:var(--selected);font-weight:600}
+.task{color:var(--muted);font-size:.95rem;margin:6px 0 12px;padding-left:12px;border-left:3px solid var(--selected)}
+.stage{background:var(--stage);border:1px solid var(--border);border-radius:var(--radius);padding:8px;overflow:hidden}
+.stage canvas{display:block;width:100%;touch-action:manipulation;border-radius:8px}
+.controls{display:flex;flex-wrap:wrap;gap:12px 24px;margin-top:14px}
+.controls label{flex:1 1 220px;color:var(--muted);display:flex;flex-direction:column;gap:4px;font-size:.95rem}
+.controls output{color:var(--primary);font-weight:600}
+.controls input[type=range]{width:100%;accent-color:var(--primary);height:28px}
+.btn-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.btn-row .primary{background:#1e5b70;border-color:var(--primary)}
+.readout,.hint{margin:14px 0 0;padding:12px 15px;border-left:3px solid var(--primary);background:#101d2a;overflow-wrap:anywhere}
+.readout b{color:var(--selected)}
+.readout.ok{border-color:var(--success)}
+.model-card,.links,.quiz{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:16px 18px;margin-top:16px}
+.model-card h3,.links h3,.quiz h3{margin:0 0 8px;font-size:1.05rem}
+.links ul{margin:0;padding-left:20px}.links li{margin:6px 0}
+.site-foot{text-align:center;color:var(--muted);padding:28px 16px 40px;font-size:13px}
+@media(max-width:520px){.site-head{padding-top:20px;flex-direction:column}.lang-toggle{order:-1;align-self:flex-end}.step{padding-block:34px}.btn-row button{flex:1 1 130px}.step-nav{padding-inline:10px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
