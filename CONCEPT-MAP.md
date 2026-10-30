@@ -175,6 +175,16 @@ The LeetCode lesson links back to `sorting/#step0` (growth and Big O) and
 | 126 | 勒夏特列：体系抵抗扰动 / Le Chatelier: the system pushes back | chemical-equilibrium#step2 | 平衡时加料，净变化方向由模拟计数实算，体系在新水平重新走平 |
 | 127 | 速率 = 成功碰撞的次数 / Rate means counting successful collisions | reaction-rates#step0 | 成功与失败碰撞分开计数实测，碰上但能量不足不算数 |
 | 128 | 催化剂是降门槛，不是催快粒子 / A catalyst lowers the bar, not the speed | reaction-rates#step4 | 降阈值时粒子平均速率不变（实测读数），达标比例上升——与升温改分布对照 |
+| 129 | 股票 = 公司的一小份所有权 / A stock is a small slice of ownership | stocks-bonds#step1 | 份数/价格滑杆：拥有份额、分红与价格波动，股东拿剩余 |
+| 130 | 债券 = 借条，票息 + 到期还本 / A bond is an IOU: coupons plus principal at maturity | stocks-bonds#step2 | 票息率/年数滑杆；清偿顺序上债主先于股东（step3） |
+| 131 | 风险看散开程度：方差 / Risk reads as spread: variance | risk-return#step1 | 波动幅度滑杆：散开越大，结局越不确定 |
+| 132 | 风险溢价：承担波动要更高承诺回报 / Risk premium: bearing wobble demands a higher promised return | risk-return#step3 | B 平均回报滑杆；承诺不等于到手（step4） |
+| 133 | 相关性定组合波动，不是数量 / Correlation sets portfolio wobble, not count | diversification#step1 | ρ=−1/0/1 滑杆：等权重组合波动随相关性变化 |
+| 134 | 投资分散 ≠ 保险分摊：前者看低相关、后者看独立 / Diversification ≠ insurance pooling: low correlation vs independence | diversification#step3 | 1/√N 直觉相通、机制不同，不重复推导 |
+| 135 | 费率从收益率里扣：A = P(1+r−f)ᵗ / Fees come out of the return: A = P(1+r−f)ᵗ | fees-compounding#step1 | 费率滑杆；1% × 30 年约吃四分之一终值（step2） |
+| 136 | 读费率读年比例 / Read a fee as an annual percentage | fees-compounding#step4 | 0.1% 步进滑杆；只教读法，不推荐产品 |
+| 137 | 贴现：PV = FV/(1+r)ᵗ / Discounting: PV = FV/(1+r)ᵗ | interest-rates-bonds#step1 | 未来的钱折成今天的价值；不另建现值页 |
+| 138 | 利率升、债价跌：新买家要新利率 / Rates up, bond prices down: new buyers demand the new rate | interest-rates-bonds#step3 | 新利率滑杆；期限越长越敏感（step4 定性） |
 
 ---
 
@@ -1735,6 +1745,15 @@ Atlas ordinary route `optics` connects existing unit-circle to one canonical `sn
 | 声音是波 · 看见自己的声音 / Sound Is a Wave · Seeing Your Own Voice | sound-waves#step0 | 声音是波 · 看见自己的声音 |
 | 泰勒级数 · 把曲线一项项贴上去 / Taylor Series · Patch the Curve Term by Term | taylor-series#step0 | 泰勒级数 · 把曲线一项项贴上去 |
 | 向量 · 有方向的量 / Vectors · Quantities With a Direction | vectors#step0 | 向量 · 有方向的量 |
+
+## 投资图谱（2026-10-30，首批）
+
+投资知识地图在 `atlas-investment/`：12 概念、22 联系、5 问题路线、5 分区
+（基础概念 / 市场与工具 / 风险 / 估值 / 行为；行为分区首批为空，如实显示
+“即将到来”）。每题沿问题链走进对应交互课（step 锚点见主表 129–138 行）；
+主图谱节点（复利、方差、风险分摊、供需、概率）以跨图深链引用，不在投资图内
+复制节点。许可：定义本站原创，Investor.gov 仅术语对照，OpenStax / Saylor /
+Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `atlas-investment/sources.html`。
 
 <!-- GENERATED:atlas-nodes -->
 ## 三、图谱节点索引（生成，勿手改）

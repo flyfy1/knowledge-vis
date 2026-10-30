@@ -31,7 +31,8 @@ window.KNOWLEDGE_CATEGORIES = [
   { id: "psychology",  name: { zh: "心理与认知", en: "Psychology & Cognition" } },
   { id: "language",    name: { zh: "语言与语言学", en: "Language & Linguistics" } },
   { id: "earth",       name: { zh: "地球与太空", en: "Earth & Space" } },
-  { id: "leetcode",    name: { zh: "LeetCode 专区", en: "LeetCode" } }
+  { id: "leetcode",    name: { zh: "LeetCode 专区", en: "LeetCode" } },
+  { id: "investment",  name: { zh: "投资", en: "Investment" } }
 
 ];
 
@@ -1997,6 +1998,48 @@ window.KNOWLEDGE_PAGES = [
     desc: { zh: "力的合成是箭头首尾相接，坐标里加法就是分量各自相加；点积让两个箭头“投影”出一个数。", en: "Combining forces is joining arrows head to tail; in coordinates, addition just adds the components; the dot product turns two arrows’ “projection” into a number." },
     tags: [{ zh: "数学基础", en: "Mathematical Foundations" }],
     category: "math", stage: "senior", status: "live", path: "vectors/"
+  },
+  {
+    slug: "stocks-bonds",
+    title: { zh: "股票与债券 · 买到的到底是什么", en: "Stocks & Bonds · What Do You Actually Buy" },
+    desc: { zh: "买股票是买下公司的一小份所有权，买债券是借钱给它收利息；公司出问题时，债主先、股东后。", en: "Buying a stock buys a small slice of ownership; buying a bond lends money for interest — and if the company fails, lenders are paid before shareholders." },
+    tags: [{ zh: "投资", en: "Investment" }],
+    category: "investment", stage: "junior", status: "live", path: "stocks-bonds/"
+  },
+  {
+    slug: "risk-return",
+    title: { zh: "风险与回报 · 为什么风险大承诺回报高", en: "Risk & Return · Why Do Riskier Things Usually Promise More" },
+    desc: { zh: "波动大的东西必须承诺更高回报才有人愿意承担；但承诺不等于到手，分布比平均数更诚实。", en: "Volatile options must promise more to attract takers — but a promise is not a payout; the distribution is more honest than the average." },
+    tags: [{ zh: "投资", en: "Investment" }],
+    category: "investment", stage: "junior", status: "live", path: "risk-return/"
+  },
+  {
+    slug: "diversification",
+    title: { zh: "分散投资 · 为什么不把鸡蛋放一个篮子里", en: "Diversification · Why Not Put All Eggs in One Basket" },
+    desc: { zh: "组合波动看的是资产之间的相关性，不是数量；十只同涨同跌的资产约等于一只。", en: "A portfolio's wobble depends on how its assets move together, not how many there are; ten assets moving as one behave like one." },
+    tags: [{ zh: "投资", en: "Investment" }],
+    category: "investment", stage: "junior", status: "live", path: "diversification/"
+  },
+  {
+    slug: "fees-compounding",
+    title: { zh: "费率与复利 · 1% 的费率怎么吃掉回报", en: "Fees & Compounding · How Does a 1% Fee Eat Returns" },
+    desc: { zh: "费率从收益率里扣，1% 乘上 30 年复利，能吃掉约四分之一终值。", en: "A fee comes out of the return every year; 1% compounded over 30 years eats roughly a quarter of the final value." },
+    tags: [{ zh: "投资", en: "Investment" }],
+    category: "investment", stage: "senior", status: "live", path: "fees-compounding/"
+  },
+  {
+    slug: "interest-rates-bonds",
+    title: { zh: "利率与债券 · 利率升为什么债价跌", en: "Interest Rates & Bonds · Why Do Bond Prices Fall When Rates Rise" },
+    desc: { zh: "债券是一串未来现金流，利率升了、折现重了，老债券就必须降价才卖得掉。", en: "A bond is a stream of future cash; when rates rise, discounting gets heavier, so an old bond must drop in price to sell." },
+    tags: [{ zh: "投资", en: "Investment" }],
+    category: "investment", stage: "senior", status: "live", path: "interest-rates-bonds/"
+  },
+  {
+    slug: "atlas-investment",
+    title: { zh: "投资知识地图", en: "Investment Atlas" },
+    desc: { zh: "投资的 12 个概念、22 条联系、5 条问题路线：从基础概念、市场与工具、风险、估值到行为，沿问题链走进对应的交互讲解。", en: "12 investment concepts, 22 connections, 5 question routes across foundations, markets, risk, valuation, and behavior — follow a question into its interactive lesson." },
+    tags: [{ zh: "概念关系", en: "Concept Connections" }, { zh: "探索路线", en: "Exploration Routes" }],
+    category: "investment", stage: "university", status: "live", path: "atlas-investment/"
   }
 
 ];
