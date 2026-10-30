@@ -1,0 +1,59 @@
+{
+ "slug": "mechanism-auction",
+ "conceptId": "mechanism-auction",
+ "group": "society",
+ "title": {
+  "zh": "机制设计与拍卖 · 报价如何改变结果",
+  "en": "Mechanism Design & Auctions · How Bids Change Outcomes"
+ },
+ "description": {
+  "zh": "机制是给博弈定规则：同一群人、同一件物品，换一条成交规则，报价与结果全变。第一价收最高报价，第二价收第二高报价——后者让说真话不再吃亏。",
+  "en": "A mechanism sets the rules for a game: same people, same item, a different settlement rule, and bids and outcome all change. First-price takes the top bid, second-price takes the runner-up — and the latter makes truth-telling cost nothing."
+ },
+ "source": "../mechanism-auction/#s1",
+ "edges": [
+  {
+   "from": "auctions",
+   "to": "mechanism-auction",
+   "type": "foundation",
+   "label": {
+    "zh": "拍卖是机制的一个实例",
+    "en": "An auction is one instance of a mechanism"
+   },
+   "reason": {
+    "zh": "拍卖页讲出价与成交，机制页追问规则本身：同一群人、同一件物品，换一条成交规则，报价与结果全变。",
+    "en": "The auction page covers bids and sales; the mechanism page asks about the rule itself: same people, same item, a different settlement rule, and bids and outcome all change."
+   },
+   "source": "../mechanism-auction/#s1"
+  },
+  {
+   "from": "mechanism-auction",
+   "to": "game-theory",
+   "type": "foundation",
+   "label": {
+    "zh": "报价行为要用博弈来读",
+    "en": "Bidding behavior reads as a game"
+   },
+   "reason": {
+    "zh": "每个竞标者都按私人价值算计着报，机制设计就是给这场算计定规则——报价不是随手写的数，是博弈里的策略。",
+    "en": "Every bidder calculates from private value, so mechanism design is rule-setting for that calculation — a bid is not a number written casually, it is a strategy in a game."
+   },
+   "source": "../mechanism-auction/#s0"
+  },
+  {
+   "from": "mechanism-auction",
+   "to": "prisoners-dilemma",
+   "type": "connection",
+   "label": {
+    "zh": "第二价让说真话不再吃亏",
+    "en": "Second-price makes truth-telling cost nothing"
+   },
+   "reason": {
+    "zh": "第一价里人人压价藏真实价值，像囚徒困境里各自算计；第二价收第二高报价，说真话不再吃亏，规则改写了博弈的 payoff。",
+    "en": "Under first-price everyone shades their true value, calculating like prisoners in a dilemma; second-price charges the runner-up bid, so truth-telling stops costing anything — the rule rewrites the game's payoff."
+   },
+   "source": "../mechanism-auction/#s1"
+  }
+ ],
+ "routes": []
+}

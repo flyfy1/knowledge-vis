@@ -1,0 +1,99 @@
+{
+ "slug": "probability-distribution",
+ "conceptId": "probability-distribution",
+ "group": "measurement",
+ "title": {
+  "zh": "概率分布 · 随机性也有形状",
+  "en": "Probability Distributions · Randomness Has a Shape"
+ },
+ "description": {
+  "zh": "每个结果的概率排成条形，就是分布：条形高度是 P(X=x)，全部加起来等于 1。条形的重心是期望 E[X]，条形离重心的加权平方距离是方差；右尾的面积回答“至少这么大”的概率。",
+  "en": "Probabilities arranged by outcome form a distribution: each bar's height is P(X=x), and all bars sum to 1. The bars' balance point is the expectation E[X]; their probability-weighted squared distance from it is the variance, and the right tail's area answers 'at least this big'."
+ },
+ "formula": "E[X] = Σ x·P(X=x)",
+ "source": "../probability-distribution/#step0",
+ "edges": [
+  {
+   "from": "probability",
+   "to": "probability-distribution",
+   "type": "foundation",
+   "label": {
+    "zh": "概率排成条形就是分布",
+    "en": "Probabilities lined up are a distribution"
+   },
+   "reason": {
+    "zh": "每个结果的概率就是一根条形的高度，全部条形加起来等于 1——分布不是新概念，是把概率按结果排成的形状。",
+    "en": "Each outcome's probability is one bar's height, and all bars sum to 1 — a distribution is not a new idea, it is probabilities arranged by outcome."
+   },
+   "source": "../probability-distribution/#step0"
+  },
+  {
+   "from": "probability-distribution",
+   "to": "gaussian",
+   "type": "representation",
+   "label": {
+    "zh": "条形变细变多，趋向钟形曲线",
+    "en": "Finer, more numerous bars tend toward the bell curve"
+   },
+   "reason": {
+    "zh": "对称预设的条形已经是钟形；把条形变细、变多，离散的分布就趋向连续的高斯曲线——同一随机现象，两种表示。",
+    "en": "The symmetric preset's bars already form a bell; make the bars finer and more numerous and the discrete distribution tends toward the continuous Gaussian curve — one phenomenon, two representations."
+   },
+   "source": "../probability-distribution/#step0"
+  },
+  {
+   "from": "probability-distribution",
+   "to": "variance",
+   "type": "application",
+   "label": {
+    "zh": "方差就是从分布里算出来的离散程度",
+    "en": "Variance is the spread computed from the distribution"
+   },
+   "reason": {
+    "zh": "方差不是凭空来的数：拿分布的每根条形，按概率加权平均它离重心的平方距离，就得到方差。",
+    "en": "Variance is not a number from nowhere: take every bar of the distribution, average its squared distance from the balance point weighted by probability, and you get variance."
+   },
+   "source": "../probability-distribution/#step2"
+  }
+ ],
+ "routes": [
+  {
+   "title": {
+    "zh": "随机性为什么有形状？",
+    "en": "Why does randomness have a shape?"
+   },
+   "nodes": [
+    "probability",
+    "probability-distribution",
+    "gaussian"
+   ],
+   "prompts": [
+    {
+     "node": "probability",
+     "ask": {
+      "zh": "每个结果的概率都已知时，把它们按结果排成一排，会看到什么？",
+      "en": "When every outcome's probability is known, what do you see if you line them up by outcome?"
+     }
+    },
+    {
+     "node": "probability-distribution",
+     "ask": {
+      "zh": "条形的高度、重心、离散程度各由什么决定？右尾的面积回答什么问题？",
+      "en": "What decides the bars' heights, balance point, and spread? What question does the right tail's area answer?"
+     }
+    },
+    {
+     "node": "gaussian",
+     "ask": {
+      "zh": "把条形变细变多，对称分布会趋向什么形状？为什么说那是同一现象的连续表示？",
+      "en": "As the bars get finer and more numerous, what shape does a symmetric distribution tend toward, and why is that the continuous representation of the same phenomenon?"
+     }
+    }
+   ],
+   "reveal": {
+    "zh": "每个结果的概率排成条形，就是分布。条形的重心是期望，条形离重心的加权平方距离是方差。",
+    "en": "Probabilities arranged by outcome form a distribution. The bars' balance point is the expectation, and their probability-weighted squared distance from it is the variance."
+   }
+  }
+ ]
+}
