@@ -687,6 +687,157 @@
      }
     ]
    }
+  },
+  {
+   "id": "game-theory",
+   "group": "society",
+   "title": {
+    "zh": "博弈论",
+    "en": "Game theory"
+   },
+   "description": {
+    "zh": "把一次互动写成一张表：每格是双方同时出的招、各自的得分。先找占优策略——不管对手出什么都最划算的那招；再找纳什均衡——谁单独换招都不会更好。拍卖、公地、囚徒困境都是同一张表的不同填法。",
+    "en": "Write one interaction as a table: each cell holds both sides' simultaneous moves and their scores. First find dominant strategies — moves that pay best no matter what the rival does; then Nash equilibria — where neither side improves by switching alone. Auctions, the commons and the prisoner's dilemma are the same table filled in differently."
+   },
+   "source": "../game-theory/#step0"
+  },
+  {
+   "id": "climate-energy",
+   "group": "earth",
+   "title": {
+    "zh": "气候能量账本",
+    "en": "Climate energy budget"
+   },
+   "description": {
+    "zh": "阳光进来、红外出去，两边账要平：大气二氧化碳加厚，等于给出去的路加了道关卡，出少于进，地表就升温攒热量。气候问题本质是能量收支账，不是单日冷暖。",
+    "en": "Sunlight comes in, infrared goes out, and the two sides must balance: thicker atmospheric CO₂ puts a checkpoint on the way out, so out falls short of in and the surface warms as heat accumulates. Climate is an energy-budget ledger, not a single day's weather."
+   },
+   "source": "../climate-energy/#step2"
+  },
+  {
+   "id": "gradient-descent",
+   "group": "systems",
+   "title": {
+    "zh": "梯度下降",
+    "en": "Gradient descent"
+   },
+   "description": {
+    "zh": "沿着斜率往下走：每步算损失对每个参数的斜率，参数就往斜率的反方向挪一小步，步长叫学习率。步子太大来回震荡、太小走不到底；一次只看一批数据的叫小批量，是算力与稳定的折中。",
+    "en": "Walk downhill along the slope: each step computes the loss's slope for every parameter, and each parameter moves a small step against the slope; the step size is the learning rate. Too big a step oscillates, too small never arrives; looking at one batch at a time is the mini-batch compromise between compute and stability."
+   },
+   "formula": "θ ← θ − α∇J",
+   "source": "../gradient-descent/#step0"
+  },
+  {
+   "id": "photosynthesis",
+   "group": "life",
+   "title": {
+    "zh": "光合作用",
+    "en": "Photosynthesis"
+   },
+   "description": {
+    "zh": "阳光供能，把水和二氧化碳拼成糖、放出氧气：一笔原子账，进来 6 个 CO₂ 加 6 个水，出去 1 个葡萄糖加 6 个氧气。光越强开工越快但有上限，二氧化碳不够时光再强也白搭。",
+    "en": "Sunlight powers assembling water and carbon dioxide into sugar and releasing oxygen — an atom ledger: 6 CO₂ plus 6 waters in, 1 glucose plus 6 oxygens out. Stronger light speeds work up to a ceiling, and when CO₂ runs short extra light is wasted."
+   },
+   "formula": "6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂",
+   "source": "../photosynthesis/#step1"
+  },
+  {
+   "id": "supply-demand",
+   "group": "society",
+   "title": {
+    "zh": "供需均衡",
+    "en": "Supply & demand equilibrium"
+   },
+   "description": {
+    "zh": "买方愿买量随价跌而增、卖方愿卖量随价涨而增，两条曲线交点就是均衡价格：两边都愿意交易的量。价格变化是沿曲线移动，偏好、收入、技术变了才是整条曲线移动。",
+    "en": "Buyers want more as price falls, sellers want more as price rises, and where the two curves cross is the equilibrium price — the quantity both sides plan to trade. A price change moves along a curve; changed tastes, incomes or technology shift the whole curve."
+   },
+   "formula": "Qd = Qs",
+   "source": "../supply-demand/#step0"
+  },
+  {
+   "id": "binary-search",
+   "group": "computing",
+   "title": {
+    "zh": "二分查找",
+    "en": "Binary search"
+   },
+   "description": {
+    "zh": "在有序表里找数：先看中间，目标小了往左半找、大了往右半找，每步砍掉一半。n 个数最多约 log₂n 步；无序就没法砍半，只能一个个看。",
+    "en": "Finding a number in a sorted list: look at the middle, go left if the target is smaller, right if bigger, cutting half away each step. n items take about log₂n steps at most; unsorted, halving is impossible and you can only scan one by one."
+   },
+   "formula": "steps ≈ log₂n",
+   "source": "../binary-search/#step0"
+  },
+  {
+   "id": "exp-log",
+   "group": "math",
+   "title": {
+    "zh": "指数与对数",
+    "en": "Exponents & logarithms"
+   },
+   "description": {
+    "zh": "指数是连乘的简写：2¹⁰ 就是 10 个 2 相乘；对数反过来问，多少次连乘才到这个数——log₂1024 = 10，因为 10 次翻倍到 1024。指数长得快、对数长得慢，同一枚硬币的两面。",
+    "en": "An exponent is shorthand for repeated multiplication: 2¹⁰ is ten 2s multiplied; a logarithm asks the reverse — how many multiplications reach this number — so log₂1024 = 10, because ten doublings reach 1024. Exponents grow fast, logarithms grow slowly: two sides of one coin."
+   },
+   "formula": "log_b(bˣ) = x",
+   "source": "../exp-log/#step2"
+  },
+  {
+   "id": "graph-algorithms",
+   "group": "computing",
+   "title": {
+    "zh": "图算法",
+    "en": "Graph algorithms"
+   },
+   "description": {
+    "zh": "把问题画成点和边，再按规则走：点是地点或状态，边是连接、权重是代价。最短路、PageRank、遍历都是同一套画法换不同规则：每次确认什么、按什么顺序展开，决定了算出什么。",
+    "en": "Draw a problem as vertices and edges, then walk by a rule: vertices are places or states, edges are links, weights are costs. Shortest paths, PageRank and traversals are the same drawing with different rules — what you settle each time, and in what order, decides what you compute."
+   },
+   "source": "../graph-algorithms/#step1"
+  },
+  {
+   "id": "hashing",
+   "group": "computing",
+   "title": {
+    "zh": "哈希",
+    "en": "Hashing"
+   },
+   "description": {
+    "zh": "把任意长的数据压成固定长的指纹：同一个输入永远得到同一串输出，输出改一位、输入面目全非也看不出规律。反过来从指纹倒推原文不可行——这就是单向：正向便宜、反向昂贵，RSA 的锁芯也是同一思想。",
+    "en": "Squeezing any-length data into a fixed-length fingerprint: the same input always gives the same output, and changing one output bit reveals nothing about the input. Reversing a fingerprint back to the original is infeasible — that is one-way: cheap forward, expensive backward, the same idea as RSA's lock."
+   },
+   "formula": "h: {0,1}* → {0,1}^n",
+   "source": "../hashing/#step0"
+  },
+  {
+   "id": "estimate",
+   "group": "measurement",
+   "title": {
+    "zh": "估计与不确定度",
+    "en": "Estimation & uncertainty"
+   },
+   "description": {
+    "zh": "从读数反推真值：终点读数、刻度、重复测量都有误差，所以估计永远是“数值 ± 不确定度”。不确定度不是错误，是诚实标出这把尺子的可信范围；多测几次平均，不确定度随 1/√n 缩小。",
+    "en": "Working backwards from readings to the true value: end-point readings, scales and repeats all carry error, so an estimate is always \"value ± uncertainty\". Uncertainty is not a mistake — it honestly marks how far this ruler can be trusted; averaging repeats shrinks it like 1/√n."
+   },
+   "formula": "x̂ = x ± Δx",
+   "source": "../titration-curves/#step4"
+  },
+  {
+   "id": "velocity-vt",
+   "group": "waves",
+   "title": {
+    "zh": "速度–时间图",
+    "en": "Velocity–time graphs"
+   },
+   "description": {
+    "zh": "速度–时间图：曲线上每点的纵坐标就是那一刻的速度，斜率是加速度，曲线下面积是位移。斜率为正速度在变大、为零速度不变；面积带符号，往回走的那段要减掉。",
+    "en": "A velocity–time graph: each point's height is the velocity at that instant, the slope is acceleration, and the area under the curve is displacement. Positive slope means speeding up, zero slope means steady speed; area carries a sign, so the way-back stretch subtracts."
+   },
+   "formula": "slope = a, area = Δx",
+   "source": "../velocity-vt/#step1"
   }
  ],
  "edges": [

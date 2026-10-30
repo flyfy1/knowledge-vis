@@ -55,6 +55,20 @@
     "en": "The binomial is an instance of independent variances adding: each trial has variance p(1−p), so n trials give np(1−p)."
    },
    "source": "../binomial-normal/#step2"
+  },
+  {
+   "from": "gaussian",
+   "to": "probability",
+   "type": "representation",
+   "label": {
+    "zh": "曲线高度就是概率密度",
+    "en": "Curve height is probability density"
+   },
+   "reason": {
+    "zh": "正态曲线每点的高度是概率密度，曲线下面积等于概率——钟形本身就是一种概率分布的画像。",
+    "en": "At each point the normal curve's height is a probability density and area under it equals probability — the bell itself is a portrait of a probability distribution."
+   },
+   "source": "../binomial-normal/#step3"
   }
  ],
  "routes": [
@@ -67,7 +81,34 @@
     "binomial-normal",
     "gaussian",
     "probability"
-   ]
+   ],
+   "prompts": [
+    {
+     "node": "binomial-normal",
+     "ask": {
+      "zh": "n 次独立试验恰好 k 次成功的概率怎么算？均值和方差是多少？",
+      "en": "How do you compute the chance of exactly k successes in n independent trials? What are its mean and variance?"
+     }
+    },
+    {
+     "node": "gaussian",
+     "ask": {
+      "zh": "n 增大时，二项柱状图贴近什么样的曲线？“同均值同标准差”是什么意思？",
+      "en": "As n grows, what curve do the binomial bars hug? What does “same mean and same spread” mean?"
+     }
+    },
+    {
+     "node": "probability",
+     "ask": {
+      "zh": "钟形曲线的高度代表什么？曲线下的面积为什么等于概率？",
+      "en": "What does the height of the bell curve stand for? Why does area under the curve equal probability?"
+     }
+    }
+   ],
+   "reveal": {
+    "zh": "由杨辉三角数路径得到二项分布，均值 np、方差 np(1−p)。n 增大时它贴近同均值同标准差的正态曲线，连续性修正补上离散与连续的缝隙。",
+    "en": "Counting paths in Pascal's triangle gives the binomial with mean np and variance np(1−p). As n grows it hugs the normal curve of the same mean and spread, with a continuity correction bridging the discrete-to-continuous gap."
+   }
   }
  ]
 }

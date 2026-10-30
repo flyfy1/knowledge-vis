@@ -1758,7 +1758,7 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `atlas-i
 <!-- GENERATED:atlas-nodes -->
 ## 三、图谱节点索引（生成，勿手改）
 
-140 个概念 · 220 条关系 · 10 个分区 · 由 scripts/build-atlas-data.cjs --concept-map 生成。节点排序与 data.js 一致（分区序、学段序、order、id）。
+151 个概念 · 244 条关系 · 10 个分区 · 由 scripts/build-atlas-data.cjs --concept-map 生成。节点排序与 data.js 一致（分区序、学段序、order、id）。
 
 ### 01 数学基础 / Mathematical tools
 
@@ -1783,6 +1783,7 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `atlas-i
 | 圆锥曲线 / Conic sections | ../conic-sections/#step1 | conic-sections#step1 |
 | 排列与组合 / Permutations & combinations | ../counting-permutations/#step3 | counting-permutations#step3 |
 | 导数与瞬时变化率 / Derivatives & instantaneous rates | ../derivative/#step2 | derivative#step2 |
+| 指数与对数 / Exponents & logarithms | ../exp-log/#step2 | exp-log#step2 |
 | 期望 / Expected value | ../expected-value/#step1 | expected-value#step1 |
 | 定积分与有符号累加 / Definite integral & signed accumulation | ../integral/#step2 | integral#step2 |
 | 同分异构体 / Isomers | ../isomers/#step1 | isomers#step1 |
@@ -1813,6 +1814,7 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `atlas-i
 | 压强 / Pressure | ../pressure/#step0 | pressure#step0 |
 | Snell关系与全反射 / Snell relation & total internal reflection | ../reflection-refraction/#snell-bridge | reflection-refraction |
 | 声音是波 / Sound Is a Wave | ../sound-waves/#step1 | sound-waves#step1 |
+| 速度–时间图 / Velocity–time graphs | ../velocity-vt/#step1 | velocity-vt#step1 |
 | 多普勒效应 / The Doppler effect | ../doppler-effect/#step2 | doppler-effect#step2 |
 | 叠加与干涉 / Superposition & interference | ../interference/#step1 | interference#step1 |
 | 牛顿运动定律 / Newton’s Laws of Motion | ../newton-laws/#step2 | newton-laws#step2 |
@@ -1873,6 +1875,7 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `atlas-i
 | 卷积 / Convolution | ../convolution/#step2 | convolution#step2 |
 | 反馈控制 / Feedback control | ../control/#step2 | control#step2 |
 | 频率响应 / Frequency response | ../freqresp/#step0 | freqresp#step0 |
+| 梯度下降 / Gradient descent | ../gradient-descent/#step0 | gradient-descent#step0 |
 | 冲激响应 / Impulse response | ../lti/#step2 | lti#step2 |
 | 线性时不变系统 / LTI systems | ../lti/#step3 | lti#step3 |
 | 微分方程相图 / ODE Phase Portraits | ../ode-phase-portraits/#step2 | ode-phase-portraits#step2 |
@@ -1891,6 +1894,7 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `atlas-i
 | 密度 / Density | ../density/#step2 | density#step2 |
 | 平均数、中位数、众数之争 · 三个“平均”三个故事 / Mean, Median, Mode · Three “Averages”, Three Stories | ../mean-median-mode/#step1 | mean-median-mode#step1 |
 | 二项分布到正态 / Binomial to normal | ../binomial-normal/#step3 | binomial-normal#step3 |
+| 估计与不确定度 / Estimation & uncertainty | ../titration-curves/#step4 | titration-curves#step4 |
 | 减数分裂与配子多样性 / Meiosis and gamete diversity | ../meiosis/#step2 | meiosis#step2 |
 | 自然选择与遗传漂变 / Natural selection and genetic drift | ../natural-selection/#step2 | natural-selection#step2 |
 | 回归与相关 / Regression & Correlation | ../regression-correlation/#step1 | regression-correlation#step1 |
@@ -1926,6 +1930,7 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `atlas-i
 | --- | --- | --- |
 | 血液循环 / Blood circulation | ../blood-circulation/#step3 | blood-circulation#step3 |
 | 食物网 / Food webs | ../food-web/#step1 | food-web#step1 |
+| 光合作用 / Photosynthesis | ../photosynthesis/#step1 | photosynthesis#step1 |
 
 ### 08 地球与宇宙 / Earth & cosmos
 
@@ -1937,17 +1942,23 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `atlas-i
 | 地球公转与四季 / Earth's orbit & the seasons | ../seasons-orbit/#step2 | seasons-orbit#step2 |
 | 大气环流与季风 / Atmospheric circulation & monsoons | ../atmospheric-circulation/#step2 | atmospheric-circulation#step2 |
 | 碳循环 / The carbon cycle | ../carbon-cycle/#step2 | carbon-cycle#step2 |
+| 气候能量账本 / Climate energy budget | ../climate-energy/#step2 | climate-energy#step2 |
 
 ### 09 计算与智能 / Computing & AI
 
 | 概念 | 来源 | 课程 |
 | --- | --- | --- |
+| 二分查找 / Binary search | ../binary-search/#step0 | binary-search#step0 |
 | CNN 特征图 / CNN feature maps | ../cnn-feature-maps/#step0 | cnn-feature-maps#step0 |
+| 图算法 / Graph algorithms | ../graph-algorithms/#step1 | graph-algorithms#step1 |
+| 哈希 / Hashing | ../hashing/#step0 | hashing#step0 |
 
 ### 10 经济与社会 / Economy & society
 
 | 概念 | 来源 | 课程 |
 | --- | --- | --- |
 | 拍卖：报价与真话 / Auctions: bidding and telling the truth | ../auctions/#step2 | auctions#step2 |
+| 博弈论 / Game theory | ../game-theory/#step0 | game-theory#step0 |
+| 供需均衡 / Supply & demand equilibrium | ../supply-demand/#step0 | supply-demand#step0 |
 
 <!-- /GENERATED:atlas-nodes -->

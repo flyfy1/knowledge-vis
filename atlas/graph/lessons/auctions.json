@@ -52,7 +52,27 @@
    "nodes": [
     "auctions",
     "game-theory"
-   ]
+   ],
+   "prompts": [
+    {
+     "node": "auctions",
+     "ask": {
+      "zh": "第一价格拍卖里，为什么中标者总想压一点价？第二价格里，说出真实估值会亏吗？",
+      "en": "In a first-price auction, why does the winner always want to shade the bid a little? In a second-price auction, can telling your true value lose you money?"
+     }
+    },
+    {
+     "node": "game-theory",
+     "ask": {
+      "zh": "“占优策略”是什么意思？为什么第二价格里的真话策略不用猜对手出什么？",
+      "en": "What does a “dominant strategy” mean? Why does truth-telling in second-price need no guess about rivals?"
+     }
+    }
+   ],
+   "reveal": {
+    "zh": "第二价格拍卖里，说真话是占优策略：出价只决定你是否中标，不决定你付多少钱，付的是第二高价；第一价格里中标即按自己出价付款，所以人人压价。英式等价于第二价格、荷式等价于第一价格，平均收益相等；真值不确定时还要小心赢家的诅咒。",
+    "en": "In a second-price auction truth-telling is dominant: your bid only decides whether you win, not what you pay — you pay the second-highest bid. In a first-price auction you pay your own bid when you win, so everyone shades; English matches second-price and Dutch matches first-price with equal average revenue, and with uncertain true values, beware the winner's curse."
+   }
   }
  ]
 }

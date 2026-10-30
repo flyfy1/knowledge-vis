@@ -52,7 +52,27 @@
    "nodes": [
     "carbon-cycle",
     "climate-energy"
-   ]
+   ],
+   "prompts": [
+    {
+     "node": "carbon-cycle",
+     "ask": {
+      "zh": "五个碳库之间流量平衡时，大气里的碳为什么还会累积？停排后碳去了哪？",
+      "en": "When flows between the five reservoirs balance, why does carbon in the air still accumulate? After emissions stop, where does the carbon go?"
+     }
+    },
+    {
+     "node": "climate-energy",
+     "ask": {
+      "zh": "大气二氧化碳怎样变成温室效应？能量收支失衡是什么意思？",
+      "en": "How does atmospheric CO₂ become a greenhouse effect? What does an energy-budget imbalance mean?"
+     }
+    }
+   ],
+   "reveal": {
+    "zh": "五库账本里自然流量本可平衡，但排放不断加进大气，碳的去向守恒决定了它不会凭空消失。停排后多余的碳只能慢慢分流到海洋与陆地，所以大气浓度下降缓慢。",
+    "en": "In the five-reservoir ledger natural flows could balance, but emissions keep adding to the air, and conservation of where the carbon goes means it cannot vanish. After emissions stop the excess only slowly drains into ocean and land, so the air's concentration falls slowly."
+   }
   }
  ]
 }

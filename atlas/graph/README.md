@@ -18,6 +18,10 @@
 - `partition-overrides.json`：v1 里 `group: OTHER/optics/uncertainty`
   的 26 个片段的人工分区（按主题，不是按注册表分类硬推）。
 - `merge-report.json`：每次生成后写出（不部署，仅工作用）。
+- `atlas/questions.js`：主图谱问题层生成物（data.js 只留节点/边/路线；
+  问题层随 data.js 之后、app.js 之前加载，直接写入 `window.ATLAS`；
+  450,000 字节合并门按 data.js + questions.js 合计）。投资图谱仍把问题写进
+  data.js，不拆。
 
 ## 生成
 
@@ -31,20 +35,17 @@ node scripts/build-atlas-data.cjs --check    # 只比对不写，漂移即失败
 的边暂挂；问题链相邻站必须有边、目标节点须在链内、目标锚点须存在，
 否则该问题暂挂。暂挂项只进报告，不中断生成、不进入 `data.js`。
 
-## 当前状态（2026-10-30 P0）
+## 当前状态（2026-10-30 Round 2）
 
-- 140 节点 / 220 边 / 14 路线 / 89 问题，`data.js` 286,129 字节
- （400KB 门内，不用拆 `questions.js`）。
-- 暂挂：17 条边、14 个问题。原因分两类：① 引用了尚无节点的概念
-  （game-theory、climate-energy、gradient-descent、photosynthesis、
-  supply-demand、binary-search、exp-log、graph-algorithms、hashing、
-  estimate、velocity-vt）——等这些概念建节点后重跑即自动接入；
-  ② 已有节点之间缺一条边（gaussian–probability、convolution–
-  derivative、interference–superposition、probability–variance、
-  eigen–probability 等 6 处）——需人工补边，不自动编造。
-- 覆盖缺口 73 页：live 页中尚无节点挂靠的页（含全部老页中非节点
-  来源页与 hashing、limits-epsilon 等无片段新页）。P0 的校验器不
-  把覆盖缺口当失败；缺口清单在 `merge-report.json` 里逐项可查。
+- 151 节点 / 244 边 / 14 路线 / 103 问题；`data.js` 285,318 字节
+ + `questions.js` 141,125 字节 = 合计 426,443 字节（门按合计口径；
+ 450,000 合并门，余量 23,557 字节）。
+- 暂挂：0 条边、0 个问题（Round 1 的 17 条边、14 个问题已于 Round 2
+ 全部解封：新建 11 个概念节点、补 7 条边，14 问同批补齐逐站提问与
+ 两句揭晓）。
+- 覆盖缺口 69 页：live 页中尚无节点挂靠的页（含全部老页中非节点
+ 来源页与 limits-epsilon 等无片段新页）。校验器不把
+ 覆盖缺口当失败；缺口清单在 `merge-report.json` 里逐项可查。
 - 7 个 legacy 步骤锚点：power-converters 节点的旧 `source`
   （#step0–#step5）在该页内并无对应 stepN id（老页结构不同），
   生成时已把这 7 个 lesson 的 step 置空并记入报告，不再断言
@@ -58,4 +59,5 @@ node scripts/build-atlas-data.cjs --check    # 只比对不写，漂移即失败
   各站按钮 + 揭晓 `<details>` + “打开这一步”落点链接）、无公式时
   不渲染空公式框。
 - 未做（P1/P2）：`?lesson=` 反查入口、CONCEPT-MAP 生成附录、
-  galaxy 分区色、逐站提问与揭晓文案补齐、浏览器级实测。
+  galaxy 分区色、浏览器级实测。逐站提问与揭晓文案已于 Round 2
+  补齐（103 问全部有逐站提问与两句揭晓）。

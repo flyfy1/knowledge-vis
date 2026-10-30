@@ -41,6 +41,20 @@
     "en": "A left-negative, right-positive edge kernel computes the difference between neighbouring pixels, a discrete approximation of the brightness derivative, so flat regions give 0."
    },
    "source": "../cnn-feature-maps/#step2"
+  },
+  {
+   "from": "convolution",
+   "to": "derivative",
+   "type": "foundation",
+   "label": {
+    "zh": "差分就是离散导数",
+    "en": "Differences are discrete derivatives"
+   },
+   "reason": {
+    "zh": "边缘核对邻居相减，算的正是离散差分；差分是导数在格点上的化身，所以边缘核天生就是导数探测器。",
+    "en": "Edge kernels subtract neighbours, computing exactly discrete differences; a difference is the derivative incarnated on a grid, so edge kernels are born derivative detectors."
+   },
+   "source": "../cnn-feature-maps/#step2"
   }
  ],
  "routes": [
@@ -53,7 +67,34 @@
     "cnn-feature-maps",
     "convolution",
     "derivative"
-   ]
+   ],
+   "prompts": [
+    {
+     "node": "cnn-feature-maps",
+     "ask": {
+      "zh": "3×3 核在图像上滑动时，每一步算的是什么？不同的核为什么响应不同的边缘？",
+      "en": "As a 3×3 kernel slides over an image, what does each step compute? Why do different kernels respond to different edges?"
+     }
+    },
+    {
+     "node": "convolution",
+     "ask": {
+      "zh": "一维滑动求和怎样推广到二维图像？权重在这里是什么意思？",
+      "en": "How does a one-dimensional sliding sum extend to two-dimensional images? What do the weights mean here?"
+     }
+    },
+    {
+     "node": "derivative",
+     "ask": {
+      "zh": "边缘核算出的差分和导数有什么关系？为什么差分大的地方就是边缘？",
+      "en": "How do the differences an edge kernel computes relate to derivatives? Why is a place with big differences an edge?"
+     }
+    }
+   ],
+   "reveal": {
+    "zh": "3×3 卷积核在图像上滑动、对应相乘求和得到特征图，不同的核响应不同的边缘。边缘核算的是差分、近似导数，ReLU、池化与堆叠再把边缘拼成更复杂的特征，核也可以由梯度下降学出。",
+    "en": "A 3×3 kernel slides over an image, multiplying and summing to give a feature map, and different kernels respond to different edges. Edge kernels compute differences that approximate derivatives, and ReLU, pooling and stacking assemble edges into richer features, with kernels learnable by gradient descent."
+   }
   }
  ]
 }

@@ -3,7 +3,7 @@
 // No prerequisite is inferred from their type or from a suggested route order.
 const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm');
 const root=path.resolve(__dirname,'../..');
-function load(){const c={window:{}};vm.runInNewContext(fs.readFileSync(path.join(root,'atlas/data.js'),'utf8'),c);return JSON.parse(JSON.stringify(c.window.ATLAS));}
+function load(){const c={window:{}};vm.runInNewContext(fs.readFileSync(path.join(root,'atlas/data.js'),'utf8'),c);const qf=path.join(root,'atlas/questions.js');if(fs.existsSync(qf))vm.runInNewContext(fs.readFileSync(qf,'utf8'),c);return JSON.parse(JSON.stringify(c.window.ATLAS));}
 function references(d){const refs=[];function walk(x,at){if(!x||typeof x!=='object')return;for(const[k,v]of Object.entries(x)){const p=at+'.'+k;if(['source','backgroundSource','href'].includes(k)&&typeof v==='string')refs.push({at:p,href:v});else walk(v,p);}}walk(d,'atlas');return refs;}
 function validate(d,{checkFiles=true}={}){
  const errors=[],cycles=[];const fail=m=>errors.push(m),nonempty=x=>typeof x==='string'&&x.trim().length>0;
