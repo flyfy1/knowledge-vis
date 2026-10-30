@@ -21,6 +21,9 @@
   const formulaText=value=>formulas[value]?pick(formulas[value]):value;
 
   const byId = new Map(D.nodes.map(n => [n.id,n]));
+  // Second-atlas parameterization (backward-compatible): a graph may declare
+  // defaultNode in its data.js; otherwise the main atlas 'fourier' default stands.
+  const FALLBACK_NODE = (D.defaultNode && byId.has(D.defaultNode)) ? D.defaultNode : 'fourier';
   const elements = new Map(), results = new Map(), disclosures = new Map();
   const external = href => /^https:\/\//.test(href);
   const make = (tag,className,text) => {const e=document.createElement(tag);if(className)e.className=className;if(text!==undefined)e.textContent=text;return e;};
@@ -29,7 +32,7 @@
   let invalid = false, state;
   function readState() {
     const p = new URLSearchParams(location.search);
-    let id=p.get('node') || 'fourier';
+    let id=p.get('node') || FALLBACK_NODE;
     if(['zh','en'].includes(p.get('lang')))lang=p.get('lang');
     // P1 ?lesson=<slug>: resolve to the node that teaches this lesson
     // home node first, then primary lesson. One-shot: the lesson param is not kept
@@ -37,7 +40,7 @@
     const lesson=p.get('lesson');
     if(lesson){const hit=D.nodes.filter(n=>(n.lessons||[]).some(l=>l.slug===lesson));if(hit.length){const home=hit.find(n=>n.id===lesson);const prim=hit.find(n=>(n.lessons||[]).some(l=>l.slug===lesson&&l.primary));id=(home||prim||hit[0]).id;}}
     invalid = !byId.has(id);
-    return {node:byId.has(id)?id:'fourier',q:(p.get('q')||'').slice(0,160),group:D.groups.some(g=>g.id===p.get('group'))?p.get('group'):'all',stage:['primary','junior','senior','university'].includes(p.get('stage'))?p.get('stage'):'all',question:(D.questions||[]).some(q=>q.id===p.get('question'))?p.get('question'):'',trail:D.trails.some(r=>r.id===p.get('trail'))?p.get('trail'):'',view:['graph','list'].includes(p.get('view'))?p.get('view'):(matchMedia('(max-width:700px)').matches?'list':'graph')};
+    return {node:byId.has(id)?id:FALLBACK_NODE,q:(p.get('q')||'').slice(0,160),group:D.groups.some(g=>g.id===p.get('group'))?p.get('group'):'all',stage:['primary','junior','senior','university'].includes(p.get('stage'))?p.get('stage'):'all',question:(D.questions||[]).some(q=>q.id===p.get('question'))?p.get('question'):'',trail:D.trails.some(r=>r.id===p.get('trail'))?p.get('trail'):'',view:['graph','list'].includes(p.get('view'))?p.get('view'):(matchMedia('(max-width:700px)').matches?'list':'graph')};
   }
   state=readState();
   function save(push=false) {
@@ -217,18 +220,20 @@
   let frame;
   function render(){
     const previousStartingFocus=startingIdeas.contains(document.activeElement)?document.activeElement:null;
-    document.documentElement.lang=lang==='zh'?'zh-CN':'en';document.title=t('title')+' · '+t('eyebrow');
-    document.querySelectorAll('[data-i18n]').forEach(e=>e.textContent=t(e.dataset.i18n));
+    document.documentElement.lang=lang==='zh'?'zh-CN':'en';
+    document.querySelectorAll('[data-i18n]').forEach(e=>{const zh=e.dataset.i18nZh,en=e.dataset.i18nEn;e.textContent=(lang==='zh'&&zh)?zh:(lang==='en'&&en)?en:t(e.dataset.i18n);});
+    const heroTitle=document.querySelector('[data-i18n="title"]'),heroEyebrow=document.querySelector('[data-i18n="eyebrow"]');
+    document.title=(heroTitle?heroTitle.textContent:t('title'))+' · '+(heroEyebrow?heroEyebrow.textContent:t('eyebrow'));
     document.querySelectorAll('[data-lang]').forEach(e=>e.setAttribute('aria-pressed',String(e.dataset.lang===lang)));
     $('counts').textContent=t('counts').replace('{n}',D.nodes.length).replace('{e}',D.edges.length).replace('{g}',D.groups.length);
-    $('search').placeholder=t('placeholder');$('search').value=state.q;$('group').value=state.group;
+    const searchEl=$('search');searchEl.placeholder=(lang==='zh'&&searchEl.dataset.placeholderZh)?searchEl.dataset.placeholderZh:(lang==='en'&&searchEl.dataset.placeholderEn)?searchEl.dataset.placeholderEn:t('placeholder');$('search').value=state.q;$('group').value=state.group;
     if($('stage')){$('stage').value=state.stage;[...$('stage').options].forEach(e=>e.textContent=e.value==='all'?t('allStages'):t('stage'+e.value[0].toUpperCase()+e.value.slice(1)));}
     renderQuestions();
     [...$('group').options].forEach(e=>e.textContent=e.value==='all'?t('all'):pick(D.groups.find(g=>g.id===e.value).label));
     $('viewToggle').setAttribute('aria-label',t('viewLabel'));$('mapScroll').setAttribute('aria-label',t('mapLabel'));
     document.querySelectorAll('[data-view]').forEach(e=>e.setAttribute('aria-pressed',String(e.dataset.view===state.view)));
     document.querySelectorAll('[data-group-title]').forEach(e=>{const g=D.groups.find(g=>g.id===e.dataset.groupTitle);e.replaceChildren(make('span','',g.mark),document.createTextNode(pick(g.label)));});
-    if(state.q||state.group!=='all')document.querySelector('[data-i18n=mapHelp]').textContent=t('mapHelp')+' '+t('mapContext');
+    if(state.q||state.group!=='all'){const mh=document.querySelector('[data-i18n=mapHelp]');mh.textContent=((lang==='zh'&&mh.dataset.i18nZh)?mh.dataset.i18nZh:(lang==='en'&&mh.dataset.i18nEn)?mh.dataset.i18nEn:t('mapHelp'))+' '+t('mapContext');}
     const matches=matching(),ids=new Set(matches.map(n=>n.id)),edges=activeEdges(),neighbors=new Map();
     edges.forEach((e,i)=>neighbors.set(e.from===state.node?e.to:e.from,i+1));
     D.nodes.forEach(n=>{
@@ -242,8 +247,8 @@
     $('invalid').hidden=!invalid;$('empty').hidden=matches.length!==0;
     $('graphView').hidden=state.view!=='graph'||!matches.length;$('listView').hidden=state.view!=='list'||!matches.length;
     renderDetail(matches,edges);renderTrail();
-    window.MotionBridge.update({lang,node:state.node,active:['motion','kinematics','travel','work'].includes(state.trail),view:state.trail==='kinematics'?'rates':state.trail==='travel'?'travel':state.trail==='work'?'work':'projection',workDefinitions:pick(byId.get('work-energy').help.body),onView:view=>{state.trail=({rates:'kinematics',travel:'travel',work:'work',projection:'motion'})[view];save(true);render();},onSelect:id=>select(id,{clear:true,focus:true}),onClose:()=>{state.trail='';save(true);render();$('detailTitle').focus();}});
-    window.ResponseBridge.update({lang,node:state.node,active:state.trail==='response',onSelect:id=>select(id,{clear:true,focus:true}),onClose:()=>{state.trail='';save(true);render();$('detailTitle').focus();}});
+    if(window.MotionBridge)window.MotionBridge.update({lang,node:state.node,active:['motion','kinematics','travel','work'].includes(state.trail),view:state.trail==='kinematics'?'rates':state.trail==='travel'?'travel':state.trail==='work'?'work':'projection',workDefinitions:(byId.get('work-energy')&&byId.get('work-energy').help)?pick(byId.get('work-energy').help.body):'',onView:view=>{state.trail=({rates:'kinematics',travel:'travel',work:'work',projection:'motion'})[view];save(true);render();},onSelect:id=>select(id,{clear:true,focus:true}),onClose:()=>{state.trail='';save(true);render();$('detailTitle').focus();}});
+    if(window.ResponseBridge)window.ResponseBridge.update({lang,node:state.node,active:state.trail==='response',onSelect:id=>select(id,{clear:true,focus:true}),onClose:()=>{state.trail='';save(true);render();$('detailTitle').focus();}});
     for(const id of ['motion','response']){const note=$(id+'-route-context'),visible=!!routeContext()&&(id==='response'?state.trail==='response':['motion','kinematics','travel','work'].includes(state.trail));note.hidden=!visible;note.textContent=visible?routeContext():'';}
     renderStartingIdeas(previousStartingFocus);
     cancelAnimationFrame(frame);frame=requestAnimationFrame(drawEdges);

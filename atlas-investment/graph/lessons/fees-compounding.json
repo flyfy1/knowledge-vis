@@ -1,0 +1,113 @@
+{
+  "slug": "fees-compounding",
+  "conceptId": "fees-compounding",
+  "group": "foundations",
+  "stage": "senior",
+  "title": {
+    "zh": "费率与复利",
+    "en": "Fees & Compounding"
+  },
+  "description": {
+    "zh": "费率从收益率里扣：A = P(1+r−f)ᵗ，不是最后减一笔。差距指数长大：1% 的年费率，30 年约吃掉 25% 的终值。",
+    "en": "The fee comes off the return: A = P(1+r−f)ᵗ, not a subtraction at the end. The gap grows exponentially: a 1% yearly fee eats about 25% of the final value over 30 years."
+  },
+  "source": "../fees-compounding/#step5",
+  "edges": [
+    {
+      "from": "fee",
+      "to": "fees-compounding",
+      "type": "foundation",
+      "label": {
+        "zh": "从收益里扣",
+        "en": "taken off returns"
+      },
+      "reason": {
+        "zh": "费率是这一课的核心扣减项。",
+        "en": "The fee is this lesson's central deduction."
+      },
+      "source": "../fees-compounding/#step5"
+    },
+    {
+      "from": "fees-compounding",
+      "to": "return",
+      "type": "connection",
+      "label": {
+        "zh": "吃掉终值",
+        "en": "eats the final value"
+      },
+      "reason": {
+        "zh": "长期费率吃掉回报的很大一部分。",
+        "en": "A long-run fee eats a large part of returns."
+      },
+      "source": "../fees-compounding/#step5"
+    },
+    {
+      "from": "fee",
+      "to": "return",
+      "type": "connection",
+      "label": {
+        "zh": "直接扣减",
+        "en": "direct deduction"
+      },
+      "reason": {
+        "zh": "费用直接减少到手的回报。",
+        "en": "Fees directly reduce the return received."
+      },
+      "source": "../fees-compounding/#step5"
+    },
+    {
+      "from": "fees-compounding",
+      "to": "interest-rate",
+      "type": "connection",
+      "label": {
+        "zh": "从 r 里扣",
+        "en": "taken from r"
+      },
+      "reason": {
+        "zh": "费率从收益率 r 里扣，r 就是利率概念的实例。",
+        "en": "The fee is taken from the return rate r, an instance of the rate concept."
+      },
+      "source": "../fees-compounding/#step5"
+    }
+  ],
+  "routes": [
+    {
+      "title": {
+        "zh": "1% 的费率怎么吃掉回报？",
+        "en": "How does a 1% fee eat returns?"
+      },
+      "nodes": [
+        "fee",
+        "fees-compounding",
+        "return"
+      ],
+      "prompts": [
+        {
+          "node": "fee",
+          "ask": {
+            "zh": "费率从哪里扣？",
+            "en": "Where is a fee taken from?"
+          }
+        },
+        {
+          "node": "fees-compounding",
+          "ask": {
+            "zh": "1% 的费率，30 年后吃掉多少终值？",
+            "en": "How much of the final value does a 1% fee eat over 30 years?"
+          }
+        },
+        {
+          "node": "return",
+          "ask": {
+            "zh": "差距为什么越拉越大？",
+            "en": "Why does the gap widen ever faster?"
+          }
+        }
+      ],
+      "reveal": {
+        "zh": "费率从收益率里扣：A = P(1+r−f)ᵗ，不是最后减一笔。差距指数长大：1% 的年费率，30 年约吃掉 25% 的终值。",
+        "en": "The fee comes off the return: A = P(1+r−f)ᵗ, not a subtraction at the end. The gap grows exponentially: a 1% yearly fee eats about 25% of the final value over 30 years."
+      }
+    }
+  ]
+}

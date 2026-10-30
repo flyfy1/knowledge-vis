@@ -1,0 +1,85 @@
+{
+  "slug": "diversification",
+  "conceptId": "diversification",
+  "group": "risk",
+  "stage": "junior",
+  "title": {
+    "zh": "分散投资",
+    "en": "Diversification"
+  },
+  "description": {
+    "zh": "组合波动由相关性决定，不是数量：十只一起动的资产约等于一只。系统风险是地板：个别风险按 1/√n 缩小，整个市场一起动的部分分散不掉。",
+    "en": "Portfolio volatility is decided by correlation, not count: ten assets moving together are about equal to one. Systematic risk is a floor: idiosyncratic risk shrinks as 1/√n, but the part where the whole market moves together cannot be diversified away."
+  },
+  "source": "../diversification/#step5",
+  "edges": [
+    {
+      "from": "diversification",
+      "to": "risk",
+      "type": "connection",
+      "label": {
+        "zh": "降低波动",
+        "en": "lowers volatility"
+      },
+      "reason": {
+        "zh": "低相关的组合波动小于单只资产。",
+        "en": "A low-correlation portfolio swings less than a single asset."
+      },
+      "source": "../diversification/#step5"
+    },
+    {
+      "from": "diversification",
+      "to": "return",
+      "type": "connection",
+      "label": {
+        "zh": "不牺牲平均",
+        "en": "keeps the mean"
+      },
+      "reason": {
+        "zh": "分散熨平波动，不必然降低平均回报。",
+        "en": "Diversification smooths swings without necessarily lowering the mean return."
+      },
+      "source": "../diversification/#step5"
+    }
+  ],
+  "routes": [
+    {
+      "title": {
+        "zh": "为什么不把鸡蛋放一个篮子里？",
+        "en": "Why not put all eggs in one basket?"
+      },
+      "nodes": [
+        "diversification",
+        "risk",
+        "return"
+      ],
+      "prompts": [
+        {
+          "node": "diversification",
+          "ask": {
+            "zh": "分散的关键是数量还是相关性？",
+            "en": "Is the key to diversification count or correlation?"
+          }
+        },
+        {
+          "node": "risk",
+          "ask": {
+            "zh": "组合波动由什么决定？",
+            "en": "What decides a portfolio's volatility?"
+          }
+        },
+        {
+          "node": "return",
+          "ask": {
+            "zh": "分散会不会降低平均回报？",
+            "en": "Does diversification lower the mean return?"
+          }
+        }
+      ],
+      "reveal": {
+        "zh": "组合波动由相关性决定，不是数量：十只一起动的资产约等于一只。系统风险是地板：个别风险按 1/√n 缩小，整个市场一起动的部分分散不掉。",
+        "en": "Portfolio volatility is decided by correlation, not count: ten assets moving together are about equal to one. Systematic risk is a floor: idiosyncratic risk shrinks as 1/√n, but the part where the whole market moves together cannot be diversified away."
+      }
+    }
+  ]
+}

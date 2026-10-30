@@ -1,0 +1,47 @@
+[
+  {
+    "id": "foundations",
+    "label": {
+      "en": "Foundations",
+      "zh": "基础概念"
+    },
+    "mark": "01",
+    "order": 1
+  },
+  {
+    "id": "markets",
+    "label": {
+      "en": "Markets & Instruments",
+      "zh": "市场与工具"
+    },
+    "mark": "02",
+    "order": 2
+  },
+  {
+    "id": "risk",
+    "label": {
+      "en": "Risk",
+      "zh": "风险"
+    },
+    "mark": "03",
+    "order": 3
+  },
+  {
+    "id": "valuation",
+    "label": {
+      "en": "Valuation",
+      "zh": "估值"
+    },
+    "mark": "04",
+    "order": 4
+  },
+  {
+    "id": "behavior",
+    "label": {
+      "en": "Behavior",
+      "zh": "行为"
+    },
+    "mark": "05",
+    "order": 5
+  }
+]

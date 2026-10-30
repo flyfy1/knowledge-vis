@@ -1,0 +1,155 @@
+{
+  "slug": "risk-return",
+  "conceptId": "risk-return",
+  "group": "risk",
+  "stage": "junior",
+  "title": {
+    "zh": "风险与回报",
+    "en": "Risk & Return"
+  },
+  "description": {
+    "zh": "方差量的是散开程度，不是好坏：平均一样，散得越开，单年越不可预测。风险溢价是补偿：波动的一方平均给得更多，多出的部分是为承担波动付的，不是保证。",
+    "en": "Variance measures spread, not good or bad: with the same mean, a wider spread means a less predictable single year. The risk premium is compensation: the volatile side averages more, and the extra part pays for bearing volatility — it is not a guarantee."
+  },
+  "source": "../risk-return/#step5",
+  "edges": [
+    {
+      "from": "risk",
+      "to": "risk-return",
+      "type": "foundation",
+      "label": {
+        "zh": "被度量",
+        "en": "is measured"
+      },
+      "reason": {
+        "zh": "风险先被方差度量，再谈回报。",
+        "en": "Risk is first measured by variance, then return is discussed."
+      },
+      "source": "../risk-return/#step5"
+    },
+    {
+      "from": "risk-return",
+      "to": "return",
+      "type": "connection",
+      "label": {
+        "zh": "承诺平均",
+        "en": "promises a mean"
+      },
+      "reason": {
+        "zh": "回报是风险换来的承诺平均，不是保证。",
+        "en": "Return is the promised mean exchanged for risk, not a guarantee."
+      },
+      "source": "../risk-return/#step5"
+    },
+    {
+      "from": "stock",
+      "to": "risk",
+      "type": "connection",
+      "label": {
+        "zh": "价格波动",
+        "en": "price swings"
+      },
+      "reason": {
+        "zh": "股票价格上下走，就是一种风险。",
+        "en": "A stock price moving up and down is one form of risk."
+      },
+      "source": "../risk-return/#step5"
+    },
+    {
+      "from": "bond",
+      "to": "risk",
+      "type": "connection",
+      "label": {
+        "zh": "违约可能",
+        "en": "possible default"
+      },
+      "reason": {
+        "zh": "债券也可能还不上钱。",
+        "en": "A bond may also fail to pay."
+      },
+      "source": "../risk-return/#step5"
+    },
+    {
+      "from": "risk",
+      "to": "return",
+      "type": "connection",
+      "label": {
+        "zh": "换取溢价",
+        "en": "exchanged for a premium"
+      },
+      "reason": {
+        "zh": "承担风险，换来更高的承诺平均回报。",
+        "en": "Bearing risk buys a higher promised mean return."
+      },
+      "source": "../risk-return/#step5"
+    },
+    {
+      "from": "stock",
+      "to": "return",
+      "type": "connection",
+      "label": {
+        "zh": "分红与涨跌",
+        "en": "dividends and price moves"
+      },
+      "reason": {
+        "zh": "股票的回报来自为分红和价格变化。",
+        "en": "A stock's return comes from dividends and price changes."
+      },
+      "source": "../risk-return/#step5"
+    },
+    {
+      "from": "bond",
+      "to": "return",
+      "type": "connection",
+      "label": {
+        "zh": "票息与还本",
+        "en": "coupons and principal"
+      },
+      "reason": {
+        "zh": "债券的回报来自票息和到期还本。",
+        "en": "A bond's return comes from coupons and principal repayment."
+      },
+      "source": "../risk-return/#step5"
+    }
+  ],
+  "routes": [
+    {
+      "title": {
+        "zh": "风险越大的东西，为什么承诺的回报通常越高？",
+        "en": "Why do riskier things usually promise higher returns?"
+      },
+      "nodes": [
+        "risk",
+        "risk-return",
+        "return"
+      ],
+      "prompts": [
+        {
+          "node": "risk",
+          "ask": {
+            "zh": "风险能不能用一个数来量？",
+            "en": "Can risk be measured with one number?"
+          }
+        },
+        {
+          "node": "risk-return",
+          "ask": {
+            "zh": "风险越大，承诺的回报为什么通常越高？",
+            "en": "Why do riskier things usually promise higher returns?"
+          }
+        },
+        {
+          "node": "return",
+          "ask": {
+            "zh": "承诺的平均和到手的一年，有什么不同？",
+            "en": "How does a promised mean differ from one year actually received?"
+          }
+        }
+      ],
+      "reveal": {
+        "zh": "方差量的是散开程度，不是好坏：平均一样，散得越开，单年越不可预测。风险溢价是补偿：波动的一方平均给得更多，多出的部分是为承担波动付的，不是保证。",
+        "en": "Variance measures spread, not good or bad: with the same mean, a wider spread means a less predictable single year. The risk premium is compensation: the volatile side averages more, and the extra part pays for bearing volatility — it is not a guarantee."
+      }
+    }
+  ]
+}
