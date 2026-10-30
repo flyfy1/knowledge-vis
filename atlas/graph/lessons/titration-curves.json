@@ -36,8 +36,8 @@
     "en": "Estimating a concentration from the end point"
    },
    "reason": {
-    "zh": "c酸 = c碱·V碱/V酸，一次读数的误差随终点判断而变化。",
-    "en": "c_acid = c_base·V_base/V_acid, and the error of one reading depends on how well the end point is judged."
+    "zh": "酸浓度不是直接读出来的，是拿碱的浓度与体积算出来的——终点判得偏一点，算出的浓度就偏一点，所以滴定结果天生是个带误差的估计。",
+    "en": "An acid concentration is never read off directly; it is computed from the base's concentration and volume — judge the end point a little off and the computed concentration shifts by that much, so a titration result is by nature an estimate carrying error."
    },
    "source": "../titration-curves/#step4"
   }
