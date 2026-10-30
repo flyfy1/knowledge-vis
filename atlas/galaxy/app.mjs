@@ -5,7 +5,7 @@ const STR={
 };
 const $=id=>document.getElementById(id),D=window.ATLAS||{nodes:[],edges:[],groups:[],types:{}},model=graphModel(D),positions=layout(D),byId=new Map(model.nodes.map(n=>[n.id,n])),degree=new Map(model.nodes.map(n=>[n.id,0]));
 for(const edge of model.edges){degree.set(edge.from,(degree.get(edge.from)||0)+1);degree.set(edge.to,(degree.get(edge.to)||0)+1);}
-const palette=['#a9adff','#8ee5e1','#8bbdff','#f4bd85','#e4a4cd'];
+const palette=['#a9adff','#8ee5e1','#8bbdff','#f4bd85','#e4a4cd','#9ed69a','#f2e38a','#c4a8f0','#ffb3a7','#d4b06a'];
 const colors=Object.fromEntries(D.groups.map((g,i)=>[g.id,palette[i%palette.length]]));
 const edgeColors={foundation:'#9cc9ff',representation:'#d0b7ff',application:'#ffc27d',connection:'#8be4d2'};
 let lang;try{lang=localStorage.getItem('knowledge-lang');}catch{}
