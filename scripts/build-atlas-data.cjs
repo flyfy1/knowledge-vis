@@ -70,7 +70,6 @@ const rewrite = id => aliasMap[id] || id;
 const groupOrder = new Map(groups.map((g, i) => [g.id, i]));
 const groupIds = new Set(groups.map(g => g.id));
 const report = {
-  generatedAt: new Date().toISOString(),
   counts: {}, conflicts: [], suspendedEdges: [], suspendedQuestions: [],
   reversePairs: [], unregisteredLessons: [], coverageGaps: [], decisionsApplied: [],
 };
