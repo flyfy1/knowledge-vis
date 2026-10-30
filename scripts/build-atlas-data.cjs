@@ -338,6 +338,48 @@ if (args.has('--bump-versions')) {
     console.log(`BUMPED ${path.relative(root, htmlFile)} to v=${v}`);
   }
 }
+// ---- CONCEPT-MAP appendix (P1) -------------------------------------------
+if (args.has('--concept-map')) {
+  const START = '<!-- GENERATED:atlas-nodes -->';
+  const END = '<!-- /GENERATED:atlas-nodes -->';
+  const groupLabel = new Map(groups.map(g => [g.id, g]));
+  const lines = [];
+  lines.push('## \u4e09\u3001\u56fe\u8c31\u8282\u70b9\u7d22\u5f15\uff08\u751f\u6210\uff0c\u52ff\u624b\u6539\uff09');
+  lines.push('');
+  lines.push(`${nodes.length} \u4e2a\u6982\u5ff5 \u00b7 ${edges.length} \u6761\u5173\u7cfb \u00b7 ${groups.length} \u4e2a\u5206\u533a \u00b7 \u7531 scripts/build-atlas-data.cjs --concept-map \u751f\u6210\u3002\u8282\u70b9\u6392\u5e8f\u4e0e data.js \u4e00\u81f4\uff08\u5206\u533a\u5e8f\u3001\u5b66\u6bb5\u5e8f\u3001order\u3001id\uff09\u3002`);
+  lines.push('');
+  for (const g of groups) {
+    const members = nodes.filter(n => n.group === g.id);
+    if (!members.length) continue;
+    lines.push(`### ${g.mark} ${g.label.zh} / ${g.label.en}`);
+    lines.push('');
+    lines.push('| \u6982\u5ff5 | \u6765\u6e90 | \u8bfe\u7a0b |');
+    lines.push('| --- | --- | --- |');
+    for (const n of members) {
+      const lessons = (n.lessons || []).map(l => l.step !== null && l.step !== undefined ? `${l.slug}#step${l.step}` : l.slug).join(', ') || '\u2014';
+      lines.push(`| ${n.title.zh} / ${n.title.en} | ${n.source} | ${lessons} |`);
+    }
+    lines.push('');
+  }
+  const block = [START, ...lines, END].join('\n');
+  const cmPath = path.join(root, 'CONCEPT-MAP.md');
+  const cm = fs.readFileSync(cmPath, 'utf8');
+  if (args.has('--check')) {
+    const has = cm.includes(START) && cm.includes(END);
+    const cur = has ? cm.slice(cm.indexOf(START), cm.indexOf(END) + END.length) : null;
+    if (cur !== block) { console.log('DRIFT: CONCEPT-MAP appendix differs from generated block.'); process.exit(1); }
+    console.log('CHECK OK: CONCEPT-MAP appendix matches.');
+  } else {
+    let next;
+    if (cm.includes(START) && cm.includes(END)) {
+      next = cm.slice(0, cm.indexOf(START)) + block + cm.slice(cm.indexOf(END) + END.length);
+    } else {
+      next = cm.replace(/\s*$/, '\n') + '\n' + block + '\n';
+    }
+    fs.writeFileSync(cmPath, next);
+    console.log('WROTE CONCEPT-MAP appendix.');
+  }
+}
 fs.writeFileSync(path.join(graphDir, 'merge-report.json'), JSON.stringify(report, null, 2) + '\n');
 console.log(`REPORT: conflicts=${report.conflicts.length} suspendedEdges=${report.suspendedEdges.length} suspendedQuestions=${report.suspendedQuestions.length} coverageGaps=${report.coverageGaps.length} decisions=${report.decisionsApplied.length}`);
 if (report.conflicts.length) console.log('CONFLICTS:', JSON.stringify(report.conflicts.slice(0, 20)));

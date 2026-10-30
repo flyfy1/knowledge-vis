@@ -28,8 +28,14 @@
   const sourceLink = (href,label,className) => {const a=make('a',className,label);a.href=href;return a;};
   let invalid = false, state;
   function readState() {
-    const p = new URLSearchParams(location.search), id=p.get('node') || 'fourier';
+    const p = new URLSearchParams(location.search);
+    let id=p.get('node') || 'fourier';
     if(['zh','en'].includes(p.get('lang')))lang=p.get('lang');
+    // P1 ?lesson=<slug>: resolve to the node that teaches this lesson
+    // home node first, then primary lesson. One-shot: the lesson param is not kept
+    // in state, so later saves drop it and the URL shows node= instead.
+    const lesson=p.get('lesson');
+    if(lesson){const hit=D.nodes.filter(n=>(n.lessons||[]).some(l=>l.slug===lesson));if(hit.length){const home=hit.find(n=>n.id===lesson);const prim=hit.find(n=>(n.lessons||[]).some(l=>l.slug===lesson&&l.primary));id=(home||prim||hit[0]).id;}}
     invalid = !byId.has(id);
     return {node:byId.has(id)?id:'fourier',q:(p.get('q')||'').slice(0,160),group:D.groups.some(g=>g.id===p.get('group'))?p.get('group'):'all',stage:['primary','junior','senior','university'].includes(p.get('stage'))?p.get('stage'):'all',question:(D.questions||[]).some(q=>q.id===p.get('question'))?p.get('question'):'',trail:D.trails.some(r=>r.id===p.get('trail'))?p.get('trail'):'',view:['graph','list'].includes(p.get('view'))?p.get('view'):(matchMedia('(max-width:700px)').matches?'list':'graph')};
   }
