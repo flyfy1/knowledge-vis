@@ -3,7 +3,7 @@
 //   node scripts/build-atlas-data.cjs [--check] [--bump-versions]
 // --check: build in memory and compare with the committed atlas/data.js.
 // --bump-versions: rewrite ?v= references in atlas/index.html and atlas/galaxy.html
-//   to <yyyymmdd>-<current HEAD short sha>. Run AFTER committing data.js.
+//   to <yyyymmdd>-<last commit touching that file>. Run AFTER committing.
 const fs = require('node:fs');
 const path = require('node:path');
 const vm = require('node:vm');
@@ -322,20 +322,28 @@ if (args.has('--check')) {
   console.log(`WROTE atlas/data.js: ${report.counts.nodes} nodes, ${report.counts.edges} edges, ${report.counts.questions} questions, ${report.sizeBytes} bytes.`);
 }
 if (args.has('--bump-versions')) {
-  // SGT date (repo convention) + short sha of the last commit that touched
-  // atlas/data.js (the referenced file), so re-running the bump is stable.
+  // SGT date (repo convention) + per-file short sha of the last commit that
+  // touched each referenced file, so re-running the bump is stable AND a
+  // change to app.js alone still invalidates its cache key (a single shared
+  // sha missed the P1 app.js change: data.js was untouched, so its sha did
+  // not move and browsers kept the stale app.js).
   const date = new Date(Date.now() + 8 * 3600 * 1000).toISOString().slice(0, 10).replace(/-/g, '');
-  let sha = '';
-  try { sha = execSync('git log -1 --format=%h -- atlas/data.js', { cwd: root }).toString().trim(); } catch (_) {}
-  if (!sha) { try { sha = execSync('git rev-parse --short HEAD', { cwd: root }).toString().trim(); } catch (_) {} }
-  const v = `${date}-${sha}`;
+  const lastSha = (f) => {
+    try { return execSync(`git log -1 --format=%h -- ${f}`, { cwd: root }).toString().trim(); } catch (_) {}
+    try { return execSync('git rev-parse --short HEAD', { cwd: root }).toString().trim(); } catch (_) {}
+    return '';
+  };
+  const vData = `${date}-${lastSha('atlas/data.js')}`;
+  const vApp = `${date}-${lastSha('atlas/app.js')}`;
+  const vGalaxy = `${date}-${lastSha('atlas/galaxy/app.mjs')}`;
   for (const htmlFile of [path.join(root, 'atlas', 'index.html'), path.join(root, 'atlas', 'galaxy.html')]) {
     if (!fs.existsSync(htmlFile)) continue;
     let html = fs.readFileSync(htmlFile, 'utf8');
-    html = html.replace(/src="data\.js\?v=[^"]*"/g, `src="data.js?v=${v}"`);
-    html = html.replace(/src="app\.js\?v=[^"]*"/g, `src="app.js?v=${v}"`);
+    html = html.replace(/src="data\.js\?v=[^"]*"/g, `src="data.js?v=${vData}"`);
+    html = html.replace(/src="app\.js\?v=[^"]*"/g, `src="app.js?v=${vApp}"`);
+    html = html.replace(/src="galaxy\/app\.mjs\?v=[^"]*"/g, `src="galaxy/app.mjs?v=${vGalaxy}"`);
     fs.writeFileSync(htmlFile, html);
-    console.log(`BUMPED ${path.relative(root, htmlFile)} to v=${v}`);
+    console.log(`BUMPED ${path.relative(root, htmlFile)} data=${vData} app=${vApp} galaxy=${vGalaxy}`);
   }
 }
 // ---- CONCEPT-MAP appendix (P1) -------------------------------------------
