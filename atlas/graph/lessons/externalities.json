@@ -41,6 +41,20 @@
     "en": "Each herder’s individually best choice adds up to lower total profit, another case of a Nash equilibrium worse than the cooperative outcome."
    },
    "source": "../externalities/#step4"
+  },
+  {
+   "from": "supply-demand",
+   "to": "game-theory",
+   "type": "connection",
+   "label": {
+    "zh": "均衡之外还要看策略互动",
+    "en": "Beyond equilibrium, watch strategic interaction"
+   },
+   "reason": {
+    "zh": "供需均衡算的是价格把买卖双方撮合到哪；一旦一方的行动影响另一方的收益（公地、污染），就要用博弈论算每个人在对手行动下的最佳回应——外部性问题正是均衡分析走到博弈论的路口。",
+    "en": "Supply-demand equilibrium computes where price matches buyers and sellers; once one side's action affects another's payoff (commons, pollution), game theory computes each player's best response to rivals' moves — externality problems are exactly where equilibrium analysis meets game theory."
+   },
+   "source": "../externalities/#step4"
   }
  ],
  "routes": [
@@ -53,7 +67,34 @@
     "externalities",
     "supply-demand",
     "game-theory"
-   ]
+   ],
+   "prompts": [
+    {
+     "node": "externalities",
+     "ask": {
+      "zh": "价格漏掉一部分成本时，市场会多生产还是少生产？无谓损失 ½·e·(Q_m − Q*) 里每个字母是什么意思？",
+      "en": "When the price leaves out part of the cost, does the market produce too much or too little? In the deadweight loss ½·e·(Q_m − Q*), what does each letter mean?"
+     }
+    },
+    {
+     "node": "supply-demand",
+     "ask": {
+      "zh": "均衡价格是两边都愿意交易的交点——如果成本没进价格，这个交点还对吗？",
+      "en": "The equilibrium price is where both sides plan to trade — if the cost never entered the price, is that crossing point still right?"
+     }
+    },
+    {
+     "node": "game-theory",
+     "ask": {
+      "zh": "公地悲剧为什么是多人博弈？每个人都理性时，为什么结果反而对大家都不好？",
+      "en": "Why is the tragedy of the commons a many-player game? When everyone is rational, why is the outcome worse for all?"
+     }
+    }
+   ],
+   "reveal": {
+    "zh": "部分成本落在第三方身上时，市场按私人成本多生产，无谓损失等于 ½·e·(Q_m − Q*)。庇古税按边际外部损害定价可使福利最大，而科斯指出无成本谈判下权利归谁不影响效率。",
+    "en": "When part of the cost falls on a third party the market over-produces on private cost, with deadweight loss ½·e·(Q_m − Q*). A Pigouvian tax equal to the marginal damage maximises welfare, and Coase notes that with costless bargaining who holds the rights does not change efficiency."
+   }
   }
  ]
 }

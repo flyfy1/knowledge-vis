@@ -41,6 +41,20 @@
     "en": "Single particles still build interference fringes, which shows that the amplitudes of two paths add before squaring; once the paths are distinguishable, probabilities add instead and the fringes vanish."
    },
    "source": "../double-slit/#step3"
+  },
+  {
+   "from": "interference",
+   "to": "superposition",
+   "type": "foundation",
+   "label": {
+    "zh": "干涉是叠加算出来的",
+    "en": "Interference is computed by superposition"
+   },
+   "reason": {
+    "zh": "两列波的概率幅先按叠加相加，再平方成概率；相长处明、相消处暗，条纹就是叠加的账本。",
+    "en": "Two waves' probability amplitudes first add by superposition, then square into probabilities; reinforcing places turn bright, cancelling places dark — fringes are superposition's ledger."
+   },
+   "source": "../double-slit/#step3"
   }
  ],
  "routes": [
@@ -53,7 +67,34 @@
     "double-slit",
     "interference",
     "superposition"
-   ]
+   ],
+   "prompts": [
+    {
+     "node": "double-slit",
+     "ask": {
+      "zh": "一颗颗粒子的落点怎样累积成条纹？知道走了哪条缝时条纹为什么消失？",
+      "en": "How do single particles' landing dots build up into fringes? Why do the fringes vanish once you know which slit was used?"
+     }
+    },
+    {
+     "node": "interference",
+     "ask": {
+      "zh": "路程差怎样决定明暗？条纹间距 Δy = λL/d 里每个字母是什么意思？",
+      "en": "How does path difference decide bright and dark? In the fringe spacing Δy = λL/d, what does each letter mean?"
+     }
+    },
+    {
+     "node": "superposition",
+     "ask": {
+      "zh": "概率幅相加和普通概率相加有什么不同？为什么“同时走两条缝”其实是振幅在相加？",
+      "en": "How does adding probability amplitudes differ from adding ordinary probabilities? Why does “taking both slits at once” really mean amplitudes adding?"
+     }
+    }
+   ],
+   "reveal": {
+    "zh": "双缝条纹间距 Δy = λL/d，被单缝 sinc² 包络罩住。一颗颗粒子的落点累积成条纹，因为概率幅按叠加相加、路程差决定明暗，而知道走了哪条缝则条纹消失。",
+    "en": "Double-slit fringes are spaced Δy = λL/d under a single-slit sinc² envelope. Single particles build the fringes dot by dot because probability amplitudes add by superposition, with path difference deciding bright and dark — and knowing which slit was used erases them."
+   }
   }
  ]
 }

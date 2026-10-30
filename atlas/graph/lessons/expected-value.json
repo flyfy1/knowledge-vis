@@ -55,6 +55,20 @@
     "en": "The insurance and lottery examples show that with equal or worse expectation the spread (variance) can still change the decision, so expectation and variance go together."
    },
    "source": "../expected-value/#step4"
+  },
+  {
+   "from": "probability",
+   "to": "variance",
+   "type": "foundation",
+   "label": {
+    "zh": "同一组概率既定均值也定波动",
+    "en": "The same probabilities set both mean and spread"
+   },
+   "reason": {
+    "zh": "方差 E[(X−μ)²] 用的正是同一组概率作权重：期望只报平均位置，方差补报分布有多散，两者是同一张概率表的两栏。",
+    "en": "Variance E[(X−μ)²] weights with exactly the same probabilities: expectation reports only the average position, variance adds how scattered the distribution is — two columns of the same probability table."
+   },
+   "source": "../expected-value/#step4"
   }
  ],
  "routes": [
@@ -67,7 +81,34 @@
     "expected-value",
     "probability",
     "variance"
-   ]
+   ],
+   "prompts": [
+    {
+     "node": "expected-value",
+     "ask": {
+      "zh": "期望 E = Σ p·x 算的是什么？净期望（期望 − 价格）怎样判断下注值不值？",
+      "en": "What does E = Σ p·x compute? How does net expectation (expectation minus price) judge whether a bet is worth it?"
+     }
+    },
+    {
+     "node": "probability",
+     "ask": {
+      "zh": "长期平均为什么是“公平价”？单次结果和长期平均有什么不同？",
+      "en": "Why is the long-run average a “fair price”? How does a single outcome differ from the long-run average?"
+     }
+    },
+    {
+     "node": "variance",
+     "ask": {
+      "zh": "只看期望会漏掉什么？为什么保险愿意用较差的期望换取更小的波动？",
+      "en": "What do you miss if you look only at expectation? Why would insurance trade a worse expectation for a smaller spread?"
+     }
+    }
+   ],
+   "reveal": {
+    "zh": "期望是长期平均的公平价，净期望等于期望减价格，E[X+Y] = E[X] + E[Y] 可以直接相加。但期望之外还要看波动，保险正是用较差的期望换取更小的波动。",
+    "en": "Expectation is the fair price of a long-run average, net expectation is expectation minus price, and E[X+Y] = E[X] + E[Y] adds directly. But beyond the mean you must also watch the spread — insurance trades a worse expectation for a smaller one."
+   }
   }
  ]
 }

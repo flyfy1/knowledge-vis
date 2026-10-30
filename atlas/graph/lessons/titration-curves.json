@@ -52,7 +52,34 @@
     "derivative",
     "titration-curves",
     "estimate"
-   ]
+   ],
+   "prompts": [
+    {
+     "node": "derivative",
+     "ask": {
+      "zh": "突跃处斜率最大是什么意思？为什么斜率最大的点就是终点附近？",
+      "en": "What does it mean that the slope peaks at the leap? Why is the steepest point near the end point?"
+     }
+    },
+    {
+     "node": "titration-curves",
+     "ask": {
+      "zh": "强酸和弱酸的曲线、突跃、半等当点有什么不同？指示剂按什么选？",
+      "en": "How do strong-acid and weak-acid curves, leaps and half-equivalence points differ? How is an indicator chosen?"
+     }
+    },
+    {
+     "node": "estimate",
+     "ask": {
+      "zh": "终点读数怎样变成浓度估计？这个估计的不确定度来自哪里？",
+      "en": "How does an end-point reading become a concentration estimate? Where does that estimate's uncertainty come from?"
+     }
+    }
+   ],
+   "reveal": {
+    "zh": "强酸、弱酸被强碱滴定的 pH 曲线各有突跃与半等当点，突跃就是斜率最大处。用终点读数估算浓度，指示剂要选在突跃区间内变色。",
+    "en": "pH curves for strong and weak acids titrated by a strong base each have a leap and a half-equivalence point, and the leap is where the slope peaks. The end-point reading estimates the concentration, and the indicator must change colour inside the leap's interval."
+   }
   }
  ]
 }

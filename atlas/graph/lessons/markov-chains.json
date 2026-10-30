@@ -41,6 +41,20 @@
     "en": "The steady state is the left eigenvector for eigenvalue 1, and the size of the next eigenvalue |λ₂| makes the distance to it decay like |λ₂|ⁿ."
    },
    "source": "../markov-chains/#step4"
+  },
+  {
+   "from": "eigen",
+   "to": "probability",
+   "type": "connection",
+   "label": {
+    "zh": "稳态分布就是特征向量",
+    "en": "The steady distribution is an eigenvector"
+   },
+   "reason": {
+    "zh": "稳态 π 满足 πP = π：它正是转移矩阵特征值 1 的特征向量；随机游走的长期比例，本质上是一个特征问题。",
+    "en": "The steady state π satisfies πP = π — it is exactly the eigenvector of the transition matrix for eigenvalue 1; a random walk's long-run shares are, at heart, an eigen-problem."
+   },
+   "source": "../markov-chains/#step4"
   }
  ],
  "routes": [
@@ -53,7 +67,34 @@
     "markov-chains",
     "eigen",
     "probability"
-   ]
+   ],
+   "prompts": [
+    {
+     "node": "markov-chains",
+     "ask": {
+      "zh": "下一步只取决于当前状态时，n 步转移为什么是转移矩阵的 n 次幂？",
+      "en": "When the next step depends only on the current state, why is the n-step transition the n-th power of the transition matrix?"
+     }
+    },
+    {
+     "node": "eigen",
+     "ask": {
+      "zh": "第二特征值 |λ₂| 怎样决定收敛速度？特征值 1 对应的方向有什么特殊含义？",
+      "en": "How does the second eigenvalue |λ₂| set the convergence speed? What is special about the direction belonging to eigenvalue 1?"
+     }
+    },
+    {
+     "node": "probability",
+     "ask": {
+      "zh": "稳态 π（πP = π）是什么意思？长期比例和单步概率有什么不同？",
+      "en": "What does the steady state π (πP = π) mean? How does a long-run share differ from a single-step probability?"
+     }
+    }
+   ],
+   "reveal": {
+    "zh": "下一步只取决于当前状态，n 步转移是转移矩阵的 n 次幂。正常的链收敛到稳态 π（πP = π），速度由第二特征值 |λ₂| 决定，有吸收态的链没有中间稳态。",
+    "en": "The next step depends only on the current state, so n-step transitions are the n-th power of the transition matrix. An ordinary chain converges to a steady state π (πP = π) at a speed set by the second eigenvalue |λ₂|, while a chain with absorbing states has no in-between steady state."
+   }
   }
  ]
 }
