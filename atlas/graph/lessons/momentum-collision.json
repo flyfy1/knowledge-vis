@@ -1,0 +1,60 @@
+{
+ "slug": "momentum-collision",
+ "conceptId": "momentum-collision",
+ "group": "waves",
+ "title": {
+  "zh": "动量与碰撞 · 速度不是全部",
+  "en": "Momentum & Collisions · Speed Is Not the Whole Story"
+ },
+ "description": {
+  "zh": "动量是质量乘速度的账本：同样的速度，质量不同，动量就不同。碰撞时动量总守恒，冲量（力乘时间）是动量改变多少；弹性碰撞还守恒动能，粘性碰撞只守恒动量。",
+  "en": "Momentum is the mass-times-velocity ledger: same speed, different mass, different momentum. Total momentum is always conserved in a collision; impulse (force times time) is how much it changes. Elastic collisions also conserve kinetic energy; sticky ones conserve momentum only."
+ },
+ "formula": "p = mv, J = F·Δt",
+ "source": "../momentum-collision/#step2",
+ "edges": [
+  {
+   "from": "net-force",
+   "to": "momentum-collision",
+   "type": "foundation",
+   "label": {
+    "zh": "碰撞是力在极短时间里改动量",
+    "en": "A collision is force changing momentum in a brief moment"
+   },
+   "reason": {
+    "zh": "速度变了，变的正是动量；净力是动量变化的原因，碰撞把这个变化压缩进一瞬间，动量账本就是牛顿第二定律的账本。",
+    "en": "When velocity changes, what changes is momentum; net force is the cause of that change, and a collision squeezes it into a brief moment — the momentum ledger is Newton's second law kept as accounts."
+   },
+   "source": "../momentum-collision/#step0"
+  },
+  {
+   "from": "momentum-collision",
+   "to": "impulse",
+   "type": "representation",
+   "label": {
+    "zh": "冲量就是动量改变多少",
+    "en": "Impulse is how much momentum changes"
+   },
+   "reason": {
+    "zh": "力乘时间等于动量改变量：同样的动量要停住，时间越长平均力越小——冲量不是新量，是动量变化的另一种说法。",
+    "en": "Force times time equals the change in momentum: to stop the same momentum, more time means less average force — impulse is not a new quantity, it is the momentum change stated another way."
+   },
+   "source": "../momentum-collision/#step1"
+  },
+  {
+   "from": "momentum-collision",
+   "to": "work-energy",
+   "type": "connection",
+   "label": {
+    "zh": "两条账本同时对账，才分得清弹性与粘性",
+    "en": "Two ledgers reconciled together tell elastic from sticky"
+   },
+   "reason": {
+    "zh": "弹性碰撞动量与动能都守恒，粘性碰撞只守恒动量、多余的动能变热散掉；只看一条账本，分不清这两种碰撞。",
+    "en": "Elastic collisions conserve both momentum and kinetic energy; sticky ones conserve momentum only and lose the rest as heat. One ledger alone cannot tell the two apart."
+   },
+   "source": "../momentum-collision/#step2"
+  }
+ ],
+ "routes": []
+}

@@ -1,0 +1,59 @@
+{
+ "slug": "cell-structure",
+ "conceptId": "cell-structure",
+ "group": "life",
+ "title": {
+  "zh": "细胞 · 生命的最小单位间",
+  "en": "The Cell · Life's Smallest Workshop"
+ },
+ "description": {
+  "zh": "细胞是生命的最小单位间：一层膜划出内外，细胞核指挥，线粒体供能，叶绿体（植物）光合，液泡储物。植物细胞比动物细胞多一面墙（细胞壁）和一个大水囊。",
+  "en": "The cell is life's smallest workshop: a membrane draws inside from outside, the nucleus commands, mitochondria supply energy, chloroplasts (plants) photosynthesize, vacuoles store. Plant cells add a wall and a large water sac over animal cells."
+ },
+ "source": "../cell-structure/#step1",
+ "edges": [
+  {
+   "from": "cell-structure",
+   "to": "photosynthesis",
+   "type": "application",
+   "label": {
+    "zh": "叶绿体是光合作用的车间",
+    "en": "The chloroplast is photosynthesis's workshop"
+   },
+   "reason": {
+    "zh": "细胞页里叶绿体只是“光合的工位”，光合页讲它怎样把光变成糖——结构与功能在两页接上，植物细胞多出叶绿体正为此准备。",
+    "en": "On the cell page the chloroplast is just 'the photosynthesis workstation'; the photosynthesis page shows how it turns light into sugar — structure meets function across the two pages, and plant cells carry chloroplasts for exactly this."
+   },
+   "source": "../cell-structure/#step2"
+  },
+  {
+   "from": "cell-structure",
+   "to": "molecules-atoms",
+   "type": "foundation",
+   "label": {
+    "zh": "细胞是分子搭成的车间",
+    "en": "Cells are workshops built from molecules"
+   },
+   "reason": {
+    "zh": "从叶子逐级放大到细胞，是同一条尺度链的下一级：细胞比分子大得多，里面的工位全由分子搭成。",
+    "en": "Zooming from a leaf down to a cell is the next level of the same scale chain: cells are far larger than molecules, and every workstation inside is built from them."
+   },
+   "source": "../cell-structure/#step0"
+  },
+  {
+   "from": "cell-structure",
+   "to": "dna-replication",
+   "type": "application",
+   "label": {
+    "zh": "核里的信息要靠复制传下去",
+    "en": "The nucleus's information passes on through replication"
+   },
+   "reason": {
+    "zh": "细胞核管着遗传信息，信息要进下一代就得复制——细胞页的“指挥中心”，在复制页变成“复制什么、怎么保真”。",
+    "en": "The nucleus holds the genetic information, and for it to reach the next generation it must be copied — the cell page's 'command center' becomes, on the replication page, 'what is copied and how faithfully'."
+   },
+   "source": "../cell-structure/#step1"
+  }
+ ],
+ "routes": []
+}

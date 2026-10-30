@@ -1,11 +1,11 @@
 {
   "counts": {
     "groups": 10,
-    "nodes": 151,
-    "edges": 244,
+    "nodes": 156,
+    "edges": 259,
     "trails": 14,
-    "questions": 103,
-    "fragments": 103
+    "questions": 104,
+    "fragments": 108
   },
   "conflicts": [
     {
@@ -57,13 +57,11 @@
     "negative-numbers",
     "space-diagonal",
     "coordinate-plane",
-    "particles-states",
     "atomic-structure",
     "lever-pulley",
     "equations-balance",
     "day-night-rotation",
     "mass-conservation",
-    "cell-structure",
     "population-growth",
     "chemical-equilibrium",
     "acid-base-equilibrium",
@@ -76,12 +74,10 @@
     "action-potential",
     "orbital-motion",
     "geology-plate-tectonics",
-    "momentum-collision",
     "network-flow",
     "linguistics-phonology",
     "climate-feedback",
     "linear-transform",
-    "probability-distribution",
     "thermodynamics",
     "buffer-capacity",
     "quantum-basics",
@@ -97,7 +93,6 @@
     "advanced-robotics",
     "public-health",
     "computer-graphics",
-    "mechanism-auction",
     "probability-frequency",
     "limits-epsilon",
     "stocks-bonds",
@@ -158,7 +153,7 @@
       "claimedStep": 5
     }
   ],
-  "sizeBytes": 291429,
-  "questionsBytes": 141125,
-  "combinedBytes": 432554
+  "sizeBytes": 305214,
+  "questionsBytes": 142671,
+  "combinedBytes": 447885
 }

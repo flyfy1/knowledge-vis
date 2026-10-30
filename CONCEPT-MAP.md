@@ -1758,7 +1758,7 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `atlas-i
 <!-- GENERATED:atlas-nodes -->
 ## 三、图谱节点索引（生成，勿手改）
 
-151 个概念 · 244 条关系 · 10 个分区 · 由 scripts/build-atlas-data.cjs --concept-map 生成。节点排序与 data.js 一致（分区序、学段序、order、id）。
+156 个概念 · 259 条关系 · 10 个分区 · 由 scripts/build-atlas-data.cjs --concept-map 生成。节点排序与 data.js 一致（分区序、学段序、order、id）。
 
 ### 01 数学基础 / Mathematical tools
 
@@ -1811,6 +1811,7 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `atlas-i
 | 声音从振动来 · 米粒会跳的鼓 / Sound from Vibration · A Drum with Jumping Rice | ../sound-vibration/#step2 | sound-vibration#step2 |
 | 浮力与阿基米德原理 / Buoyancy & Archimedes' principle | ../buoyancy-archimedes/#step1 | buoyancy-archimedes#step1 |
 | 眼睛与眼镜 / The eye and glasses | ../eye-vision/#step2 | eye-vision#step2 |
+| 动量与碰撞 · 速度不是全部 / Momentum & Collisions · Speed Is Not the Whole Story | ../momentum-collision/#step2 | momentum-collision#step2 |
 | 压强 / Pressure | ../pressure/#step0 | pressure#step0 |
 | Snell关系与全反射 / Snell relation & total internal reflection | ../reflection-refraction/#snell-bridge | reflection-refraction |
 | 声音是波 / Sound Is a Wave | ../sound-waves/#step1 | sound-waves#step1 |
@@ -1897,6 +1898,7 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `atlas-i
 | 估计与不确定度 / Estimation & uncertainty | ../titration-curves/#step4 | titration-curves#step4 |
 | 减数分裂与配子多样性 / Meiosis and gamete diversity | ../meiosis/#step2 | meiosis#step2 |
 | 自然选择与遗传漂变 / Natural selection and genetic drift | ../natural-selection/#step2 | natural-selection#step2 |
+| 概率分布 · 随机性也有形状 / Probability Distributions · Randomness Has a Shape | ../probability-distribution/#step0 | probability-distribution#step0 |
 | 回归与相关 / Regression & Correlation | ../regression-correlation/#step1 | regression-correlation#step1 |
 | 滴定曲线与指示剂 / Titration curves and indicators | ../titration-curves/#step2 | titration-curves#step2 |
 | 多臂老虎机与探索-利用 / Multi-armed bandits & explore-exploit | ../bandit-arms/#step2 | bandit-arms#step2 |
@@ -1922,6 +1924,7 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `atlas-i
 | 溶解与饱和 / Dissolution & saturation | ../dissolution-saturation/#step2 | dissolution-saturation#step2 |
 | 化学方程式配平 / Balancing chemical equations | ../equation-balancing/#step0 | equation-balancing#step0 |
 | 分子与原子 / Molecules & atoms | ../molecules-atoms/#step2 | molecules-atoms#step2 |
+| 粒子与物态 · 热闹程度即温度 / Particles & States · Temperature Is How Wildly They Move | ../particles-states/#step1 | particles-states#step1 |
 | pH 标度 / The pH scale | ../ph-scale/#step1 | ph-scale#step1 |
 
 ### 07 生命与生态 / Life & ecology
@@ -1929,6 +1932,7 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `atlas-i
 | 概念 | 来源 | 课程 |
 | --- | --- | --- |
 | 血液循环 / Blood circulation | ../blood-circulation/#step3 | blood-circulation#step3 |
+| 细胞 · 生命的最小单位间 / The Cell · Life's Smallest Workshop | ../cell-structure/#step1 | cell-structure#step1 |
 | 食物网 / Food webs | ../food-web/#step1 | food-web#step1 |
 | 光合作用 / Photosynthesis | ../photosynthesis/#step1 | photosynthesis#step1 |
 
@@ -1959,6 +1963,7 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `atlas-i
 | --- | --- | --- |
 | 拍卖：报价与真话 / Auctions: bidding and telling the truth | ../auctions/#step2 | auctions#step2 |
 | 博弈论 / Game theory | ../game-theory/#step0 | game-theory#step0 |
+| 机制设计与拍卖 · 报价如何改变结果 / Mechanism Design & Auctions · How Bids Change Outcomes | ../mechanism-auction/#s1 | mechanism-auction |
 | 供需均衡 / Supply & demand equilibrium | ../supply-demand/#step0 | supply-demand#step0 |
 
 <!-- /GENERATED:atlas-nodes -->

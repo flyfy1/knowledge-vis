@@ -1,0 +1,59 @@
+{
+ "slug": "particles-states",
+ "conceptId": "particles-states",
+ "group": "matter",
+ "title": {
+  "zh": "粒子与物态 · 热闹程度即温度",
+  "en": "Particles & States · Temperature Is How Wildly They Move"
+ },
+ "description": {
+  "zh": "固、液、气不是三种东西，是同一群粒子的三种队形：固体排好队原地抖，液体贴身滑动，气体满屋乱飞。加热就是让粒子闹得更凶，闹到挣脱队形就熔化、沸腾。",
+  "en": "Solid, liquid and gas are not three things but three formations of the same particles: solids vibrate in formation, liquids slide past each other, gases fly free. Heating makes particles wilder; wild enough to break formation, they melt and boil."
+ },
+ "source": "../particles-states/#step1",
+ "edges": [
+  {
+   "from": "particles-states",
+   "to": "kinetic-theory",
+   "type": "foundation",
+   "label": {
+    "zh": "温度就是粒子闹腾程度的标尺",
+    "en": "Temperature gauges how wildly particles move"
+   },
+   "reason": {
+    "zh": "本页温度滑杆直接调粒子抖动的剧烈程度，温度读数与粒子平均动能同源——这正是分子动理论的定性口径：越热，粒子平均动得越凶。",
+    "en": "This page's temperature slider directly sets how violently particles vibrate, and its reading shares its source with average particle kinetic energy — the qualitative statement of kinetic theory: hotter means wilder on average."
+   },
+   "source": "../particles-states/#step1"
+  },
+  {
+   "from": "particles-states",
+   "to": "molecules-atoms",
+   "type": "representation",
+   "label": {
+    "zh": "粒子是分子原子的教学化身",
+    "en": "Particles are the teaching stand-in for molecules and atoms"
+   },
+   "reason": {
+    "zh": "固液气不是三种东西，是同一群粒子排出的三种队形；粒子页画的圆盘，就是分子原子尺度的放大图。",
+    "en": "Solid, liquid and gas are not three things but three formations of the same particles; the discs this page draws are the magnified picture of the molecular and atomic scale."
+   },
+   "source": "../particles-states/#step0"
+  },
+  {
+   "from": "particles-states",
+   "to": "water-cycle",
+   "type": "application",
+   "label": {
+    "zh": "蒸发与沸腾是水循环里的两条进气路",
+    "en": "Evaporation and boiling are water's two routes into gas"
+   },
+   "reason": {
+    "zh": "一杯水变干是表面少数粒子逃逸，烧开是全体挣脱成气；水循环追踪的正是同一批水在这两条路与液化之间跑。",
+    "en": "A cup drying out is a few surface particles escaping; boiling is everyone breaking free. The water cycle tracks the same water running between these two routes and liquefaction."
+   },
+   "source": "../particles-states/#step3"
+  }
+ ],
+ "routes": []
+}
