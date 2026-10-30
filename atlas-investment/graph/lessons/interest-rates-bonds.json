@@ -22,8 +22,8 @@
         "en": "discount rate"
       },
       "reason": {
-        "zh": "利率是给未来现金贴现的比率。",
-        "en": "The rate is what discounts future cash."
+        "zh": "债券价格就是未来现金按利率折到今天的现值——没有利率这个折现率，这课的定价无从算起。",
+        "en": "A bond's price is future cash discounted to today at the interest rate — without that discount rate, this lesson's pricing has nothing to compute from."
       },
       "source": "../interest-rates-bonds/#step5"
     },
@@ -36,8 +36,8 @@
         "en": "decides the price"
       },
       "reason": {
-        "zh": "利率变化直接重算债券价格。",
-        "en": "A rate change directly recalculates the bond price."
+        "zh": "利率一变，未来每笔现金的折现分母都变——整条现金流重算一遍，价格就跟着动。",
+        "en": "When the rate changes, the discount denominator of every future payment changes — the whole cash-flow stream is recomputed, and the price moves with it."
       },
       "source": "../interest-rates-bonds/#step5"
     },
@@ -50,8 +50,8 @@
         "en": "present value is price"
       },
       "reason": {
-        "zh": "债券的价格就是它未来现金的现值。",
-        "en": "A bond's price is the present value of its future cash."
+        "zh": "一张债券值多少钱，不看票面看未来：把以后每笔票息和本金都按利率折到今天，加起来就是它的价格。",
+        "en": "What a bond is worth is not its face value but its future: discount every future coupon and the principal back to today at the rate, and their sum is its price."
       },
       "source": "../interest-rates-bonds/#step5"
     },
@@ -78,8 +78,8 @@
         "en": "opportunity cost"
       },
       "reason": {
-        "zh": "利率是其他选择的回报基准。",
-        "en": "The rate is the return benchmark of other choices."
+        "zh": "任何投资的回报都要先和利率比：钱放着不动也能拿到的收益，就是其他选择必须跨过的门槛。",
+        "en": "Any investment's return must first be compared with the interest rate: what money earns by sitting still is the hurdle every other choice must clear."
       },
       "source": "../interest-rates-bonds/#step5"
     }

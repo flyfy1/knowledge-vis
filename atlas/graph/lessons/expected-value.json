@@ -23,8 +23,8 @@
     "en": "A probability-weighted average"
    },
    "reason": {
-    "zh": "期望把每个结果按概率加权后相加，是概率分布最基本的一个数字。",
-    "en": "The expected value adds each outcome weighted by its probability, the most basic single number of a probability distribution."
+    "zh": "有了每个结果的概率，才能按概率加权算出长期平均——期望就是这张概率表的加权平均数，是“平均会怎样”的第一个数字。",
+    "en": "Once each outcome has a probability, weighting by those probabilities gives the long-run average — the expected value is that probability table's weighted average, the first number answering 'what happens on average'."
    },
    "source": "../expected-value/#step0"
   },

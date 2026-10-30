@@ -8,8 +8,8 @@
     "en": "Snell relation & total internal reflection"
    },
    "description": {
-    "zh": "两角都从界面法线量起，n=c/v为无量纲折射率。斜光从高n到低n时可能没有实折射角；临界点与严格超临界分开。",
-    "en": "Both angles start at the interface normal; n=c/v is dimensionless. Oblique rays from higher to lower index may have no real refraction angle. The critical limiting case is distinct from strictly supercritical incidence."
+    "zh": "两角都从界面法线量起，n=c/v为无量纲折射率。斜光从高n到低n时可能没有实折射角；临界点与严格超临界分开。筷子插水里看起来折断、光纤把光关在芯里，都是它：入射角越大、折射角偏得越多，超过临界角就全反射。",
+    "en": "Both angles start at the interface normal; n=c/v is dimensionless. Oblique rays from higher to lower index may have no real refraction angle. The critical limiting case is distinct from strictly supercritical incidence. A chopstick looking broken in water, and a fibre keeping light inside its core, are both this: the larger the incidence angle, the more the refracted angle bends, and past the critical angle comes total reflection."
    },
    "formula": "n₁ sinθ₁ = n₂ sinθ₂",
    "source": "../reflection-refraction/#snell-bridge",
@@ -226,8 +226,8 @@
     "en": "Switches & diodes"
    },
    "description": {
-    "zh": "理想开关选择导通或断开，二极管提供从阳极到阴极的单向路径。",
-    "en": "An ideal switch opens or closes a path; a diode provides one-way conduction from anode to cathode."
+    "zh": "开关是可控的门（Buck/Boost 里轮流开关搬运能量），二极管是只推不拉的单向门：开关断开瞬间，电感电流靠它续流不断——没有它，电流无路可走、电压会冲高。",
+    "en": "A switch is a controllable gate (Buck and Boost converters shuttle energy by switching in turn); a diode is a one-way gate that only pushes, never pulls: the instant a switch opens, the inductor current keeps flowing through it — without it the current would have nowhere to go and the voltage would spike."
    },
    "formula": "route current",
    "source": "../power-converters/#step3"
@@ -282,8 +282,8 @@
     "en": "Unit circle"
    },
    "description": {
-    "zh": "半径为 1 的圆；圆上点的横、纵坐标分别定义 cos θ 和 sin θ。",
-    "en": "A circle of radius one: a point’s horizontal and vertical coordinates define cos θ and sin θ."
+    "zh": "半径为 1 的圆：转过的角度 θ 落在圆上哪一点，它的横坐标就是 cos θ、纵坐标就是 sin θ——转一圈，两个坐标此起彼伏画出正弦余弦；钟面、月相都是它的影子。",
+    "en": "A circle of radius one: wherever the turned angle θ lands on the circle, its horizontal coordinate is cos θ and its vertical coordinate sin θ — one full turn draws sine and cosine rising and falling against each other; clock faces and moon phases are its shadows."
    },
    "formula": "(cos θ, sin θ)",
    "source": "../trig/#step1"
@@ -364,8 +364,8 @@
     "en": "Eigenvectors"
    },
    "description": {
-    "zh": "矩阵变换通常既转又拉向量，但总有几个特殊方向只被拉长或压短、不改变方向——这些就是特征向量，拉伸比例 λ 叫特征值；它们是变换的“脊梁方向”。",
-    "en": "A matrix usually both rotates and stretches vectors, but a few special directions are only stretched or shrunk, never turned — those are eigenvectors, with the stretch factor λ called the eigenvalue. They are the transformation's spine directions."
+    "zh": "对称矩阵总有一组互相垂直的特殊方向：作用上去只拉长或压短、不转方向——这就是特征向量，拉伸比例 λ 是特征值，它们是变换的“脊梁方向”。（一般实矩阵未必有实特征方向：旋转就没有。）",
+    "en": "A symmetric matrix always has a set of mutually perpendicular special directions: acting on them only stretches or shrinks, never turns — those are eigenvectors, with stretch factor λ the eigenvalue; they are the transformation's spine directions. (A general real matrix need not have real eigendirections: a rotation has none.)"
    },
    "formula": "Av = λv",
    "source": "../eigen/#step1"
@@ -378,8 +378,8 @@
     "en": "Laplace transform"
    },
    "description": {
-    "zh": "用带有增长或衰减的复指数分析信号；必须同时说明积分在哪些 s 值上收敛。",
-    "en": "Analyze signals with growing or decaying complex exponentials. The region of s values where the integral converges is part of the description."
+    "zh": "傅里叶只问“含哪些频率”，拉普拉斯多问一句“信号在长大还是衰减”：用 e^{st} 去试探，s 的实部管增长衰减、虚部管振荡；收敛域就是这套试探成立的 s 范围——极点的位置直接告诉你系统会不会发散。",
+    "en": "Fourier asks only 'which frequencies are in it'; Laplace asks one more question, 'is the signal growing or decaying': probe with e^{st}, where the real part of s governs growth or decay and the imaginary part governs oscillation; the region of convergence is the range of s where this probing holds — and pole positions say directly whether the system blows up."
    },
    "formula": "s = σ + iω",
    "source": "../laplace/#step1"
@@ -425,8 +425,8 @@
     "en": "Superposition"
    },
    "description": {
-    "zh": "把多个信号在同一时刻的值相加，得到合成信号；物理系统是否允许这样叠加取决于其线性。",
-    "en": "Add signals at the same instant to form a combined signal. Applying this to a physical system requires linear behavior."
+    "zh": "把多个信号在同一时刻的值相加，得到合成信号：两列水波相遇、各走各的路，交汇处的高度就是两者相加。物理系统是否允许这样叠加取决于其线性——线性系统里，复杂输入可以拆成简单输入分别算、再叠起来；非线性系统这招不灵。",
+    "en": "Add several signals' values at the same instant to form a combined signal: two water waves meet and pass through each other, and the height where they cross is their sum. Whether a physical system allows such superposition depends on its linearity — in a linear system a complex input can be split into simple inputs, solved separately and added back; in a nonlinear system that trick fails."
    },
    "formula": "y(t) = x₁(t) + x₂(t)",
    "source": "../fourier/#step2"
@@ -453,8 +453,8 @@
     "en": "Spectrum"
    },
    "description": {
-    "zh": "按频率列出信号分量的幅度与相位。幅度图只展示其中一部分，不能单独还原一般信号。",
-    "en": "Describe a signal’s component amplitudes and phases by frequency. A magnitude plot alone cannot reconstruct a general signal."
+    "zh": "按频率列出信号分量的幅度与相位——一段音乐、一串语音，频谱就是它的“成分表”：横轴频率、纵轴每种频率占多少。幅度图只展示其中一部分，不能单独还原一般信号：只看幅度丢了相位，就像只看菜谱的配料不看做法。",
+    "en": "List a signal's component amplitudes and phases by frequency — for a piece of music or a stretch of speech, the spectrum is its 'ingredient list': frequency across, each frequency's share up. A magnitude plot alone shows only part of it and cannot reconstruct a general signal: magnitude without phase is like a recipe's ingredients without the method."
    },
    "formula": "X(f)",
    "source": "../fourier/#step5"
@@ -635,8 +635,8 @@
     "en": "Monte Carlo estimation"
    },
    "description": {
-    "zh": "通过随机样本的平均估计期望或积分。误差大小依赖采样方式、样本量及被估计量的方差。",
-    "en": "Estimate expectations or integrals using random-sample averages. Error depends on sampling, sample count and the variance of the quantity estimated."
+    "zh": "通过随机样本的平均估计期望或积分：扔 1 万次飞镖估圆面积就是它。误差大小依赖采样方式、样本量及被估计量的方差；样本 ×4、误差大约 ÷2。",
+    "en": "Estimate expectations or integrals from random-sample averages: throwing 10,000 darts to estimate a circle's area is exactly this. Error depends on sampling, sample count and the variance of the quantity estimated; four times the samples roughly halves the error."
    },
    "formula": "estimate = sample average",
    "source": "../montecarlo/#step3"
@@ -663,8 +663,8 @@
     "en": "Superposition & interference"
    },
    "description": {
-    "zh": "线性波在同一点的位移相加；同频等振幅时，到达相位差决定合振幅。相干表示相对相位保持固定。",
-    "en": "Linear-wave displacements add at the same point. For equal-amplitude, equal-frequency waves, arrival phase determines the resultant amplitude; coherence means a fixed relative phase."
+    "zh": "线性波在同一点的位移相加；同频等振幅时，到达相位差决定合振幅。相干表示相对相位保持固定。双缝条纹、降噪耳机都是它：同相叠加变响变亮、反相抵消变静变暗——相位差就是明暗的开关。",
+    "en": "Linear-wave displacements add at the same point. For equal-amplitude, equal-frequency waves, arrival phase determines the resultant amplitude; coherence means a fixed relative phase. Double-slit fringes and noise-cancelling headphones are both this: in-phase addition grows louder and brighter, opposite-phase cancellation grows quieter and darker — phase difference is the brightness switch."
    },
    "formula": "B = 2A |cos(δ/2)|",
    "source": "../interference/#step1",
@@ -1001,8 +1001,8 @@
     "en": "explains storage"
    },
    "reason": {
-    "zh": "电压与电流的乘积是流入电感的功率，积分得到磁场储能变化。",
-    "en": "Voltage times current is power entering the inductor; integration gives the magnetic-energy change."
+    "zh": "电感电流有惯性、不能突变：功率进出改变的是磁场储能——P=VI 讲的是电流被推快或推慢的速度，而不是某一刻的存量。",
+    "en": "An inductor's current has inertia and cannot jump: power in or out changes the stored magnetic energy — P=VI tells how fast the current is pushed up or slowed down, not how much is stored at one instant."
    },
    "source": "../power-converters/#step1"
   },
@@ -1136,8 +1136,8 @@
     "en": "sets ideal voltage ratio"
    },
    "reason": {
-    "zh": "在连续导通理想稳态，伏秒平衡给出 ⟨Vout⟩ = D Vin。",
-    "en": "Ideal steady-state CCM volt-second balance gives ⟨Vout⟩ = D Vin."
+    "zh": "占空比 D 就是开关接通输入的时间占比：伏秒平衡下，输出平均电压等于 D·Vin——调 D 就是调输出，D 越大输出越高。",
+    "en": "The duty ratio D is the fraction of time the switch connects the input: volt-second balance then makes the average output D·Vin — turning D turns the output, larger D giving higher output."
    },
    "source": "../power-converters/#step4"
   },

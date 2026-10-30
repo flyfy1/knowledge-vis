@@ -36,8 +36,8 @@
         "en": "eats the final value"
       },
       "reason": {
-        "zh": "长期费率吃掉回报的很大一部分。",
-        "en": "A long-run fee eats a large part of returns."
+        "zh": "费率不是一次性扣：每年扣完、剩下的钱再复利，缺口随时间越滚越大——长期看，终值的一大块就是这样被费率吃掉的。",
+        "en": "A fee is not taken once: each year's deduction leaves less money to compound, so the gap grows with time — over the long run, a large chunk of the final value is eaten exactly this way."
       },
       "source": "../fees-compounding/#step5"
     },
@@ -50,8 +50,8 @@
         "en": "direct deduction"
       },
       "reason": {
-        "zh": "费用直接减少到手的回报。",
-        "en": "Fees directly reduce the return received."
+        "zh": "每笔费用都先从你的钱里划走：到手回报 = 毛回报 − 费用，费用是直接从结果里减掉的，不是账面数字。",
+        "en": "Every fee is taken out of your money first: return received = gross return − fees, so fees subtract directly from the result, not from a bookkeeping number."
       },
       "source": "../fees-compounding/#step5"
     },
@@ -64,8 +64,8 @@
         "en": "taken from r"
       },
       "reason": {
-        "zh": "费率从收益率 r 里扣，r 就是利率概念的实例。",
-        "en": "The fee is taken from the return rate r, an instance of the rate concept."
+        "zh": "复利公式里的 r 是钱每年的增长率——费率就是从这个增长率里直接扣掉一块，所以 r 变小、终值曲线立刻变平。",
+        "en": "The r in the compounding formula is money's yearly growth rate — a fee is deducted straight from that growth rate, so a smaller r immediately flattens the final-value curve."
       },
       "source": "../fees-compounding/#step5"
     }
