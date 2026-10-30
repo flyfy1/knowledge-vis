@@ -1,0 +1,168 @@
+{
+  "defaultNode": "stock",
+  "nodes": [
+    {
+      "id": "stock",
+      "group": "markets",
+      "stage": "junior",
+      "title": {
+        "zh": "股票",
+        "en": "Stock"
+      },
+      "description": {
+        "zh": "公司所有权的一份：按份分享利润、共担亏损，出事时最后拿钱。",
+        "en": "One part of a company's ownership: sharing profits and losses by part, paid last when things go wrong."
+      },
+      "source": "../stocks-bonds/#step1",
+      "lessons": [
+        {
+          "slug": "stocks-bonds",
+          "step": 1,
+          "category": "investment",
+          "stage": "junior",
+          "primary": true
+        }
+      ]
+    },
+    {
+      "id": "bond",
+      "group": "markets",
+      "stage": "junior",
+      "title": {
+        "zh": "债券",
+        "en": "Bond"
+      },
+      "description": {
+        "zh": "公司的借条：出借人按约定收票息、到期收回本金，出事时先于股东拿钱。",
+        "en": "A company's IOU: the lender collects coupons as agreed and the principal at maturity, paid before shareholders when things go wrong."
+      },
+      "source": "../stocks-bonds/#step2",
+      "lessons": [
+        {
+          "slug": "stocks-bonds",
+          "step": 2,
+          "category": "investment",
+          "stage": "junior",
+          "primary": true
+        }
+      ]
+    },
+    {
+      "id": "risk",
+      "group": "risk",
+      "stage": "junior",
+      "title": {
+        "zh": "风险",
+        "en": "Risk"
+      },
+      "description": {
+        "zh": "结果的不确定程度：用方差量散开程度，不是好坏。",
+        "en": "How uncertain outcomes are: measured by variance as spread, not as good or bad."
+      },
+      "source": "../risk-return/#step1",
+      "lessons": [
+        {
+          "slug": "risk-return",
+          "step": 1,
+          "category": "investment",
+          "stage": "junior",
+          "primary": true
+        }
+      ]
+    },
+    {
+      "id": "return",
+      "group": "risk",
+      "stage": "junior",
+      "title": {
+        "zh": "回报",
+        "en": "Return"
+      },
+      "description": {
+        "zh": "持有资产得到的收益：分红、票息、价格变化都算回报，承诺的平均不等于到手。",
+        "en": "What holding an asset pays: dividends, coupons and price changes all count as return, and a promised mean is not a delivery."
+      },
+      "source": "../risk-return/#step3",
+      "lessons": [
+        {
+          "slug": "risk-return",
+          "step": 3,
+          "category": "investment",
+          "stage": "junior",
+          "primary": true
+        }
+      ]
+    },
+    {
+      "id": "fee",
+      "group": "foundations",
+      "stage": "senior",
+      "title": {
+        "zh": "费率",
+        "en": "Fee"
+      },
+      "description": {
+        "zh": "按资产比例每年收取的费用：从收益率里扣，随时间复利放大。",
+        "en": "A yearly charge as a proportion of assets: taken off the return and magnified by compounding over time."
+      },
+      "source": "../fees-compounding/#step1",
+      "lessons": [
+        {
+          "slug": "fees-compounding",
+          "step": 1,
+          "category": "investment",
+          "stage": "senior",
+          "primary": true
+        }
+      ]
+    },
+    {
+      "id": "interest-rate",
+      "group": "valuation",
+      "stage": "senior",
+      "title": {
+        "zh": "利率",
+        "en": "Interest Rate"
+      },
+      "description": {
+        "zh": "借钱的价格：未来现金按它贴现成今天的价值。",
+        "en": "The price of borrowing: future cash is discounted by it into today's value."
+      },
+      "source": "../interest-rates-bonds/#step1",
+      "lessons": [
+        {
+          "slug": "interest-rates-bonds",
+          "step": 1,
+          "category": "investment",
+          "stage": "senior",
+          "primary": true
+        }
+      ]
+    },
+    {
+      "id": "bond-price",
+      "group": "valuation",
+      "stage": "senior",
+      "title": {
+        "zh": "债券价格",
+        "en": "Bond Price"
+      },
+      "description": {
+        "zh": "债券未来现金按当前利率贴现的总和：利率升，价格跌。",
+        "en": "The sum of a bond's future cash discounted at the current rate: when rates rise, the price falls."
+      },
+      "source": "../interest-rates-bonds/#step2",
+      "lessons": [
+        {
+          "slug": "interest-rates-bonds",
+          "step": 2,
+          "category": "investment",
+          "stage": "senior",
+          "primary": true
+        }
+      ]
+    }
+  ],
+  "edges": [],
+  "trails": []
+}

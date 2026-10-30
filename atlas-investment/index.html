@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>投资知识地图 · Investment Atlas</title>
+  <meta name="description" content="投资分册的知识地图：股票、债券、风险、回报、费率与利率之间的联系。 / A map of the investment section: how stocks, bonds, risk, return, fees and rates connect.">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="../atlas/style.css">
+  <style>
+    .region[data-group=foundations]{--region:#a9adff}
+    .region[data-group=markets]{--region:#8ee5e1}
+    .region[data-group=risk]{--region:#8bbdff}
+    .region[data-group=valuation]{--region:#f4bd85}
+    .region[data-group=behavior]{--region:#e4a4cd}
+  </style>
+  <script defer src="data.js"></script>
+  <script defer src="../atlas/app.js"></script>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="topbar">
+        <a href="../" data-i18n="back" data-i18n-zh="← 知识索引" data-i18n-en="← Knowledge Index">← Knowledge Index</a>
+        <div id="langToggle" class="segmented" role="group" aria-label="Language / 语言">
+          <button type="button" data-lang="zh">中</button><button type="button" data-lang="en">EN</button>
+        </div>
+      </div>
+      <div class="hero">
+        <div><p class="eyebrow" data-i18n="eyebrow" data-i18n-zh="投资知识地图 / 01" data-i18n-en="INVESTMENT ATLAS / 01">INVESTMENT ATLAS / 01</p><h1 data-i18n="title" data-i18n-zh="投资" data-i18n-en="Investment">Investment</h1>
+          <p class="intro" data-i18n="intro" data-i18n-zh="投资分册的概念地图：从一个问题出发，看清概念背后的联系，再点进对应的互动课程。主地图的概念（复利、方差、风险分摊、供求）只作跨图深链，不复制为本图节点。" data-i18n-en="A concept map for the investment section: start from a question, inspect the concepts behind it, then open the linked interactive lesson. Main-atlas concepts (compound interest, variance, risk pooling, supply and demand) are cross-graph deep links only, never copied as nodes of this map.">A concept map for the investment section.</p></div>
+        <p id="counts" class="counts"></p>
+      </div>
+    </header>
+    <section aria-labelledby="routesHeading" class="routes">
+      <h2 id="routesHeading" data-i18n="routes" data-i18n-zh="从问题出发" data-i18n-en="Start with a question">Start with a question</h2><div id="routes"></div><h3 data-i18n="questions" data-i18n-zh="可以从这些问题出发" data-i18n-en="Questions to start from">Questions to start from</h3><div id="questions"></div>
+      <div id="trail" hidden></div>
+      <details id="route-foundations" class="route-foundations" hidden><summary id="foundations-summary"></summary><p id="foundations-intro" class="foundations-intro"></p><div id="foundations-content"></div>
+        <section id="foundations-check-wrap" hidden><h3 id="foundations-check-title"></h3><p id="foundations-check-scope"></p><p id="foundations-question"></p><details id="foundations-check"><summary id="foundations-reveal"></summary><p id="foundations-answer"></p><button type="button" id="foundations-verify"></button></details></section>
+      </details>
+      <p id="motion-route-context" class="trail-context" hidden></p>
+      <p id="response-route-context" class="trail-context" hidden></p>
+    </section>
+    <main>
+      <section class="explorer" aria-labelledby="exploreHeading">
+        <div class="section-head"><h2 id="exploreHeading" data-i18n="explore" data-i18n-zh="探索这些联系" data-i18n-en="Explore the connections">Explore the connections</h2>
+          <div class="segmented" role="group" id="viewToggle" aria-label="View">
+            <button type="button" data-view="graph" data-i18n="graph" data-i18n-zh="地图" data-i18n-en="Map">Map</button><button type="button" data-view="list" data-i18n="list" data-i18n-zh="列表" data-i18n-en="List">List</button>
+          </div>
+        </div>
+        <div class="toolbar">
+          <div class="search-field"><label for="search" data-i18n="searchLabel" data-i18n-zh="找一个概念" data-i18n-en="Find a concept">Find a concept</label><input id="search" type="search" autocomplete="off" maxlength="160" placeholder="Search concepts, e.g. stock, risk, fee…" data-placeholder-zh="搜概念，如：股票、风险、费率…" data-placeholder-en="Search concepts, e.g. stock, risk, fee…"></div>
+          <div class="group-field"><label for="group" data-i18n="groupLabel" data-i18n-zh="分区" data-i18n-en="Region">Region</label><select id="group"></select></div>
+          <div class="stage-field"><label for="stage" data-i18n="stageLabel" data-i18n-zh="阶段" data-i18n-en="Stage">Stage</label><select id="stage"></select></div>
+          <button id="reset" type="button" data-i18n="reset" data-i18n-zh="清除筛选" data-i18n-en="Clear filters">Clear filters</button>
+        </div>
+        <p id="status" class="status" role="status"></p>
+        <p id="invalid" class="notice" hidden data-i18n="invalid" data-i18n-zh="这个链接包含未知的选择，已显示默认概念；你可以选择另一个概念。" data-i18n-en="This link contains an unknown selection. Showing the default concept; you can choose another concept.">This link contains an unknown selection.</p>
+        <div class="workspace">
+          <div class="map-panel">
+            <div id="graphView">
+              <p class="map-help" data-i18n="mapHelp" data-i18n-zh="选一个概念，看它的联系。数字对应解释。位置只表示分区，距离没有数值含义。行为分区本批尚为空，如实显示为“即将到来”，没有虚构节点。" data-i18n-en="Select a concept to reveal its connections. Numbers match the explanations. Positions group topics; distances have no numerical meaning. The behavior region is empty in this batch and is honestly shown as coming soon, with no invented nodes.">Select a concept to reveal its connections.</p>
+              <div class="map-scroll" tabindex="0" role="region" id="mapScroll" aria-label="Knowledge map. Scroll horizontally for more topics.">
+                <div id="map"><svg id="connections" aria-hidden="true"></svg><div id="columns"></div></div>
+              </div>
+              <p class="map-footer" data-i18n="mapFooter" data-i18n-zh="箭头跟随文字关系，不代表必修的学习顺序。" data-i18n-en="Arrows follow the written relation. They do not imply a required learning order.">Arrows follow the written relation.</p>
+            </div>
+            <div id="listView" hidden><div id="results" class="results"></div></div>
+            <div id="empty" class="empty" hidden><h3 data-i18n="emptyTitle" data-i18n-zh="没有匹配的概念" data-i18n-en="No matching concepts">No matching concepts</h3><p data-i18n="emptyBody" data-i18n-zh="换个词试试，或者清除筛选看整张地图。" data-i18n-en="Try another term, or clear the filters to see the full map.">Try another term.</p><button type="button" id="emptyReset" data-i18n="reset" data-i18n-zh="清除筛选" data-i18n-en="Clear filters">Clear filters</button></div>
+          </div>
+          <aside id="detail" aria-labelledby="detailTitle"></aside>
+        </div>
+      </section>
+    </main>
+    <footer><p data-i18n="scope" data-i18n-zh="一张编辑精选的地图，不是完整课程。联系经过挑选并链接到讲解。外部读物与互动课程分开标注。" data-i18n-en="An editorial map, not a complete curriculum. Connections are curated and linked to explanations. External readings are marked separately from interactive lessons.">An editorial map, not a complete curriculum.</p><a href="../" data-i18n="allLessons" data-i18n-zh="浏览全部互动课程 →" data-i18n-en="Browse all interactive lessons →">Browse all interactive lessons →</a> · <a href="sources.html">投资分册来源与许可 / Sources &amp; licences</a></footer>
+    <noscript><p>Enable JavaScript to explore the map. / 请启用 JavaScript 浏览地图。</p><a href="../stocks-bonds/#step5">Stocks &amp; Bonds / 股票与债券</a> · <a href="../risk-return/#step5">Risk &amp; Return / 风险与回报</a> · <a href="../diversification/#step5">Diversification / 分散投资</a> · <a href="../fees-compounding/#step5">Fees &amp; Compounding / 费率与复利</a> · <a href="../interest-rates-bonds/#step5">Interest Rates &amp; Bonds / 利率与债券</a></noscript>
+  </div>
+</body>
+</html>

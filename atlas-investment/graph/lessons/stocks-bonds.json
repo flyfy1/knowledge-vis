@@ -1,0 +1,113 @@
+{
+  "slug": "stocks-bonds",
+  "conceptId": "stocks-bonds",
+  "group": "foundations",
+  "stage": "junior",
+  "title": {
+    "zh": "股票与债券",
+    "en": "Stocks & Bonds"
+  },
+  "description": {
+    "zh": "股票是所有权凭证：按份当主人，分红、涨跌都按份来，出事时最后拿钱。债券是借条：出借人不是主人，按约定收票息、到期收回本金，出事时先于股东拿钱。",
+    "en": "A stock is an ownership certificate: you own by part, dividends and price moves follow your parts, and you are paid last when things go wrong. A bond is an IOU: the lender is not an owner, collects coupons as agreed and the principal at maturity, and is paid before shareholders when things go wrong."
+  },
+  "source": "../stocks-bonds/#step5",
+  "edges": [
+    {
+      "from": "stock",
+      "to": "stocks-bonds",
+      "type": "foundation",
+      "label": {
+        "zh": "所有权凭证",
+        "en": "ownership certificate"
+      },
+      "reason": {
+        "zh": "股票是这一课讲的第一种凭证。",
+        "en": "The stock is the first certificate this lesson explains."
+      },
+      "source": "../stocks-bonds/#step5"
+    },
+    {
+      "from": "stocks-bonds",
+      "to": "bond",
+      "type": "connection",
+      "label": {
+        "zh": "对照",
+        "en": "contrast"
+      },
+      "reason": {
+        "zh": "债券与股票对照：债权对所有权。",
+        "en": "Bonds contrast with stocks: a lender claim against ownership."
+      },
+      "source": "../stocks-bonds/#step5"
+    },
+    {
+      "from": "stocks-bonds",
+      "to": "risk",
+      "type": "connection",
+      "label": {
+        "zh": "引出清偿风险",
+        "en": "leads to repayment risk"
+      },
+      "reason": {
+        "zh": "出事时谁先拿钱，就是风险的来源之一。",
+        "en": "Who is paid first when things go wrong is one source of risk."
+      },
+      "source": "../stocks-bonds/#step5"
+    },
+    {
+      "from": "diversification",
+      "to": "stocks-bonds",
+      "type": "connection",
+      "label": {
+        "zh": "以股债为材料",
+        "en": "uses stocks and bonds"
+      },
+      "reason": {
+        "zh": "分散投资拿股债作组合的材料。",
+        "en": "Diversification builds portfolios from stocks and bonds."
+      },
+      "source": "../stocks-bonds/#step5"
+    }
+  ],
+  "routes": [
+    {
+      "title": {
+        "zh": "买股票和买债券，到底买到了什么？",
+        "en": "When you buy a stock or a bond, what have you actually bought?"
+      },
+      "nodes": [
+        "stock",
+        "stocks-bonds",
+        "bond"
+      ],
+      "prompts": [
+        {
+          "node": "stock",
+          "ask": {
+            "zh": "买到股票，你买到了什么？",
+            "en": "When you buy a stock, what have you bought?"
+          }
+        },
+        {
+          "node": "stocks-bonds",
+          "ask": {
+            "zh": "股票和债券，关键区别是什么？",
+            "en": "What is the key difference between a stock and a bond?"
+          }
+        },
+        {
+          "node": "bond",
+          "ask": {
+            "zh": "买到债券，你买到了什么？",
+            "en": "When you buy a bond, what have you bought?"
+          }
+        }
+      ],
+      "reveal": {
+        "zh": "股票是所有权凭证：按份当主人，分红、涨跌都按份来，出事时最后拿钱。债券是借条：出借人不是主人，按约定收票息、到期收回本金，出事时先于股东拿钱。",
+        "en": "A stock is an ownership certificate: you own by part, dividends and price moves follow your parts, and you are paid last when things go wrong. A bond is an IOU: the lender is not an owner, collects coupons as agreed and the principal at maturity, and is paid before shareholders when things go wrong."
+      }
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "slug": "interest-rates-bonds",
+  "conceptId": "interest-rates-bonds",
+  "group": "valuation",
+  "stage": "senior",
+  "title": {
+    "zh": "利率与债券",
+    "en": "Interest Rates & Bonds"
+  },
+  "description": {
+    "zh": "债券是未来现金流序列；价格是逐笔贴现再加总。利率升、价格跌：新买家只按新利率出价，旧债券必须跌价到同样收益率。",
+    "en": "A bond is a sequence of future cash flows; its price is each payment discounted and added up. Rates up, price down: new buyers pay only at the new rate, so the old bond must fall until it yields the same."
+  },
+  "source": "../interest-rates-bonds/#step5",
+  "edges": [
+    {
+      "from": "interest-rate",
+      "to": "interest-rates-bonds",
+      "type": "foundation",
+      "label": {
+        "zh": "贴现率",
+        "en": "discount rate"
+      },
+      "reason": {
+        "zh": "利率是给未来现金贴现的比率。",
+        "en": "The rate is what discounts future cash."
+      },
+      "source": "../interest-rates-bonds/#step5"
+    },
+    {
+      "from": "interest-rates-bonds",
+      "to": "bond-price",
+      "type": "connection",
+      "label": {
+        "zh": "决定价格",
+        "en": "decides the price"
+      },
+      "reason": {
+        "zh": "利率变化直接重算债券价格。",
+        "en": "A rate change directly recalculates the bond price."
+      },
+      "source": "../interest-rates-bonds/#step5"
+    },
+    {
+      "from": "bond",
+      "to": "bond-price",
+      "type": "connection",
+      "label": {
+        "zh": "现值即价格",
+        "en": "present value is price"
+      },
+      "reason": {
+        "zh": "债券的价格就是它未来现金的现值。",
+        "en": "A bond's price is the present value of its future cash."
+      },
+      "source": "../interest-rates-bonds/#step5"
+    },
+    {
+      "from": "interest-rate",
+      "to": "bond-price",
+      "type": "connection",
+      "label": {
+        "zh": "反向运动",
+        "en": "inverse move"
+      },
+      "reason": {
+        "zh": "利率升，债券价格跌。",
+        "en": "When rates rise, bond prices fall."
+      },
+      "source": "../interest-rates-bonds/#step5"
+    },
+    {
+      "from": "interest-rate",
+      "to": "return",
+      "type": "connection",
+      "label": {
+        "zh": "机会成本",
+        "en": "opportunity cost"
+      },
+      "reason": {
+        "zh": "利率是其他选择的回报基准。",
+        "en": "The rate is the return benchmark of other choices."
+      },
+      "source": "../interest-rates-bonds/#step5"
+    }
+  ],
+  "routes": [
+    {
+      "title": {
+        "zh": "利率上升，债券价格为什么跌？",
+        "en": "Why do bond prices fall when rates rise?"
+      },
+      "nodes": [
+        "interest-rate",
+        "interest-rates-bonds",
+        "bond-price"
+      ],
+      "prompts": [
+        {
+          "node": "interest-rate",
+          "ask": {
+            "zh": "利率在债券定价里起什么作用？",
+            "en": "What role does the rate play in pricing a bond?"
+          }
+        },
+        {
+          "node": "interest-rates-bonds",
+          "ask": {
+            "zh": "利率上升，债券价格为什么跌？",
+            "en": "Why do bond prices fall when rates rise?"
+          }
+        },
+        {
+          "node": "bond-price",
+          "ask": {
+            "zh": "旧债券凭什么必须跌价？",
+            "en": "Why must an old bond fall in price?"
+          }
+        }
+      ],
+      "reveal": {
+        "zh": "债券是未来现金流序列；价格是逐笔贴现再加总。利率升、价格跌：新买家只按新利率出价，旧债券必须跌价到同样收益率。",
+        "en": "A bond is a sequence of future cash flows; its price is each payment discounted and added up. Rates up, price down: new buyers pay only at the new rate, so the old bond must fall until it yields the same."
+      }
+    }
+  ]
+}
