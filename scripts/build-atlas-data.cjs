@@ -394,7 +394,7 @@ if (args.has('--concept-map')) {
     console.log('WROTE CONCEPT-MAP appendix.');
   }
 }
-fs.writeFileSync(path.join(graphDir, 'merge-report.json'), JSON.stringify(report, null, 2) + '\n');
+if (!args.has('--check')) fs.writeFileSync(path.join(graphDir, 'merge-report.json'), JSON.stringify(report, null, 2) + '\n');
 console.log(`REPORT: conflicts=${report.conflicts.length} suspendedEdges=${report.suspendedEdges.length} suspendedQuestions=${report.suspendedQuestions.length} coverageGaps=${report.coverageGaps.length} decisions=${report.decisionsApplied.length}`);
 if (report.conflicts.length) console.log('CONFLICTS:', JSON.stringify(report.conflicts.slice(0, 20)));
 if (report.suspendedEdges.length) console.log('SUSPENDED EDGES:', JSON.stringify(report.suspendedEdges.slice(0, 20)));
