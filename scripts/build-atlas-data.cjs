@@ -196,6 +196,8 @@ for (const file of fragFiles) {
     newQuestions.push({
       id: `q-${frag.slug}-${i}`, question: bi(r.title), chain: r.nodes.map(rewrite),
       target: { node: rewrite(conceptId), href: frag.source },
+      ...(r.prompts ? { prompts: r.prompts.map(pr => ({ node: rewrite(pr.node), ask: bi(pr.ask) })) } : {}),
+      ...(r.reveal ? { reveal: bi(r.reveal) } : {}),
       source: frag.source, lesson: frag.slug, stage, group: mapGroup(frag, page),
     });
   });
@@ -249,6 +251,11 @@ for (const q of newQuestions) {
     }
     if (!q.chain.includes(q.target.node)) problems.push('target.node not in chain');
     for (const id of q.chain) if (!nodesById.has(id)) problems.push(`unknown chain node ${id}`);
+    for (const pr of (q.prompts || [])) {
+      if (!q.chain.includes(pr.node)) problems.push(`prompt node not in chain: ${pr.node}`);
+      if (!pr.ask || !pr.ask.zh || !pr.ask.en) problems.push(`prompt ask not bilingual: ${pr.node}`);
+    }
+    if (q.reveal && (!q.reveal.zh || !q.reveal.en)) problems.push('reveal not bilingual');
   }
   const anchor = anchorExists(q.target.href);
   if (anchor === false) problems.push(`target href anchor missing: ${q.target.href}`);
