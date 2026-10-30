@@ -184,8 +184,8 @@
     "en": "Voltage, current & power"
    },
    "description": {
-    "zh": "电压是能量除以电荷，电流是电荷流率；功率是电压与电流的乘积。",
-    "en": "Voltage is energy per charge; current is charge flow per time. Power is their product."
+    "zh": "电压是每份电荷携带的能量，电流是每秒流过的电荷；两者相乘就是每秒的能量，即功率——100 瓦的灯泡每秒用掉 100 焦耳。",
+    "en": "Voltage is energy per charge, current is charge per second; multiplied they give energy per second, which is power — a 100-watt bulb uses 100 joules every second."
    },
    "formula": "P = VI",
    "source": "../power-converters/#step0"
@@ -198,8 +198,8 @@
     "en": "Inductor & magnetic energy"
    },
    "description": {
-    "zh": "电感两端电压决定电流的变化速度；有限电压不能使电流瞬间跳变。",
-    "en": "Voltage across an inductor sets the rate of current change; finite voltage cannot cause an instantaneous current jump."
+    "zh": "像电路里的飞轮：电感两端电压决定电流的变化速度，电流有了“惯性”——有限电压不能使电流瞬间跳变，只能慢慢推着它变快或变慢。",
+    "en": "Like a flywheel in a circuit: voltage across an inductor sets the rate of current change, giving current inertia — finite voltage cannot make current jump instantly, only push it faster or slower over time."
    },
    "formula": "vL = L di/dt",
    "source": "../power-converters/#step1"
@@ -212,8 +212,8 @@
     "en": "Capacitor & electric energy"
    },
    "description": {
-    "zh": "流入电容正端的电流改变电压；理想电容在零电流时保持已有电压。",
-    "en": "Current into the positive terminal changes voltage; an ideal capacitor holds its voltage at zero current."
+    "zh": "像一个极小的蓄水池：流入正端的电流给它充电、电压随存量上升，断开后理想电容在零电流时保持已有电压——电压就是它的“满度”，电流就是进出水流。",
+    "en": "Like a tiny reservoir: current into the positive terminal charges it and voltage rises with the stored amount; disconnected, an ideal capacitor holds its voltage at zero current — voltage is its fullness, current the inflow and outflow."
    },
    "formula": "iC = C dv/dt",
    "source": "../power-converters/#step2"
@@ -240,8 +240,8 @@
     "en": "Pulse-width modulation"
    },
    "description": {
-    "zh": "在固定周期内改变开关导通时间。占空比是导通时间占周期的比例。",
-    "en": "Vary switch ON time within a fixed period. Duty is the fraction of the period spent ON."
+    "zh": "在固定周期内改变开关导通时间来“假装”调光：开关闪得比眼睛反应快时，眼睛只感受到平均亮度——占空比（导通时间占周期的比例）越大，看起来越亮。",
+    "en": "Vary switch ON time within a fixed period to fake dimming: flickering faster than the eye can follow, only the average brightness is seen — a larger duty cycle, the fraction of the period spent ON, looks brighter."
    },
    "formula": "D = ton / T",
    "source": "../power-converters/#step3"
@@ -336,8 +336,8 @@
     "en": "Complex rotation"
    },
    "description": {
-    "zh": "把平面点写成复数后，乘以单位模复数可以表示旋转；实部和虚部给出两个坐标。",
-    "en": "Represent a plane point as a complex number. Multiplication by a unit-magnitude complex number rotates it; real and imaginary parts are coordinates."
+    "zh": "把平面点写成复数后，乘以单位模复数就是旋转：乘以 i 是逆时针转 90°，连乘两次就是转 180°（即乘 −1）；实部和虚部就是这个点的两个坐标。",
+    "en": "Represent a plane point as a complex number, and multiplying by a unit-magnitude complex number rotates it: multiply by i to turn 90° counterclockwise, twice for 180° (that is, multiply by −1). Real and imaginary parts are the point's two coordinates."
    },
    "formula": "z = cos θ + i sin θ",
    "source": "../complex-numbers/#step4"
@@ -364,8 +364,8 @@
     "en": "Eigenvectors"
    },
    "description": {
-    "zh": "非零向量经过矩阵变换后仍在原来的直线上，只乘了一个比例 λ。",
-    "en": "A nonzero vector that stays on its original line under a matrix transformation, scaled by a factor λ."
+    "zh": "矩阵变换通常既转又拉向量，但总有几个特殊方向只被拉长或压短、不改变方向——这些就是特征向量，拉伸比例 λ 叫特征值；它们是变换的“脊梁方向”。",
+    "en": "A matrix usually both rotates and stretches vectors, but a few special directions are only stretched or shrunk, never turned — those are eigenvectors, with the stretch factor λ called the eigenvalue. They are the transformation's spine directions."
    },
    "formula": "Av = λv",
    "source": "../eigen/#step1"
@@ -467,8 +467,8 @@
     "en": "Resonance"
    },
    "description": {
-    "zh": "受周期驱动的系统，响应幅度可能在某个频率附近出现峰值；阻尼会改变峰的高度和位置。",
-    "en": "A periodically driven system may respond most strongly near a particular frequency. Damping changes the peak height and location."
+    "zh": "像推秋千踩中节拍：受周期驱动的系统，响应幅度可能在某个频率附近出现峰值——外推频率等于固有频率时振幅最大；阻尼越小峰越尖越高，阻尼越大峰越矮越宽，偏一点频率也推得起来一些。",
+    "en": "Like pushing a swing in time: a periodically driven system may respond most strongly near a particular frequency — amplitude peaks when the driving frequency equals the natural frequency. Lighter damping makes the peak taller and sharper; heavier damping makes it lower and wider, so slightly off-frequency pushes still build a little."
    },
    "formula": "drive → response peak",
    "source": "../freqresp/#step5"
@@ -495,8 +495,8 @@
     "en": "LTI systems"
    },
    "description": {
-    "zh": "线性意味着输入加权组合对应输出的同样组合；时不变意味着延迟输入只会延迟输出。",
-    "en": "Linearity preserves weighted combinations of inputs. Time invariance means delaying an input only delays its output."
+    "zh": "线性意味着输入加权组合对应输出的同样组合（可以分开算再叠加）；时不变意味着系统今天和明天一个样——输入推迟多久，输出就推迟多久，形状不变。",
+    "en": "Linearity preserves weighted combinations of inputs (solve parts separately, then add); time invariance means the system behaves the same today and tomorrow — delay the input and the output delays by exactly as much, shape unchanged."
    },
    "formula": "linear + time invariant",
    "source": "../lti/#step3"
@@ -523,8 +523,8 @@
     "en": "Convolution"
    },
    "description": {
-    "zh": "把一个序列翻转、平移，与另一个序列对应相乘后求和；每个位移产生一个输出值。",
-    "en": "Reverse and shift one sequence, multiply it against another, then sum. Each shift produces one output value."
+    "zh": "把一个序列翻转、平移，与另一个序列对应相乘后求和；每个位移产生一个输出值——实际就是加权滑动平均：用它平滑信号、模糊图像时，权重序列就是“邻居各占几分”的配方。",
+    "en": "Reverse and shift one sequence, multiply it against another, then sum; each shift produces one output value. In practice it is a weighted moving average — smoothing a signal or blurring an image just picks a weight sequence saying how much each neighbour counts."
    },
    "formula": "y[n] = Σ x[k]h[n−k]",
    "source": "../convolution/#step2"
@@ -579,8 +579,8 @@
     "en": "Probability models"
    },
    "description": {
-    "zh": "用概率描述可能结果及其不确定性；模型中的概率需要与观察证据区分。",
-    "en": "Use probabilities to describe possible outcomes and uncertainty. Model probabilities are distinct from observed evidence."
+    "zh": "用概率描述可能结果及其不确定性：扔 100 次硬币大约 50 次正面，但单次扔出什么仍不可预测——概率说的是长期频率，不是单次的保证；模型里的概率还要拿观察证据来检验，不能混为一谈。",
+    "en": "Use probabilities to describe possible outcomes and uncertainty: 100 coin flips land heads about 50 times, yet a single flip stays unpredictable — probability speaks of long-run frequency, not a guarantee for one trial. Model probabilities must still be checked against observed evidence, never confused with it."
    },
    "formula": "0 ≤ P(A) ≤ 1",
    "source": "../bayes/#step0"
@@ -607,8 +607,8 @@
     "en": "Variance"
    },
    "description": {
-    "zh": "与均值的偏差平方的期望，用于描述分散程度。其单位是原变量单位的平方。",
-    "en": "The expected squared deviation from the mean, measuring spread. Its units are the square of the variable’s units."
+    "zh": "与均值的偏差平方的期望，用于描述分散程度：平方既消掉正负号，又让偏离大的点代价更大；但单位也成了原单位的平方，所以实用时常开方回到原单位，那就是标准差。",
+    "en": "The expected squared deviation from the mean, measuring spread: squaring removes the sign and punishes large misses more, but it also squares the units — so in practice we take the square root back to the original units, which is the standard deviation."
    },
    "formula": "Var(X) = E[(X−μ)²]",
    "source": "../clt/#step3"
@@ -865,8 +865,8 @@
     "en": "explains storage"
    },
    "reason": {
-    "zh": "电容吸收或释放的功率等于其电压与电流的乘积。",
-    "en": "Power absorbed or released by a capacitor equals its voltage times current."
+    "zh": "电容存的能量只能靠功率进出改变，功率等于电压乘电流——它告诉你电容充放电有多快，而不是只报一个静态数值。",
+    "en": "A capacitor's stored energy changes only through power in or out, and power equals voltage times current — it tells how fast the capacitor charges or discharges, not just a static number."
    },
    "source": "../power-converters/#step2"
   },

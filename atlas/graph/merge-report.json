@@ -343,7 +343,13 @@
     "mechanism-auction",
     "probability-frequency",
     "hashing",
-    "limits-epsilon"
+    "limits-epsilon",
+    "stocks-bonds",
+    "risk-return",
+    "diversification",
+    "fees-compounding",
+    "interest-rates-bonds",
+    "atlas-investment"
   ],
   "decisionsApplied": [
     {
@@ -396,5 +402,5 @@
       "claimedStep": 5
     }
   ],
-  "sizeBytes": 371755
+  "sizeBytes": 380307
 }
