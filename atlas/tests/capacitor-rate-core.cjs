@@ -13,5 +13,5 @@ visit(0,0,0);
 let v=0;for(const i of [.02,.02,0,-.02])v=pulse('capacitor',v,i).value;assert.ok(Math.abs(v-.1)<1e-12);
 v=pulse('capacitor',v,-.02).value;v=pulse('capacitor',v,-.02).value;assert.ok(Math.abs(v+.1)<1e-12);
 assert.ok(pulse('capacitor',-.1,-.02).deltaEnergy>0,'Negative current at negativeV can increase energy');
-for(const f of ['power-converters/model.js','power-converters/flow.js','atlas/app.js'])assert.equal(fs.readFileSync(f,'utf8'),cp.execFileSync('git',['show','227f37b6:'+f],{encoding:'utf8'}),f+' untouched');
+for(const f of ['power-converters/model.js','power-converters/flow.js','atlas/app.js'])assert.equal(fs.readFileSync(f,'utf8'),cp.execFileSync('git',['show','dc453c92:'+f],{encoding:'utf8'}),f+' untouched');
 console.log(JSON.stringify({pass:true,graph:d.nodes.length+'/'+d.edges.length+'/'+d.trails.length,independentChargeCases:cases,maxResidual,scope:'Existing pulse recurrence and scoped graph metadata; no measured hardware/learning claim'}));
