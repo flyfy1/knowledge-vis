@@ -1,0 +1,243 @@
+{
+  "cases": [
+    {
+      "kind": "buck",
+      "phase": 0,
+      "on": true,
+      "il": 0.925,
+      "ic": -0.07499999999999996,
+      "vl": 6,
+      "energy": 0.0004278125,
+      "pL": 5.550000000000001
+    },
+    {
+      "kind": "buck",
+      "phase": 0.125,
+      "on": true,
+      "il": 0.9625,
+      "ic": -0.03749999999999998,
+      "vl": 6,
+      "energy": 0.000463203125,
+      "pL": 5.775
+    },
+    {
+      "kind": "buck",
+      "phase": 0.25,
+      "on": true,
+      "il": 1,
+      "ic": 0,
+      "vl": 6,
+      "energy": 0.0005,
+      "pL": 6
+    },
+    {
+      "kind": "buck",
+      "phase": 0.375,
+      "on": true,
+      "il": 1.0375,
+      "ic": 0.03750000000000009,
+      "vl": 6,
+      "energy": 0.000538203125,
+      "pL": 6.2250000000000005
+    },
+    {
+      "kind": "buck",
+      "phase": 0.5,
+      "on": false,
+      "il": 1.0750000000000002,
+      "ic": 0.07500000000000018,
+      "vl": -6,
+      "energy": 0.0005778125000000002,
+      "pL": -6.450000000000001
+    },
+    {
+      "kind": "buck",
+      "phase": 0.625,
+      "on": false,
+      "il": 1.0375,
+      "ic": 0.03750000000000009,
+      "vl": -6,
+      "energy": 0.000538203125,
+      "pL": -6.2250000000000005
+    },
+    {
+      "kind": "buck",
+      "phase": 0.75,
+      "on": false,
+      "il": 1.0000000000000002,
+      "ic": 2.220446049250313e-16,
+      "vl": -6,
+      "energy": 0.0005000000000000002,
+      "pL": -6.000000000000002
+    },
+    {
+      "kind": "buck",
+      "phase": 0.875,
+      "on": false,
+      "il": 0.9625000000000001,
+      "ic": -0.03749999999999987,
+      "vl": -6,
+      "energy": 0.00046320312500000013,
+      "pL": -5.775
+    },
+    {
+      "kind": "buck",
+      "phase": 1,
+      "on": true,
+      "il": 0.925,
+      "ic": -0.07499999999999996,
+      "vl": 6,
+      "energy": 0.0004278125,
+      "pL": 5.550000000000001
+    },
+    {
+      "kind": "buck",
+      "phase": 2,
+      "on": true,
+      "il": 0.925,
+      "ic": -0.07499999999999996,
+      "vl": 6,
+      "energy": 0.0004278125,
+      "pL": 5.550000000000001
+    },
+    {
+      "kind": "boost",
+      "phase": 0,
+      "on": true,
+      "il": 1.85,
+      "ic": -1,
+      "vl": 12,
+      "energy": 0.00171125,
+      "pL": 22.200000000000003
+    },
+    {
+      "kind": "boost",
+      "phase": 0.125,
+      "on": true,
+      "il": 1.925,
+      "ic": -1,
+      "vl": 12,
+      "energy": 0.0018528125,
+      "pL": 23.1
+    },
+    {
+      "kind": "boost",
+      "phase": 0.25,
+      "on": true,
+      "il": 2,
+      "ic": -1,
+      "vl": 12,
+      "energy": 0.002,
+      "pL": 24
+    },
+    {
+      "kind": "boost",
+      "phase": 0.375,
+      "on": true,
+      "il": 2.075,
+      "ic": -1,
+      "vl": 12,
+      "energy": 0.0021528125,
+      "pL": 24.900000000000002
+    },
+    {
+      "kind": "boost",
+      "phase": 0.5,
+      "on": false,
+      "il": 2.1500000000000004,
+      "ic": 1.1500000000000004,
+      "vl": -12,
+      "energy": 0.002311250000000001,
+      "pL": -25.800000000000004
+    },
+    {
+      "kind": "boost",
+      "phase": 0.625,
+      "on": false,
+      "il": 2.075,
+      "ic": 1.0750000000000002,
+      "vl": -12,
+      "energy": 0.0021528125,
+      "pL": -24.900000000000002
+    },
+    {
+      "kind": "boost",
+      "phase": 0.75,
+      "on": false,
+      "il": 2.0000000000000004,
+      "ic": 1.0000000000000004,
+      "vl": -12,
+      "energy": 0.002000000000000001,
+      "pL": -24.000000000000007
+    },
+    {
+      "kind": "boost",
+      "phase": 0.875,
+      "on": false,
+      "il": 1.9250000000000003,
+      "ic": 0.9250000000000003,
+      "vl": -12,
+      "energy": 0.0018528125000000005,
+      "pL": -23.1
+    },
+    {
+      "kind": "boost",
+      "phase": 1,
+      "on": true,
+      "il": 1.85,
+      "ic": -1,
+      "vl": 12,
+      "energy": 0.00171125,
+      "pL": 22.200000000000003
+    },
+    {
+      "kind": "boost",
+      "phase": 2,
+      "on": true,
+      "il": 1.85,
+      "ic": -1,
+      "vl": 12,
+      "energy": 0.00171125,
+      "pL": 22.200000000000003
+    }
+  ],
+  "minInductorCurrent": 0.925,
+  "maxEnergyDerivativeError": 3.158135086778202e-8,
+  "unequalTimes": [
+    {
+      "d": 0.2,
+      "times": [
+        0,
+        5,
+        10,
+        30,
+        50,
+        55.00000000000001,
+        60,
+        80,
+        100
+      ]
+    },
+    {
+      "d": 0.75,
+      "times": [
+        0,
+        18.75,
+        37.5,
+        43.75,
+        50,
+        68.75,
+        87.5,
+        93.75,
+        100
+      ]
+    }
+  ],
+  "terminalBoundary": {
+    "time": 0.0001,
+    "on": true,
+    "note": "2T is the start of the next periodic ON state; no startup transient."
+  },
+  "capacitorScope": "Model vo constant and no capacitor voltage state; ic is current balance only.",
+  "method": "Independent actual pure-model parameter/phase probes and central energy derivative; no Chrome."
+}

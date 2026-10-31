@@ -1,0 +1,31 @@
+{
+  "beforeHashes": {
+    "laplace/app.js": "c3fc59dc6ad64c8dba7774c1eb27faec3a5da2dd964df043703ffbd41cc5c41a",
+    "laplace/i18n.js": "b47035750e882575d9d0b61d9329a093481021316234f7278542ce23f37692ff",
+    "freqresp/i18n.js": "3b5c009f4ec685cbcbe2e712753441ef44401a1993d19b12f7f6ee7e0c50dbdc"
+  },
+  "observedBefore": [
+    {
+      "fixture": {
+        "mode": "real",
+        "p1": -1,
+        "p2": 0
+      },
+      "h5": 0.9932620530009145,
+      "verdict": "marginal",
+      "copy": "equal-amplitude oscillation (incorrect for monotone constant limit)"
+    },
+    {
+      "fixture": {
+        "mode": "osc",
+        "pr": 0,
+        "wd": 0
+      },
+      "h5": 5,
+      "actualVerdict": "marginal",
+      "expected": "unstable",
+      "redTest": "AssertionError actual marginal != expected unstable"
+    }
+  ],
+  "correction": "Preserve impulse formulas; add double-zero degeneracy guard; describe bounded nondecaying free response and explicitly deny BIBO stability for this causal transfer. Clarify bandpass/displacement output difference."
+}

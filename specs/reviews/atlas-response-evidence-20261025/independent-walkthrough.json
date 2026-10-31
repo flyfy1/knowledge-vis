@@ -1,0 +1,197 @@
+[
+  {
+    "test": "light damping initial",
+    "result": {
+      "zeta": "0.2",
+      "r": "1",
+      "M": "2.500",
+      "phase": "-90.0",
+      "drive": "2.000",
+      "peak": "1.918",
+      "free": "1.960",
+      "poles": "p₁, p₂ = -0.400 + 1.960i ; -0.400 − 1.960i s⁻¹",
+      "insight": "ζ<1/√2: a nonzero-frequency displacement peak exists at Ω_peak=ω₀√(1−2ζ²). Damping changes its location and height."
+    }
+  },
+  {
+    "test": "complex-pole no-peak counterexample",
+    "result": {
+      "zeta": "0.8",
+      "r": "1",
+      "M": "0.625",
+      "phase": "-90.0",
+      "drive": "2.000",
+      "peak": "No nonzero-frequency peak",
+      "free": "1.200",
+      "poles": "p₁, p₂ = -1.600 + 1.200i ; -1.600 − 1.200i s⁻¹",
+      "insight": "1/√2≤ζ<1: complex poles and free decaying oscillations remain, but displacement gain decreases from its static value. There is no nonzero-frequency peak; there is still a response."
+    }
+  },
+  {
+    "test": "drive changes probe but not poles",
+    "result": {
+      "high": {
+        "zeta": "0.8",
+        "r": "3",
+        "M": "0.107",
+        "phase": "-149.0",
+        "drive": "6.000",
+        "peak": "No nonzero-frequency peak",
+        "free": "1.200",
+        "poles": "p₁, p₂ = -1.600 + 1.200i ; -1.600 − 1.200i s⁻¹",
+        "insight": "1/√2≤ζ<1: complex poles and free decaying oscillations remain, but displacement gain decreases from its static value. There is no nonzero-frequency peak; there is still a response."
+      },
+      "low": {
+        "zeta": "0.8",
+        "r": "0.05",
+        "M": "0.999",
+        "phase": "-4.6",
+        "drive": "0.100",
+        "peak": "No nonzero-frequency peak",
+        "free": "1.200",
+        "poles": "p₁, p₂ = -1.600 + 1.200i ; -1.600 − 1.200i s⁻¹",
+        "insight": "1/√2≤ζ<1: complex poles and free decaying oscillations remain, but displacement gain decreases from its static value. There is no nonzero-frequency peak; there is still a response."
+      }
+    }
+  },
+  {
+    "test": "critical damping",
+    "result": {
+      "zeta": "1",
+      "r": "0.05",
+      "M": "0.998",
+      "phase": "-5.7",
+      "drive": "0.100",
+      "peak": "No nonzero-frequency peak",
+      "free": "No free oscillation",
+      "poles": "p₁, p₂ = -2.000 + 0.000i ; -2.000 + 0.000i s⁻¹ (2×)",
+      "insight": "ζ≥1: real poles mean no free oscillation, and there is no nonzero-frequency displacement peak. Under periodic driving, steady displacement can still be sinusoidal."
+    }
+  },
+  {
+    "test": "overdamped",
+    "result": {
+      "zeta": "1.2",
+      "r": "0.05",
+      "M": "0.995",
+      "phase": "-6.9",
+      "drive": "0.100",
+      "peak": "No nonzero-frequency peak",
+      "free": "No free oscillation",
+      "poles": "p₁, p₂ = -1.073 + 0.000i ; -3.727 + 0.000i s⁻¹",
+      "insight": "ζ≥1: real poles mean no free oscillation, and there is no nonzero-frequency displacement peak. Under periodic driving, steady displacement can still be sinusoidal."
+    }
+  },
+  {
+    "test": "below peak threshold",
+    "result": {
+      "zeta": "0.7",
+      "r": "0.05",
+      "M": "1.000",
+      "phase": "-4.0",
+      "drive": "0.100",
+      "peak": "0.283",
+      "free": "1.428",
+      "poles": "p₁, p₂ = -1.400 + 1.428i ; -1.400 − 1.428i s⁻¹",
+      "insight": "ζ<1/√2: a nonzero-frequency displacement peak exists at Ω_peak=ω₀√(1−2ζ²). Damping changes its location and height."
+    }
+  },
+  {
+    "test": "above peak threshold complex",
+    "result": {
+      "zeta": "0.75",
+      "r": "0.05",
+      "M": "1.000",
+      "phase": "-4.3",
+      "drive": "0.100",
+      "peak": "No nonzero-frequency peak",
+      "free": "1.323",
+      "poles": "p₁, p₂ = -1.500 + 1.323i ; -1.500 − 1.323i s⁻¹",
+      "insight": "1/√2≤ζ<1: complex poles and free decaying oscillations remain, but displacement gain decreases from its static value. There is no nonzero-frequency peak; there is still a response."
+    }
+  },
+  {
+    "test": "Chinese lab",
+    "result": "验证一条关系 · 稳态响应与极点\n\n有复极点，就一定有位移共振峰吗？\n收起实验\n\n先区分问题：自由运动没有持续驱动力；这里持续施加 F₀cos(Ωt)，只看暂态消退后的正弦稳态位移。极点控制暂态模式，驱动 Ω 决定稳态振动频率。\n\nm x″ + b x′ + k x = F₀ cos(Ωt)\n\n固定 m=1kg、k=4N/m、F₀=1N，因此自然角频率 ω₀=√(k/m)=2rad/s。阻尼比 ζ=b/(2√mk)，是无量纲的阻尼强弱；黏性阻尼力为 −b x′。\n\n自由振动\n位移共振峰\n稳态幅相\n极点与暂态\n\nx_ss(t) = Re{X̂ eⁱΩᵗ}, G = kX̂/F₀ = 1/(1 − r² + i2ζr)\nM = |G|, φ = arg G, r = Ω/ω₀\n\nX̂ 是复振幅：它同时记录幅度与相位；M=k|X̂|/F₀ 是相对静态位移 F₀/k 的放大倍数，无量纲。这里的 M 不是归一成峰高为1的带通输出。\n\n先选 ζ=.2，观察峰在 r=1 左侧。再选 ζ=.8：极点仍是一对复数，但非零频率的位移峰消失。只改驱动比 r：探针移动，极点不会跟着移动。\n\nζ=.2 · 轻阻尼\nζ=.8 · 对照反例\nζ=1.2 · 过阻尼\n阻尼比 ζ（无量纲）\n0.75\n驱动比 r=Ω/ω₀（无量纲）\n0.05\n位移幅度 · M=|G|\n横轴 r：0–3；纵轴 M：0–6，固定标尺。r=0 是静态极限 M=1。虚线标自然频率 r=1；解析峰可能接近0，并非按图上采样最大值判定。\n稳态相位 · φ=arg G\n横轴 r：0–3；纵轴相位 φ（度）：−180至0。eⁱΩᵗ 约定下，负值表示位移落后于驱动力。\n同一系统 · 极点位置\n横轴 Re(s)、纵轴 Im(s)，单位 s⁻¹。全部示例极点在左半平面，因此这个因果系统稳定；虚部表示自由暂态振荡频率，不是驱动或位移峰频率。\n1/√2≤ζ<1：仍有复极点和自由衰减振荡，但位移幅度从静态值起单调下降，没有非零频率峰。没有峰，不等于没有响应。\n\np₁, p₂ = -1.500 + 1.323i ; -1.500 − 1.323i s⁻¹\n\n当前放大倍数 M\n1.000\n当前相位 φ（度）\n-4.3\n驱动 Ω（rad/s）\n0.100\n自然频率 ω₀（rad/s）\n2.000\n位移峰 Ω_peak（rad/s）\n无非零频率峰\n自由振荡 ωd（rad/s）\n1.323\n\n黏性系数 b=3.000kg/s · 稳态位移幅度 |X̂|=0.250m\n\n重置阻尼与驱动\n把四个频率分开\n\nω₀ 来自质量和弹簧；ωd 是欠阻尼自由暂态的频率；Ω_peak 只对这个位移增益的峰定义；Ω 是你施加的驱动。改变 Ω 不改变系统极点。冲激响应包含暂态模式，而频率响应描述暂态消退后的幅相；本页没有模拟开机过程。\n\n模型边界：理想线性弹簧、黏性阻尼、ζ>0，因果且参数固定。稳态公式不是无阻尼共振时的解；这里不讨论速度峰、吸收功率峰、非线性或实际硬件。这些不同输出可有不同峰位。\n\n对照带通页：输出定义不同 →\n到拉普拉斯页看冲激暂态 →\nMIT8.03 · 阻尼与受迫振动原讲义 ↗"
+  },
+  {
+    "test": "close then Back retains controls",
+    "result": {
+      "zeta": "0.75",
+      "r": "0.05",
+      "M": "1.000",
+      "phase": "-4.3",
+      "drive": "0.100",
+      "peak": "无非零频率峰",
+      "free": "1.323",
+      "poles": "p₁, p₂ = -1.500 + 1.323i ; -1.500 − 1.323i s⁻¹",
+      "insight": "1/√2≤ζ<1：仍有复极点和自由衰减振荡，但位移幅度从静态值起单调下降，没有非零频率峰。没有峰，不等于没有响应。"
+    }
+  },
+  {
+    "test": "legacy bandpass destination",
+    "result": {
+      "url": "http://127.0.0.1:18775/freqresp/#step5",
+      "text": "Step 5 · Different Wiring\n\nHigh-pass, band-pass, resonance: one mathematics, three appetites\n\nSame R and C — just take the output across the resistor instead, and the low-pass becomes a high-pass on the spot: |H(jω)| = ωτ/√(1+(ωτ)²). Low frequencies are blocked, highs pass, and the −3 dB point sits at the same ωc = 1/τ. Drag τ and watch the cutoff run; compare with step 2’s low-pass Bode plot — the two are mirror images.\n\nRC high-pass τ (ωc = 1/τ) 1.00 s（ωc = 1.00）\n\nτ = 1.00 s · ωc = 1.00 rad/s · at ωc, |H| = 0.7071 and φ = +45.0° (the high-pass leads where the low-pass lags — same magnitude, opposite sign) · at ω = 0.1ωc, |H| = 0.0995 (lows cut to about a tenth)\n\nOne more step: put a low-pass and a high-pass back to back so only a middle band of frequencies passes — a band-pass. The standard second-order band-pass H(jω) = 1 / (1 + jQ(ω/ω₀ − ω₀/ω)) peaks at ω₀ with height 1, and the quality factor Q sets how fat the peak is — larger Q, sharper peak. One readout below is a live audit: the half-power bandwidth Δω measured off the curve (the distance between the two points where |H| falls to 1/√2 of the peak) must satisfy Q = ω₀/Δω — whether the measured number matches the slider is for the digits to say. This is a normalized band-pass output. A spring’s displacement/force response has a different numerator, so its peak location and height cannot be copied from this curve. Compare damping, displacement peaks and poles in the atlas →\n\nBand-pass peak f₀ 100 Hz\nQuality factor Q 5.00\n\nf₀ = 100 Hz · Q set = 5.00 · measured half-power points f₁ = 90.5 Hz, f₂ = 110.5 Hz, Δf = 20.0 Hz · Q recovered from the measurement, f₀/Δf = 5.00 (audited against the setting)\n\nTuning a radio is band-pass work: the peak aims at the station, and Q decides whether the neighboring station bleeds in. Too small a Q and two stations mush together; too large and the peak is so sharp it shaves the station’s own high frequencies. Even pickiness has to be portioned right."
+    }
+  },
+  {
+    "test": "legacy impulse destination",
+    "result": {
+      "url": "http://127.0.0.1:18775/laplace/#step4",
+      "text": "Step 4 · Drag the poles\n\nA system’s character is written in its pole positions\n\nNow a second-order system H(s) = 1/(s² + 2ζω0s + ω0²). Its pair of poles can be dragged around the s-plane: above the real axis they form a conjugate pair (the system rings as it decays); drag them back onto the real axis and the poles turn real — they can sit on top of each other (critical damping) or be pulled apart into two separate real poles (overdamped). On the right, the impulse response h(t) redraws in real time (closed form, not a numerical simulation) together with its ±envelope: the real part σp of the poles is the decay rate — the farther left of the axis, the harder the envelope eσpt squeezes it down. Drag them into the right half-plane and watch the envelope open upward instead: the response bursts the frame.\n\nStable ringing decay\nCritically damped\nOverdamped\nSustained oscillation\nBlow-up\nenvelope probe time t 1.0\n\npoles: −0.80 ± j2.40 · ζ = 0.316 · ω₀ = 2.530 · state: stable — the response decays to zero · envelope at t = 1.0: ±E = 0.187 (definition of E in the note under the figure)\n\nConventions: underdamped, h(t) = eσpt·sin(ωdt)/ωd with envelope E(t) = eσpt/ωd; critically damped, h(t) = t·ept and the curve is its own envelope; overdamped with real poles p1, p2, h(t) = (ep1t − ep2t)/(p1 − p2) and the envelope is the sum of the absolute components, (ep1t + ep2t)/|p1 − p2|. Everything is closed form; every point can be recomputed by hand.\n\nOne more word on the “—” in the readout: when the two real poles have opposite signs, ω₀ = √(p₁p₂) is imaginary and ζ is undefined — the “—” is the honest answer, not a missing computation; a pole sitting exactly at the origin gives ω₀ = 0 and is likewise undefined. When you see “—”, read the pole positions and the verdict instead: any pole in the right half-plane means the system is unstable.\n\nEverything the PID controller does on the control page is one long fight to push the closed-loop poles into the left half-plane: the deeper they go, the steadier the cart and the faster it settles — go push them yourself over there →\n\nFeedback & Control →\n\nGet the feel of it: park the poles just left of the axis (σp ≈ −0.1) and watch the tail ring on and on; then yank them to σp = −2.5 and the tail is cut off at once. The smaller ζ is, the floatier the ringing; at ζ ≥ 1 it cannot ring at all — click through the five presets; it teaches faster than definitions."
+    }
+  },
+  {
+    "test": "both legacy lessons Back restored",
+    "result": {
+      "zeta": "0.75",
+      "r": "0.05",
+      "M": "1.000",
+      "phase": "-4.3",
+      "drive": "0.100",
+      "peak": "No nonzero-frequency peak",
+      "free": "1.323",
+      "poles": "p₁, p₂ = -1.500 + 1.323i ; -1.500 − 1.323i s⁻¹",
+      "insight": "1/√2≤ζ<1: complex poles and free decaying oscillations remain, but displacement gain decreases from its static value. There is no nonzero-frequency peak; there is still a response."
+    }
+  },
+  {
+    "test": "reset both parameters",
+    "result": {
+      "zeta": "0.2",
+      "r": "1",
+      "M": "2.500",
+      "phase": "-90.0",
+      "drive": "2.000",
+      "peak": "1.918",
+      "free": "1.960",
+      "poles": "p₁, p₂ = -0.400 + 1.960i ; -0.400 − 1.960i s⁻¹",
+      "insight": "ζ<1/√2: a nonzero-frequency displacement peak exists at Ω_peak=ω₀√(1−2ζ²). Damping changes its location and height."
+    }
+  },
+  {
+    "test": "no phone overflow en320",
+    "result": true
+  },
+  {
+    "test": "no phone overflow en390",
+    "result": true
+  },
+  {
+    "test": "no phone overflow zh320",
+    "result": true
+  },
+  {
+    "test": "no phone overflow zh390",
+    "result": true
+  },
+  {
+    "test": "both storages denied fallback",
+    "result": true
+  },
+  {
+    "test": "console errors",
+    "result": []
+  }
+]

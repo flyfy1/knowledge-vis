@@ -1,0 +1,11 @@
+test_base_receipt_policy_preserved (__main__.Refresh.test_base_receipt_policy_preserved) ... ok
+test_exact_live_identity_and_remote (__main__.Refresh.test_exact_live_identity_and_remote) ... ok
+test_exact_review_owned_scope (__main__.Refresh.test_exact_review_owned_scope) ... ok
+test_four_substitutions_only (__main__.Refresh.test_four_substitutions_only) ... ok
+test_preflight_unchanged_and_raw_evidence (__main__.Refresh.test_preflight_unchanged_and_raw_evidence) ... ok
+test_targets_resources_and_no_execution (__main__.Refresh.test_targets_resources_and_no_execution) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.015s
+
+OK

@@ -1,0 +1,99 @@
+{
+  "baselineHead": "eaf81f0713a59a1a5dea28885b3069bf81424f93",
+  "finalHead": "fdfb7a5006a2dca6240959794b266a97516e9939",
+  "files": {
+    "atlas/app.js": "44885a84d593863fa3fabc5d38ad70847b890f4585aad4e5df5c5d511b71ac4f",
+    "atlas/data.js": "92abc2b77edf8296db1a5154ab6393bce0a61d5de1ace1de73f0395a0eebc178",
+    "atlas/index.html": "c4640a487932d8b59bdde6c5de783c0485aada2be29950b1252cce9fd91d0cc7",
+    "atlas/motion-model.js": "478c999bc2ce1d6fe391ca0bdb210739f56699133097d867a554899fe15bc700",
+    "atlas/motion-bridge.js": "3eb13565231b37880fd1ced5271a4dc9ea15823e75e3eb347a8398e283a74b63",
+    "atlas/motion-bridge.css": "37099a3deae6de988feb1b653ee26c631d6a851acd2f95f963b48a4a6f037dd0",
+    "atlas/BRIEF.md": "e5d5d0acd8dcd8537ce642688351b66c7785148ee7957762b632a05a807b12ef",
+    "atlas/tests/browser.cjs": "b4c0f663da91af84cf4dac6117682570d0d0c2894993c3b0686af905cc8dd664",
+    "pages.config.js": "c158b57e27d2a60d7cb2098c22a6fdd89e1a95cdbf832f4c53a8120e68a27e06",
+    "derivative/i18n.js": "0187fd100e2ac58d1247a618cae8900c8995665ad24e105db1561ed77cae6b1a",
+    "velocity-vt/i18n.js": "aa011eabf7b556ae14942c34a0b30fabf755e110a3285a435357e23dc384fe57",
+    "atlas/tests/rates-core.cjs": "1708059bbe7dfaac3871b04870d7e2f2df69e04b2d3057540041a5e01dc26245",
+    "specs/reviews/atlas-rates-design-20261025.md": "73e1f4c4b84735e63e829839fa9f7dc0d4f64bbc1a21cf63740a5ba32912a97c",
+    "atlas/tests/motion-browser.cjs": "11a48a66913e1b89c027afde5fba95f4567da14ce183bb8d5129939e164b5d8a",
+    "atlas/tests/rates-browser.cjs": "3b53f198b14e1921f327c8accfd2423bfed2c048ae5ef212cf6634cf9d5369cb",
+    "specs/reviews/atlas-rates-verification-20261025.md": "8b8729c277a6012981221206c000f47daf2662bf5356ec0288e152814422dd8f",
+    "atlas/README.md": "b0629501c2fb30dbf79f16e1186b7b435b0c16fe2b5897ef5493478c9ee90553",
+    "README.md": "0e453101a0c812f5cc5f9d002c2aeec1c1db210b396ad1dafea26ad33e03c461"
+  },
+  "excluded": {
+    "index.html": {
+      "sha256": "c3849c37493a2d919e03b500c46f2a5404d3528189af52eb46a51a005dfc72ac",
+      "unchanged": true
+    },
+    "CONCEPT-MAP.md": {
+      "sha256": "f9efe4dab4c7eafebf0b7951f2da25ebbe82a7e87da30c794cf94a96f286a289",
+      "unchanged": true
+    },
+    "atlas/response-model.js": {
+      "sha256": "1d82a3efc2a9cc743b1357469017caf3150e3a0b5135e8dd1b7fca3f06d30a34",
+      "unchanged": true
+    },
+    "atlas/response-bridge.js": {
+      "sha256": "72d17ebfc2d2bbac9dbf944232ee211b9a0979b33aa5a9dd0385e2b8553cb153",
+      "unchanged": true
+    },
+    "freqresp/i18n.js": {
+      "sha256": "491b78cd428a76bf32f02385a0b7c028bd4bdfbfdfa20ef4e1365ee80bd5a578",
+      "unchanged": true
+    },
+    "laplace/app.js": {
+      "sha256": "7db85b77d9489ed8b263b6d497d27ad58695cb806b9757311c1791b8083bac15",
+      "unchanged": true
+    }
+  },
+  "status": [
+    " M CONCEPT-MAP.md",
+    " M README.md",
+    " M atlas/BRIEF.md",
+    " M atlas/app.js",
+    " M atlas/data.js",
+    " M atlas/index.html",
+    " M atlas/style.css",
+    " M atlas/tests/browser.cjs",
+    " M derivative/i18n.js",
+    " M freqresp/i18n.js",
+    " M laplace/app.js",
+    " M laplace/i18n.js",
+    " M pages.config.js",
+    " M specs/README.md",
+    " M velocity-vt/i18n.js",
+    "?? .claude/",
+    "?? atlas/README.md",
+    "?? atlas/motion-bridge.css",
+    "?? atlas/motion-bridge.js",
+    "?? atlas/motion-model.js",
+    "?? atlas/response-bridge.css",
+    "?? atlas/response-bridge.js",
+    "?? atlas/response-model.js",
+    "?? atlas/tests/motion-browser.cjs",
+    "?? atlas/tests/motion-core.cjs",
+    "?? atlas/tests/rates-browser.cjs",
+    "?? atlas/tests/rates-core.cjs",
+    "?? atlas/tests/response-browser.cjs",
+    "?? atlas/tests/response-core.cjs",
+    "?? frozen-bubble/",
+    "?? laplace/tests/",
+    "?? leetcode/780-claude/",
+    "?? pelican-cycling-21acb3a591.html",
+    "?? pigeon-bicycle-c26872c3aa.html",
+    "?? pigeon-bicycle.html",
+    "?? specs/reviews/atlas-motion-design-20261025.md",
+    "?? specs/reviews/atlas-motion-evidence-20261025/",
+    "?? specs/reviews/atlas-motion-verification-20261025.md",
+    "?? specs/reviews/atlas-rates-design-20261025.md",
+    "?? specs/reviews/atlas-rates-evidence-20261025/",
+    "?? specs/reviews/atlas-rates-verification-20261025.md",
+    "?? specs/reviews/atlas-response-design-20261025.md",
+    "?? specs/reviews/atlas-response-evidence-20261025/",
+    "?? specs/reviews/atlas-response-verification-20261025.md",
+    "?? specs/reviews/frozen-bubble-design.md",
+    "?? specs/reviews/frozen-bubble-evidence/",
+    "?? specs/reviews/frozen-bubble-verification.md"
+  ]
+}

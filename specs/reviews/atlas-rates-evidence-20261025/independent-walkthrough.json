@@ -1,0 +1,222 @@
+[
+  {
+    "test": "Left, gaining speed",
+    "result": {
+      "phase": "0.125",
+      "t": "0.393",
+      "T": "3.142",
+      "x": "0.424",
+      "v": "-0.849",
+      "speed": "0.849",
+      "a": "-1.697",
+      "F": "-1.697",
+      "playing": "false",
+      "insight": "Speed is increasing: velocity and acceleration have the same sign. A negative acceleration can increase speed when motion is to the left."
+    }
+  },
+  {
+    "test": "Right, losing speed",
+    "result": {
+      "phase": "0.875",
+      "t": "2.749",
+      "T": "3.142",
+      "x": "0.424",
+      "v": "0.849",
+      "speed": "0.849",
+      "a": "-1.697",
+      "F": "-1.697",
+      "playing": "false",
+      "insight": "Speed is decreasing: velocity and acceleration have opposite signs. The object moves right while its velocity changes toward the left."
+    }
+  },
+  {
+    "test": "Turn: zero velocity",
+    "result": {
+      "phase": "0.5",
+      "t": "1.571",
+      "T": "3.142",
+      "x": "-0.600",
+      "v": "0.000",
+      "speed": "0.000",
+      "a": "2.400",
+      "F": "2.400",
+      "playing": "false",
+      "insight": "Turning point: v=0 and speed=0 now, but acceleration and net force are nonzero. Do not apply the sign(v·a) speed rule at zero velocity."
+    }
+  },
+  {
+    "test": "Cross: zero net force",
+    "result": {
+      "phase": "0.25",
+      "t": "0.785",
+      "T": "3.142",
+      "x": "0.000",
+      "v": "-1.200",
+      "speed": "1.200",
+      "a": "0.000",
+      "F": "0.000",
+      "playing": "false",
+      "insight": "Equilibrium crossing: acceleration and net force are zero at this instant, but velocity is not. This does not imply uniform motion afterward."
+    }
+  },
+  {
+    "test": "double mass same phase",
+    "result": {
+      "one": {
+        "phase": "0.125",
+        "t": "0.393",
+        "T": "3.142",
+        "x": "0.424",
+        "v": "-0.849",
+        "speed": "0.849",
+        "a": "-1.697",
+        "F": "-1.697",
+        "playing": "false",
+        "insight": "Speed is increasing: velocity and acceleration have the same sign. A negative acceleration can increase speed when motion is to the left."
+      },
+      "two": {
+        "phase": "0.125",
+        "t": "0.555",
+        "T": "4.443",
+        "x": "0.424",
+        "v": "-0.600",
+        "speed": "0.600",
+        "a": "-0.849",
+        "F": "-1.697",
+        "playing": "false",
+        "insight": "Speed is increasing: velocity and acceleration have the same sign. A negative acceleration can increase speed when motion is to the left."
+      }
+    }
+  },
+  {
+    "test": "view and Back keep state",
+    "result": {
+      "phase": "0.125",
+      "t": "0.555",
+      "T": "4.443",
+      "x": "0.424",
+      "v": "-0.600",
+      "speed": "0.600",
+      "a": "-0.849",
+      "F": "-1.697",
+      "playing": "false",
+      "insight": "Speed is increasing: velocity and acceleration have the same sign. A negative acceleration can increase speed when motion is to the left."
+    }
+  },
+  {
+    "test": "view and locale preserve playback then pause",
+    "result": {
+      "phase": "0.285",
+      "t": "1.272",
+      "T": "4.443",
+      "x": "-0.136",
+      "v": "-0.827",
+      "speed": "0.827",
+      "a": "0.271",
+      "F": "0.543",
+      "playing": "false",
+      "insight": "速率减少：速度与加速度异号。物块仍向右运动，但速度正朝向左的方向改变。"
+    }
+  },
+  {
+    "test": "Chinese visible copy",
+    "result": "求两次导数，仍是同一场运动\n\n两个橙色探针共享以秒计的时刻。绿线是解析切线，不是实测：第一图为 x(t₀)+v(t₀)Δt，第二图为 v(t₀)+a(t₀)Δt。屏幕夹角还取决于坐标比例，要按实际单位读斜率。\n\n导数与变化率\n简谐振动\n净力与牛顿定律\n\nv = dx/dt，速率 = |v|，a = dv/dt，ΣF = m a = −k x\n\n先比较前两个快照：加速度都为负，但一个速率增大、另一个减小。再比较转向点和过平衡点。下方原有相位、播放控件同时操控两种视图。\n\n向左，速率增加\n向右，速率减少\n转向：速度为零\n过平衡点：净力为零\n位置 x(t) · 切线斜率是 v\n横轴是两个周期内的秒数；纵轴位置 x，固定 ±1m。虚线为完整预测，青线为已走过部分，绿线为局部切线，橙点为此刻。\n速度 v(t) · 切线斜率是 a\n横轴是同样的秒数；纵轴是速度 v（m/s）。标尺只随参数组改变，不随相位改变；看清刻度再比较大小。切线斜率单位为 m/s²。\n\n速率减少：速度与加速度异号。物块仍向右运动，但速度正朝向左的方向改变。\n\n带方向的速度 v（m/s）\n-0.827\n速率 |v|（m/s）\n0.827\n加速度 a（m/s²）\n0.271\n\n对象是物块。竖直支持力与重力抵消；水平无摩擦、无驱动，故 ΣF=−kx=ma。换成其他系统，必须先把全部外力相加再用牛顿定律。理想解析解以这些力学规律为假设；动画不是对真实力的测量或独立证明。\n\n已有课程：割线怎样逼近切线 →\n已有 v–t 课程（速度非负示例）→\nOpenStax3.3 · 加速度与变化率 ↗\nOpenStax5.3 · 合外力 ↗"
+  },
+  {
+    "test": "different lab then Back pauses",
+    "result": {
+      "phase": "0.345",
+      "t": "1.539",
+      "T": "4.443",
+      "x": "-0.341",
+      "v": "-0.698",
+      "speed": "0.698",
+      "a": "0.683",
+      "F": "1.365",
+      "playing": "false",
+      "insight": "速率减少：速度与加速度异号。物块仍向右运动，但速度正朝向左的方向改变。"
+    }
+  },
+  {
+    "test": "derivative source",
+    "result": {
+      "url": "http://127.0.0.1:18775/derivative/#step1",
+      "text": "Step 0 · Average velocity is not enough\n\nAverage velocity is not enough: it answers for an interval, not for an instant\n\nA car moves along a line with displacement s = t² (after t seconds it has gone t² metres). Average velocity is easy: displacement over a stretch divided by the time that stretch took. But the coach asks something else — “at the instant t = 1 s, exactly how fast is it?” Drag the time probe to see where it is at each moment, then try the three intervals: the right end pulls in from 3 s to 1.5 s — watch what the average velocity does.\n\nPlay ▶\nNot started: t = 1 s (small step 10 / 30)\nTime probe t (seconds) t = 1 s\n\nTime probe: at t = 1 s the displacement is s = t² = 1 m. That is “where it is at each moment” — not yet “how fast at this moment”.\n\nPick an interval and compute its average velocity:\n[1, 3]\n[1, 2]\n[1, 1.5]\n\nOn [1, 3]: s(1) = 1 m, s(3) = 9 m, Δs = 8 m, Δt = 2 s, average velocity = Δs ÷ Δt = 4 m/s. That is an average over a full two seconds — it answers “how fast on average over this stretch”, not the instant t = 1. Narrow the interval and try again.\n\nTwo terms to fix in place: displacement over a stretch of time is called the average rate of change over that stretch (here: the average velocity); the rate “at one instant” is the instantaneous rate of change. The average depends on the interval and cannot answer for an instant; to ask about an instant, the interval must shrink to a point — the next step does exactly that, in geometric clothes.\n\nThe Play button walks the probe from t = 0 to t = 3 along the curve: the later it gets, the farther it travels in the same 0.1 s — the speed itself is changing, which is exactly why an “average” cannot answer for “this instant”.\n\nStart exploring ↓"
+    }
+  },
+  {
+    "test": "source then Back recovered",
+    "result": {
+      "phase": "0.345",
+      "t": "1.539",
+      "T": "4.443",
+      "x": "-0.341",
+      "v": "-0.698",
+      "speed": "0.698",
+      "a": "0.683",
+      "F": "1.365",
+      "playing": "false",
+      "insight": "Speed is decreasing: velocity and acceleration have opposite signs. The object moves right while its velocity changes toward the left."
+    }
+  },
+  {
+    "test": "reset all repeated",
+    "result": {
+      "phase": "0",
+      "t": "0.000",
+      "T": "3.142",
+      "x": "0.600",
+      "v": "0.000",
+      "speed": "0.000",
+      "a": "-2.400",
+      "F": "-2.400",
+      "playing": "false",
+      "insight": "Turning point: v=0 and speed=0 now, but acceleration and net force are nonzero. Do not apply the sign(v·a) speed rule at zero velocity."
+    }
+  },
+  {
+    "test": "phone en320",
+    "result": true
+  },
+  {
+    "test": "phone en390",
+    "result": true
+  },
+  {
+    "test": "phone zh320",
+    "result": true
+  },
+  {
+    "test": "phone zh390",
+    "result": true
+  },
+  {
+    "test": "200percent en",
+    "result": {
+      "width": 320,
+      "scroll": 320
+    }
+  },
+  {
+    "test": "200percent zh",
+    "result": {
+      "width": 320,
+      "scroll": 320
+    }
+  },
+  {
+    "test": "storage denied works",
+    "result": true
+  },
+  {
+    "test": "counts",
+    "result": {
+      "text": "33 个概念 · 42 条关系 5 个主题区域 · 人工编排并附来源",
+      "routes": 6
+    }
+  },
+  {
+    "test": "console",
+    "result": []
+  }
+]

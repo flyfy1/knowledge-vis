@@ -1,0 +1,19 @@
+{
+  "frozenAt": "2026-10-26T00:19:06.159712+00:00",
+  "status": "observation-refresh-awaiting-independent-review-and-dispatch",
+  "testsPassed": 6,
+  "launchExecuted": false,
+  "piMutation": false,
+  "files": {
+    "README.md": "38e618f4d4ba4b3d834b764650e0528f61b71fa404df8f0886f007d4def86c04",
+    "launch.diff": "6b8b558c85f9f786712a8ba9139d120e1afaead67d346aea3d2bc4c9d13aed1d",
+    "launch.py": "9b71f38bc0c034ddbaa6c9033fbd2cb9dd81d1958980abd1aa64e2a4da161112",
+    "preflight-summary.json": "b02edec15dda69d0c0de057708756ca7fa9b5c15c455fb935f1d88098fb3678b",
+    "preflight.json.gz": "5e57f7145d493d7a521c025a51b54147f2027c4be002dfe86e483dee79e323dd",
+    "preflight.py": "63295fc43653f73801b9ef39fb4b96fe107ba1ab1c9bcae399081fd370ce2d97",
+    "preflight.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "substitutions.json": "1718a4801a158db68e9c80eb9e4f37d74a6ff3a743b8950c19a5a59c46ef3587",
+    "test_refresh.py": "2f531e30d09c9f3391acbb57e44567a09f6e5b4b8b75a2a5ab5d1626c3e78d84",
+    "tests.log": "6cfba01bbbca23f1954a4d5fd7d9cdca15741a737e0e8224ec444dd73981ef1b"
+  }
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "test": "natural two-cycle end at extreme valid parameters",
+    "result": {
+      "cycles": "2",
+      "playing": "false",
+      "x": "1",
+      "F": "-16"
+    }
+  },
+  {
+    "test": "parameter edit during play pauses",
+    "result": {
+      "cycles": "0.09017719075586796",
+      "playing": "false"
+    }
+  },
+  {
+    "test": "three concept buttons keep phase",
+    "pass": true
+  },
+  {
+    "test": "locale while playing keeps running",
+    "pass": true
+  }
+]

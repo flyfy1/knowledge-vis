@@ -1,0 +1,79 @@
+{
+  "laplace": [
+    {
+      "state": {
+        "mode": "osc",
+        "pr": 0,
+        "wd": 0
+      },
+      "verdict": "unstable",
+      "h1": 1,
+      "h5": 5
+    },
+    {
+      "state": {
+        "mode": "real",
+        "p1": 0,
+        "p2": 0
+      },
+      "verdict": "unstable",
+      "h1": 1,
+      "h5": 5
+    },
+    {
+      "state": {
+        "mode": "real",
+        "p1": -1,
+        "p2": 0
+      },
+      "verdict": "marginal",
+      "h1": 0.6321205588285577,
+      "h5": 0.9932620530009145
+    },
+    {
+      "state": {
+        "mode": "osc",
+        "pr": 0,
+        "wd": 2
+      },
+      "verdict": "marginal",
+      "h1": 0.45464871341284085,
+      "h5": -0.2720105554446849
+    },
+    {
+      "locale": "zh",
+      "marginalText": "自由响应有界但不衰减归零（可等幅振荡或趋于非零常数）；这不等于 BIBO 输入输出稳定"
+    },
+    {
+      "locale": "en",
+      "marginalText": "bounded free response without asymptotic decay (oscillation or a nonzero constant); this does not imply BIBO input-output stability"
+    }
+  ],
+  "bandpass": [
+    {
+      "Q": 0.5,
+      "magAtF0": 1,
+      "phaseAtF0": 0
+    },
+    {
+      "Q": 1,
+      "magAtF0": 1,
+      "phaseAtF0": 0
+    },
+    {
+      "Q": 2.5,
+      "magAtF0": 1,
+      "phaseAtF0": 0
+    },
+    {
+      "Q": 5,
+      "magAtF0": 1,
+      "phaseAtF0": 0
+    },
+    {
+      "Q": 10,
+      "magAtF0": 1,
+      "phaseAtF0": 0
+    }
+  ]
+}

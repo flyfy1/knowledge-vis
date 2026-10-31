@@ -1,0 +1,46 @@
+{
+  "bandpass": [
+    {
+      "Q": 0.5,
+      "peak": 1,
+      "centerHz": 100,
+      "bandwidth": 200.00000000000006
+    },
+    {
+      "Q": 1,
+      "peak": 1,
+      "centerHz": 100,
+      "bandwidth": 100
+    },
+    {
+      "Q": 5,
+      "peak": 1,
+      "centerHz": 100,
+      "bandwidth": 19.999999999999986
+    },
+    {
+      "Q": 12,
+      "peak": 1,
+      "centerHz": 100,
+      "bandwidth": 8.333333333333329
+    }
+  ],
+  "rc": [
+    {
+      "omega": 0.05011872336272722,
+      "analytic": 0.9987464179323569,
+      "simulated": 0.9987439244901978
+    },
+    {
+      "omega": 1,
+      "analytic": 0.7071067811865475,
+      "simulated": 0.7071067787422315
+    },
+    {
+      "omega": 30.19951720402016,
+      "analytic": 0.03309497316091146,
+      "simulated": 0.033094922496971005
+    }
+  ],
+  "conclusion": "Audited formulas pass their stated scope. Bandpass peak is normalized to1 at f0; this is not a displacement-resonance peak-shift demonstration."
+}

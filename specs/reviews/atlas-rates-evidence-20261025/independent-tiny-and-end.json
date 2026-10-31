@@ -1,0 +1,27 @@
+[
+  {
+    "test": "synthetic restored sub-step state",
+    "cycles": 0.250000001,
+    "actualCycles": "0.250000001",
+    "x": "-3.77e-9",
+    "v": "-1.200",
+    "a": "1.51e-8",
+    "F": "1.51e-8",
+    "insight": "Speed is decreasing: velocity and acceleration have opposite signs. Acceleration tells how velocity changes, not which way the object is currently moving."
+  },
+  {
+    "test": "synthetic restored sub-step state",
+    "cycles": 0.500000001,
+    "actualCycles": "0.500000001",
+    "x": "-0.600",
+    "v": "7.54e-9",
+    "a": "2.400",
+    "F": "2.400",
+    "insight": "Speed is increasing: velocity and acceleration have the same sign. Judge speed changes from both signed quantities."
+  },
+  {
+    "test": "natural end in rates view",
+    "phase": 2,
+    "playing": false
+  }
+]

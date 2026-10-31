@@ -1,0 +1,162 @@
+[
+  {
+    "lang": "en",
+    "phase": 0.125,
+    "v": -0.8485281374238569,
+    "a": -1.697056274847714,
+    "case": "speeding",
+    "insight": "Speed is increasing: velocity and acceleration have the same sign. Judge speed changes from both signed quantities."
+  },
+  {
+    "lang": "en",
+    "phase": 0.375,
+    "v": -0.848528137423857,
+    "a": 1.6970562748477138,
+    "case": "slowing",
+    "insight": "Speed is decreasing: velocity and acceleration have opposite signs. Acceleration tells how velocity changes, not which way the object is currently moving."
+  },
+  {
+    "lang": "en",
+    "phase": 0.625,
+    "v": 0.8485281374238569,
+    "a": 1.6970562748477145,
+    "case": "speeding",
+    "insight": "Speed is increasing: velocity and acceleration have the same sign. Judge speed changes from both signed quantities."
+  },
+  {
+    "lang": "en",
+    "phase": 0.875,
+    "v": 0.8485281374238572,
+    "a": -1.6970562748477136,
+    "case": "slowing",
+    "insight": "Speed is decreasing: velocity and acceleration have opposite signs. Acceleration tells how velocity changes, not which way the object is currently moving."
+  },
+  {
+    "lang": "en",
+    "phase": 1.125,
+    "v": -0.8485281374238568,
+    "a": -1.6970562748477145,
+    "case": "speeding",
+    "insight": "Speed is increasing: velocity and acceleration have the same sign. Judge speed changes from both signed quantities."
+  },
+  {
+    "lang": "en",
+    "phase": 1.375,
+    "v": -0.848528137423858,
+    "a": 1.697056274847712,
+    "case": "slowing",
+    "insight": "Speed is decreasing: velocity and acceleration have opposite signs. Acceleration tells how velocity changes, not which way the object is currently moving."
+  },
+  {
+    "lang": "en",
+    "phase": 1.625,
+    "v": 0.8485281374238575,
+    "a": 1.6970562748477132,
+    "case": "speeding",
+    "insight": "Speed is increasing: velocity and acceleration have the same sign. Judge speed changes from both signed quantities."
+  },
+  {
+    "lang": "en",
+    "phase": 1.875,
+    "v": 0.8485281374238581,
+    "a": -1.6970562748477118,
+    "case": "slowing",
+    "insight": "Speed is decreasing: velocity and acceleration have opposite signs. Acceleration tells how velocity changes, not which way the object is currently moving."
+  },
+  {
+    "lang": "en",
+    "phase": 0.5,
+    "v": 0,
+    "a": 2.4,
+    "case": "turning",
+    "insight": "Turning point: v=0 and speed=0 now, but acceleration and net force are nonzero. Do not apply the sign(v·a) speed rule at zero velocity."
+  },
+  {
+    "lang": "en",
+    "phase": 0.25,
+    "v": -1.2,
+    "a": 0,
+    "case": "crossing",
+    "insight": "Equilibrium crossing: acceleration and net force are zero at this instant, but velocity is not. This does not imply uniform motion afterward."
+  },
+  {
+    "lang": "zh",
+    "phase": 0.125,
+    "v": -0.8485281374238569,
+    "a": -1.697056274847714,
+    "case": "speeding",
+    "insight": "速率增加：速度与加速度同号。判断快慢变化要同时看这两个带方向的量。"
+  },
+  {
+    "lang": "zh",
+    "phase": 0.375,
+    "v": -0.848528137423857,
+    "a": 1.6970562748477138,
+    "case": "slowing",
+    "insight": "速率减少：速度与加速度异号。加速度说明速度如何改变，不是直接说明此刻朝哪边运动。"
+  },
+  {
+    "lang": "zh",
+    "phase": 0.625,
+    "v": 0.8485281374238569,
+    "a": 1.6970562748477145,
+    "case": "speeding",
+    "insight": "速率增加：速度与加速度同号。判断快慢变化要同时看这两个带方向的量。"
+  },
+  {
+    "lang": "zh",
+    "phase": 0.875,
+    "v": 0.8485281374238572,
+    "a": -1.6970562748477136,
+    "case": "slowing",
+    "insight": "速率减少：速度与加速度异号。加速度说明速度如何改变，不是直接说明此刻朝哪边运动。"
+  },
+  {
+    "lang": "zh",
+    "phase": 1.125,
+    "v": -0.8485281374238568,
+    "a": -1.6970562748477145,
+    "case": "speeding",
+    "insight": "速率增加：速度与加速度同号。判断快慢变化要同时看这两个带方向的量。"
+  },
+  {
+    "lang": "zh",
+    "phase": 1.375,
+    "v": -0.848528137423858,
+    "a": 1.697056274847712,
+    "case": "slowing",
+    "insight": "速率减少：速度与加速度异号。加速度说明速度如何改变，不是直接说明此刻朝哪边运动。"
+  },
+  {
+    "lang": "zh",
+    "phase": 1.625,
+    "v": 0.8485281374238575,
+    "a": 1.6970562748477132,
+    "case": "speeding",
+    "insight": "速率增加：速度与加速度同号。判断快慢变化要同时看这两个带方向的量。"
+  },
+  {
+    "lang": "zh",
+    "phase": 1.875,
+    "v": 0.8485281374238581,
+    "a": -1.6970562748477118,
+    "case": "slowing",
+    "insight": "速率减少：速度与加速度异号。加速度说明速度如何改变，不是直接说明此刻朝哪边运动。"
+  },
+  {
+    "lang": "zh",
+    "phase": 0.5,
+    "v": 0,
+    "a": 2.4,
+    "case": "turning",
+    "insight": "转向点：此刻速度和速率为零，加速度与净力却不为零。v=0 时不要套用 v·a 符号判断速率变化的规则。"
+  },
+  {
+    "lang": "zh",
+    "phase": 0.25,
+    "v": -1.2,
+    "a": 0,
+    "case": "crossing",
+    "insight": "过平衡点：此刻加速度和净力为零，速度却不为零。这不代表之后一直匀速。"
+  }
+]

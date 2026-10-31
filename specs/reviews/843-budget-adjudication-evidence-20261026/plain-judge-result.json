@@ -1,0 +1,29 @@
+{
+  "scope": "22-word family only; no source/frame introspection by judge; no solution budget argument",
+  "budget": 11,
+  "results": {
+    "frozen": {
+      "tested": 22,
+      "found": 20,
+      "max_calls": 10,
+      "failures": [
+        {
+          "secret": "ammmmm",
+          "calls": 10,
+          "found": false
+        },
+        {
+          "secret": "bmmmmm",
+          "calls": 10,
+          "found": false
+        }
+      ]
+    },
+    "diagnostic_cap11": {
+      "tested": 22,
+      "found": 22,
+      "max_calls": 11,
+      "failures": []
+    }
+  }
+}

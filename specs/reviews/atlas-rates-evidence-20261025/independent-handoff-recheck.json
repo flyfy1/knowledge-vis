@@ -1,0 +1,176 @@
+{
+  "localLinks": [
+    {
+      "from": "README.md",
+      "target": "atlas/README.md",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "specs/leetcode-explainers.md",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "specs/leetcode-hard-traces.md",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "specs/reviews/leetcode-first-ten-review.md",
+      "exists": true
+    },
+    {
+      "from": "atlas/README.md",
+      "target": "../WORKFLOW.md",
+      "exists": true
+    },
+    {
+      "from": "atlas/README.md",
+      "target": "../UI-I18N-SPEC.md",
+      "exists": true
+    },
+    {
+      "from": "atlas/README.md",
+      "target": "../CONCEPT-MAP.md",
+      "exists": true
+    },
+    {
+      "from": "atlas/README.md",
+      "target": "../specs/reviews/atlas-motion-verification-20261025.md",
+      "exists": true
+    },
+    {
+      "from": "atlas/README.md",
+      "target": "../specs/reviews/atlas-response-verification-20261025.md",
+      "exists": true
+    },
+    {
+      "from": "atlas/README.md",
+      "target": "../specs/reviews/frozen-bubble-verification.md",
+      "exists": true
+    },
+    {
+      "from": "atlas/README.md",
+      "target": "../specs/reviews/atlas-rates-design-20261025.md",
+      "exists": true
+    },
+    {
+      "from": "atlas/README.md",
+      "target": "../specs/reviews/atlas-rates-verification-20261025.md",
+      "exists": true
+    },
+    {
+      "from": "atlas/README.md",
+      "target": "../specs/reviews/atlas-response-design-20261025.md",
+      "exists": true
+    },
+    {
+      "from": "atlas/README.md",
+      "target": "../specs/reviews/atlas-response-verification-20261025.md",
+      "exists": true
+    },
+    {
+      "from": "atlas/README.md",
+      "target": "../specs/reviews/atlas-motion-design-20261025.md",
+      "exists": true
+    },
+    {
+      "from": "atlas/README.md",
+      "target": "../specs/reviews/atlas-motion-verification-20261025.md",
+      "exists": true
+    },
+    {
+      "from": "atlas/README.md",
+      "target": "../specs/reviews/math-physics-atlas-design-review.md",
+      "exists": true
+    },
+    {
+      "from": "atlas/README.md",
+      "target": "../specs/reviews/math-physics-atlas-verification.md",
+      "exists": true
+    },
+    {
+      "from": "atlas/BRIEF.md",
+      "target": "README.md",
+      "exists": true
+    },
+    {
+      "from": "atlas/BRIEF.md",
+      "target": "../specs/reviews/atlas-motion-design-20261025.md",
+      "exists": true
+    },
+    {
+      "from": "atlas/BRIEF.md",
+      "target": "../specs/reviews/atlas-response-design-20261025.md",
+      "exists": true
+    },
+    {
+      "from": "atlas/BRIEF.md",
+      "target": "../specs/reviews/atlas-rates-design-20261025.md",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-rates-verification-20261025.md",
+      "target": "../../atlas/README.md",
+      "exists": true
+    },
+    {
+      "from": "specs/reviews/atlas-rates-verification-20261025.md",
+      "target": "../../atlas/README.md",
+      "exists": true
+    }
+  ],
+  "allLocalLinksExist": true,
+  "testCommands": [
+    {
+      "file": "atlas/tests/rates-core.cjs",
+      "exists": true
+    },
+    {
+      "file": "atlas/tests/rates-browser.cjs",
+      "exists": true
+    },
+    {
+      "file": "atlas/tests/motion-core.cjs",
+      "exists": true
+    },
+    {
+      "file": "atlas/tests/motion-browser.cjs",
+      "exists": true
+    },
+    {
+      "file": "atlas/tests/response-core.cjs",
+      "exists": true
+    },
+    {
+      "file": "atlas/tests/response-browser.cjs",
+      "exists": true
+    },
+    {
+      "file": "atlas/tests/browser.cjs",
+      "exists": true
+    },
+    {
+      "file": "laplace/tests/pole-boundaries.cjs",
+      "exists": true
+    }
+  ],
+  "evidenceDirectoryExists": true,
+  "finalContentChecks": {
+    "both_routes_named": true,
+    "leave_both_routes_pauses": true,
+    "velocity_scale_parameter_dependent": true,
+    "current_counts": true,
+    "next_signed_integral": true
+  },
+  "reviewedOutcome": "Documentation clear; no remaining handoff findings",
+  "evidenceSummaryVerified": {
+    "atlasChecks": 310,
+    "concepts": 33,
+    "relations": 42,
+    "routes": 6,
+    "implementerVsIndependentScopesSeparated": true,
+    "physicalDeviceAndDeploymentNotClaimed": true
+  }
+}

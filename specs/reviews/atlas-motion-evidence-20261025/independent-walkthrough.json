@@ -1,0 +1,237 @@
+[
+  {
+    "test": "quarter cycle 0",
+    "result": {
+      "phase": "0",
+      "t": "0.000",
+      "T": "3.142",
+      "x": "0.600",
+      "F": "-2.400",
+      "mass": "1",
+      "k": "4",
+      "A": "0.6",
+      "status": "Paused; all three diagrams retain the same phase."
+    }
+  },
+  {
+    "test": "quarter cycle 0.25",
+    "result": {
+      "phase": "0.25",
+      "t": "0.785",
+      "T": "3.142",
+      "x": "0.000",
+      "F": "0.000",
+      "mass": "1",
+      "k": "4",
+      "A": "0.6",
+      "status": "Paused; all three diagrams retain the same phase."
+    }
+  },
+  {
+    "test": "quarter cycle 0.5",
+    "result": {
+      "phase": "0.5",
+      "t": "1.571",
+      "T": "3.142",
+      "x": "-0.600",
+      "F": "2.400",
+      "mass": "1",
+      "k": "4",
+      "A": "0.6",
+      "status": "Paused; all three diagrams retain the same phase."
+    }
+  },
+  {
+    "test": "quarter cycle 0.75",
+    "result": {
+      "phase": "0.75",
+      "t": "2.356",
+      "T": "3.142",
+      "x": "0.000",
+      "F": "0.000",
+      "mass": "1",
+      "k": "4",
+      "A": "0.6",
+      "status": "Paused; all three diagrams retain the same phase."
+    }
+  },
+  {
+    "test": "quarter cycle 1",
+    "result": {
+      "phase": "1",
+      "t": "3.142",
+      "T": "3.142",
+      "x": "0.600",
+      "F": "-2.400",
+      "mass": "1",
+      "k": "4",
+      "A": "0.6",
+      "status": "Paused; all three diagrams retain the same phase."
+    }
+  },
+  {
+    "test": "mass edit same phase",
+    "result": {
+      "original": {
+        "phase": "0.125",
+        "t": "0.393",
+        "T": "3.142",
+        "x": "0.424",
+        "F": "-1.697",
+        "mass": "1",
+        "k": "4",
+        "A": "0.6",
+        "status": "Paused; all three diagrams retain the same phase."
+      },
+      "doubleMass": {
+        "phase": "0.125",
+        "t": "0.555",
+        "T": "4.443",
+        "x": "0.424",
+        "F": "-1.697",
+        "mass": "2",
+        "k": "4",
+        "A": "0.6",
+        "status": "Parameters changed: paused at the same phase; time and prediction recalculated."
+      }
+    }
+  },
+  {
+    "test": "stiffness period",
+    "result": {
+      "phase": "0.125",
+      "t": "0.393",
+      "T": "3.142",
+      "x": "0.424",
+      "F": "-3.394",
+      "mass": "2",
+      "k": "8",
+      "A": "0.6",
+      "status": "Parameters changed: paused at the same phase; time and prediction recalculated."
+    }
+  },
+  {
+    "test": "pause and resume",
+    "result": {
+      "phase": "0.17",
+      "t": "0.533",
+      "T": "3.142",
+      "x": "0.483",
+      "F": "-3.865",
+      "mass": "2",
+      "k": "8",
+      "A": "1",
+      "status": "Paused; all three diagrams retain the same phase."
+    }
+  },
+  {
+    "test": "Chinese lab",
+    "result": "验证一条关系 · 数学 → 物理\n\n一个投影，一个弹簧，同一个相位\n收起实验\n\n几何中的圆，为什么能描述真实模型中的弹簧？圆提供运动的函数形状；弹簧的回复力和物块质量决定快慢。从右端静止释放：x(0)=A，v(0)=0。\n\n01\n单位圆\n02\n正弦与余弦\n03\n简谐振动\n\n1 · 几何给出一个坐标\nq = cos θ, x = A q\nq 是半径为 1 的单位圆上无量纲的横坐标。乘以振幅 A，才得到以米计的位移。\n\n2 · 物理定律决定快慢\nm x″ = −k x → ω = √(k/m)\n牛顿定律和胡克定律给出 x″=−(k/m)x；余弦函数满足 x″=−ω²x，故 ω²=k/m。\n\n3 · 描述同一个 x\nx(t) = A cos(ωt), T = 2π/ω\nθ=ωt 是相位，以弧度记录进度，一周为 2π。周期 T 是完成一次往返所需的秒数；余弦也是平移相位后的正弦。\n\n先拖到 ¼ 周期：两幅图的横向位置都为零。再保持 k 不变，把 m 加倍：周期变为原来的 √2 倍。改变 A：位移幅度可见地改变，理想周期却不变。\n\n几何 · 单位圆\n青点：辅助圆周运动；橙点：q=cosθ。把 q 乘以 A 才是物块位置。物块本身不绕圆转。\n物理 · 水平弹簧\n位置标尺固定为 −1 至 +1m，改变 A 能看见幅度改变。力箭头只表示方向，大小见下方读数。\n连接 · 同一位移随时间变化\n横轴是时间 t（秒），纵轴是位移 x（米），范围固定 ±1m。虚线：模型预测；青线：该预测中已走过的部分，不是实测数据。\n质量 m（kg）\n2.00 kg\n弹簧劲度 k（N/m）\n8 N/m\n振幅 A（m）\n1.00 m\n\n改参会暂停并保留同一相位，时间和整条曲线随之重算；这是假想对照，不代表运动中真实更换质量或弹簧的过程。\n\n播放两个周期\n全部重置并停止\n相位进度（0–2 周期；拖动即暂停）\n\n已暂停，三幅图保持在同一相位。\n\n时间 t（s）\n0.533\n周期 T（s）\n3.142\n位移 x（m）\n0.483\n弹簧力 F（N）\n-3.865\n\n0.17 周期 · θ=0.34π rad · ω=2.000 rad/s\n\n理想解析模型：无质量的线性弹簧、质点、水平无摩擦表面、无阻尼和外力驱动，不是实测数据。辅助圆描述坐标关系，物块的回复力来自 F=−kx；几何图形不是物理原因。真实弹簧有有限的线性适用范围。\n\n到已有课程查看单位圆定义 →\nOpenStax §15.1 · 力与周期 ↗\nOpenStax §15.3 · 圆周投影 ↗"
+  },
+  {
+    "test": "close then Back paused",
+    "result": {
+      "phase": "0.255",
+      "t": "0.800",
+      "T": "3.142",
+      "x": "-0.029",
+      "F": "0.232",
+      "mass": "2",
+      "k": "8",
+      "A": "1",
+      "status": "离开实验时已暂停，保留相位和参数。"
+    }
+  },
+  {
+    "test": "existing lesson destination",
+    "result": "http://127.0.0.1:18775/trig/#step1"
+  },
+  {
+    "test": "lesson then Back restored",
+    "result": {
+      "phase": "0.255",
+      "t": "0.800",
+      "T": "3.142",
+      "x": "-0.029",
+      "F": "0.232",
+      "mass": "2",
+      "k": "8",
+      "A": "1",
+      "status": "已恢复本标签页上次暂停的位置。"
+    }
+  },
+  {
+    "test": "ended",
+    "result": {
+      "phase": "2",
+      "t": "6.283",
+      "T": "3.142",
+      "x": "1.000",
+      "F": "-8.000",
+      "mass": "2",
+      "k": "8",
+      "A": "1",
+      "status": "两个周期已完成，可重播或回拖。"
+    }
+  },
+  {
+    "test": "replay starts",
+    "result": {
+      "phase": "0.085",
+      "t": "0.267",
+      "T": "3.142",
+      "x": "0.861",
+      "F": "-6.889",
+      "mass": "2",
+      "k": "8",
+      "A": "1",
+      "status": "已暂停，三幅图保持在同一相位。"
+    }
+  },
+  {
+    "test": "repeated reset all",
+    "result": {
+      "phase": "0",
+      "t": "0.000",
+      "T": "3.142",
+      "x": "0.600",
+      "F": "-2.400",
+      "mass": "1",
+      "k": "4",
+      "A": "0.6",
+      "status": "已暂停在起点，可播放或拖动查看关系。"
+    }
+  },
+  {
+    "test": "phone zh320",
+    "result": {
+      "overflow": false
+    }
+  },
+  {
+    "test": "phone zh390",
+    "result": {
+      "overflow": false
+    }
+  },
+  {
+    "test": "phone en320",
+    "result": {
+      "overflow": false
+    }
+  },
+  {
+    "test": "phone en390",
+    "result": {
+      "overflow": false
+    }
+  },
+  {
+    "test": "denied storage playback",
+    "result": "0.250"
+  },
+  {
+    "test": "console errors",
+    "result": []
+  }
+]

@@ -1,0 +1,1678 @@
+[
+  {
+    "origin": "online",
+    "lang": "EN",
+    "type": "buck",
+    "label": "start",
+    "hash": "d54bc254fe099fc1e59d631f4933353b7d6054d87debdebbaa901f89f0785c34",
+    "values": [
+      "12 V",
+      "50%"
+    ],
+    "state": [
+      "f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · Constant-current load = 1 A",
+      "0/8 · t = 0.00 µs · S ON",
+      "100 time (µs)",
+      "100 time (µs)"
+    ]
+  },
+  {
+    "origin": "online",
+    "lang": "EN",
+    "type": "buck",
+    "label": "idle600ms",
+    "hash": "d54bc254fe099fc1e59d631f4933353b7d6054d87debdebbaa901f89f0785c34",
+    "values": [
+      "12 V",
+      "50%"
+    ],
+    "state": [
+      "f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · Constant-current load = 1 A",
+      "0/8 · t = 0.00 µs · S ON",
+      "100 time (µs)",
+      "100 time (µs)"
+    ]
+  },
+  {
+    "origin": "online",
+    "lang": "EN",
+    "type": "buck",
+    "label": "duty20",
+    "hash": "d54bc254fe099fc1e59d631f4933353b7d6054d87debdebbaa901f89f0785c34",
+    "values": [
+      "12 V",
+      "20%"
+    ],
+    "state": [
+      "f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · Constant-current load = 1 A",
+      "Parameters changed: a new steady-state case; history reset. 0/8 · t = 0.00 µs · S ON",
+      "100 time (µs)",
+      "100 time (µs)"
+    ]
+  },
+  {
+    "origin": "online",
+    "lang": "EN",
+    "type": "buck",
+    "label": "duty75",
+    "hash": "d54bc254fe099fc1e59d631f4933353b7d6054d87debdebbaa901f89f0785c34",
+    "values": [
+      "12 V",
+      "75%"
+    ],
+    "state": [
+      "f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · Constant-current load = 1 A",
+      "Parameters changed: a new steady-state case; history reset. 0/8 · t = 0.00 µs · S ON",
+      "100 time (µs)",
+      "100 time (µs)"
+    ]
+  },
+  {
+    "origin": "online",
+    "lang": "EN",
+    "type": "buck",
+    "label": "duty20-again",
+    "hash": "d54bc254fe099fc1e59d631f4933353b7d6054d87debdebbaa901f89f0785c34",
+    "values": [
+      "12 V",
+      "20%"
+    ],
+    "state": [
+      "f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · Constant-current load = 1 A",
+      "Parameters changed: a new steady-state case; history reset. 0/8 · t = 0.00 µs · S ON",
+      "100 time (µs)",
+      "100 time (µs)"
+    ]
+  },
+  {
+    "origin": "online",
+    "lang": "EN",
+    "type": "buck",
+    "label": "phase1",
+    "hash": "d54bc254fe099fc1e59d631f4933353b7d6054d87debdebbaa901f89f0785c34",
+    "values": [
+      "12 V",
+      "20%"
+    ],
+    "state": [
+      "f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · Constant-current load = 1 A",
+      "1/8 · t = 5.00 µs · S ON",
+      "100 time (µs)",
+      "100 time (µs)"
+    ]
+  },
+  {
+    "origin": "online",
+    "lang": "EN",
+    "type": "buck",
+    "label": "phase2",
+    "hash": "4849afa7a0ab8af05c4412dd696270acf5094d5a3e90a501dd69317021ae729d",
+    "values": [
+      "12 V",
+      "20%"
+    ],
+    "state": [
+      "f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · Constant-current load = 1 A",
+      "2/8 · t = 10.00 µs · S OFF",
+      "100 time (µs)",
+      "100 time (µs)"
+    ]
+  },
+  {
+    "origin": "online",
+    "lang": "EN",
+    "type": "buck",
+    "label": "phase3",
+    "hash": "4849afa7a0ab8af05c4412dd696270acf5094d5a3e90a501dd69317021ae729d",
+    "values": [
+      "12 V",
+      "20%"
+    ],
+    "state": [
+      "f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · Constant-current load = 1 A",
+      "3/8 · t = 30.00 µs · S OFF",
+      "100 time (µs)",
+      "100 time (µs)"
+    ]
+  },
+  {
+    "origin": "online",
+    "lang": "EN",
+    "type": "buck",
+    "label": "phase4",
+    "hash": "d54bc254fe099fc1e59d631f4933353b7d6054d87debdebbaa901f89f0785c34",
+    "values": [
+      "12 V",
+      "20%"
+    ],
+    "state": [
+      "f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · Constant-current load = 1 A",
+      "4/8 · t = 50.00 µs · S ON",
+      "100 time (µs)",
+      "100 time (µs)"
+    ]
+  },
+  {
+    "origin": "online",
+    "lang": "EN",
+    "type": "buck",
+    "label": "reset",
+    "hash": "d54bc254fe099fc1e59d631f4933353b7d6054d87debdebbaa901f89f0785c34",
+    "values": [
+      "12 V",
+      "20%"
+    ],
+    "state": [
+      "f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · Constant-current load = 1 A",
+      "0/8 · t = 0.00 µs · S ON",
+      "100 time (µs)",
+      "100 time (µs)"
+    ]
+  },
+  {
+    "origin": "online",
+    "lang": "EN",
+    "type": "boost",
+    "label": "start",
+    "hash": "3d47a15f0ffdc3a855ef5c3f9c08d49ce055a8d861c024c8b8478929c8eb5f45",
+    "values": [
+      "12 V",
+      "50%"
+    ],
+    "state": [
+      "f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · Constant-current load = 1 A",
+      "0/8 · t = 0.00 µs · S ON",
+      "100 time (µs)",
+      "100 time (µs)"
+    ]
+  },
+  {
+    "origin": "online",
+    "lang": "EN",
+    "type": "boost",
+    "label": "idle600ms",
+    "hash": "3d47a15f0ffdc3a855ef5c3f9c08d49ce055a8d861c024c8b8478929c8eb5f45",
+    "values": [
+      "12 V",
+      "50%"
+    ],
+    "state": [
+      "f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · Constant-current load = 1 A",
+      "0/8 · t = 0.00 µs · S ON",
+      "100 time (µs)",
+      "100 time (µs)"
+    ]
+  },
+  {
+    "origin": "online",
+    "lang": "EN",
+    "type": "boost",
+    "label": "duty20",
+    "hash": "3d47a15f0ffdc3a855ef5c3f9c08d49ce055a8d861c024c8b8478929c8eb5f45",
+    "values": [
+      "12 V",
+      "20%"
+    ],
+    "state": [
+      "f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · Constant-current load = 1 A",
+      "Parameters changed: a new steady-state case; history reset. 0/8 · t = 0.00 µs · S ON",
+      "100 time (µs)",
+      "100 time (µs)"
+    ]
+  },
+  {
+    "origin": "online",
+    "lang": "EN",
+    "type": "boost",
+    "label": "duty75",
+    "hash": "3d47a15f0ffdc3a855ef5c3f9c08d49ce055a8d861c024c8b8478929c8eb5f45",
+    "values": [
+      "12 V",
+      "75%"
+    ],
+    "state": [
+      "f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · Constant-current load = 1 A",
+      "Parameters changed: a new steady-state case; history reset. 0/8 · t = 0.00 µs · S ON",
+      "100 time (µs)",
+      "100 time (µs)"
+    ]
+  },
+  {
+    "origin": "online",
+    "lang": "EN",
+    "type": "boost",
+    "label": "duty20-again",
+    "hash": "3d47a15f0ffdc3a855ef5c3f9c08d49ce055a8d861c024c8b8478929c8eb5f45",
+    "values": [
+      "12 V",
+      "20%"
+    ],
+    "state": [
+      "f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · Constant-current load = 1 A",
+      "Parameters changed: a new steady-state case; history reset. 0/8 · t = 0.00 µs · S ON",
+      "100 time (µs)",
+      "100 time (µs)"
+    ]
+  },
+  {
+    "origin": "online",
+    "lang": "EN",
+    "type": "boost",
+    "label": "phase1",
+    "hash": "3d47a15f0ffdc3a855ef5c3f9c08d49ce055a8d861c024c8b8478929c8eb5f45",
+    "values": [
+      "12 V",
+      "20%"
+    ],
+    "state": [
+      "f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · Constant-current load = 1 A",
+      "1/8 · t = 5.00 µs · S ON",
+      "100 time (µs)",
+      "100 time (µs)"
+    ]
+  },
+  {
+    "origin": "online",
+    "lang": "EN",
+    "type": "boost",
+    "label": "phase2",
+    "hash": "9fbf9f898c055763a9ae5d8f35a09250bd486270a0e32de1c647cc499a18f21c",
+    "values": [
+      "12 V",
+      "20%"
+    ],
+    "state": [
+      "f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · Constant-current load = 1 A",
+      "2/8 · t = 10.00 µs · S OFF",
+      "100 time (µs)",
+      "100 time (µs)"
+    ]
+  },
+  {
+    "origin": "online",
+    "lang": "EN",
+    "type": "boost",
+    "label": "phase3",
+    "hash": "9fbf9f898c055763a9ae5d8f35a09250bd486270a0e32de1c647cc499a18f21c",
+    "values": [
+      "12 V",
+      "20%"
+    ],
+    "state": [
+      "f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · Constant-current load = 1 A",
+      "3/8 · t = 30.00 µs · S OFF",
+      "100 time (µs)",
+      "100 time (µs)"
+    ]
+  },
+  {
+    "origin": "online",
+    "lang": "EN",
+    "type": "boost",
+    "label": "phase4",
+    "hash": "3d47a15f0ffdc3a855ef5c3f9c08d49ce055a8d861c024c8b8478929c8eb5f45",
+    "values": [
+      "12 V",
+      "20%"
+    ],
+    "state": [
+      "f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · Constant-current load = 1 A",
+      "4/8 · t = 50.00 µs · S ON",
+      "100 time (µs)",
+      "100 time (µs)"
+    ]
+  },
+  {
+    "origin": "online",
+    "lang": "EN",
+    "type": "boost",
+    "label": "reset",
+    "hash": "3d47a15f0ffdc3a855ef5c3f9c08d49ce055a8d861c024c8b8478929c8eb5f45",
+    "values": [
+      "12 V",
+      "20%"
+    ],
+    "state": [
+      "f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · Constant-current load = 1 A",
+      "0/8 · t = 0.00 µs · S ON",
+      "100 time (µs)",
+      "100 time (µs)"
+    ]
+  },
+  {
+    "origin": "online",
+    "lang": "中",
+    "type": "buck",
+    "label": "start",
+    "hash": "bc8964d5f2002382740e7e5d22cf7064975a80388de9e4fc8c20cacbc4451613",
+    "values": [
+      "12 V",
+      "50%"
+    ],
+    "state": [
+      "Buck 降压：断开电源，电流仍有路可走",
+      "开关断开时，降压电路的电流为什么还能继续？",
+      "模型：理想元件、连续导通（电感电流始终 > 0）、周期稳态；输出电压按小纹波近似视为常量。初始电流是稳态谷值，不是上电启动。",
+      "D = 导通时间 / 周期；f 是频率，T 是周期；L 是电感量，C 是电容量。iL 是从左到右的电感电流，vL 是电感左端减右端的电压；iC 流入电容正端，Iout 是负载电流。",
+      "f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · 恒流负载 = 1 A",
+      "0/8 · t = 0.00 µs · S ON",
+      "S: 闭合 ON",
+      "电源 + → 闭合开关 → 电感 → 输出节点 → 负载 → 回线 → 电源 −。二极管反向截止。 电容支路：电容 + → 输出节点 → 负载 → 回线 → 电容 −，放电。",
+      "100 时间 (µs)",
+      "100 时间 (µs)"
+    ]
+  },
+  {
+    "origin": "online",
+    "lang": "中",
+    "type": "buck",
+    "label": "idle600ms",
+    "hash": "bc8964d5f2002382740e7e5d22cf7064975a80388de9e4fc8c20cacbc4451613",
+    "values": [
+      "12 V",
+      "50%"
+    ],
+    "state": [
+      "Buck 降压：断开电源，电流仍有路可走",
+      "开关断开时，降压电路的电流为什么还能继续？",
+      "模型：理想元件、连续导通（电感电流始终 > 0）、周期稳态；输出电压按小纹波近似视为常量。初始电流是稳态谷值，不是上电启动。",
+      "D = 导通时间 / 周期；f 是频率，T 是周期；L 是电感量，C 是电容量。iL 是从左到右的电感电流，vL 是电感左端减右端的电压；iC 流入电容正端，Iout 是负载电流。",
+      "f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · 恒流负载 = 1 A",
+      "0/8 · t = 0.00 µs · S ON",
+      "S: 闭合 ON",
+      "电源 + → 闭合开关 → 电感 → 输出节点 → 负载 → 回线 → 电源 −。二极管反向截止。 电容支路：电容 + → 输出节点 → 负载 → 回线 → 电容 −，放电。",
+      "100 时间 (µs)",
+      "100 时间 (µs)"
+    ]
+  },
+  {
+    "origin": "online",
+    "lang": "中",
+    "type": "buck",
+    "label": "duty20",
+    "hash": "bc8964d5f2002382740e7e5d22cf7064975a80388de9e4fc8c20cacbc4451613",
+    "values": [
+      "12 V",
+      "20%"
+    ],
+    "state": [
+      "Buck 降压：断开电源，电流仍有路可走",
+      "开关断开时，降压电路的电流为什么还能继续？",
+      "模型：理想元件、连续导通（电感电流始终 > 0）、周期稳态；输出电压按小纹波近似视为常量。初始电流是稳态谷值，不是上电启动。",
+      "D = 导通时间 / 周期；f 是频率，T 是周期；L 是电感量，C 是电容量。iL 是从左到右的电感电流，vL 是电感左端减右端的电压；iC 流入电容正端，Iout 是负载电流。",
+      "f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · 恒流负载 = 1 A",
+      "参数已改变：新稳态案例，历史已重置。 0/8 · t = 0.00 µs · S ON",
+      "S: 闭合 ON",
+      "电源 + → 闭合开关 → 电感 → 输出节点 → 负载 → 回线 → 电源 −。二极管反向截止。 电容支路：电容 + → 输出节点 → 负载 → 回线 → 电容 −，放电。",
+      "100 时间 (µs)",
+      "100 时间 (µs)"
+    ]
+  },
+  {
+    "origin": "online",
+    "lang": "中",
+    "type": "buck",
+    "label": "duty75",
+    "hash": "bc8964d5f2002382740e7e5d22cf7064975a80388de9e4fc8c20cacbc4451613",
+    "values": [
+      "12 V",
+      "75%"
+    ],
+    "state": [
+      "Buck 降压：断开电源，电流仍有路可走",
+      "开关断开时，降压电路的电流为什么还能继续？",
+      "模型：理想元件、连续导通（电感电流始终 > 0）、周期稳态；输出电压按小纹波近似视为常量。初始电流是稳态谷值，不是上电启动。",
+      "D = 导通时间 / 周期；f 是频率，T 是周期；L 是电感量，C 是电容量。iL 是从左到右的电感电流，vL 是电感左端减右端的电压；iC 流入电容正端，Iout 是负载电流。",
+      "f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · 恒流负载 = 1 A",
+      "参数已改变：新稳态案例，历史已重置。 0/8 · t = 0.00 µs · S ON",
+      "S: 闭合 ON",
+      "电源 + → 闭合开关 → 电感 → 输出节点 → 负载 → 回线 → 电源 −。二极管反向截止。 电容支路：电容 + → 输出节点 → 负载 → 回线 → 电容 −，放电。",
+      "100 时间 (µs)",
+      "100 时间 (µs)"
+    ]
+  },
+  {
+    "origin": "online",
+    "lang": "中",
+    "type": "buck",
+    "label": "duty20-again",
+    "hash": "bc8964d5f2002382740e7e5d22cf7064975a80388de9e4fc8c20cacbc4451613",
+    "values": [
+      "12 V",
+      "20%"
+    ],
+    "state": [
+      "Buck 降压：断开电源，电流仍有路可走",
+      "开关断开时，降压电路的电流为什么还能继续？",
+      "模型：理想元件、连续导通（电感电流始终 > 0）、周期稳态；输出电压按小纹波近似视为常量。初始电流是稳态谷值，不是上电启动。",
+      "D = 导通时间 / 周期；f 是频率，T 是周期；L 是电感量，C 是电容量。iL 是从左到右的电感电流，vL 是电感左端减右端的电压；iC 流入电容正端，Iout 是负载电流。",
+      "f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · 恒流负载 = 1 A",
+      "参数已改变：新稳态案例，历史已重置。 0/8 · t = 0.00 µs · S ON",
+      "S: 闭合 ON",
+      "电源 + → 闭合开关 → 电感 → 输出节点 → 负载 → 回线 → 电源 −。二极管反向截止。 电容支路：电容 + → 输出节点 → 负载 → 回线 → 电容 −，放电。",
+      "100 时间 (µs)",
+      "100 时间 (µs)"
+    ]
+  },
+  {
+    "origin": "online",
+    "lang": "中",
+    "type": "buck",
+    "label": "phase1",
+    "hash": "bc8964d5f2002382740e7e5d22cf7064975a80388de9e4fc8c20cacbc4451613",
+    "values": [
+      "12 V",
+      "20%"
+    ],
+    "state": [
+      "Buck 降压：断开电源，电流仍有路可走",
+      "开关断开时，降压电路的电流为什么还能继续？",
+      "模型：理想元件、连续导通（电感电流始终 > 0）、周期稳态；输出电压按小纹波近似视为常量。初始电流是稳态谷值，不是上电启动。",
+      "D = 导通时间 / 周期；f 是频率，T 是周期；L 是电感量，C 是电容量。iL 是从左到右的电感电流，vL 是电感左端减右端的电压；iC 流入电容正端，Iout 是负载电流。",
+      "f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · 恒流负载 = 1 A",
+      "1/8 · t = 5.00 µs · S ON",
+      "S: 闭合 ON",
+      "电源 + → 闭合开关 → 电感 → 输出节点 → 负载 → 回线 → 电源 −。二极管反向截止。 电容支路：此刻净电流为零。",
+      "100 时间 (µs)",
+      "100 时间 (µs)"
+    ]
+  },
+  {
+    "origin": "online",
+    "lang": "中",
+    "type": "buck",
+    "label": "phase2",
+    "hash": "874c30cf33687b79f1f979cd338eefea3e445c43b73cd216ca2f347d236cf2ba",
+    "values": [
+      "12 V",
+      "20%"
+    ],
+    "state": [
+      "Buck 降压：断开电源，电流仍有路可走",
+      "开关断开时，降压电路的电流为什么还能继续？",
+      "模型：理想元件、连续导通（电感电流始终 > 0）、周期稳态；输出电压按小纹波近似视为常量。初始电流是稳态谷值，不是上电启动。",
+      "D = 导通时间 / 周期；f 是频率，T 是周期；L 是电感量，C 是电容量。iL 是从左到右的电感电流，vL 是电感左端减右端的电压；iC 流入电容正端，Iout 是负载电流。",
+      "f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · 恒流负载 = 1 A",
+      "2/8 · t = 10.00 µs · S OFF",
+      "S: 断开 OFF",
+      "回线 → 二极管 A→K → 电感 → 输出节点 → 负载 → 回线。电源已断开，电感在放能。 电容支路：输出节点 → 电容 + → 电容 − → 回线，充电。",
+      "100 时间 (µs)",
+      "100 时间 (µs)"
+    ]
+  },
+  {
+    "origin": "online",
+    "lang": "中",
+    "type": "buck",
+    "label": "phase3",
+    "hash": "874c30cf33687b79f1f979cd338eefea3e445c43b73cd216ca2f347d236cf2ba",
+    "values": [
+      "12 V",
+      "20%"
+    ],
+    "state": [
+      "Buck 降压：断开电源，电流仍有路可走",
+      "开关断开时，降压电路的电流为什么还能继续？",
+      "模型：理想元件、连续导通（电感电流始终 > 0）、周期稳态；输出电压按小纹波近似视为常量。初始电流是稳态谷值，不是上电启动。",
+      "D = 导通时间 / 周期；f 是频率，T 是周期；L 是电感量，C 是电容量。iL 是从左到右的电感电流，vL 是电感左端减右端的电压；iC 流入电容正端，Iout 是负载电流。",
+      "f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · 恒流负载 = 1 A",
+      "3/8 · t = 30.00 µs · S OFF",
+      "S: 断开 OFF",
+      "回线 → 二极管 A→K → 电感 → 输出节点 → 负载 → 回线。电源已断开，电感在放能。 电容支路：此刻净电流为零。",
+      "100 时间 (µs)",
+      "100 时间 (µs)"
+    ]
+  },
+  {
+    "origin": "online",
+    "lang": "中",
+    "type": "buck",
+    "label": "phase4",
+    "hash": "bc8964d5f2002382740e7e5d22cf7064975a80388de9e4fc8c20cacbc4451613",
+    "values": [
+      "12 V",
+      "20%"
+    ],
+    "state": [
+      "Buck 降压：断开电源，电流仍有路可走",
+      "开关断开时，降压电路的电流为什么还能继续？",
+      "模型：理想元件、连续导通（电感电流始终 > 0）、周期稳态；输出电压按小纹波近似视为常量。初始电流是稳态谷值，不是上电启动。",
+      "D = 导通时间 / 周期；f 是频率，T 是周期；L 是电感量，C 是电容量。iL 是从左到右的电感电流，vL 是电感左端减右端的电压；iC 流入电容正端，Iout 是负载电流。",
+      "f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · 恒流负载 = 1 A",
+      "4/8 · t = 50.00 µs · S ON",
+      "S: 闭合 ON",
+      "电源 + → 闭合开关 → 电感 → 输出节点 → 负载 → 回线 → 电源 −。二极管反向截止。 电容支路：电容 + → 输出节点 → 负载 → 回线 → 电容 −，放电。",
+      "100 时间 (µs)",
+      "100 时间 (µs)"
+    ]
+  },
+  {
+    "origin": "online",
+    "lang": "中",
+    "type": "buck",
+    "label": "reset",
+    "hash": "bc8964d5f2002382740e7e5d22cf7064975a80388de9e4fc8c20cacbc4451613",
+    "values": [
+      "12 V",
+      "20%"
+    ],
+    "state": [
+      "Buck 降压：断开电源，电流仍有路可走",
+      "开关断开时，降压电路的电流为什么还能继续？",
+      "模型：理想元件、连续导通（电感电流始终 > 0）、周期稳态；输出电压按小纹波近似视为常量。初始电流是稳态谷值，不是上电启动。",
+      "D = 导通时间 / 周期；f 是频率，T 是周期；L 是电感量，C 是电容量。iL 是从左到右的电感电流，vL 是电感左端减右端的电压；iC 流入电容正端，Iout 是负载电流。",
+      "f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · 恒流负载 = 1 A",
+      "0/8 · t = 0.00 µs · S ON",
+      "S: 闭合 ON",
+      "电源 + → 闭合开关 → 电感 → 输出节点 → 负载 → 回线 → 电源 −。二极管反向截止。 电容支路：电容 + → 输出节点 → 负载 → 回线 → 电容 −，放电。",
+      "100 时间 (µs)",
+      "100 时间 (µs)"
+    ]
+  },
+  {
+    "origin": "online",
+    "lang": "中",
+    "type": "boost",
+    "label": "start",
+    "hash": "1c16767a4afc8cd73dce67d157314060b2442cbdf01010d5021b8d8602650e39",
+    "values": [
+      "12 V",
+      "50%"
+    ],
+    "state": [
+      "模型：理想元件、连续导通（电感电流始终 > 0）、周期稳态；输出电压按小纹波近似视为常量。初始电流是稳态谷值，不是上电启动。",
+      "D = 导通时间 / 周期；f 是频率，T 是周期；L 是电感量，C 是电容量。iL 是从左到右的电感电流，vL 是电感左端减右端的电压；iC 流入电容正端，Iout 是负载电流。",
+      "f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · 恒流负载 = 1 A",
+      "0/8 · t = 0.00 µs · S ON",
+      "S: 闭合 ON",
+      "储能回路：电源 + → 电感 → 开关 → 回线 → 电源 −。独立供电回路：电容 + → 负载 → 电容 −。二极管隔开输出。 电容支路：电容 + → 输出节点 → 负载 → 回线 → 电容 −，放电。",
+      "100 时间 (µs)",
+      "100 时间 (µs)"
+    ]
+  },
+  {
+    "origin": "online",
+    "lang": "中",
+    "type": "boost",
+    "label": "idle600ms",
+    "hash": "1c16767a4afc8cd73dce67d157314060b2442cbdf01010d5021b8d8602650e39",
+    "values": [
+      "12 V",
+      "50%"
+    ],
+    "state": [
+      "模型：理想元件、连续导通（电感电流始终 > 0）、周期稳态；输出电压按小纹波近似视为常量。初始电流是稳态谷值，不是上电启动。",
+      "D = 导通时间 / 周期；f 是频率，T 是周期；L 是电感量，C 是电容量。iL 是从左到右的电感电流，vL 是电感左端减右端的电压；iC 流入电容正端，Iout 是负载电流。",
+      "f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · 恒流负载 = 1 A",
+      "0/8 · t = 0.00 µs · S ON",
+      "S: 闭合 ON",
+      "储能回路：电源 + → 电感 → 开关 → 回线 → 电源 −。独立供电回路：电容 + → 负载 → 电容 −。二极管隔开输出。 电容支路：电容 + → 输出节点 → 负载 → 回线 → 电容 −，放电。",
+      "100 时间 (µs)",
+      "100 时间 (µs)"
+    ]
+  },
+  {
+    "origin": "online",
+    "lang": "中",
+    "type": "boost",
+    "label": "duty20",
+    "hash": "1c16767a4afc8cd73dce67d157314060b2442cbdf01010d5021b8d8602650e39",
+    "values": [
+      "12 V",
+      "20%"
+    ],
+    "state": [
+      "模型：理想元件、连续导通（电感电流始终 > 0）、周期稳态；输出电压按小纹波近似视为常量。初始电流是稳态谷值，不是上电启动。",
+      "D = 导通时间 / 周期；f 是频率，T 是周期；L 是电感量，C 是电容量。iL 是从左到右的电感电流，vL 是电感左端减右端的电压；iC 流入电容正端，Iout 是负载电流。",
+      "f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · 恒流负载 = 1 A",
+      "参数已改变：新稳态案例，历史已重置。 0/8 · t = 0.00 µs · S ON",
+      "S: 闭合 ON",
+      "储能回路：电源 + → 电感 → 开关 → 回线 → 电源 −。独立供电回路：电容 + → 负载 → 电容 −。二极管隔开输出。 电容支路：电容 + → 输出节点 → 负载 → 回线 → 电容 −，放电。",
+      "100 时间 (µs)",
+      "100 时间 (µs)"
+    ]
+  },
+  {
+    "origin": "online",
+    "lang": "中",
+    "type": "boost",
+    "label": "duty75",
+    "hash": "1c16767a4afc8cd73dce67d157314060b2442cbdf01010d5021b8d8602650e39",
+    "values": [
+      "12 V",
+      "75%"
+    ],
+    "state": [
+      "模型：理想元件、连续导通（电感电流始终 > 0）、周期稳态；输出电压按小纹波近似视为常量。初始电流是稳态谷值，不是上电启动。",
+      "D = 导通时间 / 周期；f 是频率，T 是周期；L 是电感量，C 是电容量。iL 是从左到右的电感电流，vL 是电感左端减右端的电压；iC 流入电容正端，Iout 是负载电流。",
+      "f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · 恒流负载 = 1 A",
+      "参数已改变：新稳态案例，历史已重置。 0/8 · t = 0.00 µs · S ON",
+      "S: 闭合 ON",
+      "储能回路：电源 + → 电感 → 开关 → 回线 → 电源 −。独立供电回路：电容 + → 负载 → 电容 −。二极管隔开输出。 电容支路：电容 + → 输出节点 → 负载 → 回线 → 电容 −，放电。",
+      "100 时间 (µs)",
+      "100 时间 (µs)"
+    ]
+  },
+  {
+    "origin": "online",
+    "lang": "中",
+    "type": "boost",
+    "label": "duty20-again",
+    "hash": "1c16767a4afc8cd73dce67d157314060b2442cbdf01010d5021b8d8602650e39",
+    "values": [
+      "12 V",
+      "20%"
+    ],
+    "state": [
+      "模型：理想元件、连续导通（电感电流始终 > 0）、周期稳态；输出电压按小纹波近似视为常量。初始电流是稳态谷值，不是上电启动。",
+      "D = 导通时间 / 周期；f 是频率，T 是周期；L 是电感量，C 是电容量。iL 是从左到右的电感电流，vL 是电感左端减右端的电压；iC 流入电容正端，Iout 是负载电流。",
+      "f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · 恒流负载 = 1 A",
+      "参数已改变：新稳态案例，历史已重置。 0/8 · t = 0.00 µs · S ON",
+      "S: 闭合 ON",
+      "储能回路：电源 + → 电感 → 开关 → 回线 → 电源 −。独立供电回路：电容 + → 负载 → 电容 −。二极管隔开输出。 电容支路：电容 + → 输出节点 → 负载 → 回线 → 电容 −，放电。",
+      "100 时间 (µs)",
+      "100 时间 (µs)"
+    ]
+  },
+  {
+    "origin": "online",
+    "lang": "中",
+    "type": "boost",
+    "label": "phase1",
+    "hash": "1c16767a4afc8cd73dce67d157314060b2442cbdf01010d5021b8d8602650e39",
+    "values": [
+      "12 V",
+      "20%"
+    ],
+    "state": [
+      "模型：理想元件、连续导通（电感电流始终 > 0）、周期稳态；输出电压按小纹波近似视为常量。初始电流是稳态谷值，不是上电启动。",
+      "D = 导通时间 / 周期；f 是频率，T 是周期；L 是电感量，C 是电容量。iL 是从左到右的电感电流，vL 是电感左端减右端的电压；iC 流入电容正端，Iout 是负载电流。",
+      "f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · 恒流负载 = 1 A",
+      "1/8 · t = 5.00 µs · S ON",
+      "S: 闭合 ON",
+      "储能回路：电源 + → 电感 → 开关 → 回线 → 电源 −。独立供电回路：电容 + → 负载 → 电容 −。二极管隔开输出。 电容支路：电容 + → 输出节点 → 负载 → 回线 → 电容 −，放电。",
+      "100 时间 (µs)",
+      "100 时间 (µs)"
+    ]
+  },
+  {
+    "origin": "online",
+    "lang": "中",
+    "type": "boost",
+    "label": "phase2",
+    "hash": "f16e707eaf28018f945e51c21169dda78ddec8869a785717d6fe7b179b52ec40",
+    "values": [
+      "12 V",
+      "20%"
+    ],
+    "state": [
+      "模型：理想元件、连续导通（电感电流始终 > 0）、周期稳态；输出电压按小纹波近似视为常量。初始电流是稳态谷值，不是上电启动。",
+      "D = 导通时间 / 周期；f 是频率，T 是周期；L 是电感量，C 是电容量。iL 是从左到右的电感电流，vL 是电感左端减右端的电压；iC 流入电容正端，Iout 是负载电流。",
+      "f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · 恒流负载 = 1 A",
+      "2/8 · t = 10.00 µs · S OFF",
+      "S: 断开 OFF",
+      "导通",
+      "电源 + → 电感 → 二极管 A→K → 输出节点 → 负载 / 电容 → 回线 → 电源 −。电感放能，电源也继续供能。 电容支路：输出节点 → 电容 + → 电容 − → 回线，充电。",
+      "100 时间 (µs)",
+      "100 时间 (µs)"
+    ]
+  },
+  {
+    "origin": "online",
+    "lang": "中",
+    "type": "boost",
+    "label": "phase3",
+    "hash": "f16e707eaf28018f945e51c21169dda78ddec8869a785717d6fe7b179b52ec40",
+    "values": [
+      "12 V",
+      "20%"
+    ],
+    "state": [
+      "模型：理想元件、连续导通（电感电流始终 > 0）、周期稳态；输出电压按小纹波近似视为常量。初始电流是稳态谷值，不是上电启动。",
+      "D = 导通时间 / 周期；f 是频率，T 是周期；L 是电感量，C 是电容量。iL 是从左到右的电感电流，vL 是电感左端减右端的电压；iC 流入电容正端，Iout 是负载电流。",
+      "f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · 恒流负载 = 1 A",
+      "3/8 · t = 30.00 µs · S OFF",
+      "S: 断开 OFF",
+      "导通",
+      "电源 + → 电感 → 二极管 A→K → 输出节点 → 负载 / 电容 → 回线 → 电源 −。电感放能，电源也继续供能。 电容支路：输出节点 → 电容 + → 电容 − → 回线，充电。",
+      "100 时间 (µs)",
+      "100 时间 (µs)"
+    ]
+  },
+  {
+    "origin": "online",
+    "lang": "中",
+    "type": "boost",
+    "label": "phase4",
+    "hash": "1c16767a4afc8cd73dce67d157314060b2442cbdf01010d5021b8d8602650e39",
+    "values": [
+      "12 V",
+      "20%"
+    ],
+    "state": [
+      "模型：理想元件、连续导通（电感电流始终 > 0）、周期稳态；输出电压按小纹波近似视为常量。初始电流是稳态谷值，不是上电启动。",
+      "D = 导通时间 / 周期；f 是频率，T 是周期；L 是电感量，C 是电容量。iL 是从左到右的电感电流，vL 是电感左端减右端的电压；iC 流入电容正端，Iout 是负载电流。",
+      "f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · 恒流负载 = 1 A",
+      "4/8 · t = 50.00 µs · S ON",
+      "S: 闭合 ON",
+      "储能回路：电源 + → 电感 → 开关 → 回线 → 电源 −。独立供电回路：电容 + → 负载 → 电容 −。二极管隔开输出。 电容支路：电容 + → 输出节点 → 负载 → 回线 → 电容 −，放电。",
+      "100 时间 (µs)",
+      "100 时间 (µs)"
+    ]
+  },
+  {
+    "origin": "online",
+    "lang": "中",
+    "type": "boost",
+    "label": "reset",
+    "hash": "1c16767a4afc8cd73dce67d157314060b2442cbdf01010d5021b8d8602650e39",
+    "values": [
+      "12 V",
+      "20%"
+    ],
+    "state": [
+      "模型：理想元件、连续导通（电感电流始终 > 0）、周期稳态；输出电压按小纹波近似视为常量。初始电流是稳态谷值，不是上电启动。",
+      "D = 导通时间 / 周期；f 是频率，T 是周期；L 是电感量，C 是电容量。iL 是从左到右的电感电流，vL 是电感左端减右端的电压；iC 流入电容正端，Iout 是负载电流。",
+      "f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · 恒流负载 = 1 A",
+      "0/8 · t = 0.00 µs · S ON",
+      "S: 闭合 ON",
+      "储能回路：电源 + → 电感 → 开关 → 回线 → 电源 −。独立供电回路：电容 + → 负载 → 电容 −。二极管隔开输出。 电容支路：电容 + → 输出节点 → 负载 → 回线 → 电容 −，放电。",
+      "100 时间 (µs)",
+      "100 时间 (µs)"
+    ]
+  },
+  {
+    "origin": "local",
+    "lang": "EN",
+    "type": "buck",
+    "label": "start",
+    "hash": "d54bc254fe099fc1e59d631f4933353b7d6054d87debdebbaa901f89f0785c34",
+    "values": [
+      "12 V",
+      "50%"
+    ],
+    "state": [
+      "f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · Constant-current load = 1 A",
+      "0/8 · t = 0.00 µs · S ON",
+      "100 time (µs)",
+      "100 time (µs)"
+    ]
+  },
+  {
+    "origin": "local",
+    "lang": "EN",
+    "type": "buck",
+    "label": "idle600ms",
+    "hash": "d54bc254fe099fc1e59d631f4933353b7d6054d87debdebbaa901f89f0785c34",
+    "values": [
+      "12 V",
+      "50%"
+    ],
+    "state": [
+      "f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · Constant-current load = 1 A",
+      "0/8 · t = 0.00 µs · S ON",
+      "100 time (µs)",
+      "100 time (µs)"
+    ]
+  },
+  {
+    "origin": "local",
+    "lang": "EN",
+    "type": "buck",
+    "label": "duty20",
+    "hash": "d54bc254fe099fc1e59d631f4933353b7d6054d87debdebbaa901f89f0785c34",
+    "values": [
+      "12 V",
+      "20%"
+    ],
+    "state": [
+      "f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · Constant-current load = 1 A",
+      "Parameters changed: a new steady-state case; history reset. 0/8 · t = 0.00 µs · S ON",
+      "100 time (µs)",
+      "100 time (µs)"
+    ]
+  },
+  {
+    "origin": "local",
+    "lang": "EN",
+    "type": "buck",
+    "label": "duty75",
+    "hash": "d54bc254fe099fc1e59d631f4933353b7d6054d87debdebbaa901f89f0785c34",
+    "values": [
+      "12 V",
+      "75%"
+    ],
+    "state": [
+      "f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · Constant-current load = 1 A",
+      "Parameters changed: a new steady-state case; history reset. 0/8 · t = 0.00 µs · S ON",
+      "100 time (µs)",
+      "100 time (µs)"
+    ]
+  },
+  {
+    "origin": "local",
+    "lang": "EN",
+    "type": "buck",
+    "label": "duty20-again",
+    "hash": "d54bc254fe099fc1e59d631f4933353b7d6054d87debdebbaa901f89f0785c34",
+    "values": [
+      "12 V",
+      "20%"
+    ],
+    "state": [
+      "f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · Constant-current load = 1 A",
+      "Parameters changed: a new steady-state case; history reset. 0/8 · t = 0.00 µs · S ON",
+      "100 time (µs)",
+      "100 time (µs)"
+    ]
+  },
+  {
+    "origin": "local",
+    "lang": "EN",
+    "type": "buck",
+    "label": "phase1",
+    "hash": "d54bc254fe099fc1e59d631f4933353b7d6054d87debdebbaa901f89f0785c34",
+    "values": [
+      "12 V",
+      "20%"
+    ],
+    "state": [
+      "f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · Constant-current load = 1 A",
+      "1/8 · t = 5.00 µs · S ON",
+      "100 time (µs)",
+      "100 time (µs)"
+    ]
+  },
+  {
+    "origin": "local",
+    "lang": "EN",
+    "type": "buck",
+    "label": "phase2",
+    "hash": "4849afa7a0ab8af05c4412dd696270acf5094d5a3e90a501dd69317021ae729d",
+    "values": [
+      "12 V",
+      "20%"
+    ],
+    "state": [
+      "f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · Constant-current load = 1 A",
+      "2/8 · t = 10.00 µs · S OFF",
+      "100 time (µs)",
+      "100 time (µs)"
+    ]
+  },
+  {
+    "origin": "local",
+    "lang": "EN",
+    "type": "buck",
+    "label": "phase3",
+    "hash": "4849afa7a0ab8af05c4412dd696270acf5094d5a3e90a501dd69317021ae729d",
+    "values": [
+      "12 V",
+      "20%"
+    ],
+    "state": [
+      "f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · Constant-current load = 1 A",
+      "3/8 · t = 30.00 µs · S OFF",
+      "100 time (µs)",
+      "100 time (µs)"
+    ]
+  },
+  {
+    "origin": "local",
+    "lang": "EN",
+    "type": "buck",
+    "label": "phase4",
+    "hash": "d54bc254fe099fc1e59d631f4933353b7d6054d87debdebbaa901f89f0785c34",
+    "values": [
+      "12 V",
+      "20%"
+    ],
+    "state": [
+      "f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · Constant-current load = 1 A",
+      "4/8 · t = 50.00 µs · S ON",
+      "100 time (µs)",
+      "100 time (µs)"
+    ]
+  },
+  {
+    "origin": "local",
+    "lang": "EN",
+    "type": "buck",
+    "label": "reset",
+    "hash": "d54bc254fe099fc1e59d631f4933353b7d6054d87debdebbaa901f89f0785c34",
+    "values": [
+      "12 V",
+      "20%"
+    ],
+    "state": [
+      "f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · Constant-current load = 1 A",
+      "0/8 · t = 0.00 µs · S ON",
+      "100 time (µs)",
+      "100 time (µs)"
+    ]
+  },
+  {
+    "origin": "local",
+    "lang": "EN",
+    "type": "boost",
+    "label": "start",
+    "hash": "3d47a15f0ffdc3a855ef5c3f9c08d49ce055a8d861c024c8b8478929c8eb5f45",
+    "values": [
+      "12 V",
+      "50%"
+    ],
+    "state": [
+      "f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · Constant-current load = 1 A",
+      "0/8 · t = 0.00 µs · S ON",
+      "100 time (µs)",
+      "100 time (µs)"
+    ]
+  },
+  {
+    "origin": "local",
+    "lang": "EN",
+    "type": "boost",
+    "label": "idle600ms",
+    "hash": "3d47a15f0ffdc3a855ef5c3f9c08d49ce055a8d861c024c8b8478929c8eb5f45",
+    "values": [
+      "12 V",
+      "50%"
+    ],
+    "state": [
+      "f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · Constant-current load = 1 A",
+      "0/8 · t = 0.00 µs · S ON",
+      "100 time (µs)",
+      "100 time (µs)"
+    ]
+  },
+  {
+    "origin": "local",
+    "lang": "EN",
+    "type": "boost",
+    "label": "duty20",
+    "hash": "3d47a15f0ffdc3a855ef5c3f9c08d49ce055a8d861c024c8b8478929c8eb5f45",
+    "values": [
+      "12 V",
+      "20%"
+    ],
+    "state": [
+      "f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · Constant-current load = 1 A",
+      "Parameters changed: a new steady-state case; history reset. 0/8 · t = 0.00 µs · S ON",
+      "100 time (µs)",
+      "100 time (µs)"
+    ]
+  },
+  {
+    "origin": "local",
+    "lang": "EN",
+    "type": "boost",
+    "label": "duty75",
+    "hash": "3d47a15f0ffdc3a855ef5c3f9c08d49ce055a8d861c024c8b8478929c8eb5f45",
+    "values": [
+      "12 V",
+      "75%"
+    ],
+    "state": [
+      "f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · Constant-current load = 1 A",
+      "Parameters changed: a new steady-state case; history reset. 0/8 · t = 0.00 µs · S ON",
+      "100 time (µs)",
+      "100 time (µs)"
+    ]
+  },
+  {
+    "origin": "local",
+    "lang": "EN",
+    "type": "boost",
+    "label": "duty20-again",
+    "hash": "3d47a15f0ffdc3a855ef5c3f9c08d49ce055a8d861c024c8b8478929c8eb5f45",
+    "values": [
+      "12 V",
+      "20%"
+    ],
+    "state": [
+      "f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · Constant-current load = 1 A",
+      "Parameters changed: a new steady-state case; history reset. 0/8 · t = 0.00 µs · S ON",
+      "100 time (µs)",
+      "100 time (µs)"
+    ]
+  },
+  {
+    "origin": "local",
+    "lang": "EN",
+    "type": "boost",
+    "label": "phase1",
+    "hash": "3d47a15f0ffdc3a855ef5c3f9c08d49ce055a8d861c024c8b8478929c8eb5f45",
+    "values": [
+      "12 V",
+      "20%"
+    ],
+    "state": [
+      "f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · Constant-current load = 1 A",
+      "1/8 · t = 5.00 µs · S ON",
+      "100 time (µs)",
+      "100 time (µs)"
+    ]
+  },
+  {
+    "origin": "local",
+    "lang": "EN",
+    "type": "boost",
+    "label": "phase2",
+    "hash": "9fbf9f898c055763a9ae5d8f35a09250bd486270a0e32de1c647cc499a18f21c",
+    "values": [
+      "12 V",
+      "20%"
+    ],
+    "state": [
+      "f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · Constant-current load = 1 A",
+      "2/8 · t = 10.00 µs · S OFF",
+      "100 time (µs)",
+      "100 time (µs)"
+    ]
+  },
+  {
+    "origin": "local",
+    "lang": "EN",
+    "type": "boost",
+    "label": "phase3",
+    "hash": "9fbf9f898c055763a9ae5d8f35a09250bd486270a0e32de1c647cc499a18f21c",
+    "values": [
+      "12 V",
+      "20%"
+    ],
+    "state": [
+      "f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · Constant-current load = 1 A",
+      "3/8 · t = 30.00 µs · S OFF",
+      "100 time (µs)",
+      "100 time (µs)"
+    ]
+  },
+  {
+    "origin": "local",
+    "lang": "EN",
+    "type": "boost",
+    "label": "phase4",
+    "hash": "3d47a15f0ffdc3a855ef5c3f9c08d49ce055a8d861c024c8b8478929c8eb5f45",
+    "values": [
+      "12 V",
+      "20%"
+    ],
+    "state": [
+      "f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · Constant-current load = 1 A",
+      "4/8 · t = 50.00 µs · S ON",
+      "100 time (µs)",
+      "100 time (µs)"
+    ]
+  },
+  {
+    "origin": "local",
+    "lang": "EN",
+    "type": "boost",
+    "label": "reset",
+    "hash": "3d47a15f0ffdc3a855ef5c3f9c08d49ce055a8d861c024c8b8478929c8eb5f45",
+    "values": [
+      "12 V",
+      "20%"
+    ],
+    "state": [
+      "f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · Constant-current load = 1 A",
+      "0/8 · t = 0.00 µs · S ON",
+      "100 time (µs)",
+      "100 time (µs)"
+    ]
+  },
+  {
+    "origin": "local",
+    "lang": "中",
+    "type": "buck",
+    "label": "start",
+    "hash": "bc8964d5f2002382740e7e5d22cf7064975a80388de9e4fc8c20cacbc4451613",
+    "values": [
+      "12 V",
+      "50%"
+    ],
+    "state": [
+      "Buck 降压：断开电源，电流仍有路可走",
+      "开关断开时，降压电路的电流为什么还能继续？",
+      "模型：理想元件、连续导通（电感电流始终 > 0）、周期稳态；输出电压按小纹波近似视为常量。初始电流是稳态谷值，不是上电启动。",
+      "D = 导通时间 / 周期；f 是频率，T 是周期；L 是电感量，C 是电容量。iL 是从左到右的电感电流，vL 是电感左端减右端的电压；iC 流入电容正端，Iout 是负载电流。",
+      "f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · 恒流负载 = 1 A",
+      "0/8 · t = 0.00 µs · S ON",
+      "S: 闭合 ON",
+      "电源 + → 闭合开关 → 电感 → 输出节点 → 负载 → 回线 → 电源 −。二极管反向截止。 电容支路：电容 + → 输出节点 → 负载 → 回线 → 电容 −，放电。",
+      "100 时间 (µs)",
+      "100 时间 (µs)"
+    ]
+  },
+  {
+    "origin": "local",
+    "lang": "中",
+    "type": "buck",
+    "label": "idle600ms",
+    "hash": "bc8964d5f2002382740e7e5d22cf7064975a80388de9e4fc8c20cacbc4451613",
+    "values": [
+      "12 V",
+      "50%"
+    ],
+    "state": [
+      "Buck 降压：断开电源，电流仍有路可走",
+      "开关断开时，降压电路的电流为什么还能继续？",
+      "模型：理想元件、连续导通（电感电流始终 > 0）、周期稳态；输出电压按小纹波近似视为常量。初始电流是稳态谷值，不是上电启动。",
+      "D = 导通时间 / 周期；f 是频率，T 是周期；L 是电感量，C 是电容量。iL 是从左到右的电感电流，vL 是电感左端减右端的电压；iC 流入电容正端，Iout 是负载电流。",
+      "f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · 恒流负载 = 1 A",
+      "0/8 · t = 0.00 µs · S ON",
+      "S: 闭合 ON",
+      "电源 + → 闭合开关 → 电感 → 输出节点 → 负载 → 回线 → 电源 −。二极管反向截止。 电容支路：电容 + → 输出节点 → 负载 → 回线 → 电容 −，放电。",
+      "100 时间 (µs)",
+      "100 时间 (µs)"
+    ]
+  },
+  {
+    "origin": "local",
+    "lang": "中",
+    "type": "buck",
+    "label": "duty20",
+    "hash": "bc8964d5f2002382740e7e5d22cf7064975a80388de9e4fc8c20cacbc4451613",
+    "values": [
+      "12 V",
+      "20%"
+    ],
+    "state": [
+      "Buck 降压：断开电源，电流仍有路可走",
+      "开关断开时，降压电路的电流为什么还能继续？",
+      "模型：理想元件、连续导通（电感电流始终 > 0）、周期稳态；输出电压按小纹波近似视为常量。初始电流是稳态谷值，不是上电启动。",
+      "D = 导通时间 / 周期；f 是频率，T 是周期；L 是电感量，C 是电容量。iL 是从左到右的电感电流，vL 是电感左端减右端的电压；iC 流入电容正端，Iout 是负载电流。",
+      "f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · 恒流负载 = 1 A",
+      "参数已改变：新稳态案例，历史已重置。 0/8 · t = 0.00 µs · S ON",
+      "S: 闭合 ON",
+      "电源 + → 闭合开关 → 电感 → 输出节点 → 负载 → 回线 → 电源 −。二极管反向截止。 电容支路：电容 + → 输出节点 → 负载 → 回线 → 电容 −，放电。",
+      "100 时间 (µs)",
+      "100 时间 (µs)"
+    ]
+  },
+  {
+    "origin": "local",
+    "lang": "中",
+    "type": "buck",
+    "label": "duty75",
+    "hash": "bc8964d5f2002382740e7e5d22cf7064975a80388de9e4fc8c20cacbc4451613",
+    "values": [
+      "12 V",
+      "75%"
+    ],
+    "state": [
+      "Buck 降压：断开电源，电流仍有路可走",
+      "开关断开时，降压电路的电流为什么还能继续？",
+      "模型：理想元件、连续导通（电感电流始终 > 0）、周期稳态；输出电压按小纹波近似视为常量。初始电流是稳态谷值，不是上电启动。",
+      "D = 导通时间 / 周期；f 是频率，T 是周期；L 是电感量，C 是电容量。iL 是从左到右的电感电流，vL 是电感左端减右端的电压；iC 流入电容正端，Iout 是负载电流。",
+      "f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · 恒流负载 = 1 A",
+      "参数已改变：新稳态案例，历史已重置。 0/8 · t = 0.00 µs · S ON",
+      "S: 闭合 ON",
+      "电源 + → 闭合开关 → 电感 → 输出节点 → 负载 → 回线 → 电源 −。二极管反向截止。 电容支路：电容 + → 输出节点 → 负载 → 回线 → 电容 −，放电。",
+      "100 时间 (µs)",
+      "100 时间 (µs)"
+    ]
+  },
+  {
+    "origin": "local",
+    "lang": "中",
+    "type": "buck",
+    "label": "duty20-again",
+    "hash": "bc8964d5f2002382740e7e5d22cf7064975a80388de9e4fc8c20cacbc4451613",
+    "values": [
+      "12 V",
+      "20%"
+    ],
+    "state": [
+      "Buck 降压：断开电源，电流仍有路可走",
+      "开关断开时，降压电路的电流为什么还能继续？",
+      "模型：理想元件、连续导通（电感电流始终 > 0）、周期稳态；输出电压按小纹波近似视为常量。初始电流是稳态谷值，不是上电启动。",
+      "D = 导通时间 / 周期；f 是频率，T 是周期；L 是电感量，C 是电容量。iL 是从左到右的电感电流，vL 是电感左端减右端的电压；iC 流入电容正端，Iout 是负载电流。",
+      "f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · 恒流负载 = 1 A",
+      "参数已改变：新稳态案例，历史已重置。 0/8 · t = 0.00 µs · S ON",
+      "S: 闭合 ON",
+      "电源 + → 闭合开关 → 电感 → 输出节点 → 负载 → 回线 → 电源 −。二极管反向截止。 电容支路：电容 + → 输出节点 → 负载 → 回线 → 电容 −，放电。",
+      "100 时间 (µs)",
+      "100 时间 (µs)"
+    ]
+  },
+  {
+    "origin": "local",
+    "lang": "中",
+    "type": "buck",
+    "label": "phase1",
+    "hash": "bc8964d5f2002382740e7e5d22cf7064975a80388de9e4fc8c20cacbc4451613",
+    "values": [
+      "12 V",
+      "20%"
+    ],
+    "state": [
+      "Buck 降压：断开电源，电流仍有路可走",
+      "开关断开时，降压电路的电流为什么还能继续？",
+      "模型：理想元件、连续导通（电感电流始终 > 0）、周期稳态；输出电压按小纹波近似视为常量。初始电流是稳态谷值，不是上电启动。",
+      "D = 导通时间 / 周期；f 是频率，T 是周期；L 是电感量，C 是电容量。iL 是从左到右的电感电流，vL 是电感左端减右端的电压；iC 流入电容正端，Iout 是负载电流。",
+      "f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · 恒流负载 = 1 A",
+      "1/8 · t = 5.00 µs · S ON",
+      "S: 闭合 ON",
+      "电源 + → 闭合开关 → 电感 → 输出节点 → 负载 → 回线 → 电源 −。二极管反向截止。 电容支路：此刻净电流为零。",
+      "100 时间 (µs)",
+      "100 时间 (µs)"
+    ]
+  },
+  {
+    "origin": "local",
+    "lang": "中",
+    "type": "buck",
+    "label": "phase2",
+    "hash": "874c30cf33687b79f1f979cd338eefea3e445c43b73cd216ca2f347d236cf2ba",
+    "values": [
+      "12 V",
+      "20%"
+    ],
+    "state": [
+      "Buck 降压：断开电源，电流仍有路可走",
+      "开关断开时，降压电路的电流为什么还能继续？",
+      "模型：理想元件、连续导通（电感电流始终 > 0）、周期稳态；输出电压按小纹波近似视为常量。初始电流是稳态谷值，不是上电启动。",
+      "D = 导通时间 / 周期；f 是频率，T 是周期；L 是电感量，C 是电容量。iL 是从左到右的电感电流，vL 是电感左端减右端的电压；iC 流入电容正端，Iout 是负载电流。",
+      "f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · 恒流负载 = 1 A",
+      "2/8 · t = 10.00 µs · S OFF",
+      "S: 断开 OFF",
+      "回线 → 二极管 A→K → 电感 → 输出节点 → 负载 → 回线。电源已断开，电感在放能。 电容支路：输出节点 → 电容 + → 电容 − → 回线，充电。",
+      "100 时间 (µs)",
+      "100 时间 (µs)"
+    ]
+  },
+  {
+    "origin": "local",
+    "lang": "中",
+    "type": "buck",
+    "label": "phase3",
+    "hash": "874c30cf33687b79f1f979cd338eefea3e445c43b73cd216ca2f347d236cf2ba",
+    "values": [
+      "12 V",
+      "20%"
+    ],
+    "state": [
+      "Buck 降压：断开电源，电流仍有路可走",
+      "开关断开时，降压电路的电流为什么还能继续？",
+      "模型：理想元件、连续导通（电感电流始终 > 0）、周期稳态；输出电压按小纹波近似视为常量。初始电流是稳态谷值，不是上电启动。",
+      "D = 导通时间 / 周期；f 是频率，T 是周期；L 是电感量，C 是电容量。iL 是从左到右的电感电流，vL 是电感左端减右端的电压；iC 流入电容正端，Iout 是负载电流。",
+      "f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · 恒流负载 = 1 A",
+      "3/8 · t = 30.00 µs · S OFF",
+      "S: 断开 OFF",
+      "回线 → 二极管 A→K → 电感 → 输出节点 → 负载 → 回线。电源已断开，电感在放能。 电容支路：此刻净电流为零。",
+      "100 时间 (µs)",
+      "100 时间 (µs)"
+    ]
+  },
+  {
+    "origin": "local",
+    "lang": "中",
+    "type": "buck",
+    "label": "phase4",
+    "hash": "bc8964d5f2002382740e7e5d22cf7064975a80388de9e4fc8c20cacbc4451613",
+    "values": [
+      "12 V",
+      "20%"
+    ],
+    "state": [
+      "Buck 降压：断开电源，电流仍有路可走",
+      "开关断开时，降压电路的电流为什么还能继续？",
+      "模型：理想元件、连续导通（电感电流始终 > 0）、周期稳态；输出电压按小纹波近似视为常量。初始电流是稳态谷值，不是上电启动。",
+      "D = 导通时间 / 周期；f 是频率，T 是周期；L 是电感量，C 是电容量。iL 是从左到右的电感电流，vL 是电感左端减右端的电压；iC 流入电容正端，Iout 是负载电流。",
+      "f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · 恒流负载 = 1 A",
+      "4/8 · t = 50.00 µs · S ON",
+      "S: 闭合 ON",
+      "电源 + → 闭合开关 → 电感 → 输出节点 → 负载 → 回线 → 电源 −。二极管反向截止。 电容支路：电容 + → 输出节点 → 负载 → 回线 → 电容 −，放电。",
+      "100 时间 (µs)",
+      "100 时间 (µs)"
+    ]
+  },
+  {
+    "origin": "local",
+    "lang": "中",
+    "type": "buck",
+    "label": "reset",
+    "hash": "bc8964d5f2002382740e7e5d22cf7064975a80388de9e4fc8c20cacbc4451613",
+    "values": [
+      "12 V",
+      "20%"
+    ],
+    "state": [
+      "Buck 降压：断开电源，电流仍有路可走",
+      "开关断开时，降压电路的电流为什么还能继续？",
+      "模型：理想元件、连续导通（电感电流始终 > 0）、周期稳态；输出电压按小纹波近似视为常量。初始电流是稳态谷值，不是上电启动。",
+      "D = 导通时间 / 周期；f 是频率，T 是周期；L 是电感量，C 是电容量。iL 是从左到右的电感电流，vL 是电感左端减右端的电压；iC 流入电容正端，Iout 是负载电流。",
+      "f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · 恒流负载 = 1 A",
+      "0/8 · t = 0.00 µs · S ON",
+      "S: 闭合 ON",
+      "电源 + → 闭合开关 → 电感 → 输出节点 → 负载 → 回线 → 电源 −。二极管反向截止。 电容支路：电容 + → 输出节点 → 负载 → 回线 → 电容 −，放电。",
+      "100 时间 (µs)",
+      "100 时间 (µs)"
+    ]
+  },
+  {
+    "origin": "local",
+    "lang": "中",
+    "type": "boost",
+    "label": "start",
+    "hash": "1c16767a4afc8cd73dce67d157314060b2442cbdf01010d5021b8d8602650e39",
+    "values": [
+      "12 V",
+      "50%"
+    ],
+    "state": [
+      "模型：理想元件、连续导通（电感电流始终 > 0）、周期稳态；输出电压按小纹波近似视为常量。初始电流是稳态谷值，不是上电启动。",
+      "D = 导通时间 / 周期；f 是频率，T 是周期；L 是电感量，C 是电容量。iL 是从左到右的电感电流，vL 是电感左端减右端的电压；iC 流入电容正端，Iout 是负载电流。",
+      "f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · 恒流负载 = 1 A",
+      "0/8 · t = 0.00 µs · S ON",
+      "S: 闭合 ON",
+      "储能回路：电源 + → 电感 → 开关 → 回线 → 电源 −。独立供电回路：电容 + → 负载 → 电容 −。二极管隔开输出。 电容支路：电容 + → 输出节点 → 负载 → 回线 → 电容 −，放电。",
+      "100 时间 (µs)",
+      "100 时间 (µs)"
+    ]
+  },
+  {
+    "origin": "local",
+    "lang": "中",
+    "type": "boost",
+    "label": "idle600ms",
+    "hash": "1c16767a4afc8cd73dce67d157314060b2442cbdf01010d5021b8d8602650e39",
+    "values": [
+      "12 V",
+      "50%"
+    ],
+    "state": [
+      "模型：理想元件、连续导通（电感电流始终 > 0）、周期稳态；输出电压按小纹波近似视为常量。初始电流是稳态谷值，不是上电启动。",
+      "D = 导通时间 / 周期；f 是频率，T 是周期；L 是电感量，C 是电容量。iL 是从左到右的电感电流，vL 是电感左端减右端的电压；iC 流入电容正端，Iout 是负载电流。",
+      "f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · 恒流负载 = 1 A",
+      "0/8 · t = 0.00 µs · S ON",
+      "S: 闭合 ON",
+      "储能回路：电源 + → 电感 → 开关 → 回线 → 电源 −。独立供电回路：电容 + → 负载 → 电容 −。二极管隔开输出。 电容支路：电容 + → 输出节点 → 负载 → 回线 → 电容 −，放电。",
+      "100 时间 (µs)",
+      "100 时间 (µs)"
+    ]
+  },
+  {
+    "origin": "local",
+    "lang": "中",
+    "type": "boost",
+    "label": "duty20",
+    "hash": "1c16767a4afc8cd73dce67d157314060b2442cbdf01010d5021b8d8602650e39",
+    "values": [
+      "12 V",
+      "20%"
+    ],
+    "state": [
+      "模型：理想元件、连续导通（电感电流始终 > 0）、周期稳态；输出电压按小纹波近似视为常量。初始电流是稳态谷值，不是上电启动。",
+      "D = 导通时间 / 周期；f 是频率，T 是周期；L 是电感量，C 是电容量。iL 是从左到右的电感电流，vL 是电感左端减右端的电压；iC 流入电容正端，Iout 是负载电流。",
+      "f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · 恒流负载 = 1 A",
+      "参数已改变：新稳态案例，历史已重置。 0/8 · t = 0.00 µs · S ON",
+      "S: 闭合 ON",
+      "储能回路：电源 + → 电感 → 开关 → 回线 → 电源 −。独立供电回路：电容 + → 负载 → 电容 −。二极管隔开输出。 电容支路：电容 + → 输出节点 → 负载 → 回线 → 电容 −，放电。",
+      "100 时间 (µs)",
+      "100 时间 (µs)"
+    ]
+  },
+  {
+    "origin": "local",
+    "lang": "中",
+    "type": "boost",
+    "label": "duty75",
+    "hash": "1c16767a4afc8cd73dce67d157314060b2442cbdf01010d5021b8d8602650e39",
+    "values": [
+      "12 V",
+      "75%"
+    ],
+    "state": [
+      "模型：理想元件、连续导通（电感电流始终 > 0）、周期稳态；输出电压按小纹波近似视为常量。初始电流是稳态谷值，不是上电启动。",
+      "D = 导通时间 / 周期；f 是频率，T 是周期；L 是电感量，C 是电容量。iL 是从左到右的电感电流，vL 是电感左端减右端的电压；iC 流入电容正端，Iout 是负载电流。",
+      "f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · 恒流负载 = 1 A",
+      "参数已改变：新稳态案例，历史已重置。 0/8 · t = 0.00 µs · S ON",
+      "S: 闭合 ON",
+      "储能回路：电源 + → 电感 → 开关 → 回线 → 电源 −。独立供电回路：电容 + → 负载 → 电容 −。二极管隔开输出。 电容支路：电容 + → 输出节点 → 负载 → 回线 → 电容 −，放电。",
+      "100 时间 (µs)",
+      "100 时间 (µs)"
+    ]
+  },
+  {
+    "origin": "local",
+    "lang": "中",
+    "type": "boost",
+    "label": "duty20-again",
+    "hash": "1c16767a4afc8cd73dce67d157314060b2442cbdf01010d5021b8d8602650e39",
+    "values": [
+      "12 V",
+      "20%"
+    ],
+    "state": [
+      "模型：理想元件、连续导通（电感电流始终 > 0）、周期稳态；输出电压按小纹波近似视为常量。初始电流是稳态谷值，不是上电启动。",
+      "D = 导通时间 / 周期；f 是频率，T 是周期；L 是电感量，C 是电容量。iL 是从左到右的电感电流，vL 是电感左端减右端的电压；iC 流入电容正端，Iout 是负载电流。",
+      "f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · 恒流负载 = 1 A",
+      "参数已改变：新稳态案例，历史已重置。 0/8 · t = 0.00 µs · S ON",
+      "S: 闭合 ON",
+      "储能回路：电源 + → 电感 → 开关 → 回线 → 电源 −。独立供电回路：电容 + → 负载 → 电容 −。二极管隔开输出。 电容支路：电容 + → 输出节点 → 负载 → 回线 → 电容 −，放电。",
+      "100 时间 (µs)",
+      "100 时间 (µs)"
+    ]
+  },
+  {
+    "origin": "local",
+    "lang": "中",
+    "type": "boost",
+    "label": "phase1",
+    "hash": "1c16767a4afc8cd73dce67d157314060b2442cbdf01010d5021b8d8602650e39",
+    "values": [
+      "12 V",
+      "20%"
+    ],
+    "state": [
+      "模型：理想元件、连续导通（电感电流始终 > 0）、周期稳态；输出电压按小纹波近似视为常量。初始电流是稳态谷值，不是上电启动。",
+      "D = 导通时间 / 周期；f 是频率，T 是周期；L 是电感量，C 是电容量。iL 是从左到右的电感电流，vL 是电感左端减右端的电压；iC 流入电容正端，Iout 是负载电流。",
+      "f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · 恒流负载 = 1 A",
+      "1/8 · t = 5.00 µs · S ON",
+      "S: 闭合 ON",
+      "储能回路：电源 + → 电感 → 开关 → 回线 → 电源 −。独立供电回路：电容 + → 负载 → 电容 −。二极管隔开输出。 电容支路：电容 + → 输出节点 → 负载 → 回线 → 电容 −，放电。",
+      "100 时间 (µs)",
+      "100 时间 (µs)"
+    ]
+  },
+  {
+    "origin": "local",
+    "lang": "中",
+    "type": "boost",
+    "label": "phase2",
+    "hash": "f16e707eaf28018f945e51c21169dda78ddec8869a785717d6fe7b179b52ec40",
+    "values": [
+      "12 V",
+      "20%"
+    ],
+    "state": [
+      "模型：理想元件、连续导通（电感电流始终 > 0）、周期稳态；输出电压按小纹波近似视为常量。初始电流是稳态谷值，不是上电启动。",
+      "D = 导通时间 / 周期；f 是频率，T 是周期；L 是电感量，C 是电容量。iL 是从左到右的电感电流，vL 是电感左端减右端的电压；iC 流入电容正端，Iout 是负载电流。",
+      "f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · 恒流负载 = 1 A",
+      "2/8 · t = 10.00 µs · S OFF",
+      "S: 断开 OFF",
+      "导通",
+      "电源 + → 电感 → 二极管 A→K → 输出节点 → 负载 / 电容 → 回线 → 电源 −。电感放能，电源也继续供能。 电容支路：输出节点 → 电容 + → 电容 − → 回线，充电。",
+      "100 时间 (µs)",
+      "100 时间 (µs)"
+    ]
+  },
+  {
+    "origin": "local",
+    "lang": "中",
+    "type": "boost",
+    "label": "phase3",
+    "hash": "f16e707eaf28018f945e51c21169dda78ddec8869a785717d6fe7b179b52ec40",
+    "values": [
+      "12 V",
+      "20%"
+    ],
+    "state": [
+      "模型：理想元件、连续导通（电感电流始终 > 0）、周期稳态；输出电压按小纹波近似视为常量。初始电流是稳态谷值，不是上电启动。",
+      "D = 导通时间 / 周期；f 是频率，T 是周期；L 是电感量，C 是电容量。iL 是从左到右的电感电流，vL 是电感左端减右端的电压；iC 流入电容正端，Iout 是负载电流。",
+      "f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · 恒流负载 = 1 A",
+      "3/8 · t = 30.00 µs · S OFF",
+      "S: 断开 OFF",
+      "导通",
+      "电源 + → 电感 → 二极管 A→K → 输出节点 → 负载 / 电容 → 回线 → 电源 −。电感放能，电源也继续供能。 电容支路：输出节点 → 电容 + → 电容 − → 回线，充电。",
+      "100 时间 (µs)",
+      "100 时间 (µs)"
+    ]
+  },
+  {
+    "origin": "local",
+    "lang": "中",
+    "type": "boost",
+    "label": "phase4",
+    "hash": "1c16767a4afc8cd73dce67d157314060b2442cbdf01010d5021b8d8602650e39",
+    "values": [
+      "12 V",
+      "20%"
+    ],
+    "state": [
+      "模型：理想元件、连续导通（电感电流始终 > 0）、周期稳态；输出电压按小纹波近似视为常量。初始电流是稳态谷值，不是上电启动。",
+      "D = 导通时间 / 周期；f 是频率，T 是周期；L 是电感量，C 是电容量。iL 是从左到右的电感电流，vL 是电感左端减右端的电压；iC 流入电容正端，Iout 是负载电流。",
+      "f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · 恒流负载 = 1 A",
+      "4/8 · t = 50.00 µs · S ON",
+      "S: 闭合 ON",
+      "储能回路：电源 + → 电感 → 开关 → 回线 → 电源 −。独立供电回路：电容 + → 负载 → 电容 −。二极管隔开输出。 电容支路：电容 + → 输出节点 → 负载 → 回线 → 电容 −，放电。",
+      "100 时间 (µs)",
+      "100 时间 (µs)"
+    ]
+  },
+  {
+    "origin": "local",
+    "lang": "中",
+    "type": "boost",
+    "label": "reset",
+    "hash": "1c16767a4afc8cd73dce67d157314060b2442cbdf01010d5021b8d8602650e39",
+    "values": [
+      "12 V",
+      "20%"
+    ],
+    "state": [
+      "模型：理想元件、连续导通（电感电流始终 > 0）、周期稳态；输出电压按小纹波近似视为常量。初始电流是稳态谷值，不是上电启动。",
+      "D = 导通时间 / 周期；f 是频率，T 是周期；L 是电感量，C 是电容量。iL 是从左到右的电感电流，vL 是电感左端减右端的电压；iC 流入电容正端，Iout 是负载电流。",
+      "f = 20 kHz · T = 50 µs · L = 1 mH · C = 470 µF · 恒流负载 = 1 A",
+      "0/8 · t = 0.00 µs · S ON",
+      "S: 闭合 ON",
+      "储能回路：电源 + → 电感 → 开关 → 回线 → 电源 −。独立供电回路：电容 + → 负载 → 电容 −。二极管隔开输出。 电容支路：电容 + → 输出节点 → 负载 → 回线 → 电容 −，放电。",
+      "100 时间 (µs)",
+      "100 时间 (µs)"
+    ]
+  },
+  {
+    "origin": "local",
+    "width": 390,
+    "lang": "EN",
+    "type": "buck",
+    "horizontalOverflow": false,
+    "svgRendered": {
+      "x": 17,
+      "y": 536.46875,
+      "width": 720,
+      "height": 307.890625
+    },
+    "phase": "S: open OFFL (+ vL −)KAfreewheel+−Vin+−C1 A current loadVout +Vout −Return / 0 V reference"
+  },
+  {
+    "origin": "local",
+    "width": 390,
+    "lang": "EN",
+    "type": "boost",
+    "horizontalOverflow": false,
+    "svgRendered": {
+      "x": 17,
+      "y": 267.6875,
+      "width": 720,
+      "height": 307.890625
+    },
+    "phase": "L (+ vL −)AKS: open OFFconducting+−Vin+−C1 A current loadVout +Vout −Return / 0 V reference"
+  },
+  {
+    "origin": "local",
+    "width": 390,
+    "lang": "中",
+    "type": "buck",
+    "horizontalOverflow": false,
+    "svgRendered": {
+      "x": 17,
+      "y": 526.5625,
+      "width": 720,
+      "height": 307.890625
+    },
+    "phase": "S: 断开 OFFL (+ vL −)KA续流+−Vin+−C恒流负载 1 AVout +Vout −回线 / 0 V 参考"
+  },
+  {
+    "origin": "local",
+    "width": 390,
+    "lang": "中",
+    "type": "boost",
+    "horizontalOverflow": false,
+    "svgRendered": {
+      "x": 17,
+      "y": 267.859375,
+      "width": 720,
+      "height": 307.890625
+    },
+    "phase": "L (+ vL −)AKS: 断开 OFF导通+−Vin+−C恒流负载 1 AVout +Vout −回线 / 0 V 参考"
+  },
+  {
+    "origin": "local",
+    "width": 320,
+    "lang": "EN",
+    "type": "buck",
+    "horizontalOverflow": false,
+    "svgRendered": {
+      "x": 17,
+      "y": 535.828125,
+      "width": 720,
+      "height": 307.890625
+    },
+    "phase": "S: open OFFL (+ vL −)KAfreewheel+−Vin+−C1 A current loadVout +Vout −Return / 0 V reference"
+  },
+  {
+    "origin": "local",
+    "width": 320,
+    "lang": "EN",
+    "type": "boost",
+    "horizontalOverflow": false,
+    "svgRendered": {
+      "x": 17,
+      "y": 268.15625,
+      "width": 720,
+      "height": 307.890625
+    },
+    "phase": "L (+ vL −)AKS: open OFFconducting+−Vin+−C1 A current loadVout +Vout −Return / 0 V reference"
+  },
+  {
+    "origin": "local",
+    "width": 320,
+    "lang": "中",
+    "type": "buck",
+    "horizontalOverflow": false,
+    "svgRendered": {
+      "x": 17,
+      "y": 536.53125,
+      "width": 720,
+      "height": 307.890625
+    },
+    "phase": "S: 断开 OFFL (+ vL −)KA续流+−Vin+−C恒流负载 1 AVout +Vout −回线 / 0 V 参考"
+  },
+  {
+    "origin": "local",
+    "width": 320,
+    "lang": "中",
+    "type": "boost",
+    "horizontalOverflow": false,
+    "svgRendered": {
+      "x": 17,
+      "y": 267.984375,
+      "width": 720,
+      "height": 307.890625
+    },
+    "phase": "L (+ vL −)AKS: 断开 OFF导通+−Vin+−C恒流负载 1 AVout +Vout −回线 / 0 V 参考"
+  }
+]

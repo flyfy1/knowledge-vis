@@ -1,0 +1,21 @@
+{
+  "checks": {
+    "actual_review_gate": true,
+    "candidate_registered_tree_equal": true,
+    "four_protected_files_equal_original": true,
+    "five_evidence_receipts_hash_bound": true,
+    "report_hash_bound": true
+  },
+  "files": {
+    "854-review-2-771efac1.md": "0b9c8d5da3b6c79130beaaaf5671761b3efc78a68a72eac3d0e0560bfea8215e",
+    "bridge-browser.json.gz": "54401d0a12bbde97bebda0b4c66f92768901208559aefae9479b7c644c16a13b",
+    "browser-results.json.gz": "7b45fcec47b55e32f798e98ffb249ff6e40c4c35e703878f6cac445ea52e2dfe",
+    "capture.json": "16af3cfc22f3ecc3ba769f07809af73285a324f45364d5b52c9c2e2c2d5eee02",
+    "capture.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "core-results.json.gz": "90c9a7cf7c65af5e9b17229a4968953a89c57500e2f2b93dd5a22f7250848b2f",
+    "independent-checks.json.gz": "1c2900b8f64e00f795fb25c919d52b9e4e2cb78f23dc50f560991931e7385bcd",
+    "solution-results.json.gz": "db4a9ad0e7c348aad4f431f3c5c3af50b285a66a2bf3d73d1a028ec2fed3f6d5",
+    "solution.py": "7a53ef8ea9d60d8282785d804b24c53bd0005f9b8881779ad7fa63606c514068"
+  },
+  "report_sha256": "6b6a08797bb4337809e165b3e0a070ecfbcc5bbf4e89c1b4e388733a47c96f74"
+}

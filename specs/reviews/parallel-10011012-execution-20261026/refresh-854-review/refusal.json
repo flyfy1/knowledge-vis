@@ -1,0 +1,23 @@
+{
+  "status": "refused-before-transfer",
+  "observed_at": "2026-10-26T00:17:13.038180+00:00",
+  "authorization_commit": "6ebbb75607883f5afc8fcbc5a3b2ee868d35bf3c",
+  "launcher_sha256": "d727a95043beb254ce4559ea5ec7de0795c22a515a2e3998a932414ee55ba96b",
+  "preflight_sha256": "63295fc43653f73801b9ef39fb4b96fe107ba1ab1c9bcae399081fd370ce2d97",
+  "reason": "Frozen 854 review advanced naturally to 882 review; head, run, session and native PID mismatch.",
+  "actual_head": "faff333c35e1e553e787762361d5febd048a19c1",
+  "actual_current": {
+    "problem_id": "882",
+    "stage": "review",
+    "started_at": "2026-10-26T00:16:50.900585+00:00",
+    "run_id": "882-review-c3e4588f50e6"
+  },
+  "actual_session": "01a17591-2f93-7da0-818f-04685e755d7c",
+  "actual_native_pid": 1992290,
+  "transfer_performed": false,
+  "launcher_executed": false,
+  "reservations_created": false,
+  "stop_written": false,
+  "spawned_workers": 0,
+  "retry_performed": false
+}

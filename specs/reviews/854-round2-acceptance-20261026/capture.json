@@ -1,0 +1,1634 @@
+{
+  "observed_at": "2026-10-26T00:19:44.911609+00:00",
+  "head": "faff333c35e1e553e787762361d5febd048a19c1",
+  "expected_head": "faff333c35e1e553e787762361d5febd048a19c1",
+  "current": {
+    "problem_id": "882",
+    "stage": "review",
+    "started_at": "2026-10-26T00:16:50.900585+00:00",
+    "run_id": "882-review-c3e4588f50e6"
+  },
+  "entry": {
+    "status": "accepted_local",
+    "rounds": 2,
+    "new": true,
+    "phase": "done",
+    "reviews": [
+      {
+        "outcome": "accepted",
+        "scores": [
+          4,
+          3,
+          4,
+          4,
+          4,
+          3
+        ],
+        "required_open": [],
+        "report_path": "specs/reviews/854-review-1-9601268b.md",
+        "evidence": [
+          "Cold browser walkthrough saved before source audit.",
+          "Canonical Python verified against independent examples and 4,653 oracle comparisons.",
+          "Bilingual interactions, layouts, keyboard, contrast and exact source transfer passed.",
+          "Non-mutating metadata preflight passed."
+        ],
+        "detail": "92.5/100. No required fixes. Limitations and optional teaching advisory recorded; publication and LeetCode submission not claimed.",
+        "run_id": "854-review-0add7000fba0",
+        "candidate": "1be3c657ef0c1ef3152f8abced78df2e278f09da",
+        "candidate_sha256": "71998716fbdb4babb1e84235c7555fdd31b611f0c2c10878976176e4fce79a14",
+        "weighted_score": 92.5,
+        "round": 1,
+        "commit": "440d49b6e7e0ff916278062e20f63860e65a170c"
+      },
+      {
+        "outcome": "accepted",
+        "scores": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          3
+        ],
+        "required_open": [],
+        "report_path": "specs/reviews/854-review-2-771efac1.md",
+        "evidence": [
+          "Cold browser walkthrough saved before source inspection.",
+          "Canonical Python matched an independent oracle on 4,653 cases; fresh predictions and boundaries passed.",
+          "Bilingual interactions, source parity, native clipboard fallback, keyboard, narrow layouts and 200% CSS zoom checked.",
+          "Metadata validate-only preflight exited 0.",
+          "Advisory 854-A01 closed against this candidate."
+        ],
+        "detail": "97.5/100. No required open findings. Acceptance covers this candidate\u2019s lesson review, separately from publication.",
+        "run_id": "854-review-dcc68f3629c0",
+        "candidate": "b3336f7dc7243e7d15f336ab490eb6c3a0824304",
+        "candidate_sha256": "84860426c2248fe08d93734a638dc41cba385c1152469fd56f493bb949a617c5",
+        "weighted_score": 97.5,
+        "round": 2,
+        "commit": "faff333c35e1e553e787762361d5febd048a19c1"
+      }
+    ],
+    "author_runs": [
+      "854-author-679ce856a357",
+      "854-fix-4964d1606702"
+    ],
+    "prior_report": "specs/reviews/854-review-2-771efac1.md",
+    "candidate": "b3336f7dc7243e7d15f336ab490eb6c3a0824304",
+    "registration_commit": "faff333c35e1e553e787762361d5febd048a19c1",
+    "accepted_at": "2026-10-26T00:16:35.502897+00:00"
+  },
+  "runs": [
+    {
+      "id": "854-author-679ce856a357",
+      "problem_id": "854",
+      "role": "author",
+      "started_at": "2026-10-25T21:51:41.189020+00:00",
+      "status": "completed",
+      "candidate": "7fd4aa457c318f053d7dc722fd63b3012bccb838",
+      "directory": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/runs/854-author-679ce856a357",
+      "session_ids": [
+        "01a1750c-4a1a-7c02-a106-9269fa0e867f"
+      ],
+      "finished_at": "2026-10-25T22:01:30.520195+00:00",
+      "result": {
+        "outcome": "ready",
+        "detail": "Implemented the complete bilingual #854 lesson in leetcode/854/. Official Python interface verified; oracle, invariant, browser, source-parity, accessibility and metadata preflight checks passed. Candidate and evidence frozen. Independent review remains pending."
+      }
+    },
+    {
+      "id": "854-review-0add7000fba0",
+      "problem_id": "854",
+      "role": "review",
+      "started_at": "2026-10-25T22:05:14.589592+00:00",
+      "status": "completed",
+      "candidate": "1be3c657ef0c1ef3152f8abced78df2e278f09da",
+      "directory": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/runs/854-review-0add7000fba0",
+      "session_ids": [
+        "01a17518-b387-7960-b6d6-60e162d298e1"
+      ],
+      "finished_at": "2026-10-25T22:09:10.591973+00:00",
+      "result": {
+        "outcome": "accepted",
+        "scores": [
+          4,
+          3,
+          4,
+          4,
+          4,
+          3
+        ],
+        "required_open": [],
+        "report_path": "specs/reviews/854-review-1-9601268b.md",
+        "evidence": [
+          "Cold browser walkthrough saved before source audit.",
+          "Canonical Python verified against independent examples and 4,653 oracle comparisons.",
+          "Bilingual interactions, layouts, keyboard, contrast and exact source transfer passed.",
+          "Non-mutating metadata preflight passed."
+        ],
+        "detail": "92.5/100. No required fixes. Limitations and optional teaching advisory recorded; publication and LeetCode submission not claimed."
+      }
+    },
+    {
+      "id": "854-fix-4964d1606702",
+      "problem_id": "854",
+      "role": "fix",
+      "started_at": "2026-10-26T00:07:50.180789+00:00",
+      "status": "completed",
+      "candidate": "048d217b1313ec068fbf41fe3703f5f3e83dcc90",
+      "directory": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/runs/854-fix-4964d1606702",
+      "session_ids": [
+        "01a17588-eeec-7b71-91f6-8bdbffe0305e"
+      ],
+      "finished_at": "2026-10-26T00:11:32.128726+00:00",
+      "result": {
+        "outcome": "ready",
+        "detail": "Frozen candidate 854-bridge-r2-20261026 is ready for separate re-review. Verified the existing proof bridge, strengthened bilingual label checks, and appended evidence mapped to 854-A01/854-BRIDGE-R1. Browser regressions, eight executed Python/oracle cases, exact source parity, candidate hashes, and metadata preflight passed. Independent acceptance remains pending."
+      }
+    },
+    {
+      "id": "854-review-dcc68f3629c0",
+      "problem_id": "854",
+      "role": "review",
+      "started_at": "2026-10-26T00:11:43.941515+00:00",
+      "status": "completed",
+      "candidate": "b3336f7dc7243e7d15f336ab490eb6c3a0824304",
+      "directory": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/runs/854-review-dcc68f3629c0",
+      "session_ids": [
+        "01a1758c-7fc0-7b21-9f8d-9c75db7c79b1"
+      ],
+      "finished_at": "2026-10-26T00:16:23.538702+00:00",
+      "result": {
+        "outcome": "accepted",
+        "scores": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          3
+        ],
+        "required_open": [],
+        "report_path": "specs/reviews/854-review-2-771efac1.md",
+        "evidence": [
+          "Cold browser walkthrough saved before source inspection.",
+          "Canonical Python matched an independent oracle on 4,653 cases; fresh predictions and boundaries passed.",
+          "Bilingual interactions, source parity, native clipboard fallback, keyboard, narrow layouts and 200% CSS zoom checked.",
+          "Metadata validate-only preflight exited 0.",
+          "Advisory 854-A01 closed against this candidate."
+        ],
+        "detail": "97.5/100. No required open findings. Acceptance covers this candidate\u2019s lesson review, separately from publication."
+      }
+    }
+  ],
+  "maintenance": [
+    {
+      "at": "2026-10-18T09:48:32.270748+00:00",
+      "old_head": "6a9b67b33dbc4fd8d2953b476b4740ab84e9b142",
+      "new_head": "72af42e03e5333e06309d8e04d68adc82f6756b4",
+      "policy_commit": "afdcfc90b07972c393ce42590f9fa3849a85a5cb",
+      "reason": "Owner explicitly authorized original JavaScript plus Python conceptual comparison for six JavaScript Hard problems; independent policy review accepted. Includes reviewed collection title normalization.",
+      "report": "specs/reviews/leetcode-javascript-policy-review.md",
+      "backup": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/progress-before-js-policy-6a9b67b33dbc.json",
+      "changed_paths": [
+        "leetcode/index.html",
+        "leetcode/problems.config.js",
+        "scripts/campaign-prompts/author.md",
+        "scripts/campaign-prompts/fix.md",
+        "scripts/campaign-prompts/review.md",
+        "scripts/leetcode_campaign.py",
+        "scripts/register_leetcode_lesson.py",
+        "scripts/test_leetcode_campaign.py",
+        "scripts/test_leetcode_registry.py",
+        "specs/leetcode-all-hard-campaign.md",
+        "specs/leetcode-explainers.md",
+        "specs/leetcode-review-gates.md",
+        "specs/reviews/leetcode-all-hard-design-review.md",
+        "specs/reviews/leetcode-javascript-policy-review.md"
+      ]
+    },
+    {
+      "at": "2026-10-18T10:20:17.294759+00:00",
+      "old_head": "c7980bffc65b7b869a809d937e652e4c2548e86d",
+      "new_head": "00982ff44c2c923722a3a2ea813bb32135158e34",
+      "policy_commit": "002c383b5501c722ad2c8abe36d72a44bcfd5e08",
+      "reason": "Owner active goal: detailed progressive explanations for all Hard, Python/TypeScript/native preference, independently reviewed publication every100 additional completions with no old-content backups.",
+      "report": "specs/reviews/leetcode-goal-policy-review.md",
+      "backup": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/progress-before-goal-policy-c7980bffc65b.json",
+      "changed_paths": [
+        "leetcode/COLLECTION-BRIEF.md",
+        "leetcode/collection.css",
+        "leetcode/collection.js",
+        "leetcode/index.html",
+        "scripts/campaign-prompts/author.md",
+        "scripts/campaign-prompts/fix.md",
+        "scripts/campaign-prompts/review.md",
+        "scripts/leetcode_campaign.py",
+        "scripts/leetcode_publish.py",
+        "scripts/register_leetcode_lesson.py",
+        "scripts/test_campaign_publication.py",
+        "scripts/test_leetcode_campaign.py",
+        "scripts/test_leetcode_collection.cjs",
+        "scripts/test_leetcode_publish.py",
+        "scripts/test_leetcode_registry.py",
+        "specs/leetcode-all-hard-campaign.md",
+        "specs/leetcode-explainers.md",
+        "specs/leetcode-review-gates.md",
+        "specs/releases/2026-10-18-leetcode-51-52-hashes.json",
+        "specs/releases/2026-10-18-leetcode-51-52.md",
+        "specs/reviews/leetcode-all-hard-design-review.md",
+        "specs/reviews/leetcode-collection-search-design.md",
+        "specs/reviews/leetcode-goal-policy-review.md"
+      ],
+      "launch_flags": [
+        "--publish-root",
+        "/home/songyy/projects/visual-site",
+        "--public-base",
+        "https://visual.integ.life",
+        "--publish-every",
+        "100"
+      ]
+    },
+    {
+      "at": "20261018T105527Z",
+      "old_head": "27b4a3dd1318c76b36993165068230adde512888",
+      "new_head": "821f94c87aa4a448e6fc6d3e25f5e003a558537c",
+      "policy_commit": "c75fea7b84746a09626961f9d224e7bf4adb68a4",
+      "reason": "Import 68/76 before applying explicit original JavaScript exception and reviewed campaign tooling; preserve newer 84/85 lane policy compatibility.",
+      "backup": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/maintenance-before-20261018T105527Z.json",
+      "verification": "30 registry/campaign tests passed; lesson bytes and acceptance/release state preserved",
+      "external_importer_sha256": "8642a573383d052ce6e227bd8c2374f9c50f2fc1e8e9b312a6186607015344e0",
+      "external_importer_fix_commit": "b74ada7",
+      "deferred_main_update": "Apply b74ada7 only after importing c75-based lanes 84 and 85; preserve shared-policy equality.",
+      "publication_probe": {
+        "status": "waiting",
+        "accepted_unreleased": 3,
+        "batch_size": 100
+      }
+    },
+    {
+      "at": "20261018T111126Z",
+      "old_head": "08758d5ab6722ee6d683d36521293de75a59cade",
+      "new_head": "cdd83c0a108decef2d1b15130acf157c468a4897",
+      "policy_commit": "d3402e35d84ce6a1aafe169200683a74af5d4b7b",
+      "reason": "Import 84/85 before applying reviewed provenance filtering and permission-aware lane importer; preserve 87/115 shared-policy compatibility.",
+      "backup": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/maintenance-before-20261018T111126Z.json",
+      "verification": "50 registry/campaign/publisher tests passed; lesson bytes and acceptance/release state preserved",
+      "external_importer_sha256": "8642a573383d052ce6e227bd8c2374f9c50f2fc1e8e9b312a6186607015344e0",
+      "external_importer_fix_commit": "b74ada7",
+      "active_lane_policy": "87/115 use d3402e35d84ce6a1aafe169200683a74af5d4b7b; defer further shared-policy changes until their import.",
+      "publication_probe": {
+        "status": "waiting",
+        "accepted_unreleased": 6,
+        "batch_size": 100
+      }
+    },
+    {
+      "at": "2026-10-18T11:33:22.868649+00:00",
+      "head": "f2c9dc2b8ff88fd392a5a7632ca19d31e83ff75e",
+      "reason": "Resume full queue after immutable candidate import for 87; lane 115 separately resumes a metadata fix and fresh independent review. Shared policy and reviewed lesson bytes remain unchanged.",
+      "verification": "Per-lane importer acceptance gates passed; current accepted candidates passed publisher verification; release ledger unchanged.",
+      "publication_probe": {
+        "status": "waiting",
+        "accepted_unreleased": 8,
+        "batch_size": 100
+      }
+    },
+    {
+      "at": "20261018T114355Z",
+      "reason": "Lane 123 started from reviewed local merge a2d20f2 not yet in central ancestry; adopt that known base without changing policy or lesson bytes before strict history import.",
+      "old_head": "192969bede866fdd1921d1cf9664f274c47568cb",
+      "new_head": "fffa720e90cbb448998475ce3c93b51dcc40f065",
+      "adopted_base": "a2d20f24132b766bba2e975b53118c5f5e29dacb",
+      "changed_paths": [
+        "specs/reviews/85-evidence/dispatcher-normal-clicks/README.md",
+        "specs/reviews/85-evidence/dispatcher-normal-clicks/dispatcher-result.json",
+        "specs/reviews/85-evidence/dispatcher-normal-clicks/results.json"
+      ]
+    },
+    {
+      "at": "2026-10-18T11:44:10.046152+00:00",
+      "head": "06d9ef79a1617ff7f185f124dc01754c6c82f372",
+      "reason": "Resume full queue after immutable candidate imports for 115 and 123; fresh 23 review follows its pointer and native-zoom fixes. Shared policy and reviewed lesson bytes remain unchanged.",
+      "verification": "Per-lane importer acceptance gates passed; current accepted candidates passed publisher verification; release ledger unchanged.",
+      "publication_probe": {
+        "status": "waiting",
+        "accepted_unreleased": 10,
+        "batch_size": 100
+      }
+    },
+    {
+      "at": "2026-10-18T12:09:17.035664+00:00",
+      "old_head": "af768b5ae54eae4cc47e8bc664346c037383ee6c",
+      "new_head": "c7ed6c7b6fac0370a11be31fd8bbf142ed85b5dd",
+      "policy_commit": "64f7ff784df91b6ced445ef29af1f572288773e2",
+      "reason": "Import 124/126 under their original policy, then apply independently reviewed non-mutating metadata preflight before new reviewer dispatch.",
+      "backup": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/metadata-before-20261018T120818Z.json",
+      "verification": "40 metadata/registry/campaign tests passed; all reviewed tooling files match exact candidate; lesson trees and acceptance/run/release history preserved.",
+      "maintenance_recovery": "Original maintenance completed merge and 40 tests, then stopped on dispatcher string-ID caller mismatch; resumed exact clean merged HEAD with integer IDs after confirming original state byte equality.",
+      "changed_paths": [
+        "scripts/campaign-prompts/author.md",
+        "scripts/campaign-prompts/fix.md",
+        "scripts/campaign-prompts/review.md",
+        "scripts/leetcode_campaign.py",
+        "scripts/register_leetcode_lesson.py",
+        "scripts/test_leetcode_campaign.py",
+        "scripts/test_leetcode_metadata.py",
+        "scripts/test_leetcode_registry.py",
+        "specs/leetcode-all-hard-campaign.md",
+        "specs/leetcode-explainers.md",
+        "specs/leetcode-review-gates.md",
+        "specs/reviews/leetcode-metadata-preflight-implementation.md",
+        "specs/reviews/leetcode-metadata-preflight-r1-fix.md",
+        "specs/reviews/leetcode-metadata-preflight-r1-rereview.md",
+        "specs/reviews/leetcode-metadata-preflight-review.md"
+      ],
+      "publication_probe": {
+        "status": "waiting",
+        "accepted_unreleased": 13,
+        "batch_size": 100
+      }
+    },
+    {
+      "at": "2026-10-18T12:27:42.264037+00:00",
+      "head": "3abfe54f4a0c9512270b8e8b01cb5568f011c49b",
+      "reason": "Resume full queue after immutable candidate imports for 127 and 132; register independently re-reviewed 30 and continue the full catalog. Shared policy and reviewed lesson bytes remain unchanged.",
+      "verification": "Per-lane importer acceptance gates passed; current accepted candidates passed publisher verification; release ledger unchanged.",
+      "publication_probe": {
+        "status": "waiting",
+        "accepted_unreleased": 16,
+        "batch_size": 100
+      }
+    },
+    {
+      "at": "2026-10-18T12:40:38.490967+00:00",
+      "head": "4dfe45de27fe47f57e1b9174724a1a719bcc5402",
+      "reason": "Resume full queue after immutable candidate import for 135; fresh 32 review follows its metadata and hand-calculation fixes. Shared policy and reviewed lesson bytes remain unchanged.",
+      "verification": "Per-lane importer acceptance gates passed; current accepted candidates passed publisher verification; release ledger unchanged.",
+      "publication_probe": {
+        "status": "waiting",
+        "accepted_unreleased": 18,
+        "batch_size": 100
+      }
+    },
+    {
+      "at": "2026-10-18T12:46:06.204169+00:00",
+      "head": "3013b9201dde137f7d19de3e1202d0f58197beff",
+      "reason": "Resume full queue after immutable candidate import for 140; register independently re-reviewed 32 and continue the full catalog. Shared policy and reviewed lesson bytes remain unchanged.",
+      "verification": "Per-lane importer acceptance gates passed; current accepted candidates passed publisher verification; release ledger unchanged.",
+      "publication_probe": {
+        "status": "waiting",
+        "accepted_unreleased": 19,
+        "batch_size": 100
+      }
+    },
+    {
+      "at": "2026-10-18T13:07:02.640070+00:00",
+      "old_head": "9c9aa7259dd603aab7a44c4bcbe1cf1bae2e8b6f",
+      "new_head": "ed8139da6c3f1dc9293ab6bd3065a730045f481f",
+      "policy_commit": "96b84452375e351bc2ff3ce831225a9753cb69b3",
+      "reason": "Import 149/154 under original policy, then adopt independently reviewed populated state readability clarification and resume full catalog.",
+      "backup": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/readability-before-20261018T130658Z.json",
+      "verification": "Four documentation blobs exactly match reviewed candidate; lesson, runtime, registry, acceptance, run and release history preserved. Documentation whitespace check and accepted-candidate publication gates passed.",
+      "changed_paths": [
+        "specs/leetcode-explainers.md",
+        "specs/leetcode-review-gates.md",
+        "specs/reviews/leetcode-state-readability-spec-implementation.md",
+        "specs/reviews/leetcode-state-readability-spec-review.md"
+      ],
+      "publication_probe": {
+        "status": "waiting",
+        "accepted_unreleased": 22,
+        "batch_size": 100
+      }
+    },
+    {
+      "at": "2026-10-18T13:26:35.350038+00:00",
+      "head": "baef57b837bfeca9455577a9697c1b38d61e2264",
+      "reason": "Resume full queue after immutable candidate import for 174; continue 41 according to its completed independent review and retain all remaining catalog entries. Shared policy and reviewed lesson bytes remain unchanged.",
+      "verification": "Per-lane importer acceptance gates passed; current accepted candidates passed publisher verification; release ledger unchanged.",
+      "publication_probe": {
+        "status": "waiting",
+        "accepted_unreleased": 24,
+        "batch_size": 100
+      }
+    },
+    {
+      "at": "2026-10-18T13:44:42.948958+00:00",
+      "head": "1d0e76d6b6918f0e7ee3046a8ff67359d824e97c",
+      "reason": "Resume full queue after immutable candidate imports for 185 and 188; register independently re-reviewed42 and continue the complete catalog. Deferred158 remains explicitly blocked outside acceptance counts. Shared policy and reviewed lesson bytes remain unchanged.",
+      "verification": "Per-lane importer acceptance gates passed; current accepted candidates passed publisher verification; release ledger unchanged.",
+      "publication_probe": {
+        "status": "waiting",
+        "accepted_unreleased": 27,
+        "batch_size": 100
+      }
+    },
+    {
+      "at": "2026-10-18T13:52:37.282877+00:00",
+      "head": "f31b415b4c79f7d5fb86fc50b3f9cbe4abb66416",
+      "reason": "Resume44 repairs and fresh review using existing one-problem mode; retain full984queue and active212/214 work without duplicate dispatch. Shared policy and reviewed lesson bytes remain unchanged.",
+      "verification": "Per-lane importer acceptance gates passed; current accepted candidates passed publisher verification; release ledger unchanged.",
+      "publication_probe": {
+        "status": "waiting",
+        "accepted_unreleased": 28,
+        "batch_size": 100
+      }
+    },
+    {
+      "at": "2026-10-18T14:06:40.536798+00:00",
+      "head": "aff43cec79e99d4537327b7bf88f7838903947b9",
+      "reason": "Resume full queue after immutable candidate imports for 212 and 214; register independently re-reviewed44, record source availability for158, and continue with218. User has no Premium access and asked to continue accessible problems. Parallel220/224 remain separately owned; stop at218 review boundary before reaching them. Shared policy and reviewed lesson bytes remain unchanged.",
+      "verification": "Per-lane importer acceptance gates passed; current accepted candidates passed publisher verification; release ledger unchanged.",
+      "publication_probe": {
+        "status": "waiting",
+        "accepted_unreleased": 30,
+        "batch_size": 100
+      }
+    },
+    {
+      "at": "2026-10-24T01:55:13.117804+00:00",
+      "head": "9f06e440a699b63c471820bf774254370e92e57c",
+      "reason": "Resume218 fresh independent review using existing one-problem mode; retain full984 queue and imported220/224 provenance without duplicate dispatch. Deferred158 remains explicitly blocked by missing Premium statement access. Shared policy and reviewed lesson bytes remain unchanged.",
+      "verification": "Per-lane importer acceptance gates passed; current accepted candidates passed publisher verification; release ledger unchanged.",
+      "publication_probe": {
+        "status": "waiting",
+        "accepted_unreleased": 33,
+        "batch_size": 100
+      }
+    },
+    {
+      "at": "2026-10-24T02:02:38.894190+00:00",
+      "head": "daea093bb190be7fedabb0577fafa10bee11d10a",
+      "reason": "Normalize terminal run_limit_reached to explicit stopped boundary before importer and reviewed policy maintenance. No active runner or current problem.",
+      "verification": "Runner PID absent, current null, clean HEAD matched expected_head, no running state entries."
+    },
+    {
+      "at": "2026-10-24T02:03:16.333741+00:00",
+      "before": "daea093bb190be7fedabb0577fafa10bee11d10a",
+      "head": "f6dd1a49ce31b97d1600c086bb7f81b834e4443a",
+      "reason": "Apply independently accepted localization-binding specification after 218/220/224 lane work reached terminal boundaries. Namespace-local key uniqueness and representative bilingual semantic-binding checks now govern subsequent lessons; no runtime lesson bytes changed.",
+      "verification": "Candidate 2b82e9b and independent review 6b84022 exact commits; central clean checkout; active runner absent; prior accepted lesson tree content preserved."
+    },
+    {
+      "at": "2026-10-24T05:02:45.139323+00:00",
+      "reason": "Recovered completed 282 fix after runner rejected an out-of-scope tests/282-mobile.png artifact; artifact removed, allowed lesson evidence retained, fix commit recorded, and fresh independent review resumed.",
+      "run_id": "282-fix-0f8902326c75",
+      "candidate": "6e7cea0dc1fd414ea0f449f969355dd9c4999e79"
+    },
+    {
+      "at": "2026-10-24T05:15:00.784402+00:00",
+      "reason": "Recovered 282 review after malformed JSONL caused by binary screenshot output; raw events preserved, parseable events normalized, independent result retained, and review evidence will be committed before resuming fix loop.",
+      "run_id": "282-review-1b393e755cf2"
+    },
+    {
+      "at": "2026-10-24T06:21:02.557899+00:00",
+      "reason": "Recovered 297 review after malformed JSONL caused by binary screenshot output; raw event stream preserved and review evidence retained.",
+      "run_id": "297-review-b1b674ab41d5"
+    },
+    {
+      "at": "2026-10-25T00:09:09.937406+00:00",
+      "reason": "Adopt independently reviewed rendered-state specification and prospective prompt wiring",
+      "from_head": "93985b600596dcbe0566e13b70bb765f7791b61a",
+      "to_head": "463bb166caa1c2ab9ba13c898ab9e70bb200c3e7",
+      "source_commit": "21394470af2c85fbe2d11410aac8dfa06dc019cb",
+      "review": "specs/reviews/leetcode-rendered-state-contract-review-20261025.md"
+    },
+    {
+      "at": "2026-10-25T00:13:35.038631+00:00",
+      "reason": "Reopen 282 official-access evidence finding with direct logged-out browser capture; historical reviews preserved",
+      "from_head": "a5506532f6bcd33c9049def59d6f84ebb26f7049",
+      "to_head": "547ad67b2e33ef5a50b4f0969af14f7f0acafba0",
+      "source_commits": [
+        "c533b8a2257675b3927d545a0761a7c1d6dadb73",
+        "df54cf8ec543a2986d33ff3ed55b6d3380a72eaa"
+      ]
+    },
+    {
+      "at": "2026-10-25T00:25:02.648789+00:00",
+      "reason": "Continue independently identified required fixes; no acceptance or review evidence changed",
+      "authorization": "Owner requested continued all-Hard iteration with separate review agents",
+      "from_head": "f4ebe24d46837496b208b56197828b5eeaaf130e",
+      "to_head": "f4ebe24d46837496b208b56197828b5eeaaf130e",
+      "reopened": [
+        {
+          "id": "282",
+          "rounds_preserved": 4,
+          "required_open": [
+            "L282-FORMULA-001",
+            "L282-STATE-001",
+            "L282-COPY-FALLBACK-001"
+          ],
+          "prior_report": "specs/reviews/282-review-4-e7ac0d6f.md"
+        },
+        {
+          "id": "312",
+          "rounds_preserved": 3,
+          "required_open": [
+            "R312-PRESET-001",
+            "R312-PROOF-001"
+          ],
+          "prior_report": "specs/reviews/312-review-3-d7af6df0.md"
+        }
+      ],
+      "next_launch_max_rounds": 6,
+      "backup": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/maintenance-before-required-fixes-2026-10-25T002502.646115_0000.json",
+      "launcher_change": "Optional explicit --max-rounds forwarding; default remains 3"
+    },
+    {
+      "at": "2026-10-25T01:07:19.432242+00:00",
+      "reason": "Adopt independently reviewed worked-example clarification after lane 493 import",
+      "authorization": "Owner requested iterative lesson review and specification improvements",
+      "from_head": "eae6557c29a01f468f3f0bb88ac4aaeefd693840",
+      "to_head": "c818a1745145b871d5f0e780685643ab66b4814f",
+      "source_commit": "f240cd0737e7f11c879d8991778bcb934289e99d",
+      "policy_commit": "b01380c8ce703b9c5c62819769c0d5958715d2e6",
+      "spec_sha256": "030ace4d159421e87948af998f42db698d9823dbc4a12aa0c6747e41143a2f31",
+      "backup": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/maintenance-before-worked-example-policy-2026-10-25T010719.432242_0000.json",
+      "receipt": "specs/reviews/leetcode-worked-example-contract-operational-adoption-20261025.md"
+    },
+    {
+      "at": "2026-10-25T02:13:34.012155+00:00",
+      "action": "reopen_587_mac_width_budget",
+      "before_head": "477d1d896d37605ca6d0bfbf60a14b118a3777ba",
+      "after_head": "700e5ce080b324a3816547c608c5f3c67fed689a",
+      "backup": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/587-mac-reopen-before-20261025.json",
+      "report": "specs/reviews/587-review-dispatcher-mac-20261025.md",
+      "finding": "587-MAC-001"
+    },
+    {
+      "at": "2026-10-25T02:27:46.086364+00:00",
+      "kind": "native-platform-evidence-handoff",
+      "problem_id": "587",
+      "before": "d4ec9168eb7c809de8c08e11795ae9397b89918c",
+      "after": "529656f62ec73087854062e17b402053ae62c6d0",
+      "backup": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/587-before-mac-proof-handoff-20261025.json"
+    },
+    {
+      "at": "2026-10-25T02:34:16.729255+00:00",
+      "kind": "reviewed-font-policy-and-630-reopen",
+      "before": "a5cbb8972e591e87f1bcffe60f34edad564140cd",
+      "after": "1ba814f774cfe4a6b2abbec82f91ec03d9ae14ce",
+      "backup": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/before-font-policy-reopen630-20261025.json",
+      "review": "specs/reviews/font-metrics-proposal-review-20261025.md"
+    },
+    {
+      "at": "2026-10-25T03:01:12.819864+00:00",
+      "kind": "platform-and-source-evidence-handoff",
+      "problem_id": "601",
+      "before": "5e4afb88889491abd3697a0f72f79c6cabda0e47",
+      "after": "8562f213fedd278f4901c54d4d36ac1b6c7439b6",
+      "backup": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/before-601632639-evidence-handoff-20261025.json"
+    },
+    {
+      "at": "2026-10-25T03:17:52.737868+00:00",
+      "kind": "native-platform-followup-findings",
+      "problem_id": "630",
+      "before": "e63637783c92d6368918b15ecd9edd2b054e7770",
+      "after": "974d680d24080b3595f2480eef03edd1056be45a",
+      "backup": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/before-630-native-followup-20261025.json"
+    },
+    {
+      "at": "2026-10-25T03:25:50.094201+00:00",
+      "kind": "reviewed-clipboard-policy-and-native-evidence",
+      "problem_id": "630",
+      "before": "832fdc60fe62a07352fad272bcaaf4a4d2cd9bc4",
+      "after": "478b2bb7723c79dd759db8fb62c2d348bad98ef0",
+      "policy_sha256": "af8a648a567fa9379fc320023dfdbb03176845e8b1912527b2ffde4ce4a06391",
+      "backup": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/before-clipboard-policy-and-630-proof-20261025.json"
+    },
+    {
+      "at": "2026-10-25T04:00:03.649098+00:00",
+      "kind": "normalize-never-started-import-placeholder",
+      "problem_id": "675",
+      "removed_placeholder": {
+        "status": "pending",
+        "rounds": 0,
+        "new": true,
+        "phase": "author",
+        "reviews": [],
+        "author_runs": [],
+        "prior_report": ""
+      },
+      "reason": "STOP created the default pending entry before running an author; zero author/review runs and no local lesson files. Restore the unstarted representation required by the unchanged import guard.",
+      "backup": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/before-empty-675-placeholder-normalization-20261025.json",
+      "head": "1db52b83f9facad46dc12b6de515e2729066f20d"
+    },
+    {
+      "at": "2026-10-25T04:33:25.956685+00:00",
+      "kind": "remove-unstarted-placeholder",
+      "problem_id": "685",
+      "removed": {
+        "status": "pending",
+        "rounds": 0,
+        "new": true,
+        "phase": "author",
+        "reviews": [],
+        "author_runs": [],
+        "prior_report": ""
+      },
+      "backup": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/before-empty-685-placeholder-normalization-20261025.json",
+      "head": "4a33907df00e46e8ecb1caa36f57386ca17aa78e",
+      "reason": "Default pending placeholder from a natural STOP, zero author/review runs and no lesson files. Remove only to let the unchanged accepted-lane importer validate actual independent acceptance."
+    },
+    {
+      "at": "2026-10-25T05:45:04.471531+00:00",
+      "kind": "remove-untouched-stop-placeholder",
+      "problem_id": "726",
+      "removed": {
+        "status": "pending",
+        "rounds": 0,
+        "new": true,
+        "phase": "author",
+        "reviews": [],
+        "author_runs": [],
+        "prior_report": ""
+      },
+      "backup": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/before-726-placeholder-normalization-20261025.json",
+      "reason": "Import independently reviewed reserved lane after original runner observed STOP before author dispatch."
+    },
+    {
+      "at": "2026-10-25T05:56:42.106235+00:00",
+      "kind": "prospective-spec-adoption",
+      "before": "31915b78d37062e9edb7fac861d4df1337fa603b",
+      "after": "7e35e4d6040aa295d1de0269996d8b91ba5d20a3",
+      "source": "d9193f65dba9bf7eb96d0618c50c1f7d29dbcbdd",
+      "paths": [
+        "specs/leetcode-rendered-state-contract.md",
+        "specs/reviews/cost-contrast-spec-review-20261025.md"
+      ],
+      "spec_before_sha256": "af8a648a567fa9379fc320023dfdbb03176845e8b1912527b2ffde4ce4a06391",
+      "spec_after_sha256": "778d83c31d92213bf4338a1a11f654985ce7fd71ba0a364c0297a16720c79cf7",
+      "review": "specs/reviews/cost-contrast-spec-review-20261025.md",
+      "backup": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/before-cost-contrast-policy-adoption-20261025.json",
+      "scope": "Future candidates only; all frozen lanes imported before policy change."
+    },
+    {
+      "at": "2026-10-25T05:56:52.410538+00:00",
+      "kind": "resume-full-campaign-after-lane-import",
+      "head": "7e35e4d6040aa295d1de0269996d8b91ba5d20a3",
+      "cleared_stop": {
+        "owner": "root-import726730732-20261025",
+        "reason": "Natural stop before reserved isolated lessons; preserve full queue and import only independently accepted lanes.",
+        "created_at": "2026-10-25T05:29:08.604052+00:00"
+      },
+      "scope": "Original 984-ID queue; existing launcher publishes each 100 independently accepted unreleased lessons; inaccessible official problems remain in scope."
+    },
+    {
+      "at": "2026-10-25T06:15:46.808796+00:00",
+      "kind": "reopen-public-title-repairs",
+      "source": "bfb42c9dabd46e26c02e744063fa4e99e6391a52",
+      "before": "7e35e4d6040aa295d1de0269996d8b91ba5d20a3",
+      "after": "42fca38c634073bac09311fe9c403260dca8073c",
+      "backup": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/before-public-title-repairs-20261025.json",
+      "reopened": [
+        {
+          "problem_id": "239",
+          "finding": "239-PUB-R1",
+          "report": "specs/reviews/239-review-public-title-20261025.md",
+          "prior_acceptance": {
+            "accepted_at": "2026-10-24T02:16:46.152781+00:00",
+            "registration_commit": "479ca0537d1fc660ce57cf5961d15d1eec54aadf"
+          }
+        },
+        {
+          "problem_id": "262",
+          "finding": "262-PUB-R1",
+          "report": "specs/reviews/262-review-public-title-20261025.md",
+          "prior_acceptance": {
+            "accepted_at": "2026-10-24T03:49:52.757404+00:00",
+            "registration_commit": "8ed0f81124456d0b51db6a1e36c7b1feed61f1ae"
+          }
+        }
+      ],
+      "scope": "Original full queue and run/review history retained. Repair-only run omits publication; failed pending release and successful counters remain unchanged."
+    },
+    {
+      "at": "2026-10-25T06:53:45.036986+00:00",
+      "kind": "prospective-spec-adoption",
+      "before": "b569822176e619d052251dc0b3cb75324d8848b4",
+      "after": "674107302fc9a1a3d7cab177150b5a6909259bd5",
+      "source": "1237eabb7dde989ef955bb92f1e18e8612201970",
+      "paths": [
+        "specs/leetcode-rendered-state-contract.md",
+        "specs/reviews/bilingual-heading-spec-review-20261025.md"
+      ],
+      "spec_before_sha256": "778d83c31d92213bf4338a1a11f654985ce7fd71ba0a364c0297a16720c79cf7",
+      "spec_after_sha256": "f1bbcaafcedf8d448e2ac00cb4a23f1cad137cb55160489e99b8f942139c20e4",
+      "review": "specs/reviews/bilingual-heading-spec-review-20261025.md",
+      "backup": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/before-bilingual-heading-policy-adoption-20261025.json",
+      "scope": "Future candidates only; both frozen title repairs accepted before guidance adoption."
+    },
+    {
+      "kind": "supersede-failed-pending-release",
+      "at": "2026-10-25T06:54:59.445771+00:00",
+      "failed_release_id": "b1aeec15655d493c88b66eced787cb9f",
+      "source_revision": "7e35e4d6040aa295d1de0269996d8b91ba5d20a3",
+      "repaired_revision": "674107302fc9a1a3d7cab177150b5a6909259bd5",
+      "repair_ids": [
+        "239",
+        "262"
+      ],
+      "successful_releases_unchanged": 1,
+      "released_unchanged": 3,
+      "registry_sha_before": "bb7bed421706ec3cf34f321ee9fbc2c3e027a1c3efd439e4a69a522f6133cdb8",
+      "observed_materialized_registry_sha": "b6053ffefb6704b9aefdf234b127be4b9287dc92afcf834931619b9633244311",
+      "production_files_verified": 712,
+      "reason": "node failed: Error: Missing lesson ID 239\n    at [eval]:41:50\n",
+      "scope": "No successful release recorded; only physical registry ownership baseline acknowledges the already materialized failed batch. Original publisher must independently stage and verify all 100 again.",
+      "receipt": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/supersede-failed-release-receipt-20261025.json"
+    },
+    {
+      "at": "2026-10-25T07:14:10.415131+00:00",
+      "kind": "reopen-navigation-advisory",
+      "before": "e0c84ff15965900aa1edbbe319355fd127bc10d5",
+      "source": "d0c90f43f4f4c6202fe72fd3693c98d5edfe9561",
+      "problem_id": "239",
+      "finding": "239-NAV-R1",
+      "paths": [
+        "specs/reviews/239-review-related-links-20261025.md",
+        "specs/reviews/239-review-navigation-repair-request-20261025.md"
+      ],
+      "backup": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/before-239-navigation-reopen-20261025.json",
+      "previous_current": {
+        "problem_id": "736",
+        "stage": "author",
+        "started_at": "2026-10-25T07:00:02.705658+00:00",
+        "run_id": "736-author-97bb5b462351"
+      },
+      "scope": "Reopen selected navigation advisory for a real fix and fresh independent review. Preserve all old runs, reviews, released receipts and full queue. Resume 736 at its saved review phase after the earlier 239 repair.",
+      "prior_acceptance": {
+        "accepted_at": "2026-10-25T06:32:55.272607+00:00",
+        "registration_commit": "8e2d9fffcf6dd48385c6dd7d4907806a5efe012b"
+      },
+      "after": "539c2429437ec4f0330be19d30e9289f42f3671c"
+    },
+    {
+      "at": "2026-10-25T07:30:47.739670+00:00",
+      "kind": "prospective-spec-adoption",
+      "before": "78ba6f113e8c744b93e7abc24af7eeefe5d601f5",
+      "source": "e40e6260e7ecfd6693f70442a306acf5416cf9b4",
+      "paths": [
+        "specs/leetcode-rendered-state-contract.md",
+        "specs/proposals/leetcode-related-concept-links-20261025.md",
+        "specs/reviews/related-concept-links-spec-review-20261025.md",
+        "specs/reviews/related-concept-links-adoption-request-20261025.md"
+      ],
+      "backup": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/before-related-links-policy-adoption-20261025.json",
+      "previous_current": {
+        "problem_id": "736",
+        "stage": "review",
+        "started_at": "2026-10-25T07:23:43.844977+00:00",
+        "run_id": "736-review-8dd8e06cbcd5"
+      },
+      "spec_before_sha256": "f1bbcaafcedf8d448e2ac00cb4a23f1cad137cb55160489e99b8f942139c20e4",
+      "736_review": {
+        "outcome": "accepted",
+        "scores": [
+          4,
+          4,
+          4,
+          4,
+          3,
+          4
+        ],
+        "required_open": [],
+        "report_path": "specs/reviews/736-review-1-7f33b1b5.md",
+        "evidence": [
+          "Source-blind cold walkthrough saved before source audit.",
+          "Canonical Python fresh case returned -5; traced scope restoration matched the browser.",
+          "2037 numerical cases and bilingual browser checks passed.",
+          "Exact source display, clipboard fallback and download parity passed.",
+          "Inspected 320/390/desktop and 200% CSS-zoom screenshots.",
+          "Non-mutating metadata preflight exited 0."
+        ],
+        "detail": "96.25/100; no required findings. Evidence is limited to headless Linux Chromium and CSS zoom. Acceptance is separate from publication.",
+        "run_id": "736-review-8dd8e06cbcd5",
+        "candidate": "fd5760e3a18bdc79f365db1aa62bea9e38b2671f",
+        "candidate_sha256": "951345fd8fece7e4eb1dc2ba82990c2289cf5f5db16e9148d1f979c7e5c79ea1",
+        "weighted_score": 96.25,
+        "round": 1,
+        "commit": "78ba6f113e8c744b93e7abc24af7eeefe5d601f5"
+      },
+      "scope": "Section12 for subsequent candidates, after frozen239 and736 reviews. Preserve all problem entries, runs, queue and release bytes.",
+      "after": "008d48d81165f5db9a2708ca1ff889ede614d1b6",
+      "spec_after_sha256": "226a94fb0cd222398b710718253d7ed46cd77f986ed61eef7e25c14213845dcc",
+      "section_sha256": "27c57059efa5186e8e9f48be316f9adb63c95fe18c377e82de4c1359f814fa2f"
+    },
+    {
+      "at": "2026-10-25T11:33:38.297511+00:00",
+      "kind": "reopen-mac-text-margin",
+      "before": "38db1038f63c3334adb3c36ae671569694228114",
+      "source": "add5045aec55cc12f5d1fcb72a5793faa61c7cc0",
+      "problem_id": "765",
+      "finding": "765-MAC-MARGIN-01",
+      "paths": [
+        "specs/reviews/765-mac-fit-diagnosis-20261025.md",
+        "specs/reviews/765-review-mac-margin-repair-request-20261025.md",
+        "specs/reviews/765-mac-fit-diagnosis-20261025/baseline-dom.png",
+        "specs/reviews/765-mac-fit-diagnosis-20261025/baseline-probe.cjs",
+        "specs/reviews/765-mac-fit-diagnosis-20261025/baseline.json",
+        "specs/reviews/765-mac-fit-diagnosis-20261025/candidate-receipt.json",
+        "specs/reviews/765-mac-fit-diagnosis-20261025/concise-label-only.png",
+        "specs/reviews/765-mac-fit-diagnosis-20261025/differential-probe.cjs",
+        "specs/reviews/765-mac-fit-diagnosis-20261025/en-0-baseline.png",
+        "specs/reviews/765-mac-fit-diagnosis-20261025/en-1-baseline.png",
+        "specs/reviews/765-mac-fit-diagnosis-20261025/en-2-baseline.png",
+        "specs/reviews/765-mac-fit-diagnosis-20261025/en-3-baseline.png",
+        "specs/reviews/765-mac-fit-diagnosis-20261025/en-4-baseline.png",
+        "specs/reviews/765-mac-fit-diagnosis-20261025/hypotheses.md",
+        "specs/reviews/765-mac-fit-diagnosis-20261025/locale-roundtrip.png",
+        "specs/reviews/765-mac-fit-diagnosis-20261025/long-label-positive-control.png",
+        "specs/reviews/765-mac-fit-diagnosis-20261025/original-browser-failure.log",
+        "specs/reviews/765-mac-fit-diagnosis-20261025/padding12-only.png",
+        "specs/reviews/765-mac-fit-diagnosis-20261025/probes.json",
+        "specs/reviews/765-mac-fit-diagnosis-20261025/short-label-only.png",
+        "specs/reviews/765-mac-fit-diagnosis-20261025/width390-only.png",
+        "specs/reviews/765-mac-fit-diagnosis-20261025/zh-0-baseline.png",
+        "specs/reviews/765-mac-fit-diagnosis-20261025/zh-1-baseline.png",
+        "specs/reviews/765-mac-fit-diagnosis-20261025/zh-2-baseline.png",
+        "specs/reviews/765-mac-fit-diagnosis-20261025/zh-3-baseline.png",
+        "specs/reviews/765-mac-fit-diagnosis-20261025/zh-4-baseline.png"
+      ],
+      "backup": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/before-765-margin-reopen-20261025.json",
+      "previous_current": {
+        "problem_id": "780",
+        "stage": "author",
+        "started_at": "2026-10-25T11:14:45.112800+00:00",
+        "run_id": "780-author-c004498974c8"
+      },
+      "scope": "Reopen conservative native-select margin failure for label-only repair and fresh independent review. Preserve old runs, reviews, released receipts and full queue. Resume 780 at its saved review phase after the earlier 765 repair.",
+      "prior_acceptance": {
+        "accepted_at": "2026-10-25T09:57:27.168282+00:00",
+        "registration_commit": "e315aa34a6a10e2fdd00ba400fe76849ca496d23"
+      },
+      "after": "5c9382133b5023c51de46b457a2e5f8f8f3dfda9"
+    },
+    {
+      "at": "2026-10-25T11:50:00.732992+00:00",
+      "kind": "native-mac-evidence-handoff",
+      "before": "3193aec4bdbbb13e094664e0de79cac6039f538a",
+      "source": "9c5ad2c3a87c913ee806900381e64776d443f635",
+      "problem_id": "765",
+      "finding": "765-MAC-MARGIN-01",
+      "paths": [
+        "specs/reviews/765-review-mac-repaired-candidate-20261025.md",
+        "specs/reviews/765-review-related-ready-diagnosis-20261025.md",
+        "specs/reviews/765-evidence/mac-related-ready-20261025/baseline.cjs",
+        "specs/reviews/765-evidence/mac-related-ready-20261025/differential.cjs",
+        "specs/reviews/765-evidence/mac-related-ready-20261025/differential.json",
+        "specs/reviews/765-evidence/mac-related-ready-20261025/exact-dependency-overlay.png",
+        "specs/reviews/765-evidence/mac-related-ready-20261025/fixture-receipt.json",
+        "specs/reviews/765-evidence/mac-related-ready-20261025/hypotheses.md",
+        "specs/reviews/765-evidence/mac-related-ready-20261025/original-repeat.png",
+        "specs/reviews/765-evidence/mac-related-ready-20261025/original-suite-failure.log",
+        "specs/reviews/765-evidence/mac-related-ready-20261025/original.png",
+        "specs/reviews/765-evidence/mac-repaired-candidate-20261025/765/browser-results.json",
+        "specs/reviews/765-evidence/mac-repaired-candidate-20261025/765/core-results.json",
+        "specs/reviews/765-evidence/mac-repaired-candidate-20261025/765/forced-colors.png",
+        "specs/reviews/765-evidence/mac-repaired-candidate-20261025/765/header-1440-en.png",
+        "specs/reviews/765-evidence/mac-repaired-candidate-20261025/765/header-1440-zh.png",
+        "specs/reviews/765-evidence/mac-repaired-candidate-20261025/765/header-320-en.png",
+        "specs/reviews/765-evidence/mac-repaired-candidate-20261025/765/header-320-zh.png",
+        "specs/reviews/765-evidence/mac-repaired-candidate-20261025/765/margin-results.json",
+        "specs/reviews/765-evidence/mac-repaired-candidate-20261025/765/oracle-fixtures.json",
+        "specs/reviews/765-evidence/mac-repaired-candidate-20261025/765/preflight.log",
+        "specs/reviews/765-evidence/mac-repaired-candidate-20261025/765/python-results.json",
+        "specs/reviews/765-evidence/mac-repaired-candidate-20261025/765/quiz-1440-en.png",
+        "specs/reviews/765-evidence/mac-repaired-candidate-20261025/765/quiz-1440-zh.png",
+        "specs/reviews/765-evidence/mac-repaired-candidate-20261025/765/quiz-320-en.png",
+        "specs/reviews/765-evidence/mac-repaired-candidate-20261025/765/quiz-320-zh.png",
+        "specs/reviews/765-evidence/mac-repaired-candidate-20261025/765/quiz-390-en.png",
+        "specs/reviews/765-evidence/mac-repaired-candidate-20261025/765/quiz-390-zh.png",
+        "specs/reviews/765-evidence/mac-repaired-candidate-20261025/765/quiz-736-en.png",
+        "specs/reviews/765-evidence/mac-repaired-candidate-20261025/765/quiz-736-zh.png",
+        "specs/reviews/765-evidence/mac-repaired-candidate-20261025/765/rendered-contract.json",
+        "specs/reviews/765-evidence/mac-repaired-candidate-20261025/765/select-1440-en-0.png",
+        "specs/reviews/765-evidence/mac-repaired-candidate-20261025/765/select-1440-en-1.png",
+        "specs/reviews/765-evidence/mac-repaired-candidate-20261025/765/select-1440-en-2.png",
+        "specs/reviews/765-evidence/mac-repaired-candidate-20261025/765/select-1440-en-3.png",
+        "specs/reviews/765-evidence/mac-repaired-candidate-20261025/765/select-1440-en-4.png",
+        "specs/reviews/765-evidence/mac-repaired-candidate-20261025/765/select-1440-zh-0.png",
+        "specs/reviews/765-evidence/mac-repaired-candidate-20261025/765/select-1440-zh-1.png",
+        "specs/reviews/765-evidence/mac-repaired-candidate-20261025/765/select-1440-zh-2.png",
+        "specs/reviews/765-evidence/mac-repaired-candidate-20261025/765/select-1440-zh-3.png",
+        "specs/reviews/765-evidence/mac-repaired-candidate-20261025/765/select-1440-zh-4.png",
+        "specs/reviews/765-evidence/mac-repaired-candidate-20261025/765/select-320-en-0.png",
+        "specs/reviews/765-evidence/mac-repaired-candidate-20261025/765/select-320-en-1.png",
+        "specs/reviews/765-evidence/mac-repaired-candidate-20261025/765/select-320-en-2.png",
+        "specs/reviews/765-evidence/mac-repaired-candidate-20261025/765/select-320-en-3.png",
+        "specs/reviews/765-evidence/mac-repaired-candidate-20261025/765/select-320-en-4.png",
+        "specs/reviews/765-evidence/mac-repaired-candidate-20261025/765/select-320-zh-0.png",
+        "specs/reviews/765-evidence/mac-repaired-candidate-20261025/765/select-320-zh-1.png",
+        "specs/reviews/765-evidence/mac-repaired-candidate-20261025/765/select-320-zh-2.png",
+        "specs/reviews/765-evidence/mac-repaired-candidate-20261025/765/select-320-zh-3.png",
+        "specs/reviews/765-evidence/mac-repaired-candidate-20261025/765/select-320-zh-4.png",
+        "specs/reviews/765-evidence/mac-repaired-candidate-20261025/765/select-390-en-0.png",
+        "specs/reviews/765-evidence/mac-repaired-candidate-20261025/765/select-390-en-1.png",
+        "specs/reviews/765-evidence/mac-repaired-candidate-20261025/765/select-390-en-2.png",
+        "specs/reviews/765-evidence/mac-repaired-candidate-20261025/765/select-390-en-3.png",
+        "specs/reviews/765-evidence/mac-repaired-candidate-20261025/765/select-390-en-4.png",
+        "specs/reviews/765-evidence/mac-repaired-candidate-20261025/765/select-390-zh-0.png",
+        "specs/reviews/765-evidence/mac-repaired-candidate-20261025/765/select-390-zh-1.png",
+        "specs/reviews/765-evidence/mac-repaired-candidate-20261025/765/select-390-zh-2.png",
+        "specs/reviews/765-evidence/mac-repaired-candidate-20261025/765/select-390-zh-3.png",
+        "specs/reviews/765-evidence/mac-repaired-candidate-20261025/765/select-390-zh-4.png",
+        "specs/reviews/765-evidence/mac-repaired-candidate-20261025/765/test_browser.cjs.log",
+        "specs/reviews/765-evidence/mac-repaired-candidate-20261025/765/test_core.cjs.log",
+        "specs/reviews/765-evidence/mac-repaired-candidate-20261025/765/test_margin.cjs.log",
+        "specs/reviews/765-evidence/mac-repaired-candidate-20261025/765/test_rendered_contract.cjs.log",
+        "specs/reviews/765-evidence/mac-repaired-candidate-20261025/765/test_solution.py.log",
+        "specs/reviews/765-evidence/mac-repaired-candidate-20261025/765/trace-1440-en.png",
+        "specs/reviews/765-evidence/mac-repaired-candidate-20261025/765/trace-1440-zh.png",
+        "specs/reviews/765-evidence/mac-repaired-candidate-20261025/765/trace-320-en.png",
+        "specs/reviews/765-evidence/mac-repaired-candidate-20261025/765/trace-320-zh.png",
+        "specs/reviews/765-evidence/mac-repaired-candidate-20261025/765/trace-390-en.png",
+        "specs/reviews/765-evidence/mac-repaired-candidate-20261025/765/trace-390-zh.png",
+        "specs/reviews/765-evidence/mac-repaired-candidate-20261025/765/trace-736-en.png",
+        "specs/reviews/765-evidence/mac-repaired-candidate-20261025/765/trace-736-zh.png",
+        "specs/reviews/765-evidence/mac-repaired-candidate-20261025/765/zoom200-en.png",
+        "specs/reviews/765-evidence/mac-repaired-candidate-20261025/765/zoom200-zh.png",
+        "specs/reviews/765-evidence/mac-repaired-candidate-20261025/candidate-files.json",
+        "specs/reviews/765-evidence/mac-repaired-candidate-20261025/candidate-parity.json",
+        "specs/reviews/765-evidence/mac-repaired-candidate-20261025/checks.json",
+        "specs/reviews/765-evidence/mac-repaired-candidate-20261025/incomplete-preview/candidate-files.json",
+        "specs/reviews/765-evidence/mac-repaired-candidate-20261025/incomplete-preview/candidate-parity.json",
+        "specs/reviews/765-evidence/mac-repaired-candidate-20261025/incomplete-preview/checks.json",
+        "specs/reviews/765-evidence/mac-repaired-candidate-20261025/incomplete-preview/test_browser.cjs.log",
+        "specs/reviews/765-evidence/mac-repaired-candidate-20261025/original-test-identity.json",
+        "specs/reviews/765-evidence/mac-repaired-candidate-20261025/run-checks.py"
+      ],
+      "backup": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/before-765-mac-evidence-handoff-20261025.json",
+      "previous_current": {
+        "problem_id": "765",
+        "stage": "fix",
+        "started_at": "2026-10-25T11:33:41.536014+00:00",
+        "run_id": "765-fix-f62a2cf56e90"
+      },
+      "prior_detail": "Applied 765-MAC-MARGIN-01 label repair and froze candidate evidence. Python, core, unchanged full browser suite, bilingual rendered-state checks, and metadata preflight passed on Linux. Evidence: leetcode/765/tests/evidence/margin-repair-20261025/candidate.json. Required next action: run the unchanged full suite on native Mac against these candidate hashes, inspect bilingual presets, then obtain separate re-review. No Mac browser is available in this session.",
+      "scope": "Attach exact repaired-candidate Mac evidence and resume independent review. Preserve history, other entries, full queue and release bytes; no acceptance inferred.",
+      "after": "8d44249808b43d9d56ad26592d276443a9994649"
+    },
+    {
+      "at": "2026-10-25T12:04:38.990738+00:00",
+      "kind": "prospective-spec-adoption",
+      "before": "9c1df77e8fa8b9b78891eb374a2677b36538dcc2",
+      "source": "0c2cd7c6c676acb19fdb23d87f15eefc1f60089d",
+      "paths": [
+        "specs/leetcode-rendered-state-contract.md",
+        "specs/proposals/leetcode-repeat-copy-and-fit-evidence-20261025.md",
+        "specs/reviews/repeat-copy-and-fit-spec-review-20261025.md",
+        "specs/reviews/repeat-copy-and-fit-spec-adoption-20261025.md"
+      ],
+      "backup": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/before-repeat-copy-fit-policy-adoption-20261025.json",
+      "previous_current": {
+        "problem_id": "780",
+        "stage": "review",
+        "started_at": "2026-10-25T11:55:15.399331+00:00",
+        "run_id": "780-review-754e7a8c5af5"
+      },
+      "spec_before_sha256": "226a94fb0cd222398b710718253d7ed46cd77f986ed61eef7e25c14213845dcc",
+      "780_review": {
+        "outcome": "accepted",
+        "scores": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "required_open": [],
+        "report_path": "specs/reviews/780-review-1-847f9d24.md",
+        "evidence": [
+          "Cold browser walkthrough saved before source audit.",
+          "Canonical Python passed 13,225 independent forward-oracle cases and fresh boundary checks.",
+          "Both locales, rewind/reset, predictions, keyboard, narrow layouts and 200% CSS zoom verified.",
+          "Exact source, download, clipboard and native fallback parity passed.",
+          "Non-mutating metadata preflight exited 0."
+        ],
+        "detail": "100/100; no required findings. Acceptance applies to revision c214c6549b53618d96782b6f827a5018c4c7f6e4 and is separate from publication.",
+        "run_id": "780-review-754e7a8c5af5",
+        "candidate": "c214c6549b53618d96782b6f827a5018c4c7f6e4",
+        "candidate_sha256": "f82028ccf641708f89a671586dfa4d0009ee3530a7ff313820b5a690c6dfd62a",
+        "weighted_score": 100.0,
+        "round": 1,
+        "commit": "9c1df77e8fa8b9b78891eb374a2677b36538dcc2"
+      },
+      "scope": "Sections4and8 for subsequent candidates after frozen765and780 reviews. Preserve all problem entries, runs, queue and release bytes.",
+      "after": "08666055ce84308eba093ff528d5371dcafacad3",
+      "spec_after_sha256": "d861a659f42607defb40f46505b02d0283be48a533127b40efa8c6bf543c4faa"
+    },
+    {
+      "at": "2026-10-25T12:33:06.973373+00:00",
+      "kind": "reopen-mac-selected-label",
+      "before": "b517b762f7e31a0d701f3ab5879bca14229c381f",
+      "source": "8529e08052e4cc3b7cd8cfa3fc3290d3a387d89d",
+      "problem_id": "782",
+      "finding": "782-MAC-FIT-01",
+      "paths": [
+        "specs/reviews/782-review-mac-preacceptance-20261025.md",
+        "specs/reviews/782-review-mac-fit-diagnosis-20261025.md",
+        "specs/reviews/782-review-mac-margin-repair-request-20261025.md",
+        "specs/reviews/782-evidence/mac-fit-diagnosis-20261025/baseline-dom.png",
+        "specs/reviews/782-evidence/mac-fit-diagnosis-20261025/baseline-probe.cjs",
+        "specs/reviews/782-evidence/mac-fit-diagnosis-20261025/baseline.json",
+        "specs/reviews/782-evidence/mac-fit-diagnosis-20261025/candidate-receipt.json",
+        "specs/reviews/782-evidence/mac-fit-diagnosis-20261025/colon-label-only.png",
+        "specs/reviews/782-evidence/mac-fit-diagnosis-20261025/differential-probe.cjs",
+        "specs/reviews/782-evidence/mac-fit-diagnosis-20261025/en-0-baseline.png",
+        "specs/reviews/782-evidence/mac-fit-diagnosis-20261025/en-1-baseline.png",
+        "specs/reviews/782-evidence/mac-fit-diagnosis-20261025/en-2-baseline.png",
+        "specs/reviews/782-evidence/mac-fit-diagnosis-20261025/en-3-baseline.png",
+        "specs/reviews/782-evidence/mac-fit-diagnosis-20261025/en-4-baseline.png",
+        "specs/reviews/782-evidence/mac-fit-diagnosis-20261025/en-5-baseline.png",
+        "specs/reviews/782-evidence/mac-fit-diagnosis-20261025/en-6-baseline.png",
+        "specs/reviews/782-evidence/mac-fit-diagnosis-20261025/failure-label-only.png",
+        "specs/reviews/782-evidence/mac-fit-diagnosis-20261025/hypotheses.md",
+        "specs/reviews/782-evidence/mac-fit-diagnosis-20261025/locale-roundtrip.png",
+        "specs/reviews/782-evidence/mac-fit-diagnosis-20261025/original-browser-failure.log",
+        "specs/reviews/782-evidence/mac-fit-diagnosis-20261025/original-width390-only.png",
+        "specs/reviews/782-evidence/mac-fit-diagnosis-20261025/probes.json",
+        "specs/reviews/782-evidence/mac-fit-diagnosis-20261025/zh-0-baseline.png",
+        "specs/reviews/782-evidence/mac-fit-diagnosis-20261025/zh-1-baseline.png",
+        "specs/reviews/782-evidence/mac-fit-diagnosis-20261025/zh-2-baseline.png",
+        "specs/reviews/782-evidence/mac-fit-diagnosis-20261025/zh-3-baseline.png",
+        "specs/reviews/782-evidence/mac-fit-diagnosis-20261025/zh-4-baseline.png",
+        "specs/reviews/782-evidence/mac-fit-diagnosis-20261025/zh-5-baseline.png",
+        "specs/reviews/782-evidence/mac-fit-diagnosis-20261025/zh-6-baseline.png",
+        "specs/reviews/782-evidence/mac-preacceptance-20261025/782/browser.cjs.log",
+        "specs/reviews/782-evidence/mac-preacceptance-20261025/782/check.py.log",
+        "specs/reviews/782-evidence/mac-preacceptance-20261025/782/core.cjs.log",
+        "specs/reviews/782-evidence/mac-preacceptance-20261025/782/core.json",
+        "specs/reviews/782-evidence/mac-preacceptance-20261025/782/fixtures.json",
+        "specs/reviews/782-evidence/mac-preacceptance-20261025/782/focused.cjs.log",
+        "specs/reviews/782-evidence/mac-preacceptance-20261025/782/focused.json",
+        "specs/reviews/782-evidence/mac-preacceptance-20261025/782/preflight.log",
+        "specs/reviews/782-evidence/mac-preacceptance-20261025/782/python.json",
+        "specs/reviews/782-evidence/mac-preacceptance-20261025/782/selected-label-en-320.png",
+        "specs/reviews/782-evidence/mac-preacceptance-20261025/782/selected-label-zh-320.png",
+        "specs/reviews/782-evidence/mac-preacceptance-20261025/782/swap-en-320.png",
+        "specs/reviews/782-evidence/mac-preacceptance-20261025/782/swap-zh-320.png",
+        "specs/reviews/782-evidence/mac-preacceptance-20261025/782/zoom-board-en.png",
+        "specs/reviews/782-evidence/mac-preacceptance-20261025/782/zoom-board-zh.png",
+        "specs/reviews/782-evidence/mac-preacceptance-20261025/candidate-files.json",
+        "specs/reviews/782-evidence/mac-preacceptance-20261025/candidate-parity.json",
+        "specs/reviews/782-evidence/mac-preacceptance-20261025/checks.json",
+        "specs/reviews/782-evidence/mac-preacceptance-20261025/run-checks.py"
+      ],
+      "backup": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/before-782-mac-fit-reopen-20261025.json",
+      "previous_current": {
+        "problem_id": "782",
+        "stage": "review",
+        "started_at": "2026-10-25T12:23:44.890513+00:00",
+        "run_id": "782-review-85be323f7d0c"
+      },
+      "previous_entry": {
+        "status": "review_passed",
+        "rounds": 1,
+        "new": true,
+        "phase": "register",
+        "reviews": [
+          {
+            "outcome": "accepted",
+            "scores": [
+              4,
+              4,
+              4,
+              4,
+              3,
+              4
+            ],
+            "required_open": [],
+            "report_path": "specs/reviews/782-review-1-f9de8180.md",
+            "evidence": [
+              "Cold browser walkthrough saved before repository source audit.",
+              "Canonical Python matched independent BFS on all 65,536 binary 4\u00d74 boards.",
+              "Both locales passed trace rewind, prediction, keyboard, exact source parity and native clipboard fallback checks.",
+              "Inspected screenshots at 320/390/desktop widths and CSS 200% zoom.",
+              "Non-mutating metadata preflight passed; candidate files unchanged."
+            ],
+            "detail": "96.25/100. No required findings; one optional Python syntax teaching advisory. Evidence is stored in the exclusive review directory. Official browser access encountered a security challenge; the statement was available through normal web access.",
+            "run_id": "782-review-85be323f7d0c",
+            "candidate": "0e53a2131353accc11a5ef746c5eba164efb14e4",
+            "candidate_sha256": "f0558dbad76f9ddf95b7a210d21b3bc31dda36bf1b8e04102a76f95c08512b8b",
+            "weighted_score": 96.25,
+            "round": 1,
+            "commit": "b517b762f7e31a0d701f3ab5879bca14229c381f"
+          }
+        ],
+        "author_runs": [
+          "782-author-ac9f09445a31"
+        ],
+        "prior_report": "specs/reviews/782-review-1-f9de8180.md",
+        "candidate": "0e53a2131353accc11a5ef746c5eba164efb14e4"
+      },
+      "scope": "Supplement completed frozen review with visible Mac selected-label defect; preserve all runs, reviews, queue, other problems and releases. Independent803805workers remain untouched.",
+      "after": "cbd91d8e377c8d994e1f2e87044530115304d80c"
+    },
+    {
+      "kind": "reopen-workflow-copy-nine",
+      "at": "2026-10-25T17:45:04.015295+00:00",
+      "source": "28efc3067c656f4cba8f5c90477b4506aa8eb6c4",
+      "before": "1bb9edb791868ed6d3ca2d7ce3d9d0d1b6022be3",
+      "problem_ids": [
+        "780",
+        "793",
+        "798",
+        "801",
+        "815",
+        "903",
+        "920",
+        "940",
+        "956"
+      ],
+      "findings": [
+        "780-COPY-R1",
+        "793-COPY-R1",
+        "798-COPY-R1",
+        "801-COPY-R1",
+        "815-COPY-R1",
+        "903-COPY-R1",
+        "920-COPY-R1",
+        "940-COPY-R1",
+        "956-COPY-R1"
+      ],
+      "backup": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/workflow-copy-reopen-nine-20261026-6a2e0d39-before.json",
+      "previous_current": {
+        "problem_id": "827",
+        "stage": "author",
+        "started_at": "2026-10-25T17:35:25.959687+00:00",
+        "run_id": "827-author-3473529a8530"
+      },
+      "prior_acceptance": {
+        "780": {
+          "accepted_at": "2026-10-25T12:04:42.612410+00:00",
+          "registration_commit": "bf3e607fd478a5f7ffaab995642e7f6adda52c44",
+          "prior_report": "specs/reviews/780-review-1-847f9d24.md"
+        },
+        "793": {
+          "accepted_at": "2026-10-25T15:52:03.763852+00:00",
+          "registration_commit": "a3f1c03b665834dea952f4fc02aa4ecab6465251",
+          "prior_report": "specs/reviews/793-review-1-5c6a024b.md"
+        },
+        "798": {
+          "accepted_at": "2026-10-25T16:11:39.642832+00:00",
+          "registration_commit": "e102555374976fbd3464818bb533f91f1fedecbd",
+          "prior_report": "specs/reviews/798-review-1-4a15ff20.md"
+        },
+        "801": {
+          "accepted_at": "2026-10-25T16:39:50.929944+00:00",
+          "registration_commit": "ebb5a2b3ec75400e7e06f85f7e5d6169a30b9ef9",
+          "prior_report": "specs/reviews/801-review-1-3074702f.md"
+        },
+        "815": {
+          "accepted_at": "2026-10-25T17:21:43.764527+00:00",
+          "registration_commit": "c274dca824d7f3b4347ff66712d7dbfb965757ce",
+          "prior_report": "specs/reviews/815-review-1-631b8576.md"
+        },
+        "903": {
+          "accepted_at": "2026-10-25T16:09:43.188419+00:00",
+          "registration_commit": "6c9b7462f8b0d28555b63d4950484e64a7dd9e56",
+          "prior_report": "specs/reviews/903-review-1-52a18398.md"
+        },
+        "920": {
+          "accepted_at": "2026-10-25T16:09:33.655562+00:00",
+          "registration_commit": "24f6c68bbf131f074fe714f9256434e125e3fe7e",
+          "prior_report": "specs/reviews/920-review-1-62e8ca13.md"
+        },
+        "940": {
+          "accepted_at": "2026-10-25T16:52:48.393609+00:00",
+          "registration_commit": "1f4226439bfd723e37bbba2f573d961cc200bfb5",
+          "prior_report": "specs/reviews/940-review-1-e4da4b0e.md"
+        },
+        "956": {
+          "accepted_at": "2026-10-25T16:57:45.031690+00:00",
+          "registration_commit": "9e1fe1d5c3bcc7d310eb3fa13a115a18787da87e",
+          "prior_report": "specs/reviews/956-review-1-9f531ca4.md"
+        }
+      },
+      "after": "8cedba5490bb862133f157a9d6af619cee323fb9"
+    },
+    {
+      "kind": "reopen-resource-and-normalization",
+      "request_ids": [
+        "818-RESOURCE-R1",
+        "964-NORMALIZE-R1"
+      ],
+      "selected_advisory": "964-R1-A1",
+      "at": "2026-10-25T18:30:02.026046+00:00",
+      "document_sources": {
+        "specs/reviews/818-review-resource-improvement-design-20261026.md": "7236925f69c0e7183a313c02e123b5d68a8e91f6",
+        "specs/reviews/818-review-resource-improvement-request-20261026.md": "7236925f69c0e7183a313c02e123b5d68a8e91f6",
+        "specs/reviews/964-review-normalization-request-20261026.md": "ca4622c7af1d498ab4fa02dc76a40b44161d715f"
+      },
+      "before": "44ed09811b54e8c75bd9ba7798639a1e03acd994",
+      "backup": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/import960964-reopen818964-20261026-c740a1e6-before-reopen.json",
+      "previous_current": {
+        "problem_id": "815",
+        "stage": "review",
+        "started_at": "2026-10-25T18:22:51.901279+00:00",
+        "run_id": "815-review-9cea2d17f517"
+      },
+      "prior_acceptance": {
+        "818": {
+          "accepted_at": "2026-10-25T17:35:23.085139+00:00",
+          "registration_commit": "df20386a06ceb4a0c76193cead0f303840d8393e",
+          "prior_report": "specs/reviews/818-review-1-ad85dc73.md"
+        },
+        "964": {
+          "accepted_at": "2026-10-25T18:11:40.888795+00:00",
+          "registration_commit": "bb3440c2c9376ac2303d7ab7612ffbfdf3949f0c",
+          "prior_report": "specs/reviews/964-review-1-4bf26931.md"
+        }
+      },
+      "after": "58cb97e51878f40e234b3e78a8bf9adb24f30c51"
+    },
+    {
+      "kind": "reopen-blocked-818-search",
+      "request_id": "818-SEARCH-R1",
+      "supersedes_algorithm_choice": "818-RESOURCE-R1 distance-DP (proof unresolved)",
+      "at": "2026-10-25T19:33:11.799048+00:00",
+      "document_sources": {
+        "specs/reviews/818-review-search-alternative-design-20261026.md": "a1d48550f44a65bc936de1706642a1b9ad858afd",
+        "specs/reviews/818-review-search-alternative-request-20261026.md": "a1d48550f44a65bc936de1706642a1b9ad858afd"
+      },
+      "before": "48b53c8e7786af264ee196a6bcf91de2f1e706fe",
+      "backup": "/home/songyy/projects/leetcode-hard-campaign-state-20261018/import968972-search818-stage-a-20261026-4b7e902d-before-reopen.json",
+      "previous_current": {
+        "problem_id": "834",
+        "stage": "author",
+        "started_at": "2026-10-25T19:17:40.238618+00:00",
+        "run_id": "834-author-57bbfcb6e22d"
+      },
+      "prior_blocked_entry": {
+        "status": "blocked",
+        "rounds": 1,
+        "new": true,
+        "phase": "done",
+        "reviews": [
+          {
+            "outcome": "accepted",
+            "scores": [
+              4,
+              4,
+              4,
+              3,
+              4,
+              4
+            ],
+            "required_open": [],
+            "report_path": "specs/reviews/818-review-1-ad85dc73.md",
+            "evidence": [
+              "Cold browser walkthrough saved before source inspection.",
+              "Fresh targets 5, 8, 9 and 12 matched independent enumeration and canonical Python.",
+              "Bilingual interactions, narrow layouts, 200% CSS zoom and keyboard checks passed.",
+              "Exact displayed, copied, fallback-copied and downloaded source parity verified.",
+              "Metadata validate-only preflight exited 0."
+            ],
+            "detail": "95/100. No required findings; one optional interaction enhancement. Acceptance applies to the reviewed revision, separate from publication.",
+            "run_id": "818-review-23290c1abcd2",
+            "candidate": "c7a325e5a48d2da000609ea93d23f8d255d03bdd",
+            "candidate_sha256": "83a8069f961359f214501200ea00e681ba50a813eb0bb8eaa8fa2bee2b120d8c",
+            "weighted_score": 95.0,
+            "round": 1,
+            "commit": "111078a89cafcfbd7fa2835d2895d12c74c375fe"
+          }
+        ],
+        "author_runs": [
+          "818-author-a80a467fbe94",
+          "818-fix-0dbe90734960"
+        ],
+        "prior_report": "specs/reviews/818-review-resource-improvement-request-20261026.md",
+        "candidate": "33686548c3c385cdb14b5b7262e4ca58a3b8d2f4",
+        "detail": "818-RESOURCE-R1 remains open: the DP completeness proof and required Mac resource measurements are missing. Working lesson preserved; Python, core, bilingual browser checks and metadata validate-only passed. Investigation and fix-status mapping appended to leetcode/818/SELF-CHECK.md. Next: complete the proof, implement and verify the DP extension, then freeze a candidate for separate re-review."
+      },
+      "after": "f3347117f4e4370e8d83c77a1cf9e9f14ccae554"
+    },
+    {
+      "kind": "reopen-accepted-843-budget",
+      "request_id": "843-BUDGET-R1",
+      "at": "2026-10-25T21:25:32.809420+00:00",
+      "source_revision": "2bc56ba008ac7460ebecf71580d1b1c03fdfde0e",
+      "before": "cab5a3248ffa3efa3521cd2c00b171cc2fcb555f",
+      "prior_accepted_entry": {
+        "status": "accepted_local",
+        "rounds": 1,
+        "new": true,
+        "phase": "done",
+        "reviews": [
+          {
+            "outcome": "accepted",
+            "scores": [
+              4,
+              4,
+              4,
+              4,
+              4,
+              3
+            ],
+            "required_open": [],
+            "report_path": "specs/reviews/843-review-1-7f018940.md",
+            "evidence": [
+              "Cold browser walkthrough saved before source inspection.",
+              "Independent Python prediction and all 13 preset rounds verified.",
+              "Exact source, download, clipboard and native fallback parity passed.",
+              "Bilingual controls, rewind, reset, keyboard and device layouts checked; screenshots inspected.",
+              "Non-mutating metadata preflight exited 0."
+            ],
+            "detail": "97.5/100. No required findings. Extreme CSS zoom causes minor reading friction; browser-chrome zoom and physical devices remain unverified. Acceptance is separate from publication.",
+            "run_id": "843-review-3eddda02bfb3",
+            "candidate": "617cb7c7e49f533b46c66dc9a53e7c6cefd71cbf",
+            "candidate_sha256": "1d250a986544479a34a24ca1c0f7cbacd48fb80f699dd0a6d5e9822ef59b04c7",
+            "weighted_score": 97.5,
+            "round": 1,
+            "commit": "3cf37ae3fabd1e6c1cc8da54015b3569d085df75"
+          }
+        ],
+        "author_runs": [
+          "843-author-5ecd89a97e60"
+        ],
+        "prior_report": "specs/reviews/843-review-1-7f018940.md",
+        "candidate": "617cb7c7e49f533b46c66dc9a53e7c6cefd71cbf",
+        "registration_commit": "ad547b9105dd0b1164cb2774de27c65a4898e5c9",
+        "accepted_at": "2026-10-25T20:52:47.125660+00:00"
+      },
+      "previous_current": {
+        "problem_id": "850",
+        "stage": "author",
+        "started_at": "2026-10-25T21:13:32.780409+00:00",
+        "run_id": "850-author-615b6b44e95c"
+      },
+      "after": "854d1bdc83efc13ae49716190ba8db858e4dd0fc"
+    },
+    {
+      "kind": "reopen-accepted-995-copy",
+      "request_id": "995-COPY-R1",
+      "at": "2026-10-25T23:06:36.491432+00:00",
+      "source_revision": "f090946dfb330ae3eb4a423b1ad3b367b83d8890",
+      "before": "ed09b7a448393b2c7b0084f36c198354a6c0d1ea",
+      "prior_accepted_entry": {
+        "status": "accepted_local",
+        "rounds": 1,
+        "new": true,
+        "phase": "done",
+        "reviews": [
+          {
+            "outcome": "accepted",
+            "scores": [
+              4,
+              3,
+              4,
+              4,
+              4,
+              4
+            ],
+            "required_open": [],
+            "report_path": "specs/reviews/995-review-1-c18c137a.md",
+            "evidence": [
+              "Cold browser walkthrough saved before source inspection.",
+              "Canonical Python matched 3,586 independently enumerated cases, including fresh predictions.",
+              "Both locales passed interaction, keyboard, layout and exact source-transfer checks; screenshots inspected.",
+              "Non-mutating metadata preflight exited 0."
+            ],
+            "detail": "95/100. No required findings; two optional wording/navigation advisories. Review is separate from publication.",
+            "run_id": "995-review-f5d78a25ecbc",
+            "candidate": "d84cfb5265103d6d321fdc3f0d5dd4b3e17ac13c",
+            "candidate_sha256": "20e4b739f8b1a7fae70008c3172e060d0b2c28876e550fab8aaed24fcf3942c4",
+            "weighted_score": 95.0,
+            "round": 1,
+            "commit": "5a5cd3c329aec4854ea61f0ae5d15b1826f94a21"
+          }
+        ],
+        "author_runs": [
+          "995-author-ab095f2912c3"
+        ],
+        "prior_report": "specs/reviews/995-review-1-c18c137a.md",
+        "candidate": "d84cfb5265103d6d321fdc3f0d5dd4b3e17ac13c",
+        "registration_commit": "2ef5c525c750d800269cc33ed565f9a80b752a23",
+        "accepted_at": "2026-10-25T22:36:24.169208+00:00"
+      },
+      "previous_current": {
+        "problem_id": "871",
+        "stage": "author",
+        "started_at": "2026-10-25T22:55:31.562794+00:00",
+        "run_id": "871-author-3c117e1396eb"
+      },
+      "after": "6c68b23cc306067de5a912195a3c7edeebc2a0be"
+    },
+    {
+      "kind": "adopt-reviewed854-bridge-and-reopen",
+      "request_id": "854-BRIDGE-R1",
+      "at": "2026-10-26T00:07:31.017431+00:00",
+      "source_revision": "27b9930daf25f9fb1651038bff1605969cb27f01",
+      "source_review": {
+        "candidate": "27b9930daf25f9fb1651038bff1605969cb27f01",
+        "revision": "47d97f6bf07dd1f4b8c7e1ca493ca3d21b3b9c7b",
+        "report_path": "specs/reviews/854-bridge-review-20261026.md",
+        "report_sha256": "13a61dde9645bf34465152bb811f15f35dd532c01e65a692ebba8cc26040334d",
+        "outcome": "accepted",
+        "required_open": [],
+        "receipt_path": "specs/reviews/854-bridge-review-evidence-20261026/root-review-receipt.json",
+        "receipt_sha256": "911e37983fe1a2a934244f94e1fbba3d4772d99158f35a3b41278771b86a4de8"
+      },
+      "before": "1dbe9f79cc5b12f6d50107fd20686184d9b4430f",
+      "prior_accepted_entry": {
+        "status": "accepted_local",
+        "rounds": 1,
+        "new": true,
+        "phase": "done",
+        "reviews": [
+          {
+            "outcome": "accepted",
+            "scores": [
+              4,
+              3,
+              4,
+              4,
+              4,
+              3
+            ],
+            "required_open": [],
+            "report_path": "specs/reviews/854-review-1-9601268b.md",
+            "evidence": [
+              "Cold browser walkthrough saved before source audit.",
+              "Canonical Python verified against independent examples and 4,653 oracle comparisons.",
+              "Bilingual interactions, layouts, keyboard, contrast and exact source transfer passed.",
+              "Non-mutating metadata preflight passed."
+            ],
+            "detail": "92.5/100. No required fixes. Limitations and optional teaching advisory recorded; publication and LeetCode submission not claimed.",
+            "run_id": "854-review-0add7000fba0",
+            "candidate": "1be3c657ef0c1ef3152f8abced78df2e278f09da",
+            "candidate_sha256": "71998716fbdb4babb1e84235c7555fdd31b611f0c2c10878976176e4fce79a14",
+            "weighted_score": 92.5,
+            "round": 1,
+            "commit": "440d49b6e7e0ff916278062e20f63860e65a170c"
+          }
+        ],
+        "author_runs": [
+          "854-author-679ce856a357"
+        ],
+        "prior_report": "specs/reviews/854-review-1-9601268b.md",
+        "candidate": "1be3c657ef0c1ef3152f8abced78df2e278f09da",
+        "registration_commit": "5d9cf8fc351f19c9e747b8c5e424858b2cee6e3b",
+        "accepted_at": "2026-10-25T22:09:21.819991+00:00"
+      },
+      "previous_current": {
+        "problem_id": "882",
+        "stage": "author",
+        "started_at": "2026-10-25T23:56:28.012210+00:00",
+        "run_id": "882-author-ca9a8c1069d9"
+      },
+      "payload_manifest_sha256": "35cb72e2f7e5003a9c33865d57ec678a190f61392c36f2ebd95962e64e53535d",
+      "after": "048d217b1313ec068fbf41fe3703f5f3e83dcc90"
+    }
+  ],
+  "progress_sha256": "9f2a216c0fdffc1500713bfba66e2cba7786aa9c884cfc4bd9279cf2e7db2697",
+  "ledger_sha256": "163b32ba940e02a8f17c1ccaf5e9a9f6dfcd606491007d096faa9b971b45eda6",
+  "released_count": 138,
+  "pending_release": null,
+  "stop_exists": false,
+  "protected_by_anchor": {
+    "1be3c657ef0c1ef3152f8abced78df2e278f09da": {
+      "solution.py": "7a53ef8ea9d60d8282785d804b24c53bd0005f9b8881779ad7fa63606c514068",
+      "python-code.js": "36b61694050f9499e8d02a2078002bba5e295769447d44afdfcc1c48de845238",
+      "core.js": "d33efab4b0e02bc1c47d060cc27c59ba054767da502c4f2955ce9dff2ce47dc0",
+      "lesson-entry.json": "7ba6fb81eabb97640a8664d7c97e50ccfde754bfabcf1b7272813c8c968a91bc"
+    },
+    "b3336f7dc7243e7d15f336ab490eb6c3a0824304": {
+      "solution.py": "7a53ef8ea9d60d8282785d804b24c53bd0005f9b8881779ad7fa63606c514068",
+      "python-code.js": "36b61694050f9499e8d02a2078002bba5e295769447d44afdfcc1c48de845238",
+      "core.js": "d33efab4b0e02bc1c47d060cc27c59ba054767da502c4f2955ce9dff2ce47dc0",
+      "lesson-entry.json": "7ba6fb81eabb97640a8664d7c97e50ccfde754bfabcf1b7272813c8c968a91bc"
+    },
+    "faff333c35e1e553e787762361d5febd048a19c1": {
+      "solution.py": "7a53ef8ea9d60d8282785d804b24c53bd0005f9b8881779ad7fa63606c514068",
+      "python-code.js": "36b61694050f9499e8d02a2078002bba5e295769447d44afdfcc1c48de845238",
+      "core.js": "d33efab4b0e02bc1c47d060cc27c59ba054767da502c4f2955ce9dff2ce47dc0",
+      "lesson-entry.json": "7ba6fb81eabb97640a8664d7c97e50ccfde754bfabcf1b7272813c8c968a91bc"
+    }
+  },
+  "lesson_tree_by_anchor": {
+    "1be3c657ef0c1ef3152f8abced78df2e278f09da": "59af9f72e9667e3dbe157c872207cc4edef3c5ff",
+    "b3336f7dc7243e7d15f336ab490eb6c3a0824304": "1496a2fade0c69f91cc834d024b322048abb4426",
+    "faff333c35e1e553e787762361d5febd048a19c1": "1496a2fade0c69f91cc834d024b322048abb4426"
+  },
+  "report_sha256": "0b9c8d5da3b6c79130beaaaf5671761b3efc78a68a72eac3d0e0560bfea8215e",
+  "evidence_sha256": {
+    "specs/reviews/854-evidence/854-review-2-771efac1/bridge-browser.json": "63fa81a415dd08e0e54327f1d660d8fb38da5cb626f36cedb63fb9e0e7f1035a",
+    "specs/reviews/854-evidence/854-review-2-771efac1/browser-results.json": "363b1301ff1963fb83d712cd337d026a2fedf6a4ed8a839d60c0e5e3ef5ecfe4",
+    "specs/reviews/854-evidence/854-review-2-771efac1/cold-desktop.png": "bd43a287c7aa4feaeb07b28f6c84872c2e735a4c93731baf6888e8bd30cddc3b",
+    "specs/reviews/854-evidence/854-review-2-771efac1/cold-proof-2.png": "f619f6bc5fe1382a9965f57ac4a0ae0e21961f65790959ba0f8b3cacee0e965d",
+    "specs/reviews/854-evidence/854-review-2-771efac1/cold-proof-3.png": "24f18bd96779fcb5906df13da0c731407249742b9e556fde3140c1fa32357174",
+    "specs/reviews/854-evidence/854-review-2-771efac1/cold-proof-4.png": "2fcb14920f0584c063dd128f6d2de029513e175933439ab224c4e15921a0d49e",
+    "specs/reviews/854-evidence/854-review-2-771efac1/cold-reveal.png": "ff5536fe80163a6daedec681269508796020a2c7c5d06a9edec81f80227ac2d8",
+    "specs/reviews/854-evidence/854-review-2-771efac1/core-results.json": "eeeef0dd953f4e870b084e953e27c4780b1149d8d04fa5ab417ca56a857d5a4b",
+    "specs/reviews/854-evidence/854-review-2-771efac1/en-1440-zoom1-controls.png": "15bdcc7c969eb07883ba57f7b2516bf01518965ea995cf251a42e571c9a84d47",
+    "specs/reviews/854-evidence/854-review-2-771efac1/en-1440-zoom1-reassignment.png": "4a3650ce17bc66a424152982b7a30f26fc760420101a46ddf7911dd7c642f419",
+    "specs/reviews/854-evidence/854-review-2-771efac1/en-1440-zoom1-trace.png": "ebc76443674877fdf4e2c3223a7ba074ebe7922e5d43ccfc707bb2a7418baaab",
+    "specs/reviews/854-evidence/854-review-2-771efac1/en-1440-zoom2-controls.png": "3f5ab4ae0cde910f97c61a8f844e919761cdc32915c52e2d0f89e81097f3bab9",
+    "specs/reviews/854-evidence/854-review-2-771efac1/en-1440-zoom2-reassignment.png": "733ff0fa55da156204528e6c0f724eb09c9347032f367bbf6166aebba76ec3eb",
+    "specs/reviews/854-evidence/854-review-2-771efac1/en-1440-zoom2-trace.png": "74e52f48fb87a796ed36fcb2a2ba26587843973dba3819ef475bfc730ebc5c1c",
+    "specs/reviews/854-evidence/854-review-2-771efac1/en-320-zoom1-controls.png": "bcf3c37380e03d985a81e6edac76007603ff468f85e97400cc1481053943eb00",
+    "specs/reviews/854-evidence/854-review-2-771efac1/en-320-zoom1-reassignment.png": "51325c5a368809ac69d8c2a42a472ddae1d7689313a2b5b7fa74611ef004b901",
+    "specs/reviews/854-evidence/854-review-2-771efac1/en-320-zoom1-trace.png": "96e51d28665acb65c10fa64e64866afee412ef004805eec50ec3888a2e64006b",
+    "specs/reviews/854-evidence/854-review-2-771efac1/en-320-zoom2-controls.png": "e696e1da75b7639606b5bca2d7f7e665c62a1e49b4b97567b68a2195359dacad",
+    "specs/reviews/854-evidence/854-review-2-771efac1/en-320-zoom2-trace.png": "af6021f71d53d80bfc594039adf8af5ad59df323b2a74578c082747af7816655",
+    "specs/reviews/854-evidence/854-review-2-771efac1/en-390-zoom1-controls.png": "f86f23b42d768daa04783a8c9aeb6d3de4f7634775d0e7418e4d29c0989d2b95",
+    "specs/reviews/854-evidence/854-review-2-771efac1/en-390-zoom1-trace.png": "ed5a9cf5830f9e95f090d026927ae7dceecc9a97767caefbc8e98e1cc2729819",
+    "specs/reviews/854-evidence/854-review-2-771efac1/en-390-zoom2-controls.png": "0e9fa3aaf5925d5e21392cdd5287efe752dc0aabde952b82359e01c69f9daef1",
+    "specs/reviews/854-evidence/854-review-2-771efac1/en-390-zoom2-trace.png": "934a0e3d6a04eb7c9ee74af1d51c675c3238037554dae4632ccdaab8f3e20614",
+    "specs/reviews/854-evidence/854-review-2-771efac1/en-736-zoom1-controls.png": "694db766d68e959f3946518c7c0bd80a734e16eef232c2e39764f0123ff4951c",
+    "specs/reviews/854-evidence/854-review-2-771efac1/en-736-zoom1-trace.png": "c676825db408c1e09d0af78fcea49c9e54cb0a59b5718c8804407dea73a29c77",
+    "specs/reviews/854-evidence/854-review-2-771efac1/en-736-zoom2-controls.png": "44cdd761343f6fb42fea0f898b2f1ccd10876ed82d938d321dab2edeb7bd599b",
+    "specs/reviews/854-evidence/854-review-2-771efac1/en-736-zoom2-trace.png": "05210752a12a87446d9e360a38f7d1679a966629a1a6c69454e8799dff4c218b",
+    "specs/reviews/854-evidence/854-review-2-771efac1/en-desktop-top.png": "f4f993f080379159cc77b97878a324b442fc4eca76fdffb1ce76d2076ed36947",
+    "specs/reviews/854-evidence/854-review-2-771efac1/en-exercise.png": "da8b36d7fa50cfb53efb1a53c48918c86c84ad82e0df4e9e15e2bcf923b87453",
+    "specs/reviews/854-evidence/854-review-2-771efac1/forced-colors.png": "df5e630c2dd2457614a52afb3a46316a7b9d5aaf51aeeff6e5a5732765870841",
+    "specs/reviews/854-evidence/854-review-2-771efac1/independent-checks.json": "0004d0752958d71868af7d9484593912cf8ed3d634a5565314803589e73005fe",
+    "specs/reviews/854-evidence/854-review-2-771efac1/independent-en-320-middle.png": "4535de25fcd267a73461965ebc498b81877ea4436812ea93149360e5ab7251a2",
+    "specs/reviews/854-evidence/854-review-2-771efac1/independent-zh-320-middle.png": "b6a82dcf4fe1aa8997fd04d511d3af7837c6273a59eeff4f98f6fd8dbca7fd6a",
+    "specs/reviews/854-evidence/854-review-2-771efac1/keyboard-focus.png": "d127f81fd909cfd01181db21c3f555b79e3fbdc22718b2e42e56ef6ba0c6d1d8",
+    "specs/reviews/854-evidence/854-review-2-771efac1/solution-results.json": "e90a61bb38bc65d987a286f76a9d3ad2db8e7d4a89c508749c8f681039570917",
+    "specs/reviews/854-evidence/854-review-2-771efac1/zh-1440-zoom1-controls.png": "bdaf002ebe8704e1e36626c0d42572cf7a3fda83d2151905ae66a3f78d1d9404",
+    "specs/reviews/854-evidence/854-review-2-771efac1/zh-1440-zoom1-reassignment.png": "01470a03cdc6eca95c55b7e0f243a6625994a849142a60549deaafcb0bc52840",
+    "specs/reviews/854-evidence/854-review-2-771efac1/zh-1440-zoom1-trace.png": "0f9f63a1265522986b79fce6136763fa165e264725d62d24774025eebd814213",
+    "specs/reviews/854-evidence/854-review-2-771efac1/zh-1440-zoom2-controls.png": "69af4b5b35c02d4a118850391ee7d35c356ca757513c10438e28b4ed49f909ca",
+    "specs/reviews/854-evidence/854-review-2-771efac1/zh-1440-zoom2-reassignment.png": "8e23ff28d3503b7c9ae41e1da8efb0992132adc9e0d2c76e96d9f13b80f3d18e",
+    "specs/reviews/854-evidence/854-review-2-771efac1/zh-1440-zoom2-trace.png": "4112428f44442e9ad5b643ccd01028defcb6e897d557197fe3c236d6cb45169e",
+    "specs/reviews/854-evidence/854-review-2-771efac1/zh-320-zoom1-controls.png": "bee840824d832353e6b0d182a890b663851aa5ac6e0867bf3e75910e5026c3d0",
+    "specs/reviews/854-evidence/854-review-2-771efac1/zh-320-zoom1-reassignment.png": "20e11f5cc2c27259adff7cf578053214ef564d37223cd8c1a4b2548330962b46",
+    "specs/reviews/854-evidence/854-review-2-771efac1/zh-320-zoom1-trace.png": "af67d1a82fc68bb22a318c778d719923c6279ed1452c9137a54702307b0f70f2",
+    "specs/reviews/854-evidence/854-review-2-771efac1/zh-320-zoom2-controls.png": "8f96df78d2205765a3be02a8f9cbf04b4e00eeff44b1e2f1585ac1b864991892",
+    "specs/reviews/854-evidence/854-review-2-771efac1/zh-320-zoom2-trace.png": "1b53fc05e35e3939f344f925a19882130539e282536c7bfc608ec2e8c289b940",
+    "specs/reviews/854-evidence/854-review-2-771efac1/zh-390-zoom1-controls.png": "097837ded7e590e7c609d6bad51427fc9d304fb5f5ddd0ea8da2872abad20d17",
+    "specs/reviews/854-evidence/854-review-2-771efac1/zh-390-zoom1-trace.png": "ff290814ee384668ae43eb49a13561c7883962347925d88720ebb6318958318d",
+    "specs/reviews/854-evidence/854-review-2-771efac1/zh-390-zoom2-controls.png": "ee31c0043d15a7243a5f10066d3b6bbf99fb2078fe719d34732b72ca96fdc84b",
+    "specs/reviews/854-evidence/854-review-2-771efac1/zh-390-zoom2-trace.png": "d5b5a2b760b019baedc4c2542c41afac35952b4d0bd370313827802a1ae10328",
+    "specs/reviews/854-evidence/854-review-2-771efac1/zh-736-zoom1-controls.png": "a92e2cf9df27ba198470d49312611bfe9e4dbc4425db18b7e84d511c5a362108",
+    "specs/reviews/854-evidence/854-review-2-771efac1/zh-736-zoom1-trace.png": "9d4f44e2a9b09a28cd9c4fc4218b6f3102b939c51fb75cf1558293b7bb8fe373",
+    "specs/reviews/854-evidence/854-review-2-771efac1/zh-736-zoom2-controls.png": "c85d6a6b8ce09567a4bc31bff01ce470562ff86475456a3f5be4b56c3005a9c8",
+    "specs/reviews/854-evidence/854-review-2-771efac1/zh-736-zoom2-trace.png": "7ca923e7cbc4a34b875cf360ac45bb0c0774946370c3788bd6b832f438b40051",
+    "specs/reviews/854-evidence/854-review-2-771efac1/zh-desktop-top.png": "53c4377d221f6064f1f32789516d1659af759a7347638c1c2b4ca749572bc427",
+    "specs/reviews/854-evidence/854-review-2-771efac1/zh-exercise.png": "85dc460bf05dc3d09de2e920b51cec4b1c5bec3c5486e5b7a5e25c48c175bf36"
+  },
+  "remote_branch": "faff333c35e1e553e787762361d5febd048a19c1\trefs/heads/codex/all-hard-20261018",
+  "candidate_to_registered_paths": [
+    "specs/reviews/854-evidence/854-review-2-771efac1/bridge-browser.json",
+    "specs/reviews/854-evidence/854-review-2-771efac1/browser-results.json",
+    "specs/reviews/854-evidence/854-review-2-771efac1/cold-desktop.png",
+    "specs/reviews/854-evidence/854-review-2-771efac1/cold-proof-2.png",
+    "specs/reviews/854-evidence/854-review-2-771efac1/cold-proof-3.png",
+    "specs/reviews/854-evidence/854-review-2-771efac1/cold-proof-4.png",
+    "specs/reviews/854-evidence/854-review-2-771efac1/cold-reveal.png",
+    "specs/reviews/854-evidence/854-review-2-771efac1/core-results.json",
+    "specs/reviews/854-evidence/854-review-2-771efac1/en-1440-zoom1-controls.png",
+    "specs/reviews/854-evidence/854-review-2-771efac1/en-1440-zoom1-reassignment.png",
+    "specs/reviews/854-evidence/854-review-2-771efac1/en-1440-zoom1-trace.png",
+    "specs/reviews/854-evidence/854-review-2-771efac1/en-1440-zoom2-controls.png",
+    "specs/reviews/854-evidence/854-review-2-771efac1/en-1440-zoom2-reassignment.png",
+    "specs/reviews/854-evidence/854-review-2-771efac1/en-1440-zoom2-trace.png",
+    "specs/reviews/854-evidence/854-review-2-771efac1/en-320-zoom1-controls.png",
+    "specs/reviews/854-evidence/854-review-2-771efac1/en-320-zoom1-reassignment.png",
+    "specs/reviews/854-evidence/854-review-2-771efac1/en-320-zoom1-trace.png",
+    "specs/reviews/854-evidence/854-review-2-771efac1/en-320-zoom2-controls.png",
+    "specs/reviews/854-evidence/854-review-2-771efac1/en-320-zoom2-trace.png",
+    "specs/reviews/854-evidence/854-review-2-771efac1/en-390-zoom1-controls.png",
+    "specs/reviews/854-evidence/854-review-2-771efac1/en-390-zoom1-trace.png",
+    "specs/reviews/854-evidence/854-review-2-771efac1/en-390-zoom2-controls.png",
+    "specs/reviews/854-evidence/854-review-2-771efac1/en-390-zoom2-trace.png",
+    "specs/reviews/854-evidence/854-review-2-771efac1/en-736-zoom1-controls.png",
+    "specs/reviews/854-evidence/854-review-2-771efac1/en-736-zoom1-trace.png",
+    "specs/reviews/854-evidence/854-review-2-771efac1/en-736-zoom2-controls.png",
+    "specs/reviews/854-evidence/854-review-2-771efac1/en-736-zoom2-trace.png",
+    "specs/reviews/854-evidence/854-review-2-771efac1/en-desktop-top.png",
+    "specs/reviews/854-evidence/854-review-2-771efac1/en-exercise.png",
+    "specs/reviews/854-evidence/854-review-2-771efac1/forced-colors.png",
+    "specs/reviews/854-evidence/854-review-2-771efac1/independent-checks.json",
+    "specs/reviews/854-evidence/854-review-2-771efac1/independent-en-320-middle.png",
+    "specs/reviews/854-evidence/854-review-2-771efac1/independent-zh-320-middle.png",
+    "specs/reviews/854-evidence/854-review-2-771efac1/keyboard-focus.png",
+    "specs/reviews/854-evidence/854-review-2-771efac1/solution-results.json",
+    "specs/reviews/854-evidence/854-review-2-771efac1/zh-1440-zoom1-controls.png",
+    "specs/reviews/854-evidence/854-review-2-771efac1/zh-1440-zoom1-reassignment.png",
+    "specs/reviews/854-evidence/854-review-2-771efac1/zh-1440-zoom1-trace.png",
+    "specs/reviews/854-evidence/854-review-2-771efac1/zh-1440-zoom2-controls.png",
+    "specs/reviews/854-evidence/854-review-2-771efac1/zh-1440-zoom2-reassignment.png",
+    "specs/reviews/854-evidence/854-review-2-771efac1/zh-1440-zoom2-trace.png",
+    "specs/reviews/854-evidence/854-review-2-771efac1/zh-320-zoom1-controls.png",
+    "specs/reviews/854-evidence/854-review-2-771efac1/zh-320-zoom1-reassignment.png",
+    "specs/reviews/854-evidence/854-review-2-771efac1/zh-320-zoom1-trace.png",
+    "specs/reviews/854-evidence/854-review-2-771efac1/zh-320-zoom2-controls.png",
+    "specs/reviews/854-evidence/854-review-2-771efac1/zh-320-zoom2-trace.png",
+    "specs/reviews/854-evidence/854-review-2-771efac1/zh-390-zoom1-controls.png",
+    "specs/reviews/854-evidence/854-review-2-771efac1/zh-390-zoom1-trace.png",
+    "specs/reviews/854-evidence/854-review-2-771efac1/zh-390-zoom2-controls.png",
+    "specs/reviews/854-evidence/854-review-2-771efac1/zh-390-zoom2-trace.png",
+    "specs/reviews/854-evidence/854-review-2-771efac1/zh-736-zoom1-controls.png",
+    "specs/reviews/854-evidence/854-review-2-771efac1/zh-736-zoom1-trace.png",
+    "specs/reviews/854-evidence/854-review-2-771efac1/zh-736-zoom2-controls.png",
+    "specs/reviews/854-evidence/854-review-2-771efac1/zh-736-zoom2-trace.png",
+    "specs/reviews/854-evidence/854-review-2-771efac1/zh-desktop-top.png",
+    "specs/reviews/854-evidence/854-review-2-771efac1/zh-exercise.png",
+    "specs/reviews/854-review-2-771efac1.md"
+  ]
+}
