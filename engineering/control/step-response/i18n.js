@@ -11,9 +11,9 @@ const STRINGS = {
 
     s0k: '第 0 步 · 先看现象', s0t: '目标突然跳一下，输出怎样追过去？',
     s0e: '这一步要回答：一个带质量、弹簧和阻尼的系统，被要求<strong>突然</strong>换到新位置时，会怎样走过去？「突然换目标」叫<strong>阶跃输入</strong>：目标值 u 在 t = 0 从 0 跳到 1 并一直保持（图里橙色虚线）。系统输出 y 随时间画出来的曲线叫<strong>阶跃响应</strong>（青色实线）。它最后停在 1，这个最终值叫<strong>稳态值</strong>。按下按钮，看上方滑块（代表输出位置）和下方曲线一起走。',
-    applyStep: '施加阶跃', replay: '重放', s0progress: '模拟时间 t = {t} s / {T} s · 当前输出 y = {y}',
+    applyStep: '施加阶跃', replay: '重放', pause: '暂停', resume: '继续', scrub: '拖动查看任一时刻 t', s0progress: '模拟时间 t = {t} s / {T} s · 当前输出 y = {y}',
     s0done: '走完了：输出先冲到 {peak}（比稳态值 1 高出 {po}%），来回摆几次后停在 1 附近。',
-    s0hint: '横轴是时间（秒），纵轴是输出 y；橙色虚线是阶跃目标。本步固定 ζ = 0.3、ωn = 2 rad/s，下一步再改。',
+    s0hint: '横轴是时间（秒），纵轴是输出 y；橙色虚线是阶跃目标。本步固定 ζ = 0.3、ωn = 2 rad/s，下一步再改。播放是教学慢放：10 s 模型时间用 4 s 播完；可随时暂停，或拖动时间滑杆逐刻查看。',
 
     s1k: '第 1 步 · 第一个旋钮', s1t: '阻尼比 ζ：冲过头，还是慢慢爬',
     s1e: '这一步要回答：阻尼多一点、少一点，曲线的形状怎么变？<strong>阻尼</strong>是和速度成正比、把运动能量耗掉的那部分力（<a class="xlink" href="../../../physics/waves/resonance/#step1">→ 共振页第 1 步：阻尼怎样一点点带走能量</a>）。<strong>阻尼比 ζ</strong>（zeta）把它换成一个无单位的数：实际阻尼除以「刚好不再来回摆」所需的阻尼。ζ &lt; 1 叫<strong>欠阻尼</strong>，会冲过目标再摆回；ζ = 1 叫<strong>临界阻尼</strong>；ζ &gt; 1 叫<strong>过阻尼</strong>，不冲过但爬得慢。',
@@ -68,9 +68,9 @@ const STRINGS = {
 
     s0k: 'Step 0 · See it first', s0t: 'The target jumps — how does the output follow?',
     s0e: 'This step asks: when a mass on a spring with damping is told to move to a new position <strong>all at once</strong>, what path does it take? An instant change of target is a <strong>step input</strong>: the target u jumps from 0 to 1 at t = 0 and stays there (orange dashed line). The output y plotted over time is the <strong>step response</strong> (cyan line). Where it finally rests, 1, is the <strong>steady-state value</strong>. Press the button and watch the slider block on top (the output position) move together with the curve below.',
-    applyStep: 'Apply the step', replay: 'Replay', s0progress: 'Simulated time t = {t} s / {T} s · output y = {y}',
+    applyStep: 'Apply the step', replay: 'Replay', pause: 'Pause', resume: 'Resume', scrub: 'Drag to inspect any moment t', s0progress: 'Simulated time t = {t} s / {T} s · output y = {y}',
     s0done: 'Done: the output first reaches {peak} ({po}% above the steady-state value 1), swings a few times, then rests near 1.',
-    s0hint: 'Horizontal axis: time in seconds; vertical axis: output y; orange dashed line: the step target. This step fixes ζ = 0.3 and ωn = 2 rad/s; the next steps let you change them.',
+    s0hint: 'Horizontal axis: time in seconds; vertical axis: output y; orange dashed line: the step target. This step fixes ζ = 0.3 and ωn = 2 rad/s; the next steps let you change them. Playback is teaching slow motion: 10 s of model time plays in 4 s; pause at any moment or drag the time slider to inspect each instant.',
 
     s1k: 'Step 1 · The first knob', s1t: 'Damping ratio ζ: overshoot or creep',
     s1e: 'This step asks: how does the shape change with more or less damping? <strong>Damping</strong> is the force proportional to velocity that drains motion energy (<a class="xlink" href="../../../physics/waves/resonance/#step1">→ Resonance, step 1: how damping removes energy</a>). The <strong>damping ratio ζ</strong> (zeta) turns it into a unitless number: actual damping divided by the damping that just stops the back-and-forth swing. ζ &lt; 1 is <strong>underdamped</strong> (passes the target, swings back); ζ = 1 is <strong>critically damped</strong>; ζ &gt; 1 is <strong>overdamped</strong> (never passes, but slow).',

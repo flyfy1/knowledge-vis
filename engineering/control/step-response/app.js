@@ -94,7 +94,7 @@ function poleMark(ctx, pm, p, color = C.pink, size = 7, alpha = 1) {
 }
 
 /* ---------- step 0: animated first look ---------- */
-const s0 = { tShown: null, anim: null, Z: 0.3, W: 2, T: 10 };
+const s0 = { tShown: null, anim: null, paused: false, Z: 0.3, W: 2, T: 10 };
 function draw0() {
   const { ctx, W, H } = fitCanvas($('c0'));
   const { run: r, m: met } = run(s0.Z, s0.W, s0.T);
@@ -119,15 +119,21 @@ function draw0() {
     ? t('s0done', { peak: f(met.peak, 2), po: f(met.overshoot, 0) })
     : t('s0progress', { t: f(shown, 1), T: s0.T, y: f(cur.y, 2) });
   $('applyStep').textContent = s0.tShown === null ? t('applyStep') : t('replay');
+  $('t0').value = shown; $('t0v').textContent = f(shown, 2) + t('seconds');
+  $('pause0').textContent = s0.paused ? t('resume') : t('pause');
+  $('pause0').disabled = !s0.anim && !s0.paused;
 }
-function animate0() {
-  if (s0.anim) cancelAnimationFrame(s0.anim);
+function stop0() { if (s0.anim) cancelAnimationFrame(s0.anim); s0.anim = null; }
+function animate0(from = 0) {
+  stop0(); s0.paused = false;
   if (reduceMotion()) { s0.tShown = s0.T; draw0(); return; }
-  const start = performance.now(), realMs = 4000; // teaching slow-motion: 10 s of model time in 4 s
+  const realMs = 4000; // teaching slow-motion: 10 s of model time in 4 s
+  const start = performance.now() - from / s0.T * realMs;
   const tick = now => {
     if (document.hidden) { s0.tShown = s0.T; s0.anim = null; draw0(); return; }
-    s0.tShown = Math.min(s0.T, (now - start) / realMs * s0.T); draw0();
+    s0.tShown = Math.min(s0.T, (now - start) / realMs * s0.T);
     s0.anim = s0.tShown < s0.T ? requestAnimationFrame(tick) : null;
+    draw0();
   };
   s0.anim = requestAnimationFrame(tick);
 }
@@ -291,7 +297,12 @@ function bind(id, draw, keep) {
 }
 
 function setup() {
-  $('applyStep').addEventListener('click', animate0);
+  $('applyStep').addEventListener('click', () => animate0(0));
+  $('pause0').addEventListener('click', () => {
+    if (s0.anim) { stop0(); s0.paused = true; draw0(); }
+    else if (s0.paused) animate0(s0.tShown || 0);
+  });
+  $('t0').addEventListener('input', () => { stop0(); s0.paused = false; s0.tShown = num('t0'); draw0(); });
   bind('z1', draw1, keep1);
   $('clear1').addEventListener('click', () => { trails1.length = 0; draw1(); });
   ['z2', 'w2'].forEach(id => bind(id, draw2));

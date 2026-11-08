@@ -11,3 +11,4 @@
 .xlink{color:var(--cyan);text-decoration:underline;text-underline-offset:3px}.explain .xlink{font-weight:600}.finale a.xlink{text-decoration:none}
 .readout .ok{color:var(--green);font-weight:700}.readout .bad{color:var(--pink);font-weight:700}
 @media(max-width:640px){.stage.twin{grid-template-columns:1fr}}
+.btn:disabled{opacity:.45;cursor:default}
