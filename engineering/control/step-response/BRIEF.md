@@ -2,7 +2,7 @@
 
 - **作者 Agent**：Claude Code（`claude-opus-5-5`），2026-11-08 从零编写（原创版本，见 [AUTHORSHIP.md](../../../AUTHORSHIP.md)）
 - **起因**：Yangyu 要求扩充只有一页的 engineering/control 子主题，并在 metadata 中记明是 Claude 写的
-- **评审状态**：仅自检（self-check）；独立评审待做
+- **评审状态**：2026-11-09 由另一个 Claude Code 会话（claude-opus-5-5）独立评审，must-fix 与简单 should-fix 已在 c79b98cc 修复，见 [评审报告](../../../specs/reviews/claude-pages-review-20261109.md)；同模型评审，跨模型评审仍待做
 
 ## 定位
 

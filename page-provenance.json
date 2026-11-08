@@ -333,51 +333,55 @@
       "developer": "Claude Code",
       "edition": "claude-code-step-response-20261108",
       "kind": "original",
-      "sourceRevision": "779eb86a7ac2050f39541cd0df9c8a6b6408cfb4",
+      "sourceRevision": "c79b98cc110eb391935fae069bbb67eaade09ddd",
       "scope": {
         "zh": "整课从零编写：阶跃响应、阻尼比、超调、调节时间、s 平面极点与设计挑战",
         "en": "Whole lesson written from scratch: step response, damping ratio, overshoot, settling time, s-plane poles and a design challenge"
       },
-      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5); self-check only, independent review pending",
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5); independently reviewed 2026-11-09 by a separate Claude Code session (same model), see specs/reviews/claude-pages-review-20261109.md; cross-model review pending",
       "path": "engineering/control/step-response/index.html",
-      "originalSourceRevision": "04373f5b137f54caa4b561070d44817435cf2029"
+      "originalSourceRevision": "04373f5b137f54caa4b561070d44817435cf2029",
+      "previousSourceRevision": "779eb86a7ac2050f39541cd0df9c8a6b6408cfb4"
     },
     "signal-detection": {
       "developer": "Claude Code",
       "edition": "claude-code-signal-detection-20261108",
       "kind": "original",
-      "sourceRevision": "67da60acbc5ef1a46315e6dcb5c0aedf69de9e55",
+      "sourceRevision": "c79b98cc110eb391935fae069bbb67eaade09ddd",
       "scope": {
         "zh": "整课从零编写：证据分布、判断标准、敏感度 d'、ROC 曲线与代价最优",
         "en": "Whole lesson written from scratch: evidence distributions, criterion, sensitivity d', ROC curve and cost-optimal criterion"
       },
-      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5); self-check only, independent review pending",
-      "path": "psychology/cognition/signal-detection/index.html"
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5); independently reviewed 2026-11-09 by a separate Claude Code session (same model), see specs/reviews/claude-pages-review-20261109.md; cross-model review pending",
+      "path": "psychology/cognition/signal-detection/index.html",
+      "originalSourceRevision": "67da60acbc5ef1a46315e6dcb5c0aedf69de9e55"
     },
     "veil-of-ignorance": {
       "developer": "Claude Code",
       "edition": "claude-code-veil-of-ignorance-20261108",
       "kind": "original",
-      "sourceRevision": "e0ff270355da989b84b111adbcaae376a2a9c70d",
+      "sourceRevision": "c79b98cc110eb391935fae069bbb67eaade09ddd",
       "scope": {
         "zh": "整课从零编写：无知之幕、平均原则、最大最小原则、风险态度与再分配代价",
         "en": "Whole lesson written from scratch: veil of ignorance, average rule, maximin, risk attitude and the cost of redistribution"
       },
-      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5); self-check only, independent review pending",
-      "path": "psychology/ethics/veil-of-ignorance/index.html"
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5); independently reviewed 2026-11-09 by a separate Claude Code session (same model), see specs/reviews/claude-pages-review-20261109.md; cross-model review pending",
+      "path": "psychology/ethics/veil-of-ignorance/index.html",
+      "originalSourceRevision": "e0ff270355da989b84b111adbcaae376a2a9c70d"
     },
     "vowel-space": {
       "developer": "Claude Code",
       "edition": "claude-code-vowel-space-20261108",
       "kind": "original",
-      "sourceRevision": "523a73f669a4191d24c32847af05ebdc2304fbc0",
+      "sourceRevision": "c79b98cc110eb391935fae069bbb67eaade09ddd",
       "scope": {
         "zh": "整课从零编写：基频与共振峰、F1–F2 元音平面、三组说话人与说话人归一化",
         "en": "Whole lesson written from scratch: F0 and formants, the F1–F2 vowel plane, three speaker groups and speaker normalisation"
       },
-      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5); self-check only, independent review pending",
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5); independently reviewed 2026-11-09 by a separate Claude Code session (same model), see specs/reviews/claude-pages-review-20261109.md; cross-model review pending",
       "path": "language/phonology/vowel-space/index.html",
-      "originalSourceRevision": "01151d62b55b620ef7039dac1a75dd96ac795ab1"
+      "originalSourceRevision": "01151d62b55b620ef7039dac1a75dd96ac795ab1",
+      "previousSourceRevision": "523a73f669a4191d24c32847af05ebdc2304fbc0"
     },
     "population-ecology": {
       "developer": "Codex",
