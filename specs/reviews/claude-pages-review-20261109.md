@@ -6,7 +6,7 @@
 - **读过的约定**：AUTHORSHIP.md、UI-I18N-SPEC.md、specs/visual-page-provenance.md、WORKFLOW.md。任务书提到的 `AGENTS.md` 在仓库中不存在（`ls`、`find -maxdepth 2 -iname 'agents*'` 均无结果），未读。
 - **修复提交**：c79b98cc（页面修复，authored）、9fc45981（四页署名刷新，mechanical）、9d33140a（任务 2）。
 
-文件行号凡标 `@61f8b95d` 的指修复前版本。截图在 [claude-pages-review-20261109/](claude-pages-review-20261109/)，全量截图（4 页 × 1280/390/320 × 中英 + 390 减弱动态，共 197 张逐步截图）在评审机的 `/tmp/agent-tasks/claude-pages-review/shots-{before,after}/`，未入库。
+文件行号凡标 `@61f8b95d` 的指修复前版本。截图在 [claude-pages-review-20261109/](claude-pages-review-20261109/)，全量截图（4 页 × 1280/390/320 × 中英 + 390 减弱动态，共 197 张逐步截图）连同交互截图和评审脚本（`shots.cjs`、`interact.cjs`、`montage.cjs`）归档在评审机的 `~/Documents/archive/knowledge-vis/claude-pages-review-20261109/`（约 60 MB，未入库）。
 
 ## 方法
 
