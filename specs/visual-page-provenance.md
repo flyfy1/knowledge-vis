@@ -86,3 +86,17 @@ Known gap, not fixed here: `math/linear-algebra/linear-transform` and
 `biology/ecology/population-ecology` carry static labels that are missing from the inventory
 (already failing at 49272857, before the reorg). Their source evidence has to be verified before
 they are registered or the labels removed.
+
+## Inventory gap closed — 2026-11-09 Claude Code
+
+- `biology/ecology/population-ecology`: the label was added by 07fec169832ff73a422c35a90a1520962890a1b0
+  (`Built-By: Codex (gpt-6.1-sol)`), which really changed the page. It is now registered as a Codex
+  revised edition with that full SHA. The old label used a non-contract summary ("相图增强") and named
+  c21cdb49 as its "source baseline" — a commit that only added the momentum-collision lesson — so the
+  label was rewritten to the contract format. The lesson itself was first added in 3820f26b without any
+  agent declaration; original authorship stays unasserted.
+- `math/linear-algebra/linear-transform`: its only commits (a0ef4c69, and 6ee84cd7 on `local/linear-algebra`)
+  carry no `Built-By`, `authorship/overrides.json` has no entry, and the only "Codex" claim was the
+  label text itself. Without evidence it is not registered; the label was removed and its learner note
+  kept as a plain paragraph. It can be relabelled once Yangyu confirms the author in `overrides.json`.
+- Details: [claude-pages-review-20261109](reviews/claude-pages-review-20261109.md).
