@@ -1,7 +1,7 @@
 # Linguistics Phonology visual spec
 
 ## Scope and model
-`linguistics-phonology/` is a static, dependency-free bilingual lesson. Its single teaching arc is articulation → phonemic contrast → syllable constituency → contextual allophony. Pure model data lives at the top of `app.js`: `SOUND_DATA`, `PAIRS`, `WORDS`, `pluralSurface`; rendering is an adapter over those values.
+`language/phonology/phonemes/` is a static, dependency-free bilingual lesson. Its single teaching arc is articulation → phonemic contrast → syllable constituency → contextual allophony. Pure model data lives at the top of `app.js`: `SOUND_DATA`, `PAIRS`, `WORDS`, `pluralSurface`; rendering is an adapter over those values.
 
 The page intentionally uses English examples (`/p b m t s/`, pat~bat, cat/splash/spring, plural /s/). It is an introductory model, not a full phonetic transcriber. `/ /` labels phonemic categories; `[ ]` labels the displayed surface realization. Voicing means vocal-fold vibration, not loudness.
 

@@ -10,7 +10,7 @@ const out=process.env.LESSON_SCREENSHOTS||path.join(__dirname,'evidence');fs.mkd
   const context=await browser.newContext({viewport:{width:1280,height:900}});
   const p=await context.newPage();p.on('pageerror',e=>errors.push(e.message));
   p.on('request',r=>{if(!r.url().startsWith(base))external.push(r.url());});
-  await p.goto(base+'/frozen-bubble/');
+  await p.goto(base+'/physics/thermal/frozen-bubble/');
   const seek=async(id,v)=>p.locator('#'+id+'-time').evaluate((el,value)=>{el.value=value;el.dispatchEvent(new Event('input',{bubbles:true}));},v);
   const time=async id=>Number(await p.locator('#'+id+'-readout').getAttribute('data-time'));
   for(const lang of ['zh','en']) {
@@ -45,7 +45,7 @@ const out=process.env.LESSON_SCREENSHOTS||path.join(__dirname,'evidence');fs.mkd
    checks.push(`${lang}: seed, play/pause/resume, seek, same-time undercooling, independent clocks, trails, repeat reset, end/replay, 320/390/640/1280`);
   }
   for(const dpr of [1,2,3]) {
-   const c=await browser.newContext({viewport:{width:390,height:900},deviceScaleFactor:dpr});const q=await c.newPage();await q.goto(base+'/frozen-bubble/');
+   const c=await browser.newContext({viewport:{width:390,height:900},deviceScaleFactor:dpr});const q=await c.newPage();await q.goto(base+'/physics/thermal/frozen-bubble/');
    for(const width of [320,640,390,390]) {await q.setViewportSize({width,height:900});await q.waitForTimeout(60);assert.ok(await q.locator('#growth').evaluate(c=>Math.abs(c.width-c.getBoundingClientRect().width*devicePixelRatio)<=1));}
    await c.close();
   }
@@ -53,7 +53,7 @@ const out=process.env.LESSON_SCREENSHOTS||path.join(__dirname,'evidence');fs.mkd
   const locked=await browser.newContext({viewport:{width:844,height:390},locale:'zh-CN'});
   const lockedPage=await locked.newPage();
   await lockedPage.addInitScript(()=>{Object.defineProperty(window,'localStorage',{get(){throw new DOMException('Blocked','SecurityError');}});});
-  await lockedPage.goto(base+'/frozen-bubble/');assert.equal(await lockedPage.locator('html').getAttribute('lang'),'zh-CN');
+  await lockedPage.goto(base+'/physics/thermal/frozen-bubble/');assert.equal(await lockedPage.locator('html').getAttribute('lang'),'zh-CN');
   await lockedPage.locator('[data-lang="en"]').click();assert.equal(await lockedPage.locator('html').getAttribute('lang'),'en');
   await lockedPage.locator('#seed').focus();await lockedPage.keyboard.press('Enter');assert.equal(await lockedPage.locator('#growth-play').isEnabled(),true);
   await lockedPage.locator('#growth-time').focus();await lockedPage.keyboard.press('ArrowRight');assert.ok(Number(await lockedPage.locator('#growth-readout').getAttribute('data-time'))>0);
@@ -62,10 +62,10 @@ const out=process.env.LESSON_SCREENSHOTS||path.join(__dirname,'evidence');fs.mkd
   await p.emulateMedia({reducedMotion:'reduce',forcedColors:'active'});await p.reload();assert.equal(await time('growth'),0);assert.equal(await time('compare'),0);await p.locator('#seed').focus();assert.equal(await p.locator('#seed').evaluate(el=>getComputedStyle(el).outlineWidth),'3px');
   await p.emulateMedia({forcedColors:'none'});
   await p.locator('#seed').click();for(let i=0;i<5;i++)await p.locator('#seed').click();assert.equal(await p.locator('#seed').isDisabled(),true);await p.locator('#growth-reset').click();
-  await p.goto(base+'/?category=physics');await p.locator('[data-lang="en"]').click();const link=p.locator('a.card[href="frozen-bubble/"]');await link.waitFor();await link.click();assert.ok(p.url().includes('/frozen-bubble/'));await p.locator('.backline a').click();assert.ok(p.url().includes('category=physics'));await p.goBack();assert.ok(p.url().includes('/frozen-bubble/'));
-  await p.goto(base+'/frozen-bubble/#step2');await p.waitForTimeout(250);assert.equal(await p.locator('.nav-step.active').getAttribute('href'),'#step2');
+  await p.goto(base+'/?category=physics');await p.locator('[data-lang="en"]').click();const link=p.locator('a.card[href="physics/thermal/frozen-bubble/"]');await link.waitFor();await link.click();assert.ok(p.url().includes('/physics/thermal/frozen-bubble/'));await p.locator('.backline a').click();assert.ok(p.url().includes('category=physics'));await p.goBack();assert.ok(p.url().includes('/physics/thermal/frozen-bubble/'));
+  await p.goto(base+'/physics/thermal/frozen-bubble/#step2');await p.waitForTimeout(250);assert.equal(await p.locator('.nav-step.active').getAttribute('href'),'#step2');
   const bounds=await p.locator('#step2').boundingBox();assert.ok(bounds.y>=0&&bounds.y<250);
-  await p.locator('.related a[href="../interference/#step1"]').click();assert.ok(p.url().endsWith('/interference/#step1'));await p.goBack();
+  await p.locator('.related a[href="../../waves/interference/#step1"]').click();assert.ok(p.url().endsWith('/physics/waves/interference/#step1'));await p.goBack();
   checks.push('Reduced-motion initial pause, forced-color focus, seed boundary, home registration, return/Back, direct hash nav and cross-lesson deep link');
   assert.deepEqual(errors,[]);assert.deepEqual(external,[]);
   // Compare the exact solid text pairs inherited from the existing lesson palette.

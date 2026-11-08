@@ -5,7 +5,7 @@ const html=fs.readFileSync(path.join(root,'index.html'),'utf8');
 const js=fs.readFileSync(path.join(root,'app.js'),'utf8');
 const css=fs.readFileSync(path.join(root,'style.css'),'utf8');
 const brief=fs.readFileSync(path.join(root,'BRIEF.md'),'utf8');
-const spec=fs.readFileSync(path.resolve(root,'../specs/genetics-probability.md'),'utf8');
+const spec=fs.readFileSync(path.resolve(root,'../../../specs/genetics-probability.md'),'utf8');
 const cfg=fs.readFileSync(path.join(root,'pages-config-entry.js'),'utf8');
 const assert=(x,m)=>{if(!x)throw new Error(m)};
 const gametes=g=>{const[a,b]=g.split('');return a===b?[{g:a,p:1}]:[{g:a,p:.5},{g:b,p:.5}]};

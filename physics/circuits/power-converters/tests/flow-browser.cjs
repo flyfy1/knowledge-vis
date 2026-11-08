@@ -4,7 +4,7 @@ const base=process.env.BASE_URL||'http://127.0.0.1:18791';
 const out=process.env.REVIEW_OUTPUT_DIR||'/tmp/power-flow-evidence';fs.mkdirSync(out,{recursive:true});
 (async()=>{const browser=await chromium.launch({channel:'chrome',headless:true});const errors=[],results=[];
 try{for(const width of [320,390,1440])for(const lang of ['en','zh']){
- const context=await browser.newContext({viewport:{width,height:1000},locale:lang==='zh'?'zh-CN':'en-US',reducedMotion:'no-preference'}),p=await context.newPage();p.on('pageerror',e=>errors.push(e.message));await p.goto(base+'/power-converters/#step4');
+ const context=await browser.newContext({viewport:{width,height:1000},locale:lang==='zh'?'zh-CN':'en-US',reducedMotion:'no-preference'}),p=await context.newPage();p.on('pageerror',e=>errors.push(e.message));await p.goto(base+'/physics/circuits/power-converters/#step4');
  for(const kind of ['buck','boost']){
   const diagram=p.locator('#'+kind+'-diagram');
   await p.locator('#'+kind+'-seek').fill('20');await diagram.scrollIntoViewIfNeeded();

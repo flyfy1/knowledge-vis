@@ -628,7 +628,7 @@ revealSnell();
 window.addEventListener('hashchange',revealSnell);
 window.addEventListener('pagehide',saveOpticsReading);
 window.addEventListener('pageshow',()=>requestAnimationFrame(()=>{syncOpticsControls();renderAll();}));
-document.querySelectorAll('a[href]').forEach(a=>a.addEventListener('click',()=>{if(a.getAttribute('href').startsWith('../'))saveOpticsReading();}));
+document.querySelectorAll('a[href]').forEach(a=>a.addEventListener('click',()=>{if(a.getAttribute('href').startsWith('../../../'))saveOpticsReading();}));
 applyLang(getLang());
 // 只读检查面：供数值自查/评审复算，界面仍是唯一改状态路径。
 window.REFRACTION = {

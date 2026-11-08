@@ -20,7 +20,7 @@ const proof = process.env.UI_AUDIT_PROOF === '1';
       await route.fulfill({response, body:await response.text() +
         '\n#s0-canvas{height:360px} #s1-canvas{height:300px}'});
     });
-    await p.goto(`${base}/sampling/#step${step}`);
+    await p.goto(`${base}/signal/sampling/sampling/#step${step}`);
     await p.waitForTimeout(2400);
     const r = await p.evaluate(() => ({
       y:document.querySelector(location.hash).getBoundingClientRect().y,
@@ -30,7 +30,7 @@ const proof = process.env.UI_AUDIT_PROOF === '1';
     await p.close();
   }
   const p = await page(390);
-  await p.goto(`${base}/fourier/#step5`);
+  await p.goto(`${base}/signal/transforms/fourier/#step5`);
   await p.waitForTimeout(1800);
   if (proof) {
     await p.addStyleTag({content:'.fourier-link{color:var(--accent)}'});
@@ -60,7 +60,7 @@ const proof = process.env.UI_AUDIT_PROOF === '1';
   check('phone-active-step-visible',r.activeLeft>=0&&r.activeRight<=r.width,r);
   check('step-target-height',r.navHeight>=48,r.navHeight);
   await p.close();
-  for(const slug of ['eigen','convolution','kalman']){
+  for(const slug of ['math/linear-algebra/eigenvectors','signal/systems/convolution','signal/control/kalman']){
     const p=await page(320);
     await p.goto(`${base}/${slug}/`);
     await p.waitForTimeout(600);

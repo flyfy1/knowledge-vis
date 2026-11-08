@@ -12,7 +12,7 @@
   "en": "A 3×3 kernel slides over an image, multiplying and summing to give a feature map; different kernels respond to different edges, ReLU, pooling and stacking assemble edges into richer features, and kernels can be learned by gradient descent. A teaching model with small synthetic images and one channel."
  },
  "formula": "out(i,j) = Σₐ Σ_b k(a,b)·x(i+a, j+b)",
- "source": "../cnn-feature-maps/#step0",
+ "source": "../computing/ml/cnn-feature-maps/#step0",
  "edges": [
   {
    "from": "convolution",
@@ -26,7 +26,7 @@
     "zh": "图像卷积层做的仍是“滑动窗口、对应相乘、求和”，只是窗口变成二维，且按 CNN 惯例不翻转核。",
     "en": "An image convolution layer still does “slide a window, multiply matching entries, sum”, only in two dimensions and, by CNN convention, without flipping the kernel."
    },
-   "source": "../cnn-feature-maps/#step0"
+   "source": "../computing/ml/cnn-feature-maps/#step0"
   },
   {
    "from": "cnn-feature-maps",
@@ -40,7 +40,7 @@
     "zh": "左负右正的边缘核计算左右像素之差，是对图像亮度求导数的离散近似，所以平坦处输出 0。",
     "en": "A left-negative, right-positive edge kernel computes the difference between neighbouring pixels, a discrete approximation of the brightness derivative, so flat regions give 0."
    },
-   "source": "../cnn-feature-maps/#step2"
+   "source": "../computing/ml/cnn-feature-maps/#step2"
   },
   {
    "from": "convolution",
@@ -54,7 +54,7 @@
     "zh": "边缘核对邻居相减，算的正是离散差分；差分是导数在格点上的化身，所以边缘核天生就是导数探测器。",
     "en": "Edge kernels subtract neighbours, computing exactly discrete differences; a difference is the derivative incarnated on a grid, so edge kernels are born derivative detectors."
    },
-   "source": "../cnn-feature-maps/#step2"
+   "source": "../computing/ml/cnn-feature-maps/#step2"
   }
  ],
  "routes": [

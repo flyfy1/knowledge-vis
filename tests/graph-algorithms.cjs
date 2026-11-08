@@ -1,6 +1,6 @@
 'use strict';
 const assert=require('node:assert/strict');
-const api=require('../graph-algorithms/app.js');
+const api=require('../computing/algorithms/graph-algorithms/app.js');
 const g=api.cloneGraph();
 assert.deepEqual(api.neighbors(g,'A'),['B','C']);
 assert.deepEqual(api.neighbors(g,'B'),['A','C','D']);

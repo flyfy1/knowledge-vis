@@ -97,7 +97,7 @@ const STR = {
     s4e: '这一步要回答：<strong>盒子有好几个、还混着砝码（2x + 3 = 11），一次操作不够，该先做哪件、后做哪件？</strong>盒子前面的个数叫<strong>系数</strong>（2x 的 2 就是系数，意思是 2 个盒子）。答案是：顺序自己定——先同减再同除、先同除再同减，两条路都通，页面只认最终把 x 单独留在一边。操作轨迹会逐条记下，让你看得见自己走了哪条路。',
     s4next: '换一题', s4qLab: '第 {i} 题 / 共 3 题',
     s4prog: '已解出 {k}/3 题',
-    s4hint: '结论：两步方程就是把「两边同做一件事」用两次。本页的题只用正的常数和正的答案；答案是负数的方程（如 x + 9 = 4）里，带负号的数怎么加减在<a class="fourier-link" href="../negative-numbers/#step3">负数那一页（沿数轴走）</a>；系数是分数的方程（如 ½x = 3）里，½ 不是两个数、是一个数，看<a class="fourier-link" href="../fractions/#step1">分数那一页（分数也是一个数）</a>——解法仍然是两边同做一件事。',
+    s4hint: '结论：两步方程就是把「两边同做一件事」用两次。本页的题只用正的常数和正的答案；答案是负数的方程（如 x + 9 = 4）里，带负号的数怎么加减在<a class="fourier-link" href="../../arithmetic/negative-numbers/#step3">负数那一页（沿数轴走）</a>；系数是分数的方程（如 ½x = 3）里，½ 不是两个数、是一个数，看<a class="fourier-link" href="../../arithmetic/fractions/#step1">分数那一页（分数也是一个数）</a>——解法仍然是两边同做一件事。',
 
     /* step5 自测 */
     s5k: '第 5 步 · 自测',
@@ -212,7 +212,7 @@ const STR = {
     s4e: 'The question for this step: <strong>several boxes mixed with weights (2x + 3 = 11) — one move is not enough, so which move goes first and which second?</strong> The number in front of the boxes is the <strong>coefficient</strong> (the 2 in 2x means 2 boxes). The answer: you choose the order — subtract then divide, or divide then subtract; both roads arrive, and the page only cares that x ends up alone. Every move is written into the trail below, so you can see which road you took.',
     s4next: 'Next problem', s4qLab: 'Problem {i} of 3',
     s4prog: 'Solved {k} of 3 problems',
-    s4hint: 'The conclusion: a two-step equation is just “the same thing to both sides” used twice. The problems on this page use only positive constants and positive answers; for an equation whose answer is negative (like x + 9 = 4), how signed numbers add and subtract is on <a class="fourier-link" href="../negative-numbers/#step3">the Negative Numbers page (walking the number line)</a>; for a fractional coefficient (like ½x = 3), ½ is one number, not two — see <a class="fourier-link" href="../fractions/#step1">the Fractions page (a fraction is a number)</a>. The solving move stays the same either way.',
+    s4hint: 'The conclusion: a two-step equation is just “the same thing to both sides” used twice. The problems on this page use only positive constants and positive answers; for an equation whose answer is negative (like x + 9 = 4), how signed numbers add and subtract is on <a class="fourier-link" href="../../arithmetic/negative-numbers/#step3">the Negative Numbers page (walking the number line)</a>; for a fractional coefficient (like ½x = 3), ½ is one number, not two — see <a class="fourier-link" href="../../arithmetic/fractions/#step1">the Fractions page (a fraction is a number)</a>. The solving move stays the same either way.',
 
     s5k: 'Step 5 · Quiz',
     s5t: 'Quiz: Three Problems, One Move',

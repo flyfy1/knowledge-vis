@@ -12,7 +12,7 @@
   "en": "When part of the cost falls on a third party the market over-produces, with deadweight loss ½·e·(Q_m − Q*); a Pigouvian tax equal to the marginal damage maximises welfare; commons are overused; Coase: with costless bargaining who holds the right does not change efficiency. A linear model with constant damage."
  },
  "formula": "DWL = ½ · e · (Q_m − Q*)",
- "source": "../externalities/#step3",
+ "source": "../math/applied/externalities/#step3",
  "edges": [
   {
    "from": "supply-demand",
@@ -26,7 +26,7 @@
     "zh": "供需均衡只反映买卖双方的私人成本与好处；加上外部损害后社会成本线高于供给线，均衡就偏离社会最优。",
     "en": "Supply–demand equilibrium reflects only the buyers’ and sellers’ private costs and benefits; adding external damage lifts the social cost line above supply and moves equilibrium away from the social optimum."
    },
-   "source": "../externalities/#step1"
+   "source": "../math/applied/externalities/#step1"
   },
   {
    "from": "game-theory",
@@ -40,7 +40,7 @@
     "zh": "每个牧民各自最优的选择合起来使总利润下降，这是纳什均衡劣于合作结果的又一例。",
     "en": "Each herder’s individually best choice adds up to lower total profit, another case of a Nash equilibrium worse than the cooperative outcome."
    },
-   "source": "../externalities/#step4"
+   "source": "../math/applied/externalities/#step4"
   },
   {
    "from": "supply-demand",
@@ -54,7 +54,7 @@
     "zh": "供需均衡算的是价格把买卖双方撮合到哪；一旦一方的行动影响另一方的收益（公地、污染），就要用博弈论算每个人在对手行动下的最佳回应——外部性问题正是均衡分析走到博弈论的路口。",
     "en": "Supply-demand equilibrium computes where price matches buyers and sellers; once one side's action affects another's payoff (commons, pollution), game theory computes each player's best response to rivals' moves — externality problems are exactly where equilibrium analysis meets game theory."
    },
-   "source": "../externalities/#step4"
+   "source": "../math/applied/externalities/#step4"
   }
  ],
  "routes": [

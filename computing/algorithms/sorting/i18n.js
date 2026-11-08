@@ -121,7 +121,7 @@ const STR = {
     c2: '混血算法有个共同细节：片段小到一定程度（几十个元素上下）就切回<strong>插入排序</strong>这种 O(n²) 的简单循环——第 4 步的交叉点说的就是这个理：n 小的时候，常数小、代码直白的算法实际成本更低。O(n²) 在小数据上不是原罪，是性价比。',
     c3h: '选型直觉：先看 n 与数据',
     c3: '面对一堆要排的数据，先问四件事：<strong>n 有多大</strong>（决定形状的权重）、<strong>是否近乎有序</strong>（Timsort 与带早停的算法占便宜）、<strong>值域是否有界</strong>（计数排序的机会）、<strong>要不要稳定</strong>（等值元素的相对次序保不保）。形状优先、常数其次——这把尺，就是这一页的全部内容。',
-    s6fin: '回勾一句隔壁的<a class="fourier-link" href="../gradient-descent/#step2">梯度下降</a>：那边算成本，是「每一步多便宜 × 要走多少步」；这边算成本，是「每次比较多便宜 × 要比多少次」。成本永远是两个因子相乘——一个因子管单价，一个管数量，而数量的<strong>增长形状</strong>，最终说了算。学会看形状，你就有了一把丈量一切算法的尺。'
+    s6fin: '回勾一句隔壁的<a class="fourier-link" href="../../ml/gradient-descent/#step2">梯度下降</a>：那边算成本，是「每一步多便宜 × 要走多少步」；这边算成本，是「每次比较多便宜 × 要比多少次」。成本永远是两个因子相乘——一个因子管单价，一个管数量，而数量的<strong>增长形状</strong>，最终说了算。学会看形状，你就有了一把丈量一切算法的尺。'
   },
   en: {
     docTitle: 'Sorting & Big O · The Shape of Growth · One Interaction per Step',
@@ -237,7 +237,7 @@ const STR = {
     c2: 'The hybrids share one detail: once a piece shrinks to a few dozen elements, they switch back to a plain O(n²) loop like <strong>insertion sort</strong> — exactly the crossover from step 4: at small n, the low-constant, straightforward algorithm is genuinely cheaper. O(n²) on small data is not a sin; it is value for money.',
     c3h: 'Choosing: look at n and the data first',
     c3: 'Faced with data to sort, ask four questions: <strong>how big is n</strong> (it sets the shape’s weight), <strong>is it nearly sorted</strong> (Timsort and early-exit sorts profit), <strong>is the value range bounded</strong> (counting sort’s opening), <strong>must it be stable</strong> (do equal elements keep their relative order)? Shape first, constants second — that ruler is the whole page.',
-    s6fin: 'One line back to the neighbouring page, <a class="fourier-link" href="../gradient-descent/#step2">Gradient Descent</a>: there, cost was “how cheap is each step × how many steps”; here, it is “how cheap is each comparison × how many comparisons”. Cost is always two factors multiplied — one sets the unit price, the other the quantity, and the quantity’s <strong>shape of growth</strong> has the final say. Learn to see the shape, and you own a ruler for every algorithm.'
+    s6fin: 'One line back to the neighbouring page, <a class="fourier-link" href="../../ml/gradient-descent/#step2">Gradient Descent</a>: there, cost was “how cheap is each step × how many steps”; here, it is “how cheap is each comparison × how many comparisons”. Cost is always two factors multiplied — one sets the unit price, the other the quantity, and the quantity’s <strong>shape of growth</strong> has the final say. Learn to see the shape, and you own a ruler for every algorithm.'
   }
 };
 

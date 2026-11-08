@@ -61,7 +61,7 @@ const STR = {
 
     s4k: '第 4 步 · 换个视角',
     s4t: '频域看混叠：频谱在自我复制',
-    s4e: "一个实正弦有正、负频率分量；此图仅画<strong>正频率峰的位置</strong>，不是完整幅相谱。理想均匀采样使双边频谱以 fₛ Hz 为间隔复制；已知带限 B&lt;fₛ/2 时，选取双边基带并作理想重建。这里显示的 [0,fₛ/2] 只是正频率那一半，不能单靠峰位置还原波形。拖 fₛ 看复制峰怎样折入此区。<a class=\"fourier-link\" href=\"../fourier/#step5\">到傅里叶页比较频谱 →</a> <a class=\"fourier-link\" href=\"../ztransform/#step5\">到Z页换算：复制间距：fₛ Hz，或对应的 2π/T rad/s →</a>",
+    s4e: "一个实正弦有正、负频率分量；此图仅画<strong>正频率峰的位置</strong>，不是完整幅相谱。理想均匀采样使双边频谱以 fₛ Hz 为间隔复制；已知带限 B&lt;fₛ/2 时，选取双边基带并作理想重建。这里显示的 [0,fₛ/2] 只是正频率那一半，不能单靠峰位置还原波形。拖 fₛ 看复制峰怎样折入此区。<a class=\"fourier-link\" href=\"../../transforms/fourier/#step5\">到傅里叶页比较频谱 →</a> <a class=\"fourier-link\" href=\"../../transforms/z-transform/#step5\">到Z页换算：复制间距：fₛ Hz，或对应的 2π/T rad/s →</a>",
     s4ro: '副本间距 = f_s = {fs} Hz · 基带 [0, {half} Hz] 内的峰在 {alias} Hz —— 与第 2 步时域假波同数。',
     s4roClean: '副本间距 = f_s = {fs} Hz · f_s > 2f：基带 [0, {half} Hz] 内只有原峰，干净。',
     s4roZero: "本步固定零相位：若 f = k·f_s/2（k为整数），正弦样本全为零，图示采样谱峰消失。此结论依赖当前相位；第3步展示了同一频率边界的非零相位情形。",
@@ -166,7 +166,7 @@ const STR = {
 
     s4k: 'Step 4 · The frequency view',
     s4t: 'Aliasing in the frequency domain: the spectrum clones itself',
-    s4e: "A real sine has positive and negative frequency components. This diagram shows only <strong>positive-frequency peak positions</strong>, not a complete magnitude/phase spectrum. Ideal uniform sampling repeats the two-sided spectrum every fₛ Hz. With known B&lt;fₛ/2, ideal reconstruction selects the two-sided baseband. The displayed [0,fₛ/2] is only its positive half; peak locations alone do not recover a waveform. Drag fₛ to see copies fold into this region. <a class=\"fourier-link\" href=\"../fourier/#step5\">Compare the Fourier spectrum →</a> <a class=\"fourier-link\" href=\"../ztransform/#step5\">Convert on the Z page: spacing fₛ Hz or 2π/T rad/s →</a>",
+    s4e: "A real sine has positive and negative frequency components. This diagram shows only <strong>positive-frequency peak positions</strong>, not a complete magnitude/phase spectrum. Ideal uniform sampling repeats the two-sided spectrum every fₛ Hz. With known B&lt;fₛ/2, ideal reconstruction selects the two-sided baseband. The displayed [0,fₛ/2] is only its positive half; peak locations alone do not recover a waveform. Drag fₛ to see copies fold into this region. <a class=\"fourier-link\" href=\"../../transforms/fourier/#step5\">Compare the Fourier spectrum →</a> <a class=\"fourier-link\" href=\"../../transforms/z-transform/#step5\">Convert on the Z page: spacing fₛ Hz or 2π/T rad/s →</a>",
     s4ro: 'Copy spacing = f_s = {fs} Hz · the peak inside the baseband [0, {half} Hz] sits at {alias} Hz — the same number as the time-domain fake wave in step 2.',
     s4roClean: 'Copy spacing = f_s = {fs} Hz · f_s > 2f: the baseband [0, {half} Hz] holds only the original peak. Clean.',
     s4roZero: "This step fixes phase to zero. If f = k·f_s/2 for integer k, every sine sample is zero and no sampled-spectrum peak remains. This depends on phase; step3 shows nonzero-phase cases at the same frequency boundary.",

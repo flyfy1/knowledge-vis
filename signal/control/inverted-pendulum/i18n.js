@@ -51,7 +51,7 @@ const STR = {
     /* ---------- 第 2 步 ---------- */
     s2k: '第 2 步 · 把圈闭上',
     s2t: '传感器 → 控制器 → 电机 → 再回到传感器',
-    s2e: '看上面的回路图：信号沿着圈跑——传感器量到角度，控制器算出该出多大的力，电机驱动轮子，车身角度改变，又被传感器量到……周而复始。下面这辆车装的正是这个圈，只是控制器里只有一条最朴素的规则：<strong>往哪边倾，就往哪边开；倾得越狠，开得越猛。</strong>拖动增益，让它先站住再说（晃，是意料之中的）。 <a class="fourier-link" href="../lti/#step2">回路里每个盒子都有自己的 h：先看系统对一记冲激的回答 →</a>',
+    s2e: '看上面的回路图：信号沿着圈跑——传感器量到角度，控制器算出该出多大的力，电机驱动轮子，车身角度改变，又被传感器量到……周而复始。下面这辆车装的正是这个圈，只是控制器里只有一条最朴素的规则：<strong>往哪边倾，就往哪边开；倾得越狠，开得越猛。</strong>拖动增益，让它先站住再说（晃，是意料之中的）。 <a class="fourier-link" href="../../systems/lti-systems/#step2">回路里每个盒子都有自己的 h：先看系统对一记冲激的回答 →</a>',
     s2gain: '规则增益 K',
     s2reveal: '点破一下：这条「出力与倾斜程度成比例」的规则有个名字——<strong>比例控制，P</strong>。写成公式是 u = Kp·e，其中 e = 目标角度 − 当前角度（目标是竖直，0°）。车往右倾时 e 为负，u 为负，轮子就按这个符号向右加速去追倾倒的方向——方向由误差的符号自动搞定，你拖的 Kp 决定追得有多凶。后面三步，我们给它陆续加上 D 和 I。',
     cSensor: '角度传感器', cError: '误差 e', cCtrl: '控制器', cMotor: '电机', cPlant: '车身 · 倾角 θ',
@@ -146,7 +146,7 @@ const STR = {
 
     s2k: 'Step 2 · Closing the loop',
     s2t: 'Sensor → controller → motor → back to sensor',
-    s2e: 'Watch the loop diagram above: the signal runs around the ring — the sensor measures the tilt, the controller computes how much force is needed, the motor drives the wheels, the tilt changes, and the sensor measures again… forever. The robot below runs exactly this loop, with the simplest rule a controller can have: <strong>lean one way, drive that way; the harder the lean, the harder the drive.</strong> Drag the gain and get it standing first (swaying is expected). <a class="fourier-link" href="../lti/#step2">Every box in the loop has its own h: start with the answer to one impulse →</a>',
+    s2e: 'Watch the loop diagram above: the signal runs around the ring — the sensor measures the tilt, the controller computes how much force is needed, the motor drives the wheels, the tilt changes, and the sensor measures again… forever. The robot below runs exactly this loop, with the simplest rule a controller can have: <strong>lean one way, drive that way; the harder the lean, the harder the drive.</strong> Drag the gain and get it standing first (swaying is expected). <a class="fourier-link" href="../../systems/lti-systems/#step2">Every box in the loop has its own h: start with the answer to one impulse →</a>',
     s2gain: 'Rule gain K',
     s2reveal: 'Time to name it: a rule that pushes in proportion to the error is called <strong>proportional control — P</strong>. Written out: u = Kp·e, where e = target angle − current angle (the target is upright, 0°). Lean right and e goes negative, u goes negative, and the wheels accelerate rightwards, chasing the fall — the sign of the error steers automatically; the Kp you just dragged decides how hard it chases. Over the next three steps we bolt on D, then I.',
     cSensor: 'Angle sensor', cError: 'Error e', cCtrl: 'Controller', cMotor: 'Motor', cPlant: 'Body · tilt θ',

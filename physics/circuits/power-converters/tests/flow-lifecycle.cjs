@@ -3,7 +3,7 @@ const {chromium}=require('playwright'),assert=require('node:assert/strict');
 const base=process.env.BASE_URL||'http://127.0.0.1:18791';
 (async()=>{const b=await chromium.launch({channel:'chrome',headless:true}),p=await b.newPage({viewport:{width:390,height:1000}}),errors=[];p.on('pageerror',e=>errors.push(e.message));
 try{
- await p.goto(base+'/power-converters/#step4');
+ await p.goto(base+'/physics/circuits/power-converters/#step4');
  // Shrinking positive capacitor current must never make dashes reverse.
  const offsets=await p.evaluate(()=>{
   const host=document.querySelector('#buck-diagram');const m=PowerModel.converter('buck',12,.5),values=[];

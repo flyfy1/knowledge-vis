@@ -1748,12 +1748,12 @@ Atlas ordinary route `optics` connects existing unit-circle to one canonical `sn
 
 ## 投资图谱（2026-10-30，首批）
 
-投资知识地图在 `atlas-investment/`：12 概念、22 联系、5 问题路线、5 分区
+投资知识地图在 `investment/atlas/`：12 概念、22 联系、5 问题路线、5 分区
 （基础概念 / 市场与工具 / 风险 / 估值 / 行为；行为分区首批为空，如实显示
 “即将到来”）。每题沿问题链走进对应交互课（step 锚点见主表 129–138 行）；
 主图谱节点（复利、方差、风险分摊、供需、概率）以跨图深链引用，不在投资图内
 复制节点。许可：定义本站原创，Investor.gov 仅术语对照，OpenStax / Saylor /
-Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `atlas-investment/sources.html`。
+Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investment/atlas/sources.html`。
 
 <!-- GENERATED:atlas-nodes -->
 ## 三、图谱节点索引（生成，勿手改）
@@ -1764,75 +1764,75 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `atlas-i
 
 | 概念 | 来源 | 课程 |
 | --- | --- | --- |
-| 鸡兔同笼 · 先假设，差额会说话 / Chickens & Rabbits · Assume First, Let the Gap Speak | ../chicken-rabbit/#step2 | chicken-rabbit#step2 |
-| 圆的认识 · 圆规、半径与 π / The Circle · Compass, Radius and π | ../circle-intro/#step3 | circle-intro#step3 |
-| 间隔与植树 · 段数和点数差一 / Intervals & Fences · Gaps and Posts Differ by One | ../intervals-fences/#step2 | intervals-fences#step2 |
-| 找规律 · 不画也能报出第 100 个 / Patterns · Name the 100th Without Drawing It | ../patterns-sequences/#step2 | patterns-sequences#step2 |
-| 位值与计数器 · 满十进一 / Place Value & the Counting Frame · Ten Makes One | ../place-value/#step2 | place-value#step2 |
-| 不等式 · 天平倾斜，答案是一整段 / Inequalities · A Tilted Scale Has a Whole Range of Answers | ../inequalities/#step3 | inequalities#step3 |
-| 反比例函数 · 此消彼长 / Inverse Proportion · One Up, One Down | ../inverse-proportion/#step2 | inverse-proportion#step2 |
-| 多边形内角和 · 撕下来拼一拼 / Polygon Angle Sums · Tear and Rearrange | ../polygon-angles/#step2 | polygon-angles#step2 |
-| 实数与数轴 · √2 落在哪一点 / Real Numbers & the Number Line · Where √2 Lands | ../real-number-line/#step2 | real-number-line#step2 |
-| 相似与缩放 · 长度、面积、体积各变几倍 / Similarity & Scaling · Lengths, Areas and Volumes Each Change Differently | ../similarity-scaling/#step2 | similarity-scaling#step2 |
-| 二元一次方程组 · 两条直线的交点 / Simultaneous Equations · Where Two Lines Meet | ../simultaneous-equations/#step4 | simultaneous-equations#step4 |
-| 直线斜率 / Straight-line slope | ../linear-functions/#step2 | linear-functions#step2 |
-| 立体几何 / Solid Geometry | ../solid-geometry/#step2 | solid-geometry#step2 |
-| 三视图 · 三张影子拼回立体 / Three Views · Three Shadows Rebuild a Solid | ../three-views/#step3 | three-views#step3 |
-| 复数与旋转 / Complex rotation | ../complex-numbers/#step4 | complex-numbers#step4 |
-| 复利与贴现 / Compound interest & discounting | ../compound-interest/#step1 | compound-interest#step1 |
-| 圆锥曲线 / Conic sections | ../conic-sections/#step1 | conic-sections#step1 |
-| 排列与组合 / Permutations & combinations | ../counting-permutations/#step3 | counting-permutations#step3 |
-| 导数与瞬时变化率 / Derivatives & instantaneous rates | ../derivative/#step2 | derivative#step2 |
-| 指数与对数 / Exponents & logarithms | ../exp-log/#step2 | exp-log#step2 |
-| 期望 / Expected value | ../expected-value/#step1 | expected-value#step1 |
-| 定积分与有符号累加 / Definite integral & signed accumulation | ../integral/#step2 | integral#step2 |
-| 同分异构体 / Isomers | ../isomers/#step1 | isomers#step1 |
-| 分子构型与极性 / Molecular shapes and polarity | ../molecular-shapes/#step0 | molecular-shapes#step0 |
-| 元素周期律 / Periodic trends | ../periodic-trends/#step2 | periodic-trends#step2 |
-| 数列与求和 / Sequences & Series | ../sequences-series/#step1 | sequences-series#step1 |
-| 特征向量 / Eigenvectors | ../eigen/#step1 | eigen#step1 |
-| 词向量 / Word embeddings | ../embeddings/#step1 | embeddings#step1 |
-| 外部性与公地悲剧 / Externalities & the tragedy of the commons | ../externalities/#step3 | externalities#step3 |
-| 拉普拉斯变换 / Laplace transform | ../laplace/#step1 | laplace#step1 |
-| 牛顿法求根 / Newton’s Method for Roots | ../newton-method/#step2 | newton-method#step2 |
-| PageRank / PageRank | ../pagerank/#step2 | pagerank#step2 |
-| RSA 公钥加密 / RSA Public-Key Encryption | ../rsa-encryption/#step3 | rsa-encryption#step3 |
-| 正弦与余弦 / Sine & cosine | ../trig/#step3 | trig#step3 |
-| 泰勒级数 / Taylor Series | ../taylor-series/#step2 | taylor-series#step2 |
-| 单位圆 / Unit circle | ../trig/#step1 | trig#step1 |
-| 向量与线性变换 / Vectors & linear maps | ../eigen/#step1 | eigen#step1, vectors#step1 |
+| 鸡兔同笼 · 先假设，差额会说话 / Chickens & Rabbits · Assume First, Let the Gap Speak | ../math/arithmetic/chicken-rabbit/#step2 | chicken-rabbit#step2 |
+| 圆的认识 · 圆规、半径与 π / The Circle · Compass, Radius and π | ../math/geometry/circle-intro/#step3 | circle-intro#step3 |
+| 间隔与植树 · 段数和点数差一 / Intervals & Fences · Gaps and Posts Differ by One | ../math/arithmetic/intervals-fences/#step2 | intervals-fences#step2 |
+| 找规律 · 不画也能报出第 100 个 / Patterns · Name the 100th Without Drawing It | ../math/algebra/patterns-sequences/#step2 | patterns-sequences#step2 |
+| 位值与计数器 · 满十进一 / Place Value & the Counting Frame · Ten Makes One | ../math/arithmetic/place-value/#step2 | place-value#step2 |
+| 不等式 · 天平倾斜，答案是一整段 / Inequalities · A Tilted Scale Has a Whole Range of Answers | ../math/algebra/inequalities/#step3 | inequalities#step3 |
+| 反比例函数 · 此消彼长 / Inverse Proportion · One Up, One Down | ../math/algebra/inverse-proportion/#step2 | inverse-proportion#step2 |
+| 多边形内角和 · 撕下来拼一拼 / Polygon Angle Sums · Tear and Rearrange | ../math/geometry/polygon-angles/#step2 | polygon-angles#step2 |
+| 实数与数轴 · √2 落在哪一点 / Real Numbers & the Number Line · Where √2 Lands | ../math/arithmetic/real-number-line/#step2 | real-number-line#step2 |
+| 相似与缩放 · 长度、面积、体积各变几倍 / Similarity & Scaling · Lengths, Areas and Volumes Each Change Differently | ../math/geometry/similarity-scaling/#step2 | similarity-scaling#step2 |
+| 二元一次方程组 · 两条直线的交点 / Simultaneous Equations · Where Two Lines Meet | ../math/algebra/simultaneous-equations/#step4 | simultaneous-equations#step4 |
+| 直线斜率 / Straight-line slope | ../math/algebra/linear-functions/#step2 | linear-functions#step2 |
+| 立体几何 / Solid Geometry | ../math/geometry/solid-geometry/#step2 | solid-geometry#step2 |
+| 三视图 · 三张影子拼回立体 / Three Views · Three Shadows Rebuild a Solid | ../math/geometry/three-views/#step3 | three-views#step3 |
+| 复数与旋转 / Complex rotation | ../math/algebra/complex-numbers/#step4 | complex-numbers#step4 |
+| 复利与贴现 / Compound interest & discounting | ../investment/rates/compound-interest/#step1 | compound-interest#step1 |
+| 圆锥曲线 / Conic sections | ../math/geometry/conic-sections/#step1 | conic-sections#step1 |
+| 排列与组合 / Permutations & combinations | ../probability/basics/counting-permutations/#step3 | counting-permutations#step3 |
+| 导数与瞬时变化率 / Derivatives & instantaneous rates | ../math/calculus/derivative/#step2 | derivative#step2 |
+| 指数与对数 / Exponents & logarithms | ../math/algebra/exponents-logarithms/#step2 | exponents-logarithms#step2 |
+| 期望 / Expected value | ../probability/basics/expected-value/#step1 | expected-value#step1 |
+| 定积分与有符号累加 / Definite integral & signed accumulation | ../math/calculus/integral/#step2 | integral#step2 |
+| 同分异构体 / Isomers | ../chemistry/matter/isomers/#step1 | isomers#step1 |
+| 分子构型与极性 / Molecular shapes and polarity | ../chemistry/matter/molecular-shapes/#step0 | molecular-shapes#step0 |
+| 元素周期律 / Periodic trends | ../chemistry/matter/periodic-trends/#step2 | periodic-trends#step2 |
+| 数列与求和 / Sequences & Series | ../math/algebra/sequences-series/#step1 | sequences-series#step1 |
+| 特征向量 / Eigenvectors | ../math/linear-algebra/eigenvectors/#step1 | eigenvectors#step1 |
+| 词向量 / Word embeddings | ../computing/ml/embeddings/#step1 | embeddings#step1 |
+| 外部性与公地悲剧 / Externalities & the tragedy of the commons | ../math/applied/externalities/#step3 | externalities#step3 |
+| 拉普拉斯变换 / Laplace transform | ../signal/transforms/laplace/#step1 | laplace#step1 |
+| 牛顿法求根 / Newton’s Method for Roots | ../math/calculus/newton-method/#step2 | newton-method#step2 |
+| PageRank / PageRank | ../computing/algorithms/pagerank/#step2 | pagerank#step2 |
+| RSA 公钥加密 / RSA Public-Key Encryption | ../computing/systems/rsa-encryption/#step3 | rsa-encryption#step3 |
+| 正弦与余弦 / Sine & cosine | ../math/geometry/trigonometry/#step3 | trigonometry#step3 |
+| 泰勒级数 / Taylor Series | ../math/calculus/taylor-series/#step2 | taylor-series#step2 |
+| 单位圆 / Unit circle | ../math/geometry/trigonometry/#step1 | trigonometry#step1 |
+| 向量与线性变换 / Vectors & linear maps | ../math/linear-algebra/eigenvectors/#step1 | eigenvectors#step1, vectors#step1 |
 
 ### 02 运动与波动 / Motion & waves
 
 | 概念 | 来源 | 课程 |
 | --- | --- | --- |
-| 浮与沉 · 排开的水托住了谁 / Float & Sink · What the Displaced Water Holds Up | ../float-sink/#step1 | float-sink#step1 |
-| 相似三角形与小孔倒像 / Similar triangles & pinhole inversion | ../pinhole-camera/#geometry-bridge | pinhole-camera |
-| 声音从振动来 · 米粒会跳的鼓 / Sound from Vibration · A Drum with Jumping Rice | ../sound-vibration/#step2 | sound-vibration#step2 |
-| 浮力与阿基米德原理 / Buoyancy & Archimedes' principle | ../buoyancy-archimedes/#step1 | buoyancy-archimedes#step1 |
-| 眼睛与眼镜 / The eye and glasses | ../eye-vision/#step2 | eye-vision#step2 |
-| 动量与碰撞 · 速度不是全部 / Momentum & Collisions · Speed Is Not the Whole Story | ../momentum-collision/#step2 | momentum-collision#step2 |
-| 压强 / Pressure | ../pressure/#step0 | pressure#step0 |
-| Snell关系与全反射 / Snell relation & total internal reflection | ../reflection-refraction/#snell-bridge | reflection-refraction |
-| 声音是波 / Sound Is a Wave | ../sound-waves/#step1 | sound-waves#step1 |
-| 速度–时间图 / Velocity–time graphs | ../velocity-vt/#step1 | velocity-vt#step1 |
-| 多普勒效应 / The Doppler effect | ../doppler-effect/#step2 | doppler-effect#step2 |
-| 叠加与干涉 / Superposition & interference | ../interference/#step1 | interference#step1 |
-| 牛顿运动定律 / Newton’s Laws of Motion | ../newton-laws/#step2 | newton-laws#step2 |
-| 抛体与圆周 / Projectiles & Circular Motion | ../projectile-circular/#step4 | projectile-circular#step4 |
-| 地震波探地心 / Seismic Waves Probing the Earth’s Core | ../seismic-waves/#step3 | seismic-waves#step3 |
-| 双缝实验 / The double-slit experiment | ../double-slit/#step2 | double-slit#step2 |
-| 傅里叶分析 / Fourier analysis | ../fourier/#step5 | fourier#step5 |
-| 引力透镜 / Gravitational lensing | ../gravitational-lensing/#step2 | gravitational-lensing#step2 |
-| 气体动理论 / Kinetic theory of gases | ../kinetic-theory/#step0 | kinetic-theory#step0 |
-| 光电效应 / The photoelectric effect | ../photoelectric-effect/#step1 | photoelectric-effect#step1 |
-| 量子隧穿 / Quantum Tunnelling | ../quantum-tunneling/#step1 | quantum-tunneling#step1 |
-| 狭义相对论 / Special Relativity | ../relativity/#step1 | relativity#step1 |
-| 共振 / Resonance | ../resonance/#step3 | freqresp#step5, resonance#step3 |
-| 采样与混叠 / Sampling & aliasing | ../sampling/#step3 | sampling#step3 |
-| 频谱 / Spectrum | ../fourier/#step5 | fourier#step5 |
-| 波的叠加 / Superposition | ../fourier/#step2 | fourier#step2 |
-| 小波与时频分析 / Wavelets & time-frequency analysis | ../wavelets/#step2 | wavelets#step2 |
+| 浮与沉 · 排开的水托住了谁 / Float & Sink · What the Displaced Water Holds Up | ../physics/matter/float-sink/#step1 | float-sink#step1 |
+| 相似三角形与小孔倒像 / Similar triangles & pinhole inversion | ../physics/optics/pinhole-camera/#geometry-bridge | pinhole-camera |
+| 声音从振动来 · 米粒会跳的鼓 / Sound from Vibration · A Drum with Jumping Rice | ../physics/waves/sound-vibration/#step2 | sound-vibration#step2 |
+| 浮力与阿基米德原理 / Buoyancy & Archimedes' principle | ../physics/matter/buoyancy-archimedes/#step1 | buoyancy-archimedes#step1 |
+| 眼睛与眼镜 / The eye and glasses | ../physics/optics/eye-vision/#step2 | eye-vision#step2 |
+| 动量与碰撞 · 速度不是全部 / Momentum & Collisions · Speed Is Not the Whole Story | ../physics/mechanics/momentum-collision/#step2 | momentum-collision#step2 |
+| 压强 / Pressure | ../physics/matter/pressure/#step0 | pressure#step0 |
+| Snell关系与全反射 / Snell relation & total internal reflection | ../physics/optics/reflection-refraction/#snell-bridge | reflection-refraction |
+| 声音是波 / Sound Is a Wave | ../physics/waves/sound-waves/#step1 | sound-waves#step1 |
+| 速度–时间图 / Velocity–time graphs | ../physics/mechanics/velocity-vt/#step1 | velocity-vt#step1 |
+| 多普勒效应 / The Doppler effect | ../physics/waves/doppler-effect/#step2 | doppler-effect#step2 |
+| 叠加与干涉 / Superposition & interference | ../physics/waves/interference/#step1 | interference#step1 |
+| 牛顿运动定律 / Newton’s Laws of Motion | ../physics/mechanics/newton-laws/#step2 | newton-laws#step2 |
+| 抛体与圆周 / Projectiles & Circular Motion | ../physics/mechanics/projectile-circular/#step4 | projectile-circular#step4 |
+| 地震波探地心 / Seismic Waves Probing the Earth’s Core | ../earth/geo/seismic-waves/#step3 | seismic-waves#step3 |
+| 双缝实验 / The double-slit experiment | ../physics/modern/double-slit/#step2 | double-slit#step2 |
+| 傅里叶分析 / Fourier analysis | ../signal/transforms/fourier/#step5 | fourier#step5 |
+| 引力透镜 / Gravitational lensing | ../earth/astronomy/gravitational-lensing/#step2 | gravitational-lensing#step2 |
+| 气体动理论 / Kinetic theory of gases | ../physics/thermal/kinetic-theory/#step0 | kinetic-theory#step0 |
+| 光电效应 / The photoelectric effect | ../physics/modern/photoelectric-effect/#step1 | photoelectric-effect#step1 |
+| 量子隧穿 / Quantum Tunnelling | ../physics/modern/quantum-tunneling/#step1 | quantum-tunneling#step1 |
+| 狭义相对论 / Special Relativity | ../physics/modern/relativity/#step1 | relativity#step1 |
+| 共振 / Resonance | ../physics/waves/resonance/#step3 | frequency-response#step5, resonance#step3 |
+| 采样与混叠 / Sampling & aliasing | ../signal/sampling/sampling/sampling/#step3 | sampling#step3 |
+| 频谱 / Spectrum | ../signal/transforms/fourier/#step5 | fourier#step5 |
+| 波的叠加 / Superposition | ../signal/transforms/fourier/#step2 | fourier#step2 |
+| 小波与时频分析 / Wavelets & time-frequency analysis | ../signal/transforms/wavelets/#step2 | wavelets#step2 |
 | 净力与牛顿第二定律 / Net force & Newton’s second law | https://openstax.org/books/university-physics-volume-1/pages/5-3-newtons-second-law | — |
 | 简谐振动 / Harmonic motion | https://openstax.org/books/university-physics-volume-1/pages/15-1-simple-harmonic-motion | — |
 | 功与能量变化 / Work & energy changes | https://openstax.org/books/university-physics-volume-1/pages/7-3-work-energy-theorem | — |
@@ -1841,129 +1841,129 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `atlas-i
 
 | 概念 | 来源 | 课程 |
 | --- | --- | --- |
-| 磁铁 · 铁屑显出看不见的线 / Magnets · Iron Filings Reveal Unseen Lines | ../magnets/#step2 | magnets#step2 |
-| 简单电路 · 电流要走一圈 / Simple Circuits · Current Must Go Round | ../simple-circuits/#step3 | simple-circuits#step3 |
-| 欧姆定律 / Ohm’s Law | ../ohms-law/#step0 | ohms-law#step0 |
-| 串联与并联 / Series & Parallel Circuits | ../series-parallel/#step2 | series-parallel#step2 |
-| 黑体辐射 / Blackbody radiation | ../blackbody-radiation/#step5 | blackbody-radiation#step5 |
-| 电场与电势 / Electric fields and potential | ../electric-fields/#step2 | electric-fields#step2 |
-| 电化学：原电池与电解池 / Electrochemistry: galvanic and electrolytic cells | ../electrochemistry/#step2 | electrochemistry#step2 |
-| 电磁感应与发电 / Electromagnetic induction and generators | ../electromagnetic-induction/#step1 | electromagnetic-induction#step1 |
-| 磁场与洛伦兹力 / Magnetic force on moving charges | ../magnetic-force/#step1 | magnetic-force#step1 |
-| Boost 升压电路 / Boost converter | ../power-converters/#step5 | power-converters |
-| Buck 降压电路 / Buck converter | ../power-converters/#step4 | power-converters |
-| 电容与电场储能 / Capacitor & electric energy | ../power-converters/#step2 | power-converters |
-| 卡诺循环 / The Carnot cycle | ../carnot-cycle/#step4 | carnot-cycle#step4 |
-| 电感与磁场储能 / Inductor & magnetic energy | ../power-converters/#step1 | power-converters |
-| 电压、电流与功率 / Voltage, current & power | ../power-converters/#step0 | power-converters |
-| 脉宽调制 PWM / Pulse-width modulation | ../power-converters/#step3 | power-converters |
-| 开关与二极管 / Switches & diodes | ../power-converters/#step3 | power-converters |
+| 磁铁 · 铁屑显出看不见的线 / Magnets · Iron Filings Reveal Unseen Lines | ../physics/electromagnetism/magnets/#step2 | magnets#step2 |
+| 简单电路 · 电流要走一圈 / Simple Circuits · Current Must Go Round | ../physics/circuits/simple-circuits/#step3 | simple-circuits#step3 |
+| 欧姆定律 / Ohm’s Law | ../physics/circuits/ohms-law/#step0 | ohms-law#step0 |
+| 串联与并联 / Series & Parallel Circuits | ../physics/circuits/series-parallel/#step2 | series-parallel#step2 |
+| 黑体辐射 / Blackbody radiation | ../physics/modern/blackbody-radiation/#step5 | blackbody-radiation#step5 |
+| 电场与电势 / Electric fields and potential | ../physics/electromagnetism/electric-fields/#step2 | electric-fields#step2 |
+| 电化学：原电池与电解池 / Electrochemistry: galvanic and electrolytic cells | ../chemistry/reactions/electrochemistry/#step2 | electrochemistry#step2 |
+| 电磁感应与发电 / Electromagnetic induction and generators | ../physics/electromagnetism/electromagnetic-induction/#step1 | electromagnetic-induction#step1 |
+| 磁场与洛伦兹力 / Magnetic force on moving charges | ../physics/electromagnetism/magnetic-force/#step1 | magnetic-force#step1 |
+| Boost 升压电路 / Boost converter | ../physics/circuits/power-converters/#step5 | power-converters |
+| Buck 降压电路 / Buck converter | ../physics/circuits/power-converters/#step4 | power-converters |
+| 电容与电场储能 / Capacitor & electric energy | ../physics/circuits/power-converters/#step2 | power-converters |
+| 卡诺循环 / The Carnot cycle | ../physics/thermal/carnot-cycle/#step4 | carnot-cycle#step4 |
+| 电感与磁场储能 / Inductor & magnetic energy | ../physics/circuits/power-converters/#step1 | power-converters |
+| 电压、电流与功率 / Voltage, current & power | ../physics/circuits/power-converters/#step0 | power-converters |
+| 脉宽调制 PWM / Pulse-width modulation | ../physics/circuits/power-converters/#step3 | power-converters |
+| 开关与二极管 / Switches & diodes | ../physics/circuits/power-converters/#step3 | power-converters |
 
 ### 04 系统与响应 / Systems & response
 
 | 概念 | 来源 | 课程 |
 | --- | --- | --- |
-| 水的循环 · 一滴水的旅行 / The Water Cycle · One Drop's Journey | ../water-cycle/#step4 | water-cycle#step4 |
-| 能量金字塔与营养级 / The energy pyramid and trophic levels | ../energy-pyramid/#step1 | energy-pyramid#step1 |
-| 机械能守恒 / Conservation of mechanical energy | ../mechanical-energy/#step1 | mechanical-energy#step1 |
-| 活化能与阿伦尼乌斯 / Activation energy and the Arrhenius law | ../activation-energy/#step2 | activation-energy#step2 |
-| DNA 复制、转录与翻译 / DNA replication, transcription and translation | ../dna-replication/#step3 | dna-replication#step3 |
-| 酶：生物催化剂 / Enzymes: biological catalysts | ../enzymes/#step1 | enzymes#step1 |
-| 万有引力与轨道 / Gravity and orbits | ../gravity-orbits/#step4 | gravity-orbits#step4 |
-| 注意力机制 / Attention mechanism | ../attention-mechanism/#step2 | attention-mechanism#step2 |
-| 反向传播 / Backpropagation | ../backpropagation/#step2 | backpropagation#step2 |
-| 混沌与三体 / Chaos and the three-body problem | ../chaos-threebody/#step3 | chaos-threebody#step3 |
-| 卷积 / Convolution | ../convolution/#step2 | convolution#step2 |
-| 反馈控制 / Feedback control | ../control/#step2 | control#step2 |
-| 频率响应 / Frequency response | ../freqresp/#step0 | freqresp#step0 |
-| 梯度下降 / Gradient descent | ../gradient-descent/#step0 | gradient-descent#step0 |
-| 冲激响应 / Impulse response | ../lti/#step2 | lti#step2 |
-| 线性时不变系统 / LTI systems | ../lti/#step3 | lti#step3 |
-| 微分方程相图 / ODE Phase Portraits | ../ode-phase-portraits/#step2 | ode-phase-portraits#step2 |
-| 极点与稳定性 / Poles & stability | ../laplace/#step4 | laplace#step4 |
-| 囚徒困境与演化博弈 / The Prisoner’s Dilemma & Evolutionary Games | ../prisoners-dilemma/#step3 | prisoners-dilemma#step3 |
-| 递归与分治 / Recursion & divide-and-conquer | ../recursion-divide/#step2 | recursion-divide#step2 |
-| 最短路（迪杰斯特拉） / Shortest Path (Dijkstra) | ../shortest-path/#step1 | shortest-path#step1 |
+| 水的循环 · 一滴水的旅行 / The Water Cycle · One Drop's Journey | ../earth/climate/water-cycle/#step4 | water-cycle#step4 |
+| 能量金字塔与营养级 / The energy pyramid and trophic levels | ../biology/ecology/energy-pyramid/#step1 | energy-pyramid#step1 |
+| 机械能守恒 / Conservation of mechanical energy | ../physics/mechanics/mechanical-energy/#step1 | mechanical-energy#step1 |
+| 活化能与阿伦尼乌斯 / Activation energy and the Arrhenius law | ../chemistry/reactions/activation-energy/#step2 | activation-energy#step2 |
+| DNA 复制、转录与翻译 / DNA replication, transcription and translation | ../biology/cells/dna-replication/#step3 | dna-replication#step3 |
+| 酶：生物催化剂 / Enzymes: biological catalysts | ../biology/cells/enzymes/#step1 | enzymes#step1 |
+| 万有引力与轨道 / Gravity and orbits | ../earth/astronomy/gravity-orbits/#step4 | gravity-orbits#step4 |
+| 注意力机制 / Attention mechanism | ../computing/ml/attention-mechanism/#step2 | attention-mechanism#step2 |
+| 反向传播 / Backpropagation | ../computing/ml/backpropagation/#step2 | backpropagation#step2 |
+| 混沌与三体 / Chaos and the three-body problem | ../physics/mechanics/chaos-threebody/#step3 | chaos-threebody#step3 |
+| 卷积 / Convolution | ../signal/systems/convolution/#step2 | convolution#step2 |
+| 反馈控制 / Feedback control | ../signal/control/inverted-pendulum/inverted-pendulum/#step2 | inverted-pendulum#step2 |
+| 频率响应 / Frequency response | ../signal/systems/frequency-response/#step0 | frequency-response#step0 |
+| 梯度下降 / Gradient descent | ../computing/ml/gradient-descent/#step0 | gradient-descent#step0 |
+| 冲激响应 / Impulse response | ../signal/systems/lti-systems/#step2 | lti-systems#step2 |
+| 线性时不变系统 / LTI systems | ../signal/systems/lti-systems/#step3 | lti-systems#step3 |
+| 微分方程相图 / ODE Phase Portraits | ../math/calculus/ode-phase-portraits/#step2 | ode-phase-portraits#step2 |
+| 极点与稳定性 / Poles & stability | ../signal/transforms/laplace/#step4 | laplace#step4 |
+| 囚徒困境与演化博弈 / The Prisoner’s Dilemma & Evolutionary Games | ../math/applied/prisoners-dilemma/#step3 | prisoners-dilemma#step3 |
+| 递归与分治 / Recursion & divide-and-conquer | ../computing/algorithms/recursion-divide/#step2 | recursion-divide#step2 |
+| 最短路（迪杰斯特拉） / Shortest Path (Dijkstra) | ../computing/algorithms/shortest-path/#step1 | shortest-path#step1 |
 
 ### 05 测量与不确定性 / Measurement & uncertainty
 
 | 概念 | 来源 | 课程 |
 | --- | --- | --- |
-| 平均数 · 移多补少 / Averages · Level by Pouring | ../averaging-leveling/#step2 | averaging-leveling#step2 |
-| 条形图 · 让数字站成一排比高矮 / Bar Charts · Numbers Standing in a Row | ../bar-charts/#step3 | bar-charts#step3 |
-| 时钟与角度 · 两根针的赛跑 / Clocks & Angles · A Race Between Two Hands | ../clock-angles/#step1 | clock-angles#step1 |
-| 密度 / Density | ../density/#step2 | density#step2 |
-| 平均数、中位数、众数之争 · 三个“平均”三个故事 / Mean, Median, Mode · Three “Averages”, Three Stories | ../mean-median-mode/#step1 | mean-median-mode#step1 |
-| 二项分布到正态 / Binomial to normal | ../binomial-normal/#step3 | binomial-normal#step3 |
-| 估计与不确定度 / Estimation & uncertainty | ../titration-curves/#step4 | titration-curves#step4 |
-| 减数分裂与配子多样性 / Meiosis and gamete diversity | ../meiosis/#step2 | meiosis#step2 |
-| 自然选择与遗传漂变 / Natural selection and genetic drift | ../natural-selection/#step2 | natural-selection#step2 |
-| 概率分布 · 随机性也有形状 / Probability Distributions · Randomness Has a Shape | ../probability-distribution/#step0 | probability-distribution#step0 |
-| 回归与相关 / Regression & Correlation | ../regression-correlation/#step1 | regression-correlation#step1 |
-| 滴定曲线与指示剂 / Titration curves and indicators | ../titration-curves/#step2 | titration-curves#step2 |
-| 多臂老虎机与探索-利用 / Multi-armed bandits & explore-exploit | ../bandit-arms/#step2 | bandit-arms#step2 |
-| 贝叶斯更新 / Bayesian updating | ../bayes/#step1 | bayes#step1 |
-| 决策树与信息增益 / Decision trees & information gain | ../decision-trees/#step1 | decision-trees#step1 |
-| 正态分布与中心极限定理 / Normal distributions & CLT | ../clt/#step3 | clt#step3 |
-| 假设检验与 p 值 / Hypothesis testing & p-values | ../hypothesis-testing/#step0 | hypothesis-testing#step0 |
-| 卡尔曼滤波 / Kalman filtering | ../kalman/#step2 | kalman#step2 |
-| 大语言模型的逐词采样 / LLM next-word sampling | ../llm-sampling/#step1 | llm-sampling#step1 |
-| 马尔可夫链 / Markov chains | ../markov-chains/#step3 | markov-chains#step3 |
-| 蒙特卡洛估计 / Monte Carlo estimation | ../montecarlo/#step3 | montecarlo#step3 |
-| 过拟合与偏差-方差 / Overfitting & bias-variance | ../overfitting/#step1 | overfitting#step1 |
-| 泊松过程 / The Poisson Process | ../poisson-process/#step2 | poisson-process#step2 |
-| 概率模型 / Probability models | ../bayes/#step0 | bayes#step0 |
-| 风险池化与保险 / Risk Pooling & Insurance | ../risk-pooling/#step1 | risk-pooling#step1 |
-| 方差 / Variance | ../clt/#step3 | clt#step3 |
+| 平均数 · 移多补少 / Averages · Level by Pouring | ../math/data/averaging-leveling/#step2 | averaging-leveling#step2 |
+| 条形图 · 让数字站成一排比高矮 / Bar Charts · Numbers Standing in a Row | ../math/data/bar-charts/#step3 | bar-charts#step3 |
+| 时钟与角度 · 两根针的赛跑 / Clocks & Angles · A Race Between Two Hands | ../math/geometry/clock-angles/#step1 | clock-angles#step1 |
+| 密度 / Density | ../physics/matter/density/#step2 | density#step2 |
+| 平均数、中位数、众数之争 · 三个“平均”三个故事 / Mean, Median, Mode · Three “Averages”, Three Stories | ../probability/statistics/mean-median-mode/#step1 | mean-median-mode#step1 |
+| 二项分布到正态 / Binomial to normal | ../probability/basics/binomial-normal/#step3 | binomial-normal#step3 |
+| 估计与不确定度 / Estimation & uncertainty | ../chemistry/solutions/titration-curves/#step4 | titration-curves#step4 |
+| 减数分裂与配子多样性 / Meiosis and gamete diversity | ../biology/cells/meiosis/#step2 | meiosis#step2 |
+| 自然选择与遗传漂变 / Natural selection and genetic drift | ../biology/ecology/natural-selection/#step2 | natural-selection#step2 |
+| 概率分布 · 随机性也有形状 / Probability Distributions · Randomness Has a Shape | ../probability/basics/probability-distribution/#step0 | probability-distribution#step0 |
+| 回归与相关 / Regression & Correlation | ../probability/statistics/regression-correlation/#step1 | regression-correlation#step1 |
+| 滴定曲线与指示剂 / Titration curves and indicators | ../chemistry/solutions/titration-curves/#step2 | titration-curves#step2 |
+| 多臂老虎机与探索-利用 / Multi-armed bandits & explore-exploit | ../probability/stochastic/bandit-arms/#step2 | bandit-arms#step2 |
+| 贝叶斯更新 / Bayesian updating | ../probability/inference/bayes-updating/#step1 | bayes-updating#step1 |
+| 决策树与信息增益 / Decision trees & information gain | ../computing/ml/decision-trees/#step1 | decision-trees#step1 |
+| 正态分布与中心极限定理 / Normal distributions & CLT | ../probability/statistics/central-limit-theorem/#step3 | central-limit-theorem#step3 |
+| 假设检验与 p 值 / Hypothesis testing & p-values | ../probability/inference/hypothesis-testing/#step0 | hypothesis-testing#step0 |
+| 卡尔曼滤波 / Kalman filtering | ../signal/control/inverted-pendulum/kalman/#step2 | kalman#step2 |
+| 大语言模型的逐词采样 / LLM next-word sampling | ../computing/ml/llm-sampling/#step1 | llm-sampling#step1 |
+| 马尔可夫链 / Markov chains | ../probability/stochastic/markov-chains/#step3 | markov-chains#step3 |
+| 蒙特卡洛估计 / Monte Carlo estimation | ../probability/stochastic/monte-carlo/#step3 | monte-carlo#step3 |
+| 过拟合与偏差-方差 / Overfitting & bias-variance | ../computing/ml/overfitting/#step1 | overfitting#step1 |
+| 泊松过程 / The Poisson Process | ../probability/stochastic/poisson-process/#step2 | poisson-process#step2 |
+| 概率模型 / Probability models | ../probability/inference/bayes-updating/#step0 | bayes-updating#step0 |
+| 风险池化与保险 / Risk Pooling & Insurance | ../probability/stochastic/risk-pooling/#step1 | risk-pooling#step1 |
+| 方差 / Variance | ../probability/statistics/central-limit-theorem/#step3 | central-limit-theorem#step3 |
 
 ### 06 物质与变化 / Matter & change
 
 | 概念 | 来源 | 课程 |
 | --- | --- | --- |
-| 燃烧三要素 / The fire triangle | ../combustion-triangle/#step3 | combustion-triangle#step3 |
-| 溶解与饱和 / Dissolution & saturation | ../dissolution-saturation/#step2 | dissolution-saturation#step2 |
-| 化学方程式配平 / Balancing chemical equations | ../equation-balancing/#step0 | equation-balancing#step0 |
-| 分子与原子 / Molecules & atoms | ../molecules-atoms/#step2 | molecules-atoms#step2 |
-| 粒子与物态 · 热闹程度即温度 / Particles & States · Temperature Is How Wildly They Move | ../particles-states/#step1 | particles-states#step1 |
-| pH 标度 / The pH scale | ../ph-scale/#step1 | ph-scale#step1 |
+| 燃烧三要素 / The fire triangle | ../chemistry/reactions/combustion-triangle/#step3 | combustion-triangle#step3 |
+| 溶解与饱和 / Dissolution & saturation | ../chemistry/solutions/dissolution-saturation/#step2 | dissolution-saturation#step2 |
+| 化学方程式配平 / Balancing chemical equations | ../chemistry/reactions/equation-balancing/#step0 | equation-balancing#step0 |
+| 分子与原子 / Molecules & atoms | ../chemistry/matter/molecules-atoms/#step2 | molecules-atoms#step2 |
+| 粒子与物态 · 热闹程度即温度 / Particles & States · Temperature Is How Wildly They Move | ../chemistry/matter/particles-states/#step1 | particles-states#step1 |
+| pH 标度 / The pH scale | ../chemistry/solutions/ph-scale/#step1 | ph-scale#step1 |
 
 ### 07 生命与生态 / Life & ecology
 
 | 概念 | 来源 | 课程 |
 | --- | --- | --- |
-| 血液循环 / Blood circulation | ../blood-circulation/#step3 | blood-circulation#step3 |
-| 细胞 · 生命的最小单位间 / The Cell · Life's Smallest Workshop | ../cell-structure/#step1 | cell-structure#step1 |
-| 食物网 / Food webs | ../food-web/#step1 | food-web#step1 |
-| 光合作用 / Photosynthesis | ../photosynthesis/#step1 | photosynthesis#step1 |
+| 血液循环 / Blood circulation | ../biology/body/blood-circulation/#step3 | blood-circulation#step3 |
+| 细胞 · 生命的最小单位间 / The Cell · Life's Smallest Workshop | ../biology/cells/cell-structure/#step1 | cell-structure#step1 |
+| 食物网 / Food webs | ../biology/ecology/food-web/#step1 | food-web#step1 |
+| 光合作用 / Photosynthesis | ../biology/cells/photosynthesis/#step1 | photosynthesis#step1 |
 
 ### 08 地球与宇宙 / Earth & cosmos
 
 | 概念 | 来源 | 课程 |
 | --- | --- | --- |
-| 月相 · 从地球看被照亮的那一半 / Moon Phases · The Lit Half, Seen from Earth | ../moon-phases/#step1 | moon-phases#step1 |
-| 等高线 / Contour lines | ../contour-lines/#step1 | contour-lines#step1 |
-| 经纬网 / Latitude & longitude | ../latitude-longitude/#step1 | latitude-longitude#step1 |
-| 地球公转与四季 / Earth's orbit & the seasons | ../seasons-orbit/#step2 | seasons-orbit#step2 |
-| 大气环流与季风 / Atmospheric circulation & monsoons | ../atmospheric-circulation/#step2 | atmospheric-circulation#step2 |
-| 碳循环 / The carbon cycle | ../carbon-cycle/#step2 | carbon-cycle#step2 |
-| 气候能量账本 / Climate energy budget | ../climate-energy/#step2 | climate-energy#step2 |
+| 月相 · 从地球看被照亮的那一半 / Moon Phases · The Lit Half, Seen from Earth | ../earth/astronomy/moon-phases/#step1 | moon-phases#step1 |
+| 等高线 / Contour lines | ../earth/geo/contour-lines/#step1 | contour-lines#step1 |
+| 经纬网 / Latitude & longitude | ../earth/geo/latitude-longitude/#step1 | latitude-longitude#step1 |
+| 地球公转与四季 / Earth's orbit & the seasons | ../earth/astronomy/seasons-orbit/#step2 | seasons-orbit#step2 |
+| 大气环流与季风 / Atmospheric circulation & monsoons | ../earth/climate/atmospheric-circulation/#step2 | atmospheric-circulation#step2 |
+| 碳循环 / The carbon cycle | ../earth/climate/carbon-cycle/#step2 | carbon-cycle#step2 |
+| 气候能量账本 / Climate energy budget | ../earth/climate/climate-energy/#step2 | climate-energy#step2 |
 
 ### 09 计算与智能 / Computing & AI
 
 | 概念 | 来源 | 课程 |
 | --- | --- | --- |
-| 二分查找 / Binary search | ../binary-search/#step0 | binary-search#step0 |
-| CNN 特征图 / CNN feature maps | ../cnn-feature-maps/#step0 | cnn-feature-maps#step0 |
-| 图算法 / Graph algorithms | ../graph-algorithms/#step1 | graph-algorithms#step1 |
-| 哈希 / Hashing | ../hashing/#step0 | hashing#step0 |
+| 二分查找 / Binary search | ../computing/algorithms/binary-search/#step0 | binary-search#step0 |
+| CNN 特征图 / CNN feature maps | ../computing/ml/cnn-feature-maps/#step0 | cnn-feature-maps#step0 |
+| 图算法 / Graph algorithms | ../computing/algorithms/graph-algorithms/#step1 | graph-algorithms#step1 |
+| 哈希 / Hashing | ../computing/algorithms/hashing/#step0 | hashing#step0 |
 
 ### 10 经济与社会 / Economy & society
 
 | 概念 | 来源 | 课程 |
 | --- | --- | --- |
-| 拍卖：报价与真话 / Auctions: bidding and telling the truth | ../auctions/#step2 | auctions#step2 |
-| 博弈论 / Game theory | ../game-theory/#step0 | game-theory#step0 |
-| 机制设计与拍卖 · 报价如何改变结果 / Mechanism Design & Auctions · How Bids Change Outcomes | ../mechanism-auction/#s1 | mechanism-auction |
-| 供需均衡 / Supply & demand equilibrium | ../supply-demand/#step0 | supply-demand#step0 |
+| 拍卖：报价与真话 / Auctions: bidding and telling the truth | ../math/applied/auction-basics/#step2 | auction-basics#step2 |
+| 博弈论 / Game theory | ../math/applied/game-theory/#step0 | game-theory#step0 |
+| 机制设计与拍卖 · 报价如何改变结果 / Mechanism Design & Auctions · How Bids Change Outcomes | ../math/applied/mechanism-design/#s1 | mechanism-design |
+| 供需均衡 / Supply & demand equilibrium | ../math/applied/supply-demand/#step0 | supply-demand#step0 |
 
 <!-- /GENERATED:atlas-nodes -->

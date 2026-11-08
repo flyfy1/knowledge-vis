@@ -2,9 +2,9 @@
 const assert=require('node:assert/strict');
 const fs=require('node:fs');
 const path=require('node:path');
-const root=path.join(__dirname,'..','linguistics-phonology');
+const root=path.join(__dirname,'..','language','phonology','phonemes');
 for(const file of ['index.html','style.css','i18n.js','app.js','BRIEF.md'])assert.ok(fs.existsSync(path.join(root,file)),`missing ${file}`);
-const api=require('../linguistics-phonology/app.js');
+const api=require('../language/phonology/phonemes/app.js');
 assert.equal(api.featureSummary('p').voicing,'voiceless');
 assert.equal(api.featureSummary('b').voicing,'voiced');
 assert.equal(api.minimalPair('pb').feature,'voicing');

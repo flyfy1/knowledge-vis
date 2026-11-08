@@ -18,11 +18,11 @@ const out=process.env.PHOTO_EVIDENCE||path.join(__dirname,'evidence');fs.mkdirSy
   {name:'blocked-app',width:393,height:851,dpr:3,blocked:true}
  ]){
  const context=await browser.newContext({viewport:{width:cfg.width,height:cfg.height},deviceScaleFactor:cfg.dpr,isMobile:cfg.width<500,hasTouch:cfg.width<500,locale:cfg.en?'en-US':'zh-CN',reducedMotion:cfg.reduced?'reduce':'no-preference',javaScriptEnabled:!cfg.noJS});
- if(cfg.noObserver)await context.addInitScript(()=>{if(location.pathname.includes('/photosynthesis/'))delete window.IntersectionObserver;});
- if(cfg.noCanvas)await context.addInitScript(()=>{if(location.pathname.includes('/photosynthesis/'))HTMLCanvasElement.prototype.getContext=()=>null;});
+ if(cfg.noObserver)await context.addInitScript(()=>{if(location.pathname.includes('/biology/cells/photosynthesis/'))delete window.IntersectionObserver;});
+ if(cfg.noCanvas)await context.addInitScript(()=>{if(location.pathname.includes('/biology/cells/photosynthesis/'))HTMLCanvasElement.prototype.getContext=()=>null;});
  const page=await context.newPage(),errors=[];page.on('pageerror',e=>errors.push(e.message));
  if(cfg.blocked)await page.route('**/photosynthesis/app.js*',r=>r.abort());
- await page.goto(base+'/photosynthesis/');await page.waitForTimeout(120);
+ await page.goto(base+'/biology/cells/photosynthesis/');await page.waitForTimeout(120);
  const active=!cfg.noJS&&!cfg.blocked;
  const metrics=()=>page.evaluate(()=>({height:document.documentElement.scrollHeight,width:document.documentElement.scrollWidth,viewport:innerWidth,canvas:[...document.querySelectorAll('canvas')].map(c=>({cssHeight:c.clientHeight,bufferHeight:c.height,width:c.clientWidth,bufferWidth:c.width})),headings:[...document.querySelectorAll('section h2')].map(el=>el.textContent)}));
  const initial=await metrics();assert(initial.headings.every(Boolean));assert.equal(initial.width,cfg.width);
@@ -71,8 +71,8 @@ const out=process.env.PHOTO_EVIDENCE||path.join(__dirname,'evidence');fs.mkdirSy
   await page.reload();await page.waitForTimeout(150);assert(await page.locator('#step2 h2').isVisible());
   assert((await page.locator('#step2').boundingBox()).y<cfg.height);
   // Follow an actual related lesson and return, retaining usable anchors and stable dimensions.
-  await page.locator('a[href="../mass-conservation/#step1"]').first().click();await page.goBack();await page.waitForTimeout(150);
-  assert(page.url().includes('/photosynthesis/'));assert((await metrics()).canvas.every(c=>c.cssHeight===300));
+  await page.locator('a[href="../../../chemistry/reactions/mass-conservation/#step1"]').first().click();await page.goBack();await page.waitForTimeout(150);
+  assert(page.url().includes('/biology/cells/photosynthesis/'));assert((await metrics()).canvas.every(c=>c.cssHeight===300));
   await page.locator('[data-lang=en]').click();assert((await page.locator('#step0 h2').innerText()).includes('sunlight'));
   await page.locator('[data-lang=zh]').click();assert((await page.locator('#step0 h2').innerText()).includes('阳光'));
   if(cfg.name==='android-393'){

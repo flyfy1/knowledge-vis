@@ -6,7 +6,7 @@ The existing eigen lesson starts with a matrix's special directions. Learners wh
 
 ## Single source of truth
 
-`linear-transform/app.js` owns matrix state, determinant, inverse, vector application, composition, and canvas drawing. `linear-transform/i18n.js` owns all learner-facing text. The four matrix sliders are the only user-editable matrix controls; all sections read the same state.
+`math/linear-algebra/linear-transform/app.js` owns matrix state, determinant, inverse, vector application, composition, and canvas drawing. `math/linear-algebra/linear-transform/i18n.js` owns all learner-facing text. The four matrix sliders are the only user-editable matrix controls; all sections read the same state.
 
 ## Deliberate limitations
 
@@ -16,4 +16,4 @@ The drawings are explanatory geometry, not a high-precision plotting tool. Canva
 
 - `node --check linear-transform/app.js` and `node --check linear-transform/i18n.js`.
 - Static key/ID check: every `data-i18n` key exists in both locales; every canvas/control ID referenced by `app.js` exists in `index.html`.
-- Browser smoke: load `linear-transform/`, move all four sliders, click every preset, toggle inverse, switch composition order, answer quiz, switch language, and verify no console error.
+- Browser smoke: load `math/linear-algebra/linear-transform/`, move all four sliders, click every preset, toggle inverse, switch composition order, answer quiz, switch language, and verify no console error.

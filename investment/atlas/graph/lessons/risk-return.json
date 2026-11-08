@@ -11,7 +11,7 @@
     "zh": "方差量的是散开程度，不是好坏：平均一样，散得越开，单年越不可预测。风险溢价是补偿：波动的一方平均给得更多，多出的部分是为承担波动付的，不是保证。",
     "en": "Variance measures spread, not good or bad: with the same mean, a wider spread means a less predictable single year. The risk premium is compensation: the volatile side averages more, and the extra part pays for bearing volatility — it is not a guarantee."
   },
-  "source": "../risk-return/#step5",
+  "source": "../basics/risk-return/#step5",
   "edges": [
     {
       "from": "risk",
@@ -25,7 +25,7 @@
         "zh": "回报承诺得先有个度量：不先把“波动多大”用方差量出来，“回报高不高”就无从比较——这课先立度量、再谈交换。",
         "en": "A return promise needs a measure first: until 'how large the swings are' is measured with variance, 'is the return high' has nothing to compare against — this lesson sets the measure, then discusses the trade."
       },
-      "source": "../risk-return/#step5"
+      "source": "../basics/risk-return/#step5"
     },
     {
       "from": "risk-return",
@@ -39,7 +39,7 @@
         "zh": "回报是风险换来的承诺平均，不是保证。",
         "en": "Return is the promised mean exchanged for risk, not a guarantee."
       },
-      "source": "../risk-return/#step5"
+      "source": "../basics/risk-return/#step5"
     },
     {
       "from": "stock",
@@ -53,7 +53,7 @@
         "zh": "股价上下走不只是数字跳动：跌下去卖出，到手的钱就比投进去的少，亏损是真实的。",
         "en": "A moving price is not just a wobbling number: sell after a fall and you get back less than you put in — the loss is real."
       },
-      "source": "../risk-return/#step5"
+      "source": "../basics/risk-return/#step5"
     },
     {
       "from": "bond",
@@ -67,7 +67,7 @@
         "zh": "借钱的一方可能还不上：公司没钱时，票息停付、本金也可能打水漂，债券并不保本。",
         "en": "The borrower may fail to pay: when a company runs out of money, coupons stop and principal can be lost — a bond is not capital-guaranteed."
       },
-      "source": "../risk-return/#step5"
+      "source": "../basics/risk-return/#step5"
     },
     {
       "from": "risk",
@@ -81,7 +81,7 @@
         "zh": "承担风险，换来更高的承诺平均回报。",
         "en": "Bearing risk buys a higher promised mean return."
       },
-      "source": "../risk-return/#step5"
+      "source": "../basics/risk-return/#step5"
     },
     {
       "from": "stock",
@@ -95,7 +95,7 @@
         "zh": "股票的回报来自分红和价格变化。",
         "en": "A stock's return comes from dividends and price changes."
       },
-      "source": "../risk-return/#step5"
+      "source": "../basics/risk-return/#step5"
     },
     {
       "from": "bond",
@@ -109,7 +109,7 @@
         "zh": "债券的回报来自票息和到期还本。",
         "en": "A bond's return comes from coupons and principal repayment."
       },
-      "source": "../risk-return/#step5"
+      "source": "../basics/risk-return/#step5"
     }
   ],
   "routes": [

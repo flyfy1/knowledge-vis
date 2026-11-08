@@ -11,7 +11,7 @@
     "zh": "股票是所有权凭证：按份当主人，分红、涨跌都按份来，出事时最后拿钱。债券是借条：出借人不是主人，按约定收票息、到期收回本金，出事时先于股东拿钱。",
     "en": "A stock is an ownership certificate: you own by part, dividends and price moves follow your parts, and you are paid last when things go wrong. A bond is an IOU: the lender is not an owner, collects coupons as agreed and the principal at maturity, and is paid before shareholders when things go wrong."
   },
-  "source": "../stocks-bonds/#step5",
+  "source": "../basics/stocks-bonds/#step5",
   "edges": [
     {
       "from": "stock",
@@ -25,7 +25,7 @@
         "zh": "股票是第一种凭证：买它等于买下公司的一小片所有权——这课从它讲起，再对照债券。",
         "en": "A stock is the first certificate: buying it buys a small slice of ownership in the company — this lesson starts from it, then contrasts bonds."
       },
-      "source": "../stocks-bonds/#step5"
+      "source": "../basics/stocks-bonds/#step5"
     },
     {
       "from": "stocks-bonds",
@@ -39,7 +39,7 @@
         "zh": "股票是所有权、债券是债权：一个分红看公司脸色，一个收息有合同在先——对照着看，两种凭证的区别才清楚。",
         "en": "Stocks are ownership, bonds are creditor claims: one's dividends depend on the company's fortunes, the other's interest is promised by contract first — seen side by side, the two certificates' difference becomes clear."
       },
-      "source": "../stocks-bonds/#step5"
+      "source": "../basics/stocks-bonds/#step5"
     },
     {
       "from": "stocks-bonds",
@@ -53,7 +53,7 @@
         "zh": "出事时谁先拿钱，就是风险的来源之一。",
         "en": "Who is paid first when things go wrong is one source of risk."
       },
-      "source": "../stocks-bonds/#step5"
+      "source": "../basics/stocks-bonds/#step5"
     },
     {
       "from": "diversification",
@@ -67,7 +67,7 @@
         "zh": "股债是分散的现成材料：一个波动大、一个相对稳，拼在一起才有“低相关”可谈。",
         "en": "Stocks and bonds are diversification's ready-made materials: one swings widely, the other relatively steadily, and only combined is there any 'low correlation' to talk about."
       },
-      "source": "../stocks-bonds/#step5"
+      "source": "../basics/stocks-bonds/#step5"
     }
   ],
   "routes": [

@@ -13,4 +13,4 @@
 
 ## Review notes
 
-The new slug is intentionally isolated from the existing `bayes/` lesson so the parent checkout can choose whether to merge or compare it. No external network, chart library, or runtime dependency is required.
+The new slug is intentionally isolated from the existing `probability/inference/bayes-updating/` lesson so the parent checkout can choose whether to merge or compare it. No external network, chart library, or runtime dependency is required.

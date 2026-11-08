@@ -49,7 +49,7 @@ const STR = {
 
     s2k: '第 2 步 · 峡谷',
     s2t: '条件数决定之字形',
-    s2e: '把碗沿一个方向拉长：f(x, y) = ½(x² + κy²)。κ 是<strong>条件数</strong>——地形最陡方向与最缓方向的坡度之比，也就是峡谷的「长宽比」。 <a class="fourier-link" href="../eigen/#step4">κ 的真身在特征值页：峡谷长宽比 = λ 之比 →</a> κ = 1 时还是圆碗；κ 拉大，碗变成一道峡谷：横穿峡谷的坡度极大、沿谷底的坡度极小。麻烦随之而来：步长 η 必须迁就最陡的方向（η < 2/λ<sub>max</sub> 才能不爆炸），于是沿谷底只能慢慢蹭；球在两壁之间横跳（之字形），蹭很久才到谷底。下面读数牌上的每个数字——步长上限、最优步长 η*、收敛率 (κ−1)/(κ+1)——都由地形的特征值 λ 算出，轨迹是当场真迭代的，实测步数和理论步数可以当面对账。',
+    s2e: '把碗沿一个方向拉长：f(x, y) = ½(x² + κy²)。κ 是<strong>条件数</strong>——地形最陡方向与最缓方向的坡度之比，也就是峡谷的「长宽比」。 <a class="fourier-link" href="../../../math/linear-algebra/eigenvectors/#step4">κ 的真身在特征值页：峡谷长宽比 = λ 之比 →</a> κ = 1 时还是圆碗；κ 拉大，碗变成一道峡谷：横穿峡谷的坡度极大、沿谷底的坡度极小。麻烦随之而来：步长 η 必须迁就最陡的方向（η < 2/λ<sub>max</sub> 才能不爆炸），于是沿谷底只能慢慢蹭；球在两壁之间横跳（之字形），蹭很久才到谷底。下面读数牌上的每个数字——步长上限、最优步长 η*、收敛率 (κ−1)/(κ+1)——都由地形的特征值 λ 算出，轨迹是当场真迭代的，实测步数和理论步数可以当面对账。',
     s2formula: 'f = ½xᵀAx，A = diag(1, κ)：λmin = 1，λmax = κ',
     s2kapLab: 'κ · 条件数（峡谷长宽比）',
     s2etaLab: 'η · 学习率',
@@ -82,7 +82,7 @@ const STR = {
 
     s4k: '第 4 步 · 随机梯度',
     s4t: '只看几条数据就迈步',
-    s4e: '真实训练的数据多到每步都看完不现实。办法：每步只抽一小把样本（一个 batch），用它们的平均梯度迈步——这就是<strong>随机梯度下降（SGD）</strong>。 <a class="fourier-link" href="../montecarlo/#step2">小样本平均的误差按 1/√N 定价：蒙特卡洛的账 →</a> 左边是带种子固定的 {N} 条数据和两条拟合线（随右边参数同步）；右边是损失地形的等高线：青线是每步看全部数据的全批量 GD，光滑笔直；橙线是每步只看 batch 条数据的 SGD，走得歪歪扭扭。每个参数点上方画了两支箭头：青的是全量梯度（准星），橙的是这一步抽到的 batch 的梯度（偏的）——SGD 的每一步都迈得不准，但平均而言方向没错，而且步数便宜得多。把 batch 拉小，抖动变大；拉到全量，抖动消失、两条路径逐点重合。',
+    s4e: '真实训练的数据多到每步都看完不现实。办法：每步只抽一小把样本（一个 batch），用它们的平均梯度迈步——这就是<strong>随机梯度下降（SGD）</strong>。 <a class="fourier-link" href="../../../probability/stochastic/monte-carlo/#step2">小样本平均的误差按 1/√N 定价：蒙特卡洛的账 →</a> 左边是带种子固定的 {N} 条数据和两条拟合线（随右边参数同步）；右边是损失地形的等高线：青线是每步看全部数据的全批量 GD，光滑笔直；橙线是每步只看 batch 条数据的 SGD，走得歪歪扭扭。每个参数点上方画了两支箭头：青的是全量梯度（准星），橙的是这一步抽到的 batch 的梯度（偏的）——SGD 的每一步都迈得不准，但平均而言方向没错，而且步数便宜得多。把 batch 拉小，抖动变大；拉到全量，抖动消失、两条路径逐点重合。',
     s4formula: 'L(w, b) = (1/N)·Σᵢ (w·xᵢ + b − yᵢ)²，数据种子 = {seed}，N = {N}',
     s4batchLab: 'batch 大小（每步看几条）',
     s4bFull: '全量 {N}',
@@ -174,7 +174,7 @@ const STR = {
 
     s2k: 'Step 2 · The Canyon',
     s2t: 'The condition number sets the zigzag',
-    s2e: 'Stretch the bowl along one axis: f(x, y) = ½(x² + κy²). κ is the <strong>condition number</strong> — the ratio of the steepest slope to the gentlest, the canyon’s aspect ratio. <a class="fourier-link" href="../eigen/#step4">κ’s true identity lives on the eigenvalue page: the canyon’s aspect ratio is a ratio of λ’s →</a> At κ = 1 it is still a round bowl; crank κ up and it becomes a gorge: brutally steep across, nearly flat along the floor. The trouble follows at once: η must respect the steepest direction (η < 2/λ<sub>max</sub> or it explodes), so progress along the floor crawls, and the ball zigzags wall to wall, inching forward. Every number on the board below — the stability limit, the optimal step η*, the rate (κ−1)/(κ+1) — is computed from the terrain’s eigenvalues λ, the trajectory is iterated live, and the measured step count can be checked against theory on the spot.',
+    s2e: 'Stretch the bowl along one axis: f(x, y) = ½(x² + κy²). κ is the <strong>condition number</strong> — the ratio of the steepest slope to the gentlest, the canyon’s aspect ratio. <a class="fourier-link" href="../../../math/linear-algebra/eigenvectors/#step4">κ’s true identity lives on the eigenvalue page: the canyon’s aspect ratio is a ratio of λ’s →</a> At κ = 1 it is still a round bowl; crank κ up and it becomes a gorge: brutally steep across, nearly flat along the floor. The trouble follows at once: η must respect the steepest direction (η < 2/λ<sub>max</sub> or it explodes), so progress along the floor crawls, and the ball zigzags wall to wall, inching forward. Every number on the board below — the stability limit, the optimal step η*, the rate (κ−1)/(κ+1) — is computed from the terrain’s eigenvalues λ, the trajectory is iterated live, and the measured step count can be checked against theory on the spot.',
     s2formula: 'f = ½xᵀAx, A = diag(1, κ): λmin = 1, λmax = κ',
     s2kapLab: 'κ · condition number (canyon aspect ratio)',
     s2etaLab: 'η · learning rate',
@@ -207,7 +207,7 @@ const STR = {
 
     s4k: 'Step 4 · Stochastic Gradient',
     s4t: 'Take a step after glancing at a few data points',
-    s4e: 'Real training data is far too large to read in full before every step. The fix: at each step, sample a small handful of points (a batch), average their gradients, and step with that — <strong>stochastic gradient descent (SGD)</strong>. <a class="fourier-link" href="../montecarlo/#step2">A small-sample average’s error is priced at 1/√N: Monte Carlo’s ledger →</a> On the left, the seeded dataset of {N} points and the two fitted lines (kept in sync with the parameters on the right); on the right, the loss terrain’s contours: the cyan path is full-batch GD, smooth and straight; the orange path is SGD looking at only batch points per step, wobbling its way down. Above each current point sit two arrows: cyan is the full-batch gradient (the true aim), orange is this step’s batch gradient (off target) — every SGD step aims slightly wrong, yet on average it aims right, and each step is far cheaper. Shrink the batch and the wobble grows; set it to full and the wobble vanishes — the two paths coincide point for point.',
+    s4e: 'Real training data is far too large to read in full before every step. The fix: at each step, sample a small handful of points (a batch), average their gradients, and step with that — <strong>stochastic gradient descent (SGD)</strong>. <a class="fourier-link" href="../../../probability/stochastic/monte-carlo/#step2">A small-sample average’s error is priced at 1/√N: Monte Carlo’s ledger →</a> On the left, the seeded dataset of {N} points and the two fitted lines (kept in sync with the parameters on the right); on the right, the loss terrain’s contours: the cyan path is full-batch GD, smooth and straight; the orange path is SGD looking at only batch points per step, wobbling its way down. Above each current point sit two arrows: cyan is the full-batch gradient (the true aim), orange is this step’s batch gradient (off target) — every SGD step aims slightly wrong, yet on average it aims right, and each step is far cheaper. Shrink the batch and the wobble grows; set it to full and the wobble vanishes — the two paths coincide point for point.',
     s4formula: 'L(w, b) = (1/N)·Σᵢ (w·xᵢ + b − yᵢ)², data seed = {seed}, N = {N}',
     s4batchLab: 'batch size (points seen per step)',
     s4bFull: 'full {N}',

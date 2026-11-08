@@ -8,7 +8,7 @@ The page should make the causal chain visible rather than presenting transport m
 
 ## Proposed page
 
-`membrane-transport/`
+`biology/cells/membrane-transport/`
 
 ### Five-step teaching flow
 

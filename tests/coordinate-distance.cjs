@@ -2,7 +2,7 @@
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const vm = require('node:vm');
-const code = fs.readFileSync('coordinate-plane/distance.js', 'utf8');
+const code = fs.readFileSync('math/algebra/coordinate-plane/distance.js', 'utf8');
 const window = {};
 const document = { addEventListener() {} };
 vm.runInNewContext(code, { window, document, Math });

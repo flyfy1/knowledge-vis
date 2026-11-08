@@ -20,13 +20,13 @@ let checks=0;function ok(v,m){assert.ok(v,m);checks++;}
   // Validate actual internal section destinations independently of UI selection.
   for(const href of new Set([...data.nodes,...data.edges].map(x=>x.source).filter(x=>x.startsWith('../')))){
    const u=new URL(href,base+'/atlas/'),response=await p.request.get(u.href.split('#')[0]);ok(response.ok(),'source HTTP '+href);
-   if(u.pathname.includes('/power-converters/')){const content=await p.request.get(base+'/power-converters/app.js');ok((await content.text()).includes('section('+u.hash.slice(5)+','),'generated source anchor '+href);}else ok((await response.text()).includes('id="'+u.hash.slice(1)+'"'),'source anchor '+href);
+   if(u.pathname.includes('/physics/circuits/power-converters/')){const content=await p.request.get(base+'/physics/circuits/power-converters/app.js');ok((await content.text()).includes('section('+u.hash.slice(5)+','),'generated source anchor '+href);}else ok((await response.text()).includes('id="'+u.hash.slice(1)+'"'),'source anchor '+href);
   }
   // Main user loop, actual navigation to evidence, and Back restoration.
   await p.locator('#search').fill('Fourier');await p.locator('[data-result=fourier]').click();
   assert.equal(await p.locator('#detailTitle').innerText(),'Fourier analysis');
   await p.locator('[data-edge="fourier:convolution"] .evidence-link').click();
-  ok(p.url().endsWith('/convolution/#step6'),'source opens convolution theorem');
+  ok(p.url().endsWith('/signal/systems/convolution/#step6'),'source opens convolution theorem');
   ok(await p.locator('#step6').count(),'actual lesson section');await p.goBack();
   assert.equal(await p.locator('#search').inputValue(),'Fourier');
   await p.locator('[data-target=convolution]').click();

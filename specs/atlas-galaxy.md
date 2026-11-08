@@ -66,7 +66,7 @@ Unknown-endpoint edges are ignored defensively; no ghost node is invented.
 
 ## Performance, lifecycle and fallback acceptance
 
-Reuse the repository's vendored Three.js/OrbitControls from `day-night-rotation/vendor/three`.
+Reuse the repository's vendored Three.js/OrbitControls from `earth/astronomy/day-night-rotation/vendor/three`.
 No CDN, dependency installation, external API, key, remote request or runtime graph service.
 The data remains 38 nodes / 47 edges at this source base; this is intentionally a small graph
 renderer, not a benchmark claim for thousands of concepts.

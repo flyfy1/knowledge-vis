@@ -1,6 +1,6 @@
 # Genetics & Probability · Review Spec
 
-- **入口**：`genetics-probability/`
+- **入口**：`probability/basics/genetics-probability/`
 - **分类**：probability + biology；学段 senior；双语
 - **状态**：live，静态页面，无外部依赖
 

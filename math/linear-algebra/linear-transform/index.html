@@ -4,15 +4,15 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>二维线性变换 · 一步一交互</title>
-  <link rel="stylesheet" href="../lesson-shell.css">
-  <link rel="stylesheet" href="../page-provenance.css">
+  <link rel="stylesheet" href="../../../lesson-shell.css">
+  <link rel="stylesheet" href="../../../page-provenance.css">
   <link rel="stylesheet" href="style.css">
   <script src="i18n.js"></script>
 </head>
 <body>
   <header class="site-head">
     <div class="head-main">
-      <p class="backline"><a href="../" data-i18n="back">← 知识索引</a></p>
+      <p class="backline"><a href="../../../" data-i18n="back">← 知识索引</a></p>
       <h1 data-i18n="pageTitle">二维线性变换 · 基向量怎样带着整个平面走</h1>
       <p class="tagline" data-i18n="tagline">把平面上的每个点都看成两根基向量的组合。拖动矩阵，亲眼看见网格被拉伸、剪切或翻面；行列式读出面积怎样变，退化时一整片平面怎样压成一条线。</p>
       <details class="page-provenance"><summary>Codex lesson · Linear map lab</summary><p data-i18n="provenance">本页用纯二维实矩阵讲解基向量、行列式与可逆性；数值读数四舍五入，计算仍用浮点真值。</p></details>
@@ -99,7 +99,7 @@
         <div class="btn-row"><button class="btn active" id="order-ab" data-i18n="orderAB">A → B</button><button class="btn" id="order-ba" data-i18n="orderBA">B → A</button></div>
         <p class="readout" id="compose-readout"></p>
         <div class="quiz" id="quiz"><h3 data-i18n="quizH">小测：哪一个读数是 det(A)？</h3><div class="btn-row"><button class="btn quiz-option" data-answer="1.03" data-i18n="quizA">1.03</button><button class="btn quiz-option" data-answer="0.83" data-i18n="quizB">0.83</button><button class="btn quiz-option" data-answer="-1.00" data-i18n="quizC">−1.00</button></div><p class="readout" id="quiz-feedback"></p></div>
-        <div class="cards"><article class="card"><h3 data-i18n="final1H">矩阵就是规则</h3><p data-i18n="final1">只要知道两根基向量去了哪里，线性变换对整个平面的作用就被决定了。</p></article><article class="card"><h3 data-i18n="final2H">行列式就是账本</h3><p data-i18n="final2">它记录面积倍率和方向是否翻转；det 为零时，账本显示信息丢失。</p></article><article class="card"><h3 data-i18n="final3H">下一站：特征方向</h3><p data-i18n-html="final3">有些向量经过 A 只改变长度、不改变所在直线——那就是 <a href="../eigen/#step1">特征向量</a>。</p></article></div>
+        <div class="cards"><article class="card"><h3 data-i18n="final1H">矩阵就是规则</h3><p data-i18n="final1">只要知道两根基向量去了哪里，线性变换对整个平面的作用就被决定了。</p></article><article class="card"><h3 data-i18n="final2H">行列式就是账本</h3><p data-i18n="final2">它记录面积倍率和方向是否翻转；det 为零时，账本显示信息丢失。</p></article><article class="card"><h3 data-i18n="final3H">下一站：特征方向</h3><p data-i18n-html="final3">有些向量经过 A 只改变长度、不改变所在直线——那就是 <a href="../eigenvectors/#step1">特征向量</a>。</p></article></div>
         <p class="finale" data-i18n-html="finale"></p>
       </div>
     </section>

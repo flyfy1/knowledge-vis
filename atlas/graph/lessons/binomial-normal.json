@@ -12,7 +12,7 @@
   "en": "Counting paths in Pascal’s triangle gives the binomial C(n,k)pᵏ(1−p)ⁿ⁻ᵏ with mean np and variance np(1−p); as n grows it hugs the normal curve of the same mean and spread, with a continuity correction for tails. Independent two-way trials with fixed p; the approximation is weakest in far tails."
  },
  "formula": "P(k) = C(n,k) pᵏ (1−p)ⁿ⁻ᵏ ≈ N(np, np(1−p))",
- "source": "../binomial-normal/#step3",
+ "source": "../probability/basics/binomial-normal/#step3",
  "edges": [
   {
    "from": "probability",
@@ -26,7 +26,7 @@
     "zh": "概率的乘法规则加上路径计数，给出 n 次独立试验恰好成功 k 次的概率。",
     "en": "The multiplication rule for probabilities plus path counting gives the chance of exactly k successes in n independent trials."
    },
-   "source": "../binomial-normal/#step0"
+   "source": "../probability/basics/binomial-normal/#step0"
   },
   {
    "from": "binomial-normal",
@@ -40,7 +40,7 @@
     "zh": "二项柱状图在 n 大且 p 不太偏时贴近同均值同标准差的正态曲线，这是正态分布出现的一条最直观途径。",
     "en": "For large n and a not-too-lopsided p the binomial bars hug the normal curve with the same mean and spread, one of the most visible routes by which the normal distribution appears."
    },
-   "source": "../binomial-normal/#step3"
+   "source": "../probability/basics/binomial-normal/#step3"
   },
   {
    "from": "binomial-normal",
@@ -54,7 +54,7 @@
     "zh": "二项分布是独立伯努利方差相加的实例：每次方差 p(1−p)，n 次相加得 np(1−p)。",
     "en": "The binomial is an instance of independent variances adding: each trial has variance p(1−p), so n trials give np(1−p)."
    },
-   "source": "../binomial-normal/#step2"
+   "source": "../probability/basics/binomial-normal/#step2"
   },
   {
    "from": "gaussian",
@@ -68,7 +68,7 @@
     "zh": "正态曲线每点的高度是概率密度，曲线下面积等于概率——钟形本身就是一种概率分布的画像。",
     "en": "At each point the normal curve's height is a probability density and area under it equals probability — the bell itself is a portrait of a probability distribution."
    },
-   "source": "../binomial-normal/#step3"
+   "source": "../probability/basics/binomial-normal/#step3"
   }
  ],
  "routes": [

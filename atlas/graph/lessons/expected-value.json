@@ -12,7 +12,7 @@
   "en": "The expected value E = Σ p·x is the fair price of a long-run average: whether a bet is worth it (net expectation = E − price), the additivity E[X+Y] = E[X] + E[Y], why insurance trades a worse expectation for less variation, and the St. Petersburg paradox. A risk-neutral model of independent repeated plays."
  },
  "formula": "E = Σ p·x",
- "source": "../expected-value/#step1",
+ "source": "../probability/basics/expected-value/#step1",
  "edges": [
   {
    "from": "probability",
@@ -26,7 +26,7 @@
     "zh": "有了每个结果的概率，才能按概率加权算出长期平均——期望就是这张概率表的加权平均数，是“平均会怎样”的第一个数字。",
     "en": "Once each outcome has a probability, weighting by those probabilities gives the long-run average — the expected value is that probability table's weighted average, the first number answering 'what happens on average'."
    },
-   "source": "../expected-value/#step0"
+   "source": "../probability/basics/expected-value/#step0"
   },
   {
    "from": "expected-value",
@@ -40,7 +40,7 @@
     "zh": "重复抽样的平均值按 σ/√n 逼近期望，蒙特卡洛估计就是用这个事实把平均值当作期望的估计。",
     "en": "The average of repeated draws approaches the expectation with error about σ/√n, the fact Monte Carlo estimation uses to take the average as an estimate of the expectation."
    },
-   "source": "../expected-value/#step2"
+   "source": "../probability/basics/expected-value/#step2"
   },
   {
    "from": "expected-value",
@@ -54,7 +54,7 @@
     "zh": "保险与彩票的例子说明期望相同或更差时，波动（方差）仍会改变决定，所以期望和方差要一起看。",
     "en": "The insurance and lottery examples show that with equal or worse expectation the spread (variance) can still change the decision, so expectation and variance go together."
    },
-   "source": "../expected-value/#step4"
+   "source": "../probability/basics/expected-value/#step4"
   },
   {
    "from": "probability",
@@ -68,7 +68,7 @@
     "zh": "方差 E[(X−μ)²] 用的正是同一组概率作权重：期望只报平均位置，方差补报分布有多散，两者是同一张概率表的两栏。",
     "en": "Variance E[(X−μ)²] weights with exactly the same probabilities: expectation reports only the average position, variance adds how scattered the distribution is — two columns of the same probability table."
    },
-   "source": "../expected-value/#step4"
+   "source": "../probability/basics/expected-value/#step4"
   }
  ],
  "routes": [

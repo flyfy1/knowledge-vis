@@ -66,9 +66,9 @@ zh: {
   s3xLab: '探针点的 x', s3tLab: '时刻 t（秒）',
   s3roIncPos: '读法一：x = <span>{x}</span> 处 f′(x) = <b>{d}</b>，大于 0——曲线在这里<b>上升</b>（图上绿色段）。导数为正，函数就往上走。',
   s3roIncNeg: '读法一：x = <span>{x}</span> 处 f′(x) = <b>{d}</b>，小于 0——曲线在这里<b>下降</b>（图上粉色段）。导数为负，函数往下走。',
-  s3roIncZero: '读法一：x = <span>{x}</span> 处 f′(x) = <b>{d}</b>，正好等于 0——顶点：不升不降。这正是<a class="fourier-link" href="../parabola/#step2">抛物线第 2 步「顶点搬家」</a>里那个顶点，在这一页它多了一个名字：导数等于 0 的点。',
+  s3roIncZero: '读法一：x = <span>{x}</span> 处 f′(x) = <b>{d}</b>，正好等于 0——顶点：不升不降。这正是<a class="fourier-link" href="../../algebra/parabola/#step2">抛物线第 2 步「顶点搬家」</a>里那个顶点，在这一页它多了一个名字：导数等于 0 的点。',
   s3roSteep: '读法二：x = <span>{x}</span> 处 |f′(x)| = <b>{abs}</b>。看虚线三角：横着走 1，竖着要爬 {abs}——|导数| 越大，切线越陡、曲线爬得越急；到 x = 0 附近 |f′| 接近 0，曲线几乎躺平。',
-  s3roVel: '读法三：把坐标轴换回物理：横轴是时间 t、纵轴是位移 s，曲线还是 s = t²。t = <span>{t}</span> s 这一刻，瞬时速度 v = s′(t) = 2t = <b>{v} m/s</b>。这正是<a class="fourier-link" href="../velocity-vt/#step1">velocity-vt 第 1 步</a>里「每一刻的速度」——那一页用 v-t 图认它，这一页给了它一个算得出来的定义：把区间缩成一点。',
+  s3roVel: '读法三：把坐标轴换回物理：横轴是时间 t、纵轴是位移 s，曲线还是 s = t²。t = <span>{t}</span> s 这一刻，瞬时速度 v = s′(t) = 2t = <b>{v} m/s</b>。这正是<a class="fourier-link" href="../../../physics/mechanics/velocity-vt/#step1">velocity-vt 第 1 步</a>里「每一刻的速度」——那一页用 v-t 图认它，这一页给了它一个算得出来的定义：把区间缩成一点。',
   s3hint: '三张脸是同一个数：符号定增减，绝对值定陡缓，换上单位（米/秒）就是速度。第 0 步 [1, 1.5] 区间算出的 2.5 只是平均速度；第 1 秒这一刻的速度，按读法三是 2 × 1 = 2 m/s。',
 
   s4k: '第 4 步 · 自测',
@@ -163,9 +163,9 @@ en: {
   s3xLab: 'Probe point x', s3tLab: 'Time t (seconds)',
   s3roIncPos: 'Reading 1: at x = <span>{x}</span>, f′(x) = <b>{d}</b>, which is positive — the curve is <b>rising</b> here (the green stretch). A positive derivative means the function climbs.',
   s3roIncNeg: 'Reading 1: at x = <span>{x}</span>, f′(x) = <b>{d}</b>, which is negative — the curve is <b>falling</b> here (the pink stretch). A negative derivative means the function descends.',
-  s3roIncZero: 'Reading 1: at x = <span>{x}</span>, f′(x) = <b>{d}</b>, exactly 0 — the vertex: neither rising nor falling. This is the very vertex of the <a class="fourier-link" href="../parabola/#step2">parabola page, step 2 “moving the vertex”</a>; on this page it gains a new name: a point where the derivative is 0.',
+  s3roIncZero: 'Reading 1: at x = <span>{x}</span>, f′(x) = <b>{d}</b>, exactly 0 — the vertex: neither rising nor falling. This is the very vertex of the <a class="fourier-link" href="../../algebra/parabola/#step2">parabola page, step 2 “moving the vertex”</a>; on this page it gains a new name: a point where the derivative is 0.',
   s3roSteep: 'Reading 2: at x = <span>{x}</span>, |f′(x)| = <b>{abs}</b>. Look at the dashed triangle: run 1 horizontally and you must climb {abs} — the larger |derivative|, the steeper the tangent and the harder the curve climbs; near x = 0, |f′| is close to 0 and the curve almost lies flat.',
-  s3roVel: 'Reading 3: put the physics clothes back on — the horizontal axis is time t, the vertical axis displacement s, and the curve is still s = t². At the instant t = <span>{t}</span> s the instantaneous velocity is v = s′(t) = 2t = <b>{v} m/s</b>. This is exactly “the velocity at each moment” of <a class="fourier-link" href="../velocity-vt/#step1">velocity-vt, step 1</a> — that page recognises it on a v–t graph; this page gives it a definition you can compute: shrink the interval to a point.',
+  s3roVel: 'Reading 3: put the physics clothes back on — the horizontal axis is time t, the vertical axis displacement s, and the curve is still s = t². At the instant t = <span>{t}</span> s the instantaneous velocity is v = s′(t) = 2t = <b>{v} m/s</b>. This is exactly “the velocity at each moment” of <a class="fourier-link" href="../../../physics/mechanics/velocity-vt/#step1">velocity-vt, step 1</a> — that page recognises it on a v–t graph; this page gives it a definition you can compute: shrink the interval to a point.',
   s3hint: 'The three faces are one number: the sign fixes rising vs falling, the absolute value fixes steepness, and with units attached (m/s) it is a velocity. The 2.5 computed on step 0 over [1, 1.5] was only an average; the speed at the instant t = 1, by reading 3, is 2 × 1 = 2 m/s.',
 
   s4k: 'Step 4 · Check yourself',

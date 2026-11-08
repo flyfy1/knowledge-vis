@@ -12,7 +12,7 @@
     "en": "Both angles start at the interface normal; n=c/v is dimensionless. Oblique rays from higher to lower index may have no real refraction angle. The critical limiting case is distinct from strictly supercritical incidence. A chopstick looking broken in water, and a fibre keeping light inside its core, are both this: the larger the incidence angle, the more the refracted angle bends, and past the critical angle comes total reflection."
    },
    "formula": "n₁ sinθ₁ = n₂ sinθ₂",
-   "source": "../reflection-refraction/#snell-bridge",
+   "source": "../physics/optics/reflection-refraction/#snell-bridge",
    "help": {
     "title": {
      "zh": "法线、正弦范围与临界条件",
@@ -52,7 +52,7 @@
     "en": "A nonvertical line’s slope is vertical-coordinate change divided by horizontal-coordinate change and stays constant along the line. Its units are Y-units per X-unit; for two geometric length axes it is dimensionless."
    },
    "formula": "k = ΔY / ΔX, ΔX ≠ 0",
-   "source": "../linear-functions/#step2"
+   "source": "../math/algebra/linear-functions/#step2"
   },
   {
    "id": "pinhole-ratio",
@@ -66,7 +66,7 @@
     "en": "In the homogeneous-medium central-ray model, object distance u and screen distance v are positive. Signed image-height difference divided by object height is−v/u: the negative sign marks inversion; positive size uses the absolute value."
    },
    "formula": "h_s/H = −v/u; h = |h_s|",
-   "source": "../pinhole-camera/#geometry-bridge",
+   "source": "../physics/optics/pinhole-camera/#geometry-bridge",
    "help": {
     "title": {
      "zh": "符号、单位与光学边界",
@@ -146,7 +146,7 @@
     "en": "A definite integral accumulates signed contributions. Over forward time, integrating velocity gives displacement; integrating speed gives distance. Position difference is distinct from a position coordinate."
    },
    "formula": "∫aᵇ v dt = x(b) − x(a)",
-   "source": "../integral/#step2"
+   "source": "../math/calculus/integral/#step2"
   },
   {
    "id": "derivative",
@@ -160,7 +160,7 @@
     "en": "A derivative is an instantaneous rate and tangent slope. For position versus time it gives signed velocity; differentiating velocity gives acceleration."
    },
    "formula": "f′(t) = lim Δf/Δt",
-   "source": "../derivative/#step2"
+   "source": "../math/calculus/derivative/#step2"
   },
   {
    "id": "net-force",
@@ -188,7 +188,7 @@
     "en": "Voltage is energy per charge, current is charge per second; multiplied they give energy per second, which is power — a 100-watt bulb uses 100 joules every second."
    },
    "formula": "P = VI",
-   "source": "../power-converters/#step0"
+   "source": "../physics/circuits/power-converters/#step0"
   },
   {
    "id": "inductor",
@@ -202,7 +202,7 @@
     "en": "Like a flywheel in a circuit: voltage across an inductor sets the rate of current change, giving current inertia — finite voltage cannot make current jump instantly, only push it faster or slower over time."
    },
    "formula": "vL = L di/dt",
-   "source": "../power-converters/#step1"
+   "source": "../physics/circuits/power-converters/#step1"
   },
   {
    "id": "capacitor",
@@ -216,7 +216,7 @@
     "en": "Like a tiny reservoir: current into the positive terminal charges it and voltage rises with the stored amount; disconnected, an ideal capacitor holds its voltage at zero current — voltage is its fullness, current the inflow and outflow."
    },
    "formula": "iC = C dv/dt",
-   "source": "../power-converters/#step2"
+   "source": "../physics/circuits/power-converters/#step2"
   },
   {
    "id": "switch-diode",
@@ -230,7 +230,7 @@
     "en": "A switch is a controllable gate (Buck and Boost converters shuttle energy by switching in turn); a diode is a one-way gate that only pushes, never pulls: the instant a switch opens, the inductor current keeps flowing through it — without it the current would have nowhere to go and the voltage would spike."
    },
    "formula": "route current",
-   "source": "../power-converters/#step3"
+   "source": "../physics/circuits/power-converters/#step3"
   },
   {
    "id": "pwm",
@@ -244,7 +244,7 @@
     "en": "Vary switch ON time within a fixed period to fake dimming: flickering faster than the eye can follow, only the average brightness is seen — a larger duty cycle, the fraction of the period spent ON, looks brighter."
    },
    "formula": "D = ton / T",
-   "source": "../power-converters/#step3"
+   "source": "../physics/circuits/power-converters/#step3"
   },
   {
    "id": "buck",
@@ -258,7 +258,7 @@
     "en": "CCM means inductor current never reaches zero during a cycle, not that it stays constant. With ideal components, periodic steady state and constant DC input, cycle-average output voltage ⟨Vout⟩ is D times input; instantaneous voltage can ripple."
    },
    "formula": "⟨Vout⟩ = D Vin",
-   "source": "../power-converters/#step4"
+   "source": "../physics/circuits/power-converters/#step4"
   },
   {
    "id": "boost",
@@ -272,7 +272,7 @@
     "en": "Store energy in an inductor, then let source and inductor feed the output. The relation for cycle-average voltage ⟨Vout⟩ uses the ideal small-ripple periodic steady-state approximation with constant DC input, CCM (inductor current never zero) and0<D<1; instantaneous voltage can ripple."
    },
    "formula": "⟨Vout⟩ ≈ Vin / (1−D)",
-   "source": "../power-converters/#step5"
+   "source": "../physics/circuits/power-converters/#step5"
   },
   {
    "id": "unit-circle",
@@ -286,7 +286,7 @@
     "en": "A circle of radius one: wherever the turned angle θ lands on the circle, its horizontal coordinate is cos θ and its vertical coordinate sin θ — one full turn draws sine and cosine rising and falling against each other; clock faces and moon phases are its shadows."
    },
    "formula": "(cos θ, sin θ)",
-   "source": "../trig/#step1"
+   "source": "../math/geometry/trigonometry/#step1"
   },
   {
    "id": "sine",
@@ -300,7 +300,7 @@
     "en": "Coordinates of uniform circular motion vary periodically. Amplitude, frequency and phase set the size, rate and starting point."
    },
    "formula": "A sin(2πft + φ)",
-   "source": "../trig/#step3",
+   "source": "../math/geometry/trigonometry/#step3",
    "help": {
     "title": {
      "zh": "相位、弧度与每秒周期数",
@@ -340,7 +340,7 @@
     "en": "Represent a plane point as a complex number, and multiplying by a unit-magnitude complex number rotates it: multiply by i to turn 90° counterclockwise, twice for 180° (that is, multiply by −1). Real and imaginary parts are the point's two coordinates."
    },
    "formula": "z = cos θ + i sin θ",
-   "source": "../complex-numbers/#step4"
+   "source": "../math/algebra/complex-numbers/#step4"
   },
   {
    "id": "vectors",
@@ -354,7 +354,7 @@
     "en": "A vector is an ordered collection of numbers. A matrix maps vectors while preserving addition and scalar multiplication."
    },
    "formula": "v ↦ Av",
-   "source": "../eigen/#step1"
+   "source": "../math/linear-algebra/eigenvectors/#step1"
   },
   {
    "id": "eigen",
@@ -368,7 +368,7 @@
     "en": "A symmetric matrix always has a set of mutually perpendicular special directions: acting on them only stretches or shrinks, never turns — those are eigenvectors, with stretch factor λ the eigenvalue; they are the transformation's spine directions. (A general real matrix need not have real eigendirections: a rotation has none.)"
    },
    "formula": "Av = λv",
-   "source": "../eigen/#step1"
+   "source": "../math/linear-algebra/eigenvectors/#step1"
   },
   {
    "id": "laplace",
@@ -382,7 +382,7 @@
     "en": "Fourier asks only 'which frequencies are in it'; Laplace asks one more question, 'is the signal growing or decaying': probe with e^{st}, where the real part of s governs growth or decay and the imaginary part governs oscillation; the region of convergence is the range of s where this probing holds — and pole positions say directly whether the system blows up."
    },
    "formula": "s = σ + iω",
-   "source": "../laplace/#step1"
+   "source": "../signal/transforms/laplace/#step1"
   },
   {
    "id": "oscillation",
@@ -429,7 +429,7 @@
     "en": "Add several signals' values at the same instant to form a combined signal: two water waves meet and pass through each other, and the height where they cross is their sum. Whether a physical system allows such superposition depends on its linearity — in a linear system a complex input can be split into simple inputs, solved separately and added back; in a nonlinear system that trick fails."
    },
    "formula": "y(t) = x₁(t) + x₂(t)",
-   "source": "../fourier/#step2"
+   "source": "../signal/transforms/fourier/#step2"
   },
   {
    "id": "fourier",
@@ -443,7 +443,7 @@
     "en": "Describe a signal using sinusoidal or complex-exponential components. Periodic signals use a series; finite sampled data can use a discrete Fourier transform."
    },
    "formula": "time ↔ frequency",
-   "source": "../fourier/#step5"
+   "source": "../signal/transforms/fourier/#step5"
   },
   {
    "id": "spectrum",
@@ -457,7 +457,7 @@
     "en": "List a signal's component amplitudes and phases by frequency — for a piece of music or a stretch of speech, the spectrum is its 'ingredient list': frequency across, each frequency's share up. A magnitude plot alone shows only part of it and cannot reconstruct a general signal: magnitude without phase is like a recipe's ingredients without the method."
    },
    "formula": "X(f)",
-   "source": "../fourier/#step5"
+   "source": "../signal/transforms/fourier/#step5"
   },
   {
    "id": "resonance",
@@ -471,7 +471,7 @@
     "en": "Like pushing a swing in time: a periodically driven system may respond most strongly near a particular frequency — amplitude peaks when the driving frequency equals the natural frequency. Lighter damping makes the peak taller and sharper; heavier damping makes it lower and wider, so slightly off-frequency pushes still build a little."
    },
    "formula": "drive → response peak",
-   "source": "../freqresp/#step5"
+   "source": "../signal/systems/frequency-response/#step5"
   },
   {
    "id": "sampling",
@@ -485,7 +485,7 @@
     "en": "Record a signal at fixed intervals. For an ideally band-limited signal, a sampling rate above twice its highest frequency avoids overlapping spectral copies."
    },
    "formula": "fₛ > 2fₘₐₓ",
-   "source": "../sampling/#step3"
+   "source": "../signal/sampling/sampling/#step3"
   },
   {
    "id": "lti",
@@ -499,7 +499,7 @@
     "en": "Linearity preserves weighted combinations of inputs (solve parts separately, then add); time invariance means the system behaves the same today and tomorrow — delay the input and the output delays by exactly as much, shape unchanged."
    },
    "formula": "linear + time invariant",
-   "source": "../lti/#step3"
+   "source": "../signal/systems/lti-systems/#step3"
   },
   {
    "id": "impulse",
@@ -513,7 +513,7 @@
     "en": "The output produced by a discrete unit impulse. For an initially resting LTI system, it determines the response to any input."
    },
    "formula": "δ[n] → h[n]",
-   "source": "../lti/#step2"
+   "source": "../signal/systems/lti-systems/#step2"
   },
   {
    "id": "convolution",
@@ -527,7 +527,7 @@
     "en": "Reverse and shift one sequence, multiply it against another, then sum; each shift produces one output value. In practice it is a weighted moving average — smoothing a signal or blurring an image just picks a weight sequence saying how much each neighbour counts."
    },
    "formula": "y[n] = Σ x[k]h[n−k]",
-   "source": "../convolution/#step2"
+   "source": "../signal/systems/convolution/#step2"
   },
   {
    "id": "freqresp",
@@ -541,7 +541,7 @@
     "en": "For a stable LTI system, frequency response describes steady-state sinusoidal amplitude and phase changes. Continuous time (CT) uses H(iω), with ω in rad/s; discrete time (DT) uses H(e^{iΩ}), with Ω in rad/sample."
    },
    "formula": "CT: H(iω); DT: H(e^{iΩ})",
-   "source": "../freqresp/#step0"
+   "source": "../signal/systems/frequency-response/#step0"
   },
   {
    "id": "poles",
@@ -555,7 +555,7 @@
     "en": "Poles describe exponential response modes. A causal continuous-time rational system is input-output stable when all transfer-function poles lie in the left half-plane."
    },
    "formula": "Re(p) < 0",
-   "source": "../laplace/#step4"
+   "source": "../signal/transforms/laplace/#step4"
   },
   {
    "id": "feedback",
@@ -569,7 +569,7 @@
     "en": "Measure an output, compare it with a target, and adjust the input. Results depend on the controller, system, delay and noise."
    },
    "formula": "measure → compare → act",
-   "source": "../control/#step2"
+   "source": "../signal/control/inverted-pendulum/#step2"
   },
   {
    "id": "probability",
@@ -583,7 +583,7 @@
     "en": "Use probabilities to describe possible outcomes and uncertainty: 100 coin flips land heads about 50 times, yet a single flip stays unpredictable — probability speaks of long-run frequency, not a guarantee for one trial. Model probabilities must still be checked against observed evidence, never confused with it."
    },
    "formula": "0 ≤ P(A) ≤ 1",
-   "source": "../bayes/#step0"
+   "source": "../probability/inference/bayes-updating/#step0"
   },
   {
    "id": "bayes",
@@ -597,7 +597,7 @@
     "en": "A prior is a probability before evidence; a posterior is its update afterward. Likelihood describes evidence under a hypothesis—in this lesson’s discrete examples it is an observation probability. Combine it with the prior and normalize; the result depends on the observation model."
    },
    "formula": "posterior ∝ likelihood × prior",
-   "source": "../bayes/#step1"
+   "source": "../probability/inference/bayes-updating/#step1"
   },
   {
    "id": "variance",
@@ -611,7 +611,7 @@
     "en": "The expected squared deviation from the mean, measuring spread: squaring removes the sign and punishes large misses more, but it also squares the units — so in practice we take the square root back to the original units, which is the standard deviation."
    },
    "formula": "Var(X) = E[(X−μ)²]",
-   "source": "../clt/#step3"
+   "source": "../probability/statistics/central-limit-theorem/#step3"
   },
   {
    "id": "gaussian",
@@ -625,7 +625,7 @@
     "en": "For iid samples with finite, nonzero variance, the appropriately standardized sample mean approaches a standard normal distribution as sample size grows."
    },
    "formula": "SE(mean) = σ / √n",
-   "source": "../clt/#step3"
+   "source": "../probability/statistics/central-limit-theorem/#step3"
   },
   {
    "id": "montecarlo",
@@ -639,7 +639,7 @@
     "en": "Estimate expectations or integrals from random-sample averages: throwing 10,000 darts to estimate a circle's area is exactly this. Error depends on sampling, sample count and the variance of the quantity estimated; four times the samples roughly halves the error."
    },
    "formula": "estimate = sample average",
-   "source": "../montecarlo/#step3"
+   "source": "../probability/stochastic/monte-carlo/#step3"
   },
   {
    "id": "kalman",
@@ -653,7 +653,7 @@
     "en": "Predict a state with a dynamic model, then correct it using measurements and their uncertainty. Covariance describes model uncertainty, not guaranteed real-world error."
    },
    "formula": "predict → correct",
-   "source": "../kalman/#step2"
+   "source": "../signal/control/kalman/#step2"
   },
   {
    "id": "interference",
@@ -667,7 +667,7 @@
     "en": "Linear-wave displacements add at the same point. For equal-amplitude, equal-frequency waves, arrival phase determines the resultant amplitude; coherence means a fixed relative phase. Double-slit fringes and noise-cancelling headphones are both this: in-phase addition grows louder and brighter, opposite-phase cancellation grows quieter and darker — phase difference is the brightness switch."
    },
    "formula": "B = 2A |cos(δ/2)|",
-   "source": "../interference/#step1",
+   "source": "../physics/waves/interference/#step1",
    "help": {
     "title": {
      "zh": "到达相位与模型条件",
@@ -699,7 +699,7 @@
     "zh": "把一次互动写成一张表：每格是双方同时出的招、各自的得分。先找占优策略——不管对手出什么都最划算的那招；再找纳什均衡——谁单独换招都不会更好。拍卖、公地、囚徒困境都是同一张表的不同填法。",
     "en": "Write one interaction as a table: each cell holds both sides' simultaneous moves and their scores. First find dominant strategies — moves that pay best no matter what the rival does; then Nash equilibria — where neither side improves by switching alone. Auctions, the commons and the prisoner's dilemma are the same table filled in differently."
    },
-   "source": "../game-theory/#step0"
+   "source": "../math/applied/game-theory/#step0"
   },
   {
    "id": "climate-energy",
@@ -712,7 +712,7 @@
     "zh": "阳光进来、红外出去，两边账要平：大气二氧化碳加厚，等于给出去的路加了道关卡，出少于进，地表就升温攒热量。气候问题本质是能量收支账，不是单日冷暖。",
     "en": "Sunlight comes in, infrared goes out, and the two sides must balance: thicker atmospheric CO₂ puts a checkpoint on the way out, so out falls short of in and the surface warms as heat accumulates. Climate is an energy-budget ledger, not a single day's weather."
    },
-   "source": "../climate-energy/#step2"
+   "source": "../earth/climate/climate-energy/#step2"
   },
   {
    "id": "gradient-descent",
@@ -726,7 +726,7 @@
     "en": "Walk downhill along the slope: each step computes the loss's slope for every parameter, and each parameter moves a small step against the slope; the step size is the learning rate. Too big a step oscillates, too small never arrives; looking at one batch at a time is the mini-batch compromise between compute and stability."
    },
    "formula": "θ ← θ − α∇J",
-   "source": "../gradient-descent/#step0"
+   "source": "../computing/ml/gradient-descent/#step0"
   },
   {
    "id": "photosynthesis",
@@ -740,7 +740,7 @@
     "en": "Sunlight powers assembling water and carbon dioxide into sugar and releasing oxygen — an atom ledger: 6 CO₂ plus 6 waters in, 1 glucose plus 6 oxygens out. Stronger light speeds work up to a ceiling, and when CO₂ runs short extra light is wasted."
    },
    "formula": "6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂",
-   "source": "../photosynthesis/#step1"
+   "source": "../biology/cells/photosynthesis/#step1"
   },
   {
    "id": "supply-demand",
@@ -754,7 +754,7 @@
     "en": "Buyers want more as price falls, sellers want more as price rises, and where the two curves cross is the equilibrium price — the quantity both sides plan to trade. A price change moves along a curve; changed tastes, incomes or technology shift the whole curve."
    },
    "formula": "Qd = Qs",
-   "source": "../supply-demand/#step0"
+   "source": "../math/applied/supply-demand/#step0"
   },
   {
    "id": "binary-search",
@@ -768,7 +768,7 @@
     "en": "Finding a number in a sorted list: look at the middle, go left if the target is smaller, right if bigger, cutting half away each step. n items take about log₂n steps at most; unsorted, halving is impossible and you can only scan one by one."
    },
    "formula": "steps ≈ log₂n",
-   "source": "../binary-search/#step0"
+   "source": "../computing/algorithms/binary-search/#step0"
   },
   {
    "id": "exp-log",
@@ -782,7 +782,7 @@
     "en": "An exponent is shorthand for repeated multiplication: 2¹⁰ is ten 2s multiplied; a logarithm asks the reverse — how many multiplications reach this number — so log₂1024 = 10, because ten doublings reach 1024. Exponents grow fast, logarithms grow slowly: two sides of one coin."
    },
    "formula": "log_b(bˣ) = x",
-   "source": "../exp-log/#step2"
+   "source": "../math/algebra/exponents-logarithms/#step2"
   },
   {
    "id": "graph-algorithms",
@@ -795,7 +795,7 @@
     "zh": "把问题画成点和边，再按规则走：点是地点或状态，边是连接、权重是代价。最短路、PageRank、遍历都是同一套画法换不同规则：每次确认什么、按什么顺序展开，决定了算出什么。",
     "en": "Draw a problem as vertices and edges, then walk by a rule: vertices are places or states, edges are links, weights are costs. Shortest paths, PageRank and traversals are the same drawing with different rules — what you settle each time, and in what order, decides what you compute."
    },
-   "source": "../graph-algorithms/#step1"
+   "source": "../computing/algorithms/graph-algorithms/#step1"
   },
   {
    "id": "hashing",
@@ -809,7 +809,7 @@
     "en": "Squeezing any-length data into a fixed-length fingerprint: the same input always gives the same output, and changing one output bit reveals nothing about the input. Reversing a fingerprint back to the original is infeasible — that is one-way: cheap forward, expensive backward, the same idea as RSA's lock."
    },
    "formula": "h: {0,1}* → {0,1}^n",
-   "source": "../hashing/#step0"
+   "source": "../computing/algorithms/hashing/#step0"
   },
   {
    "id": "estimate",
@@ -823,7 +823,7 @@
     "en": "Working backwards from readings to the true value: end-point readings, scales and repeats all carry error, so an estimate is always \"value ± uncertainty\". Uncertainty is not a mistake — it honestly marks how far this ruler can be trusted; averaging repeats shrinks it like 1/√n."
    },
    "formula": "x̂ = x ± Δx",
-   "source": "../titration-curves/#step4"
+   "source": "../chemistry/solutions/titration-curves/#step4"
   },
   {
    "id": "velocity-vt",
@@ -837,7 +837,7 @@
     "en": "A velocity–time graph: each point's height is the velocity at that instant, the slope is acceleration, and the area under the curve is displacement. Positive slope means speeding up, zero slope means steady speed; area carries a sign, so the way-back stretch subtracts."
    },
    "formula": "slope = a, area = Δx",
-   "source": "../velocity-vt/#step1"
+   "source": "../physics/mechanics/velocity-vt/#step1"
   }
  ],
  "edges": [
@@ -854,7 +854,7 @@
     "zh": "同一点的两列线性简谐波逐时相加；同频等振幅且相对相位固定时，B=2A|cos(δ/2)|。这是一条应用连接，不表示必须先学完另一课程。",
     "en": "Two linear sinusoids add at the same point and time. For fixed relative phase, equal frequency and equal received amplitude, B=2A|cos(δ/2)|. This is an application, not a required course order."
    },
-   "source": "../interference/#step3"
+   "source": "../physics/waves/interference/#step3"
   },
   {
    "id": "unit-circle:snell",
@@ -869,7 +869,7 @@
     "zh": "单位圆给出sin的值域；Snell关系要求sinθ₂=(n₁/n₂)sinθ₁，右侧超过1时没有传播折射光线。光学角从法线起，而不是单位圆默认的水平轴。",
     "en": "The unit circle supplies sine’s range. Snell requires sinθ₂=(n₁/n₂)sinθ₁; above1, no propagating refracted ray exists. Optical angles start at the normal, rather than the unit circle’s usual horizontal axis."
    },
-   "source": "../reflection-refraction/#critical-proof"
+   "source": "../physics/optics/reflection-refraction/#critical-proof"
   },
   {
    "id": "slope:pinhole-ratio",
@@ -884,7 +884,7 @@
     "zh": "以孔心为原点，同一条非竖直光线保持斜率；孔两侧三角形相似，坐标反号给出带符号放大率M=−v/u。光线斜率与放大率不是同一个量，这个关系不是透镜焦距公式。",
     "en": "With the hole as origin, a nonvertical ray keeps one slope. Similar triangles on opposite sides reverse the coordinate sign, giving signed magnification M=−v/u. Ray slope and magnification are different quantities; this is not a lens focal-length formula."
    },
-   "source": "../pinhole-camera/#geometry-bridge"
+   "source": "../physics/optics/pinhole-camera/#geometry-bridge"
   },
   {
    "id": "integral:inductor",
@@ -974,7 +974,7 @@
     "zh": "本振子的可微位置 x(t) 给出 v=dx/dt、a=dv/dt；有方向的速度可以为负，速率是 |v|。微分描述运动，不是产生运动的物理原因。",
     "en": "For this oscillator, v=dx/dt and a=dv/dt. Signed velocity can be negative; speed is |v|. Differentiation describes motion rather than causing it."
    },
-   "source": "../derivative/#step0"
+   "source": "../math/calculus/derivative/#step0"
   },
   {
    "id": "oscillation:net-force",
@@ -1004,7 +1004,7 @@
     "zh": "电感电流有惯性、不能突变：功率进出改变的是磁场储能——P=VI 讲的是电流被推快或推慢的速度，而不是某一刻的存量。",
     "en": "An inductor's current has inertia and cannot jump: power in or out changes the stored magnetic energy — P=VI tells how fast the current is pushed up or slowed down, not how much is stored at one instant."
    },
-   "source": "../power-converters/#step1"
+   "source": "../physics/circuits/power-converters/#step1"
   },
   {
    "id": "power:capacitor",
@@ -1019,7 +1019,7 @@
     "zh": "电容存的能量只能靠功率进出改变，功率等于电压乘电流——它告诉你电容充放电有多快，而不是只报一个静态数值。",
     "en": "A capacitor's stored energy changes only through power in or out, and power equals voltage times current — it tells how fast the capacitor charges or discharges, not just a static number."
    },
-   "source": "../power-converters/#step2"
+   "source": "../physics/circuits/power-converters/#step2"
   },
   {
    "id": "inductor:capacitor",
@@ -1034,7 +1034,7 @@
     "zh": "电感记住电流，电容记住电压；两者在电路中交换储能，但元件定律不同。",
     "en": "Inductors retain current and capacitors retain voltage. Both exchange stored energy, under different component laws."
    },
-   "source": "../power-converters/#step2"
+   "source": "../physics/circuits/power-converters/#step2"
   },
   {
    "id": "inductor:buck",
@@ -1049,7 +1049,7 @@
     "zh": "开关断开后，电感通过续流二极管继续向输出送电。",
     "en": "When the switch opens, the inductor continues delivering current through the freewheel diode."
    },
-   "source": "../power-converters/#step4"
+   "source": "../physics/circuits/power-converters/#step4"
   },
   {
    "id": "inductor:boost",
@@ -1064,7 +1064,7 @@
     "zh": "关断时电感电流下降，电感右端电势升高，电源与电感共同供能。",
     "en": "During OFF, current falls and the right inductor terminal rises; source and inductor deliver energy together."
    },
-   "source": "../power-converters/#step5"
+   "source": "../physics/circuits/power-converters/#step5"
   },
   {
    "id": "capacitor:buck",
@@ -1079,7 +1079,7 @@
     "zh": "电感电流与负载电流的差流入或流出输出电容。",
     "en": "The difference between inductor and load current charges or discharges the output capacitor."
    },
-   "source": "../power-converters/#step4"
+   "source": "../physics/circuits/power-converters/#step4"
   },
   {
    "id": "capacitor:boost",
@@ -1094,7 +1094,7 @@
     "zh": "开关闭合时二极管截止，负载由输出电容供电。",
     "en": "During ON the diode blocks, and the output capacitor supplies the load."
    },
-   "source": "../power-converters/#step5"
+   "source": "../physics/circuits/power-converters/#step5"
   },
   {
    "id": "switch-diode:buck",
@@ -1109,7 +1109,7 @@
     "zh": "开关闭合连接输入；开关断开时续流二极管提供回路。",
     "en": "The closed switch connects the input; the freewheel diode provides the OFF loop."
    },
-   "source": "../power-converters/#step4"
+   "source": "../physics/circuits/power-converters/#step4"
   },
   {
    "id": "switch-diode:boost",
@@ -1124,7 +1124,7 @@
     "zh": "开关闭合给电感储能，断开时电流经二极管流向输出。",
     "en": "ON stores energy in the inductor; OFF routes current through the diode to the output."
    },
-   "source": "../power-converters/#step5"
+   "source": "../physics/circuits/power-converters/#step5"
   },
   {
    "id": "pwm:buck",
@@ -1139,7 +1139,7 @@
     "zh": "占空比 D 就是开关接通输入的时间占比：伏秒平衡下，输出平均电压等于 D·Vin——调 D 就是调输出，D 越大输出越高。",
     "en": "The duty ratio D is the fraction of time the switch connects the input: volt-second balance then makes the average output D·Vin — turning D turns the output, larger D giving higher output."
    },
-   "source": "../power-converters/#step4"
+   "source": "../physics/circuits/power-converters/#step4"
   },
   {
    "id": "pwm:boost",
@@ -1154,7 +1154,7 @@
     "zh": "在恒定直流输入、理想 CCM 的小纹波周期稳态近似下，平均电压 ⟨Vout⟩ ≈ Vin/(1−D)，0<D<1。",
     "en": "With constant DC input, ideal CCM and the small-ripple periodic steady-state approximation, ⟨Vout⟩ ≈ Vin/(1−D), with0<D<1."
    },
-   "source": "../power-converters/#step5"
+   "source": "../physics/circuits/power-converters/#step5"
   },
   {
    "id": "boost:feedback",
@@ -1169,7 +1169,7 @@
     "zh": "实际稳压器可测量输出并调节占空比；本课只解释此接口，不模拟控制器。",
     "en": "A real regulator can measure output and adjust duty; this lesson explains the connection without simulating a controller."
    },
-   "source": "../power-converters/#step6"
+   "source": "../physics/circuits/power-converters/#step6"
   },
   {
    "id": "unit-circle:sine",
@@ -1184,7 +1184,7 @@
     "zh": "圆上点的纵、横坐标定义正弦、余弦；匀速转动使这些坐标成为时间函数。",
     "en": "Vertical and horizontal coordinates define sine and cosine; uniform rotation makes them functions of time."
    },
-   "source": "../trig/#step3"
+   "source": "../math/geometry/trigonometry/#step3"
   },
   {
    "id": "unit-circle:complex",
@@ -1251,7 +1251,7 @@
     "zh": "傅里叶分析以不同频率的正弦、余弦或复指数为分量；每个分量有自己的幅度和相位。",
     "en": "Fourier analysis uses sine, cosine or complex-exponential components at different frequencies, with their own amplitudes and phases."
    },
-   "source": "../fourier/#step1"
+   "source": "../signal/transforms/fourier/#step1"
   },
   {
    "id": "complex:fourier",
@@ -1281,7 +1281,7 @@
     "zh": "傅里叶级数通过叠加谐波近似周期波形；有限项近似在跳变附近可能出现吉布斯现象。",
     "en": "A Fourier series combines harmonics to approximate a periodic waveform; finite sums may show Gibbs overshoot near jumps."
    },
-   "source": "../fourier/#step4"
+   "source": "../signal/transforms/fourier/#step4"
   },
   {
    "id": "fourier:spectrum",
@@ -1296,7 +1296,7 @@
     "zh": "变换结果包含各频率分量的信息；查看幅度与相位，才能保留一般信号的完整表示。",
     "en": "The transform records frequency components; both amplitude and phase are needed for a complete representation of a general signal."
    },
-   "source": "../fourier/#step5"
+   "source": "../signal/transforms/fourier/#step5"
   },
   {
    "id": "fourier:convolution",
@@ -1311,7 +1311,7 @@
     "zh": "当相应变换存在时，时域卷积对应频域乘法。本课用有限序列比较直接卷积与频域计算的结果。",
     "en": "When the transforms exist, time-domain convolution corresponds to frequency-domain multiplication. This lesson compares direct convolution with frequency-domain computation on finite sequences."
    },
-   "source": "../convolution/#step6"
+   "source": "../signal/systems/convolution/#step6"
   },
   {
    "id": "spectrum:sampling",
@@ -1326,7 +1326,7 @@
     "zh": "均匀采样使频谱按采样率周期重复；重复的谱相互重叠时产生混叠。",
     "en": "Uniform sampling repeats the spectrum at multiples of the sampling rate; overlap between copies produces aliasing."
    },
-   "source": "../sampling/#step4"
+   "source": "../signal/sampling/sampling/#step4"
   },
   {
    "id": "oscillation:resonance",
@@ -1356,7 +1356,7 @@
     "zh": "在线性系统的频率响应幅度图上，共振表现为某段频率附近的峰；并非所有系统都有明显峰值。",
     "en": "In a linear system’s frequency-response magnitude, resonance appears as a peak; not every system has a pronounced one."
    },
-   "source": "../freqresp/#step5"
+   "source": "../signal/systems/frequency-response/#step5"
   },
   {
    "id": "lti:impulse",
@@ -1371,7 +1371,7 @@
     "zh": "对初始静止的 LTI 系统，把输入分解为加权、平移的单位脉冲，就能由 h 重建输出。",
     "en": "For an initially resting LTI system, decompose the input into weighted shifted impulses and reconstruct the output from h."
    },
-   "source": "../lti/#step2"
+   "source": "../signal/systems/lti-systems/#step2"
   },
   {
    "id": "impulse:convolution",
@@ -1386,7 +1386,7 @@
     "zh": "输出是各个平移冲激响应的加权和，这正是离散卷积 y[n] = Σ x[k]h[n−k]。",
     "en": "The output sums weighted shifted impulse responses: precisely the discrete convolution y[n] = Σ x[k]h[n−k]."
    },
-   "source": "../lti/#step2"
+   "source": "../signal/systems/lti-systems/#step2"
   },
   {
    "id": "convolution:freqresp",
@@ -1431,7 +1431,7 @@
     "zh": "线性保证输入的加权组合产生相同权重的输出组合；时不变是另一项独立条件。",
     "en": "Linearity preserves weighted combinations of input-output pairs; time invariance is a separate condition."
    },
-   "source": "../lti/#step3"
+   "source": "../signal/systems/lti-systems/#step3"
   },
   {
    "id": "laplace:fourier",
@@ -1446,7 +1446,7 @@
     "zh": "当拉普拉斯变换的收敛域包含虚轴时，在 s = iω 处取值可得到傅里叶变换。",
     "en": "If the Laplace region of convergence contains the imaginary axis, evaluating at s = iω gives the Fourier transform."
    },
-   "source": "../laplace/#step2"
+   "source": "../signal/transforms/laplace/#step2"
   },
   {
    "id": "laplace:poles",
@@ -1461,7 +1461,7 @@
     "zh": "对本课中的有理变换，极点的实部关联增长或衰减，虚部关联振荡；还要结合因果性和收敛域判断稳定性。",
     "en": "For the rational transforms in this lesson, pole real parts describe growth or decay and imaginary parts describe oscillation; stability also depends on causality and convergence."
    },
-   "source": "../laplace/#step4"
+   "source": "../signal/transforms/laplace/#step4"
   },
   {
    "id": "poles:freqresp",
@@ -1491,7 +1491,7 @@
     "zh": "在矩阵变换下寻找只被缩放的非零向量，就得到 Av = λv 的特征向量问题。",
     "en": "Finding nonzero vectors that are only scaled by a matrix leads to the eigenvector equation Av = λv."
    },
-   "source": "../eigen/#step1"
+   "source": "../math/linear-algebra/eigenvectors/#step1"
   },
   {
    "id": "eigen:variance",
@@ -1506,7 +1506,7 @@
     "zh": "对协方差矩阵，特征向量给出互相正交的主方向，特征值给出沿这些方向的方差。",
     "en": "For a covariance matrix, an orthonormal eigenbasis gives principal directions, and eigenvalues give variances along them."
    },
-   "source": "../eigen/#step5"
+   "source": "../math/linear-algebra/eigenvectors/#step5"
   },
   {
    "id": "probability:bayes",
@@ -1521,7 +1521,7 @@
     "zh": "先验和似然都来自概率模型；贝叶斯公式将它们结合成给定观测后的条件概率。",
     "en": "The prior and likelihood come from a probability model; Bayes’ rule combines them into a probability conditional on observations."
    },
-   "source": "../bayes/#step1"
+   "source": "../probability/inference/bayes-updating/#step1"
   },
   {
    "id": "bayes:kalman",
@@ -1536,7 +1536,7 @@
     "zh": "在线性动态与观测模型、适当高斯先验和独立高斯噪声条件下，卡尔曼更新可用均值与协方差表示贝叶斯更新。",
     "en": "With linear dynamics and measurements, an appropriate Gaussian prior and independent Gaussian noises, Kalman updates express Bayesian updating using means and covariances."
    },
-   "source": "../kalman/#step6"
+   "source": "../signal/control/kalman/#step6"
   },
   {
    "id": "variance:kalman",
@@ -1551,7 +1551,7 @@
     "zh": "预测不确定性与测量噪声共同决定增益；模型给出的不确定性必须与真实估计误差区分。",
     "en": "Predicted uncertainty and measurement noise jointly determine the gain; model uncertainty must be distinguished from actual estimation error."
    },
-   "source": "../kalman/#step2"
+   "source": "../signal/control/kalman/#step2"
   },
   {
    "id": "kalman:feedback",
@@ -1566,7 +1566,7 @@
     "zh": "无法直接观测的状态可先估计，再交给控制器；估计质量和模型误差会影响控制效果。",
     "en": "Estimate states that cannot be measured directly, then pass them to a controller; estimation quality and model mismatch affect control."
    },
-   "source": "../kalman/#step6"
+   "source": "../signal/control/kalman/#step6"
   },
   {
    "id": "variance:gaussian",
@@ -1581,7 +1581,7 @@
     "zh": "独立同分布的单个观测总体方差为 σ² 时，n 个样本的均值方差为 σ²/n；正态近似还需要适用的极限定理条件。",
     "en": "For iid observations each having population variance σ², the mean of n samples has variance σ²/n; a normal approximation additionally needs appropriate limit-theorem conditions."
    },
-   "source": "../clt/#step3"
+   "source": "../probability/statistics/central-limit-theorem/#step3"
   },
   {
    "id": "probability:montecarlo",
@@ -1596,7 +1596,7 @@
     "zh": "按指定概率模型采样，用样本平均估计期望；积分也可改写成相应的期望。",
     "en": "Sample from a specified probability model and average to estimate an expectation; integrals can also be written as expectations."
    },
-   "source": "../montecarlo/#step3"
+   "source": "../probability/stochastic/monte-carlo/#step3"
   },
   {
    "id": "variance:montecarlo",
@@ -1611,7 +1611,7 @@
     "zh": "独立同分布且方差有限时，样本平均的标准误差按 1/√n 缩小；这是误差尺度，不是每次运行的保证。",
     "en": "For iid samples with finite variance, the sample mean’s standard error scales as 1/√n; this is an error scale, not a guarantee for each run."
    },
-   "source": "../montecarlo/#step2"
+   "source": "../probability/stochastic/monte-carlo/#step2"
   },
   {
    "id": "convolution:gaussian",
@@ -1626,7 +1626,7 @@
     "zh": "独立随机变量之和的分布由卷积给出；反复相加后的正态近似需满足中心极限定理的条件。",
     "en": "Convolution gives the distribution of a sum of independent random variables; a normal approximation after repeated sums requires central-limit conditions."
    },
-   "source": "../clt/#step5"
+   "source": "../probability/statistics/central-limit-theorem/#step5"
   }
  ],
  "trails": [
@@ -1663,7 +1663,7 @@
       "zh": "下一站换成圆内0/1命中和πHat=4×命中率。N是每次估计的点数，20是重复次数；不传递这页的分布或参数。",
       "en": "Next switch to inside/outside0/1 hits and πHat=4×hit rate. N is points per estimate;20 is replications. This page’s distribution/parameters are not transferred."
      },
-     "href": "../clt/#step3",
+     "href": "../probability/statistics/central-limit-theorem/#step3",
      "evidenceEdge": "variance:montecarlo",
      "source": "https://openstax.org/books/introductory-statistics-2e/pages/7-1-the-central-limit-theorem-for-sample-means-averages",
      "evidenceLabel": {
@@ -1689,7 +1689,7 @@
       "zh": "展开“这些方差各指什么”：0/1数据的样本方差、π估计的理论方差及其平方根SE有不同对象。20次估计的样本SD也不是20次均值的SE。",
       "en": "Expand “Which variance is which?”: samplevariance of0/1data,theoreticalvariance of π estimates and its square-rootSE describe different objects. The20-estimate sampleSD is not the SE of their average."
      },
-     "href": "../montecarlo/#step2",
+     "href": "../probability/stochastic/monte-carlo/#step2",
      "evidenceEdge": "variance:montecarlo",
      "source": "https://openstax.org/books/introductory-statistics-2e/pages/7-1-the-central-limit-theorem-for-sample-means-averages",
      "evidenceLabel": {
@@ -1733,7 +1733,7 @@
       "zh": "下一站换理想电感：积电压，再除以电感量，得到电流的改变量，不是绝对电流。",
       "en": "Next change to an ideal inductor: integrate voltage and divide by inductance to obtain a current change, not absolute current."
      },
-     "href": "../integral/#step2",
+     "href": "../math/calculus/integral/#step2",
      "evidenceEdge": "integral:inductor",
      "source": "https://wiki.analog.com/university/courses/electronics/buck_converter_basics",
      "evidenceLabel": {
@@ -1759,7 +1759,7 @@
       "zh": "下一站是不同参数的Buck：L=1mH，周期50µs，初态已取稳态谷值；不会传递这里的电流或脉冲。",
       "en": "Next is a different Buck case: L=1mH,period50µs, starting at a steady-state valley. No current or pulse parameters transfer."
      },
-     "href": "../power-converters/#step1",
+     "href": "../physics/circuits/power-converters/#step1",
      "evidenceEdge": "integral:inductor",
      "source": "https://wiki.analog.com/university/courses/electronics/buck_converter_basics",
      "evidenceLabel": {
@@ -1785,7 +1785,7 @@
       "zh": "这是已建立的理想周期稳态；调参比较另一个稳态，不模拟启动或控制器。任意暂态区间仍满足积分关系，但未必伏秒平衡。",
       "en": "This is an established ideal periodic steady state. Parameter edits compare another steady case,not startup or a controller. The integral relation still holds during a transient,but its voltage area need not balance."
      },
-     "href": "../power-converters/#step4",
+     "href": "../physics/circuits/power-converters/#step4",
      "evidenceEdge": "inductor:buck",
      "source": "https://wiki.analog.com/university/courses/electronics/buck_converter_basics",
      "evidenceLabel": {
@@ -1828,7 +1828,7 @@
       "zh": "下一站换成电压v对时间t的曲线，不传递x²参数。斜率单位变为V/s，理想电容电流等于电容量乘这个变化率。",
       "en": "Next change examples to voltage v versus time t; x² parameters are not transferred. Slope has unitsV/s, and ideal capacitor current equals capacitance times this rate."
      },
-     "href": "../derivative/#step2",
+     "href": "../math/calculus/derivative/#step2",
      "evidenceEdge": "derivative:capacitor",
      "source": "https://openstax.org/books/university-physics-volume-2/pages/9-1-electrical-current",
      "evidenceLabel": {
@@ -1854,7 +1854,7 @@
       "zh": "由q=Cv与i=dq/dt得到i=C·dv/dt。本模型每段恒流，所以区间斜率恰等段内导数；电流真正跳变处电压没有双侧导数。新文档重载会重置脉冲；返回地图保留站点。",
       "en": "q=Cv and i=dq/dt give i=C·dv/dt. Each segment has constant current, so its interval slope equals the interior derivative; at a true current jump voltage has no two-sided derivative. New-document reload resets pulses; Back retains the Atlas station."
      },
-     "href": "../power-converters/#step2",
+     "href": "../physics/circuits/power-converters/#step2",
      "evidenceEdge": "derivative:capacitor",
      "source": "https://openstax.org/books/university-physics-volume-2/pages/8-1-capacitors-and-capacitance",
      "evidenceLabel": {
@@ -1903,9 +1903,9 @@
       "zh": "接下来固定使用零初态的3点平均器，看看它的h怎样决定输出。",
       "en": "Next, fix a zero-initial 3-point moving average and inspect how its h determines output."
      },
-     "href": "../lti/#step3",
+     "href": "../signal/systems/lti-systems/#step3",
      "evidenceEdge": "lti:superposition",
-     "source": "../lti/#step3"
+     "source": "../signal/systems/lti-systems/#step3"
     },
     {
      "node": "impulse",
@@ -1929,9 +1929,9 @@
       "zh": "下一站换一组便于手算的f、g，把同一种卷积运算拆成每项乘积；不会自动同步这页的数值。",
       "en": "The next lesson changes to small hand-calculation arrays f and g to unpack the same convolution operation. It does not transfer this page’s parameters."
      },
-     "href": "../lti/#step2",
+     "href": "../signal/systems/lti-systems/#step2",
      "evidenceEdge": "impulse:convolution",
-     "source": "../lti/#step2"
+     "source": "../signal/systems/lti-systems/#step2"
     },
     {
      "node": "convolution",
@@ -1955,7 +1955,7 @@
       "zh": "回到3点平均器，用正弦作输入：在频域，这份卷积可以用一个复数倍率H表达。",
       "en": "Return to the 3-point average with a sinusoidal input. In frequency, this convolution is represented by a complex multiplier H."
      },
-     "href": "../convolution/#step2",
+     "href": "../signal/systems/convolution/#step2",
      "evidenceEdge": "convolution:freqresp",
      "source": "https://ocw.mit.edu/courses/res-6-007-signals-and-systems-spring-2011/9434f9bde960fd3b2b81de3ad442f902_MITRES_6_007S11_lec11.pdf#page=5"
     },
@@ -1981,7 +1981,7 @@
       "zh": "把h的逐项乘加与H的幅相联系起来：这是同一固定LTI系统的两种表示，不是新的滤波器。",
       "en": "Connect the multiply-and-sum view of h to the magnitude/phase of H: two representations of one fixed LTI system, not a new filter."
      },
-     "href": "../freqresp/#step3",
+     "href": "../signal/systems/frequency-response/#step3",
      "evidenceEdge": "convolution:freqresp",
      "source": "https://ocw.mit.edu/courses/res-6-007-signals-and-systems-spring-2011/9434f9bde960fd3b2b81de3ad442f902_MITRES_6_007S11_lec11.pdf#page=5"
     }

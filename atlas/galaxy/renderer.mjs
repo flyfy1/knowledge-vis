@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import {OrbitControls} from '../../day-night-rotation/vendor/three/addons/controls/OrbitControls.js';
+import {OrbitControls} from '../../earth/astronomy/day-night-rotation/vendor/three/addons/controls/OrbitControls.js';
 
 export function createGalaxy({host,labels,model,positions,colors,lang,onSelect,onCamera,onFailure,onReset=()=>{},reduced=false}) {
   const edgeColors={foundation:0x9cc9ff,representation:0xd0b7ff,application:0xffc27d,connection:0x8be4d2};

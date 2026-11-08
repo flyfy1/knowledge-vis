@@ -22,7 +22,8 @@
         "zh": "复数操作的键盘输入与边界处理",
         "en": "Keyboard operation and complex-number input boundaries"
       },
-      "originalAuthorship": "not asserted; prior contributions retained"
+      "originalAuthorship": "not asserted; prior contributions retained",
+      "path": "math/algebra/complex-numbers/index.html"
     },
     "derivative": {
       "developer": "Codex",
@@ -33,9 +34,10 @@
         "zh": "变化率、有向速度与速率的说明",
         "en": "Explanations of rates of change, signed velocity and speed"
       },
-      "originalAuthorship": "not asserted; prior contributions retained"
+      "originalAuthorship": "not asserted; prior contributions retained",
+      "path": "math/calculus/derivative/index.html"
     },
-    "freqresp": {
+    "frequency-response": {
       "developer": "Codex",
       "edition": "codex-20261026",
       "kind": "revised",
@@ -44,7 +46,8 @@
         "zh": "共振、频率响应与稳态边界说明",
         "en": "Resonance, frequency response and steady-state boundaries"
       },
-      "originalAuthorship": "not asserted; prior contributions retained"
+      "originalAuthorship": "not asserted; prior contributions retained",
+      "path": "signal/systems/frequency-response/index.html"
     },
     "integral": {
       "developer": "Codex",
@@ -55,7 +58,8 @@
         "zh": "有向面积、位移与路程的区别",
         "en": "Signed area, displacement and distance"
       },
-      "originalAuthorship": "not asserted; prior contributions retained"
+      "originalAuthorship": "not asserted; prior contributions retained",
+      "path": "math/calculus/integral/index.html"
     },
     "laplace": {
       "developer": "Codex",
@@ -66,7 +70,8 @@
         "zh": "极点边界和系统响应说明",
         "en": "Pole boundaries and system-response explanations"
       },
-      "originalAuthorship": "not asserted; prior contributions retained"
+      "originalAuthorship": "not asserted; prior contributions retained",
+      "path": "signal/transforms/laplace/index.html"
     },
     "lens": {
       "developer": "Codex",
@@ -77,7 +82,8 @@
         "zh": "薄透镜近焦边界、虚实像与交互",
         "en": "Thin-lens focus boundaries, real/virtual images and interaction"
       },
-      "originalAuthorship": "not asserted; prior contributions retained"
+      "originalAuthorship": "not asserted; prior contributions retained",
+      "path": "physics/optics/lens/index.html"
     },
     "linear-functions": {
       "developer": "Codex",
@@ -88,7 +94,8 @@
         "zh": "斜率与小孔成像的学习连接",
         "en": "Learning connections between slope and pinhole geometry"
       },
-      "originalAuthorship": "not asserted; prior contributions retained"
+      "originalAuthorship": "not asserted; prior contributions retained",
+      "path": "math/algebra/linear-functions/index.html"
     },
     "pinhole-camera": {
       "developer": "Codex",
@@ -99,7 +106,8 @@
         "zh": "相似三角形、带符号放大率与图形联动",
         "en": "Similar triangles, signed magnification and linked diagrams"
       },
-      "originalAuthorship": "not asserted; prior contributions retained"
+      "originalAuthorship": "not asserted; prior contributions retained",
+      "path": "physics/optics/pinhole-camera/index.html"
     },
     "reflection-refraction": {
       "developer": "Codex",
@@ -110,7 +118,8 @@
         "zh": "法线角度、折射和全反射边界",
         "en": "Angles to the normal, refraction and total-reflection boundaries"
       },
-      "originalAuthorship": "not asserted; prior contributions retained"
+      "originalAuthorship": "not asserted; prior contributions retained",
+      "path": "physics/optics/reflection-refraction/index.html"
     },
     "sampling": {
       "developer": "Codex",
@@ -123,9 +132,10 @@
       },
       "originalAuthorship": "not asserted; prior contributions retained",
       "previousRevision": "1d90150cf9c1db194769dff92dc4178ce7779fb0",
-      "retainedContributions": "Prior Codex1d90150 and original Muse/Alberto maintenance0cdb1700/clarity27eb5c4b retained; no original whole-course Codex authorship asserted"
+      "retainedContributions": "Prior Codex1d90150 and original Muse/Alberto maintenance0cdb1700/clarity27eb5c4b retained; no original whole-course Codex authorship asserted",
+      "path": "signal/sampling/sampling/index.html"
     },
-    "trig": {
+    "trigonometry": {
       "developer": "Codex",
       "edition": "codex-20261026",
       "kind": "revised",
@@ -134,7 +144,8 @@
         "zh": "正切定义域、渐近线与键盘操作",
         "en": "Tangent domain, asymptotes and keyboard operation"
       },
-      "originalAuthorship": "not asserted; prior contributions retained"
+      "originalAuthorship": "not asserted; prior contributions retained",
+      "path": "math/geometry/trigonometry/index.html"
     },
     "velocity-vt": {
       "developer": "Codex",
@@ -145,9 +156,10 @@
         "zh": "有向速度、速率与图形读法",
         "en": "Signed velocity, speed and interpreting the graph"
       },
-      "originalAuthorship": "not asserted; prior contributions retained"
+      "originalAuthorship": "not asserted; prior contributions retained",
+      "path": "physics/mechanics/velocity-vt/index.html"
     },
-    "ztransform": {
+    "z-transform": {
       "developer": "Codex",
       "edition": "codex-20261026",
       "kind": "revised",
@@ -156,7 +168,8 @@
         "zh": "离散序列与连续信号记号边界",
         "en": "Discrete-sequence and continuous-signal notation boundaries"
       },
-      "originalAuthorship": "not asserted; prior contributions retained"
+      "originalAuthorship": "not asserted; prior contributions retained",
+      "path": "signal/transforms/z-transform/index.html"
     },
     "photosynthesis": {
       "developer": "Codex",
@@ -167,7 +180,8 @@
         "zh": "高 DPR 画布尺寸、移动滚动与无脚本阅读兼容性",
         "en": "High-DPR canvas sizing, mobile scrolling and script-free reading fallbacks"
       },
-      "originalAuthorship": "Codex HTML/CSS, Alberto completion and historical Claude Code fixes retained; not Codex-exclusive origin"
+      "originalAuthorship": "Codex HTML/CSS, Alberto completion and historical Claude Code fixes retained; not Codex-exclusive origin",
+      "path": "biology/cells/photosynthesis/index.html"
     },
     "frozen-bubble": {
       "developer": "Codex",
@@ -179,7 +193,8 @@
         "en": "Observation-first teaching sequence, research context and mobile comparison"
       },
       "originalAuthorship": "Codex implementation in1d90150c retained; this source records the teaching revision",
-      "provenanceEvidence": "specs/reviews/frozen-bubble-learning-20261026.md"
+      "provenanceEvidence": "specs/reviews/frozen-bubble-learning-20261026.md",
+      "path": "physics/thermal/frozen-bubble/index.html"
     },
     "power-converters": {
       "developer": "Codex",
@@ -191,9 +206,10 @@
         "en": "Conducting loops and capacitor rates plus signed voltseconds at the same Buck inspect time"
       },
       "originalAuthorship": "Original lesson and quantitative model retained; original generator not asserted",
-      "previousSourceRevision": "4791138bb6bf0e89dbb665c9268784e63b702216"
+      "previousSourceRevision": "4791138bb6bf0e89dbb665c9268784e63b702216",
+      "path": "physics/circuits/power-converters/index.html"
     },
-    "eigen": {
+    "eigenvectors": {
       "developer": "Codex",
       "edition": "codex-eigen-20261026",
       "kind": "revised",
@@ -202,7 +218,8 @@
         "zh": "特征方向、带符号伸缩与数值共线边界",
         "en": "Eigendirections, signed scaling and numerical collinearity boundaries"
       },
-      "originalAuthorship": "Original course retained; this source records the bounded direction revision, not exclusive creation"
+      "originalAuthorship": "Original course retained; this source records the bounded direction revision, not exclusive creation",
+      "path": "math/linear-algebra/eigenvectors/index.html"
     },
     "atlas/galaxy": {
       "developer": "Codex",
@@ -232,7 +249,7 @@
       "path": "leetcode/42/index.html",
       "publicPath": "leetcode/42-codex/"
     },
-    "lti": {
+    "lti-systems": {
       "developer": "Codex",
       "edition": "codex-lti-audio-20261028",
       "kind": "revised",
@@ -241,9 +258,10 @@
         "zh": "第2步同模型输入与处理后试听、音量与音频生命周期；无脚本回退状态",
         "en": "Step2 same-model input/output audition, volume and audio lifecycle; script-free fallback state"
       },
-      "originalAuthorship": "not asserted; prior contributions retained"
+      "originalAuthorship": "not asserted; prior contributions retained",
+      "path": "signal/systems/lti-systems/index.html"
     },
-    "montecarlo": {
+    "monte-carlo": {
       "developer": "Codex",
       "edition": "codex-montecarlo-error-scale-20261026",
       "kind": "revised",
@@ -253,9 +271,10 @@
         "zh": "第2步的重复估计、方差与标准误差口径、暂停对照及学习路线。",
         "en": "Step2 repeated estimates, variance/standard-error meanings, paused comparisons and learning-route connection."
       },
-      "retainedContributions": "Original lesson, samplers and authors retained; original tool identity is not reclassified"
+      "retainedContributions": "Original lesson, samplers and authors retained; original tool identity is not reclassified",
+      "path": "probability/stochastic/monte-carlo/index.html"
     },
-    "bayes": {
+    "bayes-updating": {
       "developer": "Codex",
       "edition": "codex-bayes-evidence-identity-20261026",
       "kind": "revised",
@@ -266,7 +285,8 @@
         "en": "retains Step1 reader and graph entry; corrects Step3 independence-bound claim and compares new measurements with copies in one ledger."
       },
       "retainedContributions": "Original course, probability functions and unrelated chapters retained; original tool identity not reclassified",
-      "previousRevision": "ce20ae377c52ab8e81629283f31ec3ea84a3e94f"
+      "previousRevision": "ce20ae377c52ab8e81629283f31ec3ea84a3e94f",
+      "path": "probability/inference/bayes-updating/index.html"
     },
     "interference": {
       "developer": "Codex",
@@ -278,7 +298,8 @@
         "zh": "连续相位、近抵消判定及图谱连接",
         "en": "continuous phase comparison, near-cancellation classification and graph connection"
       },
-      "retainedContributions": "Original844643ca commit credits Alberto/Muse; original course, yAt/ySum and other contributors retained; no original Codex authorship asserted"
+      "retainedContributions": "Original844643ca commit credits Alberto/Muse; original course, yAt/ySum and other contributors retained; no original Codex authorship asserted",
+      "path": "physics/waves/interference/index.html"
     },
     "standing-wave": {
       "developer": "Codex",
@@ -291,7 +312,8 @@
         "en": "two-point phase, precise nodes and analytic prediction"
       },
       "retainedContributions": "Original794f6825 Muse/Alberto course, wave functions and unrelated chapters retained; no original Codex authorship asserted",
-      "previousRevision": "19873a1aa6d006f6b74e94bc8ceefb27fbda5f3a"
+      "previousRevision": "19873a1aa6d006f6b74e94bc8ceefb27fbda5f3a",
+      "path": "physics/waves/standing-wave/index.html"
     },
     "convolution": {
       "developer": "Codex",
@@ -304,7 +326,8 @@
         "zh": "第2步的索引对齐、零延拓、小数输入与阅读恢复",
         "en": "Step2 index alignment, zero extension, decimals and reading recovery"
       },
-      "retainedContributions": "Original185078dd andmaintenance0cdb1700 Muse contributors retained; no original whole-course Codex authorship asserted"
+      "retainedContributions": "Original185078dd andmaintenance0cdb1700 Muse contributors retained; no original whole-course Codex authorship asserted",
+      "path": "signal/systems/convolution/index.html"
     }
   },
   "exceptions": {

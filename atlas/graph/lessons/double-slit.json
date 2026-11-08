@@ -12,7 +12,7 @@
   "en": "Double-slit fringes are spaced Δy = λL/d under a single-slit sinc² envelope; single particles build the fringes dot by dot, and knowing which slit was used erases them (V² + D² ≤ 1); matter waves have λ = h/(mv). An ideal coherent far-field model that offers no interpretation of measurement."
  },
  "formula": "Δy = λL/d",
- "source": "../double-slit/#step2",
+ "source": "../physics/modern/double-slit/#step2",
  "edges": [
   {
    "from": "interference",
@@ -26,7 +26,7 @@
     "zh": "两条缝到屏上一点的路程差等于波长整数倍时加强、半整数倍时抵消，这是干涉的路程差规则在双缝上的应用。",
     "en": "The path difference from two slits to a screen point being a whole number of wavelengths reinforces and half-integers cancel, the path-difference rule of interference applied to a double slit."
    },
-   "source": "../double-slit/#step0"
+   "source": "../physics/modern/double-slit/#step0"
   },
   {
    "from": "double-slit",
@@ -40,7 +40,7 @@
     "zh": "单个粒子也走出干涉条纹，说明两条路径的“振幅”先相加再取平方；一旦路径可区分，就改为概率相加，条纹消失。",
     "en": "Single particles still build interference fringes, which shows that the amplitudes of two paths add before squaring; once the paths are distinguishable, probabilities add instead and the fringes vanish."
    },
-   "source": "../double-slit/#step3"
+   "source": "../physics/modern/double-slit/#step3"
   },
   {
    "from": "interference",
@@ -54,7 +54,7 @@
     "zh": "两列波的概率幅先按叠加相加，再平方成概率；相长处明、相消处暗，条纹就是叠加的账本。",
     "en": "Two waves' probability amplitudes first add by superposition, then square into probabilities; reinforcing places turn bright, cancelling places dark — fringes are superposition's ledger."
    },
-   "source": "../double-slit/#step3"
+   "source": "../physics/modern/double-slit/#step3"
   }
  ],
  "routes": [

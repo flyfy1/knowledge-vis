@@ -9,7 +9,7 @@ const out=process.env.LESSON_SCREENSHOTS||'/tmp/frozen-learning-after';fs.mkdirS
   for(const width of [320,390,1280]){
    const context=await browser.newContext({viewport:{width,height:844},isMobile:width<640,hasTouch:width<640,deviceScaleFactor:1,reducedMotion:'reduce'});
    const p=await context.newPage();p.on('pageerror',e=>errors.push(e.message));
-   await p.goto(base+'/frozen-bubble/');
+   await p.goto(base+'/physics/thermal/frozen-bubble/');
    for(const lang of ['zh','en']){
     await p.locator(`[data-lang=${lang}]`).click();
     assert.match(await p.locator('.page-provenance summary').innerText(),/Codex/);

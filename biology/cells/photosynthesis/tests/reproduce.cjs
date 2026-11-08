@@ -17,7 +17,7 @@ const fs=require('node:fs');
   sizes.push(await page.evaluate(()=>({pageHeight:document.documentElement.scrollHeight,canvas:[...document.querySelectorAll('canvas')].map(c=>({id:c.id,cssHeight:c.clientHeight,bufferHeight:c.height}))})));
  }
  console.log(JSON.stringify(sizes,null,2));
- fs.writeFileSync('photosynthesis/tests/evidence/deployed-reproduction.json',JSON.stringify({description:'Public deployed app.js replayed against delivery baseline HTML/CSS, Chrome mobile emulation, 393x851 DPR 3; initial render and 3 resize events.',sizes},null,2));
+ fs.writeFileSync('biology/cells/photosynthesis/tests/evidence/deployed-reproduction.json',JSON.stringify({description:'Public deployed app.js replayed against delivery baseline HTML/CSS, Chrome mobile emulation, 393x851 DPR 3; initial render and 3 resize events.',sizes},null,2));
  await page.evaluate(()=>scrollTo({top:1800,behavior:'instant'}));await page.screenshot({path:'photosynthesis/tests/evidence/deployed-gap.png'});
  }finally{await browser.close();}
 })();

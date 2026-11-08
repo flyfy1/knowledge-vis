@@ -1,6 +1,6 @@
 'use strict';
 const fs=require('fs'),vm=require('vm'),assert=require('node:assert/strict'),cp=require('child_process');
-const s=fs.readFileSync('bayes/app.js','utf8'),old=cp.execFileSync('git',['show','9173da78:bayes/app.js'],{encoding:'utf8'});
+const s=fs.readFileSync('probability/inference/bayes-updating/app.js','utf8'),old=cp.execFileSync('git',['show','9173da78:bayes/app.js'],{encoding:'utf8'});
 const slice=(x,a,b)=>x.slice(x.indexOf(a),x.indexOf(b));
 assert.equal(slice(s,'const CASE =','/* ---------- Beta 分布'),slice(old,'const CASE =','/* ---------- Beta 分布'));
 assert.equal(slice(s,'const s2 = {','const s3 = {'),slice(old,'const s2 = {','const s3 = {'));

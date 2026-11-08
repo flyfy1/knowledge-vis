@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const root = path.join(__dirname, '..', 'geology-plate-tectonics');
+const root = path.join(__dirname, '..', 'earth', 'geo', 'plate-tectonics');
 for (const file of ['index.html', 'style.css', 'i18n.js', 'app.js', 'BRIEF.md']) {
   if (!fs.existsSync(path.join(root, file))) throw new Error(`missing ${file}`);
 }

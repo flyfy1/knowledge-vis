@@ -4,7 +4,7 @@ const base=process.env.BASE_URL||'http://127.0.0.1:18769';
 (async()=>{const b=await chromium.launch({channel:'chrome',headless:true});const errors=[],results=[];try{
  for(const lang of ['en','zh'])for(const width of [320,390,768,1440]){
   const ctx=await b.newContext({viewport:{width,height:1000},locale:lang==='zh'?'zh-CN':'en-US'}),p=await ctx.newPage();p.on('pageerror',e=>errors.push(String(e)));
-  await p.goto(base+'/power-converters/#step4');await p.waitForTimeout(150);
+  await p.goto(base+'/physics/circuits/power-converters/#step4');await p.waitForTimeout(150);
   assert.equal(await p.locator('.step').count(),7);
   let geometry=await p.evaluate(()=>({w:innerWidth,doc:document.documentElement.scrollWidth,y:document.querySelector('#step4').getBoundingClientRect().top}));assert.ok(geometry.doc<=width);assert.ok(geometry.y>=65&&geometry.y<130,JSON.stringify(geometry));
   await p.locator('#power-v').fill('6');assert.match(await p.locator('#power-feedback').innerText(),lang==='en'?/Lower voltage/:/电压降低/);
@@ -23,6 +23,6 @@ const base=process.env.BASE_URL||'http://127.0.0.1:18769';
   results.push({lang,width,minChartText:minText,geometry});await ctx.close();
  }
  // Actual map → new lesson → return navigation, including generated section anchors.
- const p=await b.newPage();await p.goto(base+'/atlas/?node=boost&view=list');await Promise.all([p.waitForURL('**/power-converters/#step5'),p.locator('.primary-link').click()]);assert.ok(p.url().endsWith('/power-converters/#step5'));assert.ok(await p.locator('#step5').isVisible());await Promise.all([p.waitForURL('**/atlas/**'),p.locator('#back').click()]);assert.ok(p.url().includes('/atlas/'));assert.ok(await p.locator('#detailTitle').isVisible());
+ const p=await b.newPage();await p.goto(base+'/atlas/?node=boost&view=list');await Promise.all([p.waitForURL('**/power-converters/#step5'),p.locator('.primary-link').click()]);assert.ok(p.url().endsWith('/physics/circuits/power-converters/#step5'));assert.ok(await p.locator('#step5').isVisible());await Promise.all([p.waitForURL('**/atlas/**'),p.locator('#back').click()]);assert.ok(p.url().includes('/atlas/'));assert.ok(await p.locator('#detailTitle').isVisible());
  assert.deepEqual(errors,[]);console.log(JSON.stringify({base,states:results,errors,status:'pass'}));
 }finally{await b.close();}})().catch(e=>{console.error(e);process.exitCode=1;});

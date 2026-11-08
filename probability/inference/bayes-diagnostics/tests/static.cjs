@@ -1,8 +1,8 @@
 'use strict';
 const fs=require('node:fs');
-const html=fs.readFileSync('bayes-diagnostics/index.html','utf8');
-const js=fs.readFileSync('bayes-diagnostics/app.js','utf8');
-const i18n=fs.readFileSync('bayes-diagnostics/i18n.js','utf8');
+const html=fs.readFileSync('probability/inference/bayes-diagnostics/index.html','utf8');
+const js=fs.readFileSync('probability/inference/bayes-diagnostics/app.js','utf8');
+const i18n=fs.readFileSync('probability/inference/bayes-diagnostics/i18n.js','utf8');
 for(const id of ['prior','sens','spec','positiveBtn','negativeBtn','tree','formula','quizFeedback','resetBtn']){
   if(!html.includes(`id="${id}"`)) throw new Error(`missing interactive id: ${id}`);
 }

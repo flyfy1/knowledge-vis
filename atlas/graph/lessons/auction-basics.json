@@ -1,5 +1,5 @@
 {
- "slug": "auctions",
+ "slug": "auction-basics",
  "conceptId": "auctions",
  "group": "OTHER",
  "note": "No economics group in the atlas; group left OTHER. Edge endpoints are site pages (mechanism-auction, game-theory) merged separately, plus montecarlo which exists in the atlas.",
@@ -12,7 +12,7 @@
   "en": "First-price auctions call for shading, truth-telling is dominant in second-price auctions, English matches second price and Dutch matches first price, and average revenue is equal; with an uncertain true value the winner’s curse appears. A single-item model with symmetric risk-neutral bidders."
  },
  "formula": "E[revenue] = 100·(n−1)/(n+1)",
- "source": "../auctions/#step2",
+ "source": "../math/applied/auction-basics/#step2",
  "edges": [
   {
    "from": "auctions",
@@ -26,7 +26,7 @@
     "zh": "第二价格拍卖里，无论对手怎么报，说真话都不比别的报价差，是占优策略的一个具体例子。",
     "en": "In a second-price auction, telling the truth is never worse than any other bid whatever the rival does, a concrete dominant strategy."
    },
-   "source": "../auctions/#step1"
+   "source": "../math/applied/auction-basics/#step1"
   },
   {
    "from": "montecarlo",
@@ -40,7 +40,7 @@
     "zh": "多轮随机抽取估值并累计平均，两种规则的平均收益靠近同一个理论值，这是蒙特卡洛估计的直接应用。",
     "en": "Drawing values at random over many rounds and averaging brings both rules to the same theoretical value, a direct use of Monte Carlo estimation."
    },
-   "source": "../auctions/#step2"
+   "source": "../math/applied/auction-basics/#step2"
   }
  ],
  "routes": [

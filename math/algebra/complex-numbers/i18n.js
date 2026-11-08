@@ -67,7 +67,7 @@ const STR = {
     s1ro: "z ≈ <b>{z}</b>：实部 a ≈ <span>{a}</span>，虚部 b ≈ <span>{b}</span>；模 |z| = √(a² + b²) ≈ <b>{m}</b>（斜边由勾股实算）；辐角 θ ≈ <b>{ang}</b>（从实轴正半轴逆时针量）。数字由未舍入坐标计算后显示为近似值。",
     s1roOrigin: 'z = <b>0</b>：实部 a = 0，虚部 b = 0；模 |z| = <b>0</b>；辐角 <b>—（原点没有辐角）</b>——箭头缩成一个点，没有方向可量。任何页面位置只要模为 0，都按这个口径读。',
     s1conc: '结论：钉住一个点有两套办法——坐标 (a, b)，或者（模，辐角）。它们是<strong>同一根箭头的两种读法</strong>：前者说「向右走几、向上走几」，后者说「多长、朝哪个方向」。下一步加法用第一套读法最顺，乘法则要靠第二套——先都认熟。',
-    s1hint: '边界逐个验：把点拖到负实轴上，辐角读作 +180° 而不是 −180°——主值区间的右端是闭的。拖到单位圆上（虚线圈）时模恒为 1，只剩角度在变；这时箭头尖的坐标正是 (cos θ, sin θ)，这个读法的出处在<a href="../trig/#step1">三角函数页第 1 步</a>。',
+    s1hint: '边界逐个验：把点拖到负实轴上，辐角读作 +180° 而不是 −180°——主值区间的右端是闭的。拖到单位圆上（虚线圈）时模恒为 1，只剩角度在变；这时箭头尖的坐标正是 (cos θ, sin θ)，这个读法的出处在<a href="../../geometry/trigonometry/#step1">三角函数页第 1 步</a>。',
     cUnit: '单位圆',
 
     /* ---------- 第 2 步：加法 = 平移 ---------- */
@@ -209,7 +209,7 @@ const STR = {
     s1ro: "z ≈ <b>{z}</b>: real part a ≈ <span>{a}</span>, imaginary part b ≈ <span>{b}</span>; modulus |z| = √(a² + b²) ≈ <b>{m}</b> (computed by Pythagoras); argument θ ≈ <b>{ang}</b> (counter-clockwise from the positive real axis). Displayed numbers are rounded after calculation from unrounded coordinates.",
     s1roOrigin: 'z = <b>0</b>: real part a = 0, imaginary part b = 0; modulus |z| = <b>0</b>; argument <b>— (the origin has no argument)</b> — the arrow has shrunk to a point and there is no direction to measure. Anywhere on this page, a point of modulus 0 is read this way.',
     s1conc: 'Conclusion: there are two ways to pin the point — coordinates (a, b), or (modulus, argument). They are <strong>two readings of the same arrow</strong>: one says “how far right, how far up”, the other says “how long, pointing which way”. Addition next door reads most naturally in the first; multiplication will need the second — get fluent in both.',
-    s1hint: 'Check the boundaries one by one: drag the point onto the negative real axis and the argument reads +180°, not −180° — the right end of the principal interval is closed. On the unit circle (the dashed ring) the modulus stays 1 and only the angle moves; there the arrow tip’s coordinates are exactly (cos θ, sin θ) — that reading is established in <a href="../trig/#step1">Step 1 of the trigonometry page</a>.',
+    s1hint: 'Check the boundaries one by one: drag the point onto the negative real axis and the argument reads +180°, not −180° — the right end of the principal interval is closed. On the unit circle (the dashed ring) the modulus stays 1 and only the angle moves; there the arrow tip’s coordinates are exactly (cos θ, sin θ) — that reading is established in <a href="../../geometry/trigonometry/#step1">Step 1 of the trigonometry page</a>.',
     cUnit: 'unit circle',
 
     s2k: 'Step 2 · Addition',
