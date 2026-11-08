@@ -182,13 +182,14 @@ function draw5() {
   ctx.strokeStyle = C.cyan; ctx.lineWidth = 2.4; ctx.beginPath();
   for (let cc = cMin; cc <= cMax + 1e-9; cc += 0.02) { const X = x(cc), Y = y(cost(cc)); cc === cMin ? ctx.moveTo(X, Y) : ctx.lineTo(X, Y); }
   ctx.stroke();
-  ctx.fillStyle = C.green; ctx.beginPath(); ctx.arc(x(bestC), y(best.cost), 6.5, 0, 7); ctx.fill();
-  label(ctx, 'c* = ' + f(bestC), x(bestC), y(best.cost) + 22, C.green, 'center');
+  // An optimum outside the plotted range is pinned to the edge (with an arrow) rather than drawn off-canvas.
+  const inRange = bestC >= cMin && bestC <= cMax, shownC = Math.max(cMin, Math.min(cMax, bestC));
+  ctx.fillStyle = C.green; ctx.beginPath(); ctx.arc(x(shownC), y(inRange ? best.cost : cost(shownC)), 6.5, 0, 7); ctx.fill();
+  label(ctx, (bestC < cMin ? '← ' : '') + 'c* = ' + f(bestC) + (bestC > cMax ? ' →' : ''), Math.max(P.l + 40, Math.min(P.r - 40, x(shownC))), y(inRange ? best.cost : cost(shownC)) + (inRange ? 22 : -14), C.green, 'center');
   const yc = cost(c);
   ctx.save(); ctx.strokeStyle = C.orange; ctx.setLineDash([4, 4]); ctx.beginPath(); ctx.moveTo(x(c), P.t); ctx.lineTo(x(c), P.b); ctx.stroke(); ctx.restore();
   ctx.fillStyle = C.orange; ctx.beginPath(); ctx.arc(x(c), y(yc), 5.5, 0, 7); ctx.fill();
-  const inRange = bestC >= cMin && bestC <= cMax;
-  $('r5').textContent = t('s5readout', { best: f(bestC) + (inRange ? '' : ' ↔'), bestCost: f(best.cost, 3), c: f(c), cost: f(yc, 3), verdict: yc - best.cost < 0.005 ? t('near') : t('far') });
+  $('r5').textContent = t('s5readout', { best: f(bestC) + (inRange ? '' : t('offChart')), bestCost: f(best.cost, 3), c: f(c), cost: f(yc, 3), verdict: yc - best.cost < 0.005 ? t('near') : t('far') });
 }
 
 function refresh() {

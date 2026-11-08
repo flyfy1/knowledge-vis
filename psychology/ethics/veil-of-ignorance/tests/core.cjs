@@ -26,7 +26,12 @@ close(V.bestT(S.B, 0.6, V.min).t, (-12 + Math.sqrt(144 + 4 * 63 * 35)) / 126, 0.
 assert.equal(V.bestT(S.B, 0.6, V.mean).t, 0, 'average rule never levels when levelling is costly');
 const tEta = V.bestT(S.B, 0.6, xs => V.ce(xs, 2)).t; assert.ok(tEta > 0 && tEta < V.bestT(S.B, 0.6, V.min).t, 'η in between');
 // Redistribution preserves the mean when k = 0 and shrinks it by (1 − k t²) otherwise.
-close(V.mean(V.redistribute(S.B, 0.5, 0)), 45, 1e-9, 'mean kept'); close(V.mean(V.redistribute(S.B, 0.5, 0.6)), 45 * 0.85, 1e-9, 'mean shrinks');
+close(V.mean(V.redistribute(S.B, 0.5, 0)), 45, 1e-9, 'mean kept');
+// k = 0: the average is the same for every t, so the page reports a tie (anyT) rather than "best t = 0".
+for (let i = 0; i <= 100; i++) close(V.mean(V.redistribute(S.B, i / 100, 0)), 45, 1e-9, 'flat average at k=0');
+// s2e states all three of Rawls's conditions and his later emphasis (SEP §6.2, citing TJ 154–55 and JF 99).
+assert.ok(STRINGS.zh.s2e.includes('三条') && STRINGS.zh.s2e.includes('关键在后两条'), 's2e zh conditions');
+assert.ok(STRINGS.en.s2e.includes('three conditions') && STRINGS.en.s2e.includes('second and third'), 's2e en conditions'); close(V.mean(V.redistribute(S.B, 0.5, 0.6)), 45 * 0.85, 1e-9, 'mean shrinks');
 // 5. Draws are uniform over the five positions (deterministic generator).
 const d = V.drawer(5), cnt = [0, 0, 0, 0, 0]; for (let i = 0; i < 50000; i++) cnt[d()]++;
 cnt.forEach(c => close(c / 50000, 0.2, 0.01, 'uniform draw'));

@@ -36,6 +36,11 @@ for (const [p, m] of [[0.5, 1], [0.5, 4], [0.2, 1], [0.8, 10]]) {
 }
 assert.ok(S.bestK(1.5, 0.5, 10, 1).k < S.bestK(1.5, 0.5, 1, 1).k, 'costlier misses → laxer');
 assert.ok(S.bestK(1.5, 0.8, 1, 1).k < S.bestK(1.5, 0.2, 1, 1).k, 'commoner signal → laxer');
+// Slider corners (p 0.05–0.95, ratio 0.1–10) push the optimum to c* = ±3.5, beyond the plotted −2.5…2.5,
+// which is why app.js pins the dot to the edge and the readout appends offChart.
+for (const [p, m, want] of [[0.05, 0.1, 3.5], [0.95, 10, -3.5]]) close(S.cFromK(1.5, S.bestK(1.5, p, m, 1).k), want, 0.01, `edge optimum p=${p} m=${m}`);
+// Step 4 reveal quotes d' ≈ 2.36 > 1.68 and c ≈ −0.87.
+for (const l of ['zh', 'en']) assert.ok(['2.36', '1.68', '−0.87'].every(v => STRINGS[l].reveal.includes(v)), 'reveal numbers ' + l);
 
 // 5. Bilingual parity, keys used, deep links resolve.
 const zk = Object.keys(STRINGS.zh).sort();

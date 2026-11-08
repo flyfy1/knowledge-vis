@@ -10,7 +10,9 @@ const C = { cyan: '#67d7f9', orange: '#ffb454', green: '#7ee2a8', pink: '#ff7a93
 const COL = { A: C.green, B: C.orange, C: C.cyan };
 const num = id => Number($(id).value);
 const f = (v, d = 1) => Number(v).toFixed(d);
-const state = { soc0: null, draws: [], last: null, rnd0: V.drawer(11), soc1: 'B', run: [], rnd1: V.drawer(29) };
+// Draw records are kept per society, so switching society never silently discards what the learner drew.
+const state = { soc0: null, draws0: { A: [], B: [], C: [] }, last0: { A: null, B: null, C: null }, rnd0: V.drawer(11), soc1: 'B', runs: { A: [], B: [], C: [] }, rnd1: V.drawer(29) };
+const draws = () => state.soc0 ? state.draws0[state.soc0] : [];
 
 function fitCanvas(canvas) {
   const dpr = Math.min(3, window.devicePixelRatio || 1);
@@ -37,7 +39,10 @@ function societyBars(ctx, W, H, { highlight = null, dots = null, worstBox = fals
   KEYS.forEach((k, gi) => {
     const xs = SOC[k], gx = P.l + gi * gw + 8, bw = (gw - 16) / 5;
     const dim = highlight && highlight !== k;
-    label(ctx, t('soc' + k).split(' · ')[0] + ' · ' + t('soc' + k).split(' · ')[1], gx, P.t - 8, dim ? C.muted : COL[k], 'left', 11);
+    // Full society name only when it fits its column; otherwise the letter (the buttons below carry the names).
+    ctx.font = '11px system-ui,sans-serif';
+    const name = ctx.measureText(t('soc' + k)).width <= gw - 12 ? t('soc' + k) : k;
+    label(ctx, name, gx, P.t - 8, dim ? C.muted : COL[k], 'left', 11);
     const lo = V.min(xs);
     xs.forEach((v, i) => {
       ctx.globalAlpha = dim ? 0.3 : 1; ctx.fillStyle = COL[k];
@@ -57,21 +62,22 @@ function societyBars(ctx, W, H, { highlight = null, dots = null, worstBox = fals
 /* ---------- step 0: choose, then draw ---------- */
 function draw0() {
   const { ctx, W, H } = fitCanvas($('c0'));
-  const counts = [0, 0, 0, 0, 0]; state.draws.forEach(d => counts[d.pos]++);
+  const counts = [0, 0, 0, 0, 0]; draws().forEach(d => counts[d.pos]++);
+  const last = state.soc0 ? state.last0[state.soc0] : null;
   const m = societyBars(ctx, W, H, { highlight: state.soc0, dots: counts });
-  if (state.last && state.soc0) {
-    const gi = KEYS.indexOf(state.soc0), bw = (m.gw - 16) / 5, gx = m.P.l + gi * m.gw + 8, v = SOC[state.soc0][state.last.pos];
-    ctx.strokeStyle = C.text; ctx.lineWidth = 3; ctx.strokeRect(gx + state.last.pos * bw, m.y(v) - 2, bw, m.P.b - m.y(v) + 2);
-    label(ctx, '★', gx + state.last.pos * bw + bw / 2, m.y(v) - 6, C.text, 'center', 14);
+  if (last) {
+    const gi = KEYS.indexOf(state.soc0), bw = (m.gw - 16) / 5, gx = m.P.l + gi * m.gw + 8, v = SOC[state.soc0][last.pos];
+    ctx.strokeStyle = C.text; ctx.lineWidth = 3; ctx.strokeRect(gx + last.pos * bw, m.y(v) - 2, bw, m.P.b - m.y(v) + 2);
+    label(ctx, '★', gx + last.pos * bw + bw / 2, m.y(v) - 6, C.text, 'center', 14);
   }
   document.querySelectorAll('[data-soc]').forEach(b => { b.classList.toggle('primary', b.dataset.soc === state.soc0); b.setAttribute('aria-pressed', String(b.dataset.soc === state.soc0)); });
   $('lift').disabled = !state.soc0;
   const name = state.soc0 ? t('soc' + state.soc0) : '';
   if (!state.soc0) $('r0').textContent = t('s0pick');
-  else if (!state.last) $('r0').textContent = t('s0ready', { soc: name });
+  else if (!last) $('r0').textContent = t('s0ready', { soc: name });
   else {
-    const vals = state.draws.map(d => SOC[state.soc0][d.pos]);
-    $('r0').textContent = t('s0readout', { soc: name, pos: state.last.pos + 1, v: SOC[state.soc0][state.last.pos], n: vals.length, avg: f(V.mean(vals)), worst: Math.min(...vals) });
+    const vals = draws().map(d => SOC[state.soc0][d.pos]);
+    $('r0').textContent = t('s0readout', { soc: name, pos: last.pos + 1, v: SOC[state.soc0][last.pos], n: vals.length, avg: f(V.mean(vals)), worst: Math.min(...vals) });
   }
 }
 
@@ -79,14 +85,15 @@ function draw0() {
 function draw1() {
   const xs = SOC[state.soc1], mu = V.mean(xs);
   const { ctx, W, H } = fitCanvas($('c1'));
-  const P = { l: 40, r: W - 12, t: 14, b: H - 30 }, n = state.run.length, N = Math.max(100, n);
+  const run = state.runs[state.soc1];
+  const P = { l: 40, r: W - 12, t: 14, b: H - 30 }, n = run.length, N = Math.max(100, n);
   const x = i => P.l + i / N * (P.r - P.l), y = v => P.b - v / 100 * (P.b - P.t);
   ctx.strokeStyle = C.grid; ctx.lineWidth = 1;
   for (let v = 0; v <= 100; v += 25) { ctx.beginPath(); ctx.moveTo(P.l, y(v)); ctx.lineTo(P.r, y(v)); ctx.stroke(); label(ctx, String(v), P.l - 5, y(v) + 4, C.muted, 'right', 10); }
   label(ctx, '0', P.l, P.b + 14, C.muted, 'center', 10); label(ctx, String(N), P.r, P.b + 14, C.muted, 'right', 10);
   // individual draws as faint dots, running average as the line
   let sum = 0; const avg = [];
-  state.run.forEach((v, i) => { sum += v; avg.push(sum / (i + 1)); ctx.fillStyle = 'rgba(154,170,189,.35)'; ctx.fillRect(x(i + 1) - 1, y(v) - 1, 2, 2); });
+  run.forEach((v, i) => { sum += v; avg.push(sum / (i + 1)); ctx.fillStyle = 'rgba(154,170,189,.35)'; ctx.fillRect(x(i + 1) - 1, y(v) - 1, 2, 2); });
   ctx.save(); ctx.strokeStyle = C.text; ctx.setLineDash([6, 5]); ctx.beginPath(); ctx.moveTo(P.l, y(mu)); ctx.lineTo(P.r, y(mu)); ctx.stroke(); ctx.restore();
   label(ctx, t('mean') + ' ' + f(mu), P.r - 4, y(mu) - 6, C.text, 'right', 11);
   if (n) { ctx.strokeStyle = COL[state.soc1]; ctx.lineWidth = 2.4; ctx.beginPath(); avg.forEach((a, i) => i ? ctx.lineTo(x(i + 1), y(a)) : ctx.moveTo(x(1), y(a))); ctx.stroke(); }
@@ -135,6 +142,9 @@ function draw4() {
   const x0 = SOC.B, ys = V.redistribute(x0, tt, k);
   const lines = [['mean', V.mean, C.text], ['worst', V.min, C.pink], ['ceShort', xs => V.ce(xs, eta), C.cyan]];
   const bests = lines.map(([, fn]) => V.bestT(x0, k, fn));
+  // A line that is flat in t (the average when k = 0) has no single best t: report a tie instead of t = 0.
+  const flat = lines.map(([, fn]) => { let lo = Infinity, hi = -Infinity; for (let s = 0; s <= 100; s++) { const v = fn(V.redistribute(x0, s / 100, k)); lo = Math.min(lo, v); hi = Math.max(hi, v); } return hi - lo < 1e-9; });
+  const bestText = i => flat[i] ? t('anyT') : f(bests[i].t, 2);
   let { ctx, W, H } = fitCanvas($('c4'));
   const P = { l: 34, r: W - 10, t: 14, b: H - 30 }, x = v => P.l + v * (P.r - P.l), y = v => P.b - v / 50 * (P.b - P.t);
   ctx.strokeStyle = C.grid; ctx.lineWidth = 1;
@@ -158,18 +168,18 @@ function draw4() {
     ctx.fillStyle = C.orange; ctx.fillRect(Q.l + i * bw + 10, yb(v), bw - 20, Q.b - yb(v));
     label(ctx, f(v, 0), Q.l + i * bw + bw / 2, yb(v) - 5, C.text, 'center', 11);
   });
-  $('r4').textContent = t('s4readout', { t: f(tt, 2), mean: f(V.mean(ys)), min: f(V.min(ys)), ce: f(V.ce(ys, eta)), tAvg: f(bests[0].t, 2), tMin: f(bests[1].t, 2), eta: f(eta, 2), tEta: f(bests[2].t, 2) });
+  $('r4').textContent = t('s4readout', { t: f(tt, 2), mean: f(V.mean(ys)), min: f(V.min(ys)), ce: f(V.ce(ys, eta)), tAvg: bestText(0), tMin: bestText(1), eta: f(eta, 2), tEta: bestText(2) });
 }
 
 function refresh() { draw0(); draw1(); draw2(); draw3(); draw4(); }
 window.refreshVeil = refresh;
 
 function setup() {
-  document.querySelectorAll('[data-soc]').forEach(b => b.addEventListener('click', () => { if (state.soc0 !== b.dataset.soc) { state.soc0 = b.dataset.soc; state.draws = []; state.last = null; } draw0(); }));
-  $('lift').addEventListener('click', () => { if (!state.soc0) return; const pos = state.rnd0(); state.last = { pos }; state.draws.push({ pos }); draw0(); });
-  $('reset0').addEventListener('click', () => { state.draws = []; state.last = null; draw0(); });
-  document.querySelectorAll('[data-soc1]').forEach(b => b.addEventListener('click', () => { state.soc1 = b.dataset.soc1; state.run = []; draw1(); }));
-  $('draw100').addEventListener('click', () => { for (let i = 0; i < 100; i++) state.run.push(SOC[state.soc1][state.rnd1()]); if (state.run.length > 2000) state.run = state.run.slice(-2000); draw1(); });
+  document.querySelectorAll('[data-soc]').forEach(b => b.addEventListener('click', () => { state.soc0 = b.dataset.soc; draw0(); }));
+  $('lift').addEventListener('click', () => { if (!state.soc0) return; const pos = state.rnd0(); state.last0[state.soc0] = { pos }; state.draws0[state.soc0].push({ pos }); draw0(); });
+  $('reset0').addEventListener('click', () => { if (!state.soc0) return; state.draws0[state.soc0] = []; state.last0[state.soc0] = null; draw0(); });
+  document.querySelectorAll('[data-soc1]').forEach(b => b.addEventListener('click', () => { state.soc1 = b.dataset.soc1; draw1(); }));
+  $('draw100').addEventListener('click', () => { const run = state.runs[state.soc1]; for (let i = 0; i < 100; i++) run.push(SOC[state.soc1][state.rnd1()]); if (run.length > 2000) state.runs[state.soc1] = run.slice(-2000); draw1(); });
   $('e3').addEventListener('input', draw3);
   ['t4', 'k4', 'e4'].forEach(id => $(id).addEventListener('input', draw4));
   $('checkQuiz').addEventListener('click', () => {

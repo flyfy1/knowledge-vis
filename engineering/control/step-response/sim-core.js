@@ -54,7 +54,7 @@
   // Textbook closed forms for 0 < ζ < 1, checked against MSU ME451 lecture 15 (J. Choi),
   // slides 9–12. Settling uses the 2 % approximation 4/(ζωn) (envelope e^(−ζωn t)
   // reaching e^(−4)); it is an estimate that can be above or below the simulated settling time
-  // (within about ±25 % for 0.1 ≤ ζ ≤ 0.95, checked in tests/core.cjs).
+  // (measured / estimate ≈ 0.70–1.25 for 0.1 ≤ ζ ≤ 0.95, checked on a 0.01 grid in tests/core.cjs).
   function formulas(zeta, wn) {
     // Outside 0 < ζ < 1 the formulas do not apply (no peak; 4/(ζωn) underestimates overdamped).
     if (!(zeta > 0 && zeta < 1)) return { overshoot: 0, peakTime: null, settling: null, wd: 0 };

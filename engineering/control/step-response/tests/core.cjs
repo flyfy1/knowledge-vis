@@ -11,8 +11,20 @@ for (const [z, w] of [[0.1, 2], [0.3, 2], [0.5, 1], [0.6, 5], [0.9, 3]]) {
   assert.ok(Math.abs(m.overshoot - fo.overshoot) < 0.05, `overshoot ζ=${z}: ${m.overshoot} vs ${fo.overshoot}`);
   assert.ok(Math.abs(m.peakTime - fo.peakTime) < 0.01, `peak time ζ=${z}`);
 }
-// 4/(ζωn) is only an estimate: within ±25 % of the measured settling time over the page's range.
-for (let z = 0.1; z < 0.951; z += 0.05) { const r = S.metrics(S.simulate(z, 1, 200)).settling / (4 / z); assert.ok(r > 0.75 && r < 1.3, `settling ratio ζ=${z.toFixed(2)}: ${r}`); }
+// 4/(ζωn) is only an estimate: s3hint says measured ≈ 0.70–1.25 × estimate for 0.1 ≤ ζ ≤ 0.95, shortest near 0.78.
+let rLo = Infinity, rHi = 0, zLo = 0;
+for (let i = 10; i <= 95; i++) { const z = i / 100, r = S.metrics(S.simulate(z, 1, 200)).settling / (4 / z); if (r < rLo) { rLo = r; zLo = z; } rHi = Math.max(rHi, r); }
+assert.ok(rLo >= 0.695 && rLo < 0.705 && rHi > 1.245 && rHi < 1.255 && Math.abs(zLo - 0.78) < 0.005, `settling ratio range ${rLo}@${zLo}..${rHi}`);
+// s4hint: the oscillation always stays inside the envelope 1 ± e^(−ζωn t)/√(1−ζ²).
+for (const [z, w] of [[0.1, 2], [0.3, 2], [0.7, 4], [0.95, 1]]) {
+  const k = 1 / Math.sqrt(1 - z * z);
+  for (const p of S.simulate(z, w, 10).points) assert.ok(Math.abs(p.y - 1) <= k * Math.exp(-z * w * p.t) + 1e-6, `envelope ζ=${z} t=${p.t}`);
+}
+// regime_critical: with ωn fixed, ζ = 1 settles fastest among the responses that never pass 1 (ζ ≥ 1).
+const tsCrit = S.metrics(S.simulate(1, 2, 30)).settling;
+for (const z of [1.05, 1.2, 1.5, 2]) assert.ok(tsCrit < S.metrics(S.simulate(z, 2, 30)).settling, 'critical fastest vs ζ=' + z);
+// Step 0 readout (ζ = 0.3, ωn = 2): peak 1.37, i.e. 37 % overshoot.
+assert.equal(S.metrics(S.simulate(0.3, 2, 10)).overshoot.toFixed(0), '37');
 // Overshoot does not depend on ωn; time scales as 1/ωn.
 const a = S.metrics(S.simulate(0.4, 1, 30)), b = S.metrics(S.simulate(0.4, 2, 30));
 assert.ok(Math.abs(a.overshoot - b.overshoot) < 0.02);
@@ -35,6 +47,7 @@ assert.ok(ok.overshoot <= 10 && ok.settling !== null && ok.settling <= 2, 'ζ=0.
 // 2. Bilingual parity: same keys, same placeholders.
 const zk = Object.keys(STRINGS.zh).sort(), ek = Object.keys(STRINGS.en).sort();
 assert.deepEqual(zk, ek, 'zh/en key sets match');
+for (const l of ['zh', 'en']) assert.ok(STRINGS[l].s3hint.includes('0.70–1.25') && STRINGS[l].s3hint.includes('0.78'), 's3hint quotes the tested settling ratio range');
 const ph = s => (s.match(/\{[a-zA-Z]+\}/g) || []).sort().join();
 for (const k of zk) assert.equal(ph(STRINGS.zh[k]), ph(STRINGS.en[k]), 'placeholders for ' + k);
 

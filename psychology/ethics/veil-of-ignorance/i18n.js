@@ -16,7 +16,7 @@ const STRINGS = {
     s0pick: '先选一种社会。',
     s0readout: '你选了 {soc}，这次落在第 {pos} 位（从最差数起），福祉分 {v}。已抽 {n} 次，平均 {avg}，最差一次 {worst}。',
     s0ready: '你选了 {soc}。按「揭开幕布」看你落在哪。',
-    s0hint: '每抽一次，对应位置下方就多一个点（历史保留）。多抽几次，你会同时感到两件事：「平均下来不错」和「万一落在最底下」。下面两步分别把这两种想法写成规则。',
+    s0hint: '每抽一次，对应位置下方就多一个点（历史保留；换一种社会再换回来，原来的记录还在，「清空记录」只清当前社会）。多抽几次，你会同时感到两件事：「平均下来不错」和「万一落在最底下」。下面两步分别把这两种想法写成规则。',
 
     s1k: '第 1 步 · 第一种规则', s1t: '平均原则：既然谁都可能是，就算平均',
     s1e: '这一步要回答：如果你落在每个位置的机会一样大，该怎么比较？经济学家海萨尼（John Harsanyi，1975 年批评罗尔斯的论文）主张：完全不知道时，就假设落在每个位置的<strong>概率相等</strong>，于是该选<strong>平均福祉</strong>最高的社会（<a class="xlink" href="../../../probability/basics/expected-value/#step0">→ 期望值第 0 步：随机游戏「平均」能拿多少</a>）。按这个规则，B（平均 45）胜出。下图是从所选社会里反复抽取时，<strong>累计平均</strong>（抽到的分数之和 ÷ 次数）怎样走向这个平均值。',
@@ -24,7 +24,7 @@ const STRINGS = {
     s1hint: '观察顺序：选 B，连按几次「再抽 100 次」，看折线怎样越来越贴近虚线（平均值）。再换成 A、C 比较。平均原则只看这条虚线，不看折线一路上抽到过多低的分数。',
 
     s2k: '第 2 步 · 第二种规则', s2t: '最大最小原则：先保证最差的位置',
-    s2e: '这一步要回答：如果这个选择只做一次、改不了，还该只看平均吗？罗尔斯认为，幕后的选择决定你一生的前景、无法重来，所以应采用<strong>最大最小原则</strong>（maximin）：比较各个社会<strong>最差位置</strong>的福祉，选最差位置最好的那个。他给出的适用条件包括：没有可靠的依据去估计自己落在哪个位置的概率；而别的选项有「无法接受、无法忍受」的坏结果。按这个规则，A（最差 30）胜出，B 的最差只有 10。',
+    s2e: '这一步要回答：如果这个选择只做一次、改不了，还该只看平均吗？罗尔斯认为，幕后的选择决定你一生的前景、无法重来，所以应采用<strong>最大最小原则</strong>（maximin）：比较各个社会<strong>最差位置</strong>的福祉，选最差位置最好的那个。他给出三条适用条件：没有或只有很不可靠的依据去估计自己落在哪个位置的概率；最大最小原则选出的结果本身是可以接受、能够与之共处的，比它多出来的收益不那么要紧；而别的选项有无法接受、无法与之共处的坏结果。罗尔斯后来说，第一条作用较小，关键在后两条。按这个规则，A（最差 30）胜出，B 的最差只有 10。',
     s2readout: '最差位置：A {a} · B {b} · C {c} → 最大最小原则选 {win}；平均原则选 {avgWin}',
     s2hint: '图中红框标出每个社会的最差位置。两条规则面对同样三张图，选出了不同的社会：分歧不在数据，而在「怎么对待自己可能落到底」。',
 
@@ -35,10 +35,11 @@ const STRINGS = {
     ceAxis: '确定性等价', etaAxis: 'η',
 
     s4k: '第 4 步 · 拉平有代价时', s4t: '再分配越多，底层越好，但蛋糕可能变小',
-    s4e: '这一步要回答：如果可以从 B 出发做再分配，各条规则会选多大力度？设<strong>再分配比例 t</strong>：每个位置交出 t 份福祉，汇总后平均分回。再假设拉平会让总量缩小到原来的 (1 − k·t²)，<strong>效率损失 k</strong> 是本页随手设定的教学参数，不来自任何数据。下图三条线随 t 变化：平均、最差位置、以及当前 η 下的确定性等价；圆点是各自的最好 t。',
+    s4e: '这一步要回答：如果可以从 B 出发做再分配，各条规则会选多大力度？设<strong>再分配比例 t</strong>：每个位置交出 t 份福祉，汇总后平均分回。再假设拉平会让总量缩小到原来的 (1 − k·t²)，<strong>效率损失 k</strong> 是本页随手设定的教学参数，不来自任何数据。下图三条线随 t 变化：平均、最差位置、以及当前 η（风险厌恶：越大越看重低分位置）下的确定性等价（愿意用来换掉「随机落到一个位置」的确定分数）；圆点是各自的最好 t。平均原则选平均最高的 t，最大最小原则选最差位置最好的 t。',
     tLabel: '再分配比例 t', kLabel: '效率损失 k（教学假设）', eta4: '风险厌恶 η',
     s4readout: 't = {t}：平均 {mean} · 最差 {min} · 确定性等价 {ce}　｜　最好的 t：平均原则 {tAvg} · 最大最小原则 {tMin} · η = {eta} 时 {tEta}',
     s4hint: '观察顺序：先把 k 设为 0（拉平没有代价）——最大最小原则会一直拉到 t = 1，平均原则无所谓。再把 k 调大，看最大最小原则的最好 t 怎样停在中间：再往下拉，底层也会因蛋糕变小而受损。',
+    anyT: '任意 t（各 t 相同）',
     mean: '平均', worst: '最差', ceShort: '确定性等价', tAxis: '再分配比例 t',
     bars: '当前 t 下的 5 个位置',
 
@@ -47,7 +48,7 @@ const STRINGS = {
     formula: '平均原则：max 平均(x)　最大最小：max 最小(x)　确定性等价（教学）：[平均(x^(1−η))]^(1/(1−η))',
     boundary: '模型边界：社会只有 5 个位置、福祉分是虚构的抽象单位；风险厌恶 η 与效率损失 k 是本页的教学参数，不是罗尔斯或海萨尼的原始表述，也不是对现实社会的估计。页面不声称真实人群在幕后会怎么选。',
     quizPrompt: '下面哪一句准确描述了两条规则的分歧？',
-    quizA: '海萨尼认为最差位置不重要，罗尔斯认为平均不重要。', quizB: '海萨尼假设落在每个位置的概率相等、于是求平均；罗尔斯认为这种一次性、无概率依据的选择应先保证最差位置。', quizC: '两人用的数据不同，所以结论不同。',
+    quizA: '海萨尼认为最差位置不重要，罗尔斯认为平均不重要。', quizB: '海萨尼假设落在每个位置的概率相等、于是求平均；罗尔斯认为这种一次性、决定一生、而别的选项可能坏到无法接受的选择，应先保证最差位置。', quizC: '两人用的数据不同，所以结论不同。',
     check: '检查判断', correct: '正确：分歧在于怎样对待不确定性，而不在数据。', wrong: '再看第 2 步：同样三张图，两条规则为什么选得不同？',
     lk1: '↗ 伦理与决策第 1 步：把期望收益和不确定性分开写',
     lk2: '↗ 伦理与决策第 2 步：「结果更好」不能抹掉被迫承担的伤害',
@@ -70,7 +71,7 @@ const STRINGS = {
     s0pick: 'Pick a society first.',
     s0readout: 'You chose {soc} and landed in position {pos} (counting from the worst), score {v}. {n} draws so far, average {avg}, worst draw {worst}.',
     s0ready: 'You chose {soc}. Press “Lift the veil” to see where you land.',
-    s0hint: 'Each draw adds a dot under that position (history is kept). After a few draws you will feel two thoughts at once: “on average it is fine” and “what if I end up at the bottom?”. The next two steps turn each thought into a rule.',
+    s0hint: 'Each draw adds a dot under that position (history is kept; switching to another society and back keeps each society’s record, and “Clear record” clears only the current one). After a few draws you will feel two thoughts at once: “on average it is fine” and “what if I end up at the bottom?”. The next two steps turn each thought into a rule.',
 
     s1k: 'Step 1 · The first rule', s1t: 'The average rule: you could be anyone, so take the average',
     s1e: 'This step asks: if every position is equally likely to be yours, how should you compare? The economist John Harsanyi (in a 1975 critique of Rawls) argued that under complete ignorance you should assume an <strong>equal probability</strong> of occupying each position, and so choose the society with the highest <strong>average well-being</strong> (<a class="xlink" href="../../../probability/basics/expected-value/#step0">→ Expected value, step 0: what a random game pays “on average”</a>). By this rule B (average 45) wins. The chart shows how the <strong>running average</strong> (sum of scores drawn ÷ number of draws) approaches that average when you draw repeatedly from your chosen society.',
@@ -78,7 +79,7 @@ const STRINGS = {
     s1hint: 'What to do: choose B and press “Draw 100 more” a few times; watch the line settle onto the dashed average. Then switch to A or C. The average rule looks only at the dashed line, not at how low some of the individual draws were.',
 
     s2k: 'Step 2 · The second rule', s2t: 'Maximin: secure the worst position first',
-    s2e: 'This step asks: if the choice is made once and cannot be undone, should you still look only at the average? Rawls argued that the choice behind the veil fixes your whole life prospects and cannot be repeated, so the parties should use the <strong>maximin rule</strong>: compare the well-being of each society’s <strong>worst position</strong> and pick the society whose worst position is best. The conditions he gives for this include: there is no reliable basis for estimating the probability of landing in each position, and the other options have outcomes one “could not accept and live with”. By this rule A (worst 30) wins; B’s worst is only 10.',
+    s2e: 'This step asks: if the choice is made once and cannot be undone, should you still look only at the average? Rawls argued that the choice behind the veil fixes your whole life prospects and cannot be repeated, so the parties should use the <strong>maximin rule</strong>: compare the well-being of each society’s <strong>worst position</strong> and pick the society whose worst position is best. He gives three conditions for this: there is no basis, or only a very insecure one, for estimating the probability of landing in each position; the maximin choice is itself an acceptable outcome one can live with, so gains above it matter relatively little; and the other options have outcomes one could not accept and live with. Rawls later said the first condition plays a minor role and the second and third are the crucial ones. By this rule A (worst 30) wins; B’s worst is only 10.',
     s2readout: 'Worst position: A {a} · B {b} · C {c} → maximin picks {win}; the average rule picks {avgWin}',
     s2hint: 'Red boxes mark each society’s worst position. Facing the same three charts, the two rules pick different societies: the disagreement is not about the data but about how to treat the chance of ending up at the bottom.',
 
@@ -89,10 +90,11 @@ const STRINGS = {
     ceAxis: 'certainty equivalent', etaAxis: 'η',
 
     s4k: 'Step 4 · When levelling has a cost', s4t: 'More redistribution helps the bottom — but the pie may shrink',
-    s4e: 'This step asks: starting from B, how much redistribution would each rule choose? Let the <strong>redistribution share t</strong> be the fraction of each position’s score that is pooled and shared equally. Suppose levelling shrinks the total by the factor (1 − k·t²); the <strong>efficiency loss k</strong> is a teaching parameter invented for this page, not taken from any data. The chart shows three lines against t: the average, the worst position, and the certainty equivalent at the current η; dots mark each line’s best t.',
+    s4e: 'This step asks: starting from B, how much redistribution would each rule choose? Let the <strong>redistribution share t</strong> be the fraction of each position’s score that is pooled and shared equally. Suppose levelling shrinks the total by the factor (1 − k·t²); the <strong>efficiency loss k</strong> is a teaching parameter invented for this page, not taken from any data. The chart shows three lines against t: the average, the worst position, and the certainty equivalent (the sure score you would accept instead of a random position) at the current η (risk aversion: the larger, the more the low positions count); dots mark each line’s best t. The average rule picks the t with the highest average; maximin picks the t whose worst position is best.',
     tLabel: 'Redistribution share t', kLabel: 'Efficiency loss k (teaching assumption)', eta4: 'Risk aversion η',
     s4readout: 't = {t}: average {mean} · worst {min} · certainty equivalent {ce}　|　best t: average rule {tAvg} · maximin {tMin} · at η = {eta}: {tEta}',
     s4hint: 'What to do: first set k to 0 (levelling is free) — maximin pushes all the way to t = 1, while the average rule does not care. Then raise k and watch maximin’s best t stop in the middle: levelling further would hurt even the bottom, because the pie shrinks.',
+    anyT: 'any t (all tie)',
     mean: 'average', worst: 'worst', ceShort: 'cert. equiv.', tAxis: 'redistribution share t',
     bars: 'the 5 positions at the current t',
 
@@ -101,7 +103,7 @@ const STRINGS = {
     formula: 'average rule: max mean(x)　maximin: max min(x)　certainty equivalent (teaching): [mean(x^(1−η))]^(1/(1−η))',
     boundary: 'Model limits: each society has only five positions and the well-being scores are invented abstract units; risk aversion η and efficiency loss k are this page’s teaching parameters, not Rawls’s or Harsanyi’s original statements and not estimates of any real society. The page makes no claim about how real people would choose behind the veil.',
     quizPrompt: 'Which sentence describes the disagreement between the two rules accurately?',
-    quizA: 'Harsanyi thinks the worst position does not matter; Rawls thinks the average does not matter.', quizB: 'Harsanyi assumes each position is equally likely and so averages; Rawls holds that a one-off choice with no basis for probabilities should secure the worst position first.', quizC: 'They used different data, so they reached different conclusions.',
+    quizA: 'Harsanyi thinks the worst position does not matter; Rawls thinks the average does not matter.', quizB: 'Harsanyi assumes each position is equally likely and so averages; Rawls holds that a one-off, life-shaping choice, where the other options could turn out unacceptably bad, should secure the worst position first.', quizC: 'They used different data, so they reached different conclusions.',
     check: 'Check', correct: 'Right: the disagreement is about how to treat uncertainty, not about the data.', wrong: 'Look at step 2 again: why do the two rules pick differently from the same three charts?',
     lk1: '↗ Ethics & decisions, step 1: keep expected benefit and uncertainty separate',
     lk2: '↗ Ethics & decisions, step 2: a better outcome does not erase coerced harm',

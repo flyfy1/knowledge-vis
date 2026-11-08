@@ -20,7 +20,7 @@ const STRINGS = {
     s1e: '这一步要回答：只看前两个共振峰，10 个元音能分开吗？下面每个点是 33 位男性说话人某个元音的平均（F1, F2）。<strong>F1–F2 平面</strong>：横轴 F2、纵轴 F1。本页选择让 F2 从右往左增大、F1 从上往下增大，两轴都用<strong>对数刻度</strong>（相同距离代表相同倍数，<a class="xlink" href="../../../math/algebra/exponents-logarithms/#step3">→ 指数与对数第 3 步：对数把乘法变成加法</a>）。点一个词看它的位置。',
     s1readout: '{word} /{ipa}/：F1 {f1} Hz · F2 {f2} Hz · F3 {f3} Hz',
     s1er: '注意 heard /ɝ/ 的 F3 只有 {f3} Hz，明显低于其他 9 个元音（都 ≥ {min} Hz）：这和下面讲义所说「/ɝ/ 不能只靠 F1、F2 解释」对得上。',
-    s1hint: '数据里能直接看到：heed 和 who\'d 的 F1 最低，had 和 hod 的 F1 最高；heed 的 F2 最高，hawed 的 F2 最低。一门课程讲义对 Peterson 与 Barney 的概括是：除 /ɝ/ 外，美式英语元音大体可以用 F1、F2 解释，相邻元音的区域边界略有重叠（见 BRIEF 来源）。这里画的是平均值，单个录音会散布在点的周围。',
+    s1hint: '数据里能直接看到：heed 和 who\'d 的 F1 最低，had 和 hod 的 F1 最高；heed 的 F2 最高，hawed 的 F2 最低。一门课程讲义（<a class="xlink" href="https://courses.grainger.illinois.edu/ece590sip/sp2018/spectrograms4_vowels.html" rel="noopener">UIUC ECE590SIP 2018 第 4 讲</a>）对 Peterson 与 Barney 的概括是：除 /ɝ/ 外，美式英语元音的<em>感知</em>大体可以用 F1、F2 解释，相邻元音的区域边界略有重叠。这里画的是平均值，单个录音会散布在点的周围。',
 
     s2k: '第 2 步 · 换一个人说', s2t: '同一个元音，三组说话人落在不同位置',
     s2e: '这一步要回答：男人、女人、孩子说同一个词，点会重合吗？打开三组<strong>说话人组</strong>：男性 33 人、女性 28 人、儿童 15 人（其中 8 名女孩；儿童每个元音只有 30 个录音）。每组外围的 7 个元音连成一圈（hud、hood、heard 在圈内，只画点）。',
@@ -29,13 +29,13 @@ const STRINGS = {
     show: '显示',
 
     s3k: '第 3 步 · 只看绝对频率', s3t: '拿男性的 10 个点当模板，去认别人的元音',
-    s3e: '这一步要回答：如果只按绝对频率，把一个点认成离它最近的那个元音，会怎样？把男性的 10 个平均点当成<strong>模板</strong>；对女性或儿童的每个元音平均点，找<strong>最近的男性模板</strong>（在对数 F1–F2 平面上量直线距离），箭头指向它。认对是绿色，认错是红色。',
+    s3e: '这一步要回答：如果只按绝对频率，把一个点认成离它最近的那个元音，会怎样？把男性的 10 个平均点当成<strong>模板</strong>；对女性或儿童的每个元音平均点，找<strong>最近的男性模板</strong>（在对数 F1–F2 平面上量直线距离；F1、F2 是第一、第二共振峰，即声道放大的两个最低的峰），箭头指向它。认对是绿色，认错是红色。',
     s3readout: '{group}的 10 个元音平均点：{ok} 个认对，{bad} 个认错{list}',
     s3hint: '对儿童：10 个只认对 3 个，比如儿童的 hid 落到了男性 head 的旁边。说明「F1 = 530 Hz」这个绝对数字本身不告诉你是哪个元音——还要知道是谁在说。',
     asWord: '认成',
 
     s4k: '第 4 步 · 先看这个人的整体', s4t: '把每组按自己的整体高低缩放，三圈就叠到一起',
-    s4e: '这一步要回答：怎样把「谁在说」的影响去掉？本页用一种简单的<strong>归一化</strong>：对每组说话人，先算它 10 个元音 F1 的<strong>几何平均</strong>（相乘再开 10 次方），再把这组所有 F1 都按「本组几何平均 ÷ 男性几何平均」缩小，F2 同样处理。在对数刻度上，这就是把整圈平移。滑杆 λ 从 0（不缩放）到 1（完全缩放）。',
+    s4e: '这一步要回答：怎样把「谁在说」的影响去掉？本页用一种简单的<strong>归一化</strong>：对每组说话人，先算它 10 个元音 F1（第一共振峰）的<strong>几何平均</strong>（相乘再开 10 次方），再把这组所有 F1 都按「本组几何平均 ÷ 男性几何平均」缩小，F2（第二共振峰）同样处理。在对数刻度上，这就是把整圈平移。滑杆 λ 从 0（不缩放）到 1（完全缩放）。',
     lambda: '缩放程度 λ',
     s4readout: 'λ = {l} · 女性：与男性同一元音的平均距离 {dw}，认对 {okw}/10 · 儿童：平均距离 {dc}，认对 {okc}/10',
     s4hint: '观察顺序：把 λ 从 0 慢慢拖到 1，看女性和儿童的两圈怎样向男性那一圈平移、红箭头逐个变绿：λ = 1 时两组都是 10/10。距离用对数单位，0.1 约等于差 10%。',
@@ -71,7 +71,7 @@ const STRINGS = {
     s1e: 'This step asks: using only the first two formants, can the ten vowels be told apart? Each point is the average (F1, F2) of one vowel over the 33 men. On the <strong>F1–F2 plane</strong> the horizontal axis is F2 and the vertical axis is F1. This page chooses to let F2 increase from right to left and F1 increase downwards, and uses a <strong>log scale</strong> on both axes (equal distances mean equal ratios; <a class="xlink" href="../../../math/algebra/exponents-logarithms/#step3">→ Exponents & logarithms, step 3: logs turn multiplication into addition</a>). Click a word to see where it sits.',
     s1readout: '{word} /{ipa}/: F1 {f1} Hz · F2 {f2} Hz · F3 {f3} Hz',
     s1er: 'Note that the F3 of “heard” /ɝ/ is only {f3} Hz, clearly below the other nine vowels (all ≥ {min} Hz): this fits the handout’s remark below that /ɝ/ is the exception to “F1 and F2 explain the vowels”.',
-    s1hint: 'You can read straight off the data: “heed” and “who’d” have the lowest F1, “had” and “hod” the highest; “heed” has the highest F2 and “hawed” the lowest. A course handout summarises Peterson and Barney as showing that, except for /ɝ/, American English vowels can largely be explained by F1 and F2, with a little overlap at the boundaries between neighbouring vowels (see BRIEF for the source). These are averages; single recordings scatter around each point.',
+    s1hint: 'You can read straight off the data: “heed” and “who’d” have the lowest F1, “had” and “hod” the highest; “heed” has the highest F2 and “hawed” the lowest. A course handout (<a class="xlink" href="https://courses.grainger.illinois.edu/ece590sip/sp2018/spectrograms4_vowels.html" rel="noopener">UIUC ECE590SIP 2018, lecture 4</a>) summarises Peterson and Barney as showing that, except for /ɝ/, the <em>perception</em> of American English vowels can largely be explained by F1 and F2, with a little overlap at the boundaries between neighbouring vowels. These are averages; single recordings scatter around each point.',
 
     s2k: 'Step 2 · Someone else says it', s2t: 'The same vowel lands in different places for three speaker groups',
     s2e: 'This step asks: when a man, a woman and a child say the same word, do the points coincide? Turn on the three <strong>speaker groups</strong>: 33 men, 28 women and 15 children (8 of them girls; the children have only 30 recordings per vowel). Each group’s seven outer vowels are joined into a loop (“hud”, “hood” and “heard” sit inside and are drawn as dots only).',
@@ -80,13 +80,13 @@ const STRINGS = {
     show: 'Show',
 
     s3k: 'Step 3 · Absolute frequency only', s3t: 'Use the men’s ten points as templates to recognise other speakers’ vowels',
-    s3e: 'This step asks: if you label a point as whichever vowel is closest by absolute frequency, what happens? Treat the men’s ten average points as <strong>templates</strong>. For each of the women’s or children’s vowel averages, find the <strong>nearest men’s template</strong> (straight-line distance on the log F1–F2 plane); the arrow points to it. Green means recognised correctly, red means wrong.',
+    s3e: 'This step asks: if you label a point as whichever vowel is closest by absolute frequency, what happens? Treat the men’s ten average points as <strong>templates</strong>. For each of the women’s or children’s vowel averages, find the <strong>nearest men’s template</strong> (straight-line distance on the log F1–F2 plane; F1 and F2 are the first and second formants, the two lowest peaks the vocal tract amplifies); the arrow points to it. Green means recognised correctly, red means wrong.',
     s3readout: '{group}’s ten vowel averages: {ok} correct, {bad} wrong{list}',
     s3hint: 'For children only 3 of 10 are right; for example the children’s “hid” lands next to the men’s “head”. So the number “F1 = 530 Hz” on its own does not tell you which vowel it is — you also need to know who is speaking.',
     asWord: 'as',
 
     s4k: 'Step 4 · Look at the speaker as a whole first', s4t: 'Rescale each group by its own overall level and the loops overlap',
-    s4e: 'This step asks: how can you remove the effect of who is speaking? This page uses a simple <strong>normalisation</strong>: for each speaker group, compute the <strong>geometric mean</strong> of its ten F1 values (multiply them and take the 10th root), then scale all that group’s F1 values by “men’s geometric mean ÷ this group’s geometric mean”; F2 likewise. On a log scale this just slides the whole loop. The slider λ goes from 0 (no rescaling) to 1 (full rescaling).',
+    s4e: 'This step asks: how can you remove the effect of who is speaking? This page uses a simple <strong>normalisation</strong>: for each speaker group, compute the <strong>geometric mean</strong> of its ten F1 values (first formant) (multiply them and take the 10th root), then scale all that group’s F1 values by “men’s geometric mean ÷ this group’s geometric mean”; F2 (second formant) likewise. On a log scale this just slides the whole loop. The slider λ goes from 0 (no rescaling) to 1 (full rescaling).',
     lambda: 'Rescaling λ',
     s4readout: 'λ = {l} · women: mean distance to the men’s same vowel {dw}, correct {okw}/10 · children: mean distance {dc}, correct {okc}/10',
     s4hint: 'What to do: drag λ slowly from 0 to 1 and watch the women’s and children’s loops slide onto the men’s and the red arrows turn green one by one: at λ = 1 both groups are 10/10. Distances are in log units; 0.1 is roughly a 10% difference.',

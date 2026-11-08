@@ -31,13 +31,13 @@ const STRINGS = {
     s2hint: '观察顺序：从 c = 1 拖到 c = −1，看两块涂色面积一起变大；松手后旧判据线变淡留在图上。反算的 c 用的是 z(·)：把一个比例换成「标准正态里左边占这么多面积的位置」，单位是标准差。',
 
     s3k: '第 3 步 · 第二个量', s3t: '敏感度 d\'：两个分布离得多远',
-    s3e: '这一步要回答：什么才是真正的「分辨能力」？<strong>敏感度 d\'</strong>（读作 d-prime）= 信号分布和噪声分布平均值的距离，以它们共同的标准差为单位。d\' = 0 时两条曲线重合，怎么判都是瞎猜；d\' 越大，重叠越少。实验里看不到分布，只看得到 H 和 F，所以要反算：<strong>d\' = z(H) − z(F)</strong>，其中 z(p) 是把比例 p 换成标准正态中对应位置（单位：标准差）的换算。',
+    s3e: '这一步要回答：什么才是真正的「分辨能力」？<strong>敏感度 d\'</strong>（读作 d-prime）= 信号分布和噪声分布平均值的距离，以它们共同的标准差为单位。d\' = 0 时两条曲线重合，怎么判都是瞎猜；d\' 越大，重叠越少。实验里看不到分布，只看得到 H（命中率：有信号时说「有」的比例）和 F（虚报率：无信号时说「有」的比例），所以要反算：<strong>d\' = z(H) − z(F)</strong>，其中 z(p) 是把比例 p 换成标准正态中对应位置（单位：标准差）的换算。',
     dLabel: '敏感度 d\'',
     s3readout: 'd\' = {d} · c = {c} · H = {H} · F = {F} · 反算 z(H) − z(F) = {dBack} · 正确率 {pc}%',
-    s3hint: '观察顺序：保持 c 不动，只拖 d\'——H 升、F 降，正确率上升。再保持 d\' 不动、拖 c（第 2 步）——反算出的 d\' 不变。这个「不变」只在本页的等方差正态模型里成立。',
+    s3hint: '观察顺序：保持 c（判据：判据线离两分布正中间几个标准差）不动，只拖 d\'——H 升、F 降，正确率上升。再保持 d\' 不动、拖 c（第 2 步）——反算出的 d\' 不变。这个「不变」只在本页的等方差正态模型里成立。',
 
     s4k: '第 4 步 · 一张图看全', s4t: 'ROC 曲线：同一个 d\'，所有判据画成一条弧',
-    s4e: '这一步要回答：怎样一眼看出两位检测者谁更会分辨？把判据从严到松扫一遍，每个判据给出一对 (虚报率 F, 命中率 H)，连起来就是 <strong>ROC 曲线</strong>（受试者工作特征曲线）。同一条曲线上的点 d\' 相同，只是判据不同；曲线越鼓向左上角，d\' 越大。对角线是 d\' = 0（瞎猜）。图上标出了第 0 步的医生和机器。',
+    s4e: '这一步要回答：怎样一眼看出两位检测者谁更会分辨？把判据从严到松扫一遍，每个判据给出一对 (虚报率 F, 命中率 H)，连起来就是 <strong>ROC 曲线</strong>（受试者工作特征曲线）。同一条曲线上的点 d\'（敏感度：两分布平均值相距几个标准差）相同，只是判据 c 不同；曲线越鼓向左上角，d\' 越大。对角线是 d\' = 0（瞎猜）。图上标出了第 0 步的医生和机器。',
     s4readout: '当前点：F = {F}，H = {H}（d\' = {d}，c = {c}）　｜　医生：d\' = {dDoc}，c = {cDoc}　机器：d\' = {dMac}，c = {cMac}',
     reveal: '揭晓：机器在更鼓的那条曲线上（d\' ≈ 2.36 &gt; 1.68），所以更会分辨；它的正确率没更高，是因为判据很宽松（c ≈ −0.87），用很多虚报换来了极少漏报。{you}',
     youRight: '你猜对了。', youWrong: '你在第 0 步猜的是「{p}」。',
@@ -45,10 +45,10 @@ const STRINGS = {
     rocF: '虚报率 F', rocH: '命中率 H',
 
     s5k: '第 5 步 · 用起来', s5t: '最好的判据，取决于错误有多贵、信号有多常见',
-    s5e: '这一步要回答：判据该放在哪？答案不是「正中间」。设<strong>基础率</strong>（每次试验里真有信号的比例）为 p，一次<strong>漏报</strong>的代价是 m，一次<strong>虚报</strong>的代价是 f。每次试验的<strong>期望代价</strong> = p·(1−H)·m + (1−p)·F·f。下图画出它随判据 c 的变化，绿点是最低处。漏报越贵、信号越常见，最佳判据越宽松（更左）。这和贝叶斯里「先验 × 似然比」是同一笔账（<a class="xlink" href="../../../probability/inference/bayes-updating/#step2">→ 贝叶斯更新第 2 步：后验 = 先验 × 似然比</a>）。',
+    s5e: '这一步要回答：判据该放在哪？答案不是「正中间」。设<strong>基础率</strong>（每次试验里真有信号的比例）为 p，一次<strong>漏报</strong>的代价是 m，一次<strong>虚报</strong>的代价是 f。每次试验的<strong>期望代价</strong> = p·(1−H)·m + (1−p)·F·f，其中 H 是命中率（有信号时说「有」的比例）、F 是虚报率（无信号时说「有」的比例）。下图画出它随判据 c（判据线离两分布正中间的距离，负 = 宽松）的变化，绿点是最低处。漏报越贵、信号越常见，最佳判据越宽松（更左）。这和贝叶斯里「先验 × 似然比」是同一笔账（<a class="xlink" href="../../../probability/inference/bayes-updating/#step2">→ 贝叶斯更新第 2 步：后验 = 先验 × 似然比</a>）。',
     baseRate: '基础率 p（真有信号的比例）', costRatio: '漏报代价 ÷ 虚报代价', yourC: '你的判据 c',
     s5readout: '最佳 c = {best}（期望代价 {bestCost}）· 你的 c = {c}（期望代价 {cost}）{verdict}',
-    near: ' · 已经很接近最佳', far: ' · 还能更低',
+    near: ' · 已经很接近最佳', far: ' · 还能更低', offChart: '（在图示范围 −2.5…2.5 之外，绿点画在边缘）',
     s5hint: '期望代价按本页模型（d\' = 1.5）计算，单位是「虚报一次 = 1」。试试：把漏报代价调到 10（比如漏诊很严重），看最佳判据往哪移；再把基础率调到 0.05。',
     costAxis: '期望代价 / 次', cAxis: '判据 c',
 
@@ -94,13 +94,13 @@ const STRINGS = {
     s2hint: 'What to do: drag from c = 1 to c = −1 and watch both shaded areas grow; when you let go, the old criterion line stays faded on the chart. The recovered c uses z(·): it turns a proportion into “the position on a standard normal with that much area to its left”, in standard deviations.',
 
     s3k: 'Step 3 · The second measure', s3t: 'Sensitivity d\': how far apart the distributions are',
-    s3e: 'This step asks: what is real “discrimination ability”? <strong>Sensitivity d\'</strong> (“d-prime”) is the distance between the means of the signal and noise distributions, measured in their common standard deviation. At d\' = 0 the curves coincide and every judgement is a guess; the larger d\', the less they overlap. Experiments never show the distributions, only H and F, so d\' is recovered as <strong>d\' = z(H) − z(F)</strong>, where z(p) converts a proportion p to its position on a standard normal (in standard deviations).',
+    s3e: 'This step asks: what is real “discrimination ability”? <strong>Sensitivity d\'</strong> (“d-prime”) is the distance between the means of the signal and noise distributions, measured in their common standard deviation. At d\' = 0 the curves coincide and every judgement is a guess; the larger d\', the less they overlap. Experiments never show the distributions, only H (hit rate: share of signal trials answered “yes”) and F (false-alarm rate: share of noise trials answered “yes”), so d\' is recovered as <strong>d\' = z(H) − z(F)</strong>, where z(p) converts a proportion p to its position on a standard normal (in standard deviations).',
     dLabel: 'Sensitivity d\'',
     s3readout: 'd\' = {d} · c = {c} · H = {H} · F = {F} · recovered z(H) − z(F) = {dBack} · accuracy {pc}%',
-    s3hint: 'What to do: hold c and move only d\' — H rises, F falls, accuracy improves. Then hold d\' and move c (step 2) — the recovered d\' stays put. That invariance holds only in this page’s equal-variance normal model.',
+    s3hint: 'What to do: hold c (the criterion: how many standard deviations the line sits from the midpoint) and move only d\' — H rises, F falls, accuracy improves. Then hold d\' and move c (step 2) — the recovered d\' stays put. That invariance holds only in this page’s equal-variance normal model.',
 
     s4k: 'Step 4 · One picture', s4t: 'The ROC curve: one d\', every criterion, one arc',
-    s4e: 'This step asks: how can you see at a glance who discriminates better? Sweep the criterion from strict to lax; each criterion gives a pair (false-alarm rate F, hit rate H). Joined up, they form the <strong>ROC curve</strong> (receiver operating characteristic). Points on one curve share the same d\' and differ only in criterion; the more a curve bows toward the top-left, the larger d\'. The diagonal is d\' = 0 (guessing). The doctors and the machine from step 0 are marked.',
+    s4e: 'This step asks: how can you see at a glance who discriminates better? Sweep the criterion from strict to lax; each criterion gives a pair (false-alarm rate F, hit rate H). Joined up, they form the <strong>ROC curve</strong> (receiver operating characteristic). Points on one curve share the same d\' (sensitivity: how many standard deviations apart the two means are) and differ only in criterion c; the more a curve bows toward the top-left, the larger d\'. The diagonal is d\' = 0 (guessing). The doctors and the machine from step 0 are marked.',
     s4readout: 'Current point: F = {F}, H = {H} (d\' = {d}, c = {c})　|　Doctors: d\' = {dDoc}, c = {cDoc}　Machine: d\' = {dMac}, c = {cMac}',
     reveal: 'Answer: the machine sits on the more bowed curve (d\' ≈ 2.36 &gt; 1.68), so it discriminates better. Its accuracy is no higher because its criterion is very lax (c ≈ −0.87): it buys very few misses with many false alarms. {you}',
     youRight: 'You guessed right.', youWrong: 'In step 0 you guessed “{p}”.',
@@ -108,10 +108,10 @@ const STRINGS = {
     rocF: 'false-alarm rate F', rocH: 'hit rate H',
 
     s5k: 'Step 5 · Put it to work', s5t: 'The best criterion depends on what errors cost and how common the signal is',
-    s5e: 'This step asks: where should the criterion go? Not necessarily in the middle. Let the <strong>base rate</strong> (share of trials that really contain a signal) be p, the cost of one <strong>miss</strong> m, and of one <strong>false alarm</strong> f. The <strong>expected cost</strong> per trial is p·(1−H)·m + (1−p)·F·f. The chart plots it against the criterion c; the green dot is the minimum. The costlier a miss and the more common the signal, the laxer (further left) the best criterion. This is the same bookkeeping as Bayes’ “prior × likelihood ratio” (<a class="xlink" href="../../../probability/inference/bayes-updating/#step2">→ Bayes updating, step 2: posterior = prior × likelihood ratio</a>).',
+    s5e: 'This step asks: where should the criterion go? Not necessarily in the middle. Let the <strong>base rate</strong> (share of trials that really contain a signal) be p, the cost of one <strong>miss</strong> m, and of one <strong>false alarm</strong> f. The <strong>expected cost</strong> per trial is p·(1−H)·m + (1−p)·F·f, where H is the hit rate (share of signal trials answered “yes”) and F the false-alarm rate (share of noise trials answered “yes”). The chart plots it against the criterion c (the line’s distance from the midpoint; negative = lax); the green dot is the minimum. The costlier a miss and the more common the signal, the laxer (further left) the best criterion. This is the same bookkeeping as Bayes’ “prior × likelihood ratio” (<a class="xlink" href="../../../probability/inference/bayes-updating/#step2">→ Bayes updating, step 2: posterior = prior × likelihood ratio</a>).',
     baseRate: 'Base rate p (share with a signal)', costRatio: 'Miss cost ÷ false-alarm cost', yourC: 'Your criterion c',
     s5readout: 'best c = {best} (expected cost {bestCost}) · your c = {c} (expected cost {cost}){verdict}',
-    near: ' · already close to the best', far: ' · can go lower',
+    near: ' · already close to the best', far: ' · can go lower', offChart: ' (outside the plotted range −2.5…2.5; the green dot sits at the edge)',
     s5hint: 'Expected cost uses this page’s model (d\' = 1.5), in units of “one false alarm = 1”. Try raising the miss cost to 10 (say, a missed diagnosis is serious) and see where the best criterion moves; then set the base rate to 0.05.',
     costAxis: 'expected cost / trial', cAxis: 'criterion c',
 

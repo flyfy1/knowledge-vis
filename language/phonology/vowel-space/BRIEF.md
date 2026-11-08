@@ -41,6 +41,7 @@
 - 原始研究：G. E. Peterson & H. L. Barney (1952), "Control methods used in a study of the vowels", *JASA* 24(2): 175–184。**本页没有取得原文或其 Table II**；页面和测试里的数字都不是 Table II 的数，也不声称与它在多少 Hz 内一致。
 - 数据路径：Praat 源码 `dwtools/Table_dataSets.cpp`，`Table_create_petersonBarney1952`。抓取自 <https://raw.githubusercontent.com/praat/praat/master/dwtools/Table_dataSets.cpp>，当时 master 为 commit `6a9874e525d80a2b4c2e6a8d687081963c6d4e6a`（2026-11-08），文件 sha256 `3027b8856df330f4abf9149b140d87411d4de835dc8d7c821cc0c1e2b1da3cc3`。
   - 源码注释说明：数据来自 Ignatius Mattingly 1990 年提供的印刷版，经 UPenn FTP 分发；1520 行 = 76 位说话人 × 10 个元音 × 2 次；33 男、28 女、15 儿童；儿童 62、63、65、66、67、68、73、76 号为女性；hVd 词。
+  - 行序以源码 `vowel [10] = {iy, ih, eh, ae, ah, aa, ao, uh, uw, er}` 为准（源码注释说明 2008-01-25 前顺序有误、已修正；独立评审于 2026-11-09 按此顺序独立复算，一致）。下面手册列表只用来对应词与标签，不代表行序。
   - Praat 手册页 *Create formant table (Peterson & Barney 1952)*（docs/manual，同一 commit）给出词与标签：heed iy, hid ih, head eh, had ae, hod aa, hawed ao, hood uh, who'd uw, hud ah, heard er；IPA 用 P&B 原文记法。
 - 本页的处理：用 `tools/pb-means.cjs` 对每组每个元音的**全部** token 求平均（包括源码 `star` 字段为 1 的 321 行；源码对该字段的说明仅为 "was there a * in front of the vowel-type?"），四舍五入到 1 Hz，写入 `sim-core.js` 的 `MEANS`。只提交 30 组均值，不提交 1520 行原始数据（原始数据位于 GPL 源码内）。
   - 复现：`node tools/pb-means.cjs <Table_dataSets.cpp 路径>`，输出 `MATCH sim-core.js MEANS`。
@@ -48,7 +49,7 @@
 
 ## 其他事实来源
 
-- 「共振峰 = 从喉到唇的声道的共鸣」、「P&B 表明除 /ɝ/ 外美式英语元音大体可用 F1、F2 解释，各元音区域边界略有重叠，男、女、儿童的划分不同」：UIUC ECE590SIP（2018 春）*Spectrogram Reading Seminar, Lecture 4*，<https://courses.grainger.illinois.edu/ece590sip/sp2018/spectrograms4_vowels.html>（页面写作「讲义对 P&B 的概括」，未当作原文引述）。
+- 「共振峰 = 从喉到唇的声道的共鸣」、「P&B 表明除 /ɝ/ 外美式英语元音大体可用 F1、F2 解释，各元音区域边界略有重叠，男、女、儿童的划分不同」：UIUC ECE590SIP（2018 春）*Spectrogram Reading Seminar, Lecture 4*，<https://courses.grainger.illinois.edu/ece590sip/sp2018/spectrograms4_vowels.html>（页面写作「讲义对 P&B 的概括」，未当作原文引述；讲义原话是 *perception* of vowels can be explained，页面相应写「感知」，并在 s1hint 直接链接讲义——自检版写「见 BRIEF 来源」，读者无从查到，2026-11-09 独立评审后改正）。
 - 第 1 步「heed、who'd 的 F1 最低」等排序、第 2 步比值区间、第 3–4 步认对数，都是本页数据算出来的，由 `tests/core.cjs` 固定。
 
 ## 页面自定的约定（页面明说）
