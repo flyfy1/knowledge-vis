@@ -1183,6 +1183,13 @@ window.KNOWLEDGE_PAGES = [
     ],
     category: "language", subtopic: "phonology", stage: "senior", status: "live", path: "language/phonology/phonemes/"
   },
+  {
+    slug: "vowel-space",
+    title: { zh: "元音空间 · 用两个共振峰给元音定位", en: "Vowel Space · Placing Vowels by Two Formants" },
+    desc: { zh: "用 Peterson 与 Barney 1952 年的元音测量，看基频和共振峰的分工、10 个元音在 F1–F2 平面上的位置，以及为什么要先按说话人整体缩放才能认对。", en: "Using Peterson and Barney's 1952 vowel measurements, separate pitch from formants, place ten vowels on the F1–F2 plane, and see why rescaling by speaker comes before recognition." },
+    tags: [{ zh: "共振峰", en: "Formants" }, { zh: "元音", en: "Vowels" }, { zh: "说话人归一化", en: "Speaker Normalisation" }],
+    category: "language", subtopic: "phonology", stage: "senior", status: "live", path: "language/phonology/vowel-space/"
+  },
 
   {
     slug: "climate-feedback",

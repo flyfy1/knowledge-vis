@@ -1790,6 +1790,19 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 
 出链：expected-value#step0/#step4、ethics-decisions#step1/#step2、risk-pooling#step1。
 
+## 元音空间（2026-11-08，Claude Code 新增；仅自检、待独立复评）
+
+| 概念（中 / EN） | 专讲 path#step | 那一步讲清什么 |
+| --- | --- | --- |
+| 基频与谐波 / Fundamental frequency & harmonics | language/phonology/vowel-space#step0 | F0 定音高，谐波是 F0 的整数倍 |
+| 共振峰 / Formants | language/phonology/vowel-space#step0 | 声道共鸣放大的峰 F1–F3（示意谱） |
+| F1–F2 元音平面 / F1–F2 vowel plane | language/phonology/vowel-space#step1 | 10 个元音的男性平均点（P&B 1952 数据） |
+| 说话人差异 / Speaker differences | language/phonology/vowel-space#step2 | 男、女、儿童三圈整体错开 |
+| 最近模板识别 / Nearest-template recognition | language/phonology/vowel-space#step3 | 只看绝对频率：儿童 10 个只认对 3 个 |
+| 说话人归一化 / Speaker normalisation | language/phonology/vowel-space#step4 | 按组几何平均缩放后 10/10 |
+
+出链：fourier#step5、resonance#step3、exponents-logarithms#step3、phonemes#step0/#step1。
+
 <!-- GENERATED:atlas-nodes -->
 ## 三、图谱节点索引（生成，勿手改）
 
