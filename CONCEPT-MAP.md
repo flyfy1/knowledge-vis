@@ -1778,6 +1778,18 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 
 出链：binomial-normal#step3、bayes-updating#step2、hypothesis-testing#step2/#step3、memory-attention#step1。
 
+## 无知之幕（2026-11-08，Claude Code 新增；仅自检、待独立复评）
+
+| 概念（中 / EN） | 专讲 path#step | 那一步讲清什么 |
+| --- | --- | --- |
+| 无知之幕 / Veil of ignorance | psychology/ethics/veil-of-ignorance#step0 | 先选社会再抽位置，抽样记录累积 |
+| 平均原则（海萨尼）/ Average rule (Harsanyi) | psychology/ethics/veil-of-ignorance#step1 | 等概率假设下累计平均趋向平均值 |
+| 最大最小原则（罗尔斯）/ Maximin (Rawls) | psychology/ethics/veil-of-ignorance#step2 | 比较最差位置；罗尔斯的适用条件 |
+| 风险厌恶与确定性等价 / Risk aversion & certainty equivalent | psychology/ethics/veil-of-ignorance#step3 | η 从平均过渡到最差（教学旋钮） |
+| 再分配与效率代价 / Redistribution vs. efficiency | psychology/ethics/veil-of-ignorance#step4 | 各规则的最好再分配比例 |
+
+出链：expected-value#step0/#step4、ethics-decisions#step1/#step2、risk-pooling#step1。
+
 <!-- GENERATED:atlas-nodes -->
 ## 三、图谱节点索引（生成，勿手改）
 

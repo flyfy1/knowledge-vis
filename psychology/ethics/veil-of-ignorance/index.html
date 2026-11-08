@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="category" content="psychology">
+  <meta name="stage" content="senior">
+  <meta name="author" content="Claude Code (claude-opus-5-5)">
+  <title>无知之幕 · 不知道自己会是谁时，你选哪种社会</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="sim-core.js"></script>
+  <script src="i18n.js"></script>
+</head>
+<body>
+  <header class="site-head">
+    <div class="head-main">
+      <p class="backline"><a href="../../../" data-i18n="back"></a></p>
+      <h1 data-i18n="pageTitle"></h1>
+      <p class="tagline" data-i18n="tagline"></p>
+    </div>
+    <div class="lang-toggle" role="group" aria-label="Language">
+      <button type="button" data-lang="zh">中</button><button type="button" data-lang="en">EN</button>
+    </div>
+  </header>
+  <nav class="step-nav" id="stepNav" data-i18n-aria="navLabel">
+    <a class="nav-step" href="#step0" data-i18n="nav0"></a><a class="nav-step" href="#step1" data-i18n="nav1"></a>
+    <a class="nav-step" href="#step2" data-i18n="nav2"></a><a class="nav-step" href="#step3" data-i18n="nav3"></a>
+    <a class="nav-step" href="#step4" data-i18n="nav4"></a><a class="nav-step" href="#step5" data-i18n="nav5"></a>
+  </nav>
+  <main>
+    <section class="step" id="step0" data-step="0"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s0k"></p><h2 data-i18n="s0t"></h2><p class="explain" data-i18n-html="s0e"></p>
+      <div class="stage"><canvas id="c0" height="300" role="img" data-i18n-aria="s0t"></canvas></div>
+      <div class="btn-row soc-pick" role="radiogroup" data-i18n-aria="choose">
+        <button class="btn" type="button" data-soc="A" data-i18n="socA"></button><button class="btn" type="button" data-soc="B" data-i18n="socB"></button><button class="btn" type="button" data-soc="C" data-i18n="socC"></button>
+      </div>
+      <div class="btn-row"><button class="btn primary" id="lift" type="button" data-i18n="lift"></button><button class="btn" id="reset0" type="button" data-i18n="resetDraws"></button></div>
+      <p class="readout" id="r0" aria-live="polite"></p><p class="hint" data-i18n="s0hint"></p>
+    </div></section>
+
+    <section class="step" id="step1" data-step="1"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s1k"></p><h2 data-i18n="s1t"></h2><p class="explain" data-i18n-html="s1e"></p>
+      <div class="stage"><canvas id="c1" height="280" role="img" data-i18n-aria="s1t"></canvas></div>
+      <div class="btn-row soc-pick1" role="radiogroup" data-i18n-aria="choose">
+        <button class="btn" type="button" data-soc1="A" data-i18n="socA"></button><button class="btn" type="button" data-soc1="B" data-i18n="socB"></button><button class="btn" type="button" data-soc1="C" data-i18n="socC"></button>
+      </div>
+      <div class="btn-row"><button class="btn primary" id="draw100" type="button" data-i18n="draw100"></button></div>
+      <p class="readout" id="r1" aria-live="polite"></p><p class="hint" data-i18n="s1hint"></p>
+    </div></section>
+
+    <section class="step" id="step2" data-step="2"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s2k"></p><h2 data-i18n="s2t"></h2><p class="explain" data-i18n-html="s2e"></p>
+      <div class="stage"><canvas id="c2" height="280" role="img" data-i18n-aria="s2t"></canvas></div>
+      <p class="readout" id="r2" aria-live="polite"></p><p class="hint" data-i18n="s2hint"></p>
+    </div></section>
+
+    <section class="step" id="step3" data-step="3"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s3k"></p><h2 data-i18n="s3t"></h2><p class="explain" data-i18n-html="s3e"></p>
+      <div class="stage twin"><canvas id="c3" height="280" role="img" data-i18n-aria="s3t"></canvas><canvas id="c3b" height="280" role="img" data-i18n-aria="ceAxis"></canvas></div>
+      <div class="controls"><label><span data-i18n="eta"></span><output id="e3v"></output><input id="e3" type="range" min="0" max="8" step="0.05" value="0"></label></div>
+      <p class="readout" id="r3" aria-live="polite"></p><p class="hint" data-i18n="s3hint"></p>
+    </div></section>
+
+    <section class="step" id="step4" data-step="4"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s4k"></p><h2 data-i18n="s4t"></h2><p class="explain" data-i18n-html="s4e"></p>
+      <div class="stage twin"><canvas id="c4" height="300" role="img" data-i18n-aria="s4t"></canvas><canvas id="c4b" height="300" role="img" data-i18n-aria="bars"></canvas></div>
+      <div class="controls"><label><span data-i18n="tLabel"></span><output id="t4v"></output><input id="t4" type="range" min="0" max="1" step="0.01" value="0.2"></label><label><span data-i18n="kLabel"></span><output id="k4v"></output><input id="k4" type="range" min="0" max="1" step="0.05" value="0.6"></label><label><span data-i18n="eta4"></span><output id="e4v"></output><input id="e4" type="range" min="0" max="8" step="0.05" value="2"></label></div>
+      <p class="readout" id="r4" aria-live="polite"></p><p class="hint" data-i18n="s4hint"></p>
+    </div></section>
+
+    <section class="step" id="step5" data-step="5"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s5k"></p><h2 data-i18n="s5t"></h2>
+      <div class="finale"><p data-i18n-html="s5fin"></p><p class="formula" data-i18n="formula"></p><p data-i18n="boundary"></p>
+        <div class="quiz"><p class="quiz-prompt" data-i18n="quizPrompt"></p><div class="quiz-options"><label><input type="radio" name="quiz" value="a"><span data-i18n="quizA"></span></label><label><input type="radio" name="quiz" value="b"><span data-i18n="quizB"></span></label><label><input type="radio" name="quiz" value="c"><span data-i18n="quizC"></span></label></div><button class="btn" id="checkQuiz" type="button" data-i18n="check"></button><p class="quiz-feedback" id="quizFeedback" aria-live="polite"></p></div>
+        <a class="xlink" href="../ethics-decisions/#step1" data-i18n="lk1"></a>
+        <a class="xlink" href="../ethics-decisions/#step2" data-i18n="lk2"></a>
+        <a class="xlink" href="../../../probability/basics/expected-value/#step4" data-i18n="lk3"></a>
+        <a class="xlink" href="../../../probability/stochastic/risk-pooling/#step1" data-i18n="lk4"></a>
+      </div>
+    </div></section>
+  </main>
+  <footer class="site-foot" data-i18n="foot"></footer>
+  <script src="app.js"></script>
+</body>
+</html>

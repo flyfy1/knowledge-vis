@@ -1309,6 +1309,13 @@ window.KNOWLEDGE_PAGES = [
     category: "psychology", subtopic: "ethics", stage: "senior", status: "live", path: "psychology/ethics/ethics-decisions/"
   },
   {
+    slug: "veil-of-ignorance",
+    title: { zh: "无知之幕 · 不知道自己会是谁时，你选哪种社会", en: "The Veil of Ignorance · Choosing a Society Before You Know Who You Will Be" },
+    desc: { zh: "先选社会再抽位置：比较海萨尼的平均原则和罗尔斯的最大最小原则，用风险态度旋钮把两者接起来，再看拉平有代价时各选多大的再分配。", en: "Choose a society, then draw your position: compare Harsanyi's average rule with Rawls's maximin, connect them with a risk-attitude knob, and see how much redistribution each picks when levelling has a cost." },
+    tags: [{ zh: "罗尔斯", en: "Rawls" }, { zh: "最大最小原则", en: "Maximin" }, { zh: "风险态度", en: "Risk Attitude" }],
+    category: "psychology", subtopic: "ethics", stage: "senior", status: "live", path: "psychology/ethics/veil-of-ignorance/"
+  },
+  {
     slug: "statistical-inference",
     title: { zh: "统计推断 · 从样本到判断", en: "Statistical Inference · From Sample to Judgment" },
     desc: { zh: "从抽样分布走到置信区间、z 分数和 p 值，区分“数据有多不确定”和“假设有多不寻常”。", en: "Move from sampling distributions to confidence intervals, z-scores and p-values, separating data uncertainty from how unusual a hypothesis looks." },
