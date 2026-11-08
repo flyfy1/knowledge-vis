@@ -8,7 +8,7 @@ The earlier implementation104f82ca covers LeetCode `-codex/` URLs and explicitly
 
 ## Contract
 
-- Each verified Codex edition has one visible, non-sticky header disclosure labelled `Codex 开发 · 改进版本` / `Developed with Codex · Revised edition`. Identify the **edition**, not every historical contributor as Codex. A repair does not establish original authorship.
+- Each verified edition has one visible, non-sticky header disclosure labelled `<developer> 开发 · 改进版本` / `Developed with <developer> · Revised edition` (`kind: "revised"`), or `<developer> 开发 · 原创版本` / `Developed with <developer> · Original edition` (`kind: "original"`, a page that agent wrote from scratch). `<developer>` is the display name of an agent registered in [AUTHORSHIP.md](../AUTHORSHIP.md) §2 (currently `Codex`, `Claude Code`), and `data-developer` carries the same value. Identify the **edition**, not every historical contributor as Codex. A repair does not establish original authorship.
 - Inside, show a stable edition ID, the exact **source revision** and its GitHub commit link, a concise scope of Codex changes, and retained original-contribution wording. A source link is not an executable historical version. Update metadata when worker commits are integrated; do not present the old SHA as encompassing new work.
 - `page-provenance.json` is the explicit provenance inventory. Every registered page must match its static header attributes and source evidence. Unknown, mixed and awaiting-worker pages have explicit exceptions; never stamp a whole directory tree or infer identity from the current agent.
 - Use native static `details/summary`, `page-provenance.css` and localized spans. No storage, polling, tracking, animation, script injection or new controller. CSS follows the existing `html[lang]`; the lesson owns language and state. The label remains visible if JavaScript is unavailable.
@@ -70,3 +70,19 @@ in their existing static headers (`sampling`, `bayes`, `interference`, `standing
 `convolution`). Their inventory scope metadata was reconciled to the already-visible wording;
 no page behavior, route, source revision, or unverified page was changed. See the detailed
 [inventory repair record](reviews/page-provenance-inventory-20261028.md).
+
+## Multi-agent generalisation — 2026-11-08 Claude Code
+
+Per [AUTHORSHIP.md](../AUTHORSHIP.md) §7 the disclosure is no longer Codex-only. The core check
+now takes `developer` from a small registry (`Codex`, `Claude Code`) whose `Built-By` pattern must
+appear in the source revision (or the review evidence must name that developer), accepts
+`kind: "original"` with its own bilingual label, and requires `data-developer` to match. The
+source-change check follows the page file's rename history, because the topic reorganisation
+moved every lesson to `<category>/<subtopic>/<slug>/` and older source revisions touched the old
+paths. The browser check reads the expected label from each record. The rule that unverified
+pages are never stamped is unchanged.
+
+Known gap, not fixed here: `math/linear-algebra/linear-transform` and
+`biology/ecology/population-ecology` carry static labels that are missing from the inventory
+(already failing at 49272857, before the reorg). Their source evidence has to be verified before
+they are registered or the labels removed.
