@@ -69,7 +69,7 @@ function render(){document.documentElement.lang=lang==='zh'?'zh-CN':'en';documen
  renderDetail();renderList();view?.setSelection(state.node,path());view?.setLanguage(lang,D.groups,t('sceneLabel'));
 }
 async function mount(){const ticket=++generation;if(view){cameraSave(view.snapshot());view.destroy();view=null;}loading=false;rotating=false;touch=false;destroyed=false;if(state.low||!model.nodes.length){render();return;}failure=false;loading=true;render();
- try {const {createGalaxy}=await import('./renderer.mjs');if(ticket!==generation)return;view=createGalaxy({host:$('scene'),labels:$('labels'),model,positions,colors,lang,onSelect:select,onCamera:cameraSave,onReset:()=>{rotating=false;touch=false;view?.setTouch(!mobile.matches);render();},onFailure:()=>{failure=true;view?.destroy();view=null;rotating=false;render();},reduced:reduced.matches});view.restore(history.state?.galaxyCamera);}
+ try {const {createGalaxy}=await import('./renderer.mjs?v=20261108-d848e4f2');if(ticket!==generation)return;view=createGalaxy({host:$('scene'),labels:$('labels'),model,positions,colors,lang,onSelect:select,onCamera:cameraSave,onReset:()=>{rotating=false;touch=false;view?.setTouch(!mobile.matches);render();},onFailure:()=>{failure=true;view?.destroy();view=null;rotating=false;render();},reduced:reduced.matches});view.restore(history.state?.galaxyCamera);}
  catch(error){failure=true;view?.destroy();view=null;console.info('Galaxy fallback:',error.message);}
  finally{if(ticket===generation){loading=false;render();}}
 }
