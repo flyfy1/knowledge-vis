@@ -28,3 +28,12 @@
 
 - Added a phase-plane canvas derived from the existing predator–prey simulation, including a pure `phaseSummary` contract for range and loop orientation.
 - Regression guard: the focused model test checks bounded ranges and the degenerate nearly-flat path.
+
+## Provenance label brought to contract — 2026-11-09 Claude Code
+
+The phase-plane label (added by 07fec169, `Built-By: Codex (gpt-6.1-sol)`) used a non-contract summary
+and named c21cdb49 — a commit that never touched this page — as its source. It now reads
+"Codex 开发 · 改进版本 / Developed with Codex · Revised edition", points to 07fec169 in full, and is
+registered in `page-provenance.json`; the lesson's original author (3820f26b, undeclared) is not asserted.
+Recurrence check: `node tests/page-provenance-core.cjs` verifies the label against the inventory and the
+source commit's trailer. See [review](reviews/claude-pages-review-20261109.md#6-任务-2署名清单缺口).

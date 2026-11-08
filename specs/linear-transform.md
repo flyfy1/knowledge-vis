@@ -17,3 +17,12 @@ The drawings are explanatory geometry, not a high-precision plotting tool. Canva
 - `node --check linear-transform/app.js` and `node --check linear-transform/i18n.js`.
 - Static key/ID check: every `data-i18n` key exists in both locales; every canvas/control ID referenced by `app.js` exists in `index.html`.
 - Browser smoke: load `math/linear-algebra/linear-transform/`, move all four sliders, click every preset, toggle inverse, switch composition order, answer quiz, switch language, and verify no console error.
+
+## Provenance label removed — 2026-11-09 Claude Code
+
+The page carried a non-contract "Codex lesson · Linear map lab" `page-provenance` label, but no commit
+(a0ef4c69, 6ee84cd7) declares `Built-By` and `authorship/overrides.json` has no entry, so the author is
+unverified. Per AUTHORSHIP.md §7 the label is removed; its learner note (rounded readouts, float
+computation) stays as a plain paragraph under the tagline. Recurrence check: `node tests/page-provenance-core.cjs`
+fails if any label exists without an inventory record. Relabel only after the author is confirmed in
+`overrides.json`. See [review](reviews/claude-pages-review-20261109.md#6-任务-2署名清单缺口).
