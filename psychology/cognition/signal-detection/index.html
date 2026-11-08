@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="category" content="psychology">
+  <meta name="stage" content="university">
+  <meta name="author" content="Claude Code (claude-opus-5-5)">
+  <title>信号检测论 · 分得清，和愿意说“有”，是两回事</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="sim-core.js"></script>
+  <script src="i18n.js"></script>
+</head>
+<body>
+  <header class="site-head">
+    <div class="head-main">
+      <p class="backline"><a href="../../../" data-i18n="back"></a></p>
+      <h1 data-i18n="pageTitle"></h1>
+      <p class="tagline" data-i18n="tagline"></p>
+    </div>
+    <div class="lang-toggle" role="group" aria-label="Language">
+      <button type="button" data-lang="zh">中</button><button type="button" data-lang="en">EN</button>
+    </div>
+  </header>
+  <nav class="step-nav" id="stepNav" data-i18n-aria="navLabel">
+    <a class="nav-step" href="#step0" data-i18n="nav0"></a><a class="nav-step" href="#step1" data-i18n="nav1"></a>
+    <a class="nav-step" href="#step2" data-i18n="nav2"></a><a class="nav-step" href="#step3" data-i18n="nav3"></a>
+    <a class="nav-step" href="#step4" data-i18n="nav4"></a><a class="nav-step" href="#step5" data-i18n="nav5"></a>
+    <a class="nav-step" href="#step6" data-i18n="nav6"></a>
+  </nav>
+  <main>
+    <section class="step" id="step0" data-step="0"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s0k"></p><h2 data-i18n="s0t"></h2><p class="explain" data-i18n-html="s0e"></p>
+      <div class="stage"><canvas id="c0" height="300" role="img" data-i18n-aria="s0t"></canvas></div>
+      <div class="quiz"><p class="quiz-prompt" data-i18n="predictPrompt"></p><div class="quiz-options">
+        <label><input type="radio" name="pred" value="a"><span data-i18n="predA"></span></label>
+        <label><input type="radio" name="pred" value="b"><span data-i18n="predB"></span></label>
+        <label><input type="radio" name="pred" value="c"><span data-i18n="predC"></span></label></div>
+        <p class="quiz-feedback" id="predFeedback" aria-live="polite"></p></div>
+      <p class="hint" data-i18n="s0hint"></p>
+    </div></section>
+
+    <section class="step" id="step1" data-step="1"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s1k"></p><h2 data-i18n="s1t"></h2><p class="explain" data-i18n-html="s1e"></p>
+      <div class="stage"><canvas id="c1" height="340" role="img" data-i18n-aria="s1t"></canvas></div>
+      <div class="btn-row"><button class="btn primary" id="run1" type="button" data-i18n="runTrials"></button><button class="btn" id="reset1" type="button" data-i18n="resetTrials"></button></div>
+      <p class="readout" id="r1" aria-live="polite"></p><p class="hint" data-i18n-html="s1hint"></p>
+    </div></section>
+
+    <section class="step" id="step2" data-step="2"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s2k"></p><h2 data-i18n="s2t"></h2><p class="explain" data-i18n-html="s2e"></p>
+      <div class="stage"><canvas id="c2" height="300" role="img" data-i18n-aria="s2t"></canvas></div>
+      <div class="controls"><label><span data-i18n="cLabel"></span><output id="c2v"></output><input id="c2s" type="range" min="-1.5" max="1.5" step="0.05" value="0.5"></label></div>
+      <p class="readout" id="r2" aria-live="polite"></p><p class="hint" data-i18n="s2hint"></p>
+    </div></section>
+
+    <section class="step" id="step3" data-step="3"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s3k"></p><h2 data-i18n="s3t"></h2><p class="explain" data-i18n-html="s3e"></p>
+      <div class="stage"><canvas id="c3" height="300" role="img" data-i18n-aria="s3t"></canvas></div>
+      <div class="controls"><label><span data-i18n="dLabel"></span><output id="d3v"></output><input id="d3s" type="range" min="0" max="3.5" step="0.05" value="0.5"></label><label><span data-i18n="cLabel"></span><output id="c3v"></output><input id="c3s" type="range" min="-1.5" max="1.5" step="0.05" value="0"></label></div>
+      <p class="readout" id="r3" aria-live="polite"></p><p class="hint" data-i18n="s3hint"></p>
+    </div></section>
+
+    <section class="step" id="step4" data-step="4"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s4k"></p><h2 data-i18n="s4t"></h2><p class="explain" data-i18n-html="s4e"></p>
+      <div class="stage square"><canvas id="c4" height="420" role="img" data-i18n-aria="s4t"></canvas></div>
+      <div class="controls"><label><span data-i18n="dLabel"></span><output id="d4v"></output><input id="d4s" type="range" min="0" max="3.5" step="0.05" value="1"></label><label><span data-i18n="cLabel"></span><output id="c4v"></output><input id="c4s" type="range" min="-1.5" max="1.5" step="0.05" value="0"></label></div>
+      <p class="readout" id="r4" aria-live="polite"></p><p class="readout reveal" id="reveal4" aria-live="polite"></p><p class="hint" data-i18n="s4hint"></p>
+    </div></section>
+
+    <section class="step" id="step5" data-step="5"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s5k"></p><h2 data-i18n="s5t"></h2><p class="explain" data-i18n-html="s5e"></p>
+      <div class="stage"><canvas id="c5" height="300" role="img" data-i18n-aria="s5t"></canvas></div>
+      <div class="controls"><label><span data-i18n="baseRate"></span><output id="p5v"></output><input id="p5s" type="range" min="0.05" max="0.95" step="0.05" value="0.5"></label><label><span data-i18n="costRatio"></span><output id="m5v"></output><input id="m5s" type="range" min="-1" max="1" step="0.05" value="0"></label><label><span data-i18n="yourC"></span><output id="c5v"></output><input id="c5s" type="range" min="-2.5" max="2.5" step="0.05" value="0.8"></label></div>
+      <p class="readout" id="r5" aria-live="polite"></p><p class="hint" data-i18n="s5hint"></p>
+    </div></section>
+
+    <section class="step" id="step6" data-step="6"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s6k"></p><h2 data-i18n="s6t"></h2>
+      <div class="finale"><p data-i18n-html="s6fin"></p><p class="formula" data-i18n="formula"></p><p data-i18n="boundary"></p>
+        <div class="quiz"><p class="quiz-prompt" data-i18n="quizPrompt"></p><div class="quiz-options"><label><input type="radio" name="quiz" value="a"><span data-i18n="quizA"></span></label><label><input type="radio" name="quiz" value="b"><span data-i18n="quizB"></span></label><label><input type="radio" name="quiz" value="c"><span data-i18n="quizC"></span></label></div><button class="btn" id="checkQuiz" type="button" data-i18n="check"></button><p class="quiz-feedback" id="quizFeedback" aria-live="polite"></p></div>
+        <a class="xlink" href="../memory-attention/#step1" data-i18n="lk1"></a>
+        <a class="xlink" href="../../../probability/inference/hypothesis-testing/#step2" data-i18n="lk2"></a>
+        <a class="xlink" href="../../../probability/inference/hypothesis-testing/#step3" data-i18n="lk3"></a>
+        <a class="xlink" href="../../../probability/inference/bayes-updating/#step2" data-i18n="lk4"></a>
+      </div>
+    </div></section>
+  </main>
+  <footer class="site-foot" data-i18n="foot"></footer>
+  <script src="app.js"></script>
+</body>
+</html>

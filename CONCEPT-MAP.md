@@ -1767,6 +1767,18 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 
 入链：pid-control 终章 → step-response#step2。出链：resonance#step1、laplace#step4、pid-control#step3。
 
+## 信号检测论（2026-11-08，Claude Code 新增；仅自检、待独立复评）
+
+| 概念（中 / EN） | 专讲 path#step | 那一步讲清什么 |
+| --- | --- | --- |
+| 命中率与虚报率 / Hit & false-alarm rates | psychology/cognition/signal-detection#step1 | 证据强度分布 + 判据，模拟试验逐批累积 |
+| 判据 / 反应偏向 c / Criterion & response bias | psychology/cognition/signal-detection#step2 | 移判据线 H、F 同涨同落，c = −[z(H)+z(F)]/2 |
+| 敏感度 d' / Sensitivity d' | psychology/cognition/signal-detection#step3 | 两分布距离，d' = z(H) − z(F) |
+| ROC 曲线 / ROC curve | psychology/cognition/signal-detection#step4 | 同 d' 不同判据连成弧；医生与机器例子 |
+| 代价与基础率决定最佳判据 / Optimal criterion | psychology/cognition/signal-detection#step5 | 期望代价曲线的最低点 |
+
+出链：binomial-normal#step3、bayes-updating#step2、hypothesis-testing#step2/#step3、memory-attention#step1。
+
 ## 三、图谱节点索引（生成，勿手改）
 
 156 个概念 · 259 条关系 · 10 个分区 · 由 scripts/build-atlas-data.cjs --concept-map 生成。节点排序与 data.js 一致（分区序、学段序、order、id）。

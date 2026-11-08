@@ -1286,6 +1286,13 @@ window.KNOWLEDGE_PAGES = [
     category: "psychology", subtopic: "cognition", stage: "senior", status: "live", path: "psychology/cognition/memory-attention/"
   },
   {
+    slug: "signal-detection",
+    title: { zh: "信号检测论 · 分得清，和愿意说“有”，是两回事", en: "Signal Detection Theory · Telling Apart vs. Willing to Say “Yes”" },
+    desc: { zh: "两位检测者都对了 80%，谁更会分辨？用命中率和虚报率把敏感度 d' 与判据 c 拆开，在 ROC 曲线上比较，再按错误代价选判据。", en: "Two detectors are both 80% correct — who discriminates better? Separate sensitivity d' from criterion c with hit and false-alarm rates, compare on the ROC curve, then pick a criterion by the cost of errors." },
+    tags: [{ zh: "敏感度 d'", en: "Sensitivity d'" }, { zh: "ROC 曲线", en: "ROC Curve" }, { zh: "决策判据", en: "Decision Criterion" }],
+    category: "psychology", subtopic: "cognition", stage: "university", status: "live", path: "psychology/cognition/signal-detection/"
+  },
+  {
     slug: "music-theory",
     title: { zh: "音乐理论 · 从音程到终止", en: "Music Theory · From Intervals to Cadence" },
     desc: { zh: "从半音距离和频率比走到音阶级数、和弦功能与终止，建立可计算的听觉理论直觉。", en: "Move from semitone distance and frequency ratios to scale degrees, chord function and cadence with a computable theory intuition." },
