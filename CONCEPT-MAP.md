@@ -1829,7 +1829,7 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 量子隧穿 / Quantum Tunnelling | ../physics/modern/quantum-tunneling/#step1 | quantum-tunneling#step1 |
 | 狭义相对论 / Special Relativity | ../physics/modern/relativity/#step1 | relativity#step1 |
 | 共振 / Resonance | ../physics/waves/resonance/#step3 | frequency-response#step5, resonance#step3 |
-| 采样与混叠 / Sampling & aliasing | ../signal/sampling/sampling/sampling/#step3 | sampling#step3 |
+| 采样与混叠 / Sampling & aliasing | ../signal/sampling/sampling/#step3 | sampling#step3 |
 | 频谱 / Spectrum | ../signal/transforms/fourier/#step5 | fourier#step5 |
 | 波的叠加 / Superposition | ../signal/transforms/fourier/#step2 | fourier#step2 |
 | 小波与时频分析 / Wavelets & time-frequency analysis | ../signal/transforms/wavelets/#step2 | wavelets#step2 |
@@ -1874,7 +1874,7 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 反向传播 / Backpropagation | ../computing/ml/backpropagation/#step2 | backpropagation#step2 |
 | 混沌与三体 / Chaos and the three-body problem | ../physics/mechanics/chaos-threebody/#step3 | chaos-threebody#step3 |
 | 卷积 / Convolution | ../signal/systems/convolution/#step2 | convolution#step2 |
-| 反馈控制 / Feedback control | ../signal/control/inverted-pendulum/inverted-pendulum/#step2 | inverted-pendulum#step2 |
+| 反馈控制 / Feedback control | ../signal/control/inverted-pendulum/#step2 | inverted-pendulum#step2 |
 | 频率响应 / Frequency response | ../signal/systems/frequency-response/#step0 | frequency-response#step0 |
 | 梯度下降 / Gradient descent | ../computing/ml/gradient-descent/#step0 | gradient-descent#step0 |
 | 冲激响应 / Impulse response | ../signal/systems/lti-systems/#step2 | lti-systems#step2 |
@@ -1906,7 +1906,7 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 决策树与信息增益 / Decision trees & information gain | ../computing/ml/decision-trees/#step1 | decision-trees#step1 |
 | 正态分布与中心极限定理 / Normal distributions & CLT | ../probability/statistics/central-limit-theorem/#step3 | central-limit-theorem#step3 |
 | 假设检验与 p 值 / Hypothesis testing & p-values | ../probability/inference/hypothesis-testing/#step0 | hypothesis-testing#step0 |
-| 卡尔曼滤波 / Kalman filtering | ../signal/control/inverted-pendulum/kalman/#step2 | kalman#step2 |
+| 卡尔曼滤波 / Kalman filtering | ../signal/control/kalman/#step2 | kalman#step2 |
 | 大语言模型的逐词采样 / LLM next-word sampling | ../computing/ml/llm-sampling/#step1 | llm-sampling#step1 |
 | 马尔可夫链 / Markov chains | ../probability/stochastic/markov-chains/#step3 | markov-chains#step3 |
 | 蒙特卡洛估计 / Monte Carlo estimation | ../probability/stochastic/monte-carlo/#step3 | monte-carlo#step3 |
