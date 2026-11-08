@@ -22,9 +22,9 @@ for(const[slug,p]of Object.entries(m.pages)){
   assert.match(p.provenanceEvidence||'',/^specs\/reviews\/[a-z0-9-]+\.md$/,'missing commit trailer needs exact tracked author evidence');
   const evidence=cp.execFileSync('git',['show',p.sourceRevision+':'+p.provenanceEvidence],{cwd:root,encoding:'utf8'});assert.match(evidence,/^# .*Codex/m,'source revision must contain its Codex authorship record');
  }
- assert.ok(cp.execFileSync('git',['diff-tree','--no-commit-id','--name-only','-r',p.sourceRevision,'--',p.path?path.dirname(p.path)+'/':slug+'/'],{cwd:root,encoding:'utf8'}).trim(),slug+' has actual Codex source changes');
+ assert.ok(cp.execFileSync('git',['diff-tree','--no-commit-id','--name-only','-r',p.sourceRevision,'--',...new Set([slug+'/',p.path?path.dirname(p.path)+'/':slug+'/'])],{cwd:root,encoding:'utf8'}).trim(),slug+' has actual Codex source changes');
 }
 assert.ok(m.exceptions['*'],'unknown provenance policy remains explicit');
-assert.ok(!fs.readFileSync(path.join(root,'fourier/index.html'),'utf8').includes('page-provenance'),'unknown page is not relabelled');
+assert.ok(!fs.readFileSync(path.join(root,'signal/transforms/fourier/index.html'),'utf8').includes('page-provenance'),'unknown page is not relabelled');
 const css=fs.readFileSync(path.join(root,'page-provenance.css'),'utf8');assert.match(css,/html\[lang\^="zh"\]/);assert.match(css,/forced-colors/);assert.match(css,/min-height:48px/);assert.match(css,/outline:3px/);assert.ok(!css.includes('animation:'));
 console.log(`PASS: ${inventoryPaths.length} static labels match the authoritative sourced revised-edition inventory; unknown attribution remains opt-in; shared CSS contract`);

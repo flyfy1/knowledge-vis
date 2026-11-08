@@ -2,8 +2,8 @@
 // Build atlas/data.js from editorial sources. See atlas/graph/README (P0).
 //   node scripts/build-atlas-data.cjs [--check] [--bump-versions]
 //   node scripts/build-atlas-data.cjs --graph <dir> [--check]  (default graph dir: atlas/graph;
-//     output data.js is written beside the graph dir, so --graph atlas-investment/graph
-//     writes atlas-investment/data.js; --concept-map/--bump-versions are main-atlas only)
+//     output data.js is written beside the graph dir, so --graph investment/atlas/graph
+//     writes investment/atlas/data.js; --concept-map/--bump-versions are main-atlas only)
 // --check: build in memory and compare with the committed atlas/data.js.
 // Main atlas also emits atlas/questions.js (questions array, loaded after
 // data.js and before app.js; it assigns into window.ATLAS). The 450,000-byte combined gate
@@ -29,6 +29,7 @@ for (let i = 0; i < argv.length; i++) {
 }
 const graphDir = graphArg ? path.resolve(graphArg) : path.join(root, 'atlas', 'graph');
 const lessonsDir = path.join(graphDir, 'lessons');
+const pageDir = path.dirname(graphDir); // hrefs in the graph are relative to the atlas page
 
 const STAGES = ['primary', 'junior', 'senior', 'university'];
 const stageOrder = s => { const i = STAGES.indexOf(s); return i < 0 ? 4 : i; };
@@ -43,16 +44,18 @@ function bi(x) {
     ? { zh: x.zh, en: x.en } : null;
 }
 function parseStepAnchor(href) {
-  const m = typeof href === 'string' && href.match(/^\.\.\/([^/]+)\/#step(\d+)$/);
+  // Lesson pages live at <category>/<subtopic>/<slug>/; hrefs are relative to the
+  // atlas page (e.g. ../physics/circuits/ohms-law/#step2). The slug is the last segment.
+  const m = typeof href === 'string' && href.match(/^(?:\.\.\/)+(?:[^/#]+\/)*?([^/#]+)\/#step(\d+)$/);
   return m ? { slug: m[1], step: Number(m[2]) } : null;
 }
 function isExternal(href) { return typeof href === 'string' && /^https?:\/\//.test(href); }
 function anchorExists(href) {
   // Returns true/false/null (null = cannot check, e.g. external URL).
   if (isExternal(href)) return null;
-  const m = typeof href === 'string' && href.match(/^\.\.\/([^/]+)\/#(.+)$/);
+  const m = typeof href === 'string' && href.match(/^((?:\.\.\/)+(?:[^/#]+\/)*[^/#]+)\/#(.+)$/);
   if (!m) return false;
-  const file = path.join(root, m[1], 'index.html');
+  const file = path.join(pageDir, m[1], 'index.html');
   if (!fs.existsSync(file)) return false;
   const html = fs.readFileSync(file, 'utf8');
   if (m[2].startsWith('step')) return html.includes(`id="${m[2]}"`);
@@ -109,7 +112,7 @@ for (const n of core.nodes) {
       node.lessons = [{ slug: a.slug, step, category: p.category, stage: p.stage || 'university', primary: true }];
       node.stage = node.stage || p.stage || 'university';
     } else if (node.source && node.source.startsWith('../')) {
-      const slug = node.source.split('/')[1];
+      const slug = node.source.split('#')[0].replace(/\/$/, '').split('/').pop();
       if (pageBySlug.has(slug)) {
         node.lessons = [{ slug, step: null, category: pageBySlug.get(slug).category, stage: pageBySlug.get(slug).stage || 'university', primary: true }];
         node.stage = node.stage || pageBySlug.get(slug).stage || 'university';

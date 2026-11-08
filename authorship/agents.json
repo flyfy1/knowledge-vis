@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "_note": "Agent registry for AUTHORSHIP.md. 'match' is tested in order against the Built-By / Co-Authored-By text; first match wins. Add an agent here before its first commit.",
+  "agents": [
+    { "id": "claude-code", "name": "Claude Code (Anthropic)", "match": "\\bclaude\\b" },
+    { "id": "codex", "name": "Codex (OpenAI)", "match": "\\bcodex\\b|gpt-[0-9][0-9.]*" },
+    { "id": "alberto", "name": "Alberto (Muse) — orchestrator and its subagents", "match": "\\balberto\\b|\\bmuse\\b|dev agent" },
+    { "id": "script", "name": "Deterministic script (no model)", "match": "deterministic|no model" },
+    { "id": "human", "name": "Yangyu, by hand", "match": "\\byangyu\\b.*\\b(by hand|manual)\\b" }
+  ],
+  "models": [
+    { "id": "claude-opus-5-5", "match": "opus 5\\.5|claude-opus-5-5" },
+    { "id": "claude-sonnet-5-5", "match": "sonnet 5\\.5|claude-sonnet-5-5" },
+    { "id": "claude-fable-5-1", "match": "fable 5\\.1|claude-fable-5-1" },
+    { "id": "claude-opus", "match": "\\bopus\\b" },
+    { "id": "gpt-6.1-sol", "match": "gpt-6\\.1-sol" },
+    { "id": "muse-wonder", "match": "muse wonder" },
+    { "id": "muse-spark", "match": "muse spark" },
+    { "id": "none", "match": "no model|deterministic" }
+  ]
+}
