@@ -1081,6 +1081,13 @@ window.KNOWLEDGE_PAGES = [
     category: "engineering", subtopic: "control", stage: "senior", status: "live", path: "engineering/control/pid-control/"
   },
   {
+    slug: "step-response",
+    title: { zh: "阶跃响应 · 阻尼比决定冲多远，固有频率决定多快", en: "Step Response · Damping Sets the Overshoot, Natural Frequency Sets the Speed" },
+    desc: { zh: "给二阶系统一个阶跃：拖动阻尼比 ζ 看超调怎样只由它决定，拖动固有频率 ωn 看时间怎样整体伸缩，再在复平面上把两者读成极点。", en: "Give a second-order system a step: drag the damping ratio ζ to see overshoot depend on it alone, drag the natural frequency ωn to stretch time, then read both as poles in the complex plane." },
+    tags: [{ zh: "阻尼比", en: "Damping Ratio" }, { zh: "超调", en: "Overshoot" }, { zh: "极点", en: "Poles" }],
+    category: "engineering", subtopic: "control", stage: "senior", status: "live", path: "engineering/control/step-response/"
+  },
+  {
     slug: "genetics-probability",
     title: { zh: "遗传与概率 · 从配子到表型", en: "Genetics & Probability · From Gametes to Phenotypes" },
     desc: { zh: "从等位基因分离到 Punnett 方格、独立分配和条件概率，亲手把 3:1 与 9:3:3:1 拆成一条可追踪的因果链。", en: "Trace segregation, Punnett squares, independent assortment and conditional probability until 3:1 and 9:3:3:1 become causal, recomputable outcomes." },

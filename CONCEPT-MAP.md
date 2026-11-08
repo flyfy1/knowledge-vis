@@ -1756,6 +1756,17 @@ Atlas ordinary route `optics` connects existing unit-circle to one canonical `sn
 Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investment/atlas/sources.html`。
 
 <!-- GENERATED:atlas-nodes -->
+## 阶跃响应（2026-11-08，Claude Code 新增；仅自检、待独立复评）
+
+| 概念（中 / EN） | 专讲 path#step | 那一步讲清什么 |
+| --- | --- | --- |
+| 阻尼比 ζ / Damping ratio | engineering/control/step-response#step1 | 欠/临界/过阻尼三种形状，旧曲线保留对比 |
+| 超调与峰值时间 / Overshoot & peak time | engineering/control/step-response#step2 | 超调只由 ζ 决定，实测与公式并排 |
+| 2% 调节时间、固有频率 ωn / Settling time & natural frequency | engineering/control/step-response#step3 | ωn 整体压缩时间轴，4/(ζωn) 只是估算 |
+| 二阶系统极点 / Second-order poles | engineering/control/step-response#step4 | 极点夹角 ↔ ζ，到原点距离 ↔ ωn，离虚轴距离 ↔ 衰减 |
+
+入链：pid-control 终章 → step-response#step2。出链：resonance#step1、laplace#step4、pid-control#step3。
+
 ## 三、图谱节点索引（生成，勿手改）
 
 156 个概念 · 259 条关系 · 10 个分区 · 由 scripts/build-atlas-data.cjs --concept-map 生成。节点排序与 data.js 一致（分区序、学段序、order、id）。
