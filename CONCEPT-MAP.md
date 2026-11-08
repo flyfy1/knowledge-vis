@@ -1755,7 +1755,6 @@ Atlas ordinary route `optics` connects existing unit-circle to one canonical `sn
 复制节点。许可：定义本站原创，Investor.gov 仅术语对照，OpenStax / Saylor /
 Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investment/atlas/sources.html`。
 
-<!-- GENERATED:atlas-nodes -->
 ## 阶跃响应（2026-11-08，Claude Code 新增；仅自检、待独立复评）
 
 | 概念（中 / EN） | 专讲 path#step | 那一步讲清什么 |
@@ -1779,6 +1778,7 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 
 出链：binomial-normal#step3、bayes-updating#step2、hypothesis-testing#step2/#step3、memory-attention#step1。
 
+<!-- GENERATED:atlas-nodes -->
 ## 三、图谱节点索引（生成，勿手改）
 
 156 个概念 · 259 条关系 · 10 个分区 · 由 scripts/build-atlas-data.cjs --concept-map 生成。节点排序与 data.js 一致（分区序、学段序、order、id）。
