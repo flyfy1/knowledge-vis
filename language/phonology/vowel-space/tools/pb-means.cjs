@@ -1,7 +1,7 @@
 'use strict';
 // Recompute the group means in sim-core.js from Praat's Peterson & Barney table.
 // Author: Claude Code (claude-opus-5-5), 2026-11-08.
-// Usage: node tests/pb-means.cjs <path/to/praat/dwtools/Table_dataSets.cpp>
+// Usage: node tools/pb-means.cjs <path/to/praat/dwtools/Table_dataSets.cpp>
 // Source fetched from https://raw.githubusercontent.com/praat/praat/6a9874e525d80a2b4c2e6a8d687081963c6d4e6a/dwtools/Table_dataSets.cpp
 // Row order (per the Praat code): speaker 1..76, each with 10 vowels × 2 repetitions; speakers 1–33 men,
 // 34–61 women, 62–76 children. All 1520 rows are averaged, starred or not.

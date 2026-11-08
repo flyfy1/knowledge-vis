@@ -4,7 +4,7 @@
 // (JASA 24:175–184) as distributed in Praat's source, dwtools/Table_dataSets.cpp at commit
 // 6a9874e525d80a2b4c2e6a8d687081963c6d4e6a (sha256 3027b885…a3cc3). Every token was averaged,
 // including the 321 rows whose source flag records a "*" in front of the vowel type. Rounded to 1 Hz.
-// Values are [F0, F1, F2, F3] in Hz. Recompute with tests/pb-means.cjs <path to Table_dataSets.cpp>.
+// Values are [F0, F1, F2, F3] in Hz. Recompute with tools/pb-means.cjs <path to Table_dataSets.cpp>.
 (function (root) {
   // Order and labels follow the Praat table (heed iy, hid ih, head eh, had ae, hud ah, hod aa,
   // hawed ao, hood uh, who'd uw, heard er) with Peterson & Barney's IPA symbols.

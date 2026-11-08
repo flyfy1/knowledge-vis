@@ -42,8 +42,8 @@
 - 数据路径：Praat 源码 `dwtools/Table_dataSets.cpp`，`Table_create_petersonBarney1952`。抓取自 <https://raw.githubusercontent.com/praat/praat/master/dwtools/Table_dataSets.cpp>，当时 master 为 commit `6a9874e525d80a2b4c2e6a8d687081963c6d4e6a`（2026-11-08），文件 sha256 `3027b8856df330f4abf9149b140d87411d4de835dc8d7c821cc0c1e2b1da3cc3`。
   - 源码注释说明：数据来自 Ignatius Mattingly 1990 年提供的印刷版，经 UPenn FTP 分发；1520 行 = 76 位说话人 × 10 个元音 × 2 次；33 男、28 女、15 儿童；儿童 62、63、65、66、67、68、73、76 号为女性；hVd 词。
   - Praat 手册页 *Create formant table (Peterson & Barney 1952)*（docs/manual，同一 commit）给出词与标签：heed iy, hid ih, head eh, had ae, hod aa, hawed ao, hood uh, who'd uw, hud ah, heard er；IPA 用 P&B 原文记法。
-- 本页的处理：用 `tests/pb-means.cjs` 对每组每个元音的**全部** token 求平均（包括源码 `star` 字段为 1 的 321 行；源码对该字段的说明仅为 "was there a * in front of the vowel-type?"），四舍五入到 1 Hz，写入 `sim-core.js` 的 `MEANS`。只提交 30 组均值，不提交 1520 行原始数据（原始数据位于 GPL 源码内）。
-  - 复现：`node tests/pb-means.cjs <Table_dataSets.cpp 路径>`，输出 `MATCH sim-core.js MEANS`。
+- 本页的处理：用 `tools/pb-means.cjs` 对每组每个元音的**全部** token 求平均（包括源码 `star` 字段为 1 的 321 行；源码对该字段的说明仅为 "was there a * in front of the vowel-type?"），四舍五入到 1 Hz，写入 `sim-core.js` 的 `MEANS`。只提交 30 组均值，不提交 1520 行原始数据（原始数据位于 GPL 源码内）。
+  - 复现：`node tools/pb-means.cjs <Table_dataSets.cpp 路径>`，输出 `MATCH sim-core.js MEANS`。
   - 标签检查（`tests/core.cjs`）：三组都满足 F2 ʌ > ɑ > ɔ，且 ɔ 的 F1 最低。
 
 ## 其他事实来源

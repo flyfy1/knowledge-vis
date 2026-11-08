@@ -13,7 +13,7 @@ const STRINGS = {
     s0k: '第 0 步 · 一个元音里有什么', s0t: '基频定音高，共振峰定元音',
     s0e: '这一步要回答：一个元音的声音里，哪些数字决定它是哪个元音？浊音的声音每秒重复 F0 次，<strong>基频 F0</strong> 听起来就是音高；它同时含有频率为 F0、2F0、3F0…… 的<strong>谐波</strong>（竖线，<a class="xlink" href="../../../signal/transforms/fourier/#step5">→ 傅里叶第 5 步：从波形到频谱</a>）。从喉到唇的声道像一组共鸣腔，会把某些频率附近的谐波放大：这些放大的峰叫<strong>共振峰</strong>（formant），从低到高记作 F1、F2、F3（<a class="xlink" href="../../../physics/waves/resonance/#step3">→ 共振第 3 步：共振曲线</a>）。选一个词和一组说话人，看谐波和峰的位置。',
     s0readout: '{word} /{ipa}/ · {group}平均：F0 {f0} Hz · F1 {f1} · F2 {f2} · F3 {f3} Hz（{n} 个录音的平均）',
-    s0hint: '观察顺序：先固定 heed，在男性和儿童之间切换——竖线（谐波）间距从约 136 Hz 拉宽到约 270 Hz，峰的位置也整体右移。再固定男性、在 heed 和 hod 之间切换：谐波几乎不动，峰却换了地方。图中峰的形状是本页的示意画法，只有 F0 和 F1–F3 的位置是数据。',
+    s0hint: '观察顺序：先固定 heed，在男性和儿童之间切换——竖线（谐波）间距从约 136 Hz 拉宽到约 270 Hz，峰的位置也整体右移。再固定男性、在 heed 和 hod 之间切换：谐波间距只从 136 变到 124 Hz，峰却换了地方。图中峰的形状是本页的示意画法，只有 F0 和 F1–F3 的位置是数据。',
     freqAxis: '频率 Hz', ampAxis: '相对强度（示意）',
 
     s1k: '第 1 步 · 两个数，一个点', s1t: '把每个元音画成 F1–F2 平面上的一个点',
@@ -64,7 +64,7 @@ const STRINGS = {
     s0k: 'Step 0 · What is inside a vowel', s0t: 'F0 sets the pitch; the formants set the vowel',
     s0e: 'This step asks: which numbers in the sound of a vowel decide which vowel it is? A voiced sound repeats F0 times a second; this <strong>fundamental frequency F0</strong> is heard as pitch. The sound also contains <strong>harmonics</strong> at F0, 2F0, 3F0, … (vertical lines; <a class="xlink" href="../../../signal/transforms/fourier/#step5">→ Fourier, step 5: from waveform to spectrum</a>). The vocal tract from larynx to lips acts as a set of resonators that boost harmonics near certain frequencies; these boosted peaks are the <strong>formants</strong>, numbered F1, F2, F3 from low to high (<a class="xlink" href="../../../physics/waves/resonance/#step3">→ Resonance, step 3: the resonance curve</a>). Pick a word and a speaker group and look at where the harmonics and peaks are.',
     s0readout: '{word} /{ipa}/ · {group} average: F0 {f0} Hz · F1 {f1} · F2 {f2} · F3 {f3} Hz (mean of {n} recordings)',
-    s0hint: 'What to do: keep “heed” and switch between men and children — the spacing of the lines (harmonics) widens from about 136 Hz to about 270 Hz and the peaks shift right. Then keep men and switch between “heed” and “hod”: the harmonics barely move but the peaks change place. The peak shape is this page’s schematic drawing; only F0 and the positions of F1–F3 are data.',
+    s0hint: 'What to do: keep “heed” and switch between men and children — the spacing of the lines (harmonics) widens from about 136 Hz to about 270 Hz and the peaks shift right. Then keep men and switch between “heed” and “hod”: the harmonic spacing only changes from 136 to 124 Hz, but the peaks change place. The peak shape is this page’s schematic drawing; only F0 and the positions of F1–F3 are data.',
     freqAxis: 'frequency Hz', ampAxis: 'relative level (schematic)',
 
     s1k: 'Step 1 · Two numbers, one point', s1t: 'Draw each vowel as a point on the F1–F2 plane',

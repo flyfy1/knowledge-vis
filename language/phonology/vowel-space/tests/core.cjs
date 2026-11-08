@@ -1,6 +1,6 @@
 'use strict';
 // Vowel space core checks. Author: Claude Code (claude-opus-5-5), 2026-11-08.
-// Pinned values are the group means computed by tests/pb-means.cjs from Praat's Peterson & Barney table
+// Pinned values are the group means computed by tools/pb-means.cjs from Praat's Peterson & Barney table
 // (dwtools/Table_dataSets.cpp @ 6a9874e525d80a2b4c2e6a8d687081963c6d4e6a). They are NOT the published
 // rounded Table II of the 1952 article, which this page did not fetch.
 const fs = require('node:fs'), path = require('node:path'), assert = require('node:assert/strict');
@@ -42,6 +42,8 @@ assert.equal(V.correct('w', 0), 7); assert.equal(V.correct('c', 0), 3);
 assert.equal(V.classify('c', 0).find(r => r.v === 'ih').as, 'eh');
 assert.equal(V.correct('w', 1), 10); assert.equal(V.correct('c', 1), 10);
 for (const g of ['w', 'c']) { let prev = Infinity; for (let l = 0; l <= 1.0001; l += 0.05) { const s = V.spread(g, l); assert.ok(s <= prev + 1e-12, 'spread shrinks ' + g); prev = s; } }
+for (const g of ['w', 'c']) { let prev = -1; for (let i = 0; i <= 100; i++) { const c = V.correct(g, i / 100); assert.ok(c >= prev, 'correct count never drops as λ grows ' + g); prev = c; } }
+assert.equal(M.m.aa[0], 124);
 assert.equal(V.correct('m', 0), 10); assert.equal(V.spread('m', 0.7), 0);
 // Rescaling by the geometric-mean ratio is a pure shift in log space (shape preserved).
 const d0 = V.dist(V.point('c', 'iy', 0), V.point('c', 'uw', 0)), d1 = V.dist(V.point('c', 'iy', 1), V.point('c', 'uw', 1));
