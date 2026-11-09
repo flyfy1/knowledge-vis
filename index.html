@@ -29,6 +29,8 @@
   h1{font-size:40px;line-height:1.2;margin:0 0 12px;font-weight:800}
   .intro{color:var(--dim);font-size:16.5px;max-width:640px;margin:0}
   .intro b{color:var(--text)}
+  .editions-link{margin:12px 0 0}
+  .editions-link a{display:inline-flex;align-items:center;min-height:44px;color:var(--cyan);overflow-wrap:anywhere}
   .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
   .chip{appearance:none;font:inherit;font-size:13.5px;color:var(--dim);cursor:pointer;
     background:var(--panel2);border:1px solid var(--line);border-radius:999px;padding:5px 15px}
@@ -110,6 +112,7 @@
     </div>
     <h1 data-i18n="h1">知识索引</h1>
     <p class="intro" data-i18n-html="intro">把难懂的知识点，做成<b>可以上手玩的交互页</b>：每页一个主题，由浅入深，一步一个交互，玩到最后就懂了。</p>
+    <p class="editions-link"><a href="variants/claude-code/" data-i18n="editionsLink">Claude Code 平行版本：每个主题的另一种讲法 →</a></p>
     <div class="chips" id="catChips" role="group" aria-label="Category filter / 分类筛选"></div>
     <div class="chips" id="stageChips" role="group" aria-label="Stage filter / 学段筛选" style="margin-top:10px"></div>
     <div class="chips" id="topicChips" role="group" aria-label="Topic filter / 主题筛选" style="margin-top:10px"></div>
@@ -148,7 +151,7 @@
     zh: {
       docTitle: '知识索引', h1: '知识索引',
       intro: '把难懂的知识点，做成<b>可以上手玩的交互页</b>：每页一个主题，由浅入深，一步一个交互，玩到最后就懂了。',
-      allChip: '全部', allStage: '全部学段', badgeLive: '已上线', badgePlanned: '筹备中', goOpen: '打开 →',
+      allChip: '全部', allStage: '全部学段', badgeLive: '已上线', badgePlanned: '筹备中', goOpen: '打开 →', editionsLink: 'Claude Code 平行版本：每个主题的另一种讲法 →',
       emptyText: '还没有登记任何知识页。',
       searchLabel:'查找 LeetCode 课程', searchHelp:'输入准确题号（如 #51）、中英文题名或知识点。多个词用空格分隔，需同时匹配。',
       clearSearch:'清空搜索', loading:'正在读取课程列表…', loadError:'暂时无法读取课程列表，请重试。', retry:'重试',
@@ -161,7 +164,7 @@
     en: {
       docTitle: 'Knowledge Index', h1: 'Knowledge Index',
       intro: 'Tough ideas, turned into <b>pages you can play with</b>: one topic per page, shallow to deep, one interaction per step — play to the end, and it clicks.',
-      allChip: 'All', allStage: 'All stages', badgeLive: 'Live', badgePlanned: 'Planned', goOpen: 'Open →',
+      allChip: 'All', allStage: 'All stages', badgeLive: 'Live', badgePlanned: 'Planned', goOpen: 'Open →', editionsLink: 'Claude Code parallel editions: another take on every topic →',
       emptyText: 'No knowledge pages have been registered yet.',
       searchLabel:'Find a LeetCode lesson', searchHelp:'Enter an exact ID (such as #51), a title in either language, or a topic. Space-separated words must all match.',
       clearSearch:'Clear search', loading:'Loading lessons…', loadError:'The lesson list could not be loaded. Please retry.', retry:'Retry',

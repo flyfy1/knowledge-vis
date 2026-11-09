@@ -408,6 +408,30 @@
       },
       "provenanceEvidence": "authorship/overrides.json",
       "path": "math/linear-algebra/linear-transform/index.html"
+    },
+    "cc-convolution": {
+      "developer": "Claude Code",
+      "edition": "claude-code-convolution-20261109",
+      "kind": "original",
+      "sourceRevision": "071c2d764d13d11e3ecc8fb0f378b0e5dbd0c9e5",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《卷积 · 一步一交互》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Convolution · One Interaction at a Time"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/convolution/index.html"
+    },
+    "cc-fractions": {
+      "developer": "Claude Code",
+      "edition": "claude-code-fractions-20261109",
+      "kind": "original",
+      "sourceRevision": "071c2d764d13d11e3ecc8fb0f378b0e5dbd0c9e5",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《分数 · 把整体切开来数》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Fractions · Cutting the Whole to Count"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/fractions/index.html"
     }
   },
   "exceptions": {

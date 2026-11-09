@@ -78,6 +78,11 @@ lead 在原版 `</header>` 之后加一行静态链接「对照 Claude Code 版 
 - 这只是导航，不改动课程内容，提交标为 `Authorship-Impact: mechanical`。
 - 带 Codex 署名标签的页面加了这条链接后，`sourceRevision` 不改指，因为署名标签只描述课程源码。
 
+## 汇总页
+
+- [`variants/claude-code/`](../variants/claude-code/index.html) 列出所有 Claude 版，逐行给出原版与 Claude 版的链接和编写模型；站点首页简介下方有入口。
+- 列表数据 `variants/claude-code/editions.js` 由 lead 按 `page-provenance.json` 里的 `cc-*` 条目生成，不手改。
+
 ## 新增主题登记
 
 （暂无）

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claude Code 平行版本</title>
+<meta name="description" content="每个课程主题的 Claude Code 独立版本，与原版逐一对照。">
+<style>
+  :root{--bg:#0a0e14;--panel:#111826;--line:#1f2c42;--text:#e6edf6;--dim:#93a5bd;--cyan:#67d7f9;--amber:#f5b04c}
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;line-height:1.65}
+  .wrap{max-width:1020px;margin:0 auto;padding:40px 16px 64px}
+  .row{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap}
+  a{color:var(--cyan)}
+  a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--cyan);outline-offset:2px}
+  .back{display:inline-flex;align-items:center;min-height:44px}
+  h1{font-size:32px;line-height:1.25;margin:8px 0 10px}
+  .intro{color:var(--dim);max-width:680px;margin:0 0 18px}
+  .lang{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+  .lang button{appearance:none;border:0;background:transparent;color:var(--dim);font:inherit;font-size:14px;min-height:44px;min-width:48px;padding:0 14px;cursor:pointer}
+  .lang button.on{background:var(--cyan);color:#08131a;font-weight:700}
+  input{width:100%;max-width:420px;min-height:44px;padding:8px 12px;font:inherit;color:var(--text);background:var(--panel);border:1px solid var(--line);border-radius:10px}
+  .count{color:var(--dim);margin:12px 0}
+  table{width:100%;border-collapse:collapse}
+  th,td{text-align:left;padding:8px 6px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{color:var(--dim);font-weight:600;font-size:14px}
+  td a{display:inline-block;min-height:32px;overflow-wrap:anywhere}
+  .model{color:var(--amber);font-size:13px;white-space:nowrap}
+  .cat{color:var(--dim);font-size:13px}
+  .new{color:var(--amber);font-size:13px}
+  @media(max-width:600px){
+    thead{display:none}
+    tr{display:block;padding:10px 0;border-bottom:1px solid var(--line)}
+    td{display:block;border:0;padding:2px 0}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="row">
+    <a class="back" href="../../" data-i18n="back"></a>
+    <div class="lang" role="group" aria-label="Language / 语言"><button type="button" data-lang="zh">中</button><button type="button" data-lang="en">EN</button></div>
+  </div>
+  <h1 data-i18n="title"></h1>
+  <p class="intro" data-i18n="intro"></p>
+  <input id="q" type="search" data-i18n-ph="search">
+  <p class="count" id="count" aria-live="polite"></p>
+  <table>
+    <thead><tr><th data-i18n="colTopic"></th><th data-i18n="colOriginal"></th><th data-i18n="colClaude"></th></tr></thead>
+    <tbody id="rows"></tbody>
+  </table>
+</div>
+<script src="../../pages.config.js"></script>
+<script src="editions.js"></script>
+<script>
+(function(){
+  'use strict';
+  var S = {
+    zh:{back:'← 知识索引',title:'Claude Code 平行版本',intro:'每个主题由 Claude Code 独立重写一版，与原版并排对照。每页页头都标明了编写它的模型。',search:'搜索主题',colTopic:'主题',colOriginal:'原版',colClaude:'Claude Code 版',openOrig:'原版 →',openClaude:'Claude 版 →',newTopic:'Claude 版新增主题',count:function(n,m){return '共 '+m+' 个 Claude 版页面，当前显示 '+n+' 个';},none:'—'},
+    en:{back:'← Knowledge index',title:'Claude Code parallel editions',intro:'Each topic rewritten independently with Claude Code, side by side with the original. Every page names the model that wrote it in its header.',search:'Search topics',colTopic:'Topic',colOriginal:'Original',colClaude:'Claude Code edition',openOrig:'Original →',openClaude:'Claude edition →',newTopic:'New topic in the Claude edition',count:function(n,m){return m+' Claude edition pages, showing '+n;},none:'—'}
+  };
+  var lang = 'zh';
+  try { var v = localStorage.getItem('knowledge-lang'); if (v === 'en' || v === 'zh') lang = v; } catch (e) {}
+  var pages = {};
+  (window.KNOWLEDGE_PAGES || []).forEach(function(p){ pages[p.slug] = p; });
+  var eds = window.CLAUDE_EDITIONS || [];
+  function pick(o){ return o ? (o[lang] || o.zh || o.en || '') : ''; }
+  function render(){
+    var s = S[lang];
+    document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+    document.title = s.title;
+    document.querySelectorAll('[data-i18n]').forEach(function(el){ el.textContent = s[el.dataset.i18n]; });
+    document.querySelectorAll('[data-i18n-ph]').forEach(function(el){ el.placeholder = s[el.dataset.i18nPh]; el.setAttribute('aria-label', s[el.dataset.i18nPh]); });
+    document.querySelectorAll('.lang button').forEach(function(b){ var on = b.dataset.lang === lang; b.classList.toggle('on', on); b.setAttribute('aria-pressed', on); });
+    var q = document.getElementById('q').value.trim().toLowerCase();
+    var body = document.getElementById('rows'); body.textContent = '';
+    var shown = 0;
+    eds.forEach(function(e){
+      var orig = e.original ? pages[e.original] : null;
+      var title = orig ? orig.title : e.title;
+      var hay = (title.zh + ' ' + title.en + ' ' + e.slug).toLowerCase();
+      if (q && hay.indexOf(q) < 0) return;
+      shown++;
+      var tr = document.createElement('tr');
+      var td1 = document.createElement('td');
+      td1.textContent = pick(title);
+      var cat = document.createElement('div'); cat.className = orig ? 'cat' : 'new';
+      cat.textContent = orig ? (orig.category + ' · ' + orig.stage) : s.newTopic;
+      td1.appendChild(cat);
+      var td2 = document.createElement('td');
+      if (orig) { var a = document.createElement('a'); a.href = '../../' + orig.path; a.textContent = s.openOrig; td2.appendChild(a); }
+      else td2.textContent = s.none;
+      var td3 = document.createElement('td');
+      var b = document.createElement('a'); b.href = e.slug + '/'; b.textContent = s.openClaude; td3.appendChild(b);
+      var m = document.createElement('div'); m.className = 'model'; m.textContent = e.model; td3.appendChild(m);
+      tr.appendChild(td1); tr.appendChild(td2); tr.appendChild(td3);
+      body.appendChild(tr);
+    });
+    document.getElementById('count').textContent = s.count(shown, eds.length);
+  }
+  document.querySelectorAll('.lang button').forEach(function(b){
+    b.addEventListener('click', function(){ lang = b.dataset.lang; try { localStorage.setItem('knowledge-lang', lang); } catch (e) {} render(); });
+  });
+  document.getElementById('q').addEventListener('input', render);
+  render();
+})();
+</script>
+</body>
+</html>
