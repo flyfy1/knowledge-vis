@@ -29,9 +29,9 @@
 ## 页面署名标注（page-provenance）
 
 - 改了某页目录里的文件，就把该页在 `page-provenance.json` 里的 `sourceRevision` 更新为新提交（完整 40 位 SHA）。页头标签里的 `data-source-revision`、提交链接和短 SHA 要一起改。
-- 被替换的旧值的去处：
-  - `originalSourceRevision` = 建页提交，**一旦写入就不覆盖**；
-  - 字段已有值时，旧的 `sourceRevision` 写进 `previousSourceRevision`。
+- 旧值的去处（定义见 specs/visual-page-provenance.md「Revision fields」）：
+  - `originalSourceRevision` = 本版本所依据的原始来源（原创版本就是建页提交），**一旦写入就不覆盖**；
+  - 被替换的旧 `sourceRevision` 写进 `previousSourceRevision`，每次重指都更新它。
 - `page-provenance.json` 的键用短 slug（如 `linear-transform`），完整路径写在 `path`。
 - 提交缺 `Built-By` 时，只有两种证据可用：
   - `provenanceEvidence` 指向 `specs/reviews/*.md`；

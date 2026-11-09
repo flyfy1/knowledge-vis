@@ -1,3 +1,7 @@
 __pycache__/
 *.py[cod]
 authorship/inventory.json
+
+# Agent task scratch (see AGENTS.md)
+.agent/
+.runs/

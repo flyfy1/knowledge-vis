@@ -109,3 +109,16 @@ unavailable), and the page is registered as an `Alberto (Muse)` original edition
 `provenanceEvidence: "authorship/overrides.json"`. `tests/page-provenance-core.cjs` now accepts such an
 override (matching agent, `impact: authored`, non-empty `source`) as proof when the source commit has
 no `Built-By`. The removed label had claimed Codex; that claim had no evidence and is not restored.
+
+## Revision fields — definitions (2026-11-09)
+
+- `sourceRevision` — the commit whose content the label currently describes; repoint it after every
+  change to the page directory.
+- `originalSourceRevision` — the lesson source this edition builds on. For an original edition it is the
+  creation commit; for a revised edition it is the earlier lesson source the edition retains, or the
+  worker commit that was later integrated (e.g. `leetcode/42`). Once set, it is not overwritten.
+- `previousSourceRevision` — the value `sourceRevision` held just before the latest repoint. Each repoint
+  replaces it.
+- Both optional fields must be full 40-character SHAs of existing commits that touched the page;
+  `tests/page-provenance-core.cjs` checks this. They are not required to be ancestors of
+  `sourceRevision`, because integrated worker commits are not.

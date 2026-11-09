@@ -35,6 +35,14 @@ for(const[slug,p]of Object.entries(m.pages)){
  }
  // Pages moved (2026-11-08 topic reorg), so look in every directory the page file has lived in.
  const pastDirs=cp.execFileSync('git',['log','--follow','--name-only','--format=','--',filename],{cwd:root,encoding:'utf8'}).split('\n').filter(Boolean).map(f=>path.dirname(f)+'/');
+ // originalSourceRevision = the lesson source this edition builds on (its creation commit for an original edition,
+ // or a worker commit later integrated); previousSourceRevision = the sourceRevision value just before the latest
+ // repoint. Both must be full SHAs of existing commits that touched the page (specs/visual-page-provenance.md).
+ for(const field of ['originalSourceRevision','previousSourceRevision'])if(p[field]){
+  assert.match(p[field],/^[a-f0-9]{40}$/,slug+' '+field+' must be a full SHA');assert.notEqual(p[field],p.sourceRevision,slug+' '+field+' differs from sourceRevision');
+  cp.execFileSync('git',['cat-file','-e',p[field]+'^{commit}'],{cwd:root});
+  assert.ok(cp.execFileSync('git',['diff-tree','--no-commit-id','--name-only','-r','--root',p[field],'--',...new Set([path.dirname(filename)+'/',...pastDirs])],{cwd:root,encoding:'utf8'}).trim(),slug+' '+field+' touched the page');
+ }
  assert.ok(cp.execFileSync('git',['diff-tree','--no-commit-id','--name-only','-r',p.sourceRevision,'--',...new Set([path.dirname(filename)+'/',...pastDirs])],{cwd:root,encoding:'utf8'}).trim(),slug+' has actual '+p.developer+' source changes');
 }
 assert.ok(m.exceptions['*'],'unknown provenance policy remains explicit');
