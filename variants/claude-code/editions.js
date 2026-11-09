@@ -71,6 +71,21 @@ window.CLAUDE_EDITIONS = [
   "model": "claude-opus-5-5"
  },
  {
+  "slug": "negative-numbers",
+  "original": "negative-numbers",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "space-diagonal",
+  "original": "space-diagonal",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "coordinate-plane",
+  "original": "coordinate-plane",
+  "model": "claude-opus-5-5"
+ },
+ {
   "slug": "equation-scale",
   "original": "equation-scale",
   "model": "claude-opus-5-5"

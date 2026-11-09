@@ -792,6 +792,42 @@
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
       "path": "variants/claude-code/eigenvectors/index.html"
+    },
+    "cc-negative-numbers": {
+      "developer": "Claude Code",
+      "edition": "claude-code-negative-numbers-20261109",
+      "kind": "original",
+      "sourceRevision": "b773bef251aa8d6c82495a087a8a365cca88bdd4",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《负数 · 0 以下的世界》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Negative Numbers · The World Below Zero"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/negative-numbers/index.html"
+    },
+    "cc-space-diagonal": {
+      "developer": "Claude Code",
+      "edition": "claude-code-space-diagonal-20261109",
+      "kind": "original",
+      "sourceRevision": "b773bef251aa8d6c82495a087a8a365cca88bdd4",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《空间对角线 · 3D 里的两次勾股》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson The Space Diagonal · Pythagoras Twice, in 3D"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/space-diagonal/index.html"
+    },
+    "cc-coordinate-plane": {
+      "developer": "Claude Code",
+      "edition": "claude-code-coordinate-plane-20261109",
+      "kind": "original",
+      "sourceRevision": "b773bef251aa8d6c82495a087a8a365cca88bdd4",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《坐标系 · 点的地址》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson The Coordinate Plane · Addresses for Points"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/coordinate-plane/index.html"
     }
   },
   "exceptions": {
