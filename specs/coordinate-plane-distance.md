@@ -19,3 +19,18 @@ The coordinate-plane page already establishes ordered pairs and quadrants. Step 
 - `node tests/coordinate-distance.cjs` covers delta, distance, midpoint, slope, vertical slope and clamping.
 - At 390px width the canvas remains within its stage; slider values and readout stay visible.
 - Switching language preserves A/B state and redraws labels/readouts only.
+
+## Fix 2026-11-09 — blank step 6 readouts
+
+- Root cause: `distance.js` declared a local `const t` inside its IIFE that shadowed the page's global `t()` from
+  `i18n.js` and then called itself, so `render()` threw "Maximum call stack size exceeded" on load. The
+  distance/midpoint/slope readout and the square check stayed blank in both languages. Found by the
+  canvas-text survey, which records page errors.
+- Second defect in the same lines: `s6check` contains `<b>` markup but was written to `textContent`, so the
+  tags would have shown literally.
+- Fix: the local helper is now `tr()` and delegates to the global `t()`; the square check uses `innerHTML`
+  (the values are numbers the page computes).
+- Prevention: `tests/coordinate-distance.cjs` now runs `render()` through a stub DOM with a global `t()` and
+  asserts both readouts are filled (`dist` 8.60, midpoint (0.5, 0.5), `|AB|²` 74). It fails with a RangeError on
+  the old code.
+

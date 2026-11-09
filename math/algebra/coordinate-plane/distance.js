@@ -12,10 +12,9 @@
   const distance = (a, b) => Math.hypot(b.x - a.x, b.y - a.y);
   const slope = (a, b) => b.x === a.x ? null : (b.y - a.y) / (b.x - a.x);
   const coord = p => `(${p.x}, ${p.y})`;
-  const t = (key, params) => {
-    let s = (typeof t === 'function' ? t(key, params) : key);
-    return s;
-  };
+  // Must not be named `t`: a local `t` shadows the page's global t() from i18n.js and calls itself forever,
+  // which left the step 6 readouts blank (stack overflow on load) until 2026-11-09.
+  const tr = (key, params) => (typeof t === 'function' ? t(key, params) : key);
   function canvasMap(cv) {
     const dpr = Math.min(window.devicePixelRatio || 1, 3);
     const cssH = Number(cv.getAttribute('height') || 420);
@@ -67,8 +66,8 @@
     $('s6-ax').value = state.a.x; $('s6-ay').value = state.a.y; $('s6-bx').value = state.b.x; $('s6-by').value = state.b.y;
     $('s6-components').classList.toggle('active', state.components);
     const d = delta(state.a, state.b), dist = distance(state.a, state.b), sl = slope(state.a, state.b);
-    $('s6-ro').innerHTML = t('s6ro', { a: coord(state.a), b: coord(state.b), dx: d.x, dy: d.y, dist: fmt(dist), mid: coord(M0), slope: sl === null ? t('s6vertical') : fmt(sl) });
-    $('s6-check').textContent = t('s6check', { lhs: fmt(dist * dist), rhs: `${d.x}² + ${d.y}² = ${d.x * d.x + d.y * d.y}` });
+    $('s6-ro').innerHTML = tr('s6ro', { a: coord(state.a), b: coord(state.b), dx: d.x, dy: d.y, dist: fmt(dist), mid: coord(M0), slope: sl === null ? tr('s6vertical') : fmt(sl) });
+    $('s6-check').innerHTML = tr('s6check', { lhs: fmt(dist * dist), rhs: `${d.x}² + ${d.y}² = ${d.x * d.x + d.y * d.y}` });
   }
   function setPoint(which, x, y) { state[which] = { x: clampInt(x), y: clampInt(y) }; render(); }
   function pointerPoint(e) { const cv = $('s6-canvas'), r = cv.getBoundingClientRect(), m = canvasMap(cv); return { x: m.unX(e.clientX - r.left), y: m.unY(e.clientY - r.top) }; }
