@@ -204,5 +204,20 @@ window.CLAUDE_EDITIONS = [
   "slug": "limits-epsilon",
   "original": "limits-epsilon",
   "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "ode-phase-portraits",
+  "original": "ode-phase-portraits",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "prisoners-dilemma",
+  "original": "prisoners-dilemma",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "sequences-series",
+  "original": "sequences-series",
+  "model": "claude-opus-5-5"
  }
 ];

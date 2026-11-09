@@ -900,6 +900,42 @@
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
       "path": "variants/claude-code/limits-epsilon/index.html"
+    },
+    "cc-ode-phase-portraits": {
+      "developer": "Claude Code",
+      "edition": "claude-code-ode-phase-portraits-20261109",
+      "kind": "original",
+      "sourceRevision": "f09c3b286827c968d9178526e5615a89bde9af3f",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《微分方程相图 · 捕食者与猎物的回路》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson ODE Phase Portraits · Predators and Prey in a Loop"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/ode-phase-portraits/index.html"
+    },
+    "cc-prisoners-dilemma": {
+      "developer": "Claude Code",
+      "edition": "claude-code-prisoners-dilemma-20261109",
+      "kind": "original",
+      "sourceRevision": "f09c3b286827c968d9178526e5615a89bde9af3f",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《囚徒困境与演化博弈 · 合作怎样活下来》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson The Prisoner’s Dilemma & Evolutionary Games · How Cooperation Survives"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/prisoners-dilemma/index.html"
+    },
+    "cc-sequences-series": {
+      "developer": "Claude Code",
+      "edition": "claude-code-sequences-series-20261109",
+      "kind": "original",
+      "sourceRevision": "f09c3b286827c968d9178526e5615a89bde9af3f",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《数列与求和 · 叠砖与棋盘麦粒》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Sequences & Series · Stacked Bricks and Chessboard Grains"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/sequences-series/index.html"
     }
   },
   "exceptions": {
