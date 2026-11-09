@@ -81,8 +81,23 @@ window.CLAUDE_EDITIONS = [
   "model": "claude-opus-5-5"
  },
  {
+  "slug": "reflection-refraction",
+  "original": "reflection-refraction",
+  "model": "claude-opus-5-5"
+ },
+ {
   "slug": "derivative",
   "original": "derivative",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "lens",
+  "original": "lens",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "interference",
+  "original": "interference",
   "model": "claude-opus-5-5"
  },
  {

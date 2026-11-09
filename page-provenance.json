@@ -1150,6 +1150,42 @@
       "path": "variants/claude-code/power-converters/index.html",
       "originalSourceRevision": "63422cdf94e38c45e8a72e7724f95e5cbcf6ebe7",
       "previousSourceRevision": "63422cdf94e38c45e8a72e7724f95e5cbcf6ebe7"
+    },
+    "cc-reflection-refraction": {
+      "developer": "Claude Code",
+      "edition": "claude-code-reflection-refraction-20261109",
+      "kind": "original",
+      "sourceRevision": "2fd04d6d82f16b7fe97b666bd807a5ecd6a9979c",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《光的反射与折射 · 拐弯的规矩》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Reflection & Refraction · How Light Bends"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/reflection-refraction/index.html"
+    },
+    "cc-lens": {
+      "developer": "Claude Code",
+      "edition": "claude-code-lens-20261109",
+      "kind": "original",
+      "sourceRevision": "2fd04d6d82f16b7fe97b666bd807a5ecd6a9979c",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《凸透镜成像 · 远近变像》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson The Convex Lens · Near or Far, the Image Transforms"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/lens/index.html"
+    },
+    "cc-interference": {
+      "developer": "Claude Code",
+      "edition": "claude-code-interference-20261109",
+      "kind": "original",
+      "sourceRevision": "2fd04d6d82f16b7fe97b666bd807a5ecd6a9979c",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《波的干涉 · 闹与静的图样》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Interference · A Pattern of Loud and Still"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/interference/index.html"
     }
   },
   "exceptions": {
