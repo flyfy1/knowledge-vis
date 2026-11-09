@@ -41,6 +41,21 @@ window.CLAUDE_EDITIONS = [
   "model": "claude-opus-5-5"
  },
  {
+  "slug": "mechanism-design",
+  "original": "mechanism-design",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "conic-sections",
+  "original": "conic-sections",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "patterns-sequences",
+  "original": "patterns-sequences",
+  "model": "claude-opus-5-5"
+ },
+ {
   "slug": "averaging-leveling",
   "original": "averaging-leveling",
   "model": "claude-opus-5-5"

@@ -576,6 +576,42 @@
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
       "path": "variants/claude-code/symmetry-rotation/index.html"
+    },
+    "cc-mechanism-design": {
+      "developer": "Claude Code",
+      "edition": "claude-code-mechanism-design-20261109",
+      "kind": "original",
+      "sourceRevision": "13742e1381be784ee030af793dc67f65762c09a9",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《机制设计与拍卖 · 报价如何改变结果》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Mechanism Design & Auctions · How Bids Change Outcomes"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/mechanism-design/index.html"
+    },
+    "cc-conic-sections": {
+      "developer": "Claude Code",
+      "edition": "claude-code-conic-sections-20261109",
+      "kind": "original",
+      "sourceRevision": "13742e1381be784ee030af793dc67f65762c09a9",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《圆锥曲线》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Conic Sections"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/conic-sections/index.html"
+    },
+    "cc-patterns-sequences": {
+      "developer": "Claude Code",
+      "edition": "claude-code-patterns-sequences-20261109",
+      "kind": "original",
+      "sourceRevision": "13742e1381be784ee030af793dc67f65762c09a9",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《找规律 · 不画也能报出第 100 个》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Patterns · Name the 100th Without Drawing It"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/patterns-sequences/index.html"
     }
   },
   "exceptions": {
