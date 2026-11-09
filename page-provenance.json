@@ -648,6 +648,42 @@
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
       "path": "variants/claude-code/music-theory/index.html"
+    },
+    "cc-pythagoras": {
+      "developer": "Claude Code",
+      "edition": "claude-code-pythagoras-20261109",
+      "kind": "original",
+      "sourceRevision": "e82e77463a5f33955e1fc0d5165f36a04d9476f8",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《勾股定理 · 一步一交互》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson The Pythagorean Theorem · One Interaction at a Time"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/pythagoras/index.html"
+    },
+    "cc-area-model": {
+      "developer": "Claude Code",
+      "edition": "claude-code-area-model-20261109",
+      "kind": "original",
+      "sourceRevision": "e82e77463a5f33955e1fc0d5165f36a04d9476f8",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《乘法是面积 · 点阵铺成一块地》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Multiplication Is Area · Arrays Become a Tiled Floor"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/area-model/index.html"
+    },
+    "cc-perimeter-area": {
+      "developer": "Claude Code",
+      "edition": "claude-code-perimeter-area-20261109",
+      "kind": "original",
+      "sourceRevision": "e82e77463a5f33955e1fc0d5165f36a04d9476f8",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《周长 vs 面积 · 一根绳子两种账》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Perimeter vs Area · One Rope, Two Ledgers"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/perimeter-area/index.html"
     }
   },
   "exceptions": {

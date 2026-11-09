@@ -11,6 +11,21 @@ window.CLAUDE_EDITIONS = [
   "model": "claude-opus-5-5"
  },
  {
+  "slug": "pythagoras",
+  "original": "pythagoras",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "area-model",
+  "original": "area-model",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "perimeter-area",
+  "original": "perimeter-area",
+  "model": "claude-opus-5-5"
+ },
+ {
   "slug": "division-remainder",
   "original": "division-remainder",
   "model": "claude-opus-5-5"
