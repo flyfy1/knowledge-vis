@@ -154,12 +154,17 @@ function draw4() {
   for (let v = 0; v <= 50; v += 10) { ctx.beginPath(); ctx.moveTo(P.l, y(v)); ctx.lineTo(P.r, y(v)); ctx.stroke(); label(ctx, String(v), P.l - 5, y(v) + 4, C.muted, 'right', 10); }
   for (let v = 0; v <= 1.001; v += 0.25) label(ctx, v.toFixed(2), x(v), P.b + 14, C.muted, 'center', 10);
   label(ctx, t('tAxis'), P.r, P.b + 26, C.muted, 'right', 11);
+  const labelYs = []; // labels of lines that start at the same height (at η = 0 the CE equals the average)
   lines.forEach(([name, fn, color], i) => {
     ctx.strokeStyle = color; ctx.lineWidth = 2.2; ctx.beginPath();
     for (let s = 0; s <= 100; s++) { const v = fn(V.redistribute(x0, s / 100, k)); s ? ctx.lineTo(x(s / 100), y(v)) : ctx.moveTo(x(0), y(v)); }
     ctx.stroke();
     const b = bests[i]; ctx.fillStyle = color; ctx.beginPath(); ctx.arc(x(b.t), y(b.v), 5.5, 0, 7); ctx.fill();
-    label(ctx, t(name), x(0) + 6, y(fn(V.redistribute(x0, 0, k))) - 6 - (i === 2 ? 0 : 0), color, 'left', 11);
+    // A label that would sit on an earlier one (same start height) continues on the same line after it.
+    const ly = y(fn(V.redistribute(x0, 0, k))) - 6, prev = labelYs.filter(l => Math.abs(l.y - ly) < 13);
+    const lx = prev.length ? Math.max(...prev.map(l => l.x1)) + 8 : x(0) + 6;
+    ctx.save(); ctx.font = '11px system-ui,sans-serif'; labelYs.push({ y: ly, x1: lx + ctx.measureText(t(name)).width }); ctx.restore();
+    label(ctx, t(name), lx, ly, color, 'left', 11);
   });
   ctx.strokeStyle = C.orange; ctx.setLineDash([4, 4]); ctx.beginPath(); ctx.moveTo(x(tt), P.t); ctx.lineTo(x(tt), P.b); ctx.stroke(); ctx.setLineDash([]);
   ({ ctx, W, H } = fitCanvas($('c4b')));

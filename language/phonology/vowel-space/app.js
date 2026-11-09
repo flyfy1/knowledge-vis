@@ -123,23 +123,34 @@ function draw2() {
 }
 
 /* ---------- steps 3–4: nearest men's template ---------- */
-function templates(ctx, pl) {
-  IDS.forEach(id => { const [x, y] = pl.at(V.point('m', id, 0)); ctx.strokeStyle = C.cyan; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.arc(x, y, 6, 0, 7); ctx.stroke(); label(ctx, BY[id].ipa, x - 9, y - 7, C.cyan, 'right', 11); });
+// 11px label box for collision checks: [x0, y0, x1, y1] around text drawn at (X, Y) with the given alignment.
+function labelBox(ctx, text, X, Y, align) {
+  ctx.save(); ctx.font = '11px system-ui,sans-serif'; const w = ctx.measureText(text).width; ctx.restore();
+  const x0 = align === 'right' ? X - w : X; return [x0, Y - 10, x0 + w, Y + 3];
 }
-function arrows(ctx, pl, g, lambda) {
+const hits = (a, b) => a[0] < b[2] && b[0] < a[2] && a[1] < b[3] && b[1] < a[3];
+function templates(ctx, pl) {
+  const taken = [];
+  IDS.forEach(id => { const [x, y] = pl.at(V.point('m', id, 0)); ctx.strokeStyle = C.cyan; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.arc(x, y, 6, 0, 7); ctx.stroke(); label(ctx, BY[id].ipa, x - 9, y - 7, C.cyan, 'right', 11); taken.push(labelBox(ctx, BY[id].ipa, x - 9, y - 7, 'right')); });
+  return taken;
+}
+function arrows(ctx, pl, g, lambda, taken = []) {
   const res = V.classify(g, lambda);
   res.forEach(r => {
     const [x1, y1] = pl.at(V.point(g, r.v, lambda)), [x2, y2] = pl.at(V.point('m', r.as, 0)), ok = r.as === r.v;
     arrow(ctx, x1, y1, x2, y2, ok ? C.green : C.pink); dot(ctx, x1, y1, GCOL[g], 4.5);
-    label(ctx, BY[r.v].ipa, x1 + 7, y1 + 12, GCOL[g], 'left', 11);
+    // Sample labels go lower-right of the dot unless that would sit on another label (e.g. ʊ on the ʌ template at 320 px).
+    const spots = [[x1 + 7, y1 + 12, 'left'], [x1 + 7, y1 - 6, 'left'], [x1 - 7, y1 + 12, 'right'], [x1 - 7, y1 - 6, 'right']];
+    const [X, Y, al] = spots.find(([X, Y, al]) => !taken.some(b => hits(b, labelBox(ctx, BY[r.v].ipa, X, Y, al)))) || spots[0];
+    label(ctx, BY[r.v].ipa, X, Y, GCOL[g], al, 11); taken.push(labelBox(ctx, BY[r.v].ipa, X, Y, al));
   });
   return res;
 }
 function draw3() {
   groupButtons('g3', 'g3', ['w', 'c']);
   const { ctx, W, H } = fitCanvas($('c3')); const pl = plane(ctx, W, H);
-  loop(ctx, pl, 'm', 0, C.cyan, 0.25); templates(ctx, pl);
-  const res = arrows(ctx, pl, state.g3, 0), bad = res.filter(r => r.as !== r.v);
+  loop(ctx, pl, 'm', 0, C.cyan, 0.25); const taken = templates(ctx, pl);
+  const res = arrows(ctx, pl, state.g3, 0, taken), bad = res.filter(r => r.as !== r.v);
   const list = bad.length ? '：' + bad.map(r => `${BY[r.v].word} → ${BY[r.as].word}`).join('，') : '';
   $('r3').textContent = t('s3readout', { group: t(GKEY[state.g3]), ok: res.length - bad.length, bad: bad.length, list: window.VOWEL_I18N.getLang() === 'en' ? list.replace('：', ': ').replaceAll('，', ', ') : list });
 }
@@ -147,9 +158,9 @@ function draw4() {
   groupButtons('g4', 'g4', ['w', 'c']);
   const lambda = Number($('l4').value); $('l4v').textContent = lambda.toFixed(2);
   const { ctx, W, H } = fitCanvas($('c4')); const pl = plane(ctx, W, H);
-  loop(ctx, pl, 'm', 0, C.cyan, 0.5); templates(ctx, pl);
+  loop(ctx, pl, 'm', 0, C.cyan, 0.5); const taken = templates(ctx, pl);
   ['w', 'c'].forEach(g => loop(ctx, pl, g, lambda, GCOL[g], g === state.g4 ? 0.9 : 0.3));
-  arrows(ctx, pl, state.g4, lambda);
+  arrows(ctx, pl, state.g4, lambda, taken);
   $('r4').textContent = t('s4readout', { l: lambda.toFixed(2), dw: V.spread('w', lambda).toFixed(3), okw: V.correct('w', lambda), dc: V.spread('c', lambda).toFixed(3), okc: V.correct('c', lambda) });
 }
 

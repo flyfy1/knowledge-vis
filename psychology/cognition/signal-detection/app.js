@@ -188,7 +188,9 @@ function draw5() {
   // An optimum outside the plotted range is pinned to the edge (with an arrow) rather than drawn off-canvas.
   const inRange = bestC >= cMin && bestC <= cMax, shownC = Math.max(cMin, Math.min(cMax, bestC));
   ctx.fillStyle = C.green; ctx.beginPath(); ctx.arc(x(shownC), y(inRange ? best.cost : cost(shownC)), 6.5, 0, 7); ctx.fill();
-  label(ctx, (bestC < cMin ? '← ' : '') + 'c* = ' + f(bestC) + (bestC > cMax ? ' →' : ''), Math.max(P.l + 40, Math.min(P.r - 40, x(shownC))), y(inRange ? best.cost : cost(shownC)) + (inRange ? 22 : -14), C.green, 'center');
+  // Below the point unless that would hit the axis ticks; near an edge, align the label to that edge so it stays over the point.
+  const bx = x(shownC), by = y(inRange ? best.cost : cost(shownC)), lx = bx > P.r - 40 ? [P.r - 2, 'right'] : bx < P.l + 40 ? [P.l + 2, 'left'] : [bx, 'center'];
+  label(ctx, (bestC < cMin ? '← ' : '') + 'c* = ' + f(bestC) + (bestC > cMax ? ' →' : ''), lx[0], inRange && by + 22 <= P.b - 4 ? by + 22 : by - 14, C.green, lx[1]);
   const yc = cost(c);
   ctx.save(); ctx.strokeStyle = C.orange; ctx.setLineDash([4, 4]); ctx.beginPath(); ctx.moveTo(x(c), P.t); ctx.lineTo(x(c), P.b); ctx.stroke(); ctx.restore();
   ctx.fillStyle = C.orange; ctx.beginPath(); ctx.arc(x(c), y(yc), 5.5, 0, 7); ctx.fill();

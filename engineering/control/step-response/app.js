@@ -238,7 +238,8 @@ function draw4() {
     label(ctx, 'θ', pm.ox - rr - 12, pm.oy - 8, C.orange);
     ctx.save(); ctx.strokeStyle = C.green; ctx.setLineDash([2, 3]); ctx.beginPath(); ctx.moveTo(pm.x(p.re), pm.y(p.im)); ctx.lineTo(pm.x(p.re), pm.oy); ctx.stroke(); ctx.restore();
     label(ctx, '−ζωn', pm.x(p.re), pm.oy + 14, C.green, 'center');
-    label(ctx, 'ωd', pm.x(p.re) + 6, pm.y(p.im / 2), C.green);
+    // Left of the dotted line: on the right it runs into θ when ζ is high and ωd is short.
+    label(ctx, 'ωd', pm.x(p.re) - 6, pm.y(p.im / 2), C.green, 'right');
   }
   ps.forEach(p => poleMark(ctx, pm, p));
   // right: response and its envelope
