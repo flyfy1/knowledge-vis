@@ -14,3 +14,5 @@ Learners can trace a surface energy budget from solar angle to reflection to inf
 ## Scope and model limits
 
 The canvas is a schematic, not a geographic map or forecast. Relative insolation uses `cos(latitude)` and the temperature model uses a fourth-root radiative balance plus a teaching greenhouse offset. It intentionally omits clouds, oceans, circulation, and seasonal averaging so the direction of each causal link remains visible.
+
+- 2026-11-09 canvas 文字修复（Claude Code，self-check）：两行温度结论改为上下排列；温室遮挡率标注右对齐、窄屏换行；纬度说明移到右上角，并补上中文（原来中文界面显示英文 nearly overhead 等）；地表类型标注也改为双语。 依据 specs/reviews/canvas-text-survey-20261109.md 的复查，修后 `tests/canvas-text-overlap.cjs --sweep` 通过。

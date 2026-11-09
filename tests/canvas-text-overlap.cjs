@@ -30,7 +30,8 @@ function record() {
       if (s.trim()) {
         const m = this.measureText(s), T = this.getTransform(), c = this.canvas, r = c.getBoundingClientRect();
         const k = r.width / c.width || 1; // backing-store px → CSS px
-        const xs = [x - m.actualBoundingBoxLeft, x + m.actualBoundingBoxRight], ys = [y - m.actualBoundingBoxAscent, y + m.actualBoundingBoxDescent];
+        const sq = rest[0] > 0 && m.width > rest[0] ? rest[0] / m.width : 1; // fillText(text, x, y, maxWidth) squeezes the text
+        const xs = [x - m.actualBoundingBoxLeft * sq, x + m.actualBoundingBoxRight * sq], ys = [y - m.actualBoundingBoxAscent, y + m.actualBoundingBoxDescent];
         const pts = xs.flatMap(px => ys.map(py => [(T.a * px + T.c * py + T.e) * k, (T.b * px + T.d * py + T.f) * k]));
         const box = { text: s, x0: Math.min(...pts.map(p => p[0])), x1: Math.max(...pts.map(p => p[0])), y0: Math.min(...pts.map(p => p[1])), y1: Math.max(...pts.map(p => p[1])) };
         if (!logs.has(c)) reset(c);
@@ -53,9 +54,11 @@ function record() {
   window.__canvasText = () => [...all].filter(c => c.isConnected).map(c => { const r = c.getBoundingClientRect(); return { id: c.id || c.closest('[id]')?.id || '?', w: r.width, h: r.height, boxes: logs.get(c) || [] }; });
 }
 
-// Boxes are in canvas-local CSS px, so the canvas is [0, w] × [0, h].
+// Boxes are in canvas-local CSS px, so the canvas is [0, w] × [0, h]. Only text that is partly visible counts:
+// text drawn wholly outside (a scrolled strip, an off-screen trace) is never seen, so it is not cut off either.
 function clipped(boxes, w, h) {
-  return [...new Set(boxes.filter(b => b.x0 < -MIN || b.y0 < -MIN || b.x1 > w + MIN || b.y1 > h + MIN).map(b => `"${b.text}" outside the ${w.toFixed(0)}×${h.toFixed(0)} canvas (x ${b.x0.toFixed(0)}..${b.x1.toFixed(0)}, y ${b.y0.toFixed(0)}..${b.y1.toFixed(0)})`))];
+  const visible = b => b.x1 > 0 && b.x0 < w && b.y1 > 0 && b.y0 < h;
+  return [...new Set(boxes.filter(b => visible(b) && (b.x0 < -MIN || b.y0 < -MIN || b.x1 > w + MIN || b.y1 > h + MIN)).map(b => `"${b.text}" outside the ${w.toFixed(0)}×${h.toFixed(0)} canvas (x ${b.x0.toFixed(0)}..${b.x1.toFixed(0)}, y ${b.y0.toFixed(0)}..${b.y1.toFixed(0)})`))];
 }
 
 function collisions(boxes) {

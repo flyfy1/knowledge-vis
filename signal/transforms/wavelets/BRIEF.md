@@ -66,3 +66,5 @@
 
 ## Simulation versus reality / model mismatch
 Everything is a discrete, noise-seeded teaching calculation at 256 Hz. Real analyses use other window shapes, boundary handling other than zero padding, and other wavelet families. The Haar-versus-Fourier comparison uses one constructed signal. Spectrogram/scalogram brightness is per-map normalised. Nothing here is an instrument measurement. Not yet validated by a human learner walk-through or independent review.
+
+- 2026-11-09 canvas 文字修复（Claude Code，self-check）：频率轴标题改为竖排；第 1、3 步图内说明限宽；第 2 步图例放不下时省略（标题已说明橙色是小波）。 依据 specs/reviews/canvas-text-survey-20261109.md 的复查，修后 `tests/canvas-text-overlap.cjs --sweep` 通过。

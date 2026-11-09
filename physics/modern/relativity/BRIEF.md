@@ -57,3 +57,5 @@
 
 ## 技术
 纯静态零依赖；读数全部由 app.js 中的纯函数按当前参数实时计算（探针独立手算核对）；中英文字典键集一致；canvas 文字经 t()；DPR/resize 幂等；播放类控件可重放、减弱动态时直接显示终态、页面隐藏时停止。
+
+- 2026-11-09 canvas 文字修复（Claude Code，self-check）：第 0 步两个时钟标注窄屏不再相撞；第 1、2 步 x/x′、ct′、B 标注避让；运动系同时线改为图下图例；第 3 步说明放不下时换行，短条上的数值改为浅色；窄屏第 3 步画布加高。 依据 specs/reviews/canvas-text-survey-20261109.md 的复查，修后 `tests/canvas-text-overlap.cjs --sweep` 通过。

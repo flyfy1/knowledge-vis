@@ -15,7 +15,10 @@ function fit(cv) {
   var c = cv.getContext('2d'); c.setTransform(d, 0, 0, d, 0, 0); c.clearRect(0, 0, w, h);
   cv._w = w; cv._h = h; return c;
 }
-function txt(c, s, x, y, col, size, al) { c.fillStyle = col; c.font = (size || 12) + 'px system-ui,sans-serif'; c.textAlign = al || 'left'; c.fillText(s, x, y); }
+function txt(c, s, x, y, col, size, al, mw) { c.fillStyle = col; c.font = (size || 12) + 'px system-ui,sans-serif'; c.textAlign = al || 'left'; if (mw) c.fillText(s, x, y, mw); else c.fillText(s, x, y); }
+// Vertical axis title centred on y, so it stays in the left margin instead of running into the plot.
+function vtxt(c, s, x, y, col, size) { c.save(); c.translate(x, y); c.rotate(-Math.PI / 2); txt(c, s, 0, 0, col, size, 'center'); c.restore(); }
+function tw(c, s, size) { c.font = (size || 12) + 'px system-ui,sans-serif'; return c.measureText(s).width; }
 function wrapTxt(c, s, x, y, mw, lh, col, size) {
   c.font = (size || 11) + 'px system-ui,sans-serif'; c.fillStyle = col; c.textAlign = 'left';
   var toks = String(s).match(/[\u3000-\u9fff\uff00-\uffef]|[^\s\u3000-\u9fff\uff00-\uffef]+\s*|\s+/g) || [String(s)], ln = '', n = 0;
@@ -218,9 +221,9 @@ function render1() {
   [12, 40].forEach(function (f) { line(c, [[x0, y0 + ph - f * rh], [x0 + pw, y0 + ph - f * rh]], 'rgba(255,255,255,.35)', 1, [2, 5]); });
   line(c, [[x0 + pw / 2, y0], [x0 + pw / 2, y0 + ph]], 'rgba(255,255,255,.35)', 1, [2, 5]);
   [0, 16, 32, 48, 64].forEach(function (f) { txt(c, String(f), x0 - 5, y0 + ph - f * rh + 4, C.m, 10, 'right'); });
-  txt(c, t('freqAxis'), 4, y0 + 8, C.m, 10);
+  vtxt(c, t('freqAxis'), 10, y0 + ph / 2, C.m, 10);
   axisLabelsT(c, x0, y0 + ph + 14, pw); txt(c, t('timeAxis'), x0 + pw, y0 + ph + 28, C.m, 10, 'right');
-  txt(c, t('s1Guide'), x0 + 6, y0 + 14, '#fff', 11);
+  txt(c, t('s1Guide'), x0 + 6, y0 + 14, '#fff', 11, 'left', pw - 12);
   // the analysis window drawn to scale on the time axis
   var wy = y0 + ph + 34, wh = 30, wpx = pw * L / N, cx = x0 + pw / 2, pts = [];
   for (var i = -50; i <= 50; i++) { var fr = i / 50; pts.push([cx + fr * wpx / 2, wy + wh - wh * Math.exp(-0.5 * (fr * 3) * (fr * 3))]); }
@@ -234,7 +237,7 @@ function render2() {
   var f = +$('s2-f').value, tp = +$('s2-tau').value, tau = Math.round(tp / 100 * (N - 1));
   $('s2-f-v').textContent = f + ' Hz'; $('s2-tau-v').textContent = (tau / FS).toFixed(2) + ' s';
   var x = toneSignal(0.5), cv = $('s2-cv'), c = fit(cv), w = cv._w, px = 10, pw = w - 20, i;
-  txt(c, t('s2Sig'), px, 14, C.a, 12); wave(c, px, 20, pw, 120, x, C.a, 1.3);
+  txt(c, t('s2Sig'), px, 14, C.a, 12, 'left', pw); wave(c, px, 20, pw, 120, x, C.a, 1.3);
   var s = W0 / (2 * Math.PI * f) * FS, half = Math.ceil(3.5 * s), pts = [], env = [], env2 = [];
   for (var m = -half; m <= half; m++) {
     var e = Math.exp(-0.5 * (m / s) * (m / s)), px_ = px + pw * (tau + m) / (N - 1);
@@ -242,7 +245,8 @@ function render2() {
   }
   line(c, env, 'rgba(246,164,91,.5)', 1, [3, 3]); line(c, env2, 'rgba(246,164,91,.5)', 1, [3, 3]); line(c, pts, C.o, 2);
   var ex = px + pw * tau / (N - 1); line(c, [[ex, 20], [ex, 140]], 'rgba(246,164,91,.4)', 1);
-  txt(c, t('s2Wav'), px + pw, 14, C.o, 12, 'right');
+  // The legend shares the title line only when both fit; the title already names the orange wavelet.
+  if (tw(c, t('s2Sig'), 12) + tw(c, t('s2Wav'), 12) + 16 <= pw) txt(c, t('s2Wav'), px + pw, 14, C.o, 12, 'right');
   var row = morletRow(x, f, W0), by = 168, bh = 118, n = row.length;
   txt(c, t('s2Coef'), px, 160, C.ink, 12);
   c.strokeStyle = C.grid; c.strokeRect(px + 0.5, by + 0.5, pw - 1, bh - 1);
@@ -286,11 +290,11 @@ function render3() {
     for (r = 0; r < rows; r++) for (k = 0; k < cols; k++) { c.fillStyle = heat(vals[r][k] / mx); c.fillRect(x0 + k * cw, y0 + ph - (r + 1) * rh, cw + 0.6, rh + 0.6); }
     c.strokeStyle = C.grid; c.strokeRect(x0 + 0.5, y0 + 0.5, pw - 1, ph - 1);
     [8, 48].forEach(function (f) { var yy = y0 + ph - (Math.log(f / 4) / Math.log(24) * 27 + 0.5) * rh; txt(c, String(f), x0 - 5, yy + 4, C.m, 10, 'right'); line(c, [[x0, yy], [x0 + pw, yy]], 'rgba(255,255,255,.22)', 1, [2, 5]); });
-    txt(c, label, x0 + 6, y0 + 14, '#fff', 11);
+    txt(c, label, x0 + 6, y0 + 14, '#fff', 11, 'left', pw - 12);
   }
   panel(6, t('s3Stft'), function (f, cc) { return stftAt(x, f, L, cc); });
   panel(172, t('s3Cwt'), function (f, cc) { return morletAt(x, f, cc, w0); });
-  txt(c, t('freqAxis'), 4, 14, C.m, 10); axisLabelsT(c, x0, 332, pw); txt(c, t('timeAxis'), x0 + pw, 346, C.m, 10, 'right');
+  vtxt(c, t('freqAxis'), 10, 172, C.m, 10); axisLabelsT(c, x0, 332, pw); txt(c, t('timeAxis'), x0 + pw, 346, C.m, 10, 'right');
   var sS = stftSigmas(L), a1 = cwtSigmas(8, w0), a2 = cwtSigmas(48, w0);
   setHTML('s3-ro', 's3ro', {
     st: (sS.t * 1000).toFixed(0), sf: sS.f.toFixed(1),
