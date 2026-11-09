@@ -413,637 +413,743 @@
       "developer": "Claude Code",
       "edition": "claude-code-convolution-20261109",
       "kind": "original",
-      "sourceRevision": "071c2d764d13d11e3ecc8fb0f378b0e5dbd0c9e5",
+      "sourceRevision": "97f6e025c903a146238a84dc5f01ec0d24cc33c3",
       "scope": {
         "zh": "整课由 claude-opus-5-5 从零编写，是原版《卷积 · 一步一交互》的平行版本",
         "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Convolution · One Interaction at a Time"
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
-      "path": "variants/claude-code/convolution/index.html"
+      "path": "variants/claude-code/convolution/index.html",
+      "originalSourceRevision": "071c2d764d13d11e3ecc8fb0f378b0e5dbd0c9e5",
+      "previousSourceRevision": "071c2d764d13d11e3ecc8fb0f378b0e5dbd0c9e5"
     },
     "cc-fractions": {
       "developer": "Claude Code",
       "edition": "claude-code-fractions-20261109",
       "kind": "original",
-      "sourceRevision": "071c2d764d13d11e3ecc8fb0f378b0e5dbd0c9e5",
+      "sourceRevision": "97f6e025c903a146238a84dc5f01ec0d24cc33c3",
       "scope": {
         "zh": "整课由 claude-opus-5-5 从零编写，是原版《分数 · 把整体切开来数》的平行版本",
         "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Fractions · Cutting the Whole to Count"
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
-      "path": "variants/claude-code/fractions/index.html"
+      "path": "variants/claude-code/fractions/index.html",
+      "originalSourceRevision": "071c2d764d13d11e3ecc8fb0f378b0e5dbd0c9e5",
+      "previousSourceRevision": "071c2d764d13d11e3ecc8fb0f378b0e5dbd0c9e5"
     },
     "cc-parabola": {
       "developer": "Claude Code",
       "edition": "claude-code-parabola-20261109",
       "kind": "original",
-      "sourceRevision": "ef34b2762c6ea81306e9a021adf7dd7a2686959b",
+      "sourceRevision": "97f6e025c903a146238a84dc5f01ec0d24cc33c3",
       "scope": {
         "zh": "整课由 claude-opus-5-5 从零编写，是原版《抛物线 · 投篮的弧线》的平行版本",
         "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Parabolas · The Arc of a Shot"
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
-      "path": "variants/claude-code/parabola/index.html"
+      "path": "variants/claude-code/parabola/index.html",
+      "originalSourceRevision": "ef34b2762c6ea81306e9a021adf7dd7a2686959b",
+      "previousSourceRevision": "ef34b2762c6ea81306e9a021adf7dd7a2686959b"
     },
     "cc-derivative": {
       "developer": "Claude Code",
       "edition": "claude-code-derivative-20261109",
       "kind": "original",
-      "sourceRevision": "ef34b2762c6ea81306e9a021adf7dd7a2686959b",
+      "sourceRevision": "97f6e025c903a146238a84dc5f01ec0d24cc33c3",
       "scope": {
         "zh": "整课由 claude-opus-5-5 从零编写，是原版《导数 · 把平均压成此刻》的平行版本",
         "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson The Derivative · Squeezing the Average into the Instant"
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
-      "path": "variants/claude-code/derivative/index.html"
+      "path": "variants/claude-code/derivative/index.html",
+      "originalSourceRevision": "ef34b2762c6ea81306e9a021adf7dd7a2686959b",
+      "previousSourceRevision": "ef34b2762c6ea81306e9a021adf7dd7a2686959b"
     },
     "cc-integral": {
       "developer": "Claude Code",
       "edition": "claude-code-integral-20261109",
       "kind": "original",
-      "sourceRevision": "ef34b2762c6ea81306e9a021adf7dd7a2686959b",
+      "sourceRevision": "97f6e025c903a146238a84dc5f01ec0d24cc33c3",
       "scope": {
         "zh": "整课由 claude-opus-5-5 从零编写，是原版《定积分 · 把小条加回整体》的平行版本",
         "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson The Definite Integral · Adding the Strips Back Up"
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
-      "path": "variants/claude-code/integral/index.html"
+      "path": "variants/claude-code/integral/index.html",
+      "originalSourceRevision": "ef34b2762c6ea81306e9a021adf7dd7a2686959b",
+      "previousSourceRevision": "ef34b2762c6ea81306e9a021adf7dd7a2686959b"
     },
     "cc-intervals-fences": {
       "developer": "Claude Code",
       "edition": "claude-code-intervals-fences-20261109",
       "kind": "original",
-      "sourceRevision": "152f8988fdb0ea071df3d55b7fc6fc2d7aa45323",
+      "sourceRevision": "97f6e025c903a146238a84dc5f01ec0d24cc33c3",
       "scope": {
         "zh": "整课由 claude-opus-5-5 从零编写，是原版《间隔与植树 · 段数和点数差一》的平行版本",
         "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Intervals & Fences · Gaps and Posts Differ by One"
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
-      "path": "variants/claude-code/intervals-fences/index.html"
+      "path": "variants/claude-code/intervals-fences/index.html",
+      "originalSourceRevision": "152f8988fdb0ea071df3d55b7fc6fc2d7aa45323",
+      "previousSourceRevision": "152f8988fdb0ea071df3d55b7fc6fc2d7aa45323"
     },
     "cc-inverse-proportion": {
       "developer": "Claude Code",
       "edition": "claude-code-inverse-proportion-20261109",
       "kind": "original",
-      "sourceRevision": "152f8988fdb0ea071df3d55b7fc6fc2d7aa45323",
+      "sourceRevision": "97f6e025c903a146238a84dc5f01ec0d24cc33c3",
       "scope": {
         "zh": "整课由 claude-opus-5-5 从零编写，是原版《反比例函数 · 此消彼长》的平行版本",
         "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Inverse Proportion · One Up, One Down"
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
-      "path": "variants/claude-code/inverse-proportion/index.html"
+      "path": "variants/claude-code/inverse-proportion/index.html",
+      "originalSourceRevision": "152f8988fdb0ea071df3d55b7fc6fc2d7aa45323",
+      "previousSourceRevision": "152f8988fdb0ea071df3d55b7fc6fc2d7aa45323"
     },
     "cc-place-value": {
       "developer": "Claude Code",
       "edition": "claude-code-place-value-20261109",
       "kind": "original",
-      "sourceRevision": "152f8988fdb0ea071df3d55b7fc6fc2d7aa45323",
+      "sourceRevision": "97f6e025c903a146238a84dc5f01ec0d24cc33c3",
       "scope": {
         "zh": "整课由 claude-opus-5-5 从零编写，是原版《位值与计数器 · 满十进一》的平行版本",
         "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Place Value & the Counting Frame · Ten Makes One"
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
-      "path": "variants/claude-code/place-value/index.html"
+      "path": "variants/claude-code/place-value/index.html",
+      "originalSourceRevision": "152f8988fdb0ea071df3d55b7fc6fc2d7aa45323",
+      "previousSourceRevision": "152f8988fdb0ea071df3d55b7fc6fc2d7aa45323"
     },
     "cc-averaging-leveling": {
       "developer": "Claude Code",
       "edition": "claude-code-averaging-leveling-20261109",
       "kind": "original",
-      "sourceRevision": "8669eaf8cf3778bf3b55a0e8991f8d479a4d5a9b",
+      "sourceRevision": "97f6e025c903a146238a84dc5f01ec0d24cc33c3",
       "scope": {
         "zh": "整课由 claude-opus-5-5 从零编写，是原版《平均数 · 移多补少》的平行版本",
         "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Averages · Level by Pouring"
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
-      "path": "variants/claude-code/averaging-leveling/index.html"
+      "path": "variants/claude-code/averaging-leveling/index.html",
+      "originalSourceRevision": "8669eaf8cf3778bf3b55a0e8991f8d479a4d5a9b",
+      "previousSourceRevision": "8669eaf8cf3778bf3b55a0e8991f8d479a4d5a9b"
     },
     "cc-bar-charts": {
       "developer": "Claude Code",
       "edition": "claude-code-bar-charts-20261109",
       "kind": "original",
-      "sourceRevision": "8669eaf8cf3778bf3b55a0e8991f8d479a4d5a9b",
+      "sourceRevision": "97f6e025c903a146238a84dc5f01ec0d24cc33c3",
       "scope": {
         "zh": "整课由 claude-opus-5-5 从零编写，是原版《条形图 · 让数字站成一排比高矮》的平行版本",
         "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Bar Charts · Numbers Standing in a Row"
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
-      "path": "variants/claude-code/bar-charts/index.html"
+      "path": "variants/claude-code/bar-charts/index.html",
+      "originalSourceRevision": "8669eaf8cf3778bf3b55a0e8991f8d479a4d5a9b",
+      "previousSourceRevision": "8669eaf8cf3778bf3b55a0e8991f8d479a4d5a9b"
     },
     "cc-chicken-rabbit": {
       "developer": "Claude Code",
       "edition": "claude-code-chicken-rabbit-20261109",
       "kind": "original",
-      "sourceRevision": "8669eaf8cf3778bf3b55a0e8991f8d479a4d5a9b",
+      "sourceRevision": "97f6e025c903a146238a84dc5f01ec0d24cc33c3",
       "scope": {
         "zh": "整课由 claude-opus-5-5 从零编写，是原版《鸡兔同笼 · 先假设，差额会说话》的平行版本",
         "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Chickens & Rabbits · Assume First, Let the Gap Speak"
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
-      "path": "variants/claude-code/chicken-rabbit/index.html"
+      "path": "variants/claude-code/chicken-rabbit/index.html",
+      "originalSourceRevision": "8669eaf8cf3778bf3b55a0e8991f8d479a4d5a9b",
+      "previousSourceRevision": "8669eaf8cf3778bf3b55a0e8991f8d479a4d5a9b"
     },
     "cc-division-remainder": {
       "developer": "Claude Code",
       "edition": "claude-code-division-remainder-20261109",
       "kind": "original",
-      "sourceRevision": "51cc1f081bd9b4e929821924e1f4d0060c739e7e",
+      "sourceRevision": "97f6e025c903a146238a84dc5f01ec0d24cc33c3",
       "scope": {
         "zh": "整课由 claude-opus-5-5 从零编写，是原版《除法与余数 · 分不完的那一点》的平行版本",
         "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Division & Remainders · What Is Left Over"
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
-      "path": "variants/claude-code/division-remainder/index.html"
+      "path": "variants/claude-code/division-remainder/index.html",
+      "originalSourceRevision": "51cc1f081bd9b4e929821924e1f4d0060c739e7e",
+      "previousSourceRevision": "51cc1f081bd9b4e929821924e1f4d0060c739e7e"
     },
     "cc-linear-functions": {
       "developer": "Claude Code",
       "edition": "claude-code-linear-functions-20261109",
       "kind": "original",
-      "sourceRevision": "51cc1f081bd9b4e929821924e1f4d0060c739e7e",
+      "sourceRevision": "97f6e025c903a146238a84dc5f01ec0d24cc33c3",
       "scope": {
         "zh": "整课由 claude-opus-5-5 从零编写，是原版《一次函数 · 斜率是陡缓，截距是起点》的平行版本",
         "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Linear Functions · Slope Is Steepness, Intercept Is the Start"
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
-      "path": "variants/claude-code/linear-functions/index.html"
+      "path": "variants/claude-code/linear-functions/index.html",
+      "originalSourceRevision": "51cc1f081bd9b4e929821924e1f4d0060c739e7e",
+      "previousSourceRevision": "51cc1f081bd9b4e929821924e1f4d0060c739e7e"
     },
     "cc-symmetry-rotation": {
       "developer": "Claude Code",
       "edition": "claude-code-symmetry-rotation-20261109",
       "kind": "original",
-      "sourceRevision": "51cc1f081bd9b4e929821924e1f4d0060c739e7e",
+      "sourceRevision": "97f6e025c903a146238a84dc5f01ec0d24cc33c3",
       "scope": {
         "zh": "整课由 claude-opus-5-5 从零编写，是原版《对称与旋转 · 对折与转圈》的平行版本",
         "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Symmetry & Rotation · Folding and Turning"
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
-      "path": "variants/claude-code/symmetry-rotation/index.html"
+      "path": "variants/claude-code/symmetry-rotation/index.html",
+      "originalSourceRevision": "51cc1f081bd9b4e929821924e1f4d0060c739e7e",
+      "previousSourceRevision": "51cc1f081bd9b4e929821924e1f4d0060c739e7e"
     },
     "cc-mechanism-design": {
       "developer": "Claude Code",
       "edition": "claude-code-mechanism-design-20261109",
       "kind": "original",
-      "sourceRevision": "13742e1381be784ee030af793dc67f65762c09a9",
+      "sourceRevision": "97f6e025c903a146238a84dc5f01ec0d24cc33c3",
       "scope": {
         "zh": "整课由 claude-opus-5-5 从零编写，是原版《机制设计与拍卖 · 报价如何改变结果》的平行版本",
         "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Mechanism Design & Auctions · How Bids Change Outcomes"
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
-      "path": "variants/claude-code/mechanism-design/index.html"
+      "path": "variants/claude-code/mechanism-design/index.html",
+      "originalSourceRevision": "13742e1381be784ee030af793dc67f65762c09a9",
+      "previousSourceRevision": "13742e1381be784ee030af793dc67f65762c09a9"
     },
     "cc-conic-sections": {
       "developer": "Claude Code",
       "edition": "claude-code-conic-sections-20261109",
       "kind": "original",
-      "sourceRevision": "13742e1381be784ee030af793dc67f65762c09a9",
+      "sourceRevision": "97f6e025c903a146238a84dc5f01ec0d24cc33c3",
       "scope": {
         "zh": "整课由 claude-opus-5-5 从零编写，是原版《圆锥曲线》的平行版本",
         "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Conic Sections"
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
-      "path": "variants/claude-code/conic-sections/index.html"
+      "path": "variants/claude-code/conic-sections/index.html",
+      "originalSourceRevision": "13742e1381be784ee030af793dc67f65762c09a9",
+      "previousSourceRevision": "13742e1381be784ee030af793dc67f65762c09a9"
     },
     "cc-patterns-sequences": {
       "developer": "Claude Code",
       "edition": "claude-code-patterns-sequences-20261109",
       "kind": "original",
-      "sourceRevision": "13742e1381be784ee030af793dc67f65762c09a9",
+      "sourceRevision": "97f6e025c903a146238a84dc5f01ec0d24cc33c3",
       "scope": {
         "zh": "整课由 claude-opus-5-5 从零编写，是原版《找规律 · 不画也能报出第 100 个》的平行版本",
         "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Patterns · Name the 100th Without Drawing It"
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
-      "path": "variants/claude-code/patterns-sequences/index.html"
+      "path": "variants/claude-code/patterns-sequences/index.html",
+      "originalSourceRevision": "13742e1381be784ee030af793dc67f65762c09a9",
+      "previousSourceRevision": "13742e1381be784ee030af793dc67f65762c09a9"
     },
     "cc-number-combinatorics": {
       "developer": "Claude Code",
       "edition": "claude-code-number-combinatorics-20261109",
       "kind": "original",
-      "sourceRevision": "abc57d371841248b0cb22e5717bc4f2b8a3f7182",
+      "sourceRevision": "97f6e025c903a146238a84dc5f01ec0d24cc33c3",
       "scope": {
         "zh": "整课由 claude-opus-5-5 从零编写，是原版《数论与组合 · 把结构算出来》的平行版本",
         "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Number Theory & Counting · Compute the Structure"
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
-      "path": "variants/claude-code/number-combinatorics/index.html"
+      "path": "variants/claude-code/number-combinatorics/index.html",
+      "originalSourceRevision": "abc57d371841248b0cb22e5717bc4f2b8a3f7182",
+      "previousSourceRevision": "abc57d371841248b0cb22e5717bc4f2b8a3f7182"
     },
     "cc-game-theory": {
       "developer": "Claude Code",
       "edition": "claude-code-game-theory-20261109",
       "kind": "original",
-      "sourceRevision": "abc57d371841248b0cb22e5717bc4f2b8a3f7182",
+      "sourceRevision": "97f6e025c903a146238a84dc5f01ec0d24cc33c3",
       "scope": {
         "zh": "整课由 claude-opus-5-5 从零编写，是原版《博弈论 · 先看对手会怎么选》的平行版本",
         "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Game Theory · Look at the Other Choice First"
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
-      "path": "variants/claude-code/game-theory/index.html"
+      "path": "variants/claude-code/game-theory/index.html",
+      "originalSourceRevision": "abc57d371841248b0cb22e5717bc4f2b8a3f7182",
+      "previousSourceRevision": "abc57d371841248b0cb22e5717bc4f2b8a3f7182"
     },
     "cc-music-theory": {
       "developer": "Claude Code",
       "edition": "claude-code-music-theory-20261109",
       "kind": "original",
-      "sourceRevision": "abc57d371841248b0cb22e5717bc4f2b8a3f7182",
+      "sourceRevision": "97f6e025c903a146238a84dc5f01ec0d24cc33c3",
       "scope": {
         "zh": "整课由 claude-opus-5-5 从零编写，是原版《音乐理论 · 从音程到终止》的平行版本",
         "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Music Theory · From Intervals to Cadence"
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
-      "path": "variants/claude-code/music-theory/index.html"
+      "path": "variants/claude-code/music-theory/index.html",
+      "originalSourceRevision": "abc57d371841248b0cb22e5717bc4f2b8a3f7182",
+      "previousSourceRevision": "abc57d371841248b0cb22e5717bc4f2b8a3f7182"
     },
     "cc-pythagoras": {
       "developer": "Claude Code",
       "edition": "claude-code-pythagoras-20261109",
       "kind": "original",
-      "sourceRevision": "e82e77463a5f33955e1fc0d5165f36a04d9476f8",
+      "sourceRevision": "97f6e025c903a146238a84dc5f01ec0d24cc33c3",
       "scope": {
         "zh": "整课由 claude-opus-5-5 从零编写，是原版《勾股定理 · 一步一交互》的平行版本",
         "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson The Pythagorean Theorem · One Interaction at a Time"
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
-      "path": "variants/claude-code/pythagoras/index.html"
+      "path": "variants/claude-code/pythagoras/index.html",
+      "originalSourceRevision": "e82e77463a5f33955e1fc0d5165f36a04d9476f8",
+      "previousSourceRevision": "e82e77463a5f33955e1fc0d5165f36a04d9476f8"
     },
     "cc-area-model": {
       "developer": "Claude Code",
       "edition": "claude-code-area-model-20261109",
       "kind": "original",
-      "sourceRevision": "e82e77463a5f33955e1fc0d5165f36a04d9476f8",
+      "sourceRevision": "97f6e025c903a146238a84dc5f01ec0d24cc33c3",
       "scope": {
         "zh": "整课由 claude-opus-5-5 从零编写，是原版《乘法是面积 · 点阵铺成一块地》的平行版本",
         "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Multiplication Is Area · Arrays Become a Tiled Floor"
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
-      "path": "variants/claude-code/area-model/index.html"
+      "path": "variants/claude-code/area-model/index.html",
+      "originalSourceRevision": "e82e77463a5f33955e1fc0d5165f36a04d9476f8",
+      "previousSourceRevision": "e82e77463a5f33955e1fc0d5165f36a04d9476f8"
     },
     "cc-perimeter-area": {
       "developer": "Claude Code",
       "edition": "claude-code-perimeter-area-20261109",
       "kind": "original",
-      "sourceRevision": "e82e77463a5f33955e1fc0d5165f36a04d9476f8",
+      "sourceRevision": "97f6e025c903a146238a84dc5f01ec0d24cc33c3",
       "scope": {
         "zh": "整课由 claude-opus-5-5 从零编写，是原版《周长 vs 面积 · 一根绳子两种账》的平行版本",
         "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Perimeter vs Area · One Rope, Two Ledgers"
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
-      "path": "variants/claude-code/perimeter-area/index.html"
+      "path": "variants/claude-code/perimeter-area/index.html",
+      "originalSourceRevision": "e82e77463a5f33955e1fc0d5165f36a04d9476f8",
+      "previousSourceRevision": "e82e77463a5f33955e1fc0d5165f36a04d9476f8"
     },
     "cc-circle-intro": {
       "developer": "Claude Code",
       "edition": "claude-code-circle-intro-20261109",
       "kind": "original",
-      "sourceRevision": "9727311a7d16b35f1deddade070ddd95bd5101d4",
+      "sourceRevision": "97f6e025c903a146238a84dc5f01ec0d24cc33c3",
       "scope": {
         "zh": "整课由 claude-opus-5-5 从零编写，是原版《圆的认识 · 圆规、半径与 π》的平行版本",
         "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson The Circle · Compass, Radius and π"
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
-      "path": "variants/claude-code/circle-intro/index.html"
+      "path": "variants/claude-code/circle-intro/index.html",
+      "originalSourceRevision": "9727311a7d16b35f1deddade070ddd95bd5101d4",
+      "previousSourceRevision": "9727311a7d16b35f1deddade070ddd95bd5101d4"
     },
     "cc-clock-angles": {
       "developer": "Claude Code",
       "edition": "claude-code-clock-angles-20261109",
       "kind": "original",
-      "sourceRevision": "9727311a7d16b35f1deddade070ddd95bd5101d4",
+      "sourceRevision": "97f6e025c903a146238a84dc5f01ec0d24cc33c3",
       "scope": {
         "zh": "整课由 claude-opus-5-5 从零编写，是原版《时钟与角度 · 两根针的赛跑》的平行版本",
         "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Clocks & Angles · A Race Between Two Hands"
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
-      "path": "variants/claude-code/clock-angles/index.html"
+      "path": "variants/claude-code/clock-angles/index.html",
+      "originalSourceRevision": "9727311a7d16b35f1deddade070ddd95bd5101d4",
+      "previousSourceRevision": "9727311a7d16b35f1deddade070ddd95bd5101d4"
     },
     "cc-inequalities": {
       "developer": "Claude Code",
       "edition": "claude-code-inequalities-20261109",
       "kind": "original",
-      "sourceRevision": "9727311a7d16b35f1deddade070ddd95bd5101d4",
+      "sourceRevision": "97f6e025c903a146238a84dc5f01ec0d24cc33c3",
       "scope": {
         "zh": "整课由 claude-opus-5-5 从零编写，是原版《不等式 · 天平倾斜，答案是一整段》的平行版本",
         "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Inequalities · A Tilted Scale Has a Whole Range of Answers"
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
-      "path": "variants/claude-code/inequalities/index.html"
+      "path": "variants/claude-code/inequalities/index.html",
+      "originalSourceRevision": "9727311a7d16b35f1deddade070ddd95bd5101d4",
+      "previousSourceRevision": "9727311a7d16b35f1deddade070ddd95bd5101d4"
     },
     "cc-equation-scale": {
       "developer": "Claude Code",
       "edition": "claude-code-equation-scale-20261109",
       "kind": "original",
-      "sourceRevision": "72fc7db1e1ceb1a499a6d60716bb8e65b5725984",
+      "sourceRevision": "97f6e025c903a146238a84dc5f01ec0d24cc33c3",
       "scope": {
         "zh": "整课由 claude-opus-5-5 从零编写，是原版《方程天平 · 两边同做一件事》的平行版本",
         "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Equations on a Balance · Do the Same to Both Sides"
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
-      "path": "variants/claude-code/equation-scale/index.html"
+      "path": "variants/claude-code/equation-scale/index.html",
+      "originalSourceRevision": "72fc7db1e1ceb1a499a6d60716bb8e65b5725984",
+      "previousSourceRevision": "72fc7db1e1ceb1a499a6d60716bb8e65b5725984"
     },
     "cc-supply-demand": {
       "developer": "Claude Code",
       "edition": "claude-code-supply-demand-20261109",
       "kind": "original",
-      "sourceRevision": "72fc7db1e1ceb1a499a6d60716bb8e65b5725984",
+      "sourceRevision": "97f6e025c903a146238a84dc5f01ec0d24cc33c3",
       "scope": {
         "zh": "整课由 claude-opus-5-5 从零编写，是原版《供需与市场均衡 · 价格线如何相交》的平行版本",
         "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Supply & Demand · Where the Market Clears"
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
-      "path": "variants/claude-code/supply-demand/index.html"
+      "path": "variants/claude-code/supply-demand/index.html",
+      "originalSourceRevision": "72fc7db1e1ceb1a499a6d60716bb8e65b5725984",
+      "previousSourceRevision": "72fc7db1e1ceb1a499a6d60716bb8e65b5725984"
     },
     "cc-linear-transform": {
       "developer": "Claude Code",
       "edition": "claude-code-linear-transform-20261109",
       "kind": "original",
-      "sourceRevision": "72fc7db1e1ceb1a499a6d60716bb8e65b5725984",
+      "sourceRevision": "97f6e025c903a146238a84dc5f01ec0d24cc33c3",
       "scope": {
         "zh": "整课由 claude-opus-5-5 从零编写，是原版《二维线性变换 · 矩阵如何挪动平面》的平行版本",
         "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson 2D Linear Transformations · How Matrices Move the Plane"
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
-      "path": "variants/claude-code/linear-transform/index.html"
+      "path": "variants/claude-code/linear-transform/index.html",
+      "originalSourceRevision": "72fc7db1e1ceb1a499a6d60716bb8e65b5725984",
+      "previousSourceRevision": "72fc7db1e1ceb1a499a6d60716bb8e65b5725984"
     },
     "cc-mandelbrot": {
       "developer": "Claude Code",
       "edition": "claude-code-mandelbrot-20261109",
       "kind": "original",
-      "sourceRevision": "5a2517b7b19311bcc3746833edcf7ddd3f7ffa4c",
+      "sourceRevision": "97f6e025c903a146238a84dc5f01ec0d24cc33c3",
       "scope": {
         "zh": "整课由 claude-opus-5-5 从零编写，是原版《Mandelbrot 分形 · 无限放大》的平行版本",
         "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson The Mandelbrot Set · Zoom Without End"
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
-      "path": "variants/claude-code/mandelbrot/index.html"
+      "path": "variants/claude-code/mandelbrot/index.html",
+      "originalSourceRevision": "5a2517b7b19311bcc3746833edcf7ddd3f7ffa4c",
+      "previousSourceRevision": "5a2517b7b19311bcc3746833edcf7ddd3f7ffa4c"
     },
     "cc-trigonometry": {
       "developer": "Claude Code",
       "edition": "claude-code-trigonometry-20261109",
       "kind": "original",
-      "sourceRevision": "5a2517b7b19311bcc3746833edcf7ddd3f7ffa4c",
+      "sourceRevision": "97f6e025c903a146238a84dc5f01ec0d24cc33c3",
       "scope": {
         "zh": "整课由 claude-opus-5-5 从零编写，是原版《三角函数 · 单位圆》的平行版本",
         "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Trigonometric Functions · The Unit Circle"
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
-      "path": "variants/claude-code/trigonometry/index.html"
+      "path": "variants/claude-code/trigonometry/index.html",
+      "originalSourceRevision": "5a2517b7b19311bcc3746833edcf7ddd3f7ffa4c",
+      "previousSourceRevision": "5a2517b7b19311bcc3746833edcf7ddd3f7ffa4c"
     },
     "cc-eigenvectors": {
       "developer": "Claude Code",
       "edition": "claude-code-eigenvectors-20261109",
       "kind": "original",
-      "sourceRevision": "5a2517b7b19311bcc3746833edcf7ddd3f7ffa4c",
+      "sourceRevision": "97f6e025c903a146238a84dc5f01ec0d24cc33c3",
       "scope": {
         "zh": "整课由 claude-opus-5-5 从零编写，是原版《特征值与特征向量 · 矩阵不转的那些方向》的平行版本",
         "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Eigenvalues & Eigenvectors · The Directions a Matrix Cannot Turn"
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
-      "path": "variants/claude-code/eigenvectors/index.html"
+      "path": "variants/claude-code/eigenvectors/index.html",
+      "originalSourceRevision": "5a2517b7b19311bcc3746833edcf7ddd3f7ffa4c",
+      "previousSourceRevision": "5a2517b7b19311bcc3746833edcf7ddd3f7ffa4c"
     },
     "cc-negative-numbers": {
       "developer": "Claude Code",
       "edition": "claude-code-negative-numbers-20261109",
       "kind": "original",
-      "sourceRevision": "b773bef251aa8d6c82495a087a8a365cca88bdd4",
+      "sourceRevision": "97f6e025c903a146238a84dc5f01ec0d24cc33c3",
       "scope": {
         "zh": "整课由 claude-opus-5-5 从零编写，是原版《负数 · 0 以下的世界》的平行版本",
         "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Negative Numbers · The World Below Zero"
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
-      "path": "variants/claude-code/negative-numbers/index.html"
+      "path": "variants/claude-code/negative-numbers/index.html",
+      "originalSourceRevision": "b773bef251aa8d6c82495a087a8a365cca88bdd4",
+      "previousSourceRevision": "b773bef251aa8d6c82495a087a8a365cca88bdd4"
     },
     "cc-space-diagonal": {
       "developer": "Claude Code",
       "edition": "claude-code-space-diagonal-20261109",
       "kind": "original",
-      "sourceRevision": "b773bef251aa8d6c82495a087a8a365cca88bdd4",
+      "sourceRevision": "97f6e025c903a146238a84dc5f01ec0d24cc33c3",
       "scope": {
         "zh": "整课由 claude-opus-5-5 从零编写，是原版《空间对角线 · 3D 里的两次勾股》的平行版本",
         "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson The Space Diagonal · Pythagoras Twice, in 3D"
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
-      "path": "variants/claude-code/space-diagonal/index.html"
+      "path": "variants/claude-code/space-diagonal/index.html",
+      "originalSourceRevision": "b773bef251aa8d6c82495a087a8a365cca88bdd4",
+      "previousSourceRevision": "b773bef251aa8d6c82495a087a8a365cca88bdd4"
     },
     "cc-coordinate-plane": {
       "developer": "Claude Code",
       "edition": "claude-code-coordinate-plane-20261109",
       "kind": "original",
-      "sourceRevision": "b773bef251aa8d6c82495a087a8a365cca88bdd4",
+      "sourceRevision": "97f6e025c903a146238a84dc5f01ec0d24cc33c3",
       "scope": {
         "zh": "整课由 claude-opus-5-5 从零编写，是原版《坐标系 · 点的地址》的平行版本",
         "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson The Coordinate Plane · Addresses for Points"
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
-      "path": "variants/claude-code/coordinate-plane/index.html"
+      "path": "variants/claude-code/coordinate-plane/index.html",
+      "originalSourceRevision": "b773bef251aa8d6c82495a087a8a365cca88bdd4",
+      "previousSourceRevision": "b773bef251aa8d6c82495a087a8a365cca88bdd4"
     },
     "cc-polygon-angles": {
       "developer": "Claude Code",
       "edition": "claude-code-polygon-angles-20261109",
       "kind": "original",
-      "sourceRevision": "d50af07dc18c946d399ef27835fdc6cadcd8a019",
+      "sourceRevision": "97f6e025c903a146238a84dc5f01ec0d24cc33c3",
       "scope": {
         "zh": "整课由 claude-opus-5-5 从零编写，是原版《多边形内角和 · 撕下来拼一拼》的平行版本",
         "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Polygon Angle Sums · Tear and Rearrange"
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
-      "path": "variants/claude-code/polygon-angles/index.html"
+      "path": "variants/claude-code/polygon-angles/index.html",
+      "originalSourceRevision": "d50af07dc18c946d399ef27835fdc6cadcd8a019",
+      "previousSourceRevision": "d50af07dc18c946d399ef27835fdc6cadcd8a019"
     },
     "cc-real-number-line": {
       "developer": "Claude Code",
       "edition": "claude-code-real-number-line-20261109",
       "kind": "original",
-      "sourceRevision": "d50af07dc18c946d399ef27835fdc6cadcd8a019",
+      "sourceRevision": "97f6e025c903a146238a84dc5f01ec0d24cc33c3",
       "scope": {
         "zh": "整课由 claude-opus-5-5 从零编写，是原版《实数与数轴 · √2 落在哪一点》的平行版本",
         "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Real Numbers & the Number Line · Where √2 Lands"
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
-      "path": "variants/claude-code/real-number-line/index.html"
+      "path": "variants/claude-code/real-number-line/index.html",
+      "originalSourceRevision": "d50af07dc18c946d399ef27835fdc6cadcd8a019",
+      "previousSourceRevision": "d50af07dc18c946d399ef27835fdc6cadcd8a019"
     },
     "cc-similarity-scaling": {
       "developer": "Claude Code",
       "edition": "claude-code-similarity-scaling-20261109",
       "kind": "original",
-      "sourceRevision": "d50af07dc18c946d399ef27835fdc6cadcd8a019",
+      "sourceRevision": "97f6e025c903a146238a84dc5f01ec0d24cc33c3",
       "scope": {
         "zh": "整课由 claude-opus-5-5 从零编写，是原版《相似与缩放 · 长度、面积、体积各变几倍》的平行版本",
         "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Similarity & Scaling · Lengths, Areas and Volumes Each Change Differently"
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
-      "path": "variants/claude-code/similarity-scaling/index.html"
+      "path": "variants/claude-code/similarity-scaling/index.html",
+      "originalSourceRevision": "d50af07dc18c946d399ef27835fdc6cadcd8a019",
+      "previousSourceRevision": "d50af07dc18c946d399ef27835fdc6cadcd8a019"
     },
     "cc-simultaneous-equations": {
       "developer": "Claude Code",
       "edition": "claude-code-simultaneous-equations-20261109",
       "kind": "original",
-      "sourceRevision": "800b981097bc1d1304dbde936e37e386d7747647",
+      "sourceRevision": "97f6e025c903a146238a84dc5f01ec0d24cc33c3",
       "scope": {
         "zh": "整课由 claude-opus-5-5 从零编写，是原版《二元一次方程组 · 两条直线的交点》的平行版本",
         "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Simultaneous Equations · Where Two Lines Meet"
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
-      "path": "variants/claude-code/simultaneous-equations/index.html"
+      "path": "variants/claude-code/simultaneous-equations/index.html",
+      "originalSourceRevision": "800b981097bc1d1304dbde936e37e386d7747647",
+      "previousSourceRevision": "800b981097bc1d1304dbde936e37e386d7747647"
     },
     "cc-three-views": {
       "developer": "Claude Code",
       "edition": "claude-code-three-views-20261109",
       "kind": "original",
-      "sourceRevision": "800b981097bc1d1304dbde936e37e386d7747647",
+      "sourceRevision": "97f6e025c903a146238a84dc5f01ec0d24cc33c3",
       "scope": {
         "zh": "整课由 claude-opus-5-5 从零编写，是原版《三视图 · 三张影子拼回立体》的平行版本",
         "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Three Views · Three Shadows Rebuild a Solid"
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
-      "path": "variants/claude-code/three-views/index.html"
+      "path": "variants/claude-code/three-views/index.html",
+      "originalSourceRevision": "800b981097bc1d1304dbde936e37e386d7747647",
+      "previousSourceRevision": "800b981097bc1d1304dbde936e37e386d7747647"
     },
     "cc-limits-epsilon": {
       "developer": "Claude Code",
       "edition": "claude-code-limits-epsilon-20261109",
       "kind": "original",
-      "sourceRevision": "800b981097bc1d1304dbde936e37e386d7747647",
+      "sourceRevision": "97f6e025c903a146238a84dc5f01ec0d24cc33c3",
       "scope": {
         "zh": "整课由 claude-opus-5-5 从零编写，是原版《极限与 ε–δ · 你说多近，我就能多近》的平行版本",
         "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Limits and ε–δ · Name How Close, and I Can Get That Close"
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
-      "path": "variants/claude-code/limits-epsilon/index.html"
+      "path": "variants/claude-code/limits-epsilon/index.html",
+      "originalSourceRevision": "800b981097bc1d1304dbde936e37e386d7747647",
+      "previousSourceRevision": "800b981097bc1d1304dbde936e37e386d7747647"
     },
     "cc-ode-phase-portraits": {
       "developer": "Claude Code",
       "edition": "claude-code-ode-phase-portraits-20261109",
       "kind": "original",
-      "sourceRevision": "f09c3b286827c968d9178526e5615a89bde9af3f",
+      "sourceRevision": "97f6e025c903a146238a84dc5f01ec0d24cc33c3",
       "scope": {
         "zh": "整课由 claude-opus-5-5 从零编写，是原版《微分方程相图 · 捕食者与猎物的回路》的平行版本",
         "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson ODE Phase Portraits · Predators and Prey in a Loop"
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
-      "path": "variants/claude-code/ode-phase-portraits/index.html"
+      "path": "variants/claude-code/ode-phase-portraits/index.html",
+      "originalSourceRevision": "f09c3b286827c968d9178526e5615a89bde9af3f",
+      "previousSourceRevision": "f09c3b286827c968d9178526e5615a89bde9af3f"
     },
     "cc-prisoners-dilemma": {
       "developer": "Claude Code",
       "edition": "claude-code-prisoners-dilemma-20261109",
       "kind": "original",
-      "sourceRevision": "f09c3b286827c968d9178526e5615a89bde9af3f",
+      "sourceRevision": "97f6e025c903a146238a84dc5f01ec0d24cc33c3",
       "scope": {
         "zh": "整课由 claude-opus-5-5 从零编写，是原版《囚徒困境与演化博弈 · 合作怎样活下来》的平行版本",
         "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson The Prisoner’s Dilemma & Evolutionary Games · How Cooperation Survives"
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
-      "path": "variants/claude-code/prisoners-dilemma/index.html"
+      "path": "variants/claude-code/prisoners-dilemma/index.html",
+      "originalSourceRevision": "f09c3b286827c968d9178526e5615a89bde9af3f",
+      "previousSourceRevision": "f09c3b286827c968d9178526e5615a89bde9af3f"
     },
     "cc-sequences-series": {
       "developer": "Claude Code",
       "edition": "claude-code-sequences-series-20261109",
       "kind": "original",
-      "sourceRevision": "f09c3b286827c968d9178526e5615a89bde9af3f",
+      "sourceRevision": "97f6e025c903a146238a84dc5f01ec0d24cc33c3",
       "scope": {
         "zh": "整课由 claude-opus-5-5 从零编写，是原版《数列与求和 · 叠砖与棋盘麦粒》的平行版本",
         "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Sequences & Series · Stacked Bricks and Chessboard Grains"
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
-      "path": "variants/claude-code/sequences-series/index.html"
+      "path": "variants/claude-code/sequences-series/index.html",
+      "originalSourceRevision": "f09c3b286827c968d9178526e5615a89bde9af3f",
+      "previousSourceRevision": "f09c3b286827c968d9178526e5615a89bde9af3f"
     },
     "cc-auction-basics": {
       "developer": "Claude Code",
       "edition": "claude-code-auction-basics-20261109",
       "kind": "original",
-      "sourceRevision": "0c3ead1314117c0b44bf617171e93d727273bb3a",
+      "sourceRevision": "97f6e025c903a146238a84dc5f01ec0d24cc33c3",
       "scope": {
         "zh": "整课由 claude-opus-5-5 从零编写，是原版《拍卖 · 报价与真话》的平行版本",
         "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Auctions · Bidding and Telling the Truth"
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
-      "path": "variants/claude-code/auction-basics/index.html"
+      "path": "variants/claude-code/auction-basics/index.html",
+      "originalSourceRevision": "0c3ead1314117c0b44bf617171e93d727273bb3a",
+      "previousSourceRevision": "0c3ead1314117c0b44bf617171e93d727273bb3a"
     },
     "cc-externalities": {
       "developer": "Claude Code",
       "edition": "claude-code-externalities-20261109",
       "kind": "original",
-      "sourceRevision": "0c3ead1314117c0b44bf617171e93d727273bb3a",
+      "sourceRevision": "97f6e025c903a146238a84dc5f01ec0d24cc33c3",
       "scope": {
         "zh": "整课由 claude-opus-5-5 从零编写，是原版《外部性与公地悲剧 · 账记在谁头上》的平行版本",
         "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Externalities & the Tragedy of the Commons · Who Pays the Bill"
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
-      "path": "variants/claude-code/externalities/index.html"
+      "path": "variants/claude-code/externalities/index.html",
+      "originalSourceRevision": "0c3ead1314117c0b44bf617171e93d727273bb3a",
+      "previousSourceRevision": "0c3ead1314117c0b44bf617171e93d727273bb3a"
     },
     "cc-newton-method": {
       "developer": "Claude Code",
       "edition": "claude-code-newton-method-20261109",
       "kind": "original",
-      "sourceRevision": "0c3ead1314117c0b44bf617171e93d727273bb3a",
+      "sourceRevision": "97f6e025c903a146238a84dc5f01ec0d24cc33c3",
       "scope": {
         "zh": "整课由 claude-opus-5-5 从零编写，是原版《牛顿法求根 · 沿切线一刀跳向零点》的平行版本",
         "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Newton’s Method · Leap to the Root Along a Tangent"
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
-      "path": "variants/claude-code/newton-method/index.html"
+      "path": "variants/claude-code/newton-method/index.html",
+      "originalSourceRevision": "0c3ead1314117c0b44bf617171e93d727273bb3a",
+      "previousSourceRevision": "0c3ead1314117c0b44bf617171e93d727273bb3a"
     },
     "cc-taylor-series": {
       "developer": "Claude Code",
       "edition": "claude-code-taylor-series-20261109",
       "kind": "original",
-      "sourceRevision": "33f547cb41564166db1173f2a95736b116e19409",
+      "sourceRevision": "97f6e025c903a146238a84dc5f01ec0d24cc33c3",
       "scope": {
         "zh": "整课由 claude-opus-5-5 从零编写，是原版《泰勒级数 · 把曲线一项项贴上去》的平行版本",
         "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Taylor Series · Patch the Curve Term by Term"
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
-      "path": "variants/claude-code/taylor-series/index.html"
+      "path": "variants/claude-code/taylor-series/index.html",
+      "originalSourceRevision": "33f547cb41564166db1173f2a95736b116e19409",
+      "previousSourceRevision": "33f547cb41564166db1173f2a95736b116e19409"
     },
     "cc-vectors": {
       "developer": "Claude Code",
       "edition": "claude-code-vectors-20261109",
       "kind": "original",
-      "sourceRevision": "33f547cb41564166db1173f2a95736b116e19409",
+      "sourceRevision": "97f6e025c903a146238a84dc5f01ec0d24cc33c3",
       "scope": {
         "zh": "整课由 claude-opus-5-5 从零编写，是原版《向量 · 有方向的量》的平行版本",
         "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Vectors · Quantities With a Direction"
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
-      "path": "variants/claude-code/vectors/index.html"
+      "path": "variants/claude-code/vectors/index.html",
+      "originalSourceRevision": "33f547cb41564166db1173f2a95736b116e19409",
+      "previousSourceRevision": "33f547cb41564166db1173f2a95736b116e19409"
     },
     "cc-solid-geometry": {
       "developer": "Claude Code",
       "edition": "claude-code-solid-geometry-20261109",
       "kind": "original",
-      "sourceRevision": "33f547cb41564166db1173f2a95736b116e19409",
+      "sourceRevision": "97f6e025c903a146238a84dc5f01ec0d24cc33c3",
       "scope": {
         "zh": "整课由 claude-opus-5-5 从零编写，是原版《立体几何 · 转一转，再切一刀》的平行版本",
         "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Solid Geometry · Turn It, Then Cut It"
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
-      "path": "variants/claude-code/solid-geometry/index.html"
+      "path": "variants/claude-code/solid-geometry/index.html",
+      "originalSourceRevision": "33f547cb41564166db1173f2a95736b116e19409",
+      "previousSourceRevision": "33f547cb41564166db1173f2a95736b116e19409"
     },
     "cc-velocity-vt": {
       "developer": "Claude Code",
       "edition": "claude-code-velocity-vt-20261109",
       "kind": "original",
-      "sourceRevision": "63422cdf94e38c45e8a72e7724f95e5cbcf6ebe7",
+      "sourceRevision": "97f6e025c903a146238a84dc5f01ec0d24cc33c3",
       "scope": {
         "zh": "整课由 claude-opus-5-5 从零编写，是原版《速度与 v-t 图 · 面积就是路》的平行版本",
         "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Speed and the v–t Graph · Area Is Distance"
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
-      "path": "variants/claude-code/velocity-vt/index.html"
+      "path": "variants/claude-code/velocity-vt/index.html",
+      "originalSourceRevision": "63422cdf94e38c45e8a72e7724f95e5cbcf6ebe7",
+      "previousSourceRevision": "63422cdf94e38c45e8a72e7724f95e5cbcf6ebe7"
     },
     "cc-frozen-bubble": {
       "developer": "Claude Code",
       "edition": "claude-code-frozen-bubble-20261109",
       "kind": "original",
-      "sourceRevision": "63422cdf94e38c45e8a72e7724f95e5cbcf6ebe7",
+      "sourceRevision": "97f6e025c903a146238a84dc5f01ec0d24cc33c3",
       "scope": {
         "zh": "整课由 claude-opus-5-5 从零编写，是原版《冰冻肥皂泡 · 水膜里的结晶》的平行版本",
         "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Frozen Soap Bubbles · Ice in a Thin Film"
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
-      "path": "variants/claude-code/frozen-bubble/index.html"
+      "path": "variants/claude-code/frozen-bubble/index.html",
+      "originalSourceRevision": "63422cdf94e38c45e8a72e7724f95e5cbcf6ebe7",
+      "previousSourceRevision": "63422cdf94e38c45e8a72e7724f95e5cbcf6ebe7"
     },
     "cc-power-converters": {
       "developer": "Claude Code",
       "edition": "claude-code-power-converters-20261109",
       "kind": "original",
-      "sourceRevision": "63422cdf94e38c45e8a72e7724f95e5cbcf6ebe7",
+      "sourceRevision": "97f6e025c903a146238a84dc5f01ec0d24cc33c3",
       "scope": {
         "zh": "整课由 claude-opus-5-5 从零编写，是原版《升压与降压 · 能量去哪了？》的平行版本",
         "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Buck & Boost · Follow the Energy"
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
-      "path": "variants/claude-code/power-converters/index.html"
+      "path": "variants/claude-code/power-converters/index.html",
+      "originalSourceRevision": "63422cdf94e38c45e8a72e7724f95e5cbcf6ebe7",
+      "previousSourceRevision": "63422cdf94e38c45e8a72e7724f95e5cbcf6ebe7"
     }
   },
   "exceptions": {
