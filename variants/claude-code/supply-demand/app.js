@@ -12,7 +12,7 @@ const C = { cyan: '#67d7f9', orange: '#ffb454', green: '#7ee2a8', pink: '#ff7a93
 const reduceMotion = () => window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const num = id => Number($(id).value);
 // Fixed decimals with trailing zeros trimmed (only after a decimal point); −0 shows as 0.
-const fmt = (v, d = 2) => { if (Math.abs(v) < 0.5 * Math.pow(10, -d)) v = 0; const s = v.toFixed(d); return s.includes('.') ? s.replace(/\.?0+$/, '') : s; };
+const fmt = (v, d = 2) => { if (Math.abs(v) < 0.5 * Math.pow(10, -d)) v = 0; const s = v.toFixed(d); return s.includes('.') ? s.replace(/(\.\d*?)0+$/, '$1').replace(/\.$/, '') : s; };
 const sgn = (v, d = 2) => (v > 0.5 * Math.pow(10, -d) ? '+' : '') + fmt(v, d);
 const B = M.BASE, E0 = M.equilibrium(B);
 

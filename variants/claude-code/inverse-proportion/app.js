@@ -11,7 +11,7 @@ const t = (...a) => window.IP_I18N.t(...a);
 const C = { cyan: '#67d7f9', orange: '#ffb454', green: '#7ee2a8', pink: '#ff7a93', muted: '#9aaabd', grid: '#1f2c3b', axis: '#5a6f88', text: '#e8edf4', bg: '#0d1621', dash: '#8696aa' };
 const reduceMotion = () => window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const num = id => Number($(id).value);
-const fmt = (v, d = 2) => { if (Math.abs(v) < 0.5 * Math.pow(10, -d)) v = 0; return v.toFixed(d).replace(/\.?0+$/, '') || '0'; };
+const fmt = (v, d = 2) => { if (Math.abs(v) < 0.5 * Math.pow(10, -d)) v = 0; return v.toFixed(d).replace(/(\.\d*?)0+$/, '$1').replace(/\.$/, '') || '0'; };
 // Small positive numbers keep their significant digits (0.006, 0.0006).
 const fmtSmall = v => (Math.abs(v) >= 0.01 ? fmt(v, 3) : String(Number(v.toPrecision(3))));
 

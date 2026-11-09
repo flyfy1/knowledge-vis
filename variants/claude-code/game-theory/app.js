@@ -10,7 +10,7 @@ const t = (...a) => window.GT_I18N.t(...a);
 const C = { cyan: '#67d7f9', orange: '#ffb454', green: '#7ee2a8', pink: '#ff7a93', violet: '#b79cff', muted: '#9aaabd', grid: '#22303f', axis: '#4a5f78', text: '#e8edf4', bg: '#0d1621', cell: '#16212e', cellOn: '#203246' };
 const reduceMotion = () => window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const num = id => Number($(id).value);
-const fmt = (v, d = 2) => { if (Math.abs(v) < 0.5 * Math.pow(10, -d)) v = 0; const s = v.toFixed(d).replace(/\.?0+$/, ''); return s.replace('-', '−'); };
+const fmt = (v, d = 2) => { if (Math.abs(v) < 0.5 * Math.pow(10, -d)) v = 0; const s = v.toFixed(d).replace(/(\.\d*?)0+$/, '$1').replace(/\.$/, ''); return s.replace('-', '−'); };
 
 function fitCanvas(canvas) {
   const dpr = Math.min(3, window.devicePixelRatio || 1);

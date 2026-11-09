@@ -11,7 +11,7 @@ const C = { cyan: '#67d7f9', orange: '#ffb454', green: '#7ee2a8', pink: '#ff7a93
 const PAL = [C.cyan, C.orange, C.green, C.violet, C.pink, C.yellow, '#8fb8ff', '#ffa0d0', '#a8e6cf', '#ffd3a0', '#c0a8ff', '#9ee6f9'];
 const reduceMotion = () => window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const num = id => Number($(id).value);
-const fmt = (v, d = 1) => { if (Math.abs(v) < 0.5 * Math.pow(10, -d)) v = 0; let s = v.toFixed(d); if (s.includes('.')) s = s.replace(/\.?0+$/, ''); return s.replace('-', '−'); };
+const fmt = (v, d = 1) => { if (Math.abs(v) < 0.5 * Math.pow(10, -d)) v = 0; let s = v.toFixed(d); if (s.includes('.')) s = s.replace(/(\.\d*?)0+$/, '$1').replace(/\.$/, ''); return s.replace('-', '−'); };
 const DEG = Math.PI / 180;
 const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
 const ease = p => p * p * (3 - 2 * p);

@@ -12,7 +12,7 @@ const KCOL = [C.cyan, C.orange, C.green, C.pink, C.violet];
 const reduceMotion = () => window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const num = id => Number($(id).value);
 // Trim trailing zeros; show −0 as 0.
-const fmt = (v, d = 2) => { if (Math.abs(v) < 0.5 * Math.pow(10, -d)) v = 0; return v.toFixed(d).replace(/\.?0+$/, '') || '0'; };
+const fmt = (v, d = 2) => { if (Math.abs(v) < 0.5 * Math.pow(10, -d)) v = 0; return v.toFixed(d).replace(/(\.\d*?)0+$/, '$1').replace(/\.$/, '') || '0'; };
 const par = v => (v < 0 ? '(' + fmt(v) + ')' : fmt(v));
 
 function fitCanvas(canvas) {

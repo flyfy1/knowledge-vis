@@ -30,7 +30,7 @@
   // Number formatting shared by readouts: at most 2 decimals, trailing zeros dropped, true minus sign.
   function fmt(v, d = 2) {
     if (Math.abs(v) < 0.5 * Math.pow(10, -d)) v = 0;
-    const s = Math.abs(v).toFixed(d).replace(/\.?0+$/, '') || '0';
+    const s = Math.abs(v).toFixed(d).replace(/(\.\d*?)0+$/, '$1').replace(/\.$/, '') || '0';
     return (v < 0 ? MINUS : '') + s;
   }
 

@@ -11,7 +11,7 @@ const C = { cyan: '#67d7f9', orange: '#ffb454', green: '#7ee2a8', pink: '#ff7a93
 const reduceMotion = () => window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const num = id => Number($(id).value);
 const fmt = (v, d = 2) => { if (Math.abs(v) < 0.5 * Math.pow(10, -d)) v = 0; return v.toFixed(d).replace('-', '−'); };
-const trim = (v, d = 2) => fmt(v, d).replace(/\.?0+$/, '') || '0';
+const trim = (v, d = 2) => fmt(v, d).replace(/(\.\d*?)0+$/, '$1').replace(/\.$/, '') || '0';
 const hue = deg => `hsl(${Math.round(deg)},75%,66%)`;
 
 function fitCanvas(canvas) {

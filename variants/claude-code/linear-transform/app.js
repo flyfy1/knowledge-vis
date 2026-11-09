@@ -11,7 +11,7 @@ const t = (...a) => window.LESSON_I18N.t(...a);
 const C = { cyan: '#67d7f9', orange: '#ffb454', green: '#7ee2a8', pink: '#ff7a93', violet: '#b79cff', muted: '#9aaabd', grid: '#1f2c3b', axis: '#3d5068', text: '#e8edf4', bg: '#0d1621', ghost: '#6f8097' };
 const reduceMotion = () => window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const num = id => Number($(id).value);
-const fmt = (v, d = 2) => { if (Math.abs(v) < 0.5 * Math.pow(10, -d)) v = 0; const s = v.toFixed(d); return s.includes('.') ? s.replace(/\.?0+$/, '') : s; };
+const fmt = (v, d = 2) => { if (Math.abs(v) < 0.5 * Math.pow(10, -d)) v = 0; const s = v.toFixed(d); return s.includes('.') ? s.replace(/(\.\d*?)0+$/, '$1').replace(/\.$/, '') : s; };
 
 function fitCanvas(canvas) {
   const dpr = Math.min(3, window.devicePixelRatio || 1);

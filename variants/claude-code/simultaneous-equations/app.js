@@ -12,7 +12,7 @@ const reduceMotion = () => window.matchMedia && window.matchMedia('(prefers-redu
 const num = id => Number($(id).value);
 const MINUS = '−';
 // Numbers: at most 2 decimals, trailing zeros trimmed, typographic minus, −0 shown as 0.
-const fmt = (v, d = 2) => { if (Math.abs(v) < 0.5 * Math.pow(10, -d)) v = 0; const s = v.toFixed(d).replace(/\.?0+$/, '') || '0'; return s.replace('-', MINUS); };
+const fmt = (v, d = 2) => { if (Math.abs(v) < 0.5 * Math.pow(10, -d)) v = 0; const s = v.toFixed(d).replace(/(\.\d*?)0+$/, '$1').replace(/\.$/, '') || '0'; return s.replace('-', MINUS); };
 const par = v => (v < 0 ? '(' + fmt(v) + ')' : fmt(v));
 
 /* ---------- algebra formatting ---------- */

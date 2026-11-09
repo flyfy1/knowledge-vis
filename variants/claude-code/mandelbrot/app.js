@@ -10,7 +10,7 @@ const t = (...a) => window.MANDEL_I18N.t(...a);
 const C = { cyan: '#67d7f9', orange: '#ffb454', green: '#7ee2a8', pink: '#ff7a93', violet: '#b79cff', muted: '#9aaabd', grid: '#22303f', axis: '#4a5f78', text: '#e8edf4', bg: '#0d1621', inside: '#05080c' };
 const reduceMotion = () => window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const num = id => Number($(id).value);
-const fmt = (v, d = 2) => { if (Math.abs(v) < 0.5 * Math.pow(10, -d)) v = 0; return (v.toFixed(d).replace(/\.?0+$/, '') || '0').replace('-', '−'); };
+const fmt = (v, d = 2) => { if (Math.abs(v) < 0.5 * Math.pow(10, -d)) v = 0; return (v.toFixed(d).replace(/(\.\d*?)0+$/, '$1').replace(/\.$/, '') || '0').replace('-', '−'); };
 const cstr = (x, y, d = 3) => { const a = fmt(x, d), b = fmt(Math.abs(y), d); return Math.abs(y) < 0.5 * Math.pow(10, -d) ? a : `${a} ${y < 0 ? '−' : '+'} ${b}i`; };
 const SUP = { '-': '⁻', 0: '⁰', 1: '¹', 2: '²', 3: '³', 4: '⁴', 5: '⁵', 6: '⁶', 7: '⁷', 8: '⁸', 9: '⁹' };
 const sci = v => { if (v === 0) return '0'; const e = Math.floor(Math.log10(Math.abs(v))), m = v / Math.pow(10, e); return e === 0 ? m.toFixed(2) : `${m.toFixed(2)}×10${String(e).split('').map(ch => SUP[ch]).join('')}`; };

@@ -10,7 +10,7 @@ const t = (...a) => window.LESSON_I18N.t(...a);
 const C = { cyan: '#67d7f9', orange: '#ffb454', green: '#7ee2a8', pink: '#ff7a93', violet: '#b79cff', muted: '#9aaabd', grid: '#1b2734', grid2: '#2a3a4d', axis: '#4f6580', text: '#e8edf4', bg: '#0d1621', ghost: '#8696aa' };
 const reduceMotion = () => window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const num = id => Number($(id).value);
-const fmt = (v, d = 2) => { if (Math.abs(v) < 0.5 * Math.pow(10, -d)) v = 0; return v.toFixed(d).replace(/\.?0+$/, '') || '0'; };
+const fmt = (v, d = 2) => { if (Math.abs(v) < 0.5 * Math.pow(10, -d)) v = 0; return v.toFixed(d).replace(/(\.\d*?)0+$/, '$1').replace(/\.$/, '') || '0'; };
 const par = v => (v < 0 ? '(' + fmt(v) + ')' : fmt(v));
 
 // ratio (optional) = world height / world width of an equal-scale plane: the canvas then shrinks to fit it
