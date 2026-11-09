@@ -864,6 +864,42 @@
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
       "path": "variants/claude-code/similarity-scaling/index.html"
+    },
+    "cc-simultaneous-equations": {
+      "developer": "Claude Code",
+      "edition": "claude-code-simultaneous-equations-20261109",
+      "kind": "original",
+      "sourceRevision": "800b981097bc1d1304dbde936e37e386d7747647",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《二元一次方程组 · 两条直线的交点》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Simultaneous Equations · Where Two Lines Meet"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/simultaneous-equations/index.html"
+    },
+    "cc-three-views": {
+      "developer": "Claude Code",
+      "edition": "claude-code-three-views-20261109",
+      "kind": "original",
+      "sourceRevision": "800b981097bc1d1304dbde936e37e386d7747647",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《三视图 · 三张影子拼回立体》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Three Views · Three Shadows Rebuild a Solid"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/three-views/index.html"
+    },
+    "cc-limits-epsilon": {
+      "developer": "Claude Code",
+      "edition": "claude-code-limits-epsilon-20261109",
+      "kind": "original",
+      "sourceRevision": "800b981097bc1d1304dbde936e37e386d7747647",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《极限与 ε–δ · 你说多近，我就能多近》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Limits and ε–δ · Name How Close, and I Can Get That Close"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/limits-epsilon/index.html"
     }
   },
   "exceptions": {

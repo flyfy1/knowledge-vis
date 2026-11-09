@@ -189,5 +189,20 @@ window.CLAUDE_EDITIONS = [
   "slug": "similarity-scaling",
   "original": "similarity-scaling",
   "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "simultaneous-equations",
+  "original": "simultaneous-equations",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "three-views",
+  "original": "three-views",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "limits-epsilon",
+  "original": "limits-epsilon",
+  "model": "claude-opus-5-5"
  }
 ];
