@@ -101,6 +101,21 @@ window.CLAUDE_EDITIONS = [
   "model": "claude-opus-5-5"
  },
  {
+  "slug": "circle-intro",
+  "original": "circle-intro",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "clock-angles",
+  "original": "clock-angles",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "inequalities",
+  "original": "inequalities",
+  "model": "claude-opus-5-5"
+ },
+ {
   "slug": "intervals-fences",
   "original": "intervals-fences",
   "model": "claude-opus-5-5"

@@ -684,6 +684,42 @@
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
       "path": "variants/claude-code/perimeter-area/index.html"
+    },
+    "cc-circle-intro": {
+      "developer": "Claude Code",
+      "edition": "claude-code-circle-intro-20261109",
+      "kind": "original",
+      "sourceRevision": "9727311a7d16b35f1deddade070ddd95bd5101d4",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《圆的认识 · 圆规、半径与 π》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson The Circle · Compass, Radius and π"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/circle-intro/index.html"
+    },
+    "cc-clock-angles": {
+      "developer": "Claude Code",
+      "edition": "claude-code-clock-angles-20261109",
+      "kind": "original",
+      "sourceRevision": "9727311a7d16b35f1deddade070ddd95bd5101d4",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《时钟与角度 · 两根针的赛跑》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Clocks & Angles · A Race Between Two Hands"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/clock-angles/index.html"
+    },
+    "cc-inequalities": {
+      "developer": "Claude Code",
+      "edition": "claude-code-inequalities-20261109",
+      "kind": "original",
+      "sourceRevision": "9727311a7d16b35f1deddade070ddd95bd5101d4",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《不等式 · 天平倾斜，答案是一整段》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Inequalities · A Tilted Scale Has a Whole Range of Answers"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/inequalities/index.html"
     }
   },
   "exceptions": {
