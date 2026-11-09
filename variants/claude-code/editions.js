@@ -56,6 +56,21 @@ window.CLAUDE_EDITIONS = [
   "model": "claude-opus-5-5"
  },
  {
+  "slug": "equation-scale",
+  "original": "equation-scale",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "supply-demand",
+  "original": "supply-demand",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "linear-transform",
+  "original": "linear-transform",
+  "model": "claude-opus-5-5"
+ },
+ {
   "slug": "number-combinatorics",
   "original": "number-combinatorics",
   "model": "claude-opus-5-5"

@@ -720,6 +720,42 @@
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
       "path": "variants/claude-code/inequalities/index.html"
+    },
+    "cc-equation-scale": {
+      "developer": "Claude Code",
+      "edition": "claude-code-equation-scale-20261109",
+      "kind": "original",
+      "sourceRevision": "72fc7db1e1ceb1a499a6d60716bb8e65b5725984",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《方程天平 · 两边同做一件事》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Equations on a Balance · Do the Same to Both Sides"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/equation-scale/index.html"
+    },
+    "cc-supply-demand": {
+      "developer": "Claude Code",
+      "edition": "claude-code-supply-demand-20261109",
+      "kind": "original",
+      "sourceRevision": "72fc7db1e1ceb1a499a6d60716bb8e65b5725984",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《供需与市场均衡 · 价格线如何相交》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Supply & Demand · Where the Market Clears"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/supply-demand/index.html"
+    },
+    "cc-linear-transform": {
+      "developer": "Claude Code",
+      "edition": "claude-code-linear-transform-20261109",
+      "kind": "original",
+      "sourceRevision": "72fc7db1e1ceb1a499a6d60716bb8e65b5725984",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《二维线性变换 · 矩阵如何挪动平面》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson 2D Linear Transformations · How Matrices Move the Plane"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/linear-transform/index.html"
     }
   },
   "exceptions": {
