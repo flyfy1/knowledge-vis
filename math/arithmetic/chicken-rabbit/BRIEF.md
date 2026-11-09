@@ -15,3 +15,5 @@
 
 ## 模拟设定 / 模型失配
 动物数为整数，鸡 2 脚兔 4 脚；“全是鸡”只是算差额的假设。脚数由逐只腿数得出（步 0、5），其余由纯函数解出并代回核对。
+
+- 2026-11-09 canvas 文字修复（Claude Code，self-check）：共用的 `text()` 加了标注避让和限界（同一次绘制中重叠的标注错开一行，文字不伸出画布），见 specs/reviews/canvas-text-survey-20261109.md。修后 `tests/canvas-text-overlap.cjs --sweep` 通过。

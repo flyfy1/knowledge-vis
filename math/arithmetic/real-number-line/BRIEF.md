@@ -15,3 +15,5 @@
 
 ## 模拟设定 / 模型失配
 小数位用 BigInt 精确整数运算；“不是分数”仅为观察，页内说明证明思路；数轴示意图比例有限（近处放大才可分辨）；“整数的平方根要么整数要么无理数”是定理，页面不推导。
+
+- 2026-11-09 canvas 文字修复（Claude Code，self-check）：共用的 `text()` 加了标注避让和限界（同一次绘制中重叠的标注错开一行，文字不伸出画布），见 specs/reviews/canvas-text-survey-20261109.md。修后 `tests/canvas-text-overlap.cjs --sweep` 通过。

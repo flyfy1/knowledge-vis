@@ -57,3 +57,5 @@
 
 ## Simulation versus reality / model mismatch
 d_k = 2 hand-set toy vectors; real attention uses learned projections, many heads, high dimension, positional information and layers. Attention weights are not a full explanation of a model's output. Step 4 uses a seeded random simulation (values wobble with seed; theory √d is the expectation). Not validated by a human learner walk-through.
+
+- 2026-11-09 canvas 文字修复（Claude Code，self-check）：页面加载 [`canvas-label-guard.js`](../../../canvas-label-guard.js)（说明见 specs/canvas-label-guard.md），重叠的画布标注会错开、文字不伸出画布。修后 `tests/canvas-text-overlap.cjs --sweep` 结果见 specs/reviews/canvas-text-survey-20261109.md。

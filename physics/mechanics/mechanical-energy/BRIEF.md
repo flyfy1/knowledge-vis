@@ -16,3 +16,5 @@ Gravitational potential energy, kinetic energy (0), unreachable region (1), ther
 
 ## Simulation vs reality
 Point mass, constant Coulomb friction, no air drag, no rolling energy; the loop condition ignores wheel flanges; numeric track integration uses dt = 0.001 s and the ledger closes within about 1%.
+
+- 2026-11-09 canvas 文字修复（Claude Code，self-check）：共用的 `text()` 加了标注避让和限界（同一次绘制中重叠的标注错开一行，文字不伸出画布），见 specs/reviews/canvas-text-survey-20261109.md。修后 `tests/canvas-text-overlap.cjs --sweep` 通过。

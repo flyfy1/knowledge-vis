@@ -180,7 +180,9 @@ function render4() {
   sel.tgt = $('s4-t').value; var k = +$('s4-k').value, win = +$('s4-win').value; $('s4-k-v').textContent = k + ' / ' + CORPUS.length; $('s4-win-v').textContent = String(win);
   var C0 = cooc(k, win), cv = $('s4-cv'), c = fit(cv), W = cv._w, x0 = 54, y0 = 70, cw = Math.min(22, (W - x0 - 8) / CTX.length), rh = 24, i, j;
   txt(c, t('s4Cap'), 8, 14, C.ink, 12);
-  for (j = 0; j < CTX.length; j++) { c.save(); c.translate(x0 + j * cw + cw / 2 + 3, y0 - 4); c.rotate(-Math.PI / 3); txt(c, wn(CTX[j]), 0, 0, C.m, 10, 'left'); c.restore(); }
+  // Column words lean at 60° on wide screens; when columns get narrow they stand upright so neighbours do not overlap.
+  var up = cw < 18, cf = cw < 12 ? 9 : 10;
+  for (j = 0; j < CTX.length; j++) { c.save(); c.translate(x0 + j * cw + cw / 2 + (up ? cf / 3 : 3), y0 - 4); c.rotate(up ? -Math.PI / 2 : -Math.PI / 3); txt(c, wn(CTX[j]), 0, 0, C.m, cf, 'left'); c.restore(); }
   var mx = 1; TARGETS.forEach(function (w) { C0[w].forEach(function (v) { if (v > mx) mx = v; }); });
   TARGETS.forEach(function (w, ri) {
     txt(c, wn(w), x0 - 4, y0 + ri * rh + 16, w === sel.tgt ? '#fff' : C.m, 11, 'right');

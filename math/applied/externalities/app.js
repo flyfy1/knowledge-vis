@@ -12,11 +12,30 @@ function setup(c) {
   if (c.width !== bw) c.width = bw;
   if (c.height !== bh) c.height = bh;
   const ctx = c.getContext('2d');
-  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0); c._dpr = dpr; c._labels = [];
   ctx.clearRect(0, 0, w, h);
   return { ctx, w, h, wide: w >= 560 };
 }
-function text(ctx, s, x, y, o) { o = o || {}; ctx.fillStyle = o.color || COL.muted; ctx.font = (o.bold ? '600 ' : '') + (o.size || 13) + 'px system-ui,sans-serif'; ctx.textAlign = o.align || 'left'; ctx.textBaseline = o.base || 'alphabetic'; ctx.fillText(s, x, y); }
+// Canvas labels (2026-11-09 canvas text survey): within one drawing pass a label that would overlap one already
+// drawn on the same canvas moves a line down or up, and every label is kept inside the canvas. o.mw caps the width
+// (fillText maxWidth); o.free draws exactly at (x, y). Rotated or scaled text is drawn as given.
+let labelTurn = 0, labelTick = false;
+function text(ctx, s, x, y, o) {
+  o = o || {}; ctx.fillStyle = o.color || COL.muted; ctx.font = (o.bold ? '600 ' : '') + (o.size || 13) + 'px system-ui,sans-serif'; ctx.textAlign = o.align || 'left'; ctx.textBaseline = o.base || 'alphabetic';
+  const c = ctx.canvas, T = ctx.getTransform(), d = c._dpr || 1;
+  if (!o.free && String(s).trim() && T.b === 0 && T.c === 0 && Math.abs(T.a - d) < 1e-6 && Math.abs(T.d - d) < 1e-6) {
+    if (!labelTick) { labelTick = true; queueMicrotask(() => { labelTurn++; labelTick = false; }); }
+    if (c._labelTurn !== labelTurn) { c._labelTurn = labelTurn; c._labels = []; }
+    const m = ctx.measureText(s), sq = o.mw && m.width > o.mw ? o.mw / m.width : 1, W = c.width / d, H = c.height / d, ox = T.e / d, oy = T.f / d;
+    const b = { l: x - m.actualBoundingBoxLeft * sq + ox, r: x + m.actualBoundingBoxRight * sq + ox, t: y - m.actualBoundingBoxAscent + oy, b: y + m.actualBoundingBoxDescent + oy };
+    const dx = b.l < 2 ? 2 - b.l : b.r > W - 2 ? Math.max(2 - b.l, W - 2 - b.r) : 0, dy = b.t < 2 ? 2 - b.t : b.b > H - 2 ? Math.max(2 - b.t, H - 2 - b.b) : 0;
+    x += dx; y += dy; b.l += dx; b.r += dx; b.t += dy; b.b += dy;
+    const lh = b.b - b.t + 3, hit = (q, e) => q.s !== s || Math.abs(q.l - b.l) > 1 || Math.abs(q.t - b.t) > 1 ? Math.min(q.r, b.r) - Math.max(q.l, b.l) > 2 && Math.min(q.b, b.b + e) - Math.max(q.t, b.t + e) > 2 : false;
+    const e = [0, lh, -lh, 2 * lh, -2 * lh, 3 * lh, -3 * lh].find(e => b.t + e >= 2 && b.b + e <= H - 2 && !c._labels.some(q => hit(q, e))) || 0;
+    y += e; c._labels.push({ s, l: b.l, r: b.r, t: b.t + e, b: b.b + e });
+  }
+  if (o.mw) ctx.fillText(s, x, y, o.mw); else ctx.fillText(s, x, y);
+}
 function line(ctx, x1, y1, x2, y2, col, lw, dash) { ctx.strokeStyle = col; ctx.lineWidth = lw || 1; ctx.setLineDash(dash || []); ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2, y2); ctx.stroke(); ctx.setLineDash([]); }
 function dot(ctx, x, y, r, col) { ctx.fillStyle = col; ctx.beginPath(); ctx.arc(x, y, r, 0, 6.2832); ctx.fill(); }
 function slider(id, fn) { const e = $(id); e.addEventListener('input', () => { fn(+e.value); const o = $(id + 'v'); if (o) o.textContent = e.value; }); }
@@ -78,8 +97,8 @@ function render3() {
 }
 function render4() {
   const { ctx, w, h } = setup($('cv4')), A = 100, c = 20, mh = S.m4, N = commonsN(null, A, c, mh), Ns = commonsN(null, A, c, 1), L = { x: 44, y: 14, w: w - 60, h: h * 0.55 }, X = n => L.x + n / 90 * L.w, pmax = commonsProfit(40, A, c) * 1.1, pmin = -commonsProfit(40, A, c) * 0.1, Y = v => L.y + L.h - (v - pmin) / (pmax - pmin) * L.h; axes(ctx, L);
-  const pts = []; for (let n = 0; n <= 90; n++) pts.push([X(n), Y(commonsProfit(n, A, c))]); curve(ctx, pts, COL.orange, 2.5); line(ctx, L.x, Y(0), L.x + L.w, Y(0), COL.muted, 1);
-  dot(ctx, X(Ns), Y(commonsProfit(Ns, A, c)), 6, COL.green); text(ctx, t('lblSocialOpt'), X(Ns), Y(commonsProfit(Ns, A, c)) - 10, { align: 'center', size: 11, color: COL.green }); dot(ctx, X(N), Y(commonsProfit(N, A, c)), 7, COL.red); text(ctx, t('lblHerd', { n: mh }), Math.min(X(N), w - 110), Y(commonsProfit(N, A, c)) - 10 + (N > 60 ? 28 : 0), { align: 'center', size: 11, color: COL.red });
+  const pts = []; for (let n = 0; n <= 90; n++) pts.push([X(n), Y(commonsProfit(n, A, c))]); ctx.save(); ctx.beginPath(); ctx.rect(L.x, L.y, L.w, L.h); ctx.clip(); curve(ctx, pts, COL.orange, 2.5); ctx.restore(); line(ctx, L.x, Y(0), L.x + L.w, Y(0), COL.muted, 1); // clipped: past ~80 cows the profit falls below the panel
+  dot(ctx, X(Ns), Y(commonsProfit(Ns, A, c)), 6, COL.green); text(ctx, t('lblSocialOpt'), X(Ns), Y(commonsProfit(Ns, A, c)) - 10, { align: 'center', size: 11, color: COL.green }); dot(ctx, X(N), Y(commonsProfit(N, A, c)), 7, COL.red); text(ctx, t('lblHerd', { n: mh }), Math.min(X(N), w - 110), Y(commonsProfit(N, A, c)) - 10 + (N > 60 || Math.abs(X(N) - X(Ns)) < 80 ? 32 : 0), { align: 'center', size: 11, color: COL.red }); // below the dot when it sits at the optimum label
   [0, 30, 60, 90].forEach(n => text(ctx, String(n), X(n), L.y + L.h + 14, { align: 'center', size: 10 })); text(ctx, t('axCows'), L.x + L.w, L.y + L.h + 28, { align: 'right', size: 11 }); text(ctx, t('axProfitAll'), L.x + 4, L.y + 10, { size: 11 });
   const B = { x: 44, y: L.y + L.h + 48, w: L.w, h: h - (L.y + L.h) - 64 }; axes(ctx, B); const Xb = k => B.x + (k - 1) / 19 * B.w, Yb = n => B.y + B.h - n / 85 * B.h; const p2 = []; for (let k = 1; k <= 20; k++) p2.push([Xb(k), Yb(commonsN(null, A, c, k))]); curve(ctx, p2, COL.cyan, 2); dot(ctx, Xb(mh), Yb(N), 5, COL.red); text(ctx, t('axHerders'), B.x + B.w, B.y + B.h + 14, { align: 'right', size: 11 }); text(ctx, t('axTotalCows'), B.x + 4, B.y + 10, { size: 11 });
   $('ro4').textContent = t('s4ro', { m: mh, N: f1(N), Ns: f1(Ns), pr: f0(commonsProfit(N, A, c)), ps: f0(commonsProfit(Ns, A, c)) });

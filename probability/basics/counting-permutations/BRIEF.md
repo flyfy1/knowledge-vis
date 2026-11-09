@@ -16,3 +16,5 @@ Multiplication principle (0), factorial (1), permutation nPr (2), combination nC
 
 ## Simulation vs reality
 BigInt exact arithmetic; the displayed lottery benchmark of about 140 million is a rounded example and not any named lottery; birthdays are not uniform in reality.
+
+- 2026-11-09 canvas 文字修复（Claude Code，self-check）：共用的 `text()` 加了标注避让和限界（同一次绘制中重叠的标注错开一行，文字不伸出画布），见 specs/reviews/canvas-text-survey-20261109.md。修后 `tests/canvas-text-overlap.cjs --sweep` 通过。

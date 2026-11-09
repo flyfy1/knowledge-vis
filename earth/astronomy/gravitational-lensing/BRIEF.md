@@ -16,3 +16,5 @@ Deflection angle (0), lens equation, Einstein ring (1), Einstein radius, mas (2)
 
 ## Simulation vs reality
 Point-mass thin lens, weak field, Euclidean distance subtraction (not cosmological angular-diameter distances), no shear or ellipticity, no source structure beyond a circle.
+
+- 2026-11-09 canvas 文字修复（Claude Code，self-check）：共用的 `text()` 加了标注避让和限界（同一次绘制中重叠的标注错开一行，文字不伸出画布），见 specs/reviews/canvas-text-survey-20261109.md。修后 `tests/canvas-text-overlap.cjs --sweep` 通过。

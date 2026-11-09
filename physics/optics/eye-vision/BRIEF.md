@@ -16,3 +16,5 @@ Retina, reduced eye (0), accommodation, diopter, near point (1), myopia, hyperop
 
 ## Simulation vs reality
 Thin lens, vertex distance ignored, aberrations and diffraction ignored; 10 µm blur threshold is an approximate teaching value; the drawn ray spread before the lens is schematic; not medical advice.
+
+- 2026-11-09 canvas 文字修复（Claude Code，self-check）：共用的 `text()` 加了标注避让和限界（同一次绘制中重叠的标注错开一行，文字不伸出画布），见 specs/reviews/canvas-text-survey-20261109.md。修后 `tests/canvas-text-overlap.cjs --sweep` 通过。

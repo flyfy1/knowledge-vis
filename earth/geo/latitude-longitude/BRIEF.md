@@ -30,3 +30,5 @@
 
 ## 模拟与现实、模型失配
 球形地球；不画海岸线；城市近似坐标；等距矩形与橘子皮仅是两种投影；昼夜分界用春秋分简化；「按度数量」是教学反例而非真实做法。
+
+- 2026-11-09 canvas 文字修复（Claude Code，self-check）：页面加载 [`canvas-label-guard.js`](../../../canvas-label-guard.js)（说明见 specs/canvas-label-guard.md），重叠的画布标注会错开、文字不伸出画布。修后 `tests/canvas-text-overlap.cjs --sweep` 结果见 specs/reviews/canvas-text-survey-20261109.md。

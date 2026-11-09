@@ -15,3 +15,5 @@ Photon (0); work function φ (0); threshold frequency f₀ (1); maximum kinetic 
 
 ## Simulation vs reality
 Work functions are rounded textbook values; real quantum efficiency 0.1–10%; contact potential, surface state, temperature ignored; I(V) shape simplified; slow-motion animation.
+
+- 2026-11-09 canvas 文字修复（Claude Code，self-check）：页面加载 [`canvas-label-guard.js`](../../../canvas-label-guard.js)（说明见 specs/canvas-label-guard.md），重叠的画布标注会错开、文字不伸出画布。修后 `tests/canvas-text-overlap.cjs --sweep` 结果见 specs/reviews/canvas-text-survey-20261109.md。

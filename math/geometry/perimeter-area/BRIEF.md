@@ -27,3 +27,5 @@
 ## 交付
 - 自查：node --check、键集比对、断言（周长 24 的 11 种围法面积序列 11,20,27,32,35,36,35,32,27,20,11 与页面逻辑一致）。
 - 报告 ~/workspace/perimeter-area-lab/build-report.md。
+
+- 2026-11-09 canvas 文字修复（Claude Code，self-check）：页面加载 [`canvas-label-guard.js`](../../../canvas-label-guard.js)（说明见 specs/canvas-label-guard.md），重叠的画布标注会错开、文字不伸出画布。修后 `tests/canvas-text-overlap.cjs --sweep` 结果见 specs/reviews/canvas-text-survey-20261109.md。

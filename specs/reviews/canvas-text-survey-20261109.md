@@ -91,3 +91,57 @@
 | `probability/basics/binomial-normal/` | 19 | 390 zh #cv4 | "n" × "100" | 6 | claude-code | — |
 | `math/algebra/linear-functions/` | 19 | 320 zh #s4q2-canvas | "-1" × "-1" | 16 | alberto | Codex |
 | `math/geometry/polygon-angles/` | 17 | 320 zh #cv0 | "63°" × "81°" | 2 | claude-code | — |
+
+
+## 复查与修复（2026-11-09，同一会话）
+
+### 用更严的检查器重新普查
+
+检查器补了几项后重新跑了一遍：
+- **新增出界检查**：文字伸出画布就报告。完全画在画布外、根本看不见的文字不算。
+- **按实际宽度计算**：用 `maxWidth` 压缩过的文字，按压缩后的宽度计算。
+- **`--sweep` 扩大范围**：增加两个滑杆的组合，同时触发 `change` 事件，并覆盖复选框和单选按钮。
+
+全部 207 个页面路径**只看默认状态**的结果：
+- **有问题：** 99 页。其中 67 页有文字重叠，32 页只有文字出界。
+- **没有署名标签：** 87 页。按 [visual-page-provenance](../visual-page-provenance.md)，这些可以由本分支修复；另外 12 页带 Codex 标签，不改。
+
+### 修复方式
+
+1. **逐页手工修**：wavelets、climate-energy、quantum-tunneling、relativity、stocks-bonds、externalities、binary-search、reaction-rates、embeddings。
+   - climate-energy 还修了中文界面里残留的英文说明。
+   - externalities 第 4 步的曲线原来画进了下面的子图，也一并修了。
+2. **共用 `text()` 的 66 个页面**：这个函数里加了标注避让和限界。
+   - 同一次绘制中，重叠的标注错开一行；
+   - 文字不会伸出画布；
+   - 支持 `o.mw` 限宽。
+   - 另外 3 页的超长图例改到画布下方的 HTML 段落里，以便换行：shortest-path、rsa-encryption、atmospheric-circulation。
+3. **其余 49 个页面**：画字方式各不相同，统一加载新的 [`canvas-label-guard.js`](../../canvas-label-guard.js)，说明见 [spec](../canvas-label-guard.md)。
+
+### 结果
+
+- **`--sweep`**：87 个无标签页面全部通过，覆盖三种宽度、中英文，以及滑杆、组合、按钮、复选框和单选按钮。
+- **最终默认状态普查**：没有署名标签的页面全部通过；剩下 12 页都带 Codex 标签，见下表。
+- **截图抽查**：wavelets、climate-energy、quantum-tunneling、relativity、stocks-bonds、risk-pooling、externalities、gravitational-lensing、blackbody-radiation、shortest-path、binary-search、embeddings、parabola。
+  - 挪开后的标注都能读。
+  - 个别标注离它所指的点远了一些，或压在了曲线上，如 blackbody-radiation 的「6000 K」。这类属于版面问题，检查器查不出，以后改页面时可以顺手调整。
+- **验证范围**：这些页面大多没有自带测试，所以这次只做了 canvas 文字检查和截图抽查。逻辑和数值没有重新评审，也没有独立评审（self-check）。
+
+### 仍待处理：带 Codex 标签的 12 页
+
+这些是 Codex 的改进版本。按 provenance 规则，不能由 Claude Code 修改后继续挂在 Codex 名下，所以留给 Codex，或由 Yangyu 决定处理方式。这一轮没有对它们跑 `--sweep`，派单时应一并要求。
+
+| 页面 | 标签 | 最大重叠 px² | 条数 | 例子 |
+|---|---|---|---|---|
+| `probability/stochastic/monte-carlo/` | Codex | 1702 | 39 | 320 en #s5-canvas: "first-two-coordinates projection (test uses all dims)" × "true volume ratio by d (log scale)" (146.7 |
+| `math/linear-algebra/eigenvectors/` | Codex | 1350 | 6 | 320 en #s1-curve: "Line angle versus direction θ (0°–180° covers each line once)" × "zeros = eigendirections" (126.2×10. |
+| `signal/sampling/sampling/` | Codex | 819 | 26 | 320 en #s4-canvas: "alias peak f_alias = 3.0" × "spectral copy" (71.8×11.4 px) |
+| `signal/transforms/z-transform/` | Codex | 787 | 11 | 320 en #s4-resp: "peak near the top of the axis · exact peak in the readout" × "peak Ω = 1.10" (74.2×10.6 px) |
+| `math/calculus/derivative/` | Codex | 728 | 16 | 320 en #s2d-canvas: "Derivative f′(x)" × "Collected derivative points (x axis, measured f′ vertical)" (75.1×9.7 px) |
+| `signal/transforms/laplace/` | Codex | 587 | 28 | 320 zh #s2-plane: "收敛域 σ > −a" × "切片 σ₀ = 0.00" (53.4×11.0 px) |
+| `physics/waves/interference/` | Codex | 108 | 3 | 1280 en #s0-side: "Side profile (distance → displacement)" × "λ = 2" (29.2×3.7 px) |
+| `math/algebra/complex-numbers/` | Codex | 80 | 18 | 1280 en #s4-canvas: "unit circle" × "z₂" (10.6×7.5 px) |
+| `signal/systems/frequency-response/` | Codex | 79 | 19 | 320 en #s0-gain: "10" × "Frequency f (Hz, log axis)" (10.2×7.7 px) |
+| `probability/inference/bayes-updating/` | Codex | 63 | 18 | 320 en #s2-canvas: "99.0%" × "99.9%" (7.1×8.9 px) |
+| `math/algebra/linear-functions/` | Codex | 19 | 16 | 320 en #s4q2-canvas: "-1" × "-1" (5.0×3.8 px) |
+| `signal/systems/convolution/` | Codex | 0 | 1 | 320 en #s6-canvas: "Time-domain convolution (point by point)" outside the 274×300 canvas (x 48..281, y 11..23) |

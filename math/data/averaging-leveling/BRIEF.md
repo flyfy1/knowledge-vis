@@ -16,3 +16,5 @@
 
 ## 模拟设定 / 模型失配
 水可无损耗倒出且可分；整份时平均数可能无法精确达到（步 3 明说）；平均数不反映杯间差异。
+
+- 2026-11-09 canvas 文字修复（Claude Code，self-check）：共用的 `text()` 加了标注避让和限界（同一次绘制中重叠的标注错开一行，文字不伸出画布），见 specs/reviews/canvas-text-survey-20261109.md。修后 `tests/canvas-text-overlap.cjs --sweep` 通过。

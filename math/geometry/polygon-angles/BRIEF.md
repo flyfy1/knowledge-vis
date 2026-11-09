@@ -15,3 +15,5 @@
 
 ## 模拟设定 / 模型失配
 平面简单多边形；角度由顶点坐标计算（符号转角法）；曲面上三角形内角和不是 180°（页内说明，不展开）；步 0 的“撕下来”是按角度旋转移动扇形的示意。
+
+- 2026-11-09 canvas 文字修复（Claude Code，self-check）：共用的 `text()` 加了标注避让和限界（同一次绘制中重叠的标注错开一行，文字不伸出画布），见 specs/reviews/canvas-text-survey-20261109.md。修后 `tests/canvas-text-overlap.cjs --sweep` 通过。

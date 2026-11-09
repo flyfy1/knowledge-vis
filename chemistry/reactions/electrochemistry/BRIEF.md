@@ -15,3 +15,5 @@ Oxidation / reduction, anode / cathode (0); standard electrode potential E° (0)
 
 ## Simulation vs reality
 Ideal potentials, no overpotential or internal resistance, activity ignored, fixed 1 L, electron dots schematic; step-1 voltage does not reach zero in the ideal model.
+
+- 2026-11-09 canvas 文字修复（Claude Code，self-check）：页面加载 [`canvas-label-guard.js`](../../../canvas-label-guard.js)（说明见 specs/canvas-label-guard.md），重叠的画布标注会错开、文字不伸出画布。修后 `tests/canvas-text-overlap.cjs --sweep` 结果见 specs/reviews/canvas-text-survey-20261109.md。

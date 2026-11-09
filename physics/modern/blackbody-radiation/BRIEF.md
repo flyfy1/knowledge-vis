@@ -16,3 +16,5 @@ Blackbody, peak wavelength, Wien's law (0); radiant exitance, Planck's law (1); 
 
 ## Simulation vs reality
 Ideal emitter with emissivity 1; display colour from a published approximation; exitance rather than radiance; the sliders sample the formula and add no noise; stars and bulbs deviate from blackbody curves.
+
+- 2026-11-09 canvas 文字修复（Claude Code，self-check）：共用的 `text()` 加了标注避让和限界（同一次绘制中重叠的标注错开一行，文字不伸出画布），见 specs/reviews/canvas-text-survey-20261109.md。修后 `tests/canvas-text-overlap.cjs --sweep` 通过。

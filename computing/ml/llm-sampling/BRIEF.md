@@ -57,3 +57,5 @@
 
 ## Simulation versus reality / model mismatch
 Scores are hand-set; the step-4 model is first order. Real LLMs have large vocabularies, use full context, and add repetition penalties, min-p, beam search etc. Temperature and truncation do not improve truthfulness. Sampling uses fixed pseudo-random seeds. Not validated by a human learner walk-through.
+
+- 2026-11-09 canvas 文字修复（Claude Code，self-check）：页面加载 [`canvas-label-guard.js`](../../../canvas-label-guard.js)（说明见 specs/canvas-label-guard.md），重叠的画布标注会错开、文字不伸出画布。修后 `tests/canvas-text-overlap.cjs --sweep` 结果见 specs/reviews/canvas-text-survey-20261109.md。

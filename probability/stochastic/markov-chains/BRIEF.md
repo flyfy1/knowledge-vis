@@ -16,3 +16,5 @@ State, transition matrix, memoryless (0); stationary distribution (3); eigenvalu
 
 ## Simulation vs reality
 Seeded simulation; finite first-order chains only; convergence needs irreducible and aperiodic (a=b=1 oscillates); the 3-state matrix is a made-up teaching example, not climate data.
+
+- 2026-11-09 canvas 文字修复（Claude Code，self-check）：共用的 `text()` 加了标注避让和限界（同一次绘制中重叠的标注错开一行，文字不伸出画布），见 specs/reviews/canvas-text-survey-20261109.md。修后 `tests/canvas-text-overlap.cjs --sweep` 通过。

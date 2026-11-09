@@ -15,3 +15,5 @@
 
 ## 模拟设定 / 模型失配
 理想连续钟，不含秒针影响；真实钟可能按格跳动。所有读数由 hourAngle/minuteAngle/crossings 等纯函数计算。
+
+- 2026-11-09 canvas 文字修复（Claude Code，self-check）：共用的 `text()` 加了标注避让和限界（同一次绘制中重叠的标注错开一行，文字不伸出画布），见 specs/reviews/canvas-text-survey-20261109.md。修后 `tests/canvas-text-overlap.cjs --sweep` 通过。

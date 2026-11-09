@@ -12,11 +12,30 @@ function setup(c) {
   if (c.width !== bw) c.width = bw;
   if (c.height !== bh) c.height = bh;
   const ctx = c.getContext('2d');
-  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0); c._dpr = dpr; c._labels = [];
   ctx.clearRect(0, 0, w, h);
   return { ctx, w, h, wide: w >= 560 };
 }
-function text(ctx, s, x, y, o) { o = o || {}; ctx.fillStyle = o.color || COL.muted; ctx.font = (o.bold ? '600 ' : '') + (o.size || 13) + 'px system-ui,sans-serif'; ctx.textAlign = o.align || 'left'; ctx.textBaseline = o.base || 'alphabetic'; ctx.fillText(s, x, y); }
+// Canvas labels (2026-11-09 canvas text survey): within one drawing pass a label that would overlap one already
+// drawn on the same canvas moves a line down or up, and every label is kept inside the canvas. o.mw caps the width
+// (fillText maxWidth); o.free draws exactly at (x, y). Rotated or scaled text is drawn as given.
+let labelTurn = 0, labelTick = false;
+function text(ctx, s, x, y, o) {
+  o = o || {}; ctx.fillStyle = o.color || COL.muted; ctx.font = (o.bold ? '600 ' : '') + (o.size || 13) + 'px system-ui,sans-serif'; ctx.textAlign = o.align || 'left'; ctx.textBaseline = o.base || 'alphabetic';
+  const c = ctx.canvas, T = ctx.getTransform(), d = c._dpr || 1;
+  if (!o.free && String(s).trim() && T.b === 0 && T.c === 0 && Math.abs(T.a - d) < 1e-6 && Math.abs(T.d - d) < 1e-6) {
+    if (!labelTick) { labelTick = true; queueMicrotask(() => { labelTurn++; labelTick = false; }); }
+    if (c._labelTurn !== labelTurn) { c._labelTurn = labelTurn; c._labels = []; }
+    const m = ctx.measureText(s), sq = o.mw && m.width > o.mw ? o.mw / m.width : 1, W = c.width / d, H = c.height / d, ox = T.e / d, oy = T.f / d;
+    const b = { l: x - m.actualBoundingBoxLeft * sq + ox, r: x + m.actualBoundingBoxRight * sq + ox, t: y - m.actualBoundingBoxAscent + oy, b: y + m.actualBoundingBoxDescent + oy };
+    const dx = b.l < 2 ? 2 - b.l : b.r > W - 2 ? Math.max(2 - b.l, W - 2 - b.r) : 0, dy = b.t < 2 ? 2 - b.t : b.b > H - 2 ? Math.max(2 - b.t, H - 2 - b.b) : 0;
+    x += dx; y += dy; b.l += dx; b.r += dx; b.t += dy; b.b += dy;
+    const lh = b.b - b.t + 3, hit = (q, e) => q.s !== s || Math.abs(q.l - b.l) > 1 || Math.abs(q.t - b.t) > 1 ? Math.min(q.r, b.r) - Math.max(q.l, b.l) > 2 && Math.min(q.b, b.b + e) - Math.max(q.t, b.t + e) > 2 : false;
+    const e = [0, lh, -lh, 2 * lh, -2 * lh, 3 * lh, -3 * lh].find(e => b.t + e >= 2 && b.b + e <= H - 2 && !c._labels.some(q => hit(q, e))) || 0;
+    y += e; c._labels.push({ s, l: b.l, r: b.r, t: b.t + e, b: b.b + e });
+  }
+  if (o.mw) ctx.fillText(s, x, y, o.mw); else ctx.fillText(s, x, y);
+}
 function line(ctx, x1, y1, x2, y2, col, lw, dash) { ctx.strokeStyle = col; ctx.lineWidth = lw || 1; ctx.setLineDash(dash || []); ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2, y2); ctx.stroke(); ctx.setLineDash([]); }
 function dot(ctx, x, y, r, col) { ctx.fillStyle = col; ctx.beginPath(); ctx.arc(x, y, r, 0, 6.2832); ctx.fill(); }
 function slider(id, fn) { const e = $(id); e.addEventListener('input', () => { fn(+e.value); const o = $(id + 'v'); if (o) o.textContent = e.value; }); }
@@ -35,17 +54,30 @@ const bondCoupon = (P, cp) => P * cp / 100;
 const waterfall = a => ({ lenders: Math.min(a, 1000), holders: Math.max(0, a - 1000) });
 const toyPrice = (buyers, sellers) => Math.max(10, Math.round(100 * (1 + (buyers - sellers) / 200)));
 const S = { mode: 'stock', sh1: 10, pr1: 10, cp2: 5, yr2: 5, as3: 1200, by4: 60, se4: 40 };
+// Split s into lines no wider than maxW (words for Latin text, characters for CJK).
+function wrapLines(ctx, s, maxW) {
+  const tokens = s.match(/[\u3000-\u9fff\uff00-\uffef][，。、：；）]?|[^\s\u3000-\u9fff\uff00-\uffef]+\s*|\s+/g) || [s], out = [];
+  let cur = '';
+  tokens.forEach(tk => { if (cur && ctx.measureText(cur + tk).width > maxW) { out.push(cur.trimEnd()); cur = tk.trimStart(); } else cur += tk; });
+  if (cur.trim()) out.push(cur.trimEnd());
+  return out;
+}
 function card(ctx, x, y, w, h, title, rows, active, col) {
   ctx.strokeStyle = active ? col : COL.grid; ctx.lineWidth = active ? 3 : 1.5;
   ctx.strokeRect(x, y, w, h);
   text(ctx, title, x + 12, y + 24, { bold: true, size: 14, color: active ? col : COL.muted });
-  rows.forEach((r, i) => text(ctx, r, x + 12, y + 48 + i * 20, { size: 12 }));
+  // Rows wrap inside the card: unwrapped they ran into the neighbouring card on phones.
+  ctx.font = '12px system-ui,sans-serif'; let yy = y + 46;
+  rows.forEach(r => { wrapLines(ctx, r, w - 24).forEach(l => { text(ctx, l, x + 12, yy, { size: 12 }); yy += 16; }); yy += 4; });
+}
+// Two cards side by side on wide canvases, stacked on narrow ones.
+function twoCards(ctx, w, h, m, a, b) {
+  if (w >= 520) { const bw = (w - 48) / 2; card(ctx, 16, m, bw, h - 2 * m, ...a); card(ctx, 32 + bw, m, bw, h - 2 * m, ...b); }
+  else { const bh = (h - 2 * m - 12) / 2; card(ctx, 16, m, w - 32, bh, ...a); card(ctx, 16, m + bh + 12, w - 32, bh, ...b); }
 }
 function render0() {
   const { ctx, w, h } = setup($('cv0'));
-  const bw = (w - 48) / 2;
-  card(ctx, 16, 20, bw, h - 40, t('lblStockId'), [t('btnStock'), '100 ' + t('lblShares') + ' x 10 = 1000'], S.mode === 'stock', COL.cyan);
-  card(ctx, 32 + bw, 20, bw, h - 40, t('lblBondId'), [t('btnBond'), '1000 + ' + t('lblCoupon')], S.mode === 'bond', COL.orange);
+  twoCards(ctx, w, h, 20, [t('lblStockId'), [t('btnStock'), '100 ' + t('lblShares') + ' x 10 = 1000'], S.mode === 'stock', COL.cyan], [t('lblBondId'), [t('btnBond'), '1000 + ' + t('lblCoupon')], S.mode === 'bond', COL.orange]);
   $('b0stock').classList.toggle('active', S.mode === 'stock');
   $('b0bond').classList.toggle('active', S.mode === 'bond');
   $('ro0').textContent = S.mode === 'stock' ? t('s0roStock') : t('s0roBond');
@@ -57,7 +89,9 @@ function render1() {
   ctx.fillStyle = COL.cyan; ctx.fillRect(L.x, L.y, sw, 56);
   ctx.fillStyle = '#2b6a85'; ctx.fillRect(L.x + sw, L.y, L.w - sw, 56);
   text(ctx, t('lblYourSlice') + ' ' + S.sh1 + '%', L.x + 6, L.y + 76, { size: 12, color: COL.cyan });
-  text(ctx, t('lblRest'), L.x + sw + 6, L.y + 76, { size: 12 });
+  // "Other shareholders" sits at the right end of its part; it moves above the bar when the two names would meet.
+  ctx.font = '12px system-ui,sans-serif'; const restUp = L.x + 6 + ctx.measureText(t('lblYourSlice') + ' ' + S.sh1 + '%').width + 12 > L.x + L.w - 6 - ctx.measureText(t('lblRest')).width;
+  text(ctx, t('lblRest'), L.x + L.w - 6, restUp ? L.y - 8 : L.y + 76, { size: 12, align: 'right' });
   $('ro1').textContent = t('s1ro', { sh: S.sh1, pct: S.sh1, div: money(S.sh1 * 5), pr: S.pr1, val: money(S.sh1 * S.pr1) });
 }
 function render2() {
@@ -86,7 +120,9 @@ function render3() {
   line(ctx, X(1000), L.y - 10, X(1000), L.y + L.h + 10, COL.ink, 1.5, [4, 3]);
   text(ctx, t('lblClaim'), X(1000), L.y - 14, { align: 'center', size: 11, color: COL.ink });
   text(ctx, t('lblLenders') + ' ' + money(f.lenders), L.x + 6, L.y + L.h + 20, { size: 12, color: COL.cyan });
-  text(ctx, t('lblHolders') + ' ' + money(f.holders), X(f.lenders) + 6, L.y + L.h + 20, { size: 12, color: COL.orange });
+  // Shareholders' amount starts where their part starts, but never on top of the lenders' amount.
+  ctx.font = '12px system-ui,sans-serif'; const hx = Math.max(X(f.lenders) + 6, L.x + 6 + ctx.measureText(t('lblLenders') + ' ' + money(f.lenders)).width + 14);
+  text(ctx, t('lblHolders') + ' ' + money(f.holders), Math.min(hx, L.x + L.w - ctx.measureText(t('lblHolders') + ' ' + money(f.holders)).width), L.y + L.h + 20, { size: 12, color: COL.orange });
   const msg = a === 0 ? t('s3msgZero') : (a >= 1000 ? t('s3msgFull') : t('s3msgPart'));
   $('ro3').textContent = t('s3ro', { a: money(a), b: money(f.lenders), s: money(f.holders), msg: msg });
 }
@@ -107,9 +143,7 @@ function render4() {
 }
 function render5() {
   const { ctx, w, h } = setup($('cv5'));
-  const bw = (w - 48) / 2;
-  card(ctx, 16, 16, bw, h - 32, t('lblStockId'), [t('lblIdentity') + ': ' + t('lblStockId'), t('lblOrder') + ': ' + t('lblStockOrder'), t('lblReturn') + ': ' + t('lblStockRet')], true, COL.cyan);
-  card(ctx, 32 + bw, 16, bw, h - 32, t('lblBondId'), [t('lblIdentity') + ': ' + t('lblBondId'), t('lblOrder') + ': ' + t('lblBondOrder'), t('lblReturn') + ': ' + t('lblBondRet')], true, COL.orange);
+  twoCards(ctx, w, h, 16, [t('lblStockId'), [t('lblIdentity') + ': ' + t('lblStockId'), t('lblOrder') + ': ' + t('lblStockOrder'), t('lblReturn') + ': ' + t('lblStockRet')], true, COL.cyan], [t('lblBondId'), [t('lblIdentity') + ': ' + t('lblBondId'), t('lblOrder') + ': ' + t('lblBondOrder'), t('lblReturn') + ': ' + t('lblBondRet')], true, COL.orange]);
 }
 function wire() {
   $('b0stock').addEventListener('click', () => { S.mode = 'stock'; render0(); });

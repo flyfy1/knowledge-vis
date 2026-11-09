@@ -57,3 +57,5 @@
 
 ## Simulation versus reality / model mismatch
 8-node toy graph with no dangling pages (the code spreads dangling mass evenly, untested by the graph), uniform teleport, one fixed seed for the surfer. Real search ranking uses many signals and the web graph is huge and adversarial. Not validated by a human learner walk-through.
+
+- 2026-11-09 canvas 文字修复（Claude Code，self-check）：页面加载 [`canvas-label-guard.js`](../../../canvas-label-guard.js)（说明见 specs/canvas-label-guard.md），重叠的画布标注会错开、文字不伸出画布。修后 `tests/canvas-text-overlap.cjs --sweep` 结果见 specs/reviews/canvas-text-survey-20261109.md。

@@ -29,3 +29,5 @@
 
 ## 模拟与现实、模型失配
 虚构的 8 种生物；第 2 步为线性 LV 玩具模型（EFF=0.5，参数在 `page.js` 常量中），只表趋势；能量效率、危险线、倍数均教学数字；无分解者、杂食、竞争、疾病。
+
+- 2026-11-09 canvas 文字修复（Claude Code，self-check）：页面加载 [`canvas-label-guard.js`](../../../canvas-label-guard.js)（说明见 specs/canvas-label-guard.md），重叠的画布标注会错开、文字不伸出画布。修后 `tests/canvas-text-overlap.cjs --sweep` 结果见 specs/reviews/canvas-text-survey-20261109.md。

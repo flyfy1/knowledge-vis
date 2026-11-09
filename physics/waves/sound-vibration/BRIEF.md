@@ -15,3 +15,5 @@
 
 ## 模拟设定 / 模型失配
 鼓面为示意衰减简谐运动；响度只含强度与分贝，不含人耳频率响应；真空阈值示意；声速取 343 m/s（20 ℃ 左右，随温度变）；水、钢速度为典型值。
+
+- 2026-11-09 canvas 文字修复（Claude Code，self-check）：共用的 `text()` 加了标注避让和限界（同一次绘制中重叠的标注错开一行，文字不伸出画布），见 specs/reviews/canvas-text-survey-20261109.md。修后 `tests/canvas-text-overlap.cjs --sweep` 通过。

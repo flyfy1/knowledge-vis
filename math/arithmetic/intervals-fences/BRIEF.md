@@ -15,3 +15,5 @@
 
 ## 模拟设定 / 模型失配
 树是无宽度的点、间隔相等、路直（环形为整圆）；不整除时不适用；楼梯每段时间相同是假设（真实上楼速度不恒定）。棵数全部由位置列表计数，不是写死。
+
+- 2026-11-09 canvas 文字修复（Claude Code，self-check）：共用的 `text()` 加了标注避让和限界（同一次绘制中重叠的标注错开一行，文字不伸出画布），见 specs/reviews/canvas-text-survey-20261109.md。修后 `tests/canvas-text-overlap.cjs --sweep` 通过。

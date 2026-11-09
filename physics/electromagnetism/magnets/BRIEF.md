@@ -15,3 +15,5 @@
 
 ## 模拟设定 / 模型失配
 磁铁简化为两端点磁极、平方反比律，真实磁铁近处更复杂；磁感线是画法而非实物；力与场用相对值（Q=1，长度单位厘米）。铁屑图样是由该模型计算出的方向小线段，不是物理实拍。
+
+- 2026-11-09 canvas 文字修复（Claude Code，self-check）：共用的 `text()` 加了标注避让和限界（同一次绘制中重叠的标注错开一行，文字不伸出画布），见 specs/reviews/canvas-text-survey-20261109.md。修后 `tests/canvas-text-overlap.cjs --sweep` 通过。

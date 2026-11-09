@@ -16,3 +16,5 @@ Principal, simple/compound interest (0); compounding frequency, continuous compo
 
 ## Simulation vs reality
 Fixed nominal rates, no inflation, tax or fees; amounts in generic units; loan model ignores prepayment and variable rates; not financial advice.
+
+- 2026-11-09 canvas 文字修复（Claude Code，self-check）：共用的 `text()` 加了标注避让和限界（同一次绘制中重叠的标注错开一行，文字不伸出画布），见 specs/reviews/canvas-text-survey-20261109.md。修后 `tests/canvas-text-overlap.cjs --sweep` 通过。

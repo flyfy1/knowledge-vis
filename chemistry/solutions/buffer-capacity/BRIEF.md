@@ -19,3 +19,5 @@
 - `window.BUFFER_CAPACITY` 暴露 `pHFromRatio`、`bufferState`、`waterPH`、`titrationSamples`、`capacityResponse`。
 - `bufferState` 先按化学计量中和，超出 HA 或 A⁻ 库存才把强酸/强碱视为 excess，并把 pH 推到相应端点。
 - 可视化图表和读数都由这些纯函数的结果渲染，随机或动画不是定量来源。
+
+- 2026-11-09 canvas 文字修复（Claude Code，self-check）：页面加载 [`canvas-label-guard.js`](../../../canvas-label-guard.js)（说明见 specs/canvas-label-guard.md），重叠的画布标注会错开、文字不伸出画布。修后 `tests/canvas-text-overlap.cjs --sweep` 结果见 specs/reviews/canvas-text-survey-20261109.md。

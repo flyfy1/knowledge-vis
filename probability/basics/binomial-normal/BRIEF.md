@@ -16,3 +16,5 @@ Pascal's triangle / C(n,k) (0), Galton board, Bernoulli trial (1), mean, varianc
 
 ## Simulation vs reality
 Fixed-seed pseudo-random balls, idealised pegs; normal approximation is an approximation (relative error grows in far tails); the error curve measures pmf versus density at integers, not CDF error.
+
+- 2026-11-09 canvas 文字修复（Claude Code，self-check）：共用的 `text()` 加了标注避让和限界（同一次绘制中重叠的标注错开一行，文字不伸出画布），见 specs/reviews/canvas-text-survey-20261109.md。修后 `tests/canvas-text-overlap.cjs --sweep` 通过。

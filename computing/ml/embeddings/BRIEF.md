@@ -56,3 +56,6 @@
 
 ## Simulation versus reality / model mismatch
 Hand-set 5-D features are interpretable by design; real embeddings are learned, hundreds of dimensions, not interpretable per axis, analogies often fail, and they inherit corpus bias. Step 4 uses raw counts on a 14-sentence synthetic corpus (windows > 2 change nothing because sentences have 3 words). No instrument or real-corpus measurement. Not validated by a human learner walk-through.
+
+- 2026-11-09 canvas 文字修复（Claude Code，self-check）：页面加载 [`canvas-label-guard.js`](../../../canvas-label-guard.js)（说明见 specs/canvas-label-guard.md），重叠的画布标注会错开、文字不伸出画布。修后 `tests/canvas-text-overlap.cjs --sweep` 结果见 specs/reviews/canvas-text-survey-20261109.md。
+- 同日补充：第 4 步共现矩阵的列名在窄屏下改为竖排，避免斜排时相邻列名重叠。

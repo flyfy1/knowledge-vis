@@ -6,3 +6,5 @@
 - 数字：全部虚构示例（小店、100 份、票息示例）；无真实公司、行情与票据。
 - 桥接：supply-demand（价格机制）、compound-interest（利息与时间）。
 - 许可：定义本站原创；Investor.gov 仅术语对照（译文标注译自 Investor.gov，不代表 SEC 认可）；OpenStax / Saylor / Khan 原文零引用；Wikidata 仅结构化数据。
+
+- 2026-11-09 canvas 文字修复（Claude Code，self-check）：共用的 `text()` 加了标注避让和限界（同一次绘制中重叠的标注错开一行，文字不伸出画布），见 specs/reviews/canvas-text-survey-20261109.md。第 0、5 步卡片内文字换行，窄屏改为上下排列；第 1、3 步金额标注避让。修后 `tests/canvas-text-overlap.cjs --sweep` 通过。

@@ -63,6 +63,7 @@ PROVENANCE_BASE_URL=http://127.0.0.1:18871 node tests/page-provenance-browser.cj
   - 点遍复选框、单选按钮和普通按钮。
 
   很多重叠只在某些参数组合下才出现。它报告文字框相交和文字伸出画布，但看不出文字压在线条上，最后仍要看截图。
+- 新页面的画布标注要自己排好版。[`canvas-label-guard.js`](canvas-label-guard.js) 只是老页面的补救手段，见 [specs/canvas-label-guard.md](specs/canvas-label-guard.md)。
 
 ## 工作区卫生
 

@@ -16,3 +16,5 @@ Inverse-square law (0), circular speed, escape speed, eccentricity (1), effectiv
 
 ## Simulation vs reality
 Two-body Newtonian with a point mass, no drag; numerical integration errors small but nonzero; GM_E = 3.986×10¹⁴ m³/s² and R_E = 6371 km are standard values; the Moon altitude uses 384,400 km centre-to-centre minus R_E.
+
+- 2026-11-09 canvas 文字修复（Claude Code，self-check）：共用的 `text()` 加了标注避让和限界（同一次绘制中重叠的标注错开一行，文字不伸出画布），见 specs/reviews/canvas-text-survey-20261109.md。修后 `tests/canvas-text-overlap.cjs --sweep` 通过。

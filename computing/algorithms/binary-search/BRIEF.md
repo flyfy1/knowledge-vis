@@ -20,3 +20,6 @@
 - `node tests/core.cjs`
 - `node --check app.js`
 - `node --check i18n.js`
+
+- 2026-11-09 canvas 文字修复（Claude Code，self-check）：页面加载 [`canvas-label-guard.js`](../../../canvas-label-guard.js)（说明见 specs/canvas-label-guard.md），重叠的画布标注会错开、文字不伸出画布。修后 `tests/canvas-text-overlap.cjs --sweep` 结果见 specs/reviews/canvas-text-survey-20261109.md。
+- 同日补充：窄屏下第 1 步的 31 个数组格原来会排到画布外，现在放不下时分多行排列，下标行改为只显示数字，当前 mid 格的下标位置显示 mid。

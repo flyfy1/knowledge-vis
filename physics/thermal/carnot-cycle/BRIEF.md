@@ -16,3 +16,5 @@ Isothermal, adiabatic (2), ∫P dV (0), Q_h/Q_c (2), efficiency (3–4), second-
 
 ## Simulation vs reality
 Ideal gas, reversible, infinitely slow cycle; nR = 1 J/K for readable numbers (multiply by n·8.31 for moles); the strip sum is a numerical check, not a measurement; real engines are irreversible.
+
+- 2026-11-09 canvas 文字修复（Claude Code，self-check）：共用的 `text()` 加了标注避让和限界（同一次绘制中重叠的标注错开一行，文字不伸出画布），见 specs/reviews/canvas-text-survey-20261109.md。修后 `tests/canvas-text-overlap.cjs --sweep` 通过。

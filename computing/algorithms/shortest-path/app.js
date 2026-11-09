@@ -12,11 +12,30 @@ function setup(c) {
   if (c.width !== bw) c.width = bw;
   if (c.height !== bh) c.height = bh;
   const ctx = c.getContext('2d');
-  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0); c._dpr = dpr; c._labels = [];
   ctx.clearRect(0, 0, w, h);
   return { ctx, w, h, wide: w >= 560 };
 }
-function text(ctx, s, x, y, o) { o = o || {}; ctx.fillStyle = o.color || COL.muted; ctx.font = (o.bold ? '600 ' : '') + (o.size || 13) + 'px system-ui,sans-serif'; ctx.textAlign = o.align || 'left'; ctx.textBaseline = o.base || 'alphabetic'; ctx.fillText(s, x, y); }
+// Canvas labels (2026-11-09 canvas text survey): within one drawing pass a label that would overlap one already
+// drawn on the same canvas moves a line down or up, and every label is kept inside the canvas. o.mw caps the width
+// (fillText maxWidth); o.free draws exactly at (x, y). Rotated or scaled text is drawn as given.
+let labelTurn = 0, labelTick = false;
+function text(ctx, s, x, y, o) {
+  o = o || {}; ctx.fillStyle = o.color || COL.muted; ctx.font = (o.bold ? '600 ' : '') + (o.size || 13) + 'px system-ui,sans-serif'; ctx.textAlign = o.align || 'left'; ctx.textBaseline = o.base || 'alphabetic';
+  const c = ctx.canvas, T = ctx.getTransform(), d = c._dpr || 1;
+  if (!o.free && String(s).trim() && T.b === 0 && T.c === 0 && Math.abs(T.a - d) < 1e-6 && Math.abs(T.d - d) < 1e-6) {
+    if (!labelTick) { labelTick = true; queueMicrotask(() => { labelTurn++; labelTick = false; }); }
+    if (c._labelTurn !== labelTurn) { c._labelTurn = labelTurn; c._labels = []; }
+    const m = ctx.measureText(s), sq = o.mw && m.width > o.mw ? o.mw / m.width : 1, W = c.width / d, H = c.height / d, ox = T.e / d, oy = T.f / d;
+    const b = { l: x - m.actualBoundingBoxLeft * sq + ox, r: x + m.actualBoundingBoxRight * sq + ox, t: y - m.actualBoundingBoxAscent + oy, b: y + m.actualBoundingBoxDescent + oy };
+    const dx = b.l < 2 ? 2 - b.l : b.r > W - 2 ? Math.max(2 - b.l, W - 2 - b.r) : 0, dy = b.t < 2 ? 2 - b.t : b.b > H - 2 ? Math.max(2 - b.t, H - 2 - b.b) : 0;
+    x += dx; y += dy; b.l += dx; b.r += dx; b.t += dy; b.b += dy;
+    const lh = b.b - b.t + 3, hit = (q, e) => q.s !== s || Math.abs(q.l - b.l) > 1 || Math.abs(q.t - b.t) > 1 ? Math.min(q.r, b.r) - Math.max(q.l, b.l) > 2 && Math.min(q.b, b.b + e) - Math.max(q.t, b.t + e) > 2 : false;
+    const e = [0, lh, -lh, 2 * lh, -2 * lh, 3 * lh, -3 * lh].find(e => b.t + e >= 2 && b.b + e <= H - 2 && !c._labels.some(q => hit(q, e))) || 0;
+    y += e; c._labels.push({ s, l: b.l, r: b.r, t: b.t + e, b: b.b + e });
+  }
+  if (o.mw) ctx.fillText(s, x, y, o.mw); else ctx.fillText(s, x, y);
+}
 function line(ctx, x1, y1, x2, y2, col, lw, dash) { ctx.strokeStyle = col; ctx.lineWidth = lw || 1; ctx.setLineDash(dash || []); ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2, y2); ctx.stroke(); ctx.setLineDash([]); }
 function dot(ctx, x, y, r, col) { ctx.fillStyle = col; ctx.beginPath(); ctx.arc(x, y, r, 0, 6.2832); ctx.fill(); }
 function slider(id, fn) { const e = $(id); e.addEventListener('input', () => { fn(+e.value); const o = $(id + 'v'); if (o) o.textContent = e.value; }); }
@@ -57,7 +76,7 @@ function render2() { const { ctx, w, h } = setup($('cv2')), wv = S.w2, edges = N
   $('w2v').textContent = wv; $('ro2').textContent = t('s2ro', { w: wv, dj: f1(dj.C), bf: f1(bf.C), verdict: t(wrong ? 'vWrong' : 'vRight'), crit: -1 }); }
 function drawGrid(ctx, w, h, res, costs, useA) { const cw = Math.min((w - 20) / GW, (h - 40) / GH), ox = (w - cw * GW) / 2, oy = 14, maxd = Math.max(...res.dist.filter(v => v < Infinity), 1); for (let y = 0; y < GH; y++) for (let x = 0; x < GW; x++) { const c = costs[y][x], i = y * GW + x; if (c === 0) { ctx.fillStyle = '#05080c'; } else if (res.done[i]) { const f = Math.min(1, res.dist[i] / maxd); ctx.fillStyle = 'rgba(103,215,249,' + (0.18 + 0.55 * (1 - f)) + ')'; } else ctx.fillStyle = c > 1 ? 'rgba(150,100,60,' + (0.15 + 0.07 * Math.min(c, 9)) + ')' : '#101d2a'; ctx.fillRect(ox + x * cw + 1, oy + y * cw + 1, cw - 2, cw - 2); if (c > 1 && !res.done[i]) text(ctx, String(c), ox + x * cw + cw / 2, oy + y * cw + cw / 2 + 4, { align: 'center', size: Math.min(11, cw * 0.4), color: COL.muted }); }
   ctx.strokeStyle = COL.orange; ctx.lineWidth = 3; ctx.beginPath(); res.path.forEach((n, i) => { const px = ox + (n % GW) * cw + cw / 2, py = oy + Math.floor(n / GW) * cw + cw / 2; i ? ctx.lineTo(px, py) : ctx.moveTo(px, py); }); ctx.stroke(); [[SRC, COL.green, 'S'], [DST, COL.red, 'T']].forEach(([p, col, lab]) => { dot(ctx, ox + p[0] * cw + cw / 2, oy + p[1] * cw + cw / 2, cw * 0.32, col); text(ctx, lab, ox + p[0] * cw + cw / 2, oy + p[1] * cw + cw / 2 + 4, { align: 'center', size: 11, color: '#0a0e14', bold: true }); }); }
-function render3() { const { ctx, w, h } = setup($('cv3')), costs = gridCosts(S.mud3), res = gridSearch(costs, SRC, DST, false), base = gridSearch(gridCosts(1), SRC, DST, false); drawGrid(ctx, w, h, res, costs, false); text(ctx, t('legGrid'), 10, h - 6, { size: 11, color: COL.muted }); $('mud3v').textContent = S.mud3; $('mud4v').textContent = S.mud3; const through = res.path.some(n => costs[Math.floor(n / GW)][n % GW] > 1);
+function render3() { const { ctx, w, h } = setup($('cv3')), costs = gridCosts(S.mud3), res = gridSearch(costs, SRC, DST, false), base = gridSearch(gridCosts(1), SRC, DST, false); drawGrid(ctx, w, h, res, costs, false); $('mud3v').textContent = S.mud3; $('mud4v').textContent = S.mud3; const through = res.path.some(n => costs[Math.floor(n / GW)][n % GW] > 1);
   $('ro3').textContent = t('s3ro', { m: S.mud3, cost: res.cost, len: res.path.length - 1, mudCells: res.path.filter(n => costs[Math.floor(n / GW)][n % GW] > 1).length, free: base.cost, kind: t(through ? 'throughMud' : 'aroundMud') }); }
 function render4() { const { ctx, w, h } = setup($('cv4')), costs = gridCosts(S.mud3), dj = gridSearch(costs, SRC, DST, false), as = gridSearch(costs, SRC, DST, true), res = S.a4 ? as : dj; drawGrid(ctx, w, h, res, costs, S.a4); $('a4d').classList.toggle('active', !S.a4); $('a4a').classList.toggle('active', S.a4); text(ctx, t(S.a4 ? 'nameA' : 'nameD') + ': ' + t('explored', { n: res.settled }), 10, h - 6, { size: 12, color: COL.orange });
   $('ro4').textContent = t('s4ro', { algo: t(S.a4 ? 'nameA' : 'nameD'), n: res.settled, nd: dj.settled, na: as.settled, cd: dj.cost, ca: as.cost, same: t(dj.cost === as.cost ? 'yes' : 'no'), tot: GW * GH }); }

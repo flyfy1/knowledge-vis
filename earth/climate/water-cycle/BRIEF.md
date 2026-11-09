@@ -15,3 +15,5 @@
 
 ## 模拟设定 / 模型失配
 三水库箱式模型，速率常数（ke20=0.004/天、kp=0.11/天、φ=0.3、kr=0.05/天）为教学示意，非观测；忽略冰雪、蒸腾、深层地下水；云底公式只对上升的未饱和空气。
+
+- 2026-11-09 canvas 文字修复（Claude Code，self-check）：共用的 `text()` 加了标注避让和限界（同一次绘制中重叠的标注错开一行，文字不伸出画布），见 specs/reviews/canvas-text-survey-20261109.md。修后 `tests/canvas-text-overlap.cjs --sweep` 通过。

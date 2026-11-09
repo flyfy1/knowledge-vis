@@ -28,3 +28,5 @@
 ## 注册建议（Alberto 执行）
 - title zh「种群增长 · S 形曲线从哪来」/ en "Population Growth · Where the S-Curve Comes From"；tags：指数增长 / Exponential Growth、逻辑斯蒂 / Logistic、容纳量 K / Carrying Capacity；category math，stage senior。
 - CONCEPT-MAP 拟行：#step2 逻辑斯蒂与 K、#step3 K 是吸引子。
+
+- 2026-11-09 canvas 文字修复（Claude Code，self-check）：页面加载 [`canvas-label-guard.js`](../../../canvas-label-guard.js)（说明见 specs/canvas-label-guard.md），重叠的画布标注会错开、文字不伸出画布。修后 `tests/canvas-text-overlap.cjs --sweep` 结果见 specs/reviews/canvas-text-survey-20261109.md。

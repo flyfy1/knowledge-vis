@@ -57,3 +57,5 @@
 
 ## Simulation versus reality / model mismatch
 Exact counts come from the code running on the page; time conversion assumes 10^9 steps/s. No discussion of stack overflow, tail calls, cache effects or the master theorem. Not validated by a human learner walk-through.
+
+- 2026-11-09 canvas 文字修复（Claude Code，self-check）：页面加载 [`canvas-label-guard.js`](../../../canvas-label-guard.js)（说明见 specs/canvas-label-guard.md），重叠的画布标注会错开、文字不伸出画布。修后 `tests/canvas-text-overlap.cjs --sweep` 结果见 specs/reviews/canvas-text-survey-20261109.md。

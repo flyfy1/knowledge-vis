@@ -29,3 +29,5 @@
 ## 交付
 - 自查：node --check、键集比对、账本断言（随机 5 组 被除数/除数：商与余数满足验算式且余数<除数，用页面自身逻辑跑）。
 - 报告 ~/workspace/division-remainder-lab/build-report.md（构建者把 lab 目录建在 workspace 下，slug 名 division-remainder-lab）。
+
+- 2026-11-09 canvas 文字修复（Claude Code，self-check）：页面加载 [`canvas-label-guard.js`](../../../canvas-label-guard.js)（说明见 specs/canvas-label-guard.md），重叠的画布标注会错开、文字不伸出画布。修后 `tests/canvas-text-overlap.cjs --sweep` 结果见 specs/reviews/canvas-text-survey-20261109.md。

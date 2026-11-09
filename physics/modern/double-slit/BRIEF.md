@@ -16,3 +16,5 @@ Fringe spacing (0), sinc² envelope (1), probability distribution of hits (2), v
 
 ## Simulation vs reality
 Idealised coherent far-field model; V²+D² = 1 only in the ideal case; electron and molecule speeds are representative; no claims about the nature of measurement.
+
+- 2026-11-09 canvas 文字修复（Claude Code，self-check）：共用的 `text()` 加了标注避让和限界（同一次绘制中重叠的标注错开一行，文字不伸出画布），见 specs/reviews/canvas-text-survey-20261109.md。修后 `tests/canvas-text-overlap.cjs --sweep` 通过。

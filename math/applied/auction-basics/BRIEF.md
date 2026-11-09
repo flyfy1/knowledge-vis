@@ -16,3 +16,5 @@ Private value, bid, first-price, bid shading (0); second-price/Vickrey, dominant
 
 ## Simulation vs reality
 Single item, independent uniform values, symmetric risk-neutral bidders; no budgets, collusion, reserves or risk aversion; Dutch/English results follow from the theory rather than a simulated clock with strategic bidders; winner's-curse noise is uniform and the mean uses a fixed seed.
+
+- 2026-11-09 canvas 文字修复（Claude Code，self-check）：共用的 `text()` 加了标注避让和限界（同一次绘制中重叠的标注错开一行，文字不伸出画布），见 specs/reviews/canvas-text-survey-20261109.md。修后 `tests/canvas-text-overlap.cjs --sweep` 通过。

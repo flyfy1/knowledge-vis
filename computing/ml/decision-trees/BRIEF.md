@@ -58,3 +58,5 @@
 
 ## Simulation versus reality / model mismatch
 Artificial 2-D data with a two-rectangle true rule; the 8% label noise is injected. Real trees handle many features, categorical splits, missing data, pruning and cross-validation, and are often used in ensembles. Accuracy comparisons are for this fixed data only. Not validated by a human learner walk-through.
+
+- 2026-11-09 canvas 文字修复（Claude Code，self-check）：页面加载 [`canvas-label-guard.js`](../../../canvas-label-guard.js)（说明见 specs/canvas-label-guard.md），重叠的画布标注会错开、文字不伸出画布。修后 `tests/canvas-text-overlap.cjs --sweep` 结果见 specs/reviews/canvas-text-survey-20261109.md。

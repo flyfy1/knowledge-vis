@@ -15,3 +15,5 @@
 
 ## 模拟设定 / 模型失配
 轨道为圆、光平行、大小距离不按比例（步 3 距离按比例）；北半球视角；日月食判据为粗略几何阈值（真实还含本影半径与距离变化）；交点概念只给判据不推导。
+
+- 2026-11-09 canvas 文字修复（Claude Code，self-check）：共用的 `text()` 加了标注避让和限界（同一次绘制中重叠的标注错开一行，文字不伸出画布），见 specs/reviews/canvas-text-survey-20261109.md。修后 `tests/canvas-text-overlap.cjs --sweep` 通过。

@@ -16,3 +16,5 @@ Externality, social cost (1), deadweight loss (2), Pigouvian tax (3), commons, C
 
 ## Simulation vs reality
 Constant marginal damage, linear curves, symmetric players, no strategic regulator; midpoint bargaining is one of many splits; real damages are uncertain.
+
+- 2026-11-09 canvas 文字修复（Claude Code，self-check）：共用的 `text()` 加了标注避让和限界（同一次绘制中重叠的标注错开一行，文字不伸出画布），见 specs/reviews/canvas-text-survey-20261109.md。另外第 4 步的利润曲线裁到上半图内（原来画进了下面的子图），「均衡」标注在最优点附近时改到点下方。修后 `tests/canvas-text-overlap.cjs --sweep` 通过。

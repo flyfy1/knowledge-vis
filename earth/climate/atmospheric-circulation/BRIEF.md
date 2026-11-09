@@ -16,3 +16,5 @@ Beam spread (0), convection loop (1), Coriolis deflection and f (2), Hadley, Fer
 
 ## Simulation vs reality
 No continents, no moisture or latent heat, no jet streams; the 1/cos spread and cos φ heating ignore axial tilt; the toy loop speed and sinusoidal monsoon difference are teaching devices, not data; the wetness index is a cosine, not rainfall.
+
+- 2026-11-09 canvas 文字修复（Claude Code，self-check）：共用的 `text()` 加了标注避让和限界（同一次绘制中重叠的标注错开一行，文字不伸出画布），见 specs/reviews/canvas-text-survey-20261109.md。第 3 步的两行图例改到画布下方的 HTML 段落里，可以换行。修后 `tests/canvas-text-overlap.cjs --sweep` 通过。

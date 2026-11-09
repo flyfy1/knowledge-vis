@@ -111,3 +111,5 @@ Step 3 now isolates one coordinate at a time: changing x moves the swap twin's y
 - **控件操作与预期观察**：青色箭头从 A 指向 B；「显示横、纵分量」切换橙色直角分解；拖动端点后，分量变号/改值，距离和中点按同一组坐标同步重算。滑杆是拖拽的等价入口，重置清空当前过程并回到基准点。
 - **结论适用条件**：距离公式是欧氏平面模型中的勾股关系；竖直线的斜率没有有限值。整数格是练习入口，公式也适用于分数坐标。
 - **术语首现**：向量（从 A 指向 B 的有向线段）；中点（把线段分成相等两段的点）；斜率（纵向变化量除以横向变化量，竖直线除外）。
+
+- 2026-11-09 canvas 文字修复（Claude Code，self-check）：页面加载 [`canvas-label-guard.js`](../../../canvas-label-guard.js)（说明见 specs/canvas-label-guard.md），重叠的画布标注会错开、文字不伸出画布。修后 `tests/canvas-text-overlap.cjs --sweep` 结果见 specs/reviews/canvas-text-survey-20261109.md。

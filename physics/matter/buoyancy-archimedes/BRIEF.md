@@ -29,3 +29,5 @@
 
 ## 模拟与现实、模型失配
 g=9.8，水 1000、盐水 1030、植物油 920 kg/m³；称量误差为 ±1% 的确定性正弦抖动，不是实测。动画是缓动，不是流体力学；真实浮沉有振荡、阻力、表面张力。船模型为长方体壳，不含稳性、浪、重心。
+
+- 2026-11-09 canvas 文字修复（Claude Code，self-check）：页面加载 [`canvas-label-guard.js`](../../../canvas-label-guard.js)（说明见 specs/canvas-label-guard.md），重叠的画布标注会错开、文字不伸出画布。修后 `tests/canvas-text-overlap.cjs --sweep` 结果见 specs/reviews/canvas-text-survey-20261109.md。

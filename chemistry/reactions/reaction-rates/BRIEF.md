@@ -38,3 +38,6 @@ Step 4 now asks learners to hold particle motion steady while lowering only the 
 - Step 4 now includes a labelled reaction-coordinate sketch beside the live particle simulation.
 - Pink = current uncatalysed threshold, green dashed = lower catalysed threshold; the sketch never substitutes for measured collision counts.
 - `energyProfileData` is a pure, tested helper exposed through the page API.
+
+- 2026-11-09 canvas 文字修复（Claude Code，self-check）：页面加载 [`canvas-label-guard.js`](../../../canvas-label-guard.js)（说明见 specs/canvas-label-guard.md），重叠的画布标注会错开、文字不伸出画布。修后 `tests/canvas-text-overlap.cjs --sweep` 结果见 specs/reviews/canvas-text-survey-20261109.md。
+- 同日补充：手机上能量图只有约 70 px 高，竖排的纵轴标题放不下，这时改为横排在坐标轴上方。

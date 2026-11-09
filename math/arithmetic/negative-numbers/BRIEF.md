@@ -86,3 +86,5 @@
 ## 交付
 - 自查（构建报告须逐项给证据，不许只写「通过」）：node --check；zh/en 键集与占位符比对；上述「数据与判定口径」全部断言用页面自身逻辑跑通；无头浏览器实测——冷走六步（不读本 BRIEF 复述每步学到了什么）、切语言 × 状态保持、390 宽截图、console 零错误。
 - 报告写到 ~/workspace/negative-numbers-lab/build-report.md（lab 目录已建：~/workspace/negative-numbers-lab/，BRIEF.md 存于此，构建者另拷一份进页面目录 negative-numbers/BRIEF.md）。
+
+- 2026-11-09 canvas 文字修复（Claude Code，self-check）：页面加载 [`canvas-label-guard.js`](../../../canvas-label-guard.js)（说明见 specs/canvas-label-guard.md），重叠的画布标注会错开、文字不伸出画布。修后 `tests/canvas-text-overlap.cjs --sweep` 结果见 specs/reviews/canvas-text-survey-20261109.md。

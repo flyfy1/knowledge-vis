@@ -15,3 +15,5 @@
 
 ## 模拟设定 / 模型失配
 理想化：导线电阻小、灯泡电阻恒定（真实灯丝随温度变）；小点示意方向，不是真实电子速度；教学用慢放。
+
+- 2026-11-09 canvas 文字修复（Claude Code，self-check）：共用的 `text()` 加了标注避让和限界（同一次绘制中重叠的标注错开一行，文字不伸出画布），见 specs/reviews/canvas-text-survey-20261109.md。修后 `tests/canvas-text-overlap.cjs --sweep` 通过。

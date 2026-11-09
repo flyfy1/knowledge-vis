@@ -14,3 +14,6 @@ button.active{border-color:var(--selected);background:#4c3423}
 @media(max-width:520px){.ctl{grid-template-columns:1fr 4rem}.ctl label{grid-column:1/-1}.stage{padding:4px}}
 
 .ctl input[type=text]{background:#101d2a;color:var(--ink);border:1px solid #36536a;border-radius:8px;min-height:44px;padding:6px 10px;width:100%}
+
+/* Chart legend moved out of the canvas so it can wrap on phones (2026-11-09). */
+.canvas-note{font-size:.85em;color:var(--muted);margin-top:.4em}
