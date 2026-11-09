@@ -100,7 +100,11 @@ function draw1() {
   IDS.forEach(id => {
     const [x, y] = pl.at(V.point('m', id, 0)), on = id === state.v1;
     dot(ctx, x, y, on ? C.orange : C.cyan, on ? 7 : 4.5);
-    label(ctx, BY[id].ipa + (W > 460 || on ? ' ' + BY[id].word : ''), x + 8, y + 4, on ? C.orange : C.text, 'left', on ? 13 : 11, on ? '700' : '');
+    // The selected vowel also shows its word; near the right edge that label goes on the left of the dot.
+    const tag = BY[id].ipa + (W > 460 || on ? ' ' + BY[id].word : ''), size = on ? 13 : 11, weight = on ? '700' : '';
+    ctx.save(); ctx.font = (weight ? weight + ' ' : '') + size + 'px system-ui,sans-serif'; const tw = ctx.measureText(tag).width; ctx.restore();
+    const left = x + 8 + tw > W - 2;
+    label(ctx, tag, left ? x - 8 : x + 8, y + 4, on ? C.orange : C.text, left ? 'right' : 'left', size, weight);
   });
   const d = M.m[state.v1], v = BY[state.v1];
   let txt = t('s1readout', { word: v.word, ipa: v.ipa, f1: d[1], f2: d[2], f3: d[3] });

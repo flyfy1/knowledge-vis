@@ -4,8 +4,11 @@
 // Text drawn into canvases is invisible to DOM overflow checks; the 2026-11-09 review found the
 // veil-of-ignorance society names overlapping at 390/320 only by looking at screenshots.
 // Usage: CANVAS_BASE_URL=http://127.0.0.1:18871 node tests/canvas-text-overlap.cjs [--sweep] [page/path/ ...]
-// --sweep also moves every range slider through 11 positions and clicks every visible button (390/320 px only);
-// most collisions in the 2026-11-09 follow-up appeared only at particular slider values.
+// Text that runs more than MIN px past the canvas edge is reported too (it gets clipped).
+// --sweep (at every width; step-response step 3 collided only at 1280) also moves every range slider through 11 positions, walks every pair of sliders in
+// the same section over a 6×6 grid, toggles checkboxes, clicks radios and every visible button. Sliders fire
+// both input and change (some pages keep a trail on change). Most collisions in the 2026-11-09 follow-ups
+// appeared only at particular slider values or slider pairs.
 // Needs Playwright on NODE_PATH. Run browser tests one at a time.
 const { chromium } = require('playwright');
 const base = (process.env.CANVAS_BASE_URL || 'http://127.0.0.1:18871').replace(/\/$/, '') + '/';
@@ -47,7 +50,12 @@ function record() {
   const full = (ctx, x, y, w, h) => { const T = ctx.getTransform(), cw = ctx.canvas.width, ch = ctx.canvas.height; return x * T.a + T.e <= 4 && y * T.d + T.f <= 4 && (x + w) * T.a + T.e >= cw * 0.97 && (y + h) * T.d + T.f >= ch * 0.97; };
   P.clearRect = function (...a) { if (full(this, ...a)) reset(this.canvas); return clear.apply(this, a); };
   P.fillRect = function (...a) { if (full(this, ...a)) reset(this.canvas); return fill.apply(this, a); };
-  window.__canvasText = () => [...all].filter(c => c.isConnected).map(c => ({ id: c.id || c.closest('[id]')?.id || '?', boxes: logs.get(c) || [] }));
+  window.__canvasText = () => [...all].filter(c => c.isConnected).map(c => { const r = c.getBoundingClientRect(); return { id: c.id || c.closest('[id]')?.id || '?', w: r.width, h: r.height, boxes: logs.get(c) || [] }; });
+}
+
+// Boxes are in canvas-local CSS px, so the canvas is [0, w] × [0, h].
+function clipped(boxes, w, h) {
+  return [...new Set(boxes.filter(b => b.x0 < -MIN || b.y0 < -MIN || b.x1 > w + MIN || b.y1 > h + MIN).map(b => `"${b.text}" outside the ${w.toFixed(0)}×${h.toFixed(0)} canvas (x ${b.x0.toFixed(0)}..${b.x1.toFixed(0)}, y ${b.y0.toFixed(0)}..${b.y1.toFixed(0)})`))];
 }
 
 function collisions(boxes) {
@@ -74,17 +82,31 @@ async function main() {
     if (await toggle.count()) await toggle.first().click(); else if (lang === 'en') { await page.close(); continue; } // single-language page: check once
     await page.waitForTimeout(300);
     const scan = async state => {
-      for (const { id, boxes } of await page.evaluate(() => window.__canvasText())) {
+      for (const { id, w, h, boxes } of await page.evaluate(() => window.__canvasText())) {
         checked++;
-        for (const c of collisions(boxes)) { const msg = `${path} ${width} ${lang} #${id}${state}: ${c}`; if (!failures.includes(msg)) failures.push(msg); }
+        if (!w || !h) continue; // hidden canvas
+        for (const c of [...collisions(boxes), ...clipped(boxes, w, h)]) { const msg = `${path} ${width} ${lang} #${id}${state}: ${c}`; if (!failures.includes(msg)) failures.push(msg); }
       }
     };
     await scan('');
-    if (sweep && width !== 1280) {
-      const set = (id, v) => page.evaluate(([id, v]) => { const e = document.getElementById(id); e.value = v; e.dispatchEvent(new Event('input', { bubbles: true })); }, [id, String(v)]);
-      for (const [id, min, max, v0] of await page.$$eval('input[type=range]', a => a.map(e => [e.id, +e.min, +e.max, e.value]))) {
+    if (sweep) {
+      const set = (id, v) => page.evaluate(([id, v]) => { const e = document.getElementById(id); e.value = v; for (const t of ['input', 'change']) e.dispatchEvent(new Event(t, { bubbles: true })); }, [id, String(v)]);
+      const ranges = await page.$$eval('input[type=range]', a => a.filter(e => e.id).map(e => [e.id, +e.min, +e.max, e.value, e.closest('section,[id]')?.id || '']));
+      for (const [id, min, max, v0] of ranges) {
         for (let i = 0; i <= 10; i++) { const v = min + (max - min) * i / 10; await set(id, v); await scan(` ${id}=${+v.toFixed(3)}`); }
         await set(id, v0);
+      }
+      for (let i = 0; i < ranges.length; i++) for (let j = i + 1; j < ranges.length; j++) {
+        const [a, b] = [ranges[i], ranges[j]]; if (a[4] !== b[4]) continue;
+        for (let u = 0; u <= 5; u++) for (let v = 0; v <= 5; v++) {
+          const va = a[1] + (a[2] - a[1]) * u / 5, vb = b[1] + (b[2] - b[1]) * v / 5;
+          await set(a[0], va); await set(b[0], vb); await scan(` ${a[0]}=${+va.toFixed(3)} ${b[0]}=${+vb.toFixed(3)}`);
+        }
+        await set(a[0], a[3]); await set(b[0], b[3]);
+      }
+      for (const box of await page.$$('main input[type=checkbox], main input[type=radio]')) {
+        if (!(await box.isVisible())) continue;
+        await box.click({ timeout: 2000 }).catch(() => {}); await scan(` [${await box.evaluate(e => e.type + ':' + (e.dataset.show || e.name + '=' + e.value))}]`);
       }
       for (const b of await page.$$('main button')) {
         if (!(await b.isVisible())) continue;
@@ -97,8 +119,8 @@ async function main() {
   }
   await browser.close();
   if (failures.length) { console.error(failures.join('\n')); process.exit(1); }
-  console.log(`PASS: ${checked} canvas states across ${pages.length} pages × 1280/390/320 × zh/en${sweep ? ' (with slider/button sweep)' : ''} have no colliding text`);
+  console.log(`PASS: ${checked} canvas states across ${pages.length} pages × 1280/390/320 × zh/en${sweep ? ' (with slider/button sweep)' : ''} have no colliding or clipped text`);
 }
 // Exported so page tests can sweep their own slider states with the same recorder.
-module.exports = { record, collisions };
+module.exports = { record, collisions, clipped };
 if (require.main === module) main().catch(e => { console.error(e); process.exit(1); });

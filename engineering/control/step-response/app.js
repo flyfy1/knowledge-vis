@@ -146,12 +146,14 @@ function draw1() {
   const { ctx, W, H } = fitCanvas($('c1'));
   const m = timeFrame(ctx, W, H, { tMax: T });
   stepInput(ctx, m, T);
+  const tags = [];
   trails1.filter(tz => Math.abs(tz - z) > 1e-6).forEach((tz, i) => {
     const { run: r } = run(tz, Wn, T);
     curve(ctx, m, r.points, { color: C.muted, width: 1.6, alpha: 0.35 + 0.1 * i });
-    const end = r.points[Math.round(1.4 / r.dt)];
-    label(ctx, 'ζ=' + f(tz, 2), m.x(1.4) + 4, m.y(end.y) - 4, C.muted);
+    tags.push([m.y(r.points[Math.round(1.4 / r.dt)].y) - 4, 'ζ=' + f(tz, 2)]);
   });
+  // Heavily damped curves bunch together at t = 1.4 s; keep their labels at least one line apart.
+  tags.sort((a, b) => a[0] - b[0]).forEach((tag, i, all) => { if (i) tag[0] = Math.max(tag[0], all[i - 1][0] + 13); label(ctx, tag[1], m.x(1.4) + 4, tag[0], C.muted); });
   const { run: r, m: met } = run(z, Wn, T);
   curve(ctx, m, r.points);
   label(ctx, 'ζ=' + f(z, 2), m.P.r - 4, m.P.t + 12, C.cyan, 'right');
@@ -174,7 +176,9 @@ function draw2() {
     ctx.beginPath(); ctx.moveTo(X, Y); ctx.lineTo(X, m.P.b); ctx.stroke(); ctx.restore();
     ctx.save(); ctx.strokeStyle = C.pink; ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(X + 8, m.y(1)); ctx.lineTo(X + 8, Y); ctx.stroke(); ctx.restore();
     ctx.fillStyle = C.pink; ctx.beginPath(); ctx.arc(X, Y, 5, 0, 7); ctx.fill();
-    label(ctx, f(met.overshoot, 1) + '%', X + 13, (Y + m.y(1)) / 2 + 4, C.pink);
+    // Near the right edge (high ζ peaks late) the percentage goes above-left of the peak instead of off the canvas.
+    const po = f(met.overshoot, 1) + '%'; ctx.save(); ctx.font = '12px system-ui,sans-serif'; const pw = ctx.measureText(po).width; ctx.restore();
+    if (X + 13 + pw > W - 2) label(ctx, po, X - 8, Math.min(Y, m.y(1)) - 8, C.pink, 'right'); else label(ctx, po, X + 13, (Y + m.y(1)) / 2 + 4, C.pink);
     label(ctx, 'tp', X, m.P.b - 4, C.pink, 'center');
   }
   // right: the formula curve with the measured dot on it
@@ -204,16 +208,28 @@ function draw3() {
   ctx.fillStyle = 'rgba(126,226,168,.12)'; ctx.fillRect(m.P.l, m.y(1.02), m.P.r - m.P.l, m.y(0.98) - m.y(1.02));
   stepInput(ctx, m, T);
   const tick = (ts, color, alpha) => { if (ts === null) return; ctx.save(); ctx.globalAlpha = alpha; ctx.strokeStyle = color; ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(m.x(ts), m.y(1.12)); ctx.lineTo(m.x(ts), m.y(0.88)); ctx.stroke(); ctx.restore(); };
+  // ωn labels sit under their settling ticks; fast curves settle close together, so a label that would
+  // overlap one already placed drops to the next row down.
+  const rows = [];
+  const tsLabel = (ts, text, color) => {
+    ctx.save(); ctx.font = '12px system-ui,sans-serif'; const w = ctx.measureText(text).width; ctx.restore();
+    const X = Math.max(m.P.l + w / 2, Math.min(m.P.r - w / 2, m.x(ts)));
+    let row = 0; while (rows.some(b => b.row === row && Math.abs(b.x - X) < (b.w + w) / 2 + 4)) row++;
+    rows.push({ row, x: X, w }); label(ctx, text, X, m.y(0.8) + row * 15, color, 'center');
+  };
+  const placed = [];
   trails3.filter(([tz, tw]) => tz !== z || tw !== Wn).forEach(([tz, tw], i) => {
     const { run: r, m: met } = run(tz, tw, T);
     curve(ctx, m, r.points, { color: C.muted, width: 1.6, alpha: 0.35 + 0.1 * i });
     tick(met.settling, C.muted, 0.7);
-    if (met.settling !== null) label(ctx, 'ωn=' + f(tw, 1), m.x(met.settling), m.y(0.8), C.muted, 'center');
+    if (met.settling !== null) placed.push([met.settling, 'ωn=' + f(tw, 1), C.muted]);
   });
   const { run: r, m: met } = run(z, Wn, T), fo = S.formulas(z, Wn);
   curve(ctx, m, r.points);
   tick(met.settling, C.green, 1);
-  if (met.settling !== null) label(ctx, 'ωn=' + f(Wn, 1), m.x(met.settling), m.y(0.8), C.green, 'center');
+  // The current curve's label is placed first so it always keeps the top row.
+  if (met.settling !== null) placed.unshift([met.settling, 'ωn=' + f(Wn, 1), C.green]);
+  placed.forEach(([ts, text, color]) => tsLabel(ts, text, color));
   label(ctx, 'ζ=' + f(z, 2) + '  ωn=' + f(Wn, 1), m.P.r - 4, m.P.t + 12, C.cyan, 'right');
   $('r3').textContent = t('s3readout', { w: f(Wn, 1), ts: sec(met.settling), tsF: secF(fo.settling), po: f(met.overshoot, 1) });
 }

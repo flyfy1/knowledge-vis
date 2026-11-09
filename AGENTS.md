@@ -57,7 +57,12 @@ PROVENANCE_BASE_URL=http://127.0.0.1:18871 node tests/page-provenance-browser.cj
   ```sh
   CANVAS_BASE_URL=http://127.0.0.1:18871 node tests/canvas-text-overlap.cjs --sweep <页面路径/>
   ```
-  `--sweep` 会把每个滑杆拖过 11 个位置、点遍按钮；很多重叠只在某些参数下出现。它查的是文字框相交，最后仍要看截图。
+  `--sweep` 在 1280/390/320 三种宽度下都跑。它会：
+  - 把每个滑杆拖过 11 个位置（同时触发 input 和 change）；
+  - 把同一节内的两个滑杆按 6×6 网格组合；
+  - 点遍复选框、单选按钮和普通按钮。
+
+  很多重叠只在某些参数组合下才出现。它报告文字框相交和文字伸出画布，但看不出文字压在线条上，最后仍要看截图。
 
 ## 工作区卫生
 
