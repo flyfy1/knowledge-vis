@@ -41,6 +41,7 @@
 - `docs/` — 历次评审报告、平台评审截图、早期大纲
 - `worklog/` — 工作日志
 - `AUTHORSHIP.md` — **作者归属宪法**：每个文件由哪个 Agent 写，怎么声明、怎么查（`node scripts/authorship.cjs <文件>`）；注册表在 `authorship/`
+- `AGENTS.md` — Agent 入口：先读什么、硬规则、署名与测试速查
 - `WORKFLOW.md`、`UI-I18N-SPEC.md`、`CONCEPT-MAP.md` — 生产约定、界面规范、概念跨页映射
 
 ## 开发版本与修复规范
