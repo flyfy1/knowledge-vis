@@ -53,7 +53,11 @@ PROVENANCE_BASE_URL=http://127.0.0.1:18871 node tests/page-provenance-browser.cj
 - **浏览器测试串行跑**，不要并行。
 - 大批测试会改写 `leetcode/*/tests/evidence` 和 `biology/cells/photosynthesis/tests/evidence`。每跑完一次就 `git checkout` 这两处，除非这次就是要更新证据。
 - 数值结论（如「误差在 ±X% 以内」）要用细扫测试钉住。**不要为了让测试通过而放宽容差或加粗网格**：先查结论本身对不对。
-- 视觉检查至少要覆盖 1280 / 390 / 320 宽、中英文、减弱动态。canvas 上的文字测试抓不到，要看截图。
+- 视觉检查至少要覆盖 1280 / 390 / 320 宽、中英文、减弱动态。DOM 溢出检查看不到 canvas 上的文字，改了 canvas 的页面要跑：
+  ```sh
+  CANVAS_BASE_URL=http://127.0.0.1:18871 node tests/canvas-text-overlap.cjs --sweep <页面路径/>
+  ```
+  `--sweep` 会把每个滑杆拖过 11 个位置、点遍按钮；很多重叠只在某些参数下出现。它查的是文字框相交，最后仍要看截图。
 
 ## 工作区卫生
 
