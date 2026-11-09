@@ -1186,6 +1186,42 @@
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
       "path": "variants/claude-code/interference/index.html"
+    },
+    "cc-momentum-collision": {
+      "developer": "Claude Code",
+      "edition": "claude-code-momentum-collision-20261109",
+      "kind": "original",
+      "sourceRevision": "21d57691acaf500e09edbbc2e9b9f0164d43f23e",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《动量与碰撞 · 速度不是全部》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Momentum & Collisions · Speed Is Not the Whole Story"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/momentum-collision/index.html"
+    },
+    "cc-thermodynamics": {
+      "developer": "Claude Code",
+      "edition": "claude-code-thermodynamics-20261109",
+      "kind": "original",
+      "sourceRevision": "21d57691acaf500e09edbbc2e9b9f0164d43f23e",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《热力学 · 一口气追踪能量》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Thermodynamics · Track Energy Through a Gas"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/thermodynamics/index.html"
+    },
+    "cc-quantum-basics": {
+      "developer": "Claude Code",
+      "edition": "claude-code-quantum-basics-20261109",
+      "kind": "original",
+      "sourceRevision": "21d57691acaf500e09edbbc2e9b9f0164d43f23e",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《量子基础 · 可能性先于结果》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Quantum Basics · Possibility Before Outcome"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/quantum-basics/index.html"
     }
   },
   "exceptions": {

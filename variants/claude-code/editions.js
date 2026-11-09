@@ -126,8 +126,23 @@ window.CLAUDE_EDITIONS = [
   "model": "claude-opus-5-5"
  },
  {
+  "slug": "momentum-collision",
+  "original": "momentum-collision",
+  "model": "claude-opus-5-5"
+ },
+ {
   "slug": "linear-transform",
   "original": "linear-transform",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "thermodynamics",
+  "original": "thermodynamics",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "quantum-basics",
+  "original": "quantum-basics",
   "model": "claude-opus-5-5"
  },
  {
