@@ -24,5 +24,20 @@ window.CLAUDE_EDITIONS = [
   "slug": "derivative",
   "original": "derivative",
   "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "intervals-fences",
+  "original": "intervals-fences",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "inverse-proportion",
+  "original": "inverse-proportion",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "place-value",
+  "original": "place-value",
+  "model": "claude-opus-5-5"
  }
 ];
