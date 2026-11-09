@@ -1,6 +1,16 @@
 /* Generated from page-provenance.json (cc-* entries). Lists every Claude Code parallel edition. */
 window.CLAUDE_EDITIONS = [
  {
+  "slug": "frozen-bubble",
+  "original": "frozen-bubble",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "power-converters",
+  "original": "power-converters",
+  "model": "claude-opus-5-5"
+ },
+ {
   "slug": "convolution",
   "original": "convolution",
   "model": "claude-opus-5-5"
@@ -58,6 +68,11 @@ window.CLAUDE_EDITIONS = [
  {
   "slug": "parabola",
   "original": "parabola",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "velocity-vt",
+  "original": "velocity-vt",
   "model": "claude-opus-5-5"
  },
  {
