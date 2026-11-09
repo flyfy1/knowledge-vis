@@ -238,3 +238,14 @@ PASS page-provenance-browser
 - veil：η=3.50 时 A、C 并列，显示为「A / C（并列）」，两柱都打 ✓；英文单复数修正。
 - vowel：F0 标注加底板；s1er 写明是本页推断。
 - 浏览器核对（390/320，中英）：上述读数都符合预期，控制台零报错。
+
+## 10. canvas 文字重叠检查（2026-11-09，同一会话）
+
+- 新增 `tests/canvas-text-overlap.cjs`。负对照：在 9d33140a 上，它报出的正是本评审靠肉眼发现的 veil 社会名重叠，宽度、语言都对得上。
+- 用 `--sweep` 扫四页后又发现并修复 4 处（06fbf811）：
+  - step-response 第 4 步：ζ 较大时 ωd 压到 θ；
+  - signal-detection 第 5 步：c* 压到横轴刻度；
+  - veil 第 4 步：η=0 时「平均」和「确定性等价」两个标注完全重叠；
+  - vowel 第 3、4 步：320 宽下 ʊ 压在 ʌ 上。
+- 修复后四页共扫 9014 个画布状态，没有重叠。
+- 全站普查见 [canvas-text-survey-20261109](canvas-text-survey-20261109.md)：67 页有重叠；另外查出 coordinate-plane 第 6 步读数为空白的递归 bug，已修复（5abad24c）。
