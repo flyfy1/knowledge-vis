@@ -151,6 +151,11 @@ window.CLAUDE_EDITIONS = [
   "model": "claude-opus-5-5"
  },
  {
+  "slug": "materials-science",
+  "original": "materials-science",
+  "model": "claude-opus-5-5"
+ },
+ {
   "slug": "game-theory",
   "original": "game-theory",
   "model": "claude-opus-5-5"
@@ -168,6 +173,11 @@ window.CLAUDE_EDITIONS = [
  {
   "slug": "conic-sections",
   "original": "conic-sections",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "density",
+  "original": "density",
   "model": "claude-opus-5-5"
  },
  {
