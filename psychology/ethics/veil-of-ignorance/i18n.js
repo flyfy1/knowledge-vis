@@ -39,7 +39,7 @@ const STRINGS = {
     tLabel: '再分配比例 t', kLabel: '效率损失 k（教学假设）', eta4: '风险厌恶 η',
     s4readout: 't = {t}：平均 {mean} · 最差 {min} · 确定性等价 {ce}　｜　最好的 t：平均原则 {tAvg} · 最大最小原则 {tMin} · η = {eta} 时 {tEta}',
     s4hint: '观察顺序：先把 k 设为 0（拉平没有代价）——最大最小原则会一直拉到 t = 1，平均原则无所谓。再把 k 调大，看最大最小原则的最好 t 怎样停在中间：再往下拉，底层也会因蛋糕变小而受损。',
-    anyT: '任意 t（各 t 相同）',
+    anyT: '任意 t（各 t 相同）', tieMark: '（并列，显示精度内相同）',
     mean: '平均', worst: '最差', ceShort: '确定性等价', tAxis: '再分配比例 t',
     bars: '当前 t 下的 5 个位置',
 
@@ -69,13 +69,13 @@ const STRINGS = {
     soc: 'Society', socA: 'A · Everyone equal', socB: 'B · High growth, wide gaps', socC: 'C · Growth with a floor',
     choose: 'I choose', lift: 'Lift the veil', again: 'Again', resetDraws: 'Clear record',
     s0pick: 'Pick a society first.',
-    s0readout: 'You chose {soc} and landed in position {pos} (counting from the worst), score {v}. {n} draws so far, average {avg}, worst draw {worst}.',
+    s0readout: 'You chose {soc} and landed in position {pos} (counting from the worst), score {v}. Draws so far: {n}, average {avg}, worst draw {worst}.',
     s0ready: 'You chose {soc}. Press “Lift the veil” to see where you land.',
     s0hint: 'Each draw adds a dot under that position (history is kept; switching to another society and back keeps each society’s record, and “Clear record” clears only the current one). After a few draws you will feel two thoughts at once: “on average it is fine” and “what if I end up at the bottom?”. The next two steps turn each thought into a rule.',
 
     s1k: 'Step 1 · The first rule', s1t: 'The average rule: you could be anyone, so take the average',
     s1e: 'This step asks: if every position is equally likely to be yours, how should you compare? The economist John Harsanyi (in a 1975 critique of Rawls) argued that under complete ignorance you should assume an <strong>equal probability</strong> of occupying each position, and so choose the society with the highest <strong>average well-being</strong> (<a class="xlink" href="../../../probability/basics/expected-value/#step0">→ Expected value, step 0: what a random game pays “on average”</a>). By this rule B (average 45) wins. The chart shows how the <strong>running average</strong> (sum of scores drawn ÷ number of draws) approaches that average when you draw repeatedly from your chosen society.',
-    draw100: 'Draw 100 more', s1readout: '{soc}: average {mean} · {n} draws, running average {run}',
+    draw100: 'Draw 100 more', s1readout: '{soc}: average {mean} · draws: {n}, running average {run}',
     s1hint: 'What to do: choose B and press “Draw 100 more” a few times; watch the line settle onto the dashed average. Then switch to A or C. The average rule looks only at the dashed line, not at how low some of the individual draws were.',
 
     s2k: 'Step 2 · The second rule', s2t: 'Maximin: secure the worst position first',
@@ -94,7 +94,7 @@ const STRINGS = {
     tLabel: 'Redistribution share t', kLabel: 'Efficiency loss k (teaching assumption)', eta4: 'Risk aversion η',
     s4readout: 't = {t}: average {mean} · worst {min} · certainty equivalent {ce}　|　best t: average rule {tAvg} · maximin {tMin} · at η = {eta}: {tEta}',
     s4hint: 'What to do: first set k to 0 (levelling is free) — maximin pushes all the way to t = 1, while the average rule does not care. Then raise k and watch maximin’s best t stop in the middle: levelling further would hurt even the bottom, because the pie shrinks.',
-    anyT: 'any t (all tie)',
+    anyT: 'any t (all tie)', tieMark: ' (tie at display precision)',
     mean: 'average', worst: 'worst', ceShort: 'cert. equiv.', tAxis: 'redistribution share t',
     bars: 'the 5 positions at the current t',
 

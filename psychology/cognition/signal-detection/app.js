@@ -10,6 +10,9 @@ const C = { cyan: '#67d7f9', orange: '#ffb454', green: '#7ee2a8', pink: '#ff7a93
 const num = id => Number($(id).value);
 const f = (v, d = 2) => (Math.abs(v) < 0.5 * Math.pow(10, -d) ? 0 : Number(v)).toFixed(d);
 const pct = v => Math.round(v * 100);
+// Rates that are not exactly 0 or 1 but would round to 0.00/1.00 get four decimals,
+// so the readout never shows the impossible F = 0 next to a finite recovered d'.
+const fr = v => (v > 0 && v < 0.005) || (v < 1 && v > 0.995) ? v.toFixed(4) : f(v);
 const D1 = 1.5; // separation used in steps 1, 2 and 5
 const TABLES = { docs: { hit: 80, miss: 20, fa: 20, cr: 80 }, machine: { hit: 98, miss: 2, fa: 38, cr: 62 } };
 const rateOf = tb => ({ H: tb.hit / (tb.hit + tb.miss), F: tb.fa / (tb.fa + tb.cr) });
@@ -117,7 +120,7 @@ function draw2() {
   const { ctx, W, H } = fitCanvas($('c2'));
   drawDists(ctx, W, H, { d: D1, k, ghosts: state.ghosts2.filter(g => Math.abs(g - k) > 1e-9) });
   const r = S.rates(D1, k), back = S.measures(r.H, r.F);
-  $('r2').textContent = t('s2readout', { c: f(c), H: f(r.H), F: f(r.F), miss: pct(1 - r.H), fa: pct(r.F), cBack: f(back.c) });
+  $('r2').textContent = t('s2readout', { c: f(c), H: fr(r.H), F: fr(r.F), miss: pct(1 - r.H), fa: pct(r.F), cBack: f(back.c) });
 }
 function keep2() { const k = S.kFromC(D1, num('c2s')); if (!state.ghosts2.some(g => Math.abs(g - k) < 1e-9)) { state.ghosts2.push(k); if (state.ghosts2.length > 5) state.ghosts2.shift(); } }
 
@@ -132,7 +135,7 @@ function draw3() {
   ctx.save(); ctx.strokeStyle = C.green; ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(m.x(0), yb); ctx.lineTo(m.x(d), yb); ctx.moveTo(m.x(0), yb - 5); ctx.lineTo(m.x(0), yb + 5); ctx.moveTo(m.x(d), yb - 5); ctx.lineTo(m.x(d), yb + 5); ctx.stroke(); ctx.restore();
   label(ctx, "d' = " + f(d), m.x(d) + 8, yb + 4, C.green);
   const r = S.rates(d, k), back = S.measures(r.H, r.F);
-  $('r3').textContent = t('s3readout', { d: f(d), c: f(c), H: f(r.H), F: f(r.F), dBack: f(back.dprime), pc: Math.round(back.pc * 1000) / 10 });
+  $('r3').textContent = t('s3readout', { d: f(d), c: f(c), H: fr(r.H), F: fr(r.F), dBack: f(back.dprime), pc: Math.round(back.pc * 1000) / 10 });
 }
 
 /* ---------- step 4: ROC ---------- */
@@ -157,7 +160,7 @@ function draw4() {
   dot(doc.F, doc.H, C.orange, 6); label(ctx, t('docs'), x(doc.F) + 8, y(doc.H) + 18, C.orange, 'left', 12); dot(mac.F, mac.H, C.green, 6, t('machine'));
   const r = S.rates(d, k); dot(r.F, r.H, C.text, 5.5);
   const md = S.measures(doc.H, doc.F), mm = S.measures(mac.H, mac.F);
-  $('r4').textContent = t('s4readout', { F: f(r.F), H: f(r.H), d: f(d), c: f(c), dDoc: f(md.dprime), cDoc: f(md.c), dMac: f(mm.dprime), cMac: f(mm.c) });
+  $('r4').textContent = t('s4readout', { F: fr(r.F), H: fr(r.H), d: f(d), c: f(c), dDoc: f(md.dprime), cDoc: f(md.c), dMac: f(mm.dprime), cMac: f(mm.c) });
   const predName = state.pred ? t('pred' + state.pred.toUpperCase()) : '';
   const you = !state.pred ? '' : state.pred === 'b' ? t('youRight') : t('youWrong', { p: predName });
   $('reveal4').innerHTML = t('reveal', { you });

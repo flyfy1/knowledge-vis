@@ -115,12 +115,15 @@ function draw3() {
   const P = { l: 34, r: W - 10, t: 22, b: H - 30 }, y = v => P.b - v / 50 * (P.b - P.t);
   ctx.strokeStyle = C.grid; ctx.lineWidth = 1;
   for (let v = 0; v <= 50; v += 10) { ctx.beginPath(); ctx.moveTo(P.l, y(v)); ctx.lineTo(P.r, y(v)); ctx.stroke(); label(ctx, String(v), P.l - 5, y(v) + 4, C.muted, 'right', 10); }
-  const win = V.choose.eta(SOC, eta).k, bw = (P.r - P.l) / 3;
+  // Societies whose certainty equivalents are equal at display precision are shown as a tie,
+  // so the readout never names one winner next to two identical numbers (e.g. A and C at η = 3.50).
+  const best = f(Math.max(...KEYS.map(k => V.ce(SOC[k], eta)))), tops = KEYS.filter(k => f(V.ce(SOC[k], eta)) === best);
+  const isWin = k => tops.includes(k), win = tops.length > 1 ? tops.join(' / ') + t('tieMark') : tops[0], bw = (P.r - P.l) / 3;
   KEYS.forEach((k, i) => {
     const v = V.ce(SOC[k], eta), X = P.l + i * bw + bw * 0.2;
-    ctx.globalAlpha = k === win ? 1 : 0.45; ctx.fillStyle = COL[k]; ctx.fillRect(X, y(v), bw * 0.6, P.b - y(v)); ctx.globalAlpha = 1;
+    ctx.globalAlpha = isWin(k) ? 1 : 0.45; ctx.fillStyle = COL[k]; ctx.fillRect(X, y(v), bw * 0.6, P.b - y(v)); ctx.globalAlpha = 1;
     label(ctx, f(v), X + bw * 0.3, y(v) - 6, COL[k], 'center', 12);
-    label(ctx, k + (k === win ? ' ✓' : ''), X + bw * 0.3, P.b + 16, COL[k], 'center', 12);
+    label(ctx, k + (isWin(k) ? ' ✓' : ''), X + bw * 0.3, P.b + 16, COL[k], 'center', 12);
     ctx.save(); ctx.strokeStyle = C.muted; ctx.setLineDash([3, 3]); ctx.beginPath(); ctx.moveTo(X, y(V.mean(SOC[k]))); ctx.lineTo(X + bw * 0.6, y(V.mean(SOC[k]))); ctx.moveTo(X, y(V.min(SOC[k]))); ctx.lineTo(X + bw * 0.6, y(V.min(SOC[k]))); ctx.stroke(); ctx.restore();
   });
   label(ctx, t('ceAxis'), P.l + 4, P.t - 8, C.muted, 'left', 11);

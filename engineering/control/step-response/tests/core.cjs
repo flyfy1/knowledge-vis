@@ -43,6 +43,13 @@ assert.ok(Math.abs(Math.acos(S.zetaForOvershoot(10)) * 180 / Math.PI - 53.8) < 0
 // The design challenge is solvable on the slider grid (z5 step 0.01, w5 step 0.1).
 const ok = S.metrics(S.simulate(0.7, 3, 6));
 assert.ok(ok.overshoot <= 10 && ok.settling !== null && ok.settling <= 2, 'ζ=0.7, ωn=3 meets the spec');
+// Step 5 readout/verdict agreement over every slider position (ζ 0.05–1.5 step 0.01, ωn 0.5–8 step 0.1):
+// the shown values (overshoot 1 dp, settling 3 dp) must give the same ✓/✗ as the raw values.
+for (let zi = 5; zi <= 150; zi++) for (let wi = 5; wi <= 80; wi++) {
+  const m = S.metrics(S.simulate(zi / 100, wi / 10, 6));
+  assert.equal(+m.overshoot.toFixed(1) <= 10, m.overshoot <= 10, `overshoot verdict ζ=${zi / 100} ωn=${wi / 10}`);
+  if (m.settling !== null) assert.equal(+m.settling.toFixed(3) <= 2, m.settling <= 2, `settling verdict ζ=${zi / 100} ωn=${wi / 10}`);
+}
 
 // 2. Bilingual parity: same keys, same placeholders.
 const zk = Object.keys(STRINGS.zh).sort(), ek = Object.keys(STRINGS.en).sort();

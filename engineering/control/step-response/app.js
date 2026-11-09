@@ -285,7 +285,8 @@ function draw5() {
   S.poles(z, Wn).forEach(p => poleMark(ctx, pm, p));
   const poOk = met.overshoot <= 10, tsOk = met.settling !== null && met.settling <= 2;
   const mark = ok => `<span class="${ok ? 'ok' : 'bad'}">${t(ok ? 'pass' : 'fail')}</span>`;
-  $('r5').innerHTML = t('s5readout', { po: f(met.overshoot, 1), poOk: mark(poOk), ts: sec(met.settling), tsOk: mark(tsOk) }) + (poOk && tsOk ? ' · ' + t('allPass') : '');
+  // Settling time is a multiple of the 0.005 s step; three decimals keep e.g. 2.005 s from reading “2.00 s ✗”.
+  $('r5').innerHTML = t('s5readout', { po: f(met.overshoot, 1), poOk: mark(poOk), ts: met.settling === null ? t('notSettled') : f(met.settling, 3) + t('seconds'), tsOk: mark(tsOk) }) + (poOk && tsOk ? ' · ' + t('allPass') : '');
 }
 
 function refresh() { draw0(); draw1(); draw2(); draw3(); draw4(); draw5(); }

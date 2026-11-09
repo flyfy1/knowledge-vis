@@ -85,6 +85,8 @@ function draw0() {
   for (let f = 0; f <= fmax; f += 10) { const Y = y(V.envelope(f, fm)); f ? ctx.lineTo(x(f), Y) : ctx.moveTo(x(f), Y); }
   ctx.stroke(); ctx.restore();
   fm.forEach((f, i) => { const Y = y(V.envelope(f, fm)); label(ctx, 'F' + (i + 1), x(f), Math.max(P.t + 10, Y - 6), C.text, 'center', 12, '700'); });
+  // The F0 note sits among the harmonic lines; a background plate keeps it legible at 320 px.
+  ctx.save(); ctx.font = '11px system-ui,sans-serif'; const tw = ctx.measureText('F0 = ' + f0).width; ctx.fillStyle = C.bg; ctx.globalAlpha = 0.85; ctx.fillRect(x(f0) + 2, P.b - 18, tw + 4, 15); ctx.restore();
   label(ctx, 'F0 = ' + f0, x(f0) + 4, P.b - 6, col, 'left', 11);
   const v = BY[state.v0];
   $('r0').textContent = t('s0readout', { word: v.word, ipa: v.ipa, group: t(GKEY[state.g0]), f0, f1: fm[0], f2: fm[1], f3: fm[2], n: V.TOKENS[state.g0] });

@@ -19,7 +19,7 @@ const STRINGS = {
     s1k: '第 1 步 · 两个数，一个点', s1t: '把每个元音画成 F1–F2 平面上的一个点',
     s1e: '这一步要回答：只看前两个共振峰，10 个元音能分开吗？下面每个点是 33 位男性说话人某个元音的平均（F1, F2）。<strong>F1–F2 平面</strong>：横轴 F2、纵轴 F1。本页选择让 F2 从右往左增大、F1 从上往下增大，两轴都用<strong>对数刻度</strong>（相同距离代表相同倍数，<a class="xlink" href="../../../math/algebra/exponents-logarithms/#step3">→ 指数与对数第 3 步：对数把乘法变成加法</a>）。点一个词看它的位置。',
     s1readout: '{word} /{ipa}/：F1 {f1} Hz · F2 {f2} Hz · F3 {f3} Hz',
-    s1er: '注意 heard /ɝ/ 的 F3 只有 {f3} Hz，明显低于其他 9 个元音（都 ≥ {min} Hz）：这和下面讲义所说「/ɝ/ 不能只靠 F1、F2 解释」对得上。',
+    s1er: '注意 heard /ɝ/ 的 F3 只有 {f3} Hz，明显低于其他 9 个元音（都 ≥ {min} Hz）：讲义只说「/ɝ/ 不能只靠 F1、F2 解释」，没提 F3；把两者联系起来是本页的推断。',
     s1hint: '数据里能直接看到：heed 和 who\'d 的 F1 最低，had 和 hod 的 F1 最高；heed 的 F2 最高，hawed 的 F2 最低。一门课程讲义（<a class="xlink" href="https://courses.grainger.illinois.edu/ece590sip/sp2018/spectrograms4_vowels.html" rel="noopener">UIUC ECE590SIP 2018 第 4 讲</a>）对 Peterson 与 Barney 的概括是：除 /ɝ/ 外，美式英语元音的<em>感知</em>大体可以用 F1、F2 解释，相邻元音的区域边界略有重叠。这里画的是平均值，单个录音会散布在点的周围。',
 
     s2k: '第 2 步 · 换一个人说', s2t: '同一个元音，三组说话人落在不同位置',
@@ -70,7 +70,7 @@ const STRINGS = {
     s1k: 'Step 1 · Two numbers, one point', s1t: 'Draw each vowel as a point on the F1–F2 plane',
     s1e: 'This step asks: using only the first two formants, can the ten vowels be told apart? Each point is the average (F1, F2) of one vowel over the 33 men. On the <strong>F1–F2 plane</strong> the horizontal axis is F2 and the vertical axis is F1. This page chooses to let F2 increase from right to left and F1 increase downwards, and uses a <strong>log scale</strong> on both axes (equal distances mean equal ratios; <a class="xlink" href="../../../math/algebra/exponents-logarithms/#step3">→ Exponents & logarithms, step 3: logs turn multiplication into addition</a>). Click a word to see where it sits.',
     s1readout: '{word} /{ipa}/: F1 {f1} Hz · F2 {f2} Hz · F3 {f3} Hz',
-    s1er: 'Note that the F3 of “heard” /ɝ/ is only {f3} Hz, clearly below the other nine vowels (all ≥ {min} Hz): this fits the handout’s remark below that /ɝ/ is the exception to “F1 and F2 explain the vowels”.',
+    s1er: 'Note that the F3 of “heard” /ɝ/ is only {f3} Hz, clearly below the other nine vowels (all ≥ {min} Hz): the handout below only says /ɝ/ is the exception to “F1 and F2 explain the vowels” and does not mention F3; linking the two is this page’s inference.',
     s1hint: 'You can read straight off the data: “heed” and “who’d” have the lowest F1, “had” and “hod” the highest; “heed” has the highest F2 and “hawed” the lowest. A course handout (<a class="xlink" href="https://courses.grainger.illinois.edu/ece590sip/sp2018/spectrograms4_vowels.html" rel="noopener">UIUC ECE590SIP 2018, lecture 4</a>) summarises Peterson and Barney as showing that, except for /ɝ/, the <em>perception</em> of American English vowels can largely be explained by F1 and F2, with a little overlap at the boundaries between neighbouring vowels. These are averages; single recordings scatter around each point.',
 
     s2k: 'Step 2 · Someone else says it', s2t: 'The same vowel lands in different places for three speaker groups',

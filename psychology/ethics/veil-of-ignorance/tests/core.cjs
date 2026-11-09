@@ -20,6 +20,11 @@ close(V.ce([4, 9], 1), 6, 1e-12, 'η=1 is the geometric mean');
 const winner = e => V.choose.eta(S, e).k;
 assert.equal(winner(0), 'B'); assert.equal(winner(0.75), 'B'); assert.equal(winner(0.85), 'C');
 assert.equal(winner(3.45), 'C'); assert.equal(winner(3.55), 'A'); assert.equal(winner(8), 'A');
+// On the η slider grid (step 0.05) the only display-precision tie for the top spot is η = 3.50 (A = C = 30.0);
+// the page shows it as a tie (tieMark) rather than naming one winner.
+const S3 = V.SOCIETIES, ties = [];
+for (let i = 0; i <= 160; i++) { const e = i / 20, sh = ['A', 'B', 'C'].map(k => V.ce(S3[k], e).toFixed(1)), top = Math.max(...sh.map(Number)).toFixed(1); if (sh.filter(v => v === top).length > 1) ties.push(e); }
+assert.deepEqual(ties, [3.5], 'display ties on the η grid');
 // 4. Redistribution: k = 0 → maximin goes to t = 1; k = 0.6 → interior optimum solving 63t² + 12t − 35 = 0.
 assert.equal(V.bestT(S.B, 0, V.min).t, 1);
 close(V.bestT(S.B, 0.6, V.min).t, (-12 + Math.sqrt(144 + 4 * 63 * 35)) / 126, 0.001, 'maximin best t');
