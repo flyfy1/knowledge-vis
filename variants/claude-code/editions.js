@@ -234,5 +234,20 @@ window.CLAUDE_EDITIONS = [
   "slug": "sequences-series",
   "original": "sequences-series",
   "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "solid-geometry",
+  "original": "solid-geometry",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "taylor-series",
+  "original": "taylor-series",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "vectors",
+  "original": "vectors",
+  "model": "claude-opus-5-5"
  }
 ];

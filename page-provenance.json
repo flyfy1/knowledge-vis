@@ -972,6 +972,42 @@
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
       "path": "variants/claude-code/newton-method/index.html"
+    },
+    "cc-taylor-series": {
+      "developer": "Claude Code",
+      "edition": "claude-code-taylor-series-20261109",
+      "kind": "original",
+      "sourceRevision": "33f547cb41564166db1173f2a95736b116e19409",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《泰勒级数 · 把曲线一项项贴上去》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Taylor Series · Patch the Curve Term by Term"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/taylor-series/index.html"
+    },
+    "cc-vectors": {
+      "developer": "Claude Code",
+      "edition": "claude-code-vectors-20261109",
+      "kind": "original",
+      "sourceRevision": "33f547cb41564166db1173f2a95736b116e19409",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《向量 · 有方向的量》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Vectors · Quantities With a Direction"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/vectors/index.html"
+    },
+    "cc-solid-geometry": {
+      "developer": "Claude Code",
+      "edition": "claude-code-solid-geometry-20261109",
+      "kind": "original",
+      "sourceRevision": "33f547cb41564166db1173f2a95736b116e19409",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《立体几何 · 转一转，再切一刀》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Solid Geometry · Turn It, Then Cut It"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/solid-geometry/index.html"
     }
   },
   "exceptions": {
