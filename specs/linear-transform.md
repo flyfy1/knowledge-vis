@@ -26,3 +26,5 @@ unverified. Per AUTHORSHIP.md §7 the label is removed; its learner note (rounde
 computation) stays as a plain paragraph under the tagline. Recurrence check: `node tests/page-provenance-core.cjs`
 fails if any label exists without an inventory record. Relabel only after the author is confirmed in
 `overrides.json`. See [review](reviews/claude-pages-review-20261109.md#6-任务-2署名清单缺口).
+
+2026-11-09: author confirmed by Yangyu as Alberto (Muse); recorded in `authorship/overrides.json` and relabelled as an original edition (see specs/visual-page-provenance.md).

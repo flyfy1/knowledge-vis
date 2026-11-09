@@ -100,3 +100,12 @@ they are registered or the labels removed.
   label text itself. Without evidence it is not registered; the label was removed and its learner note
   kept as a plain paragraph. It can be relabelled once Yangyu confirms the author in `overrides.json`.
 - Details: [claude-pages-review-20261109](reviews/claude-pages-review-20261109.md).
+
+## linear-transform relabelled — 2026-11-09 Claude Code
+
+Yangyu confirmed that Muse wrote `math/linear-algebra/linear-transform`. The fact is recorded in
+`authorship/overrides.json` against a0ef4c6954ea5d55a2b22db6dc575e99a7fd4283 (agent `alberto`, model
+unavailable), and the page is registered as an `Alberto (Muse)` original edition with
+`provenanceEvidence: "authorship/overrides.json"`. `tests/page-provenance-core.cjs` now accepts such an
+override (matching agent, `impact: authored`, non-empty `source`) as proof when the source commit has
+no `Built-By`. The removed label had claimed Codex; that claim had no evidence and is not restored.

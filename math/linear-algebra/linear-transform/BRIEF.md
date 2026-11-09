@@ -1,5 +1,7 @@
 # BRIEF · 2D Linear Maps / 二维线性变换
 
+> Author: Alberto (Muse), model unavailable — confirmed by Yangyu on 2026-11-09 and recorded in `authorship/overrides.json` (creating commit a0ef4c69 has no `Built-By`).
+
 ## Learning contract
 
 - **Audience:** senior-high / early-university learners who can read coordinates and a 2×2 table but have not yet connected a matrix to a geometric map.

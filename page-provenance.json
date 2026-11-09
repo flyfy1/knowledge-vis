@@ -394,6 +394,18 @@
       },
       "originalAuthorship": "not asserted: lesson first added in 3820f26b without a Built-By declaration (unattributed); prior contributions retained",
       "path": "biology/ecology/population-ecology/index.html"
+    },
+    "linear-transform": {
+      "developer": "Alberto (Muse)",
+      "edition": "muse-linear-transform-20261029",
+      "kind": "original",
+      "sourceRevision": "a0ef4c6954ea5d55a2b22db6dc575e99a7fd4283",
+      "scope": {
+        "zh": "从零写出二维线性变换课：网格变形、基向量记账、行列式读面积、可逆与坍缩、组合顺序",
+        "en": "Wrote the 2D linear-map lesson from scratch: grid deformation, basis bookkeeping, determinant as area, invertible vs collapsed maps, composition order"
+      },
+      "provenanceEvidence": "authorship/overrides.json",
+      "path": "math/linear-algebra/linear-transform/index.html"
     }
   },
   "exceptions": {

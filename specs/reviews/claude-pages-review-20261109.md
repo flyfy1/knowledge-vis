@@ -200,6 +200,7 @@ node language/phonology/vowel-space/tools/pb-means.cjs <该文件>          → 
 - 历史上只有 a0ef4c69（main）及同内容的 6ee84cd7（`local/linear-algebra` 分支），两者都**没有** Built-By；同批 10-29 的 c21cdb49、3820f26b 也都没有；`authorship/overrides.json` 的 commits/files 为空；worklog、spec、BRIEF 都没写作者；`authorship.cjs` 推导为 unattributed。
 - 唯一写着「Codex」的是标签本身（「Codex lesson · Linear map lab」，而且不合契约：无 `data-developer`、无 source revision）。同批其他页面多由 Codex 制作，但按 AUTHORSHIP §1「不猜」，这不能作为证据。
 - 处理：不登记；按 AUTHORSHIP §7「未核实来源的页面不贴标」移除 `<details class="page-provenance">` 和 provenance CSS 引用，保留其中给学习者的数值说明（「数值读数四舍五入…」）作为普通段落。若 Yangyu 确认作者，可在 `overrides.json` 补记后再贴标。
+- **后续（2026-11-09）**：Yangyu 确认作者是 Muse。已在 `overrides.json` 对 a0ef4c69 补记（agent `alberto`，模型未知），并重新贴上 `Alberto (Muse)` 原创版本标签；`page-provenance-core` 现为 32 个标签。原标签声称的 Codex 没有证据，不恢复。
 
 ### 结果
 
@@ -227,5 +228,5 @@ PASS page-provenance-browser
 - 跨模型（如 Codex）交叉评审：本评审与作者同模型，盲区可能重合。
 - 学习者冷走（WORKFLOW 第 3 条第一顺位）只由本评审者以「先不看 BRIEF」的方式走了一遍，没有真人体验者拖动参数验证。
 - 各页 nit 未改。
-- linear-transform 的作者需要 Yangyu 确认后才能重新贴标。
+- ~~linear-transform 的作者需要 Yangyu 确认后才能重新贴标。~~ 已确认为 Muse 并重新贴标。
 - Peterson & Barney 1952 原文 Table II 未取得，vowel-space 的均值只核对到 Praat 发行的数据。

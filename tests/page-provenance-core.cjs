@@ -17,14 +17,19 @@ function labeledHtmlFiles(dir){
 assert.deepEqual(labeledHtmlFiles(root).sort(),inventoryPaths.slice().sort(),'static provenance labels must match the authoritative inventory');
 // Developers are display names of agents registered in AUTHORSHIP.md §2; each
 // needs a Built-By pattern that proves the source revision is really theirs.
-const DEVELOPERS={'Codex':/Built-By: Codex/,'Claude Code':/Built-By: Claude/};
+const DEVELOPERS={'Codex':/Built-By: Codex/,'Claude Code':/Built-By: Claude/,'Alberto (Muse)':/Built-By: (?:Alberto|Muse)\b/};
+// AUTHORSHIP.md §5: a human-confirmed authorship/overrides.json entry is the other valid proof.
+const AGENT_IDS={'Codex':'codex','Claude Code':'claude-code','Alberto (Muse)':'alberto'};
+const overrides=JSON.parse(fs.readFileSync(path.join(root,'authorship/overrides.json'),'utf8'));
 const KIND={revised:['改进版本','Revised edition'],original:['原创版本','Original edition']};
 const labelZh=p=>p.developer+' 开发 · '+KIND[p.kind][0],labelEn=p=>'Developed with '+p.developer+' · '+KIND[p.kind][1];
 const counts={};
 for(const[slug,p]of Object.entries(m.pages)){
  assert.match(slug,/^[a-z][a-z0-9-]*(?:\/[a-z0-9-]+)?$/);assert.ok(DEVELOPERS[p.developer],slug+' developer must be a registered agent');assert.ok(KIND[p.kind],slug+' kind must be revised|original');counts[p.developer+'/'+p.kind]=(counts[p.developer+'/'+p.kind]||0)+1;assert.match(p.sourceRevision,/^[a-f0-9]{40}$/);assert.ok(p.scope.zh&&p.scope.en);
  const filename=p.path||slug+'/index.html';assert.ok(!path.isAbsolute(filename)&&!filename.split('/').includes('..')&&filename.endsWith('.html'));const src=fs.readFileSync(path.join(root,filename),'utf8');assert.equal((src.match(/<details class="page-provenance"/g)||[]).length,1,slug+' has one static label');assert.ok(src.includes('data-source-revision="'+p.sourceRevision+'"'));assert.ok(src.includes('data-edition="'+p.edition+'"'));assert.ok(src.includes(labelZh(p)),slug+' zh label');assert.ok(src.includes(labelEn(p)),slug+' en label');assert.ok(src.includes('data-developer="'+p.developer+'"'));assert.ok(src.includes(p.scope.zh));assert.ok(src.includes(p.scope.en));assert.ok(src.includes('https://github.com/flyfy1/knowledge-vis/commit/'+p.sourceRevision));assert.ok(src.includes('page-provenance.css'));if(p.integrationRevision){assert.ok(src.includes('https://github.com/flyfy1/knowledge-vis/commit/'+p.integrationRevision));cp.execFileSync('git',['cat-file','-e',p.integrationRevision+'^{commit}'],{cwd:root});}
- const log=cp.execFileSync('git',['show','-s','--format=%B',p.sourceRevision],{cwd:root,encoding:'utf8'});if(!DEVELOPERS[p.developer].test(log)){
+ const log=cp.execFileSync('git',['show','-s','--format=%B',p.sourceRevision],{cwd:root,encoding:'utf8'});if(!DEVELOPERS[p.developer].test(log)&&p.provenanceEvidence==='authorship/overrides.json'){
+  const o=overrides.commits[p.sourceRevision];assert.ok(o&&o.agent===AGENT_IDS[p.developer]&&o.impact==='authored'&&o.source,slug+' override must confirm '+p.developer+' authored the source revision');
+ }else if(!DEVELOPERS[p.developer].test(log)){
   assert.match(p.provenanceEvidence||'',/^specs\/reviews\/[a-z0-9-]+\.md$/,'missing commit trailer needs exact tracked author evidence');
   const evidence=cp.execFileSync('git',['show',p.sourceRevision+':'+p.provenanceEvidence],{cwd:root,encoding:'utf8'});assert.ok(new RegExp('^# .*'+p.developer,'m').test(evidence),'source revision must contain its '+p.developer+' authorship record');
  }
