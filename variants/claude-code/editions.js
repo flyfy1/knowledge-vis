@@ -26,6 +26,21 @@ window.CLAUDE_EDITIONS = [
   "model": "claude-opus-5-5"
  },
  {
+  "slug": "averaging-leveling",
+  "original": "averaging-leveling",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "bar-charts",
+  "original": "bar-charts",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "chicken-rabbit",
+  "original": "chicken-rabbit",
+  "model": "claude-opus-5-5"
+ },
+ {
   "slug": "intervals-fences",
   "original": "intervals-fences",
   "model": "claude-opus-5-5"

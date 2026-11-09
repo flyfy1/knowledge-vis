@@ -504,6 +504,42 @@
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
       "path": "variants/claude-code/place-value/index.html"
+    },
+    "cc-averaging-leveling": {
+      "developer": "Claude Code",
+      "edition": "claude-code-averaging-leveling-20261109",
+      "kind": "original",
+      "sourceRevision": "8669eaf8cf3778bf3b55a0e8991f8d479a4d5a9b",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《平均数 · 移多补少》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Averages · Level by Pouring"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/averaging-leveling/index.html"
+    },
+    "cc-bar-charts": {
+      "developer": "Claude Code",
+      "edition": "claude-code-bar-charts-20261109",
+      "kind": "original",
+      "sourceRevision": "8669eaf8cf3778bf3b55a0e8991f8d479a4d5a9b",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《条形图 · 让数字站成一排比高矮》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Bar Charts · Numbers Standing in a Row"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/bar-charts/index.html"
+    },
+    "cc-chicken-rabbit": {
+      "developer": "Claude Code",
+      "edition": "claude-code-chicken-rabbit-20261109",
+      "kind": "original",
+      "sourceRevision": "8669eaf8cf3778bf3b55a0e8991f8d479a4d5a9b",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《鸡兔同笼 · 先假设，差额会说话》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Chickens & Rabbits · Assume First, Let the Gap Speak"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/chicken-rabbit/index.html"
     }
   },
   "exceptions": {
