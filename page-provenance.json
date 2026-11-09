@@ -828,6 +828,42 @@
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
       "path": "variants/claude-code/coordinate-plane/index.html"
+    },
+    "cc-polygon-angles": {
+      "developer": "Claude Code",
+      "edition": "claude-code-polygon-angles-20261109",
+      "kind": "original",
+      "sourceRevision": "d50af07dc18c946d399ef27835fdc6cadcd8a019",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《多边形内角和 · 撕下来拼一拼》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Polygon Angle Sums · Tear and Rearrange"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/polygon-angles/index.html"
+    },
+    "cc-real-number-line": {
+      "developer": "Claude Code",
+      "edition": "claude-code-real-number-line-20261109",
+      "kind": "original",
+      "sourceRevision": "d50af07dc18c946d399ef27835fdc6cadcd8a019",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《实数与数轴 · √2 落在哪一点》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Real Numbers & the Number Line · Where √2 Lands"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/real-number-line/index.html"
+    },
+    "cc-similarity-scaling": {
+      "developer": "Claude Code",
+      "edition": "claude-code-similarity-scaling-20261109",
+      "kind": "original",
+      "sourceRevision": "d50af07dc18c946d399ef27835fdc6cadcd8a019",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《相似与缩放 · 长度、面积、体积各变几倍》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Similarity & Scaling · Lengths, Areas and Volumes Each Change Differently"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/similarity-scaling/index.html"
     }
   },
   "exceptions": {

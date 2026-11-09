@@ -174,5 +174,20 @@ window.CLAUDE_EDITIONS = [
   "slug": "place-value",
   "original": "place-value",
   "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "polygon-angles",
+  "original": "polygon-angles",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "real-number-line",
+  "original": "real-number-line",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "similarity-scaling",
+  "original": "similarity-scaling",
+  "model": "claude-opus-5-5"
  }
 ];
