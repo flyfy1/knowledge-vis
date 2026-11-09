@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="category" content="math">
+  <meta name="stage" content="junior">
+  <meta name="author" content="Claude Code (claude-opus-5-5)">
+  <title>空间对角线 · 箱子里最长的棍子</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../../../page-provenance.css">
+  <script src="model.js"></script>
+  <script src="i18n.js"></script>
+</head>
+<body>
+  <header class="site-head">
+    <div class="head-main">
+      <p class="backline"><a href="../../../" data-i18n="back"></a></p>
+      <h1 data-i18n="pageTitle"></h1>
+      <p class="tagline" data-i18n="tagline"></p>
+      <!-- page-provenance -->
+      <p class="compare"><a href="../../../math/geometry/space-diagonal/" data-i18n="compare"></a></p>
+    </div>
+    <div class="lang-toggle" id="langToggle" role="group" aria-label="Language">
+      <button type="button" data-lang="zh">中</button><button type="button" data-lang="en">EN</button>
+    </div>
+  </header>
+  <nav class="step-nav" id="stepNav" data-i18n-aria="navLabel">
+    <a class="nav-step" href="#step0" data-i18n="nav0"></a><a class="nav-step" href="#step1" data-i18n="nav1"></a>
+    <a class="nav-step" href="#step2" data-i18n="nav2"></a><a class="nav-step" href="#step3" data-i18n="nav3"></a>
+    <a class="nav-step" href="#step4" data-i18n="nav4"></a><a class="nav-step" href="#step5" data-i18n="nav5"></a>
+    <a class="nav-step" href="#step6" data-i18n="nav6"></a>
+  </nav>
+  <main>
+    <section class="step" id="step0" data-step="0"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s0k"></p><h2 data-i18n="s0t"></h2><p class="explain" data-i18n-html="s0e"></p>
+      <div class="stage"><canvas id="c0" class="orbit" height="400" role="img" data-i18n-aria="s0t"></canvas></div>
+      <p class="legend"><span class="lg"><span class="sw sw-white"></span><span data-i18n="lgEdge"></span></span><span class="lg"><span class="sw sw-green"></span><span data-i18n="lgFace"></span></span><span class="lg"><span class="sw sw-orange"></span><span data-i18n="lgSpace"></span></span></p>
+      <div class="btn-row">
+        <button class="btn toggle" id="kEdge" type="button" data-step="0" data-i18n="kEdge"></button>
+        <button class="btn toggle" id="kFace" type="button" data-step="0" data-i18n="kFace"></button>
+        <button class="btn toggle" id="kSpace" type="button" data-step="0" data-i18n="kSpace"></button>
+        <button class="btn" id="spin0" type="button" data-step="0"></button>
+      </div>
+      <p class="readout" id="r0" aria-live="polite"></p><p class="hint" data-i18n="s0hint"></p>
+    </div></section>
+
+    <section class="step" id="step1" data-step="1"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s1k"></p><h2 data-i18n="s1t"></h2><p class="explain" data-i18n-html="s1e"></p>
+      <div class="stage"><canvas id="c1" class="orbit" height="380" role="img" data-i18n-aria="s1t"></canvas></div>
+      <p class="legend"><span class="lg"><span class="sw sw-cyan"></span><span data-i18n="lgBase"></span></span><span class="lg"><span class="sw sw-green"></span><span data-i18n="lgE"></span></span></p>
+      <div class="controls">
+        <label><span data-i18n="sa"></span><output id="a1v"></output><input id="a1" data-step="1" data-dim="a" type="range" min="1" max="12" step="1" value="4"></label>
+        <label><span data-i18n="sb"></span><output id="b1v"></output><input id="b1" data-step="1" data-dim="b" type="range" min="1" max="12" step="1" value="3"></label>
+      </div>
+      <p class="readout" id="r1" aria-live="polite"></p><p class="hint" data-i18n="s1hint"></p>
+    </div></section>
+
+    <section class="step" id="step2" data-step="2"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s2k"></p><h2 data-i18n="s2t"></h2><p class="explain" data-i18n-html="s2e"></p>
+      <div class="stage"><canvas id="c2" class="orbit" height="380" role="img" data-i18n-aria="s2t"></canvas></div>
+      <p class="legend"><span class="lg"><span class="sw sw-green"></span><span data-i18n="lgE"></span></span><span class="lg"><span class="sw sw-violet"></span><span data-i18n="lgC"></span></span><span class="lg"><span class="sw sw-orange"></span><span data-i18n="lgD"></span></span><span class="lg"><span class="sw sw-slice"></span><span data-i18n="lgSlice"></span></span></p>
+      <div class="controls">
+        <label><span data-i18n="sc"></span><output id="c2v"></output><input id="c2s" data-step="2" data-dim="c" type="range" min="1" max="12" step="1" value="12"></label>
+      </div>
+      <p class="readout" id="r2" aria-live="polite"></p><p class="hint" data-i18n="s2hint"></p>
+    </div></section>
+
+    <section class="step" id="step3" data-step="3"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s3k"></p><h2 data-i18n="s3t"></h2><p class="explain" data-i18n-html="s3e"></p>
+      <div class="stage"><canvas id="c3" class="orbit" height="380" role="img" data-i18n-aria="s3t"></canvas></div>
+      <p class="legend"><span class="lg"><span class="sw sw-orange"></span><span data-i18n="lgCurve"></span></span><span class="lg"><span class="sw sw-ghost"></span><span data-i18n="lgGhost"></span></span><span class="lg"><span class="sw sw-dot"></span><span data-i18n="lgNow"></span></span></p>
+      <div class="controls">
+        <label><span data-i18n="sa"></span><output id="a3v"></output><input id="a3" data-step="3" data-dim="a" type="range" min="1" max="12" step="1" value="4"></label>
+        <label><span data-i18n="sb"></span><output id="b3v"></output><input id="b3" data-step="3" data-dim="b" type="range" min="1" max="12" step="1" value="3"></label>
+        <label><span data-i18n="sc"></span><output id="c3v"></output><input id="c3s" data-step="3" data-dim="c" type="range" min="1" max="12" step="1" value="12"></label>
+      </div>
+      <p class="readout" id="r3" aria-live="polite"></p>
+      <div class="ledger-wrap"><table class="ledger" id="ledger"><thead><tr><th data-i18n="thMove"></th><th>a</th><th>b</th><th>c</th><th>e</th><th>d</th></tr></thead><tbody></tbody></table></div>
+      <div class="btn-row"><button class="btn" id="clear3" type="button" data-step="3" data-i18n="clearLedger"></button></div>
+      <p class="hint" data-i18n="s3hint"></p>
+    </div></section>
+
+    <section class="step" id="step4" data-step="4"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s4k"></p><h2 data-i18n="s4t"></h2><p class="explain" data-i18n-html="s4e"></p>
+      <div class="stage"><canvas id="c4" class="orbit" height="380" role="img" data-i18n-aria="s4t"></canvas></div>
+      <p class="legend"><span class="lg"><span class="sw sw-green"></span><span data-i18n="lgF"></span></span><span class="lg"><span class="sw sw-violet"></span><span data-i18n="lgLast"></span></span><span class="lg"><span class="sw sw-orange"></span><span data-i18n="lgD"></span></span></p>
+      <div class="btn-row">
+        <button class="btn toggle" id="rtBase" type="button" data-step="4" data-i18n="rtBase"></button>
+        <button class="btn toggle" id="rtFront" type="button" data-step="4" data-i18n="rtFront"></button>
+        <button class="btn toggle" id="rtSide" type="button" data-step="4" data-i18n="rtSide"></button>
+      </div>
+      <p class="readout" id="r4" aria-live="polite"></p><p class="readout" id="r4b"></p><p class="hint" data-i18n="s4hint"></p>
+    </div></section>
+
+    <section class="step" id="step5" data-step="5"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s5k"></p><h2 data-i18n="s5t"></h2><p class="explain" data-i18n-html="s5e"></p>
+      <div class="stage"><canvas id="c5" class="orbit" height="360" role="img" data-i18n-aria="s5t"></canvas></div>
+      <p class="legend"><span class="lg"><span class="sw sw-orange"></span><span data-i18n="lgD"></span></span><span class="lg"><span class="sw sw-green"></span><span data-i18n="lgStickIn"></span></span><span class="lg"><span class="sw sw-pink"></span><span data-i18n="lgStickOut"></span></span></p>
+      <div class="controls">
+        <label><span data-i18n="sL"></span><output id="L5v"></output><input id="L5" data-step="5" type="range" min="40" max="90" step="1" value="60"></label>
+      </div>
+      <p class="readout" id="r5" aria-live="polite"></p><p class="hint" data-i18n="s5hint"></p>
+      <div class="quiz"><p class="quiz-prompt" data-i18n="quizPrompt"></p><div class="quiz-options" id="quizOpts"></div><button class="btn" id="checkQuiz" type="button" data-i18n="check"></button><p class="quiz-feedback" id="quizFeedback" aria-live="polite"></p></div>
+    </div></section>
+
+    <section class="step" id="step6" data-step="6"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s6k"></p><h2 data-i18n="s6t"></h2>
+      <div class="finale"><p data-i18n-html="s6fin"></p><p class="formula" data-i18n="formula"></p><p data-i18n="boundary"></p>
+        <p class="links-title" data-i18n="linksTitle"></p>
+        <a class="xlink" href="../../../math/geometry/pythagoras/#step2" data-i18n="lk1"></a>
+        <a class="xlink" href="../../../math/geometry/pythagoras/#step5" data-i18n="lk2"></a>
+        <a class="xlink" href="../../../math/geometry/solid-geometry/#step1" data-i18n="lk3"></a>
+        <a class="xlink" href="../../../math/linear-algebra/vectors/#step0" data-i18n="lk4"></a>
+      </div>
+    </div></section>
+  </main>
+  <footer class="site-foot" data-i18n="foot"></footer>
+  <script src="app.js"></script>
+</body>
+</html>
