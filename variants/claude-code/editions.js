@@ -6,6 +6,21 @@ window.CLAUDE_EDITIONS = [
   "model": "claude-opus-5-5"
  },
  {
+  "slug": "mandelbrot",
+  "original": "mandelbrot",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "trigonometry",
+  "original": "trigonometry",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "eigenvectors",
+  "original": "eigenvectors",
+  "model": "claude-opus-5-5"
+ },
+ {
   "slug": "fractions",
   "original": "fractions",
   "model": "claude-opus-5-5"

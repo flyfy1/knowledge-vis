@@ -756,6 +756,42 @@
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
       "path": "variants/claude-code/linear-transform/index.html"
+    },
+    "cc-mandelbrot": {
+      "developer": "Claude Code",
+      "edition": "claude-code-mandelbrot-20261109",
+      "kind": "original",
+      "sourceRevision": "5a2517b7b19311bcc3746833edcf7ddd3f7ffa4c",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《Mandelbrot 分形 · 无限放大》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson The Mandelbrot Set · Zoom Without End"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/mandelbrot/index.html"
+    },
+    "cc-trigonometry": {
+      "developer": "Claude Code",
+      "edition": "claude-code-trigonometry-20261109",
+      "kind": "original",
+      "sourceRevision": "5a2517b7b19311bcc3746833edcf7ddd3f7ffa4c",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《三角函数 · 单位圆》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Trigonometric Functions · The Unit Circle"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/trigonometry/index.html"
+    },
+    "cc-eigenvectors": {
+      "developer": "Claude Code",
+      "edition": "claude-code-eigenvectors-20261109",
+      "kind": "original",
+      "sourceRevision": "5a2517b7b19311bcc3746833edcf7ddd3f7ffa4c",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《特征值与特征向量 · 矩阵不转的那些方向》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Eigenvalues & Eigenvectors · The Directions a Matrix Cannot Turn"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/eigenvectors/index.html"
     }
   },
   "exceptions": {
