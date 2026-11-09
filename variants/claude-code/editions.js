@@ -206,6 +206,21 @@ window.CLAUDE_EDITIONS = [
   "model": "claude-opus-5-5"
  },
  {
+  "slug": "auction-basics",
+  "original": "auction-basics",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "externalities",
+  "original": "externalities",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "newton-method",
+  "original": "newton-method",
+  "model": "claude-opus-5-5"
+ },
+ {
   "slug": "ode-phase-portraits",
   "original": "ode-phase-portraits",
   "model": "claude-opus-5-5"

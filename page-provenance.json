@@ -936,6 +936,42 @@
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
       "path": "variants/claude-code/sequences-series/index.html"
+    },
+    "cc-auction-basics": {
+      "developer": "Claude Code",
+      "edition": "claude-code-auction-basics-20261109",
+      "kind": "original",
+      "sourceRevision": "0c3ead1314117c0b44bf617171e93d727273bb3a",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《拍卖 · 报价与真话》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Auctions · Bidding and Telling the Truth"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/auction-basics/index.html"
+    },
+    "cc-externalities": {
+      "developer": "Claude Code",
+      "edition": "claude-code-externalities-20261109",
+      "kind": "original",
+      "sourceRevision": "0c3ead1314117c0b44bf617171e93d727273bb3a",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《外部性与公地悲剧 · 账记在谁头上》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Externalities & the Tragedy of the Commons · Who Pays the Bill"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/externalities/index.html"
+    },
+    "cc-newton-method": {
+      "developer": "Claude Code",
+      "edition": "claude-code-newton-method-20261109",
+      "kind": "original",
+      "sourceRevision": "0c3ead1314117c0b44bf617171e93d727273bb3a",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《牛顿法求根 · 沿切线一刀跳向零点》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Newton’s Method · Leap to the Root Along a Tangent"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/newton-method/index.html"
     }
   },
   "exceptions": {
