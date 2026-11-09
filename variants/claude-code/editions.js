@@ -11,6 +11,21 @@ window.CLAUDE_EDITIONS = [
   "model": "claude-opus-5-5"
  },
  {
+  "slug": "division-remainder",
+  "original": "division-remainder",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "linear-functions",
+  "original": "linear-functions",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "symmetry-rotation",
+  "original": "symmetry-rotation",
+  "model": "claude-opus-5-5"
+ },
+ {
   "slug": "parabola",
   "original": "parabola",
   "model": "claude-opus-5-5"
