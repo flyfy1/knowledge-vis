@@ -9,5 +9,20 @@ window.CLAUDE_EDITIONS = [
   "slug": "fractions",
   "original": "fractions",
   "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "parabola",
+  "original": "parabola",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "integral",
+  "original": "integral",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "derivative",
+  "original": "derivative",
+  "model": "claude-opus-5-5"
  }
 ];

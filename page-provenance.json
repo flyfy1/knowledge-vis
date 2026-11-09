@@ -432,6 +432,42 @@
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
       "path": "variants/claude-code/fractions/index.html"
+    },
+    "cc-parabola": {
+      "developer": "Claude Code",
+      "edition": "claude-code-parabola-20261109",
+      "kind": "original",
+      "sourceRevision": "ef34b2762c6ea81306e9a021adf7dd7a2686959b",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《抛物线 · 投篮的弧线》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Parabolas · The Arc of a Shot"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/parabola/index.html"
+    },
+    "cc-derivative": {
+      "developer": "Claude Code",
+      "edition": "claude-code-derivative-20261109",
+      "kind": "original",
+      "sourceRevision": "ef34b2762c6ea81306e9a021adf7dd7a2686959b",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《导数 · 把平均压成此刻》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson The Derivative · Squeezing the Average into the Instant"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/derivative/index.html"
+    },
+    "cc-integral": {
+      "developer": "Claude Code",
+      "edition": "claude-code-integral-20261109",
+      "kind": "original",
+      "sourceRevision": "ef34b2762c6ea81306e9a021adf7dd7a2686959b",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《定积分 · 把小条加回整体》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson The Definite Integral · Adding the Strips Back Up"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/integral/index.html"
     }
   },
   "exceptions": {
