@@ -612,6 +612,42 @@
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
       "path": "variants/claude-code/patterns-sequences/index.html"
+    },
+    "cc-number-combinatorics": {
+      "developer": "Claude Code",
+      "edition": "claude-code-number-combinatorics-20261109",
+      "kind": "original",
+      "sourceRevision": "abc57d371841248b0cb22e5717bc4f2b8a3f7182",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《数论与组合 · 把结构算出来》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Number Theory & Counting · Compute the Structure"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/number-combinatorics/index.html"
+    },
+    "cc-game-theory": {
+      "developer": "Claude Code",
+      "edition": "claude-code-game-theory-20261109",
+      "kind": "original",
+      "sourceRevision": "abc57d371841248b0cb22e5717bc4f2b8a3f7182",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《博弈论 · 先看对手会怎么选》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Game Theory · Look at the Other Choice First"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/game-theory/index.html"
+    },
+    "cc-music-theory": {
+      "developer": "Claude Code",
+      "edition": "claude-code-music-theory-20261109",
+      "kind": "original",
+      "sourceRevision": "abc57d371841248b0cb22e5717bc4f2b8a3f7182",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《音乐理论 · 从音程到终止》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Music Theory · From Intervals to Cadence"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/music-theory/index.html"
     }
   },
   "exceptions": {

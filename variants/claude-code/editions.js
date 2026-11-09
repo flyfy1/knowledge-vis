@@ -41,6 +41,21 @@ window.CLAUDE_EDITIONS = [
   "model": "claude-opus-5-5"
  },
  {
+  "slug": "number-combinatorics",
+  "original": "number-combinatorics",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "game-theory",
+  "original": "game-theory",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "music-theory",
+  "original": "music-theory",
+  "model": "claude-opus-5-5"
+ },
+ {
   "slug": "mechanism-design",
   "original": "mechanism-design",
   "model": "claude-opus-5-5"
