@@ -306,6 +306,11 @@ window.CLAUDE_EDITIONS = [
   "model": "claude-opus-5-5"
  },
  {
+  "slug": "membrane-transport",
+  "original": "membrane-transport",
+  "model": "claude-opus-5-5"
+ },
+ {
   "slug": "action-potential",
   "original": "action-potential",
   "model": "claude-opus-5-5"
@@ -381,6 +386,11 @@ window.CLAUDE_EDITIONS = [
   "model": "claude-opus-5-5"
  },
  {
+  "slug": "neuroscience-basics",
+  "original": "neuroscience-basics",
+  "model": "claude-opus-5-5"
+ },
+ {
   "slug": "cosmology-expansion",
   "original": "cosmology-expansion",
   "model": "claude-opus-5-5"
@@ -401,6 +411,11 @@ window.CLAUDE_EDITIONS = [
   "model": "claude-opus-5-5"
  },
  {
+  "slug": "public-health",
+  "original": "public-health",
+  "model": "claude-opus-5-5"
+ },
+ {
   "slug": "mechanism-design",
   "original": "mechanism-design",
   "model": "claude-opus-5-5"
@@ -408,6 +423,11 @@ window.CLAUDE_EDITIONS = [
  {
   "slug": "activation-energy",
   "original": "activation-energy",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "blood-circulation",
+  "original": "blood-circulation",
   "model": "claude-opus-5-5"
  },
  {

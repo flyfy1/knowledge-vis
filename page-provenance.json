@@ -2686,6 +2686,54 @@
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
       "path": "variants/claude-code/action-potential/index.html"
+    },
+    "cc-membrane-transport": {
+      "developer": "Claude Code",
+      "edition": "claude-code-membrane-transport-20261109",
+      "kind": "original",
+      "sourceRevision": "13049d87d14eac34b4d27191c3175d8734938531",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《膜运输 · 梯度如何变成通量》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Membrane Transport · From Gradient to Flux"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/membrane-transport/index.html"
+    },
+    "cc-neuroscience-basics": {
+      "developer": "Claude Code",
+      "edition": "claude-code-neuroscience-basics-20261109",
+      "kind": "original",
+      "sourceRevision": "13049d87d14eac34b4d27191c3175d8734938531",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《神经科学基础 · 从静息到脉冲》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Neuroscience Basics · From Rest to Spike"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/neuroscience-basics/index.html"
+    },
+    "cc-public-health": {
+      "developer": "Claude Code",
+      "edition": "claude-code-public-health-20261109",
+      "kind": "original",
+      "sourceRevision": "13049d87d14eac34b4d27191c3175d8734938531",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《公共卫生 · 从曲线到干预》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Public Health · From Curves to Interventions"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/public-health/index.html"
+    },
+    "cc-blood-circulation": {
+      "developer": "Claude Code",
+      "edition": "claude-code-blood-circulation-20261109",
+      "kind": "original",
+      "sourceRevision": "13049d87d14eac34b4d27191c3175d8734938531",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《血液循环》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Blood Circulation"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/blood-circulation/index.html"
     }
   },
   "exceptions": {
