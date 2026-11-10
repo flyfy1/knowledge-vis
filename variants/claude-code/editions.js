@@ -196,6 +196,11 @@ window.CLAUDE_EDITIONS = [
   "model": "claude-opus-5-5"
  },
  {
+  "slug": "buoyancy-archimedes",
+  "original": "buoyancy-archimedes",
+  "model": "claude-opus-5-5"
+ },
+ {
   "slug": "conic-sections",
   "original": "conic-sections",
   "model": "claude-opus-5-5"

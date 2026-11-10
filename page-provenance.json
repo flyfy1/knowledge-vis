@@ -1318,6 +1318,18 @@
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
       "path": "variants/claude-code/standing-wave/index.html"
+    },
+    "cc-buoyancy-archimedes": {
+      "developer": "Claude Code",
+      "edition": "claude-code-buoyancy-archimedes-20261109",
+      "kind": "original",
+      "sourceRevision": "87ab11f7741c9bcaeaa3d51873cfaf7f64b20791",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《浮力与阿基米德》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Buoyancy & Archimedes"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/buoyancy-archimedes/index.html"
     }
   },
   "exceptions": {
