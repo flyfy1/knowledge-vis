@@ -2266,6 +2266,42 @@
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
       "path": "variants/claude-code/isomers/index.html"
+    },
+    "cc-rsa-encryption": {
+      "developer": "Claude Code",
+      "edition": "claude-code-rsa-encryption-20261109",
+      "kind": "original",
+      "sourceRevision": "820597610e9203c83da75c13d034acf1f1ea4166",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《RSA 公钥加密 · 乘起来容易，拆开来难》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson RSA Public-Key Encryption · Easy to Multiply, Hard to Split"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/rsa-encryption/index.html"
+    },
+    "cc-shortest-path": {
+      "developer": "Claude Code",
+      "edition": "claude-code-shortest-path-20261109",
+      "kind": "original",
+      "sourceRevision": "820597610e9203c83da75c13d034acf1f1ea4166",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《最短路 · 从起点像洪水一样漫开》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Shortest Path · Flooding Out From the Start"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/shortest-path/index.html"
+    },
+    "cc-particles-states": {
+      "developer": "Claude Code",
+      "edition": "claude-code-particles-states-20261109",
+      "kind": "original",
+      "sourceRevision": "820597610e9203c83da75c13d034acf1f1ea4166",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《粒子与物态 · 热闹程度即温度》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Particles & States · Temperature Is How Wildly They Move"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/particles-states/index.html"
     }
   },
   "exceptions": {

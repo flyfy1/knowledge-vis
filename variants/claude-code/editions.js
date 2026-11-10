@@ -216,6 +216,11 @@ window.CLAUDE_EDITIONS = [
   "model": "claude-opus-5-5"
  },
  {
+  "slug": "particles-states",
+  "original": "particles-states",
+  "model": "claude-opus-5-5"
+ },
+ {
   "slug": "atomic-structure",
   "original": "atomic-structure",
   "model": "claude-opus-5-5"
@@ -701,6 +706,11 @@ window.CLAUDE_EDITIONS = [
   "model": "claude-opus-5-5"
  },
  {
+  "slug": "rsa-encryption",
+  "original": "rsa-encryption",
+  "model": "claude-opus-5-5"
+ },
+ {
   "slug": "sequences-series",
   "original": "sequences-series",
   "model": "claude-opus-5-5"
@@ -708,6 +718,11 @@ window.CLAUDE_EDITIONS = [
  {
   "slug": "series-parallel",
   "original": "series-parallel",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "shortest-path",
+  "original": "shortest-path",
   "model": "claude-opus-5-5"
  },
  {
