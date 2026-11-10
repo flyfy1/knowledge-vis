@@ -2446,6 +2446,42 @@
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
       "path": "variants/claude-code/climate-energy/index.html"
+    },
+    "cc-climate-feedback": {
+      "developer": "Claude Code",
+      "edition": "claude-code-climate-feedback-20261109",
+      "kind": "original",
+      "sourceRevision": "b9e2bd154a3a91fdc21d6ed3ad0ea637a53c6c89",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《气候反馈 · 一笔一笔对上能量账》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Climate Feedback · Balance the Energy Ledger"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/climate-feedback/index.html"
+    },
+    "cc-cosmology-expansion": {
+      "developer": "Claude Code",
+      "edition": "claude-code-cosmology-expansion-20261109",
+      "kind": "original",
+      "sourceRevision": "b9e2bd154a3a91fdc21d6ed3ad0ea637a53c6c89",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《宇宙膨胀 · 空间本身在变大》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Cosmic Expansion · Space Itself Gets Larger"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/cosmology-expansion/index.html"
+    },
+    "cc-contour-lines": {
+      "developer": "Claude Code",
+      "edition": "claude-code-contour-lines-20261109",
+      "kind": "original",
+      "sourceRevision": "b9e2bd154a3a91fdc21d6ed3ad0ea637a53c6c89",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《等高线》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Contour Lines"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/contour-lines/index.html"
     }
   },
   "exceptions": {

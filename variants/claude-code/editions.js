@@ -311,6 +311,11 @@ window.CLAUDE_EDITIONS = [
   "model": "claude-opus-5-5"
  },
  {
+  "slug": "climate-feedback",
+  "original": "climate-feedback",
+  "model": "claude-opus-5-5"
+ },
+ {
   "slug": "linear-transform",
   "original": "linear-transform",
   "model": "claude-opus-5-5"
@@ -351,6 +356,11 @@ window.CLAUDE_EDITIONS = [
   "model": "claude-opus-5-5"
  },
  {
+  "slug": "cosmology-expansion",
+  "original": "cosmology-expansion",
+  "model": "claude-opus-5-5"
+ },
+ {
   "slug": "distributed-systems",
   "original": "distributed-systems",
   "model": "claude-opus-5-5"
@@ -388,6 +398,11 @@ window.CLAUDE_EDITIONS = [
  {
   "slug": "conic-sections",
   "original": "conic-sections",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "contour-lines",
+  "original": "contour-lines",
   "model": "claude-opus-5-5"
  },
  {
