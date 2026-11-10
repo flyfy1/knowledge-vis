@@ -51,6 +51,16 @@ window.CLAUDE_EDITIONS = [
   "model": "claude-opus-5-5"
  },
  {
+  "slug": "bayes-updating",
+  "original": "bayes-updating",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "central-limit-theorem",
+  "original": "central-limit-theorem",
+  "model": "claude-opus-5-5"
+ },
+ {
   "slug": "z-transform",
   "original": "z-transform",
   "model": "claude-opus-5-5"
@@ -58,6 +68,11 @@ window.CLAUDE_EDITIONS = [
  {
   "slug": "eigenvectors",
   "original": "eigenvectors",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "entropy",
+  "original": "entropy",
   "model": "claude-opus-5-5"
  },
  {

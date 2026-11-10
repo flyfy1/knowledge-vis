@@ -1762,6 +1762,42 @@
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
       "path": "variants/claude-code/monte-carlo/index.html"
+    },
+    "cc-bayes-updating": {
+      "developer": "Claude Code",
+      "edition": "claude-code-bayes-updating-20261109",
+      "kind": "original",
+      "sourceRevision": "af9395ba6460ed1f210437a1a29cde6bce13b892",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《贝叶斯 · 先查底子，再看证据》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Bayes · Check the Base Rate Before the Evidence"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/bayes-updating/index.html"
+    },
+    "cc-central-limit-theorem": {
+      "developer": "Claude Code",
+      "edition": "claude-code-central-limit-theorem-20261109",
+      "kind": "original",
+      "sourceRevision": "af9395ba6460ed1f210437a1a29cde6bce13b892",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《中心极限定理 · 平均值总会变成钟形》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Central Limit Theorem · Averages Always Turn Bell-Shaped"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/central-limit-theorem/index.html"
+    },
+    "cc-entropy": {
+      "developer": "Claude Code",
+      "edition": "claude-code-entropy-20261109",
+      "kind": "original",
+      "sourceRevision": "af9395ba6460ed1f210437a1a29cde6bce13b892",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《熵 · 惊讶的平均值》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Entropy · The Average of Surprise"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/entropy/index.html"
     }
   },
   "exceptions": {
