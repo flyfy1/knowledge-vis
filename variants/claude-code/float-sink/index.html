@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="category" content="physics">
+  <meta name="stage" content="primary">
+  <meta name="author" content="Claude Code (claude-opus-5-5)">
+  <title>浮与沉 · 和同样大的水比一比</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="model.js"></script>
+  <script src="i18n.js"></script>
+  <link rel="stylesheet" href="../../../page-provenance.css">
+</head>
+<body>
+  <header class="site-head">
+    <div class="head-main">
+      <p class="backline"><a href="../../../" data-i18n="back"></a></p>
+      <h1 data-i18n="pageTitle"></h1>
+      <p class="tagline" data-i18n="tagline"></p>
+      <p class="compare"><a href="../../../physics/matter/float-sink/" data-i18n="compare"></a></p>
+      <!-- page-provenance -->
+    </div>
+    <div class="lang-toggle" id="langToggle" role="group" aria-label="Language">
+      <button type="button" data-lang="zh">中</button><button type="button" data-lang="en">EN</button>
+    </div>
+  </header>
+  <nav class="step-nav" id="stepNav" data-i18n-aria="navLabel">
+    <a class="nav-step" href="#step0" data-i18n="nav0"></a><a class="nav-step" href="#step1" data-i18n="nav1"></a>
+    <a class="nav-step" href="#step2" data-i18n="nav2"></a><a class="nav-step" href="#step3" data-i18n="nav3"></a>
+    <a class="nav-step" href="#step4" data-i18n="nav4"></a><a class="nav-step" href="#step5" data-i18n="nav5"></a>
+  </nav>
+  <main>
+    <section class="step" id="step0" data-step="0"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s0k"></p><h2 data-i18n="s0t"></h2><p class="explain" data-i18n-html="s0e"></p>
+      <div class="stage"><canvas id="c0" height="300" role="img" data-i18n-aria="s0t"></canvas></div>
+      <p class="legend"><span class="lg"><span class="sw sw-cyan"></span><span data-i18n="lgWater"></span></span><span class="lg"><span class="sw sw-ghost"></span><span data-i18n="s0lgSame"></span></span></p>
+      <div class="btn-row" id="objButtons"><span class="row-label" data-i18n="pickObj"></span></div>
+      <div class="btn-row"><span class="row-label" data-i18n="guessLabel"></span><button class="btn toggle" id="guessFloat" type="button" data-step="0" data-i18n="guessFloat"></button><button class="btn toggle" id="guessSink" type="button" data-step="0" data-i18n="guessSink"></button><button class="btn primary" id="drop0" type="button" data-step="0" data-i18n="drop"></button></div>
+      <p class="readout" id="r0" aria-live="polite"></p><p class="hint" data-i18n="s0hint"></p>
+      <div class="table-wrap"><table class="data" id="t0"></table></div>
+    </div></section>
+
+    <section class="step" id="step1" data-step="1"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s1k"></p><h2 data-i18n="s1t"></h2><p class="explain" data-i18n-html="s1e"></p>
+      <div class="stage"><canvas id="c1" height="330" role="img" data-i18n-aria="s1t"></canvas></div>
+      <p class="legend"><span class="lg"><span class="sw sw-green"></span><span data-i18n="lgUp"></span></span><span class="lg"><span class="sw sw-orange"></span><span data-i18n="lgWeight"></span></span><span class="lg"><span class="sw sw-pink"></span><span data-i18n="lgHand"></span></span><span class="lg"><span class="sw sw-ghost"></span><span data-i18n="s1lgLevel"></span></span></p>
+      <div class="controls"><label><span data-i18n="depthLabel"></span><output id="d1v"></output><input id="d1" data-step="1" type="range" min="0" max="5" step="0.25" value="1"></label></div>
+      <div class="btn-row"><button class="btn primary" id="let1" type="button" data-step="1" data-i18n="letGo"></button></div>
+      <p class="readout" id="r1" aria-live="polite"></p><p class="hint" data-i18n="s1hint"></p>
+    </div></section>
+
+    <section class="step" id="step2" data-step="2"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s2k"></p><h2 data-i18n="s2t"></h2><p class="explain" data-i18n-html="s2e"></p>
+      <div class="stage"><canvas id="c2" height="320" role="img" data-i18n-aria="s2t"></canvas></div>
+      <p class="legend"><span class="lg"><span class="sw sw-green"></span><span data-i18n="lgMaxUp"></span></span><span class="lg"><span class="sw sw-orange"></span><span data-i18n="lgClay"></span></span></p>
+      <div class="controls"><label><span data-i18n="outerLabel"></span><output id="v2v"></output><input id="v2" data-step="2" type="range" min="60" max="180" step="10" value="60"></label></div>
+      <p class="readout" id="r2" aria-live="polite"></p><p class="hint" data-i18n="s2hint"></p>
+    </div></section>
+
+    <section class="step" id="step3" data-step="3"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s3k"></p><h2 data-i18n="s3t"></h2><p class="explain" data-i18n-html="s3e"></p>
+      <div class="stage"><canvas id="c3" height="320" role="img" data-i18n-aria="s3t"></canvas></div>
+      <p class="legend"><span class="lg"><span class="sw sw-cyan"></span><span data-i18n="lgTank"></span></span><span class="lg"><span class="sw sw-green"></span><span data-i18n="lgMaxUp"></span></span><span class="lg"><span class="sw sw-orange"></span><span data-i18n="lgSubW"></span></span></p>
+      <div class="controls"><label><span data-i18n="fillLabel"></span><output id="w3v"></output><input id="w3" data-step="3" type="range" min="0" max="40" step="2" value="0"></label></div>
+      <p class="readout" id="r3" aria-live="polite"></p><p class="hint" data-i18n="s3hint"></p>
+    </div></section>
+
+    <section class="step" id="step4" data-step="4"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s4k"></p><h2 data-i18n="s4t"></h2><p class="explain" data-i18n-html="s4e"></p>
+      <div class="stage"><canvas id="c4" height="320" role="img" data-i18n-aria="s4t"></canvas></div>
+      <p class="legend"><span class="lg"><span class="sw sw-orange"></span><span data-i18n="lgNow"></span></span><span class="lg"><span class="sw sw-ghost"></span><span data-i18n="lgMarks"></span></span></p>
+      <div class="btn-row"><span class="row-label" data-i18n="liquidLabel"></span><button class="btn toggle" id="lqFresh" type="button" data-step="4" data-i18n="lqFresh"></button><button class="btn toggle" id="lqSea" type="button" data-step="4" data-i18n="lqSea"></button><button class="btn toggle" id="lqBrine" type="button" data-step="4" data-i18n="lqBrine"></button></div>
+      <p class="readout" id="r4" aria-live="polite"></p><p class="hint" data-i18n="s4hint"></p>
+    </div></section>
+
+    <section class="step" id="step5" data-step="5"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s5k"></p><h2 data-i18n="s5t"></h2>
+      <div class="finale"><p data-i18n-html="s5fin"></p><p class="formula" data-i18n="formula"></p><p data-i18n="boundary"></p>
+        <div class="quiz"><p class="quiz-prompt" data-i18n="quiz"></p><div class="quiz-options"><label><input type="radio" name="quiz" value="a"><span data-i18n="quizA"></span></label><label><input type="radio" name="quiz" value="b"><span data-i18n="quizB"></span></label><label><input type="radio" name="quiz" value="c"><span data-i18n="quizC"></span></label></div><button class="btn" id="checkQuiz" type="button" data-i18n="check"></button><p class="quiz-feedback" id="fbQuiz" aria-live="polite"></p></div>
+        <p class="links-title" data-i18n="linksTitle"></p>
+        <a class="xlink" href="../../../physics/matter/density/#step0" data-i18n="lk1"></a>
+        <a class="xlink" href="../../../physics/matter/buoyancy-archimedes/#step1" data-i18n="lk2"></a>
+        <a class="xlink" href="../../../physics/matter/buoyancy-archimedes/#step4" data-i18n="lk3"></a>
+      </div>
+    </div></section>
+  </main>
+  <footer class="site-foot" data-i18n="foot"></footer>
+  <script src="app.js"></script>
+</body>
+</html>
