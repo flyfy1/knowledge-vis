@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="category" content="physics">
+  <meta name="stage" content="primary">
+  <meta name="author" content="Claude Code (claude-opus-5-5)">
+  <title>小孔成像 · 一个小孔，画出倒立的像</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="model.js"></script>
+  <script src="i18n.js"></script>
+  <link rel="stylesheet" href="../../../page-provenance.css">
+</head>
+<body>
+  <header class="site-head">
+    <div class="head-main">
+      <p class="backline"><a href="../../../" data-i18n="back"></a></p>
+      <h1 data-i18n="pageTitle"></h1>
+      <p class="tagline" data-i18n="tagline"></p>
+      <p class="compare"><a href="../../../physics/optics/pinhole-camera/" data-i18n="compare"></a></p>
+      <!-- page-provenance -->
+    </div>
+    <div class="lang-toggle" id="langToggle" role="group" aria-label="Language">
+      <button type="button" data-lang="zh">中</button><button type="button" data-lang="en">EN</button>
+    </div>
+  </header>
+  <nav class="step-nav" id="stepNav" data-i18n-aria="navLabel">
+    <a class="nav-step" href="#step0" data-i18n="nav0"></a><a class="nav-step" href="#step1" data-i18n="nav1"></a>
+    <a class="nav-step" href="#step2" data-i18n="nav2"></a><a class="nav-step" href="#step3" data-i18n="nav3"></a>
+    <a class="nav-step" href="#step4" data-i18n="nav4"></a><a class="nav-step" href="#step5" data-i18n="nav5"></a>
+  </nav>
+  <main>
+    <section class="step" id="step0" data-step="0"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s0k"></p><h2 data-i18n="s0t"></h2><p class="explain" data-i18n-html="s0e"></p>
+      <div class="stage"><canvas id="c0" class="scene" data-aspect="0.62" data-min="200" data-max="420" role="img" data-i18n-aria="s0t"></canvas></div>
+      <p class="legend"><span class="lg"><span class="sw sw-lamp"></span><span data-i18n="s0lgLamp"></span></span><span class="lg"><span class="sw sw-yellow"></span><span data-i18n="s0lgRay"></span></span><span class="lg"><span class="sw sw-dim"></span><span data-i18n="s0lgBlocked"></span></span><span class="lg"><span class="sw sw-shadow"></span><span data-i18n="s0lgShadow"></span></span><span class="lg"><span class="sw sw-ghost"></span><span data-i18n="s0lgEdge"></span></span></p>
+      <div class="controls"><label><span data-i18n="cSlider"></span><output id="c0v"></output><input id="cpos" data-step="0" type="range" min="25" max="80" step="1" value="40"></label></div>
+      <div class="btn-row"><button class="btn primary" id="fly0" type="button" data-step="0" data-i18n="fly"></button></div>
+      <p class="readout" id="r0" aria-live="polite"></p><p class="hint" data-i18n="s0hint"></p><p class="concl" data-i18n="s0concl"></p>
+    </div></section>
+
+    <section class="step" id="step1" data-step="1"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s1k"></p><h2 data-i18n="s1t"></h2><p class="explain" data-i18n-html="s1e"></p>
+      <div class="stage"><canvas id="c1" class="scene" data-aspect="0.46" data-min="190" data-max="400" role="img" data-i18n-aria="s1t"></canvas></div>
+      <p class="legend"><span class="lg"><span class="sw sw-orange"></span><span data-i18n="s1lgA"></span></span><span class="lg"><span class="sw sw-cyan"></span><span data-i18n="s1lgB"></span></span><span class="lg"><span class="sw sw-white"></span><span data-i18n="s1lgImg"></span></span><span class="lg"><span class="sw sw-dim"></span><span data-i18n="s1lgO"></span></span></p>
+      <div class="btn-row"><button class="btn primary" id="light1" type="button" data-step="1" data-i18n="light"></button></div>
+      <p class="caption" data-i18n="s1front"></p>
+      <div class="stage"><canvas id="c1f" height="200" role="img" data-i18n-aria="s1front"></canvas></div>
+      <p class="readout" id="r1" aria-live="polite"></p><p class="hint" data-i18n-html="s1hint"></p>
+    </div></section>
+
+    <section class="step" id="step2" data-step="2"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s2k"></p><h2 data-i18n="s2t"></h2><p class="explain" data-i18n-html="s2e"></p>
+      <div class="stage"><canvas id="c2" class="scene" data-aspect="0.46" data-min="180" data-max="400" role="img" data-i18n-aria="s2t"></canvas></div>
+      <div class="stage narrow"><canvas id="c2r" height="260" role="img" data-i18n-aria="c2r"></canvas></div>
+      <p class="legend"><span class="lg"><span class="sw sw-orange"></span><span data-i18n="s2lgRay"></span></span><span class="lg"><span class="sw sw-dot"></span><span data-i18n="s2lgDot"></span></span><span class="lg"><span class="sw sw-ghost"></span><span data-i18n="s2lgLine"></span></span></p>
+      <div class="controls">
+        <label><span data-i18n="HSlider"></span><output id="Hv"></output><input id="H2" data-step="2" type="range" min="20" max="60" step="1" value="60"></label>
+        <label><span data-i18n="uSlider"></span><output id="uv"></output><input id="u2" data-step="2" type="range" min="60" max="160" step="1" value="90"></label>
+        <label><span data-i18n="vSlider"></span><output id="vv"></output><input id="v2" data-step="2" type="range" min="30" max="160" step="1" value="60"></label>
+      </div>
+      <div class="btn-row"><button class="btn" id="preEq" type="button" data-step="2" data-i18n="preEq"></button><button class="btn" id="preHalf" type="button" data-step="2" data-i18n="preHalf"></button><button class="btn" id="preDouble" type="button" data-step="2" data-i18n="preDouble"></button><button class="btn" id="clear2" type="button" data-step="2" data-i18n="clear2"></button></div>
+      <p class="readout" id="r2" aria-live="polite"></p><p class="hint" data-i18n="s2hint"></p><p class="concl" data-i18n-html="s2concl"></p>
+    </div></section>
+
+    <section class="step" id="step3" data-step="3"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s3k"></p><h2 data-i18n="s3t"></h2><p class="explain" data-i18n-html="s3e"></p>
+      <div class="stage"><canvas id="c3" class="scene" data-aspect="0.46" data-min="180" data-max="400" role="img" data-i18n-aria="s3t"></canvas></div>
+      <p class="legend"><span class="lg"><span class="sw sw-orange"></span><span data-i18n="s3lgA"></span></span><span class="lg"><span class="sw sw-cyan"></span><span data-i18n="s3lgB"></span></span><span class="lg"><span class="sw sw-rainbow"></span><span data-i18n="s3lgSpot"></span></span><span class="lg"><span class="sw sw-yellow"></span><span data-i18n="s3lgBar"></span></span></p>
+      <div class="controls"><label><span data-i18n="dSlider"></span><output id="dv"></output><input id="d3" data-step="3" type="range" min="0.5" max="15" step="0.5" value="1"></label></div>
+      <p class="caption" data-i18n="s3front"></p>
+      <div class="stage narrow"><canvas id="c3f" height="280" role="img" data-i18n-aria="s3front"></canvas></div>
+      <p class="readout" id="r3" aria-live="polite"></p><p class="hint" data-i18n="s3hint"></p><p class="concl" data-i18n="s3concl"></p>
+    </div></section>
+
+    <section class="step" id="step4" data-step="4"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s4k"></p><h2 data-i18n="s4t"></h2>
+      <div class="quizgrid">
+      <div class="quiz"><p class="quiz-prompt" data-i18n="q1"></p><div class="quiz-options"><label><input type="radio" name="q1" value="same"><span id="q1same"></span></label><label><input type="radio" name="q1" value="right"><span id="q1right"></span></label><label><input type="radio" name="q1" value="flip"><span id="q1flip"></span></label></div><button class="btn" type="button" data-check="q1" data-i18n="check"></button><p class="quiz-feedback" id="fb-q1" aria-live="polite"></p></div>
+      <div class="quiz"><p class="quiz-prompt" data-i18n="q2"></p><div class="quiz-options"><label><input type="radio" name="q2" value="a"><span data-i18n="q2a"></span></label><label><input type="radio" name="q2" value="b"><span data-i18n="q2b"></span></label><label><input type="radio" name="q2" value="c"><span data-i18n="q2c"></span></label></div><button class="btn" type="button" data-check="q2" data-i18n="check"></button><p class="quiz-feedback" id="fb-q2" aria-live="polite"></p></div>
+      <div class="quiz"><p class="quiz-prompt" data-i18n="q3"></p><div class="quiz-options"><label><input type="radio" name="q3" value="a"><span data-i18n="q3a"></span></label><label><input type="radio" name="q3" value="b"><span data-i18n="q3b"></span></label><label><input type="radio" name="q3" value="c"><span data-i18n="q3c"></span></label></div><button class="btn" type="button" data-check="q3" data-i18n="check"></button><p class="quiz-feedback" id="fb-q3" aria-live="polite"></p></div>
+      <div class="quiz"><p class="quiz-prompt" data-i18n="q4"></p><div class="quiz-options"><label><input type="radio" name="q4" value="a"><span data-i18n="q4a"></span></label><label><input type="radio" name="q4" value="b"><span data-i18n="q4b"></span></label><label><input type="radio" name="q4" value="c"><span data-i18n="q4c"></span></label></div><button class="btn" type="button" data-check="q4" data-i18n="check"></button><p class="quiz-feedback" id="fb-q4" aria-live="polite"></p></div>
+      </div>
+      <p class="readout" id="score" aria-live="polite"></p>
+    </div></section>
+
+    <section class="step" id="step5" data-step="5"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s5k"></p><h2 data-i18n="s5t"></h2>
+      <div class="cards"><div class="card" data-i18n-html="card1"></div><div class="card" data-i18n-html="card2"></div><div class="card" data-i18n-html="card3"></div></div>
+      <div class="finale"><p data-i18n="boundary"></p>
+        <p class="links-title" data-i18n="linksTitle"></p>
+        <a class="xlink" href="../../../physics/optics/reflection-refraction/#step0" data-i18n="lk1"></a>
+        <a class="xlink" href="../../../physics/optics/lens/#step1" data-i18n="lk2"></a>
+        <a class="xlink" href="../../../math/geometry/similarity-scaling/#step3" data-i18n="lk3"></a>
+      </div>
+    </div></section>
+  </main>
+  <footer class="site-foot" data-i18n="foot"></footer>
+  <script src="app.js"></script>
+</body>
+</html>
