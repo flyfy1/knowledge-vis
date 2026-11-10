@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="category" content="physics">
+  <meta name="stage" content="primary">
+  <meta name="author" content="Claude Code (claude-opus-5-5)">
+  <title>声音从哪里来 · 跳动的米粒告诉你</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="model.js"></script>
+  <script src="i18n.js"></script>
+  <link rel="stylesheet" href="../../../page-provenance.css">
+</head>
+<body>
+  <header class="site-head">
+    <div class="head-main">
+      <p class="backline"><a href="../../../" data-i18n="back"></a></p>
+      <h1 data-i18n="pageTitle"></h1>
+      <p class="tagline" data-i18n="tagline"></p>
+      <p class="compare"><a href="../../../physics/waves/sound-vibration/" data-i18n="compare"></a></p>
+      <!-- page-provenance -->
+    </div>
+    <div class="lang-toggle" id="langToggle" role="group" aria-label="Language">
+      <button type="button" data-lang="zh">中</button><button type="button" data-lang="en">EN</button>
+    </div>
+  </header>
+  <nav class="step-nav" id="stepNav" data-i18n-aria="navLabel">
+    <a class="nav-step" href="#step0" data-i18n="nav0"></a><a class="nav-step" href="#step1" data-i18n="nav1"></a>
+    <a class="nav-step" href="#step2" data-i18n="nav2"></a><a class="nav-step" href="#step3" data-i18n="nav3"></a>
+    <a class="nav-step" href="#step4" data-i18n="nav4"></a><a class="nav-step" href="#step5" data-i18n="nav5"></a>
+    <a class="nav-step" href="#step6" data-i18n="nav6"></a>
+  </nav>
+  <main>
+    <section class="step" id="step0" data-step="0"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s0k"></p><h2 data-i18n="s0t"></h2><p class="explain" data-i18n-html="s0e"></p>
+      <div class="stage"><canvas id="c0" height="440" role="img" data-i18n-aria="s0t"></canvas></div>
+      <p class="legend"><span class="lg"><span class="sw sw-orange"></span><span data-i18n="s0lgHead"></span></span><span class="lg"><span class="sw sw-rice"></span><span data-i18n="s0lgRice"></span></span><span class="lg"><span class="sw sw-cyan"></span><span data-i18n="s0lgTrace"></span></span></p>
+      <div class="btn-row"><button class="btn primary" id="hit0" type="button" data-step="0" data-i18n="hit"></button><button class="btn" id="mute0" type="button" data-step="0" data-i18n="mute"></button><button class="btn" id="reset0" type="button" data-step="0" data-i18n="reset"></button></div>
+      <p class="readout" id="out0" aria-live="polite"></p><p class="hint" data-i18n="s0hint"></p>
+    </div></section>
+
+    <section class="step" id="step1" data-step="1"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s1k"></p><h2 data-i18n="s1t"></h2><p class="explain" data-i18n-html="s1e"></p>
+      <div class="stage"><canvas id="c1" height="400" role="img" data-i18n-aria="s1t"></canvas></div>
+      <p class="legend"><span class="lg"><span class="sw sw-dot"></span><span data-i18n="s1lgAir"></span></span><span class="lg"><span class="sw sw-pink"></span><span data-i18n="s1lgMark"></span></span><span class="lg"><span class="sw sw-cyandash"></span><span data-i18n="s1lgFront"></span></span></p>
+      <div class="btn-row"><button class="btn primary" id="play1" type="button" data-step="1" data-i18n="play1"></button><button class="btn" id="reset1" type="button" data-step="1" data-i18n="reset"></button></div>
+      <p class="readout" id="out1" aria-live="polite"></p><p class="hint" data-i18n="s1hint"></p>
+    </div></section>
+
+    <section class="step" id="step2" data-step="2"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s2k"></p><h2 data-i18n="s2t"></h2><p class="explain" data-i18n-html="s2e"></p>
+      <div class="stage"><canvas id="c2" height="440" role="img" data-i18n-aria="s2t"></canvas></div>
+      <p class="legend"><span class="lg"><span class="sw sw-orange"></span><span data-i18n="s2lgHead"></span></span><span class="lg"><span class="sw sw-rice"></span><span data-i18n="s2lgRice"></span></span><span class="lg"><span class="sw sw-pinkdash"></span><span data-i18n="s2lgTh"></span></span><span class="lg"><span class="sw sw-dot"></span><span data-i18n="s2lgDots"></span></span></p>
+      <div class="controls"><label><span data-i18n="amp"></span><output id="A2v"></output><input id="A2" data-step="2" type="range" min="0.01" max="1" step="0.01" value="0.3"></label></div>
+      <p class="readout" id="out2" aria-live="polite"></p><p class="hint" data-i18n="s2hint"></p>
+    </div></section>
+
+    <section class="step" id="step3" data-step="3"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s3k"></p><h2 data-i18n="s3t"></h2><p class="explain" data-i18n-html="s3e"></p>
+      <div class="stage"><canvas id="c3" height="380" role="img" data-i18n-aria="s3t"></canvas></div>
+      <p class="legend"><span class="lg"><span class="sw sw-cyan"></span><span data-i18n="s3lgWave"></span></span><span class="lg"><span class="sw sw-ghost"></span><span data-i18n="s3lgRef"></span></span><span class="lg"><span class="sw sw-green"></span><span data-i18n="s3lgLam"></span></span></p>
+      <div class="controls"><label><span data-i18n="freq"></span><output id="f3v"></output><input id="f3" data-step="3" type="range" min="100" max="1000" step="10" value="200"></label></div>
+      <div class="btn-row"><button class="btn primary" id="listen3" type="button" data-step="3" data-i18n="listen"></button><button class="btn" id="stop3" type="button" data-step="3" data-i18n="stopSound"></button></div>
+      <p class="readout" id="out3" aria-live="polite"></p><p class="hint" data-i18n="s3hint"></p>
+    </div></section>
+
+    <section class="step" id="step4" data-step="4"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s4k"></p><h2 data-i18n="s4t"></h2><p class="explain" data-i18n-html="s4e"></p>
+      <div class="stage"><canvas id="c4" height="440" role="img" data-i18n-aria="s4t"></canvas></div>
+      <p class="legend"><span class="lg"><span class="sw sw-dot"></span><span data-i18n="s4lgAir"></span></span><span class="lg"><span class="sw sw-orange"></span><span data-i18n="s4lgBell"></span></span><span class="lg"><span class="sw sw-ring"></span><span data-i18n="s4lgRing"></span></span></p>
+      <div class="controls"><label><span data-i18n="airLeft"></span><output id="a4v"></output><input id="a4" data-step="4" type="range" min="0" max="100" step="1" value="100"></label></div>
+      <div class="btn-row"><button class="btn primary" id="pump4" type="button" data-step="4" data-i18n="pumpOut"></button><button class="btn" id="fill4" type="button" data-step="4" data-i18n="letIn"></button></div>
+      <p class="readout" id="out4" aria-live="polite"></p><p class="hint" data-i18n="s4hint"></p>
+    </div></section>
+
+    <section class="step" id="step5" data-step="5"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s5k"></p><h2 data-i18n="s5t"></h2><p class="explain" data-i18n-html="s5e"></p>
+      <div class="stage"><canvas id="c5" height="400" role="img" data-i18n-aria="s5t"></canvas></div>
+      <p class="legend"><span class="lg"><span class="sw sw-white"></span><span data-i18n="s5lgLight"></span></span><span class="lg"><span class="sw sw-cyan"></span><span data-i18n="s5lgAir"></span></span><span class="lg"><span class="sw sw-green"></span><span data-i18n="s5lgWater"></span></span><span class="lg"><span class="sw sw-orange"></span><span data-i18n="s5lgSteel"></span></span></p>
+      <div class="controls"><label><span data-i18n="dist"></span><output id="d5v"></output><input id="d5" data-step="5" type="range" min="0.2" max="3" step="0.1" value="1"></label></div>
+      <div class="btn-row"><button class="btn primary" id="go5" type="button" data-step="5" data-i18n="go"></button><button class="btn" id="reset5" type="button" data-step="5" data-i18n="reset"></button></div>
+      <p class="readout" id="out5" aria-live="polite"></p><p class="hint" data-i18n="s5hint"></p>
+    </div></section>
+
+    <section class="step" id="step6" data-step="6"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s6k"></p><h2 data-i18n="s6t"></h2>
+      <div class="finale"><p data-i18n-html="s6fin"></p><p class="formula" data-i18n="formula"></p><p data-i18n="boundary"></p>
+        <p class="links-title" data-i18n="linksTitle"></p>
+        <a class="xlink" href="../../../physics/waves/sound-waves/#step1" data-i18n="lk1"></a>
+        <a class="xlink" href="../../../math/applied/music-theory/#step0" data-i18n="lk2"></a>
+        <a class="xlink" href="../../../physics/waves/standing-wave/#step0" data-i18n="lk3"></a>
+        <a class="xlink" href="../../../physics/waves/resonance/#step0" data-i18n="lk4"></a>
+      </div>
+    </div></section>
+  </main>
+  <footer class="site-foot" data-i18n="foot"></footer>
+  <script src="app.js"></script>
+</body>
+</html>
