@@ -406,8 +406,23 @@ window.CLAUDE_EDITIONS = [
   "model": "claude-opus-5-5"
  },
  {
+  "slug": "molecular-shapes",
+  "original": "molecular-shapes",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "molecules-atoms",
+  "original": "molecules-atoms",
+  "model": "claude-opus-5-5"
+ },
+ {
   "slug": "patterns-sequences",
   "original": "patterns-sequences",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "periodic-trends",
+  "original": "periodic-trends",
   "model": "claude-opus-5-5"
  },
  {

@@ -2302,6 +2302,42 @@
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
       "path": "variants/claude-code/particles-states/index.html"
+    },
+    "cc-molecular-shapes": {
+      "developer": "Claude Code",
+      "edition": "claude-code-molecular-shapes-20261109",
+      "kind": "original",
+      "sourceRevision": "68943025c580a2930a69cfddbcc47be7ef013e10",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《分子构型 · 电子对互相躲开》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Molecular Shapes · Electron Pairs Keeping Out of Each Other\\"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/molecular-shapes/index.html"
+    },
+    "cc-molecules-atoms": {
+      "developer": "Claude Code",
+      "edition": "claude-code-molecules-atoms-20261109",
+      "kind": "original",
+      "sourceRevision": "68943025c580a2930a69cfddbcc47be7ef013e10",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《分子与原子》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Molecules & Atoms"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/molecules-atoms/index.html"
+    },
+    "cc-periodic-trends": {
+      "developer": "Claude Code",
+      "edition": "claude-code-periodic-trends-20261109",
+      "kind": "original",
+      "sourceRevision": "68943025c580a2930a69cfddbcc47be7ef013e10",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《元素周期律 · 周期表上的渐变》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Periodic Trends · Gradients Across the Periodic Table"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/periodic-trends/index.html"
     }
   },
   "exceptions": {
