@@ -371,8 +371,23 @@ window.CLAUDE_EDITIONS = [
   "model": "claude-opus-5-5"
  },
  {
+  "slug": "electrochemistry",
+  "original": "electrochemistry",
+  "model": "claude-opus-5-5"
+ },
+ {
   "slug": "electromagnetic-induction",
   "original": "electromagnetic-induction",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "equation-balancing",
+  "original": "equation-balancing",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "isomers",
+  "original": "isomers",
   "model": "claude-opus-5-5"
  },
  {

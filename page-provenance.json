@@ -2230,6 +2230,42 @@
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
       "path": "variants/claude-code/dissolution-saturation/index.html"
+    },
+    "cc-electrochemistry": {
+      "developer": "Claude Code",
+      "edition": "claude-code-electrochemistry-20261109",
+      "kind": "original",
+      "sourceRevision": "cda9bbbe9363c5ca09d5eb92b8e99ac19e565f55",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《电化学 · 电子沿导线跑，还是被电推着跑》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Electrochemistry · Electrons Running Down the Wire, or Pushed Along"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/electrochemistry/index.html"
+    },
+    "cc-equation-balancing": {
+      "developer": "Claude Code",
+      "edition": "claude-code-equation-balancing-20261109",
+      "kind": "original",
+      "sourceRevision": "cda9bbbe9363c5ca09d5eb92b8e99ac19e565f55",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《化学方程式配平》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Balancing Chemical Equations"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/equation-balancing/index.html"
+    },
+    "cc-isomers": {
+      "developer": "Claude Code",
+      "edition": "claude-code-isomers-20261109",
+      "kind": "original",
+      "sourceRevision": "cda9bbbe9363c5ca09d5eb92b8e99ac19e565f55",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《同分异构体 · 同一组原子，不同的拼法》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Isomers · The Same Atoms, Put Together Differently"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/isomers/index.html"
     }
   },
   "exceptions": {
