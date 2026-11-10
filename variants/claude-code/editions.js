@@ -236,6 +236,11 @@ window.CLAUDE_EDITIONS = [
   "model": "claude-opus-5-5"
  },
  {
+  "slug": "day-night-rotation",
+  "original": "day-night-rotation",
+  "model": "claude-opus-5-5"
+ },
+ {
   "slug": "mass-conservation",
   "original": "mass-conservation",
   "model": "claude-opus-5-5"
@@ -441,6 +446,11 @@ window.CLAUDE_EDITIONS = [
   "model": "claude-opus-5-5"
  },
  {
+  "slug": "ph-scale",
+  "original": "ph-scale",
+  "model": "claude-opus-5-5"
+ },
+ {
   "slug": "photoelectric-effect",
   "original": "photoelectric-effect",
   "model": "claude-opus-5-5"
@@ -453,6 +463,11 @@ window.CLAUDE_EDITIONS = [
  {
   "slug": "resonance",
   "original": "resonance",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "titration-curves",
+  "original": "titration-curves",
   "model": "claude-opus-5-5"
  },
  {
