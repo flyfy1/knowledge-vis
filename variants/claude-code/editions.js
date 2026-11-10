@@ -41,6 +41,11 @@ window.CLAUDE_EDITIONS = [
   "model": "claude-opus-5-5"
  },
  {
+  "slug": "monte-carlo",
+  "original": "monte-carlo",
+  "model": "claude-opus-5-5"
+ },
+ {
   "slug": "laplace",
   "original": "laplace",
   "model": "claude-opus-5-5"
@@ -68,6 +73,11 @@ window.CLAUDE_EDITIONS = [
  {
   "slug": "modulation",
   "original": "modulation",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "kalman",
+  "original": "kalman",
   "model": "claude-opus-5-5"
  },
  {
@@ -388,6 +398,11 @@ window.CLAUDE_EDITIONS = [
  {
   "slug": "three-views",
   "original": "three-views",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "wavelets",
+  "original": "wavelets",
   "model": "claude-opus-5-5"
  },
  {

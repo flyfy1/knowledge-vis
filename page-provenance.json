@@ -1726,6 +1726,42 @@
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
       "path": "variants/claude-code/modulation/index.html"
+    },
+    "cc-kalman": {
+      "developer": "Claude Code",
+      "edition": "claude-code-kalman-20261109",
+      "kind": "original",
+      "sourceRevision": "e1818f59737f129196f45f98548e8ffc53ef0f19",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《卡尔曼滤波 · 在预测与测量之间称重》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Kalman Filter · Weighing Prediction Against Measurement"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/kalman/index.html"
+    },
+    "cc-wavelets": {
+      "developer": "Claude Code",
+      "edition": "claude-code-wavelets-20261109",
+      "kind": "original",
+      "sourceRevision": "e1818f59737f129196f45f98548e8ffc53ef0f19",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《小波 · 让窗口随频率伸缩》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Wavelets · Windows That Stretch With Frequency"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/wavelets/index.html"
+    },
+    "cc-monte-carlo": {
+      "developer": "Claude Code",
+      "edition": "claude-code-monte-carlo-20261109",
+      "kind": "original",
+      "sourceRevision": "e1818f59737f129196f45f98548e8ffc53ef0f19",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《蒙特卡洛 · 撒豆子算 π》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Monte Carlo · Counting π with Scattered Beans"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/monte-carlo/index.html"
     }
   },
   "exceptions": {
