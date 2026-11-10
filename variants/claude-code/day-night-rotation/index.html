@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="category" content="earth">
+  <meta name="stage" content="primary">
+  <meta name="author" content="Claude Code (claude-opus-5-5)">
+  <title>昼夜交替 · 是地球在转</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="model.js"></script>
+  <script src="i18n.js"></script>
+  <link rel="stylesheet" href="../../../page-provenance.css">
+</head>
+<body>
+  <header class="site-head">
+    <div class="head-main">
+      <p class="backline"><a href="../../../" data-i18n="back"></a></p>
+      <h1 data-i18n="pageTitle"></h1>
+      <p class="tagline" data-i18n="tagline"></p>
+      <p class="compare"><a href="../../../earth/astronomy/day-night-rotation/" data-i18n="compare"></a></p>
+      <!-- page-provenance -->
+    </div>
+    <div class="lang-toggle" id="langToggle" role="group" aria-label="Language">
+      <button type="button" data-lang="zh">中</button><button type="button" data-lang="en">EN</button>
+    </div>
+  </header>
+  <nav class="step-nav" id="stepNav" data-i18n-aria="navLabel">
+    <a class="nav-step" href="#step0" data-i18n="nav0"></a><a class="nav-step" href="#step1" data-i18n="nav1"></a>
+    <a class="nav-step" href="#step2" data-i18n="nav2"></a><a class="nav-step" href="#step3" data-i18n="nav3"></a>
+    <a class="nav-step" href="#step4" data-i18n="nav4"></a><a class="nav-step" href="#step5" data-i18n="nav5"></a>
+  </nav>
+  <main>
+    <section class="step" id="step0" data-step="0"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s0k"></p><h2 data-i18n="s0t"></h2><p class="explain" data-i18n-html="s0e"></p>
+      <div class="stage"><canvas id="c0" height="320" role="img" data-i18n-aria="c0title"></canvas></div>
+      <p class="legend"><span class="lg"><span class="sw sw-sun"></span><span data-i18n="s0lgLamp"></span></span><span class="lg"><span class="sw sw-ray"></span><span data-i18n="s0lgRay"></span></span><span class="lg"><span class="sw sw-lit"></span><span data-i18n="s0lgLit"></span></span><span class="lg"><span class="sw sw-term"></span><span data-i18n="s0lgTerm"></span></span><span class="lg"><span class="sw sw-kid"></span><span data-i18n="s0lgKid"></span></span></p>
+      <div class="controls"><label><span data-i18n="lampSlider"></span><output id="a0v"></output><input id="a0" data-step="0" type="range" min="0" max="359" step="1" value="30"></label></div>
+      <div class="btn-row"><button class="btn" id="lamp0" type="button" data-step="0"></button></div>
+      <p class="readout" id="r0" aria-live="polite"></p><p class="hint" data-i18n="s0hint"></p>
+    </div></section>
+
+    <section class="step" id="step1" data-step="1"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s1k"></p><h2 data-i18n="s1t"></h2><p class="explain" data-i18n-html="s1e"></p>
+      <div class="stage"><canvas id="c1" height="330" role="img" data-i18n-aria="c1title"></canvas><canvas id="c1b" height="78" role="img" data-i18n-aria="c1band"></canvas></div>
+      <p class="legend"><span class="lg"><span class="sw sw-pole"></span><span data-i18n="s1lgPole"></span></span><span class="lg"><span class="sw sw-kid"></span><span data-i18n="s1lgKid"></span></span><span class="lg"><span class="sw sw-spin"></span><span data-i18n="s1lgSpin"></span></span><span class="lg"><span class="sw sw-dayc"></span><span data-i18n="s1lgDay"></span></span><span class="lg"><span class="sw sw-nightc"></span><span data-i18n="s1lgNight"></span></span></p>
+      <div class="controls"><label><span data-i18n="tSlider"></span><output id="t1v"></output><input id="t1" data-step="1" type="range" min="0" max="24" step="0.25" value="9"></label></div>
+      <div class="btn-row"><button class="btn primary" id="play1" type="button" data-step="1"></button><button class="btn" id="clear1" type="button" data-step="1" data-i18n="clearBand"></button></div>
+      <p class="readout" id="r1" aria-live="polite"></p><p class="hint" data-i18n="s1hint"></p>
+    </div></section>
+
+    <section class="step" id="step2" data-step="2"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s2k"></p><h2 data-i18n="s2t"></h2><p class="explain" data-i18n-html="s2e"></p>
+      <div class="stage"><canvas id="c2" height="290" role="img" data-i18n-aria="c2sky"></canvas><canvas id="c2b" height="230" role="img" data-i18n-aria="c2top"></canvas></div>
+      <p class="legend"><span class="lg"><span class="sw sw-sun"></span><span data-i18n="s2lgSun"></span></span><span class="lg"><span class="sw sw-trail"></span><span data-i18n="s2lgTrail"></span></span><span class="lg"><span class="sw sw-path"></span><span data-i18n="s2lgPath"></span></span><span class="lg"><span class="sw sw-horizon"></span><span data-i18n="s2lgHorizon"></span></span><span class="lg"><span class="sw sw-kid"></span><span data-i18n="s0lgKid"></span></span></p>
+      <div class="controls"><label><span data-i18n="tSlider"></span><output id="t2v"></output><input id="t2" data-step="2" type="range" min="0" max="24" step="0.25" value="9"></label></div>
+      <div class="btn-row"><button class="btn primary" id="play2" type="button" data-step="2"></button><button class="btn toggle" id="rev2" type="button" data-step="2"></button></div>
+      <p class="readout" id="r2" aria-live="polite"></p><p class="hint" data-i18n="s2hint"></p>
+    </div></section>
+
+    <section class="step" id="step3" data-step="3"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s3k"></p><h2 data-i18n="s3t"></h2><p class="explain" data-i18n-html="s3e"></p>
+      <div class="stage"><canvas id="c3" height="320" role="img" data-i18n-aria="c3title"></canvas></div>
+      <p class="legend" id="lg3"></p>
+      <div class="controls"><label><span data-i18n="bjSlider"></span><output id="b3v"></output><input id="b3" data-step="3" type="range" min="0" max="24" step="0.25" value="12"></label></div>
+      <p class="readout" id="r3" aria-live="polite"></p><p class="hint" data-i18n="s3hint"></p>
+    </div></section>
+
+    <section class="step" id="step4" data-step="4"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s4k"></p><h2 data-i18n="s4t"></h2><p class="explain" data-i18n-html="s4e"></p>
+      <div class="stage"><canvas id="c4" height="300" role="img" data-i18n-aria="c4side"></canvas><canvas id="c4b" height="150" role="img" data-i18n-aria="c4bar"></canvas></div>
+      <p class="legend"><span class="lg"><span class="sw sw-orange"></span><span data-i18n="s4lgRing"></span></span><span class="lg"><span class="sw sw-old"></span><span data-i18n="s4lgOld"></span></span><span class="lg"><span class="sw sw-axis"></span><span data-i18n="s4lgAxis"></span></span></p>
+      <div class="controls"><label><span data-i18n="latSlider"></span><output id="l4v"></output><input id="l4" data-step="4" type="range" min="0" max="90" step="1" value="40"></label></div>
+      <p class="readout" id="r4" aria-live="polite"></p><p class="hint" data-i18n="s4hint"></p>
+    </div></section>
+
+    <section class="step" id="step5" data-step="5"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s5k"></p><h2 data-i18n="s5t"></h2>
+      <div class="finale"><p data-i18n-html="s5fin"></p>
+        <p class="links-title" data-i18n="truthTitle"></p>
+        <ul class="truth"><li data-i18n="truth1"></li><li data-i18n="truth2"></li><li data-i18n="truth3"></li></ul>
+        <div class="quiz"><p class="quiz-prompt" data-i18n="quizTitle"></p>
+          <div class="qblock"><p class="q" data-i18n="q1"></p><div class="quiz-options"><label><input type="radio" name="q1" value="a"><span data-i18n="q1a"></span></label><label><input type="radio" name="q1" value="b"><span data-i18n="q1b"></span></label><label><input type="radio" name="q1" value="c"><span data-i18n="q1c"></span></label></div><p class="quiz-feedback" id="fb1" aria-live="polite"></p></div>
+          <div class="qblock"><p class="q" data-i18n="q2"></p><div class="quiz-options"><label><input type="radio" name="q2" value="a"><span data-i18n="q2a"></span></label><label><input type="radio" name="q2" value="b"><span data-i18n="q2b"></span></label><label><input type="radio" name="q2" value="c"><span data-i18n="q2c"></span></label></div><p class="quiz-feedback" id="fb2" aria-live="polite"></p></div>
+          <div class="qblock"><p class="q" data-i18n="q3"></p><div class="quiz-options"><label><input type="radio" name="q3" value="a"><span data-i18n="q3a"></span></label><label><input type="radio" name="q3" value="b"><span id="q3bText"></span></label><label><input type="radio" name="q3" value="c"><span id="q3cText"></span></label></div><p class="quiz-feedback" id="fb3" aria-live="polite"></p></div>
+          <button class="btn" id="checkQuiz" type="button" data-i18n="check"></button>
+        </div>
+        <p class="links-title" data-i18n="linksTitle"></p>
+        <a class="xlink" href="../../../earth/geo/latitude-longitude/#step4" data-i18n="lk1"></a>
+        <a class="xlink" href="../../../earth/astronomy/seasons-orbit/#step3" data-i18n="lk2"></a>
+        <a class="xlink" href="../../../earth/astronomy/moon-phases/#step0" data-i18n="lk3"></a>
+      </div>
+    </div></section>
+  </main>
+  <footer class="site-foot" data-i18n="foot"></footer>
+  <script src="app.js"></script>
+</body>
+</html>
