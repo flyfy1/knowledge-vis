@@ -451,6 +451,11 @@ window.CLAUDE_EDITIONS = [
   "model": "claude-opus-5-5"
  },
  {
+  "slug": "latitude-longitude",
+  "original": "latitude-longitude",
+  "model": "claude-opus-5-5"
+ },
+ {
   "slug": "magnetic-force",
   "original": "magnetic-force",
   "model": "claude-opus-5-5"
@@ -493,6 +498,11 @@ window.CLAUDE_EDITIONS = [
  {
   "slug": "resonance",
   "original": "resonance",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "seasons-orbit",
+  "original": "seasons-orbit",
   "model": "claude-opus-5-5"
  },
  {
@@ -578,6 +588,11 @@ window.CLAUDE_EDITIONS = [
  {
   "slug": "mean-median-mode",
   "original": "mean-median-mode",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "moon-phases",
+  "original": "moon-phases",
   "model": "claude-opus-5-5"
  },
  {

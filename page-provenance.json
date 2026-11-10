@@ -2482,6 +2482,42 @@
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
       "path": "variants/claude-code/contour-lines/index.html"
+    },
+    "cc-latitude-longitude": {
+      "developer": "Claude Code",
+      "edition": "claude-code-latitude-longitude-20261109",
+      "kind": "original",
+      "sourceRevision": "015ad991d0ec3413ca811c04b3f12c59101cc5ea",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《经纬网》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Latitude & Longitude"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/latitude-longitude/index.html"
+    },
+    "cc-seasons-orbit": {
+      "developer": "Claude Code",
+      "edition": "claude-code-seasons-orbit-20261109",
+      "kind": "original",
+      "sourceRevision": "015ad991d0ec3413ca811c04b3f12c59101cc5ea",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《地球公转与四季》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Earth’s Orbit & the Seasons"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/seasons-orbit/index.html"
+    },
+    "cc-moon-phases": {
+      "developer": "Claude Code",
+      "edition": "claude-code-moon-phases-20261109",
+      "kind": "original",
+      "sourceRevision": "015ad991d0ec3413ca811c04b3f12c59101cc5ea",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《月相 · 从地球看被照亮的那一半》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Moon Phases · The Lit Half, Seen from Earth"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/moon-phases/index.html"
     }
   },
   "exceptions": {
