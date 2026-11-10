@@ -366,6 +366,11 @@ window.CLAUDE_EDITIONS = [
   "model": "claude-opus-5-5"
  },
  {
+  "slug": "sound-vibration",
+  "original": "sound-vibration",
+  "model": "claude-opus-5-5"
+ },
+ {
   "slug": "three-views",
   "original": "three-views",
   "model": "claude-opus-5-5"
@@ -383,6 +388,16 @@ window.CLAUDE_EDITIONS = [
  {
   "slug": "blackbody-radiation",
   "original": "blackbody-radiation",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "carnot-cycle",
+  "original": "carnot-cycle",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "chaos-threebody",
+  "original": "chaos-threebody",
   "model": "claude-opus-5-5"
  },
  {

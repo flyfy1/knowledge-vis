@@ -1654,6 +1654,42 @@
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
       "path": "variants/claude-code/series-parallel/index.html"
+    },
+    "cc-carnot-cycle": {
+      "developer": "Claude Code",
+      "edition": "claude-code-carnot-cycle-20261109",
+      "kind": "original",
+      "sourceRevision": "6bd2621bd7293290cf02fe690bee6fa7632cfef0",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《卡诺循环 · 热机的效率上限》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson The Carnot Cycle · The Ceiling on Heat-Engine Efficiency"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/carnot-cycle/index.html"
+    },
+    "cc-sound-vibration": {
+      "developer": "Claude Code",
+      "edition": "claude-code-sound-vibration-20261109",
+      "kind": "original",
+      "sourceRevision": "6bd2621bd7293290cf02fe690bee6fa7632cfef0",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《声音从振动来 · 米粒会跳的鼓》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Sound from Vibration · A Drum with Jumping Rice"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/sound-vibration/index.html"
+    },
+    "cc-chaos-threebody": {
+      "developer": "Claude Code",
+      "edition": "claude-code-chaos-threebody-20261109",
+      "kind": "original",
+      "sourceRevision": "6bd2621bd7293290cf02fe690bee6fa7632cfef0",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《混沌与三体 · 初始差一丝，结果天壤》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Chaos and the Three-Body Problem · Tiny Differences, Huge Outcomes"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/chaos-threebody/index.html"
     }
   },
   "exceptions": {
