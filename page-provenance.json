@@ -2746,6 +2746,42 @@
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
       "path": "variants/claude-code/interest-rates-bonds/index.html"
+    },
+    "cc-food-web": {
+      "developer": "Claude Code",
+      "edition": "claude-code-food-web-20261109",
+      "kind": "original",
+      "sourceRevision": "c922c9d0734b1eb585064c48658ca52d7ec7b3d6",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《食物网》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Food Webs"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/food-web/index.html"
+    },
+    "cc-meiosis": {
+      "developer": "Claude Code",
+      "edition": "claude-code-meiosis-20261109",
+      "kind": "original",
+      "sourceRevision": "c922c9d0734b1eb585064c48658ca52d7ec7b3d6",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《减数分裂 · 洗牌、切半，造配子》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Meiosis · Shuffle, Halve, Make Gametes"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/meiosis/index.html"
+    },
+    "cc-natural-selection": {
+      "developer": "Claude Code",
+      "edition": "claude-code-natural-selection-20261109",
+      "kind": "original",
+      "sourceRevision": "c922c9d0734b1eb585064c48658ca52d7ec7b3d6",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《自然选择 · 胡椒蛾的颜色为什么翻转》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Natural Selection · Why the Peppered Moth Flipped Colour"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/natural-selection/index.html"
     }
   },
   "exceptions": {

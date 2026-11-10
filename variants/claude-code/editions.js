@@ -501,6 +501,11 @@ window.CLAUDE_EDITIONS = [
   "model": "claude-opus-5-5"
  },
  {
+  "slug": "food-web",
+  "original": "food-web",
+  "model": "claude-opus-5-5"
+ },
+ {
   "slug": "isomers",
   "original": "isomers",
   "model": "claude-opus-5-5"
@@ -521,6 +526,11 @@ window.CLAUDE_EDITIONS = [
   "model": "claude-opus-5-5"
  },
  {
+  "slug": "meiosis",
+  "original": "meiosis",
+  "model": "claude-opus-5-5"
+ },
+ {
   "slug": "molecular-shapes",
   "original": "molecular-shapes",
   "model": "claude-opus-5-5"
@@ -528,6 +538,11 @@ window.CLAUDE_EDITIONS = [
  {
   "slug": "molecules-atoms",
   "original": "molecules-atoms",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "natural-selection",
+  "original": "natural-selection",
   "model": "claude-opus-5-5"
  },
  {
