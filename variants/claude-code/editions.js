@@ -66,6 +66,11 @@ window.CLAUDE_EDITIONS = [
   "model": "claude-opus-5-5"
  },
  {
+  "slug": "gradient-descent",
+  "original": "gradient-descent",
+  "model": "claude-opus-5-5"
+ },
+ {
   "slug": "eigenvectors",
   "original": "eigenvectors",
   "model": "claude-opus-5-5"
@@ -93,6 +98,11 @@ window.CLAUDE_EDITIONS = [
  {
   "slug": "kalman",
   "original": "kalman",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "sorting",
+  "original": "sorting",
   "model": "claude-opus-5-5"
  },
  {
@@ -228,6 +238,11 @@ window.CLAUDE_EDITIONS = [
  {
   "slug": "supply-demand",
   "original": "supply-demand",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "binary-search",
+  "original": "binary-search",
   "model": "claude-opus-5-5"
  },
  {

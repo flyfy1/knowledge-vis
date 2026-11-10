@@ -1942,6 +1942,42 @@
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
       "path": "variants/claude-code/counting-permutations/index.html"
+    },
+    "cc-gradient-descent": {
+      "developer": "Claude Code",
+      "edition": "claude-code-gradient-descent-20261109",
+      "kind": "original",
+      "sourceRevision": "7f3cbc23fa0799108cd5763c348373ea13e5fee3",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《梯度下降 · 摸黑下山》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Gradient Descent · Feeling Your Way Downhill"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/gradient-descent/index.html"
+    },
+    "cc-sorting": {
+      "developer": "Claude Code",
+      "edition": "claude-code-sorting-20261109",
+      "kind": "original",
+      "sourceRevision": "7f3cbc23fa0799108cd5763c348373ea13e5fee3",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《排序与大 O · 增长的形状》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Sorting & Big O · The Shape of Growth"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/sorting/index.html"
+    },
+    "cc-binary-search": {
+      "developer": "Claude Code",
+      "edition": "claude-code-binary-search-20261109",
+      "kind": "original",
+      "sourceRevision": "7f3cbc23fa0799108cd5763c348373ea13e5fee3",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《二分查找 · 每次砍掉一半》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Binary Search · Halve the Candidates"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/binary-search/index.html"
     }
   },
   "exceptions": {

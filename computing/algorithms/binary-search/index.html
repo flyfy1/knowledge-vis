@@ -8,6 +8,7 @@
 <script src="../../../canvas-label-guard.js"></script>
 <script src="i18n.js?v=20261029-runtime-fix"></script>
 <script src="app.js?v=20261029-runtime-fix" defer></script>
+  <link rel="stylesheet" href="../../../edition-compare.css">
 </head>
 <body>
 <header class="site-head"><div class="head-main">
@@ -15,6 +16,7 @@
 <h1 data-i18n="pageTitle">二分查找 · 每次砍掉一半</h1>
 <p class="tagline" data-i18n="tagline">在有序数组里找一个数，不必逐个试。每次看中间值，根据一次比较把不可能的半边整段丢掉。</p>
 </div><div class="lang-toggle" id="langToggle" role="group" aria-label="Language"><button type="button" data-lang="zh">中</button><button type="button" data-lang="en">EN</button></div></header>
+<p class="edition-compare"><a href="../../../variants/claude-code/binary-search/"><span class="ec-zh" lang="zh-CN">对照 Claude Code 版 →</span><span class="ec-en" lang="en">Compare with the Claude Code edition →</span></a></p>
 <nav class="step-nav" aria-label="steps"><a href="#step0" data-nav="0" data-i18n="nav0">0 先看中间</a><a href="#step1" data-nav="1" data-i18n="nav1">1 每次砍半</a><a href="#step2" data-nav="2" data-i18n="nav2">2 改目标</a><a href="#step3" data-nav="3" data-i18n="nav3">3 复杂度</a><a href="#step4" data-nav="4" data-i18n="nav4">4 收束</a></nav>
 <main>
 <section class="step" id="step0" data-step="0"><div class="step-inner"><p class="step-kicker" data-i18n="s0k">第 0 步 · 钩子</p><h2 data-i18n="s0t">先看中间：一次比较，砍掉半张表</h2><p class="explain" data-i18n-html="s0e">数组已经排好序。点击<strong>走一步</strong>，只看一次中间值：目标更大就把左半边划掉，目标更小就把右半边划掉。灰掉的格子代表已经不可能。</p><div class="controls"><label><span data-i18n="targetLab">目标值</span><input id="target0" type="number" min="1" max="63" value="42"></label><button class="btn primary" id="step0Step" data-i18n="stepOnce">走一步</button><button class="btn" id="step0Play" data-i18n="play">连续播放</button><button class="btn" id="step0Reset" data-i18n="reset">重置</button></div><div class="stage"><canvas id="canvas0" height="280" aria-label="binary search array"></canvas></div><div class="state-grid"><div class="state-box"><span class="label" data-i18n="rangeLab">仍可能的范围</span><strong id="range0">—</strong></div><div class="state-box"><span class="label" data-i18n="probeLab">本次探测</span><strong id="probe0">—</strong></div><div class="state-box"><span class="label" data-i18n="cmpLab">已比较</span><strong id="cmp0">0</strong></div></div><p class="readout" id="readout0"></p><p class="hint" data-i18n-html="s0hint">注意因果顺序：<strong>比较中间值 → 保留一半 → 下一次中间值改变</strong>。算法快，不是因为猜得准，而是每次都能安全丢掉一半。</p></div></section>
