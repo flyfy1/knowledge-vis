@@ -2338,6 +2338,42 @@
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
       "path": "variants/claude-code/periodic-trends/index.html"
+    },
+    "cc-acid-base-equilibrium": {
+      "developer": "Claude Code",
+      "edition": "claude-code-acid-base-equilibrium-20261109",
+      "kind": "original",
+      "sourceRevision": "79b92bc46f63addb9d6b2efcb172d9f4e6a241b0",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《酸碱平衡 · 分子在两边来回走》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Acid–Base Equilibrium · Molecules Move Both Ways"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/acid-base-equilibrium/index.html"
+    },
+    "cc-reaction-rates": {
+      "developer": "Claude Code",
+      "edition": "claude-code-reaction-rates-20261109",
+      "kind": "original",
+      "sourceRevision": "79b92bc46f63addb9d6b2efcb172d9f4e6a241b0",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《反应速率 · 数一数成功碰撞》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Reaction Rates · Counting Successful Collisions"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/reaction-rates/index.html"
+    },
+    "cc-buffer-capacity": {
+      "developer": "Claude Code",
+      "edition": "claude-code-buffer-capacity-20261109",
+      "kind": "original",
+      "sourceRevision": "79b92bc46f63addb9d6b2efcb172d9f4e6a241b0",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《缓冲溶液 · 把 pH 稳住》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Buffer Capacity · Holding pH Steady"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/buffer-capacity/index.html"
     }
   },
   "exceptions": {

@@ -246,6 +246,16 @@ window.CLAUDE_EDITIONS = [
   "model": "claude-opus-5-5"
  },
  {
+  "slug": "acid-base-equilibrium",
+  "original": "acid-base-equilibrium",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "reaction-rates",
+  "original": "reaction-rates",
+  "model": "claude-opus-5-5"
+ },
+ {
   "slug": "bayes-diagnostics",
   "original": "bayes-diagnostics",
   "model": "claude-opus-5-5"
@@ -293,6 +303,11 @@ window.CLAUDE_EDITIONS = [
  {
   "slug": "thermodynamics",
   "original": "thermodynamics",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "buffer-capacity",
+  "original": "buffer-capacity",
   "model": "claude-opus-5-5"
  },
  {
