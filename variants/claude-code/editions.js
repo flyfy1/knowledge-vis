@@ -411,8 +411,18 @@ window.CLAUDE_EDITIONS = [
   "model": "claude-opus-5-5"
  },
  {
+  "slug": "robot-kinematics",
+  "original": "robot-kinematics",
+  "model": "claude-opus-5-5"
+ },
+ {
   "slug": "public-health",
   "original": "public-health",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "computer-graphics",
+  "original": "computer-graphics",
   "model": "claude-opus-5-5"
  },
  {
@@ -583,6 +593,11 @@ window.CLAUDE_EDITIONS = [
  {
   "slug": "titration-curves",
   "original": "titration-curves",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "attention-mechanism",
+  "original": "attention-mechanism",
   "model": "claude-opus-5-5"
  },
  {
