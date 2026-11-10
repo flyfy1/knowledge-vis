@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="category" content="biology">
+  <meta name="stage" content="junior">
+  <meta name="author" content="Claude Code (claude-opus-5-5)">
+  <title>光合作用 · 用光开工的糖厂</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="model.js"></script>
+  <script src="i18n.js"></script>
+  <link rel="stylesheet" href="../../../page-provenance.css">
+</head>
+<body>
+  <header class="site-head">
+    <div class="head-main">
+      <p class="backline"><a href="../../../" data-i18n="back"></a></p>
+      <h1 data-i18n="pageTitle"></h1>
+      <p class="tagline" data-i18n="tagline"></p>
+      <p class="compare"><a href="../../../biology/cells/photosynthesis/" data-i18n="compare"></a></p>
+      <!-- page-provenance -->
+    </div>
+    <div class="lang-toggle" id="langToggle" role="group" aria-label="Language">
+      <button type="button" data-lang="zh">中</button><button type="button" data-lang="en">EN</button>
+    </div>
+  </header>
+  <nav class="step-nav" id="stepNav" data-i18n-aria="navLabel">
+    <a class="nav-step" href="#step0" data-i18n="nav0"></a><a class="nav-step" href="#step1" data-i18n="nav1"></a>
+    <a class="nav-step" href="#step2" data-i18n="nav2"></a><a class="nav-step" href="#step3" data-i18n="nav3"></a>
+    <a class="nav-step" href="#step4" data-i18n="nav4"></a><a class="nav-step" href="#step5" data-i18n="nav5"></a>
+    <a class="nav-step" href="#step6" data-i18n="nav6"></a>
+  </nav>
+  <main>
+    <section class="step" id="step0" data-step="0"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s0k"></p><h2 data-i18n="s0t"></h2><p class="explain" data-i18n-html="s0e"></p>
+      <div class="stage"><canvas id="c0" height="340" role="img" data-i18n-aria="c0a"></canvas></div>
+      <div class="controls">
+        <label><span data-i18n="lampDist"></span><output id="d0v"></output><input id="d0" data-step="0" type="range" min="20" max="100" step="5" value="40"></label>
+      </div>
+      <div class="btn-row"><button class="btn toggle" id="lamp0" type="button" data-step="0" aria-pressed="false" data-i18n="lampOff"></button><button class="btn primary" id="test0" type="button" data-step="0" data-i18n="splint"></button></div>
+      <p class="readout" id="r0" aria-live="polite"></p>
+      <p class="hint" data-i18n="s0hint"></p>
+    </div></section>
+
+    <section class="step" id="step1" data-step="1"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s1k"></p><h2 data-i18n="s1t"></h2><p class="explain" data-i18n-html="s1e"></p>
+      <p class="equation" id="eq1" aria-live="polite"></p>
+      <div class="stage"><canvas id="c1" height="300" role="img" data-i18n-aria="c1a"></canvas></div>
+      <p class="legend"><span class="lg"><span class="sw sw-c"></span><span data-i18n="lgC"></span></span><span class="lg"><span class="sw sw-h"></span><span data-i18n="lgH"></span></span><span class="lg"><span class="sw sw-o"></span><span data-i18n="lgO"></span></span></p>
+      <div class="controls">
+        <label><span data-i18n="coefA"></span><output id="a1v"></output><input id="a1" data-step="1" type="range" min="0" max="12" step="1" value="1"></label>
+        <label><span data-i18n="coefB"></span><output id="b1v"></output><input id="b1" data-step="1" type="range" min="0" max="12" step="1" value="1"></label>
+        <label><span data-i18n="coefD"></span><output id="d1v"></output><input id="d1" data-step="1" type="range" min="0" max="12" step="1" value="1"></label>
+      </div>
+      <div class="btn-row"><button class="btn" id="solve1" type="button" data-step="1" data-i18n="solve"></button><button class="btn" id="reset1" type="button" data-step="1" data-i18n="reset1"></button></div>
+      <p class="readout" id="r1" aria-live="polite"></p>
+      <p class="hint" data-i18n="s1hint"></p>
+    </div></section>
+
+    <section class="step" id="step2" data-step="2"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s2k"></p><h2 data-i18n="s2t"></h2><p class="explain" data-i18n-html="s2e"></p>
+      <div class="quiz"><p class="quiz-prompt" data-i18n="q2"></p><div class="quiz-options"><label><input type="radio" name="q2" value="7"><span data-i18n="q2a"></span></label><label><input type="radio" name="q2" value="50"><span data-i18n="q2b"></span></label><label><input type="radio" name="q2" value="93"><span data-i18n="q2c"></span></label></div><button class="btn" id="check2" type="button" data-step="2" data-i18n="check"></button><p class="quiz-feedback" id="fb2" aria-live="polite"></p></div>
+      <div class="stage"><canvas id="c2" height="330" role="img" data-i18n-aria="c2a"></canvas></div>
+      <p class="legend"><span class="lg"><span class="sw sw-co2"></span><span data-i18n="lgCO2"></span></span><span class="lg"><span class="sw sw-h2o"></span><span data-i18n="lgH2O"></span></span><span class="lg"><span class="sw sw-o2"></span><span data-i18n="lgO2"></span></span><span class="lg"><span class="sw sw-sugar-c"></span><span data-i18n="lgSugarC"></span></span><span class="lg"><span class="sw sw-sugar-w"></span><span data-i18n="lgSugarW"></span></span></p>
+      <div class="controls"><label><span data-i18n="sugarMass"></span><output id="m2v"></output><input id="m2" data-step="2" type="range" min="18" max="900" step="18" value="180"></label></div>
+      <p class="readout" id="r2" aria-live="polite"></p>
+      <p class="hint" data-i18n="s2hint"></p>
+    </div></section>
+
+    <section class="step" id="step3" data-step="3"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s3k"></p><h2 data-i18n="s3t"></h2><p class="explain" data-i18n-html="s3e"></p>
+      <div class="stage"><canvas id="c3" height="340" role="img" data-i18n-aria="c3a"></canvas></div>
+      <p class="legend"><span class="lg"><span class="sw sw-cyan"></span><span data-i18n="lgGross"></span></span><span class="lg"><span class="sw sw-dash"></span><span data-i18n="lgResp"></span></span><span class="lg"><span class="sw sw-green"></span><span data-i18n="lgNet"></span></span><span class="lg"><span class="sw sw-dot"></span><span data-i18n="lgTried"></span></span></p>
+      <div class="controls"><label><span data-i18n="lightPct"></span><output id="i3v"></output><input id="i3" data-step="3" type="range" min="0" max="100" step="1" value="30"></label></div>
+      <div class="btn-row"><button class="btn primary" id="sweep3" type="button" data-step="3" data-i18n="sweep3"></button><button class="btn" id="clear3" type="button" data-step="3" data-i18n="clearTried"></button></div>
+      <p class="readout" id="r3" aria-live="polite"></p>
+      <p class="hint" data-i18n="s3hint"></p>
+    </div></section>
+
+    <section class="step" id="step4" data-step="4"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s4k"></p><h2 data-i18n="s4t"></h2><p class="explain" data-i18n-html="s4e"></p>
+      <div class="stage twin"><canvas id="c4" height="330" role="img" data-i18n-aria="c4a"></canvas><canvas id="c4b" height="330" role="img" data-i18n-aria="c4b"></canvas></div>
+      <p class="legend"><span class="lg"><span class="sw sw-yellow"></span><span data-i18n="lgLightPlank"></span></span><span class="lg"><span class="sw sw-violet"></span><span data-i18n="lgCO2Plank"></span></span><span class="lg"><span class="sw sw-cyan"></span><span data-i18n="lgWater"></span></span><span class="lg"><span class="sw sw-ghost"></span><span data-i18n="lgOther"></span></span></p>
+      <div class="controls">
+        <label><span data-i18n="lightPct"></span><output id="i4v"></output><input id="i4" data-step="4" type="range" min="0" max="100" step="1" value="80"></label>
+        <label><span data-i18n="co2ppm"></span><output id="c4v"></output><input id="c4s" data-step="4" type="range" min="0" max="1200" step="20" value="420"></label>
+      </div>
+      <p class="readout" id="r4" aria-live="polite"></p>
+      <p class="hint" data-i18n="s4hint"></p>
+    </div></section>
+
+    <section class="step" id="step5" data-step="5"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s5k"></p><h2 data-i18n="s5t"></h2><p class="explain" data-i18n-html="s5e"></p>
+      <div class="stage"><canvas id="c5" height="400" role="img" data-i18n-aria="c5a"></canvas></div>
+      <div class="pickers">
+        <fieldset><legend data-i18n="weather"></legend><label><input type="radio" name="sky5" value="sun" data-step="5" checked><span data-i18n="sunny"></span></label><label><input type="radio" name="sky5" value="cloud" data-step="5"><span data-i18n="cloudy"></span></label></fieldset>
+        <fieldset><legend data-i18n="air"></legend><label><input type="radio" name="co25" value="420" data-step="5" checked><span data-i18n="air420"></span></label><label><input type="radio" name="co25" value="1000" data-step="5"><span data-i18n="air1000"></span></label></fieldset>
+      </div>
+      <div class="btn-row"><button class="btn primary" id="play5" type="button" data-step="5" data-i18n="play5"></button><button class="btn" id="clear5" type="button" data-step="5" data-i18n="clearRuns"></button></div>
+      <ul class="runs" id="runs5"></ul>
+      <p class="readout" id="r5" aria-live="polite"></p>
+      <p class="hint" data-i18n="s5hint"></p>
+    </div></section>
+
+    <section class="step" id="step6" data-step="6"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s6k"></p><h2 data-i18n="s6t"></h2>
+      <div class="finale"><p data-i18n-html="s6fin"></p><p class="formula" data-i18n="formula"></p><p data-i18n="boundary"></p>
+        <p class="links-title" data-i18n="linksTitle"></p>
+        <a class="xlink" href="../../../biology/cells/cell-structure/#step2" data-i18n="lk1"></a>
+        <a class="xlink" href="../../../chemistry/reactions/mass-conservation/#step1" data-i18n="lk2"></a>
+        <a class="xlink" href="../../../biology/ecology/energy-pyramid/#step0" data-i18n="lk3"></a>
+        <a class="xlink" href="../../../earth/climate/carbon-cycle/#step0" data-i18n="lk4"></a>
+      </div>
+    </div></section>
+  </main>
+  <footer class="site-foot" data-i18n="foot"></footer>
+  <script src="app.js"></script>
+</body>
+</html>
