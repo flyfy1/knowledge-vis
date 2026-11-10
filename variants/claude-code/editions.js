@@ -246,6 +246,21 @@ window.CLAUDE_EDITIONS = [
   "model": "claude-opus-5-5"
  },
  {
+  "slug": "cell-structure",
+  "original": "cell-structure",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "photosynthesis",
+  "original": "photosynthesis",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "logistic-growth",
+  "original": "logistic-growth",
+  "model": "claude-opus-5-5"
+ },
+ {
   "slug": "chemical-equilibrium",
   "original": "chemical-equilibrium",
   "model": "claude-opus-5-5"

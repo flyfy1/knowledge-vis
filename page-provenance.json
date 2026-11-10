@@ -2626,6 +2626,42 @@
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
       "path": "variants/claude-code/enzymes/index.html"
+    },
+    "cc-cell-structure": {
+      "developer": "Claude Code",
+      "edition": "claude-code-cell-structure-20261109",
+      "kind": "original",
+      "sourceRevision": "15af9b619ae04b1c16eea88f7b7ed6e500c67b8b",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《细胞 · 生命的最小单位间》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson The Cell · Life's Smallest Workshop"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/cell-structure/index.html"
+    },
+    "cc-photosynthesis": {
+      "developer": "Claude Code",
+      "edition": "claude-code-photosynthesis-20261109",
+      "kind": "original",
+      "sourceRevision": "15af9b619ae04b1c16eea88f7b7ed6e500c67b8b",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《光合作用 · 用光开工的糖厂》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Photosynthesis · A Sugar Factory Run by Light"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/photosynthesis/index.html"
+    },
+    "cc-logistic-growth": {
+      "developer": "Claude Code",
+      "edition": "claude-code-logistic-growth-20261109",
+      "kind": "original",
+      "sourceRevision": "15af9b619ae04b1c16eea88f7b7ed6e500c67b8b",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《种群增长 · S 形曲线从哪来》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Population Growth · Where the S-Curve Comes From"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/logistic-growth/index.html"
     }
   },
   "exceptions": {
