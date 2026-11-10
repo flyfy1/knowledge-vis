@@ -2818,6 +2818,42 @@
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
       "path": "variants/claude-code/attention-mechanism/index.html"
+    },
+    "cc-risk-return": {
+      "developer": "Claude Code",
+      "edition": "claude-code-risk-return-20261109",
+      "kind": "original",
+      "sourceRevision": "96919459f9bebd04cdbbd90ca3dd73db6d593d93",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《风险与回报 · 为什么风险大承诺回报高》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Risk & Return · Why Do Riskier Things Usually Promise More"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/risk-return/index.html"
+    },
+    "cc-diversification": {
+      "developer": "Claude Code",
+      "edition": "claude-code-diversification-20261109",
+      "kind": "original",
+      "sourceRevision": "96919459f9bebd04cdbbd90ca3dd73db6d593d93",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《分散投资 · 为什么不把鸡蛋放一个篮子里》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Diversification · Why Not Put All Eggs in One Basket"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/diversification/index.html"
+    },
+    "cc-fees-compounding": {
+      "developer": "Claude Code",
+      "edition": "claude-code-fees-compounding-20261109",
+      "kind": "original",
+      "sourceRevision": "96919459f9bebd04cdbbd90ca3dd73db6d593d93",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《费率与复利 · 1% 的费率怎么吃掉回报》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Fees & Compounding · How Does a 1% Fee Eat Returns"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/fees-compounding/index.html"
     }
   },
   "exceptions": {

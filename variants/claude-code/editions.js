@@ -956,6 +956,21 @@ window.CLAUDE_EDITIONS = [
   "model": "claude-opus-5-5"
  },
  {
+  "slug": "risk-return",
+  "original": "risk-return",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "diversification",
+  "original": "diversification",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "fees-compounding",
+  "original": "fees-compounding",
+  "model": "claude-opus-5-5"
+ },
+ {
   "slug": "interest-rates-bonds",
   "original": "interest-rates-bonds",
   "model": "claude-opus-5-5"
