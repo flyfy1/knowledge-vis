@@ -1618,6 +1618,42 @@
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
       "path": "variants/claude-code/inverted-pendulum/index.html"
+    },
+    "cc-quantum-tunneling": {
+      "developer": "Claude Code",
+      "edition": "claude-code-quantum-tunneling-20261109",
+      "kind": "original",
+      "sourceRevision": "144c57e149271d9e8970ab3d0eb0d380f0ee22ca",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《量子隧穿 · 穿墙的是概率，不是子弹》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Quantum Tunnelling · What Passes Through the Wall Is a Probability"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/quantum-tunneling/index.html"
+    },
+    "cc-relativity": {
+      "developer": "Claude Code",
+      "edition": "claude-code-relativity-20261109",
+      "kind": "original",
+      "sourceRevision": "144c57e149271d9e8970ab3d0eb0d380f0ee22ca",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《狭义相对论 · 同时性的线倾斜了》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Special Relativity · The Lines of “Now” Tilt"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/relativity/index.html"
+    },
+    "cc-series-parallel": {
+      "developer": "Claude Code",
+      "edition": "claude-code-series-parallel-20261109",
+      "kind": "original",
+      "sourceRevision": "144c57e149271d9e8970ab3d0eb0d380f0ee22ca",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《串联与并联 · 电流的分与合》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Series & Parallel · Splitting and Merging Current"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/series-parallel/index.html"
     }
   },
   "exceptions": {

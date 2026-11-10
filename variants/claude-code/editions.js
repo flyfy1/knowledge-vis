@@ -436,8 +436,23 @@ window.CLAUDE_EDITIONS = [
   "model": "claude-opus-5-5"
  },
  {
+  "slug": "quantum-tunneling",
+  "original": "quantum-tunneling",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "relativity",
+  "original": "relativity",
+  "model": "claude-opus-5-5"
+ },
+ {
   "slug": "sequences-series",
   "original": "sequences-series",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "series-parallel",
+  "original": "series-parallel",
   "model": "claude-opus-5-5"
  },
  {
