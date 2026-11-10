@@ -1798,6 +1798,42 @@
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
       "path": "variants/claude-code/entropy/index.html"
+    },
+    "cc-bayes-diagnostics": {
+      "developer": "Claude Code",
+      "edition": "claude-code-bayes-diagnostics-20261109",
+      "kind": "original",
+      "sourceRevision": "af9e44b56b58e0059d03ec412768d48742b28d3c",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《贝叶斯诊断 · 阳性结果说明什么？》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Bayes Diagnostics · What Does a Positive Mean?"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/bayes-diagnostics/index.html"
+    },
+    "cc-genetics-probability": {
+      "developer": "Claude Code",
+      "edition": "claude-code-genetics-probability-20261109",
+      "kind": "original",
+      "sourceRevision": "af9e44b56b58e0059d03ec412768d48742b28d3c",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《遗传与概率 · 从配子到表型》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Genetics & Probability · From Gametes to Phenotypes"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/genetics-probability/index.html"
+    },
+    "cc-probability-distribution": {
+      "developer": "Claude Code",
+      "edition": "claude-code-probability-distribution-20261109",
+      "kind": "original",
+      "sourceRevision": "af9e44b56b58e0059d03ec412768d48742b28d3c",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《概率分布 · 随机性也有形状》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Probability Distributions · Randomness Has a Shape"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/probability-distribution/index.html"
     }
   },
   "exceptions": {

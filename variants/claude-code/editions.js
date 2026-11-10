@@ -216,6 +216,16 @@ window.CLAUDE_EDITIONS = [
   "model": "claude-opus-5-5"
  },
  {
+  "slug": "bayes-diagnostics",
+  "original": "bayes-diagnostics",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "genetics-probability",
+  "original": "genetics-probability",
+  "model": "claude-opus-5-5"
+ },
+ {
   "slug": "supply-demand",
   "original": "supply-demand",
   "model": "claude-opus-5-5"
@@ -228,6 +238,11 @@ window.CLAUDE_EDITIONS = [
  {
   "slug": "linear-transform",
   "original": "linear-transform",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "probability-distribution",
+  "original": "probability-distribution",
   "model": "claude-opus-5-5"
  },
  {
