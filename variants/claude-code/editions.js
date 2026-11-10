@@ -331,8 +331,18 @@ window.CLAUDE_EDITIONS = [
   "model": "claude-opus-5-5"
  },
  {
+  "slug": "activation-energy",
+  "original": "activation-energy",
+  "model": "claude-opus-5-5"
+ },
+ {
   "slug": "buoyancy-archimedes",
   "original": "buoyancy-archimedes",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "combustion-triangle",
+  "original": "combustion-triangle",
   "model": "claude-opus-5-5"
  },
  {
@@ -343,6 +353,11 @@ window.CLAUDE_EDITIONS = [
  {
   "slug": "density",
   "original": "density",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "dissolution-saturation",
+  "original": "dissolution-saturation",
   "model": "claude-opus-5-5"
  },
  {

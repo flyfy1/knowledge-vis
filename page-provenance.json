@@ -2194,6 +2194,42 @@
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
       "path": "variants/claude-code/cnn-feature-maps/index.html"
+    },
+    "cc-activation-energy": {
+      "developer": "Claude Code",
+      "edition": "claude-code-activation-energy-20261109",
+      "kind": "original",
+      "sourceRevision": "510096d825bd3b0e32ddc9dc7ad205a5257bb45f",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《活化能 · 反应要翻过的那座山》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Activation Energy · The Hill a Reaction Has to Climb"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/activation-energy/index.html"
+    },
+    "cc-combustion-triangle": {
+      "developer": "Claude Code",
+      "edition": "claude-code-combustion-triangle-20261109",
+      "kind": "original",
+      "sourceRevision": "510096d825bd3b0e32ddc9dc7ad205a5257bb45f",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《燃烧三要素》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson The Fire Triangle"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/combustion-triangle/index.html"
+    },
+    "cc-dissolution-saturation": {
+      "developer": "Claude Code",
+      "edition": "claude-code-dissolution-saturation-20261109",
+      "kind": "original",
+      "sourceRevision": "510096d825bd3b0e32ddc9dc7ad205a5257bb45f",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《溶解与饱和》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Dissolution & Saturation"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/dissolution-saturation/index.html"
     }
   },
   "exceptions": {
