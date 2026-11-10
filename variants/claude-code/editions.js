@@ -21,8 +21,23 @@ window.CLAUDE_EDITIONS = [
   "model": "claude-opus-5-5"
  },
  {
+  "slug": "sampling",
+  "original": "sampling",
+  "model": "claude-opus-5-5"
+ },
+ {
   "slug": "trigonometry",
   "original": "trigonometry",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "laplace",
+  "original": "laplace",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "z-transform",
+  "original": "z-transform",
   "model": "claude-opus-5-5"
  },
  {

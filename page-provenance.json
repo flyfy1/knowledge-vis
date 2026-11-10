@@ -1546,6 +1546,42 @@
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
       "path": "variants/claude-code/projectile-circular/index.html"
+    },
+    "cc-sampling": {
+      "developer": "Claude Code",
+      "edition": "claude-code-sampling-20261109",
+      "kind": "original",
+      "sourceRevision": "a1b5971de2edb505e7a5884087ce6615e6257e66",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《采样与混叠 · 偷看得太懒，就会看错》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Sampling & Aliasing · Peek Too Lazily and You'll See It Wrong"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/sampling/index.html"
+    },
+    "cc-laplace": {
+      "developer": "Claude Code",
+      "edition": "claude-code-laplace-20261109",
+      "kind": "original",
+      "sourceRevision": "a1b5971de2edb505e7a5884087ce6615e6257e66",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《拉普拉斯与 ROC · 给频率配一个寿命》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Laplace Transform & ROC · Giving Frequencies a Lifespan"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/laplace/index.html"
+    },
+    "cc-z-transform": {
+      "developer": "Claude Code",
+      "edition": "claude-code-z-transform-20261109",
+      "kind": "original",
+      "sourceRevision": "a1b5971de2edb505e7a5884087ce6615e6257e66",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《Z 变换 · 把 s 平面卷成单位圆》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson The Z-Transform · Rolling the s-Plane into the Unit Circle"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/z-transform/index.html"
     }
   },
   "exceptions": {
