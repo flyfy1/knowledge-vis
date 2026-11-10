@@ -246,6 +246,21 @@ window.CLAUDE_EDITIONS = [
   "model": "claude-opus-5-5"
  },
  {
+  "slug": "photoelectric-effect",
+  "original": "photoelectric-effect",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "pressure",
+  "original": "pressure",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "resonance",
+  "original": "resonance",
+  "model": "claude-opus-5-5"
+ },
+ {
   "slug": "averaging-leveling",
   "original": "averaging-leveling",
   "model": "claude-opus-5-5"

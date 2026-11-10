@@ -1402,6 +1402,42 @@
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
       "path": "variants/claude-code/magnetic-force/index.html"
+    },
+    "cc-photoelectric-effect": {
+      "developer": "Claude Code",
+      "edition": "claude-code-photoelectric-effect-20261109",
+      "kind": "original",
+      "sourceRevision": "d8d2b9840c869342af8b6a358bf1147746f0b00f",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《光电效应 · 光是一份一份的》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson The Photoelectric Effect · Light Comes in Packets"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/photoelectric-effect/index.html"
+    },
+    "cc-pressure": {
+      "developer": "Claude Code",
+      "edition": "claude-code-pressure-20261109",
+      "kind": "original",
+      "sourceRevision": "d8d2b9840c869342af8b6a358bf1147746f0b00f",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《压强》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Pressure"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/pressure/index.html"
+    },
+    "cc-resonance": {
+      "developer": "Claude Code",
+      "edition": "claude-code-resonance-20261109",
+      "kind": "original",
+      "sourceRevision": "d8d2b9840c869342af8b6a358bf1147746f0b00f",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《共振 · 踩中节拍，小推也能荡高》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Resonance · Push in Time and a Small Force Goes a Long Way"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/resonance/index.html"
     }
   },
   "exceptions": {
