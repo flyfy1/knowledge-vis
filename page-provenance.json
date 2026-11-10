@@ -1894,6 +1894,18 @@
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
       "path": "variants/claude-code/hypothesis-testing/index.html"
+    },
+    "cc-markov-chains": {
+      "developer": "Claude Code",
+      "edition": "claude-code-markov-chains-20261109",
+      "kind": "original",
+      "sourceRevision": "478c54715f9fb19bb29d93c9cc1eaeaa5235c021",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《马尔可夫链 · 下一步只看现在》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Markov Chains · The Next Step Depends Only on Now"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/markov-chains/index.html"
     }
   },
   "exceptions": {

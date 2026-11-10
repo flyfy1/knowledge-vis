@@ -501,6 +501,11 @@ window.CLAUDE_EDITIONS = [
   "model": "claude-opus-5-5"
  },
  {
+  "slug": "markov-chains",
+  "original": "markov-chains",
+  "model": "claude-opus-5-5"
+ },
+ {
   "slug": "mechanical-energy",
   "original": "mechanical-energy",
   "model": "claude-opus-5-5"
