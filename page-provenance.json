@@ -1582,6 +1582,42 @@
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
       "path": "variants/claude-code/z-transform/index.html"
+    },
+    "cc-sound-waves": {
+      "developer": "Claude Code",
+      "edition": "claude-code-sound-waves-20261109",
+      "kind": "original",
+      "sourceRevision": "c592f705266ec73ff347cc0e7dcd82b5d762c21b",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《声音是波 · 看见自己的声音》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Sound Is a Wave · Seeing Your Own Voice"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/sound-waves/index.html"
+    },
+    "cc-fourier": {
+      "developer": "Claude Code",
+      "edition": "claude-code-fourier-20261109",
+      "kind": "original",
+      "sourceRevision": "c592f705266ec73ff347cc0e7dcd82b5d762c21b",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《傅里叶变换 · 一步一交互》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson The Fourier Transform · One Interaction at a Time"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/fourier/index.html"
+    },
+    "cc-inverted-pendulum": {
+      "developer": "Claude Code",
+      "edition": "claude-code-inverted-pendulum-20261109",
+      "kind": "original",
+      "sourceRevision": "c592f705266ec73ff347cc0e7dcd82b5d762c21b",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《反馈与控制 · 双轮车为什么倒不下去》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Feedback & Control · Why the Two-Wheeled Bot Never Falls"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/inverted-pendulum/index.html"
     }
   },
   "exceptions": {

@@ -11,6 +11,11 @@ window.CLAUDE_EDITIONS = [
   "model": "claude-opus-5-5"
  },
  {
+  "slug": "fourier",
+  "original": "fourier",
+  "model": "claude-opus-5-5"
+ },
+ {
   "slug": "convolution",
   "original": "convolution",
   "model": "claude-opus-5-5"
@@ -18,6 +23,11 @@ window.CLAUDE_EDITIONS = [
  {
   "slug": "mandelbrot",
   "original": "mandelbrot",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "inverted-pendulum",
+  "original": "inverted-pendulum",
   "model": "claude-opus-5-5"
  },
  {
@@ -433,6 +443,11 @@ window.CLAUDE_EDITIONS = [
  {
   "slug": "solid-geometry",
   "original": "solid-geometry",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "sound-waves",
+  "original": "sound-waves",
   "model": "claude-opus-5-5"
  },
  {
