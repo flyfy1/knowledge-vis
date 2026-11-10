@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="category" content="probability">
+  <meta name="stage" content="university">
+  <meta name="author" content="Claude Code (claude-opus-5-5)">
+  <title>多臂老虎机 · 边试边赚的取舍</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="model.js"></script>
+  <script src="i18n.js"></script>
+  <link rel="stylesheet" href="../../../page-provenance.css">
+</head>
+<body>
+  <header class="site-head">
+    <div class="head-main">
+      <p class="backline"><a href="../../../" data-i18n="back"></a></p>
+      <h1 data-i18n="pageTitle"></h1>
+      <p class="tagline" data-i18n="tagline"></p>
+      <p class="compare"><a href="../../../probability/stochastic/bandit-arms/" data-i18n="compare"></a></p>
+      <!-- page-provenance -->
+    </div>
+    <div class="lang-toggle" id="langToggle" role="group" aria-label="Language">
+      <button type="button" data-lang="zh">中</button><button type="button" data-lang="en">EN</button>
+    </div>
+  </header>
+  <nav class="step-nav" id="stepNav" data-i18n-aria="navLabel">
+    <a class="nav-step" href="#step0" data-i18n="nav0"></a><a class="nav-step" href="#step1" data-i18n="nav1"></a>
+    <a class="nav-step" href="#step2" data-i18n="nav2"></a><a class="nav-step" href="#step3" data-i18n="nav3"></a>
+    <a class="nav-step" href="#step4" data-i18n="nav4"></a><a class="nav-step" href="#step5" data-i18n="nav5"></a>
+    <a class="nav-step" href="#step6" data-i18n="nav6"></a>
+  </nav>
+  <main>
+    <section class="step" id="step0" data-step="0"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s0k"></p><h2 data-i18n="s0t"></h2><p class="explain" data-i18n-html="s0e"></p>
+      <div class="stage"><canvas id="c0" height="300" role="img" data-i18n-aria="c0"></canvas></div>
+      <p class="legend"><span class="lg"><span class="sw sw-a"></span>A</span><span class="lg"><span class="sw sw-b"></span>B</span><span class="lg"><span class="sw sw-c"></span>C</span><span class="lg"><span class="sw sw-d"></span>D</span><span class="lg"><span class="sw sw-grey"></span><span data-i18n="s0lgEst"></span></span><span class="lg"><span class="sw sw-win"></span><span data-i18n="s0lgWin"></span></span><span class="lg"><span class="sw sw-lose"></span><span data-i18n="s0lgLose"></span></span><span class="lg"><span class="sw sw-tick" style="background:#7ee2a8"></span><span data-i18n="s0lgTrue"></span></span></p>
+      <div class="pull-row"><button class="btn" type="button" id="pull0" data-step="0" data-arm="0"></button><button class="btn" type="button" id="pull1" data-step="0" data-arm="1"></button><button class="btn" type="button" id="pull2" data-step="0" data-arm="2"></button><button class="btn" type="button" id="pull3" data-step="0" data-arm="3"></button></div>
+      <div class="btn-row"><button class="btn primary" id="reveal0" type="button" data-step="0" data-i18n="reveal0"></button><button class="btn" id="newGame0" type="button" data-step="0" data-i18n="newGame0"></button></div>
+      <p class="readout" id="r0" aria-live="polite"></p><p class="hint" data-i18n="s0hint"></p>
+    </div></section>
+
+    <section class="step" id="step1" data-step="1"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s1k"></p><h2 data-i18n="s1t"></h2><p class="explain" data-i18n-html="s1e"></p>
+      <div class="stage twin even"><canvas id="c1" height="300" role="img" data-i18n-aria="c1a"></canvas><canvas id="c1b" height="300" role="img" data-i18n-aria="c1b"></canvas></div>
+      <p class="legend"><span class="lg"><span class="sw sw-a"></span>A</span><span class="lg"><span class="sw sw-b"></span>B</span><span class="lg"><span class="sw sw-c"></span>C</span><span class="lg"><span class="sw sw-d"></span>D</span><span class="lg"><span class="sw sw-grey"></span><span data-i18n="s1lgProb"></span></span><span class="lg"><span class="sw sw-white" style="border-radius:50%;width:9px;height:9px"></span><span data-i18n="s1lgSim"></span></span><span class="lg"><span class="sw sw-orange"></span><span data-i18n="s1lgCurve"></span></span><span class="lg"><span class="sw sw-green" style="border-radius:50%;width:9px;height:9px"></span><span data-i18n="s1lgMin"></span></span></p>
+      <div class="controls"><label><span data-i18n="mSlider"></span><output id="m1v"></output><input id="m1" data-step="1" type="range" min="1" max="40" step="1" value="1"></label></div>
+      <div class="btn-row"><button class="btn primary" id="sim1" type="button" data-step="1" data-i18n="sim1"></button><button class="btn" id="clear1" type="button" data-step="1" data-i18n="clear1"></button></div>
+      <p class="readout" id="r1" aria-live="polite"></p><p class="hint" data-i18n="s1hint"></p>
+    </div></section>
+
+    <section class="step" id="step2" data-step="2"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s2k"></p><h2 data-i18n="s2t"></h2><p class="explain" data-i18n-html="s2e"></p>
+      <div class="stage twin even"><canvas id="c2" height="300" role="img" data-i18n-aria="c2a"></canvas><canvas id="c2b" height="300" role="img" data-i18n-aria="c2b"></canvas></div>
+      <p class="legend"><span class="lg"><span class="sw sw-cyan"></span><span data-i18n="s2lgCur"></span></span><span class="lg"><span class="sw sw-grey"></span><span data-i18n="s2lgGreedy"></span></span><span class="lg"><span class="sw sw-orange"></span><span data-i18n="s2lgTen"></span></span><span class="lg"><span class="sw sw-raw"></span><span data-i18n="s2lgGrid"></span></span></p>
+      <div class="controls"><label><span data-i18n="epsSlider"></span><output id="e2v"></output><input id="e2" data-step="2" type="range" min="0" max="0.5" step="0.01" value="0.05"></label></div>
+      <p class="readout" id="r2" aria-live="polite"></p><p class="hint" data-i18n="s2hint"></p>
+    </div></section>
+
+    <section class="step" id="step3" data-step="3"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s3k"></p><h2 data-i18n="s3t"></h2><p class="explain" data-i18n-html="s3e"></p>
+      <div class="stage twin even"><canvas id="c3" height="300" role="img" data-i18n-aria="c3a"></canvas><canvas id="c3b" height="300" role="img" data-i18n-aria="c3b"></canvas></div>
+      <p class="legend"><span class="lg"><span class="sw sw-a"></span>A</span><span class="lg"><span class="sw sw-b"></span>B</span><span class="lg"><span class="sw sw-c"></span>C</span><span class="lg"><span class="sw sw-d"></span>D</span><span class="lg"><span class="sw sw-grey"></span><span data-i18n="s3lgEst"></span></span><span class="lg"><span class="sw sw-dash"></span><span data-i18n="s3lgBonus"></span></span><span class="lg"><span class="sw sw-tick" style="background:#7ee2a8"></span><span data-i18n="s3lgTrue"></span></span><span class="lg"><span class="sw sw-frame"></span><span data-i18n="s3lgNext"></span></span></p>
+      <div class="controls">
+        <label><span data-i18n="cSlider"></span><output id="c3v"></output><input id="cc3" data-step="3" type="range" min="0" max="2" step="0.1" value="1"></label>
+        <label><span data-i18n="tSlider"></span><output id="t3v"></output><input id="t3" data-step="3" type="range" min="1" max="301" step="1" value="12"></label>
+      </div>
+      <div class="btn-row"><button class="btn primary" id="play3" type="button" data-step="3" data-i18n="play"></button></div>
+      <p class="readout" id="r3" aria-live="polite"></p><p class="hint" data-i18n="s3hint"></p>
+    </div></section>
+
+    <section class="step" id="step4" data-step="4"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s4k"></p><h2 data-i18n="s4t"></h2><p class="explain" data-i18n-html="s4e"></p>
+      <div class="stage twin even"><canvas id="c4" height="300" role="img" data-i18n-aria="c4a"></canvas><canvas id="c4b" height="300" role="img" data-i18n-aria="c4b"></canvas></div>
+      <p class="legend"><span class="lg"><span class="sw sw-a"></span>A</span><span class="lg"><span class="sw sw-b"></span>B</span><span class="lg"><span class="sw sw-c"></span>C</span><span class="lg"><span class="sw sw-d"></span>D</span><span class="lg"><span class="sw sw-grey" style="height:3px"></span><span data-i18n="s4lgCurve"></span></span><span class="lg"><span class="sw sw-white" style="border-radius:50%;width:9px;height:9px"></span><span data-i18n="s4lgDraw"></span></span><span class="lg"><span class="sw sw-tick" style="background:#7ee2a8"></span><span data-i18n="s4lgTrue"></span></span></p>
+      <div class="controls"><label><span data-i18n="tSlider"></span><output id="t4v"></output><input id="t4" data-step="4" type="range" min="1" max="301" step="1" value="1"></label></div>
+      <div class="btn-row"><button class="btn primary" id="play4" type="button" data-step="4" data-i18n="play"></button><button class="btn" id="draw4" type="button" data-step="4" data-i18n="draw4"></button><button class="btn" id="draw4x" type="button" data-step="4" data-i18n="draw4x"></button></div>
+      <p class="readout" id="r4" aria-live="polite"></p><p class="hint" data-i18n="s4hint"></p>
+    </div></section>
+
+    <section class="step" id="step5" data-step="5"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s5k"></p><h2 data-i18n="s5t"></h2><p class="explain" data-i18n-html="s5e"></p>
+      <div class="stage"><canvas id="c5" height="340" role="img" data-i18n-aria="c5"></canvas></div>
+      <p class="legend"><span class="lg"><span class="sw sw-grey"></span><span data-i18n="sGreedy"></span></span><span class="lg"><span class="sw sw-orange"></span><span data-i18n="sEps"></span></span><span class="lg"><span class="sw sw-d"></span><span data-i18n="sUcb"></span></span><span class="lg"><span class="sw sw-cyan"></span><span data-i18n="sTs"></span></span></p>
+      <div class="lvl-row" role="group" data-i18n-aria="dLabel"><span data-i18n="dLabel"></span>
+        <button class="btn toggle" type="button" data-step="5" data-delta="0.02" data-i18n="d002"></button><button class="btn toggle" type="button" data-step="5" data-delta="0.05" data-i18n="d005"></button><button class="btn toggle" type="button" data-step="5" data-delta="0.1" data-i18n="d01"></button><button class="btn toggle" type="button" data-step="5" data-delta="0.2" data-i18n="d02"></button><button class="btn toggle" type="button" data-step="5" data-delta="0.3" data-i18n="d03"></button>
+      </div>
+      <div class="controls"><label><span data-i18n="t5Slider"></span><output id="t5v"></output><input id="t5" data-step="5" type="range" min="100" max="2000" step="100" value="2000"></label></div>
+      <p class="readout" id="r5" aria-live="polite"></p><p class="hint" data-i18n="s5hint"></p>
+    </div></section>
+
+    <section class="step" id="step6" data-step="6"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s6k"></p><h2 data-i18n="s6t"></h2>
+      <div class="finale"><p data-i18n-html="s6fin"></p><p class="formula" data-i18n="formula"></p><p data-i18n="boundary"></p>
+        <p class="links-title" data-i18n="linksTitle"></p>
+        <a class="xlink" href="../../../probability/inference/bayes-updating/#step4" data-i18n="lk1"></a>
+        <a class="xlink" href="../../../probability/stochastic/monte-carlo/#step1" data-i18n="lk2"></a>
+        <a class="xlink" href="../../../probability/basics/expected-value/#step2" data-i18n="lk3"></a>
+        <a class="xlink" href="../statistical-inference/#step1" data-i18n="lk4"></a>
+      </div>
+    </div></section>
+  </main>
+  <footer class="site-foot" data-i18n="foot"></footer>
+  <script src="app.js"></script>
+</body>
+</html>
