@@ -3,6 +3,10 @@
 - **目标**：Yangyu 于 2026-11-09 要求，每个课程 topic 都由 Claude Code 独立写一份自己的版本，标明是 Claude 的作品、由哪个模型编写。原版和 Claude 版要能互相跳转，方便对比两边的出品。
 - **规则依据**：[visual-page-provenance](visual-page-provenance.md)「Parallel editions」。
 
+## 进度
+
+截至 2026-11-10 完成 68 / 201 页，交接说明见 [claude-code-editions-handover](claude-code-editions-handover.md)。
+
 ## 模型选择（2026-11-09）
 
 - 先用 `claude-sonnet-5-5` 和 `claude-opus-5-5` 各写同两个试点（convolution、fractions），由 lead 会话（claude-opus-5-5）对比。
