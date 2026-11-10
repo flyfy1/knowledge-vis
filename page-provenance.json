@@ -1978,6 +1978,42 @@
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
       "path": "variants/claude-code/binary-search/index.html"
+    },
+    "cc-graph-algorithms": {
+      "developer": "Claude Code",
+      "edition": "claude-code-graph-algorithms-20261109",
+      "kind": "original",
+      "sourceRevision": "06af9cb5eceaefa02b7b5416194b5ce3d2000410",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《图算法 · 让边带你走》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Graph Algorithms · Let Edges Lead"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/graph-algorithms/index.html"
+    },
+    "cc-tcp-congestion": {
+      "developer": "Claude Code",
+      "edition": "claude-code-tcp-congestion-20261109",
+      "kind": "original",
+      "sourceRevision": "06af9cb5eceaefa02b7b5416194b5ce3d2000410",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《网络流 · 一封消息的旅程》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Network Flow · A Message’s Journey"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/tcp-congestion/index.html"
+    },
+    "cc-distributed-systems": {
+      "developer": "Claude Code",
+      "edition": "claude-code-distributed-systems-20261109",
+      "kind": "original",
+      "sourceRevision": "06af9cb5eceaefa02b7b5416194b5ce3d2000410",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《分布式系统 · 多个副本如何像一个值》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Distributed Systems · How Replicas Behave Like One Value"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/distributed-systems/index.html"
     }
   },
   "exceptions": {
