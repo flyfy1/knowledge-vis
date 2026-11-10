@@ -216,6 +216,11 @@ window.CLAUDE_EDITIONS = [
   "model": "claude-opus-5-5"
  },
  {
+  "slug": "atomic-structure",
+  "original": "atomic-structure",
+  "model": "claude-opus-5-5"
+ },
+ {
   "slug": "lever-pulley",
   "original": "lever-pulley",
   "model": "claude-opus-5-5"
@@ -223,6 +228,16 @@ window.CLAUDE_EDITIONS = [
  {
   "slug": "equation-scale",
   "original": "equation-scale",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "mass-conservation",
+  "original": "mass-conservation",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "chemical-equilibrium",
+  "original": "chemical-equilibrium",
   "model": "claude-opus-5-5"
  },
  {

@@ -2122,6 +2122,42 @@
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
       "path": "variants/claude-code/pagerank/index.html"
+    },
+    "cc-atomic-structure": {
+      "developer": "Claude Code",
+      "edition": "claude-code-atomic-structure-20261109",
+      "kind": "original",
+      "sourceRevision": "d327dcac4e2fe211fd7ada7e5d5b9e3911938a6d",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《原子结构 · 质子数定它是谁》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Atomic Structure · The Proton Count Decides What It Is"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/atomic-structure/index.html"
+    },
+    "cc-mass-conservation": {
+      "developer": "Claude Code",
+      "edition": "claude-code-mass-conservation-20261109",
+      "kind": "original",
+      "sourceRevision": "d327dcac4e2fe211fd7ada7e5d5b9e3911938a6d",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《质量守恒 · 原子一个都不丢》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Mass Conservation · Not a Single Atom Lost"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/mass-conservation/index.html"
+    },
+    "cc-chemical-equilibrium": {
+      "developer": "Claude Code",
+      "edition": "claude-code-chemical-equilibrium-20261109",
+      "kind": "original",
+      "sourceRevision": "d327dcac4e2fe211fd7ada7e5d5b9e3911938a6d",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《化学平衡 · 人数不变，人还在跑》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Chemical Equilibrium · Still Moving at Balance"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/chemical-equilibrium/index.html"
     }
   },
   "exceptions": {
