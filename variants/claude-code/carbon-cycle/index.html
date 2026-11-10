@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="category" content="earth">
+  <meta name="stage" content="senior">
+  <meta name="author" content="Claude Code (claude-opus-5-5)">
+  <title>碳循环 · 多出来的碳往哪去、要多久</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="model.js"></script>
+  <script src="i18n.js"></script>
+  <link rel="stylesheet" href="../../../page-provenance.css">
+</head>
+<body>
+  <header class="site-head">
+    <div class="head-main">
+      <p class="backline"><a href="../../../" data-i18n="back"></a></p>
+      <h1 data-i18n="pageTitle"></h1>
+      <p class="tagline" data-i18n="tagline"></p>
+      <p class="compare"><a href="../../../earth/climate/carbon-cycle/" data-i18n="compare"></a></p>
+      <!-- page-provenance -->
+    </div>
+    <div class="lang-toggle" id="langToggle" role="group" aria-label="Language">
+      <button type="button" data-lang="zh">中</button><button type="button" data-lang="en">EN</button>
+    </div>
+  </header>
+  <nav class="step-nav" id="stepNav" data-i18n-aria="navLabel">
+    <a class="nav-step" href="#step0" data-i18n="nav0"></a><a class="nav-step" href="#step1" data-i18n="nav1"></a>
+    <a class="nav-step" href="#step2" data-i18n="nav2"></a><a class="nav-step" href="#step3" data-i18n="nav3"></a>
+    <a class="nav-step" href="#step4" data-i18n="nav4"></a><a class="nav-step" href="#step5" data-i18n="nav5"></a>
+    <a class="nav-step" href="#step6" data-i18n="nav6"></a>
+  </nav>
+  <main>
+    <section class="step" id="step0" data-step="0"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s0k"></p><h2 data-i18n="s0t"></h2><p class="explain" data-i18n-html="s0e"></p>
+      <div class="stage"><canvas id="c0" height="420" role="img" data-i18n-aria="c0"></canvas></div>
+      <p class="legend"><span class="lg"><span class="sw sw-line" style="background:#ffd166"></span><span data-i18n="s0lgSel"></span></span><span class="lg"><span class="sw sw-line" style="background:#67d7f9"></span><span data-i18n="s0lgOther"></span></span></p>
+      <div class="btn-row"><button class="btn toggle" id="bAir" type="button" data-step="0" data-i18n="bAir"></button><button class="btn toggle" id="bPlants" type="button" data-step="0" data-i18n="bPlants"></button><button class="btn toggle" id="bSoil" type="button" data-step="0" data-i18n="bSoil"></button><button class="btn toggle" id="bSurf" type="button" data-step="0" data-i18n="bSurf"></button><button class="btn toggle" id="bDeep" type="button" data-step="0" data-i18n="bDeep"></button></div>
+      <p class="readout" id="r0" aria-live="polite"></p><p class="hint" data-i18n="s0hint"></p>
+    </div></section>
+
+    <section class="step" id="step1" data-step="1"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s1k"></p><h2 data-i18n="s1t"></h2><p class="explain" data-i18n-html="s1e"></p>
+      <div class="stage"><canvas id="c1" height="340" role="img" data-i18n-aria="c1"></canvas></div>
+      <p class="legend"><span class="lg"><span class="sw sw-line" style="background:#67d7f9"></span><span data-i18n="s1lgTag"></span></span><span class="lg"><span class="sw sw-line" style="background:#ffb454"></span><span data-i18n="s1lgEx"></span></span></p>
+      <div class="controls"><label><span data-i18n="pulseSize"></span><output id="P1v"></output><input id="P1" data-step="1" type="range" min="100" max="2000" step="100" value="500"></label></div>
+      <div class="btn-row"><button class="btn primary" id="play1" type="button" data-step="1" data-i18n="playPulse"></button></div>
+      <p class="readout" id="r1" aria-live="polite"></p><p class="hint" data-i18n="s1hint"></p>
+    </div></section>
+
+    <section class="step" id="step2" data-step="2"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s2k"></p><h2 data-i18n="s2t"></h2><p class="explain" data-i18n-html="s2e"></p>
+      <div class="stage"><canvas id="c2" height="520" role="img" data-i18n-aria="c2a"></canvas></div>
+      <p class="legend"><span class="lg"><span class="sw sw-line" style="background:#e8edf4"></span><span data-i18n="s2lgNow"></span></span><span class="lg"><span class="sw sw-line" style="background:#55657a"></span><span data-i18n="s2lgOld"></span></span><span class="lg"><span class="sw" style="background:#ffb454"></span><span data-i18n="s2lgAir"></span></span><span class="lg"><span class="sw" style="background:#7ee2a8"></span><span data-i18n="s2lgLand"></span></span><span class="lg"><span class="sw" style="background:#3f8fd8"></span><span data-i18n="s2lgOcean"></span></span></p>
+      <div class="controls">
+        <label><span data-i18n="eSlider"></span><output id="E2v"></output><input id="E2" data-step="2" type="range" min="0" max="20" step="1" value="10"></label>
+        <label><span data-i18n="ySlider"></span><output id="Y2v"></output><input id="Y2" data-step="2" type="range" min="0" max="150" step="1" value="150"></label>
+      </div>
+      <div class="btn-row"><button class="btn primary" id="play2" type="button" data-step="2" data-i18n="play150"></button><button class="btn" id="clear2" type="button" data-step="2" data-i18n="s2clear"></button></div>
+      <p class="readout" id="r2" aria-live="polite"></p><p class="hint" data-i18n="s2hint"></p>
+    </div></section>
+
+    <section class="step" id="step3" data-step="3"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s3k"></p><h2 data-i18n="s3t"></h2><p class="explain" data-i18n-html="s3e"></p>
+      <div class="stage"><canvas id="c3" height="340" role="img" data-i18n-aria="c3"></canvas></div>
+      <p class="legend"><span class="lg"><span class="sw sw-line" style="background:#ff7a93"></span><span data-i18n="s3lgBeta0"></span></span><span class="lg"><span class="sw sw-line" style="background:#e8edf4"></span><span data-i18n="s3lgBetaNow"></span></span><span class="lg"><span class="sw sw-line" style="background:#7ee2a8"></span><span data-i18n="s3lgBeta6"></span></span></p>
+      <div class="controls">
+        <label><span data-i18n="xiSlider"></span><output id="X3v"></output><input id="X3" data-step="3" type="range" min="1" max="15" step="0.5" value="10"></label>
+        <label><span data-i18n="betaSlider"></span><output id="B3v"></output><input id="B3" data-step="3" type="range" min="0" max="0.6" step="0.05" value="0.3"></label>
+      </div>
+      <p class="readout" id="r3" aria-live="polite"></p><p class="hint" data-i18n="s3hint"></p>
+    </div></section>
+
+    <section class="step" id="step4" data-step="4"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s4k"></p><h2 data-i18n="s4t"></h2><p class="explain" data-i18n-html="s4e"></p>
+      <div class="stage"><canvas id="c4" height="340" role="img" data-i18n-aria="c4"></canvas></div>
+      <p class="legend"><span class="lg"><span class="sw sw-line" style="background:#ffb454"></span><span data-i18n="s4lgEx"></span></span><span class="lg"><span class="sw sw-dash" style="border-color:#ffd166"></span><span data-i18n="s4lgStop"></span></span></p>
+      <div class="controls"><label><span data-i18n="stopSlider"></span><output id="T4v"></output><input id="T4" data-step="4" type="range" min="20" max="150" step="5" value="100"></label></div>
+      <p class="readout" id="r4" aria-live="polite"></p><p class="hint" data-i18n="s4hint"></p>
+    </div></section>
+
+    <section class="step" id="step5" data-step="5"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s5k"></p><h2 data-i18n="s5t"></h2><p class="explain" data-i18n-html="s5e"></p>
+      <div class="stage"><canvas id="c5" height="480" role="img" data-i18n-aria="c5a"></canvas></div>
+      <p class="legend"><span class="lg"><span class="sw sw-line" style="background:#ffb454"></span><span data-i18n="s5lgPpm"></span></span><span class="lg"><span class="sw sw-line" style="background:#7ee2a8"></span><span data-i18n="s5lgEmit"></span></span><span class="lg"><span class="sw sw-dash" style="border-color:#ffd166"></span><span data-i18n="s5lgHold"></span></span></p>
+      <div class="controls"><label><span data-i18n="targetSlider"></span><output id="G5v"></output><input id="G5" data-step="5" type="range" min="350" max="600" step="10" value="450"></label></div>
+      <p class="readout" id="r5" aria-live="polite"></p><p class="hint" data-i18n="s5hint"></p>
+    </div></section>
+
+    <section class="step" id="step6" data-step="6"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s6k"></p><h2 data-i18n="s6t"></h2>
+      <div class="finale"><p id="fin6"></p>
+        <div class="quiz"><p class="quiz-prompt" data-i18n="quizPrompt"></p><div class="quiz-options"><label><input type="radio" name="quiz" value="a"><span data-i18n="quizA"></span></label><label><input type="radio" name="quiz" value="b"><span data-i18n="quizB"></span></label><label><input type="radio" name="quiz" value="c"><span data-i18n="quizC"></span></label></div><button class="btn" id="checkQuiz" type="button" data-i18n="check"></button><p class="quiz-feedback" id="quizFeedback" aria-live="polite"></p></div>
+        <p style="margin-top:16px" data-i18n="boundary"></p>
+        <p class="links-title" data-i18n="linksTitle"></p>
+        <a class="xlink" href="../../../chemistry/solutions/dissolution-saturation/#step2" data-i18n="lk1"></a>
+        <a class="xlink" href="../../../chemistry/solutions/buffer-capacity/#step0" data-i18n="lk2"></a>
+        <a class="xlink" href="../../../earth/climate/climate-feedback/#step1" data-i18n="lk3"></a>
+        <a class="xlink" href="../../../earth/climate/climate-energy/#step2" data-i18n="lk4"></a>
+      </div>
+    </div></section>
+  </main>
+  <footer class="site-foot" data-i18n="foot"></footer>
+  <script src="app.js"></script>
+</body>
+</html>
