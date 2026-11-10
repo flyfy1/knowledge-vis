@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="category" content="earth">
+  <meta name="stage" content="junior">
+  <meta name="author" content="Claude Code (claude-opus-5-5)">
+  <title>地球公转与四季 · 斜着的地轴管冷暖</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="model.js"></script>
+  <script src="i18n.js"></script>
+  <link rel="stylesheet" href="../../../page-provenance.css">
+</head>
+<body>
+  <header class="site-head">
+    <div class="head-main">
+      <p class="backline"><a href="../../../" data-i18n="back"></a></p>
+      <h1 data-i18n="pageTitle"></h1>
+      <p class="tagline" data-i18n="tagline"></p>
+      <p class="compare"><a href="../../../earth/astronomy/seasons-orbit/" data-i18n="compare"></a></p>
+      <!-- page-provenance -->
+    </div>
+    <div class="lang-toggle" id="langToggle" role="group" aria-label="Language">
+      <button type="button" data-lang="zh">中</button><button type="button" data-lang="en">EN</button>
+    </div>
+  </header>
+  <nav class="step-nav" id="stepNav" data-i18n-aria="navLabel">
+    <a class="nav-step" href="#step0" data-i18n="nav0"></a><a class="nav-step" href="#step1" data-i18n="nav1"></a>
+    <a class="nav-step" href="#step2" data-i18n="nav2"></a><a class="nav-step" href="#step3" data-i18n="nav3"></a>
+    <a class="nav-step" href="#step4" data-i18n="nav4"></a><a class="nav-step" href="#step5" data-i18n="nav5"></a>
+  </nav>
+  <main>
+    <section class="step" id="step0" data-step="0"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s0k"></p><h2 data-i18n="s0t"></h2><p class="explain" data-i18n-html="s0e"></p>
+      <div class="stage twin"><canvas id="c0" role="img" data-i18n-aria="c0a"></canvas><canvas id="c0b" role="img" data-i18n-aria="c0b"></canvas></div>
+      <p class="legend"><span class="lg"><span class="sw sw-cyan"></span><span data-i18n="s0lgEarth"></span></span><span class="lg"><span class="sw sw-yellow"></span><span data-i18n="s0lgSun"></span></span><span class="lg"><span class="sw sw-dashW"></span><span data-i18n="s0lgCircle"></span></span><span class="lg"><span class="sw sw-white"></span><span data-i18n="s0lgTrail"></span></span><span class="lg"><span class="sw sw-pink"></span><span data-i18n="s0lgPeri"></span></span><span class="lg"><span class="sw sw-violet"></span><span data-i18n="s0lgAph"></span></span></p>
+      <div class="controls"><label><span data-i18n="date"></span><output id="d0v"></output><input id="d0" class="date-slider" data-step="0" type="range" min="1" max="365" step="1" value="3"></label></div>
+      <div class="btn-row"><button class="btn primary play-year" id="play0" type="button" data-step="0" data-i18n="playYear"></button></div>
+      <p class="readout" id="r0" aria-live="polite"></p><p class="hint" id="h0"></p>
+    </div></section>
+
+    <section class="step" id="step1" data-step="1"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s1k"></p><h2 data-i18n="s1t"></h2><p class="explain" data-i18n-html="s1e"></p>
+      <div class="stage twin wide3"><canvas id="c1" role="img" data-i18n-aria="c1a"></canvas><canvas id="c1b" role="img" data-i18n-aria="c1b"></canvas></div>
+      <p class="legend"><span class="lg"><span class="sw sw-pink"></span><span data-i18n="s1lgAxis"></span></span><span class="lg"><span class="sw sw-lit"></span><span data-i18n="s1lgLit"></span></span><span class="lg"><span class="sw sw-white"></span><span data-i18n="s1lgEq"></span></span><span class="lg"><span class="sw sw-dashO"></span><span data-i18n="s1lgTrop"></span></span><span class="lg"><span class="sw sw-dashC"></span><span data-i18n="s1lgPolar"></span></span><span class="lg"><span class="sw sw-yellow"></span><span data-i18n="s1lgSub"></span></span></p>
+      <div class="controls"><label><span data-i18n="date"></span><output id="d1v"></output><input id="d1" class="date-slider" data-step="1" type="range" min="1" max="365" step="1" value="3"></label></div>
+      <p class="readout" id="r1" aria-live="polite"></p><p class="hint" data-i18n="s1hint"></p>
+    </div></section>
+
+    <section class="step" id="step2" data-step="2"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s2k"></p><h2 data-i18n="s2t"></h2><p class="explain" data-i18n-html="s2e"></p>
+      <div class="stage twin"><canvas id="c2" role="img" data-i18n-aria="c2a"></canvas><canvas id="c2b" role="img" data-i18n-aria="c2b"></canvas></div>
+      <p class="legend"><span class="lg"><span class="sw sw-beam"></span><span data-i18n="s2lgBeam"></span></span><span class="lg"><span class="sw sw-orange"></span><span data-i18n="s2lgSpot"></span></span><span class="lg"><span class="sw sw-white"></span><span data-i18n="s2lgOver"></span></span><span class="lg"><span class="sw sw-cyan"></span><span data-i18n="s2lgCurve"></span></span><span class="lg"><span class="sw sw-yellow"></span><span data-i18n="s2lgNow"></span></span></p>
+      <div class="presets"><button class="btn" type="button" data-lat2="40" data-step="2" data-i18n="pBeijing"></button><button class="btn" type="button" data-lat2="23" data-step="2" data-i18n="pGuangzhou"></button><button class="btn" type="button" data-lat2="-34" data-step="2" data-i18n="pSydney"></button></div>
+      <div class="controls">
+        <label><span data-i18n="lat2"></span><output id="lat2v"></output><input id="lat2" data-step="2" type="range" min="-90" max="90" step="1" value="40"></label>
+        <label><span data-i18n="date"></span><output id="d2v"></output><input id="d2" class="date-slider" data-step="2" type="range" min="1" max="365" step="1" value="3"></label>
+      </div>
+      <p class="readout" id="r2" aria-live="polite"></p><p class="hint" data-i18n="s2hint"></p>
+    </div></section>
+
+    <section class="step" id="step3" data-step="3"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s3k"></p><h2 data-i18n="s3t"></h2><p class="explain" data-i18n-html="s3e"></p>
+      <div class="stage twin narrow1"><canvas id="c3" role="img" data-i18n-aria="c3a"></canvas><canvas id="c3b" role="img" data-i18n-aria="c3b"></canvas></div>
+      <p class="legend"><span class="lg"><span class="sw sw-yellow-bar"></span><span data-i18n="s3lgDay"></span></span><span class="lg"><span class="sw sw-night"></span><span data-i18n="s3lgNight"></span></span><span class="lg"><span class="sw sw-faint"></span><span data-i18n="s3lgCurve"></span></span><span class="lg"><span class="sw sw-cyan"></span><span data-i18n="s3lgSeen"></span></span><span class="lg"><span class="sw sw-dashW"></span><span data-i18n="s3lgRef"></span></span></p>
+      <div class="presets"><button class="btn" type="button" data-lat3="40" data-step="3" data-i18n="pBeijing"></button><button class="btn" type="button" data-lat3="0" data-step="3" data-i18n="pEquator"></button><button class="btn" type="button" data-lat3="70" data-step="3" data-i18n="pArctic"></button></div>
+      <div class="controls">
+        <label><span data-i18n="lat3"></span><output id="lat3v"></output><input id="lat3" data-step="3" type="range" min="-90" max="90" step="1" value="40"></label>
+        <label><span data-i18n="date"></span><output id="d3v"></output><input id="d3" class="date-slider" data-step="3" type="range" min="1" max="365" step="1" value="3"></label>
+      </div>
+      <div class="btn-row"><button class="btn primary play-year" id="play3" type="button" data-step="3" data-i18n="playYear"></button></div>
+      <p class="readout" id="r3" aria-live="polite"></p><p class="hint" data-i18n="s3hint"></p>
+    </div></section>
+
+    <section class="step" id="step4" data-step="4"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s4k"></p><h2 data-i18n="s4t"></h2><p class="explain" data-i18n-html="s4e"></p>
+      <div class="stage twin"><canvas id="c4" role="img" data-i18n-aria="c4a"></canvas><canvas id="c4b" role="img" data-i18n-aria="c4b"></canvas></div>
+      <p class="legend"><span class="lg"><span class="sw sw-orange"></span><span data-i18n="s4lgN"></span></span><span class="lg"><span class="sw sw-cyan"></span><span data-i18n="s4lgS"></span></span><span class="lg"><span class="sw sw-yellow-bar"></span><span data-i18n="s4lgSub"></span></span><span class="lg"><span class="sw sw-trop"></span><span data-i18n="s4lgTrop"></span></span><span class="lg"><span class="sw sw-polar"></span><span data-i18n="s4lgPolar"></span></span></p>
+      <div class="controls"><label><span data-i18n="tilt4"></span><output id="tilt4v"></output><input id="tilt4" data-step="4" type="range" min="0" max="45" step="any" value="23.44"></label></div>
+      <div class="btn-row"><button class="btn" id="real4" type="button" data-step="4" data-i18n="real4"></button></div>
+      <p class="readout" id="r4" aria-live="polite"></p><p class="hint" data-i18n="s4hint"></p>
+    </div></section>
+
+    <section class="step" id="step5" data-step="5"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s5k"></p><h2 data-i18n="s5t"></h2>
+      <div class="finale"><p data-i18n-html="s5fin"></p><p class="formula" data-i18n="formula"></p><p id="boundary"></p>
+        <p class="links-title" data-i18n="linksTitle"></p>
+        <a class="xlink" href="../../../earth/astronomy/day-night-rotation/#step1" data-i18n="lk1"></a>
+        <a class="xlink" href="../../../earth/astronomy/day-night-rotation/#step2" data-i18n="lk2"></a>
+        <a class="xlink" href="../../../earth/climate/climate-energy/#step0" data-i18n="lk3"></a>
+      </div>
+    </div></section>
+  </main>
+  <footer class="site-foot" data-i18n="foot"></footer>
+  <script src="app.js"></script>
+</body>
+</html>
