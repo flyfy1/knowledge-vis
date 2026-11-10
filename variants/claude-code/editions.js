@@ -741,6 +741,16 @@ window.CLAUDE_EDITIONS = [
   "model": "claude-opus-5-5"
  },
  {
+  "slug": "gravitational-lensing",
+  "original": "gravitational-lensing",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "gravity-orbits",
+  "original": "gravity-orbits",
+  "model": "claude-opus-5-5"
+ },
+ {
   "slug": "hypothesis-testing",
   "original": "hypothesis-testing",
   "model": "claude-opus-5-5"
@@ -813,6 +823,11 @@ window.CLAUDE_EDITIONS = [
  {
   "slug": "rsa-encryption",
   "original": "rsa-encryption",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "seismic-waves",
+  "original": "seismic-waves",
   "model": "claude-opus-5-5"
  },
  {

@@ -2554,6 +2554,42 @@
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
       "path": "variants/claude-code/carbon-cycle/index.html"
+    },
+    "cc-gravitational-lensing": {
+      "developer": "Claude Code",
+      "edition": "claude-code-gravitational-lensing-20261109",
+      "kind": "original",
+      "sourceRevision": "d3a13cf1edef831ebb6a32a80ae5a528f972cae8",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《引力透镜 · 宇宙里的凸透镜》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Gravitational Lensing · A Cosmic Convex Lens"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/gravitational-lensing/index.html"
+    },
+    "cc-gravity-orbits": {
+      "developer": "Claude Code",
+      "edition": "claude-code-gravity-orbits-20261109",
+      "kind": "original",
+      "sourceRevision": "d3a13cf1edef831ebb6a32a80ae5a528f972cae8",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《万有引力与轨道 · 横着扔出去，会落下、绕圈还是飞走》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Gravity and Orbits · Throw It Sideways: Fall, Circle or Escape"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/gravity-orbits/index.html"
+    },
+    "cc-seismic-waves": {
+      "developer": "Claude Code",
+      "edition": "claude-code-seismic-waves-20261109",
+      "kind": "original",
+      "sourceRevision": "d3a13cf1edef831ebb6a32a80ae5a528f972cae8",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《地震波探地心 · 地核是被波“照”出来的》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Seismic Waves · The Core Was “Lit Up” by Waves"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/seismic-waves/index.html"
     }
   },
   "exceptions": {
