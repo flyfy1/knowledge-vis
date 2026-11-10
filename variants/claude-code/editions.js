@@ -656,6 +656,11 @@ window.CLAUDE_EDITIONS = [
   "model": "claude-opus-5-5"
  },
  {
+  "slug": "water-cycle",
+  "original": "water-cycle",
+  "model": "claude-opus-5-5"
+ },
+ {
   "slug": "wavelets",
   "original": "wavelets",
   "model": "claude-opus-5-5"
@@ -671,6 +676,11 @@ window.CLAUDE_EDITIONS = [
   "model": "claude-opus-5-5"
  },
  {
+  "slug": "atmospheric-circulation",
+  "original": "atmospheric-circulation",
+  "model": "claude-opus-5-5"
+ },
+ {
   "slug": "auction-basics",
   "original": "auction-basics",
   "model": "claude-opus-5-5"
@@ -683,6 +693,11 @@ window.CLAUDE_EDITIONS = [
  {
   "slug": "blackbody-radiation",
   "original": "blackbody-radiation",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "carbon-cycle",
+  "original": "carbon-cycle",
   "model": "claude-opus-5-5"
  },
  {
