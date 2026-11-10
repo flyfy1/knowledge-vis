@@ -281,6 +281,11 @@ window.CLAUDE_EDITIONS = [
   "model": "claude-opus-5-5"
  },
  {
+  "slug": "population-ecology",
+  "original": "population-ecology",
+  "model": "claude-opus-5-5"
+ },
+ {
   "slug": "genetics-probability",
   "original": "genetics-probability",
   "model": "claude-opus-5-5"
@@ -298,6 +303,11 @@ window.CLAUDE_EDITIONS = [
  {
   "slug": "graph-algorithms",
   "original": "graph-algorithms",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "action-potential",
+  "original": "action-potential",
   "model": "claude-opus-5-5"
  },
  {

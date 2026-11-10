@@ -2662,6 +2662,30 @@
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
       "path": "variants/claude-code/logistic-growth/index.html"
+    },
+    "cc-population-ecology": {
+      "developer": "Claude Code",
+      "edition": "claude-code-population-ecology-20261109",
+      "kind": "original",
+      "sourceRevision": "09d09a12e17b247bcd401460cb94d9c63c27e23e",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《种群生态学 · 增长如何被反馈改变》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Population Ecology · Growth Reshaped by Feedback"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/population-ecology/index.html"
+    },
+    "cc-action-potential": {
+      "developer": "Claude Code",
+      "edition": "claude-code-action-potential-20261109",
+      "kind": "original",
+      "sourceRevision": "09d09a12e17b247bcd401460cb94d9c63c27e23e",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《神经动作电位 · 一次脉冲如何跑过神经元》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Action Potentials · How One Pulse Travels"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/action-potential/index.html"
     }
   },
   "exceptions": {
