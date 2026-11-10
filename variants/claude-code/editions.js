@@ -56,6 +56,21 @@ window.CLAUDE_EDITIONS = [
   "model": "claude-opus-5-5"
  },
  {
+  "slug": "lti-systems",
+  "original": "lti-systems",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "frequency-response",
+  "original": "frequency-response",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "modulation",
+  "original": "modulation",
+  "model": "claude-opus-5-5"
+ },
+ {
   "slug": "fractions",
   "original": "fractions",
   "model": "claude-opus-5-5"
