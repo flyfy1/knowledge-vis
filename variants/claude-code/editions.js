@@ -416,6 +416,11 @@ window.CLAUDE_EDITIONS = [
   "model": "claude-opus-5-5"
  },
  {
+  "slug": "probability-frequency",
+  "original": "probability-frequency",
+  "model": "claude-opus-5-5"
+ },
+ {
   "slug": "real-number-line",
   "original": "real-number-line",
   "model": "claude-opus-5-5"
@@ -461,6 +466,11 @@ window.CLAUDE_EDITIONS = [
   "model": "claude-opus-5-5"
  },
  {
+  "slug": "binomial-normal",
+  "original": "binomial-normal",
+  "model": "claude-opus-5-5"
+ },
+ {
   "slug": "blackbody-radiation",
   "original": "blackbody-radiation",
   "model": "claude-opus-5-5"
@@ -473,6 +483,11 @@ window.CLAUDE_EDITIONS = [
  {
   "slug": "chaos-threebody",
   "original": "chaos-threebody",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "counting-permutations",
+  "original": "counting-permutations",
   "model": "claude-opus-5-5"
  },
  {

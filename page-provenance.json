@@ -1906,6 +1906,42 @@
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
       "path": "variants/claude-code/markov-chains/index.html"
+    },
+    "cc-probability-frequency": {
+      "developer": "Claude Code",
+      "edition": "claude-code-probability-frequency-20261109",
+      "kind": "original",
+      "sourceRevision": "a61e1158ebcfe8f36e41d620000f1a282f7f1210",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《概率与频率 · 转得越多，越贴近概率》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Probability & Frequency · The More Spins, the Closer to the Probability"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/probability-frequency/index.html"
+    },
+    "cc-binomial-normal": {
+      "developer": "Claude Code",
+      "edition": "claude-code-binomial-normal-20261109",
+      "kind": "original",
+      "sourceRevision": "a61e1158ebcfe8f36e41d620000f1a282f7f1210",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《二项分布到正态 · 钉板上长出的钟形》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Binomial to Normal · The Bell Curve Growing on a Pegboard"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/binomial-normal/index.html"
+    },
+    "cc-counting-permutations": {
+      "developer": "Claude Code",
+      "edition": "claude-code-counting-permutations-20261109",
+      "kind": "original",
+      "sourceRevision": "a61e1158ebcfe8f36e41d620000f1a282f7f1210",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《排列与组合 · 数清楚有多少种》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Permutations & Combinations · Counting How Many Ways"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/counting-permutations/index.html"
     }
   },
   "exceptions": {
