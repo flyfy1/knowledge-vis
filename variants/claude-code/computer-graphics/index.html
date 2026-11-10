@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="category" content="computing">
+  <meta name="stage" content="university">
+  <meta name="author" content="Claude Code (claude-opus-5-5)">
+  <title>从三角形到像素 · 一帧画面怎样算出来</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="model.js"></script>
+  <script src="i18n.js"></script>
+  <link rel="stylesheet" href="../../../page-provenance.css">
+</head>
+<body>
+  <header class="site-head">
+    <div class="head-main">
+      <p class="backline"><a href="../../../" data-i18n="back"></a></p>
+      <h1 data-i18n="pageTitle"></h1>
+      <p class="tagline" data-i18n="tagline"></p>
+      <p class="compare"><a href="../../../computing/graphics/computer-graphics/" data-i18n="compare"></a></p>
+      <!-- page-provenance -->
+    </div>
+    <div class="lang-toggle" id="langToggle" role="group" aria-label="Language">
+      <button type="button" data-lang="zh">中</button><button type="button" data-lang="en">EN</button>
+    </div>
+  </header>
+  <nav class="step-nav" id="stepNav" data-i18n-aria="navLabel">
+    <a class="nav-step" href="#step0" data-i18n="nav0"></a><a class="nav-step" href="#step1" data-i18n="nav1"></a>
+    <a class="nav-step" href="#step2" data-i18n="nav2"></a><a class="nav-step" href="#step3" data-i18n="nav3"></a>
+    <a class="nav-step" href="#step4" data-i18n="nav4"></a><a class="nav-step" href="#step5" data-i18n="nav5"></a>
+    <a class="nav-step" href="#step6" data-i18n="nav6"></a>
+  </nav>
+  <main>
+    <section class="step" id="step0" data-step="0"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s0k"></p><h2 data-i18n="s0t"></h2><p class="explain" data-i18n-html="s0e"></p>
+      <div class="stage"><canvas id="c0" height="420" data-aspect="0.9" role="img" data-i18n-aria="c0"></canvas></div>
+      <p class="legend"><span class="lg"><span class="sw sw-ghost"></span><span data-i18n="s0lgModel"></span></span><span class="lg"><span class="sw sw-cyan"></span><span data-i18n="s0lgNow"></span></span><span class="lg"><span class="sw sw-dash-o"></span><span data-i18n="s0lgOther"></span></span><span class="lg"><span class="sw sw-pink sw-dot"></span><span data-i18n="s0lgPt"></span></span></p>
+      <div class="controls">
+        <label><span data-i18n="rotSlider"></span><output id="rotv"></output><input id="rot" data-step="0" type="range" min="-180" max="180" step="5" value="60"></label>
+        <label><span data-i18n="scaleSlider"></span><output id="sclv"></output><input id="scl" data-step="0" type="range" min="0.5" max="1.5" step="0.1" value="1"></label>
+        <label><span data-i18n="txSlider"></span><output id="txv"></output><input id="tx" data-step="0" type="range" min="-2" max="2" step="0.1" value="2"></label>
+        <label><span data-i18n="tySlider"></span><output id="tyv"></output><input id="ty" data-step="0" type="range" min="-2" max="2" step="0.1" value="0.5"></label>
+      </div>
+      <div class="btn-row"><button class="btn toggle" id="oTRS" type="button" data-step="0" data-i18n="orderTRS"></button><button class="btn toggle" id="oRST" type="button" data-step="0" data-i18n="orderRST"></button></div>
+      <p class="readout" id="r0" aria-live="polite"></p><p class="hint" data-i18n="s0hint"></p>
+    </div></section>
+
+    <section class="step" id="step1" data-step="1"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s1k"></p><h2 data-i18n="s1t"></h2><p class="explain" data-i18n-html="s1e"></p>
+      <div class="stage twin wide-left"><canvas id="c1a" height="330" role="img" data-i18n-aria="c1a"></canvas><canvas id="c1b" height="330" role="img" data-i18n-aria="c1b"></canvas></div>
+      <p class="legend"><span class="lg"><span class="sw sw-dash-c"></span><span data-i18n="s1lgRay"></span></span><span class="lg"><span class="sw sw-white"></span><span data-i18n="s1lgPlane"></span></span><span class="lg"><span class="sw sw-post1"></span><span class="sw sw-post2"></span><span class="sw sw-post3"></span><span data-i18n="s1lgPost"></span></span><span class="lg"><span data-i18n="s1lgImg"></span></span></p>
+      <div class="controls">
+        <label><span data-i18n="fSlider"></span><output id="fv"></output><input id="f" data-step="1" type="range" min="0.5" max="1" step="0.05" value="1"></label>
+        <label><span data-i18n="dollySlider"></span><output id="dollyv"></output><input id="dolly" data-step="1" type="range" min="0" max="1" step="0.05" value="0"></label>
+      </div>
+      <p class="readout" id="r1" aria-live="polite"></p><p class="hint" data-i18n="s1hint"></p>
+    </div></section>
+
+    <section class="step" id="step2" data-step="2"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s2k"></p><h2 data-i18n="s2t"></h2><p class="explain" data-i18n-html="s2e"></p>
+      <div class="stage"><canvas id="c2" class="pick" height="480" data-aspect="1" role="img" data-i18n-aria="c2"></canvas></div>
+      <p class="legend"><span class="lg"><span class="sw sw-cyan"></span><span data-i18n="s2lgOn"></span></span><span class="lg"><span class="sw sw-line-w"></span><span data-i18n="s2lgTri"></span></span><span class="lg"><span class="sw sw-wrong"></span><span data-i18n="s2lgProbe"></span></span></p>
+      <div class="controls">
+        <label><span data-i18n="nSlider"></span><output id="nv"></output><input id="n" data-step="2" type="range" min="6" max="48" step="2" value="12"></label>
+      </div>
+      <div class="btn-row"><button class="btn primary" id="scan2" type="button" data-step="2" data-i18n="scan2"></button></div>
+      <p class="readout" id="r2" aria-live="polite"></p><p class="hint" data-i18n="s2hint"></p>
+    </div></section>
+
+    <section class="step" id="step3" data-step="3"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s3k"></p><h2 data-i18n="s3t"></h2><p class="explain" data-i18n-html="s3e"></p>
+      <div class="stage twin"><canvas id="c3a" height="380" data-aspect="1.08" role="img" data-i18n-aria="c3a"></canvas><canvas id="c3b" height="380" data-aspect="1.08" role="img" data-i18n-aria="c3b"></canvas></div>
+      <p class="legend"><span class="lg"><span class="sw sw-cyan"></span><span data-i18n="s3lgA"></span></span><span class="lg"><span class="sw sw-orange"></span><span data-i18n="s3lgB"></span></span><span class="lg"><span class="sw sw-wrong"></span><span data-i18n="s3lgWrong"></span></span><span class="lg"><span data-i18n="s3lgNear"></span><span class="sw sw-depth"></span><span data-i18n="s3lgFar"></span></span></p>
+      <div class="controls">
+        <label><span data-i18n="tiltSlider"></span><output id="tiltv"></output><input id="tilt" data-step="3" type="range" min="0.2" max="1.2" step="0.1" value="0.8"></label>
+        <label><span data-i18n="shiftSlider"></span><output id="shiftv"></output><input id="shift" data-step="3" type="range" min="-0.4" max="0.4" step="0.02" value="0.06"></label>
+      </div>
+      <div class="btn-row"><button class="btn toggle" id="mZ" type="button" data-step="3" data-i18n="mZ"></button><button class="btn toggle" id="mP" type="button" data-step="3" data-i18n="mP"></button></div>
+      <p class="readout" id="r3" aria-live="polite"></p><p class="hint" data-i18n="s3hint"></p>
+    </div></section>
+
+    <section class="step" id="step4" data-step="4"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s4k"></p><h2 data-i18n="s4t"></h2><p class="explain" data-i18n-html="s4e"></p>
+      <div class="stage twin"><canvas id="c4a" height="380" data-aspect="1.08" role="img" data-i18n-aria="c4a"></canvas><canvas id="c4b" height="380" role="img" data-i18n-aria="c4b"></canvas></div>
+      <p class="legend"><span class="lg"><span class="sw sw-orange"></span><span data-i18n="s4lgCurve"></span></span><span class="lg"><span class="sw sw-cyan sw-dot"></span><span data-i18n="s4lgPx"></span></span><span class="lg"><span class="sw sw-pink"></span><span data-i18n="s4lgLight"></span></span></p>
+      <div class="controls">
+        <label><span data-i18n="azSlider"></span><output id="azv"></output><input id="az" data-step="4" type="range" min="-180" max="180" step="5" value="45"></label>
+        <label><span data-i18n="elSlider"></span><output id="elv"></output><input id="el" data-step="4" type="range" min="-60" max="80" step="5" value="20"></label>
+        <label><span data-i18n="kaSlider"></span><output id="kav"></output><input id="ka" data-step="4" type="range" min="0" max="0.5" step="0.05" value="0"></label>
+        <label><span data-i18n="pSlider"></span><output id="pv"></output><input id="p" data-step="4" type="range" min="0" max="128" step="8" value="0"></label>
+      </div>
+      <p class="readout" id="r4" aria-live="polite"></p><p class="hint" data-i18n="s4hint"></p>
+    </div></section>
+
+    <section class="step" id="step5" data-step="5"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s5k"></p><h2 data-i18n="s5t"></h2><p class="explain" data-i18n-html="s5e"></p>
+      <div class="stage twin"><canvas id="c5a" height="380" data-aspect="1.08" role="img" data-i18n-aria="c5a"></canvas><canvas id="c5b" height="380" role="img" data-i18n-aria="c5b"></canvas></div>
+      <p class="legend"><span class="lg"><span class="sw sw-gray"></span><span data-i18n="s5lgPx"></span></span><span class="lg"><span class="sw sw-line-w"></span><span data-i18n="s5lgEdge"></span></span><span class="lg"><span class="sw sw-green sw-dot"></span><span data-i18n="s5lgErr"></span></span><span class="lg"><span class="sw sw-white sw-dot"></span><span data-i18n="s5lgNow"></span></span></p>
+      <div class="controls">
+        <label><span data-i18n="sppSlider"></span><output id="sppv"></output><input id="spp" data-step="5" type="range" min="0" max="4" step="1" value="0"></label>
+        <label><span data-i18n="dySlider"></span><output id="dyv"></output><input id="dy" data-step="5" type="range" min="0" max="1" step="0.05" value="0"></label>
+      </div>
+      <p class="readout" id="r5" aria-live="polite"></p><p class="hint" id="h5"></p>
+    </div></section>
+
+    <section class="step" id="step6" data-step="6"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s6k"></p><h2 data-i18n="s6t"></h2>
+      <div class="finale"><p data-i18n-html="s6fin"></p><p class="formula" data-i18n="formula"></p><p data-i18n="boundary"></p>
+        <p class="links-title" data-i18n="linksTitle"></p>
+        <a class="xlink" href="../../../math/linear-algebra/linear-transform/#step4" data-i18n="lk1"></a>
+        <a class="xlink" href="../../../physics/optics/pinhole-camera/#step2" data-i18n="lk2"></a>
+        <a class="xlink" href="../../../math/linear-algebra/vectors/#step3" data-i18n="lk3"></a>
+        <a class="xlink" href="../../../signal/sampling/sampling/#step2" data-i18n="lk4"></a>
+      </div>
+    </div></section>
+  </main>
+  <footer class="site-foot" data-i18n="foot"></footer>
+  <script src="app.js"></script>
+</body>
+</html>
