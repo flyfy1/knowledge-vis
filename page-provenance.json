@@ -1246,6 +1246,78 @@
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
       "path": "variants/claude-code/density/index.html"
+    },
+    "cc-blackbody-radiation": {
+      "developer": "Claude Code",
+      "edition": "claude-code-blackbody-radiation-20261109",
+      "kind": "original",
+      "sourceRevision": "21f88527e54e3460553e6aa8add43881016d4164",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《黑体辐射 · 热的物体为什么发光》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Blackbody Radiation · Why Hot Things Glow"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/blackbody-radiation/index.html"
+    },
+    "cc-circle-angles": {
+      "developer": "Claude Code",
+      "edition": "claude-code-circle-angles-20261109",
+      "kind": "original",
+      "sourceRevision": "21f88527e54e3460553e6aa8add43881016d4164",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《圆周角 · 为什么恰好是一半》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Inscribed Angles · Why Exactly Half"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/circle-angles/index.html"
+    },
+    "cc-complex-numbers": {
+      "developer": "Claude Code",
+      "edition": "claude-code-complex-numbers-20261109",
+      "kind": "original",
+      "sourceRevision": "21f88527e54e3460553e6aa8add43881016d4164",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《复数 · 平面上的旋转》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Complex Numbers · Rotation on the Plane"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/complex-numbers/index.html"
+    },
+    "cc-exponents-logarithms": {
+      "developer": "Claude Code",
+      "edition": "claude-code-exponents-logarithms-20261109",
+      "kind": "original",
+      "sourceRevision": "21f88527e54e3460553e6aa8add43881016d4164",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《指数与对数 · 翻倍与逆问》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Exponentials & Logarithms · Doubling and the Reverse Question"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/exponents-logarithms/index.html"
+    },
+    "cc-pinhole-camera": {
+      "developer": "Claude Code",
+      "edition": "claude-code-pinhole-camera-20261109",
+      "kind": "original",
+      "sourceRevision": "21f88527e54e3460553e6aa8add43881016d4164",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《小孔成像 · 一个孔的相机》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Pinhole Camera · A Camera With One Tiny Hole"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/pinhole-camera/index.html"
+    },
+    "cc-standing-wave": {
+      "developer": "Claude Code",
+      "edition": "claude-code-standing-wave-20261109",
+      "kind": "original",
+      "sourceRevision": "21f88527e54e3460553e6aa8add43881016d4164",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《驻波 · 原地起伏的波》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Standing Waves · The Wave That Stays in Place"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/standing-wave/index.html"
     }
   },
   "exceptions": {

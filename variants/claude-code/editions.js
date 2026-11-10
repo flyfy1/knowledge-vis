@@ -101,8 +101,33 @@ window.CLAUDE_EDITIONS = [
   "model": "claude-opus-5-5"
  },
  {
+  "slug": "exponents-logarithms",
+  "original": "exponents-logarithms",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "circle-angles",
+  "original": "circle-angles",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "complex-numbers",
+  "original": "complex-numbers",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "standing-wave",
+  "original": "standing-wave",
+  "model": "claude-opus-5-5"
+ },
+ {
   "slug": "negative-numbers",
   "original": "negative-numbers",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "pinhole-camera",
+  "original": "pinhole-camera",
   "model": "claude-opus-5-5"
  },
  {
@@ -263,6 +288,11 @@ window.CLAUDE_EDITIONS = [
  {
   "slug": "auction-basics",
   "original": "auction-basics",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "blackbody-radiation",
+  "original": "blackbody-radiation",
   "model": "claude-opus-5-5"
  },
  {
