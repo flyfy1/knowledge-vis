@@ -276,6 +276,11 @@ window.CLAUDE_EDITIONS = [
   "model": "claude-opus-5-5"
  },
  {
+  "slug": "statistical-inference",
+  "original": "statistical-inference",
+  "model": "claude-opus-5-5"
+ },
+ {
   "slug": "mechanism-design",
   "original": "mechanism-design",
   "model": "claude-opus-5-5"
@@ -346,6 +351,11 @@ window.CLAUDE_EDITIONS = [
   "model": "claude-opus-5-5"
  },
  {
+  "slug": "bandit-arms",
+  "original": "bandit-arms",
+  "model": "claude-opus-5-5"
+ },
+ {
   "slug": "bar-charts",
   "original": "bar-charts",
   "model": "claude-opus-5-5"
@@ -388,6 +398,11 @@ window.CLAUDE_EDITIONS = [
  {
   "slug": "magnets",
   "original": "magnets",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "mean-median-mode",
+  "original": "mean-median-mode",
   "model": "claude-opus-5-5"
  },
  {

@@ -1834,6 +1834,42 @@
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
       "path": "variants/claude-code/probability-distribution/index.html"
+    },
+    "cc-statistical-inference": {
+      "developer": "Claude Code",
+      "edition": "claude-code-statistical-inference-20261109",
+      "kind": "original",
+      "sourceRevision": "c3447a78d4bfc1f3a3b91acf79e1899ed325b886",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《统计推断 · 从样本到判断》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Statistical Inference · From Sample to Judgment"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/statistical-inference/index.html"
+    },
+    "cc-bandit-arms": {
+      "developer": "Claude Code",
+      "edition": "claude-code-bandit-arms-20261109",
+      "kind": "original",
+      "sourceRevision": "c3447a78d4bfc1f3a3b91acf79e1899ed325b886",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《多臂老虎机 · 探索还是利用》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Multi-Armed Bandits · Explore or Exploit"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/bandit-arms/index.html"
+    },
+    "cc-mean-median-mode": {
+      "developer": "Claude Code",
+      "edition": "claude-code-mean-median-mode-20261109",
+      "kind": "original",
+      "sourceRevision": "c3447a78d4bfc1f3a3b91acf79e1899ed325b886",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《平均数、中位数、众数之争 · 三个“平均”三个故事》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Mean, Median, Mode · Three “Averages”, Three Stories"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/mean-median-mode/index.html"
     }
   },
   "exceptions": {
