@@ -2854,6 +2854,42 @@
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
       "path": "variants/claude-code/fees-compounding/index.html"
+    },
+    "cc-ethics-decisions": {
+      "developer": "Claude Code",
+      "edition": "claude-code-ethics-decisions-20261109",
+      "kind": "original",
+      "sourceRevision": "ba3266e7575a416d4810d0a8b1316219d99cdafa",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《伦理决策 · 把取舍说清楚》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Ethical Decisions · Make the Trade-off Visible"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/ethics-decisions/index.html"
+    },
+    "cc-compound-interest": {
+      "developer": "Claude Code",
+      "edition": "claude-code-compound-interest-20261109",
+      "kind": "original",
+      "sourceRevision": "ba3266e7575a416d4810d0a8b1316219d99cdafa",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《复利与贴现 · 时间是钱的形状》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Compound Interest & Discounting · Time Is the Shape of Money"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/compound-interest/index.html"
+    },
+    "cc-stocks-bonds": {
+      "developer": "Claude Code",
+      "edition": "claude-code-stocks-bonds-20261109",
+      "kind": "original",
+      "sourceRevision": "ba3266e7575a416d4810d0a8b1316219d99cdafa",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《股票与债券 · 买到的到底是什么》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Stocks & Bonds · What Do You Actually Buy"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/stocks-bonds/index.html"
     }
   },
   "exceptions": {

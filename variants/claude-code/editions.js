@@ -406,6 +406,11 @@ window.CLAUDE_EDITIONS = [
   "model": "claude-opus-5-5"
  },
  {
+  "slug": "ethics-decisions",
+  "original": "ethics-decisions",
+  "model": "claude-opus-5-5"
+ },
+ {
   "slug": "statistical-inference",
   "original": "statistical-inference",
   "model": "claude-opus-5-5"
@@ -806,6 +811,11 @@ window.CLAUDE_EDITIONS = [
   "model": "claude-opus-5-5"
  },
  {
+  "slug": "compound-interest",
+  "original": "compound-interest",
+  "model": "claude-opus-5-5"
+ },
+ {
   "slug": "counting-permutations",
   "original": "counting-permutations",
   "model": "claude-opus-5-5"
@@ -953,6 +963,11 @@ window.CLAUDE_EDITIONS = [
  {
   "slug": "vectors",
   "original": "vectors",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "stocks-bonds",
+  "original": "stocks-bonds",
   "model": "claude-opus-5-5"
  },
  {
