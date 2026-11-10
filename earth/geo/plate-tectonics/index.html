@@ -4,11 +4,13 @@
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
   <title>板块构造 · 地球的慢动作</title>
   <link rel="stylesheet" href="../../../lesson-shell.css"><link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../../../edition-compare.css">
 </head>
 <body>
 <header class="site-head"><div class="head-top"><a class="back-link" href="/" data-i18n="back">← 知识索引</a><div class="lang-toggle"><button data-lang="zh">中</button><button data-lang="en">EN</button></div></div>
   <h1 data-i18n="title">板块构造 · 地球的慢动作</h1><p class="tagline" data-i18n="tagline">把地震、火山与海沟放回同一张力学地图：边界怎么动，地表就怎么长。</p>
 </header>
+<p class="edition-compare"><a href="../../../variants/claude-code/plate-tectonics/"><span class="ec-zh" lang="zh-CN">对照 Claude Code 版 →</span><span class="ec-en" lang="en">Compare with the Claude Code edition →</span></a></p>
 <nav class="step-nav"><a href="#step0" data-nav="0" data-i18n="nav0">0 先看地图</a><a href="#step1" data-nav="1" data-i18n="nav1">1 三种边界</a><a href="#step2" data-nav="2" data-i18n="nav2">2 速度与热量</a><a href="#step3" data-nav="3" data-i18n="nav3">3 证据链</a></nav>
 <main>
 <section class="step" id="step0" data-step="0"><div class="step-inner"><p class="step-kicker" data-i18n="s0k">第 0 步 · 先看地图</p><h2 data-i18n="s0t">地球不是一整块壳</h2><p class="explain" data-i18n-html="s0e">岩石圈像一块块硬壳，漂在会缓慢流动的软流圈上。板块每年只走几厘米，却能在百万年尺度上打开海洋、抬起山脉。拖动下方时间，观察同一条边界如何积累地质后果。</p><div class="stage"><canvas id="map" height="360"></canvas></div><label class="control"><span data-i18n="time">地质时间</span><b id="timeVal">50 Ma</b><input id="time" type="range" min="0" max="100" value="50"></label><p class="readout" id="mapReadout"></p><button class="btn primary" id="start" data-i18n="start">开始探索 ↓</button></div></section>

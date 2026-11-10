@@ -286,6 +286,21 @@ window.CLAUDE_EDITIONS = [
   "model": "claude-opus-5-5"
  },
  {
+  "slug": "kepler-orbits",
+  "original": "kepler-orbits",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "plate-tectonics",
+  "original": "plate-tectonics",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "climate-energy",
+  "original": "climate-energy",
+  "model": "claude-opus-5-5"
+ },
+ {
   "slug": "momentum-collision",
   "original": "momentum-collision",
   "model": "claude-opus-5-5"

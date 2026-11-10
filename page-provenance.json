@@ -2410,6 +2410,42 @@
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
       "path": "variants/claude-code/day-night-rotation/index.html"
+    },
+    "cc-kepler-orbits": {
+      "developer": "Claude Code",
+      "edition": "claude-code-kepler-orbits-20261109",
+      "kind": "original",
+      "sourceRevision": "fdf5a00c46ca3057e63782742b4f029f584e1fa9",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《轨道运动 · 椭圆、速度与凌日》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Orbital Motion · Ellipses, Speed & Transits"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/kepler-orbits/index.html"
+    },
+    "cc-plate-tectonics": {
+      "developer": "Claude Code",
+      "edition": "claude-code-plate-tectonics-20261109",
+      "kind": "original",
+      "sourceRevision": "fdf5a00c46ca3057e63782742b4f029f584e1fa9",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《板块构造 · 边界如何留下证据》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Plate Tectonics · How Boundaries Leave Evidence"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/plate-tectonics/index.html"
+    },
+    "cc-climate-energy": {
+      "developer": "Claude Code",
+      "edition": "claude-code-climate-energy-20261109",
+      "kind": "original",
+      "sourceRevision": "fdf5a00c46ca3057e63782742b4f029f584e1fa9",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《气候能量账本 · 太阳光如何变成温度》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Climate Energy Ledger · How Sunlight Becomes Temperature"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/climate-energy/index.html"
     }
   },
   "exceptions": {
