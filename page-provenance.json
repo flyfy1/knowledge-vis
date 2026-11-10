@@ -1438,6 +1438,42 @@
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
       "path": "variants/claude-code/resonance/index.html"
+    },
+    "cc-float-sink": {
+      "developer": "Claude Code",
+      "edition": "claude-code-float-sink-20261109",
+      "kind": "original",
+      "sourceRevision": "20d54926e67da074aab5af39e1941f9344149693",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《浮与沉 · 排开的水托住了谁》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Float & Sink · What the Displaced Water Holds Up"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/float-sink/index.html"
+    },
+    "cc-magnets": {
+      "developer": "Claude Code",
+      "edition": "claude-code-magnets-20261109",
+      "kind": "original",
+      "sourceRevision": "20d54926e67da074aab5af39e1941f9344149693",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《磁铁 · 铁屑显出看不见的线》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Magnets · Iron Filings Reveal Unseen Lines"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/magnets/index.html"
+    },
+    "cc-simple-circuits": {
+      "developer": "Claude Code",
+      "edition": "claude-code-simple-circuits-20261109",
+      "kind": "original",
+      "sourceRevision": "20d54926e67da074aab5af39e1941f9344149693",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《简单电路 · 电流要走一圈》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Simple Circuits · Current Must Go Round"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/simple-circuits/index.html"
     }
   },
   "exceptions": {

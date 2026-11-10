@@ -286,6 +286,11 @@ window.CLAUDE_EDITIONS = [
   "model": "claude-opus-5-5"
  },
  {
+  "slug": "float-sink",
+  "original": "float-sink",
+  "model": "claude-opus-5-5"
+ },
+ {
   "slug": "inequalities",
   "original": "inequalities",
   "model": "claude-opus-5-5"
@@ -298,6 +303,11 @@ window.CLAUDE_EDITIONS = [
  {
   "slug": "inverse-proportion",
   "original": "inverse-proportion",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "magnets",
+  "original": "magnets",
   "model": "claude-opus-5-5"
  },
  {
@@ -318,6 +328,11 @@ window.CLAUDE_EDITIONS = [
  {
   "slug": "similarity-scaling",
   "original": "similarity-scaling",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "simple-circuits",
+  "original": "simple-circuits",
   "model": "claude-opus-5-5"
  },
  {
