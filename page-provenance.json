@@ -1330,6 +1330,42 @@
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
       "path": "variants/claude-code/buoyancy-archimedes/index.html"
+    },
+    "cc-lever-pulley": {
+      "developer": "Claude Code",
+      "edition": "claude-code-lever-pulley-20261109",
+      "kind": "original",
+      "sourceRevision": "eebde7fcb7ab5ba7cae89f9318921b6e574170e5",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《杠杆与滑轮 · 支点挪一挪，省力见分晓》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Levers & Pulleys · Move the Fulcrum, Feel the Trade"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/lever-pulley/index.html"
+    },
+    "cc-doppler-effect": {
+      "developer": "Claude Code",
+      "edition": "claude-code-doppler-effect-20261109",
+      "kind": "original",
+      "sourceRevision": "eebde7fcb7ab5ba7cae89f9318921b6e574170e5",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《多普勒效应 · 驶近变尖，驶远变沉》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson The Doppler Effect · Higher as It Approaches, Lower as It Leaves"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/doppler-effect/index.html"
+    },
+    "cc-electric-fields": {
+      "developer": "Claude Code",
+      "edition": "claude-code-electric-fields-20261109",
+      "kind": "original",
+      "sourceRevision": "eebde7fcb7ab5ba7cae89f9318921b6e574170e5",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《电场 · 看不见的力画成图》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Electric Fields · Drawing an Invisible Force"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/electric-fields/index.html"
     }
   },
   "exceptions": {

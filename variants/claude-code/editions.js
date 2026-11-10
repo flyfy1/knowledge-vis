@@ -141,6 +141,11 @@ window.CLAUDE_EDITIONS = [
   "model": "claude-opus-5-5"
  },
  {
+  "slug": "lever-pulley",
+  "original": "lever-pulley",
+  "model": "claude-opus-5-5"
+ },
+ {
   "slug": "equation-scale",
   "original": "equation-scale",
   "model": "claude-opus-5-5"
@@ -208,6 +213,16 @@ window.CLAUDE_EDITIONS = [
  {
   "slug": "density",
   "original": "density",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "doppler-effect",
+  "original": "doppler-effect",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "electric-fields",
+  "original": "electric-fields",
   "model": "claude-opus-5-5"
  },
  {
