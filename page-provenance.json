@@ -2050,6 +2050,42 @@
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
       "path": "variants/claude-code/risk-pooling/index.html"
+    },
+    "cc-backpropagation": {
+      "developer": "Claude Code",
+      "edition": "claude-code-backpropagation-20261109",
+      "kind": "original",
+      "sourceRevision": "8cdfc9f4cfe510234616869c829b84980a587c51",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《反向传播 · 误差沿网络回流》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Backpropagation · Error Flows Back Through the Network"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/backpropagation/index.html"
+    },
+    "cc-decision-trees": {
+      "developer": "Claude Code",
+      "edition": "claude-code-decision-trees-20261109",
+      "kind": "original",
+      "sourceRevision": "8cdfc9f4cfe510234616869c829b84980a587c51",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《决策树与信息增益》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Decision Trees and Information Gain"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/decision-trees/index.html"
+    },
+    "cc-embeddings": {
+      "developer": "Claude Code",
+      "edition": "claude-code-embeddings-20261109",
+      "kind": "original",
+      "sourceRevision": "8cdfc9f4cfe510234616869c829b84980a587c51",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《词向量 · 把词摆成地图》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Word Embeddings · Words as a Map"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/embeddings/index.html"
     }
   },
   "exceptions": {

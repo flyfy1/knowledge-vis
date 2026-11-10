@@ -381,6 +381,11 @@ window.CLAUDE_EDITIONS = [
   "model": "claude-opus-5-5"
  },
  {
+  "slug": "backpropagation",
+  "original": "backpropagation",
+  "model": "claude-opus-5-5"
+ },
+ {
   "slug": "bandit-arms",
   "original": "bandit-arms",
   "model": "claude-opus-5-5"
@@ -403,6 +408,16 @@ window.CLAUDE_EDITIONS = [
  {
   "slug": "clock-angles",
   "original": "clock-angles",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "decision-trees",
+  "original": "decision-trees",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "embeddings",
+  "original": "embeddings",
   "model": "claude-opus-5-5"
  },
  {
