@@ -361,8 +361,23 @@ window.CLAUDE_EDITIONS = [
   "model": "claude-opus-5-5"
  },
  {
+  "slug": "double-slit",
+  "original": "double-slit",
+  "model": "claude-opus-5-5"
+ },
+ {
   "slug": "externalities",
   "original": "externalities",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "eye-vision",
+  "original": "eye-vision",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "mechanical-energy",
+  "original": "mechanical-energy",
   "model": "claude-opus-5-5"
  },
  {

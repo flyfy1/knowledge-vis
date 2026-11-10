@@ -1474,6 +1474,42 @@
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
       "path": "variants/claude-code/simple-circuits/index.html"
+    },
+    "cc-double-slit": {
+      "developer": "Claude Code",
+      "edition": "claude-code-double-slit-20261109",
+      "kind": "original",
+      "sourceRevision": "79d3e015ff1592caf5444e2f953bb7024a95b35a",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《双缝实验 · 一颗一颗的粒子，也走出干涉条纹》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson The Double-Slit Experiment · Single Particles Still Build Fringes"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/double-slit/index.html"
+    },
+    "cc-eye-vision": {
+      "developer": "Claude Code",
+      "edition": "claude-code-eye-vision-20261109",
+      "kind": "original",
+      "sourceRevision": "79d3e015ff1592caf5444e2f953bb7024a95b35a",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《眼睛与眼镜 · 为什么近视要戴凹透镜》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson The Eye and Glasses · Why Short-Sightedness Needs a Concave Lens"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/eye-vision/index.html"
+    },
+    "cc-mechanical-energy": {
+      "developer": "Claude Code",
+      "edition": "claude-code-mechanical-energy-20261109",
+      "kind": "original",
+      "sourceRevision": "79d3e015ff1592caf5444e2f953bb7024a95b35a",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《机械能守恒 · 过山车的能量账本》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Conservation of Mechanical Energy · The Roller Coaster’s Energy Ledger"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/mechanical-energy/index.html"
     }
   },
   "exceptions": {
