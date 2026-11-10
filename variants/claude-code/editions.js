@@ -441,6 +441,11 @@ window.CLAUDE_EDITIONS = [
   "model": "claude-opus-5-5"
  },
  {
+  "slug": "llm-sampling",
+  "original": "llm-sampling",
+  "model": "claude-opus-5-5"
+ },
+ {
   "slug": "magnets",
   "original": "magnets",
   "model": "claude-opus-5-5"
@@ -448,6 +453,16 @@ window.CLAUDE_EDITIONS = [
  {
   "slug": "mean-median-mode",
   "original": "mean-median-mode",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "overfitting",
+  "original": "overfitting",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "pagerank",
+  "original": "pagerank",
   "model": "claude-opus-5-5"
  },
  {

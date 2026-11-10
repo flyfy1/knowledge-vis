@@ -2086,6 +2086,42 @@
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
       "path": "variants/claude-code/embeddings/index.html"
+    },
+    "cc-llm-sampling": {
+      "developer": "Claude Code",
+      "edition": "claude-code-llm-sampling-20261109",
+      "kind": "original",
+      "sourceRevision": "4c4de9fc6b1ab01283b5fbf4b835ff806d2d41fc",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《大语言模型如何逐词生成》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson How an LLM Writes Word by Word"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/llm-sampling/index.html"
+    },
+    "cc-overfitting": {
+      "developer": "Claude Code",
+      "edition": "claude-code-overfitting-20261109",
+      "kind": "original",
+      "sourceRevision": "4c4de9fc6b1ab01283b5fbf4b835ff806d2d41fc",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《过拟合》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Overfitting"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/overfitting/index.html"
+    },
+    "cc-pagerank": {
+      "developer": "Claude Code",
+      "edition": "claude-code-pagerank-20261109",
+      "kind": "original",
+      "sourceRevision": "4c4de9fc6b1ab01283b5fbf4b835ff806d2d41fc",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《PageRank · 随机冲浪者最后停在哪》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson PageRank · Where the Random Surfer Ends Up"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/pagerank/index.html"
     }
   },
   "exceptions": {
