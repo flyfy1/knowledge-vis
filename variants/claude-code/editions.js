@@ -924,5 +924,10 @@ window.CLAUDE_EDITIONS = [
   "slug": "vectors",
   "original": "vectors",
   "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "interest-rates-bonds",
+  "original": "interest-rates-bonds",
+  "model": "claude-opus-5-5"
  }
 ];
