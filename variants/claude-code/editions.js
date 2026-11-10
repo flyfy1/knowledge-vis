@@ -286,6 +286,11 @@ window.CLAUDE_EDITIONS = [
   "model": "claude-opus-5-5"
  },
  {
+  "slug": "pid-control",
+  "original": "pid-control",
+  "model": "claude-opus-5-5"
+ },
+ {
   "slug": "genetics-probability",
   "original": "genetics-probability",
   "model": "claude-opus-5-5"
@@ -338,6 +343,11 @@ window.CLAUDE_EDITIONS = [
  {
   "slug": "tcp-congestion",
   "original": "tcp-congestion",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "phonemes",
+  "original": "phonemes",
   "model": "claude-opus-5-5"
  },
  {
@@ -398,6 +408,11 @@ window.CLAUDE_EDITIONS = [
  {
   "slug": "distributed-systems",
   "original": "distributed-systems",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "memory-attention",
+  "original": "memory-attention",
   "model": "claude-opus-5-5"
  },
  {
