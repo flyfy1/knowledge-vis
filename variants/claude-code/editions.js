@@ -501,6 +501,11 @@ window.CLAUDE_EDITIONS = [
   "model": "claude-opus-5-5"
  },
  {
+  "slug": "recursion-divide",
+  "original": "recursion-divide",
+  "model": "claude-opus-5-5"
+ },
+ {
   "slug": "similarity-scaling",
   "original": "similarity-scaling",
   "model": "claude-opus-5-5"
@@ -531,6 +536,11 @@ window.CLAUDE_EDITIONS = [
   "model": "claude-opus-5-5"
  },
  {
+  "slug": "hashing",
+  "original": "hashing",
+  "model": "claude-opus-5-5"
+ },
+ {
   "slug": "limits-epsilon",
   "original": "limits-epsilon",
   "model": "claude-opus-5-5"
@@ -558,6 +568,11 @@ window.CLAUDE_EDITIONS = [
  {
   "slug": "chaos-threebody",
   "original": "chaos-threebody",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "cnn-feature-maps",
+  "original": "cnn-feature-maps",
   "model": "claude-opus-5-5"
  },
  {

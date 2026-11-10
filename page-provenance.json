@@ -2158,6 +2158,42 @@
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
       "path": "variants/claude-code/chemical-equilibrium/index.html"
+    },
+    "cc-recursion-divide": {
+      "developer": "Claude Code",
+      "edition": "claude-code-recursion-divide-20261109",
+      "kind": "original",
+      "sourceRevision": "8763c8e53bee179e6796658463ef8885af89c9dc",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《递归与分治 · 把大问题劈成小问题》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Recursion and Divide-and-Conquer · Splitting a Big Problem Into Small Ones"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/recursion-divide/index.html"
+    },
+    "cc-hashing": {
+      "developer": "Claude Code",
+      "edition": "claude-code-hashing-20261109",
+      "kind": "original",
+      "sourceRevision": "8763c8e53bee179e6796658463ef8885af89c9dc",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《哈希 · 把任意输入压成固定指纹》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Hashing · Squeezing Any Input Into a Fixed Fingerprint"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/hashing/index.html"
+    },
+    "cc-cnn-feature-maps": {
+      "developer": "Claude Code",
+      "edition": "claude-code-cnn-feature-maps-20261109",
+      "kind": "original",
+      "sourceRevision": "8763c8e53bee179e6796658463ef8885af89c9dc",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《卷积神经网络的特征图 · 小窗口怎样“看”图》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson CNN Feature Maps · How a Small Window “Sees” an Image"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/cnn-feature-maps/index.html"
     }
   },
   "exceptions": {
