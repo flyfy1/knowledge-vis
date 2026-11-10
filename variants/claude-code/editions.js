@@ -381,6 +381,11 @@ window.CLAUDE_EDITIONS = [
   "model": "claude-opus-5-5"
  },
  {
+  "slug": "newton-laws",
+  "original": "newton-laws",
+  "model": "claude-opus-5-5"
+ },
+ {
   "slug": "newton-method",
   "original": "newton-method",
   "model": "claude-opus-5-5"
@@ -391,8 +396,18 @@ window.CLAUDE_EDITIONS = [
   "model": "claude-opus-5-5"
  },
  {
+  "slug": "ohms-law",
+  "original": "ohms-law",
+  "model": "claude-opus-5-5"
+ },
+ {
   "slug": "prisoners-dilemma",
   "original": "prisoners-dilemma",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "projectile-circular",
+  "original": "projectile-circular",
   "model": "claude-opus-5-5"
  },
  {
