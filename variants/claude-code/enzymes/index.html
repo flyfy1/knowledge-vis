@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="category" content="biology">
+  <meta name="stage" content="senior">
+  <meta name="author" content="Claude Code (claude-opus-5-5)">
+  <title>酶 · 生物体内的催化剂</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="model.js"></script>
+  <script src="i18n.js"></script>
+  <link rel="stylesheet" href="../../../page-provenance.css">
+</head>
+<body>
+  <header class="site-head">
+    <div class="head-main">
+      <p class="backline"><a href="../../../" data-i18n="back"></a></p>
+      <h1 data-i18n="pageTitle"></h1>
+      <p class="tagline" data-i18n="tagline"></p>
+      <p class="compare"><a href="../../../biology/cells/enzymes/" data-i18n="compare"></a></p>
+      <!-- page-provenance -->
+    </div>
+    <div class="lang-toggle" id="langToggle" role="group" aria-label="Language">
+      <button type="button" data-lang="zh">中</button><button type="button" data-lang="en">EN</button>
+    </div>
+  </header>
+  <nav class="step-nav" id="stepNav" data-i18n-aria="navLabel">
+    <a class="nav-step" href="#step0" data-i18n="nav0"></a><a class="nav-step" href="#step1" data-i18n="nav1"></a>
+    <a class="nav-step" href="#step2" data-i18n="nav2"></a><a class="nav-step" href="#step3" data-i18n="nav3"></a>
+    <a class="nav-step" href="#step4" data-i18n="nav4"></a><a class="nav-step" href="#step5" data-i18n="nav5"></a>
+    <a class="nav-step" href="#step6" data-i18n="nav6"></a>
+  </nav>
+  <main>
+    <section class="step" id="step0" data-step="0"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s0k"></p><h2 data-i18n="s0t"></h2><p class="explain" data-i18n-html="s0e"></p>
+      <div class="stage"><canvas id="c0" height="380" role="img" data-i18n-aria="c0a"></canvas></div>
+      <p class="legend"><span class="lg"><span class="sw sw-orange"></span><span data-i18n="s0lgNo"></span></span><span class="lg"><span class="sw sw-cyan"></span><span data-i18n="s0lgYes"></span></span><span class="lg"><span class="sw sw-bar"></span><span data-i18n="s0lgBar"></span></span></p>
+      <div class="controls">
+        <label><span data-i18n="ea0"></span><output id="ea0v"></output><input id="ea0" data-step="0" type="range" min="80" max="130" step="1" value="110"></label>
+        <label><span data-i18n="dea0"></span><output id="dea0v"></output><input id="dea0" data-step="0" type="range" min="0" max="60" step="1" value="40"></label>
+      </div>
+      <p class="readout" id="r0" aria-live="polite"></p><p class="hint" id="h0"></p>
+    </div></section>
+
+    <section class="step" id="step1" data-step="1"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s1k"></p><h2 data-i18n="s1t"></h2><p class="explain" data-i18n-html="s1e"></p>
+      <div class="btn-row"><button class="btn toggle" id="shapeSquare" type="button" data-step="1" data-i18n="shapeSquare"></button><button class="btn toggle" id="shapeCircle" type="button" data-step="1" data-i18n="shapeCircle"></button><button class="btn toggle" id="shapeTriangle" type="button" data-step="1" data-i18n="shapeTriangle"></button></div>
+      <div class="stage"><canvas id="c1" height="380" role="img" data-i18n-aria="c1a"></canvas></div>
+      <p class="legend"><span class="lg"><span class="sw sw-x"></span><span data-i18n="s1lgEnz"></span></span><span class="lg"><span class="sw sw-orange"></span><span data-i18n="s1lgSub"></span></span><span class="lg"><span class="sw sw-green"></span><span data-i18n="s1lgProd"></span></span><span class="lg"><span class="sw sw-line"></span><span data-i18n="s1lgLine"></span></span></p>
+      <div class="btn-row"><button class="btn primary" id="feed1" type="button" data-step="1" data-i18n="feed1"></button><button class="btn" id="clear1" type="button" data-step="1" data-i18n="clear1"></button></div>
+      <p class="readout" id="r1" aria-live="polite"></p><p class="hint" id="h1"></p>
+    </div></section>
+
+    <section class="step" id="step2" data-step="2"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s2k"></p><h2 data-i18n="s2t"></h2><p class="explain" data-i18n-html="s2e"></p>
+      <div class="stage"><canvas id="c2" height="400" role="img" data-i18n-aria="c2b"></canvas></div>
+      <p class="legend"><span class="lg"><span class="sw sw-cyan"></span><span data-i18n="s2lgBusy"></span></span><span class="lg"><span class="sw sw-line"></span><span data-i18n="s2lgCurve"></span></span><span class="lg"><span class="sw sw-ghost"></span><span data-i18n="s2lgVmax"></span></span><span class="lg"><span class="sw sw-dot"></span><span data-i18n="s2lgDot"></span></span></p>
+      <div class="controls">
+        <label><span data-i18n="s2S"></span><output id="S2v"></output><input id="S2" data-step="2" type="range" min="0" max="20" step="0.1" value="2"></label>
+        <label><span data-i18n="s2Km"></span><output id="Km2v"></output><input id="Km2" data-step="2" type="range" min="0.5" max="5" step="0.5" value="2"></label>
+        <label><span data-i18n="s2E"></span><output id="E2v"></output><input id="E2" data-step="2" type="range" min="1" max="3" step="0.5" value="1"></label>
+      </div>
+      <p class="readout" id="r2" aria-live="polite"></p><p class="hint" data-i18n="s2hint"></p>
+    </div></section>
+
+    <section class="step" id="step3" data-step="3"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s3k"></p><h2 data-i18n="s3t"></h2><p class="explain" data-i18n-html="s3e"></p>
+      <div class="stage"><canvas id="c3" height="320" role="img" data-i18n-aria="c3"></canvas></div>
+      <p class="legend"><span class="lg"><span class="sw sw-cyan"></span><span data-i18n="s3lgAct"></span></span><span class="lg"><span class="sw sw-ghost"></span><span data-i18n="s3lgFold"></span></span><span class="lg"><span class="sw sw-odot"></span><span data-i18n="s3lgCool"></span></span><span class="lg"><span class="sw sw-dot"></span><span data-i18n="s3lgNow"></span></span></p>
+      <div class="controls"><label><span data-i18n="s3T"></span><output id="T3v"></output><input id="T3" data-step="3" type="range" min="0" max="80" step="1" value="37"></label></div>
+      <div class="btn-row"><button class="btn primary" id="heat3" type="button" data-step="3" data-i18n="heat3"></button><button class="btn" id="fresh3" type="button" data-step="3" data-i18n="fresh3"></button></div>
+      <p class="readout" id="r3" aria-live="polite"></p><p class="hint" id="h3"></p>
+    </div></section>
+
+    <section class="step" id="step4" data-step="4"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s4k"></p><h2 data-i18n="s4t"></h2><p class="explain" data-i18n-html="s4e"></p>
+      <div class="stage"><canvas id="c4" height="300" role="img" data-i18n-aria="c4"></canvas></div>
+      <p class="legend"><span class="lg"><span class="sw sw-violet"></span><span data-i18n="s4lgPep"></span></span><span class="lg"><span class="sw sw-orange"></span><span data-i18n="s4lgAmy"></span></span><span class="lg"><span class="sw sw-cyan"></span><span data-i18n="s4lgTry"></span></span><span class="lg"><span class="sw sw-ghost"></span><span data-i18n="s4lgPlace"></span></span></p>
+      <div class="controls"><label><span data-i18n="s4pH"></span><output id="pH4v"></output><input id="pH4" data-step="4" type="range" min="0" max="14" step="0.1" value="2"></label></div>
+      <p class="readout" id="r4" aria-live="polite"></p><p class="hint" id="h4"></p>
+    </div></section>
+
+    <section class="step" id="step5" data-step="5"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s5k"></p><h2 data-i18n="s5t"></h2><p class="explain" data-i18n-html="s5e"></p>
+      <div class="btn-row"><button class="btn toggle" id="comp5" type="button" data-step="5" data-i18n="comp5"></button><button class="btn toggle" id="non5" type="button" data-step="5" data-i18n="non5"></button></div>
+      <div class="stage twin"><canvas id="c5" height="300" role="img" data-i18n-aria="c5a"></canvas><canvas id="c5b" height="300" role="img" data-i18n-aria="c5b"></canvas></div>
+      <p class="legend"><span class="lg"><span class="sw sw-ghost"></span><span data-i18n="s5lgFree"></span></span><span class="lg"><span class="sw sw-cyan"></span><span data-i18n="s5lgInh"></span></span><span class="lg"><span class="sw sw-dash-cyan"></span><span data-i18n="s5lgVapp"></span></span><span class="lg"><span class="sw sw-pink"></span><span data-i18n="s5lgI"></span></span><span class="lg"><span class="sw sw-orange"></span><span data-i18n="s5lgS"></span></span></p>
+      <div class="controls">
+        <label><span data-i18n="s5I"></span><output id="I5v"></output><input id="I5" data-step="5" type="range" min="0" max="10" step="0.5" value="4"></label>
+        <label><span data-i18n="s5S"></span><output id="S5v"></output><input id="S5" data-step="5" type="range" min="0" max="50" step="0.5" value="5"></label>
+      </div>
+      <p class="readout" id="r5" aria-live="polite"></p><p class="hint" id="h5"></p>
+    </div></section>
+
+    <section class="step" id="step6" data-step="6"><div class="step-inner">
+      <p class="step-kicker" data-i18n="s6k"></p><h2 data-i18n="s6t"></h2>
+      <div class="finale"><p data-i18n-html="s6fin"></p><p class="formula" data-i18n="formula"></p><p data-i18n="boundary"></p>
+        <div class="quiz"><p class="quiz-prompt" data-i18n="quizPrompt"></p><div class="quiz-options"><label><input type="radio" name="quiz" value="a"><span data-i18n="quizA"></span></label><label><input type="radio" name="quiz" value="b"><span data-i18n="quizB"></span></label><label><input type="radio" name="quiz" value="c"><span data-i18n="quizC"></span></label></div><button class="btn" id="checkQuiz" type="button" data-i18n="check"></button><p class="quiz-feedback" id="quizFeedback" aria-live="polite"></p></div>
+        <p class="links-title" data-i18n="linksTitle"></p>
+        <a class="xlink" href="../../../chemistry/reactions/activation-energy/#step3" data-i18n="lk1"></a>
+        <a class="xlink" href="../../../chemistry/reactions/reaction-rates/#step4" data-i18n="lk2"></a>
+        <a class="xlink" href="../../../biology/cells/photosynthesis/#step2" data-i18n="lk3"></a>
+        <a class="xlink" href="../dna-replication/#step2" data-i18n="lk4"></a>
+      </div>
+    </div></section>
+  </main>
+  <footer class="site-foot" data-i18n="foot"></footer>
+  <script src="app.js"></script>
+</body>
+</html>
