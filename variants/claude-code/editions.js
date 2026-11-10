@@ -416,6 +416,11 @@ window.CLAUDE_EDITIONS = [
   "model": "claude-opus-5-5"
  },
  {
+  "slug": "dna-replication",
+  "original": "dna-replication",
+  "model": "claude-opus-5-5"
+ },
+ {
   "slug": "doppler-effect",
   "original": "doppler-effect",
   "model": "claude-opus-5-5"
@@ -433,6 +438,16 @@ window.CLAUDE_EDITIONS = [
  {
   "slug": "electromagnetic-induction",
   "original": "electromagnetic-induction",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "energy-pyramid",
+  "original": "energy-pyramid",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "enzymes",
+  "original": "enzymes",
   "model": "claude-opus-5-5"
  },
  {

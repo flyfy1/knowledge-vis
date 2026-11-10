@@ -2590,6 +2590,42 @@
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
       "path": "variants/claude-code/seismic-waves/index.html"
+    },
+    "cc-dna-replication": {
+      "developer": "Claude Code",
+      "edition": "claude-code-dna-replication-20261109",
+      "kind": "original",
+      "sourceRevision": "961f0d07a6c4f2541f22ddeec7fa7f36fbbd3e1e",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《DNA 复制与翻译 · 拉链、抄写和流水线》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson DNA Replication and Translation · A Zipper, a Copy and an Assembly Line"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/dna-replication/index.html"
+    },
+    "cc-energy-pyramid": {
+      "developer": "Claude Code",
+      "edition": "claude-code-energy-pyramid-20261109",
+      "kind": "original",
+      "sourceRevision": "961f0d07a6c4f2541f22ddeec7fa7f36fbbd3e1e",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《能量金字塔 · 为什么顶级捕食者那么少》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson The Energy Pyramid · Why Top Predators Are Rare"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/energy-pyramid/index.html"
+    },
+    "cc-enzymes": {
+      "developer": "Claude Code",
+      "edition": "claude-code-enzymes-20261109",
+      "kind": "original",
+      "sourceRevision": "961f0d07a6c4f2541f22ddeec7fa7f36fbbd3e1e",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《酶 · 生物体内的催化剂》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Enzymes · Catalysts of the Living World"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/enzymes/index.html"
     }
   },
   "exceptions": {
