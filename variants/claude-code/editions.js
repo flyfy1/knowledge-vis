@@ -576,6 +576,11 @@ window.CLAUDE_EDITIONS = [
   "model": "claude-opus-5-5"
  },
  {
+  "slug": "poisson-process",
+  "original": "poisson-process",
+  "model": "claude-opus-5-5"
+ },
+ {
   "slug": "prisoners-dilemma",
   "original": "prisoners-dilemma",
   "model": "claude-opus-5-5"
@@ -591,8 +596,18 @@ window.CLAUDE_EDITIONS = [
   "model": "claude-opus-5-5"
  },
  {
+  "slug": "regression-correlation",
+  "original": "regression-correlation",
+  "model": "claude-opus-5-5"
+ },
+ {
   "slug": "relativity",
   "original": "relativity",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "risk-pooling",
+  "original": "risk-pooling",
   "model": "claude-opus-5-5"
  },
  {

@@ -2014,6 +2014,42 @@
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
       "path": "variants/claude-code/distributed-systems/index.html"
+    },
+    "cc-poisson-process": {
+      "developer": "Claude Code",
+      "edition": "claude-code-poisson-process-20261109",
+      "kind": "original",
+      "sourceRevision": "c17d2903850456a8b69fafaafa275a1d12023746",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《泊松过程 · 随机到达的规律》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson The Poisson Process · The Pattern in Random Arrivals"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/poisson-process/index.html"
+    },
+    "cc-regression-correlation": {
+      "developer": "Claude Code",
+      "edition": "claude-code-regression-correlation-20261109",
+      "kind": "original",
+      "sourceRevision": "c17d2903850456a8b69fafaafa275a1d12023746",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《回归与相关 · 散点云里拉一条最贴的线》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Regression & Correlation · The Best Line Through a Cloud"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/regression-correlation/index.html"
+    },
+    "cc-risk-pooling": {
+      "developer": "Claude Code",
+      "edition": "claude-code-risk-pooling-20261109",
+      "kind": "original",
+      "sourceRevision": "c17d2903850456a8b69fafaafa275a1d12023746",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《风险池化与保险 · 一万人各摊一点》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Risk Pooling & Insurance · Ten Thousand People Each Chip In"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/risk-pooling/index.html"
     }
   },
   "exceptions": {
