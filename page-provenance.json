@@ -1870,6 +1870,30 @@
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
       "path": "variants/claude-code/mean-median-mode/index.html"
+    },
+    "cc-expected-value": {
+      "developer": "Claude Code",
+      "edition": "claude-code-expected-value-20261109",
+      "kind": "original",
+      "sourceRevision": "25bbd5f7ce133063b4f00775169f5e11bb37a49a",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《期望 · 彩票、骰子、保险放在同一台秤上》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Expected Value · Lotteries, Dice and Insurance on One Scale"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/expected-value/index.html"
+    },
+    "cc-hypothesis-testing": {
+      "developer": "Claude Code",
+      "edition": "claude-code-hypothesis-testing-20261109",
+      "kind": "original",
+      "sourceRevision": "25bbd5f7ce133063b4f00775169f5e11bb37a49a",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《假设检验与 p 值 · 法庭模型判硬币冤不冤》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Hypothesis Testing & p-Values · A Courtroom for a Coin"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/hypothesis-testing/index.html"
     }
   },
   "exceptions": {

@@ -481,6 +481,11 @@ window.CLAUDE_EDITIONS = [
   "model": "claude-opus-5-5"
  },
  {
+  "slug": "expected-value",
+  "original": "expected-value",
+  "model": "claude-opus-5-5"
+ },
+ {
   "slug": "externalities",
   "original": "externalities",
   "model": "claude-opus-5-5"
@@ -488,6 +493,11 @@ window.CLAUDE_EDITIONS = [
  {
   "slug": "eye-vision",
   "original": "eye-vision",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "hypothesis-testing",
+  "original": "hypothesis-testing",
   "model": "claude-opus-5-5"
  },
  {
