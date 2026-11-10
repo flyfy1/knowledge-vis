@@ -226,6 +226,21 @@ window.CLAUDE_EDITIONS = [
   "model": "claude-opus-5-5"
  },
  {
+  "slug": "electromagnetic-induction",
+  "original": "electromagnetic-induction",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "kinetic-theory",
+  "original": "kinetic-theory",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "slug": "magnetic-force",
+  "original": "magnetic-force",
+  "model": "claude-opus-5-5"
+ },
+ {
   "slug": "patterns-sequences",
   "original": "patterns-sequences",
   "model": "claude-opus-5-5"

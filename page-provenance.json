@@ -1366,6 +1366,42 @@
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
       "path": "variants/claude-code/electric-fields/index.html"
+    },
+    "cc-electromagnetic-induction": {
+      "developer": "Claude Code",
+      "edition": "claude-code-electromagnetic-induction-20261109",
+      "kind": "original",
+      "sourceRevision": "a5cd1e5719f289fdf5530d4a4e5088eb51c95786",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《电磁感应 · 磁通量一变，电压就来》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Electromagnetic Induction · Change the Flux, Get a Voltage"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/electromagnetic-induction/index.html"
+    },
+    "cc-kinetic-theory": {
+      "developer": "Claude Code",
+      "edition": "claude-code-kinetic-theory-20261109",
+      "kind": "original",
+      "sourceRevision": "a5cd1e5719f289fdf5530d4a4e5088eb51c95786",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《气体压强的微观图景 · 撞墙的账本》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson The Microscopic Picture of Gas Pressure · A Ledger of Wall Hits"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/kinetic-theory/index.html"
+    },
+    "cc-magnetic-force": {
+      "developer": "Claude Code",
+      "edition": "claude-code-magnetic-force-20261109",
+      "kind": "original",
+      "sourceRevision": "a5cd1e5719f289fdf5530d4a4e5088eb51c95786",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写，是原版《磁场与洛伦兹力 · 力总是垂直于速度》的平行版本",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 as a parallel edition of the original lesson Magnetic Force · The Force Is Always Sideways to the Velocity"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
+      "path": "variants/claude-code/magnetic-force/index.html"
     }
   },
   "exceptions": {
