@@ -57,7 +57,8 @@ const checks=[];
  await cat('all').click();await page.locator('[data-stage="all"]').click();await page.locator('[data-lang="en"]').click();
  const nowCards=await page.locator('#grid > .card').evaluateAll(els=>els.filter(el=>!el.querySelector('.cat-badge')?.textContent.includes('LeetCode')).map(el=>[el.querySelector('h2').textContent,el.getAttribute('href')]));
  assert.deepEqual(nowCards,otherCards);
- await page.locator('#grid a.card').filter({has:page.locator('.cat-badge', {hasText:'LeetCode'})}).click();await ready();
+ // 2026-11-11 homepage redesign: the home view no longer lists a LeetCode category card; the "More entrances" tile is the inline All-view entry.
+ await page.locator('#grid a.card.entrance[href*="category=leetcode"]').click();await ready();
  assert.equal(await page.locator('[data-cat="leetcode"]').evaluate(el=>el===document.activeElement),true);
  checks.push('Category/history/query/reload/lesson Back, other cards unchanged, All entry inline');
  // Both locales and device widths, including equivalent 200% layout zoom.

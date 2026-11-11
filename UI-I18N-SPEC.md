@@ -26,7 +26,7 @@ Yangyu 2026-10-15 定：所有知识点页面一律中英文双语、右上角�
 ## 索引页与配置
 
 - `pages.config.js` 条目升级为双语字段：`title: {zh, en}`、`desc: {zh, en}`、`tags: [{zh, en}...]`（渲染时按当前语言取值；为兼容旧条目，字符串形式的 title/desc/tags 仍可渲染）。
-- 索引页本身双语：标题、导语、状态徽标（已上线 Live / 筹备中 Planned）、「打开 →」等都走字典。
+- 索引页本身双语：标题、导语、搜索框、分组标题、入口卡片、筹备中徽标（Planned）等都走字典。已上线的卡片不再显示「已上线」徽标和「打开 →」（2026-11-11 首页改版移除）。
 - 条目带 `category` 字段（值 = 分类注册表中的 id，如 `signal`）；分类与标签的完整约定见下节「分类与标签」。
 
 ## 英文文案标准
@@ -38,7 +38,7 @@ Yangyu 2026-10-15 定：所有知识点页面一律中英文双语、右上角�
 
 - 分类注册表：`pages.config.js` 导出 `window.KNOWLEDGE_CATEGORIES` 数组，元素为 `{id, name: {zh, en}}`，数组顺序即索引页筛选 chips 的展示顺序。首批四类：`signal` 信号与系统 / Signals & Systems、`probability` 概率与统计 / Probability & Statistics、`computing` 计算与智能 / Computing & AI、`math` 数学基础 / Mathematical Foundations。新增分类必须先在此注册，不得在条目里临时发明 id。
 - 条目归类：每个条目带单个 `category` 字段（值 = 注册表中的分类 id）。`tags` 是另一个维度——双语细标签数组 `[{zh, en}...]`，描述条目的具体主题（如频域 / Frequency Domain、变换 / Transform），不要拿标签代替分类，也不要把分类名重复进标签。
-- 索引页交互：顶部一排筛选 chips（全部 + 注册表中的各分类），纯前端过滤卡片、无刷新，筛选状态不持久化（刷新回「全部」）；每张卡片显示所属分类的徽标，名称按当前语言取注册表双语名，随语言切换即时更新。某分类暂无条目时显示空状态文案，不隐藏该 chip。
+- 索引页交互（2026-11-11 改版后）：顶部一排分类 chips（第一个是「精选 / Featured」，代表首页默认视图，仍为 `data-cat="all"`；其后是注册表中的各分类），纯前端切换、无刷新。分类、学段和全站搜索词写在 URL 里（`?category=`、`?stage=`、`?s=`），刷新、分享和前进后退都能还原。分类视图按 `KNOWLEDGE_SUBTOPICS` 分组；卡片显示分类与学段徽标，但已由当前筛选或分组标题说明的那一项不再重复显示。名称按当前语言取注册表双语名，随语言切换即时更新。某分类暂无条目时显示空状态文案，不隐藏该 chip。`tags` 不再在首页显示，只参与全站搜索。完整约定见 specs/index-pagination.md。
 
 ---
 
@@ -46,7 +46,7 @@ Yangyu 2026-10-15 定：所有知识点页面一律中英文双语、右上角�
 
 - 注册表 `pages.config.js` 新增 `window.KNOWLEDGE_STAGES`：primary（小学）/ junior（初中）/ senior（高中）/ university（大学），与 KNOWLEDGE_CATEGORIES 正交。
 - 条目新增 `stage` 字段（字符串 id）；省略时索引页按 `university` 呈现。既有 19 页已统一标 university。
-- 索引页有独立学段筛选行，与分类筛选组合过滤（AND）；卡片同时展示分类徽标与学段徽标。
+- 索引页有独立学段筛选行，与分类筛选组合过滤（AND）；只选学段时按分类分组。卡片徽标规则见上节「分类与标签」。
 - 新页 BRIEF 必须写明 category 与 stage 两项；K12 页文案可亲切但不许幼稚化、数学不许为简化而失真。
 
 ## 解释清晰度硬要求（2026-10-16 增补，源自卡尔曼试点 Codex 评审）

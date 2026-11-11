@@ -118,6 +118,16 @@ window.KNOWLEDGE_SUBTOPICS = {
   ]
 };
 
+/* 首页精选（2026-11-11 增设）：首页默认视图「精选」区按此数组顺序展示这些页面。
+ * 元素是 KNOWLEDGE_PAGES 里的 slug；找不到的 slug 静默跳过，不报错。
+ * 选取原则：从小学到大学各有入口，优先最完整、最能代表本站的页面。
+ * 改精选只动这个数组，不要改条目本身。 */
+window.KNOWLEDGE_FEATURED = [
+  "fractions", "day-night-rotation", "pinhole-camera", "pythagoras",
+  "lens", "complex-numbers", "interference", "fourier",
+  "sampling", "gradient-descent", "bayes-updating", "mandelbrot"
+];
+
 window.KNOWLEDGE_PAGES = [
   {
     slug: "frozen-bubble",

@@ -16,8 +16,8 @@
   body{background:var(--bg);color:var(--text);
     font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
     line-height:1.65;-webkit-font-smoothing:antialiased}
-  .wrap{max-width:1020px;margin:0 auto;padding:56px 22px 72px}
-  header.head{margin-bottom:38px}
+  .wrap{max-width:1020px;margin:0 auto;padding:44px 22px 64px}
+  header.head{margin-bottom:30px}
   .head-row{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
   .kicker{color:var(--cyan);font-size:13px;letter-spacing:.35em;margin:0 0 10px}
   .lang-toggle{display:inline-flex;border:1px solid var(--line);border-radius:999px;
@@ -26,61 +26,71 @@
     font:inherit;font-size:13px;line-height:1.4;padding:5px 14px;cursor:pointer}
   .lang-toggle button + button{border-left:1px solid var(--line)}
   .lang-toggle button.on{background:var(--cyan);color:#08131a;font-weight:700}
-  h1{font-size:40px;line-height:1.2;margin:0 0 12px;font-weight:800}
+  h1{font-size:40px;line-height:1.2;margin:0 0 10px;font-weight:800}
   .intro{color:var(--dim);font-size:16.5px;max-width:640px;margin:0}
   .intro b{color:var(--text)}
-  .editions-link{margin:12px 0 0}
-  .editions-link a{display:inline-flex;align-items:center;min-height:44px;color:var(--cyan);overflow-wrap:anywhere}
-  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+  .site-search{margin-top:22px;max-width:640px}
+  .search-row{display:flex;flex-wrap:wrap;gap:8px}
+  .search-row input{flex:1 1 300px;min-width:0;width:100%;min-height:48px;
+    font:inherit;color:var(--text);background:var(--panel2);border:1px solid var(--dim);
+    border-radius:12px;padding:12px}
+  .search-row input::placeholder{color:var(--dim);opacity:1}
+  .site-search .search-row input{flex-basis:160px}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+  .chips + .chips{margin-top:10px}
   .chip{appearance:none;font:inherit;font-size:13.5px;color:var(--dim);cursor:pointer;
     background:var(--panel2);border:1px solid var(--line);border-radius:999px;padding:5px 15px}
   .chip:hover{color:var(--text);border-color:var(--cyan-d)}
   .chip.on{background:var(--cyan);border-color:var(--cyan);color:#08131a;font-weight:700}
-  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:18px;margin-top:8px}
-  .pagination{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:10px;margin-top:28px}
-  .pagination button{appearance:none;min-width:48px;min-height:48px;padding:8px 16px;font:inherit;color:var(--cyan);
-    background:var(--panel2);border:1px solid var(--line);border-radius:12px;cursor:pointer}
-  .pagination button:hover:not(:disabled){border-color:var(--cyan-d);color:var(--text)}
-  .pagination button:disabled{color:var(--dim);cursor:not-allowed;opacity:.55}
-  .page-status{min-width:180px;color:var(--dim);font-size:13.5px;text-align:center}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:18px}
+  .section-head{grid-column:1/-1;margin:0}
+  .section-title{font-size:22px;line-height:1.3;margin:0;font-weight:800}
+  .section-sub{color:var(--dim);font-size:14.5px;margin:4px 0 0}
+  .group-head{grid-column:1/-1;display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 12px;
+    border-bottom:1px solid var(--line);padding-bottom:8px;margin-top:18px}
+  .group-head:first-child{margin-top:0}
+  .group-head h2{font-size:19px;line-height:1.3;margin:0;font-weight:800}
+  .group-count{color:var(--dim);font-size:13.5px}
   a.card,div.card{display:block;background:linear-gradient(180deg,var(--panel),var(--panel2));
-    border:1px solid var(--line);border-radius:16px;padding:22px 22px 18px;
-    text-decoration:none;color:var(--text);position:relative;overflow:hidden}
+    border:1px solid var(--line);border-radius:16px;padding:20px 22px;
+    text-decoration:none;color:var(--text);position:relative;overflow:hidden;overflow-wrap:anywhere}
   a.card{transition:transform .15s ease,border-color .15s ease}
   a.card:hover{transform:translateY(-3px);border-color:var(--cyan-d)}
   a.card::before{content:"";position:absolute;inset:0 0 auto 0;height:3px;
     background:linear-gradient(90deg,var(--cyan),transparent 70%)}
-  .cat-badge{display:inline-block;font-size:11.5px;color:var(--amber);
-    border:1px solid #713f12;background:rgba(245,176,76,.08);
-    border-radius:999px;padding:1px 10px;margin-bottom:10px}
-  .stage-badge{color:var(--cyan);border-color:var(--cyan-d);background:rgba(103,215,249,.08);margin-left:6px}
-  .card h2{font-size:20px;margin:0 0 8px 0;padding-right:84px;line-height:1.35}
-  .card p{color:var(--dim);font-size:14.5px;margin:0 0 16px}
+  .card-badges{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
+  .cat-badge,.stage-badge{display:inline-block;font-size:11.5px;color:var(--amber);
+    border:1px solid #713f12;background:rgba(245,176,76,.08);border-radius:999px;padding:1px 10px}
+  .stage-badge{color:var(--cyan);border-color:var(--cyan-d);background:rgba(103,215,249,.08)}
+  .card h2{font-size:20px;margin:0 0 8px 0;line-height:1.35}
+  .card p{color:var(--dim);font-size:14.5px;margin:0}
+  .badge{position:absolute;top:18px;right:18px;font-size:12px;border-radius:999px;padding:2px 10px}
+  .badge.planned{color:var(--amber);border:1px solid #713f12;background:rgba(245,176,76,.08)}
+  div.card.planned{opacity:.62}
+  div.card.planned h2{padding-right:84px}
+  .entrances{grid-column:1/-1;margin-top:26px}
+  .entrance-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,220px),1fr));gap:14px;margin-top:12px}
+  a.card.entrance{padding:18px 20px}
+  a.card.entrance h3{font-size:17px;line-height:1.35;margin:0 0 6px;color:var(--cyan)}
+  a.card.entrance p{font-size:14px}
   .tags{display:flex;flex-wrap:wrap;gap:7px}
   .tag{font-size:12px;color:var(--cyan);border:1px solid var(--cyan-d);
     border-radius:999px;padding:2px 10px;background:rgba(103,215,249,.06)}
-  .badge{position:absolute;top:18px;right:18px;font-size:12px;border-radius:999px;padding:2px 10px}
-  .badge.live{color:var(--green);border:1px solid #14532d;background:rgba(74,222,128,.08)}
-  .badge.planned{color:var(--amber);border:1px solid #713f12;background:rgba(245,176,76,.08)}
-  div.card.planned{opacity:.62}
-  .go{margin-top:16px;color:var(--cyan);font-size:14px}
-  footer{margin-top:52px;color:var(--dim);font-size:13px;border-top:1px solid var(--line);padding-top:18px}
+  footer{margin-top:48px;color:var(--dim);font-size:13px;border-top:1px solid var(--line);padding-top:18px}
   .empty{color:var(--dim);border:1px dashed var(--line);border-radius:16px;padding:28px;text-align:center;grid-column:1/-1;margin:0}
   [hidden]{display:none!important}
   .chip,.lang-toggle button{min-width:48px;min-height:48px}
   :focus-visible{outline:3px solid var(--cyan);outline-offset:3px}
   .lang-toggle button:focus-visible{outline-offset:-3px}
   .lang-toggle button.on:focus-visible{outline-color:var(--on-cyan)}
-  .leetcode-search{margin-top:26px}
+  .leetcode-search{margin-bottom:26px}
   .leetcode-search label{display:block;font-weight:700;margin-bottom:8px}
-  .search-row{display:flex;flex-wrap:wrap;gap:8px}
-  .search-row input{flex:1 1 300px;min-width:0;width:100%;min-height:48px;
-    font:inherit;color:var(--text);background:var(--panel2);border:1px solid var(--dim);
-    border-radius:12px;padding:12px}
   .section-button{font:inherit;min-height:48px;min-width:48px;padding:8px 16px;
     color:var(--cyan);background:var(--panel2);border:1px solid var(--dim);
     border-radius:12px;cursor:pointer}
   .search-help,.result-status{font-size:.875rem;color:var(--dim);margin:12px 0 0}
+  .site-search .result-status{margin-top:8px}
   .section-error{margin-top:16px}
   .section-error p{color:var(--text)}
   article.lesson-card{background:linear-gradient(180deg,var(--panel),var(--panel2));
@@ -96,8 +106,17 @@
   @media(prefers-reduced-motion:reduce){a.card{transition:none}a.card:hover{transform:none}}
   @media(forced-colors:active){:focus-visible,.lang-toggle button.on:focus-visible{outline-color:Highlight}}
   @media (max-width:560px){
-    .wrap{padding:38px 16px 56px}
+    .wrap{padding:28px 16px 52px}
     h1{font-size:31px}
+    .intro{font-size:15.5px}
+    .site-search{margin-top:18px}
+    /* 窄屏：每行 chip 单行横向滚动，免得 20 个 chip 占满首屏；左右出血到屏幕边缘提示可滑动，
+       上下留白避免 3px 焦点框被滚动容器裁掉 */
+    .chips{flex-wrap:nowrap;overflow-x:auto;gap:6px;margin:10px -16px 0;padding:5px 16px;
+      scrollbar-width:thin;scrollbar-color:var(--line) transparent}
+    .chips + .chips{margin-top:2px}
+    .chip{flex:0 0 auto;white-space:nowrap;padding:5px 12px}
+    header.head{margin-bottom:24px}
   }
 </style>
 </head>
@@ -111,11 +130,17 @@
       </div>
     </div>
     <h1 data-i18n="h1">知识索引</h1>
-    <p class="intro" data-i18n-html="intro">把难懂的知识点，做成<b>可以上手玩的交互页</b>：每页一个主题，由浅入深，一步一个交互，玩到最后就懂了。</p>
-    <p class="editions-link"><a href="variants/claude-code/" data-i18n="editionsLink">Claude Code 平行版本：每个主题的另一种讲法 →</a></p>
+    <p class="intro" data-i18n-html="intro">把难懂的知识点，做成<b>可以上手玩的交互页</b>。一页一个主题，一步一个交互。</p>
+    <div id="siteSearchBox" class="site-search" role="search">
+      <label class="sr-only" for="siteSearch" data-i18n="siteSearchLabel">搜索全部页面</label>
+      <div class="search-row">
+        <input id="siteSearch" type="search" autocomplete="off" spellcheck="false" data-i18n-placeholder="siteSearchPlaceholder">
+        <button id="siteSearchClear" class="section-button" type="button" data-i18n="siteSearchClear" hidden></button>
+      </div>
+      <p id="siteSearchCount" class="result-status" role="status" aria-live="polite" aria-atomic="true"></p>
+    </div>
     <div class="chips" id="catChips" role="group" aria-label="Category filter / 分类筛选"></div>
-    <div class="chips" id="stageChips" role="group" aria-label="Stage filter / 学段筛选" style="margin-top:10px"></div>
-    <div class="chips" id="topicChips" role="group" aria-label="Topic filter / 主题筛选" style="margin-top:10px"></div>
+    <div class="chips" id="stageChips" role="group" aria-label="Stage filter / 学段筛选"></div>
   </header>
 
   <section id="leetcodeSearch" class="leetcode-search" hidden aria-labelledby="searchLabel">
@@ -131,15 +156,10 @@
       <button id="retryLessons" class="section-button" type="button" data-i18n="retry"></button>
     </div>
   </section>
-  <main id="grid" class="grid" aria-live="polite"></main>
-  <nav id="pagination" class="pagination" aria-label="Page navigation / 页面导航" hidden>
-    <button id="prevPage" type="button"></button>
-    <span id="pageStatus" class="page-status" role="status" aria-live="polite"></span>
-    <button id="nextPage" type="button"></button>
-  </nav>
+  <main id="grid" class="grid"></main>
   <noscript><p class="empty">这个索引页需要 JavaScript 才能列出条目。</p></noscript>
 
-  <footer data-i18n-html="footerText">新增条目登记在 <b>pages.config.js</b> 配置里；每页都是纯静态、可离线打开的单页。</footer>
+  <footer id="footer"></footer>
 </div>
 
 <script src="pages.config.js?v=20261111-1f0bc4e1"></script>
@@ -150,29 +170,43 @@
   var STR = {
     zh: {
       docTitle: '知识索引', h1: '知识索引',
-      intro: '把难懂的知识点，做成<b>可以上手玩的交互页</b>：每页一个主题，由浅入深，一步一个交互，玩到最后就懂了。',
-      allChip: '全部', allStage: '全部学段', badgeLive: '已上线', badgePlanned: '筹备中', goOpen: '打开 →', editionsLink: 'Claude Code 平行版本：每个主题的另一种讲法 →',
-      emptyText: '还没有登记任何知识页。',
+      intro: '把难懂的知识点，做成<b>可以上手玩的交互页</b>。一页一个主题，一步一个交互。',
+      featuredChip: '精选', allStage: '全部学段', badgePlanned: '筹备中',
+      featuredTitle: '精选 · 从这里开始', featuredSub: '从 {total} 个页面里挑出的 {n} 个，小学到大学各有入口。',
+      entrancesTitle: '更多入口',
+      entranceAtlasTitle: '知识图谱', entranceAtlasDesc: '沿着概念之间的关系逛，从一个问题走到一串知识点。',
+      entranceLeetcodeTitle: 'LeetCode 专区', entranceLeetcodeDesc: '困难题的解法，一步一步推出来。',
+      entranceDemosTitle: '演示', entranceDemosDesc: '不讲课，只看效果的作品。',
+      entranceEditionsTitle: 'Claude Code 平行版本', entranceEditionsDesc: '同一个主题的另一种讲法，可以和原版对照着看。',
+      siteSearchLabel: '搜索全部页面', siteSearchPlaceholder: '输入主题，例如：傅里叶、分数、贝叶斯',
+      siteSearchCount: '找到 {n} 个页面', siteSearchEmpty: '没有匹配的页面，换个词试试。', siteSearchClear: '清空',
+      otherSubtopic: '其他', groupCount: '{n} 个页面',
+      emptyText: '还没有登记任何知识页。', emptyFilter: '这个组合下还没有页面。',
       searchLabel:'查找 LeetCode 课程', searchHelp:'输入准确题号（如 #51）、中英文题名或知识点。多个词用空格分隔，需同时匹配。',
       clearSearch:'清空搜索', loading:'正在读取课程列表…', loadError:'暂时无法读取课程列表，请重试。', retry:'重试',
       count:'找到 {shown} / {total} 篇可用课程', noMatches:'没有匹配的课程。试试题号、题名或知识点，或清空搜索。',
       emptyCollection:'课程列表目前为空。', hard:'困难', explore:'开始推导 →', official:'LeetCode 原题 ↗',
-      emptyFilter: '这个组合下还没有条目，敬请期待。', topicAll: '全部主题', prevPage: '上一页', nextPage: '下一页',
-      pageStatus: '第 {page} / {pages} 页 · 显示 {shown} / {total} 个主题',
-      footerText: '新增条目登记在 <b>pages.config.js</b> 配置里；每页都是纯静态、可离线打开的单页。'
+      footerText: '共 {total} 个交互页 · 每页都是纯静态单页，可离线打开。'
     },
     en: {
       docTitle: 'Knowledge Index', h1: 'Knowledge Index',
-      intro: 'Tough ideas, turned into <b>pages you can play with</b>: one topic per page, shallow to deep, one interaction per step — play to the end, and it clicks.',
-      allChip: 'All', allStage: 'All stages', badgeLive: 'Live', badgePlanned: 'Planned', goOpen: 'Open →', editionsLink: 'Claude Code parallel editions: another take on every topic →',
-      emptyText: 'No knowledge pages have been registered yet.',
+      intro: 'Turn hard ideas into <b>interactive pages you can try for yourself</b>. One topic per page, one interaction per step.',
+      featuredChip: 'Featured', allStage: 'All Stages', badgePlanned: 'Planned',
+      featuredTitle: 'Featured · Start Here', featuredSub: '{n} picks from {total} pages, with entry points from primary school through university.',
+      entrancesTitle: 'More Ways In',
+      entranceAtlasTitle: 'Knowledge Atlas', entranceAtlasDesc: 'Wander along the links between concepts, from one question to a chain of ideas.',
+      entranceLeetcodeTitle: 'LeetCode Corner', entranceLeetcodeDesc: 'Solutions to hard problems, worked out one step at a time.',
+      entranceDemosTitle: 'Demos', entranceDemosDesc: 'Pieces that skip the lecture and just show you what happens.',
+      entranceEditionsTitle: 'Claude Code Parallel Editions', entranceEditionsDesc: 'Another take on the same topic, to read side by side with the original.',
+      siteSearchLabel: 'Search all pages', siteSearchPlaceholder: 'Enter a topic, e.g. Fourier, fractions, Bayes',
+      siteSearchCount: '{n} pages found', siteSearchCountOne: '1 page found', siteSearchEmpty: 'No matching pages. Try different words.', siteSearchClear: 'Clear',
+      otherSubtopic: 'Other', groupCount: '{n} pages', groupCountOne: '1 page',
+      emptyText: 'No knowledge pages have been registered yet.', emptyFilter: 'No pages yet for this combination.',
       searchLabel:'Find a LeetCode lesson', searchHelp:'Enter an exact ID (such as #51), a title in either language, or a topic. Space-separated words must all match.',
       clearSearch:'Clear search', loading:'Loading lessons…', loadError:'The lesson list could not be loaded. Please retry.', retry:'Retry',
       count:'{shown} of {total} available lessons', noMatches:'No matching lessons. Try an ID, title or topic, or clear the search.',
       emptyCollection:'This collection currently has no lessons.', hard:'Hard', explore:'Explore the lesson →', official:'View on LeetCode ↗',
-      emptyFilter: 'Nothing under this combination yet — stay tuned.', topicAll: 'All topics', prevPage: 'Previous', nextPage: 'Next',
-      pageStatus: 'Page {page} of {pages} · showing {shown} of {total} topics',
-      footerText: 'New entries are registered in the <b>pages.config.js</b> config; every page is a single static page that also works offline.'
+      footerText: '{total} interactive pages · Each page is a self-contained static page that opens offline.'
     }
   };
 
@@ -196,23 +230,33 @@
     if (typeof v === 'string') return v;
     return v[lang] != null ? v[lang] : (v.zh != null ? v.zh : (v.en != null ? v.en : ''));
   }
+  function fill(str, vars) {
+    return str.replace(/\{(\w+)\}/g, function(m, k){ return vars[k] != null ? String(vars[k]) : m; });
+  }
 
   var grid = document.getElementById('grid');
   var chipsBox = document.getElementById('catChips');
   var stageBox = document.getElementById('stageChips');
-  var topicBox = document.getElementById('topicChips');
-  var pagination = document.getElementById('pagination');
-  var prevPage = document.getElementById('prevPage');
-  var nextPage = document.getElementById('nextPage');
-  var pageStatus = document.getElementById('pageStatus');
+  var siteBox = document.getElementById('siteSearchBox');
+  var siteInput = document.getElementById('siteSearch');
+  var siteClear = document.getElementById('siteSearchClear');
+  var siteCount = document.getElementById('siteSearchCount');
+  var footer = document.getElementById('footer');
   var categories = window.KNOWLEDGE_CATEGORIES || [];
   var stages = window.KNOWLEDGE_STAGES || [];
-  var pages = (window.KNOWLEDGE_PAGES || []).slice();
+  var subtopics = window.KNOWLEDGE_SUBTOPICS || {};
+  // 已上线的排在前面（Array.prototype.sort 稳定，其余保持登记顺序）
+  var pages = (window.KNOWLEDGE_PAGES || []).slice().sort(function(a, b){
+    return (a.status === 'live' ? 0 : 1) - (b.status === 'live' ? 0 : 1);
+  });
+  var bySlug = {};
+  pages.forEach(function(pg){ if (pg.slug && !bySlug[pg.slug]) bySlug[pg.slug] = pg; });
+  // 精选：按 KNOWLEDGE_FEATURED 的顺序取，未登记的 slug 静默跳过
+  var featured = (window.KNOWLEDGE_FEATURED || []).map(function(s){ return bySlug[s]; }).filter(Boolean);
+  var liveCount = pages.filter(function(pg){ return pg.status === 'live'; }).length;
   var activeCat = 'all';
   var activeStage = 'all';
-  var activeTopic = 'all';
-  var currentPage = 1;
-  var pageSize = 12;
+  var siteComposing = false, siteCompositionQuery = '';
 
   function catName(id) {
     for (var i = 0; i < categories.length; i++) if (categories[i].id === id) return pick(categories[i].name);
@@ -240,7 +284,8 @@
     }
     chipsBox.querySelectorAll('button').forEach(function(b){
       var id = b.dataset.cat;
-      b.textContent = id === 'all' ? t('allChip') : catName(id);
+      // 第一个 chip 代表首页（精选），仍用 data-cat="all"
+      b.textContent = id === 'all' ? t('featuredChip') : catName(id);
       b.classList.toggle('on', activeCat === id);
       b.setAttribute('aria-pressed', String(activeCat === id));
     });
@@ -258,7 +303,7 @@
         b.dataset.stage = d.id;
         b.addEventListener('click', function(){
           if (activeStage === d.id) return;
-          activeStage = d.id; activeTopic = 'all'; currentPage = 1;
+          activeStage = d.id;
           saveView(true); renderStageChips(); renderCards();
         });
         stageBox.appendChild(b);
@@ -272,128 +317,182 @@
     });
   }
 
-  function topicKey(tag) {
-    if (tag == null) return '';
-    if (typeof tag === 'string') return tag;
-    return tag.en || tag.zh || '';
+  /* ---------- 全站搜索（?s=，与 LeetCode 的 ?q= 互不干扰） ---------- */
+  var normalized = function(value) { return value.normalize('NFKC').toLowerCase(); };
+  function textsOf(v) {
+    if (v == null) return [];
+    if (typeof v === 'string') return [v];
+    return [v.zh, v.en].filter(function(x){ return typeof x === 'string'; });
   }
-  function topicName(key) {
-    for (var i = 0; i < pages.length; i++) {
-      var tags = pages[i].tags || [];
-      for (var j = 0; j < tags.length; j++) if (topicKey(tags[j]) === key) return pick(tags[j]);
+  var searchIndex = pages.map(function(pg){
+    var parts = textsOf(pg.title).concat(textsOf(pg.desc));
+    (pg.tags || []).forEach(function(tag){ parts = parts.concat(textsOf(tag)); });
+    return normalized(parts.join(' '));
+  });
+  function siteQuery() { return (siteComposing ? siteCompositionQuery : siteInput.value).trim(); }
+  function matchesQuery(list, query) {
+    var tokens = normalized(query).split(/\s+/).filter(Boolean);
+    return list.filter(function(pg){
+      var hay = searchIndex[pages.indexOf(pg)];
+      return tokens.every(function(token){ return hay.indexOf(token) !== -1; });
+    });
+  }
+
+  function viewHref(cat) {
+    var url = new URL(location.href);
+    url.searchParams.set('category', cat);
+    ['s', 'topic', 'page'].forEach(function(k){ url.searchParams.delete(k); });
+    if (cat === 'leetcode' && searchInput.value) url.searchParams.set('q', searchInput.value);
+    else url.searchParams.delete('q');
+    return url.href;
+  }
+  // 指向某个分类视图的链接：普通点击就地切换并把焦点交给对应 chip；修饰键点击照常开新页
+  function inlineCategoryLink(el, cat) {
+    el.href = viewHref(cat);
+    el.addEventListener('click', function(event) {
+      if (event.button || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      event.preventDefault(); selectCategory(cat);
+      chipsBox.querySelector('[data-cat="' + cat + '"]').focus();
+    });
+  }
+
+  function makeCard(pg, opts) {
+    var live = pg.status === 'live';
+    var el = document.createElement(live ? 'a' : 'div');
+    el.className = 'card' + (live ? '' : ' planned');
+    if (live) {
+      if (pg.category === 'leetcode') inlineCategoryLink(el, 'leetcode');
+      else el.href = pg.path;
     }
-    return key;
+    if (!live) el.appendChild(node('span', 'badge planned', t('badgePlanned')));
+    var badges = node('div', 'card-badges');
+    if (opts.cat && pg.category) badges.appendChild(node('span', 'cat-badge', catName(pg.category)));
+    if (opts.stage) badges.appendChild(node('span', 'stage-badge', stageName(pageStage(pg))));
+    if (badges.children.length) el.appendChild(badges);
+    el.appendChild(node('h2', '', pick(pg.title)));
+    el.appendChild(node('p', '', pick(pg.desc)));
+    return el;
   }
-  function basePageList() {
-    var list = pages.slice().sort(function(a, b){
-      return (a.status === 'live' ? 0 : 1) - (b.status === 'live' ? 0 : 1);
-    });
-    if (activeCat !== 'all') list = list.filter(function(pg){ return pg.category === activeCat; });
-    if (activeStage !== 'all') list = list.filter(function(pg){ return pageStage(pg) === activeStage; });
-    return list;
+  function groupHead(name, n) {
+    var head = node('div', 'group-head');
+    head.appendChild(node('h2', '', name));
+    head.appendChild(node('span', 'group-count', fill(t(n === 1 && STR[lang].groupCountOne ? 'groupCountOne' : 'groupCount'), { n: n })));
+    return head;
   }
-  function renderTopicChips(list) {
-    if (activeCat === 'leetcode') { topicBox.hidden = true; return; }
-    var seen = {};
-    (list || basePageList()).forEach(function(pg){
-      (pg.tags || []).forEach(function(tag){ var key = topicKey(tag); if (key) seen[key] = true; });
+  function emptyNote(key) { return node('p', 'empty', t(key)); }
+
+  function renderHome(frag) {
+    var head = node('div', 'section-head');
+    head.appendChild(node('h2', 'section-title', t('featuredTitle')));
+    head.appendChild(node('p', 'section-sub', fill(t('featuredSub'), { n: featured.length, total: liveCount })));
+    frag.appendChild(head);
+    featured.forEach(function(pg){ frag.appendChild(makeCard(pg, { cat: true, stage: true })); });
+    var box = node('section', 'entrances');
+    box.setAttribute('aria-labelledby', 'entrancesTitle');
+    var title = node('h2', 'section-title', t('entrancesTitle')); title.id = 'entrancesTitle';
+    var list = node('div', 'entrance-grid');
+    [
+      { key: 'Atlas', href: 'atlas/' },
+      { key: 'Leetcode', cat: 'leetcode' },
+      { key: 'Demos', cat: 'demos' },
+      { key: 'Editions', href: 'variants/claude-code/' }
+    ].forEach(function(d){
+      var a = node('a', 'card entrance');
+      if (d.cat) inlineCategoryLink(a, d.cat); else a.href = d.href;
+      a.appendChild(node('h3', '', t('entrance' + d.key + 'Title')));
+      a.appendChild(node('p', '', t('entrance' + d.key + 'Desc')));
+      list.appendChild(a);
     });
-    var defs = Object.keys(seen).sort(function(a, b){ return topicName(a).localeCompare(topicName(b), lang === 'zh' ? 'zh' : 'en'); });
-    if (activeTopic !== 'all' && !seen[activeTopic]) activeTopic = 'all';
-    topicBox.hidden = defs.length === 0;
-    topicBox.innerHTML = '';
-    var all = document.createElement('button');
-    all.type = 'button'; all.className = 'chip'; all.dataset.topic = 'all'; all.textContent = t('topicAll');
-    all.addEventListener('click', function(){ selectTopic('all'); });
-    topicBox.appendChild(all);
-    defs.forEach(function(key){
-      var b = document.createElement('button'); b.type = 'button'; b.className = 'chip'; b.dataset.topic = key;
-      b.textContent = topicName(key); b.addEventListener('click', function(){ selectTopic(key); }); topicBox.appendChild(b);
+    box.appendChild(title); box.appendChild(list);
+    frag.appendChild(box);
+  }
+
+  // 分类视图：按 KNOWLEDGE_SUBTOPICS[分类] 的顺序分组；未登记子主题的条目归入末尾「其他」
+  function renderCategory(frag, list) {
+    var defs = subtopics[activeCat] || [];
+    var groups = defs.map(function(s){ return { id: s.id, name: pick(s.name), items: [] }; });
+    var other = { id: null, name: t('otherSubtopic'), items: [] };
+    var catPages = pages.filter(function(pg){ return pg.category === activeCat; });
+    var used = {};
+    catPages.forEach(function(pg){
+      var hit = groups.filter(function(g){ return g.id === pg.subtopic; })[0];
+      used[hit ? hit.id : '\u0000other'] = true;
     });
-    topicBox.querySelectorAll('button').forEach(function(b){
-      b.classList.toggle('on', b.dataset.topic === activeTopic);
-      b.setAttribute('aria-pressed', String(b.dataset.topic === activeTopic));
+    // 「只有一组就不显示组标题」按整个分类判断，学段筛选不改变标题的有无
+    var showHeads = Object.keys(used).length > 1;
+    list.forEach(function(pg){
+      var hit = groups.filter(function(g){ return g.id === pg.subtopic; })[0];
+      (hit || other).items.push(pg);
     });
+    groups.push(other);
+    groups.forEach(function(g){
+      if (!g.items.length) return;
+      if (showHeads) frag.appendChild(groupHead(g.name, g.items.length));
+      g.items.forEach(function(pg){ frag.appendChild(makeCard(pg, { cat: false, stage: activeStage === 'all' })); });
+    });
+  }
+
+  // 只选学段：按分类注册表顺序分组
+  function renderStage(frag, list) {
+    var known = {};
+    categories.forEach(function(c){
+      known[c.id] = true;
+      var items = list.filter(function(pg){ return pg.category === c.id; });
+      if (!items.length) return;
+      frag.appendChild(groupHead(pick(c.name), items.length));
+      items.forEach(function(pg){ frag.appendChild(makeCard(pg, { cat: false, stage: false })); });
+    });
+    var rest = list.filter(function(pg){ return !known[pg.category]; });
+    if (rest.length) {
+      frag.appendChild(groupHead(t('otherSubtopic'), rest.length));
+      rest.forEach(function(pg){ frag.appendChild(makeCard(pg, { cat: true, stage: false })); });
+    }
   }
 
   function renderCards() {
     grid.innerHTML = '';
     var isLeetCode = activeCat === 'leetcode';
     stageBox.hidden = isLeetCode;
-    topicBox.hidden = isLeetCode;
-    pagination.hidden = true;
-    pageStatus.textContent = '';
+    siteBox.hidden = isLeetCode;
     searchSection.hidden = !isLeetCode;
-    grid.setAttribute('aria-live', isLeetCode ? 'off' : 'polite');
     if (isLeetCode) { renderLessons(); return; }
-    if (!pages.length) {
-      var p0 = document.createElement('p');
-      p0.className = 'empty'; p0.textContent = t('emptyText');
-      grid.appendChild(p0);
-      return;
-    }
-    var base = basePageList();
-    renderTopicChips(base);
-    var list = activeTopic === 'all' ? base : base.filter(function(pg){
-      return (pg.tags || []).some(function(tag){ return topicKey(tag) === activeTopic; });
+    var query = siteQuery();
+    siteClear.hidden = !siteInput.value;
+    siteCount.textContent = '';
+    if (!pages.length) { grid.appendChild(emptyNote('emptyText')); return; }
+    var scoped = pages.filter(function(pg){
+      return (activeCat === 'all' || pg.category === activeCat) &&
+             (activeStage === 'all' || pageStage(pg) === activeStage);
     });
-    if (!list.length) {
-      var p1 = document.createElement('p');
-      p1.className = 'empty'; p1.textContent = t('emptyFilter');
-      grid.appendChild(p1);
-      return;
+    var frag = document.createDocumentFragment();
+    if (query) {
+      // 搜索时替换精选/分组内容；分类与学段仍作为范围（AND）
+      var hits = matchesQuery(scoped, query);
+      siteCount.textContent = fill(t(hits.length === 1 && STR[lang].siteSearchCountOne ? 'siteSearchCountOne' : 'siteSearchCount'), { n: hits.length });
+      if (!hits.length) frag.appendChild(emptyNote('siteSearchEmpty'));
+      hits.forEach(function(pg){
+        frag.appendChild(makeCard(pg, { cat: activeCat === 'all', stage: activeStage === 'all' }));
+      });
+    } else if (activeCat === 'all' && activeStage === 'all') {
+      renderHome(frag);
+    } else if (!scoped.length) {
+      frag.appendChild(emptyNote('emptyFilter'));
+    } else if (activeCat !== 'all') {
+      renderCategory(frag, scoped);
+    } else {
+      renderStage(frag, scoped);
     }
-    var totalPages = Math.max(1, Math.ceil(list.length / pageSize));
-    currentPage = Math.min(Math.max(1, currentPage), totalPages);
-    var start = (currentPage - 1) * pageSize;
-    var visible = list.slice(start, start + pageSize);
-    visible.forEach(function(pg){
-      var live = pg.status === 'live';
-      var el = document.createElement(live ? 'a' : 'div');
-      el.className = 'card' + (live ? '' : ' planned');
-      if (live) el.href = pg.path;
-      if (live && pg.category === 'leetcode') {
-        var categoryUrl = new URL(location.href);
-        categoryUrl.searchParams.set('category', 'leetcode');
-        if (searchInput.value) categoryUrl.searchParams.set('q', searchInput.value);
-        else categoryUrl.searchParams.delete('q');
-        el.href = categoryUrl.href;
-        el.addEventListener('click', function(event) {
-          if (event.button || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
-          event.preventDefault(); selectCategory('leetcode');
-          chipsBox.querySelector('[data-cat="leetcode"]').focus();
-        });
-      }
-      var badge = '<span class="badge ' + (live ? 'live' : 'planned') + '">' +
-                  (live ? t('badgeLive') : t('badgePlanned')) + '</span>';
-      var cat = pg.category ? '<span class="cat-badge"></span>' : '';
-      var stg = '<span class="cat-badge stage-badge"></span>';
-      var tags = (pg.tags || []).map(function(tag){
-        return '<span class="tag"></span>';
-      }).join('');
-      el.innerHTML = badge + cat + stg + '<h2></h2><p></p><div class="tags">' + tags + '</div>' +
-                     (live ? '<div class="go">' + t('goOpen') + '</div>' : '');
-      var catEl = el.querySelector('.cat-badge');
-      if (catEl) catEl.textContent = catName(pg.category);
-      var stgEl = el.querySelector('.stage-badge');
-      if (stgEl) stgEl.textContent = stageName(pageStage(pg));
-      el.querySelector('h2').textContent = pick(pg.title);
-      el.querySelector('p').textContent = pick(pg.desc);
-      el.querySelectorAll('.tag').forEach(function(tagEl, i){ tagEl.textContent = pick(pg.tags[i]); });
-      grid.appendChild(el);
-    });
-    if (totalPages > 1) {
-      pagination.hidden = false;
-      prevPage.textContent = t('prevPage');
-      nextPage.textContent = t('nextPage');
-      prevPage.disabled = currentPage <= 1;
-      nextPage.disabled = currentPage >= totalPages;
-      prevPage.setAttribute('aria-label', t('prevPage'));
-      nextPage.setAttribute('aria-label', t('nextPage'));
-      pageStatus.textContent = t('pageStatus').replace('{page}', currentPage).replace('{pages}', totalPages)
-        .replace('{shown}', visible.length).replace('{total}', list.length);
-    }
+    grid.appendChild(frag);
   }
+
+  // 横向滚动的 chip 行里，让选中的 chip 留在可见范围内（只动行内滚动，不动页面）
+  function revealPressed(box) {
+    var b = box.querySelector('.chip.on');
+    if (!b || box.scrollWidth <= box.clientWidth) return;
+    var br = b.getBoundingClientRect(), xr = box.getBoundingClientRect();
+    if (br.left < xr.left || br.right > xr.right) box.scrollLeft += br.left - xr.left - 16;
+  }
+  function renderFooter() { footer.textContent = fill(t('footerText'), { total: liveCount }); }
 
 
   // This adapter reads the campaign-owned registry without owning its release lifecycle.
@@ -402,20 +501,21 @@
   var resultCount = document.getElementById('resultCount');
   var sectionError = document.getElementById('sectionError');
   var lessons = [], lessonCards = [], loadState = 'idle', loadToken = 0, composing = false, compositionQuery = '';
-  var normalized = function(value) { return value.normalize('NFKC').toLowerCase(); };
   function saveView(push) {
     var url = new URL(location.href);
     if (activeCat === 'all') url.searchParams.delete('category');
     else url.searchParams.set('category', activeCat);
     if (activeStage === 'all') url.searchParams.delete('stage');
     else url.searchParams.set('stage', activeStage);
-    if (activeTopic === 'all') url.searchParams.delete('topic');
-    else url.searchParams.set('topic', activeTopic);
-    if (currentPage <= 1) url.searchParams.delete('page');
-    else url.searchParams.set('page', String(currentPage));
+    // 旧版的主题筛选与分页参数已废弃：读取时忽略，下一次写入时去掉
+    url.searchParams.delete('topic');
+    url.searchParams.delete('page');
     var query = composing ? compositionQuery : searchInput.value;
     if (activeCat === 'leetcode' && query) url.searchParams.set('q', query);
     else url.searchParams.delete('q');
+    var site = siteComposing ? siteCompositionQuery : siteInput.value;
+    if (activeCat !== 'leetcode' && site) url.searchParams.set('s', site);
+    else url.searchParams.delete('s');
     try { history[push ? 'pushState' : 'replaceState'](history.state, '', url); } catch (_) {}
   }
   function readView() {
@@ -423,21 +523,13 @@
     activeCat = categories.some(function(c) { return c.id === category; }) ? category : 'all';
     var stage = url.searchParams.get('stage');
     activeStage = stages.some(function(s) { return s.id === stage; }) ? stage : 'all';
-    var topic = url.searchParams.get('topic');
-    activeTopic = topic || 'all';
-    var parsedPage = Number.parseInt(url.searchParams.get('page') || '1', 10);
-    currentPage = Number.isFinite(parsedPage) && parsedPage > 0 ? parsedPage : 1;
     if (activeCat === 'leetcode') searchInput.value = url.searchParams.get('q') || '';
+    else siteInput.value = url.searchParams.get('s') || '';
   }
   function selectCategory(id) {
     if (activeCat === id) return;
-    activeCat = id; activeTopic = 'all'; currentPage = 1;
+    activeCat = id;
     saveView(true); renderChips(); renderCards();
-  }
-  function selectTopic(key) {
-    if (activeTopic === key) return;
-    activeTopic = key; currentPage = 1;
-    saveView(true); renderCards();
   }
   function validateLessons(data) {
     var ids = new Set();
@@ -538,16 +630,14 @@
   document.getElementById('retryLessons').addEventListener('click',function() {
     searchInput.focus(); loadLessons(); renderCards();
   });
-  prevPage.addEventListener('click', function(){
-    if (currentPage <= 1) return;
-    currentPage -= 1; saveView(true); renderCards();
-    prevPage.focus();
+  // 全站搜索：输入法组字期间不过滤、不改 URL（与 LeetCode 搜索同一规则）
+  siteInput.addEventListener('compositionstart',function() { siteCompositionQuery = siteInput.value; siteComposing = true; });
+  siteInput.addEventListener('compositionend',function() { siteComposing = false; saveView(false); renderCards(); });
+  siteInput.addEventListener('input',function(event) { if (!siteComposing && !event.isComposing) { saveView(false); renderCards(); } });
+  siteClear.addEventListener('click',function() {
+    siteInput.value = ''; siteComposing = false; saveView(false); renderCards(); siteInput.focus();
   });
-  nextPage.addEventListener('click', function(){
-    currentPage += 1; saveView(true); renderCards();
-    nextPage.focus();
-  });
-  window.addEventListener('popstate',function() { composing = false; readView(); renderChips(); renderCards(); });
+  window.addEventListener('popstate',function() { composing = false; siteComposing = false; readView(); renderChips(); renderStageChips(); renderCards(); revealPressed(chipsBox); revealPressed(stageBox); });
   readView();
 
   function applyLang() {
@@ -555,6 +645,7 @@
     document.title = t('docTitle');
     document.querySelectorAll('[data-i18n]').forEach(function(el){ el.textContent = t(el.getAttribute('data-i18n')); });
     document.querySelectorAll('[data-i18n-html]').forEach(function(el){ el.innerHTML = t(el.getAttribute('data-i18n-html')); });
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(function(el){ el.placeholder = t(el.getAttribute('data-i18n-placeholder')); });
     document.querySelectorAll('#langToggle button').forEach(function(b){
       b.classList.toggle('on', b.dataset.lang === lang);
       b.setAttribute('aria-pressed', String(b.dataset.lang === lang));
@@ -562,6 +653,8 @@
     renderChips();
     renderStageChips();
     renderCards();
+    renderFooter();
+    revealPressed(chipsBox); revealPressed(stageBox);
   }
   function setLang(l) {
     if (l !== 'zh' && l !== 'en') return;

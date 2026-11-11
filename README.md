@@ -11,7 +11,7 @@
 - 分类 id 见 `pages.config.js` 的 `KNOWLEDGE_CATEGORIES`，子主题 id 见 `KNOWLEDGE_SUBTOPICS`；目录结构与 URL 一一对应。
 - 页面 slug 用完整英文单词、小写连字符，不缩写，也不重复上层的分类名或子主题名。
 - 入口页例外：`/atlas/`（知识地图）、`/investment/atlas/`（投资图谱）、`/leetcode/<id>/`、`/demos/<slug>/`（演示：不讲知识点、只展示效果的独立页面，如 `/demos/fable-flight/`）。
-- 每个分类目录的 `index.html` 只是跳转到首页对应筛选（`/?category=<id>`）。
+- 每个分类目录的 `index.html` 只是跳转到首页对应的分类视图（`/?category=<id>`），该视图按子主题分组列出全部页面。
 
 | 分类 | 子主题 |
 | --- | --- |
@@ -30,7 +30,7 @@
 
 跨主题的入口与站点文件留在根目录：
 
-- `index.html` — 索引首页，卡片由配置自动渲染（无构建、无后端，纯静态）
+- `index.html` — 索引首页，由配置自动渲染（无构建、无后端，纯静态）：默认显示 `KNOWLEDGE_FEATURED` 里的精选页和「更多入口」；`?category=` 按子主题分组，`?stage=` 按分类分组，`?s=` 全站搜索。约定见 [specs/index-pagination.md](specs/index-pagination.md)
 - `pages.config.js` — **索引配置**：新增知识页 = 在此数组加一条（填 `category`、`subtopic`、`path: "<分类>/<子主题>/<slug>/"`）+ 把页面放进同名目录
 - `atlas/` — Bilingual mathematics and physics map with sourced relations, editorial routes and integrated teaching experiments. See [current development/handoff index](atlas/README.md) for verified scope, iteration evidence and next work. Lesson links in the graph are atlas-relative: `../<category>/<subtopic>/<slug>/#stepN`.
 - `leetcode/` — Interactive algorithm lessons, with a dedicated collection and Python solutions. Register new problems in `leetcode/problems.config.js`; the first ten Hard problems by ascending ID (4, 10, 23, 25, 30, 32, 37, 41, 42, 44) and the original [2916](https://visual.integ.life/leetcode/2916/) are available.

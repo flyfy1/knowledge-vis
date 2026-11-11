@@ -55,6 +55,6 @@ lead 工具已归档到 `~/Documents/archive/knowledge-vis/claude-editions-tools
 
 - 201 页都只有作者 Agent 自查加 lead 的自动检查，lead 只抽看了少数页面的截图。教学质量需要人工对照原版评审。
 - 链到 Claude 版的入口有三个：
-  - 首页简介下的「Claude Code 平行版本」链接；
+  - 首页「更多入口」一栏里的「Claude Code 平行版本」卡片（2026-11-11 首页改版前在简介下方）；
   - 汇总页 `variants/claude-code/`；
   - 每个原版页头下方的「对照 Claude Code 版 →」。
