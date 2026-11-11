@@ -343,6 +343,14 @@ written. Explain direction or boundary exclusions where they affect the result.
 Adjacent prose or a small table is sufficient; reuse existing evidence when it
 already makes this bridge clear.
 
+## Browser-test server address
+
+Lesson browser tests take the site root from `PREVIEW_ROOT` (no trailing slash,
+default `http://127.0.0.1:18770`) and append `/leetcode/<id>/`. They start no
+server. Do not add per-lesson variable names or hard-coded ports; older lessons
+that still use `PREVIEW_URL`, `BASE_URL` or `LESSON_*` are converted when next
+edited. Record of the 2026-11-11 unification: [review 2026-11-11](leetcode-review-2026-11-11.md).
+
 ## Non-mutating metadata preflight
 
 `lesson-entry.json` complexity is exactly one nonempty string covering time and
