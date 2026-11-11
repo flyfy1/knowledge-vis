@@ -1,0 +1,157 @@
+{
+ "schema": 2,
+ "slug": "pid-control",
+ "nodes": [
+  {
+   "id": "pid-controller",
+   "group": "systems",
+   "stage": "senior",
+   "order": 50,
+   "title": {
+    "zh": "PID 控制 · 现在、过去与趋势",
+    "en": "PID control · present, past and trend"
+   },
+   "description": {
+    "zh": "PID 控制器按误差 e = 目标 − 输出来决定推多少：P 按现在差多少来推，I 把过去残留的误差累加起来消掉稳态误差，D 看误差变化的快慢提前刹车；三项调得不好，系统就会太慢、冲过头或被噪声带着抖。",
+    "en": "A PID controller decides how hard to push from the error e = target − output: P pushes in proportion to the present error, I accumulates past leftover error to remove the steady-state offset, and D watches how fast the error changes to brake early; tuned badly, the loop is sluggish, overshoots or jitters with noise."
+   },
+   "formula": "u = Kp·e + Ki∫e dt + Kd·de/dt",
+   "source": "../engineering/control/pid-control/#step1",
+   "lessons": [
+    {
+     "slug": "pid-control",
+     "step": 1,
+     "category": "engineering",
+     "stage": "senior",
+     "primary": true
+    }
+   ],
+   "aliases": [
+    {
+     "zh": "PID 控制器",
+     "en": "PID controller"
+    },
+    {
+     "zh": "比例 积分 微分",
+     "en": "proportional, integral, derivative"
+    },
+    {
+     "zh": "PID 调参",
+     "en": "PID tuning"
+    },
+    {
+     "zh": "稳态误差",
+     "en": "steady-state error"
+    },
+    {
+     "zh": "积分饱和",
+     "en": "integral windup"
+    },
+    {
+     "zh": "超调",
+     "en": "overshoot"
+    },
+    {
+     "zh": "恒温器和定速巡航怎么控制",
+     "en": "how do thermostats and cruise control work"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "feedback",
+   "to": "pid-controller",
+   "type": "foundation",
+   "label": {
+    "zh": "PID 是最常用的反馈律",
+    "en": "PID is the most common feedback law"
+   },
+   "reason": {
+    "zh": "反馈控制测量输出、与目标比较、再调整输入；PID 规定了比较之后怎么调：把误差的现在值、累积量和变化率各乘一个增益再相加。",
+    "en": "Feedback measures the output, compares it with the target and adjusts the input; PID specifies how to adjust: multiply the error’s present value, accumulation and rate of change by three gains and add them up."
+   },
+   "source": "../engineering/control/pid-control/#step0"
+  },
+  {
+   "from": "integral",
+   "to": "pid-controller",
+   "type": "application",
+   "label": {
+    "zh": "I 项是误差的累加",
+    "en": "The I term accumulates the error"
+   },
+   "reason": {
+    "zh": "积分项 Ki∫e dt 把过去每一刻的误差加起来，只要还剩一点残差它就继续增长，直到稳态误差被吃掉；累加过头就是积分饱和。",
+    "en": "The integral term Ki∫e dt adds up the error from every past moment and keeps growing while any residue remains, until the steady-state error is gone; accumulating too much is integral windup."
+   },
+   "source": "../engineering/control/pid-control/#step2"
+  },
+  {
+   "from": "derivative",
+   "to": "pid-controller",
+   "type": "application",
+   "label": {
+    "zh": "D 项看误差的变化率",
+    "en": "The D term reads the error’s rate of change"
+   },
+   "reason": {
+    "zh": "微分项 Kd·de/dt 在输出快速冲向目标时给出反向动作、压低超调；但测量噪声也是一种“变化”，Kd 太大会把毛刺放大成抖动。",
+    "en": "The derivative term Kd·de/dt pushes back while the output races toward the target, reducing overshoot; but measurement noise is change too, so too large a Kd amplifies spikes into jitter."
+   },
+   "source": "../engineering/control/pid-control/#step3"
+  },
+  {
+   "from": "pid-controller",
+   "to": "step-response",
+   "type": "connection",
+   "label": {
+    "zh": "用阶跃响应给控制器打分",
+    "en": "Step responses grade a controller"
+   },
+   "reason": {
+    "zh": "调 PID 时盯着的超调、调节时间和稳态误差，都是阶跃响应上的读数；闭环近似二阶系统时，它们由阻尼比 ζ 和固有频率 ωn 决定。",
+    "en": "The overshoot, settling time and steady-state error watched while tuning PID are all read off a step response; when the closed loop behaves roughly like a second-order system, they are set by the damping ratio ζ and the natural frequency ωn."
+   },
+   "source": "../engineering/control/pid-control/#step4"
+  }
+ ],
+ "questions": [
+  {
+   "id": "q-pid-control-0",
+   "question": {
+    "zh": "PID 里的 P、I、D 分别管什么？",
+    "en": "What do the P, I and D in PID each do?"
+   },
+   "chain": [
+    "pid-controller",
+    "feedback"
+   ],
+   "target": {
+    "node": "pid-controller",
+    "href": "../engineering/control/pid-control/#step5"
+   },
+   "prompts": [
+    {
+     "node": "pid-controller",
+     "ask": {
+      "zh": "只用 P 为什么常留下一点稳态误差？I 和 D 各补上了什么？",
+      "en": "Why does P alone usually leave a small steady-state error? What do I and D each add?"
+     }
+    },
+    {
+     "node": "feedback",
+     "ask": {
+      "zh": "控制器每一步先问的问题是什么？误差从哪里来？",
+      "en": "What is the first question a controller asks at each step? Where does the error come from?"
+     }
+    }
+   ],
+   "reveal": {
+    "zh": "P 看现在差多少，差得越多推得越狠；I 记过去欠了多少，把残留误差慢慢吃掉；D 看误差变化得多快，提前刹车压住超调。三者的代价分别是冲过头、积分饱和和放大噪声。",
+    "en": "P looks at how far off it is now and pushes harder the farther it is; I keeps an account of past error and slowly eats the leftover; D watches how fast the error is changing and brakes early to limit overshoot. Their costs are overshoot, integral windup and amplified noise."
+   },
+   "source": "../engineering/control/pid-control/#step5"
+  }
+ ]
+}
