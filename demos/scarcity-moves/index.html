@@ -1,0 +1,974 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>稀缺会搬家 · 经济学的基本道理与 AI 之后</title>
+<meta name="description" content="十个经济学的基本道理，每个配一个可以动手的小模型；再用它们推演 AI 普及之后，工作、收入和稀缺会怎样变化。">
+<style>
+  :root { --bg:#0c0e13; --card:#141821; --card2:#1a1f2b; --line:#272d3b; --ink:#ebe8e0; --mute:#9aa1b0; --dim:#6b7283;
+    --gold:#e9b949; --cyan:#63c7e6; --red:#ef6f61; --green:#7ad6a0; --violet:#a78bfa;
+    --serif:"Songti SC","STSong","Noto Serif CJK SC","Source Han Serif SC","SimSun",Georgia,serif;
+    --sans:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC",system-ui,sans-serif; }
+  * { box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:17px/1.85 var(--sans); -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+  a { color:var(--cyan); }
+  #bar { position:fixed; top:0; left:0; height:3px; width:0; background:linear-gradient(90deg,var(--gold),var(--cyan)); z-index:20; }
+  .wrap { max-width:760px; margin:0 auto; padding:0 20px; }
+  .wide { max-width:980px; margin:0 auto; padding:0 20px; }
+
+  .hero { position:relative; min-height:100vh; display:flex; align-items:center; border-bottom:1px solid var(--line); overflow:hidden; }
+  #heroCv { position:absolute; inset:0; width:100%; height:100%; opacity:.75; }
+  .hero::after { content:""; position:absolute; inset:0; background:radial-gradient(ellipse at 30% 50%, rgba(12,14,19,.88) 0%, rgba(12,14,19,.55) 55%, rgba(12,14,19,.15) 100%); pointer-events:none; }
+  .hero .wrap { position:relative; z-index:2; padding-top:72px; padding-bottom:72px; width:100%; }
+  .kicker { font:12px/1 ui-monospace,Menlo,monospace; letter-spacing:.28em; color:var(--gold); text-transform:uppercase; }
+  h1 { font:400 clamp(52px,11vw,124px)/1.08 var(--serif); letter-spacing:.06em; margin:.28em 0 .22em; }
+  .sub { font:400 clamp(18px,2.6vw,26px)/1.6 var(--serif); color:var(--ink); margin:0 0 1.6em; }
+  .lead { color:#cfd2da; max-width:36em; }
+  .note { font-size:14px; color:var(--mute); border-left:2px solid var(--line); padding-left:14px; margin-top:2em; max-width:36em; line-height:1.75; }
+  #heroStat { font:12px/1.6 ui-monospace,Menlo,monospace; color:var(--dim); letter-spacing:.08em; margin-top:2.4em; }
+  #heroStat b { color:var(--gold); font-weight:400; }
+
+  .toc { padding:56px 0 8px; }
+  .toc h3 { font:12px/1 ui-monospace,Menlo,monospace; letter-spacing:.28em; color:var(--dim); margin:0 0 18px; font-weight:400; }
+  .toc ol { list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:4px 22px; }
+  .toc a { display:flex; gap:12px; padding:7px 0; text-decoration:none; color:var(--ink); border-bottom:1px solid var(--line); font-size:15px; }
+  .toc a:hover { color:var(--gold); }
+  .toc a span { font:12px/2.1 ui-monospace,Menlo,monospace; color:var(--dim); }
+
+  .part { margin:110px 0 0; padding:44px 0 0; border-top:1px solid var(--line); }
+  .part .kicker { color:var(--cyan); }
+  .part h2 { font:400 clamp(30px,5vw,48px)/1.3 var(--serif); margin:.5em 0 .4em; letter-spacing:.04em; }
+  .part p { color:var(--mute); max-width:34em; }
+
+  .ch { padding-top:92px; }
+  .num { font:400 15px/1 ui-monospace,Menlo,monospace; color:var(--gold); letter-spacing:.2em; }
+  .ch h3 { font:400 clamp(26px,4.2vw,38px)/1.35 var(--serif); margin:.45em 0 .5em; letter-spacing:.03em; }
+  .law { font:400 clamp(19px,2.5vw,23px)/1.7 var(--serif); color:var(--ink); border-left:3px solid var(--gold); padding:4px 0 4px 18px; margin:0 0 1.5em; }
+  .ch p { margin:0 0 1.15em; color:#d5d7de; }
+  .ch p strong, .ch li strong { color:var(--ink); font-weight:600; }
+  .ch ul, .ch ol.plain { padding-left:1.3em; margin:0 0 1.2em; color:#d5d7de; }
+  .ch li { margin:.4em 0; }
+  .take { color:var(--mute) !important; font-size:15.5px; }
+
+  figure.lab { margin:34px auto 34px; background:var(--card); border:1px solid var(--line); border-radius:16px; padding:22px 22px 18px; }
+  .lab h4 { margin:0 0 4px; font:600 15px/1.5 var(--sans); color:var(--ink); }
+  .lab .how { margin:0 0 14px; font-size:14px; color:var(--mute); line-height:1.65; }
+  .cv { width:100%; height:300px; display:block; border-radius:10px; background:#0f1219; touch-action:pan-y; }
+  .cv.short { height:150px; margin-top:10px; }
+  .cv.tall { height:360px; }
+  .ctl { display:flex; flex-wrap:wrap; gap:10px 22px; align-items:center; margin:14px 0 4px; font-size:14px; color:var(--mute); }
+  .ctl label { display:flex; align-items:center; gap:10px; flex:1 1 240px; min-width:0; }
+  .ctl label.chk { flex:0 0 auto; cursor:pointer; color:var(--ink); }
+  .ctl label > span:first-child { flex:0 1 auto; }
+  .ctl output { flex:0 0 auto; min-width:3.6em; text-align:right; color:var(--ink); font-variant-numeric:tabular-nums; }
+  input[type=range] { flex:1 1 auto; min-width:60px; accent-color:var(--gold); height:28px; }
+  input[type=checkbox] { accent-color:var(--gold); width:17px; height:17px; }
+  button { font:inherit; font-size:14px; color:var(--ink); background:var(--card2); border:1px solid var(--line); border-radius:999px; padding:7px 16px; cursor:pointer; }
+  button:hover, button:focus-visible { border-color:var(--gold); outline:none; }
+  button.on { background:rgba(233,185,73,.16); border-color:var(--gold); color:var(--gold); }
+  .read { display:grid; grid-template-columns:repeat(auto-fit,minmax(130px,1fr)); gap:10px; margin-top:14px; }
+  .read div { background:var(--card2); border-radius:10px; padding:10px 12px; font-size:12.5px; color:var(--mute); line-height:1.5; }
+  .read b { display:block; font:600 20px/1.3 var(--sans); color:var(--ink); font-variant-numeric:tabular-nums; }
+  .read b.g { color:var(--gold); } .read b.r { color:var(--red); } .read b.c { color:var(--cyan); } .read b.n { color:var(--green); }
+  .say { margin:14px 0 0; font-size:14.5px; color:var(--ink); line-height:1.7; min-height:3.4em; }
+  .say em { font-style:normal; color:var(--gold); }
+  .legend { display:flex; flex-wrap:wrap; gap:6px 18px; font-size:13px; color:var(--mute); margin-top:10px; }
+  .legend i { display:inline-block; width:10px; height:10px; border-radius:2px; margin-right:6px; vertical-align:-1px; }
+
+  /* trade */
+  .people { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:14px; }
+  .person { background:var(--card2); border-radius:12px; padding:12px 14px; }
+  .person h5 { margin:0 0 6px; font:600 14px/1.5 var(--sans); }
+  .person .ctl { margin:2px 0; }
+  .plans { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:14px; margin-top:14px; }
+  .plan { border:1px solid var(--line); border-radius:12px; padding:12px 14px; }
+  .plan h5 { margin:0 0 8px; font:600 14px/1.5 var(--sans); color:var(--mute); }
+  .plan.win { border-color:rgba(233,185,73,.55); } .plan.win h5 { color:var(--gold); }
+  .row { display:grid; grid-template-columns:3.2em 1fr; gap:8px; align-items:center; font-size:12.5px; color:var(--mute); margin:5px 0; }
+  .hbar { display:flex; height:16px; border-radius:4px; overflow:hidden; background:#0f1219; }
+  .hbar i { display:block; height:100%; transition:width .25s; }
+  .t1 { background:var(--cyan); } .t2 { background:var(--gold); }
+  .tot { margin-top:10px; padding-top:8px; border-top:1px dashed var(--line); }
+  .tot .row { grid-template-columns:3.2em 1fr 3.4em; } .tot .row b { color:var(--ink); text-align:right; font-variant-numeric:tabular-nums; }
+
+  /* cases */
+  .cases { display:grid; grid-template-columns:repeat(auto-fit,minmax(215px,1fr)); gap:14px; margin:30px 0; }
+  .case { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:16px 18px; font-size:15px; line-height:1.75; color:#d5d7de; }
+  .case b { display:block; color:var(--gold); font-weight:600; margin-bottom:4px; }
+
+  .sum { margin:70px 0 0; padding:26px 26px; border:1px solid var(--line); border-radius:16px; background:linear-gradient(180deg,rgba(233,185,73,.07),transparent); font:400 clamp(17px,2.2vw,20px)/2 var(--serif); }
+  .sum em { font-style:normal; color:var(--gold); }
+
+  /* shares */
+  .split { display:flex; height:30px; border-radius:8px; overflow:hidden; margin-top:14px; font-size:12px; line-height:30px; color:#0c0e13; font-weight:600; }
+  .split i { display:block; height:100%; transition:width .25s; overflow:hidden; white-space:nowrap; text-indent:8px; font-style:normal; }
+
+  /* scarcity map */
+  .map { margin-top:14px; display:grid; gap:6px; }
+  .mrow { display:grid; grid-template-columns:1fr 46%; gap:12px; align-items:center; font-size:14px; }
+  .mrow span { text-align:right; color:#d5d7de; line-height:1.4; }
+  .track { position:relative; height:16px; }
+  .track::before { content:""; position:absolute; left:50%; top:-3px; bottom:-3px; width:1px; background:var(--line); }
+  .track i { position:absolute; top:0; height:100%; border-radius:3px; transition:all .2s; }
+  .maphead { display:grid; grid-template-columns:1fr 46%; gap:12px; font-size:12px; color:var(--dim); }
+  .maphead div { display:flex; justify-content:space-between; }
+
+  /* forecast */
+  .era { margin:34px 0 0; }
+  .era h4 { font:400 21px/1.5 var(--serif); margin:0 0 10px; color:var(--cyan); letter-spacing:.04em; }
+  .fc { list-style:none; margin:0; padding:0; }
+  .fc li { display:grid; grid-template-columns:auto 1fr; gap:14px; padding:12px 0; border-bottom:1px solid var(--line); color:#d5d7de; }
+  .tag { align-self:start; margin-top:5px; font:600 11px/1 var(--sans); padding:5px 8px; border-radius:6px; white-space:nowrap; }
+  .tag.h { background:rgba(122,214,160,.16); color:var(--green); } .tag.m { background:rgba(233,185,73,.16); color:var(--gold); } .tag.l { background:rgba(239,111,97,.16); color:var(--red); }
+
+  .scen { display:grid; grid-template-columns:minmax(220px,340px) 1fr; gap:22px; align-items:start; }
+  .pad { position:relative; aspect-ratio:1; background:#0f1219; border-radius:12px; border:1px solid var(--line); touch-action:none; cursor:crosshair; user-select:none;
+    background-image:linear-gradient(var(--line),var(--line)),linear-gradient(var(--line),var(--line)); background-size:100% 1px,1px 100%; background-position:center; background-repeat:no-repeat; }
+  .pad small { position:absolute; font-size:11.5px; color:var(--dim); line-height:1.3; }
+  .pad .ax { color:var(--mute); }
+  #dot { position:absolute; width:22px; height:22px; margin:-11px 0 0 -11px; border-radius:50%; background:var(--gold); box-shadow:0 0 0 6px rgba(233,185,73,.2),0 0 24px rgba(233,185,73,.6); cursor:grab; }
+  #dot:focus-visible { outline:2px solid var(--ink); outline-offset:6px; }
+  #mine { position:absolute; width:12px; height:12px; margin:-6px 0 0 -6px; border:2px solid var(--cyan); border-radius:50%; pointer-events:none; }
+  .scen h5 { font:400 24px/1.4 var(--serif); margin:0 0 6px; color:var(--gold); }
+  .scen p { font-size:15px; margin:0 0 12px; color:#d5d7de; line-height:1.75; min-height:8.5em; }
+  .meter { display:grid; grid-template-columns:5em 1fr; gap:10px; align-items:center; font-size:13px; color:var(--mute); margin:6px 0; }
+  .meter div { height:8px; background:#0f1219; border-radius:4px; overflow:hidden; }
+  .meter i { display:block; height:100%; border-radius:4px; transition:width .2s; }
+
+  footer { margin:110px 0 0; padding:40px 0 70px; border-top:1px solid var(--line); color:var(--dim); font-size:13.5px; line-height:1.8; }
+  footer a { color:var(--mute); }
+  @media (max-width:640px) {
+    body { font-size:16px; } .wrap,.wide { padding:0 16px; } figure.lab { padding:16px 14px 14px; border-radius:14px; margin-left:-4px; margin-right:-4px; }
+    .cv { height:250px; } .cv.tall { height:320px; } .scen { grid-template-columns:1fr; } .pad { max-width:340px; }
+    .mrow, .maphead { grid-template-columns:1fr 40%; gap:8px; } .mrow { font-size:13px; } .ch { padding-top:72px; } .scen p { min-height:0; }
+  }
+</style>
+</head>
+<body>
+<div id="bar"></div>
+
+<header class="hero">
+  <canvas id="heroCv" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <div class="kicker">Demos · 一篇可以动手的长文</div>
+    <h1>稀缺会搬家</h1>
+    <p class="sub">十个经济学的基本道理，<br>和一份关于 AI 普及之后的预言</p>
+    <p class="lead">经济学研究的不是钱。它研究一件更朴素的事：好东西不够所有人随便拿的时候，人们怎么选、怎么换、怎么一起把日子过下去。下面是我认为最要紧的十个道理，每个都配了一个可以拖动的小模型。读完再看 AI，问题会缩成一个：稀缺搬到哪里去了。</p>
+    <p class="note">这一页由一个 AI 写成。谈 AI 的那一半里，我既是分析的人，也是被分析的对象，请带着这一点读。模型都是为了看清一个机制而做的简化，不是对现实的测量。</p>
+    <div id="heroStat">背景里，每一次相遇都是一笔自愿的交换 · 已成交 <b id="hsN">0</b> 笔 · 新增价值 <b id="hsV">0</b></div>
+  </div>
+</header>
+
+<nav class="wrap toc" aria-label="目录">
+  <h3>目录</h3>
+  <ol>
+    <li><a href="#c1"><span>01</span>稀缺与机会成本</a></li>
+    <li><a href="#c2"><span>02</span>边际</a></li>
+    <li><a href="#c3"><span>03</span>交换与比较优势</a></li>
+    <li><a href="#c4"><span>04</span>价格是一条信息</a></li>
+    <li><a href="#c5"><span>05</span>激励</a></li>
+    <li><a href="#c6"><span>06</span>市场会失灵</a></li>
+    <li><a href="#c7"><span>07</span>增长来自思想</a></li>
+    <li><a href="#c8"><span>08</span>你的支出是别人的收入</a></li>
+    <li><a href="#c9"><span>09</span>收入流向稀缺的一方</a></li>
+    <li><a href="#c10"><span>10</span>制度与信任</a></li>
+    <li><a href="#c11"><span>11</span>AI：思考的价格崩塌</a></li>
+    <li><a href="#c12"><span>12</span>工作与工资</a></li>
+    <li><a href="#c13"><span>13</span>什么变便宜，什么变贵</a></li>
+    <li><a href="#c14"><span>14</span>整体预言</a></li>
+    <li><a href="#c15"><span>15</span>给一个大学生</a></li>
+  </ol>
+</nav>
+
+<main>
+<section class="wrap part">
+  <div class="kicker">Part I</div>
+  <h2>十个道理</h2>
+  <p>它们不是十条互不相干的知识点。每一条都在回答同一个问题的一个侧面：东西有限，人很多，怎么办。</p>
+</section>
+
+<!-- 01 -->
+<article class="ch" id="c1">
+  <div class="wrap">
+    <div class="num">01</div>
+    <h3>稀缺与机会成本</h3>
+    <p class="law">一件事的真实成本，是你为它放弃的最好的另一件事。</p>
+    <p>你一天只有二十四小时。一个国家只有这么多土地、工人和电。资源有限而愿望没完，所以必须选。选了 A，成本并不是花掉的那笔钱，而是这些钱和时间本来可以换到的 B。</p>
+    <p>上大学的成本不只是学费，还有四年里本可以挣到的工资。“免费”的东西同样有成本：免费的演唱会要排五个小时队，这五个小时就是票价。经济学家说<strong>天下没有免费的午餐</strong>，意思不是没人请你吃饭，而是总有人、在某个地方、放弃了别的东西。</p>
+  </div>
+  <div class="wide"><figure class="lab">
+    <h4>一天十六个清醒的小时，学习还是打工</h4>
+    <p class="how">拖动滑块分配时间。曲线是你能做到的最好结果；曲线外面够不着，曲线里面是浪费。</p>
+    <canvas class="cv" id="ppfCv" role="img" aria-label="学习与打工的生产可能性曲线"></canvas>
+    <div class="ctl"><label><span>学习</span><input type="range" id="ppfS" min="0" max="16" step="0.5" value="6"><output id="ppfO"></output></label></div>
+    <div class="read">
+      <div><b class="c" id="ppfK"></b>学到的东西（分）</div>
+      <div><b class="g" id="ppfM"></b>挣到的钱（元）</div>
+      <div><b id="ppfdK"></b>再多学 1 小时，多得</div>
+      <div><b class="r" id="ppfdM"></b>为此放弃的收入</div>
+    </div>
+    <p class="say" id="ppfSay"></p>
+  </figure></div>
+</article>
+
+<!-- 02 -->
+<article class="ch" id="c2">
+  <div class="wrap">
+    <div class="num">02</div>
+    <h3>边际</h3>
+    <p class="law">好的决定只问“再多一点值不值”。不看平均，也不看已经花掉的。</p>
+    <p>水比钻石有用得多，却便宜得多。因为价格取决于<strong>最后那一杯</strong>水对你值多少：水太多了，最后一杯几乎不值钱。钻石太少，最后一颗仍然很珍贵。</p>
+    <p>回到上面的模型。你该学到第几个小时？答案不是“越多越好”，而是学到“再学一小时得到的”刚好抵不上“为它放弃的”为止。注意上面两个数字怎么变：学得越多，下一小时的收获越小，放弃的越多。几乎所有东西都这样，这叫收益递减。</p>
+    <p>边际思维的另一面是<strong>沉没成本</strong>。电影票买了，电影很难看，要不要看完？票钱无论如何回不来，它不该进入决定。唯一该问的是：接下来的九十分钟，用来干什么最好。读了两年发现不喜欢的专业、投了很多钱还在亏的项目，是同一道题。</p>
+  </div>
+</article>
+
+<!-- 03 -->
+<article class="ch" id="c3">
+  <div class="wrap">
+    <div class="num">03</div>
+    <h3>交换与比较优势</h3>
+    <p class="law">自愿的交换让双方都变好。分工的依据不是谁更强，是谁放弃得更少。</p>
+    <p>你花十五元买一碗面。这说明面对你值十五元以上，对老板值十五元以下，不然交易不会发生。钱和面换了手，世界上没有多出任何东西，两个人却都比之前好。<strong>财富不是一块固定的饼</strong>，交换本身就在创造价值。</p>
+    <p>更反直觉的是比较优势。就算一个人样样都比另一个人强，两人分工仍然比各干各的产出多。原因在第一条里：强者的时间也有限，他每做一件事，都得放弃另一件。</p>
+  </div>
+  <div class="wide"><figure class="lab">
+    <h4>小组作业：写题还是做 PPT</h4>
+    <p class="how">两个人各有 8 小时。调他们的效率，包括让阿强样样都更快。金框里的方案保持题目总数不变，看 PPT 能多出多少。</p>
+    <div class="people">
+      <div class="person"><h5>阿强</h5>
+        <div class="ctl"><label><span>每小时写题</span><input type="range" id="tA1" min="1" max="10" value="8"><output id="tA1o"></output></label></div>
+        <div class="ctl"><label><span>每小时做 PPT</span><input type="range" id="tA2" min="1" max="10" value="6"><output id="tA2o"></output></label></div></div>
+      <div class="person"><h5>小周</h5>
+        <div class="ctl"><label><span>每小时写题</span><input type="range" id="tB1" min="1" max="10" value="2"><output id="tB1o"></output></label></div>
+        <div class="ctl"><label><span>每小时做 PPT</span><input type="range" id="tB2" min="1" max="10" value="4"><output id="tB2o"></output></label></div></div>
+    </div>
+    <div class="plans">
+      <div class="plan" id="planA"></div>
+      <div class="plan win" id="planB"></div>
+    </div>
+    <div class="legend"><span><i class="t1"></i>写题的时间</span><span><i class="t2"></i>做 PPT 的时间</span></div>
+    <p class="say" id="tSay"></p>
+  </figure></div>
+  <div class="wrap">
+    <p class="take">请记住这个模型，谈 AI 时它会再出现。“AI 样样比你强”并不自动等于“你没事可做”。但它也没有保证你分到的那份够花，这一点后面细说。</p>
+  </div>
+</article>
+
+<!-- 04 -->
+<article class="ch" id="c4">
+  <div class="wrap">
+    <div class="num">04</div>
+    <h3>价格是一条信息</h3>
+    <p class="law">价格告诉所有人：这个东西现在有多缺。它让互不相识的人协调行动。</p>
+    <p>没有任何人知道全国今天需要多少根铅笔、多少吨咖啡。也不需要有人知道。一场霜冻毁了巴西的咖啡园，你不必听说过这场霜冻，只会看到咖啡贵了，于是少喝一点，或者改喝茶；别处的农民看到价格，多种一点。千万人分散的知识被压缩成一个数字，每个人只凭这个数字就做出了对整体合适的反应。</p>
+    <p>所以压住价格不等于消灭稀缺。限价之后东西还是那么少，只是换了一种分配方式：排队、托关系、黑市。</p>
+  </div>
+  <div class="wide"><figure class="lab">
+    <h4>八十个买家，八十个卖家，一个会自己找位置的价格</h4>
+    <p class="how">蓝线：按出价从高到低排的买家。金线：按成本从低到高排的卖家。价格高了卖不掉就降，低了不够卖就涨。试试两种冲击，再打开限价。</p>
+    <canvas class="cv" id="mkCv" role="img" aria-label="供给与需求曲线和价格调整"></canvas>
+    <div class="ctl">
+      <button id="mkD">突然流行（想买的人变多）</button>
+      <button id="mkS">原料涨价（成本上升）</button>
+      <label class="chk"><input type="checkbox" id="mkCapOn">限价</label>
+      <label><span>最高价</span><input type="range" id="mkCap" min="15" max="100" value="40"><output id="mkCapO"></output></label>
+    </div>
+    <div class="read">
+      <div><b class="g" id="mkP"></b>当前价格</div>
+      <div><b id="mkQ"></b>成交量</div>
+      <div><b class="r" id="mkX"></b>想买却买不到</div>
+    </div>
+  </figure></div>
+</article>
+
+<!-- 05 -->
+<article class="ch" id="c5">
+  <div class="wrap">
+    <div class="num">05</div>
+    <h3>激励</h3>
+    <p class="law">规则奖励什么，你就会得到更多的什么，包括你没想要的那部分。</p>
+    <p>人会对激励做出反应。这句话听上去像废话，但大多数失败的政策、制度和管理办法，都败在忘了它。</p>
+  </div>
+  <div class="wide"><div class="cases">
+    <div class="case"><b>眼镜蛇</b>一个流传很广的故事：殖民时期的德里悬赏捕蛇，按蛇头付钱。于是有人开始养蛇。悬赏取消，养的蛇被放掉，蛇比原来更多。</div>
+    <div class="case"><b>指标</b>按代码行数发奖金，代码就变长。按论文篇数评职称，论文就变多变薄。一个数字一旦成为目标，它就不再是好的度量。</div>
+    <div class="case"><b>然后呢</b>租金管制让现在的租客省了钱，这看得见。新房子没人盖、旧房子没人修，这要过很多年才看得见。好的分析总会多问一句“然后呢”。</div>
+  </div></div>
+  <div class="wrap">
+    <p>想改变结果，先看清每个人在什么激励下行动。责怪人性通常没用，改规则才有用。这也是读新闻的一个好习惯：一件事看上去不合理时，先别假设当事人蠢，去找那个让这种做法对他合理的激励。</p>
+  </div>
+</article>
+
+<!-- 06 -->
+<article class="ch" id="c6">
+  <div class="wrap">
+    <div class="num">06</div>
+    <h3>市场会失灵</h3>
+    <p class="law">当一个人的选择把成本甩给别人时，价格就会说谎。这时需要产权、规则或协商。</p>
+    <p>价格机制有一个前提：做决定的人承担全部成本，也拿到全部收益。前提不成立的地方，市场会系统性地出错。</p>
+    <ul>
+      <li><strong>外部性</strong>：工厂排污，成本由下游的人承担，所以污染总是太多。</li>
+      <li><strong>公共品</strong>：灯塔、基础科研，谁都能用，所以没人愿意出钱，总是太少。</li>
+      <li><strong>信息不对称</strong>：卖二手车的人比你清楚车况。你只肯出平均价，好车的主人不愿卖，市场上只剩烂车。</li>
+      <li><strong>垄断</strong>：只有一个卖家时，他会故意少卖，把价格抬高。</li>
+    </ul>
+  </div>
+  <div class="wide"><figure class="lab">
+    <h4>一片公共的湖</h4>
+    <p class="how">鱼会繁殖，船会捕捞。加船试试。对每条船的主人来说，只要还有鱼，多出一条船就多一份收入。</p>
+    <canvas class="cv" id="cmCv" role="img" aria-label="湖中的鱼群与渔船"></canvas>
+    <div class="ctl">
+      <label><span>渔船</span><input type="range" id="cmB" min="0" max="30" value="8"><output id="cmBo"></output></label>
+      <label class="chk"><input type="checkbox" id="cmQ">设配额（最多 12 条）</label>
+      <button id="cmR">重新放鱼</button>
+    </div>
+    <canvas class="cv short" id="cmCv2" role="img" aria-label="渔船数量与长期总收获的关系"></canvas>
+    <div class="read">
+      <div><b class="c" id="cmN"></b>湖里的鱼</div>
+      <div><b id="cmE"></b>每条船每年收获</div>
+      <div><b class="g" id="cmT"></b>全湖每年总收获</div>
+    </div>
+  </figure></div>
+  <div class="wrap">
+    <p>下面那条曲线是关键：船从 12 条往上加，全湖的长期总收获反而下降，到 25 条时鱼被捕光。没有哪个渔民做错了什么，每个人都在做对自己合理的事。解法有几种：把湖分给人（产权），发捕捞配额（管制），按捕捞量收费（让价格重新说真话），或者渔民自己坐下来立规矩。</p>
+    <p>不过政府同样会失灵。官员也对激励做出反应，也缺信息。所以真正的问题从来不是“市场还是政府”，而是在这件具体的事上，哪种安排错得少一点。</p>
+  </div>
+</article>
+
+<!-- 07 -->
+<article class="ch" id="c7">
+  <div class="wrap">
+    <div class="num">07</div>
+    <h3>增长来自思想</h3>
+    <p class="law">长期看，生活水平几乎只取决于生产率。生产率来自思想，而思想可以被所有人同时使用。</p>
+    <p>两百多年前，世界上绝大多数人过着今天看来赤贫的生活。改变这件事的主要力量不是重新分配，是增长：每年多一点点，连续复利两百年。</p>
+  </div>
+  <div class="wide"><figure class="lab">
+    <h4>七十年，大约是一个人的一生</h4>
+    <p class="how">拖动年增长率。细线是 1% 和 2% 作参照。</p>
+    <canvas class="cv" id="grCv" role="img" aria-label="不同增长率下七十年的复利曲线"></canvas>
+    <div class="ctl"><label><span>年增长率</span><input type="range" id="grG" min="0" max="8" step="0.1" value="4"><output id="grGo"></output></label></div>
+    <div class="read">
+      <div><b class="g" id="grX"></b>七十年后是现在的</div>
+      <div><b id="grD"></b>翻一番需要</div>
+    </div>
+  </figure></div>
+  <div class="wrap">
+    <p>1% 和 4% 听上去差不多。七十年后，前者让生活水平翻一番，后者是十五倍多。穷国和富国的差别，大多是这样拉开的。</p>
+    <p>增长从哪里来？多干几个小时、多盖几座工厂，都会撞上第二条的收益递减。不会递减的是思想。一个苹果你吃了我就没法吃。一个配方、一条定理、一段代码，一亿人同时用也用不坏。所以人越多、交流越顺畅，新想法越多，增长就没有停下来。</p>
+    <p class="take">这一条决定了为什么 AI 在经济学上如此重要：它直接作用在“产生和使用思想”这个增长的发动机上。</p>
+  </div>
+</article>
+
+<!-- 08 -->
+<article class="ch" id="c8">
+  <div class="wrap">
+    <div class="num">08</div>
+    <h3>你的支出是别人的收入</h3>
+    <p class="law">对一个人成立的事，对所有人一起未必成立。</p>
+    <p>钱本身不是财富。它是一本账，记着“社会还欠我多少东西”。一张纸值钱，只因为大家都相信别人会收。</p>
+    <p>把所有人放在一起看，会出现单个人身上看不到的现象。一个人省钱，存款变多。所有人同时省钱，商店卖不出东西，工厂裁员，大家的收入下降，最后谁也没多存下来。</p>
+  </div>
+  <div class="wide"><figure class="lab">
+    <h4>一个封闭的小镇</h4>
+    <p class="how">每个光点是一笔付款。镇上每年有一笔固定的投资（20），其余的钱在居民之间流转。把储蓄意愿调高，看总收入和总储蓄各自怎么变。</p>
+    <canvas class="cv" id="flCv" role="img" aria-label="居民之间的收入循环"></canvas>
+    <div class="ctl"><label><span>每挣 100 元想存下</span><input type="range" id="flS" min="10" max="60" value="20"><output id="flSo"></output></label></div>
+    <div class="read">
+      <div><b class="g" id="flY"></b>全镇总收入</div>
+      <div><b id="flC"></b>总消费</div>
+      <div><b class="c" id="flSv"></b>实际存下的总额</div>
+    </div>
+    <p class="say" id="flSay"></p>
+  </figure></div>
+  <div class="wrap">
+    <p>这叫节俭悖论，也是衰退会自我强化的原因：人人因为害怕而少花，结果正是他们害怕的事。反方向也有对应的现象：钱印得比东西多得快，每张钱能换的东西就变少，这是通胀。</p>
+    <p class="take">宏观经济学的大部分内容，都在处理这种“每个人都理性，加起来却不理性”的局面。请留意它，AI 那一部分会遇到同样的结构：每家公司用 AI 替换员工都合理，但所有公司一起做，谁来买东西？</p>
+  </div>
+</article>
+
+<!-- 09 -->
+<article class="ch" id="c9">
+  <div class="wrap">
+    <div class="num">09</div>
+    <h3>收入流向稀缺的一方</h3>
+    <p class="law">谁稀缺、谁难以替代，谁就有议价权。分配是对稀缺的定价。</p>
+    <p>一场演唱会，歌手拿走大头，检票员拿得少。不是因为检票不辛苦，是因为检票员容易换人，歌手不容易。工资、利润、地租，本质上都是这样定出来的。土地不会变多，所以城市越繁荣，地租越高。一项技能会的人越来越多，它的回报就下降。</p>
+    <p>还有一股力量让财富自己往一处集中。钱多的人输得起，敢冒险，等得起，回报按比例增长而不是按人头增长。下面的模型里，所有人一样聪明，起点一样，每一次交易都是公平的抛硬币。</p>
+  </div>
+  <div class="wide"><figure class="lab">
+    <h4>一百六十个人，起点完全相同</h4>
+    <p class="how">每次随机两人交易，赌注是较穷一方财富的 15%，输赢各半。柱子按财富从低到高排列。看上半分钟，再打开再分配：交出来的钱平均分给所有人。</p>
+    <canvas class="cv" id="ysCv" role="img" aria-label="财富分布柱状图"></canvas>
+    <div class="ctl">
+      <label><span>每做一笔交易，交出财富的</span><input type="range" id="ysT" min="0" max="1.6" step="0.05" value="0"><output id="ysTo"></output></label>
+      <button id="ysR">重新开始</button>
+    </div>
+    <div class="read">
+      <div><b class="g" id="ysG"></b>基尼系数（0 平均，1 独占）</div>
+      <div><b class="r" id="ysTop"></b>最富 10% 的人拥有</div>
+      <div><b class="c" id="ysBot"></b>较穷的一半人拥有</div>
+    </div>
+  </figure></div>
+  <div class="wrap">
+    <p>这是个玩具模型。真实世界里还有才能、继承、垄断和政策。它只说明一件事：不平等不需要任何人作恶就会出现，而一点点持续的再分配就能把它稳定在某个水平上。再分配多少合适是价值判断，经济学能告诉你的是每种选择的代价。</p>
+  </div>
+</article>
+
+<!-- 10 -->
+<article class="ch" id="c10">
+  <div class="wrap">
+    <div class="num">10</div>
+    <h3>制度与信任</h3>
+    <p class="law">市场不是天然存在的。它长在产权、契约和信任上面。</p>
+    <p>你敢把钱转给一个从没见过的网店，是因为背后有平台担保、有评价系统、有法院。这些东西降低了<strong>交易成本</strong>，也就是为了达成一笔交易而花在寻找、谈判、防骗上的全部代价。交易成本够低，第三条里的分工才能铺开到几十亿陌生人之间。</p>
+    <p>同样的人、同样的资源，放在产权清晰、契约能执行、政策可预期的环境里，和放在相反的环境里，几十年后就是富国和穷国的差别。</p>
+    <p>制度说到底是一套关于“谁能拿走什么”的规则。每当技术改变了什么东西值钱，围绕规则的争夺就会重新开始。</p>
+    <div class="sum">合起来是一句话：资源<em>稀缺</em>，所以要选；选的时候看<em>边际</em>；<em>交换和分工</em>把饼做大；<em>价格</em>协调千万个陌生人；<em>激励</em>决定人怎么做；市场会<em>失灵</em>；长期的富裕靠<em>思想</em>；个体加总会出<em>合成谬误</em>；收入流向<em>稀缺</em>的一方；而这一切都立在<em>制度</em>上。</div>
+  </div>
+</article>
+
+<section class="wrap part">
+  <div class="kicker">Part II</div>
+  <h2>AI 之后</h2>
+  <p>下面没有新的道理，只是把上面十条用到一件新的事情上。越往后，我的把握越小，我会标出来。</p>
+</section>
+
+<!-- 11 -->
+<article class="ch" id="c11">
+  <div class="wrap">
+    <div class="num">11</div>
+    <h3>AI：思考的价格崩塌</h3>
+    <p class="law">每一次技术革命都是某样东西突然变便宜。这一次变便宜的是一部分思考。</p>
+    <p>蒸汽和电让“力气”变便宜，印刷术让“复制文字”变便宜，互联网让“传递信息”变便宜。AI 让一批认知工作变便宜：写、算、翻译、总结、编程、识别、规划。</p>
+    <p>一样东西变得极便宜之后，会发生三件事，每一件前面都讲过。</p>
+    <ol class="plain">
+      <li><strong>用得多得多。</strong>照明的价格在两百年里降了几千倍，人类没有把省下的灯油钱存起来，而是点亮了整个夜晚。便宜的思考会被用在从前根本不值得动脑子的地方。</li>
+      <li><strong>互补的东西变贵，被替代的东西变便宜。</strong>汽车普及后，马不值钱了，石油和郊区的土地值钱了。</li>
+      <li><strong>瓶颈搬家。</strong>一条链子的强度取决于最弱的一环。把其他环加固一万倍，链子并不会强一万倍。</li>
+    </ol>
+  </div>
+  <div class="wide"><figure class="lab">
+    <h4>瓶颈在哪里，上限就在哪里</h4>
+    <p class="how">设想经济是一长串缺一不可的任务。AI 只能加速其中一部分。拖动两个滑块，看整体能快多少。</p>
+    <canvas class="cv" id="bnCv" role="img" aria-label="AI 加速倍数与整体产出倍数"></canvas>
+    <div class="ctl">
+      <label><span>AI 能做的任务占比</span><input type="range" id="bnF" min="0" max="95" value="60"><output id="bnFo"></output></label>
+      <label><span>这些任务被加速</span><input type="range" id="bnM" min="0" max="6" step="0.1" value="2"><output id="bnMo"></output></label>
+    </div>
+    <div class="split"><i id="bnA" style="background:var(--cyan)"></i><i id="bnB" style="background:var(--gold)"></i></div>
+    <div class="legend"><span><i style="background:var(--cyan)"></i>花在 AI 能做的任务上的时间</span><span><i style="background:var(--gold)"></i>花在 AI 做不了的任务上的时间</span></div>
+    <div class="read">
+      <div><b class="g" id="bnY"></b>整体产出是原来的</div>
+      <div><b id="bnL"></b>理论上限（AI 无限快）</div>
+      <div><b class="r" id="bnS"></b>时间被瓶颈任务占去</div>
+    </div>
+  </figure></div>
+  <div class="wrap">
+    <p>把加速倍数拉到一百万倍，只要 AI 做不了的任务还占四成，整体也只快两倍半。同时那四成任务吃掉了几乎全部的时间。经济学里这叫<strong>鲍莫尔成本病</strong>：进步最慢的部门决定整体的速度，也吸走越来越大份额的开支和就业。过去一百年，它表现为工业品越来越便宜，教育、医疗、住房越来越贵。</p>
+    <p>所以我不认为会出现“一夜之间增长十倍”。思考可以变得极快，但盖房子、做临床试验、走审批、建电站、让一个人改变主意，这些快不起来的环节会接管舞台。</p>
+    <p class="take">这个模型假设任务清单固定而且缺一不可。现实中会出现新产品和新做法，绕开一部分瓶颈；机器人也会把一部分体力任务搬进“AI 能做”的那一侧。所以真实的结果比这个上限乐观，但曲线的形状是对的：先陡，后平，然后等下一个瓶颈被打开。</p>
+  </div>
+</article>
+
+<!-- 12 -->
+<article class="ch" id="c12">
+  <div class="wrap">
+    <div class="num">12</div>
+    <h3>工作与工资</h3>
+    <p class="law">AI 替代的是任务，不是职业。你的工资取决于你做的事里还有多少是稀缺的。</p>
+    <p>一个职业是一捆任务。会计的工作里有录入、核对、判断、和客户沟通、签字担责。AI 先拿走能在屏幕上完成、对错容易检验的那些。剩下的任务如果和 AI 互补，这个人更值钱；剩下的不多，这个职业就收缩。</p>
+    <p>ATM 出现后的二三十年里，美国银行柜员的人数没有减少：开一家网点变便宜了，网点变多，柜员转去做销售和服务。后来手机银行普及，柜员还是减少了。两段历史都是真的，区别在于新技术拿走的是这捆任务的一部分，还是几乎全部。</p>
+    <p>第三条的比较优势还成立吗？成立，但要看清它承诺了什么。它只保证“人和 AI 分工，总产出比不分工高”，没有保证人分到的那份够生活。二十世纪初美国有两千多万匹马。内燃机出现后，马仍然有它的比较优势，只是它能挣到的已经抵不上草料钱，于是马的数量一路掉下去。</p>
+    <p>人和马有三点不同：人有选票，人可以拥有资本，人是需求的来源。这三点都不在下面的模型里，它们留给第十四章。</p>
+  </div>
+  <div class="wide"><figure class="lab">
+    <h4>算力越来越多时，人的工资怎么走</h4>
+    <p class="how">经济需要两类任务：A 类能在屏幕上完成，B 类需要到场、动手、担责。人两类都能做。AI 擅长 A，做 B 比较笨拙。算力和人按比较优势分工。把算力从左拖到右。</p>
+    <canvas class="cv tall" id="wgCv" role="img" aria-label="算力总量与产出、工资、劳动份额"></canvas>
+    <div class="ctl">
+      <label><span>算力总量</span><input type="range" id="wgK" min="-2" max="4" step="0.05" value="0.3"><output id="wgKo"></output></label>
+      <label><span>AI 做 B 类的效率</span><input type="range" id="wgR" min="-2" max="0" step="0.05" value="-1"><output id="wgRo"></output></label>
+      <label class="chk"><input type="checkbox" id="wgB">土地和能源有限</label>
+    </div>
+    <div class="legend"><span><i style="background:var(--cyan)"></i>总产出</span><span><i style="background:var(--gold)"></i>人的工资</span><span><i style="background:var(--violet)"></i>劳动拿到的份额</span><span>纵轴：今天 = 1，每格 10 倍</span></div>
+    <div class="read">
+      <div><b class="c" id="wgY"></b>总产出（今天 = 1）</div>
+      <div><b class="g" id="wgW"></b>工资（今天 = 1）</div>
+      <div><b id="wgS" style="color:var(--violet)"></b>劳动份额</div>
+    </div>
+    <p class="say" id="wgSay"></p>
+  </figure></div>
+  <div class="wrap">
+    <p>工资走出三段。<strong>①帮手</strong>：算力很少，AI 只是多了个人手，人两类任务都还在做，工资不变。<strong>②互补</strong>：AI 包下 A 类，人全部转去做 B 类，人成了瓶颈，工资随算力上涨。<strong>③替代</strong>：算力多到连笨拙的 B 类也值得让 AI 来做，工资封顶，产出继续涨，劳动拿到的份额一路下降。</p>
+    <p>勾上“土地和能源有限”再看第三段：工资不只是封顶，会回落，可以落到今天以下。产出在增长，增长的部分归了算力和土地的所有者。</p>
+    <p class="take">这个模型给出一个值得记住的结论：<strong>你的工资上限，等于雇一份能替代你的算力要花的钱。</strong>AI 在你做的事上越笨拙，这个上限越高。把第二个滑块往右拖，看那条金线的平台怎样降下来。</p>
+  </div>
+</article>
+
+<!-- 13 -->
+<article class="ch" id="c13">
+  <div class="wrap">
+    <div class="num">13</div>
+    <h3>什么变便宜，什么变贵</h3>
+    <p class="law">认知变便宜之后，收入会流向仍然稀缺的东西。问题只是：那是什么。</p>
+    <p>这是第九条的直接应用。下面是我的判断。方向我比较有把握，长度只是示意。</p>
+  </div>
+  <div class="wide"><figure class="lab">
+    <h4>相对价格的方向</h4>
+    <div class="ctl"><label><span>AI 普及程度</span><input type="range" id="scA" min="0" max="100" value="55"><output id="scAo"></output></label></div>
+    <div class="maphead"><span></span><div><span>← 变便宜</span><span>变贵 →</span></div></div>
+    <div class="map" id="scMap"></div>
+  </figure></div>
+  <div class="wrap">
+    <ul>
+      <li><strong>内容无限，注意力有限。</strong>写一篇文章的成本接近零之后，稀缺的是有人愿意读，并且相信它。这是第六条里二手车问题的放大版：假的和真的一样容易生产时，可验证的来源、声誉和品牌会更值钱。</li>
+      <li><strong>能数字化的服务像软件一样降价，不能数字化的相对变贵。</strong>护理、装修、当面的教育、医疗里动手的部分，会雇用越来越大比例的人。</li>
+      <li><strong>物理世界重新重要。</strong>电、芯片、矿、土地。思考再便宜，也要跑在真实的机器上。</li>
+      <li><strong>责任不能外包。</strong>AI 可以起草合同、给出诊断建议，出了事仍然要有一个人负责。“签字的人”是一种稀缺。</li>
+      <li><strong>地位是零和的。</strong>物质再丰裕，好学区、黄金地段、最顶尖的那几个名额也不会变多。人们会把省下来的钱继续投进这些竞争里。</li>
+    </ul>
+  </div>
+</article>
+
+<!-- 14 -->
+<article class="ch" id="c14">
+  <div class="wrap">
+    <div class="num">14</div>
+    <h3>整体预言</h3>
+    <p class="law">技术决定饼能做多大。饼怎么分，由所有权和制度决定。</p>
+    <p>每条前面标了我的把握：<span class="tag h">较有把握</span> <span class="tag m">一半一半</span> <span class="tag l">只是猜测</span>。时间是从现在算起的大致区间，我对先后顺序比对具体年份有信心。</p>
+
+    <div class="era"><h4>头五年：工具</h4><ul class="fc">
+      <li><span class="tag h">较有把握</span><span>生产率的提升先出现在个人和小团队身上，很晚才出现在统计数据里。电力用了几十年才改变工厂的布局，组织总比技术慢。</span></li>
+      <li><span class="tag h">较有把握</span><span>入门级的脑力岗位最先受压。实习生、初级程序员、初级分析师做的事，正是 AI 最擅长的。经验更值钱了，获得经验的门槛也更高了。</span></li>
+      <li><span class="tag h">较有把握</span><span>数字内容和软件的价格继续下跌。三五个人的公司能做出过去几百人才能做的产品。</span></li>
+      <li><span class="tag m">一半一半</span><span>总体失业率不会急升。变化主要表现为招聘变少、转行变多、同一职业内部的收入拉开。</span></li>
+    </ul></div>
+
+    <div class="era"><h4>五到十五年：同事</h4><ul class="fc">
+      <li><span class="tag m">一半一半</span><span>AI 从工具变成能独立完成几天、几周任务的代理。公司的形态改变：管理的对象从人，变成人加上一群代理。上一章模型里的第二段在很多行业走完，进入第三段。</span></li>
+      <li><span class="tag m">一半一半</span><span>劳动收入占国民收入的份额明显下降，算力、数据、能源和平台的所有者拿到的份额上升。</span></li>
+      <li><span class="tag h">较有把握</span><span>分配成为政治的中心议题。这正是第八条的结构：每家公司都用 AI 省人工，合起来却没人有钱买东西。税会从劳动移向资本和消费，全民分红、公共持股、缩短工时都会被认真尝试，各国走出很不一样的路。</span></li>
+      <li><span class="tag m">一半一半</span><span>科学和工程明显加速，落到医院和工地上则慢得多，受试验、监管和建设周期的限制。这是第十一章的瓶颈。</span></li>
+      <li><span class="tag m">一半一半</span><span>教育、医疗、护理这些人对人的行业吸收大量就业，其中相当一部分由公共资金支付。</span></li>
+    </ul></div>
+
+    <div class="era"><h4>十五年以后：未定</h4><ul class="fc">
+      <li><span class="tag m">一半一半</span><span>基本的物质匮乏对大多数人明显缓解。吃、穿、信息、基础教育、常规诊断会非常便宜。</span></li>
+      <li><span class="tag h">较有把握</span><span>稀缺不会消失。它会集中到土地、能源、注意力、地位，以及“由谁来决定”这些问题上。</span></li>
+      <li><span class="tag l">只是猜测</span><span>如果机器人把体力任务也解决了，B 类任务也守不住。“用劳动换收入”这个延续了几千年的安排需要重写，收入要更多地来自所有权或公民身份。</span></li>
+      <li><span class="tag l">只是猜测</span><span>最后是普遍富裕还是高度集中，我不知道。我能确定的只是：这不由技术决定。</span></li>
+    </ul></div>
+  </div>
+
+  <div class="wide"><figure class="lab">
+    <h4>两个最大的不确定：多快，归谁</h4>
+    <p class="how">拖动金色的点，或者聚焦后用方向键。蓝圈是我自己的估计。</p>
+    <div class="scen">
+      <div class="pad" id="pad">
+        <small class="ax" style="left:50%;top:6px;transform:translateX(-50%)">收益广泛分享</small>
+        <small class="ax" style="left:50%;bottom:6px;transform:translateX(-50%)">收益高度集中</small>
+        <small class="ax" style="left:8px;top:50%;transform:translateY(-130%)">扩散慢</small>
+        <small class="ax" style="right:8px;top:50%;transform:translateY(-130%)">扩散快</small>
+        <div id="mine"></div>
+        <div id="dot" tabindex="0" role="slider" aria-label="情景位置" aria-valuetext=""></div>
+      </div>
+      <div>
+        <h5 id="scName"></h5>
+        <p id="scText"></p>
+        <div class="meter"><span>经济增长</span><div><i id="mG" style="background:var(--green)"></i></div></div>
+        <div class="meter"><span>就业冲击</span><div><i id="mD" style="background:var(--gold)"></i></div></div>
+        <div class="meter"><span>不平等</span><div><i id="mI" style="background:var(--red)"></i></div></div>
+        <div class="meter"><span>社会稳定</span><div><i id="mS" style="background:var(--cyan)"></i></div></div>
+        <div class="ctl"><button id="scMine">回到我的估计</button></div>
+      </div>
+    </div>
+  </figure></div>
+
+  <div class="wrap">
+    <p><strong>我可能错在哪里。</strong></p>
+    <ul>
+      <li>AI 能力的进展可能比我假设的快得多，也可能在某处停很久。上面所有时间都跟着它走。</li>
+      <li>我很可能低估了新需求和新行业。历史上每一次都被低估：1900 年有四成美国人务农，没有人能预言他们的曾孙会去做软件工程师和瑜伽教练。</li>
+      <li>我可能低估了政治，无论是保护的力量，还是混乱的可能。工业革命早期，英国的产出增长了几十年，工人的实际工资却几乎没动。那段时间有多长，是制度决定的。</li>
+      <li>这些模型把人当作一种生产要素来计算。人同时还是公民、买东西的人、和意义的来源。这些都不在公式里，却可能是最后起决定作用的。</li>
+    </ul>
+  </div>
+</article>
+
+<!-- 15 -->
+<article class="ch" id="c15">
+  <div class="wrap">
+    <div class="num">15</div>
+    <h3>给一个大学生</h3>
+    <p class="law">别和它比单项。去做它的互补品，去瓶颈所在的地方。</p>
+    <ul>
+      <li><strong>站到互补的一边。</strong>学会指挥 AI 把一整件事做完，而不是和它比谁写得快。提出对的问题、判断结果好坏、把零件拼成完整的东西、为它负责，这些是第十二章里的 B 类任务。</li>
+      <li><strong>往瓶颈处走。</strong>哪里有 AI 快不起来的环节，哪里就有稀缺：真实的物理世界，人与人的信任，责任，两个领域之间没人负责的接缝。</li>
+      <li><strong>积累复制不了的东西。</strong>亲手做过的经验，被人信任的名声，一群愿意和你共事的人。知识本身越来越便宜，这些不会。</li>
+      <li><strong>拥有一点资本。</strong>如果收入从劳动流向资本，只有工资的人站在不利的一边。早一点开始储蓄，慢慢拥有一些能产生收入的东西，哪怕很少。第七条的复利对你同样成立。</li>
+      <li><strong>保持可转向。</strong>别把自己绑死在一捆具体的任务上。数学、写作、理解人、理解系统怎么运转，这些基础的东西折旧最慢，也让你换方向时成本最低。</li>
+      <li><strong>关心规则。</strong>饼怎么分是制度决定的，制度是人定的。你们这一代人会参与决定它。</li>
+    </ul>
+    <p>经济学给不出确定的未来。它给的是一种看问题的顺序：先问什么是稀缺的，再问谁拥有它，最后问规则是谁定的。带着这三个问题，你大概不会迷路。</p>
+  </div>
+</article>
+</main>
+
+<footer><div class="wrap">
+  稀缺会搬家 · <a href="../">Demos</a> · <a href="../../">visual.integ.life</a><br>
+  文中的模型：生产可能性曲线、李嘉图比较优势、供需的试错调价、公地的逻辑斯蒂捕捞模型、凯恩斯乘数、随机交换（yard-sale）模型、阿姆达尔定律、两任务的人机分工模型。它们都是教学用的简化。历史数字取的是量级。
+</div></footer>
+
+<script>
+(() => {
+'use strict';
+const $ = s => document.querySelector(s);
+const C = { bg:'#0f1219', line:'#272d3b', ink:'#ebe8e0', mute:'#9aa1b0', dim:'#6b7283', gold:'#e9b949', cyan:'#63c7e6', red:'#ef6f61', green:'#7ad6a0', violet:'#a78bfa' };
+const FONT = '12px -apple-system,"PingFang SC","Microsoft YaHei",system-ui,sans-serif';
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+const fmt = (x, d = 0) => x.toLocaleString('en-US', { minimumFractionDigits: d, maximumFractionDigits: d });
+const times = x => x >= 100 ? fmt(x) + ' 倍' : x >= 10 ? fmt(x, 1) + ' 倍' : fmt(x, 2) + ' 倍';
+function rng(seed) { let a = seed >>> 0; return () => { a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+function fit(cv) {
+  const r = cv.getBoundingClientRect(), d = Math.min(window.devicePixelRatio || 1, 2);
+  const W = Math.max(1, Math.round(r.width * d)), H = Math.max(1, Math.round(r.height * d));
+  if (cv.width !== W || cv.height !== H) { cv.width = W; cv.height = H; }
+  const c = cv.getContext('2d'); c.setTransform(d, 0, 0, d, 0, 0); c.font = FONT; c.textBaseline = 'middle';
+  return { c, w: r.width, h: r.height };
+}
+// every model registers here; it only runs while it is on screen
+const sims = [];
+const io = new IntersectionObserver(es => es.forEach(e => { const s = sims.find(s => s.cv === e.target); if (s) { s.vis = e.isIntersecting; s.dirty = true; } }), { rootMargin: '80px' });
+function reg(cv, o) { o.cv = cv; o.vis = false; o.dirty = true; sims.push(o); io.observe(cv); return o; }
+const touch = o => { o.dirty = true; };
+window.addEventListener('resize', () => sims.forEach(touch));
+function bind(id, fn) { const el = $(id); el.addEventListener('input', fn); return el; }
+
+/* ───────── hero: strangers meeting, trading, both better off ───────── */
+(() => {
+  const cv = $('#heroCv'), cols = [C.gold, C.cyan, C.green, C.violet], R = rng(11);
+  let A = [], links = [], n = 0, val = 0, lastW = 0;
+  const init = (w, h) => { const N = Math.round(clamp(w * h / 9500, 36, 150)); A = Array.from({ length: N }, () => ({ x: R() * w, y: R() * h, vx: (R() - .5) * 26, vy: (R() - .5) * 26, k: (R() * 4) | 0, cd: R() * 2, g: 0 })); links = []; };
+  reg(cv, {
+    step(dt) {
+      const { w, h } = fit(cv); if (Math.abs(w - lastW) > 40) { init(w, h); lastW = w; }
+      if (reduce) dt = 0;
+      for (const a of A) { a.x += a.vx * dt; a.y += a.vy * dt; if (a.x < 0 || a.x > w) a.vx *= -1; if (a.y < 0 || a.y > h) a.vy *= -1; a.x = clamp(a.x, 0, w); a.y = clamp(a.y, 0, h); a.cd -= dt; a.g = Math.max(0, a.g - dt * 1.4); }
+      for (let i = 0; i < A.length; i++) for (let j = i + 1; j < A.length; j++) { const a = A[i], b = A[j]; if (a.cd > 0 || b.cd > 0 || a.k === b.k) continue;
+        const dx = a.x - b.x, dy = a.y - b.y; if (dx * dx + dy * dy < 2300) { a.cd = b.cd = 1.6 + R() * 2; a.g = b.g = 1; const t = a.k; a.k = b.k; b.k = t; links.push({ a, b, l: 1 }); n++; val += 3 + R() * 9; } }
+      links = links.filter(l => (l.l -= dt * 1.2) > 0);
+    },
+    draw() {
+      const { c, w, h } = fit(cv); c.clearRect(0, 0, w, h);
+      for (const l of links) { c.strokeStyle = `rgba(233,185,73,${l.l * 0.7})`; c.lineWidth = 1.2; c.beginPath(); c.moveTo(l.a.x, l.a.y); c.lineTo(l.b.x, l.b.y); c.stroke(); }
+      for (const a of A) { c.globalAlpha = 0.55 + a.g * 0.45; c.fillStyle = cols[a.k]; c.beginPath(); c.arc(a.x, a.y, 2.4 + a.g * 3.2, 0, 6.283); c.fill(); }
+      c.globalAlpha = 1; $('#hsN').textContent = fmt(n); $('#hsV').textContent = fmt(val);
+    }
+  });
+})();
+
+/* ───────── 01 production possibility frontier ───────── */
+(() => {
+  const cv = $('#ppfCv'), K = s => 25 * Math.sqrt(s), M = h => 100 * Math.sqrt(h);
+  const o = reg(cv, { draw() {
+    const { c, w, h } = fit(cv), s = +sl.value, L = 44, Rr = 16, T = 18, B = 34;
+    const X = m => L + (w - L - Rr) * m / 420, Y = k => h - B - (h - T - B) * k / 108;
+    c.clearRect(0, 0, w, h);
+    c.beginPath(); c.moveTo(X(0), Y(0)); for (let t = 0; t <= 16; t += 0.25) c.lineTo(X(M(16 - t)), Y(K(t))); c.closePath();
+    c.fillStyle = 'rgba(99,199,230,.09)'; c.fill();
+    c.beginPath(); for (let t = 0; t <= 16; t += 0.25) c[t ? 'lineTo' : 'moveTo'](X(M(16 - t)), Y(K(t))); c.strokeStyle = C.cyan; c.lineWidth = 2.5; c.stroke();
+    c.strokeStyle = C.line; c.lineWidth = 1; c.beginPath(); c.moveTo(X(0), T - 6); c.lineTo(X(0), Y(0)); c.lineTo(w - Rr + 6, Y(0)); c.stroke();
+    const px = X(M(16 - s)), py = Y(K(s));
+    c.setLineDash([4, 4]); c.strokeStyle = C.dim; c.beginPath(); c.moveTo(px, py); c.lineTo(px, Y(0)); c.moveTo(px, py); c.lineTo(X(0), py); c.stroke(); c.setLineDash([]);
+    c.fillStyle = C.gold; c.shadowColor = C.gold; c.shadowBlur = 16; c.beginPath(); c.arc(px, py, 7, 0, 6.283); c.fill(); c.shadowBlur = 0;
+    c.fillStyle = C.mute; c.textAlign = 'right'; c.fillText('挣到的钱 →', w - Rr, h - 14); c.textAlign = 'left'; c.fillText('↑ 学到的东西', X(0) + 8, T - 4);
+    c.fillStyle = C.dim; c.textAlign = 'center'; c.fillText('够不着', X(350), Y(88)); c.fillText('浪费', X(110), Y(26));
+  } });
+  const sl = bind('#ppfS', upd);
+  function upd() {
+    const s = +sl.value, h = 16 - s;
+    $('#ppfO').textContent = s + ' 小时'; $('#ppfK').textContent = fmt(K(s), 1); $('#ppfM').textContent = fmt(M(h));
+    const dK = s < 16 ? K(Math.min(16, s + 1)) - K(s) : 0, dM = s < 16 ? M(h) - M(Math.max(0, h - 1)) : 0;
+    $('#ppfdK').textContent = s < 16 ? '+' + fmt(dK, 1) + ' 分' : '—'; $('#ppfdM').textContent = s < 16 ? '−' + fmt(dM) + ' 元' : '—';
+    $('#ppfSay').innerHTML = s >= 16 ? '你把所有时间都用来学习了。最后那一小时只多学到一点点，却放弃了最容易挣的 100 元。'
+      : s <= 0 ? '你把所有时间都用来打工了。此时第一个小时的学习收获最大，而它只让你少挣很少的钱。'
+      : `现在这一小时的学习，价格是 <em>${fmt(dM)} 元</em>。学得越多，这个价格越高，收获越小。你认为一分值多少钱，决定了你该停在哪里。`;
+    touch(o);
+  }
+  upd();
+})();
+
+/* ───────── 03 comparative advantage ───────── */
+(() => {
+  const ids = ['#tA1', '#tA2', '#tB1', '#tB2'], H = 8;
+  const bar = (name, h1) => `<div class="row"><span>${name}</span><div class="hbar"><i class="t1" style="width:${h1 / H * 100}%"></i><i class="t2" style="width:${(H - h1) / H * 100}%"></i></div></div>`;
+  const tot = (label, v, max, cls) => `<div class="row"><span>${label}</span><div class="hbar"><i class="${cls}" style="width:${v / max * 100}%"></i></div><b>${fmt(v, v % 1 ? 1 : 0)}</b></div>`;
+  function upd() {
+    const [a1, a2, b1, b2] = ids.map(i => +$(i).value);
+    ids.forEach(i => { $(i + 'o').textContent = $(i).value; });
+    const g1 = H / 2 * (a1 + b1), g2 = H / 2 * (a2 + b2), ocA = a2 / a1, ocB = b2 / b1, Afirst = ocA <= ocB;
+    const p = Afirst ? [a1, a2] : [b1, b2], q = Afirst ? [b1, b2] : [a1, a2];
+    let hp, hq; if (H * p[0] >= g1) { hp = g1 / p[0]; hq = 0; } else { hp = H; hq = (g1 - H * p[0]) / q[0]; }
+    const n2 = (H - hp) * p[1] + (H - hq) * q[1], hA = Afirst ? hp : hq, hB = Afirst ? hq : hp, max = Math.max(g1, g2, n2), gain = n2 - g2;
+    $('#planA').innerHTML = `<h5>各干各的：每人一半时间写题，一半做 PPT</h5>${bar('阿强', H / 2)}${bar('小周', H / 2)}<div class="tot">${tot('题', g1, max, 't1')}${tot('PPT', g2, max, 't2')}</div>`;
+    $('#planB').innerHTML = `<h5>按比较优势分工</h5>${bar('阿强', hA)}${bar('小周', hB)}<div class="tot">${tot('题', g1, max, 't1')}${tot('PPT', n2, max, 't2')}</div>`;
+    const strong = a1 > b1 && a2 > b2 ? '阿强两样都更快。但' : b1 > a1 && b2 > a2 ? '小周两样都更快。但' : '';
+    $('#tSay').innerHTML = gain < 0.05 ? '两个人为一道题放弃的 PPT 一样多，机会成本相同，分工带不来任何好处。比较优势来自差异。'
+      : `${strong}阿强每写 1 道题要放弃 <em>${fmt(ocA, 2)}</em> 页 PPT，小周要放弃 <em>${fmt(ocB, 2)}</em> 页。让${Afirst ? '阿强' : '小周'}多写题，题一道没少，PPT 多出 <em>${fmt(gain, 1)}</em> 页。没有人多干一分钟。`;
+  }
+  ids.forEach(i => bind(i, upd)); upd();
+})();
+
+/* ───────── 04 a market finding its price ───────── */
+(() => {
+  const cv = $('#mkCv'), N = 80, R = rng(4);
+  const v0 = Array.from({ length: N }, () => 15 + R() * 95).sort((a, b) => b - a), c0 = Array.from({ length: N }, () => 10 + R() * 95).sort((a, b) => a - b);
+  let dS = 0, sS = 0, dT = 0, sT = 0, p = 20;
+  const cap = $('#mkCap'), capOn = $('#mkCapOn');
+  reg(cv, {
+    step(dt) {
+      dS += (dT - dS) * Math.min(1, dt * 4); sS += (sT - sS) * Math.min(1, dt * 4);
+      const D = v0.filter(v => v + dS >= p).length, S = c0.filter(c => c + sS <= p).length;
+      p = clamp(p + (D - S) * 2.4 * dt, 2, 135); if (capOn.checked) p = Math.min(p, +cap.value);
+    },
+    draw() {
+      const { c, w, h } = fit(cv), L = 40, Rr = 14, T = 14, B = 30, X = q => L + (w - L - Rr) * q / N, Y = v => h - B - (h - T - B) * v / 140;
+      c.clearRect(0, 0, w, h);
+      const D = v0.filter(v => v + dS >= p).length, S = c0.filter(x => x + sS <= p).length, Q = Math.min(D, S);
+      c.beginPath(); for (let i = 0; i < Q; i++) { c.lineTo(X(i), Y(v0[i] + dS)); c.lineTo(X(i + 1), Y(v0[i] + dS)); } for (let i = Q - 1; i >= 0; i--) { c.lineTo(X(i + 1), Y(c0[i] + sS)); c.lineTo(X(i), Y(c0[i] + sS)); }
+      c.closePath(); c.fillStyle = 'rgba(122,214,160,.13)'; c.fill();
+      const step = (arr, sh, col) => { c.beginPath(); arr.forEach((v, i) => { c.lineTo(X(i), Y(v + sh)); c.lineTo(X(i + 1), Y(v + sh)); }); c.strokeStyle = col; c.lineWidth = 2; c.stroke(); };
+      step(v0, dS, C.cyan); step(c0, sS, C.gold);
+      c.strokeStyle = C.line; c.lineWidth = 1; c.beginPath(); c.moveTo(L, T - 4); c.lineTo(L, Y(0)); c.lineTo(w - Rr, Y(0)); c.stroke();
+      const py = Y(p); c.strokeStyle = C.ink; c.lineWidth = 1.5; c.shadowColor = C.ink; c.shadowBlur = 8; c.beginPath(); c.moveTo(L, py); c.lineTo(w - Rr, py); c.stroke(); c.shadowBlur = 0;
+      if (capOn.checked && p >= +cap.value - 0.01 && D > S) { c.strokeStyle = C.red; c.lineWidth = 5; c.beginPath(); c.moveTo(X(S), py); c.lineTo(X(D), py); c.stroke(); c.fillStyle = C.red; c.textAlign = 'center'; c.fillText('短缺', (X(S) + X(D)) / 2, py - 13); }
+      c.fillStyle = C.mute; c.textAlign = 'right'; c.fillText('数量 →', w - Rr, h - 12); c.textAlign = 'left'; c.fillText('↑ 价格', L + 8, T);
+      c.fillStyle = C.cyan; c.fillText('买家', X(2), Y(v0[0] + dS) + 14 > Y(0) - 10 ? T + 16 : Math.max(T + 16, Y(v0[0] + dS) - 10));
+      c.fillStyle = C.gold; c.textAlign = 'right'; c.fillText('卖家', X(N) - 2, Math.max(T + 16, Y(c0[N - 1] + sS) - 10));
+      $('#mkP').textContent = fmt(p); $('#mkQ').textContent = Q + ' 件'; $('#mkX').textContent = Math.max(0, D - S) + ' 人';
+    }
+  });
+  $('#mkD').onclick = e => { dT = dT ? 0 : 28; e.target.classList.toggle('on', !!dT); };
+  $('#mkS').onclick = e => { sT = sT ? 0 : 28; e.target.classList.toggle('on', !!sT); };
+  const cu = () => { $('#mkCapO').textContent = cap.value; }; cap.addEventListener('input', () => { capOn.checked = true; cu(); }); cu();
+})();
+
+/* ───────── 06 the commons ───────── */
+(() => {
+  const cv = $('#cmCv'), cv2 = $('#cmCv2'), Kc = 1000, r = 0.6, q = 0.024, R = rng(9);
+  let N = 700; const bS = $('#cmB'), qt = $('#cmQ');
+  const fish = Array.from({ length: 130 }, () => ({ x: R(), y: 0.2 + R() * 0.74, v: (0.02 + R() * 0.05) * (R() < .5 ? -1 : 1), ph: R() * 6.28, s: 0.7 + R() * 0.7 }));
+  const eff = () => qt.checked ? Math.min(+bS.value, 12) : +bS.value;
+  let t = 0;
+  reg(cv, {
+    step(dt) { t += dt; const yr = dt / 1.3, b = eff(); N = clamp(N + (r * N * (1 - N / Kc) - q * b * N) * yr, 0, Kc); if (N < 0.5) N = 0; for (const f of fish) { f.x += f.v * dt; if (f.x < -0.05) f.x = 1.05; if (f.x > 1.05) f.x = -0.05; } },
+    draw() {
+      const { c, w, h } = fit(cv); const g = c.createLinearGradient(0, 0, 0, h); g.addColorStop(0, '#12324a'); g.addColorStop(1, '#0a1622'); c.fillStyle = g; c.fillRect(0, 0, w, h);
+      const n = Math.round(N / 8);
+      for (let i = 0; i < n && i < fish.length; i++) { const f = fish[i], x = f.x * w, y = f.y * h + Math.sin(t * 1.5 + f.ph) * 5, d = f.v > 0 ? 1 : -1, s = f.s * 6;
+        c.fillStyle = 'rgba(160,220,240,.85)'; c.beginPath(); c.ellipse(x, y, s, s * 0.45, 0, 0, 6.283); c.fill(); c.beginPath(); c.moveTo(x - d * s, y); c.lineTo(x - d * s * 1.9, y - s * 0.55); c.lineTo(x - d * s * 1.9, y + s * 0.55); c.fill(); }
+      const b = +bS.value, e = eff();
+      for (let i = 0; i < b; i++) { const x = w * (i + 0.5) / Math.max(b, 10), y = 22 + Math.sin(t * 1.2 + i) * 2, on = i < e; c.globalAlpha = on ? 1 : 0.25;
+        c.fillStyle = C.gold; c.beginPath(); c.moveTo(x - 11, y); c.lineTo(x + 11, y); c.lineTo(x + 7, y + 7); c.lineTo(x - 7, y + 7); c.closePath(); c.fill(); c.fillRect(x - 1, y - 11, 2, 11);
+        if (on) { c.strokeStyle = 'rgba(233,185,73,.3)'; c.beginPath(); c.moveTo(x, y + 7); c.lineTo(x, y + 30); c.stroke(); } }
+      c.globalAlpha = 1; if (N === 0) { c.fillStyle = C.red; c.textAlign = 'center'; c.font = '15px ' + FONT.slice(5); c.fillText('湖里没有鱼了', w / 2, h / 2); }
+      $('#cmN').textContent = fmt(N); $('#cmE').textContent = fmt(q * N, 1); $('#cmT').textContent = fmt(q * e * N); $('#cmBo').textContent = b + ' 条' + (e < b ? '（' + e + ' 条出海）' : '');
+      touch(o2);
+    }
+  });
+  const o2 = reg(cv2, { draw() {
+    const { c, w, h } = fit(cv2), L = 40, Rr = 14, T = 22, B = 26, X = b => L + (w - L - Rr) * b / 30, ym = q * 12.5 * Kc * 0.5, Y = v => h - B - (h - T - B) * v / (ym * 1.1);
+    c.clearRect(0, 0, w, h); c.strokeStyle = C.line; c.beginPath(); c.moveTo(L, T - 8); c.lineTo(L, Y(0)); c.lineTo(w - Rr, Y(0)); c.stroke();
+    const f = b => Math.max(0, q * b * Kc * (1 - q * b / r));
+    c.beginPath(); for (let b = 0; b <= 30; b += 0.25) c[b ? 'lineTo' : 'moveTo'](X(b), Y(f(b))); c.strokeStyle = C.gold; c.lineWidth = 2; c.stroke();
+    const e = eff(); c.fillStyle = C.ink; c.beginPath(); c.arc(X(e), Y(f(e)), 5.5, 0, 6.283); c.fill();
+    c.fillStyle = C.mute; c.textAlign = 'left'; c.fillText('长期每年总收获', L + 8, T - 8); c.textAlign = 'right'; c.fillText('船数 →', w - Rr, h - 10);
+    c.fillStyle = C.dim; c.textAlign = 'center'; [0, 12, 25].forEach(b => c.fillText(b, X(b), h - 10));
+  } });
+  bS.addEventListener('input', () => touch(o2)); qt.addEventListener('change', () => touch(o2)); $('#cmR').onclick = () => { N = 700; };
+})();
+
+/* ───────── 07 compounding ───────── */
+(() => {
+  const cv = $('#grCv'), sl = $('#grG');
+  const o = reg(cv, { draw() {
+    const { c, w, h } = fit(cv), g = +sl.value / 100, L = 44, Rr = 16, T = 16, B = 30, ym = Math.max(4.4, Math.pow(1 + g, 70) * 1.08);
+    const X = t => L + (w - L - Rr) * t / 70, Y = v => h - B - (h - T - B) * v / ym;
+    c.clearRect(0, 0, w, h); c.strokeStyle = C.line; c.lineWidth = 1; c.beginPath(); c.moveTo(L, T - 4); c.lineTo(L, Y(0)); c.lineTo(w - Rr, Y(0)); c.stroke();
+    c.fillStyle = C.dim; c.textAlign = 'right'; const stepv = ym > 150 ? 50 : ym > 60 ? 20 : ym > 24 ? 10 : ym > 10 ? 4 : 1;
+    for (let v = stepv; v < ym; v += stepv) { c.fillText('×' + v, L - 6, Y(v)); c.strokeStyle = 'rgba(39,45,59,.6)'; c.beginPath(); c.moveTo(L, Y(v)); c.lineTo(w - Rr, Y(v)); c.stroke(); }
+    c.textAlign = 'center'; [0, 10, 20, 30, 40, 50, 60, 70].forEach(t => c.fillText(t, X(t), h - 12));
+    const line = (r, col, lw) => { c.beginPath(); for (let t = 0; t <= 70; t++) c[t ? 'lineTo' : 'moveTo'](X(t), Y(Math.pow(1 + r, t))); c.strokeStyle = col; c.lineWidth = lw; c.stroke(); };
+    line(0.01, C.dim, 1); line(0.02, C.mute, 1); line(g, C.gold, 3);
+    c.fillStyle = C.mute; c.textAlign = 'left'; c.fillText('年 →', L + 8, T);
+  } });
+  function upd() { const g = +sl.value; $('#grGo').textContent = g.toFixed(1) + '%'; $('#grX').textContent = times(Math.pow(1 + g / 100, 70)); $('#grD').textContent = g > 0 ? fmt(Math.log(2) / Math.log(1 + g / 100), 0) + ' 年' : '永远'; touch(o); }
+  sl.addEventListener('input', upd); upd();
+})();
+
+/* ───────── 08 circular flow & the paradox of thrift ───────── */
+(() => {
+  const cv = $('#flCv'), sl = $('#flS'), A = 20, NN = 14, R = rng(3);
+  let Y = 100, acc = 0, P = [];
+  reg(cv, {
+    step(dt) { const s = +sl.value / 100; Y += ((1 - s) * Y + A - Y) * Math.min(1, dt * 0.9); acc += Y * 0.3 * dt;
+      while (acc > 1 && P.length < 260) { acc -= 1; const a = (R() * NN) | 0; let b = (R() * NN) | 0; if (b === a) b = (b + 1 + ((R() * (NN - 2)) | 0)) % NN; P.push({ a, b, t: 0, v: 0.7 + R() * 0.6 }); }
+      if (acc > 3) acc = 3; P = P.filter(p => (p.t += dt * p.v) < 1); },
+    draw() {
+      const { c, w, h } = fit(cv), cx = w / 2, cy = h / 2, rad = Math.min(w * 0.42, h * 0.38), s = +sl.value / 100;
+      c.clearRect(0, 0, w, h); const pt = i => [cx + Math.cos(i / NN * 6.283 - 1.57) * rad * (w > h * 1.6 ? 1.5 : 1), cy + Math.sin(i / NN * 6.283 - 1.57) * rad];
+      for (const p of P) { const [x0, y0] = pt(p.a), [x1, y1] = pt(p.b), t = p.t, u = 1 - t, x = u * u * x0 + 2 * u * t * cx + t * t * x1, y = u * u * y0 + 2 * u * t * cy + t * t * y1;
+        c.fillStyle = `rgba(233,185,73,${0.25 + 0.75 * Math.sin(t * 3.14)})`; c.beginPath(); c.arc(x, y, 2.6, 0, 6.283); c.fill(); }
+      const nr = 5 + Math.sqrt(Y) * 0.9; for (let i = 0; i < NN; i++) { const [x, y] = pt(i); c.fillStyle = '#1d2433'; c.strokeStyle = C.cyan; c.lineWidth = 1.5; c.beginPath(); c.arc(x, y, nr, 0, 6.283); c.fill(); c.stroke(); }
+      c.textAlign = 'center'; c.fillStyle = C.mute; c.fillText('全镇总收入', cx, cy - 20); c.fillStyle = C.ink; c.font = '600 30px ' + FONT.slice(5); c.fillText(fmt(Y), cx, cy + 8);
+      $('#flSo').textContent = sl.value + ' 元'; $('#flY').textContent = fmt(Y); $('#flC').textContent = fmt((1 - s) * Y); $('#flSv').textContent = fmt(s * Y, 1);
+      $('#flSay').innerHTML = `稳定下来后，总收入 = 20 ÷ ${s.toFixed(2)} = <em>${fmt(A / s)}</em>。实际存下的总额始终回到 <em>20</em>，正好等于那笔投资。每个人都想多存，大家一起变穷，存款一分没多。`;
+    }
+  });
+})();
+
+/* ───────── 09 the yard-sale model ───────── */
+(() => {
+  const cv = $('#ysCv'), sl = $('#ysT'), N = 160, R = rng(21);
+  let W, top = 100; const reset = () => { W = new Float64Array(N).fill(100); top = 100; }; reset();
+  reg(cv, {
+    step() { for (let k = 0; k < 40; k++) { const i = (R() * N) | 0; let j = (R() * N) | 0; if (i === j) continue; const st = 0.15 * Math.min(W[i], W[j]); if (R() < 0.5) { W[i] += st; W[j] -= st; } else { W[i] -= st; W[j] += st; } }
+      const x = +sl.value / 100 * 0.5; /* each person is in about half a trade per frame */ if (x > 0) for (let i = 0; i < N; i++) W[i] += x * (100 - W[i]); },
+    draw() {
+      const { c, w, h } = fit(cv), S = Array.from(W).sort((a, b) => a - b), L = 12, B = 22, T = 16;
+      top += (Math.max(S[N - 1], 250) - top) * 0.08; c.clearRect(0, 0, w, h);
+      const bw = (w - L * 2) / N, yl = h - B - (h - T - B) * 100 / top;
+      for (let i = 0; i < N; i++) { const bh = (h - T - B) * S[i] / top; c.fillStyle = S[i] >= 100 ? C.gold : C.cyan; c.globalAlpha = 0.9; c.fillRect(L + i * bw, h - B - bh, Math.max(1, bw - 1), bh); }
+      c.globalAlpha = 1; c.setLineDash([4, 4]); c.strokeStyle = C.mute; c.beginPath(); c.moveTo(L, yl); c.lineTo(w - L, yl); c.stroke(); c.setLineDash([]);
+      c.fillStyle = C.mute; c.textAlign = 'left'; c.fillText('起点：每人 100', L + 4, yl - 10); c.fillText('最穷', L, h - 9); c.textAlign = 'right'; c.fillText('最富', w - L, h - 9);
+      let cum = 0, g = 0; const tot = N * 100; for (let i = 0; i < N; i++) { cum += S[i]; g += cum; } const gini = 1 - 2 * (g / tot) / N + 1 / N;
+      let t10 = 0; for (let i = N - N / 10; i < N; i++) t10 += S[i]; let b50 = 0; for (let i = 0; i < N / 2; i++) b50 += S[i];
+      $('#ysG').textContent = gini.toFixed(2); $('#ysTop').textContent = fmt(t10 / tot * 100) + '%'; $('#ysBot').textContent = fmt(b50 / tot * 100) + '%'; $('#ysTo').textContent = (+sl.value).toFixed(2) + '%';
+    }
+  });
+  $('#ysR').onclick = reset;
+})();
+
+/* ───────── 11 the bottleneck (Amdahl) ───────── */
+(() => {
+  const cv = $('#bnCv'), F = $('#bnF'), Ms = $('#bnM'), out = (f, m) => 1 / ((1 - f) + f / m);
+  const o = reg(cv, { draw() {
+    const { c, w, h } = fit(cv), f = +F.value / 100, lm = +Ms.value, L = 44, Rr = 16, T = 22, B = 30, lim = 1 / (1 - f), ym = Math.max(2.2, lim * 1.18);
+    const X = l => L + (w - L - Rr) * l / 6, Y = v => h - B - (h - T - B) * (v - 1) / (ym - 1);
+    c.clearRect(0, 0, w, h); c.strokeStyle = C.line; c.beginPath(); c.moveTo(L, T - 8); c.lineTo(L, Y(1)); c.lineTo(w - Rr, Y(1)); c.stroke();
+    c.fillStyle = C.dim; c.textAlign = 'center'; ['1', '10', '100', '1千', '1万', '10万', '100万'].forEach((s, i) => c.fillText(s, X(i), h - 12));
+    c.textAlign = 'right'; c.fillText('×1', L - 6, Y(1));
+    c.setLineDash([5, 5]); c.strokeStyle = C.red; c.beginPath(); c.moveTo(L, Y(lim)); c.lineTo(w - Rr, Y(lim)); c.stroke(); c.setLineDash([]);
+    c.fillStyle = C.red; c.textAlign = 'right'; c.fillText('上限 ×' + (lim >= 10 ? fmt(lim, 0) : fmt(lim, 2)), w - Rr, Y(lim) - 11);
+    c.beginPath(); for (let l = 0; l <= 6.001; l += 0.05) c[l ? 'lineTo' : 'moveTo'](X(l), Y(out(f, Math.pow(10, l)))); c.strokeStyle = C.gold; c.lineWidth = 3; c.stroke();
+    const y = out(f, Math.pow(10, lm)); c.fillStyle = C.ink; c.shadowColor = C.gold; c.shadowBlur = 14; c.beginPath(); c.arc(X(lm), Y(y), 6.5, 0, 6.283); c.fill(); c.shadowBlur = 0;
+    c.fillStyle = C.mute; c.textAlign = 'left'; c.fillText('↑ 整体产出', L + 8, T - 8);
+  } });
+  function upd() {
+    const f = +F.value / 100, m = Math.pow(10, +Ms.value), y = out(f, m), a = (f / m) * y, b = (1 - f) * y;
+    $('#bnFo').textContent = F.value + '%'; $('#bnMo').textContent = m >= 1e4 ? fmt(m / 1e4, m < 1e5 ? 1 : 0) + ' 万倍' : fmt(m, m < 10 ? 1 : 0) + ' 倍';
+    $('#bnY').textContent = times(y); $('#bnL').textContent = times(1 / (1 - f)); $('#bnS').textContent = fmt(b * 100) + '%';
+    $('#bnA').style.width = a * 100 + '%'; $('#bnB').style.width = b * 100 + '%'; touch(o);
+  }
+  F.addEventListener('input', upd); Ms.addEventListener('input', upd); upd();
+})();
+
+/* ───────── 12 wages when compute grows ─────────
+   Y = (sqrt(X1 X2))^(1-beta);  X1 = humans_on_A + K_on_A;  X2 = humans_on_B + rho * K_on_B;  one unit of humans. */
+(() => {
+  const cv = $('#wgCv'), Ks = $('#wgK'), Rs = $('#wgR'), Bc = $('#wgB');
+  function solve(K, rho, beta) {
+    let X1, X2, ph;
+    if (K < 1) { X1 = X2 = (1 + K) / 2; ph = 1; } else if (rho * K <= 1) { X1 = K; X2 = 1; ph = 2; } else { X2 = (1 + rho * K) / 2; X1 = (1 + rho * K) / (2 * rho); ph = 3; }
+    const Y = Math.pow(Math.sqrt(X1 * X2), 1 - beta), w = 0.5 * (1 - beta) * Y / X2, Y0 = Math.pow(0.5, 1 - beta), w0 = (1 - beta) * Y0;
+    return { Y: Y / Y0, w: w / w0, share: w / Y, ph };
+  }
+  const o = reg(cv, { draw() {
+    const { c, w, h } = fit(cv), rho = Math.pow(10, +Rs.value), beta = Bc.checked ? 0.3 : 0, lk = +Ks.value;
+    const L = 40, Rr = 14, T = 26, B = 28, gap = 16, h2 = Math.round((h - T - B) * 0.27), h1 = h - T - B - h2 - gap;
+    const X = l => L + (w - L - Rr) * (l + 2) / 6, Y = v => T + h1 - h1 * (Math.log10(v) + 1) / 5, Ys = s => h - B - h2 * s;
+    c.clearRect(0, 0, w, h);
+    const b1 = 0, b2 = -Math.log10(rho);
+    [[-2, b1, 'rgba(99,199,230,.05)'], [b1, Math.min(4, b2), 'rgba(233,185,73,.07)'], [Math.min(4, b2), 4, 'rgba(239,111,97,.06)']].forEach(([a, b, col], i) => { if (b <= a) return; c.fillStyle = col; c.fillRect(X(a), T, X(b) - X(a), h - T - B);
+      if (X(b) - X(a) > 22) { c.fillStyle = C.ink; c.textAlign = 'center'; c.font = '15px ' + FONT.slice(5); c.fillText(['①', '②', '③'][i], (X(a) + X(b)) / 2, T - 12); c.font = FONT; } });
+    c.strokeStyle = 'rgba(39,45,59,.8)'; c.lineWidth = 1; c.fillStyle = C.dim; c.textAlign = 'right';
+    for (let e = -1; e <= 4; e++) { c.beginPath(); c.moveTo(L, Y(Math.pow(10, e))); c.lineTo(w - Rr, Y(Math.pow(10, e))); c.stroke(); }
+    c.fillText('1', L - 6, Y(1)); c.fillText('100', L - 6, Y(100)); c.fillText('0%', L - 6, Ys(0)); c.fillText('100%', L - 6, Ys(1));
+    c.strokeStyle = C.mute; c.setLineDash([3, 4]); c.beginPath(); c.moveTo(L, Y(1)); c.lineTo(w - Rr, Y(1)); c.stroke(); c.setLineDash([]);
+    c.strokeStyle = C.line; c.strokeRect(L, h - B - h2, w - L - Rr, h2);
+    const curve = (fn, map, col, lw) => { c.beginPath(); for (let l = -2; l <= 4.001; l += 0.04) { const s = solve(Math.pow(10, l), rho, beta); c[l > -2 ? 'lineTo' : 'moveTo'](X(l), map(fn(s))); } c.strokeStyle = col; c.lineWidth = lw; c.stroke(); };
+    curve(s => s.Y, v => Y(Math.min(v, 1e4)), C.cyan, 2); curve(s => s.w, v => Y(Math.max(v, 0.1)), C.gold, 3); curve(s => s.share, Ys, C.violet, 2.5);
+    const s = solve(Math.pow(10, lk), rho, beta); c.strokeStyle = C.ink; c.lineWidth = 1; c.beginPath(); c.moveTo(X(lk), T); c.lineTo(X(lk), h - B); c.stroke();
+    [[Y(Math.min(s.Y, 1e4)), C.cyan], [Y(Math.max(s.w, 0.1)), C.gold], [Ys(s.share), C.violet]].forEach(([y, col]) => { c.fillStyle = col; c.beginPath(); c.arc(X(lk), y, 5, 0, 6.283); c.fill(); });
+    c.fillStyle = C.mute; c.textAlign = 'right'; c.fillText('算力 →（每格 10 倍）', w - Rr, h - 10);
+  } });
+  function upd() {
+    const rho = Math.pow(10, +Rs.value), K = Math.pow(10, +Ks.value), beta = Bc.checked ? 0.3 : 0, s = solve(K, rho, beta);
+    $('#wgKo').textContent = K >= 100 ? fmt(K) : K >= 1 ? fmt(K, 1) : fmt(K, 2); $('#wgRo').textContent = '人的 ' + fmt(rho * 100, rho < 0.1 ? 1 : 0) + '%';
+    $('#wgY').textContent = times(s.Y).replace(' 倍', ''); $('#wgW').textContent = fmt(s.w, 2); $('#wgS').textContent = fmt(s.share * 100, s.share < 0.1 ? 1 : 0) + '%';
+    $('#wgSay').innerHTML = s.ph === 1 ? '<em>①帮手。</em>算力还很少，AI 分担了一部分 A 类任务，人两类都还在做。' + (beta ? '产出涨了一点，固定的土地摊薄了每个人的边际贡献，工资略降。' : '工资没有变化。')
+      : s.ph === 2 ? '<em>②互补。</em>A 类全归 AI，所有人都在做 B 类。B 类成了整个经济的瓶颈，人因此更值钱。'
+      : `<em>③替代。</em>算力多到做 B 类也划算了。${beta ? '工资越过顶点开始回落，' + (s.w < 1 ? '现在已经低于今天。' : '但还高于今天。') : '工资停在 ' + fmt(s.w, 2) + '，再多的算力也推不动它。'}产出的 ${fmt((1 - s.share) * 100)}% 归了算力${beta ? '和土地' : ''}的所有者。`;
+    touch(o);
+  }
+  [Ks, Rs].forEach(e => e.addEventListener('input', upd)); Bc.addEventListener('change', upd); upd();
+})();
+
+/* ───────── 13 what gets cheap, what gets dear ───────── */
+(() => {
+  const items = [['一篇合格的初稿', -1], ['翻译', -0.95], ['常规的代码', -0.85], ['图片与视频素材', -0.8], ['标准化的答疑与咨询', -0.7], ['一对一的讲解辅导', -0.6], ['数据分析与报告', -0.55],
+    ['真人到场的照护与服务', 0.4], ['好问题、品味与判断', 0.5], ['为结果负责的人', 0.6], ['核心地段的土地', 0.62], ['值得信任的信息', 0.72], ['电力与算力', 0.8], ['人的注意力', 0.9], ['地位与稀缺的名额', 0.95]];
+  const map = $('#scMap'), sl = $('#scA');
+  map.innerHTML = items.map(([n]) => `<div class="mrow"><span>${n}</span><div class="track"><i></i></div></div>`).join('');
+  const bars = map.querySelectorAll('i');
+  function upd() { const a = +sl.value / 100; $('#scAo').textContent = sl.value + '%';
+    items.forEach(([, k], i) => { const len = Math.abs(k) * a * 50, b = bars[i]; b.style.width = len + '%'; b.style.left = k < 0 ? (50 - len) + '%' : '50%'; b.style.background = k < 0 ? C.cyan : C.gold; }); }
+  sl.addEventListener('input', upd); upd();
+})();
+
+/* ───────── 14 scenario pad ───────── */
+(() => {
+  const pad = $('#pad'), dot = $('#dot'), mine = { x: 0.64, y: 0.4 }; let x = mine.x, y = mine.y;
+  const T = [
+    ['温和的红利', '像又一次电气化。变化分散在几十年里，一代人有时间转行，制度跟得上。增长比今天快一些，没有谁被突然甩下。代价是：癌症的新疗法、便宜的能源，这些本可以更早到来的东西也来得慢。'],
+    ['丰裕社会', '增长很快，而且大部分人分享到了。可能靠全民持股或分红，可能靠很强的公共服务。工作时间缩短，“谋生”和“做事”逐渐分开。物质不再是主要问题，新的问题是意义、地位和注意力。这是最好的结局，也最需要主动去建。'],
+    ['停滞与不满', '技术扩散被牌照、垄断或保护挡住，少数拥有它的机构收租，多数人既没享受到便宜的服务，也没保住原来的位置。增长平庸，怨气很重。'],
+    ['赢家通吃', '产出飞涨，收益归拥有算力、数据和平台的少数人。多数人作为消费者过得不差，东西确实便宜；作为劳动者和公民却失去了议价权。这种局面不稳定：要么被政治拉回上方，要么靠控制来维持。']
+  ];
+  function place(el, px, py) { el.style.left = px * 100 + '%'; el.style.top = (1 - py) * 100 + '%'; }
+  function upd() {
+    place(dot, x, y); const i = (y >= 0.5 ? 0 : 2) + (x >= 0.5 ? 1 : 0); $('#scName').textContent = T[i][0]; $('#scText').textContent = T[i][1];
+    const D = 0.2 + 0.75 * x; $('#mG').style.width = (25 + 70 * x) + '%'; $('#mD').style.width = D * 100 + '%';
+    $('#mI').style.width = clamp(0.12 + 0.5 * (1 - y) + 0.36 * x * (1 - y)) * 100 + '%'; $('#mS').style.width = clamp(0.28 + 0.64 * y - 0.34 * x * (1 - y)) * 100 + '%';
+    dot.setAttribute('aria-valuetext', `${T[i][0]}：扩散速度 ${Math.round(x * 100)}%，分享程度 ${Math.round(y * 100)}%`);
+  }
+  function at(e) { const r = pad.getBoundingClientRect(); x = clamp((e.clientX - r.left) / r.width, 0.04, 0.96); y = clamp(1 - (e.clientY - r.top) / r.height, 0.04, 0.96); upd(); }
+  pad.addEventListener('pointerdown', e => { pad.setPointerCapture(e.pointerId); at(e); pad.onpointermove = at; });
+  pad.addEventListener('pointerup', () => { pad.onpointermove = null; }); pad.addEventListener('pointercancel', () => { pad.onpointermove = null; });
+  dot.addEventListener('keydown', e => { const d = { ArrowLeft: [-.04, 0], ArrowRight: [.04, 0], ArrowUp: [0, .04], ArrowDown: [0, -.04] }[e.key]; if (!d) return; e.preventDefault(); x = clamp(x + d[0], 0.04, 0.96); y = clamp(y + d[1], 0.04, 0.96); upd(); });
+  $('#scMine').onclick = () => { x = mine.x; y = mine.y; upd(); };
+  place($('#mine'), mine.x, mine.y); upd();
+})();
+
+/* ───────── loop ───────── */
+const bar = $('#bar');
+window.addEventListener('scroll', () => { const d = document.documentElement; bar.style.width = (d.scrollTop / Math.max(1, d.scrollHeight - d.clientHeight) * 100) + '%'; }, { passive: true });
+let last = performance.now();
+function tick(t) {
+  const dt = Math.min((t - last) / 1000, 0.05); last = t;
+  for (const s of sims) { if (!s.vis) continue; if (s.step) { s.step(dt); s.draw(); } else if (s.dirty) { s.draw(); s.dirty = false; } }
+  requestAnimationFrame(tick);
+}
+requestAnimationFrame(tick);
+window.__ready = true;
+})();
+</script>
+</body>
+</html>

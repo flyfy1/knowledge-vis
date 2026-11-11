@@ -173,6 +173,19 @@ window.KNOWLEDGE_PAGES = [
     path: "demos/fable-flight/"
   },
   {
+    slug: "scarcity-moves",
+    title: { zh: "稀缺会搬家", en: "Scarcity Moves" },
+    desc: {
+      zh: "十个经济学的基本道理，每个配一个可以动手的小模型；再用它们推演 AI 普及之后，工作、收入和稀缺会怎样变化。（中文）",
+      en: "Ten core ideas of economics, each with a hands-on model, then applied to what happens to work, income and scarcity once AI is everywhere. (Chinese only)"
+    },
+    tags: [{ zh: "经济学", en: "Economics" }, { zh: "AI 与社会", en: "AI & Society" }, { zh: "交互长文", en: "Interactive Essay" }],
+    category: "demos",
+    stage: "university",
+    status: "live",
+    path: "demos/scarcity-moves/"
+  },
+  {
     slug: "fourier",
     title: { zh: "傅里叶变换 · 一步一交互", en: "The Fourier Transform · One Interaction at a Time" },
     desc: {
