@@ -145,12 +145,12 @@ window.KNOWLEDGE_PAGES = [
   },
   {
     slug: "atlas",
-    title: { zh: "数学与物理 · 知识地图", en: "Mathematics & Physics · Knowledge Atlas" },
+    title: { zh: "知识地图 · 概念与联系", en: "Knowledge Atlas · Concepts & Connections" },
     desc: {
-      zh: "从几何、运动、光、波动、电路与测量开始。探索概念之间的联系，查看每条关系的解释依据，再进入对应的交互讲解。",
-      en: "Start with geometry, motion, light, waves, circuits and measurement. Explore connections between concepts, read why they connect, and open the supporting interactive lessons."
+      zh: "搜一个不懂的词，直接打开课程里讲它的那一步；或从一个问题出发，沿着概念之间的联系走。覆盖数学、物理、化学、生命、地球与太空、计算与社会，每条关系都写明为什么相连。",
+      en: "Look up something you don’t understand and open the step of a lesson that shows it, or start from a question and follow the connections between ideas — across mathematics, physics, chemistry, life, the Earth and space, computing and society, each link with the reason it holds."
     },
-    tags: [{ zh: "概念关系", en: "Concept Connections" }, { zh: "探索路线", en: "Exploration Routes" }],
+    tags: [{ zh: "概念搜索", en: "Concept Search" }, { zh: "概念关系", en: "Concept Connections" }, { zh: "探索路线", en: "Exploration Routes" }],
     category: "math",
     stage: "university",
     status: "live",
