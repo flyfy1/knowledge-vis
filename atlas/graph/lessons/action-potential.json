@@ -1,0 +1,94 @@
+{
+ "schema": 2,
+ "slug": "action-potential",
+ "nodes": [
+  {
+   "id": "action-potential",
+   "group": "life",
+   "stage": "senior",
+   "order": 50,
+   "title": {
+    "zh": "动作电位 · 全或无的神经脉冲",
+    "en": "The action potential · an all-or-none nerve pulse"
+   },
+   "description": {
+    "zh": "刺激把膜电位推过阈值，Na⁺ 通道成片打开、Na⁺ 涌入让电位冲到正值，随后 Na⁺ 通道失活、K⁺ 外流又把它拉回来甚至略低于静息；刺激再强，尖峰也不会更高，只会发得更频繁，而不应期给频率设了上限。",
+    "en": "Once a stimulus pushes the membrane past threshold, Na⁺ channels open en masse and the inrush drives the voltage positive; then Na⁺ channels inactivate and K⁺ flows out, pulling it back, even slightly below rest; a stronger stimulus does not make a taller spike, only more frequent ones, and the refractory period caps the rate."
+   },
+   "source": "../biology/body/action-potential/#step1",
+   "lessons": [
+    {
+     "slug": "action-potential",
+     "step": 1,
+     "category": "biology",
+     "stage": "senior",
+     "primary": true
+    }
+   ],
+   "aliases": [
+    {
+     "zh": "动作电位",
+     "en": "action potential"
+    },
+    {
+     "zh": "神经冲动",
+     "en": "nerve impulse"
+    },
+    {
+     "zh": "全或无",
+     "en": "all-or-none"
+    },
+    {
+     "zh": "阈电位",
+     "en": "threshold potential"
+    },
+    {
+     "zh": "去极化 复极化",
+     "en": "depolarisation and repolarisation"
+    },
+    {
+     "zh": "不应期",
+     "en": "refractory period"
+    },
+    {
+     "zh": "神经元怎么放电",
+     "en": "how a neuron fires"
+    },
+    {
+     "zh": "刺激越强尖峰越高吗",
+     "en": "does a stronger stimulus give a bigger spike"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "resting-potential",
+   "to": "action-potential",
+   "type": "foundation",
+   "label": {
+    "zh": "从 −70 mV 出发",
+    "en": "Starting from −70 mV"
+   },
+   "reason": {
+    "zh": "每个尖峰都从静息电位起跳、最后落回它附近；阈值也是相对静息电位而言，要推高十几毫伏才会触发。",
+    "en": "Every spike takes off from the resting potential and falls back near it; the threshold, too, is measured from rest — the voltage has to be pushed up by a dozen or so millivolts to trigger it."
+   },
+   "source": "../biology/body/action-potential/#step0"
+  },
+  {
+   "from": "action-potential",
+   "to": "feedback",
+   "type": "connection",
+   "label": {
+    "zh": "Na⁺ 通道的正反馈",
+    "en": "Positive feedback in the Na⁺ channels"
+   },
+   "reason": {
+    "zh": "电位一升，更多电压门控 Na⁺ 通道打开，Na⁺ 进得更多、电位升得更快——这是一条正反馈，所以过了阈值就停不下来，只能冲到顶，这正是“全或无”的来源。",
+    "en": "A rise in voltage opens more voltage-gated Na⁺ channels, letting in more Na⁺ and raising the voltage faster — positive feedback, which is why once past threshold the spike cannot stop halfway: the origin of “all-or-none”."
+   },
+   "source": "../biology/body/action-potential/#step1"
+  }
+ ]
+}

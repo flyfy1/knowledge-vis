@@ -1,0 +1,80 @@
+{
+ "schema": 2,
+ "slug": "neuroscience-basics",
+ "note": "Step 1 (threshold and the all-or-none spike) is attached to the action-potential concept from the action-potential page.",
+ "nodes": [
+  {
+   "id": "resting-potential",
+   "group": "life",
+   "stage": "senior",
+   "order": 50,
+   "title": {
+    "zh": "静息电位 · 离子梯度的账本",
+    "en": "The resting potential · an ion-gradient ledger"
+   },
+   "description": {
+    "zh": "神经元不放电时膜内比膜外低约 70 毫伏：K⁺ 容易从漏通道流出、把膜内拉负，少量 Na⁺ 漏入又把它往上拉，两者平衡的位置就是静息电位，它是每一次神经信号的起点。",
+    "en": "A neuron at rest sits about 70 millivolts more negative inside than outside: K⁺ leaking out through its channels pulls the inside negative, a little Na⁺ leaking in pulls it back up, and the balance point is the resting potential — the starting line for every nerve signal."
+   },
+   "formula": "≈ −70 mV",
+   "source": "../biology/body/neuroscience-basics/#step0",
+   "lessons": [
+    {
+     "slug": "neuroscience-basics",
+     "step": 0,
+     "category": "biology",
+     "stage": "senior",
+     "primary": true
+    }
+   ],
+   "aliases": [
+    {
+     "zh": "静息电位",
+     "en": "resting potential"
+    },
+    {
+     "zh": "膜电位",
+     "en": "membrane potential"
+    },
+    {
+     "zh": "−70 mV",
+     "en": "minus 70 millivolts"
+    },
+    {
+     "zh": "神经元为什么带电",
+     "en": "why neurons are electrically charged"
+    },
+    {
+     "zh": "钾离子漏通道",
+     "en": "potassium leak channels"
+    },
+    {
+     "zh": "神经科学入门",
+     "en": "neuroscience basics"
+    }
+   ]
+  }
+ ],
+ "attach": [
+  {
+   "node": "action-potential",
+   "step": 1
+  }
+ ],
+ "edges": [
+  {
+   "from": "electric-fields",
+   "to": "resting-potential",
+   "type": "foundation",
+   "label": {
+    "zh": "膜两侧的电势差",
+    "en": "A potential difference across the membrane"
+   },
+   "reason": {
+    "zh": "膜内外正负离子分布不均，就在薄薄一层膜两侧形成电势差；静息电位就是用伏特（毫伏）来量的这一段电势差。",
+    "en": "Unequal positive and negative ions on the two sides of a thin membrane create a potential difference across it; the resting potential is that difference, measured in volts (millivolts)."
+   },
+   "source": "../biology/body/neuroscience-basics/#step0"
+  }
+ ]
+}

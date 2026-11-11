@@ -1,0 +1,113 @@
+{
+ "schema": 2,
+ "slug": "membrane-transport",
+ "note": "The page has no stepN section ids; the concept links to the page root.",
+ "nodes": [
+  {
+   "id": "membrane-transport",
+   "group": "life",
+   "stage": "senior",
+   "order": 50,
+   "title": {
+    "zh": "膜运输 · 扩散、渗透与泵",
+    "en": "Membrane transport · diffusion, osmosis and pumps"
+   },
+   "description": {
+    "zh": "分子在膜两侧随机来回穿越，浓度高的一侧穿过来的更多，于是出现顺着浓度差的净流动（扩散）；水跟着溶质浓度走（渗透），细胞随之胀大或皱缩；想逆着浓度差搬运，就要消耗 ATP 让泵来做。",
+    "en": "Molecules cross a membrane at random in both directions, but more come from the crowded side, giving a net flow down the concentration difference (diffusion); water follows the solute concentration (osmosis), swelling or shrinking the cell; moving things against the difference takes ATP-powered pumps."
+   },
+   "source": "../biology/cells/membrane-transport/",
+   "lessons": [
+    {
+     "slug": "membrane-transport",
+     "step": null,
+     "category": "biology",
+     "stage": "senior",
+     "primary": true
+    }
+   ],
+   "aliases": [
+    {
+     "zh": "物质跨膜运输",
+     "en": "transport across the cell membrane"
+    },
+    {
+     "zh": "自由扩散",
+     "en": "simple diffusion"
+    },
+    {
+     "zh": "渗透作用",
+     "en": "osmosis"
+    },
+    {
+     "zh": "主动运输",
+     "en": "active transport"
+    },
+    {
+     "zh": "被动运输",
+     "en": "passive transport"
+    },
+    {
+     "zh": "钠钾泵",
+     "en": "sodium–potassium pump"
+    },
+    {
+     "zh": "高渗 低渗 等渗",
+     "en": "hypertonic hypotonic isotonic"
+    },
+    {
+     "zh": "红细胞放进清水会怎样",
+     "en": "what happens to a red blood cell in pure water"
+    },
+    {
+     "zh": "细胞膜的选择透过性",
+     "en": "selective permeability"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "cell-structure",
+   "to": "membrane-transport",
+   "type": "foundation",
+   "label": {
+    "zh": "细胞膜是这道门",
+    "en": "The cell membrane is the gate"
+   },
+   "reason": {
+    "zh": "细胞靠一层膜把内外分开；膜对不同物质的通透性不同，内外浓度才能维持差异，也才谈得上谁进谁出。",
+    "en": "A cell keeps inside and outside apart with a membrane; because the membrane lets different substances through to different degrees, inside and outside can hold different concentrations, and it makes sense to ask what goes in and what comes out."
+   },
+   "source": "../biology/cells/membrane-transport/"
+  },
+  {
+   "from": "particles-states",
+   "to": "membrane-transport",
+   "type": "foundation",
+   "label": {
+    "zh": "扩散来自分子的随机运动",
+    "en": "Diffusion comes from random molecular motion"
+   },
+   "reason": {
+    "zh": "分子一直在乱动，单个分子往哪边跑都可能；只是浓度高的一侧分子更多，统计上穿过去的更多，净通量才顺着浓度差。",
+    "en": "Molecules are always jostling, and any single one may go either way; there are simply more on the crowded side, so statistically more cross from there, and the net flux runs down the gradient."
+   },
+   "source": "../biology/cells/membrane-transport/"
+  },
+  {
+   "from": "membrane-transport",
+   "to": "resting-potential",
+   "type": "foundation",
+   "label": {
+    "zh": "离子梯度是静息电位的本钱",
+    "en": "Ion gradients are what the resting potential spends"
+   },
+   "reason": {
+    "zh": "钠钾泵耗能把 K⁺ 泵进、Na⁺ 泵出，建立膜内外的离子浓度差；K⁺ 顺着浓度差从漏通道漏出，膜内就变负，这就是静息电位。",
+    "en": "The sodium–potassium pump spends energy moving K⁺ in and Na⁺ out, building concentration differences across the membrane; K⁺ leaking back out through its channels leaves the inside negative — the resting potential."
+   },
+   "source": "../biology/body/neuroscience-basics/#step0"
+  }
+ ]
+}
