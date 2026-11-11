@@ -1,0 +1,549 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Numbers</title>
+<meta name="description" content="">
+<style>
+  :root { --bg:#0c0e13; --card:#141821; --card2:#1a1f2b; --line:#2c3342; --ink:#ebe8e0; --body:#d5d7de; --mute:#a3aab8;
+    --gold:#e9b949; --cyan:#63c7e6; --red:#f07a6d; --green:#7ad6a0; --violet:#b39dfb;
+    --serif:"Songti SC","STSong","Noto Serif CJK SC","Source Han Serif SC","SimSun",Georgia,serif;
+    --sans:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC",system-ui,sans-serif;
+    --mono:ui-monospace,Menlo,Consolas,monospace; }
+  /* English: Latin faces first (the CJK fonts' Latin glyphs set hyphens wide), and a smaller hero for the longer title */
+  html[lang=en] { --serif:Georgia,"Times New Roman","Songti SC",serif;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"PingFang SC",sans-serif; }
+  html[lang=en] h1 { font-size:clamp(32px,6.2vw,64px); letter-spacing:0; }
+  * { box-sizing:border-box; }
+  html { scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior:auto; } *, *::before, *::after { transition:none !important; animation:none !important; } }
+  body { margin:0; background:var(--bg); color:var(--ink); font:17px/1.85 var(--sans); -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+  a { color:var(--cyan); text-underline-offset:3px; }
+  :focus-visible { outline:2px solid var(--gold); outline-offset:3px; border-radius:6px; }
+  .wrap { max-width:760px; margin:0 auto; padding:0 20px; }
+  .wide { max-width:980px; margin:0 auto; padding:0 20px; }
+
+  .topbar { position:relative; z-index:5; display:flex; justify-content:space-between; align-items:center; gap:12px; max-width:980px; margin:0 auto; padding:8px 20px 0; }
+  .back { display:inline-flex; align-items:center; min-height:48px; padding:0 4px; color:var(--mute); text-decoration:none; font-size:15px; }
+  .back:hover { color:var(--ink); }
+  #langToggle { display:inline-flex; border:1px solid var(--line); border-radius:999px; overflow:hidden; background:var(--card); }
+  #langToggle button { min-width:52px; min-height:48px; border:0; border-radius:0; background:transparent; color:var(--mute); font:600 14px/1 var(--sans); cursor:pointer; padding:0 12px; }
+  #langToggle button[aria-pressed="true"] { background:rgba(233,185,73,.16); color:var(--gold); }
+  #langToggle button + button { border-left:1px solid var(--line); }
+
+  .hero { padding:48px 0 40px; border-bottom:1px solid var(--line); }
+  .kicker { font:13px/1.4 var(--mono); letter-spacing:.2em; color:var(--gold); }
+  h1 { font:400 clamp(38px,8vw,84px)/1.15 var(--serif); letter-spacing:.03em; margin:.35em 0 .3em; }
+  .sub { font:400 clamp(18px,2.6vw,24px)/1.6 var(--serif); margin:0 0 1.4em; }
+  .case { font:400 clamp(18px,2.4vw,22px)/1.75 var(--serif); border-left:3px solid var(--cyan); padding:6px 0 6px 18px; margin:0 0 1.2em; }
+  .case b { color:var(--gold); font-weight:400; }
+  .lead { color:var(--body); }
+  .note { font-size:14.5px; color:var(--mute); border-left:2px solid var(--line); padding-left:14px; margin-top:1.6em; line-height:1.75; }
+
+  .toc { padding:44px 0 0; }
+  .toc h2 { font:13px/1 var(--mono); letter-spacing:.2em; color:var(--mute); margin:0 0 14px; font-weight:400; }
+  .toc ol { list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:0 22px; }
+  .toc a { display:flex; align-items:center; gap:12px; min-height:48px; padding:4px 0; text-decoration:none; color:var(--ink); border-bottom:1px solid var(--line); font-size:15px; line-height:1.4; }
+  .toc a:hover { color:var(--gold); }
+  .toc a span { font:12px/1 var(--mono); color:var(--mute); flex:0 0 auto; }
+
+  .part { margin:100px auto 0; padding-top:40px; border-top:1px solid var(--line); }
+  .part .kicker { color:var(--cyan); }
+  .part h2 { font:400 clamp(28px,5vw,44px)/1.3 var(--serif); margin:.4em 0 .35em; letter-spacing:.03em; }
+  .part p { color:var(--mute); }
+
+  .ch { padding-top:88px; }
+  .num { font:400 15px/1 var(--mono); color:var(--gold); letter-spacing:.2em; }
+  .ch h3 { font:400 clamp(25px,4.2vw,36px)/1.35 var(--serif); margin:.45em 0 .5em; letter-spacing:.02em; }
+  .law { font:400 clamp(19px,2.5vw,22px)/1.7 var(--serif); border-left:3px solid var(--gold); padding:4px 0 4px 18px; margin:0 0 1.4em; }
+  .ch p { margin:0 0 1.1em; color:var(--body); }
+  .ch strong { color:var(--ink); font-weight:600; }
+  .limit { color:var(--mute) !important; font-size:15.5px; border-top:1px dashed var(--line); padding-top:12px; }
+
+  figure.lab { margin:30px 0; background:var(--card); border:1px solid var(--line); border-radius:16px; padding:20px 22px 18px; }
+  .lab h4 { margin:0 0 4px; font:600 16px/1.5 var(--sans); }
+  .lab .how { margin:0 0 14px; font-size:14.5px; color:var(--mute); line-height:1.7; }
+  .cv { width:100%; height:320px; display:block; border-radius:10px; background:#0f1219; touch-action:pan-y; }
+  .cv.tall { height:380px; }
+  .cv.grid { height:auto; aspect-ratio:2 / 1; }
+  .cv.grid4 { height:auto; aspect-ratio:4 / 1; }
+  .ctl { display:flex; flex-wrap:wrap; gap:4px 22px; align-items:center; margin:12px 0 0; font-size:14.5px; color:var(--mute); }
+  .ctl label.rng { display:flex; align-items:center; gap:10px; flex:1 1 260px; min-width:0; min-height:48px; }
+  .ctl label.rng > span:first-child { flex:0 1 auto; }
+  .ctl output { flex:0 0 auto; min-width:4.2em; text-align:right; color:var(--ink); font-variant-numeric:tabular-nums; }
+  label.chk { display:inline-flex; align-items:center; gap:10px; min-height:48px; cursor:pointer; color:var(--ink); padding-right:6px; }
+  input[type=range] { flex:1 1 auto; min-width:80px; height:48px; margin:0; accent-color:var(--gold); background:transparent; cursor:pointer; }
+  input[type=checkbox] { accent-color:var(--gold); width:22px; height:22px; margin:0; }
+  .btns { display:flex; flex-wrap:wrap; gap:8px 10px; margin-top:8px; }
+  button.b { font:inherit; font-size:14.5px; color:var(--ink); background:var(--card2); border:1px solid var(--line); border-radius:999px; min-height:48px; padding:0 18px; cursor:pointer; }
+  button.b:hover { border-color:var(--gold); }
+  button.b:disabled { opacity:.5; cursor:default; }
+  .read { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:10px; margin-top:14px; }
+  .read div { background:var(--card2); border-radius:10px; padding:10px 12px; font-size:13px; color:var(--mute); line-height:1.5; }
+  .read b { display:block; font:600 20px/1.3 var(--sans); color:var(--ink); font-variant-numeric:tabular-nums; }
+  .read b.g { color:var(--gold); } .read b.r { color:var(--red); } .read b.c { color:var(--cyan); } .read b.v { color:var(--violet); }
+  .say { margin:14px 0 0; font-size:15px; color:var(--ink); line-height:1.75; min-height:3.5em; }
+  .say em { font-style:normal; color:var(--gold); }
+  .legend { display:flex; flex-wrap:wrap; gap:4px 18px; font-size:13.5px; color:var(--mute); margin-top:10px; }
+  .legend i { display:inline-block; width:12px; height:12px; border-radius:2px; margin-right:6px; vertical-align:-1px; }
+  table.tb { width:100%; border-collapse:collapse; margin-top:14px; font-size:14px; font-variant-numeric:tabular-nums; }
+  .tb th, .tb td { text-align:right; padding:8px 6px; border-bottom:1px solid var(--line); }
+  .tb th:first-child, .tb td:first-child { text-align:left; color:var(--ink); }
+  .tb thead th { color:var(--mute); font-weight:400; }
+  .tb td.win { color:var(--gold); }
+  .tb td small { display:block; font-size:12px; color:var(--mute); }
+  .qs { list-style:none; padding:0; margin:0 0 1.2em; counter-reset:q; }
+  .qs li { counter-increment:q; position:relative; padding:14px 0 14px 42px; border-bottom:1px solid var(--line); color:var(--body); }
+  .qs li::before { content:counter(q); position:absolute; left:0; top:14px; width:28px; height:28px; border-radius:50%; border:1px solid var(--gold); color:var(--gold); font:14px/26px var(--mono); text-align:center; }
+  .more { list-style:none; padding:0; margin:0; }
+  .more a { display:flex; align-items:center; min-height:48px; border-bottom:1px solid var(--line); text-decoration:none; }
+  footer { margin:100px 0 0; padding:36px 0 70px; border-top:1px solid var(--line); color:var(--mute); font-size:14px; line-height:1.8; }
+  footer p { margin:0 0 1em; }
+  footer a { color:var(--mute); display:inline-flex; align-items:center; min-height:48px; }
+  .sr { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+  @media (max-width:640px) {
+    body { font-size:16px; } .wrap, .wide, .topbar { padding-left:16px; padding-right:16px; }
+    figure.lab { padding:16px 14px 14px; border-radius:14px; }
+    .cv { height:270px; } .cv.tall { height:360px; } .cv.grid4 { aspect-ratio:1 / 1; }
+    .ch { padding-top:68px; } .read { grid-template-columns:repeat(2,minmax(0,1fr)); } .read b { font-size:18px; }
+    .tb { font-size:13px; } .tb th, .tb td { padding:7px 3px; }
+    .ctl label.rng { flex-wrap:wrap; gap:0 10px; } .ctl label.rng > span:first-child { flex:1 0 100%; line-height:1.4; padding-top:6px; }
+    .cv.grid { aspect-ratio:1 / 1.9; }
+  }
+</style>
+</head>
+<body>
+<div class="topbar">
+  <a class="back" href="../../../" data-i18n="back"></a>
+  <div id="langToggle" role="group" data-i18n-attr="aria-label:lang.label">
+    <button type="button" data-lang="zh" aria-pressed="false">中</button>
+    <button type="button" data-lang="en" aria-pressed="false">EN</button>
+  </div>
+</div>
+
+<header class="hero"><div class="wrap">
+  <div class="kicker" data-i18n="hero.kicker"></div>
+  <h1 data-i18n="hero.title"></h1>
+  <p class="sub" data-i18n="hero.sub"></p>
+  <p class="case" id="heroCase"></p>
+  <p class="lead" data-i18n-html="hero.lead"></p>
+  <p class="note" data-i18n-html="hero.note"></p>
+</div></header>
+
+<nav class="wrap toc" data-i18n-attr="aria-label:toc.label">
+  <h2 data-i18n="toc.title"></h2>
+  <ol>
+    <li><a href="#c1"><span>01</span><b data-i18n="toc.c1" style="font-weight:400"></b></a></li>
+    <li><a href="#c2"><span>02</span><b data-i18n="toc.c2" style="font-weight:400"></b></a></li>
+    <li><a href="#c3"><span>03</span><b data-i18n="toc.c3" style="font-weight:400"></b></a></li>
+    <li><a href="#c4"><span>04</span><b data-i18n="toc.c4" style="font-weight:400"></b></a></li>
+    <li><a href="#c5"><span>05</span><b data-i18n="toc.c5" style="font-weight:400"></b></a></li>
+    <li><a href="#c6"><span>06</span><b data-i18n="toc.c6" style="font-weight:400"></b></a></li>
+    <li><a href="#c7"><span>07</span><b data-i18n="toc.c7" style="font-weight:400"></b></a></li>
+    <li><a href="#c8"><span>08</span><b data-i18n="toc.c8" style="font-weight:400"></b></a></li>
+    <li><a href="#c9"><span>09</span><b data-i18n="toc.c9" style="font-weight:400"></b></a></li>
+    <li><a href="#c10"><span>10</span><b data-i18n="toc.c10" style="font-weight:400"></b></a></li>
+  </ol>
+</nav>
+
+<main>
+<section class="wrap part"><div class="kicker" data-i18n="part1.kicker"></div><h2 data-i18n="part1.title"></h2><p data-i18n="part1.p"></p></section>
+
+<!-- 01 regression to the mean -->
+<section class="ch" id="c1" data-step="1">
+  <div class="wrap">
+    <div class="num">01</div>
+    <h3 data-i18n="c1.title"></h3>
+    <p class="law" data-i18n="c1.law"></p>
+    <p data-i18n-html="c1.p1"></p>
+    <p data-i18n-html="c1.p2"></p>
+  </div>
+  <div class="wide"><figure class="lab">
+    <h4 data-i18n="c1.h"></h4>
+    <p class="how" data-i18n="c1.how"></p>
+    <canvas class="cv tall" id="c1cv" role="img" data-i18n-attr="aria-label:c1.cv"></canvas>
+    <div class="ctl">
+      <label class="rng"><span data-i18n="c1.ctl.luck"></span><input type="range" id="c1luck" min="0" max="90" step="5" value="50"><output id="c1luckO"></output></label>
+      <label class="rng"><span data-i18n="c1.ctl.q"></span><input type="range" id="c1q" min="2" max="30" step="1" value="10"><output id="c1qO"></output></label>
+    </div>
+    <div class="btns">
+      <button class="b" type="button" id="c1retest" data-i18n="c1.ctl.retest"></button>
+      <label class="chk"><input type="checkbox" id="c1ctrl"><span data-i18n="c1.ctl.control"></span></label>
+    </div>
+    <div class="read">
+      <div><b class="c" id="c1b1"></b><span data-i18n="c1.r.b1"></span></div>
+      <div><b class="c" id="c1b2"></b><span data-i18n="c1.r.b2"></span></div>
+      <div><b class="c" id="c1bd"></b><span data-i18n="c1.r.bd"></span></div>
+      <div><b class="g" id="c1td"></b><span data-i18n="c1.r.td"></span></div>
+      <div id="c1sdBox" hidden><b id="c1sd"></b><span data-i18n="c1.r.sd"></span></div>
+      <div id="c1udBox" hidden><b id="c1ud"></b><span data-i18n="c1.r.ud"></span></div>
+    </div>
+    <p class="say" id="c1say" aria-live="polite"></p>
+  </figure></div>
+  <div class="wrap">
+    <p data-i18n-html="c1.a1"></p>
+    <p data-i18n-html="c1.a2"></p>
+    <p data-i18n-html="c1.a3"></p>
+    <p class="limit" data-i18n-html="c1.limit"></p>
+  </div>
+</section>
+
+<!-- 02 small samples -->
+<section class="ch" id="c2" data-step="2">
+  <div class="wrap">
+    <div class="num">02</div>
+    <h3 data-i18n="c2.title"></h3>
+    <p class="law" data-i18n="c2.law"></p>
+    <p data-i18n-html="c2.p1"></p>
+    <p data-i18n-html="c2.p2"></p>
+  </div>
+  <div class="wide"><figure class="lab">
+    <h4 data-i18n="c2.h"></h4>
+    <p class="how" data-i18n="c2.how"></p>
+    <canvas class="cv tall" id="c2cv" role="img" data-i18n-attr="aria-label:c2.cv"></canvas>
+    <div class="ctl">
+      <label class="rng"><span data-i18n="c2.ctl.spread"></span><input type="range" id="c2spread" min="0" max="3" step="0.25" value="0"><output id="c2spreadO"></output></label>
+    </div>
+    <div class="btns">
+      <button class="b" type="button" id="c2next" data-i18n="c2.ctl.next"></button>
+      <button class="b" type="button" id="c2reset" data-i18n="c2.ctl.reset"></button>
+    </div>
+    <div class="read">
+      <div><b class="g" id="c2top"></b><span data-i18n="c2.r.top"></span></div>
+      <div><b class="c" id="c2bot"></b><span data-i18n="c2.r.bot"></span></div>
+      <div><b id="c2all"></b><span data-i18n="c2.r.all"></span></div>
+      <div><b class="g" id="c2prev"></b><span data-i18n="c2.r.prev"></span></div>
+    </div>
+    <p class="say" id="c2say" aria-live="polite"></p>
+  </figure></div>
+  <div class="wrap">
+    <p data-i18n-html="c2.a1"></p>
+    <p data-i18n-html="c2.a2"></p>
+    <p data-i18n-html="c2.a3"></p>
+    <p class="limit" data-i18n-html="c2.limit"></p>
+  </div>
+</section>
+
+<!-- 03 survivorship -->
+<section class="ch" id="c3" data-step="3">
+  <div class="wrap">
+    <div class="num">03</div>
+    <h3 data-i18n="c3.title"></h3>
+    <p class="law" data-i18n="c3.law"></p>
+    <p data-i18n-html="c3.p1"></p>
+    <p data-i18n-html="c3.p2"></p>
+  </div>
+  <div class="wide"><figure class="lab">
+    <h4 data-i18n="c3.h"></h4>
+    <p class="how" data-i18n="c3.how"></p>
+    <canvas class="cv tall" id="c3cv" role="img" data-i18n-attr="aria-label:c3.cv"></canvas>
+    <div class="legend">
+      <span><i style="background:var(--gold)"></i><span data-i18n="c3.leg.surv"></span></span>
+      <span><i style="background:var(--cyan)"></i><span data-i18n="c3.leg.all"></span></span>
+      <span><i style="background:var(--red)"></i><span data-i18n="c3.leg.dead"></span></span>
+    </div>
+    <div class="ctl">
+      <label class="rng"><span data-i18n="c3.ctl.bar"></span><input type="range" id="c3bar" min="0" max="100" step="5" value="80"><output id="c3barO"></output></label>
+    </div>
+    <div class="btns">
+      <button class="b" type="button" id="c3rerun" data-i18n="c3.ctl.rerun"></button>
+      <button class="b" type="button" id="c3more" data-i18n="c3.ctl.more"></button>
+      <label class="chk"><input type="checkbox" id="c3dead"><span data-i18n="c3.ctl.dead"></span></label>
+    </div>
+    <div class="read">
+      <div><b id="c3alive"></b><span data-i18n="c3.r.alive"></span></div>
+      <div><b class="g" id="c3surv"></b><span data-i18n="c3.r.surv"></span></div>
+      <div><b class="c" id="c3all"></b><span data-i18n="c3.r.all"></span></div>
+      <div><b class="v" id="c3after"></b><span data-i18n="c3.r.after"></span></div>
+    </div>
+    <p class="say" id="c3say" aria-live="polite"></p>
+  </figure></div>
+  <div class="wrap">
+    <p data-i18n-html="c3.a1"></p>
+    <p data-i18n-html="c3.a2"></p>
+    <p data-i18n-html="c3.a3"></p>
+    <p class="limit" data-i18n-html="c3.limit"></p>
+  </div>
+</section>
+
+<!-- 04 many comparisons -->
+<section class="ch" id="c4" data-step="4">
+  <div class="wrap">
+    <div class="num">04</div>
+    <h3 data-i18n="c4.title"></h3>
+    <p class="law" data-i18n="c4.law"></p>
+    <p data-i18n-html="c4.p1"></p>
+    <p data-i18n-html="c4.p2"></p>
+  </div>
+  <div class="wide"><figure class="lab">
+    <h4 data-i18n="c4.h"></h4>
+    <p class="how" data-i18n="c4.how"></p>
+    <canvas class="cv" id="c4cv" role="img" data-i18n-attr="aria-label:c4.cv"></canvas>
+    <div class="ctl">
+      <label class="rng"><span data-i18n="c4.ctl.k"></span><input type="range" id="c4k" min="1" max="60" step="1" value="20"><output id="c4kO"></output></label>
+    </div>
+    <div class="btns">
+      <button class="b" type="button" id="c4round" data-i18n="c4.ctl.round"></button>
+      <button class="b" type="button" id="c4many" data-i18n="c4.ctl.many"></button>
+      <button class="b" type="button" id="c4rep" data-i18n="c4.ctl.rep"></button>
+      <label class="chk"><input type="checkbox" id="c4bonf"><span data-i18n="c4.ctl.bonf"></span></label>
+    </div>
+    <div class="read">
+      <div><b class="g" id="c4sig"></b><span data-i18n="c4.r.sig"></span></div>
+      <div><b class="c" id="c4share"></b><span data-i18n="c4.r.share"></span> <span id="c4shareN"></span></div>
+      <div><b id="c4theory"></b><span data-i18n="c4.r.theory"></span></div>
+    </div>
+    <p class="say" id="c4say" aria-live="polite"></p>
+  </figure></div>
+  <div class="wrap">
+    <p data-i18n-html="c4.a1"></p>
+    <p data-i18n-html="c4.a2"></p>
+    <p class="limit" data-i18n-html="c4.limit"></p>
+  </div>
+</section>
+
+<section class="wrap part"><div class="kicker" data-i18n="part2.kicker"></div><h2 data-i18n="part2.title"></h2><p data-i18n="part2.p"></p></section>
+
+<!-- 05 Simpson -->
+<section class="ch" id="c5" data-step="5">
+  <div class="wrap">
+    <div class="num">05</div>
+    <h3 data-i18n="c5.title"></h3>
+    <p class="law" data-i18n="c5.law"></p>
+    <p data-i18n-html="c5.p1"></p>
+    <p data-i18n-html="c5.p2"></p>
+  </div>
+  <div class="wide"><figure class="lab">
+    <h4 data-i18n="c5.h"></h4>
+    <p class="how" data-i18n="c5.how"></p>
+    <canvas class="cv" id="c5cv" role="img" data-i18n-attr="aria-label:c5.cv"></canvas>
+    <div class="ctl">
+      <label class="rng"><span data-i18n="c5.ctl.a"></span><input type="range" id="c5a" min="0" max="100" step="1" value="75"><output id="c5aO"></output></label>
+      <label class="rng"><span data-i18n="c5.ctl.b"></span><input type="range" id="c5b" min="0" max="100" step="1" value="23"><output id="c5bO"></output></label>
+    </div>
+    <div class="btns">
+      <button class="b" type="button" id="c5rand" data-i18n="c5.ctl.rand"></button>
+      <button class="b" type="button" id="c5real" data-i18n="c5.ctl.real"></button>
+    </div>
+    <table class="tb">
+      <thead><tr><th data-i18n="c5.t.head"></th><th data-i18n="c5.t.small"></th><th data-i18n="c5.t.large"></th><th data-i18n="c5.t.all"></th></tr></thead>
+      <tbody>
+        <tr><td data-i18n="c5.t.A"></td><td id="c5As"></td><td id="c5Al"></td><td id="c5At"></td></tr>
+        <tr><td data-i18n="c5.t.B"></td><td id="c5Bs"></td><td id="c5Bl"></td><td id="c5Bt"></td></tr>
+      </tbody>
+    </table>
+    <p class="say" id="c5say" aria-live="polite"></p>
+  </figure></div>
+  <div class="wrap">
+    <p data-i18n-html="c5.a1"></p>
+    <p data-i18n-html="c5.a2"></p>
+    <p data-i18n-html="c5.a3"></p>
+    <p class="limit" data-i18n-html="c5.limit"></p>
+  </div>
+</section>
+
+<!-- 06 base rate -->
+<section class="ch" id="c6" data-step="6">
+  <div class="wrap">
+    <div class="num">06</div>
+    <h3 data-i18n="c6.title"></h3>
+    <p class="law" data-i18n="c6.law"></p>
+    <p data-i18n-html="c6.p1"></p>
+    <p data-i18n-html="c6.p2"></p>
+  </div>
+  <div class="wide"><figure class="lab">
+    <h4 data-i18n="c6.h"></h4>
+    <p class="how" data-i18n="c6.how"></p>
+    <canvas class="cv grid4" id="c6cv" role="img" data-i18n-attr="aria-label:c6.cv"></canvas>
+    <div class="legend">
+      <span><i style="background:var(--gold)"></i><span data-i18n="c6.leg.tp"></span></span>
+      <span><i style="background:var(--red)"></i><span data-i18n="c6.leg.fp"></span></span>
+      <span><i style="background:#7a6430"></i><span data-i18n="c6.leg.fn"></span></span>
+      <span><i style="background:#262d3c"></i><span data-i18n="c6.leg.tn"></span></span>
+    </div>
+    <div class="ctl">
+      <label class="rng"><span data-i18n="c6.ctl.prev"></span><input type="range" id="c6prev" min="0" max="9" step="1" value="3"><output id="c6prevO"></output></label>
+      <label class="rng"><span data-i18n="c6.ctl.fpr"></span><input type="range" id="c6fpr" min="1" max="20" step="1" value="5"><output id="c6fprO"></output></label>
+    </div>
+    <div class="btns">
+      <button class="b" type="button" id="c6all" data-i18n="c6.ctl.all"></button>
+      <button class="b" type="button" id="c6clinic" data-i18n="c6.ctl.clinic"></button>
+    </div>
+    <div class="read">
+      <div><b class="g" id="c6tp"></b><span data-i18n="c6.r.tp"></span></div>
+      <div><b class="r" id="c6fp"></b><span data-i18n="c6.r.fp"></span></div>
+      <div><b class="g" id="c6ppv"></b><span data-i18n="c6.r.ppv"></span></div>
+      <div><b id="c6sens"></b><span data-i18n="c6.r.sens"></span></div>
+    </div>
+    <p class="say" id="c6say" aria-live="polite"></p>
+  </figure></div>
+  <div class="wrap">
+    <p data-i18n-html="c6.a1"></p>
+    <p data-i18n-html="c6.a2"></p>
+    <p data-i18n-html="c6.a3"></p>
+    <p class="limit" data-i18n-html="c6.limit"></p>
+  </div>
+</section>
+
+<!-- 07 relative vs absolute risk -->
+<section class="ch" id="c7" data-step="7">
+  <div class="wrap">
+    <div class="num">07</div>
+    <h3 data-i18n="c7.title"></h3>
+    <p class="law" data-i18n="c7.law"></p>
+    <p data-i18n-html="c7.p1"></p>
+    <p data-i18n-html="c7.p2"></p>
+  </div>
+  <div class="wide"><figure class="lab">
+    <h4 data-i18n="c7.h"></h4>
+    <p class="how" data-i18n="c7.how"></p>
+    <canvas class="cv grid" id="c7cv" role="img" data-i18n-attr="aria-label:c7.cv"></canvas>
+    <div class="ctl">
+      <label class="rng"><span data-i18n="c7.ctl.base"></span><input type="range" id="c7base" min="0" max="10" step="1" value="0"><output id="c7baseO"></output></label>
+      <label class="rng"><span data-i18n="c7.ctl.rr"></span><input type="range" id="c7rr" min="0.5" max="4" step="0.1" value="2"><output id="c7rrO"></output></label>
+    </div>
+    <div class="btns">
+      <button class="b" type="button" id="c7rare" data-i18n="c7.ctl.rare"></button>
+      <button class="b" type="button" id="c7common" data-i18n="c7.ctl.common"></button>
+    </div>
+    <div class="read">
+      <div><b class="c" id="c7u"></b><span data-i18n="c7.r.u"></span></div>
+      <div><b class="g" id="c7e"></b><span data-i18n="c7.r.e"></span></div>
+      <div><b id="c7d"></b><span data-i18n="c7.r.d"></span></div>
+      <div><b id="c7rel"></b><span data-i18n="c7.r.rel"></span></div>
+      <div><b class="v" id="c7nn"></b><span data-i18n="c7.r.nn"></span></div>
+    </div>
+    <p class="say" id="c7say" aria-live="polite"></p>
+  </figure></div>
+  <div class="wrap">
+    <p data-i18n-html="c7.a1"></p>
+    <p data-i18n-html="c7.a2"></p>
+    <p data-i18n-html="c7.a3"></p>
+    <p class="limit" data-i18n-html="c7.limit"></p>
+  </div>
+</section>
+
+<!-- 08 mean vs median -->
+<section class="ch" id="c8" data-step="8">
+  <div class="wrap">
+    <div class="num">08</div>
+    <h3 data-i18n="c8.title"></h3>
+    <p class="law" data-i18n="c8.law"></p>
+    <p data-i18n-html="c8.p1"></p>
+    <p data-i18n-html="c8.p2"></p>
+  </div>
+  <div class="wide"><figure class="lab">
+    <h4 data-i18n="c8.h"></h4>
+    <p class="how" data-i18n="c8.how"></p>
+    <canvas class="cv" id="c8cv" role="img" data-i18n-attr="aria-label:c8.cv"></canvas>
+    <div class="legend">
+      <span><i style="background:var(--cyan)"></i><span data-i18n="c8.leg.med"></span></span>
+      <span><i style="background:var(--gold)"></i><span data-i18n="c8.leg.mean"></span></span>
+    </div>
+    <div class="ctl">
+      <label class="rng"><span data-i18n="c8.ctl.s"></span><input type="range" id="c8s" min="0.1" max="1.5" step="0.05" value="1"><output id="c8sO"></output></label>
+    </div>
+    <div class="btns">
+      <button class="b" type="button" id="c8rich" aria-pressed="false" data-i18n="c8.ctl.rich"></button>
+    </div>
+    <div class="read">
+      <div><b class="c" id="c8med"></b><span data-i18n="c8.r.med"></span></div>
+      <div><b class="g" id="c8mean"></b><span data-i18n="c8.r.mean"></span></div>
+      <div><b id="c8ratio"></b><span data-i18n="c8.r.ratio"></span></div>
+      <div><b class="r" id="c8below"></b><span data-i18n="c8.r.below"></span></div>
+    </div>
+    <p class="say" id="c8say" aria-live="polite"></p>
+  </figure></div>
+  <div class="wrap">
+    <p data-i18n-html="c8.a1"></p>
+    <p data-i18n-html="c8.a2"></p>
+    <p data-i18n-html="c8.a3"></p>
+    <p class="limit" data-i18n-html="c8.limit"></p>
+  </div>
+</section>
+
+<section class="wrap part"><div class="kicker" data-i18n="part3.kicker"></div><h2 data-i18n="part3.title"></h2><p data-i18n="part3.p"></p></section>
+
+<!-- 09 Goodhart -->
+<section class="ch" id="c9" data-step="9">
+  <div class="wrap">
+    <div class="num">09</div>
+    <h3 data-i18n="c9.title"></h3>
+    <p class="law" data-i18n="c9.law"></p>
+    <p data-i18n-html="c9.p1"></p>
+    <p data-i18n-html="c9.p2"></p>
+  </div>
+  <div class="wide"><figure class="lab">
+    <h4 data-i18n="c9.h"></h4>
+    <p class="how" data-i18n="c9.how"></p>
+    <canvas class="cv tall" id="c9cv" role="img" data-i18n-attr="aria-label:c9.cv"></canvas>
+    <div class="legend">
+      <span><i style="background:var(--gold)"></i><span data-i18n="c9.leg.m"></span></span>
+      <span><i style="background:var(--cyan)"></i><span data-i18n="c9.leg.q"></span></span>
+      <span><i style="background:var(--violet)"></i><span data-i18n="c9.leg.r"></span></span>
+    </div>
+    <div class="ctl">
+      <label class="rng"><span data-i18n="c9.ctl.ease"></span><input type="range" id="c9ease" min="0" max="2.5" step="0.1" value="1.8"><output id="c9easeO"></output></label>
+      <label class="rng"><span data-i18n="c9.ctl.p"></span><input type="range" id="c9p" min="0" max="50" step="5" value="20"><output id="c9pO"></output></label>
+    </div>
+    <div class="btns">
+      <button class="b" type="button" id="c9play"></button>
+      <button class="b" type="button" id="c9step" data-i18n="c9.ctl.step"></button>
+      <button class="b" type="button" id="c9reset" data-i18n="c9.ctl.reset"></button>
+    </div>
+    <div class="read">
+      <div><b id="c9round"></b><span data-i18n="c9.r.round"></span></div>
+      <div><b class="g" id="c9m"></b><span data-i18n="c9.r.m"></span></div>
+      <div><b class="c" id="c9q"></b><span data-i18n="c9.r.q"></span></div>
+      <div><b class="v" id="c9r"></b><span data-i18n="c9.r.r"></span></div>
+      <div><b id="c9top"></b><span data-i18n="c9.r.top"></span></div>
+    </div>
+    <p class="say" id="c9say" aria-live="polite"></p>
+  </figure></div>
+  <div class="wrap">
+    <p data-i18n-html="c9.a1"></p>
+    <p data-i18n-html="c9.a2"></p>
+    <p data-i18n-html="c9.a3"></p>
+    <p class="limit" data-i18n-html="c9.limit"></p>
+  </div>
+</section>
+
+<!-- 10 questions -->
+<section class="ch" id="c10" data-step="10">
+  <div class="wrap">
+    <div class="num">10</div>
+    <h3 data-i18n="c10.title"></h3>
+    <p class="law" data-i18n="c10.law"></p>
+    <ol class="qs">
+      <li data-i18n-html="c10.q1"></li>
+      <li data-i18n-html="c10.q2"></li>
+      <li data-i18n-html="c10.q3"></li>
+      <li data-i18n-html="c10.q4"></li>
+      <li data-i18n-html="c10.q5"></li>
+      <li data-i18n-html="c10.q6"></li>
+    </ol>
+    <p id="c10end"></p>
+    <p data-i18n="c10.more"></p>
+    <ul class="more">
+      <li><a href="../../statistics/regression-correlation/#step5" data-i18n="c10.l1"></a></li>
+      <li><a href="../../inference/hypothesis-testing/#step1" data-i18n="c10.l2"></a></li>
+      <li><a href="../../inference/bayes-diagnostics/" data-i18n="c10.l3"></a></li>
+      <li><a href="../../statistics/central-limit-theorem/" data-i18n="c10.l4"></a></li>
+    </ul>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap">
+  <p data-i18n="foot.models"></p>
+  <p data-i18n="foot.sources"></p>
+  <a href="../../../" data-i18n="foot.site"></a>
+</div></footer>
+
+<script src="copy.zh.js"></script>
+<script src="copy.en.js" onerror="void 0"></script>
+<script src="models.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
