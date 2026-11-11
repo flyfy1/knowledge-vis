@@ -1,0 +1,130 @@
+{
+ "schema": 2,
+ "slug": "bayes-diagnostics",
+ "note": "The page uses #step-prior / #step-likelihood / #step-posterior anchors instead of #stepN, so lessons[].step is null.",
+ "nodes": [
+  {
+   "id": "positive-predictive-value",
+   "group": "measurement",
+   "stage": "senior",
+   "order": 50,
+   "title": {
+    "zh": "阳性预测值 · 检测阳性说明什么",
+    "en": "Positive predictive value · what a positive test means"
+   },
+   "description": {
+    "zh": "检测阳性的人里真正患病的比例，不只看检测准不准，还要看人群里本来有多少人患病：病很罕见时，大量健康人中的少数假阳性就可能比真阳性还多。",
+    "en": "The share of people testing positive who really have the disease depends not only on how accurate the test is but on how common the disease is to begin with: when it is rare, the few false positives among many healthy people can outnumber the true positives."
+   },
+   "formula": "PPV = TP / (TP + FP)",
+   "source": "../probability/inference/bayes-diagnostics/#step-posterior",
+   "lessons": [
+    {
+     "slug": "bayes-diagnostics",
+     "step": null,
+     "category": "probability",
+     "stage": "senior",
+     "primary": true
+    }
+   ],
+   "aliases": [
+    {
+     "zh": "检测阳性就一定得病了吗",
+     "en": "does a positive test mean I have it"
+    },
+    {
+     "zh": "假阳性",
+     "en": "false positive"
+    },
+    {
+     "zh": "基础率谬误",
+     "en": "base-rate fallacy"
+    },
+    {
+     "zh": "灵敏度 特异度",
+     "en": "sensitivity and specificity"
+    },
+    {
+     "zh": "阳性预测值",
+     "en": "positive predictive value (PPV)"
+    },
+    {
+     "zh": "患病率",
+     "en": "prevalence"
+    },
+    {
+     "zh": "贝叶斯定理 医学检测",
+     "en": "Bayes’ theorem for medical tests"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "bayes",
+   "to": "positive-predictive-value",
+   "type": "application",
+   "label": {
+    "zh": "后验就是阳性预测值",
+    "en": "The posterior is the positive predictive value"
+   },
+   "reason": {
+    "zh": "患病率是先验，灵敏度与特异度给出似然；看到阳性后用贝叶斯更新得到的后验，正是“阳性者里真患病的比例”。",
+    "en": "Prevalence is the prior and sensitivity and specificity supply the likelihoods; the posterior after seeing a positive result is exactly the share of positives who are truly ill."
+   },
+   "source": "../probability/inference/bayes-diagnostics/#step-posterior"
+  },
+  {
+   "from": "positive-predictive-value",
+   "to": "signal-detection-theory",
+   "type": "connection",
+   "label": {
+    "zh": "同一张四格表",
+    "en": "The same four-cell table"
+   },
+   "reason": {
+    "zh": "诊断的真阳性、假阴性、假阳性、真阴性，就是信号检测论里的命中、漏报、虚报、正确拒绝：灵敏度是命中率，1 − 特异度是虚报率。",
+    "en": "A test’s true positives, false negatives, false positives and true negatives are signal detection’s hits, misses, false alarms and correct rejections: sensitivity is the hit rate and 1 − specificity the false-alarm rate."
+   },
+   "source": "../probability/inference/bayes-diagnostics/#step-likelihood"
+  }
+ ],
+ "questions": [
+  {
+   "id": "q-bayes-diagnostics-0",
+   "question": {
+    "zh": "体检结果阳性，我真的患病的可能性有多大？",
+    "en": "My screening test came back positive — how likely is it that I really have the disease?"
+   },
+   "chain": [
+    "positive-predictive-value",
+    "bayes"
+   ],
+   "target": {
+    "node": "positive-predictive-value",
+    "href": "../probability/inference/bayes-diagnostics/#step-posterior"
+   },
+   "prompts": [
+    {
+     "node": "positive-predictive-value",
+     "ask": {
+      "zh": "1000 个人里，真阳性和假阳性各有多少？阳性结果的分母是谁？",
+      "en": "Out of 1,000 people, how many true and false positives are there? What is the denominator of a positive result?"
+     }
+    },
+    {
+     "node": "bayes",
+     "ask": {
+      "zh": "患病率（先验）变小时，同样准确的检测给出的后验会怎样变？",
+      "en": "If prevalence (the prior) is lower, what happens to the posterior from an equally accurate test?"
+     }
+    }
+   ],
+   "reveal": {
+    "zh": "阳性结果把你放进“所有阳性者”这一组，里面既有真病人也有假阳性的健康人。病越罕见，健康人越多，假阳性占比越大，所以即使检测很准，阳性预测值也可能远低于直觉。",
+    "en": "A positive result puts you in the group of everyone who tested positive, which holds both true patients and healthy false positives. The rarer the disease, the more healthy people there are and the larger the false-positive share, so even an accurate test can have a far lower positive predictive value than intuition suggests."
+   },
+   "source": "../probability/inference/bayes-diagnostics/#step-posterior"
+  }
+ ]
+}

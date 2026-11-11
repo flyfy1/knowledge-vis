@@ -1,0 +1,222 @@
+{
+ "schema": 2,
+ "slug": "entropy",
+ "nodes": [
+  {
+   "id": "information-entropy",
+   "group": "measurement",
+   "stage": "university",
+   "order": 50,
+   "title": {
+    "zh": "信息熵 · 惊讶的平均值",
+    "en": "Information entropy · the average surprise"
+   },
+   "description": {
+    "zh": "越罕见的事发生时带来的信息越多（I = −log₂ p），把一个随机源每种结果的信息量按概率加权平均就是熵 H——它衡量这个源有多难预测，也是无损压缩平均每个符号至少要用的比特数。",
+    "en": "The rarer an event, the more information its occurrence carries (I = −log₂ p); averaging that over a source’s outcomes, weighted by their probabilities, gives the entropy H — how unpredictable the source is, and the fewest bits per symbol any lossless compression can reach on average."
+   },
+   "formula": "H = −Σ p log₂ p",
+   "source": "../probability/stochastic/entropy/#step2",
+   "lessons": [
+    {
+     "slug": "entropy",
+     "step": 2,
+     "category": "probability",
+     "stage": "university",
+     "primary": true
+    }
+   ],
+   "aliases": [
+    {
+     "zh": "熵",
+     "en": "entropy"
+    },
+    {
+     "zh": "香农熵",
+     "en": "Shannon entropy"
+    },
+    {
+     "zh": "信息量",
+     "en": "information content / surprisal"
+    },
+    {
+     "zh": "比特",
+     "en": "bit"
+    },
+    {
+     "zh": "哈夫曼编码",
+     "en": "Huffman coding"
+    },
+    {
+     "zh": "压缩的极限",
+     "en": "limit of compression"
+    },
+    {
+     "zh": "不确定性怎么量化",
+     "en": "how to measure uncertainty"
+    }
+   ]
+  },
+  {
+   "id": "cross-entropy",
+   "group": "measurement",
+   "stage": "university",
+   "order": 50,
+   "title": {
+    "zh": "交叉熵与 KL 散度",
+    "en": "Cross-entropy & KL divergence"
+   },
+   "description": {
+    "zh": "真实世界按分布 p 出结果、模型却以为是 q 时，用 q 给 p 的数据标价得到的平均惊讶叫交叉熵；它比真熵多出的部分就是 KL 散度——模型错了要付的代价，也是机器学习分类损失的来历。",
+    "en": "When the world produces outcomes by distribution p but a model believes q, the average surprise of pricing p’s data with q is the cross-entropy; its excess over the true entropy is the KL divergence — the cost of the wrong model, and the origin of the classification loss used in machine learning."
+   },
+   "formula": "H(p, q) = H(p) + KL(p‖q)",
+   "source": "../probability/stochastic/entropy/#step5",
+   "lessons": [
+    {
+     "slug": "entropy",
+     "step": 5,
+     "category": "probability",
+     "stage": "university",
+     "primary": true
+    }
+   ],
+   "aliases": [
+    {
+     "zh": "交叉熵",
+     "en": "cross entropy"
+    },
+    {
+     "zh": "交叉熵损失",
+     "en": "cross-entropy loss"
+    },
+    {
+     "zh": "KL 散度",
+     "en": "KL divergence"
+    },
+    {
+     "zh": "相对熵",
+     "en": "relative entropy"
+    },
+    {
+     "zh": "对数损失",
+     "en": "log loss"
+    },
+    {
+     "zh": "为什么分类模型用交叉熵",
+     "en": "why do classifiers use cross-entropy"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "probability",
+   "to": "information-entropy",
+   "type": "foundation",
+   "label": {
+    "zh": "把概率换成惊讶再平均",
+    "en": "Turn probabilities into surprise, then average"
+   },
+   "reason": {
+    "zh": "熵是对每种结果的惊讶 −log₂ p 按其概率加权平均：分布越均匀越难猜、熵越大，几乎必然的分布熵接近 0。",
+    "en": "Entropy weights each outcome’s surprise −log₂ p by its probability: the more even the distribution, the harder it is to guess and the larger the entropy; a near-certain one has entropy near zero."
+   },
+   "source": "../probability/stochastic/entropy/#step2"
+  },
+  {
+   "from": "exp-log",
+   "to": "information-entropy",
+   "type": "foundation",
+   "label": {
+    "zh": "只有对数能让惊讶相加",
+    "en": "Only a logarithm makes surprise add up"
+   },
+   "reason": {
+    "zh": "两个独立事件同时发生的概率相乘，信息量却应该相加；能把乘法变成加法的是对数，所以信息量取 −log p，以 2 为底时单位是比特。",
+    "en": "The probability of two independent events multiplies, yet their information should add; a logarithm is what turns products into sums, so information is −log p, measured in bits with base 2."
+   },
+   "source": "../probability/stochastic/entropy/#step1"
+  },
+  {
+   "from": "information-entropy",
+   "to": "decision-trees",
+   "type": "application",
+   "label": {
+    "zh": "信息增益就是熵的下降",
+    "en": "Information gain is a drop in entropy"
+   },
+   "reason": {
+    "zh": "决策树每一刀都选让子集平均熵下降最多的切法；这个下降量就是信息增益，用的正是同一个 H = −Σ p log₂ p。",
+    "en": "Each split in a decision tree picks the cut that lowers the subsets’ average entropy the most; that drop is the information gain, computed with the same H = −Σ p log₂ p."
+   },
+   "source": "../computing/ml/decision-trees/#step1"
+  },
+  {
+   "from": "information-entropy",
+   "to": "cross-entropy",
+   "type": "foundation",
+   "label": {
+    "zh": "真熵是交叉熵的下限",
+    "en": "True entropy is the floor of cross-entropy"
+   },
+   "reason": {
+    "zh": "用正确的分布标价，平均惊讶就是熵 H(p)；换成错误的 q 只会更贵：H(p, q) = H(p) + KL(p‖q)，多出的 KL 永远不小于 0。",
+    "en": "Priced with the true distribution, the average surprise is the entropy H(p); a wrong q can only cost more: H(p, q) = H(p) + KL(p‖q), and the extra KL is never negative."
+   },
+   "source": "../probability/stochastic/entropy/#step5"
+  },
+  {
+   "from": "cross-entropy",
+   "to": "gradient-descent",
+   "type": "application",
+   "label": {
+    "zh": "训练就是把交叉熵往下推",
+    "en": "Training pushes cross-entropy down"
+   },
+   "reason": {
+    "zh": "分类模型把交叉熵当损失：它衡量模型分布 q 离数据分布 p 有多远，梯度下降沿它的下坡方向调整参数，让 q 越来越像 p。",
+    "en": "Classifiers use cross-entropy as their loss: it measures how far the model’s distribution q is from the data’s p, and gradient descent follows its downhill direction to make q resemble p."
+   },
+   "source": "../probability/stochastic/entropy/#step5"
+  }
+ ],
+ "questions": [
+  {
+   "id": "q-entropy-0",
+   "question": {
+    "zh": "一个文件最多能压缩到多小？",
+    "en": "How small can a file possibly be compressed?"
+   },
+   "chain": [
+    "information-entropy",
+    "probability"
+   ],
+   "target": {
+    "node": "information-entropy",
+    "href": "../probability/stochastic/entropy/#step4"
+   },
+   "prompts": [
+    {
+     "node": "information-entropy",
+     "ask": {
+      "zh": "为什么常见的符号该用短码、罕见的用长码？平均码长的下限是什么？",
+      "en": "Why should common symbols get short codes and rare ones long codes? What is the floor on the average length?"
+     }
+    },
+    {
+     "node": "probability",
+     "ask": {
+      "zh": "符号出现的概率越不均匀，猜下一个符号是更容易还是更难？",
+      "en": "The more uneven the symbol probabilities, is the next symbol easier or harder to guess?"
+     }
+    }
+   ],
+   "reveal": {
+    "zh": "无损压缩平均每个符号至少要用 H = −Σ p log₂ p 个比特，哈夫曼编码能做到离这个下限不到 1 比特。符号越可预测，熵越低，能压得越小；完全随机的数据几乎压不动。",
+    "en": "Lossless compression needs on average at least H = −Σ p log₂ p bits per symbol, and Huffman coding gets within 1 bit of that floor. The more predictable the symbols, the lower the entropy and the smaller the file; truly random data barely compresses at all."
+   },
+   "source": "../probability/stochastic/entropy/#step4"
+  }
+ ]
+}
