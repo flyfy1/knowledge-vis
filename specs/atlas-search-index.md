@@ -195,6 +195,13 @@ NODE_PATH=~/Documents/integ-life/integ-games/node_modules ATLAS_BASE_URL=http://
 - `atlas/tests/capacitor-rate-core.cjs`, `volt-second-core.cjs`: no longer pin `atlas/app.js` byte-equal to
   1707df17 (they still pin the power-converter model and flow).
 - `atlas/tests/data-quality.cjs`: aliases shape (above) and chapter anchors.
+- 2026-11-11, after merging concepts for 66 more lesson pages (229 concepts):
+  - `atlas/tests/browser.cjs`: a source with no `#anchor` used to be checked for `id=""`; it now passes only
+    when its page has no `stepN`/`chN` anchors at all (membrane-transport and kepler-orbits are single-view
+    pages). `sine` is past the list's first 40 results, so the invalid-node check opens "Show all" first.
+  - `atlas/galaxy/tests/browser.cjs`: the WebGL-failure and low-mode lists must show every node
+    (`ATLAS.nodes.length`), not the stale literal 39; the zh label is "Claude Code 开发 · 改进版本" since
+    the galaxy was relabelled (2c103ac3). The suite had stopped at that label assertion before reaching them.
 
 ## Not done
 

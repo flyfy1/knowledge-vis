@@ -26,7 +26,7 @@ let checks=0;function ok(v,m){assert.ok(v,m);checks++;}
   // Validate actual internal section destinations independently of UI selection.
   for(const href of new Set([...data.nodes,...data.edges].map(x=>x.source).filter(x=>x.startsWith('../')))){
    const u=new URL(href,base+'/atlas/'),response=await p.request.get(u.href.split('#')[0]);ok(response.ok(),'source HTTP '+href);
-   if(u.pathname.includes('/physics/circuits/power-converters/')){const content=await p.request.get(base+'/physics/circuits/power-converters/app.js');ok((await content.text()).includes('section('+u.hash.slice(5)+','),'generated source anchor '+href);}else ok((await response.text()).includes('id="'+u.hash.slice(1)+'"'),'source anchor '+href);
+   if(u.pathname.includes('/physics/circuits/power-converters/')){const content=await p.request.get(base+'/physics/circuits/power-converters/app.js');ok((await content.text()).includes('section('+u.hash.slice(5)+','),'generated source anchor '+href);}else if(u.hash)ok((await response.text()).includes('id="'+u.hash.slice(1)+'"'),'source anchor '+href);else ok(!/id="(step|ch)\d+"/.test(await response.text()),'anchorless source only for a page without step/chapter anchors '+href);
   }
   // Main user loop, actual navigation to evidence, and Back restoration.
   await p.locator('#search').fill('Fourier');await p.locator('[data-result=fourier]').click();
@@ -89,6 +89,8 @@ let checks=0;function ok(v,m){assert.ok(v,m);checks++;}
   await blocked.addInitScript(()=>{Object.defineProperty(window,'localStorage',{get(){throw new Error('denied');}});});
   const q=await blocked.newPage();q.on('pageerror',e=>errors.push(String(e)));
   await q.goto(base+'/atlas/?node=missing');ok(await q.locator('#invalid').isVisible(),'invalid node notice');await q.locator('[data-lang=en]').click();assert.equal(await q.locator('#detailTitle').innerText(),'Fourier analysis');
+  // The list shows 40 results until "Show all"; with 229 concepts sine is past the first 40.
+  if(await q.locator('[data-result=sine]').isHidden()&&await q.locator('#moreResults').isVisible())await q.locator('#moreResults').click();
   await q.locator('[data-result=sine]').click();ok(await q.locator('#invalid').isHidden(),'invalid notice clears');
   const nojs=await browser.newContext({javaScriptEnabled:false});const fallback=await nojs.newPage();await fallback.goto(base+'/atlas/');ok(await fallback.locator('noscript').isVisible(),'no JS fallback');
   assert.deepEqual(errors,[]);
