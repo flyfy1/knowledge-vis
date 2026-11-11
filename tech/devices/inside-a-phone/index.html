@@ -1,0 +1,616 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Inside a phone</title>
+<meta name="description" content="" data-i18n-content="doc.desc">
+<style>
+  :root { --bg:#0c0e13; --card:#141821; --card2:#1a1f2b; --line:#2b3242; --ink:#ebe8e0; --body:#d5d7de; --mute:#a7adbb;
+    --gold:#e9b949; --cyan:#63c7e6; --red:#f07a6d; --green:#7ad6a0; --violet:#b39dfb;
+    --serif:"Songti SC","STSong","Noto Serif CJK SC","Source Han Serif SC","SimSun",Georgia,serif;
+    --sans:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC",system-ui,sans-serif;
+    --mono:ui-monospace,Menlo,Consolas,monospace; color-scheme:dark; }
+  /* English: Latin fonts first, so symbols such as ° and ± are not taken from a CJK font (full-width gaps) */
+  html:lang(en) { --serif:Georgia,"Times New Roman","Songti SC",serif;
+    --sans:system-ui,-apple-system,"Helvetica Neue",Arial,"PingFang SC",sans-serif; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:17px/1.85 var(--sans); -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+  a { color:var(--cyan); }
+  a:focus-visible, button:focus-visible, input:focus-visible, [tabindex]:focus-visible { outline:2px solid var(--gold); outline-offset:3px; }
+  .wrap { max-width:760px; margin:0 auto; padding:0 20px; }
+  .wide { max-width:980px; margin:0 auto; padding:0 20px; }
+
+  .top { position:absolute; top:0; left:0; right:0; z-index:30; display:flex; justify-content:space-between; align-items:center; padding:6px 12px; pointer-events:none; }
+  .top > * { pointer-events:auto; }
+  .back { display:inline-flex; align-items:center; min-height:48px; padding:0 14px; border-radius:999px; background:rgba(20,24,33,.92); border:1px solid var(--line); color:var(--ink); text-decoration:none; font-size:14px; }
+  #langToggle { display:flex; background:rgba(20,24,33,.92); border:1px solid var(--line); border-radius:999px; padding:0; overflow:hidden; }
+  #langToggle button { min-width:52px; min-height:48px; border:0; border-radius:0; background:transparent; color:var(--mute); font:600 14px/1 var(--sans); cursor:pointer; padding:0 12px; }
+  #langToggle button[aria-pressed="true"] { background:rgba(233,185,73,.18); color:var(--gold); }
+  #langToggle button + button { border-left:1px solid var(--line); }
+
+  .hero { min-height:92vh; display:flex; align-items:center; border-bottom:1px solid var(--line); }
+  .hero .wrap { padding-top:96px; padding-bottom:64px; width:100%; }
+  .kicker { font:12px/1.4 var(--mono); letter-spacing:.24em; color:var(--gold); text-transform:uppercase; }
+  h1 { font:400 clamp(40px,9vw,96px)/1.12 var(--serif); letter-spacing:.04em; margin:.3em 0 .25em; }
+  .sub { font:400 clamp(18px,2.6vw,24px)/1.6 var(--serif); margin:0 0 1.4em; }
+  .lead { color:var(--body); max-width:36em; }
+  .note { font-size:14.5px; color:var(--mute); border-left:2px solid var(--line); padding-left:14px; margin-top:2em; max-width:36em; line-height:1.75; }
+  .tiny { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:10px; margin-top:2.2em; }
+  .tiny div { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:10px 12px; font-size:13px; color:var(--mute); line-height:1.5; }
+  .tiny b { display:block; font:600 16px/1.35 var(--mono); color:var(--gold); }
+
+  .toc { padding:56px 0 8px; }
+  .toc h2 { font:12px/1 var(--mono); letter-spacing:.24em; color:var(--mute); margin:0 0 14px; font-weight:400; }
+  .toc ol { list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); gap:0 22px; }
+  .toc a { display:flex; align-items:center; gap:12px; min-height:48px; text-decoration:none; color:var(--ink); border-bottom:1px solid var(--line); font-size:15px; }
+  .toc a:hover { color:var(--gold); }
+  .toc a span:first-child { font:12px/1 var(--mono); color:var(--mute); min-width:2em; }
+  .toc a span + span { line-height:1.4; padding:4px 0; }
+
+  .part { margin-top:100px; padding-top:40px; border-top:1px solid var(--line); }
+  .part .kicker { color:var(--cyan); }
+  .part h2 { font:400 clamp(28px,5vw,44px)/1.3 var(--serif); margin:.4em 0 .4em; }
+  .part p { color:var(--mute); max-width:34em; }
+
+  .ch { padding-top:92px; }
+  .num { font:400 15px/1 var(--mono); color:var(--gold); letter-spacing:.2em; }
+  .ch h3 { font:400 clamp(26px,4.2vw,38px)/1.35 var(--serif); margin:.45em 0 .5em; }
+  .law { font:400 clamp(19px,2.5vw,23px)/1.7 var(--serif); color:var(--ink); border-left:3px solid var(--gold); padding:4px 0 4px 18px; margin:0 0 1.5em; }
+  .ch p { margin:0 0 1.15em; color:var(--body); }
+  .ch p strong, .ch li strong { color:var(--ink); font-weight:600; }
+  .ch ul { padding-left:1.3em; margin:0 0 1.2em; color:var(--body); }
+  .ch li { margin:.4em 0; }
+  .take { color:var(--mute) !important; font-size:15.5px; }
+  .ch a { overflow-wrap:anywhere; }
+
+  figure.lab { margin:34px auto; background:var(--card); border:1px solid var(--line); border-radius:16px; padding:22px 22px 18px; }
+  .lab h4 { margin:0 0 4px; font:600 15.5px/1.5 var(--sans); color:var(--ink); }
+  .lab .how { margin:0 0 14px; font-size:14.5px; color:var(--mute); line-height:1.65; }
+  .cv { width:100%; height:300px; display:block; border-radius:10px; background:#0f1219; touch-action:pan-y; }
+  .cv.short { height:170px; margin-top:10px; }
+  .cv.tall { height:360px; }
+  .ctl { display:flex; flex-wrap:wrap; gap:4px 22px; align-items:center; margin:12px 0 4px; font-size:14.5px; color:var(--mute); }
+  .ctl label.rng { display:flex; align-items:center; gap:10px; flex:1 1 260px; min-width:0; }
+  .ctl label.rng > span:first-child { flex:0 1 auto; }
+  .ctl output { flex:0 0 auto; min-width:4.6em; text-align:right; color:var(--ink); font-variant-numeric:tabular-nums; }
+  .ctl label.chk { display:inline-flex; align-items:center; gap:10px; min-height:48px; cursor:pointer; color:var(--ink); padding-right:6px; }
+  input[type=range] { flex:1 1 auto; min-width:70px; accent-color:var(--gold); height:48px; margin:0; background:transparent; cursor:pointer; }
+  input[type=checkbox] { accent-color:var(--gold); width:22px; height:22px; margin:0; }
+  button.b { font:inherit; font-size:14.5px; color:var(--ink); background:var(--card2); border:1px solid var(--line); border-radius:999px; min-height:48px; padding:0 18px; cursor:pointer; }
+  button.b:hover { border-color:var(--gold); }
+  button.b[aria-pressed="true"] { background:rgba(233,185,73,.16); border-color:var(--gold); color:var(--gold); }
+  .read { display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:10px; margin-top:14px; }
+  .read div { background:var(--card2); border-radius:10px; padding:10px 12px; font-size:13px; color:var(--mute); line-height:1.5; }
+  .read b { display:block; font:600 19px/1.3 var(--sans); color:var(--ink); font-variant-numeric:tabular-nums; }
+  .read b.g { color:var(--gold); } .read b.r { color:var(--red); } .read b.c { color:var(--cyan); } .read b.n { color:var(--green); } .read b.v { color:var(--violet); }
+  .say { margin:14px 0 0; font-size:15px; color:var(--ink); line-height:1.7; min-height:3.4em; }
+  .say em { font-style:normal; color:var(--gold); }
+  .legend { display:flex; flex-wrap:wrap; gap:4px 18px; font-size:13.5px; color:var(--mute); margin-top:10px; }
+  .legend i { display:inline-block; width:12px; height:12px; border-radius:2px; margin-right:6px; vertical-align:-1px; }
+  .sub2 { margin:22px 0 6px; padding-top:16px; border-top:1px dashed var(--line); }
+
+  .bits { display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin:10px 0; font-size:14px; color:var(--mute); }
+  .bits .lbl { flex:1 1 100%; }
+  .bit { min-width:48px; min-height:48px; border-radius:10px; border:1px solid var(--line); background:var(--card2); color:var(--ink); font:600 18px/1 var(--mono); cursor:pointer; display:inline-flex; flex-direction:column; align-items:center; justify-content:center; gap:3px; padding:4px 6px; }
+  .bit small { font:500 11px/1 var(--mono); color:var(--mute); }
+  .bit.data { border-color:rgba(99,199,230,.6); }
+  .bit.flip { background:rgba(240,122,109,.22); border-color:var(--red); }
+  .bit.fixed { background:rgba(122,214,160,.18); border-color:var(--green); }
+  .swatch { display:inline-block; width:64px; height:32px; border-radius:6px; border:1px solid var(--line); vertical-align:middle; margin-right:10px; }
+  .phone-pct { display:inline-block; font:600 16px/1 var(--mono); }
+
+  .tricks { width:100%; border-collapse:collapse; margin:20px 0 26px; font-size:15px; }
+  .tricks th, .tricks td { text-align:left; vertical-align:top; padding:10px 10px 10px 0; border-bottom:1px solid var(--line); color:var(--body); }
+  .tricks th { color:var(--mute); font-weight:600; font-size:13.5px; }
+  .tricks td:first-child { color:var(--ink); white-space:nowrap; }
+  .sum { margin:40px 0 0; padding:24px; border:1px solid var(--line); border-radius:16px; background:linear-gradient(180deg,rgba(233,185,73,.07),transparent); font:400 clamp(17px,2.2vw,20px)/1.95 var(--serif); }
+  .sum em { font-style:normal; color:var(--gold); }
+
+  footer { margin:100px 0 0; padding:40px 0 70px; border-top:1px solid var(--line); color:var(--mute); font-size:14px; line-height:1.8; }
+  footer a { color:var(--mute); }
+  .sr { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+
+  @media (max-width:640px) {
+    body { font-size:16px; } .wrap,.wide { padding:0 16px; }
+    figure.lab { padding:16px 12px 14px; border-radius:14px; }
+    .cv { height:250px; } .cv.tall { height:320px; } .cv.short { height:150px; }
+    .ch { padding-top:72px; } .back { padding:0 12px; }
+    .read { grid-template-columns:1fr 1fr; } .read div:last-child:nth-child(odd) { grid-column:1 / -1; }
+    .tricks, .tricks thead, .tricks tbody, .tricks tr, .tricks td { display:block; } .tricks thead { display:none; }
+    .tricks tr { border-bottom:1px solid var(--line); padding:8px 0; } .tricks td { border:0; padding:2px 0; } .tricks td:first-child { white-space:normal; font-weight:600; }
+  }
+  @media (prefers-reduced-motion: reduce) { * { scroll-behavior:auto !important; transition:none !important; animation:none !important; } }
+</style>
+</head>
+<body>
+<div class="top">
+  <a class="back" href="../../../" data-i18n="back"></a>
+  <div id="langToggle" role="group" data-i18n-aria="lang.group">
+    <button type="button" data-lang="zh" aria-pressed="true" data-i18n="lang.zh"></button>
+    <button type="button" data-lang="en" aria-pressed="false" data-i18n="lang.en"></button>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="kicker" data-i18n="hero.kicker"></div>
+    <h1 data-i18n="hero.title"></h1>
+    <p class="sub" data-i18n-html="hero.sub"></p>
+    <p class="lead" data-i18n-html="hero.lead"></p>
+    <p class="lead" data-i18n-html="hero.lead2"></p>
+    <div class="tiny" id="tiny">
+      <div><b data-i18n="tiny.gps.v"></b><span data-i18n="tiny.gps"></span></div>
+      <div><b data-i18n="tiny.acc.v"></b><span data-i18n="tiny.acc"></span></div>
+      <div><b data-i18n="tiny.cam.v"></b><span data-i18n="tiny.cam"></span></div>
+      <div><b data-i18n="tiny.radio.v"></b><span data-i18n="tiny.radio"></span></div>
+    </div>
+    <p class="note" data-i18n-html="hero.note"></p>
+  </div>
+</header>
+
+<nav class="wrap toc" data-i18n-aria="toc.aria">
+  <h2 data-i18n="toc.title"></h2>
+  <ol>
+    <li><a href="#gps"><span>01</span><span data-i18n="gps.title"></span></a></li>
+    <li><a href="#accel"><span>02</span><span data-i18n="acc.title"></span></a></li>
+    <li><a href="#touch"><span>03</span><span data-i18n="touch.title"></span></a></li>
+    <li><a href="#camera"><span>04</span><span data-i18n="cam.title"></span></a></li>
+    <li><a href="#screen"><span>05</span><span data-i18n="scr.title"></span></a></li>
+    <li><a href="#compress"><span>06</span><span data-i18n="cmp.title"></span></a></li>
+    <li><a href="#radio"><span>07</span><span data-i18n="rad.title"></span></a></li>
+    <li><a href="#ecc"><span>08</span><span data-i18n="ecc.title"></span></a></li>
+    <li><a href="#handover"><span>09</span><span data-i18n="ho.title"></span></a></li>
+    <li><a href="#battery"><span>10</span><span data-i18n="bat.title"></span></a></li>
+    <li><a href="#method"><span>11</span><span data-i18n="end.title"></span></a></li>
+  </ol>
+</nav>
+
+<main>
+<section class="wrap part">
+  <div class="kicker" data-i18n="part1.kicker"></div>
+  <h2 data-i18n="part1.title"></h2>
+  <p data-i18n-html="part1.p"></p>
+</section>
+
+<!-- 01 GPS -->
+<section class="ch step" id="gps" data-step="1">
+  <div class="wrap">
+    <div class="num">01</div>
+    <h3 data-i18n="gps.title"></h3>
+    <p class="law" data-i18n-html="gps.law"></p>
+    <p data-i18n-html="gps.p1"></p>
+    <p data-i18n-html="gps.p2"></p>
+    <p data-i18n-html="gps.p3"></p>
+  </div>
+  <div class="wide"><figure class="lab">
+    <h4 data-i18n="gps.fig"></h4>
+    <p class="how" data-i18n-html="gps.how"></p>
+    <canvas class="cv tall" id="gpsCv" role="img" data-i18n-aria="gps.cvAria"></canvas>
+    <div class="legend"><span><i style="background:var(--cyan)"></i><span data-i18n="gps.lg.s1"></span></span><span><i style="background:var(--gold)"></i><span data-i18n="gps.lg.s2"></span></span><span><i style="background:var(--violet)"></i><span data-i18n="gps.lg.s3"></span></span><span><i style="background:var(--ink);border-radius:50%"></i><span data-i18n="gps.lg.you"></span></span><span><i style="background:var(--red)"></i><span data-i18n="gps.lg.miss"></span></span></div>
+    <div class="ctl">
+      <label class="rng"><span data-i18n="gps.c.bias"></span><input type="range" id="gpsBias" min="-1000" max="1000" step="10" value="300"><output id="gpsBiasO"></output></label>
+      <label class="rng"><span data-i18n="gps.c.guess"></span><input type="range" id="gpsGuess" min="-1000" max="1000" step="1" value="0"><output id="gpsGuessO"></output></label>
+    </div>
+    <div class="ctl"><button class="b" type="button" id="gpsSolve" data-i18n="gps.c.solve"></button></div>
+    <div class="ctl">
+      <label class="rng"><span data-i18n="gps.c.noise"></span><input type="range" id="gpsNoise" min="0" max="30" step="1" value="0"><output id="gpsNoiseO"></output></label>
+      <label class="rng"><span data-i18n="gps.c.spread"></span><input type="range" id="gpsSpread" min="15" max="70" step="1" value="50"><output id="gpsSpreadO"></output></label>
+    </div>
+    <div class="read">
+      <div><b class="r" id="gpsMiss"></b><span data-i18n="gps.r.miss"></span></div>
+      <div><b class="g" id="gpsClk"></b><span data-i18n="gps.r.clock"></span></div>
+      <div><b class="c" id="gpsErr"></b><span data-i18n="gps.r.err"></span></div>
+      <div><b id="gpsScale"></b><span data-i18n="gps.r.scale"></span></div>
+    </div>
+    <p class="say" id="gpsSay" aria-live="polite"></p>
+  </figure></div>
+  <div class="wrap">
+    <p data-i18n-html="gps.after1"></p>
+    <p data-i18n-html="gps.after2"></p>
+    <p data-i18n-html="gps.rel"></p>
+    <p class="take" data-i18n-html="gps.limit"></p>
+  </div>
+</section>
+
+<!-- 02 accelerometer -->
+<section class="ch step" id="accel" data-step="2">
+  <div class="wrap">
+    <div class="num">02</div>
+    <h3 data-i18n="acc.title"></h3>
+    <p class="law" data-i18n-html="acc.law"></p>
+    <p data-i18n-html="acc.p1"></p>
+    <p data-i18n-html="acc.p2"></p>
+  </div>
+  <div class="wide"><figure class="lab">
+    <h4 data-i18n="acc.fig"></h4>
+    <p class="how" data-i18n-html="acc.how"></p>
+    <canvas class="cv" id="accCv" role="img" data-i18n-aria="acc.cvAria"></canvas>
+    <div class="legend"><span><i style="background:var(--mute)"></i><span data-i18n="acc.lg.g"></span></span><span><i style="background:var(--gold)"></i><span data-i18n="acc.lg.read"></span></span><span><i style="background:var(--cyan)"></i><span data-i18n="acc.lg.mass"></span></span></div>
+    <div class="ctl">
+      <label class="rng"><span data-i18n="acc.c.tilt"></span><input type="range" id="accTilt" min="0" max="180" step="1" value="30"><output id="accTiltO"></output></label>
+      <button class="b" type="button" id="accDrop" aria-pressed="false" data-i18n="acc.c.drop"></button>
+    </div>
+    <div class="read">
+      <div><b class="g" id="accX"></b><span data-i18n="acc.r.x"></span></div>
+      <div><b class="g" id="accY"></b><span data-i18n="acc.r.y"></span></div>
+      <div><b id="accM"></b><span data-i18n="acc.r.mag"></span></div>
+      <div><b class="c" id="accD"></b><span data-i18n="acc.r.disp"></span></div>
+    </div>
+    <p class="say" id="accSay" aria-live="polite"></p>
+  </figure></div>
+  <div class="wrap">
+    <p data-i18n-html="acc.mid1"></p>
+    <p data-i18n-html="acc.mid2"></p>
+  </div>
+  <div class="wide"><figure class="lab">
+    <h4 data-i18n="drift.fig"></h4>
+    <p class="how" data-i18n-html="drift.how"></p>
+    <canvas class="cv" id="driftCv" role="img" data-i18n-aria="drift.cvAria"></canvas>
+    <div class="legend"><span><i style="background:var(--gold)"></i><span data-i18n="drift.lg.est"></span></span><span><i style="background:var(--mute)"></i><span data-i18n="drift.lg.theory"></span></span><span><i style="background:var(--cyan)"></i><span data-i18n="drift.lg.gps"></span></span></div>
+    <div class="ctl">
+      <label class="rng"><span data-i18n="drift.c.bias"></span><input type="range" id="driftBias" min="0" max="0.1" step="0.005" value="0.02"><output id="driftBiasO"></output></label>
+      <label class="rng"><span data-i18n="drift.c.noise"></span><input type="range" id="driftNoise" min="0" max="0.2" step="0.01" value="0.05"><output id="driftNoiseO"></output></label>
+    </div>
+    <div class="ctl">
+      <label class="chk"><input type="checkbox" id="driftGps"><span data-i18n="drift.c.gps"></span></label>
+      <button class="b" type="button" id="driftReset" data-i18n="drift.c.reset"></button>
+    </div>
+    <div class="read">
+      <div><b id="driftT"></b><span data-i18n="drift.r.t"></span></div>
+      <div><b class="g" id="driftX"></b><span data-i18n="drift.r.x"></span></div>
+      <div><b id="driftTh"></b><span data-i18n="drift.r.th"></span></div>
+    </div>
+    <p class="say" id="driftSay" aria-live="polite"></p>
+  </figure></div>
+  <div class="wrap">
+    <p data-i18n-html="acc.after1"></p>
+    <p class="take" data-i18n-html="acc.limit"></p>
+  </div>
+</section>
+
+<!-- 03 touch -->
+<section class="ch step" id="touch" data-step="3">
+  <div class="wrap">
+    <div class="num">03</div>
+    <h3 data-i18n="touch.title"></h3>
+    <p class="law" data-i18n-html="touch.law"></p>
+    <p data-i18n-html="touch.p1"></p>
+    <p data-i18n-html="touch.p2"></p>
+  </div>
+  <div class="wide"><figure class="lab">
+    <h4 data-i18n="touch.fig"></h4>
+    <p class="how" data-i18n-html="touch.how"></p>
+    <canvas class="cv tall" id="touchCv" role="img" data-i18n-aria="touch.cvAria"></canvas>
+    <div class="legend"><span><i style="background:var(--cyan)"></i><span data-i18n="touch.lg.sig"></span></span><span><i style="background:var(--ink)"></i><span data-i18n="touch.lg.true"></span></span><span><i style="background:var(--red)"></i><span data-i18n="touch.lg.peak"></span></span><span><i style="background:var(--gold)"></i><span data-i18n="touch.lg.cent"></span></span></div>
+    <div class="ctl">
+      <label class="rng"><span data-i18n="touch.c.x"></span><input type="range" id="touchX" min="1" max="39" step="0.1" value="13.2"><output id="touchXO"></output></label>
+      <label class="rng"><span data-i18n="touch.c.w"></span><input type="range" id="touchW" min="0.6" max="5" step="0.1" value="2.5"><output id="touchWO"></output></label>
+      <label class="rng"><span data-i18n="touch.c.noise"></span><input type="range" id="touchN" min="0" max="0.1" step="0.005" value="0.02"><output id="touchNO"></output></label>
+    </div>
+    <div class="read">
+      <div><b class="r" id="touchPk"></b><span data-i18n="touch.r.peak"></span></div>
+      <div><b class="g" id="touchCe"></b><span data-i18n="touch.r.cent"></span></div>
+      <div><b id="touchWorst"></b><span data-i18n="touch.r.worst"></span></div>
+    </div>
+    <p class="say" id="touchSay" aria-live="polite"></p>
+  </figure></div>
+  <div class="wrap">
+    <p data-i18n-html="touch.after1"></p>
+    <p class="take" data-i18n-html="touch.limit"></p>
+  </div>
+</section>
+
+<!-- 04 camera -->
+<section class="ch step" id="camera" data-step="4">
+  <div class="wrap">
+    <div class="num">04</div>
+    <h3 data-i18n="cam.title"></h3>
+    <p class="law" data-i18n-html="cam.law"></p>
+    <p data-i18n-html="cam.p1"></p>
+    <p data-i18n-html="cam.p2"></p>
+  </div>
+  <div class="wide"><figure class="lab">
+    <h4 data-i18n="cam.fig"></h4>
+    <p class="how" data-i18n-html="cam.how"></p>
+    <canvas class="cv" id="camCv" role="img" data-i18n-aria="cam.cvAria"></canvas>
+    <div class="legend"><span><i style="background:var(--gold)"></i><span data-i18n="cam.lg.meas"></span></span><span><i style="background:var(--mute)"></i><span data-i18n="cam.lg.theory"></span></span></div>
+    <div class="ctl">
+      <label class="rng"><span data-i18n="cam.c.light"></span><input type="range" id="camLight" min="0" max="3" step="0.05" value="1.3"><output id="camLightO"></output></label>
+      <label class="rng"><span data-i18n="cam.c.pix"></span><input type="range" id="camPix" min="0.8" max="2.4" step="0.1" value="0.8"><output id="camPixO"></output></label>
+      <label class="rng"><span data-i18n="cam.c.frames"></span><input type="range" id="camFrames" min="1" max="64" step="1" value="16"><output id="camFramesO"></output></label>
+    </div>
+    <div class="ctl"><button class="b" type="button" id="camReset" data-i18n="cam.c.reset"></button></div>
+    <div class="read">
+      <div><b class="c" id="camPh"></b><span data-i18n="cam.r.ph"></span></div>
+      <div><b id="camN"></b><span data-i18n="cam.r.n"></span></div>
+      <div><b class="g" id="camMeas"></b><span data-i18n="cam.r.meas"></span></div>
+      <div><b id="camTh"></b><span data-i18n="cam.r.th"></span></div>
+    </div>
+    <p class="say" id="camSay" aria-live="polite"></p>
+  </figure></div>
+  <div class="wrap">
+    <p data-i18n-html="cam.after1"></p>
+    <p data-i18n-html="cam.after2"></p>
+    <p class="take" data-i18n-html="cam.limit"></p>
+  </div>
+</section>
+
+<section class="wrap part">
+  <div class="kicker" data-i18n="part2.kicker"></div>
+  <h2 data-i18n="part2.title"></h2>
+  <p data-i18n-html="part2.p"></p>
+</section>
+
+<!-- 05 screen -->
+<section class="ch step" id="screen" data-step="5">
+  <div class="wrap">
+    <div class="num">05</div>
+    <h3 data-i18n="scr.title"></h3>
+    <p class="law" data-i18n-html="scr.law"></p>
+    <p data-i18n-html="scr.p1"></p>
+    <p data-i18n-html="scr.p2"></p>
+  </div>
+  <div class="wide"><figure class="lab">
+    <h4 data-i18n="scr.fig"></h4>
+    <p class="how" data-i18n-html="scr.how"></p>
+    <canvas class="cv tall" id="scrCv" role="img" data-i18n-aria="scr.cvAria"></canvas>
+    <div class="legend"><span><i style="background:var(--ink)"></i><span data-i18n="scr.lg.target"></span></span><span><i style="background:var(--gold)"></i><span data-i18n="scr.lg.mix"></span></span><span><i style="background:var(--mute)"></i><span data-i18n="scr.lg.cones"></span></span></div>
+    <div class="ctl">
+      <label class="rng"><span data-i18n="scr.c.lam"></span><input type="range" id="scrLam" min="450" max="650" step="1" value="580"><output id="scrLamO"></output></label>
+    </div>
+    <div class="ctl">
+      <label class="rng"><span data-i18n="scr.c.r"></span><input type="range" id="scrR" min="0" max="1" step="0.01" value="0.9"><output id="scrRO"></output></label>
+      <label class="rng"><span data-i18n="scr.c.g"></span><input type="range" id="scrG" min="0" max="1" step="0.01" value="0.16"><output id="scrGO"></output></label>
+      <label class="rng"><span data-i18n="scr.c.b"></span><input type="range" id="scrB" min="0" max="1" step="0.01" value="0"><output id="scrBO"></output></label>
+    </div>
+    <div class="ctl"><button class="b" type="button" id="scrSolve" data-i18n="scr.c.solve"></button><span><span class="swatch" id="scrSw"></span><span data-i18n="scr.swatch"></span></span></div>
+    <div class="read">
+      <div><b class="g" id="scrMis"></b><span data-i18n="scr.r.mis"></span></div>
+      <div><b id="scrNeed"></b><span data-i18n="scr.r.need"></span></div>
+      <div><b class="c" id="scrAt"></b><span data-i18n="scr.r.at"></span></div>
+    </div>
+    <p class="say" id="scrSay" aria-live="polite"></p>
+  </figure></div>
+  <div class="wrap">
+    <p data-i18n-html="scr.after1"></p>
+    <p data-i18n-html="scr.after2"></p>
+    <p class="take" data-i18n-html="scr.limit"></p>
+  </div>
+</section>
+
+<!-- 06 compression -->
+<section class="ch step" id="compress" data-step="6">
+  <div class="wrap">
+    <div class="num">06</div>
+    <h3 data-i18n="cmp.title"></h3>
+    <p class="law" data-i18n-html="cmp.law"></p>
+    <p data-i18n-html="cmp.p1"></p>
+    <p data-i18n-html="cmp.p2"></p>
+  </div>
+  <div class="wide"><figure class="lab">
+    <h4 data-i18n="cmp.fig"></h4>
+    <p class="how" data-i18n-html="cmp.how"></p>
+    <canvas class="cv" id="cmpCv" role="img" data-i18n-aria="cmp.cvAria"></canvas>
+    <div class="ctl">
+      <div role="group" data-i18n-aria="cmp.c.scene" style="display:flex;gap:8px;flex-wrap:wrap">
+        <button class="b" type="button" id="cmpSky" aria-pressed="true" data-i18n="cmp.c.sky"></button>
+        <button class="b" type="button" id="cmpGrass" aria-pressed="false" data-i18n="cmp.c.grass"></button>
+      </div>
+      <label class="rng"><span data-i18n="cmp.c.noise"></span><input type="range" id="cmpNoise" min="0" max="16" step="0.5" value="0"><output id="cmpNoiseO"></output></label>
+    </div>
+    <div class="read">
+      <div><b class="g" id="cmpBits"></b><span data-i18n="cmp.r.bits"></span></div>
+      <div><b id="cmpMB"></b><span data-i18n="cmp.r.mb"></span></div>
+      <div><b class="c" id="cmpRatio"></b><span data-i18n="cmp.r.ratio"></span></div>
+    </div>
+    <p class="say" id="cmpSay" aria-live="polite"></p>
+  </figure></div>
+  <div class="wrap">
+    <p data-i18n-html="cmp.after1"></p>
+    <p class="take" data-i18n-html="cmp.limit"></p>
+  </div>
+</section>
+
+<section class="wrap part">
+  <div class="kicker" data-i18n="part3.kicker"></div>
+  <h2 data-i18n="part3.title"></h2>
+  <p data-i18n-html="part3.p"></p>
+</section>
+
+<!-- 07 radio -->
+<section class="ch step" id="radio" data-step="7">
+  <div class="wrap">
+    <div class="num">07</div>
+    <h3 data-i18n="rad.title"></h3>
+    <p class="law" data-i18n-html="rad.law"></p>
+    <p data-i18n-html="rad.p1"></p>
+    <p data-i18n-html="rad.p2"></p>
+  </div>
+  <div class="wide"><figure class="lab">
+    <h4 data-i18n="rad.fig"></h4>
+    <p class="how" data-i18n-html="rad.how"></p>
+    <canvas class="cv" id="radCv" role="img" data-i18n-aria="rad.cvAria"></canvas>
+    <div class="legend"><span><i style="background:var(--gold)"></i><span data-i18n="rad.lg.cur"></span></span><span><i style="background:var(--cyan)"></i><span data-i18n="rad.lg.ref"></span></span></div>
+    <div class="ctl">
+      <label class="rng"><span data-i18n="rad.c.d"></span><input type="range" id="radD" min="2" max="4.5" step="0.01" value="3"><output id="radDO"></output></label>
+      <label class="rng"><span data-i18n="rad.c.n"></span><input type="range" id="radN" min="2" max="4" step="0.1" value="3.5"><output id="radNO"></output></label>
+      <label class="rng"><span data-i18n="rad.c.bw"></span><input type="range" id="radBw" min="5" max="100" step="5" value="20"><output id="radBwO"></output></label>
+    </div>
+    <div class="read">
+      <div><b class="c" id="radPr"></b><span data-i18n="rad.r.pr"></span></div>
+      <div><b id="radNoise"></b><span data-i18n="rad.r.noise"></span></div>
+      <div><b class="v" id="radSnr"></b><span data-i18n="rad.r.snr"></span></div>
+      <div><b class="g" id="radCap"></b><span data-i18n="rad.r.cap"></span></div>
+    </div>
+    <p class="say" id="radSay" aria-live="polite"></p>
+  </figure></div>
+  <div class="wrap">
+    <p data-i18n-html="rad.after1"></p>
+    <p data-i18n-html="rad.after2"></p>
+    <p class="take" data-i18n-html="rad.limit"></p>
+  </div>
+</section>
+
+<!-- 08 error correction -->
+<section class="ch step" id="ecc" data-step="8">
+  <div class="wrap">
+    <div class="num">08</div>
+    <h3 data-i18n="ecc.title"></h3>
+    <p class="law" data-i18n-html="ecc.law"></p>
+    <p data-i18n-html="ecc.p1"></p>
+    <p data-i18n-html="ecc.p2"></p>
+  </div>
+  <div class="wide"><figure class="lab">
+    <h4 data-i18n="ecc.fig"></h4>
+    <p class="how" data-i18n-html="ecc.how"></p>
+    <canvas class="cv" id="eccCv" role="img" data-i18n-aria="ecc.cvAria"></canvas>
+    <div class="legend"><span><i style="background:var(--cyan)"></i><span data-i18n="ecc.lg.data"></span></span><span><i style="background:var(--mute)"></i><span data-i18n="ecc.lg.parity"></span></span><span><i style="background:var(--red)"></i><span data-i18n="ecc.lg.bad"></span></span></div>
+    <div class="bits" id="eccData"><span class="lbl" data-i18n="ecc.c.data"></span></div>
+    <div class="bits" id="eccWire"><span class="lbl" data-i18n="ecc.c.wire"></span></div>
+    <div class="ctl"><button class="b" type="button" id="eccClear" data-i18n="ecc.c.clear"></button></div>
+    <div class="read">
+      <div><b class="r" id="eccSyn"></b><span data-i18n="ecc.r.syn"></span></div>
+      <div><b class="g" id="eccOut"></b><span data-i18n="ecc.r.out"></span></div>
+      <div><b id="eccOk"></b><span data-i18n="ecc.r.ok"></span></div>
+    </div>
+    <p class="say" id="eccSay" aria-live="polite"></p>
+    <div class="sub2">
+      <h4 data-i18n="ecc.fig2"></h4>
+      <p class="how" data-i18n-html="ecc.how2"></p>
+      <canvas class="cv short" id="eccCv2" role="img" data-i18n-aria="ecc.cv2Aria"></canvas>
+      <div class="legend"><span><i style="background:var(--red)"></i><span data-i18n="ecc.lg.raw"></span></span><span><i style="background:var(--gold)"></i><span data-i18n="ecc.lg.coded"></span></span></div>
+      <div class="ctl">
+        <label class="rng"><span data-i18n="ecc.c.p"></span><input type="range" id="eccP" min="-3" max="-0.6" step="0.05" value="-2"><output id="eccPO"></output></label>
+        <button class="b" type="button" id="eccReset" data-i18n="ecc.c.reset"></button>
+      </div>
+      <div class="read">
+        <div><b class="r" id="eccRaw"></b><span data-i18n="ecc.r.raw"></span></div>
+        <div><b class="g" id="eccCoded"></b><span data-i18n="ecc.r.coded"></span></div>
+        <div><b id="eccSim"></b><span data-i18n="ecc.r.sim"></span></div>
+      </div>
+    </div>
+  </figure></div>
+  <div class="wrap">
+    <p data-i18n-html="ecc.after1"></p>
+    <p class="take" data-i18n-html="ecc.limit"></p>
+  </div>
+</section>
+
+<!-- 09 handover -->
+<section class="ch step" id="handover" data-step="9">
+  <div class="wrap">
+    <div class="num">09</div>
+    <h3 data-i18n="ho.title"></h3>
+    <p class="law" data-i18n-html="ho.law"></p>
+    <p data-i18n-html="ho.p1"></p>
+    <p data-i18n-html="ho.p2"></p>
+  </div>
+  <div class="wide"><figure class="lab">
+    <h4 data-i18n="ho.fig"></h4>
+    <p class="how" data-i18n-html="ho.how"></p>
+    <canvas class="cv tall" id="hoCv" role="img" data-i18n-aria="ho.cvAria"></canvas>
+    <div class="legend"><span><i style="background:var(--cyan)"></i><span data-i18n="ho.lg.a"></span></span><span><i style="background:var(--violet)"></i><span data-i18n="ho.lg.b"></span></span><span><i style="background:var(--gold)"></i><span data-i18n="ho.lg.ho"></span></span></div>
+    <div class="ctl">
+      <label class="rng"><span data-i18n="ho.c.h"></span><input type="range" id="hoH" min="0" max="15" step="0.5" value="0"><output id="hoHO"></output></label>
+    </div>
+    <div class="ctl"><button class="b" type="button" id="hoReplay" data-i18n="ho.c.replay"></button><button class="b" type="button" id="hoRoad" data-i18n="ho.c.road"></button></div>
+    <div class="read">
+      <div><b id="hoPos"></b><span data-i18n="ho.r.pos"></span></div>
+      <div><b class="g" id="hoN"></b><span data-i18n="ho.r.n"></span></div>
+      <div><b class="r" id="hoWorse"></b><span data-i18n="ho.r.worse"></span></div>
+    </div>
+    <p class="say" id="hoSay" aria-live="polite"></p>
+  </figure></div>
+  <div class="wrap">
+    <p data-i18n-html="ho.after1"></p>
+    <p class="take" data-i18n-html="ho.limit"></p>
+  </div>
+</section>
+
+<section class="wrap part">
+  <div class="kicker" data-i18n="part4.kicker"></div>
+  <h2 data-i18n="part4.title"></h2>
+  <p data-i18n-html="part4.p"></p>
+</section>
+
+<!-- 10 battery -->
+<section class="ch step" id="battery" data-step="10">
+  <div class="wrap">
+    <div class="num">10</div>
+    <h3 data-i18n="bat.title"></h3>
+    <p class="law" data-i18n-html="bat.law"></p>
+    <p data-i18n-html="bat.p1"></p>
+    <p data-i18n-html="bat.p2"></p>
+  </div>
+  <div class="wide"><figure class="lab">
+    <h4 data-i18n="bat.fig"></h4>
+    <p class="how" data-i18n-html="bat.how"></p>
+    <canvas class="cv" id="batCv" role="img" data-i18n-aria="bat.cvAria"></canvas>
+    <canvas class="cv short" id="batCv2" role="img" data-i18n-aria="bat.cv2Aria"></canvas>
+    <div class="legend"><span><i style="background:var(--cyan)"></i><span data-i18n="bat.lg.ocv"></span></span><span><i style="background:var(--gold)"></i><span data-i18n="bat.lg.v"></span></span><span><i style="background:var(--red)"></i><span data-i18n="bat.lg.cut"></span></span><span><i style="background:var(--mute)"></i><span data-i18n="bat.lg.true"></span></span></div>
+    <div class="ctl">
+      <label class="rng"><span data-i18n="bat.c.i"></span><input type="range" id="batI" min="0.1" max="3" step="0.1" value="1"><output id="batIO"></output></label>
+      <label class="rng"><span data-i18n="bat.c.t"></span><input type="range" id="batT" min="-20" max="35" step="1" value="-10"><output id="batTO"></output></label>
+    </div>
+    <div class="ctl"><button class="b" type="button" id="batPlay" aria-pressed="false" data-i18n="bat.c.play"></button><button class="b" type="button" id="batReset" data-i18n="bat.c.reset"></button></div>
+    <div class="read">
+      <div><b id="batQ"></b><span data-i18n="bat.r.q"></span></div>
+      <div><b class="g" id="batShown"></b><span data-i18n="bat.r.shown"></span></div>
+      <div><b class="c" id="batOcv"></b><span data-i18n="bat.r.ocv"></span></div>
+      <div><b class="r" id="batDrop"></b><span data-i18n="bat.r.drop"></span></div>
+      <div><b class="g" id="batV"></b><span data-i18n="bat.r.v"></span></div>
+      <div><b id="batHeat"></b><span data-i18n="bat.r.heat"></span></div>
+    </div>
+    <p class="say" id="batSay" aria-live="polite"></p>
+  </figure></div>
+  <div class="wrap">
+    <p data-i18n-html="bat.after1"></p>
+    <p data-i18n-html="bat.after2"></p>
+    <p class="take" data-i18n-html="bat.limit"></p>
+  </div>
+</section>
+
+<!-- 11 the method -->
+<section class="ch step" id="method" data-step="11">
+  <div class="wrap">
+    <div class="num">11</div>
+    <h3 data-i18n="end.title"></h3>
+    <p class="law" data-i18n-html="end.law"></p>
+    <p data-i18n-html="end.p1"></p>
+    <table class="tricks">
+      <thead><tr><th data-i18n="end.th.what"></th><th data-i18n="end.th.small"></th><th data-i18n="end.th.trick"></th></tr></thead>
+      <tbody>
+        <tr><td data-i18n="end.r1.a"></td><td data-i18n="end.r1.b"></td><td data-i18n="end.r1.c"></td></tr>
+        <tr><td data-i18n="end.r2.a"></td><td data-i18n="end.r2.b"></td><td data-i18n="end.r2.c"></td></tr>
+        <tr><td data-i18n="end.r3.a"></td><td data-i18n="end.r3.b"></td><td data-i18n="end.r3.c"></td></tr>
+        <tr><td data-i18n="end.r4.a"></td><td data-i18n="end.r4.b"></td><td data-i18n="end.r4.c"></td></tr>
+        <tr><td data-i18n="end.r5.a"></td><td data-i18n="end.r5.b"></td><td data-i18n="end.r5.c"></td></tr>
+        <tr><td data-i18n="end.r6.a"></td><td data-i18n="end.r6.b"></td><td data-i18n="end.r6.c"></td></tr>
+        <tr><td data-i18n="end.r7.a"></td><td data-i18n="end.r7.b"></td><td data-i18n="end.r7.c"></td></tr>
+        <tr><td data-i18n="end.r8.a"></td><td data-i18n="end.r8.b"></td><td data-i18n="end.r8.c"></td></tr>
+        <tr><td data-i18n="end.r9.a"></td><td data-i18n="end.r9.b"></td><td data-i18n="end.r9.c"></td></tr>
+        <tr><td data-i18n="end.r10.a"></td><td data-i18n="end.r10.b"></td><td data-i18n="end.r10.c"></td></tr>
+      </tbody>
+    </table>
+    <p data-i18n-html="end.p2"></p>
+    <ul>
+      <li data-i18n-html="end.fix1"></li>
+      <li data-i18n-html="end.fix2"></li>
+      <li data-i18n-html="end.fix3"></li>
+      <li data-i18n-html="end.fix4"></li>
+      <li data-i18n-html="end.fix5"></li>
+    </ul>
+    <div class="sum" data-i18n-html="end.sum"></div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap" data-i18n-html="footer"></div></footer>
+
+<script src="copy.zh.js"></script>
+<script src="copy.en.js" onerror="this.remove()"></script>
+<script src="models.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
