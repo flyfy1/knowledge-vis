@@ -1,0 +1,94 @@
+{
+  "slug": "why-the-sky-is-blue",
+  "path": "physics/optics/why-the-sky-is-blue/",
+  "category": "physics",
+  "subtopic": "optics",
+  "subtopicName": { "zh": "光学", "en": "Optics" },
+  "stage": "senior",
+  "title": { "zh": "天为什么是蓝的", "en": "Why Is the Sky Blue?" },
+  "desc": {
+    "zh": "天是蓝的，落日是红的，云是白的，火星的天是黄褐的。九个可以拖动的模型：光子穿过空气、1/λ⁴、天空光的光谱、眼睛为什么不认紫、落日、整片天空、从分子到云滴的颗粒、火星的天空，以及多次散射和臭氧。",
+    "en": "The sky is blue, sunsets are red, clouds are white and the Martian sky is butterscotch. Nine models you can push: photons crossing the air, 1/λ⁴, the skylight spectrum, why the eye doesn't see violet, sunset, the whole sky, particles from molecules to cloud drops, the sky of Mars, and multiple scattering and ozone."
+  },
+  "tags": [
+    { "zh": "瑞利散射", "en": "Rayleigh Scattering" },
+    { "zh": "米氏散射", "en": "Mie Scattering" },
+    { "zh": "色度学", "en": "Colorimetry" },
+    { "zh": "大气光学", "en": "Atmospheric Optics" },
+    { "zh": "长文", "en": "Long-form Essay" }
+  ],
+  "concepts": [
+    {
+      "id": "skylight-is-scattered-sunlight",
+      "title": { "zh": "天空光是被空气拐弯的阳光", "en": "Skylight is sunlight scattered by air" },
+      "desc": { "zh": "天空本身不发光；整层空气拐走约 20% 的蓝光、约 5% 的红光，落到地面的那一半就是天空的光。", "en": "The sky gives off no light of its own: the whole air column scatters about 20% of blue light and 5% of red, and the half that comes down is the skylight." },
+      "aliases": { "zh": ["天为什么是蓝的", "天空为什么是蓝色", "天空为什么是蓝色的", "瑞利散射", "光学厚度", "月球上的天为什么是黑的", "为什么从太空看地球边缘是蓝的"], "en": ["why is the sky blue", "Rayleigh scattering", "optical depth", "why is the sky black on the moon", "blue edge of the earth from space", "skylight"] },
+      "anchor": "#ch1",
+      "relatedPages": ["climate-energy"]
+    },
+    {
+      "id": "rayleigh-inverse-fourth-power",
+      "title": { "zh": "瑞利散射的 1/λ⁴ 定律", "en": "Rayleigh's 1/λ⁴ law" },
+      "desc": { "zh": "比光波小得多的粒子里，电子被光推着晃，发出的光强与频率的四次方成正比，所以 450 纳米蓝光的散射约是 700 纳米红光的 6 倍。", "en": "In a particle far smaller than the wavelength, light shakes the electrons and they re-radiate with power rising as frequency to the fourth, so 450 nm blue scatters about 6× more than 700 nm red." },
+      "aliases": { "zh": ["瑞利散射定律", "波长的四次方", "1/λ⁴", "为什么蓝光散射得多", "短波散射", "受迫振动 散射", "偶极辐射"], "en": ["Rayleigh scattering law", "inverse fourth power", "1/lambda^4", "why does blue light scatter more", "dipole radiation", "Lorentz oscillator scattering"] },
+      "anchor": "#ch2",
+      "relatedPages": ["interference"]
+    },
+    {
+      "id": "skylight-spectrum-peaks-in-uv",
+      "title": { "zh": "天空光的光谱峰在紫外", "en": "The skylight spectrum peaks in the ultraviolet" },
+      "desc": { "zh": "把黑体阳光的光谱乘上 1/λ⁴，模型里的最强处从约 500 纳米挪到紫外（真实阳光的紫外到地面前已被臭氧吸收）；可见范围内，紫光段的能量多于蓝光段。", "en": "Multiply a blackbody solar spectrum by 1/λ⁴ and in the model its peak moves from about 500 nm into the ultraviolet (real ultraviolet is absorbed by ozone before reaching the ground); in the visible range violet carries more energy than blue." },
+      "aliases": { "zh": ["天空光的光谱", "太阳光谱", "太阳光谱峰值", "为什么天空不是紫色", "天空应该是紫色吗", "黑体辐射 天空"], "en": ["skylight spectrum", "solar spectrum", "sun spectrum peak", "why isn't the sky violet", "should the sky be purple", "sky spectrum"] },
+      "anchor": "#ch3",
+      "relatedPages": ["blackbody-radiation"]
+    },
+    {
+      "id": "why-the-sky-is-not-violet",
+      "title": { "zh": "为什么天不是紫的：眼睛的三种视锥", "en": "Why the sky isn't violet: the eye's three cones" },
+      "desc": { "zh": "眼睛只报告三种视锥各被激发多少；紫光段带来 44% 的能量却只贡献约 1% 的亮度，整片光谱读出来是掺了白的蓝（主波长 476 纳米）。", "en": "The eye reports only how much each of three cone types is excited; violet brings 44% of the energy but about 1% of the brightness, and the whole spectrum reads as a whitish blue (dominant wavelength 476 nm)." },
+      "aliases": { "zh": ["为什么天空不是紫色的", "天空为什么不是紫色", "视锥细胞", "色度图", "主波长", "饱和度", "CIE 1931", "臭氧吸收紫光"], "en": ["why isn't the sky purple", "why is the sky not violet", "cone cells", "chromaticity diagram", "dominant wavelength", "colour purity", "CIE 1931", "colorimetry"] },
+      "anchor": "#ch4",
+      "relatedPages": ["eye-vision"]
+    },
+    {
+      "id": "sunset-red-air-mass",
+      "title": { "zh": "落日为什么是红的：大气质量", "en": "Why sunsets are red: air mass" },
+      "desc": { "zh": "太阳越低，光在空气里走的路越长（贴着地平线约 38 倍），蓝光被拐走得最多，剩下橙红。", "en": "The lower the sun, the longer the path through air (about 38× at the horizon); blue is removed first and orange-red is left." },
+      "aliases": { "zh": ["晚霞为什么是红的", "夕阳为什么是红色", "日落为什么是红的", "朝霞", "大气质量", "比尔朗伯定律", "太阳为什么是黄色的"], "en": ["why are sunsets red", "why is the sunset orange", "red sunrise", "air mass", "Beer-Lambert law", "why is the sun yellow", "atmospheric extinction"] },
+      "anchor": "#ch5",
+      "relatedPages": []
+    },
+    {
+      "id": "sky-gradient-horizon-white",
+      "title": { "zh": "头顶最蓝、地平线发白", "en": "Deepest blue overhead, white at the horizon" },
+      "desc": { "zh": "看向地平线时视线很长，拐进来的蓝光又在半路被拐走，颜色趋向照亮空气的阳光本身；远山发淡发白是同一回事（空气透视）。", "en": "Looking at the horizon the line of sight is long, so blue scattered in is scattered out again and the colour tends to that of the sunlight itself; distant hills fade the same way (aerial perspective)." },
+      "aliases": { "zh": ["地平线为什么发白", "天空为什么越靠近地平线越淡", "空气透视", "远山为什么是蓝色的", "单次散射", "天空的颜色分布"], "en": ["why is the sky white near the horizon", "pale horizon", "aerial perspective", "why do distant mountains look blue", "single scattering sky", "sky colour gradient"] },
+      "anchor": "#ch6",
+      "relatedPages": []
+    },
+    {
+      "id": "mie-scattering-white-clouds",
+      "title": { "zh": "米氏散射：云为什么是白的", "en": "Mie scattering: why clouds are white" },
+      "desc": { "zh": "颗粒比光波大得多时（云滴约 4–17 微米），各种颜色被散射得差不多一样多；和光波差不多大时，散射起伏，甚至偏爱红光，让太阳发蓝。", "en": "Once particles are far larger than the wavelength (cloud drops are about 4–17 µm), all colours scatter about equally; near the wavelength the scattering oscillates and can even favour red, turning the sun blue." },
+      "aliases": { "zh": ["云为什么是白的", "云为什么是白色", "米氏散射", "雾为什么是白的", "牛奶为什么是白的", "消光佯谬", "蓝月亮", "乌云为什么是灰的"], "en": ["why are clouds white", "Mie scattering", "why is fog white", "why is milk white", "extinction paradox", "blue moon", "why are rain clouds grey"] },
+      "anchor": "#ch7",
+      "relatedPages": ["interference"]
+    },
+    {
+      "id": "mars-sky-dust",
+      "title": { "zh": "火星的天空：黄褐的白天、蓝色的日落", "en": "The Martian sky: butterscotch by day, blue at sunset" },
+      "desc": { "zh": "火星空气太稀（440 纳米的瑞利光学厚度约 0.01），天空颜色由微米级、吸收蓝光的尘埃决定；尘埃把蓝光向前散射，日落时太阳附近发蓝。", "en": "The Martian air is too thin (Rayleigh optical depth about 0.01 at 440 nm), so micron-sized dust that absorbs blue sets the sky colour; the dust scatters blue forward, so the sky near the setting sun is blue." },
+      "aliases": { "zh": ["火星的天空是什么颜色", "火星天空", "火星日落为什么是蓝的", "火星蓝色日落", "沙尘天为什么是黄的", "沙尘暴天空"], "en": ["what colour is the sky on Mars", "Mars sky", "why is the sunset blue on Mars", "Martian blue sunset", "why is a dust storm sky yellow", "Martian dust"] },
+      "anchor": "#ch8",
+      "relatedPages": []
+    },
+    {
+      "id": "multiple-scattering-ozone",
+      "title": { "zh": "多次散射与臭氧：简单模型漏掉的", "en": "Multiple scattering and ozone: what the simple model misses" },
+      "desc": { "zh": "天顶约四分之一的蓝光被拐过不止一次；黄昏时天顶仍然是蓝的，主要靠臭氧 Chappuis 带的吸收（太阳在地平线时约占 66%）。", "en": "About a quarter of the blue zenith light has been scattered more than once; the zenith stays blue at twilight mainly because of ozone's Chappuis-band absorption (about 66% with the sun at the horizon)." },
+      "aliases": { "zh": ["多次散射", "黄昏的天为什么是蓝的", "蓝调时刻", "臭氧 Chappuis 带", "辐射传输", "天空偏振"], "en": ["multiple scattering", "why is the twilight sky blue", "blue hour", "ozone Chappuis band", "radiative transfer", "sky polarization"] },
+      "anchor": "#ch9",
+      "relatedPages": ["climate-energy"]
+    }
+  ]
+}
