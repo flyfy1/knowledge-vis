@@ -1,0 +1,80 @@
+{
+ "schema": 2,
+ "slug": "memory-attention",
+ "nodes": [
+  {
+   "id": "working-memory-attention",
+   "group": "life",
+   "stage": "senior",
+   "order": 50,
+   "title": {
+    "zh": "工作记忆与注意",
+    "en": "Working memory & attention"
+   },
+   "description": {
+    "zh": "大脑能同时抓住的东西很有限：工作记忆一次只维持几个单元，把项目分组能腾出空间；注意像带宽有限的通道，干扰越多越难找到目标；记忆痕迹随时间变弱，新旧内容还会互相干扰，而一个好的提取线索能把它拉回来。",
+    "en": "The mind can hold only a little at once: working memory keeps a handful of units in play, and grouping items frees up room; attention is a channel of limited bandwidth, so more distractors make targets harder to find; memory traces fade with time and old and new material interfere, while a good retrieval cue can bring them back."
+   },
+   "source": "../psychology/cognition/memory-attention/#step0",
+   "lessons": [
+    {
+     "slug": "memory-attention",
+     "step": 0,
+     "category": "psychology",
+     "stage": "senior",
+     "primary": true
+    }
+   ],
+   "aliases": [
+    {
+     "zh": "工作记忆",
+     "en": "working memory"
+    },
+    {
+     "zh": "短时记忆容量",
+     "en": "short-term memory capacity"
+    },
+    {
+     "zh": "神奇的数字 7±2",
+     "en": "magical number seven"
+    },
+    {
+     "zh": "组块",
+     "en": "chunking"
+    },
+    {
+     "zh": "遗忘曲线",
+     "en": "forgetting curve"
+    },
+    {
+     "zh": "前摄干扰 后摄干扰",
+     "en": "proactive and retroactive interference"
+    },
+    {
+     "zh": "为什么记不住",
+     "en": "why can’t I remember"
+    },
+    {
+     "zh": "注意力不集中",
+     "en": "trouble paying attention"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "working-memory-attention",
+   "to": "signal-detection-theory",
+   "type": "connection",
+   "label": {
+    "zh": "目标是信号，干扰物是噪声",
+    "en": "Targets are signal, distractors are noise"
+   },
+   "reason": {
+    "zh": "在干扰中找目标，可以按信号检测论来读：干扰物越多，信号和噪声越难分开，命中率下降、虚报上升——把“看不清”与“不敢说有”分开，要用 d′ 和判据 c。",
+    "en": "Finding targets among distractors can be read with signal detection theory: more distractors make signal and noise harder to separate, so hits fall and false alarms rise — telling “cannot see it” apart from “unwilling to say yes” takes d′ and the criterion c."
+   },
+   "source": "../psychology/cognition/memory-attention/#step1"
+  }
+ ]
+}
