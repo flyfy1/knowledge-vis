@@ -1,0 +1,96 @@
+{
+  "slug": "where-money-comes-from",
+  "path": "economics/money/where-money-comes-from/",
+  "category": "economics",
+  "categoryName": { "zh": "经济与金钱", "en": "Economics & Money" },
+  "subtopic": "money",
+  "subtopicName": { "zh": "货币与银行", "en": "Money & Banking" },
+  "stage": "senior",
+  "title": { "zh": "钱是从哪里来的", "en": "Where Money Comes From" },
+  "desc": {
+    "zh": "你账户里的数字不是金库里的钞票。它是谁的欠条、怎样被贷款造出来、为什么银行会被挤兑、为什么每年能买的东西少一点。八个可以拖动的模型。",
+    "en": "The number in your bank account is not a pile of notes in a vault. Whose IOU it is, how loans create it, why banks can be run, and why it buys a little less each year, in eight models you can push around."
+  },
+  "tags": [
+    { "zh": "货币", "en": "Money" },
+    { "zh": "银行", "en": "Banking" },
+    { "zh": "通货膨胀", "en": "Inflation" },
+    { "zh": "利率", "en": "Interest rates" },
+    { "zh": "汇率", "en": "Exchange rates" },
+    { "zh": "长文", "en": "Long-form essay" }
+  ],
+  "concepts": [
+    {
+      "id": "money-as-iou",
+      "title": { "zh": "钱是一张人人都收的欠条", "en": "Money as an IOU everyone accepts" },
+      "desc": { "zh": "物物交换要两个愿望同时对上；一张所有人都信得过的欠条把一笔交易拆成两半。", "en": "Barter needs two wants to match at once; an IOU that everyone trusts splits a trade into two halves." },
+      "aliases": { "zh": ["钱到底是什么", "需求的双重巧合", "物物交换", "为什么需要货币", "货币的本质", "欠条", "钱是怎么来的", "钱从哪里来"], "en": ["what is money", "double coincidence of wants", "barter", "why do we need money", "money is debt", "IOU", "where does money come from"] },
+      "anchor": "#ch1",
+      "relatedPages": ["scarcity-moves"]
+    },
+    {
+      "id": "loans-create-deposits",
+      "title": { "zh": "贷款创造存款", "en": "Loans create deposits" },
+      "desc": { "zh": "银行放贷时同时写下一笔贷款和一笔新存款，还款时这笔存款消失。", "en": "A bank loan writes a loan and a new deposit at the same moment; repaying it deletes the deposit." },
+      "aliases": { "zh": ["钱是怎么创造出来的", "银行怎么造钱", "货币乘数", "存款准备金率", "降准", "央行放水", "量化宽松", "资产负债表", "M2"], "en": ["how is money created", "how banks create money", "money multiplier", "reserve requirement", "quantitative easing", "bank balance sheet", "broad money", "money creation"] },
+      "anchor": "#ch2",
+      "relatedPages": ["scarcity-moves"]
+    },
+    {
+      "id": "bank-run",
+      "title": { "zh": "银行挤兑与存款保险", "en": "Bank runs and deposit insurance" },
+      "desc": { "zh": "银行没亏钱，只要足够多的人同时来取也会倒；存款保险和最后贷款人拆掉了这个临界点。", "en": "A solvent bank can still fail if enough people withdraw at once; deposit insurance and a lender of last resort remove the tipping point." },
+      "aliases": { "zh": ["挤兑", "银行会倒闭吗", "存款保险", "50万", "硅谷银行", "流动性", "最后贷款人", "Diamond-Dybvig"], "en": ["bank run", "can my bank fail", "deposit insurance", "FDIC", "Silicon Valley Bank", "liquidity versus solvency", "lender of last resort", "Diamond-Dybvig"] },
+      "anchor": "#ch3",
+      "relatedPages": []
+    },
+    {
+      "id": "quantity-theory-inflation",
+      "title": { "zh": "货币数量与通胀", "en": "Money growth and inflation" },
+      "desc": { "zh": "长期看，钱和转手速度加起来比东西长得快，物价就涨；短期里多出来的钱先变成产出，供给冲击也能单独推高物价。", "en": "In the long run prices rise when money and its velocity outgrow output; in the short run extra money first raises output, and supply shocks can raise prices on their own." },
+      "aliases": { "zh": ["为什么东西越来越贵", "通货膨胀的原因", "印钱会导致通胀吗", "货币数量论", "MV=PY", "货币流通速度", "滞胀", "货币中性", "通货膨胀", "印钱为什么会涨价"], "en": ["why do prices rise", "what causes inflation", "does printing money cause inflation", "quantity theory of money", "MV=PY", "velocity of money", "stagflation", "money neutrality", "inflation"] },
+      "anchor": "#ch4",
+      "relatedPages": ["scarcity-moves"]
+    },
+    {
+      "id": "inflation-winners-losers",
+      "title": { "zh": "通胀的赢家和输家", "en": "Who wins and loses from inflation" },
+      "desc": { "zh": "意外的通胀把财富从储户搬到固定利率的借款人；预料之中的通胀已经写进了利率，不搬运财富。", "en": "Surprise inflation moves wealth from savers to fixed-rate borrowers; inflation everyone expected is already in the interest rate and moves nothing." },
+      "aliases": { "zh": ["通胀对谁有利", "通胀对存款的影响", "实际利率", "费雪方程", "工资跟不上物价", "购买力下降"], "en": ["who benefits from inflation", "inflation and savings", "real interest rate", "Fisher equation", "wages lag prices", "purchasing power"] },
+      "anchor": "#ch5",
+      "relatedPages": ["compound-interest"]
+    },
+    {
+      "id": "interest-price-of-time",
+      "title": { "zh": "利息是时间的价格", "en": "Interest as the price of time" },
+      "desc": { "zh": "名义利率约等于时间的价格加上预期通胀；按利率把未来的钱折回今天，就是现值。", "en": "A nominal rate is roughly the price of time plus expected inflation; discounting future money at that rate gives its present value." },
+      "aliases": { "zh": ["利息是什么", "为什么要付利息", "现值", "名义利率和实际利率", "利率上升债券为什么跌"], "en": ["what is interest", "why pay interest", "present value", "nominal versus real rate", "why bond prices fall when rates rise"] },
+      "anchor": "#ch6",
+      "relatedPages": ["compound-interest", "interest-rates-bonds"]
+    },
+    {
+      "id": "loan-amortisation",
+      "title": { "zh": "等额本息与提前还款", "en": "Loan amortisation and extra payments" },
+      "desc": { "zh": "每月先付剩余本金的利息，剩下才减本金，所以前几年主要在付利息；多还的钱全部减本金。", "en": "Each payment first covers interest on what is still owed and only the rest repays principal, so early payments are mostly interest; extra payments go straight to principal." },
+      "aliases": { "zh": ["房贷怎么算", "等额本息", "月供", "为什么前几年都在还利息", "提前还款", "还款计划表", "提前还贷划算吗", "提前还贷"], "en": ["how is a mortgage calculated", "amortization schedule", "monthly payment", "why early payments are mostly interest", "overpaying a mortgage", "prepayment", "mortgage", "how does a mortgage work"] },
+      "anchor": "#ch7",
+      "relatedPages": ["compound-interest"]
+    },
+    {
+      "id": "monetary-transmission",
+      "title": { "zh": "利率传导与时滞", "en": "Monetary transmission and its lags" },
+      "desc": { "zh": "央行利率经过市场利率、贷款利率和家庭预算，一到两三年后才落到物价上；浮动利率越多，传得越快越强。", "en": "A central bank rate passes through market rates, loan rates and household budgets and reaches prices only after one to three years; more variable-rate debt makes it faster and stronger." },
+      "aliases": { "zh": ["加息有什么用", "央行加息对房贷的影响", "货币政策传导", "固定利率还是浮动利率", "政策时滞", "加息多久见效", "央行加息有什么用"], "en": ["what does a rate hike do", "how rate rises affect mortgages", "monetary policy transmission", "fixed versus variable rate", "long and variable lags", "how long until rate rises work", "interest rate hike", "how do interest rates affect inflation"] },
+      "anchor": "#ch8",
+      "relatedPages": ["interest-rates-bonds"]
+    },
+    {
+      "id": "purchasing-power-parity",
+      "title": { "zh": "购买力平价与汇率", "en": "Purchasing power parity and exchange rates" },
+      "desc": { "zh": "长期看通胀高的货币会贬值；短期里资金流动让汇率偏离平价，偏离减半要好几年。", "en": "Over the long run a high-inflation currency depreciates; in the short run capital flows push the rate away from parity, and the gap takes years to halve." },
+      "aliases": { "zh": ["汇率是怎么决定的", "巨无霸指数", "购买力平价", "为什么同样的东西各国价格不同", "货币贬值", "汇率高估", "汇率"], "en": ["how are exchange rates set", "Big Mac index", "purchasing power parity", "why prices differ between countries", "currency depreciation", "overvalued currency", "exchange rate"] },
+      "anchor": "#ch9",
+      "relatedPages": ["scarcity-moves"]
+    }
+  ]
+}
