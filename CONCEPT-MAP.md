@@ -3069,3 +3069,33 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | Averaging over windows as an upper bound | `leetcode/1183/#step5` | A weighted random window covers each cell with probability 1 / its class size, which caps every valid grid at the top-k sum. |
 
 <!-- /leetcode-1183-campaign -->
+
+
+<!-- leetcode-1159-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Per-seller ranking | `leetcode/1159/#step2` | ROW_NUMBER() OVER (PARTITION BY seller_id ORDER BY order_date) turns “second sale” into sale_rank = 2. |
+| Preserving missing matches | `leetcode/1159/#step3` | Start from Users with a LEFT JOIN and put sale_rank = 2 in ON, so users without a second sale stay as no. |
+
+<!-- /leetcode-1159-campaign -->
+
+
+<!-- leetcode-1168-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Virtual water source | `leetcode/1168/#step2` | A well at house i is an edge from source 0 to i, so every house must connect to 0. |
+| Kruskal with union-find | `leetcode/1168/#step3` | Take edges cheapest first and skip any whose ends are already in one group. |
+
+<!-- /leetcode-1168-campaign -->
+
+
+<!-- leetcode-1192-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Back edges close loops | `leetcode/1192/#step2` | In an undirected DFS every non-tree edge leads to an ancestor and covers the tree path it bypasses. |
+| Low-link bridge test | `leetcode/1192/#step3` | Tree edge p–c is critical exactly when low[c] > tin[p]. |
+
+<!-- /leetcode-1192-campaign -->

@@ -5115,6 +5115,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n) construction time and space; O(log n) time and O(1) extra space per query"
   },
   {
+    "id": 1159,
+    "title": {
+      "zh": "市场分析 II",
+      "en": "Market Analysis II"
+    },
+    "desc": {
+      "zh": "手算“第二件”时写下的位置，就是 ROW_NUMBER 的编号；再从 Users 出发 LEFT JOIN，让没有第二件的人也留下。",
+      "en": "The positions you write when finding “the second sale” by hand are ROW_NUMBER; a LEFT JOIN from Users keeps people who have no second sale."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "数据库",
+        "en": "Database"
+      },
+      {
+        "zh": "窗口函数",
+        "en": "Window functions"
+      }
+    ],
+    "path": "1159/",
+    "leetcodeUrl": "https://leetcode.com/problems/market-analysis-ii/",
+    "language": "MySQL",
+    "complexity": "O(m log m) time for the per-seller window sort; O(m) intermediate rows"
+  },
+  {
     "id": 1163,
     "title": {
       "zh": "字典序最大的子串",
@@ -5139,6 +5165,32 @@ window.LEETCODE_PROBLEMS = [
     "leetcodeUrl": "https://leetcode.com/problems/last-substring-in-lexicographical-order/",
     "language": "Python",
     "complexity": "O(n) time; O(1) auxiliary space"
+  },
+  {
+    "id": 1168,
+    "title": {
+      "zh": "水资源分配优化",
+      "en": "Optimize Water Distribution in a Village"
+    },
+    "desc": {
+      "zh": "每户各自贪心会一口井都不打；把打井画成通向水源的管，问题就变成最小生成树。",
+      "en": "Per-house greed digs no well at all; draw each well as a pipe to a water source and the problem becomes a minimum spanning tree."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "最小生成树",
+        "en": "Minimum spanning tree"
+      },
+      {
+        "zh": "并查集",
+        "en": "Union-find"
+      }
+    ],
+    "path": "1168/",
+    "leetcodeUrl": "https://leetcode.com/problems/optimize-water-distribution-in-a-village/",
+    "language": "Python",
+    "complexity": "O((n+m) log(n+m)) time; O(n+m) space"
   },
   {
     "id": 1172,
@@ -5247,6 +5299,36 @@ window.LEETCODE_PROBLEMS = [
     "leetcodeUrl": "https://leetcode.com/problems/make-array-strictly-increasing/",
     "language": "Python",
     "complexity": "O(nm log m) time; O(m) space"
+  },
+  {
+    "id": 1192,
+    "title": {
+      "zh": "查找集群内的关键连接",
+      "en": "Critical Connections in a Network"
+    },
+    "desc": {
+      "zh": "剪线试验显示安全的网线都在环上；一次 DFS 用 low 值判断有没有回边绕过每根树边。",
+      "en": "Cutting cables shows every safe cable lies on a loop; one DFS uses low values to see whether a back edge bypasses each tree edge."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "图",
+        "en": "Graph"
+      },
+      {
+        "zh": "深度优先搜索",
+        "en": "Depth-first search"
+      },
+      {
+        "zh": "桥",
+        "en": "Bridges"
+      }
+    ],
+    "path": "1192/",
+    "leetcodeUrl": "https://leetcode.com/problems/critical-connections-in-a-network/",
+    "language": "Python",
+    "complexity": "O(n+m) time; O(n+m) space"
   },
   {
     "id": 2916,
