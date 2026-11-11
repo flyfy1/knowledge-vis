@@ -1,0 +1,120 @@
+{
+  "slug": "where-a-mortgage-payment-goes",
+  "path": "economics/money/where-a-mortgage-payment-goes/",
+  "category": "economics",
+  "subtopic": "money",
+  "stage": "senior",
+  "title": { "zh": "每个月的房贷，钱到底还到哪儿去了", "en": "Where Does Your Mortgage Payment Actually Go?" },
+  "desc": {
+    "zh": "一笔房贷每个月的钱，一部分付利息，一部分减本金。八个可以拖动的模型：名义利率与实际利率、月供公式、还款表、等额本金与等额本息、提前还款、利率变动、分期手续费的真实年利率、通胀与机会成本。",
+    "en": "Each month's mortgage payment splits into interest and principal. Eight models you can push: nominal and effective rates, the payment formula, the amortisation schedule, equal-principal versus equal-payment, prepaying, a rate change, the true annual rate of a flat-fee instalment plan, and inflation and opportunity cost."
+  },
+  "tags": [
+    { "zh": "房贷", "en": "Mortgages" },
+    { "zh": "利率", "en": "Interest rates" },
+    { "zh": "复利", "en": "Compound interest" },
+    { "zh": "年化利率", "en": "APR" },
+    { "zh": "长文", "en": "Long-form essay" }
+  ],
+  "concepts": [
+    {
+      "id": "nominal-vs-effective-rate",
+      "title": { "zh": "名义年利率、月利率与实际年利率", "en": "Nominal rate, periodic rate and effective annual rate" },
+      "desc": { "zh": "年利率 4% 按月计息时，每月用 0.333%，滚满一年是 4.07%：同一个利率的三个名字。", "en": "A 4% annual rate charged monthly uses 0.333% a month and compounds to 4.07% over a year: three names for one rate." },
+      "aliases": {
+        "zh": ["月利率", "实际年利率", "有效年利率", "名义利率", "月利率怎么换算年利率", "年利率除以12", "按月计息", "按日计息"],
+        "en": ["monthly interest rate", "effective annual rate", "EAR", "nominal interest rate", "periodic rate", "convert monthly rate to annual", "compounded monthly"]
+      },
+      "anchor": "#ch1",
+      "relatedPages": ["compound-interest", "exponents-logarithms"]
+    },
+    {
+      "id": "annuity-payment-formula",
+      "title": { "zh": "月供公式（等额本息）", "en": "The level-payment (annuity) formula" },
+      "desc": { "zh": "月供是让欠款在最后一个月正好还清的那个数：M = P·i ÷ (1 − (1 + i)^−n)。", "en": "The monthly payment is the one number that clears the balance exactly in the last month: M = P·i / (1 − (1 + i)^−n)." },
+      "aliases": {
+        "zh": ["月供怎么算", "月供公式", "等额本息公式", "房贷计算器", "每月还多少", "贷款100万30年每月还多少"],
+        "en": ["how is a mortgage payment calculated", "mortgage payment formula", "annuity formula", "monthly payment formula", "mortgage calculator", "level payment loan"]
+      },
+      "anchor": "#ch2",
+      "relatedPages": ["compound-interest"]
+    },
+    {
+      "id": "amortisation-schedule",
+      "title": { "zh": "还款表：为什么前几年主要还利息", "en": "The amortisation schedule: why early payments are mostly interest" },
+      "desc": { "zh": "利息按还欠着的钱算，所以前几年月供大多是利息；4%、30 年的贷款要到第 153 个月本金才超过利息。", "en": "Interest is charged on what is still owed, so early payments are mostly interest; on a 4%, 30-year loan principal overtakes interest only in month 153." },
+      "aliases": {
+        "zh": ["房贷前几年都是利息", "为什么房贷先还利息", "还款计划表", "摊还表", "剩余本金", "还了几年本金没少", "房贷总利息"],
+        "en": ["amortization schedule", "amortisation", "why are mortgage payments mostly interest", "remaining balance", "total interest on a mortgage", "principal and interest split"]
+      },
+      "anchor": "#ch3",
+      "relatedPages": ["compound-interest", "where-money-comes-from"]
+    },
+    {
+      "id": "equal-principal-vs-equal-payment",
+      "title": { "zh": "等额本金与等额本息", "en": "Equal-principal versus equal-payment repayment" },
+      "desc": { "zh": "等额本金总利息少，只是因为平均欠得少；按贷款利率折现，两种还法都正好等于借的钱。", "en": "Equal-principal repayment costs less interest only because less is owed on average; discounted at the loan rate, both repay exactly the amount borrowed." },
+      "aliases": {
+        "zh": ["等额本金", "等额本息", "等额本金和等额本息哪个划算", "等额本金和等额本息的区别", "等额本息是不是多收利息"],
+        "en": ["equal principal repayment", "equal payment repayment", "declining payment mortgage", "constant principal vs annuity", "which repayment method costs less interest"]
+      },
+      "anchor": "#ch4",
+      "relatedPages": []
+    },
+    {
+      "id": "mortgage-prepayment",
+      "title": { "zh": "提前还款：缩短年限还是减少月供", "en": "Prepaying: shorten the term or lower the payment" },
+      "desc": { "zh": "提前还的钱直接减本金；省多少利息取决于何时还、怎么还，但按贷款利率折现两种方式都正好减少那笔钱。", "en": "A prepayment goes straight to principal; the interest it saves depends on when and how, yet at the loan rate both options remove exactly that amount." },
+      "aliases": {
+        "zh": ["提前还款", "提前还贷", "缩短年限还是减少月供", "提前还款划算吗", "提前还款省多少利息", "什么时候提前还款最好"],
+        "en": ["mortgage prepayment", "pay off mortgage early", "overpayment", "shorten term or reduce payment", "how much interest does prepaying save"]
+      },
+      "anchor": "#ch5",
+      "relatedPages": []
+    },
+    {
+      "id": "floating-rate-reset",
+      "title": { "zh": "浮动利率：利率变了月供怎么变", "en": "Floating rates: what a rate change does to the payment" },
+      "desc": { "zh": "利率重定后，要么按剩余年限重算月供，要么月供不变、年限变；月供不够付利息时欠款会越还越多。", "en": "After a rate reset either the payment is recomputed over the remaining term or it stays and the term moves; if it no longer covers the interest, the balance grows." },
+      "aliases": {
+        "zh": ["浮动利率", "LPR", "LPR 房贷", "房贷利率调整", "利率上调月供涨多少", "重定价周期", "负摊还", "加点"],
+        "en": ["floating rate mortgage", "variable rate mortgage", "adjustable rate mortgage", "rate reset", "loan prime rate", "negative amortization", "what happens when mortgage rates rise"]
+      },
+      "anchor": "#ch6",
+      "relatedPages": ["where-money-comes-from", "interest-rates-bonds"]
+    },
+    {
+      "id": "apr-irr-flat-fee",
+      "title": { "zh": "真实年利率：内部收益率与分期手续费", "en": "The true annual rate: IRR and flat-fee instalments" },
+      "desc": { "zh": "按原始本金收手续费的分期，真实年利率远高于表面数字（例子里 12 期约为 1.8 倍）；用内部收益率把所有现金流折平就能算出来。", "en": "An instalment plan charging a fee on the original principal costs far more than the quoted rate (about 1.8 times for the 12-month example); the internal rate of return over all its cash flows reveals it." },
+      "aliases": {
+        "zh": ["分期手续费", "信用卡分期真实利率", "年化利率", "APR", "内部收益率", "IRR", "分期手续费换算年利率", "每期手续费0.6%年化多少"],
+        "en": ["APR", "annual percentage rate", "internal rate of return", "IRR", "true cost of an installment plan", "flat rate vs APR", "add-on interest", "credit card installment fee"]
+      },
+      "anchor": "#ch7",
+      "relatedPages": ["fees-compounding"]
+    },
+    {
+      "id": "inflation-opportunity-cost-loan",
+      "title": { "zh": "通胀、实际利率与提前还贷的机会成本", "en": "Inflation, the real rate and the opportunity cost of prepaying" },
+      "desc": { "zh": "通胀让固定月供变轻；比较提前还贷和另作他用（都按名义收益算），标尺是贷款利率而不是通胀。", "en": "Inflation lightens a fixed payment; comparing prepaying with another use of the money, in nominal terms the yardstick is the loan rate, not inflation." },
+      "aliases": {
+        "zh": ["通胀对房贷的影响", "房贷实际利率", "机会成本", "提前还贷还是投资", "钱拿去理财还是还房贷", "30年后的月供值多少"],
+        "en": ["inflation and mortgage", "real interest rate", "opportunity cost", "prepay mortgage or invest", "real value of a fixed payment"]
+      },
+      "anchor": "#ch8",
+      "relatedPages": ["where-money-comes-from", "compound-interest"]
+    },
+    {
+      "id": "reading-a-loan-contract",
+      "title": { "zh": "拿到贷款合同时能自己算的事", "en": "What you can work out from a loan contract" },
+      "desc": { "zh": "三个问题：每期利率多少、费用按什么算、什么会改变还款表。", "en": "Three questions: what the periodic rate is, what fees are charged on, and what can change the schedule." },
+      "aliases": {
+        "zh": ["房贷合同看什么", "贷款要问什么", "房贷利息去哪了", "月供去哪儿了"],
+        "en": ["what to check in a loan contract", "questions to ask about a loan", "where does my mortgage payment go"]
+      },
+      "anchor": "#ch9",
+      "relatedPages": []
+    }
+  ]
+}
