@@ -26,36 +26,26 @@
      "primary": true
     }
    ],
-   "aliases": [
-    {
-     "zh": "音程",
-     "en": "musical interval"
-    },
-    {
-     "zh": "八度",
-     "en": "octave"
-    },
-    {
-     "zh": "半音 全音",
-     "en": "semitone and whole tone"
-    },
-    {
-     "zh": "十二平均律",
-     "en": "twelve-tone equal temperament"
-    },
-    {
-     "zh": "为什么高八度听起来像同一个音",
-     "en": "why does an octave sound like the same note"
-    },
-    {
-     "zh": "纯五度",
-     "en": "perfect fifth"
-    },
-    {
-     "zh": "音高和频率",
-     "en": "pitch and frequency"
-    }
-   ]
+   "aliases": {
+    "zh": [
+     "音程",
+     "八度",
+     "半音 全音",
+     "十二平均律",
+     "为什么高八度听起来像同一个音",
+     "纯五度",
+     "音高和频率"
+    ],
+    "en": [
+     "musical interval",
+     "octave",
+     "semitone and whole tone",
+     "twelve-tone equal temperament",
+     "why does an octave sound like the same note",
+     "perfect fifth",
+     "pitch and frequency"
+    ]
+   }
   },
   {
    "id": "harmonic-function",
@@ -80,36 +70,26 @@
      "primary": true
     }
    ],
-   "aliases": [
-    {
-     "zh": "和弦功能",
-     "en": "chord function"
-    },
-    {
-     "zh": "终止式",
-     "en": "cadence"
-    },
-    {
-     "zh": "主和弦 属和弦 下属和弦",
-     "en": "tonic, dominant and subdominant chords"
-    },
-    {
-     "zh": "罗马数字和弦标记",
-     "en": "Roman numeral analysis"
-    },
-    {
-     "zh": "音阶级数",
-     "en": "scale degrees"
-    },
-    {
-     "zh": "为什么 V–I 听起来像结束",
-     "en": "why does V–I sound final"
-    },
-    {
-     "zh": "和声入门",
-     "en": "introduction to harmony"
-    }
-   ]
+   "aliases": {
+    "zh": [
+     "和弦功能",
+     "终止式",
+     "主和弦 属和弦 下属和弦",
+     "罗马数字和弦标记",
+     "音阶级数",
+     "为什么 V–I 听起来像结束",
+     "和声入门"
+    ],
+    "en": [
+     "chord function",
+     "cadence",
+     "tonic, dominant and subdominant chords",
+     "Roman numeral analysis",
+     "scale degrees",
+     "why does V–I sound final",
+     "introduction to harmony"
+    ]
+   }
   }
  ],
  "edges": [

@@ -26,40 +26,28 @@
      "primary": true
     }
    ],
-   "aliases": [
-    {
-     "zh": "分布式系统",
-     "en": "distributed systems"
-    },
-    {
-     "zh": "数据副本",
-     "en": "data replication"
-    },
-    {
-     "zh": "法定人数 quorum",
-     "en": "quorum"
-    },
-    {
-     "zh": "R + W > N",
-     "en": "R plus W greater than N"
-    },
-    {
-     "zh": "CAP 定理",
-     "en": "CAP theorem"
-    },
-    {
-     "zh": "强一致性 最终一致性",
-     "en": "strong vs eventual consistency"
-    },
-    {
-     "zh": "网络分区",
-     "en": "network partition"
-    },
-    {
-     "zh": "为什么会读到旧数据",
-     "en": "why do I read stale data"
-    }
-   ]
+   "aliases": {
+    "zh": [
+     "分布式系统",
+     "数据副本",
+     "法定人数 quorum",
+     "R + W > N",
+     "CAP 定理",
+     "强一致性 最终一致性",
+     "网络分区",
+     "为什么会读到旧数据"
+    ],
+    "en": [
+     "distributed systems",
+     "data replication",
+     "quorum",
+     "R plus W greater than N",
+     "CAP theorem",
+     "strong vs eventual consistency",
+     "network partition",
+     "why do I read stale data"
+    ]
+   }
   }
  ],
  "edges": []

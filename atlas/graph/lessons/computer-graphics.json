@@ -26,40 +26,28 @@
      "primary": true
     }
    ],
-   "aliases": [
-    {
-     "zh": "计算机图形学",
-     "en": "computer graphics"
-    },
-    {
-     "zh": "渲染管线",
-     "en": "rendering pipeline"
-    },
-    {
-     "zh": "光栅化",
-     "en": "rasterization"
-    },
-    {
-     "zh": "漫反射着色",
-     "en": "diffuse shading"
-    },
-    {
-     "zh": "Lambert 光照",
-     "en": "Lambertian shading"
-    },
-    {
-     "zh": "画线算法",
-     "en": "line drawing algorithm"
-    },
-    {
-     "zh": "游戏画面是怎么画出来的",
-     "en": "how do games draw images"
-    },
-    {
-     "zh": "GPU 渲染",
-     "en": "GPU rendering"
-    }
-   ]
+   "aliases": {
+    "zh": [
+     "计算机图形学",
+     "渲染管线",
+     "光栅化",
+     "漫反射着色",
+     "Lambert 光照",
+     "画线算法",
+     "游戏画面是怎么画出来的",
+     "GPU 渲染"
+    ],
+    "en": [
+     "computer graphics",
+     "rendering pipeline",
+     "rasterization",
+     "diffuse shading",
+     "Lambertian shading",
+     "line drawing algorithm",
+     "how do games draw images",
+     "GPU rendering"
+    ]
+   }
   }
  ],
  "edges": [

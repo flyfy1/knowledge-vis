@@ -26,40 +26,28 @@
      "primary": true
     }
    ],
-   "aliases": [
-    {
-     "zh": "网络延迟",
-     "en": "network latency"
-    },
-    {
-     "zh": "带宽",
-     "en": "bandwidth"
-    },
-    {
-     "zh": "网速慢",
-     "en": "slow internet"
-    },
-    {
-     "zh": "ping 值",
-     "en": "ping"
-    },
-    {
-     "zh": "往返时间 RTT",
-     "en": "round-trip time"
-    },
-    {
-     "zh": "网速和延迟的区别",
-     "en": "bandwidth vs latency"
-    },
-    {
-     "zh": "数据包",
-     "en": "packets"
-    },
-    {
-     "zh": "吞吐量",
-     "en": "throughput"
-    }
-   ]
+   "aliases": {
+    "zh": [
+     "网络延迟",
+     "带宽",
+     "网速慢",
+     "ping 值",
+     "往返时间 RTT",
+     "网速和延迟的区别",
+     "数据包",
+     "吞吐量"
+    ],
+    "en": [
+     "network latency",
+     "bandwidth",
+     "slow internet",
+     "ping",
+     "round-trip time",
+     "bandwidth vs latency",
+     "packets",
+     "throughput"
+    ]
+   }
   },
   {
    "id": "tcp-congestion-control",
@@ -84,40 +72,28 @@
      "primary": true
     }
    ],
-   "aliases": [
-    {
-     "zh": "拥塞控制",
-     "en": "congestion control"
-    },
-    {
-     "zh": "拥塞窗口",
-     "en": "congestion window"
-    },
-    {
-     "zh": "TCP 三次握手",
-     "en": "TCP three-way handshake"
-    },
-    {
-     "zh": "丢包重传",
-     "en": "packet loss and retransmission"
-    },
-    {
-     "zh": "慢启动",
-     "en": "slow start"
-    },
-    {
-     "zh": "加性增乘性减",
-     "en": "AIMD"
-    },
-    {
-     "zh": "网络为什么会堵",
-     "en": "why does the network get congested"
-    },
-    {
-     "zh": "TCP 和 IP",
-     "en": "TCP/IP"
-    }
-   ]
+   "aliases": {
+    "zh": [
+     "拥塞控制",
+     "拥塞窗口",
+     "TCP 三次握手",
+     "丢包重传",
+     "慢启动",
+     "加性增乘性减",
+     "网络为什么会堵",
+     "TCP 和 IP"
+    ],
+    "en": [
+     "congestion control",
+     "congestion window",
+     "TCP three-way handshake",
+     "packet loss and retransmission",
+     "slow start",
+     "AIMD",
+     "why does the network get congested",
+     "TCP/IP"
+    ]
+   }
   }
  ],
  "edges": [

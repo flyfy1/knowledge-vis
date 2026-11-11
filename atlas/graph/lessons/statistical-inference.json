@@ -27,36 +27,26 @@
      "primary": true
     }
    ],
-   "aliases": [
-    {
-     "zh": "置信区间",
-     "en": "confidence interval"
-    },
-    {
-     "zh": "95% 置信区间是什么意思",
-     "en": "what does a 95% confidence interval mean"
-    },
-    {
-     "zh": "标准误",
-     "en": "standard error"
-    },
-    {
-     "zh": "抽样分布",
-     "en": "sampling distribution"
-    },
-    {
-     "zh": "误差范围",
-     "en": "margin of error"
-    },
-    {
-     "zh": "样本量越大越准吗",
-     "en": "does a bigger sample make it more precise"
-    },
-    {
-     "zh": "z 分数",
-     "en": "z-score"
-    }
-   ]
+   "aliases": {
+    "zh": [
+     "置信区间",
+     "95% 置信区间是什么意思",
+     "标准误",
+     "抽样分布",
+     "误差范围",
+     "样本量越大越准吗",
+     "z 分数"
+    ],
+    "en": [
+     "confidence interval",
+     "what does a 95% confidence interval mean",
+     "standard error",
+     "sampling distribution",
+     "margin of error",
+     "does a bigger sample make it more precise",
+     "z-score"
+    ]
+   }
   }
  ],
  "attach": [

@@ -26,36 +26,26 @@
      "primary": true
     }
    ],
-   "aliases": [
-    {
-     "zh": "热力学第一定律",
-     "en": "first law of thermodynamics"
-    },
-    {
-     "zh": "内能",
-     "en": "internal energy"
-    },
-    {
-     "zh": "等温过程 绝热过程",
-     "en": "isothermal and adiabatic processes"
-    },
-    {
-     "zh": "P–V 图",
-     "en": "P–V diagram"
-    },
-    {
-     "zh": "状态量和过程量",
-     "en": "state functions vs path functions"
-    },
-    {
-     "zh": "热学里的能量守恒",
-     "en": "energy conservation with heat"
-    },
-    {
-     "zh": "理想气体状态方程",
-     "en": "ideal gas law"
-    }
-   ]
+   "aliases": {
+    "zh": [
+     "热力学第一定律",
+     "内能",
+     "等温过程 绝热过程",
+     "P–V 图",
+     "状态量和过程量",
+     "热学里的能量守恒",
+     "理想气体状态方程"
+    ],
+    "en": [
+     "first law of thermodynamics",
+     "internal energy",
+     "isothermal and adiabatic processes",
+     "P–V diagram",
+     "state functions vs path functions",
+     "energy conservation with heat",
+     "ideal gas law"
+    ]
+   }
   }
  ],
  "edges": [

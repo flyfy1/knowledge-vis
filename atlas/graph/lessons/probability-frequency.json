@@ -26,32 +26,24 @@
      "primary": true
     }
    ],
-   "aliases": [
-    {
-     "zh": "大数定律",
-     "en": "law of large numbers"
-    },
-    {
-     "zh": "频率和概率的区别",
-     "en": "frequency vs probability"
-    },
-    {
-     "zh": "赌徒谬误",
-     "en": "gambler’s fallacy"
-    },
-    {
-     "zh": "连开几次红，下次该开黑了吗",
-     "en": "after several reds, is black due"
-    },
-    {
-     "zh": "试验次数越多越准吗",
-     "en": "are more trials more reliable"
-    },
-    {
-     "zh": "抛硬币一定一半正面吗",
-     "en": "does a coin always land heads half the time"
-    }
-   ]
+   "aliases": {
+    "zh": [
+     "大数定律",
+     "频率和概率的区别",
+     "赌徒谬误",
+     "连开几次红，下次该开黑了吗",
+     "试验次数越多越准吗",
+     "抛硬币一定一半正面吗"
+    ],
+    "en": [
+     "law of large numbers",
+     "frequency vs probability",
+     "gambler’s fallacy",
+     "after several reds, is black due",
+     "are more trials more reliable",
+     "does a coin always land heads half the time"
+    ]
+   }
   }
  ],
  "edges": [

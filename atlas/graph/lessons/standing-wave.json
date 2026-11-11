@@ -26,36 +26,26 @@
      "primary": true
     }
    ],
-   "aliases": [
-    {
-     "zh": "驻波",
-     "en": "standing wave"
-    },
-    {
-     "zh": "波节 波腹",
-     "en": "nodes and antinodes"
-    },
-    {
-     "zh": "弦的谐波",
-     "en": "harmonics of a string"
-    },
-    {
-     "zh": "基频",
-     "en": "fundamental frequency"
-    },
-    {
-     "zh": "为什么吉他弦只发出某些音",
-     "en": "why does a guitar string sound only certain notes"
-    },
-    {
-     "zh": "简正模式",
-     "en": "normal mode"
-    },
-    {
-     "zh": "驻定波",
-     "en": "stationary wave"
-    }
-   ]
+   "aliases": {
+    "zh": [
+     "驻波",
+     "波节 波腹",
+     "弦的谐波",
+     "基频",
+     "为什么吉他弦只发出某些音",
+     "简正模式",
+     "驻定波"
+    ],
+    "en": [
+     "standing wave",
+     "nodes and antinodes",
+     "harmonics of a string",
+     "fundamental frequency",
+     "why does a guitar string sound only certain notes",
+     "normal mode",
+     "stationary wave"
+    ]
+   }
   }
  ],
  "edges": [

@@ -26,36 +26,26 @@
      "primary": true
     }
    ],
-   "aliases": [
-    {
-     "zh": "抛物线",
-     "en": "parabola"
-    },
-    {
-     "zh": "二次函数",
-     "en": "quadratic function"
-    },
-    {
-     "zh": "顶点式",
-     "en": "vertex form"
-    },
-    {
-     "zh": "二次函数图像",
-     "en": "graph of a quadratic"
-    },
-    {
-     "zh": "开口方向",
-     "en": "which way a parabola opens"
-    },
-    {
-     "zh": "一元二次方程的根",
-     "en": "roots of a quadratic equation"
-    },
-    {
-     "zh": "判别式",
-     "en": "discriminant"
-    }
-   ]
+   "aliases": {
+    "zh": [
+     "抛物线",
+     "二次函数",
+     "顶点式",
+     "二次函数图像",
+     "开口方向",
+     "一元二次方程的根",
+     "判别式"
+    ],
+    "en": [
+     "parabola",
+     "quadratic function",
+     "vertex form",
+     "graph of a quadratic",
+     "which way a parabola opens",
+     "roots of a quadratic equation",
+     "discriminant"
+    ]
+   }
   }
  ],
  "edges": [

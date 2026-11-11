@@ -26,40 +26,28 @@
      "primary": true
     }
    ],
-   "aliases": [
-    {
-     "zh": "信号检测论",
-     "en": "signal detection theory"
-    },
-    {
-     "zh": "d prime",
-     "en": "d-prime"
-    },
-    {
-     "zh": "ROC 曲线",
-     "en": "ROC curve"
-    },
-    {
-     "zh": "命中率 虚报率",
-     "en": "hit rate and false alarm rate"
-    },
-    {
-     "zh": "漏报 误报",
-     "en": "misses and false alarms"
-    },
-    {
-     "zh": "判断标准",
-     "en": "decision criterion"
-    },
-    {
-     "zh": "敏感度和偏向",
-     "en": "sensitivity vs response bias"
-    },
-    {
-     "zh": "AUC",
-     "en": "area under the ROC curve"
-    }
-   ]
+   "aliases": {
+    "zh": [
+     "信号检测论",
+     "d prime",
+     "ROC 曲线",
+     "命中率 虚报率",
+     "漏报 误报",
+     "判断标准",
+     "敏感度和偏向",
+     "AUC"
+    ],
+    "en": [
+     "signal detection theory",
+     "d-prime",
+     "ROC curve",
+     "hit rate and false alarm rate",
+     "misses and false alarms",
+     "decision criterion",
+     "sensitivity vs response bias",
+     "area under the ROC curve"
+    ]
+   }
   }
  ],
  "edges": [

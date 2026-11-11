@@ -26,40 +26,28 @@
      "primary": true
     }
    ],
-   "aliases": [
-    {
-     "zh": "应力 应变",
-     "en": "stress and strain"
-    },
-    {
-     "zh": "杨氏模量",
-     "en": "Young’s modulus"
-    },
-    {
-     "zh": "屈服强度",
-     "en": "yield strength"
-    },
-    {
-     "zh": "韧性",
-     "en": "toughness"
-    },
-    {
-     "zh": "塑性变形",
-     "en": "plastic deformation"
-    },
-    {
-     "zh": "脆性与延性",
-     "en": "brittle vs ductile"
-    },
-    {
-     "zh": "为什么玻璃会碎而钢会弯",
-     "en": "why does glass shatter while steel bends"
-    },
-    {
-     "zh": "胡克定律",
-     "en": "Hooke’s law"
-    }
-   ]
+   "aliases": {
+    "zh": [
+     "应力 应变",
+     "杨氏模量",
+     "屈服强度",
+     "韧性",
+     "塑性变形",
+     "脆性与延性",
+     "为什么玻璃会碎而钢会弯",
+     "胡克定律"
+    ],
+    "en": [
+     "stress and strain",
+     "Young’s modulus",
+     "yield strength",
+     "toughness",
+     "plastic deformation",
+     "brittle vs ductile",
+     "why does glass shatter while steel bends",
+     "Hooke’s law"
+    ]
+   }
   }
  ],
  "edges": [

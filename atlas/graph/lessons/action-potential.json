@@ -25,40 +25,28 @@
      "primary": true
     }
    ],
-   "aliases": [
-    {
-     "zh": "动作电位",
-     "en": "action potential"
-    },
-    {
-     "zh": "神经冲动",
-     "en": "nerve impulse"
-    },
-    {
-     "zh": "全或无",
-     "en": "all-or-none"
-    },
-    {
-     "zh": "阈电位",
-     "en": "threshold potential"
-    },
-    {
-     "zh": "去极化 复极化",
-     "en": "depolarisation and repolarisation"
-    },
-    {
-     "zh": "不应期",
-     "en": "refractory period"
-    },
-    {
-     "zh": "神经元怎么放电",
-     "en": "how a neuron fires"
-    },
-    {
-     "zh": "刺激越强尖峰越高吗",
-     "en": "does a stronger stimulus give a bigger spike"
-    }
-   ]
+   "aliases": {
+    "zh": [
+     "动作电位",
+     "神经冲动",
+     "全或无",
+     "阈电位",
+     "去极化 复极化",
+     "不应期",
+     "神经元怎么放电",
+     "刺激越强尖峰越高吗"
+    ],
+    "en": [
+     "action potential",
+     "nerve impulse",
+     "all-or-none",
+     "threshold potential",
+     "depolarisation and repolarisation",
+     "refractory period",
+     "how a neuron fires",
+     "does a stronger stimulus give a bigger spike"
+    ]
+   }
   }
  ],
  "edges": [

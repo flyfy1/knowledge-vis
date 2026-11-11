@@ -26,40 +26,28 @@
      "primary": true
     }
    ],
-   "aliases": [
-    {
-     "zh": "孟德尔遗传定律",
-     "en": "Mendel’s laws"
-    },
-    {
-     "zh": "庞纳特方格 棋盘法",
-     "en": "Punnett square"
-    },
-    {
-     "zh": "3:1 分离比",
-     "en": "3:1 ratio"
-    },
-    {
-     "zh": "9:3:3:1",
-     "en": "9:3:3:1 ratio"
-    },
-    {
-     "zh": "显性 隐性",
-     "en": "dominant and recessive"
-    },
-    {
-     "zh": "基因型 表型",
-     "en": "genotype and phenotype"
-    },
-    {
-     "zh": "孩子遗传到隐性病的概率",
-     "en": "chance a child inherits a recessive condition"
-    },
-    {
-     "zh": "分离定律 自由组合定律",
-     "en": "law of segregation and law of independent assortment"
-    }
-   ]
+   "aliases": {
+    "zh": [
+     "孟德尔遗传定律",
+     "庞纳特方格 棋盘法",
+     "3:1 分离比",
+     "9:3:3:1",
+     "显性 隐性",
+     "基因型 表型",
+     "孩子遗传到隐性病的概率",
+     "分离定律 自由组合定律"
+    ],
+    "en": [
+     "Mendel’s laws",
+     "Punnett square",
+     "3:1 ratio",
+     "9:3:3:1 ratio",
+     "dominant and recessive",
+     "genotype and phenotype",
+     "chance a child inherits a recessive condition",
+     "law of segregation and law of independent assortment"
+    ]
+   }
   }
  ],
  "edges": [

@@ -26,36 +26,26 @@
      "primary": true
     }
    ],
-   "aliases": [
-    {
-     "zh": "曼德博集合",
-     "en": "Mandelbrot set"
-    },
-    {
-     "zh": "分形",
-     "en": "fractal"
-    },
-    {
-     "zh": "朱利亚集",
-     "en": "Julia set"
-    },
-    {
-     "zh": "自相似",
-     "en": "self-similarity"
-    },
-    {
-     "zh": "无限放大的图形",
-     "en": "infinite zoom"
-    },
-    {
-     "zh": "曼德布罗特",
-     "en": "mandelbrot"
-    },
-    {
-     "zh": "z² + c",
-     "en": "z squared plus c"
-    }
-   ]
+   "aliases": {
+    "zh": [
+     "曼德博集合",
+     "分形",
+     "朱利亚集",
+     "自相似",
+     "无限放大的图形",
+     "曼德布罗特",
+     "z² + c"
+    ],
+    "en": [
+     "Mandelbrot set",
+     "fractal",
+     "Julia set",
+     "self-similarity",
+     "infinite zoom",
+     "mandelbrot",
+     "z squared plus c"
+    ]
+   }
   }
  ],
  "edges": [

@@ -26,32 +26,24 @@
      "primary": true
     }
    ],
-   "aliases": [
-    {
-     "zh": "缓冲液",
-     "en": "buffer"
-    },
-    {
-     "zh": "亨德森–哈塞尔巴尔赫方程",
-     "en": "Henderson–Hasselbalch equation"
-    },
-    {
-     "zh": "缓冲容量",
-     "en": "buffer capacity"
-    },
-    {
-     "zh": "为什么加酸 pH 几乎不变",
-     "en": "why does pH barely change when acid is added"
-    },
-    {
-     "zh": "共轭酸碱对",
-     "en": "conjugate acid–base pair"
-    },
-    {
-     "zh": "血液为什么能保持 pH 稳定",
-     "en": "how does blood keep its pH steady"
-    }
-   ]
+   "aliases": {
+    "zh": [
+     "缓冲液",
+     "亨德森–哈塞尔巴尔赫方程",
+     "缓冲容量",
+     "为什么加酸 pH 几乎不变",
+     "共轭酸碱对",
+     "血液为什么能保持 pH 稳定"
+    ],
+    "en": [
+     "buffer",
+     "Henderson–Hasselbalch equation",
+     "buffer capacity",
+     "why does pH barely change when acid is added",
+     "conjugate acid–base pair",
+     "how does blood keep its pH steady"
+    ]
+   }
   }
  ],
  "edges": [

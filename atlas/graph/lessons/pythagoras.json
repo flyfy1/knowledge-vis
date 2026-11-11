@@ -26,40 +26,28 @@
      "primary": true
     }
    ],
-   "aliases": [
-    {
-     "zh": "勾股定理",
-     "en": "Pythagorean theorem"
-    },
-    {
-     "zh": "毕达哥拉斯定理",
-     "en": "Pythagoras’ theorem"
-    },
-    {
-     "zh": "商高定理",
-     "en": "Gougu theorem"
-    },
-    {
-     "zh": "勾三股四弦五",
-     "en": "3-4-5 triangle"
-    },
-    {
-     "zh": "勾股数",
-     "en": "Pythagorean triples"
-    },
-    {
-     "zh": "怎么求斜边",
-     "en": "how to find the hypotenuse"
-    },
-    {
-     "zh": "勾股定理逆定理",
-     "en": "converse of the Pythagorean theorem"
-    },
-    {
-     "zh": "勾股定律",
-     "en": "pythagorus theorem"
-    }
-   ]
+   "aliases": {
+    "zh": [
+     "勾股定理",
+     "毕达哥拉斯定理",
+     "商高定理",
+     "勾三股四弦五",
+     "勾股数",
+     "怎么求斜边",
+     "勾股定理逆定理",
+     "勾股定律"
+    ],
+    "en": [
+     "Pythagorean theorem",
+     "Pythagoras’ theorem",
+     "Gougu theorem",
+     "3-4-5 triangle",
+     "Pythagorean triples",
+     "how to find the hypotenuse",
+     "converse of the Pythagorean theorem",
+     "pythagorus theorem"
+    ]
+   }
   }
  ],
  "edges": [

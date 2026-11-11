@@ -26,36 +26,26 @@
      "primary": true
     }
    ],
-   "aliases": [
-    {
-     "zh": "分散投资",
-     "en": "diversification"
-    },
-    {
-     "zh": "不要把鸡蛋放在一个篮子里",
-     "en": "don’t put all your eggs in one basket"
-    },
-    {
-     "zh": "投资组合",
-     "en": "portfolio"
-    },
-    {
-     "zh": "资产相关性",
-     "en": "asset correlation"
-    },
-    {
-     "zh": "系统性风险",
-     "en": "systematic risk"
-    },
-    {
-     "zh": "非系统性风险",
-     "en": "idiosyncratic risk"
-    },
-    {
-     "zh": "买多少只股票才算分散",
-     "en": "how many stocks to diversify"
-    }
-   ]
+   "aliases": {
+    "zh": [
+     "分散投资",
+     "不要把鸡蛋放在一个篮子里",
+     "投资组合",
+     "资产相关性",
+     "系统性风险",
+     "非系统性风险",
+     "买多少只股票才算分散"
+    ],
+    "en": [
+     "diversification",
+     "don’t put all your eggs in one basket",
+     "portfolio",
+     "asset correlation",
+     "systematic risk",
+     "idiosyncratic risk",
+     "how many stocks to diversify"
+    ]
+   }
   }
  ],
  "edges": [

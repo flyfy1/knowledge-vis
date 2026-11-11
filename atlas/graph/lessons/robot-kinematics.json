@@ -26,40 +26,28 @@
      "primary": true
     }
    ],
-   "aliases": [
-    {
-     "zh": "正运动学",
-     "en": "forward kinematics"
-    },
-    {
-     "zh": "逆运动学",
-     "en": "inverse kinematics"
-    },
-    {
-     "zh": "机械臂",
-     "en": "robot arm"
-    },
-    {
-     "zh": "雅可比矩阵",
-     "en": "Jacobian matrix"
-    },
-    {
-     "zh": "奇异位形",
-     "en": "singularity"
-    },
-    {
-     "zh": "二连杆",
-     "en": "two-link arm"
-    },
-    {
-     "zh": "工作空间",
-     "en": "workspace"
-    },
-    {
-     "zh": "机器人学入门",
-     "en": "introduction to robotics"
-    }
-   ]
+   "aliases": {
+    "zh": [
+     "正运动学",
+     "逆运动学",
+     "机械臂",
+     "雅可比矩阵",
+     "奇异位形",
+     "二连杆",
+     "工作空间",
+     "机器人学入门"
+    ],
+    "en": [
+     "forward kinematics",
+     "inverse kinematics",
+     "robot arm",
+     "Jacobian matrix",
+     "singularity",
+     "two-link arm",
+     "workspace",
+     "introduction to robotics"
+    ]
+   }
   }
  ],
  "edges": [

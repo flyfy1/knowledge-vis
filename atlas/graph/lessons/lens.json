@@ -26,40 +26,28 @@
      "primary": true
     }
    ],
-   "aliases": [
-    {
-     "zh": "凸透镜成像规律",
-     "en": "convex lens image rules"
-    },
-    {
-     "zh": "焦距",
-     "en": "focal length"
-    },
-    {
-     "zh": "实像和虚像的区别",
-     "en": "real image vs virtual image"
-    },
-    {
-     "zh": "放大镜原理",
-     "en": "how a magnifying glass works"
-    },
-    {
-     "zh": "一倍焦距分虚实，二倍焦距分大小",
-     "en": "f splits real from virtual, 2f splits larger from smaller"
-    },
-    {
-     "zh": "薄透镜公式",
-     "en": "thin lens equation"
-    },
-    {
-     "zh": "透镜成像",
-     "en": "lens imaging"
-    },
-    {
-     "zh": "三条特殊光线",
-     "en": "three principal rays"
-    }
-   ]
+   "aliases": {
+    "zh": [
+     "凸透镜成像规律",
+     "焦距",
+     "实像和虚像的区别",
+     "放大镜原理",
+     "一倍焦距分虚实，二倍焦距分大小",
+     "薄透镜公式",
+     "透镜成像",
+     "三条特殊光线"
+    ],
+    "en": [
+     "convex lens image rules",
+     "focal length",
+     "real image vs virtual image",
+     "how a magnifying glass works",
+     "f splits real from virtual, 2f splits larger from smaller",
+     "thin lens equation",
+     "lens imaging",
+     "three principal rays"
+    ]
+   }
   }
  ],
  "edges": [

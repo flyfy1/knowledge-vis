@@ -25,40 +25,28 @@
      "primary": true
     }
    ],
-   "aliases": [
-    {
-     "zh": "伦理学",
-     "en": "ethics"
-    },
-    {
-     "zh": "道德决策",
-     "en": "moral decision making"
-    },
-    {
-     "zh": "功利主义",
-     "en": "utilitarianism"
-    },
-    {
-     "zh": "义务论",
-     "en": "deontology"
-    },
-    {
-     "zh": "结果主义",
-     "en": "consequentialism"
-    },
-    {
-     "zh": "知情同意",
-     "en": "informed consent"
-    },
-    {
-     "zh": "电车难题",
-     "en": "trolley problem"
-    },
-    {
-     "zh": "怎么做伦理判断",
-     "en": "how to make an ethical judgment"
-    }
-   ]
+   "aliases": {
+    "zh": [
+     "伦理学",
+     "道德决策",
+     "功利主义",
+     "义务论",
+     "结果主义",
+     "知情同意",
+     "电车难题",
+     "怎么做伦理判断"
+    ],
+    "en": [
+     "ethics",
+     "moral decision making",
+     "utilitarianism",
+     "deontology",
+     "consequentialism",
+     "informed consent",
+     "trolley problem",
+     "how to make an ethical judgment"
+    ]
+   }
   }
  ],
  "edges": [

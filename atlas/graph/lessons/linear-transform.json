@@ -26,36 +26,26 @@
      "primary": true
     }
    ],
-   "aliases": [
-    {
-     "zh": "矩阵是什么",
-     "en": "what is a matrix"
-    },
-    {
-     "zh": "线性变换",
-     "en": "linear transformation"
-    },
-    {
-     "zh": "矩阵乘法",
-     "en": "matrix multiplication"
-    },
-    {
-     "zh": "矩阵乘法为什么不能交换",
-     "en": "why is matrix multiplication not commutative"
-    },
-    {
-     "zh": "基向量",
-     "en": "basis vectors"
-    },
-    {
-     "zh": "矩阵的列",
-     "en": "columns of a matrix"
-    },
-    {
-     "zh": "旋转矩阵",
-     "en": "rotation matrix"
-    }
-   ]
+   "aliases": {
+    "zh": [
+     "矩阵是什么",
+     "线性变换",
+     "矩阵乘法",
+     "矩阵乘法为什么不能交换",
+     "基向量",
+     "矩阵的列",
+     "旋转矩阵"
+    ],
+    "en": [
+     "what is a matrix",
+     "linear transformation",
+     "matrix multiplication",
+     "why is matrix multiplication not commutative",
+     "basis vectors",
+     "columns of a matrix",
+     "rotation matrix"
+    ]
+   }
   },
   {
    "id": "determinant",
@@ -81,32 +71,24 @@
      "primary": true
     }
    ],
-   "aliases": [
-    {
-     "zh": "行列式",
-     "en": "determinant"
-    },
-    {
-     "zh": "行列式的几何意义",
-     "en": "geometric meaning of the determinant"
-    },
-    {
-     "zh": "行列式为 0 是什么意思",
-     "en": "what does a zero determinant mean"
-    },
-    {
-     "zh": "可逆矩阵",
-     "en": "invertible matrix"
-    },
-    {
-     "zh": "奇异矩阵",
-     "en": "singular matrix"
-    },
-    {
-     "zh": "逆矩阵",
-     "en": "inverse matrix"
-    }
-   ]
+   "aliases": {
+    "zh": [
+     "行列式",
+     "行列式的几何意义",
+     "行列式为 0 是什么意思",
+     "可逆矩阵",
+     "奇异矩阵",
+     "逆矩阵"
+    ],
+    "en": [
+     "determinant",
+     "geometric meaning of the determinant",
+     "what does a zero determinant mean",
+     "invertible matrix",
+     "singular matrix",
+     "inverse matrix"
+    ]
+   }
   }
  ],
  "edges": [

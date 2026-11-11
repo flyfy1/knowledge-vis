@@ -26,36 +26,26 @@
      "primary": true
     }
    ],
-   "aliases": [
-    {
-     "zh": "解方程",
-     "en": "solving equations"
-    },
-    {
-     "zh": "等式的性质",
-     "en": "properties of equality"
-    },
-    {
-     "zh": "移项",
-     "en": "moving a term across the equals sign"
-    },
-    {
-     "zh": "一元一次方程",
-     "en": "linear equation in one unknown"
-    },
-    {
-     "zh": "未知数 x",
-     "en": "the unknown x"
-    },
-    {
-     "zh": "等号是什么意思",
-     "en": "what does the equals sign mean"
-    },
-    {
-     "zh": "天平法解方程",
-     "en": "balance method"
-    }
-   ]
+   "aliases": {
+    "zh": [
+     "解方程",
+     "等式的性质",
+     "移项",
+     "一元一次方程",
+     "未知数 x",
+     "等号是什么意思",
+     "天平法解方程"
+    ],
+    "en": [
+     "solving equations",
+     "properties of equality",
+     "moving a term across the equals sign",
+     "linear equation in one unknown",
+     "the unknown x",
+     "what does the equals sign mean",
+     "balance method"
+    ]
+   }
   }
  ],
  "edges": [

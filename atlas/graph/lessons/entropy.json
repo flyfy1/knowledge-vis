@@ -26,36 +26,26 @@
      "primary": true
     }
    ],
-   "aliases": [
-    {
-     "zh": "熵",
-     "en": "entropy"
-    },
-    {
-     "zh": "香农熵",
-     "en": "Shannon entropy"
-    },
-    {
-     "zh": "信息量",
-     "en": "information content / surprisal"
-    },
-    {
-     "zh": "比特",
-     "en": "bit"
-    },
-    {
-     "zh": "哈夫曼编码",
-     "en": "Huffman coding"
-    },
-    {
-     "zh": "压缩的极限",
-     "en": "limit of compression"
-    },
-    {
-     "zh": "不确定性怎么量化",
-     "en": "how to measure uncertainty"
-    }
-   ]
+   "aliases": {
+    "zh": [
+     "熵",
+     "香农熵",
+     "信息量",
+     "比特",
+     "哈夫曼编码",
+     "压缩的极限",
+     "不确定性怎么量化"
+    ],
+    "en": [
+     "entropy",
+     "Shannon entropy",
+     "information content / surprisal",
+     "bit",
+     "Huffman coding",
+     "limit of compression",
+     "how to measure uncertainty"
+    ]
+   }
   },
   {
    "id": "cross-entropy",
@@ -81,32 +71,24 @@
      "primary": true
     }
    ],
-   "aliases": [
-    {
-     "zh": "交叉熵",
-     "en": "cross entropy"
-    },
-    {
-     "zh": "交叉熵损失",
-     "en": "cross-entropy loss"
-    },
-    {
-     "zh": "KL 散度",
-     "en": "KL divergence"
-    },
-    {
-     "zh": "相对熵",
-     "en": "relative entropy"
-    },
-    {
-     "zh": "对数损失",
-     "en": "log loss"
-    },
-    {
-     "zh": "为什么分类模型用交叉熵",
-     "en": "why do classifiers use cross-entropy"
-    }
-   ]
+   "aliases": {
+    "zh": [
+     "交叉熵",
+     "交叉熵损失",
+     "KL 散度",
+     "相对熵",
+     "对数损失",
+     "为什么分类模型用交叉熵"
+    ],
+    "en": [
+     "cross entropy",
+     "cross-entropy loss",
+     "KL divergence",
+     "relative entropy",
+     "log loss",
+     "why do classifiers use cross-entropy"
+    ]
+   }
   }
  ],
  "edges": [

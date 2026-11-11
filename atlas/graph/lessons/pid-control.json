@@ -26,36 +26,26 @@
      "primary": true
     }
    ],
-   "aliases": [
-    {
-     "zh": "PID 控制器",
-     "en": "PID controller"
-    },
-    {
-     "zh": "比例 积分 微分",
-     "en": "proportional, integral, derivative"
-    },
-    {
-     "zh": "PID 调参",
-     "en": "PID tuning"
-    },
-    {
-     "zh": "稳态误差",
-     "en": "steady-state error"
-    },
-    {
-     "zh": "积分饱和",
-     "en": "integral windup"
-    },
-    {
-     "zh": "超调",
-     "en": "overshoot"
-    },
-    {
-     "zh": "恒温器和定速巡航怎么控制",
-     "en": "how do thermostats and cruise control work"
-    }
-   ]
+   "aliases": {
+    "zh": [
+     "PID 控制器",
+     "比例 积分 微分",
+     "PID 调参",
+     "稳态误差",
+     "积分饱和",
+     "超调",
+     "恒温器和定速巡航怎么控制"
+    ],
+    "en": [
+     "PID controller",
+     "proportional, integral, derivative",
+     "PID tuning",
+     "steady-state error",
+     "integral windup",
+     "overshoot",
+     "how do thermostats and cruise control work"
+    ]
+   }
   }
  ],
  "edges": [

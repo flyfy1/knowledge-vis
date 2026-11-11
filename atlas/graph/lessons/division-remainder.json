@@ -26,32 +26,24 @@
      "primary": true
     }
    ],
-   "aliases": [
-    {
-     "zh": "有余数的除法",
-     "en": "division with remainder"
-    },
-    {
-     "zh": "余数为什么比除数小",
-     "en": "why is the remainder smaller than the divisor"
-    },
-    {
-     "zh": "商和余数",
-     "en": "quotient and remainder"
-    },
-    {
-     "zh": "100 天后是星期几",
-     "en": "what weekday is it 100 days from now"
-    },
-    {
-     "zh": "取余 取模",
-     "en": "modulo"
-    },
-    {
-     "zh": "除法验算",
-     "en": "checking a division"
-    }
-   ]
+   "aliases": {
+    "zh": [
+     "有余数的除法",
+     "余数为什么比除数小",
+     "商和余数",
+     "100 天后是星期几",
+     "取余 取模",
+     "除法验算"
+    ],
+    "en": [
+     "division with remainder",
+     "why is the remainder smaller than the divisor",
+     "quotient and remainder",
+     "what weekday is it 100 days from now",
+     "modulo",
+     "checking a division"
+    ]
+   }
   }
  ],
  "edges": [

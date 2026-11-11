@@ -26,36 +26,26 @@
      "primary": true
     }
    ],
-   "aliases": [
-    {
-     "zh": "S 形曲线",
-     "en": "S-curve"
-    },
-    {
-     "zh": "逻辑斯蒂模型",
-     "en": "logistic model"
-    },
-    {
-     "zh": "环境容纳量 K",
-     "en": "carrying capacity"
-    },
-    {
-     "zh": "种群增长",
-     "en": "population growth"
-    },
-    {
-     "zh": "J 形增长和 S 形增长",
-     "en": "J-shaped vs S-shaped growth"
-    },
-    {
-     "zh": "种群为什么不会无限增长",
-     "en": "why populations stop growing"
-    },
-    {
-     "zh": "logistic 增长",
-     "en": "logistic function"
-    }
-   ]
+   "aliases": {
+    "zh": [
+     "S 形曲线",
+     "逻辑斯蒂模型",
+     "环境容纳量 K",
+     "种群增长",
+     "J 形增长和 S 形增长",
+     "种群为什么不会无限增长",
+     "logistic 增长"
+    ],
+    "en": [
+     "S-curve",
+     "logistic model",
+     "carrying capacity",
+     "population growth",
+     "J-shaped vs S-shaped growth",
+     "why populations stop growing",
+     "logistic function"
+    ]
+   }
   }
  ],
  "edges": [

@@ -25,40 +25,28 @@
      "primary": true
     }
    ],
-   "aliases": [
-    {
-     "zh": "股票",
-     "en": "stocks"
-    },
-    {
-     "zh": "债券",
-     "en": "bonds"
-    },
-    {
-     "zh": "股票和债券的区别",
-     "en": "difference between stocks and bonds"
-    },
-    {
-     "zh": "股东",
-     "en": "shareholder"
-    },
-    {
-     "zh": "分红",
-     "en": "dividends"
-    },
-    {
-     "zh": "票息",
-     "en": "coupon"
-    },
-    {
-     "zh": "公司破产谁先拿钱",
-     "en": "who gets paid first in bankruptcy"
-    },
-    {
-     "zh": "股价是谁定的",
-     "en": "who sets the stock price"
-    }
-   ]
+   "aliases": {
+    "zh": [
+     "股票",
+     "债券",
+     "股票和债券的区别",
+     "股东",
+     "分红",
+     "票息",
+     "公司破产谁先拿钱",
+     "股价是谁定的"
+    ],
+    "en": [
+     "stocks",
+     "bonds",
+     "difference between stocks and bonds",
+     "shareholder",
+     "dividends",
+     "coupon",
+     "who gets paid first in bankruptcy",
+     "who sets the stock price"
+    ]
+   }
   }
  ],
  "edges": [

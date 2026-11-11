@@ -26,40 +26,28 @@
      "primary": true
     }
    ],
-   "aliases": [
-    {
-     "zh": "弱酸",
-     "en": "weak acid"
-    },
-    {
-     "zh": "电离平衡",
-     "en": "acid dissociation equilibrium"
-    },
-    {
-     "zh": "Ka 是什么",
-     "en": "what is Ka"
-    },
-    {
-     "zh": "电离常数",
-     "en": "acid dissociation constant"
-    },
-    {
-     "zh": "同离子效应",
-     "en": "common-ion effect"
-    },
-    {
-     "zh": "为什么醋酸是弱酸",
-     "en": "why is acetic acid a weak acid"
-    },
-    {
-     "zh": "稀释后电离度变大",
-     "en": "dilution raises the degree of dissociation"
-    },
-    {
-     "zh": "pKa",
-     "en": "pKa"
-    }
-   ]
+   "aliases": {
+    "zh": [
+     "弱酸",
+     "电离平衡",
+     "Ka 是什么",
+     "电离常数",
+     "同离子效应",
+     "为什么醋酸是弱酸",
+     "稀释后电离度变大",
+     "pKa"
+    ],
+    "en": [
+     "weak acid",
+     "acid dissociation equilibrium",
+     "what is Ka",
+     "acid dissociation constant",
+     "common-ion effect",
+     "why is acetic acid a weak acid",
+     "dilution raises the degree of dissociation",
+     "pKa"
+    ]
+   }
   }
  ],
  "edges": [

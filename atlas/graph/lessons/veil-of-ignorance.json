@@ -25,40 +25,28 @@
      "primary": true
     }
    ],
-   "aliases": [
-    {
-     "zh": "无知之幕",
-     "en": "veil of ignorance"
-    },
-    {
-     "zh": "罗尔斯",
-     "en": "John Rawls"
-    },
-    {
-     "zh": "正义论",
-     "en": "A Theory of Justice"
-    },
-    {
-     "zh": "最大最小原则",
-     "en": "maximin principle"
-    },
-    {
-     "zh": "原初状态",
-     "en": "original position"
-    },
-    {
-     "zh": "差别原则",
-     "en": "difference principle"
-    },
-    {
-     "zh": "海萨尼",
-     "en": "Harsanyi average utilitarianism"
-    },
-    {
-     "zh": "什么是公平的社会",
-     "en": "what is a fair society"
-    }
-   ]
+   "aliases": {
+    "zh": [
+     "无知之幕",
+     "罗尔斯",
+     "正义论",
+     "最大最小原则",
+     "原初状态",
+     "差别原则",
+     "海萨尼",
+     "什么是公平的社会"
+    ],
+    "en": [
+     "veil of ignorance",
+     "John Rawls",
+     "A Theory of Justice",
+     "maximin principle",
+     "original position",
+     "difference principle",
+     "Harsanyi average utilitarianism",
+     "what is a fair society"
+    ]
+   }
   }
  ],
  "edges": [

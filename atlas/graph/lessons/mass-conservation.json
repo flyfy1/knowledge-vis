@@ -26,32 +26,24 @@
      "primary": true
     }
    ],
-   "aliases": [
-    {
-     "zh": "质量守恒定律",
-     "en": "law of conservation of mass"
-    },
-    {
-     "zh": "反应后为什么变轻了",
-     "en": "why does it get lighter after reacting"
-    },
-    {
-     "zh": "铁生锈为什么变重",
-     "en": "why does rusting iron get heavier"
-    },
-    {
-     "zh": "蜡烛烧完质量去哪了",
-     "en": "where does the mass of a burnt candle go"
-    },
-    {
-     "zh": "拉瓦锡",
-     "en": "Lavoisier"
-    },
-    {
-     "zh": "物质不灭",
-     "en": "matter is neither created nor destroyed"
-    }
-   ]
+   "aliases": {
+    "zh": [
+     "质量守恒定律",
+     "反应后为什么变轻了",
+     "铁生锈为什么变重",
+     "蜡烛烧完质量去哪了",
+     "拉瓦锡",
+     "物质不灭"
+    ],
+    "en": [
+     "law of conservation of mass",
+     "why does it get lighter after reacting",
+     "why does rusting iron get heavier",
+     "where does the mass of a burnt candle go",
+     "Lavoisier",
+     "matter is neither created nor destroyed"
+    ]
+   }
   }
  ],
  "edges": [

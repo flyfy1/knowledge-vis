@@ -25,36 +25,26 @@
      "primary": true
     }
    ],
-   "aliases": [
-    {
-     "zh": "风险和收益",
-     "en": "risk and return"
-    },
-    {
-     "zh": "风险溢价",
-     "en": "risk premium"
-    },
-    {
-     "zh": "高风险高回报",
-     "en": "high risk high return"
-    },
-    {
-     "zh": "波动率",
-     "en": "volatility"
-    },
-    {
-     "zh": "为什么风险大回报高",
-     "en": "why riskier investments pay more"
-    },
-    {
-     "zh": "年化收益",
-     "en": "annual return"
-    },
-    {
-     "zh": "平均收益不等于每年收益",
-     "en": "average return is not every year’s return"
-    }
-   ]
+   "aliases": {
+    "zh": [
+     "风险和收益",
+     "风险溢价",
+     "高风险高回报",
+     "波动率",
+     "为什么风险大回报高",
+     "年化收益",
+     "平均收益不等于每年收益"
+    ],
+    "en": [
+     "risk and return",
+     "risk premium",
+     "high risk high return",
+     "volatility",
+     "why riskier investments pay more",
+     "annual return",
+     "average return is not every year’s return"
+    ]
+   }
   }
  ],
  "edges": [

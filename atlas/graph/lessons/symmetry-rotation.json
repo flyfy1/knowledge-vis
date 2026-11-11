@@ -25,36 +25,26 @@
      "primary": true
     }
    ],
-   "aliases": [
-    {
-     "zh": "对称轴",
-     "en": "axis of symmetry"
-    },
-    {
-     "zh": "轴对称图形",
-     "en": "line-symmetric shape"
-    },
-    {
-     "zh": "旋转对称",
-     "en": "rotational symmetry"
-    },
-    {
-     "zh": "中心对称",
-     "en": "point symmetry"
-    },
-    {
-     "zh": "正方形有几条对称轴",
-     "en": "how many lines of symmetry does a square have"
-    },
-    {
-     "zh": "万花筒原理",
-     "en": "how a kaleidoscope works"
-    },
-    {
-     "zh": "镜像",
-     "en": "mirror image / reflection"
-    }
-   ]
+   "aliases": {
+    "zh": [
+     "对称轴",
+     "轴对称图形",
+     "旋转对称",
+     "中心对称",
+     "正方形有几条对称轴",
+     "万花筒原理",
+     "镜像"
+    ],
+    "en": [
+     "axis of symmetry",
+     "line-symmetric shape",
+     "rotational symmetry",
+     "point symmetry",
+     "how many lines of symmetry does a square have",
+     "how a kaleidoscope works",
+     "mirror image / reflection"
+    ]
+   }
   }
  ],
  "edges": [

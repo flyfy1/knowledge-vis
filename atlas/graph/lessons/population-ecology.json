@@ -26,36 +26,26 @@
      "primary": true
     }
    ],
-   "aliases": [
-    {
-     "zh": "捕食者猎物模型",
-     "en": "predator–prey model"
-    },
-    {
-     "zh": "Lotka–Volterra 方程",
-     "en": "Lotka–Volterra equations"
-    },
-    {
-     "zh": "狼和兔子的数量",
-     "en": "wolves and rabbits populations"
-    },
-    {
-     "zh": "种群波动",
-     "en": "population cycles"
-    },
-    {
-     "zh": "猞猁和雪兔",
-     "en": "lynx and hare"
-    },
-    {
-     "zh": "为什么捕食者的峰比猎物晚",
-     "en": "why predator peaks lag prey peaks"
-    },
-    {
-     "zh": "种群生态学",
-     "en": "population ecology"
-    }
-   ]
+   "aliases": {
+    "zh": [
+     "捕食者猎物模型",
+     "Lotka–Volterra 方程",
+     "狼和兔子的数量",
+     "种群波动",
+     "猞猁和雪兔",
+     "为什么捕食者的峰比猎物晚",
+     "种群生态学"
+    ],
+    "en": [
+     "predator–prey model",
+     "Lotka–Volterra equations",
+     "wolves and rabbits populations",
+     "population cycles",
+     "lynx and hare",
+     "why predator peaks lag prey peaks",
+     "population ecology"
+    ]
+   }
   }
  ],
  "attach": [

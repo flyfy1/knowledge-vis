@@ -25,36 +25,26 @@
      "primary": true
     }
    ],
-   "aliases": [
-    {
-     "zh": "反应速率",
-     "en": "reaction rate"
-    },
-    {
-     "zh": "影响反应速率的因素",
-     "en": "factors that affect reaction rate"
-    },
-    {
-     "zh": "有效碰撞",
-     "en": "effective collision"
-    },
-    {
-     "zh": "为什么升温反应变快",
-     "en": "why does heating speed up a reaction"
-    },
-    {
-     "zh": "为什么粉末反应更快",
-     "en": "why does a powder react faster"
-    },
-    {
-     "zh": "催化剂怎么加快反应",
-     "en": "how does a catalyst speed up a reaction"
-    },
-    {
-     "zh": "碰撞理论",
-     "en": "collision theory"
-    }
-   ]
+   "aliases": {
+    "zh": [
+     "反应速率",
+     "影响反应速率的因素",
+     "有效碰撞",
+     "为什么升温反应变快",
+     "为什么粉末反应更快",
+     "催化剂怎么加快反应",
+     "碰撞理论"
+    ],
+    "en": [
+     "reaction rate",
+     "factors that affect reaction rate",
+     "effective collision",
+     "why does heating speed up a reaction",
+     "why does a powder react faster",
+     "how does a catalyst speed up a reaction",
+     "collision theory"
+    ]
+   }
   }
  ],
  "edges": [

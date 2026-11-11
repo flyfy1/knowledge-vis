@@ -26,40 +26,28 @@
      "primary": true
     }
    ],
-   "aliases": [
-    {
-     "zh": "极限",
-     "en": "limit"
-    },
-    {
-     "zh": "ε-δ 语言",
-     "en": "epsilon-delta definition"
-    },
-    {
-     "zh": "极限的定义",
-     "en": "definition of a limit"
-    },
-    {
-     "zh": "ε-N 定义",
-     "en": "epsilon-N definition"
-    },
-    {
-     "zh": "数列极限",
-     "en": "limit of a sequence"
-    },
-    {
-     "zh": "极限不存在",
-     "en": "limit does not exist"
-    },
-    {
-     "zh": "无限接近是什么意思",
-     "en": "what does arbitrarily close mean"
-    },
-    {
-     "zh": "epsilon delta",
-     "en": "epsilon delta proof"
-    }
-   ]
+   "aliases": {
+    "zh": [
+     "极限",
+     "ε-δ 语言",
+     "极限的定义",
+     "ε-N 定义",
+     "数列极限",
+     "极限不存在",
+     "无限接近是什么意思",
+     "epsilon delta"
+    ],
+    "en": [
+     "limit",
+     "epsilon-delta definition",
+     "definition of a limit",
+     "epsilon-N definition",
+     "limit of a sequence",
+     "limit does not exist",
+     "what does arbitrarily close mean",
+     "epsilon delta proof"
+    ]
+   }
   }
  ],
  "edges": [

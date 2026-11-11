@@ -26,36 +26,26 @@
      "primary": true
     }
    ],
-   "aliases": [
-    {
-     "zh": "化学平衡",
-     "en": "chemical equilibrium"
-    },
-    {
-     "zh": "动态平衡",
-     "en": "dynamic equilibrium"
-    },
-    {
-     "zh": "勒夏特列原理",
-     "en": "Le Chatelier's principle"
-    },
-    {
-     "zh": "平衡移动",
-     "en": "equilibrium shift"
-    },
-    {
-     "zh": "反应到平衡就停了吗",
-     "en": "does a reaction stop at equilibrium"
-    },
-    {
-     "zh": "可逆反应",
-     "en": "reversible reaction"
-    },
-    {
-     "zh": "催化剂会改变平衡吗",
-     "en": "does a catalyst change the equilibrium"
-    }
-   ]
+   "aliases": {
+    "zh": [
+     "化学平衡",
+     "动态平衡",
+     "勒夏特列原理",
+     "平衡移动",
+     "反应到平衡就停了吗",
+     "可逆反应",
+     "催化剂会改变平衡吗"
+    ],
+    "en": [
+     "chemical equilibrium",
+     "dynamic equilibrium",
+     "Le Chatelier's principle",
+     "equilibrium shift",
+     "does a reaction stop at equilibrium",
+     "reversible reaction",
+     "does a catalyst change the equilibrium"
+    ]
+   }
   }
  ],
  "edges": [

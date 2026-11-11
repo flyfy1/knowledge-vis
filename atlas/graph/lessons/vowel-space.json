@@ -25,36 +25,26 @@
      "primary": true
     }
    ],
-   "aliases": [
-    {
-     "zh": "共振峰",
-     "en": "formant"
-    },
-    {
-     "zh": "元音图",
-     "en": "vowel chart"
-    },
-    {
-     "zh": "F1 F2",
-     "en": "first and second formants"
-    },
-    {
-     "zh": "元音四边形",
-     "en": "vowel quadrilateral"
-    },
-    {
-     "zh": "基频和音高",
-     "en": "fundamental frequency and pitch"
-    },
-    {
-     "zh": "说话人归一化",
-     "en": "speaker normalization"
-    },
-    {
-     "zh": "为什么男女声说同一个元音频率不同",
-     "en": "why do men and women’s vowels differ in frequency"
-    }
-   ]
+   "aliases": {
+    "zh": [
+     "共振峰",
+     "元音图",
+     "F1 F2",
+     "元音四边形",
+     "基频和音高",
+     "说话人归一化",
+     "为什么男女声说同一个元音频率不同"
+    ],
+    "en": [
+     "formant",
+     "vowel chart",
+     "first and second formants",
+     "vowel quadrilateral",
+     "fundamental frequency and pitch",
+     "speaker normalization",
+     "why do men and women’s vowels differ in frequency"
+    ]
+   }
   }
  ],
  "edges": [

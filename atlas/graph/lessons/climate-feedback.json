@@ -25,36 +25,26 @@
      "primary": true
     }
    ],
-   "aliases": [
-    {
-     "zh": "气候反馈",
-     "en": "climate feedback"
-    },
-    {
-     "zh": "冰雪反照率反馈",
-     "en": "ice–albedo feedback"
-    },
-    {
-     "zh": "水汽反馈",
-     "en": "water vapour feedback"
-    },
-    {
-     "zh": "正反馈",
-     "en": "positive feedback"
-    },
-    {
-     "zh": "辐射强迫",
-     "en": "radiative forcing"
-    },
-    {
-     "zh": "全球变暖为什么会加速",
-     "en": "why does global warming accelerate"
-    },
-    {
-     "zh": "气候临界点",
-     "en": "climate tipping point"
-    }
-   ]
+   "aliases": {
+    "zh": [
+     "气候反馈",
+     "冰雪反照率反馈",
+     "水汽反馈",
+     "正反馈",
+     "辐射强迫",
+     "全球变暖为什么会加速",
+     "气候临界点"
+    ],
+    "en": [
+     "climate feedback",
+     "ice–albedo feedback",
+     "water vapour feedback",
+     "positive feedback",
+     "radiative forcing",
+     "why does global warming accelerate",
+     "climate tipping point"
+    ]
+   }
   }
  ],
  "edges": [

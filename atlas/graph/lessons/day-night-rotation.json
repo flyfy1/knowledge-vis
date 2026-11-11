@@ -25,36 +25,26 @@
      "primary": true
     }
    ],
-   "aliases": [
-    {
-     "zh": "为什么有白天和黑夜",
-     "en": "why is there day and night"
-    },
-    {
-     "zh": "地球自转",
-     "en": "Earth’s rotation"
-    },
-    {
-     "zh": "太阳为什么东升西落",
-     "en": "why does the sun rise in the east"
-    },
-    {
-     "zh": "晨昏线",
-     "en": "terminator line"
-    },
-    {
-     "zh": "自转和公转",
-     "en": "rotation and revolution"
-    },
-    {
-     "zh": "一天为什么是 24 小时",
-     "en": "why is a day 24 hours"
-    },
-    {
-     "zh": "昼夜交替",
-     "en": "day and night cycle"
-    }
-   ]
+   "aliases": {
+    "zh": [
+     "为什么有白天和黑夜",
+     "地球自转",
+     "太阳为什么东升西落",
+     "晨昏线",
+     "自转和公转",
+     "一天为什么是 24 小时",
+     "昼夜交替"
+    ],
+    "en": [
+     "why is there day and night",
+     "Earth’s rotation",
+     "why does the sun rise in the east",
+     "terminator line",
+     "rotation and revolution",
+     "why is a day 24 hours",
+     "day and night cycle"
+    ]
+   }
   }
  ],
  "edges": [

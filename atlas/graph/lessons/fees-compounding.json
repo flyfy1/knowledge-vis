@@ -26,32 +26,24 @@
      "primary": true
     }
    ],
-   "aliases": [
-    {
-     "zh": "管理费",
-     "en": "management fee"
-    },
-    {
-     "zh": "基金费率",
-     "en": "fund expense ratio"
-    },
-    {
-     "zh": "1% 的费率影响有多大",
-     "en": "how much does a 1% fee cost"
-    },
-    {
-     "zh": "指数基金低费率",
-     "en": "low-cost index funds"
-    },
-    {
-     "zh": "费用侵蚀收益",
-     "en": "fee drag on returns"
-    },
-    {
-     "zh": "复利的代价",
-     "en": "cost of compounding fees"
-    }
-   ]
+   "aliases": {
+    "zh": [
+     "管理费",
+     "基金费率",
+     "1% 的费率影响有多大",
+     "指数基金低费率",
+     "费用侵蚀收益",
+     "复利的代价"
+    ],
+    "en": [
+     "management fee",
+     "fund expense ratio",
+     "how much does a 1% fee cost",
+     "low-cost index funds",
+     "fee drag on returns",
+     "cost of compounding fees"
+    ]
+   }
   }
  ],
  "edges": [

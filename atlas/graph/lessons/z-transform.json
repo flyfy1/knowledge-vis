@@ -26,36 +26,26 @@
      "primary": true
     }
    ],
-   "aliases": [
-    {
-     "zh": "Z 变换",
-     "en": "z-transform"
-    },
-    {
-     "zh": "单位圆与稳定性",
-     "en": "unit circle and stability"
-    },
-    {
-     "zh": "离散系统的极点",
-     "en": "poles of a discrete-time system"
-    },
-    {
-     "zh": "收敛域",
-     "en": "region of convergence"
-    },
-    {
-     "zh": "DTFT 和 Z 变换的关系",
-     "en": "DTFT vs z-transform"
-    },
-    {
-     "zh": "数字滤波器",
-     "en": "digital filter"
-    },
-    {
-     "zh": "z 变换",
-     "en": "z transform"
-    }
-   ]
+   "aliases": {
+    "zh": [
+     "Z 变换",
+     "单位圆与稳定性",
+     "离散系统的极点",
+     "收敛域",
+     "DTFT 和 Z 变换的关系",
+     "数字滤波器",
+     "z 变换"
+    ],
+    "en": [
+     "z-transform",
+     "unit circle and stability",
+     "poles of a discrete-time system",
+     "region of convergence",
+     "DTFT vs z-transform",
+     "digital filter",
+     "z transform"
+    ]
+   }
   }
  ],
  "edges": [

@@ -27,36 +27,26 @@
      "primary": true
     }
    ],
-   "aliases": [
-    {
-     "zh": "基本传染数",
-     "en": "basic reproduction number"
-    },
-    {
-     "zh": "R0 是什么意思",
-     "en": "what does R0 mean"
-    },
-    {
-     "zh": "有效再生数 Rt",
-     "en": "effective reproduction number"
-    },
-    {
-     "zh": "压平曲线",
-     "en": "flatten the curve"
-    },
-    {
-     "zh": "传染病怎么传播",
-     "en": "how epidemics spread"
-    },
-    {
-     "zh": "流行病学",
-     "en": "epidemiology"
-    },
-    {
-     "zh": "公共卫生",
-     "en": "public health"
-    }
-   ]
+   "aliases": {
+    "zh": [
+     "基本传染数",
+     "R0 是什么意思",
+     "有效再生数 Rt",
+     "压平曲线",
+     "传染病怎么传播",
+     "流行病学",
+     "公共卫生"
+    ],
+    "en": [
+     "basic reproduction number",
+     "what does R0 mean",
+     "effective reproduction number",
+     "flatten the curve",
+     "how epidemics spread",
+     "epidemiology",
+     "public health"
+    ]
+   }
   }
  ],
  "attach": [

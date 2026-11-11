@@ -25,40 +25,28 @@
      "primary": true
     }
    ],
-   "aliases": [
-    {
-     "zh": "音位",
-     "en": "phoneme"
-    },
-    {
-     "zh": "最小对立对",
-     "en": "minimal pair"
-    },
-    {
-     "zh": "清音 浊音",
-     "en": "voiceless and voiced sounds"
-    },
-    {
-     "zh": "语音学",
-     "en": "phonetics"
-    },
-    {
-     "zh": "音系学",
-     "en": "phonology"
-    },
-    {
-     "zh": "音节结构",
-     "en": "syllable structure"
-    },
-    {
-     "zh": "复数 s 为什么有时读 z",
-     "en": "why is plural s sometimes pronounced z"
-    },
-    {
-     "zh": "国际音标",
-     "en": "IPA"
-    }
-   ]
+   "aliases": {
+    "zh": [
+     "音位",
+     "最小对立对",
+     "清音 浊音",
+     "语音学",
+     "音系学",
+     "音节结构",
+     "复数 s 为什么有时读 z",
+     "国际音标"
+    ],
+    "en": [
+     "phoneme",
+     "minimal pair",
+     "voiceless and voiced sounds",
+     "phonetics",
+     "phonology",
+     "syllable structure",
+     "why is plural s sometimes pronounced z",
+     "IPA"
+    ]
+   }
   }
  ],
  "edges": [

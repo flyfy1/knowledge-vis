@@ -27,36 +27,26 @@
      "primary": true
     }
    ],
-   "aliases": [
-    {
-     "zh": "检测阳性就一定得病了吗",
-     "en": "does a positive test mean I have it"
-    },
-    {
-     "zh": "假阳性",
-     "en": "false positive"
-    },
-    {
-     "zh": "基础率谬误",
-     "en": "base-rate fallacy"
-    },
-    {
-     "zh": "灵敏度 特异度",
-     "en": "sensitivity and specificity"
-    },
-    {
-     "zh": "阳性预测值",
-     "en": "positive predictive value (PPV)"
-    },
-    {
-     "zh": "患病率",
-     "en": "prevalence"
-    },
-    {
-     "zh": "贝叶斯定理 医学检测",
-     "en": "Bayes’ theorem for medical tests"
-    }
-   ]
+   "aliases": {
+    "zh": [
+     "检测阳性就一定得病了吗",
+     "假阳性",
+     "基础率谬误",
+     "灵敏度 特异度",
+     "阳性预测值",
+     "患病率",
+     "贝叶斯定理 医学检测"
+    ],
+    "en": [
+     "does a positive test mean I have it",
+     "false positive",
+     "base-rate fallacy",
+     "sensitivity and specificity",
+     "positive predictive value (PPV)",
+     "prevalence",
+     "Bayes’ theorem for medical tests"
+    ]
+   }
   }
  ],
  "edges": [

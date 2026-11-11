@@ -25,40 +25,28 @@
      "primary": true
     }
    ],
-   "aliases": [
-    {
-     "zh": "排序算法",
-     "en": "sorting algorithm"
-    },
-    {
-     "zh": "冒泡排序",
-     "en": "bubble sort"
-    },
-    {
-     "zh": "归并排序",
-     "en": "merge sort"
-    },
-    {
-     "zh": "快速排序",
-     "en": "quicksort"
-    },
-    {
-     "zh": "选择排序",
-     "en": "selection sort"
-    },
-    {
-     "zh": "计数排序",
-     "en": "counting sort"
-    },
-    {
-     "zh": "哪种排序最快",
-     "en": "which sorting algorithm is fastest"
-    },
-    {
-     "zh": "sort 算法",
-     "en": "sorting algorithms"
-    }
-   ]
+   "aliases": {
+    "zh": [
+     "排序算法",
+     "冒泡排序",
+     "归并排序",
+     "快速排序",
+     "选择排序",
+     "计数排序",
+     "哪种排序最快",
+     "sort 算法"
+    ],
+    "en": [
+     "sorting algorithm",
+     "bubble sort",
+     "merge sort",
+     "quicksort",
+     "selection sort",
+     "counting sort",
+     "which sorting algorithm is fastest",
+     "sorting algorithms"
+    ]
+   }
   },
   {
    "id": "big-o-notation",
@@ -84,40 +72,28 @@
      "primary": true
     }
    ],
-   "aliases": [
-    {
-     "zh": "大 O 表示法",
-     "en": "Big O notation"
-    },
-    {
-     "zh": "时间复杂度",
-     "en": "time complexity"
-    },
-    {
-     "zh": "复杂度分析",
-     "en": "complexity analysis"
-    },
-    {
-     "zh": "O(n log n)",
-     "en": "n log n"
-    },
-    {
-     "zh": "O(n²) 是什么意思",
-     "en": "what does O(n squared) mean"
-    },
-    {
-     "zh": "算法效率",
-     "en": "algorithm efficiency"
-    },
-    {
-     "zh": "渐近复杂度",
-     "en": "asymptotic complexity"
-    },
-    {
-     "zh": "big o",
-     "en": "big-oh"
-    }
-   ]
+   "aliases": {
+    "zh": [
+     "大 O 表示法",
+     "时间复杂度",
+     "复杂度分析",
+     "O(n log n)",
+     "O(n²) 是什么意思",
+     "算法效率",
+     "渐近复杂度",
+     "big o"
+    ],
+    "en": [
+     "Big O notation",
+     "time complexity",
+     "complexity analysis",
+     "n log n",
+     "what does O(n squared) mean",
+     "algorithm efficiency",
+     "asymptotic complexity",
+     "big-oh"
+    ]
+   }
   }
  ],
  "edges": [

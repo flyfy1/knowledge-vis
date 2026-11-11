@@ -26,40 +26,28 @@
      "primary": true
     }
    ],
-   "aliases": [
-    {
-     "zh": "分数",
-     "en": "fraction"
-    },
-    {
-     "zh": "分子 分母",
-     "en": "numerator and denominator"
-    },
-    {
-     "zh": "等值分数",
-     "en": "equivalent fractions"
-    },
-    {
-     "zh": "通分",
-     "en": "common denominator"
-    },
-    {
-     "zh": "约分",
-     "en": "simplifying a fraction"
-    },
-    {
-     "zh": "假分数 带分数",
-     "en": "improper fraction and mixed number"
-    },
-    {
-     "zh": "1/2 + 1/3 为什么不等于 2/5",
-     "en": "why is 1/2 + 1/3 not 2/5"
-    },
-    {
-     "zh": "分数比大小",
-     "en": "comparing fractions"
-    }
-   ]
+   "aliases": {
+    "zh": [
+     "分数",
+     "分子 分母",
+     "等值分数",
+     "通分",
+     "约分",
+     "假分数 带分数",
+     "1/2 + 1/3 为什么不等于 2/5",
+     "分数比大小"
+    ],
+    "en": [
+     "fraction",
+     "numerator and denominator",
+     "equivalent fractions",
+     "common denominator",
+     "simplifying a fraction",
+     "improper fraction and mixed number",
+     "why is 1/2 + 1/3 not 2/5",
+     "comparing fractions"
+    ]
+   }
   }
  ],
  "edges": [

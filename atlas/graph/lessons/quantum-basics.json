@@ -26,40 +26,28 @@
      "primary": true
     }
    ],
-   "aliases": [
-    {
-     "zh": "量子叠加",
-     "en": "quantum superposition"
-    },
-    {
-     "zh": "量子比特",
-     "en": "qubit"
-    },
-    {
-     "zh": "薛定谔的猫",
-     "en": "Schrödinger’s cat"
-    },
-    {
-     "zh": "波函数坍缩",
-     "en": "wavefunction collapse"
-    },
-    {
-     "zh": "概率幅",
-     "en": "probability amplitude"
-    },
-    {
-     "zh": "玻恩规则",
-     "en": "Born rule"
-    },
-    {
-     "zh": "量子到底是什么意思",
-     "en": "what does quantum actually mean"
-    },
-    {
-     "zh": "量子干涉",
-     "en": "quantum interference"
-    }
-   ]
+   "aliases": {
+    "zh": [
+     "量子叠加",
+     "量子比特",
+     "薛定谔的猫",
+     "波函数坍缩",
+     "概率幅",
+     "玻恩规则",
+     "量子到底是什么意思",
+     "量子干涉"
+    ],
+    "en": [
+     "quantum superposition",
+     "qubit",
+     "Schrödinger’s cat",
+     "wavefunction collapse",
+     "probability amplitude",
+     "Born rule",
+     "what does quantum actually mean",
+     "quantum interference"
+    ]
+   }
   }
  ],
  "edges": [

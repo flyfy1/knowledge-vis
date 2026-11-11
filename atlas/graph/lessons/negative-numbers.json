@@ -25,36 +25,26 @@
      "primary": true
     }
    ],
-   "aliases": [
-    {
-     "zh": "负数",
-     "en": "negative numbers"
-    },
-    {
-     "zh": "零下几度怎么写",
-     "en": "how to write a below-zero temperature"
-    },
-    {
-     "zh": "−3 和 −7 哪个大",
-     "en": "which is bigger, −3 or −7"
-    },
-    {
-     "zh": "正数和负数",
-     "en": "positive and negative numbers"
-    },
-    {
-     "zh": "数轴",
-     "en": "number line"
-    },
-    {
-     "zh": "负数加减法",
-     "en": "adding and subtracting negative numbers"
-    },
-    {
-     "zh": "地下一层 B1",
-     "en": "basement level B1"
-    }
-   ]
+   "aliases": {
+    "zh": [
+     "负数",
+     "零下几度怎么写",
+     "−3 和 −7 哪个大",
+     "正数和负数",
+     "数轴",
+     "负数加减法",
+     "地下一层 B1"
+    ],
+    "en": [
+     "negative numbers",
+     "how to write a below-zero temperature",
+     "which is bigger, −3 or −7",
+     "positive and negative numbers",
+     "number line",
+     "adding and subtracting negative numbers",
+     "basement level B1"
+    ]
+   }
   }
  ],
  "edges": [

@@ -26,40 +26,28 @@
      "primary": true
     }
    ],
-   "aliases": [
-    {
-     "zh": "乘法的意义",
-     "en": "what multiplication means"
-    },
-    {
-     "zh": "面积模型",
-     "en": "area model"
-    },
-    {
-     "zh": "乘法分配律",
-     "en": "distributive law"
-    },
-    {
-     "zh": "乘法交换律",
-     "en": "commutative law"
-    },
-    {
-     "zh": "竖式乘法为什么是对的",
-     "en": "why long multiplication works"
-    },
-    {
-     "zh": "因数对",
-     "en": "factor pairs"
-    },
-    {
-     "zh": "点阵",
-     "en": "dot array"
-    },
-    {
-     "zh": "长方形面积",
-     "en": "area of a rectangle"
-    }
-   ]
+   "aliases": {
+    "zh": [
+     "乘法的意义",
+     "面积模型",
+     "乘法分配律",
+     "乘法交换律",
+     "竖式乘法为什么是对的",
+     "因数对",
+     "点阵",
+     "长方形面积"
+    ],
+    "en": [
+     "what multiplication means",
+     "area model",
+     "distributive law",
+     "commutative law",
+     "why long multiplication works",
+     "factor pairs",
+     "dot array",
+     "area of a rectangle"
+    ]
+   }
   }
  ],
  "edges": [

@@ -25,40 +25,28 @@
      "primary": true
     }
    ],
-   "aliases": [
-    {
-     "zh": "工作记忆",
-     "en": "working memory"
-    },
-    {
-     "zh": "短时记忆容量",
-     "en": "short-term memory capacity"
-    },
-    {
-     "zh": "神奇的数字 7±2",
-     "en": "magical number seven"
-    },
-    {
-     "zh": "组块",
-     "en": "chunking"
-    },
-    {
-     "zh": "遗忘曲线",
-     "en": "forgetting curve"
-    },
-    {
-     "zh": "前摄干扰 后摄干扰",
-     "en": "proactive and retroactive interference"
-    },
-    {
-     "zh": "为什么记不住",
-     "en": "why can’t I remember"
-    },
-    {
-     "zh": "注意力不集中",
-     "en": "trouble paying attention"
-    }
-   ]
+   "aliases": {
+    "zh": [
+     "工作记忆",
+     "短时记忆容量",
+     "神奇的数字 7±2",
+     "组块",
+     "遗忘曲线",
+     "前摄干扰 后摄干扰",
+     "为什么记不住",
+     "注意力不集中"
+    ],
+    "en": [
+     "working memory",
+     "short-term memory capacity",
+     "magical number seven",
+     "chunking",
+     "forgetting curve",
+     "proactive and retroactive interference",
+     "why can’t I remember",
+     "trouble paying attention"
+    ]
+   }
   }
  ],
  "edges": [

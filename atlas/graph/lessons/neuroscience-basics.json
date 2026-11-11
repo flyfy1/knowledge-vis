@@ -27,32 +27,24 @@
      "primary": true
     }
    ],
-   "aliases": [
-    {
-     "zh": "静息电位",
-     "en": "resting potential"
-    },
-    {
-     "zh": "膜电位",
-     "en": "membrane potential"
-    },
-    {
-     "zh": "−70 mV",
-     "en": "minus 70 millivolts"
-    },
-    {
-     "zh": "神经元为什么带电",
-     "en": "why neurons are electrically charged"
-    },
-    {
-     "zh": "钾离子漏通道",
-     "en": "potassium leak channels"
-    },
-    {
-     "zh": "神经科学入门",
-     "en": "neuroscience basics"
-    }
-   ]
+   "aliases": {
+    "zh": [
+     "静息电位",
+     "膜电位",
+     "−70 mV",
+     "神经元为什么带电",
+     "钾离子漏通道",
+     "神经科学入门"
+    ],
+    "en": [
+     "resting potential",
+     "membrane potential",
+     "minus 70 millivolts",
+     "why neurons are electrically charged",
+     "potassium leak channels",
+     "neuroscience basics"
+    ]
+   }
   }
  ],
  "attach": [

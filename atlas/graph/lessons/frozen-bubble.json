@@ -25,32 +25,24 @@
      "primary": true
     }
    ],
-   "aliases": [
-    {
-     "zh": "肥皂泡结冰",
-     "en": "freezing soap bubble"
-    },
-    {
-     "zh": "冰冻泡泡",
-     "en": "frozen bubble"
-    },
-    {
-     "zh": "泡泡为什么会结出冰花",
-     "en": "why do frozen bubbles grow ice patterns"
-    },
-    {
-     "zh": "结晶",
-     "en": "crystallisation"
-    },
-    {
-     "zh": "潜热",
-     "en": "latent heat"
-    },
-    {
-     "zh": "凝固",
-     "en": "freezing / solidification"
-    }
-   ]
+   "aliases": {
+    "zh": [
+     "肥皂泡结冰",
+     "冰冻泡泡",
+     "泡泡为什么会结出冰花",
+     "结晶",
+     "潜热",
+     "凝固"
+    ],
+    "en": [
+     "freezing soap bubble",
+     "frozen bubble",
+     "why do frozen bubbles grow ice patterns",
+     "crystallisation",
+     "latent heat",
+     "freezing / solidification"
+    ]
+   }
   }
  ],
  "edges": [

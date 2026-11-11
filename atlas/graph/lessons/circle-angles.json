@@ -26,32 +26,24 @@
      "primary": true
     }
    ],
-   "aliases": [
-    {
-     "zh": "圆周角",
-     "en": "inscribed angle"
-    },
-    {
-     "zh": "圆心角",
-     "en": "central angle"
-    },
-    {
-     "zh": "圆周角定理",
-     "en": "inscribed angle theorem"
-    },
-    {
-     "zh": "泰勒斯定理",
-     "en": "Thales’ theorem"
-    },
-    {
-     "zh": "直径所对的圆周角是直角",
-     "en": "the angle in a semicircle is a right angle"
-    },
-    {
-     "zh": "同弧所对的圆周角相等",
-     "en": "angles on the same arc are equal"
-    }
-   ]
+   "aliases": {
+    "zh": [
+     "圆周角",
+     "圆心角",
+     "圆周角定理",
+     "泰勒斯定理",
+     "直径所对的圆周角是直角",
+     "同弧所对的圆周角相等"
+    ],
+    "en": [
+     "inscribed angle",
+     "central angle",
+     "inscribed angle theorem",
+     "Thales’ theorem",
+     "the angle in a semicircle is a right angle",
+     "angles on the same arc are equal"
+    ]
+   }
   }
  ],
  "edges": [

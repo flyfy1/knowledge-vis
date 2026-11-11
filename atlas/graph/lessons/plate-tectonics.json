@@ -25,40 +25,28 @@
      "primary": true
     }
    ],
-   "aliases": [
-    {
-     "zh": "板块运动",
-     "en": "plate motion"
-    },
-    {
-     "zh": "大陆漂移",
-     "en": "continental drift"
-    },
-    {
-     "zh": "板块边界",
-     "en": "plate boundaries"
-    },
-    {
-     "zh": "洋中脊 海沟",
-     "en": "mid-ocean ridge and trench"
-    },
-    {
-     "zh": "为什么会地震",
-     "en": "why do earthquakes happen"
-    },
-    {
-     "zh": "火山是怎么形成的",
-     "en": "how are volcanoes formed"
-    },
-    {
-     "zh": "喜马拉雅山怎么来的",
-     "en": "how did the Himalayas form"
-    },
-    {
-     "zh": "俯冲带",
-     "en": "subduction zone"
-    }
-   ]
+   "aliases": {
+    "zh": [
+     "板块运动",
+     "大陆漂移",
+     "板块边界",
+     "洋中脊 海沟",
+     "为什么会地震",
+     "火山是怎么形成的",
+     "喜马拉雅山怎么来的",
+     "俯冲带"
+    ],
+    "en": [
+     "plate motion",
+     "continental drift",
+     "plate boundaries",
+     "mid-ocean ridge and trench",
+     "why do earthquakes happen",
+     "how are volcanoes formed",
+     "how did the Himalayas form",
+     "subduction zone"
+    ]
+   }
   }
  ],
  "edges": [

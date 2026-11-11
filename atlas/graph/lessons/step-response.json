@@ -26,36 +26,26 @@
      "primary": true
     }
    ],
-   "aliases": [
-    {
-     "zh": "阶跃响应",
-     "en": "step response"
-    },
-    {
-     "zh": "阻尼比",
-     "en": "damping ratio"
-    },
-    {
-     "zh": "欠阻尼 临界阻尼 过阻尼",
-     "en": "underdamped, critically damped, overdamped"
-    },
-    {
-     "zh": "超调量",
-     "en": "percent overshoot"
-    },
-    {
-     "zh": "调节时间",
-     "en": "settling time"
-    },
-    {
-     "zh": "二阶系统",
-     "en": "second-order system"
-    },
-    {
-     "zh": "固有频率",
-     "en": "natural frequency"
-    }
-   ]
+   "aliases": {
+    "zh": [
+     "阶跃响应",
+     "阻尼比",
+     "欠阻尼 临界阻尼 过阻尼",
+     "超调量",
+     "调节时间",
+     "二阶系统",
+     "固有频率"
+    ],
+    "en": [
+     "step response",
+     "damping ratio",
+     "underdamped, critically damped, overdamped",
+     "percent overshoot",
+     "settling time",
+     "second-order system",
+     "natural frequency"
+    ]
+   }
   }
  ],
  "edges": [

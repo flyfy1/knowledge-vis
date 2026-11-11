@@ -26,40 +26,28 @@
      "primary": true
     }
    ],
-   "aliases": [
-    {
-     "zh": "调幅 调频",
-     "en": "AM and FM"
-    },
-    {
-     "zh": "AM 和 FM 的区别",
-     "en": "difference between AM and FM"
-    },
-    {
-     "zh": "载波",
-     "en": "carrier wave"
-    },
-    {
-     "zh": "边带",
-     "en": "sidebands"
-    },
-    {
-     "zh": "解调",
-     "en": "demodulation"
-    },
-    {
-     "zh": "收音机怎么选台",
-     "en": "how does a radio tune in one station"
-    },
-    {
-     "zh": "频分复用",
-     "en": "frequency-division multiplexing"
-    },
-    {
-     "zh": "IQ 调制",
-     "en": "I/Q modulation"
-    }
-   ]
+   "aliases": {
+    "zh": [
+     "调幅 调频",
+     "AM 和 FM 的区别",
+     "载波",
+     "边带",
+     "解调",
+     "收音机怎么选台",
+     "频分复用",
+     "IQ 调制"
+    ],
+    "en": [
+     "AM and FM",
+     "difference between AM and FM",
+     "carrier wave",
+     "sidebands",
+     "demodulation",
+     "how does a radio tune in one station",
+     "frequency-division multiplexing",
+     "I/Q modulation"
+    ]
+   }
   }
  ],
  "edges": [

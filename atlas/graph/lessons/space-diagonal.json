@@ -26,32 +26,24 @@
      "primary": true
     }
    ],
-   "aliases": [
-    {
-     "zh": "体对角线",
-     "en": "body diagonal"
-    },
-    {
-     "zh": "空间对角线",
-     "en": "space diagonal"
-    },
-    {
-     "zh": "长方体对角线公式",
-     "en": "cuboid diagonal formula"
-    },
-    {
-     "zh": "箱子里能放多长的棍子",
-     "en": "longest stick that fits in a box"
-    },
-    {
-     "zh": "三维勾股定理",
-     "en": "3D Pythagorean theorem"
-    },
-    {
-     "zh": "正方体对角线",
-     "en": "cube diagonal"
-    }
-   ]
+   "aliases": {
+    "zh": [
+     "体对角线",
+     "空间对角线",
+     "长方体对角线公式",
+     "箱子里能放多长的棍子",
+     "三维勾股定理",
+     "正方体对角线"
+    ],
+    "en": [
+     "body diagonal",
+     "space diagonal",
+     "cuboid diagonal formula",
+     "longest stick that fits in a box",
+     "3D Pythagorean theorem",
+     "cube diagonal"
+    ]
+   }
   }
  ],
  "edges": [

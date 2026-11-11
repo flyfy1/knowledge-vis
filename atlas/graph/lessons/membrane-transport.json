@@ -26,44 +26,30 @@
      "primary": true
     }
    ],
-   "aliases": [
-    {
-     "zh": "物质跨膜运输",
-     "en": "transport across the cell membrane"
-    },
-    {
-     "zh": "自由扩散",
-     "en": "simple diffusion"
-    },
-    {
-     "zh": "渗透作用",
-     "en": "osmosis"
-    },
-    {
-     "zh": "主动运输",
-     "en": "active transport"
-    },
-    {
-     "zh": "被动运输",
-     "en": "passive transport"
-    },
-    {
-     "zh": "钠钾泵",
-     "en": "sodium–potassium pump"
-    },
-    {
-     "zh": "高渗 低渗 等渗",
-     "en": "hypertonic hypotonic isotonic"
-    },
-    {
-     "zh": "红细胞放进清水会怎样",
-     "en": "what happens to a red blood cell in pure water"
-    },
-    {
-     "zh": "细胞膜的选择透过性",
-     "en": "selective permeability"
-    }
-   ]
+   "aliases": {
+    "zh": [
+     "物质跨膜运输",
+     "自由扩散",
+     "渗透作用",
+     "主动运输",
+     "被动运输",
+     "钠钾泵",
+     "高渗 低渗 等渗",
+     "红细胞放进清水会怎样",
+     "细胞膜的选择透过性"
+    ],
+    "en": [
+     "transport across the cell membrane",
+     "simple diffusion",
+     "osmosis",
+     "active transport",
+     "passive transport",
+     "sodium–potassium pump",
+     "hypertonic hypotonic isotonic",
+     "what happens to a red blood cell in pure water",
+     "selective permeability"
+    ]
+   }
   }
  ],
  "edges": [

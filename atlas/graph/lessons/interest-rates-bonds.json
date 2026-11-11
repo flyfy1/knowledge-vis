@@ -26,36 +26,26 @@
      "primary": true
     }
    ],
-   "aliases": [
-    {
-     "zh": "债券价格",
-     "en": "bond price"
-    },
-    {
-     "zh": "利率上升债券下跌",
-     "en": "rates up bonds down"
-    },
-    {
-     "zh": "为什么加息债券会跌",
-     "en": "why do bond prices fall when rates rise"
-    },
-    {
-     "zh": "到期收益率",
-     "en": "yield to maturity"
-    },
-    {
-     "zh": "现值 折现",
-     "en": "present value and discounting"
-    },
-    {
-     "zh": "久期",
-     "en": "duration"
-    },
-    {
-     "zh": "长期债券利率风险",
-     "en": "interest rate risk of long bonds"
-    }
-   ]
+   "aliases": {
+    "zh": [
+     "债券价格",
+     "利率上升债券下跌",
+     "为什么加息债券会跌",
+     "到期收益率",
+     "现值 折现",
+     "久期",
+     "长期债券利率风险"
+    ],
+    "en": [
+     "bond price",
+     "rates up bonds down",
+     "why do bond prices fall when rates rise",
+     "yield to maturity",
+     "present value and discounting",
+     "duration",
+     "interest rate risk of long bonds"
+    ]
+   }
   }
  ],
  "edges": [

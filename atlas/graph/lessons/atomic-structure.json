@@ -25,36 +25,26 @@
      "primary": true
     }
    ],
-   "aliases": [
-    {
-     "zh": "原子是什么",
-     "en": "what is an atom"
-    },
-    {
-     "zh": "原子核",
-     "en": "atomic nucleus"
-    },
-    {
-     "zh": "质子 中子 电子",
-     "en": "protons, neutrons and electrons"
-    },
-    {
-     "zh": "原子序数",
-     "en": "atomic number"
-    },
-    {
-     "zh": "核电荷数",
-     "en": "nuclear charge"
-    },
-    {
-     "zh": "原子里面是空的吗",
-     "en": "is an atom mostly empty space"
-    },
-    {
-     "zh": "元素由什么决定",
-     "en": "what makes an element that element"
-    }
-   ]
+   "aliases": {
+    "zh": [
+     "原子是什么",
+     "原子核",
+     "质子 中子 电子",
+     "原子序数",
+     "核电荷数",
+     "原子里面是空的吗",
+     "元素由什么决定"
+    ],
+    "en": [
+     "what is an atom",
+     "atomic nucleus",
+     "protons, neutrons and electrons",
+     "atomic number",
+     "nuclear charge",
+     "is an atom mostly empty space",
+     "what makes an element that element"
+    ]
+   }
   },
   {
    "id": "electron-shells",
@@ -80,40 +70,28 @@
      "primary": true
     }
    ],
-   "aliases": [
-    {
-     "zh": "最外层电子",
-     "en": "outermost electrons"
-    },
-    {
-     "zh": "价电子",
-     "en": "valence electrons"
-    },
-    {
-     "zh": "电子排布",
-     "en": "electron configuration"
-    },
-    {
-     "zh": "离子",
-     "en": "ion"
-    },
-    {
-     "zh": "阳离子 阴离子",
-     "en": "cation and anion"
-    },
-    {
-     "zh": "为什么钠很活泼",
-     "en": "why is sodium so reactive"
-    },
-    {
-     "zh": "稀有气体为什么稳定",
-     "en": "why are noble gases stable"
-    },
-    {
-     "zh": "电子壳层",
-     "en": "electron shell"
-    }
-   ]
+   "aliases": {
+    "zh": [
+     "最外层电子",
+     "价电子",
+     "电子排布",
+     "离子",
+     "阳离子 阴离子",
+     "为什么钠很活泼",
+     "稀有气体为什么稳定",
+     "电子壳层"
+    ],
+    "en": [
+     "outermost electrons",
+     "valence electrons",
+     "electron configuration",
+     "ion",
+     "cation and anion",
+     "why is sodium so reactive",
+     "why are noble gases stable",
+     "electron shell"
+    ]
+   }
   }
  ],
  "edges": [

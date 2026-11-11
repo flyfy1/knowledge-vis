@@ -26,40 +26,28 @@
      "primary": true
     }
    ],
-   "aliases": [
-    {
-     "zh": "杠杆原理",
-     "en": "lever principle"
-    },
-    {
-     "zh": "力矩",
-     "en": "torque / moment"
-    },
-    {
-     "zh": "力臂",
-     "en": "lever arm"
-    },
-    {
-     "zh": "滑轮组",
-     "en": "block and tackle / pulley system"
-    },
-    {
-     "zh": "省力杠杆",
-     "en": "force-saving lever"
-    },
-    {
-     "zh": "动滑轮 定滑轮",
-     "en": "movable and fixed pulleys"
-    },
-    {
-     "zh": "为什么撬棍能撬起大石头",
-     "en": "how can a crowbar lift a heavy rock"
-    },
-    {
-     "zh": "机械效益",
-     "en": "mechanical advantage"
-    }
-   ]
+   "aliases": {
+    "zh": [
+     "杠杆原理",
+     "力矩",
+     "力臂",
+     "滑轮组",
+     "省力杠杆",
+     "动滑轮 定滑轮",
+     "为什么撬棍能撬起大石头",
+     "机械效益"
+    ],
+    "en": [
+     "lever principle",
+     "torque / moment",
+     "lever arm",
+     "block and tackle / pulley system",
+     "force-saving lever",
+     "movable and fixed pulleys",
+     "how can a crowbar lift a heavy rock",
+     "mechanical advantage"
+    ]
+   }
   }
  ],
  "edges": [

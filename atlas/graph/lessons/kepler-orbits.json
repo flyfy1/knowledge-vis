@@ -26,40 +26,28 @@
      "primary": true
     }
    ],
-   "aliases": [
-    {
-     "zh": "开普勒定律",
-     "en": "Kepler’s laws"
-    },
-    {
-     "zh": "椭圆轨道",
-     "en": "elliptical orbit"
-    },
-    {
-     "zh": "开普勒第二定律",
-     "en": "Kepler’s second law"
-    },
-    {
-     "zh": "面积定律",
-     "en": "law of equal areas"
-    },
-    {
-     "zh": "偏心率",
-     "en": "eccentricity"
-    },
-    {
-     "zh": "近日点 远日点",
-     "en": "perihelion and aphelion"
-    },
-    {
-     "zh": "凌日法找系外行星",
-     "en": "transit method for exoplanets"
-    },
-    {
-     "zh": "行星为什么离太阳近时更快",
-     "en": "why do planets move faster near the sun"
-    }
-   ]
+   "aliases": {
+    "zh": [
+     "开普勒定律",
+     "椭圆轨道",
+     "开普勒第二定律",
+     "面积定律",
+     "偏心率",
+     "近日点 远日点",
+     "凌日法找系外行星",
+     "行星为什么离太阳近时更快"
+    ],
+    "en": [
+     "Kepler’s laws",
+     "elliptical orbit",
+     "Kepler’s second law",
+     "law of equal areas",
+     "eccentricity",
+     "perihelion and aphelion",
+     "transit method for exoplanets",
+     "why do planets move faster near the sun"
+    ]
+   }
   }
  ],
  "edges": [

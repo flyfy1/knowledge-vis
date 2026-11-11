@@ -26,36 +26,26 @@
      "primary": true
     }
    ],
-   "aliases": [
-    {
-     "zh": "坐标系",
-     "en": "coordinate system"
-    },
-    {
-     "zh": "直角坐标系",
-     "en": "Cartesian coordinates"
-    },
-    {
-     "zh": "象限",
-     "en": "quadrants"
-    },
-    {
-     "zh": "横坐标 纵坐标",
-     "en": "x-coordinate and y-coordinate"
-    },
-    {
-     "zh": "怎么读坐标",
-     "en": "how to read coordinates"
-    },
-    {
-     "zh": "原点",
-     "en": "origin"
-    },
-    {
-     "zh": "两点间的距离和中点",
-     "en": "distance and midpoint between two points"
-    }
-   ]
+   "aliases": {
+    "zh": [
+     "坐标系",
+     "直角坐标系",
+     "象限",
+     "横坐标 纵坐标",
+     "怎么读坐标",
+     "原点",
+     "两点间的距离和中点"
+    ],
+    "en": [
+     "coordinate system",
+     "Cartesian coordinates",
+     "quadrants",
+     "x-coordinate and y-coordinate",
+     "how to read coordinates",
+     "origin",
+     "distance and midpoint between two points"
+    ]
+   }
   }
  ],
  "edges": [

@@ -26,32 +26,24 @@
      "primary": true
     }
    ],
-   "aliases": [
-    {
-     "zh": "周长和面积的区别",
-     "en": "perimeter vs area"
-    },
-    {
-     "zh": "周长一样面积一样吗",
-     "en": "same perimeter, same area?"
-    },
-    {
-     "zh": "围成什么形状面积最大",
-     "en": "which shape encloses the most area"
-    },
-    {
-     "zh": "长方形周长公式",
-     "en": "perimeter of a rectangle"
-    },
-    {
-     "zh": "篱笆围地",
-     "en": "fencing problem"
-    },
-    {
-     "zh": "周长",
-     "en": "perimeter"
-    }
-   ]
+   "aliases": {
+    "zh": [
+     "周长和面积的区别",
+     "周长一样面积一样吗",
+     "围成什么形状面积最大",
+     "长方形周长公式",
+     "篱笆围地",
+     "周长"
+    ],
+    "en": [
+     "perimeter vs area",
+     "same perimeter, same area?",
+     "which shape encloses the most area",
+     "perimeter of a rectangle",
+     "fencing problem",
+     "perimeter"
+    ]
+   }
   }
  ],
  "edges": [

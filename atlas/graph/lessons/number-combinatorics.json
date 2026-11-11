@@ -27,32 +27,24 @@
      "primary": true
     }
    ],
-   "aliases": [
-    {
-     "zh": "质数",
-     "en": "prime number"
-    },
-    {
-     "zh": "素数",
-     "en": "prime"
-    },
-    {
-     "zh": "分解质因数",
-     "en": "prime factorization"
-    },
-    {
-     "zh": "算术基本定理",
-     "en": "fundamental theorem of arithmetic"
-    },
-    {
-     "zh": "因数个数",
-     "en": "number of divisors"
-    },
-    {
-     "zh": "合数",
-     "en": "composite number"
-    }
-   ]
+   "aliases": {
+    "zh": [
+     "质数",
+     "素数",
+     "分解质因数",
+     "算术基本定理",
+     "因数个数",
+     "合数"
+    ],
+    "en": [
+     "prime number",
+     "prime",
+     "prime factorization",
+     "fundamental theorem of arithmetic",
+     "number of divisors",
+     "composite number"
+    ]
+   }
   },
   {
    "id": "euclidean-algorithm",
@@ -78,32 +70,24 @@
      "primary": true
     }
    ],
-   "aliases": [
-    {
-     "zh": "最大公因数",
-     "en": "greatest common divisor"
-    },
-    {
-     "zh": "最大公约数",
-     "en": "gcd"
-    },
-    {
-     "zh": "最小公倍数",
-     "en": "least common multiple"
-    },
-    {
-     "zh": "辗转相除法",
-     "en": "Euclidean algorithm"
-    },
-    {
-     "zh": "欧几里得算法",
-     "en": "Euclid’s algorithm"
-    },
-    {
-     "zh": "怎么求最大公约数",
-     "en": "how to find the gcd"
-    }
-   ]
+   "aliases": {
+    "zh": [
+     "最大公因数",
+     "最大公约数",
+     "最小公倍数",
+     "辗转相除法",
+     "欧几里得算法",
+     "怎么求最大公约数"
+    ],
+    "en": [
+     "greatest common divisor",
+     "gcd",
+     "least common multiple",
+     "Euclidean algorithm",
+     "Euclid’s algorithm",
+     "how to find the gcd"
+    ]
+   }
   }
  ],
  "attach": [
