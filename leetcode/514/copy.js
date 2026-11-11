@@ -280,8 +280,8 @@ window.LESSON_COPY = {
     "Let n be ring length and m be key length. Time O(m n²): each letter scans n endpoints and each matching endpoint compares at most n sources. Auxiliary space O(n): only two cost dictionaries are retained; dropping the old one after each layer is rolling storage. Lengths of 100 give at most about one million source comparisons. The teaching simulation additionally retains history and candidates, using up to O(m n²) space; that is separate from submission cost."
   ],
   "verify": [
-    "作者自查使用逐格旋转与按键的独立最短路径搜索，对照 Python 返回值及浏览器每层成本；覆盖穷举小输入、固定种子随机输入、官方例子和最大边界。这是自查，不是 LeetCode 接收记录、独立教学评审或真实学习者成效。",
-    "Author checks use an independent shortest-path search over individual rotations and presses to compare Python results and every browser cost layer. Coverage includes exhaustive small cases, seeded random cases, official examples and maximum bounds. These are self-checks, not LeetCode acceptance, independent teaching review, or observed learner outcomes."
+    "测试使用逐格旋转与按键的独立最短路径搜索，对照 Python 返回值及浏览器每层成本；覆盖穷举小输入、固定种子随机输入、官方例子和最大边界。这不是 LeetCode 接收记录或真实学习者成效。",
+    "Tests use an independent shortest-path search over individual rotations and presses to compare Python results and every browser cost layer. Coverage includes exhaustive small cases, seeded random cases, official examples and maximum bounds. These are not LeetCode acceptance or observed learner outcomes."
   ],
   "copy": [
     "复制 Python",
@@ -320,7 +320,7 @@ window.LESSON_COPY = {
     "Problem 403: different states have different futures →"
   ],
   "foot": [
-    "作者候选 · 独立评审待进行 · 图示为教学模拟",
-    "Author candidate · Independent review pending · Diagrams are teaching simulations"
+    "图示为教学模拟",
+    "Diagrams are teaching simulations"
   ]
 };

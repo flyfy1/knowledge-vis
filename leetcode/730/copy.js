@@ -264,8 +264,8 @@ window.LESSON_COPY = {
     "Cost: preprocessing takes O(4n). There are n(n+1)/2 intervals, each checking 4 letters, so time is O(n²). dp stores n² integers; occurrence tables take O(4n), giving O(n²) auxiliary space under fixed-modulus integer arithmetic. The teaching diagram retains small-table snapshots and string lists; the submission does not store that history."
   ],
   "verification": [
-    "自查方法：用独立的子序列枚举检查短输入的每个区间；用另一种端点去重递推检查大输入，再核对官方样例和全相同字符的边界。测试不是 LeetCode 提交，也不是学习者效果或独立评审的证明。",
-    "Self-check method: compare every short interval with independent subsequence enumeration; use a different endpoint-deduplication recurrence for larger inputs, plus official examples and repeated-letter boundaries. These tests are not a LeetCode submission, learner-outcome evidence, or independent review."
+    "检查方法：用独立的子序列枚举检查短输入的每个区间；用另一种端点去重递推检查大输入，再核对官方样例和全相同字符的边界。测试不是 LeetCode 提交，也不是学习者效果的证明。",
+    "Checking method: compare every short interval with independent subsequence enumeration; use a different endpoint-deduplication recurrence for larger inputs, plus official examples and repeated-letter boundaries. These tests are not a LeetCode submission or learner-outcome evidence."
   ],
   "copy": [
     "复制 Python",
@@ -304,8 +304,8 @@ window.LESSON_COPY = {
     "Interval decomposition: Burst Balloons"
   ],
   "foot": [
-    "作者自查候选稿 · 独立评审待完成 · 未声明 LeetCode 提交通过",
-    "Author self-checked candidate · Independent review pending · No LeetCode acceptance claimed"
+    "未声明 LeetCode 提交通过",
+    "No LeetCode acceptance claimed"
   ],
   "languageLabel": [
     "选择语言",

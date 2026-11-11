@@ -47,5 +47,5 @@ window.LESSON_COPY = {
  boundaries:['边界：空对象查询返回 []；0 和 10000 都合法；重复到达无影响；顺序可以任意。最多 10001 个不同值，但相互不相邻的整数最多形成 5001 段。范围两端的加减一只用于比较，不会插入越界数值。','Boundaries: querying an empty object returns []; both 0 and 10000 are valid; duplicates have no effect; arrival order is arbitrary. There are at most 10001 distinct values, but at most 5001 mutually separated ranges. Endpoint ±1 is only used for comparison and never inserts an out-of-range value.'],
  copy:['复制 Python','Copy Python'],download:['下载 solution.py','Download solution.py'],source:['查看完整提交源码','View complete submission source'],copied:['已复制完整源码。','Complete source copied.'],fallback:['自动复制不可用；下方已选中源码，请手动复制。','Automatic copy unavailable; the source below is selected for manual copying.'],manual:['手动复制完整 Python 源码','Manually copy the complete Python source'],
  related1:['回看：区间不变量 →','Revisit the interval invariant →'],related2:['#327：二分边界与排序后的计数 →','#327: sorted boundaries and counting →'],
- foot:['作者自查候选；独立评审待进行。数值测试不等于真实学习者效果，教学模拟不等于执行官方提交。','Author self-checked candidate; independent review pending. Numerical tests do not establish learner outcomes, and the teaching simulation is not execution of the official submission.']
+ foot:['数值测试不等于真实学习者效果，教学模拟不等于执行官方提交。','Numerical tests do not establish learner outcomes, and the teaching simulation is not execution of the official submission.']
 };

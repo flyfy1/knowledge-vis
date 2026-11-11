@@ -47,5 +47,5 @@ window.LESSON_COPY = {
  boundaries:['边界：10 只有空内部；111000 只有逐层单块；101010 的相同兄弟任意交换都不变。官方不接受空串作为输入，但递归必须处理它。无取模、无额外类型、无原地修改。','Boundaries: 10 has an empty interior; 111000 has one block per level; exchanging the equal siblings in 101010 changes nothing. Empty input is outside the official contract but is required internally. No modulus, extra types or in-place mutation is involved.'],
  source:['官方接口 · Python 3 提交源码','Official interface · Python 3 submission source'],copy:['复制 Python','Copy Python'],download:['下载 solution.py','Download solution.py'],copied:['已复制完整源码。','Full source copied.'],fallback:['剪贴板不可用。下方已选中完整源码，请用系统复制快捷键。','Clipboard unavailable. Full source is selected below; use your system copy shortcut.'],copying:['正在复制…','Copying…'],manual:['手动复制完整 Python 源码','Manually copy full Python source'],
  related:['继续学习','Continue learning'],rel1:['#32：用前缀边界理解合法括号段','#32: prefix boundaries for valid parentheses'],rel2:['#726：子调用如何把结果交回外层','#726: returning a child result to its enclosing group'],
- foot:['作者自查候选；独立评审待完成。数值与浏览器测试不等于 LeetCode 提交通过，也不代表真实学习者测试。','Author self-checked candidate; independent review pending. Numerical and browser tests are neither a LeetCode acceptance nor an actual learner study.']
+ foot:['数值与浏览器测试不等于 LeetCode 提交通过，也不代表真实学习者测试。','Numerical and browser tests are neither a LeetCode acceptance nor an actual learner study.']
 };

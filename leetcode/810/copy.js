@@ -50,5 +50,5 @@ window.COPY = {
  cost:['n 是输入长度。每个数执行一次异或，16 位数的操作成本为常量，所以时间 O(n)，额外空间 O(1)，不修改输入。界面保存黑板快照和历史，仅供教学，不计入提交算法的额外空间。','Let n be input length. Each number is XORed once; operations on these 16-bit values take constant time. Time is O(n), auxiliary space O(1), and input is unchanged. Board snapshots and history belong to the teaching UI, not the submission’s auxiliary space.'],
  boundaries:['边界：[0] 开局就赢；[1] 擦除必输；[0,1] 可以先擦 0，让对手面对 [1]；[1,2,3] 即使是奇数长度也已赢。空输入不在官方范围内。官方三个例子分别为 False、True、True。','Boundaries: [0] wins at entry; [1] must lose on erasure; [0,1] can erase 0 and leave [1] to the opponent; [1,2,3] wins despite odd length. Empty input is outside the official range. The three official examples return False, True, True.'],
  related:['继续阅读','Related reading'],rel1:['#782：用矩形异或关系判断棋盘可行性','782: test chessboard feasibility with rectangle XOR'],rel2:['#51：在约束搜索中选择、递归和撤销','51: choose, recurse, and undo in constraint search'],
- foot:['本页是交互规则模拟与 Python 题解。作者自查不等于独立评审、真实学习者验证或 LeetCode 提交通过。','This page combines a rule simulation with a Python solution. Author self-checks are not independent review, learner research, or LeetCode submission acceptance.']
+ foot:['本页是交互规则模拟与 Python 题解，不代表真实学习者验证或 LeetCode 提交通过。','This page combines a rule simulation with a Python solution. It is not learner research or LeetCode submission acceptance.']
 };

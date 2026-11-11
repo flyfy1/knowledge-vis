@@ -304,8 +304,8 @@ window.COPY = {
     "Prefix boundaries in range-sum counting"
   ],
   "foot": [
-    "作者自查候选；独立评审待进行。无实际学习者结果或上线声明。",
-    "Author self-checked candidate; independent review pending. No learner outcomes or publication claimed."
+    "无实际学习者结果声明。",
+    "No learner outcomes claimed."
   ],
   "cellLabel": [
     "第 {r} 行，第 {c} 列：{v}；{mark}",

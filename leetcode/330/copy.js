@@ -372,12 +372,12 @@ window.LESSON_COPY = {
     "Lesson steps"
   ],
   "verify": [
-    "自查方法：离线实际调用 Solution().minPatches；独立的广度优先搜索枚举可达和集合及每一种补数，求小输入的最少插入个数，再与 Python 和网页模拟对照。另检查中间覆盖区间、输入不变性及最大边界。",
-    "Self-check method: execute Solution().minPatches offline. An independent breadth-first search enumerates reachable-sum sets and every possible patch to find the minimum on small inputs, then compares with Python and the browser model. Also check intermediate coverage, input immutability and maximum boundaries."
+    "检查方法：离线实际调用 Solution().minPatches；独立的广度优先搜索枚举可达和集合及每一种补数，求小输入的最少插入个数，再与 Python 和网页模拟对照。另检查中间覆盖区间、输入不变性及最大边界。",
+    "Checking method: execute Solution().minPatches offline. An independent breadth-first search enumerates reachable-sum sets and every possible patch to find the minimum on small inputs, then compares with Python and the browser model. Also check intermediate coverage, input immutability and maximum boundaries."
   ],
   "foot": [
-    "作者自查候选；独立评审待进行。数值测试与浏览器模拟不代表 LeetCode 已接受提交，也不代表真实学习者已掌握。",
-    "Author self-checked candidate; independent review pending. Computational tests and browser simulations do not establish LeetCode acceptance or actual learner understanding."
+    "数值测试与浏览器模拟不代表 LeetCode 已接受提交，也不代表真实学习者已掌握。",
+    "Computational tests and browser simulations do not establish LeetCode acceptance or actual learner understanding."
   ],
   "baselineSource": [
     "小输入的穷举基线（不能用于大约束）",

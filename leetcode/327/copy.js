@@ -60,5 +60,5 @@ window.LESSON_COPY = Object.fromEntries([
 ['manualCopy',['手动复制完整 Python 源码','Manually copy the complete Python source']],
 ['copied',['已复制完整源码。','Full source copied.']],['fallback',['无法自动复制；已展开并选中源码，请手动复制。','Automatic copy unavailable; source is expanded and selected for manual copying.']],
 ['related1',['回看：前缀差的下标含义','Revisit: indices in a prefix difference']],['related2',['延伸：频次前缀查询','Related: prefix queries over frequencies']],
-['foot',['作者自查候选；浏览器是教学模拟，Python 由离线测试实际执行。尚无独立教学验收、真实学习者结果或 LeetCode 提交记录。','Author self-checked candidate. The browser is a teaching simulation; Python is actually executed by offline tests. Independent teaching acceptance, real learner results, and LeetCode submission results are not claimed.']]
+['foot',['浏览器是教学模拟，Python 由离线测试实际执行。尚无真实学习者结果或 LeetCode 提交记录。','The browser is a teaching simulation; Python is actually executed by offline tests. Real learner results and LeetCode submission results are not claimed.']]
 ]);

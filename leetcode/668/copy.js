@@ -344,8 +344,8 @@ window.LESSON_COPY = {
     "Boundaries: a 1×1 table starts with lo=hi=1 and needs no round. Rank 1 returns 1; rank m×n returns m×n; in a single row the kth value is k. Rectangles still use row counts, with min(n,…) clipping to the row width. Duplicates require no special branch. The official contract supplies positive valid inputs, so no invalid-k return value is needed."
   ],
   "verify": [
-    "独立检查方法：小表全部生成并排序，逐个 k 对比提交答案；另外逐格数出 C(mid)，检查每一轮不变量与区间缩短。作者测试不是独立评审，也不是 LeetCode 已通过的提交记录。",
-    "Independent checking method: generate and sort small tables, then compare the submission for every k. Separately count cells at each mid and verify the invariant and shrinking range after every round. Author tests are neither an independent lesson review nor a LeetCode acceptance record."
+    "独立检查方法：小表全部生成并排序，逐个 k 对比提交答案；另外逐格数出 C(mid)，检查每一轮不变量与区间缩短。这些测试不是 LeetCode 已通过的提交记录。",
+    "Independent checking method: generate and sort small tables, then compare the submission for every k. Separately count cells at each mid and verify the invariant and shrinking range after every round. These tests are not a LeetCode acceptance record."
   ],
   "copy": [
     "复制 Python 提交",
@@ -384,7 +384,7 @@ window.LESSON_COPY = {
     "#4 · Locate a median using boundary comparisons"
   ],
   "foot": [
-    "本页为可复现的教学模拟与作者自查候选。独立教学评审待完成；未声称真实学习效果或官方提交通过。",
-    "A reproducible teaching simulation and author-checked candidate. Independent teaching review is pending; no learner outcomes or official submission acceptance are claimed."
+    "本页为可复现的教学模拟；未声称真实学习效果或官方提交通过。",
+    "A reproducible teaching simulation; no learner outcomes or official submission acceptance are claimed."
   ]
 };

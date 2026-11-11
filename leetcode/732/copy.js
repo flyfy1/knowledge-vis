@@ -296,8 +296,8 @@ window.LESSON_COPY = {
     "Let b be calls so far, and u the distinct endpoints (u≤2b). Two dictionary updates average O(1), sorting costs O(u log u), and scanning O(u): O(b log b) time per call and O(b) space, including the sorted list. B calls total O(B² log B) time. This suits the bounds better than scanning a billion cells; it does not claim a tree’s O(log b) update time."
   ],
   "boundaries": [
-    "相接会议不重叠；重复会议分别计数；端点 0 与 10⁹ 也只占两个字典项；未调用时无需返回值。每次添加不会降低全局峰值。图示为便于撤回保存快照，最坏 O(B³) 存储，本页最多 6 场；这不是 Python 的辅助空间。作者用独立单位格子/起点计数基线验证；未声称 LeetCode 接受或真实学习效果。",
-    "Touching events do not overlap; duplicate events count separately. Endpoints 0 and 10⁹ still occupy just two dictionary entries. No output is required before a call. Adding an event cannot lower the global peak. Rewind snapshots cost up to O(B³) storage, bounded here to six events; that is not Python auxiliary space. Author checks use independent unit-cell/start-time counting baselines; no LeetCode acceptance or learner outcome is claimed."
+    "相接会议不重叠；重复会议分别计数；端点 0 与 10⁹ 也只占两个字典项；未调用时无需返回值。每次添加不会降低全局峰值。图示为便于撤回保存快照，最坏 O(B³) 存储，本页最多 6 场；这不是 Python 的辅助空间。测试用独立单位格子/起点计数基线验证；未声称 LeetCode 接受或真实学习效果。",
+    "Touching events do not overlap; duplicate events count separately. Endpoints 0 and 10⁹ still occupy just two dictionary entries. No output is required before a call. Adding an event cannot lower the global peak. Rewind snapshots cost up to O(B³) storage, bounded here to six events; that is not Python auxiliary space. Tests use independent unit-cell/start-time counting baselines; no LeetCode acceptance or learner outcome is claimed."
   ],
   "copy": [
     "复制 Python",
@@ -336,8 +336,8 @@ window.LESSON_COPY = {
     "Compare ranges: merging discrete integers in Data Stream →"
   ],
   "foot": [
-    "作者自查候选 · 独立评审待完成 · 无在线代码执行",
-    "Author self-checked candidate · Independent review pending · No online code execution"
+    "无在线代码执行",
+    "No online code execution"
   ],
   "scanDone": [
     "处理坐标 {x}：active = {old} + ({d}) = {a}；best = max({oldBest}, {a}) = {best}。已扫描 {n}/{u} 个端点；扫描已完成，best 为返回值。",

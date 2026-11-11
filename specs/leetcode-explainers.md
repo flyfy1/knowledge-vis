@@ -68,6 +68,19 @@ Never insert an unearned completion claim or rewrite a frozen candidate after
 review to update status; any runtime-copy change follows the normal new-candidate
 and independent-review process.
 
+2026-11-11 sweep: workflow status was removed from the learner copy of the
+whole registered collection. In 88 lessons (outside the 49 cleaned in parallel
+that day) this agent removed footer labels such as “作者自查候选 · 独立评审待进行 /
+Author self-checked candidate · Independent review pending” and the “author
+self-check, not independent review” clauses in verification paragraphs, in both
+languages. Stable limits stayed (“not a LeetCode submission”, “the browser
+simulation does not execute the Python”, “no measured learner outcomes”, “no
+online execution”). Eight footers that held nothing but status (60, 65, 84, 85,
+124, 564, 691, 749) were deleted together with their `foot` key. The copy-file
+cache keys gained a `-nostatus` suffix. `node leetcode/tests/no-workflow-status.cjs`
+now fails if any registered lesson's copy strings or static `index.html` text
+contain these status phrases in either language.
+
 ## Before writing the page
 
 1. Open the official problem. Verify the definition, examples, constraints,

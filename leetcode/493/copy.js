@@ -344,7 +344,7 @@ window.LESSON_COPY = {
     "Count smaller: compare another counting target →"
   ],
   "foot": [
-    "作者自查候选；独立评审待进行。模拟不等于提交执行；不声称 LeetCode 已通过。",
-    "Author self-checked candidate; independent review pending. Simulation is distinct from submission execution; no LeetCode acceptance claimed."
+    "模拟不等于提交执行；不声称 LeetCode 已通过。",
+    "Simulation is distinct from submission execution; no LeetCode acceptance claimed."
   ]
 };

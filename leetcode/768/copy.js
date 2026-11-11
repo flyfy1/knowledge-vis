@@ -48,5 +48,5 @@ window.COPY = {
  bounds:['边界：单元素无需切口，返回 1；全部相等时每处都可切，返回 n；严格递减且 n>1 时每处都失败，返回 1。0 和 10⁸ 都是普通合法数值，不需要哨兵。空数组不属于官方输入范围。','Boundaries: one value needs no cut and returns 1; equal values allow all cuts and return n; a strictly decreasing array with n>1 allows none and returns 1. Both 0 and 10⁸ are ordinary valid values; no sentinel is needed. Empty arrays are outside the official input domain.'],
  copy:['复制 Python','Copy Python'],download:['下载 solution.py','Download solution.py'],source:['查看完整提交源码','Read the full submission source'],copied:['已复制完整源码。','Full source copied.'],manual:['自动复制不可用；源码已全选，请按系统复制快捷键。','Automatic copy unavailable. Full source is selected; use your system copy shortcut.'],
  rel1:['回看后缀最小值与切口操作数','Revisit suffix minima and cut operands'],rel2:['回看安全切口的必要与充分条件','Revisit why the cut test is necessary and sufficient'],rel3:['#239：学习如何复用滑动窗口最大值',' #239: learn to reuse sliding-window maxima'],
- foot:['作者自查候选；独立评审待完成。轨迹是模拟，不代表 LeetCode 提交通过；没有实际学习者成效数据。','Author self-checked candidate; independent review pending. The trace is a simulation, not a LeetCode acceptance result. No learner outcomes have been measured.']
+ foot:['轨迹是模拟，不代表 LeetCode 提交通过；没有实际学习者成效数据。','The trace is a simulation, not a LeetCode acceptance result. No learner outcomes have been measured.']
 };

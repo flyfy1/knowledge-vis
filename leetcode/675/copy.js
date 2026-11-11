@@ -328,7 +328,7 @@ window.LESSON_COPY = {
     "Next: expanding across a two-dimensional map"
   ],
   "foot": [
-    "作者自查候选；独立评审待进行。可视化是模拟，未声称 LeetCode 提交通过或真实学习者效果。",
-    "Author self-checked candidate; independent review pending. The visualization is a simulation; no LeetCode acceptance or learner outcome is claimed."
+    "可视化是模拟，未声称 LeetCode 提交通过或真实学习者效果。",
+    "The visualization is a simulation; no LeetCode acceptance or learner outcome is claimed."
   ]
 };

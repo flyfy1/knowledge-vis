@@ -372,8 +372,8 @@ window.LESSON_COPY = {
     "Let R=⌊minutesToTest/minutesToDie⌋. Time is O(1+log_(R+1) buckets), with O(1) auxiliary machine words (at most 10 multiplications and small integers under official bounds). This is the counting submission’s cost. The teaching simulation separately stores B×p digits and round observations; that storage is not submission space."
   ],
   "verify": [
-    "作者自查使用独立的组合计数递推、结果向量枚举及逐轮喂食模拟，对比 Python 和浏览器核心。测试覆盖官方例子、整数幂边界、一桶、未满一轮的余时和最大输入。通过这些测试不等于 LeetCode 已接收提交，也不等于独立教学评审或真实学习者验证。",
-    "Author checks compare Python and the browser core against an independent combinatorial recurrence, enumerated outcome vectors, and round-by-round feeding simulation. They cover official examples, exact-power boundaries, one bucket, incomplete leftover time, and maximum inputs. Passing is not a LeetCode acceptance, an independent teaching review, or evidence from real learners."
+    "测试使用独立的组合计数递推、结果向量枚举及逐轮喂食模拟，对比 Python 和浏览器核心。测试覆盖官方例子、整数幂边界、一桶、未满一轮的余时和最大输入。通过这些测试不等于 LeetCode 已接收提交，也不等于真实学习者验证。",
+    "Tests compare Python and the browser core against an independent combinatorial recurrence, enumerated outcome vectors, and round-by-round feeding simulation. They cover official examples, exact-power boundaries, one bucket, incomplete leftover time, and maximum inputs. Passing is not a LeetCode acceptance or evidence from real learners."
   ],
   "copy": [
     "复制 Python",
@@ -412,7 +412,7 @@ window.LESSON_COPY = {
     "Problem 440: count and skip a whole group →"
   ],
   "foot": [
-    "作者候选 · 教学模拟与真实提交执行分开 · 独立评审待进行",
-    "Author candidate · Teaching simulation and submission execution are separate · Independent review pending"
+    "教学模拟与真实提交执行分开",
+    "Teaching simulation and submission execution are separate"
   ]
 };

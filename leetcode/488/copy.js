@@ -364,8 +364,8 @@ window.COPY = {
     "#37: restoring complete constraints in backtracking"
   ],
   "foot": [
-    "作者自查候选 · 独立评审待进行。交互为教学模拟；未声称 LeetCode 接受、真实学习者效果或生产发布。",
-    "Author self-checked candidate · Independent review pending. Interactions are teaching simulations; no LeetCode acceptance, learner outcomes, or production release is claimed."
+    "交互为教学模拟；未声称 LeetCode 接受或真实学习者效果。",
+    "Interactions are teaching simulations; no LeetCode acceptance or learner outcomes are claimed."
   ],
   "baselineTitle": [
     "展开正确但重复工作的基线 Python",

@@ -324,8 +324,8 @@ window.LESSON_COPY = {
     "Boundaries: if all values are equal, W=0 and the loop returns 0 immediately. Two elements return their difference. k=1 selects the minimum distance; k=P selects the maximum. Duplicates naturally create zero distances. The largest P is 49,995,000, exact in Python integers. No input mutation is needed; the official contract specifies no extra exception return value."
   ],
   "verify": [
-    "自查方法：独立列举所有数对距离作为小输入基线，对每个 k 比较实际 Python 结果；逐轮检查计数、不变量和区间缩短。计算测试与浏览器自查不代表独立教学评审或 LeetCode 提交通过。",
-    "Checking method: independently enumerate every pair distance for small inputs and compare actual Python results for every k. Check counts, invariants, and shrinking bounds at each round. Computational tests and browser self-checks do not establish independent teaching review or LeetCode submission acceptance."
+    "检查方法：独立列举所有数对距离作为小输入基线，对每个 k 比较实际 Python 结果；逐轮检查计数、不变量和区间缩短。计算与浏览器测试不代表 LeetCode 提交通过。",
+    "Checking method: independently enumerate every pair distance for small inputs and compare actual Python results for every k. Check counts, invariants, and shrinking bounds at each round. Computational and browser tests do not establish LeetCode submission acceptance."
   ],
   "copy": [
     "复制 Python 提交",
@@ -364,7 +364,7 @@ window.LESSON_COPY = {
     "#410 · Narrow answer bounds using feasibility"
   ],
   "foot": [
-    "教学模拟与作者自查候选。独立评审待完成；不声称学习效果或官方提交通过。",
-    "Teaching simulation and author-checked candidate. Independent review pending; no learner outcomes or official submission acceptance claimed."
+    "教学模拟；不声称学习效果或官方提交通过。",
+    "Teaching simulation; no learner outcomes or official submission acceptance claimed."
   ]
 };

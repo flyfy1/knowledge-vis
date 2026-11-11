@@ -368,7 +368,7 @@ window.LESSON_COPY = {
     "Related: #123 optimal ordered segments →"
   ],
   "foot": [
-    "作者自查候选；独立评审待进行。数值测试不代表 LeetCode 已接受，也不代表真实学习者已掌握。",
-    "Author self-checked candidate; independent review pending. Numerical tests do not establish LeetCode acceptance or observed learner understanding."
+    "数值测试不代表 LeetCode 已接受，也不代表真实学习者已掌握。",
+    "Numerical tests do not establish LeetCode acceptance or observed learner understanding."
   ]
 };

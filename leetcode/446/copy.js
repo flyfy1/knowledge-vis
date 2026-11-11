@@ -304,8 +304,8 @@ window.LESSON_COPY = {
     "Boundaries: lengths 1 and 2 return 0. Repeated values use difference 0; decreasing sequences use negative differences. For all-equal values the answer is 2ⁿ−1−n−n(n−1)/2, giving 16 at n=5. Larger all-equal arrays can violate the official 32-bit answer guarantee. Values range from −2³¹ to 2³¹−1, so a difference can reach 2³²−1. Python integers do not overflow; do not truncate differences to 32 bits."
   ],
   "verify": [
-    "自查方法：独立枚举小输入的位置子集，与正式 Python 和每一步模拟状态比较；最大长度另用可推导的期望值检查。浏览器仅展示模拟，测试脚本才实际执行 Python。没有宣称 LeetCode 提交通过，也没有真实学习者成效证据。",
-    "Self-check method: independently enumerate position subsets on small inputs, comparing both the Python solution and every simulated state. Maximum-length checks use separately derived expectations. The browser shows a simulation; test scripts execute Python. This is not a claim of LeetCode acceptance or measured learner outcomes."
+    "检查方法：独立枚举小输入的位置子集，与正式 Python 和每一步模拟状态比较；最大长度另用可推导的期望值检查。浏览器仅展示模拟，测试脚本才实际执行 Python。没有宣称 LeetCode 提交通过，也没有真实学习者成效证据。",
+    "Checking method: independently enumerate position subsets on small inputs, comparing both the Python solution and every simulated state. Maximum-length checks use separately derived expectations. The browser shows a simulation; test scripts execute Python. This is not a claim of LeetCode acceptance or measured learner outcomes."
   ],
   "source": [
     "查看正式 Python 提交代码",
@@ -344,7 +344,7 @@ window.LESSON_COPY = {
     "Longest increasing path: remember endpoint states"
   ],
   "foot": [
-    "作者自查候选 · 独立评审待完成 · 无外部资源",
-    "Author self-checked candidate · Independent review pending · No external assets"
+    "无外部资源",
+    "No external assets"
   ]
 };

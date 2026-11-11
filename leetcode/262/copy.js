@@ -229,8 +229,8 @@ const COPY={
     "See neighbor-constraint scans in #135 (a different algorithm) →"
   ],
   "foot": [
-    "作者自检页面；不代表 LeetCode 接受或独立评审通过。",
-    "Author self-check page; it does not claim LeetCode acceptance or independent review."
+    "本页不代表 LeetCode 接受。",
+    "This page does not claim LeetCode acceptance."
   ],
   "transition": [
     "对照示例：#1 completed 后是 (0, 1)。#2 虽然取消，但客户 2 被封，因此仍是 (0, 1)，不是 (1, 2)。#3 completed 后变成 (0, 2)，#4 合资格且取消后变成 (1, 3)。点上一行再重放 #2，两个计数都应不变。",

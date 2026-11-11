@@ -55,7 +55,7 @@ pairs={
 'copy':['复制 Python','Copy Python'],'download':['下载 solution.py','Download solution.py'],'source':['查看官方接口的完整解法','View the complete official-interface solution'],
 'copied':['已复制完整 Python 源码。','Copied the complete Python source.'],'fallback':['剪贴板不可用。已选中完整源码；用系统复制快捷键复制。','Clipboard unavailable. Full source is selected; use your system copy shortcut.'],'manualCopy':['手动复制完整 Python 源码','Manually copy the complete Python source'],
 'related1':['继续学：单词图中的分层搜索','Next: layered search in a word graph'],'related2':['继续学：二维地图上的逐层扩张','Next: expanding across a two-dimensional map'],
-'foot':['作者自查候选；独立评审待进行。可视化是模拟，未声称 LeetCode 提交通过或真实学习者效果。','Author self-checked candidate; independent review pending. The visualization is a simulation; no LeetCode acceptance or learner outcome is claimed.']
+'foot':['可视化是模拟，未声称 LeetCode 提交通过或真实学习者效果。','The visualization is a simulation; no LeetCode acceptance or learner outcome is claimed.']
 }
 assert all(isinstance(v,list) and len(v)==2 and all(isinstance(s,str) for s in v) for v in pairs.values())
 Path(__file__).resolve().parents[1].joinpath('copy.js').write_text('window.LESSON_COPY = '+json.dumps(pairs,ensure_ascii=False,indent=2)+';\n')

@@ -320,8 +320,8 @@ window.LESSON_COPY = {
     "Trapping rain water: why a summary suffices"
   ],
   "foot": [
-    "作者自查候选；独立教学评审待完成。浏览器模拟不是 Python 执行或 LeetCode 提交结果。",
-    "Author self-checked candidate; independent teaching review pending. The simulation is neither Python execution nor a LeetCode submission result."
+    "浏览器模拟不是 Python 执行或 LeetCode 提交结果。",
+    "The simulation is neither Python execution nor a LeetCode submission result."
   ],
   "verify": [
     "本地测试分别执行 Python 与教学模型，对照独立的合法动作枚举，并检查每一天的四个状态。计算测试不代表真实学习者已理解。",

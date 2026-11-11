@@ -65,5 +65,5 @@ window.LESSON_COPY = {
 "copy":["复制 Python","Copy Python"],"download":["下载 solution.py","Download solution.py"],"source":["查看完整 Python 源码","View complete Python source"],"manual":["手动复制：源码已选中，请用系统复制快捷键。","Manual copy: the source is selected; use your system copy shortcut."],
 "copying":["正在复制…","Copying…"],"copied":["已复制完整源码。","Complete source copied."],"fallback":["剪贴板不可用，请复制下方已选中的源码。","Clipboard unavailable. Copy the selected source below."],
 "related1":["整数区间的合并：与本课实数半开区间对照 →","Integer interval merging: compare with real half-open ranges →"],"related2":["二分查找：根据比较排除候选 →","Binary search: eliminate candidates by comparison →"],
-"foot":["作者自查候选 · 独立评审待进行。模拟用于解释；不代表真实学习者测试或提交通过。","Author self-checked candidate · Independent review pending. Simulation is explanatory; no learner study or accepted submission is implied."]
+"foot":["模拟用于解释；不代表真实学习者测试或提交通过。","Simulation is explanatory; no learner study or accepted submission is implied."]
 };

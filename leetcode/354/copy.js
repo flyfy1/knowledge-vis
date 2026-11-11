@@ -344,7 +344,7 @@ window.COPY = {
     "#327: explore another ordered-search counting problem"
   ],
   "foot": [
-    "作者自查候选；独立评审待进行。模拟与离线测试不代表 LeetCode 提交通过，也不代表真实学习者测试。",
-    "Author self-checked candidate; independent review pending. Simulation and offline tests do not establish LeetCode acceptance or actual learner results."
+    "模拟与离线测试不代表 LeetCode 提交通过，也不代表真实学习者测试。",
+    "Simulation and offline tests do not establish LeetCode acceptance or actual learner results."
   ]
 };

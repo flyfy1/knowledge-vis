@@ -276,8 +276,8 @@ window.LESSON_COPY = {
     "Boundaries: a missing required letter can give G=0; skipping remains valid and the answer is 0. n1=1 can be scanned directly. C<n2 gives answer 0. An unfinished s2 or a group with fewer than n2 copies is discarded. Input strings are unchanged. Zero repetition counts and empty strings are outside the official domain."
   ],
   "verify": [
-    "验证方式：用保留所有可达到目标前缀长度的动态规划作独立小规模预言机，检查原始 Python 的返回值；另对浏览器每个字符状态及跳跃前后逐一对账。测试证据是作者自查，不是独立评审、学习成效或 LeetCode 提交通过的证明。",
-    "Verification uses an independent small-input dynamic program retaining all reachable target-prefix lengths to check original Python results. Browser character states and both sides of jumps are checked separately. This evidence is an author self-check, not independent review, measured learner comprehension, or a LeetCode acceptance result."
+    "验证方式：用保留所有可达到目标前缀长度的动态规划作独立小规模预言机，检查原始 Python 的返回值；另对浏览器每个字符状态及跳跃前后逐一对账。测试证据不是学习成效或 LeetCode 提交通过的证明。",
+    "Verification uses an independent small-input dynamic program retaining all reachable target-prefix lengths to check original Python results. Browser character states and both sides of jumps are checked separately. This evidence is not measured learner comprehension or a LeetCode acceptance result."
   ],
   "related": [
     "继续比较状态为什么足够",
@@ -292,8 +292,8 @@ window.LESSON_COPY = {
     "Wildcard matching: empty prefixes and transitions"
   ],
   "foot": [
-    "作者候选 · 浏览器模拟与 Python 执行分别验证 · 独立评审待进行",
-    "Author candidate · Browser simulation and Python tested separately · Independent review pending"
+    "浏览器模拟与 Python 执行分别验证",
+    "Browser simulation and Python tested separately"
   ],
   "language": [
     "语言",

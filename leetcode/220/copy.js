@@ -79,9 +79,9 @@ copy:['复制 Python','Copy Python'],download:['下载 solution.py','Download so
 copied:['已复制完整 Python 源码。','Full Python source copied.'],
 fallbackStatus:['剪贴板不可用；已选中完整源码，请手动复制。','Clipboard unavailable; full source selected for manual copying.'],
 fallback:['手动复制完整 Python 源码','Manually copy the full Python source'],
-verify:['本候选用枚举所有不同位置对的独立基线，对 Python 和教学模型分别检查；测试还检查到期后的窗口与桶内容。浏览器不执行提交代码。自查通过不等于 LeetCode 提交通过，也不等于独立教学评审或实际学习效果。','This candidate checks Python and the teaching model separately against an independent enumeration of all distinct position pairs. Tests also inspect the window and bucket contents after expiry. The browser does not run the submission. Author checks do not establish LeetCode acceptance, independent teaching approval, or learner outcomes.'],
+verify:['测试用枚举所有不同位置对的独立基线，对 Python 和教学模型分别检查；测试还检查到期后的窗口与桶内容。浏览器不执行提交代码。测试通过不等于 LeetCode 提交通过，也不等于实际学习效果。','Tests check Python and the teaching model separately against an independent enumeration of all distinct position pairs. Tests also inspect the window and bucket contents after expiry. The browser does not run the submission. Passing tests does not establish LeetCode acceptance or learner outcomes.'],
 related:['继续连接这些概念','Connect these ideas'],
 related0:['#30：窗口为何要移除旧项 →','· #30: why windows remove old items →'],
 related1:['#41：按数值选择存储位置 →','· #41: choose storage positions from values →'],
-foot:['作者候选 · 独立评审待完成 · 无外部资源','Author candidate · Independent review pending · No external assets']
+foot:['无外部资源','No external assets']
 };

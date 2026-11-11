@@ -83,6 +83,6 @@ add('fallback','剪贴板不可用。完整源码已选中，请使用系统复�
 add('manualCopy','手动复制完整源码','Copy the full source manually')
 add('related1','关联：#239 的滑动窗口状态 →','Related: #239 sliding-window state →')
 add('related2','关联：#123 的顺序分段最优 →','Related: #123 optimal ordered segments →')
-add('foot','作者自查候选；独立评审待进行。数值测试不代表 LeetCode 已接受，也不代表真实学习者已掌握。','Author self-checked candidate; independent review pending. Numerical tests do not establish LeetCode acceptance or observed learner understanding.')
+add('foot','数值测试不代表 LeetCode 已接受，也不代表真实学习者已掌握。','Numerical tests do not establish LeetCode acceptance or observed learner understanding.')
 p=Path(__file__).resolve().parents[1]
 (p/'copy.js').write_text('window.LESSON_COPY = '+json.dumps(dict(rows),ensure_ascii=False,indent=2)+';\n')

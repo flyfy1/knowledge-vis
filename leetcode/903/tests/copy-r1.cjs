@@ -9,7 +9,9 @@ const keys=obj.properties.map(p=>p.key.name);assert.equal(new Set(keys).size,key
 const sandbox={window:{}};vm.runInNewContext(copy,sandbox);
 const oldCopy=require('child_process').execFileSync('git',['show','26f8fd8ec1e79a233779b82a4c8ee3d63edaee17:leetcode/903/copy.js'],{encoding:'utf8'});
 const old={window:{}};vm.runInNewContext(oldCopy,old);
-for(const key of keys)assert.deepEqual(Array.from(sandbox.window.COPY[key]),Array.from(old.window.COPY[key]));
+// 2026-11-11 status sweep: verification lost its workflow-status clauses; every other key stays frozen.
+for(const key of keys.filter(k=>k!=='verification'))assert.deepEqual(Array.from(sandbox.window.COPY[key]),Array.from(old.window.COPY[key]));
+for(const text of sandbox.window.COPY.verification)assert(!/自查|作者|独立评审|self-check|author check|independent review/i.test(text),'verification must not carry workflow status');
 const mirror={window:{}};vm.runInNewContext(fs.readFileSync(path.join(root,'python-code.js'),'utf8'),mirror);assert.equal(mirror.window.PYTHON_SOURCE,source);
 (async()=>{
  const browser=await chromium.launch({executablePath:process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH||undefined});
@@ -36,7 +38,7 @@ const mirror={window:{}};vm.runInNewContext(fs.readFileSync(path.join(root,'pyth
   const formula=await page.locator('[data-i18n=formula]').textContent();assert(formula.includes('0 ≤ k < j')&&formula.includes('j ≤ k < m')&&formula.includes('0 ≤ j ≤ m'));
   assert((await page.locator('#sum').textContent()).includes('nxt[1] = 1 = 1'));
   const progress=await page.locator('#progress').textContent();assert(progress.includes('4/5')&&progress.includes('2/2'));
-  for(const key of ['sim','costs','verification'])assert.equal(await page.locator(`[data-i18n=${key}]`).textContent(),old.window.COPY[key][lang==='zh'?0:1]);
+  for(const key of ['sim','costs','verification'])assert.equal(await page.locator(`[data-i18n=${key}]`).textContent(),sandbox.window.COPY[key][lang==='zh'?0:1]);
   results.locales.push({lang,progress,sum:await page.locator('#sum').textContent(),formula,simulation:await page.locator('[data-i18n=sim]').textContent(),costs:await page.locator('[data-i18n=costs]').textContent()});
  }
  await page.click('#prev');await page.click('#next');assert.deepEqual(await page.locator('#counts tbody td').allTextContents(),snapshot);

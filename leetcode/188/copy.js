@@ -320,12 +320,12 @@ window.LESSON_COPY = {
     "Regex matching: keeping states for prefixes →"
   ],
   "foot": [
-    "作者实现与自查 · 独立评审待完成 · 无在线提交记录",
-    "Author implementation and self-check · Independent review pending · No online submission result"
+    "无在线提交记录",
+    "No online submission result"
   ],
   "verify": [
-    "本地自查会执行这个 Python 接口，并用独立的买卖日期枚举验证小输入；浏览器模拟的每一天、每种额度也对账。通过测试不表示 LeetCode 已接受，也不表示独立评审通过。",
-    "Local self-checks execute this Python interface against independent buy/sell-date enumeration on small inputs. Every simulated day and budget is also checked. Passing tests establishes neither LeetCode acceptance nor independent review acceptance."
+    "本地测试会执行这个 Python 接口，并用独立的买卖日期枚举验证小输入；浏览器模拟的每一天、每种额度也对账。通过测试不表示 LeetCode 已接受。",
+    "Local tests execute this Python interface against independent buy/sell-date enumeration on small inputs. Every simulated day and budget is also checked. Passing tests does not establish LeetCode acceptance."
   ],
   "language": [
     "语言",

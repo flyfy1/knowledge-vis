@@ -340,8 +340,8 @@ window.COPY = {
     "Boundaries and independent checks"
   ],
   "verify": [
-    "边界 n=1 → 1，n=2、3 → 0，n=4 → 2。作者自查以列排列的成对距离检查对照 n=1…9 的计数（n=9 为 352），并核对每个轨迹事件的约束集合、叶计数与撤销。不能在第一次找到解时停止，不能把合法前缀计为解，不能忘记删除集合键。没有实际 LeetCode 提交或独立教学通过声明。",
-    "Boundaries: n=1 → 1, n=2 and 3 → 0, n=4 → 2. Author checks compare counts for n=1…9 against pairwise-distance tests of column permutations (n=9 gives 352), and inspect every trace event’s sets, leaf count, and undo. Do not stop at the first solution, count safe prefixes, or forget to remove set keys. No actual LeetCode submission or independent teaching acceptance is claimed."
+    "边界 n=1 → 1，n=2、3 → 0，n=4 → 2。测试以列排列的成对距离检查对照 n=1…9 的计数（n=9 为 352），并核对每个轨迹事件的约束集合、叶计数与撤销。不能在第一次找到解时停止，不能把合法前缀计为解，不能忘记删除集合键。没有实际 LeetCode 提交声明。",
+    "Boundaries: n=1 → 1, n=2 and 3 → 0, n=4 → 2. Tests compare counts for n=1…9 against pairwise-distance tests of column permutations (n=9 gives 352), and inspect every trace event’s sets, leaf count, and undo. Do not stop at the first solution, count safe prefixes, or forget to remove set keys. No actual LeetCode submission is claimed."
   ],
   "related": [
     "相关概念",
@@ -356,8 +356,8 @@ window.COPY = {
     "Explore constraint sets and complete undo in #37"
   ],
   "foot": [
-    "Python 是标准解法；交互是本地教学模拟。作者自查不等于独立评审。",
-    "Python is the canonical solution; the interaction is a local teaching simulation. Author checks are not independent review."
+    "Python 是标准解法；交互是本地教学模拟。",
+    "Python is the canonical solution; the interaction is a local teaching simulation."
   ],
   "meta": [
     "LEETCODE 52 · 困难 · PYTHON",
