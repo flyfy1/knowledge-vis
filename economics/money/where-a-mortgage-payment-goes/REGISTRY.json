@@ -10,7 +10,7 @@
     "en": "Each month's mortgage payment splits into interest and principal. Eight models you can push: nominal and effective rates, the payment formula, the amortisation schedule, equal-principal versus equal-payment, prepaying, a rate change, the true annual rate of a flat-fee instalment plan, and inflation and opportunity cost."
   },
   "tags": [
-    { "zh": "房贷", "en": "Mortgages" },
+    { "zh": "房贷", "en": "Mortgage" },
     { "zh": "利率", "en": "Interest rates" },
     { "zh": "复利", "en": "Compound interest" },
     { "zh": "年化利率", "en": "APR" },
@@ -33,8 +33,8 @@
       "title": { "zh": "月供公式（等额本息）", "en": "The level-payment (annuity) formula" },
       "desc": { "zh": "月供是让欠款在最后一个月正好还清的那个数：M = P·i ÷ (1 − (1 + i)^−n)。", "en": "The monthly payment is the one number that clears the balance exactly in the last month: M = P·i / (1 − (1 + i)^−n)." },
       "aliases": {
-        "zh": ["月供怎么算", "月供公式", "等额本息公式", "房贷计算器", "每月还多少", "贷款100万30年每月还多少"],
-        "en": ["how is a mortgage payment calculated", "mortgage payment formula", "annuity formula", "monthly payment formula", "mortgage calculator", "level payment loan"]
+        "zh": ["月供", "月供怎么算", "月供公式", "等额本息公式", "房贷计算器", "每月还多少", "贷款100万30年每月还多少"],
+        "en": ["monthly payment", "how is a mortgage payment calculated", "mortgage payment formula", "annuity formula", "monthly payment formula", "mortgage calculator", "level payment loan"]
       },
       "anchor": "#ch2",
       "relatedPages": ["compound-interest"]

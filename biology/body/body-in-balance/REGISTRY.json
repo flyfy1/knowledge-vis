@@ -85,7 +85,7 @@
       "id": "herd-immunity-threshold",
       "title": { "zh": "群体免疫阈值", "en": "Herd immunity threshold" },
       "desc": { "zh": "免疫比例超过 1 − 1/R₀ 时，每个病例平均传给不到一个人，疫情自己熄灭。", "en": "Once the immune share exceeds 1 − 1/R₀, each case infects fewer than one other on average and the outbreak dies out." },
-      "aliases": { "zh": ["群体免疫", "疫苗接种率要多少", "麻疹疫苗覆盖率", "有效再生数", "打疫苗", "为什么要打疫苗"], "en": ["herd immunity", "vaccination coverage needed", "measles vaccination threshold", "effective reproduction number", "vaccines", "vaccination", "how many people need to be vaccinated"] },
+      "aliases": { "zh": ["群体免疫", "疫苗接种率要多少", "麻疹疫苗覆盖率", "有效再生数"], "en": ["herd immunity", "vaccination coverage needed", "measles vaccination threshold", "effective reproduction number", "how many people need to be vaccinated"] },
       "anchor": "#ch9",
       "relatedPages": ["public-health"]
     }

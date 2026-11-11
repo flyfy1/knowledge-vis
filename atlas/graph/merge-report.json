@@ -1,11 +1,11 @@
 {
   "counts": {
     "groups": 11,
-    "nodes": 306,
-    "edges": 483,
+    "nodes": 349,
+    "edges": 523,
     "trails": 14,
     "questions": 124,
-    "fragments": 181
+    "fragments": 186
   },
   "conflicts": [],
   "suspendedEdges": [],
@@ -142,6 +142,83 @@
     },
     {
       "concept": "herd-immunity-threshold",
+      "page": "public-health",
+      "taughtBy": [
+        "positive-predictive-value",
+        "epidemic-r0"
+      ]
+    },
+    {
+      "concept": "primary-immune-response",
+      "page": "body-in-balance",
+      "taughtBy": [
+        "steady-state-set-point",
+        "drug-half-life-plateau",
+        "alcohol-zero-order",
+        "glucose-feedback",
+        "fever-set-point",
+        "therapeutic-window",
+        "cardiac-output-budget",
+        "antibiotic-selection-window",
+        "herd-immunity-threshold"
+      ]
+    },
+    {
+      "concept": "vaccine-efficacy-relative-risk",
+      "page": "numbers-lie",
+      "taughtBy": [
+        "regression-to-the-mean",
+        "small-sample-variability",
+        "survivorship-bias",
+        "multiple-comparisons",
+        "simpsons-paradox",
+        "base-rate-neglect",
+        "relative-vs-absolute-risk",
+        "mean-vs-median-long-tail",
+        "goodharts-law",
+        "questions-to-ask-of-a-number"
+      ]
+    },
+    {
+      "concept": "vaccinated-share-of-cases",
+      "page": "numbers-lie",
+      "taughtBy": [
+        "regression-to-the-mean",
+        "small-sample-variability",
+        "survivorship-bias",
+        "multiple-comparisons",
+        "simpsons-paradox",
+        "base-rate-neglect",
+        "relative-vs-absolute-risk",
+        "mean-vs-median-long-tail",
+        "goodharts-law",
+        "questions-to-ask-of-a-number"
+      ]
+    },
+    {
+      "concept": "vaccinated-share-of-cases",
+      "page": "bayes-diagnostics",
+      "taughtBy": [
+        "positive-predictive-value"
+      ]
+    },
+    {
+      "concept": "vaccination-coverage-needed",
+      "page": "body-in-balance",
+      "taughtBy": [
+        "steady-state-set-point",
+        "drug-half-life-plateau",
+        "alcohol-zero-order",
+        "glucose-feedback",
+        "fever-set-point",
+        "therapeutic-window",
+        "cardiac-output-budget",
+        "antibiotic-selection-window",
+        "herd-immunity-threshold"
+      ]
+    },
+    {
+      "concept": "vaccination-coverage-needed",
       "page": "public-health",
       "taughtBy": [
         "positive-predictive-value",
@@ -495,6 +572,156 @@
       ]
     },
     {
+      "concept": "schwarzschild-radius",
+      "page": "gravity-orbits",
+      "taughtBy": [
+        "gravity-orbits"
+      ]
+    },
+    {
+      "concept": "black-holes-dont-suck",
+      "page": "gravity-orbits",
+      "taughtBy": [
+        "gravity-orbits"
+      ]
+    },
+    {
+      "concept": "black-holes-dont-suck",
+      "page": "kepler-orbits",
+      "taughtBy": [
+        "kepler-orbits"
+      ]
+    },
+    {
+      "concept": "isco-photon-sphere",
+      "page": "gravity-orbits",
+      "taughtBy": [
+        "gravity-orbits"
+      ]
+    },
+    {
+      "concept": "gravitational-time-dilation",
+      "page": "relativity",
+      "taughtBy": [
+        "relativity"
+      ]
+    },
+    {
+      "concept": "black-hole-shadow",
+      "page": "gravitational-lensing",
+      "taughtBy": [
+        "gravitational-lensing"
+      ]
+    },
+    {
+      "concept": "sgr-a-star-s2",
+      "page": "kepler-orbits",
+      "taughtBy": [
+        "kepler-orbits"
+      ]
+    },
+    {
+      "concept": "sgr-a-star-s2",
+      "page": "gravity-orbits",
+      "taughtBy": [
+        "gravity-orbits"
+      ]
+    },
+    {
+      "concept": "nominal-vs-effective-rate",
+      "page": "compound-interest",
+      "taughtBy": [
+        "compound-interest"
+      ]
+    },
+    {
+      "concept": "nominal-vs-effective-rate",
+      "page": "exponents-logarithms",
+      "taughtBy": [
+        "exp-log"
+      ]
+    },
+    {
+      "concept": "annuity-payment-formula",
+      "page": "compound-interest",
+      "taughtBy": [
+        "compound-interest"
+      ]
+    },
+    {
+      "concept": "amortisation-schedule",
+      "page": "compound-interest",
+      "taughtBy": [
+        "compound-interest"
+      ]
+    },
+    {
+      "concept": "amortisation-schedule",
+      "page": "where-money-comes-from",
+      "taughtBy": [
+        "money-as-iou",
+        "loans-create-deposits",
+        "bank-run",
+        "quantity-theory-inflation",
+        "inflation-winners-losers",
+        "interest-price-of-time",
+        "loan-amortisation",
+        "monetary-transmission",
+        "purchasing-power-parity"
+      ]
+    },
+    {
+      "concept": "floating-rate-reset",
+      "page": "where-money-comes-from",
+      "taughtBy": [
+        "money-as-iou",
+        "loans-create-deposits",
+        "bank-run",
+        "quantity-theory-inflation",
+        "inflation-winners-losers",
+        "interest-price-of-time",
+        "loan-amortisation",
+        "monetary-transmission",
+        "purchasing-power-parity"
+      ]
+    },
+    {
+      "concept": "floating-rate-reset",
+      "page": "interest-rates-bonds",
+      "taughtBy": [
+        "interest-rates-bonds"
+      ]
+    },
+    {
+      "concept": "apr-irr-flat-fee",
+      "page": "fees-compounding",
+      "taughtBy": [
+        "fees-compounding"
+      ]
+    },
+    {
+      "concept": "inflation-opportunity-cost-loan",
+      "page": "where-money-comes-from",
+      "taughtBy": [
+        "money-as-iou",
+        "loans-create-deposits",
+        "bank-run",
+        "quantity-theory-inflation",
+        "inflation-winners-losers",
+        "interest-price-of-time",
+        "loan-amortisation",
+        "monetary-transmission",
+        "purchasing-power-parity"
+      ]
+    },
+    {
+      "concept": "inflation-opportunity-cost-loan",
+      "page": "compound-interest",
+      "taughtBy": [
+        "compound-interest"
+      ]
+    },
+    {
       "concept": "money-as-iou",
       "page": "scarcity-moves",
       "taughtBy": [
@@ -612,46 +839,165 @@
         "relative-prices-after-ai",
         "ai-forecast"
       ]
+    },
+    {
+      "concept": "planetary-energy-balance",
+      "page": "climate-energy",
+      "taughtBy": [
+        "climate-energy"
+      ]
+    },
+    {
+      "concept": "planetary-energy-balance",
+      "page": "blackbody-radiation",
+      "taughtBy": [
+        "blackbody-radiation"
+      ]
+    },
+    {
+      "concept": "planetary-energy-balance",
+      "page": "seasons-orbit",
+      "taughtBy": [
+        "seasons-orbit"
+      ]
+    },
+    {
+      "concept": "greenhouse-one-layer",
+      "page": "climate-energy",
+      "taughtBy": [
+        "climate-energy"
+      ]
+    },
+    {
+      "concept": "emission-height",
+      "page": "atmospheric-circulation",
+      "taughtBy": [
+        "atmospheric-circulation"
+      ]
+    },
+    {
+      "concept": "co2-saturation-log-forcing",
+      "page": "exponents-logarithms",
+      "taughtBy": [
+        "exp-log"
+      ]
+    },
+    {
+      "concept": "co2-saturation-log-forcing",
+      "page": "carbon-cycle",
+      "taughtBy": [
+        "carbon-cycle"
+      ]
+    },
+    {
+      "concept": "climate-feedbacks",
+      "page": "climate-feedback",
+      "taughtBy": [
+        "climate-feedback"
+      ]
+    },
+    {
+      "concept": "sensitivity-uncertainty",
+      "page": "climate-feedback",
+      "taughtBy": [
+        "climate-feedback"
+      ]
+    },
+    {
+      "concept": "ocean-lag",
+      "page": "carbon-cycle",
+      "taughtBy": [
+        "carbon-cycle"
+      ]
+    },
+    {
+      "concept": "ocean-lag",
+      "page": "climate-energy",
+      "taughtBy": [
+        "climate-energy"
+      ]
+    },
+    {
+      "concept": "skylight-is-scattered-sunlight",
+      "page": "climate-energy",
+      "taughtBy": [
+        "climate-energy"
+      ]
+    },
+    {
+      "concept": "rayleigh-inverse-fourth-power",
+      "page": "interference",
+      "taughtBy": [
+        "interference"
+      ]
+    },
+    {
+      "concept": "skylight-spectrum-peaks-in-uv",
+      "page": "blackbody-radiation",
+      "taughtBy": [
+        "blackbody-radiation"
+      ]
+    },
+    {
+      "concept": "why-the-sky-is-not-violet",
+      "page": "eye-vision",
+      "taughtBy": [
+        "eye-vision"
+      ]
+    },
+    {
+      "concept": "mie-scattering-white-clouds",
+      "page": "interference",
+      "taughtBy": [
+        "interference"
+      ]
+    },
+    {
+      "concept": "multiple-scattering-ozone",
+      "page": "climate-energy",
+      "taughtBy": [
+        "climate-energy"
+      ]
     }
   ],
   "unknownAliasIds": [],
-  "sizeBytes": 630477,
+  "sizeBytes": 698099,
   "questionsBytes": 173024,
-  "combinedBytes": 803501,
-  "indexBytes": 80566,
+  "combinedBytes": 871123,
+  "indexBytes": 87316,
   "chunkBytes": {
     "math.nodes": 51664,
-    "math.edges": 88495,
+    "math.edges": 89636,
     "math.questions": 36438,
-    "waves.nodes": 37581,
-    "waves.edges": 58305,
+    "waves.nodes": 45855,
+    "waves.edges": 63594,
     "waves.questions": 24627,
     "circuits.nodes": 15409,
-    "circuits.edges": 21940,
+    "circuits.edges": 22899,
     "circuits.questions": 12351,
     "systems.nodes": 21522,
-    "systems.edges": 42813,
+    "systems.edges": 43469,
     "systems.questions": 21577,
     "measurement.nodes": 35687,
-    "measurement.edges": 60324,
+    "measurement.edges": 61562,
     "measurement.questions": 30144,
     "matter.nodes": 14023,
     "matter.edges": 14063,
     "matter.questions": 7898,
-    "life.nodes": 19756,
-    "life.edges": 18673,
+    "life.nodes": 26735,
+    "life.edges": 23263,
     "life.questions": 2806,
-    "earth.nodes": 12658,
-    "earth.edges": 10953,
+    "earth.nodes": 25871,
+    "earth.edges": 19025,
     "earth.questions": 6822,
     "computing.nodes": 19139,
     "computing.edges": 18476,
     "computing.questions": 2766,
-    "society.nodes": 42623,
-    "society.edges": 27453,
+    "society.nodes": 49933,
+    "society.edges": 32751,
     "society.questions": 3743,
     "tech.nodes": 9437,
     "tech.edges": 9209
   },
-  "searchBytes": 153141
+  "searchBytes": 180012
 }

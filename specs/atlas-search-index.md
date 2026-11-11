@@ -242,6 +242,19 @@ anchor and aliases. It is a schema-2 fragment `atlas/graph/lessons/<slug>.json`:
 - Regions (2026-11-11): `tech` has its own region (技术与设备 / Technology & devices); the categories
   `economics` and `society` both map to the existing society region (经济与社会 / Economy & society),
   whose label already names the economy, which brings it to 33 concepts, the size of the other regions.
+- Second batch (2026-11-11): what-is-a-black-hole and why-the-planet-warms → earth, how-vaccines-work → life,
+  why-the-sky-is-blue → waves (physics default), where-a-mortgage-payment-goes → society; 43 concepts, 40
+  hand-written edges (22 between chapters, 18 to pages the chapters link to in their text). One word, one
+  owner: when a new essay is the better landing for a plain word, the word moves off the older concept
+  instead of both competing. 打疫苗 / 为什么要打疫苗 / vaccines / vaccination left body-in-balance
+  `herd-immunity-threshold` (群体免疫 / herd immunity stay there) for how-vaccines-work #ch2; the mortgage
+  words (等额本息, 提前还款, 提前还贷, 还款计划表, 月供, mortgage, amortization schedule, prepayment, …) left
+  where-money-comes-from `loan-amortisation` (#ch7, now 贷款摊还 / loan amortisation) for the mortgage essay,
+  whose page tag is the singular "Mortgage" so "mortgage" opens its page top like 房贷. Plain words added so
+  the chapter wins its tie with the page tag: 黑洞 / black hole on #ch1, 疫苗 on vaccines #ch2, 疫苗有效率
+  on #ch4, 气候敏感度 / climate sensitivity on climate #ch5; climate #ch2's English title now starts with
+  "Greenhouse effect" (was "The greenhouse effect …", which lost to climate-energy on the tie).
+  `tests/concept-search.cjs` pins 15 zh/en pairs for these essays.
 
 ### Commands for the integrator
 

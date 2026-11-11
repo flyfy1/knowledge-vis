@@ -28,7 +28,7 @@
     },
     {
       "id": "greenhouse-one-layer",
-      "title": { "zh": "温室效应：一层只挡红外的大气", "en": "The greenhouse effect as one infrared-absorbing layer" },
+      "title": { "zh": "温室效应：一层只挡红外的大气", "en": "Greenhouse effect: one infrared-absorbing layer" },
       "desc": { "zh": "空气层让阳光通过、吸收地面红外并向下退回一半，地面要放出更多热才能平衡；吸收比例 0.76 时地面正好 288 K。", "en": "A layer that passes sunlight but absorbs ground infrared sends half back down, so the ground must run warmer; absorbing 76 % gives exactly 288 K." },
       "aliases": { "zh": ["温室效应", "温室气体", "大气逆辐射", "温室效应是什么", "为什么有大气地球更暖", "单层大气模型"], "en": ["greenhouse effect", "greenhouse gases", "back radiation", "what is the greenhouse effect", "why does an atmosphere warm the surface", "one-layer atmosphere model"] },
       "anchor": "#ch2",
@@ -54,7 +54,7 @@
       "id": "climate-feedbacks",
       "title": { "zh": "气候反馈：一度变三度", "en": "Climate feedbacks: one degree becomes three" },
       "desc": { "zh": "加倍二氧化碳本身只带来约 1.2 K；水汽、冰雪和云把升温一轮一轮放大，合起来到约 3.4 K。", "en": "Doubling CO₂ alone gives about 1.2 K; water vapour, ice and clouds amplify it round by round to about 3.4 K." },
-      "aliases": { "zh": ["气候反馈", "水汽反馈", "冰雪反照率反馈", "云反馈", "正反馈", "普朗克反馈", "平衡气候敏感度"], "en": ["climate feedback", "water vapour feedback", "ice-albedo feedback", "cloud feedback", "positive feedback", "Planck feedback", "equilibrium climate sensitivity"] },
+      "aliases": { "zh": ["气候反馈", "水汽反馈", "冰雪反照率反馈", "云反馈", "正反馈", "普朗克反馈", "平衡气候敏感度", "气候敏感度"], "en": ["climate feedback", "climate sensitivity", "water vapour feedback", "ice-albedo feedback", "cloud feedback", "positive feedback", "Planck feedback", "equilibrium climate sensitivity"] },
       "anchor": "#ch5",
       "relatedPages": ["climate-feedback"]
     },

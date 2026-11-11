@@ -21,7 +21,7 @@
       "id": "schwarzschild-radius",
       "title": { "zh": "逃逸速度与史瓦西半径", "en": "Escape speed and the Schwarzschild radius" },
       "desc": { "zh": "质量压得越小逃逸速度越大，压到 rₛ = 2GM/c² 时等于光速；这是启发式算法，真正的视界来自广义相对论。", "en": "Squeeze a mass and its escape speed rises until it reaches c at r_s = 2GM/c²; a heuristic that happens to match the horizon of general relativity." },
-      "aliases": { "zh": ["史瓦西半径", "事件视界", "视界", "逃逸速度", "黑洞是什么", "光为什么逃不出黑洞", "地球变成黑洞有多大"], "en": ["Schwarzschild radius", "event horizon", "escape velocity", "what is a black hole", "why can't light escape a black hole", "how small would Earth be as a black hole"] },
+      "aliases": { "zh": ["黑洞", "史瓦西半径", "事件视界", "视界", "逃逸速度", "黑洞是什么", "光为什么逃不出黑洞", "地球变成黑洞有多大"], "en": ["black hole", "Schwarzschild radius", "event horizon", "escape velocity", "what is a black hole", "why can't light escape a black hole", "how small would Earth be as a black hole"] },
       "anchor": "#ch1",
       "relatedPages": ["gravity-orbits"]
     },

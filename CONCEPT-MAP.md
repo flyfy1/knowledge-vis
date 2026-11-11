@@ -2592,10 +2592,88 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 
 图谱关系：章与章之间 11 条（多为后一章复用前一章的模型或结论）；跨页关系连到站内 place-value、binary-search#step0、negative-numbers#step0。概念清单与别名见 `computing/systems/switches-that-compute/REGISTRY.json`。
 
+## 黑洞到底是什么（长文，2026-11-11，Claude Code 新增；独立评审：另一个 Claude Code 会话）
+
+| 概念（中 / EN） | 专讲 path#章 | 那一章讲清什么 |
+| --- | --- | --- |
+| 逃逸速度与史瓦西半径 / Escape speed and the Schwarzschild radius | earth/astronomy/what-is-a-black-hole#ch1 | 质量压得越小逃逸速度越大，压到 rₛ = 2GM/c² 时等于光速；这是启发式算法，真正的视界来自广义相对论。 |
+| 黑洞的大小与“密度” / Black hole size and 'density' | earth/astronomy/what-is-a-black-hole#ch2 | 视界半径和质量成正比，按体积平均的“密度”与质量平方成反比：超大质量黑洞可以比水还稀。 |
+| 黑洞不会“吸” / Black holes don't suck | earth/astronomy/what-is-a-black-hole#ch3 | 同样的距离，黑洞的引力和同样重的恒星一样：把太阳换成同质量的黑洞，地球轨道不变。 |
+| 最内稳定圆轨道与光子球 / Innermost stable orbit and the photon sphere | earth/astronomy/what-is-a-black-hole#ch4 | 离黑洞几个 rₛ 以内引力比牛顿说的强：轨道进动，3 rₛ 以内没有稳定圆轨道，1.5 rₛ 处光可以绕圈。 |
+| 潮汐力与面条化 / Tides and spaghettification | earth/astronomy/what-is-a-black-hole#ch5 | 头脚之间的引力差在视界上与质量平方成反比：小黑洞在视界外就把人撕开，大黑洞可以平安穿过。 |
+| 引力时间膨胀与引力红移 / Gravitational time dilation and redshift | earth/astronomy/what-is-a-black-hole#ch6 | 悬停在 r 处的钟按 √(1 − rₛ/r) 变慢，越近视界越慢；GPS 卫星每天要为此修正几十微秒。 |
+| 黑洞的影子 / The black hole shadow | earth/astronomy/what-is-a-black-hole#ch7 | 瞄准中心 2.6 rₛ 以内的光都被吞掉，所以看到的黑影约是视界的 2.6 倍；EHT 拍到的人马座 A* 与之一致。 |
+| 恒星 S2 称出人马座 A* / Weighing Sgr A* with the star S2 | earth/astronomy/what-is-a-black-hole#ch8 | S2 绕银河系中心一圈 16 年，开普勒第三定律给出约 426 万个太阳质量挤在约 120 个日地距离以内。 |
+| 引力波与黑洞合并 / Gravitational waves from merging black holes | earth/astronomy/what-is-a-black-hole#ch9 | 两个黑洞绕转时辐射引力波、越绕越快，频率上扫成“啁啾”；GW150914 是 36 和 29 个太阳质量的合并。 |
+| 黑洞到底是什么：霍金辐射与本页的边界 / What a black hole is: Hawking radiation and the limits | earth/astronomy/what-is-a-black-hole#ch10 | 总结：远看是质量，近看改变轨道、时间和光；霍金辐射对天体黑洞可以忽略，视界以内本页不做断言。 |
+
+图谱关系：章与章之间 3 条（后一章复用前一章的模型或结论）；跨页关系 3 条，连到站内概念 gravity-orbits、relativity、gravitational-lensing。概念清单与别名见 `earth/astronomy/what-is-a-black-hole/REGISTRY.json`。
+
+## 疫苗是怎么保护人的（长文，2026-11-11，Claude Code 新增；独立评审：另一个 Claude Code 会话）
+
+| 概念（中 / EN） | 专讲 path#章 | 那一章讲清什么 |
+| --- | --- | --- |
+| 初次免疫应答：和病毒赛跑 / Primary immune response: the race against the virus | biology/body/how-vaccines-work#ch1 | 病毒几个小时翻一倍，没见过它的 B 细胞从很低的起点扩增，一个多星期才追上；病已经生了。 |
+| 二次免疫应答与记忆细胞 / Secondary response and memory cells | biology/body/how-vaccines-work#ch2 | 疫苗让免疫系统先打一场没有危险的仗，留下记忆细胞；第二次应答起点高，所以又快又多。抗体会消退，记忆细胞撑得久得多。 |
+| 防感染与防重症 / Protection against infection vs severe disease | biology/body/how-vaccines-work#ch3 | 抗体在门口拦，几个月就变薄；记忆细胞在里面追。所以打过疫苗的人仍可能被感染，但病毒涨得低、病得轻得多。 |
+| 疫苗效力：相对风险降低 / Vaccine efficacy as relative risk reduction | biology/body/how-vaccines-work#ch4 | 效力 = 1 − 两组发病风险之比，用随机对照试验的病例数算出；它不是“打了的人里有多少会生病”，也不告诉你绝对风险和不确定性。 |
+| 病例里打过疫苗的比例 / The vaccinated share of cases | biology/body/how-vaccines-work#ch5 | 接种率越高，病例里打过疫苗的人越多，哪怕疫苗很有效；接种率超过 1 ÷ (2 − 效力) 时，病例里就以打过疫苗的人居多。 |
+| 需要的接种率：阈值 ÷ 效力 / Coverage needed: threshold ÷ efficacy | biology/body/how-vaccines-work#ch6 | 疫苗不完美时，挡住流行需要的接种率是 (1 − 1/R₀) ÷ 效力；超过 100% 时光靠这种疫苗挡不住。接种率越接近这个线，打不了针的婴儿越安全。 |
+| 保护消退与加强针 / Waning protection and boosters | biology/body/how-vaccines-work#ch7 | 保护按半衰期消退，每个病例能传给的人数慢慢爬回 1 以上；回到 1 要多久按对数取决于余量，加强间隔要赶在它前面。 |
+| 读懂疫苗数字的三个问题 / Three questions for any vaccine number | biology/body/how-vaccines-work#ch8 | 防的是什么、什么时候测的？跟谁比、分母是多少？够不够挡住传播？ |
+
+图谱关系：章与章之间 4 条（后一章复用前一章的模型或结论）；跨页关系 4 条，连到站内概念 relative-vs-absolute-risk、base-rate-neglect、epidemic-r0、herd-immunity-threshold。概念清单与别名见 `biology/body/how-vaccines-work/REGISTRY.json`。
+
+## 一点点二氧化碳 · 地球为什么会变暖（长文，2026-11-11，Claude Code 新增；独立评审：另一个 Claude Code 会话）
+
+| 概念（中 / EN） | 专讲 path#章 | 那一章讲清什么 |
+| --- | --- | --- |
+| 行星能量平衡与有效温度 / Planetary energy balance and effective temperature | earth/climate/why-the-planet-warms#ch1 | 吸收的阳光 S(1−α)/4 要等于放出的红外 σT⁴；没有大气的地球会停在约 255 K，比观测的 288 K 冷 33 K。 |
+| 温室效应：一层只挡红外的大气 / Greenhouse effect: one infrared-absorbing layer | earth/climate/why-the-planet-warms#ch2 | 空气层让阳光通过、吸收地面红外并向下退回一半，地面要放出更多热才能平衡；吸收比例 0.76 时地面正好 288 K。 |
+| 排放高度：越高越冷，从高处散热 / Emission height: cooler air higher up radiates to space | earth/climate/why-the-planet-warms#ch3 | 地球向太空散热的地方在高空，高空总是那个约 255 K；加厚大气把排放层抬高，下面就要更暖。 |
+| “已经饱和”与对数强迫 / "Already saturated" and logarithmic forcing | earth/climate/why-the-planet-warms#ch4 | 15 微米吸收带的中心早已不透明，但两侧的坡随浓度变黑，所以每翻一倍挡住的红外差不多一样多：约 3.7–4.7 W/m²。 |
+| 气候反馈：一度变三度 / Climate feedbacks: one degree becomes three | earth/climate/why-the-planet-warms#ch5 | 加倍二氧化碳本身只带来约 1.2 K；水汽、冰雪和云把升温一轮一轮放大，合起来到约 3.4 K。 |
+| 为什么敏感度的区间这么宽 / Why the climate sensitivity range is so wide | earth/climate/why-the-planet-warms#ch6 | 敏感度 = 无反馈升温 ÷ (1 − f)。f 的不确定是对称的，除出来的敏感度却拖着一条长长的高尾巴。 |
+| 海洋的拖延与时间常数 / Ocean lag and the time constant | earth/climate/why-the-planet-warms#ch7 | 海洋像一锅需要慢慢烧开的水：二氧化碳加倍那年只走完一部分升温，剩下的要几十到几百年，取决于参与的水有多深。 |
+
+图谱关系：章与章之间 4 条（后一章复用前一章的模型或结论）；跨页关系 5 条，连到站内概念 blackbody-radiation、climate-energy、exp-log、climate-feedback、carbon-cycle。概念清单与别名见 `earth/climate/why-the-planet-warms/REGISTRY.json`。
+
+## 天为什么是蓝的（长文，2026-11-11，Claude Code 新增；独立评审：另一个 Claude Code 会话）
+
+| 概念（中 / EN） | 专讲 path#章 | 那一章讲清什么 |
+| --- | --- | --- |
+| 天空光是被空气拐弯的阳光 / Skylight is sunlight scattered by air | physics/optics/why-the-sky-is-blue#ch1 | 天空本身不发光；整层空气拐走约 20% 的蓝光、约 5% 的红光，落到地面的那一半就是天空的光。 |
+| 瑞利散射的 1/λ⁴ 定律 / Rayleigh's 1/λ⁴ law | physics/optics/why-the-sky-is-blue#ch2 | 比光波小得多的粒子里，电子被光推着晃，发出的光强与频率的四次方成正比，所以 450 纳米蓝光的散射约是 700 纳米红光的 6 倍。 |
+| 天空光的光谱峰在紫外 / The skylight spectrum peaks in the ultraviolet | physics/optics/why-the-sky-is-blue#ch3 | 把黑体阳光的光谱乘上 1/λ⁴，模型里的最强处从约 500 纳米挪到紫外（真实阳光的紫外到地面前已被臭氧吸收）；可见范围内，紫光段的能量多于蓝光段。 |
+| 为什么天不是紫的：眼睛的三种视锥 / Why the sky isn't violet: the eye's three cones | physics/optics/why-the-sky-is-blue#ch4 | 眼睛只报告三种视锥各被激发多少；紫光段带来 44% 的能量却只贡献约 1% 的亮度，整片光谱读出来是掺了白的蓝（主波长 476 纳米）。 |
+| 落日为什么是红的：大气质量 / Why sunsets are red: air mass | physics/optics/why-the-sky-is-blue#ch5 | 太阳越低，光在空气里走的路越长（贴着地平线约 38 倍），蓝光被拐走得最多，剩下橙红。 |
+| 头顶最蓝、地平线发白 / Deepest blue overhead, white at the horizon | physics/optics/why-the-sky-is-blue#ch6 | 看向地平线时视线很长，拐进来的蓝光又在半路被拐走，颜色趋向照亮空气的阳光本身；远山发淡发白是同一回事（空气透视）。 |
+| 米氏散射：云为什么是白的 / Mie scattering: why clouds are white | physics/optics/why-the-sky-is-blue#ch7 | 颗粒比光波大得多时（云滴约 4–17 微米），各种颜色被散射得差不多一样多；和光波差不多大时，散射起伏，甚至偏爱红光，让太阳发蓝。 |
+| 火星的天空：黄褐的白天、蓝色的日落 / The Martian sky: butterscotch by day, blue at sunset | physics/optics/why-the-sky-is-blue#ch8 | 火星空气太稀（440 纳米的瑞利光学厚度约 0.01），天空颜色由微米级、吸收蓝光的尘埃决定；尘埃把蓝光向前散射，日落时太阳附近发蓝。 |
+| 多次散射与臭氧：简单模型漏掉的 / Multiple scattering and ozone: what the simple model misses | physics/optics/why-the-sky-is-blue#ch9 | 天顶约四分之一的蓝光被拐过不止一次；黄昏时天顶仍然是蓝的，主要靠臭氧 Chappuis 带的吸收（太阳在地平线时约占 66%）。 |
+
+图谱关系：章与章之间 6 条（后一章复用前一章的模型或结论）；跨页关系 2 条，连到站内概念 blackbody-radiation、interference。概念清单与别名见 `physics/optics/why-the-sky-is-blue/REGISTRY.json`。
+
+## 每个月的房贷，钱到底还到哪儿去了（长文，2026-11-11，Claude Code 新增；独立评审：另一个 Claude Code 会话）
+
+| 概念（中 / EN） | 专讲 path#章 | 那一章讲清什么 |
+| --- | --- | --- |
+| 名义年利率、月利率与实际年利率 / Nominal rate, periodic rate and effective annual rate | economics/money/where-a-mortgage-payment-goes#ch1 | 年利率 4% 按月计息时，每月用 0.333%，滚满一年是 4.07%：同一个利率的三个名字。 |
+| 月供公式（等额本息） / The level-payment (annuity) formula | economics/money/where-a-mortgage-payment-goes#ch2 | 月供是让欠款在最后一个月正好还清的那个数：M = P·i ÷ (1 − (1 + i)^−n)。 |
+| 还款表：为什么前几年主要还利息 / The amortisation schedule: why early payments are mostly interest | economics/money/where-a-mortgage-payment-goes#ch3 | 利息按还欠着的钱算，所以前几年月供大多是利息；4%、30 年的贷款要到第 153 个月本金才超过利息。 |
+| 等额本金与等额本息 / Equal-principal versus equal-payment repayment | economics/money/where-a-mortgage-payment-goes#ch4 | 等额本金总利息少，只是因为平均欠得少；按贷款利率折现，两种还法都正好等于借的钱。 |
+| 提前还款：缩短年限还是减少月供 / Prepaying: shorten the term or lower the payment | economics/money/where-a-mortgage-payment-goes#ch5 | 提前还的钱直接减本金；省多少利息取决于何时还、怎么还，但按贷款利率折现两种方式都正好减少那笔钱。 |
+| 浮动利率：利率变了月供怎么变 / Floating rates: what a rate change does to the payment | economics/money/where-a-mortgage-payment-goes#ch6 | 利率重定后，要么按剩余年限重算月供，要么月供不变、年限变；月供不够付利息时欠款会越还越多。 |
+| 真实年利率：内部收益率与分期手续费 / The true annual rate: IRR and flat-fee instalments | economics/money/where-a-mortgage-payment-goes#ch7 | 按原始本金收手续费的分期，真实年利率远高于表面数字（例子里 12 期约为 1.8 倍）；用内部收益率把所有现金流折平就能算出来。 |
+| 通胀、实际利率与提前还贷的机会成本 / Inflation, the real rate and the opportunity cost of prepaying | economics/money/where-a-mortgage-payment-goes#ch8 | 通胀让固定月供变轻；比较提前还贷和另作他用（都按名义收益算），标尺是贷款利率而不是通胀。 |
+| 拿到贷款合同时能自己算的事 / What you can work out from a loan contract | economics/money/where-a-mortgage-payment-goes#ch9 | 三个问题：每期利率多少、费用按什么算、什么会改变还款表。 |
+
+图谱关系：章与章之间 5 条（后一章复用前一章的模型或结论）；跨页关系 4 条，连到站内概念 compound-interest、loan-amortisation、monetary-transmission、inflation-winners-losers。概念清单与别名见 `economics/money/where-a-mortgage-payment-goes/REGISTRY.json`。
+
 <!-- GENERATED:atlas-nodes -->
 ## 三、图谱节点索引（生成，勿手改）
 
-291 个概念 · 483 条关系 · 11 个分区 · 由 scripts/build-atlas-data.cjs --concept-map 生成。节点排序与 data.js 一致（分区序、学段序、order、id）。
+349 个概念 · 523 条关系 · 11 个分区 · 由 scripts/build-atlas-data.cjs --concept-map 生成。节点排序与 data.js 一致（分区序、学段序、order、id）。
 
 ### 01 数学基础 / Mathematical tools
 
@@ -2682,8 +2760,17 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 简谐振动 / Harmonic motion | https://openstax.org/books/university-physics-volume-1/pages/15-1-simple-harmonic-motion | — |
 | 抛体与圆周 / Projectiles & Circular Motion | ../physics/mechanics/projectile-circular/#step4 | projectile-circular#step4 |
 | 地震波探地心 / Seismic Waves Probing the Earth’s Core | ../earth/geo/seismic-waves/#step3 | seismic-waves#step3 |
+| 天空光是被空气拐弯的阳光 / Skylight is sunlight scattered by air | ../physics/optics/why-the-sky-is-blue/#ch1 | why-the-sky-is-blue |
 | 驻波 · 波节与波腹 / Standing waves · nodes and antinodes | ../physics/waves/standing-wave/#step1 | standing-wave#step1 |
 | 功与能量变化 / Work & energy changes | https://openstax.org/books/university-physics-volume-1/pages/7-3-work-energy-theorem | — |
+| 瑞利散射的 1/λ⁴ 定律 / Rayleigh's 1/λ⁴ law | ../physics/optics/why-the-sky-is-blue/#ch2 | why-the-sky-is-blue |
+| 天空光的光谱峰在紫外 / The skylight spectrum peaks in the ultraviolet | ../physics/optics/why-the-sky-is-blue/#ch3 | why-the-sky-is-blue |
+| 为什么天不是紫的：眼睛的三种视锥 / Why the sky isn't violet: the eye's three cones | ../physics/optics/why-the-sky-is-blue/#ch4 | why-the-sky-is-blue |
+| 落日为什么是红的：大气质量 / Why sunsets are red: air mass | ../physics/optics/why-the-sky-is-blue/#ch5 | why-the-sky-is-blue |
+| 头顶最蓝、地平线发白 / Deepest blue overhead, white at the horizon | ../physics/optics/why-the-sky-is-blue/#ch6 | why-the-sky-is-blue |
+| 米氏散射：云为什么是白的 / Mie scattering: why clouds are white | ../physics/optics/why-the-sky-is-blue/#ch7 | why-the-sky-is-blue |
+| 火星的天空：黄褐的白天、蓝色的日落 / The Martian sky: butterscotch by day, blue at sunset | ../physics/optics/why-the-sky-is-blue/#ch8 | why-the-sky-is-blue |
+| 多次散射与臭氧：简单模型漏掉的 / Multiple scattering and ozone: what the simple model misses | ../physics/optics/why-the-sky-is-blue/#ch9 | why-the-sky-is-blue |
 | 双缝实验 / The double-slit experiment | ../physics/modern/double-slit/#step2 | double-slit#step2 |
 | 傅里叶分析 / Fourier analysis | ../signal/transforms/fourier/#step5 | fourier#step5 |
 | 引力透镜 / Gravitational lensing | ../earth/astronomy/gravitational-lensing/#step2 | gravitational-lensing#step2 |
@@ -2786,7 +2873,7 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 贝叶斯更新 / Bayesian updating | ../probability/inference/bayes-updating/#step1 | bayes-updating#step1 |
 | 交叉熵与 KL 散度 / Cross-entropy & KL divergence | ../probability/stochastic/entropy/#step5 | entropy#step5 |
 | 决策树与信息增益 / Decision trees & information gain | ../computing/ml/decision-trees/#step1 | decision-trees#step1 |
-| 正态分布与中心极限定理 / Normal distributions & CLT | ../probability/statistics/central-limit-theorem/#step3 | central-limit-theorem#step3 |
+| 正态分布与中心极限定理 / Normal distributions & CLT | ../probability/statistics/central-limit-theorem/#step2 | central-limit-theorem#step2 |
 | 假设检验与 p 值 / Hypothesis testing & p-values | ../probability/inference/hypothesis-testing/#step0 | hypothesis-testing#step0, statistical-inference#step2 |
 | 信息熵 · 惊讶的平均值 / Information entropy · the average surprise | ../probability/stochastic/entropy/#step2 | entropy#step2 |
 | 卡尔曼滤波 / Kalman filtering | ../signal/control/kalman/#step2 | kalman#step2 |
@@ -2823,7 +2910,7 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 
 | 概念 | 来源 | 课程 |
 | --- | --- | --- |
-| 血液循环 / Blood circulation | ../biology/body/blood-circulation/#step3 | blood-circulation#step3 |
+| 血液循环 / Blood circulation | ../biology/body/blood-circulation/#step1 | blood-circulation#step1 |
 | 细胞 · 生命的最小单位间 / The Cell · Life's Smallest Workshop | ../biology/cells/cell-structure/#step1 | cell-structure#step1 |
 | 食物网 / Food webs | ../biology/ecology/food-web/#step1 | food-web#step1 |
 | 光合作用 / Photosynthesis | ../biology/cells/photosynthesis/#step1 | photosynthesis#step1 |
@@ -2832,16 +2919,24 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 逻辑斯蒂增长 · S 形曲线 / Logistic growth · the S-shaped curve | ../biology/ecology/logistic-growth/#step2 | logistic-growth#step2, population-ecology#step1 |
 | 膜运输 · 扩散、渗透与泵 / Membrane transport · diffusion, osmosis and pumps | ../biology/cells/membrane-transport/ | membrane-transport |
 | 捕食者与猎物 · 延迟带来的起伏 / Predators & prey · oscillations from delay | ../biology/ecology/population-ecology/#step2 | population-ecology#step2 |
+| 初次免疫应答：和病毒赛跑 / Primary immune response: the race against the virus | ../biology/body/how-vaccines-work/#ch1 | how-vaccines-work |
 | 静息电位 · 离子梯度的账本 / The resting potential · an ion-gradient ledger | ../biology/body/neuroscience-basics/#step0 | neuroscience-basics#step0 |
 | 进出平衡与设定点 / Inflow, outflow and the set point | ../biology/body/body-in-balance/#ch1 | body-in-balance |
 | 工作记忆与注意 / Working memory & attention | ../psychology/cognition/memory-attention/#step0 | memory-attention#step0 |
 | 半衰期与给药平台 / Half-life and the dosing plateau | ../biology/body/body-in-balance/#ch2 | body-in-balance |
+| 二次免疫应答与记忆细胞 / Secondary response and memory cells | ../biology/body/how-vaccines-work/#ch2 | how-vaccines-work |
 | 酒精的零级消除 / Zero-order elimination of alcohol | ../biology/body/body-in-balance/#ch3 | body-in-balance |
+| 防感染与防重症 / Protection against infection vs severe disease | ../biology/body/how-vaccines-work/#ch3 | how-vaccines-work |
 | 血糖的负反馈 / Blood glucose as negative feedback | ../biology/body/body-in-balance/#ch4 | body-in-balance |
+| 疫苗效力：相对风险降低 / Vaccine efficacy as relative risk reduction | ../biology/body/how-vaccines-work/#ch4 | how-vaccines-work |
 | 发烧是设定点上调 / Fever as a raised set point | ../biology/body/body-in-balance/#ch5 | body-in-balance |
+| 病例里打过疫苗的比例 / The vaccinated share of cases | ../biology/body/how-vaccines-work/#ch5 | how-vaccines-work |
 | 剂量—反应与治疗窗 / Dose–response and the therapeutic window | ../biology/body/body-in-balance/#ch6 | body-in-balance |
+| 需要的接种率：阈值 ÷ 效力 / Coverage needed: threshold ÷ efficacy | ../biology/body/how-vaccines-work/#ch6 | how-vaccines-work |
 | 心输出量 = 心率 × 每搏量 / Cardiac output = heart rate × stroke volume | ../biology/body/body-in-balance/#ch7 | body-in-balance |
+| 保护消退与加强针 / Waning protection and boosters | ../biology/body/how-vaccines-work/#ch7 | how-vaccines-work |
 | 抗生素与耐药的筛选 / Antibiotics and selection for resistance | ../biology/body/body-in-balance/#ch8 | body-in-balance |
+| 读懂疫苗数字的三个问题 / Three questions for any vaccine number | ../biology/body/how-vaccines-work/#ch8 | how-vaccines-work |
 | 群体免疫阈值 / Herd immunity threshold | ../biology/body/body-in-balance/#ch9 | body-in-balance |
 
 ### 08 地球与宇宙 / Earth & cosmos
@@ -2857,7 +2952,24 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 碳循环 / The carbon cycle | ../earth/climate/carbon-cycle/#step2 | carbon-cycle#step2 |
 | 气候能量账本 / Climate energy budget | ../earth/climate/climate-energy/#step2 | climate-energy#step2 |
 | 气候反馈 · 放大或削弱初始升温 / Climate feedbacks · amplifying or damping the first warming | ../earth/climate/climate-feedback/#step2 | climate-feedback#step2 |
+| 行星能量平衡与有效温度 / Planetary energy balance and effective temperature | ../earth/climate/why-the-planet-warms/#ch1 | why-the-planet-warms |
 | 板块构造 · 三种边界 / Plate tectonics · three kinds of boundary | ../earth/geo/plate-tectonics/#step1 | plate-tectonics#step1 |
+| 逃逸速度与史瓦西半径 / Escape speed and the Schwarzschild radius | ../earth/astronomy/what-is-a-black-hole/#ch1 | what-is-a-black-hole |
+| 黑洞的大小与“密度” / Black hole size and 'density' | ../earth/astronomy/what-is-a-black-hole/#ch2 | what-is-a-black-hole |
+| 温室效应：一层只挡红外的大气 / Greenhouse effect: one infrared-absorbing layer | ../earth/climate/why-the-planet-warms/#ch2 | why-the-planet-warms |
+| 黑洞不会“吸” / Black holes don't suck | ../earth/astronomy/what-is-a-black-hole/#ch3 | what-is-a-black-hole |
+| 排放高度：越高越冷，从高处散热 / Emission height: cooler air higher up radiates to space | ../earth/climate/why-the-planet-warms/#ch3 | why-the-planet-warms |
+| “已经饱和”与对数强迫 / "Already saturated" and logarithmic forcing | ../earth/climate/why-the-planet-warms/#ch4 | why-the-planet-warms |
+| 最内稳定圆轨道与光子球 / Innermost stable orbit and the photon sphere | ../earth/astronomy/what-is-a-black-hole/#ch4 | what-is-a-black-hole |
+| 气候反馈：一度变三度 / Climate feedbacks: one degree becomes three | ../earth/climate/why-the-planet-warms/#ch5 | why-the-planet-warms |
+| 潮汐力与面条化 / Tides and spaghettification | ../earth/astronomy/what-is-a-black-hole/#ch5 | what-is-a-black-hole |
+| 引力时间膨胀与引力红移 / Gravitational time dilation and redshift | ../earth/astronomy/what-is-a-black-hole/#ch6 | what-is-a-black-hole |
+| 为什么敏感度的区间这么宽 / Why the climate sensitivity range is so wide | ../earth/climate/why-the-planet-warms/#ch6 | why-the-planet-warms |
+| 黑洞的影子 / The black hole shadow | ../earth/astronomy/what-is-a-black-hole/#ch7 | what-is-a-black-hole |
+| 海洋的拖延与时间常数 / Ocean lag and the time constant | ../earth/climate/why-the-planet-warms/#ch7 | why-the-planet-warms |
+| 恒星 S2 称出人马座 A* / Weighing Sgr A* with the star S2 | ../earth/astronomy/what-is-a-black-hole/#ch8 | what-is-a-black-hole |
+| 引力波与黑洞合并 / Gravitational waves from merging black holes | ../earth/astronomy/what-is-a-black-hole/#ch9 | what-is-a-black-hole |
+| 黑洞到底是什么：霍金辐射与本页的边界 / What a black hole is: Hawking radiation and the limits | ../earth/astronomy/what-is-a-black-hole/#ch10 | what-is-a-black-hole |
 | 宇宙膨胀 · 哈勃定律 / Cosmic expansion · Hubble’s law | ../earth/astronomy/cosmology-expansion/#step1 | cosmology-expansion#step1 |
 | 开普勒轨道 · 椭圆、速度与凌日 / Kepler orbits · ellipses, speed and transits | ../earth/astronomy/kepler-orbits/ | kepler-orbits |
 
@@ -2900,31 +3012,55 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 费率与复利 · 1% 吃掉多少 / Fees & compounding · what 1% really costs | ../investment/rates/fees-compounding/#step1 | fees-compounding#step1 |
 | 利率与债券价格 · 利率升，债价跌 / Interest rates & bond prices · rates up, prices down | ../investment/rates/interest-rates-bonds/#step3 | interest-rates-bonds#step3 |
 | 钱是一张人人都收的欠条 / Money as an IOU everyone accepts | ../economics/money/where-money-comes-from/#ch1 | where-money-comes-from |
+| 名义年利率、月利率与实际年利率 / Nominal rate, periodic rate and effective annual rate | ../economics/money/where-a-mortgage-payment-goes/#ch1 | where-a-mortgage-payment-goes |
 | 音位与最小对立 / Phonemes & minimal pairs | ../language/phonology/phonemes/#step1 | phonemes#step1 |
 | 无知之幕 · 平均原则与最大最小原则 / The veil of ignorance · average rule vs maximin | ../psychology/ethics/veil-of-ignorance/#step0 | veil-of-ignorance#step0 |
 | 五种计票规则 / Five counting rules | ../society/civics/same-votes-different-winner/#ch1 | same-votes-different-winner |
 | 元音空间 · 共振峰 F1 与 F2 / Vowel space · formants F1 and F2 | ../language/phonology/vowel-space/#step1 | vowel-space#step1 |
+| 月供公式（等额本息） / The level-payment (annuity) formula | ../economics/money/where-a-mortgage-payment-goes/#ch2 | where-a-mortgage-payment-goes |
 | 贷款创造存款 / Loans create deposits | ../economics/money/where-money-comes-from/#ch2 | where-money-comes-from |
 | 搅局者与无关选项独立 / The spoiler effect and independence of irrelevant alternatives | ../society/civics/same-votes-different-winner/#ch2 | same-votes-different-winner |
+| 还款表：为什么前几年主要还利息 / The amortisation schedule: why early payments are mostly interest | ../economics/money/where-a-mortgage-payment-goes/#ch3 | where-a-mortgage-payment-goes |
 | 银行挤兑与存款保险 / Bank runs and deposit insurance | ../economics/money/where-money-comes-from/#ch3 | where-money-comes-from |
 | 迪韦尔热倾向 / Duverger's tendency | ../society/civics/same-votes-different-winner/#ch2 | same-votes-different-winner |
+| 等额本金与等额本息 / Equal-principal versus equal-payment repayment | ../economics/money/where-a-mortgage-payment-goes/#ch4 | where-a-mortgage-payment-goes |
 | 中位选民定理 / The median voter theorem | ../society/civics/same-votes-different-winner/#ch3 | same-votes-different-winner |
 | 货币数量与通胀 / Money growth and inflation | ../economics/money/where-money-comes-from/#ch4 | where-money-comes-from |
 | 孔多塞悖论（多数循环） / The Condorcet paradox (majority cycles) | ../society/civics/same-votes-different-winner/#ch4 | same-votes-different-winner |
 | 通胀的赢家和输家 / Who wins and loses from inflation | ../economics/money/where-money-comes-from/#ch5 | where-money-comes-from |
+| 提前还款：缩短年限还是减少月供 / Prepaying: shorten the term or lower the payment | ../economics/money/where-a-mortgage-payment-goes/#ch5 | where-a-mortgage-payment-goes |
+| 浮动利率：利率变了月供怎么变 / Floating rates: what a rate change does to the payment | ../economics/money/where-a-mortgage-payment-goes/#ch6 | where-a-mortgage-payment-goes |
 | 利息是时间的价格 / Interest as the price of time | ../economics/money/where-money-comes-from/#ch6 | where-money-comes-from |
 | 策略投票与吉巴德–萨特斯韦特定理 / Strategic voting and the Gibbard–Satterthwaite theorem | ../society/civics/same-votes-different-winner/#ch5 | same-votes-different-winner |
+| 真实年利率：内部收益率与分期手续费 / The true annual rate: IRR and flat-fee instalments | ../economics/money/where-a-mortgage-payment-goes/#ch7 | where-a-mortgage-payment-goes |
 | 阿罗不可能定理 / Arrow's impossibility theorem | ../society/civics/same-votes-different-winner/#ch6 | same-votes-different-winner |
 | 等额本息与提前还款 / Loan amortisation and extra payments | ../economics/money/where-money-comes-from/#ch7 | where-money-comes-from |
 | 席位分配与阿拉巴马悖论 / Apportionment and the Alabama paradox | ../society/civics/same-votes-different-winner/#ch7 | same-votes-different-winner |
+| 通胀、实际利率与提前还贷的机会成本 / Inflation, the real rate and the opportunity cost of prepaying | ../economics/money/where-a-mortgage-payment-goes/#ch8 | where-a-mortgage-payment-goes |
 | 利率传导与时滞 / Monetary transmission and its lags | ../economics/money/where-money-comes-from/#ch8 | where-money-comes-from |
 | 选区划分与效率差距 / Gerrymandering and the efficiency gap | ../society/civics/same-votes-different-winner/#ch8 | same-votes-different-winner |
 | 购买力平价与汇率 / Purchasing power parity and exchange rates | ../economics/money/where-money-comes-from/#ch9 | where-money-comes-from |
+| 拿到贷款合同时能自己算的事 / What you can work out from a loan contract | ../economics/money/where-a-mortgage-payment-goes/#ch9 | where-a-mortgage-payment-goes |
 | 孔多塞陪审团定理 / Condorcet's jury theorem | ../society/civics/same-votes-different-winner/#ch9 | same-votes-different-winner |
 | 怎样读“这个制度很公平” / How to read a claim that a system is fair | ../society/civics/same-votes-different-winner/#ch10 | same-votes-different-winner |
 | 博弈论 / Game theory | ../math/applied/game-theory/#step0 | game-theory#step0 |
 | 机制设计与拍卖 · 报价如何改变结果 / Mechanism Design & Auctions · How Bids Change Outcomes | ../math/applied/mechanism-design/#s1 | mechanism-design |
+| 稀缺与机会成本 / Scarcity and opportunity cost | ../demos/scarcity-moves/#c1 | scarcity-moves |
 | 供需均衡 / Supply & demand equilibrium | ../math/applied/supply-demand/#step0 | supply-demand#step0 |
+| 边际：再多一点值不值 / The margin: is one more step worth it? | ../demos/scarcity-moves/#c2 | scarcity-moves |
+| 沉没成本 / Sunk cost | ../demos/scarcity-moves/#c2 | scarcity-moves |
+| 交换与比较优势 / Trade and comparative advantage | ../demos/scarcity-moves/#c3 | scarcity-moves |
+| 价格是一条信息 / Price is a piece of information | ../demos/scarcity-moves/#c4 | scarcity-moves |
+| 激励 / Incentives | ../demos/scarcity-moves/#c5 | scarcity-moves |
+| 市场会失灵 / Markets can fail | ../demos/scarcity-moves/#c6 | scarcity-moves |
+| 增长来自思想 / Growth comes from ideas | ../demos/scarcity-moves/#c7 | scarcity-moves |
+| 你的支出是别人的收入 / Your spending is someone else's income | ../demos/scarcity-moves/#c8 | scarcity-moves |
+| 收入流向稀缺的一方 / Income flows to the scarce | ../demos/scarcity-moves/#c9 | scarcity-moves |
+| 制度与信任 / Institutions and trust | ../demos/scarcity-moves/#c10 | scarcity-moves |
+| AI：思考的价格崩塌 / AI: the price of thinking collapses | ../demos/scarcity-moves/#c11 | scarcity-moves |
+| 工作与工资：AI 替代的是任务 / Work and wages: AI replaces tasks | ../demos/scarcity-moves/#c12 | scarcity-moves |
+| 什么变便宜，什么变贵 / What gets cheaper, what gets dearer | ../demos/scarcity-moves/#c13 | scarcity-moves |
+| AI 之后的整体预言 / A forecast for after AI | ../demos/scarcity-moves/#c14 | scarcity-moves |
 
 ### 11 技术与设备 / Technology & devices
 

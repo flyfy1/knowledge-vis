@@ -121,14 +121,16 @@ const chapters = [
   ['吃药为什么要按时', 'why take medicine at regular times', 'biology/body/body-in-balance/#ch2'],
   ['发烧', 'fever', 'biology/body/body-in-balance/#ch5'],
   ['群体免疫', 'herd immunity', 'biology/body/body-in-balance/#ch9'],
-  ['疫苗', 'vaccines', 'biology/body/body-in-balance/#ch9'],
+  // 疫苗 / vaccines moved to the vaccine essay (2026-11-11 second batch); herd immunity stays on body-in-balance.
+  ['疫苗', 'vaccines', 'biology/body/how-vaccines-work/#ch2'],
   ['GPS 怎么定位', 'how does GPS work', 'tech/devices/inside-a-phone/#gps'],
   ['电池为什么冬天掉电快', 'why does my phone die in the cold', 'tech/devices/inside-a-phone/#battery'],
   ['屏幕为什么只有三种颜色', 'why do screens use only three colours', 'tech/devices/inside-a-phone/#screen'],
   ['钱是怎么来的', 'where does money come from', 'economics/money/where-money-comes-from/#ch1'],
   ['银行挤兑', 'bank run', 'economics/money/where-money-comes-from/#ch3'],
   ['通货膨胀', 'inflation', 'economics/money/where-money-comes-from/#ch4'],
-  ['房贷怎么还', 'how does a mortgage work', 'economics/money/where-money-comes-from/#ch7'],
+  // Mortgage words moved to the mortgage essay (2026-11-11 second batch); its page top answers the broad question.
+  ['房贷怎么还', 'how does a mortgage work', 'economics/money/where-a-mortgage-payment-goes/'],
   ['为什么投票结果不一样', 'why do voting methods give different winners', 'society/civics/same-votes-different-winner/#ch1'],
   ['阿罗不可能定理', "Arrow's impossibility theorem", 'society/civics/same-votes-different-winner/#ch6'],
   ['选区划分', 'gerrymandering', 'society/civics/same-votes-different-winner/#ch8'],
@@ -165,6 +167,24 @@ chapters.push(
   ['心脏是怎么工作的', 'how does the heart work', 'biology/body/blood-circulation/'],
   ['音阶', 'where do scales come from', 'math/applied/music-theory/#step0'],
   ['酸和碱', 'acids and bases', 'chemistry/solutions/ph-scale/'],
+);
+// Second essay batch (2026-11-11): black hole, vaccines, climate, sky, mortgage.
+chapters.push(
+  ['黑洞', 'black hole', 'earth/astronomy/what-is-a-black-hole/#ch1'],
+  ['史瓦西半径', 'Schwarzschild radius', 'earth/astronomy/what-is-a-black-hole/#ch1'],
+  ['天为什么是蓝的', 'why is the sky blue', 'physics/optics/why-the-sky-is-blue/'],
+  ['瑞利散射', 'Rayleigh scattering', 'physics/optics/why-the-sky-is-blue/#ch1'],
+  ['打疫苗', 'vaccination', 'biology/body/how-vaccines-work/#ch2'],
+  ['疫苗有效率', 'vaccine efficacy', 'biology/body/how-vaccines-work/#ch4'],
+  ['温室效应', 'greenhouse effect', 'earth/climate/why-the-planet-warms/#ch2'],
+  ['气候敏感度', 'climate sensitivity', 'earth/climate/why-the-planet-warms/#ch5'],
+  ['二氧化碳饱和', 'CO2 saturation', 'earth/climate/why-the-planet-warms/#ch4'],
+  ['房贷', 'mortgage', 'economics/money/where-a-mortgage-payment-goes/'],
+  ['等额本息', 'equal payment repayment', 'economics/money/where-a-mortgage-payment-goes/#ch4'],
+  ['等额本金', 'equal principal repayment', 'economics/money/where-a-mortgage-payment-goes/#ch4'],
+  ['提前还款', 'mortgage prepayment', 'economics/money/where-a-mortgage-payment-goes/#ch5'],
+  ['还款计划表', 'amortization', 'economics/money/where-a-mortgage-payment-goes/#ch3'],
+  ['年化利率', 'APR', 'economics/money/where-a-mortgage-payment-goes/#ch7'],
 );
 for (const [zh, en, href] of chapters) for (const q of [zh, en]) {
   const hit = first(q);

@@ -326,7 +326,7 @@ window.KNOWLEDGE_PAGES = [
       zh: "一笔房贷每个月的钱，一部分付利息，一部分减本金。八个可以拖动的模型：名义利率与实际利率、月供公式、还款表、等额本金与等额本息、提前还款、利率变动、分期手续费的真实年利率、通胀与机会成本。",
       en: "Each month's mortgage payment splits into interest and principal. Eight models you can push: nominal and effective rates, the payment formula, the amortisation schedule, equal-principal versus equal-payment, prepaying, a rate change, the true annual rate of a flat-fee instalment plan, and inflation and opportunity cost."
     },
-    tags: [{ zh: "房贷", en: "Mortgages" }, { zh: "利率", en: "Interest rates" }, { zh: "复利", en: "Compound interest" }, { zh: "年化利率", en: "APR" }, { zh: "长文", en: "Long-form essay" }],
+    tags: [{ zh: "房贷", en: "Mortgage" }, { zh: "利率", en: "Interest rates" }, { zh: "复利", en: "Compound interest" }, { zh: "年化利率", en: "APR" }, { zh: "长文", en: "Long-form essay" }],
     category: "economics", subtopic: "money", stage: "senior", status: "live", path: "economics/money/where-a-mortgage-payment-goes/"
   },
   {

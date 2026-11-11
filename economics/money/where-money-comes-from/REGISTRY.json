@@ -72,7 +72,7 @@
       "id": "loan-amortisation",
       "title": { "zh": "等额本息与提前还款", "en": "Loan amortisation and extra payments" },
       "desc": { "zh": "每月先付剩余本金的利息，剩下才减本金，所以前几年主要在付利息；多还的钱全部减本金。", "en": "Each payment first covers interest on what is still owed and only the rest repays principal, so early payments are mostly interest; extra payments go straight to principal." },
-      "aliases": { "zh": ["房贷怎么算", "等额本息", "月供", "为什么前几年都在还利息", "提前还款", "还款计划表", "提前还贷划算吗", "提前还贷"], "en": ["how is a mortgage calculated", "amortization schedule", "monthly payment", "why early payments are mostly interest", "overpaying a mortgage", "prepayment", "mortgage", "how does a mortgage work"] },
+      "aliases": { "zh": ["贷款摊还"], "en": ["loan amortisation"] },
       "anchor": "#ch7",
       "relatedPages": ["compound-interest"]
     },
