@@ -112,7 +112,8 @@ const keys = new Set([...html.matchAll(/data-i18n(?:-html)?="([^"]+)"/g)].map(m 
 [...app.matchAll(/'(c\d+\.(?:say|ax|ctl)\.[a-z0-9.]+)'/gi)].forEach(m => keys.add(m[1]));
 for (const k of keys) ok(k in Z, 'missing copy key ' + k);
 const cjk = /[㐀-鿿＀-￯]/;
-ok(!cjk.test(html.replace(/<!--[\s\S]*?-->/g, '').replace('>中</button>', '')), 'no Chinese text in index.html (besides the 中 toggle label)');
+// The site's static provenance label (specs/visual-page-provenance.md) is bilingual by contract and not essay copy.
+ok(!cjk.test(html.replace(/<!--[\s\S]*?-->/g, '').replace(/<details class="page-provenance"[\s\S]*?<\/details>/, '').replace('>中</button>', '')), 'no Chinese text in index.html (besides the 中 toggle label and the site provenance label)');
 ok(!cjk.test(app.replace(/\/\*[\s\S]*?\*\/|\/\/.*$/gm, '')), 'no Chinese text in app.js');
 ok(!cjk.test(fs.readFileSync(path.join(dir, 'models.js'), 'utf8')), 'no Chinese text in models.js');
 for (const [k, v] of Object.entries(Z)) { const opens = (v.match(/<(strong|em|a|b)\b/g) || []).length, closes = (v.match(/<\/(strong|em|a|b)>/g) || []).length; ok(opens === closes, 'balanced tags in ' + k); }

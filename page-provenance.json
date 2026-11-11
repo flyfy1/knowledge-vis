@@ -2926,6 +2926,78 @@
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition; self-checked by the lead session (claude-opus-5-5); see specs/claude-code-editions.md",
       "path": "variants/claude-code/memory-attention/index.html"
+    },
+    "numbers-lie": {
+      "developer": "Claude Code",
+      "edition": "claude-code-numbers-lie-20261111",
+      "kind": "original",
+      "sourceRevision": "b9ef89dbf90a37c04f2cd1f661fb4608ae95a4f4",
+      "scope": {
+        "zh": "整篇长文从零编写：辛普森悖论、平均数与中位数、幸存者偏差、均值回归、基础比率、多重比较、相对风险与古德哈特定律",
+        "en": "Whole essay written from scratch: Simpson’s paradox, mean versus median, survivorship bias, regression to the mean, base rates, multiple comparisons, relative risk and Goodhart’s law"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5); English copy drafted by Claude Code (claude-haiku-5-5); independently reviewed 2026-11-11 by a separate Claude Code session (same model), see the page BRIEF.md; cross-model review pending",
+      "path": "probability/everyday/numbers-lie/index.html"
+    },
+    "body-in-balance": {
+      "developer": "Claude Code",
+      "edition": "claude-code-body-in-balance-20261111",
+      "kind": "original",
+      "sourceRevision": "fb990042f709fc9b1c3218f8ad82362fce390d4b",
+      "scope": {
+        "zh": "整篇长文从零编写：负反馈与调定点、发烧、药物半衰期与稳态、酒精的零级代谢、治疗窗、抗生素选择与群体免疫",
+        "en": "Whole essay written from scratch: negative feedback and set points, fever, drug half-life and plateaus, zero-order alcohol clearance, the therapeutic window, antibiotic selection and herd immunity"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5); English copy drafted by Claude Code (claude-haiku-5-5); independently reviewed 2026-11-11 by a separate Claude Code session (same model), see the page BRIEF.md; cross-model review pending",
+      "path": "biology/body/body-in-balance/index.html"
+    },
+    "inside-a-phone": {
+      "developer": "Claude Code",
+      "edition": "claude-code-inside-a-phone-20261111",
+      "kind": "original",
+      "sourceRevision": "7675c55601b2463c810d1e38ff940774be735a5b",
+      "scope": {
+        "zh": "整篇长文从零编写：GPS 与钟差、电池内阻、三原色与子像素、加速度计、电容触摸、散粒噪声、纠错码与基站切换",
+        "en": "Whole essay written from scratch: GPS and clock bias, battery internal resistance, RGB subpixels, the accelerometer, capacitive touch, shot noise, error-correcting codes and cell handover"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5); English copy drafted by Claude Code (claude-haiku-5-5); independently reviewed 2026-11-11 by a separate Claude Code session (same model), see the page BRIEF.md; cross-model review pending",
+      "path": "tech/devices/inside-a-phone/index.html"
+    },
+    "where-money-comes-from": {
+      "developer": "Claude Code",
+      "edition": "claude-code-where-money-comes-from-20261111",
+      "kind": "original",
+      "sourceRevision": "8a88a43e7154e3a379f6b3af63a2bc8a561723fc",
+      "scope": {
+        "zh": "整篇长文从零编写：钱作为借据、贷款创造存款、挤兑、货币数量论与通胀、利率传导、房贷摊还与购买力平价",
+        "en": "Whole essay written from scratch: money as an IOU, loans creating deposits, bank runs, the quantity theory and inflation, interest-rate transmission, loan amortisation and purchasing-power parity"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5); English copy drafted by Claude Code (claude-haiku-5-5); independently reviewed 2026-11-11 by a separate Claude Code session (same model), see the page BRIEF.md; cross-model review pending",
+      "path": "economics/money/where-money-comes-from/index.html"
+    },
+    "same-votes-different-winner": {
+      "developer": "Claude Code",
+      "edition": "claude-code-same-votes-different-winner-20261111",
+      "kind": "original",
+      "sourceRevision": "4c0b60bd3eb76200598598e2c9cc8a877ea2ce95",
+      "scope": {
+        "zh": "整篇长文从零编写：投票规则的分歧、孔多塞循环、阿罗定理、搅局者与策略投票、中位选民、杰利蝾螈、议席分配悖论与陪审团定理",
+        "en": "Whole essay written from scratch: voting rules that disagree, Condorcet cycles, Arrow’s theorem, spoilers and strategic voting, the median voter, gerrymandering, apportionment paradoxes and the jury theorem"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5); English copy drafted by Claude Code (claude-haiku-5-5); independently reviewed 2026-11-11 by a separate Claude Code session (same model), see the page BRIEF.md; cross-model review pending",
+      "path": "society/civics/same-votes-different-winner/index.html"
+    },
+    "switches-that-compute": {
+      "developer": "Claude Code",
+      "edition": "claude-code-switches-that-compute-20261111",
+      "kind": "original",
+      "sourceRevision": "6e9e93bd8c3efbbe5a8afef75332d21a68f6af29",
+      "scope": {
+        "zh": "整篇长文从零编写：继电器与逻辑门、与非门的完备性、二进制、加法器、补码与溢出、锁存器与存储程序计算机、浮点舍入",
+        "en": "Whole essay written from scratch: relays and logic gates, NAND universality, binary, adders, two’s complement and overflow, latches and the stored-program machine, floating-point rounding"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5); English copy drafted by Claude Code (claude-haiku-5-5); independently reviewed 2026-11-11 by a separate Claude Code session (same model), see the page BRIEF.md; cross-model review pending",
+      "path": "computing/systems/switches-that-compute/index.html"
     }
   },
   "exceptions": {

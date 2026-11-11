@@ -259,9 +259,14 @@ const f = (x, d) => x.toFixed(d);
   for (const k of keys) { n++; if (Z[k] == null) { fails++; console.error('FAIL missing zh key ' + k); } }
   // no Chinese text outside copy.zh.js except comments
   for (const file of ['index.html', 'app.js', 'models.js']) {
-    const src = fs.readFileSync(path.join(__dirname, '..', file), 'utf8').replace(/\/\*[\s\S]*?\*\//g, '').replace(/\/\/.*$/gm, '').replace(/<!--[\s\S]*?-->/g, '');
-    const hit = src.match(/[一-鿿]+/); n++;
-    if (hit && !(file === 'index.html' && hit[0] === '中')) { const others = src.match(/[一-鿿]+/g).filter(x => x !== '中'); if (others.length) { fails++; console.error(`FAIL Chinese text in ${file}: ${others.slice(0, 3).join(' ')}`); } }
+    // The site's static provenance label (specs/visual-page-provenance.md) is bilingual by contract, not essay copy;
+    // it is removed first because its commit URL would otherwise be cut by the // comment rule.
+    const src = fs.readFileSync(path.join(__dirname, '..', file), 'utf8').replace(/<details class="page-provenance"[\s\S]*?<\/details>/, '')
+      .replace(/\/\*[\s\S]*?\*\//g, '').replace(/\/\/.*$/gm, '').replace(/<!--[\s\S]*?-->/g, '');
+    n++;
+    // only the 中 toggle label may remain in index.html (the old check stopped at the first hit when it was 中)
+    const others = (src.match(/[一-鿿]+/g) || []).filter(x => !(file === 'index.html' && x === '中'));
+    if (others.length) { fails++; console.error(`FAIL Chinese text in ${file}: ${others.slice(0, 3).join(' ')}`); }
   }
 }
 
