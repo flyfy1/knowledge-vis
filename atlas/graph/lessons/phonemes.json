@@ -1,0 +1,94 @@
+{
+ "schema": 2,
+ "slug": "phonemes",
+ "nodes": [
+  {
+   "id": "phonemes",
+   "group": "society",
+   "stage": "senior",
+   "order": 50,
+   "title": {
+    "zh": "音位与最小对立",
+    "en": "Phonemes & minimal pairs"
+   },
+   "description": {
+    "zh": "两个词只差一个音、意思就不同（如 pat 和 bat），这组词叫最小对立，那个能区分意义的音就是一个音位；音位之间往往只差一个发音特征，比如声带振不振动（清 / 浊）。",
+    "en": "When two words differ in a single sound and mean different things (pat and bat), they form a minimal pair, and the meaning-changing sound is a phoneme; phonemes often differ by just one articulatory feature, such as whether the vocal folds vibrate (voiceless vs voiced)."
+   },
+   "source": "../language/phonology/phonemes/#step1",
+   "lessons": [
+    {
+     "slug": "phonemes",
+     "step": 1,
+     "category": "language",
+     "stage": "senior",
+     "primary": true
+    }
+   ],
+   "aliases": [
+    {
+     "zh": "音位",
+     "en": "phoneme"
+    },
+    {
+     "zh": "最小对立对",
+     "en": "minimal pair"
+    },
+    {
+     "zh": "清音 浊音",
+     "en": "voiceless and voiced sounds"
+    },
+    {
+     "zh": "语音学",
+     "en": "phonetics"
+    },
+    {
+     "zh": "音系学",
+     "en": "phonology"
+    },
+    {
+     "zh": "音节结构",
+     "en": "syllable structure"
+    },
+    {
+     "zh": "复数 s 为什么有时读 z",
+     "en": "why is plural s sometimes pronounced z"
+    },
+    {
+     "zh": "国际音标",
+     "en": "IPA"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "sound-vibration",
+   "to": "phonemes",
+   "type": "foundation",
+   "label": {
+    "zh": "浊音就是声带在振动",
+    "en": "Voicing is the vocal folds vibrating"
+   },
+   "reason": {
+    "zh": "声音来自振动；清和浊的区别不是音量，而是发音时声带振不振动——摸着喉咙念 /s/ 和 /z/ 就能感觉到。",
+    "en": "Sound comes from vibration; voiceless versus voiced is not about loudness but whether the vocal folds vibrate — touch your throat while saying /s/ and /z/ and you can feel it."
+   },
+   "source": "../language/phonology/phonemes/#step0"
+  },
+  {
+   "from": "phonemes",
+   "to": "vowel-formants",
+   "type": "connection",
+   "label": {
+    "zh": "辅音靠发音特征，元音靠共振峰",
+    "en": "Consonants by features, vowels by formants"
+   },
+   "reason": {
+    "zh": "辅音的对立多由发音部位、方式和清浊这些开关决定；元音的区别则落在声道共鸣上，用前两个共振峰 F1、F2 在平面上定位。",
+    "en": "Consonant contrasts are mostly set by switches — place, manner and voicing; vowels differ in the vocal tract’s resonances and are located on a plane by the first two formants, F1 and F2."
+   },
+   "source": "../language/phonology/vowel-space/#step0"
+  }
+ ]
+}
