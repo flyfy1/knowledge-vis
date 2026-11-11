@@ -13,8 +13,8 @@
     "en": "The basic reproduction number R₀ · epidemic curves"
    },
    "description": {
-    "zh": "R₀ 是一个病例在没人免疫、没有干预时平均传给几个人：大于 1，病例一代比一代多；小于 1，传播逐渐熄灭。干预把有效再生数 Rₑ 压低，曲线跟着变平，但变平不等于消失。",
-    "en": "R₀ is how many people one case infects on average when nobody is immune and nothing is done: above 1 cases multiply each generation, below 1 the outbreak dies out. Interventions push the effective number Rₑ down and flatten the curve — but flatter is not the same as gone."
+    "zh": "R₀ 是一个病例在没人免疫、没有干预时平均传给几个人：大于 1，开头病例一代比一代多；但病人康复后免疫，易感者越来越少，降到总人口的 1/Rₑ 时曲线掉头，这就是群体免疫阈值。干预把有效再生数 Rₑ 压低，峰值变低变晚，但变平不等于消失。",
+    "en": "R₀ is how many people one case infects on average when nobody is immune and nothing is done: above 1, cases multiply each generation at first; but recovered people are immune, susceptibles run down, and when they fall to 1/Rₑ of the population the curve turns — the herd-immunity threshold. Interventions push the effective number Rₑ down, so the peak is lower and later — but flatter is not the same as gone."
    },
    "formula": "Rₑ = R₀·(1 − intervention)",
    "source": "../biology/body/public-health/#step0",
@@ -35,7 +35,9 @@
      "压平曲线",
      "传染病怎么传播",
      "流行病学",
-     "公共卫生"
+     "公共卫生",
+     "群体免疫",
+     "疫情峰值"
     ],
     "en": [
      "basic reproduction number",
@@ -44,7 +46,9 @@
      "flatten the curve",
      "how epidemics spread",
      "epidemiology",
-     "public health"
+     "public health",
+     "herd immunity",
+     "epidemic peak"
     ]
    }
   }
@@ -65,8 +69,8 @@
     "en": "Multiply by R each generation"
    },
    "reason": {
-    "zh": "每个病例传给 R 个人，病例数就一代乘一次 R：R > 1 时指数增长，R < 1 时指数衰减；页面的曲线正是按有效 R 定出的指数增长率画的。",
-    "en": "Each case passes it to R others, so case numbers are multiplied by R every generation: exponential growth when R > 1, exponential decay when R < 1; the page’s curve is drawn with an exponential growth rate set by the effective R."
+    "zh": "每个病例传给 R 个人，开头病例数就一代乘一次 R：R > 1 时指数增长，R < 1 时指数衰减。页面的 SIR 曲线开头正是这段指数增长，之后易感者耗尽才把它压弯。",
+    "en": "Each case passes it to R others, so early on case numbers are multiplied by R every generation: exponential growth when R > 1, exponential decay when R < 1. The page’s SIR curve starts with exactly that exponential rise, until running out of susceptibles bends it over."
    },
    "source": "../biology/body/public-health/#step0"
   }
