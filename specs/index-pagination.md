@@ -25,7 +25,7 @@ Views come from URL state; nothing is stored besides the language.
 
 | URL | View |
 | --- | --- |
-| `/` | Home: **Featured** section, then **More entrances** |
+| `/` | Home: **Featured**, then **Long Reads**, then **More entrances** |
 | `?category=<id>` | All pages of the category on one page, grouped by subtopic |
 | `?stage=<id>` | All pages of the stage, grouped by category (registry order) |
 | `?category=<id>&stage=<id>` | Category view filtered by stage (AND); empty groups disappear |
@@ -38,7 +38,15 @@ Views come from URL state; nothing is stored besides the language.
    `pages.config.js`), in that order. It is an array of slugs; a slug that is not
    registered is skipped silently. The subtitle states how many were picked out of
    how many live pages. To change the selection, edit only that array.
-2. **More entrances**: four link tiles: Knowledge Atlas (`atlas/`), LeetCode
+2. **Long Reads** (长文 · 一篇讲透一个领域 / Long Reads · One Essay, One Field;
+   added 2026-11-11): the long-form essays listed in `window.KNOWLEDGE_ESSAYS`, in
+   that order, with a one-line subtitle and the same card component as Featured
+   (category and stage badges). Unregistered slugs are skipped silently. An essay
+   whose entry has `languages: ["zh"]` (today `scarcity-moves`) shows a
+   "Chinese only" badge in English mode; there is no badge in Chinese mode. The
+   section sits after Featured so the first featured card stays in the first desktop
+   viewport. What counts as an essay and how to add one: specs/essays.md.
+3. **More entrances**: four link tiles: Knowledge Atlas (`atlas/`), LeetCode
    (`?category=leetcode`), Demos (`?category=demos`) and Claude Code Parallel
    Editions (`variants/claude-code/`). This is the homepage's link to the editions
    list required by `specs/claude-code-editions.md`. The LeetCode and Demos tiles
@@ -78,8 +86,11 @@ The site search (`#siteSearch`) finds pages and atlas concepts in one list.
   The two files are loaded on the first focus of, or typing into, the search box,
   or at load when the URL has `?s=`; never on a plain first paint. If they fail to
   load, page results still show and concepts are silently left out.
-- Order: score (the same matcher scores pages), a page before a concept on ties,
-  then registry order. At most 8 concept results.
+- Order: score (the same matcher scores pages); on ties a lesson page first, then
+  concepts, then whole essays (pages listed in `KNOWLEDGE_ESSAYS`); then registry
+  order. An essay covers ten or so ideas, so a word that names both the essay and
+  one of its chapters (its tags often do) lands on the chapter's deep link. At most
+  8 concept results.
 - A concept card has a "概念 / Concept" badge, the concept name, its one-line
   description, and "在「页面」里 / In: page" naming the page it lives in. It links
   straight to the anchor (`…/#step5`, `…/#ch3`). A concept is dropped when its own
@@ -95,7 +106,9 @@ kept in `?s=` with `history.replaceState`. The site search is hidden in the
 LeetCode view, which has its own search with `?q=`. A bare `q` outside the LeetCode
 view is ignored.
 
-Tests: `node scripts/test_index_pagination.cjs` (source contract) and
+Tests: `node scripts/test_index_pagination.cjs` (source contract, including the
+essay list, the section order Featured < Long Reads < More entrances, and the
+Chinese-only badge) and
 `tests/home-concept-search.cjs` (browser: lazy load, ranking, deep link, dedupe,
 390 px, fallback).
 

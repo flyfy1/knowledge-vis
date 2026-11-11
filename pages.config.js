@@ -141,6 +141,14 @@ window.KNOWLEDGE_FEATURED = [
   "sampling", "gradient-descent", "bayes-updating", "mandelbrot"
 ];
 
+/* 首页长文区（2026-11-11 增设）：精选区之后、「更多入口」之前的「长文 · 一篇讲透一个领域」，按此顺序展示。
+ * 元素是 KNOWLEDGE_PAGES 里的 slug；找不到的 slug 静默跳过。长文的标准与登记方法见 specs/essays.md。
+ * 只有中文的长文在条目上写 languages: ["zh"]，英文模式下卡片会注明。 */
+window.KNOWLEDGE_ESSAYS = [
+  "numbers-lie", "body-in-balance", "inside-a-phone", "where-money-comes-from",
+  "same-votes-different-winner", "switches-that-compute", "scarcity-moves"
+];
+
 window.KNOWLEDGE_PAGES = [
   {
     slug: "frozen-bubble",
@@ -199,10 +207,11 @@ window.KNOWLEDGE_PAGES = [
     slug: "scarcity-moves",
     title: { zh: "稀缺会搬家", en: "Scarcity Moves" },
     desc: {
-      zh: "十个经济学的基本道理，每个配一个可以动手的小模型；再用它们推演 AI 普及之后，工作、收入和稀缺会怎样变化。（中文）",
-      en: "Ten core ideas of economics, each with a hands-on model, then applied to what happens to work, income and scarcity once AI is everywhere. (Chinese only)"
+      zh: "十个经济学的基本道理，每个配一个可以动手的小模型；再用它们推演 AI 普及之后，工作、收入和稀缺会怎样变化。",
+      en: "Ten core ideas of economics, each with a hands-on model, then applied to what happens to work, income and scarcity once AI is everywhere."
     },
     tags: [{ zh: "经济学", en: "Economics" }, { zh: "AI 与社会", en: "AI & Society" }, { zh: "交互长文", en: "Interactive Essay" }],
+    languages: ["zh"],
     category: "demos",
     stage: "university",
     status: "live",

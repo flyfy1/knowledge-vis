@@ -72,6 +72,10 @@
   div.card.planned{opacity:.62}
   div.card.planned h2{padding-right:84px}
   .entrances{grid-column:1/-1;margin-top:26px}
+  .essays{grid-column:1/-1;margin-top:26px}
+  .essay-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:18px;margin-top:12px}
+  .lang-badge{display:inline-block;font-size:11.5px;color:var(--text);border:1px solid var(--line);
+    background:rgba(255,255,255,.04);border-radius:999px;padding:1px 10px}
   .entrance-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,220px),1fr));gap:14px;margin-top:12px}
   a.card.entrance{padding:18px 20px}
   a.card.entrance h3{font-size:17px;line-height:1.35;margin:0 0 6px;color:var(--cyan)}
@@ -175,6 +179,8 @@
       intro: '把难懂的知识点，做成<b>可以上手玩的交互页</b>。一页一个主题，一步一个交互。',
       featuredChip: '精选', allStage: '全部学段', badgePlanned: '筹备中',
       featuredTitle: '精选 · 从这里开始', featuredSub: '从 {total} 个页面里挑出的 {n} 个，小学到大学各有入口。',
+      essaysTitle: '长文 · 一篇讲透一个领域', essaysSub: '每篇取一门学问里最要紧的十来个道理，每个都配一个可以亲手推动的模型。',
+      onlyZh: '只有中文',
       entrancesTitle: '更多入口',
       entranceAtlasTitle: '知识图谱', entranceAtlasDesc: '沿着概念之间的关系逛，从一个问题走到一串知识点。',
       entranceLeetcodeTitle: 'LeetCode 专区', entranceLeetcodeDesc: '困难题的解法，一步一步推出来。',
@@ -196,6 +202,8 @@
       intro: 'Turn hard ideas into <b>interactive pages you can try for yourself</b>. One topic per page, one interaction per step.',
       featuredChip: 'Featured', allStage: 'All Stages', badgePlanned: 'Planned',
       featuredTitle: 'Featured · Start Here', featuredSub: '{n} picks from {total} pages, with entry points from primary school through university.',
+      essaysTitle: 'Long Reads · One Essay, One Field', essaysSub: 'Each takes the ten or so core ideas of a subject and gives every one a model you can push around.',
+      onlyZh: 'Chinese only',
       entrancesTitle: 'More Ways In',
       entranceAtlasTitle: 'Knowledge Atlas', entranceAtlasDesc: 'Wander along the links between concepts, from one question to a chain of ideas.',
       entranceLeetcodeTitle: 'LeetCode Corner', entranceLeetcodeDesc: 'Solutions to hard problems, worked out one step at a time.',
@@ -257,6 +265,10 @@
   pages.forEach(function(pg){ if (pg.slug && !bySlug[pg.slug]) bySlug[pg.slug] = pg; });
   // 精选：按 KNOWLEDGE_FEATURED 的顺序取，未登记的 slug 静默跳过
   var featured = (window.KNOWLEDGE_FEATURED || []).map(function(s){ return bySlug[s]; }).filter(Boolean);
+  // 长文：按 KNOWLEDGE_ESSAYS 的顺序取，规则同精选
+  var essays = (window.KNOWLEDGE_ESSAYS || []).map(function(s){ return bySlug[s]; }).filter(Boolean);
+  var essaySlugs = {};
+  (window.KNOWLEDGE_ESSAYS || []).forEach(function(s){ essaySlugs[s] = true; });
   var liveCount = pages.filter(function(pg){ return pg.status === 'live'; }).length;
   var activeCat = 'all';
   var activeStage = 'all';
@@ -413,9 +425,11 @@
       if (!keep) seen[c.page.path].score = Math.max(seen[c.page.path].score, c.score);
       return keep;
     }).slice(0, MAX_CONCEPTS).map(function(c, i){ return { concept: c, score: c.score, order: i }; });
-    // Ties: the page first (it is the broader entry), then the original order.
+    // Ties: the page first (it is the broader entry), then the original order. An essay
+    // page is the exception: it covers ten or so ideas, so its chapters (deep links) go first.
+    function tieRank(x) { return x.page ? (essaySlugs[x.page.slug] ? 2 : 0) : 1; }
     return pageHits.concat(conceptHits).sort(function(a, b){
-      return b.score - a.score || (a.page ? 0 : 1) - (b.page ? 0 : 1) || a.order - b.order;
+      return b.score - a.score || tieRank(a) - tieRank(b) || a.order - b.order;
     });
   }
   function makeConceptCard(c) {
@@ -461,6 +475,8 @@
     var badges = node('div', 'card-badges');
     if (opts.cat && pg.category) badges.appendChild(node('span', 'cat-badge', catName(pg.category)));
     if (opts.stage) badges.appendChild(node('span', 'stage-badge', stageName(pageStage(pg))));
+    // 只有中文的页面（languages: ["zh"]）在英文模式下注明，例如长文 scarcity-moves
+    if (lang === 'en' && pg.languages && pg.languages.indexOf('en') === -1) badges.appendChild(node('span', 'lang-badge', t('onlyZh')));
     if (badges.children.length) el.appendChild(badges);
     el.appendChild(node('h2', '', pick(pg.title)));
     el.appendChild(node('p', '', pick(pg.desc)));
@@ -480,6 +496,15 @@
     head.appendChild(node('p', 'section-sub', fill(t('featuredSub'), { n: featured.length, total: liveCount })));
     frag.appendChild(head);
     featured.forEach(function(pg){ frag.appendChild(makeCard(pg, { cat: true, stage: true })); });
+    if (essays.length) {
+      var reads = node('section', 'essays');
+      reads.setAttribute('aria-labelledby', 'essaysTitle');
+      var readsTitle = node('h2', 'section-title', t('essaysTitle')); readsTitle.id = 'essaysTitle';
+      var readsList = node('div', 'essay-grid');
+      essays.forEach(function(pg){ readsList.appendChild(makeCard(pg, { cat: true, stage: true })); });
+      reads.appendChild(readsTitle); reads.appendChild(node('p', 'section-sub', t('essaysSub'))); reads.appendChild(readsList);
+      frag.appendChild(reads);
+    }
     var box = node('section', 'entrances');
     box.setAttribute('aria-labelledby', 'entrancesTitle');
     var title = node('h2', 'section-title', t('entrancesTitle')); title.id = 'entrancesTitle';
