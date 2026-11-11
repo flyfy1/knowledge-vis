@@ -1,0 +1,95 @@
+{
+ "schema": 2,
+ "slug": "kepler-orbits",
+ "note": "The page has no stepN section ids; the concept links to the page root.",
+ "nodes": [
+  {
+   "id": "kepler-orbits",
+   "group": "earth",
+   "stage": "university",
+   "order": 50,
+   "title": {
+    "zh": "开普勒轨道 · 椭圆、速度与凌日",
+    "en": "Kepler orbits · ellipses, speed and transits"
+   },
+   "description": {
+    "zh": "行星沿椭圆绕恒星运行，恒星在一个焦点上；偏心率越大，椭圆越扁；离恒星近时跑得快、远时跑得慢（开普勒第二定律）；当轨道恰好侧对着我们，行星经过恒星前方会挡住一点星光，这就是凌日。",
+    "en": "A planet travels round its star on an ellipse with the star at one focus; the larger the eccentricity, the flatter the ellipse; it moves fast when close to the star and slowly when far (Kepler’s second law); when the orbit is seen edge-on, the planet passing in front of the star blocks a little of its light — a transit."
+   },
+   "source": "../earth/astronomy/kepler-orbits/",
+   "lessons": [
+    {
+     "slug": "kepler-orbits",
+     "step": null,
+     "category": "earth",
+     "stage": "university",
+     "primary": true
+    }
+   ],
+   "aliases": [
+    {
+     "zh": "开普勒定律",
+     "en": "Kepler’s laws"
+    },
+    {
+     "zh": "椭圆轨道",
+     "en": "elliptical orbit"
+    },
+    {
+     "zh": "开普勒第二定律",
+     "en": "Kepler’s second law"
+    },
+    {
+     "zh": "面积定律",
+     "en": "law of equal areas"
+    },
+    {
+     "zh": "偏心率",
+     "en": "eccentricity"
+    },
+    {
+     "zh": "近日点 远日点",
+     "en": "perihelion and aphelion"
+    },
+    {
+     "zh": "凌日法找系外行星",
+     "en": "transit method for exoplanets"
+    },
+    {
+     "zh": "行星为什么离太阳近时更快",
+     "en": "why do planets move faster near the sun"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "gravity-orbits",
+   "to": "kepler-orbits",
+   "type": "foundation",
+   "label": {
+    "zh": "引力给出椭圆和变速",
+    "en": "Gravity produces the ellipse and the changing speed"
+   },
+   "reason": {
+    "zh": "平方反比的引力让束缚轨道成为椭圆；靠近恒星时引力做正功、速度变大，远离时速度变小。",
+    "en": "An inverse-square pull makes bound orbits ellipses; falling closer, gravity speeds the planet up, and climbing away, it slows down."
+   },
+   "source": "../earth/astronomy/kepler-orbits/"
+  },
+  {
+   "from": "conic-sections",
+   "to": "kepler-orbits",
+   "type": "foundation",
+   "label": {
+    "zh": "轨道是一条圆锥曲线",
+    "en": "An orbit is a conic section"
+   },
+   "reason": {
+    "zh": "偏心率 e 把圆（e = 0）和越来越扁的椭圆（0 < e < 1）串成一族；恒星在椭圆的一个焦点上，不在中心。",
+    "en": "The eccentricity e strings together the circle (e = 0) and ever-flatter ellipses (0 < e < 1); the star sits at one focus of the ellipse, not at its centre."
+   },
+   "source": "../earth/astronomy/kepler-orbits/"
+  }
+ ]
+}
