@@ -24,15 +24,18 @@ window.KNOWLEDGE_CATEGORIES = [
   { id: "physics", name: { zh: "物理与电路", en: "Physics & Circuits" } },
   { id: "signal",      name: { zh: "信号与系统", en: "Signals & Systems" } },
   { id: "engineering", name: { zh: "工程与控制", en: "Engineering & Control" } },
+  { id: "tech",        name: { zh: "技术原理", en: "How Things Work" } },
   { id: "probability", name: { zh: "概率与统计", en: "Probability & Statistics" } },
   { id: "computing",   name: { zh: "计算与智能", en: "Computing & AI" } },
   { id: "math",        name: { zh: "数学基础",   en: "Mathematical Foundations" } },
   { id: "chemistry",   name: { zh: "化学", en: "Chemistry" } },
   { id: "biology",     name: { zh: "生物", en: "Biology" } },
   { id: "psychology",  name: { zh: "心理与认知", en: "Psychology & Cognition" } },
+  { id: "society",     name: { zh: "社会与公共选择", en: "Society & Collective Choice" } },
   { id: "language",    name: { zh: "语言与语言学", en: "Language & Linguistics" } },
   { id: "earth",       name: { zh: "地球与太空", en: "Earth & Space" } },
   { id: "leetcode",    name: { zh: "LeetCode 专区", en: "LeetCode" } },
+  { id: "economics",   name: { zh: "经济与金钱", en: "Economics & Money" } },
   { id: "investment",  name: { zh: "投资", en: "Investment" } },
   { id: "demos",       name: { zh: "演示", en: "Demos" } }
 
@@ -80,6 +83,7 @@ window.KNOWLEDGE_SUBTOPICS = {
   ],
   "probability": [
     { id: "basics", name: { zh: "概率基础", en: "Probability Basics" } },
+    { id: "everyday", name: { zh: "日常里的统计", en: "Everyday Statistics" } },
     { id: "statistics", name: { zh: "描述统计", en: "Descriptive Statistics" } },
     { id: "inference", name: { zh: "统计推断", en: "Inference" } },
     { id: "stochastic", name: { zh: "随机过程与信息", en: "Stochastic Processes & Information" } }
@@ -99,6 +103,15 @@ window.KNOWLEDGE_SUBTOPICS = {
     { id: "cells", name: { zh: "细胞与分子", en: "Cells & Molecules" } },
     { id: "body", name: { zh: "人体与神经", en: "Body & Nervous System" } },
     { id: "ecology", name: { zh: "生态与进化", en: "Ecology & Evolution" } }
+  ],
+  "tech": [
+    { id: "devices", name: { zh: "身边的设备", en: "Everyday Devices" } }
+  ],
+  "economics": [
+    { id: "money", name: { zh: "货币与银行", en: "Money & Banking" } }
+  ],
+  "society": [
+    { id: "civics", name: { zh: "投票与规则", en: "Voting & Rules" } }
   ],
   "earth": [
     { id: "astronomy", name: { zh: "天文", en: "Astronomy" } },
@@ -194,6 +207,66 @@ window.KNOWLEDGE_PAGES = [
     stage: "university",
     status: "live",
     path: "demos/scarcity-moves/"
+  },
+  {
+    slug: "numbers-lie",
+    title: { zh: "数字没有说谎，结论却错了", en: "Every Number Was True, and the Conclusion Was Still Wrong" },
+    desc: {
+      zh: "九种让真数字推出假结论的方式：均值回归、小样本、幸存者、多重比较、辛普森悖论、基础比率、相对风险、长尾平均和古德哈特定律。每一种都配一个小模型，先亲手造出错觉，再亲手关掉它。",
+      en: "Nine ways true numbers lead to false conclusions: regression to the mean, small samples, survivorship, many comparisons, Simpson's paradox, base rates, relative risk, long-tailed averages and Goodhart's law. Each comes with a small model: produce the illusion yourself, then switch it off."
+    },
+    tags: [{ zh: "统计陷阱", en: "Statistical Fallacies" }, { zh: "均值回归", en: "Regression to the Mean" }, { zh: "辛普森悖论", en: "Simpson's Paradox" }, { zh: "幸存者偏差", en: "Survivorship Bias" }, { zh: "长文", en: "Long-form Essay" }],
+    category: "probability", subtopic: "everyday", stage: "senior", status: "live", path: "probability/everyday/numbers-lie/"
+  },
+  {
+    slug: "body-in-balance",
+    title: { zh: "身体是怎么稳住的", en: "How the Body Keeps Things Steady" },
+    desc: {
+      zh: "进和出一直在变，身体却把血糖、体温、药量守在很窄的范围里。九个可以拖动的模型：半衰期与平台、酒精、血糖反馈、发烧、治疗窗、心脏、抗生素和群体免疫。",
+      en: "Inputs and outputs never stop changing, yet the body keeps glucose, temperature and drug levels in narrow ranges. Nine models you can push: half-life and plateau, alcohol, glucose feedback, fever, the therapeutic window, the heart, antibiotics and herd immunity."
+    },
+    tags: [{ zh: "稳态", en: "Homeostasis" }, { zh: "药代动力学", en: "Pharmacokinetics" }, { zh: "负反馈", en: "Negative Feedback" }, { zh: "长文", en: "Long-form Essay" }],
+    category: "biology", subtopic: "body", stage: "senior", status: "live", path: "biology/body/body-in-balance/"
+  },
+  {
+    slug: "inside-a-phone",
+    title: { zh: "一部手机里的十个道理", en: "Ten Ideas Inside One Phone" },
+    desc: {
+      zh: "定位、朝向、触摸、拍照、显示、压缩、上网、纠错、切换、电量：每个功能都是一次对极小量的测量，加上一个把信号从噪声里分出来的办法。十章，十个可以动手的模型。",
+      en: "Location, orientation, touch, camera, screen, compression, radio, error correction, handover and battery: each feature measures something tiny and uses one trick to pull signal out of noise. Ten chapters, each with a model you can push around."
+    },
+    tags: [{ zh: "GPS", en: "GPS" }, { zh: "传感器", en: "Sensors" }, { zh: "噪声", en: "Noise" }, { zh: "无线通信", en: "Wireless" }, { zh: "颜色视觉", en: "Colour vision" }, { zh: "电池", en: "Batteries" }],
+    category: "tech", subtopic: "devices", stage: "senior", status: "live", path: "tech/devices/inside-a-phone/"
+  },
+  {
+    slug: "where-money-comes-from",
+    title: { zh: "钱是从哪里来的", en: "Where Money Comes From" },
+    desc: {
+      zh: "你账户里的数字不是金库里的钞票。它是谁的欠条、怎样被贷款造出来、为什么银行会被挤兑、为什么每年能买的东西少一点。八个可以拖动的模型。",
+      en: "The number in your bank account is not a pile of notes in a vault. Whose IOU it is, how loans create it, why banks can be run, and why it buys a little less each year, in eight models you can push around."
+    },
+    tags: [{ zh: "货币", en: "Money" }, { zh: "银行", en: "Banking" }, { zh: "通货膨胀", en: "Inflation" }, { zh: "利率", en: "Interest rates" }, { zh: "汇率", en: "Exchange rates" }, { zh: "长文", en: "Long-form essay" }],
+    category: "economics", subtopic: "money", stage: "senior", status: "live", path: "economics/money/where-money-comes-from/"
+  },
+  {
+    slug: "same-votes-different-winner",
+    title: { zh: "同一批选票，不同的赢家 · 投票规则与公平", en: "Same Ballots, Different Winner · Voting Rules and Fairness" },
+    desc: {
+      zh: "同一批选民的偏好，换一种数票的方法就换一个赢家。十一个可以动手的模型：搅局者、中位选民、多数循环、策略投票、阿罗定理、阿拉巴马悖论、画选区、陪审团定理。",
+      en: "The same voters' preferences, counted another way, crown another winner. Eleven hands-on models: spoilers, the median voter, majority cycles, strategic voting, Arrow's theorem, the Alabama paradox, district lines and the jury theorem."
+    },
+    tags: [{ zh: "投票规则", en: "Voting Rules" }, { zh: "社会选择", en: "Social Choice" }, { zh: "阿罗定理", en: "Arrow's Theorem" }, { zh: "孔多塞悖论", en: "Condorcet Paradox" }, { zh: "选区划分", en: "Redistricting" }, { zh: "席位分配", en: "Apportionment" }],
+    category: "society", subtopic: "civics", stage: "senior", status: "live", path: "society/civics/same-votes-different-winner/"
+  },
+  {
+    slug: "switches-that-compute",
+    title: { zh: "一堆开关是怎么学会算数的", en: "How a Pile of Switches Learned to Do Arithmetic" },
+    desc: {
+      zh: "只用一种开或关的开关，逐门搭出逻辑门、加法器、记忆、时钟，直到一台能照程序做乘法的 16 字节小机器；每个电路都在页面里逐门模拟。",
+      en: "From one on/off switch, build gates, an adder, memory, a clock and finally a 16-byte machine that multiplies by following a program; every circuit is simulated gate by gate on the page."
+    },
+    tags: [{ zh: "逻辑门", en: "Logic Gates" }, { zh: "二进制", en: "Binary" }, { zh: "加法器", en: "Adder" }, { zh: "触发器与时钟", en: "Flip-Flops & Clocks" }, { zh: "计算机组成", en: "Computer Architecture" }, { zh: "浮点数", en: "Floating Point" }],
+    category: "computing", subtopic: "systems", stage: "senior", status: "live", path: "computing/systems/switches-that-compute/"
   },
   {
     slug: "fourier",
@@ -1607,7 +1680,7 @@ window.KNOWLEDGE_PAGES = [
   {
     slug: "resonance",
     title: { zh: "共振 · 踩中节拍，小推也能荡高", en: "Resonance · Push in Time and a Small Force Goes a Long Way" },
-    desc: { zh: "从弹簧的固有节拍出发，看阻尼怎样让振动衰减，再看周期性的推力在什么频率下把振幅推到最高。", en: "Start from a spring\\" },
+    desc: { zh: "从弹簧的固有节拍出发，看阻尼怎样让振动衰减，再看周期性的推力在什么频率下把振幅推到最高。", en: "Start from a spring’s natural beat, see how damping makes oscillations die away, then find the driving frequency at which periodic pushes build the largest swing." },
     tags: [{ zh: "物理与电路", en: "Physics & Circuits" }],
     category: "physics", subtopic: "waves", stage: "senior", status: "live", path: "physics/waves/resonance/"
   },
