@@ -1,0 +1,38 @@
+{
+  "id": 995,
+  "title": {
+    "zh": "K 连续位的最小翻转次数",
+    "en": "Minimum Number of K Consecutive Bit Flips"
+  },
+  "desc": {
+    "zh": "从左端的必选翻转，推导奇偶性与到期事件的线性扫描。",
+    "en": "Derive a linear parity-and-expiry scan from forced leftmost flips."
+  },
+  "difficulty": "hard",
+  "topics": [
+    {
+      "zh": "贪心",
+      "en": "Greedy"
+    },
+    {
+      "zh": "差分事件",
+      "en": "Difference events"
+    }
+  ],
+  "path": "995/",
+  "leetcodeUrl": "https://leetcode.com/problems/minimum-number-of-k-consecutive-bit-flips/",
+  "language": "Python",
+  "complexity": "O(n) time; O(n) auxiliary space",
+  "concepts": [
+    {
+      "name": "Forced leftmost flip",
+      "step": 2,
+      "description": "Why each left-to-right decision is forced."
+    },
+    {
+      "name": "Flip parity and expiry",
+      "step": 3,
+      "description": "Replace interval writes with two boundary toggles."
+    }
+  ]
+}

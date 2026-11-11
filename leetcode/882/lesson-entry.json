@@ -1,0 +1,38 @@
+{
+  "id": 882,
+  "title": {
+    "zh": "细分图中的可到达节点",
+    "en": "Reachable Nodes In Subdivided Graph"
+  },
+  "desc": {
+    "zh": "用最短距离与两端覆盖计数，避开巨大细分图。",
+    "en": "Count coverage from both ends using shortest distances, without expanding the graph."
+  },
+  "difficulty": "hard",
+  "topics": [
+    {
+      "zh": "最短路径",
+      "en": "Shortest paths"
+    },
+    {
+      "zh": "图",
+      "en": "Graphs"
+    }
+  ],
+  "path": "882/",
+  "leetcodeUrl": "https://leetcode.com/problems/reachable-nodes-in-subdivided-graph/",
+  "language": "Python",
+  "complexity": "O(n + m log(n + 1)) time; O(n + m) space",
+  "concepts": [
+    {
+      "name": "Weighted shortest paths",
+      "step": 2,
+      "description": "Finalize minimum distances before counting edge coverage."
+    },
+    {
+      "name": "Capped edge coverage",
+      "step": 2,
+      "description": "Count the union of two endpoint prefixes without overlap."
+    }
+  ]
+}

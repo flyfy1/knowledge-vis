@@ -1,0 +1,38 @@
+{
+  "id": 878,
+  "title": {
+    "zh": "第 N 个神奇数字",
+    "en": "Nth Magical Number"
+  },
+  "desc": {
+    "zh": "从重复的倍数到精确计数，推导保留答案的二分边界。",
+    "en": "Count overlapping multiples, then derive a binary search that retains the answer."
+  },
+  "difficulty": "hard",
+  "topics": [
+    {
+      "zh": "二分查找",
+      "en": "Binary search"
+    },
+    {
+      "zh": "容斥计数",
+      "en": "Inclusion–exclusion"
+    }
+  ],
+  "path": "878/",
+  "leetcodeUrl": "https://leetcode.com/problems/nth-magical-number/",
+  "language": "Python",
+  "complexity": "O(log(min(a,b)) + log(n*min(a,b))) integer operations; O(1) auxiliary integer cells",
+  "concepts": [
+    {
+      "name": "Count a union of multiples",
+      "step": 1,
+      "description": "Subtract common multiples exactly once using their least common multiple."
+    },
+    {
+      "name": "First-true integer binary search",
+      "step": 2,
+      "description": "Retain the smallest integer whose inclusive count reaches the requested rank."
+    }
+  ]
+}

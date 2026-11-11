@@ -1,0 +1,38 @@
+{
+  "id": 834,
+  "title": {
+    "zh": "树中距离之和",
+    "en": "Sum of Distances in Tree"
+  },
+  "desc": {
+    "zh": "切开一条边，数清变近和变远的节点，推导线性换根算法。",
+    "en": "Cut one edge, count who gets closer or farther, and derive linear rerooting."
+  },
+  "difficulty": "hard",
+  "topics": [
+    {
+      "zh": "树",
+      "en": "Tree"
+    },
+    {
+      "zh": "换根动态规划",
+      "en": "Rerooting DP"
+    }
+  ],
+  "path": "834/",
+  "leetcodeUrl": "https://leetcode.com/problems/sum-of-distances-in-tree/",
+  "language": "Python",
+  "complexity": "O(n) time; O(n) auxiliary space",
+  "concepts": [
+    {
+      "name": "Edge-cut rerooting",
+      "step": 2,
+      "description": "Subtract the child-side count and add the outside count when moving the start."
+    },
+    {
+      "name": "Subtree distance summaries",
+      "step": 2,
+      "description": "Merge children before parents to obtain subtree sizes and distance sums."
+    }
+  ]
+}

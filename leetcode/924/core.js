@@ -1,0 +1,9 @@
+'use strict';
+(function(root){
+ function make(n,edges,initial){const graph=Array.from({length:n},(_,i)=>Array.from({length:n},(_,j)=>+(i===j)));for(const [a,b] of edges)graph[a][b]=graph[b][a]=1;return {graph,initial};}
+ const presets=[make(5,[[0,1],[1,2],[3,4]],[0,3]),make(7,[[0,1],[1,2],[2,3],[4,5],[5,6]],[0,3,4]),make(3,[[0,1]],[0,1]),make(3,[],[0,2]),make(3,[[0,1],[0,2],[1,2]],[1,2]),make(3,[[0,1],[1,2]],[1]),make(4,[[0,1],[2,3]],[3,0])];
+ function spread(graph,initial,removed){let now=initial.filter(x=>x!==removed).sort((a,b)=>a-b),frames=[now];while(true){const next=new Set(now);for(const i of now)for(let j=0;j<graph.length;j++)if(graph[i][j])next.add(j);const values=[...next].sort((a,b)=>a-b);if(values.length===now.length)break;frames.push(values);now=values;}return frames;}
+ function summarize(graph,initial){const component=Array(graph.length).fill(-1),groups=[];for(let s=0;s<graph.length;s++){if(component[s]!==-1)continue;const id=groups.length,members=[],stack=[s];component[s]=id;while(stack.length){const u=stack.pop();members.push(u);for(let v=0;v<graph.length;v++)if(graph[u][v]&&component[v]===-1){component[v]=id;stack.push(v);}}groups.push({members:members.sort((a,b)=>a-b),seeds:[]});}for(const u of initial)groups[component[u]].seeds.push(u);const total=groups.reduce((s,g)=>s+(g.seeds.length?g.members.length:0),0);const scores=initial.map(node=>{const g=groups[component[node]],saved=g.seeds.length===1?g.members.length:0;return {node,saved,final:total-saved};});return {component,groups,total,scores};}
+ function scan(scores){let answer=null,best=-1;const frames=[{answer,best}];for(const s of scores){if(s.saved>best||(s.saved===best&&s.node<answer)){answer=s.node;best=s.saved;}frames.push({answer,best});}return frames;}
+ const api={make,presets,spread,summarize,scan};if(typeof module==='object')module.exports=api;else root.Malware=api;
+})(typeof window==='object'?window:globalThis);

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="data:,"><title>#864 Shortest Path to Get All Keys</title><link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="style.css?v=864-r2"></head><body>
+<header class="site-head"><div class="head-top"><a class="back-link" href="../" data-i18n="back"></a><div class="lang-toggle" id="langToggle" aria-label="语言 / Language"><button type="button" data-lang="zh">中</button><button type="button" data-lang="en">EN</button></div></div><span class="badge" data-i18n="hard"></span><h1 data-i18n="title"></h1><p class="tagline" data-i18n="intro"></p><a class="official-link" href="https://leetcode.com/problems/shortest-path-to-get-all-keys/" target="_blank" rel="noopener" data-i18n="official"></a></header>
+<nav class="step-nav" aria-label="学习步骤 / Lesson steps"><div class="step-nav-inner"><a href="#step0" data-i18n="nav0"></a><a href="#step1" data-i18n="nav1"></a><a href="#step2" data-i18n="nav2"></a><a href="#step3" data-i18n="nav3"></a><a href="#step4" data-i18n="nav4"></a></div></nav><main><section class="step" id="step0"><div class="step-inner"><p class="step-kicker">01</p><h2 data-i18n="s0t"></h2><p class="explain" data-i18n="s0e"></p><p class="explain" data-i18n="contract"></p><p class="hint" data-i18n="handTask"></p><div class="stage"><div class="tiny" aria-label="@ . a A"><span>@</span><span>.</span><span>a</span><span>A</span></div><button type="button" class="btn primary" id="handToggle" data-step="0" data-i18n="handReveal"></button><p id="handAnswer" class="readout" data-i18n="handAnswer" hidden></p></div></div></section><section class="step" id="step1"><div class="step-inner"><p class="step-kicker">02</p><h2 data-i18n="s1t"></h2><p class="explain" data-i18n="s1e"></p><p class="explain" data-i18n="stateDef"></p><p class="explain" data-i18n="baseline"></p><p class="explain" data-i18n="baselineCost"></p><details><summary data-i18n="baselineSource"></summary><p class="explain" data-i18n="baselineSyntax"></p><pre tabindex="0" aria-label="基线 Python / Baseline Python"><code>&quot;&quot;&quot;Independent reference: explicit inventory sets and synchronous edge relaxation.&quot;&quot;&quot;
+from itertools import combinations
+
+
+def graph_distances(grid):
+    letters = sorted({ch for row in grid for ch in row if ch.islower()})
+    inventories = [frozenset(part) for size in range(len(letters) + 1)
+                   for part in combinations(letters, size)]
+    nodes = [(r, c, bag) for r, row in enumerate(grid)
+             for c, ch in enumerate(row) if ch != &#x27;#&#x27; for bag in inventories]
+    edges = []
+    start = None
+    for r, c, bag in nodes:
+        if grid[r][c] == &#x27;@&#x27; and not bag:
+            start = (r, c, bag)
+        for dr, dc in [(1, 0), (-1, 0), (0, 1), (0, -1)]:
+            nr, nc = r + dr, c + dc
+            if not (0 &lt;= nr &lt; len(grid) and 0 &lt;= nc &lt; len(grid[0])):
+                continue
+            ch = grid[nr][nc]
+            if ch == &#x27;#&#x27; or (ch.isupper() and ch.lower() not in bag):
+                continue
+            new_bag = bag | {ch} if ch.islower() else bag
+            edges.append(((r, c, bag), (nr, nc, new_bag)))
+    distance = {start: 0}
+    for _ in range(len(nodes) - 1):
+        updated = distance.copy()
+        for u, v in edges:
+            if u in distance:
+                candidate = distance[u] + 1
+                if candidate &lt; updated.get(v, float(&#x27;inf&#x27;)):
+                    updated[v] = candidate
+        if updated == distance:
+            break
+        distance = updated
+    goal = frozenset(letters)
+    answer = min((d for (_, _, bag), d in distance.items() if bag == goal), default=-1)
+    return answer, distance
+</code></pre></details></div></section><section class="step" id="step2"><div class="step-inner"><p class="step-kicker">03</p><h2 data-i18n="s2t"></h2><p class="explain" data-i18n="s2e"></p><p class="explain" data-i18n="bits"></p><p class="explain" data-i18n="derive"></p><p class="explain" data-i18n="invariant"></p><p class="hint" data-i18n="traceTask"></p><div class="stage"><label for="preset" data-i18n="presetLabel"></label><select id="preset" data-step="2"><option value="0" data-i18n="preset0"></option><option value="1" data-i18n="preset1"></option><option value="2" data-i18n="preset2"></option><option value="3" data-i18n="preset3"></option><option value="4" data-i18n="preset4"></option><option value="5" data-i18n="preset5"></option></select><p class="hint" data-i18n="sim"></p><p id="inputRead" class="formula"></p><div class="controls"><button type="button" class="btn" id="tracePrev" data-step="2" data-i18n="prev"></button><button type="button" class="btn primary" id="traceNext" data-step="2" data-i18n="next"></button><button type="button" class="btn" id="traceReset" data-step="2" data-i18n="reset"></button><button type="button" class="btn" id="traceLast" data-step="2" data-i18n="end"></button></div><p id="frameRead" class="readout" aria-live="polite"></p><p class="hint" data-i18n="gridLegend"></p><div id="gridScroll" class="grid-scroll" tabindex="0"><div id="grid" class="key-grid"></div></div><details><summary data-i18n="eventsTitle"></summary><p data-i18n="eventsEmpty"></p><ol id="events" class="trace-log"></ol></details></div></div></section><section class="step" id="step3"><div class="step-inner"><p class="step-kicker">04</p><h2 data-i18n="s3t"></h2><p class="explain" data-i18n="s3e"></p><div class="stage"><fieldset class="prediction-options"><legend data-i18n="predictionLegend"></legend><label><input type="radio" name="prediction" value="0" data-step="3"><span data-i18n="option0"></span></label><label><input type="radio" name="prediction" value="1" data-step="3"><span data-i18n="option1"></span></label><label><input type="radio" name="prediction" value="2" data-step="3"><span data-i18n="option2"></span></label></fieldset><div class="controls"><button type="button" class="btn primary" id="reveal" data-step="3" data-i18n="reveal"></button><button type="button" class="btn" id="predictionReset" data-step="3" data-i18n="reset"></button></div><p id="predictionFeedback" class="readout" aria-live="polite"></p></div></div></section><section class="step" id="step4"><div class="step-inner"><p class="step-kicker">05</p><h2 data-i18n="s4t"></h2><p class="explain" data-i18n="s4e"></p><ul><li class="" data-i18n="map1"></li><li class="" data-i18n="map2"></li><li class="" data-i18n="map3"></li></ul><p class="explain" data-i18n="cost"></p><p class="explain" data-i18n="boundaries"></p><div class="solution-actions"><button type="button" class="btn primary" id="copyPython" data-step="4" data-i18n="copy"></button><a class="btn" href="solution.py" download data-i18n="download"></a><span id="copyStatus" role="status"></span></div><div id="sourceFallback" hidden><label for="manualSource" data-i18n="manualCopy"></label><textarea id="manualSource" readonly rows="12" spellcheck="false"></textarea></div><details id="sourceDetails"><summary data-i18n="source"></summary><pre tabindex="0" aria-label="Python 源码 / Python source"><code id="pythonCode"></code></pre></details><div class="related"><a href="../773/#step2" data-i18n="related1"></a><a href="../126/#step2" data-i18n="related2"></a></div></div></section></main><noscript>请启用 JavaScript。 / Enable JavaScript. <a href="solution.py">Python</a></noscript><script src="../common.js"></script><script src="copy.js?v=864-r2"></script><script src="core.js?v=864-r2"></script><script src="python-code.js?v=864-r2"></script><script src="app.js?v=864-r2"></script></body></html>

@@ -1,0 +1,38 @@
+{
+  "id": 850,
+  "title": {
+    "zh": "矩形面积 II",
+    "en": "Rectangle Area II"
+  },
+  "desc": {
+    "zh": "把重叠矩形切成竖条，用区间合并计算覆盖高度。",
+    "en": "Slice overlapping rectangles into strips and merge their covered heights."
+  },
+  "difficulty": "hard",
+  "topics": [
+    {
+      "zh": "扫描线",
+      "en": "Sweep line"
+    },
+    {
+      "zh": "区间合并",
+      "en": "Interval merging"
+    }
+  ],
+  "path": "850/",
+  "leetcodeUrl": "https://leetcode.com/problems/rectangle-area-ii/",
+  "language": "Python",
+  "complexity": "O(n² log n) time; O(n) auxiliary space",
+  "concepts": [
+    {
+      "name": "vertical slabs",
+      "step": 1,
+      "description": "Coverage is constant between consecutive x edges."
+    },
+    {
+      "name": "interval union invariant",
+      "step": 2,
+      "description": "Sorted intervals add only the uncovered suffix."
+    }
+  ]
+}

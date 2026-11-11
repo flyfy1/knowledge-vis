@@ -1,0 +1,38 @@
+{
+  "id": 827,
+  "title": {
+    "zh": "最大人工岛",
+    "en": "Making A Large Island"
+  },
+  "desc": {
+    "zh": "给岛编号，用不同邻岛的面积求一次翻转的收益。",
+    "en": "Label islands and combine distinct neighboring areas for one flip."
+  },
+  "difficulty": "hard",
+  "topics": [
+    {
+      "zh": "连通分量",
+      "en": "Connected components"
+    },
+    {
+      "zh": "洪水填充",
+      "en": "Flood fill"
+    }
+  ],
+  "path": "827/",
+  "leetcodeUrl": "https://leetcode.com/problems/making-a-large-island/",
+  "language": "Python",
+  "complexity": "O(n²) time; O(n²) auxiliary space",
+  "concepts": [
+    {
+      "name": "Connected components",
+      "step": 2,
+      "description": "Label each island once and deduplicate adjacent island IDs."
+    },
+    {
+      "name": "Flood fill",
+      "step": 2,
+      "description": "Use an iterative stack to visit each land cell once."
+    }
+  ]
+}

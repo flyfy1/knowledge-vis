@@ -1,0 +1,17 @@
+'use strict';
+const {chromium}=require('playwright'),assert=require('assert/strict'),fs=require('fs'),path=require('path');
+const ROOT=path.resolve(__dirname,'..'),OUT=process.env.OUTPUT_DIR||path.join(__dirname,'evidence');fs.mkdirSync(OUT,{recursive:true});
+(async()=>{const browser=await chromium.launch({headless:true,executablePath:process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH});const page=await browser.newPage({viewport:{width:390,height:1000},reducedMotion:'reduce'});await page.goto(process.env.PREVIEW_URL||'http://127.0.0.1:18770/leetcode/1147/');const records=[];
+for(const lang of ['zh','en']){
+ await page.click(`[data-lang=${lang}]`);
+ const summary=page.locator('summary[data-i18n=baseline]');await summary.focus();await page.keyboard.press('Enter');assert(await page.locator('details').filter({has:summary}).getAttribute('open')!==null);assert(await page.locator('code').first().isVisible());assert((await page.locator('code').first().textContent()).includes('parts == parts[::-1]'));await page.keyboard.press('Enter');
+ await page.click('#handNext');await page.click('#handNext');const hand=await page.locator('#handState').textContent();await page.click(`[data-lang=${lang==='zh'?'en':'zh'}]`);assert((await page.locator('#handState').textContent()).includes('vo = vo'));await page.click(`[data-lang=${lang}]`);assert.equal(await page.locator('#handState').textContent(),hand);await page.click('#handPrev');await page.click('#handPrev');
+ await page.selectOption('#preset','0');await page.focus('#next');await page.keyboard.press('Enter');assert((await page.locator('#event').textContent()).includes('v ≠ o'));await page.focus('#prev');await page.keyboard.press('Enter');assert(await page.isDisabled('#prev'));
+ for(const width of [320,1440])for(const zoom of [1,2]){
+  await page.setViewportSize({width,height:1000});await page.evaluate(z=>document.body.style.zoom=z,zoom);
+  for(let i=1;i<=5;i++){const a=page.locator(`nav a[href="#step${i}"]`);await a.focus();await page.keyboard.press('Enter');await page.waitForTimeout(40);const top=await page.locator('#step'+i).evaluate(e=>e.getBoundingClientRect().top),bottom=await page.locator('nav').evaluate(e=>e.getBoundingClientRect().bottom);assert(top>=bottom-1,JSON.stringify({lang,width,zoom,i,top,bottom}));records.push({lang,width,zoom,anchor:i,top,navBottom:bottom});}
+ }
+ await page.setViewportSize({width:390,height:1000});await page.evaluate(()=>document.body.style.zoom=1);await page.locator('[data-i18n=derive]').scrollIntoViewIfNeeded();await page.screenshot({path:path.join(OUT,`${lang}-390-proof.png`)});
+}
+const file=await browser.newPage();const errors=[];file.on('pageerror',e=>errors.push(e.message));await file.goto('file://'+path.join(ROOT,'index.html'));await file.click('[data-lang=en]');assert((await file.locator('#progress').textContent()).includes('counted 0 chunks'));assert.equal(await file.locator('#code').textContent(),fs.readFileSync(path.join(ROOT,'solution.py'),'utf8'));await file.click('#end');assert((await file.locator('#progress').textContent()).includes('counted 3 chunks'));assert.deepEqual(errors,[]);
+fs.writeFileSync(path.join(OUT,'supplemental.json'),JSON.stringify({kind:'author self-check',baselineKeyboardDisclosure:true,handLocalePreserved:true,traceKeyboard:true,fileOfflineSourceAndTrace:true,keyboardAnchors:records,errors},null,2)+'\n');await browser.close();console.log('PASS supplemental: 40 keyboard anchor positions, hand state, baseline, file offline');})().catch(e=>{console.error(e);process.exit(1);});

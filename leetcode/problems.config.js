@@ -3051,6 +3051,80 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n²) time; O(1) auxiliary space"
   },
   {
+    "id": 793,
+    "title": {
+      "zh": "阶乘函数后 K 个零",
+      "en": "Preimage Size of Factorial Zeroes Function"
+    },
+    "desc": {
+      "zh": "从 24! 到 25! 的跳跃，推导两个边界之差。",
+      "en": "Use the jump from 24! to 25! to derive a count from two search boundaries."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "二分查找",
+        "en": "Binary search"
+      },
+      {
+        "zh": "数学",
+        "en": "Math"
+      }
+    ],
+    "path": "793/",
+    "leetcodeUrl": "https://leetcode.com/problems/preimage-size-of-factorial-zeroes-function/",
+    "language": "Python",
+    "complexity": "O(log²(k+2)) time; O(1) auxiliary space"
+  },
+  {
+    "id": 798,
+    "title": {
+      "zh": "得分最高的最小轮调",
+      "en": "Smallest Rotation with Highest Score"
+    },
+    "desc": {
+      "zh": "从每个值的失分区间推导差分扫描。",
+      "en": "Derive a difference scan from each value’s losing rotations."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "差分数组",
+        "en": "Difference array"
+      },
+      {
+        "zh": "循环索引",
+        "en": "Circular indexing"
+      }
+    ],
+    "path": "798/",
+    "leetcodeUrl": "https://leetcode.com/problems/smallest-rotation-with-highest-score/",
+    "language": "Python",
+    "complexity": "O(n) time; O(n) space"
+  },
+  {
+    "id": 801,
+    "title": {
+      "zh": "使序列递增的最小交换次数",
+      "en": "Minimum Swaps To Make Sequences Increasing"
+    },
+    "desc": {
+      "zh": "从一次竖直交换推导保留两种结尾的动态规划。",
+      "en": "Derive a two-ending dynamic program from vertical swaps."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "动态规划",
+        "en": "Dynamic programming"
+      }
+    ],
+    "path": "801/",
+    "leetcodeUrl": "https://leetcode.com/problems/minimum-swaps-to-make-sequences-increasing/",
+    "language": "Python",
+    "complexity": "O(n) time; O(1) auxiliary space"
+  },
+  {
     "id": 803,
     "title": {
       "zh": "打砖块",
@@ -3101,6 +3175,1738 @@ window.LEETCODE_PROBLEMS = [
     "leetcodeUrl": "https://leetcode.com/problems/split-array-with-same-average/",
     "language": "Python",
     "complexity": "O(n · 2^ceil(n/2)) expected time; O(2^ceil(n/2)) space"
+  },
+  {
+    "id": 810,
+    "title": {
+      "zh": "黑板异或游戏",
+      "en": "Chalkboard XOR Game"
+    },
+    "desc": {
+      "zh": "从一次擦除看清输赢规则，用异或与奇偶性代替博弈搜索。",
+      "en": "Explore losing erasures, then replace game search with XOR and parity."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "博弈",
+        "en": "Game theory"
+      },
+      {
+        "zh": "位运算",
+        "en": "Bit manipulation"
+      }
+    ],
+    "path": "810/",
+    "leetcodeUrl": "https://leetcode.com/problems/chalkboard-xor-game/",
+    "language": "Python",
+    "complexity": "O(n) time; O(1) auxiliary space"
+  },
+  {
+    "id": 815,
+    "title": {
+      "zh": "公交路线",
+      "en": "Bus Routes"
+    },
+    "desc": {
+      "zh": "从一次上车解锁整条线路，推导按乘车数分层的搜索与一次扫描不变量。",
+      "en": "Unlock an entire route per boarding and derive BFS layers with a scan-once invariant."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "广度优先搜索",
+        "en": "Breadth-first search"
+      },
+      {
+        "zh": "倒排索引",
+        "en": "Inverted index"
+      }
+    ],
+    "path": "815/",
+    "leetcodeUrl": "https://leetcode.com/problems/bus-routes/",
+    "language": "Python",
+    "complexity": "O(M + R) expected time; O(M + R) auxiliary space, M = total route entries, R = route count"
+  },
+  {
+    "id": 818,
+    "title": {
+      "zh": "赛车",
+      "en": "Race Car"
+    },
+    "desc": {
+      "zh": "从完整状态的分层搜索，推导乐观下界并用 A* 减少探索。",
+      "en": "Derive an optimistic bound from full-state BFS and prioritize exploration with A*."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "广度优先搜索",
+        "en": "Breadth-first search"
+      },
+      {
+        "zh": "状态建模",
+        "en": "State modeling"
+      },
+      {
+        "zh": "A* 搜索",
+        "en": "A* search"
+      }
+    ],
+    "path": "818/",
+    "leetcodeUrl": "https://leetcode.com/problems/race-car/",
+    "language": "Python",
+    "complexity": "O(D * 2^D) time; O(2^D) space, conservative unit-cost bounds for optimal command depth D; heap work O(Q log Q) for Q generated entries"
+  },
+  {
+    "id": 827,
+    "title": {
+      "zh": "最大人工岛",
+      "en": "Making A Large Island"
+    },
+    "desc": {
+      "zh": "给岛编号，用不同邻岛的面积求一次翻转的收益。",
+      "en": "Label islands and combine distinct neighboring areas for one flip."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "连通分量",
+        "en": "Connected components"
+      },
+      {
+        "zh": "洪水填充",
+        "en": "Flood fill"
+      }
+    ],
+    "path": "827/",
+    "leetcodeUrl": "https://leetcode.com/problems/making-a-large-island/",
+    "language": "Python",
+    "complexity": "O(n²) time; O(n²) auxiliary space"
+  },
+  {
+    "id": 828,
+    "title": {
+      "zh": "统计所有子串中的唯一字符",
+      "en": "Count Unique Characters of All Substrings of a Given String"
+    },
+    "desc": {
+      "zh": "从 ABA 的六个子串，推导每个字符位置的贡献。",
+      "en": "Derive occurrence contributions from the six substrings of ABA."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "贡献计数",
+        "en": "Contribution counting"
+      },
+      {
+        "zh": "字符串",
+        "en": "Strings"
+      }
+    ],
+    "path": "828/",
+    "leetcodeUrl": "https://leetcode.com/problems/count-unique-characters-of-all-substrings-of-a-given-string/",
+    "language": "Python",
+    "complexity": "O(n) time; O(n) auxiliary space"
+  },
+  {
+    "id": 829,
+    "title": {
+      "zh": "连续整数求和",
+      "en": "Consecutive Numbers Sum"
+    },
+    "desc": {
+      "zh": "减掉递增的台阶，用长度与整除条件数出正整数序列。",
+      "en": "Remove the increasing offsets, then count lengths with an equal-sharing test."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "数学",
+        "en": "Mathematics"
+      },
+      {
+        "zh": "枚举长度",
+        "en": "Length enumeration"
+      }
+    ],
+    "path": "829/",
+    "leetcodeUrl": "https://leetcode.com/problems/consecutive-numbers-sum/",
+    "language": "Python",
+    "complexity": "O(sqrt(n)) time; O(1) auxiliary space"
+  },
+  {
+    "id": 834,
+    "title": {
+      "zh": "树中距离之和",
+      "en": "Sum of Distances in Tree"
+    },
+    "desc": {
+      "zh": "切开一条边，数清变近和变远的节点，推导线性换根算法。",
+      "en": "Cut one edge, count who gets closer or farther, and derive linear rerooting."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "树",
+        "en": "Tree"
+      },
+      {
+        "zh": "换根动态规划",
+        "en": "Rerooting DP"
+      }
+    ],
+    "path": "834/",
+    "leetcodeUrl": "https://leetcode.com/problems/sum-of-distances-in-tree/",
+    "language": "Python",
+    "complexity": "O(n) time; O(n) auxiliary space"
+  },
+  {
+    "id": 839,
+    "title": {
+      "zh": "相似字符串组",
+      "en": "Similar String Groups"
+    },
+    "desc": {
+      "zh": "从一次交换到连通分组，推导并查集的不变量。",
+      "en": "From one swap to connected groups: derive the disjoint-set invariant."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "并查集",
+        "en": "Disjoint sets"
+      },
+      {
+        "zh": "图连通性",
+        "en": "Graph connectivity"
+      }
+    ],
+    "path": "839/",
+    "leetcodeUrl": "https://leetcode.com/problems/similar-string-groups/",
+    "language": "Python",
+    "complexity": "O(n²(L + log n)) time; O(n) auxiliary space, for n words of length L (conservative bound)"
+  },
+  {
+    "id": 843,
+    "title": {
+      "zh": "猜猜这个单词",
+      "en": "Guess the Word"
+    },
+    "desc": {
+      "zh": "用逐位匹配排除候选，再用最坏回复桶选择提问。",
+      "en": "Filter by positional matches and choose guesses by worst reply buckets."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "交互式搜索",
+        "en": "Interactive search"
+      },
+      {
+        "zh": "极小化最坏情况",
+        "en": "Minimax"
+      }
+    ],
+    "path": "843/",
+    "leetcodeUrl": "https://leetcode.com/problems/guess-the-word/",
+    "language": "Python",
+    "complexity": "O(n²L + Gn²) time; O(n²) auxiliary space, L=6 and G≤n (worst-case O(n³+n²L) time)"
+  },
+  {
+    "id": 847,
+    "title": {
+      "zh": "访问所有节点的最短路径",
+      "en": "Shortest Path Visiting All Nodes"
+    },
+    "desc": {
+      "zh": "从重复经过中心的星形走法，推导记录当前位置与访问集合的多起点搜索。",
+      "en": "Derive a search over current nodes and visited sets from a walk that revisits a star’s center."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "广度优先搜索",
+        "en": "Breadth-first search"
+      },
+      {
+        "zh": "位掩码",
+        "en": "Bitmask"
+      }
+    ],
+    "path": "847/",
+    "leetcodeUrl": "https://leetcode.com/problems/shortest-path-visiting-all-nodes/",
+    "language": "Python",
+    "complexity": "O((n+m)2^n) expected time; O(n2^n) auxiliary space, m = undirected edges"
+  },
+  {
+    "id": 850,
+    "title": {
+      "zh": "矩形面积 II",
+      "en": "Rectangle Area II"
+    },
+    "desc": {
+      "zh": "把重叠矩形切成竖条，用区间合并计算覆盖高度。",
+      "en": "Slice overlapping rectangles into strips and merge their covered heights."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "扫描线",
+        "en": "Sweep line"
+      },
+      {
+        "zh": "区间合并",
+        "en": "Interval merging"
+      }
+    ],
+    "path": "850/",
+    "leetcodeUrl": "https://leetcode.com/problems/rectangle-area-ii/",
+    "language": "Python",
+    "complexity": "O(n² log n) time; O(n) auxiliary space"
+  },
+  {
+    "id": 854,
+    "title": {
+      "zh": "相似度为 K 的字符串",
+      "en": "K-Similar Strings"
+    },
+    "desc": {
+      "zh": "从亲手交换到保留最短路径的首错剪枝 BFS。",
+      "en": "Derive first-mismatch BFS pruning from concrete swaps."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "广度优先搜索",
+        "en": "Breadth-first search"
+      },
+      {
+        "zh": "字符串",
+        "en": "Strings"
+      }
+    ],
+    "path": "854/",
+    "leetcodeUrl": "https://leetcode.com/problems/k-similar-strings/",
+    "language": "Python",
+    "complexity": "O(S n²) time; O(S n) space, S = n! / product of letter-count factorials"
+  },
+  {
+    "id": 857,
+    "title": {
+      "zh": "雇佣 K 名工人的最低成本",
+      "en": "Minimum Cost to Hire K Workers"
+    },
+    "desc": {
+      "zh": "从共同工资单价推导排序与最大堆。",
+      "en": "Derive a rate sweep and max-heap from proportional pay."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "贪心",
+        "en": "Greedy"
+      },
+      {
+        "zh": "堆",
+        "en": "Heap"
+      }
+    ],
+    "path": "857/",
+    "leetcodeUrl": "https://leetcode.com/problems/minimum-cost-to-hire-k-workers/",
+    "language": "Python",
+    "complexity": "O(n log n + n log(k+1)) time; O(n+k) auxiliary space"
+  },
+  {
+    "id": 862,
+    "title": {
+      "zh": "和至少为 K 的最短子数组",
+      "en": "Shortest Subarray with Sum at Least K"
+    },
+    "desc": {
+      "zh": "从负数反例推导前缀和与双端队列的两种安全删除。",
+      "en": "Derive two safe deque removals from prefix sums and a negative-value counterexample."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "前缀和",
+        "en": "Prefix sums"
+      },
+      {
+        "zh": "单调队列",
+        "en": "Monotonic deque"
+      }
+    ],
+    "path": "862/",
+    "leetcodeUrl": "https://leetcode.com/problems/shortest-subarray-with-sum-at-least-k/",
+    "language": "Python",
+    "complexity": "O(n) time; O(n) auxiliary space"
+  },
+  {
+    "id": 864,
+    "title": {
+      "zh": "获取所有钥匙的最短路径",
+      "en": "Shortest Path to Get All Keys"
+    },
+    "desc": {
+      "zh": "同一格子，不同钥匙：从手算路线推导完整状态的分层搜索。",
+      "en": "Same square, different keys: derive a layered search over position and inventory."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "广度优先搜索",
+        "en": "Breadth-first search"
+      },
+      {
+        "zh": "位掩码",
+        "en": "Bitmask"
+      }
+    ],
+    "path": "864/",
+    "leetcodeUrl": "https://leetcode.com/problems/shortest-path-to-get-all-keys/",
+    "language": "Python",
+    "complexity": "O(mn · 2^k) time; O(mn · 2^k) auxiliary space"
+  },
+  {
+    "id": 871,
+    "title": {
+      "zh": "最低加油次数",
+      "en": "Minimum Number of Refueling Stops"
+    },
+    "desc": {
+      "zh": "从可达距离推导最大堆贪心，用可回退的补给记录证明最少停靠次数。",
+      "en": "Derive the maximum-fuel greedy choice from reachable distance, then inspect a reversible refueling ledger."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "贪心",
+        "en": "Greedy"
+      },
+      {
+        "zh": "堆",
+        "en": "Heap"
+      }
+    ],
+    "path": "871/",
+    "leetcodeUrl": "https://leetcode.com/problems/minimum-number-of-refueling-stops/",
+    "language": "Python",
+    "complexity": "O(n log(n+1)) time; O(n) auxiliary space"
+  },
+  {
+    "id": 878,
+    "title": {
+      "zh": "第 N 个神奇数字",
+      "en": "Nth Magical Number"
+    },
+    "desc": {
+      "zh": "从重复的倍数到精确计数，推导保留答案的二分边界。",
+      "en": "Count overlapping multiples, then derive a binary search that retains the answer."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "二分查找",
+        "en": "Binary search"
+      },
+      {
+        "zh": "容斥计数",
+        "en": "Inclusion–exclusion"
+      }
+    ],
+    "path": "878/",
+    "leetcodeUrl": "https://leetcode.com/problems/nth-magical-number/",
+    "language": "Python",
+    "complexity": "O(log(min(a,b)) + log(n*min(a,b))) integer operations; O(1) auxiliary integer cells"
+  },
+  {
+    "id": 879,
+    "title": {
+      "zh": "盈利计划",
+      "en": "Profitable Schemes"
+    },
+    "desc": {
+      "zh": "从四个子集推导人数与封顶利润的计数表。",
+      "en": "Derive a count table for exact members and capped profit from four subsets."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "动态规划",
+        "en": "Dynamic programming"
+      },
+      {
+        "zh": "计数",
+        "en": "Counting"
+      }
+    ],
+    "path": "879/",
+    "leetcodeUrl": "https://leetcode.com/problems/profitable-schemes/",
+    "language": "Python",
+    "complexity": "O(m*n*(minProfit+1)) time; O(n*(minProfit+1)) auxiliary space"
+  },
+  {
+    "id": 882,
+    "title": {
+      "zh": "细分图中的可到达节点",
+      "en": "Reachable Nodes In Subdivided Graph"
+    },
+    "desc": {
+      "zh": "用最短距离与两端覆盖计数，避开巨大细分图。",
+      "en": "Count coverage from both ends using shortest distances, without expanding the graph."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "最短路径",
+        "en": "Shortest paths"
+      },
+      {
+        "zh": "图",
+        "en": "Graphs"
+      }
+    ],
+    "path": "882/",
+    "leetcodeUrl": "https://leetcode.com/problems/reachable-nodes-in-subdivided-graph/",
+    "language": "Python",
+    "complexity": "O(n + m log(n + 1)) time; O(n + m) space"
+  },
+  {
+    "id": 887,
+    "title": {
+      "zh": "鸡蛋掉落",
+      "en": "Super Egg Drop"
+    },
+    "desc": {
+      "zh": "从两枚鸡蛋与六层楼，推导固定次数能覆盖多少楼层。",
+      "en": "From two eggs and six floors, derive how many floors a move budget can cover."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "动态规划",
+        "en": "Dynamic programming"
+      },
+      {
+        "zh": "最坏情况分析",
+        "en": "Worst-case analysis"
+      }
+    ],
+    "path": "887/",
+    "leetcodeUrl": "https://leetcode.com/problems/super-egg-drop/",
+    "language": "Python",
+    "complexity": "O(kM) time; O(k) auxiliary space, where M is the minimum move count and M <= n"
+  },
+  {
+    "id": 891,
+    "title": {
+      "zh": "子序列宽度之和",
+      "en": "Sum of Subsequence Widths"
+    },
+    "desc": {
+      "zh": "从逐个子序列的宽度，推导每个排序位置的最大值与最小值贡献。",
+      "en": "Count how often each sorted position contributes a maximum or minimum."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "排序",
+        "en": "Sorting"
+      },
+      {
+        "zh": "组合计数",
+        "en": "Combinatorics"
+      }
+    ],
+    "path": "891/",
+    "leetcodeUrl": "https://leetcode.com/problems/sum-of-subsequence-widths/",
+    "language": "Python",
+    "complexity": "O(n log n) time; O(n) space"
+  },
+  {
+    "id": 895,
+    "title": {
+      "zh": "最大频率栈",
+      "en": "Maximum Frequency Stack"
+    },
+    "desc": {
+      "zh": "用频率层的历史同时保存出现次数与最近顺序。",
+      "en": "Preserve frequency and recency with a stack for each frequency level."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "栈",
+        "en": "Stack"
+      },
+      {
+        "zh": "哈希表",
+        "en": "Hash table"
+      }
+    ],
+    "path": "895/",
+    "leetcodeUrl": "https://leetcode.com/problems/maximum-frequency-stack/",
+    "language": "Python",
+    "complexity": "O(1) expected amortized time per push/pop; O(q) space for q calls"
+  },
+  {
+    "id": 899,
+    "title": {
+      "zh": "有序队列",
+      "en": "Orderly Queue"
+    },
+    "desc": {
+      "zh": "从三个字母出发，证明旋转与排序之间的分界。",
+      "en": "Start with three letters and prove the boundary between rotation and sorting."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "字符串",
+        "en": "Strings"
+      },
+      {
+        "zh": "可达性",
+        "en": "Reachability"
+      }
+    ],
+    "path": "899/",
+    "leetcodeUrl": "https://leetcode.com/problems/orderly-queue/",
+    "language": "Python",
+    "complexity": "k = 1: O(n²) time; k ≥ 2: O(n log n) time; O(n) auxiliary space in both cases"
+  },
+  {
+    "id": 902,
+    "title": {
+      "zh": "最大为 N 的数字组合",
+      "en": "Numbers At Most N Given Digit Set"
+    },
+    "desc": {
+      "zh": "通过首个不同数位，把逐个检查变成互不重叠的计数块。",
+      "en": "Count disjoint blocks by the first digit that differs from the bound."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "组合计数",
+        "en": "Combinatorial counting"
+      },
+      {
+        "zh": "数位前缀",
+        "en": "Digit prefixes"
+      }
+    ],
+    "path": "902/",
+    "leetcodeUrl": "https://leetcode.com/problems/numbers-at-most-n-given-digit-set/",
+    "language": "Python",
+    "complexity": "O(Lm) time; O(L) auxiliary space, where L = len(str(n)) and m = len(digits)"
+  },
+  {
+    "id": 903,
+    "title": {
+      "zh": "DI 序列的有效排列",
+      "en": "Valid Permutations for DI Sequence"
+    },
+    "desc": {
+      "zh": "从末尾排名推导计数状态，逐格观察前缀与后缀求和。",
+      "en": "Derive counts by final rank and inspect prefix and suffix contributions."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "动态规划",
+        "en": "Dynamic programming"
+      },
+      {
+        "zh": "前缀和",
+        "en": "Prefix sums"
+      }
+    ],
+    "path": "903/",
+    "leetcodeUrl": "https://leetcode.com/problems/valid-permutations-for-di-sequence/",
+    "language": "Python",
+    "complexity": "O(n²) time; O(n) auxiliary space"
+  },
+  {
+    "id": 906,
+    "title": {
+      "zh": "超级回文数",
+      "en": "Super Palindromes"
+    },
+    "desc": {
+      "zh": "镜像构造回文平方根，完整检查超级回文数。",
+      "en": "Mirror square roots and prove a complete super-palindrome search."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "数学",
+        "en": "Math"
+      },
+      {
+        "zh": "枚举",
+        "en": "Enumeration"
+      }
+    ],
+    "path": "906/",
+    "leetcodeUrl": "https://leetcode.com/problems/super-palindromes/",
+    "language": "Python",
+    "complexity": "O(R^(1/4) log R) time; O(log R) auxiliary space, R = int(right)"
+  },
+  {
+    "id": 913,
+    "title": {
+      "zh": "猫和老鼠",
+      "en": "Cat and Mouse"
+    },
+    "desc": {
+      "zh": "从一个安全出口推导逆向胜负传播，区分尚未证明与平局。",
+      "en": "Derive backward win propagation from a safe exit, and distinguish unknown from draw."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "图上博弈",
+        "en": "Graph games"
+      },
+      {
+        "zh": "逆向推理",
+        "en": "Retrograde analysis"
+      }
+    ],
+    "path": "913/",
+    "leetcodeUrl": "https://leetcode.com/problems/cat-and-mouse/",
+    "language": "Python",
+    "complexity": "O(nE) time; O(n²) auxiliary space, E = undirected edges"
+  },
+  {
+    "id": 920,
+    "title": {
+      "zh": "播放列表的数量",
+      "en": "Number of Music Playlists"
+    },
+    "desc": {
+      "zh": "从 A、B 的三次播放出发，推导新歌与重播的计数递推。",
+      "en": "Count tiny A/B playlists, then derive the new-song and replay transitions."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "动态规划",
+        "en": "Dynamic programming"
+      },
+      {
+        "zh": "组合计数",
+        "en": "Combinatorial counting"
+      }
+    ],
+    "path": "920/",
+    "leetcodeUrl": "https://leetcode.com/problems/number-of-music-playlists/",
+    "language": "Python",
+    "complexity": "O(goal * n) time; O(n) auxiliary space"
+  },
+  {
+    "id": 924,
+    "title": {
+      "zh": "尽量减少恶意软件的传播",
+      "en": "Minimize Malware Spread"
+    },
+    "desc": {
+      "zh": "从删除感染源后的再次感染，推导连通分量的唯一感染源规则。",
+      "en": "Derive the sole-seed component rule by watching infection return after a seed is removed."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "图遍历",
+        "en": "Graph traversal"
+      },
+      {
+        "zh": "连通分量",
+        "en": "Connected components"
+      }
+    ],
+    "path": "924/",
+    "leetcodeUrl": "https://leetcode.com/problems/minimize-malware-spread/",
+    "language": "Python",
+    "complexity": "O(n²) time; O(n) auxiliary space"
+  },
+  {
+    "id": 927,
+    "title": {
+      "zh": "三等分",
+      "en": "Three Equal Parts"
+    },
+    "desc": {
+      "zh": "从二进制数值出发，推导三个首位与被末尾固定的比较长度。",
+      "en": "Derive three first-one positions and the matching length forced by the final suffix."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "数组",
+        "en": "Arrays"
+      },
+      {
+        "zh": "二进制",
+        "en": "Binary representation"
+      }
+    ],
+    "path": "927/",
+    "leetcodeUrl": "https://leetcode.com/problems/three-equal-parts/",
+    "language": "Python",
+    "complexity": "O(n) time; O(1) auxiliary space"
+  },
+  {
+    "id": 928,
+    "title": {
+      "zh": "尽量减少恶意软件的传播 II",
+      "en": "Minimize Malware Spread II"
+    },
+    "desc": {
+      "zh": "删除节点及其边，用健康连通组的唯一感染边界计算收益。",
+      "en": "Delete a node and its edges; count clean groups with a sole infected boundary source."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "图遍历",
+        "en": "Graph traversal"
+      },
+      {
+        "zh": "连通分量",
+        "en": "Connected components"
+      }
+    ],
+    "path": "928/",
+    "leetcodeUrl": "https://leetcode.com/problems/minimize-malware-spread-ii/",
+    "language": "Python",
+    "complexity": "O(n²) time; O(n) auxiliary space"
+  },
+  {
+    "id": 936,
+    "title": {
+      "zh": "戳印序列",
+      "en": "Stamping The Sequence"
+    },
+    "desc": {
+      "zh": "从覆盖字母到反向擦除，用阻塞计数构造戳印顺序。",
+      "en": "Turn overwrites into reverse erasures, then unlock windows with blocker counts."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "贪心",
+        "en": "Greedy"
+      },
+      {
+        "zh": "队列",
+        "en": "Queue"
+      }
+    ],
+    "path": "936/",
+    "leetcodeUrl": "https://leetcode.com/problems/stamping-the-sequence/",
+    "language": "Python",
+    "complexity": "O(nm) time; O(nm) auxiliary space and O(n) output, where m=len(stamp), n=len(target)"
+  },
+  {
+    "id": 940,
+    "title": {
+      "zh": "不同的子序列 II",
+      "en": "Distinct Subsequences II"
+    },
+    "desc": {
+      "zh": "按末尾字母分组，理解重复子序列为何必须替换。",
+      "en": "Group by final letter to replace repeated subsequences exactly once."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "动态规划",
+        "en": "Dynamic programming"
+      },
+      {
+        "zh": "计数",
+        "en": "Counting"
+      }
+    ],
+    "path": "940/",
+    "leetcodeUrl": "https://leetcode.com/problems/distinct-subsequences-ii/",
+    "language": "Python",
+    "complexity": "O(n) time; O(26) = O(1) auxiliary space"
+  },
+  {
+    "id": 943,
+    "title": {
+      "zh": "最短超级串",
+      "en": "Find the Shortest Superstring"
+    },
+    "desc": {
+      "zh": "从字符重叠到子集与末尾单词，重建全局最短超级串。",
+      "en": "Turn word overlaps into subset-and-endpoint states and reconstruct a shortest superstring."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "状态压缩动态规划",
+        "en": "Bitmask dynamic programming"
+      },
+      {
+        "zh": "字符串重叠",
+        "en": "String overlap"
+      }
+    ],
+    "path": "943/",
+    "leetcodeUrl": "https://leetcode.com/problems/find-the-shortest-superstring/",
+    "language": "Python",
+    "complexity": "O(n²L² + n²2ⁿ) time; O(n2ⁿ + n² + nL) auxiliary space, where L is maximum word length"
+  },
+  {
+    "id": 952,
+    "title": {
+      "zh": "按公因数计算最大组件大小",
+      "en": "Largest Component Size by Common Factor"
+    },
+    "desc": {
+      "zh": "从公因数链推导质因数代表与并查集。",
+      "en": "Derive prime representatives and union-find from a chain of common factors."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "并查集",
+        "en": "Union-find"
+      },
+      {
+        "zh": "质因数分解",
+        "en": "Prime factorization"
+      }
+    ],
+    "path": "952/",
+    "leetcodeUrl": "https://leetcode.com/problems/largest-component-size-by-common-factor/",
+    "language": "Python",
+    "complexity": "O(n sqrt(M) + n log(M) α(n)) time; O(n + M) space"
+  },
+  {
+    "id": 956,
+    "title": {
+      "zh": "最高的广告牌",
+      "en": "Tallest Billboard"
+    },
+    "desc": {
+      "zh": "从焊接两根等高支架，推导高度差动态规划。",
+      "en": "Derive difference-state DP by welding two equal supports."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "动态规划",
+        "en": "Dynamic programming"
+      },
+      {
+        "zh": "状态压缩",
+        "en": "State compression"
+      }
+    ],
+    "path": "956/",
+    "leetcodeUrl": "https://leetcode.com/problems/tallest-billboard/",
+    "language": "Python",
+    "complexity": "O(nS) expected time; O(S) auxiliary space, S = sum(rods)"
+  },
+  {
+    "id": 960,
+    "title": {
+      "zh": "删列造序 III",
+      "en": "Delete Columns to Make Sorted III"
+    },
+    "desc": {
+      "zh": "从共享列的兼容关系推导最长保留链。",
+      "en": "Derive a longest kept chain from shared-column compatibility."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "动态规划",
+        "en": "Dynamic programming"
+      },
+      {
+        "zh": "子序列",
+        "en": "Subsequences"
+      }
+    ],
+    "path": "960/",
+    "leetcodeUrl": "https://leetcode.com/problems/delete-columns-to-make-sorted-iii/",
+    "language": "Python",
+    "complexity": "O(nm²) time; O(m) auxiliary space"
+  },
+  {
+    "id": 964,
+    "title": {
+      "zh": "表示数字的最少运算符",
+      "en": "Least Operators to Express Number"
+    },
+    "desc": {
+      "zh": "从 3×3−3÷3 推导保留两种进位选择的数位动态规划。",
+      "en": "Derive a two-state digit DP from 3×3−3÷3 and compare direct and complement costs."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "数位动态规划",
+        "en": "Digit DP"
+      },
+      {
+        "zh": "进位",
+        "en": "Carry"
+      }
+    ],
+    "path": "964/",
+    "leetcodeUrl": "https://leetcode.com/problems/least-operators-to-express-number/",
+    "language": "Python",
+    "complexity": "O(1 + log_x(target)) time; O(1) auxiliary space"
+  },
+  {
+    "id": 968,
+    "title": {
+      "zh": "监控二叉树",
+      "en": "Binary Tree Cameras"
+    },
+    "desc": {
+      "zh": "从三节点覆盖实验推导后序遍历的三种状态与最少摄像头。",
+      "en": "Derive three postorder states from a tiny camera coverage experiment."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "二叉树",
+        "en": "Binary trees"
+      },
+      {
+        "zh": "贪心",
+        "en": "Greedy"
+      },
+      {
+        "zh": "后序遍历",
+        "en": "Postorder traversal"
+      }
+    ],
+    "path": "968/",
+    "leetcodeUrl": "https://leetcode.com/problems/binary-tree-cameras/",
+    "language": "Python",
+    "complexity": "O(n) time; O(n) auxiliary space"
+  },
+  {
+    "id": 972,
+    "title": {
+      "zh": "相等的有理数",
+      "en": "Equal Rational Numbers"
+    },
+    "desc": {
+      "zh": "把无限循环小数变成精确分数，辨认不同写法背后的同一个数。",
+      "en": "Turn repeating decimals into exact fractions and compare different spellings."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "数学",
+        "en": "Math"
+      },
+      {
+        "zh": "字符串",
+        "en": "Strings"
+      }
+    ],
+    "path": "972/",
+    "leetcodeUrl": "https://leetcode.com/problems/equal-rational-numbers/",
+    "language": "Python",
+    "complexity": "O(n) parsing time; O(n) auxiliary space under the official bounded-digit arithmetic model"
+  },
+  {
+    "id": 975,
+    "title": {
+      "zh": "奇偶跳",
+      "en": "Odd Even Jump"
+    },
+    "desc": {
+      "zh": "从强制跳跃推导排序、栈与双状态倒推。",
+      "en": "Derive sorted targets and two-state reachability from forced jumps."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "单调栈",
+        "en": "Monotonic stack"
+      },
+      {
+        "zh": "动态规划",
+        "en": "Dynamic programming"
+      }
+    ],
+    "path": "975/",
+    "leetcodeUrl": "https://leetcode.com/problems/odd-even-jump/",
+    "language": "Python",
+    "complexity": "O(n log n) time; O(n) auxiliary space"
+  },
+  {
+    "id": 980,
+    "title": {
+      "zh": "不同路径 III",
+      "en": "Unique Paths III"
+    },
+    "desc": {
+      "zh": "从提前到达终点的失败，推导覆盖每个格子的回溯计数。",
+      "en": "Derive complete-walk backtracking from an early arrival that fails."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "回溯",
+        "en": "Backtracking"
+      },
+      {
+        "zh": "网格搜索",
+        "en": "Grid search"
+      }
+    ],
+    "path": "980/",
+    "leetcodeUrl": "https://leetcode.com/problems/unique-paths-iii/",
+    "language": "Python",
+    "complexity": "O(mn + 3^V) time; O(V) auxiliary space, V non-obstacle cells"
+  },
+  {
+    "id": 982,
+    "title": {
+      "zh": "按位与为零的三元组",
+      "en": "Triples with Bitwise AND Equal To Zero"
+    },
+    "desc": {
+      "zh": "保留有序数对的次数，再用子集求和统计兼容的第三个数。",
+      "en": "Preserve ordered-pair multiplicities, then sum compatible masks for each third value."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "位运算",
+        "en": "Bit manipulation"
+      },
+      {
+        "zh": "子集求和",
+        "en": "Subset sums"
+      }
+    ],
+    "path": "982/",
+    "leetcodeUrl": "https://leetcode.com/problems/triples-with-bitwise-and-equal-to-zero/",
+    "language": "Python",
+    "complexity": "O(n² + B·2^B) time; O(2^B) auxiliary space, B = max(1, bit_length(max(nums))) ≤ 16"
+  },
+  {
+    "id": 987,
+    "title": {
+      "zh": "二叉树的垂序遍历",
+      "en": "Vertical Order Traversal of a Binary Tree"
+    },
+    "desc": {
+      "zh": "用坐标与三层排序规则解决同位置节点的冲突。",
+      "en": "Use coordinates and three ordering keys to resolve nodes sharing a position."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "二叉树",
+        "en": "Binary tree"
+      },
+      {
+        "zh": "排序",
+        "en": "Sorting"
+      }
+    ],
+    "path": "987/",
+    "leetcodeUrl": "https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/",
+    "language": "Python",
+    "complexity": "O(n log n) time; O(n) auxiliary space and O(n) output space"
+  },
+  {
+    "id": 992,
+    "title": {
+      "zh": "K 个不同整数的子数组",
+      "en": "Subarrays with K Different Integers"
+    },
+    "desc": {
+      "zh": "从手算到两个左边界：用至多计数相减，恰好数出 k 种值的连续区间。",
+      "en": "Derive two left boundaries and subtract at-most counts to count exactly-k intervals."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "滑动窗口",
+        "en": "Sliding window"
+      },
+      {
+        "zh": "频次计数",
+        "en": "Frequency counting"
+      }
+    ],
+    "path": "992/",
+    "leetcodeUrl": "https://leetcode.com/problems/subarrays-with-k-different-integers/",
+    "language": "Python",
+    "complexity": "O(n) expected time; O(n) auxiliary space"
+  },
+  {
+    "id": 995,
+    "title": {
+      "zh": "K 连续位的最小翻转次数",
+      "en": "Minimum Number of K Consecutive Bit Flips"
+    },
+    "desc": {
+      "zh": "从左端的必选翻转，推导奇偶性与到期事件的线性扫描。",
+      "en": "Derive a linear parity-and-expiry scan from forced leftmost flips."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "贪心",
+        "en": "Greedy"
+      },
+      {
+        "zh": "差分事件",
+        "en": "Difference events"
+      }
+    ],
+    "path": "995/",
+    "leetcodeUrl": "https://leetcode.com/problems/minimum-number-of-k-consecutive-bit-flips/",
+    "language": "Python",
+    "complexity": "O(n) time; O(n) auxiliary space"
+  },
+  {
+    "id": 996,
+    "title": {
+      "zh": "正方形数组的数目",
+      "en": "Number of Squareful Arrays"
+    },
+    "desc": {
+      "zh": "用剩余次数回溯，既检查相邻平方和，又避免重复排列。",
+      "en": "Track remaining counts to build legal squareful orders without duplicates."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "回溯",
+        "en": "Backtracking"
+      },
+      {
+        "zh": "计数",
+        "en": "Counting"
+      }
+    ],
+    "path": "996/",
+    "leetcodeUrl": "https://leetcode.com/problems/number-of-squareful-arrays/",
+    "language": "Python",
+    "complexity": "O(n*n! + k²) time; O(n + k²) auxiliary space, k distinct values"
+  },
+  {
+    "id": 1000,
+    "title": {
+      "zh": "合并石头的最低成本",
+      "en": "Minimum Cost to Merge Stones"
+    },
+    "desc": {
+      "zh": "从每次付费到区间与堆数：推导合法合并的动态规划。",
+      "en": "From merge payments to interval states with an explicit pile count."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "区间动态规划",
+        "en": "Interval DP"
+      }
+    ],
+    "path": "1000/",
+    "leetcodeUrl": "https://leetcode.com/problems/minimum-cost-to-merge-stones/",
+    "language": "Python",
+    "complexity": "O(n³k) time; O(n²k) auxiliary space"
+  },
+  {
+    "id": 1001,
+    "title": {
+      "zh": "网格照明",
+      "en": "Grid Illumination"
+    },
+    "desc": {
+      "zh": "先读光，再关灯：用四组计数维护稀疏网格。",
+      "en": "Read the light before switching lamps off: maintain four sparse line counts."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "哈希表",
+        "en": "Hash tables"
+      },
+      {
+        "zh": "计数不变量",
+        "en": "Counting invariant"
+      }
+    ],
+    "path": "1001/",
+    "leetcodeUrl": "https://leetcode.com/problems/grid-illumination/",
+    "language": "Python",
+    "complexity": "O(L + Q) expected time; O(U) auxiliary space plus O(Q) output, U distinct lamps"
+  },
+  {
+    "id": 1012,
+    "title": {
+      "zh": "至少有 1 位重复的数字",
+      "en": "Numbers With Repeated Digits"
+    },
+    "desc": {
+      "zh": "用不重复数字的互斥分组，推导前缀计数与停止条件。",
+      "en": "Count disjoint unique-digit blocks and derive the equal-prefix stopping rule."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "组合计数",
+        "en": "Combinatorics"
+      },
+      {
+        "zh": "数位前缀",
+        "en": "Digit prefixes"
+      }
+    ],
+    "path": "1012/",
+    "leetcodeUrl": "https://leetcode.com/problems/numbers-with-repeated-digits/",
+    "language": "Python",
+    "complexity": "O(D²) time; O(D) auxiliary space, D = decimal digit count (fixed base 10)"
+  },
+  {
+    "id": 1028,
+    "title": {
+      "zh": "从先序遍历还原二叉树",
+      "en": "Recover a Tree From Preorder Traversal"
+    },
+    "desc": {
+      "zh": "从短横线深度推导祖先路径，逐步还原父子关系。",
+      "en": "Derive an ancestor path from dash depths and rebuild every parent link."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "二叉树",
+        "en": "Binary tree"
+      },
+      {
+        "zh": "栈",
+        "en": "Stack"
+      },
+      {
+        "zh": "先序遍历",
+        "en": "Preorder traversal"
+      }
+    ],
+    "path": "1028/",
+    "leetcodeUrl": "https://leetcode.com/problems/recover-a-tree-from-preorder-traversal/",
+    "language": "Python",
+    "complexity": "O(L) time; O(h) auxiliary space plus O(n) returned tree, where L is traversal length and h is path height in nodes"
+  },
+  {
+    "id": 1032,
+    "title": {
+      "zh": "字符流",
+      "en": "Stream of Characters"
+    },
+    "desc": {
+      "zh": "从末尾逐字检查，推导反向字典树的停止条件。",
+      "en": "Scan from the newest letter and derive a reversed trie’s stopping rules."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "字典树",
+        "en": "Trie"
+      },
+      {
+        "zh": "数据流",
+        "en": "Data stream"
+      }
+    ],
+    "path": "1032/",
+    "leetcodeUrl": "https://leetcode.com/problems/stream-of-characters/",
+    "language": "Python",
+    "complexity": "O(S) build; O(min(t,L)) worst time per query; O(S+L) space"
+  },
+  {
+    "id": 1036,
+    "title": {
+      "zh": "逃离大迷宫",
+      "en": "Escape a Large Maze"
+    },
+    "desc": {
+      "zh": "用无障碍行列证明搜索上界，再从两端检查连通性。",
+      "en": "Prove a search budget with clear rows and columns, then test both endpoints."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "广度优先搜索",
+        "en": "Breadth-first search"
+      },
+      {
+        "zh": "连通性",
+        "en": "Connectivity"
+      }
+    ],
+    "path": "1036/",
+    "leetcodeUrl": "https://leetcode.com/problems/escape-a-large-maze/",
+    "language": "Python",
+    "complexity": "O(n + (b+1)²) expected time; O((b+1)²) space, n = blocker entries, b = distinct blockers"
+  },
+  {
+    "id": 1044,
+    "title": {
+      "zh": "最长重复子串",
+      "en": "Longest Duplicate Substring"
+    },
+    "desc": {
+      "zh": "从重叠的 ana 推导后缀排序、倍增秩与公共前缀复用。",
+      "en": "From overlapping ana to suffix order, doubling ranks and reused common prefixes."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "后缀数组",
+        "en": "Suffix array"
+      },
+      {
+        "zh": "公共前缀",
+        "en": "Common prefix"
+      }
+    ],
+    "path": "1044/",
+    "leetcodeUrl": "https://leetcode.com/problems/longest-duplicate-substring/",
+    "language": "Python",
+    "complexity": "O(n log² n) time; O(n) auxiliary space"
+  },
+  {
+    "id": 1074,
+    "title": {
+      "zh": "元素和为目标值的子矩阵数量",
+      "en": "Number of Submatrices That Sum to Target"
+    },
+    "desc": {
+      "zh": "固定两行，把矩形化为列区间，再用前缀和的出现次数找回每个左边界。",
+      "en": "Fix two row boundaries, compress columns, and count earlier prefix boundaries for every rectangle."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "前缀和",
+        "en": "Prefix sums"
+      },
+      {
+        "zh": "哈希表",
+        "en": "Hash table"
+      },
+      {
+        "zh": "矩阵",
+        "en": "Matrix"
+      }
+    ],
+    "path": "1074/",
+    "leetcodeUrl": "https://leetcode.com/problems/number-of-submatrices-that-sum-to-target/",
+    "language": "Python",
+    "complexity": "O(m²n) expected time; O(n) auxiliary space, for m rows and n columns"
+  },
+  {
+    "id": 1092,
+    "title": {
+      "zh": "最短公共超序列",
+      "en": "Shortest Common Supersequence"
+    },
+    "desc": {
+      "zh": "从共享一个字符开始，推导后缀长度表并重建最短字符串。",
+      "en": "Share one letter, derive a suffix-length table, and reconstruct a shortest string."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "动态规划",
+        "en": "Dynamic programming"
+      },
+      {
+        "zh": "字符串重建",
+        "en": "String reconstruction"
+      }
+    ],
+    "path": "1092/",
+    "leetcodeUrl": "https://leetcode.com/problems/shortest-common-supersequence/",
+    "language": "Python",
+    "complexity": "O(mn + m + n) time; O(mn + m + n) space, including output"
+  },
+  {
+    "id": 1095,
+    "title": {
+      "zh": "山脉数组中查找目标值",
+      "en": "Find in Mountain Array"
+    },
+    "desc": {
+      "zh": "用坡向定位峰顶，再按相反方向二分；证明最小下标与访问预算。",
+      "en": "Locate the peak by slope, then search both ordered sides within the access budget."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "二分查找",
+        "en": "Binary search"
+      },
+      {
+        "zh": "交互式接口",
+        "en": "Interactive interface"
+      }
+    ],
+    "path": "1095/",
+    "leetcodeUrl": "https://leetcode.com/problems/find-in-mountain-array/",
+    "language": "Python",
+    "complexity": "O(log n) time and get calls; O(1) auxiliary space"
+  },
+  {
+    "id": 1096,
+    "title": {
+      "zh": "花括号展开 II",
+      "en": "Brace Expansion II"
+    },
+    "desc": {
+      "zh": "从手算配对到嵌套解析，分清并集与拼接，保留每层自己的状态。",
+      "en": "Derive scoped parsing from hand pairings; separate union from concatenation."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "递归解析",
+        "en": "Recursive parsing"
+      },
+      {
+        "zh": "集合",
+        "en": "Sets"
+      }
+    ],
+    "path": "1096/",
+    "leetcodeUrl": "https://leetcode.com/problems/brace-expansion-ii/",
+    "language": "Python",
+    "complexity": "O(n²W² + nK log K) expected time; O(n²W) space including output, W≥1 maximum intermediate set size, K final word count"
+  },
+  {
+    "id": 1106,
+    "title": {
+      "zh": "解析布尔表达式",
+      "en": "Parsing A Boolean Expression"
+    },
+    "desc": {
+      "zh": "把完成的括号组压成一个真假值，逐步推导栈解析。",
+      "en": "Derive stack parsing by reducing each completed group to one truth value."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "栈",
+        "en": "Stack"
+      },
+      {
+        "zh": "字符串解析",
+        "en": "Parsing"
+      }
+    ],
+    "path": "1106/",
+    "leetcodeUrl": "https://leetcode.com/problems/parsing-a-boolean-expression/",
+    "language": "Python",
+    "complexity": "O(n) time; O(n) auxiliary space"
+  },
+  {
+    "id": 1125,
+    "title": {
+      "zh": "最小的必要团队",
+      "en": "Smallest Sufficient Team"
+    },
+    "desc": {
+      "zh": "从三项技能的组队实验，推导按技能覆盖保存最小团队的动态规划。",
+      "en": "Build a tiny team, then derive dynamic programming over skill coverage."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "状态压缩",
+        "en": "Bitmasks"
+      },
+      {
+        "zh": "动态规划",
+        "en": "Dynamic programming"
+      }
+    ],
+    "path": "1125/",
+    "leetcodeUrl": "https://leetcode.com/problems/smallest-sufficient-team/",
+    "language": "Python",
+    "complexity": "O(L + n m 2^m) time; O(m 2^m + m) auxiliary space, with m skills, n people, L input skill entries"
+  },
+  {
+    "id": 1147,
+    "title": {
+      "zh": "段式回文",
+      "en": "Longest Chunked Palindrome Decomposition"
+    },
+    "desc": {
+      "zh": "从 volvo 的手算切块推导最短相等两端的贪心证明。",
+      "en": "Derive why the shortest equal ends maximize the number of chunks."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "贪心",
+        "en": "Greedy"
+      },
+      {
+        "zh": "字符串",
+        "en": "Strings"
+      }
+    ],
+    "path": "1147/",
+    "leetcodeUrl": "https://leetcode.com/problems/longest-chunked-palindrome-decomposition/",
+    "language": "Python",
+    "complexity": "O(n²) time; O(n) auxiliary space"
+  },
+  {
+    "id": 1157,
+    "title": {
+      "zh": "子数组中占绝大多数的元素",
+      "en": "Online Majority Element In Subarray"
+    },
+    "desc": {
+      "zh": "抵消异值筛选候选，用区间摘要与位置表精确验证。",
+      "en": "Cancel unlike pairs, combine range summaries, and verify a candidate with position lists."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "线段树",
+        "en": "Segment tree"
+      },
+      {
+        "zh": "多数投票",
+        "en": "Majority vote"
+      },
+      {
+        "zh": "二分查找",
+        "en": "Binary search"
+      }
+    ],
+    "path": "1157/",
+    "leetcodeUrl": "https://leetcode.com/problems/online-majority-element-in-subarray/",
+    "language": "Python",
+    "complexity": "O(n) construction time and space; O(log n) time and O(1) extra space per query"
+  },
+  {
+    "id": 1163,
+    "title": {
+      "zh": "字典序最大的子串",
+      "en": "Last Substring in Lexicographical Order"
+    },
+    "desc": {
+      "zh": "从相同前缀与淘汰证明推导线性双指针扫描。",
+      "en": "Derive a linear two-pointer scan from shared prefixes and a discard proof."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "字符串",
+        "en": "Strings"
+      },
+      {
+        "zh": "双指针",
+        "en": "Two pointers"
+      }
+    ],
+    "path": "1163/",
+    "leetcodeUrl": "https://leetcode.com/problems/last-substring-in-lexicographical-order/",
+    "language": "Python",
+    "complexity": "O(n) time; O(1) auxiliary space"
+  },
+  {
+    "id": 1172,
+    "title": {
+      "zh": "餐盘栈",
+      "en": "Dinner Plate Stacks"
+    },
+    "desc": {
+      "zh": "用最左空位最小堆和清理后的列表尾部实现餐盘栈。",
+      "en": "Use a leftmost-hole min-heap and a cleaned list tail to implement Dinner Plate Stacks."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "堆",
+        "en": "Heaps"
+      },
+      {
+        "zh": "设计",
+        "en": "Design"
+      }
+    ],
+    "path": "1172/",
+    "leetcodeUrl": "https://leetcode.com/problems/dinner-plate-stacks/",
+    "language": "Python",
+    "complexity": "Amortized O(log n) time per operation; O(n) space"
+  },
+  {
+    "id": 1178,
+    "title": {
+      "zh": "每个谜题的有效单词数",
+      "en": "Number of Valid Words for Each Puzzle"
+    },
+    "desc": {
+      "zh": "用位掩码和子集枚举统计每个七字母谜题的有效单词。",
+      "en": "Count valid words for each seven-letter puzzle with masks and submasks."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "位掩码",
+        "en": "Bitmask"
+      },
+      {
+        "zh": "子集枚举",
+        "en": "Subset enumeration"
+      }
+    ],
+    "path": "1178/",
+    "leetcodeUrl": "https://leetcode.com/problems/number-of-valid-words-for-each-puzzle/",
+    "language": "Python",
+    "complexity": "O(W·L + P·2^7) time; O(W) space"
+  },
+  {
+    "id": 1187,
+    "title": {
+      "zh": "让数组严格递增",
+      "en": "Make Array Strictly Increasing"
+    },
+    "desc": {
+      "zh": "从相邻约束推导按最后值压缩的动态规划。",
+      "en": "Derive last-value dynamic programming from adjacent constraints."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "动态规划",
+        "en": "Dynamic programming"
+      },
+      {
+        "zh": "二分查找",
+        "en": "Binary search"
+      }
+    ],
+    "path": "1187/",
+    "leetcodeUrl": "https://leetcode.com/problems/make-array-strictly-increasing/",
+    "language": "Python",
+    "complexity": "O(nm log m) time; O(m) space"
   },
   {
     "id": 2916,

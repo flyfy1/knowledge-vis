@@ -1,0 +1,28 @@
+# #879 Profitable Schemes — author brief
+
+Status: author run; independent lesson review pending. No submission, acceptance, publication or learner outcome claimed. Approved pattern: specs/reviews/leetcode-all-hard-design-review.md, dispatcher adjudication; no new shared architecture. Own only this folder.
+
+Audience: basic Python loops/lists; category computing (collection leetcode), stage university. Job: count feasible subsets and reconstruct a bounded two-dimensional counting DP. Loop: hand-enumerate → merge equivalent futures → inspect old/new tables and transition ledger → predict a fresh case → map to Python.
+
+Official verification: provenance/official.json captures public GraphQL on access date, complete statement, examples, constraints and actual codeSnippets. Python3 selector gives Solution.profitableSchemes(self, n: int, minProfit: int, group: list[int], profit: list[int]) -> int. Canonical Python selected. Members cannot be reused, each crime chosen at most once; count subsets of indices, including empty when threshold zero; modulus 1,000,000,007. n 1..100, threshold 0..100, 1..100 crimes, group 1..100, profit 0..100. Official examples 2 and 7. English source; Chinese is authored translation.
+
+## Five steps (five required fields each)
+0. Known: subsets and addition. Question: which plans qualify? Input: n=5, P=3, crimes (2,2),(2,3); output 2. Action: inspect four subset sums. Observation: {1} and {0,1} pass. Condition: choices identified by crime index, not member assignment.
+1. Known: four plans. Question: what repeated work can be merged? Input same, desired count without listing 2^m choices. Action: compare baseline and profit buckets. Observation: profit 3 and 5 have the same remaining requirement but counts add. Condition: nonnegative profit, only lower profit threshold; exact members still needed.
+2. Known: buckets. Question: how does one crime change counts? Input bounded presets; output completed prefix table. Action: forward/back/reset/end, change preset resets trace. Observation: old/new sparse table plus every nonzero source's skip/take contribution and retained prefix totals. Condition: read old table, write new table; snapshot after whole crime. No omitted transitions on teaching inputs.
+3. Known: exact people and capped profit invariant. Question: count a fresh capped-profit/capacity case? Input n=3, P=2, group=[1,1,2], profit=[2,2,0]. Action: choose then reveal; change choice clears feedback, locale preserves. Observation: five indexed qualifying subsets, not one bucket or six including an oversized subset. Condition: each item once, empty fails P=2.
+4. Known: transition and proof. Question: how to submit and bound costs? Input official signature, desired integer. Action: source disclosure/copy/download and related deep links. Observation: old/new rows map to code, boundaries and costs. Condition: Python executed separately from JS simulation; modulo arithmetic.
+
+## Terms and dependencies
+Step0: scheme=subset of indexed crimes; n=available members; P=minProfit threshold.
+Step1: baseline=enumerating all subsets; bucket=states with identical future feasibility; capped profit=min(P,actual profit).
+Step2: DP=count table; u=exact members used; p=capped profit; prefix=first k crimes. All redefined locally in that step. Invariant counts all and only subsets of the completed prefix at (u,p). Empty prefix dp[0][0]=1. Skip/take partition disjoint; capping commutes with addition for nonnegative profits; new table prevents reuse.
+Step4: m=crime count; modulo=remainder after division. O(m*n*(P+1)) time, O(n*(P+1)) auxiliary cells, two tables. Teaching snapshots O(m*n*(P+1)), not submission memory. Bounded UI m<=3, n<=10, P<=5; sparse display lists union of nonzero cells, all others zero.
+
+## Design and scope
+Exact shared tokens from ../style.css: bg #0d1117, panel #161b22, panel2 #1c2330, line #2b3547, text #e8edf4, muted #9aa7b8, accent #6ee7ff, accent2 #ffb454, good #7ee2a8, bad #ff7a93. Shared system font, 14px stage radius, 8px control radius. Local overrides: 48px controls, opaque disabled text, three-pixel focus, responsive wrapping and keyboard-scroll tables. No extra color literals. P0: causal bilingual teaching, full reversible state, code and source fidelity, tests. Highest return: old/new cells plus contribution ledger. P1: related links. P2 none. Deferred: auto-play, arbitrary maximum-size UI input, Python runtime in browser (unneeded cost), platform abstraction. No loading/reconnect states: static local assets, no runtime fetch.
+
+Validation planned: independent subset oracle at every prefix/cell; exhaustive/seeded and maximum Python cases; browser both locales/presets/endpoints/reveal/copy, narrow and zoom, contrast calibrated against known values. Evidence distinguishes author self-check from separate review. Real devices, production delivery and learner comprehension unverified.
+
+## Author completion record
+Author candidate self-checked; independent review pending (reviewer/run unavailable). See tests/SELF-CHECK.md, tests/evidence/*.json and tests/candidate-manifest.json. Official Python callable executed on 10,235 independent-oracle/expected cases; local JS model checked at 38,141 prefix frames. Real-browser bilingual controls/source/mobile/zoom checks passed. Preflight `python3 -B scripts/register_leetcode_lesson.py 879 --validate-only`: exit 0, no output; metadata was not registered. Shipped shared+local CSS 11,061 bytes. Frozen candidate is for a separate review, not acceptance. Only leetcode/879/ was authored; no agents spawned, commits, publication or shared edits.

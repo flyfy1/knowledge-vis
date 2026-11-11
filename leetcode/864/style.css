@@ -1,0 +1,16 @@
+/* Exact shared tokens; local geometry for the position × inventory ledger. */
+button:disabled{opacity:1;color:var(--muted);background:var(--panel);border-color:var(--line)}
+.btn,select,.lang-toggle button,.step-nav a,.prediction-options label{min-height:48px}
+.lang-toggle button{min-width:48px}.step-nav a{display:inline-flex;align-items:center}
+select{display:block;max-width:100%;margin:12px 0;width:100%}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible,textarea:focus-visible,.grid-scroll:focus-visible,pre:focus-visible{outline:3px solid var(--accent2);outline-offset:4px}
+.grid-scroll{overflow:auto;padding:6px;margin:18px 0}.key-grid{display:grid;gap:8px;min-width:max-content;align-items:stretch}
+.key-cell{border:1px solid var(--line);border-radius:8px;background:var(--panel2);width:112px;padding:8px;display:flex;flex-direction:column;gap:4px}
+.key-cell.front{border:3px solid var(--accent);padding:6px}.key-cell.wall{background:var(--bg)}
+.key-cell b{font-size:21px;color:var(--accent2)}.key-cell small{color:var(--muted);font-size:12px}.key-cell .record{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:14px;white-space:nowrap}.key-cell .active-record{color:var(--accent);font-weight:700}
+.tiny{display:flex;gap:8px;margin-bottom:20px}.tiny span{border:1px solid var(--line);background:var(--panel2);padding:12px;min-width:48px;text-align:center;font-size:21px}
+textarea{width:100%;background:var(--panel2);color:var(--text);border:1px solid var(--line);padding:12px;font:13px/1.65 ui-monospace,monospace}
+.trace-log li{overflow-wrap:anywhere}.step-inner{overflow-wrap:anywhere}.prediction-options input{min-width:20px;min-height:20px;flex-shrink:0}.prediction-options label{padding:8px 0}
+@media(max-width:560px){.key-cell{width:104px}.stage{padding:12px}.step-nav-inner{padding-inline:12px}.controls .btn{flex:1 1 120px}.head-top{align-items:flex-start}}
+@media(forced-colors:active){.key-cell.front{border-style:double}.active-record{text-decoration:underline}}
+.back-link,.site-head .official-link,.related a{display:inline-flex;align-items:center;min-height:48px}summary{min-height:48px}

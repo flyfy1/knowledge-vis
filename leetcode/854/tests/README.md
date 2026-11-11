@@ -1,0 +1,64 @@
+# Reproduce author checks
+
+From the repository root, use the already-running preview (default http://127.0.0.1:18770). Do not start a service or register this candidate.
+
+```sh
+EVIDENCE_DIR=/tmp/854-review python3 -B leetcode/854/tests/test_solution.py
+EVIDENCE_DIR=/tmp/854-review node leetcode/854/tests/test_core.cjs
+EVIDENCE_DIR=/tmp/854-review NODE_PATH="$NODE_PATH" node leetcode/854/tests/browser.cjs
+python3 -B scripts/register_leetcode_lesson.py 854 --validate-only
+```
+
+Browser needs the installed Playwright package (NODE_PATH) and honors PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH and optional PREVIEW_URL. Every evidence-producing test honors EVIDENCE_DIR; none changes runtime assets. `build_page.py` is the lesson-local author regeneration utility, not a review test; it rewrites copy/index/metadata and is not needed for verification. No first-ten generator was used.
+
+Python tests compare the official callable against unrestricted pair-swap BFS: all ordered anagram pairs on the binary alphabet up to length 7, 220 seeded four-letter cases and eight boundary/official/transfer fixtures. Core tests use a separate JS unrestricted BFS and inspect every intermediate frame on 7 presets plus 180 seeded cases. Browser expectations for layer rendering are tied to the independently checked core, with literal bilingual event and formula assertions. See solution-results.json and core-results.json for separate numerical evidence.
+
+Browser tests cover all presets/endpoints, back/forward equality, both locales, independent prediction state and clearing, locale preservation, exact source display/embedding/download, automatic copy and native manual fallback with distinct verified sentinel each locale, blocked storage, offline file loading, controls, keyboard and focus, forced colors, sticky anchors, 120-character wrapping, widths 320/390/736/1440 and CSS 200% zoom, native-select fit budget, calibrated WCAG contrast, local asset errors, and keyboard activation of both related lessons in both locales. CSS zoom tests layout at 200%; OS/browser-chrome zoom, touch hardware and real learner teach-back remain untested. Tests do not claim independent review, public deployment or an accepted LeetCode submission.
+
+Official capture: tests/evidence/official.json contains the exact public GraphQL response, including complete codeSnippets, content, frontend ID and free-access flag. Captured at 2026-10-25T21:52Z = 2026-10-26T05:52+08:00. Python3 interface observed: `class Solution: def kSimilarity(self, s1: str, s2: str) -> int`. Canonical Python needs no exception language contract. No statement text is fetched at runtime.
+
+## Focused proof-bridge revision check
+
+`test_bridge_browser.cjs` exercises the four rendered assignment snapshots and
+literal user-observable mappings/counters, preserves preexisting hand/BFS/quiz/copy
+state through bridge operations and both locale roundtrips, and checks the old
+controls still work independently. It covers320/390/1440 widths and1440 at CSS
+zoom2, actual keyboard focus, 48px controls, native disabled states, calibrated
+text/disabled/focus contrasts, forced colors, reduced motion, long-string wrapping,
+and exact source render/download/automatic and native manual clipboard transfer.
+
+```sh
+PREVIEW_URL=http://127.0.0.1:18770 EVIDENCE_DIR=/tmp/854-bridge-review \
+  NODE_PATH="$NODE_PATH" node leetcode/854/tests/test_bridge_browser.cjs
+```
+
+The source-preserving page generator was updated with the same approved copy and
+markup; `build_page.py` remains author-only. Regeneration equality was checked.
+The unchanged solver/core numeric suites were not repeated for this isolated
+explanatory widget. `bridge-evidence/` records author checks, not independent
+acceptance or production. Initial focus-modality, absent-marker and screenshot
+clip test errors are preserved as diagnostic logs; they were corrected in the
+capture/test code, not concealed as successful runs.
+
+## Re-review candidate 854-bridge-r2-20261026
+
+The checkout already contained the approved bridge implementation at
+`048d217b1313ec068fbf41fe3703f5f3e83dcc90`. This follow-up refreshes the frozen
+candidate and validation; it does not claim a new runtime repair or acceptance.
+Focused checks additionally assert complete action, target, current-string and
+counter labels at every observed snapshot in both languages. Run in order:
+
+```sh
+PREVIEW_URL=http://127.0.0.1:18770 EVIDENCE_DIR=leetcode/854/tests/revision-evidence node leetcode/854/tests/test_bridge_browser.cjs
+python3 -B leetcode/854/tests/test_revision.py
+PREVIEW_URL=http://127.0.0.1:18770 EVIDENCE_DIR=leetcode/854/tests/revision-evidence/regression node leetcode/854/tests/browser.cjs
+python3 -B scripts/register_leetcode_lesson.py 854 --validate-only
+```
+
+`test_revision.py` uses the focused browser receipt, independently recomputes
+assignment costs and target-letter compatibility, executes eight actual Python
+submission/oracle fixtures, checks unchanged source/core/metadata against the
+accepted anchor, detects duplicate localization keys and validates pair shapes.
+It runs the page generator in a temporary subdirectory of the evidence directory
+and compares outputs byte-for-byte without rewriting the candidate. It is a
+focused revision check, not a repeat of the original large solver sweep.

@@ -1606,6 +1606,690 @@ Outgoing first-use links: `interference/#step1` (path difference), `reflection-r
 <!-- /leetcode-805-campaign -->
 
 
+<!-- leetcode-793-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Factorial trailing-zero blocks | `leetcode/793/#step1` | Count factors of five and derive why each attained output has five inputs. |
+| Preimage via lower boundaries | `leetcode/793/#step2` | Subtract first-at-least boundaries while preserving a monotone-search invariant. |
+
+<!-- /leetcode-793-campaign -->
+
+
+<!-- leetcode-798-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Losing rotation intervals | `leetcode/798/#step2` | Split a circular interval into linear intervals. |
+| Difference prefix invariant | `leetcode/798/#step3` | Count active losing intervals and preserve earliest ties. |
+
+<!-- /leetcode-798-campaign -->
+
+
+<!-- leetcode-903-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Rank-based counting | `leetcode/903/#step1` | Standardize prefixes and count by final rank. |
+| Prefix and suffix DP sums | `leetcode/903/#step4` | Accumulate a row in linear time. |
+
+<!-- /leetcode-903-campaign -->
+
+
+<!-- leetcode-920-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Playlist counting by used-song count | `leetcode/920/#step2` | Partition extensions into a new song or an eligible replay. |
+| Rolling count rows | `leetcode/920/#step4` | Keep the previous length row while constructing the next one. |
+
+<!-- /leetcode-920-campaign -->
+
+
+<!-- leetcode-801-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Two-ending prefix DP | `leetcode/801/#step2` | Keep the cheapest valid prefix for each last-column orientation. |
+| Endpoint sufficiency proof | `leetcode/801/#step3` | Histories with identical endpoints have identical future choices. |
+
+<!-- /leetcode-801-campaign -->
+
+
+<!-- leetcode-810-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| XOR and parity game invariant | `leetcode/810/#step2` | Nonzero even positions have a safe move; odd nonzero positions lose. |
+
+<!-- /leetcode-810-campaign -->
+
+
+<!-- leetcode-940-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Ending-letter counting invariant | `leetcode/940/#step2` | Partition distinct subsequences by their final letter and replace one group. |
+
+<!-- /leetcode-940-campaign -->
+
+
+<!-- leetcode-956-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Difference-state DP | `leetcode/956/#step2` | Keep the best shorter support per absolute height gap. |
+| Snapshot updates | `leetcode/956/#step4` | Read old prefix states to use each rod at most once. |
+
+<!-- /leetcode-956-campaign -->
+
+
+<!-- leetcode-815-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Bus-count BFS layers | `leetcode/815/#step2` | First discovery minimizes boardings; scan each route only once. |
+| Stop-to-route inverted index | `leetcode/815/#step2` | Look up incident routes without building all pairwise intersections. |
+
+<!-- /leetcode-815-campaign -->
+
+
+<!-- leetcode-818-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Race Car state-space BFS | `leetcode/818/#step2` | Full position and signed speed pairs preserve future actions; unit-cost layers prove shortest arrival. |
+
+<!-- /leetcode-818-campaign -->
+
+
+<!-- leetcode-960-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Column compatibility | `leetcode/960/#step2` | Test every row before linking columns. |
+| Ending-column dynamic programming | `leetcode/960/#step2` | Longest valid chain ending at each column. |
+
+<!-- /leetcode-960-campaign -->
+
+
+<!-- leetcode-964-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Signed power costs | `leetcode/964/#step2` | Count powers with a joining sign and compare complements. |
+| Two-state digit DP | `leetcode/964/#step3` | Keep the processed residue and its complement. |
+
+<!-- /leetcode-964-campaign -->
+
+
+<!-- leetcode-827-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Connected components | `leetcode/827/#step2` | Label each island once and deduplicate adjacent island IDs. |
+| Flood fill | `leetcode/827/#step2` | Use an iterative stack to visit each land cell once. |
+
+<!-- /leetcode-827-campaign -->
+
+
+<!-- leetcode-828-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Occurrence contributions | `leetcode/828/#step2` | Count independent left and right endpoint choices between equal characters. |
+| Unique character count | `leetcode/828/#step0` | Count characters occurring exactly once in each positional substring. |
+
+<!-- /leetcode-828-campaign -->
+
+
+<!-- leetcode-829-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Consecutive sum as equal bases plus offsets | `leetcode/829/#step0` | Calculate a tiny sequence by removing its increasing offsets. |
+| Length enumeration and divisibility invariant | `leetcode/829/#step2` | Use the positive minimum sum and unique starting value to count each representation once. |
+
+<!-- /leetcode-829-campaign -->
+
+
+<!-- leetcode-968-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Coverage obligations | `leetcode/968/#step2` | Summarize what a subtree needs from its parent. |
+| Postorder greedy | `leetcode/968/#step3` | Cover a child demand at its parent and repair the root. |
+
+<!-- /leetcode-968-campaign -->
+
+
+<!-- leetcode-972-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Repeating decimal cancellation | `leetcode/972/#step1` | Shift a repeating tail by its block length and subtract. |
+| Exact rational invariant | `leetcode/972/#step2` | Each parsed part contributes its exact place-value fraction. |
+
+<!-- /leetcode-972-campaign -->
+
+
+<!-- leetcode-834-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Edge-cut rerooting | `leetcode/834/#step2` | Subtract the child-side count and add the outside count when moving the start. |
+| Subtree distance summaries | `leetcode/834/#step2` | Merge children before parents to obtain subtree sizes and distance sums. |
+
+<!-- /leetcode-834-campaign -->
+
+
+<!-- leetcode-839-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Similarity versus connectivity | `leetcode/839/#step1` | One-swap edges form paths; a group is a connected component, not a clique. |
+| Disjoint-set component invariant | `leetcode/839/#step2` | After each pair, sets equal the connected components of the processed edges. |
+
+<!-- /leetcode-839-campaign -->
+
+
+<!-- leetcode-843-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Candidate consistency | `leetcode/843/#step1` | Filter the words by exact agreement with every reply. |
+| Worst reply bucket | `leetcode/843/#step2` | Minimize the largest non-success reply group. |
+
+<!-- /leetcode-843-campaign -->
+
+
+<!-- leetcode-975-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Monotonic stack | `leetcode/975/#step1` | Resolve forced targets in value order. |
+| Parity dynamic programming | `leetcode/975/#step2` | Compute two reachability states backward. |
+
+<!-- /leetcode-975-campaign -->
+
+
+<!-- leetcode-980-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Backtracking | `leetcode/980/#step1` | Visit, explore and restore each branch. |
+| Complete-walk invariant | `leetcode/980/#step2` | Remaining cells and the current route determine valid completion. |
+
+<!-- /leetcode-980-campaign -->
+
+
+<!-- leetcode-847-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| BFS with visited-set state | `leetcode/847/#step2` | Merge histories only when both endpoint and visited set agree. |
+| Multi-source shortest path | `leetcode/847/#step2` | Initialize every allowed starting node at distance zero. |
+
+<!-- /leetcode-847-campaign -->
+
+
+<!-- leetcode-850-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| vertical slabs | `leetcode/850/#step1` | Coverage is constant between consecutive x edges. |
+| interval union invariant | `leetcode/850/#step2` | Sorted intervals add only the uncovered suffix. |
+
+<!-- /leetcode-850-campaign -->
+
+
+<!-- leetcode-982-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Ordered pair AND frequencies | `leetcode/982/#step1` | Preserve repeated indices when grouping AND results. |
+| Subset-sum transform | `leetcode/982/#step2` | Partition masks by one bit to build compatible-pair totals. |
+
+<!-- /leetcode-982-campaign -->
+
+
+<!-- leetcode-987-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Vertical coordinates | `leetcode/987/#step1` | Assign rows and columns from root paths. |
+| Lexicographic ordering | `leetcode/987/#step3` | Sort column, then row, then value; group contiguous columns. |
+
+<!-- /leetcode-987-campaign -->
+
+
+<!-- leetcode-854-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| First-mismatch swap pruning | `leetcode/854/#step2` | Preserve an optimal swap route while fixing the first mismatched position. |
+
+<!-- /leetcode-854-campaign -->
+
+
+<!-- leetcode-857-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Proportional pay rate sweep | `leetcode/857/#step2` | Keep the k smallest qualities among workers admitted by rate. |
+
+<!-- /leetcode-857-campaign -->
+
+
+<!-- leetcode-862-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Prefix difference | `leetcode/862/#step1` | Exclusive-end interval sums |
+| Monotonic deque | `leetcode/862/#step2` | Settle feasible starts and remove dominated prefixes |
+
+<!-- /leetcode-862-campaign -->
+
+
+<!-- leetcode-992-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Exactly-k via at-most subtraction | `leetcode/992/#step1` | Cancel intervals with fewer distinct values. |
+| Earliest valid start invariant | `leetcode/992/#step2` | Repair frequency windows and count valid starts. |
+
+<!-- /leetcode-992-campaign -->
+
+
+<!-- leetcode-995-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Forced leftmost flip | `leetcode/995/#step2` | Why each left-to-right decision is forced. |
+| Flip parity and expiry | `leetcode/995/#step3` | Replace interval writes with two boundary toggles. |
+
+<!-- /leetcode-995-campaign -->
+
+
+<!-- leetcode-864-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| BFS with inventory | `leetcode/864/#step2` | Search position and key inventory in equal-distance layers. |
+| Bitmask state | `leetcode/864/#step4` | Encode permanent keys as bits and deduplicate complete states. |
+
+<!-- /leetcode-864-campaign -->
+
+
+<!-- leetcode-871-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Reach and eligibility | `leetcode/871/#step2` | Only stations at or before reach may enter the candidate pool. |
+| Greedy exchange | `leetcode/871/#step2` | The largest reachable unchosen supply is safe to select. |
+| Python heap implementation | `leetcode/871/#step4` | Negative fuel values implement a max-heap with heapq. |
+
+<!-- /leetcode-871-campaign -->
+
+
+<!-- leetcode-878-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Count a union of multiples | `leetcode/878/#step1` | Subtract common multiples exactly once using their least common multiple. |
+| First-true integer binary search | `leetcode/878/#step2` | Retain the smallest integer whose inclusive count reaches the requested rank. |
+
+<!-- /leetcode-878-campaign -->
+
+
+<!-- leetcode-996-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Remaining-count backtracking invariant | `leetcode/996/#step2` | Consume and restore one copy per distinct value to enumerate each legal value sequence exactly once. |
+
+<!-- /leetcode-996-campaign -->
+
+
+<!-- leetcode-1000-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Interval DP with pile counts | `leetcode/1000/#step3` | Split an interval into a first pile and a remaining forest, then charge the legal final merge. |
+
+<!-- /leetcode-1000-campaign -->
+
+
+<!-- leetcode-879-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Capped profit counting DP | `leetcode/879/#step2` | Count subsets by exact members used and threshold-capped profit. |
+| Skip/take partition | `leetcode/879/#step1` | Merge equivalent futures without merging distinct choices. |
+
+<!-- /leetcode-879-campaign -->
+
+
+<!-- leetcode-882-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Weighted shortest paths | `leetcode/882/#step2` | Finalize minimum distances before counting edge coverage. |
+| Capped edge coverage | `leetcode/882/#step2` | Count the union of two endpoint prefixes without overlap. |
+
+<!-- /leetcode-882-campaign -->
+
+
+<!-- leetcode-887-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Move-budget coverage | `leetcode/887/#step2` | Derive the break/survive capacity invariant. |
+| Descending rolling DP | `leetcode/887/#step4` | Preserve previous-move operands in one array. |
+
+<!-- /leetcode-887-campaign -->
+
+
+<!-- leetcode-891-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Extremum contribution counting | `leetcode/891/#step2` | Count position subsets by their unique largest and smallest sorted indices. |
+| Position multiplicity | `leetcode/891/#step0` | Equal values at different positions still define separate subsequences. |
+
+<!-- /leetcode-891-campaign -->
+
+
+<!-- leetcode-895-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Frequency-level stacks | `leetcode/895/#step2` | Preserve surviving occurrence ranks in chronological order to resolve frequency and recency. |
+
+<!-- /leetcode-895-campaign -->
+
+
+<!-- leetcode-899-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Circular-order invariant | `leetcode/899/#step1` | With k=1 every reachable string is a rotation. |
+| Adjacent swaps and reachability | `leetcode/899/#step2` | Positions one and two suffice to construct any adjacent swap. |
+
+<!-- /leetcode-899-campaign -->
+
+
+<!-- leetcode-902-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| First differing digit | `leetcode/902/#step1` | Partition same-length numbers at their first smaller digit. |
+| Equal-prefix invariant | `leetcode/902/#step2` | Only the prefix equal to the bound needs further comparisons. |
+
+<!-- /leetcode-902-campaign -->
+
+
+<!-- leetcode-906-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Palindromic root generation | `leetcode/906/#step1` | Odd/even mirroring gives every positive palindromic root exactly once. |
+| Super-palindrome filtering | `leetcode/906/#step2` | Inclusive bounds and the second palindrome test. |
+
+<!-- /leetcode-906-campaign -->
+
+
+<!-- leetcode-913-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Retrograde game solving | `leetcode/913/#step2` | Propagate one winning exit or exhaust all losing exits. |
+| Residual draw states | `leetcode/913/#step4` | Prove draws after the forcing-win queue is exhausted. |
+
+<!-- /leetcode-913-campaign -->
+
+
+<!-- leetcode-924-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Connected components | `leetcode/924/#step2` | A component is saved exactly when its only initial seed is removed. |
+| Graph traversal | `leetcode/924/#step0` | Infection reaches every node reachable from a remaining seed. |
+
+<!-- /leetcode-924-campaign -->
+
+
+<!-- leetcode-927-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Equal binary values and legal cuts | `leetcode/927/#step0` | Leading zeros preserve value; cut indices define nonempty parts. |
+| Forced significant suffix | `leetcode/927/#step2` | Equal one counts fix starts; the final suffix fixes length and gap requirements. |
+| Aligned prefix invariant | `leetcode/927/#step2` | Every checked aligned column must match across all three starts. |
+
+<!-- /leetcode-927-campaign -->
+
+
+<!-- leetcode-928-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Clean components and sole-source ownership | `leetcode/928/#step2` | Exclude original sources, then credit groups with one distinct infected boundary neighbor. |
+
+<!-- /leetcode-928-campaign -->
+
+
+<!-- leetcode-936-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Reverse stamping legality | `leetcode/936/#step1` | Only visible matches may be erased; each useful erase removes a new letter. |
+| Blocker dependency queue | `leetcode/936/#step2` | Erasing a position decrements exactly the windows originally blocked by it. |
+| Monotone erasure invariant | `leetcode/936/#step2` | Removing constraints cannot disable a legal window; reverse the productive erasures. |
+
+<!-- /leetcode-936-campaign -->
+
+
+<!-- leetcode-943-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Subset and endpoint DP | `leetcode/943/#step2` | Keep the minimum chain length for each selected subset and last word; reconstruct with predecessor pointers. |
+
+<!-- /leetcode-943-campaign -->
+
+
+<!-- leetcode-952-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Prime-factor connectivity | `leetcode/952/#step2` | One representative per prime preserves every graph connection. |
+| Union-find | `leetcode/952/#step2` | Merge input-index components without counting factor nodes. |
+
+<!-- /leetcode-952-campaign -->
+
+
+<!-- leetcode-1001-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Sparse line counts | `leetcode/1001/#step3` | Maintain exact row, column and diagonal counts for active lamps. |
+| Read before mutation | `leetcode/1001/#step1` | Answer each query before removing adjacent lamps. |
+
+<!-- /leetcode-1001-campaign -->
+
+
+<!-- leetcode-1012-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Unique-digit complement counting | `leetcode/1012/#step2` | Subtract disjoint unique-digit blocks from the positive integer range. |
+| Equal-prefix counting invariant | `leetcode/1012/#step3` | Count smaller prefixes and stop the equal path at its first repeated digit. |
+
+<!-- /leetcode-1012-campaign -->
+
+
+<!-- leetcode-1028-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| depth-marked preorder reconstruction | `leetcode/1028/#step1` | Read depth/value tokens and use the only-left-child guarantee. |
+| ancestor path stack | `leetcode/1028/#step3` | Pop closed subtrees to expose the unique parent at depth minus one. |
+
+<!-- /leetcode-1028-campaign -->
+
+
+<!-- leetcode-1032-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Reversed trie and suffix invariant | `leetcode/1032/#step3` | Share backward word paths and stop at terminal or missing edges. |
+| Stateful bounded stream | `leetcode/1032/#step5` | Keep only the longest-word window across queries. |
+
+<!-- /leetcode-1032-campaign -->
+
+
+<!-- leetcode-1036-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Bounded reachability search | `leetcode/1036/#step3` | Explore more than b² cells to certify membership in the common clear-line component. |
+| Two-endpoint connectivity | `leetcode/1036/#step4` | Check both endpoints or directly reach the other endpoint. |
+
+<!-- /leetcode-1036-campaign -->
+
+
+<!-- leetcode-1044-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Suffix neighbor property | `leetcode/1044/#step2` | Equal prefixes form a contiguous sorted block. |
+| Prefix doubling | `leetcode/1044/#step3` | Two width-k ranks order width-2k prefixes. |
+| Kasai LCP reuse | `leetcode/1044/#step4` | Carry a certified h−1 prefix into the next start. |
+
+<!-- /leetcode-1044-campaign -->
+
+
+<!-- leetcode-1074-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Row-band compression | `leetcode/1074/#step2` | Fix two row boundaries to reduce rectangles to column intervals. |
+| Prefix-frequency counting | `leetcode/1074/#step3` | Count earlier prefix sums before inserting the current prefix. |
+
+<!-- /leetcode-1074-campaign -->
+
+
+<!-- leetcode-1092-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Shortest common supersequence suffix DP | `leetcode/1092/#step3` | Derive and reconstruct an optimal common supersequence. |
+| Supersequence hand calculation | `leetcode/1092/#step1` | Share characters while preserving both input orders. |
+
+<!-- /leetcode-1092-campaign -->
+
+
+<!-- leetcode-1095-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Mountain peak search | `leetcode/1095/#step2` | Derive the peak-containing interval from adjacent values. |
+| Directional binary search | `leetcode/1095/#step3` | Search increasing then decreasing sides to return the smallest index. |
+
+<!-- /leetcode-1095-campaign -->
+
+
+<!-- leetcode-1096-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Scoped union and concatenation | `leetcode/1096/#step2` | Keep completed alternatives separate from the current product. |
+| Recursive set parser | `leetcode/1096/#step3` | Return each brace group as an atom while preserving parent state. |
+
+<!-- /leetcode-1096-campaign -->
+
+
+<!-- leetcode-1106-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Boolean group reduction | `leetcode/1106/#step2` | Replace innermost completed groups by truth literals while preserving unresolved outer context. |
+| Iterative Boolean parser | `leetcode/1106/#step3` | Use stack snapshots and operator-specific truth flags to parse each character once. |
+
+<!-- /leetcode-1106-campaign -->
+
+
+<!-- leetcode-1125-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Minimum team by exact skill coverage | `leetcode/1125/#step3` | Derive shortest-team DP using frozen before-round coverage states. |
+| Coverage dominance counterexample | `leetcode/1125/#step2` | Explain why largest-skill greedy and equal-size coverage pruning fail. |
+
+<!-- /leetcode-1125-campaign -->
+
+
+<!-- leetcode-1147-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Shortest matching ends | `leetcode/1147/#step3` | Refine longer outer chunks to justify the greedy choice. |
+| Chunk-count invariant | `leetcode/1147/#step3` | Fixed chunks plus the optimal unresolved middle. |
+
+<!-- /leetcode-1147-campaign -->
+
+
+<!-- leetcode-1157-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Strict-majority cancellation | `leetcode/1157/#step2` | Why deleting unlike pairs preserves a strict majority but not its count |
+| Range majority verification | `leetcode/1157/#step3` | Merge segment summaries and count occurrences using sorted position lists |
+
+<!-- /leetcode-1157-campaign -->
+
+
+<!-- leetcode-1163-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Lexicographic suffix comparison | `leetcode/1163/#step0` | Compare substrings at their first differing character. |
+| Discard invariant | `leetcode/1163/#step2` | A losing candidate and its certified prefix cannot return. |
+
+<!-- /leetcode-1163-campaign -->
+
+
+<!-- leetcode-1172-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Leftmost available stack | `leetcode/1172/#step1` | A min-heap selects the smallest non-full index. |
+| Rightmost non-empty stack | `leetcode/1172/#step1` | The list tail and cleanup expose the rightmost non-empty stack. |
+
+<!-- /leetcode-1172-campaign -->
+
+
+<!-- leetcode-1178-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| bitmask | `leetcode/1178/#step2` | Encode the set of letters as bits. |
+| subset enumeration | `leetcode/1178/#step2` | Visit every submask with (sub - 1) & mask. |
+
+<!-- /leetcode-1178-campaign -->
+
+
+<!-- leetcode-1187-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Last-value DP invariant | `leetcode/1187/#step1` | Minimum replacements for each possible final value of a processed prefix. |
+| Smallest feasible replacement | `leetcode/1187/#step2` | Sorted arr2 and binary search preserve the most future room. |
+
+<!-- /leetcode-1187-campaign -->
+
+
 ### Round11 · 法线角、Snell关系与全反射（2026-10-26）
 
 | 概念 | 既有课程入口 | 口径 |

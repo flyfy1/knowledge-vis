@@ -1,0 +1,4 @@
+'use strict';
+const {chromium}=require('playwright'),fs=require('node:fs'),path=require('node:path');
+const out=process.env.EVIDENCE_DIR||path.join(__dirname,'evidence');fs.mkdirSync(out,{recursive:true});
+(async()=>{const b=await chromium.launch({headless:true,executablePath:process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH});const p=await b.newPage();for(const l of ['en','zh'])for(const width of [320,390,1440]){await p.setViewportSize({width,height:1000});await p.goto((process.env.PREVIEW_URL||'http://127.0.0.1:18770')+'/leetcode/818/');await p.locator(`[data-lang=${l}]`).click();await p.evaluate(()=>scrollTo(0,0));await p.screenshot({path:path.join(out,`${l}-${width}-top.png`)});await p.locator('#end').click();await p.locator('.layer:last-child').scrollIntoViewIfNeeded();await p.screenshot({path:path.join(out,`${l}-${width}-terminal.png`)});}await b.close();})();

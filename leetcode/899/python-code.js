@@ -1,0 +1,1 @@
+window.PYTHON_SOURCE = "class Solution:\n    def orderlyQueue(self, s: str, k: int) -> str:\n        if k == 1:\n            best = s\n            for i in range(1, len(s)):\n                candidate = s[i:] + s[:i]\n                if candidate < best:\n                    best = candidate\n            return best\n        return ''.join(sorted(s))\n";
