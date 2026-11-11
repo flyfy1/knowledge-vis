@@ -1,0 +1,80 @@
+{
+ "schema": 2,
+ "slug": "veil-of-ignorance",
+ "nodes": [
+  {
+   "id": "veil-of-ignorance",
+   "group": "society",
+   "stage": "senior",
+   "order": 50,
+   "title": {
+    "zh": "无知之幕 · 平均原则与最大最小原则",
+    "en": "The veil of ignorance · average rule vs maximin"
+   },
+   "description": {
+    "zh": "如果在不知道自己会是谁时挑选社会规则，海萨尼说应选平均福祉最高的社会（每个位置机会均等），罗尔斯说这种一次性、改不了的选择应先保证最差的位置（最大最小原则）；风险态度越保守，选择就越从前者滑向后者。",
+    "en": "Choosing society’s rules without knowing who you will be, Harsanyi says pick the society with the highest average welfare (each position equally likely), while Rawls says such a one-shot, irreversible choice should first secure the worst position (maximin); the more risk-averse the chooser, the more the choice slides from the first towards the second."
+   },
+   "source": "../psychology/ethics/veil-of-ignorance/#step0",
+   "lessons": [
+    {
+     "slug": "veil-of-ignorance",
+     "step": 0,
+     "category": "psychology",
+     "stage": "senior",
+     "primary": true
+    }
+   ],
+   "aliases": [
+    {
+     "zh": "无知之幕",
+     "en": "veil of ignorance"
+    },
+    {
+     "zh": "罗尔斯",
+     "en": "John Rawls"
+    },
+    {
+     "zh": "正义论",
+     "en": "A Theory of Justice"
+    },
+    {
+     "zh": "最大最小原则",
+     "en": "maximin principle"
+    },
+    {
+     "zh": "原初状态",
+     "en": "original position"
+    },
+    {
+     "zh": "差别原则",
+     "en": "difference principle"
+    },
+    {
+     "zh": "海萨尼",
+     "en": "Harsanyi average utilitarianism"
+    },
+    {
+     "zh": "什么是公平的社会",
+     "en": "what is a fair society"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "expected-value",
+   "to": "veil-of-ignorance",
+   "type": "foundation",
+   "label": {
+    "zh": "平均原则就是期望值",
+    "en": "The average rule is an expected value"
+   },
+   "reason": {
+    "zh": "海萨尼假设落到每个位置的概率相等，于是比较各社会的平均福祉——正是对位置取期望值；罗尔斯的反驳则是：一生只抽一次，期望值未必是该看的数。",
+    "en": "Harsanyi assumes every position is equally likely and so compares average welfare — the expected value over positions; Rawls replies that with only one draw in a lifetime, the expected value is not necessarily the number to look at."
+   },
+   "source": "../psychology/ethics/veil-of-ignorance/#step1"
+  }
+ ]
+}

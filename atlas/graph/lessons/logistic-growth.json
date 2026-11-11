@@ -1,0 +1,143 @@
+{
+ "schema": 2,
+ "slug": "logistic-growth",
+ "nodes": [
+  {
+   "id": "logistic-growth",
+   "group": "life",
+   "stage": "senior",
+   "order": 50,
+   "title": {
+    "zh": "逻辑斯蒂增长 · S 形曲线",
+    "en": "Logistic growth · the S-shaped curve"
+   },
+   "description": {
+    "zh": "没有天花板时种群按比例越长越快（指数增长）；环境最多养得起 K 个，于是实际增长率变成 r·(1 − N/K)，越接近 K 涨得越慢，曲线被压成 S 形，从上方超载也会回落到 K。",
+    "en": "With no ceiling a population grows in proportion to its size — ever faster (exponential growth); the environment can support at most K, so the actual rate becomes r·(1 − N/K), slowing as N nears K and bending the curve into an S; a population that starts above K falls back to it."
+   },
+   "formula": "N ← N + rN(1 − N/K)",
+   "source": "../biology/ecology/logistic-growth/#step2",
+   "lessons": [
+    {
+     "slug": "logistic-growth",
+     "step": 2,
+     "category": "biology",
+     "stage": "senior",
+     "primary": true
+    }
+   ],
+   "aliases": [
+    {
+     "zh": "S 形曲线",
+     "en": "S-curve"
+    },
+    {
+     "zh": "逻辑斯蒂模型",
+     "en": "logistic model"
+    },
+    {
+     "zh": "环境容纳量 K",
+     "en": "carrying capacity"
+    },
+    {
+     "zh": "种群增长",
+     "en": "population growth"
+    },
+    {
+     "zh": "J 形增长和 S 形增长",
+     "en": "J-shaped vs S-shaped growth"
+    },
+    {
+     "zh": "种群为什么不会无限增长",
+     "en": "why populations stop growing"
+    },
+    {
+     "zh": "logistic 增长",
+     "en": "logistic function"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "exp-log",
+   "to": "logistic-growth",
+   "type": "foundation",
+   "label": {
+    "zh": "没有 K 时就是指数增长",
+    "en": "Without K it is exponential growth"
+   },
+   "reason": {
+    "zh": "N(t) = N₀·e^(rt) 是逻辑斯蒂曲线的起点：N 远小于 K 时两条线重合，翻倍时间是 ln2 / r；K 只是把这条指数线压弯。",
+    "en": "N(t) = N₀·e^(rt) is where the logistic curve starts: while N is far below K the two lines coincide and the doubling time is ln2 / r; K only bends that exponential."
+   },
+   "source": "../biology/ecology/logistic-growth/#step1"
+  },
+  {
+   "from": "logistic-growth",
+   "to": "chaos-threebody",
+   "type": "connection",
+   "label": {
+    "zh": "r 太大时离散模型走向混沌",
+    "en": "Push r too far and the discrete model turns chaotic"
+   },
+   "reason": {
+    "zh": "逐代迭代 N ← N + rN(1 − N/K) 在 r > 2 时不再趋稳：先 2 周期、4 周期，r 约 2.57 以后进入混沌，初值差一点结果就天差地别——和三体一样，确定规则也能不可预测。",
+    "en": "The generation-by-generation update N ← N + rN(1 − N/K) stops settling once r > 2: first period 2, then 4, and past r ≈ 2.57 it is chaotic, with tiny differences in the start blowing up — like the three-body problem, a deterministic rule that cannot be predicted."
+   },
+   "source": "../biology/ecology/logistic-growth/#step4"
+  },
+  {
+   "from": "logistic-growth",
+   "to": "predator-prey",
+   "type": "foundation",
+   "label": {
+    "zh": "在 K 的反馈旁边加一个捕食者",
+    "en": "Add a predator next to the K feedback"
+   },
+   "reason": {
+    "zh": "捕食者—猎物模型以猎物自己的逻辑斯蒂增长为底，再加上被吃掉的那一项；没有捕食者时，猎物就停在 K。",
+    "en": "The predator–prey model starts from the prey’s own logistic growth and adds a term for being eaten; with no predator the prey simply settles at K."
+   },
+   "source": "../biology/ecology/population-ecology/#step2"
+  }
+ ],
+ "questions": [
+  {
+   "id": "q-logistic-growth-0",
+   "question": {
+    "zh": "种群数量为什么会长成 S 形，而不是一直指数增长？",
+    "en": "Why does a population grow in an S-shape instead of exponentially forever?"
+   },
+   "chain": [
+    "logistic-growth",
+    "exp-log"
+   ],
+   "target": {
+    "node": "logistic-growth",
+    "href": "../biology/ecology/logistic-growth/#step2"
+   },
+   "prompts": [
+    {
+     "node": "exp-log",
+     "ask": {
+      "zh": "每一代都按同一比例增长，曲线会怎样？",
+      "en": "If every generation grows by the same proportion, what does the curve do?"
+     }
+    },
+    {
+     "node": "logistic-growth",
+     "ask": {
+      "zh": "N 接近 K 时，r·(1 − N/K) 变成多少？",
+      "en": "As N approaches K, what does r·(1 − N/K) become?"
+     }
+    }
+   ],
+   "reveal": {
+    "zh": "开始时资源充足，增长接近指数；但实际增长率 r·(1 − N/K) 随数量逼近容纳量 K 而趋于 0，曲线被压平，于是成了 S 形。",
+    "en": "At first resources are plentiful and growth is nearly exponential; but the actual rate r·(1 − N/K) shrinks towards 0 as the population nears the carrying capacity K, flattening the curve into an S."
+   },
+   "source": "../biology/ecology/logistic-growth/#step2"
+  }
+ ]
+}

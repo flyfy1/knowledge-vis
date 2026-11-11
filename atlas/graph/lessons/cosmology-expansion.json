@@ -1,0 +1,95 @@
+{
+ "schema": 2,
+ "slug": "cosmology-expansion",
+ "nodes": [
+  {
+   "id": "cosmic-expansion",
+   "group": "earth",
+   "stage": "university",
+   "order": 50,
+   "title": {
+    "zh": "宇宙膨胀 · 哈勃定律",
+    "en": "Cosmic expansion · Hubble’s law"
+   },
+   "description": {
+    "zh": "不是星系在静止的空间里从一个中心飞散，而是空间的刻度本身在拉开：所有星系间的距离按同一个尺度因子变大，所以越远的星系退行得越快（v = H₀d），它们发出的光在路上也被拉长成红移。",
+    "en": "Galaxies are not flying apart from a centre through still space; the ruler of space itself is stretching: every distance between galaxies grows by the same scale factor, so farther galaxies recede faster (v = H₀d), and their light is stretched into a redshift on the way."
+   },
+   "formula": "v = H₀d,  λ = (1+z)λ₀",
+   "source": "../earth/astronomy/cosmology-expansion/#step1",
+   "lessons": [
+    {
+     "slug": "cosmology-expansion",
+     "step": 1,
+     "category": "earth",
+     "stage": "university",
+     "primary": true
+    }
+   ],
+   "aliases": [
+    {
+     "zh": "宇宙膨胀",
+     "en": "expanding universe"
+    },
+    {
+     "zh": "哈勃定律",
+     "en": "Hubble’s law"
+    },
+    {
+     "zh": "哈勃常数",
+     "en": "Hubble constant"
+    },
+    {
+     "zh": "宇宙学红移",
+     "en": "cosmological redshift"
+    },
+    {
+     "zh": "尺度因子",
+     "en": "scale factor"
+    },
+    {
+     "zh": "宇宙有中心吗",
+     "en": "does the universe have a centre"
+    },
+    {
+     "zh": "星系为什么在远离我们",
+     "en": "why are galaxies moving away from us"
+    },
+    {
+     "zh": "大爆炸",
+     "en": "Big Bang"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "slope",
+   "to": "cosmic-expansion",
+   "type": "representation",
+   "label": {
+    "zh": "H₀ 是一条直线的斜率",
+    "en": "H₀ is the slope of a line"
+   },
+   "reason": {
+    "zh": "把星系的退行速度对距离作图，近处的点落在一条过原点的直线上，斜率就是哈勃常数 H₀。",
+    "en": "Plot galaxies’ recession speed against distance and the nearby points fall on a straight line through the origin whose slope is the Hubble constant H₀."
+   },
+   "source": "../earth/astronomy/cosmology-expansion/#step1"
+  },
+  {
+   "from": "doppler-effect",
+   "to": "cosmic-expansion",
+   "type": "connection",
+   "label": {
+    "zh": "同是红移，原因不同",
+    "en": "Both are redshifts, for different reasons"
+   },
+   "reason": {
+    "zh": "多普勒红移来自光源在空间中远离；宇宙学红移是光在路上随空间一起被拉长，λ观测 = (1+z)λ₀ 由发光到接收之间尺度因子增大了多少决定——近处两者数值相近，远处不能混用。",
+    "en": "A Doppler redshift comes from a source moving away through space; a cosmological redshift is light stretched along with space on its journey, λ_obs = (1+z)λ₀ set by how much the scale factor grew between emission and reception — close by the numbers agree, far away they must not be mixed up."
+   },
+   "source": "../earth/astronomy/cosmology-expansion/#step2"
+  }
+ ]
+}

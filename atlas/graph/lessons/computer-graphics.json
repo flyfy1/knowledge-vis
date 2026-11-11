@@ -1,0 +1,109 @@
+{
+ "schema": 2,
+ "slug": "computer-graphics",
+ "nodes": [
+  {
+   "id": "graphics-pipeline",
+   "group": "computing",
+   "stage": "university",
+   "order": 50,
+   "title": {
+    "zh": "图形渲染管线 · 从坐标到像素",
+    "en": "The graphics pipeline · from coordinates to pixels"
+   },
+   "description": {
+    "zh": "屏幕上的画面按三层流水做出来：先用矩阵把顶点旋转、缩放到屏幕坐标，再把连续的线段和三角形离散成一个个像素（光栅化），最后按表面法线和光线方向的点积算出每个像素的亮度。",
+    "en": "An on-screen image is made in three stages: matrices first rotate and scale the vertices into screen coordinates, then continuous lines and triangles are turned into individual pixels (rasterisation), and finally each pixel’s brightness comes from the dot product of the surface normal with the light direction."
+   },
+   "formula": "brightness = albedo · max(0, n·ℓ)",
+   "source": "../computing/graphics/computer-graphics/#step0",
+   "lessons": [
+    {
+     "slug": "computer-graphics",
+     "step": 0,
+     "category": "computing",
+     "stage": "university",
+     "primary": true
+    }
+   ],
+   "aliases": [
+    {
+     "zh": "计算机图形学",
+     "en": "computer graphics"
+    },
+    {
+     "zh": "渲染管线",
+     "en": "rendering pipeline"
+    },
+    {
+     "zh": "光栅化",
+     "en": "rasterization"
+    },
+    {
+     "zh": "漫反射着色",
+     "en": "diffuse shading"
+    },
+    {
+     "zh": "Lambert 光照",
+     "en": "Lambertian shading"
+    },
+    {
+     "zh": "画线算法",
+     "en": "line drawing algorithm"
+    },
+    {
+     "zh": "游戏画面是怎么画出来的",
+     "en": "how do games draw images"
+    },
+    {
+     "zh": "GPU 渲染",
+     "en": "GPU rendering"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "matrix-transform",
+   "to": "graphics-pipeline",
+   "type": "application",
+   "label": {
+    "zh": "顶点变换就是矩阵乘法",
+    "en": "Vertex transforms are matrix multiplication"
+   },
+   "reason": {
+    "zh": "旋转、缩放每个顶点就是乘一个矩阵；基向量去了哪里，整个图形就跟着去哪里。",
+    "en": "Rotating and scaling every vertex is multiplying by a matrix; wherever the basis vectors go, the whole shape follows."
+   },
+   "source": "../computing/graphics/computer-graphics/#step0"
+  },
+  {
+   "from": "slope",
+   "to": "graphics-pipeline",
+   "type": "application",
+   "label": {
+    "zh": "斜率决定画线走哪些格子",
+    "en": "Slope decides which pixels a line visits"
+   },
+   "reason": {
+    "zh": "光栅化画线时沿长的那个方向一格一格走，另一方向按斜率累加、取整，决定点亮哪一格。",
+    "en": "Rasterising a line steps one pixel at a time along its longer direction and accumulates the slope in the other, rounding to choose which pixel to light."
+   },
+   "source": "../computing/graphics/computer-graphics/#step1"
+  },
+  {
+   "from": "vectors",
+   "to": "graphics-pipeline",
+   "type": "application",
+   "label": {
+    "zh": "点积把方向变成亮度",
+    "en": "The dot product turns direction into brightness"
+   },
+   "reason": {
+    "zh": "漫反射亮度正比于 max(0, n·ℓ)：表面正对光时最亮，侧着变暗，背向光时为 0。",
+    "en": "Diffuse brightness is proportional to max(0, n·ℓ): brightest when the surface faces the light, dimmer when tilted, zero when facing away."
+   },
+   "source": "../computing/graphics/computer-graphics/#step2"
+  }
+ ]
+}

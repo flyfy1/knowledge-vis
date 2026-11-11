@@ -1,0 +1,109 @@
+{
+ "schema": 2,
+ "slug": "robot-kinematics",
+ "nodes": [
+  {
+   "id": "robot-kinematics",
+   "group": "computing",
+   "stage": "university",
+   "order": 50,
+   "title": {
+    "zh": "机械臂运动学 · 从关节角到末端",
+    "en": "Robot-arm kinematics · from joint angles to the hand"
+   },
+   "description": {
+    "zh": "二连杆机械臂的末端位置是两段连杆向量之和：给定两个关节角就能算出手在哪（正运动学）；反过来给定目标点求关节角（逆运动学）通常有“肘上、肘下”两组解；两杆伸直共线时，某些方向怎么转关节都动不了，叫奇异位形。",
+    "en": "The tip of a two-link arm is the sum of two link vectors: given the two joint angles you can compute where the hand is (forward kinematics); going back from a target point to joint angles (inverse kinematics) usually has two answers, elbow-up and elbow-down; when the links line up straight, some directions cannot be reached by any joint motion — a singular configuration."
+   },
+   "formula": "x = l₁cosθ₁ + l₂cos(θ₁+θ₂)",
+   "source": "../computing/graphics/robot-kinematics/#step0",
+   "lessons": [
+    {
+     "slug": "robot-kinematics",
+     "step": 0,
+     "category": "computing",
+     "stage": "university",
+     "primary": true
+    }
+   ],
+   "aliases": [
+    {
+     "zh": "正运动学",
+     "en": "forward kinematics"
+    },
+    {
+     "zh": "逆运动学",
+     "en": "inverse kinematics"
+    },
+    {
+     "zh": "机械臂",
+     "en": "robot arm"
+    },
+    {
+     "zh": "雅可比矩阵",
+     "en": "Jacobian matrix"
+    },
+    {
+     "zh": "奇异位形",
+     "en": "singularity"
+    },
+    {
+     "zh": "二连杆",
+     "en": "two-link arm"
+    },
+    {
+     "zh": "工作空间",
+     "en": "workspace"
+    },
+    {
+     "zh": "机器人学入门",
+     "en": "introduction to robotics"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "vectors",
+   "to": "robot-kinematics",
+   "type": "foundation",
+   "label": {
+    "zh": "末端 = 两段向量相加",
+    "en": "Hand position = sum of two vectors"
+   },
+   "reason": {
+    "zh": "每段连杆是一个长度为 lᵢ、方向由关节角决定的向量，末端位置就是把两段首尾相接相加。",
+    "en": "Each link is a vector of length lᵢ pointing in a direction set by the joint angles, and the hand position is the two vectors added head to tail."
+   },
+   "source": "../computing/graphics/robot-kinematics/#step0"
+  },
+  {
+   "from": "sine",
+   "to": "robot-kinematics",
+   "type": "application",
+   "label": {
+    "zh": "用 cos、sin 拆出坐标",
+    "en": "cos and sin split out the coordinates"
+   },
+   "reason": {
+    "zh": "连杆向量的横、纵分量是 l·cosθ 和 l·sinθ；第二段的方向是 θ₁ + θ₂，所以 x、y 公式里出现两个角之和。",
+    "en": "A link vector’s horizontal and vertical parts are l·cosθ and l·sinθ; the second link points along θ₁ + θ₂, which is why the x and y formulas contain the sum of the two angles."
+   },
+   "source": "../computing/graphics/robot-kinematics/#step0"
+  },
+  {
+   "from": "determinant",
+   "to": "robot-kinematics",
+   "type": "application",
+   "label": {
+    "zh": "det J = 0 就是奇异",
+    "en": "det J = 0 is a singularity"
+   },
+   "reason": {
+    "zh": "Jacobian 把关节速度映射成末端速度，二连杆的 det J = l₁l₂ sinθ₂；两杆共线时 sinθ₂ = 0，矩阵把速度平面压扁成一条线，有一个方向再也动不了。",
+    "en": "The Jacobian maps joint speeds to hand velocity, and for two links det J = l₁l₂ sinθ₂; when the links line up sinθ₂ = 0, the matrix squashes the velocity plane onto a line, and one direction of motion is lost."
+   },
+   "source": "../computing/graphics/robot-kinematics/#step2"
+  }
+ ]
+}

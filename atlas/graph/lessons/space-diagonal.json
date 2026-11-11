@@ -1,0 +1,87 @@
+{
+ "schema": 2,
+ "slug": "space-diagonal",
+ "nodes": [
+  {
+   "id": "space-diagonal",
+   "group": "math",
+   "stage": "junior",
+   "order": 50,
+   "title": {
+    "zh": "长方体的空间对角线",
+    "en": "The space diagonal of a box"
+   },
+   "description": {
+    "zh": "长方体里连接最远两个角的斜线有多长？先在底面用一次勾股定理算出底面对角线 e，再把 e 和高 c 当作新直角三角形的两条直角边用第二次，得到 d = √(a² + b² + c²)。",
+    "en": "How long is the line joining a box’s two farthest corners? Use the Pythagorean theorem once on the base to get the base diagonal e, then again with e and the height c as the legs of a new right triangle, giving d = √(a² + b² + c²)."
+   },
+   "formula": "d = √(a² + b² + c²)",
+   "source": "../math/geometry/space-diagonal/#step1",
+   "lessons": [
+    {
+     "slug": "space-diagonal",
+     "step": 1,
+     "category": "math",
+     "stage": "junior",
+     "primary": true
+    }
+   ],
+   "aliases": [
+    {
+     "zh": "体对角线",
+     "en": "body diagonal"
+    },
+    {
+     "zh": "空间对角线",
+     "en": "space diagonal"
+    },
+    {
+     "zh": "长方体对角线公式",
+     "en": "cuboid diagonal formula"
+    },
+    {
+     "zh": "箱子里能放多长的棍子",
+     "en": "longest stick that fits in a box"
+    },
+    {
+     "zh": "三维勾股定理",
+     "en": "3D Pythagorean theorem"
+    },
+    {
+     "zh": "正方体对角线",
+     "en": "cube diagonal"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "pythagorean-theorem",
+   "to": "space-diagonal",
+   "type": "application",
+   "label": {
+    "zh": "勾股定理用两次",
+    "en": "Pythagoras applied twice"
+   },
+   "reason": {
+    "zh": "底面对角线满足 e² = a² + b²，再竖起高 c，d² = e² + c²：立体问题被拆回两个平面上的直角三角形。",
+    "en": "The base diagonal satisfies e² = a² + b²; standing the height c on it gives d² = e² + c² — the solid problem splits back into two flat right triangles."
+   },
+   "source": "../math/geometry/space-diagonal/#step1"
+  },
+  {
+   "from": "space-diagonal",
+   "to": "vectors",
+   "type": "connection",
+   "label": {
+    "zh": "三维向量的长度",
+    "en": "The length of a 3D vector"
+   },
+   "reason": {
+    "zh": "对角线从一个角指向对角，正好是向量 (a, b, c)；它的长度 √(a² + b² + c²) 就是三维坐标里两点间的距离公式。",
+    "en": "The diagonal from one corner to the opposite corner is the vector (a, b, c), and its length √(a² + b² + c²) is the distance formula between two points in 3D coordinates."
+   },
+   "source": "../math/geometry/space-diagonal/#step1"
+  }
+ ]
+}

@@ -1,0 +1,109 @@
+{
+ "schema": 2,
+ "slug": "genetics-probability",
+ "nodes": [
+  {
+   "id": "mendelian-inheritance",
+   "group": "measurement",
+   "stage": "senior",
+   "order": 50,
+   "title": {
+    "zh": "孟德尔遗传的概率 · Punnett 方格",
+    "en": "Mendelian inheritance as probability · the Punnett square"
+   },
+   "description": {
+    "zh": "每个亲本的一对等位基因在形成配子时分开、各以 1/2 的机会传下去，把双方配子的组合列成方格，就得到 1:2:1 的基因型和 3:1 的表型；两对性状独立分配时概率相乘，得到 9:3:3:1。",
+    "en": "Each parent’s pair of alleles separates when gametes form, each passed on with chance 1/2; laying out the combinations of both parents’ gametes in a grid gives genotypes in 1:2:1 and phenotypes in 3:1, and for two independently assorting traits the probabilities multiply into 9:3:3:1."
+   },
+   "formula": "P(aa) = ½ · ½ = ¼",
+   "source": "../probability/basics/genetics-probability/#step1",
+   "lessons": [
+    {
+     "slug": "genetics-probability",
+     "step": 1,
+     "category": "probability",
+     "stage": "senior",
+     "primary": true
+    }
+   ],
+   "aliases": [
+    {
+     "zh": "孟德尔遗传定律",
+     "en": "Mendel’s laws"
+    },
+    {
+     "zh": "庞纳特方格 棋盘法",
+     "en": "Punnett square"
+    },
+    {
+     "zh": "3:1 分离比",
+     "en": "3:1 ratio"
+    },
+    {
+     "zh": "9:3:3:1",
+     "en": "9:3:3:1 ratio"
+    },
+    {
+     "zh": "显性 隐性",
+     "en": "dominant and recessive"
+    },
+    {
+     "zh": "基因型 表型",
+     "en": "genotype and phenotype"
+    },
+    {
+     "zh": "孩子遗传到隐性病的概率",
+     "en": "chance a child inherits a recessive condition"
+    },
+    {
+     "zh": "分离定律 自由组合定律",
+     "en": "law of segregation and law of independent assortment"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "meiosis",
+   "to": "mendelian-inheritance",
+   "type": "foundation",
+   "label": {
+    "zh": "配子只带一份等位基因",
+    "en": "Each gamete carries one allele"
+   },
+   "reason": {
+    "zh": "减数分裂让同源染色体分开，每个配子只得到一对等位基因中的一个；Punnett 方格边上每种配子各占 1/2 就是这么来的。",
+    "en": "Meiosis separates homologous chromosomes so each gamete receives just one allele of each pair; that is where the 1/2 for each gamete on the edge of the Punnett square comes from."
+   },
+   "source": "../probability/basics/genetics-probability/#step0"
+  },
+  {
+   "from": "probability",
+   "to": "mendelian-inheritance",
+   "type": "application",
+   "label": {
+    "zh": "独立事件概率相乘",
+    "en": "Independent events multiply"
+   },
+   "reason": {
+    "zh": "父母双方的配子独立结合，两对基因又独立分配，所以概率可以相乘：1/2 × 1/2 得 1/4，3/4 × 3/4 得 9/16。",
+    "en": "The two parents’ gametes combine independently and the two genes assort independently, so the probabilities multiply: 1/2 × 1/2 gives 1/4, and 3/4 × 3/4 gives 9/16."
+   },
+   "source": "../probability/basics/genetics-probability/#step2"
+  },
+  {
+   "from": "bayes",
+   "to": "mendelian-inheritance",
+   "type": "connection",
+   "label": {
+    "zh": "看到表型后换分母",
+    "en": "Seeing the phenotype changes the denominator"
+   },
+   "reason": {
+    "zh": "已知后代是显性表型，问它是杂合子的概率：先划掉不可能的 aa 格，再在剩下三格里数，得 2/3——这就是条件概率，也是贝叶斯更新最简单的样子。",
+    "en": "Given that an offspring shows the dominant trait, the chance it is heterozygous comes from striking out the impossible aa cell and counting among the remaining three: 2/3 — conditional probability, the simplest form of a Bayesian update."
+   },
+   "source": "../probability/basics/genetics-probability/#step3"
+  }
+ ]
+}

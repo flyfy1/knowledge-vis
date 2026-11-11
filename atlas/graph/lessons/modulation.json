@@ -1,0 +1,147 @@
+{
+ "schema": 2,
+ "slug": "modulation",
+ "nodes": [
+  {
+   "id": "modulation",
+   "group": "waves",
+   "stage": "university",
+   "order": 50,
+   "title": {
+    "zh": "调制 · 把信号搬上载波",
+    "en": "Modulation · carrying a signal on a carrier"
+   },
+   "description": {
+    "zh": "把低频的声音乘上一个高频载波，整段频谱就搬到载波两侧，既能用尺寸合适的天线发得远，又能让许多电台各占一段频率；调幅（AM）改变载波的幅度，调频（FM）改变它的瞬时频率，接收端再把频谱搬回来。",
+    "en": "Multiplying a low-frequency signal by a high-frequency carrier moves its whole spectrum up beside the carrier, so it can travel far from a reasonably sized antenna and many stations can share the air on separate bands; AM varies the carrier’s amplitude, FM its instantaneous frequency, and the receiver moves the spectrum back down."
+   },
+   "formula": "s(t) = (1 + m·x(t))·cos(2πf_c t)",
+   "source": "../signal/sampling/modulation/#step1",
+   "lessons": [
+    {
+     "slug": "modulation",
+     "step": 1,
+     "category": "signal",
+     "stage": "university",
+     "primary": true
+    }
+   ],
+   "aliases": [
+    {
+     "zh": "调幅 调频",
+     "en": "AM and FM"
+    },
+    {
+     "zh": "AM 和 FM 的区别",
+     "en": "difference between AM and FM"
+    },
+    {
+     "zh": "载波",
+     "en": "carrier wave"
+    },
+    {
+     "zh": "边带",
+     "en": "sidebands"
+    },
+    {
+     "zh": "解调",
+     "en": "demodulation"
+    },
+    {
+     "zh": "收音机怎么选台",
+     "en": "how does a radio tune in one station"
+    },
+    {
+     "zh": "频分复用",
+     "en": "frequency-division multiplexing"
+    },
+    {
+     "zh": "IQ 调制",
+     "en": "I/Q modulation"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "spectrum",
+   "to": "modulation",
+   "type": "foundation",
+   "label": {
+    "zh": "乘法把频谱整体搬家",
+    "en": "Multiplication moves the whole spectrum"
+   },
+   "reason": {
+    "zh": "频谱列出信号含有哪些频率；乘上 cos(2πf_c t) 后每个分量都分裂成 f_c ± f 两份，整张成分表被平移到载波两侧，形状不变。",
+    "en": "A spectrum lists which frequencies a signal contains; multiplying by cos(2πf_c t) splits every component into f_c ± f, shifting the whole list to either side of the carrier with its shape intact."
+   },
+   "source": "../signal/sampling/modulation/#step0"
+  },
+  {
+   "from": "sine",
+   "to": "modulation",
+   "type": "foundation",
+   "label": {
+    "zh": "积化和差产生两条边带",
+    "en": "Product-to-sum makes the two sidebands"
+   },
+   "reason": {
+    "zh": "cos A·cos B = ½[cos(A − B) + cos(A + B)]：一个 10 Hz 的消息乘上载波，就变成载波上下各一条、幅度为 m/2 的边带。",
+    "en": "cos A·cos B = ½[cos(A − B) + cos(A + B)]: a 10 Hz message multiplied by the carrier becomes two sidebands, one above and one below the carrier, each of amplitude m/2."
+   },
+   "source": "../signal/sampling/modulation/#step1"
+  },
+  {
+   "from": "modulation",
+   "to": "sampling",
+   "type": "connection",
+   "label": {
+    "zh": "采样也是一次乘法搬家",
+    "en": "Sampling is also a multiply-and-shift"
+   },
+   "reason": {
+    "zh": "采样相当于乘上一串等间隔的脉冲，频谱被复制到采样率的整数倍处；采样率不够时副本相互重叠就是混叠，和邻台频谱蹭进带通造成串扰一样，都是频谱重叠。",
+    "en": "Sampling multiplies by a train of evenly spaced pulses, copying the spectrum to every multiple of the sampling rate; too low a rate makes the copies overlap — aliasing, which like crosstalk from a neighbouring station is a case of overlapping spectra."
+   },
+   "source": "../signal/sampling/sampling/#step3"
+  }
+ ],
+ "questions": [
+  {
+   "id": "q-modulation-0",
+   "question": {
+    "zh": "收音机是怎么从一堆电台里只听到一个的？",
+    "en": "How does a radio pick out one station from so many?"
+   },
+   "chain": [
+    "modulation",
+    "spectrum"
+   ],
+   "target": {
+    "node": "modulation",
+    "href": "../signal/sampling/modulation/#step5"
+   },
+   "prompts": [
+    {
+     "node": "modulation",
+     "ask": {
+      "zh": "几家电台把各自的声音搬到哪里？接收端怎样把想听的那家搬回来？",
+      "en": "Where does each station move its audio, and how does the receiver bring back just the one it wants?"
+     }
+    },
+    {
+     "node": "spectrum",
+     "ask": {
+      "zh": "在频谱上，不同电台是靠什么分开的？靠得太近会怎样？",
+      "en": "On the spectrum, what keeps stations apart, and what happens if they get too close?"
+     }
+    }
+   ],
+   "reveal": {
+    "zh": "每家电台用不同的载波频率把声音搬到频谱上各自的一段；收音机用带通滤波圈住目标那一段，再乘上同频载波把它搬回基带。相邻电台的频段一旦重叠进带通，就会串台。",
+    "en": "Each station uses its own carrier to move its audio into its own slice of the spectrum; the radio fences off the target slice with a band-pass filter and multiplies by a matching carrier to bring it back to baseband. If a neighbour’s band overlaps the pass band, you hear crosstalk."
+   },
+   "source": "../signal/sampling/modulation/#step5"
+  }
+ ]
+}

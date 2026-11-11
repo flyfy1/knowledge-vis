@@ -1,0 +1,95 @@
+{
+ "schema": 2,
+ "slug": "pythagoras",
+ "nodes": [
+  {
+   "id": "pythagorean-theorem",
+   "group": "math",
+   "stage": "junior",
+   "order": 50,
+   "title": {
+    "zh": "勾股定理",
+    "en": "The Pythagorean theorem"
+   },
+   "description": {
+    "zh": "直角三角形里两条直角边的平方和等于斜边的平方：用面积看，挂在两条直角边上的两个小正方形正好装满挂在斜边上的大正方形；反过来，三边满足这个等式的三角形一定有直角。",
+    "en": "In a right triangle the squares on the two legs add up to the square on the hypotenuse: seen as areas, the two small squares on the legs exactly fill the large square on the hypotenuse; conversely, a triangle whose sides satisfy the equation must have a right angle."
+   },
+   "formula": "a² + b² = c²",
+   "source": "../math/geometry/pythagoras/#step1",
+   "lessons": [
+    {
+     "slug": "pythagoras",
+     "step": 1,
+     "category": "math",
+     "stage": "junior",
+     "primary": true
+    }
+   ],
+   "aliases": [
+    {
+     "zh": "勾股定理",
+     "en": "Pythagorean theorem"
+    },
+    {
+     "zh": "毕达哥拉斯定理",
+     "en": "Pythagoras’ theorem"
+    },
+    {
+     "zh": "商高定理",
+     "en": "Gougu theorem"
+    },
+    {
+     "zh": "勾三股四弦五",
+     "en": "3-4-5 triangle"
+    },
+    {
+     "zh": "勾股数",
+     "en": "Pythagorean triples"
+    },
+    {
+     "zh": "怎么求斜边",
+     "en": "how to find the hypotenuse"
+    },
+    {
+     "zh": "勾股定理逆定理",
+     "en": "converse of the Pythagorean theorem"
+    },
+    {
+     "zh": "勾股定律",
+     "en": "pythagorus theorem"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "pythagorean-theorem",
+   "to": "real-number-line",
+   "type": "foundation",
+   "label": {
+    "zh": "单位正方形的对角线是 √2",
+    "en": "The unit square’s diagonal is √2"
+   },
+   "reason": {
+    "zh": "两条直角边都是 1 时，斜边满足 c² = 2，于是 √2 有了一条看得见的线段；它不能写成两个整数之比，是最早被发现的无理数。",
+    "en": "With both legs equal to 1, the hypotenuse satisfies c² = 2, giving √2 a visible segment; it cannot be written as a ratio of two integers — the first irrational number to be discovered."
+   },
+   "source": "../math/geometry/pythagoras/#step6"
+  },
+  {
+   "from": "pythagorean-theorem",
+   "to": "unit-circle",
+   "type": "foundation",
+   "label": {
+    "zh": "cos²θ + sin²θ = 1",
+    "en": "cos²θ + sin²θ = 1"
+   },
+   "reason": {
+    "zh": "单位圆是到原点距离为 1 的点：由勾股定理的距离公式得 x² + y² = 1，代入 x = cos θ、y = sin θ 就是 cos²θ + sin²θ = 1。",
+    "en": "The unit circle is the set of points at distance 1 from the origin: the Pythagorean distance formula gives x² + y² = 1, and substituting x = cos θ, y = sin θ gives cos²θ + sin²θ = 1."
+   },
+   "source": "../math/geometry/pythagoras/#step5"
+  }
+ ]
+}

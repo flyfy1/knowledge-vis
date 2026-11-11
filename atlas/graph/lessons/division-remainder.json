@@ -1,0 +1,73 @@
+{
+ "schema": 2,
+ "slug": "division-remainder",
+ "nodes": [
+  {
+   "id": "division-remainder",
+   "group": "math",
+   "stage": "primary",
+   "order": 50,
+   "title": {
+    "zh": "除法与余数",
+    "en": "Division with remainders"
+   },
+   "description": {
+    "zh": "把一堆东西平均分，分到每人再也分不到一份时停下，剩下的就是余数，所以余数一定比除数小；“被除数 = 除数 × 商 + 余数”是这本账，星期几的循环也只看余数。",
+    "en": "Share things out equally until there is not enough left to give everyone one more, and what remains is the remainder — so it is always smaller than the divisor; “dividend = divisor × quotient + remainder” is the ledger, and cycles like the days of the week depend only on the remainder."
+   },
+   "formula": "a = b·q + r,  0 ≤ r < b",
+   "source": "../math/arithmetic/division-remainder/#step1",
+   "lessons": [
+    {
+     "slug": "division-remainder",
+     "step": 1,
+     "category": "math",
+     "stage": "primary",
+     "primary": true
+    }
+   ],
+   "aliases": [
+    {
+     "zh": "有余数的除法",
+     "en": "division with remainder"
+    },
+    {
+     "zh": "余数为什么比除数小",
+     "en": "why is the remainder smaller than the divisor"
+    },
+    {
+     "zh": "商和余数",
+     "en": "quotient and remainder"
+    },
+    {
+     "zh": "100 天后是星期几",
+     "en": "what weekday is it 100 days from now"
+    },
+    {
+     "zh": "取余 取模",
+     "en": "modulo"
+    },
+    {
+     "zh": "除法验算",
+     "en": "checking a division"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "division-remainder",
+   "to": "euclidean-algorithm",
+   "type": "foundation",
+   "label": {
+    "zh": "辗转相除就是一连串带余除法",
+    "en": "Euclid’s algorithm is a chain of divisions with remainder"
+   },
+   "reason": {
+    "zh": "求最大公因数时，用大数除以小数取余数，再用除数除以余数……每一步都是一次带余除法；余数一次比一次小，所以链条一定会结束。",
+    "en": "To find a greatest common divisor, divide the larger number by the smaller and keep the remainder, then divide the divisor by that remainder, and so on — each step is a division with remainder; the remainders keep shrinking, so the chain must end."
+   },
+   "source": "../math/arithmetic/number-combinatorics/#step1"
+  }
+ ]
+}

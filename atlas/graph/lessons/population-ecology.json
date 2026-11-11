@@ -1,0 +1,97 @@
+{
+ "schema": 2,
+ "slug": "population-ecology",
+ "note": "Step 1 (dN/dt against N, equilibrium at K) is attached to the logistic-growth concept from the logistic-growth page.",
+ "nodes": [
+  {
+   "id": "predator-prey",
+   "group": "life",
+   "stage": "senior",
+   "order": 50,
+   "title": {
+    "zh": "捕食者与猎物 · 延迟带来的起伏",
+    "en": "Predators & prey · oscillations from delay"
+   },
+   "description": {
+    "zh": "猎物多时捕食者吃得饱、数量上升，捕食者多了又把猎物吃少，随后自己也饿下去——两个种群互相牵制，又各慢一拍，于是数量此起彼伏，捕食者的峰总落在猎物的峰之后。",
+    "en": "When prey are plentiful predators thrive and multiply, more predators then eat the prey down, and later starve themselves — each population holds the other in check with a lag, so their numbers rise and fall in turn, the predator peak always trailing the prey peak."
+   },
+   "source": "../biology/ecology/population-ecology/#step2",
+   "lessons": [
+    {
+     "slug": "population-ecology",
+     "step": 2,
+     "category": "biology",
+     "stage": "senior",
+     "primary": true
+    }
+   ],
+   "aliases": [
+    {
+     "zh": "捕食者猎物模型",
+     "en": "predator–prey model"
+    },
+    {
+     "zh": "Lotka–Volterra 方程",
+     "en": "Lotka–Volterra equations"
+    },
+    {
+     "zh": "狼和兔子的数量",
+     "en": "wolves and rabbits populations"
+    },
+    {
+     "zh": "种群波动",
+     "en": "population cycles"
+    },
+    {
+     "zh": "猞猁和雪兔",
+     "en": "lynx and hare"
+    },
+    {
+     "zh": "为什么捕食者的峰比猎物晚",
+     "en": "why predator peaks lag prey peaks"
+    },
+    {
+     "zh": "种群生态学",
+     "en": "population ecology"
+    }
+   ]
+  }
+ ],
+ "attach": [
+  {
+   "node": "logistic-growth",
+   "step": 1
+  }
+ ],
+ "edges": [
+  {
+   "from": "predator-prey",
+   "to": "feedback",
+   "type": "connection",
+   "label": {
+    "zh": "带延迟的负反馈会振荡",
+    "en": "Negative feedback with delay oscillates"
+   },
+   "reason": {
+    "zh": "捕食者把猎物压下来，是一条负反馈；但它要过一段时间才跟上猎物的变化，延迟让调节总是过头，于是数量围着平衡点起伏——和控制系统里延迟导致振荡是同一个道理。",
+    "en": "Predators pushing prey down is negative feedback, but they respond only after a lag, so the correction always overshoots and numbers swing around the balance point — the same reason delay makes a control loop oscillate."
+   },
+   "source": "../biology/ecology/population-ecology/#step2"
+  },
+  {
+   "from": "ode-phase-portraits",
+   "to": "predator-prey",
+   "type": "representation",
+   "label": {
+    "zh": "把两条时间曲线画成一个圈",
+    "en": "Two time curves drawn as one loop"
+   },
+   "reason": {
+    "zh": "以猎物数为横轴、捕食者数为纵轴，此起彼伏的两条时间曲线就成了相平面上绕平衡点的闭圈；加上拥挤项（即 K），闭圈变成向内收的螺旋。",
+    "en": "Put prey on one axis and predators on the other and the two alternating time curves become a closed loop around the equilibrium in the phase plane; add a crowding term (K) and the loop becomes an inward spiral."
+   },
+   "source": "../math/calculus/ode-phase-portraits/#step2"
+  }
+ ]
+}

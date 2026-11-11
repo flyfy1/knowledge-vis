@@ -1,0 +1,108 @@
+{
+ "schema": 2,
+ "slug": "ethics-decisions",
+ "nodes": [
+  {
+   "id": "ethical-frameworks",
+   "group": "society",
+   "stage": "senior",
+   "order": 50,
+   "title": {
+    "zh": "伦理框架 · 后果、权利、公平与同意",
+    "en": "Ethical frameworks · consequences, rights, fairness and consent"
+   },
+   "description": {
+    "zh": "同一个决定换一套框架就会问不同的问题：结果主义问总后果好不好，权利框架问有没有越过不可侵犯的边界，公平框架问代价是否落在某一群人身上，同意则问当事人是否知情、能否拒绝——把这些问题分开写，取舍才看得清。",
+    "en": "Under different frameworks the same decision raises different questions: consequentialism asks whether the overall outcome is good, a rights framework whether an inviolable line is crossed, a fairness framework whether the costs fall on one group, and consent whether those affected are informed and free to refuse — writing these out separately makes the trade-offs visible."
+   },
+   "source": "../psychology/ethics/ethics-decisions/#step0",
+   "lessons": [
+    {
+     "slug": "ethics-decisions",
+     "step": 0,
+     "category": "psychology",
+     "stage": "senior",
+     "primary": true
+    }
+   ],
+   "aliases": [
+    {
+     "zh": "伦理学",
+     "en": "ethics"
+    },
+    {
+     "zh": "道德决策",
+     "en": "moral decision making"
+    },
+    {
+     "zh": "功利主义",
+     "en": "utilitarianism"
+    },
+    {
+     "zh": "义务论",
+     "en": "deontology"
+    },
+    {
+     "zh": "结果主义",
+     "en": "consequentialism"
+    },
+    {
+     "zh": "知情同意",
+     "en": "informed consent"
+    },
+    {
+     "zh": "电车难题",
+     "en": "trolley problem"
+    },
+    {
+     "zh": "怎么做伦理判断",
+     "en": "how to make an ethical judgment"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "expected-value",
+   "to": "ethical-frameworks",
+   "type": "application",
+   "label": {
+    "zh": "把后果写成期望值",
+    "en": "Writing consequences as an expected value"
+   },
+   "reason": {
+    "zh": "结果主义的计算常写成 E = p·benefit − (1−p)·harm；它能比较后果，却不会自动回答同意、尊严或分配的问题。",
+    "en": "Consequentialist reckoning is often written E = p·benefit − (1−p)·harm; it compares outcomes, but does not by itself settle consent, dignity or distribution."
+   },
+   "source": "../psychology/ethics/ethics-decisions/#step1"
+  },
+  {
+   "from": "externalities",
+   "to": "ethical-frameworks",
+   "type": "connection",
+   "label": {
+    "zh": "代价落在谁身上",
+    "en": "Who bears the cost"
+   },
+   "reason": {
+    "zh": "外部性是一方得益、另一方承担代价；公平框架追问的正是这一点——总收益为正，并不能抹掉由别人单独承担的伤害。",
+    "en": "An externality is one party gaining while another bears the cost; the fairness lens asks exactly this — a positive total does not erase harm borne by someone else alone."
+   },
+   "source": "../psychology/ethics/ethics-decisions/#step0"
+  },
+  {
+   "from": "ethical-frameworks",
+   "to": "veil-of-ignorance",
+   "type": "connection",
+   "label": {
+    "zh": "公平框架的一个思想实验",
+    "en": "A thought experiment for the fairness lens"
+   },
+   "reason": {
+    "zh": "无知之幕让选择规则的人不知道自己会落在哪个位置，从而逼着他像关心自己一样关心最差的位置，是检验“代价是否公平分摊”的一个工具。",
+    "en": "The veil of ignorance hides from rule-makers which position they will occupy, forcing them to care about the worst position as if it were their own — a tool for testing whether costs are shared fairly."
+   },
+   "source": "../psychology/ethics/veil-of-ignorance/#step0"
+  }
+ ]
+}

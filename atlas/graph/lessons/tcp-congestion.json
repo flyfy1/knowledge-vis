@@ -1,0 +1,167 @@
+{
+ "schema": 2,
+ "slug": "tcp-congestion",
+ "nodes": [
+  {
+   "id": "latency-bandwidth",
+   "group": "computing",
+   "stage": "university",
+   "order": 50,
+   "title": {
+    "zh": "延迟与带宽",
+    "en": "Latency & bandwidth"
+   },
+   "description": {
+    "zh": "传一份数据的时间约等于往返延迟加上数据量 ÷ 带宽：延迟像水要走多远，带宽像水管多粗；短消息主要被延迟拖慢，大文件才主要受带宽限制，所以加宽水管救不了“卡顿”。",
+    "en": "Sending some data takes roughly the round-trip latency plus size ÷ bandwidth: latency is how far the water has to travel, bandwidth how wide the pipe is; short messages are slowed mainly by latency and only large files mainly by bandwidth, so a wider pipe does not cure lag."
+   },
+   "formula": "t ≈ RTT + size / bandwidth",
+   "source": "../computing/systems/tcp-congestion/#step1",
+   "lessons": [
+    {
+     "slug": "tcp-congestion",
+     "step": 1,
+     "category": "computing",
+     "stage": "university",
+     "primary": true
+    }
+   ],
+   "aliases": [
+    {
+     "zh": "网络延迟",
+     "en": "network latency"
+    },
+    {
+     "zh": "带宽",
+     "en": "bandwidth"
+    },
+    {
+     "zh": "网速慢",
+     "en": "slow internet"
+    },
+    {
+     "zh": "ping 值",
+     "en": "ping"
+    },
+    {
+     "zh": "往返时间 RTT",
+     "en": "round-trip time"
+    },
+    {
+     "zh": "网速和延迟的区别",
+     "en": "bandwidth vs latency"
+    },
+    {
+     "zh": "数据包",
+     "en": "packets"
+    },
+    {
+     "zh": "吞吐量",
+     "en": "throughput"
+    }
+   ]
+  },
+  {
+   "id": "tcp-congestion-control",
+   "group": "computing",
+   "stage": "university",
+   "order": 50,
+   "title": {
+    "zh": "TCP 拥塞控制 · 试探与退让",
+    "en": "TCP congestion control · probe and back off"
+   },
+   "description": {
+    "zh": "发送端不知道网络还能承受多少，就用拥塞窗口一点点试：每收到确认就多发一点，一旦超时或丢包就大幅退让；网络的稳定吞吐就是这个“加一点、砍一刀”的闭环维持出来的。",
+    "en": "A sender cannot know how much the network can take, so it probes with a congestion window: each acknowledgement lets it send a little more, and a timeout or lost packet makes it back off sharply; steady network throughput is held by this add-a-little, cut-hard loop."
+   },
+   "source": "../computing/systems/tcp-congestion/#step4",
+   "lessons": [
+    {
+     "slug": "tcp-congestion",
+     "step": 4,
+     "category": "computing",
+     "stage": "university",
+     "primary": true
+    }
+   ],
+   "aliases": [
+    {
+     "zh": "拥塞控制",
+     "en": "congestion control"
+    },
+    {
+     "zh": "拥塞窗口",
+     "en": "congestion window"
+    },
+    {
+     "zh": "TCP 三次握手",
+     "en": "TCP three-way handshake"
+    },
+    {
+     "zh": "丢包重传",
+     "en": "packet loss and retransmission"
+    },
+    {
+     "zh": "慢启动",
+     "en": "slow start"
+    },
+    {
+     "zh": "加性增乘性减",
+     "en": "AIMD"
+    },
+    {
+     "zh": "网络为什么会堵",
+     "en": "why does the network get congested"
+    },
+    {
+     "zh": "TCP 和 IP",
+     "en": "TCP/IP"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "slope",
+   "to": "latency-bandwidth",
+   "type": "representation",
+   "label": {
+    "zh": "一条直线：截距是延迟，斜率是 1/带宽",
+    "en": "A straight line: intercept latency, slope 1/bandwidth"
+   },
+   "reason": {
+    "zh": "把传输时间画成数据量的函数，是一条直线：截距是往返延迟，斜率是带宽的倒数；加大带宽只让线变平，截距一点不变。",
+    "en": "Plotted against data size, transfer time is a straight line whose intercept is the round-trip latency and whose slope is one over the bandwidth; more bandwidth only flattens the line and leaves the intercept untouched."
+   },
+   "source": "../computing/systems/tcp-congestion/#step1"
+  },
+  {
+   "from": "latency-bandwidth",
+   "to": "tcp-congestion-control",
+   "type": "foundation",
+   "label": {
+    "zh": "队列把拥塞变成等待",
+    "en": "Queues turn congestion into waiting"
+   },
+   "reason": {
+    "zh": "链路满载时包在路由器队列里排队，延迟暴涨、队列溢出就丢包；拥塞控制读到的信号正是这些延迟和丢包。",
+    "en": "When a link is full, packets queue in routers, latency soars, and overflowing queues drop packets; those delays and losses are exactly the signals congestion control reads."
+   },
+   "source": "../computing/systems/tcp-congestion/#step4"
+  },
+  {
+   "from": "feedback",
+   "to": "tcp-congestion-control",
+   "type": "application",
+   "label": {
+    "zh": "发送速率的反馈环",
+    "en": "A feedback loop on the sending rate"
+   },
+   "reason": {
+    "zh": "发送端测量确认与丢包、据此调整窗口，再看网络的反应——测量、比较、调整，这就是一条反馈控制回路。",
+    "en": "The sender measures acknowledgements and losses, adjusts its window and watches how the network responds — measure, compare, adjust: a feedback control loop."
+   },
+   "source": "../computing/systems/tcp-congestion/#step4"
+  }
+ ]
+}

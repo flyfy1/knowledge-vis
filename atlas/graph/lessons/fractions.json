@@ -1,0 +1,133 @@
+{
+ "schema": 2,
+ "slug": "fractions",
+ "nodes": [
+  {
+   "id": "fractions",
+   "group": "math",
+   "stage": "primary",
+   "order": 50,
+   "title": {
+    "zh": "分数 · 把整体平均切开来数",
+    "en": "Fractions · cutting the whole into equal parts"
+   },
+   "description": {
+    "zh": "分数是一个数，不是上下摆着的两个数：分母说把整体平均切成几份，分子说取了其中几份；1/2、2/4、4/8 是同一个数换了写法，分母不同的分数要先通分才能比大小和相加。",
+    "en": "A fraction is one number, not two stacked numbers: the denominator says how many equal parts the whole is cut into and the numerator how many are taken; 1/2, 2/4 and 4/8 are one number written differently, and fractions with different denominators must share a common denominator before comparing or adding."
+   },
+   "formula": "a/b = (a·k)/(b·k)",
+   "source": "../math/arithmetic/fractions/#step1",
+   "lessons": [
+    {
+     "slug": "fractions",
+     "step": 1,
+     "category": "math",
+     "stage": "primary",
+     "primary": true
+    }
+   ],
+   "aliases": [
+    {
+     "zh": "分数",
+     "en": "fraction"
+    },
+    {
+     "zh": "分子 分母",
+     "en": "numerator and denominator"
+    },
+    {
+     "zh": "等值分数",
+     "en": "equivalent fractions"
+    },
+    {
+     "zh": "通分",
+     "en": "common denominator"
+    },
+    {
+     "zh": "约分",
+     "en": "simplifying a fraction"
+    },
+    {
+     "zh": "假分数 带分数",
+     "en": "improper fraction and mixed number"
+    },
+    {
+     "zh": "1/2 + 1/3 为什么不等于 2/5",
+     "en": "why is 1/2 + 1/3 not 2/5"
+    },
+    {
+     "zh": "分数比大小",
+     "en": "comparing fractions"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "fractions",
+   "to": "real-number-line",
+   "type": "foundation",
+   "label": {
+    "zh": "分数先占住数轴上的点",
+    "en": "Fractions claim points on the number line first"
+   },
+   "reason": {
+    "zh": "分数、小数、百分数同值就落在数轴同一点；有了这些分数点，才会问出 √2 这样的数为什么写不成分数、却仍在数轴上有位置。",
+    "en": "Fractions, decimals and percents of equal value land on the same point of the number line; once those points are filled in, it is natural to ask why a number like √2 cannot be written as a fraction yet still has a place on the line."
+   },
+   "source": "../math/arithmetic/fractions/#step6"
+  },
+  {
+   "from": "division-remainder",
+   "to": "fractions",
+   "type": "connection",
+   "label": {
+    "zh": "除法是两种写法之间的翻译",
+    "en": "Division translates between the two forms"
+   },
+   "reason": {
+    "zh": "7/4 就是 7 ÷ 4：商 1、余 3，写成带分数 1¾——余数正好成了带分数里分数部分的分子。",
+    "en": "7/4 is 7 ÷ 4: quotient 1, remainder 3, written as the mixed number 1¾ — the remainder becomes the numerator of the fractional part."
+   },
+   "source": "../math/arithmetic/fractions/#step5"
+  }
+ ],
+ "questions": [
+  {
+   "id": "q-fractions-0",
+   "question": {
+    "zh": "为什么 1/2 + 1/3 不等于 2/5？",
+    "en": "Why is 1/2 + 1/3 not equal to 2/5?"
+   },
+   "chain": [
+    "fractions",
+    "real-number-line"
+   ],
+   "target": {
+    "node": "fractions",
+    "href": "../math/arithmetic/fractions/#step4"
+   },
+   "prompts": [
+    {
+     "node": "fractions",
+     "ask": {
+      "zh": "1/2 和 1/3 的格子一样大吗？不一样大的格子能直接数在一起吗？",
+      "en": "Are halves and thirds the same size? Can pieces of different sizes be counted together directly?"
+     }
+    },
+    {
+     "node": "real-number-line",
+     "ask": {
+      "zh": "把 1/2、1/3 和 2/5 放到数轴上，2/5 比 1/2 大还是小？",
+      "en": "Place 1/2, 1/3 and 2/5 on the number line — is 2/5 bigger or smaller than 1/2?"
+     }
+    }
+   ],
+   "reveal": {
+    "zh": "分母不同，格子大小就不同，不能直接把分子、分母各自相加；2/5 甚至比 1/2 还小。先通分成六分之几：3/6 + 2/6 = 5/6。",
+    "en": "Different denominators mean different-sized pieces, so numerators and denominators cannot simply be added; 2/5 is even smaller than 1/2. Convert to sixths first: 3/6 + 2/6 = 5/6."
+   },
+   "source": "../math/arithmetic/fractions/#step4"
+  }
+ ]
+}

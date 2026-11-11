@@ -1,0 +1,91 @@
+{
+ "schema": 2,
+ "slug": "parabola",
+ "nodes": [
+  {
+   "id": "parabola",
+   "group": "math",
+   "stage": "junior",
+   "order": 50,
+   "title": {
+    "zh": "二次函数与抛物线",
+    "en": "Quadratic functions & parabolas"
+   },
+   "description": {
+    "zh": "投篮的弧线就是抛物线：y = ax² 里 a 决定开口方向和胖瘦，写成顶点式 y = a(x − h)² + k 后顶点 (h, k) 和对称轴 x = h 一眼可读；图像与 x 轴有两个、一个或没有交点，就是 y = 0 有两个、一个或没有实数解。",
+    "en": "A basketball’s arc is a parabola: in y = ax², a sets the opening direction and width; in vertex form y = a(x − h)² + k the vertex (h, k) and the axis x = h can be read off directly; crossing the x-axis twice, once or not at all means y = 0 has two, one or no real solutions."
+   },
+   "formula": "y = a(x − h)² + k",
+   "source": "../math/algebra/parabola/#step2",
+   "lessons": [
+    {
+     "slug": "parabola",
+     "step": 2,
+     "category": "math",
+     "stage": "junior",
+     "primary": true
+    }
+   ],
+   "aliases": [
+    {
+     "zh": "抛物线",
+     "en": "parabola"
+    },
+    {
+     "zh": "二次函数",
+     "en": "quadratic function"
+    },
+    {
+     "zh": "顶点式",
+     "en": "vertex form"
+    },
+    {
+     "zh": "二次函数图像",
+     "en": "graph of a quadratic"
+    },
+    {
+     "zh": "开口方向",
+     "en": "which way a parabola opens"
+    },
+    {
+     "zh": "一元二次方程的根",
+     "en": "roots of a quadratic equation"
+    },
+    {
+     "zh": "判别式",
+     "en": "discriminant"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "parabola",
+   "to": "projectile-circular",
+   "type": "application",
+   "label": {
+    "zh": "投出去的球走抛物线",
+    "en": "A thrown ball follows a parabola"
+   },
+   "reason": {
+    "zh": "不计空气阻力时，水平方向匀速、竖直方向匀加速，高度是时间的二次函数，所以轨迹是一条开口向下的抛物线。",
+    "en": "Ignoring air resistance, horizontal motion is uniform and vertical motion uniformly accelerated, so height is a quadratic function of time and the path is a downward-opening parabola."
+   },
+   "source": "../math/algebra/parabola/#step0"
+  },
+  {
+   "from": "parabola",
+   "to": "conic-sections",
+   "type": "connection",
+   "label": {
+    "zh": "抛物线也是圆锥曲线",
+    "en": "A parabola is also a conic section"
+   },
+   "reason": {
+    "zh": "y = ax² 的图像正是离心率 e = 1 的圆锥曲线：用平行于圆锥母线的平面去切就得到它，曲线上每一点到焦点和到准线的距离相等。",
+    "en": "The graph of y = ax² is exactly the conic with eccentricity e = 1: slice a cone parallel to its slant side and you get it, every point equally far from the focus and the directrix."
+   },
+   "source": "../math/geometry/conic-sections/#step1"
+  }
+ ]
+}

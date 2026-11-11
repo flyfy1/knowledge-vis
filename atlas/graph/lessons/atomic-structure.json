@@ -1,0 +1,177 @@
+{
+ "schema": 2,
+ "slug": "atomic-structure",
+ "nodes": [
+  {
+   "id": "atomic-structure",
+   "group": "matter",
+   "stage": "junior",
+   "order": 50,
+   "title": {
+    "zh": "原子结构 · 质子数决定元素",
+    "en": "Atomic structure · the proton count names the element"
+   },
+   "description": {
+    "zh": "原子中间是一个极小、却装着几乎全部质量的原子核（质子和中子），电子在外面分层分布；核里质子的个数决定它是哪种元素。",
+    "en": "An atom is a tiny nucleus of protons and neutrons that carries almost all of its mass, with electrons arranged in layers around it; the number of protons in the nucleus decides which element it is."
+   },
+   "source": "../chemistry/matter/atomic-structure/#step1",
+   "lessons": [
+    {
+     "slug": "atomic-structure",
+     "step": 1,
+     "category": "chemistry",
+     "stage": "junior",
+     "primary": true
+    }
+   ],
+   "aliases": [
+    {
+     "zh": "原子是什么",
+     "en": "what is an atom"
+    },
+    {
+     "zh": "原子核",
+     "en": "atomic nucleus"
+    },
+    {
+     "zh": "质子 中子 电子",
+     "en": "protons, neutrons and electrons"
+    },
+    {
+     "zh": "原子序数",
+     "en": "atomic number"
+    },
+    {
+     "zh": "核电荷数",
+     "en": "nuclear charge"
+    },
+    {
+     "zh": "原子里面是空的吗",
+     "en": "is an atom mostly empty space"
+    },
+    {
+     "zh": "元素由什么决定",
+     "en": "what makes an element that element"
+    }
+   ]
+  },
+  {
+   "id": "electron-shells",
+   "group": "matter",
+   "stage": "junior",
+   "order": 50,
+   "title": {
+    "zh": "电子层与最外层电子",
+    "en": "Electron shells & outer electrons"
+   },
+   "description": {
+    "zh": "电子由里到外一层层填进电子层（本页按 2、8、8 的简化容量），最外层满没满、还差几个，决定原子活不活泼；原子得到或失去电子后带上电荷，就成了离子。",
+    "en": "Electrons fill shells from the inside out (2, 8, 8 in this simplified model), and how full the outermost shell is decides how reactive the atom is; an atom that gains or loses electrons becomes charged — an ion."
+   },
+   "formula": "q = Z − nₑ",
+   "source": "../chemistry/matter/atomic-structure/#step3",
+   "lessons": [
+    {
+     "slug": "atomic-structure",
+     "step": 3,
+     "category": "chemistry",
+     "stage": "junior",
+     "primary": true
+    }
+   ],
+   "aliases": [
+    {
+     "zh": "最外层电子",
+     "en": "outermost electrons"
+    },
+    {
+     "zh": "价电子",
+     "en": "valence electrons"
+    },
+    {
+     "zh": "电子排布",
+     "en": "electron configuration"
+    },
+    {
+     "zh": "离子",
+     "en": "ion"
+    },
+    {
+     "zh": "阳离子 阴离子",
+     "en": "cation and anion"
+    },
+    {
+     "zh": "为什么钠很活泼",
+     "en": "why is sodium so reactive"
+    },
+    {
+     "zh": "稀有气体为什么稳定",
+     "en": "why are noble gases stable"
+    },
+    {
+     "zh": "电子壳层",
+     "en": "electron shell"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "atomic-structure",
+   "to": "electron-shells",
+   "type": "foundation",
+   "label": {
+    "zh": "质子数定下电子数",
+    "en": "The proton count fixes the electron count"
+   },
+   "reason": {
+    "zh": "中性原子的电子数等于质子数，所以先由质子数知道一共有几个电子，才能一层层排出最外层还剩几个。",
+    "en": "A neutral atom has as many electrons as protons, so the proton count says how many electrons there are before they can be filled shell by shell to find what is left on the outside."
+   },
+   "source": "../chemistry/matter/atomic-structure/#step2"
+  },
+  {
+   "from": "particles-states",
+   "to": "atomic-structure",
+   "type": "connection",
+   "label": {
+    "zh": "从一群粒子放大到一个原子",
+    "en": "From a crowd of particles to the inside of one atom"
+   },
+   "reason": {
+    "zh": "粒子与物态讲一群粒子怎样运动、怎样排队；原子结构把其中一颗再放大，看核与电子。两页的“动”不是一回事：电子层是住址，不是跑道。",
+    "en": "Particles & states is about how a crowd of particles moves and packs; atomic structure zooms into one of them to see the nucleus and electrons. The two kinds of motion differ: an electron shell is an address, not a racetrack."
+   },
+   "source": "../chemistry/matter/atomic-structure/#step0"
+  },
+  {
+   "from": "electron-shells",
+   "to": "periodic-trends",
+   "type": "foundation",
+   "label": {
+    "zh": "周期律建立在电子层上",
+    "en": "Periodic trends rest on the shell picture"
+   },
+   "reason": {
+    "zh": "同一周期电子层数相同、核电荷逐个增加，同一主族最外层电子数相同——元素周期律里原子半径、电离能的走向都要从这套分层排布读起。",
+    "en": "Across a period the number of shells stays the same while the nuclear charge rises one by one, and down a group the outer-electron count repeats — the radius and ionisation-energy trends of the periodic table are read from this shell arrangement."
+   },
+   "source": "../chemistry/matter/atomic-structure/#step3"
+  },
+  {
+   "from": "atomic-structure",
+   "to": "conservation-of-mass",
+   "type": "foundation",
+   "label": {
+    "zh": "化学反应不改变原子核",
+    "en": "Chemical reactions leave nuclei alone"
+   },
+   "reason": {
+    "zh": "化学反应只是把原子重新连接，核里的质子数不变，原子不会变成别的元素；所以每种元素的原子在反应前后一个不多、一个不少。",
+    "en": "A chemical reaction only reconnects atoms; the proton count in each nucleus is unchanged, so no atom turns into another element and every element has exactly as many atoms after the reaction as before."
+   },
+   "source": "../chemistry/reactions/mass-conservation/#step1"
+  }
+ ]
+}

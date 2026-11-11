@@ -1,0 +1,95 @@
+{
+ "schema": 2,
+ "slug": "lever-pulley",
+ "nodes": [
+  {
+   "id": "lever-pulley",
+   "group": "waves",
+   "stage": "junior",
+   "order": 50,
+   "title": {
+    "zh": "杠杆与滑轮 · 力矩与省力",
+    "en": "Levers & pulleys · torque and mechanical advantage"
+   },
+   "description": {
+    "zh": "杠杆平衡看力矩：两边的力 × 力臂相等，所以把支点挪近重物就能用小力撬起大物；但省力必费距离——手做的功等于重物得到的功，滑轮组省几倍力就要多拉几倍绳。",
+    "en": "A lever balances when the torques match — force × lever arm on each side — so moving the fulcrum toward the load lets a small force lift a big one; but saved force always costs distance: the work you put in equals the work done on the load, and a pulley system that divides the force by n makes you pull n times as much rope."
+   },
+   "formula": "F₁·l₁ = F₂·l₂",
+   "source": "../physics/mechanics/lever-pulley/#step1",
+   "lessons": [
+    {
+     "slug": "lever-pulley",
+     "step": 1,
+     "category": "physics",
+     "stage": "junior",
+     "primary": true
+    }
+   ],
+   "aliases": [
+    {
+     "zh": "杠杆原理",
+     "en": "lever principle"
+    },
+    {
+     "zh": "力矩",
+     "en": "torque / moment"
+    },
+    {
+     "zh": "力臂",
+     "en": "lever arm"
+    },
+    {
+     "zh": "滑轮组",
+     "en": "block and tackle / pulley system"
+    },
+    {
+     "zh": "省力杠杆",
+     "en": "force-saving lever"
+    },
+    {
+     "zh": "动滑轮 定滑轮",
+     "en": "movable and fixed pulleys"
+    },
+    {
+     "zh": "为什么撬棍能撬起大石头",
+     "en": "how can a crowbar lift a heavy rock"
+    },
+    {
+     "zh": "机械效益",
+     "en": "mechanical advantage"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "work-energy",
+   "to": "lever-pulley",
+   "type": "foundation",
+   "label": {
+    "zh": "省力必费距离",
+    "en": "Saved force costs distance"
+   },
+   "reason": {
+    "zh": "理想的杠杆和滑轮不会产生能量：输入功 F·s 等于输出功 G·h，力小几倍，移动的距离就大几倍。",
+    "en": "An ideal lever or pulley creates no energy: input work F·s equals output work G·h, so dividing the force by some factor multiplies the distance moved by the same factor."
+   },
+   "source": "../physics/mechanics/lever-pulley/#step2"
+  },
+  {
+   "from": "net-force",
+   "to": "lever-pulley",
+   "type": "connection",
+   "label": {
+    "zh": "平衡条件的转动版",
+    "en": "The turning version of balance"
+   },
+   "reason": {
+    "zh": "物体静止要求合力为零；能绕支点转动的物体还要求两边力矩相抵，杠杆平衡 F₁l₁ = F₂l₂ 就是这条转动平衡条件。",
+    "en": "A body at rest needs zero net force; one that can turn about a pivot also needs the torques to cancel, and the lever rule F₁l₁ = F₂l₂ is that turning-balance condition."
+   },
+   "source": "../physics/mechanics/lever-pulley/#step0"
+  }
+ ]
+}

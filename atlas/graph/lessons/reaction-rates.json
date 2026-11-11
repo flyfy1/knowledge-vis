@@ -1,0 +1,104 @@
+{
+ "schema": 2,
+ "slug": "reaction-rates",
+ "nodes": [
+  {
+   "id": "collision-theory",
+   "group": "matter",
+   "stage": "senior",
+   "order": 50,
+   "title": {
+    "zh": "反应速率与碰撞理论",
+    "en": "Reaction rates & collision theory"
+   },
+   "description": {
+    "zh": "反应快慢取决于单位时间里有多少次“成功碰撞”——碰得越勤、能量越过门槛的比例越大，反应就越快；提高浓度、升温、磨成粉末、加催化剂，改的都是这两件事之一。",
+    "en": "How fast a reaction goes depends on how many successful collisions happen per unit time — more frequent collisions and a larger share clearing the energy threshold make it faster; raising concentration, heating, powdering a solid and adding a catalyst each change one of these two things."
+   },
+   "source": "../chemistry/reactions/reaction-rates/#step0",
+   "lessons": [
+    {
+     "slug": "reaction-rates",
+     "step": 0,
+     "category": "chemistry",
+     "stage": "senior",
+     "primary": true
+    }
+   ],
+   "aliases": [
+    {
+     "zh": "反应速率",
+     "en": "reaction rate"
+    },
+    {
+     "zh": "影响反应速率的因素",
+     "en": "factors that affect reaction rate"
+    },
+    {
+     "zh": "有效碰撞",
+     "en": "effective collision"
+    },
+    {
+     "zh": "为什么升温反应变快",
+     "en": "why does heating speed up a reaction"
+    },
+    {
+     "zh": "为什么粉末反应更快",
+     "en": "why does a powder react faster"
+    },
+    {
+     "zh": "催化剂怎么加快反应",
+     "en": "how does a catalyst speed up a reaction"
+    },
+    {
+     "zh": "碰撞理论",
+     "en": "collision theory"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "particles-states",
+   "to": "collision-theory",
+   "type": "foundation",
+   "label": {
+    "zh": "温度就是粒子跑得多快",
+    "en": "Temperature is how fast the particles move"
+   },
+   "reason": {
+    "zh": "粒子与物态页把温度读成粒子热运动的剧烈程度；升温让粒子跑得更快，于是碰撞更勤，也有更多碰撞的能量越过门槛。",
+    "en": "The particles lesson reads temperature as how wildly particles move; warming makes them faster, so they collide more often and more of those collisions carry enough energy to clear the threshold."
+   },
+   "source": "../chemistry/reactions/reaction-rates/#step2"
+  },
+  {
+   "from": "collision-theory",
+   "to": "activation-energy",
+   "type": "foundation",
+   "label": {
+    "zh": "门槛的定量版本",
+    "en": "The quantitative version of the threshold"
+   },
+   "reason": {
+    "zh": "碰撞理论数出越过门槛的碰撞；活化能页把这道门槛记作 Eₐ，用 k = A·e^(−Eₐ/RT) 算出越过门槛的比例怎样随温度指数式增长。",
+    "en": "Collision theory counts the collisions that clear the threshold; the activation-energy lesson names the threshold Eₐ and uses k = A·e^(−Eₐ/RT) to show how the fraction clearing it grows exponentially with temperature."
+   },
+   "source": "../chemistry/reactions/reaction-rates/#step4"
+  },
+  {
+   "from": "collision-theory",
+   "to": "dynamic-equilibrium",
+   "type": "foundation",
+   "label": {
+    "zh": "平衡是两个速率相等",
+    "en": "Equilibrium is two equal rates"
+   },
+   "reason": {
+    "zh": "知道速率是成功碰撞的次数，就能理解可逆反应：生成物越多，逆向碰撞也越多，直到正、逆两个速率相等，宏观组成不再变化。",
+    "en": "Once a rate is a count of successful collisions, reversible reactions make sense: as products build up, reverse collisions become more frequent until the forward and reverse rates match and the composition stops changing."
+   },
+   "source": "../chemistry/reactions/chemical-equilibrium/#step1"
+  }
+ ]
+}

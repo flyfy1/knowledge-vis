@@ -1,0 +1,125 @@
+{
+ "schema": 2,
+ "slug": "mass-conservation",
+ "nodes": [
+  {
+   "id": "conservation-of-mass",
+   "group": "matter",
+   "stage": "junior",
+   "order": 50,
+   "title": {
+    "zh": "质量守恒 · 原子一个都不丢",
+    "en": "Conservation of mass · not a single atom lost"
+   },
+   "description": {
+    "zh": "化学反应只是把原子重新组合，原子的种类和个数都不变，所以密闭体系反应前后总质量相等；敞口反应看起来变轻或变重，是因为有气体跑了出去或从空气里加了进来。",
+    "en": "A chemical reaction only regroups atoms without changing their kinds or numbers, so a sealed system weighs the same before and after; when an open reaction seems to get lighter or heavier, a gas has escaped or joined from the air."
+   },
+   "formula": "Σm(reactants) = Σm(products)",
+   "source": "../chemistry/reactions/mass-conservation/#step2",
+   "lessons": [
+    {
+     "slug": "mass-conservation",
+     "step": 2,
+     "category": "chemistry",
+     "stage": "junior",
+     "primary": true
+    }
+   ],
+   "aliases": [
+    {
+     "zh": "质量守恒定律",
+     "en": "law of conservation of mass"
+    },
+    {
+     "zh": "反应后为什么变轻了",
+     "en": "why does it get lighter after reacting"
+    },
+    {
+     "zh": "铁生锈为什么变重",
+     "en": "why does rusting iron get heavier"
+    },
+    {
+     "zh": "蜡烛烧完质量去哪了",
+     "en": "where does the mass of a burnt candle go"
+    },
+    {
+     "zh": "拉瓦锡",
+     "en": "Lavoisier"
+    },
+    {
+     "zh": "物质不灭",
+     "en": "matter is neither created nor destroyed"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "molecules-atoms",
+   "to": "conservation-of-mass",
+   "type": "foundation",
+   "label": {
+    "zh": "原子只重组，不增减",
+    "en": "Atoms regroup but never appear or vanish"
+   },
+   "reason": {
+    "zh": "分子与原子页说明化学变化是拆开分子、让原子重新组合成新分子；既然原子没有增减、每个原子的质量也不变，总质量自然守恒。",
+    "en": "The molecules lesson shows a chemical change breaks molecules apart and regroups their atoms into new ones; since no atom is added or lost and each keeps its mass, the total mass must stay the same."
+   },
+   "source": "../chemistry/reactions/mass-conservation/#step1"
+  },
+  {
+   "from": "conservation-of-mass",
+   "to": "equation-balancing",
+   "type": "foundation",
+   "label": {
+    "zh": "配平就是守恒的记账",
+    "en": "Balancing is the bookkeeping of conservation"
+   },
+   "reason": {
+    "zh": "原子的种类和数目反应前后不变，所以写化学方程式时要调整系数，让每种原子在两边一样多——配平把质量守恒写进了式子。",
+    "en": "Because the kinds and numbers of atoms do not change, the coefficients of a chemical equation must make every element equal on both sides — balancing writes mass conservation into the equation."
+   },
+   "source": "../chemistry/reactions/mass-conservation/#step2"
+  }
+ ],
+ "questions": [
+  {
+   "id": "q-mass-conservation-0",
+   "question": {
+    "zh": "蜡烛烧完变轻了，质量消失了吗？",
+    "en": "A candle gets lighter as it burns — has mass disappeared?"
+   },
+   "chain": [
+    "conservation-of-mass",
+    "molecules-atoms"
+   ],
+   "target": {
+    "node": "conservation-of-mass",
+    "href": "../chemistry/reactions/mass-conservation/#step3"
+   },
+   "prompts": [
+    {
+     "node": "conservation-of-mass",
+     "ask": {
+      "zh": "如果把反应放进密闭瓶子里再称，读数会变吗？敞口时跑掉的是什么？",
+      "en": "If the reaction is sealed in a jar and weighed, does the reading change? What escapes when it is open?"
+     }
+    },
+    {
+     "node": "molecules-atoms",
+     "ask": {
+      "zh": "燃烧时原子是被消灭了，还是重新组合进了别的分子？",
+      "en": "In burning, are atoms destroyed, or regrouped into other molecules?"
+     }
+    }
+   ],
+   "reveal": {
+    "zh": "燃烧并没有消灭原子：蜡里的碳和氢与空气中的氧重新组合成二氧化碳和水蒸气，飞进了空气。把气体也算进体系、在密闭容器里称，总质量前后相等。",
+    "en": "Burning destroys no atoms: the carbon and hydrogen in the wax regroup with oxygen from the air into carbon dioxide and water vapour, which drift away. Count the gases too, in a sealed container, and the total mass is unchanged."
+   },
+   "source": "../chemistry/reactions/mass-conservation/#step3"
+  }
+ ]
+}

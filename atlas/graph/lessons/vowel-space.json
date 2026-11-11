@@ -1,0 +1,104 @@
+{
+ "schema": 2,
+ "slug": "vowel-space",
+ "nodes": [
+  {
+   "id": "vowel-formants",
+   "group": "society",
+   "stage": "senior",
+   "order": 50,
+   "title": {
+    "zh": "元音空间 · 共振峰 F1 与 F2",
+    "en": "Vowel space · formants F1 and F2"
+   },
+   "description": {
+    "zh": "元音的音高由基频 F0 定，是哪个元音则由声道放大的几个频率峰（共振峰）定：只用前两个 F1、F2，就能把元音画成平面上的点；男人、女人、孩子的点整体错开，要先按说话人整体缩放才能认对。",
+    "en": "A vowel’s pitch is set by the fundamental F0, but which vowel it is depends on the frequency peaks the vocal tract amplifies (formants): the first two, F1 and F2, place each vowel as a point on a plane; men’s, women’s and children’s points are shifted as a whole, so they must be rescaled by speaker before vowels can be recognised."
+   },
+   "source": "../language/phonology/vowel-space/#step1",
+   "lessons": [
+    {
+     "slug": "vowel-space",
+     "step": 1,
+     "category": "language",
+     "stage": "senior",
+     "primary": true
+    }
+   ],
+   "aliases": [
+    {
+     "zh": "共振峰",
+     "en": "formant"
+    },
+    {
+     "zh": "元音图",
+     "en": "vowel chart"
+    },
+    {
+     "zh": "F1 F2",
+     "en": "first and second formants"
+    },
+    {
+     "zh": "元音四边形",
+     "en": "vowel quadrilateral"
+    },
+    {
+     "zh": "基频和音高",
+     "en": "fundamental frequency and pitch"
+    },
+    {
+     "zh": "说话人归一化",
+     "en": "speaker normalization"
+    },
+    {
+     "zh": "为什么男女声说同一个元音频率不同",
+     "en": "why do men and women’s vowels differ in frequency"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "spectrum",
+   "to": "vowel-formants",
+   "type": "foundation",
+   "label": {
+    "zh": "元音的频谱：谐波加包络峰",
+    "en": "A vowel’s spectrum: harmonics under envelope peaks"
+   },
+   "reason": {
+    "zh": "浊音的波形每秒重复 F0 次，频谱上是 F0、2F0、3F0…… 一排谐波；共振峰是这些谐波上方包络的峰，要在频谱里才看得见。",
+    "en": "A voiced sound repeats F0 times a second, giving a row of harmonics at F0, 2F0, 3F0 … in its spectrum; formants are peaks in the envelope over those harmonics, visible only in the spectrum."
+   },
+   "source": "../language/phonology/vowel-space/#step0"
+  },
+  {
+   "from": "resonance",
+   "to": "vowel-formants",
+   "type": "foundation",
+   "label": {
+    "zh": "声道是一组共鸣腔",
+    "en": "The vocal tract is a set of resonators"
+   },
+   "reason": {
+    "zh": "从喉到唇的声道像共鸣腔，把某些频率附近的谐波放大；舌头和嘴唇改变腔的形状，共振频率跟着移动，元音就变了。",
+    "en": "The tract from larynx to lips acts like a resonator, amplifying harmonics near certain frequencies; tongue and lips change its shape, the resonant frequencies move, and the vowel changes."
+   },
+   "source": "../language/phonology/vowel-space/#step0"
+  },
+  {
+   "from": "exp-log",
+   "to": "vowel-formants",
+   "type": "application",
+   "label": {
+    "zh": "对数刻度让缩放变成平移",
+    "en": "A log scale turns rescaling into shifting"
+   },
+   "reason": {
+    "zh": "元音图两轴用对数刻度，相同距离代表相同倍数；所以按说话人整体乘一个比例来归一化，在图上就是把整圈平移。",
+    "en": "Both axes of the vowel plot are logarithmic, so equal distances mean equal ratios; normalising a speaker by multiplying by one factor is then just shifting the whole loop."
+   },
+   "source": "../language/phonology/vowel-space/#step4"
+  }
+ ]
+}

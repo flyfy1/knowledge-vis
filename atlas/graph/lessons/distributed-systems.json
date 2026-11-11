@@ -1,0 +1,81 @@
+{
+ "schema": 2,
+ "slug": "distributed-systems",
+ "nodes": [
+  {
+   "id": "quorum-replication",
+   "group": "computing",
+   "stage": "university",
+   "order": 50,
+   "title": {
+    "zh": "副本与 quorum · 一致性和可用性的取舍",
+    "en": "Replicas & quorums · consistency vs availability"
+   },
+   "description": {
+    "zh": "把同一份数据存 N 份，写入要等 W 个副本确认，读取要问 R 个副本；当 R + W > N 时读和写问到的副本必有重叠，能读到最新值；可网络一断开，能回应的副本变少，“总能回答”和“答的一定最新”就很难兼得。",
+    "en": "Store the same data N times; a write waits for W replicas to confirm and a read asks R of them; when R + W > N the read and write sets must overlap, so the newest value can be found — but when the network splits, fewer replicas can answer, and “always answers” and “always up to date” become hard to have together."
+   },
+   "formula": "R + W > N",
+   "source": "../computing/systems/distributed-systems/#step0",
+   "lessons": [
+    {
+     "slug": "distributed-systems",
+     "step": 0,
+     "category": "computing",
+     "stage": "university",
+     "primary": true
+    }
+   ],
+   "aliases": [
+    {
+     "zh": "分布式系统",
+     "en": "distributed systems"
+    },
+    {
+     "zh": "数据副本",
+     "en": "data replication"
+    },
+    {
+     "zh": "法定人数 quorum",
+     "en": "quorum"
+    },
+    {
+     "zh": "R + W > N",
+     "en": "R plus W greater than N"
+    },
+    {
+     "zh": "CAP 定理",
+     "en": "CAP theorem"
+    },
+    {
+     "zh": "强一致性 最终一致性",
+     "en": "strong vs eventual consistency"
+    },
+    {
+     "zh": "网络分区",
+     "en": "network partition"
+    },
+    {
+     "zh": "为什么会读到旧数据",
+     "en": "why do I read stale data"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "tcp-congestion-control",
+   "to": "quorum-replication",
+   "type": "connection",
+   "label": {
+    "zh": "在不可靠的网络上做出可靠",
+    "en": "Reliability built on an unreliable network"
+   },
+   "reason": {
+    "zh": "TCP 靠编号、确认和重传在会丢包的链路上拼出可靠字节流；副本系统靠等够 W 个确认在会断开的网络上保证写入——两者都把“没收到确认”当作要处理的常态。",
+    "en": "TCP builds a reliable byte stream over lossy links with sequence numbers, acknowledgements and retransmission; a replicated store guarantees a write over a network that can split by waiting for W acknowledgements — both treat a missing acknowledgement as normal, not exceptional."
+   },
+   "source": "../computing/systems/distributed-systems/#step1"
+  }
+ ]
+}

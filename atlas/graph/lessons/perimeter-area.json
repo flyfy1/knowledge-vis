@@ -1,0 +1,111 @@
+{
+ "schema": 2,
+ "slug": "perimeter-area",
+ "nodes": [
+  {
+   "id": "perimeter-vs-area",
+   "group": "math",
+   "stage": "primary",
+   "order": 50,
+   "title": {
+    "zh": "周长与面积 · 一圈和里面",
+    "en": "Perimeter vs area · around and inside"
+   },
+   "description": {
+    "zh": "周长是绕图形一圈的长度，面积是图形里面铺满要多少块方格；同一根 24 米的绳子能围出 11 到 36 平方米不等的长方形，越接近正方形面积越大，所以周长相同不代表面积相同。",
+    "en": "Perimeter is the length around a shape and area is how many squares fill its inside; the same 24-metre rope can enclose rectangles of anywhere from 11 to 36 square metres, larger the closer to a square, so equal perimeters do not mean equal areas."
+   },
+   "formula": "P = 2(a + b),  S = a·b",
+   "source": "../math/geometry/perimeter-area/#step1",
+   "lessons": [
+    {
+     "slug": "perimeter-area",
+     "step": 1,
+     "category": "math",
+     "stage": "primary",
+     "primary": true
+    }
+   ],
+   "aliases": [
+    {
+     "zh": "周长和面积的区别",
+     "en": "perimeter vs area"
+    },
+    {
+     "zh": "周长一样面积一样吗",
+     "en": "same perimeter, same area?"
+    },
+    {
+     "zh": "围成什么形状面积最大",
+     "en": "which shape encloses the most area"
+    },
+    {
+     "zh": "长方形周长公式",
+     "en": "perimeter of a rectangle"
+    },
+    {
+     "zh": "篱笆围地",
+     "en": "fencing problem"
+    },
+    {
+     "zh": "周长",
+     "en": "perimeter"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "perimeter-vs-area",
+   "to": "similarity-scaling",
+   "type": "connection",
+   "label": {
+    "zh": "放大时一个 ×k，一个 ×k²",
+    "en": "Scaled up, one grows ×k and the other ×k²"
+   },
+   "reason": {
+    "zh": "图形放大 k 倍，周长作为长度只变 k 倍，面积却变 k² 倍——又一个说明周长和面积是两种不同量的例子。",
+    "en": "Scale a shape by k and its perimeter, being a length, grows k times while its area grows k² times — one more sign that perimeter and area are different kinds of quantity."
+   },
+   "source": "../math/geometry/similarity-scaling/#step2"
+  }
+ ],
+ "questions": [
+  {
+   "id": "q-perimeter-area-0",
+   "question": {
+    "zh": "周长一样的两块地，面积一定一样大吗？",
+    "en": "Do two plots with the same perimeter always have the same area?"
+   },
+   "chain": [
+    "perimeter-vs-area",
+    "area-model-multiplication"
+   ],
+   "target": {
+    "node": "perimeter-vs-area",
+    "href": "../math/geometry/perimeter-area/#step1"
+   },
+   "prompts": [
+    {
+     "node": "perimeter-vs-area",
+     "ask": {
+      "zh": "24 米绳子围长方形，长从 1 米变到 6 米，面积怎样变？",
+      "en": "Fencing a rectangle with 24 m of rope, how does the area change as the length goes from 1 m to 6 m?"
+     }
+    },
+    {
+     "node": "area-model-multiplication",
+     "ask": {
+      "zh": "面积数的是什么？为什么等于长 × 宽？",
+      "en": "What does area count, and why is it length × width?"
+     }
+    }
+   ],
+   "reveal": {
+    "zh": "不一定。周长量的是一圈的长度，面积数的是里面的方格；同样 24 米的周长，1 × 11 的长方形只有 11 平方米，6 × 6 的正方形有 36 平方米。",
+    "en": "Not necessarily. Perimeter measures the length around, area counts the squares inside; with the same 24 m perimeter a 1 × 11 rectangle holds only 11 m², while a 6 × 6 square holds 36 m²."
+   },
+   "source": "../math/geometry/perimeter-area/#step1"
+  }
+ ]
+}

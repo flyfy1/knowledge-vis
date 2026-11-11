@@ -1,0 +1,80 @@
+{
+ "schema": 2,
+ "slug": "plate-tectonics",
+ "nodes": [
+  {
+   "id": "plate-tectonics",
+   "group": "earth",
+   "stage": "senior",
+   "order": 50,
+   "title": {
+    "zh": "板块构造 · 三种边界",
+    "en": "Plate tectonics · three kinds of boundary"
+   },
+   "description": {
+    "zh": "地球的硬外壳碎成许多板块，漂在缓慢流动的软流圈上，每年只移动几厘米：相互分离处长出新地壳（洋中脊），相互汇聚处一块俯冲到另一块下面（海沟、火山、山脉），相互错动处应力积累、突然释放成地震。",
+    "en": "The Earth’s rigid shell is broken into plates riding on the slowly flowing asthenosphere, moving only a few centimetres a year: where they pull apart new crust forms (mid-ocean ridges), where they converge one dives beneath the other (trenches, volcanoes, mountains), and where they slide past each other stress builds and is released as earthquakes."
+   },
+   "source": "../earth/geo/plate-tectonics/#step1",
+   "lessons": [
+    {
+     "slug": "plate-tectonics",
+     "step": 1,
+     "category": "earth",
+     "stage": "senior",
+     "primary": true
+    }
+   ],
+   "aliases": [
+    {
+     "zh": "板块运动",
+     "en": "plate motion"
+    },
+    {
+     "zh": "大陆漂移",
+     "en": "continental drift"
+    },
+    {
+     "zh": "板块边界",
+     "en": "plate boundaries"
+    },
+    {
+     "zh": "洋中脊 海沟",
+     "en": "mid-ocean ridge and trench"
+    },
+    {
+     "zh": "为什么会地震",
+     "en": "why do earthquakes happen"
+    },
+    {
+     "zh": "火山是怎么形成的",
+     "en": "how are volcanoes formed"
+    },
+    {
+     "zh": "喜马拉雅山怎么来的",
+     "en": "how did the Himalayas form"
+    },
+    {
+     "zh": "俯冲带",
+     "en": "subduction zone"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "seismic-waves",
+   "to": "plate-tectonics",
+   "type": "connection",
+   "label": {
+    "zh": "地震既是证据，也是探针",
+    "en": "Earthquakes are both evidence and probe"
+   },
+   "reason": {
+    "zh": "地震集中发生在板块边界，是板块相对运动最直接的野外证据；同样这些地震发出的波穿过地球内部，揭示了板块下方会流动的那一层。",
+    "en": "Earthquakes cluster along plate boundaries, the most direct field evidence of relative plate motion; the waves from those same earthquakes travel through the interior and reveal the flowing layer beneath the plates."
+   },
+   "source": "../earth/geo/plate-tectonics/#step3"
+  }
+ ]
+}

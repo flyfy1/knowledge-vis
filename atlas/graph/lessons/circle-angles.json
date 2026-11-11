@@ -1,0 +1,101 @@
+{
+ "schema": 2,
+ "slug": "circle-angles",
+ "nodes": [
+  {
+   "id": "inscribed-angle",
+   "group": "math",
+   "stage": "junior",
+   "order": 50,
+   "title": {
+    "zh": "圆周角定理 · 恰好一半",
+    "en": "The inscribed angle theorem · exactly half"
+   },
+   "description": {
+    "zh": "从圆周上一点看一段弧，张开的角（圆周角）永远是从圆心看同一段弧的角（圆心角）的一半，而且在同一段弧上站在哪里都一样；所以直径所对的圆周角一定是直角。",
+    "en": "Seen from a point on the circle, an arc opens an angle (the inscribed angle) that is always exactly half the angle it opens at the centre (the central angle), wherever on the same arc you stand; so an angle that subtends a diameter is always a right angle."
+   },
+   "formula": "∠APB = ½ ∠AOB",
+   "source": "../math/geometry/circle-angles/#step1",
+   "lessons": [
+    {
+     "slug": "circle-angles",
+     "step": 1,
+     "category": "math",
+     "stage": "junior",
+     "primary": true
+    }
+   ],
+   "aliases": [
+    {
+     "zh": "圆周角",
+     "en": "inscribed angle"
+    },
+    {
+     "zh": "圆心角",
+     "en": "central angle"
+    },
+    {
+     "zh": "圆周角定理",
+     "en": "inscribed angle theorem"
+    },
+    {
+     "zh": "泰勒斯定理",
+     "en": "Thales’ theorem"
+    },
+    {
+     "zh": "直径所对的圆周角是直角",
+     "en": "the angle in a semicircle is a right angle"
+    },
+    {
+     "zh": "同弧所对的圆周角相等",
+     "en": "angles on the same arc are equal"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "circle-intro",
+   "to": "inscribed-angle",
+   "type": "foundation",
+   "label": {
+    "zh": "先认圆心、半径与弧",
+    "en": "Centre, radius and arc come first"
+   },
+   "reason": {
+    "zh": "圆是到圆心等距的点，所以 OA、OB、OP 三条半径一样长；证明里的两个等腰三角形正是从“半径相等”来的。",
+    "en": "A circle is the set of points at equal distance from its centre, so the radii OA, OB and OP are equal; the two isosceles triangles in the proof come straight from that."
+   },
+   "source": "../math/geometry/circle-angles/#step2"
+  },
+  {
+   "from": "polygon-angles",
+   "to": "inscribed-angle",
+   "type": "foundation",
+   "label": {
+    "zh": "外角等于不相邻两内角之和",
+    "en": "An exterior angle equals the two far interior angles"
+   },
+   "reason": {
+    "zh": "三角形内角和 180° 推出外角等于不相邻两内角之和；证明“恰好一半”时，正是用它把圆心角拆成两个等腰三角形底角的两倍。",
+    "en": "The triangle’s 180° angle sum gives the exterior-angle rule, and the “exactly half” proof uses it to write the central angle as twice the base angles of two isosceles triangles."
+   },
+   "source": "../math/geometry/circle-angles/#step2"
+  },
+  {
+   "from": "inscribed-angle",
+   "to": "pythagorean-theorem",
+   "type": "connection",
+   "label": {
+    "zh": "半圆上的直角",
+    "en": "The right angle in a semicircle"
+   },
+   "reason": {
+    "zh": "直径所对的圆周角是 90°，所以以直径为斜边、第三个顶点在圆上的三角形都是直角三角形，三边都满足 a² + b² = c²。",
+    "en": "An angle subtending a diameter is 90°, so every triangle with the diameter as its hypotenuse and its third vertex on the circle is right-angled, and its sides satisfy a² + b² = c²."
+   },
+   "source": "../math/geometry/circle-angles/#step3"
+  }
+ ]
+}

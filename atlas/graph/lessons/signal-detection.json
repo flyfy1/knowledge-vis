@@ -1,0 +1,147 @@
+{
+ "schema": 2,
+ "slug": "signal-detection",
+ "nodes": [
+  {
+   "id": "signal-detection-theory",
+   "group": "measurement",
+   "stage": "university",
+   "order": 50,
+   "title": {
+    "zh": "信号检测论 · 敏感度 d′ 与判据",
+    "en": "Signal detection theory · sensitivity d′ and criterion"
+   },
+   "description": {
+    "zh": "每次判断“有没有”背后都有一个随机起伏的证据强度：有信号时整体偏高，没信号时偏低；能把两者分多开叫敏感度 d′，多愿意说“有”叫判据 c——移动判据只是用漏报换虚报，只有 d′ 才代表真正的分辨力，两个人正确率一样，d′ 也可以不同。",
+    "en": "Behind every yes/no judgement is a randomly varying strength of evidence, higher on average when a signal is present; how far apart the two cases are is the sensitivity d′, and how willing one is to say “yes” is the criterion c — moving the criterion only trades misses for false alarms, only d′ measures real discrimination, and two observers with the same accuracy can differ in d′."
+   },
+   "formula": "d′ = z(H) − z(F)",
+   "source": "../psychology/cognition/signal-detection/#step3",
+   "lessons": [
+    {
+     "slug": "signal-detection",
+     "step": 3,
+     "category": "psychology",
+     "stage": "university",
+     "primary": true
+    }
+   ],
+   "aliases": [
+    {
+     "zh": "信号检测论",
+     "en": "signal detection theory"
+    },
+    {
+     "zh": "d prime",
+     "en": "d-prime"
+    },
+    {
+     "zh": "ROC 曲线",
+     "en": "ROC curve"
+    },
+    {
+     "zh": "命中率 虚报率",
+     "en": "hit rate and false alarm rate"
+    },
+    {
+     "zh": "漏报 误报",
+     "en": "misses and false alarms"
+    },
+    {
+     "zh": "判断标准",
+     "en": "decision criterion"
+    },
+    {
+     "zh": "敏感度和偏向",
+     "en": "sensitivity vs response bias"
+    },
+    {
+     "zh": "AUC",
+     "en": "area under the ROC curve"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "gaussian",
+   "to": "signal-detection-theory",
+   "type": "foundation",
+   "label": {
+    "zh": "两条同宽的正态分布",
+    "en": "Two normal curves of equal width"
+   },
+   "reason": {
+    "zh": "模型假设噪声和信号下的证据强度都是正态分布、宽度相同；d′ 就是两条钟形曲线的中心相距几个标准差，z(H) − z(F) 用标准正态把比例换回位置。",
+    "en": "The model assumes evidence strength is normally distributed, with equal width, both with and without the signal; d′ is how many standard deviations apart the two bell curves’ centres are, and z(H) − z(F) uses the standard normal to turn proportions back into positions."
+   },
+   "source": "../psychology/cognition/signal-detection/#step1"
+  },
+  {
+   "from": "signal-detection-theory",
+   "to": "hypothesis-testing",
+   "type": "connection",
+   "label": {
+    "zh": "虚报就是第一类错误",
+    "en": "A false alarm is a Type I error"
+   },
+   "reason": {
+    "zh": "统计检验也是在噪声里判断有没有效应：显著性水平 α 对应虚报率，检验力对应命中率；收紧判据少犯一种错，就得多犯另一种。",
+    "en": "A statistical test also decides whether an effect stands out from noise: the significance level α plays the false-alarm rate and the power the hit rate; tightening the criterion to make one error rarer makes the other more common."
+   },
+   "source": "../psychology/cognition/signal-detection/#step2"
+  },
+  {
+   "from": "expected-value",
+   "to": "signal-detection-theory",
+   "type": "application",
+   "label": {
+    "zh": "按期望代价选判据",
+    "en": "Choose the criterion by expected cost"
+   },
+   "reason": {
+    "zh": "每次试验的期望代价 = p·(1−H)·m + (1−p)·F·f；漏报越贵、信号越常见，代价最低的判据就越宽松——最好的判据不在正中间。",
+    "en": "The expected cost per trial is p·(1−H)·m + (1−p)·F·f; the costlier a miss and the commoner the signal, the more lenient the cheapest criterion — the best criterion is not in the middle."
+   },
+   "source": "../psychology/cognition/signal-detection/#step5"
+  }
+ ],
+ "questions": [
+  {
+   "id": "q-signal-detection-0",
+   "question": {
+    "zh": "两位检测者都对了 80%，为什么分辨能力可能不一样？",
+    "en": "Two detectors are both 80% correct — how can they differ in how well they discriminate?"
+   },
+   "chain": [
+    "signal-detection-theory",
+    "gaussian"
+   ],
+   "target": {
+    "node": "signal-detection-theory",
+    "href": "../psychology/cognition/signal-detection/#step3"
+   },
+   "prompts": [
+    {
+     "node": "gaussian",
+     "ask": {
+      "zh": "有信号和没信号时的证据强度各是一条钟形曲线，它们离得越远意味着什么？",
+      "en": "Evidence with and without a signal forms two bell curves; what does it mean when they are farther apart?"
+     }
+    },
+    {
+     "node": "signal-detection-theory",
+     "ask": {
+      "zh": "把判据左右移，命中率和虚报率会怎样一起变？",
+      "en": "Moving the criterion left or right, how do the hit and false-alarm rates change together?"
+     }
+    }
+   ],
+   "reveal": {
+    "zh": "正确率混合了两件事：分得清（d′，两条分布离多远）和多愿意说“有”（判据 c）。一个人可以靠判据把正确率凑到 80%，另一个靠更大的 d′；用 d′ = z(H) − z(F) 拆开，或在 ROC 曲线上比谁更鼓向左上角，才看得出谁更会分辨。",
+    "en": "Accuracy mixes two things: telling apart (d′, how far apart the distributions are) and willingness to say yes (the criterion c). One observer can reach 80% through the criterion, another through a larger d′; separating them with d′ = z(H) − z(F), or seeing whose ROC curve bows further to the upper left, shows who discriminates better."
+   },
+   "source": "../psychology/cognition/signal-detection/#step3"
+  }
+ ]
+}

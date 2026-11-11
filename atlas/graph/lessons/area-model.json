@@ -1,0 +1,109 @@
+{
+ "schema": 2,
+ "slug": "area-model",
+ "nodes": [
+  {
+   "id": "area-model-multiplication",
+   "group": "math",
+   "stage": "primary",
+   "order": 50,
+   "title": {
+    "zh": "乘法的面积模型 · 交换律与分配律",
+    "en": "Multiplication as area · commutative and distributive laws"
+   },
+   "description": {
+    "zh": "a × b 就是 a 行 b 列方格的总数，也就是长方形的面积：转个方向面积不变（交换律），切一刀分成两块再相加（分配律），两位数乘法的竖式就是把一块地切成四块分别算。",
+    "en": "a × b is the number of squares in a rows of b columns — the area of a rectangle: turning it round leaves the area unchanged (the commutative law), cutting it in two and adding the pieces is the distributive law, and the written method for two-digit multiplication computes the four pieces of one cut-up plot."
+   },
+   "formula": "a(b + c) = ab + ac",
+   "source": "../math/arithmetic/area-model/#step1",
+   "lessons": [
+    {
+     "slug": "area-model",
+     "step": 1,
+     "category": "math",
+     "stage": "primary",
+     "primary": true
+    }
+   ],
+   "aliases": [
+    {
+     "zh": "乘法的意义",
+     "en": "what multiplication means"
+    },
+    {
+     "zh": "面积模型",
+     "en": "area model"
+    },
+    {
+     "zh": "乘法分配律",
+     "en": "distributive law"
+    },
+    {
+     "zh": "乘法交换律",
+     "en": "commutative law"
+    },
+    {
+     "zh": "竖式乘法为什么是对的",
+     "en": "why long multiplication works"
+    },
+    {
+     "zh": "因数对",
+     "en": "factor pairs"
+    },
+    {
+     "zh": "点阵",
+     "en": "dot array"
+    },
+    {
+     "zh": "长方形面积",
+     "en": "area of a rectangle"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "place-value",
+   "to": "area-model-multiplication",
+   "type": "foundation",
+   "label": {
+    "zh": "拆成整十加零头",
+    "en": "Split into tens and ones"
+   },
+   "reason": {
+    "zh": "12 × 13 按位值拆成 (10 + 2) × (10 + 3)，横竖各切一刀得到四块；整十那块最好算，竖式的每一行就是其中一块或几块。",
+    "en": "Place value splits 12 × 13 into (10 + 2) × (10 + 3), and one cut each way gives four blocks; the tens block is the easiest, and each line of the written method is one or more of those blocks."
+   },
+   "source": "../math/arithmetic/area-model/#step3"
+  },
+  {
+   "from": "area-model-multiplication",
+   "to": "perimeter-vs-area",
+   "type": "foundation",
+   "label": {
+    "zh": "先知道面积数的是方格",
+    "en": "Area counts squares first"
+   },
+   "reason": {
+    "zh": "面积是铺满图形要多少个单位方格，长方形面积等于长 × 宽；有了这一点，才能把“一圈有多长”和“里面有多大”分成两本账。",
+    "en": "Area is how many unit squares fill a shape, and a rectangle’s is length × width; with that in hand, “how long around” and “how big inside” can be kept as two separate ledgers."
+   },
+   "source": "../math/geometry/perimeter-area/#step0"
+  },
+  {
+   "from": "area-model-multiplication",
+   "to": "division-remainder",
+   "type": "connection",
+   "label": {
+    "zh": "乘法是合，除法是分",
+    "en": "Multiplication combines, division shares out"
+   },
+   "reason": {
+    "zh": "已知面积 24 反过来找边长，就是问 24 能不能平均排成几行；排不整齐时最后一行排不满，多出来的那几格就是余数。",
+    "en": "Working back from an area of 24 to its sides asks whether 24 can be laid out in equal rows; when it cannot, the last row is incomplete, and the squares left over in it are the remainder."
+   },
+   "source": "../math/arithmetic/area-model/#step4"
+  }
+ ]
+}

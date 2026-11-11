@@ -1,0 +1,136 @@
+{
+ "schema": 2,
+ "slug": "statistical-inference",
+ "note": "Step 2 (z-test and p-value) is attached to the existing hypothesis-testing concept instead of a duplicate node.",
+ "nodes": [
+  {
+   "id": "confidence-interval",
+   "group": "measurement",
+   "stage": "senior",
+   "order": 50,
+   "title": {
+    "zh": "置信区间与标准误",
+    "en": "Confidence intervals & standard error"
+   },
+   "description": {
+    "zh": "每次抽样算出的均值都会有点不同，它的波动大小叫标准误 SE = σ/√n；置信区间是估计值加减几个标准误，“95%”的意思是：照这个办法反复抽样，长期约有 95% 的区间会套住真值。",
+    "en": "A sample mean comes out a little different every time, and its spread is the standard error SE = σ/√n; a confidence interval is the estimate plus or minus a few standard errors, and “95%” means that if the procedure were repeated, about 95% of such intervals would capture the true value in the long run."
+   },
+   "formula": "x̄ ± z·σ/√n",
+   "source": "../probability/inference/statistical-inference/#step1",
+   "lessons": [
+    {
+     "slug": "statistical-inference",
+     "step": 1,
+     "category": "probability",
+     "stage": "senior",
+     "primary": true
+    }
+   ],
+   "aliases": [
+    {
+     "zh": "置信区间",
+     "en": "confidence interval"
+    },
+    {
+     "zh": "95% 置信区间是什么意思",
+     "en": "what does a 95% confidence interval mean"
+    },
+    {
+     "zh": "标准误",
+     "en": "standard error"
+    },
+    {
+     "zh": "抽样分布",
+     "en": "sampling distribution"
+    },
+    {
+     "zh": "误差范围",
+     "en": "margin of error"
+    },
+    {
+     "zh": "样本量越大越准吗",
+     "en": "does a bigger sample make it more precise"
+    },
+    {
+     "zh": "z 分数",
+     "en": "z-score"
+    }
+   ]
+  }
+ ],
+ "attach": [
+  {
+   "node": "hypothesis-testing",
+   "step": 2
+  }
+ ],
+ "edges": [
+  {
+   "from": "gaussian",
+   "to": "confidence-interval",
+   "type": "foundation",
+   "label": {
+    "zh": "样本均值近似正态",
+    "en": "Sample means are roughly normal"
+   },
+   "reason": {
+    "zh": "中心极限定理让样本均值在 n 较大时近似正态、标准差为 σ/√n，所以才能用 ±1.96 个标准误围出 95% 的区间。",
+    "en": "The central limit theorem makes the sample mean roughly normal for large n, with standard deviation σ/√n, which is why ±1.96 standard errors bound a 95% interval."
+   },
+   "source": "../probability/inference/statistical-inference/#step0"
+  },
+  {
+   "from": "confidence-interval",
+   "to": "hypothesis-testing",
+   "type": "connection",
+   "label": {
+    "zh": "区间与检验是一体两面",
+    "en": "Intervals and tests are two sides of one coin"
+   },
+   "reason": {
+    "zh": "两者用同一个标准误：双侧 z 检验在 5% 水平拒绝 μ₀，恰好等于 μ₀ 落在 95% 置信区间之外。区间报告不确定的范围，p 值报告在原假设下有多意外。",
+    "en": "Both use the same standard error: a two-sided z-test rejects μ₀ at the 5% level exactly when μ₀ lies outside the 95% confidence interval. The interval reports the range of uncertainty; the p-value reports how surprising the data are under the null."
+   },
+   "source": "../probability/inference/statistical-inference/#step2"
+  }
+ ],
+ "questions": [
+  {
+   "id": "q-statistical-inference-0",
+   "question": {
+    "zh": "“95% 置信区间”是说真值有 95% 的概率落在里面吗？",
+    "en": "Does a “95% confidence interval” mean the true value has a 95% chance of being inside it?"
+   },
+   "chain": [
+    "confidence-interval",
+    "gaussian"
+   ],
+   "target": {
+    "node": "confidence-interval",
+    "href": "../probability/inference/statistical-inference/#step1"
+   },
+   "prompts": [
+    {
+     "node": "confidence-interval",
+     "ask": {
+      "zh": "真值是固定的还是随机的？每次重新抽样，变的是区间还是真值？",
+      "en": "Is the true value fixed or random? With each new sample, does the interval move or the true value?"
+     }
+    },
+    {
+     "node": "gaussian",
+     "ask": {
+      "zh": "为什么样本均值的波动能用正态分布和 σ/√n 来描述？",
+      "en": "Why can the wobble of sample means be described by a normal curve with σ/√n?"
+     }
+    }
+   ],
+   "reveal": {
+    "zh": "真值是固定的，随机的是区间。95% 说的是这套“估计值 ± 1.96 个标准误”的做法：反复抽样时，长期约 95% 的区间会套住真值；对某一个已经算出的区间，它要么套住了、要么没有。",
+    "en": "The true value is fixed; the interval is what is random. The 95% describes the procedure “estimate ± 1.96 standard errors”: over repeated sampling about 95% of such intervals capture the true value. Any one interval already computed either contains it or does not."
+   },
+   "source": "../probability/inference/statistical-inference/#step1"
+  }
+ ]
+}

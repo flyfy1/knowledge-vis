@@ -1,0 +1,105 @@
+{
+ "schema": 2,
+ "slug": "coordinate-plane",
+ "nodes": [
+  {
+   "id": "coordinate-plane",
+   "group": "math",
+   "stage": "junior",
+   "order": 50,
+   "title": {
+    "zh": "平面直角坐标系 · 点的地址",
+    "en": "The coordinate plane · addresses for points"
+   },
+   "description": {
+    "zh": "给平面定一个原点和互相垂直的两根数轴，每个点就有了一个先横后纵的地址 (x, y)：(3, 2) 和 (2, 3) 是两个不同的点，四个象限的符号由两根轴的正负拼成，这套地址是所有函数图像的地基。",
+    "en": "Fix an origin and two perpendicular number lines, and every point gets an address (x, y), across first then up: (3, 2) and (2, 3) are different points, the signs in the four quadrants come from the two axes, and this address system underlies every function graph."
+   },
+   "formula": "(x, y)",
+   "source": "../math/algebra/coordinate-plane/#step2",
+   "lessons": [
+    {
+     "slug": "coordinate-plane",
+     "step": 2,
+     "category": "math",
+     "stage": "junior",
+     "primary": true
+    }
+   ],
+   "aliases": [
+    {
+     "zh": "坐标系",
+     "en": "coordinate system"
+    },
+    {
+     "zh": "直角坐标系",
+     "en": "Cartesian coordinates"
+    },
+    {
+     "zh": "象限",
+     "en": "quadrants"
+    },
+    {
+     "zh": "横坐标 纵坐标",
+     "en": "x-coordinate and y-coordinate"
+    },
+    {
+     "zh": "怎么读坐标",
+     "en": "how to read coordinates"
+    },
+    {
+     "zh": "原点",
+     "en": "origin"
+    },
+    {
+     "zh": "两点间的距离和中点",
+     "en": "distance and midpoint between two points"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "coordinate-plane",
+   "to": "slope",
+   "type": "foundation",
+   "label": {
+    "zh": "斜率用的是坐标差",
+    "en": "Slope is built from coordinate differences"
+   },
+   "reason": {
+    "zh": "斜率是 Δy/Δx：先要会读两个点的横纵坐标，才知道竖着走了多少、横着走了多少；直线和函数图像都画在这张坐标网上。",
+    "en": "Slope is Δy/Δx: you first have to read two points’ coordinates to know how far up and how far across; lines and function graphs are all drawn on this grid."
+   },
+   "source": "../math/algebra/coordinate-plane/#step6"
+  },
+  {
+   "from": "pythagorean-theorem",
+   "to": "coordinate-plane",
+   "type": "application",
+   "label": {
+    "zh": "两点距离就是勾股定理",
+    "en": "The distance between two points is Pythagoras"
+   },
+   "reason": {
+    "zh": "横差 Δx 和纵差 Δy 是一个直角三角形的两条直角边，两点间的直线距离就是斜边 √(Δx² + Δy²)。",
+    "en": "The differences Δx and Δy are the legs of a right triangle, and the straight-line distance between the two points is its hypotenuse √(Δx² + Δy²)."
+   },
+   "source": "../math/algebra/coordinate-plane/#step6"
+  },
+  {
+   "from": "coordinate-plane",
+   "to": "latitude-longitude",
+   "type": "connection",
+   "label": {
+    "zh": "地球表面的坐标地址",
+    "en": "An address system on the globe"
+   },
+   "reason": {
+    "zh": "坐标系用两个数给平面上的点定地址；经纬网用经度、纬度两个角度给球面上的点定地址，同样是先定基准线、再报两个数。",
+    "en": "A coordinate system gives a point on a plane a two-number address; latitude and longitude give a point on the sphere a two-angle address — the same idea of fixing reference lines and then reporting two numbers."
+   },
+   "source": "../earth/geo/latitude-longitude/#step1"
+  }
+ ]
+}

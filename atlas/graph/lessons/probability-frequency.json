@@ -1,0 +1,139 @@
+{
+ "schema": 2,
+ "slug": "probability-frequency",
+ "nodes": [
+  {
+   "id": "probability-vs-frequency",
+   "group": "measurement",
+   "stage": "junior",
+   "order": 50,
+   "title": {
+    "zh": "概率与频率 · 大数定律",
+    "en": "Probability & frequency · the law of large numbers"
+   },
+   "description": {
+    "zh": "概率是一次结果出现的可能性大小，频率是真做很多次后它实际出现的比例；次数越多，频率越稳定地围着概率打转，但每一次仍然随机，连出几次红也不会让下一次“该轮到”别的颜色。",
+    "en": "Probability is how likely one outcome is; frequency is the fraction of times it actually happens over many trials. The more trials, the more tightly the frequency hugs the probability — yet every single trial stays random, and a run of reds does not make another colour “due”."
+   },
+   "formula": "k/n → p",
+   "source": "../probability/basics/probability-frequency/#step1",
+   "lessons": [
+    {
+     "slug": "probability-frequency",
+     "step": 1,
+     "category": "probability",
+     "stage": "junior",
+     "primary": true
+    }
+   ],
+   "aliases": [
+    {
+     "zh": "大数定律",
+     "en": "law of large numbers"
+    },
+    {
+     "zh": "频率和概率的区别",
+     "en": "frequency vs probability"
+    },
+    {
+     "zh": "赌徒谬误",
+     "en": "gambler’s fallacy"
+    },
+    {
+     "zh": "连开几次红，下次该开黑了吗",
+     "en": "after several reds, is black due"
+    },
+    {
+     "zh": "试验次数越多越准吗",
+     "en": "are more trials more reliable"
+    },
+    {
+     "zh": "抛硬币一定一半正面吗",
+     "en": "does a coin always land heads half the time"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "probability-vs-frequency",
+   "to": "probability",
+   "type": "foundation",
+   "label": {
+    "zh": "频率给概率一个可检验的意思",
+    "en": "Frequency gives probability a testable meaning"
+   },
+   "reason": {
+    "zh": "单次结果说不准，但大量重复后频率会稳定在概率附近；概率模型说的正是这种长期频率，也因此能拿实验数据去检验。",
+    "en": "A single outcome cannot be predicted, but over many repeats the frequency settles near the probability; a probability model speaks about exactly this long-run frequency, which is why it can be checked against data."
+   },
+   "source": "../probability/basics/probability-frequency/#step1"
+  },
+  {
+   "from": "probability-vs-frequency",
+   "to": "montecarlo",
+   "type": "foundation",
+   "label": {
+    "zh": "用频率去估计",
+    "en": "Estimating with frequencies"
+   },
+   "reason": {
+    "zh": "频率随次数增加收拢到概率，蒙特卡洛正是反过来利用这一点：用大量随机试验的频率或平均值去估计概率、面积和期望，误差随 1/√n 缩小。",
+    "en": "Because frequencies close in on probabilities as trials grow, Monte Carlo runs the idea backwards: it estimates probabilities, areas and expectations from the frequencies or averages of many random trials, with error shrinking like 1/√n."
+   },
+   "source": "../probability/basics/probability-frequency/#step2"
+  },
+  {
+   "from": "probability-vs-frequency",
+   "to": "confidence-interval",
+   "type": "foundation",
+   "label": {
+    "zh": "频率的波动范围就是区间",
+    "en": "The spread of a frequency is an interval"
+   },
+   "reason": {
+    "zh": "转 n 次时，频率约有 95% 的机会落在 p ± 1.96√(p(1−p)/n) 之内；把这个范围反过来套在观测到的频率上，就是比例的置信区间。",
+    "en": "With n spins the frequency lands within p ± 1.96√(p(1−p)/n) about 95% of the time; turning that band around the observed frequency gives a confidence interval for a proportion."
+   },
+   "source": "../probability/basics/probability-frequency/#step5"
+  }
+ ],
+ "questions": [
+  {
+   "id": "q-probability-frequency-0",
+   "question": {
+    "zh": "连续开了五次红，下一次是不是更可能开黑？",
+    "en": "After five reds in a row, is black more likely next time?"
+   },
+   "chain": [
+    "probability-vs-frequency",
+    "probability"
+   ],
+   "target": {
+    "node": "probability-vs-frequency",
+    "href": "../probability/basics/probability-frequency/#step4"
+   },
+   "prompts": [
+    {
+     "node": "probability-vs-frequency",
+     "ask": {
+      "zh": "只挑出“前面连续五次正面”的那些情形，下一次正面的比例是多少？",
+      "en": "Among only the runs that began with five heads, what fraction showed heads next?"
+     }
+    },
+    {
+     "node": "probability",
+     "ask": {
+      "zh": "硬币记得住之前的结果吗？独立是什么意思？",
+      "en": "Does a coin remember earlier results? What does independence mean?"
+     }
+    }
+   ],
+   "reveal": {
+    "zh": "每次转盘或抛币相互独立，过去的结果不会改变下一次的概率；“该轮到了”是赌徒谬误。大数定律说的是比例在很多次之后趋于稳定，靠的是新结果把早先的偏差稀释掉，而不是补偿回来。",
+    "en": "Each spin or toss is independent, so past results do not change the next probability; “it’s due” is the gambler’s fallacy. The law of large numbers says the proportion steadies over many trials because new results dilute an early imbalance, not because they compensate for it."
+   },
+   "source": "../probability/basics/probability-frequency/#step4"
+  }
+ ]
+}

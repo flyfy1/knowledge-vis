@@ -1,0 +1,90 @@
+{
+ "schema": 2,
+ "slug": "day-night-rotation",
+ "nodes": [
+  {
+   "id": "earth-rotation-day-night",
+   "group": "earth",
+   "stage": "primary",
+   "order": 50,
+   "title": {
+    "zh": "昼夜交替 · 地球自转",
+    "en": "Day and night · the Earth’s rotation"
+   },
+   "description": {
+    "zh": "太阳光是平行光，任何时刻只照亮地球的一半；地球绕地轴自西向东自转，每个地方轮流转进亮面和暗面，转一圈就是一天；站在转动的地面上看，太阳就像从东边升起、西边落下。",
+    "en": "Sunlight arrives in parallel rays and lights only half the Earth at any moment; the Earth spins west to east on its axis, carrying every place through the bright half and the dark half in turn, one turn per day; seen from the turning ground, the Sun seems to rise in the east and set in the west."
+   },
+   "source": "../earth/astronomy/day-night-rotation/#step2",
+   "lessons": [
+    {
+     "slug": "day-night-rotation",
+     "step": 2,
+     "category": "earth",
+     "stage": "primary",
+     "primary": true
+    }
+   ],
+   "aliases": [
+    {
+     "zh": "为什么有白天和黑夜",
+     "en": "why is there day and night"
+    },
+    {
+     "zh": "地球自转",
+     "en": "Earth’s rotation"
+    },
+    {
+     "zh": "太阳为什么东升西落",
+     "en": "why does the sun rise in the east"
+    },
+    {
+     "zh": "晨昏线",
+     "en": "terminator line"
+    },
+    {
+     "zh": "自转和公转",
+     "en": "rotation and revolution"
+    },
+    {
+     "zh": "一天为什么是 24 小时",
+     "en": "why is a day 24 hours"
+    },
+    {
+     "zh": "昼夜交替",
+     "en": "day and night cycle"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "earth-rotation-day-night",
+   "to": "seasons-orbit",
+   "type": "connection",
+   "label": {
+    "zh": "自转给昼夜，公转加地轴倾斜给四季",
+    "en": "Rotation gives day and night; orbit plus tilt gives seasons"
+   },
+   "reason": {
+    "zh": "一天由地球绕自己的轴转一圈决定；地球同时绕太阳公转一圈是一年，再加上地轴是斜的，才有四季——两种转动别混为一谈。",
+    "en": "A day comes from the Earth turning once on its own axis; going once round the Sun takes a year, and that, together with the tilted axis, is what makes seasons — two different motions not to be confused."
+   },
+   "source": "../earth/astronomy/day-night-rotation/#step4"
+  },
+  {
+   "from": "earth-rotation-day-night",
+   "to": "moon-phases",
+   "type": "connection",
+   "label": {
+    "zh": "亮的永远是一半",
+    "en": "Half is always lit"
+   },
+   "reason": {
+    "zh": "太阳总照亮地球、月球朝向它的那一半；昼夜是我们随地球转进转出那半边，月相是从地球看过去，月球亮的那一半露出了多少。",
+    "en": "The Sun always lights the half of the Earth, and of the Moon, that faces it; day and night is us turning into and out of that half, while a moon phase is how much of the Moon’s lit half we can see from Earth."
+   },
+   "source": "../earth/astronomy/day-night-rotation/#step1"
+  }
+ ]
+}

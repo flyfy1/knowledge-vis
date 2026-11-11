@@ -1,0 +1,90 @@
+{
+ "schema": 2,
+ "slug": "risk-return",
+ "nodes": [
+  {
+   "id": "risk-return",
+   "group": "society",
+   "stage": "junior",
+   "order": 50,
+   "title": {
+    "zh": "风险与回报 · 风险溢价",
+    "en": "Risk & return · the risk premium"
+   },
+   "description": {
+    "zh": "结果越不确定的投资，必须承诺更高的平均回报才有人愿意拿，多出来的那部分叫风险溢价；但承诺的只是平均——平均 5% 的投资，照样会有亏钱的年份，看分布比看平均数更诚实。",
+    "en": "An investment with more uncertain results must promise a higher average return before anyone will hold it, and the extra is the risk premium; but only the average is promised — an investment averaging 5% still has losing years, and the distribution tells the truth better than the average."
+   },
+   "source": "../investment/basics/risk-return/#step3",
+   "lessons": [
+    {
+     "slug": "risk-return",
+     "step": 3,
+     "category": "investment",
+     "stage": "junior",
+     "primary": true
+    }
+   ],
+   "aliases": [
+    {
+     "zh": "风险和收益",
+     "en": "risk and return"
+    },
+    {
+     "zh": "风险溢价",
+     "en": "risk premium"
+    },
+    {
+     "zh": "高风险高回报",
+     "en": "high risk high return"
+    },
+    {
+     "zh": "波动率",
+     "en": "volatility"
+    },
+    {
+     "zh": "为什么风险大回报高",
+     "en": "why riskier investments pay more"
+    },
+    {
+     "zh": "年化收益",
+     "en": "annual return"
+    },
+    {
+     "zh": "平均收益不等于每年收益",
+     "en": "average return is not every year’s return"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "variance",
+   "to": "risk-return",
+   "type": "foundation",
+   "label": {
+    "zh": "用方差量风险",
+    "en": "Variance measures risk"
+   },
+   "reason": {
+    "zh": "两种投资平均都是 5%，一个挤在 5% 附近，一个铺到 −10% 到 +20%；方差量的就是结果离平均有多散——散开意味着可能更好，也可能更糟。",
+    "en": "Two investments both average 5%, one clustered near 5% and one spread from −10% to +20%; variance measures how scattered the results are around the average — scattered means possibly better, and possibly worse."
+   },
+   "source": "../investment/basics/risk-return/#step1"
+  },
+  {
+   "from": "expected-value",
+   "to": "risk-return",
+   "type": "foundation",
+   "label": {
+    "zh": "期望不等于到手",
+    "en": "Expected is not received"
+   },
+   "reason": {
+    "zh": "平均回报是所有可能结果按概率加权的期望值，到手的却是某一年真实发生的那一个；所以平均 5% 的投资里照样会冒出亏损的年份。",
+    "en": "The average return is the expected value — every possible outcome weighted by its probability — but what you actually get is the one outcome that happens in a given year; so an investment averaging 5% still throws up losing years."
+   },
+   "source": "../investment/basics/risk-return/#step4"
+  }
+ ]
+}

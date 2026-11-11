@@ -1,0 +1,143 @@
+{
+ "schema": 2,
+ "slug": "step-response",
+ "nodes": [
+  {
+   "id": "step-response",
+   "group": "systems",
+   "stage": "senior",
+   "order": 50,
+   "title": {
+    "zh": "二阶阶跃响应 · 阻尼比与固有频率",
+    "en": "Second-order step response · damping ratio and natural frequency"
+   },
+   "description": {
+    "zh": "给一个带质量、弹簧和阻尼的系统一个突然的目标跳变，输出怎样追过去由两个数决定：阻尼比 ζ 决定冲过头多少（超调只看 ζ），固有频率 ωn 决定整条曲线在时间上被压缩还是拉长；两者合起来就是复平面上的一对极点。",
+    "en": "Give a system with mass, spring and damping a sudden jump in its target, and how the output follows is set by two numbers: the damping ratio ζ decides how far it overshoots (overshoot depends on ζ alone), and the natural frequency ωn squeezes or stretches the whole curve in time; together they are one pair of poles in the complex plane."
+   },
+   "formula": "Mp = e^(−ζπ/√(1−ζ²))",
+   "source": "../engineering/control/step-response/#step2",
+   "lessons": [
+    {
+     "slug": "step-response",
+     "step": 2,
+     "category": "engineering",
+     "stage": "senior",
+     "primary": true
+    }
+   ],
+   "aliases": [
+    {
+     "zh": "阶跃响应",
+     "en": "step response"
+    },
+    {
+     "zh": "阻尼比",
+     "en": "damping ratio"
+    },
+    {
+     "zh": "欠阻尼 临界阻尼 过阻尼",
+     "en": "underdamped, critically damped, overdamped"
+    },
+    {
+     "zh": "超调量",
+     "en": "percent overshoot"
+    },
+    {
+     "zh": "调节时间",
+     "en": "settling time"
+    },
+    {
+     "zh": "二阶系统",
+     "en": "second-order system"
+    },
+    {
+     "zh": "固有频率",
+     "en": "natural frequency"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "oscillation",
+   "to": "step-response",
+   "type": "foundation",
+   "label": {
+    "zh": "加了阻尼的弹簧振子",
+    "en": "A spring oscillator with damping added"
+   },
+   "reason": {
+    "zh": "简谐振动是不加阻尼的情形；加上与速度成正比的阻尼、再给一个阶跃目标，同一个质量–弹簧系统就会欠阻尼地摆着收敛，或过阻尼地慢慢爬上去。",
+    "en": "Harmonic motion is the undamped case; add damping proportional to velocity and a step target, and the same mass–spring system either rings down underdamped or creeps up overdamped."
+   },
+   "source": "../engineering/control/step-response/#step1"
+  },
+  {
+   "from": "poles",
+   "to": "step-response",
+   "type": "representation",
+   "label": {
+    "zh": "两个旋钮就是一对极点",
+    "en": "Two knobs are one pair of poles"
+   },
+   "reason": {
+    "zh": "s² + 2ζωn·s + ωn² 的根 −ζωn ± jωn√(1−ζ²) 把 ζ 变成极点的夹角、ωn 变成极点到原点的距离：读出极点位置，就读出了冲多远、多快。",
+    "en": "The roots −ζωn ± jωn√(1−ζ²) of s² + 2ζωn·s + ωn² turn ζ into the poles’ angle and ωn into their distance from the origin: reading the pole positions tells how far and how fast the response goes."
+   },
+   "source": "../engineering/control/step-response/#step4"
+  },
+  {
+   "from": "resonance",
+   "to": "step-response",
+   "type": "connection",
+   "label": {
+    "zh": "同一个 ζ 管两种表现",
+    "en": "One ζ governs both behaviours"
+   },
+   "reason": {
+    "zh": "同一个二阶系统，在时间里 ζ 小就冲得高、摆得久，在频率上 ζ 小共振峰就尖——阶跃响应和共振是同一组参数的两张脸。",
+    "en": "For the same second-order system, a small ζ means high overshoot and long ringing in time and a sharp resonance peak in frequency — the step response and resonance are two faces of the same parameters."
+   },
+   "source": "../engineering/control/step-response/#step1"
+  }
+ ],
+ "questions": [
+  {
+   "id": "q-step-response-0",
+   "question": {
+    "zh": "为什么有的系统会冲过头再摆回来，有的却慢慢爬上去？",
+    "en": "Why do some systems overshoot and swing back while others creep up slowly?"
+   },
+   "chain": [
+    "step-response",
+    "poles"
+   ],
+   "target": {
+    "node": "step-response",
+    "href": "../engineering/control/step-response/#step1"
+   },
+   "prompts": [
+    {
+     "node": "step-response",
+     "ask": {
+      "zh": "阻尼比 ζ 小于 1、等于 1、大于 1 时，曲线各是什么形状？",
+      "en": "What does the curve look like for ζ below 1, equal to 1 and above 1?"
+     }
+    },
+    {
+     "node": "poles",
+     "ask": {
+      "zh": "极点是一对复数还是两个负实数？它和摆不摆有什么关系？",
+      "en": "Are the poles a complex pair or two negative real numbers, and how does that relate to swinging?"
+     }
+    }
+   ],
+   "reveal": {
+    "zh": "阻尼不足（ζ < 1）时极点是一对复数，响应带着振荡冲过目标再收敛；ζ = 1 时刚好不冲过头；ζ > 1 时两个负实极点让输出只会慢慢爬。超调只由 ζ 决定，快慢由 ωn 决定。",
+    "en": "With too little damping (ζ < 1) the poles are a complex pair and the response overshoots with ringing before settling; at ζ = 1 it just avoids overshoot; with ζ > 1 two negative real poles make the output only creep. Overshoot depends on ζ alone, speed on ωn."
+   },
+   "source": "../engineering/control/step-response/#step1"
+  }
+ ]
+}

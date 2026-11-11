@@ -1,0 +1,104 @@
+{
+ "schema": 2,
+ "slug": "climate-feedback",
+ "nodes": [
+  {
+   "id": "climate-feedback",
+   "group": "earth",
+   "stage": "senior",
+   "order": 50,
+   "title": {
+    "zh": "气候反馈 · 放大或削弱初始升温",
+    "en": "Climate feedbacks · amplifying or damping the first warming"
+   },
+   "description": {
+    "zh": "CO₂ 先让地球散热变难、带来一点初始升温；升温又让冰雪变少（反射的阳光减少）、空气里水汽变多（多吸红外），它们再推高温度——这些回路把一个小扰动放大，直到进出的能量重新平衡。",
+    "en": "CO₂ first makes it harder for the Earth to shed heat, causing some initial warming; that warming melts snow and ice (less sunlight reflected) and puts more water vapour in the air (more infrared absorbed), which push the temperature higher still — loops that amplify a small push until incoming and outgoing energy balance again."
+   },
+   "source": "../earth/climate/climate-feedback/#step2",
+   "lessons": [
+    {
+     "slug": "climate-feedback",
+     "step": 2,
+     "category": "earth",
+     "stage": "senior",
+     "primary": true
+    }
+   ],
+   "aliases": [
+    {
+     "zh": "气候反馈",
+     "en": "climate feedback"
+    },
+    {
+     "zh": "冰雪反照率反馈",
+     "en": "ice–albedo feedback"
+    },
+    {
+     "zh": "水汽反馈",
+     "en": "water vapour feedback"
+    },
+    {
+     "zh": "正反馈",
+     "en": "positive feedback"
+    },
+    {
+     "zh": "辐射强迫",
+     "en": "radiative forcing"
+    },
+    {
+     "zh": "全球变暖为什么会加速",
+     "en": "why does global warming accelerate"
+    },
+    {
+     "zh": "气候临界点",
+     "en": "climate tipping point"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "climate-energy",
+   "to": "climate-feedback",
+   "type": "foundation",
+   "label": {
+    "zh": "先对上能量账",
+    "en": "Balance the energy ledger first"
+   },
+   "reason": {
+    "zh": "短波进来、红外出去，两者相等时温度稳定；温室气体让“出去”变难，地球就升温，直到顶端的进出重新相等——反馈改变的正是这本账。",
+    "en": "Shortwave light comes in and infrared goes out, and the temperature is steady when they match; greenhouse gases make going out harder, so the Earth warms until the top-of-atmosphere ledger balances again — feedbacks change that very ledger."
+   },
+   "source": "../earth/climate/climate-feedback/#step0"
+  },
+  {
+   "from": "carbon-cycle",
+   "to": "climate-feedback",
+   "type": "connection",
+   "label": {
+    "zh": "排放只有一部分留在空气里",
+    "en": "Only part of the emissions stays in the air"
+   },
+   "reason": {
+    "zh": "每年排出的碳一部分被海洋和陆地吸收，其余留在大气；被吸收不等于消失——海洋会酸化，陆地吸收还受温度和水分限制。",
+    "en": "Of the carbon emitted each year, part is taken up by the ocean and land and the rest stays in the air; taken up is not gone — the ocean acidifies, and land uptake is limited by temperature and water."
+   },
+   "source": "../earth/climate/climate-feedback/#step1"
+  },
+  {
+   "from": "feedback",
+   "to": "climate-feedback",
+   "type": "foundation",
+   "label": {
+    "zh": "回路的符号决定放大还是削弱",
+    "en": "A loop’s sign decides amplify or damp"
+   },
+   "reason": {
+    "zh": "“变化 → 机制 → 下一步变化”沿回路走一圈，如果把原来的变化推得更大就是正反馈（冰雪、水汽），推回去就是负反馈（升温多散热）；控制系统里同样用回路的符号判断稳不稳。",
+    "en": "Go once round “change → mechanism → next change”: if it pushes the original change further it is positive feedback (ice, water vapour), if it pushes back it is negative (a warmer Earth radiates more); control systems judge stability by the same sign of the loop."
+   },
+   "source": "../earth/climate/climate-feedback/#step2"
+  }
+ ]
+}

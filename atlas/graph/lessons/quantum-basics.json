@@ -1,0 +1,95 @@
+{
+ "schema": 2,
+ "slug": "quantum-basics",
+ "nodes": [
+  {
+   "id": "quantum-amplitude",
+   "group": "waves",
+   "stage": "university",
+   "order": 50,
+   "title": {
+    "zh": "量子态 · 振幅、测量与干涉",
+    "en": "Quantum states · amplitude, measurement and interference"
+   },
+   "description": {
+    "zh": "一个量子比特可以同时保留 |0⟩ 和 |1⟩ 两种可能、各带一个振幅；测量时按振幅的平方随机给出一个结果，而带相位的振幅相加时既能增强也能抵消，这就是量子干涉。",
+    "en": "A qubit can hold both possibilities |0⟩ and |1⟩ at once, each with an amplitude; a measurement returns one outcome at random with probability equal to the amplitude squared, and amplitudes carrying phase can add up or cancel — quantum interference."
+   },
+   "formula": "P = |amplitude|²",
+   "source": "../physics/modern/quantum-basics/#step0",
+   "lessons": [
+    {
+     "slug": "quantum-basics",
+     "step": 0,
+     "category": "physics",
+     "stage": "university",
+     "primary": true
+    }
+   ],
+   "aliases": [
+    {
+     "zh": "量子叠加",
+     "en": "quantum superposition"
+    },
+    {
+     "zh": "量子比特",
+     "en": "qubit"
+    },
+    {
+     "zh": "薛定谔的猫",
+     "en": "Schrödinger’s cat"
+    },
+    {
+     "zh": "波函数坍缩",
+     "en": "wavefunction collapse"
+    },
+    {
+     "zh": "概率幅",
+     "en": "probability amplitude"
+    },
+    {
+     "zh": "玻恩规则",
+     "en": "Born rule"
+    },
+    {
+     "zh": "量子到底是什么意思",
+     "en": "what does quantum actually mean"
+    },
+    {
+     "zh": "量子干涉",
+     "en": "quantum interference"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "probability-vs-frequency",
+   "to": "quantum-amplitude",
+   "type": "foundation",
+   "label": {
+    "zh": "单次随机，多次见概率",
+    "en": "One shot is random; many shots reveal the probability"
+   },
+   "reason": {
+    "zh": "单次测量的结果无法预测，只有重复很多次，样本比例才贴近振幅平方给出的概率——这正是概率与频率页讲的频率稳定性。",
+    "en": "A single measurement cannot be predicted; only over many repeats does the sample fraction settle near the probability given by the squared amplitude — the stability of frequencies taught in the probability-and-frequency lesson."
+   },
+   "source": "../physics/modern/quantum-basics/#step1"
+  },
+  {
+   "from": "quantum-amplitude",
+   "to": "double-slit",
+   "type": "connection",
+   "label": {
+    "zh": "先加振幅，再平方",
+    "en": "Add amplitudes first, then square"
+   },
+   "reason": {
+    "zh": "两条路径的振幅按相位差相加或相消；单个量子比特的干涉和双缝实验里一颗颗粒子累积出的条纹遵守同一条规则：先把振幅相加，再平方成概率。",
+    "en": "Amplitudes from two paths add or cancel according to their phase difference; a single qubit’s interference and the fringes built up one particle at a time in the double-slit experiment follow the same rule: add the amplitudes, then square to get a probability."
+   },
+   "source": "../physics/modern/quantum-basics/#step2"
+  }
+ ]
+}

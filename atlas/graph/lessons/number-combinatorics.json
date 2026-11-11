@@ -1,0 +1,159 @@
+{
+ "schema": 2,
+ "slug": "number-combinatorics",
+ "note": "Step 2 (C(n, k) and Pascal rows) is attached to the existing counting-permutations concept.",
+ "nodes": [
+  {
+   "id": "prime-factorization",
+   "group": "math",
+   "stage": "junior",
+   "order": 50,
+   "title": {
+    "zh": "质因数分解",
+    "en": "Prime factorisation"
+   },
+   "description": {
+    "zh": "每个大于 1 的整数都能唯一地写成质数幂的乘积，就像它的骨架；指数还直接告诉你它有多少个正因数，比如 12 = 2²·3 有 (2+1)(1+1) = 6 个。",
+    "en": "Every whole number greater than 1 can be written in exactly one way as a product of prime powers — its skeleton; the exponents even tell how many divisors it has: 12 = 2²·3 has (2+1)(1+1) = 6."
+   },
+   "formula": "n = p₁^a₁ · p₂^a₂ ⋯",
+   "source": "../math/arithmetic/number-combinatorics/#step0",
+   "lessons": [
+    {
+     "slug": "number-combinatorics",
+     "step": 0,
+     "category": "math",
+     "stage": "junior",
+     "primary": true
+    }
+   ],
+   "aliases": [
+    {
+     "zh": "质数",
+     "en": "prime number"
+    },
+    {
+     "zh": "素数",
+     "en": "prime"
+    },
+    {
+     "zh": "分解质因数",
+     "en": "prime factorization"
+    },
+    {
+     "zh": "算术基本定理",
+     "en": "fundamental theorem of arithmetic"
+    },
+    {
+     "zh": "因数个数",
+     "en": "number of divisors"
+    },
+    {
+     "zh": "合数",
+     "en": "composite number"
+    }
+   ]
+  },
+  {
+   "id": "euclidean-algorithm",
+   "group": "math",
+   "stage": "junior",
+   "order": 50,
+   "title": {
+    "zh": "最大公因数与辗转相除法",
+    "en": "Greatest common divisor & Euclid’s algorithm"
+   },
+   "description": {
+    "zh": "求两个数的最大公因数不必试遍所有因数：用大数除以小数取余数，再用除数除以余数，反复下去，最后一个非零余数就是最大公因数；最小公倍数等于两数之积除以它。",
+    "en": "To find the greatest common divisor of two numbers you need not try every factor: divide the larger by the smaller and keep the remainder, divide the divisor by that remainder, and repeat — the last nonzero remainder is the gcd, and the least common multiple is the product divided by it."
+   },
+   "formula": "gcd(a, b) = gcd(b, a mod b)",
+   "source": "../math/arithmetic/number-combinatorics/#step1",
+   "lessons": [
+    {
+     "slug": "number-combinatorics",
+     "step": 1,
+     "category": "math",
+     "stage": "junior",
+     "primary": true
+    }
+   ],
+   "aliases": [
+    {
+     "zh": "最大公因数",
+     "en": "greatest common divisor"
+    },
+    {
+     "zh": "最大公约数",
+     "en": "gcd"
+    },
+    {
+     "zh": "最小公倍数",
+     "en": "least common multiple"
+    },
+    {
+     "zh": "辗转相除法",
+     "en": "Euclidean algorithm"
+    },
+    {
+     "zh": "欧几里得算法",
+     "en": "Euclid’s algorithm"
+    },
+    {
+     "zh": "怎么求最大公约数",
+     "en": "how to find the gcd"
+    }
+   ]
+  }
+ ],
+ "attach": [
+  {
+   "node": "counting-permutations",
+   "step": 2
+  }
+ ],
+ "edges": [
+  {
+   "from": "prime-factorization",
+   "to": "euclidean-algorithm",
+   "type": "connection",
+   "label": {
+    "zh": "两条路找同一个公因数",
+    "en": "Two roads to the same common divisor"
+   },
+   "reason": {
+    "zh": "最大公因数可以取两数共有质因数的最低次幂，也可以用余数链求出；数太大难以分解时，余数链要快得多。",
+    "en": "The gcd can be read off as the shared prime powers at their lowest exponents, or found by the remainder chain; when the numbers are too big to factor, the remainder chain is far faster."
+   },
+   "source": "../math/arithmetic/number-combinatorics/#step1"
+  },
+  {
+   "from": "prime-factorization",
+   "to": "rsa-encryption",
+   "type": "foundation",
+   "label": {
+    "zh": "相乘容易，分解难",
+    "en": "Easy to multiply, hard to factor"
+   },
+   "reason": {
+    "zh": "两个大质数相乘一瞬间，把乘积分解回去却极慢；RSA 公开乘积 n = pq 作为公钥，安全就建立在没人能及时把它分解开。",
+    "en": "Multiplying two large primes is instant but factoring the product back is extremely slow; RSA publishes n = pq as its public key, and its security rests on nobody being able to factor it in time."
+   },
+   "source": "../computing/systems/rsa-encryption/#step0"
+  },
+  {
+   "from": "euclidean-algorithm",
+   "to": "rsa-encryption",
+   "type": "application",
+   "label": {
+    "zh": "扩展欧几里得算出私钥",
+    "en": "Extended Euclid computes the private key"
+   },
+   "reason": {
+    "zh": "RSA 的私钥 d 要满足 e·d 除以 φ(n) 余 1；把辗转相除的过程倒推回去（扩展欧几里得算法），就能算出这个 d。",
+    "en": "RSA’s private key d must leave remainder 1 when e·d is divided by φ(n); running the remainder chain backwards — the extended Euclidean algorithm — produces that d."
+   },
+   "source": "../computing/systems/rsa-encryption/#step2"
+  }
+ ]
+}

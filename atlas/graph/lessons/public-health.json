@@ -1,0 +1,84 @@
+{
+ "schema": 2,
+ "slug": "public-health",
+ "note": "Step 1 (TP/FP/TN/FN and predictive value) is attached to the positive-predictive-value concept from bayes-diagnostics.",
+ "nodes": [
+  {
+   "id": "epidemic-r0",
+   "group": "life",
+   "stage": "senior",
+   "order": 50,
+   "title": {
+    "zh": "基本再生数 R₀ · 传播曲线",
+    "en": "The basic reproduction number R₀ · epidemic curves"
+   },
+   "description": {
+    "zh": "R₀ 是一个病例在没人免疫、没有干预时平均传给几个人：大于 1，病例一代比一代多；小于 1，传播逐渐熄灭。干预把有效再生数 Rₑ 压低，曲线跟着变平，但变平不等于消失。",
+    "en": "R₀ is how many people one case infects on average when nobody is immune and nothing is done: above 1 cases multiply each generation, below 1 the outbreak dies out. Interventions push the effective number Rₑ down and flatten the curve — but flatter is not the same as gone."
+   },
+   "formula": "Rₑ = R₀·(1 − intervention)",
+   "source": "../biology/body/public-health/#step0",
+   "lessons": [
+    {
+     "slug": "public-health",
+     "step": 0,
+     "category": "biology",
+     "stage": "senior",
+     "primary": true
+    }
+   ],
+   "aliases": [
+    {
+     "zh": "基本传染数",
+     "en": "basic reproduction number"
+    },
+    {
+     "zh": "R0 是什么意思",
+     "en": "what does R0 mean"
+    },
+    {
+     "zh": "有效再生数 Rt",
+     "en": "effective reproduction number"
+    },
+    {
+     "zh": "压平曲线",
+     "en": "flatten the curve"
+    },
+    {
+     "zh": "传染病怎么传播",
+     "en": "how epidemics spread"
+    },
+    {
+     "zh": "流行病学",
+     "en": "epidemiology"
+    },
+    {
+     "zh": "公共卫生",
+     "en": "public health"
+    }
+   ]
+  }
+ ],
+ "attach": [
+  {
+   "node": "positive-predictive-value",
+   "step": 1
+  }
+ ],
+ "edges": [
+  {
+   "from": "exp-log",
+   "to": "epidemic-r0",
+   "type": "foundation",
+   "label": {
+    "zh": "一代乘一个 R",
+    "en": "Multiply by R each generation"
+   },
+   "reason": {
+    "zh": "每个病例传给 R 个人，病例数就一代乘一次 R：R > 1 时指数增长，R < 1 时指数衰减；页面的曲线正是按有效 R 定出的指数增长率画的。",
+    "en": "Each case passes it to R others, so case numbers are multiplied by R every generation: exponential growth when R > 1, exponential decay when R < 1; the page’s curve is drawn with an exponential growth rate set by the effective R."
+   },
+   "source": "../biology/body/public-health/#step0"
+  }
+ ]
+}
