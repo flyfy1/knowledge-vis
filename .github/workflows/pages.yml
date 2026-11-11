@@ -3,9 +3,9 @@
 # 排除规则的依据与体积核算见 README「部署」一节。
 name: Pages
 
+# 迁移到 Pages 之前只允许手动触发：仓库的 Pages 尚未开启，push 触发只会得到失败的 deploy。
+# 开启 Pages 后把 push 触发加回来：  push: { branches: [main] }
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
 
 # 默认只读；只有 deploy 作业拿到 Pages 写权限和 OIDC token。
