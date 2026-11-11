@@ -1,0 +1,219 @@
+{
+ "schema": 2,
+ "slug": "sorting",
+ "nodes": [
+  {
+   "id": "sorting-algorithms",
+   "group": "computing",
+   "stage": "university",
+   "order": 50,
+   "title": {
+    "zh": "排序算法 · 冒泡、归并与快排",
+    "en": "Sorting algorithms · bubble, merge and quicksort"
+   },
+   "description": {
+    "zh": "同样把一堆数排好，冒泡排序靠相邻两两交换、要比较约 n² 次；归并排序把数组对半切开、分别排好再像拉链一样合并，只需约 n log₂ n 次——差距不在写得勤快，而在比较次数随数据量增长的形状。",
+    "en": "Both get a list in order, but bubble sort swaps neighbours and needs about n² comparisons, while merge sort halves the list, sorts each half and zips them together in about n log₂ n — the difference is not effort but how the comparison count grows with the amount of data."
+   },
+   "source": "../computing/algorithms/sorting/#step2",
+   "lessons": [
+    {
+     "slug": "sorting",
+     "step": 2,
+     "category": "computing",
+     "stage": "university",
+     "primary": true
+    }
+   ],
+   "aliases": [
+    {
+     "zh": "排序算法",
+     "en": "sorting algorithm"
+    },
+    {
+     "zh": "冒泡排序",
+     "en": "bubble sort"
+    },
+    {
+     "zh": "归并排序",
+     "en": "merge sort"
+    },
+    {
+     "zh": "快速排序",
+     "en": "quicksort"
+    },
+    {
+     "zh": "选择排序",
+     "en": "selection sort"
+    },
+    {
+     "zh": "计数排序",
+     "en": "counting sort"
+    },
+    {
+     "zh": "哪种排序最快",
+     "en": "which sorting algorithm is fastest"
+    },
+    {
+     "zh": "sort 算法",
+     "en": "sorting algorithms"
+    }
+   ]
+  },
+  {
+   "id": "big-o-notation",
+   "group": "computing",
+   "stage": "university",
+   "order": 50,
+   "title": {
+    "zh": "大 O 记号 · 增长的形状",
+    "en": "Big O notation · the shape of growth"
+   },
+   "description": {
+    "zh": "大 O 只说算法的工作量随输入规模 n 怎样增长，去掉了常数系数：O(n²) 的算法 n 翻倍时工作量约翻 4 倍，O(n log n) 只约翻 2 倍多；系数仍然存在，所以 n 小时“形状差”的算法也可能更快，但 n 足够大时形状一定胜出。",
+    "en": "Big O describes only how an algorithm’s work grows with the input size n, dropping constant factors: doubling n roughly quadruples the work of an O(n²) algorithm but only slightly more than doubles an O(n log n) one; the constants are still real, so for small n a worse-shaped algorithm can win, but for large enough n the shape always decides."
+   },
+   "formula": "O(n²) vs O(n log n)",
+   "source": "../computing/algorithms/sorting/#step4",
+   "lessons": [
+    {
+     "slug": "sorting",
+     "step": 4,
+     "category": "computing",
+     "stage": "university",
+     "primary": true
+    }
+   ],
+   "aliases": [
+    {
+     "zh": "大 O 表示法",
+     "en": "Big O notation"
+    },
+    {
+     "zh": "时间复杂度",
+     "en": "time complexity"
+    },
+    {
+     "zh": "复杂度分析",
+     "en": "complexity analysis"
+    },
+    {
+     "zh": "O(n log n)",
+     "en": "n log n"
+    },
+    {
+     "zh": "O(n²) 是什么意思",
+     "en": "what does O(n squared) mean"
+    },
+    {
+     "zh": "算法效率",
+     "en": "algorithm efficiency"
+    },
+    {
+     "zh": "渐近复杂度",
+     "en": "asymptotic complexity"
+    },
+    {
+     "zh": "big o",
+     "en": "big-oh"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "recursion-divide",
+   "to": "sorting-algorithms",
+   "type": "foundation",
+   "label": {
+    "zh": "归并排序就是分治",
+    "en": "Merge sort is divide and conquer"
+   },
+   "reason": {
+    "zh": "归并把数组从中间切开、递归排好两半再合并；每层合并约 n 次比较、共约 log₂ n 层，相乘得 n log₂ n——分治的账在这里算得最清楚。",
+    "en": "Merge sort splits the array in the middle, recursively sorts both halves and merges them; each level of merging costs about n comparisons over about log₂ n levels, giving n log₂ n — divide and conquer at its clearest."
+   },
+   "source": "../computing/algorithms/sorting/#step2"
+  },
+  {
+   "from": "sorting-algorithms",
+   "to": "big-o-notation",
+   "type": "foundation",
+   "label": {
+    "zh": "大 O 是从计数里拟合出来的",
+    "en": "Big O is fitted from the counts"
+   },
+   "reason": {
+    "zh": "把 n 从 50 翻倍到 800，真数每种排序的比较次数：n² 家族每翻一倍约 ×4，n log n 家族约 ×2.2——大 O 就是这张实测表的形状。",
+    "en": "Doubling n from 50 to 800 and actually counting each sort’s comparisons, the n² family grows about ×4 per doubling and the n log n family about ×2.2 — Big O is the shape of that measured table."
+   },
+   "source": "../computing/algorithms/sorting/#step3"
+  },
+  {
+   "from": "slope",
+   "to": "big-o-notation",
+   "type": "representation",
+   "label": {
+    "zh": "双对数图上的斜率就是次数",
+    "en": "On log–log axes the slope is the exponent"
+   },
+   "reason": {
+    "zh": "横纵都取 log₂ 画比较次数，n² 的点排成斜率 2 的直线，n 的点斜率 1；读斜率就读出了增长的次数。",
+    "en": "Plot comparison counts with log₂ on both axes and the n² points line up with slope 2, linear ones with slope 1; reading the slope reads off the growth exponent."
+   },
+   "source": "../computing/algorithms/sorting/#step3"
+  },
+  {
+   "from": "exp-log",
+   "to": "big-o-notation",
+   "type": "foundation",
+   "label": {
+    "zh": "log n 从对半切来",
+    "en": "log n comes from halving"
+   },
+   "reason": {
+    "zh": "n 个元素能对半切约 log₂ n 次，所以分治算法里总冒出 log n；n 从 1000 到 100 万，log₂ n 只从约 10 涨到约 20。",
+    "en": "n items can be halved about log₂ n times, which is why log n keeps appearing in divide-and-conquer algorithms; as n goes from a thousand to a million, log₂ n only rises from about 10 to about 20."
+   },
+   "source": "../computing/algorithms/sorting/#step2"
+  }
+ ],
+ "questions": [
+  {
+   "id": "q-sorting-0",
+   "question": {
+    "zh": "同一副乱牌，为什么归并排序比冒泡排序快那么多？",
+    "en": "Given the same shuffled cards, why is merge sort so much faster than bubble sort?"
+   },
+   "chain": [
+    "sorting-algorithms",
+    "big-o-notation"
+   ],
+   "target": {
+    "node": "sorting-algorithms",
+    "href": "../computing/algorithms/sorting/#step0"
+   },
+   "prompts": [
+    {
+     "node": "sorting-algorithms",
+     "ask": {
+      "zh": "两种排序各要比较多少次？n 翻一倍时各增加多少？",
+      "en": "How many comparisons does each need, and how do they grow when n doubles?"
+     }
+    },
+    {
+     "node": "big-o-notation",
+     "ask": {
+      "zh": "n² 和 n log n 在 n = 1000 时差多少倍？",
+      "en": "How far apart are n² and n log n when n = 1000?"
+     }
+    }
+   ],
+   "reveal": {
+    "zh": "快慢由比较次数的增长形状决定：冒泡约 n²，归并约 n log₂ n。n = 1000 时前者约一百万次，后者约一万次，相差近百倍，而且 n 越大差得越多。",
+    "en": "Speed is set by how the comparison count grows: bubble sort needs about n², merge sort about n log₂ n. At n = 1000 that is about a million versus about ten thousand — nearly a hundredfold — and the gap widens as n grows."
+   },
+   "source": "../computing/algorithms/sorting/#step0"
+  }
+ ]
+}
