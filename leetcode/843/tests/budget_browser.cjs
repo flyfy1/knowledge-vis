@@ -5,7 +5,7 @@ const out=process.env.OUTPUT_DIR||path.join(__dirname,'evidence/budget-r2');
  const browser=await chromium.launch({headless:true,executablePath:process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH});
  const page=await browser.newPage({viewport:{width:1440,height:1000},reducedMotion:'reduce'}),records=[],errors=[];
  page.on('pageerror',e=>errors.push(e.message));
- await page.goto((process.env.PREVIEW_URL||'http://127.0.0.1:18770')+'/leetcode/843/');
+ await page.goto((process.env.PREVIEW_ROOT||'http://127.0.0.1:18770')+'/leetcode/843/');
  await page.waitForFunction(()=>document.querySelector('#frameRead').textContent.length>0);
  const state=()=>page.evaluate(()=>Object.fromEntries(['frameRead','terminal','ledger','buckets','candidates'].map(id=>[id,document.getElementById(id).textContent])));
  for(const locale of ['en','zh'])for(const width of [320,1440]){

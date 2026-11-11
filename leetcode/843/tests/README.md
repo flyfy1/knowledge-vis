@@ -14,7 +14,7 @@ python3 -B scripts/register_leetcode_lesson.py 843 --validate-only
 ```
 
 Browser scripts use the already-running preview at http://127.0.0.1:18770;
-PREVIEW_URL may override it. They respect NODE_PATH and
+PREVIEW_ROOT may override it. They respect NODE_PATH and
 PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH, use actual Playwright Chromium and native
 Linux Control+C / macOS Meta+C based on the browser host, and seed/read a fresh
 non-source clipboard sentinel before each fallback attempt. No source is written

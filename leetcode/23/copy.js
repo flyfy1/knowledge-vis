@@ -220,16 +220,16 @@ window.LESSON_COPY = {
     "0 ≤ k ≤ 10⁴; each list length ≤ 500; total nodes N ≤ 10⁴; values −10⁴…10⁴."
   ],
   "hand": [
-    "给五个节点标身份：A=0:0(1) → B=0:1(4) → None；C=1:0(1) → D=1:1(3) → None；E=2:0(2) → None。候选 A,C,E，按来源编号打破同值：取 A，补 B，候选值变 4,1,2；取 C，补 D，变 4,3,2；取 E，无后继，剩 4,3；取 D，剩 4；最后取 B。重连后的链是 A → C → E → D → B → None，数值 1,1,2,3,4。A 和 C 数值相同，但不能合并成一个对象。",
-    "Label five nodes: A=0:0(1) → B=0:1(4) → None; C=1:0(1) → D=1:1(3) → None; E=2:0(2) → None. Start with A,C,E; source ID breaks the tie. Take A and add B: candidate values become 4,1,2. Take C and add D: 4,3,2. Take E, with no successor: 4,3. Take D: 4. Finally take B. Rewire to A → C → E → D → B → None, with values 1,1,2,3,4. A and C have equal values but must remain separate objects."
+    "给五个节点标身份：A=0:0(1) → B=0:1(4) → None；C=1:0(1) → D=1:1(3) → None；E=2:0(2) → None。先问：输出的第一个节点可能是谁？B 不可能：它排在 A 后面，链表升序，所以 A ≤ B。同理 D 不可能先于 C。第一名只能是三个头 A、C、E 之一，取最小的 A（A 与 C 同值，按来源编号先取 A）。A 被取走后，链表 0 的新头变成 B，于是第二名只能在 B(4)、C(1)、E(2) 中产生，取 C；再在 B(4)、D(3)、E(2) 中取 E；E 没有后继，剩 B(4)、D(3)，取 D；最后取 B。重连后的链是 A → C → E → D → B → None，数值 1,1,2,3,4。A 和 C 数值相同，但仍是两个对象，不能合并成一个。",
+    "Label five nodes: A=0:0(1) → B=0:1(4) → None; C=1:0(1) → D=1:1(3) → None; E=2:0(2) → None. First ask: which node could possibly come first in the output? Not B: it sits behind A in an ascending list, so A ≤ B. Likewise D cannot come before C. The first node must be one of the three heads A, C, E; take the smallest, A (A and C tie, so the lower source ID goes first). Once A is taken, list 0’s new head is B, so the second node must come from B(4), C(1), E(2): take C. Then from B(4), D(3), E(2): take E. E has no successor, leaving B(4), D(3): take D. Finally take B. Rewired: A → C → E → D → B → None, with values 1,1,2,3,4. A and C share a value but remain two separate objects."
   ],
   "cost": [
-    "收集再排序可验证值序列，时间 O(k + N log(N+1))、空间 O(N)，但还要另建或重连链表。每轮扫描全部 k 个头要 O(k + Nk)。已排序的后继不可能先于自己的头被选中。不要一口气接完选中的整条链：[[1,100],[2,3]] 会得到错误的 1,100,2,3；每次只确定一个最小节点，才得到 1,2,3,100。",
-    "Collect-and-sort verifies values in O(k + N log(N+1)) time and O(N) space, but still needs list construction. Scanning all k heads each round costs O(k + Nk). A sorted successor cannot precede its own head. Do not finish the selected list at once: [[1,100],[2,3]] would give the wrong order 1,100,2,3. Choosing only one minimum at a time gives 1,2,3,100."
+    "收集再排序可验证值序列，时间 O(k + N log(N+1))、空间 O(N)，但它没有用上“每条链表已排序”，还要另建或重连链表。手算给出了更直接的办法：每轮只看各链表当前的头，扫描这 k 个头取最小。它是正确的，但每输出一个节点都要比较 k 个头，总共 O(k + Nk)；k = N = 10⁴ 时约 10⁸ 次比较。另一个诱人的捷径是错的：选中一条链表后一口气接完它。[[1,100],[2,3]] 会得到 1,100,2,3；每次只确定一个最小节点，才得到 1,2,3,100。",
+    "Collect-and-sort verifies values in O(k + N log(N+1)) time and O(N) space, but it ignores that each list is already sorted and still needs list construction. The hand calculation suggests something more direct: each round, look only at the current head of each list and scan those k heads for the minimum. That is correct, but every emitted node costs k comparisons, O(k + Nk) in total: about 10⁸ comparisons when k = N = 10⁴. A tempting shortcut is wrong: after picking a list, attach the rest of it at once. [[1,100],[2,3]] would give 1,100,2,3; settling one minimum at a time gives 1,2,3,100."
   ],
   "derive": [
-    "最小堆是一棵以数组保存的完全二叉树，父节点值不大于孩子；根就是所有候选中最小的。数组下标 h 的孩子是 2h+1、2h+2。只保存每条尚未耗尽链表的第一个节点。",
-    "A min-heap is a complete binary tree stored in an array; parents are no greater than children, so the root is the minimum. Array position h has children 2h+1 and 2h+2. Store only the first remaining node of each list."
+    "最小堆恰好只保证这一点。它是一棵以数组保存的完全二叉树，父节点值不大于孩子，所以根就是所有候选中最小的；兄弟之间不要求有序。数组下标 h 的孩子是 2h+1、2h+2。堆里只放每条尚未耗尽链表的当前头，也就是手算中的候选集合。",
+    "A min-heap guarantees exactly that and no more. It is a complete binary tree stored in an array; each parent is no greater than its children, so the root is the minimum of all candidates, while siblings need not be ordered. Array position h has children 2h+1 and 2h+2. The heap holds only the current head of each nonempty list: exactly the candidate set from the hand calculation."
   ],
   "proof": [
     "取出根后，用末尾候选填补根，再与较小孩子交换，直到堆序恢复。新后继从末尾向上交换。两种操作最多沿树高 O(log k) 移动。堆不要求兄弟之间有序，所以不要把它误读成排好序的数组。",
@@ -350,6 +350,22 @@ window.LESSON_COPY = {
   "pointerCode": [
     "ListNode(0) 只新建占位节点 D，dummy = tail 让两个变量指向它。每次 tail.next = node 改写旧尾的链接，tail = node 只移动变量，不复制节点。node.next 尚未改变，所以可把后继补入堆。最后 tail.next = None 明确结束链；return dummy.next 跳过 D，返回第一个真实节点。无节点时 D.next 始终为 None，返回 None。",
     "ListNode(0) creates only the placeholder D; dummy = tail makes both variables refer to it. Each tail.next = node rewrites the old tail’s link; tail = node moves a variable without copying a node. node.next is unchanged, so its successor can enter the heap. Finally tail.next = None terminates the chain; return dummy.next skips D and returns the first real node. With no nodes, D.next stays None, so the return is None."
+  ],
+  "scanTitle": [
+    "扫描在重复做什么？",
+    "What does the scan keep redoing?"
+  ],
+  "scanHand": [
+    "回到手算。前三轮的候选集合依次是 {A(1), C(1), E(2)} → {B(4), C(1), E(2)} → {B(4), D(3), E(2)}。每一轮恰好离开一个节点（刚输出的那个），最多进入一个节点（它的后继）；其余候选原封不动，扫描却把它们全部重新比较一遍。所以真正需要的是一个装候选的容器，它只做两件事：取出最小者，放入一个新候选。问题是：有没有一种容器，让这两件事都比 O(k) 快？",
+    "Return to the hand calculation. The candidate sets over the first three rounds are {A(1), C(1), E(2)} → {B(4), C(1), E(2)} → {B(4), D(3), E(2)}. Each round exactly one node leaves (the one just emitted) and at most one enters (its successor). The other candidates are untouched, yet the scan compares all of them again. So what we need is a container of candidates that does only two things: remove the minimum, and insert one new candidate. The question: is there a container where both cost less than O(k)?"
+  ],
+  "sortedTry": [
+    "先试有序数组：最小者就在第一格，取它很便宜。但插入要保持有序：取走 C 后候选按值排成 [E(2), B(4)]，新来的 D(3) 必须插到中间，把 B 往后挪；k 个候选时最多挪 O(k) 格。其实我们不需要候选完全有序，只需要随时知道当前最小的是谁。",
+    "Try a sorted array first: the minimum sits in the first cell, so removing it is cheap. But insertion must keep the order. After C is taken, the candidates sorted by value are [E(2), B(4)], and the incoming D(3) must go between them, pushing B back; with k candidates that can shift O(k) cells. We do not actually need the candidates fully sorted; we only need to know the current minimum at all times."
+  ],
+  "related2": [
+    "同样维护 k 个头的最小堆：覆盖每张清单的最小区间",
+    "The same heap of k heads: smallest range covering every list"
   ]
 };
 window.LESSON = {
@@ -372,17 +388,17 @@ window.LESSON = {
     "0 ≤ k ≤ 10⁴; each list length ≤ 500; total nodes N ≤ 10⁴; values −10⁴…10⁴."
   ],
   "hand": [
-    "给五个节点标身份：A=0:0(1) → B=0:1(4) → None；C=1:0(1) → D=1:1(3) → None；E=2:0(2) → None。候选 A,C,E，按来源编号打破同值：取 A，补 B，候选值变 4,1,2；取 C，补 D，变 4,3,2；取 E，无后继，剩 4,3；取 D，剩 4；最后取 B。重连后的链是 A → C → E → D → B → None，数值 1,1,2,3,4。A 和 C 数值相同，但不能合并成一个对象。",
-    "Label five nodes: A=0:0(1) → B=0:1(4) → None; C=1:0(1) → D=1:1(3) → None; E=2:0(2) → None. Start with A,C,E; source ID breaks the tie. Take A and add B: candidate values become 4,1,2. Take C and add D: 4,3,2. Take E, with no successor: 4,3. Take D: 4. Finally take B. Rewire to A → C → E → D → B → None, with values 1,1,2,3,4. A and C have equal values but must remain separate objects."
+    "给五个节点标身份：A=0:0(1) → B=0:1(4) → None；C=1:0(1) → D=1:1(3) → None；E=2:0(2) → None。先问：输出的第一个节点可能是谁？B 不可能：它排在 A 后面，链表升序，所以 A ≤ B。同理 D 不可能先于 C。第一名只能是三个头 A、C、E 之一，取最小的 A（A 与 C 同值，按来源编号先取 A）。A 被取走后，链表 0 的新头变成 B，于是第二名只能在 B(4)、C(1)、E(2) 中产生，取 C；再在 B(4)、D(3)、E(2) 中取 E；E 没有后继，剩 B(4)、D(3)，取 D；最后取 B。重连后的链是 A → C → E → D → B → None，数值 1,1,2,3,4。A 和 C 数值相同，但仍是两个对象，不能合并成一个。",
+    "Label five nodes: A=0:0(1) → B=0:1(4) → None; C=1:0(1) → D=1:1(3) → None; E=2:0(2) → None. First ask: which node could possibly come first in the output? Not B: it sits behind A in an ascending list, so A ≤ B. Likewise D cannot come before C. The first node must be one of the three heads A, C, E; take the smallest, A (A and C tie, so the lower source ID goes first). Once A is taken, list 0’s new head is B, so the second node must come from B(4), C(1), E(2): take C. Then from B(4), D(3), E(2): take E. E has no successor, leaving B(4), D(3): take D. Finally take B. Rewired: A → C → E → D → B → None, with values 1,1,2,3,4. A and C share a value but remain two separate objects."
   ],
   "baseline": "def baseline_values(lists):\n    values = []\n    for node in lists:\n        while node:\n            values.append(node.val)\n            node = node.next\n    return sorted(values)  # oracle for values, not a linked-list return",
   "cost": [
-    "收集再排序可验证值序列，时间 O(k + N log(N+1))、空间 O(N)，但还要另建或重连链表。每轮扫描全部 k 个头要 O(k + Nk)。已排序的后继不可能先于自己的头被选中。不要一口气接完选中的整条链：[[1,100],[2,3]] 会得到错误的 1,100,2,3；每次只确定一个最小节点，才得到 1,2,3,100。",
-    "Collect-and-sort verifies values in O(k + N log(N+1)) time and O(N) space, but still needs list construction. Scanning all k heads each round costs O(k + Nk). A sorted successor cannot precede its own head. Do not finish the selected list at once: [[1,100],[2,3]] would give the wrong order 1,100,2,3. Choosing only one minimum at a time gives 1,2,3,100."
+    "收集再排序可验证值序列，时间 O(k + N log(N+1))、空间 O(N)，但它没有用上“每条链表已排序”，还要另建或重连链表。手算给出了更直接的办法：每轮只看各链表当前的头，扫描这 k 个头取最小。它是正确的，但每输出一个节点都要比较 k 个头，总共 O(k + Nk)；k = N = 10⁴ 时约 10⁸ 次比较。另一个诱人的捷径是错的：选中一条链表后一口气接完它。[[1,100],[2,3]] 会得到 1,100,2,3；每次只确定一个最小节点，才得到 1,2,3,100。",
+    "Collect-and-sort verifies values in O(k + N log(N+1)) time and O(N) space, but it ignores that each list is already sorted and still needs list construction. The hand calculation suggests something more direct: each round, look only at the current head of each list and scan those k heads for the minimum. That is correct, but every emitted node costs k comparisons, O(k + Nk) in total: about 10⁸ comparisons when k = N = 10⁴. A tempting shortcut is wrong: after picking a list, attach the rest of it at once. [[1,100],[2,3]] would give 1,100,2,3; settling one minimum at a time gives 1,2,3,100."
   ],
   "derive": [
-    "最小堆是一棵以数组保存的完全二叉树，父节点值不大于孩子；根就是所有候选中最小的。数组下标 h 的孩子是 2h+1、2h+2。只保存每条尚未耗尽链表的第一个节点。",
-    "A min-heap is a complete binary tree stored in an array; parents are no greater than children, so the root is the minimum. Array position h has children 2h+1 and 2h+2. Store only the first remaining node of each list."
+    "最小堆恰好只保证这一点。它是一棵以数组保存的完全二叉树，父节点值不大于孩子，所以根就是所有候选中最小的；兄弟之间不要求有序。数组下标 h 的孩子是 2h+1、2h+2。堆里只放每条尚未耗尽链表的当前头，也就是手算中的候选集合。",
+    "A min-heap guarantees exactly that and no more. It is a complete binary tree stored in an array; each parent is no greater than its children, so the root is the minimum of all candidates, while siblings need not be ordered. Array position h has children 2h+1 and 2h+2. The heap holds only the current head of each nonempty list: exactly the candidate set from the hand calculation."
   ],
   "proof": [
     "取出根后，用末尾候选填补根，再与较小孩子交换，直到堆序恢复。新后继从末尾向上交换。两种操作最多沿树高 O(log k) 移动。堆不要求兄弟之间有序，所以不要把它误读成排好序的数组。",
@@ -532,6 +548,14 @@ window.LESSON = {
       [
         "利用有序性省去合并",
         "Use sorted order to avoid merging"
+      ]
+    ],
+    [
+      632,
+      1,
+      [
+        "同样维护 k 个头的最小堆：覆盖每张清单的最小区间",
+        "The same heap of k heads: smallest range covering every list"
       ]
     ]
   ]

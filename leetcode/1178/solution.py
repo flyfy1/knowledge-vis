@@ -8,15 +8,16 @@ class Solution:
             freq[mask] = freq.get(mask, 0) + 1
         answer = []
         for puzzle in puzzles:
-            mask = 0
-            for ch in puzzle:
-                mask |= 1 << (ord(ch) - ord('a'))
             first = 1 << (ord(puzzle[0]) - ord('a'))
+            rest = 0
+            for ch in puzzle[1:]:
+                rest |= 1 << (ord(ch) - ord('a'))
             total = 0
-            sub = mask
-            while sub:
-                if sub & first:
-                    total += freq.get(sub, 0)
-                sub = (sub - 1) & mask
+            sub = rest
+            while True:
+                total += freq.get(sub | first, 0)
+                if sub == 0:
+                    break
+                sub = (sub - 1) & rest
             answer.append(total)
         return answer

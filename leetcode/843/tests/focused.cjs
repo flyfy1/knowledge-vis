@@ -1,6 +1,6 @@
 const {chromium}=require('playwright'),assert=require('node:assert/strict'),path=require('node:path'),fs=require('node:fs');
 const out=process.env.OUTPUT_DIR||path.join(__dirname,'evidence');fs.mkdirSync(out,{recursive:true});
-(async()=>{const b=await chromium.launch({headless:true,executablePath:process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH}),p=await b.newPage({viewport:{width:390,height:1000},reducedMotion:'reduce'});await p.goto((process.env.PREVIEW_URL||'http://127.0.0.1:18770')+'/leetcode/843/');await p.waitForFunction(()=>document.querySelector('#frameRead').textContent.length>0);const records=[];
+(async()=>{const b=await chromium.launch({headless:true,executablePath:process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH}),p=await b.newPage({viewport:{width:390,height:1000},reducedMotion:'reduce'});await p.goto((process.env.PREVIEW_ROOT||'http://127.0.0.1:18770')+'/leetcode/843/');await p.waitForFunction(()=>document.querySelector('#frameRead').textContent.length>0);const records=[];
 for(const l of ['en','zh']){
  await p.locator(`[data-lang=${l}]`).click();await p.evaluate(()=>scrollTo(0,0));await p.screenshot({path:path.join(out,`${l}-390-top.png`)});
  await p.locator('#handToggle').click();await p.locator('#letters').scrollIntoViewIfNeeded();await p.screenshot({path:path.join(out,`${l}-hand.png`)});await p.locator('#handToggle').click();

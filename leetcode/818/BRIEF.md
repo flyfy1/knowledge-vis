@@ -86,3 +86,26 @@ Author self-check and hash receipt: SELF-CHECK.md, candidate.json and
 measurements, to be recorded at specs/reviews/818-review-search-resource-measurement-20261026.md
 before separate review. Its absence during authoring is expected and does not
 prevent completing this candidate. No full-range, Mac or official-judge claim.
+
+## Revision 2026-11-11
+
+Changed by Claude Code (claude-opus-5-5) after the range-3 teaching review (/tmp/agent-tasks/leetcode/review-range-3.md). Not committed; page-provenance unaffected (no header label).
+Review: B=2, C=2, F=2 — step 4 was a wall of prose; the standard DP was never mentioned. Change: step 4 gets four sub-headings (distance pruning fails / the bound h / pop order and proof / Python and cost) and a new `routes` paragraph naming the O(T log T) DP, why this lesson keeps the A* search on the existing state graph, and the measured comparison. Added tests/compare_dp_all.py: 0 mismatches against the DP for all targets 1..10000; mean ≈50 ms, slowest single target ≈0.6 s (9551 in one run, 9809 in a second run of compare_dp_all.py, mean 47 ms); DP for all targets ≈0.01 s. Verified: check.py, core.cjs, search.py, search.cjs, browser.cjs, search-browser.cjs, visuals.cjs pass (search-r1 evidence restored afterwards).
+
+## Cross-review 2026-11-11
+
+Reviewer: Claude Code (claude-opus-5-5); working tree only (not committed).
+Judgement: the page gave the A* search as "the Python for the official interface", which a learner reads as the answer to submit. Its worst case is exponential, and the guaranteed O(T log T) DP was only named ("not developed here"). The learner was left without the right solution.
+Changed (proportionate; trace, A* code and tests kept):
+- `routes` (zh/en): A* is the explored route, the one this page uses to check answers; the run DP is what to write in an interview or submission.
+- `source` label: "View the A* search in Python (the explored route, used to check answers)".
+- New end-of-step-4 subsection (`sub5`, `dpIdea`, `dpWhy`, `dpCost` + `#dpCode` block in index.html). It derives the DP from the two facts the search exposed: a run of k A's covers 2^k−1, and an R resets speed to ±1, so only the remaining distance matters. It gives the overshoot / stop-short recurrences, worked for targets 6 (= 5, AAARA) and 5 (= 7, AARARAA), and O(T log T) time, O(T) space. On correctness it is honest: the exchange argument limiting the first run is not reproduced, but over the whole input range 1…10000 the DP equals the proved-optimal A*.
+- New `dp_solution.py` (the submitted DP), `tests/check_dp.py` (page block = dp_solution.py; DP = independent BFS = A* for 1..300 and 121 sampled targets up to 10000; quoted values). `lesson-entry.json` complexity now leads with the DP.
+Verified: own unbounded full-state BFS = DP = A* for 1..300; full run DP vs A* for every target 1..10000: 0 mismatches (slowest A* target 9809, 0.62 s; DP for target 10000: 0.008 s). check.py, search.py, core.cjs, search.cjs, check_dp.py, browser.cjs, search-browser.cjs, visuals.cjs pass (port 18925, evidence to scratch; rewritten tracked evidence restored, except core-results.json whose copy-key count legitimately changed). zh/en at 1280/390/320: no overflow, empty copy or console errors; the DP code block scrolls inside its own box at 390.
+Registry note: `problems.config.js` complexity/desc still describe only A*; suggested complexity text: "Run DP: O(T log T) time, O(T) space; the lesson's explored A* search is exponential in the worst case".
+
+## Integration 2026-11-11
+
+Changed by Claude Code (claude-opus-5-5), the LeetCode integration step (see `specs/leetcode-review-2026-11-11.md`).
+
+Registry entry brought into line with the page: `lesson-entry.json` desc now names the O(T log T) run DP as the solution to submit and A* as the explored route that checks answers; topic "Dynamic programming" added; complexity leads with the DP and calls the A* worst case exponential. Registry resynced with the registration script. This metadata change was made after the cross-review and is self-checked only.

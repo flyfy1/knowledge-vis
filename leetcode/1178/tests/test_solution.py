@@ -10,6 +10,13 @@ def brute(words,puzzles):
  return out
 assert Solution().findNumOfValidWords(['aaaa','asas','able','ability','actt','actor','access'],['aboveyz','abrodyz','abslute','absoryz','actresz','gaswxyz'])==[1,1,3,2,4,0]
 assert Solution().findNumOfValidWords(['apple','pleas','please'],['aelwxyz','aelpxyz','aelpsxy','saelpxy','xaelpsy'])==[0,1,3,2,0]
+# Fresh transfer quiz on the page: 5 valid words (3 share the set {a,c,t}).
+# Step 4 transfer case (every word has at least 4 letters, as the problem requires).
+assert Solution().findNumOfValidWords(['cast','acts','casts','tact','cost','oats','catch'],['catsofy'])==[5]
+# Trap preset: first letter b is required and z is outside.
+assert Solution().findNumOfValidWords(['bxx','bzz','abx','aax','ys'],['bxyqrsa'])==[2]
+# Bitmask example in step 3: able -> {a,b,e,l} -> 2067.
+assert sum(1<<(ord(c)-97) for c in set('able'))==2067
 r=random.Random(1178)
 letters='abcdefg'
 for _ in range(300):

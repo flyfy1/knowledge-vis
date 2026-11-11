@@ -1,6 +1,6 @@
 'use strict';
 const {chromium}=require('playwright'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),C=require('../core.js');
-const out=path.join(__dirname,'evidence/search-r1'),base=process.env.PREVIEW_URL||'http://127.0.0.1:18770';
+const out=path.join(__dirname,'evidence/search-r1'),base=process.env.PREVIEW_ROOT||'http://127.0.0.1:18770';
 (async()=>{
  const b=await chromium.launch({headless:true,executablePath:process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH});
  const p=await b.newPage({viewport:{width:1440,height:1000}}),errors=[],records=[];

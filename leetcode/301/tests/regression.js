@@ -5,7 +5,7 @@ const path = require('path');
   const browser = await chromium.launch({headless: true, executablePath: process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH});
   for (const lang of ['en', 'zh']) {
     const page = await browser.newPage({viewport: {width: 390, height: 900}});
-    await page.goto('http://127.0.0.1:18770/leetcode/301/');
+    await page.goto((process.env.PREVIEW_ROOT||'http://127.0.0.1:18770')+'/leetcode/301/');
     await page.waitForLoadState('networkidle');
     await page.locator(`[data-lang="${lang}"]`).click();
     await page.locator('#preset').selectOption('3');
@@ -19,12 +19,14 @@ const path = require('path');
     if (!right.includes(lang === 'en' ? 'Correct.' : '正确')) throw new Error(`${lang}: option B was not accepted`);
     if (!right.includes('0') || !right.includes('((a)())')) throw new Error(`${lang}: zero-deletion explanation missing`);
     const mapping = await page.locator('[data-i18n="map2"]').innerText();
-    if (mapping.includes('dfs(') || !mapping.includes('remove(')) throw new Error(`${lang}: stale source mapping`);
+    if (mapping.includes('remove(') || !mapping.includes('dfs(')) throw new Error(`${lang}: stale source mapping`);
+    const expl = right;
+    if (!expl.includes('1、2、2、1、2、1、0') && !expl.includes('1, 2, 2, 1, 2, 1, 0')) throw new Error(`${lang}: quiz balances not corrected`);
     await page.close();
   }
   const source = fs.readFileSync(path.join(__dirname, '..', 'solution.py'), 'utf8');
   const displayed = await (async () => {
-    const p = await browser.newPage(); await p.goto('http://127.0.0.1:18770/leetcode/301/'); await p.waitForLoadState('networkidle');
+    const p = await browser.newPage(); await p.goto((process.env.PREVIEW_ROOT||'http://127.0.0.1:18770')+'/leetcode/301/'); await p.waitForLoadState('networkidle');
     const text = await p.locator('#pythonCode').textContent(); await p.close(); return text;
   })();
   if (source !== displayed) throw new Error('displayed source differs from solution.py');

@@ -1,6 +1,6 @@
 'use strict';
 const {chromium}=require('playwright'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),os=require('node:os');
-const root=path.resolve(__dirname,'..'),out=process.env.EVIDENCE_DIR||path.join(__dirname,'evidence'),base=process.env.PREVIEW_URL||'http://127.0.0.1:18770',C=require('../core.js'),source=fs.readFileSync(path.join(root,'solution.py'),'utf8');fs.mkdirSync(out,{recursive:true});
+const root=path.resolve(__dirname,'..'),out=process.env.EVIDENCE_DIR||path.join(__dirname,'evidence'),base=process.env.PREVIEW_ROOT||'http://127.0.0.1:18770',C=require('../core.js'),source=fs.readFileSync(path.join(root,'solution.py'),'utf8');fs.mkdirSync(out,{recursive:true});
 (async()=>{
  const browser=await chromium.launch({headless:true,executablePath:process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH});
  const context=await browser.newContext({viewport:{width:1440,height:1000},permissions:['clipboard-read','clipboard-write'],acceptDownloads:true,reducedMotion:'reduce'}),page=await context.newPage(),errors=[],bad=[],records=[],layouts=[],clips=[];

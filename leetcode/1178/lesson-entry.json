@@ -7,9 +7,9 @@
   "path": "1178/",
   "leetcodeUrl": "https://leetcode.com/problems/number-of-valid-words-for-each-puzzle/",
   "language": "Python",
-  "complexity": "O(W·L + P·2^7) time; O(W) space",
+  "complexity": "O(W·L + P·2^6) time; O(W) space",
   "concepts": [
     {"name": "bitmask", "step": 2, "description": "Encode the set of letters as bits."},
-    {"name": "subset enumeration", "step": 2, "description": "Visit every submask with (sub - 1) & mask."}
+    {"name": "subset enumeration", "step": 2, "description": "Visit the 2^6 subsets of the other six puzzle letters with (sub - 1) & rest."}
   ]
 }

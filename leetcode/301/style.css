@@ -8,3 +8,5 @@ button,select,.btn,.lang-toggle button,.prediction-options label,summary,.soluti
 
 .block span{color:var(--text)}
 .tokens{display:flex;flex-wrap:wrap;gap:6px;margin:16px 0}.token{display:inline-flex;flex-direction:column;align-items:center;min-width:32px;padding:4px;border:1px dotted var(--muted);border-radius:4px;font:inherit}.token small{font-size:11px;color:var(--muted)}.token.consumed{border-style:solid}.token.current{border:3px solid var(--accent);padding:2px;color:var(--accent)}#stack p{padding:8px 12px;background:var(--panel2);border-left:3px solid var(--accent2);overflow-wrap:anywhere}#position{display:block;width:100%;max-width:100%;margin:12px 0}.table-wrap table{min-width:480px}.table-wrap{border:1px solid var(--muted);border-radius:8px}.prediction-options legend{font-size:18px}#message{border-left:3px solid var(--accent2)}
+
+.token.forced{border:3px dashed var(--accent2);padding:2px}.token.forced small:last-child{color:var(--accent2);font-weight:700}.token b{font-size:18px}

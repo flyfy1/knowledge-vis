@@ -1,2 +1,52 @@
 'use strict';
-window.Remove301={presets:['()())()','(a)())()',')(','((a)())'],budget:function(s){let l=0,r=0;for(const c of s){if(c==='(')l++;else if(c===')'){if(l)l--;else r++;}}return {left:l,right:r}},trace:function(s){const b=this.budget(s),frames=[{i:0,path:'',bal:0,l:b.left,r:b.right,action:'start',results:[]}],out=[],seen=new Set();function valid(x){let n=0;for(const c of x){if(c==='(')n++;else if(c===')'&&--n<0)return false}return n===0}function dfs(i,path,bal,l,r,action){frames.push({i,path,bal,l,r,action,results:out.slice()});if(l===0&&r===0){const x=path+s.slice(i);if(valid(x)&&!seen.has(x)){seen.add(x);out.push(x);frames.push({i:s.length,path:x,bal:0,l:0,r:0,action:'emit '+x,results:out.slice()})}return}for(let j=i;j<s.length;j++){if(j>i&&s[j]===s[j-1])continue;if(l+r>s.length-j)break;const c=s[j];if(l&&c==='(')dfs(j+1,path,bal,l-1,r,'delete (');if(r&&c===')')dfs(j+1,path,bal,l,r-1,'delete )');if(c==='('){path+=c;bal++}else if(c===')'){if(bal===0)continue;path+=c;bal--}else path+=c;frames.push({i:j+1,path,bal,l,r,action:'keep '+c,results:out.slice()})}}dfs(0,'',0,b.left,b.right,'start');return {s:s,b:b,frames:frames,results:out}}};
+// Teaching trace for #301. It follows solution.py call for call:
+// the same budget walk, the same keep/delete order, the same two prunings,
+// and a set that collapses equal strings.
+window.Remove301 = {
+  presets: ['()())()', '(a)())()', ')(', '((a)())'],
+  // Budget walk: one entry per character, as in the first loop of solution.py.
+  walk(s) {
+    let open = 0, right = 0;
+    const steps = [];
+    for (let i = 0; i < s.length; i++) {
+      const c = s[i];
+      let forced = false;
+      if (c === '(') open++;
+      else if (c === ')') {
+        if (open > 0) open--;
+        else { right++; forced = true; }
+      }
+      steps.push({i, c, open, forced, right});
+    }
+    return {steps, left: open, right};
+  },
+  budget(s) {
+    const w = this.walk(s);
+    return {left: w.left, right: w.right};
+  },
+  trace(s) {
+    const b = this.budget(s), n = s.length, frames = [], found = [], seen = new Set(), path = [];
+    const snap = (kind, i, bal, l, r, extra) => frames.push(Object.assign({kind, i, path: path.join(''), bal, l, r, results: found.slice()}, extra || {}));
+    function dfs(i, bal, l, r, how) {
+      snap('call', i, bal, l, r, how);
+      if (l + r > n - i) { snap('pruneBudget', i, bal, l, r, {need: l + r, left: n - i}); return; }
+      if (i === n) {
+        if (bal === 0) {
+          const x = path.join('');
+          if (seen.has(x)) snap('duplicate', i, bal, l, r, {x});
+          else { seen.add(x); found.push(x); snap('emit', i, bal, l, r, {x}); }
+        }
+        return;
+      }
+      const c = s[i];
+      if (c === '(' && l > 0) dfs(i + 1, bal, l - 1, r, {via: 'delete', at: i, c});
+      if (c === ')' && r > 0) dfs(i + 1, bal, l, r - 1, {via: 'delete', at: i, c});
+      if (c === ')' && bal === 0) { snap('pruneKeep', i, bal, l, r, {at: i}); return; }
+      path.push(c);
+      dfs(i + 1, bal + (c === '(' ? 1 : c === ')' ? -1 : 0), l, r, {via: 'keep', at: i, c});
+      path.pop();
+    }
+    dfs(0, 0, b.left, b.right, {via: 'start'});
+    return {s, b, frames, results: found};
+  }
+};

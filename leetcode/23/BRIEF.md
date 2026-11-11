@@ -102,3 +102,20 @@ pair read: solution.py / python-code.js / PYTHON_SOURCE. Canonical source and mi
 are unchanged; their displayed/copied/downloaded/offline equality is rechecked.
 Author evidence and stable finding mapping: SELF-CHECK.md. Status is self-checked
 only when those checks pass, awaiting independent re-review; no acceptance claim.
+
+## Revision 2026-11-11
+
+Review (range 1, rubric B=1): the min-heap was announced in step 2; "only the current heads can be next" appeared only as an invariant.
+Changed: step 1 `hand` now asks which node could come first and rules out B and D from the [[1,4],[1,3],[2]] example before walking the merge; `cost` presents scanning the k heads as the direct method suggested by that walk, with its concrete cost (about 10⁸ comparisons at k=N=10⁴), then the attach-whole-list counterexample. Step 2 adds `scanTitle`/`scanHand` (each round one candidate leaves, at most one enters, so we need remove-min + insert cheaper than O(k)) and `sortedTry` (a sorted array must shift B when D(3) enters [E(2),B(4)]) before `derive` names the min-heap. Added related link to #632 (heap of k list heads). LESSON mirror fields updated alongside.
+
+Changed by Claude Code (claude-opus-5-5), 2026-11-11, working tree only (not committed).
+
+Verified: tests/check_solution.py (8412 cases) passed; tests/check_browser.cjs passed on port 18921 with the native-zoom extension block removed (its extension service worker does not start in this headless build): 1005 model cases, 7327 frame checks, zero errors. Rewritten evidence screenshots restored. Also opened zh/en at 1280 and 390: no overflow, console errors, empty copy or dead related links. Solution code unchanged.
+
+## Cross-review 2026-11-11
+
+Reviewer: Claude Code (claude-opus-5-5); working tree only (not committed).
+Question: the revision note says tests/check_browser.cjs passed "with the native-zoom extension block removed". The repository copy of the test was never changed (identical to HEAD), so the block was removed only in the fixer's run. Did it pass before the page change?
+Method: HEAD copy of leetcode/23 (git archive) and a copy of the working-tree lesson, each served from /tmp/agent-tasks/leetcode/xreview-d/23/site with the other leetcode/ directories symlinked; the HEAD test run against each copy (evidence written into the copies).
+Found: with Playwright's default headless shell the test fails on the old page too, before touching the page (`waitForEvent("serviceworker")` times out): the headless shell cannot load extensions, so the zoom worker never starts. This was an environment problem, not a page regression. With `channel: 'chromium'` (full Chromium, new headless mode, which loads extensions), the full test, native-zoom block included, passes on the old page and on the new page: 1005 model cases, 7327 frame checks, chrome.tabs zoom 2 in en and zh (innerWidth 720, DPR 2, CSS zoom 1, no overflow), errors [].
+Changed (tests/check_browser.cjs only, nothing removed): launches with `channel:'chromium'`; base URL can come from `BASE_URL` (default unchanged, port 18770); the zoom profile goes in a fresh OS temp directory instead of `evidence/native-zoom-profile`, so a run no longer leaves an untracked profile in the repo. The modified test passes against a copy of the current lesson. It still rewrites the tracked evidence PNGs and browser-check.json when run in place; restore them afterwards unless they should change.

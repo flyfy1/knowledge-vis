@@ -5,8 +5,8 @@
     "en": "Race Car"
   },
   "desc": {
-    "zh": "从完整状态的分层搜索，推导乐观下界并用 A* 减少探索。",
-    "en": "Derive an optimistic bound from full-state BFS and prioritize exploration with A*."
+    "zh": "从完整状态的分层搜索推导乐观下界，用 A* 探索并核对答案；再把搜索揭示的两条事实变成要提交的 O(T log T) 连续加速段 DP。",
+    "en": "Derive an optimistic bound from full-state BFS and explore with A* to check answers; then turn two facts the search exposes into the O(T log T) run DP to submit."
   },
   "difficulty": "hard",
   "topics": [
@@ -21,12 +21,16 @@
     {
       "zh": "A* 搜索",
       "en": "A* search"
+    },
+    {
+      "zh": "动态规划",
+      "en": "Dynamic programming"
     }
   ],
   "path": "818/",
   "leetcodeUrl": "https://leetcode.com/problems/race-car/",
   "language": "Python",
-  "complexity": "O(D * 2^D) time; O(2^D) space, conservative unit-cost bounds for optimal command depth D; heap work O(Q log Q) for Q generated entries",
+  "complexity": "Run DP to submit: O(T log T) time, O(T) space for target T; the explored A* search is exponential in the worst case (O(D·2^D) time, O(2^D) space, D = optimal command count)",
   "concepts": [
     {
       "name": "Race Car state-space BFS",

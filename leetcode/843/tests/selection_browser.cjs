@@ -6,7 +6,7 @@ fs.mkdirSync(out,{recursive:true});
  const browser=await chromium.launch({headless:true,executablePath:process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH});
  const page=await browser.newPage({viewport:{width:320,height:1000},reducedMotion:'reduce'}),records=[];
  try{
-  await page.goto((process.env.PREVIEW_URL||'http://127.0.0.1:18770')+'/leetcode/843/');
+  await page.goto((process.env.PREVIEW_ROOT||'http://127.0.0.1:18770')+'/leetcode/843/');
   await page.waitForFunction(()=>document.querySelector('#frameRead').textContent.length>0);
   for(const width of [320,390,1280])for(const zoom of [1,2])for(const scenario of ['6','8'])for(const locale of ['zh','en','zh']){
    await page.setViewportSize({width,height:1000});

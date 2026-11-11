@@ -1,6 +1,6 @@
 'use strict';
 const {chromium}=require('playwright'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),vm=require('node:vm');
-const root=path.resolve(__dirname,'..'),evidence=path.join(root,'evidence'),base='http://127.0.0.1:18770/leetcode/23/';
+const root=path.resolve(__dirname,'..'),evidence=path.join(root,'evidence'),base=(process.env.PREVIEW_ROOT||'http://127.0.0.1:18770').replace(/\/$/,'')+'/leetcode/23/';
 const source=fs.readFileSync(path.join(root,'solution.py'),'utf8');
 const sandbox={};vm.runInNewContext(fs.readFileSync(path.join(root,'../hard-first-ten/core.js'),'utf8'),sandbox);
 let modelCases=0,frameChecks=0;
@@ -24,8 +24,10 @@ function model(input){
 for(const a of atoms)for(const b of atoms)for(const c of atoms)model([a,b,c]);
 for(const input of [[[-2,4],[],[-2,0,5]],[[1,100],[2,3]],[[1,100],[2]],[],[[],[1,1],[1],[]]])model(input);
 (async()=>{
- const ext=path.join(__dirname,'zoom-extension'),profile=path.join(evidence,'native-zoom-profile');
- const ctx=await chromium.launchPersistentContext(profile,{headless:true,executablePath:process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH,ignoreDefaultArgs:['--disable-extensions'],args:[`--disable-extensions-except=${ext}`,`--load-extension=${ext}`],viewport:{width:1440,height:1000},permissions:['clipboard-read','clipboard-write']});
+ // channel 'chromium' = full Chromium in new headless mode; the default headless shell cannot load
+ // extensions, so the zoom worker never starts there (2026-11-11 cross-review).
+ const ext=path.join(__dirname,'zoom-extension'),profile=fs.mkdtempSync(path.join(require('node:os').tmpdir(),'lc23-native-zoom-'));
+ const ctx=await chromium.launchPersistentContext(profile,{headless:true,channel:'chromium',executablePath:process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH,ignoreDefaultArgs:['--disable-extensions'],args:[`--disable-extensions-except=${ext}`,`--load-extension=${ext}`],viewport:{width:1440,height:1000},permissions:['clipboard-read','clipboard-write']});
  const errors=[],ignored=[],checks=[],zoomEvidence=[];
  function track(page){page.on('console',m=>{if(m.type()==='error'){const url=m.location().url;if(url.endsWith('/favicon.ico'))ignored.push({url,message:m.text()});else errors.push({url,message:m.text()});}});page.on('pageerror',e=>errors.push(String(e)));page.on('response',r=>{if(r.status()>=400){if(r.url().endsWith('/favicon.ico'))ignored.push(r.status()+' '+r.url());else errors.push(r.status()+' '+r.url());}});}
  try{

@@ -133,3 +133,16 @@ font/color/spacing tokens apply; no new colors or type sizes. The native selecte
 text can remain clipped, but the full adjacent value remains available, as the
 review requested. No option semantics or algorithm state changed. Tests and the
 new frozen candidate are author evidence; independent closure remains pending.
+
+## Revision 2026-11-11
+
+Changed by Claude Code (claude-opus-5-5) after the range-3 teaching review (/tmp/agent-tasks/leetcode/review-range-3.md). Not committed; page-provenance unaffected (no header label).
+Review: B=1 — minimax defined then applied; no statement about the 10-call budget. Change (via build_copy.py/build_html.py): `s2e` compares guessing ccbazz (can leave 2) with acckzz (always leaves 1) and asks which to ask; `derive` then defines buckets/worst bucket and names minimax. `limit` now separates what is proved (≤ n calls) from what cannot be proved by anyone (22-word paired list needs 11 for every strategy; 26 disjoint words need 26) and states that acceptance depends on the judge's data, not claimed here. New `measured` paragraph and tests/measure_calls.py (executes solution.py; seeded): uniform 26-letter lists, 10000 cases mean 5.66 / max 10 (18 at 10); 300 lists × every secret = 30000 cases, max 10 (57 at 10), none >10; a–d lists max 5; a/b lists max 6. Evidence: tests/evidence/measured-calls.json. Verified: test_solution.py, test_core.cjs, test_budget.py, measure_calls.py (assertions on quoted numbers), browser/focused/budget/selection browser tests pass.
+
+## Cross-review 2026-11-11
+
+Reviewer: Claude Code (claude-opus-5-5); independent of the fixer, working tree only (not committed).
+Guess allowance: public sources (doocs statement; C++ signature `void findSecretWord(vector<string>& words, Master& master)`) agree that `allowedGuesses` is a per-test-case value with 10 ≤ allowedGuesses ≤ 30, not a function parameter; the judge reports "Either you took too many guesses, or you did not find the secret word" if it is exceeded; test cases are generated so a reasonable strategy (not brute force) succeeds. The page's `contract`, `limit`, `s4e` and `cost` say exactly this, so nothing to correct.
+Impossibility examples, by an adversary argument: (1) 26 words aaaaaa…zzzzzz: any two differ in every position, so a wrong guess returns 0 and rules out only itself; an adversary answering 0 forces 26 calls. (2) 22 words = prefix a/b + five copies of one of 11 suffix letters c…m: a reply is [prefix equal] + 5·[suffix equal], so each guess tests one suffix letter; an adversary says "different suffix" while two or more suffix letters remain, forcing 10 failing guesses, then an 11th that succeeds (the prefix is learned on the first guess). 11 is reachable, so the bound is exact. First-probe buckets for accccc (10/10/1/1) recomputed. Measured distributions reproduced exactly by tests/measure_calls.py (mean 5.66, 18 cases at 10 of 10,000; 57 at 10 of 30,000; max 10).
+Tests: test_solution.py, test_core.cjs, measure_calls.py, browser.cjs, focused.cjs, budget_browser.cjs, selection_browser.cjs pass (browser on port 18925, output to scratch). Evidence files rewritten by the Python/core runs were restored.
+Changed: nothing besides this note.
