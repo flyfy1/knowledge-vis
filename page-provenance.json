@@ -2,16 +2,16 @@
   "schemaVersion": 1,
   "pages": {
     "atlas": {
-      "developer": "Codex",
-      "edition": "codex-atlas-interference-phase-20261026",
+      "developer": "Claude Code",
+      "edition": "claude-atlas-knowledge-search-20261111",
       "kind": "revised",
-      "sourceRevision": "595ee8e6dc5b07855ce1cba8799eead33b1dd760",
+      "sourceRevision": "a6b5da73a394e84ee519c1ff9a65c9ac5081c586",
       "scope": {
-        "zh": "保留既有知识地图和实验；新增已有干涉课程的概念及正弦相位应用连接",
-        "en": "Retains the atlas and experiments; adds the existing interference lesson concept and sine-phase application connection"
+        "zh": "保留既有知识地图、实验与关系；改为通用知识地图，先载入小索引、详情按区域按需载入，搜索覆盖别名与说明",
+        "en": "Retains the atlas, its experiments and relations; reframed as a general knowledge atlas that loads a small index first and region details on demand, with search over aliases and descriptions"
       },
       "originalAuthorship": "not asserted; prior contributions retained",
-      "previousSourceRevision": "d7b487392f85d8828aad1bd9da10a699bf9eca36"
+      "previousSourceRevision": "595ee8e6dc5b07855ce1cba8799eead33b1dd760"
     },
     "complex-numbers": {
       "developer": "Codex",
@@ -222,18 +222,18 @@
       "path": "math/linear-algebra/eigenvectors/index.html"
     },
     "atlas/galaxy": {
-      "developer": "Codex",
-      "edition": "codex-atlas-galaxy-interference-phase-20261026",
+      "developer": "Claude Code",
+      "edition": "claude-atlas-galaxy-knowledge-search-20261111",
       "kind": "revised",
-      "sourceRevision": "595ee8e6dc5b07855ce1cba8799eead33b1dd760",
+      "sourceRevision": "a6b5da73a394e84ee519c1ff9a65c9ac5081c586",
       "scope": {
-        "zh": "保留既有三维知识星图；共享图谱纳入已有干涉课程及相位应用边",
-        "en": "Retains the 3D galaxy; its shared graph includes the existing interference course and phase application edge"
+        "zh": "保留既有三维知识星图；标题与说明改为通用知识地图",
+        "en": "Retains the 3D galaxy; title and descriptions reframed for the general knowledge atlas"
       },
       "originalAuthorship": "existing atlas contributions retained; galaxy presentation developed with Codex",
       "path": "atlas/galaxy.html",
       "integrationRevision": "c3445f66a3e666acd557a04a7194c9568a383c35",
-      "previousSourceRevision": "d7b487392f85d8828aad1bd9da10a699bf9eca36"
+      "previousSourceRevision": "595ee8e6dc5b07855ce1cba8799eead33b1dd760"
     },
     "leetcode/42": {
       "developer": "Codex",
