@@ -6,7 +6,7 @@ const {chromium} = require('playwright');
 const root = path.resolve(__dirname, '..');
 const evidence = process.env.OUTPUT_DIR || path.join(__dirname,'evidence');
 fs.mkdirSync(evidence,{recursive:true});
-const url = process.env.PREVIEW_URL || 'http://127.0.0.1:18770/leetcode/315/';
+const url = (process.env.PREVIEW_ROOT||'http://127.0.0.1:18770')+'/leetcode/315/';
 const canonical = fs.readFileSync(path.join(root,'solution.py'),'utf8');
 const mirror = {window:{}};
 vm.runInNewContext(fs.readFileSync(path.join(root,'python-code.js'),'utf8'),mirror);

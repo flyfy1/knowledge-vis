@@ -1,6 +1,6 @@
 'use strict';
 const {chromium}=require('playwright'),fs=require('fs'),path=require('path'),assert=require('assert/strict');
-const out=process.env.EVIDENCE_DIR||path.join(__dirname,'evidence'),source=fs.readFileSync(path.join(__dirname,'../solution.py'),'utf8'),base=process.env.PREVIEW_URL||'http://127.0.0.1:18770';fs.mkdirSync(out,{recursive:true});
+const out=process.env.EVIDENCE_DIR||path.join(__dirname,'evidence'),source=fs.readFileSync(path.join(__dirname,'../solution.py'),'utf8'),base=process.env.PREVIEW_ROOT||'http://127.0.0.1:18770';fs.mkdirSync(out,{recursive:true});
 (async()=>{const b=await chromium.launch({executablePath:process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH}),ctx=await b.newContext({permissions:['clipboard-read','clipboard-write'],viewport:{width:390,height:1000},reducedMotion:'reduce'}),p=await ctx.newPage(),records=[];
 await p.goto(base+'/leetcode/773/');
 const native=await p.evaluate(()=>!!navigator.clipboard);

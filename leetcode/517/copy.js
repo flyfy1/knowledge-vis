@@ -119,25 +119,25 @@ window.COPY = {
     "查看小输入基线 Python（非正式解）",
     "View small-input baseline Python (not the submission)"
   ],
-  "pipelineExample": [
-    "空机器传递实例 [0,0,6]：目标 2，切口 −2、−4，故 M=4。合法方案是 [0,0,6] → [0,1,5] → [1,1,4] → [2,1,3] → [2,2,2]。起初中间机器等待一轮，但右端要送的 4 件已覆盖这轮启动等待。",
-    "Empty-relay example [0,0,6]: target 2, cuts −2 and −4, so M=4. A legal schedule is [0,0,6] → [0,1,5] → [1,1,4] → [2,1,3] → [2,2,2]. The middle machine waits initially, but the right endpoint’s four sends already cover that startup delay."
-  ],
   "baselineCost": [
     "设总衣服数为 S、机器数为 n。保持总数的数组最多有 C(S+n−1,n−1) 种，每个数组最多检查 3ⁿ 组动作，每组需 O(n) 时间；存储所有状态需要 O(n·C(S+n−1,n−1)) 空间。这只适合作为小输入的独立核对器，无法处理 n=10⁴。我们改为计算必须跨过每条边界的净衣服数。",
     "With S dresses and n machines, there are at most C(S+n−1,n−1) arrays conserving the total. Each has at most 3ⁿ action combinations, taking O(n) time each; storing the states costs O(n·C(S+n−1,n−1)) space. This is only a small-input oracle, not a solution for n=10⁴. Instead, compute the net dresses that must cross each boundary."
   ],
+  "cutBind": [
+    "先看下界从哪里来。每台机器每轮最多送出一件，这个限制会在哪里逼出等待？看 [2,2,0,0]，目标每台 1 件：机器 1、2 各多 1 件，没有哪台要送两件。一轮够吗？看机器 2 与 3 之间的缝：两件多余的衣服都在缝的左边，都要过去，而每轮只有机器 2 能把一件推过这条缝。所以至少 2 轮：[2,2,0,0] → [1,2,1,0] → [1,1,1,1]。这里的瓶颈不是某台机器，而是一条边界。",
+    "Where do lower bounds come from? Each machine sends at most one dress per move; where does that force waiting? Take [2,2,0,0] with target 1: machines 1 and 2 each hold one extra dress, so no machine has to send twice. Is one move enough? Look at the gap between machines 2 and 3: both extra dresses sit left of it and must cross, but only machine 2 can push a dress across that gap, one per move. So at least 2 moves: [2,2,0,0] → [1,2,1,0] → [1,1,1,1]. The bottleneck is a boundary, not a machine."
+  ],
   "cut": [
-    "把目标每台件数记为 a=总数/n；若除不尽，整数件衣服无法平分，直接 -1。定义 dᵢ=machines[i]−a，表示第 i 台比目标多多少件。切口是相邻两台之间的边界。切口左边所有 d 的和 bᵢ 是左段的净多余量：正数必须向右送，负数必须从右接收。",
-    "Let a=total/n be the target count. If it is not an integer, equal integer counts are impossible: return -1. Define dᵢ=machines[i]−a, the surplus at machine i. A cut is the boundary between neighbors. The sum bᵢ of all d values to its left is that prefix’s net surplus: positive means net sends right, negative means net receives from the right."
+    "一般地，把目标件数记为 a=总数/n；除不尽时整数件衣服无法平分，直接返回 -1。定义 dᵢ=machines[i]−a，即第 i 台比目标多几件。切口是相邻两台之间的边界；切口左边所有 d 的和 bᵢ 是左段的净多余量：正数表示必须向右净送 bᵢ 件，负数表示必须从右净收 |bᵢ| 件。每轮最多让一件衣服朝需要的方向净穿过一条切口，所以至少要 max|bᵢ| 轮。[2,2,0,0] 中 d=[1,1,−1,−1]，b=[1,2,1]，中间切口给出 2。",
+    "In general, let a=total/n be the target count; if the total is not divisible by n, equal integer counts are impossible: return -1. Define dᵢ=machines[i]−a, how many extra dresses machine i holds. A cut is the boundary between neighbours; the sum bᵢ of all d to its left is that prefix’s net surplus: positive means bᵢ dresses must cross rightward, negative means |bᵢ| must cross leftward. A move can push at most one dress net across a cut in the needed direction, so at least max|bᵢ| moves are needed. For [2,2,0,0], d=[1,1,−1,−1] and b=[1,2,1]; the middle cut gives 2."
   ],
   "cutHand": [
-    "对 [1,0,5]，a=2：d=[−1,−2,+3]。第一条切口左边差 1 件，所以 b₁=−1；第二条左边共差 3 件，所以 b₂=−3。每条边界每轮朝所需方向最多跨一件，因而至少 max(|−1|,|−3|)=3 轮。最后的 b₃=0 表示全体守恒，右侧没有真实邻居。",
-    "For [1,0,5], a=2 and d=[−1,−2,+3]. The first cut’s left side lacks 1 dress, so b₁=−1. The second cut’s left side lacks 3 in total, so b₂=−3. At most one dress crosses a boundary in the required direction per move, giving at least max(|−1|,|−3|)=3 moves. The final b₃=0 records global conservation; there is no neighbor beyond the end."
+    "回到 [1,0,5]，a=2：d=[−1,−2,+3]，b₁=−1，b₂=−3。切口给出 3，右端的 d=3 也给出 3；两个下界都是 3，与第一步的 3 轮方案吻合。最后的 b₃=0 表示总数守恒，右侧没有真实邻居。",
+    "Back to [1,0,5] with a=2: d=[−1,−2,+3], b₁=−1, b₂=−3. The cut gives 3 and the right end’s d=3 also gives 3; both bounds match the three-move schedule from step 1. The final b₃=0 records conservation; there is no neighbour beyond the end."
   ],
   "wrong": [
-    "只看切口会错：[0,3,0] 的目标为 1，切口为 −1、+1，最大绝对值只有 1。但中间机器需要向左右各送一件，一轮不能送两件，实际要 2 轮。还必须计入每台的正剩余 dᵢ；负 dᵢ 不取绝对值作为单机约束，因为一台机器可同时从两边收衣。例如 [3,0,3] 的中间差 2 件，但两端可同时送来，1 轮即可。",
-    "Cuts alone fail on [0,3,0]: target 1, cut balances −1 and +1, largest magnitude 1. Yet the middle machine must send one dress each way and cannot send twice in one move. It needs 2 moves. Include each positive surplus dᵢ. Do not use |dᵢ| as a sender bound for a deficit: a machine can receive from both neighbors at once. For example, [3,0,3] lacks 2 dresses in the middle, but both ends can fill it in one move."
+    "但只看切口不够。[0,3,0] 目标 1：切口 b=[−1,+1]，每条缝只需过 1 件。一轮够吗？两件都得从中间机器送出，一边一件，而一台机器一轮只能送一件，所以要 2 轮。这是第二种瓶颈：多出 dᵢ 件的机器至少要送 dᵢ 轮。缺货不算：[3,0,3] 的中间差 2 件，但两端可同时送来，1 轮即可，因为一台机器一轮可以同时从两边接收。",
+    "Cuts alone are not enough. [0,3,0] with target 1 has cuts b=[−1,+1]: each gap needs only one dress. Is one move enough? Both dresses must leave the middle machine, one each way, and a machine sends at most one per move, so it takes 2 moves. That is the second bottleneck: a machine holding dᵢ extra dresses needs at least dᵢ moves. A shortage does not count: the middle of [3,0,3] lacks 2 dresses, but both ends can send at once, so 1 move suffices; a machine may receive from both sides in the same move."
   ],
   "formula": [
     "最少轮数 M = maxᵢ ( |bᵢ|, dᵢ )，其中 bᵢ = d₁+…+dᵢ，且总数可整除 n。",
@@ -147,13 +147,45 @@ window.COPY = {
     "为什么这两个下界也足够？",
     "Why do these lower bounds suffice?"
   ],
-  "proof": [
-    "令 b₀=0 表示最左端外侧没有流量。看任意一台机器：它向左必须净送 max(0,−bᵢ₋₁) 件，向右必须净送 max(0,bᵢ) 件。若两边都向外，这两项之和正好是 dᵢ；若仅一边向外，其发送量就是相邻切口的绝对值；若两边都向内，它不用发。所以所有机器所需的发送次数都不超过 M。",
-    "Set b₀=0 for the outer boundary at the left end. For any machine, the required net sends are max(0,−bᵢ₋₁) to the left and max(0,bᵢ) to the right. If both directions point out, their sum is exactly dᵢ. If only one points out, its sends equal the magnitude of that adjacent cut. If both point in, it need not send. Thus every machine needs at most M sends."
+  "planIntro": [
+    "下界说“至少 M 轮”。会不会因为衣服还没送到、中间机器空着等，而多花几轮？用下面这条规则排方案，看 M 每轮怎么变。规则：手里有衣服、而且还欠着向外送的机器，本轮送一件；两边都欠时，送往需求更大的那条切口。",
+    "The bounds say “at least M moves.” Could waiting for dresses to arrive, with a middle machine standing empty, cost extra moves? Build a schedule with the rule below and watch how M changes each move. Rule: every machine that holds a dress and still owes an outflow sends one this move; a machine owing both ways sends across its larger cut."
   ],
-  "proof2": [
-    "还要排除“衣服还没到，导致额外轮数”。可将固定方向的流排成流水线：中间机器有旧衣时可同轮接收与发送；缺货时才等待上游。沿任一单向路径，每经过一台初始缺货机器，上游所需流量会增加至少一件（目标 a≥1）。因此每一轮启动等待都已包含在上游更大的切口流量中，不会在最大切口之外另加路径长度。两边外送的源机器按总发送数安排左右轮次；两边内收的汇机器没有接收容量限制。路径无环，无需逆向来回搬；这些流水线可在 M 轮内完成。若 a=0，非负件数意味着起点已全为零。结合必要下界，得到上式。",
-    "We must also rule out extra waiting for dresses to arrive. Route the fixed-direction flows as pipelines: a machine holding an old dress can receive and send in the same move; only a stock shortage forces it to wait upstream. Along a directed path, every initially empty relay increases the required upstream flow by at least one dress (the target a≥1). Each startup delay is therefore already covered by the larger upstream cut demand, rather than added again as path length. A source feeding both sides allocates its moves to their total send count; a sink receiving from both sides has no receive-capacity limit. There are no directed cycles or necessary backtracking, so these pipelines finish within M moves. If a=0, nonnegative counts mean the input is already all zero. Together with the lower bound, this gives the formula."
+  "planPreset": [
+    "选择数组（会重启本方案）",
+    "Choose an array (restarts this schedule)"
+  ],
+  "planStart": [
+    "起点：[{a}] · 切口 b=[{b}] · 下界 M={M}",
+    "Start: [{a}] · cuts b=[{b}] · bound M={M}"
+  ],
+  "planMove": [
+    "第 {k} 轮：{sends} → [{a}] · b=[{b}] · M={M}",
+    "Move {k}: {sends} → [{a}] · b=[{b}] · M={M}"
+  ],
+  "planSend": [
+    "机器 {i}→{j}",
+    "machine {i}→{j}"
+  ],
+  "planStatus": [
+    "已完成 {k}/{total} 轮 · 当前 [{a}] · M={M}",
+    "Completed {k}/{total} moves · Current [{a}] · M={M}"
+  ],
+  "proofA": [
+    "看 [0,0,6]：M 依次是 4→3→2→1→0，每轮恰好降 1，所以 4 轮就够，正好等于下界。第 1 轮中间机器是空的，没法往左送，但这不碍事：它要往左送的切口只有 |b₁|=2，比右边的 |b₂|=4 小，本来就不是瓶颈。下面三条说明这条规则为什么每轮都让 M 降 1。",
+    "Look at [0,0,6]: M goes 4→3→2→1→0, dropping by exactly one per move, so 4 moves suffice, matching the bound. In move 1 the middle machine is empty and cannot send left, but that does no harm: the cut it feeds has only |b₁|=2, less than |b₂|=4 on its right, so it is not the bottleneck. The three points below show why the rule lowers M by one every move."
+  ],
+  "proofB": [
+    "① 等于 M 的切口每轮都有衣服穿过。它上游那台机器不会是空的：若是空的，它的 d=−a<0，那么再往上游一条切口要搬的量还要多 a 件，就超过了 M，矛盾（最左端外侧的流量为 0，同样矛盾）。[0,0,6] 中空着的机器 2 只负责 |b₁|=2 的切口。",
+    "① Every cut at M gets a dress across it each move. The machine upstream of that cut is never empty: if it were, its d=−a<0, so the next cut further upstream would carry a more dresses, exceeding M, a contradiction (the outer boundary at the end carries 0, also a contradiction). In [0,0,6] the empty machine 2 feeds only the cut with |b₁|=2."
+  ],
+  "proofC": [
+    "② 两边都要往外送的机器，d 等于左右需求之和且 ≤M，所以最多一侧的切口等于 M；它送往较大的一侧，自己的 d 也降 1。",
+    "② A machine owing both ways has d equal to the sum of its two outflows, and d≤M, so at most one adjacent cut equals M; it sends toward the larger side, and its own d drops by one."
+  ],
+  "proofD": [
+    "③ 其他量不会升到 M：只沿必须的方向送，所有 |b| 只减不增；收到衣服的机器若还要往外送，它的 d 不超过那条外送切口的 |b|，而那条切口这一轮后 ≤M−1；只收不送的机器 d≤0。所以每轮之后新的 M 至多是原来的 M−1。M 是下界，每轮又能降 1，所以恰好 M 轮。若 a=0，件数非负意味着已全为 0。",
+    "③ Nothing else rises to M: sends follow only needed directions, so every |b| can only shrink; a receiving machine that still sends outward has d at most the |b| of its outgoing cut, which is at most M−1 after this move; a machine that only receives has d≤0. So after each move the new M is at most the old M−1. Since M is a lower bound and each move lowers it by one, exactly M moves are needed. If a=0, nonnegative counts mean everything is already 0."
   ],
   "q2": [
     "问题：处理到第 i 台以后，需要记住什么？",
@@ -191,9 +223,13 @@ window.COPY = {
     "[0] · 单台零件",
     "[0] · Single machine"
   ],
+  "p6": [
+    "[2,2,0,0] · 切口瓶颈",
+    "[2,2,0,0] · Cut"
+  ],
   "scanHint": [
-    "按“处理下一台”，比较当前卡片与表中新行。切换 [0,3,0] 与 [0,0,6]，观察分别由 d 和 |b| 决定答案。浅色边框和文字“当前”表示刚处理的项；“待处理”不是零值。",
-    "Choose “Process next machine” and compare the current card with the new ledger row. Switch between [0,3,0] and [0,0,6] to see d and |b| determine the answer respectively. A highlighted border and “Current” mark the just-processed item; “Pending” does not mean zero."
+    "按“处理下一台”，比较当前卡片与表中新行。切换 [0,3,0] 与 [2,2,0,0]，观察答案分别由 d 和 |b| 决定。浅色边框和文字“当前”表示刚处理的项；“待处理”不是零值。",
+    "Choose “Process next machine” and compare the current card with the new ledger row. Switch between [0,3,0] and [2,2,0,0] to see d and |b| determine the answer respectively. A highlighted border and “Current” mark the just-processed item; “Pending” does not mean zero."
   ],
   "prev": [
     "撤回上一台",
@@ -320,8 +356,8 @@ window.COPY = {
     "The official Python3 interface is Solution.findMinMoves(machines: list[int]) -> int. balance += surplus adds the current d to the previous prefix surplus, preserving balance = actual prefix total minus required prefix total. answer = max(...) covers both cut and sender bottlenecks. Both start at 0; the loop covers every position. The Python code does not mutate the input."
   ],
   "cost": [
-    "提交代码：sum 与主循环各访问 n 台，O(n) 时间、O(1) 辅助空间（固定数量整数）。本课为回看存储完整快照，使用 O(n²) 教学存储，不是提交空间；预设最多 3 台。浏览器只是模拟扫描；Python 在独立本地测试中执行。",
-    "Submission: sum and the loop each visit n machines, giving O(n) time and O(1) auxiliary space (a fixed number of integers). This lesson keeps full snapshots for rewind, using O(n²) teaching storage, not submission space; presets have at most 3 machines. The browser only simulates the scan; Python runs in separate local tests."
+    "提交代码：sum 与主循环各访问 n 台，O(n) 时间、O(1) 辅助空间（固定数量整数）。本课为回看存储完整快照，使用 O(n²) 教学存储，不是提交空间；预设最多 4 台。浏览器只是模拟扫描；Python 在独立本地测试中执行。",
+    "Submission: sum and the loop each visit n machines, giving O(n) time and O(1) auxiliary space (a fixed number of integers). This lesson keeps full snapshots for rewind, using O(n²) teaching storage, not submission space; presets have at most 4 machines. The browser only simulates the scan; Python runs in separate local tests."
   ],
   "boundaries": [
     "边界：单台必已相等，返回 0；全零或本来相等也返回 0；不可整除返回 -1；空数组不在官方约束中。n≤10⁴，每台≤10⁵，总数≤10⁹，Python 整数精确。负数、环形邻居和一台同轮送两件都不在模型内。",
@@ -364,7 +400,7 @@ window.COPY = {
     "Candy: why neighbor constraints need information from both sides"
   ],
   "foot": [
-    "作者自查候选；尚未独立评审，也不声称 LeetCode 提交通过。",
-    "Author self-checked candidate; independent review is pending. No accepted LeetCode submission is claimed."
+    "未声称 LeetCode 提交通过。",
+    "No accepted LeetCode submission is claimed."
   ]
 };

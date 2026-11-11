@@ -13,7 +13,7 @@ python3 -B scripts/register_leetcode_lesson.py 857 --validate-only
 Run the first three commands in order: Python generates exact-oracle fixtures
 used by the core check. Every emitting test honors OUTPUT_DIR. Without it,
 outputs go to tests/evidence. Browser uses NODE_PATH for installed Playwright and
-PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH when supplied; PREVIEW_URL overrides the
+PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH when supplied; PREVIEW_ROOT overrides the
 existing preview root. No service is started. Host platform determines native
 clipboard shortcut (Control+C on this Linux host). Clipboard permissions are
 requested only in the automated local browser context.

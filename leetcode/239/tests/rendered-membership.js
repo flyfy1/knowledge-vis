@@ -13,7 +13,7 @@ const presets=[[[1,3,-1,-3,5,3,6,7],3],[[9,1,2,3],2],[[4,4,2,4,1],3],[[-5,-2,-7]
    const page=await browser.newPage({viewport:{width,height:900}});
    page.on('pageerror',e=>errors.push(e.message));
    page.on('response',r=>{if(r.status()>=400)errors.push(`${r.status()} ${r.url()}`)});
-   await page.goto(`${process.env.PREVIEW_URL||'http://127.0.0.1:18770'}/leetcode/239/`);
+   await page.goto(`${process.env.PREVIEW_ROOT||'http://127.0.0.1:18770'}/leetcode/239/`);
    await page.waitForFunction(()=>document.querySelector('#progress').textContent.length);
    const verify=async(a,k,i,lang,phase)=>{
     const lo=Math.max(0,i-k+1), members=Array.from({length:i<0?0:i-lo+1},(_,j)=>lo+j);

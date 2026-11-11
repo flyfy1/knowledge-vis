@@ -17,7 +17,7 @@ OUTPUT_DIR=/tmp/leetcode-770-review node leetcode/770/tests/browser.cjs
 OUTPUT_DIR=/tmp/leetcode-770-review node leetcode/770/tests/inspect.cjs
 ```
 
-The scripts create OUTPUT_DIR if needed. Set NODE_PATH to the supplied browser-package directory if it is not already set. Launch respects PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH. PREVIEW_URL can override the lesson URL; the default is the provided existing preview. These checks never start a server. The main browser test's local-request assertion intentionally expects the supplied 127.0.0.1:18770 origin.
+The scripts create OUTPUT_DIR if needed. Set NODE_PATH to the supplied browser-package directory if it is not already set. Launch respects PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH. PREVIEW_ROOT (the site root) can override the preview; the default is http://127.0.0.1:18770. These checks never start a server. The main browser test's local-request assertion intentionally expects the PREVIEW_ROOT origin.
 
 Algorithm checks execute the canonical Solution.basicCalculatorIV method with its original argument/return contract and ensure eval lists are unchanged. The independent oracle uses Python AST plus raw term lists (combines only once at root); the canonical implementation instead uses recursive descent and combines each operation. Direct numeric eval independently checks generated polynomial meaning under seeded integer assignments. Every JavaScript frame is separately compared with the AST oracle for its exact consumed subexpression; sorted keys, nonzero coefficients, uniqueness and pair accounting are checked. The real browser also computes all generated cases through the actual loaded core.
 

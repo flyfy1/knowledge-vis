@@ -27,7 +27,7 @@ walk(ast);assert.deepEqual([...definitions.zh].sort(),[...definitions.en].sort()
  const browser=await chromium.launch({headless:true,executablePath:process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH});
  const page=await browser.newPage({viewport:{width:1280,height:900}}), errors=[], records=[];
  page.on('pageerror',e=>errors.push(e.message));
- const url=process.env.PREVIEW_URL||'http://127.0.0.1:18770/leetcode/315/';
+ const url=(process.env.PREVIEW_ROOT||'http://127.0.0.1:18770')+'/leetcode/315/';
  await page.goto(url);await page.waitForFunction(()=>document.querySelector('#bitRows').children.length===5);
  const includes=async(id,s)=>assert.ok((await page.locator(id).innerText()).includes(s),`${id}: missing ${s}`);
  const cells=async()=>page.locator('#bitRows tr').evaluateAll(rows=>rows.map(r=>[...r.children].map(c=>c.textContent)));

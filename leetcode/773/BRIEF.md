@@ -68,3 +68,8 @@ trace layers/edges/discovery counts. Browser tests output to EVIDENCE_DIR; both
 locales, presets, endpoints, prediction, transfer, storage, responsive/zoom and
 contrast. Record actual results separately. Author checks do not establish novice
 learning, LeetCode acceptance, independent review, or public deployment.
+
+## Revision 2026-11-11
+
+Changed by Claude Code (claude-opus-5-5) after the range-3 teaching review (/tmp/agent-tasks/leetcode/review-range-3.md). Not committed; page-provenance unaffected (no header label).
+Review: rubric B=1, A=2 — Bellman-Ford baseline nobody would try; BFS named first. Change (via tests/build_copy.py): step 2 runs the naive DFS on 123405 (loops 103425↔013425; with a seen set it reports 59 moves), asks how to rule out a 1-move route first, and introduces depth-limited retries as the correct baseline (60 calls / 23 boards for 412503; 10428 calls for 450123; 17907 for unreachable 123540). Step 3 then derives layers from "count boards, not routes" before naming BFS. Baseline code in index.html and tests/test_solution.py replaced; the test now checks the new baseline on all 720 boards and pins the quoted 59-move route and call counts. Footer status removed. Verified: test_solution.py, test_core.cjs, browser.cjs, focused.cjs pass.

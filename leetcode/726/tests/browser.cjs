@@ -9,8 +9,8 @@ function contrast(a,b){function L(h){let x=h.match(/\w\w/g).map(v=>parseInt(v,16
 (async()=>{
  const browser=await chromium.launch({headless:true,...(process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH?{executablePath:process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH}:{})});
  const context=await browser.newContext({permissions:['clipboard-read','clipboard-write'],acceptDownloads:true});const page=await context.newPage();let errors=[],bad=[],external=[];let evidence=[];
- page.on('pageerror',e=>errors.push(String(e)));page.on('response',r=>{if(r.status()>=400)bad.push([r.url(),r.status()]);});page.on('request',r=>{if(!r.url().startsWith('http://127.0.0.1:18784/')&&!r.url().startsWith('data:'))external.push(r.url());});
- await page.goto('http://127.0.0.1:18784/leetcode/726/');await page.locator('#progress').filter({hasText:'0/'}).waitFor();
+ page.on('pageerror',e=>errors.push(String(e)));page.on('response',r=>{if(r.status()>=400)bad.push([r.url(),r.status()]);});page.on('request',r=>{if(!r.url().startsWith(((process.env.PREVIEW_ROOT||'http://127.0.0.1:18770')+'/'))&&!r.url().startsWith('data:'))external.push(r.url());});
+ await page.goto(((process.env.PREVIEW_ROOT||'http://127.0.0.1:18770')+'/leetcode/726/'));await page.locator('#progress').filter({hasText:'0/'}).waitFor();
  const expected=['H2MgO2','H2O','K4N2O14S4','He','H7O5','Be12H2','H7O3'];
  for(const lang of ['en','zh']){
   await page.click(`[data-lang=${lang}]`);
@@ -74,7 +74,7 @@ function contrast(a,b){function L(h){let x=h.match(/\w\w/g).map(v=>parseInt(v,16
  const sizes=await page.locator('button').evaluateAll(els=>els.map(e=>e.getBoundingClientRect().height));assert(sizes.every(h=>h>=48));
  const colors=await page.evaluate(()=>{let s=getComputedStyle(document.documentElement);return Object.fromEntries(['bg','panel','panel2','text','muted','accent','accent2'].map(k=>[k,s.getPropertyValue('--'+k).trim()]));});let ratios={};for(const fg of ['text','muted','accent','accent2'])for(const bg of ['bg','panel','panel2']){let r=contrast(colors[fg],colors[bg]);ratios[`${fg}/${bg}`]=r;assert(r>=4.5);}assert(contrast(colors.accent2,colors.panel2)>=3);
  // Blocked storage and offline file opening both retain usable source and trace.
- const blocked=await browser.newContext();await blocked.addInitScript(()=>{Object.defineProperty(window,'localStorage',{get(){throw Error('blocked storage');}});});const bp=await blocked.newPage();await bp.goto('http://127.0.0.1:18784/leetcode/726/');await bp.click('[data-lang=zh]');await bp.click('#next');assert((await bp.locator('#progress').textContent()).includes('1/'));await blocked.close();
+ const blocked=await browser.newContext();await blocked.addInitScript(()=>{Object.defineProperty(window,'localStorage',{get(){throw Error('blocked storage');}});});const bp=await blocked.newPage();await bp.goto(((process.env.PREVIEW_ROOT||'http://127.0.0.1:18770')+'/leetcode/726/'));await bp.click('[data-lang=zh]');await bp.click('#next');assert((await bp.locator('#progress').textContent()).includes('1/'));await blocked.close();
  const offline=await browser.newPage();await offline.goto('file://'+path.join(root,'index.html'));await offline.locator('#pythonCode').waitFor({state:'attached'});assert.equal(await offline.locator('#pythonCode').textContent(),source);await offline.click('#end');assert((await offline.locator('#output').textContent()).includes('H2MgO2'));await offline.close();
  assert.deepEqual(errors,[]);assert.deepEqual(bad,[]);assert.deepEqual(external,[]);
  const report={result:'pass',browser:await browser.version(),host:process.platform,clipboardShortcut:process.platform==='darwin'?'Meta+C':'Control+C',zoom:'CSS layout zoom: 200%; not native-device evidence',copyKeys:pairs.length,evidence,contrast:ratios,focus,errors,bad,external,cssBytes:fs.statSync(path.join(root,'style.css')).size+fs.statSync(path.join(root,'../style.css')).size};assert(report.cssBytes<25000);

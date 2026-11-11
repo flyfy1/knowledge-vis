@@ -14,7 +14,7 @@
       const sx=x1+dx/d*25,sy=y1+dy/d*25,ex=x2-dx/d*30,ey=y2-dy/d*30;
       paths+=`<path class="${states[i]}" d="M${sx},${sy} Q${(x1+x2)/2+nx*bend},${(y1+y2)/2+ny*bend} ${ex},${ey}" marker-end="url(#${marker})"/>`;
     });
-    $(container).innerHTML=`<svg viewBox="0 0 320 260" role="img" aria-label="${t(container==='handGraph'?'handGraphLabel':'graphLabel')}"><defs><marker id="${marker}" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 Z"/></marker></defs>${paths}${points.map(([x,y],i)=>`<circle cx="${x}" cy="${y}" r="20"/><text x="${x}" y="${y}">${i+1}</text>`).join('')}</svg>`;
+    $(container).innerHTML=`<svg viewBox="0 0 320 260" role="img" aria-label="${t({handGraph:'handGraphLabel',tryGraph:'tryGraphLabel'}[container]||'graphLabel')}"><defs><marker id="${marker}" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 Z"/></marker></defs>${paths}${points.map(([x,y],i)=>`<circle cx="${x}" cy="${y}" r="20"/><text x="${x}" y="${y}">${i+1}</text>`).join('')}</svg>`;
   }
   function eventText(f){
     const e=f.event,edges=core.presets[preset];
@@ -31,8 +31,16 @@
     $('handCounts').textContent=t('counts',{counts:r.counts.map((c,i)=>`${i+1}: ${c}`).join(' · ')});
     $('handResult').textContent=t(r.roots.length===1?'handResult':'handNoRoot',{roots:r.roots.join(', ')||t('none'),reach:r.reach,n:edges.length,valid:t(r.valid?'valid':'invalid')});
   }
+  function renderTry(){
+    const edges=core.tryEdges,removed=Number($('tryRemove').value),r=core.inspect(edges,removed);
+    [...$('tryRemove').options].slice(1).forEach((o,i)=>o.textContent=t('remove',{edge:edgeText(edges[i])}));
+    graph('tryGraph',edges,edges.map((_,i)=>i===removed?'removed':'kept'));
+    $('tryCounts').textContent=t('counts',{counts:r.counts.map((c,i)=>`${i+1}: ${c}`).join(' · ')});
+    $('tryResult').textContent=t(r.roots.length===1?'handResult':'handNoRoot',{roots:r.roots.join(', ')||t('none'),reach:r.reach,n:edges.length,valid:t(r.valid?'valid':'invalid')});
+    $('tryCycleText').textContent=t('tryCycle',{has:t(r.cycle.length?'cycleYes':'cycleNo'),nodes:r.cycle.length?t('cycleNodes',{list:r.cycle.join(', ')}):''});
+  }
   function render(){
-    renderHand();const f=frames[index],edges=core.presets[preset];
+    renderHand();renderTry();const f=frames[index],edges=core.presets[preset];
     $('langToggle').setAttribute('aria-label',t('language'));$('stepNav').setAttribute('aria-label',t('navigation'));
     $('progress').textContent=t('progress',{k:index,total:frames.length-1,phase:t(f.event.phase)});
     $('event').textContent=eventText(f);
@@ -47,7 +55,7 @@
     if(revealed)$('feedback').textContent=t(choice===1?'correct':'incorrect')+' '+t('quizWhy');
     $('copyStatus').textContent=copyState?t(copyState):'';
   }
-  $('handRemove').addEventListener('change',renderHand);
+  $('handRemove').addEventListener('change',renderHand);$('tryRemove').addEventListener('change',renderTry);
   $('preset').addEventListener('change',()=>{preset=Number($('preset').value);index=0;frames=core.trace(core.presets[preset]);render();});
   $('prev').onclick=()=>{index=Math.max(0,index-1);render();};
   $('next').onclick=()=>{index=Math.min(frames.length-1,index+1);render();};

@@ -2,7 +2,7 @@
 // NODE_PATH supplies Playwright. OUTPUT_DIR redirects every generated artifact.
 const {chromium}=require('playwright'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
 const ROOT=path.resolve(__dirname,'..'),OUT=process.env.OUTPUT_DIR||path.join(__dirname,'evidence');fs.mkdirSync(OUT,{recursive:true});
-const BASE=process.env.PREVIEW_URL||'http://127.0.0.1:18792/leetcode/214/';
+const BASE=(process.env.PREVIEW_ROOT||'http://127.0.0.1:18770')+'/leetcode/214/';
 const source=fs.readFileSync(path.join(ROOT,'solution.py'),'utf8');
 (async()=>{
  const browser=await chromium.launch({headless:true,...(process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH?{executablePath:process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH}:{})});
@@ -11,7 +11,7 @@ const source=fs.readFileSync(path.join(ROOT,'solution.py'),'utf8');
  const page=await context.newPage(),errors=[],badAssets=[],external=[];let assertions=0;
  page.on('pageerror',e=>errors.push(String(e)));page.on('console',m=>{if(m.type()==='error')errors.push(m.text());});
  page.on('response',r=>{if(r.status()>=400)badAssets.push([r.status(),r.url()]);});
- page.on('request',r=>{if(!r.url().startsWith('http://127.0.0.1:18792/')&&!r.url().startsWith('data:'))external.push(r.url());});
+ page.on('request',r=>{if(!r.url().startsWith(((process.env.PREVIEW_ROOT||'http://127.0.0.1:18770')+'/'))&&!r.url().startsWith('data:'))external.push(r.url());});
  await page.goto(BASE);await page.waitForFunction(()=>document.querySelector('#progress').textContent.length>0);
  const snapshot=()=>page.evaluate(()=>({cells:document.querySelector('#chars').innerText,event:document.querySelector('#event').innerText,history:document.querySelector('#historyBody').innerText,progress:document.querySelector('#progress').innerText,final:document.querySelector('#final').innerText,hidden:document.querySelector('#final').hidden}));
  for(const lang of ['en','zh']){

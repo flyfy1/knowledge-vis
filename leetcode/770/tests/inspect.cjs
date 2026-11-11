@@ -1,7 +1,7 @@
 'use strict';
 const {chromium}=require('playwright'),fs=require('fs'),path=require('path'),assert=require('assert'),crypto=require('crypto');
 const ROOT=path.resolve(__dirname,'..'),OUT=process.env.OUTPUT_DIR||path.join(__dirname,'evidence');fs.mkdirSync(OUT,{recursive:true});
-const url=process.env.PREVIEW_URL||'http://127.0.0.1:18770/leetcode/770/';
+const url=(process.env.PREVIEW_ROOT||'http://127.0.0.1:18770')+'/leetcode/770/';
 (async()=>{
  const browser=await chromium.launch({headless:true,executablePath:process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH});
  try{

@@ -72,3 +72,10 @@ review material only, never runtime assets. Tests accept OUTPUT_DIR; canonical
 Python checked against independently derived edit-DP oracle plus exhaustive
 run-deletion allocations, boundaries and seeded cases. Real browser covers both
 locales, controls, widths, 200% zoom, keyboard, contrast and local requests.
+
+## Revision 2026-11-11
+
+Review (review-range-2, B=2, G=2): `shortProof` said a length-5 run has "only one class present, so M=2", false for `.....`/`!!!!!` (M=3); after the aaaB1 opening, max(M,R) and the remainder priority were announced; the deletion lab had 3 frames.
+Changes: `shortProof` rewritten in both languages (a length-5 run holds at most one class, so M≥2; both lower bounds and the construction aaaaa → aaBaaa → aaBaa1 stated). Step 02: new aaaaaa experiment (R=2, M=2; plan "break then add classes" = 4 edits vs aaBaa1 = 2) before max(M,R) is stated; `overlap` now gives the lower-bound argument and the aaaaaaaaa → aaBaa1aab check (3 edits). Step 03: new hand-allocation lab on aaa|BBBB|ccccc (D=4) where the learner spends deletions and sees R; the 1/2/3 remainder price is revealed after it (collapsible), then the priority rule. Related link Candy now points at 135#step2 (the two-direction lower bound). Learner-facing review-status footer/limits text removed.
+Changed by Claude Code (claude-opus-5-5), 2026-11-11, in the working tree (uncommitted).
+Verified: all corrected values recomputed with solution.py (aaaaaa 2, aaaaaaaaa 3, preset 24-char 5, ..... 3, aaaaa 2, quiz 6); test_solution.py (C++ edit-distance oracle), test_core.cjs, browser.cjs (now honours LESSON_BASE_URL and exercises the two new labs) pass; zh/en at 1280/390/320 inspected, no overflow or console errors.

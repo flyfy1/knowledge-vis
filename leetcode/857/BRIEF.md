@@ -74,3 +74,8 @@ all presets/endpoints, prediction branches, clipboard sentinel/fallback, widths,
 zoom, keyboard, local links/assets and calibrated contrast. Evidence under tests;
 OUTPUT_DIR allows reruns outside candidate. Preflight required before readiness.
 Review status belongs here and SELF-CHECK.md, never learner UI.
+
+## Revision 2026-11-11
+
+Changed by Claude Code (claude-opus-5-5) after the range-3 teaching review (/tmp/agent-tasks/leetcode/review-range-3.md). Not committed; page-provenance unaffected (no header label).
+Review: rubric B=1 — the sort by w/q was the first clause of the derivation. Change: new `derive` splits the AB/AC/BC bills into rate × quality sum, points out that AC and BC share C's rate and differ only in the partner's quality, and asks "if C sets the rate, whom else should we hire?"; `derive2` answers it, generalises to "for each rate r, the k smallest qualities with threshold ≤ r", and only then sorts by threshold. Verified: test_solution.py (29205 Fraction cases), test_core.cjs, browser.cjs pass; zh/en screenshots at 1280/390 show no overflow or console errors.

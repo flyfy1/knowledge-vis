@@ -21,3 +21,10 @@ Proof sketch: compare suffixes at i and j. If they first differ at k and s[i+k] 
 Simulation is a separate JavaScript model with tiny inputs (<=10); it does not execute Python. The source block, copied source, downloaded solution.py, and tests all use the canonical Python callable. The page states this boundary beside the code.
 
 Status/evidence: self-checks are in tests/evidence/SELF-CHECK.md, oracle.json, browser.json, visual-inspection.md, preflight.json, and candidate-manifest.json. Separate agent review remains pending and must not be inferred from self-checks.
+
+## Revision 2026-11-11
+
+Review found: the step-2 counterexample ("aaaa … answer aaa, substrings may overlap") was pasted from #1044 and false (answer is aaaa); the discard invariant was stated, not shown (B=1); #44 related link unrelated; quiz settled by first letter; one-sentence code mapping.
+Changes: replaced the counterexample with a real trap (zzazzb → zzb: tie on zz, decided by a<b). New step 3 derives the block discard by hand before stating the invariant: start 0 loses to start 3 at k=2; dropping one letter from both gives start 1 vs 4 and start 2 vs 5 with the same mismatch shifted, so starts i…i+k all lose. Invariant restated so that "if i <= j: i = j+1" is justified. Trace prints which block each mismatch discards and to whom; preset cababa → zzazzb. New fresh quiz cacacb → cb with four misconception options and explanations. Line-by-line mapping with a zzazzb frame and the aaaa stop case; O(n) argued with the potential i+j+k < 3n. Related link #44 → #321 step2. Step-0 mixed-language hint made bilingual.
+Changed by Claude Code (claude-opus-5-5) on 2026-11-11; not committed. Verified-By: self-check only; independent review pending.
+Verified: tests/oracle_check.py (3584 cases), tests/test_core.py (+ zzazzb, cacacb), browser-check/browser-deep/repair-regression (BASE_URL configurable) at 320/390/1280 en/zh. tests/evidence/browser.png was regenerated because the page changed.

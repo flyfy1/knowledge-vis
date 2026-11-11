@@ -22,3 +22,13 @@
 | rebalance | step 2 | move one root so heap sizes differ by at most one |
 
 Simulation is a JavaScript trace, explicitly separate from executing the canonical Python submission.
+
+## Revision 2026-11-11
+
+Review (review-range-1, B=1): two heaps announced up front with no example showing that only the two middle values matter; the trace displayed sorted arrays, not heaps; dead link to #215; zh labels mixed English; learner-facing review status.
+
+Changes: step 2 now starts from the sorted-list insertion baseline (code shown with `bisect.insort`), then draws a cut through [2,4 | 5,10], inserts 1 and 0, and asks what was actually read: only the left's largest and the right's smallest, plus at most one value crossing the cut. Heaps are named only after that observation. New `core.js` ports CPython heapq push/pop line by line; the trace shows the heap arrays `solution.py` holds after every addNum, root marked, with each step's branch and rebalance move. Quiz explanation now walks the heaps. Links: #215 removed; #4 (median as a cut), #23 (min-heap), #480 kept. Labels localized; headings no longer double-numbered; footer status removed.
+
+Verified: new `tests/test_trace.cjs` (page heap arrays and medians equal `solution.py` on 206 streams; quoted cut and quiz facts); `test_solution.py`, `test_core.js`, `browser.cjs`; no console errors or overflow at 1280/390/320 zh/en.
+
+Changed by Claude Code (claude-opus-5-5), 2026-11-11, uncommitted working-tree change.

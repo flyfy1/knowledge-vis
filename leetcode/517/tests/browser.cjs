@@ -2,7 +2,7 @@
 // Run with NODE_PATH available; artifacts can be redirected using LESSON_OUTPUT_DIR.
 const {chromium}=require('playwright');const fs=require('fs'),path=require('path'),assert=require('assert');
 const root=path.resolve(__dirname,'..'),out=process.env.LESSON_OUTPUT_DIR||path.join(__dirname,'evidence');fs.mkdirSync(out,{recursive:true});
-const url=process.env.LESSON_URL||'http://127.0.0.1:18775/leetcode/517/';
+const url=(process.env.PREVIEW_ROOT||'http://127.0.0.1:18770')+'/leetcode/517/';
 const source=fs.readFileSync(path.join(root,'solution.py'),'utf8');
 (async()=>{const browser=await chromium.launch({headless:true,...(process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH?{executablePath:process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH}:{})});
 const context=await browser.newContext({permissions:['clipboard-read','clipboard-write'],acceptDownloads:true,viewport:{width:1440,height:1000}});
@@ -14,7 +14,9 @@ for(const lang of ['en','zh']){
  for(let i=1;i<=3;i++){await page.locator('#moveNext').click();assert.equal(await page.locator('#moveHistory li').count(),i+1);}
  assert(await page.locator('#moveNext').isDisabled());assert.match(await page.locator('#moveStatus').textContent(),/2,2,2/);
  const hand=await page.locator('#moveHistory').textContent();await page.locator('#movePrev').click();await page.locator('#moveNext').click();assert.equal(await page.locator('#moveHistory').textContent(),hand);await page.locator('#moveReset').click();assert(await page.locator('#movePrev').isDisabled());await page.locator('#moveEnd').click();
- for(let p=0;p<6;p++){
+ // Proof schedule: M drops by one per move and the final row is balanced.
+ for(let q=0;q<4;q++){await page.selectOption('#planPreset',String(q));const st=await page.evaluate(()=>plan.states);assert(await page.locator('#planPrev').isDisabled());for(let k=1;k<st.length;k++){await page.locator('#planNext').click();assert.equal(st[k].M,st[k-1].M-1);assert.match(await page.locator('#planHistory li').last().textContent(),new RegExp('M='+st[k].M+'$'));}assert(await page.locator('#planNext').isDisabled());assert.equal(await page.locator('#planHistory li').count(),st.length);assert.match(await page.locator('#planStatus').textContent(),/M=0/);await page.locator('#planReset').click();}
+ for(let p=0;p<7;p++){
   await page.selectOption('#preset',String(p));assert(await page.locator('#prev').isDisabled());
   const values=await page.evaluate(()=>model.a),target=values.reduce((a,b)=>a+b,0)/values.length;
   if(p===3){assert(await page.locator('#next').isDisabled());assert.match(await page.locator('#event').textContent(),/-1/);}
@@ -25,7 +27,7 @@ for(const lang of ['en','zh']){
     const prefix=values.slice(0,k).reduce((a,b)=>a+b,0)-k*target;assert.equal(cells[2],String(values[k-1]-target));assert.equal(cells[3],`${prefix-values[k-1]+target} → ${prefix}`);
     assert.equal(await page.locator('#scanMachines .current').count(),1);
    }
-   assert(await page.locator('#next').isDisabled());assert.match(await page.locator('#event').textContent(),new RegExp(lang==='en'?`final minimum ${[3,2,4,-1,0,0][p]} moves`:`最终最少 ${[3,2,4,-1,0,0][p]} 轮`));assert(!/\{\w+\}/.test(await page.locator('#event').textContent()));const endpoint=await page.locator('#ledger').textContent();
+   assert(await page.locator('#next').isDisabled());assert.match(await page.locator('#event').textContent(),new RegExp(lang==='en'?`final minimum ${[3,2,4,-1,0,0,2][p]} moves`:`最终最少 ${[3,2,4,-1,0,0,2][p]} 轮`));assert(!/\{\w+\}/.test(await page.locator('#event').textContent()));const endpoint=await page.locator('#ledger').textContent();
    await page.locator('#prev').click();await page.locator('#next').click();assert.equal(await page.locator('#ledger').textContent(),endpoint);
    await page.locator('#reset').click();assert.equal(await page.locator('#ledger tr').count(),0);await page.locator('#end').click();assert.equal(await page.locator('#ledger').textContent(),endpoint);
    await page.locator('#position').fill('0');assert.equal(await page.locator('#ledger tr').count(),0);
@@ -36,7 +38,7 @@ for(const lang of ['en','zh']){
   const text=await page.locator('#feedback').textContent();assert.match(text,/2/);if(c===2)assert.match(text,lang==='en'?/Correct\./:/正确/);
  }
  const selected=await page.locator('[name=prediction]:checked').inputValue();await page.locator(`[data-lang=${lang==='en'?'zh':'en'}]`).click();assert.equal(await page.locator('[name=prediction]:checked').inputValue(),selected);assert(await page.locator('#feedback').isVisible());await page.locator(`[data-lang=${lang}]`).click();
- const formula=await page.locator('[data-i18n=formula]').textContent();assert(formula.includes('maxᵢ ( |bᵢ|, dᵢ )')&&formula.includes('d₁+…+dᵢ'));report.push({lang,formula,quiz:await page.locator('#feedback').textContent(),presets:6});
+ const formula=await page.locator('[data-i18n=formula]').textContent();assert(formula.includes('maxᵢ ( |bᵢ|, dᵢ )')&&formula.includes('d₁+…+dᵢ'));report.push({lang,formula,quiz:await page.locator('#feedback').textContent(),presets:7});
  await page.locator('#sourceDetails summary').click();assert.equal(await page.locator('#pythonCode').textContent(),source);await page.locator('#copy').click();assert.equal(await page.evaluate(()=>navigator.clipboard.readText()),source);
  const download=page.waitForEvent('download');await page.locator('[download]').click();const file=await download;assert.equal(fs.readFileSync(await file.path(),'utf8'),source);
  await page.locator('#sourceDetails summary').click();
@@ -70,7 +72,7 @@ await page.setViewportSize({width:390,height:844});await page.goto(url);await pa
 for(const zoomLang of ['en','zh']){await page.locator(`[data-lang=${zoomLang}]`).click();await page.setViewportSize({width:780,height:1000});await page.evaluate(()=>document.documentElement.style.zoom='2');await page.selectOption('#preset','1');await page.locator('#end').click();await page.locator('#step2').scrollIntoViewIfNeeded();assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));await page.locator('#step2 .stage').screenshot({style:'.step-nav{visibility:hidden}',path:path.join(out,`scan-${zoomLang}-200percent.png`)});await page.evaluate(()=>document.documentElement.style.zoom='');}
 // Storage denial and offline source initialization.
 const blocked=await browser.newContext({viewport:{width:390,height:844},offline:false});await blocked.addInitScript(()=>{Object.defineProperty(window,'localStorage',{get(){throw new Error('storage denied');}});});const bp=await blocked.newPage();bp.on('pageerror',e=>errors.push(e.message));await bp.goto(url);await bp.locator('[data-lang=zh]').click();await bp.locator('#next').click();await bp.locator('[data-lang=en]').click();assert.equal(await bp.locator('#ledger tr').count(),1);await blocked.setOffline(true);assert.equal(await bp.locator('#pythonCode').textContent(),source);
-assert.deepEqual(errors,[]);assert(requests.every(u=>u.startsWith('http://127.0.0.1:18775/')));
+assert.deepEqual(errors,[]);assert(requests.every(u=>u.startsWith(new URL(url).origin+'/')));
 fs.writeFileSync(path.join(out,'browser-results.json'),JSON.stringify({report,contrast,focus,errors,requests,checks:['Both locales and all presets','Schedule and scan rewind/reset/end','Every prediction option, change clears feedback, locale preserves reveal','Clipboard actual readback, denial selection, download bytes','Links and deep anchors','Keyboard and focus','320/390/736/1440 and 200% CSS layout zoom','Blocked storage, source available offline'],zoomMethod:'200% CSS layout zoom at 780px; no claim of real-device or OS zoom testing'},null,2));
 await browser.close();console.log('PASS: real Chromium bilingual interactions, clipboard/download parity, responsive screenshots, contrast');
 })().catch(e=>{console.error(e);process.exit(1);});

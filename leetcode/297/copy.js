@@ -1,294 +1,82 @@
 const COPY={
-  "back": [
-    "← 知识索引",
-    "← Knowledge index"
-  ],
-  "meta": [
-    "LeetCode Hard · 算法",
-    "LeetCode Hard · Algorithms"
-  ],
-  "title": [
-    "#297 · 序列化和反序列化二叉树",
-    "#297 · Serialize and Deserialize Binary Tree"
-  ],
-  "tagline": [
-    "用一个可逆的前序串，保留每个空孩子的位置。",
-    "Keep every child position with one reversible preorder string."
-  ],
-  "official": [
-    "查看官方题目 ↗",
-    "Open official problem ↗"
-  ],
-  "s0": [
-    "01 先看形状",
-    "01 See the shape"
-  ],
-  "s1": [
-    "02 逐 token 解码",
-    "02 Decode one token"
-  ],
-  "s2": [
-    "03 不变量",
-    "03 The invariant"
-  ],
-  "s3": [
-    "04 先预测",
-    "04 Predict first"
-  ],
-  "s4": [
-    "05 对照代码",
-    "05 Map to code"
-  ],
-  "statement": [
-    "这道题要把二叉树变成字符串，再从字符串恢复完全相同的结构。小树 [1,2,3,null,null,4,5] 的关键不是数值，而是两个空孩子的位置。",
-    "Serialize a binary tree to a string, then recover exactly the same structure. In [1,2,3,null,null,4,5], the hard part is preserving the two missing-child positions."
-  ],
-  "handTitle": [
-    "手算一个最小例子",
-    "Calculate a tiny case"
-  ],
-  "hand": [
-    "前序（根 → 左 → 右）访问 1, 2 后，2 的左右孩子都为空，所以写成 1,2,#,#；再访问 3,4,#,#,5,#,#。完整串是 1,2,#,#,3,4,#,#,5,#,#。每个 # 都占据一个孩子位置。",
-    "Preorder means root → left → right. After visiting 1,2, both children of 2 are empty, so we write 1,2,#,#; then 3,4,#,#,5,#,#. The full string is 1,2,#,#,3,4,#,#,5,#,#. Each # occupies a child position."
-  ],
-  "baselineTitle": [
-    "容易踩的坑",
-    "A tempting wrong approach"
-  ],
-  "baseline": [
-    "只写 1,2,3,4,5 会让 [1,2,3,null,null,4,5] 与另一棵树共享同一串；值不等于形状。",
-    "Writing only 1,2,3,4,5 makes [1,2,3,null,null,4,5] collide with another shape. Values do not encode positions."
-  ],
-  "constraints": [
-    "官方约束：节点数 0–10^4，值 -1000–1000。",
-    "Official constraints: 0–10^4 nodes, values -1000..1000."
-  ],
-  "derive": [
-    "解码从串的左端开始。读到数字就创建节点；读到 # 就返回空子树。创建数字后，必须先完整读完左子树，再读右子树。",
-    "Decoding starts at the left edge. A number creates a node; # returns an empty subtree. After a number, consume the complete left subtree before the right subtree."
-  ],
-  "cursor": [
-    "cursor 是下一个未读 token 的下标。每一步只消费一个 token，账本显示“读前 → 读后”。",
-    "The cursor is the index of the next unread token. Each step consumes one token; the ledger shows before → after."
-  ],
-  "task": [
-    "把光标沿着同一个串移动，观察已消费前缀如何确定树的形状。",
-    "Move through one string and watch the consumed prefix determine the tree shape."
-  ],
-  "simulation": [
-    "这是教学模拟，不执行下方 Python；树和账本来自同一份确定性 trace。",
-    "This is a teaching simulation, not execution of the Python below; tree and ledger come from one deterministic trace."
-  ],
-  "preset": [
-    "示例树",
-    "Tree preset"
-  ],
-  "p0": [
-    "[1,2,3,null,null,4,5]",
-    "[1,2,3,null,null,4,5]"
-  ],
-  "p1": [
-    "只有根 [8]",
-    "Root only [8]"
-  ],
-  "p2": [
-    "空树 []",
-    "Empty []"
-  ],
-  "p3": [
-    "左链 [1,2,null,null]",
-    "Left chain [1,2,null,null]"
-  ],
-  "p4": [
-    "负值 [-1,0,2]",
-    "Negative values [-1,0,2]"
-  ],
-  "custom": [
-    "也可输入逗号 token，例如 1,2,#,#,3,#,#。",
-    "You can also enter tokens, e.g. 1,2,#,#,3,#,#."
-  ],
-  "apply": [
-    "应用 token 串",
-    "Apply tokens"
-  ],
-  "prev": [
-    "上一步",
-    "Previous"
-  ],
-  "next": [
-    "下一 token",
-    "Next token"
-  ],
-  "reset": [
-    "重置",
-    "Reset"
-  ],
-  "progress": [
-    "已消费 {i}/{n} 个 token",
-    "Consumed {i}/{n} tokens"
-  ],
-  "treeTitle": [
-    "当前递归结果",
-    "Current recursive result"
-  ],
-  "tokens": [
-    "Token 串",
-    "Token string"
-  ],
-  "ledger": [
-    "递归账本",
-    "Recursive ledger"
-  ],
-  "before": [
-    "读前 cursor={i}",
-    "before cursor={i}"
-  ],
-  "after": [
-    "读后 cursor={i}",
-    "after cursor={i}"
-  ],
-  "read": [
-    "读到 {token}",
-    "Read {token}"
-  ],
-  "node": [
-    "创建 TreeNode({v})",
-    "Create TreeNode({v})"
-  ],
-  "empty": [
-    "返回 None（空子树）",
-    "Return None (empty subtree)"
-  ],
-  "done": [
-    "串已读完；根为 {root}",
-    "String consumed; root is {root}"
-  ],
-  "invalid": [
-    "请输入合法 token 串。",
-    "Enter a valid token string."
-  ],
-  "quizQuestion": [
-    "下一 token 是 # 时，递归会做什么？",
-    "When the next token is #, what does recursion do?"
-  ],
-  "option0": [
-    "创建值为 # 的节点",
-    "Create a node whose value is #"
-  ],
-  "option1": [
-    "返回空子树，并消费这个位置",
-    "Return an empty subtree and consume this position"
-  ],
-  "option2": [
-    "跳过它但不移动 cursor",
-    "Skip it without moving the cursor"
-  ],
-  "reveal": [
-    "揭晓",
-    "Reveal"
-  ],
-  "correct": [
-    "正确。",
-    "Correct."
-  ],
-  "incorrect": [
-    "还差一步。",
-    "Not quite."
-  ],
-  "explainAnswer": [
-    "“#” 明确表示当前子树为空；它既消费一个 token，也让父节点知道这个孩子存在但没有节点。",
-    "“#” explicitly means the current subtree is empty; it consumes one token and tells the parent that this child position has no node."
-  ],
-  "proof": [
-    "不变量：build() 返回时，恰好消费了一个完整子树的 token，并把 cursor 停在下一个兄弟子树。数字 token 的后面必然跟着左子树和右子树各自的完整编码；# 本身就是空子树的完整编码。",
-    "Invariant: when build() returns, it has consumed exactly one complete subtree encoding, and the cursor points to the next sibling subtree. A number is followed by complete encodings for left and right; # is itself a complete empty encoding."
-  ],
-  "proof2": [
-    "因此同一串不会有两种树：根 token 决定根，随后两个完整子串分别决定左、右。反例是删除 #：不同形状会碰撞。",
-    "So one string cannot describe two trees: the root token fixes the root, then two complete substrings fix left and right. Remove # and different shapes collide."
-  ],
-  "mapping": [
-    "代码映射",
-    "Code mapping"
-  ],
-  "map1": [
-    "serialize：用 pending 栈取节点；空节点写 #，非空节点写值，并把 right、left 压栈，保证前序。",
-    "serialize: pop from a pending stack; write # for an empty node, otherwise write its value and push right then left for preorder."
-  ],
-  "map2": [
-    "deserialize：pending 栈保存尚未填的父节点孩子位置；每个 token 填一个位置，数字创建节点并把它的 right、left 位置压栈。",
-    "deserialize: a pending stack holds open parent-child slots; each token fills one slot, and a number creates a node then pushes its right and left slots."
-  ],
-  "map3": [
-    "边界：空树序列化为 #；负值通过 int(token) 保留。",
-    "Boundaries: an empty tree serializes to #; int(token) preserves negative values."
-  ],
-  "complexity": [
-    "若 n 个节点，字符串有 2n+1 个 token；时间 O(n)，显式 pending 栈最多 O(n)，另有 O(n) 输入/输出存储；因此即使树高达到官方上限也不会依赖 Python 递归深度。",
-    "For n nodes there are 2n+1 tokens; O(n) time, an explicit pending stack of O(n) plus O(n) input/output storage, so the official height limit does not depend on Python recursion depth."
-  ],
-  "copy": [
-    "复制 Python",
-    "Copy Python"
-  ],
-  "download": [
-    "下载 solution.py",
-    "Download solution.py"
-  ],
-  "fallback": [
-    "复制失败时可从这里选择文本",
-    "If copy is blocked, select the text here"
-  ],
-  "fullCode": [
-    "显示完整 canonical source",
-    "Show full canonical source"
-  ],
-  "verifyTitle": [
-    "独立验证",
-    "Independent checks"
-  ],
-  "verify": [
-    "tests/ 下执行了 round-trip、空树、负值、单链和多棵小树的独立 oracle 检查。页面 trace 仍是模拟。",
-    "tests/ runs round-trip, empty, negative, chain, and small-tree oracle checks. The page trace remains a simulation."
-  ],
-  "related": [
-    "相关概念",
-    "Related concepts"
-  ],
-  "related0": [
-    "树遍历：前序步骤 ↗",
-    "Tree traversal: preorder step ↗"
-  ],
-  "related1": [
-    "队列与层序遍历 ↗",
-    "Queue and level order ↗"
-  ],
-  "foot": [
-    "双语交互 · 本页仅解释与验证，不代表已提交 LeetCode",
-    "Bilingual interactive · explanation and verification only; no LeetCode submission claimed"
-  ],
-  "copied": [
-    "已复制",
-    "Copied"
-  ],
-  "copyFallback": [
-    "浏览器不允许直接复制，请使用下方文本",
-    "Clipboard blocked; use the text area below"
-  ],
-  "customLabel": [
-    "自定义串",
-    "Custom string"
-  ],
-  "traceStart": [
-    "从 cursor=0 开始",
-    "Start at cursor=0"
-  ],
-  "traceHint": [
-    "按“下一 token”观察每个 token 如何落到树上。",
-    "Press “Next token” to see where each token lands."
-  ],
-  "docTitle": [
-    "#297 · 序列化和反序列化二叉树",
-    "#297 · Serialize and Deserialize Binary Tree"
-  ]
+  "docTitle": ["#297 · 序列化和反序列化二叉树", "#297 · Serialize and Deserialize Binary Tree"],
+  "back": ["← 知识索引", "← Knowledge index"],
+  "meta": ["LeetCode Hard · 算法", "LeetCode Hard · Algorithms"],
+  "title": ["#297 · 序列化和反序列化二叉树", "#297 · Serialize and Deserialize Binary Tree"],
+  "tagline": ["先看只写数值为什么会丢掉形状，再用 # 把每个空孩子的位置写进前序串。", "See why writing values alone loses the shape, then write every empty child position into a preorder string with #."],
+  "official": ["查看官方题目 ↗", "Open official problem ↗"],
+  "s0": ["只写数值够吗？", "Are values enough?"],
+  "s1": ["逐 token 解码", "Decode one token at a time"],
+  "s2": ["为什么不会解错", "Why decoding cannot go wrong"],
+  "s3": ["先预测", "Predict first"],
+  "s4": ["对照代码", "Map to code"],
+  "statement": ["这道题要把二叉树变成字符串，再从字符串恢复完全相同的结构（值和左右位置都一样）。例子是 [1,2,3,null,null,4,5]：1 的左孩子 2 没有孩子，右孩子 3 有左孩子 4、右孩子 5。", "Serialize a binary tree to a string, then recover exactly the same structure (the same values in the same left/right positions). The example is [1,2,3,null,null,4,5]: 1’s left child 2 has no children; its right child 3 has left child 4 and right child 5."],
+  "constraints": ["官方约束：节点数 0–10^4，值 -1000–1000。", "Official constraints: 0–10^4 nodes, values -1000..1000."],
+  "naiveTitle": ["先试最简单的：只写数值", "Try the simplest thing first: values only"],
+  "naive": ["按前序（根 → 左子树 → 右子树）只写数值，例子得到 1,2,3,4,5。问题：你能画出另一棵树，也写成 1,2,3,4,5 吗？", "Write only the values in preorder (root → left subtree → right subtree). The example gives 1,2,3,4,5. Question: can you draw a different tree that also writes as 1,2,3,4,5?"],
+  "naiveAnswer": ["能：一条一直向左的链 1→2→3→4→5（每个节点是上一个的左孩子），前序同样是 1,2,3,4,5。两棵树的差别在哪里？原树里 2 没有孩子，读完 2 应该回到 1 的右边；链里 2 的左孩子是 3。串里没有任何记号说明“2 的子树到这里结束”。丢掉的正是空孩子的位置。", "Yes: a chain that always goes left, 1→2→3→4→5 (each node the left child of the previous one), also has preorder 1,2,3,4,5. Where do the two trees differ? In the original, 2 has no children, so after 2 we should return to 1’s right side; in the chain, 2’s left child is 3. Nothing in the string says “2’s subtree ends here”. What was lost is the position of the empty children."],
+  "handTitle": ["补上空位置：每个空孩子写一个 #", "Restore the positions: one # per empty child"],
+  "hand": ["前序访问 1, 2 后，2 的左右孩子都为空，写成 1,2,#,#；再访问 3,4,#,#,5,#,#。完整串是 1,2,#,#,3,4,#,#,5,#,#。左链则写成 1,2,3,4,5,#,#,#,#,#,#——两串不同了。n 个节点共有 2n 个孩子位置，其中 n−1 个被边占用，所以恰好有 n+1 个 #，总共 2n+1 个 token。", "Preorder visits 1, 2; both children of 2 are empty, so write 1,2,#,#; then 3,4,#,#,5,#,#. The full string is 1,2,#,#,3,4,#,#,5,#,#. The left chain now writes as 1,2,3,4,5,#,#,#,#,#,#, so the two strings differ. n nodes have 2n child positions, n−1 of them used by edges, so there are exactly n+1 # markers and 2n+1 tokens in total."],
+  "derive": ["解码时从左往右读。最自然的说法是递归：build() 读一个 token；是 # 就返回空子树；是数字就创建节点，然后 node.left = build()，node.right = build()。但一条 10^4 个节点的链会让递归深达 10^4 层，超过 Python 默认的递归上限（约 1000）。", "Decode left to right. The most natural statement is recursive: build() reads one token; # returns an empty subtree; a number creates a node, then node.left = build() and node.right = build(). But a chain of 10^4 nodes would recurse 10^4 levels deep, beyond Python’s default recursion limit (about 1000)."],
+  "stackIdea": ["问题：递归在任一时刻“还欠着”什么？刚创建 2 时，它接下来要填 2 的左孩子，然后 2 的右孩子，然后回到 1 的右孩子。把这份待办写成一个栈：栈顶是下一个要填的孩子位置（记作 2.L 表示“2 的左孩子位置”）。每个 token 弹出栈顶并填进去：# 让这个位置留空；数字创建节点，并压入它的 .R 再压 .L（.L 在顶，所以先填左边，和递归顺序一样）。这就是 solution.py 的 pending 栈。", "Question: at any moment, what does the recursion still owe? Right after creating 2, it must fill 2’s left child, then 2’s right child, then go back to 1’s right child. Write that to-do list as a stack: the top is the next child position to fill (2.L means “2’s left-child position”). Each token pops the top and fills it: # leaves the position empty; a number creates a node and pushes its .R then its .L (.L ends on top, so the left side is filled first, as in the recursion). This is the pending stack in solution.py."],
+  "cursor": ["cursor 是下一个未读 token 的下标。每一步只消费一个 token，账本记录它填了哪个位置。", "The cursor is the index of the next unread token. Each step consumes one token; the ledger records which position it filled."],
+  "task": ["选“左链”预设和第一个预设对比：两串开头都是 1,2，第三个 token 决定 2.L 是节点还是空。", "Compare the “left chain” preset with the first one: both start 1,2, and the third token decides whether 2.L is a node or empty."],
+  "simulation": ["这个追踪用 JavaScript 按 solution.py 中 deserialize 的同一步骤执行：同一个 pending 栈、同样先压右再压左。", "This trace runs the same steps as deserialize in solution.py, in JavaScript: the same pending stack, pushing right before left."],
+  "preset": ["示例串", "Token-string preset"],
+  "p0": ["[1,2,3,null,null,4,5]", "[1,2,3,null,null,4,5]"],
+  "p1": ["只有根 [8]", "Root only [8]"],
+  "p2": ["空树 []", "Empty []"],
+  "p3": ["左链 [1,2]", "Left chain [1,2]"],
+  "p4": ["负值 [-1,0,2]", "Negative values [-1,0,2]"],
+  "p5": ["左链 1→2→3→4→5", "Left chain 1→2→3→4→5"],
+  "customLabel": ["自定义串", "Custom string"],
+  "custom": ["也可输入逗号 token，例如 1,2,#,#,3,#,#。", "You can also enter tokens, e.g. 1,2,#,#,3,#,#."],
+  "apply": ["应用 token 串", "Apply tokens"],
+  "prev": ["上一步", "Previous"],
+  "next": ["下一 token", "Next token"],
+  "reset": ["重置", "Reset"],
+  "progress": ["已消费 {i}/{n} 个 token", "Consumed {i}/{n} tokens"],
+  "treeTitle": ["已建出的形状（前序；L/R = 左/右孩子，∅ = 空位置）", "Shape built so far (preorder; L/R = left/right child, ∅ = empty position)"],
+  "pendingTitle": ["pending 栈（栈顶在左）", "pending stack (top on the left)"],
+  "pendingEmpty": ["（空：所有位置都已填好）", "(empty: every position is filled)"],
+  "tokens": ["Token 串", "Token string"],
+  "ledger": ["填位置账本", "Slot-filling ledger"],
+  "before": ["读前 cursor={i}", "before cursor={i}"],
+  "after": ["读后 cursor={i}", "after cursor={i}"],
+  "evRoot": ["读 {token} → 创建根，压入 {token}.R、{token}.L", "Read {token} → create the root, push {token}.R, {token}.L"],
+  "evRootEmpty": ["读 # → 整棵树为空", "Read # → the whole tree is empty"],
+  "evNode": ["读 {token} → 弹出 {slot}，放入新节点，压入 {token}.R、{token}.L", "Read {token} → pop {slot}, put a new node there, push {token}.R, {token}.L"],
+  "evEmpty": ["读 # → 弹出 {slot}，该位置留空", "Read # → pop {slot}, leave that position empty"],
+  "done": ["串已读完；根为 {root}", "String consumed; root is {root}"],
+  "invalid": ["这个 token 串不是合法的编码（token 不够、多余或不是整数）。", "This token string is not a valid encoding (too few tokens, extra tokens, or a non-integer)."],
+  "traceHint": ["按“下一 token”观察每个 token 填进哪个位置、栈怎样变化。", "Press “Next token” to see which position each token fills and how the stack changes."],
+  "invariantTitle": ["不变量", "Invariant"],
+  "proof": ["不变量：读完前 k 个 token 后，pending 栈从顶到底，正好列出递归版本接下来要填的孩子位置，按它填的顺序排列。开始时（读根之后）是 [根.L, 根.R]；读到数字时，递归会先完整建它的左子树、再建右子树，然后才回到更早欠下的位置——压入 .R、.L 正好把这两个位置放在所有旧位置之前；读到 # 时，递归直接返回，这个位置就填好了，弹出即可。", "Invariant: after reading the first k tokens, the pending stack, top to bottom, lists exactly the child positions the recursive version will fill next, in the order it fills them. At the start (after the root) it is [root.L, root.R]. On a number, the recursion builds the new node’s whole left subtree, then its right subtree, before returning to older positions; pushing .R then .L puts those two positions ahead of every older one. On #, the recursion returns at once, so the position is filled and popping it is all that is needed."],
+  "proof2": ["因此一个串只能解出一棵树：每个 token 填哪个位置是由前面的 token 唯一决定的。栈恰好在最后一个 token 时变空——这也是为什么有 n+1 个 #：每个数字净增一个待填位置（弹 1 压 2），每个 # 净减一个。去掉 #，第三个 token 就无法区分“3 是 2 的左孩子”还是“3 是 1 的右孩子”，形状随之碰撞。", "So one string decodes to only one tree: which position each token fills is decided uniquely by the tokens before it. The stack empties exactly at the last token, which is also why there are n+1 markers: each number adds one open position on balance (pop 1, push 2), and each # removes one. Without #, the third token cannot tell “3 is 2’s left child” from “3 is 1’s right child”, and shapes collide."],
+  "quizQuestion": ["串 1,2,#,#,3,#,# 已读到 1,2，栈为 [2.L, 2.R, 1.R]。下一个 token 是 #，会发生什么？", "The string 1,2,#,#,3,#,# has been read through 1,2, and the stack is [2.L, 2.R, 1.R]. The next token is #. What happens?"],
+  "option0": ["创建值为 # 的节点放在 2.L", "Create a node whose value is # at 2.L"],
+  "option1": ["弹出 2.L 并让它留空；栈变成 [2.R, 1.R]", "Pop 2.L and leave it empty; the stack becomes [2.R, 1.R]"],
+  "option2": ["跳过它，栈不变", "Skip it; the stack stays the same"],
+  "reveal": ["揭晓", "Reveal"],
+  "correct": ["正确。", "Correct."],
+  "incorrect": ["还差一步。", "Not quite."],
+  "explainAnswer": ["# 表示“这个位置的子树为空”。它消费一个 token，也填好一个位置：2.L 被弹出并留空。下一个 # 填 2.R，然后 3 才落到 1.R。若不弹出，后面的 3 会错放到 2 下面。", "# means “the subtree at this position is empty”. It consumes one token and fills one position: 2.L is popped and left empty. The next # fills 2.R, and only then does 3 land at 1.R. Without the pop, the 3 would be misplaced under 2."],
+  "mapping": ["代码映射", "Code mapping"],
+  "map1": ["serialize：同样用栈做前序。弹出一个节点；空节点写 #，非空写值，并先压 right 再压 left，让 left 先被弹出——与解码顺序一致。", "serialize: preorder with a stack as well. Pop a node; write # for an empty node, otherwise write its value and push right before left so left pops first, matching the decoding order."],
+  "map2": ["deserialize：pending 里存 (parent, 'left'/'right') 位置；每个 token 弹出一个位置，# 时 continue（留空），数字时 setattr 挂上新节点并压入它的 right、left 位置。", "deserialize: pending holds (parent, 'left'/'right') positions; each token pops one, # does continue (leave it empty), a number attaches a new node with setattr and pushes its right and left positions."],
+  "map3": ["边界：空树序列化为 #，解码时第一个 token 是 # 就返回 None；负值通过 int(token) 保留。", "Boundaries: an empty tree serializes to #, and decoding returns None when the first token is #; int(token) preserves negative values."],
+  "complexity": ["n 个节点有 2n+1 个 token；每个 token 只被压栈、弹栈各一次，时间 O(n)；栈最多 O(n)，另有 O(n) 输入/输出存储。没有递归，所以 10^4 个节点的链也不会触到 Python 的递归上限。", "n nodes give 2n+1 tokens; each is pushed and popped once, so time is O(n); the stack holds at most O(n), plus O(n) input/output storage. There is no recursion, so a 10^4-node chain never reaches Python’s recursion limit."],
+  "copy": ["复制 Python", "Copy Python"],
+  "download": ["下载 solution.py", "Download solution.py"],
+  "fallback": ["复制失败时可从这里选择文本", "If copy is blocked, select the text here"],
+  "fullCode": ["显示完整 canonical source", "Show full canonical source"],
+  "verifyTitle": ["独立验证", "Independent checks"],
+  "verify": ["tests/ 下执行了 round-trip、空树、负值、单链（含 10^4 个节点）和多棵小树的检查。", "tests/ runs round-trip, empty, negative, chain (including 10^4 nodes) and small-tree checks."],
+  "related": ["相关概念", "Related concepts"],
+  "related0": ["#1028：用栈从前序串还原树 ↗", "#1028: rebuild a tree from a preorder string with a stack ↗"],
+  "related1": ["#124：每次调用返回一棵完整子树的结果 ↗", "#124: each call returns the result for one complete subtree ↗"],
+  "foot": ["双语交互 · 本页仅解释与验证，不代表已提交 LeetCode", "Bilingual interactive · explanation and verification only; no LeetCode submission claimed"],
+  "copied": ["已复制", "Copied"],
+  "copyFallback": ["浏览器不允许直接复制，请使用下方文本", "Clipboard blocked; use the text area below"],
+  "traceStart": ["从 cursor=0 开始", "Start at cursor=0"]
 };

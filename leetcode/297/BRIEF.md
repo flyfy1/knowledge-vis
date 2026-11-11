@@ -30,3 +30,13 @@ Learning loop: calculate a tiny tree by hand → watch preorder tokens and curso
 Simulation note: the moving tree/token ledger is a deterministic simulation for teaching. It does not execute the embedded Python source. Independent Python tests execute the canonical source.
 
 Design tokens: shared dark canvas/surface, cyan accent, orange action, 48px controls, system fonts, no external assets. P0 = readable bilingual flow, visible accumulated token history, prediction/reveal, source parity; P1 = responsive tree layout and focus states; P2/deferred = animation beyond stepwise transitions.
+
+## Revision 2026-11-11
+
+Review (review-range-1, A=1, B=1): no naive attempt; the prose described a recursive `build()` while the code uses an explicit stack, never reconciled; dead links to #144 and #102; proof printed twice.
+
+Changes: step 1 now tries values-only preorder first and asks for a second tree with the same string (the left chain 1→2→3→4→5), names what was lost (empty-child positions), then adds `#` and counts n+1 markers / 2n+1 tokens. Step 2 states the recursive decoder, notes the 10^4-deep recursion problem, and derives the `pending` stack as "what the recursion still owes"; `core.js` now runs `deserialize` step for step and the page shows the open-slot stack and an L/R-labelled shape. Step 3 states the stack invariant (stack = positions the recursion fills next) and uniqueness. Quiz asks what `#` does to the stack. Links → #1028 and #124.
+
+Verified: new `tests/test_trace.cjs` (page decode = `solution.py` on 300 random trees, stack empty at end, 2n+1 tokens, invalid strings rejected, quiz stack facts); `test_solution.py` incl. 10^4 chain; `browser-check.js` (screenshots to scratch); no console errors or overflow at 1280/390/320 zh/en.
+
+Changed by Claude Code (claude-opus-5-5), 2026-11-11, uncommitted working-tree change.

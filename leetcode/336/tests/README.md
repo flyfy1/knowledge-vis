@@ -9,7 +9,7 @@ node leetcode/336/tests/browser.cjs
 python3 -B scripts/register_leetcode_lesson.py 336 --validate-only
 ```
 
-All three test runners accept `LESSON_OUTPUT_DIR` to redirect generated evidence without changing the frozen candidate. Browser tests additionally accept `LESSON_PREVIEW_URL` (default `http://127.0.0.1:18770/leetcode/336/`). They use `NODE_PATH` for installed Playwright/acorn and `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH` when set. They start no server. Example isolated evidence rerun:
+All three test runners accept `LESSON_OUTPUT_DIR` to redirect generated evidence without changing the frozen candidate. Browser tests additionally accept `PREVIEW_ROOT`, the site root (default `http://127.0.0.1:18770`). They use `NODE_PATH` for installed Playwright/acorn and `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH` when set. They start no server. Example isolated evidence rerun:
 
 ```sh
 LESSON_OUTPUT_DIR=/tmp/lesson336-review python3 -B leetcode/336/tests/test_solution.py

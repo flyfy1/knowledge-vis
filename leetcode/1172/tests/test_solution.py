@@ -27,3 +27,17 @@ for seed in range(30):
   else:got.append(d.popAtStack(*args))
  assert got==oracle(cap,ops),(seed,got,oracle(cap,ops))
 print('30 seeded traces passed')
+# Fresh scene from step 3 and the heap walk quoted in step 4.
+d=DinnerPlates(2)
+for v in (7,8,9): d.push(v)
+assert d.popAtStack(0)==8 and sorted(d.free)==[0,1]
+d.push(10)
+assert d.stacks==[[7,10],[9]] and d.free==[1]
+assert d.popAtStack(1)==9
+# Step 1 hole example: holes open at 1 then 0, pushes fill 0, 1, then the tail stack 3.
+d=DinnerPlates(2)
+for v in range(1,8): d.push(v)
+d.popAtStack(1);d.popAtStack(0)
+for v in (8,9,10): d.push(v)
+assert d.stacks==[[1,8],[3,9],[5,6],[7,10]]
+print('lesson examples passed')

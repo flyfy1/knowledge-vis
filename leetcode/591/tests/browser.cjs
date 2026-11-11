@@ -1,5 +1,5 @@
 'use strict';
-// NODE_PATH must expose Playwright. Optional LESSON_EVIDENCE_DIR and LESSON_BASE_URL.
+// NODE_PATH must expose Playwright. Optional LESSON_EVIDENCE_DIR and PREVIEW_ROOT.
 const {chromium}=require('playwright'),fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
 const base=path.resolve(__dirname,'..'),out=path.resolve(process.env.LESSON_EVIDENCE_DIR||path.join(__dirname,'evidence'));
 fs.mkdirSync(out,{recursive:true});
@@ -11,11 +11,14 @@ await context.grantPermissions(['clipboard-read','clipboard-write']);
 const page=await context.newPage(),errors=[],requests=[];
 await page.emulateMedia({reducedMotion:'reduce'});
 page.on('pageerror',e=>errors.push(e.message));page.on('console',m=>{if(m.type()==='error')errors.push(m.text());});page.on('response',r=>{if(r.status()>=400)errors.push(r.url()+': '+r.status());});page.on('request',r=>requests.push(r.url()));
-await page.goto((process.env.LESSON_BASE_URL||'http://127.0.0.1:18780')+'/leetcode/591/');await page.locator('#summary').filter({hasText:/0/}).waitFor();
+await page.goto((process.env.PREVIEW_ROOT||'http://127.0.0.1:18770')+'/leetcode/591/');await page.locator('#summary').filter({hasText:/0/}).waitFor();
 await page.evaluate(()=>{window.__nativeClipboard=navigator.clipboard;});
 let checked=0;const snapshots=[];
 for(const lang of ['en','zh']){
  await page.locator(`[data-lang=${lang}]`).click();assert.equal(await page.locator('html').getAttribute('lang'),lang==='zh'?'zh-CN':'en');
+ // Checklist lab: every input shows the flat checklist verdict next to the scanned verdict.
+ for(let c=0;c<core.checklistInputs.length;c++){await page.locator(`[name=checklist][value="${c}"]`).check();const text=await page.locator('#checklistResult').textContent(),flat=core.checklist(core.checklistInputs[c]).verdict,truth=core.trace(core.checklistInputs[c]).at(-1).result;assert.ok(text.includes(String(flat))&&text.includes(String(truth)));assert.equal(flat===truth,c===0);}
+ await page.locator('[name=checklist][value="1"]').check();
  for(let p=0;p<core.presets.length;p++){
   await page.selectOption('#preset',String(p));const frames=core.trace(core.presets[p]);
   assert.equal(await page.locator('#prev').isDisabled(),true);
@@ -71,7 +74,7 @@ const contrast=await page.evaluate(()=>{
  const ratio=(fg,bg)=>{const a=lum(fg),b=lum(bg);return (Math.max(a,b)+.05)/(Math.min(a,b)+.05);};
  const vars=getComputedStyle(document.documentElement),pairs=[];for(const bg of ['--bg','--panel','--panel2'])for(const fg of ['--text','--muted','--accent','--accent2','--good','--bad']){const e=document.createElement('div');e.style.color=vars.getPropertyValue(fg);e.style.backgroundColor=vars.getPropertyValue(bg);document.body.append(e);const s=getComputedStyle(e);pairs.push({fg,bg,ratio:ratio(s.color,s.backgroundColor)});e.remove();}return pairs;
 });for(const x of contrast)assert.ok(x.ratio>=4.5,JSON.stringify(x));
-const cssBytes=fs.statSync(path.join(base,'../style.css')).size+fs.statSync(path.join(base,'style.css')).size;assert.ok(cssBytes<25000);assert.deepEqual(errors,[]);assert.ok(requests.every(u=>u.startsWith('http://127.0.0.1:18780/')||u.startsWith('data:')));
+const cssBytes=fs.statSync(path.join(base,'../style.css')).size+fs.statSync(path.join(base,'style.css')).size;assert.ok(cssBytes<25000);assert.deepEqual(errors,[]);assert.ok(requests.every(u=>u.startsWith((process.env.PREVIEW_ROOT||'http://127.0.0.1:18770')+'/')||u.startsWith('data:')));
 fs.writeFileSync(path.join(out,'browser.json'),JSON.stringify({kind:'author self-check',renderedFrames:checked,snapshots,viewports:[320,390,736,1440],zoom:'Chromium CSS 200%',locales:['en','zh'],sourceDisplayCopyFallbackDownload:'exact including final newline',errors,cssBytes,contrast,minimumTextContrast:Math.min(...contrast.map(x=>x.ratio)),limits:'No actual learner, independent review, production or OS/device zoom verification'},null,2)+'\n');
 await browser.close();console.log(JSON.stringify({renderedFrames:checked,errors,cssBytes,screenshots:16}));
 })().catch(e=>{console.error(e);process.exit(1);});

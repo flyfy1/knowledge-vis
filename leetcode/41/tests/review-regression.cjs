@@ -9,7 +9,7 @@ const lum=c=>{const a=c.match(/[\d.]+/g).slice(0,3).map(Number).map(v=>{v/=255;r
  const page=await browser.newPage({viewport:{width:390,height:844}}), failures=[], results=[],errors=[];
  page.on('pageerror',e=>errors.push(String(e)));page.on('response',r=>{if(r.status()>=400)errors.push(`${r.status()} ${r.url()}`)});
  const check=(name,fn)=>{try{fn();results.push(name)}catch(e){failures.push(`${name}: ${e.message}`)}};
- await page.goto('http://127.0.0.1:18770/leetcode/41/');await page.waitForFunction(()=>window.lessonSnapshot);
+ await page.goto(((process.env.PREVIEW_ROOT||'http://127.0.0.1:18770')+'/leetcode/41/'));await page.waitForFunction(()=>window.lessonSnapshot);
  for(const lang of ['en','zh']){
   await page.click(`[data-lang="${lang}"]`);await page.click('#reset');await page.click('#next');
   const colors=await page.locator('#diagram .hot small').first().evaluate(e=>({fg:getComputedStyle(e).color,bg:getComputedStyle(e.parentElement).backgroundColor}));

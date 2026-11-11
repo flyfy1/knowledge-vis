@@ -39,3 +39,12 @@ The visualization is a deterministic simulation of the positional derivation, no
 Adopted required finding **233-I1** from [the independent report](../../specs/reviews/233-review-1-27e57371.md). Preserve the existing lesson structure and tokens; the causal repair is a separate Step 4 reveal state so selecting a prediction does not expose its answer or contribution rows. The explicit Reveal answer action evaluates the selected choice and renders the table; changing the choice clears prior feedback. No independent acceptance is claimed.
 
 Author self-check evidence and stable finding mapping: [tests/evidence/SELF-CHECK.md](tests/evidence/SELF-CHECK.md). The finding is **fixed awaiting independent re-review**; the original report and frozen rubric remain unchanged.
+
+## Revision 2026-11-11
+
+Review (range 1, rubric B=1): the three-case rule was asserted; no correctness argument; the baseline came after the formula.
+Changed: sections reordered to hand count → baseline → one place → three cases → transfer → Python (ids, nav and kickers renumbered; copy keys follow position). The three-case step now opens with `s3hand1` (tens place for n=13: 10…13 = lower+1; n=23: full run of 10; n=105: only 10…19) and `s3hand2` (n=213: higher=2 complete runs plus 210…213 = 24) before `s3e` states the cases and `s3rule` the formula; `s3proof` adds the grouping-by-higher-part correctness argument. Related link to the fractions page (wrong topic) replaced by math/arithmetic/place-value. Fixed English transfer buttons that rendered the key "choice23" instead of "23".
+
+Changed by Claude Code (claude-opus-5-5), 2026-11-11, working tree only (not committed).
+
+Verified: test_solution.py (n=0..999 oracle), test_parity.py and browser.cjs passed on port 18921 (screenshots to scratch). Also opened zh/en at 1280 and 390: no overflow, console errors, empty copy or dead related links. Solution code unchanged.

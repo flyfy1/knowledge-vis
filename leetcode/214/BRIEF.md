@@ -76,3 +76,12 @@ P2: none. Deferred: animation, editable arbitrary large traces, universal render
 service runtime, registry/deployment (scope and no demonstrated learner need).
 Self-check evidence is not independent acceptance, LeetCode acceptance or actual
 novice learning. Real phones and production delivery remain unverified.
+
+## Revision 2026-11-11
+
+Review (range 1, rubric B=1): t = s + # + reverse(s) appeared with no reason to think of it.
+Changed: step 2 now opens with `reverseQuestion` and `reverseHand`: with r = reverse(abac) = caba, the reverse of s[:k] is the last k characters of r (k=3 aba=aba, k=4 abac≠caba), so the question becomes "longest beginning of s equal to an end of r", and gluing makes it a prefix=suffix (border) question. Only then does `borderQuestion` name the border, the KMP prefix function and the separator. Removed learner-facing review status from `foot` and `verify`. Related link #115 (not about prefix functions) replaced by #336 step 1 (palindromic prefix plus reversed remainder); the duplicate in-lab link to #115 was removed.
+
+Changed by Claude Code (claude-opus-5-5), 2026-11-11, working tree only (not committed).
+
+Verified: test_solution.py, core.cjs, browser.cjs and zoom.cjs passed on port 18921 (outputs to scratch). Also opened zh/en at 1280 and 390: no overflow, console errors, empty copy or dead related links. Solution code unchanged.

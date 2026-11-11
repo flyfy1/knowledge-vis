@@ -81,3 +81,10 @@ P0 and highest-return slice: complete closed selected text at 320/390px, both
 locales and EN→ZH→EN. P1/P2: none. Deferred: broader UI changes have no finding
 or demonstrated need. Regression and source/runtime checks are recorded in
 `tests/evidence/r1-fix/self-check.md`; the prior review remains historical evidence.
+
+## Revision 2026-11-11
+
+Review (review-range-2, B=2, D=2): the "remove later" counterexample was stated with its answer; step 03 then gave the finished algorithm as instructions and an 11-sentence proof block.
+Changes: step 02 ends with the question only. Step 03 opens with a trial-removal lab on [[2,1],[3,1],[4,2],[1,4]] (root, reachability, and a new remaining-cycle readout from core.inspect): removing later leaves cycle 1,2,4. A predict-then-open question asks which parent edge lies on the cycle (2→1), from which "skip later, test for a cycle" is derived; then why direction can be ignored, then DSU is named. The proof is split into three cases, each tied to its preset. Review-status footer/verification wording removed.
+Changed by Claude Code (claude-opus-5-5), 2026-11-11, in the working tree (uncommitted).
+Verified: test_solution.py (delete-and-search oracle), test_core.cjs, browser.cjs (new trial-lab assertions; stage locator made unambiguous), selected-label.cjs pass; zh/en 1280/390/320 inspected.

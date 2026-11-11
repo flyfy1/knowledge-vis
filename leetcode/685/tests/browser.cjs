@@ -3,7 +3,7 @@ const {chromium}=require('playwright');
 const fs=require('fs'),path=require('path'),assert=require('assert'),os=require('os');
 const ROOT=path.resolve(__dirname,'..'),OUT=path.resolve(process.env.OUTPUT_DIR||path.join(__dirname,'evidence'));
 fs.mkdirSync(OUT,{recursive:true});
-const PREVIEW=process.env.PREVIEW_URL||'http://127.0.0.1:18782/leetcode/685/';
+const PREVIEW=(process.env.PREVIEW_ROOT||'http://127.0.0.1:18770')+'/leetcode/685/';
 const source=fs.readFileSync(path.join(ROOT,'solution.py'),'utf8');
 const core=require(path.join(ROOT,'core.js'));
 const expectations=[[2,3],[4,1],[2,1],[3,1],[2,1]];
@@ -52,6 +52,12 @@ const report={kind:'author browser self-check; no independent acceptance',hostPl
      const text=await value('#handResult');
      assert(text.includes(l==='en'?(valid?'Valid:':'Invalid:'):(valid?'成立：':'不成立：')));if(removed===0)assert(text.includes(l==='en'?'was not tested':'未运行'));report.semantics.push({locale:l,handRemoved:removed,valid,observed:text});
    }
+   // Step-3 trial: removing later (row 2) leaves the cycle on nodes 1,2,4; removing earlier restores the tree.
+   for(const [removed,valid,cycle] of [[-1,false,true],[0,true,false],[1,false,true],[2,false,false],[3,false,false]]){
+     await page.selectOption('#tryRemove',String(removed));
+     const text=await value('#tryResult'),cyc=await value('#tryCycleText');
+     assert(text.includes(l==='en'?(valid?'Valid:':'Invalid:'):(valid?'成立：':'不成立：')));assert(cyc.includes(l==='en'?(cycle?'still contain':'contain no'):(cycle?'仍有':'没有')));if(cycle)assert(cyc.includes('1, 2, 4'));report.semantics.push({locale:l,tryRemoved:removed,valid,observed:text+' '+cyc});
+   }
    for(let c=0;c<3;c++){
      await page.locator(`[name="prediction"][value="${c}"]`).check();assert(await page.locator('#feedback').isHidden());
      await page.click('#reveal');const feedback=await value('#feedback');assert(feedback.includes('[3,2]'));assert(feedback.includes('1→4→2→3'));assert(feedback.includes('3→2→3'));
@@ -95,7 +101,7 @@ const report={kind:'author browser self-check; no independent acceptance',hostPl
    const textGeometry=await page.locator('#traceGraph text').evaluateAll(els=>els.map(el=>{const r=el.getBoundingClientRect();return {height:r.height,width:r.width};}));assert(textGeometry.every(r=>r.height>=13));
    const sizes=await page.locator('button,select,.prediction-options label').evaluateAll(els=>els.filter(e=>e.getBoundingClientRect().width).map(e=>({id:e.id||e.textContent,height:e.getBoundingClientRect().height})));assert(sizes.every(x=>x.height>=48),JSON.stringify(sizes));
    if(width===320||width===390||width===1440){
-     await page.locator('#step2 .stage').screenshot({path:path.join(OUT,`trace-${l}-${width}.png`),style:'.step-nav { visibility: hidden !important; }'});report.screenshots.push(`trace-${l}-${width}.png`);
+     await page.locator('#step2 .stage').last().screenshot({path:path.join(OUT,`trace-${l}-${width}.png`),style:'.step-nav { visibility: hidden !important; }'});report.screenshots.push(`trace-${l}-${width}.png`);
    }
    report.layouts.push({width,locale:l,overflow,graphWidth:graph.width,labelMinHeight:Math.min(...textGeometry.map(x=>x.height))});
    await page.click('#end');await page.click('#reset');
@@ -104,7 +110,7 @@ const report={kind:'author browser self-check; no independent acceptance',hostPl
  for(const l of ['en','zh']){
    await lang(l);await page.evaluate(()=>document.documentElement.style.zoom='2');await page.selectOption('#preset','2');await page.click('#end');
    const dimensions=await page.evaluate(()=>({scroll:document.documentElement.scrollWidth,client:document.documentElement.clientWidth,zoom:getComputedStyle(document.documentElement).zoom}));assert(dimensions.scroll<=dimensions.client);
-   await page.locator('#step2 .stage').screenshot({path:path.join(OUT,`zoom200-${l}.png`),style:'.step-nav { visibility: hidden !important; }'});report.screenshots.push(`zoom200-${l}.png`);report.layouts.push({test:'200% CSS zoom layout/reading check at 1440px',locale:l,dimensions});
+   await page.locator('#step2 .stage').last().screenshot({path:path.join(OUT,`zoom200-${l}.png`),style:'.step-nav { visibility: hidden !important; }'});report.screenshots.push(`zoom200-${l}.png`);report.layouts.push({test:'200% CSS zoom layout/reading check at 1440px',locale:l,dimensions});
    await page.evaluate(()=>document.documentElement.style.zoom='');
  }
  // Keyboard navigation and native focus ring, reduced motion and forced colors.

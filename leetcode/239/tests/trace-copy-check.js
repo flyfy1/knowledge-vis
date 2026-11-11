@@ -10,7 +10,7 @@ const out=process.env.OUTPUT_DIR||'leetcode/239/tests/evidence/trace-repair-2026
  const b=await chromium.launch({headless:true,executablePath:process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH});const receipts=[];
  try{
   const p=await b.newPage({viewport:{width:390,height:900}});
-  await p.goto(`${process.env.PREVIEW_URL||'http://127.0.0.1:18770'}/leetcode/239/`);await p.waitForFunction(()=>document.querySelector('#progress').textContent.length);
+  await p.goto(`${process.env.PREVIEW_ROOT||'http://127.0.0.1:18770'}/leetcode/239/`);await p.waitForFunction(()=>document.querySelector('#progress').textContent.length);
   for(const lang of ['en','zh','en']){
    await p.click(`[data-lang="${lang}"]`);if(await p.locator('#reset').isEnabled())await p.click('#reset');
    const initial=await p.locator('#traceScope').textContent();assert.match(initial,lang==='zh'?/尚未处理任何元素/:/no elements processed/);
@@ -30,7 +30,7 @@ const out=process.env.OUTPUT_DIR||'leetcode/239/tests/evidence/trace-repair-2026
   }
   for(const lang of ['en','zh']){await p.click(`[data-lang="${lang}"]`);if(await p.locator('#wrongNext').isEnabled())await p.click('#wrongNext');const readout=await p.locator('#wrongReadout').textContent();assert.match(readout,lang==='zh'?/上一个最大值 9 → 已过期；正确最大值 [23]/:/previous max 9 → expired; correct max [23]/);receipts.push({lang,readout});}
   await p.close();
-  const blocked=await b.newPage();await blocked.addInitScript(()=>{Object.defineProperty(window,'localStorage',{get(){throw Error('storage denied')}})});await blocked.goto(`${process.env.PREVIEW_URL||'http://127.0.0.1:18770'}/leetcode/239/`);await blocked.waitForFunction(()=>document.querySelector('#progress').textContent.length);await blocked.click('[data-lang=zh]');assert.match(await blocked.locator('#traceScope').textContent(),/尚未处理/);await blocked.close();
+  const blocked=await b.newPage();await blocked.addInitScript(()=>{Object.defineProperty(window,'localStorage',{get(){throw Error('storage denied')}})});await blocked.goto(`${process.env.PREVIEW_ROOT||'http://127.0.0.1:18770'}/leetcode/239/`);await blocked.waitForFunction(()=>document.querySelector('#progress').textContent.length);await blocked.click('[data-lang=zh]');assert.match(await blocked.locator('#traceScope').textContent(),/尚未处理/);await blocked.close();
   fs.writeFileSync(`${out}/results.json`,JSON.stringify({receipts,duplicateKeys:'none',copyShape:'all two-string pairs',keyboard:'Enter advances insertion',blockedStorage:'initialized and switched locale'},null,2)+'\n');console.log('239-R2-N1/N2 and frame labels: passed');
  }finally{await b.close()}
 })().catch(e=>{console.error(e);process.exitCode=1});

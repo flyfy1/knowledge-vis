@@ -8,7 +8,7 @@ const luminance=rgb=>{const a=rgb.match(/[\d.]+/g).slice(0,3).map(Number).map(v=
  const context=await browser.newContext({viewport:{width:390,height:844},reducedMotion:'reduce',acceptDownloads:true});
  const page=await context.newPage(),errors=[],checks=[],layouts=[];
  page.on('pageerror',e=>errors.push(String(e)));page.on('response',r=>{if(r.status()>=400)errors.push(`${r.status()} ${r.url()}`)});
- await page.goto('http://127.0.0.1:18770/leetcode/41/');await page.waitForFunction(()=>window.lessonSnapshot);
+ await page.goto(((process.env.PREVIEW_ROOT||'http://127.0.0.1:18770')+'/leetcode/41/'));await page.waitForFunction(()=>window.lessonSnapshot);
  const snapshot=()=>page.evaluate(()=>lessonSnapshot());
  const seek=async value=>page.locator('#position').evaluate((e,v)=>{e.value=v;e.dispatchEvent(new Event('input',{bubbles:true}))},value);
  for(const lang of ['en','zh']){
@@ -63,13 +63,13 @@ const luminance=rgb=>{const a=rgb.match(/[\d.]+/g).slice(0,3).map(Number).map(v=
   assert.ok(await page.locator('#manualCopy').isVisible());assert.equal(await page.locator('#copyText').inputValue(),source);
   assert.equal(await page.locator('#copyText').evaluate(e=>e.selectionEnd-e.selectionStart),source.length);
   const downloaded=page.waitForEvent('download');await page.locator('a[download]').click();const download=await downloaded;assert.equal(fs.readFileSync(await download.path(),'utf8'),source);
-  const response=await context.request.get('http://127.0.0.1:18770/leetcode/41/solution.py');assert.equal(await response.text(),source);
+  const response=await context.request.get(((process.env.PREVIEW_ROOT||'http://127.0.0.1:18770')+'/leetcode/41/solution.py'));assert.equal(await response.text(),source);
   await page.screenshot({path:path.join(evidence,`${lang}-copy-fallback.png`)});
   checks.push(`${lang}: marker semantics at skip, locale after interaction, keyboard slider/rewind/next, visible focus, display/clipboard/fallback/download parity, 200% CSS zoom`);
  }
  // Direct local-file opening exercises the offline mirror without HTTP source fetches.
  const offline=await context.newPage();await offline.goto('file://'+path.join(root,'index.html'));await offline.waitForFunction(()=>window.lessonSnapshot);assert.equal(await offline.locator('#pythonCode').textContent(),source);await offline.close();checks.push('Offline file page source parity');
- const denied=await context.newPage();await denied.addInitScript(()=>{Object.defineProperty(window,'localStorage',{get(){throw Error('denied')}})});await denied.goto('http://127.0.0.1:18770/leetcode/41/');await denied.waitForFunction(()=>window.lessonSnapshot);await denied.click('[data-lang="zh"]');await denied.click('#next');assert.equal(await denied.evaluate(()=>lessonSnapshot().index),1);await denied.close();checks.push('Denied localStorage preserves initialization, locale and next');
+ const denied=await context.newPage();await denied.addInitScript(()=>{Object.defineProperty(window,'localStorage',{get(){throw Error('denied')}})});await denied.goto(((process.env.PREVIEW_ROOT||'http://127.0.0.1:18770')+'/leetcode/41/'));await denied.waitForFunction(()=>window.lessonSnapshot);await denied.click('[data-lang="zh"]');await denied.click('#next');assert.equal(await denied.evaluate(()=>lessonSnapshot().index),1);await denied.close();checks.push('Denied localStorage preserves initialization, locale and next');
  assert.deepEqual(errors,[]);
  fs.writeFileSync(path.join(evidence,'browser.json'),JSON.stringify({checks,layouts,errors,zoom:'200% CSS zoom/reflow; native browser toolbar zoom not tested'},null,2)+'\n');
  console.log(`${checks.length} browser check groups passed; 8 locale/width layouts; zero page/network errors`);await browser.close();

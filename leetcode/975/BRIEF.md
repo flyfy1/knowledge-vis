@@ -26,3 +26,10 @@ Canonical Python vs independent direct suffix-scan and walk oracle; intermediate
 
 ## Final author record
 Candidate v4 supersedes author-only development probes v1–v3 (no independent review existed). Changes during self-check: shorten a clipped English preset label, distinguish unknown target cells, show a complete executable baseline and clarify per-pass comparison cost, add horizontal-scroll instructions and sticky row indices. Final evidence is tests/evidence/candidate-v4; self-check and candidate manifest record the actual command results. Independent per-problem cold review remains pending. Metadata fixes, if requested later, must form a new candidate; this author run does not register the lesson.
+
+## Revision 2026-11-11
+
+Review found B=1: "sort by (value, index)" and the stack arrived with no reason to sort.
+Changes: step 2 now lists the indices of [2,3,1,1,4] in value order (2,3,0,1,4), lets the reader read off each odd target as "the first later entry to its right", asks why, answers, and only then describes the left-to-right sweep with a waiting list; the stack is justified by observing the waiting list [3,0] is decreasing. Trace, code and tests unchanged.
+Changed by Claude Code (claude-opus-5-5) on 2026-11-11; not committed. Verified-By: self-check only; independent review pending.
+Verified: tests/numerical.py (3783 cases) and tests/browser.cjs (port patched copy, OUTPUT_DIR outside the repo) pass.

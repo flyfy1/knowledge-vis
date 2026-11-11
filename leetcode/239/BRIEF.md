@@ -73,3 +73,12 @@ readability with `tests/navigation-regression.js`. Preserve existing regression
 assertions and archive new results under `tests/evidence/navigation-repair-20261025/`.
 This is a new author candidate; separate reviewer closure of 239-NAV-R1 and normal
 publication remain pending. Historical acceptance is unchanged.
+
+## Revision 2026-11-11
+
+Review (range 1, rubric B=1): the deque and its decreasing rule were announced before domination was explained.
+Changed: step 3 opens with `s2intro` asking whether 1 can still be a window maximum once 3 arrives in [1,3,−1,−3,5,3,6,7], `s2hand` works through i=1..4 (1 dominated, 3/−1/−3 survive decreasing, at i=4 3 expires from the left and −1, −3 are dominated from the right), with a survivor table, `s2survivors` states the pattern, and only then `s2deque` names the deque. Removed learner-facing review status from `foot` and `verify`. Related link #327 (prefix sums, unrelated) replaced by #862 step 2 (another monotonic deque); tests/navigation-regression.js updated to the new target (per-target step anchor).
+
+Changed by Claude Code (claude-opus-5-5), 2026-11-11, working tree only (not committed).
+
+Verified: test_core.js, test_solution.py, browser-check, navigation-regression, rendered-membership (242 frames), title-regression and trace-copy-check passed on port 18921 (outputs to scratch). Also opened zh/en at 1280 and 390: no overflow, console errors, empty copy or dead related links. Solution code unchanged.

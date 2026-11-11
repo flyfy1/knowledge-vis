@@ -8,10 +8,10 @@ for(const prop of obj.properties){assert.equal(prop.value.elements.length,2,prop
 (async()=>{
 const browser=await chromium.launch({headless:true,executablePath:process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH});
 const ctx=await browser.newContext({permissions:['clipboard-read','clipboard-write'],viewport:{width:1440,height:1000}});const page=await ctx.newPage();const errors=[];page.on('pageerror',e=>errors.push(String(e)));const results=[];
-await page.goto('http://127.0.0.1:18770/leetcode/282/');
+await page.goto((process.env.PREVIEW_ROOT||'http://127.0.0.1:18770')+'/leetcode/282/');
 assert.equal(await page.evaluate(()=>window.PYTHON_SOURCE),source);
 assert.equal(await page.locator('#code').textContent(),source);
-assert.equal(await (await page.request.get('http://127.0.0.1:18770/leetcode/282/solution.py')).text(),source);
+assert.equal(await (await page.request.get((process.env.PREVIEW_ROOT||'http://127.0.0.1:18770')+'/leetcode/282/solution.py')).text(),source);
 const expected=[ [1,'1',1,1],[2,'1+0',1,0],[3,'1+0+5',6,5],[2,'1+0',1,0],[3,'1+0-5',-4,-5],[2,'1+0',1,0],[3,'1+0*5',1,0],[1,'1',1,1],[2,'10',10,10],[3,'10-5',5,-5] ];
 for(const lang of ['en','zh']){
  await page.locator(`[data-lang="${lang}"]`).click();await page.locator('#reset').click();
@@ -59,6 +59,6 @@ const color=await page.locator('#reveal').evaluate(e=>({ink:getComputedStyle(e).
 function luminance(rgb){return rgb.match(/\d+/g).slice(0,3).map(Number).map(x=>{x/=255;return x<=.04045?x/12.92:((x+.055)/1.055)**2.4}).reduce((a,v,i)=>a+v*[.2126,.7152,.0722][i],0)}
 const contrast=(Math.max(luminance(color.ink),luminance(color.background))+.05)/(Math.min(luminance(color.ink),luminance(color.background))+.05);assert(contrast>=7);
 // Storage-denial initialization and keyboard reset remain usable.
-const denied=await ctx.newPage();await denied.addInitScript(()=>{Storage.prototype.getItem=()=>{throw Error('blocked')};Storage.prototype.setItem=()=>{throw Error('blocked')}});await denied.goto('http://127.0.0.1:18770/leetcode/282/');await denied.locator('#next').click();await denied.locator('#reset').focus();await denied.keyboard.press('Space');assert.equal(await denied.locator('#progress').textContent(),'1 / 10');
+const denied=await ctx.newPage();await denied.addInitScript(()=>{Storage.prototype.getItem=()=>{throw Error('blocked')};Storage.prototype.setItem=()=>{throw Error('blocked')}});await denied.goto((process.env.PREVIEW_ROOT||'http://127.0.0.1:18770')+'/leetcode/282/');await denied.locator('#next').click();await denied.locator('#reset').focus();await denied.keyboard.press('Space');assert.equal(await denied.locator('#progress').textContent(),'1 / 10');
 assert.deepEqual(errors,[]);fs.writeFileSync(path.join(out,'browser-results.json'),JSON.stringify({results,errors,sourceBytes:Buffer.byteLength(source),zoom:'1440px CSS zoom 200%; native browser zoom unverified',storageDenied:'pass',offlineLocalFile:'exact source rendered',primaryAction:{...color,contrast},cssBytes:fs.readFileSync(path.join(root,'index.html'),'utf8').split('<style>')[1].split('</style>')[0].length},null,2));await browser.close();console.log('282 review browser regressions passed: both locales, formulas, recursive trace, quiz, exact normal/fallback copy/download, responsive and storage checks');
 })().catch(e=>{console.error(e);process.exit(1)});

@@ -11,7 +11,7 @@ python3 -B scripts/register_leetcode_lesson.py 591 --validate-only
 
 Browser scripts require Playwright from NODE_PATH and honor
 PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH when set. They use the already running
-http://127.0.0.1:18780 preview, not a new service. Every script that writes results
+preview at `PREVIEW_ROOT` (default http://127.0.0.1:18770), not a new service. Every script that writes results
 or screenshots honors LESSON_EVIDENCE_DIR, e.g. set it to an external temporary
 directory to rerun without mutating the frozen candidate. check.py passes its
 oracle fixture path to check-core.cjs; this internal helper writes nothing.

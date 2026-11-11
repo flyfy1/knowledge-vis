@@ -1,7 +1,7 @@
 'use strict';
 const {chromium}=require('playwright'),fs=require('fs'),path=require('path'),assert=require('assert'),vm=require('vm');
 const ROOT=path.resolve(__dirname,'..'),OUT=process.env.OUTPUT_DIR||path.join(__dirname,'evidence');fs.mkdirSync(OUT,{recursive:true});
-const url=process.env.PREVIEW_URL||'http://127.0.0.1:18770/leetcode/770/';
+const url=(process.env.PREVIEW_ROOT||'http://127.0.0.1:18770')+'/leetcode/770/';
 const source=fs.readFileSync(path.join(ROOT,'solution.py'),'utf8'),baseline=fs.readFileSync(path.join(ROOT,'baseline.py'),'utf8'),errors=[],requests=[],logs=[];
 function lum(rgb){return rgb.map(x=>{x/=255;return x<=.04045?x/12.92:((x+.055)/1.055)**2.4}).reduce((s,v,i)=>s+v*[.2126,.7152,.0722][i],0)}
 function ratio(a,b){const x=lum(a),y=lum(b);return(Math.max(x,y)+.05)/(Math.min(x,y)+.05)}
@@ -85,7 +85,7 @@ const scope={window:{}};vm.runInNewContext(fs.readFileSync(path.join(ROOT,'copy.
  await page.emulateMedia({forcedColors:'active'});await page.locator('#next').focus();assert.equal(await page.locator('#next').evaluate(x=>getComputedStyle(x).outlineWidth),'3px');await page.screenshot({path:path.join(OUT,'forced-colors.png')});
  await page.emulateMedia({forcedColors:'none'});
  const isolated=await browser.newContext();await isolated.addInitScript(()=>{Object.defineProperty(window,'localStorage',{get(){throw new Error('blocked storage')}})});const blocked=await isolated.newPage();await blocked.goto(url);await blocked.waitForFunction(()=>document.querySelector('#progress').textContent.length>0);await blocked.click('[data-lang=zh]');await blocked.click('#next');await blocked.click('[data-lang=en]');assert((await blocked.locator('#progress').textContent()).includes('1/'));await isolated.close();
- assert.equal(await page.evaluate(()=>window.PYTHON_SOURCE),source);assert(requests.every(x=>x.startsWith('http://127.0.0.1:18770/')||x.startsWith('data:')),requests.join('\n'));assert.deepEqual(errors,[]);
+ assert.equal(await page.evaluate(()=>window.PYTHON_SOURCE),source);assert(requests.every(x=>x.startsWith(((process.env.PREVIEW_ROOT||'http://127.0.0.1:18770')+'/'))||x.startsWith('data:')),requests.join('\n'));assert.deepEqual(errors,[]);
  const cssBytes=fs.statSync(path.join(ROOT,'style.css')).size+fs.statSync(path.join(ROOT,'../style.css')).size;assert(cssBytes<25000);
  fs.writeFileSync(path.join(OUT,'contrast.json'),JSON.stringify({calibration:{black:0,white:1,blackWhite:21,nearThreshold:ratio([116,116,116],[0,0,0])},minimum:Math.min(...contrast.map(x=>x.ratio)),pairs:contrast},null,2));
  fs.writeFileSync(path.join(OUT,'browser-results.json'),JSON.stringify({kind:'author self-check',result:'pass',host:process.platform,browser:browser.version(),url,logs,errors,requestUrls:[...new Set(requests)],oracleCases:fixtures.length,cssBytes,copyShortcut:process.platform==='darwin'?'Meta+C':'Control+C',limitations:['headless Chromium/Linux only; CSS zoom used for 200% reflow','no actual learner outcomes, independent acceptance, LeetCode submission or public deployment']},null,2));

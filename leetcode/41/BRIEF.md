@@ -84,3 +84,12 @@ Initial, swap, skip and final states all use this contract; loading/reconnect ar
 inapplicable to this synchronous static lesson. Locale changes retain snapshots,
 prediction and disclosures. The adapter only transforms marker state and removes
 inactive highlight indices; array data, operation order and results are preserved.
+
+## Revision 2026-11-11
+
+Review (range 1, rubric B=1): "the answer lies in 1..n+1, reuse the array" was asserted inside the cost paragraph.
+Changed: `cost` now only states the baseline's O(n) set and why it is not allowed. Step 2 adds `rangeTitle`/`rangeHand` (n=4: [1,2,3,4]→5, one change only lowers it; can 4 numbers have answer 6? needs five values) and `slotHand` (n yes/no questions, n cells; [3,4,−1,1] placed as [1,−1,3,4] → 2) before `derive` introduces the swap. Related link #30 (weak fit) replaced by #765 step 2 (each swap seats one couple permanently).
+
+Changed by Claude Code (claude-opus-5-5), 2026-11-11, working tree only (not committed).
+
+Verified: algorithm-regression.py (56994 cases), trace-regression.cjs (9330), browser-check.cjs and review-regression.cjs passed on port 18921; rewritten evidence restored. Also opened zh/en at 1280 and 390: no overflow, console errors, empty copy or dead related links. Solution code unchanged.

@@ -28,3 +28,13 @@
 
 ## Simulation boundary
 The visual trace simulates the arithmetic and is explicitly separate from executing the official submission. The browser comparison oracle independently renders chunks using a direct digit decomposition. No external assets or runtime services are needed.
+
+## Revision 2026-11-11
+
+Review (review-range-1, B=1): three-digit chunks announced in step 0; baseline buried in step 3; no correctness argument; related link to #2916 labelled "string scanning" was not about that idea; learner-facing review status.
+
+Changes: step 0 now tries digit-by-digit reading first (fails: no word for ten-thousand, 12 is Twelve), then compares 345 / 12,345 / 12,000,345 / 12,345,000 and asks what repeats: the same 0–999 phrase plus a scale word, with 000 silent. The old step-3 "baseline" paragraph is replaced by a correctness argument (unique base-1000 digits, three cases of under_1000, empty groups). Related link → #233. Footer status removed.
+
+Verified: `test_core.py` (500 random + boundaries + source parity), `browser-check.js`; outputs quoted in the comparison checked against `solution.py`; no console errors or overflow at 1280/390/320 zh/en.
+
+Changed by Claude Code (claude-opus-5-5), 2026-11-11, uncommitted working-tree change.

@@ -104,3 +104,13 @@ or non-Python contract is present. Read the exact registration source/mirror pai
 (solution.py, python-code.js, PYTHON_SOURCE); no source regeneration is needed
 unless canonical bytes change. Complexity remains one string covering time/space.
 Self-check evidence is appended separately; fixes are awaiting independent review.
+
+## Revision 2026-11-11
+
+Review (review-range-1, B=1): step 3 asserted "if the suffix stays ordered" and jumped to a frequency table; why a multiset of seen values is the state was not drawn out; related link to #2916 labelled "prefix sums" was not about that idea.
+
+Changes: step 3 now works [5,2,6,1] right to left by hand and asks whether any answer used where seen values were; it did not, so the state is a multiset with "add" and "count below x". Step 4 explains why a frequency prefix sum needs a Fenwick tree (on-demand sum O(m) per query vs stored prefixes O(m) per insert). Link → #327.
+
+Verified: `test_core.js`, `test_solution.py`, `browser.cjs`, `fenwick-review-r3.cjs`, `review-regression.cjs` (its rewritten `evidence/r3-fenwick` restored with git checkout); no console errors or overflow at 1280/390/320 zh/en.
+
+Changed by Claude Code (claude-opus-5-5), 2026-11-11, uncommitted working-tree change.

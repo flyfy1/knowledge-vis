@@ -224,12 +224,12 @@ window.LESSON_COPY = {
     "[3,4,−1,1] contains 1 and 3 but not 2, so the answer is 2. It is neither the minimum element nor necessarily the maximum plus one."
   ],
   "cost": [
-    "set(nums) 把出现过的数放入集合；集合只记录“有没有”，重复数只留一份，value in seen 就是在查它是否出现。基线依次查 1、2……，期望 O(n) 时间，但需要 O(n) 空间。n 个数不可能占满 1…n+1，因此答案一定在这个范围；可以借用原数组的 n 个位置记录 1…n。",
-    "set(nums) collects the values that occur, keeping one copy of each. value in seen asks whether that value occurs. The baseline checks 1, 2, … in order, taking expected O(n) time but O(n) space. n values cannot occupy all of 1…n+1, so the answer lies in that range. Reuse the n array positions to record the presence of 1…n."
+    "set(nums) 把出现过的数放入集合；集合只记录“有没有”，重复数只留一份，value in seen 就是在查它是否出现。基线依次查 1、2……，期望 O(n) 时间，但集合本身要 O(n) 额外空间。题目只允许常量额外空间，所以“谁出现过”必须记在别处；在决定记在哪里之前，先要弄清哪些数值得记。",
+    "set(nums) collects the values that occur, keeping one copy of each; value in seen asks whether that value occurs. The baseline checks 1, 2, … in order, taking expected O(n) time, but the set itself needs O(n) extra space. Only constant extra space is allowed, so the record of which values occur must live somewhere else. Before choosing where, we need to know which values are worth recording at all."
   ],
   "derive": [
-    "先看两格 [2,1]：下标从 0 开始，第一格应是 1，第二格应是 2。把第一格的 2 放到下标 1，与 1 交换，得到 [1,2]；两格都有了，缺数是 3。推广到数值 x：它应放在下标 x−1。只要 1≤x≤n 且目标尚不是 x，就与目标交换。交换后当前位置得到另一个数，仍要继续检查，不能立刻推进 i。",
-    "Start with two cells [2,1]. Indices start at 0: the first cell should hold 1 and the second should hold 2. Move the first cell’s 2 to index 1 by swapping it with 1, giving [1,2]. Both slots are filled, so 3 is missing. In general, value x belongs at index x−1. While 1≤x≤n and the destination is not already x, swap with that destination. Recheck the incoming value before advancing i."
+    "用交换。先看两格 [2,1]：下标从 0 开始，第一格应是 1，第二格应是 2。把第一格的 2 放到下标 1，与 1 交换，得到 [1,2]；两格都有了，缺数是 3。推广到数值 x：它应放在下标 x−1。只要 1≤x≤n 且目标尚不是 x，就与目标交换。交换后当前位置得到另一个数，仍要继续检查，不能立刻推进 i。",
+    "By swapping. Start with two cells [2,1]. Indices start at 0: the first cell should hold 1 and the second should hold 2. Move the first cell’s 2 to index 1 by swapping it with 1, giving [1,2]. Both slots are filled, so 3 is missing. In general, value x belongs at index x−1. While 1≤x≤n and the destination is not already x, swap with that destination. Recheck the incoming value before advancing i."
   ],
   "proof": [
     "每次有效交换至少把一个数放进最终正确位置，而且已正确的位置不会被不同数移走，所以总交换次数不超过 n。若目标已有 x，继续交换只会循环；跳过重复值即可。最后第一个 nums[i]≠i+1 就暴露了缺数。",
@@ -288,8 +288,8 @@ window.LESSON_COPY = {
     "Rewiring nodes versus swapping values"
   ],
   "related1": [
-    "重复项与次数约束",
-    "Duplicates and multiplicity constraints"
+    "另一种“换到归属位置”：每次交换让一对永久就位",
+    "Another swap-into-place: each swap seats one couple for good"
   ],
   "introducedLink": [
     "节点重连与值交换的区别",
@@ -298,6 +298,18 @@ window.LESSON_COPY = {
   "markerLegend": [
     "op_i 是本帧放置循环检查的位置；swap_to 是本帧刚完成交换的目标下标。∅ 表示本帧没有对应标记，不是 Python 的 −1 下标，也不是保存的变量。第一次交换后跳过 −1 时，图示为 op_i=0、swap_to=∅；Python 上一次保存的 target 仍是 2。最终扫描帧汇总结果，两个标记均为 ∅。",
     "op_i marks the placement-loop position described by this frame; swap_to marks the destination of a swap just completed in this frame. ∅ means no applicable marker, not Python index −1 or a saved variable. After the first swap, skipping −1 shows op_i=0 and swap_to=∅; Python’s saved target is still 2. The final frame summarizes the scan result with both markers ∅."
+  ],
+  "rangeTitle": [
+    "答案最大可能是多少？",
+    "How large can the answer be?"
+  ],
+  "rangeHand": [
+    "取 n=4。[1,2,3,4] 的答案是 5：四个数恰好占满 1…4。改动其中任意一个数，答案只会变小：[1,2,9,4] 缺 3，[1,2,3,−5] 缺 4。问：4 个数的数组，答案能不能是 6？那需要 1、2、3、4、5 全都出现，也就是 5 个不同的数，可数组只有 4 格。所以答案一定在 1…5 之内，一般地在 1…n+1 之内；小于 1 或大于 n 的数（如 −5、9）永远不会影响答案。",
+    "Take n=4. [1,2,3,4] has answer 5: the four values fill 1…4 exactly. Change any one of them and the answer can only drop: [1,2,9,4] is missing 3, and [1,2,3,−5] is missing 4. Question: can an array of 4 numbers have answer 6? That would need 1, 2, 3, 4 and 5 all present: five different values in only four cells. So the answer always lies in 1…5, and in general in 1…n+1. Values below 1 or above n, such as −5 or 9, never affect it."
+  ],
+  "slotHand": [
+    "于是只需回答 n 个是非题：“1 在吗？2 在吗？……n 在吗？”而数组恰好有 n 格。让下标 x−1 的格子负责回答“x 在吗”：x 在，就把 x 放进那一格。[3,4,−1,1] 中，3 归下标 2，4 归下标 3，1 归下标 0，−1 没有归属。放好后是 [1,−1,3,4]；下标 1 放的不是 2，所以缺 2。剩下的问题是：不另开数组，怎样把每个数挪进自己的格子？",
+    "So we only need n yes/no answers: “Is 1 present? Is 2? … Is n?” The array has exactly n cells. Let the cell at index x−1 answer “is x present?” by holding x. In [3,4,−1,1], 3 belongs at index 2, 4 at index 3 and 1 at index 0; −1 has no home. After placement the array reads [1,−1,3,4]. Index 1 does not hold 2, so 2 is missing. What remains: how do we move each value into its own cell without a second array?"
   ]
 };
 window.LESSON = {
@@ -325,12 +337,12 @@ window.LESSON = {
   ],
   "baseline": "def baseline(nums):\n    seen = set(nums)\n    value = 1\n    while value in seen:\n        value += 1\n    return value",
   "cost": [
-    "set(nums) 把出现过的数放入集合；集合只记录“有没有”，重复数只留一份，value in seen 就是在查它是否出现。基线依次查 1、2……，期望 O(n) 时间，但需要 O(n) 空间。n 个数不可能占满 1…n+1，因此答案一定在这个范围；可以借用原数组的 n 个位置记录 1…n。",
-    "set(nums) collects the values that occur, keeping one copy of each. value in seen asks whether that value occurs. The baseline checks 1, 2, … in order, taking expected O(n) time but O(n) space. n values cannot occupy all of 1…n+1, so the answer lies in that range. Reuse the n array positions to record the presence of 1…n."
+    "set(nums) 把出现过的数放入集合；集合只记录“有没有”，重复数只留一份，value in seen 就是在查它是否出现。基线依次查 1、2……，期望 O(n) 时间，但集合本身要 O(n) 额外空间。题目只允许常量额外空间，所以“谁出现过”必须记在别处；在决定记在哪里之前，先要弄清哪些数值得记。",
+    "set(nums) collects the values that occur, keeping one copy of each; value in seen asks whether that value occurs. The baseline checks 1, 2, … in order, taking expected O(n) time, but the set itself needs O(n) extra space. Only constant extra space is allowed, so the record of which values occur must live somewhere else. Before choosing where, we need to know which values are worth recording at all."
   ],
   "derive": [
-    "先看两格 [2,1]：下标从 0 开始，第一格应是 1，第二格应是 2。把第一格的 2 放到下标 1，与 1 交换，得到 [1,2]；两格都有了，缺数是 3。推广到数值 x：它应放在下标 x−1。只要 1≤x≤n 且目标尚不是 x，就与目标交换。交换后当前位置得到另一个数，仍要继续检查，不能立刻推进 i。",
-    "Start with two cells [2,1]. Indices start at 0: the first cell should hold 1 and the second should hold 2. Move the first cell’s 2 to index 1 by swapping it with 1, giving [1,2]. Both slots are filled, so 3 is missing. In general, value x belongs at index x−1. While 1≤x≤n and the destination is not already x, swap with that destination. Recheck the incoming value before advancing i."
+    "用交换。先看两格 [2,1]：下标从 0 开始，第一格应是 1，第二格应是 2。把第一格的 2 放到下标 1，与 1 交换，得到 [1,2]；两格都有了，缺数是 3。推广到数值 x：它应放在下标 x−1。只要 1≤x≤n 且目标尚不是 x，就与目标交换。交换后当前位置得到另一个数，仍要继续检查，不能立刻推进 i。",
+    "By swapping. Start with two cells [2,1]. Indices start at 0: the first cell should hold 1 and the second should hold 2. Move the first cell’s 2 to index 1 by swapping it with 1, giving [1,2]. Both slots are filled, so 3 is missing. In general, value x belongs at index x−1. While 1≤x≤n and the destination is not already x, swap with that destination. Recheck the incoming value before advancing i."
   ],
   "proof": [
     "每次有效交换至少把一个数放进最终正确位置，而且已正确的位置不会被不同数移走，所以总交换次数不超过 n。若目标已有 x，继续交换只会循环；跳过重复值即可。最后第一个 nums[i]≠i+1 就暴露了缺数。",
@@ -483,11 +495,11 @@ window.LESSON = {
       ]
     ],
     [
-      30,
-      1,
+      765,
+      2,
       [
-        "重复项与次数约束",
-        "Duplicates and multiplicity constraints"
+        "另一种“换到归属位置”：每次交换让一对永久就位",
+        "Another swap-into-place: each swap seats one couple for good"
       ]
     ]
   ]

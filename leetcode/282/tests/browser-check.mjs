@@ -1,5 +1,5 @@
 import { chromium } from 'playwright';
-const base=process.env.PREVIEW_ROOT||'http://127.0.0.1:18770';
+const base=process.env.PREVIEW_ROOT||(process.env.PREVIEW_ROOT||'http://127.0.0.1:18770')+'';
 const browser=await chromium.launch({headless:true, executablePath:process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH});
 const page=await browser.newPage({viewport:{width:390,height:900},deviceScaleFactor:1});
 const errors=[];page.on('pageerror',e=>errors.push(String(e)));page.on('console',m=>{if(m.type()==='error')errors.push(m.text())});

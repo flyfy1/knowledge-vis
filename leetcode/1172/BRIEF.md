@@ -33,3 +33,10 @@
 - amortized: average cost over a sequence including cleanup; step 4.
 
 The simulation is illustrative and the browser verification runs a faithful optimized model against an independent scan oracle; it does not execute Python in the browser. Workflow status is kept here and in evidence, never in learner copy.
+
+## Revision 2026-11-11
+
+Review found: fresh-scene explanation said stack 0 became [8,10] (it is [7,10]); related link ../sorting/#step0 resolved to a non-existent leetcode/sorting/; heap announced in step 1 (B=1); step-0 stage empty until first click; step-2 "correct state" showed the hole before it was made; quiz reveal did not say if the prediction was right; one-sentence code mapping.
+Changes: r4 corrected to [7,10] in both languages (options now -1/8/9/10). Step 1 rewritten as discovery: holes opened at stacks 1 then 0 in [1,2][3,4][5,6][7]; the reader predicts the next three pushes (0, 1, then tail 3), sees that holes open anywhere but are filled smallest first, computes the scan cost (2×10^10), and only then is the min-heap named; tail trimming and lazy deletion of stale heap entries are motivated separately. New interactive hole stage (popAtStack 0/1/2, push, pop) shows holes, the scan count and the heap top. Step 0 renders an initial state; step 2 states are identical until the hole; step-2 messages localized (were English-only). Quiz reveal says right/wrong. Four-item code mapping with a heap walk of the fresh scene; amortized cost explained. Related link → ../23/#step1 (min-heap). Primary-button text contrast fixed locally.
+Changed by Claude Code (claude-opus-5-5) on 2026-11-11; not committed. Verified-By: self-check only; independent review pending.
+Verified: tests/test_solution.py (30 seeded traces vs scan oracle, plus the fresh scene, heap contents and the step-1 hole example); new tests/browser.cjs at 320/390/1280 en/zh: no overflow, no console errors.

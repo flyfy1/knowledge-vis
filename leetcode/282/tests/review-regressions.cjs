@@ -4,7 +4,7 @@ const assert=require('node:assert/strict');
  const browser=await chromium.launch({headless:true,executablePath:process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH});
  const context=await browser.newContext({permissions:['clipboard-read','clipboard-write']});
  const page=await context.newPage(); const failures=[];
- await page.goto('http://127.0.0.1:18770/leetcode/282/');
+ await page.goto((process.env.PREVIEW_ROOT||'http://127.0.0.1:18770')+'/leetcode/282/');
  for(const lang of ['en','zh']){
  await page.locator(`[data-lang="${lang}"]`).click();
  await page.locator('[data-op="-"]').click();

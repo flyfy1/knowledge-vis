@@ -1,6 +1,6 @@
 const {chromium}=require('playwright'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
 const out=process.env.OUTPUT_DIR||path.join(__dirname,'evidence');fs.mkdirSync(out,{recursive:true});
-(async()=>{const b=await chromium.launch({executablePath:process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH});const p=await b.newPage({viewport:{width:390,height:1000},reducedMotion:'reduce'});await p.goto((process.env.PREVIEW_URL||'http://127.0.0.1:18770')+'/leetcode/857/');await p.waitForFunction(()=>document.getElementById('frameRead').textContent.length);const records=[];
+(async()=>{const b=await chromium.launch({executablePath:process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH});const p=await b.newPage({viewport:{width:390,height:1000},reducedMotion:'reduce'});await p.goto((process.env.PREVIEW_ROOT||'http://127.0.0.1:18770')+'/leetcode/857/');await p.waitForFunction(()=>document.getElementById('frameRead').textContent.length);const records=[];
 for(const locale of ['en','zh'])for(const width of [320,390,1440]){
  await p.setViewportSize({width,height:1000});await p.locator('[data-lang='+locale+']').click();
  for(let preset=0;preset<8;preset++){

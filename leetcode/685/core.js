@@ -1,5 +1,6 @@
 (function (root) {
   'use strict';
+  const tryEdges = [[2,1],[3,1],[4,2],[1,4]];
   const presets = [
     [[1,2],[1,3],[2,3]],
     [[1,2],[2,3],[3,4],[4,1],[1,5]],
@@ -13,7 +14,10 @@
     const roots = Array.from({length:n},(_,i)=>i+1).filter(v=>counts[v]===0);
     const seen = new Set(), stack = roots.length===1 ? [roots[0]] : [];
     while(stack.length){const u=stack.pop();if(seen.has(u))continue;seen.add(u);stack.push(...adj[u]);}
-    return {counts:counts.slice(1),roots,reach:seen.size,valid:roots.length===1 && counts.slice(1).every(c=>c<=1) && seen.size===n};
+    // Nodes left after trimming sources and sinks repeatedly lie on (or between) directed cycles.
+    const alive=new Set(Array.from({length:n},(_,i)=>i+1)),kept=edges.filter((_,i)=>i!==removed);let changed=true;
+    while(changed){changed=false;for(const x of [...alive]){const inn=kept.some(([u,v])=>v===x&&alive.has(u)),out=kept.some(([u,v])=>u===x&&alive.has(v));if(!inn||!out){alive.delete(x);changed=true;}}}
+    return {counts:counts.slice(1),roots,reach:seen.size,cycle:[...alive].sort((a,b)=>a-b),valid:roots.length===1 && counts.slice(1).every(c=>c<=1) && seen.size===n};
   }
   function trace(edges) {
     const n=edges.length, incoming=Array(n+1).fill(-1), leader=Array.from({length:n+1},(_,i)=>i), size=Array(n+1).fill(1);
@@ -45,6 +49,6 @@
     save({type:'decision',phase:'phaseDone',i:later,reason:'reasonLater'},groups(),later);
     return frames;
   }
-  const api={presets,inspect,trace};
+  const api={presets,tryEdges,inspect,trace};
   if(typeof module!=='undefined')module.exports=api;else root.Lesson685=api;
 })(typeof window!=='undefined'?window:globalThis);

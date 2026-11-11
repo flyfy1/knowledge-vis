@@ -2,21 +2,21 @@
 const {chromium} = require('playwright');
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
-const base = process.env.PREVIEW_URL || 'http://127.0.0.1:18770';
+const base = process.env.PREVIEW_ROOT||'http://127.0.0.1:18770';
 const out = process.env.OUTPUT_DIR || 'leetcode/239/tests/evidence/navigation-repair-20261025/green';
 const targets = [
-  {id: 84, href: '../84/#step1', key: 'rel0', labels: {
+  {id: 84, step: 'step1', href: '../84/#step1', key: 'rel0', labels: {
     en: '#84 · Monotonic stack: settle rectangle boundaries', zh: '#84 · 单调栈：确定矩形边界'
   }, concept: '[data-i18n="stackIntro"]', expected: {
     en: 'Stack indices increase and their heights never decrease (ties are allowed): a monotonic stack.',
     zh: '栈中下标递增，对应高度不下降（允许相等），这就是单调栈。'
   }, mechanism: '[data-i18n="widthRule"]', formula: 'i−left−1'},
-  {id: 327, href: '../327/#step1', key: 'rel1', labels: {
-    en: '#327 · Prefix sums: subtract to obtain a range sum', zh: '#327 · 前缀和：相减得到区间和'
-  }, concept: '[data-i18n="s1e"]', expected: {
-    en: 'subtract the first i elements, leaving i through j−1.',
-    zh: '减去前 i 个，剩下 i 到 j−1。'
-  }, mechanism: '[data-i18n="s1e"]', formula: 'P[j]−P[i]'}
+  {id: 862, step: 'step2', href: '../862/#step2', key: 'rel1', labels: {
+    en: '#862 · The monotonic deque again: shortest subarray with sum at least K', zh: '#862 · 单调队列再用一次：和至少为 K 的最短子数组'
+  }, concept: '[data-i18n="proof"]', expected: {
+    en: 'A deque, a sequence allowing removal at both ends, stores start indices.',
+    zh: '我们用双端队列（两端都可移除的序列）保存起点下标'
+  }, mechanism: '[data-i18n="proof"]', formula: 'P[3]=3'}
 ];
 (async () => {
   fs.mkdirSync(out, {recursive: true});
@@ -61,15 +61,15 @@ const targets = [
         assert.notEqual(geometry.outline, 'none');
         assert.ok(geometry.text.every(r => r.left >= geometry.left - 1 && r.right <= geometry.right + 1 && r.top >= geometry.top - 1 && r.bottom <= geometry.bottom + 1), 'entire label wraps inside link');
         await page.screenshot({path: `${out}/${lang}-${target.id}-focused.png`});
-        await Promise.all([page.waitForURL(`${base}/leetcode/${target.id}/#step1`), page.keyboard.press('Enter')]);
+        await Promise.all([page.waitForURL(`${base}/leetcode/${target.id}/#${target.step}`), page.keyboard.press('Enter')]);
         assert.equal(new URL(page.url()).pathname, `/leetcode/${target.id}/`);
-        assert.equal(new URL(page.url()).hash, '#step1');
-        await page.waitForFunction(() => document.querySelector('#step1 h2').textContent.length);
+        assert.equal(new URL(page.url()).hash, `#${target.step}`);
+        await page.waitForFunction((step) => document.querySelector(`#${step} h2`).textContent.length, target.step);
         assert.equal(await page.locator('html').getAttribute('lang'), lang === 'zh' ? 'zh-CN' : 'en');
-        const concept = page.locator(`#step1 ${target.concept}`);
+        const concept = page.locator(`#${target.step} ${target.concept}`);
         assert.equal(await concept.isVisible(), true);
         assert.ok((await concept.textContent()).includes(target.expected[lang]), 'destination must explain promised concept');
-        assert.ok((await page.locator(`#step1 ${target.mechanism}`).textContent()).includes(target.formula));
+        assert.ok((await page.locator(`#${target.step} ${target.mechanism}`).textContent()).includes(target.formula));
         await concept.scrollIntoViewIfNeeded();
         await page.waitForTimeout(600);
         await page.screenshot({path: `${out}/${lang}-${target.id}-destination.png`});

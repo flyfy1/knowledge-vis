@@ -9,7 +9,7 @@ fs.mkdirSync(OUT,{recursive:true});
  const report={kind:'author self-check; independent re-review pending',finding:'685-R1-001',platform:os.platform(),browser:browser.version(),nativeArrowReserve:16,note:'16px reserve is diagnostic for this Chromium/Linux control; screenshots require visual inspection.',cases:[]};
  try {
   const page=await browser.newPage();
-  await page.goto(process.env.PREVIEW_URL||'http://127.0.0.1:18782/leetcode/685/');
+  await page.goto((process.env.PREVIEW_ROOT||'http://127.0.0.1:18770')+'/leetcode/685/');
   for(const width of [320,390]) {
    await page.setViewportSize({width,height:950});
    await page.click('[data-lang="en"]');await page.selectOption('#preset','3');

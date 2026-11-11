@@ -1,13 +1,17 @@
 const {chromium}=require('playwright');const fs=require('fs'),path=require('path'),assert=require('assert');
-const root=path.resolve(__dirname,'..'),out=path.resolve(process.env.OUTPUT_DIR||path.join(__dirname,'evidence'));fs.mkdirSync(out,{recursive:true});
+const BASE=process.env.PREVIEW_ROOT||'http://127.0.0.1:18770';const root=path.resolve(__dirname,'..'),out=path.resolve(process.env.OUTPUT_DIR||path.join(__dirname,'evidence'));fs.mkdirSync(out,{recursive:true});
 (async()=>{const browser=await chromium.launch({headless:true,...(process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH?{executablePath:process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH}:{})});
-const context=await browser.newContext({permissions:['clipboard-read','clipboard-write'],reducedMotion:'reduce'});const page=await context.newPage();let errors=[],bad=[],external=[];page.on('pageerror',e=>errors.push(e.message));page.on('response',r=>{if(r.status()>=400)bad.push(r.url());});page.on('request',r=>{if(!r.url().startsWith('http://127.0.0.1:18770/'))external.push(r.url());});
-await page.goto('http://127.0.0.1:18770/leetcode/420/');await page.waitForSelector('#runs .run');await page.screenshot({path:path.join(out,'cold-desktop.png'),fullPage:true});
+const context=await browser.newContext({permissions:['clipboard-read','clipboard-write'],reducedMotion:'reduce'});const page=await context.newPage();let errors=[],bad=[],external=[];page.on('pageerror',e=>errors.push(e.message));page.on('response',r=>{if(r.status()>=400)bad.push(r.url());});page.on('request',r=>{if(!r.url().startsWith(BASE+'/'))external.push(r.url());});
+await page.goto(BASE+'/leetcode/420/');await page.waitForSelector('#runs .run');await page.screenshot({path:path.join(out,'cold-desktop.png'),fullPage:true});
 const source=fs.readFileSync(path.join(root,'solution.py'),'utf8');assert.equal(await page.locator('#pythonSource').textContent(),source);
 let checks=[];
 for(const lang of ['en','zh']){
  await page.locator(`[data-lang=${lang}]`).focus();assert.equal(await page.locator('#langToggle').evaluate(e=>getComputedStyle(e).overflow),'visible');await page.locator(`[data-lang=${lang}]`).click();assert.equal(await page.locator('html').getAttribute('lang'),lang==='zh'?'zh-CN':'en');
  await page.locator('[name=hand][value="1"]').check();assert((await page.locator('#handResult').textContent()).includes(lang==='en'?'One edit':'一次操作'));
+ await page.locator('[name=combo][value="1"]').check();assert((await page.locator('#comboResult').textContent()).includes(lang==='en'?'Two edits':'2 次'));await page.locator('[name=combo][value="0"]').check();assert((await page.locator('#comboResult').textContent()).includes(lang==='en'?'Four edits':'4 次'));
+ // Hand allocation: spending on the longest run first leaves R=2; the price order reaches R=1.
+ for(let k=0;k<4;k++)await page.locator('#alloc2').click();assert((await page.locator('#allocStatus').textContent()).includes('R=2'));assert(await page.locator('#alloc0').isDisabled());await page.locator('#allocReset').click();
+ for(const i of [0,1,1,2])await page.locator('#alloc'+i).click();assert((await page.locator('#allocStatus').textContent()).includes(lang==='en'?'smallest':'最小值'));await page.locator('#allocUndo').click();assert(!(await page.locator('#alloc0').isDisabled()));assert.equal(await page.locator('#allocLog li').count(),3);await page.locator('#allocReset').click();
  for(const L of [3,4,5,6,7,8]){await page.locator('#runLength').fill(String(L));assert((await page.locator('#runResult').textContent()).includes(String(Math.floor(L/3))));}
  for(let p=0;p<7;p++){
   await page.locator('#preset').selectOption(String(p));let result=await page.evaluate(p=>PasswordCore.trace(PasswordCore.presets[p]),p);assert(await page.locator('#prev').isDisabled());

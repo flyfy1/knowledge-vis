@@ -15,9 +15,12 @@ function render(){
  const table=node('table'),head=node('thead'),row=node('tr');table.append(node('caption',t('history')));
  [t('span'),t('operation'),t('stackCol')].forEach(v=>{const th=node('th',v);th.scope='col';row.append(th);});head.append(row);table.append(head);
  const body=node('tbody');frames.slice(0,at+1).forEach((frame,index)=>{const r=node('tr');if(index===at)r.className='changed';const th=node('th',`[${frame.a},${frame.b})`);th.scope='row';const action=node('td');action.append(node('code',frame.token),node('p',t(frame.kind,frame)));r.append(th,action,node('td',stackText(frame.stack)));body.append(r);});table.append(body);$('ledger').replaceChildren(table);$('ledger').setAttribute('aria-label',t('history'));
+ const cl=Number(document.querySelector('[name=checklist]:checked').value),input=TagValidator.checklistInputs[cl],c=TagValidator.checklist(input),mark=b=>b?'✓':'✗',truth=TagValidator.trace(input).at(-1).result;
+ $('checklistResult').textContent=t('clRow',{r1:mark(c.wrapped),r2:mark(c.names),r3:mark(c.balanced),list:String(c.verdict),truth:String(truth)})+' '+t('cl'+cl);
  $('reveal').disabled=choice===null;$('feedback').hidden=!revealed;$('feedback').textContent=revealed?t(choice==='1'?'correct':'incorrect')+' '+t('quizReason'):'';
  $('copyStatus').textContent=copyStatus?t(copyStatus):'';syncNav();
 }
+TagValidator.checklistInputs.forEach((x,i)=>{$('clInput'+i).textContent=x;});document.querySelectorAll('[name=checklist]').forEach(e=>e.onchange=render);
 $('preset').onchange=e=>{preset=Number(e.target.value);at=0;frames=TagValidator.trace(TagValidator.presets[preset]);render();};
 $('prev').onclick=()=>{at=Math.max(0,at-1);render();};$('next').onclick=()=>{at=Math.min(frames.length-1,at+1);render();};$('reset').onclick=()=>{at=0;render();};$('end').onclick=()=>{at=frames.length-1;render();};$('position').oninput=e=>{at=Number(e.target.value);render();};
 document.querySelectorAll('[name=prediction]').forEach(e=>e.onchange=()=>{choice=e.value;revealed=false;render();});$('reveal').onclick=()=>{if(choice!==null)revealed=true;render();};

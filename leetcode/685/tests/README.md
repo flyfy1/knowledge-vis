@@ -13,8 +13,8 @@ python3 -B scripts/register_leetcode_lesson.py 685 --validate-only
 
 OUTPUT_DIR is supported by every test that emits results/screenshots. Run Python
 before the JS core test: it generates fixtures from the independent deletion
-oracle. PREVIEW_URL can override the browser target; the default is the supplied
-http://127.0.0.1:18782/leetcode/685/. The browser honors
+oracle. PREVIEW_ROOT (the site root) can override the browser target; the default is
+http://127.0.0.1:18770. The browser honors
 PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH when set. Native clipboard testing uses the
 actual runner host platform (Linux here), a distinct sentinel, keyboard copy and
 real readback. Source strings include the final newline.

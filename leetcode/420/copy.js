@@ -95,9 +95,33 @@ window.COPY = {
     "每第三个字符换成不同字符就能达到这个下界，例如 aaaaaaa → aaBaa0a。因此一段的需求是 ⌊L/3⌋（向下取整）；所有段的需求之和记为 R。缺失类别数 M 是小写、大写、数字中未出现的类别数。",
     "Changing every third character attains the bound: aaaaaaa → aaBaa0a. A run therefore needs floor(L/3) replacements. Let R be their sum over all runs. Let M count the missing classes among lowercase, uppercase and digit."
   ],
+  "comboQ": [
+    "两种缺陷碰到一起怎么算？看 aaaaaa：长度 6 已经合法；按上面的规则 R=⌊6/3⌋=2；只有小写，缺大写和数字，所以 M=2。是不是要 2+2=4 次？先选一个方案，再看结果。",
+    "What happens when both faults meet? Take aaaaaa: length 6 is already legal; by the rule above R=floor(6/3)=2; only lowercase is present, so uppercase and digit are missing and M=2. Does it need 2+2=4 edits? Choose a plan, then read the result."
+  ],
+  "comboLegend": [
+    "aaaaaa 的修改方案",
+    "A plan for aaaaaa"
+  ],
+  "combo0": [
+    "先拆段，再补类别：aaxaax → Baxa1x（4 次）",
+    "Break runs, then add classes: aaxaax → Baxa1x (4 edits)"
+  ],
+  "combo1": [
+    "拆段时直接写入缺的类别：aaBaa1（2 次）",
+    "Write the missing classes while breaking runs: aaBaa1 (2 edits)"
+  ],
+  "comboBad": [
+    "4 次可行但浪费：两个 x 只拆段，B 和 1 只补类别，每次修改只做了一件事。",
+    "Four edits work but waste effort: each x only breaks a run, and B and 1 only add classes. Every edit does one job."
+  ],
+  "comboGood": [
+    "2 次：第 3 个字符改成 B，既拆开第一组 aaa 又补上大写；第 6 个改成 1，既拆开第二组又补上数字。每次替换同时还掉一份 R 和一份 M。",
+    "Two edits: changing the 3rd character to B breaks the first aaa and adds an uppercase letter; changing the 6th to 1 breaks the second aaa and adds a digit. Each replacement pays off one unit of R and one unit of M at once."
+  ],
   "overlap": [
-    "当 6≤n≤20 时，答案是 max(M,R)：替换重复段时可顺便补缺失类别，剩下的缺失类别另选位置补齐，并避开相邻字符。n<6 时必须插入至少 6−n 个；最多五个字符中的重复也可由这些插入或补类别的修改拆开，答案为 max(6−n,M)。",
-    "When 6≤n≤20, the answer is max(M,R): replacements in runs can supply missing classes; any remaining missing classes can replace other positions without making a new triple. When n<6, at least 6−n insertions are necessary. Runs in at most five characters can also be split by these insertions or class repairs, giving max(6−n,M)."
+    "所以当长度合法（6≤n≤20）时，答案是 max(M,R)。下界：一次修改最多补上一个类别，也最多拆掉一组不相交的三连（在合法长度内插入或删除也一样），所以至少要 M 次，也至少要 R 次。可以达到：若 R≥M，拆段的替换顺便写入缺的类别；若 M>R，其余 M−R 个类别另选位置替换，用与两侧邻居都不同的字符，不制造新三连。再看 aaaaaaaaa（R=3，M=2）：aaBaa1aaa 还剩一组三连，第三次替换拆掉它，得到 aaBaa1aab，共 3=max(2,3) 次。",
+    "So when the length is already legal (6≤n≤20), the answer is max(M,R). Lower bound: one edit supplies at most one class and breaks at most one of the disjoint triples (an insertion or deletion at a legal length does no better), so at least M edits and at least R edits are needed. Attainable: if R≥M, the run-breaking replacements write the missing classes; if M>R, the remaining M−R classes replace other positions with characters unlike both neighbours, creating no new triple. Check aaaaaaaaa (R=3, M=2): aaBaa1aaa still has one triple, and a third replacement breaks it, giving aaBaa1aab in 3=max(2,3) edits."
   ],
   "baseline": [
     "一个正确但昂贵的基线：用动态规划求到所有“强字符串”的最短编辑距离。状态记录已读输入位置、已写长度 0–20、最后字符及连续次数 1/2、已出现的三类。转移枚举删除、插入、替换/保留；禁止连续次数到 3，最后只接收长度 6–20 且三类齐全的状态。",
@@ -124,12 +148,56 @@ window.COPY = {
     "Where should compulsory deletions go?"
   ],
   "p2": [
-    "这一步要回答：长度 n>20 时，必须删除的 D=n−20 个字符，能顺便省掉多少替换？这里 R 表示重复段的替换需求，M 表示缺失类别数。长度为 3 的段：3→2，花 1 次删除，R 从 1→0；长度为 4：4→3→2，要花 2 次才省 1；长度为 5：5→4→3→2，要花 3 次。",
-    "When n>20, how many replacements can the compulsory D=n−20 deletions save? Here R is run replacement demand and M is the missing-class count. A length-3 run goes 3→2: one deletion saves one replacement. A length-4 run goes 4→3→2: it takes two. A length-5 run goes 5→4→3→2: it takes three."
+    "这一步要回答：长度 n>20 时，必须删掉 D=n−20 个字符。这些删除反正要花，能不能顺便降低替换需求 R？M 仍是缺失类别数。先自己试：下面的密码有三段 aaa、BBBB、ccccc，另有 12 个不成段的字符，n=24，D=4。把 4 次删除分给这三段，让 R 尽量小。",
+    "When n>20, D=n−20 deletions are compulsory. They must be paid for anyway; can they also lower the replacement demand R? M is still the missing-class count. Try it first: the password below has runs aaa, BBBB and ccccc plus 12 characters that form no run, so n=24 and D=4. Spend the four deletions on these runs and make R as small as you can."
+  ],
+  "allocTask": [
+    "每按一次就从那一段删掉一个字符。看各段的 ⌊L/3⌋ 什么时候下降。",
+    "Each press deletes one character from that run. Watch when each run’s floor(L/3) drops."
+  ],
+  "allocRun": [
+    "从 {c}×{L} 删一个",
+    "Delete one from {c}×{L}"
+  ],
+  "allocCard": [
+    "{c} 段：长度 {L}，需求 ⌊{L}/3⌋={r}",
+    "Run {c}: length {L}, demand floor({L}/3)={r}"
+  ],
+  "allocStatus": [
+    "已删 {spent}/4 次，R={R}（起点 R=3）。",
+    "Deleted {spent}/4; R={R} (it started at 3)."
+  ],
+  "allocLog": [
+    "删 {c}：长度 {old}→{L}，R {before}→{after}",
+    "Delete from {c}: length {old}→{L}, R {before}→{after}"
+  ],
+  "allocBest": [
+    "预算用完：R=1，这已经是 4 次删除能达到的最小值。",
+    "Budget spent: R=1, the smallest that any four deletions can reach."
+  ],
+  "allocWorse": [
+    "预算用完：R={R}。还能更小，试试先删长度是 3 的倍数的段。",
+    "Budget spent: R={R}. You can do better: try the run whose length is a multiple of 3 first."
+  ],
+  "allocUndo": [
+    "撤回一次删除",
+    "Undo one deletion"
+  ],
+  "allocReset": [
+    "重新分配",
+    "Start over"
+  ],
+  "allocReveal": [
+    "花完 4 次删除后再展开：你看到了什么？",
+    "Spent all four deletions? Open to compare what you saw"
+  ],
+  "allocSeen": [
+    "你会看到：aaa 删 1 次，需求就从 1 降到 0；BBBB 要删 2 次（4→3→2）才降；ccccc 要删 3 次（5→4→3→2）。下一次节省要花几次删除，只看段长除以 3 的余数（L mod 3）：余 0 花 1，余 1 花 2，余 2 花 3。省过一次以后，段长变成 3 的倍数减 1，所以这一段以后每省一次都花 3。",
+    "You will see that aaa drops from demand 1 to 0 after one deletion, BBBB needs two (4→3→2), and ccccc needs three (5→4→3→2). The price of a run’s next saving depends only on the remainder of its length after division by three (L mod 3): remainder 0 costs one, remainder 1 costs two, remainder 2 costs three. After one saving the length is one less than a multiple of three, so every later saving in that run costs three."
   ],
   "priority": [
-    "余数 L mod 3 是 L 除以 3 后剩下的数。余数 0 的段先花 1，余数 1 的段再花 2，此后每省一次都花 3。例：aaaBBBB + (aB0)×5 长度 22，必须删 2。若每段各删 1，只有 aaa 的需求下降；不能把“两次删除”当作“两次节省”。",
-    "The remainder L mod 3 is what is left after division by three. Spend one deletion on remainder-0 runs first, then two on remainder-1 runs; later savings each cost three. For aaaBBBB + (aB0)×5, length is 22 and two deletions are compulsory. Deleting once from each run reduces only aaa’s demand; two deletions do not mean two savings."
+    "所以按价格买节省：先给余数为 0 的段各花 1 次，再给余数为 1 的段各花 2 次，此后每 3 次删除再省一次。上面的例子：aaa 花 1，BBBB 花 2，最后 1 次买不到节省，R=3−2=1，答案是 4+max(0,1)=5。",
+    "So buy savings in order of price: one deletion for each remainder-0 run, then two for each remainder-1 run, then three per further saving. In the example above, aaa costs one and BBBB costs two; the last deletion buys nothing, so R=3−2=1 and the answer is 4+max(0,1)=5."
   ],
   "wrong": [
     "“只删最长段”不可靠：aaaaaaaBBB + aB0aB0aB0aB（长度 21），删最长段 7→6 省 0，删 BBB→BB 省 1。决定因素是余数，不是长度。",
@@ -144,8 +212,8 @@ window.COPY = {
     "The length bound requires at least D deletions. After the best allocation, at least max(M,R) replacements remain. Keep a representative of each existing class and supply missing classes while breaking runs, attaining D+max(M,R). Deleting extra characters and inserting them back costs at least two operations and cannot beat replacing at a legal length."
   ],
   "traceTask": [
-    "换预设会把本实验回到起点。逐步花删除预算，看每张卡的原长→当前长度、⌊L/3⌋，以及保留的操作记录。这里演示需求账本，不构造最终密码；无节省的剩余删除只记预算，不伪造字符变化。",
-    "Changing a preset restarts this experiment. Spend deletions step by step and compare original/current lengths, floor(L/3), and the retained ledger. This is a demand ledger, not a repaired password: leftover deletions with no saving consume budget without pretending to change displayed run characters."
+    "下面的追踪按同一价格规则自动分配，可换其他预设。换预设会把本实验回到起点。逐步花删除预算，看每张卡的原长→当前长度、⌊L/3⌋，以及保留的操作记录。这里演示需求账本，不构造最终密码；无节省的剩余删除只记预算，不伪造字符变化。",
+    "The trace below applies the same price rule automatically, and you can switch to other presets. Changing a preset restarts this experiment. Spend deletions step by step and compare original/current lengths, floor(L/3), and the retained ledger. This is a demand ledger, not a repaired password: leftover deletions with no saving consume budget without pretending to change displayed run characters."
   ],
   "simulation": [
     "浏览器是教学模拟；Python 原始提交代码由离线测试实际执行。",
@@ -316,8 +384,8 @@ window.COPY = {
     "Boundaries: a→5; aA1→3; 1337C0d3→0; aaaB1→1; 21 a’s→7; 50 !’s→36. No deletions at n=6 or 20; deletions begin at 21. Dot and exclamation mark may break runs but supply no required class. The input string is not mutated."
   ],
   "limits": [
-    "这是按题面三条规则求最少编辑次数的算法，不是实际密码安全评分。未向 LeetCode 提交；作者测试不等于独立评审或平台通过。",
-    "This algorithm minimizes edits under the three stated rules; it is not a real password security score. No LeetCode submission was made. Author tests establish neither independent review nor platform acceptance."
+    "这是按题面三条规则求最少编辑次数的算法，不是实际密码安全评分。本页没有向 LeetCode 提交代码。",
+    "This algorithm minimizes edits under the three stated rules; it is not a real password security score. This page makes no LeetCode submission."
   ],
   "sourceTitle": [
     "官方 Python3 接口的完整实现",
@@ -356,8 +424,8 @@ window.COPY = {
     "Split Array: distinguish feasibility from optimality"
   ],
   "foot": [
-    "作者候选 · 自查完成后交独立评审 · 无自动播放、无在线执行",
-    "Author candidate · independent review pending · no autoplay or online execution"
+    "无自动播放、无在线执行",
+    "No autoplay or online execution"
   ],
   "shortRuns": [
     "其余短段（长度≤2，不产生替换需求）：{runs}",
@@ -368,7 +436,7 @@ window.COPY = {
     "Independent Python baseline: enumerate edit states (expand)"
   ],
   "shortProof": [
-    "短串为何不另加重复成本？长度≤4 时，补到 6 所需的插入足够拆开所有三连；长度=5 时，两个重复段不可能都长≥3，唯一长段若长 5，则只含一种类别，M=2，允许一次插入加一次补类别替换；长 3 或 4 则一次插入就可拆开。其余缺失类别选择邻居不同的字符来补齐，因此 max(6−n,M) 可达到。",
-    "Why is there no extra repeat cost for short strings? At length≤4, insertions required to reach six suffice to split every triple. At length five, there cannot be two runs of length≥3. If the sole long run has length five, only one class is present, so M=2 permits an insertion and a class-supplying replacement; a run of length three or four can be split with one insertion. Supply remaining classes with characters different from their neighbors. Thus max(6−n,M) is attainable."
+    "短串（n<6）呢？长度至少要补 6−n 个字符，一次修改又最多补一个类别，所以答案 ≥ max(6−n,M)。重复段不必另算：n≤4 时至少要插入 2 个字符，插在长度≤4 的段中间就把它拆开了。n=5 时最多一个段长≥3。长 3 或 4 的段，把那次必需的插入放进段中间即可（aa?a、aa?aa）。长 5 的段就是整串五个相同字符，最多含一个类别（..... 或 !!!!! 一个都不含），所以 M≥2，答案至少是 2：一次插入拆段，一次替换补完，例如 aaaaa → aaBaaa → aaBaa1；若 M=3 就再替换一个。其余缺失类别用与邻居不同的字符补齐，所以 max(6−n,M) 总能达到。",
+    "And short strings (n<6)? At least 6−n characters must be added, and one edit supplies at most one class, so the answer is at least max(6−n,M). Runs need no extra charge. For n≤4 at least two insertions are required, and placing them inside a run of length ≤4 splits it. For n=5 at most one run has length ≥3. A run of length 3 or 4 is split by placing the required insertion inside it (aa?a, aa?aa). A run of length 5 is the whole string of five equal characters, which contains at most one class (none at all for ..... or !!!!!), so M≥2 and the answer is at least 2: one insertion splits the run and one replacement finishes it, e.g. aaaaa → aaBaaa → aaBaa1; when M=3, replace one more character. Remaining missing classes use characters unlike their neighbours, so max(6−n,M) is always attainable."
   ]
 };

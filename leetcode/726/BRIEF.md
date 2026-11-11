@@ -83,3 +83,8 @@ The added (H2O)3 example has child length 3, expanded A=9, d=1.
 This reuses the existing reviewed teaching surface and tokens; no new layout.
 P0 is the bilingual cost correction and regression; P1 is frozen evidence;
 P2 none. Existing deferred features remain deferred.
+
+## Revision 2026-11-11
+
+Changed by Claude Code (claude-opus-5-5) after the range-3 teaching review (/tmp/agent-tasks/leetcode/review-range-3.md). Not committed; page-provenance unaffected (no header label).
+Review: rubric B=1 — "a stack keeps these tables" was announced. Change: `state` now asks, on Mg(OH)2, which counts must be doubled at )2 and which must stay untouched (one shared table gives H2Mg2O2); `state2` derives one table per unclosed ( from that answer and from K4(ON(SO3)2)2, then names the stack. Removed learner-facing review status from the footer and the verification note. Verified: tests/check.py (1294 canonical cases), browser.cjs pass; zh/en 1280/390 screenshots clean.

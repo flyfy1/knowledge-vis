@@ -67,3 +67,13 @@ This supersedes the original learning-loop/step-04 `232` exercise: `232` stays t
 worked precedence example and verification preset; the retrieval exercise is now
 `122/-3`. In Python, immutable child arguments leave parent state intact, so
 returning needs no in-place string undo.
+
+## Revision 2026-11-11
+
+Review (review-range-1): dead related links to #39 and #241 (both rendered with one shared label); `last` never justified; learner-facing review status.
+
+Changes: links → #224 (expression evaluation with precedence) and #679 (backtracking over operators), each with its own label; step 3 adds why `last` is enough (value is a sum of signed terms, `*x` binds only to the last). Footer status removed. Left as is: the trace still shows ten selected frames (it says so on the page).
+
+Verified: `test_solution.py`, `test_trace.py`, `test_parity.py`, `review-regressions.cjs`, `review-browser.cjs` (its rewritten `evidence/review5` restored with git checkout), `browser-check.mjs`; no console errors or overflow at 1280/390/320 zh/en.
+
+Changed by Claude Code (claude-opus-5-5), 2026-11-11, uncommitted working-tree change.

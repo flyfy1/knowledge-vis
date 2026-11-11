@@ -44,5 +44,16 @@
   if(result===null){result=code.length>0&&!stack.length;save(i,i,result?'accept':'unfinished');}
   return frames;
  }
- const api={presets,trace};root.TagValidator=api;if(typeof module!=='undefined')module.exports=api;
+ // A tempting flat checklist: delete CDATA first, then test three position-free rules.
+ const checklistInputs=['<A><B></B></A>','<A><B><C></B></C></A>','<A></A><A></A>','<![CDATA[x]]><A></A>'];
+ function checklist(code){
+  const s=code.replace(/<!\[CDATA\[[\s\S]*?\]\]>/g,'');
+  const wrapped=/^<([A-Z]{1,9})>[\s\S]*<\/\1>$/.test(s);
+  const tags=[...s.matchAll(/<(\/?)([^>]*)>/g)];
+  const names=!/<[^>]*$/.test(s)&&tags.every(m=>/^[A-Z]{1,9}$/.test(m[2]));
+  const count={};tags.forEach(m=>{count[m[2]]=(count[m[2]]||0)+(m[1]?-1:1);});
+  const balanced=Object.values(count).every(v=>v===0);
+  return {wrapped,names,balanced,verdict:wrapped&&names&&balanced};
+ }
+ const api={presets,trace,checklistInputs,checklist};root.TagValidator=api;if(typeof module!=='undefined')module.exports=api;
 })(typeof window==='undefined'?globalThis:window);

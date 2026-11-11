@@ -1,6 +1,7 @@
 'use strict';
 const locale=LeetCodeLocale(window.COPY),t=locale.t,$=id=>document.getElementById(id);
-const presets=[[1,0,5],[0,3,0],[0,0,6],[0,2,0],[2,2,2],[0]];
+const presets=[[1,0,5],[0,3,0],[0,0,6],[0,2,0],[2,2,2],[0],[2,2,0,0]];
+const planPresets=[[0,0,6],[1,0,5],[2,2,0,0],[0,3,0]];let plan=Washing517.plan(planPresets[0]),planAt=0;
 const schedule=[[1,0,5],[1,1,4],[2,1,3],[2,2,2]];
 let model=Washing517.trace(presets[0]),pos=0,move=0,choice=null,revealed=false,copyState='';
 function element(tag,text){const el=document.createElement(tag);el.textContent=text;return el;}
@@ -10,6 +11,10 @@ function render(){
  $('moveStatus').textContent=t('moveStatus',{k:move,a:schedule[move].join(',')});
  $('moveHistory').replaceChildren(...Array.from({length:move+1},(_,i)=>element('li',t('m'+i))));
  $('movePrev').disabled=$('moveReset').disabled=move===0;$('moveNext').disabled=$('moveEnd').disabled=move===3;
+ const ps=plan.states[planAt],planLast=plan.states.length-1;cards('planMachines',ps.a,false);
+ $('planStatus').textContent=t('planStatus',{k:planAt,total:planLast,a:ps.a.join(','),M:ps.M});
+ $('planHistory').replaceChildren(...plan.states.slice(0,planAt+1).map((st,k)=>element('li',k?t('planMove',{k,a:st.a.join(','),b:st.cuts.join(','),M:st.M,sends:st.sends.map(([i,j])=>t('planSend',{i:i+1,j:j+1})).join(locale.getLang()==='zh'?'，':', ')}):t('planStart',{a:st.a.join(','),b:st.cuts.join(','),M:st.M}))));
+ $('planPrev').disabled=$('planReset').disabled=planAt===0;$('planNext').disabled=$('planEnd').disabled=planAt===planLast;
  const f=model.frames[pos],last=model.frames.length-1;
  $('prev').disabled=$('reset').disabled=pos===0;$('next').disabled=$('end').disabled=pos===last;
  $('position').max=last;$('position').value=pos;$('position').disabled=last===0;
@@ -27,6 +32,8 @@ function render(){
 }
 $('movePrev').onclick=()=>{move=Math.max(0,move-1);render();};$('moveNext').onclick=()=>{move=Math.min(3,move+1);render();};$('moveReset').onclick=()=>{move=0;render();};$('moveEnd').onclick=()=>{move=3;render();};
 $('prev').onclick=()=>{pos=Math.max(0,pos-1);render();};$('next').onclick=()=>{pos=Math.min(model.frames.length-1,pos+1);render();};$('reset').onclick=()=>{pos=0;render();};$('end').onclick=()=>{pos=model.frames.length-1;render();};$('position').oninput=()=>{pos=Number($('position').value);render();};
+$('planPrev').onclick=()=>{planAt=Math.max(0,planAt-1);render();};$('planNext').onclick=()=>{planAt=Math.min(plan.states.length-1,planAt+1);render();};$('planReset').onclick=()=>{planAt=0;render();};$('planEnd').onclick=()=>{planAt=plan.states.length-1;render();};
+$('planPreset').onchange=()=>{plan=Washing517.plan(planPresets[Number($('planPreset').value)]);planAt=0;render();};
 $('preset').onchange=()=>{model=Washing517.trace(presets[Number($('preset').value)]);pos=0;render();};
 document.querySelectorAll('[name=prediction]').forEach(el=>el.onchange=()=>{choice=Number(el.value);revealed=false;render();});$('reveal').onclick=()=>{revealed=true;render();};
 $('pythonCode').textContent=window.PYTHON_SOURCE;$('copyText').value=window.PYTHON_SOURCE;

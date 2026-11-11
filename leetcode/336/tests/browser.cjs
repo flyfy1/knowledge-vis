@@ -1,7 +1,7 @@
 // NODE_PATH supplies Playwright. LESSON_OUTPUT_DIR redirects every generated artifact.
 const {chromium}=require('playwright'),fs=require('fs'),path=require('path'),assert=require('assert'),acorn=require('acorn');
 const root=path.resolve(__dirname,'..'),out=process.env.LESSON_OUTPUT_DIR||path.join(__dirname,'evidence');fs.mkdirSync(out,{recursive:true});
-const base=process.env.LESSON_PREVIEW_URL||'http://127.0.0.1:18770/leetcode/336/';
+const base=(process.env.PREVIEW_ROOT||'http://127.0.0.1:18770')+'/leetcode/336/';
 const source=fs.readFileSync(path.join(root,'solution.py'),'utf8');
 const copyAst=acorn.parse(fs.readFileSync(path.join(root,'copy.js'),'utf8'),{ecmaVersion:'latest'});
 const props=copyAst.body[1].expression.right.properties,keys=props.map(p=>p.key.name);assert.equal(keys.length,new Set(keys).size);
@@ -16,6 +16,9 @@ for(const prop of props)assert.equal(prop.value.elements.length,2);
  for(const lang of ['en','zh']){
   await page.locator(`[data-lang=${lang}]`).click();
   assert.equal(await page.locator('html').getAttribute('lang'),lang==='zh'?'zh-CN':'en');
+  // No Chinese text in English mode (including the collapsed Manacher aside); the flag legend follows the locale.
+  if(lang==='en')assert(!/[\u3400-\u9fff]/.test(await page.locator('main, footer, h1, .tagline, .eyebrow, .step-nav').evaluateAll(els=>els.map(e=>e.textContent).join(' '))));
+  assert.equal(await page.locator('[data-i18n=flagLegend]').textContent(),lang==='en'?'T = true · F = false':'T = 真 · F = 假');
   for(let preset=0;preset<6;preset++){
    await page.selectOption('#preset',String(preset));assert(await page.locator('#prev').isDisabled());
    const count=Number(await page.locator('#position').getAttribute('max'));assert(count>0);

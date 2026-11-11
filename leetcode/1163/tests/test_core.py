@@ -9,4 +9,7 @@ for n in range(1,8):
 for _ in range(200):
     s=''.join(random.choice('abcd') for _ in range(random.randint(1,30))); assert Solution().lastSubstring(s)==oracle(s)
 for s in ['a','abab','leetcode','aaaa','azb','cababa']: assert Solution().lastSubstring(s)==oracle(s)
+# Lesson examples: the zzazzb trap and the cacacb transfer quiz.
+assert Solution().lastSubstring('zzazzb')=='zzb'
+assert Solution().lastSubstring('cacacb')=='cb'
 print('oracle cases passed')

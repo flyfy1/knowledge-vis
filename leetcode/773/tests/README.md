@@ -15,7 +15,7 @@ python3 -B scripts/register_leetcode_lesson.py 773 --validate-only
 writers honor it. Run the solution check before the core check: it emits the
 independently calculated expected values used to audit the JS simulation.
 Browser tests use installed Playwright through NODE_PATH and honor
-PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH. PREVIEW_URL defaults to
+PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH. PREVIEW_ROOT defaults to
 http://127.0.0.1:18770. They do not start a server. Linux native manual-copy
 uses Control+C, with a separate clipboard sentinel and actual readback.
 

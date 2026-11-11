@@ -26,7 +26,7 @@ print(json.dumps(rows))
  const browser=await chromium.launch({headless:true,...(process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH?{executablePath:process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH}:{})});
  try {
   const page=await browser.newPage();
-  await page.goto('http://127.0.0.1:18784/leetcode/726/');
+  await page.goto(((process.env.PREVIEW_ROOT||'http://127.0.0.1:18770')+'/leetcode/726/'));
   for(const locale of ['en','zh'])for(const width of [320,390,1440]){
    await page.setViewportSize({width,height:1000});
    await page.click(`[data-lang=${locale}]`);

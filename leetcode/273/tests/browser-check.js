@@ -1,5 +1,5 @@
 const { chromium } = require('playwright'); const fs=require('fs');
-(async()=>{const browser=await chromium.launch({headless:true,executablePath:process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH});const p=await browser.newPage({viewport:{width:390,height:900},deviceScaleFactor:1});const errors=[];p.on('pageerror',e=>errors.push(e.message));await p.goto('http://127.0.0.1:18770/leetcode/273/');
+(async()=>{const browser=await chromium.launch({headless:true,executablePath:process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH});const p=await browser.newPage({viewport:{width:390,height:900},deviceScaleFactor:1});const errors=[];p.on('pageerror',e=>errors.push(e.message));await p.goto((process.env.PREVIEW_ROOT||'http://127.0.0.1:18770')+'/leetcode/273/');
 await p.click('#groupNext'); await p.click('#groupNext'); await p.click('#groupNext');
 const status=await p.textContent('#groupStatus'); if(!status.includes('One Million Two Hundred Thirty Four Thousand Five Hundred Sixty Seven')) throw Error('group progression exact scales');
 await p.fill('#predictionInput','One Thousand Four'); await p.click('#reveal'); if(!(await p.textContent('#prediction')).includes('does not match')) throw Error('prediction mismatch');

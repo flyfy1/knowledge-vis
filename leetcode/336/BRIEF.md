@@ -32,3 +32,10 @@ Trace is a browser simulation, not execution of solution.py. It begins after tri
 P0 / highest-return 20%: concrete causal middle cancellation, truthful trie search state, linear flags bridge, bilingual controls and tests. P1: complete history and source affordances. P2: none. Deferred: custom word editor (validation adds scope), insertion animation (static invariant and exact source suffice), decorative art and general visualization framework (no learning need). Reviewer will independently assess teaching; no learner study, public release, or LeetCode acceptance is claimed.
 
 Tests: independent all-pairs oracle; exhaustive small unique word sets, seeded cases, maximum boundaries, flags against brute palindrome checks, trie-node candidate invariant and per-frame emitted pairs. Browser both locales, every preset/endpoints/rewind/reset/quiz options, locale cross paths, copy/fallback/source/download, 320/390/736/1440 widths and 200% zoom, keyboard/focus, local assets, contrast, screenshots visually inspected. Tests accept LESSON_OUTPUT_DIR. Metadata non-mutating preflight required. Author evidence stays in tests/evidence, separate review pending.
+
+## Revision 2026-11-11
+
+Review (review-range-2): English mode showed the legend "T = true / 真 · F = false / 假"; Manacher detail sat between the leftover-middle idea and the trace.
+Changes: the flag legend and the odd/even interval labels are now localized keys; the Manacher derivation (radii, mirror reuse, boundary flags) moved into a collapsible "optional" aside, with flagsIntro saying direct checks give the same table more slowly. Related-label leading space and review-status footer/verify wording removed. Whole lesson checked in both languages: no other Chinese text in English mode (now asserted in browser.cjs).
+Changed by Claude Code (claude-opus-5-5), 2026-11-11, in the working tree (uncommitted).
+Verified: test_solution.py, test_core.cjs, browser.cjs pass with output redirected; no overflow/console errors at 1280/390/320.

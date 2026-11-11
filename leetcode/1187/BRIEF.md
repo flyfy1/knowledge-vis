@@ -19,3 +19,10 @@ Official evidence: LeetCode page was opened 2026-10-27 Asia/Singapore; statement
 Author checks are recorded in `tests/evidence/SELF-CHECK.md`; no independent acceptance is claimed.
 
 Status record: author implementation and self-check complete; independent review run `/root/review_1187` completed with the evidence in `tests/evidence/INDEPENDENT-REVIEW.md`. No independent acceptance or publication is claimed.
+
+## Revision 2026-11-11
+
+Review found: related link "DP: compress a prefix into states" pointed to #60 (combinatorics); thin proof that the smallest arr2 value above last is safe; one-sentence code mapping; step-5 question duplicated the mapping text; footer showed workflow status.
+Changes: exchange argument for the smallest feasible replacement, tied to [1,5,3]/[2,4]; step-5 question (q4) added; line-by-line mapping plus a real frame (example 1, arr1[2]=3: states {2:1,5:0} → {3:1}, with bisect_right values); complexity explained (≤ m+1 states per round). Related link → #801 step2 (one state per ending); #879 kept. Footer workflow text removed. Trace moves show −∞ and a localized "cost" word.
+Changed by Claude Code (claude-opus-5-5) on 2026-11-11; not committed. Verified-By: self-check only; independent review pending.
+Verified: tests/test_solution.py (exhaustive + 500 seeded vs brute force), tests/test_core.cjs; browser overflow check 320/390/1280 en/zh, no console errors.
