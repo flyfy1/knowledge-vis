@@ -1,0 +1,38 @@
+{
+  "id": 1121,
+  "title": {
+    "zh": "将数组分成几个递增序列",
+    "en": "Divide Array Into Increasing Sequences"
+  },
+  "desc": {
+    "zh": "重复最多的数逼出 f 条序列，发牌式分配证明 f × k ≤ n 也足够。",
+    "en": "The most repeated value forces f sequences; dealing round-robin proves f × k ≤ n is also enough."
+  },
+  "difficulty": "hard",
+  "topics": [
+    {
+      "zh": "计数论证",
+      "en": "Counting argument"
+    },
+    {
+      "zh": "构造",
+      "en": "Construction"
+    }
+  ],
+  "path": "1121/",
+  "leetcodeUrl": "https://leetcode.com/problems/divide-array-into-increasing-sequences/",
+  "language": "Python",
+  "complexity": "O(n) time; O(1) auxiliary space",
+  "concepts": [
+    {
+      "name": "Repeats force many sequences",
+      "step": 3,
+      "description": "A value appearing f times needs f different strictly increasing sequences, so f × k ≤ n is necessary."
+    },
+    {
+      "name": "Round-robin dealing",
+      "step": 4,
+      "description": "Dealing the sorted array into f piles keeps equal values apart and gives every pile at least floor(n/f) ≥ k numbers."
+    }
+  ]
+}

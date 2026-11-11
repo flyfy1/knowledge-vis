@@ -1,0 +1,35 @@
+html{scroll-behavior:auto}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+button,.btn,select,.lang-toggle button,.step-nav a,.prediction-options label,.site-head .official-link,.back-link,.related a,summary{min-height:48px}
+.lang-toggle button{min-width:48px}
+.back-link,.related a,a.btn,.site-head .official-link{display:inline-flex;align-items:center}
+.step-nav a{display:inline-flex;align-items:center}
+.head-top{flex-wrap:wrap}.lang-toggle{margin-left:auto}
+.btn,select{border-color:var(--muted)}
+button.btn:disabled,.btn.primary:disabled{opacity:1;color:var(--muted);background:var(--panel);border:1px dashed var(--muted);cursor:default}
+.btn[aria-pressed=true]{background:#3c2c16;border-color:var(--accent2);color:var(--text)}
+p,li,h1,h2,h3,label,a,summary,.readout{overflow-wrap:anywhere}
+.stage,.step-inner{min-width:0}
+.controls .btn{white-space:normal;max-width:100%}
+.table-wrap{max-width:100%;margin:8px 0 16px}
+table.data td,table.data th{white-space:nowrap;overflow-wrap:normal}
+table.data td{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:14px}
+table.data tr.dim td{color:var(--muted)}
+table.data tr.useful td{color:var(--text);background:rgba(110,231,255,.06)}
+table.data tr.pending td{color:var(--muted)}
+table.data tr.removed td{color:var(--muted);text-decoration:line-through}
+table.data tr.removed td:first-child{text-decoration:none}
+tr.current-row td{background:var(--panel2);color:var(--accent)}
+.row-toggle{min-height:48px;padding:6px 10px;font:14px/1.3 system-ui,sans-serif;white-space:nowrap}
+.hand-list{padding-left:22px}.hand-list li{margin:6px 0}
+.table-wrap:focus-visible,pre:focus-visible,textarea:focus-visible{outline:3px solid var(--accent2);outline-offset:4px}
+.prediction-options label{gap:12px;padding:8px 0}.prediction-options input{width:20px;height:20px;flex-shrink:0}
+textarea{width:100%;background:var(--panel2);color:var(--text);font:14px/1.6 ui-monospace,monospace;border:1px solid var(--muted);padding:12px}
+pre{max-height:640px}
+.map li{margin:6px 0}
+.lang-toggle:focus-within{outline:3px solid var(--accent2);outline-offset:4px}
+.lang-toggle button:focus-visible{outline-offset:-4px}
+.step{scroll-margin-top:92px}
+@media(max-width:560px){.controls .btn{flex:1 1 140px}.back-link{max-width:100%}table.data td{font-size:13px}}
+.row-toggle[aria-pressed=true]{background:var(--panel2);border-color:var(--muted);color:var(--text)}
+.row-toggle[aria-pressed=false]{background:var(--panel);border:1px dashed var(--muted);color:var(--muted)}

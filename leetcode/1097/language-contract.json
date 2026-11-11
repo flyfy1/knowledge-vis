@@ -1,0 +1,10 @@
+{
+  "problemId": 1097,
+  "language": "MySQL",
+  "officialSource": "https://leetcode.com/problems/game-play-analysis-v/",
+  "supportedLanguages": ["MySQL", "MS SQL Server", "Oracle", "PostgreSQL", "Python (Pandas)"],
+  "interface": "MySQL query over Activity(player_id int, device_id int, event_date date, games_played int) with primary key (player_id, event_date); returns install_dt, installs, Day1_retention (rounded to 2 decimals), one row per install date, any order.",
+  "rationale": "Paid database problem. The public GraphQL response (tests/evidence/official-graphql.response) has content and codeSnippets null but its metaData lists mysql, mssql, oraclesql and postgresql schemas plus a pythondata (Pandas DataFrame) schema. The 2026-11-11 build instruction asked for SQL as the solution language for this database problem, following the existing #1159 pattern; MySQL is the first listed native schema. The Pandas interface is officially supported but is not the canonical submission here; the general Python-first preference would otherwise select it.",
+  "verifiedAt": "2026-11-11T18:30:00+08:00",
+  "verificationEvidence": "tests/evidence/official-graphql.response"
+}

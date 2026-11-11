@@ -1,0 +1,43 @@
+{
+  "id": 774,
+  "title": {
+    "zh": "最小化加油站间的最大距离",
+    "en": "Minimize Max Distance to Gas Station"
+  },
+  "desc": {
+    "zh": "不去决定每座新站放哪，而是问“最长空档 D 做得到吗”，再对答案二分。",
+    "en": "Stop placing stations one by one: ask whether a worst gap D is achievable, then binary search the answer."
+  },
+  "difficulty": "hard",
+  "topics": [
+    {
+      "zh": "二分答案",
+      "en": "Binary search on the answer"
+    },
+    {
+      "zh": "浮点容差",
+      "en": "Floating-point tolerance"
+    }
+  ],
+  "path": "774/",
+  "leetcodeUrl": "https://leetcode.com/problems/minimize-max-distance-to-gas-station/",
+  "language": "Python",
+  "complexity": "O(n·log(W/1e-6)) time, at most 47 rounds of O(n) for W ≤ 1e8 and independent of k; O(n) auxiliary space for the gap list",
+  "concepts": [
+    {
+      "name": "Even spacing inside a gap",
+      "step": 0,
+      "description": "c new stations in a gap of length g give a best longest piece of g/(c+1), so only counts per gap matter."
+    },
+    {
+      "name": "Feasibility count need(D)",
+      "step": 2,
+      "description": "A gap of length g needs ceil(g/D) - 1 stations; the total only rises as D shrinks, so the yes/no answer flips once."
+    },
+    {
+      "name": "Binary search on a real-valued answer",
+      "step": 3,
+      "description": "Keep lo impossible and hi achievable, halve until hi - lo <= 1e-6, and return hi within the accepted tolerance."
+    }
+  ]
+}

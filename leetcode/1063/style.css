@@ -1,0 +1,45 @@
+button,.btn,select,input[type="text"],.lang-toggle button,.step-nav a,.prediction-options label,.site-head .official-link,summary,.back-link,.related a{min-height:48px}
+.back-link,.related a,a.btn,.step-nav a{display:inline-flex;align-items:center}
+button.btn:disabled{opacity:1;color:var(--muted);background:var(--panel);border-color:var(--muted);border-style:dashed}
+.btn,select{border-color:var(--muted)}.btn.primary:disabled{background:var(--panel);color:var(--muted)}
+.head-top{flex-wrap:wrap}.lang-toggle{margin-left:auto}.lang-toggle button{min-width:48px}
+.stage,.step-inner{min-width:0}p,li,h1,h2,h3,label,a,summary,.readout{overflow-wrap:anywhere}
+select{max-width:100%;width:100%;white-space:normal;margin-bottom:8px}.controls .btn{flex:1 1 150px;max-width:100%;white-space:normal}
+input[type="text"]{width:100%;background:var(--panel2);color:var(--text);border:1px solid var(--muted);border-radius:8px;padding:8px 12px;font:16px/1.5 ui-monospace,monospace}
+input:focus-visible,textarea:focus-visible,pre:focus-visible{outline:3px solid var(--accent2);outline-offset:4px}
+.lang-toggle:focus-within{outline:3px solid var(--accent2);outline-offset:4px}.lang-toggle button:focus-visible{outline-offset:-4px}
+.step{scroll-margin-top:100px}
+.axis-note{font-size:13px;color:var(--muted);margin:8px 0 4px}
+/* Triangle of subarrays: rows are starts, columns are ends */
+.tri{display:grid;grid-template-columns:34px repeat(var(--n,5),minmax(0,1fr));gap:3px;max-width:560px;margin:4px 0 12px;font-variant-numeric:tabular-nums}
+.tri-corner{font-size:11px;color:var(--muted);display:flex;align-items:center;justify-content:center}
+.tri-head{display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:12px;line-height:1.3;color:var(--muted);padding:2px 0;border-bottom:2px solid transparent}
+.tri-head.row{border-bottom:0;border-right:2px solid transparent}.tri-head.hot{color:var(--accent2);border-color:var(--accent2)}
+.tri-idx{font-size:11px}.tri-val{color:var(--text);font-size:14px}
+.tri-cell{min-width:0;min-height:40px;display:flex;align-items:center;justify-content:center;border:1px solid var(--line);border-radius:6px;background:var(--panel2);color:var(--text);font-size:16px;padding:0}
+button.tri-cell{min-height:48px;cursor:pointer}
+.tri-cell.ok{border-color:var(--good);color:var(--good)}.tri-cell.bad{color:var(--bad);border-color:#4a2a33}
+.tri-cell.unknown{color:var(--muted)}.tri-cell.selected{outline:3px solid var(--accent2);outline-offset:1px}
+.tri-cell.dim{opacity:.45}.tri-cell.breaker{border:2px solid var(--accent2);opacity:1}
+.tri-cell.in-col,.tri-cell.in-row{background:#164b59}
+.tri-cell.current{background:#164b59}.tri-cell.mismatch{background:#3a1c25;font-weight:700}
+/* Array with per-start state */
+.cells{display:grid;grid-template-columns:repeat(var(--n,5),minmax(0,1fr));gap:4px;max-width:640px}
+.cell{display:flex;flex-direction:column;align-items:center;min-width:0;padding:6px 2px;background:var(--panel2);border-bottom:3px solid transparent;text-align:center}
+.cell-idx{font-size:11px;color:var(--muted)}.cell-val{font-size:20px;font-variant-numeric:tabular-nums}.cell-state{font-size:11px;line-height:1.3;color:var(--muted);display:flex;flex-direction:column;align-items:center}
+.cell.alive{border-color:var(--good)}.cell.alive .cell-state{color:var(--good)}.cell.dead{opacity:.7}.cell.dead .cell-val{text-decoration:line-through}.cell.now{border-color:var(--accent);background:#164b59}.cell.now .cell-state{color:var(--accent)}.cell.future{opacity:.45}
+.stack{display:flex;flex-wrap:wrap;gap:8px;align-items:center;min-height:40px}
+.chip{padding:6px 12px;background:var(--panel2);border:1px solid var(--muted);border-radius:6px;font-family:ui-monospace,monospace}.chip.pushed{border-color:var(--accent);color:var(--accent)}.chip.empty{border-style:dashed;color:var(--muted)}
+.custom{margin:12px 0}#inputStatus.error{color:var(--bad)}
+.ledger{display:flex;flex-wrap:wrap;gap:8px;padding:0;list-style:none}.ledger-item.current{color:var(--accent)}
+.mapping li{margin-bottom:8px}
+.prediction-options{min-inline-size:0}.prediction-options label{gap:12px;padding:8px 0;align-items:flex-start}.prediction-options input{width:20px;height:20px;flex-shrink:0;margin-top:6px}.prediction-options label span{min-width:0}
+textarea{width:100%;background:var(--panel2);color:var(--text);font:14px/1.6 ui-monospace,monospace;padding:12px;border:1px solid var(--muted)}
+pre{white-space:pre;max-width:100%}
+@media(max-width:560px){.controls .btn{flex-basis:100%}.tri{grid-template-columns:26px repeat(var(--n,5),minmax(0,1fr));gap:2px}.tri-cell{font-size:13px}.tri-val{font-size:12px}.cell-val{font-size:16px}.cell-state{font-size:10px}}
+/* Step-0 squares are buttons: keep each at least 48px wide. At 320px the stage gives up some
+   side padding and the row headers shrink so five 48px columns fit (cross-review 2026-11-11). */
+#grid0{grid-template-columns:34px repeat(var(--n,5),minmax(48px,1fr))}
+@media(max-width:560px){#grid0{grid-template-columns:26px repeat(var(--n,5),minmax(48px,1fr))}}
+@media(max-width:360px){.stage.tri-stage{padding:14px 6px}#grid0{grid-template-columns:18px repeat(var(--n,5),minmax(48px,1fr));gap:2px}#grid0 .tri-corner{font-size:9px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}

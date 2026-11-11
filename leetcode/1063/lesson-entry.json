@@ -1,0 +1,38 @@
+{
+  "id": 1063,
+  "title": {
+    "zh": "有效子数组的数目",
+    "en": "Number of Valid Subarrays"
+  },
+  "desc": {
+    "zh": "每行在第一个更小元素处断开；按列读三角表，活着的起点就是一个单调栈。",
+    "en": "Each row stops at the first smaller element; read the triangle by columns and the alive starts form a monotonic stack."
+  },
+  "difficulty": "hard",
+  "topics": [
+    {
+      "zh": "单调栈",
+      "en": "Monotonic stack"
+    },
+    {
+      "zh": "子数组计数",
+      "en": "Counting subarrays"
+    }
+  ],
+  "path": "1063/",
+  "leetcodeUrl": "https://leetcode.com/problems/number-of-valid-subarrays/",
+  "language": "Python",
+  "complexity": "O(n) time: each element is pushed once and popped at most once; O(n) auxiliary space for the stack",
+  "concepts": [
+    {
+      "name": "Valid run ends at the first smaller element",
+      "step": 2,
+      "description": "Start i is valid exactly for ends before the first element smaller than nums[i]."
+    },
+    {
+      "name": "Alive starts as a monotonic stack",
+      "step": 3,
+      "description": "Pop strictly larger tops, push the new start, and add the stack size; ties stay alive."
+    }
+  ]
+}

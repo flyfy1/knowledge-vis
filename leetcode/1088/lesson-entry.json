@@ -1,0 +1,47 @@
+{
+  "id": 1088,
+  "title": {
+    "zh": "易混淆数 II",
+    "en": "Confusing Number II"
+  },
+  "desc": {
+    "zh": "先看出“易混淆 = 可转 − 转后不变”，再按首个不同数位数可转数、从两端造出不变数。",
+    "en": "Discover that confusing = turnable − unchanged, then count turnable numbers by first differing digit and build unchanged ones from both ends."
+  },
+  "difficulty": "hard",
+  "topics": [
+    {
+      "zh": "补集计数",
+      "en": "Complement counting"
+    },
+    {
+      "zh": "数位计数",
+      "en": "Digit counting"
+    },
+    {
+      "zh": "中心对称数",
+      "en": "Strobogrammatic numbers"
+    }
+  ],
+  "path": "1088/",
+  "leetcodeUrl": "https://leetcode.com/problems/confusing-number-ii/",
+  "language": "Python",
+  "complexity": "O(d·5^(d/2)) time and space, d = number of digits of n (d ≤ 10: at most 7805 strings built)",
+  "concepts": [
+    {
+      "name": "Complement split of turnable numbers",
+      "step": 3,
+      "description": "Every turnable number is either unchanged by turning or confusing, so confusing = turnable − unchanged."
+    },
+    {
+      "name": "Counting below n by first differing digit",
+      "step": 4,
+      "description": "Group same-length numbers below n by the first position where they drop below n; stop at a digit that cannot turn."
+    },
+    {
+      "name": "Building strobogrammatic numbers from both ends",
+      "step": 5,
+      "description": "Choose turning pairs from the outside in, with a middle digit of 0, 1 or 8 for odd lengths."
+    }
+  ]
+}

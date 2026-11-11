@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" href="data:,">
+<title>1097 · Game Play Analysis V</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="style.css?v=1097-1">
+</head>
+<body>
+<header class="site-head">
+<div class="head-top"><a class="back-link" href="../" data-i18n="back"></a><div id="langToggle" class="lang-toggle" role="group"><button type="button" data-lang="zh" lang="zh-CN">中</button><button type="button" data-lang="en" lang="en">EN</button></div></div>
+<span class="badge" data-i18n="badge"></span>
+<h1 data-i18n="title"></h1>
+<p class="tagline" data-i18n="intro"></p>
+<p data-i18n="contract"></p>
+<p class="hint" data-i18n="access"></p>
+<a class="official-link" href="https://leetcode.com/problems/game-play-analysis-v/" target="_blank" rel="noopener" data-i18n="official"></a>
+</header>
+<nav class="step-nav" id="stepNav"><div class="step-nav-inner"><a href="#step1" data-i18n="nav1"></a><a href="#step2" data-i18n="nav2"></a><a href="#step3" data-i18n="nav3"></a><a href="#step4" data-i18n="nav4"></a><a href="#step5" data-i18n="nav5"></a><a href="#step6" data-i18n="nav6"></a><a href="#step7" data-i18n="nav7"></a></div></nav>
+<main>
+<section class="step" id="step1"><div class="step-inner">
+<p class="step-kicker">01</p><h2 data-i18n="h1"></h2>
+<p class="explain" data-i18n="p1"></p>
+<div class="stage">
+<div class="table-wrap" tabindex="0" role="region" aria-label="Activity"><table class="data"><thead><tr><th scope="col">#</th><th scope="col" data-i18n="colPlayer"></th><th scope="col" data-i18n="colDate"></th><th scope="col" data-i18n="colDevice"></th><th scope="col" data-i18n="colGames"></th></tr></thead><tbody id="handTable"></tbody></table></div>
+<div class="controls"><button type="button" id="handNext" class="btn primary" data-i18n="handNext"></button><button type="button" id="handReset" class="btn" data-i18n="handReset"></button></div>
+<ol id="handList" class="hand-list" aria-live="polite"></ol>
+<p id="handRead" class="readout"></p>
+</div>
+<p class="explain" data-i18n="handNote"></p>
+</div></section>
+
+<section class="step" id="step2"><div class="step-inner">
+<p class="step-kicker">02</p><h2 data-i18n="h2"></h2>
+<p class="explain" data-i18n="p2"></p>
+<p class="question" data-i18n="wrong1"></p>
+<p class="question" data-i18n="wrong2"></p>
+<p class="explain" data-i18n="baselineText"></p>
+<pre tabindex="0" id="baselineSql"><code>SELECT
+    a.event_date AS install_dt,
+    COUNT(*) AS installs,
+    ROUND(SUM(EXISTS (
+        SELECT 1 FROM Activity AS b
+        WHERE b.player_id = a.player_id
+          AND b.event_date = DATE_ADD(a.event_date, INTERVAL 1 DAY)
+    )) / COUNT(*), 2) AS Day1_retention
+FROM Activity AS a
+WHERE a.event_date = (
+    SELECT MIN(c.event_date)
+    FROM Activity AS c
+    WHERE c.player_id = a.player_id
+)
+GROUP BY a.event_date;
+</code></pre>
+<p class="explain" data-i18n="baselineCost"></p>
+</div></section>
+
+<section class="step" id="step3"><div class="step-inner">
+<p class="step-kicker">03</p><h2 data-i18n="h3"></h2>
+<p class="explain" data-i18n="p3"></p>
+<div class="stage">
+<p class="question" data-i18n="markAsk"></p>
+<div class="controls"><button type="button" id="markToggle" class="btn primary" aria-pressed="false" data-i18n="markShow"></button></div>
+<div class="table-wrap" tabindex="0" role="region" aria-label="Activity"><table class="data"><thead><tr><th scope="col">#</th><th scope="col" data-i18n="colPlayer"></th><th scope="col" data-i18n="colDate"></th><th scope="col" data-i18n="colRole"></th><th scope="col" data-i18n="colDevice"></th><th scope="col" data-i18n="colGames"></th></tr></thead><tbody id="markTable"></tbody></table></div>
+<p id="markRead" class="readout" aria-live="polite" hidden></p>
+</div>
+<div id="insightBlock" hidden>
+<p class="explain" data-i18n="insight"></p>
+<p class="explain" data-i18n="insightWhy"></p>
+</div>
+</div></section>
+
+<section class="step" id="step4"><div class="step-inner">
+<p class="step-kicker">04</p><h2 data-i18n="h4"></h2>
+<p class="explain" data-i18n="p4"></p>
+<p class="explain" data-i18n="joinText"></p>
+<p class="explain" data-i18n="leftText"></p>
+<p class="formula">COUNT(*) → installs &nbsp;·&nbsp; COUNT(a.player_id) → returned &nbsp;·&nbsp; NULL ⇒ not counted</p>
+<p class="question" data-i18n="innerText"></p>
+<p class="explain" data-i18n="dateText"></p>
+</div></section>
+
+<section class="step" id="step5"><div class="step-inner">
+<p class="step-kicker">05</p><h2 data-i18n="h5"></h2>
+<p class="explain" data-i18n="p5"></p>
+<div class="stage">
+<p class="hint" data-i18n="presetLabel"></p>
+<div class="controls" id="presets"><button type="button" class="btn" data-preset="0" data-i18n="preset_main"></button><button type="button" class="btn" data-preset="1" data-i18n="preset_calendar"></button><button type="button" class="btn" data-preset="2" data-i18n="preset_nobody"></button><button type="button" class="btn" id="randomTable" data-i18n="preset_random"></button></div>
+<p class="hint" data-i18n="joinLabel"></p>
+<div class="controls" id="joins"><button type="button" class="btn" data-join="left" data-i18n="joinLeft"></button><button type="button" class="btn" data-join="inner" data-i18n="joinInner"></button></div>
+<p class="hint" data-i18n="toggleHint"></p>
+<p class="hint" data-i18n="sim"></p>
+<div class="controls"><button type="button" id="prev" class="btn" data-i18n="prev"></button><button type="button" id="next" class="btn primary" data-i18n="next"></button><button type="button" id="reset" class="btn" data-i18n="reset"></button><button type="button" id="end" class="btn" data-i18n="end"></button></div>
+<p id="progress"></p>
+<p id="event" class="readout" aria-live="polite"></p>
+<h3 id="activityTitle" data-i18n="activityTitle"></h3>
+<div class="table-wrap" tabindex="0" role="region" aria-labelledby="activityTitle"><table class="data"><thead><tr><th scope="col" data-i18n="colInclude"></th><th scope="col" data-i18n="colPlayer"></th><th scope="col" data-i18n="colDate"></th><th scope="col" data-i18n="colRole"></th><th scope="col" data-i18n="colDevice"></th><th scope="col" data-i18n="colGames"></th></tr></thead><tbody id="activity"></tbody></table></div>
+<h3 id="installsTitle" data-i18n="installsTitle"></h3>
+<div class="table-wrap" tabindex="0" role="region" aria-labelledby="installsTitle"><table class="data"><thead><tr><th scope="col" data-i18n="colPlayer"></th><th scope="col" data-i18n="colInstall"></th><th scope="col" data-i18n="colTarget"></th><th scope="col" data-i18n="colMatch"></th></tr></thead><tbody id="installs"></tbody></table></div>
+<h3 id="outputTitle" data-i18n="outputTitle"></h3>
+<div class="table-wrap" tabindex="0" role="region" aria-labelledby="outputTitle"><table class="data"><thead><tr><th scope="col" data-i18n="colInstall"></th><th scope="col" data-i18n="colInstalls"></th><th scope="col" data-i18n="colReturned"></th><th scope="col" data-i18n="colRet"></th></tr></thead><tbody id="output"></tbody></table></div>
+</div>
+<h3 data-i18n="proofTitle"></h3>
+<p class="explain" data-i18n="proof1"></p>
+<p class="explain" data-i18n="proof2"></p>
+<p class="explain" data-i18n="proof3"></p>
+<p class="question" data-i18n="boundaries"></p>
+</div></section>
+
+<section class="step" id="step6"><div class="step-inner">
+<p class="step-kicker">06</p><h2 data-i18n="h6"></h2>
+<p class="explain" data-i18n="p6"></p>
+<div class="stage">
+<div class="table-wrap" tabindex="0" role="region" aria-label="Activity"><table class="data"><thead><tr><th scope="col" data-i18n="colPlayer"></th><th scope="col" data-i18n="colDate"></th><th scope="col" data-i18n="colDevice"></th><th scope="col" data-i18n="colGames"></th></tr></thead><tbody id="quizTable"></tbody></table></div>
+<fieldset class="prediction-options"><legend data-i18n="choose"></legend><label><input type="radio" name="prediction" value="0"><span data-i18n="opt0"></span></label><label><input type="radio" name="prediction" value="1"><span data-i18n="opt1"></span></label><label><input type="radio" name="prediction" value="2"><span data-i18n="opt2"></span></label></fieldset>
+<div class="controls"><button type="button" id="reveal" class="btn primary" data-i18n="reveal"></button></div>
+<p id="feedback" class="readout" aria-live="polite"></p>
+</div>
+</div></section>
+
+<section class="step" id="step7"><div class="step-inner">
+<p class="step-kicker">07</p><h2 data-i18n="h7"></h2>
+<p class="explain" data-i18n="p7"></p>
+<ul class="map"><li data-i18n="map1"></li><li data-i18n="map2"></li><li data-i18n="map3"></li></ul>
+<p class="explain" data-i18n="cost"></p>
+<p class="hint" data-i18n="dialect"></p>
+<details id="sourceDetails" open><summary data-i18n="source"></summary><pre tabindex="0"><code id="code"></code></pre></details>
+<div class="solution-actions"><button type="button" id="copy" class="btn primary" data-i18n="copy"></button><a class="btn" id="download" href="solution.sql" download="solution.sql" data-i18n="download"></a></div>
+<p id="copyStatus" role="status"></p>
+<div id="manualCopy" hidden><label for="fallbackSource" data-i18n="manualLabel"></label><textarea id="fallbackSource" rows="12" readonly spellcheck="false"></textarea></div>
+<h3 data-i18n="related"></h3>
+<div class="related"><a href="#step4" data-i18n="link1"></a><a href="../262/#step1" data-i18n="link2"></a></div>
+</div></section>
+</main>
+<noscript>请启用 JavaScript。 / Enable JavaScript. <a href="solution.sql">solution.sql</a></noscript>
+<script src="../common.js"></script>
+<script src="copy.js?v=1097-1"></script>
+<script src="core.js?v=1097-1"></script>
+<script src="sql-code.js?v=1097-1"></script>
+<script src="app.js?v=1097-1"></script>
+</body>
+</html>

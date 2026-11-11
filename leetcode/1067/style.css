@@ -1,0 +1,32 @@
+button,.btn,select,input[type="number"],input[type="range"],.lang-toggle button,.step-nav a,.prediction-options label,.site-head .official-link,summary,.back-link,.related a{min-height:48px}
+.back-link,.related a,a.btn,.step-nav a{display:inline-flex;align-items:center}
+button.btn:disabled{opacity:1;color:var(--muted);background:var(--panel);border-color:var(--muted);border-style:dashed}
+.btn,select{border-color:var(--muted)}.btn.primary:disabled{background:var(--panel);color:var(--muted)}
+.head-top{flex-wrap:wrap}.lang-toggle{margin-left:auto}.lang-toggle button{min-width:48px}
+.stage,.step-inner{min-width:0}p,li,h1,h2,h3,label,a,summary,.readout{overflow-wrap:anywhere}
+select{max-width:100%;width:100%;white-space:normal;margin-bottom:8px}.controls .btn{flex:1 1 150px;max-width:100%;white-space:normal}
+input[type="number"]{width:100%;background:var(--panel2);color:var(--text);border:1px solid var(--muted);border-radius:8px;padding:8px 12px;font:16px/1.5 ui-monospace,monospace}
+input:focus-visible,textarea:focus-visible,pre:focus-visible,.table-wrap:focus-visible{outline:3px solid var(--accent2);outline-offset:4px}
+.lang-toggle:focus-within{outline:3px solid var(--accent2);outline-offset:4px}.lang-toggle button:focus-visible{outline-offset:-4px}
+.step{scroll-margin-top:100px}
+.visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.input-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:12px}.input-row label{display:block;margin-bottom:4px}
+.range-row{display:flex;align-items:center;gap:16px}.range-row input[type="range"]{max-width:none;flex:1;min-width:0}.range-row output{min-width:7ch;font:600 18px ui-monospace,monospace}
+#handStatus.error,#inputStatus.error{color:var(--bad)}
+/* Written-out numbers: each occurrence of d boxed */
+.numbers{display:flex;flex-wrap:wrap;gap:6px 10px;margin-top:14px;font:15px/1.6 ui-monospace,monospace;font-variant-numeric:tabular-nums}
+.num{color:var(--muted)}.num.has{color:var(--text)}
+.dg.hit{outline:2px solid var(--accent2);outline-offset:-1px;color:var(--accent2);font-weight:700;padding:0 1px;border-radius:2px}
+.dg.other{text-decoration:underline dashed var(--muted);text-underline-offset:3px}
+/* Number wall: ten per row, a column shares its ones digit */
+.wall{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:3px;max-width:620px;margin-top:12px;font:14px/1.5 ui-monospace,monospace;font-variant-numeric:tabular-nums}
+.wcell{display:flex;justify-content:center;padding:2px 0;background:var(--panel2);border-radius:4px;color:var(--muted);min-width:0}
+.wcell.on{background:#164b59;color:var(--text)}.wcell.zero{opacity:.4}
+.places{min-width:640px}.places tr.current{background:var(--panel2);color:var(--accent)}.places tr.current th{color:var(--accent)}
+#tableEmpty{color:var(--muted)}
+.mapping li{margin-bottom:8px}
+.prediction-options{min-inline-size:0}.prediction-options label{gap:12px;padding:8px 0;align-items:flex-start}.prediction-options input{width:20px;height:20px;flex-shrink:0;margin-top:6px}.prediction-options label span{min-width:0}
+textarea{width:100%;background:var(--panel2);color:var(--text);font:14px/1.6 ui-monospace,monospace;padding:12px;border:1px solid var(--muted)}
+pre{white-space:pre;max-width:100%}
+@media(max-width:560px){.controls .btn{flex-basis:100%}.wall{font-size:11px;gap:2px}.input-row{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}

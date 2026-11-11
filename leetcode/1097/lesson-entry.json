@@ -1,0 +1,38 @@
+{
+  "id": 1097,
+  "title": {
+    "zh": "游戏玩法分析 V",
+    "en": "Game Play Analysis V"
+  },
+  "desc": {
+    "zh": "先看出每个玩家只有安装行和次日行有用，再用 MIN 压成每人一行、LEFT JOIN 查次日而不丢人。",
+    "en": "See that only each player's install row and next-day row matter, shrink to one row per player with MIN, then LEFT JOIN the next day without losing anyone."
+  },
+  "difficulty": "hard",
+  "topics": [
+    {
+      "zh": "数据库",
+      "en": "Database"
+    },
+    {
+      "zh": "分组与 LEFT JOIN",
+      "en": "Grouping and LEFT JOIN"
+    }
+  ],
+  "path": "1097/",
+  "leetcodeUrl": "https://leetcode.com/problems/game-play-analysis-v/",
+  "language": "MySQL",
+  "complexity": "O(n log n) time with the primary-key index (n Activity rows); O(p) intermediate space for p players",
+  "concepts": [
+    {
+      "name": "One row per player",
+      "step": 3,
+      "description": "Only the install row and the next-day row matter, so GROUP BY player_id with MIN(event_date) first."
+    },
+    {
+      "name": "LEFT JOIN keeps the denominator",
+      "step": 4,
+      "description": "Unmatched installers stay as NULL rows, so COUNT(*) counts installs and COUNT(column) counts returns."
+    }
+  ]
+}

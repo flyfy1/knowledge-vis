@@ -1,0 +1,50 @@
+html{scroll-behavior:auto}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+button,.btn,select,input[type=text],.lang-toggle button,.step-nav a,.prediction-options label,.site-head .official-link,.back-link,.related a,summary{min-height:48px}
+.lang-toggle button{min-width:48px}
+.back-link,.related a,a.btn,.site-head .official-link{display:inline-flex;align-items:center}
+.step-nav a{display:inline-flex;align-items:center}
+.head-top{flex-wrap:wrap}.lang-toggle{margin-left:auto}
+.btn,select{border-color:var(--muted)}
+button.btn:disabled,.btn.primary:disabled{opacity:1;color:var(--muted);background:var(--panel);border:1px dashed var(--muted);cursor:default}
+p,li,h1,h2,h3,label,a,summary,.readout{overflow-wrap:anywhere}
+.stage,.step-inner{min-width:0}
+input[type=text]{background:var(--panel2);color:var(--text);border:1px solid var(--muted);border-radius:8px;padding:8px 12px;width:14ch;max-width:100%;font-variant-numeric:tabular-nums}
+input[type=text][aria-invalid=true]{border-color:var(--bad)}
+.controls .btn{white-space:normal;max-width:100%}
+.chip-btn{min-width:56px;font-variant-numeric:tabular-nums}
+.row-label{margin:12px 0 6px;color:var(--muted);font-size:14px}
+.digits{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 8px}
+.digit{min-width:40px;padding:6px 8px;text-align:center;background:var(--panel2);border:1px solid var(--line);border-bottom:3px solid var(--line);font:600 20px/1.4 ui-monospace,SFMono-Regular,Consolas,monospace;border-radius:6px}
+.digit small{display:block;font:500 11px/1.3 system-ui,sans-serif;color:var(--muted)}
+.digit.bad{border-bottom-color:var(--bad);color:var(--bad)}
+.digit.ok{border-bottom-color:var(--accent)}
+.digit.matched{border-bottom-color:var(--good)}
+.digit.current{border:2px solid var(--accent2);border-bottom-width:3px}
+.digit.pending{opacity:.6}
+.num-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(46px,1fr));gap:4px;margin:12px 0}
+.cell{text-align:center;padding:6px 0;border-radius:6px;font:500 14px/1.4 system-ui,sans-serif;font-variant-numeric:tabular-nums;border:1px solid transparent}
+.cell.invalid{color:var(--muted);background:transparent;border-color:#202836}
+.cell.turnable{background:#164b59;color:var(--text);border-color:var(--accent)}
+.cell.self{background:#3c2c16;border:2px solid var(--accent2);color:var(--text)}
+.legend{margin:8px 0}.legend>span{display:inline-flex;align-items:center;gap:6px}
+.sw{display:inline-block;width:14px;height:14px;border-radius:3px}
+.sw-bad{border:1px solid #202836}.sw-turn{background:#164b59;border:1px solid var(--accent)}.sw-self{background:#3c2c16;border:2px solid var(--accent2)}
+.metrics.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{padding:4px 10px;border-radius:6px;font:500 14px/1.6 ui-monospace,SFMono-Regular,Consolas,monospace;background:var(--panel2);border:1px solid var(--line)}
+.chip.kept{border-color:var(--good)}.chip.out{color:var(--muted);border-style:dashed}
+.table-wrap{max-width:100%}
+.table-wrap:focus-visible,pre:focus-visible,textarea:focus-visible{outline:3px solid var(--accent2);outline-offset:4px}
+tr.current-row{background:var(--panel2);color:var(--accent)}
+.prediction-options label{gap:12px;padding:8px 0}.prediction-options input{width:20px;height:20px;flex-shrink:0}
+textarea{width:100%;background:var(--panel2);color:var(--text);font:14px/1.6 ui-monospace,monospace;border:1px solid var(--muted);padding:12px}
+pre{max-height:640px}
+.map li{margin:6px 0}
+.lang-toggle:focus-within{outline:3px solid var(--accent2);outline-offset:4px}
+.lang-toggle button:focus-visible{outline-offset:-4px}
+.step{scroll-margin-top:92px}
+@media(max-width:560px){.metrics.three{grid-template-columns:1fr}.digit{min-width:32px;font-size:17px;padding:4px 5px}.num-grid{grid-template-columns:repeat(auto-fill,minmax(40px,1fr))}.cell{font-size:13px}.controls .btn{flex:1 1 140px}.back-link{max-width:100%}}
+.controls .chip-btn{flex:0 0 auto}
+#gridToggle[aria-pressed=true]{background:#3c2c16;border-color:var(--accent2);color:var(--text)}
+#ledger td:not(:first-child){white-space:nowrap;overflow-wrap:normal}

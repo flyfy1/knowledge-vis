@@ -1,0 +1,43 @@
+{
+  "id": 1067,
+  "title": {
+    "zh": "范围内的数字计数",
+    "en": "Digit Count in Range"
+  },
+  "desc": {
+    "zh": "每个数位上的数字按 0…9 循环：一次数完一整个数位，用 f(high) − f(low − 1) 相减；d = 0 时不计前导零。",
+    "en": "Each digit place cycles through 0…9: count a whole place at once, subtract f(high) − f(low − 1), and leave out leading zeros when d = 0."
+  },
+  "difficulty": "hard",
+  "topics": [
+    {
+      "zh": "数位计数",
+      "en": "Digit counting"
+    },
+    {
+      "zh": "数学",
+      "en": "Math"
+    }
+  ],
+  "path": "1067/",
+  "leetcodeUrl": "https://leetcode.com/problems/digit-count-in-range/",
+  "language": "Python",
+  "complexity": "O(log10 high) time: at most 9 place passes per prefix count for high <= 2*10^8, two prefix counts; O(1) auxiliary space",
+  "concepts": [
+    {
+      "name": "Prefix difference f(high) - f(low - 1)",
+      "step": 1,
+      "description": "Counting over low..high reduces to counting over 1..n twice."
+    },
+    {
+      "name": "Per-place cycle formula",
+      "step": 2,
+      "description": "At place p the digit cycles every 10p numbers: left*p complete blocks plus p, right+1 or 0 from the last block."
+    },
+    {
+      "name": "No leading zeros for d = 0",
+      "step": 3,
+      "description": "A zero needs a nonzero digit to its left: use (left - 1)*p and stop when left = 0."
+    }
+  ]
+}
