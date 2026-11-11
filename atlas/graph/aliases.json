@@ -14,5 +14,25 @@
   "cnn-feature-maps": {
     "zh": ["神经网络", "卷积神经网络"],
     "en": ["neural network", "convolutional neural network", "CNN"]
+  },
+  "seasons-orbit": {
+    "zh": ["为什么会有四季", "四季是怎么来的", "四季成因", "夏天为什么热"],
+    "en": ["why do we have seasons", "why are there seasons", "what causes the seasons", "why is summer hot"]
+  },
+  "moon-phases": {
+    "zh": ["月亮为什么有圆缺", "月有阴晴圆缺", "月亮圆缺", "上弦月 下弦月"],
+    "en": ["why does the moon change shape", "phases of the moon", "half moon", "crescent moon"]
+  },
+  "ph-scale": {
+    "zh": ["酸碱度", "pH", "pH 值", "酸性 碱性"],
+    "en": ["pH", "acidity", "acid or alkaline", "how acidic"]
+  },
+  "derivative": {
+    "zh": ["什么是导数", "瞬时速度", "切线斜率", "变化率"],
+    "en": ["what is a derivative", "rate of change", "instantaneous speed", "slope of a tangent"]
+  },
+  "action-potential": {
+    "zh": ["神经怎么传信号", "神经信号"],
+    "en": ["how do nerves send signals", "nerve signal"]
   }
 }
