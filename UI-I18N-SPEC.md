@@ -36,7 +36,7 @@ Yangyu 2026-10-15 定：所有知识点页面一律中英文双语、右上角�
 
 ## 分类与标签
 
-- 分类注册表：`pages.config.js` 导出 `window.KNOWLEDGE_CATEGORIES` 数组，元素为 `{id, name: {zh, en}}`，数组顺序即索引页筛选 chips 的展示顺序。首批四类：`signal` 信号与系统 / Signals & Systems、`probability` 概率与统计 / Probability & Statistics、`computing` 计算与智能 / Computing & AI、`math` 数学基础 / Mathematical Foundations。新增分类必须先在此注册，不得在条目里临时发明 id。
+- 分类注册表：`pages.config.js` 导出 `window.KNOWLEDGE_CATEGORIES` 数组，元素为 `{id, name: {zh, en}}`，数组顺序即索引页筛选 chips 的展示顺序。首批四类：`signal` 信号与系统 / Signals & Systems、`probability` 概率与统计 / Probability & Statistics、`computing` 计算与智能 / Computing & AI、`math` 数学基础 / Mathematical Foundations；完整列表以 `pages.config.js` 为准（2026-11-11 新增 `tech` 技术原理 / How Things Work、`society` 社会与公共选择 / Society & Collective Choice、`economics` 经济与金钱 / Economics & Money）。新增分类必须先在此注册，不得在条目里临时发明 id。
 - 条目归类：每个条目带单个 `category` 字段（值 = 注册表中的分类 id）。`tags` 是另一个维度——双语细标签数组 `[{zh, en}...]`，描述条目的具体主题（如频域 / Frequency Domain、变换 / Transform），不要拿标签代替分类，也不要把分类名重复进标签。
 - 索引页交互（2026-11-11 改版后）：顶部一排分类 chips（第一个是「精选 / Featured」，代表首页默认视图，仍为 `data-cat="all"`；其后是注册表中的各分类），纯前端切换、无刷新。分类、学段和全站搜索词写在 URL 里（`?category=`、`?stage=`、`?s=`），刷新、分享和前进后退都能还原。分类视图按 `KNOWLEDGE_SUBTOPICS` 分组；卡片显示分类与学段徽标，但已由当前筛选或分组标题说明的那一项不再重复显示。名称按当前语言取注册表双语名，随语言切换即时更新。某分类暂无条目时显示空状态文案，不隐藏该 chip。`tags` 不再在首页显示，只参与全站搜索。完整约定见 specs/index-pagination.md。
 

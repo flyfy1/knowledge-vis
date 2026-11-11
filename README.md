@@ -19,18 +19,22 @@
 | `physics/` 物理与电路 | mechanics 力学 · matter 物质与流体 · thermal 热学 · waves 波与声 · optics 光学 · circuits 电路 · electromagnetism 电磁 · modern 近代物理 |
 | `signal/` 信号与系统 | transforms 变换 · systems 系统 · sampling 采样与调制 · control 控制与估计 |
 | `engineering/` 工程与控制 | control 控制工程 |
-| `probability/` 概率与统计 | basics 概率基础 · statistics 描述统计 · inference 统计推断 · stochastic 随机过程与信息 |
+| `tech/` 技术原理 | devices 身边的设备 |
+| `probability/` 概率与统计 | basics 概率基础 · everyday 日常里的统计 · statistics 描述统计 · inference 统计推断 · stochastic 随机过程与信息 |
 | `computing/` 计算与智能 | algorithms 算法 · ml 机器学习 · systems 系统与安全 · graphics 图形与机器人 |
 | `chemistry/` 化学 | matter 物质构成 · reactions 化学反应 · solutions 溶液与酸碱 |
 | `biology/` 生物 | cells 细胞与分子 · body 人体与神经 · ecology 生态与进化 |
 | `earth/` 地球与太空 | astronomy 天文 · geo 地理与地质 · climate 大气与气候 |
 | `investment/` 投资 | basics 入门 · rates 利率与成本（另有 `investment/atlas/` 投资图谱） |
 | `psychology/` 心理与认知 | cognition 认知 · ethics 伦理 |
+| `society/` 社会与公共选择 | civics 投票与规则 |
+| `economics/` 经济与金钱 | money 货币与银行 |
 | `language/` 语言与语言学 | phonology 语音与音系 |
 
 跨主题的入口与站点文件留在根目录：
 
-- `index.html` — 索引首页，由配置自动渲染（无构建、无后端，纯静态）：默认显示 `KNOWLEDGE_FEATURED` 里的精选页和「更多入口」；`?category=` 按子主题分组，`?stage=` 按分类分组，`?s=` 全站搜索。约定见 [specs/index-pagination.md](specs/index-pagination.md)
+- `index.html` — 索引首页，由配置自动渲染（无构建、无后端，纯静态）：默认显示 `KNOWLEDGE_FEATURED` 里的精选页、`KNOWLEDGE_ESSAYS` 里的长文和「更多入口」；`?category=` 按子主题分组，`?stage=` 按分类分组，`?s=` 全站搜索。约定见 [specs/index-pagination.md](specs/index-pagination.md)
+- 长文（一篇讲透一个领域、每章配一个模型的单页）的标准、文件布局与登记步骤见 [specs/essays.md](specs/essays.md)
 - `pages.config.js` — **索引配置**：新增知识页 = 在此数组加一条（填 `category`、`subtopic`、`path: "<分类>/<子主题>/<slug>/"`）+ 把页面放进同名目录
 - `atlas/` — Bilingual mathematics and physics map with sourced relations, editorial routes and integrated teaching experiments. See [current development/handoff index](atlas/README.md) for verified scope, iteration evidence and next work. Lesson links in the graph are atlas-relative: `../<category>/<subtopic>/<slug>/#stepN`.
 - `leetcode/` — Interactive algorithm lessons, with a dedicated collection and Python solutions. Register new problems in `leetcode/problems.config.js`; the first ten Hard problems by ascending ID (4, 10, 23, 25, 30, 32, 37, 41, 42, 44) and the original [2916](https://visual.integ.life/leetcode/2916/) are available.

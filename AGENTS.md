@@ -55,6 +55,7 @@ node atlas/tests/registry-import.cjs              # 文章 REGISTRY.json → 图
 HOME_TEST_URL=http://127.0.0.1:18871/ node tests/home-concept-search.cjs   # 浏览器
 ```
 
+- 新增长文（一篇讲透一个领域）：标准、文件布局与登记步骤见 [specs/essays.md](specs/essays.md)。
 - 给文章页加概念、加分区：`node scripts/atlas-import-registry.cjs <页面目录>`、`--add-region`，细则见 [specs/atlas-search-index.md](specs/atlas-search-index.md)。
 
 - Playwright 不在本仓库，运行时加上 `NODE_PATH=~/Documents/integ-life/integ-games/node_modules`。
