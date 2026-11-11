@@ -34,6 +34,38 @@ ok(CS.score(ent, '什么是熵') === CS.score(ent, '熵') - 5 && CS.score(ent, '
 ok(CS.score(rec(['能量守恒']), '能量是什么') > 0 && CS.score(rec(['数量']), '能量是什么') === 0, '能量是什么 keeps 能量, does not become 量');
 ok(CS.score(rec(['What is life']), 'what is life') === 100, 'a title that is itself a question still matches literally first');
 
+// Question scaffolding (2026-11-11 gap audit): leftover predicates after the question words.
+for (const [q, rest] of [['导数是什么意思', '导数'], ['四季是怎么形成的', '四季'], ['催化剂是怎么起作用的', '催化剂'],
+  ['利率上升有什么影响', '利率上升'], ['质数有什么用', '质数'], ['电池是怎么工作的', '电池'], ['为什么有白天黑夜', '白天黑夜'],
+  ['元素周期表怎么看', '元素周期表'], ['酒精对身体的影响', '酒精'], ['what causes earthquakes', 'earthquakes'],
+  ['why do we get a fever', 'fever'], ['how to calculate probability', 'probability'], ['how to read the periodic table', 'periodic table'],
+  ['what is an atom made of', 'atom'], ['how are proteins made', 'proteins'], ['what are prime numbers used for', 'prime numbers'],
+  ['what happens when interest rates rise', 'interest rates rise'], ['how does alcohol affect the body', 'alcohol'],
+  ['where do musical scales come from', 'musical scales']]) {
+  ok(CS.unscaffold(q) === rest, `scaffolding dropped: "${q}" -> "${rest}" (got "${CS.unscaffold(q)}")`);
+}
+for (const q of ['work and energy', '功', '杠杆原理', '有机化学', 'loss function', 'wave function', 'entropy'])
+  ok(CS.unscaffold(q) === '', `content word kept: "${q}" has no scaffolding form (got "${CS.unscaffold(q)}")`);
+ok(CS.score(rec(['导数']), '导数是什么意思') === 95, 'scaffolding ranks 5 below the plain word');
+ok(CS.score(rec(['Work and energy changes']), 'work and energy') > 0, '"work" as content still matches literally');
+ok(CS.score(rec(['Voltage, current & power']), 'what causes rent') === 0, 'fallbacks are strict: "rent" does not match inside "current"');
+ok(CS.score(rec(['Plate'], ['plate motion']), 'where do emotions come from') === 0, 'fallbacks are strict: no match across a word break');
+ok(CS.score(rec(['Battery']), 'batteries') > 0 && CS.score(rec(['Process']), 'processes') > 0, '-ies and -es plurals');
+// Comparison queries (2026-11-11).
+for (const [q, pair] of [['mean vs median', ['mean', 'median']], ['molecule vs atom', ['molecule', 'atom']],
+  ['difference between mitosis and meiosis', ['mitosis', 'meiosis']], ['平均数和中位数有什么区别', ['平均数', '中位数']],
+  ['分子和原子的区别', ['分子', '原子']], ['均值vs中位数', ['均值', '中位数']]]) {
+  assert.deepEqual(CS.compare(q), pair, q); checks++;
+}
+for (const q of ['canvas', '酸和碱', '和弦', 'rock and roll', '排列组合怎么区分', 'entropy']) ok(CS.compare(q) === null, `not a comparison: "${q}"`);
+{
+  const both = rec(['Mean, median, mode']), onlyA = rec(['Mean']), onlyB = rec(['Median household income']);
+  const items = [{ n: 'A', record: onlyA }, { n: 'B', record: onlyB }, { n: 'both', record: both }];
+  ok(CS.rank(items, 'mean vs median')[0].n === 'both', 'a record covering both sides comes first');
+  ok(CS.rank([items[0], items[1]], 'mean vs median').map(x => x.n).join() === 'A,B', 'otherwise the best of each side');
+  ok(CS.rank(items, 'mean').map(x => x.n)[0] === 'A', 'a plain query is not rearranged');
+}
+
 // Generated index shape.
 const box = { window: {} };
 vm.runInNewContext(fs.readFileSync(path.join(root, 'atlas/search-index.js'), 'utf8'), box);
@@ -58,7 +90,7 @@ const items = [
 const essays = new Set(box.window.KNOWLEDGE_ESSAYS || []);
 const essayPaths = new Set(pages.filter(p => essays.has(p.slug)).map(p => p.path));
 const tie = x => x.kind === 'page' ? (essayPaths.has(x.href) ? 2 : 0) : 1;
-const first = q => CS.rank(items, q).sort((x, y) => y.score - x.score || tie(x) - tie(y))[0];
+const first = q => CS.arrange(CS.rank(items, q).sort((x, y) => y.score - x.score || tie(x) - tie(y)), q, x => x.record)[0];
 const expected = [
   ['傅里叶', 'Fourier', 'signal/transforms/fourier/'],
   ['利息', 'interest', 'investment/rates/'],
@@ -69,7 +101,9 @@ const expected = [
   ['共振', 'resonance', 'physics/waves/resonance/'],
   ['正态分布', 'bell curve', 'probability/'],
   ['导数', 'derivative', 'math/calculus/derivative/'],
-  ['神经网络', 'neural network', 'computing/ml/cnn-feature-maps/'],
+  // 2026-11-11 gap audit: CNN kernels was a false hit for "neural network"; the backpropagation
+  // page opens on the smallest network (forward pass and loss), tagged in pages.config.js.
+  ['神经网络', 'neural network', 'computing/ml/backpropagation/'],
 ];
 const landed = {};
 for (const [zh, en, prefix] of expected) for (const q of [zh, en]) {
@@ -102,9 +136,39 @@ const chapters = [
   ['补码', "two's complement", 'computing/systems/switches-that-compute/#ch5'],
   ['0.1+0.2', '0.1 + 0.2', 'computing/systems/switches-that-compute/#ch10'],
 ];
+// Gap audit 2026-11-11: a natural phrasing reaches the page or chapter that answers it
+// (aliases, scaffolding, comparisons, scarcity-moves concepts, and the corrected landings).
+chapters.push(
+  ['导数是什么意思', 'what is a derivative', 'math/calculus/derivative/'],
+  ['圆周率', 'pi', 'math/geometry/circle-intro/'],
+  ['虚数', 'imaginary number', 'math/algebra/complex-numbers/'],
+  ['期望值', 'expected value', 'probability/basics/expected-value/'],
+  ['食物链', 'food chain', 'biology/ecology/food-web/'],
+  ['水循环', 'how does rain form', 'earth/climate/water-cycle/'],
+  ['线性回归', 'linear regression', 'probability/statistics/regression-correlation/'],
+  ['哈希表', 'hash function', 'computing/algorithms/hashing/'],
+  ['量子力学是什么', 'what is quantum mechanics', 'physics/modern/quantum-basics/'],
+  ['蛋白质是怎么合成的', 'how are proteins made', 'biology/cells/dna-replication/'],
+  ['电池是怎么工作的', 'how do batteries work', 'chemistry/reactions/electrochemistry/'],
+  ['地震是怎么发生的', 'what causes earthquakes', 'earth/geo/plate-tectonics/'],
+  ['平均数和中位数有什么区别', 'mean vs median', 'probability/'],
+  ['分子和原子的区别', 'molecule vs atom', 'chemistry/matter/molecules-atoms/'],
+  ['排列组合怎么区分', 'permutations vs combinations', 'probability/basics/counting-permutations/'],
+  ['机会成本', 'opportunity cost', 'demos/scarcity-moves/#c1'],
+  ['边际成本', 'marginal cost', 'demos/scarcity-moves/#c2'],
+  ['沉没成本', 'sunk cost', 'demos/scarcity-moves/#c2'],
+  ['比较优势', 'comparative advantage', 'demos/scarcity-moves/#c3'],
+  ['经济衰退', 'recession', 'demos/scarcity-moves/#c8'],
+  ['正态分布', 'normal distribution', 'probability/basics/binomial-normal/#step3'],
+  ['算法', 'what is an algorithm', 'computing/algorithms/sorting/'],
+  ['手机是怎么工作的', 'how do cell phones work', 'tech/devices/inside-a-phone/'],
+  ['心脏是怎么工作的', 'how does the heart work', 'biology/body/blood-circulation/'],
+  ['音阶', 'where do scales come from', 'math/applied/music-theory/#step0'],
+  ['酸和碱', 'acids and bases', 'chemistry/solutions/ph-scale/'],
+);
 for (const [zh, en, href] of chapters) for (const q of [zh, en]) {
   const hit = first(q);
-  ok(hit && hit.href === href, `"${q}" opens ${href} (got ${hit && hit.href})`);
+  ok(hit && (hit.href === href || (href.endsWith('/') && hit.href.startsWith(href))), `"${q}" opens ${href} (got ${hit && hit.href})`);
   landed[q] = `${hit.kind} ${hit.href}`;
 }
 console.log(JSON.stringify({ pass: true, checks, concepts: K.concepts.length, landed }));

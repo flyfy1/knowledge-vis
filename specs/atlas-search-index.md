@@ -102,11 +102,87 @@ the neighbour prefetch): 570,716 → 369,016 bytes.
   after a leading how/what/why. "什么是熵", "为什么会共振", "what is entropy", "how does photosynthesis work"
   went from no result to the concept. A query that already matches is never rewritten, so the existing
   rankings do not move. Tests: `tests/concept-search.cjs`.
+- Question scaffolding (2026-11-11, gap audit): when neither the typed query nor its `unquestion()` form
+  matches a record, `unscaffold()` drops the words around the content and the rest is scored 5 below the
+  plain words. Built from the audit's 83 misses, not from a word list:
+  - Chinese phrases: 是什么意思/什么意思/的意思/的含义, 有什么用/作用/影响/好处/意义, 起什么作用, (之间的/有什么)区别/
+    不同/差别/差异, 怎么区分, 的原理/原理是什么/的工作原理, 对(身体…)的影响; 有 next to a question word
+    ("为什么有白天黑夜", "质数有什么用") is a particle.
+  - A predicate left as a whole word after a question word is dropped, never the first word: 意思 含义 形成
+    工作 起作用 发挥作用 发生 运作 运行 产生 来 算 计算 区分 实现 看 读 定义 用 有 影响 原理 回事. "四季是怎么形成的"
+    → 四季, "元素周期表怎么看" → 元素周期表; "杠杆原理", "功", "有机化学" have no question word and stay whole.
+  - English: what causes / what is the cause of / what is the meaning of / what happens when / explain /
+    tell me about / where does X come from / how to (calculate|read|find|use…) X / how are X made /
+    what are X used for / how does X affect Y / effect of X on Y; a trailing work/function/form/occur only
+    after a leading how/why/what/where/when ("loss function", "wave function" stay); and the words
+    we/us/our/they/people/someone/get/have/has/had/to.
+  - Strict: this fallback (and the comparison below) counts titles and aliases only, and a contained match
+    must start at a word ("rent" does not match "current", "emotion" not "plate motion"); Chinese has no
+    word breaks. Without this, "what causes tides" opened the integral page.
+- Plurals: "-ies" → "-y" and "-sses/-xes/-ches/-shes" → drop "es" are tried before dropping "s" ("batteries").
+- Comparisons (2026-11-11): `compare()` reads "A vs B", "A versus B", "A compared to B", "difference(s)
+  between A and B", "compare A and B", and Chinese "A和/与/跟/同/及B" only together with a comparison word
+  (的区别, 有什么不同, 差别, 差异, 怎么区分, 对比), so "酸和碱" and "和弦" stay whole; "均值vs中位数" works. When
+  the whole query matches nothing for a record, each half is scored (strictly): both halves → min − 5;
+  one half → that score − 10. `arrange()` (used by `rank()` and by the homepage after its own sort) puts
+  what covers both halves first, then alternates the best of each half. "mean vs median" →
+  mean-median-mode / numbers-lie #c8; "molecule vs atom" → molecules-atoms; a plain query is not rearranged.
 - Order: score, then shorter title, then registry order. The homepage adds one tie rule for whole essays
   (specs/index-pagination.md § Search).
 
 Atlas: the list follows this ranking while a query is active; the map keeps all concepts and marks
 non-matches "Outside results" as before.
+
+### Gap audit fixes and measurements (2026-11-11)
+
+The audit (1,211 questions through the homepage matcher, `/tmp/agent-tasks/gap-audit/`) found 157 search
+defects: 97 everyday questions whose answer exists but a natural phrasing misses it in the top 3, and 60
+deep rungs not reached by their own name. Fixes: scaffolding and comparisons above; 491 new aliases (62 → 553) on 94
+concepts in `atlas/graph/aliases.json` (everyday words and textbook terms the audit listed, e.g. 圆周率/pi,
+虚数, 食物链, 水循环, 期望值, linear regression, hash function, 牛顿定律, 量子力学, SIR model); a REGISTRY.json for
+`demos/scarcity-moves/` (15 concepts with 170 aliases, #c1–#c14 plus sunk cost at #c2, imported with `--region society`);
+page tags in `pages.config.js` where the page top is the right landing (below).
+
+Re-run of the whole set before → after (same harness, same labels):
+
+| | before | after |
+| --- | --- | --- |
+| everyday a / b / c (401) | 146 / 22 / 233 | 159 / 24 / 218 |
+| weighted a / b / c | 39.3% / 5.5% / 55.3% | 42.7% / 5.7% / 51.5% |
+| everyday questions with a variant missing the answer | 97 (190 variant misses) | 2 (3) |
+| defect rungs whose own name opens the target first, zh and en (60) | 10 | 56 |
+| variants that lost a top-3 answer | — | 0 |
+
+Still missed: "ChatGPT是怎么写出回答的" / "how does chatgpt work" (left to the chatbot essay awaiting
+registration, so two pages do not compete for the same alias), "how do polls work margin of error";
+rungs "superposition" (en opens wave superposition, also correct), queueing theory, machine learning and
+Moore's law (no adequate content). 37 questions labelled "no answer" now show a related result instead of
+nothing (e.g. "化学键" → molecular-shapes, "sunk cost" → scarcity-moves #c2, "rent vs buy" → noise).
+
+**Landings fixed** (audit false hits: right page, wrong step or level):
+
+| Query | Was | Now | How |
+| --- | --- | --- | --- |
+| normal distribution, 正态分布 | CLT #step3 (σ/√n) | binomial-normal #step3 (the bell drawn over the bars) | bell-curve aliases moved to `binomial-normal`; `gaussian` re-anchored to CLT #step2 |
+| neural network, 神经网络 | CNN kernels | backpropagation page top (the smallest network, forward pass and loss) | page tag; aliases removed from `cnn-feature-maps` |
+| what is an algorithm, 算法 | Big-O step / LeetCode | sorting page top (two algorithms race on one deck) | page tag |
+| how do cell phones work | handover chapter | inside-a-phone page top | page tags |
+| how does the heart work | cardiac-output chapter | blood-circulation #step1 (four chambers, valves) | aliases; concept re-anchored #step3 → #step1 |
+| where do scales come from, 音阶 | chords step | music-theory #step0 (intervals) | aliases on `musical-intervals` |
+| acids and bases | weak-acid Ka | pH scale | aliases |
+| what causes earthquakes, 地震 | seismic waves | plate tectonics | aliases |
+
+General rule for this class: an everyday word for an idea belongs to the concept (or the page tag) whose
+step first shows the idea, not to a step that uses it later; a concept's anchor is the step that
+introduces it, not the step with its formula. Avoid whole-question aliases that share many words with
+other phrasings: under the every-word rule a partial match ("where do musical scales come from" for
+"where do scales come from") scores low and blocks the fallback for that record.
+
+**Page-level search terms.** Pages carry no alias field; `tags` are search-only by UI-I18N-SPEC
+("tags 不再在首页显示，只参与全站搜索") and are scored as aliases. The smallest consistent mechanism is a
+topic tag on the page entry: backpropagation (神经网络 / Neural Network, 损失函数 / Loss Function), sorting
+(算法 / Algorithm), inside-a-phone (手机 / Cell Phones, 手机是怎么工作的 / How Do Cell Phones Work). A word for
+an idea inside a page goes to `aliases.json` instead.
 
 ## Search index format (`window.KNOWLEDGE_CONCEPTS`)
 

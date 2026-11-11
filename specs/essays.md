@@ -79,7 +79,7 @@ types ("为什么要打疫苗", "how does my phone know where I am"), not only t
 
 | Slug | Path | Chapters / concepts | Region | Test env var |
 | --- | --- | --- | --- | --- |
-| scarcity-moves | demos/scarcity-moves/ | 14 chapters, no atlas concepts | — | — |
+| scarcity-moves | demos/scarcity-moves/ | 15 chapters, 15 concepts (`#c1…#c14`, sunk cost at `#c2`) | society | — |
 | numbers-lie | probability/everyday/numbers-lie/ | 10 (`#c1…#c10`) | measurement | `NL_BASE_URL` |
 | body-in-balance | biology/body/body-in-balance/ | 9 (`#ch1…#ch9`) | life | `ESSAY_BASE_URL` |
 | inside-a-phone | tech/devices/inside-a-phone/ | 12 concepts in 11 sections (`#gps…#battery`, `#method`) | tech | `ESSAY_BASE_URL` |
@@ -133,5 +133,5 @@ labels shrink to about 8 px.
 ### scarcity-moves: 稀缺会搬家
 
 The first essay: ten economic ideas, then applied to AI. It is Chinese only (`languages: ["zh"]`), so in
-English mode its card shows a "Chinese only" badge. It stays in the `demos` category and has no
-REGISTRY.json or atlas concepts.
+English mode its card shows a "Chinese only" badge. It stays in the `demos` category. Its REGISTRY.json was written on 2026-11-11 for search (gap audit) and
+imported with `--region society` (category `demos` has no region); c15, advice to a student, is not a concept.

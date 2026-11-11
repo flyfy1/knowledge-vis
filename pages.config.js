@@ -243,7 +243,7 @@ window.KNOWLEDGE_PAGES = [
       zh: "定位、朝向、触摸、拍照、显示、压缩、上网、纠错、切换、电量：每个功能都是一次对极小量的测量，加上一个把信号从噪声里分出来的办法。十章，十个可以动手的模型。",
       en: "Location, orientation, touch, camera, screen, compression, radio, error correction, handover and battery: each feature measures something tiny and uses one trick to pull signal out of noise. Ten chapters, each with a model you can push around."
     },
-    tags: [{ zh: "GPS", en: "GPS" }, { zh: "传感器", en: "Sensors" }, { zh: "噪声", en: "Noise" }, { zh: "无线通信", en: "Wireless" }, { zh: "颜色视觉", en: "Colour vision" }, { zh: "电池", en: "Batteries" }],
+    tags: [{ zh: "GPS", en: "GPS" }, { zh: "传感器", en: "Sensors" }, { zh: "噪声", en: "Noise" }, { zh: "无线通信", en: "Wireless" }, { zh: "颜色视觉", en: "Colour vision" }, { zh: "电池", en: "Batteries" }, { zh: "手机", en: "Cell Phones" }, { zh: "手机是怎么工作的", en: "How Do Cell Phones Work" }],
     category: "tech", subtopic: "devices", stage: "senior", status: "live", path: "tech/devices/inside-a-phone/"
   },
   {
@@ -592,7 +592,8 @@ window.KNOWLEDGE_PAGES = [
     tags: [
       { zh: "排序算法", en: "Sorting" },
       { zh: "大 O", en: "Big O" },
-      { zh: "分而治之", en: "Divide & Conquer" }
+      { zh: "分而治之", en: "Divide & Conquer" },
+      { zh: "算法", en: "Algorithm" }
     ],
     category: "computing", subtopic: "algorithms",
     stage: "university",
@@ -1724,7 +1725,7 @@ window.KNOWLEDGE_PAGES = [
     slug: "backpropagation",
     title: { zh: "反向传播 · 误差沿网络回流", en: "Backpropagation · Error Flows Back Through the Network" },
     desc: { zh: "输出错了，每个权重该负多少责任？用最小的网络，从「推一下看变化」走到链式法则、梯度下降，再看深层网络里梯度为什么会消失。", en: "When the output is wrong, how much blame does each weight carry? Use the smallest network to go from “nudge and see” to the chain rule and gradient descent, then see why gradients vanish in deep networks." },
-    tags: [{ zh: "计算与智能", en: "Computing & AI" }],
+    tags: [{ zh: "计算与智能", en: "Computing & AI" }, { zh: "神经网络", en: "Neural Network" }, { zh: "损失函数", en: "Loss Function" }],
     category: "computing", subtopic: "ml", stage: "university", status: "live", path: "computing/ml/backpropagation/"
   },
   {

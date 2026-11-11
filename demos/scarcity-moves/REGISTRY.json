@@ -1,0 +1,230 @@
+{
+  "slug": "scarcity-moves",
+  "path": "demos/scarcity-moves/",
+  "category": "demos",
+  "categoryName": { "zh": "演示", "en": "Demos" },
+  "stage": "university",
+  "title": { "zh": "稀缺会搬家 · 经济学的基本道理与 AI 之后", "en": "Scarcity Moves · Basic economics, and what comes after AI" },
+  "desc": {
+    "zh": "十个经济学的基本道理，每个配一个可以动手的小模型；再用它们推演 AI 普及之后，工作、收入和稀缺会怎样变化。",
+    "en": "Ten basic ideas from economics, each with a small model you can play with. Then I use them to work out how jobs, income and scarcity may change once AI is everywhere."
+  },
+  "tags": [
+    { "zh": "经济学", "en": "Economics" },
+    { "zh": "AI 与社会", "en": "AI & Society" },
+    { "zh": "长文", "en": "Long-form essay" }
+  ],
+  "note": "Written 2026-11-11 for search (gap audit): the essay had no REGISTRY.json, so none of its chapters could be found. One concept per chapter c1–c14 plus sunk cost, which is the second half of c2. c15 (advice to a student) is not a concept.",
+  "concepts": [
+    {
+      "id": "opportunity-cost",
+      "anchor": "#c1",
+      "title": { "zh": "稀缺与机会成本", "en": "Scarcity and opportunity cost" },
+      "desc": {
+        "zh": "资源有限而愿望没完，所以必须选；一件事的真实成本，是为它放弃的最好的另一件事。模型：一天十六个清醒的小时，在学习和打工之间分配。",
+        "en": "Resources are limited and wants are endless, so you have to choose; the real cost of anything is the best other thing you gave up. Model: splitting sixteen waking hours between study and paid work."
+      },
+      "aliases": {
+        "zh": ["机会成本", "稀缺", "稀缺性", "稀缺性是什么", "为什么必须做选择", "生产可能性边界", "时间的成本", "选择的代价"],
+        "en": ["opportunity cost", "scarcity", "what is scarcity", "production possibility frontier", "the cost of a choice", "trade-off"]
+      },
+      "relatedPages": []
+    },
+    {
+      "id": "marginal-thinking",
+      "anchor": "#c2",
+      "title": { "zh": "边际：再多一点值不值", "en": "The margin: is one more step worth it?" },
+      "desc": {
+        "zh": "好的决定只问“再多一点值不值”：价格取决于最后那一杯水值多少，所以水比钻石便宜；学得越多，下一小时的收获越小，这是收益递减。",
+        "en": "A good decision asks only whether one more step is worth it: price depends on what the last cup of water is worth, which is why water is cheaper than diamonds; each extra hour of study gains less, which is diminishing returns."
+      },
+      "aliases": {
+        "zh": ["边际", "边际思维", "边际成本", "边际收益", "收益递减", "边际效用递减", "钻石与水悖论", "为什么水比钻石便宜"],
+        "en": ["marginal thinking", "the margin", "marginal cost", "marginal benefit", "diminishing returns", "diminishing marginal utility", "diamond water paradox", "why is water cheaper than diamonds"]
+      },
+      "relatedPages": ["supply-demand"]
+    },
+    {
+      "id": "sunk-cost",
+      "anchor": "#c2",
+      "title": { "zh": "沉没成本", "en": "Sunk cost" },
+      "desc": {
+        "zh": "已经花掉、无论如何回不来的钱和时间不该进入决定；唯一该问的是接下来的时间用来干什么最好。难看的电影要不要看完、读了两年不喜欢的专业，是同一道题。",
+        "en": "Money and time already spent and gone whatever you do should not enter the decision; the only question is how best to use what comes next. Sitting through a dreadful film and staying in a degree you dislike are the same problem."
+      },
+      "aliases": {
+        "zh": ["沉没成本", "沉没成本谬误", "已经花了钱要不要继续", "电影难看要不要看完", "及时止损"],
+        "en": ["sunk cost", "sunk cost fallacy", "should I keep going because I already paid", "cut your losses"]
+      },
+      "relatedPages": []
+    },
+    {
+      "id": "comparative-advantage",
+      "anchor": "#c3",
+      "title": { "zh": "交换与比较优势", "en": "Trade and comparative advantage" },
+      "desc": {
+        "zh": "自愿的交换让双方都变好；分工的依据不是谁更强，是谁放弃得更少。模型：小组作业里两个人分配写题和做 PPT。",
+        "en": "Voluntary trade makes both sides better off; the basis for specialising is not who is stronger but who gives up less. Model: two students splitting problem-writing and slide-making in a group project."
+      },
+      "aliases": {
+        "zh": ["比较优势", "绝对优势", "分工", "为什么国家之间要贸易", "为什么要贸易", "自由贸易", "交换为什么能双赢", "专业化"],
+        "en": ["comparative advantage", "absolute advantage", "division of labour", "why do countries trade", "why trade", "gains from trade", "specialisation", "specialization"]
+      },
+      "relatedPages": []
+    },
+    {
+      "id": "price-signal",
+      "anchor": "#c4",
+      "title": { "zh": "价格是一条信息", "en": "Price is a piece of information" },
+      "desc": {
+        "zh": "价格告诉所有人一个东西现在有多缺，让互不相识的人协调行动。模型：八十个买家、八十个卖家，价格自己找到位置。",
+        "en": "A price tells everyone how scarce something is right now and lets strangers coordinate. Model: eighty buyers, eighty sellers and a price that finds its own level."
+      },
+      "aliases": {
+        "zh": ["价格信号", "看不见的手", "市场怎么协调", "价格机制", "霜冻为什么让咖啡变贵"],
+        "en": ["price signal", "invisible hand", "price mechanism", "how markets coordinate", "why a frost makes coffee dearer"]
+      },
+      "relatedPages": ["supply-demand"]
+    },
+    {
+      "id": "incentives",
+      "anchor": "#c5",
+      "title": { "zh": "激励", "en": "Incentives" },
+      "desc": {
+        "zh": "规则奖励什么，你就会得到更多的什么，包括你没想要的那部分。案例：悬赏眼镜蛇、被考核的指标，以及“然后呢”。",
+        "en": "Whatever the rules reward, you get more of, including the parts you did not want. Cases: a bounty on cobras, metrics that become targets, and asking “and then what?”."
+      },
+      "aliases": {
+        "zh": ["激励", "人会对激励做出反应", "眼镜蛇效应", "适得其反的政策", "为什么好政策会失败", "意外后果"],
+        "en": ["incentives", "people respond to incentives", "cobra effect", "perverse incentive", "unintended consequences", "why good policies backfire"]
+      },
+      "relatedPages": []
+    },
+    {
+      "id": "market-failure",
+      "anchor": "#c6",
+      "title": { "zh": "市场会失灵", "en": "Markets can fail" },
+      "desc": {
+        "zh": "一个人的选择把成本甩给别人时，价格就会说谎：外部性、公共品、信息不对称。模型：一片公共的湖，船越多，长期总收获反而越少。",
+        "en": "When one person's choice pushes costs onto others, prices lie: externalities, public goods, asymmetric information. Model: a shared lake where more boats eventually mean a smaller total catch."
+      },
+      "aliases": {
+        "zh": ["市场失灵", "公共品", "信息不对称", "柠檬市场", "过度捕捞", "为什么需要政府管"],
+        "en": ["market failure", "public goods", "asymmetric information", "market for lemons", "overfishing", "why markets fail"]
+      },
+      "relatedPages": ["externalities"]
+    },
+    {
+      "id": "growth-from-ideas",
+      "anchor": "#c7",
+      "title": { "zh": "增长来自思想", "en": "Growth comes from ideas" },
+      "desc": {
+        "zh": "长期看，生活水平几乎只取决于生产率，生产率来自可以被所有人同时使用的思想。模型：1% 和 4% 的增长率复利七十年，一个翻一番，一个十五倍多。",
+        "en": "In the long run, living standards depend almost entirely on productivity, and productivity comes from ideas that everyone can use at once. Model: 1% versus 4% growth compounded over seventy years, doubling versus more than fifteenfold."
+      },
+      "aliases": {
+        "zh": ["经济增长", "生产率", "内生增长", "为什么有的国家富有的国家穷", "增长率复利", "技术进步"],
+        "en": ["economic growth", "productivity", "endogenous growth", "why are some countries rich", "compound growth", "technological progress"]
+      },
+      "relatedPages": ["compound-interest"]
+    },
+    {
+      "id": "spending-is-income",
+      "anchor": "#c8",
+      "title": { "zh": "你的支出是别人的收入", "en": "Your spending is someone else's income" },
+      "desc": {
+        "zh": "对一个人成立的事，对所有人一起未必成立：所有人同时省钱，商店卖不出东西、工厂裁员、收入下降，谁也没多存下来。这是节俭悖论，也是衰退自我强化的原因。",
+        "en": "What holds for one person does not necessarily hold for everyone: if everyone saves at once, shops sell nothing, factories lay off workers and incomes fall, so nobody saves more. This is the paradox of thrift and why recessions feed on themselves."
+      },
+      "aliases": {
+        "zh": ["节俭悖论", "经济衰退", "衰退", "总需求", "为什么会经济危机", "合成谬误", "大家都不花钱会怎样"],
+        "en": ["paradox of thrift", "recession", "aggregate demand", "why do recessions happen", "what if everyone stops spending"]
+      },
+      "relatedPages": ["where-money-comes-from"]
+    },
+    {
+      "id": "income-to-the-scarce",
+      "anchor": "#c9",
+      "title": { "zh": "收入流向稀缺的一方", "en": "Income flows to the scarce" },
+      "desc": {
+        "zh": "谁稀缺、谁难以替代，谁就有议价权，分配是对稀缺的定价；还有一股力量让财富自己集中。模型：一百六十个起点相同的人做公平的抛硬币交易，再打开再分配。",
+        "en": "Whatever is scarce and hard to replace has bargaining power; distribution is the pricing of scarcity, and one more force pulls wealth together. Model: 160 people with equal starts trading on fair coin tosses, then redistribution switched on."
+      },
+      "aliases": {
+        "zh": ["收入分配", "为什么工资不一样", "贫富差距", "财富集中", "议价权", "地租", "再分配"],
+        "en": ["income distribution", "why are wages different", "inequality", "wealth concentration", "bargaining power", "land rent", "redistribution"]
+      },
+      "relatedPages": []
+    },
+    {
+      "id": "institutions-trust",
+      "anchor": "#c10",
+      "title": { "zh": "制度与信任", "en": "Institutions and trust" },
+      "desc": {
+        "zh": "市场长在产权、契约和信任上面；它们降低交易成本，分工才能铺开到陌生人之间。同样的人和资源，制度不同，几十年后就是富国和穷国的差别。",
+        "en": "Markets grow on property rights, contracts and trust; these lower transaction costs so that specialisation can reach strangers. The same people and resources under different institutions end up decades later as rich or poor countries."
+      },
+      "aliases": {
+        "zh": ["产权", "交易成本", "制度", "契约", "为什么需要法治"],
+        "en": ["property rights", "transaction costs", "institutions", "contracts", "rule of law"]
+      },
+      "relatedPages": []
+    },
+    {
+      "id": "ai-cheap-thinking",
+      "anchor": "#c11",
+      "title": { "zh": "AI：思考的价格崩塌", "en": "AI: the price of thinking collapses" },
+      "desc": {
+        "zh": "每次技术革命都是某样东西突然变便宜，这次是一部分思考。模型：AI 把能做的任务加速一百万倍，只要做不了的还占四成，整体也只快两倍半；这就是鲍莫尔成本病。",
+        "en": "Every technological revolution is something suddenly becoming cheap; this time it is part of thinking. Model: speed up the tasks AI can do a millionfold, and if 40% remain, the whole is only 2.5× faster; this is Baumol's cost disease."
+      },
+      "aliases": {
+        "zh": ["鲍莫尔成本病", "瓶颈", "AI 对经济的影响", "技术革命", "为什么教育医疗越来越贵"],
+        "en": ["baumol's cost disease", "bottleneck", "economic impact of AI", "technological revolution", "why do education and healthcare get more expensive"]
+      },
+      "relatedPages": []
+    },
+    {
+      "id": "ai-tasks-wages",
+      "anchor": "#c12",
+      "title": { "zh": "工作与工资：AI 替代的是任务", "en": "Work and wages: AI replaces tasks" },
+      "desc": {
+        "zh": "一个职业是一捆任务，AI 替代的是任务不是职业；工资取决于你做的事里还有多少是稀缺的。模型：算力增长时，工资先不变、再随互补上涨、最后被替代压住。",
+        "en": "An occupation is a bundle of tasks; AI replaces tasks, not occupations, and your wage depends on how much of what you do is still scarce. Model: as compute grows, wages first hold, then rise as complements, then are capped by substitution."
+      },
+      "aliases": {
+        "zh": ["AI 会抢走工作吗", "自动化与就业", "劳动力市场", "AI 和工资", "人工智能会不会让人失业", "互补还是替代"],
+        "en": ["will AI take my job", "automation and jobs", "labor market", "labour market", "AI and wages", "complement or substitute"]
+      },
+      "relatedPages": []
+    },
+    {
+      "id": "relative-prices-after-ai",
+      "anchor": "#c13",
+      "title": { "zh": "什么变便宜，什么变贵", "en": "What gets cheaper, what gets dearer" },
+      "desc": {
+        "zh": "认知变便宜之后，收入会流向仍然稀缺的东西。作者对相对价格方向的判断：方向较有把握，长短只是示意。",
+        "en": "Once thinking gets cheap, income flows toward whatever stays scarce. The author's judgement of which relative prices move which way: fairly sure of the direction, the lengths are only illustrative."
+      },
+      "aliases": {
+        "zh": ["AI 之后什么会变贵", "相对价格", "什么会变便宜"],
+        "en": ["what gets more expensive after AI", "relative prices", "what will get cheaper"]
+      },
+      "relatedPages": []
+    },
+    {
+      "id": "ai-forecast",
+      "anchor": "#c14",
+      "title": { "zh": "AI 之后的整体预言", "en": "A forecast for after AI" },
+      "desc": {
+        "zh": "技术决定饼能做多大，饼怎么分由所有权和制度决定。作者逐条标出把握的预测，以及两个最大的不确定：多快，归谁。",
+        "en": "Technology decides how big the pie can get; ownership and institutions decide how it is divided. The author's forecasts, each marked with a confidence level, and the two biggest uncertainties: how fast, and who gets it."
+      },
+      "aliases": {
+        "zh": ["AI 的未来", "AI 之后会怎样", "AI 收益归谁"],
+        "en": ["what happens after AI", "who benefits from AI"]
+      },
+      "relatedPages": []
+    }
+  ]
+}

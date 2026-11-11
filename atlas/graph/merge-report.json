@@ -1,11 +1,11 @@
 {
   "counts": {
     "groups": 11,
-    "nodes": 291,
+    "nodes": 306,
     "edges": 483,
     "trails": 14,
     "questions": 124,
-    "fragments": 180
+    "fragments": 181
   },
   "conflicts": [],
   "suspendedEdges": [],
@@ -17,7 +17,6 @@
   "coverageGaps": [
     "atlas",
     "fable-flight",
-    "scarcity-moves",
     "atlas-investment"
   ],
   "decisionsApplied": [
@@ -409,6 +408,49 @@
       ]
     },
     {
+      "concept": "marginal-thinking",
+      "page": "supply-demand",
+      "taughtBy": [
+        "supply-demand"
+      ]
+    },
+    {
+      "concept": "price-signal",
+      "page": "supply-demand",
+      "taughtBy": [
+        "supply-demand"
+      ]
+    },
+    {
+      "concept": "market-failure",
+      "page": "externalities",
+      "taughtBy": [
+        "externalities"
+      ]
+    },
+    {
+      "concept": "growth-from-ideas",
+      "page": "compound-interest",
+      "taughtBy": [
+        "compound-interest"
+      ]
+    },
+    {
+      "concept": "spending-is-income",
+      "page": "where-money-comes-from",
+      "taughtBy": [
+        "money-as-iou",
+        "loans-create-deposits",
+        "bank-run",
+        "quantity-theory-inflation",
+        "inflation-winners-losers",
+        "interest-price-of-time",
+        "loan-amortisation",
+        "monetary-transmission",
+        "purchasing-power-parity"
+      ]
+    },
+    {
       "concept": "binary-numbers",
       "page": "place-value",
       "taughtBy": [
@@ -455,17 +497,65 @@
     {
       "concept": "money-as-iou",
       "page": "scarcity-moves",
-      "taughtBy": []
+      "taughtBy": [
+        "opportunity-cost",
+        "marginal-thinking",
+        "sunk-cost",
+        "comparative-advantage",
+        "price-signal",
+        "incentives",
+        "market-failure",
+        "growth-from-ideas",
+        "spending-is-income",
+        "income-to-the-scarce",
+        "institutions-trust",
+        "ai-cheap-thinking",
+        "ai-tasks-wages",
+        "relative-prices-after-ai",
+        "ai-forecast"
+      ]
     },
     {
       "concept": "loans-create-deposits",
       "page": "scarcity-moves",
-      "taughtBy": []
+      "taughtBy": [
+        "opportunity-cost",
+        "marginal-thinking",
+        "sunk-cost",
+        "comparative-advantage",
+        "price-signal",
+        "incentives",
+        "market-failure",
+        "growth-from-ideas",
+        "spending-is-income",
+        "income-to-the-scarce",
+        "institutions-trust",
+        "ai-cheap-thinking",
+        "ai-tasks-wages",
+        "relative-prices-after-ai",
+        "ai-forecast"
+      ]
     },
     {
       "concept": "quantity-theory-inflation",
       "page": "scarcity-moves",
-      "taughtBy": []
+      "taughtBy": [
+        "opportunity-cost",
+        "marginal-thinking",
+        "sunk-cost",
+        "comparative-advantage",
+        "price-signal",
+        "incentives",
+        "market-failure",
+        "growth-from-ideas",
+        "spending-is-income",
+        "income-to-the-scarce",
+        "institutions-trust",
+        "ai-cheap-thinking",
+        "ai-tasks-wages",
+        "relative-prices-after-ai",
+        "ai-forecast"
+      ]
     },
     {
       "concept": "inflation-winners-losers",
@@ -505,47 +595,63 @@
     {
       "concept": "purchasing-power-parity",
       "page": "scarcity-moves",
-      "taughtBy": []
+      "taughtBy": [
+        "opportunity-cost",
+        "marginal-thinking",
+        "sunk-cost",
+        "comparative-advantage",
+        "price-signal",
+        "incentives",
+        "market-failure",
+        "growth-from-ideas",
+        "spending-is-income",
+        "income-to-the-scarce",
+        "institutions-trust",
+        "ai-cheap-thinking",
+        "ai-tasks-wages",
+        "relative-prices-after-ai",
+        "ai-forecast"
+      ]
     }
   ],
   "unknownAliasIds": [],
-  "sizeBytes": 605540,
+  "sizeBytes": 630477,
   "questionsBytes": 173024,
-  "combinedBytes": 778564,
-  "indexBytes": 78994,
+  "combinedBytes": 803501,
+  "indexBytes": 80566,
   "chunkBytes": {
-    "math.nodes": 49492,
+    "math.nodes": 51664,
     "math.edges": 88495,
     "math.questions": 36438,
-    "waves.nodes": 35640,
+    "waves.nodes": 37581,
     "waves.edges": 58305,
     "waves.questions": 24627,
-    "circuits.nodes": 14819,
+    "circuits.nodes": 15409,
     "circuits.edges": 21940,
     "circuits.questions": 12351,
-    "systems.nodes": 20317,
+    "systems.nodes": 21522,
     "systems.edges": 42813,
     "systems.questions": 21577,
-    "measurement.nodes": 34774,
+    "measurement.nodes": 35687,
     "measurement.edges": 60324,
     "measurement.questions": 30144,
-    "matter.nodes": 13704,
+    "matter.nodes": 14023,
     "matter.edges": 14063,
     "matter.questions": 7898,
-    "life.nodes": 19012,
+    "life.nodes": 19756,
     "life.edges": 18673,
     "life.questions": 2806,
-    "earth.nodes": 12163,
+    "earth.nodes": 12658,
     "earth.edges": 10953,
     "earth.questions": 6822,
-    "computing.nodes": 18891,
+    "computing.nodes": 19139,
     "computing.edges": 18476,
     "computing.questions": 2766,
-    "society.nodes": 28729,
+    "society.nodes": 42623,
     "society.edges": 27453,
     "society.questions": 3743,
-    "tech.nodes": 9060,
+    "tech.nodes": 9437,
     "tech.edges": 9209
   },
-  "searchBytes": 136761
+  "searchBytes": 153141
 }

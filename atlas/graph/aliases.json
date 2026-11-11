@@ -1,19 +1,19 @@
 {
   "compound-interest": {
-    "zh": ["利息", "复利", "利滚利", "贴现", "现值"],
-    "en": ["interest", "compounding", "present value", "discounting"]
+    "zh": ["利息", "复利", "利滚利", "贴现", "现值", "现金流折现", "贴现率", "折现率"],
+    "en": ["interest", "compounding", "present value", "discounting", "discounted cash flow", "discount rate", "DCF", "net present value"]
   },
   "gaussian": {
-    "zh": ["正态分布", "钟形曲线", "高斯分布", "中心极限定理"],
-    "en": ["normal distribution", "bell curve", "Gaussian distribution", "central limit theorem"]
+    "zh": ["中心极限定理"],
+    "en": ["central limit theorem"]
   },
   "binomial-normal": {
-    "zh": ["钟形曲线", "高尔顿板"],
-    "en": ["bell curve", "Galton board"]
+    "zh": ["钟形曲线", "高尔顿板", "正态分布", "高斯分布", "正态曲线"],
+    "en": ["bell curve", "Galton board", "normal distribution", "Gaussian distribution", "normal curve"]
   },
   "cnn-feature-maps": {
-    "zh": ["神经网络", "卷积神经网络"],
-    "en": ["neural network", "convolutional neural network", "CNN"]
+    "zh": ["卷积神经网络"],
+    "en": ["convolutional neural network", "CNN"]
   },
   "seasons-orbit": {
     "zh": ["为什么会有四季", "四季是怎么来的", "四季成因", "夏天为什么热"],
@@ -24,15 +24,355 @@
     "en": ["why does the moon change shape", "phases of the moon", "half moon", "crescent moon"]
   },
   "ph-scale": {
-    "zh": ["酸碱度", "pH", "pH 值", "酸性 碱性"],
-    "en": ["pH", "acidity", "acid or alkaline", "how acidic"]
+    "zh": ["酸碱度", "pH", "pH 值", "酸性 碱性", "酸和碱", "酸碱", "什么是酸 什么是碱"],
+    "en": ["pH", "acidity", "acid or alkaline", "how acidic", "acids and bases", "acid and base"]
   },
   "derivative": {
     "zh": ["什么是导数", "瞬时速度", "切线斜率", "变化率"],
     "en": ["what is a derivative", "rate of change", "instantaneous speed", "slope of a tangent"]
   },
   "action-potential": {
-    "zh": ["神经怎么传信号", "神经信号"],
-    "en": ["how do nerves send signals", "nerve signal"]
+    "zh": ["神经怎么传信号", "神经信号", "神经元传递信号", "神经元是怎么传递信号的"],
+    "en": ["how do nerves send signals", "nerve signal", "how do neurons send signals"]
+  },
+  "circle-intro": {
+    "zh": ["圆周率", "圆周率π", "π", "圆周率是怎么来的", "为什么圆周率是3.14", "周长公式"],
+    "en": ["pi", "what is pi", "why is pi 3.14", "circumference"]
+  },
+  "variance": {
+    "zh": ["标准差", "标准差是什么意思", "离散程度"],
+    "en": ["standard deviation", "what does standard deviation mean", "spread of data"]
+  },
+  "sine": {
+    "zh": ["正弦", "余弦", "正弦和余弦", "sin cos", "三角函数 sin cos"],
+    "en": ["sine and cosine", "sin and cos", "sine", "cosine"]
+  },
+  "complex": {
+    "zh": ["虚数", "虚数i", "i 是什么", "欧拉公式"],
+    "en": ["imaginary number", "imaginary numbers", "what is i", "square root of minus one", "euler's formula"]
+  },
+  "solid-geometry": {
+    "zh": ["欧拉多面体公式"],
+    "en": ["euler's polyhedron formula"]
+  },
+  "counting-permutations": {
+    "zh": ["排列组合", "排列和组合"],
+    "en": ["permutations and combinations"]
+  },
+  "taylor-series": {
+    "zh": ["泰勒展开", "泰勒公式"],
+    "en": ["taylor expansion"]
+  },
+  "ode-phase-portraits": {
+    "zh": ["微分方程", "常微分方程"],
+    "en": ["differential equation", "differential equations", "ODE"]
+  },
+  "parabola": {
+    "zh": ["二次函数 抛物线", "二次函数图像"],
+    "en": ["quadratic function", "graph of a quadratic"]
+  },
+  "regression-correlation": {
+    "zh": ["线性回归", "相关性", "最小二乘", "拟合直线"],
+    "en": ["linear regression", "correlation", "least squares", "line of best fit"]
+  },
+  "simpsons-paradox": {
+    "zh": ["随机对照试验", "随机分配"],
+    "en": ["randomized controlled trial", "random assignment", "RCT"]
+  },
+  "newton-laws": {
+    "zh": ["牛顿定律", "牛顿三大定律", "牛顿第一定律", "牛顿第三定律", "惯性定律", "作用力与反作用力"],
+    "en": ["newton's laws", "newtons laws", "laws of motion", "newton's first law", "newton's third law", "action and reaction"]
+  },
+  "quantum-amplitude": {
+    "zh": ["量子力学", "量子力学是什么", "叠加态", "量子物理"],
+    "en": ["quantum mechanics", "what is quantum mechanics", "quantum physics", "schrodinger's cat"]
+  },
+  "double-slit": {
+    "zh": ["波粒二象性", "光是波还是粒子", "衍射", "单缝衍射"],
+    "en": ["wave particle duality", "is light a wave or a particle", "diffraction"]
+  },
+  "quantum-tunneling": {
+    "zh": [],
+    "en": ["quantum tunneling", "tunneling", "tunnelling"]
+  },
+  "gravity-orbits": {
+    "zh": ["重力", "引力", "卫星为什么不会掉下来", "卫星轨道"],
+    "en": ["gravity", "why don't satellites fall", "satellite orbit"]
+  },
+  "sound-waves": {
+    "zh": ["声音传播", "声音是怎么传播的"],
+    "en": ["how does sound travel"]
+  },
+  "simple-circuits": {
+    "zh": ["电流", "电流是什么"],
+    "en": ["electric current", "what is electric current"]
+  },
+  "magnets": {
+    "zh": ["磁铁为什么能吸铁", "磁铁吸铁", "磁性"],
+    "en": ["magnetism", "why do magnets attract iron"]
+  },
+  "buoyancy-archimedes": {
+    "zh": ["船为什么不会沉", "船为什么能浮起来"],
+    "en": ["why do ships float", "why do boats float"]
+  },
+  "oscillation": {
+    "zh": ["单摆", "单摆周期", "简谐运动", "弹簧振子"],
+    "en": ["pendulum", "pendulum period", "simple harmonic motion", "spring oscillator"]
+  },
+  "momentum-collision": {
+    "zh": ["动量守恒", "动量守恒定律"],
+    "en": ["conservation of momentum", "momentum conservation"]
+  },
+  "projectile-circular": {
+    "zh": ["抛体运动", "抛物线轨迹", "平抛运动", "斜抛运动"],
+    "en": ["projectile motion"]
+  },
+  "periodic-trends": {
+    "zh": ["元素周期表", "周期表"],
+    "en": ["periodic table", "how to read the periodic table"]
+  },
+  "combustion-triangle": {
+    "zh": ["燃烧", "燃烧是什么反应", "着火的条件"],
+    "en": ["combustion", "burning", "what is fire"]
+  },
+  "dissolution-saturation": {
+    "zh": ["盐为什么能溶于水", "溶解", "溶于水"],
+    "en": ["why does salt dissolve in water", "dissolving"]
+  },
+  "electrochemistry": {
+    "zh": ["氧化还原", "氧化还原反应", "电解", "电池原理", "电池是怎么工作的", "电极电势"],
+    "en": ["redox", "oxidation and reduction", "electrolysis", "how do batteries work", "electrode potential"]
+  },
+  "kinetic-theory": {
+    "zh": ["理想气体定律", "理想气体", "麦克斯韦分布", "玻尔兹曼分布"],
+    "en": ["ideal gas law", "ideal gas", "maxwell-boltzmann distribution", "boltzmann distribution"]
+  },
+  "activation-energy": {
+    "zh": ["玻尔兹曼因子"],
+    "en": ["boltzmann factor"]
+  },
+  "carnot-cycle": {
+    "zh": ["热力学第二定律", "第二定律", "热机效率"],
+    "en": ["second law of thermodynamics", "second law", "heat engine efficiency"]
+  },
+  "molecular-shapes": {
+    "zh": ["化学键", "共价键"],
+    "en": ["chemical bond", "covalent bond"]
+  },
+  "mendelian-inheritance": {
+    "zh": ["孟德尔", "豌豆", "孟德尔豌豆实验", "遗传", "基因是怎么遗传的"],
+    "en": ["mendel", "mendel pea experiment", "heredity", "inheritance", "how are genes inherited"]
+  },
+  "cell-structure": {
+    "zh": ["细胞里有什么", "细胞器"],
+    "en": ["organelles", "what is inside a cell"]
+  },
+  "dna-replication": {
+    "zh": ["蛋白质合成", "蛋白质是怎么合成的", "中心法则", "转录", "mRNA", "核糖体"],
+    "en": ["protein synthesis", "how are proteins made", "central dogma", "transcription", "mRNA", "ribosome", "gene expression"]
+  },
+  "food-web": {
+    "zh": ["食物链", "食物链是什么"],
+    "en": ["food chain", "food chains"]
+  },
+  "predator-prey": {
+    "zh": ["捕食者和猎物数量变化", "捕食者与猎物"],
+    "en": ["predator and prey", "predator prey"]
+  },
+  "water-cycle": {
+    "zh": ["水循环", "下雨", "为什么会下雨", "降雨", "雨是怎么形成的", "蒸发"],
+    "en": ["water cycle", "rain", "how does rain form", "precipitation", "evaporation"]
+  },
+  "earth-rotation-day-night": {
+    "zh": ["白天黑夜", "为什么有白天黑夜", "昼夜"],
+    "en": ["day and night", "why do we have day and night"]
+  },
+  "cosmic-expansion": {
+    "zh": ["宇宙大爆炸", "大爆炸", "哈勃定律"],
+    "en": ["big bang", "the big bang", "hubble's law"]
+  },
+  "kepler-orbits": {
+    "zh": ["开普勒定律", "开普勒三定律", "行星轨道"],
+    "en": ["kepler's laws", "planetary orbits"]
+  },
+  "climate-energy": {
+    "zh": ["地球为什么变暖"],
+    "en": ["why is the planet warming"]
+  },
+  "attention-mechanism": {
+    "zh": ["自注意力"],
+    "en": ["transformer", "transformers", "self-attention"]
+  },
+  "shortest-path": {
+    "zh": ["最短路径", "最短路径算法", "迪杰斯特拉"],
+    "en": ["shortest path", "dijkstra", "dijkstra's algorithm"]
+  },
+  "graph-algorithms": {
+    "zh": ["图论"],
+    "en": ["graph theory"]
+  },
+  "rsa-encryption": {
+    "zh": ["公钥私钥", "公钥加密", "非对称加密", "加密是怎么工作的", "模运算", "费马小定理"],
+    "en": ["public key cryptography", "public-key encryption", "asymmetric encryption", "modular arithmetic", "fermat's little theorem", "clock arithmetic"]
+  },
+  "predictive-compression-entropy": {
+    "zh": ["数据压缩", "压缩文件是怎么变小的", "文件压缩"],
+    "en": ["data compression", "file compression"]
+  },
+  "path-loss-shannon-capacity": {
+    "zh": ["信道容量", "香农容量", "手机信号", "手机信号是怎么传的"],
+    "en": ["channel capacity", "phone signal"]
+  },
+  "pagerank": {
+    "zh": ["搜索引擎", "搜索引擎是怎么排名的", "网页排名", "谷歌搜索"],
+    "en": ["search engine", "how does google search work", "google search", "page rank"]
+  },
+  "llm-sampling": {
+    "zh": ["大语言模型"],
+    "en": ["large language model", "LLM"]
+  },
+  "capacitive-touch-interpolation": {
+    "zh": ["触摸屏", "触摸屏感应"],
+    "en": ["touchscreen", "touch screen"]
+  },
+  "pinhole-ratio": {
+    "zh": ["相机", "相机拍照", "相机是怎么成像的"],
+    "en": ["camera", "how does a camera work"]
+  },
+  "metamerism-rgb-subpixels": {
+    "zh": ["屏幕怎么显示颜色", "屏幕显示颜色", "像素"],
+    "en": ["how do screens show color", "pixels", "pixel", "RGB"]
+  },
+  "blood-circulation": {
+    "zh": ["心脏", "心脏是怎么跳动的", "心脏跳动", "心脏是怎么工作的"],
+    "en": ["heart", "how does the heart work", "how does the heart pump"]
+  },
+  "eye-vision": {
+    "zh": ["眼睛是怎么看东西的", "眼睛看东西", "近视", "远视"],
+    "en": ["myopia", "nearsighted", "short-sighted", "farsighted", "how do eyes see"]
+  },
+  "drug-half-life-plateau": {
+    "zh": ["药在体内能留多久", "药物代谢"],
+    "en": ["how long do drugs stay in your body", "drug metabolism"]
+  },
+  "positive-predictive-value": {
+    "zh": ["医学检测假阳性"],
+    "en": ["medical test false positive"]
+  },
+  "monetary-transmission": {
+    "zh": ["中央银行", "央行", "政策利率", "加息"],
+    "en": ["central bank", "policy rate", "why do central banks raise rates"]
+  },
+  "loans-create-deposits": {
+    "zh": ["银行是怎么创造货币的", "货币创造", "货币供应", "部分准备金"],
+    "en": ["money supply", "fractional reserve banking"]
+  },
+  "fees-compounding": {
+    "zh": ["为什么推荐指数基金", "指数基金"],
+    "en": ["index fund", "index funds"]
+  },
+  "diversification": {
+    "zh": ["分散投资为什么降低风险", "分散风险", "投资组合", "投资组合理论"],
+    "en": ["why diversify investments", "diversify", "portfolio", "portfolio theory"]
+  },
+  "supply-demand": {
+    "zh": ["价格", "价格是怎么决定的", "供求关系"],
+    "en": ["how are prices set", "supply and demand"]
+  },
+  "loan-amortisation": {
+    "zh": ["房贷月供", "房贷月供怎么算"],
+    "en": ["mortgage payment"]
+  },
+  "voting-rules-disagree": {
+    "zh": ["选举制度", "选举", "排序投票", "选举制度怎么运作"],
+    "en": ["how do elections work", "election", "elections", "voting systems"]
+  },
+  "confidence-interval": {
+    "zh": ["民调", "民调准吗"],
+    "en": ["polls", "opinion polls"]
+  },
+  "prisoners-dilemma": {
+    "zh": ["合作的演化", "为什么要合作"],
+    "en": ["evolution of cooperation", "cooperation"]
+  },
+  "latitude-longitude": {
+    "zh": ["经纬度", "经纬度是什么", "经度", "纬度"],
+    "en": ["latitude", "longitude"]
+  },
+  "musical-intervals": {
+    "zh": ["音阶", "音阶是怎么来的", "为什么有些音放在一起好听", "协和音程"],
+    "en": ["musical scale", "musical scales", "scales", "why do some notes sound good together", "consonance"]
+  },
+  "standing-wave": {
+    "zh": ["吉他弦怎么发出不同的音", "弦振动", "琴弦"],
+    "en": ["string vibration", "guitar string", "how guitar strings make notes"]
+  },
+  "expected-value": {
+    "zh": ["期望值", "数学期望", "赌场为什么总赢", "庄家优势"],
+    "en": ["expected value", "why the house always wins", "house edge", "expectation"]
+  },
+  "exp-log": {
+    "zh": ["指数函数", "对数函数", "自然常数e", "e 是什么"],
+    "en": ["exponential function", "exponential", "logarithm", "number e"]
+  },
+  "integral": {
+    "zh": ["积分", "定积分"],
+    "en": ["integral", "integration", "area under the curve"]
+  },
+  "backpropagation": {
+    "zh": ["链式法则"],
+    "en": ["chain rule"]
+  },
+  "gradient-descent": {
+    "zh": ["随机梯度下降", "SGD"],
+    "en": ["stochastic gradient descent", "SGD"]
+  },
+  "sampling": {
+    "zh": ["采样定理", "奈奎斯特", "混叠"],
+    "en": ["sampling theorem", "nyquist", "nyquist theorem", "aliasing"]
+  },
+  "epidemic-r0": {
+    "zh": ["SIR模型", "SIR", "传染病模型", "传染病是怎么传播的"],
+    "en": ["SIR model", "epidemic model", "how do diseases spread"]
+  },
+  "relay-logic-gates": {
+    "zh": ["布尔逻辑"],
+    "en": ["boolean logic"]
+  },
+  "real-processor-scale": {
+    "zh": ["指令流水线", "CPU 流水线"],
+    "en": ["instruction pipeline"]
+  },
+  "hashing": {
+    "zh": ["哈希表", "哈希函数", "散列"],
+    "en": ["hash function", "hash table", "hash map"]
+  },
+  "bandit-arms": {
+    "zh": ["强化学习", "探索与利用"],
+    "en": ["reinforcement learning", "explore exploit"]
+  },
+  "robot-kinematics": {
+    "zh": ["机器人运动学", "机械臂"],
+    "en": ["robot kinematics", "robot arm"]
+  },
+  "interest-rates-bonds": {
+    "zh": ["债券收益率", "收益率"],
+    "en": ["bond yield", "yield"]
+  },
+  "auctions": {
+    "zh": ["第二价格拍卖", "维克里拍卖"],
+    "en": ["second price auction", "vickrey auction"]
+  },
+  "externalities": {
+    "zh": ["外部性", "庇古税"],
+    "en": ["externality", "pigouvian tax"]
+  },
+  "risk-pooling": {
+    "zh": ["风险厌恶"],
+    "en": ["risk aversion", "risk averse"]
+  },
+  "plate-tectonics": {
+    "zh": ["地震", "地震是怎么发生的"],
+    "en": ["earthquake", "earthquakes", "what causes earthquakes"]
   }
 }

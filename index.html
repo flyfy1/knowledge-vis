@@ -428,9 +428,14 @@
     // Ties: the page first (it is the broader entry), then the original order. An essay
     // page is the exception: it covers ten or so ideas, so its chapters (deep links) go first.
     function tieRank(x) { return x.page ? (essaySlugs[x.page.slug] ? 2 : 0) : 1; }
-    return pageHits.concat(conceptHits).sort(function(a, b){
+    var ranked = pageHits.concat(conceptHits).sort(function(a, b){
       return b.score - a.score || tieRank(a) - tieRank(b) || a.order - b.order;
     });
+    // A comparison ("mean vs median", "A 和 B 的区别"): what covers both first, then the
+    // best of each side in turn (specs/atlas-search-index.md § Search).
+    return CS.arrange ? CS.arrange(ranked, query, function(x){
+      return x.page ? pageRecords[pages.indexOf(x.page)] : x.concept.record;
+    }) : ranked;
   }
   function makeConceptCard(c) {
     var el = node('a', 'card concept-card');
