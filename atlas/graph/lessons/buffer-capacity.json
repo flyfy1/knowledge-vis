@@ -1,0 +1,133 @@
+{
+ "schema": 2,
+ "slug": "buffer-capacity",
+ "nodes": [
+  {
+   "id": "buffer-solution",
+   "group": "matter",
+   "stage": "senior",
+   "order": 50,
+   "title": {
+    "zh": "缓冲溶液与缓冲容量",
+    "en": "Buffer solutions & buffer capacity"
+   },
+   "description": {
+    "zh": "弱酸和它的共轭碱一起放在溶液里，外来的酸或碱会先被它们接住，pH 只小幅移动；pH 由两者的比值决定，能扛多少则由它们的总浓度决定。",
+    "en": "A weak acid together with its conjugate base catches incoming acid or base first, so pH moves only a little; the ratio of the two sets the pH, and their total concentration sets how much they can absorb."
+   },
+   "formula": "pH = pKa + log([A⁻]/[HA])",
+   "source": "../chemistry/solutions/buffer-capacity/#step1",
+   "lessons": [
+    {
+     "slug": "buffer-capacity",
+     "step": 1,
+     "category": "chemistry",
+     "stage": "senior",
+     "primary": true
+    }
+   ],
+   "aliases": [
+    {
+     "zh": "缓冲液",
+     "en": "buffer"
+    },
+    {
+     "zh": "亨德森–哈塞尔巴尔赫方程",
+     "en": "Henderson–Hasselbalch equation"
+    },
+    {
+     "zh": "缓冲容量",
+     "en": "buffer capacity"
+    },
+    {
+     "zh": "为什么加酸 pH 几乎不变",
+     "en": "why does pH barely change when acid is added"
+    },
+    {
+     "zh": "共轭酸碱对",
+     "en": "conjugate acid–base pair"
+    },
+    {
+     "zh": "血液为什么能保持 pH 稳定",
+     "en": "how does blood keep its pH steady"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "weak-acid-equilibrium",
+   "to": "buffer-solution",
+   "type": "foundation",
+   "label": {
+    "zh": "Ka 与共同离子是缓冲的地基",
+    "en": "Ka and the common ion underlie buffering"
+   },
+   "reason": {
+    "zh": "缓冲液里同时有大量 HA 和 A⁻：pKa 定下它在哪个 pH 附近最稳，共同离子效应解释了为什么此时 pH 只看两者的比值。",
+    "en": "A buffer holds plenty of both HA and A⁻: pKa sets the pH it holds best, and the common-ion effect explains why the pH then depends only on their ratio."
+   },
+   "source": "../chemistry/solutions/buffer-capacity/#step1"
+  },
+  {
+   "from": "buffer-solution",
+   "to": "titration-curves",
+   "type": "connection",
+   "label": {
+    "zh": "缓冲区就是滴定曲线的平台",
+    "en": "The buffer region is the flat stretch of a titration curve"
+   },
+   "reason": {
+    "zh": "弱酸被强碱滴定时，半等当点附近 HA 与 A⁻ 各占一半、pH = pKa，曲线最平——这段平台正是缓冲作用；库存耗尽，曲线就陡起来。",
+    "en": "When a weak acid is titrated with a strong base, near half-equivalence HA and A⁻ are equal, pH = pKa and the curve is flattest — that plateau is buffering at work; once the reserve runs out, the curve turns steep."
+   },
+   "source": "../chemistry/solutions/buffer-capacity/#step2"
+  }
+ ],
+ "questions": [
+  {
+   "id": "q-buffer-capacity-0",
+   "question": {
+    "zh": "为什么往缓冲液里加酸，pH 几乎不变？",
+    "en": "Why does adding acid to a buffer barely change its pH?"
+   },
+   "chain": [
+    "buffer-solution",
+    "weak-acid-equilibrium",
+    "dynamic-equilibrium"
+   ],
+   "target": {
+    "node": "buffer-solution",
+    "href": "../chemistry/solutions/buffer-capacity/#step0"
+   },
+   "prompts": [
+    {
+     "node": "buffer-solution",
+     "ask": {
+      "zh": "外来的 H⁺ 被谁接住了？pH 由比值还是由浓度决定？",
+      "en": "Who catches the incoming H⁺? Does pH follow the ratio or the concentration?"
+     }
+    },
+    {
+     "node": "weak-acid-equilibrium",
+     "ask": {
+      "zh": "Ka 和共同离子效应怎样把 HA 与 A⁻ 的比值和 pH 连起来？",
+      "en": "How do Ka and the common-ion effect tie the HA : A⁻ ratio to pH?"
+     }
+    },
+    {
+     "node": "dynamic-equilibrium",
+     "ask": {
+      "zh": "加入酸算不算“推一把”平衡？体系会怎样抵抗？",
+      "en": "Is adding acid a push on an equilibrium? How does the system resist it?"
+     }
+    }
+   ],
+   "reveal": {
+    "zh": "缓冲液里同时储着 HA 和 A⁻：加入的 H⁺ 被 A⁻ 接住变回 HA，比值只变一点，所以 pH 只移动一点。总浓度越高库存越多，能扛的扰动越大；库存耗尽后 pH 照样会大变。",
+    "en": "A buffer stores both HA and A⁻: added H⁺ is caught by A⁻ and becomes HA, the ratio shifts only slightly, so pH moves only slightly. A higher total concentration means a bigger reserve and a bigger push it can absorb; once the reserve is used up, pH swings anyway."
+   },
+   "source": "../chemistry/solutions/buffer-capacity/#step0"
+  }
+ ]
+}

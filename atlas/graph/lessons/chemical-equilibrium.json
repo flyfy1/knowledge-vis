@@ -1,0 +1,129 @@
+{
+ "schema": 2,
+ "slug": "chemical-equilibrium",
+ "nodes": [
+  {
+   "id": "dynamic-equilibrium",
+   "group": "matter",
+   "stage": "senior",
+   "order": 50,
+   "title": {
+    "zh": "化学平衡 · 动态平衡与勒夏特列原理",
+    "en": "Chemical equilibrium · dynamic balance and Le Chatelier"
+   },
+   "description": {
+    "zh": "可逆反应到了平衡并没有停下，而是正反应和逆反应跑得一样快，所以各物质的量不再变化；加料或改温度会让平衡移动，催化剂只让它更快到达、不改变平衡点。",
+    "en": "A reversible reaction at equilibrium has not stopped: the forward and reverse reactions run equally fast, so the amounts stop changing; adding material or changing the temperature shifts the balance, while a catalyst only gets there sooner and does not move it."
+   },
+   "formula": "v(forward) = v(reverse)",
+   "source": "../chemistry/reactions/chemical-equilibrium/#step1",
+   "lessons": [
+    {
+     "slug": "chemical-equilibrium",
+     "step": 1,
+     "category": "chemistry",
+     "stage": "senior",
+     "primary": true
+    }
+   ],
+   "aliases": [
+    {
+     "zh": "化学平衡",
+     "en": "chemical equilibrium"
+    },
+    {
+     "zh": "动态平衡",
+     "en": "dynamic equilibrium"
+    },
+    {
+     "zh": "勒夏特列原理",
+     "en": "Le Chatelier's principle"
+    },
+    {
+     "zh": "平衡移动",
+     "en": "equilibrium shift"
+    },
+    {
+     "zh": "反应到平衡就停了吗",
+     "en": "does a reaction stop at equilibrium"
+    },
+    {
+     "zh": "可逆反应",
+     "en": "reversible reaction"
+    },
+    {
+     "zh": "催化剂会改变平衡吗",
+     "en": "does a catalyst change the equilibrium"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "activation-energy",
+   "to": "dynamic-equilibrium",
+   "type": "connection",
+   "label": {
+    "zh": "催化剂同时降低两个方向的山",
+    "en": "A catalyst lowers the hill in both directions"
+   },
+   "reason": {
+    "zh": "活化能页说明催化剂降低能垒、逆反应同理；正、逆两个速率按同一倍数提高，所以平衡更快到达，平衡时的组成却不变。",
+    "en": "The activation-energy lesson shows a catalyst lowers the barrier for the reverse reaction as well; both rates rise by the same factor, so equilibrium arrives sooner with the same composition."
+   },
+   "source": "../chemistry/reactions/chemical-equilibrium/#step4"
+  },
+  {
+   "from": "dynamic-equilibrium",
+   "to": "weak-acid-equilibrium",
+   "type": "foundation",
+   "label": {
+    "zh": "酸的解离也是一种平衡",
+    "en": "Acid dissociation is one such equilibrium"
+   },
+   "reason": {
+    "zh": "弱酸 HA ⇌ H⁺ + A⁻ 同样是正逆两个方向一起进行，Ka 就是这个平衡的常数；稀释、加入共同离子都是推一把平衡、看它往哪边移。",
+    "en": "A weak acid HA ⇌ H⁺ + A⁻ also runs in both directions at once, and Ka is the constant of that equilibrium; dilution and an added common ion are pushes on the balance that shift it one way or the other."
+   },
+   "source": "../chemistry/solutions/acid-base-equilibrium/#step0"
+  }
+ ],
+ "questions": [
+  {
+   "id": "q-chemical-equilibrium-0",
+   "question": {
+    "zh": "反应到达平衡以后，是不是就停止了？",
+    "en": "Once a reaction reaches equilibrium, has it stopped?"
+   },
+   "chain": [
+    "dynamic-equilibrium",
+    "collision-theory"
+   ],
+   "target": {
+    "node": "dynamic-equilibrium",
+    "href": "../chemistry/reactions/chemical-equilibrium/#step0"
+   },
+   "prompts": [
+    {
+     "node": "dynamic-equilibrium",
+     "ask": {
+      "zh": "曲线走平时，A 变 B 和 B 变 A 的事件还在发生吗？",
+      "en": "When the curve levels off, are A→B and B→A events still happening?"
+     }
+    },
+    {
+     "node": "collision-theory",
+     "ask": {
+      "zh": "反应速率由什么决定？生成物越多，逆反应的碰撞会怎样？",
+      "en": "What sets a reaction rate? As products build up, what happens to reverse collisions?"
+     }
+    }
+   ],
+   "reveal": {
+    "zh": "平衡不是反应停了，而是正、逆两个速率相等：每秒都有分子在互变，只是两边变化相抵，宏观组成不再改变。",
+    "en": "Equilibrium is not a stopped reaction but two equal rates: molecules keep converting every second, the two directions simply cancel, so the overall composition stops changing."
+   },
+   "source": "../chemistry/reactions/chemical-equilibrium/#step0"
+  }
+ ]
+}

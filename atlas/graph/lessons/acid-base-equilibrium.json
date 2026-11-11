@@ -1,0 +1,81 @@
+{
+ "schema": 2,
+ "slug": "acid-base-equilibrium",
+ "nodes": [
+  {
+   "id": "weak-acid-equilibrium",
+   "group": "matter",
+   "stage": "senior",
+   "order": 50,
+   "title": {
+    "zh": "弱酸电离平衡 · Ka",
+    "en": "Weak-acid equilibrium · Ka"
+   },
+   "description": {
+    "zh": "弱酸在水里只有一部分解离成 H⁺ 和 A⁻，Ka 越大解离的比例越高；加水稀释反而让解离比例上升，加入 A⁻（共同离子）则把平衡推回去。",
+    "en": "A weak acid splits only partly into H⁺ and A⁻ in water, and the larger Ka is, the larger that share; diluting it actually raises the share that dissociates, while adding A⁻ (a common ion) pushes the balance back."
+   },
+   "formula": "Ka = [H⁺][A⁻]/[HA]",
+   "source": "../chemistry/solutions/acid-base-equilibrium/#step1",
+   "lessons": [
+    {
+     "slug": "acid-base-equilibrium",
+     "step": 1,
+     "category": "chemistry",
+     "stage": "senior",
+     "primary": true
+    }
+   ],
+   "aliases": [
+    {
+     "zh": "弱酸",
+     "en": "weak acid"
+    },
+    {
+     "zh": "电离平衡",
+     "en": "acid dissociation equilibrium"
+    },
+    {
+     "zh": "Ka 是什么",
+     "en": "what is Ka"
+    },
+    {
+     "zh": "电离常数",
+     "en": "acid dissociation constant"
+    },
+    {
+     "zh": "同离子效应",
+     "en": "common-ion effect"
+    },
+    {
+     "zh": "为什么醋酸是弱酸",
+     "en": "why is acetic acid a weak acid"
+    },
+    {
+     "zh": "稀释后电离度变大",
+     "en": "dilution raises the degree of dissociation"
+    },
+    {
+     "zh": "pKa",
+     "en": "pKa"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "ph-scale",
+   "to": "weak-acid-equilibrium",
+   "type": "foundation",
+   "label": {
+    "zh": "pH 读的是平衡时的 H⁺",
+    "en": "pH reads the H⁺ left at equilibrium"
+   },
+   "reason": {
+    "zh": "pH 标度把 [H⁺] 取负对数；弱酸只放出一部分 H⁺，所以同浓度的弱酸 pH 比强酸高，要先由 Ka 算出平衡时的 [H⁺] 才能读 pH。",
+    "en": "The pH scale is −log of [H⁺]; a weak acid releases only part of its H⁺, so at the same concentration its pH is higher than a strong acid’s, and [H⁺] must first be found from Ka."
+   },
+   "source": "../chemistry/solutions/acid-base-equilibrium/#step1"
+  }
+ ]
+}
