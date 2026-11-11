@@ -13,7 +13,7 @@ function validate(d,{checkFiles=true}={}){
  if(errors.length)return{errors,cycles,prerequisiteEdges:0,references:[]};
  for(const key of ['groups','nodes','edges','trails'])if(d[key].some(x=>!x||typeof x!=='object'||Array.isArray(x)))fail(key+': object record required');
  if(errors.length)return{errors,cycles,prerequisiteEdges:0,references:[]};
- function bi(x,at){if(!x||typeof x!=='object')return; if('zh'in x||'en'in x){if(!nonempty(x.zh)||!nonempty(x.en))fail(at+': bilingual text missing');}for(const[k,v]of Object.entries(x))if(v&&typeof v==='object')bi(v,at+'.'+k);}bi(d,'atlas');
+ function bi(x,at){if(!x||typeof x!=='object')return; if('zh'in x||'en'in x){if(!nonempty(x.zh)||!nonempty(x.en))fail(at+': bilingual text missing');}for(const[k,v]of Object.entries(x))if(v&&typeof v==='object'&&k!=='aliases')bi(v,at+'.'+k);}bi(d,'atlas');
  function ids(xs,kind){if(!Array.isArray(xs)){fail(kind+': array missing');return new Set();}const seen=new Set();for(const x of xs){if(!nonempty(x.id))fail(kind+': ID missing');else if(seen.has(x.id))fail(kind+': duplicate ID '+x.id);seen.add(x.id);}return seen;}
  const groups=ids(d.groups,'groups'),nodes=ids(d.nodes,'nodes');ids(d.edges,'edges');ids(d.trails,'trails');
  function bilingual(x,at){if(!x||!nonempty(x.zh)||!nonempty(x.en))fail(at+': bilingual text missing');}
@@ -26,8 +26,9 @@ function validate(d,{checkFiles=true}={}){
  function livePages(){if(liveSlugs)return liveSlugs;liveSlugs=new Set();livePaths=new Map();try{const ctx={window:{}};vm.runInNewContext(fs.readFileSync(path.join(root,'pages.config.js'),'utf8'),ctx);for(const pg of ctx.window.KNOWLEDGE_PAGES||[])if(pg.status==='live'){liveSlugs.add(pg.slug);livePaths.set(pg.slug,pg.path||pg.slug+'/');}}catch(_){}return liveSlugs;}
  for(const n of d.nodes||[]){
   if(n.stage!==undefined&&!STAGES.has(n.stage))fail('node '+n.id+': invalid stage');
-  if(n.aliases!==undefined){if(!Array.isArray(n.aliases))fail('node '+n.id+': aliases must be an array');else for(const a of n.aliases)bilingual(a,'node '+n.id+' alias');}
-  if(n.lessons!==undefined){if(!Array.isArray(n.lessons))fail('node '+n.id+': lessons must be an array');else for(const l of n.lessons){if(!livePages().has(l.slug))fail('node '+n.id+': lesson slug not live: '+l.slug);if(checkFiles&&l.step!==undefined&&l.step!==null){livePages();const f=path.join(root,livePaths.get(l.slug)||l.slug,'index.html');if(!fs.existsSync(f)||!fs.readFileSync(f,'utf8').includes('id="step'+l.step+'"'))fail('node '+n.id+': lesson step anchor missing: '+l.slug+'#step'+l.step);}}}
+  // aliases: {zh:string[],en:string[]} (what people type; specs/atlas-search-index.md). Either list may be empty, not both.
+  if(n.aliases!==undefined){const a=n.aliases,ok=l=>Array.isArray(a[l])&&a[l].every(nonempty);if(!a||typeof a!=='object'||Array.isArray(a)||!ok('zh')||!ok('en')||!(a.zh.length+a.en.length))fail('node '+n.id+': aliases must be {zh:[..],en:[..]} with non-empty strings');}
+  if(n.lessons!==undefined){if(!Array.isArray(n.lessons))fail('node '+n.id+': lessons must be an array');else for(const l of n.lessons){if(!livePages().has(l.slug))fail('node '+n.id+': lesson slug not live: '+l.slug);if(checkFiles&&l.step!==undefined&&l.step!==null){livePages();const f=path.join(root,livePaths.get(l.slug)||l.slug,'index.html');if(!fs.existsSync(f)||!fs.readFileSync(f,'utf8').includes('id="step'+l.step+'"'))fail('node '+n.id+': lesson step anchor missing: '+l.slug+'#step'+l.step);}if(checkFiles&&l.anchor!==undefined){livePages();const f=path.join(root,livePaths.get(l.slug)||l.slug,'index.html');if(typeof l.anchor!=='string'||!/^[A-Za-z][\w-]*$/.test(l.anchor)||!fs.existsSync(f)||!fs.readFileSync(f,'utf8').includes('id="'+l.anchor+'"'))fail('node '+n.id+': lesson chapter anchor missing: '+l.slug+'#'+l.anchor);}}}
  }
  if(d.questions!==undefined){
   if(!Array.isArray(d.questions))fail('questions: array missing');

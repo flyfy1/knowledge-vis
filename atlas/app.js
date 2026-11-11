@@ -5,13 +5,13 @@
   document.documentElement.style.setProperty('--map-min-width',`${D.groups.length*216}px`);
   const $ = id => document.getElementById(id);
   const STR = {
-    en:{readingStart:"Optional start: {concept} →",readingTry:"Check with the existing projection experiment →",readingSource:"OpenStax University Physics15.3 · circular projection and harmonic motion ↗",taskLabel:"Try this station · no completion tracking",taskOpen:"Open this experiment →",taskObserve:"Compare your prediction · what to look for and why",taskSource:"Read the claim’s supporting source ↗",taskPrevious:"← Previous concept",taskNext:"Next concept →",workName:'Work & energy',workOpen:'Integrate spring work & compare energy changes →',"foundationsSummary":"Starting ideas · expand when useful","foundationsIntro":"Revisit a definition or decode a symbol, then return to the same question.","foundationsInspect":"Inspect this concept →","foundationsSource":"Open its lesson or textbook →","foundationsEvidence":"Read the supporting source ↗","checkTitle":"Predict first · ideal free spring","checkScope":"Assume A>0, m>0, k>0: an ideal horizontal spring, no damping and no sustained driving.","checkQuestion":"As the block crosses equilibrium x=0, must its velocity also be zero? Predict before opening the explanation.","checkReveal":"Reveal the explanation & a way to check","checkAnswer":"No. At that instant spring force and acceleration x″ are zero, but speed |v|=Aω>0. Velocity x′ can have either sign. Zero acceleration at one instant does not imply uniform motion afterward. Zero-amplitude rest is outside this question.","checkVerify":"Open slopes view, keeping phase; then choose “Cross”","returnExperiment":"Return to current experiment: {name} →","projectionName":"Circle projection","ratesName":"Slopes & net force","travelName":"Signed area & travel","responseName":"Driven steady response","trailContext":"You are viewing “{node}”, which is outside this route. You can also select one of this route’s concepts to inspect its explanation.",travelOpen:'Signed area: compare displacement & distance →',motionOpen:'Free motion: try the circle projection →',ratesOpen:'Rates & net force: inspect signed slopes →',responseOpen:'Driven response: compare damping, peaks & poles →',motionReading:'External textbook; an associated experiment is also available here.',back:'← Knowledge Index',eyebrow:'KNOWLEDGE ATLAS / 01',title:'Mathematics & Physics',intro:'Connect mathematics and geometry with motion, light, waves, circuits and measurement. Choose a question, inspect the concepts behind it, and try the linked experiment or lesson.',routes:'Start with a question',questions:'Questions to start from',moreQuestions:'More questions',openStep:'Open this step →',questionReveal:'Think first, then reveal',stageLabel:'Stage',allStages:'All stages',stagePrimary:'Primary',stageJunior:'Junior',stageSenior:'Senior',stageUniversity:'University',explore:'Explore the connections',graph:'Map',list:'List',searchLabel:'Find a concept',groupLabel:'Region',reset:'Clear filters',invalid:'This link contains an unknown selection. Showing Fourier analysis; you can choose another concept.',mapHelp:'Select a concept to reveal its connections. Numbers match the explanations. Positions group topics; distances have no numerical meaning.',mapFooter:'Arrows follow the written relation. They do not imply a required learning order.',emptyTitle:'No matching concepts',emptyBody:'Try another term, or clear the filters to see the full map.',scope:'An editorial map, not a complete curriculum. Connections are curated and linked to explanations. External readings are marked separately from interactive lessons.',allLessons:'Browse all interactive lessons →',placeholder:'Fourier, waves, uncertainty…',all:'All regions',concepts:'concepts',connections:'connections',regions:'regions',matches:'matching concepts',selected:'Selected',related:'Connection',hint:'Explore concept',route:'Suggested route',routeHint:'An editorial sequence, not a prerequisite rule.',closeRoute:'Close route',openLesson:'Open interactive lesson →',readSource:'Read textbook explanation ↗',external:'External reading · no interactive lesson here yet',internal:'Opens the relevant section in an existing lesson.',relatedTitle:'Why these concepts connect',evidence:'Read the supporting explanation →',externalEvidence:'Read the external source ↗',exploreNode:'Explore',outside:'The selected concept is outside these results. Its explanation remains open.',viewLabel:'View',mapLabel:'Knowledge map. Scroll horizontally for more topics.',counts:'{n} concepts · {e} connections\n{g} regions · curated with sources',status:'{n} matching concepts · selected: {title}',initialNote:'Waves, circuits, systems and measurement',trailStop:'Stop',outsideTag:'Outside results',mapContext:'The map keeps all concepts for context. Nonmatching concepts are labelled Outside results; List shows only matches.'},
-    zh:{readingStart:"可先看：{concept} →",readingTry:"用已有的投影实验核对 →",readingSource:"OpenStax大学物理15.3 · 圆周投影与简谐振动 ↗",taskLabel:"本站实验任务 · 不记录掌握状态",taskOpen:"打开本站对应实验 →",taskObserve:"核对预测 · 该看什么，为什么",taskSource:"查看这条解释的依据 ↗",taskPrevious:"← 上一个概念",taskNext:"下一个概念 →",workName:'功与能量',workOpen:'对位移积分求弹簧功，核对能量变化 →',"foundationsSummary":"起步提示 · 按需展开","foundationsIntro":"回看一个定义或读懂一个符号，再回到同一个问题。","foundationsInspect":"查看这个概念 →","foundationsSource":"打开对应课程或教材 →","foundationsEvidence":"查看解释依据 ↗","checkTitle":"先预测 · 理想自由弹簧","checkScope":"条件：A>0、m>0、k>0；理想水平弹簧，无阻尼、无持续驱动。","checkQuestion":"物块经过平衡位置 x=0 时，速度也一定为零吗？先预测，再展开解释。","checkReveal":"展开解释与核对方法","checkAnswer":"不是。按本题条件，过平衡点时弹簧力和加速度 x″ 为零，速率却是 |v|=Aω>0。速度 x′ 的方向可正可负。一个瞬间加速度为零，不代表以后一直匀速。零振幅静止不在本题条件内。","checkVerify":"打开斜率视图并保留相位，再选“过平衡点”","returnExperiment":"回到当前实验：{name} →","projectionName":"圆周投影","ratesName":"斜率与净力","travelName":"有符号面积与路程","responseName":"受迫稳态响应","trailContext":"当前查看的「{node}」不在本路线中。也可选择本路线中的概念，查看对应解释。",travelOpen:'有符号面积：比较位移与路程 →',motionOpen:'自由运动：验证圆周投影 →',ratesOpen:'斜率与净力：比较带方向的变化率 →',responseOpen:'受迫响应：对比阻尼、峰值与极点 →',motionReading:'外部教材；本站也提供关联实验。',back:'← 知识索引',eyebrow:'知识地图 / 01',title:'数学与物理',intro:'把数学、几何与运动、光、波动、电路和测量联系起来。先选一个问题，查看背后的概念，再进入关联实验或课程。',routes:'从一个问题开始',questions:'从问题开始',moreQuestions:'更多问题',openStep:'打开这一步 →',questionReveal:'先想一想，再揭晓',stageLabel:'学段',allStages:'全部学段',stagePrimary:'小学',stageJunior:'初中',stageSenior:'高中',stageUniversity:'大学',explore:'探索概念之间的联系',graph:'地图',list:'列表',searchLabel:'寻找一个概念',groupLabel:'主题区域',reset:'清除筛选',invalid:'链接中的概念不存在，已显示傅里叶分析。你可以选择其他概念。',mapHelp:'选择一个概念，显示它的直接联系。编号对应右侧或下方的解释。位置按主题编排，距离不代表数值。',mapFooter:'箭头方向对应关系陈述，不代表必须遵循的学习顺序。',emptyTitle:'没有匹配的概念',emptyBody:'换一个关键词，或清除筛选，重新查看完整地图。',scope:'这是一张人工编排的地图，尚未覆盖完整课程。每条关系都附有解释依据，外部阅读与站内交互讲解分别标注。',allLessons:'浏览全部交互讲解 →',placeholder:'傅里叶、波动、不确定性……',all:'全部区域',concepts:'个概念',connections:'条关系',regions:'个区域',matches:'个匹配概念',selected:'当前选择',related:'关系',hint:'探索概念',route:'建议路线',routeHint:'这是建议的探索顺序，不是必修先后关系。',closeRoute:'收起路线',openLesson:'打开交互讲解 →',readSource:'阅读教材解释 ↗',external:'外部阅读 · 暂无本站交互讲解',internal:'直接进入已有知识页的相关章节。',relatedTitle:'这些概念为什么相连',evidence:'查看解释依据 →',externalEvidence:'查看外部来源 ↗',exploreNode:'探索',outside:'当前概念不在筛选结果内，已保留它的解释。',viewLabel:'显示方式',mapLabel:'知识地图。可横向滚动查看其他主题。',counts:'{n} 个概念 · {e} 条关系\n{g} 个主题区域 · 人工编排并附来源',status:'{n} 个匹配概念 · 当前：{title}',initialNote:'波动、电路、系统与测量',trailStop:'第',outsideTag:'不在结果内',mapContext:'地图保留全部概念作为上下文；不匹配项标注“不在结果内”，列表只显示匹配结果。'}
+    en:{readingStart:"Optional start: {concept} →",readingTry:"Check with the existing projection experiment →",readingSource:"OpenStax University Physics15.3 · circular projection and harmonic motion ↗",taskLabel:"Try this station · no completion tracking",taskOpen:"Open this experiment →",taskObserve:"Compare your prediction · what to look for and why",taskSource:"Read the claim’s supporting source ↗",taskPrevious:"← Previous concept",taskNext:"Next concept →",workName:'Work & energy',workOpen:'Integrate spring work & compare energy changes →',"foundationsSummary":"Starting ideas · expand when useful","foundationsIntro":"Revisit a definition or decode a symbol, then return to the same question.","foundationsInspect":"Inspect this concept →","foundationsSource":"Open its lesson or textbook →","foundationsEvidence":"Read the supporting source ↗","checkTitle":"Predict first · ideal free spring","checkScope":"Assume A>0, m>0, k>0: an ideal horizontal spring, no damping and no sustained driving.","checkQuestion":"As the block crosses equilibrium x=0, must its velocity also be zero? Predict before opening the explanation.","checkReveal":"Reveal the explanation & a way to check","checkAnswer":"No. At that instant spring force and acceleration x″ are zero, but speed |v|=Aω>0. Velocity x′ can have either sign. Zero acceleration at one instant does not imply uniform motion afterward. Zero-amplitude rest is outside this question.","checkVerify":"Open slopes view, keeping phase; then choose “Cross”","returnExperiment":"Return to current experiment: {name} →","projectionName":"Circle projection","ratesName":"Slopes & net force","travelName":"Signed area & travel","responseName":"Driven steady response","trailContext":"You are viewing “{node}”, which is outside this route. You can also select one of this route’s concepts to inspect its explanation.",travelOpen:'Signed area: compare displacement & distance →',motionOpen:'Free motion: try the circle projection →',ratesOpen:'Rates & net force: inspect signed slopes →',responseOpen:'Driven response: compare damping, peaks & poles →',motionReading:'External textbook; an associated experiment is also available here.',back:'← Knowledge Index',eyebrow:'CONCEPTS & CONNECTIONS',title:'Knowledge Atlas',intro:'Look up something you don’t understand and open the place in a lesson that shows it, or start from a question and follow the connections between ideas — across mathematics, physics, chemistry, life, the Earth, computing and society.',routes:'Start with a question',questions:'Questions to start from',moreQuestions:'More questions',openStep:'Open this step →',questionReveal:'Think first, then reveal',stageLabel:'Stage',allStages:'All stages',stagePrimary:'Primary',stageJunior:'Junior',stageSenior:'Senior',stageUniversity:'University',explore:'Explore the connections',graph:'Map',list:'List',searchLabel:'Find a concept',groupLabel:'Region',reset:'Clear filters',invalid:'This link contains an unknown selection. Showing Fourier analysis; you can choose another concept.',mapHelp:'Select a concept to reveal its connections. Numbers match the explanations. Positions group topics; distances have no numerical meaning.',mapFooter:'Arrows follow the written relation. They do not imply a required learning order.',emptyTitle:'No matching concepts',emptyBody:'Try another term, or clear the filters to see the full map.',scope:'An editorial map, not a complete curriculum. Connections are curated and linked to explanations. External readings are marked separately from interactive lessons.',allLessons:'Browse all interactive lessons →',placeholder:'Fourier, probability, photosynthesis…',all:'All regions',concepts:'concepts',connections:'connections',regions:'regions',matches:'matching concepts',selected:'Selected',related:'Connection',hint:'Explore concept',route:'Suggested route',routeHint:'An editorial sequence, not a prerequisite rule.',closeRoute:'Close route',openLesson:'Open interactive lesson →',readSource:'Read textbook explanation ↗',external:'External reading · no interactive lesson here yet',internal:'Opens the relevant section in an existing lesson.',relatedTitle:'Why these concepts connect',evidence:'Read the supporting explanation →',externalEvidence:'Read the external source ↗',exploreNode:'Explore',outside:'The selected concept is outside these results. Its explanation remains open.',viewLabel:'View',mapLabel:'Knowledge map. Scroll horizontally for more topics.',counts:'{n} concepts · {e} connections · {g} regions\n{p} pages with an interactive explanation · curated with sources',detailsLoading:'Loading the explanation…',detailsFailed:'This explanation could not be loaded. Check the connection and reload the page.',moreResults:'Show all {n} concepts',status:'{n} matching concepts · selected: {title}',initialNote:'Waves, circuits, systems and measurement',trailStop:'Stop',outsideTag:'Outside results',mapContext:'The map keeps all concepts for context. Nonmatching concepts are labelled Outside results; List shows only matches.'},
+    zh:{readingStart:"可先看：{concept} →",readingTry:"用已有的投影实验核对 →",readingSource:"OpenStax大学物理15.3 · 圆周投影与简谐振动 ↗",taskLabel:"本站实验任务 · 不记录掌握状态",taskOpen:"打开本站对应实验 →",taskObserve:"核对预测 · 该看什么，为什么",taskSource:"查看这条解释的依据 ↗",taskPrevious:"← 上一个概念",taskNext:"下一个概念 →",workName:'功与能量',workOpen:'对位移积分求弹簧功，核对能量变化 →',"foundationsSummary":"起步提示 · 按需展开","foundationsIntro":"回看一个定义或读懂一个符号，再回到同一个问题。","foundationsInspect":"查看这个概念 →","foundationsSource":"打开对应课程或教材 →","foundationsEvidence":"查看解释依据 ↗","checkTitle":"先预测 · 理想自由弹簧","checkScope":"条件：A>0、m>0、k>0；理想水平弹簧，无阻尼、无持续驱动。","checkQuestion":"物块经过平衡位置 x=0 时，速度也一定为零吗？先预测，再展开解释。","checkReveal":"展开解释与核对方法","checkAnswer":"不是。按本题条件，过平衡点时弹簧力和加速度 x″ 为零，速率却是 |v|=Aω>0。速度 x′ 的方向可正可负。一个瞬间加速度为零，不代表以后一直匀速。零振幅静止不在本题条件内。","checkVerify":"打开斜率视图并保留相位，再选“过平衡点”","returnExperiment":"回到当前实验：{name} →","projectionName":"圆周投影","ratesName":"斜率与净力","travelName":"有符号面积与路程","responseName":"受迫稳态响应","trailContext":"当前查看的「{node}」不在本路线中。也可选择本路线中的概念，查看对应解释。",travelOpen:'有符号面积：比较位移与路程 →',motionOpen:'自由运动：验证圆周投影 →',ratesOpen:'斜率与净力：比较带方向的变化率 →',responseOpen:'受迫响应：对比阻尼、峰值与极点 →',motionReading:'外部教材；本站也提供关联实验。',back:'← 知识索引',eyebrow:'概念与联系',title:'知识地图',intro:'搜一个不懂的词，直接打开课程里讲它的那一步；或者从一个问题出发，沿着概念之间的联系走——从数学、物理到化学、生命、地球、计算与社会。',routes:'从一个问题开始',questions:'从问题开始',moreQuestions:'更多问题',openStep:'打开这一步 →',questionReveal:'先想一想，再揭晓',stageLabel:'学段',allStages:'全部学段',stagePrimary:'小学',stageJunior:'初中',stageSenior:'高中',stageUniversity:'大学',explore:'探索概念之间的联系',graph:'地图',list:'列表',searchLabel:'寻找一个概念',groupLabel:'主题区域',reset:'清除筛选',invalid:'链接中的概念不存在，已显示傅里叶分析。你可以选择其他概念。',mapHelp:'选择一个概念，显示它的直接联系。编号对应右侧或下方的解释。位置按主题编排，距离不代表数值。',mapFooter:'箭头方向对应关系陈述，不代表必须遵循的学习顺序。',emptyTitle:'没有匹配的概念',emptyBody:'换一个关键词，或清除筛选，重新查看完整地图。',scope:'这是一张人工编排的地图，尚未覆盖完整课程。每条关系都附有解释依据，外部阅读与站内交互讲解分别标注。',allLessons:'浏览全部交互讲解 →',placeholder:'傅里叶、概率、光合作用……',all:'全部区域',concepts:'个概念',connections:'条关系',regions:'个区域',matches:'个匹配概念',selected:'当前选择',related:'关系',hint:'探索概念',route:'建议路线',routeHint:'这是建议的探索顺序，不是必修先后关系。',closeRoute:'收起路线',openLesson:'打开交互讲解 →',readSource:'阅读教材解释 ↗',external:'外部阅读 · 暂无本站交互讲解',internal:'直接进入已有知识页的相关章节。',relatedTitle:'这些概念为什么相连',evidence:'查看解释依据 →',externalEvidence:'查看外部来源 ↗',exploreNode:'探索',outside:'当前概念不在筛选结果内，已保留它的解释。',viewLabel:'显示方式',mapLabel:'知识地图。可横向滚动查看其他主题。',counts:'{n} 个概念 · {e} 条关系 · {g} 个主题区域\n{p} 个页面有交互讲解 · 人工编排并附来源',detailsLoading:'正在载入解释……',detailsFailed:'这段解释没能载入。请检查网络后刷新页面。',moreResults:'显示全部 {n} 个概念',status:'{n} 个匹配概念 · 当前：{title}',initialNote:'波动、电路、系统与测量',trailStop:'第',outsideTag:'不在结果内',mapContext:'地图保留全部概念作为上下文；不匹配项标注“不在结果内”，列表只显示匹配结果。'}
   };
   let lang;
   try { lang = localStorage.getItem('knowledge-lang'); } catch (_) {}
   if (!['en','zh'].includes(lang)) lang = (navigator.language || '').toLowerCase().startsWith('zh') ? 'zh' : 'en';
-  const pick = value => typeof value === 'string' ? value : value[lang];
+  const pick = value => value == null ? '' : typeof value === 'string' ? value : value[lang];
   const t = key => STR[lang][key];
   const formulas={
       'time ↔ frequency':{zh:'时域 ↔ 频域',en:'time ↔ frequency'},'drive → response peak':{zh:'驱动 → 响应峰值',en:'drive → response peak'},
@@ -21,6 +21,38 @@
   const formulaText=value=>formulas[value]?pick(formulas[value]):value;
 
   const byId = new Map(D.nodes.map(n => [n.id,n]));
+  // Split data (main atlas): atlas-index.js holds structure and titles; each
+  // region's descriptions, relation reasons, aliases and question prompts arrive
+  // from details/<region>.js on demand. A graph without `chunks` (investment
+  // atlas, galaxy's data.js) is complete and every region counts as loaded.
+  // Contract: specs/atlas-search-index.md.
+  const chunks = D.partial && D.chunks ? D.chunks : null;
+  const loaded = new Set(), failed = new Set(), requested = new Map();
+  const part = (group,kind) => group+'.'+kind;  // chunk id: <region>.nodes|edges|questions
+  const has = (group,kind) => !chunks || loaded.has(part(group,kind)) || !chunks[part(group,kind)];
+  const edgeById = new Map(D.edges.map(e => [e.id,e])), questionById = new Map((D.questions||[]).map(q => [q.id,q]));
+  D.addDetails = (id,payload) => {
+    for (const [k,v] of Object.entries(payload.nodes||{})) if (byId.has(k)) Object.assign(byId.get(k),v);
+    for (const [k,v] of Object.entries(payload.edges||{})) if (edgeById.has(k)) Object.assign(edgeById.get(k),v);
+    for (const [k,v] of Object.entries(payload.questions||{})) if (questionById.has(k)) Object.assign(questionById.get(k),v);
+    loaded.add(id);
+  };
+  function loadChunk(id) {
+    if (!chunks || loaded.has(id) || !chunks[id]) return Promise.resolve();
+    if (!requested.has(id)) requested.set(id, new Promise((resolve,reject) => {
+      const s = document.createElement('script'); s.src = chunks[id]; s.async = false;
+      s.onload = () => loaded.has(id) ? resolve() : reject(new Error('empty chunk '+id));
+      s.onerror = () => reject(new Error('chunk failed '+id));
+      document.head.append(s);
+    }).catch(error => { failed.add(id); throw error; }).finally(() => requested.delete(id)));
+    return requested.get(id);
+  }
+  // Public for tests and tools: ATLAS.loadDetails() loads everything.
+  D.loadDetails = (regions='all',kinds=['nodes','edges','questions']) => Promise.all((regions==='all' ? D.groups.map(g => g.id) : [].concat(regions)).flatMap(g => kinds.map(k => loadChunk(part(g,k)))));
+  const described = id => { const n = byId.get(id); return !!n && has(n.group,'nodes'); };
+  const ready = id => { const n = byId.get(id); return !!n && has(n.group,'nodes') && has(n.group,'edges'); };
+  const questionReady = q => has(q.group,'questions');
+  const broken = (group,kinds) => kinds.some(k => failed.has(part(group,k)));
   // Second-atlas parameterization (backward-compatible): a graph may declare
   // defaultNode in its data.js; otherwise the main atlas 'fourier' default stands.
   const FALLBACK_NODE = (D.defaultNode && byId.has(D.defaultNode)) ? D.defaultNode : 'fourier';
@@ -88,6 +120,9 @@
   D.nodes.forEach(n=>{
     const e=button('',()=>select(n.id,{focus:true}),'result');e.dataset.result=n.id;e.append(make('strong'),make('small'));$('results').append(e);results.set(n.id,e);
   });
+  const LIST_STEP=40,listState={key:null,limit:LIST_STEP};let listShown=new Set();
+  const moreResults=button('',()=>{const first=listState.limit;listState.limit=Infinity;render();const next=[...$('results').children].filter(e=>!e.hidden)[first];if(next)next.focus();},'more-results');
+  moreResults.id='moreResults';moreResults.hidden=true;$('results').after(moreResults);
   let showAllQuestions=false;
   function renderQuestions(){
     const box=$('questions');if(!box)return;box.replaceChildren();
@@ -104,16 +139,38 @@
     const e=button('',()=>{state.trail=state.trail===r.id?'':r.id;if(state.trail){state.node=r.nodes[0];state.q='';state.group='all';state.question='';}invalid=false;save(true);render();focusExperiment();});
     e.dataset.trail=r.id;e.append(make('strong'),make('span'));$('routes').append(e);
   });
+  // Search: titles, aliases and descriptions in both languages whatever the UI
+  // language; ranked title > alias > description (atlas/concept-search.js).
+  const CS = window.ConceptSearch;
+  const records = new Map();
+  function record(n) {
+    const key = n.title.zh+'|'+n.title.en+'|'+(n.description?1:0)+'|'+(n.aliases?1:0);let r=records.get(n.id);
+    if (!r || r.key !== key) {
+      const a = n.aliases || {};
+      const fields = {titles:[n.title.zh,n.title.en],aliases:[...(a.zh||[]),...(a.en||[])],texts:n.description?[n.description.zh,n.description.en]:[]};
+      r = {key, record: CS ? CS.prepare(fields) : null, text: Object.values(fields).flat().join(' ').toLocaleLowerCase()};
+      records.set(n.id, r);
+    }
+    return r;
+  }
   function matching() {
-    const q=state.q.trim().toLocaleLowerCase();
-    return D.nodes.filter(n=>(state.group==='all'||n.group===state.group)&&(state.stage==='all'||!n.stage||n.stage===state.stage)&&(!q||[n.title.zh,n.title.en,n.description.zh,n.description.en].join(' ').toLocaleLowerCase().includes(q)));
+    const q=state.q.trim();
+    const scoped=D.nodes.filter(n=>(state.group==='all'||n.group===state.group)&&(state.stage==='all'||!n.stage||n.stage===state.stage));
+    if(!q)return scoped;
+    if(!CS)return scoped.filter(n=>record(n).text.includes(q.toLocaleLowerCase()));
+    return CS.rank(scoped.map(n=>({n,record:record(n).record})),q).map(x=>x.n);
   }
   function activeEdges(){return D.edges.filter(e=>e.from===state.node||e.to===state.node);}
   function renderDetail(matches,edges){
-    const n=byId.get(state.node), d=$('detail');d.replaceChildren();
-    d.append(make('p','detail-kicker',pick(D.groups.find(g=>g.id===n.group).label)));
-    const h=make('h2','',pick(n.title));h.id='detailTitle';h.tabIndex=-1;d.append(h,make('p','definition',pick(n.description)));
-    if(n.formula)d.append(make('p','formula',formulaText(n.formula)));
+    const n=byId.get(state.node), d=$('detail'), isReady=ready(n.id);
+    // The heading element is kept while the concept stays the same, so a re-render
+    // after its details arrive does not detach what has focus or is being scrolled.
+    const old=$('detailTitle'),h=old&&old.dataset.node===n.id?old:make('h2');h.textContent=pick(n.title);h.id='detailTitle';h.tabIndex=-1;h.dataset.node=n.id;
+    d.replaceChildren();
+    d.append(make('p','detail-kicker',pick(D.groups.find(g=>g.id===n.group).label)),h);
+    d.setAttribute('aria-busy',String(!isReady));
+    if(isReady){d.append(make('p','definition',pick(n.description)));if(n.formula)d.append(make('p','formula',formulaText(n.formula)));}
+    else{const bad=broken(n.group,['nodes','edges']),wait=make('p','definition details-wait',t(bad?'detailsFailed':'detailsLoading'));wait.dataset.detailsWait=bad?'failed':'loading';d.append(wait);}
     const currentExperiment=experimentNames[state.trail];
     if(currentExperiment){const back=button(t('returnExperiment').replace('{name}',t(currentExperiment)),focusExperiment,'motion-open');back.dataset.returnExperiment=state.trail;d.append(back);}
     const hasWork=n.id==='work-energy';
@@ -124,10 +181,11 @@
     if(n.id==='integral'&&state.trail!=='travel'){const open=button(t('travelOpen'),()=>{state.trail='travel';state.q='';state.group='all';save(true);render();focusExperiment();},'motion-open');open.dataset.openTravel=n.id;d.append(open);}
     if(hasRates&&state.trail!=='kinematics'){const open=button(t('ratesOpen'),()=>{state.trail='kinematics';state.q='';state.group='all';save(true);render();focusExperiment();},'motion-open');open.dataset.openRates=n.id;d.append(open);}
     if(['oscillation','resonance','freqresp','poles'].includes(n.id)&&state.trail!=='response'){const open=button(t('responseOpen'),()=>{state.trail='response';state.q='';state.group='all';save(true);render();focusExperiment();},'motion-open');open.dataset.openResponse=n.id;d.append(open);}
-    d.append(sourceLink(n.source,external(n.source)?t('readSource'):t('openLesson'),'primary-link'),make('p','source-note',external(n.source)?((hasMotion||hasRates||hasWork)?t('motionReading'):t('external')):t('internal')));
+    if(isReady)d.append(sourceLink(n.source,external(n.source)?t('readSource'):t('openLesson'),'primary-link'),make('p','source-note',external(n.source)?((hasMotion||hasRates||hasWork)?t('motionReading'):t('external')):t('internal')));
     if(!matches.some(x=>x.id===n.id)){
       const note=make('div','outside-note');note.append(make('p','',t('outside')),button(t('reset'),()=>clearFilters(true)));d.append(note);
     }
+    if(!isReady)return;
     const heading=make('h3','relation-heading',`${t('relatedTitle')} · ${edges.length}`);d.append(heading);
     const list=make('ol','relations');
     if(!disclosures.has(n.id)){const preferred=edges.find(x=>x.from==='fourier'&&x.to==='convolution')||edges[0];disclosures.set(n.id,new Set(preferred?[`${preferred.from}:${preferred.to}`]:[]));}
@@ -141,7 +199,8 @@
       if(e.reading){
         const r=e.reading,section=make('section','relation-reading'),start=byId.get(r.startNode);section.dataset.readingEdge=e.id;
         section.append(make('h4','',pick(r.title)),make('p','',pick(r.meaning)),make('p','',pick(r.startHint)));
-        section.append(sourceLink(start.source,t('readingStart').replace('{concept}',pick(start.title)),'reading-link'));
+        if(!described(start.id)&&!broken(start.group,['nodes']))section.dataset.detailsWait='';
+        if(start.source)section.append(sourceLink(start.source,t('readingStart').replace('{concept}',pick(start.title)),'reading-link'));
         const query=new URLSearchParams({trail:r.trail,node:r.tryNode,view:'list',lang});
         section.append(sourceLink('./?'+query.toString()+'#motion-title',t('readingTry'),'reading-link'),make('p','',pick(r.bounds)),sourceLink(r.source,t('readingSource'),'reading-link'));item.append(section);
       }
@@ -161,7 +220,8 @@
       const prompt=(q.prompts||[]).find(x=>x.node===state.node);
       if(prompt){const card=make('article','route-task');card.append(make('p','trail-label',t('taskLabel')),make('p','',pick(prompt.ask)));box.append(card);}
       if(q.reveal){const rev=make('details');rev.append(make('summary','',t('questionReveal')),make('p','',pick(q.reveal)));box.append(rev);}
-      box.append(sourceLink(q.target.href,t('openStep'),'primary-link'));
+      if(!questionReady(q)){const wait=make('p','details-wait',t(broken(q.group,['questions'])?'detailsFailed':'detailsLoading'));wait.dataset.detailsWait='';box.append(wait);}
+      if(q.target)box.append(sourceLink(q.target.href,t('openStep'),'primary-link'));
       return;
     }
     const r=D.trails.find(r=>r.id===state.trail);box.hidden=!r;box.replaceChildren();if(!r)return;
@@ -201,7 +261,7 @@
     for(const[id,key]of [['summary','foundationsSummary'],['intro','foundationsIntro'],['check-title','checkTitle'],['check-scope','checkScope'],['question','checkQuestion'],['reveal','checkReveal'],['answer','checkAnswer'],['verify','checkVerify']])$('foundations-'+id).textContent=t(key);
     const content=$('foundations-content');content.replaceChildren();
     if(route.backgroundNote){const note=make('section','foundations-concept');note.dataset.foundationNote=route.id;note.append(make('p','',pick(route.backgroundNote)),sourceLink(route.backgroundSource,t('foundationsEvidence'),'evidence-link'));content.append(note);}
-    for(const id of route.background){const node=byId.get(id),card=make('section','foundations-concept');card.dataset.foundationNode=id;card.append(make('h3','',pick(node.title)),make('p','',pick(node.description)));if(node.formula)card.append(make('p','formula',formulaText(node.formula)));
+    for(const id of route.background){const node=byId.get(id),card=make('section','foundations-concept');card.dataset.foundationNode=id;if(!described(id)){const wait=make('p','details-wait',t(broken(node.group,['nodes'])?'detailsFailed':'detailsLoading'));wait.dataset.detailsWait='';card.append(make('h3','',pick(node.title)),wait);content.append(card);continue;}card.append(make('h3','',pick(node.title)),make('p','',pick(node.description)));if(node.formula)card.append(make('p','formula',formulaText(node.formula)));
       if(node.help){card.append(make('h3','',pick(node.help.title)),make('p','',pick(node.help.body)));for(const src of node.help.sources)card.append(sourceLink(src.href,pick(src.label),'evidence-link'));}
       const actions=make('div','foundations-actions'),inspect=button(t('foundationsInspect'),()=>select(id,{focus:true}));inspect.dataset.foundationInspect=id;actions.append(inspect,sourceLink(node.source,t('foundationsSource')));card.append(actions);content.append(card);
     }
@@ -225,7 +285,7 @@
     const heroTitle=document.querySelector('[data-i18n="title"]'),heroEyebrow=document.querySelector('[data-i18n="eyebrow"]');
     document.title=(heroTitle?heroTitle.textContent:t('title'))+' · '+(heroEyebrow?heroEyebrow.textContent:t('eyebrow'));
     document.querySelectorAll('[data-lang]').forEach(e=>e.setAttribute('aria-pressed',String(e.dataset.lang===lang)));
-    $('counts').textContent=t('counts').replace('{n}',D.nodes.length).replace('{e}',D.edges.length).replace('{g}',D.groups.length);
+    $('counts').textContent=t('counts').replace('{n}',D.nodes.length).replace('{e}',D.edges.length).replace('{g}',D.groups.length).replace('{p}',new Set(D.nodes.flatMap(n=>(n.lessons||[]).map(l=>l.slug))).size);
     const searchEl=$('search');searchEl.placeholder=(lang==='zh'&&searchEl.dataset.placeholderZh)?searchEl.dataset.placeholderZh:(lang==='en'&&searchEl.dataset.placeholderEn)?searchEl.dataset.placeholderEn:t('placeholder');$('search').value=state.q;$('group').value=state.group;
     if($('stage')){$('stage').value=state.stage;[...$('stage').options].forEach(e=>e.textContent=e.value==='all'?t('allStages'):t('stage'+e.value[0].toUpperCase()+e.value.slice(1)));}
     renderQuestions();
@@ -235,12 +295,18 @@
     document.querySelectorAll('[data-group-title]').forEach(e=>{const g=D.groups.find(g=>g.id===e.dataset.groupTitle);e.replaceChildren(make('span','',g.mark),document.createTextNode(pick(g.label)));});
     if(state.q||state.group!=='all'){const mh=document.querySelector('[data-i18n=mapHelp]');mh.textContent=((lang==='zh'&&mh.dataset.i18nZh)?mh.dataset.i18nZh:(lang==='en'&&mh.dataset.i18nEn)?mh.dataset.i18nEn:t('mapHelp'))+' '+t('mapContext');}
     const matches=matching(),ids=new Set(matches.map(n=>n.id)),edges=activeEdges(),neighbors=new Map();
+    // List: ranked order while searching; only the first LIST_STEP results until asked (keeps the phone page short).
+    const listKey=[state.q,state.group,state.stage].join('|');if(listKey!==listState.key){listState.key=listKey;listState.limit=LIST_STEP;}
+    const shown=new Set(matches.slice(0,listState.limit).map(n=>n.id));listShown=shown;
+    const order=(state.q.trim()?[...matches,...D.nodes.filter(n=>!ids.has(n.id))]:D.nodes).map(n=>results.get(n.id)),box=$('results');
+    if(order.some((el,i)=>box.children[i]!==el))box.append(...order);
+    moreResults.hidden=state.view!=='list'||matches.length<=listState.limit;moreResults.textContent=t('moreResults').replace('{n}',matches.length);
     edges.forEach((e,i)=>neighbors.set(e.from===state.node?e.to:e.from,i+1));
     D.nodes.forEach(n=>{
       const e=elements.get(n.id), selected=n.id===state.node, number=neighbors.get(n.id);
       e.querySelector('strong').textContent=pick(n.title);e.querySelector('small').textContent=(selected?t('selected'):number?`${t('related')} ${number}`:t('hint'))+(!ids.has(n.id)?` · ${t('outsideTag')}`:'');
       e.setAttribute('aria-pressed',String(selected));e.classList.toggle('neighbor',!!number);e.classList.toggle('outside',!ids.has(n.id));
-      const result=results.get(n.id);result.hidden=!ids.has(n.id);result.querySelector('strong').textContent=pick(n.title);result.querySelector('small').textContent=pick(n.description);result.setAttribute('aria-pressed',String(selected));
+      const result=results.get(n.id);result.hidden=!shown.has(n.id);result.querySelector('strong').textContent=pick(n.title);result.querySelector('small').textContent=pick(n.description);result.setAttribute('aria-pressed',String(selected));
     });
     document.querySelectorAll('[data-trail]').forEach(e=>{const r=D.trails.find(r=>r.id===e.dataset.trail);e.setAttribute('aria-pressed',String(state.trail===r.id));e.querySelector('strong').textContent=pick(r.title);e.querySelector('span').textContent=`${t('route')} · ${r.nodes.length} ${t('concepts')}`;});
     $('status').textContent=t('status').replace('{n}',matches.length).replace('{title}',pick(byId.get(state.node).title));
@@ -252,6 +318,45 @@
     for(const id of ['motion','response']){const note=$(id+'-route-context'),visible=!!routeContext()&&(id==='response'?state.trail==='response':['motion','kinematics','travel','work'].includes(state.trail));note.hidden=!visible;note.textContent=visible?routeContext():'';}
     renderStartingIdeas(previousStartingFocus);
     cancelAnimationFrame(frame);frame=requestAnimationFrame(drawEdges);
+    requestDetails();
+  }
+  // On-demand details: what the current state shows decides which chunks load.
+  function neededChunks(){
+    if(!chunks)return [];
+    const want=new Set(),node=(id,kinds)=>{const n=byId.get(id);if(n)for(const k of kinds)want.add(part(n.group,k));};
+    node(state.node,['nodes','edges']);
+    const route=D.trails.find(r=>r.id===state.trail);
+    if(route){for(const id of route.nodes)node(id,['nodes','edges']);for(const id of route.background||[])node(id,['nodes']);}
+    const q=state.question&&questionById.get(state.question);if(q)want.add(part(q.group,'questions'));
+    for(const e of activeEdges())if(e.reading&&e.reading.startNode)node(e.reading.startNode,['nodes']);
+    if(state.view==='list')listShown.forEach(id=>node(id,['nodes']));
+    if(state.q.trim())D.groups.forEach(g=>want.add(part(g.id,'nodes')));
+    return [...want].filter(id=>chunks[id]&&!loaded.has(id)&&!failed.has(id)&&!requested.has(id));
+  }
+  let rerenderQueued=false;
+  // Once what is shown has arrived, fetch the regions of the selected concept's
+  // neighbours (its "Explore →" targets) so the next click renders at once.
+  function prefetchChunks(){
+    if(!chunks||requested.size)return [];
+    const want=new Set();for(const e of activeEdges())for(const id of [e.from,e.to]){const n=byId.get(id);if(n)for(const k of ['nodes','edges'])want.add(part(n.group,k));}
+    return [...want].filter(id=>chunks[id]&&!loaded.has(id)&&!failed.has(id));
+  }
+  function requestDetails(){
+    const need=neededChunks();
+    for(const id of need.length?need:prefetchChunks())loadChunk(id).then(afterLoad,afterLoad);
+  }
+  // Something on screen waits for details: a loading note, list text, a search over descriptions.
+  const waiting=()=>!!document.querySelector('[data-details-wait]')||!!state.q.trim()||(state.view==='list'&&[...listShown].some(id=>!described(id)));
+  function afterLoad(){
+    if(rerenderQueued)return;rerenderQueued=true;
+    queueMicrotask(()=>{
+      rerenderQueued=false;
+      if(!waiting()){if(!requested.size)requestDetails();return;}
+      // Re-render in place; keep focus on the equivalent control (e.g. #detailTitle is rebuilt).
+      const active=document.activeElement,id=active&&active!==document.body?active.id:'';
+      render();
+      if(id&&document.activeElement!==active){const again=document.getElementById(id);if(again&&again!==document.activeElement)again.focus({preventScroll:true});}
+    });
   }
   const NS='http://www.w3.org/2000/svg';
   function svg(tag,attrs){const e=document.createElementNS(NS,tag);for(const [k,v] of Object.entries(attrs))e.setAttribute(k,v);return e;}

@@ -12,7 +12,13 @@ let checks=0;function ok(v,m){assert.ok(v,m);checks++;}
   const p=await context.newPage();p.on('pageerror',e=>errors.push(String(e)));
   p.on('request',r=>{if(r.frame()===p.mainFrame()&&p.url().includes('/atlas/'))requests.push(r.url());});
   await p.goto(base+'/atlas/');
-  const data=await p.evaluate(()=>window.ATLAS);
+  // 2026-11-11 contract (specs/atlas-search-index.md): the page loads atlas-index.js up front and
+  // details/<region>.<kind>.js on demand. First load must not fetch every chunk, nor data.js/questions.js;
+  // the full graph is then read through the page's own loader.
+  const firstLoad=await p.evaluate(()=>({chunks:Object.keys(ATLAS.chunks).length,scripts:[...document.scripts].map(s=>s.src)}));
+  ok(firstLoad.scripts.filter(s=>s.includes('/details/')).length<firstLoad.chunks,'details load on demand, not all up front');
+  ok(!firstLoad.scripts.some(s=>/\/atlas\/(data|questions)\.js/.test(s)),'full graph files are not loaded by the atlas page');
+  const data=await p.evaluate(async()=>{await ATLAS.loadDetails();return JSON.parse(JSON.stringify(ATLAS));});
   assert.ok(data.nodes.length>=39);assert.ok(data.edges.length>=51);
   assert.equal(new Set(data.nodes.map(n=>n.id)).size,data.nodes.length);
   for(const e of data.edges){ok(data.nodes.some(n=>n.id===e.from)&&data.nodes.some(n=>n.id===e.to),'edge endpoints');ok(e.reason.en&&e.reason.zh&&e.source,'edge evidence');}
@@ -54,10 +60,12 @@ let checks=0;function ok(v,m){assert.ok(v,m);checks++;}
    await p.locator('[data-node=sine]').click();
    assert.equal(await p.locator('#detailTitle').innerText(),data.nodes.find(n=>n.id==='sine').title[lang]);
    if(width<=1000){ok((await p.locator('#detailTitle').boundingBox()).y<200,'stacked map selection reaches explanation');assert.equal(await p.evaluate(()=>document.activeElement.id),'detailTitle');}
-   await p.locator('#group').selectOption('measurement');ok(await p.locator('#listView').isVisible(),'category shows filtered list');assert.equal(await p.locator('.result:visible').count(),6);
+   await p.locator('#group').selectOption('measurement');ok(await p.locator('#listView').isVisible(),'category shows filtered list');assert.equal(await p.locator('.result:visible').count(),data.nodes.filter(n=>n.group==='measurement').length);
    ok(await p.locator('.outside-note').isVisible(),'outside-selection explanation');
    await p.locator('#search').fill('zzzz-no-match');ok(await p.locator('#empty').isVisible(),'no result');
-   await p.locator('#emptyReset').click();assert.equal(await p.locator('.result:visible').count(),data.nodes.length);assert.equal(await p.evaluate(()=>document.activeElement.id),'search');
+   // The list shows the first 40 concepts until asked (phone page length); "show all" reveals the rest.
+   await p.locator('#emptyReset').click();assert.equal(await p.locator('.result:visible').count(),Math.min(40,data.nodes.length));assert.equal(await p.evaluate(()=>document.activeElement.id),'search');
+   if(data.nodes.length>40){await p.locator('#moreResults').click();assert.equal(await p.locator('.result:visible').count(),data.nodes.length);ok(await p.locator('#moreResults').isHidden(),'show-all control retires');assert.equal(await p.evaluate(()=>document.activeElement.dataset.result),data.nodes[40].id);}
    await p.locator('#search').fill(lang==='en'?'卷积':'convolution');ok(await p.locator('[data-result=convolution]').isVisible(),'cross-language search');
    await p.locator('#reset').click();await p.locator('[data-view=graph]').click();
    await p.locator('[data-node=fourier]').focus();await p.keyboard.press('Enter');

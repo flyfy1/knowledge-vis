@@ -13,5 +13,7 @@ visit(0,0,0);
 let v=0;for(const i of [.02,.02,0,-.02])v=pulse('capacitor',v,i).value;assert.ok(Math.abs(v-.1)<1e-12);
 v=pulse('capacitor',v,-.02).value;v=pulse('capacitor',v,-.02).value;assert.ok(Math.abs(v+.1)<1e-12);
 assert.ok(pulse('capacitor',-.1,-.02).deltaEnergy>0,'Negative current at negativeV can increase energy');
-for(const f of ['physics/circuits/power-converters/model.js','physics/circuits/power-converters/flow.js','atlas/app.js'])assert.equal(fs.readFileSync(f,'utf8'),cp.execFileSync('git',['show','1707df178ceda771d2ea5aa1e2792c763e4c458e:'+f.replace(/^physics\/circuits\//,'')],{encoding:'utf8'}),f+' untouched');
+// atlas/app.js left this byte-equality guard on 2026-11-11 (on-demand details + alias search, specs/atlas-search-index.md);
+// the power-converter model and flow stay pinned.
+for(const f of ['physics/circuits/power-converters/model.js','physics/circuits/power-converters/flow.js'])assert.equal(fs.readFileSync(f,'utf8'),cp.execFileSync('git',['show','1707df178ceda771d2ea5aa1e2792c763e4c458e:'+f.replace(/^physics\/circuits\//,'')],{encoding:'utf8'}),f+' untouched');
 console.log(JSON.stringify({pass:true,graph:d.nodes.length+'/'+d.edges.length+'/'+d.trails.length,independentChargeCases:cases,maxResidual,scope:'Existing pulse recurrence and scoped graph metadata; no measured hardware/learning claim'}));

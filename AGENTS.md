@@ -47,7 +47,15 @@ node <页面目录>/tests/*.cjs                       # 各页自带测试
 node scripts/authorship.cjs <文件>                # 查归属
 python3 -m http.server 18871 --bind 127.0.0.1     # 浏览器测试用的本地服务器，用完要停
 PROVENANCE_BASE_URL=http://127.0.0.1:18871 node tests/page-provenance-browser.cjs
+# 知识地图与搜索（改了 atlas/graph、atlas/、首页搜索时跑）
+node scripts/build-atlas-data.cjs --check         # 生成物漂移 + 首屏/搜索索引体积上限
+node atlas/tests/data-quality.cjs
+node tests/concept-search.cjs                     # 匹配规则 + 十个日常词的落点
+node atlas/tests/registry-import.cjs              # 文章 REGISTRY.json → 图谱片段
+HOME_TEST_URL=http://127.0.0.1:18871/ node tests/home-concept-search.cjs   # 浏览器
 ```
+
+- 给文章页加概念、加分区：`node scripts/atlas-import-registry.cjs <页面目录>`、`--add-region`，细则见 [specs/atlas-search-index.md](specs/atlas-search-index.md)。
 
 - Playwright 不在本仓库，运行时加上 `NODE_PATH=~/Documents/integ-life/integ-games/node_modules`。
 - **浏览器测试串行跑**，不要并行。

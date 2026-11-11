@@ -63,6 +63,8 @@
   .cat-badge,.stage-badge{display:inline-block;font-size:11.5px;color:var(--amber);
     border:1px solid #713f12;background:rgba(245,176,76,.08);border-radius:999px;padding:1px 10px}
   .stage-badge{color:var(--cyan);border-color:var(--cyan-d);background:rgba(103,215,249,.08)}
+  .concept-badge{color:var(--cyan);border-color:var(--cyan-d);background:rgba(103,215,249,.08)}
+  .card p.concept-in{margin-top:8px;font-size:13px}
   .card h2{font-size:20px;margin:0 0 8px 0;line-height:1.35}
   .card p{color:var(--dim);font-size:14.5px;margin:0}
   .badge{position:absolute;top:18px;right:18px;font-size:12px;border-radius:999px;padding:2px 10px}
@@ -178,8 +180,9 @@
       entranceLeetcodeTitle: 'LeetCode 专区', entranceLeetcodeDesc: '困难题的解法，一步一步推出来。',
       entranceDemosTitle: '演示', entranceDemosDesc: '不讲课，只看效果的作品。',
       entranceEditionsTitle: 'Claude Code 平行版本', entranceEditionsDesc: '同一个主题的另一种讲法，可以和原版对照着看。',
-      siteSearchLabel: '搜索全部页面', siteSearchPlaceholder: '输入主题，例如：傅里叶、分数、贝叶斯',
-      siteSearchCount: '找到 {n} 个页面', siteSearchEmpty: '没有匹配的页面，换个词试试。', siteSearchClear: '清空',
+      siteSearchLabel: '搜索全部页面和概念', siteSearchPlaceholder: '搜一个不懂的词，例如：傅里叶、利息、光合作用',
+      siteSearchCount: '找到 {n} 个页面', siteSearchEmpty: '没有匹配的页面或概念，换个词试试。', siteSearchClear: '清空',
+      siteSearchBoth: '找到 {c} 个概念、{n} 个页面', conceptBadge: '概念 · 直达讲解处', conceptIn: '在「{page}」里', conceptInAtlas: '在知识地图里',
       otherSubtopic: '其他', groupCount: '{n} 个页面',
       emptyText: '还没有登记任何知识页。', emptyFilter: '这个组合下还没有页面。',
       searchLabel:'查找 LeetCode 课程', searchHelp:'输入准确题号（如 #51）、中英文题名或知识点。多个词用空格分隔，需同时匹配。',
@@ -198,8 +201,9 @@
       entranceLeetcodeTitle: 'LeetCode Corner', entranceLeetcodeDesc: 'Solutions to hard problems, worked out one step at a time.',
       entranceDemosTitle: 'Demos', entranceDemosDesc: 'Pieces that skip the lecture and just show you what happens.',
       entranceEditionsTitle: 'Claude Code Parallel Editions', entranceEditionsDesc: 'Another take on the same topic, to read side by side with the original.',
-      siteSearchLabel: 'Search all pages', siteSearchPlaceholder: 'Enter a topic, e.g. Fourier, fractions, Bayes',
-      siteSearchCount: '{n} pages found', siteSearchCountOne: '1 page found', siteSearchEmpty: 'No matching pages. Try different words.', siteSearchClear: 'Clear',
+      siteSearchLabel: 'Search all pages and concepts', siteSearchPlaceholder: 'Look up anything, e.g. Fourier, interest, photosynthesis',
+      siteSearchCount: '{n} pages found', siteSearchCountOne: '1 page found', siteSearchEmpty: 'No matching pages or concepts. Try different words.', siteSearchClear: 'Clear',
+      siteSearchBoth: '{c} concepts and {n} pages found', siteSearchBothOne: '{c} concept and {n} pages found', conceptBadge: 'Concept · jumps to the explanation', conceptIn: 'In: {page}', conceptInAtlas: 'In the Knowledge Atlas',
       otherSubtopic: 'Other', groupCount: '{n} pages', groupCountOne: '1 page',
       emptyText: 'No knowledge pages have been registered yet.', emptyFilter: 'No pages yet for this combination.',
       searchLabel:'Find a LeetCode lesson', searchHelp:'Enter an exact ID (such as #51), a title in either language, or a topic. Space-separated words must all match.',
@@ -338,6 +342,95 @@
     });
   }
 
+  /* ---------- 概念搜索：知识地图的概念索引，首次聚焦/输入时才加载（specs/index-pagination.md） ---------- */
+  // atlas/concept-search.js = shared matcher; atlas/search-index.js = every atlas concept with its deep link.
+  var CONCEPT_FILES = ['atlas/concept-search.js?v=20261111-new', 'atlas/search-index.js?v=20261111-new'];
+  var MAX_CONCEPTS = 8;
+  var conceptState = 'idle', conceptItems = [], pageRecords = null;
+  var byPath = {};
+  pages.forEach(function(pg){ if (pg.path && !byPath[pg.path]) byPath[pg.path] = pg; });
+  function loadConcepts() {
+    if (conceptState !== 'idle') return;
+    conceptState = 'loading';
+    var pending = CONCEPT_FILES.length, failed = false;
+    function done() {
+      if (--pending) return;
+      var K = window.KNOWLEDGE_CONCEPTS, CS = window.ConceptSearch;
+      // Failure leaves page search exactly as before; nothing is shown about it.
+      if (failed || !CS || !K || !Array.isArray(K.concepts)) { conceptState = 'error'; return; }
+      conceptItems = K.concepts.map(function(r){
+        var href = r[2], path = href.split('#')[0], pg = byPath[path] || null;
+        return { id: r[0], href: href, page: pg, atlas: !pg && href.indexOf(K.atlas) === 0,
+          title: { zh: r[3], en: r[4] }, summary: { zh: r[7] || r[8], en: r[8] || r[7] },
+          anchored: href.indexOf('#') !== -1,
+          record: CS.prepare({ titles: [r[3], r[4]], aliases: r[5].concat(r[6]), texts: [r[7], r[8]] }) };
+      });
+      pageRecords = pages.map(function(pg){
+        var tags = [];
+        (pg.tags || []).forEach(function(tag){ tags = tags.concat(textsOf(tag)); });
+        return CS.prepare({ titles: textsOf(pg.title), aliases: tags, texts: textsOf(pg.desc) });
+      });
+      conceptState = 'ready';
+      if (siteQuery() && activeCat !== 'leetcode') renderCards();
+    }
+    CONCEPT_FILES.forEach(function(src){
+      var el = document.createElement('script');
+      el.src = src; el.async = false;
+      el.onload = done; el.onerror = function(){ failed = true; done(); };
+      document.head.appendChild(el);
+    });
+  }
+  // Pages and concepts in one ranked list: title > alias/tag > description, both
+  // languages. Page matching keeps the old rule (every word in title/desc/tags)
+  // and also accepts what the shared matcher finds (e.g. spaces/hyphens ignored).
+  function siteResults(scoped, query) {
+    var oldHits = matchesQuery(scoped, query);
+    if (conceptState !== 'ready') return oldHits.map(function(pg){ return { page: pg }; });
+    var CS = window.ConceptSearch, seen = {};
+    var pageHits = [];
+    scoped.forEach(function(pg, i){
+      var score = CS.score(pageRecords[pages.indexOf(pg)], query);
+      if (!score && oldHits.indexOf(pg) === -1) return;
+      pageHits.push({ page: pg, score: score || 1, order: i });
+      seen[pg.path] = pageHits[pageHits.length - 1];
+    });
+    var inScope = conceptItems.filter(function(c){
+      if (!c.page) return c.atlas && activeCat === 'all' && activeStage === 'all';
+      return (activeCat === 'all' || c.page.category === activeCat) && (activeStage === 'all' || pageStage(c.page) === activeStage);
+    });
+    // A concept whose page is already a result is dropped when it adds nothing:
+    // no anchor (same destination) or the same name as the page (title, or the
+    // part before " · "). A concept that names a chapter/step inside the page stays.
+    function names(v) {
+      return textsOf(v).reduce(function(acc, x){ return acc.concat([x, x.split(/\s[·:]\s|[:：]/)[0]]); }, []).map(CS.squash);
+    }
+    // The page it duplicates takes over the concept's score, so a word that only an
+    // alias knows ("利息" for compound interest) still puts that page first.
+    var conceptHits = CS.rank(inScope, query).filter(function(c){
+      if (!c.page || !seen[c.page.path]) return true;
+      var pageNames = names(c.page.title);
+      var keep = c.anchored && !names(c.title).some(function(k){ return pageNames.indexOf(k) !== -1; });
+      if (!keep) seen[c.page.path].score = Math.max(seen[c.page.path].score, c.score);
+      return keep;
+    }).slice(0, MAX_CONCEPTS).map(function(c, i){ return { concept: c, score: c.score, order: i }; });
+    // Ties: the page first (it is the broader entry), then the original order.
+    return pageHits.concat(conceptHits).sort(function(a, b){
+      return b.score - a.score || (a.page ? 0 : 1) - (b.page ? 0 : 1) || a.order - b.order;
+    });
+  }
+  function makeConceptCard(c) {
+    var el = node('a', 'card concept-card');
+    el.href = c.href;
+    el.dataset.concept = c.id;
+    var badges = node('div', 'card-badges');
+    badges.appendChild(node('span', 'concept-badge', t('conceptBadge')));
+    el.appendChild(badges);
+    el.appendChild(node('h2', '', pick(c.title)));
+    if (pick(c.summary)) el.appendChild(node('p', '', pick(c.summary)));
+    el.appendChild(node('p', 'concept-in', c.page ? fill(t('conceptIn'), { page: pick(c.page.title) }) : t('conceptInAtlas')));
+    return el;
+  }
+
   function viewHref(cat) {
     var url = new URL(location.href);
     url.searchParams.set('category', cat);
@@ -467,11 +560,14 @@
     var frag = document.createDocumentFragment();
     if (query) {
       // 搜索时替换精选/分组内容；分类与学段仍作为范围（AND）
-      var hits = matchesQuery(scoped, query);
-      siteCount.textContent = fill(t(hits.length === 1 && STR[lang].siteSearchCountOne ? 'siteSearchCountOne' : 'siteSearchCount'), { n: hits.length });
+      var hits = siteResults(scoped, query);
+      var nPages = hits.filter(function(h){ return h.page; }).length, nConcepts = hits.length - nPages;
+      siteCount.textContent = nConcepts
+        ? fill(t(nConcepts === 1 && STR[lang].siteSearchBothOne ? 'siteSearchBothOne' : 'siteSearchBoth'), { c: nConcepts, n: nPages })
+        : fill(t(nPages === 1 && STR[lang].siteSearchCountOne ? 'siteSearchCountOne' : 'siteSearchCount'), { n: nPages });
       if (!hits.length) frag.appendChild(emptyNote('siteSearchEmpty'));
-      hits.forEach(function(pg){
-        frag.appendChild(makeCard(pg, { cat: activeCat === 'all', stage: activeStage === 'all' }));
+      hits.forEach(function(h){
+        frag.appendChild(h.page ? makeCard(h.page, { cat: activeCat === 'all', stage: activeStage === 'all' }) : makeConceptCard(h.concept));
       });
     } else if (activeCat === 'all' && activeStage === 'all') {
       renderHome(frag);
@@ -633,12 +729,14 @@
   // 全站搜索：输入法组字期间不过滤、不改 URL（与 LeetCode 搜索同一规则）
   siteInput.addEventListener('compositionstart',function() { siteCompositionQuery = siteInput.value; siteComposing = true; });
   siteInput.addEventListener('compositionend',function() { siteComposing = false; saveView(false); renderCards(); });
-  siteInput.addEventListener('input',function(event) { if (!siteComposing && !event.isComposing) { saveView(false); renderCards(); } });
+  siteInput.addEventListener('input',function(event) { loadConcepts(); if (!siteComposing && !event.isComposing) { saveView(false); renderCards(); } });
+  siteInput.addEventListener('focus', loadConcepts);
   siteClear.addEventListener('click',function() {
     siteInput.value = ''; siteComposing = false; saveView(false); renderCards(); siteInput.focus();
   });
   window.addEventListener('popstate',function() { composing = false; siteComposing = false; readView(); renderChips(); renderStageChips(); renderCards(); revealPressed(chipsBox); revealPressed(stageBox); });
   readView();
+  if (siteInput.value) loadConcepts();
 
   function applyLang() {
     document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';

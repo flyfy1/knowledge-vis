@@ -1,8 +1,20 @@
-# Mathematics & Physics atlas — development handoff
+# Knowledge atlas — development handoff
+
+The atlas covers every region of the site (mathematics, physics, chemistry, life, the Earth,
+computing, society…), not only mathematics and physics; older entries below keep their
+historical wording.
 
 Start with [WORKFLOW](../WORKFLOW.md), [UI/bilingual policy](../UI-I18N-SPEC.md) and [concept map](../CONCEPT-MAP.md). This is the entry point for audit → choose a gap → implement → independently review → hand off. Evidence stays in existing `specs/reviews/`; no new task system.
 
 ## Current state
+
+- **Runtime split and concept search (Claude Code, 2026-11-11):** the atlas page loads
+  `atlas-index.js` (56 KB, limit 150 KB enforced by the build) and fetches descriptions,
+  relations and questions per region from `details/` on demand; `data.js`/`questions.js` stay
+  complete for the galaxy and tests. Search (atlas and homepage) uses titles, aliases and
+  descriptions in both languages via `concept-search.js`; the homepage loads
+  `search-index.js` lazily. Essay pages add one concept per chapter with
+  `scripts/atlas-import-registry.cjs`. [Contract](../specs/atlas-search-index.md).
 
 - **Codex list-orientation iteration (2026-10-28):** the galaxy's complete list now shows a
   localized direct-connection count on every concept card and in its accessible name. The
@@ -166,6 +178,9 @@ python3 -m http.server 18775 --bind 127.0.0.1
 # http://127.0.0.1:18775/atlas/?trail=motion&node=unit-circle
 node --check atlas/app.js
 node --check atlas/data.js
+node scripts/build-atlas-data.cjs --check
+node tests/concept-search.cjs
+node atlas/tests/registry-import.cjs
 node --check atlas/motion-model.js
 node --check atlas/motion-bridge.js
 node atlas/tests/work-core.cjs

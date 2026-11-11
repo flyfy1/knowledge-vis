@@ -1,16 +1,22 @@
 'use strict';
-// Build atlas/data.js from editorial sources. See atlas/graph/README (P0).
-//   node scripts/build-atlas-data.cjs [--check] [--bump-versions]
+// Build the atlas from editorial sources. See atlas/graph/README.md and
+// specs/atlas-search-index.md.
+//   node scripts/build-atlas-data.cjs [--check] [--concept-map] [--bump-versions]
 //   node scripts/build-atlas-data.cjs --graph <dir> [--check]  (default graph dir: atlas/graph;
 //     output data.js is written beside the graph dir, so --graph investment/atlas/graph
 //     writes investment/atlas/data.js; --concept-map/--bump-versions are main-atlas only)
-// --check: build in memory and compare with the committed atlas/data.js.
-// Main atlas also emits atlas/questions.js (questions array, loaded after
-// data.js and before app.js; it assigns into window.ATLAS). The 450,000-byte combined gate
-// applies to the combined data.js + questions.js payload. --graph builds
-// (e.g. investment) keep questions inline in data.js and emit no questions.js.
-// --bump-versions: rewrite ?v= references in atlas/index.html and atlas/galaxy.html
-//   to <yyyymmdd>-<last commit touching that file>. Run AFTER committing.
+//   node scripts/build-atlas-data.cjs --extra-lessons <dir> --out <dir>   (preview, writes only <dir>)
+// Main atlas outputs:
+//   atlas/data.js + atlas/questions.js  complete graph (galaxy, tools, tests); not loaded by the atlas page
+//   atlas/atlas-index.js                up-front index of the atlas page (limit UPFRONT_LIMIT)
+//   atlas/details/<region>.<kind>.js    on-demand details: nodes | edges | questions
+//   atlas/search-index.js               concept search index for the homepage (limit SEARCH_LIMIT)
+// --check: build in memory, compare every output with the committed files, and
+//   fail on drift or on a size limit. --graph builds (e.g. investment) keep the
+//   single complete data.js with questions inline.
+// --bump-versions: rewrite ?v= references in atlas/index.html, atlas/galaxy.html and
+//   the homepage's lazy references to <yyyymmdd>-<last commit touching that file>.
+//   Run AFTER committing.
 const fs = require('node:fs');
 const path = require('node:path');
 const vm = require('node:vm');
@@ -18,14 +24,22 @@ const { execSync } = require('node:child_process');
 
 const root = path.resolve(__dirname, '..');
 const argv = process.argv.slice(2);
-let graphArg = null;
+let graphArg = null, extraLessonsArg = null, outArg = null;
 const args = new Set();
 for (let i = 0; i < argv.length; i++) {
-  if (argv[i] === '--graph') {
-    graphArg = argv[i + 1];
-    if (!graphArg) { console.error('ERROR: --graph requires a directory argument.'); process.exit(2); }
+  if (['--graph', '--extra-lessons', '--out'].includes(argv[i])) {
+    const v = argv[i + 1];
+    if (!v) { console.error(`ERROR: ${argv[i]} requires a directory argument.`); process.exit(2); }
+    if (argv[i] === '--graph') graphArg = v; else if (argv[i] === '--extra-lessons') extraLessonsArg = v; else outArg = v;
     i++;
   } else args.add(argv[i]);
+}
+// --extra-lessons <dir>: also read fragments from <dir> (preview an import).
+// --out <dir>: write every generated file into <dir> instead of beside the
+//   graph (no merge-report, no CONCEPT-MAP/--bump-versions). Used by
+//   atlas/tests/registry-import.cjs and for previews.
+if (outArg && (args.has('--check') || args.has('--bump-versions') || args.has('--concept-map'))) {
+  console.error('ERROR: --out cannot be combined with --check, --bump-versions or --concept-map.'); process.exit(2);
 }
 const graphDir = graphArg ? path.resolve(graphArg) : path.join(root, 'atlas', 'graph');
 const lessonsDir = path.join(graphDir, 'lessons');
@@ -73,14 +87,31 @@ const pageBySlug = new Map();
 for (const p of (config.KNOWLEDGE_PAGES || [])) {
   if (p && p.slug) pageBySlug.set(p.slug, p);
 }
-// Category -> partition defaults. Physics splits by topic, so physics defaults
-// to waves and the circuits cases live in partition-overrides.json.
-const CATEGORY_PARTITION = {
-  math: 'math', signal: 'systems', engineering: 'systems',
-  probability: 'measurement', computing: 'computing', chemistry: 'matter',
-  biology: 'life', earth: 'earth', physics: 'waves',
-  psychology: 'life', language: 'society',
-};
+// Category -> region: defaults plus "categories" claimed in groups.json
+// (scripts/atlas-regions.cjs, shared with scripts/atlas-import-registry.cjs).
+const CATEGORY_PARTITION = require('./atlas-regions.cjs').categoryRegions(groups);
+// Optional search-term overlay: { "<node id>": { "zh": [..], "en": [..] } }.
+// Lets an editor add what people type for an existing concept without
+// touching its fragment; merged with the node's own aliases.
+const aliasOverlayPath = path.join(graphDir, 'aliases.json');
+const aliasOverlay = fs.existsSync(aliasOverlayPath) ? JSON.parse(fs.readFileSync(aliasOverlayPath, 'utf8')) : {};
+// Canonical alias shape: { zh: string[], en: string[] } (either list may be
+// empty, not both). An array of {zh,en} pairs is accepted and converted.
+function normAliases(...inputs) {
+  const out = { zh: [], en: [] };
+  for (const a of inputs) {
+    if (!a) continue;
+    const pairs = Array.isArray(a) ? a : [a];
+    for (const p of pairs) for (const l of ['zh', 'en']) {
+      const v = p && p[l];
+      for (const s of (Array.isArray(v) ? v : [v])) {
+        if (typeof s !== 'string' || !s.trim()) continue;
+        if (!out[l].includes(s.trim())) out[l].push(s.trim());
+      }
+    }
+  }
+  return out.zh.length || out.en.length ? out : undefined;
+}
 const aliasMap = {};
 for (const [cid, d] of Object.entries(decisions)) {
   if (d && d.action === 'attach' && d.to) aliasMap[cid] = d.to;
@@ -123,8 +154,9 @@ for (const n of core.nodes) {
 }
 
 // ---- fragments ------------------------------------------------------------
-const fragFiles = fs.existsSync(lessonsDir)
-  ? fs.readdirSync(lessonsDir).filter(f => f.endsWith('.json')).sort() : [];
+const fragFiles = (fs.existsSync(lessonsDir)
+  ? fs.readdirSync(lessonsDir).filter(f => f.endsWith('.json')).sort().map(f => path.join(lessonsDir, f)) : [])
+  .concat(extraLessonsArg ? fs.readdirSync(extraLessonsArg).filter(f => f.endsWith('.json')).sort().map(f => path.resolve(extraLessonsArg, f)) : []);
 const newEdges = []; // {edge, owner}
 const newQuestions = [];
 
@@ -138,7 +170,7 @@ function mapGroup(frag, page) {
 }
 
 for (const file of fragFiles) {
-  const frag = JSON.parse(fs.readFileSync(path.join(lessonsDir, file), 'utf8'));
+  const frag = JSON.parse(fs.readFileSync(file, 'utf8'));
   const page = pageBySlug.get(frag.slug);
   if (!page || page.status !== 'live') {
     report.unregisteredLessons.push(frag.slug);
@@ -167,6 +199,12 @@ for (const file of fragFiles) {
     newEdges.push({ edge: { ...e, from, to, id: `${from}:${to}`, owner: frag.slug }, owner: frag.slug });
   }
     for (const q of (frag.questions || [])) newQuestions.push({ ...q, lesson: frag.slug, stage: q.stage || stage, group: q.group || mapGroup(frag, page) });
+    // Essay fragments (scripts/atlas-import-registry.cjs) carry seeAlso: the
+    // pages each concept relates to. They are not edges (no sourced reason);
+    // the report lists the concepts those pages teach, for an editor.
+    for (const [cid, slugs] of Object.entries(frag.seeAlso || {})) for (const slug of slugs) {
+      (report.edgeCandidates = report.edgeCandidates || []).push({ concept: cid, page: slug });
+    }
     continue;
   }
 
@@ -199,6 +237,7 @@ for (const file of fragFiles) {
         source: frag.source,
         lessons: [{ slug: frag.slug, step: (parseStepAnchor(frag.source) || {}).step ?? null, category, stage, primary: true }],
       };
+      if (frag.aliases) node.aliases = frag.aliases;
       if (frag.note) node.note = frag.note;
       nodesById.set(conceptId, node);
     }
@@ -282,8 +321,15 @@ for (const q of newQuestions) {
   questions.push(q);
 }
 
+// ---- aliases: node's own + overlay, canonical shape ------------------------
+for (const n of nodesById.values()) {
+  const a = normAliases(n.aliases, aliasOverlay[n.id]);
+  if (a) n.aliases = a; else delete n.aliases;
+}
+report.unknownAliasIds = Object.keys(aliasOverlay).filter(id => !nodesById.has(id));
+
 // ---- sort -----------------------------------------------------------------
-const nodes = [...nodesById.values()].sort((a, b) =>
+const nodes =[...nodesById.values()].sort((a, b) =>
   (groupOrder.get(a.group) ?? 99) - (groupOrder.get(b.group) ?? 99)
   || stageOrder(a.stage) - stageOrder(b.stage)
   || (a.order ?? 50) - (b.order ?? 50)
@@ -352,8 +398,164 @@ if (!graphArg) {
   report.combinedBytes = report.sizeBytes + report.questionsBytes;
 }
 
-const dataPath = path.join(path.dirname(graphDir), 'data.js');
-const questionsPath = path.join(path.dirname(graphDir), 'questions.js');
+// ---- split runtime payload (main atlas) -----------------------------------
+// data.js + questions.js stay the complete graph (galaxy, tools, tests). The
+// atlas page itself loads only atlas-index.js up front (titles, aliases and
+// structure) and fetches details/<region>.js when a concept, route, question
+// or search needs that region's text. See specs/atlas-search-index.md.
+const UPFRONT_LIMIT = 150000;  // atlas-index.js, enforced (exit 1) on build and --check
+const SEARCH_LIMIT = 200000;   // search-index.js, enforced the same way
+const crypto = require('node:crypto');
+const toPosix = p => p.split(path.sep).join('/');
+const atlasRel = toPosix(path.relative(root, pageDir)); // 'atlas'
+const pageByPath = new Map([...pageBySlug.values()].filter(p => p.path).map(p => [p.path, p]));
+function rootHref(href) {
+  // href relative to the atlas page -> site-root-relative href.
+  if (typeof href !== 'string' || isExternal(href)) return null;
+  const [p, hash] = href.split('#');
+  let abs = path.posix.normalize(path.posix.join(atlasRel, p));
+  if (p.endsWith('/') && !abs.endsWith('/')) abs += '/';
+  // Drop an anchor the page does not have (legacy #stepN on power-converters).
+  return abs + (hash && anchorExists(href) !== false ? '#' + hash : '');
+}
+function bestHref(n) {
+  // The deep link a search result opens: the editorial source when it is a
+  // page on this site, else the primary lesson (+ its step / chapter anchor),
+  // else the concept in the atlas (external reading only).
+  const fromSource = rootHref(n.source);
+  if (fromSource && pageByPath.has(fromSource.split('#')[0])) return fromSource;
+  const ls = n.lessons || [];
+  const l = ls.find(x => x.primary) || ls[0];
+  const pg = l && pageBySlug.get(l.slug);
+  if (pg && pg.path) return pg.path + (l.anchor ? '#' + l.anchor : (l.step !== null && l.step !== undefined ? '#step' + l.step : ''));
+  // No page of its own: open the atlas's inline lab for it when one exists
+  // (the motion/response bridges in atlas/app.js), else the concept card.
+  const lab = ['motion', 'kinematics', 'travel', 'work', 'response']
+    .map(id => core.trails.find(t => t.id === id)).find(t => t && t.nodes.includes(n.id));
+  if (lab) return `${atlasRel}/?trail=${lab.id}&node=${encodeURIComponent(n.id)}`;
+  return `${atlasRel}/?node=${encodeURIComponent(n.id)}`;
+}
+function summary(text, lang) {
+  // One line for a search result: the first sentence, capped.
+  if (!text) return '';
+  const cap = lang === 'zh' ? 36 : 96;
+  const first = (lang === 'zh' ? text.split(/(?<=[。！？])/)[0] : text.split(/(?<=[.!?])\s/)[0]).trim();
+  return first.length <= cap ? first : first.slice(0, cap - 1).trimEnd() + '…';
+}
+let indexJS = null, chunkJS = null, searchJS = null;
+if (!graphArg) {
+  const regionOf = new Map(nodes.map(n => [n.id, n.group]));
+  const chunkData = new Map(groups.map(g => [g.id, { nodes: [], edges: [], questions: [] }]));
+  // Compact rows, expanded to the usual objects when atlas-index.js runs:
+  // node [id, stage index|-1, title zh, title en, lesson slugs ('*' = primary)]
+  // grouped by region; edges [from index, to index]; questions
+  // [id, stage index, question zh, question en, chain indices, region index].
+  const nodeIndex = new Map(nodes.map((n, i) => [n.id, i]));
+  const idxNodes = new Map(groups.map(g => [g.id, []]));
+  for (const n of nodes) {
+    const { id, group, stage, title, order, ...rest } = n;
+    if (!idxNodes.has(group)) { console.error(`ERROR: node ${id} has unknown region ${group}; add it to groups.json.`); process.exit(1); }
+    idxNodes.get(group).push([id, STAGES.indexOf(stage), title.zh, title.en,
+      (n.lessons || []).map(l => (l.primary ? '*' : '') + l.slug)]);
+    chunkData.get(group).nodes.push([id, rest]);
+  }
+  for (const e of edges) {
+    const { id, from, to, ...rest } = e;
+    const a = regionOf.get(from), b = regionOf.get(to);
+    chunkData.get(a).edges.push([id, rest]);
+    if (b !== a) chunkData.get(b).edges.push([id, rest]); // a node's chunk holds all its relations
+  }
+  const idxQuestions = [];
+  for (const q of questions) {
+    const { id, question, stage, chain, group, ...rest } = q;
+    const region = groupIds.has(group) ? group : regionOf.get(q.target.node);
+    idxQuestions.push([id, STAGES.indexOf(stage), question.zh, question.en, chain.map(c => nodeIndex.get(c)), groupOrder.get(region)]);
+    chunkData.get(region).questions.push([id, rest]);
+  }
+  // Three parts per region, each loaded only when needed:
+  //   <region>.nodes.js      descriptions, aliases, formulas, sources (lists, search)
+  //   <region>.edges.js      every relation touching the region (a concept's detail)
+  //   <region>.questions.js  prompts, reveals, targets (an opened question)
+  // Empty parts are not emitted; the app treats a missing part as loaded.
+  chunkJS = new Map();
+  for (const [gid, c] of chunkData) {
+    for (const kind of ['nodes', 'edges', 'questions']) {
+      if (!c[kind].length) continue;
+      const id = `${gid}.${kind}`;
+      chunkJS.set(id, [
+        `/* GENERATED by scripts/build-atlas-data.cjs from ${path.relative(root, graphDir)}/ — do not hand-edit. */`,
+        `/* ${kind} details for region "${gid}", loaded on demand by atlas/app.js (ATLAS.loadDetails). */`,
+        `window.ATLAS.addDetails(${emit(id)},{${emit(kind)}:{\n${c[kind].map(([k, v]) => `${emit(k)}:${emit(v)}`).join(',\n')}\n}});`,
+      ].join('\n') + '\n');
+    }
+  }
+  const chunks = {};
+  for (const [gid, js] of chunkJS) chunks[gid] = `details/${gid}.js?v=${crypto.createHash('sha1').update(js).digest('hex').slice(0, 10)}`;
+  const ix = [];
+  ix.push(`/* GENERATED by scripts/build-atlas-data.cjs from ${path.relative(root, graphDir)}/ — do not hand-edit. */`);
+  ix.push('/* Up-front atlas index: structure, titles and aliases only. Descriptions, relation');
+  ix.push('   reasons and question prompts live in details/<region>.js (see app.js loadDetails). */');
+  ix.push('(() => {');
+  ix.push("  'use strict';");
+  ix.push(`  const STAGES = ${emit(STAGES)};`);
+  ix.push(`  const groups = [${groups.map(g => emit({ id: g.id, label: g.label, mark: g.mark })).join(',\n    ')}];`);
+  ix.push('  const N = {');
+  ix.push([...idxNodes].map(([gid, rows]) => `    ${emit(gid)}: [\n${rows.map(r => '      ' + emit(r)).join(',\n')}\n    ]`).join(',\n'));
+  ix.push('  };');
+  ix.push(`  const E = ${emit(edges.map(e => [nodeIndex.get(e.from), nodeIndex.get(e.to)]))};`);
+  ix.push('  const Q = [');
+  ix.push(idxQuestions.map(q => '    ' + emit(q)).join(',\n'));
+  ix.push('  ];');
+  ix.push('  const nodes = [];');
+  ix.push('  for (const g of groups) for (const [id, s, zh, en, ls] of (N[g.id] || [])) {');
+  ix.push('    const n = { id, group: g.id, title: { zh, en } };');
+  ix.push('    if (s >= 0) n.stage = STAGES[s];');
+  ix.push("    if (ls.length) n.lessons = ls.map(x => ({ slug: x.replace(/^\\*/, ''), primary: x[0] === '*' }));");
+  ix.push('    nodes.push(n);');
+  ix.push('  }');
+  ix.push('  window.ATLAS = {');
+  ix.push('    partial: true,');
+  ix.push(`    chunks: ${emit(chunks)},`);
+  ix.push('    groups,');
+  if (core.defaultNode) ix.push(`    defaultNode: ${emit(core.defaultNode)},`);
+  ix.push(`    types: ${emit(types)},`);
+  ix.push('    nodes,');
+  ix.push("    edges: E.map(([a, b]) => ({ id: nodes[a].id + ':' + nodes[b].id, from: nodes[a].id, to: nodes[b].id })),");
+  ix.push(`    trails: [${core.trails.map(t => emit(t)).join(',\n      ')}],`);
+  ix.push('    questions: Q.map(([id, s, zh, en, chain, g]) => ({ id, question: { zh, en }, stage: STAGES[s], chain: chain.map(i => nodes[i].id), group: groups[g].id })),');
+  ix.push('  };');
+  ix.push('})();');
+  indexJS = ix.join('\n') + '\n';
+  report.indexBytes = Buffer.byteLength(indexJS, 'utf8');
+  report.chunkBytes = Object.fromEntries([...chunkJS].map(([k, v]) => [k, Buffer.byteLength(v, 'utf8')]));
+
+  // ---- search index: every concept with its best deep link -----------------
+  // Row: [id, region index, href (site-root relative), title zh, title en,
+  //       aliases zh, aliases en, one-line summary zh, summary en]
+  const regionIndex = new Map(groups.map((g, i) => [g.id, i]));
+  const sx = [];
+  sx.push(`/* GENERATED by scripts/build-atlas-data.cjs from ${path.relative(root, graphDir)}/ — do not hand-edit. */`);
+  sx.push('/* Concept search index for the homepage and the atlas. Format: specs/atlas-search-index.md */');
+  sx.push('window.KNOWLEDGE_CONCEPTS = {');
+  sx.push('  "v": 1,');
+  sx.push(`  "atlas": ${emit(atlasRel + '/')},`);
+  sx.push(`  "regions": [${groups.map(g => emit([g.id, g.label.zh, g.label.en])).join(', ')}],`);
+  sx.push('  "fields": ["id","region","href","titleZh","titleEn","aliasesZh","aliasesEn","summaryZh","summaryEn"],');
+  sx.push('  "concepts": [');
+  const rows = nodes.map(n => emit([n.id, regionIndex.get(n.group), bestHref(n), n.title.zh, n.title.en,
+    (n.aliases && n.aliases.zh) || [], (n.aliases && n.aliases.en) || [],
+    summary(n.description && n.description.zh, 'zh'), summary(n.description && n.description.en, 'en')]));
+  sx.push(rows.map(r => '    ' + r).join(',\n'));
+  sx.push('  ]');
+  sx.push('};');
+  searchJS = sx.join('\n') + '\n';
+  report.searchBytes = Buffer.byteLength(searchJS, 'utf8');
+}
+
+const outDir = outArg ? path.resolve(outArg) : path.dirname(graphDir);
+if (outArg) fs.mkdirSync(outDir, { recursive: true });
+const dataPath = path.join(outDir, 'data.js');
+const questionsPath = path.join(outDir, 'questions.js');
 function checkFile(filePath, expected, label) {
   let current;
   try { current = fs.readFileSync(filePath, 'utf8'); } catch (_) { current = null; }
@@ -372,14 +574,41 @@ function checkFile(filePath, expected, label) {
 const sizeLine = questionsJS !== null
   ? `data.js ${report.sizeBytes} bytes + questions.js ${report.questionsBytes} bytes = combined ${report.combinedBytes} bytes`
   : `${report.sizeBytes} bytes`;
+const indexPath = path.join(outDir, 'atlas-index.js');
+const searchPath = path.join(outDir, 'search-index.js');
+const detailsDir = path.join(outDir, 'details');
+const staleChunks = () => (fs.existsSync(detailsDir) ? fs.readdirSync(detailsDir) : [])
+  .filter(f => f.endsWith('.js') && !(chunkJS && chunkJS.has(f.slice(0, -3))));
 if (args.has('--check')) {
   checkFile(dataPath, dataJS, path.relative(root, dataPath));
   if (questionsJS !== null) checkFile(questionsPath, questionsJS, path.relative(root, questionsPath));
+  if (indexJS !== null) {
+    checkFile(indexPath, indexJS, path.relative(root, indexPath));
+    checkFile(searchPath, searchJS, path.relative(root, searchPath));
+    for (const [gid, js] of chunkJS) checkFile(path.join(detailsDir, gid + '.js'), js, path.relative(root, path.join(detailsDir, gid + '.js')));
+    const stale = staleChunks();
+    if (stale.length) { console.log(`DRIFT: stale detail chunks without a region: ${stale.join(', ')}`); process.exit(1); }
+  }
   console.log(`CHECK OK: ${report.counts.nodes} nodes, ${report.counts.edges} edges, ${report.counts.questions} questions, ${sizeLine}.`);
 } else {
   fs.writeFileSync(dataPath, dataJS);
   if (questionsJS !== null) fs.writeFileSync(questionsPath, questionsJS);
+  if (indexJS !== null) {
+    fs.writeFileSync(indexPath, indexJS);
+    fs.writeFileSync(searchPath, searchJS);
+    fs.mkdirSync(detailsDir, { recursive: true });
+    for (const [gid, js] of chunkJS) fs.writeFileSync(path.join(detailsDir, gid + '.js'), js);
+    for (const f of staleChunks()) fs.unlinkSync(path.join(detailsDir, f)); // generated dir only
+  }
   console.log(`WROTE ${path.relative(root, dataPath)}: ${report.counts.nodes} nodes, ${report.counts.edges} edges, ${report.counts.questions} questions, ${sizeLine}.`);
+}
+let gateFailed = false;
+if (indexJS !== null) {
+  const chunkTotal = Object.values(report.chunkBytes).reduce((a, b) => a + b, 0);
+  const largest = Object.entries(report.chunkBytes).sort((a, b) => b[1] - a[1])[0];
+  console.log(`RUNTIME: atlas-index.js ${report.indexBytes} bytes up front (limit ${UPFRONT_LIMIT}); details/ ${chunkTotal} bytes in ${chunkJS.size} chunks (largest ${largest[0]} ${largest[1]}); search-index.js ${report.searchBytes} bytes (limit ${SEARCH_LIMIT}).`);
+  if (report.indexBytes > UPFRONT_LIMIT) { console.log(`ERROR: atlas-index.js exceeds the ${UPFRONT_LIMIT}-byte up-front limit (${report.indexBytes} bytes).`); gateFailed = true; }
+  if (report.searchBytes > SEARCH_LIMIT) { console.log(`ERROR: search-index.js exceeds the ${SEARCH_LIMIT}-byte limit (${report.searchBytes} bytes).`); gateFailed = true; }
 }
 if (args.has('--bump-versions') && !graphArg) {
   // SGT date (repo convention) + per-file short sha of the last commit that
@@ -397,16 +626,29 @@ if (args.has('--bump-versions') && !graphArg) {
   const vApp = `${date}-${lastSha('atlas/app.js')}`;
   const vGalaxy = `${date}-${lastSha('atlas/galaxy/app.mjs')}`;
   const vQuestions = `${date}-${lastSha('atlas/questions.js')}`;
+  const vIndex = `${date}-${lastSha('atlas/atlas-index.js')}`;
+  const vSearch = `${date}-${lastSha('atlas/search-index.js')}`;
+  const vMatcher = `${date}-${lastSha('atlas/concept-search.js')}`;
   for (const htmlFile of [path.join(root, 'atlas', 'index.html'), path.join(root, 'atlas', 'galaxy.html')]) {
     if (!fs.existsSync(htmlFile)) continue;
     let html = fs.readFileSync(htmlFile, 'utf8');
     html = html.replace(/src="data\.js\?v=[^"]*"/g, `src="data.js?v=${vData}"`);
     html = html.replace(/src="questions\.js\?v=[^"]*"/g, `src="questions.js?v=${vQuestions}"`);
+    html = html.replace(/src="atlas-index\.js\?v=[^"]*"/g, `src="atlas-index.js?v=${vIndex}"`);
+    html = html.replace(/src="concept-search\.js\?v=[^"]*"/g, `src="concept-search.js?v=${vMatcher}"`);
     html = html.replace(/src="app\.js\?v=[^"]*"/g, `src="app.js?v=${vApp}"`);
     html = html.replace(/src="galaxy\/app\.mjs\?v=[^"]*"/g, `src="galaxy/app.mjs?v=${vGalaxy}"`);
     fs.writeFileSync(htmlFile, html);
-    console.log(`BUMPED ${path.relative(root, htmlFile)} data=${vData} app=${vApp} galaxy=${vGalaxy} questions=${vQuestions}`);
+    console.log(`BUMPED ${path.relative(root, htmlFile)} data=${vData} index=${vIndex} app=${vApp} galaxy=${vGalaxy} questions=${vQuestions}`);
   }
+  // The homepage loads the search index and matcher lazily; its keys live in a
+  // JS string ('atlas/search-index.js?v=...'). Detail chunks carry content hashes.
+  const homeFile = path.join(root, 'index.html');
+  let home = fs.readFileSync(homeFile, 'utf8');
+  home = home.replace(/atlas\/search-index\.js\?v=[^'"]*/g, `atlas/search-index.js?v=${vSearch}`)
+    .replace(/atlas\/concept-search\.js\?v=[^'"]*/g, `atlas/concept-search.js?v=${vMatcher}`);
+  fs.writeFileSync(homeFile, home);
+  console.log(`BUMPED index.html search=${vSearch} matcher=${vMatcher}`);
 }
 if (args.has('--bump-versions') && graphArg) console.log('NOTE: --bump-versions skipped for --graph (main atlas only).');
 // ---- CONCEPT-MAP appendix (P1) -------------------------------------------
@@ -451,10 +693,14 @@ if (args.has('--concept-map') && !graphArg) {
     console.log('WROTE CONCEPT-MAP appendix.');
   }
 }
-if (!args.has('--check')) fs.writeFileSync(path.join(graphDir, 'merge-report.json'), JSON.stringify(report, null, 2) + '\n');
+if (report.edgeCandidates) for (const c of report.edgeCandidates) c.taughtBy = nodes.filter(n => (n.lessons || []).some(l => l.slug === c.page)).map(n => n.id);
+if (!args.has('--check') && !outArg) fs.writeFileSync(path.join(graphDir, 'merge-report.json'), JSON.stringify(report, null, 2) + '\n');
+if (outArg) fs.writeFileSync(path.join(outDir, 'merge-report.json'), JSON.stringify(report, null, 2) + '\n');
 console.log(`REPORT: conflicts=${report.conflicts.length} suspendedEdges=${report.suspendedEdges.length} suspendedQuestions=${report.suspendedQuestions.length} coverageGaps=${report.coverageGaps.length} decisions=${report.decisionsApplied.length}`);
 if (report.conflicts.length) console.log('CONFLICTS:', JSON.stringify(report.conflicts.slice(0, 20)));
 if (report.suspendedEdges.length) console.log('SUSPENDED EDGES:', JSON.stringify(report.suspendedEdges.slice(0, 20)));
 if (report.suspendedQuestions.length) console.log('SUSPENDED QUESTIONS:', JSON.stringify(report.suspendedQuestions.slice(0, 20)));
-const gateBytes = questionsJS !== null ? report.combinedBytes : report.sizeBytes;
-if (gateBytes > 450000) console.log(`WARNING: ${questionsJS !== null ? 'combined data.js + questions.js' : 'data.js'} exceeds the 450,000-byte combined gate (${gateBytes} bytes).`);
+if (report.unknownAliasIds && report.unknownAliasIds.length) console.log('UNKNOWN ALIAS IDS (aliases.json):', JSON.stringify(report.unknownAliasIds));
+// The old 450,000-byte data.js + questions.js gate is retired: the atlas page no
+// longer loads those files. The up-front gate above replaces it.
+if (gateFailed) process.exit(1);

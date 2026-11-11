@@ -68,13 +68,36 @@ view and switch in place like the entrance tile.
 
 ### Search
 
-The site search (`#siteSearch`) matches title, description and tags in both
-languages. Input is NFKC-normalised and lowercased; space-separated words must all
-match. While an IME composition is in progress the results and URL do not change.
-Results replace the featured or grouped content and show a count. The query is
+The site search (`#siteSearch`) finds pages and atlas concepts in one list.
+
+- Pages match title, description and tags in both languages. Input is
+  NFKC-normalised and lowercased; space-separated words must all match.
+- Concepts come from `atlas/search-index.js` and are matched by the shared
+  `atlas/concept-search.js` (titles, aliases and one-line summaries, both
+  languages, spaces/hyphens ignored; ranking in specs/atlas-search-index.md).
+  The two files are loaded on the first focus of, or typing into, the search box,
+  or at load when the URL has `?s=`; never on a plain first paint. If they fail to
+  load, page results still show and concepts are silently left out.
+- Order: score (the same matcher scores pages), a page before a concept on ties,
+  then registry order. At most 8 concept results.
+- A concept card has a "概念 / Concept" badge, the concept name, its one-line
+  description, and "在「页面」里 / In: page" naming the page it lives in. It links
+  straight to the anchor (`…/#step5`, `…/#ch3`). A concept is dropped when its own
+  page is also a result and the concept adds nothing: no anchor, or the same name as
+  the page (also compared with the part of the page title before " · "). The page
+  then takes the concept's score when higher, so a word only the concept's aliases
+  know ("利息" → compound interest) still puts that page first.
+- The count says how many pages and concepts were found.
+
+While an IME composition is in progress the results and URL do not change.
+Results replace the featured or grouped content. The query is
 kept in `?s=` with `history.replaceState`. The site search is hidden in the
 LeetCode view, which has its own search with `?q=`. A bare `q` outside the LeetCode
 view is ignored.
+
+Tests: `node scripts/test_index_pagination.cjs` (source contract) and
+`tests/home-concept-search.cjs` (browser: lazy load, ranking, deep link, dedupe,
+390 px, fallback).
 
 ## URL contract
 

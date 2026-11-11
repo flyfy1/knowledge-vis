@@ -1,10 +1,18 @@
 # atlas/graph/ — 知识图谱数据源（P0，2026-10-30）
 
-`atlas/data.js` 是生成物，不要手改。改这里，再跑生成脚本。
+`atlas/data.js`、`questions.js`、`atlas-index.js`、`search-index.js`、`details/*.js`
+都是生成物，不要手改。改这里，再跑生成脚本。运行时拆分、上限与搜索见
+[specs/atlas-search-index.md](../../specs/atlas-search-index.md)。
 
 ## 文件
 
-- `groups.json`：10 个编辑分区（顺序即地图列序）。
+- `groups.json`：10 个编辑分区（顺序即地图列序）。可选 `categories: [..]`
+  把页面分类归到该分区（默认表在 `scripts/atlas-regions.cjs`）；新分区用
+  `node scripts/atlas-import-registry.cjs --add-region <id> --zh … --en … --categories …`。
+- `aliases.json`：给已有概念补“人们会搜的词”，`{ "<id>": {"zh": [..], "en": [..]} }`，
+  与节点自身的 `aliases` 合并。
+- `lessons/<slug>.json` 中 `kind: "essay"` 的片段由
+  `scripts/atlas-import-registry.cjs` 从文章页的 REGISTRY.json 生成，一章一个概念。
 - `types.json`：4 种边类型（不变）。
 - `core.json`：2026-10-30 当天 `data.js` 的 nodes/edges/trails 原文转储
   （39 节点 / 51 边 / 14 路线）。核心节点的 `lessons[]` 与 `stage`
@@ -18,16 +26,17 @@
 - `partition-overrides.json`：v1 里 `group: OTHER/optics/uncertainty`
   的 26 个片段的人工分区（按主题，不是按注册表分类硬推）。
 - `merge-report.json`：每次生成后写出（不部署，仅工作用）。
-- `atlas/questions.js`：主图谱问题层生成物（data.js 只留节点/边/路线；
-  问题层随 data.js 之后、app.js 之前加载，直接写入 `window.ATLAS`；
-  450,000 字节合并门按 data.js + questions.js 合计）。投资图谱仍把问题写进
-  data.js，不拆。
+- 生成物：`atlas/data.js` + `atlas/questions.js` 是完整图谱（星系页、工具、测试用）；
+  地图页只先加载 `atlas/atlas-index.js`（≤150,000 字节，生成时强制），
+  说明/关系/问题按分区放在 `atlas/details/`，按需加载；首页搜索用
+  `atlas/search-index.js`（≤200,000 字节，强制）。投资图谱仍是单个 data.js，不拆。
 
 ## 生成
 
 ```sh
-node scripts/build-atlas-data.cjs            # 写出 atlas/data.js + merge-report.json
-node scripts/build-atlas-data.cjs --check    # 只比对不写，漂移即失败
+node scripts/build-atlas-data.cjs            # 写出全部生成物 + merge-report.json
+node scripts/build-atlas-data.cjs --check    # 只比对不写，漂移或超限即失败
+node scripts/build-atlas-data.cjs --extra-lessons <dir> --out <dir>   # 预览，不写仓库
 ```
 
 生成规则（设计报告 §5.6）：节点 id 冲突不覆盖（无裁决则跳过并报告）；
@@ -35,7 +44,13 @@ node scripts/build-atlas-data.cjs --check    # 只比对不写，漂移即失败
 的边暂挂；问题链相邻站必须有边、目标节点须在链内、目标锚点须存在，
 否则该问题暂挂。暂挂项只进报告，不中断生成、不进入 `data.js`。
 
-## 当前状态（2026-10-30 Round 2）
+## 当前状态（2026-11-11）
+
+156 节点 / 259 边 / 104 问题；atlas-index.js 55,980 字节、search-index.js
+51,121 字节、details/ 30 个文件共 445,761 字节；data.js 313,056 + questions.js
+146,093（不再设合并门）。下面是 Round 2 的历史记录。
+
+## 历史状态（2026-10-30 Round 2）
 
 - 151 节点 / 244 边 / 14 路线 / 103 问题；`data.js` 285,318 字节
  + `questions.js` 141,125 字节 = 合计 426,443 字节（门按合计口径；

@@ -45,6 +45,19 @@ const required = [
   ['Demos entrance', "cat: 'demos'"],
   ['home chip keeps data-cat=all', "var defs = [{ id: 'all' }];"],
   ['site search input', 'id="siteSearch"'],
+  // Concept search (2026-11-11): the atlas concept index is loaded lazily and merged into the results.
+  ['concept matcher loaded lazily', "'atlas/concept-search.js?v="],
+  ['concept index loaded lazily', "'atlas/search-index.js?v="],
+  ['index loads on first focus', "siteInput.addEventListener('focus', loadConcepts);"],
+  ['index loads on first typing', "siteInput.addEventListener('input',function(event) { loadConcepts();"],
+  ['index loads for a ?s= URL', 'if (siteInput.value) loadConcepts();'],
+  ['concept result card', 'function makeConceptCard(c)'],
+  ['concept card names its page', "fill(t('conceptIn'), { page: pick(c.page.title) })"],
+  ['concept without anchor or with the page name is folded into its page', 'var keep = c.anchored && !names(c.title)'],
+  ['folded concept lends its score to the page', 'seen[c.page.path].score = Math.max(seen[c.page.path].score, c.score);'],
+  ['pages and concepts ranked together', 'return b.score - a.score || (a.page ? 0 : 1) - (b.page ? 0 : 1) || a.order - b.order;'],
+  ['concept results capped', 'var MAX_CONCEPTS = 8;'],
+  ['failure keeps page search', "conceptState = 'error'; return;"],
 ];
 for (const [label, needle] of required) if (!html.includes(needle)) fail(`missing ${label}: ${needle}`);
 
@@ -58,6 +71,9 @@ const forbidden = [
   ['per-card open line', 'goOpen'],
   ['maintainer footer', '<b>pages.config.js</b>'],
   ['provenance label (root page has no provenance entry)', 'page-provenance'],
+  // The first paint must not pay for the concept index.
+  ['concept index as a blocking script', '<script src="atlas/search-index.js'],
+  ['concept matcher as a blocking script', '<script src="atlas/concept-search.js'],
 ];
 for (const [label, needle] of forbidden) if (html.includes(needle)) fail(`${label} is back: ${needle}`);
 
@@ -68,4 +84,9 @@ if (!html.includes("if (activeCat === 'leetcode') searchInput.value = url.search
   fail('q must only be read for the LeetCode view');
 }
 if ((html.match(/<a class="card"/g) || []).length) fail('index contains a hard-coded card list');
+// Both lazily loaded files exist and the strings the concept cards use are in both languages.
+for (const f of ['atlas/concept-search.js', 'atlas/search-index.js']) if (!fs.existsSync(path.join(root, f))) fail(`missing ${f}`);
+for (const key of ['siteSearchBoth', 'conceptBadge', 'conceptIn', 'conceptInAtlas']) {
+  if ((html.match(new RegExp(key + ':', 'g')) || []).length < 2) fail(`string ${key} must exist in zh and en`);
+}
 console.log('index homepage contract: ok');

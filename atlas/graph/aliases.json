@@ -1,0 +1,18 @@
+{
+  "compound-interest": {
+    "zh": ["利息", "复利", "利滚利", "贴现", "现值"],
+    "en": ["interest", "compounding", "present value", "discounting"]
+  },
+  "gaussian": {
+    "zh": ["正态分布", "钟形曲线", "高斯分布", "中心极限定理"],
+    "en": ["normal distribution", "bell curve", "Gaussian distribution", "central limit theorem"]
+  },
+  "binomial-normal": {
+    "zh": ["钟形曲线", "高尔顿板"],
+    "en": ["bell curve", "Galton board"]
+  },
+  "cnn-feature-maps": {
+    "zh": ["神经网络", "卷积神经网络"],
+    "en": ["neural network", "convolutional neural network", "CNN"]
+  }
+}
