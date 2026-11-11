@@ -33,7 +33,8 @@ window.KNOWLEDGE_CATEGORIES = [
   { id: "language",    name: { zh: "语言与语言学", en: "Language & Linguistics" } },
   { id: "earth",       name: { zh: "地球与太空", en: "Earth & Space" } },
   { id: "leetcode",    name: { zh: "LeetCode 专区", en: "LeetCode" } },
-  { id: "investment",  name: { zh: "投资", en: "Investment" } }
+  { id: "investment",  name: { zh: "投资", en: "Investment" } },
+  { id: "demos",       name: { zh: "演示", en: "Demos" } }
 
 ];
 
@@ -157,6 +158,19 @@ window.KNOWLEDGE_PAGES = [
     stage: "university",
     status: "live",
     path: "leetcode/"
+  },
+  {
+    slug: "fable-flight",
+    title: { zh: "寓言乘风，梦在舞动", en: "Let Fable take Flight" },
+    desc: {
+      zh: "深夜的图书馆，两万四千页寓言乘风飞舞。Three.js 实时短片：建筑、纹理、钢琴与纸声全部由代码生成。",
+      en: "A midnight library where 24,000 pages of fable take to the air. A real-time Three.js short film; architecture, textures, piano and paper sounds are all generated in code."
+    },
+    tags: [{ zh: "Three.js", en: "Three.js" }, { zh: "实时短片", en: "Real-time Film" }, { zh: "程序化生成", en: "Procedural" }],
+    category: "demos",
+    stage: "university",
+    status: "live",
+    path: "demos/fable-flight/"
   },
   {
     slug: "fourier",

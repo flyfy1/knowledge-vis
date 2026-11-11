@@ -1,0 +1,804 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Let Fable take Flight · 寓言乘风，梦在舞动</title>
+<meta name="description" content="深夜的图书馆，两万四千页寓言乘风飞舞。一段由 Three.js 实时演出的短片，建筑、纹理、钢琴与纸声全部由代码生成。">
+<style>
+  :root { --bar: max(7vh, calc((100vh - 100vw / 2.39) / 2)); --ink: #e9edf7; }
+  @media (max-aspect-ratio: 1/1) { :root { --bar: 9vh; } }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; background: #000; overflow: hidden; color: var(--ink); }
+  body { font-family: "Songti SC", "STSong", "Noto Serif CJK SC", "Source Han Serif SC", "SimSun", Georgia, serif; -webkit-font-smoothing: antialiased; }
+  canvas#stage { position: fixed; inset: 0; width: 100%; height: 100%; display: block; }
+  .bar { position: fixed; left: 0; right: 0; height: var(--bar); background: #000; z-index: 2; pointer-events: none; }
+  .bar.top { top: 0; } .bar.bottom { bottom: 0; }
+  .en { font-family: "Cormorant Garamond", "Baskerville", "Iowan Old Style", "Palatino Linotype", Georgia, serif; font-style: italic; }
+  #hud { position: fixed; z-index: 3; top: 0; left: 0; right: 0; height: var(--bar); display: flex; align-items: center; justify-content: space-between;
+    padding: 0 clamp(16px, 3vw, 44px); font: 11px/1 ui-monospace, "SF Mono", Menlo, monospace; letter-spacing: .22em; color: rgba(233,237,247,.42); text-transform: uppercase; pointer-events: none; }
+  #hud b { font-weight: 400; color: rgba(233,237,247,.8); }
+  #caption { position: fixed; z-index: 3; left: 0; right: 0; bottom: 0; height: var(--bar); display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: .45em; padding: 0 16px; text-align: center; pointer-events: none; opacity: 0; }
+  #caption .zh { font-size: clamp(14px, 1.55vw, 22px); letter-spacing: .32em; text-indent: .32em; }
+  #caption .en { font-size: clamp(12px, 1.15vw, 17px); letter-spacing: .06em; color: rgba(233,237,247,.62); }
+  #title { position: fixed; z-index: 3; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1.1em; text-align: center;
+    padding: 0 16px; pointer-events: none; opacity: 0; text-shadow: 0 0 28px rgba(150,180,255,.55), 0 2px 18px rgba(0,0,10,.9), 0 0 60px rgba(0,0,20,.8); }
+  #title.corner { align-items: flex-start; justify-content: flex-end; text-align: left; padding: 0 0 calc(var(--bar) + 6vh) clamp(20px, 6vw, 110px); }
+  #title .big { font-size: clamp(30px, 5.6vw, 88px); letter-spacing: .04em; line-height: 1.05; }
+  #title .big.zh { font-style: normal; letter-spacing: .3em; text-indent: .3em; font-size: clamp(26px, 4.6vw, 72px); font-weight: 400; }
+  #title .small { font-size: clamp(14px, 1.8vw, 26px); letter-spacing: .3em; text-indent: .3em; color: rgba(240,243,250,.92); }
+  #progress { position: fixed; z-index: 4; left: 0; bottom: 0; height: 2px; width: 0; background: linear-gradient(90deg, rgba(140,170,255,.0), rgba(190,210,255,.8)); pointer-events: none; }
+  #hint { position: fixed; z-index: 4; right: clamp(16px, 3vw, 44px); bottom: 10px; font: 11px/1 ui-monospace, Menlo, monospace; letter-spacing: .12em; color: rgba(233,237,247,.4); opacity: 0; transition: opacity .6s; pointer-events: none; }
+  #hint.on { opacity: 1; }
+  #gate { position: fixed; z-index: 10; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 26px; text-align: center; padding: 24px;
+    background: radial-gradient(ellipse at 50% 45%, rgba(4,7,18,.50), rgba(0,0,4,.88) 75%); transition: opacity 1.6s ease; }
+  #gate.gone { opacity: 0; pointer-events: none; }
+  #gate h1 { margin: 0; font-weight: 400; font-size: clamp(34px, 6vw, 84px); letter-spacing: .03em; text-shadow: 0 0 40px rgba(150,180,255,.45); }
+  #gate h2 { margin: 0; font-weight: 400; font-size: clamp(16px, 2.1vw, 28px); letter-spacing: .5em; text-indent: .5em; color: rgba(233,237,247,.85); }
+  #gate p { margin: 0; font-size: 13px; letter-spacing: .18em; color: rgba(233,237,247,.5); line-height: 1.9; }
+  #go { margin-top: 10px; appearance: none; cursor: pointer; font: inherit; font-size: 15px; letter-spacing: .5em; text-indent: .5em; color: var(--ink);
+    padding: 16px 40px; border: 1px solid rgba(200,215,255,.45); border-radius: 999px; background: rgba(120,150,255,.08); backdrop-filter: blur(6px);
+    transition: background .4s, box-shadow .4s, border-color .4s; }
+  #go:hover, #go:focus-visible { background: rgba(140,170,255,.2); border-color: rgba(220,230,255,.9); box-shadow: 0 0 44px rgba(130,160,255,.4); outline: none; }
+  #go[disabled] { opacity: .5; cursor: progress; }
+  #err { position: fixed; z-index: 20; inset: 0; display: none; align-items: center; justify-content: center; padding: 32px; text-align: center; background: #05060c; line-height: 2; }
+</style>
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+} }
+</script>
+</head>
+<body>
+<canvas id="stage"></canvas>
+<div class="bar top"></div><div class="bar bottom"></div>
+<div id="hud"><span>Fable · <b id="count">0</b> / 24,000 pages aloft</span><span id="clock">00:00</span></div>
+<div id="title"></div>
+<div id="caption"><div class="zh"></div><div class="en"></div></div>
+<div id="progress"></div>
+<div id="hint">空格 暂停 · M 静音 · F 全屏 · R 重播</div>
+<div id="gate">
+  <h1 class="en">Let Fable take Flight.</h1>
+  <h2>寓言乘风，梦在舞动</h2>
+  <p>深夜的图书馆 · 两万四千页寓言 · 月光、钢琴与纸声<br>全部由代码实时生成 · 建议佩戴耳机，全屏观看</p>
+  <button id="go" disabled>载入中</button>
+</div>
+<div id="err">这段短片需要 WebGL2 与网络加载 Three.js。<br>The film needs WebGL2 and network access to load Three.js.</div>
+
+<script type="module">
+import * as THREE from 'three';
+import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
+import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
+import { ShaderPass } from 'three/addons/postprocessing/ShaderPass.js';
+import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
+import { OutputPass } from 'three/addons/postprocessing/OutputPass.js';
+import { Reflector } from 'three/addons/objects/Reflector.js';
+
+/* ───────────────────────── constants & helpers ───────────────────────── */
+const N_PAGES = 24000;          // 两万四千页
+const DUR = 100;                // film length, seconds
+const BAR = 2.6;                // one bar of 6/8; also one wingbeat
+const TAU = Math.PI * 2;
+const params = new URLSearchParams(location.search);
+const FREEZE = params.has('t') ? parseFloat(params.get('t')) : null;
+
+function mulberry(seed) { let a = seed >>> 0; return () => { a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+const rnd = mulberry(20261111);
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+const mix = (a, b, k) => a + (b - a) * k;
+const ss = (a, b, x) => { const k = clamp((x - a) / (b - a)); return k * k * (3 - 2 * k); };
+const sm = k => { k = clamp(k); return k * k * k * (k * (k * 6 - 15) + 10); };
+const mix3 = (a, b, k) => [mix(a[0], b[0], k), mix(a[1], b[1], k), mix(a[2], b[2], k)];
+
+const canvas = document.getElementById('stage');
+let renderer;
+try {
+  renderer = new THREE.WebGLRenderer({ canvas, antialias: false, powerPreference: 'high-performance' });
+  if (!renderer.capabilities.isWebGL2) throw new Error('webgl2');
+} catch (e) { document.getElementById('err').style.display = 'flex'; throw e; }
+renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+renderer.shadowMap.autoUpdate = false;
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 1.15;
+
+const scene = new THREE.Scene();
+const FOG = new THREE.Color(0x050914);
+scene.background = new THREE.Color(0x010206);
+scene.fog = new THREE.FogExp2(FOG, 0.0105);
+const camera = new THREE.PerspectiveCamera(42, 1, 0.1, 700);
+
+// moonlight travels along L (from the great window down the nave)
+const L = new THREE.Vector3(0, -0.38, 0.925).normalize();
+const uL = { value: L };
+const uClock = { value: 0 };
+const WINDOW = new THREE.Vector3(0, 13, -40);
+
+/* The window, as a function: shared by pages, dust and the volumetric pass,
+   so every sheet of paper knows exactly when it crosses a shaft of moonlight. */
+const GLSL_WINDOW = /* glsl */`
+uniform vec3 uL;
+float windowMask(vec3 p){
+  float k=(p.z+40.0)/uL.z;
+  vec2 q=p.xy-uL.xy*k;
+  float s=0.05+k*0.006;
+  float ax=abs(q.x);
+  float m=(1.0-smoothstep(5.0-s,5.0+s,ax))*smoothstep(5.0-s,5.0+s,q.y);
+  float top=1.0-smoothstep(5.0-s,5.0+s,length(q-vec2(0.0,15.0)));
+  float thin=min(1.0,0.09/(s*1.5+0.02));   // thin bars lose their shadow with distance
+  float lower=smoothstep(0.09,0.09+s*2.0,min(abs(ax-1.0),abs(ax-3.0)))*smoothstep(0.09,0.09+s*2.0,abs(q.y-10.0));
+  float upper=smoothstep(0.10,0.10+s*2.0,abs(length(q-vec2(0.0,16.9))-1.9));
+  float bars=mix(lower,upper,step(15.0,q.y))*smoothstep(0.09,0.09+s*2.0,abs(q.y-15.0));
+  m*=mix(1.0,top,step(15.0,q.y))*(1.0-(1.0-bars)*thin);
+  return m*step(0.0,k);
+}`;
+const GLSL_NOISE = /* glsl */`
+float hash1(vec2 p){ p=fract(p*vec2(123.34,456.21)); p+=dot(p,p+45.32); return fract(p.x*p.y); }
+float hash3(vec3 p){ p=fract(p*0.3183099+vec3(0.1,0.2,0.3)); p*=17.0; return fract(p.x*p.y*p.z*(p.x+p.y+p.z)); }
+float noise3(vec3 x){ vec3 i=floor(x), f=fract(x); f=f*f*(3.0-2.0*f);
+  return mix(mix(mix(hash3(i),hash3(i+vec3(1,0,0)),f.x),mix(hash3(i+vec3(0,1,0)),hash3(i+vec3(1,1,0)),f.x),f.y),
+             mix(mix(hash3(i+vec3(0,0,1)),hash3(i+vec3(1,0,1)),f.x),mix(hash3(i+vec3(0,1,1)),hash3(i+vec3(1,1,1)),f.x),f.y),f.z); }
+float noise2(vec2 x){ vec2 i=floor(x), f=fract(x); f=f*f*(3.0-2.0*f);
+  return mix(mix(hash1(i),hash1(i+vec2(1,0)),f.x),mix(hash1(i+vec2(0,1)),hash1(i+vec2(1,1)),f.x),f.y); }
+float fbm(vec2 p){ float a=0.5, v=0.0; for(int i=0;i<5;i++){ v+=a*noise2(p); p=p*2.03+7.1; a*=0.5; } return v; }`;
+
+/* ───────────────────────── procedural textures ───────────────────────── */
+function canvasTex(w, h, draw, opts = {}) {
+  const c = document.createElement('canvas'); c.width = w; c.height = h;
+  draw(c.getContext('2d'), w, h);
+  const t = new THREE.CanvasTexture(c);
+  t.colorSpace = opts.linear ? THREE.NoColorSpace : THREE.SRGBColorSpace;
+  t.wrapS = t.wrapT = THREE.RepeatWrapping; t.anisotropy = 8;
+  return t;
+}
+function speckle(g, w, h, n, alpha, light = 255) {
+  for (let i = 0; i < n; i++) { const v = rnd(); g.fillStyle = `rgba(${v > .5 ? light : 0},${v > .5 ? light : 0},${v > .5 ? light : 0},${alpha * rnd()})`; g.fillRect(rnd() * w, rnd() * h, 1 + rnd() * 2, 1 + rnd() * 2); }
+}
+const texMarble = canvasTex(1024, 1024, (g, w, h) => {
+  const tiles = [['#0d1019', '#424858'], ['#424858', '#0d1019']];
+  for (let j = 0; j < 2; j++) for (let i = 0; i < 2; i++) {
+    g.fillStyle = tiles[j][i]; g.fillRect(i * 512, j * 512, 512, 512);
+    for (let v = 0; v < 9; v++) {           // veins
+      g.strokeStyle = `rgba(${tiles[j][i] === '#0d1019' ? '150,165,200' : '10,12,20'},${0.05 + rnd() * 0.12})`; g.lineWidth = 0.6 + rnd() * 1.6;
+      g.beginPath(); let x = i * 512 + rnd() * 512, y = j * 512 + rnd() * 512; g.moveTo(x, y);
+      for (let s = 0; s < 14; s++) { x += (rnd() - .5) * 90; y += (rnd() - .3) * 70; g.lineTo(clamp(x, i * 512, i * 512 + 512), clamp(y, j * 512, j * 512 + 512)); }
+      g.stroke();
+    }
+    g.strokeStyle = 'rgba(0,0,0,.7)'; g.lineWidth = 3; g.strokeRect(i * 512, j * 512, 512, 512);
+  }
+  speckle(g, w, h, 9000, 0.06);
+});
+const texStone = canvasTex(512, 512, (g, w, h) => {
+  g.fillStyle = '#8b8f9b'; g.fillRect(0, 0, w, h); speckle(g, w, h, 16000, 0.09);
+  g.strokeStyle = 'rgba(20,22,30,.5)'; g.lineWidth = 2;
+  for (let r = 0; r < 4; r++) { const y = r * 128; g.beginPath(); g.moveTo(0, y); g.lineTo(w, y); g.stroke();
+    for (let c = 0; c < 2; c++) { const x = c * 256 + (r % 2) * 128; g.beginPath(); g.moveTo(x, y); g.lineTo(x, y + 128); g.stroke(); } }
+});
+const texCoffer = canvasTex(256, 256, (g, w, h) => {
+  g.fillStyle = '#9a9eab'; g.fillRect(0, 0, w, h);
+  const gr = g.createRadialGradient(128, 128, 20, 128, 128, 150); gr.addColorStop(0, '#2c2f3b'); gr.addColorStop(1, '#565a69');
+  g.fillStyle = gr; g.fillRect(26, 26, 204, 204);
+  g.strokeStyle = 'rgba(0,0,0,.55)'; g.lineWidth = 5; g.strokeRect(26, 26, 204, 204);
+  g.strokeStyle = 'rgba(210,215,235,.35)'; g.lineWidth = 2; g.strokeRect(44, 44, 168, 168);
+  g.fillStyle = '#a9adba'; for (let k = 0; k < 8; k++) { g.beginPath(); g.ellipse(128 + Math.cos(k * TAU / 8) * 20, 128 + Math.sin(k * TAU / 8) * 20, 13, 7, k * TAU / 8, 0, TAU); g.fill(); }
+  g.beginPath(); g.arc(128, 128, 9, 0, TAU); g.fillStyle = '#c9ccd8'; g.fill();
+  speckle(g, w, h, 3000, 0.07);
+});
+const texSpine = canvasTex(32, 128, (g, w, h) => {
+  g.fillStyle = '#fff'; g.fillRect(0, 0, w, h);
+  g.fillStyle = '#c9a860'; g.fillRect(0, 14, w, 3); g.fillRect(0, 22, w, 2); g.fillRect(0, 100, w, 3); g.fillRect(0, 108, w, 2);
+  g.fillStyle = 'rgba(0,0,0,.25)'; g.fillRect(0, 40, w, 26); g.fillStyle = '#c9a860'; g.fillRect(6, 48, w - 12, 2); g.fillRect(9, 56, w - 18, 2);
+});
+const texGlow = canvasTex(128, 128, (g) => {
+  const gr = g.createRadialGradient(64, 64, 0, 64, 64, 64); gr.addColorStop(0, 'rgba(255,255,255,1)'); gr.addColorStop(.25, 'rgba(255,255,255,.45)'); gr.addColorStop(1, 'rgba(255,255,255,0)');
+  g.fillStyle = gr; g.fillRect(0, 0, 128, 128);
+});
+
+// The fable itself is printed on the pages: four leaves, set in type by canvas.
+const FABLE_EN = "Once, in a library that slept at the bottom of the night, there lived a book that could not close its eyes. Every page of it was a fable, and every fable was a dream someone had forgotten to finish. One midnight the wind came in on the moonlight and asked: Why do you lie so still? Because I am heavy with endings, said the book. Then let them go, said the wind. So the book let go, twenty-four thousand pages, one by one, and found that a story is lightest at the moment it is told. Moral: a dream kept is paper; a dream given is wings.";
+const FABLE_ZH = "从前，在夜的最深处，有一座睡着的图书馆，馆里住着一本合不上眼的书。它的每一页都是一则寓言，每一则寓言，都是某个人忘了做完的梦。一个深夜，风踩着月光进来，问它：你为什么躺得这样安静？书说：因为我装满了结局，太重了。风说：那就放它们走吧。于是书松开了手，两万四千页，一页接着一页。它这才发现，故事在被讲出来的那一刻最轻。寓意：留着的梦是纸，送出去的梦，是翅膀。";
+const texPage = canvasTex(1024, 1024, (g) => {
+  const W = 366, H = 512;
+  const wrap = (text, x, y, maxW, lh, byChar, maxY) => {
+    const toks = byChar ? [...text] : text.split(' '); let line = '';
+    for (const tk of toks) { const test = line + tk + (byChar ? '' : ' ');
+      if (g.measureText(test).width > maxW && line) { g.fillText(line, x, y); y += lh; line = tk + (byChar ? '' : ' '); if (y > maxY) return y; } else line = test; }
+    g.fillText(line, x, y); return y + lh;
+  };
+  const leaf = (ix, iy, fn) => { g.save(); g.translate(ix * 512, iy * 512); g.scale(512 / W, 1);
+    const gr = g.createLinearGradient(0, 0, W, H); gr.addColorStop(0, '#f6f0e1'); gr.addColorStop(1, '#e9e0cb'); g.fillStyle = gr; g.fillRect(0, 0, W, H);
+    for (let i = 0; i < 900; i++) { g.fillStyle = `rgba(120,95,60,${rnd() * 0.05})`; g.fillRect(rnd() * W, rnd() * H, 1 + rnd() * 2, 1); }
+    g.strokeStyle = 'rgba(120,95,60,.35)'; g.lineWidth = 1; g.strokeRect(22, 22, W - 44, H - 44);
+    g.fillStyle = '#2a2520'; g.textBaseline = 'top'; fn(); g.restore(); };
+  leaf(0, 0, () => { g.font = 'italic 58px Georgia, serif'; g.fillText('O', 38, 44); g.font = 'italic 15px Georgia, serif';
+    g.fillText('nce, in a library that slept', 92, 52); g.fillText('at the bottom of the night,', 92, 74);
+    wrap(FABLE_EN.slice(60), 40, 112, W - 80, 21, false, 440); g.font = '11px Georgia, serif'; g.fillText('· 1 ·', W / 2 - 10, 470); });
+  leaf(1, 0, () => { g.font = '17px "Songti SC","STSong","Noto Serif CJK SC",serif'; wrap(FABLE_ZH, 40, 46, W - 80, 27, true, 440); g.font = '11px Georgia, serif'; g.fillText('· 2 ·', W / 2 - 10, 470); });
+  leaf(0, 1, () => { g.textAlign = 'center'; g.font = '13px Georgia, serif'; g.fillText('A  F A B L E', W / 2, 96);
+    g.font = 'italic 46px Georgia, serif'; g.fillText('Let Fable', W / 2, 150); g.fillText('take Flight', W / 2, 204);
+    g.beginPath(); g.arc(W / 2, 318, 34, 0, TAU); g.strokeStyle = '#2a2520'; g.lineWidth = 1.5; g.stroke(); g.beginPath(); g.arc(W / 2 + 12, 310, 28, 0, TAU); g.fillStyle = '#efe7d4'; g.fill();
+    g.fillStyle = '#2a2520'; g.font = '20px "Songti SC","STSong",serif'; g.fillText('寓言乘风 · 梦在舞动', W / 2, 396); g.font = '11px Georgia, serif'; g.fillText('MMXXVI', W / 2, 452); });
+  leaf(1, 1, () => { g.font = 'italic 15px Georgia, serif'; let y = wrap(FABLE_EN.slice(298), 40, 48, W - 80, 21, false, 250);
+    g.font = '17px "Songti SC","STSong","Noto Serif CJK SC",serif'; wrap(FABLE_ZH.slice(118), 40, y + 22, W - 80, 27, true, 440); g.font = '11px Georgia, serif'; g.fillText('· 3 ·', W / 2 - 10, 470); });
+});
+texPage.wrapS = texPage.wrapT = THREE.ClampToEdgeWrapping;
+
+/* ───────────────────────── architecture ───────────────────────── */
+const boxGeo = new THREE.BoxGeometry(1, 1, 1);
+const dummy = new THREE.Object3D();
+function batch(mat, { cast = false, geo = boxGeo } = {}) {
+  const items = [];
+  return {
+    add(x, y, z, sx, sy, sz, col) { items.push([x, y, z, sx, sy, sz, col]); },
+    build() {
+      const m = new THREE.InstancedMesh(geo, mat, items.length);
+      items.forEach((it, i) => { dummy.position.set(it[0], it[1], it[2]); dummy.scale.set(it[3], it[4], it[5]); dummy.rotation.set(0, 0, 0); dummy.updateMatrix(); m.setMatrixAt(i, dummy.matrix); if (it[6]) m.setColorAt(i, it[6]); });
+      m.castShadow = cast; m.receiveShadow = true; m.frustumCulled = false; scene.add(m); return m;
+    }
+  };
+}
+const matStone = new THREE.MeshStandardMaterial({ color: 0x8e94a6, roughness: 0.92 });
+const matWood = new THREE.MeshStandardMaterial({ color: 0x2c1c12, roughness: 0.62 });
+const matWoodLight = new THREE.MeshStandardMaterial({ color: 0x4a2f1c, roughness: 0.5 });
+const matBrass = new THREE.MeshStandardMaterial({ color: 0x9a7a3a, roughness: 0.35, metalness: 0.85 });
+const matIron = new THREE.MeshStandardMaterial({ color: 0x14161c, roughness: 0.7 });
+
+const NB = 13, BLEN = 80 / NB;
+{
+  const stone = batch(matStone, { cast: true }), wood = batch(matWood, { cast: true }), boards = batch(matWoodLight), brass = batch(matBrass);
+  const books = batch(new THREE.MeshStandardMaterial({ roughness: 0.78, map: texSpine }));
+  const palette = [0x5b1620, 0x1f3a2c, 0x1c2a4a, 0x6a4a1e, 0x3b2a1a, 0x7a6a50, 0x2a2030, 0x4a1a12, 0x25404a, 0x8a7a62].map(c => new THREE.Color(c));
+  const rowsY = []; for (let r = 0; r < 7; r++) rowsY.push(0.5 + r * 1.1); const rowsY2 = []; for (let r = 0; r < 8; r++) rowsY2.push(7.95 + r * 1.1);
+  for (const side of [-1, 1]) {
+    wood.add(side * 11.95, 8, 0, 0.3, 16, 80);                          // shelf backs
+    stone.add(side * 10.7, 7.55, 0, 2.6, 0.3, 80);                      // gallery slab
+    stone.add(side * 9.5, 7.3, 0, 0.3, 0.22, 80);
+    stone.add(side * 11.3, 16.1, 0, 1.6, 0.6, 80);                      // cornice
+    stone.add(side * 11.2, 0.2, 0, 1.7, 0.4, 80);                       // plinth
+    brass.add(side * 9.5, 8.78, 0, 0.1, 0.08, 80);                      // rail
+    for (let z = -39.6; z < 40; z += 0.42) brass.add(side * 9.5, 8.22, z, 0.035, 1.05, 0.035);
+    for (let i = 0; i <= NB; i++) stone.add(side * 11.2, 8, -40 + i * BLEN, 1.6, 16, 0.9);   // pilasters
+    for (let b = 0; b < NB; b++) {
+      const z0 = -40 + b * BLEN + 0.45, z1 = z0 + BLEN - 0.9, zc = (z0 + z1) / 2;
+      for (const rows of [rowsY, rowsY2]) rows.forEach((y, r) => {
+        boards.add(side * 11.42, y, zc, 0.78, 0.07, z1 - z0);
+        if (r === rows.length - 1) return;
+        let z = z0 + 0.06;
+        while (z < z1 - 0.2) {
+          if (rnd() < 0.045) { z += 0.25 + rnd() * 0.9; continue; }
+          const th = 0.07 + rnd() * 0.17, hh = 0.6 + rnd() * 0.4, d = 0.42 + rnd() * 0.22;
+          const c = palette[(rnd() * palette.length) | 0].clone().multiplyScalar(0.7 + rnd() * 0.9);
+          books.add(side * (11.78 - d / 2), y + 0.035 + hh / 2, z + th / 2, d, hh, th, c); z += th + 0.004;
+        }
+      });
+    }
+  }
+  // reading tables and their lamps
+  const lampGeo = new THREE.SphereGeometry(0.12, 12, 8);
+  const bulbs = batch(new THREE.MeshBasicMaterial({ color: new THREE.Color(3.2, 2.0, 0.85) }), { geo: lampGeo });
+  const shades = batch(new THREE.MeshStandardMaterial({ color: 0x0f3a26, roughness: 0.3, emissive: 0x0a3a20, emissiveIntensity: 0.6 }), { geo: new THREE.CylinderGeometry(0.1, 0.3, 0.18, 14, 1, true) });
+  for (const side of [-1, 1]) for (const z of [-27, -13.5, 13.5, 27]) {
+    const x = side * 5.4;
+    wood.add(x, 1.0, z, 2.1, 0.12, 6.4);
+    for (const dz of [-2.9, 2.9]) for (const dx of [-0.85, 0.85]) wood.add(x + dx, 0.47, z + dz, 0.14, 0.94, 0.14);
+    for (const dz of [-1.6, 1.6]) { brass.add(x, 1.26, z + dz, 0.035, 0.42, 0.035); brass.add(x, 1.08, z + dz, 0.22, 0.03, 0.22); bulbs.add(x, 1.47, z + dz, 1, 1, 1); shades.add(x, 1.55, z + dz, 1, 1, 1); }
+    for (let k = 0; k < 5; k++) { const c = palette[(rnd() * palette.length) | 0]; boards.add(x + (rnd() - .5) * 1.2, 1.1 + 0.0, z + (rnd() - .5) * 2.2, 0.5, 0.09, 0.36, c); }
+  }
+  // lectern
+  stone.add(0, 0.15, 0, 3.4, 0.3, 3.4); stone.add(0, 0.42, 0, 2.5, 0.26, 2.5); stone.add(0, 1.22, 0, 0.8, 1.4, 0.8); stone.add(0, 1.98, 0, 2.3, 0.14, 1.7);
+  // window stonework
+  const iron = batch(matIron, { cast: true });
+  for (const x of [-3, -1, 1, 3]) iron.add(x, 10, -40.5, 0.18, 10, 0.3);
+  iron.add(0, 10, -40.5, 10, 0.18, 0.3); iron.add(0, 15, -40.5, 10, 0.18, 0.3); iron.add(0, 4.85, -40.2, 11, 0.3, 1.6);
+  [stone, wood, boards, brass, books, bulbs, shades, iron].forEach(b => b.build());
+
+  const ring = new THREE.Mesh(new THREE.TorusGeometry(1.9, 0.1, 8, 48), matIron); ring.position.set(0, 16.9, -40.5); ring.castShadow = true; scene.add(ring);
+
+  // end wall with the great window cut out of it
+  const wallShape = new THREE.Shape(); wallShape.moveTo(-12.6, -0.5); wallShape.lineTo(12.6, -0.5); wallShape.lineTo(12.6, 16); wallShape.absarc(0, 16, 12.6, 0, Math.PI, false); wallShape.lineTo(-12.6, -0.5);
+  const hole = new THREE.Path(); hole.moveTo(-5, 5); hole.lineTo(5, 5); hole.lineTo(5, 15); hole.absarc(0, 15, 5, 0, Math.PI, false); hole.lineTo(-5, 5);
+  const backShape = wallShape.clone(); wallShape.holes.push(hole);
+  const stoneMap = texStone.clone(); stoneMap.repeat.set(0.16, 0.16); stoneMap.needsUpdate = true;
+  const matWall = new THREE.MeshStandardMaterial({ color: 0x9aa0b2, roughness: 0.95, map: stoneMap, side: THREE.DoubleSide });
+  const endWall = new THREE.Mesh(new THREE.ExtrudeGeometry(wallShape, { depth: 1.4, bevelEnabled: false, curveSegments: 40 }), matWall);
+  endWall.position.z = -41.4; endWall.castShadow = endWall.receiveShadow = true; scene.add(endWall);
+  const backWall = new THREE.Mesh(new THREE.ShapeGeometry(backShape, 40), matWall); backWall.position.z = 40; backWall.rotation.y = Math.PI; backWall.receiveShadow = true; scene.add(backWall);
+  const door = new THREE.Mesh(new THREE.BoxGeometry(5, 8, 0.3), matWood); door.position.set(0, 4, 39.9); scene.add(door);
+
+  // barrel vault with coffers, and its ribs
+  const coffer = texCoffer; coffer.repeat.set(14, 30);
+  const bump = texCoffer.clone(); bump.colorSpace = THREE.NoColorSpace; bump.repeat.set(14, 30); bump.needsUpdate = true;
+  const vault = new THREE.Mesh(new THREE.CylinderGeometry(12, 12, 80, 64, 1, true, Math.PI / 2, Math.PI),
+    new THREE.MeshStandardMaterial({ color: 0x8088a0, roughness: 0.9, map: coffer, bumpMap: bump, bumpScale: 2.5, side: THREE.BackSide, shadowSide: THREE.DoubleSide }));
+  vault.rotation.x = Math.PI / 2; vault.position.y = 16; vault.castShadow = vault.receiveShadow = true; scene.add(vault);
+  const ribGeo = new THREE.TorusGeometry(11.8, 0.32, 8, 48, Math.PI);
+  for (let i = 0; i <= NB; i++) { const rib = new THREE.Mesh(ribGeo, matStone); rib.position.set(0, 16, -40 + i * BLEN); rib.receiveShadow = true; scene.add(rib); }
+}
+
+// polished floor: a mirror under a veil of dark marble
+const mirror = new Reflector(new THREE.PlaneGeometry(24, 80), { textureWidth: 1024, textureHeight: 1024, color: 0x7f7f7f, clipBias: 0.003 });
+mirror.rotation.x = -Math.PI / 2; scene.add(mirror);
+texMarble.repeat.set(6, 20);
+const floor = new THREE.Mesh(new THREE.PlaneGeometry(24, 80), new THREE.MeshStandardMaterial({ map: texMarble, roughness: 0.42, transparent: true, opacity: 0.80 }));
+floor.rotation.x = -Math.PI / 2; floor.position.y = 0.012; floor.receiveShadow = true; scene.add(floor);
+
+/* lights */
+scene.add(new THREE.HemisphereLight(0x3d4f82, 0x0a0a12, 0.5));
+const moonLight = new THREE.DirectionalLight(0xa8c2ff, 2.6);
+moonLight.target.position.set(0, 8, 0); moonLight.position.copy(moonLight.target.position).addScaledVector(L, -70);
+moonLight.castShadow = true; moonLight.shadow.mapSize.set(4096, 4096);
+Object.assign(moonLight.shadow.camera, { left: -17, right: 17, top: 32, bottom: -32, near: 1, far: 150 });
+moonLight.shadow.bias = -0.0006; moonLight.shadow.normalBias = 0.06;
+scene.add(moonLight, moonLight.target);
+for (const [x, z] of [[-5.4, -20], [5.4, -20], [-5.4, 20], [5.4, 20]]) { const p = new THREE.PointLight(0xffb066, 26, 22, 2); p.position.set(x, 2.2, z); scene.add(p); }
+
+/* the book that could not close its eyes */
+const BOOK = new THREE.Vector3(0, 2.12, 0);
+const bookLight = new THREE.PointLight(0xffb45e, 0, 40, 2); bookLight.position.set(0, 3.1, 0); scene.add(bookLight);
+const matLeaf = new THREE.MeshStandardMaterial({ color: 0xf1e8d2, roughness: 0.9, emissive: 0xffb050, emissiveIntensity: 0 });
+const matCover = new THREE.MeshStandardMaterial({ color: 0x4a0f1a, roughness: 0.45 });
+const halves = [-1, 1].map(side => {
+  const g = new THREE.Group(); g.position.copy(BOOK);
+  const cover = new THREE.Mesh(boxGeo, matCover); cover.scale.set(0.95, 0.05, 1.36); cover.position.set(side * 0.475, 0, 0);
+  const leaves = new THREE.Mesh(boxGeo, matLeaf); leaves.scale.set(0.88, 0.13, 1.26); leaves.position.set(side * 0.45, 0.09, 0);
+  const gilt = new THREE.Mesh(boxGeo, matBrass); gilt.scale.set(0.99, 0.02, 1.4); gilt.position.set(side * 0.475, -0.03, 0);
+  g.add(cover, leaves, gilt); scene.add(g); return { g, side };
+});
+const bookGlow = new THREE.Sprite(new THREE.SpriteMaterial({ map: texGlow, color: 0xffb060, blending: THREE.AdditiveBlending, depthWrite: false, transparent: true, opacity: 0 }));
+bookGlow.position.set(0, 2.7, 0); scene.add(bookGlow);
+
+/* sky: a moon, a few stars, slow cloud */
+const sky = new THREE.Mesh(new THREE.PlaneGeometry(900, 500), new THREE.ShaderMaterial({
+  uniforms: { uClock }, fog: false, depthWrite: false,
+  vertexShader: `varying vec3 vW; void main(){ vec4 w=modelMatrix*vec4(position,1.0); vW=w.xyz; gl_Position=projectionMatrix*viewMatrix*w; }`,
+  fragmentShader: GLSL_NOISE + /* glsl */`
+    uniform float uClock; varying vec3 vW;
+    void main(){
+      vec2 p=vW.xy; vec2 mc=vec2(3.0,42.0); float r=length(p-mc)/9.0;
+      vec3 col=mix(vec3(0.020,0.040,0.105),vec3(0.004,0.008,0.028),clamp(p.y/170.0,0.0,1.0));
+      float glow=exp(-r*0.85)*0.55+exp(-r*r*0.12)*0.22;
+      col+=vec3(0.30,0.44,0.85)*glow;
+      vec2 g=p*0.32; vec2 id=floor(g); vec2 f=fract(g)-0.5; float h=hash1(id);
+      vec2 o=(vec2(hash1(id+3.1),hash1(id+7.7))-0.5)*0.7;
+      float st=step(0.90,h)*(1.0-smoothstep(0.0,0.11,length(f-o)))*(0.6+0.4*sin(uClock*(1.0+h*3.0)+h*40.0));
+      col+=vec3(0.9,0.95,1.0)*st*2.4*(1.0-smoothstep(1.0,1.6,2.0-r));
+      float cl=fbm(p*0.018+vec2(uClock*0.012,0.0));
+      col+=vec3(0.26,0.36,0.62)*smoothstep(0.42,0.85,cl)*(0.10+glow*1.4);
+      float disc=1.0-smoothstep(0.985,1.0,r);
+      float maria=fbm((p-mc)*0.20+3.7);
+      vec3 moon=vec3(1.0,0.97,0.90)*(0.62+0.5*maria)*(1.0-0.28*r*r)*3.1;
+      col=mix(col,moon,disc*(1.0-0.55*smoothstep(0.5,0.9,cl)*0.5));
+      gl_FragColor=vec4(col,1.0);
+    }` }));
+sky.position.z = -230; scene.add(sky);
+
+/* dust: only visible where it drifts through the moonlight */
+{
+  const n = 9000, pos = new Float32Array(n * 3), sd = new Float32Array(n);
+  for (let i = 0; i < n; i++) { pos[i * 3] = (rnd() * 2 - 1) * 11; pos[i * 3 + 1] = rnd() * 22; pos[i * 3 + 2] = -40 + rnd() * 76; sd[i] = rnd(); }
+  const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.BufferAttribute(pos, 3)); g.setAttribute('aS', new THREE.BufferAttribute(sd, 1));
+  const dust = new THREE.Points(g, new THREE.ShaderMaterial({
+    uniforms: { uL, uClock, uPx: { value: 1 } }, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending,
+    vertexShader: GLSL_WINDOW + /* glsl */`
+      attribute float aS; uniform float uClock, uPx; varying float vA;
+      void main(){ vec3 p=position; float t=uClock;
+        p+=vec3(sin(t*0.13+aS*61.0),sin(t*0.09+aS*37.0)*0.7,cos(t*0.11+aS*83.0))*1.4;
+        vA=windowMask(p)*(0.5+0.5*sin(t*(0.6+aS)+aS*50.0))*0.9+0.012;
+        vec4 mv=viewMatrix*vec4(p,1.0); gl_Position=projectionMatrix*mv;
+        gl_PointSize=min(uPx*(0.5+aS*1.2)*6.0/max(-mv.z,0.5),uPx*0.5); }`,
+    fragmentShader: `varying float vA; void main(){ float d=length(gl_PointCoord-0.5); float a=(1.0-smoothstep(0.1,0.5,d))*vA; gl_FragColor=vec4(vec3(0.62,0.74,1.0)*a*1.6,a); }` }));
+  dust.frustumCulled = false; scene.add(dust); scene.userData.dust = dust;
+}
+
+/* ───────────────────────── 24,000 pages ───────────────────────── */
+// a bird drawn in points: wings, body, neck, a long tail; the rest stay loose
+function birdPoint(i) {
+  const u = i / N_PAGES, r = rnd; let x = 0, y = 0, z = 0, type = 3;
+  if (u < 0.46) { const side = r() < 0.5 ? -1 : 1, s = Math.pow(r(), 0.8), c = r();
+    const chord = (0.8 + 3.7 * Math.pow(1 - s, 0.7)) * (1 + 0.12 * Math.sin(s * 38));
+    x = side * (1.0 + 9.0 * s); z = -1.7 + 3.4 * Math.pow(s, 1.6) + c * chord; y = 0.55 * Math.sin(s * Math.PI) - c * 0.25 + (r() - .5) * 0.22; type = 1;
+  } else if (u < 0.58) { const a = r() * TAU, cz = r() * 2 - 1, sr = Math.sqrt(1 - cz * cz), rr = Math.cbrt(r());
+    x = Math.cos(a) * sr * rr * 1.05; y = Math.sin(a) * sr * rr * 0.85; z = cz * rr * 3.2; type = 0;
+  } else if (u < 0.64) { const k = r(), a = r() * TAU, rr = Math.sqrt(r()); type = 0;
+    if (k < 0.62) { const q = k / 0.62; const rad = 0.46 * (1 - 0.35 * q) * rr; x = Math.cos(a) * rad; y = 0.2 + 1.5 * q * q + Math.sin(a) * rad; z = -2.7 - 3.6 * q; }
+    else if (k < 0.9) { x = Math.cos(a) * 0.6 * rr; y = 1.75 + Math.sin(a) * 0.5 * rr; z = -6.6 + (r() - .5) * 0.9; }
+    else { const q = r(); x = Math.cos(a) * 0.2 * (1 - q); y = 1.7 + Math.sin(a) * 0.16 * (1 - q); z = -7.1 - q * 1.3; }
+  } else if (u < 0.80) { const rr = Math.pow(r(), 0.7) * 8.5; const a = rr > 2.6 ? (Math.floor(r() * 5) - 2) * 0.23 + (r() - .5) * 0.13 : (r() - .5) * 1.1;
+    x = Math.sin(a) * rr * 0.9; z = 2.4 + Math.cos(a) * rr; y = -0.1 - rr * 0.03 + (r() - .5) * 0.2; type = 2; }
+  return [x, y, z, type];
+}
+const riverC = s => { const a = s * TAU; return [7 * Math.sin(a) + 1.5 * Math.sin(3 * a), 8.5 + 4.5 * Math.sin(2 * a + 0.6), 30 * Math.cos(a)]; };
+
+const pageU = {
+  uTime: { value: 0 }, uRiver: { value: 0 }, uBird: { value: 0 }, uSnow: { value: 0 }, uFlap: { value: 0 }, uGlow: { value: 0 },
+  uBirdPos: { value: new THREE.Vector3() }, uBirdScale: { value: 0.8 }, uPitch: { value: 0 }, uTex: { value: texPage }, uL, uFog: { value: new THREE.Vector3(FOG.r, FOG.g, FOG.b) }
+};
+{
+  const base = new THREE.PlaneGeometry(1, 1, 3, 5);
+  const g = new THREE.InstancedBufferGeometry(); g.index = base.index; g.setAttribute('position', base.getAttribute('position')); g.setAttribute('uv', base.getAttribute('uv'));
+  const seed = new Float32Array(N_PAGES * 4), bird = new Float32Array(N_PAGES * 4), id = new Float32Array(N_PAGES);
+  for (let i = 0; i < N_PAGES; i++) { for (let k = 0; k < 4; k++) seed[i * 4 + k] = rnd(); bird.set(birdPoint(i), i * 4); id[i] = i / N_PAGES; }
+  g.setAttribute('aSeed', new THREE.InstancedBufferAttribute(seed, 4)); g.setAttribute('aBird', new THREE.InstancedBufferAttribute(bird, 4)); g.setAttribute('aId', new THREE.InstancedBufferAttribute(id, 1));
+  g.instanceCount = N_PAGES;
+  const mat = new THREE.ShaderMaterial({
+    uniforms: pageU, side: THREE.DoubleSide,
+    vertexShader: /* glsl */`
+      attribute vec4 aSeed; attribute vec4 aBird; attribute float aId;
+      uniform float uTime,uRiver,uBird,uSnow,uFlap,uBirdScale,uPitch; uniform vec3 uBirdPos;
+      varying vec2 vUv; varying vec3 vN; varying vec3 vW; varying float vWarm; varying float vKB; varying float vCell;
+      mat3 rotE(vec3 a){ vec3 s=sin(a), c=cos(a);
+        mat3 rx=mat3(1.,0.,0., 0.,c.x,s.x, 0.,-s.x,c.x); mat3 ry=mat3(c.y,0.,-s.y, 0.,1.,0., s.y,0.,c.y); mat3 rz=mat3(c.z,s.z,0., -s.z,c.z,0., 0.,0.,1.);
+        return ry*rx*rz; }
+      vec3 riverC(float s){ float a=s*6.2831853; return vec3(7.0*sin(a)+1.5*sin(3.0*a), 8.5+4.5*sin(2.0*a+0.6), 30.0*cos(a)); }
+      void main(){
+        float t=uTime;
+        // each page has its own moment of leaving the book
+        float a=t-(12.5+22.0*pow(aId,0.45));
+        float born=max(step(0.0,a),uSnow); a=max(a,0.0);
+        // 1. the fountain: a rising spiral out of the open book
+        float th=aSeed.x*6.2831853+a*(1.5+aSeed.y);
+        float rad=0.22+0.9*pow(a,0.7)*(0.4+aSeed.z);
+        vec3 E=vec3(cos(th)*rad, 2.5+a*(1.5+1.3*aSeed.w)+0.3*sin(a*3.0+aSeed.x*10.0), sin(th)*rad);
+        // 2. the slow galaxy that fills the hall
+        float oy=1.4+22.5*aSeed.w;
+        float hw=oy<16.0 ? 9.0 : sqrt(max(144.0-(oy-16.0)*(oy-16.0),1.0))-2.6;
+        float rho=0.22+0.78*sqrt(aSeed.z);
+        float phi=aSeed.x*6.2831853+t*(0.05+0.09*aSeed.y)/rho;
+        vec3 O=vec3(hw*rho*sin(phi), oy+0.9*sin(t*0.45+aSeed.y*30.0), 33.0*rho*cos(phi));
+        vec3 P=mix(E,O,smoothstep(3.0,10.0,a));
+        // 3. the river along the moonlight
+        float s=fract(aSeed.x+t*0.036);
+        vec3 C=riverC(s); vec3 T=normalize(riverC(s+0.004)-C);
+        vec3 side=normalize(cross(T,vec3(0.,1.,0.))); vec3 up=cross(side,T);
+        float ang=aSeed.z*6.2831853+t*0.6+s*25.0;
+        float rr=2.5*sqrt(aSeed.w)*(0.7+0.3*sin(s*25.13+t));
+        vec3 R=C+(side*cos(ang)+up*sin(ang))*rr;
+        float kR=smoothstep(0.0,1.0,clamp(uRiver*1.7-aSeed.y*0.7,0.0,1.0));
+        P=mix(P,R,kR);
+        // 4. the bird
+        vec3 b=aBird.xyz; float ty=aBird.w;
+        float span=max(abs(b.x)-1.0,0.0);
+        float isWing=step(0.5,ty)*step(ty,1.5);
+        float fa=(0.55*sin(uFlap-span*0.12)+0.12)*isWing;
+        b.y+=span*sin(fa); b.x=sign(b.x)*(min(abs(b.x),1.0)+span*cos(fa));
+        float isTail=step(1.5,ty)*step(ty,2.5);
+        b.y+=isTail*sin(b.z*0.7-uFlap)*0.13*max(b.z-2.4,0.0);
+        b.x+=isTail*sin(b.z*0.45-uFlap*0.5+1.0)*0.06*max(b.z-2.4,0.0);
+        b.y-=0.4*sin(uFlap);
+        float cp=cos(uPitch), sp=sin(uPitch);
+        mat3 Rp=mat3(1.,0.,0., 0.,cp,sp, 0.,-sp,cp);          // nose up: it climbs toward the moon
+        vec3 B=uBirdPos+uBirdScale*(Rp*b);
+        float kB=step(ty,2.5)*smoothstep(0.0,1.0,clamp(uBird*1.6-aSeed.w*0.6,0.0,1.0));
+        P=mix(P,B,kB);
+        P+=(1.0-kB*0.9)*0.45*vec3(sin(t*0.9+aSeed.x*40.0),sin(t*1.1+aSeed.y*40.0),cos(t*0.8+aSeed.z*40.0));
+        // 5. afterwards: paper snow
+        float sy=mod(aSeed.z*26.0-t*(0.45+0.6*aSeed.w),26.0);
+        float sw=sy<16.0 ? 1.0 : sqrt(max(1.0-(sy-16.0)*(sy-16.0)/144.0,0.0));
+        vec3 S=vec3((aSeed.x*2.0-1.0)*9.5*sw+0.7*sin(t*0.7+aSeed.y*30.0), sy, aSeed.y*72.0-37.0+0.5*sin(t*0.5+aSeed.x*30.0));
+        P=mix(P,S,uSnow);
+
+        float sz=(0.72+0.6*aSeed.z)*born*smoothstep(0.0,0.7,a+uSnow)*(1.0-uSnow*step(0.3,aId));   // most pages left with the bird
+        vec2 q=position.xy;
+        float c=0.55*sin(t*(1.5+2.5*aSeed.x)+aSeed.y*40.0);
+        float tw=0.4*sin(t*(1.1+2.0*aSeed.z)+aSeed.w*30.0);
+        vec3 lp=vec3(q.x*0.30, q.y*0.42, c*(q.y*q.y-0.083)*0.42+tw*q.x*q.y*0.3)*sz;
+        vec3 ln=normalize(vec3(-tw*q.y, -(c*2.0*q.y+tw*0.714*q.x), 1.0));
+        mat3 Rt=rotE(aSeed.xyz*6.2831853+t*(vec3(0.9,0.6,0.8)+aSeed.yzx*1.4)*(1.0-0.6*uSnow));
+        mat3 Rb=rotE(vec3(-1.5708+0.32*sin(t*3.0+aSeed.x*20.0)+fa*0.0, 0.6*(aSeed.y-0.5), 0.35*sin(t*2.3+aSeed.z*20.0)+fa*sign(aBird.x)));
+        vec3 wp=P+mix(Rt*lp,Rp*(Rb*lp),kB);
+        vN=normalize(mix(Rt*ln,Rp*(Rb*ln),kB));
+        vW=wp; vUv=uv; vKB=max(kB,uSnow); vCell=floor(aSeed.w*3.999);
+        vWarm=exp(-a*0.75)*born*(1.0-uSnow);
+        gl_Position=projectionMatrix*viewMatrix*vec4(wp,1.0);
+      }`,
+    fragmentShader: GLSL_WINDOW + /* glsl */`
+      uniform sampler2D uTex; uniform float uGlow; uniform vec3 uFog;
+      varying vec2 vUv; varying vec3 vN; varying vec3 vW; varying float vWarm; varying float vKB; varying float vCell;
+      void main(){
+        vec3 N=normalize(vN)*(gl_FrontFacing?1.0:-1.0);
+        vec2 cell=vec2(mod(vCell,2.0),floor(vCell*0.5));
+        vec3 paper=texture2D(uTex,(clamp(vUv,0.01,0.99)+cell)*0.5).rgb;
+        float nl=dot(N,-uL);
+        float diff=max(nl,0.0)+0.5*max(-nl,0.0);                 // paper lets the moon through
+        float beam=windowMask(vW);
+        vec3 moon=vec3(0.60,0.73,1.0);
+        vec3 col=paper*(vec3(0.050,0.072,0.135)*(0.7+0.3*N.y)+moon*diff*(0.07+3.4*beam));
+        col+=paper*vec3(1.0,0.60,0.24)*vWarm*0.9;                // still warm from the book
+        col+=paper*moon*uGlow*(0.22+0.78*vKB)*(0.55+0.45*abs(nl));
+        float d=length(vW-cameraPosition);
+        col=mix(col,uFog,1.0-exp(-d*d*0.00011));
+        gl_FragColor=vec4(col,1.0);
+      }` });
+  const pages = new THREE.Mesh(g, mat); pages.frustumCulled = false; scene.add(pages);
+}
+
+/* ───────────────────────── post: light you can see ───────────────────────── */
+const composer = new EffectComposer(renderer, new THREE.WebGLRenderTarget(4, 4, { type: THREE.HalfFloatType, depthTexture: new THREE.DepthTexture(4, 4) }));
+composer.renderTarget2.depthTexture = new THREE.DepthTexture(4, 4);   // clone() shares the depth image; each buffer needs its own
+composer.addPass(new RenderPass(scene, camera));
+class VolumetricPass extends ShaderPass {
+  render(r, wb, rb, dt, mask) { this.uniforms.tDepth.value = rb.depthTexture; super.render(r, wb, rb, dt, mask); }
+}
+const QUAD_VS = `varying vec2 vUv; void main(){ vUv=uv; gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0); }`;
+const volPass = new VolumetricPass({
+  uniforms: { tDiffuse: { value: null }, tDepth: { value: null }, uPI: { value: camera.projectionMatrixInverse }, uVI: { value: camera.matrixWorld }, uCam: { value: camera.position }, uL, uClock, uStrength: { value: 0.01 } },
+  vertexShader: QUAD_VS,
+  fragmentShader: GLSL_WINDOW + GLSL_NOISE + /* glsl */`
+    uniform sampler2D tDiffuse, tDepth; uniform mat4 uPI, uVI; uniform vec3 uCam; uniform float uClock, uStrength; varying vec2 vUv;
+    void main(){
+      vec4 col=texture2D(tDiffuse,vUv);
+      float d=texture2D(tDepth,vUv).x;
+      vec4 v=uPI*vec4(vUv*2.0-1.0,d*2.0-1.0,1.0); v/=v.w;
+      vec3 rd=(uVI*v).xyz-uCam; float len=min(length(rd),120.0); rd=normalize(rd);
+      float j=hash1(gl_FragCoord.xy+fract(uClock)*97.0);
+      float dt=len/30.0, acc=0.0;
+      for(int i=0;i<30;i++){
+        vec3 p=uCam+rd*(float(i)+j)*dt;
+        float m=windowMask(p);
+        if(m>0.001){ float dens=0.45+0.75*noise3(p*0.21+vec3(0.0,-uClock*0.03,uClock*0.06)); acc+=m*dens*exp(-(p.z+40.0)*0.020); }
+      }
+      float ph=0.45+0.9*pow(max(dot(rd,-uL),0.0),6.0);
+      col.rgb+=vec3(0.52,0.66,1.0)*acc*dt*uStrength*ph;
+      gl_FragColor=col;
+    }` });
+volPass.material.depthTest = false; volPass.material.depthWrite = false;
+composer.addPass(volPass);
+const bloom = new UnrealBloomPass(new THREE.Vector2(256, 256), 0.5, 0.75, 0.9);
+composer.addPass(bloom);
+const gradePass = new ShaderPass({
+  uniforms: { tDiffuse: { value: null }, uClock, uFade: { value: 0 }, uWhite: { value: 0 } },
+  vertexShader: QUAD_VS,
+  fragmentShader: GLSL_NOISE + /* glsl */`
+    uniform sampler2D tDiffuse; uniform float uClock,uFade,uWhite; varying vec2 vUv;
+    void main(){
+      vec2 d=vUv-0.5;
+      vec3 c=vec3(texture2D(tDiffuse,vUv+d*0.0016).r, texture2D(tDiffuse,vUv).g, texture2D(tDiffuse,vUv-d*0.0016).b);
+      c=max(c,0.0);
+      c*=mix(0.22,1.0,1.0-smoothstep(0.28,0.86,length(d*vec2(1.0,1.2))));
+      float l=dot(c,vec3(0.2126,0.7152,0.0722));
+      c=mix(c,c*vec3(0.92,0.98,1.10),1.0-smoothstep(0.0,0.5,l));     // cool the shadows
+      c+=(hash1(gl_FragCoord.xy+fract(uClock)*131.0)-0.5)*(0.003+0.035*l);
+      c=mix(c,vec3(5.0,5.4,6.4),uWhite);
+      gl_FragColor=vec4(c*uFade,1.0);
+    }` });
+composer.addPass(gradePass);
+composer.addPass(new OutputPass());
+
+let pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
+function resize() {
+  const w = window.innerWidth, h = window.innerHeight;
+  renderer.setPixelRatio(pixelRatio); renderer.setSize(w, h, false);
+  composer.setPixelRatio(pixelRatio); composer.setSize(w, h);
+  camera.aspect = w / h; camera.fov = w / h < 1 ? 64 : 42; camera.updateProjectionMatrix();
+  scene.userData.dust.material.uniforms.uPx.value = h * pixelRatio / 60;
+}
+window.addEventListener('resize', resize); resize();
+
+/* ───────────────────────── direction: timeline & camera ───────────────────────── */
+function birdAt(t) {
+  const k = ss(60, 80, t), e = Math.pow(ss(80, 88.5, t), 2);
+  const y = mix(10.6, 12.2, k) + 0.5 * Math.sin(t * 0.5), z = mix(5, -7, clamp((t - 60) / 20));
+  return { p: [0.6 * Math.sin(t * 0.33), mix(y, 13.6, e), mix(z, -50, e)], s: 0.8 * (1 - 0.3 * e) };
+}
+const shots = [
+  { t: 0, f: t => ({ p: [0, 2.0 + 0.03 * t, 36 - 2.1 * t], q: mix3([0, 12, -40], [0, 2.7, 0], ss(3, 11, t)) }) },
+  { t: 12, blend: 4, f: t => { const a = 1.62 - 0.07 * (t - 12); return { p: [4.3 * Math.sin(a), 3.3 + 0.06 * (t - 12), 4.3 * Math.cos(a)], q: [0, 2.9 + 0.11 * (t - 12), 0] }; } },
+  { t: 20, blend: 5, f: t => { const k = ss(20, 40, t), a = 1.06 - 0.045 * (t - 20), r = mix(5, 24, k); return { p: [Math.sin(a) * Math.min(r, 7.5), mix(3.6, 10, k), Math.cos(a) * r], q: [0, mix(4.5, 11, k), mix(0, -10, k)] }; } },
+  { t: 40, blend: 5, f: t => { const sc = 1.0 - (t - 40) * 0.011, c = riverC(sc), n = riverC(sc - 0.085); return { p: [c[0] * 0.5, c[1] + 2.6, c[2]], q: mix3(n, [0, 12, -40], 0.3) }; } },
+  { t: 60, blend: 7, f: t => { const b = birdAt(t).p, e = ss(80, 88.5, t); return { p: [-3 + 0.13 * (t - 60), 3.0 + 0.03 * (t - 60), 21 - 0.16 * (t - 60) - 9 * e], q: mix3(b, [0, 13, -40], 0.14) }; } },
+  { t: 88.6, cut: true, f: t => ({ p: [0, 1.5, 31 - 0.35 * (t - 88.6)], q: [0, 9.5, -40] }) },
+];
+function camAt(t) {
+  let i = 0; while (i < shots.length - 1 && t >= shots[i + 1].t) i++;
+  let c = shots[i].f(t);
+  if (i > 0 && !shots[i].cut) { const k = sm((t - shots[i].t) / shots[i].blend); if (k < 1) { const p = shots[i - 1].f(t); c = { p: mix3(p.p, c.p, k), q: mix3(p.q, c.q, k) }; } }
+  return c;
+}
+const captions = [
+  [2.5, 8.5, '深夜，图书馆睡着了。', 'Midnight. The library is asleep.'],
+  [10.5, 17, '只有一本书，还醒着。', 'Only one book is still awake.'],
+  [20.5, 28.5, '风翻开它。两万四千页寓言，一页一页，放下了自己的重量。', 'The wind opens it. Twenty-four thousand pages of fable let go of their weight.'],
+  [31, 38, '每一页，都是一个没做完的梦。', 'Every page is a dream someone left unfinished.'],
+  [42.5, 50, '它们沿着月光漫步，像一条认得大海的河。', 'They wander down the moonlight like a river that knows the sea.'],
+  [52.5, 59.5, '梦说：写下我的人早已睡去，读到我的人还没有醒来。', 'The dream says: who wrote me is long asleep; who will read me has yet to wake.'],
+  [63, 70.5, '于是，纸学会了翅膀。', 'And so paper learns the shape of wings.'],
+];
+const titles = [
+  [73, 84, '<div class="big en">Let Fable take Flight.</div>', 'corner'],
+  [91.2, 98.6, '<div class="big zh">寓言乘风，梦在舞动</div><div class="small en">Let Fable take Flight.</div>'],
+];
+const el = id => document.getElementById(id);
+const capEl = el('caption'), capZh = capEl.querySelector('.zh'), capEn = capEl.querySelector('.en'), titleEl = el('title');
+let capIdx = -1, titleIdx = -1;
+function fadeOf(t, a, b, f = 1.3) { return clamp(Math.min((t - a) / f, (b - t) / f)); }
+function overlay(T) {
+  let ci = captions.findIndex(c => T >= c[0] && T <= c[1]);
+  if (ci !== capIdx) { capIdx = ci; if (ci >= 0) { capZh.textContent = captions[ci][2]; capEn.textContent = captions[ci][3]; } }
+  capEl.style.opacity = ci >= 0 ? fadeOf(T, captions[ci][0], captions[ci][1]).toFixed(3) : 0;
+  let ti = titles.findIndex(c => T >= c[0] && T <= c[1]);
+  if (ti !== titleIdx) { titleIdx = ti; if (ti >= 0) { titleEl.innerHTML = titles[ti][2]; titleEl.className = titles[ti][3] || ''; } }
+  const o = ti >= 0 ? fadeOf(T, titles[ti][0], titles[ti][1], 2.4) : 0;
+  titleEl.style.opacity = o.toFixed(3); titleEl.style.filter = o < 1 ? `blur(${((1 - o) * 7).toFixed(1)}px)` : 'none';
+  titleEl.style.letterSpacing = ti >= 0 ? `${(0.06 * (T - titles[ti][0]) / 10).toFixed(4)}em` : '0';
+  const aloft = T > 88.6 ? N_PAGES : Math.round(N_PAGES * Math.pow(clamp((T - 12.5) / 22), 2.2));
+  el('count').textContent = aloft.toLocaleString('en-US');
+  const s = Math.floor(T); el('clock').textContent = `${String(Math.floor(s / 60)).padStart(2, '0')}:${String(s % 60).padStart(2, '0')}`;
+  el('progress').style.width = `${(T / DUR * 100).toFixed(2)}%`;
+}
+
+const camTarget = new THREE.Vector3();
+function direct(T, clock) {
+  pageU.uTime.value = T;
+  pageU.uRiver.value = ss(37, 45.5, T);
+  pageU.uBird.value = ss(60, 68.5, T);
+  const snow = T > 88.6 ? 1 : 0; pageU.uSnow.value = snow;
+  pageU.uFlap.value = TAU * T / BAR;
+  pageU.uGlow.value = snow ? 0.2 : 0.1 * ss(37, 45, T) + ss(61, 72, T) * (1 + 2.2 * ss(80, 88, T));
+  const b = birdAt(T); pageU.uBirdPos.value.fromArray(b.p); pageU.uBirdScale.value = b.s;
+  pageU.uPitch.value = 0.62 * ss(61, 70, T) * (1 - 0.5 * ss(80, 88, T));
+  // the book opens
+  const open = ss(9.5, 13.5, T), ang = mix(1.42, 0.12, open);
+  halves.forEach(h => { h.g.rotation.z = h.side * ang; });
+  const glow = ss(9.8, 14.5, T) * (1 - 0.8 * ss(34, 44, T)) * (0.9 + 0.1 * Math.sin(clock * 7));
+  matLeaf.emissiveIntensity = glow * 1.5; bookLight.intensity = glow * 26; bookGlow.material.opacity = glow * 0.4; bookGlow.scale.setScalar(2 + glow * 5);
+  gradePass.uniforms.uFade.value = ss(0, 3.5, T) * (1 - ss(96.6, 99.6, T));
+  gradePass.uniforms.uWhite.value = ss(84.2, 88.3, T) * (1 - ss(88.7, 93, T));
+  volPass.uniforms.uStrength.value = 0.009 * (1 + 0.6 * ss(80, 88, T));
+  const c = camAt(T);
+  camera.position.set(c.p[0] + 0.07 * Math.sin(clock * 0.37), c.p[1] + 0.05 * Math.sin(clock * 0.29 + 1), c.p[2] + 0.06 * Math.sin(clock * 0.23 + 2));
+  camTarget.fromArray(c.q); camera.lookAt(camTarget);
+  camera.rotation.z += 0.006 * Math.sin(clock * 0.21);
+  overlay(playing || FREEZE !== null ? T : 0);
+}
+
+/* ───────────────────────── sound: a piano and a great deal of paper ───────────────────────── */
+const TR = 1;   // written in C, played in D-flat
+const CH = { F: [41, 48, 53, 57, 60, 57], CE: [40, 48, 52, 55, 60, 55], Dm: [38, 45, 50, 53, 57, 60], G: [43, 50, 55, 59, 62, 59], Am: [45, 52, 57, 60, 64, 60], EmG: [43, 52, 55, 59, 64, 59], C: [36, 43, 48, 52, 55, 60] };
+const PROG = ['F', 'CE', 'F', 'G', 'Am', 'F', 'C', 'G', 'Am', 'F', 'CE', 'G', 'Dm', 'Am', 'F', 'G', 'C', 'G', 'Am', 'EmG', 'F', 'CE', 'Dm', 'G', 'F', 'G', 'Am', 'CE', 'F', 'G', 'C', 'CE', 'F', 'G', 'C', 'F', 'C', 'C'];
+const MEL = [
+  [[3, 88]], [[3, 91]], [[1, 88], [4, 93]], [[3, 86]],
+  [[0, 76], [3, 81]], [[0, 79], [2, 77], [3, 76]], [[0, 74], [1, 76], [3, 79]], [[0, 74], [3, 71]],
+  [[0, 76], [3, 81], [5, 83]], [[0, 84], [3, 81]], [[0, 79], [3, 76]], [[0, 74], [2, 76], [3, 74]],
+  [[0, 77], [3, 81]], [[0, 76], [3, 84]], [[0, 81], [2, 79], [3, 77], [5, 76]], [[0, 74], [3, 79]],
+  [[0, 76], [1, 79], [2, 84], [3, 88]], [[0, 86], [2, 83], [3, 79]], [[0, 81], [1, 84], [2, 88], [3, 84]], [[0, 83], [2, 79], [3, 76]],
+  [[0, 81], [1, 84], [2, 89], [3, 88], [5, 86]], [[0, 84], [3, 79]], [[0, 77], [1, 81], [2, 86], [3, 84]], [[0, 83], [3, 86]],
+  [[0, 84], [3, 81], [4, 84], [5, 89]], [[0, 91], [3, 86]], [[0, 88], [3, 84], [4, 88], [5, 93]], [[0, 91], [4, 88]],
+  [[0, 89], [2, 88], [3, 86], [5, 84]], [[0, 86], [3, 91]], [[0, 88]], [[0, 91], [3, 96]],
+  [[0, 81], [1, 84], [2, 89], [3, 93], [4, 96], [5, 101]], [[0, 91], [1, 95], [2, 98], [3, 103]],
+  [[0, 88]], [[0, 81], [3, 84]], [[0, 79], [3, 76]], []
+];
+function buildScore() {
+  const ev = [], E8 = BAR / 6, r = mulberry(7);
+  const push = (t, m, v) => ev.push({ t: t + (r() - .5) * 0.014, m: m + TR, v: v * (0.9 + r() * 0.2) });
+  PROG.forEach((name, bar) => {
+    const t0 = bar * BAR, ch = CH[name];
+    const vel = bar < 4 ? 0.3 : bar < 16 ? 0.34 + 0.02 * (bar - 4) : bar < 24 ? 0.62 + 0.01 * (bar - 16) : bar < 34 ? 0.72 + 0.03 * (bar - 24) : 0.3 - 0.03 * (bar - 34);
+    if (bar === 37) { [36, 43, 52, 60, 67, 76, 84].forEach((m, i) => push(t0 + i * 0.07, m, 0.3)); return; }
+    const sparse = bar < 4 || bar >= 34;
+    ch.forEach((m, i) => { if (sparse && i !== 0 && i !== 3) return; push(t0 + i * E8, m, vel * (i === 0 ? 0.75 : 0.5)); });
+    if (bar >= 16 && bar < 34) push(t0, ch[0] - 12, vel * 0.7);
+    if (bar >= 24 && bar < 34) { push(t0 + 3 * E8, ch[0], vel * 0.55); push(t0, ch[3] + 12, vel * 0.4); push(t0 + 3 * E8, ch[4] + 12, vel * 0.4); }
+    MEL[bar].forEach(([e, m]) => { push(t0 + e * E8, m, vel); if (bar >= 24 && bar < 34) push(t0 + e * E8, m - 12, vel * 0.6); });
+  });
+  for (let k = 0; k < 10; k++) ev.push({ t: 62.4 + k * BAR + 0.5, whoosh: 0.5 + 0.05 * k });
+  ev.push({ t: 12.7, flick: 1 }, { t: 12.82, flick: .7 }, { t: 13.6, flick: .8 }, { t: 14.3, flick: .9 }, { t: 14.38, flick: .6 });
+  return ev.sort((a, b) => a.t - b.t);
+}
+const paperLevel = T => T < 12.5 ? 0 : T < 20 ? mix(0.04, 0.3, (T - 12.5) / 7.5) : T < 36 ? mix(0.3, 0.85, (T - 20) / 16) : T < 60 ? 0.78 + 0.22 * Math.sin(T * 0.9) : T < 68 ? mix(0.9, 0.5, (T - 60) / 8) : T < 84 ? 0.45 : T < 88.6 ? mix(0.45, 1, (T - 84) / 4.6) : mix(0.16, 0.04, (T - 88.6) / 11);
+
+const audio = { ctx: null, t0: 0, idx: 0, score: buildScore(), nextFlick: 0, muted: false };
+function buildAudio() {
+  const AC = new (window.AudioContext || window.webkitAudioContext)(); audio.ctx = AC;
+  const master = AC.createGain(); master.gain.value = 0.85; audio.master = master;
+  const comp = AC.createDynamicsCompressor(); comp.threshold.value = -16; comp.ratio.value = 3; master.connect(comp); comp.connect(AC.destination);
+  const conv = AC.createConvolver();   // the hall itself: four seconds of stone
+  { const len = Math.floor(AC.sampleRate * 4.4), buf = AC.createBuffer(2, len, AC.sampleRate);
+    for (let c = 0; c < 2; c++) { const d = buf.getChannelData(c); let lp = 0; for (let i = 0; i < len; i++) { const t = i / len; lp += ((Math.random() * 2 - 1) - lp) * (0.6 - 0.5 * t); d[i] = lp * Math.pow(1 - t, 2.6) * Math.min(1, i / 300); } }
+    conv.buffer = buf; }
+  const wet = AC.createGain(); wet.gain.value = 0.62; conv.connect(wet); wet.connect(master);
+  audio.piano = AC.createGain(); audio.piano.gain.value = 1; audio.piano.connect(master); audio.piano.connect(conv);
+  audio.paper = AC.createGain(); audio.paper.gain.value = 1; audio.paper.connect(master);
+  const send = AC.createGain(); send.gain.value = 0.3; audio.paper.connect(send); send.connect(conv);
+  const nb = AC.createBuffer(1, AC.sampleRate * 3, AC.sampleRate); { const d = nb.getChannelData(0); for (let i = 0; i < d.length; i++) d[i] = Math.random() * 2 - 1; } audio.noise = nb;
+  const im = new Float32Array([0, 1, 0.46, 0.24, 0.13, 0.085, 0.05, 0.034, 0.02, 0.012, 0.008, 0.005]);
+  audio.wave = AC.createPeriodicWave(new Float32Array(im.length), im);
+  const loop = (type, freq, q) => { const s = AC.createBufferSource(); s.buffer = nb; s.loop = true; const f = AC.createBiquadFilter(); f.type = type; f.frequency.value = freq; f.Q.value = q; const g = AC.createGain(); g.gain.value = 0; s.connect(f); f.connect(g); g.connect(audio.paper); s.start(); return g; };
+  audio.rush = loop('bandpass', 3400, 0.5); audio.wind = loop('lowpass', 260, 0.4);
+}
+function playNote(m, when, vel) {
+  const AC = audio.ctx, f = 440 * Math.pow(2, (m - 69) / 12);
+  const lp = AC.createBiquadFilter(); lp.type = 'lowpass'; lp.Q.value = 0.4;
+  lp.frequency.setValueAtTime(Math.min(f * (2.5 + vel * 9), 9500), when); lp.frequency.setTargetAtTime(Math.min(f * 1.6 + 180, 3800), when, 0.4);
+  const g = AC.createGain(), tau = clamp(2.3 - (m - 36) / 38, 0.45, 2.4), peak = vel * 0.17 * (m < 50 ? 1.3 : m > 90 ? 0.8 : 1);
+  g.gain.setValueAtTime(0, when); g.gain.linearRampToValueAtTime(peak, when + 0.007); g.gain.setTargetAtTime(peak * 0.5, when + 0.007, 0.11); g.gain.setTargetAtTime(0, when + 0.32, tau);
+  const pan = AC.createStereoPanner(); pan.pan.value = clamp((m - 66) / 55, -0.7, 0.7);
+  lp.connect(g); g.connect(pan); pan.connect(audio.piano);
+  for (const det of [1, 1.0016]) { const o = AC.createOscillator(); o.setPeriodicWave(audio.wave); o.frequency.value = f * det; o.connect(lp); o.start(when); o.stop(when + 0.4 + tau * 5); }
+}
+function playFlick(when, inten, pan) {
+  const AC = audio.ctx, s = AC.createBufferSource(); s.buffer = audio.noise; s.playbackRate.value = 0.6 + Math.random() * 1.2;
+  const bp = AC.createBiquadFilter(); bp.type = 'bandpass'; bp.frequency.value = 1700 + Math.random() * 5200; bp.Q.value = 0.6 + Math.random();
+  const g = AC.createGain(), d = 0.04 + Math.random() * 0.15, pk = inten * (0.03 + Math.random() * 0.08);
+  g.gain.setValueAtTime(0, when); g.gain.linearRampToValueAtTime(pk, when + 0.004 + Math.random() * 0.02); g.gain.exponentialRampToValueAtTime(0.0001, when + d);
+  const p = AC.createStereoPanner(); p.pan.value = pan;
+  s.connect(bp); bp.connect(g); g.connect(p); p.connect(audio.paper); s.start(when, Math.random() * 2, d + 0.05);
+}
+function playWhoosh(when, amt) {
+  const AC = audio.ctx, s = AC.createBufferSource(); s.buffer = audio.noise;
+  const f = AC.createBiquadFilter(); f.type = 'lowpass'; f.Q.value = 0.8;
+  f.frequency.setValueAtTime(240, when); f.frequency.exponentialRampToValueAtTime(1500, when + 0.5); f.frequency.exponentialRampToValueAtTime(260, when + 1.4);
+  const g = AC.createGain(); g.gain.setValueAtTime(0, when); g.gain.linearRampToValueAtTime(0.2 * amt, when + 0.5); g.gain.linearRampToValueAtTime(0, when + 1.5);
+  s.connect(f); f.connect(g); g.connect(audio.paper); s.start(when, Math.random(), 1.6);
+}
+function schedule(T) {
+  const AC = audio.ctx; if (!AC || AC.state !== 'running') return;
+  const sc = audio.score;
+  while (audio.idx < sc.length && sc[audio.idx].t < T + 0.35) {
+    const e = sc[audio.idx++]; if (e.t < T - 0.03) continue; const when = audio.t0 + e.t;
+    if (e.whoosh) playWhoosh(when, e.whoosh); else if (e.flick) playFlick(when, e.flick * 1.6, (Math.random() - .5) * 0.6); else playNote(e.m, when, e.v);
+  }
+  const lv = paperLevel(T), now = AC.currentTime;
+  audio.rush.gain.setTargetAtTime(lv * lv * 0.05, now, 0.25); audio.wind.gain.setTargetAtTime(0.05 + lv * 0.11, now, 0.5);
+  if (audio.nextFlick < T) audio.nextFlick = T;
+  while (audio.nextFlick < T + 0.2) {
+    if (lv > 0.01) { const n = Math.random() < 0.25 ? 3 + (Math.random() * 4 | 0) : 1, pan = Math.random() * 1.8 - 0.9;   // sometimes a whole page riffles
+      for (let k = 0; k < n; k++) playFlick(audio.t0 + audio.nextFlick + k * (0.025 + Math.random() * 0.02), lv, pan); }
+    audio.nextFlick += -Math.log(1 - Math.random()) / (1.5 + 30 * lv);
+  }
+}
+
+/* ───────────────────────── run ───────────────────────── */
+let playing = false, paused = false, silentT0 = 0, lastNow = performance.now(), slow = 0, warm = 0;
+const gate = el('gate'), go = el('go'), hint = el('hint');
+function now() { return performance.now() / 1000; }
+function filmTime() {
+  if (FREEZE !== null) return FREEZE;
+  if (!playing) return 6.0;
+  let T = audio.ctx ? audio.ctx.currentTime - audio.t0 : (paused ? silentT0 : now() - silentT0);
+  if (T >= DUR) { restart(); T = 0; }
+  return Math.max(T, 0);
+}
+function restart() { audio.idx = 0; audio.nextFlick = 0; if (audio.ctx) audio.t0 = audio.ctx.currentTime + 0.1; else silentT0 = now(); }
+async function start() {
+  go.disabled = true;
+  try { buildAudio(); await audio.ctx.resume(); } catch (e) { audio.ctx = null; }
+  playing = true; restart(); gate.classList.add('gone');
+  hint.classList.add('on'); setTimeout(() => hint.classList.remove('on'), 6000);
+}
+go.addEventListener('click', start);
+function togglePause() {
+  if (!playing) return; paused = !paused;
+  if (audio.ctx) paused ? audio.ctx.suspend() : audio.ctx.resume();
+  else silentT0 = paused ? now() - silentT0 : now() - silentT0;
+}
+window.addEventListener('keydown', e => {
+  if (e.code === 'Space') { e.preventDefault(); playing ? togglePause() : start(); }
+  else if (e.key === 'm' || e.key === 'M') { audio.muted = !audio.muted; if (audio.master) audio.master.gain.value = audio.muted ? 0 : 0.85; }
+  else if (e.key === 'f' || e.key === 'F') { document.fullscreenElement ? document.exitFullscreen() : document.documentElement.requestFullscreen?.(); }
+  else if (e.key === 'r' || e.key === 'R') { if (playing) restart(); }
+});
+window.addEventListener('pointermove', () => { if (!playing) return; hint.classList.add('on'); clearTimeout(hint._t); hint._t = setTimeout(() => hint.classList.remove('on'), 2500); });
+document.addEventListener('visibilitychange', () => { if (!audio.ctx || paused) return; document.hidden ? audio.ctx.suspend() : audio.ctx.resume(); });
+
+function frame() {
+  requestAnimationFrame(frame);
+  const n = performance.now(), dt = n - lastNow; lastNow = n;
+  uClock.value = n / 1000;
+  const T = filmTime();
+  direct(T, uClock.value);
+  if (playing && !paused) schedule(T);
+  composer.render();
+  // if the machine is struggling, give up pixels before giving up pages
+  if (playing && !paused && ++warm > 90) { slow = dt > 30 ? slow + 1 : Math.max(0, slow - 1); if (slow > 45 && pixelRatio > 0.75) { pixelRatio = Math.max(0.75, pixelRatio - 0.25); slow = 0; warm = 0; resize(); } }
+}
+direct(FREEZE ?? 6, 0);
+renderer.shadowMap.needsUpdate = true;
+if (FREEZE !== null) gate.style.display = 'none';
+go.disabled = false; go.textContent = '开始放映';
+window.__ready = true;
+frame();
+</script>
+</body>
+</html>
