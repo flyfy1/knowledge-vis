@@ -1,0 +1,41 @@
+button,.btn,select,.lang-toggle button,.step-nav a,.prediction-options label,.site-head .official-link,summary,.back-link,.related a{min-height:48px}
+.back-link,.related a,a.btn{display:inline-flex;align-items:center}.step-nav a{display:inline-flex;align-items:center}
+button.btn:disabled{opacity:1;color:var(--muted);background:var(--panel);border-color:var(--muted);border-style:dashed}
+.btn,select{border-color:var(--muted)}.head-top{flex-wrap:wrap}.lang-toggle{margin-left:auto}.lang-toggle button{min-width:48px}
+.stage,.step-inner{min-width:0}p,li,h1,h2,h3,label,summary,.readout{overflow-wrap:anywhere}
+select{max-width:100%;width:100%;white-space:normal}.controls .btn{flex:1 1 160px;max-width:100%;white-space:normal}
+html{scroll-behavior:auto}.step{scroll-margin-top:100px}
+.pair{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:16px;margin:16px 0}
+.trio{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:16px;margin:16px 0}
+.table-wrap{max-width:100%;overflow-x:auto;border:1px solid var(--line);border-radius:8px;padding:4px 8px;background:var(--panel)}
+.table-wrap:focus-visible,pre:focus-visible,textarea:focus-visible{outline:3px solid var(--accent2);outline-offset:4px}
+caption{caption-side:top;text-align:left;color:var(--muted);font-size:14px;padding:8px 0}
+table.wide{min-width:560px}
+tr.current-row td,tr.current-row th{background:#164b59;color:var(--text)}
+tr.current-row td:first-child{color:var(--accent2);font-weight:700}
+tr.zero-row td{color:var(--accent2)}
+tr.diff-row td{color:var(--bad)}
+tr.missing-row td{color:var(--bad);font-style:italic}
+tr.future-row td{color:var(--muted)}
+tr.done-row td{color:var(--muted);text-decoration:line-through;text-decoration-color:var(--line)}
+.toggles th{white-space:nowrap;color:var(--text)}.toggles td{padding:6px}
+.btn.toggle{width:100%;min-width:118px;font-variant-numeric:tabular-nums}
+.btn.toggle[aria-pressed="true"]{background:#164b59;border-color:var(--accent);color:var(--text);border-style:solid}
+.btn.toggle[aria-pressed="false"]{background:var(--bg);color:var(--muted);border-style:dashed;text-decoration:line-through}
+.ledger-list{padding-left:24px}.ledger-list li{padding:6px 0;border-bottom:1px solid var(--line);font-variant-numeric:tabular-nums}
+.ledger-list li:last-child{color:var(--accent)}
+details.think{border-left:3px solid var(--accent2);padding-left:16px}
+.map li{margin:8px 0}
+.prediction-options{min-inline-size:0}.prediction-options label{gap:12px;padding:8px 0;align-items:flex-start}.prediction-options input{width:20px;height:20px;flex-shrink:0;margin-top:6px}
+input:focus-visible{outline:3px solid var(--accent2);outline-offset:4px}
+textarea{width:100%;background:var(--panel2);color:var(--text);font:14px/1.6 ui-monospace,monospace;padding:12px;border:1px solid var(--muted)}
+pre{white-space:pre-wrap;overflow-wrap:anywhere}
+.solution-actions>*{max-width:100%;overflow-wrap:anywhere}
+@media(max-width:560px){.controls .btn{flex-basis:100%}.back-link{max-width:100%}.table-wrap{padding:2px 4px}.btn.toggle{min-width:96px;padding-inline:6px}}
+.table-wrap th,.table-wrap td{overflow-wrap:normal;word-break:keep-all;white-space:nowrap;padding:8px 10px}
+.table-wrap td.wrap{white-space:normal}
+.trio{grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr))}
+@media(max-width:560px){.toggles th{white-space:normal;min-width:64px}.btn.toggle{min-width:0}.toggles td{padding:4px}}
+.table-wrap{margin:16px 0}.pair .table-wrap,.trio .table-wrap{margin:0}
+/* Cross-review 2026-11-11: at 1280 px the two-column trace left user_day's amount column clipped; tighter cells keep it visible. */
+.trio .table-wrap th,.trio .table-wrap td{padding:8px 7px}

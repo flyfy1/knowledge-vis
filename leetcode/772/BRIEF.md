@@ -1,88 +1,89 @@
-# #772 · Basic Calculator III — blocked author brief / 作者阻塞记录
+# #772 · Basic Calculator III — author brief (rebuilt 2026-11-11)
 
-Status: blocked before implementation. This problem remains in scope. This is
-an author access investigation, not an implementation candidate or independent review.
+Status: author build and self-check complete; independent review pending. No LeetCode
+submission, independent acceptance, registration or deployment is claimed.
 
-## Product and design boundary
+## History of this brief
 
-Category: leetcode / computing; stage: university. Target: readers comfortable
-with basic programming who want to reconstruct the official algorithm through
-hand calculation, reversible interaction and canonical executable code.
-Reuse the approved lesson pattern and exact shared tokens from
-`../style.css`, with `../common.js` locale behavior. Design authority:
-`../../specs/reviews/leetcode-all-hard-design-review.md`, including dispatcher
-adjudication. No new layout, framework or design review is proposed.
+The 2026-10-25 preparation pass stopped at the source gate (subscriber-only; GraphQL `content`
+and `codeSnippets` null, page 403; evidence in `tests/evidence/`, probe `tests/check_official_access.py`,
+metadata preflight then failed because `lesson-entry.json` did not exist). Re-run into scratch on
+2026-11-11: still blocked, exit 2. The owner asked on 2026-11-11 for the remaining problems to be
+finished, so the lesson is built on the publicly circulated statement, labelled on the page.
+The probe is kept as access evidence, not as a lesson test.
 
-Read before author discovery: WORKFLOW.md, UI-I18N-SPEC.md,
-specs/leetcode-explainers.md, specs/leetcode-hard-traces.md,
-specs/leetcode-review-gates.md, specs/leetcode-rendered-state-contract.md,
-specs/reviews/leetcode-all-hard-design-review.md and
-`~/Documents/agent-skills/website-design/SKILL.md`.
+## Contract taught (not verified against the official page)
 
-## Official access observations
+- `s`: non-empty, digits, `+ - * /`, `(`, `)`, possibly spaces; always a valid expression.
+  Public metadata agrees on the name `calculate(s) -> int` and on three raw sample inputs.
+- **Division is integer division truncating toward zero** (−7/2 = −3). The page teaches this explicitly
+  and shows why Python `//` would be wrong.
+- **Parentheses nest arbitrarily.** Assumed |s| ≤ 10^4, so the solution uses an explicit stack, not recursion.
+- **No unary minus** is taught (`-3`, `2*(-3)` are rejected by the lesson's input form). The Python
+  solution happens to return the natural value for a leading `-` or `(-`, but this is untested contract.
+- All intermediate results assumed to fit in 32-bit signed integers; no division by zero.
 
-Official source: https://leetcode.com/problems/basic-calculator-iii/
+## Learning path
 
-On 2026-10-25 the web tool's official-page view displayed the Premium gate.
-See `tests/evidence/official-web-observation.md`. Ordinary public GraphQL POST
-and GET both returned HTTP 200 with frontend ID 772, title Basic Calculator III,
-`isPaidOnly: true`, `content: null` and `codeSnippets: null`.
-The separately reproducible POST response and HTTP page capture are retained in
-`tests/evidence/`; their exact capture timestamp is in `access-report.json`.
-The direct HTTP page capture returned 403; the web tool separately exposed the
-subscription gate. These are different access observations, not a successful
-authenticated page retrieval.
+| Step | Question | Example / action |
+|---|---|---|
+| 1 Task | What does the calculator compute? | 14−3*(2+8)/4 = 7 by hand; truncation toward zero contrasted with floor |
+| 2 Brute force | What breaks if we copy hand calculation? | Executable `flat` + `brute` rewrite text; 3-row walk of the main example; ≈2d² ≈ 1.25·10^7 copied characters at d = 2500; rewritten negatives "−5/2*3" break `flat` |
+| 3 Precedence | Having read "14−3", what must be remembered? | Question before reveal; total / term / op; ledger of 14−3*10/4 generated from core.js; sign folded into term and why truncation keeps that safe |
+| 4 Parentheses | Where does the outer state wait while "(…)" is computed? | Question before reveal → park (total, term, op) on a stack; reversible trace with presets, custom input with validation, slider, token strip, state, stack and calculation log |
+| 5 Proof + predict | Why are three variables and one stack enough? | Invariant tied to the main example; sign commutes with × and truncated ÷; boundaries; fresh prediction 8−(3−9)/4*2 = 10 (distractors 6, 12 floor, 11 real division) |
+| 6 Python | Line-to-step mapping and cost | Source first; O(n) time, O(depth) stack |
 
-Public metadata names `calculate`, takes one string `s`, and returns an integer.
-Three raw example inputs are exposed. These do not establish the full statement,
-expected outputs, constraints, arithmetic exceptions or supported language stubs.
-No supported Python or TypeScript interface has been verified. Null snippets
-do not establish that either language is unsupported. No canonical language is selected.
+## Verification (author)
 
-## Required next input / 所需下一步资料
+- `tests/test_solution.py`: independent oracle vs `solution.py` — 57,411 exhaustive valid expressions
+  (every string over `037+-*/()` of length ≤ 7 that parses without division by zero), 6,000 seeded random
+  expressions (multi-digit, nesting, spaces, 32-bit intermediates), named cases including the 32-bit edges,
+  depth-2500 nesting at |s| ≈ 10^4 and two long flat inputs (< 1 s), the page's brute force (works on the
+  main example, raises on rewritten negatives, copies 12,503,896 characters at d = 2500), mirror and copy keys.
+  A floor-division mutant of the solution fails these tests.
+- `test_core.cjs` (700 fixtures, 3,644 frames): answers; after every number or ")" the current level's
+  total + term equals the oracle value of that level's prefix and each parked level equals the oracle
+  value of its prefix; operator frames change nothing; "(" pushes and resets; ")" pops; deep snapshots;
+  every validation error; truncDiv signs.
+- `tests/browser.cjs`: both locales, every preset end-to-end with rewind/replay, main-example state checks,
+  custom valid/invalid input, prediction, locale switch, copy/fallback/download, keyboard,
+  1280/390/320 overflow, 48px targets, preset label width, reduced motion, blocked storage, offline.
+- `python3 -B scripts/register_leetcode_lesson.py 772 --validate-only` exit 0.
 
-Provide an authorized official capture of the complete statement, examples with
-outputs, constraints and exceptions, together with the actual language selector
-and submission templates (including Python and TypeScript when offered).
-Alternatively, make normally authorized official access available for a later
-run. Do not send passwords, cookies, tokens or other credentials into this folder.
+## Cross-review 2026-11-11
 
-需要有权访问者提供官方完整题面、带输出的示例、约束与例外规则，以及实际语言选择器
-和提交模板；如支持 Python 或 TypeScript，也必须保留。当前公共接口的空字段不能
-证明语言不受支持。题目仍在范围内；资料核实前不能据标题推测实现。
+Reviewer: Claude Code (claude-opus-5-5), first reader who did not build the lesson. Independent of the
+author; no LeetCode submission.
 
-## Scope and priorities
-
-Highest-return slice and P0: verify the official contract before selecting a
-language or deriving algorithm states. Done when the full statement and faithful
-submission interfaces can be audited from authorized evidence.
-P1: after P0, write the full per-step five-field teaching brief and first-use
-term dependency table, then implement the bilingual causal lesson and tests.
-P2: optional presentation refinement after all actual checks.
-
-Deferred: problem-specific examples, baseline, invariant/proof, trace renderer,
-fresh prediction, solution, metadata and browser checks. Their engineering
-dependency is the missing verified contract. No speculative five-step outline,
-fake runnable lesson or fabricated language contract is supplied.
-
-## Reproducible evidence and readiness
-
-Run from the repository root:
-
-```
-OUTPUT_DIR=/tmp/leetcode-772-access python3 -B leetcode/772/tests/check_official_access.py
-python3 -B scripts/register_leetcode_lesson.py 772 --validate-only
-```
-
-The access probe returns exit 2 when the complete contract is unavailable.
-It uses public official endpoints only and never reads credentials. OUTPUT_DIR
-allows reviewers to preserve these frozen captures. Metadata preflight output
-and exit status are recorded in `tests/evidence/metadata-preflight.txt`.
-Observed access-probe result: `blocked`, exit 2, at
-2026-10-25T10:37:12.748093+00:00. Observed metadata-preflight result: exit 2,
-`Metadata validation failed` because `lesson-entry.json` is absent. This expected
-failure preserves the readiness gate for this unimplemented, access-blocked lesson.
-There is no implementation to execute or inspect in the preview browser;
-algorithm/oracle, bilingual UI, responsive/zoom, clipboard, contrast and source
-parity checks remain unperformed. No learner outcome, LeetCode submission,
-independent acceptance, registration or deployment is claimed.
+- **Statement.** Checked against the doocs/leetcode README (current: non-negative integers, `+ - * /`,
+  parentheses, valid expression, truncate toward zero, intermediates in 32-bit, 1 ≤ |s| ≤ 10⁴, no spaces
+  listed) and the openset/leetcode mirror (older wording: same, plus "empty spaces"; examples with spaces).
+  Neither says "no unary minus" in words; it follows from "non-negative integers" + "valid". The solution
+  skips spaces and gives the right value on all public example inputs, including the spaced ones.
+- **Brute force.** My own evaluator (shunting-yard to RPN, truncating division, rejects unary operators,
+  division by zero and 32-bit overflow), written before reading `tests/oracle.py`, agreed with
+  `solution.py` on 30,635 expressions: every valid string over `037+-*/()` up to length 6 (10,635) and
+  20,000 seeded random grammar expressions with multi-digit numbers, nesting and spaces. Depth 4,999 in
+  9,999 characters also runs. `2*-3` returns −1, so the no-unary reading matters.
+- **Text.** Recomputed every preset, the 14−3*(2+8)/4 hand walk and ledger, (−30)÷4 vs //, the prediction
+  8−(3−9)/4*2 = 10 and its distractors 6 / 12 / 11, the two ways the text-rewriting brute force breaks.
+- **Errors found and fixed.**
+  1. Layout: the step-3 ledger `<table class="ledger">` collided with the shared stylesheet's
+     `.ledger{display:flex}`, so at every width the header row sat in a column beside the body rows.
+     Renamed to `ledger-table` (index.html, style.css). Added a regression assertion to `tests/browser.cjs`
+     (every table computes `display: table` and header cells line up over body cells); it fails on the old
+     class. Also corrected the adjacent comment (step 3, 7 symbols, not "step-2, 8 symbols").
+  2. `edge3` claimed nesting of "tens of thousands of characters", impossible with |s| ≤ 10⁴. Now: about
+     5,000 levels fit in 10⁴ characters, beyond Python's default recursion limit of 1,000 (zh and en).
+  3. `premium` presented "no unary minus" as part of the public statement. Now it says which rules come
+     from the statement and that no-unary is the page's reading. `contract` now also says older statement
+     versions allow spaces and the code skips them.
+  4. `applyMinus` rendered "new term = −3 = −3"; now "−(3) = −3", which also reads well for "−(−6) = 6".
+- **Browser.** zh/en at 1280/390/320, main and nested presets stepped: no overflow, no console errors,
+  targets ≥ 48 px; author `browser.cjs` (with the new assertion) passes.
+- **Rubric.** A3 B3 C3 D3 E3 F3; G2 before the fixes above, G3 after.
+- **`sep` exemption.** Legitimate (sentence joiner, pinned to `['', ' ']`).
+- **Not verified.** The official page and its hidden tests (in particular whether any contain unary minus);
+  a learner study. My first test run omitted `OUTPUT_DIR` and regenerated `tests/evidence/numerical.json`
+  and `oracle-fixtures.json` in place (same seeds).

@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" href="data:,">
+<title>772 · Basic Calculator III</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="style.css?v=772-1">
+</head>
+<body>
+<header class="site-head">
+<div class="head-top"><a class="back-link" href="../" data-i18n="back"></a><div class="lang-toggle" id="langToggle" role="group" aria-label="语言 / Language"><button type="button" data-lang="zh">中</button><button type="button" data-lang="en">EN</button></div></div>
+<span class="badge" data-i18n="badge"></span>
+<h1 data-i18n="title"></h1>
+<p class="tagline" data-i18n="intro"></p>
+<p data-i18n="contract"></p>
+<p class="hint" data-i18n="premium"></p>
+<a class="official-link" href="https://leetcode.com/problems/basic-calculator-iii/" target="_blank" rel="noopener" data-i18n="official"></a>
+</header>
+<nav class="step-nav" id="stepNav" aria-label="Lesson steps"><div class="step-nav-inner"><a href="#step0" data-i18n="nav0"></a><a href="#step1" data-i18n="nav1"></a><a href="#step2" data-i18n="nav2"></a><a href="#step3" data-i18n="nav3"></a><a href="#step4" data-i18n="nav4"></a><a href="#step5" data-i18n="nav5"></a></div></nav>
+<main>
+<section class="step" id="step0"><div class="step-inner">
+<p class="step-kicker">01</p><h2 data-i18n="s0t"></h2>
+<p class="question" data-i18n="s0q"></p>
+<p class="explain" data-i18n="s0e"></p>
+<p class="formula">14-3*(2+8)/4 → 14-3*10/4 → 14-30/4 → 14-7 → 7</p>
+<p class="explain" data-i18n="s0trunc"></p>
+<p class="explain" data-i18n="s0neg"></p>
+</div></section>
+
+<section class="step" id="step1"><div class="step-inner">
+<p class="step-kicker">02</p><h2 data-i18n="s1t"></h2>
+<p class="question" data-i18n="s1q"></p>
+<p class="explain" data-i18n="s1e"></p>
+<h3 data-i18n="baselineLabel"></h3>
+<pre tabindex="0" aria-label="Brute force Python"><code>import re
+
+def flat(e):                     # no parentheses: number, operator, number, ...
+    parts = re.split(r"([+\-*/])", e)
+    nums, ops = [int(parts[0])], []
+    for o, x in zip(parts[1::2], parts[2::2]):
+        if o in "*/":            # * and / at once, left to right
+            a, b = nums[-1], int(x)
+            nums[-1] = a * b if o == "*" else int(a / b)
+        else:
+            ops.append(o)
+            nums.append(int(x))
+    total = nums[0]              # then + and -
+    for o, x in zip(ops, nums[1:]):
+        total = total + x if o == "+" else total - x
+    return total
+
+def brute(s):
+    while "(" in s:
+        close = s.index(")")                 # the first ")" closes the innermost "("
+        start = s.rindex("(", 0, close)
+        s = s[:start] + str(flat(s[start + 1:close])) + s[close + 1:]   # rewrite the text
+    return flat(s)
+</code></pre>
+<h3 data-i18n="bruteTitle"></h3>
+<div class="table-wrap" tabindex="0" role="region" aria-labelledby="bruteCaption"><table><caption id="bruteCaption" class="sr-only" data-i18n="bruteTitle"></caption><thead><tr><th scope="col" data-i18n="colRound"></th><th scope="col" data-i18n="colDoes"></th><th scope="col" data-i18n="colText"></th></tr></thead><tbody>
+<tr><td>1</td><td data-i18n="b1"></td><td><code>14-3*10/4</code></td></tr>
+<tr><td>2</td><td data-i18n="b2"></td><td><code>14-7</code></td></tr>
+<tr><td>3</td><td data-i18n="b3"></td><td><code>7</code></td></tr>
+</tbody></table></div>
+<p class="explain" data-i18n="s1cost"></p>
+<p class="explain" data-i18n="s1break"></p>
+<p class="question" data-i18n="s1lesson"></p>
+</div></section>
+
+<section class="step" id="step2"><div class="step-inner">
+<p class="step-kicker">03</p><h2 data-i18n="s2t"></h2>
+<p class="question" data-i18n="s2q"></p>
+<p class="explain" data-i18n="s2e"></p>
+<p class="question" data-i18n="s2ask"></p>
+<details class="think" id="think1"><summary data-i18n="revealSummary"></summary><p class="explain" data-i18n="s2reveal"></p><p class="explain" data-i18n="s2rules"></p>
+<h3 data-i18n="ledgerTitle"></h3>
+<div class="table-wrap" tabindex="0" role="region" aria-labelledby="ledgerCaption"><table class="ledger-table"><caption id="ledgerCaption" class="sr-only" data-i18n="ledgerTitle"></caption><thead><tr><th scope="col" data-i18n="colToken"></th><th scope="col" data-i18n="colTotal"></th><th scope="col" data-i18n="colTerm"></th><th scope="col" data-i18n="colOp"></th><th scope="col" data-i18n="colWhy"></th></tr></thead><tbody id="ledgerRows"></tbody></table></div>
+<p class="explain" data-i18n="s2sign"></p>
+</details>
+</div></section>
+
+<section class="step" id="step3"><div class="step-inner">
+<p class="step-kicker">04</p><h2 data-i18n="s3t"></h2>
+<p class="question" data-i18n="s3q"></p>
+<p class="explain" data-i18n="s3recap"></p>
+<p class="question" data-i18n="s3ask"></p>
+<details class="think" id="think2"><summary data-i18n="revealSummary"></summary><p class="explain" data-i18n="s3reveal"></p><p class="explain" data-i18n="s3cost"></p></details>
+<p class="hint" data-i18n="traceHint"></p>
+<div class="stage">
+<label for="preset" data-i18n="presetLabel"></label>
+<select id="preset" aria-describedby="presetDesc"></select>
+<p class="hint" id="presetDesc"></p>
+<form id="customForm" novalidate>
+<p class="hint" data-i18n="customHint"></p>
+<label class="block-label"><span data-i18n="inputLabel"></span><input id="inputExpr" value="14-3*(2+8)/4" maxlength="60" autocomplete="off" autocapitalize="off" spellcheck="false"></label>
+<button type="submit" class="btn" data-i18n="apply"></button>
+</form>
+<p id="validation" role="status"></p>
+<div class="controls"><button type="button" class="btn" id="prev" data-i18n="prev"></button><button type="button" class="btn primary" id="next" data-i18n="next"></button><button type="button" class="btn" id="reset" data-i18n="reset"></button><button type="button" class="btn" id="end" data-i18n="end"></button></div>
+<label for="position" data-i18n="position"></label><input type="range" id="position" min="0" max="1" value="0">
+<p class="hint" id="progress"></p>
+<p class="readout" id="event" aria-live="polite"></p>
+<p class="hint" data-i18n="tokensCaption"></p>
+<div class="tokens" id="tokens"></div>
+<h3 data-i18n="stateTitle"></h3>
+<div class="metrics three"><div class="metric"><span>total</span><b id="vTotal"></b></div><div class="metric"><span>term</span><b id="vTerm"></b></div><div class="metric"><span>op</span><b id="vOp"></b></div></div>
+<h3 data-i18n="stackTitle"></h3>
+<p id="stackEmpty" data-i18n="stackEmpty"></p>
+<ol class="stack" id="stack" reversed></ol>
+<h3 data-i18n="historyTitle"></h3>
+<p class="hint" data-i18n="historyHint"></p>
+<p id="historyEmpty" data-i18n="historyEmpty"></p>
+<ol class="history" id="history"></ol>
+</div>
+</div></section>
+
+<section class="step" id="step4"><div class="step-inner">
+<p class="step-kicker">05</p><h2 data-i18n="s4t"></h2>
+<p class="question" data-i18n="s4q"></p>
+<p class="explain" data-i18n="s4inv"></p>
+<p class="explain" data-i18n="s4proof"></p>
+<p class="explain" data-i18n="s4signproof"></p>
+<h3 data-i18n="edgesTitle"></h3>
+<ul><li data-i18n="edge1"></li><li data-i18n="edge2"></li><li data-i18n="edge3"></li><li data-i18n="edge4"></li></ul>
+<h3 data-i18n="predTitle"></h3>
+<div class="stage">
+<fieldset class="prediction-options"><legend data-i18n="predQ"></legend>
+<label><input type="radio" name="prediction" value="0"><span data-i18n="opt0"></span></label>
+<label><input type="radio" name="prediction" value="1"><span data-i18n="opt1"></span></label>
+<label><input type="radio" name="prediction" value="2"><span data-i18n="opt2"></span></label>
+<label><input type="radio" name="prediction" value="3"><span data-i18n="opt3"></span></label>
+</fieldset>
+<div class="controls"><button type="button" class="btn primary" id="reveal" data-i18n="reveal"></button><button type="button" class="btn" id="predReset" data-i18n="predReset"></button></div>
+<p class="readout" id="feedback" aria-live="polite"></p>
+</div>
+</div></section>
+
+<section class="step" id="step5"><div class="step-inner">
+<p class="step-kicker">06</p><h2 data-i18n="s5t"></h2>
+<p class="question" data-i18n="s5q"></p>
+<details id="sourceDetails" open><summary data-i18n="source"></summary><pre tabindex="0" aria-label="Python source"><code id="code"></code></pre></details>
+<ul><li data-i18n="map1"></li><li data-i18n="map2"></li><li data-i18n="map3"></li><li data-i18n="map4"></li><li data-i18n="map5"></li><li data-i18n="map6"></li></ul>
+<p class="explain" data-i18n="s5cost"></p>
+<p class="explain" data-i18n="s5unary"></p>
+<p class="explain" data-i18n="s5trace"></p>
+<div class="solution-actions"><button type="button" class="btn primary" id="copy" data-i18n="copy"></button><a class="btn" id="download" href="solution.py" download="solution.py" data-i18n="download"></a><span id="copyStatus" role="status"></span></div>
+<div id="manualCopy" hidden><label for="fallbackSource" data-i18n="manualLabel"></label><textarea id="fallbackSource" rows="12" readonly spellcheck="false"></textarea></div>
+<h3 data-i18n="related"></h3>
+<div class="related"><a href="../224/#step1" data-i18n="related1"></a></div>
+</div></section>
+</main>
+<noscript>请启用 JavaScript 以使用交互。 / Enable JavaScript for the interactive parts. <a href="solution.py">solution.py</a></noscript>
+<script src="../common.js"></script>
+<script src="copy.js?v=772-1"></script>
+<script src="core.js?v=772-1"></script>
+<script src="python-code.js?v=772-1"></script>
+<script src="app.js?v=772-1"></script>
+</body>
+</html>

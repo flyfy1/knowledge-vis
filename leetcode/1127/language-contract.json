@@ -1,0 +1,10 @@
+{
+  "problemId": 1127,
+  "language": "MySQL",
+  "officialSource": "https://leetcode.com/problems/user-purchase-platform/",
+  "supportedLanguages": ["MySQL", "Python (Pandas)"],
+  "interface": "MySQL 8 query over Spending(user_id int, spend_date date, platform ENUM('desktop','mobile'), amount int), primary key (user_id, spend_date, platform), as given by the public mysqlSchemas field. Returns spend_date, platform ('desktop' | 'mobile' | 'both'), total_amount, total_users: three rows for every date in Spending, zero rows included; any order.",
+  "rationale": "Subscriber-only database problem. The public GraphQL response exposes mysqlSchemas (the MySQL table definition and sample rows) but content and codeSnippets are null, so the MySQL table interface is the only submission interface with direct evidence. The repository catalog (leetcode/catalog/hard-problems.json) lists the problem under the database and pandas categories, so Python (Pandas) is an officially supported language, labelled the same way as in #1159; its function signature was not captured (the 2026-10-27 probe did not request dataSchemas), so no Pandas solution is offered. The build dispatcher (2026-11-11) asked for the SQL solution. Same treatment as #1159.",
+  "verifiedAt": "2026-11-11T00:00:00+08:00",
+  "verificationEvidence": "tests/evidence/graphql-response.json"
+}

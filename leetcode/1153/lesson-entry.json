@@ -1,0 +1,25 @@
+{
+  "id": 1153,
+  "title": {
+    "zh": "字符串转化",
+    "en": "String Transforms Into Another String"
+  },
+  "desc": {
+    "zh": "同一字母的位置永远绑在一起，所以每个字母只能有一个去处；环要借一个空闲字母，而 str2 用满 26 个字母时空闲字母不存在。",
+    "en": "Copies of a letter move together, so each letter needs one destination; cycles need a spare letter, which cannot exist once str2 uses all 26."
+  },
+  "difficulty": "hard",
+  "topics": [
+    {"zh": "哈希表", "en": "Hash table"},
+    {"zh": "映射与环", "en": "Mappings and cycles"}
+  ],
+  "path": "1153/",
+  "leetcodeUrl": "https://leetcode.com/problems/string-transforms-into-another-string/",
+  "language": "Python",
+  "complexity": "O(n) time for strings of length n; O(1) auxiliary space (at most 26 map entries and 26 set letters)",
+  "concepts": [
+    {"name": "Letters move as a block", "step": 3, "description": "Positions sharing a letter can never be split, so the letter map must be a function."},
+    {"name": "Breaking a cycle with a spare letter", "step": 4, "description": "Park one letter of a cycle on an unused letter, then run the chain from its end."},
+    {"name": "Why the 26-letter limit matters", "step": 5, "description": "If str2 uses all 26 letters no spare can exist and the first conversion loses a letter for good."}
+  ]
+}

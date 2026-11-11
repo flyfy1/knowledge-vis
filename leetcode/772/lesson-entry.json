@@ -1,0 +1,33 @@
+{
+  "id": 772,
+  "title": {
+    "zh": "基本计算器 III",
+    "en": "Basic Calculator III"
+  },
+  "desc": {
+    "zh": "不改写文本：用 total、term、op 一遍处理乘除优先，再用栈停放括号外层。",
+    "en": "No text rewriting: total, term and op handle precedence in one pass, and a stack parks the level outside each parenthesis."
+  },
+  "difficulty": "hard",
+  "topics": [
+    {"zh": "栈", "en": "Stack"},
+    {"zh": "表达式求值", "en": "Expression evaluation"},
+    {"zh": "字符串", "en": "String"}
+  ],
+  "path": "772/",
+  "leetcodeUrl": "https://leetcode.com/problems/basic-calculator-iii/",
+  "language": "Python",
+  "complexity": "O(n) time for n = len(s); O(d) auxiliary space for parenthesis depth d (at most O(n))",
+  "concepts": [
+    {
+      "name": "Open term for precedence",
+      "step": 2,
+      "description": "Keep total of finished terms plus one signed open term; + and - close it, * and / extend it."
+    },
+    {
+      "name": "Parking the outer level on a stack",
+      "step": 3,
+      "description": "A parenthesis is one number to its outer level; park (total, term, op) at ( and hand the value back at )."
+    }
+  ]
+}

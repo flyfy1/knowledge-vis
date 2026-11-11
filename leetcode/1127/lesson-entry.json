@@ -1,0 +1,25 @@
+{
+  "id": 1127,
+  "title": {
+    "zh": "用户购买平台",
+    "en": "User Purchase Platform"
+  },
+  "desc": {
+    "zh": "“两样都用”属于一个人的一天，不属于某一行：先按人-天贴标签，再用固定的日期×平台格子和 LEFT JOIN 保住零行。",
+    "en": "“Both” belongs to a person's day, not to a row: label each person-day first, then keep zero rows with a fixed date × platform grid and a LEFT JOIN."
+  },
+  "difficulty": "hard",
+  "topics": [
+    {"zh": "数据库", "en": "Database"},
+    {"zh": "两次分组", "en": "Two-level GROUP BY"},
+    {"zh": "LEFT JOIN 补零", "en": "LEFT JOIN for zero rows"}
+  ],
+  "path": "1127/",
+  "leetcodeUrl": "https://leetcode.com/problems/user-purchase-platform/",
+  "language": "MySQL",
+  "complexity": "O(n log n) time with sort-based grouping (expected O(n) with hashing) for n Spending rows; O(n) intermediate space",
+  "concepts": [
+    {"name": "Group by person-day before labelling", "step": 3, "description": "A label such as both is a property of all of one user's rows on one day, so group by date and user first."},
+    {"name": "Output grid with LEFT JOIN for zero rows", "step": 4, "description": "Build every date x label cell first, LEFT JOIN the data, and count a column so empty cells give 0."}
+  ]
+}

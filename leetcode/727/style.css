@@ -1,0 +1,48 @@
+/* Shared palette from ../style.css; local layout and accessibility only. */
+html{scroll-behavior:auto}
+button,.btn,select,input:not([type="radio"]):not([type="range"]),summary,.solution-actions a,.related a,.back-link,.lang-toggle button,.step-nav a,.site-head .official-link,.prediction-options label{min-height:48px}
+input[type="range"]{min-height:48px;display:block;width:100%;max-width:100%}
+.btn,select{border-color:var(--muted)}
+button.btn:disabled{opacity:1;color:var(--muted);background:var(--panel);border-color:var(--muted);border-style:dashed}
+.btn.primary:disabled{background:var(--panel);color:var(--muted)}
+.lang-toggle button{min-width:48px}.lang-toggle:focus-within{outline:3px solid var(--accent2);outline-offset:4px}.lang-toggle button:focus-visible{outline-offset:-4px}
+.head-top{flex-wrap:wrap}.site-head .official-link{white-space:normal;max-width:100%}
+.back-link,.related a,.solution-actions a,.step-nav a{display:inline-flex;align-items:center}
+.step{scroll-margin-top:96px}.stage,.step-inner{min-width:0}
+p,li,h1,h2,h3,label,legend,summary,td,th{overflow-wrap:anywhere}
+select{width:100%;max-width:100%;white-space:normal}
+.controls .btn{flex:1 1 150px;white-space:normal;max-width:100%}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.plain-list{padding-left:20px}
+.input-pair{display:grid;grid-template-columns:2fr 1fr;gap:16px;margin:8px 0 12px}
+.input-pair label{display:flex;flex-direction:column;gap:6px;min-width:0}
+.input-pair input{width:100%;padding:8px 12px;background:var(--bg);color:var(--text);border:1px solid var(--muted);border-radius:8px;font-family:ui-monospace,SFMono-Regular,Consolas,monospace}
+.input-pair input:focus-visible{outline:3px solid var(--accent2);outline-offset:4px}
+#validation{min-height:28px;margin:8px 0 0}.status-good{color:var(--good)}.status-bad{color:var(--bad)}
+.strip{display:flex;flex-wrap:wrap;gap:6px;margin:16px 0}
+.cell{display:flex;flex-direction:column;align-items:center;min-width:40px;padding:4px 2px;background:var(--panel2);border:2px solid transparent;border-radius:6px;font-variant-numeric:tabular-nums}
+.cell-index{font-size:12px;color:var(--muted);line-height:1.4}
+.cell-letter{font:600 22px/1.3 ui-monospace,SFMono-Regular,Consolas,monospace;padding:0 4px;border-bottom:3px solid transparent}
+.cell-tag{font-size:12px;line-height:1.4;color:var(--accent2);max-width:76px;text-align:center;overflow-wrap:anywhere}
+.cell.future{background:var(--panel)}.cell.future .cell-letter{color:var(--muted);font-weight:400}
+.cell.current{border-color:var(--accent)}
+.cell.in-best .cell-letter{border-bottom-color:var(--accent2)}
+.cell.picked{background:#164b59}
+.cell.chain-a{background:#164b59}.cell.chain-b{border-color:var(--accent2)}
+.best{color:var(--accent2)}
+.table-wrap{max-width:100%;border:1px solid var(--line);border-radius:8px}
+.table-wrap:focus-visible,pre:focus-visible,textarea:focus-visible{outline:3px solid var(--accent2);outline-offset:4px}
+table.slots{min-width:520px}
+.changed-row td{background:var(--panel2);color:var(--accent)}
+.history{padding-left:24px}.history li{padding:8px 4px;border-bottom:1px solid var(--line)}.history li.latest{color:var(--accent)}
+details.think{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:4px 16px;margin:16px 0}
+.prediction-options{min-inline-size:0}.prediction-options legend{max-width:100%;margin-bottom:8px}
+.prediction-options label{align-items:center;gap:12px;padding:4px 0}.prediction-options input{width:22px;height:22px;flex-shrink:0}
+textarea{width:100%;background:var(--panel2);color:var(--text);font:14px/1.6 ui-monospace,monospace;border:1px solid var(--muted);padding:12px}
+pre{max-width:100%}
+.formula{font-size:15px}
+@media(max-width:560px){.input-pair{grid-template-columns:1fr}.controls .btn{flex-basis:100%}.cell{min-width:34px}.cell-letter{font-size:19px}.step-nav-inner{padding:8px 16px}.head-top{align-items:flex-start}}
+@media(forced-colors:active){.cell.current{border:3px solid Highlight}.cell.in-best .cell-letter{border-bottom-color:Highlight}}
+.readout+p{margin-top:16px}
+@media(max-width:560px){table.slots{min-width:0}table.slots th,table.slots td{padding:6px 4px}}
+.slots th:nth-child(3),.slots td:nth-child(3){white-space:nowrap;overflow-wrap:normal}

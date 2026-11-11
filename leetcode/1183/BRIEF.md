@@ -1,40 +1,101 @@
-# #1183 Maximum Number of Ones — blocked author brief
+# #1183 · Maximum Number of Ones — lesson brief
 
-Status: blocked at official-contract verification (2026-10-27 Asia/Singapore). This author run does not claim implementation, independent review, acceptance, publication, or learner outcomes.
+Category computing / LeetCode collection; stage university. Reader knows Python loops, integer division and
+sorting. Outcome: the reader can explain why cells with the same (row mod s, column mod s) are interchangeable,
+why every s×s window holds exactly one cell of each class, why the k largest classes are optimal (not just
+feasible), compute a class size by hand, and write the O(s² log s) solution.
 
-## Product boundary and approved design
+## Revision of the preparation brief (2026-11-11)
 
-Category: algorithms (collection); stage: university. Audience: bilingual algorithm learners. Immediate job: reconstruct the official problem and its algorithm through a hand calculation, reversible visual simulation, and the exact supported submission interface. Smallest useful outcome: one complete verified lesson, not a guessed Premium-problem page.
+The preparation pass (2026-10-27) stopped at the subscription gate (`content: null`, `codeSnippets: null`); its
+access record stays in `tests/`. Public metadata: title, slug, Hard, four hints (residue classes, "choose the
+cells with max frequency"), and example inputs `3 3 2 1` and `3 3 2 2`. This build uses the widely known
+statement, consistent with that metadata:
 
-The approved lesson pattern and dispatcher decisions are carried forward from `../../specs/reviews/leetcode-all-hard-design-review.md`, together with the required workflow, explainer, trace, review-gate, rendered-state, and website-design contracts. No new layout or shared architecture is proposed. Only `leetcode/1183/` is owned for this run.
+- A matrix of `width` columns and `height` rows holds 0/1 values. Every square sub-matrix of side
+  `sideLength` may contain at most `maxOnes` ones. Return the largest possible number of ones.
+- Constraints (as widely reported): 1 ≤ width, height ≤ 100; 1 ≤ sideLength ≤ width, height;
+  0 ≤ maxOnes ≤ sideLength².
+- Python interface `Solution.maximumNumberOfOnes(self, width: int, height: int, sideLength: int, maxOnes: int) -> int`.
+  The parameter order is taken from the four-line example testcases and the hints; the official Python
+  snippet is not public. The examples give 4 and 6 (checked in tests).
 
-## Verification gate
+Uncertain without a subscription: exact wording, the exact constraint bounds, and the parameter order (the
+answer is symmetric in width/height, so swapping those two would not change results). The backend
+`questionId` is 1152 while the frontend number is 1183; the catalog uses 1183.
 
-Official source: https://leetcode.com/problems/maximum-number-of-ones/
+## Learning loop
 
-A page-reader view of the official page displays “Subscribe to unlock” and says the question requires Premium; a direct unauthenticated HTTP capture instead receives a Cloudflare 403 challenge. An unauthenticated public GraphQL query confirms the slug/title, `isPaidOnly: true`, and Hard difficulty, but returns `content: null`, `translatedContent: null`, and `codeSnippets: null`. The GraphQL response exposes only an example-testcase string and hints; those do not establish the complete statement, constraints, output semantics, indexing rules, exceptions, or actual language selector/templates. The returned backend `questionId` is `1152`, while the repository’s verified catalog record is ID `1183`; this mismatch is recorded rather than silently normalized.
+| Step | Already known | Question | Input → output | Action → observation | Holds when |
+|---|---|---|---|---|---|
+| 1 Sandbox | problem | How many ones fit in 5×4, s=2, k=2? | click cells | over-full windows turn red; "load greedy" shows 10 | any small grid |
+| 2 Brute force | step 1 | Correct direct method, why slow / why greedy fails? | 2²⁰ grids; row-major greedy | greedy rows 0, 2 = 10 vs columns 0, 2, 4 = 12 | — |
+| 3 Classes | a better grid exists | Which cells can share a fate? | 5×4, s=2 | move the window: it always covers one A, B, C, D; "fill A" never overfills; reveal answer | every window position |
+| 4 Count | classes | How big is each class? | ⌈(h−a)/s⌉·⌈(w−b)/s⌉ | sizes 6, 4, 6, 4 → top two = 12 | — |
+| 5 Proof | feasibility | Could a non-class grid beat it? | window weights 1/3, 1/6, 1/6, 1/3 | each cell covered with probability 1 / class size → Σ ≤ top-k sum | any valid grid |
+| 6 Walk | all | Does the formula hold on my input? | presets / ± steppers (≤12) | count each class, sort, pick k; grid + movable window shows max ones per window ≤ k | page limit 12 |
+| 7 Predict | all | 7×4, s=3, k=2? | choose, reveal; distractors 12, 4 | hidden until reveal; answer 10 | — |
+| 8 Code | all | which idea → which line; cost | solution.py | mapping; O(s² log s) time, O(s²) space | — |
 
-No canonical language is selected. Python remains preferred only after an authorized official capture proves a faithful Python interface; TypeScript or the required native language cannot be selected from the available evidence. No solution source, language-contract.json, lesson-entry.json, or runtime page is fabricated.
+Trace frame = after one class is counted, after the sort, or after one class is picked. Frame 0 does nothing.
 
-Evidence files:
+Proof sketch (step 5): pick the window start x in one dimension with P(start ≤ x) = (⌊x/s⌋+1)/cnt(x mod s), where
+cnt(r) is the number of positions with remainder r. A cell at x is covered with probability exactly 1/cnt(x mod s);
+in two dimensions, 1/class size. A valid grid has ≤ k ones in every window, so Σ over its ones of 1/size(class) ≤ k;
+per class the ones contribute (ones in class)/size ≤ 1, a fractional knapsack whose optimum is the k largest
+classes.
 
-- `tests/evidence/official-page-observation.md`
-- `tests/evidence/graphql-request.json`
-- `tests/evidence/graphql-response.json`
-- `tests/evidence/access-summary.json`
-- `tests/probe_official.py`
-- `tests/evidence/preflight-validate-only.txt`
+## Verification (author self-check, not independent review)
 
-## Author and separate blocker review
+- `tests/test_solution.py`: branch-and-bound brute force over all grids with W, H ≤ 6 and W·H ≤ 25 (434 cases);
+  1,500 seeded random cases where the construction (fill the chosen classes) is checked window by window with
+  prefix sums; 14 extremes including the two public examples; exact `Fraction` certificates for the 1-D window
+  distribution for every n ≤ 100 and s ≤ n (5,050). Fixtures (1,948) go to `tests/test_core.cjs`, which checks
+  the browser model, every trace frame (33,398), and that the row-major greedy is never better (worse in 60 of
+  456 checked cases).
+- `tests/test_copy.py`, `tests/browser.cjs` (tests/README.md).
+- Not verified: a LeetCode submission, the official statement text, real devices, independent teaching review.
 
-Author self-check preserved the access probe and safe preflight evidence. A separate blocker audit is recorded in `tests/evidence/review-blocker.md`; it confirms the contract is unavailable and is not independent lesson acceptance.
+## Cross-review 2026-11-11
 
-## Missing input / resumption
+Reviewer: Claude Code (claude-opus-5-5). First reader who did not build the lesson.
 
-Provide an authorized official statement capture containing the full description, constraints, examples and outputs, indexing/modulus details, exception rules, and the actual language selector plus starter interface; or make normal authorized Premium access available. Do not share plaintext credentials and do not bypass the paywall.
+**Problem statement.** Checked against three public sources:
+- doocs/leetcode `1183.Maximum Number of Ones/README_EN.md`: constraints 1 ≤ width, height ≤ 100;
+  1 ≤ sideLength ≤ min(width, height); 0 ≤ maxOnes ≤ sideLength²; examples 3 3 2 1 → 4 and 3 3 2 2 → 6;
+- leetcode.ca: the same constraints and examples;
+- walkccc.me/LeetCode/problems/1183: signature `maximumNumberOfOnes(width, height, sideLength, maxOnes)`.
 
-After that evidence is available, write each lesson step with the five required fields (known facts, one question, inputs/output, control action/visible observation, and applicability), derive a simple baseline and invariant, implement the canonical submission and its exact offline mirror, build the bilingual reversible experiment, and run the independent oracle/browser/source/metadata checks. A separate review remains required after a complete candidate exists.
+The lesson's parameter order and bounds match. The official text does not say whether width counts rows or columns.
+The page now states its convention (width = columns) and that swapping the two does not change the answer.
 
-## 中文状态
+**Solution.** I wrote an independent exact solver, a DP over rows with the last s−1 rows as the state, without reading
+the builder's brute force:
+- in C (scratch: `/tmp/agent-tasks/leetcode/xreview-e/ones_dp.c`) it agrees with the formula on 1,425 cases: s = 1…5,
+  up to 7 × 11 at s = 3, 6 × 10 at s = 4 and 5 × 9 at s = 5, every k. Of these, 817 have s ≥ 3 and a dimension not
+  divisible by s;
+- the DP itself was validated against plain enumeration on 134 grids of at most 16 cells;
+- a Python port is now `tests/test_row_dp.py` (670 cases, 396 non-divisible with s ≥ 3, about 60 s; it checks both
+  argument orders).
+solution.py also agrees with the closed formula on 168,510 parameter sets up to 40 × 40.
 
-本题仍在范围内，但官方契约核验受阻。官方页面要求 Premium；公共 GraphQL 虽确认题名、slug、Hard 和付费属性，却返回完整题面与代码模板为空。现有 hints 和样例输入不足以确认约束、输出、索引规则、异常处理或语言选择器，因此不能诚实选择提交语言或编写解法。需要经授权的完整官方题面及语言接口记录后才能继续。
+**Proof.** Checked step by step. The window-start distribution P(start ≤ x) = (⌊x/s⌋+1)/cnt(x mod s) holds in
+general:
+- it is non-decreasing because a block index t ≤ q−1 gives (t+2)/(q+1) ≥ (t+1)/q;
+- it equals 1 from x = n−s onward;
+- the coverage of x is F(x) − F(x−s) = 1/cnt.
+I verified this with exact fractions for every n ≤ 150. Each window holds at most k ones, so Σ f_X ≤ k. The total
+Σ f_X · size_X is a fractional knapsack whose optimum is the k largest sizes. The page now states the general
+formula instead of only citing the tests.
+
+**Text.** Recomputed: greedy 10 versus 12 on 5×4 (s = 2, k = 2); class sizes 6, 4, 6, 4; the 1-D probabilities
+1/3, 1/6, 1/6, 1/3 and coverages; height 4 using 1/2, 0, 1/2; "3×2 greedy gets only 3" (optimum 4); predict 7×4,
+s = 3, k = 2 → 10. All correct, and zh and en agree.
+
+**Teaching.** Step 3 announced the (r mod s, c mod s) labels before showing why they matter (rubric B = 2). It now
+starts from step 2's 12-one grid: the ones repeat every 2 columns, and a window shifted by s sees the same pattern,
+so cells s apart are "the same spot". Only then are the labels named.
+
+**Rubric** (0–3): A 3, B 3 (after the rewrite), C 3, D 3, E 3, F 3; G correct.
+Not verified: a LeetCode submission, the official wording, exact optimality on grids larger than the DP reaches (that
+rests on the proof).

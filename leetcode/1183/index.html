@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" href="data:,">
+<title>#1183 · Maximum Number of Ones</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="style.css?v=1183-1">
+</head>
+<body>
+<header class="site-head">
+ <div class="head-top"><a class="back-link" href="../" data-i18n="back"></a><div class="lang-toggle" id="langToggle" aria-label="语言 / Language"><button type="button" data-lang="zh">中</button><button type="button" data-lang="en">EN</button></div></div>
+ <span class="badge" data-i18n="badge"></span>
+ <h1 data-i18n="title"></h1>
+ <p class="tagline" data-i18n="intro"></p>
+ <p data-i18n="contract"></p>
+ <p class="hint" data-i18n="premium"></p>
+ <a class="official-link" href="https://leetcode.com/problems/maximum-number-of-ones/" target="_blank" rel="noopener" data-i18n="official"></a>
+</header>
+<nav class="step-nav" aria-label="学习步骤 / Lesson steps"><div class="step-nav-inner"><a href="#step1" data-i18n="nav1"></a><a href="#step2" data-i18n="nav2"></a><a href="#step3" data-i18n="nav3"></a><a href="#step4" data-i18n="nav4"></a><a href="#step5" data-i18n="nav5"></a><a href="#step6" data-i18n="nav6"></a><a href="#step7" data-i18n="nav7"></a><a href="#step8" data-i18n="nav8"></a></div></nav>
+<main>
+<section class="step" id="step1"><div class="step-inner">
+ <p class="step-kicker">01</p><h2 data-i18n="s1t"></h2>
+ <p class="explain" data-i18n="s1e"></p>
+ <p class="hint" data-i18n="sandboxTask"></p>
+ <div class="stage">
+  <div class="grid-wrap"><div class="grid sandbox" id="sandbox"></div></div>
+  <div class="controls"><button type="button" class="btn" id="sbClear" data-step="1" data-i18n="clear"></button><button type="button" class="btn" id="sbGreedy" data-step="1" data-i18n="loadGreedy"></button></div>
+  <p class="readout" id="sbRead" aria-live="polite"></p>
+ </div>
+</div></section>
+<section class="step" id="step2"><div class="step-inner">
+ <p class="step-kicker">02</p><h2 data-i18n="s2t"></h2>
+ <p class="explain" data-i18n="s2e"></p>
+ <p class="explain" data-i18n="greedyText"></p>
+ <div class="pair">
+  <figure><figcaption data-i18n="greedyCaption"></figcaption><div class="grid-wrap"><div class="grid mini" id="greedyGrid"></div></div></figure>
+  <figure><figcaption data-i18n="bestCaption"></figcaption><div class="grid-wrap"><div class="grid mini" id="bestGrid"></div></div></figure>
+ </div>
+</div></section>
+<section class="step" id="step3"><div class="step-inner">
+ <p class="step-kicker">03</p><h2 data-i18n="s3t"></h2>
+ <p class="explain" data-i18n="s3e"></p>
+ <p class="hint" data-i18n="explorerTask"></p>
+ <div class="stage">
+  <div class="grid-wrap"><div class="grid classes" id="explorer"></div></div>
+  <div class="controls arrows"><button type="button" class="btn" id="exLeft" data-step="3" data-i18n="left"></button><button type="button" class="btn" id="exUp" data-step="3" data-i18n="up"></button><button type="button" class="btn" id="exDown" data-step="3" data-i18n="down"></button><button type="button" class="btn" id="exRight" data-step="3" data-i18n="right"></button></div>
+  <div class="controls"><button type="button" class="btn" id="exFill" data-step="3" aria-pressed="false"></button></div>
+  <p class="readout" id="exRead" aria-live="polite"></p>
+ </div>
+ <details class="think"><summary data-i18n="showAnswer"></summary><p class="explain" data-i18n="aha3"></p></details>
+ <p class="explain" data-i18n="consequence3"></p>
+</div></section>
+<section class="step" id="step4"><div class="step-inner">
+ <p class="step-kicker">04</p><h2 data-i18n="s4t"></h2>
+ <p class="explain" data-i18n="s4e"></p>
+ <p class="formula" data-i18n="formula4"></p>
+ <p class="explain" data-i18n="example4"></p>
+</div></section>
+<section class="step" id="step5"><div class="step-inner">
+ <p class="step-kicker">05</p><h2 data-i18n="s5t"></h2>
+ <p class="explain" data-i18n="s5e"></p>
+ <p class="explain" data-i18n="proof5a"></p>
+ <div class="pair">
+  <div class="table-wrap" tabindex="0" role="region" aria-labelledby="wCap"><table><caption id="wCap" data-i18n="weightsCaption"></caption><thead id="wHead"></thead><tbody id="wBody"></tbody></table></div>
+  <div class="table-wrap" tabindex="0" role="region" aria-labelledby="wCap2"><table><caption id="wCap2" data-i18n="coverCaption"></caption><thead id="cHead"></thead><tbody id="cBody"></tbody></table></div>
+ </div>
+ <p class="explain" data-i18n="proof5b"></p>
+ <p class="formula" data-i18n="formula5"></p>
+ <p class="explain" data-i18n="boundary5"></p>
+</div></section>
+<section class="step" id="step6"><div class="step-inner">
+ <p class="step-kicker">06</p><h2 data-i18n="s6t"></h2>
+ <p class="explain" data-i18n="s6e"></p>
+ <div class="stage">
+  <label for="preset" data-i18n="presetLabel"></label>
+  <select id="preset" data-step="6"><option value="0" data-i18n="pr0"></option><option value="1" data-i18n="pr1"></option><option value="2" data-i18n="pr2"></option><option value="3" data-i18n="pr3"></option><option value="4" data-i18n="pr4"></option><option value="5" data-i18n="pr5"></option><option value="6" data-i18n="pr6"></option><option value="7" data-i18n="pr7"></option><option value="custom" data-i18n="prCustom" hidden disabled></option></select>
+  <div class="params" id="params"></div>
+  <p class="hint" id="restart" aria-live="polite"></p>
+  <p class="hint" data-i18n="sim"></p>
+  <div class="controls"><button type="button" class="btn" id="prev" data-step="6" data-i18n="prev"></button><button type="button" class="btn primary" id="next" data-step="6" data-i18n="next"></button><button type="button" class="btn" id="traceReset" data-step="6" data-i18n="traceReset"></button><button type="button" class="btn" id="end" data-step="6" data-i18n="end"></button></div>
+  <p class="readout" id="frameRead" aria-live="polite"></p>
+  <p class="readout" id="eventRead"></p>
+  <div class="pair wide-left">
+   <div><p class="cap" data-i18n="gridCaption"></p><div class="grid-wrap" tabindex="0" role="region" aria-label="grid"><div class="grid trace" id="traceGrid"></div></div>
+    <div class="controls arrows" id="twControls"><button type="button" class="btn" id="twLeft" data-step="6" data-i18n="left"></button><button type="button" class="btn" id="twUp" data-step="6" data-i18n="up"></button><button type="button" class="btn" id="twDown" data-step="6" data-i18n="down"></button><button type="button" class="btn" id="twRight" data-step="6" data-i18n="right"></button></div>
+    <p class="readout" id="twRead"></p></div>
+   <div class="table-wrap" tabindex="0" role="region" aria-labelledby="clsCap"><table><caption id="clsCap" data-i18n="classesCaption"></caption><thead id="clsHead"></thead><tbody id="clsBody"></tbody></table></div>
+  </div>
+ </div>
+</div></section>
+<section class="step" id="step7"><div class="step-inner">
+ <p class="step-kicker">07</p><h2 data-i18n="s7t"></h2>
+ <p class="explain" data-i18n="s7e"></p>
+ <div class="stage">
+  <fieldset class="prediction-options"><legend data-i18n="predictLegend"></legend>
+   <label><input type="radio" name="prediction" data-step="7" value="0"><span data-i18n="option0"></span></label>
+   <label><input type="radio" name="prediction" data-step="7" value="1"><span data-i18n="option1"></span></label>
+   <label><input type="radio" name="prediction" data-step="7" value="2"><span data-i18n="option2"></span></label>
+  </fieldset>
+  <div class="controls"><button type="button" class="btn primary" id="reveal" data-step="7" data-i18n="reveal"></button><button type="button" class="btn" id="predictReset" data-step="7" data-i18n="predictReset"></button></div>
+  <p class="readout" id="feedback" aria-live="polite"></p>
+ </div>
+</div></section>
+<section class="step" id="step8"><div class="step-inner">
+ <p class="step-kicker">08</p><h2 data-i18n="s8t"></h2>
+ <p class="explain" data-i18n="s8e"></p>
+ <ul class="map"><li data-i18n="map1"></li><li data-i18n="map2"></li><li data-i18n="map3"></li></ul>
+ <p class="explain" data-i18n="cost"></p>
+ <div class="solution-actions"><button type="button" class="btn primary" id="copySource" data-step="8" data-i18n="copy"></button><a class="btn" href="solution.py" download="solution.py" id="download" data-i18n="download"></a><span role="status" id="copyStatus"></span></div>
+ <div id="sourceFallback" hidden><label for="manualSource" data-i18n="manualCopy"></label><textarea id="manualSource" readonly spellcheck="false" rows="14"></textarea></div>
+ <details id="sourceDetails" open><summary data-i18n="source"></summary><pre tabindex="0" aria-label="Python"><code id="sourceCode"></code></pre></details>
+ <h3 data-i18n="related"></h3>
+ <div class="related"><a href="#step3" data-i18n="related1"></a><a href="#step5" data-i18n="related2"></a><a href="#step2" data-i18n="related3"></a></div>
+</div></section>
+</main>
+<noscript>请启用 JavaScript。 / Enable JavaScript. <a href="solution.py">solution.py</a></noscript>
+<script src="../common.js"></script>
+<script src="copy.js?v=1183-1"></script>
+<script src="core.js?v=1183-1"></script>
+<script src="python-code.js?v=1183-1"></script>
+<script src="app.js?v=1183-1"></script>
+</body>
+</html>

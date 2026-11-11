@@ -1,0 +1,33 @@
+{
+  "id": 727,
+  "title": {
+    "zh": "最小窗口子序列",
+    "en": "Minimum Window Subsequence"
+  },
+  "desc": {
+    "zh": "从逐个起点重扫到“同进度只留最晚起点”：一遍扫描的子序列窗口 DP。",
+    "en": "From rescanning every start to keeping only the latest start per progress level: a one-pass subsequence-window DP."
+  },
+  "difficulty": "hard",
+  "topics": [
+    {"zh": "动态规划", "en": "Dynamic programming"},
+    {"zh": "字符串", "en": "String"},
+    {"zh": "支配剪枝", "en": "Dominance pruning"}
+  ],
+  "path": "727/",
+  "leetcodeUrl": "https://leetcode.com/problems/minimum-window-subsequence/",
+  "language": "Python",
+  "complexity": "O(n·m) time for n = len(s1), m = len(s2); O(m) auxiliary space",
+  "concepts": [
+    {
+      "name": "Latest start per progress level",
+      "step": 2,
+      "description": "Two partial matches with the same progress differ only in start; the later start dominates forever."
+    },
+    {
+      "name": "Top-down slot promotion",
+      "step": 3,
+      "description": "Reading one letter promotes latest[k-1] to latest[k] for k from m down to 1 so a letter is used once."
+    }
+  ]
+}

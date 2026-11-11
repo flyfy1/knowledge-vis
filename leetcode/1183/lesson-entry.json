@@ -1,0 +1,26 @@
+{
+  "id": 1183,
+  "title": {
+    "zh": "矩阵中 1 的最大数量",
+    "en": "Maximum Number of Ones"
+  },
+  "desc": {
+    "zh": "按 (行 mod s, 列 mod s) 把格子分成 s² 类：任何 s×s 窗口里每类恰好一格，所以挑 k 个最大的类整类填 1。",
+    "en": "Group cells by (row mod s, column mod s): every s×s window holds exactly one cell of each class, so fill the k largest classes."
+  },
+  "difficulty": "hard",
+  "topics": [
+    {"zh": "数学", "en": "Math"},
+    {"zh": "贪心", "en": "Greedy"},
+    {"zh": "排序", "en": "Sorting"}
+  ],
+  "path": "1183/",
+  "leetcodeUrl": "https://leetcode.com/problems/maximum-number-of-ones/",
+  "language": "Python",
+  "complexity": "O(s² log s) time for s = sideLength (sorting s² class sizes); O(s²) auxiliary space",
+  "concepts": [
+    {"name": "Residue classes of a sliding window", "step": 3, "description": "Every s×s window contains exactly one cell with each (row mod s, column mod s), so filling a whole class costs one per window."},
+    {"name": "Counting a residue class", "step": 4, "description": "Class (a, b) has ceil((height − a) / s) · ceil((width − b) / s) cells; take the k largest."},
+    {"name": "Averaging over windows as an upper bound", "step": 5, "description": "A weighted random window covers each cell with probability 1 / its class size, which caps every valid grid at the top-k sum."}
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "id": 759,
+  "title": {
+    "zh": "员工空闲时间",
+    "en": "Employee Free Time"
+  },
+  "desc": {
+    "zh": "擦掉“谁在忙”，按开始时间扫描并维护最远结束：从逐段检查到一次扫描。",
+    "en": "Drop who is busy, sweep by start time and keep the furthest end: from checking every piece to one sweep."
+  },
+  "difficulty": "hard",
+  "topics": [
+    {"zh": "区间", "en": "Intervals"},
+    {"zh": "排序", "en": "Sorting"},
+    {"zh": "扫描线", "en": "Sweep line"}
+  ],
+  "path": "759/",
+  "leetcodeUrl": "https://leetcode.com/problems/employee-free-time/",
+  "language": "Python",
+  "complexity": "O(N log N) time for N intervals in total; O(N) auxiliary space",
+  "concepts": [
+    {
+      "name": "Free for everyone means outside the union",
+      "step": 2,
+      "description": "Employee labels can be erased; only the union of all busy intervals and its interior holes matter."
+    },
+    {
+      "name": "Furthest end (reach) sweep",
+      "step": 3,
+      "description": "Sorted by start, a gap exists exactly when the next start exceeds the furthest end seen so far."
+    }
+  ]
+}

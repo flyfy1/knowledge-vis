@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" href="data:,">
+<title>#1153 · String Transforms Into Another String</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="style.css?v=1153-1">
+</head>
+<body>
+<header class="site-head">
+ <div class="head-top"><a class="back-link" href="../" data-i18n="back"></a><div class="lang-toggle" id="langToggle" aria-label="语言 / Language"><button type="button" data-lang="zh">中</button><button type="button" data-lang="en">EN</button></div></div>
+ <span class="badge" data-i18n="badge"></span>
+ <h1 data-i18n="title"></h1>
+ <p class="tagline" data-i18n="intro"></p>
+ <p data-i18n="contract"></p>
+ <p class="hint" data-i18n="premium"></p>
+ <a class="official-link" href="https://leetcode.com/problems/string-transforms-into-another-string/" target="_blank" rel="noopener" data-i18n="official"></a>
+</header>
+<nav class="step-nav" aria-label="学习步骤 / Lesson steps"><div class="step-nav-inner"><a href="#step1" data-i18n="nav1"></a><a href="#step2" data-i18n="nav2"></a><a href="#step3" data-i18n="nav3"></a><a href="#step4" data-i18n="nav4"></a><a href="#step5" data-i18n="nav5"></a><a href="#step6" data-i18n="nav6"></a><a href="#step7" data-i18n="nav7"></a><a href="#step8" data-i18n="nav8"></a></div></nav>
+<main>
+<section class="step" id="step1"><div class="step-inner">
+ <p class="step-kicker">01</p><h2 data-i18n="s1t"></h2>
+ <p class="explain" data-i18n="s1e"></p>
+ <div class="stage">
+  <label for="sbPreset" data-i18n="sandboxPreset"></label>
+  <select id="sbPreset" data-step="1"><option value="0" data-i18n="sb0"></option><option value="1" data-i18n="sb1"></option></select>
+  <div class="strip-wrap" tabindex="0" role="region" aria-label="current / target"><table class="strip" id="sbStrip"></table></div>
+  <div class="pick">
+   <div><label for="sbFrom" data-i18n="fromLabel"></label><select id="sbFrom" data-step="1"></select></div>
+   <div><label for="sbTo" data-i18n="toLabel"></label><select id="sbTo" data-step="1"></select></div>
+  </div>
+  <div class="controls"><button type="button" class="btn primary" id="sbApply" data-step="1" data-i18n="apply"></button><button type="button" class="btn" id="sbUndo" data-step="1" data-i18n="undo"></button><button type="button" class="btn" id="sbReset" data-step="1" data-i18n="sbReset"></button></div>
+  <p class="readout" id="sbRead" aria-live="polite"></p>
+  <h3 data-i18n="sbHistory"></h3>
+  <ol class="ledger-list" id="sbHistory"></ol>
+ </div>
+ <p class="hint" data-i18n="sandboxTask"></p>
+</div></section>
+<section class="step" id="step2"><div class="step-inner">
+ <p class="step-kicker">02</p><h2 data-i18n="s2t"></h2>
+ <p class="explain" data-i18n="s2e"></p>
+ <pre tabindex="0" aria-label="Baseline Python"><code>from collections import deque
+
+def can_convert_bfs(str1, str2):
+    seen = {str1}
+    queue = deque([str1])
+    while queue:
+        s = queue.popleft()
+        if s == str2:
+            return True
+        for c in set(s):                      # a letter that appears
+            for d in "abcdefghijklmnopqrstuvwxyz":
+                if d != c:
+                    t = s.replace(c, d)       # rewrite ALL copies of c
+                    if t not in seen:
+                        seen.add(t)
+                        queue.append(t)
+    return False</code></pre>
+ <p class="explain" data-i18n="s2cost"></p>
+</div></section>
+<section class="step" id="step3"><div class="step-inner">
+ <p class="step-kicker">03</p><h2 data-i18n="s3t"></h2>
+ <p class="explain" data-i18n="s3e"></p>
+ <p class="question" data-i18n="ask3"></p>
+ <details class="think"><summary data-i18n="showAnswer"></summary><p class="explain" data-i18n="answer3"></p></details>
+ <p class="explain" data-i18n="note3"></p>
+ <p class="explain" data-i18n="wrong3"></p>
+</div></section>
+<section class="step" id="step4"><div class="step-inner">
+ <p class="step-kicker">04</p><h2 data-i18n="s4t"></h2>
+ <p class="explain" data-i18n="s4e"></p>
+ <p class="question" data-i18n="ask4"></p>
+ <details class="think"><summary data-i18n="showAnswer"></summary><p class="explain" data-i18n="answer4"></p></details>
+ <p class="formula">abab → (a→c) cbcb → (b→a) caca → (c→b) baba</p>
+ <p class="explain" data-i18n="toy4"></p>
+</div></section>
+<section class="step" id="step5"><div class="step-inner">
+ <p class="step-kicker">05</p><h2 data-i18n="s5t"></h2>
+ <p class="explain" data-i18n="s5e"></p>
+ <p class="explain" data-i18n="full5"></p>
+ <p class="explain" data-i18n="spare5"></p>
+ <p class="question" data-i18n="rule5"></p>
+</div></section>
+<section class="step" id="step6"><div class="step-inner">
+ <p class="step-kicker">06</p><h2 data-i18n="s6t"></h2>
+ <p class="explain" data-i18n="s6e"></p>
+ <p class="hint" data-i18n="labTask"></p>
+ <div class="stage">
+  <label for="preset" data-i18n="presetLabel"></label>
+  <select id="preset" data-step="6"><option value="0" data-i18n="p0"></option><option value="1" data-i18n="p1"></option><option value="2" data-i18n="p2"></option><option value="3" data-i18n="p3"></option><option value="4" data-i18n="p4"></option><option value="5" data-i18n="p5"></option><option value="6" data-i18n="p6"></option><option value="7" data-i18n="p7"></option><option value="8" data-i18n="p8"></option><option value="custom" data-i18n="pCustom" hidden disabled></option></select>
+  <div class="inputs">
+   <div><label for="in1" data-i18n="str1Label"></label><input id="in1" data-step="6" type="text" maxlength="30" autocomplete="off" spellcheck="false" autocapitalize="off"></div>
+   <div><label for="in2" data-i18n="str2Label"></label><input id="in2" data-step="6" type="text" maxlength="30" autocomplete="off" spellcheck="false" autocapitalize="off"></div>
+   <div><label for="alphabet" data-i18n="alphabetLabel"></label><select id="alphabet" data-step="6"><option value="abcdefghijklmnopqrstuvwxyz" data-i18n="alpha26"></option><option value="abcd" data-i18n="alpha4"></option><option value="abc" data-i18n="alpha3"></option><option value="ab" data-i18n="alpha2"></option></select></div>
+  </div>
+  <p class="hint" data-i18n="inputHint"></p>
+  <div class="controls"><button type="button" class="btn" id="run" data-step="6" data-i18n="run"></button></div>
+  <p class="hint" id="restart" aria-live="polite"></p>
+  <p class="hint" data-i18n="sim"></p>
+  <div class="controls"><button type="button" class="btn" id="prev" data-step="6" data-i18n="prev"></button><button type="button" class="btn primary" id="next" data-step="6" data-i18n="next"></button><button type="button" class="btn" id="traceReset" data-step="6" data-i18n="traceReset"></button><button type="button" class="btn" id="end" data-step="6" data-i18n="end"></button></div>
+  <p class="readout" id="frameRead" aria-live="polite"></p>
+  <p class="readout" id="eventRead"></p>
+  <div class="strip-wrap" tabindex="0" role="region" aria-labelledby="stripCap"><table class="strip"><caption id="stripCap" data-i18n="stripCaption"></caption><tbody id="strip"></tbody></table></div>
+  <div class="pair">
+   <div class="panel"><h3 data-i18n="mapCaption"></h3><p id="mapView" class="mapview"></p><h3 data-i18n="arrowsCaption"></h3><ul id="shapes" class="shapes"></ul><p id="usedRead" class="hint"></p></div>
+   <div class="panel"><h3 data-i18n="historyCaption"></h3><ol id="history" class="ledger-list"></ol></div>
+  </div>
+ </div>
+</div></section>
+<section class="step" id="step7"><div class="step-inner">
+ <p class="step-kicker">07</p><h2 data-i18n="s7t"></h2>
+ <p class="explain" data-i18n="s7e"></p>
+ <div class="stage">
+  <fieldset class="prediction-options"><legend data-i18n="predictLegend"></legend>
+   <label><input type="radio" name="prediction" data-step="7" value="0"><span data-i18n="option0"></span></label>
+   <label><input type="radio" name="prediction" data-step="7" value="1"><span data-i18n="option1"></span></label>
+   <label><input type="radio" name="prediction" data-step="7" value="2"><span data-i18n="option2"></span></label>
+  </fieldset>
+  <div class="controls"><button type="button" class="btn primary" id="reveal" data-step="7" data-i18n="reveal"></button><button type="button" class="btn" id="predictReset" data-step="7" data-i18n="predictReset"></button></div>
+  <p class="readout" id="feedback" aria-live="polite"></p>
+ </div>
+</div></section>
+<section class="step" id="step8"><div class="step-inner">
+ <p class="step-kicker">08</p><h2 data-i18n="s8t"></h2>
+ <p class="explain" data-i18n="s8e"></p>
+ <ul class="map"><li data-i18n="map1"></li><li data-i18n="map2"></li><li data-i18n="map3"></li><li data-i18n="map4"></li></ul>
+ <p class="explain" data-i18n="cost"></p>
+ <div class="solution-actions"><button type="button" class="btn primary" id="copySource" data-step="8" data-i18n="copy"></button><a class="btn" href="solution.py" download="solution.py" id="download" data-i18n="download"></a><span role="status" id="copyStatus"></span></div>
+ <div id="sourceFallback" hidden><label for="manualSource" data-i18n="manualCopy"></label><textarea id="manualSource" readonly spellcheck="false" rows="14"></textarea></div>
+ <details id="sourceDetails" open><summary data-i18n="source"></summary><pre tabindex="0" aria-label="Python"><code id="sourceCode"></code></pre></details>
+ <h3 data-i18n="related"></h3>
+ <div class="related"><a href="#step3" data-i18n="related1"></a><a href="#step4" data-i18n="related2"></a><a href="#step5" data-i18n="related3"></a></div>
+</div></section>
+</main>
+<noscript>请启用 JavaScript。 / Enable JavaScript. <a href="solution.py">solution.py</a></noscript>
+<script src="../common.js"></script>
+<script src="copy.js?v=1153-1"></script>
+<script src="core.js?v=1153-1"></script>
+<script src="python-code.js?v=1153-1"></script>
+<script src="app.js?v=1153-1"></script>
+</body>
+</html>

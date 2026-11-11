@@ -1,69 +1,78 @@
-# #727 · Minimum Window Subsequence — blocked author brief
+# #727 · Minimum Window Subsequence — author brief (rebuilt 2026-11-11)
 
-Status: blocked at official-contract verification; no lesson candidate authored.
-This is an author access report, not independent acceptance or a completed lesson.
+Status: author build and self-check complete; independent review pending. No LeetCode
+submission, independent acceptance, registration or deployment is claimed.
 
-## Product boundary and approved design
+## History of this brief
 
-Reuse the existing LeetCode lesson route and shared tokens/controls under
-`specs/reviews/leetcode-all-hard-design-review.md` and its dispatcher adjudication.
-Category: algorithms (collection category leetcode); stage: university.
-Target reader: a learner with basic programming knowledge seeking to reconstruct
-and implement this problem's actual official algorithmic contract.
-Smallest useful outcome: a bilingual causal lesson with a reversible experiment,
-fresh prediction, canonical source, and reproducible correctness/browser checks.
-The useful delivery remains in scope; official access blocks its specification.
+The 2026-10-25 preparation pass stopped at the source gate: the problem is subscriber-only
+and the public GraphQL endpoint returns `content: null`, `codeSnippets: null` (evidence kept in
+`tests/evidence/`, probe `tests/check_official_access.py`). The probe was re-run on 2026-11-11
+into scratch and is still `blocked`. On 2026-11-11 the owner asked for the remaining problems to
+be finished, so this lesson is built on the publicly circulated statement below, labelled as such
+on the page. The probe is kept as access evidence; it is not a lesson test and still exits
+"blocked" by design.
 
-The website-design skill at
-`/home/songyy/Documents/agent-skills/website-design/SKILL.md` and all seven requested
-repository policy/design documents were read. Existing approval covers reuse;
-no new design review or independent lesson acceptance is claimed.
+## Contract taught (not verified against the official page)
 
-## Verified facts and missing contract
+- Input: lowercase strings `s1`, `s2`; `1 ≤ |s1| ≤ 2·10^4`, `1 ≤ |s2| ≤ 100`.
+- Output: the shortest contiguous substring W of s1 such that s2 is a subsequence of W;
+  `""` if none. **Tie: the window with the leftmost start.**
+- Python interface assumed: `Solution.minWindow(self, s1: str, s2: str) -> str`. Older versions
+  of the problem named the parameters `S`, `T`; positional calls are unaffected.
+- Uncertainties: the exact tie wording and parameter names could not be checked; the public
+  `exampleTestcases` inputs (`"abcdebdde"/"bde"`, and a no-answer case) are consistent with this
+  reading (expected `"bcde"` and `""`) but outputs are not public.
 
-Official URL: https://leetcode.com/problems/minimum-window-subsequence/
+## Learning path (one idea per step)
 
-See `tests/evidence/access-summary.json` for the timezone-qualified capture time,
-`graphql-request.json` and `graphql-response.json` for the actual official query
-and response, and `official-page-observation.md` for the rendered page observation.
-The ordinary public GraphQL endpoint returned HTTP 200, frontend ID 727, the
-requested title/slug, isPaidOnly=true, content=null, and codeSnippets=null.
-The official page said “Subscribe to unlock.”
+| Step | Question it answers | Example / action | Holds when |
+|---|---|---|---|
+| 1 Task | What is a subsequence window; which one wins? | `xcaxctat`/`cat` → `ctat`, not the first valid `caxct`; tie `axbcayb`/`ab` → `axb`; `ta`/`at` → `""` | Order matters, gaps allowed |
+| 2 Brute force | How much work is trying every start? | Per-start table computed live: 32 letters read for 8 letters; t(5) read 6 times; worst case ~n²/2 = 2·10^8 | Greedy earliest match is optimal for a fixed start (exchange argument given) |
+| 3 Key observation | Which starts must we remember? | Wrong turn first (#76 counts ignore order: `ta`/`at`). Then the reader is asked to compare c(1) and c(4) at equal progress; answer in a "think first" disclosure, technique named only inside it | Same progress ⇒ later start dominates forever |
+| 4 Update rule + trace | How does reading one letter change the m slots? | Recap of `latest[k]`; promotion rule; why k goes downward (`a`/`aa` counterexample); why assignment is safe; reversible trace with presets, custom input (≤20/≤6 letters), slider, slot table with old→new, strip with per-start progress tags, candidate history | `latest[k-1] ≥ latest[k]` |
+| 5 Proof + predict | Why is this shortest and leftmost? | Invariant and two-case proof tied to index 4 of the main example; tie argument; boundary list; fresh prediction `babcb`/`bb` (distractors: letter reuse `b`, rightmost tie `bcb`, substring confusion `""`) | — |
+| 6 Python | Which line comes from which step; cost | Source shown first, then line-to-step mapping; O(n·m)=2·10^6 vs 2·10^8; O(m) space; trace snapshots are teaching memory only; forward/backward two-pointer mentioned as alternative | — |
 
-Public exampleTestcases supplies inputs only. It does not establish example
-outputs, tie-breaking, constraints, exceptional cases, supported languages or the
-callable signature. None of these missing details is inferred from the title,
-prior familiarity, or third-party mirrors. No canonical language is selected.
+## Verification (author)
 
-## Next required input
+- `tests/test_solution.py`: independent oracle (enumerate windows by length then start, iterator
+  subsequence test) vs `solution.py` — 127,881 exhaustive cases (s1 over {a,b,c} up to length 7,
+  s2 up to length 3), 6,000 seeded random cases, 300 large seeded cases against a structurally
+  different forward/backward scan (itself cross-checked against the oracle), named lesson cases,
+  max-size timing, mirror equality, copy key uniqueness. Emits fixtures for `test_core.cjs`, which
+  checks every frame's slot values against the definition of `latest[k]`, monotone slots, change
+  lists, best-so-far against brute force on each prefix, history and deep snapshots.
+- `tests/browser.cjs`: both locales; every preset forward/rewind/replay/end/reset; main-example
+  frame semantics; custom valid/invalid input; every prediction option; locale switch keeps state;
+  source/download/copy/fallback parity; keyboard; 1280/390/320 overflow and 48px controls;
+  reduced motion; blocked storage; offline source; screenshots.
+- `python3 -B scripts/register_leetcode_lesson.py 727 --validate-only` exit 0.
 
-Provide normally authorized access to the official statement and actual language
-selector/starter interface, or an authorized official capture containing the full
-statement, constraints, examples with outputs, exceptions/tie rules, and supported
-submission interfaces. Do not send credentials. Once available, verify Python >
-TypeScript > required native, complete the problem-specific five-field step plan
-and local terminology table, then implement under the approved shared design.
+## Cross-review 2026-11-11
 
-## Priorities and deferred work
+Reviewer: Claude Code (claude-opus-5-5), first reader who did not build the lesson. Independent of the
+author; no LeetCode submission.
 
-Highest-return slice / P0: verify the contract before generating instructional
-content; then implement and validate the full bilingual learning loop.
-P1: refinements supported by the verified problem and interaction evidence.
-P2: optional decoration only after P0 checks pass.
-Deferred: step sequence, numerical core, source, metadata, UI, numerical/oracle
-checks, browser checks, and contrast measurements, because their correctness
-cannot be assessed against an inaccessible official contract. No fake route or
-placeholder lesson was created. No runtime assets or language contract are claimed.
-
-## Author checks actually run
-
-- `python3 -B leetcode/727/tests/check_official_access.py`: succeeded as an access
-  capture; result **blocked**, not a solution test pass. Supports `OUTPUT_DIR` for
-  reviewer reruns without modifying this evidence.
-- From repository root,
-  `python3 -B scripts/register_leetcode_lesson.py 727 --validate-only`: exit 2,
-  missing `leetcode/727/lesson-entry.json`. Expected for this blocked, unbuilt
-  lesson; readiness gate did not pass. No registration was run.
-
-No solution, browser interaction, learner outcome, deployment, or independent
-review has been tested or claimed. Changes are confined to `leetcode/727/`.
+- **Statement.** Checked against two public mirrors: the doocs/leetcode README (current wording, `s1`/`s2`)
+  and grandyang's write-up (older wording, `S`/`T`). Both give: shortest contiguous window of s1 containing
+  s2 as a subsequence, `""` if none, **leftmost start on ties**, 1 ≤ |s1| ≤ 2·10⁴, 1 ≤ |s2| ≤ 100, lowercase,
+  Python `minWindow(self, s1, s2)`. The lesson's contract matches on every point; the tie doubt is resolved.
+- **Brute force.** My own oracle (every window, shortest then leftmost), written before reading
+  `tests/oracle.py`, agreed with `solution.py` on 135,881 cases (all s1 over {a,b,c} up to length 7 × all s2
+  up to length 3, plus 8,000 seeded random). Max-size inputs run in < 0.1 s.
+- **Text.** Recomputed by running `core.js`: brute-force table (32 letters read, t(5) read 6 times), every
+  preset answer and description, the `latest` slots at index 4 and for `abcabdbe/abe`, the prediction
+  `babcb/bb` and its distractors, n²/2 ≈ 2·10⁸ vs n·m = 2·10⁶. Proof steps (two-case invariant, top-down
+  order, assignment vs max, tie argument) hold. zh/en say the same. No errors found.
+- **Browser.** zh/en at 1280/390/320, stepping the main, tie and swap presets: no overflow, no console
+  errors, all controls ≥ 48 px; author `browser.cjs` passes against my server.
+- **Rubric.** A3 B3 C3 D3 E3 F3 G3. The dominance question (c(1) vs c(4) at equal progress) is asked
+  before the technique is named.
+- **`sep` exemption.** Legitimate: it is the sentence joiner (empty in Chinese, one space in English),
+  pinned to exactly `['', ' ']`, and no collection rule requires a non-empty zh string.
+- **Changed.** Nothing in the lesson. Note: my first test run omitted `OUTPUT_DIR`, so
+  `tests/evidence/numerical.json` and `oracle-fixtures.json` were regenerated in place (same seeds; only
+  timing values can differ).
+- **Not verified.** The official page itself (still subscriber-only); a learner study.

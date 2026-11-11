@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" href="data:,">
+<title>#1127 · User Purchase Platform</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="style.css?v=1127-1">
+</head>
+<body>
+<header class="site-head">
+ <div class="head-top"><a class="back-link" href="../" data-i18n="back"></a><div class="lang-toggle" id="langToggle" aria-label="语言 / Language"><button type="button" data-lang="zh">中</button><button type="button" data-lang="en">EN</button></div></div>
+ <span class="badge" data-i18n="badge"></span>
+ <h1 data-i18n="title"></h1>
+ <p class="tagline" data-i18n="intro"></p>
+ <p data-i18n="contract"></p>
+ <p class="hint" data-i18n="premium"></p>
+ <a class="official-link" href="https://leetcode.com/problems/user-purchase-platform/" target="_blank" rel="noopener" data-i18n="official"></a>
+</header>
+<nav class="step-nav" aria-label="学习步骤 / Lesson steps"><div class="step-nav-inner"><a href="#step1" data-i18n="nav1"></a><a href="#step2" data-i18n="nav2"></a><a href="#step3" data-i18n="nav3"></a><a href="#step4" data-i18n="nav4"></a><a href="#step5" data-i18n="nav5"></a><a href="#step6" data-i18n="nav6"></a><a href="#step7" data-i18n="nav7"></a></div></nav>
+<main>
+<section class="step" id="step1"><div class="step-inner">
+ <p class="step-kicker">01</p><h2 data-i18n="s1t"></h2>
+ <p class="explain" data-i18n="s1e"></p>
+ <p class="hint" data-i18n="handTask"></p>
+ <div class="stage">
+  <div class="pair">
+   <div class="table-wrap" tabindex="0" role="region" aria-labelledby="handSpendCap"><table><caption id="handSpendCap" data-i18n="spendingCaption"></caption><thead id="handSpendHead"></thead><tbody id="handSpend"></tbody></table></div>
+   <div class="table-wrap" tabindex="0" role="region" aria-labelledby="handAnswerCap"><table><caption id="handAnswerCap" data-i18n="answerCaption"></caption><thead id="handAnswerHead"></thead><tbody id="handAnswer"></tbody></table></div>
+  </div>
+  <div class="controls"><button type="button" class="btn" id="handPrev" data-step="1" data-i18n="handPrev"></button><button type="button" class="btn primary" id="handNext" data-step="1" data-i18n="handNext"></button><button type="button" class="btn" id="handReset" data-step="1" data-i18n="handReset"></button></div>
+  <p class="readout" id="handRead" aria-live="polite"></p>
+  <h3 data-i18n="handLedgerTitle"></h3>
+  <ol class="ledger-list" id="handLedger"></ol>
+ </div>
+</div></section>
+<section class="step" id="step2"><div class="step-inner">
+ <p class="step-kicker">02</p><h2 data-i18n="s2t"></h2>
+ <p class="explain" data-i18n="s2e"></p>
+ <pre tabindex="0" aria-label="SQL"><code>SELECT spend_date, platform,
+       SUM(amount) AS total_amount,
+       COUNT(DISTINCT user_id) AS total_users
+FROM Spending
+GROUP BY spend_date, platform;</code></pre>
+ <div class="pair">
+  <div class="table-wrap" tabindex="0" role="region" aria-labelledby="naiveCap"><table><caption id="naiveCap" data-i18n="naiveCaption"></caption><thead id="naiveHead"></thead><tbody id="naiveBody"></tbody></table></div>
+  <div class="table-wrap" tabindex="0" role="region" aria-labelledby="rightCap"><table><caption id="rightCap" data-i18n="rightCaption"></caption><thead id="rightHead"></thead><tbody id="rightBody"></tbody></table></div>
+ </div>
+ <p class="explain" data-i18n="naiveCount"></p>
+ <p class="question" data-i18n="askLabel"></p>
+ <details class="think"><summary data-i18n="showAnswer"></summary><p class="explain" data-i18n="answerLabel"></p></details>
+ <p class="explain" data-i18n="slowBaseline"></p>
+</div></section>
+<section class="step" id="step3"><div class="step-inner">
+ <p class="step-kicker">03</p><h2 data-i18n="s3t"></h2>
+ <p class="explain" data-i18n="s3e"></p>
+ <pre tabindex="0" aria-label="SQL"><code>SELECT spend_date, user_id,
+       CASE WHEN COUNT(DISTINCT platform) = 2 THEN 'both'
+            ELSE MAX(platform) END AS platform,
+       SUM(amount) AS amount
+FROM Spending
+GROUP BY spend_date, user_id</code></pre>
+ <div class="table-wrap" tabindex="0" role="region" aria-labelledby="dayCap3"><table><caption id="dayCap3" data-i18n="userDayCaption"></caption><thead id="day3Head"></thead><tbody id="day3Body"></tbody></table></div>
+ <p class="explain" data-i18n="invariant3"></p>
+ <p class="explain" data-i18n="boundary3"></p>
+</div></section>
+<section class="step" id="step4"><div class="step-inner">
+ <p class="step-kicker">04</p><h2 data-i18n="s4t"></h2>
+ <p class="explain" data-i18n="s4e"></p>
+ <p class="question" data-i18n="ask4"></p>
+ <details class="think"><summary data-i18n="showAnswer"></summary><p class="explain" data-i18n="answer4"></p></details>
+ <div class="table-wrap" tabindex="0" role="region" aria-labelledby="joinCap"><table class="wide"><caption id="joinCap" data-i18n="joinCaption"></caption><thead id="joinHead"></thead><tbody id="joinBody"></tbody></table></div>
+ <p class="explain" data-i18n="trap4"></p>
+ <p class="explain" data-i18n="dates4"></p>
+</div></section>
+<section class="step" id="step5"><div class="step-inner">
+ <p class="step-kicker">05</p><h2 data-i18n="s5t"></h2>
+ <p class="explain" data-i18n="s5e"></p>
+ <p class="hint" data-i18n="labTask"></p>
+ <div class="stage">
+  <label for="preset" data-i18n="presetLabel"></label>
+  <select id="preset" data-step="5"><option value="0" data-i18n="preset0"></option><option value="1" data-i18n="preset1"></option><option value="2" data-i18n="preset2"></option><option value="3" data-i18n="preset3"></option><option value="4" data-i18n="preset4"></option><option value="custom" data-i18n="custom" hidden disabled></option></select>
+  <div class="table-wrap" tabindex="0" role="region" aria-labelledby="toggleCap"><table class="toggles"><caption id="toggleCap" data-i18n="togglesCaption"></caption><tbody id="toggles"></tbody></table></div>
+  <p class="hint" id="restart" aria-live="polite"></p>
+  <p class="hint" data-i18n="sim"></p>
+  <div class="controls"><button type="button" class="btn" id="prev" data-step="5" data-i18n="prev"></button><button type="button" class="btn primary" id="next" data-step="5" data-i18n="next"></button><button type="button" class="btn" id="traceReset" data-step="5" data-i18n="traceReset"></button><button type="button" class="btn" id="end" data-step="5" data-i18n="end"></button></div>
+  <p class="readout" id="frameRead" aria-live="polite"></p>
+  <p class="readout" id="eventRead"></p>
+  <p class="readout" id="conservation"></p>
+  <div class="trio">
+   <div class="table-wrap" tabindex="0" role="region" aria-labelledby="rowsCap"><table><caption id="rowsCap" data-i18n="rowsCaption"></caption><thead id="rowsHead"></thead><tbody id="rowsBody"></tbody></table></div>
+   <div class="table-wrap" tabindex="0" role="region" aria-labelledby="dayCap"><table><caption id="dayCap" data-i18n="dayCaption"></caption><thead id="dayHead"></thead><tbody id="dayBody"></tbody></table></div>
+   <div class="table-wrap" tabindex="0" role="region" aria-labelledby="outCap"><table><caption id="outCap" data-i18n="outCaption"></caption><thead id="outHead"></thead><tbody id="outBody"></tbody></table></div>
+  </div>
+ </div>
+</div></section>
+<section class="step" id="step6"><div class="step-inner">
+ <p class="step-kicker">06</p><h2 data-i18n="s6t"></h2>
+ <p class="explain" data-i18n="s6e"></p>
+ <div class="stage">
+  <div class="table-wrap" tabindex="0" role="region" aria-labelledby="predCap"><table><caption id="predCap" data-i18n="predictCaption"></caption><thead id="predHead"></thead><tbody id="predBody"></tbody></table></div>
+  <fieldset class="prediction-options"><legend data-i18n="predictLegend"></legend>
+   <label><input type="radio" name="prediction" data-step="6" value="0"><span data-i18n="option0"></span></label>
+   <label><input type="radio" name="prediction" data-step="6" value="1"><span data-i18n="option1"></span></label>
+   <label><input type="radio" name="prediction" data-step="6" value="2"><span data-i18n="option2"></span></label>
+  </fieldset>
+  <div class="controls"><button type="button" class="btn primary" id="reveal" data-step="6" data-i18n="reveal"></button><button type="button" class="btn" id="predictReset" data-step="6" data-i18n="predictReset"></button></div>
+  <p class="readout" id="feedback" aria-live="polite"></p>
+ </div>
+</div></section>
+<section class="step" id="step7"><div class="step-inner">
+ <p class="step-kicker">07</p><h2 data-i18n="s7t"></h2>
+ <p class="explain" data-i18n="s7e"></p>
+ <ul class="map"><li data-i18n="map1"></li><li data-i18n="map2"></li><li data-i18n="map3"></li><li data-i18n="map4"></li></ul>
+ <p class="explain" data-i18n="cost"></p>
+ <p class="explain" data-i18n="dialect"></p>
+ <div class="solution-actions"><button type="button" class="btn primary" id="copySource" data-step="7" data-i18n="copy"></button><a class="btn" href="solution.sql" download="solution.sql" id="download" data-i18n="download"></a><span role="status" id="copyStatus"></span></div>
+ <div id="sourceFallback" hidden><label for="manualSource" data-i18n="manualCopy"></label><textarea id="manualSource" readonly spellcheck="false" rows="14"></textarea></div>
+ <details id="sourceDetails" open><summary data-i18n="source"></summary><pre tabindex="0" aria-label="MySQL"><code id="sourceCode"></code></pre></details>
+ <h3 data-i18n="related"></h3>
+ <div class="related"><a href="#step3" data-i18n="related1"></a><a href="#step4" data-i18n="related2"></a><a href="../262/#step2" data-i18n="related3"></a></div>
+</div></section>
+</main>
+<noscript>请启用 JavaScript。 / Enable JavaScript. <a href="solution.sql">solution.sql</a></noscript>
+<script src="../common.js"></script>
+<script src="copy.js?v=1127-1"></script>
+<script src="core.js?v=1127-1"></script>
+<script src="sql-code.js?v=1127-1"></script>
+<script src="app.js?v=1127-1"></script>
+</body>
+</html>

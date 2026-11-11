@@ -1,0 +1,46 @@
+/* Shared palette from ../style.css; local layout and accessibility only. */
+html{scroll-behavior:auto}
+button,.btn,select,input:not([type="radio"]):not([type="range"]),summary,.solution-actions a,.related a,.back-link,.lang-toggle button,.step-nav a,.site-head .official-link,.prediction-options label{min-height:48px}
+input[type="range"]{min-height:48px;display:block;width:100%;max-width:100%}
+.btn,select{border-color:var(--muted)}
+button.btn:disabled{opacity:1;color:var(--muted);background:var(--panel);border-color:var(--muted);border-style:dashed}
+.btn.primary:disabled{background:var(--panel);color:var(--muted)}
+.lang-toggle button{min-width:48px}.lang-toggle:focus-within{outline:3px solid var(--accent2);outline-offset:4px}.lang-toggle button:focus-visible{outline-offset:-4px}
+.head-top{flex-wrap:wrap}.site-head .official-link{white-space:normal;max-width:100%}
+.back-link,.related a,.solution-actions a,.step-nav a{display:inline-flex;align-items:center}
+.step{scroll-margin-top:96px}.stage,.step-inner{min-width:0}
+p,li,h1,h2,h3,label,legend,summary,td,th{overflow-wrap:anywhere}
+select{width:100%;max-width:100%;white-space:normal}
+.controls .btn{flex:1 1 150px;white-space:normal;max-width:100%}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.plain-list{padding-left:20px}
+#validation{min-height:28px;margin:8px 0 0}.status-good{color:var(--good)}.status-bad{color:var(--bad)}
+.best{color:var(--accent2)}
+.table-wrap{max-width:100%;border:1px solid var(--line);border-radius:8px}
+.table-wrap:focus-visible,pre:focus-visible,textarea:focus-visible{outline:3px solid var(--accent2);outline-offset:4px}
+.changed-row td{background:var(--panel2);color:var(--accent)}
+.history{padding-left:24px}.history li{padding:8px 4px;border-bottom:1px solid var(--line)}.history li.latest{color:var(--accent)}
+details.think{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:4px 16px;margin:16px 0}
+.prediction-options{min-inline-size:0}.prediction-options legend{max-width:100%;margin-bottom:8px}
+.prediction-options label{align-items:center;gap:12px;padding:4px 0}.prediction-options input{width:22px;height:22px;flex-shrink:0}
+textarea{width:100%;background:var(--panel2);color:var(--text);font:14px/1.6 ui-monospace,monospace;border:1px solid var(--muted);padding:12px}
+pre{max-width:100%}
+.formula{font-size:15px}
+.readout+p{margin-top:16px}
+.block-label{display:flex;flex-direction:column;gap:6px;margin:8px 0 12px}
+.block-label input{width:100%;padding:8px 12px;background:var(--bg);color:var(--text);border:1px solid var(--muted);border-radius:8px;font-family:ui-monospace,SFMono-Regular,Consolas,monospace}
+.metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.metric b{font-size:16px;font-weight:600}
+.current-row td{background:var(--panel2);color:var(--accent)}.pending-row td{color:var(--muted)}
+@media(max-width:560px){.metrics{grid-template-columns:1fr}}
+.tokens{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 20px}
+.tok{min-width:34px;padding:6px 8px;text-align:center;font:600 20px/1.4 ui-monospace,SFMono-Regular,Consolas,monospace;background:var(--panel2);border:2px solid transparent;border-radius:6px}
+.tok.paren{color:var(--accent2)}
+.tok.future{background:var(--panel);color:var(--muted);font-weight:400}
+.tok.current{border-color:var(--accent)}
+.metrics.three{grid-template-columns:repeat(3,minmax(0,1fr))}.metrics.three b{font-size:24px}
+.stack{padding-left:28px}.stack li{padding:8px;border-bottom:1px solid var(--line);font-variant-numeric:tabular-nums}.stack li.top{color:var(--accent2)}
+td code{color:var(--accent)}
+@media(max-width:560px){.metrics.three{grid-template-columns:repeat(3,minmax(0,1fr))}.metrics.three b{font-size:20px}.tok{min-width:28px;font-size:18px;padding:4px 6px}}
+@media(forced-colors:active){.tok.current{border:3px solid Highlight}}
+.ledger-table th:nth-child(-n+4),.ledger-table td:nth-child(-n+4){white-space:nowrap;padding-inline:6px}
+.ledger-table td:nth-child(-n+4){font-variant-numeric:tabular-nums}

@@ -1,0 +1,42 @@
+button,.btn,select,.lang-toggle button,.step-nav a,.prediction-options label,.site-head .official-link,summary,.back-link,.related a{min-height:48px}
+.back-link,.related a,a.btn{display:inline-flex;align-items:center}.step-nav a{display:inline-flex;align-items:center}
+button.btn:disabled{opacity:1;color:var(--muted);background:var(--panel);border-color:var(--muted);border-style:dashed}
+.btn,select{border-color:var(--muted)}.head-top{flex-wrap:wrap}.lang-toggle{margin-left:auto}.lang-toggle button{min-width:48px}
+.stage,.step-inner{min-width:0}p,li,h1,h2,h3,label,summary,.readout,figcaption{overflow-wrap:anywhere}
+select{max-width:100%;width:100%;white-space:normal}.controls .btn{flex:1 1 160px;max-width:100%;white-space:normal}
+html{scroll-behavior:auto}.step{scroll-margin-top:100px}
+.grid-wrap{max-width:100%;overflow-x:auto;padding:6px 2px}
+.grid-wrap:focus-visible,.table-wrap:focus-visible,pre:focus-visible,textarea:focus-visible{outline:3px solid var(--accent2);outline-offset:4px}
+.grid{display:grid;grid-template-columns:repeat(var(--w,5),minmax(var(--cell,32px),var(--cellmax,64px)));gap:4px;width:max-content;max-width:none}
+.grid .cell{display:flex;align-items:center;justify-content:center;min-height:var(--cell,32px);aspect-ratio:1/1;border-radius:6px;background:var(--panel2);color:var(--muted);font:600 14px/1 ui-monospace,SFMono-Regular,Consolas,monospace;border:1px solid var(--line);padding:0}
+.grid.sandbox{--cell:48px;--cellmax:64px}
+.grid.sandbox .cell{cursor:pointer;font-size:18px;color:var(--muted)}
+.grid .cell.one{background:#164b59;border-color:var(--accent);color:var(--text)}
+.grid .cell.over{background:#4a1d28;border-color:var(--bad);color:var(--text)}
+.grid.mini{--cell:30px;--cellmax:40px}
+.grid.classes{--cell:44px;--cellmax:60px}.grid.classes .cell{font-size:16px;color:var(--text)}
+.grid .cell.k0{background:#1f3a52}.grid .cell.k1{background:#3b2f4d}.grid .cell.k2{background:#2f4430}.grid .cell.k3{background:#4a3a20}
+.grid.classes .cell.one{outline:2px solid var(--accent);outline-offset:-4px}
+.grid.trace{--cell:34px;--cellmax:48px}.grid.trace .cell{font-size:11px}
+.grid .cell.hot{border-color:var(--accent2);color:var(--accent2)}.grid .cell.one.hot{color:var(--text)}
+.grid .cell.in-win{border:3px solid var(--accent2)}
+.readout.bad{color:var(--bad)}
+.arrows .btn{flex:1 1 100px}
+.pair{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px;margin:16px 0;align-items:start}
+.pair>*{min-width:0}figure{margin:0}figcaption,.cap{color:var(--muted);font-size:14px;margin:0 0 6px}
+.params{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:10px;margin:14px 0}
+.param{display:grid;grid-template-columns:1fr 48px 48px 48px;align-items:center;gap:6px;background:var(--panel2);border-radius:8px;padding:6px 10px}
+.param-name{white-space:nowrap}.param output{text-align:center;font:600 18px/1 ui-monospace,monospace;color:var(--text)}
+.btn.step{padding:0;min-width:48px;font-size:20px}
+.table-wrap{max-width:100%;overflow-x:auto;border:1px solid var(--line);border-radius:8px;padding:4px 8px;background:var(--panel)}
+caption{caption-side:top;text-align:left;color:var(--muted);font-size:14px;padding:8px 0}
+.table-wrap th,.table-wrap td{white-space:nowrap;overflow-wrap:normal;padding:6px 10px}
+tr.current-row td{background:#164b59;color:var(--text)}tr.chosen-row td{color:var(--accent)}
+details.think{border-left:3px solid var(--accent2);padding-left:16px}
+.map li{margin:8px 0}
+.prediction-options{min-inline-size:0}.prediction-options label{gap:12px;padding:8px 0;align-items:flex-start}.prediction-options input{width:20px;height:20px;flex-shrink:0;margin-top:6px}
+input:focus-visible{outline:3px solid var(--accent2);outline-offset:4px}
+textarea{width:100%;background:var(--panel2);color:var(--text);font:14px/1.6 ui-monospace,monospace;padding:12px;border:1px solid var(--muted)}
+pre{white-space:pre-wrap;overflow-wrap:anywhere}
+.solution-actions>*{max-width:100%;overflow-wrap:anywhere}
+@media(max-width:560px){.controls .btn{flex-basis:100%}.arrows .btn{flex-basis:40%}.back-link{max-width:100%}.grid.classes{--cell:40px}.grid.trace{--cell:30px}.grid{gap:3px;width:auto}}
