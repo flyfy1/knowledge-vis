@@ -1,0 +1,93 @@
+{
+  "slug": "body-in-balance",
+  "path": "biology/body/body-in-balance/",
+  "category": "biology",
+  "subtopic": "body",
+  "subtopicName": { "zh": "身体与药", "en": "Body & Medicine" },
+  "stage": "senior",
+  "title": { "zh": "身体是怎么稳住的", "en": "How the Body Keeps Things Steady" },
+  "desc": {
+    "zh": "进和出一直在变，身体却把血糖、体温、药量守在很窄的范围里。九个可以拖动的模型：半衰期与平台、酒精、血糖反馈、发烧、治疗窗、心脏、抗生素和群体免疫。",
+    "en": "Inputs and outputs never stop changing, yet the body keeps glucose, temperature and drug levels in narrow ranges. Nine models you can push: half-life and plateau, alcohol, glucose feedback, fever, the therapeutic window, the heart, antibiotics and herd immunity."
+  },
+  "tags": [
+    { "zh": "稳态", "en": "Homeostasis" },
+    { "zh": "药代动力学", "en": "Pharmacokinetics" },
+    { "zh": "负反馈", "en": "Negative Feedback" },
+    { "zh": "长文", "en": "Long-form Essay" }
+  ],
+  "concepts": [
+    {
+      "id": "steady-state-set-point",
+      "title": { "zh": "进出平衡与设定点", "en": "Inflow, outflow and the set point" },
+      "desc": { "zh": "流出量跟存量成正比时，存量会自己停在“进水 ÷ 漏的比例”处，被推开后差距按固定时间减半。", "en": "When outflow is proportional to the stock, the stock settles at inflow ÷ leak rate and any push decays by half in a fixed time." },
+      "aliases": { "zh": ["稳态", "内环境稳态", "一级动力学", "为什么身体能保持平衡", "漏水的桶"], "en": ["homeostasis", "steady state", "first-order kinetics", "leaky bucket", "why does the body stay balanced"] },
+      "anchor": "#ch1",
+      "relatedPages": ["logistic-growth", "pid-control"]
+    },
+    {
+      "id": "drug-half-life-plateau",
+      "title": { "zh": "半衰期与给药平台", "en": "Half-life and the dosing plateau" },
+      "desc": { "zh": "按时服药，体内药量约五个半衰期后到平台；漏服与补双倍各有什么后果。", "en": "Regular doses climb to a plateau in about five half-lives; what a missed dose or a double dose does." },
+      "aliases": { "zh": ["半衰期", "药物半衰期", "为什么每8小时吃一次药", "漏服了要不要补", "稳态血药浓度", "药为什么要吃几天才见效", "按时吃药", "吃药为什么要按时"], "en": ["half-life", "drug half-life", "steady state concentration", "why take every 8 hours", "missed dose double up", "why does medicine take days to work", "take medicine at regular times"] },
+      "anchor": "#ch2",
+      "relatedPages": ["exponents-logarithms"]
+    },
+    {
+      "id": "alcohol-zero-order",
+      "title": { "zh": "酒精的零级消除", "en": "Zero-order elimination of alcohol" },
+      "desc": { "zh": "分解酒精的酶很快饱和，每小时只能清除差不多固定的量，所以下降是直线、喝得太快就没有平台。", "en": "The enzyme that breaks down alcohol saturates early, so a roughly fixed amount leaves per hour: a straight-line fall and no plateau if you drink faster." },
+      "aliases": { "zh": ["零级动力学", "酒精代谢", "醒酒要多久", "血液酒精浓度", "为什么酒精是直线下降", "喝酒多久能醒", "醒酒"], "en": ["zero-order kinetics", "alcohol metabolism", "how long to sober up", "blood alcohol concentration", "Michaelis-Menten elimination", "how fast alcohol leaves the body"] },
+      "anchor": "#ch3",
+      "relatedPages": ["enzymes"]
+    },
+    {
+      "id": "glucose-feedback",
+      "title": { "zh": "血糖的负反馈", "en": "Blood glucose as negative feedback" },
+      "desc": { "zh": "胰岛素和胰高血糖素把血糖往回推；反应太弱会偏高很久，太晚又太猛会跌过头。", "en": "Insulin and glucagon push glucose back; a weak response leaves it high, a late and strong one overshoots into a dip." },
+      "aliases": { "zh": ["负反馈", "胰岛素", "胰高血糖素", "饭后血糖", "低血糖为什么会发生", "糖尿病血糖为什么降不下来", "吃完饭血糖"], "en": ["negative feedback", "insulin", "glucagon", "blood sugar after a meal", "reactive hypoglycemia", "why diabetes keeps glucose high"] },
+      "anchor": "#ch4",
+      "relatedPages": ["pid-control"]
+    },
+    {
+      "id": "fever-set-point",
+      "title": { "zh": "发烧是设定点上调", "en": "Fever as a raised set point" },
+      "desc": { "zh": "致热原把体温设定点拨高，所以发烧时发冷、退烧时出汗；中暑的高热则是散热到了上限。", "en": "Pyrogens raise the temperature set point, so a fever starts with chills and breaks with sweating; heat stroke is cooling at its limit instead." },
+      "aliases": { "zh": ["发烧", "体温调节", "为什么发烧会发冷", "退烧为什么出汗", "中暑和发烧的区别", "体温设定点"], "en": ["fever", "thermoregulation", "why do you feel cold with a fever", "sweating when a fever breaks", "heat stroke vs fever", "temperature set point"] },
+      "anchor": "#ch5",
+      "relatedPages": []
+    },
+    {
+      "id": "therapeutic-window",
+      "title": { "zh": "剂量—反应与治疗窗", "en": "Dose–response and the therapeutic window" },
+      "desc": { "zh": "有效浓度和有害浓度之间的距离；同样的总量分几次吃、清除变慢，会让体内的量落在窗里还是窗外。", "en": "The gap between an effective and a harmful level; how splitting the same daily dose, or slower clearance, keeps the level inside or outside it." },
+      "aliases": { "zh": ["治疗窗", "治疗指数", "剂量反应曲线", "药物过量", "为什么肾功能差要减量"], "en": ["therapeutic window", "therapeutic index", "dose-response curve", "overdose", "why reduce dose for kidney impairment"] },
+      "anchor": "#ch6",
+      "relatedPages": []
+    },
+    {
+      "id": "cardiac-output-budget",
+      "title": { "zh": "心输出量 = 心率 × 每搏量", "en": "Cardiac output = heart rate × stroke volume" },
+      "desc": { "zh": "运动时身体守住的是供氧，心率和每搏量被调动；锻炼降低静息心率，年龄压低心率上限。", "en": "During exercise the body holds oxygen delivery and moves heart rate and stroke volume; training lowers resting heart rate, age lowers the maximum." },
+      "aliases": { "zh": ["心输出量", "每搏量", "最大心率", "为什么运动员心率低", "运动时心跳为什么加快"], "en": ["cardiac output", "stroke volume", "maximum heart rate", "why athletes have low heart rates", "why heart rate rises in exercise"] },
+      "anchor": "#ch7",
+      "relatedPages": ["blood-circulation"]
+    },
+    {
+      "id": "antibiotic-selection-window",
+      "title": { "zh": "抗生素与耐药的筛选", "en": "Antibiotics and selection for resistance" },
+      "desc": { "zh": "浓度落在敏感菌和耐药菌的 MIC 之间时，药会替耐药菌清出地方；提前停药是否偏向耐药，取决于剂量。", "en": "Concentrations between the sensitive and resistant MICs clear the way for resistant bacteria; whether stopping early favours resistance depends on the dose." },
+      "aliases": { "zh": ["抗生素耐药", "突变选择窗", "最低抑菌浓度", "抗生素要吃完吗", "为什么细菌会耐药"], "en": ["antibiotic resistance", "mutant selection window", "minimum inhibitory concentration", "do you need to finish antibiotics", "why bacteria become resistant", "finish the course of antibiotics"] },
+      "anchor": "#ch8",
+      "relatedPages": ["natural-selection"]
+    },
+    {
+      "id": "herd-immunity-threshold",
+      "title": { "zh": "群体免疫阈值", "en": "Herd immunity threshold" },
+      "desc": { "zh": "免疫比例超过 1 − 1/R₀ 时，每个病例平均传给不到一个人，疫情自己熄灭。", "en": "Once the immune share exceeds 1 − 1/R₀, each case infects fewer than one other on average and the outbreak dies out." },
+      "aliases": { "zh": ["群体免疫", "疫苗接种率要多少", "麻疹疫苗覆盖率", "有效再生数", "打疫苗", "为什么要打疫苗"], "en": ["herd immunity", "vaccination coverage needed", "measles vaccination threshold", "effective reproduction number", "vaccines", "vaccination", "how many people need to be vaccinated"] },
+      "anchor": "#ch9",
+      "relatedPages": ["public-health"]
+    }
+  ]
+}
