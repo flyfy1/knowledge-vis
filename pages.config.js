@@ -211,7 +211,6 @@ window.KNOWLEDGE_PAGES = [
       en: "Ten core ideas of economics, each with a hands-on model, then applied to what happens to work, income and scarcity once AI is everywhere."
     },
     tags: [{ zh: "经济学", en: "Economics" }, { zh: "AI 与社会", en: "AI & Society" }, { zh: "交互长文", en: "Interactive Essay" }],
-    languages: ["zh"],
     category: "demos",
     stage: "university",
     status: "live",

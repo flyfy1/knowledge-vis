@@ -37,9 +37,10 @@ for (const s of w.KNOWLEDGE_ESSAYS) {
   if (!pg) fail(`essay slug not registered: ${s}`);
   if (pg.status !== 'live') fail(`essay is not live: ${s}`);
 }
-// scarcity-moves has no English copy; its card says so in English mode.
-if (JSON.stringify(Array.from(w.KNOWLEDGE_PAGES.find((p) => p.slug === 'scarcity-moves').languages || [])) !== '["zh"]') {
-  fail('scarcity-moves must be marked languages: ["zh"]');
+// scarcity-moves has had an English edition since 8c6cff39, so no essay is single-language now.
+if (!fs.existsSync(path.join(__dirname, '..', 'demos/scarcity-moves/copy.en.js'))) fail('scarcity-moves has no copy.en.js');
+if (w.KNOWLEDGE_PAGES.find((p) => p.slug === 'scarcity-moves').languages) {
+  fail('scarcity-moves has an English edition and must not be marked languages: ["zh"]');
 }
 
 // The homepage reads the featured list and groups category views by registered subtopic.

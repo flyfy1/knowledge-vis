@@ -42,7 +42,8 @@ Views come from URL state; nothing is stored besides the language.
    added 2026-11-11): the long-form essays listed in `window.KNOWLEDGE_ESSAYS`, in
    that order, with a one-line subtitle and the same card component as Featured
    (category and stage badges). Unregistered slugs are skipped silently. An essay
-   whose entry has `languages: ["zh"]` (today `scarcity-moves`) shows a
+   whose entry has `languages: ["zh"]` (none today: `scarcity-moves` lost the
+   flag on 2026-11-11 when its English edition landed in 8c6cff39) shows a
    "Chinese only" badge in English mode; there is no badge in Chinese mode. The
    section sits after Featured so the first featured card stays in the first desktop
    viewport. What counts as an essay and how to add one: specs/essays.md.
