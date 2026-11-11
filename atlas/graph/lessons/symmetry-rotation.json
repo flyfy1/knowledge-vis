@@ -1,0 +1,90 @@
+{
+ "schema": 2,
+ "slug": "symmetry-rotation",
+ "nodes": [
+  {
+   "id": "symmetry",
+   "group": "math",
+   "stage": "primary",
+   "order": 50,
+   "title": {
+    "zh": "轴对称与旋转对称",
+    "en": "Line symmetry & rotational symmetry"
+   },
+   "description": {
+    "zh": "沿一条线对折、两边完全重合，这条线就是对称轴；绕中心转过某个角度又和原来重合，就是旋转对称——一个靠翻、一个靠转：正方形有 4 条对称轴，平行四边形一条也没有，却转半圈就重合。",
+    "en": "If folding along a line makes the two halves match exactly, that line is an axis of symmetry; if turning about the centre by some angle brings a shape back onto itself, it has rotational symmetry — one is a flip, the other a turn: a square has 4 axes, while a parallelogram has none yet matches itself after half a turn."
+   },
+   "source": "../math/geometry/symmetry-rotation/#step0",
+   "lessons": [
+    {
+     "slug": "symmetry-rotation",
+     "step": 0,
+     "category": "math",
+     "stage": "primary",
+     "primary": true
+    }
+   ],
+   "aliases": [
+    {
+     "zh": "对称轴",
+     "en": "axis of symmetry"
+    },
+    {
+     "zh": "轴对称图形",
+     "en": "line-symmetric shape"
+    },
+    {
+     "zh": "旋转对称",
+     "en": "rotational symmetry"
+    },
+    {
+     "zh": "中心对称",
+     "en": "point symmetry"
+    },
+    {
+     "zh": "正方形有几条对称轴",
+     "en": "how many lines of symmetry does a square have"
+    },
+    {
+     "zh": "万花筒原理",
+     "en": "how a kaleidoscope works"
+    },
+    {
+     "zh": "镜像",
+     "en": "mirror image / reflection"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "symmetry",
+   "to": "parabola",
+   "type": "foundation",
+   "label": {
+    "zh": "抛物线的对称轴",
+    "en": "The parabola’s axis of symmetry"
+   },
+   "reason": {
+    "zh": "抛物线左右两边以竖线 x = h 为镜面完全对称：知道对称轴就是“对折能重合的折痕”，顶点式里的 h 就一眼可读。",
+    "en": "A parabola’s two sides mirror each other across the vertical line x = h: once an axis of symmetry is understood as the fold where the halves match, the h in vertex form can be read at a glance."
+   },
+   "source": "../math/algebra/parabola/#step2"
+  },
+  {
+   "from": "symmetry",
+   "to": "coordinate-plane",
+   "type": "connection",
+   "label": {
+    "zh": "交换坐标就是沿对角线翻折",
+    "en": "Swapping coordinates is a flip across the diagonal"
+   },
+   "reason": {
+    "zh": "把点 (a, b) 换成 (b, a)，点会沿直线 y = x 翻到对面——这正是以对角线为对称轴的轴对称。",
+    "en": "Changing a point (a, b) into (b, a) flips it across the line y = x — a reflection with the diagonal as its axis of symmetry."
+   },
+   "source": "../math/algebra/coordinate-plane/#step3"
+  }
+ ]
+}

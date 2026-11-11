@@ -1,0 +1,208 @@
+{
+ "schema": 2,
+ "slug": "linear-transform",
+ "nodes": [
+  {
+   "id": "matrix-transform",
+   "group": "math",
+   "stage": "university",
+   "order": 50,
+   "title": {
+    "zh": "矩阵 · 把整个平面搬走",
+    "en": "Matrices · moving the whole plane"
+   },
+   "description": {
+    "zh": "一个 2×2 矩阵只需说清两根基向量 (1, 0) 和 (0, 1) 各去了哪里（就是它的两列），平面上每个点、整张网格就都跟着确定；先做 A 再做 B 写作 BA，一般 AB ≠ BA，顺序会改变结果。",
+    "en": "A 2×2 matrix only has to say where the two basis vectors (1, 0) and (0, 1) go — its two columns — and every point and the whole grid of the plane follow; doing A then B is written BA, and in general AB ≠ BA, so the order changes the result."
+   },
+   "formula": "A(x, y) = x·a₁ + y·a₂",
+   "source": "../math/linear-algebra/linear-transform/#step0",
+   "lessons": [
+    {
+     "slug": "linear-transform",
+     "step": 0,
+     "category": "math",
+     "stage": "university",
+     "primary": true
+    }
+   ],
+   "aliases": [
+    {
+     "zh": "矩阵是什么",
+     "en": "what is a matrix"
+    },
+    {
+     "zh": "线性变换",
+     "en": "linear transformation"
+    },
+    {
+     "zh": "矩阵乘法",
+     "en": "matrix multiplication"
+    },
+    {
+     "zh": "矩阵乘法为什么不能交换",
+     "en": "why is matrix multiplication not commutative"
+    },
+    {
+     "zh": "基向量",
+     "en": "basis vectors"
+    },
+    {
+     "zh": "矩阵的列",
+     "en": "columns of a matrix"
+    },
+    {
+     "zh": "旋转矩阵",
+     "en": "rotation matrix"
+    }
+   ]
+  },
+  {
+   "id": "determinant",
+   "group": "math",
+   "stage": "university",
+   "order": 50,
+   "title": {
+    "zh": "行列式 · 有符号的面积倍率",
+    "en": "The determinant · a signed area scale factor"
+   },
+   "description": {
+    "zh": "矩阵把单位正方形变成一个平行四边形，行列式 det A = ad − bc 就是它的有符号面积：绝对值是面积放大的倍数，负号表示翻面；det = 0 时平面被压成一条线，信息丢失，矩阵没有逆。",
+    "en": "A matrix turns the unit square into a parallelogram, and the determinant det A = ad − bc is its signed area: the size is the area scale factor and a minus sign means the plane is flipped; when det = 0 the plane is squashed onto a line, information is lost and the matrix has no inverse."
+   },
+   "formula": "det A = ad − bc",
+   "source": "../math/linear-algebra/linear-transform/#step2",
+   "lessons": [
+    {
+     "slug": "linear-transform",
+     "step": 2,
+     "category": "math",
+     "stage": "university",
+     "primary": true
+    }
+   ],
+   "aliases": [
+    {
+     "zh": "行列式",
+     "en": "determinant"
+    },
+    {
+     "zh": "行列式的几何意义",
+     "en": "geometric meaning of the determinant"
+    },
+    {
+     "zh": "行列式为 0 是什么意思",
+     "en": "what does a zero determinant mean"
+    },
+    {
+     "zh": "可逆矩阵",
+     "en": "invertible matrix"
+    },
+    {
+     "zh": "奇异矩阵",
+     "en": "singular matrix"
+    },
+    {
+     "zh": "逆矩阵",
+     "en": "inverse matrix"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "vectors",
+   "to": "matrix-transform",
+   "type": "foundation",
+   "label": {
+    "zh": "每个点都是基向量的组合",
+    "en": "Every point is a combination of basis vectors"
+   },
+   "reason": {
+    "zh": "点 (x, y) 就是 x 份 e₁ 加 y 份 e₂；线性映射保持这种加法和数乘，所以只要知道 e₁、e₂ 的去向，整个平面的去向就定了。",
+    "en": "The point (x, y) is x lots of e₁ plus y lots of e₂; a linear map preserves that addition and scaling, so knowing where e₁ and e₂ go fixes where the whole plane goes."
+   },
+   "source": "../math/linear-algebra/linear-transform/#step1"
+  },
+  {
+   "from": "matrix-transform",
+   "to": "determinant",
+   "type": "foundation",
+   "label": {
+    "zh": "看单位正方形变成了什么",
+    "en": "Watch what the unit square becomes"
+   },
+   "reason": {
+    "zh": "两根基向量的像围成一个平行四边形，它的有符号面积就是行列式；两个像共线时面积为 0，平面被压扁。",
+    "en": "The images of the two basis vectors span a parallelogram whose signed area is the determinant; when the two images line up, the area is 0 and the plane is flattened."
+   },
+   "source": "../math/linear-algebra/linear-transform/#step2"
+  },
+  {
+   "from": "determinant",
+   "to": "eigen",
+   "type": "connection",
+   "label": {
+    "zh": "特征值让 A − λI 变奇异",
+    "en": "Eigenvalues make A − λI singular"
+   },
+   "reason": {
+    "zh": "要找只被拉伸、不被转向的方向，就要求 (A − λI)v = 0 有非零解，也就是 det(A − λI) = 0——特征值正是让这个行列式为零的 λ。",
+    "en": "Finding a direction that is only stretched, not turned, requires (A − λI)v = 0 to have a nonzero solution, i.e. det(A − λI) = 0 — the eigenvalues are exactly the λ that make this determinant vanish."
+   },
+   "source": "../math/linear-algebra/linear-transform/#step3"
+  },
+  {
+   "from": "determinant",
+   "to": "simultaneous-equations",
+   "type": "connection",
+   "label": {
+    "zh": "D = 0 时没有唯一解",
+    "en": "No unique solution when D = 0"
+   },
+   "reason": {
+    "zh": "把二元一次方程组的系数排成矩阵，它的行列式就是解法里的 D：D ≠ 0 时两直线交于一点、矩阵可逆；D = 0 时两直线平行或重合，没有唯一解。",
+    "en": "Arrange a two-equation system’s coefficients as a matrix and its determinant is the D in the solution: D ≠ 0 means the lines meet in one point and the matrix is invertible; D = 0 means parallel or identical lines and no unique solution."
+   },
+   "source": "../math/linear-algebra/linear-transform/#step3"
+  }
+ ],
+ "questions": [
+  {
+   "id": "q-linear-transform-0",
+   "question": {
+    "zh": "行列式到底表示什么？为什么等于 0 就不可逆？",
+    "en": "What does a determinant actually mean, and why is a zero determinant not invertible?"
+   },
+   "chain": [
+    "determinant",
+    "matrix-transform"
+   ],
+   "target": {
+    "node": "determinant",
+    "href": "../math/linear-algebra/linear-transform/#step2"
+   },
+   "prompts": [
+    {
+     "node": "determinant",
+     "ask": {
+      "zh": "单位正方形被矩阵变成了什么形状？它的面积是多少，为什么会有负号？",
+      "en": "What shape does the matrix turn the unit square into? What is its area, and why can it be negative?"
+     }
+    },
+    {
+     "node": "matrix-transform",
+     "ask": {
+      "zh": "两根基向量的像共线时，平面会被压成什么？还能从结果唯一找回原来的点吗？",
+      "en": "If the two basis vectors land on one line, what does the plane collapse to? Can the original point still be recovered uniquely?"
+     }
+    }
+   ],
+   "reveal": {
+    "zh": "行列式是矩阵把面积放大的倍数，带符号：负号表示翻面。等于 0 时整个平面被压到一条线（或一点）上，许多不同的点落到同一个结果，信息丢了，自然没有逆矩阵。",
+    "en": "The determinant is the factor by which the matrix scales area, with a sign: negative means the plane is flipped. When it is 0 the whole plane is squashed onto a line (or a point), many points share one image, information is lost, and so there is no inverse."
+   },
+   "source": "../math/linear-algebra/linear-transform/#step2"
+  }
+ ]
+}

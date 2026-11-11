@@ -1,0 +1,173 @@
+{
+ "schema": 2,
+ "slug": "music-theory",
+ "nodes": [
+  {
+   "id": "musical-intervals",
+   "group": "math",
+   "stage": "senior",
+   "order": 50,
+   "title": {
+    "zh": "音程与频率比",
+    "en": "Musical intervals & frequency ratios"
+   },
+   "description": {
+    "zh": "两个音之间的距离用半音数来量，在十二平均律里每升一个半音频率乘 2^(1/12)，升 12 个半音正好翻倍成高八度；所以听起来等距的音程，在频率上是等比而不是等差。",
+    "en": "The distance between two notes is counted in semitones; in twelve-tone equal temperament each semitone multiplies the frequency by 2^(1/12), so 12 semitones exactly double it — an octave; intervals that sound evenly spaced are equal ratios, not equal differences, in frequency."
+   },
+   "formula": "f = f₀ · 2^(n/12)",
+   "source": "../math/applied/music-theory/#step0",
+   "lessons": [
+    {
+     "slug": "music-theory",
+     "step": 0,
+     "category": "math",
+     "stage": "senior",
+     "primary": true
+    }
+   ],
+   "aliases": [
+    {
+     "zh": "音程",
+     "en": "musical interval"
+    },
+    {
+     "zh": "八度",
+     "en": "octave"
+    },
+    {
+     "zh": "半音 全音",
+     "en": "semitone and whole tone"
+    },
+    {
+     "zh": "十二平均律",
+     "en": "twelve-tone equal temperament"
+    },
+    {
+     "zh": "为什么高八度听起来像同一个音",
+     "en": "why does an octave sound like the same note"
+    },
+    {
+     "zh": "纯五度",
+     "en": "perfect fifth"
+    },
+    {
+     "zh": "音高和频率",
+     "en": "pitch and frequency"
+    }
+   ]
+  },
+  {
+   "id": "harmonic-function",
+   "group": "math",
+   "stage": "senior",
+   "order": 50,
+   "title": {
+    "zh": "和弦功能与终止式",
+    "en": "Chord function & cadences"
+   },
+   "description": {
+    "zh": "在一个调里，和弦按所在的音阶级数扮演不同角色：主功能（I）站稳、前属功能（IV、ii）做准备、属功能（V）制造张力；终止式就是这些角色的衔接，V–I 像句号，IV–I 温和落地，停在 V 上像逗号。",
+    "en": "Within a key, chords play roles set by their scale degree: tonic (I) feels settled, predominant (IV, ii) prepares, dominant (V) builds tension; a cadence links these roles — V–I like a full stop, IV–I a gentle landing, stopping on V like a comma."
+   },
+   "source": "../math/applied/music-theory/#step2",
+   "lessons": [
+    {
+     "slug": "music-theory",
+     "step": 2,
+     "category": "math",
+     "stage": "senior",
+     "primary": true
+    }
+   ],
+   "aliases": [
+    {
+     "zh": "和弦功能",
+     "en": "chord function"
+    },
+    {
+     "zh": "终止式",
+     "en": "cadence"
+    },
+    {
+     "zh": "主和弦 属和弦 下属和弦",
+     "en": "tonic, dominant and subdominant chords"
+    },
+    {
+     "zh": "罗马数字和弦标记",
+     "en": "Roman numeral analysis"
+    },
+    {
+     "zh": "音阶级数",
+     "en": "scale degrees"
+    },
+    {
+     "zh": "为什么 V–I 听起来像结束",
+     "en": "why does V–I sound final"
+    },
+    {
+     "zh": "和声入门",
+     "en": "introduction to harmony"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "exp-log",
+   "to": "musical-intervals",
+   "type": "application",
+   "label": {
+    "zh": "音程是对数刻度",
+    "en": "Intervals live on a logarithmic scale"
+   },
+   "reason": {
+    "zh": "频率按 2^(n/12) 等比增长，半音数 n = 12·log₂(f/f₀) 就是频率比的对数——耳朵听到的“等距”，正是对数刻度上的等距。",
+    "en": "Frequencies grow as 2^(n/12), so the semitone count n = 12·log₂(f/f₀) is the logarithm of the frequency ratio — the even steps the ear hears are even steps on a logarithmic scale."
+   },
+   "source": "../math/applied/music-theory/#step0"
+  },
+  {
+   "from": "standing-wave",
+   "to": "musical-intervals",
+   "type": "connection",
+   "label": {
+    "zh": "谐波给出最和谐的比例",
+    "en": "Harmonics supply the sweetest ratios"
+   },
+   "reason": {
+    "zh": "一根弦同时振出 f、2f、3f……，相邻谐波之比 2:1、3:2 就是八度和纯五度；十二平均律用 2^(12/12) 和 2^(7/12) ≈ 1.498 去逼近它们。",
+    "en": "A string vibrates at f, 2f, 3f, … at once, and the neighbouring ratios 2:1 and 3:2 are the octave and the perfect fifth; equal temperament approximates them with 2^(12/12) and 2^(7/12) ≈ 1.498."
+   },
+   "source": "../physics/waves/standing-wave/#step3"
+  },
+  {
+   "from": "sound-waves",
+   "to": "musical-intervals",
+   "type": "foundation",
+   "label": {
+    "zh": "音高就是频率",
+    "en": "Pitch is frequency"
+   },
+   "reason": {
+    "zh": "声音是介质里疏密的振动，频率越高听起来越高；把音高换成频率，音程才能写成频率比来计算。",
+    "en": "Sound is a travelling pattern of compression in a medium, and a higher frequency sounds higher; once pitch is read as frequency, an interval can be computed as a frequency ratio."
+   },
+   "source": "../math/applied/music-theory/#step0"
+  },
+  {
+   "from": "musical-intervals",
+   "to": "harmonic-function",
+   "type": "foundation",
+   "label": {
+    "zh": "级数由半音位置决定",
+    "en": "Scale degrees come from semitone positions"
+   },
+   "reason": {
+    "zh": "大调里每一级离主音有固定的半音数（0、2、4、5、7、9、11），和弦在这些级数上按三度叠起来，它的功能也由所在级数决定。",
+    "en": "Each degree of a major scale sits a fixed number of semitones above the tonic (0, 2, 4, 5, 7, 9, 11); chords are stacked in thirds on those degrees, and each chord’s function follows from its degree."
+   },
+   "source": "../math/applied/music-theory/#step1"
+  }
+ ]
+}

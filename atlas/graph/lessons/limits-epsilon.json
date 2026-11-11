@@ -1,0 +1,95 @@
+{
+ "schema": 2,
+ "slug": "limits-epsilon",
+ "nodes": [
+  {
+   "id": "limit-epsilon-delta",
+   "group": "math",
+   "stage": "university",
+   "order": 50,
+   "title": {
+    "zh": "极限与 ε–δ 定义",
+    "en": "Limits & the ε–δ definition"
+   },
+   "description": {
+    "zh": "“x 无限接近 a 时 f(x) 趋于 L”被写成一场博弈：对方随便给一个误差 ε > 0，你总能找到一个 δ > 0，使 x 离 a 不到 δ（但不等于 a）时 f(x) 离 L 不到 ε；找不到这样的 δ，极限就不存在。",
+    "en": "“f(x) approaches L as x gets arbitrarily close to a” is written as a game: whatever error ε > 0 the opponent names, you can always find δ > 0 so that whenever x is within δ of a (but not equal to it), f(x) is within ε of L; if no such δ exists, the limit does not exist."
+   },
+   "formula": "∀ε>0 ∃δ>0: 0<|x−a|<δ ⇒ |f(x)−L|<ε",
+   "source": "../math/calculus/limits-epsilon/#step1",
+   "lessons": [
+    {
+     "slug": "limits-epsilon",
+     "step": 1,
+     "category": "math",
+     "stage": "university",
+     "primary": true
+    }
+   ],
+   "aliases": [
+    {
+     "zh": "极限",
+     "en": "limit"
+    },
+    {
+     "zh": "ε-δ 语言",
+     "en": "epsilon-delta definition"
+    },
+    {
+     "zh": "极限的定义",
+     "en": "definition of a limit"
+    },
+    {
+     "zh": "ε-N 定义",
+     "en": "epsilon-N definition"
+    },
+    {
+     "zh": "数列极限",
+     "en": "limit of a sequence"
+    },
+    {
+     "zh": "极限不存在",
+     "en": "limit does not exist"
+    },
+    {
+     "zh": "无限接近是什么意思",
+     "en": "what does arbitrarily close mean"
+    },
+    {
+     "zh": "epsilon delta",
+     "en": "epsilon delta proof"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "limit-epsilon-delta",
+   "to": "derivative",
+   "type": "foundation",
+   "label": {
+    "zh": "导数是差商的极限",
+    "en": "The derivative is a limit of difference quotients"
+   },
+   "reason": {
+    "zh": "瞬时变化率是 h → 0 时差商 (f(a+h) − f(a))/h 的极限；页面里 x² 在 a 处 δ ≈ ε/(2a)，2a 正是那一点的斜率。",
+    "en": "An instantaneous rate is the limit of the difference quotient (f(a+h) − f(a))/h as h → 0; on the page, for x² at a, δ ≈ ε/(2a), and 2a is exactly the slope at that point."
+   },
+   "source": "../math/calculus/limits-epsilon/#step2"
+  },
+  {
+   "from": "limit-epsilon-delta",
+   "to": "sequences-series",
+   "type": "foundation",
+   "label": {
+    "zh": "无穷求和靠数列极限",
+    "en": "Infinite sums rest on sequence limits"
+   },
+   "reason": {
+    "zh": "无穷项的和定义为部分和数列的极限：按 ε–N，只要 n 足够大，部分和离 S 就不到 ε；等比级数在 |r| < 1 时收敛正是这样证出来的。",
+    "en": "An infinite sum is defined as the limit of its partial sums: by ε–N, for large enough n the partial sum is within ε of S; that is how a geometric series is shown to converge when |r| < 1."
+   },
+   "source": "../math/calculus/limits-epsilon/#step4"
+  }
+ ]
+}
