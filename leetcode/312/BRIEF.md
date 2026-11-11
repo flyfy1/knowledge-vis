@@ -62,3 +62,9 @@ regressions. No token, CSS, control, canonical algorithm or metadata changes.
 P1/P2: none. Deferred: optional trace addend visualization, new features and
 layout changes; they are outside the two required corrections. Independent
 acceptance remains pending separate review of the frozen candidate.
+
+## Revision 2026-11-11
+
+Changed by Claude Code (claude-opus-5-5), the LeetCode integration step, from the content check in `specs/leetcode-review-2026-11-11.md`. Self-checked only: the lesson's own tests were rerun (see that spec for results); no independent review of this change.
+
+Content check (quick read-through of the collection) found that related link 0 was labelled "Interval DP: Minimum Cost to Cut a Stick" but pointed at #132 (Palindrome Partitioning II); #1547 is not in the collection. The link now goes to the registered interval-DP lesson `../1000/#step3` (Minimum Cost to Merge Stones, "Build the answers"), relabelled in both languages. Workflow status removed from the learner page (the `verify` paragraph's "author self-check; independent review pending" sentence and the "Author candidate" footer, both languages); the footer now states only that the page is a local simulation with nothing submitted to LeetCode. `copy.js?v=` bumped. Browser tests now read the site root from `PREVIEW_ROOT` (default `http://127.0.0.1:18770`).

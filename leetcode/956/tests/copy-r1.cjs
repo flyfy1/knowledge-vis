@@ -2,7 +2,7 @@
 const {chromium}=require('playwright');
 const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),cp=require('node:child_process');
 const ROOT=path.resolve(__dirname,'..'),OUT=process.env.OUTPUT_DIR||path.join(__dirname,'evidence/copy-r1');
-const URL=process.env.PREVIEW_URL||'http://127.0.0.1:18770/leetcode/956/';
+const URL=(process.env.PREVIEW_ROOT||'http://127.0.0.1:18770')+'/leetcode/956/';
 const BASE='61c1660d36c3e2b77aa2249c0daeeb60133cb0ae';
 const expected={zh:'本地模拟，无上传、无在线提交。',en:'Local simulation, no upload or online submission.'};
 const source=fs.readFileSync(path.join(ROOT,'solution.py'),'utf8');
@@ -19,9 +19,17 @@ function copyObject(code){const context={window:{}};vm.runInNewContext(code,cont
  await page.click('[data-lang=zh]');assert.equal(await page.locator('footer[data-i18n=foot]').textContent(),expected.zh);
  const old=copyObject(cp.execFileSync('git',['show',`${BASE}:leetcode/956/copy.js`],{encoding:'utf8'}));
  const current=copyObject(fs.readFileSync(path.join(ROOT,'copy.js'),'utf8'));
- assert.deepEqual(current.foot,[expected.zh,expected.en]);delete current.foot;delete old.foot;assert.deepEqual(current,old);
+ assert.deepEqual(current.foot,[expected.zh,expected.en]);delete current.foot;delete old.foot;
+ // 2026-11-11 content check: the explanation names the unnumbered options by their pairs instead of "Option 0/2".
+ assert.deepEqual(current.explanation,[
+  '应保留 (1,8)。原来 2、5 变成 6、5，得到 (1,5)；原来 5、8 变成 9、8，得到 (1,8)。同差 1 保留较大的矮高 8。选 (1,9) 是把 9 当成了矮高，其实 8 才是较矮的一边。选 (7,5) 算的是放到高边时的差值。本轮只问矮边候选，不是完整输入最终答案。',
+  'Keep (1,8). Heights 2,5 become 6,5, producing (1,5). Heights 5,8 become 9,8, producing (1,8). At gap 1, retain the larger shorter height 8. Choosing (1,9) calls 9 the shorter height, but 8 is shorter. Choosing (7,5) computes the gap for adding to the taller side. This asks only about shorter-side candidates, not the final answer for a full input.']);
+ assert(!/选项 [0-9]|Option [0-9]/.test(current.explanation.join(' ')));
+ delete current.explanation;delete old.explanation;assert.deepEqual(current,old);
  for(const file of ['app.js','core.js','index.html','solution.py','python-code.js','style.css']){
-  assert.deepEqual(fs.readFileSync(path.join(ROOT,file)),cp.execFileSync('git',['show',`${BASE}:leetcode/956/${file}`]));
+  // index.html may differ from BASE only in the copy.js cache-busting query (bumped 2026-11-11).
+  const norm=(buf,f)=>f==='index.html'?Buffer.from(buf.toString('utf8').replace(/copy\.js\?v=[^"']+/,'copy.js?v=*')):buf;
+  assert.deepEqual(norm(fs.readFileSync(path.join(ROOT,file)),file),norm(cp.execFileSync('git',['show',`${BASE}:leetcode/956/${file}`]),file));
   const response=await context.request.get(new global.URL(file,URL).href);assert(response.ok());assert.deepEqual(await response.body(),fs.readFileSync(path.join(ROOT,file)));
  }
  const servedCopy=await context.request.get(new global.URL('copy.js',URL).href);assert.deepEqual(await servedCopy.body(),fs.readFileSync(path.join(ROOT,'copy.js')));

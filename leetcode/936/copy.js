@@ -176,8 +176,8 @@ window.COPY = {
     "Baseline: rescan every window"
   ],
   "baselineText": [
-    "基线每轮检查所有起点，每个检查比较 m 个字符。每个有进展的轮次至少擦一个字母，因此最多 n 轮，最坏 O(n²m) 时间、O(n) 辅助空间。n=1000 时这个上界可达十亿级字符检查。前向穷举也正确，但要搜索大量不同字符串；测试用它做小规模独立核对。",
-    "The baseline checks every start each round, comparing m characters per check. Every productive round erases at least one letter, so there are at most n rounds: O(n²m) time and O(n) auxiliary space. At n=1000 that bound reaches a billion character checks. Forward exhaustive search is also correct but explores many distinct strings; tests use it as an independent small-case check."
+    "基线每轮检查所有起点，每个检查比较 m 个字符。每个有进展的轮次至少擦一个字母，因此最多 n 轮，最坏 O(n²m) 时间、O(n) 辅助空间。n=1000 时，起点数 n−m+1 与 m 的乘积在 m≈500 处最大，所以这个上界约为 1000×501×500 ≈ 2.5×10⁸ 次字符检查。前向穷举也正确，但要搜索大量不同字符串；测试用它做小规模独立核对。",
+    "The baseline checks every start each round, comparing m characters per check. Every productive round erases at least one letter, so there are at most n rounds: O(n²m) time and O(n) auxiliary space. At n=1000 the product of n−m+1 starts and m characters peaks near m≈500, so this bound is about 1000×501×500 ≈ 2.5×10⁸ character checks. Forward exhaustive search is also correct but explores many distinct strings; tests use it as an independent small-case check."
   ],
   "h2": [
     "擦掉一个位置，能解锁哪些窗口？",

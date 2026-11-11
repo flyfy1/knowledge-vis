@@ -88,3 +88,9 @@ reversibility; browser both locales/presets/endpoints/reveal/copy/fallback/stora
 320/390/736/1440, 200% zoom, keyboard/focus/forced colors, links, local requests,
 measured contrast, visually inspected screenshots. Tests accept OUTPUT_DIR.
 Candidate hashes and actual results recorded in SELF-CHECK.md and evidence.
+
+## Revision 2026-11-11
+
+Changed by Claude Code (claude-opus-5-5), the LeetCode integration step, from the content check in `specs/leetcode-review-2026-11-11.md`. Self-checked only: the lesson's own tests were rerun (see that spec for results); no independent review of this change.
+
+Content check: the boundary note said two tiles touching only at a corner "usually" do not make a rectangle; they never can (the union of two positive-area rectangles meeting at a single point is not a rectangle). Now "never", both languages. Workflow status removed from the footer (both languages), keeping "No LeetCode submission or measured learner outcomes". Edited in `tests/build_copy.py` and regenerated `copy.js`; `copy.js?v=` bumped.

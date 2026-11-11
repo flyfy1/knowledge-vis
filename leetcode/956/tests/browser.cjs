@@ -1,7 +1,7 @@
 const {chromium}=require('playwright');
 const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
 const ROOT=path.resolve(__dirname,'..'),OUT=process.env.OUTPUT_DIR||path.join(__dirname,'evidence');fs.mkdirSync(OUT,{recursive:true});
-const URL=process.env.PREVIEW_URL||'http://127.0.0.1:18788/leetcode/956/';
+const URL=(process.env.PREVIEW_ROOT||'http://127.0.0.1:18770')+'/leetcode/956/';
 const source=fs.readFileSync(path.join(ROOT,'solution.py'),'utf8');
 function luminance(rgb){const c=rgb.map(v=>{v/=255;return v<=0.04045?v/12.92:((v+.055)/1.055)**2.4});return c[0]*.2126+c[1]*.7152+c[2]*.0722;}
 function contrast(a,b){const l=[luminance(a),luminance(b)].sort((x,y)=>y-x);return (l[0]+.05)/(l[1]+.05);}
@@ -58,7 +58,7 @@ await page.emulateMedia({forcedColors:'active',reducedMotion:'reduce'});await pa
 for(const [selector,fragment,needle] of [['[data-i18n=rel1]','step2','L[i]'],['[data-i18n=rel2]','step2','dp']]){
  const href=await page.locator(selector).getAttribute('href');const target=await context.newPage();await target.goto(new global.URL(href,URL).href);await target.waitForFunction(()=>document.querySelector('h1').textContent.length);for(const lang of ['zh','en']){await target.click(`[data-lang=${lang}]`);const section=await target.locator('#'+fragment).textContent();assert(section.includes(needle));results.semantics.push({related:href,lang,observed:section.slice(0,500)});}await target.close();
 }
-assert.equal(errors.length,0,errors.join('\n'));assert.equal(failed.length,0,failed.join('\n'));assert(requests.every(u=>u.startsWith('http://127.0.0.1:18788/')||u.startsWith('data:')));results.localRequests=requests;results.errors=errors;results.failed=failed;
+assert.equal(errors.length,0,errors.join('\n'));assert.equal(failed.length,0,failed.join('\n'));assert(requests.every(u=>u.startsWith(((process.env.PREVIEW_ROOT||'http://127.0.0.1:18770')+'/'))||u.startsWith('data:')));results.localRequests=requests;results.errors=errors;results.failed=failed;
 await page.locator('[data-i18n=rel1]').focus();await page.keyboard.press('Enter');await page.waitForURL('**/805/#step2');assert((await page.locator('#step2').textContent()).includes('L[i]'));results.relatedKeyboard=true;
 const denied=await browser.newContext();await denied.addInitScript(()=>{Object.defineProperty(Storage.prototype,'getItem',{value(){throw new Error('denied')}});Object.defineProperty(Storage.prototype,'setItem',{value(){throw new Error('denied')}});});const dp=await denied.newPage();await dp.goto(URL);await dp.click('[data-lang=zh]');await dp.click('#next');assert((await dp.locator('#progress').textContent()).includes('1/3'));await dp.click('[data-lang=en]');assert((await dp.locator('#progress').textContent()).includes('1/3'));results.storageDenied=true;await denied.close();
 // file:// source and trace work without fetch.

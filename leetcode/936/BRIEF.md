@@ -144,3 +144,9 @@ These checks are not actual novice learning, physical-device checks, OS/browser
 menu zoom evidence or LeetCode acceptance. No shared files, registry, service,
 Git settings, schedules or credentials were changed. Next action: designated
 fresh reviewer cold-walks the frozen candidate under tests/REVIEW-CONTRACT.md.
+
+## Revision 2026-11-11
+
+Changed by Claude Code (claude-opus-5-5), the LeetCode integration step, from the content check in `specs/leetcode-review-2026-11-11.md`. Self-checked only: the lesson's own tests were rerun (see that spec for results); no independent review of this change.
+
+Content check: the baseline paragraph said the O(n²m) bound "reaches a billion" character checks at n = 1000. The bound n·(n−m+1)·m peaks near m = 500 at about 1000×501×500 ≈ 2.5×10⁸; the text now says so in both languages. Edited in `tests/build_copy.py` and regenerated `copy.js`; `copy.js?v=` bumped.

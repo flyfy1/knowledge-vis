@@ -48,7 +48,7 @@ async function feedback(p, lang, option) {
       const errors=[];
       p.on('pageerror', e=>errors.push(String(e)));
       p.on('response', r=>{if(r.status()>=400) errors.push(`${r.status()} ${r.url()}`)});
-      await p.goto('http://127.0.0.1:18770/leetcode/312/');
+      await p.goto(((process.env.PREVIEW_ROOT||'http://127.0.0.1:18770')+'/leetcode/312/'));
       await p.locator('#progress').waitFor();
       for (const lang of ['en','zh']) {
         await p.locator(`[data-lang="${lang}"]`).click();
@@ -119,7 +119,7 @@ async function feedback(p, lang, option) {
     // Offline mirror still renders and copies when the canonical download is unavailable.
     const p = await b.newPage();
     await p.route('**/solution.py',route=>route.abort());
-    await p.goto('http://127.0.0.1:18770/leetcode/312/');
+    await p.goto(((process.env.PREVIEW_ROOT||'http://127.0.0.1:18770')+'/leetcode/312/'));
     assert.equal(await p.locator('#pythonCode').textContent(),source);
     await p.close();
     fs.writeFileSync(path.join(evidence,'observed.json'),JSON.stringify({kind:'author self-check',observed},null,2)+'\n');

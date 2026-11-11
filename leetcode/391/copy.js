@@ -328,8 +328,8 @@ window.COPY = {
     "n is the number of tiles. Each tile updates four bounds, one area and four set entries. Python sets locate entries using hash values (integers computed from coordinates). Operations take expected O(1), giving expected O(n) time and O(n) auxiliary space, with at most 4n corners retained. There is no sorting or input mutation. The tutorial additionally stores full frames, history and cells; these are not submission space."
   ],
   "bounds": [
-    "单块正面积矩形必为 true；负坐标不影响差值；边或角相接允许，但只在角上接触的两块通常不是矩形。重复砖会计入面积多次。最大外框面积为 4×10¹⁰，超过 32 位整数；Python 整数精确，不取模。官方保证非空且宽高为正，本实现依赖该合同；没有额外定义空输入。",
-    "A single positive-area rectangle is true; negative coordinates do not change the differences. Edge or corner contact is allowed, but two tiles touching only at a corner usually do not make a rectangle. Duplicate tiles contribute area repeatedly. The maximum box area is 4×10¹⁰, exceeding 32-bit integers; Python integers are exact, with no modulus. This implementation relies on the official nonempty, positive-dimension input contract; empty input is not additionally defined."
+    "单块正面积矩形必为 true；负坐标不影响差值；边或角相接允许，但只在角上接触的两块永远拼不成矩形。重复砖会计入面积多次。最大外框面积为 4×10¹⁰，超过 32 位整数；Python 整数精确，不取模。官方保证非空且宽高为正，本实现依赖该合同；没有额外定义空输入。",
+    "A single positive-area rectangle is true; negative coordinates do not change the differences. Edge or corner contact is allowed, but two tiles touching only at a corner never make a rectangle. Duplicate tiles contribute area repeatedly. The maximum box area is 4×10¹⁰, exceeding 32-bit integers; Python integers are exact, with no modulus. This implementation relies on the official nonempty, positive-dimension input contract; empty input is not additionally defined."
   ],
   "sourceTitle": [
     "官方接口实现 · Python3",
@@ -376,8 +376,8 @@ window.COPY = {
     "Another rectangle-area problem: histogram"
   ],
   "foot": [
-    "作者自查候选；独立教学评审待进行。未提交 LeetCode，也未测量真实学习效果。",
-    "Author self-checked candidate; independent teaching review pending. No LeetCode submission or measured learner outcomes."
+    "未提交 LeetCode，也未测量真实学习效果。",
+    "No LeetCode submission or measured learner outcomes."
   ],
   "gridLabel": [
     "覆盖次数图：{k} 块已处理，{cells}",

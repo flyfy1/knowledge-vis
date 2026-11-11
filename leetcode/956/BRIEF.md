@@ -103,3 +103,9 @@ is one time-and-space string, and the required non-mutating preflight passed.
 Finding **956-COPY-R1: fixed awaiting separate review**. Historical acceptance
 and reports are unchanged; this candidate has no independent acceptance or
 publication claim. No new feature/layout or independent design gate is opened.
+
+## Revision 2026-11-11
+
+Changed by Claude Code (claude-opus-5-5), the LeetCode integration step, from the content check in `specs/leetcode-review-2026-11-11.md`. Self-checked only: the lesson's own tests were rerun (see that spec for results); no independent review of this change.
+
+Content check: the quiz explanation referred to "Option 0" and "Option 2", but the options are shown unnumbered. It now names them by their pairs, (1,9) and (7,5), in both languages. `tests/copy-r1.cjs` (which pins copy.js against its base candidate) now asserts the new explanation exactly and allows only the bumped `copy.js?v=` query in index.html. Browser tests read the site root from `PREVIEW_ROOT`.

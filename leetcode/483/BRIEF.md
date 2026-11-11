@@ -27,3 +27,9 @@ P0/highest-return slice: hand arithmetic, proof, exact reversible ledger, fresh 
 State matrix: initial/search/equal/exhausted/fallback terminal × both locales; prev/next endpoint disabled; quiz unselected/selected/revealed/changed; clipboard success/manual fallback; storage unavailable. Locale preserves all state. Preset resets only trace, explicitly labeled. No network loading, accounts, reconnect, or async computation states apply. No actual learner result, independent review, submission acceptance or production verification is claimed.
 
 Simulation stores all trial snapshots and cumulative history; submission keeps scalar integers only. Both use exact integers, but browser simulation does not execute solution.py. Source remains available offline. Tests must independently execute Python and compare browser arithmetic with repeated-division oracle. Freeze candidate via hashes after checks, independent review pending.
+
+## Revision 2026-11-11
+
+Changed by Claude Code (claude-opus-5-5), the LeetCode integration step, from the content check in `specs/leetcode-review-2026-11-11.md`. Self-checked only: the lesson's own tests were rerun (see that spec for results); no independent review of this change.
+
+Content check: the prediction quiz said that for n = 40 at m = 3 the interval is [2,8] with midpoint 5. The lesson's own upper-bound rule (hi = 2^ceil(L/m), L = 6) gives [2,4] at m = 3, and its midpoint 3 matches 40 at once, so the quiz had no discard to predict. The quiz now uses n = 15 (L = 4, first round m = 3): interval [2, 2^ceil(4/3)] = [2,4], midpoint k = 3, sequence 1 → 4 → 13 → 40; 40 > 15 discards k ≥ 3 and keeps [2,2], where k = 2 gives 1+2+4+8 = 15. Options are A [4,4], B [2,2] (correct, same position as before), C [2,3]; explanation recomputed in both languages and checked with `solution.py` (15 → "2"). `tests/test_browser.cjs` now expects [2,2] in the feedback. Workflow status removed from the footer. `copy.js?v=` bumped.

@@ -103,3 +103,9 @@ requires neither. Self-check mapping and verification limits are appended in
 `tests/evidence/margin-repair-20261025/candidate.json`.
 This is a new repair candidate, not independent acceptance. Native Mac full-suite
 verification is still required; Linux and synthetic font checks cannot replace it.
+
+## Revision 2026-11-11
+
+Changed by Claude Code (claude-opus-5-5), the LeetCode integration step, from the content check in `specs/leetcode-review-2026-11-11.md`. Self-checked only: the lesson's own tests were rerun (see that spec for results); no independent review of this change.
+
+Content check: the English same-page links `rel1`/`rel2` read "#2 → Revisit…" and "#4 → Revisit…", which look like problem numbers next to the real "#41" link (and "#4" pointed at `#step3`). They now read "Revisit: why each repair is safe" and "Revisit: why the count is minimal", matching the Chinese. Workflow status removed from the footer (both languages), keeping the simulation limitation. `copy.js?v=` bumped.
