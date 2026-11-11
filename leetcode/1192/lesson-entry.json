@@ -1,1 +1,42 @@
-{"id":1192,"title":{"zh":"关键连接","en":"Critical Connections in a Network"},"desc":{"zh":"用 DFS 时间戳与 low-link 不变量找出网络中的桥。","en":"Use DFS timestamps and the low-link invariant to find bridges in a network."},"difficulty":"hard","topics":[{"zh":"图","en":"Graph"},{"zh":"深度优先搜索","en":"Depth-first search"}],"path":"1192/","leetcodeUrl":"https://leetcode.com/problems/critical-connections-in-a-network/","language":"Python","complexity":"O(n+m) time; O(n+m) space","concepts":[{"name":"Low-link bridge invariant","step":2,"description":"Use low[child] > tin[parent] to identify a bridge."},{"name":"Undirected DFS","step":0,"description":"A critical connection is an edge whose removal breaks reachability."}]}
+{
+  "id": 1192,
+  "title": {
+    "zh": "查找集群内的关键连接",
+    "en": "Critical Connections in a Network"
+  },
+  "desc": {
+    "zh": "剪线试验显示安全的网线都在环上；一次 DFS 用 low 值判断有没有回边绕过每根树边。",
+    "en": "Cutting cables shows every safe cable lies on a loop; one DFS uses low values to see whether a back edge bypasses each tree edge."
+  },
+  "difficulty": "hard",
+  "topics": [
+    {
+      "zh": "图",
+      "en": "Graph"
+    },
+    {
+      "zh": "深度优先搜索",
+      "en": "Depth-first search"
+    },
+    {
+      "zh": "桥",
+      "en": "Bridges"
+    }
+  ],
+  "path": "1192/",
+  "leetcodeUrl": "https://leetcode.com/problems/critical-connections-in-a-network/",
+  "language": "Python",
+  "complexity": "O(n+m) time; O(n+m) space",
+  "concepts": [
+    {
+      "name": "Back edges close loops",
+      "step": 2,
+      "description": "In an undirected DFS every non-tree edge leads to an ancestor and covers the tree path it bypasses."
+    },
+    {
+      "name": "Low-link bridge test",
+      "step": 3,
+      "description": "Tree edge p–c is critical exactly when low[c] > tin[p]."
+    }
+  ]
+}

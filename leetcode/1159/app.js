@@ -1,5 +1,109 @@
 'use strict';
-const COPY={
- back:['← 知识索引','← Knowledge Index'],difficulty:['困难 · 数据库','Hard · Database'],title:['#1159 市场分析 II',' #1159 Market Analysis II'],docTitle:['1159 · 市场分析 II','1159 · Market Analysis II'],intro:['把“第二次销售”变成可证明的排名，再保留没有第二次销售的用户。','Turn “the second sale” into a provable rank while keeping users who have no second sale.'],official:['查看 LeetCode 官方题目 ↗','Open the official LeetCode problem ↗'],nav1:['1 先算一个','1 Hand calculation'],nav2:['2 排名规则','2 Ranking rule'],nav3:['3 走一遍连接','3 Trace the joins'],nav4:['4 预测','4 Predict'],nav5:['5 原始 SQL','5 Canonical SQL'],h1:['先问：第二件是什么？','First ask: which item is second?'],p1:['“第二件”按卖出日期排序；卖少于两件时答案必须是 no。下面 seller 9 的第二件是 Samsung，seller 8 没有第二件。','“Second” means chronological sale order; fewer than two sales must yield no. Seller 9’s second item is Samsung; seller 8 has no second item.'],handPrompt:['先手算：favorite_brand=Samsung 的 seller 9 应该得到什么？按日期数第二行。','Calculate first: what should seller 9 with favorite_brand=Samsung receive? Count the second date.'],handNext:['揭开下一行','Reveal next row'],reset:['重置','Reset'],h2:['把“第二”写成排名','Turn “second” into a rank'],p2:['窗口函数 ROW_NUMBER 为每个 seller 单独编号。PARTITION BY seller_id 让编号从 1 重新开始；ORDER BY order_date 让最早销售先出现。','The window function ROW_NUMBER numbers each seller separately. PARTITION BY seller_id restarts at 1; ORDER BY order_date puts earlier sales first.'],p2b:['得到 rank=2 后再连接 Items 取品牌，最后从 Users 出发做 LEFT JOIN。LEFT JOIN 是关键：没有第二次销售的用户仍然保留，缺失品牌自然落入 no。','After keeping rank=2, join Items for the brand, then start from Users with a LEFT JOIN. That preserves users without a second sale; a missing brand falls into no.'],wrong:['诱人的错误：从 Orders 开始并只保留 rank=2。这样 seller 8 会整行消失，而题目要它显示 no。','Tempting wrong turn: start at Orders and keep only rank=2. Seller 8 disappears, but the required output must show no.'],h3:['跟着一行一行的因果链','Follow the causal chain row by row'],p3:['这是模拟 trace：它展示排名、筛选和连接的中间表，不会执行浏览器里的 SQL。每一步都保留已产生的行，方便看见状态如何累积。','This is a simulated trace: it shows ranking, filtering and joining; the browser does not execute the SQL. Each step keeps produced rows so accumulation stays visible.'],preset:['选择场景','Choose a scenario'],prev:['上一步','Back'],next:['下一步','Next'],end:['跳到终点','End'],progress:['第 {k}/{n} 帧','Frame {k}/{n}'],scenario:['场景：官方样例','Scenario: official example'],zero:['少于两次销售','Fewer than two sales'],many:['三次销售','Three sales'],start:['还没有排名行','No ranked rows yet'],rank:['已排名 {count} 行','{count} rows ranked'],joined:['已筛选 rank=2 并连接用户','rank=2 filtered and joined to users'],traceResult:['结果：','Result:'],predictLegend:['预测 seller 9 的输出','Predict seller 9’s output'],q0:['yes，因为第一件是 Apple','yes, because the first item is Apple'],q1:['yes，因为第二件是 Samsung','yes, because the second item is Samsung'],q2:['no，因为卖了三件以上','no, because there are more than two sales'],reveal:['揭晓','Reveal'],choose:['先选一个答案。','Choose an answer first.'],correct:['正确。','Correct.'],incorrect:['还差一步。','Not quite.'],answer:['第二行才参与比较；多出的第三行不会改变它。','Only row two is compared; a third row does not change it.'],h4:['轮到你：预测后再揭晓','Your turn: predict, then reveal'],p4:['只读 seller 9 的两件前置销售：Apple → Samsung。保持这个输入不变，先选答案，再按揭晓；改选会清掉旧反馈。','Read seller 9’s first two sales: Apple → Samsung. Keep the input fixed, choose first, then reveal; changing the choice clears old feedback.'],h5:['把状态映射回 MySQL','Map the state back to MySQL'],p5:['CTE 保存排名中间表；JOIN 条件里的 sale_rank=2 把“第二行”变成连接键。浏览器展示的是原始提交文本，不是执行结果。','The CTE stores the ranked intermediate table; sale_rank=2 in the join turns “second row” into a join key. The browser shows the submission text, not an execution result.'],cost:['成本：排序窗口通常需要 O(m log m) 时间、O(m) 中间空间（m 是 Orders 行数）；最终查询还会扫描 Users 和连接表。基线是每个用户反复排序，重复工作更多。','Cost: the window sort is typically O(m log m) time and O(m) intermediate space (m = order rows); the final query scans Users and joins. A per-user repeated sort repeats work.'],source:['查看 MySQL 原始代码','View MySQL source'],copy:['复制 SQL','Copy SQL'],download:['下载 solution.sql','Download solution.sql'],fallback:['复制失败时，用此框选择全文，再按 Ctrl/Cmd+C。','If copying fails, select all text here and press Ctrl/Cmd+C.'],copied:['已复制。','Copied.'],manual:['剪贴板不可用；已选中全文。','Clipboard unavailable; full source selected.'],related:['相关概念','Related concepts'],rel1:['二分搜索的候选区间 → #1095 第 2 步','Binary-search candidate ranges → #1095 step 2'],rel2:['区间 DP 的状态转移 → #2916 第 3 步','Interval-DP state transitions → #2916 step 3'],seller:['卖家','seller'],rank:['排名','rank'],foot:['作者自检页：页面模拟与 SQL 文本 parity 检查，不代表 LeetCode 接受或独立评审。','Author self-check page: simulation and SQL-text parity checks; no LeetCode acceptance or independent review is claimed.']};
-const locale=LeetCodeLocale(COPY),t=locale.t,$=id=>document.getElementById(id);const {presets,frames}=MarketLesson;let pi=0,fi=0,hand=0,choice=null,revealed=false;function render(){const p=presets[pi],fs=frames(p),f=fs[fi];$('scenario').textContent=t('scenario');$('progress').textContent=t('progress',{k:fi+1,n:fs.length});$('trace').replaceChildren();const card=document.createElement('div');card.className='trace-card';const title=document.createElement('strong');title.textContent=t(f.kind,{count:f.ranked?.length||0});card.append(title);if(f.ranked?.length){const row=document.createElement('div');row.className='trace-row';f.ranked.forEach(r=>{const c=document.createElement('span');c.className='chip'+(r.rank===2?' rank2':'');c.textContent=`${t('seller')} ${r[3]} · ${r[1]} · ${r.brand} · ${t('rank')} ${r.rank}`;row.append(c)});card.append(row)}if(f.result){const out=document.createElement('p');out.textContent=t('traceResult')+' '+f.result.map(x=>x.id+': '+x.value).join(' · ');card.append(out)}$('trace').append(card);$('prev').disabled=fi===0;$('next').disabled=fi===fs.length-1;$('end').disabled=fi===fs.length-1;$('reset').disabled=fi===0;$('handReadout').textContent=hand===0?'':hand===1?'Jan 1 → Apple (rank 1)':t('answer');$('handNext').disabled=hand===2;$('handReset').disabled=hand===0;$('reveal').disabled=choice===null;$('feedback').textContent=revealed?(choice===1?t('correct'):t('incorrect'))+' '+t('answer'):(choice===null?t('choose'):'');$('sourceCode').textContent=window.SQL_SOURCE;$('fallbackText').value=window.SQL_SOURCE;[...$('preset').options].forEach((o,i)=>o.textContent=t(presets[i].key==='worked'?'scenario':presets[i].key==='zero'?'start':'rank',{count:presets[i].orders.length}));}
-$('preset').replaceChildren(...presets.map((_,i)=>Object.assign(document.createElement('option'),{value:i,textContent:String(i+1)})));$('preset').onchange=()=>{pi=+$('preset').value;fi=0;render()};$('next').onclick=()=>{fi++;render()};$('prev').onclick=()=>{fi--;render()};$('end').onclick=()=>{fi=frames(presets[pi]).length-1;render()};$('reset').onclick=()=>{fi=0;render()};$('handNext').onclick=()=>{hand=Math.min(2,hand+1);render()};$('handReset').onclick=()=>{hand=0;render()};document.querySelectorAll('[name="predict"]').forEach(r=>r.onchange=()=>{choice=+r.value;revealed=false;render()});$('reveal').onclick=()=>{revealed=true;render()};$('copy').onclick=async()=>{const r=await copyCanonicalSource(window.SQL_SOURCE,()=>{$('fallback').hidden=false;$('fallbackText').focus();$('fallbackText').select()});$('copyStatus').textContent=t(r.ok?'copied':'manual');};locale.onChange(render);locale.init();
+const locale = LeetCodeLocale(window.COPY), t = locale.t, $ = id => document.getElementById(id);
+const M = MarketCore;
+const cell = (tr, v, cls) => { const td = document.createElement('td'); td.textContent = v === null ? t('nullText') : String(v); if (cls) td.className = cls; tr.append(td); return td; };
+const shortDate = s => s.slice(5);
+
+// ---------- step 1: one seller by hand ----------
+let handUser = 3, sorted = false; const worked = new Map();
+function renderHand() {
+  const d = M.MAIN, fav = d.users.find(u => u[0] === handUser)[1];
+  $('userButtons').replaceChildren(...d.users.map(([u]) => { const b = document.createElement('button'); b.type = 'button'; b.className = 'btn'; b.textContent = t('userBtn', {u}); b.setAttribute('aria-pressed', String(u === handUser)); b.onclick = () => { handUser = u; sorted = false; render(); $('userButtons').children[d.users.findIndex(x => x[0] === u)].focus(); }; return b; }));
+  $('sortBtn').setAttribute('aria-pressed', String(sorted));
+  let rows = d.orders.filter(o => o[4] === handUser);
+  if (sorted) rows = rows.slice().sort((a, b) => a[1] < b[1] ? -1 : 1);
+  $('handRows').replaceChildren(...rows.map((o, i) => { const tr = document.createElement('tr'); if (i === 1) tr.className = sorted ? 'rank2' : 'changed'; cell(tr, o[0]); cell(tr, o[1]); cell(tr, M.brandOf(d, o[2])); cell(tr, sorted ? i + 1 : '—'); return tr; }));
+  let text;
+  if (rows.length === 0) { text = t('handNone', {u: handUser}); worked.set(handUser, 'no'); }
+  else if (rows.length === 1) { text = t('handOne', {u: handUser}); worked.set(handUser, 'no'); }
+  else if (!sorted) text = t('handUnsorted', {brand: M.brandOf(d, rows[1][2])});
+  else { const brand = M.brandOf(d, rows[1][2]), ans = brand === fav ? 'yes' : 'no'; text = t('handSorted', {brand, date: rows[1][1], u: handUser, fav, ans}); worked.set(handUser, ans); }
+  $('handText').textContent = text;
+  $('sortBtn').disabled = rows.length < 2;
+  const list = [...worked.entries()].sort((a, b) => a[0] - b[0]).map(([u, a]) => `${u}: ${a}`).join(' · ');
+  $('handLedger').textContent = list ? t('handLedger', {list}) : t('handLedgerNone');
+}
+$('sortBtn').onclick = () => { sorted = !sorted; render(); };
+
+// ---------- step 3: pipeline with switches ----------
+let preset = 0, data = null, opts = {...M.CORRECT}, run = null, at = 0;
+function loadPreset(p) { const b = M.presets[p]; data = {users: b.users.map(u => u.slice()), items: b.items, orders: b.orders}; rebuild(); }
+function rebuild() { run = M.pipeline(data, opts); at = 0; }
+function renderFavs() {
+  $('favs').replaceChildren(...data.users.map((u, i) => {
+    const lab = document.createElement('label'); lab.className = 'fav';
+    const span = document.createElement('span'); span.textContent = t('favLabel', {u: u[0]});
+    const sel = document.createElement('select'); M.BRANDS.forEach(b => { const o = document.createElement('option'); o.value = b; o.textContent = b; sel.append(o); }); sel.value = u[1];
+    sel.onchange = () => { data.users[i][1] = sel.value; rebuild(); render(); };
+    lab.append(span, sel); return lab;
+  }));
+}
+function renderPipeline() {
+  const f = run.frames[at], last = run.frames.length - 1;
+  document.querySelectorAll('[name=order],[name=join],[name=filter]').forEach(r => { r.checked = opts[r.name] === r.value; });
+  $('variantSql').textContent = M.variantSql(opts);
+  $('progress').textContent = t('progress', {k: at, m: last});
+  const ev = f.type === 'orders' ? t('evOrders', {n: data.orders.length})
+    : f.type === 'rank' ? t('evRank', {s: f.seller, c: f.count, key: t(opts.order === 'date' ? 'keyDate' : 'keyId'), total: f.ranked.length})
+    : f.type === 'join' ? t('evJoin', {rows: f.joined.length, dropped: f.dropped ? t('evJoinDropped', {d: f.dropped}) : ''})
+    : t('evOutput');
+  $('event').textContent = ev;
+  const empty = (tbody, cols) => { const tr = document.createElement('tr'); const td = cell(tr, t('emptyTable')); td.colSpan = cols; tbody.replaceChildren(tr); };
+  const rankedSource = f.type === 'orders' ? [] : f.ranked;
+  if (f.type === 'orders') {
+    $('rankedRows').replaceChildren(...data.orders.map(o => { const tr = document.createElement('tr'); tr.className = 'muted-row'; cell(tr, o[0]); cell(tr, o[1]); cell(tr, o[4]); cell(tr, o[2]); cell(tr, '—'); return tr; }));
+  } else {
+    $('rankedRows').replaceChildren(...rankedSource.map(r => { const tr = document.createElement('tr'); if (r.sale_rank === 2) tr.className = 'rank2'; if (f.type === 'rank' && r.seller_id === f.seller) tr.classList.add('changed'); cell(tr, r.order_id); cell(tr, r.order_date); cell(tr, r.seller_id); cell(tr, r.item_id); cell(tr, r.sale_rank); return tr; }));
+  }
+  if (f.joined) $('joinedRows').replaceChildren(...(f.joined.length ? f.joined.map(r => { const tr = document.createElement('tr'); cell(tr, r.user_id); cell(tr, r.favorite_brand); cell(tr, r.sale_rank); cell(tr, r.item_brand, r.item_brand === null ? 'null' : ''); return tr; }) : [(() => { const tr = document.createElement('tr'); const td = cell(tr, t('emptyTable')); td.colSpan = 4; return tr; })()]));
+  else empty($('joinedRows'), 4);
+  if (f.output) $('outputRows').replaceChildren(...(f.output.length ? f.output.map(([u, a]) => { const tr = document.createElement('tr'); cell(tr, u); cell(tr, a, a === 'yes' ? 'yes' : 'no'); return tr; }) : [(() => { const tr = document.createElement('tr'); const td = cell(tr, t('emptyTable')); td.colSpan = 2; return tr; })()]));
+  else empty($('outputRows'), 2);
+  if (f.output) {
+    const truth = M.answer(data), got = new Map(f.output);
+    const missing = truth.filter(([u]) => !got.has(u)).map(([u]) => u), wrong = truth.filter(([u, a]) => got.has(u) && got.get(u) !== a).map(([u]) => u);
+    const why = [missing.length ? t('missingUsers', {list: missing.join(', ')}) : '', wrong.length ? t('wrongUsers', {list: wrong.join(', ')}) : ''].filter(Boolean).join('; ');
+    $('verdict').textContent = why ? t('differs', {why}) : t('matches');
+    $('verdict').classList.toggle('correct', !why); $('verdict').classList.toggle('bad', !!why);
+  } else { $('verdict').textContent = ''; $('verdict').classList.remove('correct', 'bad'); }
+  for (const [id, off] of [['prev', at === 0], ['reset', at === 0], ['next', at === last], ['end', at === last]]) $(id).disabled = off;
+}
+document.querySelectorAll('[name=order],[name=join],[name=filter]').forEach(r => r.onchange = () => { opts[r.name] = r.value; rebuild(); render(); });
+$('preset').onchange = () => { preset = +$('preset').value; loadPreset(preset); renderFavs(); render(); };
+$('prev').onclick = () => { at = Math.max(0, at - 1); render(); };
+$('next').onclick = () => { at = Math.min(run.frames.length - 1, at + 1); render(); };
+$('reset').onclick = () => { at = 0; render(); };
+$('end').onclick = () => { at = run.frames.length - 1; render(); };
+
+// ---------- step 4 ----------
+let choice = null, revealed = false;
+function renderPredict() {
+  $('reveal').disabled = choice === null;
+  $('feedback').textContent = revealed ? (choice === 2 ? t('correct') : t('wrong' + choice)) + ' ' + t('answer') : t('choosePrompt');
+  $('feedback').classList.toggle('correct', revealed && choice === 2);
+}
+document.querySelectorAll('[name=prediction]').forEach(r => r.onchange = () => { choice = +r.value; revealed = false; render(); });
+$('reveal').onclick = () => { if (choice !== null) { revealed = true; render(); } };
+
+// ---------- step 2 / 5 code ----------
+let copyState = '';
+$('groupSql').textContent = M.GROUP_SQL; $('baselineSql').textContent = M.BASELINE_SQL;
+$('code').textContent = window.SQL_SOURCE; $('fallbackSource').value = window.SQL_SOURCE;
+$('copy').onclick = async () => {
+  try { await navigator.clipboard.writeText(window.SQL_SOURCE); copyState = 'copied'; $('manualCopy').hidden = true; }
+  catch (_) { copyState = 'manual'; $('manualCopy').hidden = false; $('fallbackSource').focus(); $('fallbackSource').select(); }
+  render();
+};
+
+function render() {
+  renderHand(); renderPipeline(); renderPredict();
+  $('copyStatus').textContent = copyState ? t(copyState) : '';
+  $('langToggle').setAttribute('aria-label', t('language'));
+}
+loadPreset(0);
+locale.onChange(() => { renderFavs(); render(); }); locale.init();
+
+const sections = [...document.querySelectorAll('.step')];
+function updateNav() { const threshold = document.querySelector('.step-nav').getBoundingClientRect().bottom + 24; let active = sections[0]; for (const s of sections) if (s.getBoundingClientRect().top <= threshold) active = s; document.querySelectorAll('.step-nav a').forEach(a => a.classList.toggle('active', a.hash === '#' + active.id)); }
+let navScheduled = false; function scheduleNav() { if (navScheduled) return; navScheduled = true; requestAnimationFrame(() => { navScheduled = false; updateNav(); }); }
+window.addEventListener('scroll', scheduleNav, {passive: true}); window.addEventListener('resize', scheduleNav); updateNav();
