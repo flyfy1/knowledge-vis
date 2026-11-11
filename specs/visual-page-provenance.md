@@ -122,3 +122,10 @@ no `Built-By`. The removed label had claimed Codex; that claim had no evidence a
 - Both optional fields must be full 40-character SHAs of existing commits that touched the page;
   `tests/page-provenance-core.cjs` checks this. They are not required to be ancestors of
   `sourceRevision`, because integrated worker commits are not.
+
+## Inventory scan scope (2026-11-11)
+
+`tests/page-provenance-core.cjs` walks the repository for static labels and skips `.git`, `node_modules`
+and `.claude`. `.claude/` holds agent tooling, including git worktrees that are whole copies of the site;
+their labels belong to those branches, not to this checkout, and made the test fail whenever a worktree
+existed. No site page lives under `.claude/`.

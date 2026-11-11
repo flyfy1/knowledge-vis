@@ -7,7 +7,8 @@ assert.equal(new Set(inventoryPaths).size,inventoryPaths.length,'provenance inve
 function labeledHtmlFiles(dir){
  const files=[];
  for(const entry of fs.readdirSync(dir,{withFileTypes:true})){
-  if(entry.name==='.git'||entry.name==='node_modules')continue;
+  // .claude/ holds agent tooling (settings, git worktrees with whole copies of the site), never site pages.
+  if(entry.name==='.git'||entry.name==='node_modules'||entry.name==='.claude')continue;
   const filename=path.join(dir,entry.name);
   if(entry.isDirectory())files.push(...labeledHtmlFiles(filename));
   else if(entry.name.endsWith('.html')&&fs.readFileSync(filename,'utf8').includes('<details class="page-provenance"'))files.push(path.relative(root,filename));
