@@ -244,7 +244,8 @@ check('S2 GRAVITY 2020', OBJ.s2.aMas === 125.058 && OBJ.s2.e === 0.884649 && OBJ
   const strip = s => s.replace(/\/\*[\s\S]*?\*\//g, '').replace(/\/\/.*$/gm, '');
   check('no Chinese in app.js', !/[一-鿿]/.test(strip(app)));
   check('no Chinese in models.js', !/[一-鿿]/.test(strip(mod)));
-  check('no Chinese in index.html except the 中 button', !/[一-鿿]/.test(html.replace('>中<', '><')));
+  // The site's static provenance label (specs/visual-page-provenance.md) is bilingual by contract and not essay copy.
+  check('no Chinese in index.html except the 中 button and the site provenance label', !/[一-鿿]/.test(html.replace(/<details class="page-provenance"[\s\S]*?<\/details>/, '').replace('>中<', '><')));
 }
 
 if (fails) { console.error(`${fails} of ${n} checks failed`); process.exit(1); }

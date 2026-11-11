@@ -195,7 +195,8 @@ const I = M.immune;
   for (const k of Object.keys(Z)) { n++; if (!keys.has(k) && !['doc.title', 'doc.desc'].includes(k)) { fails++; console.error('FAIL unused zh key ' + k); } }
   // no Chinese outside copy.zh.js except comments and the 中 toggle
   for (const file of ['index.html', 'app.js', 'models.js']) {
-    let src = fs.readFileSync(path.join(__dirname, '..', file), 'utf8').replace(/\/\*[\s\S]*?\*\//g, '').replace(/\/\/.*$/gm, '').replace(/<!--[\s\S]*?-->/g, '');
+    // The site's static provenance label (specs/visual-page-provenance.md) is bilingual by contract and not essay copy.
+    let src = fs.readFileSync(path.join(__dirname, '..', file), 'utf8').replace(/<details class="page-provenance"[\s\S]*?<\/details>/, '').replace(/\/\*[\s\S]*?\*\//g, '').replace(/\/\/.*$/gm, '').replace(/<!--[\s\S]*?-->/g, '');
     // the static zh <title> and meta description (for crawlers and link previews) must equal the copy, and are exempt
     if (file === 'index.html') {
       check('static title = doc.title', (src.match(/<title>([^<]*)<\/title>/) || [])[1], Z['doc.title']);

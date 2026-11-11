@@ -259,7 +259,8 @@ says('ch2.limit', '0.76');
   for (const m of app.matchAll(/'((?:ch\d|common|nav|doc)\.[\w.]+)'/g)) keys.add(m[1]);
   for (const k of keys) { n++; if (Z[k] == null) { fails++; console.error('FAIL missing zh key ' + k); } }
   for (const file of ['index.html', 'app.js', 'models.js']) {
-    const src = fs.readFileSync(path.join(__dirname, '..', file), 'utf8').replace(/\/\*[\s\S]*?\*\//g, '').replace(/\/\/.*$/gm, '').replace(/<!--[\s\S]*?-->/g, '');
+    // The site's static provenance label (specs/visual-page-provenance.md) is bilingual by contract and not essay copy.
+    const src = fs.readFileSync(path.join(__dirname, '..', file), 'utf8').replace(/<details class="page-provenance"[\s\S]*?<\/details>/, '').replace(/\/\*[\s\S]*?\*\//g, '').replace(/\/\/.*$/gm, '').replace(/<!--[\s\S]*?-->/g, '');
     const others = (src.match(/[㐀-鿿]+/g) || []).filter(x => !(file === 'index.html' && x === '中')); n++;
     if (others.length) { fails++; console.error(`FAIL Chinese text in ${file}: ${others.slice(0, 3).join(' ')}`); }
   }

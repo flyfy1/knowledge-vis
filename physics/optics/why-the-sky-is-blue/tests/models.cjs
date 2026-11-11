@@ -242,7 +242,8 @@ check('dominant wavelength of a pure 410 nm light is 410', f(M.dominant((c => ({
   for (const k of keys) { n++; if (Z[k] == null) { fails++; console.error('FAIL missing zh key ' + k); } }
   // no Chinese text outside copy.zh.js except comments and the 中 button
   for (const file of ['index.html', 'app.js', 'models.js']) {
-    const src = fs.readFileSync(path.join(__dirname, '..', file), 'utf8').replace(/\/\*[\s\S]*?\*\//g, '').replace(/\/\/.*$/gm, '').replace(/<!--[\s\S]*?-->/g, '');
+    // The site's static provenance label (specs/visual-page-provenance.md) is bilingual by contract and not essay copy.
+    const src = fs.readFileSync(path.join(__dirname, '..', file), 'utf8').replace(/<details class="page-provenance"[\s\S]*?<\/details>/, '').replace(/\/\*[\s\S]*?\*\//g, '').replace(/\/\/.*$/gm, '').replace(/<!--[\s\S]*?-->/g, '');
     const hits = (src.match(/[㐀-鿿]+/g) || []).filter(x => x !== '中'); n++;
     if (hits.length) { fails++; console.error(`FAIL Chinese text in ${file}: ${hits.slice(0, 3).join(' ')}`); }
   }
