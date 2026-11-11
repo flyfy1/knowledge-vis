@@ -68,20 +68,6 @@
     "en": "The base diagonal satisfies e² = a² + b²; standing the height c on it gives d² = e² + c² — the solid problem splits back into two flat right triangles."
    },
    "source": "../math/geometry/space-diagonal/#step1"
-  },
-  {
-   "from": "space-diagonal",
-   "to": "vectors",
-   "type": "connection",
-   "label": {
-    "zh": "三维向量的长度",
-    "en": "The length of a 3D vector"
-   },
-   "reason": {
-    "zh": "对角线从一个角指向对角，正好是向量 (a, b, c)；它的长度 √(a² + b² + c²) 就是三维坐标里两点间的距离公式。",
-    "en": "The diagonal from one corner to the opposite corner is the vector (a, b, c), and its length √(a² + b² + c²) is the distance formula between two points in 3D coordinates."
-   },
-   "source": "../math/geometry/space-diagonal/#step1"
   }
  ]
 }

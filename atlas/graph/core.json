@@ -104,6 +104,7 @@
   {
    "id": "work-energy",
    "group": "waves",
+   "stage": "senior",
    "title": {
     "zh": "功与能量变化",
     "en": "Work & energy changes"
@@ -165,6 +166,7 @@
   {
    "id": "net-force",
    "group": "waves",
+   "stage": "senior",
    "title": {
     "zh": "净力与牛顿第二定律",
     "en": "Net force & Newton’s second law"
@@ -387,6 +389,7 @@
   {
    "id": "oscillation",
    "group": "waves",
+   "stage": "senior",
    "title": {
     "zh": "简谐振动",
     "en": "Harmonic motion"
@@ -1327,21 +1330,6 @@
     "en": "Uniform sampling repeats the spectrum at multiples of the sampling rate; overlap between copies produces aliasing."
    },
    "source": "../signal/sampling/sampling/#step4"
-  },
-  {
-   "id": "oscillation:resonance",
-   "from": "oscillation",
-   "to": "resonance",
-   "type": "application",
-   "label": {
-    "zh": "受周期驱动时可能共振",
-    "en": "may resonate under periodic driving"
-   },
-   "reason": {
-    "zh": "给振子施加周期外力，其稳态响应随驱动频率变化；阻尼决定峰值的强弱与位置。",
-    "en": "A periodic force produces a frequency-dependent steady-state response; damping affects the peak strength and location."
-   },
-   "source": "https://openstax.org/books/university-physics-volume-1/pages/15-6-forced-oscillations"
   },
   {
    "id": "resonance:freqresp",

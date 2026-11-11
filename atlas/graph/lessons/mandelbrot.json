@@ -72,34 +72,6 @@
     "en": "Each step of the iteration is complex arithmetic: squaring squares the length and doubles the angle, then c shifts the point; seeing complex multiplication as rotate-and-scale is what makes it clear why orbits spiral in or fly away."
    },
    "source": "../math/calculus/mandelbrot/#step1"
-  },
-  {
-   "from": "mandelbrot-set",
-   "to": "chaos-threebody",
-   "type": "connection",
-   "label": {
-    "zh": "简单规则，无尽复杂",
-    "en": "Simple rule, endless complexity"
-   },
-   "reason": {
-    "zh": "z ← z² + c 和三体运动一样是完全确定的规则，可在集合边界附近，起点差一点，轨道就可能从留下变成逃逸——确定性与难以预测在边界上同时出现。",
-    "en": "Like three-body motion, z ← z² + c is a fully deterministic rule, yet near the set’s boundary a tiny change of starting point can flip an orbit from staying to escaping — determinism and unpredictability meet on the boundary."
-   },
-   "source": "../math/calculus/mandelbrot/#step3"
-  },
-  {
-   "from": "logistic-growth",
-   "to": "mandelbrot-set",
-   "type": "connection",
-   "label": {
-    "zh": "同一族二次映射",
-    "en": "The same family of quadratic maps"
-   },
-   "reason": {
-    "zh": "离散逻辑斯蒂迭代 N ← N + rN(1 − N/K) 也是二次映射，经过线性换元就是实数 c 上的 z ← z² + c；r 增大时出现的倍周期振荡和混沌，对应 Mandelbrot 集沿实轴的那一串芽苞和天线。",
-    "en": "The discrete logistic iteration N ← N + rN(1 − N/K) is also a quadratic map, and a linear change of variable turns it into z ← z² + c with real c; the period doubling and chaos that appear as r grows correspond to the chain of bulbs and the antenna along the Mandelbrot set’s real axis."
-   },
-   "source": "../biology/ecology/logistic-growth/#step4"
   }
  ]
 }

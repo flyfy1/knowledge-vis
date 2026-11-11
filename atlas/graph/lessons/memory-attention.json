@@ -67,12 +67,12 @@
    "to": "signal-detection-theory",
    "type": "connection",
    "label": {
-    "zh": "目标是信号，干扰物是噪声",
-    "en": "Targets are signal, distractors are noise"
+    "zh": "目标是信号，干扰物与它争道",
+    "en": "Targets are signal, distractors compete"
    },
    "reason": {
-    "zh": "在干扰中找目标，可以按信号检测论来读：干扰物越多，信号和噪声越难分开，命中率下降、虚报上升——把“看不清”与“不敢说有”分开，要用 d′ 和判据 c。",
-    "en": "Finding targets among distractors can be read with signal detection theory: more distractors make signal and noise harder to separate, so hits fall and false alarms rise — telling “cannot see it” apart from “unwilling to say yes” takes d′ and the criterion c."
+    "zh": "本页把注意当作带宽有限的通道：目标是要找的信号，干扰物同时涌入，干扰越多命中率越低。信号检测论是继续读这类任务的标准方法：它把“分不分得开”（d′）与“多愿意说有”（判据 c）分开，本页的模型只画出前一种方向。",
+    "en": "The page treats attention as a limited channel: targets are the signal you look for, distractors arrive alongside them, and hits fall as distractors rise. Signal detection theory is the standard way to read such a task further: it separates how well targets can be told apart (d′) from how readily one says “yes” (criterion c); the page models only the first."
    },
    "source": "../psychology/cognition/memory-attention/#step1"
   }

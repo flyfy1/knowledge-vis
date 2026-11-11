@@ -62,20 +62,5 @@
    ]
   }
  ],
- "edges": [
-  {
-   "from": "tcp-congestion-control",
-   "to": "quorum-replication",
-   "type": "connection",
-   "label": {
-    "zh": "在不可靠的网络上做出可靠",
-    "en": "Reliability built on an unreliable network"
-   },
-   "reason": {
-    "zh": "TCP 靠编号、确认和重传在会丢包的链路上拼出可靠字节流；副本系统靠等够 W 个确认在会断开的网络上保证写入——两者都把“没收到确认”当作要处理的常态。",
-    "en": "TCP builds a reliable byte stream over lossy links with sequence numbers, acknowledgements and retransmission; a replicated store guarantees a write over a network that can split by waiting for W acknowledgements — both treat a missing acknowledgement as normal, not exceptional."
-   },
-   "source": "../computing/systems/distributed-systems/#step1"
-  }
- ]
+ "edges": []
 }

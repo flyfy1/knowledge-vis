@@ -89,7 +89,7 @@
     "zh": "统计检验也是在噪声里判断有没有效应：显著性水平 α 对应虚报率，检验力对应命中率；收紧判据少犯一种错，就得多犯另一种。",
     "en": "A statistical test also decides whether an effect stands out from noise: the significance level α plays the false-alarm rate and the power the hit rate; tightening the criterion to make one error rarer makes the other more common."
    },
-   "source": "../psychology/cognition/signal-detection/#step2"
+   "source": "../probability/inference/hypothesis-testing/#step2"
   },
   {
    "from": "expected-value",
