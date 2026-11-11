@@ -1,0 +1,105 @@
+{
+ "schema": 2,
+ "slug": "thermodynamics",
+ "nodes": [
+  {
+   "id": "first-law-thermodynamics",
+   "group": "circuits",
+   "stage": "university",
+   "order": 50,
+   "title": {
+    "zh": "热力学第一定律 · 状态与路径",
+    "en": "First law of thermodynamics · state and path"
+   },
+   "description": {
+    "zh": "气体吸收的热量 Q，一部分变成内能的增加 ΔU，其余推动活塞对外做功 W；内能只看状态，热和功却取决于走哪条路径，所以从同一起点出发的等温膨胀和绝热膨胀会走出不同的曲线。",
+    "en": "Heat Q taken in by a gas partly raises its internal energy ΔU and partly pushes the piston to do work W; internal energy depends only on the state while heat and work depend on the path, which is why isothermal and adiabatic expansions from the same start trace different curves."
+   },
+   "formula": "ΔU = Q − W, W = ∫P dV",
+   "source": "../physics/thermal/thermodynamics/#step1",
+   "lessons": [
+    {
+     "slug": "thermodynamics",
+     "step": 1,
+     "category": "physics",
+     "stage": "university",
+     "primary": true
+    }
+   ],
+   "aliases": [
+    {
+     "zh": "热力学第一定律",
+     "en": "first law of thermodynamics"
+    },
+    {
+     "zh": "内能",
+     "en": "internal energy"
+    },
+    {
+     "zh": "等温过程 绝热过程",
+     "en": "isothermal and adiabatic processes"
+    },
+    {
+     "zh": "P–V 图",
+     "en": "P–V diagram"
+    },
+    {
+     "zh": "状态量和过程量",
+     "en": "state functions vs path functions"
+    },
+    {
+     "zh": "热学里的能量守恒",
+     "en": "energy conservation with heat"
+    },
+    {
+     "zh": "理想气体状态方程",
+     "en": "ideal gas law"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "first-law-thermodynamics",
+   "to": "carnot-cycle",
+   "type": "foundation",
+   "label": {
+    "zh": "卡诺循环由这些路径拼成",
+    "en": "The Carnot cycle is built from these paths"
+   },
+   "reason": {
+    "zh": "卡诺循环就是两段等温加两段绝热围成的回路；先用第一定律记清每一段的 Q、W、ΔU，才看得懂一圈下来净功为什么等于吸热减放热、效率为什么有上限。",
+    "en": "A Carnot cycle is two isothermal and two adiabatic legs closed into a loop; balancing Q, W and ΔU on each leg with the first law is what makes it clear why a full cycle’s net work is heat in minus heat out, and why its efficiency is capped."
+   },
+   "source": "../physics/thermal/thermodynamics/#step3"
+  },
+  {
+   "from": "kinetic-theory",
+   "to": "first-law-thermodynamics",
+   "type": "foundation",
+   "label": {
+    "zh": "内能是分子动能之和",
+    "en": "Internal energy is the molecules’ kinetic energy"
+   },
+   "reason": {
+    "zh": "理想气体的内能是大量分子动能的总和、只由温度决定，压强来自分子撞壁；所以等温过程内能不变，吸进来的热全部拿去做功。",
+    "en": "An ideal gas’s internal energy is the total kinetic energy of its molecules and depends only on temperature, while pressure comes from wall collisions; so in an isothermal process ΔU = 0 and all the heat taken in goes into work."
+   },
+   "source": "../physics/thermal/thermodynamics/#step2"
+  },
+  {
+   "from": "integral",
+   "to": "first-law-thermodynamics",
+   "type": "application",
+   "label": {
+    "zh": "功是 P–V 曲线下的面积",
+    "en": "Work is the area under the P–V curve"
+   },
+   "reason": {
+    "zh": "体积变化一点点时功是 P·dV，把这些小条累加起来就是 W = ∫P dV——P–V 曲线下的面积；路径不同，面积不同，功也就不同。",
+    "en": "For each small change in volume the work is P·dV, and adding up those strips gives W = ∫P dV — the area under the P–V curve; a different path encloses a different area, so the work differs."
+   },
+   "source": "../physics/thermal/thermodynamics/#step1"
+  }
+ ]
+}

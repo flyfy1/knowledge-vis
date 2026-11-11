@@ -1,0 +1,109 @@
+{
+ "schema": 2,
+ "slug": "materials-science",
+ "nodes": [
+  {
+   "id": "stress-strain",
+   "group": "waves",
+   "stage": "university",
+   "order": 50,
+   "title": {
+    "zh": "应力–应变曲线 · 屈服、韧性与断裂",
+    "en": "Stress–strain curves · yield, toughness and fracture"
+   },
+   "description": {
+    "zh": "把材料拉长时，应力（单位面积上的力）对应变（相对伸长）的曲线先是一段直线（弹性，松手能回去），过了屈服点开始永久变形，最后颈缩断裂；曲线下的面积是断裂前吸收的能量，叫韧性。",
+    "en": "As a material is stretched, its curve of stress (force per area) against strain (relative stretch) starts as a straight line (elastic — it springs back), turns into permanent deformation past the yield point, and ends in necking and fracture; the area under the curve is the energy absorbed before breaking, called toughness."
+   },
+   "formula": "σ = F/A, ε = ΔL/L₀, σ = Eε",
+   "source": "../physics/matter/materials-science/#step1",
+   "lessons": [
+    {
+     "slug": "materials-science",
+     "step": 1,
+     "category": "physics",
+     "stage": "university",
+     "primary": true
+    }
+   ],
+   "aliases": [
+    {
+     "zh": "应力 应变",
+     "en": "stress and strain"
+    },
+    {
+     "zh": "杨氏模量",
+     "en": "Young’s modulus"
+    },
+    {
+     "zh": "屈服强度",
+     "en": "yield strength"
+    },
+    {
+     "zh": "韧性",
+     "en": "toughness"
+    },
+    {
+     "zh": "塑性变形",
+     "en": "plastic deformation"
+    },
+    {
+     "zh": "脆性与延性",
+     "en": "brittle vs ductile"
+    },
+    {
+     "zh": "为什么玻璃会碎而钢会弯",
+     "en": "why does glass shatter while steel bends"
+    },
+    {
+     "zh": "胡克定律",
+     "en": "Hooke’s law"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "slope",
+   "to": "stress-strain",
+   "type": "application",
+   "label": {
+    "zh": "弹性模量是起始斜率",
+    "en": "Young’s modulus is the initial slope"
+   },
+   "reason": {
+    "zh": "弹性段应力与应变成正比，σ = Eε，杨氏模量 E 就是这段直线的斜率：斜率越大，材料越难拉长。",
+    "en": "In the elastic stretch stress is proportional to strain, σ = Eε, and Young’s modulus E is the slope of that line: the steeper it is, the harder the material is to stretch."
+   },
+   "source": "../physics/matter/materials-science/#step0"
+  },
+  {
+   "from": "integral",
+   "to": "stress-strain",
+   "type": "application",
+   "label": {
+    "zh": "韧性是曲线下的面积",
+    "en": "Toughness is the area under the curve"
+   },
+   "reason": {
+    "zh": "每伸长一点吸收的能量密度是 σ·dε，从 0 积到断裂应变就是韧性——强度高却拉不长的材料，面积未必大。",
+    "en": "Each small stretch absorbs energy density σ·dε, and integrating from zero to the fracture strain gives toughness — a strong material that barely stretches need not enclose a large area."
+   },
+   "source": "../physics/matter/materials-science/#step2"
+  },
+  {
+   "from": "pressure",
+   "to": "stress-strain",
+   "type": "connection",
+   "label": {
+    "zh": "同是力除以面积",
+    "en": "Both are force over area"
+   },
+   "reason": {
+    "zh": "应力和压强都是力除以面积、单位都是帕斯卡；压强常指流体或接触面上的推压，应力描述材料内部每个截面承受的拉或压。",
+    "en": "Stress and pressure are both force divided by area, measured in pascals; pressure usually describes a push from a fluid or a contact, while stress describes the pull or push carried across each cross-section inside a material."
+   },
+   "source": "../physics/matter/materials-science/#step0"
+  }
+ ]
+}

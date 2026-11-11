@@ -1,0 +1,86 @@
+{
+ "schema": 2,
+ "slug": "frozen-bubble",
+ "nodes": [
+  {
+   "id": "frozen-bubble",
+   "group": "matter",
+   "stage": "junior",
+   "order": 50,
+   "title": {
+    "zh": "冰冻肥皂泡 · 薄膜里的结晶",
+    "en": "Frozen soap bubbles · ice in a thin film"
+   },
+   "description": {
+    "zh": "肥皂泡冷到零下时，冻住的是泡壁薄膜里的水而不是里面的空气：一粒冰核长出枝状冰晶，结冰放出的潜热带动膜里的液体流动，让冰晶看起来像在游动；泡上的彩色来自薄膜干涉，不是冰本身的颜色。",
+    "en": "When a soap bubble is chilled below zero, what freezes is the water in its thin wall, not the air inside: a seed crystal grows branching ice, latent heat released by freezing drives liquid flow that makes the crystals seem to swim, and the colours come from thin-film interference rather than from the ice itself."
+   },
+   "source": "../physics/thermal/frozen-bubble/#step0",
+   "lessons": [
+    {
+     "slug": "frozen-bubble",
+     "step": 0,
+     "category": "physics",
+     "stage": "junior",
+     "primary": true
+    }
+   ],
+   "aliases": [
+    {
+     "zh": "肥皂泡结冰",
+     "en": "freezing soap bubble"
+    },
+    {
+     "zh": "冰冻泡泡",
+     "en": "frozen bubble"
+    },
+    {
+     "zh": "泡泡为什么会结出冰花",
+     "en": "why do frozen bubbles grow ice patterns"
+    },
+    {
+     "zh": "结晶",
+     "en": "crystallisation"
+    },
+    {
+     "zh": "潜热",
+     "en": "latent heat"
+    },
+    {
+     "zh": "凝固",
+     "en": "freezing / solidification"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "particles-states",
+   "to": "frozen-bubble",
+   "type": "foundation",
+   "label": {
+    "zh": "凝固是液体排成固体的队形",
+    "en": "Freezing is a liquid falling into a solid’s order"
+   },
+   "reason": {
+    "zh": "粒子页说明固、液、气是同一群粒子的不同队形；泡壁里的水降温后排进冰的晶格，冰晶就从一粒冰核向外生长，泡里的空气仍是气体。",
+    "en": "The particles lesson shows solid, liquid and gas are one crowd of particles in different arrangements; the cooled water in the film locks into ice’s lattice and the crystal grows outward from a seed, while the air inside stays a gas."
+   },
+   "source": "../physics/thermal/frozen-bubble/#step0"
+  },
+  {
+   "from": "interference",
+   "to": "frozen-bubble",
+   "type": "application",
+   "label": {
+    "zh": "彩色来自薄膜干涉",
+    "en": "The colours are thin-film interference"
+   },
+   "reason": {
+    "zh": "泡壁两面反射的光走过的路程不同，按膜厚相长或相消才显出彩色；颜色随膜厚和视角改变，所以既不是冰的颜色，也不能当温度计读。",
+    "en": "Light reflected from the film’s two faces travels different paths and reinforces or cancels according to thickness, which produces the colours; since they change with thickness and viewing angle, they are neither the ice’s colour nor a thermometer."
+   },
+   "source": "../physics/thermal/frozen-bubble/#step2"
+  }
+ ]
+}

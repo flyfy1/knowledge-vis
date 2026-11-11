@@ -1,0 +1,147 @@
+{
+ "schema": 2,
+ "slug": "lens",
+ "nodes": [
+  {
+   "id": "convex-lens",
+   "group": "waves",
+   "stage": "junior",
+   "order": 50,
+   "title": {
+    "zh": "凸透镜成像规律",
+    "en": "Convex-lens images"
+   },
+   "description": {
+    "zh": "物体离凸透镜远近不同，像的大小、正倒、虚实都会变：物距大于二倍焦距成缩小倒立的实像，在一倍与二倍焦距之间成放大倒立的实像，小于一倍焦距成放大正立的虚像——三条特殊光线就能画出像在哪里。",
+    "en": "How far an object sits from a convex lens changes the image’s size, orientation and kind: beyond twice the focal length it is a smaller inverted real image, between one and two focal lengths a larger inverted real image, and inside one focal length a larger upright virtual image — three special rays locate it."
+   },
+   "formula": "1/f = 1/u + 1/v",
+   "source": "../physics/optics/lens/#step2",
+   "lessons": [
+    {
+     "slug": "lens",
+     "step": 2,
+     "category": "physics",
+     "stage": "junior",
+     "primary": true
+    }
+   ],
+   "aliases": [
+    {
+     "zh": "凸透镜成像规律",
+     "en": "convex lens image rules"
+    },
+    {
+     "zh": "焦距",
+     "en": "focal length"
+    },
+    {
+     "zh": "实像和虚像的区别",
+     "en": "real image vs virtual image"
+    },
+    {
+     "zh": "放大镜原理",
+     "en": "how a magnifying glass works"
+    },
+    {
+     "zh": "一倍焦距分虚实，二倍焦距分大小",
+     "en": "f splits real from virtual, 2f splits larger from smaller"
+    },
+    {
+     "zh": "薄透镜公式",
+     "en": "thin lens equation"
+    },
+    {
+     "zh": "透镜成像",
+     "en": "lens imaging"
+    },
+    {
+     "zh": "三条特殊光线",
+     "en": "three principal rays"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "snell",
+   "to": "convex-lens",
+   "type": "foundation",
+   "label": {
+    "zh": "两次折射把光收拢",
+    "en": "Two refractions gather the light"
+   },
+   "reason": {
+    "zh": "光进出透镜两个表面各折射一次；凸透镜中间厚、边缘薄，越靠边的光偏折越多，平行光就被收拢到焦点。",
+    "en": "Light refracts once entering and once leaving the lens; a convex lens is thicker in the middle than at the edge, so rays nearer the rim bend more and parallel light converges at the focus."
+   },
+   "source": "../physics/optics/lens/#step0"
+  },
+  {
+   "from": "pinhole-ratio",
+   "to": "convex-lens",
+   "type": "connection",
+   "label": {
+    "zh": "同一个放大率 −v/u",
+    "en": "The same magnification −v/u"
+   },
+   "reason": {
+    "zh": "小孔只靠光沿直线传播就成倒像，放大率是 −v/u；透镜把更多的光会聚到同一个像点，像更亮，同一个 M = −v/u 仍给出像的大小和正倒。",
+    "en": "A pinhole forms an inverted image from straight-line light alone, with magnification −v/u; a lens gathers far more light into each image point for a brighter image, and the same M = −v/u still gives its size and orientation."
+   },
+   "source": "../physics/optics/lens/#step2"
+  },
+  {
+   "from": "convex-lens",
+   "to": "eye-vision",
+   "type": "application",
+   "label": {
+    "zh": "眼睛是一枚可调的凸透镜",
+    "en": "The eye is an adjustable convex lens"
+   },
+   "reason": {
+    "zh": "眼睛把晶状体当凸透镜、视网膜当光屏，成倒立缩小的实像；看远看近要调节焦距，像落不到视网膜上就是近视或远视。",
+    "en": "The eye uses its lens as a convex lens and the retina as the screen, forming a smaller inverted real image; it adjusts its focal length for near and far, and an image that misses the retina is short- or long-sightedness."
+   },
+   "source": "../physics/optics/eye-vision/#step2"
+  }
+ ],
+ "questions": [
+  {
+   "id": "q-lens-0",
+   "question": {
+    "zh": "放大镜为什么能把字放大？",
+    "en": "Why does a magnifying glass make text look bigger?"
+   },
+   "chain": [
+    "convex-lens",
+    "snell"
+   ],
+   "target": {
+    "node": "convex-lens",
+    "href": "../physics/optics/lens/#step2"
+   },
+   "prompts": [
+    {
+     "node": "convex-lens",
+     "ask": {
+      "zh": "把字放在一倍焦距以内，像是实像还是虚像、正立还是倒立？",
+      "en": "With the text inside one focal length, is the image real or virtual, upright or inverted?"
+     }
+    },
+    {
+     "node": "snell",
+     "ask": {
+      "zh": "光穿过凸透镜为什么会往中间偏？",
+      "en": "Why does light bend toward the middle as it passes through a convex lens?"
+     }
+    }
+   ],
+   "reveal": {
+    "zh": "字在一倍焦距以内时，折射后的光不再相交，眼睛顺着它们的反向延长线看到一个正立、放大的虚像。屏接不住这个像，只能透过透镜去看。",
+    "en": "With the text inside one focal length, the refracted rays no longer meet; the eye traces them back and sees an upright, magnified virtual image. No screen can catch it — you can only look through the lens."
+   },
+   "source": "../physics/optics/lens/#step2"
+  }
+ ]
+}

@@ -1,0 +1,143 @@
+{
+ "schema": 2,
+ "slug": "standing-wave",
+ "nodes": [
+  {
+   "id": "standing-wave",
+   "group": "waves",
+   "stage": "senior",
+   "order": 50,
+   "title": {
+    "zh": "驻波 · 波节与波腹",
+    "en": "Standing waves · nodes and antinodes"
+   },
+   "description": {
+    "zh": "两列相同的波迎面相遇叠加，波形不再前进、只在原地起伏：有的点始终不动（波节），有的点振幅最大（波腹）；两端固定的弦只允许 L = nλ/2 的波长，驱动频率对上其中之一就会共振。",
+    "en": "Two identical waves meeting head-on add into a pattern that no longer travels and only rises and falls in place: some points never move (nodes) and others swing hardest (antinodes); a string fixed at both ends allows only wavelengths with L = nλ/2, and driving it at one of those frequencies makes it resonate."
+   },
+   "formula": "y = 2A cos(kx) sin(ωt), L = nλ/2",
+   "source": "../physics/waves/standing-wave/#step1",
+   "lessons": [
+    {
+     "slug": "standing-wave",
+     "step": 1,
+     "category": "physics",
+     "stage": "senior",
+     "primary": true
+    }
+   ],
+   "aliases": [
+    {
+     "zh": "驻波",
+     "en": "standing wave"
+    },
+    {
+     "zh": "波节 波腹",
+     "en": "nodes and antinodes"
+    },
+    {
+     "zh": "弦的谐波",
+     "en": "harmonics of a string"
+    },
+    {
+     "zh": "基频",
+     "en": "fundamental frequency"
+    },
+    {
+     "zh": "为什么吉他弦只发出某些音",
+     "en": "why does a guitar string sound only certain notes"
+    },
+    {
+     "zh": "简正模式",
+     "en": "normal mode"
+    },
+    {
+     "zh": "驻定波",
+     "en": "stationary wave"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "superposition",
+   "to": "standing-wave",
+   "type": "foundation",
+   "label": {
+    "zh": "两列反向行波相加",
+    "en": "Two opposite travelling waves added"
+   },
+   "reason": {
+    "zh": "每一点的位移是右行波和左行波位移之和；A sin(ωt − kx) + A sin(ωt + kx) = 2A cos(kx) sin(ωt) 把空间和时间分开，波形就不再前进。",
+    "en": "Each point’s displacement is the sum of the right- and left-moving waves; A sin(ωt − kx) + A sin(ωt + kx) = 2A cos(kx) sin(ωt) separates space from time, so the pattern stops travelling."
+   },
+   "source": "../physics/waves/standing-wave/#step0"
+  },
+  {
+   "from": "standing-wave",
+   "to": "resonance",
+   "type": "connection",
+   "label": {
+    "zh": "驱动频率踩中模式就是共振",
+    "en": "Driving on a mode is resonance"
+   },
+   "reason": {
+    "zh": "固定的两端只放行 fₙ = n·f₁ 这一族固有频率；外力频率命中其中一个时，整根弦点亮成对应模式、振幅冲高——这就是共振在弦上的样子。",
+    "en": "Fixed ends admit only the family of natural frequencies fₙ = n·f₁; when the driving frequency hits one, the whole string lights up in that mode and the amplitude soars — resonance on a string."
+   },
+   "source": "../physics/waves/standing-wave/#step4"
+  },
+  {
+   "from": "interference",
+   "to": "standing-wave",
+   "type": "connection",
+   "label": {
+    "zh": "同是叠加，静点来历不同",
+    "en": "Both superposition, different quiet points"
+   },
+   "reason": {
+    "zh": "干涉的静点来自两个波源到观测点的路程差，铺成空间里的条纹；驻波的波节来自一列波与反向同伴在一维上叠加，判定量只是位置 x。两者别混为一谈。",
+    "en": "Interference’s quiet points come from the path difference between two sources and spread into fringes in space; a standing wave’s nodes come from one wave meeting its reversed partner along a line, decided by position x alone. Keep the two apart."
+   },
+   "source": "../physics/waves/standing-wave/#step1"
+  }
+ ],
+ "questions": [
+  {
+   "id": "q-standing-wave-0",
+   "question": {
+    "zh": "为什么一根吉他弦只能发出某些音？",
+    "en": "Why can a guitar string only sound certain notes?"
+   },
+   "chain": [
+    "standing-wave",
+    "resonance"
+   ],
+   "target": {
+    "node": "standing-wave",
+    "href": "../physics/waves/standing-wave/#step3"
+   },
+   "prompts": [
+    {
+     "node": "standing-wave",
+     "ask": {
+      "zh": "两端钉死时，哪些波长能在弦上稳定存在？",
+      "en": "With both ends fixed, which wavelengths can survive on the string?"
+     }
+    },
+    {
+     "node": "resonance",
+     "ask": {
+      "zh": "拨弦或驱动时，为什么只有对上固有频率的振动会变大？",
+      "en": "When plucked or driven, why do only vibrations at natural frequencies grow large?"
+     }
+    }
+   ],
+   "reveal": {
+    "zh": "两端固定要求两端始终是波节，所以只有 L = nλ/2 的波长能稳定存在，频率排成 f₁、2f₁、3f₁……的台阶。拨弦激起的正是这些模式，基频定音高，各次谐波的配比定音色。",
+    "en": "Fixed ends must always be nodes, so only wavelengths with L = nλ/2 survive and the frequencies form steps f₁, 2f₁, 3f₁, … Plucking excites exactly these modes: the fundamental sets the pitch and the mix of harmonics sets the tone."
+   },
+   "source": "../physics/waves/standing-wave/#step3"
+  }
+ ]
+}
