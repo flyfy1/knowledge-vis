@@ -1,0 +1,119 @@
+{
+ "schema": 2,
+ "slug": "z-transform",
+ "nodes": [
+  {
+   "id": "z-transform",
+   "group": "systems",
+   "stage": "university",
+   "order": 50,
+   "title": {
+    "zh": "Z 变换 · 把 s 平面卷成单位圆",
+    "en": "The z-transform · rolling the s-plane into the unit circle"
+   },
+   "description": {
+    "zh": "Z 变换是采样信号的拉普拉斯变换：每隔 T 取一个样，用 z = e^{sT} 代替 s，左半平面被卷进单位圆内、虚轴卷成圆周，于是离散系统的极点在圆内稳定、在圆上持续振荡、在圆外发散。",
+    "en": "The z-transform is the Laplace transform of sampled signals: taking a sample every T and substituting z = e^{sT} rolls the left half-plane inside the unit circle and the imaginary axis onto its rim, so a discrete system’s poles are stable inside the circle, ring on it and blow up outside."
+   },
+   "formula": "X(z) = Σ x[n] z⁻ⁿ,  z = e^{sT}",
+   "source": "../signal/transforms/z-transform/#step0",
+   "lessons": [
+    {
+     "slug": "z-transform",
+     "step": 0,
+     "category": "signal",
+     "stage": "university",
+     "primary": true
+    }
+   ],
+   "aliases": [
+    {
+     "zh": "Z 变换",
+     "en": "z-transform"
+    },
+    {
+     "zh": "单位圆与稳定性",
+     "en": "unit circle and stability"
+    },
+    {
+     "zh": "离散系统的极点",
+     "en": "poles of a discrete-time system"
+    },
+    {
+     "zh": "收敛域",
+     "en": "region of convergence"
+    },
+    {
+     "zh": "DTFT 和 Z 变换的关系",
+     "en": "DTFT vs z-transform"
+    },
+    {
+     "zh": "数字滤波器",
+     "en": "digital filter"
+    },
+    {
+     "zh": "z 变换",
+     "en": "z transform"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "laplace",
+   "to": "z-transform",
+   "type": "foundation",
+   "label": {
+    "zh": "z = e^{sT} 把拉普拉斯搬到离散世界",
+    "en": "z = e^{sT} carries Laplace into discrete time"
+   },
+   "reason": {
+    "zh": "采样后连续时间消失，把拉普拉斯的 e^{st} 在 t = nT 处取值就得到 zⁿ；s 平面的每个点经指数映射落到 z 平面，收敛域和极点的意义一一对应过来。",
+    "en": "Sampling removes continuous time; evaluating Laplace’s e^{st} at t = nT gives zⁿ, so every point of the s-plane is mapped exponentially into the z-plane and the meanings of the region of convergence and the poles carry over one to one."
+   },
+   "source": "../signal/transforms/z-transform/#step0"
+  },
+  {
+   "from": "poles",
+   "to": "z-transform",
+   "type": "connection",
+   "label": {
+    "zh": "稳定判据：从左半平面到单位圆内",
+    "en": "Stability moves from the left half-plane to inside the unit circle"
+   },
+   "reason": {
+    "zh": "连续系统的极点在左半平面就衰减；同一个模态采样后 |z| = e^{σT} < 1，落在单位圆内——极点的半径管涨缩，角度管振荡快慢。",
+    "en": "A continuous pole in the left half-plane decays; the same mode, sampled, has |z| = e^{σT} < 1 and lands inside the unit circle — the pole’s radius sets growth or decay and its angle the speed of oscillation."
+   },
+   "source": "../signal/transforms/z-transform/#step4"
+  },
+  {
+   "from": "sampling",
+   "to": "z-transform",
+   "type": "foundation",
+   "label": {
+    "zh": "采样把频率卷成角度",
+    "en": "Sampling wraps frequency into an angle"
+   },
+   "reason": {
+    "zh": "每隔 T 取样后，频率变成每个样本转过的角度 Ω = ωT，只在一圈 2π 内不重复；相差 2π/T 的连续频率落到同一点，这就是混叠在 z 平面上的样子。",
+    "en": "After sampling every T, frequency becomes an angle per sample, Ω = ωT, which repeats every 2π; continuous frequencies 2π/T apart land on the same point — aliasing as it appears in the z-plane."
+   },
+   "source": "../signal/transforms/z-transform/#step5"
+  },
+  {
+   "from": "z-transform",
+   "to": "sequences-series",
+   "type": "connection",
+   "label": {
+    "zh": "X(z) 是一串等比求和",
+    "en": "X(z) is a geometric sum"
+   },
+   "reason": {
+    "zh": "对 aⁿ 求 Σ aⁿz⁻ⁿ 就是公比为 a/z 的等比级数，|a/z| < 1 才收敛——收敛域正是等比级数收敛条件的翻版。",
+    "en": "Summing Σ aⁿz⁻ⁿ is a geometric series with ratio a/z, which converges only when |a/z| < 1 — the region of convergence is the geometric-series condition in disguise."
+   },
+   "source": "../signal/transforms/z-transform/#step2"
+  }
+ ]
+}
