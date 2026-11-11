@@ -1,0 +1,112 @@
+{
+  "slug": "same-votes-different-winner",
+  "path": "society/civics/same-votes-different-winner/",
+  "category": "society",
+  "categoryName": { "zh": "社会与公共选择", "en": "Society & Collective Choice" },
+  "subtopic": "civics",
+  "subtopicName": { "zh": "投票与规则", "en": "Voting & Rules" },
+  "stage": "senior",
+  "title": { "zh": "同一批选票，不同的赢家 · 投票规则与公平", "en": "Same Ballots, Different Winner · Voting Rules and Fairness" },
+  "desc": {
+    "zh": "同一批选民的偏好，换一种数票的方法就换一个赢家。十一个可以动手的模型：搅局者、中位选民、多数循环、策略投票、阿罗定理、阿拉巴马悖论、画选区、陪审团定理。",
+    "en": "The same voters' preferences, counted another way, crown another winner. Eleven hands-on models: spoilers, the median voter, majority cycles, strategic voting, Arrow's theorem, the Alabama paradox, district lines and the jury theorem."
+  },
+  "tags": [
+    { "zh": "投票规则", "en": "Voting Rules" },
+    { "zh": "社会选择", "en": "Social Choice" },
+    { "zh": "阿罗定理", "en": "Arrow's Theorem" },
+    { "zh": "孔多塞悖论", "en": "Condorcet Paradox" },
+    { "zh": "选区划分", "en": "Redistricting" },
+    { "zh": "席位分配", "en": "Apportionment" }
+  ],
+  "concepts": [
+    {
+      "id": "voting-rules-disagree",
+      "title": { "zh": "五种计票规则", "en": "Five counting rules" },
+      "desc": { "zh": "相对多数、两轮决选、即时决选、波达计数和孔多塞两两对决，对同一批选票可以选出不同的赢家。", "en": "Plurality, two-round runoff, instant runoff, Borda count and the pairwise Condorcet winner can pick different winners from the same ballots." },
+      "aliases": { "zh": ["计票方法", "选举规则", "排序复选制", "即时决选", "两轮投票", "波达计数", "为什么换个算法赢家就变了", "相对多数制", "投票结果不一样", "为什么投票结果不一样", "投票方法"], "en": ["voting methods", "ranked choice voting", "instant runoff", "two-round system", "Borda count", "plurality voting", "first past the post", "why different voting systems give different winners"] },
+      "anchor": "#ch1",
+      "relatedPages": []
+    },
+    {
+      "id": "spoiler-effect",
+      "title": { "zh": "搅局者与无关选项独立", "en": "The spoiler effect and independence of irrelevant alternatives" },
+      "desc": { "zh": "一个赢不了的候选人加入，就能把胜利从一个人手里交到另一个人手里。", "en": "A candidate who cannot win can still hand victory from one rival to another." },
+      "aliases": { "zh": ["搅局者", "分票", "浪费选票", "无关选项独立", "中间被挤压", "第三方候选人"], "en": ["spoiler", "vote splitting", "wasted vote", "IIA", "center squeeze", "third party candidate"] },
+      "anchor": "#ch2",
+      "relatedPages": []
+    },
+    {
+      "id": "duverger-tendency",
+      "title": { "zh": "迪韦尔热倾向", "en": "Duverger's tendency" },
+      "desc": { "zh": "只看第一名的单议席选举里，选民会把三方竞争收缩成两方；这是倾向，不是定律。", "en": "Under single-seat plurality voting, voters shrink a three-way race to two; a tendency, not a law." },
+      "aliases": { "zh": ["迪韦尔热定律", "两党制为什么出现", "策略性投票", "两党制"], "en": ["Duverger's law", "why two parties", "two-party system", "strategic desertion"] },
+      "anchor": "#ch2",
+      "relatedPages": []
+    },
+    {
+      "id": "median-voter",
+      "title": { "zh": "中位选民定理", "en": "The median voter theorem" },
+      "desc": { "zh": "选民排在一条线上时，靠近中位选民的候选人一对一谁也赢不了；议题多于一个时这一点消失。", "en": "On one line, the candidate nearest the median voter beats any rival head to head; with two issues that resting point disappears." },
+      "aliases": { "zh": ["中位选民", "向中间靠拢", "霍特林模型", "候选人为什么趋同", "麦凯尔维混沌定理"], "en": ["median voter", "Hotelling's law", "candidates converge to the center", "McKelvey chaos theorem", "spatial voting"] },
+      "anchor": "#ch3",
+      "relatedPages": ["game-theory"]
+    },
+    {
+      "id": "condorcet-paradox",
+      "title": { "zh": "孔多塞悖论（多数循环）", "en": "The Condorcet paradox (majority cycles)" },
+      "desc": { "zh": "每个人的排序都一致，多数人的偏好却可以 A 胜 B、B 胜 C、C 又胜 A。", "en": "Each voter is consistent, yet the majority can prefer A to B, B to C and C to A." },
+      "aliases": { "zh": ["投票悖论", "多数循环", "石头剪刀布式的多数", "孔多塞赢家", "表决顺序决定结果", "孔多塞悖论", "多数人偏好绕圈"], "en": ["voting paradox", "majority cycle", "Condorcet winner", "intransitive majority", "agenda setting", "Condorcet paradox"] },
+      "anchor": "#ch4",
+      "relatedPages": []
+    },
+    {
+      "id": "strategic-voting",
+      "title": { "zh": "策略投票与吉巴德–萨特斯韦特定理", "en": "Strategic voting and the Gibbard–Satterthwaite theorem" },
+      "desc": { "zh": "三个以上候选人时，每种非独裁的规则都存在说假话更划算的局面。", "en": "With three or more candidates, every non-dictatorial rule has situations where a dishonest ballot pays." },
+      "aliases": { "zh": ["策略投票", "投给能赢的人", "背弃最爱", "操纵投票", "吉巴德定理"], "en": ["tactical voting", "favorite betrayal", "lesser evil voting", "manipulation", "Gibbard-Satterthwaite"] },
+      "anchor": "#ch5",
+      "relatedPages": ["auction-basics", "mechanism-design"]
+    },
+    {
+      "id": "arrow-impossibility",
+      "title": { "zh": "阿罗不可能定理", "en": "Arrow's impossibility theorem" },
+      "desc": { "zh": "没有哪种只看排序的规则能同时满足几条合理要求；每种规则都在某一条上让步。", "en": "No rule that uses only rankings meets every reasonable condition at once; each gives way somewhere." },
+      "aliases": { "zh": ["阿罗定理", "不可能定理", "有没有公平的投票制度", "梅定理", "认可投票", "评分投票", "有没有公平的投票方法", "公平的投票方法"], "en": ["Arrow's theorem", "impossibility theorem", "is there a fair voting system", "May's theorem", "approval voting", "score voting"] },
+      "anchor": "#ch6",
+      "relatedPages": ["veil-of-ignorance"]
+    },
+    {
+      "id": "apportionment-alabama-paradox",
+      "title": { "zh": "席位分配与阿拉巴马悖论", "en": "Apportionment and the Alabama paradox" },
+      "desc": { "zh": "1880 年按最大余数法，众议院从 299 席加到 300 席，阿拉巴马反而少了一席。", "en": "In 1880, under largest remainders, growing the House from 299 to 300 seats took a seat away from Alabama." },
+      "aliases": { "zh": ["阿拉巴马悖论", "最大余数法", "汉密尔顿法", "亨廷顿希尔法", "议席怎么按人口分", "巴林斯基杨定理"], "en": ["Alabama paradox", "largest remainder method", "Hamilton method", "Huntington-Hill", "apportionment", "Balinski-Young theorem"] },
+      "anchor": "#ch7",
+      "relatedPages": []
+    },
+    {
+      "id": "gerrymandering",
+      "title": { "zh": "选区划分与效率差距", "en": "Gerrymandering and the efficiency gap" },
+      "desc": { "zh": "同样的选民，只改选区边界，席位就能从 1 席变到 6 席。", "en": "Same voters, redrawn lines: seats can swing from 1 to 6." },
+      "aliases": { "zh": ["杰利蝾螈", "选区划分不公", "塞和拆", "效率差距", "浪费的选票", "选区划分"], "en": ["gerrymander", "packing and cracking", "efficiency gap", "wasted votes", "redistricting"] },
+      "anchor": "#ch8",
+      "relatedPages": []
+    },
+    {
+      "id": "condorcet-jury-theorem",
+      "title": { "zh": "孔多塞陪审团定理", "en": "Condorcet's jury theorem" },
+      "desc": { "zh": "每人略好于抛硬币且独立判断时，多数越大越可靠；略差于硬币或互相跟风时，结论反过来。", "en": "If each voter is a little better than a coin and judges alone, bigger majorities are more reliable; if slightly worse or copying, it turns around." },
+      "aliases": { "zh": ["群体智慧", "群众的智慧", "陪审团定理", "跟风", "从众", "多数是不是更可能对"], "en": ["wisdom of crowds", "jury theorem", "herding", "correlated votes", "is the majority more likely right"] },
+      "anchor": "#ch9",
+      "relatedPages": ["binomial-normal"]
+    },
+    {
+      "id": "reading-fairness-claims",
+      "title": { "zh": "怎样读“这个制度很公平”", "en": "How to read a claim that a system is fair" },
+      "desc": { "zh": "公平是一份清单：守住了哪几条，放弃了哪几条，放弃的那条会不会在你关心的情形里出事。", "en": "Fairness is a checklist: which conditions a rule keeps, which it gives up, and whether that matters in your case." },
+      "aliases": { "zh": ["什么是公平的选举", "选举制度比较", "哪种投票制度最好"], "en": ["fair election", "comparing electoral systems", "best voting system"] },
+      "anchor": "#ch10",
+      "relatedPages": ["veil-of-ignorance", "prisoners-dilemma"]
+    }
+  ]
+}
