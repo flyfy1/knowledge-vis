@@ -27,7 +27,33 @@
 
 ## scarcity-moves（稀缺会搬家）
 
-一篇可以动手的长文：十个经济学基本道理，加上 AI 普及之后的推演。只有中文，没有做双语切换。不依赖任何外部库，画图全用 2D canvas 和 DOM。
+一篇可以动手的长文：十个经济学基本道理，加上 AI 普及之后的推演。不依赖任何外部库，画图全用 2D canvas 和 DOM。
+
+文件：`index.html`（结构和样式；中文只有静态的 `<title>` 和 meta description）、`copy.zh.js` / `copy.en.js`（全部文案）、`app.js`（模型、绘图、语言）、`tests/`。
+
+### 双语（2026-11-11 拆出文案、翻译、评审，英文已上线）
+
+- 文案的结构照长文（如 `biology/body/body-in-balance/`）：`copy.zh.js` / `copy.en.js` 各定义 `window.ESSAY_COPY.zh` / `.en`，键一一对应，共 318 个。HTML 用 `data-i18n`（纯文本）、`data-i18n-html`（带 `<strong>` `<em>` `<br>` `<a>` 的段落）、`data-i18n-aria`（画布和控件的 aria-label）；JS 里一律 `t(key, {占位符})`。
+- 代码里拼出来的句子，每种情况一整句模板，不拼片段：第 1 章 `ch1.say.all/none/mid`；第 3 章 `ch3.say.same` 与 `ch3.say.{mixed|aFaster|bFaster}.{A|B}`（谁两样都快 × 该谁多写题）；第 12 章 `ch12.say.p1/p1land/p2/p3/p3landBelow/p3landAbove`；第 6 章读数 `ch6.unit.boats` / `boatsOut`。
+- 数字：数字本身一律 en-US 千分位。按语言变的是大数怎么分组，由 `app.js` 决定，不由文案决定：中文按万（`1.6 万倍`、坐标 `1千 1万 10万 100万`），英文按 k / M（`15.8k×`、`1k 10k 100k 1M`）。单位词（倍、元、小时、条、件、人、%）在文案里，以 `{v}` 占位。
+- 第 14 章的把握标签是 `tag.h/m/l` 三个键，正文第一段用 `{tagH} {tagM} {tagL}` 嵌入同样的标签。
+- 语言：读写 `localStorage` 的 `knowledge-lang`（try/catch，失败退回内存变量），首次访问按 `navigator.language`。切换时重写静态文本、`document.title`、meta description、`html lang`，重跑各模块的读数和句子（`relabel` 列表），并把所有画布标脏重画。
+- **开关 `LANG_TOGGLE_ON`（`app.js` 顶部，现在是 `true`）**。为 false 时：「中 | EN」按钮留在 `<template id="langToggleButtons">` 里不进页面，页面一律显示中文，不读也不改存储的语言。为 true 时按钮出现在右上角（绝对定位，48px 按钮，不改动页头布局）。`window.__langToggleForTest = true` 仍可在开关关着时强制打开。
+- 静态 HTML 的 `<title>` 和 meta description 是中文（与 `doc.title` / `doc.desc` 相同，`tests/copy.cjs` 检查），给不跑脚本的抓取器和链接预览看；脚本加载和切换语言时替换。
+- 英文专用的排版（`html[lang=en]` 选择器，中文不受影响）：第 3 章方案条的名字列 4.6em（放得下 Problems / Slides）；640px 以下滑杆的标签单独一行、滑杆和数值在下一行；第 13 章表头不换行、窄屏右栏 44%；第 14 章把握标签等宽；页首 kicker 行高 1.5。
+- 英文单位：`{v}×`、`¥{v}`、`−¥{v}`、`{v} h`、`+{v} pts`；第 6 章滑杆读数只写数字（标签已是 Boats），有配额时 `{b} ({e} fishing)`。大数用 k / M（`15.8k×`、坐标 `1k … 1M`）。
+
+#### 英文的来历与评审
+
+- 拆文案（i18n 结构、`copy.zh.js`、开关、测试）：Claude Code，Opus 级模型（精确模型 id 未记录）。
+- 翻译：Claude Code 的 Haiku 级模型，机器翻译，只过了机械检查（键、占位符、标签一致）。
+- 评审与修改：Claude Code（claude-opus-5-5），2026-11-11。范围：在浏览器里 1280 宽通读英文全文、每个模型都操作过并对照中文页；`copy.en.js` 与 `copy.zh.js` 逐键对照（意思、方向词、因果、把握程度、语气、术语一致），第 1、3、8、12 章代码拼出的每种句子都在浏览器里走到；英文在 1280/390/320 截图看过每个模型。改了 51 条英文。主要的错：第 7 章「增长就没有停下来」译成 growth never stops（比原文肯定）；第 8 章滑杆「每挣 100 元想存下」漏了「想」（模型的要点就是想存和实际存下的差别）；页首「背景里」译成 Behind the scenes（意思变成暗地里）；第 5 章法则句不通；第 1 章「最容易挣的 100 元」丢了「最容易」；第 12 章 ③ 段「劳动份额一路下降」译成 falls all the way down（像是降到零），勾选框名和正文引用不一致；第 14 章 fc13「我能确定的只是」丢了「只是」；第 13 章 item9 恢复了 taste；第 3 章题/PPT 总数标签改成 Problems / Slides（原来 Qs / PPT 和正文 slides 对不上）。
+- 英文 fc5 写的是 chapter twelve's model；中文原文是「上一章模型」，实际指第 12 章（上一章是第 13 章），中文没改，留给作者决定。
+- 第 7 章画布上「年 →」画在左上角，看起来像纵轴名，两种语言都一样，没改。
+
+拆文案时（英文上线之前），用固定时钟（替换 `requestAnimationFrame` 与 `performance.now`）在 1280/390/320 下各记录 62 个状态（默认、每个滑杆拉到两端、每个复选框和按钮来回、情景点拖到四角）的可见文本、aria、画布 `fillText` 文字和条形样式，再截整页图：文本逐字相同，截图逐字节相同。唯一的差别是隐藏的语言切换容器多了 aria-label「语言」（隐藏元素不暴露给读屏）。（当时静态 `<title>` 是英文占位、描述为空；英文上线时已改回中文。）
+
+英文上线时中文页的变化：所有按钮、滑杆、复选框标签、目录链接至少 48px 高（原来按钮约 34px、滑杆 28px），滑杆和按钮有可见的焦点框；`prefers-reduced-motion` 时关掉平滑滚动和 CSS 过渡（模型本身的动画是内容，照常运行；页首的点阵在减弱动态时不动）；第 6 章下方曲线在轴名会碰到刻度「25」时（320 宽中英文都会）把画图区右端收短，轴名放在轴线末端之外；静态标题和描述改回中文。中文文案一字未改。
 
 - 所有模型注册在同一个 `sims` 列表里，用 `IntersectionObserver` 控制，只有在屏幕上的才计算和重画。给整页截长图时，屏幕外的 canvas 是空的，要逐个滚动到位再截。
 - 轴名和少量标注画在 canvas 上，数值读数全部放在 DOM 里，窄屏下不会相互遮挡。
@@ -40,5 +66,7 @@
 - 第 14 章的把握标签（较有把握 / 一半一半 / 只是猜测）是正文的一部分，改预言时要同时改标签。
 
 ### 已检查
+
+测试：`node demos/scarcity-moves/tests/copy.cjs`（键一一对应、占位符和标签一致、没有未用或缺失的键；HTML 里的中文只有「中」和等于 `doc.title` / `doc.desc` 的静态标题与描述；代码里没有中文）；`SCARCITY_BASE_URL=http://127.0.0.1:18943 node demos/scarcity-moves/tests/browser.cjs`（中文和真实英文各在 1280/390/320：无横向溢出、无元素出界、方块和按钮里的文字不被裁、读数块与滑杆行里的文字不互相压、所有控件 ≥ 48px、滑杆能用方向键并有焦点框、标题和描述来自文案、开关读「中 | EN」；英文下 DOM、aria、标题、描述、画布都没有中文；伪英文下切换、存储、画布重画、数字分组、刷新记住 EN；第 1、3、6、7、8、11、12、13、14 章每种句子和读数在中英文各走一遍，中文与原页面逐字相同；减弱动态时页首不动）。`canvas-text-overlap.cjs --sweep` 在开关打开后会把中英文都扫一遍，结果见 `specs/canvas-label-guard.md`。
 
 1280、390、320 三种宽度下逐个模型截图看过，无横向溢出，控制台无报错。历史数字（照明价格、美国马匹数量、ATM 与柜员、务农人口比例）取的是量级，没有逐条查证出处。
