@@ -46,9 +46,9 @@ node scripts/build-atlas-data.cjs --extra-lessons <dir> --out <dir>   # 预览�
 
 ## 当前状态（2026-11-11）
 
-156 节点 / 259 边 / 104 问题；atlas-index.js 55,980 字节、search-index.js
-51,121 字节、details/ 30 个文件共 445,761 字节；data.js 313,056 + questions.js
-146,093（不再设合并门）。下面是 Round 2 的历史记录。
+291 节点 / 483 边 / 124 问题 / 11 个分区（并入六篇长文后）；atlas-index.js 78,994 字节
+（上限 150,000）、search-index.js 136,761 字节（上限 200,000）、details/ 32 个文件共 776,477
+字节；data.js 605,540 + questions.js 173,024（不再设合并门）。下面是 Round 2 的历史记录。
 
 ## 历史状态（2026-10-30 Round 2）
 

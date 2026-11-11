@@ -93,7 +93,17 @@ the neighbour prefetch): 570,716 → 369,016 bytes.
   title (exact 95); alias exact 90 / prefix 75 / contains 55; description contains 20 (only when no title or
   alias matched). The whole query is tried first; otherwise every space-separated word must match some field
   and the record scores its weakest word − 5.
-- Order: score, then shorter title, then registry order.
+- Questions (2026-11-11): when the query as typed matches nothing, `unquestion()` drops question words and
+  the rest is scored the same way, 5 below the plain words. Chinese: 为什么/为啥/怎么回事/怎么样/怎么/是什么/
+  什么是/什么/如何/是不是/有没有 anywhere, plus a one-character particle only where it touches a removed word
+  (会/要/能/是/的/就/都/还 after, 的/了/是/吗/呢/啊/呀 before) and a trailing 的/吗/呢/啊/呀, so "能量是什么" keeps
+  能量. English: whole words what/why/how/when/where/which/who, is/are/was/were/am/does/do/did/can/could/
+  should/would/will, the/a/an/it/its/I/my/me/you/your/this/that and "'s", plus a trailing work/mean/happen
+  after a leading how/what/why. "什么是熵", "为什么会共振", "what is entropy", "how does photosynthesis work"
+  went from no result to the concept. A query that already matches is never rewritten, so the existing
+  rankings do not move. Tests: `tests/concept-search.cjs`.
+- Order: score, then shorter title, then registry order. The homepage adds one tie rule for whole essays
+  (specs/index-pagination.md § Search).
 
 Atlas: the list follows this ranking while a query is active; the map keeps all concepts and marks
 non-matches "Outside results" as before.
@@ -149,6 +159,13 @@ anchor and aliases. It is a schema-2 fragment `atlas/graph/lessons/<slug>.json`:
   them in `merge-report.json` → `edgeCandidates` with the concepts that teach each related page, for an
   editor to write real relations later.
 - `order` keeps chapter order inside the region.
+- Edges are written by hand into the fragment after the import (from = the idea built on, to = the idea
+  that builds on it; a `source` link to the chapter that makes the connection). Re-running the importer
+  for the same essay keeps those edges and questions and drops an edge only when neither end is still one
+  of the essay's concepts.
+- Regions (2026-11-11): `tech` has its own region (技术与设备 / Technology & devices); the categories
+  `economics` and `society` both map to the existing society region (经济与社会 / Economy & society),
+  whose label already names the economy, which brings it to 33 concepts, the size of the other regions.
 
 ### Commands for the integrator
 
@@ -180,7 +197,7 @@ straight to the anchor.
 node scripts/build-atlas-data.cjs --check          # drift + both limits
 node atlas/tests/data-quality.cjs                  # aliases shape, chapter anchors
 node atlas/tests/registry-import.cjs               # REGISTRY → fragment → preview build, refusals, add-region
-node tests/concept-search.cjs                      # matcher rules + ten everyday terms in both languages
+node tests/concept-search.cjs                      # matcher rules, question words, everyday terms and essay chapters in both languages
 node scripts/test_index_pagination.cjs             # homepage source contract
 NODE_PATH=~/Documents/integ-life/integ-games/node_modules HOME_TEST_URL=http://127.0.0.1:18890/ node tests/home-concept-search.cjs
 NODE_PATH=~/Documents/integ-life/integ-games/node_modules ATLAS_BASE_URL=http://127.0.0.1:18890 node atlas/tests/browser.cjs
@@ -202,6 +219,14 @@ NODE_PATH=~/Documents/integ-life/integ-games/node_modules ATLAS_BASE_URL=http://
   - `atlas/galaxy/tests/browser.cjs`: the WebGL-failure and low-mode lists must show every node
     (`ATLAS.nodes.length`), not the stale literal 39; the zh label is "Claude Code 开发 · 改进版本" since
     the galaxy was relabelled (2c103ac3). The suite had stopped at that label assertion before reaching them.
+
+- 2026-11-11, six long-form essays (291 concepts, 483 relations):
+  - `atlas/tests/registry-import.cjs`: `edgeCandidates` is compared for the fixture's own concepts only
+    (the real essays list theirs too); the `--add-region` check uses a fixture region id because the real
+    graph now has `tech`; a new check covers the re-import keeping hand-written edges.
+  - `atlas/tests/browser.cjs`: the measurement region now has 43 concepts, more than the list's first 40, so
+    the region filter expects `min(40, n)` visible results and a "Show all" button (the 40-result contract above);
+    it used to expect all n.
 
 ## Not done
 

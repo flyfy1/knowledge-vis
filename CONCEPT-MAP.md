@@ -2487,10 +2487,114 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 
 出链：fourier#step5、resonance#step3、exponents-logarithms#step3、phonemes#step0/#step1。
 
+## 数字没有说谎，结论却错了（长文，2026-11-11，Claude Code 新增；独立评审：另一个 Claude Code 会话）
+
+| 概念（中 / EN） | 专讲 path#章 | 那一章讲清什么 |
+| --- | --- | --- |
+| 均值回归 / Regression to the mean | probability/everyday/numbers-lie#c1 | 按一次成绩挑出来的极端者，下一次会向平均靠拢，什么都不做也一样。 |
+| 小样本波动更大 / Small samples swing more | probability/everyday/numbers-lie#c2 | 样本越小平均数摆得越厉害，排行榜的两头都挤满小样本。 |
+| 幸存者偏差 / Survivorship bias | probability/everyday/numbers-lie#c3 | 失败者从数据里消失，留下来的平均值就会好看，哪怕谁都没本事。 |
+| 多重比较 / Many comparisons | probability/everyday/numbers-lie#c4 | 检验做得够多，巧合的「显著」迟早出现，只报告那一个就是在挑运气。 |
+| 辛普森悖论与混杂因素 / Simpson's paradox and confounding | probability/everyday/numbers-lie#c5 | 各组人员构成不同时，合计的结论可以和每一组的结论相反。 |
+| 忽视基础比率 / Base-rate neglect | probability/everyday/numbers-lie#c6 | 一个检测结果意味着什么，取决于检测之前这件事有多常见。 |
+| 相对风险与绝对风险 / Relative versus absolute risk | probability/everyday/numbers-lie#c7 | 「风险增加 100%」只是一个比值，不知道原来有多大，它几乎什么都没说。 |
+| 长尾里的平均数与中位数 / Mean versus median in a long tail | probability/everyday/numbers-lie#c8 | 分布有长尾时，平均数被少数极端值拖走，大多数人低于平均。 |
+| 古德哈特定律 / Goodhart's law | probability/everyday/numbers-lie#c9 | 一个度量变成奖惩的依据后，人们会改善这个数字，不一定改善它原本代表的东西。 |
+| 拿到一个结论问的六个问题 / Six questions to ask of a conclusion | probability/everyday/numbers-lie#c10 | 先问数字是怎么来到你面前的，再问它说明了什么。 |
+
+图谱关系：章与章之间 3 条（多为后一章复用前一章的模型或结论）；跨页关系连到站内 regression-correlation、probability-frequency#step1、hypothesis-testing、bayes-diagnostics#step-posterior、bayes-updating#step1、mean-median-mode。概念清单与别名见 `probability/everyday/numbers-lie/REGISTRY.json`。
+
+## 身体是怎么稳住的（长文，2026-11-11，Claude Code 新增；独立评审：另一个 Claude Code 会话）
+
+| 概念（中 / EN） | 专讲 path#章 | 那一章讲清什么 |
+| --- | --- | --- |
+| 进出平衡与设定点 / Inflow, outflow and the set point | biology/body/body-in-balance#ch1 | 流出量跟存量成正比时，存量会自己停在“进水 ÷ 漏的比例”处，被推开后差距按固定时间减半。 |
+| 半衰期与给药平台 / Half-life and the dosing plateau | biology/body/body-in-balance#ch2 | 按时服药，体内药量约五个半衰期后到平台；漏服与补双倍各有什么后果。 |
+| 酒精的零级消除 / Zero-order elimination of alcohol | biology/body/body-in-balance#ch3 | 分解酒精的酶很快饱和，每小时只能清除差不多固定的量，所以下降是直线、喝得太快就没有平台。 |
+| 血糖的负反馈 / Blood glucose as negative feedback | biology/body/body-in-balance#ch4 | 胰岛素和胰高血糖素把血糖往回推；反应太弱会偏高很久，太晚又太猛会跌过头。 |
+| 发烧是设定点上调 / Fever as a raised set point | biology/body/body-in-balance#ch5 | 致热原把体温设定点拨高，所以发烧时发冷、退烧时出汗；中暑的高热则是散热到了上限。 |
+| 剂量—反应与治疗窗 / Dose–response and the therapeutic window | biology/body/body-in-balance#ch6 | 有效浓度和有害浓度之间的距离；同样的总量分几次吃、清除变慢，会让体内的量落在窗里还是窗外。 |
+| 心输出量 = 心率 × 每搏量 / Cardiac output = heart rate × stroke volume | biology/body/body-in-balance#ch7 | 运动时身体守住的是供氧，心率和每搏量被调动；锻炼降低静息心率，年龄压低心率上限。 |
+| 抗生素与耐药的筛选 / Antibiotics and selection for resistance | biology/body/body-in-balance#ch8 | 浓度落在敏感菌和耐药菌的 MIC 之间时，药会替耐药菌清出地方；提前停药是否偏向耐药，取决于剂量。 |
+| 群体免疫阈值 / Herd immunity threshold | biology/body/body-in-balance#ch9 | 免疫比例超过 1 − 1/R₀ 时，每个病例平均传给不到一个人，疫情自己熄灭。 |
+
+图谱关系：章与章之间 8 条（多为后一章复用前一章的模型或结论）；跨页关系连到站内 enzymes、pid-control#step1、blood-circulation、natural-selection、public-health#step0。概念清单与别名见 `biology/body/body-in-balance/REGISTRY.json`。
+
+## 一部手机里的十个道理（长文，2026-11-11，Claude Code 新增；独立评审：另一个 Claude Code 会话）
+
+| 概念（中 / EN） | 专讲 path#章 | 那一章讲清什么 |
+| --- | --- | --- |
+| GPS 怎样定位：伪距与钟差 / How GPS finds you: pseudoranges and clock bias | tech/devices/inside-a-phone#gps | 手机量信号走了多久，把自己的钟差当成未知数，多用一颗卫星把它解出来。 |
+| 加速度计：弹簧上的检测质量 / Accelerometer: a proof mass on a spring | tech/devices/inside-a-phone#accel | 加速度计量的是弹簧托住硅块的力，所以静止时读出重力、自由落体时读出零。 |
+| 惯性导航为什么会漂 / Why dead reckoning drifts | tech/devices/inside-a-phone#accel | 把加速度积分两次得到位置，一个很小的零点偏差会按时间的平方放大，所以要用 GPS 校正。 |
+| 电容触摸屏与插值定位 / Capacitive touch and interpolation | tech/devices/inside-a-phone#touch | 手指改变电极网的电容，按相邻几根电极的读数加权平均，定位精度远细于电极间距。 |
+| 散粒噪声与多帧叠加 / Shot noise and frame stacking | tech/devices/inside-a-phone#camera | 光子随机到达，数到 N 个涨落约 √N；暗处照片发花，夜景模式靠叠加多帧降低噪声。 |
+| 同色异谱：屏幕怎样骗过眼睛 / Metamerism: how a screen fools the eye | tech/devices/inside-a-phone#screen | 眼睛只量三种视锥的三个数，红绿子像素一起亮就能和黄光一样；纯光谱色落在三原色色域之外。 |
+| 压缩：只存猜不中的部分 / Compression: store only the surprise | tech/devices/inside-a-phone#compress | 先预测再存残差，图像越好猜文件越小；噪声猜不中，所以暗光照片文件更大。 |
+| 路径损耗与香农容量 / Path loss and Shannon capacity | tech/devices/inside-a-phone#radio | 信号随距离按幂律衰减，速率上限 B·log₂(1+S/N)；小区边缘缺的是信噪比，加宽带宽帮不上忙。 |
+| 汉明码：多发三个比特改正一个错 / Hamming code: three extra bits fix one error | tech/devices/inside-a-phone#ecc | 三个互相重叠的校验位，失败的组合指向翻错的那一位；两个错同时出现就会改错。 |
+| 基站切换与迟滞 / Cell handover and hysteresis | tech/devices/inside-a-phone#handover | 新基站要强出一截余量才切换，挡住阴影衰落造成的来回乱跳；余量太大又会守着弱基站。 |
+| 电池内阻：电量为什么会跳 / Battery internal resistance: why the percentage jumps | tech/devices/inside-a-phone#battery | 端电压 = 开路电压 − I·R；冷天内阻变大，大电流下提前跌破关机电压，暖和后又“回来”。 |
+| 看懂任何设备的三个问题 / Three questions for any device | tech/devices/inside-a-phone#method | 它量的是哪个很小的量？噪声是什么？用什么办法把两者分开？附一张手机常见现象的排查表。 |
+
+图谱关系：章与章之间 4 条（多为后一章复用前一章的模型或结论）；跨页关系连到站内 relativity、gravity-orbits、newton-laws、integral#step2、kalman#step2、poisson-process、central-limit-theorem#step3、entropy#step2、modulation#step1、signal-detection#step3、ohms-law、electrochemistry。概念清单与别名见 `tech/devices/inside-a-phone/REGISTRY.json`。
+
+## 钱是从哪里来的（长文，2026-11-11，Claude Code 新增；独立评审：另一个 Claude Code 会话）
+
+| 概念（中 / EN） | 专讲 path#章 | 那一章讲清什么 |
+| --- | --- | --- |
+| 钱是一张人人都收的欠条 / Money as an IOU everyone accepts | economics/money/where-money-comes-from#ch1 | 物物交换要两个愿望同时对上；一张所有人都信得过的欠条把一笔交易拆成两半。 |
+| 贷款创造存款 / Loans create deposits | economics/money/where-money-comes-from#ch2 | 银行放贷时同时写下一笔贷款和一笔新存款，还款时这笔存款消失。 |
+| 银行挤兑与存款保险 / Bank runs and deposit insurance | economics/money/where-money-comes-from#ch3 | 银行没亏钱，只要足够多的人同时来取也会倒；存款保险和最后贷款人拆掉了这个临界点。 |
+| 货币数量与通胀 / Money growth and inflation | economics/money/where-money-comes-from#ch4 | 长期看，钱和转手速度加起来比东西长得快，物价就涨；短期里多出来的钱先变成产出，供给冲击也能单独推高物价。 |
+| 通胀的赢家和输家 / Who wins and loses from inflation | economics/money/where-money-comes-from#ch5 | 意外的通胀把财富从储户搬到固定利率的借款人；预料之中的通胀已经写进了利率，不搬运财富。 |
+| 利息是时间的价格 / Interest as the price of time | economics/money/where-money-comes-from#ch6 | 名义利率约等于时间的价格加上预期通胀；按利率把未来的钱折回今天，就是现值。 |
+| 等额本息与提前还款 / Loan amortisation and extra payments | economics/money/where-money-comes-from#ch7 | 每月先付剩余本金的利息，剩下才减本金，所以前几年主要在付利息；多还的钱全部减本金。 |
+| 利率传导与时滞 / Monetary transmission and its lags | economics/money/where-money-comes-from#ch8 | 央行利率经过市场利率、贷款利率和家庭预算，一到两三年后才落到物价上；浮动利率越多，传得越快越强。 |
+| 购买力平价与汇率 / Purchasing power parity and exchange rates | economics/money/where-money-comes-from#ch9 | 长期看通胀高的货币会贬值；短期里资金流动让汇率偏离平价，偏离减半要好几年。 |
+
+图谱关系：章与章之间 7 条（多为后一章复用前一章的模型或结论）；跨页关系连到站内 compound-interest、interest-rates-bonds#step3。概念清单与别名见 `economics/money/where-money-comes-from/REGISTRY.json`。
+
+## 同一批选票，不同的赢家（长文，2026-11-11，Claude Code 新增；独立评审：另一个 Claude Code 会话）
+
+| 概念（中 / EN） | 专讲 path#章 | 那一章讲清什么 |
+| --- | --- | --- |
+| 五种计票规则 / Five counting rules | society/civics/same-votes-different-winner#ch1 | 相对多数、两轮决选、即时决选、波达计数和孔多塞两两对决，对同一批选票可以选出不同的赢家。 |
+| 搅局者与无关选项独立 / The spoiler effect and independence of irrelevant alternatives | society/civics/same-votes-different-winner#ch2 | 一个赢不了的候选人加入，就能把胜利从一个人手里交到另一个人手里。 |
+| 迪韦尔热倾向 / Duverger's tendency | society/civics/same-votes-different-winner#ch2 | 只看第一名的单议席选举里，选民会把三方竞争收缩成两方；这是倾向，不是定律。 |
+| 中位选民定理 / The median voter theorem | society/civics/same-votes-different-winner#ch3 | 选民排在一条线上时，靠近中位选民的候选人一对一谁也赢不了；议题多于一个时这一点消失。 |
+| 孔多塞悖论（多数循环） / The Condorcet paradox (majority cycles) | society/civics/same-votes-different-winner#ch4 | 每个人的排序都一致，多数人的偏好却可以 A 胜 B、B 胜 C、C 又胜 A。 |
+| 策略投票与吉巴德–萨特斯韦特定理 / Strategic voting and the Gibbard–Satterthwaite theorem | society/civics/same-votes-different-winner#ch5 | 三个以上候选人时，每种非独裁的规则都存在说假话更划算的局面。 |
+| 阿罗不可能定理 / Arrow's impossibility theorem | society/civics/same-votes-different-winner#ch6 | 没有哪种只看排序的规则能同时满足几条合理要求；每种规则都在某一条上让步。 |
+| 席位分配与阿拉巴马悖论 / Apportionment and the Alabama paradox | society/civics/same-votes-different-winner#ch7 | 1880 年按最大余数法，众议院从 299 席加到 300 席，阿拉巴马反而少了一席。 |
+| 选区划分与效率差距 / Gerrymandering and the efficiency gap | society/civics/same-votes-different-winner#ch8 | 同样的选民，只改选区边界，席位就能从 1 席变到 6 席。 |
+| 孔多塞陪审团定理 / Condorcet's jury theorem | society/civics/same-votes-different-winner#ch9 | 每人略好于抛硬币且独立判断时，多数越大越可靠；略差于硬币或互相跟风时，结论反过来。 |
+| 怎样读“这个制度很公平” / How to read a claim that a system is fair | society/civics/same-votes-different-winner#ch10 | 公平是一份清单：守住了哪几条，放弃了哪几条，放弃的那条会不会在你关心的情形里出事。 |
+
+图谱关系：章与章之间 7 条（多为后一章复用前一章的模型或结论）；跨页关系连到站内 game-theory#step0、auctions、binomial-normal、veil-of-ignorance#step0。概念清单与别名见 `society/civics/same-votes-different-winner/REGISTRY.json`。
+
+## 一堆开关是怎么学会算数的（长文，2026-11-11，Claude Code 新增；独立评审：另一个 Claude Code 会话）
+
+| 概念（中 / EN） | 专讲 path#章 | 那一章讲清什么 |
+| --- | --- | --- |
+| 开关组成逻辑门 / Switches Make Logic Gates | computing/systems/switches-that-compute#ch1 | 两个开关串联是与、并联是或、常闭是非，真值表由开关是否导通决定。 |
+| 与非门的通用性 / NAND Is Universal | computing/systems/switches-that-compute#ch2 | 非、与、或、异或都能只用与非门拼出，最少分别要 1、2、3、4 个。 |
+| 二进制计数 / Counting in Binary | computing/systems/switches-that-compute#ch3 | n 个开关有 2ⁿ 种样子，8 个开关表示 0 到 255，255 加 1 绕回 0。 |
+| 加法器与进位链 / Adders and the Carry Chain | computing/systems/switches-that-compute#ch4 | 半加器、全加器排成行波进位加法器；进位每多走一列多等约 4 个门延迟，最坏 32 个。 |
+| 补码与溢出 / Two's Complement and Overflow | computing/systems/switches-that-compute#ch5 | 减法 = 加上取反再加 1，同一个加法器多一根线就会减；越过 127 与 −128 的缝就是溢出。 |
+| 锁存器与亚稳态 / Latches and Metastability | computing/systems/switches-that-compute#ch6 | 两个与非门首尾相接就能记住一位；S、R 同时松开时会振荡或随机落到一边。 |
+| 时钟、触发器与计数器 / Clocks, Flip-Flops and Counters | computing/systems/switches-that-compute#ch7 | 寄存器加上加法器和时钟就是计数器；时钟周期短于最长路径时会收下错误的值。 |
+| 多路选择器与 ALU / Multiplexers and the ALU | computing/systems/switches-that-compute#ch8 | 控制线挑选答案；比较两个数就是相减再看 Z 和 C 标志。 |
+| 存储程序与取指执行 / Stored Programs and Fetch–Execute | computing/systems/switches-that-compute#ch9 | 一台 16 字节、7 条指令的机器，用重复加法做乘法；指令也只是内存里的数。 |
+| 浮点数为什么不精确 / Why Floating Point Is Inexact | computing/systems/switches-that-compute#ch10 | 0.1 在二进制里写不完，存进有限的尾数要取整，所以 0.1 + 0.2 得到 0.30000000000000004。 |
+| 真实处理器：规模而非新原理 / Real Processors: Scale, Not New Principles | computing/systems/switches-that-compute#ch11 | 流水线、先行进位、缓存和多核都是同样零件的更多份；附 2038 年问题等可带走的结论。 |
+
+图谱关系：章与章之间 11 条（多为后一章复用前一章的模型或结论）；跨页关系连到站内 place-value、binary-search#step0、negative-numbers#step0。概念清单与别名见 `computing/systems/switches-that-compute/REGISTRY.json`。
+
 <!-- GENERATED:atlas-nodes -->
 ## 三、图谱节点索引（生成，勿手改）
 
-229 个概念 · 409 条关系 · 10 个分区 · 由 scripts/build-atlas-data.cjs --concept-map 生成。节点排序与 data.js 一致（分区序、学段序、order、id）。
+291 个概念 · 483 条关系 · 11 个分区 · 由 scripts/build-atlas-data.cjs --concept-map 生成。节点排序与 data.js 一致（分区序、学段序、order、id）。
 
 ### 01 数学基础 / Mathematical tools
 
@@ -2666,7 +2770,17 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 阳性预测值 · 检测阳性说明什么 / Positive predictive value · what a positive test means | ../probability/inference/bayes-diagnostics/#step-posterior | bayes-diagnostics, public-health#step1 |
 | 概率分布 · 随机性也有形状 / Probability Distributions · Randomness Has a Shape | ../probability/basics/probability-distribution/#step0 | probability-distribution#step0 |
 | 回归与相关 / Regression & Correlation | ../probability/statistics/regression-correlation/#step1 | regression-correlation#step1 |
+| 均值回归 / Regression to the mean | ../probability/everyday/numbers-lie/#c1 | numbers-lie |
 | 滴定曲线与指示剂 / Titration curves and indicators | ../chemistry/solutions/titration-curves/#step2 | titration-curves#step2 |
+| 小样本波动更大 / Small samples swing more | ../probability/everyday/numbers-lie/#c2 | numbers-lie |
+| 幸存者偏差 / Survivorship bias | ../probability/everyday/numbers-lie/#c3 | numbers-lie |
+| 多重比较 / Many comparisons | ../probability/everyday/numbers-lie/#c4 | numbers-lie |
+| 辛普森悖论与混杂因素 / Simpson's paradox and confounding | ../probability/everyday/numbers-lie/#c5 | numbers-lie |
+| 忽视基础比率 / Base-rate neglect | ../probability/everyday/numbers-lie/#c6 | numbers-lie |
+| 相对风险与绝对风险 / Relative versus absolute risk | ../probability/everyday/numbers-lie/#c7 | numbers-lie |
+| 长尾里的平均数与中位数 / Mean versus median in a long tail | ../probability/everyday/numbers-lie/#c8 | numbers-lie |
+| 古德哈特定律 / Goodhart's law | ../probability/everyday/numbers-lie/#c9 | numbers-lie |
+| 拿到一个结论问的六个问题 / Six questions to ask of a conclusion | ../probability/everyday/numbers-lie/#c10 | numbers-lie |
 | 多臂老虎机与探索-利用 / Multi-armed bandits & explore-exploit | ../probability/stochastic/bandit-arms/#step2 | bandit-arms#step2 |
 | 贝叶斯更新 / Bayesian updating | ../probability/inference/bayes-updating/#step1 | bayes-updating#step1 |
 | 交叉熵与 KL 散度 / Cross-entropy & KL divergence | ../probability/stochastic/entropy/#step5 | entropy#step5 |
@@ -2718,7 +2832,16 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 膜运输 · 扩散、渗透与泵 / Membrane transport · diffusion, osmosis and pumps | ../biology/cells/membrane-transport/ | membrane-transport |
 | 捕食者与猎物 · 延迟带来的起伏 / Predators & prey · oscillations from delay | ../biology/ecology/population-ecology/#step2 | population-ecology#step2 |
 | 静息电位 · 离子梯度的账本 / The resting potential · an ion-gradient ledger | ../biology/body/neuroscience-basics/#step0 | neuroscience-basics#step0 |
+| 进出平衡与设定点 / Inflow, outflow and the set point | ../biology/body/body-in-balance/#ch1 | body-in-balance |
 | 工作记忆与注意 / Working memory & attention | ../psychology/cognition/memory-attention/#step0 | memory-attention#step0 |
+| 半衰期与给药平台 / Half-life and the dosing plateau | ../biology/body/body-in-balance/#ch2 | body-in-balance |
+| 酒精的零级消除 / Zero-order elimination of alcohol | ../biology/body/body-in-balance/#ch3 | body-in-balance |
+| 血糖的负反馈 / Blood glucose as negative feedback | ../biology/body/body-in-balance/#ch4 | body-in-balance |
+| 发烧是设定点上调 / Fever as a raised set point | ../biology/body/body-in-balance/#ch5 | body-in-balance |
+| 剂量—反应与治疗窗 / Dose–response and the therapeutic window | ../biology/body/body-in-balance/#ch6 | body-in-balance |
+| 心输出量 = 心率 × 每搏量 / Cardiac output = heart rate × stroke volume | ../biology/body/body-in-balance/#ch7 | body-in-balance |
+| 抗生素与耐药的筛选 / Antibiotics and selection for resistance | ../biology/body/body-in-balance/#ch8 | body-in-balance |
+| 群体免疫阈值 / Herd immunity threshold | ../biology/body/body-in-balance/#ch9 | body-in-balance |
 
 ### 08 地球与宇宙 / Earth & cosmos
 
@@ -2741,6 +2864,17 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 
 | 概念 | 来源 | 课程 |
 | --- | --- | --- |
+| 开关组成逻辑门 / Switches Make Logic Gates | ../computing/systems/switches-that-compute/#ch1 | switches-that-compute |
+| 与非门的通用性 / NAND Is Universal | ../computing/systems/switches-that-compute/#ch2 | switches-that-compute |
+| 二进制计数 / Counting in Binary | ../computing/systems/switches-that-compute/#ch3 | switches-that-compute |
+| 加法器与进位链 / Adders and the Carry Chain | ../computing/systems/switches-that-compute/#ch4 | switches-that-compute |
+| 补码与溢出 / Two's Complement and Overflow | ../computing/systems/switches-that-compute/#ch5 | switches-that-compute |
+| 锁存器与亚稳态 / Latches and Metastability | ../computing/systems/switches-that-compute/#ch6 | switches-that-compute |
+| 时钟、触发器与计数器 / Clocks, Flip-Flops and Counters | ../computing/systems/switches-that-compute/#ch7 | switches-that-compute |
+| 多路选择器与 ALU / Multiplexers and the ALU | ../computing/systems/switches-that-compute/#ch8 | switches-that-compute |
+| 存储程序与取指执行 / Stored Programs and Fetch–Execute | ../computing/systems/switches-that-compute/#ch9 | switches-that-compute |
+| 浮点数为什么不精确 / Why Floating Point Is Inexact | ../computing/systems/switches-that-compute/#ch10 | switches-that-compute |
+| 真实处理器：规模而非新原理 / Real Processors: Scale, Not New Principles | ../computing/systems/switches-that-compute/#ch11 | switches-that-compute |
 | 大 O 记号 · 增长的形状 / Big O notation · the shape of growth | ../computing/algorithms/sorting/#step4 | sorting#step4 |
 | 二分查找 / Binary search | ../computing/algorithms/binary-search/#step0 | binary-search#step0 |
 | CNN 特征图 / CNN feature maps | ../computing/ml/cnn-feature-maps/#step0 | cnn-feature-maps#step0 |
@@ -2764,11 +2898,48 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 伦理框架 · 后果、权利、公平与同意 / Ethical frameworks · consequences, rights, fairness and consent | ../psychology/ethics/ethics-decisions/#step0 | ethics-decisions#step0 |
 | 费率与复利 · 1% 吃掉多少 / Fees & compounding · what 1% really costs | ../investment/rates/fees-compounding/#step1 | fees-compounding#step1 |
 | 利率与债券价格 · 利率升，债价跌 / Interest rates & bond prices · rates up, prices down | ../investment/rates/interest-rates-bonds/#step3 | interest-rates-bonds#step3 |
+| 钱是一张人人都收的欠条 / Money as an IOU everyone accepts | ../economics/money/where-money-comes-from/#ch1 | where-money-comes-from |
 | 音位与最小对立 / Phonemes & minimal pairs | ../language/phonology/phonemes/#step1 | phonemes#step1 |
 | 无知之幕 · 平均原则与最大最小原则 / The veil of ignorance · average rule vs maximin | ../psychology/ethics/veil-of-ignorance/#step0 | veil-of-ignorance#step0 |
+| 五种计票规则 / Five counting rules | ../society/civics/same-votes-different-winner/#ch1 | same-votes-different-winner |
 | 元音空间 · 共振峰 F1 与 F2 / Vowel space · formants F1 and F2 | ../language/phonology/vowel-space/#step1 | vowel-space#step1 |
+| 贷款创造存款 / Loans create deposits | ../economics/money/where-money-comes-from/#ch2 | where-money-comes-from |
+| 搅局者与无关选项独立 / The spoiler effect and independence of irrelevant alternatives | ../society/civics/same-votes-different-winner/#ch2 | same-votes-different-winner |
+| 银行挤兑与存款保险 / Bank runs and deposit insurance | ../economics/money/where-money-comes-from/#ch3 | where-money-comes-from |
+| 迪韦尔热倾向 / Duverger's tendency | ../society/civics/same-votes-different-winner/#ch2 | same-votes-different-winner |
+| 中位选民定理 / The median voter theorem | ../society/civics/same-votes-different-winner/#ch3 | same-votes-different-winner |
+| 货币数量与通胀 / Money growth and inflation | ../economics/money/where-money-comes-from/#ch4 | where-money-comes-from |
+| 孔多塞悖论（多数循环） / The Condorcet paradox (majority cycles) | ../society/civics/same-votes-different-winner/#ch4 | same-votes-different-winner |
+| 通胀的赢家和输家 / Who wins and loses from inflation | ../economics/money/where-money-comes-from/#ch5 | where-money-comes-from |
+| 利息是时间的价格 / Interest as the price of time | ../economics/money/where-money-comes-from/#ch6 | where-money-comes-from |
+| 策略投票与吉巴德–萨特斯韦特定理 / Strategic voting and the Gibbard–Satterthwaite theorem | ../society/civics/same-votes-different-winner/#ch5 | same-votes-different-winner |
+| 阿罗不可能定理 / Arrow's impossibility theorem | ../society/civics/same-votes-different-winner/#ch6 | same-votes-different-winner |
+| 等额本息与提前还款 / Loan amortisation and extra payments | ../economics/money/where-money-comes-from/#ch7 | where-money-comes-from |
+| 席位分配与阿拉巴马悖论 / Apportionment and the Alabama paradox | ../society/civics/same-votes-different-winner/#ch7 | same-votes-different-winner |
+| 利率传导与时滞 / Monetary transmission and its lags | ../economics/money/where-money-comes-from/#ch8 | where-money-comes-from |
+| 选区划分与效率差距 / Gerrymandering and the efficiency gap | ../society/civics/same-votes-different-winner/#ch8 | same-votes-different-winner |
+| 购买力平价与汇率 / Purchasing power parity and exchange rates | ../economics/money/where-money-comes-from/#ch9 | where-money-comes-from |
+| 孔多塞陪审团定理 / Condorcet's jury theorem | ../society/civics/same-votes-different-winner/#ch9 | same-votes-different-winner |
+| 怎样读“这个制度很公平” / How to read a claim that a system is fair | ../society/civics/same-votes-different-winner/#ch10 | same-votes-different-winner |
 | 博弈论 / Game theory | ../math/applied/game-theory/#step0 | game-theory#step0 |
 | 机制设计与拍卖 · 报价如何改变结果 / Mechanism Design & Auctions · How Bids Change Outcomes | ../math/applied/mechanism-design/#s1 | mechanism-design |
 | 供需均衡 / Supply & demand equilibrium | ../math/applied/supply-demand/#step0 | supply-demand#step0 |
+
+### 11 技术与设备 / Technology & devices
+
+| 概念 | 来源 | 课程 |
+| --- | --- | --- |
+| GPS 怎样定位：伪距与钟差 / How GPS finds you: pseudoranges and clock bias | ../tech/devices/inside-a-phone/#gps | inside-a-phone |
+| 加速度计：弹簧上的检测质量 / Accelerometer: a proof mass on a spring | ../tech/devices/inside-a-phone/#accel | inside-a-phone |
+| 惯性导航为什么会漂 / Why dead reckoning drifts | ../tech/devices/inside-a-phone/#accel | inside-a-phone |
+| 电容触摸屏与插值定位 / Capacitive touch and interpolation | ../tech/devices/inside-a-phone/#touch | inside-a-phone |
+| 散粒噪声与多帧叠加 / Shot noise and frame stacking | ../tech/devices/inside-a-phone/#camera | inside-a-phone |
+| 同色异谱：屏幕怎样骗过眼睛 / Metamerism: how a screen fools the eye | ../tech/devices/inside-a-phone/#screen | inside-a-phone |
+| 压缩：只存猜不中的部分 / Compression: store only the surprise | ../tech/devices/inside-a-phone/#compress | inside-a-phone |
+| 路径损耗与香农容量 / Path loss and Shannon capacity | ../tech/devices/inside-a-phone/#radio | inside-a-phone |
+| 汉明码：多发三个比特改正一个错 / Hamming code: three extra bits fix one error | ../tech/devices/inside-a-phone/#ecc | inside-a-phone |
+| 基站切换与迟滞 / Cell handover and hysteresis | ../tech/devices/inside-a-phone/#handover | inside-a-phone |
+| 电池内阻：电量为什么会跳 / Battery internal resistance: why the percentage jumps | ../tech/devices/inside-a-phone/#battery | inside-a-phone |
+| 看懂任何设备的三个问题 / Three questions for any device | ../tech/devices/inside-a-phone/#method | inside-a-phone |
 
 <!-- /GENERATED:atlas-nodes -->

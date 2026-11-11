@@ -1,11 +1,11 @@
 {
   "counts": {
-    "groups": 10,
-    "nodes": 229,
-    "edges": 409,
+    "groups": 11,
+    "nodes": 291,
+    "edges": 483,
     "trails": 14,
     "questions": 124,
-    "fragments": 174
+    "fragments": 180
   },
   "conflicts": [],
   "suspendedEdges": [],
@@ -91,42 +91,461 @@
       "claimedStep": 5
     }
   ],
+  "edgeCandidates": [
+    {
+      "concept": "steady-state-set-point",
+      "page": "logistic-growth",
+      "taughtBy": [
+        "logistic-growth"
+      ]
+    },
+    {
+      "concept": "steady-state-set-point",
+      "page": "pid-control",
+      "taughtBy": [
+        "pid-controller"
+      ]
+    },
+    {
+      "concept": "drug-half-life-plateau",
+      "page": "exponents-logarithms",
+      "taughtBy": [
+        "exp-log"
+      ]
+    },
+    {
+      "concept": "alcohol-zero-order",
+      "page": "enzymes",
+      "taughtBy": [
+        "enzymes"
+      ]
+    },
+    {
+      "concept": "glucose-feedback",
+      "page": "pid-control",
+      "taughtBy": [
+        "pid-controller"
+      ]
+    },
+    {
+      "concept": "cardiac-output-budget",
+      "page": "blood-circulation",
+      "taughtBy": [
+        "blood-circulation"
+      ]
+    },
+    {
+      "concept": "antibiotic-selection-window",
+      "page": "natural-selection",
+      "taughtBy": [
+        "natural-selection"
+      ]
+    },
+    {
+      "concept": "herd-immunity-threshold",
+      "page": "public-health",
+      "taughtBy": [
+        "positive-predictive-value",
+        "epidemic-r0"
+      ]
+    },
+    {
+      "concept": "gps-pseudorange-clock-bias",
+      "page": "relativity",
+      "taughtBy": [
+        "relativity"
+      ]
+    },
+    {
+      "concept": "gps-pseudorange-clock-bias",
+      "page": "gravity-orbits",
+      "taughtBy": [
+        "gravity-orbits"
+      ]
+    },
+    {
+      "concept": "accelerometer-proof-mass",
+      "page": "newton-laws",
+      "taughtBy": [
+        "newton-laws"
+      ]
+    },
+    {
+      "concept": "dead-reckoning-drift",
+      "page": "kalman",
+      "taughtBy": [
+        "kalman"
+      ]
+    },
+    {
+      "concept": "dead-reckoning-drift",
+      "page": "integral",
+      "taughtBy": [
+        "integral"
+      ]
+    },
+    {
+      "concept": "shot-noise-frame-stacking",
+      "page": "poisson-process",
+      "taughtBy": [
+        "poisson-process"
+      ]
+    },
+    {
+      "concept": "shot-noise-frame-stacking",
+      "page": "central-limit-theorem",
+      "taughtBy": [
+        "gaussian",
+        "variance"
+      ]
+    },
+    {
+      "concept": "metamerism-rgb-subpixels",
+      "page": "eye-vision",
+      "taughtBy": [
+        "eye-vision"
+      ]
+    },
+    {
+      "concept": "predictive-compression-entropy",
+      "page": "entropy",
+      "taughtBy": [
+        "cross-entropy",
+        "information-entropy"
+      ]
+    },
+    {
+      "concept": "path-loss-shannon-capacity",
+      "page": "modulation",
+      "taughtBy": [
+        "modulation"
+      ]
+    },
+    {
+      "concept": "path-loss-shannon-capacity",
+      "page": "entropy",
+      "taughtBy": [
+        "cross-entropy",
+        "information-entropy"
+      ]
+    },
+    {
+      "concept": "handover-hysteresis",
+      "page": "signal-detection",
+      "taughtBy": [
+        "signal-detection-theory"
+      ]
+    },
+    {
+      "concept": "battery-internal-resistance",
+      "page": "ohms-law",
+      "taughtBy": [
+        "ohms-law"
+      ]
+    },
+    {
+      "concept": "battery-internal-resistance",
+      "page": "electrochemistry",
+      "taughtBy": [
+        "electrochemistry"
+      ]
+    },
+    {
+      "concept": "regression-to-the-mean",
+      "page": "regression-correlation",
+      "taughtBy": [
+        "regression-correlation"
+      ]
+    },
+    {
+      "concept": "small-sample-variability",
+      "page": "probability-frequency",
+      "taughtBy": [
+        "probability-vs-frequency"
+      ]
+    },
+    {
+      "concept": "small-sample-variability",
+      "page": "central-limit-theorem",
+      "taughtBy": [
+        "gaussian",
+        "variance"
+      ]
+    },
+    {
+      "concept": "survivorship-bias",
+      "page": "risk-pooling",
+      "taughtBy": [
+        "risk-pooling"
+      ]
+    },
+    {
+      "concept": "multiple-comparisons",
+      "page": "hypothesis-testing",
+      "taughtBy": [
+        "hypothesis-testing"
+      ]
+    },
+    {
+      "concept": "multiple-comparisons",
+      "page": "statistical-inference",
+      "taughtBy": [
+        "confidence-interval",
+        "hypothesis-testing"
+      ]
+    },
+    {
+      "concept": "simpsons-paradox",
+      "page": "regression-correlation",
+      "taughtBy": [
+        "regression-correlation"
+      ]
+    },
+    {
+      "concept": "base-rate-neglect",
+      "page": "bayes-diagnostics",
+      "taughtBy": [
+        "positive-predictive-value"
+      ]
+    },
+    {
+      "concept": "base-rate-neglect",
+      "page": "bayes-updating",
+      "taughtBy": [
+        "bayes",
+        "probability"
+      ]
+    },
+    {
+      "concept": "relative-vs-absolute-risk",
+      "page": "expected-value",
+      "taughtBy": [
+        "expected-value"
+      ]
+    },
+    {
+      "concept": "mean-vs-median-long-tail",
+      "page": "mean-median-mode",
+      "taughtBy": [
+        "mean-median-mode"
+      ]
+    },
+    {
+      "concept": "questions-to-ask-of-a-number",
+      "page": "regression-correlation",
+      "taughtBy": [
+        "regression-correlation"
+      ]
+    },
+    {
+      "concept": "questions-to-ask-of-a-number",
+      "page": "hypothesis-testing",
+      "taughtBy": [
+        "hypothesis-testing"
+      ]
+    },
+    {
+      "concept": "questions-to-ask-of-a-number",
+      "page": "bayes-diagnostics",
+      "taughtBy": [
+        "positive-predictive-value"
+      ]
+    },
+    {
+      "concept": "questions-to-ask-of-a-number",
+      "page": "central-limit-theorem",
+      "taughtBy": [
+        "gaussian",
+        "variance"
+      ]
+    },
+    {
+      "concept": "median-voter",
+      "page": "game-theory",
+      "taughtBy": [
+        "game-theory"
+      ]
+    },
+    {
+      "concept": "strategic-voting",
+      "page": "auction-basics",
+      "taughtBy": [
+        "auctions"
+      ]
+    },
+    {
+      "concept": "strategic-voting",
+      "page": "mechanism-design",
+      "taughtBy": [
+        "mechanism-auction"
+      ]
+    },
+    {
+      "concept": "arrow-impossibility",
+      "page": "veil-of-ignorance",
+      "taughtBy": [
+        "veil-of-ignorance"
+      ]
+    },
+    {
+      "concept": "condorcet-jury-theorem",
+      "page": "binomial-normal",
+      "taughtBy": [
+        "binomial-normal"
+      ]
+    },
+    {
+      "concept": "reading-fairness-claims",
+      "page": "veil-of-ignorance",
+      "taughtBy": [
+        "veil-of-ignorance"
+      ]
+    },
+    {
+      "concept": "reading-fairness-claims",
+      "page": "prisoners-dilemma",
+      "taughtBy": [
+        "prisoners-dilemma"
+      ]
+    },
+    {
+      "concept": "binary-numbers",
+      "page": "place-value",
+      "taughtBy": [
+        "place-value"
+      ]
+    },
+    {
+      "concept": "binary-numbers",
+      "page": "binary-search",
+      "taughtBy": [
+        "binary-search"
+      ]
+    },
+    {
+      "concept": "binary-numbers",
+      "page": "entropy",
+      "taughtBy": [
+        "cross-entropy",
+        "information-entropy"
+      ]
+    },
+    {
+      "concept": "twos-complement-overflow",
+      "page": "negative-numbers",
+      "taughtBy": [
+        "negative-numbers"
+      ]
+    },
+    {
+      "concept": "real-processor-scale",
+      "page": "hashing",
+      "taughtBy": [
+        "hashing"
+      ]
+    },
+    {
+      "concept": "real-processor-scale",
+      "page": "entropy",
+      "taughtBy": [
+        "cross-entropy",
+        "information-entropy"
+      ]
+    },
+    {
+      "concept": "money-as-iou",
+      "page": "scarcity-moves",
+      "taughtBy": []
+    },
+    {
+      "concept": "loans-create-deposits",
+      "page": "scarcity-moves",
+      "taughtBy": []
+    },
+    {
+      "concept": "quantity-theory-inflation",
+      "page": "scarcity-moves",
+      "taughtBy": []
+    },
+    {
+      "concept": "inflation-winners-losers",
+      "page": "compound-interest",
+      "taughtBy": [
+        "compound-interest"
+      ]
+    },
+    {
+      "concept": "interest-price-of-time",
+      "page": "compound-interest",
+      "taughtBy": [
+        "compound-interest"
+      ]
+    },
+    {
+      "concept": "interest-price-of-time",
+      "page": "interest-rates-bonds",
+      "taughtBy": [
+        "interest-rates-bonds"
+      ]
+    },
+    {
+      "concept": "loan-amortisation",
+      "page": "compound-interest",
+      "taughtBy": [
+        "compound-interest"
+      ]
+    },
+    {
+      "concept": "monetary-transmission",
+      "page": "interest-rates-bonds",
+      "taughtBy": [
+        "interest-rates-bonds"
+      ]
+    },
+    {
+      "concept": "purchasing-power-parity",
+      "page": "scarcity-moves",
+      "taughtBy": []
+    }
+  ],
   "unknownAliasIds": [],
-  "sizeBytes": 504762,
+  "sizeBytes": 605540,
   "questionsBytes": 173024,
-  "combinedBytes": 677786,
-  "indexBytes": 70482,
+  "combinedBytes": 778564,
+  "indexBytes": 78994,
   "chunkBytes": {
     "math.nodes": 49492,
-    "math.edges": 85799,
+    "math.edges": 88495,
     "math.questions": 36438,
     "waves.nodes": 35640,
-    "waves.edges": 56631,
+    "waves.edges": 58305,
     "waves.questions": 24627,
     "circuits.nodes": 14819,
-    "circuits.edges": 20766,
+    "circuits.edges": 21940,
     "circuits.questions": 12351,
     "systems.nodes": 20317,
-    "systems.edges": 41066,
+    "systems.edges": 42813,
     "systems.questions": 21577,
-    "measurement.nodes": 27753,
-    "measurement.edges": 50420,
+    "measurement.nodes": 34774,
+    "measurement.edges": 60324,
     "measurement.questions": 30144,
     "matter.nodes": 13704,
     "matter.edges": 14063,
     "matter.questions": 7898,
-    "life.nodes": 12048,
-    "life.edges": 11273,
+    "life.nodes": 19012,
+    "life.edges": 18673,
     "life.questions": 2806,
     "earth.nodes": 12163,
     "earth.edges": 10953,
     "earth.questions": 6822,
-    "computing.nodes": 11483,
-    "computing.edges": 11083,
+    "computing.nodes": 18891,
+    "computing.edges": 18476,
     "computing.questions": 2766,
-    "society.nodes": 13325,
-    "society.edges": 15821,
-    "society.questions": 3743
+    "society.nodes": 28729,
+    "society.edges": 27453,
+    "society.questions": 3743,
+    "tech.nodes": 9060,
+    "tech.edges": 9209
   },
-  "searchBytes": 100222
+  "searchBytes": 136761
 }

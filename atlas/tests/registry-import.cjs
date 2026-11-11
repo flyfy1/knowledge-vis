@@ -35,6 +35,16 @@ try {
   assert.deepEqual(frag.seeAlso, { 'sample-scarcity': ['compound-interest'] }); checks++;
   ok(n0.group === 'society' && n0.stage === 'senior', 'region and stage');
 
+  // 1b. Re-import keeps hand-written edges and questions; an edge whose concept is gone is dropped (2026-11-11).
+  const again = path.join(tmp, 'again.json');
+  fs.writeFileSync(again, JSON.stringify(Object.assign({}, frag, { edges: [
+    { from: 'sample-scarcity', to: 'sample-opportunity-cost', type: 'foundation' },
+    { from: 'sample-gone', to: 'fourier', type: 'connection' }], questions: [{ id: 'q-sample' }] })));
+  r = run(importer, [good, '--region', 'society', '--out', again]);
+  assert.equal(r.status, 0, r.stderr + r.stdout);
+  const re = JSON.parse(fs.readFileSync(again, 'utf8'));
+  ok(re.edges.length === 1 && re.edges[0].from === 'sample-scarcity' && re.questions.length === 1 && /KEPT 1 hand-written edges/.test(r.stdout), 're-import keeps hand-written edges');
+
   // 2. Refusals: unknown anchor, id already in the atlas, missing English, unknown region.
   const bad = (name, mutate, flags, needle) => {
     const reg = JSON.parse(JSON.stringify(registry)); mutate(reg);
@@ -64,21 +74,23 @@ try {
   const { validate } = require('./data-quality.cjs');
   assert.deepEqual(validate(JSON.parse(JSON.stringify(atlas.window.ATLAS))).errors, []); checks++;
   const report = JSON.parse(fs.readFileSync(path.join(out, 'merge-report.json'), 'utf8'));
-  assert.deepEqual(report.edgeCandidates, [{ concept: 'sample-scarcity', page: 'compound-interest', taughtBy: ['compound-interest'] }]); checks++;
+  // only the fixture's own candidates: the real graph's essays list theirs too (2026-11-11)
+  assert.deepEqual(report.edgeCandidates.filter(c => c.concept.startsWith('sample-')), [{ concept: 'sample-scarcity', page: 'compound-interest', taughtBy: ['compound-interest'] }]); checks++;
 
   // 4. --add-region on a copy of the graph: new region claims a new category; importing into it works.
+  // The real graph already has a tech region (2026-11-11), so the fixture uses a region id of its own.
   const graph = path.join(tmp, 'graph');
   fs.mkdirSync(path.join(graph, 'lessons'), { recursive: true });
   for (const f of ['groups.json', 'core.json']) fs.copyFileSync(path.join(root, 'atlas/graph', f), path.join(graph, f));
-  r = run(importer, ['--add-region', 'tech', '--zh', '技术与设备', '--en', 'Technology & devices', '--categories', 'tech', '--graph', graph]);
+  r = run(importer, ['--add-region', 'sample-region', '--zh', '样例分区', '--en', 'Sample region', '--categories', 'sample-cat', '--graph', graph]);
   assert.equal(r.status, 0, r.stderr + r.stdout);
-  const groups = JSON.parse(fs.readFileSync(path.join(graph, 'groups.json'), 'utf8')), tech = groups[groups.length - 1];
-  ok(tech.id === 'tech' && tech.mark === String(groups.length).padStart(2, '0') && tech.categories[0] === 'tech', 'region appended with category');
-  ok(run(importer, ['--add-region', 'tech', '--zh', 'x', '--en', 'x', '--graph', graph]).status === 1, 'duplicate region refused');
-  const techReg = JSON.parse(JSON.stringify(registry)); techReg.category = 'tech';
+  const groups = JSON.parse(fs.readFileSync(path.join(graph, 'groups.json'), 'utf8')), added = groups[groups.length - 1];
+  ok(added.id === 'sample-region' && added.mark === String(groups.length).padStart(2, '0') && added.categories[0] === 'sample-cat', 'region appended with category');
+  ok(run(importer, ['--add-region', 'sample-region', '--zh', 'x', '--en', 'x', '--graph', graph]).status === 1, 'duplicate region refused');
+  const techReg = JSON.parse(JSON.stringify(registry)); techReg.category = 'sample-cat';
   r = run(importer, [write('tech', techReg), '--graph', graph, '--out', path.join(tmp, 'tech.json')]);
   assert.equal(r.status, 0, r.stderr + r.stdout);
-  ok(JSON.parse(fs.readFileSync(path.join(tmp, 'tech.json'), 'utf8')).nodes.every(n => n.group === 'tech'), 'category maps to the new region');
+  ok(JSON.parse(fs.readFileSync(path.join(tmp, 'tech.json'), 'utf8')).nodes.every(n => n.group === 'sample-region'), 'category maps to the new region');
   console.log(JSON.stringify({ pass: true, checks, scope: 'REGISTRY import, refusals, preview build, search deep links, add-region; repository untouched' }));
 } finally {
   fs.rmSync(tmp, { recursive: true, force: true });

@@ -60,7 +60,7 @@ let checks=0;function ok(v,m){assert.ok(v,m);checks++;}
    await p.locator('[data-node=sine]').click();
    assert.equal(await p.locator('#detailTitle').innerText(),data.nodes.find(n=>n.id==='sine').title[lang]);
    if(width<=1000){ok((await p.locator('#detailTitle').boundingBox()).y<200,'stacked map selection reaches explanation');assert.equal(await p.evaluate(()=>document.activeElement.id),'detailTitle');}
-   await p.locator('#group').selectOption('measurement');ok(await p.locator('#listView').isVisible(),'category shows filtered list');assert.equal(await p.locator('.result:visible').count(),data.nodes.filter(n=>n.group==='measurement').length);
+   await p.locator('#group').selectOption('measurement');ok(await p.locator('#listView').isVisible(),'category shows filtered list');{const nMeasure=data.nodes.filter(n=>n.group==='measurement').length;assert.equal(await p.locator('.result:visible').count(),Math.min(40,nMeasure));if(nMeasure>40)ok(await p.locator('#moreResults').isVisible(),'filtered list offers show all');}
    ok(await p.locator('.outside-note').isVisible(),'outside-selection explanation');
    await p.locator('#search').fill('zzzz-no-match');ok(await p.locator('#empty').isVisible(),'no result');
    // The list shows the first 40 concepts until asked (phone page length); "show all" reveals the rest.
