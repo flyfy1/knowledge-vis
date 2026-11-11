@@ -832,8 +832,9 @@ Atlas adds seven concepts and twelve sourced relations in Circuits & energy. Fee
 
 | Concept | Deep link | What the step teaches |
 | --- | --- | --- |
-| preorder with null markers | `leetcode/297/#step0` | Visit node, left, right, and record every empty child. |
-| subtree decoding invariant | `leetcode/297/#step2` | Each recursive call consumes exactly one complete subtree encoding. |
+| preorder with null markers | `leetcode/297/#step0` | Values alone collide (1,2,3,4,5 fits two trees); recording every empty child with # fixes the shape. |
+| open-slot stack | `leetcode/297/#step1` | The pending stack lists the child positions the recursive decoder still owes; each token fills the top one. |
+| subtree decoding invariant | `leetcode/297/#step2` | Which position each token fills is fixed by the tokens before it, so one string decodes to one tree. |
 
 <!-- /leetcode-297-campaign -->
 
@@ -842,9 +843,9 @@ Atlas adds seven concepts and twelve sourced relations in Circuits & energy. Fee
 
 | Concept | Deep link | What the step teaches |
 | --- | --- | --- |
-| Removal budget | `leetcode/301/#step1` | Count unmatched left and right parentheses before searching. |
-| Balance invariant | `leetcode/301/#step2` | A prefix balance never becomes negative and ends at zero. |
-| Duplicate-free branching | `leetcode/301/#step2` | Skip adjacent equal deletion choices. |
+| Removal budget | `leetcode/301/#step1` | Walk the balance: each dip below zero forces a ) deletion, each open left at the end forces a ( deletion. |
+| Balance invariant | `leetcode/301/#step2` | A kept prefix never has negative balance; the search spends exactly the budget. |
+| Duplicate collapse | `leetcode/301/#step2` | Different deletion positions can give the same string; a set keeps one copy. |
 
 <!-- /leetcode-301-campaign -->
 
@@ -2275,7 +2276,7 @@ Outgoing first-use links: `interference/#step1` (path difference), `reflection-r
 | Concept | Deep link | What the step teaches |
 | --- | --- | --- |
 | bitmask | `leetcode/1178/#step2` | Encode the set of letters as bits. |
-| subset enumeration | `leetcode/1178/#step2` | Visit every submask with (sub - 1) & mask. |
+| subset enumeration | `leetcode/1178/#step2` | Visit the 2^6 subsets of the other six puzzle letters with (sub - 1) & rest. |
 
 <!-- /leetcode-1178-campaign -->
 
@@ -2943,3 +2944,128 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 看懂任何设备的三个问题 / Three questions for any device | ../tech/devices/inside-a-phone/#method | inside-a-phone |
 
 <!-- /GENERATED:atlas-nodes -->
+
+
+<!-- leetcode-727-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Latest start per progress level | `leetcode/727/#step2` | Two partial matches with the same progress differ only in start; the later start dominates forever. |
+| Top-down slot promotion | `leetcode/727/#step3` | Reading one letter promotes latest[k-1] to latest[k] for k from m down to 1 so a letter is used once. |
+
+<!-- /leetcode-727-campaign -->
+
+
+<!-- leetcode-759-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Free for everyone means outside the union | `leetcode/759/#step2` | Employee labels can be erased; only the union of all busy intervals and its interior holes matter. |
+| Furthest end (reach) sweep | `leetcode/759/#step3` | Sorted by start, a gap exists exactly when the next start exceeds the furthest end seen so far. |
+
+<!-- /leetcode-759-campaign -->
+
+
+<!-- leetcode-772-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Open term for precedence | `leetcode/772/#step2` | Keep total of finished terms plus one signed open term; + and - close it, * and / extend it. |
+| Parking the outer level on a stack | `leetcode/772/#step3` | A parenthesis is one number to its outer level; park (total, term, op) at ( and hand the value back at ). |
+
+<!-- /leetcode-772-campaign -->
+
+
+<!-- leetcode-774-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Even spacing inside a gap | `leetcode/774/#step0` | c new stations in a gap of length g give a best longest piece of g/(c+1), so only counts per gap matter. |
+| Feasibility count need(D) | `leetcode/774/#step2` | A gap of length g needs ceil(g/D) - 1 stations; the total only rises as D shrinks, so the yes/no answer flips once. |
+| Binary search on a real-valued answer | `leetcode/774/#step3` | Keep lo impossible and hi achievable, halve until hi - lo <= 1e-6, and return hi within the accepted tolerance. |
+
+<!-- /leetcode-774-campaign -->
+
+
+<!-- leetcode-1063-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Valid run ends at the first smaller element | `leetcode/1063/#step2` | Start i is valid exactly for ends before the first element smaller than nums[i]. |
+| Alive starts as a monotonic stack | `leetcode/1063/#step3` | Pop strictly larger tops, push the new start, and add the stack size; ties stay alive. |
+
+<!-- /leetcode-1063-campaign -->
+
+
+<!-- leetcode-1067-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Prefix difference f(high) - f(low - 1) | `leetcode/1067/#step1` | Counting over low..high reduces to counting over 1..n twice. |
+| Per-place cycle formula | `leetcode/1067/#step2` | At place p the digit cycles every 10p numbers: left*p complete blocks plus p, right+1 or 0 from the last block. |
+| No leading zeros for d = 0 | `leetcode/1067/#step3` | A zero needs a nonzero digit to its left: use (left - 1)*p and stop when left = 0. |
+
+<!-- /leetcode-1067-campaign -->
+
+
+<!-- leetcode-1088-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Complement split of turnable numbers | `leetcode/1088/#step3` | Every turnable number is either unchanged by turning or confusing, so confusing = turnable − unchanged. |
+| Counting below n by first differing digit | `leetcode/1088/#step4` | Group same-length numbers below n by the first position where they drop below n; stop at a digit that cannot turn. |
+| Building strobogrammatic numbers from both ends | `leetcode/1088/#step5` | Choose turning pairs from the outside in, with a middle digit of 0, 1 or 8 for odd lengths. |
+
+<!-- /leetcode-1088-campaign -->
+
+
+<!-- leetcode-1097-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| One row per player | `leetcode/1097/#step3` | Only the install row and the next-day row matter, so GROUP BY player_id with MIN(event_date) first. |
+| LEFT JOIN keeps the denominator | `leetcode/1097/#step4` | Unmatched installers stay as NULL rows, so COUNT(*) counts installs and COUNT(column) counts returns. |
+
+<!-- /leetcode-1097-campaign -->
+
+
+<!-- leetcode-1121-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Repeats force many sequences | `leetcode/1121/#step3` | A value appearing f times needs f different strictly increasing sequences, so f × k ≤ n is necessary. |
+| Round-robin dealing | `leetcode/1121/#step4` | Dealing the sorted array into f piles keeps equal values apart and gives every pile at least floor(n/f) ≥ k numbers. |
+
+<!-- /leetcode-1121-campaign -->
+
+
+<!-- leetcode-1127-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Group by person-day before labelling | `leetcode/1127/#step3` | A label such as both is a property of all of one user's rows on one day, so group by date and user first. |
+| Output grid with LEFT JOIN for zero rows | `leetcode/1127/#step4` | Build every date x label cell first, LEFT JOIN the data, and count a column so empty cells give 0. |
+
+<!-- /leetcode-1127-campaign -->
+
+
+<!-- leetcode-1153-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Letters move as a block | `leetcode/1153/#step3` | Positions sharing a letter can never be split, so the letter map must be a function. |
+| Breaking a cycle with a spare letter | `leetcode/1153/#step4` | Park one letter of a cycle on an unused letter, then run the chain from its end. |
+| Why the 26-letter limit matters | `leetcode/1153/#step5` | If str2 uses all 26 letters no spare can exist and the first conversion loses a letter for good. |
+
+<!-- /leetcode-1153-campaign -->
+
+
+<!-- leetcode-1183-campaign -->
+
+| Concept | Deep link | What the step teaches |
+| --- | --- | --- |
+| Residue classes of a sliding window | `leetcode/1183/#step3` | Every s×s window contains exactly one cell with each (row mod s, column mod s), so filling a whole class costs one per window. |
+| Counting a residue class | `leetcode/1183/#step4` | Class (a, b) has ceil((height − a) / s) · ceil((width − b) / s) cells; take the k largest. |
+| Averaging over windows as an upper bound | `leetcode/1183/#step5` | A weighted random window covers each cell with probability 1 / its class size, which caps every valid grid at the top-k sum. |
+
+<!-- /leetcode-1183-campaign -->

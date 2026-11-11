@@ -229,7 +229,8 @@ class CampaignTests(unittest.TestCase):
         self.write('specs/reviews/4-evidence/prior.png', 'Prior evidence')
         self.git('add', '.')
         self.git('commit', '-m', 'Complete review-entry fixture')
-        state = campaign.load_state(self.state / 'progress.json', self.repo, [self.problems[0]])
+        # main() resolves --repo; resolve here too, or macOS /var -> /private/var makes the saved state look foreign.
+        state = campaign.load_state(self.state / 'progress.json', self.repo.resolve(), [self.problems[0]])
         if resumed:
             state['runs'] = [{'run_id': 'prior-author', 'role': 'author'},
                              {'run_id': 'prior-review', 'role': 'review'}]

@@ -16,9 +16,13 @@ const screenshots=process.env.LESSON_SCREENSHOTS;
     page.on('response',response=>{if(response.status()>=400&&!response.url().includes('favicon'))errors.push(response.status()+' '+response.url());});
     await page.goto(base+'/');
     await page.locator('[data-cat="leetcode"]').click();
-    assert.equal(await page.locator('#grid a.card').count(),1);
-    await page.locator('#grid a.card').click();
-    assert.ok(page.url().endsWith('/leetcode/'));
+    // The homepage's LeetCode view lists every registered lesson as its own card (it used to show one
+    // collection card). Check the count against the registry, open one card, then use the collection page.
+    const registry=(()=>{const c={window:{}};require('node:vm').runInNewContext(fs.readFileSync(path.join(__dirname,'../problems.config.js'),'utf8'),c);return c.window.LEETCODE_PROBLEMS;})();
+    await page.waitForFunction(n=>document.querySelectorAll('#grid article.lesson-card').length===n,registry.length);
+    await page.locator('#grid article.lesson-card[data-problem-id="2916"] a.lesson-link').click();
+    assert.ok(page.url().endsWith('/leetcode/2916/'));
+    await page.goto(base+'/leetcode/');
     await page.locator('.problem-card .lesson-link[href="2916/"]').click();
     assert.ok(page.url().endsWith('/leetcode/2916/'));
     await page.waitForFunction(()=>document.querySelectorAll('#subarrayGrid button').length===6&&document.getElementById('subarrayInfo').textContent.length>0);

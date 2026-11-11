@@ -1140,7 +1140,7 @@ window.LEETCODE_PROBLEMS = [
     "path": "301/",
     "leetcodeUrl": "https://leetcode.com/problems/remove-invalid-parentheses/",
     "language": "Python",
-    "complexity": "O(2^n) time in the worst case; O(n) recursion space plus output"
+    "complexity": "O(2^p·n) time in the worst case (p ≤ 20 parentheses); O(n) recursion space plus output"
   },
   {
     "id": 312,
@@ -2615,6 +2615,36 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n² + kL log k) time; O(n) auxiliary space"
   },
   {
+    "id": 727,
+    "title": {
+      "zh": "最小窗口子序列",
+      "en": "Minimum Window Subsequence"
+    },
+    "desc": {
+      "zh": "从逐个起点重扫到“同进度只留最晚起点”：一遍扫描的子序列窗口 DP。",
+      "en": "From rescanning every start to keeping only the latest start per progress level: a one-pass subsequence-window DP."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "动态规划",
+        "en": "Dynamic programming"
+      },
+      {
+        "zh": "字符串",
+        "en": "String"
+      },
+      {
+        "zh": "支配剪枝",
+        "en": "Dominance pruning"
+      }
+    ],
+    "path": "727/",
+    "leetcodeUrl": "https://leetcode.com/problems/minimum-window-subsequence/",
+    "language": "Python",
+    "complexity": "O(n·m) time for n = len(s1), m = len(s2); O(m) auxiliary space"
+  },
+  {
     "id": 730,
     "title": {
       "zh": "统计不同回文子序列",
@@ -2827,6 +2857,36 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n log n) time; O(n) auxiliary space for sorting"
   },
   {
+    "id": 759,
+    "title": {
+      "zh": "员工空闲时间",
+      "en": "Employee Free Time"
+    },
+    "desc": {
+      "zh": "擦掉“谁在忙”，按开始时间扫描并维护最远结束：从逐段检查到一次扫描。",
+      "en": "Drop who is busy, sweep by start time and keep the furthest end: from checking every piece to one sweep."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "区间",
+        "en": "Intervals"
+      },
+      {
+        "zh": "排序",
+        "en": "Sorting"
+      },
+      {
+        "zh": "扫描线",
+        "en": "Sweep line"
+      }
+    ],
+    "path": "759/",
+    "leetcodeUrl": "https://leetcode.com/problems/employee-free-time/",
+    "language": "Python",
+    "complexity": "O(N log N) time for N intervals in total; O(N) auxiliary space"
+  },
+  {
     "id": 761,
     "title": {
       "zh": "特殊的二进制序列",
@@ -2947,6 +3007,36 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(E + n(P+1)²(D+1)log(D+2) + P log(P+1)(D+1)) key operations; O(E + n(P+1)(D+1)) auxiliary space plus output strings"
   },
   {
+    "id": 772,
+    "title": {
+      "zh": "基本计算器 III",
+      "en": "Basic Calculator III"
+    },
+    "desc": {
+      "zh": "不改写文本：用 total、term、op 一遍处理乘除优先，再用栈停放括号外层。",
+      "en": "No text rewriting: total, term and op handle precedence in one pass, and a stack parks the level outside each parenthesis."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "栈",
+        "en": "Stack"
+      },
+      {
+        "zh": "表达式求值",
+        "en": "Expression evaluation"
+      },
+      {
+        "zh": "字符串",
+        "en": "String"
+      }
+    ],
+    "path": "772/",
+    "leetcodeUrl": "https://leetcode.com/problems/basic-calculator-iii/",
+    "language": "Python",
+    "complexity": "O(n) time for n = len(s); O(d) auxiliary space for parenthesis depth d (at most O(n))"
+  },
+  {
     "id": 773,
     "title": {
       "zh": "滑动谜题",
@@ -2971,6 +3061,32 @@ window.LEETCODE_PROBLEMS = [
     "leetcodeUrl": "https://leetcode.com/problems/sliding-puzzle/",
     "language": "Python",
     "complexity": "O(V+E) time; O(V) auxiliary space for fixed six-cell states, V ≤ 720 and E ≤ 3V"
+  },
+  {
+    "id": 774,
+    "title": {
+      "zh": "最小化加油站间的最大距离",
+      "en": "Minimize Max Distance to Gas Station"
+    },
+    "desc": {
+      "zh": "不去决定每座新站放哪，而是问“最长空档 D 做得到吗”，再对答案二分。",
+      "en": "Stop placing stations one by one: ask whether a worst gap D is achievable, then binary search the answer."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "二分答案",
+        "en": "Binary search on the answer"
+      },
+      {
+        "zh": "浮点容差",
+        "en": "Floating-point tolerance"
+      }
+    ],
+    "path": "774/",
+    "leetcodeUrl": "https://leetcode.com/problems/minimize-max-distance-to-gas-station/",
+    "language": "Python",
+    "complexity": "O(n·log(W/1e-6)) time, at most 47 rounds of O(n) for W ≤ 1e8 and independent of k; O(n) auxiliary space for the gap list"
   },
   {
     "id": 778,
@@ -3235,8 +3351,8 @@ window.LEETCODE_PROBLEMS = [
       "en": "Race Car"
     },
     "desc": {
-      "zh": "从完整状态的分层搜索，推导乐观下界并用 A* 减少探索。",
-      "en": "Derive an optimistic bound from full-state BFS and prioritize exploration with A*."
+      "zh": "从完整状态的分层搜索推导乐观下界，用 A* 探索并核对答案；再把搜索揭示的两条事实变成要提交的 O(T log T) 连续加速段 DP。",
+      "en": "Derive an optimistic bound from full-state BFS and explore with A* to check answers; then turn two facts the search exposes into the O(T log T) run DP to submit."
     },
     "difficulty": "hard",
     "topics": [
@@ -3251,12 +3367,16 @@ window.LEETCODE_PROBLEMS = [
       {
         "zh": "A* 搜索",
         "en": "A* search"
+      },
+      {
+        "zh": "动态规划",
+        "en": "Dynamic programming"
       }
     ],
     "path": "818/",
     "leetcodeUrl": "https://leetcode.com/problems/race-car/",
     "language": "Python",
-    "complexity": "O(D * 2^D) time; O(2^D) space, conservative unit-cost bounds for optimal command depth D; heap work O(Q log Q) for Q generated entries"
+    "complexity": "Run DP to submit: O(T log T) time, O(T) space for target T; the explored A* search is exponential in the worst case (O(D·2^D) time, O(2^D) space, D = optimal command count)"
   },
   {
     "id": 827,
@@ -4589,6 +4709,58 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n log² n) time; O(n) auxiliary space"
   },
   {
+    "id": 1063,
+    "title": {
+      "zh": "有效子数组的数目",
+      "en": "Number of Valid Subarrays"
+    },
+    "desc": {
+      "zh": "每行在第一个更小元素处断开；按列读三角表，活着的起点就是一个单调栈。",
+      "en": "Each row stops at the first smaller element; read the triangle by columns and the alive starts form a monotonic stack."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "单调栈",
+        "en": "Monotonic stack"
+      },
+      {
+        "zh": "子数组计数",
+        "en": "Counting subarrays"
+      }
+    ],
+    "path": "1063/",
+    "leetcodeUrl": "https://leetcode.com/problems/number-of-valid-subarrays/",
+    "language": "Python",
+    "complexity": "O(n) time: each element is pushed once and popped at most once; O(n) auxiliary space for the stack"
+  },
+  {
+    "id": 1067,
+    "title": {
+      "zh": "范围内的数字计数",
+      "en": "Digit Count in Range"
+    },
+    "desc": {
+      "zh": "每个数位上的数字按 0…9 循环：一次数完一整个数位，用 f(high) − f(low − 1) 相减；d = 0 时不计前导零。",
+      "en": "Each digit place cycles through 0…9: count a whole place at once, subtract f(high) − f(low − 1), and leave out leading zeros when d = 0."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "数位计数",
+        "en": "Digit counting"
+      },
+      {
+        "zh": "数学",
+        "en": "Math"
+      }
+    ],
+    "path": "1067/",
+    "leetcodeUrl": "https://leetcode.com/problems/digit-count-in-range/",
+    "language": "Python",
+    "complexity": "O(log10 high) time: at most 9 place passes per prefix count for high <= 2*10^8, two prefix counts; O(1) auxiliary space"
+  },
+  {
     "id": 1074,
     "title": {
       "zh": "元素和为目标值的子矩阵数量",
@@ -4617,6 +4789,36 @@ window.LEETCODE_PROBLEMS = [
     "leetcodeUrl": "https://leetcode.com/problems/number-of-submatrices-that-sum-to-target/",
     "language": "Python",
     "complexity": "O(m²n) expected time; O(n) auxiliary space, for m rows and n columns"
+  },
+  {
+    "id": 1088,
+    "title": {
+      "zh": "易混淆数 II",
+      "en": "Confusing Number II"
+    },
+    "desc": {
+      "zh": "先看出“易混淆 = 可转 − 转后不变”，再按首个不同数位数可转数、从两端造出不变数。",
+      "en": "Discover that confusing = turnable − unchanged, then count turnable numbers by first differing digit and build unchanged ones from both ends."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "补集计数",
+        "en": "Complement counting"
+      },
+      {
+        "zh": "数位计数",
+        "en": "Digit counting"
+      },
+      {
+        "zh": "中心对称数",
+        "en": "Strobogrammatic numbers"
+      }
+    ],
+    "path": "1088/",
+    "leetcodeUrl": "https://leetcode.com/problems/confusing-number-ii/",
+    "language": "Python",
+    "complexity": "O(d·5^(d/2)) time and space, d = number of digits of n (d ≤ 10: at most 7805 strings built)"
   },
   {
     "id": 1092,
@@ -4697,6 +4899,32 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(n²W² + nK log K) expected time; O(n²W) space including output, W≥1 maximum intermediate set size, K final word count"
   },
   {
+    "id": 1097,
+    "title": {
+      "zh": "游戏玩法分析 V",
+      "en": "Game Play Analysis V"
+    },
+    "desc": {
+      "zh": "先看出每个玩家只有安装行和次日行有用，再用 MIN 压成每人一行、LEFT JOIN 查次日而不丢人。",
+      "en": "See that only each player's install row and next-day row matter, shrink to one row per player with MIN, then LEFT JOIN the next day without losing anyone."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "数据库",
+        "en": "Database"
+      },
+      {
+        "zh": "分组与 LEFT JOIN",
+        "en": "Grouping and LEFT JOIN"
+      }
+    ],
+    "path": "1097/",
+    "leetcodeUrl": "https://leetcode.com/problems/game-play-analysis-v/",
+    "language": "MySQL",
+    "complexity": "O(n log n) time with the primary-key index (n Activity rows); O(p) intermediate space for p players"
+  },
+  {
     "id": 1106,
     "title": {
       "zh": "解析布尔表达式",
@@ -4721,6 +4949,32 @@ window.LEETCODE_PROBLEMS = [
     "leetcodeUrl": "https://leetcode.com/problems/parsing-a-boolean-expression/",
     "language": "Python",
     "complexity": "O(n) time; O(n) auxiliary space"
+  },
+  {
+    "id": 1121,
+    "title": {
+      "zh": "将数组分成几个递增序列",
+      "en": "Divide Array Into Increasing Sequences"
+    },
+    "desc": {
+      "zh": "重复最多的数逼出 f 条序列，发牌式分配证明 f × k ≤ n 也足够。",
+      "en": "The most repeated value forces f sequences; dealing round-robin proves f × k ≤ n is also enough."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "计数论证",
+        "en": "Counting argument"
+      },
+      {
+        "zh": "构造",
+        "en": "Construction"
+      }
+    ],
+    "path": "1121/",
+    "leetcodeUrl": "https://leetcode.com/problems/divide-array-into-increasing-sequences/",
+    "language": "Python",
+    "complexity": "O(n) time; O(1) auxiliary space"
   },
   {
     "id": 1125,
@@ -4749,6 +5003,36 @@ window.LEETCODE_PROBLEMS = [
     "complexity": "O(L + n m 2^m) time; O(m 2^m + m) auxiliary space, with m skills, n people, L input skill entries"
   },
   {
+    "id": 1127,
+    "title": {
+      "zh": "用户购买平台",
+      "en": "User Purchase Platform"
+    },
+    "desc": {
+      "zh": "“两样都用”属于一个人的一天，不属于某一行：先按人-天贴标签，再用固定的日期×平台格子和 LEFT JOIN 保住零行。",
+      "en": "“Both” belongs to a person's day, not to a row: label each person-day first, then keep zero rows with a fixed date × platform grid and a LEFT JOIN."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "数据库",
+        "en": "Database"
+      },
+      {
+        "zh": "两次分组",
+        "en": "Two-level GROUP BY"
+      },
+      {
+        "zh": "LEFT JOIN 补零",
+        "en": "LEFT JOIN for zero rows"
+      }
+    ],
+    "path": "1127/",
+    "leetcodeUrl": "https://leetcode.com/problems/user-purchase-platform/",
+    "language": "MySQL",
+    "complexity": "O(n log n) time with sort-based grouping (expected O(n) with hashing) for n Spending rows; O(n) intermediate space"
+  },
+  {
     "id": 1147,
     "title": {
       "zh": "段式回文",
@@ -4773,6 +5057,32 @@ window.LEETCODE_PROBLEMS = [
     "leetcodeUrl": "https://leetcode.com/problems/longest-chunked-palindrome-decomposition/",
     "language": "Python",
     "complexity": "O(n²) time; O(n) auxiliary space"
+  },
+  {
+    "id": 1153,
+    "title": {
+      "zh": "字符串转化",
+      "en": "String Transforms Into Another String"
+    },
+    "desc": {
+      "zh": "同一字母的位置永远绑在一起，所以每个字母只能有一个去处；环要借一个空闲字母，而 str2 用满 26 个字母时空闲字母不存在。",
+      "en": "Copies of a letter move together, so each letter needs one destination; cycles need a spare letter, which cannot exist once str2 uses all 26."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "哈希表",
+        "en": "Hash table"
+      },
+      {
+        "zh": "映射与环",
+        "en": "Mappings and cycles"
+      }
+    ],
+    "path": "1153/",
+    "leetcodeUrl": "https://leetcode.com/problems/string-transforms-into-another-string/",
+    "language": "Python",
+    "complexity": "O(n) time for strings of length n; O(1) auxiliary space (at most 26 map entries and 26 set letters)"
   },
   {
     "id": 1157,
@@ -4880,7 +5190,37 @@ window.LEETCODE_PROBLEMS = [
     "path": "1178/",
     "leetcodeUrl": "https://leetcode.com/problems/number-of-valid-words-for-each-puzzle/",
     "language": "Python",
-    "complexity": "O(W·L + P·2^7) time; O(W) space"
+    "complexity": "O(W·L + P·2^6) time; O(W) space"
+  },
+  {
+    "id": 1183,
+    "title": {
+      "zh": "矩阵中 1 的最大数量",
+      "en": "Maximum Number of Ones"
+    },
+    "desc": {
+      "zh": "按 (行 mod s, 列 mod s) 把格子分成 s² 类：任何 s×s 窗口里每类恰好一格，所以挑 k 个最大的类整类填 1。",
+      "en": "Group cells by (row mod s, column mod s): every s×s window holds exactly one cell of each class, so fill the k largest classes."
+    },
+    "difficulty": "hard",
+    "topics": [
+      {
+        "zh": "数学",
+        "en": "Math"
+      },
+      {
+        "zh": "贪心",
+        "en": "Greedy"
+      },
+      {
+        "zh": "排序",
+        "en": "Sorting"
+      }
+    ],
+    "path": "1183/",
+    "leetcodeUrl": "https://leetcode.com/problems/maximum-number-of-ones/",
+    "language": "Python",
+    "complexity": "O(s² log s) time for s = sideLength (sorting s² class sizes); O(s²) auxiliary space"
   },
   {
     "id": 1187,
