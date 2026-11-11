@@ -5,13 +5,13 @@
       "developer": "Claude Code",
       "edition": "claude-atlas-knowledge-search-20261111",
       "kind": "revised",
-      "sourceRevision": "9f4751c662486e688e44e2c84366112198bc5314",
+      "sourceRevision": "e49bf61ab597f95cdfe56b377f296709bb8bd474",
       "scope": {
-        "zh": "保留既有知识地图、实验与关系；改为通用知识地图，先载入小索引、详情按区域按需载入，搜索覆盖别名与说明；并入另外 66 个课程页的概念，关系在发布前逐条审核；并入六篇长文的 62 个章节概念与 74 条关系；搜索识别问句的多余词与“A 和 B 的区别”式比较，补充日常说法别名，并入《稀缺会搬家》的 15 个章节概念",
-        "en": "Retains the atlas, its experiments and relations; reframed as a general knowledge atlas that loads a small index first and region details on demand, with search over aliases and descriptions; adds concepts for 66 more lesson pages, with their relations reviewed before release; adds 62 chapter concepts and 74 relations from six long-form essays; search recognises question scaffolding and \"A vs B\" comparisons, with everyday aliases and the 15 chapter concepts of Scarcity Moves"
+        "zh": "保留既有知识地图、实验与关系；改为通用知识地图，先载入小索引、详情按区域按需载入，搜索覆盖别名与说明；并入另外 66 个课程页的概念，关系在发布前逐条审核；并入六篇长文的 62 个章节概念与 74 条关系；搜索识别问句的多余词与“A 和 B 的区别”式比较，补充日常说法别名，并入《稀缺会搬家》的 15 个章节概念；并入第二批五篇长文的 43 个章节概念与 40 条关系",
+        "en": "Retains the atlas, its experiments and relations; reframed as a general knowledge atlas that loads a small index first and region details on demand, with search over aliases and descriptions; adds concepts for 66 more lesson pages, with their relations reviewed before release; adds 62 chapter concepts and 74 relations from six long-form essays; search recognises question scaffolding and \"A vs B\" comparisons, with everyday aliases and the 15 chapter concepts of Scarcity Moves; adds 43 chapter concepts and 40 relations from five more long-form essays"
       },
       "originalAuthorship": "not asserted; prior contributions retained",
-      "previousSourceRevision": "b5cbc1f7d464f9e2d17e1f126b5f6afe55e6518e"
+      "previousSourceRevision": "9f4751c662486e688e44e2c84366112198bc5314"
     },
     "complex-numbers": {
       "developer": "Codex",
@@ -225,15 +225,15 @@
       "developer": "Claude Code",
       "edition": "claude-atlas-galaxy-knowledge-search-20261111",
       "kind": "revised",
-      "sourceRevision": "9f4751c662486e688e44e2c84366112198bc5314",
+      "sourceRevision": "e49bf61ab597f95cdfe56b377f296709bb8bd474",
       "scope": {
-        "zh": "保留既有三维知识星图；标题与说明改为通用知识地图；共享图谱并入另外 66 个课程页的概念，以及六篇长文与《稀缺会搬家》的章节概念",
-        "en": "Retains the 3D galaxy; title and descriptions reframed for the general knowledge atlas; its shared graph adds concepts for 66 more lesson pages and the chapter concepts of six long-form essays and of Scarcity Moves"
+        "zh": "保留既有三维知识星图；标题与说明改为通用知识地图；共享图谱并入另外 66 个课程页的概念，以及十一篇长文与《稀缺会搬家》的章节概念",
+        "en": "Retains the 3D galaxy; title and descriptions reframed for the general knowledge atlas; its shared graph adds concepts for 66 more lesson pages and the chapter concepts of eleven long-form essays and of Scarcity Moves"
       },
       "originalAuthorship": "existing atlas contributions retained; galaxy presentation developed with Codex",
       "path": "atlas/galaxy.html",
       "integrationRevision": "c3445f66a3e666acd557a04a7194c9568a383c35",
-      "previousSourceRevision": "b5cbc1f7d464f9e2d17e1f126b5f6afe55e6518e"
+      "previousSourceRevision": "9f4751c662486e688e44e2c84366112198bc5314"
     },
     "leetcode/42": {
       "developer": "Codex",
