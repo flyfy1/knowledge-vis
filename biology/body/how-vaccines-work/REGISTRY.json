@@ -1,0 +1,296 @@
+{
+  "slug": "how-vaccines-work",
+  "path": "biology/body/how-vaccines-work/",
+  "category": "biology",
+  "subtopic": "body",
+  "subtopicName": {
+    "zh": "人体与神经",
+    "en": "Body & Nervous System"
+  },
+  "stage": "senior",
+  "title": {
+    "zh": "疫苗是怎么保护人的",
+    "en": "How Vaccines Protect You and the People Around You"
+  },
+  "desc": {
+    "zh": "疫苗里没有杀病毒的药，它凭什么让你少生病，又凭什么护住打不了针的婴儿？七个可以拖动的模型：和病毒赛跑、第二针为什么又快又多、防感染与防重症、“95% 有效”的算法、病例里为什么多数打过疫苗、需要多少人接种、保护消退。",
+    "en": "A vaccine contains no drug that kills the virus, so how does it keep you from getting ill, and how does it protect a baby too young for the jab? Seven models you can push: the race against the virus, why the second dose is faster and bigger, infection versus severe disease, what \"95% effective\" means, why most cases can be vaccinated people, the coverage needed, and waning."
+  },
+  "tags": [
+    {
+      "zh": "疫苗",
+      "en": "Vaccines"
+    },
+    {
+      "zh": "免疫应答",
+      "en": "Immune Response"
+    },
+    {
+      "zh": "群体免疫",
+      "en": "Herd Immunity"
+    },
+    {
+      "zh": "长文",
+      "en": "Long-form Essay"
+    }
+  ],
+  "concepts": [
+    {
+      "id": "primary-immune-response",
+      "title": {
+        "zh": "初次免疫应答：和病毒赛跑",
+        "en": "Primary immune response: the race against the virus"
+      },
+      "desc": {
+        "zh": "病毒几个小时翻一倍，没见过它的 B 细胞从很低的起点扩增，一个多星期才追上；病已经生了。",
+        "en": "The virus doubles every few hours while naive B cells start from a tiny number and take over a week to catch up, by which time the illness has happened."
+      },
+      "aliases": {
+        "zh": [
+          "初次免疫应答",
+          "初次应答",
+          "B 细胞",
+          "抗体多久产生",
+          "第一次感染为什么会病",
+          "抗体要几天才有",
+          "免疫系统怎么打病毒"
+        ],
+        "en": [
+          "primary immune response",
+          "primary response",
+          "B cells",
+          "how long until antibodies appear",
+          "why do you get sick the first time",
+          "how the immune system fights a virus"
+        ]
+      },
+      "anchor": "#ch1",
+      "relatedPages": [
+        "body-in-balance"
+      ]
+    },
+    {
+      "id": "secondary-response-memory-cells",
+      "title": {
+        "zh": "二次免疫应答与记忆细胞",
+        "en": "Secondary response and memory cells"
+      },
+      "desc": {
+        "zh": "疫苗让免疫系统先打一场没有危险的仗，留下记忆细胞；第二次应答起点高，所以又快又多。抗体会消退，记忆细胞撑得久得多。",
+        "en": "A vaccine runs a safe first fight that leaves memory cells; the second response starts higher, so it is faster and larger. Antibodies fade; memory lasts much longer."
+      },
+      "aliases": {
+        "zh": [
+          "接种疫苗",
+          "为什么要打疫苗",
+          "打疫苗",
+          "二次免疫应答",
+          "记忆细胞",
+          "免疫记忆",
+          "加强针为什么有用",
+          "为什么要打两针",
+          "疫苗原理",
+          "疫苗怎么起作用",
+          "抗体测不到了还有免疫吗"
+        ],
+        "en": [
+          "why get vaccinated",
+          "vaccination",
+          "vaccines",
+          "secondary immune response",
+          "memory cells",
+          "immunological memory",
+          "why booster shots work",
+          "why two doses",
+          "how vaccines work",
+          "no antibodies but still immune"
+        ]
+      },
+      "anchor": "#ch2"
+    },
+    {
+      "id": "infection-vs-severe-disease",
+      "title": {
+        "zh": "防感染与防重症",
+        "en": "Protection against infection vs severe disease"
+      },
+      "desc": {
+        "zh": "抗体在门口拦，几个月就变薄；记忆细胞在里面追。所以打过疫苗的人仍可能被感染，但病毒涨得低、病得轻得多。",
+        "en": "Antibodies block at the door and thin out within months; memory cells chase from inside. So vaccinated people can still be infected, but the virus peaks lower and the illness is much milder."
+      },
+      "aliases": {
+        "zh": [
+          "突破性感染",
+          "打了疫苗还会感染",
+          "打了疫苗为什么还生病",
+          "防重症",
+          "防感染",
+          "抗体消退",
+          "疫苗保护多久"
+        ],
+        "en": [
+          "breakthrough infection",
+          "vaccinated but still infected",
+          "why do vaccinated people get sick",
+          "protection against severe disease",
+          "antibody waning",
+          "how long does vaccine protection last"
+        ]
+      },
+      "anchor": "#ch3"
+    },
+    {
+      "id": "vaccine-efficacy-relative-risk",
+      "title": {
+        "zh": "疫苗效力：相对风险降低",
+        "en": "Vaccine efficacy as relative risk reduction"
+      },
+      "desc": {
+        "zh": "效力 = 1 − 两组发病风险之比，用随机对照试验的病例数算出；它不是“打了的人里有多少会生病”，也不告诉你绝对风险和不确定性。",
+        "en": "Efficacy = 1 − the ratio of the two arms' risks in a randomized trial. It is not the share of vaccinated people who fall ill, and it says nothing by itself about absolute risk or uncertainty."
+      },
+      "aliases": {
+        "zh": [
+          "疫苗效力",
+          "95% 有效是什么意思",
+          "保护率",
+          "相对风险降低",
+          "需要接种人数",
+          "随机对照试验",
+          "置信区间"
+        ],
+        "en": [
+          "vaccine efficacy",
+          "what does 95% effective mean",
+          "relative risk reduction",
+          "number needed to vaccinate",
+          "randomized controlled trial",
+          "confidence interval",
+          "efficacy vs effectiveness"
+        ]
+      },
+      "anchor": "#ch4",
+      "relatedPages": [
+        "numbers-lie"
+      ]
+    },
+    {
+      "id": "vaccinated-share-of-cases",
+      "title": {
+        "zh": "病例里打过疫苗的比例",
+        "en": "The vaccinated share of cases"
+      },
+      "desc": {
+        "zh": "接种率越高，病例里打过疫苗的人越多，哪怕疫苗很有效；接种率超过 1 ÷ (2 − 效力) 时，病例里就以打过疫苗的人居多。",
+        "en": "The higher the coverage, the more cases are vaccinated people, even with an effective vaccine; past coverage 1 ÷ (2 − efficacy) they are the majority."
+      },
+      "aliases": {
+        "zh": [
+          "病人大多打过疫苗",
+          "病例里多数打过疫苗",
+          "疫苗没用吗",
+          "基础比率",
+          "接种者病例比例"
+        ],
+        "en": [
+          "most cases are vaccinated",
+          "vaccinated share of cases",
+          "does this mean the vaccine doesn't work",
+          "base rate fallacy vaccines"
+        ]
+      },
+      "anchor": "#ch5",
+      "relatedPages": [
+        "numbers-lie",
+        "bayes-diagnostics"
+      ]
+    },
+    {
+      "id": "vaccination-coverage-needed",
+      "title": {
+        "zh": "需要的接种率：阈值 ÷ 效力",
+        "en": "Coverage needed: threshold ÷ efficacy"
+      },
+      "desc": {
+        "zh": "疫苗不完美时，挡住流行需要的接种率是 (1 − 1/R₀) ÷ 效力；超过 100% 时光靠这种疫苗挡不住。接种率越接近这个线，打不了针的婴儿越安全。",
+        "en": "With an imperfect vaccine the coverage needed to stop spread is (1 − 1/R₀) ÷ efficacy; above 100% this vaccine alone cannot do it. The closer coverage gets to the line, the safer the baby who cannot be vaccinated."
+      },
+      "aliases": {
+        "zh": [
+          "需要多少人接种",
+          "接种率要多高",
+          "间接保护",
+          "保护婴儿",
+          "打不了疫苗的人",
+          "麻疹接种率为什么要 95%",
+          "临界接种率"
+        ],
+        "en": [
+          "critical vaccination coverage",
+          "how many people need to be vaccinated to stop spread",
+          "indirect protection",
+          "protecting babies",
+          "people who can't be vaccinated",
+          "measles coverage 95%"
+        ]
+      },
+      "anchor": "#ch6",
+      "relatedPages": [
+        "body-in-balance",
+        "public-health"
+      ]
+    },
+    {
+      "id": "waning-immunity-boosters",
+      "title": {
+        "zh": "保护消退与加强针",
+        "en": "Waning protection and boosters"
+      },
+      "desc": {
+        "zh": "保护按半衰期消退，每个病例能传给的人数慢慢爬回 1 以上；回到 1 要多久按对数取决于余量，加强间隔要赶在它前面。",
+        "en": "As protection wanes, the number each case infects creeps back above 1; how long that takes depends logarithmically on the margin, and boosters must come before it."
+      },
+      "aliases": {
+        "zh": [
+          "免疫消退",
+          "保护消退",
+          "加强针多久打一次",
+          "为什么要定期加强",
+          "疫苗会失效吗"
+        ],
+        "en": [
+          "waning immunity",
+          "waning protection",
+          "how often do you need a booster",
+          "why boosters",
+          "do vaccines wear off"
+        ]
+      },
+      "anchor": "#ch7"
+    },
+    {
+      "id": "reading-vaccine-numbers",
+      "title": {
+        "zh": "读懂疫苗数字的三个问题",
+        "en": "Three questions for any vaccine number"
+      },
+      "desc": {
+        "zh": "防的是什么、什么时候测的？跟谁比、分母是多少？够不够挡住传播？",
+        "en": "Protection against what, measured when? Compared with whom, out of how many? Enough to stop spread?"
+      },
+      "aliases": {
+        "zh": [
+          "怎么看疫苗数据",
+          "疫苗新闻怎么读",
+          "疫苗有效吗"
+        ],
+        "en": [
+          "how to read vaccine statistics",
+          "are vaccines effective",
+          "vaccine numbers in the news"
+        ]
+      },
+      "anchor": "#ch8"
+    }
+  ]
+}
