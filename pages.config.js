@@ -146,7 +146,10 @@ window.KNOWLEDGE_FEATURED = [
  * 只有中文的长文在条目上写 languages: ["zh"]，英文模式下卡片会注明。 */
 window.KNOWLEDGE_ESSAYS = [
   "numbers-lie", "body-in-balance", "inside-a-phone", "where-money-comes-from",
-  "same-votes-different-winner", "switches-that-compute", "scarcity-moves"
+  "same-votes-different-winner", "switches-that-compute",
+  "what-is-a-black-hole", "how-vaccines-work", "why-the-planet-warms", "why-the-sky-is-blue",
+  "where-a-mortgage-payment-goes",
+  "scarcity-moves"
 ];
 
 window.KNOWLEDGE_PAGES = [
@@ -275,6 +278,56 @@ window.KNOWLEDGE_PAGES = [
     },
     tags: [{ zh: "逻辑门", en: "Logic Gates" }, { zh: "二进制", en: "Binary" }, { zh: "加法器", en: "Adder" }, { zh: "触发器与时钟", en: "Flip-Flops & Clocks" }, { zh: "计算机组成", en: "Computer Architecture" }, { zh: "浮点数", en: "Floating Point" }],
     category: "computing", subtopic: "systems", stage: "senior", status: "live", path: "computing/systems/switches-that-compute/"
+  },
+  {
+    slug: "what-is-a-black-hole",
+    title: { zh: "黑洞到底是什么", en: "What Is a Black Hole, Really?" },
+    desc: {
+      zh: "把一团质量压进 2GM/c² 以内会怎样？九个可以拖动的模型：逃逸速度追上光速、黑洞不会“吸”（除非你进到 3 r_s 以内）、相对论轨道、潮汐撕裂、时间变慢、比视界大的影子，以及恒星轨道和引力波这些证据。",
+      en: "What happens when a mass is squeezed inside 2GM/c²? Nine models you can push: escape speed reaching light speed, why black holes don't suck (until you are within 3 r_s), relativistic orbits, tidal stretching, slowed clocks, a shadow bigger than the horizon, and the evidence from stellar orbits and gravitational waves."
+    },
+    tags: [{ zh: "黑洞", en: "Black Holes" }, { zh: "广义相对论", en: "General Relativity" }, { zh: "引力", en: "Gravity" }, { zh: "长文", en: "Long-form Essay" }],
+    category: "earth", subtopic: "astronomy", stage: "senior", status: "live", path: "earth/astronomy/what-is-a-black-hole/"
+  },
+  {
+    slug: "how-vaccines-work",
+    title: { zh: "疫苗是怎么保护人的", en: "How Vaccines Protect You and the People Around You" },
+    desc: {
+      zh: "疫苗里没有杀病毒的药，它凭什么让你少生病，又凭什么护住打不了针的婴儿？七个可以拖动的模型：和病毒赛跑、第二针为什么又快又多、防感染与防重症、“95% 有效”的算法、病例里为什么多数打过疫苗、需要多少人接种、保护消退。",
+      en: "A vaccine contains no drug that kills the virus, so how does it keep you from getting ill, and how does it protect a baby too young for the jab? Seven models you can push: the race against the virus, why the second dose is faster and bigger, infection versus severe disease, what \"95% effective\" means, why most cases can be vaccinated people, the coverage needed, and waning."
+    },
+    tags: [{ zh: "疫苗", en: "Vaccines" }, { zh: "免疫应答", en: "Immune Response" }, { zh: "群体免疫", en: "Herd Immunity" }, { zh: "长文", en: "Long-form Essay" }],
+    category: "biology", subtopic: "body", stage: "senior", status: "live", path: "biology/body/how-vaccines-work/"
+  },
+  {
+    slug: "why-the-planet-warms",
+    title: { zh: "一点点二氧化碳 · 地球为什么会变暖", en: "A Little CO₂ · Why the Planet Warms" },
+    desc: {
+      zh: "空气里每一万个分子只有四个多是二氧化碳，它怎么能让整个地球变暖？七个可以拖动的模型：能量收支、一层毯子、越高越冷、“已经饱和”、反馈、敏感度区间和海洋的拖延。只讲物理，不做预测。",
+      en: "Only about four in every ten thousand air molecules are CO₂, so how can it warm a whole planet? Seven models you can push: the energy budget, one blanket layer, emitting from higher up, \"already saturated\", feedbacks, the sensitivity range and the ocean's lag. Physics only, no projections."
+    },
+    tags: [{ zh: "温室效应", en: "Greenhouse Effect" }, { zh: "能量平衡", en: "Energy Balance" }, { zh: "气候敏感度", en: "Climate Sensitivity" }, { zh: "长文", en: "Long-form Essay" }],
+    category: "earth", subtopic: "climate", stage: "senior", status: "live", path: "earth/climate/why-the-planet-warms/"
+  },
+  {
+    slug: "why-the-sky-is-blue",
+    title: { zh: "天为什么是蓝的", en: "Why Is the Sky Blue?" },
+    desc: {
+      zh: "天是蓝的，落日是红的，云是白的，火星的天是黄褐的。九个可以拖动的模型：光子穿过空气、1/λ⁴、天空光的光谱、眼睛为什么不认紫、落日、整片天空、从分子到云滴的颗粒、火星的天空，以及多次散射和臭氧。",
+      en: "The sky is blue, sunsets are red, clouds are white and the Martian sky is butterscotch. Nine models you can push: photons crossing the air, 1/λ⁴, the skylight spectrum, why the eye doesn't see violet, sunset, the whole sky, particles from molecules to cloud drops, the sky of Mars, and multiple scattering and ozone."
+    },
+    tags: [{ zh: "瑞利散射", en: "Rayleigh Scattering" }, { zh: "米氏散射", en: "Mie Scattering" }, { zh: "色度学", en: "Colorimetry" }, { zh: "大气光学", en: "Atmospheric Optics" }, { zh: "长文", en: "Long-form Essay" }],
+    category: "physics", subtopic: "optics", stage: "senior", status: "live", path: "physics/optics/why-the-sky-is-blue/"
+  },
+  {
+    slug: "where-a-mortgage-payment-goes",
+    title: { zh: "每个月的房贷，钱到底还到哪儿去了", en: "Where Does Your Mortgage Payment Actually Go?" },
+    desc: {
+      zh: "一笔房贷每个月的钱，一部分付利息，一部分减本金。八个可以拖动的模型：名义利率与实际利率、月供公式、还款表、等额本金与等额本息、提前还款、利率变动、分期手续费的真实年利率、通胀与机会成本。",
+      en: "Each month's mortgage payment splits into interest and principal. Eight models you can push: nominal and effective rates, the payment formula, the amortisation schedule, equal-principal versus equal-payment, prepaying, a rate change, the true annual rate of a flat-fee instalment plan, and inflation and opportunity cost."
+    },
+    tags: [{ zh: "房贷", en: "Mortgages" }, { zh: "利率", en: "Interest rates" }, { zh: "复利", en: "Compound interest" }, { zh: "年化利率", en: "APR" }, { zh: "长文", en: "Long-form essay" }],
+    category: "economics", subtopic: "money", stage: "senior", status: "live", path: "economics/money/where-a-mortgage-payment-goes/"
   },
   {
     slug: "fourier",

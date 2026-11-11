@@ -26,9 +26,12 @@ if (JSON.stringify(Array.from(w.KNOWLEDGE_FEATURED)) !== JSON.stringify(expected
 const slugs = new Set(w.KNOWLEDGE_PAGES.map((p) => p.slug));
 for (const s of w.KNOWLEDGE_FEATURED) if (!slugs.has(s)) fail(`featured slug not registered: ${s}`);
 
-// Long reads (2026-11-11): the six essays of the batch plus scarcity-moves, which set their standard.
+// Long reads (2026-11-11): the six essays of the batch, the five of the second batch, then scarcity-moves,
+// which set their standard.
 const expectedEssays = ['numbers-lie', 'body-in-balance', 'inside-a-phone', 'where-money-comes-from',
-  'same-votes-different-winner', 'switches-that-compute', 'scarcity-moves'];
+  'same-votes-different-winner', 'switches-that-compute',
+  'what-is-a-black-hole', 'how-vaccines-work', 'why-the-planet-warms', 'why-the-sky-is-blue',
+  'where-a-mortgage-payment-goes', 'scarcity-moves'];
 if (JSON.stringify(Array.from(w.KNOWLEDGE_ESSAYS || [])) !== JSON.stringify(expectedEssays)) {
   fail('KNOWLEDGE_ESSAYS differs from the decided list: ' + JSON.stringify(w.KNOWLEDGE_ESSAYS));
 }
