@@ -5,7 +5,7 @@ chapter, and each chapter has a model the reader can push. Lessons are different
 `#stepN` views on one concept. The homepage lists essays in their own section, "长文 · 一篇讲透一个领域 /
 Long Reads · One Essay, One Field" (specs/index-pagination.md § Home).
 
-The first essay was `demos/scarcity-moves/`. Six more were added on 2026-11-11; their sections are below.
+The first essay was `demos/scarcity-moves/`. Six more were added on 2026-11-11 and five more later the same day; their sections are below.
 
 ## Standard
 
@@ -86,8 +86,13 @@ types ("为什么要打疫苗", "how does my phone know where I am"), not only t
 | where-money-comes-from | economics/money/where-money-comes-from/ | 9 (`#ch1…#ch9`) | society | `ESSAY_BASE_URL` |
 | same-votes-different-winner | society/civics/same-votes-different-winner/ | 11 concepts (`#ch1…#ch10`) | society | `ESSAY_BASE_URL` |
 | switches-that-compute | computing/systems/switches-that-compute/ | 11 (`#ch1…#ch11`) | computing | `SWITCHES_BASE_URL` |
+| what-is-a-black-hole | earth/astronomy/what-is-a-black-hole/ | 10 (`#ch1…#ch10`) | earth | `ESSAY_BASE_URL` |
+| how-vaccines-work | biology/body/how-vaccines-work/ | 8 (`#ch1…#ch8`) | life | `ESSAY_BASE_URL` |
+| why-the-planet-warms | earth/climate/why-the-planet-warms/ | 7 concepts in 8 chapters (`#ch1…#ch7`) | earth | `ESSAY_BASE_URL` |
+| why-the-sky-is-blue | physics/optics/why-the-sky-is-blue/ | 9 concepts in 10 chapters (`#ch1…#ch9`) | waves | `ESSAY_BASE_URL` |
+| where-a-mortgage-payment-goes | economics/money/where-a-mortgage-payment-goes/ | 9 (`#ch1…#ch9`) | society | `ESSAY_BASE_URL` |
 
-All six were built by Claude Code (claude-opus-5-5) on 2026-11-11. The English copy was drafted by Claude
+All eleven were built by Claude Code (claude-opus-5-5) on 2026-11-11. The English copy was drafted by Claude
 Code (claude-haiku-5-5). A separate Claude Code session of the same model reviewed each essay and revised
 it (no human or cross-model review yet). Each BRIEF.md records what was and was not checked.
 
@@ -102,7 +107,7 @@ long-tail averages, Goodhart's law. Atlas edges: 3 between chapters, 7 to other 
 
 Homeostasis and dosing: feedback and set points, half-life and plateau, zero-order alcohol clearance,
 glucose feedback, fever, the therapeutic window, cardiac output, antibiotic selection, herd immunity. It
-answers "半衰期", "疫苗", "群体免疫" and "为什么要按时吃药". Atlas edges: 8 between chapters, 5 to other pages.
+answers "半衰期", "群体免疫" and "为什么要按时吃药". Atlas edges: 8 between chapters, 5 to other pages.
 
 ### inside-a-phone: 一部手机里的十个道理
 
@@ -129,6 +134,39 @@ From relays to a 16-byte stored-program machine: gates, NAND universality, binar
 complement, latches and clocks, and floating-point rounding (0.1 + 0.2). Every circuit is simulated gate by
 gate. Atlas edges: 11 between chapters, 3 to other pages. Known gap (BRIEF): at 320 px the chapter 1 SVG
 labels shrink to about 8 px.
+
+### what-is-a-black-hole: 黑洞到底是什么
+
+A mass inside r_s = 2GM/c²: escape speed, size and "density", why black holes don't suck (until you are within
+3 r_s), relativistic orbits (ISCO, photon sphere), tides, time dilation, the shadow, weighing Sgr A* with S2,
+the merger chirp, and what the page does not cover. Answers 黑洞, 史瓦西半径, black hole (#ch1). Atlas edges:
+3 between chapters, 3 to other pages (gravity-orbits, relativity, gravitational-lensing).
+
+### how-vaccines-work: 疫苗是怎么保护人的
+
+One immune model for the race, the second dose and meeting the virus again; then efficacy as relative risk,
+the vaccinated share of cases, coverage needed (threshold ÷ efficacy) and waning. It now owns 疫苗, 打疫苗,
+为什么要打疫苗, vaccines and vaccination (#ch2); 群体免疫 / herd immunity stay on body-in-balance #ch9. Atlas
+edges: 4 between chapters, 4 to other pages (numbers-lie #c6/#c7, public-health R₀, body-in-balance #ch9).
+
+### why-the-planet-warms: 一点点二氧化碳 · 地球为什么会变暖
+
+Energy balance, one grey layer, emission height, "already saturated" and logarithmic forcing, feedbacks, the
+sensitivity range and the ocean's lag; physics only, no projections. Answers 温室效应 (#ch2), 气候敏感度 (#ch5),
+二氧化碳饱和 (#ch4). Atlas edges: 4 between chapters, 5 to other pages.
+
+### why-the-sky-is-blue: 天为什么是蓝的
+
+Rayleigh scattering and 1/λ⁴, the skylight spectrum, why not violet, red sunsets, the sky gradient, Mie
+scattering and white clouds, the Martian sky, multiple scattering and ozone. Atlas edges: 6 between
+chapters, 2 to other pages (blackbody-radiation, interference).
+
+### where-a-mortgage-payment-goes: 每个月的房贷，钱到底还到哪儿去了
+
+One rule, this month's interest = monthly rate × what is still owed, applied to the payment formula, the
+schedule, equal-principal vs equal-payment, prepaying, rate resets, flat-fee instalments (APR/IRR) and
+inflation. It now owns the mortgage words (房贷, 等额本息, 提前还款, 月供, mortgage, amortization), which left
+where-money-comes-from #ch7. Atlas edges: 5 between chapters, 4 to other pages.
 
 ### scarcity-moves: 稀缺会搬家
 
