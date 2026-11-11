@@ -1,0 +1,79 @@
+{
+  "slug": "why-the-planet-warms",
+  "path": "earth/climate/why-the-planet-warms/",
+  "category": "earth",
+  "categoryName": { "zh": "地球与太空", "en": "Earth & Space" },
+  "subtopic": "climate",
+  "subtopicName": { "zh": "大气与气候", "en": "Atmosphere & Climate" },
+  "stage": "senior",
+  "title": { "zh": "一点点二氧化碳 · 地球为什么会变暖", "en": "A Little CO₂ · Why the Planet Warms" },
+  "desc": {
+    "zh": "空气里每一万个分子只有四个多是二氧化碳，它怎么能让整个地球变暖？七个可以拖动的模型：能量收支、一层毯子、越高越冷、“已经饱和”、反馈、敏感度区间和海洋的拖延。只讲物理，不做预测。",
+    "en": "Only about four in every ten thousand air molecules are CO₂, so how can it warm a whole planet? Seven models you can push: the energy budget, one blanket layer, emitting from higher up, \"already saturated\", feedbacks, the sensitivity range and the ocean's lag. Physics only, no projections."
+  },
+  "tags": [
+    { "zh": "温室效应", "en": "Greenhouse Effect" },
+    { "zh": "能量平衡", "en": "Energy Balance" },
+    { "zh": "气候敏感度", "en": "Climate Sensitivity" },
+    { "zh": "长文", "en": "Long-form Essay" }
+  ],
+  "concepts": [
+    {
+      "id": "planetary-energy-balance",
+      "title": { "zh": "行星能量平衡与有效温度", "en": "Planetary energy balance and effective temperature" },
+      "desc": { "zh": "吸收的阳光 S(1−α)/4 要等于放出的红外 σT⁴；没有大气的地球会停在约 255 K，比观测的 288 K 冷 33 K。", "en": "Absorbed sunlight S(1−α)/4 must equal emitted infrared σT⁴; an airless Earth would settle near 255 K, 33 K colder than the observed 288 K." },
+      "aliases": { "zh": ["能量收支", "辐射平衡", "有效温度", "没有大气地球多冷", "反照率", "太阳常数", "斯特藩-玻尔兹曼定律"], "en": ["energy budget", "radiative balance", "effective temperature", "how cold would Earth be without air", "albedo", "solar constant", "Stefan-Boltzmann law"] },
+      "anchor": "#ch1",
+      "relatedPages": ["climate-energy", "blackbody-radiation", "seasons-orbit"]
+    },
+    {
+      "id": "greenhouse-one-layer",
+      "title": { "zh": "温室效应：一层只挡红外的大气", "en": "The greenhouse effect as one infrared-absorbing layer" },
+      "desc": { "zh": "空气层让阳光通过、吸收地面红外并向下退回一半，地面要放出更多热才能平衡；吸收比例 0.76 时地面正好 288 K。", "en": "A layer that passes sunlight but absorbs ground infrared sends half back down, so the ground must run warmer; absorbing 76 % gives exactly 288 K." },
+      "aliases": { "zh": ["温室效应", "温室气体", "大气逆辐射", "温室效应是什么", "为什么有大气地球更暖", "单层大气模型"], "en": ["greenhouse effect", "greenhouse gases", "back radiation", "what is the greenhouse effect", "why does an atmosphere warm the surface", "one-layer atmosphere model"] },
+      "anchor": "#ch2",
+      "relatedPages": ["climate-energy"]
+    },
+    {
+      "id": "emission-height",
+      "title": { "zh": "排放高度：越高越冷，从高处散热", "en": "Emission height: cooler air higher up radiates to space" },
+      "desc": { "zh": "地球向太空散热的地方在高空，高空总是那个约 255 K；加厚大气把排放层抬高，下面就要更暖。", "en": "Earth sheds heat from high in the air, which always sits near 255 K; a thicker atmosphere lifts that level, and everything below must warm." },
+      "aliases": { "zh": ["排放高度", "有效辐射层", "多层大气模型", "递减率", "为什么山顶更冷", "加二氧化碳为什么变暖"], "en": ["emission height", "effective radiating level", "multi-layer atmosphere", "lapse rate", "why is it colder higher up", "why does more CO2 warm the surface"] },
+      "anchor": "#ch3",
+      "relatedPages": ["atmospheric-circulation"]
+    },
+    {
+      "id": "co2-saturation-log-forcing",
+      "title": { "zh": "“已经饱和”与对数强迫", "en": "\"Already saturated\" and logarithmic forcing" },
+      "desc": { "zh": "15 微米吸收带的中心早已不透明，但两侧的坡随浓度变黑，所以每翻一倍挡住的红外差不多一样多：约 3.7–4.7 W/m²。", "en": "The centre of the 15 µm band is long opaque, but its sloping wings keep darkening, so every doubling blocks about the same amount: roughly 3.7–4.7 W/m²." },
+      "aliases": { "zh": ["二氧化碳饱和", "吸收带饱和", "辐射强迫", "二氧化碳加倍", "对数关系", "二氧化碳不是已经饱和了吗", "15微米吸收带"], "en": ["CO2 saturation", "band saturation", "radiative forcing", "CO2 doubling", "logarithmic forcing", "isn't CO2 already saturated", "15 micron band"] },
+      "anchor": "#ch4",
+      "relatedPages": ["exponents-logarithms", "carbon-cycle"]
+    },
+    {
+      "id": "climate-feedbacks",
+      "title": { "zh": "气候反馈：一度变三度", "en": "Climate feedbacks: one degree becomes three" },
+      "desc": { "zh": "加倍二氧化碳本身只带来约 1.2 K；水汽、冰雪和云把升温一轮一轮放大，合起来到约 3.4 K。", "en": "Doubling CO₂ alone gives about 1.2 K; water vapour, ice and clouds amplify it round by round to about 3.4 K." },
+      "aliases": { "zh": ["气候反馈", "水汽反馈", "冰雪反照率反馈", "云反馈", "正反馈", "普朗克反馈", "平衡气候敏感度"], "en": ["climate feedback", "water vapour feedback", "ice-albedo feedback", "cloud feedback", "positive feedback", "Planck feedback", "equilibrium climate sensitivity"] },
+      "anchor": "#ch5",
+      "relatedPages": ["climate-feedback"]
+    },
+    {
+      "id": "sensitivity-uncertainty",
+      "title": { "zh": "为什么敏感度的区间这么宽", "en": "Why the climate sensitivity range is so wide" },
+      "desc": { "zh": "敏感度 = 无反馈升温 ÷ (1 − f)。f 的不确定是对称的，除出来的敏感度却拖着一条长长的高尾巴。", "en": "Sensitivity = no-feedback warming ÷ (1 − f). A symmetric uncertainty in f becomes a long high tail in sensitivity." },
+      "aliases": { "zh": ["气候敏感度区间", "敏感度不确定性", "长尾分布", "为什么预测范围这么大", "气候敏感度是多少"], "en": ["climate sensitivity range", "sensitivity uncertainty", "fat tail", "why is the range so wide", "how sensitive is the climate"] },
+      "anchor": "#ch6",
+      "relatedPages": ["climate-feedback"]
+    },
+    {
+      "id": "ocean-lag",
+      "title": { "zh": "海洋的拖延与时间常数", "en": "Ocean lag and the time constant" },
+      "desc": { "zh": "海洋像一锅需要慢慢烧开的水：二氧化碳加倍那年只走完一部分升温，剩下的要几十到几百年，取决于参与的水有多深。", "en": "The ocean is a slow pot to heat: when CO₂ has doubled only part of the warming has arrived, and the rest takes decades to centuries depending on how deep the mixed water goes." },
+      "aliases": { "zh": ["海洋热惯性", "气候滞后", "时间常数", "瞬时气候响应", "为什么停止排放还会变暖", "海洋吸热"], "en": ["ocean heat inertia", "climate lag", "time constant", "transient climate response", "warming in the pipeline", "ocean heat uptake"] },
+      "anchor": "#ch7",
+      "relatedPages": ["carbon-cycle", "climate-energy"]
+    }
+  ],
+  "relatedPages": ["climate-energy", "climate-feedback", "carbon-cycle", "atmospheric-circulation", "blackbody-radiation", "exponents-logarithms", "seasons-orbit"]
+}
