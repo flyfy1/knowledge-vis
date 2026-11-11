@@ -71,6 +71,8 @@ HOME_TEST_URL=http://127.0.0.1:18871/ node tests/home-concept-search.cjs   # 浏
   - 点遍复选框、单选按钮和普通按钮。
 
   很多重叠只在某些参数组合下才出现。它报告文字框相交和文字伸出画布，但看不出文字压在线条上，最后仍要看截图。
+
+  只在屏幕上才画的画布（IntersectionObserver 门控的长文、`demos/scarcity-moves/`）会被自动识别：工具把它们逐块滚进视口，再按控件就近滚动、等重绘后扫描，输出里会写明哪些运行进入了这种模式。普通页面的行为和状态数不变。细则见 [specs/canvas-label-guard.md](specs/canvas-label-guard.md)。
 - 新页面的画布标注要自己排好版。[`canvas-label-guard.js`](canvas-label-guard.js) 只是老页面的补救手段，见 [specs/canvas-label-guard.md](specs/canvas-label-guard.md)。
 
 ## 工作区卫生

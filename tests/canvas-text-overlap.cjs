@@ -9,6 +9,13 @@
 // the same section over a 6×6 grid, toggles checkboxes, clicks radios and every visible button. Sliders fire
 // both input and change (some pages keep a trail on change). Most collisions in the 2026-11-09 follow-ups
 // appeared only at particular slider values or slider pairs.
+// Lazily drawn canvases (pages that draw a canvas only while it is on screen, e.g. IntersectionObserver-gated
+// essays and demos/scarcity-moves/): after loading, every off-screen canvas that stayed quiet while the page sat
+// still is scrolled into view once; if its text log changes, the page is "lazy" and the run switches to a
+// scroll-aware mode for that page/width/language: each canvas that redrew is scanned in view, every control is
+// swept with its nearest canvas scrolled to the middle of the screen and a short wait for the redraw, and scans
+// read only canvases on screen (an off-screen canvas keeps its last log, which would otherwise repeat under every
+// state). Pages with no lazy canvas take exactly the old path, with the same states.
 // Needs Playwright on NODE_PATH. Run browser tests one at a time.
 const { chromium } = require('playwright');
 const base = (process.env.CANVAS_BASE_URL || 'http://127.0.0.1:18871').replace(/\/$/, '') + '/';
@@ -20,8 +27,9 @@ const pages = named.length ? named : [
 const MIN = 2; // px of overlap in both directions before two labels count as colliding
 
 function record() {
-  const logs = new WeakMap(), all = new Set();
-  const reset = c => { logs.set(c, []); all.add(c); };
+  const logs = new WeakMap(), all = new Set(), draws = new WeakMap();
+  const bump = c => draws.set(c, (draws.get(c) || 0) + 1); // text drawn or log reset: lets the runner see a redraw
+  const reset = c => { logs.set(c, []); all.add(c); bump(c); };
   const P = CanvasRenderingContext2D.prototype;
   for (const fn of ['fillText', 'strokeText']) {
     const orig = P[fn];
@@ -35,7 +43,7 @@ function record() {
         const pts = xs.flatMap(px => ys.map(py => [(T.a * px + T.c * py + T.e) * k, (T.b * px + T.d * py + T.f) * k]));
         const box = { text: s, x0: Math.min(...pts.map(p => p[0])), x1: Math.max(...pts.map(p => p[0])), y0: Math.min(...pts.map(p => p[1])), y1: Math.max(...pts.map(p => p[1])) };
         if (!logs.has(c)) reset(c);
-        logs.get(c).push(box);
+        logs.get(c).push(box); bump(c);
       }
       return orig.call(this, text, x, y, ...rest);
     };
@@ -51,7 +59,24 @@ function record() {
   const full = (ctx, x, y, w, h) => { const T = ctx.getTransform(), cw = ctx.canvas.width, ch = ctx.canvas.height; return x * T.a + T.e <= 4 && y * T.d + T.f <= 4 && (x + w) * T.a + T.e >= cw * 0.97 && (y + h) * T.d + T.f >= ch * 0.97; };
   P.clearRect = function (...a) { if (full(this, ...a)) reset(this.canvas); return clear.apply(this, a); };
   P.fillRect = function (...a) { if (full(this, ...a)) reset(this.canvas); return fill.apply(this, a); };
-  window.__canvasText = () => [...all].filter(c => c.isConnected).map(c => { const r = c.getBoundingClientRect(); return { id: c.id || c.closest('[id]')?.id || '?', w: r.width, h: r.height, boxes: logs.get(c) || [] }; });
+  const onScreen = r => r.width > 0 && r.height > 0 && r.bottom > 0 && r.top < innerHeight && r.right > 0 && r.left < innerWidth;
+  // visibleOnly: only canvases intersecting the viewport (scroll-aware mode).
+  window.__canvasText = (visibleOnly = false) => [...all].filter(c => c.isConnected && (!visibleOnly || onScreen(c.getBoundingClientRect()))).map(c => { const r = c.getBoundingClientRect(); return { id: c.id || c.closest('[id]')?.id || '?', w: r.width, h: r.height, boxes: logs.get(c) || [] }; });
+  // Every canvas on the page (drawn or not) with its redraw counter and whether it is on screen now.
+  window.__canvasDraws = () => [...document.querySelectorAll('canvas')].map((c, i) => ({ i, n: draws.get(c) || 0, on: onScreen(c.getBoundingClientRect()), shown: c.getClientRects().length > 0 }));
+  window.__canvasShow = i => document.querySelectorAll('canvas')[i].scrollIntoView({ block: 'center', behavior: 'instant' });
+  // Scroll the canvas nearest to a control (same section first, else the page) to the middle of the screen.
+  window.__canvasNear = el => {
+    if (typeof el === 'string') el = document.getElementById(el);
+    if (!el) return;
+    const shown = c => c.getClientRects().length > 0, y = e => e.getBoundingClientRect().top + scrollY;
+    const box = el.closest('section,article,figure');
+    let cs = box ? [...box.querySelectorAll('canvas')].filter(shown) : [];
+    if (!cs.length) cs = [...document.querySelectorAll('canvas')].filter(shown);
+    if (!cs.length) return;
+    const c = cs.reduce((a, b) => Math.abs(y(b) - y(el)) < Math.abs(y(a) - y(el)) ? b : a);
+    c.scrollIntoView({ block: 'center', behavior: 'instant' });
+  };
 }
 
 // Boxes are in canvas-local CSS px, so the canvas is [0, w] × [0, h]. Only text that is partly visible counts:
@@ -74,7 +99,7 @@ function collisions(boxes) {
 
 async function main() {
   const browser = await chromium.launch(), failures = [];
-  let checked = 0;
+  let checked = 0; const lazyRuns = [];
   for (const path of pages) for (const width of [1280, 390, 320]) for (const lang of ['zh', 'en']) {
     const page = await browser.newPage({ viewport: { width, height: 900 } });
     const errors = [];
@@ -84,23 +109,41 @@ async function main() {
     const toggle = page.locator('[data-lang=' + lang + ']');
     if (await toggle.count()) await toggle.first().click(); else if (lang === 'en') { await page.close(); continue; } // single-language page: check once
     await page.waitForTimeout(300);
+    let lazy = false;
+    const frames = () => page.evaluate(() => new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r))));
+    const settle = async () => { if (lazy) { await frames(); await page.waitForTimeout(80); } };
+    const near = async el => { if (lazy) { await page.evaluate(el => window.__canvasNear(el), el); await settle(); } };
     const scan = async state => {
-      for (const { id, w, h, boxes } of await page.evaluate(() => window.__canvasText())) {
+      for (const { id, w, h, boxes } of await page.evaluate(v => window.__canvasText(v), lazy)) {
         checked++;
         if (!w || !h) continue; // hidden canvas
         for (const c of [...collisions(boxes), ...clipped(boxes, w, h)]) { const msg = `${path} ${width} ${lang} #${id}${state}: ${c}`; if (!failures.includes(msg)) failures.push(msg); }
       }
     };
     await scan('');
+    // Lazy canvases: quiet while the page sits still and off screen, but they redraw once scrolled into view.
+    const d0 = await page.evaluate(() => window.__canvasDraws());
+    await page.waitForTimeout(300);
+    const d1 = await page.evaluate(() => window.__canvasDraws());
+    for (const c of d1.filter((c, i) => c.shown && !c.on && c.n === d0[i].n)) {
+      await page.evaluate(i => window.__canvasShow(i), c.i);
+      await page.waitForTimeout(300);
+      const now = (await page.evaluate(() => window.__canvasDraws()))[c.i];
+      if (now.n === c.n) continue;
+      lazy = true;
+      await scan(` [canvas ${c.i + 1} in view]`);
+    }
     if (sweep) {
-      const set = (id, v) => page.evaluate(([id, v]) => { const e = document.getElementById(id); e.value = v; for (const t of ['input', 'change']) e.dispatchEvent(new Event(t, { bubbles: true })); }, [id, String(v)]);
+      const set = async (id, v) => { await page.evaluate(([id, v]) => { const e = document.getElementById(id); e.value = v; for (const t of ['input', 'change']) e.dispatchEvent(new Event(t, { bubbles: true })); }, [id, String(v)]); await settle(); };
       const ranges = await page.$$eval('input[type=range]', a => a.filter(e => e.id).map(e => [e.id, +e.min, +e.max, e.value, e.closest('section,[id]')?.id || '']));
       for (const [id, min, max, v0] of ranges) {
+        await near(id);
         for (let i = 0; i <= 10; i++) { const v = min + (max - min) * i / 10; await set(id, v); await scan(` ${id}=${+v.toFixed(3)}`); }
         await set(id, v0);
       }
       for (let i = 0; i < ranges.length; i++) for (let j = i + 1; j < ranges.length; j++) {
         const [a, b] = [ranges[i], ranges[j]]; if (a[4] !== b[4]) continue;
+        await near(a[0]);
         for (let u = 0; u <= 5; u++) for (let v = 0; v <= 5; v++) {
           const va = a[1] + (a[2] - a[1]) * u / 5, vb = b[1] + (b[2] - b[1]) * v / 5;
           await set(a[0], va); await set(b[0], vb); await scan(` ${a[0]}=${+va.toFixed(3)} ${b[0]}=${+vb.toFixed(3)}`);
@@ -109,19 +152,21 @@ async function main() {
       }
       for (const box of await page.$$('main input[type=checkbox], main input[type=radio]')) {
         if (!(await box.isVisible())) continue;
-        await box.click({ timeout: 2000 }).catch(() => {}); await scan(` [${await box.evaluate(e => e.type + ':' + (e.dataset.show || e.name + '=' + e.value))}]`);
+        await near(box); await box.click({ timeout: 2000 }).catch(() => {}); await settle(); await scan(` [${await box.evaluate(e => e.type + ':' + (e.dataset.show || e.name + '=' + e.value))}]`);
       }
       for (const b of await page.$$('main button')) {
         if (!(await b.isVisible())) continue;
         const label = (await b.innerText()).trim().slice(0, 24);
-        await b.click({ timeout: 2000 }).catch(() => {}); await scan(` [${label}]`);
+        await near(b); await b.click({ timeout: 2000 }).catch(() => {}); await settle(); await scan(` [${label}]`);
       }
     }
+    if (lazy) lazyRuns.push(`${path} ${width} ${lang}`);
     for (const e of new Set(errors)) failures.push(`${path} ${width} ${lang}: page error: ${e}`);
     await page.close();
   }
   await browser.close();
-  if (failures.length) { console.error(failures.join('\n')); process.exit(1); }
+  if (lazyRuns.length) console.log(`scroll-aware mode (canvases drawn only on screen): ${lazyRuns.length} of the page × width × language runs: ${lazyRuns.join(', ')}`);
+  if (failures.length) { console.error(failures.join('\n')); console.error(`FAIL: ${failures.length} findings; ${checked} canvas states checked`); process.exit(1); }
   console.log(`PASS: ${checked} canvas states across ${pages.length} pages × 1280/390/320 × zh/en${sweep ? ' (with slider/button sweep)' : ''} have no colliding or clipped text`);
 }
 // Exported so page tests can sweep their own slider states with the same recorder.
