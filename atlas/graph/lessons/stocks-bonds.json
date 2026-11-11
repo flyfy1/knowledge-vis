@@ -1,0 +1,108 @@
+{
+ "schema": 2,
+ "slug": "stocks-bonds",
+ "nodes": [
+  {
+   "id": "stocks-bonds",
+   "group": "society",
+   "stage": "junior",
+   "order": 50,
+   "title": {
+    "zh": "股票与债券 · 所有权与债权",
+    "en": "Stocks & bonds · ownership vs lending"
+   },
+   "description": {
+    "zh": "买股票是买下公司的一小份所有权，回报来自分红和价格上涨，也会跟着公司缩水；买债券是把钱借给它，按约定收利息、到期拿回本金；公司出事时先还债主，股东排在最后。",
+    "en": "Buying a stock buys a small slice of ownership in a company, paid back through dividends and rising prices, and shrinking when the company does; buying a bond lends the company money for agreed interest and the principal back at maturity; if the company fails, lenders are repaid before shareholders."
+   },
+   "source": "../investment/basics/stocks-bonds/#step5",
+   "lessons": [
+    {
+     "slug": "stocks-bonds",
+     "step": 5,
+     "category": "investment",
+     "stage": "junior",
+     "primary": true
+    }
+   ],
+   "aliases": [
+    {
+     "zh": "股票",
+     "en": "stocks"
+    },
+    {
+     "zh": "债券",
+     "en": "bonds"
+    },
+    {
+     "zh": "股票和债券的区别",
+     "en": "difference between stocks and bonds"
+    },
+    {
+     "zh": "股东",
+     "en": "shareholder"
+    },
+    {
+     "zh": "分红",
+     "en": "dividends"
+    },
+    {
+     "zh": "票息",
+     "en": "coupon"
+    },
+    {
+     "zh": "公司破产谁先拿钱",
+     "en": "who gets paid first in bankruptcy"
+    },
+    {
+     "zh": "股价是谁定的",
+     "en": "who sets the stock price"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "supply-demand",
+   "to": "stocks-bonds",
+   "type": "application",
+   "label": {
+    "zh": "价格由买卖双方定",
+    "en": "Buyers and sellers set the price"
+   },
+   "reason": {
+    "zh": "没人给股票贴价签：想买的人多、想卖的人少，成交价就被抬高，反过来就压低——这就是供求决定价格的机制。",
+    "en": "Nobody puts a price tag on a share: more eager buyers than sellers push the trading price up, and the reverse pushes it down — supply and demand at work."
+   },
+   "source": "../investment/basics/stocks-bonds/#step4"
+  },
+  {
+   "from": "stocks-bonds",
+   "to": "interest-rates-bonds",
+   "type": "foundation",
+   "label": {
+    "zh": "债券是一串约定的未来现金",
+    "en": "A bond is a promised stream of future cash"
+   },
+   "reason": {
+    "zh": "先知道债券每年付票息、到期还本，才能把它看成一串未来现金流，再按利率折现成今天的价格。",
+    "en": "Knowing that a bond pays a coupon every year and returns its principal at maturity is what lets it be seen as a stream of future cash, which interest rates then discount into today’s price."
+   },
+   "source": "../investment/rates/interest-rates-bonds/#step0"
+  },
+  {
+   "from": "stocks-bonds",
+   "to": "risk-return",
+   "type": "connection",
+   "label": {
+    "zh": "清偿顺序决定风险",
+    "en": "Repayment order sets the risk"
+   },
+   "reason": {
+    "zh": "债主先拿、股东最后拿，所以股票的结果散得更开：好时分红和涨价没有上限，坏时可能归零——风险更大，平均回报也必须更高。",
+    "en": "Lenders are paid first and shareholders last, so a stock’s outcomes are spread wider: no cap on dividends and gains in good times, possibly zero in bad — more risk, which must be paid for with a higher average return."
+   },
+   "source": "../investment/basics/stocks-bonds/#step3"
+  }
+ ]
+}

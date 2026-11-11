@@ -1,0 +1,105 @@
+{
+ "schema": 2,
+ "slug": "diversification",
+ "nodes": [
+  {
+   "id": "diversification",
+   "group": "society",
+   "stage": "junior",
+   "order": 50,
+   "title": {
+    "zh": "分散投资 · 相关性决定波动",
+    "en": "Diversification · correlation sets the wobble"
+   },
+   "description": {
+    "zh": "把钱分到几只资产上能不能降低波动，看的不是只数，而是它们是否一起涨跌：同涨同跌的十只约等于一只，各走各路的才能互相抵消；而整个市场一起动的那部分系统风险，怎么分散也去不掉。",
+    "en": "Whether spreading money across assets lowers the wobble depends not on how many there are but on whether they rise and fall together: ten that move as one behave like one, only independent movers cancel out; and the systematic risk of the whole market moving together cannot be diversified away."
+   },
+   "formula": "σₚ = σ·√((1+ρ)/2)",
+   "source": "../investment/basics/diversification/#step1",
+   "lessons": [
+    {
+     "slug": "diversification",
+     "step": 1,
+     "category": "investment",
+     "stage": "junior",
+     "primary": true
+    }
+   ],
+   "aliases": [
+    {
+     "zh": "分散投资",
+     "en": "diversification"
+    },
+    {
+     "zh": "不要把鸡蛋放在一个篮子里",
+     "en": "don’t put all your eggs in one basket"
+    },
+    {
+     "zh": "投资组合",
+     "en": "portfolio"
+    },
+    {
+     "zh": "资产相关性",
+     "en": "asset correlation"
+    },
+    {
+     "zh": "系统性风险",
+     "en": "systematic risk"
+    },
+    {
+     "zh": "非系统性风险",
+     "en": "idiosyncratic risk"
+    },
+    {
+     "zh": "买多少只股票才算分散",
+     "en": "how many stocks to diversify"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "variance",
+   "to": "diversification",
+   "type": "foundation",
+   "label": {
+    "zh": "组合的方差公式",
+    "en": "The portfolio variance formula"
+   },
+   "reason": {
+    "zh": "两只资产组合的波动 σₚ = √(w₁²σ₁² + w₂²σ₂² + 2w₁w₂ρσ₁σ₂)：交叉项里有相关系数 ρ，正是它决定组合能抵消掉多少波动。",
+    "en": "A two-asset portfolio’s volatility is σₚ = √(w₁²σ₁² + w₂²σ₂² + 2w₁w₂ρσ₁σ₂): the cross term carries the correlation ρ, which decides how much wobble the mix cancels."
+   },
+   "source": "../investment/basics/diversification/#step1"
+  },
+  {
+   "from": "regression-correlation",
+   "to": "diversification",
+   "type": "foundation",
+   "label": {
+    "zh": "ρ 从 1 到 −1",
+    "en": "ρ from 1 to −1"
+   },
+   "reason": {
+    "zh": "等权两只资产时组合波动是 σ·√((1+ρ)/2)：ρ = 1 不降，ρ = 0 降到约 0.71 倍，ρ = −1 完全抵消——相关系数就是“是否一起动”的那个数。",
+    "en": "With two equal-weight assets the portfolio volatility is σ·√((1+ρ)/2): no reduction at ρ = 1, down to about 0.71 times at ρ = 0, fully cancelled at ρ = −1 — the correlation coefficient is the number for “moving together”."
+   },
+   "source": "../investment/basics/diversification/#step1"
+  },
+  {
+   "from": "diversification",
+   "to": "risk-pooling",
+   "type": "connection",
+   "label": {
+    "zh": "同样的 1/√N 直觉，机制不同",
+    "en": "The same 1/√N intuition, a different mechanism"
+   },
+   "reason": {
+    "zh": "保险靠很多人各自独立出险，平均下来就稳；投资分散靠资产低相关。两者都是“平均能熨平波动”，但共同灾难和系统风险都会让波动停在一个下限。",
+    "en": "Insurance relies on many people’s claims being independent, so the average is steady; diversification relies on low correlation between assets. Both are “averaging smooths the wobble”, and in both a common catastrophe or systematic risk leaves a floor."
+   },
+   "source": "../investment/basics/diversification/#step3"
+  }
+ ]
+}

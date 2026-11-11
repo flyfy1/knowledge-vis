@@ -1,0 +1,111 @@
+{
+ "schema": 2,
+ "slug": "fees-compounding",
+ "nodes": [
+  {
+   "id": "fees-compounding",
+   "group": "society",
+   "stage": "senior",
+   "order": 50,
+   "title": {
+    "zh": "费率与复利 · 1% 吃掉多少",
+    "en": "Fees & compounding · what 1% really costs"
+   },
+   "description": {
+    "zh": "基金或账户的年费按资产比例收，等于把每年的收益率从 r 降成 r − f；这个差距随复利指数式拉大：年收益 5% 放 30 年，1% 的年费会吃掉约四分之一的终值。",
+    "en": "An annual fee charged as a share of assets lowers each year’s return from r to r − f, and compounding widens the gap exponentially: at 5% a year for 30 years, a 1% annual fee eats about a quarter of the final value."
+   },
+   "formula": "A = P(1 + r − f)ᵗ",
+   "source": "../investment/rates/fees-compounding/#step1",
+   "lessons": [
+    {
+     "slug": "fees-compounding",
+     "step": 1,
+     "category": "investment",
+     "stage": "senior",
+     "primary": true
+    }
+   ],
+   "aliases": [
+    {
+     "zh": "管理费",
+     "en": "management fee"
+    },
+    {
+     "zh": "基金费率",
+     "en": "fund expense ratio"
+    },
+    {
+     "zh": "1% 的费率影响有多大",
+     "en": "how much does a 1% fee cost"
+    },
+    {
+     "zh": "指数基金低费率",
+     "en": "low-cost index funds"
+    },
+    {
+     "zh": "费用侵蚀收益",
+     "en": "fee drag on returns"
+    },
+    {
+     "zh": "复利的代价",
+     "en": "cost of compounding fees"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "compound-interest",
+   "to": "fees-compounding",
+   "type": "foundation",
+   "label": {
+    "zh": "费率改的是复利公式里的 r",
+    "en": "A fee changes the r in the compound formula"
+   },
+   "reason": {
+    "zh": "复利 A = P(1+r)ᵗ；收 f 的费就变成 P(1+r−f)ᵗ。两条指数曲线的差距不是每年固定一点，而是随 t 越拉越大。",
+    "en": "Compounding gives A = P(1+r)ᵗ; a fee f turns it into P(1+r−f)ᵗ. The gap between the two exponential curves is not a fixed amount per year but widens with t."
+   },
+   "source": "../investment/rates/fees-compounding/#step1"
+  }
+ ],
+ "questions": [
+  {
+   "id": "q-fees-compounding-0",
+   "question": {
+    "zh": "每年 1% 的费率，30 年下来到底吃掉多少？",
+    "en": "What does a 1% annual fee really cost over 30 years?"
+   },
+   "chain": [
+    "fees-compounding",
+    "compound-interest"
+   ],
+   "target": {
+    "node": "fees-compounding",
+    "href": "../investment/rates/fees-compounding/#step4"
+   },
+   "prompts": [
+    {
+     "node": "compound-interest",
+     "ask": {
+      "zh": "10000 按 5% 复利 30 年是多少？按 4% 呢？",
+      "en": "What do 10,000 grow to over 30 years at 5%, and at 4%?"
+     }
+    },
+    {
+     "node": "fees-compounding",
+     "ask": {
+      "zh": "两个结果差多少？占不收费终值的几成？",
+      "en": "How far apart are the two, as a share of the no-fee result?"
+     }
+    }
+   ],
+   "reveal": {
+    "zh": "1% 的年费相当于把 5% 的年收益降成 4%：30 年后 10000 分别变成约 43200 和约 32400，差约 10800，大约是不收费终值的四分之一。",
+    "en": "A 1% annual fee turns a 5% return into 4%: after 30 years 10,000 becomes about 43,200 versus about 32,400 — a gap of about 10,800, roughly a quarter of the no-fee result."
+   },
+   "source": "../investment/rates/fees-compounding/#step4"
+  }
+ ]
+}

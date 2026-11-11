@@ -1,0 +1,115 @@
+{
+ "schema": 2,
+ "slug": "interest-rates-bonds",
+ "nodes": [
+  {
+   "id": "interest-rates-bonds",
+   "group": "society",
+   "stage": "senior",
+   "order": 50,
+   "title": {
+    "zh": "利率与债券价格 · 利率升，债价跌",
+    "en": "Interest rates & bond prices · rates up, prices down"
+   },
+   "description": {
+    "zh": "债券的价格是它未来每一笔票息和本金按当前利率折现后的总和；利率上升，折现变重，旧债券的固定票息就不如新债券，只能降价到买家同样能拿到新利率为止；期限越长，跌得越多。",
+    "en": "A bond’s price is the sum of its future coupons and principal, each discounted at today’s interest rate; when rates rise, discounting gets heavier and an old bond’s fixed coupon falls behind new bonds, so its price must drop until a buyer earns the new rate too; the longer the maturity, the bigger the drop."
+   },
+   "formula": "P = Σ C/(1+r)ᵗ + F/(1+r)ᵀ",
+   "source": "../investment/rates/interest-rates-bonds/#step3",
+   "lessons": [
+    {
+     "slug": "interest-rates-bonds",
+     "step": 3,
+     "category": "investment",
+     "stage": "senior",
+     "primary": true
+    }
+   ],
+   "aliases": [
+    {
+     "zh": "债券价格",
+     "en": "bond price"
+    },
+    {
+     "zh": "利率上升债券下跌",
+     "en": "rates up bonds down"
+    },
+    {
+     "zh": "为什么加息债券会跌",
+     "en": "why do bond prices fall when rates rise"
+    },
+    {
+     "zh": "到期收益率",
+     "en": "yield to maturity"
+    },
+    {
+     "zh": "现值 折现",
+     "en": "present value and discounting"
+    },
+    {
+     "zh": "久期",
+     "en": "duration"
+    },
+    {
+     "zh": "长期债券利率风险",
+     "en": "interest rate risk of long bonds"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "compound-interest",
+   "to": "interest-rates-bonds",
+   "type": "foundation",
+   "label": {
+    "zh": "折现是复利倒过来",
+    "en": "Discounting is compounding in reverse"
+   },
+   "reason": {
+    "zh": "现值 PV = FV/(1+r)ᵗ 把复利公式倒过来；把债券的每笔未来现金逐一折现再加总，就是它今天的价格。",
+    "en": "Present value PV = FV/(1+r)ᵗ runs the compound-interest formula backwards; discount each of a bond’s future payments this way, add them up, and you have its price today."
+   },
+   "source": "../investment/rates/interest-rates-bonds/#step1"
+  }
+ ],
+ "questions": [
+  {
+   "id": "q-interest-rates-bonds-0",
+   "question": {
+    "zh": "为什么利率一升，债券价格就跌？",
+    "en": "Why do bond prices fall when interest rates rise?"
+   },
+   "chain": [
+    "interest-rates-bonds",
+    "compound-interest"
+   ],
+   "target": {
+    "node": "interest-rates-bonds",
+    "href": "../investment/rates/interest-rates-bonds/#step3"
+   },
+   "prompts": [
+    {
+     "node": "compound-interest",
+     "ask": {
+      "zh": "5 年后的 1000，利率 5% 和 8% 时今天各值多少？",
+      "en": "What is 1,000 due in 5 years worth today at 5% and at 8%?"
+     }
+    },
+    {
+     "node": "interest-rates-bonds",
+     "ask": {
+      "zh": "新债券付 8%，只付 5% 的旧债券还能按 1000 卖出去吗？",
+      "en": "If new bonds pay 8%, can an old 5% bond still sell for 1,000?"
+     }
+    }
+   ],
+   "reveal": {
+    "zh": "债券价格是未来现金按当前利率折现的总和。利率升到 8%，同样的未来现金今天更不值钱；而且新债券付 8%，旧债只付 5%，只有降价到买家也能拿到 8% 才卖得掉。",
+    "en": "A bond’s price is its future cash discounted at the current rate. When rates rise to 8%, the same future payments are worth less today; and with new bonds paying 8% against the old one’s 5%, the old bond sells only once its price falls far enough for the buyer to earn 8% as well."
+   },
+   "source": "../investment/rates/interest-rates-bonds/#step3"
+  }
+ ]
+}
