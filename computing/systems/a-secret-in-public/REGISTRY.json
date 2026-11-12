@@ -1,0 +1,101 @@
+{
+  "slug": "a-secret-in-public",
+  "path": "computing/systems/a-secret-in-public/",
+  "category": "computing",
+  "subtopic": "systems",
+  "subtopicName": { "zh": "系统与安全", "en": "Systems & Security" },
+  "stage": "university",
+  "title": { "zh": "当着所有人的面约定一个秘密", "en": "A Secret Agreed in Public" },
+  "desc": {
+    "zh": "两个陌生人在谁都能偷听的线路上，怎么约定一个只有他俩知道的秘密？从单向函数、Diffie–Hellman、RSA、椭圆曲线和证书，到量子威胁、格密码和 2026 年的后量子迁移，每一步都在页面里真算一遍。",
+    "en": "How can two strangers agree on a secret while everyone listens? One-way functions, Diffie–Hellman, RSA, elliptic curves and certificates, then the quantum threat, lattices and the post-quantum migration as of 2026, each step computed for real in the page."
+  },
+  "tags": [
+    { "zh": "公钥密码", "en": "Public-key Cryptography" },
+    { "zh": "后量子密码", "en": "Post-quantum Cryptography" },
+    { "zh": "数论", "en": "Number Theory" },
+    { "zh": "长文", "en": "Long-form Essay" }
+  ],
+  "concepts": [
+    {
+      "id": "key-distribution-problem",
+      "title": { "zh": "密钥分发问题", "en": "The key-distribution problem" },
+      "desc": { "zh": "对称密码要求两人先有同一把钥匙；n 个人两两通信要 n(n−1)/2 把，公钥让每人只需一对。", "en": "Symmetric ciphers need a shared key first; n people need n(n−1)/2 keys pairwise, while public keys need one pair each." },
+      "aliases": { "zh": ["密钥分发", "对称加密", "钥匙怎么送过去", "为什么需要公钥", "对称密码和非对称密码的区别"], "en": ["key distribution", "symmetric encryption", "why public key cryptography", "symmetric vs asymmetric encryption", "how to share a key securely"] },
+      "anchor": "#ch1",
+      "relatedPages": ["number-combinatorics"]
+    },
+    {
+      "id": "one-way-function-discrete-log",
+      "title": { "zh": "单向函数与离散对数", "en": "One-way functions and the discrete logarithm" },
+      "desc": { "zh": "平方再乘让模幂只要 2(k−1) 次乘法，倒推指数却要一个个试或小步大步，在页面里真的赛跑。", "en": "Square-and-multiply needs at most 2(k−1) multiplications; recovering the exponent needs brute force or baby-step giant-step, raced live in the page." },
+      "aliases": { "zh": ["单向函数", "离散对数", "模幂", "快速幂", "平方乘算法", "小步大步", "为什么倒推很难"], "en": ["one-way function", "discrete logarithm", "modular exponentiation", "square and multiply", "baby-step giant-step", "fast exponentiation"] },
+      "anchor": "#ch2",
+      "relatedPages": ["rsa-encryption"]
+    },
+    {
+      "id": "diffie-hellman-key-exchange",
+      "title": { "zh": "Diffie–Hellman 密钥交换与中间人攻击", "en": "Diffie–Hellman key exchange and the man in the middle" },
+      "desc": { "zh": "两人只交换 g^a、g^b 就得到同一个 g^ab；偷听者要倒推，站在中间的人却不必。", "en": "Exchanging only g^a and g^b gives both sides g^ab; an eavesdropper must invert, a man in the middle need not." },
+      "aliases": { "zh": ["DH 密钥交换", "迪菲-赫尔曼", "密钥协商", "中间人攻击", "两个陌生人怎么约定秘密", "公开线路上怎么配钥匙"], "en": ["Diffie-Hellman", "key exchange", "key agreement", "man in the middle attack", "how can two strangers agree on a secret"] },
+      "anchor": "#ch3",
+      "relatedPages": ["rsa-encryption"]
+    },
+    {
+      "id": "rsa-signatures-padding",
+      "title": { "zh": "RSA 签名、可塑性与填充", "en": "RSA signatures, malleability and padding" },
+      "desc": { "zh": "签名是把 RSA 倒过来用；教科书 RSA 能被乘法篡改，e = 3 加短消息开立方根就破，所以必须填充。", "en": "A signature is RSA run backwards; textbook RSA can be scaled by an attacker and broken by a cube root when e = 3, hence padding." },
+      "aliases": { "zh": ["RSA 签名", "数字签名", "教科书 RSA", "OAEP", "RSA 填充", "立方根攻击", "为什么 RSA 要填充"], "en": ["RSA signature", "digital signature", "textbook RSA", "RSA padding", "OAEP", "cube root attack", "RSA malleability"] },
+      "anchor": "#ch4",
+      "relatedPages": ["rsa-encryption"]
+    },
+    {
+      "id": "elliptic-curve-cryptography",
+      "title": { "zh": "椭圆曲线密码", "en": "Elliptic-curve cryptography" },
+      "desc": { "zh": "曲线上的点加法构成群，倍点再加正着快、倒着只有 √n 的 ρ 方法，所以 256 位曲线抵得上 3072 位 RSA。", "en": "Points on a curve form a group; double-and-add is fast and the best inverse is Pollard rho at √n, so a 256-bit curve matches 3072-bit RSA." },
+      "aliases": { "zh": ["椭圆曲线", "ECC", "ECDH", "ECDHE", "点加法", "Curve25519", "为什么椭圆曲线钥匙更短"], "en": ["elliptic curve", "ECC", "ECDH", "point addition", "Curve25519", "X25519", "why are elliptic curve keys shorter"] },
+      "anchor": "#ch5",
+      "relatedPages": []
+    },
+    {
+      "id": "certificates-chain-of-trust",
+      "title": { "zh": "签名、证书链与 TLS 握手", "en": "Signatures, certificate chains and the TLS handshake" },
+      "desc": { "zh": "先哈希再签名；证书把公钥和名字绑在一起，由一条签名链连到浏览器预装的根证书。", "en": "Hash, then sign; a certificate binds a key to a name, chained by signatures to a root the browser already trusts." },
+      "aliases": { "zh": ["数字证书", "证书链", "根证书", "CA", "HTTPS 锁头", "TLS 握手", "浏览器怎么知道网站是真的"], "en": ["digital certificate", "certificate chain", "root certificate", "certificate authority", "TLS handshake", "HTTPS padlock", "chain of trust"] },
+      "anchor": "#ch6",
+      "relatedPages": ["hashing"]
+    },
+    {
+      "id": "bits-of-security",
+      "title": { "zh": "安全位数与数域筛", "en": "Bits of security and the number field sieve" },
+      "desc": { "zh": "安全位数是最好的已知攻击要的运算次数的 log₂；数域筛让 RSA 的钥匙要比安全位数长一个数量级。", "en": "Bits of security are log₂ of the best known attack's cost; the number field sieve makes RSA keys an order of magnitude longer than their security." },
+      "aliases": { "zh": ["安全强度", "安全位数", "数域筛", "RSA 要多少位", "2048 位 RSA 安全吗", "RSA 分解纪录"], "en": ["bits of security", "security strength", "number field sieve", "how long should an RSA key be", "is RSA 2048 secure", "RSA factoring record"] },
+      "anchor": "#ch7",
+      "relatedPages": []
+    },
+    {
+      "id": "quantum-threat-shor-grover",
+      "title": { "zh": "量子威胁：Shor、Grover 与先存后解", "en": "The quantum threat: Shor, Grover, harvest now decrypt later" },
+      "desc": { "zh": "Shor 用找周期分解整数，打掉 RSA 和椭圆曲线；Grover 只把对称密码的位数减半；Mosca 不等式说明为什么现在就要迁移。", "en": "Shor factors by period finding and breaks RSA and elliptic curves; Grover only halves symmetric bits; Mosca's inequality says why migration starts now." },
+      "aliases": { "zh": ["Shor 算法", "Grover 算法", "量子计算机能破解 RSA 吗", "先存后解", "Mosca 不等式", "量子计算机破解密码"], "en": ["Shor's algorithm", "Grover's algorithm", "can quantum computers break RSA", "harvest now decrypt later", "Mosca's inequality", "quantum threat to cryptography"] },
+      "anchor": "#ch8",
+      "relatedPages": ["quantum-basics"]
+    },
+    {
+      "id": "lattices-lwe-ml-kem",
+      "title": { "zh": "格、LWE 与 ML-KEM", "en": "Lattices, learning with errors and ML-KEM" },
+      "desc": { "zh": "好基和坏基找最近格点；带噪声的线性方程组让高斯消元失效；页面里跑一个能解错的 Regev 加密，再看 ML-KEM 的参数和大小。", "en": "Good and bad bases for the closest vector; noise defeats Gaussian elimination; a working Regev scheme that can fail to decrypt, then ML-KEM's parameters and sizes." },
+      "aliases": { "zh": ["格密码", "带错误学习", "LWE", "ML-KEM", "Kyber", "后量子密码", "最近向量问题"], "en": ["lattice cryptography", "learning with errors", "LWE", "ML-KEM", "Kyber", "post-quantum cryptography", "closest vector problem"] },
+      "anchor": "#ch9",
+      "relatedPages": []
+    },
+    {
+      "id": "post-quantum-frontier-2026",
+      "title": { "zh": "后量子迁移的前沿（2026 年）", "en": "The post-quantum frontier (2026)" },
+      "desc": { "zh": "已发布的标准、浏览器与系统的部署、被攻破的候选方案和分解纪录，以及量子资源估计，每条都标了日期和出处。", "en": "Published standards, browser and system deployment, broken candidates and factoring records, and quantum resource estimates, each dated and sourced." },
+      "aliases": { "zh": ["后量子迁移", "FIPS 203", "NIST 后量子标准", "混合密钥交换", "X25519MLKEM768", "SIKE 被攻破", "ML-DSA 签名多大"], "en": ["post-quantum migration", "FIPS 203", "NIST post-quantum standards", "hybrid key exchange", "X25519MLKEM768", "SIKE broken", "ML-DSA signature size"] },
+      "anchor": "#ch10",
+      "relatedPages": []
+    }
+  ]
+}

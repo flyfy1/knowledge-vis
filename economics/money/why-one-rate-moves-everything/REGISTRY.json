@@ -1,0 +1,118 @@
+{
+  "slug": "why-one-rate-moves-everything",
+  "path": "economics/money/why-one-rate-moves-everything/",
+  "category": "economics",
+  "subtopic": "money",
+  "subtopicName": { "zh": "货币与银行", "en": "Money & Banking" },
+  "stage": "university",
+  "title": { "zh": "央行调一个利率，为什么所有东西的价格都跟着动", "en": "Why One Interest Rate Moves the Price of Everything" },
+  "desc": {
+    "zh": "从折现出发，走到债券久期、收益率曲线、准备金与地板体系、泰勒规则、新凯恩斯模型、股票房价汇率、量化宽松和 r − g，最后是 2026 年底各大央行的位置与争论。十三个可以拖动的模型。",
+    "en": "From discounting to bond duration, the yield curve, reserves and the floor system, the Taylor rule, the New Keynesian model, stocks, houses and exchange rates, QE and r − g, ending with where the major central banks stand in late 2026. Thirteen models you can push."
+  },
+  "tags": [
+    { "zh": "货币政策", "en": "Monetary Policy" },
+    { "zh": "利率", "en": "Interest Rates" },
+    { "zh": "债券", "en": "Bonds" },
+    { "zh": "宏观经济", "en": "Macroeconomics" },
+    { "zh": "长文", "en": "Long-form Essay" }
+  ],
+  "concepts": [
+    {
+      "id": "present-value-discounting",
+      "title": { "zh": "现值与折现", "en": "Present value and discounting" },
+      "desc": { "zh": "未来的一串钱今天值多少；钱离得越远，现值对利率越敏感。", "en": "What a stream of future money is worth today; the further away the money, the more its value reacts to the rate." },
+      "aliases": { "zh": ["现值", "折现", "贴现率", "未来的钱今天值多少", "为什么利率越高资产越便宜", "折现率"], "en": ["present value", "discounting", "discount rate", "what is future money worth today", "why do higher rates lower prices", "time value of money"] },
+      "anchor": "#ch1",
+      "relatedPages": ["compound-interest"]
+    },
+    {
+      "id": "bond-duration-convexity",
+      "title": { "zh": "债券久期与凸性", "en": "Bond duration and convexity" },
+      "desc": { "zh": "收益率升 1 个点，债券约跌“修正久期”个百分点；凸性修正弯曲。2022 年的长债下跌和硅谷银行。", "en": "A one-point rise in yield cuts a bond's price by about its modified duration; convexity corrects the curve. The 2022 bond rout and SVB." },
+      "aliases": { "zh": ["久期", "修正久期", "麦考利久期", "凸性", "利率上升债券为什么跌", "为什么长期国债跌得多", "硅谷银行为什么倒闭", "到期收益率"], "en": ["duration", "modified duration", "macaulay duration", "convexity", "why do bond prices fall when rates rise", "why did silicon valley bank fail", "yield to maturity", "interest rate risk"] },
+      "anchor": "#ch2",
+      "relatedPages": ["interest-rates-bonds"]
+    },
+    {
+      "id": "yield-curve-bootstrapping",
+      "title": { "zh": "收益率曲线、即期利率与远期利率", "en": "Yield curve, spot and forward rates" },
+      "desc": { "zh": "从国债平价收益率自举出每一年的折现因子、零息利率和一年期远期利率。", "en": "Bootstrapping Treasury par yields into discount factors, zero rates and one-year forward rates." },
+      "aliases": { "zh": ["收益率曲线", "自举法", "即期利率", "零息利率", "远期利率", "利率期限结构", "什么是收益率曲线"], "en": ["yield curve", "bootstrapping", "spot rate", "zero rate", "forward rate", "term structure of interest rates", "what is the yield curve"] },
+      "anchor": "#ch3",
+      "relatedPages": []
+    },
+    {
+      "id": "term-premium-curve-inversion",
+      "title": { "zh": "预期假说、期限溢价与收益率曲线倒挂", "en": "Expectations, term premium and yield-curve inversion" },
+      "desc": { "zh": "长期利率 ≈ 预期短期利率的平均 + 期限溢价；1960 年以来倒挂与美国衰退的真实记录。", "en": "Long rate ≈ average expected short rate + term premium; the actual US record of inversions and recessions since 1960." },
+      "aliases": { "zh": ["期限溢价", "预期假说", "收益率曲线倒挂", "利率倒挂预示衰退吗", "倒挂是什么意思", "10年减3个月利差"], "en": ["term premium", "expectations hypothesis", "inverted yield curve", "does an inverted yield curve predict recession", "yield curve inversion", "10y-3m spread"] },
+      "anchor": "#ch4",
+      "relatedPages": []
+    },
+    {
+      "id": "reserves-floor-system",
+      "title": { "zh": "准备金、利率走廊与地板体系", "en": "Reserves, the corridor and the floor system" },
+      "desc": { "zh": "Poole 模型：准备金需求曲线决定隔夜利率；稀缺时是走廊，充裕时贴在准备金利率的地板上。", "en": "The Poole model: the reserve demand curve sets the overnight rate; scarce reserves give a corridor, ample reserves a floor at the interest on reserves." },
+      "aliases": { "zh": ["准备金", "超额准备金利率", "利率走廊", "地板体系", "央行怎么控制利率", "联邦基金利率", "逆回购", "隔夜利率"], "en": ["reserves", "interest on reserve balances", "IORB", "corridor system", "floor system", "how does the central bank set interest rates", "federal funds rate", "reverse repo", "overnight rate"] },
+      "anchor": "#ch5",
+      "relatedPages": ["where-money-comes-from"]
+    },
+    {
+      "id": "taylor-rule-neutral-rate",
+      "title": { "zh": "泰勒规则与自然利率 r*", "en": "The Taylor rule and the neutral rate r*" },
+      "desc": { "zh": "用 1990–2026 年的真实数据对照泰勒规则；r* 的估计有多不确定。", "en": "The Taylor rule against real 1990–2026 data; how uncertain the estimates of r* are." },
+      "aliases": { "zh": ["泰勒规则", "自然利率", "中性利率", "r星", "实际利率", "利率应该定多高", "美联储加息晚了吗"], "en": ["taylor rule", "neutral rate", "natural rate of interest", "r star", "real interest rate", "how high should interest rates be", "was the fed late"] },
+      "anchor": "#ch6",
+      "relatedPages": []
+    },
+    {
+      "id": "new-keynesian-model",
+      "title": { "zh": "新凯恩斯模型与菲利普斯曲线", "en": "The New Keynesian model and the Phillips curve" },
+      "desc": { "zh": "三方程模型：需求冲击可以被利率抵消，供给冲击只能在通胀和产出间取舍；泰勒原则与菲利普斯曲线斜率之争。", "en": "The three-equation model: demand shocks can be offset, supply shocks force a trade-off; the Taylor principle and the debate over the Phillips curve's slope." },
+      "aliases": { "zh": ["新凯恩斯模型", "菲利普斯曲线", "泰勒原则", "神圣的巧合", "供给冲击", "加息为什么能降通胀", "加息的代价"], "en": ["new keynesian model", "three equation model", "phillips curve", "taylor principle", "divine coincidence", "supply shock", "how do rate hikes lower inflation", "sacrifice ratio"] },
+      "anchor": "#ch7",
+      "relatedPages": []
+    },
+    {
+      "id": "equity-duration-house-affordability",
+      "title": { "zh": "股票久期与房贷可负担性", "en": "Equity duration and mortgage affordability" },
+      "desc": { "zh": "两段式股利折现模型里成长股久期更长；同样月供下，利率决定能借多少。", "en": "In a two-stage dividend discount model growth stocks have longer duration; for the same monthly payment the rate decides how much you can borrow." },
+      "aliases": { "zh": ["股票久期", "成长股为什么怕加息", "股利折现模型", "戈登增长模型", "加息房价为什么跌", "利率和房价", "房贷利率"], "en": ["equity duration", "why do growth stocks fall when rates rise", "dividend discount model", "gordon growth model", "do higher rates lower house prices", "mortgage rates and house prices", "affordability"] },
+      "anchor": "#ch8",
+      "relatedPages": ["where-a-mortgage-payment-goes", "stocks-bonds"]
+    },
+    {
+      "id": "interest-parity-carry-trade",
+      "title": { "zh": "利率平价与套利交易", "en": "Interest parity and the carry trade" },
+      "desc": { "zh": "抛补利率平价决定远期汇率；非抛补利率平价在数据里常常失效，套利交易平时赚、偶尔大亏。", "en": "Covered parity sets the forward rate; uncovered parity often fails in the data, and the carry trade earns steadily then crashes." },
+      "aliases": { "zh": ["利率平价", "抛补利率平价", "非抛补利率平价", "套利交易", "加息为什么本币升值", "远期汇率", "远期升水之谜"], "en": ["interest rate parity", "covered interest parity", "uncovered interest parity", "carry trade", "why does a rate hike strengthen the currency", "forward exchange rate", "forward premium puzzle"] },
+      "anchor": "#ch9",
+      "relatedPages": ["where-money-comes-from"]
+    },
+    {
+      "id": "zero-lower-bound-qe",
+      "title": { "zh": "零利率下限、前瞻指引与量化宽松", "en": "Zero lower bound, forward guidance and QE" },
+      "desc": { "zh": "利率到零后，承诺和买债怎样压低长期利率；Gagnon 等 2011 年的估计范围；缩表。", "en": "How promises and bond purchases lower long rates once the short rate hits zero; the Gagnon et al. 2011 estimates; quantitative tightening." },
+      "aliases": { "zh": ["量化宽松", "QE", "缩表", "量化紧缩", "前瞻指引", "零利率下限", "负利率", "央行印钱买债"], "en": ["quantitative easing", "QE", "quantitative tightening", "QT", "forward guidance", "zero lower bound", "negative interest rates", "balance sheet runoff"] },
+      "anchor": "#ch10",
+      "relatedPages": []
+    },
+    {
+      "id": "debt-dynamics-r-minus-g",
+      "title": { "zh": "政府债务动态与 r − g", "en": "Government debt dynamics and r − g" },
+      "desc": { "zh": "债务占 GDP 比例由利率与增长率之差和基本盈余决定；加息怎样几年后传到政府的利息账单。", "en": "The debt ratio is driven by the gap between the interest rate and growth plus the primary balance; how rate hikes reach the government's interest bill over years." },
+      "aliases": { "zh": ["r-g", "r减g", "债务可持续性", "政府债务", "基本盈余", "财政主导", "国债利息", "政府欠钱会怎样"], "en": ["r minus g", "r - g", "debt sustainability", "government debt", "primary surplus", "fiscal dominance", "interest on the national debt"] },
+      "anchor": "#ch11",
+      "relatedPages": []
+    },
+    {
+      "id": "central-banks-2026",
+      "title": { "zh": "2026 年底的主要央行与仍在争论的问题", "en": "Major central banks in late 2026 and the open debates" },
+      "desc": { "zh": "美联储、欧洲央行、英格兰银行、日本银行、中国人民银行的利率与资产负债表；框架评估、r*、数字欧元。", "en": "Policy rates and balance sheets of the Fed, ECB, Bank of England, Bank of Japan and PBoC; framework reviews, r*, the digital euro." },
+      "aliases": { "zh": ["美联储利率", "欧洲央行利率", "现在利率多少", "央行数字货币", "数字欧元", "美联储框架评估", "2026 加息"], "en": ["fed funds rate now", "ecb deposit rate", "central bank digital currency", "digital euro", "fed framework review", "central banks 2026"] },
+      "anchor": "#ch12",
+      "relatedPages": []
+    }
+  ]
+}

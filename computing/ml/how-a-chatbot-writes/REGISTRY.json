@@ -1,0 +1,85 @@
+{
+  "slug": "how-a-chatbot-writes",
+  "path": "computing/ml/how-a-chatbot-writes/",
+  "category": "computing",
+  "subtopic": "ml",
+  "subtopicName": { "zh": "机器学习", "en": "Machine Learning" },
+  "stage": "senior",
+  "title": { "zh": "聊天 AI 是怎么“写”出一句话的", "en": "How a Chatbot Writes a Sentence" },
+  "desc": {
+    "zh": "一次只写一个 token：切字、数次数、把词变成数、注意力、温度采样和训练。八个在页面里真正运行的小模型，从零训练，不联网。",
+    "en": "One token at a time: splitting text, counting, turning words into numbers, attention, temperature sampling and training. Eight small models that really run in the page, trained from scratch, with no network."
+  },
+  "tags": [
+    { "zh": "大语言模型", "en": "Large Language Models" },
+    { "zh": "自然语言处理", "en": "Natural Language Processing" },
+    { "zh": "生成式 AI", "en": "Generative AI" },
+    { "zh": "长文", "en": "Long-form Essay" }
+  ],
+  "concepts": [
+    {
+      "id": "tokens-bpe",
+      "title": { "zh": "token 与 BPE 分词", "en": "Tokens and BPE tokenization" },
+      "desc": { "zh": "模型读写的单位是 token：把语料里最常挨着出现的一对反复合并，常见的词变成一个 token，罕见的拆成小块。", "en": "Models read and write tokens: repeatedly merge the pair that sits together most often, so common words become one token and rare ones split into pieces." },
+      "aliases": { "zh": ["什么是token", "token是什么", "分词", "BPE", "字节对编码", "为什么按token收费", "一个汉字是几个token", "AI怎么认字"], "en": ["what is a token", "tokenization", "tokenizer", "byte pair encoding", "BPE", "why are AI prices per token", "how many tokens is a word"] },
+      "anchor": "#ch1",
+      "relatedPages": ["entropy"]
+    },
+    {
+      "id": "next-token-bigram",
+      "title": { "zh": "预测下一个 token（二元模型）", "en": "Predicting the next token (bigram model)" },
+      "desc": { "zh": "数一数每个 token 后面跟过什么，变成一张概率表，按表抽签就能一个一个往下写。", "en": "Count what followed each token, turn the counts into a probability table, and draw from it to write one token after another." },
+      "aliases": { "zh": ["下一个词预测", "二元模型", "bigram", "AI是怎么写句子的", "语言模型是什么", "AI是不是在猜下一个字", "接龙"], "en": ["next token prediction", "next word prediction", "bigram model", "what is a language model", "does AI just predict the next word", "autocomplete"] },
+      "anchor": "#ch2",
+      "relatedPages": ["markov-chains", "llm-sampling"]
+    },
+    {
+      "id": "ngram-sparsity",
+      "title": { "zh": "n 元模型与数据稀疏", "en": "n-gram models and data sparsity" },
+      "desc": { "zh": "多看几个 token 句子更通顺，但在小语料上越看越像照抄，没见过的前文就查不到。", "en": "Looking further back makes text smoother, but on a small corpus it turns into copying, and contexts never seen have no entry." },
+      "aliases": { "zh": ["n元模型", "n-gram", "数据稀疏", "AI会不会照抄训练数据", "上下文越长越好吗", "为什么不能只靠数次数"], "en": ["n-gram", "n-gram model", "data sparsity", "does AI copy its training data", "memorization", "why counting is not enough"] },
+      "anchor": "#ch3",
+      "relatedPages": ["markov-chains", "overfitting"]
+    },
+    {
+      "id": "word-vectors",
+      "title": { "zh": "词向量：把词变成一串数", "en": "Word vectors: words as lists of numbers" },
+      "desc": { "zh": "按“周围出现什么词”给每个词一串数，用法相近的词数也相近，用余弦相似度就能找出近义的词。", "en": "Give each word numbers from the words around it; words used alike get similar numbers, and cosine similarity finds their neighbours." },
+      "aliases": { "zh": ["词向量", "词嵌入", "embedding", "余弦相似度", "AI怎么知道两个词意思相近", "向量是什么", "语义相似"], "en": ["word vectors", "word embeddings", "embedding", "cosine similarity", "how does AI know words are similar", "distributional semantics"] },
+      "anchor": "#ch4",
+      "relatedPages": ["embeddings"]
+    },
+    {
+      "id": "attention-head",
+      "title": { "zh": "注意力：一个头怎么算", "en": "Attention: how one head computes" },
+      "desc": { "zh": "每个位置拿查询去和前面各位置的键算点积，softmax 成权重，再按权重混合它们的值；“它”就是这样找到“苹果”的。", "en": "Each position scores earlier positions by query·key, softmaxes the scores into weights and mixes their values; that is how 'it' finds 'apples'." },
+      "aliases": { "zh": ["注意力机制", "自注意力", "attention", "查询 键 值", "QKV", "AI怎么知道它指的是谁", "Transformer是什么"], "en": ["attention mechanism", "self-attention", "query key value", "QKV", "how does AI know what it refers to", "what is a transformer"] },
+      "anchor": "#ch5",
+      "relatedPages": ["attention-mechanism"]
+    },
+    {
+      "id": "temperature-top-p",
+      "title": { "zh": "温度、top-k 与 top-p", "en": "Temperature, top-k and top-p" },
+      "desc": { "zh": "同一张概率表，温度把它压尖或摊平，top-k、top-p 砍掉尾巴；所以同一个问题每次的回答可以不一样。", "en": "Temperature sharpens or flattens the same probability table, top-k and top-p cut its tail; that is why the same question can get different answers." },
+      "aliases": { "zh": ["温度参数", "temperature", "top-p", "top-k", "核采样", "为什么AI回答每次不一样", "AI的随机性", "温度设多少合适"], "en": ["temperature", "sampling temperature", "top-p", "nucleus sampling", "top-k", "why does AI give different answers", "AI randomness"] },
+      "anchor": "#ch6",
+      "relatedPages": ["llm-sampling", "entropy"]
+    },
+    {
+      "id": "training-cross-entropy",
+      "title": { "zh": "训练：用梯度下降压低交叉熵", "en": "Training: gradient descent on cross-entropy" },
+      "desc": { "zh": "当场训练一个小网络：损失从“瞎猜”的 ln V 一路降到计数表的条件熵；学习率太大会发散，向量太短降不下去。", "en": "Train a small network on the spot: the loss falls from guessing (ln V) to the conditional entropy of the counts; too large a step diverges, too short a vector stalls." },
+      "aliases": { "zh": ["大模型怎么训练的", "交叉熵", "损失函数", "学习率", "梯度下降", "AI是怎么学会的", "困惑度"], "en": ["how are language models trained", "cross-entropy loss", "loss function", "learning rate", "gradient descent", "perplexity", "how does AI learn"] },
+      "anchor": "#ch7",
+      "relatedPages": ["gradient-descent", "backpropagation", "entropy"]
+    },
+    {
+      "id": "generation-loop-scale",
+      "title": { "zh": "一次一个 token 的生成循环与规模", "en": "The token-by-token loop, and scale" },
+      "desc": { "zh": "看前文、给出概率表、抽一个、接上去，循环到句号；再对比本页模型与 GPT-3、Llama 3 公开的参数量和训练量。", "en": "Read the context, produce a probability table, draw one, append, repeat until the full stop; then compare this page's models with the published sizes of GPT-3 and Llama 3." },
+      "aliases": { "zh": ["自回归生成", "ChatGPT是怎么工作的", "大模型有多大", "参数量是什么意思", "AI聊天的原理", "RLHF", "AI为什么会说错话"], "en": ["autoregressive generation", "how does ChatGPT work", "how big are language models", "what are parameters", "how chatbots work", "RLHF", "why does AI make things up"] },
+      "anchor": "#ch8",
+      "relatedPages": ["llm-sampling", "attention-mechanism"]
+    }
+  ]
+}

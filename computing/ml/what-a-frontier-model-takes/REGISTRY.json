@@ -1,0 +1,262 @@
+{
+  "slug": "what-a-frontier-model-takes",
+  "path": "computing/ml/what-a-frontier-model-takes/",
+  "category": "computing",
+  "subtopic": "ml",
+  "subtopicName": { "zh": "机器学习", "en": "Machine Learning" },
+  "stage": "university",
+  "title": {
+    "zh": "造出并运行一个最前沿的大语言模型，需要什么",
+    "en": "What It Takes to Build and Run a Frontier Language Model"
+  },
+  "desc": {
+    "zh": "从一个当场能拆开的小 Transformer 出发：参数和算力怎么数、规模定律怎么分配算力、训练和推理的账单怎么算、KV 缓存、量化、专家混合，以及 2026 年前沿的真实数字。",
+    "en": "Starting from a tiny transformer you can take apart in the page: how to count parameters and compute, how scaling laws split a budget, the training and inference bills, the KV cache, quantisation, mixture of experts, and the frontier's real numbers in 2026."
+  },
+  "tags": [
+    { "zh": "大语言模型", "en": "Large Language Models" },
+    { "zh": "Transformer", "en": "Transformers" },
+    { "zh": "AI 算力", "en": "AI Compute" },
+    { "zh": "长文", "en": "Long-form Essay" }
+  ],
+  "concepts": [
+    {
+      "id": "transformer-block",
+      "title": { "zh": "Transformer 的一层", "en": "The transformer block" },
+      "desc": {
+        "zh": "每层先让每个位置用注意力去前文取信息，再各自过一个 MLP，结果都加回残差流；页面上一个 27,930 个参数的真模型可以逐位拆开。",
+        "en": "Each layer lets every position fetch from earlier positions with attention, then think on its own with an MLP, both added back to the residual stream; a real 27,930-parameter model in the page can be stepped through."
+      },
+      "aliases": {
+        "zh": ["Transformer是什么", "Transformer 怎么工作", "大模型的一层在算什么", "GPT的结构", "自注意力层", "位置编码", "RoPE", "多头注意力", "QKV是什么"],
+        "en": ["what is a transformer", "how does a transformer work", "transformer architecture", "GPT architecture", "multi-head attention", "positional encoding", "RoPE", "what are Q K V"]
+      },
+      "anchor": "#ch1",
+      "relatedPages": ["attention-mechanism", "embeddings"]
+    },
+    {
+      "id": "induction-head",
+      "title": { "zh": "归纳头", "en": "Induction heads" },
+      "desc": {
+        "zh": "两个注意力头合作的电路：一个记下“我前面是谁”，另一个找到当前字母上次出现之后的位置并照抄；小模型里真的长出了一个。",
+        "en": "A two-head circuit: one writes down which token came before, the other finds where the current token appeared before and copies what followed; the page's tiny model grew one."
+      },
+      "aliases": {
+        "zh": ["归纳头是什么", "induction head", "上下文学习", "大模型怎么照抄前文", "in-context learning"],
+        "en": ["induction head", "what is an induction head", "in-context learning", "how do language models copy"]
+      },
+      "anchor": "#ch1",
+      "relatedPages": ["attention-mechanism"]
+    },
+    {
+      "id": "residual-layernorm",
+      "title": { "zh": "残差连接与层归一化", "en": "Residual connections and layer normalisation" },
+      "desc": {
+        "zh": "信号每过一层被乘一次，几十层后不是爆炸就是消失；残差让每层只往流上加一点，pre-LN 让每层看到的输入大小不变，深网络才训得动。",
+        "en": "A signal multiplied at every layer explodes or vanishes after dozens of layers; residuals make each layer add a little, pre-LN keeps each layer's input at a standard size, and deep networks become trainable."
+      },
+      "aliases": {
+        "zh": ["梯度消失", "梯度爆炸", "残差网络", "为什么要层归一化", "LayerNorm", "pre-LN", "深度网络为什么难训练"],
+        "en": ["vanishing gradients", "exploding gradients", "residual connection", "layer norm", "pre-LN", "why are deep networks hard to train"]
+      },
+      "anchor": "#ch2",
+      "relatedPages": ["backpropagation"]
+    },
+    {
+      "id": "parameters-flops",
+      "title": { "zh": "参数量与每个 token 的运算量", "en": "Parameter count and FLOPs per token" },
+      "desc": {
+        "zh": "参数约 12 × 层数 × 宽度²，读一个 token 约 2N 次运算，训练约 6N；按公开配置数出来和 GPT-3、Llama 3 的公布值一字不差。",
+        "en": "Parameters are about 12 × layers × width², reading a token costs about 2N operations and training about 6N; counted from published configurations, the totals match GPT-3 and Llama 3 exactly."
+      },
+      "aliases": {
+        "zh": ["70B是什么意思", "参数量是什么", "大模型有多少参数", "175B", "FLOPs是什么", "一个token要多少计算", "GQA", "分组查询注意力"],
+        "en": ["what does 70B mean", "how many parameters", "what is a parameter in AI", "FLOPs per token", "6N rule", "grouped query attention"]
+      },
+      "anchor": "#ch3",
+      "relatedPages": ["exponents-logarithms"]
+    },
+    {
+      "id": "training-loss-curve",
+      "title": { "zh": "训练曲线与能力突然出现", "en": "The training curve and sudden abilities" },
+      "desc": {
+        "zh": "小模型真实的 3000 步训练记录：AdamW、预热和余弦退火；第 250 到 350 步之间归纳头成形，第二遍的猜对率从 45% 跳到 96%。",
+        "en": "The tiny model's real 3,000-step training record with AdamW, warm-up and cosine decay; between steps 250 and 350 the induction head forms and second-pass accuracy jumps from 45% to 96%."
+      },
+      "aliases": {
+        "zh": ["大模型怎么训练", "AdamW", "学习率预热", "困惑度", "perplexity", "交叉熵损失", "能力涌现", "涌现是真的吗"],
+        "en": ["how are LLMs trained", "AdamW", "learning rate warmup", "perplexity", "cross-entropy loss", "emergent abilities", "are emergent abilities real"]
+      },
+      "anchor": "#ch4",
+      "relatedPages": ["gradient-descent", "backpropagation", "entropy"]
+    },
+    {
+      "id": "scaling-laws-chinchilla",
+      "title": { "zh": "规模定律与 Chinchilla 最优", "en": "Scaling laws and Chinchilla-optimal training" },
+      "desc": {
+        "zh": "损失随参数和数据按幂律下降；给定算力 C ≈ 6ND，有一个最优的“模型多大、读多少”；Hoffmann 原文拟合与 Epoch 重拟合的争议。",
+        "en": "Loss falls as a power law in parameters and data; for a compute budget C ≈ 6ND there is a best split of model size and tokens; the dispute between Hoffmann's fit and Epoch's re-fit."
+      },
+      "aliases": {
+        "zh": ["规模定律", "缩放定律", "scaling law", "Chinchilla", "每个参数配多少token", "模型越大越好吗", "算力怎么分配"],
+        "en": ["scaling laws", "Chinchilla", "compute optimal", "tokens per parameter", "is bigger always better", "Kaplan scaling law"]
+      },
+      "anchor": "#ch5",
+      "relatedPages": ["exponents-logarithms", "overfitting"]
+    },
+    {
+      "id": "training-cost",
+      "title": { "zh": "训练一个大模型要多少钱", "en": "What training a large model costs" },
+      "desc": {
+        "zh": "6 × 参数 × token 得总运算，除以芯片峰值和利用率得卡时，再乘功率和单价；Llama 3.1 405B 约 2,600 万 H100 卡时、66 天、6500 万美元。",
+        "en": "6 × parameters × tokens gives total compute; divided by peak speed and utilisation it gives GPU-hours, then power and price; Llama 3.1 405B comes to about 26M H100-hours, 66 days and $65M."
+      },
+      "aliases": {
+        "zh": ["训练GPT要多少钱", "训练大模型多少钱", "大模型训练要多少GPU", "MFU", "算力利用率", "训练耗电", "卡时"],
+        "en": ["how much does it cost to train GPT", "cost to train an LLM", "how many GPUs to train", "MFU", "model FLOPs utilization", "GPU hours", "training energy"]
+      },
+      "anchor": "#ch6",
+      "relatedPages": []
+    },
+    {
+      "id": "lora-finetuning",
+      "title": { "zh": "微调、RLHF 与 LoRA", "en": "Fine-tuning, RLHF and LoRA" },
+      "desc": {
+        "zh": "预训练后的指令微调、人类反馈强化学习及其后继；LoRA 冻住原矩阵只训练一个低秩小矩阵，GPT-3 上训练参数少约一万倍。",
+        "en": "Instruction tuning, reinforcement learning from human feedback and its successors after pretraining; LoRA freezes each matrix and trains a small low-rank one, about ten thousand times fewer parameters on GPT-3."
+      },
+      "aliases": {
+        "zh": ["RLHF是什么", "微调是什么", "LoRA", "低秩适配", "指令微调", "DPO", "推理模型怎么训练的"],
+        "en": ["what is RLHF", "fine-tuning", "LoRA", "low-rank adaptation", "instruction tuning", "DPO", "how are reasoning models trained"]
+      },
+      "anchor": "#ch7",
+      "relatedPages": ["overfitting"]
+    },
+    {
+      "id": "benchmark-noise",
+      "title": { "zh": "基准测试的误差、饱和与污染", "en": "Benchmark noise, saturation and contamination" },
+      "desc": {
+        "zh": "一份有限的考卷自带抽样误差：500 道题时一个分数约 ±3.5 个百分点；错题让分数饱和，背过的题让分数虚高。",
+        "en": "A finite test carries sampling error: about ±3.5 points on 500 questions; wrong answer keys saturate scores and memorised questions inflate them."
+      },
+      "aliases": {
+        "zh": ["跑分可信吗", "基准测试", "MMLU", "数据污染", "刷榜", "模型排行榜靠谱吗", "分数差1分有意义吗"],
+        "en": ["are AI benchmarks reliable", "benchmark contamination", "MMLU", "benchmark saturation", "leaderboard noise", "does a 1 point lead matter"]
+      },
+      "anchor": "#ch7",
+      "relatedPages": ["binomial-normal", "central-limit-theorem", "sampling"]
+    },
+    {
+      "id": "kv-cache",
+      "title": { "zh": "KV 缓存", "en": "The KV cache" },
+      "desc": {
+        "zh": "生成时把每个位置的键和值算一次就存起来，总运算从随长度平方增长变成线性；代价是缓存随上下文变大，Llama 3 70B 每个 token 327,680 字节。",
+        "en": "During generation each position's keys and values are computed once and kept, turning quadratic work into linear; the price is a cache that grows with context, 327,680 bytes per token for Llama 3 70B."
+      },
+      "aliases": {
+        "zh": ["KV缓存", "KV cache是什么", "为什么长上下文贵", "预填充和解码", "prefill", "缓存命中为什么便宜", "上下文窗口"],
+        "en": ["KV cache", "what is a KV cache", "why is long context expensive", "prefill vs decode", "prompt caching", "context window memory"]
+      },
+      "anchor": "#ch8",
+      "relatedPages": ["attention-mechanism"]
+    },
+    {
+      "id": "inference-roofline",
+      "title": { "zh": "推理的屋顶线：为什么受内存带宽限制", "en": "The inference roofline: why decoding is memory-bound" },
+      "desc": {
+        "zh": "单人解码时每写一个 token 都要把全部权重读一遍，速度由带宽决定；批量把读权重的成本分摊，从第一性原理算出每百万 token 的成本。",
+        "en": "Decoding for one user reads every weight per token, so bandwidth sets the speed; batching shares that read, and the cost per million tokens follows from first principles."
+      },
+      "aliases": {
+        "zh": ["大模型推理为什么慢", "每百万token成本", "API为什么按token收费", "批处理", "内存带宽", "屋顶线模型", "推理成本怎么算", "tokens每秒"],
+        "en": ["why is LLM inference slow", "cost per million tokens", "memory bandwidth bound", "roofline model", "batching", "tokens per second", "inference cost"]
+      },
+      "anchor": "#ch9",
+      "relatedPages": ["switches-that-compute"]
+    },
+    {
+      "id": "quantization",
+      "title": { "zh": "量化：把权重压成更少的位", "en": "Quantisation: fewer bits per weight" },
+      "desc": {
+        "zh": "把页面上的小模型量化到 8、4、3、2 位当场重测：8 位和 4 位几乎无损，2 位时归纳头被压坏；4 位权重让单人解码快近 4 倍。",
+        "en": "The page's tiny model quantised to 8, 4, 3 and 2 bits and re-measured: 8 and 4 bits barely change it, 2 bits breaks the induction head; 4-bit weights make single-user decoding nearly 4× faster."
+      },
+      "aliases": {
+        "zh": ["量化是什么", "4bit量化", "INT8", "模型压缩", "GPTQ", "为什么量化会变笨"],
+        "en": ["what is quantization", "4-bit quantization", "INT8", "model compression", "GPTQ", "does quantization hurt quality"]
+      },
+      "anchor": "#ch9",
+      "relatedPages": []
+    },
+    {
+      "id": "mixture-of-experts",
+      "title": { "zh": "专家混合（MoE）", "en": "Mixture of experts (MoE)" },
+      "desc": {
+        "zh": "把 MLP 换成很多并排的专家，每个 token 只去分数最高的几个；总参数大、激活参数小，难处是路由偏心和超出容量被丢掉。",
+        "en": "The MLP becomes many parallel experts and each token visits only the top few; total parameters are large and active ones small, and the hard part is a lopsided router dropping tokens over capacity."
+      },
+      "aliases": {
+        "zh": ["MoE是什么", "混合专家", "激活参数", "DeepSeek为什么便宜", "负载均衡", "稀疏模型"],
+        "en": ["what is mixture of experts", "MoE", "active parameters", "why is DeepSeek cheap", "expert load balancing", "sparse model"]
+      },
+      "anchor": "#ch10",
+      "relatedPages": []
+    },
+    {
+      "id": "speculative-decoding",
+      "title": { "zh": "投机解码、蒸馏与推理 token", "en": "Speculative decoding, distillation and reasoning tokens" },
+      "desc": {
+        "zh": "小模型先写几个草稿 token，大模型一次前向全部检查，输出分布不变；默认条件下快 2.8 倍。还有蒸馏、检索增强和推理 token 的成本。",
+        "en": "A small draft model writes a few tokens and the large model checks them in one pass with the output distribution unchanged, 2.8× faster by default; plus distillation, retrieval and what reasoning tokens cost."
+      },
+      "aliases": {
+        "zh": ["投机解码", "推测解码", "speculative decoding", "蒸馏", "知识蒸馏", "RAG", "检索增强", "推理模型为什么贵", "思考token要钱吗"],
+        "en": ["speculative decoding", "draft model", "distillation", "RAG", "retrieval augmented generation", "why are reasoning models expensive", "reasoning tokens cost"]
+      },
+      "anchor": "#ch10",
+      "relatedPages": ["llm-sampling"]
+    },
+    {
+      "id": "interpretability-ablation",
+      "title": { "zh": "可解释性：消融、叠加与稀疏自编码器", "en": "Interpretability: ablation, superposition and sparse autoencoders" },
+      "desc": {
+        "zh": "把小模型的注意力头逐个拆掉：拆掉归纳头，第二遍猜对率从 100% 掉到 0.6%。大模型的叠加现象与稀疏自编码器仍是有争议的研究前沿。",
+        "en": "Remove the tiny model's heads one at a time: without the induction head second-pass accuracy falls from 100% to 0.6%. Superposition and sparse autoencoders in large models remain a contested research frontier."
+      },
+      "aliases": {
+        "zh": ["可解释性", "大模型里面在想什么", "消融实验", "叠加", "稀疏自编码器", "SAE", "机械可解释性", "AI是黑箱吗"],
+        "en": ["interpretability", "what happens inside an LLM", "ablation", "superposition", "sparse autoencoder", "mechanistic interpretability", "is AI a black box"]
+      },
+      "anchor": "#ch11",
+      "relatedPages": []
+    },
+    {
+      "id": "frontier-2026",
+      "title": { "zh": "2026 年的前沿：算力、价格、考卷与法规", "en": "The frontier in 2026: compute, prices, tests and law" },
+      "desc": {
+        "zh": "带日期和来源的前沿数字：最大训练的估计算力和增速、上下文长度、HLE 排名、每百万 token 价格、吉瓦级数据中心、欧盟与加州的算力门槛，以及几个公开的未决问题。",
+        "en": "Dated, sourced frontier numbers: estimated largest training runs and their growth, context lengths, HLE standings, prices per million tokens, gigawatt data centres, EU and California compute thresholds, and open questions."
+      },
+      "aliases": {
+        "zh": ["最大的AI模型", "GPT-6", "前沿模型", "AI数据中心耗电", "AI法案算力门槛", "10的25次方FLOP", "数据会用完吗", "AI还会继续变强吗"],
+        "en": ["largest AI model", "frontier AI models", "AI data center power", "EU AI Act compute threshold", "10^25 FLOP", "will AI run out of data", "will scaling continue"]
+      },
+      "anchor": "#ch12",
+      "relatedPages": []
+    },
+    {
+      "id": "reading-ai-news",
+      "title": { "zh": "读大模型新闻时问的五个问题", "en": "Five questions for the next AI headline" },
+      "desc": {
+        "zh": "总参数还是激活参数、算力是公布还是估计、分数的误差、价格对应什么上下文、能力跳变是怎么测的。",
+        "en": "Total or active parameters, disclosed or estimated compute, the error on a score, which context a price is for, and how a sudden ability was measured."
+      },
+      "aliases": {
+        "zh": ["怎么看AI新闻", "大模型发布会怎么看", "模型技术报告怎么读"],
+        "en": ["how to read AI news", "how to read a model card", "how to judge a model launch"]
+      },
+      "anchor": "#ch13",
+      "relatedPages": []
+    }
+  ]
+}

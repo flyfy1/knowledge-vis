@@ -1,0 +1,157 @@
+{
+  "slug": "why-a-few-firms-win",
+  "path": "economics/markets/why-a-few-firms-win/",
+  "category": "economics",
+  "categoryName": { "zh": "经济与金钱", "en": "Economics & Money" },
+  "subtopic": "markets",
+  "subtopicName": { "zh": "市场与竞争", "en": "Markets & Competition" },
+  "stage": "university",
+  "title": { "zh": "为什么总是少数几家公司拿走整个市场", "en": "Why Do a Few Companies End Up Owning Whole Markets?" },
+  "desc": {
+    "zh": "从定价权、成本结构、寡头竞争、网络效应、双边平台、数据回路、捆绑与自我优待，到市场势力怎么测量、AI 产业链的市场结构与美国、欧盟、中国的反垄断现状。十二个可以拖动的产业组织模型，前沿事实都标了日期和出处。",
+    "en": "Pricing power, cost structure, oligopoly, network effects, two-sided platforms, data loops, tying and self-preferencing, then how market power is measured, the market structure of the AI stack, and antitrust in the US, EU and China. Twelve industrial-organisation models you can drag, with every frontier fact dated and sourced."
+  },
+  "tags": [
+    { "zh": "垄断", "en": "Monopoly" },
+    { "zh": "反垄断", "en": "Antitrust" },
+    { "zh": "产业组织", "en": "Industrial Organization" },
+    { "zh": "网络效应", "en": "Network Effects" },
+    { "zh": "平台经济", "en": "Platform Economics" },
+    { "zh": "长文", "en": "Long-form Essay" }
+  ],
+  "concepts": [
+    {
+      "id": "monopoly-pricing-lerner",
+      "title": { "zh": "垄断定价与勒纳指数", "en": "Monopoly pricing and the Lerner index" },
+      "desc": { "zh": "能定价的卖家卖到边际收入等于边际成本为止；加价率 (P − MC)/P = 1/ε，完全由它面对的需求弹性决定，并留下无谓损失。", "en": "A price-setting seller produces until marginal revenue equals marginal cost; the markup (P − MC)/P = 1/ε is fixed by the elasticity it faces, and leaves a deadweight loss." },
+      "aliases": {
+        "zh": ["垄断", "垄断定价", "勒纳指数", "定价权", "无谓损失", "边际收入等于边际成本", "价格歧视", "大数据杀熟", "垄断为什么会涨价", "为什么垄断者要少卖"],
+        "en": ["monopoly", "monopoly pricing", "Lerner index", "pricing power", "deadweight loss", "MR = MC", "price discrimination", "why do monopolies charge more", "markup"]
+      },
+      "anchor": "#ch1",
+      "relatedPages": ["supply-demand", "scarcity-moves"]
+    },
+    {
+      "id": "minimum-efficient-scale-natural-monopoly",
+      "title": { "zh": "最小有效规模与自然垄断", "en": "Minimum efficient scale and natural monopoly" },
+      "desc": { "zh": "固定成本大、边际成本小的行业，最小有效规模相对市场很大，只容得下几家；市场小于约 1.41 倍最小有效规模时一家最省钱。", "en": "Where fixed costs are large and marginal costs small, minimum efficient scale is large relative to the market, so only a few firms fit; below about 1.41 × MES one firm is cheapest." },
+      "aliases": {
+        "zh": ["自然垄断", "规模经济", "最小有效规模", "固定成本", "次可加性", "为什么芯片行业只有几家", "为什么软件公司容易垄断", "为什么自来水公司只有一家"],
+        "en": ["natural monopoly", "economies of scale", "minimum efficient scale", "fixed cost", "subadditivity", "why are there so few chip makers", "why does software concentrate"]
+      },
+      "anchor": "#ch2",
+      "relatedPages": ["supply-demand"]
+    },
+    {
+      "id": "cournot-bertrand-hhi",
+      "title": { "zh": "寡头竞争：古诺、伯特兰与 HHI", "en": "Oligopoly: Cournot, Bertrand and the HHI" },
+      "desc": { "zh": "同样是两家，拼产量时价格接近垄断，同质拼价格时等于成本，产品有差异时介于两者。HHI 相同，竞争强度可以完全不同。", "en": "With two firms, quantity competition keeps prices near monopoly, price competition in identical goods drives them to cost, differentiation sits between. The same HHI can hide very different competition." },
+      "aliases": {
+        "zh": ["寡头", "寡头垄断", "古诺模型", "伯特兰模型", "伯特兰悖论", "HHI", "赫芬达尔指数", "市场集中度", "两家公司会不会合谋涨价", "差异化竞争"],
+        "en": ["oligopoly", "Cournot", "Bertrand", "Bertrand paradox", "HHI", "Herfindahl index", "market concentration", "logit demand", "differentiated Bertrand"]
+      },
+      "anchor": "#ch3",
+      "relatedPages": ["game-theory", "prisoners-dilemma"]
+    },
+    {
+      "id": "free-entry-contestability",
+      "title": { "zh": "自由进入、沉没成本与可竞争市场", "en": "Free entry, sunk costs and contestable markets" },
+      "desc": { "zh": "家数是均衡的结果：竞争越狠，进入后越难赚回沉没成本，行业反而越集中；古诺自由进入往往进入过度；进入成本可收回时一家也只能收平均成本。", "en": "The number of firms is an equilibrium: fiercer competition makes sunk costs harder to recover, so the industry ends up more concentrated; Cournot free entry tends to overshoot; with recoverable entry costs even a lone firm prices at average cost." },
+      "aliases": {
+        "zh": ["进入壁垒", "沉没成本", "可竞争市场", "进入过度", "一个市场能养活几家公司", "为什么价格战之后只剩一家"],
+        "en": ["barriers to entry", "sunk costs", "contestable markets", "excess entry", "Sutton", "how many firms can a market support"]
+      },
+      "anchor": "#ch4",
+      "relatedPages": ["game-theory"]
+    },
+    {
+      "id": "network-effects-critical-mass",
+      "title": { "zh": "网络效应与临界规模", "en": "Network effects and critical mass" },
+      "desc": { "zh": "价值来自别人也在用时，需求曲线呈驼峰形 p = n(1 − n)：低于临界规模塌回零，越过它自己长大。", "en": "When value comes from others using it, demand is hump-shaped, p = n(1 − n): below critical mass the network collapses, above it grows on its own." },
+      "aliases": {
+        "zh": ["网络效应", "临界规模", "冷启动", "为什么新平台要烧钱补贴", "用的人越多越值钱", "梅特卡夫定律", "正反馈"],
+        "en": ["network effects", "network externalities", "critical mass", "cold start", "why do startups subsidise users", "positive feedback", "tipping"]
+      },
+      "anchor": "#ch5",
+      "relatedPages": ["externalities"]
+    },
+    {
+      "id": "lock-in-switching-costs",
+      "title": { "zh": "锁定、路径依赖与转换成本", "en": "Lock-in, path dependence and switching costs" },
+      "desc": { "zh": "Arthur（1989）模型：两个标准竞争时，领先一旦超过 g/r 人就锁定；会有一个赢家几乎必然，谁赢几乎是抛硬币。", "en": "Arthur (1989): when two standards compete, a lead larger than g/r users locks in; that someone wins is near certain, who wins is close to a coin toss." },
+      "aliases": {
+        "zh": ["锁定", "路径依赖", "转换成本", "赢家通吃", "QWERTY", "VHS 和 Betamax", "为什么更好的产品不一定赢", "收益递增"],
+        "en": ["lock-in", "path dependence", "switching costs", "winner takes all", "QWERTY", "VHS vs Betamax", "increasing returns", "why the better product doesn't always win"]
+      },
+      "anchor": "#ch6",
+      "relatedPages": ["game-theory"]
+    },
+    {
+      "id": "two-sided-platforms",
+      "title": { "zh": "双边平台定价与竞争瓶颈", "en": "Two-sided platform pricing and the competitive bottleneck" },
+      "desc": { "zh": "平台每一边的价格 = 成本 + 普通加价 − 这一边带给另一边的价值；被更需要的一边被补贴，只看一边价格会看错。", "en": "On a platform each side's price = cost + the usual markup − the value that side brings the other; the side that is needed more gets subsidised, and one side's price alone misleads." },
+      "aliases": {
+        "zh": ["双边市场", "平台经济", "平台抽成", "为什么搜索是免费的", "为什么外卖平台抽成高", "交叉网络效应", "竞争瓶颈", "多归属"],
+        "en": ["two-sided markets", "platform economics", "platform fees", "why is search free", "cross-side network effects", "competitive bottleneck", "Rochet Tirole", "Armstrong 2006"]
+      },
+      "anchor": "#ch7",
+      "relatedPages": ["externalities"]
+    },
+    {
+      "id": "data-feedback-loops",
+      "title": { "zh": "数据回路与学习曲线", "en": "Data feedback loops and learning curves" },
+      "desc": { "zh": "用户带来数据、数据改善产品：数据回报递减时领先会自己消退；只有数据过时得够快时，回路才把领先变成一家通吃。", "en": "Users bring data and data improves the product: with diminishing returns a data lead fades; only when data goes stale fast enough does the loop turn a lead into winner-take-all." },
+      "aliases": {
+        "zh": ["数据壁垒", "数据飞轮", "数据是新的石油吗", "学习曲线", "规模定律", "有数据的公司一定赢吗", "AI 公司为什么要用户数据"],
+        "en": ["data network effects", "data flywheel", "is data the new oil", "learning curve", "scaling laws", "data moat", "does more data always win"]
+      },
+      "anchor": "#ch8",
+      "relatedPages": []
+    },
+    {
+      "id": "tying-self-preferencing",
+      "title": { "zh": "捆绑、自我优待与纵向一体化", "en": "Tying, self-preferencing and vertical integration" },
+      "desc": { "zh": "单一垄断利润论在什么时候失效（Whinston 1990）：被绑产品有独立买家、对手需要规模时，捆绑能挤走更好的对手；纵向合并也能消除双重加价。", "en": "When the one-monopoly-profit argument fails (Whinston 1990): if the tied good has independent buyers and the rival needs scale, tying can exclude a better rival; vertical mergers can also remove double marginalisation." },
+      "aliases": {
+        "zh": ["捆绑销售", "搭售", "自我优待", "平台二选一", "预装", "纵向一体化", "双重加价", "单一垄断利润", "平台把自家产品排前面违法吗"],
+        "en": ["tying", "bundling", "self-preferencing", "exclusive dealing", "vertical integration", "double marginalization", "one monopoly profit", "Whinston 1990"]
+      },
+      "anchor": "#ch9",
+      "relatedPages": ["game-theory"]
+    },
+    {
+      "id": "interoperability-multihoming",
+      "title": { "zh": "互通、多归属：赢家通吃不是必然", "en": "Interoperability and multi-homing: winner-take-all is not inevitable" },
+      "desc": { "zh": "锁定门槛是 g/(r(1 − φ))：互通、多归属和真实的口味差异都能让网络效应下的一边倒消失。", "en": "The lock-in threshold is g/(r(1 − φ)): interoperability, multi-homing and genuine taste differences can each make network-effect tipping disappear." },
+      "aliases": {
+        "zh": ["互联互通", "互通", "多归属", "数据可携带", "数字市场法", "怎么打破平台垄断", "为什么邮箱没有被一家垄断"],
+        "en": ["interoperability", "multi-homing", "data portability", "Digital Markets Act", "DMA", "how to break platform monopolies", "why email never tipped"]
+      },
+      "anchor": "#ch10",
+      "relatedPages": []
+    },
+    {
+      "id": "measuring-market-power",
+      "title": { "zh": "测量市场势力与反垄断的几派立场", "en": "Measuring market power and the antitrust schools" },
+      "desc": { "zh": "De Loecker–Eeckhout–Unger 的加价估计与 Traina、Bond 等人的批评；集中度不等于势力（Demsetz）；芝加哥、后芝加哥、新布兰代斯三种立场并列。", "en": "The De Loecker–Eeckhout–Unger markup estimates and the critiques by Traina and Bond et al.; concentration is not power (Demsetz); the Chicago, post-Chicago and neo-Brandeisian positions side by side." },
+      "aliases": {
+        "zh": ["市场势力", "加价率", "美国企业加价上升", "消费者福利标准", "芝加哥学派", "新布兰代斯", "集中度高就是垄断吗", "反垄断该保护什么"],
+        "en": ["market power", "markups", "rise of market power", "De Loecker Eeckhout Unger", "consumer welfare standard", "Chicago school", "neo-Brandeisian", "is concentration the same as monopoly"]
+      },
+      "anchor": "#ch11",
+      "relatedPages": ["supply-demand"]
+    },
+    {
+      "id": "ai-stack-antitrust",
+      "title": { "zh": "AI 产业链的市场结构与各地反垄断", "en": "Market structure of the AI stack and antitrust worldwide" },
+      "desc": { "zh": "芯片、云、模型、应用四层各自的集中度和机制，以及截至 2026-11-11 美国、欧盟、中国的主要案件和规则，全部带日期和出处。", "en": "Concentration and mechanisms in chips, cloud, models and apps, and the main US, EU and China cases and rules as of 2026-11-11, all dated and sourced." },
+      "aliases": {
+        "zh": ["AI公司怎么赚钱", "AI 会被垄断吗", "大模型市场格局", "云计算市场份额", "台积电垄断", "谷歌反垄断案", "数字市场法罚款", "中国平台反垄断", "外卖补贴大战"],
+        "en": ["AI market structure", "will AI be monopolized", "cloud market share", "foundation model competition", "Google antitrust case", "DMA fines", "China platform antitrust", "AI antitrust"]
+      },
+      "anchor": "#ch12",
+      "relatedPages": ["scarcity-moves"]
+    }
+  ],
+  "relatedPages": ["scarcity-moves", "supply-demand", "game-theory", "prisoners-dilemma", "externalities", "auction-basics"]
+}

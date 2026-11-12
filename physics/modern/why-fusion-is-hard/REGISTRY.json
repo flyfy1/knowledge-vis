@@ -1,0 +1,109 @@
+{
+  "slug": "why-fusion-is-hard",
+  "path": "physics/modern/why-fusion-is-hard/",
+  "category": "physics",
+  "subtopic": "modern",
+  "subtopicName": { "zh": "近代物理", "en": "Modern Physics" },
+  "stage": "university",
+  "title": { "zh": "核聚变为什么总是“还要三十年”", "en": "Why Is Fusion Always Thirty Years Away?" },
+  "desc": {
+    "zh": "从原子质量、库仑势垒、隧穿和劳森判据，到托卡马克、惯性约束、氚与中子，再到截至 2026 年的实验纪录和 1976 年的经费规划。十一个可以动手调的模型。",
+    "en": "From atomic masses, the Coulomb barrier, tunnelling and the Lawson criterion to tokamaks, inertial confinement, tritium and neutrons, then the records as of 2026 and the 1976 funding plan. Eleven models you can push."
+  },
+  "tags": [
+    { "zh": "核聚变", "en": "Nuclear Fusion" },
+    { "zh": "等离子体", "en": "Plasma" },
+    { "zh": "劳森判据", "en": "Lawson Criterion" },
+    { "zh": "长文", "en": "Long-form Essay" }
+  ],
+  "concepts": [
+    {
+      "id": "binding-energy-fusion-yield",
+      "title": { "zh": "结合能与聚变放能", "en": "Binding energy and fusion yield" },
+      "desc": { "zh": "从原子质量算出每核子结合能和反应的 Q 值：D–T 每千克放出的能量约是铀裂变的五倍、标准煤的一千多万倍。", "en": "Binding energy per nucleon and reaction Q-values from atomic masses: per kilogram, D–T releases about five times as much as uranium fission and over ten million times as much as coal." },
+      "aliases": { "zh": ["结合能", "质量亏损", "Q值", "聚变能量从哪来", "聚变为什么放能", "核聚变和核裂变的区别", "比结合能曲线"], "en": ["binding energy", "mass defect", "Q value", "where does fusion energy come from", "fusion vs fission", "binding energy curve", "energy per kilogram of fusion fuel"] },
+      "anchor": "#ch1",
+      "relatedPages": ["relativity", "atomic-structure"]
+    },
+    {
+      "id": "coulomb-barrier",
+      "title": { "zh": "库仑势垒与热运动", "en": "The Coulomb barrier and thermal motion" },
+      "desc": { "zh": "D–T 之间约 444 keV 的电荷排斥墙；麦克斯韦分布的尾巴里，经典上几乎没有粒子翻得过去。", "en": "A wall of about 444 keV of electric repulsion between D and T; classically almost no particle in the Maxwellian tail gets over it." },
+      "aliases": { "zh": ["库仑势垒", "原子核为什么难聚合", "聚变需要多高温度", "麦克斯韦分布尾巴", "为什么聚变要一亿度"], "en": ["Coulomb barrier", "why is fusion hard", "how hot for fusion", "Maxwell-Boltzmann tail", "why does fusion need 100 million degrees"] },
+      "anchor": "#ch2",
+      "relatedPages": ["electric-fields", "kinetic-theory"]
+    },
+    {
+      "id": "gamow-peak-reactivity",
+      "title": { "zh": "隧穿、伽莫夫峰与反应率", "en": "Tunnelling, the Gamow peak and reactivity" },
+      "desc": { "zh": "隧穿几率乘麦克斯韦尾巴形成伽莫夫峰；Bosch–Hale 的 ⟨σv⟩ 说明为什么大家都选 D–T。", "en": "Tunnelling probability times the Maxwellian tail gives the Gamow peak; the Bosch–Hale ⟨σv⟩ shows why everyone chooses D–T." },
+      "aliases": { "zh": ["伽莫夫峰", "量子隧穿聚变", "反应率", "聚变截面", "为什么选氘氚", "太阳为什么能聚变"], "en": ["Gamow peak", "Gamow factor", "fusion reactivity", "fusion cross section", "why deuterium tritium", "how does the sun fuse with tunnelling"] },
+      "anchor": "#ch3",
+      "relatedPages": ["quantum-tunneling"]
+    },
+    {
+      "id": "lawson-triple-product",
+      "title": { "zh": "劳森判据与三重积", "en": "Lawson criterion and the triple product" },
+      "desc": { "zh": "产热要跟上漏热：n·T·τ_E 在约 14 keV 处有最低门槛，约 3 × 10²¹ keV·s/m³ 才能点火。", "en": "Heating must keep up with losses: n·T·τ_E has its lowest ignition threshold near 14 keV, about 3 × 10²¹ keV·s/m³." },
+      "aliases": { "zh": ["劳森判据", "三重积", "点火条件", "能量约束时间", "聚变得失相当", "聚变什么时候算成功"], "en": ["Lawson criterion", "triple product", "ignition condition", "energy confinement time", "breakeven", "what counts as fusion success"] },
+      "anchor": "#ch4",
+      "relatedPages": []
+    },
+    {
+      "id": "magnetic-confinement-drift",
+      "title": { "zh": "磁约束：漂移与扭转磁场", "en": "Magnetic confinement: drifts and twisted fields" },
+      "desc": { "zh": "环形磁场里的粒子会垂直漂移撞壁；把磁力线拧起来（托卡马克电流或仿星器线圈）才能抵消。", "en": "In a toroidal field particles drift vertically into the wall; twisting the field lines (tokamak current or stellarator coils) cancels the drift." },
+      "aliases": { "zh": ["托卡马克", "仿星器", "磁约束", "安全因子", "香蕉轨道", "托卡马克是什么", "磁场怎么关住等离子体"], "en": ["tokamak", "stellarator", "magnetic confinement", "safety factor q", "banana orbit", "what is a tokamak", "how do magnets hold plasma"] },
+      "anchor": "#ch5",
+      "relatedPages": ["magnetic-force"]
+    },
+    {
+      "id": "tokamak-scaling-hts",
+      "title": { "zh": "约束定标律与高温超导", "en": "Confinement scaling and high-temperature superconductors" },
+      "desc": { "zh": "ITER98(y,2) 定标律下的零维托卡马克：Q 怎样随尺寸和磁场变，为什么高场磁体能让装置变小。", "en": "A 0-D tokamak with the ITER98(y,2) scaling: how Q depends on size and field, and why high-field magnets shrink the machine." },
+      "aliases": { "zh": ["ITER", "SPARC", "高温超导磁体", "约束定标律", "聚变装置为什么这么大", "特罗容极限", "比压"], "en": ["ITER", "SPARC", "HTS magnets", "confinement scaling law", "why are fusion reactors so big", "Troyon limit", "plasma beta"] },
+      "anchor": "#ch6",
+      "relatedPages": []
+    },
+    {
+      "id": "inertial-confinement",
+      "title": { "zh": "惯性约束与靶增益", "en": "Inertial confinement and target gain" },
+      "desc": { "zh": "把燃料压到上千倍密度、靠 ρR 烧掉一部分；NIF 的靶增益与电站需要的增益差在哪。", "en": "Compress fuel a thousandfold and burn a fraction set by ρR; how NIF's target gain compares with what a power plant needs." },
+      "aliases": { "zh": ["惯性约束", "激光聚变", "国家点火装置", "NIF点火", "靶增益", "激光核聚变成功了吗"], "en": ["inertial confinement fusion", "laser fusion", "National Ignition Facility", "NIF ignition", "target gain", "did laser fusion work"] },
+      "anchor": "#ch7",
+      "relatedPages": []
+    },
+    {
+      "id": "fusion-gain-definitions",
+      "title": { "zh": "Q_sci、靶增益与 Q_eng", "en": "Q_sci, target gain and Q_eng" },
+      "desc": { "zh": "等离子体增益不等于电站增益：热电转换、加热效率和厂用电之后，Q_sci 要到几十才像一座电站。", "en": "Plasma gain is not plant gain: after thermal conversion, heating efficiency and house load, Q_sci must reach tens to look like a power plant." },
+      "aliases": { "zh": ["聚变增益", "工程增益", "净能量增益", "聚变净发电", "Q值是什么意思", "聚变真的能发电吗"], "en": ["fusion gain", "engineering gain", "net energy gain", "scientific breakeven", "what does Q mean in fusion", "can fusion actually make electricity"] },
+      "anchor": "#ch8",
+      "relatedPages": ["carnot-cycle"]
+    },
+    {
+      "id": "fusion-engineering-tritium-neutrons",
+      "title": { "zh": "氚增殖、中子损伤与偏滤器", "en": "Tritium breeding, neutron damage and the divertor" },
+      "desc": { "zh": "电站要自己造氚（TBR > 1）、扛住 14 MeV 中子，还要把废热从毫米宽的通道排到靶板上。", "en": "A plant must breed its own tritium (TBR > 1), survive 14 MeV neutrons and exhaust heat through a millimetre-wide channel onto the divertor." },
+      "aliases": { "zh": ["氚增殖比", "氚从哪来", "中子壁负载", "偏滤器", "聚变材料", "聚变燃料够用吗"], "en": ["tritium breeding ratio", "where does tritium come from", "neutron wall load", "divertor", "fusion materials", "is there enough fusion fuel"] },
+      "anchor": "#ch9",
+      "relatedPages": []
+    },
+    {
+      "id": "fusion-frontier-2026",
+      "title": { "zh": "聚变前沿：纪录与开放问题", "en": "The fusion frontier: records and open problems" },
+      "desc": { "zh": "截至 2026 年的三重积纪录、NIF 点火实验、JET 能量纪录、长脉冲和各方计划，区分已演示与声明。", "en": "Triple-product records to 2026, NIF ignition shots, JET's energy record, long pulses and announced plans, separating demonstrated results from claims." },
+      "aliases": { "zh": ["聚变最新进展", "聚变纪录", "可控核聚变现状", "核聚变什么时候能商用", "ITER进度", "私营聚变公司"], "en": ["fusion progress", "fusion records", "state of fusion energy", "when will fusion be commercial", "ITER schedule", "private fusion companies"] },
+      "anchor": "#ch10",
+      "relatedPages": []
+    },
+    {
+      "id": "fusion-thirty-years",
+      "title": { "zh": "“还要三十年”从哪来", "en": "Where “thirty years away” comes from" },
+      "desc": { "zh": "1976 年 ERDA 规划把示范堆日期绑在经费曲线上，实际拨款低于“永远造不出”的那条线；另一种解释是物理比预想的难。", "en": "The 1976 ERDA plan tied the demonstration date to a funding curve, and actual budgets fell below the 'never' line; the other view is that the physics was harder than expected." },
+      "aliases": { "zh": ["聚变永远三十年", "为什么聚变总是还要三十年", "聚变经费", "核聚变为什么这么难", "聚变笑话"], "en": ["fusion is always 30 years away", "why is fusion always thirty years away", "fusion funding", "why is fusion so hard", "fusion never chart"] },
+      "anchor": "#ch11",
+      "relatedPages": []
+    }
+  ]
+}

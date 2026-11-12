@@ -1,0 +1,93 @@
+{
+  "slug": "why-batteries-hold-so-little",
+  "path": "chemistry/reactions/why-batteries-hold-so-little/",
+  "category": "chemistry",
+  "subtopic": "reactions",
+  "subtopicName": { "zh": "化学反应", "en": "Chemical Reactions" },
+  "stage": "university",
+  "title": { "zh": "电池为什么就是装不下更多电", "en": "Why Can't a Battery Just Hold More?" },
+  "desc": {
+    "zh": "从半反应、法拉第常数和能斯特方程一路算到电芯能量密度、快充、热失控、衰老和成本，再看 2026 年的前沿：十个用真实方程搭的可动手模型。",
+    "en": "From half-reactions, Faraday's constant and the Nernst equation to cell energy density, fast charging, thermal runaway, ageing and cost, then the 2026 frontier: models built on the equations the field actually uses."
+  },
+  "tags": [
+    { "zh": "锂离子电池", "en": "Lithium-ion Battery" },
+    { "zh": "电化学", "en": "Electrochemistry" },
+    { "zh": "能量密度", "en": "Energy Density" },
+    { "zh": "长文", "en": "Long-form Essay" }
+  ],
+  "concepts": [
+    {
+      "id": "cell-voltage-half-reactions",
+      "title": { "zh": "电池电压与半反应", "en": "Cell voltage from two half-reactions" },
+      "desc": { "zh": "电池电压是两个电极电势之差，每摩尔电子做的最大功是 ΔG = −nFE；锂电池的电压高到水扛不住，只能用有机电解液。", "en": "A cell's voltage is the difference of two electrode potentials and the maximum work per mole of electrons is ΔG = −nFE; lithium cells exceed water's window, so they need organic electrolytes." },
+      "aliases": { "zh": ["电极电势", "标准电极电势", "ΔG=-nFE", "电池电压是怎么来的", "为什么锂电池电压高", "水的电化学窗口"], "en": ["electrode potential", "standard reduction potential", "why is a lithium battery 3.7 volts", "where does battery voltage come from", "electrochemical stability window"] },
+      "anchor": "#ch1",
+      "relatedPages": ["electrochemistry", "chemical-equilibrium"]
+    },
+    {
+      "id": "specific-capacity-energy-density",
+      "title": { "zh": "比容量与电芯能量密度", "en": "Specific capacity and cell energy density" },
+      "desc": { "zh": "Q = nF/(3.6M) 决定材料每克存多少电；理论值到电芯要扣掉粘结剂、箔、隔膜、电解液和外壳，只剩一半左右。", "en": "Q = nF/(3.6M) sets how much charge a gram of material stores; from theory to a real cell, binder, foils, separator, electrolyte and can remove about half." },
+      "aliases": { "zh": ["能量密度", "比能量", "Wh/kg", "为什么用锂做电池", "电池为什么这么重", "电池能量密度为什么涨得慢", "理论比容量"], "en": ["energy density", "specific energy", "Wh/kg", "why lithium for batteries", "why are batteries so heavy", "theoretical specific capacity"] },
+      "anchor": "#ch2",
+      "relatedPages": ["electrochemistry"]
+    },
+    {
+      "id": "open-circuit-voltage-curve",
+      "title": { "zh": "开路电压曲线：固溶体与两相", "en": "Open-circuit voltage: solid solution versus two phases" },
+      "desc": { "zh": "格子气（正规溶液）模型给出能斯特方程的推广；相互作用够强时两相共存，电压成平台，磷酸铁锂因此难以靠电压估电量。", "en": "The lattice-gas (regular solution) model generalises the Nernst equation; strong attraction splits the host into two phases with a flat plateau, which is why LFP state of charge is hard to read from voltage." },
+      "aliases": { "zh": ["能斯特方程", "电压平台", "磷酸铁锂电量不准", "电量显示为什么跳", "SOC估算", "荷电状态"], "en": ["Nernst equation", "voltage plateau", "LFP state of charge", "why does my battery percentage jump", "SOC estimation", "lattice gas model"] },
+      "anchor": "#ch3",
+      "relatedPages": ["electrochemistry", "chemical-equilibrium"]
+    },
+    {
+      "id": "solid-state-diffusion-particle",
+      "title": { "zh": "颗粒里的固相扩散", "en": "Solid-state diffusion in an electrode particle" },
+      "desc": { "zh": "锂在颗粒里按菲克定律扩散，填满的时间约为 R²/D；颗粒越小、电极越薄，充得越快。", "en": "Lithium diffuses into a particle by Fick's law and filling takes about R²/D; smaller particles and thinner electrodes charge faster." },
+      "aliases": { "zh": ["菲克定律", "扩散时间", "纳米颗粒", "为什么小颗粒充得快", "C倍率", "固相扩散"], "en": ["Fick's law", "diffusion time", "C-rate", "why nanoparticles charge faster", "solid-state diffusion"] },
+      "anchor": "#ch4",
+      "relatedPages": ["membrane-transport"]
+    },
+    {
+      "id": "cc-cv-fast-charging",
+      "title": { "zh": "恒流-恒压充电与快充极限", "en": "CC-CV charging and the limits of fast charging" },
+      "desc": { "zh": "过电位、内阻和扩散让端电压提前碰到上限，恒压阶段电流衰减，所以最后 20% 很慢；低温快充会析锂。", "en": "Overpotential, resistance and diffusion push the terminal voltage to its limit early, so the constant-voltage tail is slow; fast charging in the cold risks lithium plating." },
+      "aliases": { "zh": ["快充", "为什么充到80%以后变慢", "恒流恒压", "析锂", "冬天充电慢", "内阻", "单颗粒模型", "Butler-Volmer"], "en": ["fast charging", "why does charging slow down after 80%", "CC-CV", "lithium plating", "charging in cold weather", "internal resistance", "single particle model"] },
+      "anchor": "#ch5",
+      "relatedPages": ["ohms-law", "inside-a-phone"]
+    },
+    {
+      "id": "thermal-runaway",
+      "title": { "zh": "热失控", "en": "Thermal runaway" },
+      "desc": { "zh": "放热随温度指数增长而散热近似线性，反应物耗尽前放热压过散热就停不下来；磷酸铁锂比三元更晚、更温和。", "en": "Heat release grows exponentially with temperature while cooling grows roughly linearly; if release wins before reactants run out, temperature runs away. LFP starts later and peaks lower than NMC." },
+      "aliases": { "zh": ["电池起火", "电池为什么会爆炸", "热失控", "谢苗诺夫", "磷酸铁锂更安全吗", "电动车自燃"], "en": ["battery fire", "why do batteries explode", "thermal runaway", "Semenov diagram", "is LFP safer", "EV fire"] },
+      "anchor": "#ch6",
+      "relatedPages": ["activation-energy", "reaction-rates"]
+    },
+    {
+      "id": "battery-ageing-sei",
+      "title": { "zh": "电池衰老：SEI 与循环", "en": "Battery ageing: SEI growth and cycling" },
+      "desc": { "zh": "负极表面膜按 √t 增厚、慢慢吃掉锂；半经验模型把日历老化和循环老化分开，温度和平均电量是最大的旋钮。", "en": "The anode surface film thickens roughly as √t and consumes lithium; semi-empirical models split calendar and cycle ageing, with temperature and mean charge the biggest levers." },
+      "aliases": { "zh": ["电池老化", "电池寿命", "为什么电池越用越不经用", "充到80%", "SEI膜", "循环寿命", "日历老化"], "en": ["battery degradation", "battery life", "why does my battery hold less charge over time", "charge to 80 percent", "SEI layer", "cycle life", "calendar ageing"] },
+      "anchor": "#ch7",
+      "relatedPages": ["reaction-rates"]
+    },
+    {
+      "id": "battery-learning-curve",
+      "title": { "zh": "电池价格的学习曲线", "en": "The learning curve of battery prices" },
+      "desc": { "zh": "累计产量每翻一倍，锂电池电芯价格降约 20–30%（莱特定律），学习率取决于拟合区间；正极材料是最大的成本项。", "en": "Each doubling of cumulative production has cut lithium-ion cell prices by about 20–30% (Wright's law), depending on the fitted period; the cathode is the largest cost item." },
+      "aliases": { "zh": ["莱特定律", "学习率", "电池为什么越来越便宜", "电池价格", "每千瓦时多少钱", "经验曲线"], "en": ["Wright's law", "learning rate", "why are batteries getting cheaper", "battery price per kWh", "experience curve"] },
+      "anchor": "#ch8",
+      "relatedPages": ["exponents-logarithms"]
+    },
+    {
+      "id": "battery-frontier-2026",
+      "title": { "zh": "电池前沿（2026）：固态、硅负极、钠离子、快充", "en": "The battery frontier (2026): solid-state, silicon, sodium-ion, fast charging" },
+      "desc": { "zh": "按已确立、已演示和厂商声称分开列出截至 2026 年 11 月的数据，并算出每千瓦时锂的下限。", "en": "Facts as of November 2026 sorted into established, demonstrated and claimed, plus the minimum lithium per kWh." },
+      "aliases": { "zh": ["固态电池", "硅负极", "钠离子电池", "神行电池", "刀片电池", "锂资源够不够", "电池新闻怎么看"], "en": ["solid-state battery", "silicon anode", "sodium-ion battery", "is there enough lithium", "battery breakthrough", "how to read battery news"] },
+      "anchor": "#ch9",
+      "relatedPages": ["electrochemistry"]
+    }
+  ]
+}

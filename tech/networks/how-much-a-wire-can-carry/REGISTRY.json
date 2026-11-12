@@ -1,0 +1,133 @@
+{
+  "slug": "how-much-a-wire-can-carry",
+  "path": "tech/networks/how-much-a-wire-can-carry/",
+  "category": "tech",
+  "subtopic": "networks",
+  "subtopicName": { "zh": "网络与通信", "en": "Networks & Communication" },
+  "stage": "university",
+  "title": { "zh": "一根线到底能传多少信息", "en": "How Much a Wire Can Carry" },
+  "desc": {
+    "zh": "香农算出了一根线、一段空气能传的比特上限，七十年后的编码已经离它不到一分贝。从熵、压缩、噪声信道到汉明码、里德–所罗门、LDPC、极化码、QAM 和多天线，每个算法都在页面里真跑。",
+    "en": "Shannon computed how many bits a wire or a stretch of air can carry; seventy years on, codes sit within a decibel of that limit. From entropy, compression and noisy channels to Hamming, Reed–Solomon, LDPC, polar codes, QAM and MIMO, every algorithm runs live in the page."
+  },
+  "tags": [
+    { "zh": "信息论", "en": "Information Theory" },
+    { "zh": "纠错码", "en": "Error-Correcting Codes" },
+    { "zh": "无线通信", "en": "Wireless Communication" },
+    { "zh": "长文", "en": "Long-form Essay" }
+  ],
+  "concepts": [
+    {
+      "id": "information-surprisal",
+      "title": { "zh": "信息量与熵：意外有多少比特", "en": "Surprisal and entropy: how many bits a surprise is worth" },
+      "desc": { "zh": "概率为 p 的事件带来 −log₂p 比特；英文每个字母约 1 比特，用猜字游戏和 n 元模型亲手量出来。", "en": "An event of probability p carries −log₂p bits; English carries about one bit per letter, measured with Shannon's guessing game and n-gram models." },
+      "aliases": { "zh": ["信息量", "香农熵", "英文的熵", "猜字游戏", "一个字母多少比特", "n元模型", "交叉熵"], "en": ["surprisal", "shannon entropy", "entropy of english", "shannon guessing game", "bits per letter", "n-gram model", "cross-entropy"] },
+      "anchor": "#ch1",
+      "relatedPages": ["entropy", "exponents-logarithms", "markov-chains"]
+    },
+    {
+      "id": "source-coding-huffman-arithmetic",
+      "title": { "zh": "压缩的底：哈夫曼与算术编码", "en": "The floor of compression: Huffman and arithmetic coding" },
+      "desc": { "zh": "平均码长不能低于熵；哈夫曼码离熵不到 1 比特，算术编码几乎贴着熵。", "en": "Average code length cannot beat the entropy; Huffman codes come within one bit, arithmetic coding almost touches it." },
+      "aliases": { "zh": ["哈夫曼编码", "霍夫曼编码", "算术编码", "无损压缩", "信源编码定理", "zip为什么能压缩"], "en": ["huffman coding", "arithmetic coding", "lossless compression", "source coding theorem", "how does zip work"] },
+      "anchor": "#ch2",
+      "relatedPages": ["entropy", "binary-search"]
+    },
+    {
+      "id": "compression-is-prediction",
+      "title": { "zh": "压缩就是预测", "en": "Compression is prediction" },
+      "desc": { "zh": "码长等于模型的交叉熵：预测得越准压得越小；随机数据谁也压不了，用计数一证就明。", "en": "Code length equals the model's cross-entropy, so better prediction means smaller files; random data cannot be compressed, by a counting argument." },
+      "aliases": { "zh": ["为什么随机数据压不了", "大模型能压缩", "预测与压缩", "自适应编码", "鸽巢原理"], "en": ["why random data cannot be compressed", "language models as compressors", "prediction and compression", "adaptive coding", "pigeonhole principle"] },
+      "anchor": "#ch3",
+      "relatedPages": ["llm-sampling", "probability-distribution"]
+    },
+    {
+      "id": "binary-symmetric-channel-capacity",
+      "title": { "zh": "噪声信道与容量", "en": "Noisy channels and capacity" },
+      "desc": { "zh": "每个比特以概率 p 翻转时，一次最多可靠传 1 − H(p) 比特；互信息说明了原因。", "en": "If each bit flips with probability p, at most 1 − H(p) bits per use get through reliably; mutual information says why." },
+      "aliases": { "zh": ["信道容量", "二元对称信道", "互信息", "误码率", "比特翻转"], "en": ["channel capacity", "binary symmetric channel", "mutual information", "bit error rate", "bit flips"] },
+      "anchor": "#ch4",
+      "relatedPages": ["entropy", "signal-detection"]
+    },
+    {
+      "id": "shannon-hartley",
+      "title": { "zh": "香农–哈特利公式：带宽和信噪比", "en": "Shannon–Hartley: bandwidth and signal-to-noise ratio" },
+      "desc": { "zh": "C = B·log₂(1 + S/N)；拿旅行者号的链路预算算出它从几十亿公里外还能传多快。", "en": "C = B·log₂(1 + S/N); with the Voyager link budget, how fast it can still send from billions of kilometres away." },
+      "aliases": { "zh": ["香农公式", "香农极限", "带宽和网速", "信噪比", "分贝", "旅行者号怎么传数据", "链路预算"], "en": ["shannon-hartley theorem", "shannon limit", "bandwidth and data rate", "signal to noise ratio", "decibels", "how does voyager send data", "link budget"] },
+      "anchor": "#ch5",
+      "relatedPages": ["exponents-logarithms", "sampling", "fourier"]
+    },
+    {
+      "id": "noisy-channel-coding-theorem",
+      "title": { "zh": "信道编码定理与 −1.59 dB", "en": "The noisy-channel coding theorem and −1.59 dB" },
+      "desc": { "zh": "重复码靠降速换可靠；香农证明不必降到零也能让错误任意少，每比特能量的底是 −1.59 dB。", "en": "Repetition buys reliability by giving up rate; Shannon proved errors can be made vanishingly rare at a fixed rate, with an energy floor of −1.59 dB per bit." },
+      "aliases": { "zh": ["香农第二定理", "信道编码定理", "重复码", "Eb/N0", "每比特能量"], "en": ["noisy channel coding theorem", "shannon second theorem", "repetition code", "eb/n0", "energy per bit"] },
+      "anchor": "#ch6",
+      "relatedPages": ["binomial-normal", "monte-carlo"]
+    },
+    {
+      "id": "hamming-code",
+      "title": { "zh": "汉明码", "en": "The Hamming code" },
+      "desc": { "zh": "三个校验位守住四个数据位，校验子直接写出出错位置。", "en": "Three parity bits guard four data bits, and the syndrome spells out the position of the error." },
+      "aliases": { "zh": ["汉明码", "奇偶校验", "纠错码", "校验子", "内存纠错ECC"], "en": ["hamming code", "parity check", "error correcting code", "syndrome decoding", "ecc memory"] },
+      "anchor": "#ch7",
+      "relatedPages": ["linear-transform"]
+    },
+    {
+      "id": "reed-solomon",
+      "title": { "zh": "里德–所罗门码", "en": "Reed–Solomon codes" },
+      "desc": { "zh": "把数据当成有限域上的多项式，多发几个取值点；光盘、二维码靠它扛住划痕和污渍。", "en": "Treat data as a polynomial over a finite field and send extra evaluations; CDs and QR codes survive scratches and smudges this way." },
+      "aliases": { "zh": ["里德所罗门码", "二维码为什么脏了还能扫", "光盘划了还能读", "有限域", "纠删码"], "en": ["reed-solomon code", "why qr codes still scan when damaged", "scratched cd", "finite field", "erasure code"] },
+      "anchor": "#ch8",
+      "relatedPages": ["rsa-encryption", "complex-numbers"]
+    },
+    {
+      "id": "ldpc-belief-propagation",
+      "title": { "zh": "LDPC 码与置信传播", "en": "LDPC codes and belief propagation" },
+      "desc": { "zh": "稀疏校验加上节点间来回传递的软信息，在页面里实测离香农极限约 2.3 dB。", "en": "Sparse parity checks plus soft messages passed back and forth; measured in the page at about 2.3 dB from the Shannon limit." },
+      "aliases": { "zh": ["LDPC", "低密度奇偶校验码", "置信传播", "瀑布曲线", "卷积码", "维特比算法", "5G用什么编码"], "en": ["ldpc", "low-density parity-check code", "belief propagation", "waterfall curve", "convolutional code", "viterbi algorithm", "what coding does 5g use"] },
+      "anchor": "#ch9",
+      "relatedPages": ["monte-carlo", "graph-algorithms", "bayes-updating"]
+    },
+    {
+      "id": "polar-codes",
+      "title": { "zh": "极化码", "en": "Polar codes" },
+      "desc": { "zh": "反复把两条一样的信道合成一好一坏，最后只在好的那批上放数据，第一种被证明能达到容量的构造。", "en": "Repeatedly turn two identical channels into one better and one worse, then send data only on the good ones: the first construction proven to reach capacity." },
+      "aliases": { "zh": ["极化码", "信道极化", "Polar码", "华为极化码"], "en": ["polar codes", "channel polarization", "arikan"] },
+      "anchor": "#ch10",
+      "relatedPages": ["probability-frequency"]
+    },
+    {
+      "id": "qam-adaptive-modulation",
+      "title": { "zh": "QAM 调制与自适应编码", "en": "QAM and adaptive modulation" },
+      "desc": { "zh": "一个符号放 2 到 12 个比特，点越密越怕噪声；手机按信号好坏每毫秒换一次档。", "en": "A symbol carries 2 to 12 bits and denser grids fear noise more; phones change gear every millisecond as the signal fades." },
+      "aliases": { "zh": ["QAM", "正交幅度调制", "星座图", "自适应调制", "信号格数和网速", "CQI"], "en": ["qam", "quadrature amplitude modulation", "constellation diagram", "adaptive modulation and coding", "signal bars and speed", "cqi"] },
+      "anchor": "#ch11",
+      "relatedPages": ["modulation", "inside-a-phone", "complex-numbers"]
+    },
+    {
+      "id": "mimo-capacity",
+      "title": { "zh": "多天线 MIMO 的容量", "en": "MIMO capacity" },
+      "desc": { "zh": "多根天线把一条信道拆成几条并行的，容量随天线数而不是随功率涨。", "en": "Several antennas split one channel into parallel ones, so capacity grows with the antenna count rather than the power." },
+      "aliases": { "zh": ["MIMO", "多天线", "空间复用", "路由器为什么有好几根天线", "4x4 MIMO"], "en": ["mimo", "multiple antennas", "spatial multiplexing", "why routers have many antennas", "4x4 mimo"] },
+      "anchor": "#ch12",
+      "relatedPages": ["eigenvectors", "linear-transform"]
+    },
+    {
+      "id": "capacity-frontier",
+      "title": { "zh": "离极限还有多远：光纤、5G、6G", "en": "How close to the limit: fibre, 5G and 6G" },
+      "desc": { "zh": "带日期和出处的前沿清单：哪些已确立、哪些已演示、哪些只是说法。", "en": "A dated, sourced frontier list, separating what is established, what is demonstrated and what is only claimed." },
+      "aliases": { "zh": ["光纤传输纪录", "6G有多快", "Wi-Fi 8", "非线性香农极限", "大模型压缩"], "en": ["fibre transmission record", "how fast is 6g", "wi-fi 8", "nonlinear shannon limit", "llm compression"] },
+      "anchor": "#ch13",
+      "relatedPages": ["inside-a-phone"]
+    },
+    {
+      "id": "reading-a-spec-sheet",
+      "title": { "zh": "用香农极限读规格表", "en": "Reading a spec sheet with the Shannon bound" },
+      "desc": { "zh": "给出带宽、天线流数和信噪比，就能检查一个“最高速率”是否可能。", "en": "Given bandwidth, streams and signal-to-noise ratio, check whether an advertised peak rate is even possible." },
+      "aliases": { "zh": ["Wi-Fi 7 最高速率", "5G峰值速率", "宣传网速是真的吗", "理论最高网速"], "en": ["wi-fi 7 maximum speed", "5g peak rate", "is the advertised speed real", "theoretical maximum speed"] },
+      "anchor": "#ch14",
+      "relatedPages": ["inside-a-phone", "modulation"]
+    }
+  ]
+}

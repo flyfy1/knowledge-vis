@@ -1,0 +1,401 @@
+{
+  "slug": "why-chips-are-hard",
+  "path": "tech/semiconductors/why-chips-are-hard/",
+  "category": "tech",
+  "subtopic": "semiconductors",
+  "subtopicName": {
+    "zh": "半导体",
+    "en": "Semiconductors"
+  },
+  "stage": "university",
+  "title": {
+    "zh": "芯片为什么越来越难做",
+    "en": "Why Faster Chips Keep Getting Harder"
+  },
+  "desc": {
+    "zh": "从硅里的电子讲到 2nm、高数值孔径 EUV 和背面供电：十个可以拖动的模型，看清晶体管密度、每瓦性能、每颗良品的成本和光刻分辨率分别被什么卡住。",
+    "en": "From electrons in silicon to 2 nm, high-NA EUV and backside power: ten models you can push, showing what limits transistor density, performance per watt, cost per good die and lithographic resolution."
+  },
+  "tags": [
+    {
+      "zh": "半导体",
+      "en": "Semiconductors"
+    },
+    {
+      "zh": "晶体管",
+      "en": "Transistors"
+    },
+    {
+      "zh": "光刻",
+      "en": "Lithography"
+    },
+    {
+      "zh": "前沿",
+      "en": "Frontier"
+    },
+    {
+      "zh": "长文",
+      "en": "Long-form Essay"
+    }
+  ],
+  "concepts": [
+    {
+      "id": "semiconductor-doping",
+      "title": {
+        "zh": "掺杂与载流子",
+        "en": "Doping and carriers"
+      },
+      "desc": {
+        "zh": "本征载流子浓度按 e^(−Eg/2kT) 随温度变化；极少量杂质就能让硅的电阻率变几十万倍。",
+        "en": "Intrinsic carrier density follows e^(−Eg/2kT); a trace of dopant changes silicon's resistivity by a factor of hundreds of thousands."
+      },
+      "aliases": {
+        "zh": [
+          "半导体",
+          "掺杂",
+          "禁带宽度",
+          "本征载流子浓度",
+          "费米能级",
+          "n 型 p 型"
+        ],
+        "en": [
+          "semiconductor",
+          "doping",
+          "band gap",
+          "intrinsic carrier concentration",
+          "Fermi level",
+          "n-type p-type"
+        ]
+      },
+      "anchor": "#ch1",
+      "relatedPages": [
+        "quantum-basics",
+        "kinetic-theory"
+      ]
+    },
+    {
+      "id": "pn-junction",
+      "title": {
+        "zh": "pn 结与二极管",
+        "en": "The pn junction and diode"
+      },
+      "desc": {
+        "zh": "内建电势、耗尽区宽度和肖克利二极管方程；室温下电流每变十倍需要约 60 毫伏。",
+        "en": "Built-in potential, depletion width and the Shockley diode equation; at room temperature current changes tenfold per about 60 mV."
+      },
+      "aliases": {
+        "zh": [
+          "pn结",
+          "二极管",
+          "耗尽区",
+          "内建电势",
+          "肖克利方程"
+        ],
+        "en": [
+          "pn junction",
+          "diode",
+          "depletion region",
+          "built-in potential",
+          "Shockley diode equation"
+        ]
+      },
+      "anchor": "#ch2",
+      "relatedPages": [
+        "electric-fields"
+      ]
+    },
+    {
+      "id": "mosfet-subthreshold-swing",
+      "title": {
+        "zh": "MOSFET 与亚阈值摆幅",
+        "en": "MOSFET and subthreshold swing"
+      },
+      "desc": {
+        "zh": "晶体管关断时电流按指数衰减，摆幅室温下不小于 60 mV/十倍，所以阈值和电源电压降不下去。",
+        "en": "Off-state current falls exponentially with a swing of at least 60 mV per decade at room temperature, which is why threshold and supply voltages stopped falling."
+      },
+      "aliases": {
+        "zh": [
+          "晶体管",
+          "场效应管",
+          "阈值电压",
+          "亚阈值摆幅",
+          "漏电",
+          "开关比"
+        ],
+        "en": [
+          "MOSFET",
+          "transistor",
+          "threshold voltage",
+          "subthreshold swing",
+          "60 mV per decade",
+          "leakage current"
+        ]
+      },
+      "anchor": "#ch3",
+      "relatedPages": [
+        "switches-that-compute"
+      ]
+    },
+    {
+      "id": "dennard-scaling",
+      "title": {
+        "zh": "登纳德缩放的终结",
+        "en": "The end of Dennard scaling"
+      },
+      "desc": {
+        "zh": "尺寸和电压一起缩时功率密度不变；电压停住后，时钟频率在 2005 年前后停在几 GHz。",
+        "en": "Shrinking dimensions and voltage together keeps power density constant; once voltage stopped, clock speeds stalled at a few GHz around 2005."
+      },
+      "aliases": {
+        "zh": [
+          "登纳德缩放",
+          "摩尔定律",
+          "功率密度",
+          "主频为什么不涨了",
+          "暗硅"
+        ],
+        "en": [
+          "Dennard scaling",
+          "Moore's law",
+          "power density",
+          "why clock speeds stopped rising",
+          "dark silicon"
+        ]
+      },
+      "anchor": "#ch4",
+      "relatedPages": []
+    },
+    {
+      "id": "optical-lithography-resolution",
+      "title": {
+        "zh": "光刻分辨率",
+        "en": "Lithographic resolution"
+      },
+      "desc": {
+        "zh": "阿贝成像与瑞利公式 CD = k₁λ/NA：k₁ 下限 0.25，焦深按 λ/NA² 缩小，多重图形把一层拆成几次曝光。",
+        "en": "Abbe imaging and the Rayleigh criterion CD = k₁λ/NA: k₁ cannot go below 0.25, depth of focus shrinks as λ/NA², and multi-patterning splits a layer into several exposures."
+      },
+      "aliases": {
+        "zh": [
+          "光刻",
+          "瑞利判据",
+          "数值孔径",
+          "浸没式光刻",
+          "多重图形",
+          "焦深"
+        ],
+        "en": [
+          "photolithography",
+          "Rayleigh criterion",
+          "numerical aperture",
+          "immersion lithography",
+          "multi-patterning",
+          "depth of focus"
+        ]
+      },
+      "anchor": "#ch5",
+      "relatedPages": [
+        "interference",
+        "double-slit",
+        "lens"
+      ]
+    },
+    {
+      "id": "euv-lithography",
+      "title": {
+        "zh": "EUV 光刻",
+        "en": "EUV lithography"
+      },
+      "desc": {
+        "zh": "13.5 纳米光只能在真空里用多层膜反射镜传，每面约 70%；光子少带来的随机噪声和剂量—产能权衡。",
+        "en": "13.5 nm light travels only through vacuum on multilayer mirrors at about 70% each; few photons bring stochastic noise and a dose-versus-throughput trade-off."
+      },
+      "aliases": {
+        "zh": [
+          "极紫外光刻",
+          "EUV",
+          "光刻机",
+          "ASML",
+          "高数值孔径",
+          "光子散粒噪声"
+        ],
+        "en": [
+          "extreme ultraviolet lithography",
+          "EUV",
+          "ASML",
+          "high-NA EUV",
+          "photon shot noise",
+          "stochastic defects"
+        ]
+      },
+      "anchor": "#ch6",
+      "relatedPages": [
+        "photoelectric-effect",
+        "poisson-process"
+      ]
+    },
+    {
+      "id": "process-node-density",
+      "title": {
+        "zh": "工艺节点与晶体管密度",
+        "en": "Process nodes and transistor density"
+      },
+      "desc": {
+        "zh": "节点名字不是任何尺寸；密度由栅极间距、金属间距和单元高度决定。",
+        "en": "Node names are not a dimension; density is set by gate pitch, metal pitch and cell height."
+      },
+      "aliases": {
+        "zh": [
+          "3纳米",
+          "工艺节点",
+          "制程",
+          "晶体管密度",
+          "栅极间距",
+          "金属间距"
+        ],
+        "en": [
+          "3 nm node",
+          "process node",
+          "transistor density",
+          "contacted gate pitch",
+          "metal pitch",
+          "MTr/mm2"
+        ]
+      },
+      "anchor": "#ch7",
+      "relatedPages": []
+    },
+    {
+      "id": "finfet-gaa",
+      "title": {
+        "zh": "FinFET、全环绕栅极与 CFET",
+        "en": "FinFET, gate-all-around and CFET"
+      },
+      "desc": {
+        "zh": "自然长度 λ 决定栅极能管住多短的沟道；栅极包住的面越多，λ 越短。",
+        "en": "The natural length λ sets how short a channel the gate can control; wrapping the gate around more faces shortens λ."
+      },
+      "aliases": {
+        "zh": [
+          "鳍式晶体管",
+          "全环绕栅极",
+          "纳米片",
+          "短沟道效应",
+          "DIBL",
+          "CFET"
+        ],
+        "en": [
+          "FinFET",
+          "gate-all-around",
+          "GAA nanosheet",
+          "short-channel effects",
+          "DIBL",
+          "CFET"
+        ]
+      },
+      "anchor": "#ch8",
+      "relatedPages": [
+        "quantum-tunneling"
+      ]
+    },
+    {
+      "id": "interconnect-rc-delay",
+      "title": {
+        "zh": "导线电阻与 RC 延迟",
+        "en": "Interconnect resistance and RC delay"
+      },
+      "desc": {
+        "zh": "细导线的电阻率因表面和晶界散射上升，阻挡层占掉截面；钌等新金属在极小间距下胜过铜。",
+        "en": "Narrow wires get more resistive through surface and grain-boundary scattering and lose area to barriers; metals like ruthenium beat copper at the tightest pitches."
+      },
+      "aliases": {
+        "zh": [
+          "互连",
+          "导线延迟",
+          "RC延迟",
+          "铜互连",
+          "钌",
+          "背面供电"
+        ],
+        "en": [
+          "interconnect",
+          "RC delay",
+          "copper resistivity size effect",
+          "ruthenium interconnect",
+          "backside power delivery"
+        ]
+      },
+      "anchor": "#ch9",
+      "relatedPages": [
+        "ohms-law"
+      ]
+    },
+    {
+      "id": "die-yield-cost",
+      "title": {
+        "zh": "良率、晶圆成本与芯粒",
+        "en": "Yield, wafer cost and chiplets"
+      },
+      "desc": {
+        "zh": "泊松与 Murphy 良率模型、每片芯片数和每颗好芯片的成本；为什么大芯片要拆成芯粒。",
+        "en": "Poisson and Murphy yield, dies per wafer and cost per good die; why large designs are split into chiplets."
+      },
+      "aliases": {
+        "zh": [
+          "良率",
+          "晶圆成本",
+          "芯粒",
+          "小芯片",
+          "先进封装",
+          "光罩极限"
+        ],
+        "en": [
+          "die yield",
+          "wafer cost",
+          "chiplets",
+          "advanced packaging",
+          "reticle limit",
+          "cost per good die"
+        ]
+      },
+      "anchor": "#ch10",
+      "relatedPages": [
+        "poisson-process"
+      ]
+    },
+    {
+      "id": "semiconductor-frontier",
+      "title": {
+        "zh": "半导体前沿（2026）",
+        "en": "Semiconductor frontier (2026)"
+      },
+      "desc": {
+        "zh": "2 纳米级量产、高 NA EUV、背面供电、CFET 和先进封装：每条都标明日期、出处和“已量产 / 已演示 / 声称”。",
+        "en": "2 nm-class production, high-NA EUV, backside power, CFET and advanced packaging, each dated, sourced and labelled as produced, demonstrated or claimed."
+      },
+      "aliases": {
+        "zh": [
+          "2纳米",
+          "台积电",
+          "英特尔18A",
+          "高NA EUV",
+          "CoWoS",
+          "芯片前沿"
+        ],
+        "en": [
+          "2nm",
+          "TSMC N2",
+          "Intel 18A",
+          "High-NA EUV",
+          "CoWoS",
+          "semiconductor roadmap"
+        ]
+      },
+      "anchor": "#ch11",
+      "relatedPages": [
+        "inside-a-phone"
+      ]
+    }
+  ]
+}

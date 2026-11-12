@@ -1,0 +1,117 @@
+{
+  "slug": "what-quantum-computers-do",
+  "path": "computing/quantum/what-quantum-computers-do/",
+  "category": "computing",
+  "subtopic": "quantum",
+  "subtopicName": { "zh": "量子计算", "en": "Quantum Computing" },
+  "stage": "university",
+  "title": { "zh": "量子计算机到底能做什么 · 一篇从原理走到前沿的长文", "en": "What Quantum Computers Can Actually Do · From First Principles to the Frontier" },
+  "desc": {
+    "zh": "量子计算机到底能做什么普通计算机做不了的事？页面里有一台真的量子态模拟器：从一个量子比特、干涉、纠缠，到格罗弗搜索、肖尔分解、噪声和纠错，最后是标了日期和出处的 2026 年前沿。",
+    "en": "What can a quantum computer do that an ordinary one cannot? The page runs a real state-vector simulator: one qubit, interference, entanglement, Grover search, Shor factoring, noise and error correction, ending with a dated, sourced account of the 2026 frontier."
+  },
+  "tags": [
+    { "zh": "量子计算", "en": "Quantum Computing" },
+    { "zh": "量子算法", "en": "Quantum Algorithms" },
+    { "zh": "量子纠错", "en": "Quantum Error Correction" },
+    { "zh": "长文", "en": "Long-form Essay" }
+  ],
+  "concepts": [
+    {
+      "id": "qubit-born-rule",
+      "title": { "zh": "量子比特与玻恩规则", "en": "The qubit and the Born rule" },
+      "desc": { "zh": "一个量子比特是布洛赫球面上的一点；测量只给 0 或 1，概率是振幅模的平方，换个测量方向结果就不同。", "en": "A qubit is a point on the Bloch sphere; a measurement gives only 0 or 1, with probability the squared amplitude, and a different measurement axis gives different odds." },
+      "aliases": { "zh": ["量子比特", "布洛赫球", "玻恩规则", "量子叠加", "叠加态是什么", "同时是0和1吗", "量子测量"], "en": ["qubit", "Bloch sphere", "Born rule", "superposition", "is a qubit 0 and 1 at once", "quantum measurement"] },
+      "anchor": "#ch1",
+      "relatedPages": ["quantum-basics", "complex-numbers"]
+    },
+    {
+      "id": "mach-zehnder-interference",
+      "title": { "zh": "干涉：振幅会相互抵消", "en": "Interference: amplitudes cancel" },
+      "desc": { "zh": "马赫–曾德尔干涉仪里，两条路的振幅一正一负就抵消；偷看走了哪条路，条纹就消失。", "en": "In a Mach–Zehnder interferometer two paths with opposite amplitudes cancel; look at which path was taken and the fringes vanish." },
+      "aliases": { "zh": ["量子干涉", "马赫曾德尔干涉仪", "振幅抵消", "观测会改变结果吗", "哪条路信息"], "en": ["quantum interference", "Mach-Zehnder interferometer", "amplitudes cancel", "which-path information", "does observing change the result"] },
+      "anchor": "#ch2",
+      "relatedPages": ["interference", "double-slit"]
+    },
+    {
+      "id": "entanglement-chsh",
+      "title": { "zh": "纠缠与 CHSH 游戏", "en": "Entanglement and the CHSH game" },
+      "desc": { "zh": "共享纠缠的两人赢 CHSH 游戏的概率是 85.4%，任何经典策略最多 75%；但纠缠不能传信。", "en": "Two players sharing entanglement win the CHSH game 85.4% of the time against a classical ceiling of 75%, yet entanglement cannot send a message." },
+      "aliases": { "zh": ["量子纠缠", "贝尔不等式", "CHSH", "纠缠能超光速通信吗", "鬼魅般的超距作用", "不可通信定理"], "en": ["entanglement", "Bell inequality", "CHSH game", "can entanglement send messages faster than light", "spooky action at a distance", "no-signalling"] },
+      "anchor": "#ch3",
+      "relatedPages": ["probability-frequency"]
+    },
+    {
+      "id": "exponential-amplitudes-holevo",
+      "title": { "zh": "2ⁿ 个振幅与霍列沃界", "en": "2ⁿ amplitudes and the Holevo bound" },
+      "desc": { "zh": "n 个量子比特要 2ⁿ 个复数才能写下，经典模拟 50 个左右就存不下；但一次测量只能读出 n 个比特。", "en": "n qubits need 2ⁿ complex numbers to write down, so classical simulation runs out of memory near 50; yet one measurement reads out only n bits." },
+      "aliases": { "zh": ["量子并行", "量子计算机为什么快", "霍列沃界", "量子模拟需要多少内存", "量子计算机同时算所有答案吗"], "en": ["quantum parallelism", "why are quantum computers fast", "Holevo bound", "state vector simulation memory", "does a quantum computer try every answer at once"] },
+      "anchor": "#ch4",
+      "relatedPages": ["linear-transform"]
+    },
+    {
+      "id": "deutsch-jozsa",
+      "title": { "zh": "德意志–约萨算法", "en": "The Deutsch–Jozsa algorithm" },
+      "desc": { "zh": "问一次就分清函数是常数还是平衡：相位反冲加两层阿达马门，让答案落在全零上。", "en": "One query tells a constant function from a balanced one: phase kickback between two Hadamard layers puts the answer on all-zeros." },
+      "aliases": { "zh": ["德意志约萨算法", "多伊奇约萨算法", "相位反冲", "阿达马门", "第一个量子算法", "量子查询复杂度"], "en": ["Deutsch-Jozsa algorithm", "phase kickback", "Hadamard gate", "first quantum algorithm", "query complexity"] },
+      "anchor": "#ch5",
+      "relatedPages": []
+    },
+    {
+      "id": "grover-search",
+      "title": { "zh": "格罗弗搜索", "en": "Grover search" },
+      "desc": { "zh": "在 N 个里找一个，转约 (π/4)√N 轮；转多了概率反而下降。只是平方加速。", "en": "Finding one item among N takes about (π/4)√N rounds, and turning further makes the odds fall again; the speed-up is only quadratic." },
+      "aliases": { "zh": ["格罗弗算法", "量子搜索", "振幅放大", "量子数据库搜索", "平方加速"], "en": ["Grover's algorithm", "quantum search", "amplitude amplification", "quantum database search", "quadratic speedup"] },
+      "anchor": "#ch6",
+      "relatedPages": ["binary-search", "eigenvectors"]
+    },
+    {
+      "id": "shor-factoring",
+      "title": { "zh": "肖尔算法与 RSA", "en": "Shor's algorithm and RSA" },
+      "desc": { "zh": "用量子傅里叶变换找 aˣ mod N 的周期，再用连分数和最大公约数拆出因数；破 RSA-2048 需要的机器规模如何一路下降。", "en": "The quantum Fourier transform finds the period of aˣ mod N, continued fractions and a gcd turn it into factors, and estimates of the machine needed for RSA-2048 keep falling." },
+      "aliases": { "zh": ["肖尔算法", "量子傅里叶变换", "量子计算机能破解密码吗", "量子破解RSA", "周期查找", "量子计算对比特币的威胁"], "en": ["Shor's algorithm", "quantum Fourier transform", "can quantum computers break encryption", "break RSA", "period finding", "quantum threat to bitcoin"] },
+      "anchor": "#ch7",
+      "relatedPages": ["rsa-encryption", "fourier"]
+    },
+    {
+      "id": "quantum-speedup-limits",
+      "title": { "zh": "哪些问题有加速：BQP 与平方加速的打平点", "en": "Which problems speed up: BQP and the quadratic crossover" },
+      "desc": { "zh": "指数加速只在有特殊结构的问题上；平方加速要等问题大到慢速的量子门追上快速的经典计算，才有意义。", "en": "Exponential speed-ups need special structure; a quadratic one pays off only once the problem is big enough for slow quantum gates to catch fast classical ones." },
+      "aliases": { "zh": ["BQP", "量子计算机能解决NP完全问题吗", "量子优势", "量子加速", "量子计算机能做什么", "量子计算机比普通电脑快吗"], "en": ["BQP", "can quantum computers solve NP-complete problems", "quantum advantage", "quantum speedup", "what can quantum computers do", "are quantum computers faster"] },
+      "anchor": "#ch8",
+      "relatedPages": []
+    },
+    {
+      "id": "decoherence-noise",
+      "title": { "zh": "噪声与退相干", "en": "Noise and decoherence" },
+      "desc": { "zh": "每一步都有一点出错的概率，T1 和 T2 有限；门错误率 0.5% 时，6 个比特的格罗弗搜索就从 99.7% 掉到约 47%。", "en": "Every step has a small chance of error and T1, T2 are finite; at 0.5% per gate a six-qubit Grover search drops from 99.7% to about 47%." },
+      "aliases": { "zh": ["退相干", "量子噪声", "T1 T2", "相干时间", "量子计算机为什么难造", "NISQ"], "en": ["decoherence", "quantum noise", "T1 and T2", "coherence time", "why are quantum computers hard to build", "NISQ"] },
+      "anchor": "#ch9",
+      "relatedPages": []
+    },
+    {
+      "id": "quantum-error-correction",
+      "title": { "zh": "量子纠错：重复码与表面码", "en": "Quantum error correction: repetition and surface codes" },
+      "desc": { "zh": "不看数据只看奇偶校验就能找出错误；物理错误率低于阈值时，码距越大逻辑错误越少，代价是每个逻辑比特上千个物理比特。", "en": "Parity checks find errors without looking at the data; below threshold a larger code distance means fewer logical errors, at a cost of about a thousand physical qubits per logical one." },
+      "aliases": { "zh": ["量子纠错", "表面码", "逻辑量子比特", "纠错阈值", "重复码", "码距", "物理比特和逻辑比特"], "en": ["quantum error correction", "surface code", "logical qubit", "error threshold", "repetition code", "code distance", "physical vs logical qubits"] },
+      "anchor": "#ch10",
+      "relatedPages": []
+    },
+    {
+      "id": "quantum-frontier-2026",
+      "title": { "zh": "2026 年的前沿：硬件、量子优势与资源估计", "en": "The 2026 frontier: hardware, advantage claims and resource estimates" },
+      "desc": { "zh": "Willow、Helios、中性原子阵列等的实测指标，量子优势的宣称与争议，破解 RSA 的资源估计，以及后量子密码的时间表，每条都注明日期和出处。", "en": "Measured figures for Willow, Helios, neutral-atom arrays and others, contested advantage claims, resource estimates for breaking RSA and the post-quantum timetable, each dated and sourced." },
+      "aliases": { "zh": ["量子计算现状", "谷歌Willow", "量子霸权", "后量子密码", "量子计算机什么时候能用", "马约拉纳", "量子计算机有多少个比特"], "en": ["state of quantum computing", "Google Willow", "quantum supremacy", "post-quantum cryptography", "when will quantum computers be useful", "Majorana", "how many qubits"] },
+      "anchor": "#ch11",
+      "relatedPages": ["rsa-encryption"]
+    },
+    {
+      "id": "reading-quantum-news",
+      "title": { "zh": "读量子新闻的五个问题", "en": "Five questions for reading quantum news" },
+      "desc": { "zh": "物理还是逻辑比特、步数乘错误率、任务有没有用、经典算法试过没有、加速是哪一级；以及现在就该为后量子密码做什么。", "en": "Physical or logical qubits, steps times error rate, whether the task is useful, whether the best classical method was tried, which kind of speed-up; and what to do about post-quantum cryptography now." },
+      "aliases": { "zh": ["量子计算机有什么用", "量子计算新闻怎么看", "量子计算是不是炒作", "量子计算机能取代普通电脑吗", "后量子迁移"], "en": ["what are quantum computers good for", "how to read quantum computing news", "is quantum computing hype", "will quantum computers replace classical computers", "post-quantum migration"] },
+      "anchor": "#ch12",
+      "relatedPages": ["quantum-basics"]
+    }
+  ]
+}

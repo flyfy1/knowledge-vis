@@ -1,0 +1,102 @@
+{
+  "slug": "how-electricity-reaches-you",
+  "path": "tech/energy/how-electricity-reaches-you/",
+  "category": "tech",
+  "subtopic": "energy",
+  "subtopicName": { "zh": "能源与电网", "en": "Energy & the Grid" },
+  "stage": "senior",
+  "title": { "zh": "按下开关的那一刻，电是从哪儿来的", "en": "Where the Power Comes From the Instant You Flip the Switch" },
+  "desc": {
+    "zh": "电网几乎存不住电，每一瞬间发电都要等于用电。十个可以拖动的模型：转动惯量与频率、调速器、当一天调度员、高压输电的线损、变压器、三相电、电价的优先顺序、鸭子曲线、储能和一次连锁停电。",
+    "en": "The grid stores almost nothing, so generation must match use every instant. Ten models you can push: inertia and frequency, governors, a day as grid operator, high-voltage line loss, the transformer, three phases, merit-order prices, the duck curve, storage and a cascading blackout."
+  },
+  "tags": [
+    { "zh": "电网", "en": "Power Grid" },
+    { "zh": "电网频率", "en": "Grid Frequency" },
+    { "zh": "可再生能源", "en": "Renewable Energy" },
+    { "zh": "长文", "en": "Long-form Essay" }
+  ],
+  "concepts": [
+    {
+      "id": "grid-inertia-swing-equation",
+      "title": { "zh": "转动惯量与电网频率", "en": "Inertia and grid frequency" },
+      "desc": { "zh": "发电少于用电时，差额从发电机转子的动能里出，频率按摇摆方程下降；惯量越小掉得越快。", "en": "When generation falls short, the gap is drawn from the spinning rotors and frequency falls by the swing equation; less inertia means a faster fall." },
+      "aliases": { "zh": ["摇摆方程", "转动惯量", "电网频率", "50赫兹", "为什么电网频率是50赫兹", "电从哪里来", "电是怎么来的", "频率变化率"], "en": ["swing equation", "grid inertia", "grid frequency", "50 Hz", "RoCoF", "rate of change of frequency", "where does electricity come from"] },
+      "anchor": "#ch1",
+      "relatedPages": ["electromagnetic-induction"]
+    },
+    {
+      "id": "governor-droop-agc",
+      "title": { "zh": "调速器下垂与自动发电控制", "en": "Governor droop and automatic generation control" },
+      "desc": { "zh": "调速器按频率偏差开大汽门，几秒内止住下跌但留下偏差；自动发电控制在几十秒到几分钟里把频率拉回 50 赫兹。", "en": "Governors open their valves in proportion to the frequency error, arresting the fall within seconds but leaving an offset; AGC brings it back to 50 Hz over minutes." },
+      "aliases": { "zh": ["一次调频", "二次调频", "下垂控制", "调速器", "自动发电控制", "AGC", "旋转备用"], "en": ["primary frequency response", "droop control", "governor", "automatic generation control", "AGC", "secondary control", "spinning reserve"] },
+      "anchor": "#ch2",
+      "relatedPages": ["pid-control"]
+    },
+    {
+      "id": "load-following-dispatch",
+      "title": { "zh": "跟着负荷曲线调度", "en": "Following the load curve" },
+      "desc": { "zh": "一天里用电一直在涨落，机组出力每小时只能爬有限的量；爬得不够快，频率就出界。", "en": "Demand rises and falls all day while plants can only ramp so fast per hour; ramp too slowly and frequency leaves its band." },
+      "aliases": { "zh": ["电网调度", "调度员", "负荷曲线", "爬坡速度", "用电高峰", "晚高峰"], "en": ["grid dispatch", "grid operator", "load curve", "ramp rate", "peak demand", "load following"] },
+      "anchor": "#ch3",
+      "relatedPages": []
+    },
+    {
+      "id": "high-voltage-line-loss",
+      "title": { "zh": "为什么用高压输电", "en": "Why transmission uses high voltage" },
+      "desc": { "zh": "送同样的功率，电压翻倍电流减半，线上发热 I²R 只剩四分之一。", "en": "For the same power, doubling the voltage halves the current and cuts the I²R heating in the line to a quarter." },
+      "aliases": { "zh": ["高压输电", "线损", "特高压", "为什么要用高压输电", "输电损耗", "I²R"], "en": ["high voltage transmission", "line loss", "transmission loss", "I squared R", "why transmit at high voltage", "UHV"] },
+      "anchor": "#ch4",
+      "relatedPages": ["ohms-law"]
+    },
+    {
+      "id": "transformer-ac-dc",
+      "title": { "zh": "变压器与交直流之争", "en": "The transformer and AC vs DC" },
+      "desc": { "zh": "变压器两边电压之比等于匝数之比，但只对交流有效；这决定了交流赢下电流之战，高压直流后来又在远距离回归。", "en": "A transformer's voltage ratio equals its turns ratio, but only for AC; that settled the war of the currents, and HVDC later returned for long distances." },
+      "aliases": { "zh": ["变压器", "交流电", "直流电", "电流之战", "高压直流", "为什么用交流电", "匝数比"], "en": ["transformer", "alternating current", "direct current", "war of the currents", "HVDC", "why AC not DC", "turns ratio"] },
+      "anchor": "#ch5",
+      "relatedPages": ["electromagnetic-induction", "power-converters"]
+    },
+    {
+      "id": "three-phase-power",
+      "title": { "zh": "三相电", "en": "Three-phase power" },
+      "desc": { "zh": "三相相差 120°，三个正弦的和为零、功率之和恒定，所以中线几乎不走电流、电机转得平稳；线电压是相电压的 √3 倍。", "en": "Three phases 120° apart sum to zero and deliver constant total power, so the neutral carries almost nothing and motors run smoothly; line voltage is √3 times phase voltage." },
+      "aliases": { "zh": ["三相电", "三相交流电", "380伏", "220伏和380伏", "线电压", "相电压", "中性线"], "en": ["three-phase power", "three phase", "line voltage", "phase voltage", "neutral wire", "380 V", "400 V"] },
+      "anchor": "#ch6",
+      "relatedPages": []
+    },
+    {
+      "id": "merit-order-pricing",
+      "title": { "zh": "电价的优先顺序", "en": "Merit order and the clearing price" },
+      "desc": { "zh": "机组按边际成本从低到高排队，最后一台被叫上的决定这一小时所有电的价格；燃气价格变了，排队顺序和价格都会变。", "en": "Plants queue from cheapest marginal cost up, and the last one called sets the price for that hour; change the gas price and the order and price change." },
+      "aliases": { "zh": ["电价", "优先顺序", "边际电价", "电力市场", "为什么晚上电贵", "峰谷电价", "出清价格"], "en": ["electricity price", "merit order", "marginal price", "electricity market", "clearing price", "why is power expensive in the evening"] },
+      "anchor": "#ch7",
+      "relatedPages": []
+    },
+    {
+      "id": "duck-curve-net-load",
+      "title": { "zh": "鸭子曲线与净负荷", "en": "The duck curve and net load" },
+      "desc": { "zh": "用电减去太阳能和风电就是其他电厂要补的净负荷；太阳能越多，中午越低、傍晚的爬坡越陡，还会出现弃电。", "en": "Demand minus solar and wind is the net load other plants must cover; more solar means a lower midday, a steeper evening ramp and curtailment." },
+      "aliases": { "zh": ["鸭子曲线", "净负荷", "弃光", "弃风", "太阳能发电", "光伏", "负电价"], "en": ["duck curve", "net load", "curtailment", "solar power", "wind power", "evening ramp", "negative prices"] },
+      "anchor": "#ch8",
+      "relatedPages": []
+    },
+    {
+      "id": "grid-storage-round-trip",
+      "title": { "zh": "储能与往返效率", "en": "Grid storage and round-trip efficiency" },
+      "desc": { "zh": "储能中午充电、傍晚放电，削掉晚高峰；它由功率、能量和往返效率三个数决定，效率约 80% 意味着每存五度丢一度。", "en": "Storage charges at midday and discharges in the evening to shave the peak; it is set by power, energy and round-trip efficiency, and about 80% means losing one unit in five." },
+      "aliases": { "zh": ["储能", "电池储能", "抽水蓄能", "往返效率", "削峰填谷", "电网储能"], "en": ["grid storage", "battery storage", "pumped hydro", "round-trip efficiency", "peak shaving", "energy storage"] },
+      "anchor": "#ch9",
+      "relatedPages": ["inside-a-phone"]
+    },
+    {
+      "id": "cascading-blackout-ufls",
+      "title": { "zh": "连锁停电与低频减载", "en": "Cascading blackouts and load shedding" },
+      "desc": { "zh": "丢了一台机组或一条线，潮流挤到别的线上，过载跳闸会连锁扩大；低频减载主动切掉一部分用户，保住其余的人。", "en": "Lose a plant or a line and power crowds onto other lines, which can trip in a cascade; under-frequency load shedding cuts some customers on purpose to save the rest." },
+      "aliases": { "zh": ["大停电", "连锁故障", "低频减载", "为什么会大面积停电", "电网崩溃", "2019年英国停电", "潮流"], "en": ["blackout", "cascading failure", "under-frequency load shedding", "UFLS", "why do blackouts spread", "power flow", "2019 UK blackout"] },
+      "anchor": "#ch10",
+      "relatedPages": []
+    }
+  ],
+  "relatedPages": ["electromagnetic-induction", "ohms-law", "power-converters", "carnot-cycle", "inside-a-phone"]
+}

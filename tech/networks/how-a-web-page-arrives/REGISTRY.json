@@ -1,0 +1,122 @@
+{
+  "slug": "how-a-web-page-arrives",
+  "path": "tech/networks/how-a-web-page-arrives/",
+  "category": "tech",
+  "subtopic": "networks",
+  "subtopicName": { "zh": "网络与互联网", "en": "Networks & the Internet" },
+  "stage": "senior",
+  "title": { "zh": "网页是怎么来到你手机上的", "en": "How a Web Page Reaches Your Phone" },
+  "desc": {
+    "zh": "从点下链接到看见页面，那不到一秒花在了哪里？八个可以动手的模型：查名字、切成小包、一跳一跳地转发、排队和丢包、确认与重传、拥塞窗口、密钥交换，以及光速定下的时间预算。",
+    "en": "Where does the second between tapping a link and seeing the page go? Eight models you can push: looking up the name, cutting data into packets, hop-by-hop routing, queues and loss, acknowledgement and retransmission, the congestion window, key exchange, and the time budget set by the speed of light."
+  },
+  "tags": [
+    { "zh": "互联网", "en": "Internet" },
+    { "zh": "DNS", "en": "DNS" },
+    { "zh": "TCP", "en": "TCP" },
+    { "zh": "网络延迟", "en": "Network latency" },
+    { "zh": "加密", "en": "Encryption" },
+    { "zh": "长文", "en": "Long-form Essay" }
+  ],
+  "concepts": [
+    {
+      "id": "dns-resolution",
+      "title": { "zh": "域名解析（DNS）", "en": "Name lookup (DNS)" },
+      "desc": { "zh": "解析器从根服务器起逐级问路，把名字换成数字地址，并按 TTL 把答案记一段时间。", "en": "A resolver follows referrals from the root down to turn a name into an address, and caches each answer for its TTL." },
+      "aliases": {
+        "zh": ["DNS", "域名解析", "域名是什么", "网址怎么变成IP", "什么是DNS", "根服务器", "TTL", "DNS缓存", "为什么第一次打开网站慢", "域名服务器"],
+        "en": ["DNS", "domain name system", "how does a domain name become an IP address", "what is DNS", "root servers", "DNS cache", "TTL", "DNS lookup", "name resolution"]
+      },
+      "anchor": "#ch1",
+      "relatedPages": []
+    },
+    {
+      "id": "packet-switching",
+      "title": { "zh": "分组交换：切成小包", "en": "Packet switching" },
+      "desc": { "zh": "数据切成带信封的小包，经过多段线路时可以流水线式同时前进；包太大要等，太小信封占比高。", "en": "Data is cut into packets with headers so several links can work at once; too big and each hop waits, too small and headers dominate." },
+      "aliases": {
+        "zh": ["数据包", "分组交换", "为什么要分包", "存储转发", "MTU", "包的大小", "网络上的数据怎么传"],
+        "en": ["packet", "packet switching", "why split data into packets", "store and forward", "MTU", "packet size", "how is data sent over the internet"]
+      },
+      "anchor": "#ch2",
+      "relatedPages": ["tcp-congestion"]
+    },
+    {
+      "id": "routing-shortest-path",
+      "title": { "zh": "路由：一跳一跳地转发", "en": "Routing, hop by hop" },
+      "desc": { "zh": "每台路由器只记“下一步交给谁”，由最短路算法算出；一条线断了，路线自己重新形成。", "en": "Each router keeps only the next hop, computed by a shortest-path algorithm; when a link breaks the route re-forms." },
+      "aliases": {
+        "zh": ["路由", "路由器是干什么的", "数据走哪条路", "路由表", "转发表", "OSPF", "网络断了怎么绕路", "互联网怎么找路"],
+        "en": ["routing", "what does a router do", "routing table", "forwarding table", "OSPF", "link state routing", "how does data find its way", "next hop"]
+      },
+      "anchor": "#ch3",
+      "relatedPages": ["shortest-path", "tcp-congestion"]
+    },
+    {
+      "id": "router-queue-loss",
+      "title": { "zh": "排队与丢包", "en": "Queues and packet loss" },
+      "desc": { "zh": "路由器缓冲区排满就丢包；负载超过 1 时加大缓冲区只是把丢包换成等待（缓冲膨胀）。", "en": "A full router buffer drops packets; above full load, a bigger buffer only trades loss for delay (bufferbloat)." },
+      "aliases": {
+        "zh": ["丢包", "为什么会丢包", "网络拥堵", "排队论", "缓冲区", "缓冲膨胀", "网卡了", "延迟高"],
+        "en": ["packet loss", "why do packets get lost", "network congestion", "queueing theory", "router buffer", "bufferbloat", "M/M/1/K", "lag"]
+      },
+      "anchor": "#ch4",
+      "relatedPages": []
+    },
+    {
+      "id": "reliable-transport-arq",
+      "title": { "zh": "确认与重传：TCP 怎样做到可靠", "en": "Acknowledgement and retransmission" },
+      "desc": { "zh": "编号、确认、超时重传把会丢包的网络变成可靠的字节流；丢掉的包会挡住后面已到的包（队头阻塞）。", "en": "Numbering, acknowledgements and timeouts turn a lossy network into a reliable stream; a lost packet holds up the ones behind it (head-of-line blocking)." },
+      "aliases": {
+        "zh": ["TCP", "TCP为什么可靠", "重传", "ACK", "确认", "队头阻塞", "丢了包怎么办", "可靠传输"],
+        "en": ["TCP", "how is TCP reliable", "retransmission", "ACK", "acknowledgement", "head-of-line blocking", "ARQ", "reliable transport"]
+      },
+      "anchor": "#ch5",
+      "relatedPages": ["tcp-congestion"]
+    },
+    {
+      "id": "tcp-congestion-window",
+      "title": { "zh": "拥塞窗口：慢启动与锯齿", "en": "The congestion window" },
+      "desc": { "zh": "慢启动成倍试探，丢包后砍半、此后每个来回加一：窗口画出锯齿，几个连接自动分匀。", "en": "Slow start doubles, a loss halves the window and it then grows by one per round trip: a sawtooth, and competing flows even out." },
+      "aliases": {
+        "zh": ["拥塞控制", "慢启动", "拥塞窗口", "AIMD", "加性增乘性减", "TCP锯齿", "几个人一起下载怎么分网速", "网速怎么分配"],
+        "en": ["congestion control", "slow start", "congestion window", "cwnd", "AIMD", "additive increase multiplicative decrease", "TCP sawtooth", "how is bandwidth shared"]
+      },
+      "anchor": "#ch6",
+      "relatedPages": ["tcp-congestion"]
+    },
+    {
+      "id": "diffie-hellman",
+      "title": { "zh": "迪菲–赫尔曼密钥交换", "en": "Diffie–Hellman key exchange" },
+      "desc": { "zh": "两人当众交换 g 的幂的余数，就能算出只有彼此知道的钥匙；但它防不了中间人，还要证书。", "en": "Exchanging powers of g modulo p in public yields a key only the two parties know; it cannot stop a man in the middle, hence certificates." },
+      "aliases": {
+        "zh": ["密钥交换", "DH", "迪菲赫尔曼", "HTTPS怎么加密", "公开喊话怎么约定密码", "中间人攻击", "TLS握手", "为什么要证书"],
+        "en": ["key exchange", "Diffie-Hellman", "DH", "how does HTTPS encrypt", "man in the middle", "TLS handshake", "why do websites need certificates", "discrete logarithm"]
+      },
+      "anchor": "#ch7",
+      "relatedPages": ["rsa-encryption", "hashing", "division-remainder"]
+    },
+    {
+      "id": "latency-budget",
+      "title": { "zh": "延迟预算：来回次数 × 光速", "en": "Latency budget: round trips × the speed of light" },
+      "desc": { "zh": "打开网页的时间约等于来回次数乘以每个来回的时间；光纤里光速约 20 万公里每秒，所以远方服务器有不可逾越的下限，CDN 靠缩短距离。", "en": "Load time is roughly round trips × round-trip time; light in fibre does about 200,000 km/s, so a distant server has a hard floor, and a CDN shortens the distance." },
+      "aliases": {
+        "zh": ["网页为什么慢", "延迟", "ping是什么", "往返时间", "RTT", "CDN", "内容分发网络", "光纤里光速", "HTTP3", "QUIC", "为什么国外网站慢"],
+        "en": ["why is a website slow", "latency", "what is ping", "round trip time", "RTT", "CDN", "content delivery network", "speed of light in fibre", "HTTP/3", "QUIC", "why are faraway websites slow"]
+      },
+      "anchor": "#ch8",
+      "relatedPages": ["tcp-congestion", "reflection-refraction"]
+    },
+    {
+      "id": "web-page-slow-checklist",
+      "title": { "zh": "页面慢时问三件事", "en": "Three questions when a page is slow" },
+      "desc": { "zh": "来回了几次、每个来回多远、路上有没有排队丢包。", "en": "How many round trips, how far each one goes, and whether packets are queuing or being lost." },
+      "aliases": {
+        "zh": ["点链接后发生了什么", "网页是怎么打开的", "上网的原理", "互联网怎么工作", "为什么第二次打开快"],
+        "en": ["what happens when you click a link", "how does a web page load", "how does the internet work", "why is the second visit faster"]
+      },
+      "anchor": "#ch9",
+      "relatedPages": ["inside-a-phone", "switches-that-compute"]
+    }
+  ]
+}
