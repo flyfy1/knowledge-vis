@@ -128,3 +128,14 @@ shrink to fit at 320 px; "not detected" drawn above the dilution line; odour can
 the sodium survey, biogenic-amine paper, Beauchamp, umamiinfo pork values, PMC13632092/13471287/13090318 (egg pH and
 gel papers) were not re-opened (builder's citations taken as given); GB 2762-2017 values (secondary only); the
 fish-sauce, natto, cheese and ham rows of the family table; screen-reader pass with a real screen reader.
+
+## Registration (2026-11-12, team lead, Claude Code claude-fable-5-2)
+
+- After the independent review the team lead reran `tests/models.cjs` (1245 checks) and `tests/browser.cjs`
+  (zh and en at 1280/390/320), and looked at the hero, ch6 and ch7 at 1280 in Chinese. Nothing was changed.
+- Registered as the first page of the new category `food` (饮食与风味 / Food & Flavor), subtopic `flavor`
+  (味道从哪来 / Where Flavor Comes From). Atlas region: `matter` (物质与变化), with the chemistry pages it
+  links to, rather than a region of its own for nine concepts.
+- The essay commit `0ed6253b` wrote its trailer as `Built-By: claude-code (…)`. `tests/page-provenance-core.cjs`
+  matches `Built-By: Claude` case-sensitively, so the page label points at the commit that added this note
+  instead. Authorship is unchanged: built by claude-opus-5-5, English drafted by claude-haiku-5-5.
