@@ -4,6 +4,7 @@
 
 ## 先读
 
+0. [HANDOFF.md](HANDOFF.md) — **开工前第一个读**：Yangyu 与 Claude Code team lead 的工作约定，以及当前进展和下一步。
 1. [AUTHORSHIP.md](AUTHORSHIP.md) — 作者归属宪法：提交怎么署名、页面怎么贴标、谁写了什么怎么查。
 2. [WORKFLOW.md](WORKFLOW.md) — 生产流水线、分工、交叉评审、质量红线。
 3. [UI-I18N-SPEC.md](UI-I18N-SPEC.md) — 界面与双语规范（规则 1–12）。
@@ -14,7 +15,7 @@
 
 ## 硬规则
 
-- **分支**：在自己的分支上提交，不在 main 上直接改；不碰别人的分支。
+- **分支**：在自己的分支上提交，不在 main 上直接改；不碰别人的分支。例外：Claude Code 主会话这条线按 [HANDOFF.md](HANDOFF.md) 第 2 条在 main 上工作并可直接推送部署。
 - **每个提交的 trailer**（格式见 AUTHORSHIP.md）：
   ```
   Built-By: <Agent> (<精确模型 id，或 model unavailable>)
