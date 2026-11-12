@@ -1,0 +1,121 @@
+{
+  "slug": "how-soy-sauce-gets-its-flavor",
+  "path": "food/flavor/how-soy-sauce-gets-its-flavor/",
+  "category": "food",
+  "categoryName": { "zh": "饮食与风味", "en": "Food & Flavor" },
+  "subtopic": "flavor",
+  "subtopicName": { "zh": "味道从哪来", "en": "Where Flavor Comes From" },
+  "stage": "senior",
+  "title": { "zh": "酱油是怎么酿出来的", "en": "How Soy Sauce Gets Its Flavor" },
+  "desc": {
+    "zh": "黄豆、小麦、盐和水，单独都不鲜、不香、不黑，放在一起半年却成了酱油；也有的酱油几天就做出来。六个可以拖动的模型：曲床发热、小麦带来的糖、盐水里乳酸菌和酵母的接力、颜色和温度、瓶子上的氨基酸态氮、一勺里的钠。",
+    "en": "Soybeans, wheat, salt and water are each bland, pale and odourless, yet half a year together turns them into soy sauce; some soy sauce is made in days. Six models you can push: a heating koji bed, the sugar wheat brings, the hand-over from lactic bacteria to yeast in brine, colour and temperature, the amino-nitrogen number on the label, and the sodium in a spoonful."
+  },
+  "tags": [
+    { "zh": "发酵", "en": "Fermentation" },
+    { "zh": "酱油", "en": "Soy Sauce" },
+    { "zh": "食品化学", "en": "Food Chemistry" },
+    { "zh": "长文", "en": "Long-form Essay" }
+  ],
+  "concepts": [
+    {
+      "id": "soy-sauce-process-timeline",
+      "title": { "zh": "酱油的三段：制曲、酱醪、加热", "en": "Soy sauce in three stages: koji, moromi, heating" },
+      "desc": { "zh": "两三天养曲霉，几个月让盐水里的乳酸菌和酵母接力，最后几十分钟加热；时间轴上的点由后面的模型算出。", "en": "Two to three days of mould, months of a bacteria-to-yeast relay in brine, then minutes of heating; the timeline points come from the later models." },
+      "aliases": {
+        "zh": ["酱油是怎么做的", "酱油是怎么酿出来的", "酱油的原料", "酿造酱油的工艺", "酱醪", "酱油发酵要多久"],
+        "en": ["how is soy sauce made", "soy sauce brewing process", "moromi", "how long does soy sauce ferment"]
+      },
+      "anchor": "#ch1",
+      "relatedPages": []
+    },
+    {
+      "id": "koji-making-heat",
+      "title": { "zh": "制曲：先养一批酶", "en": "Koji: growing a batch of enzymes" },
+      "desc": { "zh": "曲霉长在蒸黄豆和炒小麦上，两三天造出蛋白酶和淀粉酶；生长放热，曲床太厚不翻就超过 40 °C。逻辑斯谛生长加热量平衡的模型。", "en": "Koji mould grows on steamed soybeans and roasted wheat and makes proteases and amylases in two to three days; growth releases heat and a thick unturned bed passes 40 °C. Logistic growth with a heat balance." },
+      "aliases": {
+        "zh": ["米曲霉", "曲是什么", "酱油曲", "制曲", "翻曲", "曲霉"],
+        "en": ["what is koji", "Aspergillus oryzae", "koji mold", "koji making", "Aspergillus sojae"]
+      },
+      "anchor": "#ch2",
+      "relatedPages": ["enzymes", "logistic-growth"]
+    },
+    {
+      "id": "soybean-wheat-ratio",
+      "title": { "zh": "为什么酱油要加小麦", "en": "Why soy sauce uses wheat" },
+      "desc": { "zh": "黄豆给蛋白质，小麦给淀粉和糖；按比例算出的糖决定后面的酵母吃不吃得饱。溜酱油、浓口、中式 80:20 与 70:30 的比较。", "en": "Soybeans bring protein, wheat brings starch and sugar; the sugar the ratio provides decides whether the yeast later has enough to eat. Tamari, koikuchi and Chinese 80:20 and 70:30 compared." },
+      "aliases": {
+        "zh": ["酱油为什么加小麦", "溜酱油", "白酱油", "酱油里有小麦吗", "无小麦酱油"],
+        "en": ["tamari vs soy sauce", "does soy sauce contain wheat", "koikuchi", "shiro soy sauce", "wheat in soy sauce"]
+      },
+      "anchor": "#ch3",
+      "relatedPages": []
+    },
+    {
+      "id": "moromi-microbial-relay",
+      "title": { "zh": "盐水里的接力：乳酸菌和酵母", "en": "The relay in brine: lactic bacteria then yeast" },
+      "desc": { "zh": "嗜盐四联球菌先产酸把 pH 拉到 5 以下，鲁氏接合酵母才能在浓盐里接棒产酒精和香气；盐超过约 20.6% 或温度太低，接力就失败。", "en": "Tetragenococcus halophilus acidifies the mash below pH 5 so that Zygosaccharomyces rouxii can take over in strong brine and make ethanol and aroma; above about 20.6% salt or in the cold the relay fails." },
+      "aliases": {
+        "zh": ["嗜盐四联球菌", "鲁氏接合酵母", "酱油里的乳酸菌", "酱油发酵的微生物", "酱醪的 pH"],
+        "en": ["Tetragenococcus halophilus", "Zygosaccharomyces rouxii", "soy sauce microbes", "moromi fermentation", "soy sauce yeast"]
+      },
+      "anchor": "#ch4",
+      "relatedPages": ["population-ecology", "ph-scale"]
+    },
+    {
+      "id": "soy-sauce-browning",
+      "title": { "zh": "酱油为什么是黑的", "en": "Why soy sauce is brown" },
+      "desc": { "zh": "氨基酸和糖的美拉德反应生成类黑精；阿伦尼乌斯方程换算加热、室温和冰箱的差别，结论取决于在酱油上还没测准的活化能。开瓶后变深还和氧化有关。", "en": "The Maillard reaction between amino acids and sugars makes melanoidins; the Arrhenius equation compares heating, room temperature and the fridge, and the answer hinges on an activation energy not yet measured for soy sauce. Oxidation also darkens an opened bottle." },
+      "aliases": {
+        "zh": ["酱油为什么是黑的", "酱油开封后为什么变黑", "酱油要不要放冰箱", "生抽和老抽的区别", "老抽为什么颜色深", "酱油的颜色"],
+        "en": ["why is soy sauce brown", "light vs dark soy sauce", "does soy sauce need to be refrigerated", "why does soy sauce darken", "soy sauce colour"]
+      },
+      "anchor": "#ch5",
+      "relatedPages": ["activation-energy", "reaction-rates"]
+    },
+    {
+      "id": "soy-sauce-aroma-sources",
+      "title": { "zh": "酱油的香从哪来", "en": "Where soy sauce aroma comes from" },
+      "desc": { "zh": "酵母带来酒精、HEMF 和甲硫醇，念珠菌把小麦的酚类变成 4-乙基愈创木酚，加热生成呋喃酮。", "en": "Yeast brings ethanol, HEMF and methionol, Candida turns wheat phenolics into 4-ethylguaiacol, and heating forms furanones." },
+      "aliases": {
+        "zh": ["酱油为什么香", "酱香", "HEMF", "4-乙基愈创木酚", "酱油加热"],
+        "en": ["soy sauce aroma", "HEMF", "4-ethylguaiacol", "soy sauce pasteurization"]
+      },
+      "anchor": "#ch6",
+      "relatedPages": []
+    },
+    {
+      "id": "amino-acid-nitrogen-label",
+      "title": { "zh": "氨基酸态氮：瓶子上的数字", "en": "Amino-acid nitrogen: the number on the bottle" },
+      "desc": { "zh": "甲醛滴定数的是游离氨基，加进去的谷氨酸钠和铵盐也会被数进去；GB/T 18186 的特级到三级，2025 版的铵盐上限 28%，以及日本 JAS 按总氮分级。", "en": "Formol titration counts free amino groups, so added sodium glutamate and ammonium count too; the GB/T 18186 grades, the 28% ammonium cap in the 2025 edition, and Japan's JAS grades by total nitrogen." },
+      "aliases": {
+        "zh": ["氨基酸态氮是什么", "酱油特级一级区别", "酱油等级", "酱油有味精吗", "酱油标签怎么看", "甲醛滴定", "GB/T 18186"],
+        "en": ["amino acid nitrogen soy sauce", "soy sauce grade", "formol titration", "soy sauce label China", "JAS soy sauce grades"]
+      },
+      "anchor": "#ch7",
+      "relatedPages": ["titration-curves", "acid-base-equilibrium"]
+    },
+    {
+      "id": "brewed-vs-hydrolysed-soy-sauce",
+      "title": { "zh": "酿半年和做几天：酿造酱油、低盐固态和酸水解", "en": "Six months or a few days: brewed, low-salt solid-state and acid-hydrolysed" },
+      "desc": { "zh": "高盐稀态走完整个接力；低盐固态更快；酸水解几天切完蛋白质、会生成 3-MCPD，在中国现行规定下不能叫酱油（GB 2717-2018、GB/T 18186-2025、GB 2762-2025）。", "en": "High-salt liquid brewing runs the whole relay; low-salt solid-state is faster; acid hydrolysis breaks protein in days and forms 3-MCPD, and under current Chinese rules may not be called soy sauce." },
+      "aliases": {
+        "zh": ["酿造酱油和配制酱油", "配制酱油", "高盐稀态", "低盐固态", "酸水解植物蛋白", "3-氯丙醇", "氯丙醇"],
+        "en": ["brewed vs chemical soy sauce", "hydrolyzed vegetable protein soy sauce", "naturally brewed soy sauce", "3-MCPD soy sauce", "low-salt solid-state fermentation"]
+      },
+      "anchor": "#ch8",
+      "relatedPages": []
+    },
+    {
+      "id": "soy-sauce-sodium",
+      "title": { "zh": "酱油为什么那么咸", "en": "Why soy sauce is so salty" },
+      "desc": { "zh": "浓盐水是酿造条件的一部分；日本几种酱油每 100 克含钠约 5.1–6.3 克，淡口比浓口更咸。只讲含量和机制。", "en": "Strong brine is part of the brewing; about 5.1–6.3 g sodium per 100 g in Japanese styles, and usukuchi is saltier than koikuchi. Content and mechanism only." },
+      "aliases": {
+        "zh": ["酱油为什么那么咸", "酱油含钠量", "淡口酱油", "减盐酱油", "一勺酱油多少盐"],
+        "en": ["why is soy sauce so salty", "sodium in soy sauce", "usukuchi", "low sodium soy sauce"]
+      },
+      "anchor": "#ch9",
+      "relatedPages": []
+    }
+  ]
+}
