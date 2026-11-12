@@ -1,4 +1,4 @@
-/* Shared concept/page matcher for the atlas search and the homepage site search.
+/* Shared concept/page matcher for the standalone search module and atlas search.
    Contract: specs/atlas-search-index.md. Plain script (window.ConceptSearch) and
    CommonJS (node tests). No dependencies, no state.
 

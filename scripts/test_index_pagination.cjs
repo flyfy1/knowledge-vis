@@ -26,12 +26,12 @@ if (JSON.stringify(Array.from(w.KNOWLEDGE_FEATURED)) !== JSON.stringify(expected
 const slugs = new Set(w.KNOWLEDGE_PAGES.map((p) => p.slug));
 for (const s of w.KNOWLEDGE_FEATURED) if (!slugs.has(s)) fail(`featured slug not registered: ${s}`);
 
-// Long reads (2026-11-11): the six essays of the batch, the five of the second batch, then scarcity-moves,
-// which set their standard.
+// Long reads (2026-11-11 + 2026-11-12 food essays): the six essays of the batch, the five of the second batch,
+// two food essays, then scarcity-moves, which set their standard.
 const expectedEssays = ['numbers-lie', 'body-in-balance', 'inside-a-phone', 'where-money-comes-from',
   'same-votes-different-winner', 'switches-that-compute',
   'what-is-a-black-hole', 'how-vaccines-work', 'why-the-planet-warms', 'why-the-sky-is-blue',
-  'where-a-mortgage-payment-goes', 'scarcity-moves'];
+  'where-a-mortgage-payment-goes', 'why-fermented-tofu-tastes-good', 'how-soy-sauce-gets-its-flavor', 'scarcity-moves'];
 if (JSON.stringify(Array.from(w.KNOWLEDGE_ESSAYS || [])) !== JSON.stringify(expectedEssays)) {
   fail('KNOWLEDGE_ESSAYS differs from the decided list: ' + JSON.stringify(w.KNOWLEDGE_ESSAYS));
 }
@@ -71,9 +71,9 @@ const required = [
   ['Chinese-only badge in English mode', "if (lang === 'en' && pg.languages && pg.languages.indexOf('en') === -1)"],
   ['home chip keeps data-cat=all', "var defs = [{ id: 'all' }];"],
   ['site search input', 'id="siteSearch"'],
-  // Concept search (2026-11-11): the atlas concept index is loaded lazily and merged into the results.
-  ['concept matcher loaded lazily', "'atlas/concept-search.js?v="],
-  ['concept index loaded lazily', "'atlas/search-index.js?v="],
+  // Concept search (2026-11-11, decoupled into search/ 2026-11-13): the sharded concept index is loaded lazily and merged into the results.
+  ['concept matcher loaded lazily', "'search/concept-search.js?v="],
+  ['concept manifest loaded lazily', "'search/manifest.js?v="],
   ['index loads on first focus', "siteInput.addEventListener('focus', loadConcepts);"],
   ['index loads on first typing', "siteInput.addEventListener('input',function(event) { loadConcepts();"],
   ['index loads for a ?s= URL', 'if (siteInput.value) loadConcepts();'],
@@ -101,8 +101,8 @@ const forbidden = [
   ['maintainer footer', '<b>pages.config.js</b>'],
   ['provenance label (root page has no provenance entry)', 'page-provenance'],
   // The first paint must not pay for the concept index.
-  ['concept index as a blocking script', '<script src="atlas/search-index.js'],
-  ['concept matcher as a blocking script', '<script src="atlas/concept-search.js'],
+  ['concept index as a blocking script', '<script src="search/manifest.js'],
+  ['concept matcher as a blocking script', '<script src="search/concept-search.js'],
 ];
 for (const [label, needle] of forbidden) if (html.includes(needle)) fail(`${label} is back: ${needle}`);
 
@@ -114,7 +114,7 @@ if (!html.includes("if (activeCat === 'leetcode') searchInput.value = url.search
 }
 if ((html.match(/<a class="card"/g) || []).length) fail('index contains a hard-coded card list');
 // Both lazily loaded files exist and the strings the concept cards use are in both languages.
-for (const f of ['atlas/concept-search.js', 'atlas/search-index.js']) if (!fs.existsSync(path.join(root, f))) fail(`missing ${f}`);
+for (const f of ['search/concept-search.js', 'search/manifest.js']) if (!fs.existsSync(path.join(root, f))) fail(`missing ${f}`);
 // Order inside renderHome: featured cards, then the long reads, then the entrances.
 const home = html.slice(html.indexOf('function renderHome(frag)'), html.indexOf('function renderCategory('));
 const at = (needle) => { const i = home.indexOf(needle); if (i < 0) fail(`renderHome lacks ${needle}`); return i; };

@@ -7,7 +7,7 @@ const assert = require('node:assert/strict'), fs = require('node:fs'), os = requ
   vm = require('node:vm'), { execFileSync, spawnSync } = require('node:child_process');
 const root = path.resolve(__dirname, '../..');
 const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'atlas-registry-'));
-const importer = path.join(root, 'scripts/atlas-import-registry.cjs'), build = path.join(root, 'scripts/build-atlas-data.cjs');
+const importer = path.join(root, 'scripts/atlas-import-registry.cjs'), build = path.join(root, 'scripts/build-atlas-data.cjs'), buildSearch = path.join(root, 'scripts/build-search-index.cjs');
 const run = (script, args) => spawnSync(process.execPath, [script, ...args], { cwd: root, encoding: 'utf8' });
 let checks = 0; const ok = (v, m) => { assert.ok(v, m); checks++; };
 try {
@@ -57,15 +57,21 @@ try {
   bad('no-english', reg => { delete reg.concepts[1].title.en; }, ['--region', 'society'], 'needs both zh and en');
   bad('no-region', () => {}, [], 'no region for category "demos"');
 
-  // 3. Preview build: concepts reach the index, the search index (deep link + aliases) and pass the validator.
+  // 3. Preview build: concepts reach the atlas index, the independent sharded search index (deep link + aliases) and pass the validator.
   r = run(build, ['--extra-lessons', frags, '--out', out]);
   assert.equal(r.status, 0, r.stderr + r.stdout);
+  const searchOut = path.join(out, 'search');
+  r = run(buildSearch, ['--data', path.join(out, 'data.js'), '--out', searchOut]);
+  assert.equal(r.status, 0, r.stderr + r.stdout);
   const box = { window: {} };
-  vm.runInNewContext(fs.readFileSync(path.join(out, 'search-index.js'), 'utf8'), box);
+  vm.runInNewContext(fs.readFileSync(path.join(searchOut, 'manifest.js'), 'utf8'), box);
+  for (const ref of box.window.KNOWLEDGE_CONCEPTS.chunks) {
+    vm.runInNewContext(fs.readFileSync(path.join(searchOut, ref.replace(/^search\//, '').split('?')[0]), 'utf8'), box);
+  }
   const row = box.window.KNOWLEDGE_CONCEPTS.concepts.find(c => c[0] === 'sample-opportunity-cost');
   ok(row && row[2] === 'demos/scarcity-moves/#c3', 'search index deep-links the chapter');
   assert.deepEqual(JSON.parse(JSON.stringify([row[5], row[6]])), [['选这个就没那个'], ['what you give up']]); checks++;
-  const CS = require(path.join(root, 'atlas/concept-search.js'));
+  const CS = require(path.join(root, 'search/concept-search.js'));
   const items = box.window.KNOWLEDGE_CONCEPTS.concepts.map(c => ({ id: c[0], record: CS.prepare({ titles: [c[3], c[4]], aliases: [...c[5], ...c[6]], texts: [c[7], c[8]] }) }));
   ok(CS.rank(items, '选这个就没那个')[0].id === 'sample-opportunity-cost', 'an everyday alias finds the chapter');
   const atlas = { window: {} };

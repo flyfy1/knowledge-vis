@@ -66,13 +66,14 @@ types ("为什么要打疫苗", "how does my phone know where I am"), not only t
    `--region`, when the category has no region). Write the edges by hand into
    `atlas/graph/lessons/<slug>.json`, only where one chapter builds on another or where the chapter links
    to the other page; re-importing keeps them. Then run `node scripts/build-atlas-data.cjs --concept-map`
-   and `--check`, and watch `search-index.js` against its 200,000-byte limit. Details are in
+   and `--check`, followed by `node scripts/build-search-index.cjs` and `--check` (search is sharded
+   into `search/chunks/*.js` and no longer constrained by a global 200 KB cap). Details are in
    specs/atlas-search-index.md § Essay pages.
 6. **One-click check.** For each chapter, try a few everyday queries in both languages on the homepage
    search and the atlas search. Add aliases until the chapter is the first result. On a tie between an
    essay page and one of its chapters, the homepage puts the chapter first.
-7. **Cache keys.** After committing, run `node scripts/build-atlas-data.cjs --bump-versions` and update the
-   `pages.config.js?v=` key in `index.html`.
+7. **Cache keys.** After committing, run `node scripts/build-atlas-data.cjs --bump-versions` and
+   `node scripts/build-search-index.cjs --bump-versions`, and update the `pages.config.js?v=` key in `index.html`.
 8. Add rows to CONCEPT-MAP.md.
 
 ## The essays

@@ -1,8 +1,7 @@
 # atlas/graph/ — 知识图谱数据源（P0，2026-10-30）
 
-`atlas/data.js`、`questions.js`、`atlas-index.js`、`search-index.js`、`details/*.js`
-都是生成物，不要手改。改这里，再跑生成脚本。运行时拆分、上限与搜索见
-[specs/atlas-search-index.md](../../specs/atlas-search-index.md)。
+`atlas/data.js`、`questions.js`、`atlas-index.js`、`details/*.js` 都是生成物，不要手改。改这里，再跑生成脚本。
+首页概念搜索（`search/manifest.js` + `search/chunks/*.js`）已拆为独立模块，由 `scripts/build-search-index.cjs` 从 `atlas/data.js` 下游生成，不再受单文件体积上限阻塞。运行时拆分、上限与搜索见 [specs/atlas-search-index.md](../../specs/atlas-search-index.md)。
 
 ## 文件
 

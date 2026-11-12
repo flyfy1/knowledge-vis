@@ -354,9 +354,9 @@
     });
   }
 
-  /* ---------- 概念搜索：知识地图的概念索引，首次聚焦/输入时才加载（specs/index-pagination.md） ---------- */
-  // atlas/concept-search.js = shared matcher; atlas/search-index.js = every atlas concept with its deep link.
-  var CONCEPT_FILES = ['atlas/concept-search.js?v=20261112-9f4751c6', 'atlas/search-index.js?v=20261112-cdaf703d'];
+  /* ---------- 概念搜索：独立搜索模块，首次聚焦/输入时才懒加载（specs/index-pagination.md） ---------- */
+  // search/concept-search.js = shared matcher; search/manifest.js + search/chunks/*.js = sharded concept index.
+  var CONCEPT_FILES = ['search/concept-search.js?v=20261112-9f4751c6', 'search/manifest.js?v=20261113-initial'];
   var MAX_CONCEPTS = 8;
   var conceptState = 'idle', conceptItems = [], pageRecords = null;
   var byPath = {};
@@ -365,10 +365,8 @@
     if (conceptState !== 'idle') return;
     conceptState = 'loading';
     var pending = CONCEPT_FILES.length, failed = false;
-    function done() {
-      if (--pending) return;
+    function finalize() {
       var K = window.KNOWLEDGE_CONCEPTS, CS = window.ConceptSearch;
-      // Failure leaves page search exactly as before; nothing is shown about it.
       if (failed || !CS || !K || !Array.isArray(K.concepts)) { conceptState = 'error'; return; }
       conceptItems = K.concepts.map(function(r){
         var href = r[2], path = href.split('#')[0], pg = byPath[path] || null;
@@ -384,6 +382,21 @@
       });
       conceptState = 'ready';
       if (siteQuery() && activeCat !== 'leetcode') renderCards();
+    }
+    function done() {
+      if (--pending) return;
+      var K = window.KNOWLEDGE_CONCEPTS, CS = window.ConceptSearch;
+      // Failure leaves page search exactly as before; nothing is shown about it.
+      if (failed || !CS || !K || !Array.isArray(K.concepts)) { conceptState = 'error'; return; }
+      if (!Array.isArray(K.chunks) || !K.chunks.length) { finalize(); return; }
+      var chunkPending = K.chunks.length;
+      K.chunks.forEach(function(src){
+        var el = document.createElement('script');
+        el.src = src; el.async = true;
+        el.onload = function(){ if (!--chunkPending) finalize(); };
+        el.onerror = function(){ failed = true; if (!--chunkPending) finalize(); };
+        document.head.appendChild(el);
+      });
     }
     CONCEPT_FILES.forEach(function(src){
       var el = document.createElement('script');

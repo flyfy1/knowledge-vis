@@ -48,11 +48,12 @@ node <页面目录>/tests/*.cjs                       # 各页自带测试
 node scripts/authorship.cjs <文件>                # 查归属
 python3 -m http.server 18871 --bind 127.0.0.1     # 浏览器测试用的本地服务器，用完要停
 PROVENANCE_BASE_URL=http://127.0.0.1:18871 node tests/page-provenance-browser.cjs
-# 知识地图与搜索（改了 atlas/graph、atlas/、首页搜索时跑）
-node scripts/build-atlas-data.cjs --check         # 生成物漂移 + 首屏/搜索索引体积上限
+# 知识地图与搜索（改了 atlas/graph、atlas/、search/、首页搜索时跑）
+node scripts/build-atlas-data.cjs --check         # 图谱生成物漂移 + 首屏索引体积上限
+node scripts/build-search-index.cjs --check       # 独立搜索分片漂移 + 单分片体积上限
 node atlas/tests/data-quality.cjs
 node tests/concept-search.cjs                     # 匹配规则 + 十个日常词的落点
-node atlas/tests/registry-import.cjs              # 文章 REGISTRY.json → 图谱片段
+node atlas/tests/registry-import.cjs              # 文章 REGISTRY.json → 图谱片段 + 搜索分片
 HOME_TEST_URL=http://127.0.0.1:18871/ node tests/home-concept-search.cjs   # 浏览器
 ```
 

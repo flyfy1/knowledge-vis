@@ -1,12 +1,12 @@
 'use strict';
-// Shared matcher (atlas/concept-search.js) and the generated concept index (atlas/search-index.js).
+// Shared matcher (search/concept-search.js) and the sharded concept index (search/manifest.js + search/chunks/*.js).
 // Contract: specs/atlas-search-index.md. Ranks pages + concepts the way the homepage does
 // (one list, score first, a page before a concept on ties, an essay's chapters before the essay)
 // and pins where ten everyday
 // terms land, in both languages: the first result must open a visualization of that idea.
 const assert = require('node:assert/strict'), fs = require('node:fs'), path = require('node:path'), vm = require('node:vm');
 const root = path.resolve(__dirname, '..');
-const CS = require(path.join(root, 'atlas/concept-search.js'));
+const CS = require(path.join(root, 'search/concept-search.js'));
 let checks = 0; const ok = (v, m) => { assert.ok(v, m); checks++; };
 
 // Matcher rules.
@@ -66,11 +66,20 @@ for (const q of ['canvas', '酸和碱', '和弦', 'rock and roll', '排列组合
   ok(CS.rank(items, 'mean').map(x => x.n)[0] === 'A', 'a plain query is not rearranged');
 }
 
-// Generated index shape.
+// Generated sharded index shape.
 const box = { window: {} };
-vm.runInNewContext(fs.readFileSync(path.join(root, 'atlas/search-index.js'), 'utf8'), box);
-vm.runInNewContext(fs.readFileSync(path.join(root, 'pages.config.js'), 'utf8'), box);
+const manifestPath = path.join(root, 'search/manifest.js');
+ok(Buffer.byteLength(fs.readFileSync(manifestPath)) <= 30000, 'search manifest within its limit');
+vm.runInNewContext(fs.readFileSync(manifestPath, 'utf8'), box);
 const K = box.window.KNOWLEDGE_CONCEPTS;
+ok(Array.isArray(K.chunks) && K.chunks.length > 0, 'search manifest lists chunks');
+for (const ref of K.chunks) {
+  const chunkFile = path.join(root, ref.split('?')[0]);
+  const bytes = Buffer.byteLength(fs.readFileSync(chunkFile));
+  ok(bytes <= 60000, `search chunk ${ref} within limit (${bytes} bytes)`);
+  vm.runInNewContext(fs.readFileSync(chunkFile, 'utf8'), box);
+}
+vm.runInNewContext(fs.readFileSync(path.join(root, 'pages.config.js'), 'utf8'), box);
 assert.deepEqual([...K.fields], ['id', 'region', 'href', 'titleZh', 'titleEn', 'aliasesZh', 'aliasesEn', 'summaryZh', 'summaryEn']); checks++;
 const pages = box.window.KNOWLEDGE_PAGES.filter(p => p.status === 'live' && p.category !== 'leetcode');
 const paths = new Set(pages.map(p => p.path));
@@ -78,7 +87,6 @@ for (const r of K.concepts) {
   const where = r[2].split('#')[0];
   ok(paths.has(where) || where.startsWith(K.atlas), `concept ${r[0]} links to a live page or the atlas: ${r[2]}`);
 }
-ok(Buffer.byteLength(fs.readFileSync(path.join(root, 'atlas/search-index.js'))) <= 200000, 'search index within its limit');
 
 // Ten everyday terms, both languages: first result's destination.
 const tx = v => v == null ? [] : typeof v === 'string' ? [v] : [v.zh, v.en].filter(Boolean);

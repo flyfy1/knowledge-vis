@@ -14,12 +14,12 @@ let checks = 0; const ok = (v, m) => { assert.ok(v, m); checks++; };
       const page = await context.newPage();
       page.on('pageerror', e => errors.push(String(e)));
       const lazy = [];
-      page.on('request', r => { if (/atlas\/(search-index|concept-search)\.js/.test(r.url())) lazy.push(r.url()); });
+      page.on('request', r => { if (/search\/(manifest|concept-search)\.js|search\/chunks\//.test(r.url())) lazy.push(r.url()); });
       await page.goto(base);
       ok(lazy.length === 0, `${lang}: first paint does not load the concept index`);
       await page.locator('#siteSearch').focus();
-      await page.waitForFunction(() => window.KNOWLEDGE_CONCEPTS && window.ConceptSearch);
-      ok(lazy.length === 2, `${lang}: focus loads matcher + index`);
+      await page.waitForFunction(() => window.KNOWLEDGE_CONCEPTS && window.ConceptSearch && window.KNOWLEDGE_CONCEPTS.concepts.length > 0);
+      ok(lazy.some(u => u.includes('search/concept-search.js')) && lazy.some(u => u.includes('search/manifest.js')) && lazy.some(u => u.includes('search/chunks/')), `${lang}: focus loads matcher + manifest + chunks`);
 
       // A layperson's word that only an alias knows: "利息"/"interest" is in no page title.
       // The concept has the page's own name, so it is folded into the page card, which
@@ -65,7 +65,7 @@ let checks = 0; const ok = (v, m) => { assert.ok(v, m); checks++; };
     }
     // Index unavailable: page search still works and says nothing about concepts.
     const context = await browser.newContext({ viewport: { width: 1280, height: 900 }, locale: 'en-US' });
-    await context.route('**/atlas/search-index.js*', route => route.abort());
+    await context.route('**/search/manifest.js*', route => route.abort());
     const page = await context.newPage();
     page.on('pageerror', e => errors.push(String(e)));
     await page.goto(base + '?s=fourier');

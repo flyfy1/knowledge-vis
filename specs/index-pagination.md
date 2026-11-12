@@ -81,12 +81,14 @@ The site search (`#siteSearch`) finds pages and atlas concepts in one list.
 
 - Pages match title, description and tags in both languages. Input is
   NFKC-normalised and lowercased; space-separated words must all match.
-- Concepts come from `atlas/search-index.js` and are matched by the shared
-  `atlas/concept-search.js` (titles, aliases and one-line summaries, both
-  languages, spaces/hyphens ignored; ranking in specs/atlas-search-index.md).
-  The two files are loaded on the first focus of, or typing into, the search box,
-  or at load when the URL has `?s=`; never on a plain first paint. If they fail to
-  load, page results still show and concepts are silently left out.
+- Concepts come from the standalone sharded search index (`search/manifest.js` +
+  `search/chunks/*.js`) and are matched by the shared `search/concept-search.js`
+  (titles, aliases and one-line summaries, both languages, spaces/hyphens ignored;
+  ranking in specs/atlas-search-index.md).
+  The matcher and manifest are loaded on the first focus of, or typing into, the
+  search box, or at load when the URL has `?s=`, which then fetch the chunks in
+  parallel; never on a plain first paint. If any file fails to load, page results
+  still show and concepts are silently left out.
 - Order: score (the same matcher scores pages); on ties a lesson page first, then
   concepts, then whole essays (pages listed in `KNOWLEDGE_ESSAYS`); then registry
   order. An essay covers ten or so ideas, so a word that names both the essay and
