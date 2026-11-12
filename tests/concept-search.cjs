@@ -200,6 +200,18 @@ chapters.push(
   ['臭豆腐为什么臭', 'why does stinky tofu smell', TOFU + '#ch8'],
   ['皮蛋有铅吗', 'does century egg contain lead', TOFU + '#ch9'],
 );
+const SOY = 'food/flavor/how-soy-sauce-gets-its-flavor/';
+chapters.push(
+  ['酱油', 'soy sauce', SOY],
+  ['酱油是怎么做的', 'how is soy sauce made', SOY],
+  ['米曲霉', 'what is koji', SOY + '#ch2'],
+  ['酱油为什么加小麦', 'tamari vs soy sauce', SOY + '#ch3'],
+  ['酱油为什么是黑的', 'why is soy sauce brown', SOY + '#ch5'],
+  ['生抽和老抽的区别', 'light vs dark soy sauce', SOY + '#ch5'],
+  ['氨基酸态氮是什么', 'soy sauce grade', SOY + '#ch7'],
+  ['配制酱油', 'naturally brewed soy sauce', SOY + '#ch8'],
+  ['酱油为什么那么咸', 'sodium in soy sauce', SOY + '#ch9'],
+);
 for (const [zh, en, href] of chapters) for (const q of [zh, en]) {
   const hit = first(q);
   ok(hit && (hit.href === href || (href.endsWith('/') && hit.href.startsWith(href))), `"${q}" opens ${href} (got ${hit && hit.href})`);

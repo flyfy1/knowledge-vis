@@ -262,6 +262,12 @@ anchor and aliases. It is a schema-2 fragment `atlas/graph/lessons/<slug>.json`:
   added to #ch3 so the chapter wins its tie with the page tag. `tests/concept-search.cjs` pins 10 zh/en
   pairs. `search-index.js` is now 186,074 of 200,000 bytes.
 
+- Soy sauce (2026-11-12): how-soy-sauce-gets-its-flavor → matter, 9 concepts, 5 hand-written edges between
+  chapters. 酱油是怎么来的 / soy sauce left the tofu essay's `fermented-food-family` for this page; plain 酱油 /
+  soy sauce open the page top through its tag. `tests/concept-search.cjs` pins 9 more zh/en pairs.
+  `search-index.js` is now 191,319 of 200,000 bytes: the next essay does not fit without first shrinking
+  the index or raising the limit with a stated reason.
+
 ### Commands for the integrator
 
 ```sh

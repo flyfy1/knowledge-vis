@@ -92,8 +92,9 @@ types ("为什么要打疫苗", "how does my phone know where I am"), not only t
 | why-the-sky-is-blue | physics/optics/why-the-sky-is-blue/ | 9 concepts in 10 chapters (`#ch1…#ch9`) | waves | `ESSAY_BASE_URL` |
 | where-a-mortgage-payment-goes | economics/money/where-a-mortgage-payment-goes/ | 9 (`#ch1…#ch9`) | society | `ESSAY_BASE_URL` |
 | why-fermented-tofu-tastes-good | food/flavor/why-fermented-tofu-tastes-good/ | 9 (`#ch1…#ch9`) | matter | `ESSAY_BASE_URL` |
+| how-soy-sauce-gets-its-flavor | food/flavor/how-soy-sauce-gets-its-flavor/ | 9 concepts in 10 chapters (`#ch1…#ch9`) | matter | `ESSAY_BASE_URL` |
 
-The eleven from 2026-11-11 and the food essay of 2026-11-12 were built by Claude Code (claude-opus-5-5). The English copy was drafted by Claude
+The eleven from 2026-11-11 and the two food essays of 2026-11-12 were built by Claude Code (claude-opus-5-5). The English copy was drafted by Claude
 Code (claude-haiku-5-5). A separate Claude Code session of the same model reviewed each essay and revised
 it (no human or cross-model review yet). Each BRIEF.md records what was and was not checked.
 
@@ -184,6 +185,24 @@ share are tuned, and the page says so; ch5 uses stinky-tofu odorant data. Task b
 specs/essay-briefs/TASK-why-fermented-tofu-tastes-good.md. The essay commit's trailer reads
 `Built-By: claude-code`, which `tests/page-provenance-core.cjs` does not match (it wants `Built-By: Claude`),
 so the label points at the follow-up BRIEF commit; write the trailer as `Claude Code` in future.
+
+### how-soy-sauce-gets-its-flavor: 酱油是怎么酿出来的
+
+Second page of the food section (Yangyu, 2026-11-12). Soybeans, wheat, salt and water become soy sauce in
+half a year, while some products are made in days. Koji as a way to grow enzymes (logistic growth, Rosso
+cardinal temperatures, a heat balance for the bed), the soybean : wheat mass balance, the hand-over in brine
+from Tetragenococcus halophilus to Zygosaccharomyces rouxii (Zwietering growth, Rosso cardinal pH, Monod,
+Luedeking–Piret, Pitzer water activity; pH fitted to Zhou 2019), Maillard browning with the activation energy
+as a slider because no soy-sauce value was found, aroma, amino-acid nitrogen and the grades, brewed versus
+low-salt solid-state versus acid-hydrolysed, and sodium. It links to the tofu essay for chain scission,
+umami, water activity and odour activity values instead of repeating them. Standards as stated on the page
+on 2026-11-12: GB 2717-2018 in force (it carries the naming rule), GB/T 18186-2000 in force until the 2025
+edition takes effect on 2026-12-01, GB 2762-2025 in force since 2026-09-02; **after 1 December 2026 the
+sentences that say "takes effect" need rewording**. Region `matter`; atlas edges: 5 between chapters. 酱油是怎么来的
+and "soy sauce" moved here from the tofu essay's #ch7 (one word, one owner), which repointed that page's
+label. Known limits (BRIEF): the ch4 fit uses 8 of Zhou's 14 points (RMS 0.08; 0.15 on all 14) and says so;
+koji cardinal temperatures are second-hand; the 2021 SAMR notice and the 2000 edition's text were not read
+in the original. Task brief: specs/essay-briefs/TASK-how-soy-sauce-gets-its-flavor.md.
 
 ### scarcity-moves: 稀缺会搬家
 

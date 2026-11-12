@@ -1,11 +1,11 @@
 {
   "counts": {
     "groups": 11,
-    "nodes": 358,
-    "edges": 528,
+    "nodes": 367,
+    "edges": 533,
     "trails": 14,
     "questions": 124,
-    "fragments": 187
+    "fragments": 188
   },
   "conflicts": [],
   "suspendedEdges": [],
@@ -146,6 +146,64 @@
       "taughtBy": [
         "positive-predictive-value",
         "epidemic-r0"
+      ]
+    },
+    {
+      "concept": "koji-making-heat",
+      "page": "enzymes",
+      "taughtBy": [
+        "enzymes"
+      ]
+    },
+    {
+      "concept": "koji-making-heat",
+      "page": "logistic-growth",
+      "taughtBy": [
+        "logistic-growth"
+      ]
+    },
+    {
+      "concept": "moromi-microbial-relay",
+      "page": "population-ecology",
+      "taughtBy": [
+        "logistic-growth",
+        "predator-prey"
+      ]
+    },
+    {
+      "concept": "moromi-microbial-relay",
+      "page": "ph-scale",
+      "taughtBy": [
+        "ph-scale"
+      ]
+    },
+    {
+      "concept": "soy-sauce-browning",
+      "page": "activation-energy",
+      "taughtBy": [
+        "activation-energy"
+      ]
+    },
+    {
+      "concept": "soy-sauce-browning",
+      "page": "reaction-rates",
+      "taughtBy": [
+        "collision-theory"
+      ]
+    },
+    {
+      "concept": "amino-acid-nitrogen-label",
+      "page": "titration-curves",
+      "taughtBy": [
+        "estimate",
+        "titration-curves"
+      ]
+    },
+    {
+      "concept": "amino-acid-nitrogen-label",
+      "page": "acid-base-equilibrium",
+      "taughtBy": [
+        "weak-acid-equilibrium"
       ]
     },
     {
@@ -1017,10 +1075,10 @@
     }
   ],
   "unknownAliasIds": [],
-  "sizeBytes": 710098,
+  "sizeBytes": 721973,
   "questionsBytes": 173024,
-  "combinedBytes": 883122,
-  "indexBytes": 88729,
+  "combinedBytes": 894997,
+  "indexBytes": 90117,
   "chunkBytes": {
     "math.nodes": 51664,
     "math.edges": 89636,
@@ -1037,8 +1095,8 @@
     "measurement.nodes": 35687,
     "measurement.edges": 61562,
     "measurement.questions": 30144,
-    "matter.nodes": 21855,
-    "matter.edges": 16470,
+    "matter.nodes": 29536,
+    "matter.edges": 18917,
     "matter.questions": 7898,
     "life.nodes": 26735,
     "life.edges": 23263,
@@ -1055,5 +1113,5 @@
     "tech.nodes": 9437,
     "tech.edges": 9209
   },
-  "searchBytes": 186074
+  "searchBytes": 191319
 }

@@ -153,6 +153,7 @@ window.KNOWLEDGE_ESSAYS = [
   "same-votes-different-winner", "switches-that-compute",
   "what-is-a-black-hole", "how-vaccines-work", "why-the-planet-warms", "why-the-sky-is-blue",
   "where-a-mortgage-payment-goes", "why-fermented-tofu-tastes-good",
+  "how-soy-sauce-gets-its-flavor",
   "scarcity-moves"
 ];
 
@@ -342,6 +343,16 @@ window.KNOWLEDGE_PAGES = [
     },
     tags: [{ zh: "发酵", en: "Fermentation" }, { zh: "鲜味", en: "Umami" }, { zh: "食品化学", en: "Food Chemistry" }, { zh: "长文", en: "Long-form Essay" }],
     category: "food", subtopic: "flavor", stage: "senior", status: "live", path: "food/flavor/why-fermented-tofu-tastes-good/"
+  },
+  {
+    slug: "how-soy-sauce-gets-its-flavor",
+    title: { zh: "酱油是怎么酿出来的", en: "How Soy Sauce Gets Its Flavor" },
+    desc: {
+      zh: "黄豆、小麦、盐和水，单独都不鲜、不香、不黑，放在一起半年却成了酱油；也有的酱油几天就做出来。六个可以拖动的模型：曲床发热、小麦带来的糖、盐水里乳酸菌和酵母的接力、颜色和温度、瓶子上的氨基酸态氮、一勺里的钠。",
+      en: "Soybeans, wheat, salt and water are each bland, pale and odourless, yet half a year together turns them into soy sauce; some soy sauce is made in days. Six models you can push: a heating koji bed, the sugar wheat brings, the hand-over from lactic bacteria to yeast in brine, colour and temperature, the amino-nitrogen number on the label, and the sodium in a spoonful."
+    },
+    tags: [{ zh: "发酵", en: "Fermentation" }, { zh: "酱油", en: "Soy Sauce" }, { zh: "食品化学", en: "Food Chemistry" }, { zh: "长文", en: "Long-form Essay" }],
+    category: "food", subtopic: "flavor", stage: "senior", status: "live", path: "food/flavor/how-soy-sauce-gets-its-flavor/"
   },
   {
     slug: "fourier",

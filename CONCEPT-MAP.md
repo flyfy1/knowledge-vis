@@ -2686,10 +2686,26 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 
 图谱关系：章与章之间 5 条（后一章复用前一章的模型或结论）；跨页只有 seeAlso，没有写关系。概念清单与别名见 `food/flavor/why-fermented-tofu-tastes-good/REGISTRY.json`。这是「饮食与风味」分类的第一页，图谱里归在「物质与变化」分区。
 
+## 酱油是怎么酿出来的（长文，2026-11-12，Claude Code 新增；独立评审：另一个 Claude Code 会话）
+
+| 概念（中 / EN） | 专讲 path#章 | 那一章讲清什么 |
+| --- | --- | --- |
+| 酱油的三段：制曲、酱醪、加热 / Soy sauce in three stages: koji, moromi, heating | food/flavor/how-soy-sauce-gets-its-flavor#ch1 | 两三天养曲霉，几个月让盐水里的乳酸菌和酵母接力，最后几十分钟加热；时间轴上的点由后面的模型算出。 |
+| 制曲：先养一批酶 / Koji: growing a batch of enzymes | food/flavor/how-soy-sauce-gets-its-flavor#ch2 | 曲霉长在蒸黄豆和炒小麦上，两三天造出蛋白酶和淀粉酶；生长放热，曲床太厚不翻就超过 40 °C。逻辑斯谛生长加热量平衡的模型。 |
+| 为什么酱油要加小麦 / Why soy sauce uses wheat | food/flavor/how-soy-sauce-gets-its-flavor#ch3 | 黄豆给蛋白质，小麦给淀粉和糖；按比例算出的糖决定后面的酵母吃不吃得饱。溜酱油、浓口、中式 80:20 与 70:30 的比较。 |
+| 盐水里的接力：乳酸菌和酵母 / The relay in brine: lactic bacteria then yeast | food/flavor/how-soy-sauce-gets-its-flavor#ch4 | 嗜盐四联球菌先产酸把 pH 拉到 5 以下，鲁氏接合酵母才能在浓盐里接棒产酒精和香气；在模型里，盐超过约 20.6% 或温度太低，接力就失败。 |
+| 酱油为什么是黑的 / Why soy sauce is brown | food/flavor/how-soy-sauce-gets-its-flavor#ch5 | 氨基酸和糖的美拉德反应生成类黑精；阿伦尼乌斯方程换算加热、室温和冰箱的差别，结论取决于在酱油上还没测准的活化能。开瓶后变深还和氧化有关。 |
+| 酱油的香从哪来 / Where soy sauce aroma comes from | food/flavor/how-soy-sauce-gets-its-flavor#ch6 | 酵母带来酒精、HEMF 和 3-甲硫基丙醇，念珠菌把小麦的酚类变成 4-乙基愈创木酚，加热生成呋喃酮。 |
+| 氨基酸态氮：瓶子上的数字 / Amino-acid nitrogen: the number on the bottle | food/flavor/how-soy-sauce-gets-its-flavor#ch7 | 甲醛滴定数的是游离氨基，加进去的谷氨酸钠和铵盐也会被数进去；GB/T 18186 的特级到三级，2025 版的铵盐上限 28%，以及日本 JAS 按总氮分级。 |
+| 酿半年和做几天：酿造酱油、低盐固态和酸水解 / Six months or a few days: brewed, low-salt solid-state and acid-hydrolysed | food/flavor/how-soy-sauce-gets-its-flavor#ch8 | 高盐稀态走完整个接力；低盐固态更快；酸水解几天切完蛋白质、会生成 3-MCPD，在中国现行规定下不能叫酱油（GB 2717-2018 和市场监管总局 2021 年公告；3-MCPD 限量见 GB 2762-2025）。 |
+| 酱油为什么那么咸 / Why soy sauce is so salty | food/flavor/how-soy-sauce-gets-its-flavor#ch9 | 浓盐水是酿造条件的一部分；日本几种酱油每 100 克含钠约 5.1–6.3 克，淡口比浓口更咸。只讲含量和机制。 |
+
+图谱关系：章与章之间 5 条（后一章复用前一章的模型或结论）；跨页只有 seeAlso，没有写关系。概念清单与别名见 `food/flavor/how-soy-sauce-gets-its-flavor/REGISTRY.json`。「饮食与风味」分类的第二页，图谱里归在「物质与变化」分区。
+
 <!-- GENERATED:atlas-nodes -->
 ## 三、图谱节点索引（生成，勿手改）
 
-358 个概念 · 528 条关系 · 11 个分区 · 由 scripts/build-atlas-data.cjs --concept-map 生成。节点排序与 data.js 一致（分区序、学段序、order、id）。
+367 个概念 · 533 条关系 · 11 个分区 · 由 scripts/build-atlas-data.cjs --concept-map 生成。节点排序与 data.js 一致（分区序、学段序、order、id）。
 
 ### 01 数学基础 / Mathematical tools
 
@@ -2921,15 +2937,24 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 反应速率与碰撞理论 / Reaction rates & collision theory | ../chemistry/reactions/reaction-rates/#step0 | reaction-rates#step0 |
 | 化学平衡 · 动态平衡与勒夏特列原理 / Chemical equilibrium · dynamic balance and Le Chatelier | ../chemistry/reactions/chemical-equilibrium/#step1 | chemical-equilibrium#step1 |
 | 蛋白质切成氨基酸才有味道 / Protein has to be cut into amino acids before you taste it | ../food/flavor/why-fermented-tofu-tastes-good/#ch1 | why-fermented-tofu-tastes-good |
+| 酱油的三段：制曲、酱醪、加热 / Soy sauce in three stages: koji, moromi, heating | ../food/flavor/how-soy-sauce-gets-its-flavor/#ch1 | how-soy-sauce-gets-its-flavor |
 | 弱酸电离平衡 · Ka / Weak-acid equilibrium · Ka | ../chemistry/solutions/acid-base-equilibrium/#step1 | acid-base-equilibrium#step1 |
 | 内切酶和外切酶的配合 / Endopeptidases and exopeptidases working together | ../food/flavor/why-fermented-tofu-tastes-good/#ch2 | why-fermented-tofu-tastes-good |
+| 制曲：先养一批酶 / Koji: growing a batch of enzymes | ../food/flavor/how-soy-sauce-gets-its-flavor/#ch2 | how-soy-sauce-gets-its-flavor |
+| 为什么酱油要加小麦 / Why soy sauce uses wheat | ../food/flavor/how-soy-sauce-gets-its-flavor/#ch3 | how-soy-sauce-gets-its-flavor |
 | 鲜味与鲜味相乘 / Umami and umami synergy | ../food/flavor/why-fermented-tofu-tastes-good/#ch3 | why-fermented-tofu-tastes-good |
+| 盐水里的接力：乳酸菌和酵母 / The relay in brine: lactic bacteria then yeast | ../food/flavor/how-soy-sauce-gets-its-flavor/#ch4 | how-soy-sauce-gets-its-flavor |
 | 盐、水分活度和谁能活 / Salt, water activity and what can grow | ../food/flavor/why-fermented-tofu-tastes-good/#ch4 | why-fermented-tofu-tastes-good |
 | 气味活度值：闻到的不是最多的 / Odour activity value: what you smell is not what is most abundant | ../food/flavor/why-fermented-tofu-tastes-good/#ch5 | why-fermented-tofu-tastes-good |
+| 酱油为什么是黑的 / Why soy sauce is brown | ../food/flavor/how-soy-sauce-gets-its-flavor/#ch5 | how-soy-sauce-gets-its-flavor |
 | 松花蛋：碱渗进蛋里 / Century egg: alkali soaking into an egg | ../food/flavor/why-fermented-tofu-tastes-good/#ch6 | why-fermented-tofu-tastes-good |
+| 酱油的香从哪来 / Where soy sauce aroma comes from | ../food/flavor/how-soy-sauce-gets-its-flavor/#ch6 | how-soy-sauce-gets-its-flavor |
+| 氨基酸态氮：瓶子上的数字 / Amino-acid nitrogen: the number on the bottle | ../food/flavor/how-soy-sauce-gets-its-flavor/#ch7 | how-soy-sauce-gets-its-flavor |
 | 发酵食物是同一个原理吗 / Do fermented foods work by the same principle? | ../food/flavor/why-fermented-tofu-tastes-good/#ch7 | why-fermented-tofu-tastes-good |
+| 酿半年和做几天：酿造酱油、低盐固态和酸水解 / Six months or a few days: brewed, low-salt solid-state and acid-hydrolysed | ../food/flavor/how-soy-sauce-gets-its-flavor/#ch8 | how-soy-sauce-gets-its-flavor |
 | 为什么有人觉得臭 / Why some people find it stinky | ../food/flavor/why-fermented-tofu-tastes-good/#ch8 | why-fermented-tofu-tastes-good |
 | 钠、生物胺和铅：机制与标准 / Sodium, biogenic amines and lead: mechanisms and standards | ../food/flavor/why-fermented-tofu-tastes-good/#ch9 | why-fermented-tofu-tastes-good |
+| 酱油为什么那么咸 / Why soy sauce is so salty | ../food/flavor/how-soy-sauce-gets-its-flavor/#ch9 | how-soy-sauce-gets-its-flavor |
 
 ### 07 生命与生态 / Life & ecology
 
