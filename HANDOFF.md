@@ -1,6 +1,6 @@
 # HANDOFF.md — 开工前先读
 
-最后更新：2026-11-12，由 Claude Code 主会话（team lead）在 2026-11-11 那轮工作收尾时写下。
+最后更新：2026-11-12，由 Claude Code 主会话（team lead）在食物分区第一篇长文上线后更新。
 
 这份文件有两部分：
 
@@ -67,9 +67,10 @@
 
 ### 已上线
 
-线上版本是 `d5480228`（https://visual.integ.life），已推送到 `origin/main`。
+线上内容到 `ffa1c21f` 为止（其后只有本文件的更新）（https://visual.integ.life），已推送到 `origin/main`。
 
-- **长文 11 篇加《稀缺》**，都是中英双语、经过独立评审。清单见 `pages.config.js` 的 `KNOWLEDGE_ESSAYS`。
+- **长文 12 篇加《稀缺》**，都是中英双语、经过独立评审。清单见 `pages.config.js` 的 `KNOWLEDGE_ESSAYS`。
+- **食物分区**（Yangyu 2026-11-12 提出）：新分类 `food`（饮食与风味）、子主题 `flavor`（味道从哪来），第一篇是 `food/flavor/why-fermented-tofu-tastes-good/`（酱豆腐为什么好吃，兼讲松花蛋）。图谱里归在 `matter` 分区，后续食物长文导入时继续用 `--region matter`。任务书在 [specs/essay-briefs/TASK-why-fermented-tofu-tastes-good.md](specs/essay-briefs/TASK-why-fermented-tofu-tastes-good.md)，可作为下一篇的模板。草稿分支 `drafts/food-20261112` 已被 `main` 上的版本取代。它的第 7 章有一张「谁来切、切什么、靠什么挡住腐败」的表（酱油、奶酪、火腿、鱼露、纳豆、臭豆腐），每一行都可以是这个分区的下一篇。
 - **LeetCode**：登记表 204 条。2026-11-11 新增 12 课、修订 28 课，评审记录在 [specs/leetcode-review-2026-11-11.md](specs/leetcode-review-2026-11-11.md)。
 - **搜索**：疑问句、比较式查询、一批别名（`9f4751c6`）。
 
@@ -101,7 +102,7 @@
 
 ### 下一步，按顺序
 
-1. **先处理搜索索引上限**。`atlas/search-index.js` 是 180,012 / 200,000 字节，再登记几篇就超。要么压缩索引，要么提高上限并说明理由；不要为了过测试悄悄改上限。
+1. **先处理搜索索引上限**。`atlas/search-index.js` 是 186,074 / 200,000 字节（酱豆腐那篇用掉约 6,000），再登记两篇就超。要么压缩索引，要么提高上限并说明理由；不要为了过测试悄悄改上限。
 2. **17 篇草稿走完流水线**：Haiku 翻译 → 独立评审 → 登记（[specs/essays.md](specs/essays.md)、`scripts/atlas-import-registry.cjs`）→ 推送部署。
 3. **排队的深度长文**：规格在 [specs/essay-briefs/QUEUE-DEEP2.md](specs/essay-briefs/QUEUE-DEEP2.md) 第 1–6 节（经济怎么衡量、内存层级、电磁波、反应方向、化学键、衍生品定价），第 8 节之后是待写规格的清单。
 4. **缺失的前置页面**。各草稿报告里重复最多的：模运算与有限域、吉布斯自由能与化学势、弹性与边际收益、麦克斯韦–玻尔兹曼分布、通胀怎么测量、Fick 扩散、互信息与 KL 散度。缺口审计的完整结论在 [specs/essay-briefs/GAP-AUDIT-NOTES.md](specs/essay-briefs/GAP-AUDIT-NOTES.md)。
@@ -120,6 +121,8 @@
 
 ### 已知问题
 
+- 提交 trailer 要写 `Built-By: Claude Code (…)`，不要写小写的 `claude-code`：`tests/page-provenance-core.cjs` 按 `Built-By: Claude` 区分大小写匹配。酱豆腐那篇的建页提交 `0ed6253b` 写成了小写，页面标签因此指向其后的 BRIEF 提交 `12a8511e`。
+- 酱豆腐那篇：酶速率、蛋内扩散系数、表面碱浓度比例是调出来的（页面有标注）；香气一章用的是臭豆腐的数据；Yamaguchi 1971、Zhao 2014 和两篇松花晶体研究只读了摘要；`tests/page-provenance-browser.cjs` 没有对它跑。
 - 搜索 "how does a phone work" 落到音素页面，是错的；搜索修复后有 49 个原本无结果的查询现在有结果，其中少数是噪声（如 "rent vs buy"）。
 - 「群体免疫」落在 body-in-balance 第 9 章，没落在疫苗那篇，这是有意保留的。
 - LeetCode：没有任何一课在 LeetCode 上实际提交过；SQL 课 1097 / 1127 / 1159 没在 MySQL 上跑过；772 假设没有一元负号；391、765、936、679、354、668、327、699 的浏览器测试原本就失败。
