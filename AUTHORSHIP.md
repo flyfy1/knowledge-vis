@@ -23,6 +23,7 @@ Agent 是「执行者」，模型是它当时用的具体模型。两者分开�
 | `claude-code` | Claude Code（Anthropic），包括 Mini Claude Code 等派生运行 | `claude-opus-5-5`、`claude-sonnet-5-5`、`claude-fable-5-1` |
 | `codex` | Codex（OpenAI），包括 Pi 上的 campaign author/reviewer/dispatcher | `gpt-6.1-sol` |
 | `alberto` | Alberto（Muse）编排者及其派出的子 Agent | `muse-wonder`、`muse-spark` |
+| `antigravity` | Antigravity（Google DeepMind）及其派出的子 Agent | `gemini-4-hydrogen`、`gemini-pro`、`gemini-flash` |
 | `script` | 确定性脚本，没有模型参与 | `none` |
 | `human` | Yangyu 亲手写的 | — |
 | `unattributed` | 历史里没有可用声明（保留值，不得用于新提交） | — |
@@ -109,3 +110,4 @@ node scripts/authorship.cjs --write                                 # 生成完�
 | 日期 | 修订 | 执行 | 同意 |
 | --- | --- | --- | --- |
 | 2026-11-08 | 初版 | Claude Code（claude-opus-5-5） | Yangyu（口头要求起草） |
+| 2026-11-13 | §2 注册 `antigravity` Agent | Antigravity | Yangyu（对话同意） |

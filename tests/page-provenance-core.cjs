@@ -18,9 +18,9 @@ function labeledHtmlFiles(dir){
 assert.deepEqual(labeledHtmlFiles(root).sort(),inventoryPaths.slice().sort(),'static provenance labels must match the authoritative inventory');
 // Developers are display names of agents registered in AUTHORSHIP.md §2; each
 // needs a Built-By pattern that proves the source revision is really theirs.
-const DEVELOPERS={'Codex':/Built-By: Codex/,'Claude Code':/Built-By: Claude/,'Alberto (Muse)':/Built-By: (?:Alberto|Muse)\b/};
+const DEVELOPERS={'Codex':/Built-By: Codex/,'Claude Code':/Built-By: Claude/,'Alberto (Muse)':/Built-By: (?:Alberto|Muse)\b/,'Antigravity':/Built-By: Antigravity/};
 // AUTHORSHIP.md §5: a human-confirmed authorship/overrides.json entry is the other valid proof.
-const AGENT_IDS={'Codex':'codex','Claude Code':'claude-code','Alberto (Muse)':'alberto'};
+const AGENT_IDS={'Codex':'codex','Claude Code':'claude-code','Alberto (Muse)':'alberto','Antigravity':'antigravity'};
 const overrides=JSON.parse(fs.readFileSync(path.join(root,'authorship/overrides.json'),'utf8'));
 const KIND={revised:['改进版本','Revised edition'],original:['原创版本','Original edition']};
 const labelZh=p=>p.developer+' 开发 · '+KIND[p.kind][0],labelEn=p=>'Developed with '+p.developer+' · '+KIND[p.kind][1];
