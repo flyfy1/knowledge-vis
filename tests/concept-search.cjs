@@ -186,6 +186,20 @@ chapters.push(
   ['还款计划表', 'amortization', 'economics/money/where-a-mortgage-payment-goes/#ch3'],
   ['年化利率', 'APR', 'economics/money/where-a-mortgage-payment-goes/#ch7'],
 );
+// Food section (2026-11-12): fermented tofu and century egg.
+const TOFU = 'food/flavor/why-fermented-tofu-tastes-good/';
+chapters.push(
+  ['酱豆腐', 'fermented tofu', TOFU],
+  ['腐乳为什么好吃', 'why does fermented tofu taste good', TOFU],
+  ['豆腐乳', 'sufu', TOFU + '#ch1'],
+  ['鲜味', 'umami', TOFU + '#ch3'],
+  ['味精', 'MSG', TOFU + '#ch3'],
+  ['水分活度', 'water activity', TOFU + '#ch4'],
+  ['松花蛋', 'century egg', TOFU + '#ch6'],
+  ['皮蛋为什么是黑的', 'why is century egg black', TOFU + '#ch6'],
+  ['臭豆腐为什么臭', 'why does stinky tofu smell', TOFU + '#ch8'],
+  ['皮蛋有铅吗', 'does century egg contain lead', TOFU + '#ch9'],
+);
 for (const [zh, en, href] of chapters) for (const q of [zh, en]) {
   const hit = first(q);
   ok(hit && (hit.href === href || (href.endsWith('/') && hit.href.startsWith(href))), `"${q}" opens ${href} (got ${hit && hit.href})`);

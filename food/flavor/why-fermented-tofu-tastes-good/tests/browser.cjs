@@ -77,6 +77,8 @@ const pick = (page, name, value) => page.click(`input[name=${name}][value="${val
         for (let n; (n = walker.nextNode());) {
           const el = n.parentElement; if (!rx.test(n.textContent)) continue;
           if (el.closest('#langToggle') && n.textContent.trim() === '中') continue;
+          // the site's provenance label is bilingual by contract; its Chinese half must be hidden in English mode
+          const pz = el.closest('.page-provenance .provenance-zh'); if (pz && getComputedStyle(pz).display === 'none') continue;
           if (el.matches('span[lang="zh-Hans"]') && n.textContent === '腐乳' && el.closest('[data-i18n-html="ch1.p2"]')) continue;
           out.push('text "' + n.textContent.trim().slice(0, 24) + '"');
         }

@@ -256,6 +256,12 @@ anchor and aliases. It is a schema-2 fragment `atlas/graph/lessons/<slug>.json`:
   "Greenhouse effect" (was "The greenhouse effect …", which lost to climate-energy on the tie).
   `tests/concept-search.cjs` pins 15 zh/en pairs for these essays.
 
+- Food (2026-11-12): why-fermented-tofu-tastes-good → matter, with the chemistry pages its chapters link to
+  (category `food` has no region of its own; pass `--region matter` for further food essays until there
+  are enough concepts for one). 9 concepts, 5 hand-written edges between chapters. Plain 鲜味 / umami were
+  added to #ch3 so the chapter wins its tie with the page tag. `tests/concept-search.cjs` pins 10 zh/en
+  pairs. `search-index.js` is now 186,074 of 200,000 bytes.
+
 ### Commands for the integrator
 
 ```sh

@@ -226,6 +226,9 @@ const P = x => f(x * 100, 0) + '%';
       const tt = src.match(/<title>([^<]*)<\/title>/)[1], md = src.match(/<meta name="description" content="([^"]*)">/)[1];
       check('static title = doc.title', tt, Z['doc.title']); check('static meta = doc.desc', md, Z['doc.desc']);
       src = src.replace(/<title>[^<]*<\/title>/, '').replace(/<meta name="description" content="[^"]*">/, '');
+      // The site's static provenance label (specs/visual-page-provenance.md) is bilingual by contract, not essay copy;
+      // it is removed before the // comment rule, which would otherwise cut its commit URL.
+      src = src.replace(/<details class="page-provenance"[\s\S]*?<\/details>/, '');
     }
     src = src.replace(/\/\*[\s\S]*?\*\//g, '').replace(/\/\/.*$/gm, '').replace(/<!--[\s\S]*?-->/g, '');
     n++;

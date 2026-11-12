@@ -36,6 +36,7 @@ window.KNOWLEDGE_CATEGORIES = [
   { id: "earth",       name: { zh: "地球与太空", en: "Earth & Space" } },
   { id: "leetcode",    name: { zh: "LeetCode 专区", en: "LeetCode" } },
   { id: "economics",   name: { zh: "经济与金钱", en: "Economics & Money" } },
+  { id: "food",        name: { zh: "饮食与风味", en: "Food & Flavor" } },
   { id: "investment",  name: { zh: "投资", en: "Investment" } },
   { id: "demos",       name: { zh: "演示", en: "Demos" } }
 
@@ -110,6 +111,9 @@ window.KNOWLEDGE_SUBTOPICS = {
   "economics": [
     { id: "money", name: { zh: "货币与银行", en: "Money & Banking" } }
   ],
+  "food": [
+    { id: "flavor", name: { zh: "味道从哪来", en: "Where Flavor Comes From" } }
+  ],
   "society": [
     { id: "civics", name: { zh: "投票与规则", en: "Voting & Rules" } }
   ],
@@ -148,7 +152,7 @@ window.KNOWLEDGE_ESSAYS = [
   "numbers-lie", "body-in-balance", "inside-a-phone", "where-money-comes-from",
   "same-votes-different-winner", "switches-that-compute",
   "what-is-a-black-hole", "how-vaccines-work", "why-the-planet-warms", "why-the-sky-is-blue",
-  "where-a-mortgage-payment-goes",
+  "where-a-mortgage-payment-goes", "why-fermented-tofu-tastes-good",
   "scarcity-moves"
 ];
 
@@ -328,6 +332,16 @@ window.KNOWLEDGE_PAGES = [
     },
     tags: [{ zh: "房贷", en: "Mortgage" }, { zh: "利率", en: "Interest rates" }, { zh: "复利", en: "Compound interest" }, { zh: "年化利率", en: "APR" }, { zh: "长文", en: "Long-form essay" }],
     category: "economics", subtopic: "money", stage: "senior", status: "live", path: "economics/money/where-a-mortgage-payment-goes/"
+  },
+  {
+    slug: "why-fermented-tofu-tastes-good",
+    title: { zh: "酱豆腐为什么好吃", en: "Why Fermented Tofu Tastes Good" },
+    desc: {
+      zh: "豆腐几乎没有味道，长霉、加盐、放几个月却变得很鲜。松花蛋里没有微生物，为什么也走到了差不多的地方？七个可以拖动的模型：切链、两种酶、鲜味相乘、盐和水分活度、气味活度值、碱渗进蛋里、稀释后还剩什么味。",
+      en: "Tofu has almost no taste, yet mould, salt and a few months make it rich and savoury. A century egg gets somewhere similar with no microbes at all. Seven models you can push: cutting protein chains, two kinds of enzyme, umami synergy, salt and water activity, odour activity values, alkali soaking into an egg, and what you still smell after dilution."
+    },
+    tags: [{ zh: "发酵", en: "Fermentation" }, { zh: "鲜味", en: "Umami" }, { zh: "食品化学", en: "Food Chemistry" }, { zh: "长文", en: "Long-form Essay" }],
+    category: "food", subtopic: "flavor", stage: "senior", status: "live", path: "food/flavor/why-fermented-tofu-tastes-good/"
   },
   {
     slug: "fourier",

@@ -91,8 +91,9 @@ types ("为什么要打疫苗", "how does my phone know where I am"), not only t
 | why-the-planet-warms | earth/climate/why-the-planet-warms/ | 7 concepts in 8 chapters (`#ch1…#ch7`) | earth | `ESSAY_BASE_URL` |
 | why-the-sky-is-blue | physics/optics/why-the-sky-is-blue/ | 9 concepts in 10 chapters (`#ch1…#ch9`) | waves | `ESSAY_BASE_URL` |
 | where-a-mortgage-payment-goes | economics/money/where-a-mortgage-payment-goes/ | 9 (`#ch1…#ch9`) | society | `ESSAY_BASE_URL` |
+| why-fermented-tofu-tastes-good | food/flavor/why-fermented-tofu-tastes-good/ | 9 (`#ch1…#ch9`) | matter | `ESSAY_BASE_URL` |
 
-All eleven were built by Claude Code (claude-opus-5-5) on 2026-11-11. The English copy was drafted by Claude
+The eleven from 2026-11-11 and the food essay of 2026-11-12 were built by Claude Code (claude-opus-5-5). The English copy was drafted by Claude
 Code (claude-haiku-5-5). A separate Claude Code session of the same model reviewed each essay and revised
 it (no human or cross-model review yet). Each BRIEF.md records what was and was not checked.
 
@@ -167,6 +168,22 @@ One rule, this month's interest = monthly rate × what is still owed, applied to
 schedule, equal-principal vs equal-payment, prepaying, rate resets, flat-fee instalments (APR/IRR) and
 inflation. It now owns the mortgage words (房贷, 等额本息, 提前还款, 月供, mortgage, amortization), which left
 where-money-comes-from #ch7. Atlas edges: 5 between chapters, 4 to other pages.
+
+### why-fermented-tofu-tastes-good: 酱豆腐为什么好吃
+
+Requested by Yangyu on 2026-11-12 as the opening page of a food section (category `food` 饮食与风味 / Food &
+Flavor, subtopic `flavor` 味道从哪来). Bland tofu becomes savoury after mould, salt and months; does century
+egg get there the same way? Random chain scission, endo- and exo-peptidases, Yamaguchi's umami synergy, NaCl
+water activity against minimum a_w for pathogens, odour activity values, alkali diffusing into an egg (Crank),
+the two foods side by side with a table of the wider family, dilution analysis, and sodium, biogenic amines
+and lead. The page's answer: only half the same. Enzymes in sufu cut protein down to free amino acids; in
+century egg the yolk's free amino acids fall, the white's rise, and no glutamate data for the white was
+found. Region `matter` (imported with `--region matter`; nine concepts do not make a region). Atlas edges: 5
+between chapters, none to other pages. Enzyme rates, the egg diffusion coefficient and the surface-alkali
+share are tuned, and the page says so; ch5 uses stinky-tofu odorant data. Task brief:
+specs/essay-briefs/TASK-why-fermented-tofu-tastes-good.md. The essay commit's trailer reads
+`Built-By: claude-code`, which `tests/page-provenance-core.cjs` does not match (it wants `Built-By: Claude`),
+so the label points at the follow-up BRIEF commit; write the trailer as `Claude Code` in future.
 
 ### scarcity-moves: 稀缺会搬家
 

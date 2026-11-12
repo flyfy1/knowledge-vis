@@ -2670,10 +2670,26 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 
 图谱关系：章与章之间 5 条（后一章复用前一章的模型或结论）；跨页关系 4 条，连到站内概念 compound-interest、loan-amortisation、monetary-transmission、inflation-winners-losers。概念清单与别名见 `economics/money/where-a-mortgage-payment-goes/REGISTRY.json`。
 
+## 酱豆腐为什么好吃（长文，2026-11-12，Claude Code 新增；独立评审：另一个 Claude Code 会话）
+
+| 概念（中 / EN） | 专讲 path#章 | 那一章讲清什么 |
+| --- | --- | --- |
+| 蛋白质切成氨基酸才有味道 / Protein has to be cut into amino acids before you taste it | food/flavor/why-fermented-tofu-tastes-good#ch1 | 随机切断肽键时，游离氨基酸的比例约为切开比例的平方；豆腐 0.24% 游离，腐乳约 6%–25%。还说明了腐乳、酱豆腐、红方、白方、青方的关系。 |
+| 内切酶和外切酶的配合 / Endopeptidases and exopeptidases working together | food/flavor/why-fermented-tofu-tastes-good#ch2 | 霉菌两天造出酶，酶在盐卤里切几个月；内切酶造出链头，外切酶才有地方剪，两种一起远快于各自之和。口感为什么变得像奶油。 |
+| 鲜味与鲜味相乘 / Umami and umami synergy | food/flavor/why-fermented-tofu-tastes-good#ch3 | 鲜味来自谷氨酸，核苷酸让它成倍放大；用 Yamaguchi 等效鲜味浓度算腐乳烧肉。 |
+| 盐、水分活度和谁能活 / Salt, water activity and what can grow | food/flavor/why-fermented-tofu-tastes-good#ch4 | Pitzer 模型算盐水的水分活度，对照各致病菌的最低生长值；盐越多越安全，酶也越慢。 |
+| 气味活度值：闻到的不是最多的 / Odour activity value: what you smell is not what is most abundant | food/flavor/why-fermented-tofu-tastes-good#ch5 | 浓度除以阈值才决定闻到什么；腐乳的酯香从哪来。 |
+| 松花蛋：碱渗进蛋里 / Century egg: alkali soaking into an egg | food/flavor/why-fermented-tofu-tastes-good#ch6 | 松花蛋不是发酵食品：氢氧化钠从壳外扩散进来，让蛋清凝成胶，碱多了又会化；颜色、松花和马尿谣言。 |
+| 发酵食物是同一个原理吗 / Do fermented foods work by the same principle? | food/flavor/why-fermented-tofu-tastes-good#ch7 | 腐乳和松花蛋只有一半相同；酱油、奶酪、火腿、鱼露、纳豆、臭豆腐：谁来切、切什么、什么挡住坏菌。 |
+| 为什么有人觉得臭 / Why some people find it stinky | food/flavor/why-fermented-tofu-tastes-good#ch8 | 冲淡以后剩下的气味组合不同；臭的分子还没有定论；对气味的喜欢是学来的。 |
+| 钠、生物胺和铅：机制与标准 / Sodium, biogenic amines and lead: mechanisms and standards | food/flavor/why-fermented-tofu-tastes-good#ch9 | 腐乳的钠含量、青方的生物胺、皮蛋铅限量在 GB 2762 里的变化；只讲机制和标准。 |
+
+图谱关系：章与章之间 5 条（后一章复用前一章的模型或结论）；跨页只有 seeAlso，没有写关系。概念清单与别名见 `food/flavor/why-fermented-tofu-tastes-good/REGISTRY.json`。这是「饮食与风味」分类的第一页，图谱里归在「物质与变化」分区。
+
 <!-- GENERATED:atlas-nodes -->
 ## 三、图谱节点索引（生成，勿手改）
 
-349 个概念 · 523 条关系 · 11 个分区 · 由 scripts/build-atlas-data.cjs --concept-map 生成。节点排序与 data.js 一致（分区序、学段序、order、id）。
+358 个概念 · 528 条关系 · 11 个分区 · 由 scripts/build-atlas-data.cjs --concept-map 生成。节点排序与 data.js 一致（分区序、学段序、order、id）。
 
 ### 01 数学基础 / Mathematical tools
 
@@ -2904,7 +2920,16 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 缓冲溶液与缓冲容量 / Buffer solutions & buffer capacity | ../chemistry/solutions/buffer-capacity/#step1 | buffer-capacity#step1 |
 | 反应速率与碰撞理论 / Reaction rates & collision theory | ../chemistry/reactions/reaction-rates/#step0 | reaction-rates#step0 |
 | 化学平衡 · 动态平衡与勒夏特列原理 / Chemical equilibrium · dynamic balance and Le Chatelier | ../chemistry/reactions/chemical-equilibrium/#step1 | chemical-equilibrium#step1 |
+| 蛋白质切成氨基酸才有味道 / Protein has to be cut into amino acids before you taste it | ../food/flavor/why-fermented-tofu-tastes-good/#ch1 | why-fermented-tofu-tastes-good |
 | 弱酸电离平衡 · Ka / Weak-acid equilibrium · Ka | ../chemistry/solutions/acid-base-equilibrium/#step1 | acid-base-equilibrium#step1 |
+| 内切酶和外切酶的配合 / Endopeptidases and exopeptidases working together | ../food/flavor/why-fermented-tofu-tastes-good/#ch2 | why-fermented-tofu-tastes-good |
+| 鲜味与鲜味相乘 / Umami and umami synergy | ../food/flavor/why-fermented-tofu-tastes-good/#ch3 | why-fermented-tofu-tastes-good |
+| 盐、水分活度和谁能活 / Salt, water activity and what can grow | ../food/flavor/why-fermented-tofu-tastes-good/#ch4 | why-fermented-tofu-tastes-good |
+| 气味活度值：闻到的不是最多的 / Odour activity value: what you smell is not what is most abundant | ../food/flavor/why-fermented-tofu-tastes-good/#ch5 | why-fermented-tofu-tastes-good |
+| 松花蛋：碱渗进蛋里 / Century egg: alkali soaking into an egg | ../food/flavor/why-fermented-tofu-tastes-good/#ch6 | why-fermented-tofu-tastes-good |
+| 发酵食物是同一个原理吗 / Do fermented foods work by the same principle? | ../food/flavor/why-fermented-tofu-tastes-good/#ch7 | why-fermented-tofu-tastes-good |
+| 为什么有人觉得臭 / Why some people find it stinky | ../food/flavor/why-fermented-tofu-tastes-good/#ch8 | why-fermented-tofu-tastes-good |
+| 钠、生物胺和铅：机制与标准 / Sodium, biogenic amines and lead: mechanisms and standards | ../food/flavor/why-fermented-tofu-tastes-good/#ch9 | why-fermented-tofu-tastes-good |
 
 ### 07 生命与生态 / Life & ecology
 
