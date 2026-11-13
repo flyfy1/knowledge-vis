@@ -109,7 +109,8 @@ window.KNOWLEDGE_SUBTOPICS = {
     { id: "devices", name: { zh: "身边的设备", en: "Everyday Devices" } }
   ],
   "economics": [
-    { id: "money", name: { zh: "货币与银行", en: "Money & Banking" } }
+    { id: "money", name: { zh: "货币与银行", en: "Money & Banking" } },
+    { id: "macro", name: { zh: "宏观经济与国民核算", en: "Macroeconomics & Measurement" } }
   ],
   "food": [
     { id: "flavor", name: { zh: "味道从哪来", en: "Where Flavor Comes From" } }
@@ -155,6 +156,8 @@ window.KNOWLEDGE_ESSAYS = [
   "where-a-mortgage-payment-goes", "why-fermented-tofu-tastes-good",
   "how-soy-sauce-gets-its-flavor",
   "how-hybrid-attention-remembers",
+  "why-compute-waits-for-memory",
+  "how-an-economy-is-measured",
   "scarcity-moves"
 ];
 
@@ -364,6 +367,26 @@ window.KNOWLEDGE_PAGES = [
     },
     tags: [{ zh: "混合注意力", en: "Hybrid Attention" }, { zh: "线性注意力", en: "Linear Attention" }, { zh: "KV Cache", en: "KV Cache" }, { zh: "Gated DeltaNet", en: "Gated DeltaNet" }, { zh: "长文", en: "Long-form Essay" }],
     category: "computing", subtopic: "ml", stage: "university", status: "live", path: "computing/ml/how-hybrid-attention-remembers/"
+  },
+  {
+    slug: "why-compute-waits-for-memory",
+    title: { zh: "为什么计算一直在等内存", en: "Why Compute Waits for Memory" },
+    desc: {
+      zh: "处理器每秒能算上千万亿次，为什么运行起来却常常大部分时间都在等内存？十个交互模型带你从五级流水线、缓存模拟器、矩阵分块、内存墙与利特尔法则，一路走到屋顶线模型、大模型推理和 HBM4 前沿。",
+      en: "Processors can execute quadrillions of operations per second, yet spend most of their time waiting for memory. Ten interactive models trace the bottleneck from a 5-stage pipeline and set-associative cache to tiled matmul, Little's Law, the Roofline model, LLM inference, and HBM4."
+    },
+    tags: [{ zh: "计算机体系结构", en: "Computer Architecture" }, { zh: "内存墙", en: "Memory Wall" }, { zh: "缓存与局部性", en: "Cache & Locality" }, { zh: "屋顶线模型", en: "Roofline Model" }, { zh: "HBM 与 AI 芯片", en: "HBM & AI Chips" }, { zh: "长文", en: "Long-form Essay" }],
+    category: "computing", subtopic: "systems", stage: "university", status: "live", path: "computing/systems/why-compute-waits-for-memory/"
+  },
+  {
+    slug: "how-an-economy-is-measured",
+    title: { zh: "经济是怎样被计量的", en: "How an Economy Is Measured" },
+    desc: {
+      zh: "一个经济体“好不好”，到底是怎么量出来的？从 GDP 三面等价、物价指数与 CPI、增长率陷阱、PPP 与基尼系数、劳动力市场、周期与萨姆规则、索洛分解，到 GDP 边界与 2025 SNA 前沿。",
+      en: "How do we measure how well an economy is doing? From the three-sided GDP identity, price indexes and CPI, growth-rate traps, PPP and Gini, labour markets, business cycles and the Sahm rule, and Solow growth accounting to GDP boundaries and the 2025 SNA frontier."
+    },
+    tags: [{ zh: "宏观经济", en: "Macroeconomics" }, { zh: "GDP", en: "GDP" }, { zh: "通胀与CPI", en: "Inflation & CPI" }, { zh: "国民核算", en: "National Accounts" }, { zh: "长文", en: "Long-form Essay" }],
+    category: "economics", subtopic: "macro", stage: "university", status: "live", path: "economics/macro/how-an-economy-is-measured/"
   },
   {
     slug: "fourier",

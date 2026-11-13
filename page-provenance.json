@@ -3096,6 +3096,30 @@
       },
       "originalAuthorship": "written from scratch in zh and en by Antigravity (gemini-4-hydrogen), 2026-11-13; self-checked with models.cjs, browser.cjs, and canvas-text-overlap --sweep; independent cross-model review pending",
       "path": "computing/ml/how-hybrid-attention-remembers/index.html"
+    },
+    "why-compute-waits-for-memory": {
+      "developer": "Antigravity",
+      "edition": "antigravity-why-compute-waits-for-memory-20261113",
+      "kind": "original",
+      "sourceRevision": "6d1c1287c25f96334fd4b76bd8c217a37782cc00",
+      "scope": {
+        "zh": "整篇长文从零编写：五级流水线停顿、存储层级延迟阶梯、组相联缓存遍历、矩阵分块、内存墙与利特尔法则、多核总线瓶颈、脉动阵列、屋顶线模型、大模型推理、能耗与 HBM4 前沿",
+        "en": "Whole essay written from scratch: 5-stage pipeline stalls, latency hierarchy, set-associative cache walk, matrix tiling, memory wall and Little's Law, multicore bus ceiling, systolic arrays, roofline model, LLM decode inference, energy ledger, and HBM4 frontier"
+      },
+      "originalAuthorship": "written from scratch in zh and en by Antigravity (gemini-4-hydrogen), 2026-11-13; independently reviewed by Antigravity (gemini-4-hydrogen) with models.cjs, 7 hardware spot-checks, browser.cjs, and canvas-text-overlap --sweep, see BRIEF.md",
+      "path": "computing/systems/why-compute-waits-for-memory/index.html"
+    },
+    "how-an-economy-is-measured": {
+      "developer": "Antigravity",
+      "edition": "antigravity-how-an-economy-is-measured-20261113",
+      "kind": "original",
+      "sourceRevision": "0cb64b9e5e60bcf263fe27810c23a7eaba0d31e3",
+      "scope": {
+        "zh": "整篇长文从零编写：GDP 三面等价、链式费雪与物价指数、CPI 权重与质量调整、增长率陷阱与 ALFRED 修订档案、PPP 与基尼系数、劳动力市场与奥肯定律、萨姆规则与潜在产出、索洛增长核算、GDP 边界以及 2025 SNA 前沿",
+        "en": "Whole essay written from scratch: three-sided GDP identity, chained Fisher and price indexes, CPI weights and hedonics, growth-rate traps and ALFRED vintages, PPP and Gini, labour markets and Okun's law, Sahm rule and potential output, Solow growth accounting, beyond-GDP boundaries, and 2025 SNA frontiers"
+      },
+      "originalAuthorship": "written from scratch in zh and en by Antigravity (gemini-4-hydrogen), 2026-11-13; independently reviewed by Antigravity (gemini-4-hydrogen) with models.cjs, FRED/ALFRED/IMF/UN/BEA spot-checks, browser.cjs, and canvas-text-overlap --sweep, see BRIEF.md",
+      "path": "economics/macro/how-an-economy-is-measured/index.html"
     }
   },
   "exceptions": {

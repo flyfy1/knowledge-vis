@@ -2705,7 +2705,7 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 <!-- GENERATED:atlas-nodes -->
 ## 三、图谱节点索引（生成，勿手改）
 
-376 个概念 · 541 条关系 · 11 个分区 · 由 scripts/build-atlas-data.cjs --concept-map 生成。节点排序与 data.js 一致（分区序、学段序、order、id）。
+397 个概念 · 569 条关系 · 11 个分区 · 由 scripts/build-atlas-data.cjs --concept-map 生成。节点排序与 data.js 一致（分区序、学段序、order、id）。
 
 ### 01 数学基础 / Mathematical tools
 
@@ -3046,18 +3046,29 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 哈希 / Hashing | ../computing/algorithms/hashing/#step0 | hashing#step0 |
 | KV Cache 与固定大小状态 / KV Cache vs Fixed-Size Recurrent State | ../computing/ml/how-hybrid-attention-remembers/#ch1 | how-hybrid-attention-remembers |
 | 延迟与带宽 / Latency & bandwidth | ../computing/systems/tcp-congestion/#step1 | tcp-congestion#step1 |
+| 流水线与访存停顿 / Pipeline Stalls from Memory Latency | ../computing/systems/why-compute-waits-for-memory/#ch1 | why-compute-waits-for-memory |
 | 副本与 quorum · 一致性和可用性的取舍 / Replicas & quorums · consistency vs availability | ../computing/systems/distributed-systems/#step0 | distributed-systems#step0 |
 | 机械臂运动学 · 从关节角到末端 / Robot-arm kinematics · from joint angles to the hand | ../computing/graphics/robot-kinematics/#step0 | robot-kinematics#step0 |
 | 排序算法 · 冒泡、归并与快排 / Sorting algorithms · bubble, merge and quicksort | ../computing/algorithms/sorting/#step2 | sorting#step2 |
 | TCP 拥塞控制 · 试探与退让 / TCP congestion control · probe and back off | ../computing/systems/tcp-congestion/#step4 | tcp-congestion#step4 |
 | 线性注意力的矩阵结合律 / Linear Attention via Matrix Associativity | ../computing/ml/how-hybrid-attention-remembers/#ch2 | how-hybrid-attention-remembers |
+| 存储层级与缓存命中 / Memory Latency Hierarchy and Cache Locality | ../computing/systems/why-compute-waits-for-memory/#ch2 | why-compute-waits-for-memory |
+| 矩阵分块与时间局部性 / Loop Tiling and Temporal Locality | ../computing/systems/why-compute-waits-for-memory/#ch3 | why-compute-waits-for-memory |
 | 快权重联想记忆与容量上限 / Fast-Weight Memory & Rank Capacity | ../computing/ml/how-hybrid-attention-remembers/#ch3 | how-hybrid-attention-remembers |
 | Delta 规则：先擦后写的投影更新 / The Delta Rule: Erase Before Writing | ../computing/ml/how-hybrid-attention-remembers/#ch4 | how-hybrid-attention-remembers |
+| 内存墙与利特尔法则 / The Memory Wall and Little's Law | ../computing/systems/why-compute-waits-for-memory/#ch4 | why-compute-waits-for-memory |
+| 多核扩展、阿姆达尔与总线瓶颈 / Multicore Scaling, Amdahl, and Bus Contention | ../computing/systems/why-compute-waits-for-memory/#ch5 | why-compute-waits-for-memory |
 | Gated DeltaNet 与选择性遗忘门 / Gated DeltaNet & Selective Decay | ../computing/ml/how-hybrid-attention-remembers/#ch5 | how-hybrid-attention-remembers |
 | 分块并行训练与结构化状态空间对偶 / Chunkwise Training & State Space Duality | ../computing/ml/how-hybrid-attention-remembers/#ch6 | how-hybrid-attention-remembers |
+| GPU 并发与脉动阵列 / GPU Throughput and Systolic Arrays | ../computing/systems/why-compute-waits-for-memory/#ch6 | why-compute-waits-for-memory |
 | 3:1 混合注意力与大海捞针精确回忆 / 3:1 Hybrid Ratio & Exact Recall Bookmarks | ../computing/ml/how-hybrid-attention-remembers/#ch7 | how-hybrid-attention-remembers |
+| 屋顶线模型与算术强度 / The Roofline Model and Arithmetic Intensity | ../computing/systems/why-compute-waits-for-memory/#ch7 | why-compute-waits-for-memory |
 | 屋顶线下的长上下文吐字加速 / Roofline Decode Speedup at Long Context | ../computing/ml/how-hybrid-attention-remembers/#ch8 | how-hybrid-attention-remembers |
+| 大模型推理的内存瓶颈 / Why LLM Inference Is Memory-Bound | ../computing/systems/why-compute-waits-for-memory/#ch8 | why-compute-waits-for-memory |
+| 数据搬运能耗与 HBM 封装 / Data Movement Energy and HBM Packaging | ../computing/systems/why-compute-waits-for-memory/#ch9 | why-compute-waits-for-memory |
 | 混合注意力前沿谱系（2026 年 11 月） / Hybrid Attention Landscape (Nov 2026) | ../computing/ml/how-hybrid-attention-remembers/#ch9 | how-hybrid-attention-remembers |
+| HBM4、共封装光学与算力前沿 / HBM4, Co-Packaged Optics, and the 2026 Frontier | ../computing/systems/why-compute-waits-for-memory/#ch10 | why-compute-waits-for-memory |
+| 诊断芯片与程序的四个问题 / Four Questions for Any Chip or Slow Program | ../computing/systems/why-compute-waits-for-memory/#ch11 | why-compute-waits-for-memory |
 
 ### 10 经济与社会 / Economy & society
 
@@ -3103,17 +3114,27 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 孔多塞陪审团定理 / Condorcet's jury theorem | ../society/civics/same-votes-different-winner/#ch9 | same-votes-different-winner |
 | 怎样读“这个制度很公平” / How to read a claim that a system is fair | ../society/civics/same-votes-different-winner/#ch10 | same-votes-different-winner |
 | 博弈论 / Game theory | ../math/applied/game-theory/#step0 | game-theory#step0 |
+| GDP 三面等价与增加值 / GDP Three Ways & Value Added | ../economics/macro/how-an-economy-is-measured/#ch1 | how-an-economy-is-measured |
 | 机制设计与拍卖 · 报价如何改变结果 / Mechanism Design & Auctions · How Bids Change Outcomes | ../math/applied/mechanism-design/#s1 | mechanism-design |
 | 稀缺与机会成本 / Scarcity and opportunity cost | ../demos/scarcity-moves/#c1 | scarcity-moves |
 | 供需均衡 / Supply & demand equilibrium | ../math/applied/supply-demand/#step0 | supply-demand#step0 |
 | 边际：再多一点值不值 / The margin: is one more step worth it? | ../demos/scarcity-moves/#c2 | scarcity-moves |
+| 名义与实际、链式费雪指数与替代偏差 / Nominal vs Real, Chained Fisher & Substitution Bias | ../economics/macro/how-an-economy-is-measured/#ch2 | how-an-economy-is-measured |
+| CPI 权重、等价租金 OER 与质量调整 / CPI Weights, Owners' Equivalent Rent & Hedonic Adjustment | ../economics/macro/how-an-economy-is-measured/#ch3 | how-an-economy-is-measured |
 | 沉没成本 / Sunk cost | ../demos/scarcity-moves/#c2 | scarcity-moves |
 | 交换与比较优势 / Trade and comparative advantage | ../demos/scarcity-moves/#c3 | scarcity-moves |
+| 折年率、基数效应、季节调整与数据修订 / Annualised Rates, Base Effects, Seasonal Adjustment & Revisions | ../economics/macro/how-an-economy-is-measured/#ch4 | how-an-economy-is-measured |
+| 购买力平价 PPP、均值与中位数及基尼系数 / Purchasing Power Parity, Mean vs Median & Gini Coefficient | ../economics/macro/how-an-economy-is-measured/#ch5 | how-an-economy-is-measured |
 | 价格是一条信息 / Price is a piece of information | ../demos/scarcity-moves/#c4 | scarcity-moves |
 | 激励 / Incentives | ../demos/scarcity-moves/#c5 | scarcity-moves |
+| U-3 与 U-6 失业率、贝弗里奇曲线与奥肯定律 / U-3 vs U-6 Unemployment, Beveridge Curve & Okun's Law | ../economics/macro/how-an-economy-is-measured/#ch6 | how-an-economy-is-measured |
+| 经济周期、潜在产出与萨姆规则 / Business Cycles, Potential Output & the Sahm Rule | ../economics/macro/how-an-economy-is-measured/#ch7 | how-an-economy-is-measured |
 | 市场会失灵 / Markets can fail | ../demos/scarcity-moves/#c6 | scarcity-moves |
 | 增长来自思想 / Growth comes from ideas | ../demos/scarcity-moves/#c7 | scarcity-moves |
+| 索洛增长核算与全要素生产率（TFP） / Solow Growth Accounting & Total Factor Productivity | ../economics/macro/how-an-economy-is-measured/#ch8 | how-an-economy-is-measured |
+| GDP 之外：家务、折旧、灾难悖论与卫星账户 / Beyond GDP: Home Production, Depreciation & Disaster Paradox | ../economics/macro/how-an-economy-is-measured/#ch9 | how-an-economy-is-measured |
 | 你的支出是别人的收入 / Your spending is someone else's income | ../demos/scarcity-moves/#c8 | scarcity-moves |
+| 前沿测量：免费数字品、GDP-B、2025 SNA 与实时预测 / Measurement Frontier: Free Digital Goods, GDP-B, 2025 SNA & Nowcasting | ../economics/macro/how-an-economy-is-measured/#ch10 | how-an-economy-is-measured |
 | 收入流向稀缺的一方 / Income flows to the scarce | ../demos/scarcity-moves/#c9 | scarcity-moves |
 | 制度与信任 / Institutions and trust | ../demos/scarcity-moves/#c10 | scarcity-moves |
 | AI：思考的价格崩塌 / AI: the price of thinking collapses | ../demos/scarcity-moves/#c11 | scarcity-moves |
@@ -3309,3 +3330,38 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | Bandwidth-bound decode roofline | `computing/ml/how-hybrid-attention-remembers/#ch8` | How KV traffic reduction translates directly into local tokens/s speedup. |
 
 <!-- /how-hybrid-attention-remembers -->
+
+<!-- why-compute-waits-for-memory -->
+
+| Concept | Deep link | What the chapter teaches |
+| --- | --- | --- |
+| Pipeline stalls from memory latency | `computing/systems/why-compute-waits-for-memory/#ch1` | 5-stage RISC pipeline stalls (95.2% waiting on a 200-cycle DRAM miss vs 9.1% on L1 hit). |
+| Memory latency hierarchy & cache walk | `computing/systems/why-compute-waits-for-memory/#ch2` | L1–SSD human-time ladder and real LRU set-associative cache showing 8× traffic gap (row vs col). |
+| Loop tiling & temporal locality | `computing/systems/why-compute-waits-for-memory/#ch3` | 24×24 matmul cache simulator: B=8 tiling cuts slow traffic 7.6× while B=12 thrashes capacity. |
+| The memory wall & Little's Law | `computing/systems/why-compute-waits-for-memory/#ch4` | 2% miss rate cuts compute to 40%; saturating 3,350 GB/s at 80 ns needs 2,094 in-flight requests. |
+| Multicore scaling, Amdahl & bus cap | `computing/systems/why-compute-waits-for-memory/#ch5` | Post-Dennard multicore hits Amdahl's serial tail and shared 192 GB/s bus saturation at 16×. |
+| GPU throughput & systolic arrays | `computing/systems/why-compute-waits-for-memory/#ch6` | Warp concurrency hides latency and weight-stationary systolic arrays scale linear-layer intensity. |
+| The Roofline model | `computing/systems/why-compute-waits-for-memory/#ch7` | Attainable performance min(π, β×I) and ridge point I* across CPU, H100, B200, and TPU v7. |
+| LLM inference memory bottleneck | `computing/systems/why-compute-waits-for-memory/#ch8` | Autoregressive decode (~1.05 FLOP/B at B=1), INT4 speedup, and KV cache capacity/bandwidth limits. |
+| Data movement energy & HBM | `computing/systems/why-compute-waits-for-memory/#ch9` | Horowitz 45nm energy bill (99.5% DRAM move vs 1.5 pJ MAC) and HBM3e/NVLink/PCIe/Ethernet ladder. |
+| HBM4 & 2026 frontier | `computing/systems/why-compute-waits-for-memory/#ch10` | 2048-bit HBM4 (JESD270-4), co-packaged optics, CXL pooling, and open thermal/yield/PIM limits. |
+| Four diagnostic questions | `computing/systems/why-compute-waits-for-memory/#ch11` | Practical checklist: stride locality, arithmetic intensity vs I*, concurrency, off-chip boundaries. |
+
+<!-- /why-compute-waits-for-memory -->
+
+<!-- how-an-economy-is-measured -->
+
+| Concept | Deep link | What the chapter teaches |
+| --- | --- | --- |
+| GDP three ways & value added | `economics/macro/how-an-economy-is-measured/#ch1` | Production, expenditure, and income identities; subtracting imports cancels out; production boundary. |
+| Nominal vs real & chained Fisher | `economics/macro/how-an-economy-is-measured/#ch2` | Separating price and quantity with Laspeyres, Paasche, chained Fisher, substitution bias, and deflator vs CPI. |
+| CPI weights, OER & hedonics | `economics/macro/how-an-economy-is-measured/#ch3` | Personal basket drift, owners' equivalent rent, hedonic quality adjustments, core inflation, and Boskin (1996). |
+| Growth traps & ALFRED revisions | `economics/macro/how-an-economy-is-measured/#ch4` | q/q SAAR vs y/y, base-effect echoes, 2×4 seasonal adjustment, and historical ALFRED GDP vintages. |
+| PPP, Balassa–Samuelson & Gini | `economics/macro/how-an-economy-is-measured/#ch5` | Non-tradable prices driving PPP gaps and Lorenz curves splitting mean GDP per capita from median income. |
+| U-3 vs U-6, Beveridge & Okun | `economics/macro/how-an-economy-is-measured/#ch6` | Discouraged exits distorting U-3, participation rates, 2001–2026 Beveridge curve, and shifting Okun slopes. |
+| Business cycles & Sahm rule | `economics/macro/how-an-economy-is-measured/#ch7` | NBER vs two-quarter myths, all 11 Sahm rule triggers (1960–2026), and CBO potential output revisions. |
+| Solow growth accounting & TFP | `economics/macro/how-an-economy-is-measured/#ch8` | Postwar US growth (1960–2023) decomposed into capital, hours, PWT human capital, and TFP residual. |
+| Beyond GDP boundaries | `economics/macro/how-an-economy-is-measured/#ch9` | Unpaid household production (~23–26%), depreciation (NDP), disaster reconstruction paradox, and externalities. |
+| GDP-B, 2025 SNA & nowcasting | `economics/macro/how-an-economy-is-measured/#ch10` | Zero-price digital goods, March 2025 SNA standard, survey nonresponse error, and real-time nowcasting. |
+
+<!-- /how-an-economy-is-measured -->

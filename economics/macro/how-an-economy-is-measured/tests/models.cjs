@@ -340,7 +340,7 @@ check('Zero CJK outside copy.zh.js (except intentional HTML head metadata & 中 
   const htmlLines = fs.readFileSync(path.join(DIR, 'index.html'), 'utf8').split('\n');
   htmlLines.forEach((line, i) => {
     if (!cjk.test(line)) return;
-    const ok = line.includes('<title>') || line.includes('name="description"') || line.includes('data-lang="zh"');
+    const ok = line.includes('<title>') || line.includes('name="description"') || line.includes('data-lang="zh"') || line.includes('class="page-provenance"');
     assert(ok, `Unexpected CJK in index.html line ${i + 1}: ${line.trim()}`);
   });
 });

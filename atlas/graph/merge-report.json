@@ -1,11 +1,11 @@
 {
   "counts": {
     "groups": 11,
-    "nodes": 376,
-    "edges": 541,
+    "nodes": 397,
+    "edges": 569,
     "trails": 14,
     "questions": 124,
-    "fragments": 189
+    "fragments": 191
   },
   "conflicts": [],
   "suspendedEdges": [],
@@ -146,6 +146,237 @@
       "taughtBy": [
         "positive-predictive-value",
         "epidemic-r0"
+      ]
+    },
+    {
+      "concept": "gdp-three-ways",
+      "page": "where-money-comes-from",
+      "taughtBy": [
+        "money-as-iou",
+        "loans-create-deposits",
+        "bank-run",
+        "quantity-theory-inflation",
+        "inflation-winners-losers",
+        "interest-price-of-time",
+        "loan-amortisation",
+        "monetary-transmission",
+        "purchasing-power-parity"
+      ]
+    },
+    {
+      "concept": "price-indexes-chain-fisher",
+      "page": "where-money-comes-from",
+      "taughtBy": [
+        "money-as-iou",
+        "loans-create-deposits",
+        "bank-run",
+        "quantity-theory-inflation",
+        "inflation-winners-losers",
+        "interest-price-of-time",
+        "loan-amortisation",
+        "monetary-transmission",
+        "purchasing-power-parity"
+      ]
+    },
+    {
+      "concept": "cpi-oer-hedonic-core",
+      "page": "where-money-comes-from",
+      "taughtBy": [
+        "money-as-iou",
+        "loans-create-deposits",
+        "bank-run",
+        "quantity-theory-inflation",
+        "inflation-winners-losers",
+        "interest-price-of-time",
+        "loan-amortisation",
+        "monetary-transmission",
+        "purchasing-power-parity"
+      ]
+    },
+    {
+      "concept": "growth-traps-saar-revisions",
+      "page": "numbers-lie",
+      "taughtBy": [
+        "regression-to-the-mean",
+        "small-sample-variability",
+        "survivorship-bias",
+        "multiple-comparisons",
+        "simpsons-paradox",
+        "base-rate-neglect",
+        "relative-vs-absolute-risk",
+        "mean-vs-median-long-tail",
+        "goodharts-law",
+        "questions-to-ask-of-a-number"
+      ]
+    },
+    {
+      "concept": "ppp-balassa-samuelson-gini",
+      "page": "where-money-comes-from",
+      "taughtBy": [
+        "money-as-iou",
+        "loans-create-deposits",
+        "bank-run",
+        "quantity-theory-inflation",
+        "inflation-winners-losers",
+        "interest-price-of-time",
+        "loan-amortisation",
+        "monetary-transmission",
+        "purchasing-power-parity"
+      ]
+    },
+    {
+      "concept": "ppp-balassa-samuelson-gini",
+      "page": "mean-median-mode",
+      "taughtBy": [
+        "mean-median-mode"
+      ]
+    },
+    {
+      "concept": "ppp-balassa-samuelson-gini",
+      "page": "numbers-lie",
+      "taughtBy": [
+        "regression-to-the-mean",
+        "small-sample-variability",
+        "survivorship-bias",
+        "multiple-comparisons",
+        "simpsons-paradox",
+        "base-rate-neglect",
+        "relative-vs-absolute-risk",
+        "mean-vs-median-long-tail",
+        "goodharts-law",
+        "questions-to-ask-of-a-number"
+      ]
+    },
+    {
+      "concept": "ppp-balassa-samuelson-gini",
+      "page": "scarcity-moves",
+      "taughtBy": [
+        "opportunity-cost",
+        "marginal-thinking",
+        "sunk-cost",
+        "comparative-advantage",
+        "price-signal",
+        "incentives",
+        "market-failure",
+        "growth-from-ideas",
+        "spending-is-income",
+        "income-to-the-scarce",
+        "institutions-trust",
+        "ai-cheap-thinking",
+        "ai-tasks-wages",
+        "relative-prices-after-ai",
+        "ai-forecast"
+      ]
+    },
+    {
+      "concept": "labour-u3-u6-beveridge-okun",
+      "page": "regression-correlation",
+      "taughtBy": [
+        "regression-correlation"
+      ]
+    },
+    {
+      "concept": "labour-u3-u6-beveridge-okun",
+      "page": "numbers-lie",
+      "taughtBy": [
+        "regression-to-the-mean",
+        "small-sample-variability",
+        "survivorship-bias",
+        "multiple-comparisons",
+        "simpsons-paradox",
+        "base-rate-neglect",
+        "relative-vs-absolute-risk",
+        "mean-vs-median-long-tail",
+        "goodharts-law",
+        "questions-to-ask-of-a-number"
+      ]
+    },
+    {
+      "concept": "business-cycle-sahm-potential",
+      "page": "where-money-comes-from",
+      "taughtBy": [
+        "money-as-iou",
+        "loans-create-deposits",
+        "bank-run",
+        "quantity-theory-inflation",
+        "inflation-winners-losers",
+        "interest-price-of-time",
+        "loan-amortisation",
+        "monetary-transmission",
+        "purchasing-power-parity"
+      ]
+    },
+    {
+      "concept": "solow-growth-accounting-tfp",
+      "page": "scarcity-moves",
+      "taughtBy": [
+        "opportunity-cost",
+        "marginal-thinking",
+        "sunk-cost",
+        "comparative-advantage",
+        "price-signal",
+        "incentives",
+        "market-failure",
+        "growth-from-ideas",
+        "spending-is-income",
+        "income-to-the-scarce",
+        "institutions-trust",
+        "ai-cheap-thinking",
+        "ai-tasks-wages",
+        "relative-prices-after-ai",
+        "ai-forecast"
+      ]
+    },
+    {
+      "concept": "beyond-gdp-boundaries",
+      "page": "scarcity-moves",
+      "taughtBy": [
+        "opportunity-cost",
+        "marginal-thinking",
+        "sunk-cost",
+        "comparative-advantage",
+        "price-signal",
+        "incentives",
+        "market-failure",
+        "growth-from-ideas",
+        "spending-is-income",
+        "income-to-the-scarce",
+        "institutions-trust",
+        "ai-cheap-thinking",
+        "ai-tasks-wages",
+        "relative-prices-after-ai",
+        "ai-forecast"
+      ]
+    },
+    {
+      "concept": "frontier-gdpb-2025sna-nowcasting",
+      "page": "numbers-lie",
+      "taughtBy": [
+        "regression-to-the-mean",
+        "small-sample-variability",
+        "survivorship-bias",
+        "multiple-comparisons",
+        "simpsons-paradox",
+        "base-rate-neglect",
+        "relative-vs-absolute-risk",
+        "mean-vs-median-long-tail",
+        "goodharts-law",
+        "questions-to-ask-of-a-number"
+      ]
+    },
+    {
+      "concept": "frontier-gdpb-2025sna-nowcasting",
+      "page": "where-money-comes-from",
+      "taughtBy": [
+        "money-as-iou",
+        "loans-create-deposits",
+        "bank-run",
+        "quantity-theory-inflation",
+        "inflation-winners-losers",
+        "interest-price-of-time",
+        "loan-amortisation",
+        "monetary-transmission",
+        "purchasing-power-parity"
       ]
     },
     {
@@ -934,6 +1165,23 @@
       ]
     },
     {
+      "concept": "pipeline-memory-stall",
+      "page": "switches-that-compute",
+      "taughtBy": [
+        "relay-logic-gates",
+        "nand-universality",
+        "binary-numbers",
+        "ripple-carry-adder",
+        "twos-complement-overflow",
+        "latch-metastability",
+        "clock-counter",
+        "mux-alu",
+        "stored-program-machine",
+        "floating-point-rounding",
+        "real-processor-scale"
+      ]
+    },
+    {
       "concept": "protein-hydrolysis-taste",
       "page": "enzymes",
       "taughtBy": [
@@ -1110,10 +1358,10 @@
     }
   ],
   "unknownAliasIds": [],
-  "sizeBytes": 733569,
+  "sizeBytes": 772298,
   "questionsBytes": 173024,
-  "combinedBytes": 906593,
-  "indexBytes": 91621,
+  "combinedBytes": 945322,
+  "indexBytes": 95323,
   "chunkBytes": {
     "math.nodes": 51664,
     "math.edges": 89636,
@@ -1128,7 +1376,7 @@
     "systems.edges": 43469,
     "systems.questions": 21577,
     "measurement.nodes": 35687,
-    "measurement.edges": 61562,
+    "measurement.edges": 63322,
     "measurement.questions": 30144,
     "matter.nodes": 29536,
     "matter.edges": 18917,
@@ -1139,11 +1387,11 @@
     "earth.nodes": 25871,
     "earth.edges": 19025,
     "earth.questions": 6822,
-    "computing.nodes": 24980,
-    "computing.edges": 22111,
+    "computing.nodes": 33465,
+    "computing.edges": 30187,
     "computing.questions": 2766,
-    "society.nodes": 49933,
-    "society.edges": 32751,
+    "society.nodes": 58077,
+    "society.edges": 41022,
     "society.questions": 3743,
     "tech.nodes": 9437,
     "tech.edges": 9209

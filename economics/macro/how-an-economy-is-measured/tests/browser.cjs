@@ -55,7 +55,8 @@ async function checkLayout(page, label, lang, shots) {
         if (cjkRe.test(node.nodeValue)) {
           const el = node.parentElement;
           const isZhBtn = el && el.tagName === 'BUTTON' && el.dataset.lang === 'zh' && node.nodeValue.trim() === '中';
-          if (!isZhBtn) {
+          const isHiddenProvenanceZh = el && el.closest('.provenance-zh') && getComputedStyle(el.closest('.provenance-zh')).display === 'none';
+          if (!isZhBtn && !isHiddenProvenanceZh) {
             cjkLeaks.push(`${el ? el.tagName + '#' + el.id : 'node'}: "${node.nodeValue.trim().slice(0, 40)}"`);
           }
         }
