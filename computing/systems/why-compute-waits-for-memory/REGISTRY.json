@@ -1,0 +1,146 @@
+{
+  "slug": "why-compute-waits-for-memory",
+  "path": "computing/systems/why-compute-waits-for-memory/",
+  "category": "computing",
+  "subtopic": "systems",
+  "stage": "university",
+  "title": {
+    "zh": "为什么计算一直在等内存",
+    "en": "Why Compute Waits for Memory"
+  },
+  "desc": {
+    "zh": "处理器每秒能算上千万亿次，为什么运行起来却常常大部分时间都在等内存？十个交互模型带你从五级流水线、缓存模拟器、矩阵分块、内存墙与利特尔法则，一路走到屋顶线模型、大模型推理和 HBM4 前沿。",
+    "en": "Processors can execute quadrillions of operations per second, yet spend most of their time waiting for memory. Ten interactive models trace the bottleneck from a 5-stage pipeline and set-associative cache to tiled matmul, Little's Law, the Roofline model, LLM inference, and HBM4."
+  },
+  "tags": [
+    { "zh": "计算机体系结构", "en": "Computer Architecture" },
+    { "zh": "内存墙", "en": "Memory Wall" },
+    { "zh": "缓存与局部性", "en": "Cache & Locality" },
+    { "zh": "屋顶线模型", "en": "Roofline Model" },
+    { "zh": "HBM 与 AI 芯片", "en": "HBM & AI Chips" },
+    { "zh": "长文", "en": "Long-form Essay" }
+  ],
+  "concepts": [
+    {
+      "id": "pipeline-memory-stall",
+      "title": { "zh": "流水线与访存停顿", "en": "Pipeline Stalls from Memory Latency" },
+      "desc": { "zh": "五级流水线每拍完成一条指令，但一旦遇到等内存的数据相关，后续指令只能停顿吐气泡。", "en": "A 5-stage pipeline retires one instruction per cycle until a memory-latency hazard fills the pipe with stall bubbles." },
+      "aliases": {
+        "zh": ["流水线气泡", "CPU 为什么会等内存", "取指 译码 执行", "数据旁路", "CPI", "AI 芯片为什么大部分时间都在等"],
+        "en": ["pipeline stall", "instruction pipeline", "load-use hazard", "forwarding", "why does an AI chip wait", "why compute waits for memory"]
+      },
+      "anchor": "#ch1",
+      "relatedPages": ["switches-that-compute"]
+    },
+    {
+      "id": "memory-hierarchy-cache-walk",
+      "title": { "zh": "存储层级与缓存命中", "en": "Memory Latency Hierarchy and Cache Locality" },
+      "desc": { "zh": "从 L1 到 DRAM 慢了约 80 倍；因为硬件按缓存行搬运，按行遍历与按列遍历矩阵的流量可差 8 倍。", "en": "DRAM is roughly 80x slower than L1 cache; because hardware fetches full cache lines, row-major vs column-major matrix walks can differ by 8x in traffic." },
+      "aliases": {
+        "zh": ["缓存命中率", "L1 L2 L3 缓存", "按行遍历 按列遍历", "空间局部性", "缓存行", "组相联缓存", "为什么二维数组按行更快"],
+        "en": ["cache hierarchy", "L1 L2 L3 DRAM latency", "row major vs column major", "spatial locality", "cache line", "set associative cache"]
+      },
+      "anchor": "#ch2",
+      "relatedPages": []
+    },
+    {
+      "id": "cache-tiling-blocking",
+      "title": { "zh": "矩阵分块与时间局部性", "en": "Loop Tiling and Temporal Locality" },
+      "desc": { "zh": "同样做 2N³ 次乘加的矩阵乘法，把小块锁进缓存能减少近十倍慢内存搬运，分块过大溢出缓存又会恶化。", "en": "Matrix multiplication does the same 2N^3 ops, yet cache-sized tiling cuts slow memory traffic nearly 10x while oversized tiles thrash capacity." },
+      "aliases": {
+        "zh": ["矩阵乘法分块", "tiling", "blocking", "时间局部性", "缓存颠簸", "为什么同样 O(N^3) 速度差十倍"],
+        "en": ["matrix multiply tiling", "loop blocking", "temporal locality", "cache thrashing", "IO complexity"]
+      },
+      "anchor": "#ch3",
+      "relatedPages": []
+    },
+    {
+      "id": "memory-wall-littles-law",
+      "title": { "zh": "内存墙与利特尔法则", "en": "The Memory Wall and Little's Law" },
+      "desc": { "zh": "哪怕只有 2% 的缓存缺失也会拉低一半以上有效算力；要吃满高速总线，在途并发数据必须等于带宽乘延迟。", "en": "Even a 2% miss rate cuts effective compute more than half; saturating a fast memory bus requires concurrency equal to bandwidth times latency." },
+      "aliases": {
+        "zh": ["内存墙", "memory wall", "利特尔法则", "AMAT", "延迟与带宽的区别", "隐藏内存延迟"],
+        "en": ["memory wall", "Little's Law", "AMAT", "latency vs bandwidth", "latency hiding", "in-flight memory requests"]
+      },
+      "anchor": "#ch4",
+      "relatedPages": []
+    },
+    {
+      "id": "amdahl-gustafson-bus-cap",
+      "title": { "zh": "多核扩展、阿姆达尔与总线瓶颈", "en": "Multicore Scaling, Amdahl, and Bus Contention" },
+      "desc": { "zh": "登纳德缩放结束后靠多核扩展，但串行比例（阿姆达尔定律）和共享内存总线很快把加速比封顶。", "en": "After Dennard scaling ended, more cores hit serial bottlenecks (Amdahl's law) and shared memory bus saturation." },
+      "aliases": {
+        "zh": ["阿姆达尔定律", "古斯塔夫森定律", "为什么多核不能线性加速", "登纳德缩放", "内存带宽瓶颈"],
+        "en": ["Amdahl's law", "Gustafson's law", "Dennard scaling", "why more cores don't scale", "shared memory bus bottleneck"]
+      },
+      "anchor": "#ch5",
+      "relatedPages": ["why-chips-are-hard"]
+    },
+    {
+      "id": "gpu-systolic-array",
+      "title": { "zh": "GPU 并发与脉动阵列", "en": "GPU Throughput and Systolic Arrays" },
+      "desc": { "zh": "GPU/TPU 用大量并发线程掩盖延迟，并通过脉动阵列让权重驻留片上反复复用。", "en": "GPUs and TPUs trade per-thread latency for massive warp concurrency and systolic arrays that reuse weights on-chip." },
+      "aliases": {
+        "zh": ["脉动阵列", "为什么 AI 用 GPU 不用 CPU", "TPU 原理", "张量核", "CPU 和 GPU 区别", "吞吐量优先"],
+        "en": ["systolic array", "why GPUs for AI", "TPU architecture", "tensor core", "CPU vs GPU", "throughput vs latency"]
+      },
+      "anchor": "#ch6",
+      "relatedPages": []
+    },
+    {
+      "id": "roofline-model",
+      "title": { "zh": "屋顶线模型与算术强度", "en": "The Roofline Model and Arithmetic Intensity" },
+      "desc": { "zh": "可达性能等于峰值算力与（带宽 × 算术强度）中的较小者；算术强度越过屋脊拐点才算吃满算力。", "en": "Attainable performance is min(peak FLOP/s, bandwidth x arithmetic intensity); only past the ridge point is a workload compute-bound." },
+      "aliases": {
+        "zh": ["屋顶线模型", "roofline", "算术强度", "FLOP/byte", "内存受限 算力受限", "屋脊拐点"],
+        "en": ["roofline model", "arithmetic intensity", "memory bound vs compute bound", "ridge point", "FLOP per byte"]
+      },
+      "anchor": "#ch7",
+      "relatedPages": []
+    },
+    {
+      "id": "llm-inference-memory-bound",
+      "title": { "zh": "大模型推理的内存瓶颈", "en": "Why LLM Inference Is Memory-Bound" },
+      "desc": { "zh": "自回归解码每吐一个字就要读取全部权重与 KV 缓存，单批算术强度约 1 FLOP/B；量化与批处理用于提高重用。", "en": "Autoregressive LLM decode reads all weights and KV cache per token (~1 FLOP/B at batch 1); quantization and batching shift the bottleneck." },
+      "aliases": {
+        "zh": ["大模型推理为什么慢", "为什么推理吃显存带宽", "KV 缓存", "批量推理", "权重量化", "预填充与解码"],
+        "en": ["why LLM inference is slow", "memory-bound LLM decode", "prefill vs decode", "KV cache bandwidth", "batching and quantization"]
+      },
+      "anchor": "#ch8",
+      "relatedPages": ["what-a-frontier-model-takes", "how-a-chatbot-writes"]
+    },
+    {
+      "id": "data-movement-energy-hbm",
+      "title": { "zh": "数据搬运能耗与 HBM 封装", "en": "Data Movement Energy and HBM Packaging" },
+      "desc": { "zh": "从片外 DRAM 读取数据的能耗是浮点加法的几百倍；HBM 靠极短极宽的硅中介层连线降低距离与能耗。", "en": "Fetching a word from off-chip DRAM costs hundreds of times more energy than adding it; HBM stacks dies on a wide interposer to shorten wires." },
+      "aliases": {
+        "zh": ["HBM 高带宽内存", "数据搬运能耗", "Horowitz 能耗", "为什么 HBM 这么贵", "CoWoS", "NVLink 带宽"],
+        "en": ["HBM high bandwidth memory", "data movement energy", "Horowitz energy table", "why HBM matters", "NVLink vs PCIe"]
+      },
+      "anchor": "#ch9",
+      "relatedPages": ["why-chips-are-hard"]
+    },
+    {
+      "id": "memory-wall-frontier-2026",
+      "title": { "zh": "HBM4、共封装光学与算力前沿", "en": "HBM4, Co-Packaged Optics, and the 2026 Frontier" },
+      "desc": { "zh": "2026 年末 AI 芯片迈向 2048-bit HBM4 与共封装光学，同时 PIM 与神经形态硬件仍在与生态和成本博弈。", "en": "Late-2026 hardware pushes toward 2048-bit HBM4 and co-packaged optics while PIM and neuromorphic chips face area and software hurdles." },
+      "aliases": {
+        "zh": ["HBM4", "HBM3e", "B200 H100 对比", "Rubin", "共封装光学 CPO", "CXL 内存池", "存算一体 PIM"],
+        "en": ["HBM4", "HBM3e", "Blackwell B200 bandwidth", "co-packaged optics", "CXL memory pooling", "processing in memory PIM"]
+      },
+      "anchor": "#ch10",
+      "relatedPages": ["why-chips-are-hard", "what-a-frontier-model-takes"]
+    },
+    {
+      "id": "memory-diagnostic-checklist",
+      "title": { "zh": "诊断芯片与程序的四个问题", "en": "Four Questions for Any Chip or Slow Program" },
+      "desc": { "zh": "用步长局部性、算术强度、在途并发和芯片外边界四个问题快速定位性能瓶颈。", "en": "Locate performance bottlenecks using four checks: stride locality, arithmetic intensity, in-flight concurrency, and off-chip boundaries." },
+      "aliases": {
+        "zh": ["怎么看 AI 芯片参数", "怎么排查程序慢", "性能瓶颈诊断"],
+        "en": ["how to read GPU specs", "performance checklist", "memory bottleneck diagnosis"]
+      },
+      "anchor": "#ch11",
+      "relatedPages": []
+    }
+  ]
+}
