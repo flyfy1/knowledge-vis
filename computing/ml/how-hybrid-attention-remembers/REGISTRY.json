@@ -1,0 +1,123 @@
+{
+  "slug": "how-hybrid-attention-remembers",
+  "path": "computing/ml/how-hybrid-attention-remembers/",
+  "category": "computing",
+  "subtopic": "ml",
+  "stage": "university",
+  "title": {
+    "zh": "混合注意力是怎么“记住”长文的",
+    "en": "How Hybrid Attention Models Remember"
+  },
+  "desc": {
+    "zh": "为什么标准大模型读得越长，内存账单就按长度线性变厚？从 KV Cache、矩阵结合律、快权重容量上限、Delta 擦写规则、Gated DeltaNet 遗忘门到 3:1 混合注意力与屋顶线吞吐，用九个可动手模型一路讲透。",
+    "en": "Why does a standard LLM memory bill grow linearly with context length? Walk through KV cache accounting, matrix associativity, fast-weight capacity limits, the delta rule, Gated DeltaNet, 3:1 hybrids, and roofline decode speed in nine live models."
+  },
+  "tags": [
+    { "zh": "混合注意力", "en": "Hybrid Attention" },
+    { "zh": "线性注意力", "en": "Linear Attention" },
+    { "zh": "KV Cache", "en": "KV Cache" },
+    { "zh": "Gated DeltaNet", "en": "Gated DeltaNet" },
+    { "zh": "长上下文推理", "en": "Long-Context Inference" }
+  ],
+  "concepts": [
+    {
+      "id": "kv-cache-vs-fixed-state",
+      "title": { "zh": "KV Cache 与固定大小状态", "en": "KV Cache vs Fixed-Size Recurrent State" },
+      "desc": { "zh": "全注意力层按上下文长度 O(L) 保存键值缓存，而线性循环层把历史压进 O(1) 状态矩阵。", "en": "Full-attention layers store O(L) keys and values while linear layers keep a constant O(1) state matrix." },
+      "aliases": {
+        "zh": ["KV Cache", "为什么长上下文占内存", "显存爆炸", "混合注意力", "Qwen3.5 为什么省内存"],
+        "en": ["KV cache memory", "why long context uses RAM", "hybrid attention memory", "O(1) state"]
+      },
+      "anchor": "#ch1",
+      "relatedPages": ["attention-mechanism"]
+    },
+    {
+      "id": "linear-attention-associativity",
+      "title": { "zh": "线性注意力的矩阵结合律", "en": "Linear Attention via Matrix Associativity" },
+      "desc": { "zh": "去掉 Softmax 后可将 (QK^T)V 改写为 Q(K^TV)，把 O(L^2 d) 化为 O(Ld^2) 状态累加。", "en": "Dropping softmax lets (QK^T)V regroup into Q(K^TV), turning O(L^2 d) into O(Ld^2) state accumulation." },
+      "aliases": {
+        "zh": ["线性注意力", "矩阵结合律", "O(L^2) 到 O(L)", "Linear Attention"],
+        "en": ["linear attention", "matrix associativity", "subquadratic attention"]
+      },
+      "anchor": "#ch2",
+      "relatedPages": ["attention-mechanism"]
+    },
+    {
+      "id": "fast-weight-capacity",
+      "title": { "zh": "快权重联想记忆与容量上限", "en": "Fast-Weight Memory & Rank Capacity" },
+      "desc": { "zh": "d×d 状态矩阵最多无串扰容纳 d 个正交键，超载或改写旧键时纯加法会把新旧值糊在一起。", "en": "A d x d matrix holds at most d orthogonal keys without interference; pure addition blurs overwritten keys." },
+      "aliases": {
+        "zh": ["快权重", "Fast Weight Programmer", "正交容量上限", "线性注意力为什么健忘"],
+        "en": ["fast weights", "orthogonal capacity", "why linear attention forgets"]
+      },
+      "anchor": "#ch3",
+      "relatedPages": ["embeddings"]
+    },
+    {
+      "id": "delta-rule-memory-update",
+      "title": { "zh": "Delta 规则：先擦后写的投影更新", "en": "The Delta Rule: Erase Before Writing" },
+      "desc": { "zh": "先读取 S_{t-1}k_t 再写回残差 (v_t - S_{t-1}k_t)，沿键方向精准抹除旧值并改写。", "en": "Read S_{t-1}k_t first and write back only the residual, erasing old values along k_t before writing." },
+      "aliases": {
+        "zh": ["DeltaNet", "Delta 规则", "Widrow-Hoff", "先擦后写"],
+        "en": ["DeltaNet", "delta rule", "memory overwrite"]
+      },
+      "anchor": "#ch4",
+      "relatedPages": []
+    },
+    {
+      "id": "gated-deltanet-forgetting",
+      "title": { "zh": "Gated DeltaNet 与选择性遗忘门", "en": "Gated DeltaNet & Selective Decay" },
+      "desc": { "zh": "将 Mamba-2 的全局衰减门 α_t 与 Delta 投影擦除结合，既清扫过时话题又精准改写当前键。", "en": "Combines Mamba-2 global decay α_t with delta erasure to clear stale topics and update active keys." },
+      "aliases": {
+        "zh": ["Gated DeltaNet", "Mamba-2 衰减门", "遗忘门", "qwen35 架构"],
+        "en": ["Gated DeltaNet", "Mamba-2 gating", "selective decay"]
+      },
+      "anchor": "#ch5",
+      "relatedPages": []
+    },
+    {
+      "id": "chunkwise-ssd-parallelism",
+      "title": { "zh": "分块并行训练与结构化状态空间对偶", "en": "Chunkwise Training & State Space Duality" },
+      "desc": { "zh": "把序列切块后块内化为 C×C 矩阵乘法喂给张量核，只串行传递块边界状态，串行深度缩小 C 倍。", "en": "Partitioning into chunks turns intra-chunk work into C x C tensor-core matmuls and cuts serial depth by C." },
+      "aliases": {
+        "zh": ["SSD 对偶", "分块并行", "Chunkwise", "Mamba 怎么并行训练"],
+        "en": ["structured state space duality", "chunkwise parallel", "SSD Mamba-2"]
+      },
+      "anchor": "#ch6",
+      "relatedPages": []
+    },
+    {
+      "id": "hybrid-ratio-exact-recall",
+      "title": { "zh": "3:1 混合注意力与大海捞针精确回忆", "en": "3:1 Hybrid Ratio & Exact Recall Bookmarks" },
+      "desc": { "zh": "保留 1/4 全注意力层作无损书签，既解决纯线性在超长文档大海捞针时的崩塌，又省下 75% KV。", "en": "Keeping 25% full-attention layers preserves exact needle-in-a-haystack lookup while saving 75% KV cache." },
+      "aliases": {
+        "zh": ["3:1 混合", "大海捞针", "Needle in a Haystack", "为什么不纯用线性注意力"],
+        "en": ["3:1 hybrid ratio", "needle in a haystack", "why hybrid attention"]
+      },
+      "anchor": "#ch7",
+      "relatedPages": ["attention-mechanism"]
+    },
+    {
+      "id": "hybrid-decode-roofline",
+      "title": { "zh": "屋顶线下的长上下文吐字加速", "en": "Roofline Decode Speedup at Long Context" },
+      "desc": { "zh": "生成阶段受限于内存带宽，每省下 1 GB KV 流量就直接换来长上下文下的本地吐字提速。", "en": "Because decode is memory-bandwidth bound, shrinking KV reads directly accelerates long-context generation." },
+      "aliases": {
+        "zh": ["屋顶线", "本地大模型吐字速度", "Bandwidth bound", "为什么混合模型跑得快"],
+        "en": ["decode roofline", "local LLM throughput", "memory bandwidth bound decode"]
+      },
+      "anchor": "#ch8",
+      "relatedPages": []
+    },
+    {
+      "id": "hybrid-attention-frontier-2026",
+      "title": { "zh": "混合注意力前沿谱系（2026 年 11 月）", "en": "Hybrid Attention Landscape (Nov 2026)" },
+      "desc": { "zh": "对比纯全注意力、3:1 混合、7:1 混合与纯线性模型在内存、吞吐与召回上的工程取舍。", "en": "Compares pure full, 3:1 hybrid, 7:1 hybrid, and pure linear layouts across RAM, throughput, and recall." },
+      "aliases": {
+        "zh": ["MiniMax-01", "Kimi Linear", "Qwen3.5", "混合模型对比"],
+        "en": ["MiniMax-01", "Kimi Linear", "Qwen3.5 hybrid", "KDA"]
+      },
+      "anchor": "#ch9",
+      "relatedPages": ["llm-sampling"]
+    }
+  ]
+}

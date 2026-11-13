@@ -1,0 +1,558 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="category" content="computing">
+<meta name="stage" content="university">
+<title>How Hybrid Attention Models Remember</title>
+<meta name="description" content="" data-i18n-attr="content:meta.desc">
+<link rel="icon" href="data:,">
+<style>
+  :root {
+    --bg:#0c0e13; --card:#141821; --card2:#1a1f2b; --line:#2c3344;
+    --ink:#ebe8e0; --body:#d5d7de; --mute:#a7aebb; --dim:#949cad;
+    --gold:#e9b949; --cyan:#63c7e6; --red:#f27a6c; --green:#7ad6a0; --violet:#b39dfb;
+    --serif:"Songti SC","STSong","Noto Serif CJK SC","Source Han Serif SC","SimSun",Georgia,serif;
+    --sans:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC",system-ui,sans-serif;
+    --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  }
+  * { box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior:auto; }
+    *, *::before, *::after { transition:none !important; animation:none !important; }
+  }
+  body { margin:0; background:var(--bg); color:var(--ink); font:17px/1.85 var(--sans); -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+  a { color:var(--cyan); }
+  :focus-visible { outline:2px solid var(--gold); outline-offset:3px; }
+  .wrap { max-width:760px; margin:0 auto; padding:0 20px; }
+  .wide { max-width:980px; margin:0 auto; padding:0 20px; }
+
+  .top { position:sticky; top:0; z-index:30; background:rgba(12,14,19,.92); backdrop-filter:blur(6px); border-bottom:1px solid var(--line); }
+  .top .bar { display:flex; justify-content:space-between; align-items:center; gap:12px; max-width:980px; margin:0 auto; padding:0 12px; }
+  .back { display:inline-flex; align-items:center; min-height:48px; padding:0 8px; color:var(--mute); text-decoration:none; font-size:14px; }
+  .back:hover { color:var(--ink); }
+  #langToggle { display:flex; border:1px solid var(--line); border-radius:999px; overflow:hidden; background:var(--card); }
+  #langToggle button { min-width:52px; min-height:48px; border:0; border-radius:0; background:transparent; color:var(--mute); padding:0 12px; font-size:14px; font-weight:600; cursor:pointer; }
+  #langToggle button + button { border-left:1px solid var(--line); }
+  #langToggle button[aria-pressed="true"] { background:rgba(233,185,73,.16); color:var(--gold); }
+
+  .hero { padding:72px 0 42px; border-bottom:1px solid var(--line); }
+  .kicker { font:12px/1.4 var(--mono); letter-spacing:.22em; color:var(--gold); text-transform:uppercase; }
+  h1 { font:400 clamp(34px,7.2vw,72px)/1.15 var(--serif); letter-spacing:.03em; margin:.3em 0 .25em; }
+  .sub { font:400 clamp(18px,2.5vw,24px)/1.6 var(--serif); margin:0 0 1.4em; color:var(--ink); }
+  .lead { color:var(--body); }
+  .note { font-size:14.5px; color:var(--mute); border-left:2px solid var(--line); padding-left:14px; margin-top:1.6em; line-height:1.75; }
+  .note strong { color:var(--ink); font-weight:600; }
+
+  .toc { padding:46px 0 0; }
+  .toc h2 { font:12px/1 var(--mono); letter-spacing:.24em; color:var(--mute); margin:0 0 14px; font-weight:400; text-transform:uppercase; }
+  .toc ol { list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(auto-fill,minmax(225px,1fr)); gap:0 22px; }
+  .toc a { display:flex; align-items:center; gap:12px; min-height:48px; text-decoration:none; color:var(--ink); border-bottom:1px solid var(--line); font-size:15px; line-height:1.4; padding:6px 0; }
+  .toc a:hover { color:var(--gold); }
+  .toc a span { font:12px/1 var(--mono); color:var(--dim); flex:0 0 auto; }
+  .toc a b { font-weight:400; }
+
+  .ch { padding-top:92px; }
+  .num { font:400 15px/1 var(--mono); color:var(--gold); letter-spacing:.2em; }
+  .ch h2 { font:400 clamp(25px,4vw,37px)/1.35 var(--serif); margin:.45em 0 .5em; letter-spacing:.02em; }
+  .law { font:400 clamp(19px,2.4vw,22.5px)/1.7 var(--serif); border-left:3px solid var(--gold); padding:4px 0 4px 18px; margin:0 0 1.5em; }
+  .ch p { margin:0 0 1.15em; color:var(--body); overflow-wrap:anywhere; }
+  .ch p a { padding:13px 2px; }
+  .ch p strong, .ch li strong { color:var(--ink); font-weight:600; }
+  .ch ul, .ch ol.plain { padding-left:1.3em; margin:0 0 1.2em; color:var(--body); }
+  .ch li { margin:.45em 0; }
+  .eq { font:500 14px/1.7 var(--mono); background:var(--card2); border:1px solid var(--line); border-radius:10px; padding:12px 16px; margin:1.1em 0 1.3em; color:var(--ink); overflow-x:auto; }
+  .take { color:var(--mute) !important; font-size:15.5px; }
+  code, .mono { font-family:var(--mono); font-size:.92em; }
+
+  figure.lab { margin:34px 0; background:var(--card); border:1px solid var(--line); border-radius:16px; padding:22px 22px 18px; }
+  .lab h3 { margin:0 0 4px; font:600 15.5px/1.5 var(--sans); color:var(--ink); }
+  .lab .how { margin:0 0 14px; font-size:14.5px; color:var(--mute); line-height:1.65; }
+  .cv { width:100%; height:300px; display:block; border-radius:10px; background:#0f1219; touch-action:pan-y; }
+  .cv.tall { height:340px; }
+  .cv.short { height:240px; }
+  .ctl { display:flex; flex-wrap:wrap; gap:10px 18px; align-items:center; margin:14px 0 4px; font-size:14px; color:var(--mute); }
+  .ctl label.rng { display:flex; align-items:center; gap:10px; flex:1 1 250px; min-width:0; min-height:48px; }
+  .ctl label.rng > span:first-child { flex:0 0 auto; }
+  .ctl output { flex:0 0 auto; min-width:3.8em; text-align:right; color:var(--ink); font-variant-numeric:tabular-nums; font-family:var(--mono); }
+  input[type=range] { flex:1 1 auto; min-width:80px; accent-color:var(--gold); height:48px; margin:0; background:transparent; cursor:pointer; }
+  label.chk { display:inline-flex; align-items:center; gap:10px; min-height:48px; padding:0 6px; cursor:pointer; color:var(--ink); }
+  input[type=checkbox], input[type=radio] { accent-color:var(--gold); width:20px; height:20px; margin:0; cursor:pointer; }
+  button.b { font:inherit; font-size:14px; color:var(--ink); background:var(--card2); border:1px solid var(--line); border-radius:999px; min-height:48px; min-width:48px; padding:0 16px; cursor:pointer; }
+  button.b:hover { border-color:var(--gold); }
+  button.b[aria-pressed="true"], button.b.on { background:rgba(233,185,73,.16); border-color:var(--gold); color:var(--gold); }
+  button.b:disabled { opacity:.5; cursor:default; }
+  .seg { display:inline-flex; flex-wrap:wrap; gap:6px; align-items:center; }
+  .grp { display:flex; flex-wrap:wrap; gap:8px; align-items:center; }
+  .grp > .lbl { color:var(--mute); font-size:13.5px; margin-right:2px; }
+  .read { display:grid; grid-template-columns:repeat(auto-fit,minmax(145px,1fr)); gap:10px; margin-top:14px; }
+  .read div { background:var(--card2); border-radius:10px; padding:10px 12px; font-size:13px; color:var(--mute); line-height:1.5; min-width:0; }
+  .read b { display:block; font:600 18px/1.35 var(--mono); color:var(--ink); font-variant-numeric:tabular-nums; overflow-wrap:anywhere; }
+  .read b.g { color:var(--gold); } .read b.r { color:var(--red); } .read b.c { color:var(--cyan); } .read b.n { color:var(--green); } .read b.v { color:var(--violet); }
+  .say { margin:14px 0 0; font-size:14.5px; color:var(--ink); line-height:1.7; min-height:3.2em; }
+  .say em { font-style:normal; color:var(--gold); }
+  .legend { display:flex; flex-wrap:wrap; gap:6px 18px; font-size:13px; color:var(--mute); margin-top:10px; }
+  .legend i { display:inline-block; width:10px; height:10px; border-radius:2px; margin-right:6px; vertical-align:-1px; }
+
+  table.cmp { border-collapse:collapse; width:100%; font-size:14px; margin:12px 0 6px; }
+  table.cmp th, table.cmp td { border-bottom:1px solid var(--line); padding:9px 8px; text-align:left; }
+  table.cmp th { color:var(--mute); font-weight:600; font-size:13px; }
+  table.cmp td.numc { font-family:var(--mono); text-align:right; color:var(--ink); }
+  table.cmp tr.pick td { background:rgba(233,185,73,.09); color:var(--gold); }
+  .tableWrap { overflow-x:auto; }
+
+  .badge { display:inline-block; font:600 12px/1 var(--sans); padding:4px 8px; border-radius:6px; margin-right:6px; vertical-align:2px; }
+  .badge.est { background:rgba(122,214,160,.16); color:var(--green); }
+  .badge.dem { background:rgba(99,199,230,.16); color:var(--cyan); }
+  .badge.opn { background:rgba(233,185,73,.16); color:var(--gold); }
+
+  .sum { margin:28px 0 0; padding:22px 24px; border:1px solid var(--line); border-radius:16px; background:linear-gradient(180deg,rgba(233,185,73,.07),transparent); }
+  .sum h3 { margin:0 0 12px; font:400 20px/1.4 var(--serif); color:var(--gold); }
+  .sum ol { margin:0; padding-left:1.3em; color:var(--body); }
+  .sum li { margin:.55em 0; }
+
+  footer { margin:96px 0 0; padding:36px 0 64px; border-top:1px solid var(--line); color:var(--mute); font-size:13.5px; line-height:1.8; }
+  footer a { color:var(--cyan); }
+  .links { padding-left:1.3em; }
+  .links li { margin:.25em 0; }
+  .links a, footer a { display:inline-flex; align-items:center; min-height:48px; }
+
+  @media (max-width:640px) {
+    body { font-size:16px; }
+    .wrap, .wide { padding:0 16px; }
+    figure.lab { padding:16px 12px 14px; border-radius:14px; }
+    .cv { height:250px; } .cv.tall { height:270px; } .cv.short { height:210px; }
+    #c2Cv { height:380px; }
+    .ch { padding-top:72px; }
+    .read { grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .read b { font-size:16px; }
+    .back { font-size:13px; }
+  }
+  @media (max-width:440px) {
+    .ctl label.rng { flex-wrap:wrap; column-gap:10px; row-gap:0; }
+    .ctl label.rng > span:first-child { flex:1 1 auto; }
+    .ctl label.rng input[type=range] { order:3; flex:1 1 100%; }
+  }
+</style>
+</head>
+<body>
+<header class="top"><div class="bar">
+  <a class="back" href="../../../" data-i18n="nav.back"></a>
+  <div id="langToggle" role="group" data-i18n-attr="aria-label:nav.lang">
+    <button type="button" data-lang="zh">中</button><button type="button" data-lang="en">EN</button>
+  </div>
+</div></header>
+
+<section class="hero"><div class="wrap">
+  <div class="kicker" data-i18n="hero.kicker"></div>
+  <h1 data-i18n="hero.title"></h1>
+  <p class="sub" data-i18n-html="hero.sub"></p>
+  <p class="lead" data-i18n-html="hero.lead"></p>
+  <p class="lead" data-i18n-html="hero.question"></p>
+  <p class="note" data-i18n-html="hero.note"></p>
+</div></section>
+
+<nav class="wrap toc" data-i18n-attr="aria-label:toc.title">
+  <h2 data-i18n="toc.title"></h2>
+  <ol>
+    <li><a href="#ch1"><span>01</span><b data-i18n="ch1.title"></b></a></li>
+    <li><a href="#ch2"><span>02</span><b data-i18n="ch2.title"></b></a></li>
+    <li><a href="#ch3"><span>03</span><b data-i18n="ch3.title"></b></a></li>
+    <li><a href="#ch4"><span>04</span><b data-i18n="ch4.title"></b></a></li>
+    <li><a href="#ch5"><span>05</span><b data-i18n="ch5.title"></b></a></li>
+    <li><a href="#ch6"><span>06</span><b data-i18n="ch6.title"></b></a></li>
+    <li><a href="#ch7"><span>07</span><b data-i18n="ch7.title"></b></a></li>
+    <li><a href="#ch8"><span>08</span><b data-i18n="ch8.title"></b></a></li>
+    <li><a href="#ch9"><span>09</span><b data-i18n="ch9.title"></b></a></li>
+  </ol>
+</nav>
+
+<main>
+<!-- 01 Memory Bill -->
+<section class="ch" id="ch1" data-step>
+  <div class="wrap">
+    <div class="num">01</div>
+    <h2 data-i18n="ch1.title"></h2>
+    <p class="law" data-i18n-html="ch1.law"></p>
+    <p data-i18n-html="ch1.p1"></p>
+    <p data-i18n-html="ch1.p2"></p>
+  </div>
+  <div class="wide"><figure class="lab">
+    <h3 data-i18n="ch1.labTitle"></h3>
+    <p class="how" data-i18n="ch1.how"></p>
+    <canvas class="cv" id="c1Cv" role="img" data-i18n-attr="aria-label:ch1.cvAria"></canvas>
+    <div class="legend">
+      <span><i style="background:var(--cyan)"></i><span data-i18n="ch1.legFull"></span></span>
+      <span><i style="background:var(--gold)"></i><span data-i18n="ch1.legHybrid"></span></span>
+      <span><i style="background:var(--green)"></i><span data-i18n="ch1.legLinear"></span></span>
+    </div>
+    <div class="ctl">
+      <div class="grp"><span class="lbl" data-i18n="ch1.archLbl"></span><div class="seg" id="c1Arch">
+        <button type="button" class="b" data-arch="full" data-i18n="ch1.archFull"></button>
+        <button type="button" class="b on" data-arch="hybrid31" data-i18n="ch1.archH31"></button>
+        <button type="button" class="b" data-arch="hybrid71" data-i18n="ch1.archH71"></button>
+        <button type="button" class="b" data-arch="linear" data-i18n="ch1.archLin"></button>
+      </div></div>
+      <div class="grp"><span class="lbl" data-i18n="ch1.precLbl"></span><div class="seg" id="c1Prec">
+        <button type="button" class="b on" data-prec="q8_0">Q8_0</button>
+        <button type="button" class="b" data-prec="fp16">FP16</button>
+      </div></div>
+    </div>
+    <div class="ctl">
+      <label class="rng"><span data-i18n="ch1.ctxLbl"></span><input type="range" id="c1Ctx" min="2" max="8" step="1" value="6"><output id="c1CtxOut"></output></label>
+      <label class="rng"><span data-i18n="ch1.slotsLbl"></span><input type="range" id="c1Slots" min="1" max="4" step="1" value="1"><output id="c1SlotsOut"></output></label>
+    </div>
+    <div class="read">
+      <div><span data-i18n="ch1.rKv"></span><b class="c" id="c1KvVal"></b></div>
+      <div><span data-i18n="ch1.rRec"></span><b class="n" id="c1RecVal"></b></div>
+      <div><span data-i18n="ch1.rSys"></span><b class="g" id="c1SysVal"></b></div>
+      <div><span data-i18n="ch1.rSave"></span><b id="c1SaveVal"></b></div>
+    </div>
+    <p class="say" id="c1Say" aria-live="polite"></p>
+  </figure></div>
+  <div class="wrap">
+    <p data-i18n-html="ch1.p3"></p>
+    <p class="take" data-i18n-html="ch1.limit"></p>
+  </div>
+</section>
+
+<!-- 02 Linear Attention Associativity -->
+<section class="ch" id="ch2" data-step>
+  <div class="wrap">
+    <div class="num">02</div>
+    <h2 data-i18n="ch2.title"></h2>
+    <p class="law" data-i18n-html="ch2.law"></p>
+    <p data-i18n-html="ch2.p1"></p>
+    <div class="eq" data-i18n="ch2.eq"></div>
+    <p data-i18n-html="ch2.p2"></p>
+  </div>
+  <div class="wide"><figure class="lab">
+    <h3 data-i18n="ch2.labTitle"></h3>
+    <p class="how" data-i18n="ch2.how"></p>
+    <canvas class="cv tall" id="c2Cv" role="img" data-i18n-attr="aria-label:ch2.cvAria"></canvas>
+    <div class="ctl">
+      <label class="rng"><span data-i18n="ch2.stepLbl"></span><input type="range" id="c2Step" min="1" max="16" step="1" value="8"><output id="c2StepOut"></output></label>
+      <label class="rng"><span data-i18n="ch2.lenLbl"></span><input type="range" id="c2FlopLen" min="512" max="65536" step="512" value="16384"><output id="c2FlopLenOut"></output></label>
+      <button type="button" class="b" id="c2Play" data-i18n="btn.play"></button>
+      <button type="button" class="b" id="c2Reset" data-i18n="btn.reset"></button>
+    </div>
+    <div class="read">
+      <div><span data-i18n="ch2.rDiff"></span><b class="n" id="c2DiffVal"></b></div>
+      <div><span data-i18n="ch2.rQuad"></span><b class="r" id="c2QuadVal"></b></div>
+      <div><span data-i18n="ch2.rLin"></span><b class="c" id="c2LinVal"></b></div>
+      <div><span data-i18n="ch2.rRatio"></span><b class="g" id="c2RatioVal"></b></div>
+    </div>
+    <p class="say" id="c2Say" aria-live="polite"></p>
+  </figure></div>
+  <div class="wrap">
+    <p data-i18n-html="ch2.p3"></p>
+    <p class="take" data-i18n-html="ch2.limit"></p>
+  </div>
+</section>
+
+<!-- 03 Fast Weight Capacity & Interference -->
+<section class="ch" id="ch3" data-step>
+  <div class="wrap">
+    <div class="num">03</div>
+    <h2 data-i18n="ch3.title"></h2>
+    <p class="law" data-i18n-html="ch3.law"></p>
+    <p data-i18n-html="ch3.p1"></p>
+    <p data-i18n-html="ch3.p2"></p>
+  </div>
+  <div class="wide"><figure class="lab">
+    <h3 data-i18n="ch3.labTitle"></h3>
+    <p class="how" data-i18n="ch3.how"></p>
+    <canvas class="cv" id="c3Cv" role="img" data-i18n-attr="aria-label:ch3.cvAria"></canvas>
+    <div class="legend">
+      <span><i style="background:var(--cyan)"></i><span data-i18n="ch3.legAvg"></span></span>
+      <span><i style="background:var(--gold)"></i><span data-i18n="ch3.legFirst"></span></span>
+      <span><i style="background:var(--red)"></i><span data-i18n="ch3.legCap"></span></span>
+    </div>
+    <div class="ctl">
+      <div class="grp"><span class="lbl" data-i18n="ch3.dimLbl"></span><div class="seg" id="c3Dim">
+        <button type="button" class="b" data-dim="4">d = 4</button>
+        <button type="button" class="b on" data-dim="8">d = 8</button>
+        <button type="button" class="b" data-dim="16">d = 16</button>
+      </div></div>
+      <label class="rng"><span data-i18n="ch3.writesLbl"></span><input type="range" id="c3Writes" min="2" max="32" step="1" value="16"><output id="c3WritesOut"></output></label>
+      <label class="chk"><input type="checkbox" id="c3Over"><span data-i18n="ch3.overLbl"></span></label>
+    </div>
+    <div class="read">
+      <div><span data-i18n="ch3.rLoad"></span><b class="g" id="c3LoadVal"></b></div>
+      <div><span data-i18n="ch3.rCos"></span><b class="c" id="c3CosVal"></b></div>
+      <div><span data-i18n="ch3.rKey0"></span><b class="r" id="c3Key0Val"></b></div>
+      <div><span data-i18n="ch3.rMse"></span><b id="c3MseVal"></b></div>
+    </div>
+    <p class="say" id="c3Say" aria-live="polite"></p>
+  </figure></div>
+  <div class="wrap">
+    <p data-i18n-html="ch3.p3"></p>
+    <p class="take" data-i18n-html="ch3.limit"></p>
+  </div>
+</section>
+
+<!-- 04 Erase Before You Write: The Delta Rule -->
+<section class="ch" id="ch4" data-step>
+  <div class="wrap">
+    <div class="num">04</div>
+    <h2 data-i18n="ch4.title"></h2>
+    <p class="law" data-i18n-html="ch4.law"></p>
+    <p data-i18n-html="ch4.p1"></p>
+    <div class="eq" data-i18n="ch4.eq"></div>
+    <p data-i18n-html="ch4.p2"></p>
+  </div>
+  <div class="wide"><figure class="lab">
+    <h3 data-i18n="ch4.labTitle"></h3>
+    <p class="how" data-i18n="ch4.how"></p>
+    <canvas class="cv" id="c4Cv" role="img" data-i18n-attr="aria-label:ch4.cvAria"></canvas>
+    <div class="legend">
+      <span><i style="background:var(--green)"></i><span data-i18n="ch4.legDelta"></span></span>
+      <span><i style="background:var(--red)"></i><span data-i18n="ch4.legAdd"></span></span>
+    </div>
+    <div class="ctl">
+      <div class="grp"><span class="lbl" data-i18n="ch4.modeLbl"></span><div class="seg" id="c4Mode">
+        <button type="button" class="b on" data-mode="update" data-i18n="ch4.modeUpd"></button>
+        <button type="button" class="b" data-mode="distinct" data-i18n="ch4.modeDist"></button>
+      </div></div>
+      <label class="rng"><span data-i18n="ch4.betaLbl"></span><input type="range" id="c4Beta" min="0.1" max="1.4" step="0.05" value="1.0"><output id="c4BetaOut"></output></label>
+    </div>
+    <div class="read">
+      <div><span data-i18n="ch4.rDeltaCos"></span><b class="n" id="c4DelCosVal"></b></div>
+      <div><span data-i18n="ch4.rAddCos"></span><b class="r" id="c4AddCosVal"></b></div>
+      <div><span data-i18n="ch4.rDeltaMse"></span><b class="n" id="c4DelMseVal"></b></div>
+      <div><span data-i18n="ch4.rAddMse"></span><b class="r" id="c4AddMseVal"></b></div>
+    </div>
+    <p class="say" id="c4Say" aria-live="polite"></p>
+  </figure></div>
+  <div class="wrap">
+    <p data-i18n-html="ch4.p3"></p>
+    <p class="take" data-i18n-html="ch4.limit"></p>
+  </div>
+</section>
+
+<!-- 05 Adding a Decay Gate: Gated DeltaNet -->
+<section class="ch" id="ch5" data-step>
+  <div class="wrap">
+    <div class="num">05</div>
+    <h2 data-i18n="ch5.title"></h2>
+    <p class="law" data-i18n-html="ch5.law"></p>
+    <p data-i18n-html="ch5.p1"></p>
+    <div class="eq" data-i18n="ch5.eq"></div>
+    <p data-i18n-html="ch5.p2"></p>
+  </div>
+  <div class="wide"><figure class="lab">
+    <h3 data-i18n="ch5.labTitle"></h3>
+    <p class="how" data-i18n="ch5.how"></p>
+    <canvas class="cv tall" id="c5Cv" role="img" data-i18n-attr="aria-label:ch5.cvAria"></canvas>
+    <div class="legend">
+      <span><i style="background:var(--green)"></i><span data-i18n="ch5.legGD"></span></span>
+      <span><i style="background:var(--cyan)"></i><span data-i18n="ch5.legDelta"></span></span>
+      <span><i style="background:var(--red)"></i><span data-i18n="ch5.legDecay"></span></span>
+    </div>
+    <div class="ctl">
+      <label class="rng"><span data-i18n="ch5.alphaLbl"></span><input type="range" id="c5Alpha" min="0.60" max="1.00" step="0.02" value="0.96"><output id="c5AlphaOut"></output></label>
+      <label class="rng"><span data-i18n="ch5.betaLbl"></span><input type="range" id="c5Beta" min="0.2" max="1.0" step="0.05" value="0.90"><output id="c5BetaOut"></output></label>
+      <label class="chk"><input type="checkbox" id="c5Dip" checked><span data-i18n="ch5.dipLbl"></span></label>
+    </div>
+    <div class="read">
+      <div><span data-i18n="ch5.rGDActive"></span><b class="n" id="c5GDAVal"></b></div>
+      <div><span data-i18n="ch5.rDecayActive"></span><b class="r" id="c5DecAVal"></b></div>
+      <div><span data-i18n="ch5.rGDStale"></span><b class="g" id="c5GDSVal"></b></div>
+      <div><span data-i18n="ch5.rDeltaStale"></span><b class="c" id="c5DelSVal"></b></div>
+    </div>
+    <p class="say" id="c5Say" aria-live="polite"></p>
+  </figure></div>
+  <div class="wrap">
+    <p data-i18n-html="ch5.p3"></p>
+    <p class="take" data-i18n-html="ch5.limit"></p>
+  </div>
+</section>
+
+<!-- 06 Chunkwise Parallelism & SSD -->
+<section class="ch" id="ch6" data-step>
+  <div class="wrap">
+    <div class="num">06</div>
+    <h2 data-i18n="ch6.title"></h2>
+    <p class="law" data-i18n-html="ch6.law"></p>
+    <p data-i18n-html="ch6.p1"></p>
+    <p data-i18n-html="ch6.p2"></p>
+  </div>
+  <div class="wide"><figure class="lab">
+    <h3 data-i18n="ch6.labTitle"></h3>
+    <p class="how" data-i18n="ch6.how"></p>
+    <canvas class="cv" id="c6Cv" role="img" data-i18n-attr="aria-label:ch6.cvAria"></canvas>
+    <div class="ctl">
+      <div class="grp"><span class="lbl" data-i18n="ch6.chunkLbl"></span><div class="seg" id="c6Chunk">
+        <button type="button" class="b" data-chunk="1">C = 1</button>
+        <button type="button" class="b" data-chunk="2">C = 2</button>
+        <button type="button" class="b on" data-chunk="4">C = 4</button>
+        <button type="button" class="b" data-chunk="8">C = 8</button>
+        <button type="button" class="b" data-chunk="16">C = 16</button>
+      </div></div>
+      <label class="rng"><span data-i18n="ch6.decayLbl"></span><input type="range" id="c6Decay" min="0.50" max="1.00" step="0.02" value="0.92"><output id="c6DecayOut"></output></label>
+    </div>
+    <div class="read">
+      <div><span data-i18n="ch6.rDiff"></span><b class="n" id="c6DiffVal"></b></div>
+      <div><span data-i18n="ch6.rSerial64k"></span><b class="g" id="c6StepsVal"></b></div>
+      <div><span data-i18n="ch6.rSpeed"></span><b class="c" id="c6RedVal"></b></div>
+      <div><span data-i18n="ch6.rMatmul"></span><b id="c6MatVal"></b></div>
+    </div>
+    <p class="say" id="c6Say" aria-live="polite"></p>
+  </figure></div>
+  <div class="wrap">
+    <p data-i18n-html="ch6.p3"></p>
+    <p class="take" data-i18n-html="ch6.limit"></p>
+  </div>
+</section>
+
+<!-- 07 Exact Recall & the 3:1 Hybrid -->
+<section class="ch" id="ch7" data-step>
+  <div class="wrap">
+    <div class="num">07</div>
+    <h2 data-i18n="ch7.title"></h2>
+    <p class="law" data-i18n-html="ch7.law"></p>
+    <p data-i18n-html="ch7.p1"></p>
+    <p data-i18n-html="ch7.p2"></p>
+  </div>
+  <div class="wide"><figure class="lab">
+    <h3 data-i18n="ch7.labTitle"></h3>
+    <p class="how" data-i18n="ch7.how"></p>
+    <canvas class="cv" id="c7Cv" role="img" data-i18n-attr="aria-label:ch7.cvAria"></canvas>
+    <div class="legend">
+      <span><i style="background:var(--gold)"></i><span data-i18n="ch7.legHyb"></span></span>
+      <span><i style="background:var(--red)"></i><span data-i18n="ch7.legPure"></span></span>
+    </div>
+    <div class="ctl">
+      <div class="grp"><span class="lbl" data-i18n="ch7.ratioLbl"></span><div class="seg" id="c7Ratio">
+        <button type="button" class="b" data-ratio="0:1" data-i18n="ch7.r0"></button>
+        <button type="button" class="b" data-ratio="7:1">7:1</button>
+        <button type="button" class="b on" data-ratio="3:1">3:1</button>
+        <button type="button" class="b" data-ratio="1:1">1:1</button>
+        <button type="button" class="b" data-ratio="full" data-i18n="ch7.rFull"></button>
+      </div></div>
+      <label class="rng"><span data-i18n="ch7.factsLbl"></span><input type="range" id="c7Facts" min="2" max="40" step="2" value="32"><output id="c7FactsOut"></output></label>
+    </div>
+    <div class="read">
+      <div><span data-i18n="ch7.rHybAcc"></span><b class="g" id="c7HybAccVal"></b></div>
+      <div><span data-i18n="ch7.rPureAcc"></span><b class="r" id="c7PureAccVal"></b></div>
+      <div><span data-i18n="ch7.rKvSave"></span><b class="n" id="c7SaveVal"></b></div>
+      <div><span data-i18n="ch7.rHybCos"></span><b class="c" id="c7HybCosVal"></b></div>
+    </div>
+    <p class="say" id="c7Say" aria-live="polite"></p>
+  </figure></div>
+  <div class="wrap">
+    <p data-i18n-html="ch7.p3"></p>
+    <p class="take" data-i18n-html="ch7.limit"></p>
+  </div>
+</section>
+
+<!-- 08 Roofline & Local Throughput -->
+<section class="ch" id="ch8" data-step>
+  <div class="wrap">
+    <div class="num">08</div>
+    <h2 data-i18n="ch8.title"></h2>
+    <p class="law" data-i18n-html="ch8.law"></p>
+    <p data-i18n-html="ch8.p1"></p>
+    <div class="eq" data-i18n="ch8.eq"></div>
+    <p data-i18n-html="ch8.p2"></p>
+  </div>
+  <div class="wide"><figure class="lab">
+    <h3 data-i18n="ch8.labTitle"></h3>
+    <p class="how" data-i18n="ch8.how"></p>
+    <canvas class="cv" id="c8Cv" role="img" data-i18n-attr="aria-label:ch8.cvAria"></canvas>
+    <div class="legend">
+      <span><i style="background:var(--gold)"></i><span data-i18n="ch8.legHyb"></span></span>
+      <span><i style="background:var(--cyan)"></i><span data-i18n="ch8.legFull"></span></span>
+    </div>
+    <div class="ctl">
+      <label class="rng"><span data-i18n="ch8.ctxLbl"></span><input type="range" id="c8Ctx" min="2" max="8" step="1" value="6"><output id="c8CtxOut"></output></label>
+      <label class="rng"><span data-i18n="ch8.bwLbl"></span><input type="range" id="c8Bw" min="80" max="800" step="10" value="150"><output id="c8BwOut"></output></label>
+    </div>
+    <div class="read">
+      <div><span data-i18n="ch8.rHybTok"></span><b class="g" id="c8HybTokVal"></b></div>
+      <div><span data-i18n="ch8.rFullTok"></span><b class="c" id="c8FullTokVal"></b></div>
+      <div><span data-i18n="ch8.rSpeedup"></span><b class="n" id="c8SpdVal"></b></div>
+      <div><span data-i18n="ch8.rKvPct"></span><b class="r" id="c8KvPctVal"></b></div>
+    </div>
+    <p class="say" id="c8Say" aria-live="polite"></p>
+  </figure></div>
+  <div class="wrap">
+    <p data-i18n-html="ch8.p3"></p>
+    <p class="take" data-i18n-html="ch8.limit"></p>
+  </div>
+</section>
+
+<!-- 09 Frontier & Diagnostic Checklist -->
+<section class="ch" id="ch9" data-step>
+  <div class="wrap">
+    <div class="num">09</div>
+    <h2 data-i18n="ch9.title"></h2>
+    <p class="law" data-i18n-html="ch9.law"></p>
+    <p data-i18n-html="ch9.p1"></p>
+    <ul class="plain">
+      <li data-i18n-html="ch9.f1"></li>
+      <li data-i18n-html="ch9.f2"></li>
+      <li data-i18n-html="ch9.f3"></li>
+      <li data-i18n-html="ch9.f4"></li>
+      <li data-i18n-html="ch9.f5"></li>
+    </ul>
+  </div>
+  <div class="wide"><figure class="lab">
+    <h3 data-i18n="ch9.labTitle"></h3>
+    <p class="how" data-i18n="ch9.how"></p>
+    <div class="ctl">
+      <div class="grp"><span class="lbl" data-i18n="ch9.ctxLbl"></span><div class="seg" id="c9Ctx">
+        <button type="button" class="b" data-ctx="8192">8K</button>
+        <button type="button" class="b" data-ctx="32768">32K</button>
+        <button type="button" class="b on" data-ctx="65536">64K</button>
+        <button type="button" class="b" data-ctx="131072">128K</button>
+        <button type="button" class="b" data-ctx="262144">256K</button>
+      </div></div>
+    </div>
+    <div class="tableWrap"><table class="cmp">
+      <thead><tr>
+        <th data-i18n="ch9.thArch"></th>
+        <th class="numc" data-i18n="ch9.thKv"></th>
+        <th class="numc" data-i18n="ch9.thRec"></th>
+        <th class="numc" data-i18n="ch9.thTot"></th>
+        <th class="numc" data-i18n="ch9.thSpd"></th>
+        <th data-i18n="ch9.thRecap"></th>
+      </tr></thead>
+      <tbody id="c9Body"></tbody>
+    </table></div>
+    <p class="say" id="c9Say" aria-live="polite"></p>
+  </figure></div>
+  <div class="wrap">
+    <p data-i18n-html="ch9.p2"></p>
+    <div class="sum">
+      <h3 data-i18n="ch9.sumTitle"></h3>
+      <ol>
+        <li data-i18n-html="ch9.q1"></li>
+        <li data-i18n-html="ch9.q2"></li>
+        <li data-i18n-html="ch9.q3"></li>
+        <li data-i18n-html="ch9.q4"></li>
+      </ol>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap">
+  <p data-i18n-html="foot.sources"></p>
+  <p data-i18n-html="foot.linksIntro"></p>
+  <ul class="links">
+    <li><a href="../attention-mechanism/#step1" data-i18n="foot.l1"></a></li>
+    <li><a href="../embeddings/#step1" data-i18n="foot.l2"></a></li>
+    <li><a href="../llm-sampling/#step1" data-i18n="foot.l3"></a></li>
+    <li><a href="../../systems/switches-that-compute/#ch9" data-i18n="foot.l4"></a></li>
+  </ul>
+</div></footer>
+
+<script src="models.js"></script>
+<script src="copy.zh.js"></script>
+<script src="copy.en.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
