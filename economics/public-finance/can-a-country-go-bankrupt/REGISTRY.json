@@ -1,0 +1,168 @@
+{
+  "slug": "can-a-country-go-bankrupt",
+  "category": "economics",
+  "subtopic": "public-finance",
+  "subtopicLabel": {
+    "zh": "公共财政与国债",
+    "en": "Public Finance & Public Debt"
+  },
+  "stage": "university",
+  "path": "economics/public-finance/can-a-country-go-bankrupt/",
+  "title": {
+    "zh": "国家会破产吗：国债、赤字与代际账单",
+    "en": "Can a Country Go Bankrupt? Public Debt, Deficits, and Sovereign Arithmetic"
+  },
+  "desc": {
+    "zh": "从流量与存量、基本赤字、r − g 雪球方程、本币债与外币「原罪」、到期再融资悬崖、财政乘数、养老隐性账单、历史化债拆解，到 2026 年底主要经济体账本。",
+    "en": "From flows vs. stocks, primary balances, and r − g snowball arithmetic to own- vs. foreign-currency debt, rollover cliffs, fiscal multipliers, PAYG pensions, historical deleveraging, and late-2026 data."
+  },
+  "tags": {
+    "zh": ["国债", "财政赤字", "r−g", "主权违约", "基本盈余", "原罪", "财政乘数", "养老金"],
+    "en": ["public debt", "deficit", "r-g", "sovereign default", "primary balance", "original sin", "fiscal multiplier", "pensions"]
+  },
+  "relatedPages": [
+    "why-one-rate-moves-everything",
+    "how-an-economy-is-measured",
+    "where-money-comes-from",
+    "interest-rates-bonds",
+    "compound-interest"
+  ],
+  "concepts": [
+    {
+      "id": "primary-balance-vs-deficit",
+      "title": {
+        "zh": "基本财政余额与赤字 vs 国债存量",
+        "en": "Primary balance vs. headline deficit and debt stock"
+      },
+      "desc": {
+        "zh": "剥除历史债务利息后的当期收支余额，以及为什么必须用占 GDP 比重而非名义金额衡量债务。",
+        "en": "Stripping legacy interest out of the annual deficit to separate flow shortfalls from cumulative debt stock."
+      },
+      "aliases": {
+        "zh": ["基本赤字", "基本盈余", "财政赤字", "国债余额", "利息支出", "国债太多会怎样", "赤字率"],
+        "en": ["primary balance", "primary deficit", "primary surplus", "headline deficit", "debt to gdp", "interest on national debt"]
+      },
+      "anchor": "#ch1",
+      "relatedPages": ["how-an-economy-is-measured"]
+    },
+    {
+      "id": "debt-dynamics-snowball",
+      "title": {
+        "zh": "债务比动态方程与 r − g 雪球边界",
+        "en": "Debt-ratio law of motion and the r − g snowball boundary"
+      },
+      "desc": {
+        "zh": "用 d_{t+1} = d_t(1+r)/(1+g) − pb 推导稳债临界基本盈余 pb*，区分温和收敛与指数滚雪球。",
+        "en": "Deriving the debt-stabilizing primary balance pb* from r − g and mapping converging vs. snowballing debt paths."
+      },
+      "aliases": {
+        "zh": ["r减g", "r-g", "债务雪球", "债务可持续性", "稳债盈余", "政府债务会爆炸吗"],
+        "en": ["r minus g", "debt snowball", "debt sustainability", "stabilizing primary surplus", "will national debt explode"]
+      },
+      "anchor": "#ch2",
+      "relatedPages": ["why-one-rate-moves-everything", "compound-interest"]
+    },
+    {
+      "id": "currency-denomination-original-sin",
+      "title": {
+        "zh": "本币债与外币债（「金融原罪」与突然停摆）",
+        "en": "Own-currency vs. foreign-currency debt (original sin)"
+      },
+      "desc": {
+        "zh": "浮动本币发行国面临通胀与汇率约束，而高外币债国家在贬值冲击下面临资产负债表跳升与突然停摆。",
+        "en": "Why floating own-currency sovereigns face inflation constraints while foreign-currency borrowers face sudden stops."
+      },
+      "aliases": {
+        "zh": ["原罪", "外币债", "本币债", "主权破产", "国家会破产吗", "国家印钱还债", "突然停摆"],
+        "en": ["original sin", "foreign currency debt", "sudden stop", "can a country go bankrupt", "can governments just print money", "sovereign default"]
+      },
+      "anchor": "#ch3",
+      "relatedPages": ["where-money-comes-from"]
+    },
+    {
+      "id": "maturity-wall-rollover-cb",
+      "title": {
+        "zh": "到期期限墙、WAM 再融资与央行合并久期",
+        "en": "Maturity walls, WAM rollover, and central-bank balance sheets"
+      },
+      "desc": {
+        "zh": "加权平均期限决定加息传导速度；把财政部与央行并表后，QE 实质上把长期固息债换成了隔夜浮息准备金。",
+        "en": "How WAM paces coupon repricing and how central bank QE swaps fixed long bonds into floating overnight reserves."
+      },
+      "aliases": {
+        "zh": ["国债期限", "借新还旧", "再融资风险", "加权平均期限", "央行买债", "合并资产负债表"],
+        "en": ["weighted average maturity", "rollover risk", "gross financing needs", "maturity wall", "consolidated balance sheet"]
+      },
+      "anchor": "#ch4",
+      "relatedPages": ["why-one-rate-moves-everything", "interest-rates-bonds"]
+    },
+    {
+      "id": "fiscal-multiplier-crowding-out",
+      "title": {
+        "zh": "财政乘数、零利率下限与利率挤出效应",
+        "en": "Fiscal multipliers, the zero lower bound, and crowding out"
+      },
+      "desc": {
+        "zh": "结合 Ramey (2019) 经验范围，计算常态 vs 零利率下限的乘数差异与 1 年 / 5 年净债务比变化。",
+        "en": "Calibrating normal vs. ZLB multipliers (Ramey 2019) and net 1-year vs. 5-year debt-ratio impacts."
+      },
+      "aliases": {
+        "zh": ["财政乘数", "挤出效应", "零利率下限", "借债搞基建划算吗", "政府刺激能自己赚回来吗"],
+        "en": ["fiscal multiplier", "crowding out", "does stimulus pay for itself", "zero lower bound"]
+      },
+      "anchor": "#ch5",
+      "relatedPages": ["why-one-rate-moves-everything"]
+    },
+    {
+      "id": "demographic-payg-implicit-debt",
+      "title": {
+        "zh": "老龄化、现收现付养老医疗与隐性财政账单",
+        "en": "Demographics, PAYG pensions, and off-balance-sheet liabilities"
+      },
+      "desc": {
+        "zh": "抚养比下降如何通过法定养老与医疗支出挤压税收空间里的可支配预算。",
+        "en": "How falling worker-to-retiree ratios compress discretionary budgets beneath realistic tax ceilings."
+      },
+      "aliases": {
+        "zh": ["隐性债务", "现收现付", "养老金缺口", "老龄化财政压力", "代际账单"],
+        "en": ["implicit debt", "unfunded pension liabilities", "pay as you go", "aging fiscal pressure"]
+      },
+      "anchor": "#ch6",
+      "relatedPages": []
+    },
+    {
+      "id": "historical-debt-reduction",
+      "title": {
+        "zh": "历史化债分解：基本盈余、增长、通胀抑制与重组",
+        "en": "Historical debt-reduction decompositions"
+      },
+      "desc": {
+        "zh": "基于 Hall & Sargent 与 Acalin & Ball (2024) 重构战后美国（106%→23%）与 1990 年代整顿及重组路径。",
+        "en": "Decomposing post-WWII US (106% to 23%), 1990s consolidations, and restructuring episodes."
+      },
+      "aliases": {
+        "zh": ["怎么还清国债", "化债", "金融抑制", "二战后美国国债", "债务重组削债"],
+        "en": ["how countries pay off debt", "deleveraging", "financial repression", "debt haircut", "post ww2 us debt"]
+      },
+      "anchor": "#ch7",
+      "relatedPages": []
+    },
+    {
+      "id": "sovereign-debt-2026-frontier",
+      "title": {
+        "zh": "2026 年底主要经济体国债账本与 Blanchard–Rogoff 争论",
+        "en": "Late-2026 sovereign debt ledger and Blanchard–Rogoff debate"
+      },
+      "desc": {
+        "zh": "对比 2026 年美、日、欧、中、新兴市场的 IMF/CBO 债务与利息口径，分离会计事实、历史统计与前沿争论。",
+        "en": "Comparing 2026 IMF and CBO debt and interest figures across US, Japan, Euro Area, China, and EMs."
+      },
+      "aliases": {
+        "zh": ["美国国债2026", "日本国债", "中国政府债务", "布兰查德", "IMF财政监测"],
+        "en": ["us national debt 2026", "japan debt to gdp", "imf fiscal monitor 2026", "blanchard r minus g", "cbo outlook 2026"]
+      },
+      "anchor": "#ch8",
+      "relatedPages": ["why-one-rate-moves-everything", "how-an-economy-is-measured"]
+    }
+  ]
+}

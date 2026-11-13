@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>强化学习：智能体怎么在试错里学会长远打算</title>
+<meta name="description" content="从探索与利用、贝尔曼方程、TD 与策略梯度，到 PPO/GRPO、MCTS 与奖励黑客——九个交互模型拆解强化学习如何从延迟奖惩里学会长远决策。" />
+<style>
+  :root {
+    --bg: #0c0e13;
+    --card: #141821;
+    --card2: #1a1f2b;
+    --line: #2c3344;
+    --ink: #ebe8e0;
+    --body: #d5d7de;
+    --mute: #a7aebb;
+    --dim: #949cad;
+    --gold: #e9b949;
+    --cyan: #63c7e6;
+    --red: #f27a6c;
+    --green: #7ad6a0;
+    --violet: #b39dfb;
+    --sans: "Noto Sans SC", "PingFang SC", "Hiragino Sans GB", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 17px;
+    line-height: 1.78;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  .bar {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: rgba(12, 14, 19, 0.94);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  .bar-in {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 8px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .bar a {
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    min-height: 48px;
+    padding: 0 8px 0 0;
+  }
+  .bar a:hover { color: var(--gold); }
+  .lang-group { display: inline-flex; gap: 6px; }
+  .lang {
+    background: var(--card);
+    border: 1px solid var(--line);
+    color: var(--ink);
+    border-radius: 6px;
+    min-height: 48px;
+    min-width: 48px;
+    padding: 0 14px;
+    font-family: var(--mono);
+    font-size: 13px;
+    cursor: pointer;
+  }
+  .lang[aria-pressed="true"] {
+    background: var(--gold);
+    color: #0c0e13;
+    border-color: var(--gold);
+    font-weight: 700;
+  }
+
+  main { max-width: 780px; margin: 0 auto; padding: 36px 20px 80px; }
+
+  .kicker {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin: 0 0 10px;
+  }
+  h1 {
+    font-size: clamp(28px, 5vw, 40px);
+    line-height: 1.18;
+    margin: 0 0 14px;
+    letter-spacing: -0.015em;
+  }
+  .lead {
+    font-size: 18px;
+    line-height: 1.7;
+    color: var(--body);
+    margin: 0 0 22px;
+  }
+
+  .toc {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin: 22px 0 38px;
+    padding: 14px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+  }
+  .toc a {
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 13.5px;
+    padding: 8px 10px;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    border-radius: 5px;
+    line-height: 1.35;
+  }
+  .toc a:hover { background: var(--card2); color: var(--gold); }
+  .toc b { color: var(--gold); font-family: var(--mono); font-size: 12px; flex-shrink: 0; }
+
+  section {
+    padding: 36px 0;
+    border-top: 1px solid var(--line);
+  }
+  section:first-of-type { border-top: none; padding-top: 8px; }
+  .sec-num {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin: 0 0 4px;
+  }
+  h2 {
+    font-size: clamp(22px, 3.6vw, 28px);
+    line-height: 1.28;
+    margin: 0 0 16px;
+  }
+  h3 {
+    font-size: 18px;
+    margin: 24px 0 10px;
+    color: var(--ink);
+  }
+  p { margin: 0 0 15px; color: var(--body); }
+  p strong { color: var(--ink); }
+  p a, li a { color: var(--cyan); text-decoration: underline; text-underline-offset: 3px; }
+  p a:hover, li a:hover { color: var(--gold); }
+  ul.prose-list, ol.prose-list {
+    margin: 8px 0 18px;
+    padding-left: 22px;
+    color: var(--body);
+  }
+  ul.prose-list li, ol.prose-list li { margin-bottom: 8px; }
+
+  .eq {
+    font-family: var(--mono);
+    font-size: 13.5px;
+    color: var(--ink);
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--gold);
+    border-radius: 6px;
+    padding: 12px 14px;
+    margin: 14px 0 18px;
+    overflow-x: auto;
+    line-height: 1.6;
+  }
+  .eq .eq-note {
+    display: block;
+    margin-top: 6px;
+    color: var(--mute);
+    font-family: var(--sans);
+    font-size: 13px;
+  }
+
+  .limit-box {
+    background: rgba(242, 122, 108, 0.08);
+    border: 1px solid rgba(242, 122, 108, 0.32);
+    border-left: 3px solid var(--red);
+    border-radius: 6px;
+    padding: 12px 14px;
+    margin: 16px 0 18px;
+    font-size: 14.5px;
+    color: var(--body);
+  }
+  .limit-box strong { color: var(--ink); }
+
+  .lab {
+    margin: 22px 0 22px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 16px;
+  }
+  .lab-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+  }
+  .lab-title { font-weight: 700; font-size: 15px; color: var(--ink); }
+  .lab-sub { font-size: 12.5px; color: var(--mute); font-family: var(--mono); }
+
+  canvas.stage {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    background: #090b10;
+    border: 1px solid var(--line);
+  }
+
+  .ctrl {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid var(--line);
+  }
+  .field {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 155px;
+    flex: 1 1 170px;
+  }
+  .field-top {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12.5px;
+    color: var(--mute);
+    gap: 6px;
+  }
+  .field-top b { font-family: var(--mono); color: var(--gold); font-weight: 600; }
+  input[type="range"] {
+    width: 100%;
+    height: 48px;
+    accent-color: var(--gold);
+    cursor: pointer;
+    margin: -10px 0;
+  }
+
+  .seg { display: inline-flex; flex-wrap: wrap; gap: 6px; }
+  .btn {
+    background: var(--card2);
+    color: var(--ink);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    min-height: 48px;
+    min-width: 48px;
+    padding: 0 14px;
+    font-family: var(--sans);
+    font-size: 13.5px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .btn:hover { border-color: var(--gold); }
+  .btn[aria-pressed="true"], .btn.on {
+    background: var(--gold);
+    color: #0c0e13;
+    border-color: var(--gold);
+    font-weight: 700;
+  }
+  label.chk {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 48px;
+    padding: 0 12px;
+    border-radius: 6px;
+    border: 1px solid var(--line);
+    background: var(--card2);
+    font-size: 13.5px;
+    cursor: pointer;
+    user-select: none;
+    color: var(--ink);
+  }
+  label.chk input { width: 18px; height: 18px; accent-color: var(--gold); cursor: pointer; }
+
+  .read {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 8px;
+    margin-top: 12px;
+  }
+  .tile {
+    background: var(--card2);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 8px 10px;
+  }
+  .tile .k { font-size: 12px; color: var(--mute); }
+  .tile .v { font-family: var(--mono); font-size: 15px; font-weight: 700; margin-top: 2px; color: var(--ink); }
+  .tile.good .v { color: var(--green); }
+  .tile.warn .v { color: var(--gold); }
+  .tile.bad .v { color: var(--red); }
+  .tile.cyan .v { color: var(--cyan); }
+
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 10px;
+    font-size: 12.5px;
+    color: var(--mute);
+  }
+  .legend i {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+    margin-right: 5px;
+    vertical-align: middle;
+  }
+
+  .say {
+    margin-top: 12px;
+    padding: 10px 12px;
+    background: var(--card2);
+    border-left: 3px solid var(--gold);
+    border-radius: 4px;
+    font-size: 14.5px;
+    color: var(--ink);
+  }
+
+  /* Interactive 3x3 Tic-Tac-Toe helper inside Ch7 */
+  .ttt-wrap {
+    display: grid;
+    grid-template-columns: 190px 1fr;
+    gap: 16px;
+    align-items: start;
+  }
+  .ttt-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 56px);
+    gap: 6px;
+  }
+  .ttt-cell {
+    width: 56px;
+    height: 56px;
+    border-radius: 6px;
+    border: 1px solid var(--line);
+    background: var(--card2);
+    color: var(--ink);
+    font-family: var(--mono);
+    font-size: 22px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .ttt-cell:hover { border-color: var(--gold); }
+  .ttt-cell.x { color: var(--cyan); }
+  .ttt-cell.o { color: var(--red); }
+  .ttt-cell.best { box-shadow: inset 0 0 0 2px var(--gold); }
+
+  .frontier-list {
+    display: grid;
+    gap: 12px;
+    margin: 18px 0 24px;
+  }
+  .fcard {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 14px 16px;
+  }
+  .fcard-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+  }
+  .fcard-title { font-weight: 700; font-size: 15.5px; color: var(--ink); }
+  .tag {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    padding: 3px 9px;
+    border-radius: 99px;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  .tag.e { background: rgba(122, 214, 160, 0.16); color: var(--green); border: 1px solid rgba(122, 214, 160, 0.4); }
+  .tag.d { background: rgba(99, 199, 230, 0.16); color: var(--cyan); border: 1px solid rgba(99, 199, 230, 0.4); }
+  .tag.c { background: rgba(233, 185, 73, 0.16); color: var(--gold); border: 1px solid rgba(233, 185, 73, 0.4); }
+  .tag.o { background: rgba(242, 122, 108, 0.16); color: var(--red); border: 1px solid rgba(242, 122, 108, 0.4); }
+  .fcard p { margin: 0; font-size: 14.5px; }
+  .fcard .fmeta { font-family: var(--mono); font-size: 12px; color: var(--mute); margin-top: 6px; }
+
+  .ask {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 16px 18px;
+    margin-top: 18px;
+  }
+  .ask ol { margin: 8px 0 0; padding-left: 20px; }
+  .ask li { margin: 8px 0; color: var(--body); }
+
+  .related {
+    margin-top: 30px;
+    padding-top: 22px;
+    border-top: 1px solid var(--line);
+  }
+  .related h3 { margin-top: 0; font-size: 16px; color: var(--ink); }
+  .related-links {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 10px;
+  }
+  .related-links a {
+    display: flex;
+    align-items: center;
+    min-height: 48px;
+    padding: 10px 12px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  .related-links a:hover { border-color: var(--gold); color: var(--gold); }
+
+  footer {
+    margin-top: 42px;
+    padding-top: 18px;
+    border-top: 1px solid var(--line);
+    font-size: 13px;
+    color: var(--mute);
+  }
+
+  @media (max-width: 700px) {
+    .toc { grid-template-columns: repeat(2, 1fr); }
+    .read { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .ttt-wrap { grid-template-columns: 1fr; }
+    .related-links { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 440px) {
+    .toc { grid-template-columns: 1fr; }
+    main { padding: 26px 14px 64px; }
+    .bar-in { padding: 8px 14px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { transition: none !important; animation: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="bar-in">
+    <a href="../../../" id="navBack" data-t="nav.back"></a>
+    <div class="lang-group" role="group" aria-label="Language">
+      <button type="button" class="lang" id="langZh" data-lang="zh" aria-pressed="true">中</button>
+      <button type="button" class="lang" id="langEn" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <p class="kicker" data-t="hero.kicker"></p>
+  <h1 data-t="hero.title"></h1>
+  <p class="lead" data-t="hero.lead"></p>
+
+  <nav class="toc" aria-label="Contents">
+    <a href="#ch1"><b>01</b><span data-t="toc.c1"></span></a>
+    <a href="#ch2"><b>02</b><span data-t="toc.c2"></span></a>
+    <a href="#ch3"><b>03</b><span data-t="toc.c3"></span></a>
+    <a href="#ch4"><b>04</b><span data-t="toc.c4"></span></a>
+    <a href="#ch5"><b>05</b><span data-t="toc.c5"></span></a>
+    <a href="#ch6"><b>06</b><span data-t="toc.c6"></span></a>
+    <a href="#ch7"><b>07</b><span data-t="toc.c7"></span></a>
+    <a href="#ch8"><b>08</b><span data-t="toc.c8"></span></a>
+    <a href="#ch9"><b>09</b><span data-t="toc.c9"></span></a>
+  </nav>
+
+  <!-- CHAPTER 1 -->
+  <section id="ch1">
+    <p class="sec-num" data-t="c1.num"></p>
+    <h2 data-t="c1.title"></h2>
+    <p data-t="c1.p1"></p>
+    <p data-t="c1.p2"></p>
+    <div class="eq" data-t="c1.eq"></div>
+
+    <figure class="lab" id="lab1">
+      <div class="lab-head">
+        <span class="lab-title" data-t="c1.labTitle"></span>
+        <span class="lab-sub" data-t="c1.labSub"></span>
+      </div>
+      <canvas class="stage" id="cv1" width="740" height="320"></canvas>
+      <div class="ctrl">
+        <div class="field">
+          <div class="field-top"><span data-t="c1.epsLbl"></span><b id="c1EpsOut">0.12</b></div>
+          <input type="range" id="c1Eps" min="0" max="0.4" step="0.02" value="0.12" />
+        </div>
+        <div class="field">
+          <div class="field-top"><span data-t="c1.ucbLbl"></span><b id="c1UcbOut">0.75</b></div>
+          <input type="range" id="c1Ucb" min="0.2" max="2.5" step="0.05" value="0.75" />
+        </div>
+        <button type="button" class="btn" id="c1Reseed" data-t="c1.reseed"></button>
+      </div>
+      <div class="read">
+        <div class="tile bad"><div class="k" data-t="c1.r1k"></div><div class="v" id="c1r1"></div></div>
+        <div class="tile warn"><div class="k" data-t="c1.r2k"></div><div class="v" id="c1r2"></div></div>
+        <div class="tile good"><div class="k" data-t="c1.r3k"></div><div class="v" id="c1r3"></div></div>
+        <div class="tile cyan"><div class="k" data-t="c1.r4k"></div><div class="v" id="c1r4"></div></div>
+      </div>
+      <div class="legend">
+        <span><i style="background:var(--red)"></i><span data-t="c1.leg1"></span></span>
+        <span><i style="background:var(--gold)"></i><span data-t="c1.leg2"></span></span>
+        <span><i style="background:var(--green)"></i><span data-t="c1.leg3"></span></span>
+      </div>
+      <p class="say" id="c1Say" aria-live="polite" data-key="c1.sayBalanced"></p>
+    </figure>
+
+    <div class="limit-box" data-t="c1.limit"></div>
+  </section>
+
+  <!-- CHAPTER 2 -->
+  <section id="ch2">
+    <p class="sec-num" data-t="c2.num"></p>
+    <h2 data-t="c2.title"></h2>
+    <p data-t="c2.p1"></p>
+    <p data-t="c2.p2"></p>
+    <div class="eq" data-t="c2.eq"></div>
+    <p data-t="c2.p3"></p>
+
+    <figure class="lab" id="lab2">
+      <div class="lab-head">
+        <span class="lab-title" data-t="c2.labTitle"></span>
+        <span class="lab-sub" data-t="c2.labSub"></span>
+      </div>
+      <canvas class="stage" id="cv2" width="740" height="340"></canvas>
+      <div class="ctrl">
+        <div class="seg" role="group" aria-label="Policy mode">
+          <button type="button" class="btn on" id="c2PolOpt" data-pol="optimal" aria-pressed="true" data-t="c2.polOpt"></button>
+          <button type="button" class="btn" id="c2PolNaive" data-pol="alwaysGoal" aria-pressed="false" data-t="c2.polNaive"></button>
+          <button type="button" class="btn" id="c2PolSafe" data-pol="cautious" aria-pressed="false" data-t="c2.polSafe"></button>
+        </div>
+        <div class="field">
+          <div class="field-top"><span data-t="c2.gammaLbl"></span><b id="c2GammaOut">0.90</b></div>
+          <input type="range" id="c2Gamma" min="0.30" max="0.98" step="0.02" value="0.90" />
+        </div>
+        <div class="field">
+          <div class="field-top"><span data-t="c2.slipLbl"></span><b id="c2SlipOut">0.15</b></div>
+          <input type="range" id="c2Slip" min="0" max="0.40" step="0.05" value="0.15" />
+        </div>
+      </div>
+      <div class="read">
+        <div class="tile good"><div class="k" data-t="c2.r1k"></div><div class="v" id="c2r1"></div></div>
+        <div class="tile bad"><div class="k" data-t="c2.r2k"></div><div class="v" id="c2r2"></div></div>
+        <div class="tile cyan"><div class="k" data-t="c2.r3k"></div><div class="v" id="c2r3"></div></div>
+        <div class="tile warn"><div class="k" data-t="c2.r4k"></div><div class="v" id="c2r4"></div></div>
+      </div>
+      <div class="legend">
+        <span><i style="background:var(--green)"></i><span data-t="c2.leg1"></span></span>
+        <span><i style="background:var(--red)"></i><span data-t="c2.leg2"></span></span>
+        <span><i style="background:var(--gold)"></i><span data-t="c2.leg3"></span></span>
+      </div>
+      <p class="say" id="c2Say" aria-live="polite" data-key="c2.sayOpt"></p>
+    </figure>
+
+    <div class="limit-box" data-t="c2.limit"></div>
+  </section>
+
+  <!-- CHAPTER 3 -->
+  <section id="ch3">
+    <p class="sec-num" data-t="c3.num"></p>
+    <h2 data-t="c3.title"></h2>
+    <p data-t="c3.p1"></p>
+    <p data-t="c3.p2"></p>
+    <div class="eq" data-t="c3.eq"></div>
+
+    <figure class="lab" id="lab3">
+      <div class="lab-head">
+        <span class="lab-title" data-t="c3.labTitle"></span>
+        <span class="lab-sub" data-t="c3.labSub"></span>
+      </div>
+      <canvas class="stage" id="cv3" width="740" height="320"></canvas>
+      <div class="ctrl">
+        <div class="seg">
+          <button type="button" class="btn on" id="c3ModeVI" data-dpmode="vi" aria-pressed="true" data-t="c3.modeVI"></button>
+          <button type="button" class="btn" id="c3ModePI" data-dpmode="pi" aria-pressed="false" data-t="c3.modePI"></button>
+        </div>
+        <div class="seg">
+          <button type="button" class="btn" id="c3Play" aria-pressed="false" data-t="c3.play"></button>
+          <button type="button" class="btn" id="c3Step" data-t="c3.step"></button>
+          <button type="button" class="btn" id="c3Reset" data-t="c3.reset"></button>
+        </div>
+      </div>
+      <div class="read">
+        <div class="tile warn"><div class="k" data-t="c3.r1k"></div><div class="v" id="c3r1"></div></div>
+        <div class="tile cyan"><div class="k" data-t="c3.r2k"></div><div class="v" id="c3r2"></div></div>
+        <div class="tile good"><div class="k" data-t="c3.r3k"></div><div class="v" id="c3r3"></div></div>
+        <div class="tile"><div class="k" data-t="c3.r4k"></div><div class="v" id="c3r4"></div></div>
+      </div>
+      <div class="legend">
+        <span><i style="background:var(--cyan)"></i><span data-t="c3.leg1"></span></span>
+        <span><i style="background:var(--green)"></i><span data-t="c3.leg2"></span></span>
+      </div>
+      <p class="say" id="c3Say" aria-live="polite" data-key="c3.sayVI"></p>
+    </figure>
+
+    <div class="limit-box" data-t="c3.limit"></div>
+  </section>
+
+  <!-- CHAPTER 4 -->
+  <section id="ch4">
+    <p class="sec-num" data-t="c4.num"></p>
+    <h2 data-t="c4.title"></h2>
+    <p data-t="c4.p1"></p>
+    <p data-t="c4.p2"></p>
+    <div class="eq" data-t="c4.eq"></div>
+    <p data-t="c4.p3"></p>
+
+    <figure class="lab" id="lab4">
+      <div class="lab-head">
+        <span class="lab-title" data-t="c4.labTitle"></span>
+        <span class="lab-sub" data-t="c4.labSub"></span>
+      </div>
+      <canvas class="stage" id="cv4" width="740" height="360"></canvas>
+      <div class="ctrl">
+        <div class="field">
+          <div class="field-top"><span data-t="c4.alphaLbl"></span><b id="c4AlphaOut">0.40</b></div>
+          <input type="range" id="c4Alpha" min="0.10" max="0.80" step="0.05" value="0.40" />
+        </div>
+        <div class="field">
+          <div class="field-top"><span data-t="c4.epsLbl"></span><b id="c4EpsOut">0.10</b></div>
+          <input type="range" id="c4Eps" min="0.02" max="0.30" step="0.02" value="0.10" />
+        </div>
+        <button type="button" class="btn" id="c4Reseed" data-t="c4.reseed"></button>
+      </div>
+      <div class="read">
+        <div class="tile cyan"><div class="k" data-t="c4.r1k"></div><div class="v" id="c4r1"></div></div>
+        <div class="tile good"><div class="k" data-t="c4.r2k"></div><div class="v" id="c4r2"></div></div>
+        <div class="tile bad"><div class="k" data-t="c4.r3k"></div><div class="v" id="c4r3"></div></div>
+        <div class="tile good"><div class="k" data-t="c4.r4k"></div><div class="v" id="c4r4"></div></div>
+      </div>
+      <div class="legend">
+        <span><i style="background:var(--cyan)"></i><span data-t="c4.leg1"></span></span>
+        <span><i style="background:var(--green)"></i><span data-t="c4.leg2"></span></span>
+        <span><i style="background:var(--red)"></i><span data-t="c4.leg3"></span></span>
+      </div>
+      <p class="say" id="c4Say" aria-live="polite" data-key="c4.sayDiff"></p>
+    </figure>
+
+    <div class="limit-box" data-t="c4.limit"></div>
+  </section>
+
+  <!-- CHAPTER 5 -->
+  <section id="ch5">
+    <p class="sec-num" data-t="c5.num"></p>
+    <h2 data-t="c5.title"></h2>
+    <p data-t="c5.p1"></p>
+    <p data-t="c5.p2"></p>
+    <div class="eq" data-t="c5.eq"></div>
+
+    <figure class="lab" id="lab5">
+      <div class="lab-head">
+        <span class="lab-title" data-t="c5.labTitle"></span>
+        <span class="lab-sub" data-t="c5.labSub"></span>
+      </div>
+      <canvas class="stage" id="cv5" width="740" height="320"></canvas>
+      <div class="ctrl">
+        <label class="chk">
+          <input type="checkbox" id="c5Base" checked />
+          <span data-t="c5.useBase"></span>
+        </label>
+        <div class="field">
+          <div class="field-top"><span data-t="c5.batchLbl"></span><b id="c5BatchOut">10</b></div>
+          <input type="range" id="c5Batch" min="4" max="64" step="2" value="10" />
+        </div>
+        <button type="button" class="btn" id="c5Reseed" data-t="c5.reseed"></button>
+      </div>
+      <div class="read">
+        <div class="tile bad"><div class="k" data-t="c5.r1k"></div><div class="v" id="c5r1"></div></div>
+        <div class="tile good"><div class="k" data-t="c5.r2k"></div><div class="v" id="c5r2"></div></div>
+        <div class="tile warn"><div class="k" data-t="c5.r3k"></div><div class="v" id="c5r3"></div></div>
+        <div class="tile cyan"><div class="k" data-t="c5.r4k"></div><div class="v" id="c5r4"></div></div>
+      </div>
+      <div class="legend">
+        <span><i style="background:var(--red)"></i><span data-t="c5.leg1"></span></span>
+        <span><i style="background:var(--cyan)"></i><span data-t="c5.leg2"></span></span>
+        <span><i style="background:var(--gold)"></i><span data-t="c5.leg3"></span></span>
+      </div>
+      <p class="say" id="c5Say" aria-live="polite" data-key="c5.sayWithBase"></p>
+    </figure>
+
+    <div class="limit-box" data-t="c5.limit"></div>
+  </section>
+
+  <!-- CHAPTER 6 -->
+  <section id="ch6">
+    <p class="sec-num" data-t="c6.num"></p>
+    <h2 data-t="c6.title"></h2>
+    <p data-t="c6.p1"></p>
+    <p data-t="c6.p2"></p>
+    <div class="eq" data-t="c6.eq"></div>
+    <p data-t="c6.p3"></p>
+
+    <figure class="lab" id="lab6">
+      <div class="lab-head">
+        <span class="lab-title" data-t="c6.labTitle"></span>
+        <span class="lab-sub" data-t="c6.labSub"></span>
+      </div>
+      <canvas class="stage" id="cv6" width="740" height="320"></canvas>
+      <div class="ctrl">
+        <div class="seg">
+          <button type="button" class="btn on" id="c6AdvPos" data-adv="1" aria-pressed="true" data-t="c6.advPos"></button>
+          <button type="button" class="btn" id="c6AdvNeg" data-adv="-1" aria-pressed="false" data-t="c6.advNeg"></button>
+        </div>
+        <div class="field">
+          <div class="field-top"><span data-t="c6.clipLbl"></span><b id="c6ClipOut">0.20</b></div>
+          <input type="range" id="c6Clip" min="0.05" max="0.35" step="0.05" value="0.20" />
+        </div>
+        <div class="field">
+          <div class="field-top"><span data-t="c6.klLbl"></span><b id="c6KlOut">0.05</b></div>
+          <input type="range" id="c6Kl" min="0" max="0.30" step="0.05" value="0.05" />
+        </div>
+        <div class="field">
+          <div class="field-top"><span data-t="c6.paramLbl"></span><b id="c6ParamOut">7B</b></div>
+          <input type="range" id="c6Param" min="3" max="70" step="1" value="7" />
+        </div>
+      </div>
+      <div class="read">
+        <div class="tile warn"><div class="k" data-t="c6.r1k"></div><div class="v" id="c6r1"></div></div>
+        <div class="tile bad"><div class="k" data-t="c6.r2k"></div><div class="v" id="c6r2"></div></div>
+        <div class="tile good"><div class="k" data-t="c6.r3k"></div><div class="v" id="c6r3"></div></div>
+        <div class="tile cyan"><div class="k" data-t="c6.r4k"></div><div class="v" id="c6r4"></div></div>
+      </div>
+      <div class="legend">
+        <span><i style="background:var(--mute)"></i><span data-t="c6.leg1"></span></span>
+        <span><i style="background:var(--gold)"></i><span data-t="c6.leg2"></span></span>
+        <span><i style="background:var(--cyan)"></i><span data-t="c6.leg3"></span></span>
+      </div>
+      <p class="say" id="c6Say" aria-live="polite" data-key="c6.sayPos"></p>
+    </figure>
+
+    <div class="limit-box" data-t="c6.limit"></div>
+  </section>
+
+  <!-- CHAPTER 7 -->
+  <section id="ch7">
+    <p class="sec-num" data-t="c7.num"></p>
+    <h2 data-t="c7.title"></h2>
+    <p data-t="c7.p1"></p>
+    <p data-t="c7.p2"></p>
+    <div class="eq" data-t="c7.eq"></div>
+
+    <figure class="lab" id="lab7">
+      <div class="lab-head">
+        <span class="lab-title" data-t="c7.labTitle"></span>
+        <span class="lab-sub" data-t="c7.labSub"></span>
+      </div>
+      <div class="ttt-wrap">
+        <div>
+          <div class="ttt-grid" id="tttGrid" role="grid" aria-label="Tic-Tac-Toe board"></div>
+          <div class="seg" style="margin-top:10px">
+            <button type="button" class="btn" id="c7Tactical" data-t="c7.tactical"></button>
+            <button type="button" class="btn" id="c7Clear" data-t="c7.clear"></button>
+          </div>
+        </div>
+        <canvas class="stage" id="cv7" width="520" height="270"></canvas>
+      </div>
+      <div class="ctrl">
+        <div class="field">
+          <div class="field-top"><span data-t="c7.budgetLbl"></span><b id="c7BudgetOut">120</b></div>
+          <input type="range" id="c7Budget" min="10" max="400" step="10" value="120" />
+        </div>
+        <div class="field">
+          <div class="field-top"><span data-t="c7.cLbl"></span><b id="c7COut">1.41</b></div>
+          <input type="range" id="c7C" min="0.2" max="2.5" step="0.1" value="1.41" />
+        </div>
+      </div>
+      <div class="read">
+        <div class="tile cyan"><div class="k" data-t="c7.r1k"></div><div class="v" id="c7r1"></div></div>
+        <div class="tile warn"><div class="k" data-t="c7.r2k"></div><div class="v" id="c7r2"></div></div>
+        <div class="tile good"><div class="k" data-t="c7.r3k"></div><div class="v" id="c7r3"></div></div>
+        <div class="tile"><div class="k" data-t="c7.r4k"></div><div class="v" id="c7r4"></div></div>
+      </div>
+      <p class="say" id="c7Say" aria-live="polite" data-key="c7.sayMatch"></p>
+    </figure>
+
+    <div class="limit-box" data-t="c7.limit"></div>
+  </section>
+
+  <!-- CHAPTER 8 -->
+  <section id="ch8">
+    <p class="sec-num" data-t="c8.num"></p>
+    <h2 data-t="c8.title"></h2>
+    <p data-t="c8.p1"></p>
+    <p data-t="c8.p2"></p>
+    <div class="eq" data-t="c8.eq"></div>
+
+    <figure class="lab" id="lab8">
+      <div class="lab-head">
+        <span class="lab-title" data-t="c8.labTitle"></span>
+        <span class="lab-sub" data-t="c8.labSub"></span>
+      </div>
+      <canvas class="stage" id="cv8" width="740" height="320"></canvas>
+      <div class="ctrl">
+        <div class="field">
+          <div class="field-top"><span data-t="c8.coinLbl"></span><b id="c8CoinOut">0.90</b></div>
+          <input type="range" id="c8Coin" min="0" max="1.8" step="0.05" value="0.90" />
+        </div>
+        <div class="field">
+          <div class="field-top"><span data-t="c8.klLbl"></span><b id="c8KlOut">0.00</b></div>
+          <input type="range" id="c8Kl" min="0" max="1.2" step="0.05" value="0.00" />
+        </div>
+        <div class="field">
+          <div class="field-top"><span data-t="c8.gammaLbl"></span><b id="c8GammaOut">0.92</b></div>
+          <input type="range" id="c8Gamma" min="0.78" max="0.96" step="0.02" value="0.92" />
+        </div>
+      </div>
+      <div class="read">
+        <div class="tile warn"><div class="k" data-t="c8.r1k"></div><div class="v" id="c8r1"></div></div>
+        <div class="tile good"><div class="k" data-t="c8.r2k"></div><div class="v" id="c8r2"></div></div>
+        <div class="tile bad"><div class="k" data-t="c8.r3k"></div><div class="v" id="c8r3"></div></div>
+        <div class="tile cyan"><div class="k" data-t="c8.r4k"></div><div class="v" id="c8r4"></div></div>
+      </div>
+      <div class="legend">
+        <span><i style="background:var(--green)"></i><span data-t="c8.leg1"></span></span>
+        <span><i style="background:var(--red)"></i><span data-t="c8.leg2"></span></span>
+        <span><i style="background:var(--gold)"></i><span data-t="c8.leg3"></span></span>
+      </div>
+      <p class="say" id="c8Say" aria-live="polite" data-key="c8.sayHacking"></p>
+    </figure>
+
+    <div class="limit-box" data-t="c8.limit"></div>
+  </section>
+
+  <!-- CHAPTER 9 -->
+  <section id="ch9">
+    <p class="sec-num" data-t="c9.num"></p>
+    <h2 data-t="c9.title"></h2>
+    <p data-t="c9.p1"></p>
+
+    <figure class="lab" id="lab9">
+      <div class="lab-head">
+        <span class="lab-title" data-t="c9.labTitle"></span>
+        <span class="lab-sub" data-t="c9.labSub"></span>
+      </div>
+      <div class="seg" role="group" aria-label="Frontier domain">
+        <button type="button" class="btn on" data-dom="llmMath" aria-pressed="true" data-t="c9.domMath"></button>
+        <button type="button" class="btn" data-dom="robotics" aria-pressed="false" data-t="c9.domRob"></button>
+        <button type="button" class="btn" data-dom="boardGame" aria-pressed="false" data-t="c9.domGame"></button>
+        <button type="button" class="btn" data-dom="openChat" aria-pressed="false" data-t="c9.domChat"></button>
+      </div>
+      <div class="read" style="margin-top:14px">
+        <div class="tile cyan"><div class="k" data-t="c9.r1k"></div><div class="v" id="c9r1"></div></div>
+        <div class="tile good"><div class="k" data-t="c9.r2k"></div><div class="v" id="c9r2"></div></div>
+        <div class="tile warn"><div class="k" data-t="c9.r3k"></div><div class="v" id="c9r3"></div></div>
+        <div class="tile bad"><div class="k" data-t="c9.r4k"></div><div class="v" id="c9r4"></div></div>
+      </div>
+      <p class="say" id="c9Say" aria-live="polite" data-key="c9.sayMath"></p>
+    </figure>
+
+    <h3 data-t="c9.cardsHeading"></h3>
+    <div class="frontier-list">
+      <div class="fcard">
+        <div class="fcard-head">
+          <span class="fcard-title" data-t="c9.f1Title"></span>
+          <span class="tag e" data-t="c9.tagEst"></span>
+        </div>
+        <p data-t="c9.f1Body"></p>
+        <div class="fmeta" data-t="c9.f1Meta"></div>
+      </div>
+      <div class="fcard">
+        <div class="fcard-head">
+          <span class="fcard-title" data-t="c9.f2Title"></span>
+          <span class="tag c" data-t="c9.tagDeb"></span>
+        </div>
+        <p data-t="c9.f2Body"></p>
+        <div class="fmeta" data-t="c9.f2Meta"></div>
+      </div>
+      <div class="fcard">
+        <div class="fcard-head">
+          <span class="fcard-title" data-t="c9.f3Title"></span>
+          <span class="tag d" data-t="c9.tagDem"></span>
+        </div>
+        <p data-t="c9.f3Body"></p>
+        <div class="fmeta" data-t="c9.f3Meta"></div>
+      </div>
+      <div class="fcard">
+        <div class="fcard-head">
+          <span class="fcard-title" data-t="c9.f4Title"></span>
+          <span class="tag d" data-t="c9.tagDem"></span>
+        </div>
+        <p data-t="c9.f4Body"></p>
+        <div class="fmeta" data-t="c9.f4Meta"></div>
+      </div>
+      <div class="fcard">
+        <div class="fcard-head">
+          <span class="fcard-title" data-t="c9.f5Title"></span>
+          <span class="tag o" data-t="c9.tagOpen"></span>
+        </div>
+        <p data-t="c9.f5Body"></p>
+        <div class="fmeta" data-t="c9.f5Meta"></div>
+      </div>
+    </div>
+
+    <div class="ask">
+      <h3 style="margin-top:0" data-t="c9.askTitle"></h3>
+      <ol>
+        <li data-t="c9.q1"></li>
+        <li data-t="c9.q2"></li>
+        <li data-t="c9.q3"></li>
+        <li data-t="c9.q4"></li>
+        <li data-t="c9.q5"></li>
+      </ol>
+    </div>
+
+    <div class="related">
+      <h3 data-t="c9.relTitle"></h3>
+      <div class="related-links">
+        <a href="../../../probability/stochastic/markov-chains/" data-t="c9.rel1"></a>
+        <a href="../../../probability/basics/expected-value/" data-t="c9.rel2"></a>
+        <a href="../../../computing/ml/gradient-descent/" data-t="c9.rel3"></a>
+        <a href="../../../math/applied/game-theory/" data-t="c9.rel4"></a>
+        <a href="../../../probability/everyday/numbers-lie/#c9" data-t="c9.rel5"></a>
+        <a href="../what-a-frontier-model-takes/#ch6" data-t="c9.rel6"></a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p data-t="footer.note"></p>
+  </footer>
+</main>
+
+<script src="copy.zh.js"></script>
+<script src="copy.en.js"></script>
+<script src="models.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

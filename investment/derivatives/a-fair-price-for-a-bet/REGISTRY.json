@@ -1,0 +1,206 @@
+{
+  "slug": "a-fair-price-for-a-bet",
+  "title": {
+    "zh": "对未来的一个赌注，怎么可能有“公道价”？",
+    "en": "How can anyone put a fair price on a bet about the future?"
+  },
+  "path": "investment/derivatives/a-fair-price-for-a-bet",
+  "concepts": [
+    {
+      "id": "forward-cost-of-carry",
+      "name": {
+        "zh": "远期合约与持有成本",
+        "en": "Forward contracts and cost of carry"
+      },
+      "summary": {
+        "zh": "由无风险借贷与现货分红唯一钉死的无套利远期定价，与对未来涨跌的主观猜测无关。",
+        "en": "No-arbitrage forward pricing pinned by risk-free financing and dividend yield rather than directional forecasts."
+      },
+      "anchor": "#ch1",
+      "aliases": {
+        "zh": ["远期定价", "持有成本", "套利定价", "期现套利", "期货理论价"],
+        "en": ["forward price", "cost of carry", "cash and carry", "no-arbitrage"]
+      },
+      "keywords": ["forward", "cost-of-carry", "arbitrage", "repo", "dividend"]
+    },
+    {
+      "id": "put-call-parity",
+      "name": {
+        "zh": "期权收益折线与看涨-看跌平价",
+        "en": "Option payoff kinks and put-call parity"
+      },
+      "summary": {
+        "zh": "同一执行价和到期日的欧式看涨、看跌期权与现值现金、现货之间的刚性等式。",
+        "en": "Rigid replication identity linking European calls, puts, discounted strike cash, and spot shares."
+      },
+      "anchor": "#ch2",
+      "aliases": {
+        "zh": ["看涨看跌平价", "期权平价", "保护性看跌", "备兑看涨", "跨式组合", "牛市价差"],
+        "en": ["put-call parity", "option payoff", "protective put", "covered call", "straddle"]
+      },
+      "keywords": ["put-call-parity", "payoff", "option-strategy", "call", "put"]
+    },
+    {
+      "id": "risk-neutral-replication",
+      "name": {
+        "zh": "二叉树复制与风险中性定价",
+        "en": "Binomial replication and risk-neutral pricing"
+      },
+      "summary": {
+        "zh": "用股票与借贷复制期权两态收益，使无套利价格独立于个人对上涨概率的主观判断。",
+        "en": "Replicating two-state option payoffs with stock and borrowing, making the no-arbitrage price independent of subjective probabilities."
+      },
+      "anchor": "#ch3",
+      "aliases": {
+        "zh": ["风险中性概率", "二叉树复制", "无套利复制", "风险中性定价", "Delta复制"],
+        "en": ["risk-neutral probability", "binomial replication", "delta replication"]
+      },
+      "keywords": ["risk-neutral", "binomial", "replication", "arbitrage-free"]
+    },
+    {
+      "id": "crr-tree-early-exercise",
+      "name": {
+        "zh": "多步二叉树与美式提前行权",
+        "en": "Multi-step CRR tree and American early exercise"
+      },
+      "summary": {
+        "zh": "N 步树向连续极限的收敛过程，以及倒推比较立即行权与继续持有的美式期权边界。",
+        "en": "Convergence of N-step Cox-Ross-Rubinstein trees to continuous prices and backward induction for early exercise boundaries."
+      },
+      "anchor": "#ch4",
+      "aliases": {
+        "zh": ["美式期权", "欧式期权", "提前行权", "CRR二叉树", "期权收敛"],
+        "en": ["american option", "early exercise", "CRR tree", "lattice pricing"]
+      },
+      "keywords": ["crr", "american-option", "early-exercise", "backward-induction"]
+    },
+    {
+      "id": "geometric-brownian-motion",
+      "name": {
+        "zh": "几何布朗运动与波动率拖累",
+        "en": "Geometric Brownian motion and volatility drag"
+      },
+      "summary": {
+        "zh": "连续复利随机游走中对数正态分布的均值与中位数劈叉及 −½σ² 拖累效应。",
+        "en": "Lognormal paths separating arithmetic mean from typical median growth via the −½σ² Ito drift correction."
+      },
+      "anchor": "#ch5",
+      "aliases": {
+        "zh": ["几何布朗运动", "波动率拖累", "对数正态分布", "伊藤引理", "随机游走"],
+        "en": ["geometric brownian motion", "GBM", "volatility drag", "lognormal"]
+      },
+      "keywords": ["gbm", "lognormal", "ito", "volatility-drag"]
+    },
+    {
+      "id": "black-scholes-pde",
+      "name": {
+        "zh": "布莱克-斯科尔斯偏微分方程",
+        "en": "Black-Scholes equation and heat diffusion"
+      },
+      "summary": {
+        "zh": "连续对冲消去漂移项 μ 后得到的无套利扩散偏微分方程及其有限差分数值解。",
+        "en": "Drift-free diffusion PDE obtained by continuous hedging, mirrored by Crank-Nicolson finite differences."
+      },
+      "anchor": "#ch6",
+      "aliases": {
+        "zh": ["布莱克斯科尔斯", "BS公式", "BS方程", "热传导方程", "有限差分"],
+        "en": ["Black-Scholes", "BSM", "Black-Scholes PDE", "Crank-Nicolson", "option formula"]
+      },
+      "keywords": ["black-scholes", "pde", "diffusion", "crank-nicolson"]
+    },
+    {
+      "id": "greeks-discrete-hedging",
+      "name": {
+        "zh": "希腊字母与离散 Delta 对冲误差",
+        "en": "Option Greeks and discrete delta-hedging error"
+      },
+      "summary": {
+        "zh": "Delta/Gamma/Vega/Theta 的敏感度含义，以及离散调仓方差、实现波动率与交易成本对损益的决定作用。",
+        "en": "Greeks sensitivities and Monte Carlo hedging showing variance scaling, realized-vs-implied vol spread, and transaction costs."
+      },
+      "anchor": "#ch7",
+      "aliases": {
+        "zh": ["希腊字母", "Delta对冲", "Gamma", "Theta", "Vega", "时间价值衰减"],
+        "en": ["option greeks", "delta hedging", "gamma", "theta decay", "vega"]
+      },
+      "keywords": ["greeks", "delta", "gamma", "theta", "vega", "hedging"]
+    },
+    {
+      "id": "volatility-smile-fat-tails",
+      "name": {
+        "zh": "隐含波动率微笑、肥尾与聚类",
+        "en": "Implied volatility smile, fat tails, and clustering"
+      },
+      "summary": {
+        "zh": "SPX 真实期权链左侧陡峭偏斜、标普十年肥尾日收益与波动率聚类对常数正态模型的证伪。",
+        "en": "Empirical SPX skew, fat-tailed daily equity returns, and volatility clustering breaking constant-volatility assumptions."
+      },
+      "anchor": "#ch8",
+      "aliases": {
+        "zh": ["隐含波动率微笑", "波动率偏斜", "肥尾分布", "波动率聚类", "买卖点差", "IV"],
+        "en": ["volatility smile", "volatility skew", "implied volatility", "fat tails", "volatility clustering"]
+      },
+      "keywords": ["volatility-smile", "skew", "kurtosis", "fat-tails", "vix", "spx"]
+    },
+    {
+      "id": "stochastic-volatility-heston",
+      "name": {
+        "zh": "随机波动率模型与不完备市场",
+        "en": "Stochastic volatility (Heston) and incomplete markets"
+      },
+      "summary": {
+        "zh": "把波动率本身设为负相关均值回复随机过程如何生成微笑与偏斜，以及无法单靠现货对冲的本质限制。",
+        "en": "Generating smiles and equity skew with correlated variance diffusion while highlighting incomplete-market hedging limits."
+      },
+      "anchor": "#ch9",
+      "aliases": {
+        "zh": ["Heston模型", "随机波动率", "不完备市场", "杠杆效应", "波动率溢价"],
+        "en": ["Heston model", "stochastic volatility", "incomplete market", "leverage effect"]
+      },
+      "keywords": ["heston", "stochastic-volatility", "incomplete-market", "calibration"]
+    },
+    {
+      "id": "hedging-vs-retail-friction",
+      "name": {
+        "zh": "实体风险转移与散户期权摩擦损耗",
+        "en": "Corporate risk transfer vs. retail option friction"
+      },
+      "summary": {
+        "zh": "企业对冲如何压缩经营利润波动、BIS 名义本金与净信用敞口层级，以及短线散户买卖点差与期望负收益实证。",
+        "en": "Contrast between commercial hedging, BIS notional-to-net exposure netting, and empirical retail option losses from spreads and IV crush."
+      },
+      "anchor": "#ch10",
+      "aliases": {
+        "zh": ["套期保值", "散户期权亏损", "名义本金", "净额结算", "末日期权投机"],
+        "en": ["hedging", "retail option losses", "notional vs exposure", "close-out netting"]
+      },
+      "keywords": ["hedging", "bis-notional", "netting", "bid-ask-spread", "retail-options"]
+    },
+    {
+      "id": "derivatives-frontier-0dte-perp",
+      "name": {
+        "zh": "0DTE 末日 Gamma、CCP 与永续资金费",
+        "en": "0DTE gamma spikes, central clearing, and perpetual funding"
+      },
+      "summary": {
+        "zh": "从 LIBOR 过渡至 SOFR、中央对手方清算制度，到当代 0DTE 末日期权与永续合约资金费率演化。",
+        "en": "Post-crisis CCP clearing and SOFR transition alongside modern SPX 0DTE gamma concentration and perpetual funding convergence."
+      },
+      "anchor": "#ch11",
+      "aliases": {
+        "zh": ["0DTE", "末日期权", "永续合约资金费率", "SOFR", "中央对手方清算", "深度对冲"],
+        "en": ["0DTE options", "perpetual futures", "funding rate", "SOFR", "CCP clearing", "deep hedging"]
+      },
+      "keywords": ["0dte", "perpetual-funding", "sofr", "ccp", "deep-hedging"]
+    }
+  ],
+  "relatedPages": [
+    "../../../economics/money/why-one-rate-moves-everything/",
+    "../../../economics/money/where-a-mortgage-payment-goes/",
+    "../../rates/interest-rates-bonds/",
+    "../../basics/risk-return/",
+    "../../../probability/stochastic/monte-carlo/",
+    "../../../probability/statistics/central-limit-theorem/",
+    "../../../probability/basics/binomial-normal/"
+  ]
+}

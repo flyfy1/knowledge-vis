@@ -1,0 +1,137 @@
+{
+  "slug": "solar-cells",
+  "path": "tech/energy/solar-cells/",
+  "category": "tech",
+  "subtopic": "energy",
+  "subtopicName": { "zh": "能源与电网", "en": "Energy & the Grid" },
+  "stage": "university",
+  "title": {
+    "zh": "光伏：一个光子能换多少电",
+    "en": "Solar Cells: How Much Electricity Can One Photon Make"
+  },
+  "desc": {
+    "zh": "太阳光照在一片硅上，为什么单结最多只能拿到大约三分之一？七个可以拖动的模型：太阳光谱、禁带取舍、肖克利–奎伊瑟极限、伏安曲线与发热、钙钛矿叠晶硅、电网消纳与储能、斯旺森学习曲线，以及截至 2026 年 11 月的行业前沿。",
+    "en": "Sunlight hits silicon, so why does a single junction turn at most about a third of it into electricity? Seven interactive models: solar spectrum, bandgap tradeoff, Shockley-Queisser limit, I-V curve and heat, perovskite-silicon tandems, grid curtailment and storage, Swanson's learning curve, plus a November 2026 frontier."
+  },
+  "tags": [
+    { "zh": "光伏", "en": "Photovoltaics" },
+    { "zh": "半导体", "en": "Semiconductors" },
+    { "zh": "能源", "en": "Energy" },
+    { "zh": "前沿", "en": "Frontier" },
+    { "zh": "长文", "en": "Long-form Essay" }
+  ],
+  "concepts": [
+    {
+      "id": "solar-spectrum-am15g",
+      "title": { "zh": "太阳光谱与 AM1.5G", "en": "Solar spectrum and AM1.5G" },
+      "desc": {
+        "zh": "5778 K 太阳黑体穿过 1.5 倍大气层后定标为 1000 W/m²（AM1.5G）；可见光只占约一半能量，大量光子落在近红外波段。",
+        "en": "A 5778 K solar blackbody filtered through 1.5 air masses is standardized at 1000 W/m² (AM1.5G); visible light is only about half the power, with vast photon flux in the near-infrared."
+      },
+      "aliases": {
+        "zh": ["太阳光谱", "AM1.5G", "辐照度", "光子通量", "太阳能电池", "光伏发电"],
+        "en": ["solar spectrum", "AM1.5G", "irradiance", "photon flux", "solar cell", "photovoltaics"]
+      },
+      "anchor": "#ch1",
+      "relatedPages": ["blackbody-radiation", "photoelectric-effect"]
+    },
+    {
+      "id": "bandgap-thermalization-tradeoff",
+      "title": { "zh": "禁带宽度与热化/透射取舍", "en": "Bandgap transmission vs thermalization tradeoff" },
+      "desc": {
+        "zh": "低于禁带的光子直接穿过，高于禁带的光子把多余能量瞬间热化成晶格振动；硅 1.12 eV 最多把约 48% 的太阳能量留在带边。",
+        "en": "Photons below the bandgap pass straight through, while photons above it dump excess energy into heat within a picosecond; silicon (1.12 eV) keeps at most ~48% of sunlight at the band edge."
+      },
+      "aliases": {
+        "zh": ["禁带取舍", "热化损失", "截止波长", "带边能量", "Trivich-Flinn"],
+        "en": ["bandgap tradeoff", "thermalization loss", "cutoff wavelength", "band-edge energy"]
+      },
+      "anchor": "#ch2",
+      "relatedPages": ["why-chips-are-hard"]
+    },
+    {
+      "id": "shockley-queisser-limit",
+      "title": { "zh": "肖克利–奎伊瑟极限", "en": "The Shockley–Queisser limit" },
+      "desc": {
+        "zh": "细致平衡要求吸光体同时发射黑体光子，叠加熵增与填充因子损失，单结电池在 1 个太阳下的效率极限被锁在约 33%–34%（1.34 eV）；硅考虑俄歇复合后约 29.4%。",
+        "en": "Detailed balance forces any absorber to emit blackbody photons back out; together with entropy and fill-factor losses, single-junction efficiency caps near 33%–34% at 1 sun (1.34 eV), and ~29.4% for silicon with Auger recombination."
+      },
+      "aliases": {
+        "zh": ["肖克利奎伊瑟极限", "SQ极限", "细致平衡", "外辐射效率", "俄歇复合", "为什么光伏效率只有二十多"],
+        "en": ["Shockley-Queisser limit", "SQ limit", "detailed balance", "external radiative efficiency", "Auger recombination", "why are solar panels only 22% efficient"]
+      },
+      "anchor": "#ch3",
+      "relatedPages": ["why-chips-are-hard"]
+    },
+    {
+      "id": "solar-cell-iv-curve",
+      "title": { "zh": "光伏伏安曲线、填充因子与温度系数", "en": "Solar cell I–V curve, fill factor and temperature derating" },
+      "desc": {
+        "zh": "单二极管电路里的串联与并联电阻削去最大功率矩形，高温令暗电流指数上升，每升高 1 °C 硅电池开路电压降约 2 mV、效率跌约 0.3%–0.4%。",
+        "en": "Series and shunt resistance eat into the maximum-power rectangle, while rising roof temperature drives dark current up exponentially, cutting Voc by ~2 mV/K and efficiency by ~0.3%–0.4%/K."
+      },
+      "aliases": {
+        "zh": ["伏安曲线", "填充因子", "开路电压", "短路电流", "最大功率点", "MPPT", "温度系数"],
+        "en": ["I-V curve", "fill factor", "Voc", "Jsc", "maximum power point", "MPPT", "temperature coefficient"]
+      },
+      "anchor": "#ch4",
+      "relatedPages": ["ohms-law"]
+    },
+    {
+      "id": "perovskite-silicon-tandem",
+      "title": { "zh": "钙钛矿–晶硅叠层电池", "en": "Perovskite–silicon tandem solar cells" },
+      "desc": {
+        "zh": "用宽禁带顶电池吸收蓝绿光子、让红光透进硅底电池，把双结理论极限推高到约 44%–45%；两端串联（2T）要求顶电池禁带调到约 1.70–1.73 eV 实现电流匹配。",
+        "en": "Stacking a wide-bandgap top cell for blue photons over silicon for red photons raises the two-junction ceiling to ~44%–45%; monolithic 2-terminal stacks require ~1.70–1.73 eV top gaps for current matching."
+      },
+      "aliases": {
+        "zh": ["叠层电池", "钙钛矿叠层", "两端叠层", "四端叠层", "电流匹配", "如何突破33.7%"],
+        "en": ["tandem solar cell", "perovskite-silicon tandem", "2-terminal tandem", "current matching", "multi-junction solar"]
+      },
+      "anchor": "#ch5",
+      "relatedPages": []
+    },
+    {
+      "id": "pv-curtailment-storage-grid",
+      "title": { "zh": "光伏并网弃光与储能配比", "en": "Solar midday curtailment and battery pairing" },
+      "desc": {
+        "zh": "光伏正午集中出力而用电晚高峰在日落后，装机倍增而不配储能会让大量午间电力被迫弃掉，晚高峰依然需要调峰与长时储能。",
+        "en": "Solar peaks at midday while peak demand arrives after sunset; scaling panels without storage forces heavy midday curtailment while leaving evening peaks intact."
+      },
+      "aliases": {
+        "zh": ["弃光", "光伏储能", "鸭子曲线", "容量因子", "光伏配储", "为什么装了光伏还要火电"],
+        "en": ["solar curtailment", "PV battery pairing", "duck curve", "capacity factor", "solar intermittency"]
+      },
+      "anchor": "#ch6",
+      "relatedPages": ["how-electricity-reaches-you"]
+    },
+    {
+      "id": "swansons-law-bos-cost",
+      "title": { "zh": "斯旺森学习曲线与系统平衡成本", "en": "Swanson's Law and Balance-of-System (BOS) costs" },
+      "desc": {
+        "zh": "全球累计光伏每翻倍组件降价约 20%–22%；当组件跌破 $0.20/W 后，支架、土地、逆变器与人工（BOS）占去大头，高效率反而成为降本钥匙。",
+        "en": "Each doubling of cumulative PV cuts module price by ~20%–22%; once modules fall below $0.20/W, area-scaled BOS (racking, land, labor, inverters) dominates total capex, making efficiency pay again."
+      },
+      "aliases": {
+        "zh": ["斯旺森定律", "赖特定律", "光伏学习曲线", "BOS成本", "组件价格", "光伏为什么这么便宜"],
+        "en": ["Swanson's law", "Wright's law", "solar learning curve", "balance of system", "BOS cost", "why is solar so cheap"]
+      },
+      "anchor": "#ch7",
+      "relatedPages": []
+    },
+    {
+      "id": "pv-frontier-2026",
+      "title": { "zh": "光伏行业前沿（2026 年 11 月）", "en": "Photovoltaics frontier (November 2026)" },
+      "desc": {
+        "zh": "截至 2026 年 11 月：全球光伏逼近 3 TW（2025 年新增 ~698 GW）；n 型 TOPCon/HJT 商业组件均效 22.7%；单结硅纪录 28.29%（ISFH）、钙钛矿/硅叠层 35.5%（ESTI），商业化关键卡在 25 年户外稳定性。",
+        "en": "As of Nov 2026: global cumulative PV nears 3 TW (~698 GW added in 2025); n-type TOPCon/HJT average 22.7% commercial module efficiency; c-Si record 28.29% (ISFH) and perovskite-Si tandem 35.5% (ESTI), with 25-year field stability remaining the commercial gate."
+      },
+      "aliases": {
+        "zh": ["光伏前沿", "TOPCon", "HJT", "HIBC", "28.29%", "35.5%", "IEC 61215", "钙钛矿稳定性"],
+        "en": ["PV frontier", "TOPCon", "HJT", "HIBC", "28.29%", "35.5%", "IEC 61215", "perovskite stability"]
+      },
+      "anchor": "#ch8",
+      "relatedPages": []
+    }
+  ]
+}

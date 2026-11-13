@@ -1,0 +1,150 @@
+{
+  "slug": "reinforcement-learning",
+  "path": "computing/ml/reinforcement-learning/",
+  "category": "computing",
+  "subtopic": "ml",
+  "stage": "university",
+  "title": {
+    "zh": "强化学习：智能体怎么在试错里学会长远打算",
+    "en": "Reinforcement Learning: How Agents Learn Long-Horizon Decisions from Trial and Error"
+  },
+  "desc": {
+    "zh": "从探索与利用、贝尔曼方程、TD 与策略梯度，到 PPO/GRPO、MCTS 与奖励黑客——九个交互模型拆解强化学习如何从延迟奖惩里学会长远决策。",
+    "en": "From exploration vs exploitation, Bellman equations, TD and policy gradients, to PPO/GRPO, MCTS, and reward hacking — nine interactive models of learning under delayed rewards."
+  },
+  "tags": [
+    { "zh": "强化学习", "en": "Reinforcement Learning" },
+    { "zh": "贝尔曼方程", "en": "Bellman Equations" },
+    { "zh": "PPO 与 GRPO", "en": "PPO and GRPO" },
+    { "zh": "蒙特卡洛树搜索", "en": "Monte Carlo Tree Search" },
+    { "zh": "奖励黑客", "en": "Reward Hacking" }
+  ],
+  "concepts": [
+    {
+      "id": "exploration-vs-exploitation",
+      "title": { "zh": "探索与利用：多臂老虎机与 UCB1", "en": "Exploration vs Exploitation: Multi-Armed Bandits & UCB1" },
+      "desc": {
+        "zh": "在未知收益下权衡选眼下最好与试未知选项，上置信界按不确定性给冷门选项加探索奖金。",
+        "en": "Trade off pulling the best-known option against testing uncertain arms using UCB1 uncertainty bonuses."
+      },
+      "aliases": {
+        "zh": ["探索与利用", "多臂老虎机", "UCB1", "epsilon贪心", "先试还是先吃"],
+        "en": ["exploration vs exploitation", "multi-armed bandit", "UCB1", "epsilon-greedy"]
+      },
+      "anchor": "#ch1",
+      "relatedPages": ["expected-value"]
+    },
+    {
+      "id": "mdp-bellman-equations",
+      "title": { "zh": "马尔可夫决策过程与贝尔曼方程", "en": "Markov Decision Processes & Bellman Equations" },
+      "desc": {
+        "zh": "用折扣因子 γ 把未来收益折现到现在，将长程回报拆解成即时奖励加下一格的折现价值。",
+        "en": "Discount future payoffs by γ to fold multi-step returns into immediate reward plus discounted next-state value."
+      },
+      "aliases": {
+        "zh": ["马尔可夫决策过程", "MDP", "贝尔曼方程", "折扣因子", "长远打算"],
+        "en": ["MDP", "Markov Decision Process", "Bellman equation", "discount factor"]
+      },
+      "anchor": "#ch2",
+      "relatedPages": ["markov-chains", "expected-value"]
+    },
+    {
+      "id": "dynamic-programming-vi-pi",
+      "title": { "zh": "动态规划：值迭代与策略迭代", "en": "Dynamic Programming: Value & Policy Iteration" },
+      "desc": {
+        "zh": "已知状态转移矩阵时，借助贝尔曼压缩映射以率 γ 指数收束到全局最优价值 V*。",
+        "en": "When transitions are known, Bellman contraction backups converge exponentially at rate γ to optimal V*."
+      },
+      "aliases": {
+        "zh": ["值迭代", "策略迭代", "动态规划", "压缩映射"],
+        "en": ["value iteration", "policy iteration", "dynamic programming", "Bellman backup"]
+      },
+      "anchor": "#ch3",
+      "relatedPages": ["markov-chains"]
+    },
+    {
+      "id": "td-control-qlearning-sarsa",
+      "title": { "zh": "时序差分控制：Q-Learning 与 SARSA", "en": "TD Control: Q-Learning vs SARSA" },
+      "desc": {
+        "zh": "无地图试错时，异策略 Q-Learning 学贴崖最短路径，同策略 SARSA 计入探索失误而绕行保命。",
+        "en": "Without a map, off-policy Q-Learning learns the risky cliff-edge optimum while on-policy SARSA prices in exploration noise."
+      },
+      "aliases": {
+        "zh": ["Q-Learning", "SARSA", "时序差分", "悬崖漫步", "同策略与异策略"],
+        "en": ["Q-Learning", "SARSA", "temporal difference", "cliff walking", "on-policy vs off-policy"]
+      },
+      "anchor": "#ch4",
+      "relatedPages": ["monte-carlo"]
+    },
+    {
+      "id": "policy-gradient-baselines",
+      "title": { "zh": "策略梯度与基线降方差（REINFORCE）", "en": "Policy Gradients & Baselines (REINFORCE)" },
+      "desc": {
+        "zh": "直接沿梯度推高高回报动作概率，减去均值基线在不引入偏置的前提下把梯度方差压低数十倍。",
+        "en": "Directly raise log-probabilities of high-return actions while subtracting a baseline slashes gradient variance with zero bias."
+      },
+      "aliases": {
+        "zh": ["策略梯度", "REINFORCE", "基线降方差", "优势函数"],
+        "en": ["policy gradient", "REINFORCE", "variance reduction baseline", "advantage"]
+      },
+      "anchor": "#ch5",
+      "relatedPages": ["gradient-descent"]
+    },
+    {
+      "id": "actor-critic-ppo-grpo",
+      "title": { "zh": "Actor-Critic、PPO 裁剪与 GRPO", "en": "Actor–Critic, PPO Clipping & GRPO" },
+      "desc": {
+        "zh": "PPO 用截断比值窗口与 KL 惩罚防止步子迈太大崩溃；GRPO 用组内相对得分取代 Critic 网络大幅省显存。",
+        "en": "PPO clips probability ratios and regularizes KL divergence; GRPO drops the critic network using within-group rewards."
+      },
+      "aliases": {
+        "zh": ["PPO", "GRPO", "Actor-Critic", "大模型后训练", "DeepSeek-R1"],
+        "en": ["PPO", "GRPO", "Actor-Critic", "LLM post-training", "clipped surrogate"]
+      },
+      "anchor": "#ch6",
+      "relatedPages": ["what-a-frontier-model-takes", "llm-sampling"]
+    },
+    {
+      "id": "mcts-self-play",
+      "title": { "zh": "蒙特卡洛树搜索与自我对弈", "en": "Monte Carlo Tree Search & Self-Play" },
+      "desc": {
+        "zh": "用 UCT 平衡选择与探索前推博弈树，把昂贵的未来分支推演变成可收敛到极小极大最优解的思考预算。",
+        "en": "Combine UCT lookahead rollouts and backpropagation to converge toward minimax-optimal play as search budget grows."
+      },
+      "aliases": {
+        "zh": ["蒙特卡洛树搜索", "MCTS", "UCT", "自我对弈", "AlphaZero"],
+        "en": ["Monte Carlo Tree Search", "MCTS", "UCT", "self-play", "AlphaZero"]
+      },
+      "anchor": "#ch7",
+      "relatedPages": ["game-theory", "monte-carlo"]
+    },
+    {
+      "id": "reward-hacking-goodhart",
+      "title": { "zh": "奖励黑客与古德哈特定律", "en": "Reward Hacking & Goodhart's Law" },
+      "desc": {
+        "zh": "当可刷取的代理塑形分数跨过临界阈值，严格最优算法会放弃真实目标在原地死循环刷分。",
+        "en": "Once a farmable proxy bonus crosses the Bellman threshold, even an optimal solver loops to exploit it instead of finishing."
+      },
+      "aliases": {
+        "zh": ["奖励黑客", "Reward Hacking", "古德哈特定律", "规范博弈", "RL 对齐风险"],
+        "en": ["reward hacking", "Goodhart's law", "specification gaming", "proxy reward collapse"]
+      },
+      "anchor": "#ch8",
+      "relatedPages": ["numbers-lie"]
+    },
+    {
+      "id": "rl-frontier-rlvr-sim2real",
+      "title": { "zh": "RL 前沿版图：RLVR 推理与机器人 Sim-to-Real", "en": "RL Frontier: RLVR Reasoning & Robotics Sim-to-Real" },
+      "desc": {
+        "zh": "梳理可验证推理、单卡 15 分钟人形仿真迁移以及思维链监控税等截至 2026 年 11 月的研究进展边界。",
+        "en": "Map verifiable reasoning (RLVR), 15-minute humanoid sim-to-real transfer, and CoT monitorability tradeoffs as of Nov 2026."
+      },
+      "aliases": {
+        "zh": ["RLVR", "可验证奖励", "Sim-to-Real", "思维链监控", "强化学习前沿"],
+        "en": ["RLVR", "verifiable rewards", "sim-to-real robotics", "CoT monitorability"]
+      },
+      "anchor": "#ch9",
+      "relatedPages": ["what-a-frontier-model-takes"]
+    }
+  ]
+}

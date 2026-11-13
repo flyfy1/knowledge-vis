@@ -1,0 +1,146 @@
+{
+  "slug": "why-atoms-stick-together",
+  "path": "chemistry/matter/why-atoms-stick-together/",
+  "category": "chemistry",
+  "subtopic": "matter",
+  "stage": "university",
+  "title": {
+    "zh": "原子为什么会粘在一起，这又怎么决定了一切东西的性质",
+    "en": "Why Do Atoms Stick Together — and Why Does That Decide What Everything Is Like?"
+  },
+  "desc": {
+    "zh": "从一维量子盒动能减价出发，顺着 H₂⁺ LCAO、休克尔芳香环、两中心极性谱与马德隆晶格、紧束缚能带、库尔森杂化键角、二维氩分子动力学、晶面滑移势垒、蛋白折叠漏斗与 2026 前沿算力标度，十一个实时求解模型打通“化学键为什么形成”与“材料与生命为什么有这些脾气”。",
+    "en": "From 1D kinetic-energy delocalization through H₂⁺ LCAO, Hückel aromatic rings, Madelung crystal sums, tight-binding bands, Coulson-Bent bond angles, 2D Argon MD, crystal slip barriers, HP protein folding funnels, and 2026 MLIP vs DFT scaling, eleven live models bridge quantum bonding to macroscopic matter and life."
+  },
+  "tags": [
+    { "zh": "化学键本质", "en": "Chemical Bonding" },
+    { "zh": "量子力学", "en": "Quantum Mechanics" },
+    { "zh": "晶体与能带", "en": "Crystals & Bands" },
+    { "zh": "分子间作用力", "en": "Intermolecular Forces" },
+    { "zh": "材料性质", "en": "Materials Science" },
+    { "zh": "长文", "en": "Long-form Essay" }
+  ],
+  "concepts": [
+    {
+      "id": "kinetic-delocalization-box",
+      "title": { "zh": "动能离域与量子限制", "en": "Kinetic Delocalization & Quantum Confinement" },
+      "desc": { "zh": "把电子关进越窄的盒子，驻波曲率越大、动能按 1/L² 剧增；两盒合并让基态动能直接降至 1/4。", "en": "Confining an electron raises standing-wave curvature and kinetic energy as 1/L^2; merging two 1 Å boxes quarters ground kinetic energy." },
+      "aliases": {
+        "zh": ["化学键为什么放热", "原子为什么会粘在一起", "电子离域动能", "一维无限深势阱", "为什么不是单纯静电相吸"],
+        "en": ["why atoms stick together", "kinetic energy bonding", "delocalization energy", "particle in a box bonding"]
+      },
+      "anchor": "#ch1",
+      "relatedPages": ["quantum-basics"]
+    },
+    {
+      "id": "h2plus-lcao-bonding",
+      "title": { "zh": "H₂⁺ 双中心 LCAO 成键与反键", "en": "H₂⁺ Two-Center LCAO Bonding & Antibonding" },
+      "desc": { "zh": "同相叠加 ψ₊ 在两质子间堆出电荷桥，反相叠加 ψ₋ 切出波节；轨道变分收缩 ζ 显著还原平衡键长与键能。", "en": "In-phase LCAO builds an internuclear density bridge while out-of-phase cuts a node; variational scaling recovers exact bond length and energy." },
+      "aliases": {
+        "zh": ["成键轨道 反键轨道", "共价键本质", "H2+ 分子轨道", "LCAO", "为什么氦气不能成键", "电荷桥与波节"],
+        "en": ["bonding vs antibonding orbital", "LCAO covalent bond", "H2+ molecular orbital", "why He2 does not form"]
+      },
+      "anchor": "#ch2",
+      "relatedPages": ["quantum-basics", "eigenvectors"]
+    },
+    {
+      "id": "huckel-conjugation-aromaticity",
+      "title": { "zh": "休克尔共轭与 4n+2 芳香性", "en": "Hückel Conjugation & 4n+2 Aromaticity" },
+      "desc": { "zh": "六元环苯给出 −2β、−β、−β、+β、+β、+2β 的稳定闭壳层；4n 环塌陷简并，长共轭链则把 HOMO–LUMO 压进可见光带隙。", "en": "Six-membered benzene fills closed bonding levels with 2|beta| delocalization, 4n rings collapse to zero gap, and long polyenes absorb visible light." },
+      "aliases": {
+        "zh": ["苯环为什么特别稳", "休克尔规则 4n+2", "芳香性 反芳香性", "为什么染料和胡萝卜有颜色", "HOMO LUMO 能隙"],
+        "en": ["Huckel 4n+2 aromaticity", "why benzene is stable", "why dyes have color", "HOMO LUMO gap"]
+      },
+      "anchor": "#ch3",
+      "relatedPages": ["eigenvectors"]
+    },
+    {
+      "id": "ionic-continuum-madelung-lattice",
+      "title": { "zh": "极性连续谱与马德隆晶格能", "en": "Polar Continuum & Madelung Lattice Energy" },
+      "desc": { "zh": "孤立 Na⁺Cl⁻ 气相对在热力学上亏损 +147 kJ/mol；三维晶格的 1.7476 马德隆常数砸出 −786 kJ/mol 晶格能才造就食盐晶体。", "en": "Isolated gas-phase Na+Cl- loses +147 kJ/mol; the 3D Madelung constant 1.7476 yields -786 kJ/mol lattice enthalpy to stabilize table salt." },
+      "aliases": {
+        "zh": ["离子键本质", "马德隆常数 1.7476", "玻恩哈伯循环", "食盐为什么能结晶", "共价键到离子键连续谱", "电负性差"],
+        "en": ["Madelung constant", "Born Haber cycle NaCl", "ionic vs covalent continuum", "why salt forms crystals"]
+      },
+      "anchor": "#ch4",
+      "relatedPages": ["periodic-trends"]
+    },
+    {
+      "id": "tight-binding-bands-gap",
+      "title": { "zh": "紧束缚能带与金属—绝缘体分裂", "en": "Tight-Binding Bands & Metal–Insulator Split" },
+      "desc": { "zh": "等距半满原子链挤压成无带隙金属，交替双原子势垒撕开禁带 Eg = |Δ|，把金属、半导体与透明绝缘体分道扬镳。", "en": "Half-filled uniform chains form gapless metals while alternating potentials open Eg = |Delta|, separating metals, semiconductors, and transparent insulators." },
+      "aliases": {
+        "zh": ["金属为什么导电反光", "半导体带隙是怎么来的", "绝缘体为什么透明", "紧束缚能带", "费米面"],
+        "en": ["band gap origin", "why metals conduct and shine", "why insulators are transparent", "tight binding dispersion"]
+      },
+      "anchor": "#ch5",
+      "relatedPages": []
+    },
+    {
+      "id": "coulson-bent-hybridization",
+      "title": { "zh": "库尔森—本特杂化与分子键角", "en": "Coulson–Bent Hybridization & Bond Angles" },
+      "desc": { "zh": "孤对电子抢走低能 s 成分迫使成键轨道 p 占比升高，键角沿 109.5°(CH₄) → 107.0°(NH₃) → 104.5°(H₂O) 收拢，H₂S 退回 92.1°。", "en": "Lone pairs hoard low-energy s character, shifting bond angles from 109.5 (CH4) to 107.0 (NH3), 104.5 (H2O), and 92.1 deg (H2S)." },
+      "aliases": {
+        "zh": ["水分子为什么弯成 104.5 度", "杂化轨道本质", "sp3 杂化", "孤对电子压小键角", "硫化氢为什么接近 90 度", "库尔森本特法则"],
+        "en": ["why water is 104.5 degrees", "Bent rule Coulson formula", "sp3 hybridization angle", "why H2S is 92 degrees"]
+      },
+      "anchor": "#ch6",
+      "relatedPages": ["molecular-shapes"]
+    },
+    {
+      "id": "vdw-hbond-lennard-jones-md",
+      "title": { "zh": "范德华色散力、氢键与三维凝结", "en": "Van der Waals Dispersion, Hydrogen Bonds & Condensation" },
+      "desc": { "zh": "饱和分子靠 1/r⁶ 瞬时偶极吸引与 1/r¹² 排斥墙凝成液氩与晶体；定向氢键把水沸点托到 373.2 K 并让 0 °C 冰密度低于水。", "en": "Saturated molecules condense via 1/r^6 dispersion vs 1/r^12 repulsion; directional H-bonds lift water boiling to 373.2 K and make ice float." },
+      "aliases": {
+        "zh": ["分子间作用力", "范德华力 色散力", "氢键为什么让冰浮在水上", "水的沸点为什么这么高", "Lennard Jones 分子动力学"],
+        "en": ["van der Waals London dispersion", "why ice floats on water", "hydrogen bond boiling point", "Lennard Jones MD simulation"]
+      },
+      "anchor": "#ch7",
+      "relatedPages": ["particles-states", "thermodynamics"]
+    },
+    {
+      "id": "bonding-to-material-properties",
+      "title": { "zh": "化学键架构与材料力学/电学性质", "en": "Bonding Architecture & Material Properties" },
+      "desc": { "zh": "半晶格滑移揭示本质差异：金刚石撕断定向键脆裂 (3.60 eV)，石墨层间仅 0.015 eV，食盐遇同号相斥崩裂，铜在电子海里顺畅延展 (0.08 eV)。", "en": "Half-cell slip barriers explain why diamond fractures (3.60 eV), graphite lubricates (0.015 eV), NaCl cleaves (+0.68 eV repulsion), and copper draws (0.08 eV)." },
+      "aliases": {
+        "zh": ["钻石和石墨为什么性质差这么远", "金属为什么有延展性", "食盐为什么一砸就碎", "材料硬度 熔点 导电性"],
+        "en": ["why diamond and graphite differ", "why metals are ductile", "why ionic crystals are brittle", "crystal slip barrier"]
+      },
+      "anchor": "#ch8",
+      "relatedPages": ["materials-science"]
+    },
+    {
+      "id": "weak-forces-protein-folding-funnel",
+      "title": { "zh": "弱作用、疏水漏斗与蛋白质折叠", "en": "Weak Interactions & Protein Folding Funnel" },
+      "desc": { "zh": "在 15,037 条自避晶格构象里，天然可设计序列拥有唯一尖底能谷（E_min = −4, g = 1），借可逆弱疏水接触避开 Levinthal 天文搜索。", "en": "Across 15,037 2D HP lattice walks, designable sequences carve a unique funnel (E=-4, g=1), solving Levinthal's search via reversible weak contacts." },
+      "aliases": {
+        "zh": ["蛋白质为什么能快速折叠", "Levinthal 悖论", "折叠漏斗", "疏水作用", "为什么生命靠弱化学键搭结构"],
+        "en": ["protein folding funnel", "Levinthal paradox", "HP lattice protein model", "weak interactions in biology"]
+      },
+      "anchor": "#ch9",
+      "relatedPages": ["thermodynamics"]
+    },
+    {
+      "id": "electronic-scaling-mlip-frontier",
+      "title": { "zh": "量子计算标度与 2026 MLIP/AI 材料前沿", "en": "Quantum Scaling & 2026 MLIP / Crystal Discovery Frontier" },
+      "desc": { "zh": "从 O(N⁷) CCSD(T) 到 O(N³) DFT 再到 O(N) 通用机器学习势（Matbench Discovery / OMat24），梳理截至 2026-11 已验证能力与 GNoME/CASP16 局限。", "en": "Comparing O(N^7) CCSD(T), O(N^3) DFT, and O(N) MLIPs (OMat24/Matbench Discovery) alongside GNoME synthesizability and CASP16 limits as of 2026-11." },
+      "aliases": {
+        "zh": ["密度泛函理论 DFT", "机器学习原子间势 MLIP", "Matbench Discovery", "GNoME 晶体预测争议", "AlphaFold 3 CASP16", "MatterGen"],
+        "en": ["DFT scaling vs MLIP", "Matbench Discovery OMat24", "GNoME synthesizability critique", "AlphaFold 3 CASP16", "MatterGen"]
+      },
+      "anchor": "#ch10",
+      "relatedPages": []
+    },
+    {
+      "id": "bonding-causal-synthesis",
+      "title": { "zh": "化学键因果全景总检", "en": "Four-Step Causal Synthesis of Matter" },
+      "desc": { "zh": "把 10⁻⁶ eV 到几 eV 的电子离域、晶格静电、能带对称性与热力学 k_B T 串联成解释一切物质性质的四条检查法则。", "en": "Unifies electronic delocalization, Madelung lattices, band gaps, molecular geometry, and k_B T competition into four causal principles." },
+      "aliases": {
+        "zh": ["化学键总结", "物质性质决定规律", "原子如何决定宏观性质"],
+        "en": ["chemical bonding synthesis", "how atoms decide material properties"]
+      },
+      "anchor": "#ch11",
+      "relatedPages": ["quantum-basics", "periodic-trends", "thermodynamics", "materials-science"]
+    }
+  ]
+}

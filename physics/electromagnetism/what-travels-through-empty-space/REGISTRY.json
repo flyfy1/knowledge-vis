@@ -1,0 +1,132 @@
+{
+  "slug": "what-travels-through-empty-space",
+  "path": "physics/electromagnetism/what-travels-through-empty-space/",
+  "category": "physics",
+  "subtopic": "electromagnetism",
+  "subtopicName": { "zh": "电磁", "en": "Electromagnetism" },
+  "stage": "university",
+  "title": { "zh": "真空里究竟有什么在传播", "en": "What Travels Through Empty Space" },
+  "desc": {
+    "zh": "信号穿过真空时没有空气也没有导线，到底是什么在传？十个可动模型：延迟场线、位移电流、一维 Yee FDTD 电磁波、偶极辐射、坡印廷能流与光压、偏振、全频谱与量子边界、大气窗口、链路预算、光纤相控阵与 2026 前沿。",
+    "en": "With neither air nor wires in empty space, what carries sunlight and radio across billions of kilometres? Ten interactive physics models from Maxwell's equations and 1-D Yee FDTD to link budgets, phased arrays and 2026 records."
+  },
+  "tags": [
+    { "zh": "电磁波", "en": "Electromagnetic Waves" },
+    { "zh": "麦克斯韦方程", "en": "Maxwell's Equations" },
+    { "zh": "无线通信", "en": "Wireless & Link Budget" },
+    { "zh": "光子与频谱", "en": "Spectrum & Photons" },
+    { "zh": "长文", "en": "Long-form Essay" }
+  ],
+  "concepts": [
+    {
+      "id": "delayed-field-kink",
+      "title": { "zh": "场的因果延迟与 1/r 横向折痕", "en": "Causal Field Kinks and the 1/r Transverse Field" },
+      "desc": { "zh": "改变电荷运动的消息以有限光速 c 向外传播，在波前壳层甩出按 1/r 缓慢衰减的横向辐射场。", "en": "News of a charge's acceleration spreads at speed c, leaving a transverse field kink whose 1/r decay carries energy to infinity." },
+      "aliases": {
+        "zh": ["电磁波为什么能在真空传播", "光在真空里靠什么传播", "没有以太光怎么传", "电磁场是什么", "延迟势"],
+        "en": ["how does light travel through empty space", "what carries radio waves in vacuum", "field kink", "why no aether needed"]
+      },
+      "anchor": "#ch1",
+      "relatedPages": ["electric-fields", "magnetic-force"]
+    },
+    {
+      "id": "displacement-current-maxwell",
+      "title": { "zh": "位移电流与麦克斯韦方程组", "en": "Displacement Current and Maxwell's Equations" },
+      "desc": { "zh": "变化的电场 ε₀∂E/∂t 如同电流一样绕出磁场，与法拉第电磁感应咬合，使真空能自己闭环。", "en": "A changing electric field acts as displacement current to induce a magnetic loop, closing the loop with Faraday's law in empty space." },
+      "aliases": {
+        "zh": ["位移电流", "麦克斯韦方程组", "电容器中间是真空为什么能通交流电", "磁生电电生磁"],
+        "en": ["displacement current", "Maxwell equations", "how AC crosses a vacuum capacitor", "Ampere-Maxwell law"]
+      },
+      "anchor": "#ch2",
+      "relatedPages": ["electromagnetic-induction"]
+    },
+    {
+      "id": "electromagnetic-wave-fdtd",
+      "title": { "zh": "一维电磁波动方程、c=1/√(μ₀ε₀) 与 FDTD", "en": "The Wave Equation, c = 1/√(μ₀ε₀), and 1-D Yee FDTD" },
+      "desc": { "zh": "耦合旋度方程直接推出横波与光速 c，在介质界面满足菲涅尔反射，并可用 Yee 蛙跳格点精确求解。", "en": "Maxwell's curl equations yield a transverse wave at c = 1/√(μ₀ε₀), simulated directly on a Yee FDTD leapfrog grid." },
+      "aliases": {
+        "zh": ["光速为什么是30万公里每秒", "横波 E垂直B", "FDTD 仿真", "库朗条件", "折射率为什么减慢光速"],
+        "en": ["speed of light from mu0 eps0", "FDTD simulation", "Yee leapfrog", "Courant stability", "Fresnel reflection"]
+      },
+      "anchor": "#ch3",
+      "relatedPages": ["reflection-refraction", "why-the-sky-is-blue"]
+    },
+    {
+      "id": "larmor-dipole-radiation",
+      "title": { "zh": "加速电荷辐射与半波偶极天线", "en": "Larmor Radiation and the Half-Wave Dipole" },
+      "desc": { "zh": "只有加速电荷以 P ∝ a² 向垂直方向（sin²θ）辐射，半波偶极子恰好给出 73.1 Ω 辐射电阻。", "en": "Only accelerating charges radiate (Larmor P ∝ a², sin²θ pattern), and a λ/2 dipole yields 73.1 Ω radiation resistance." },
+      "aliases": {
+        "zh": ["天线怎么发射信号", "半波偶极天线", "辐射电阻", "手机天线为什么不能太短", "拉莫尔公式"],
+        "en": ["how antennas radiate", "half wave dipole", "Larmor formula", "radiation pattern", "radiation resistance"]
+      },
+      "anchor": "#ch4",
+      "relatedPages": ["why-the-sky-is-blue"]
+    },
+    {
+      "id": "poynting-pressure-polarisation",
+      "title": { "zh": "坡印廷能流、光压与三片偏振片", "en": "Poynting Flux, Radiation Pressure, and Polarisation" },
+      "desc": { "zh": "电磁波搬运能量 S = E×B/μ₀ 与光压 I/c，其横向电场投影遵循马吕斯定律（三片偏振片 1/8 透射）。", "en": "EM waves carry Poynting flux and radiation pressure I/c, while transverse polarisation obeys Malus's law including the three-polariser paradox." },
+      "aliases": {
+        "zh": ["坡印廷矢量", "光压", "太阳帆原理", "三片偏振片为什么能透光", "马吕斯定律"],
+        "en": ["Poynting vector", "solar sail radiation pressure", "three polarizers paradox", "Malus law"]
+      },
+      "anchor": "#ch5",
+      "relatedPages": []
+    },
+    {
+      "id": "em-spectrum-quantum-boundary",
+      "title": { "zh": "电磁频谱、经典-量子边界与非电离辐射", "en": "The EM Spectrum, Classical-to-Photon Boundary, and RF Safety" },
+      "desc": { "zh": "室温 k_B T (6.25 THz) 与 ~10 eV 电离阈值划分经典加热与单光子断键；2.45 GHz 靠适中穿透深度热透食物，并非水分子共振。", "en": "Thermal energy k_B T (6.25 THz) and ~10 eV ionisation separate classical waves from single-photon effects; 2.45 GHz heats food via penetration depth, not water resonance." },
+      "aliases": {
+        "zh": ["微波炉 2.45 GHz 原理", "水分子共振辟谣", "手机辐射致癌吗", "电离辐射和非电离辐射区别", "电磁波频谱"],
+        "en": ["microwave oven 2.45 GHz myth", "is phone radiation dangerous", "ionising vs non-ionising", "electromagnetic spectrum"]
+      },
+      "anchor": "#ch6",
+      "relatedPages": ["photoelectric-effect", "blackbody-radiation", "double-slit", "why-the-planet-warms"]
+    },
+    {
+      "id": "atmospheric-windows",
+      "title": { "zh": "地球大气窗口与电离层反射", "en": "Earth's Atmospheric Windows and Ionosphere" },
+      "desc": { "zh": "电离层反射短波、水汽与氧气在 22/60/183 GHz 关门，仅留射电、可见光与中红外窗口通向地面。", "en": "Ionospheric reflection below ~10 MHz, O₂/H₂O lines and ozone UV absorption leave narrow radio, optical and IR windows to the ground." },
+      "aliases": {
+        "zh": ["大气窗口", "为什么 X 射线望远镜要放太空", "60 GHz 氧气吸收", "短波为什么能绕地球传播"],
+        "en": ["atmospheric windows", "why space telescopes needed", "60 GHz oxygen absorption", "ionosphere reflection"]
+      },
+      "anchor": "#ch7",
+      "relatedPages": ["why-the-planet-warms", "why-the-sky-is-blue"]
+    },
+    {
+      "id": "modulation-friis-link-budget",
+      "title": { "zh": "载波调制与弗里斯链路预算", "en": "Modulation and the Friis Link Budget" },
+      "desc": { "zh": "信号靠改变幅度/频率/相位携载比特，并以弗里斯公式在 Wi-Fi、GPS（低于噪声底 18 dB）和 173 AU 旅行者一号中兑现。", "en": "AM, FM and QAM encode bits onto carriers, while the Friis link budget governs Wi-Fi, GPS below thermal noise, and Voyager 1 at 173 AU." },
+      "aliases": {
+        "zh": ["信号怎么传到手机", "旅行者一号那么远怎么通信", "GPS 信号为什么这么弱", "链路预算", "香农极限"],
+        "en": ["Friis link budget", "how Voyager communicates", "why GPS signal is below noise", "QAM modulation"]
+      },
+      "anchor": "#ch8",
+      "relatedPages": ["modulation", "fourier", "inside-a-phone"]
+    },
+    {
+      "id": "optical-fibre-phased-array",
+      "title": { "zh": "光纤全反射窗口、衍射极限与相控阵", "en": "Optical Fibre Windows, Diffraction Limit, and Phased Arrays" },
+      "desc": { "zh": "光纤借全反射与 1550 nm 黄金谷底锁住光波；自由空间则依赖 1.22λ/D 口径与半波长间距内的相控阵干涉避免栅瓣。", "en": "Silica fibres trap light via TIR at the 1550 nm loss minimum, while free-space beams obey 1.22λ/D and phased-array steering without grating lobes." },
+      "aliases": {
+        "zh": ["光纤为什么用 1550 nm", "相控阵天线原理", "栅瓣是什么", "衍射极限 1.22 λ/D"],
+        "en": ["why optical fiber uses 1550 nm", "phased array beam steering", "grating lobes", "diffraction limit"]
+      },
+      "anchor": "#ch9",
+      "relatedPages": ["interference"]
+    },
+    {
+      "id": "em-frontiers-2026",
+      "title": { "zh": "2026 年电磁前沿与三把检验尺子", "en": "2026 Electromagnetism Frontiers and Three Checks" },
+      "desc": { "zh": "对照空芯光纤 0.091 dB/km、NICT 1.02 Pbps、DSOC 深空激光、Wi-Fi 7、手机直连、High-NA EUV 与太赫兹空白。", "en": "Separating physics limits, 2025-2026 demonstrated records (hollow-core fibre, DSOC laser, High-NA EUV, D2C) and 6G/THz roadmaps." },
+      "aliases": {
+        "zh": ["6G 和太赫兹进展", "空芯光纤是什么", "手机直连卫星原理", "High-NA EUV 光刻机", "太赫兹空白"],
+        "en": ["hollow core fiber record", "6G sub-THz", "direct to cell satellite", "High-NA EUV 0.55", "terahertz gap"]
+      },
+      "anchor": "#ch10",
+      "relatedPages": ["inside-a-phone"]
+    }
+  ]
+}

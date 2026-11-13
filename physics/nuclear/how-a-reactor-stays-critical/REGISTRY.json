@@ -1,0 +1,131 @@
+{
+  "slug": "how-a-reactor-stays-critical",
+  "path": "physics/nuclear/how-a-reactor-stays-critical/",
+  "category": "physics",
+  "subtopic": "nuclear",
+  "subtopicLabel": { "zh": "核物理", "en": "Nuclear Physics" },
+  "stage": "university",
+  "title": {
+    "zh": "核裂变：反应堆怎么保持临界而不爆炸",
+    "en": "Fission: How a Reactor Stays Critical"
+  },
+  "desc": {
+    "zh": "从铀-235 结合能亏损与热中子截面出发，走过慢化碰撞、六因子临界公式、0.65% 缓发中子窗口、氙-135 碘坑与停堆余热，再到乏燃料时间尺度与 2026 年的核电前沿。",
+    "en": "From U-235 binding energy and thermal fission cross sections, through neutron moderation, the six-factor formula, the 0.65% delayed-neutron window, xenon-135 poisoning, and shutdown decay heat, to spent fuel horizons and nuclear power in 2026."
+  },
+  "tags": [
+    { "zh": "核裂变", "en": "Nuclear Fission" },
+    { "zh": "反应堆物理", "en": "Reactor Physics" },
+    { "zh": "缓发中子", "en": "Delayed Neutrons" }
+  ],
+  "concepts": [
+    {
+      "id": "fission-binding-defect",
+      "anchor": "#ch1",
+      "title": { "zh": "裂变质量亏损与能量", "en": "Fission Mass Defect & Energy" },
+      "desc": {
+        "zh": "重核比结合能低于铁峰；铀-235 裂变产生约 200 MeV 可回收热能，按质量折算约 280 万倍于标准煤。",
+        "en": "Heavy nuclei lie below the iron peak in binding energy per nucleon; U-235 fission yields ~200 MeV of recoverable heat, ~2.8 million times coal per kilogram."
+      },
+      "aliases": {
+        "zh": ["核裂变能量", "铀235裂变", "比结合能右坡"],
+        "en": ["uranium fission energy", "fission Q-value", "nuclear energy density"]
+      },
+      "relatedPages": ["relativity", "why-fusion-is-hard"]
+    },
+    {
+      "id": "neutron-moderation",
+      "anchor": "#ch2",
+      "title": { "zh": "中子截面与慢化碰撞", "en": "Neutron Cross Sections & Moderation" },
+      "desc": {
+        "zh": "将 2 MeV 快中子慢化至 0.0253 eV 热中子，U-235 裂变截面从 1.2 b 升至 585 b；轻水只需约 20 次碰撞，重水约 36 次，石墨约 115 次。",
+        "en": "Slowing 2 MeV fission neutrons to 0.0253 eV raises U-235 fission cross section from 1.2 b to 585 b; water takes ~20 collisions, heavy water ~36, graphite ~115."
+      },
+      "aliases": {
+        "zh": ["慢化剂", "热中子", "裂变截面", "轻水与重水"],
+        "en": ["neutron moderator", "thermal neutrons", "fission cross section", "resonance capture"]
+      },
+      "relatedPages": ["momentum-collision"]
+    },
+    {
+      "id": "six-factor-criticality",
+      "anchor": "#ch3",
+      "title": { "zh": "六因子临界与负空泡反馈", "en": "Six-Factor Criticality & Void Feedback" },
+      "desc": {
+        "zh": "净增殖因子 k_eff = η·f·p·ε·P_F·P_T；轻水不能烧天然铀，而水沸腾起泡压低 k_eff 使商用压水堆无法核爆。",
+        "en": "Net multiplication k_eff = eta*f*p*eps*P_F*P_T; natural uranium cannot go critical in light water, and boiling voids drop k_eff to throttle runaway."
+      },
+      "aliases": {
+        "zh": ["六因子公式", "为什么反应堆不会像原子弹一样爆炸", "负空泡系数", "铀浓缩"],
+        "en": ["six-factor formula", "why reactors cannot explode like bombs", "negative void coefficient", "uranium enrichment"]
+      }
+    },
+    {
+      "id": "delayed-neutrons-kinetics",
+      "anchor": "#ch4",
+      "title": { "zh": "0.65% 缓发中子与瞬发临界", "en": "The 0.65% Delayed-Neutron Window" },
+      "desc": {
+        "zh": "U-235 热裂变中 0.65% 晚到数秒至近一分钟的缓发中子把有效代时拉长上千倍，使机械控制棒追得上链式反应；1$ 以上瞬发临界靠多普勒负反馈自限幅。",
+        "en": "Delayed neutrons (0.65% for U-235, mean delay ~13 s) lengthen effective generation time over a thousandfold so rods keep up; Doppler broadening quenches above $1 prompt criticality."
+      },
+      "aliases": {
+        "zh": ["缓发中子", "瞬发临界", "多普勒反馈", "反应性美元"],
+        "en": ["delayed neutrons", "prompt critical", "Doppler feedback", "point kinetics"]
+      },
+      "relatedPages": ["inverted-pendulum", "exponents-logarithms"]
+    },
+    {
+      "id": "xenon-iodine-pit",
+      "anchor": "#ch5",
+      "title": { "zh": "氙-135 毒化与碘坑", "en": "Xenon-135 Poisoning & Iodine Pit" },
+      "desc": {
+        "zh": "降功率或停堆后中子烧氙中断，但半衰期 6.57 h 的碘-135 继续衰变成 2.65 百万靶的氙-135，在 8–10 小时形成制约重启的负反应性深坑。",
+        "en": "After a power drop, neutron burnout of Xe-135 stops while 6.57 h I-135 keeps decaying into 2.65-million-barn Xe-135, deepening negative reactivity for ~8–10 hours."
+      },
+      "aliases": {
+        "zh": ["氙中毒", "碘坑", "核电站停堆后重启"],
+        "en": ["xenon poisoning", "iodine pit", "xenon dead time"]
+      }
+    },
+    {
+      "id": "shutdown-decay-heat",
+      "anchor": "#ch6",
+      "title": { "zh": "停堆衰变余热（Way–Wigner）", "en": "Shutdown Decay Heat (Way–Wigner)" },
+      "desc": {
+        "zh": "急停只关掉链式裂变，已积累碎片衰变在停堆 1 秒仍占 ~6% 额定热功率（3000 MWth 堆约 181 MW），1 小时后仍需持续带走数十兆瓦热。",
+        "en": "Scramming stops fission, not radioactive decay of accumulated fragments: at 1 s power stays ~6% (~181 MWth for a 3,000 MWth core) and requires active or passive cooling for days."
+      },
+      "aliases": {
+        "zh": ["衰变热", "停堆冷却", "福岛堆芯余热"],
+        "en": ["decay heat", "Way-Wigner formula", "post-scram cooling"]
+      }
+    },
+    {
+      "id": "spent-fuel-timescales",
+      "anchor": "#ch7",
+      "title": { "zh": "乏燃料成分与双时间尺度", "en": "Spent Fuel Inventory & Decay Horizons" },
+      "desc": {
+        "zh": "1 GWe 压水堆年卸出 ~24 吨乏燃料；裂变产物 Cs/Sr 毒性在 300 年降超两千倍，Pu/次锕系把一次通过基准线推到十万年以上。",
+        "en": "One 1 GWe PWR discharges ~24 tHM/yr; Cs-137/Sr-90 drop over 2,000x within 300 yr, whereas Pu/minor actinides push once-through radiotoxicity past 100,000 yr."
+      },
+      "aliases": {
+        "zh": ["核废料处理", "乏燃料", "深地质处置", "后处理"],
+        "en": ["nuclear waste", "spent fuel", "geological disposal", "reprocessing"]
+      }
+    },
+    {
+      "id": "fission-frontier-2026",
+      "anchor": "#ch8",
+      "title": { "zh": "2026 核电前沿与先进堆路线", "en": "Nuclear Fission Frontier & Reactor Routes (2026)" },
+      "desc": {
+        "zh": "对比 2026 年在运三代堆、高温气冷堆与钠冷快堆在浓集度（LEU vs HALEU）、出口温度、卡诺效率上限与规模经济上的现实权衡。",
+        "en": "As-of-2026 fleet status alongside physical tradeoffs across Gen III+ PWR, CANDU, HTGR, and sodium fast reactors: enrichment, outlet temperature, Carnot ceiling, and HALEU/cost bottlenecks."
+      },
+      "aliases": {
+        "zh": ["小型模块化反应堆", "SMR", "第四代核电", "HALEU燃料"],
+        "en": ["small modular reactors", "SMR", "Gen IV reactors", "HALEU fuel"]
+      },
+      "relatedPages": ["carnot-cycle"]
+    }
+  ]
+}

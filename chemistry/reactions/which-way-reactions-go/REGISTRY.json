@@ -1,0 +1,292 @@
+{
+  "slug": "which-way-reactions-go",
+  "path": "chemistry/reactions/which-way-reactions-go/",
+  "category": "chemistry",
+  "subtopic": "reactions",
+  "stage": "university",
+  "title": {
+    "zh": "一个反应会不会发生、能走多远，是谁说了算 · 一篇可以动手的长文",
+    "en": "What Decides Whether a Reaction Goes and How Far It Gets · Interactive Essay"
+  },
+  "desc": {
+    "zh": "从数微观排法、玻尔兹曼因子和 ΔG = ΔH − TΔS 出发，一路推到平衡常数、催化剂、埃林厄姆图、哈伯合成氨和相分离，再看 2026 年绿色合成氨、电解水与直接空气捕碳的前沿：每一步都有真实方程搭的模型。",
+    "en": "From counting microstates, the Boltzmann factor, and ΔG = ΔH − TΔS to equilibrium constants, catalysts, Ellingham diagrams, Haber–Bosch ammonia synthesis, phase separation, and 2026 electrolysis and direct air capture benchmarks, backed by equation-driven interactive models."
+  },
+  "tags": [
+    "thermodynamics",
+    "gibbs-free-energy",
+    "equilibrium",
+    "kinetics",
+    "catalysis",
+    "haber-bosch",
+    "ellingham",
+    "phase-separation",
+    "electrochemistry"
+  ],
+  "concepts": [
+    {
+      "id": "microstate-counting-entropy",
+      "anchor": "#ch1",
+      "title": {
+        "zh": "微观排法数与玻尔兹曼熵 S = k_B ln W",
+        "en": "Microstate Counting and Boltzmann Entropy"
+      },
+      "desc": {
+        "zh": "孤立系统的走向由总微观排法数 W 决定，如冷敷袋硝酸铵吸热溶解与无相互作用气体混合。",
+        "en": "Isolated systems evolve toward overwhelming microstate multiplicity W, explaining endothermic cold-pack dissolution and entropy-driven mixing."
+      },
+      "aliases": {
+        "zh": [
+          "吸热反应为什么还能自发",
+          "冷敷袋为什么自己变冷还化开",
+          "微观状态数 W",
+          "玻尔兹曼熵公式"
+        ],
+        "en": [
+          "why endothermic reactions happen",
+          "why does a cold pack dissolve",
+          "microstate multiplicity",
+          "Boltzmann entropy S = kB ln W"
+        ]
+      },
+      "relatedPages": ["entropy", "particles-states"]
+    },
+    {
+      "id": "boltzmann-factor-thermal-bath",
+      "anchor": "#ch2",
+      "title": {
+        "zh": "玻尔兹曼因子与热浴借能代价",
+        "en": "Boltzmann Factor and Borrowing Energy from a Thermal Bath"
+      },
+      "desc": {
+        "zh": "小系统从恒温热浴借走能量 E_i 会使热浴排法数按 exp(−E_i/RT) 指数下降。",
+        "en": "Borrowing energy E_i from a constant-temperature bath reduces bath multiplicity by exp(−E_i/RT), giving the Boltzmann distribution."
+      },
+      "aliases": {
+        "zh": [
+          "为什么高能态分子那么少",
+          "玻尔兹曼分布从哪来的",
+          "热能尺度 RT",
+          "有限热浴精确计数"
+        ],
+        "en": [
+          "where the Boltzmann factor comes from",
+          "exp(-E/RT)",
+          "why high energy states are rare",
+          "finite thermal bath microstate counting"
+        ]
+      },
+      "relatedPages": ["particles-states"]
+    },
+    {
+      "id": "gibbs-free-energy-quadrants",
+      "anchor": "#ch3",
+      "title": {
+        "zh": "吉布斯自由能 ΔG = ΔH − TΔS 与四象限地图",
+        "en": "Gibbs Free Energy and the Four-Quadrant Reaction Map"
+      },
+      "desc": {
+        "zh": "恒温恒压下 ΔG = −T·ΔS_总，用 ΔH 与 ΔS 正负号及翻转温度 T* = ΔH/ΔS 划分反应方向。",
+        "en": "At constant T and p, ΔG = −T·ΔS_total packs environmental entropy into a single ledger whose four quadrants govern temperature-driven direction flips."
+      },
+      "aliases": {
+        "zh": [
+          "ΔG = ΔH - TΔS 是什么意思",
+          "石灰窑为什么一定要烧到八九百度",
+          "翻转温度怎么算",
+          "放热反应一定自发吗"
+        ],
+        "en": [
+          "what does ΔG = ΔH - TΔS mean",
+          "why limestone kilns need high temperature",
+          "reaction crossover temperature",
+          "four quadrants of ΔH and ΔS"
+        ]
+      },
+      "relatedPages": ["thermodynamics"]
+    },
+    {
+      "id": "reaction-progress-equilibrium-vant-hoff",
+      "anchor": "#ch4",
+      "title": {
+        "zh": "自由能曲线谷底、平衡常数 K 与范特霍夫方程",
+        "en": "Minimum of G(ξ), Equilibrium Constant K, and Van 't Hoff"
+      },
+      "desc": {
+        "zh": "混合熵把 G(ξ) 在 0 与 1 之间拽出最低点，使 ΔG° > 0 也能部分转化；压强只改 Q 不改 K，温度通过范特霍夫方程改变 K。",
+        "en": "Entropy of mixing pulls G(ξ) to an interior minimum where ΔrG = ΔG° + RT ln Q = 0; pressure shifts Q while temperature shifts K via Van 't Hoff."
+      },
+      "aliases": {
+        "zh": [
+          "为什么反应不能进行到百分之百",
+          "ΔG° 为正为什么反应还能发生一点",
+          "勒夏特列原理本质",
+          "范特霍夫方程怎么看"
+        ],
+        "en": [
+          "why reactions do not go to 100%",
+          "why positive ΔG° still reaches partial equilibrium",
+          "Le Chatelier principle mathematically",
+          "Van 't Hoff equation ln K vs 1/T"
+        ]
+      },
+      "relatedPages": ["chemical-equilibrium"]
+    },
+    {
+      "id": "activation-barrier-catalyst-invariance",
+      "anchor": "#ch5",
+      "title": {
+        "zh": "活化能、过渡态与催化剂不改平衡终点",
+        "en": "Activation Barriers, Transition States, and Catalyst Equilibrium Invariance"
+      },
+      "desc": {
+        "zh": "k_正/k_逆 = K 使催化剂只能等量削低正逆能垒、指数加速达平衡，而无法移动平衡占比。",
+        "en": "Microscopic reversibility k_f/k_r = K forces catalysts to lower forward and reverse barriers equally, speeding approach without shifting equilibrium yield."
+      },
+      "aliases": {
+        "zh": [
+          "催化剂能提高平衡转化率吗",
+          "热力学和动力学有什么区别",
+          "为什么氢气氧气放常温不反应",
+          "过渡态活化能"
+        ],
+        "en": [
+          "can a catalyst change equilibrium yield",
+          "thermodynamics vs kinetics",
+          "why catalysts cannot beat equilibrium",
+          "Arrhenius activation energy and transition state"
+        ]
+      },
+      "relatedPages": ["activation-energy", "reaction-rates"]
+    },
+    {
+      "id": "reaction-coupling-atp-ellingham",
+      "anchor": "#ch6",
+      "title": {
+        "zh": "反应耦合、ATP 水解、ΔG = −nFE 与埃林厄姆图",
+        "en": "Reaction Coupling, ATP Hydrolysis, ΔG = −nFE, and the Ellingham Diagram"
+      },
+      "desc": {
+        "zh": "通过化学反应耦合或外加电功驱动逆风反应；2C + O₂ → 2CO 的负斜率解释为什么碳能炼铁炼锌却炼不出铝。",
+        "en": "Driving ΔG > 0 steps by coupling to ATP hydrolysis, electricity (ΔG = −nFE), or coke oxidation whose negative Ellingham slope smelts Fe and Zn but not Al."
+      },
+      "aliases": {
+        "zh": [
+          "为什么碳能炼铁却炼不出铝",
+          "ATP 是怎么驱动生化反应的",
+          "埃林厄姆图怎么看",
+          "电解最低电压怎么算"
+        ],
+        "en": [
+          "why carbon can smelt iron but not aluminum",
+          "how ATP drives unfavorable reactions",
+          "how to read an Ellingham diagram",
+          "Hall-Heroult minimum voltage"
+        ]
+      },
+      "relatedPages": ["electrochemistry"]
+    },
+    {
+      "id": "haber-bosch-thermo-kinetics-tradeoff",
+      "anchor": "#ch7",
+      "title": {
+        "zh": "哈伯–博施合成氨的热力学–动力学妥协窗口",
+        "en": "Haber–Bosch Ammonia Synthesis Window and Industrial Compromise"
+      },
+      "desc": {
+        "zh": "低温平衡高但速率冻结、高温速率快但平衡塌陷，工业不得不在 400–500 °C、150–300 bar 下靠单程 10–20% 配冷凝循环榨干收率。",
+        "en": "Using Gillespie–Beattie equilibrium and iron-catalyst Arrhenius kinetics, industrial ammonia plants compromise at 400–500 °C and 150–300 bar with recycle loops."
+      },
+      "aliases": {
+        "zh": [
+          "合成氨为什么既要高温又要高压",
+          "哈伯法为什么停在 450 度",
+          "合成氨全球能耗有多大"
+        ],
+        "en": [
+          "why Haber-Bosch runs at 450 C and 200 bar",
+          "ammonia synthesis thermodynamics vs kinetics tradeoff",
+          "Haber-Bosch single-pass conversion and recycle"
+        ]
+      },
+      "relatedPages": ["chemical-equilibrium", "reaction-rates", "activation-energy"]
+    },
+    {
+      "id": "regular-solution-common-tangent-phase-separation",
+      "anchor": "#ch8",
+      "title": {
+        "zh": "正规溶液、共切线与双节线/旋节线相分离",
+        "en": "Regular Solution, Common Tangent, Binodal and Spinodal Phase Separation"
+      },
+      "desc": {
+        "zh": "当排斥能 Ω 超过热能（T < T_c），自由能曲线出现双谷，系统按共切线拆成两相；旋节线内无需形核能垒直接分相。",
+        "en": "When interaction energy Ω exceeds thermal mixing below T_c, common-tangent phase splitting lowers total free energy along binodal and spinodal boundaries."
+      },
+      "aliases": {
+        "zh": [
+          "油和水为什么自己分层",
+          "共切线构造是什么",
+          "双节线和旋节线区别",
+          "合金相分离"
+        ],
+        "en": [
+          "why oil and water separate",
+          "common tangent construction free energy",
+          "binodal vs spinodal decomposition",
+          "regular solution phase diagram"
+        ]
+      },
+      "relatedPages": ["thermodynamics", "particles-states"]
+    },
+    {
+      "id": "reaction-thermodynamic-floors-2026-frontier",
+      "anchor": "#ch9",
+      "title": {
+        "zh": "制氢、捕碳与电合成的热力学地板与工程实绩（2026）",
+        "en": "Thermodynamic Energy Floors vs Engineering Reality (2026 Frontier)"
+      },
+      "desc": {
+        "zh": "以 298 K 可逆地板核对电解水、直接空气捕碳（DAC）、常温锂介导固氮与 CO₂ 电还原制乙烯的已确立、已演示与目标声称。",
+        "en": "Benchmarking 2026 green hydrogen electrolysis, direct air capture, ambient Li-mediated NH3, and CO2-to-ethylene against irreversible thermodynamic floors."
+      },
+      "aliases": {
+        "zh": [
+          "电解水制氢一度电最多多少氢",
+          "直接空气捕碳最少要多少能量",
+          "常温电化学合成氨进展",
+          "2026 绿氨和 DAC 真实数据"
+        ],
+        "en": [
+          "minimum energy for water electrolysis 1.23 V",
+          "direct air capture thermodynamic minimum work",
+          "ambient electrochemical ammonia synthesis 2024 2026",
+          "CO2 electroreduction energy efficiency"
+        ]
+      },
+      "relatedPages": ["electrochemistry", "thermodynamics"]
+    },
+    {
+      "id": "five-questions-reaction-claim-checklist",
+      "anchor": "#ch10",
+      "title": {
+        "zh": "用热力学核对任何反应与能源新闻的五个问题",
+        "en": "Five Thermodynamic Questions to Audit Any Reaction or Energy Claim"
+      },
+      "desc": {
+        "zh": "从 ΔG 符号、与理论地板的倍数、平衡与速率区分、选择性与分离成本、以及小试与连续实测边界快速识破夸大宣称。",
+        "en": "A practical five-question audit separating physical feasibility from exaggerated catalyst, zero-energy, or nameplate capacity claims."
+      },
+      "aliases": {
+        "zh": [
+          "怎么识破永动机或零能耗化学新闻",
+          "热力学核对清单"
+        ],
+        "en": [
+          "how to fact check energy chemistry claims",
+          "thermodynamic sanity check checklist"
+        ]
+      },
+      "relatedPages": ["thermodynamics", "chemical-equilibrium", "activation-energy", "electrochemistry"]
+    }
+  ]
+}

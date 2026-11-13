@@ -1,0 +1,113 @@
+{
+  "slug": "yield-curve-and-credit-spreads",
+  "path": "investment/rates/yield-curve-and-credit-spreads/",
+  "category": "investment",
+  "subtopic": "rates",
+  "subtopicName": { "zh": "利率与成本", "en": "Rates & Costs" },
+  "stage": "university",
+  "title": {
+    "zh": "收益率曲线和信用利差：为什么借钱的期限和信用决定利率",
+    "en": "The Yield Curve and Credit Spreads · Why Term and Credit Decide Borrowing Rates"
+  },
+  "desc": {
+    "zh": "借同样一笔钱，为什么借 2 年和借 30 年利率不同，国债和公司债又差出一大截？从无套利自举、预期假说与期限溢价、久期与凸性、倒挂与衰退概率、信用利差违约算术、Merton 结构化违约模型、TIPS 实际利率与通胀拆解，到 2026 年 11 月的实时市场快照。",
+    "en": "Why does borrowing the exact same dollar cost one rate for 2 years, another for 30 years, and much more for a company than a Treasury? Eight interactive financial-math models from no-arbitrage bootstrapping and term premia to duration/convexity, inversion probits, default arithmetic, Merton structural credit, TIPS breakevens, and the November 2026 fixed-income frontier."
+  },
+  "tags": [
+    { "zh": "固定收益", "en": "Fixed Income" },
+    { "zh": "收益率曲线", "en": "Yield Curve" },
+    { "zh": "信用利差", "en": "Credit Spreads" },
+    { "zh": "久期与凸性", "en": "Duration & Convexity" },
+    { "zh": "长文", "en": "Long-form Essay" }
+  ],
+  "concepts": [
+    {
+      "id": "spot-forward-bootstrapping",
+      "title": { "zh": "即期利率、远期利率与自举法", "en": "Spot rates, forward rates & bootstrapping" },
+      "desc": { "zh": "无套利平价债券方程如何逐年拆出零息贴现因子、即期利率与一年期远期利率。", "en": "How no-arbitrage par bond equations peel out discount factors, spot rates, and one-year forward rates." },
+      "aliases": {
+        "zh": ["即期利率", "远期利率", "自举法", "零息利率", "贴现因子", "平价收益率"],
+        "en": ["spot rate", "forward rate", "bootstrapping", "zero coupon yield", "discount factor", "par yield"]
+      },
+      "anchor": "#ch1",
+      "relatedPages": ["why-one-rate-moves-everything", "compound-interest"]
+    },
+    {
+      "id": "expectations-term-premium",
+      "title": { "zh": "预期假说与期限溢价", "en": "Expectations hypothesis & term premium" },
+      "desc": { "zh": "长期利率拆解为预期未来短期利率平均值加上补偿长期波动的期限溢价。", "en": "Splitting long yields into average expected future short rates plus a term premium." },
+      "aliases": {
+        "zh": ["期限溢价", "预期假说", "为什么长期利率更高", "收益率曲线形状", "Kim-Wright"],
+        "en": ["term premium", "expectations hypothesis", "why are long-term rates higher", "yield curve shape"]
+      },
+      "anchor": "#ch2",
+      "relatedPages": ["why-one-rate-moves-everything"]
+    },
+    {
+      "id": "bond-duration-and-convexity",
+      "title": { "zh": "债券久期与凸性", "en": "Bond duration & convexity" },
+      "desc": { "zh": "修正久期与二阶正凸性怎样决定长债与短债面对利率冲击的价格敏感度差异。", "en": "How modified duration and positive convexity determine price swings across short vs long bonds." },
+      "aliases": {
+        "zh": ["久期", "凸性", "修正久期", "麦考利久期", "为什么长债跌得多"],
+        "en": ["duration", "convexity", "modified duration", "macaulay duration", "why do long bonds move more"]
+      },
+      "anchor": "#ch3",
+      "relatedPages": ["interest-rates-bonds", "compound-interest"]
+    },
+    {
+      "id": "yield-curve-inversion-signal",
+      "title": { "zh": "收益率曲线倒挂与衰退信号", "en": "Yield curve inversion & recession probit" },
+      "desc": { "zh": "1960–2026 年 10Y−3M 利差历史记录、纽约联储 Probit 模型与期限溢价拆解。", "en": "The 1960–2026 10Y−3M historical record, NY Fed probit probabilities, and expectations vs term-premium decomposition." },
+      "aliases": {
+        "zh": ["收益率曲线倒挂", "利差倒挂", "10年减2年", "10年减3个月", "倒挂一定衰退吗"],
+        "en": ["inverted yield curve", "yield curve inversion", "10y-2y spread", "10y-3m spread", "recession predictor"]
+      },
+      "anchor": "#ch4",
+      "relatedPages": ["why-one-rate-moves-everything"]
+    },
+    {
+      "id": "credit-spread-default-arithmetic",
+      "title": { "zh": "信用利差、违约损失与期望回报", "en": "Credit spreads, default loss & expected return" },
+      "desc": { "zh": "承诺收益率减去违约概率与回收率决定的预期损失，以及信用利差之谜。", "en": "Decomposing promised corporate yields into expected default loss, net credit risk premium, and breakeven default rate." },
+      "aliases": {
+        "zh": ["信用利差", "违约率", "违约回收率", "高收益债", "垃圾债", "投资级公司债", "信用利差之谜"],
+        "en": ["credit spread", "default probability", "recovery rate", "high yield bond", "investment grade OAS", "credit spread puzzle"]
+      },
+      "anchor": "#ch5",
+      "relatedPages": ["stocks-bonds"]
+    },
+    {
+      "id": "merton-structural-credit",
+      "title": { "zh": "Merton 结构化违约模型与流动性利差", "en": "Merton structural credit & liquidity crunch" },
+      "desc": { "zh": "股权看成公司资产看涨期权、风险债券看成卖空看跌期权，以及危机时非违约流动性楔子。", "en": "Equity as a call and risky debt as short a put on firm assets, plus non-default liquidity crunch wedges." },
+      "aliases": {
+        "zh": ["Merton模型", "违约距离", "结构化信用模型", "公司债期权定价", "流动性挤兑利差"],
+        "en": ["Merton model", "distance to default", "structural credit model", "equity as a call option", "liquidity spread"]
+      },
+      "anchor": "#ch6",
+      "relatedPages": ["a-fair-price-for-a-bet"]
+    },
+    {
+      "id": "tips-real-yield-breakeven",
+      "title": { "zh": "实际利率、TIPS 盈亏平衡通胀与利率全拆解", "en": "Real yields, TIPS breakeven inflation & spread stack" },
+      "desc": { "zh": "精确费雪恒等式把公司债拆成实际利率、盈亏平衡通胀与 OAS 信用利差。", "en": "Exact Fisher identity decomposing corporate yields into real rates, breakeven inflation, and credit OAS." },
+      "aliases": {
+        "zh": ["实际利率", "TIPS", "盈亏平衡通胀", "通胀保值债券", "费雪公式", "名义利率"],
+        "en": ["real interest rate", "TIPS", "breakeven inflation", "Fisher equation", "nominal vs real yield"]
+      },
+      "anchor": "#ch7",
+      "relatedPages": ["why-one-rate-moves-everything"]
+    },
+    {
+      "id": "fixed-income-frontier-2026",
+      "title": { "zh": "2026 年 11 月固定收益前沿坐标", "en": "November 2026 fixed-income frontier" },
+      "desc": { "zh": "2026 年 11 月美债曲线、全球主权 10Y 收益率、TIPS 实际利率与历史低位 IG/HY 信用利差。", "en": "November 2026 US Treasury curve, global 10Y sovereign yields, TIPS real yields, and tight IG/HY OAS spreads." },
+      "aliases": {
+        "zh": ["2026 美债收益率", "现在信用利差多少", "2026 国债利率", "全球10年期国债"],
+        "en": ["2026 treasury yield", "credit spreads 2026", "global 10 year yields 2026", "current IG HY OAS"]
+      },
+      "anchor": "#ch8",
+      "relatedPages": ["why-one-rate-moves-everything"]
+    }
+  ]
+}
