@@ -1,0 +1,610 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="category" content="economics"><meta name="stage" content="university">
+<title>经济是怎样被计量的 · 一篇可以动手的长文</title>
+<meta name="description" content="一个经济体“好不好”，到底是怎么量出来的？从 GDP 三面等价、物价指数与 CPI、增长率陷阱、PPP 与基尼系数、劳动力市场、周期与萨姆规则、索洛分解，到 GDP 边界与 2025 SNA 前沿。十个可以拖动的真实模型。">
+<link rel="icon" href="data:,">
+<style>
+  :root { --bg:#0c0e13; --card:#141821; --card2:#1a1f2b; --line:#2b3242; --ink:#ebe8e0; --body:#d5d7de; --mute:#a3aab8; --dim:#9098a8;
+    --gold:#e9b949; --cyan:#63c7e6; --red:#f07a6d; --green:#7ad6a0; --violet:#b39dfb;
+    --serif:"Songti SC","STSong","Noto Serif CJK SC","Source Han Serif SC","SimSun",Georgia,serif;
+    --sans:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC",system-ui,sans-serif;
+    --mono:ui-monospace,Menlo,Consolas,monospace; }
+  * { box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior:auto; } *, *::before, *::after { transition:none !important; animation:none !important; } }
+  body { margin:0; background:var(--bg); color:var(--ink); font:17px/1.85 var(--sans); -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+  a { color:var(--cyan); }
+  a:focus-visible, button:focus-visible, input:focus-visible, [tabindex]:focus-visible { outline:2px solid var(--gold); outline-offset:3px; }
+  .wrap { max-width:760px; margin:0 auto; padding:0 20px; }
+  .wide { max-width:980px; margin:0 auto; padding:0 20px; }
+
+  .topbar { position:absolute; top:0; left:0; right:0; z-index:5; display:flex; justify-content:space-between; align-items:center; padding:8px 12px; gap:8px; }
+  .back { display:inline-flex; align-items:center; min-height:48px; padding:0 10px; color:var(--mute); text-decoration:none; font-size:14px; }
+  .back:hover { color:var(--ink); }
+  #langToggle { display:flex; border:1px solid var(--line); border-radius:999px; overflow:hidden; background:var(--card); }
+  #langToggle button { min-width:48px; min-height:48px; border:0; border-radius:0; background:transparent; color:var(--mute); font:600 14px/1 var(--sans); padding:0 12px; cursor:pointer; }
+  #langToggle button + button { border-left:1px solid var(--line); }
+  #langToggle button[aria-pressed="true"] { background:rgba(233,185,73,.16); color:var(--gold); }
+
+  .hero { min-height:88vh; display:flex; align-items:center; border-bottom:1px solid var(--line); }
+  .hero .wrap { padding-top:96px; padding-bottom:64px; width:100%; }
+  .kicker { font:12px/1.4 var(--mono); letter-spacing:.2em; color:var(--gold); text-transform:uppercase; }
+  h1 { font:400 clamp(34px,6.4vw,74px)/1.2 var(--serif); letter-spacing:.03em; margin:.3em 0 .3em; }
+  .sub { font:400 clamp(18px,2.6vw,24px)/1.6 var(--serif); margin:0 0 1.4em; }
+  .lead { color:var(--body); max-width:36em; }
+  .note { font-size:15px; color:var(--mute); border-left:2px solid var(--line); padding-left:14px; margin-top:1.8em; max-width:36em; line-height:1.75; }
+  .note strong { color:var(--ink); font-weight:600; }
+
+  .toc { padding:52px 0 8px; }
+  .toc h2 { font:12px/1 var(--mono); letter-spacing:.24em; color:var(--mute); margin:0 0 14px; font-weight:400; }
+  .toc ol { list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); gap:0 22px; }
+  .toc a { display:flex; align-items:center; gap:12px; min-height:48px; text-decoration:none; color:var(--ink); border-bottom:1px solid var(--line); font-size:15px; line-height:1.4; }
+  .toc a:hover { color:var(--gold); }
+  .toc a span { font:12px/1 var(--mono); color:var(--mute); }
+  .toc a b { font-weight:400; }
+
+  .ch { padding-top:96px; }
+  .num { font:400 15px/1 var(--mono); color:var(--gold); letter-spacing:.2em; }
+  .ch h2 { font:400 clamp(26px,4.2vw,38px)/1.35 var(--serif); margin:.45em 0 .5em; letter-spacing:.02em; }
+  .law { font:400 clamp(19px,2.5vw,23px)/1.7 var(--serif); border-left:3px solid var(--gold); padding:4px 0 4px 18px; margin:0 0 1.5em; }
+  .ch p { margin:0 0 1.15em; color:var(--body); }
+  .ch p strong, .ch li strong { color:var(--ink); font-weight:600; }
+  .ch ul, .ch ol.plain { padding-left:1.3em; margin:0 0 1.2em; color:var(--body); }
+  .ch li { margin:.45em 0; }
+  .take { color:var(--mute) !important; font-size:15.5px; }
+  .eq { font:400 17px/1.7 var(--serif); color:var(--ink); background:var(--card); border:1px solid var(--line); border-radius:10px; padding:12px 16px; margin:0 0 1.2em; overflow-x:auto; }
+  .eq i { font-style:italic; }
+  .see { font-size:15px; }
+  .tag { display:inline-block; font:600 12px/1 var(--sans); padding:5px 8px; border-radius:6px; margin-right:6px; vertical-align:2px; white-space:nowrap; }
+  .tag.h { background:rgba(122,214,160,.16); color:var(--green); } .tag.m { background:rgba(233,185,73,.16); color:var(--gold); } .tag.l { background:rgba(240,122,109,.16); color:var(--red); } .tag.c { background:rgba(99,199,230,.16); color:var(--cyan); }
+
+  figure.lab { margin:34px auto; background:var(--card); border:1px solid var(--line); border-radius:16px; padding:22px 22px 18px; }
+  .lab h3 { margin:0 0 4px; font:600 16px/1.5 var(--sans); color:var(--ink); }
+  .lab .how { margin:0 0 14px; font-size:14.5px; color:var(--mute); line-height:1.65; }
+  .cv { width:100%; height:320px; display:block; border-radius:10px; background:#0f1219; touch-action:pan-y; }
+  .cv.tall { height:380px; } .cv.short { height:220px; margin-top:10px; }
+  .ctl { display:flex; flex-wrap:wrap; gap:4px 22px; align-items:center; margin:12px 0 2px; font-size:14.5px; color:var(--mute); }
+  .ctl label.rng { display:flex; align-items:center; gap:10px; flex:1 1 300px; min-height:48px; }
+  .ctl label.rng > span { flex:0 0 auto; white-space:nowrap; }
+  .ctl output { flex:0 0 auto; white-space:nowrap; min-width:4.6em; text-align:right; color:var(--ink); font:500 14px/1.3 var(--mono); }
+  input[type=range] { flex:1 1 auto; min-width:80px; height:48px; margin:0; accent-color:var(--gold); background:transparent; cursor:pointer; }
+  label.chk { display:inline-flex; align-items:center; gap:10px; min-height:48px; padding:0 4px; cursor:pointer; color:var(--ink); }
+  input[type=checkbox], input[type=radio] { accent-color:var(--gold); width:20px; height:20px; margin:0; cursor:pointer; }
+  .seg { display:inline-flex; flex-wrap:wrap; gap:6px; align-items:center; }
+  .seg .lbl { margin-right:4px; }
+  .seg label { display:inline-flex; align-items:center; justify-content:center; gap:8px; min-height:48px; min-width:48px; padding:0 14px; border:1px solid var(--line); border-radius:999px; background:var(--card2); color:var(--ink); cursor:pointer; font-size:14px; }
+  .seg label:has(input:checked) { border-color:var(--gold); color:var(--gold); background:rgba(233,185,73,.12); }
+  .seg input { position:absolute; opacity:0; width:1px; height:1px; }
+  .seg label:has(input:focus-visible) { outline:2px solid var(--gold); outline-offset:2px; }
+  button.b { font:inherit; font-size:14.5px; color:var(--ink); background:var(--card2); border:1px solid var(--line); border-radius:999px; min-height:48px; padding:0 18px; cursor:pointer; line-height:1.3; }
+  button.b:hover { border-color:var(--gold); }
+  button.b[aria-pressed="true"] { background:rgba(233,185,73,.16); border-color:var(--gold); color:var(--gold); }
+  .read { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:10px; margin-top:14px; }
+  .read div { background:var(--card2); border-radius:10px; padding:10px 12px; font-size:13px; color:var(--mute); line-height:1.5; min-width:0; }
+  .read b { display:block; font:600 20px/1.3 var(--sans); color:var(--ink); font-variant-numeric:tabular-nums; overflow-wrap:anywhere; }
+  .read b.g { color:var(--gold); } .read b.r { color:var(--red); } .read b.c { color:var(--cyan); } .read b.n { color:var(--green); } .read b.v { color:var(--violet); }
+  .say { margin:14px 0 0; font-size:15px; color:var(--ink); line-height:1.7; min-height:3.4em; }
+  .say em { font-style:normal; color:var(--gold); }
+  .legend { display:flex; flex-wrap:wrap; gap:6px 18px; font-size:13.5px; color:var(--mute); margin-top:10px; }
+  .legend i { display:inline-block; width:14px; height:4px; border-radius:2px; margin-right:6px; vertical-align:3px; }
+  .legend i.dash { background:repeating-linear-gradient(90deg,currentColor 0 4px,transparent 4px 7px) !important; }
+  .legend i.band { height:10px; vertical-align:0; }
+  .legend i.dot { width:8px; height:8px; border-radius:50%; vertical-align:1px; }
+  .hidden { display:none !important; }
+
+  .tbl { width:100%; overflow-x:auto; margin:0 0 1.3em; }
+  .tbl table { border-collapse:collapse; width:100%; font-size:14.5px; line-height:1.55; min-width:0; }
+  .tbl th, .tbl td { border-bottom:1px solid var(--line); padding:9px 8px; text-align:left; vertical-align:top; color:var(--body); }
+  .tbl th { color:var(--mute); font-weight:600; font-size:13px; }
+  .tbl td.n { font-family:var(--mono); color:var(--ink); white-space:nowrap; }
+  .tbl td small { color:var(--mute); font-size:12.5px; display:block; }
+  #frTable td:first-child { min-width:4.5em; color:var(--ink); }
+  .three { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:12px; margin:0 0 1.3em; }
+  .three div { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:14px 16px; font-size:15px; line-height:1.7; color:var(--body); }
+  .three h4 { margin:0 0 6px; font:600 14px/1.4 var(--sans); }
+
+  .sum { margin:50px 0 0; padding:24px 24px; border:1px solid var(--line); border-radius:16px; background:linear-gradient(180deg,rgba(233,185,73,.07),transparent); font:400 clamp(17px,2.2vw,20px)/1.95 var(--serif); }
+  .sum em { font-style:normal; color:var(--gold); }
+  .qs { counter-reset:q; list-style:none; padding:0 !important; }
+  .qs li { counter-increment:q; position:relative; padding:14px 0 14px 46px !important; border-bottom:1px solid var(--line); margin:0 !important; }
+  .qs li::before { content:counter(q); position:absolute; left:0; top:14px; width:30px; height:30px; border-radius:50%; border:1px solid var(--gold); color:var(--gold); font:600 14px/28px var(--mono); text-align:center; }
+
+  footer { margin:100px 0 0; padding:40px 0 70px; border-top:1px solid var(--line); color:var(--mute); font-size:14px; line-height:1.8; }
+  footer a { color:var(--mute); }
+  @media (max-width:640px) {
+    body { font-size:16px; } .wrap,.wide { padding:0 16px; }
+    figure.lab { padding:16px 12px 14px; border-radius:14px; }
+    .cv { height:270px; } .cv.tall { height:340px; } .cv.short { height:190px; }
+    .ch { padding-top:76px; } .read { grid-template-columns:repeat(2,minmax(0,1fr)); } .read b { font-size:17px; }
+    .ctl label.rng { flex-basis:100%; min-width:0; }
+    .eq { font-size:15px; padding:10px 12px; }
+    .tbl table { font-size:13.5px; } .tbl th, .tbl td { padding:8px 5px; }
+  }
+  @media (max-width:420px) {
+    .ctl label.rng { flex-wrap:wrap; gap:0 10px; justify-content:space-between; }
+    .ctl label.rng input[type=range] { order:3; flex:1 1 100%; }
+    .tbl td.n { white-space:normal; }
+  }
+</style>
+</head>
+<body>
+<div class="topbar">
+  <a class="back" href="../../../" data-i18n="nav.back"></a>
+  <div id="langToggle" role="group" data-i18n-aria="nav.lang"><button type="button" data-lang="zh" aria-pressed="false">中</button><button type="button" data-lang="en" aria-pressed="false">EN</button></div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="kicker" data-i18n="hero.kicker"></div>
+    <h1 data-i18n="hero.title"></h1>
+    <p class="sub" data-i18n-html="hero.sub"></p>
+    <p class="lead" data-i18n-html="hero.lead"></p>
+    <p class="note" data-i18n-html="hero.note"></p>
+  </div>
+</header>
+
+<nav class="wrap toc" data-i18n-aria="toc.label">
+  <h2 data-i18n="toc.title"></h2>
+  <ol>
+    <li><a href="#ch1"><span>01</span><b data-i18n="ch1.title"></b></a></li>
+    <li><a href="#ch2"><span>02</span><b data-i18n="ch2.title"></b></a></li>
+    <li><a href="#ch3"><span>03</span><b data-i18n="ch3.title"></b></a></li>
+    <li><a href="#ch4"><span>04</span><b data-i18n="ch4.title"></b></a></li>
+    <li><a href="#ch5"><span>05</span><b data-i18n="ch5.title"></b></a></li>
+    <li><a href="#ch6"><span>06</span><b data-i18n="ch6.title"></b></a></li>
+    <li><a href="#ch7"><span>07</span><b data-i18n="ch7.title"></b></a></li>
+    <li><a href="#ch8"><span>08</span><b data-i18n="ch8.title"></b></a></li>
+    <li><a href="#ch9"><span>09</span><b data-i18n="ch9.title"></b></a></li>
+    <li><a href="#ch10"><span>10</span><b data-i18n="ch10.title"></b></a></li>
+    <li><a href="#ch11"><span>11</span><b data-i18n="ch11.title"></b></a></li>
+  </ol>
+</nav>
+
+<main>
+<!-- 01 GDP three ways -->
+<section class="ch" id="ch1">
+  <div class="wrap">
+    <div class="num">01</div>
+    <h2 data-i18n="ch1.title"></h2>
+    <p class="law" data-i18n-html="ch1.law"></p>
+    <p data-i18n-html="ch1.p1"></p>
+    <p data-i18n-html="ch1.p2"></p>
+    <div class="eq" data-i18n-html="ch1.eq"></div>
+  </div>
+  <div class="wide"><figure class="lab">
+    <h3 data-i18n="ch1.model.title"></h3>
+    <p class="how" data-i18n-html="ch1.model.how"></p>
+    <canvas class="cv tall" id="g1Cv" role="img" data-i18n-aria="ch1.model.aria"></canvas>
+    <div class="legend">
+      <span><i class="band" style="background:var(--cyan)"></i><span data-i18n="ch1.leg.prod"></span></span>
+      <span><i class="band" style="background:var(--gold)"></i><span data-i18n="ch1.leg.exp"></span></span>
+      <span><i class="band" style="background:var(--green)"></i><span data-i18n="ch1.leg.inc"></span></span>
+      <span><i class="band" style="background:#556078"></i><span data-i18n="ch1.leg.out"></span></span>
+    </div>
+    <div class="ctl">
+      <label class="rng"><span data-i18n="ch1.ctl.wheat"></span><input type="range" id="g1Wheat" min="10" max="45" step="1" value="30"><output id="g1Wheato"></output></label>
+      <label class="rng"><span data-i18n="ch1.ctl.imports"></span><input type="range" id="g1Imports" min="0" max="30" step="5" value="0"><output id="g1Importso"></output></label>
+      <label class="rng"><span data-i18n="ch1.ctl.home"></span><input type="range" id="g1Home" min="0" max="30" step="5" value="0"><output id="g1Homeo"></output></label>
+    </div>
+    <div class="read">
+      <div><b class="r" id="g1Gross"></b><span data-i18n="ch1.read.gross"></span></div>
+      <div><b class="c" id="g1Gdp"></b><span data-i18n="ch1.read.gdp"></span></div>
+      <div><b class="g" id="g1Nx"></b><span data-i18n="ch1.read.nx"></span></div>
+      <div><b id="g1Out"></b><span data-i18n="ch1.read.out"></span></div>
+    </div>
+    <p class="say" id="g1Say" aria-live="polite"></p>
+  </figure></div>
+  <div class="wrap">
+    <p data-i18n-html="ch1.p3"></p>
+    <p data-i18n-html="ch1.p4"></p>
+    <p class="take" data-i18n-html="ch1.limit"></p>
+  </div>
+</section>
+
+<!-- 02 Nominal vs Real: Price Indexes -->
+<section class="ch" id="ch2">
+  <div class="wrap">
+    <div class="num">02</div>
+    <h2 data-i18n="ch2.title"></h2>
+    <p class="law" data-i18n-html="ch2.law"></p>
+    <p data-i18n-html="ch2.p1"></p>
+    <p data-i18n-html="ch2.p2"></p>
+    <div class="eq" data-i18n-html="ch2.eq"></div>
+  </div>
+  <div class="wide"><figure class="lab">
+    <h3 data-i18n="ch2.model.title"></h3>
+    <p class="how" data-i18n-html="ch2.model.how"></p>
+    <canvas class="cv tall" id="g2Cv" role="img" data-i18n-aria="ch2.model.aria"></canvas>
+    <div class="legend">
+      <span><i style="background:var(--red)"></i><span data-i18n="ch2.leg.l"></span></span>
+      <span><i style="background:var(--cyan)"></i><span data-i18n="ch2.leg.p"></span></span>
+      <span><i style="background:var(--gold)"></i><span data-i18n="ch2.leg.f"></span></span>
+      <span style="color:var(--green)"><i class="dash"></i><span data-i18n="ch2.leg.true"></span></span>
+    </div>
+    <div class="ctl">
+      <label class="rng"><span data-i18n="ch2.ctl.drop"></span><input type="range" id="g2Drop" min="0" max="40" step="5" value="25"><output id="g2Dropo"></output></label>
+      <label class="rng"><span data-i18n="ch2.ctl.sig"></span><input type="range" id="g2Sig" min="0" max="2.5" step="0.1" value="1.5"><output id="g2Sigo"></output></label>
+      <label class="rng"><span data-i18n="ch2.ctl.imp"></span><input type="range" id="g2Imp" min="0" max="100" step="10" value="0"><output id="g2Impo"></output></label>
+    </div>
+    <div class="read">
+      <div><b class="r" id="g2L"></b><span data-i18n="ch2.read.l"></span></div>
+      <div><b class="c" id="g2P"></b><span data-i18n="ch2.read.p"></span></div>
+      <div><b class="g" id="g2F"></b><span data-i18n="ch2.read.f"></span></div>
+      <div><b class="v" id="g2Bias"></b><span data-i18n="ch2.read.bias"></span></div>
+    </div>
+    <p class="say" id="g2Say" aria-live="polite"></p>
+  </figure></div>
+  <div class="wrap">
+    <p data-i18n-html="ch2.p3"></p>
+    <p data-i18n-html="ch2.p4"></p>
+    <p class="see" data-i18n-html="ch2.see"></p>
+    <p class="take" data-i18n-html="ch2.limit"></p>
+  </div>
+</section>
+
+<!-- 03 CPI in practice -->
+<section class="ch" id="ch3">
+  <div class="wrap">
+    <div class="num">03</div>
+    <h2 data-i18n="ch3.title"></h2>
+    <p class="law" data-i18n-html="ch3.law"></p>
+    <p data-i18n-html="ch3.p1"></p>
+    <p data-i18n-html="ch3.p2"></p>
+  </div>
+  <div class="wide"><figure class="lab">
+    <h3 data-i18n="ch3.model.title"></h3>
+    <p class="how" data-i18n-html="ch3.model.how"></p>
+    <canvas class="cv" id="g3Cv" role="img" data-i18n-aria="ch3.model.aria"></canvas>
+    <div class="ctl">
+      <label class="rng"><span data-i18n="ch3.ctl.sh"></span><input type="range" id="g3Sh" min="0" max="60" step="1" value="36"><output id="g3Sho"></output></label>
+      <label class="rng"><span data-i18n="ch3.ctl.en"></span><input type="range" id="g3En" min="0" max="25" step="1" value="7"><output id="g3Eno"></output></label>
+      <label class="rng"><span data-i18n="ch3.ctl.shock"></span><input type="range" id="g3Shock" min="-20" max="40" step="2" value="12"><output id="g3Shocko"></output></label>
+    </div>
+    <div class="ctl">
+      <label class="chk"><input type="checkbox" id="g3Hed" checked><span data-i18n="ch3.ctl.hed"></span></label>
+      <label class="chk"><input type="checkbox" id="g3Oer" checked><span data-i18n="ch3.ctl.oer"></span></label>
+    </div>
+    <div class="read">
+      <div><b class="c" id="g3Head"></b><span data-i18n="ch3.read.head"></span></div>
+      <div><b class="n" id="g3Core"></b><span data-i18n="ch3.read.core"></span></div>
+      <div><b class="g" id="g3Pers"></b><span data-i18n="ch3.read.pers"></span></div>
+      <div><b class="r" id="g3Bias"></b><span data-i18n="ch3.read.bias"></span></div>
+    </div>
+    <p class="say" id="g3Say" aria-live="polite"></p>
+  </figure></div>
+  <div class="wrap">
+    <p data-i18n-html="ch3.p3"></p>
+    <p data-i18n-html="ch3.p4"></p>
+    <p class="take" data-i18n-html="ch3.limit"></p>
+  </div>
+</section>
+
+<!-- 04 Growth-rate traps -->
+<section class="ch" id="ch4">
+  <div class="wrap">
+    <div class="num">04</div>
+    <h2 data-i18n="ch4.title"></h2>
+    <p class="law" data-i18n-html="ch4.law"></p>
+    <p data-i18n-html="ch4.p1"></p>
+    <p data-i18n-html="ch4.p2"></p>
+    <div class="eq" data-i18n-html="ch4.eq"></div>
+  </div>
+  <div class="wide"><figure class="lab">
+    <h3 data-i18n="ch4.model.title"></h3>
+    <p class="how" data-i18n-html="ch4.model.how"></p>
+    <div class="ctl">
+      <div class="seg" role="radiogroup" data-i18n-aria="ch4.ctl.mode">
+        <label><input type="radio" name="g4Mode" value="rates" checked><span data-i18n="ch4.mode.rates"></span></label>
+        <label><input type="radio" name="g4Mode" value="seasonal"><span data-i18n="ch4.mode.seasonal"></span></label>
+        <label><input type="radio" name="g4Mode" value="revisions"><span data-i18n="ch4.mode.revisions"></span></label>
+      </div>
+    </div>
+    <canvas class="cv tall" id="g4Cv" role="img" data-i18n-aria="ch4.model.aria"></canvas>
+    <div class="ctl" id="g4CtlRates">
+      <label class="rng"><span data-i18n="ch4.ctl.dip"></span><input type="range" id="g4Dip" min="-8" max="4" step="0.5" value="-4"><output id="g4Dipo"></output></label>
+      <label class="rng"><span data-i18n="ch4.ctl.reb"></span><input type="range" id="g4Reb" min="-2" max="6" step="0.5" value="2"><output id="g4Rebo"></output></label>
+    </div>
+    <div class="ctl hidden" id="g4CtlSeasonal">
+      <label class="rng"><span data-i18n="ch4.ctl.amp"></span><input type="range" id="g4Amp" min="0" max="10" step="1" value="6"><output id="g4Ampo"></output></label>
+      <label class="rng"><span data-i18n="ch4.ctl.shift"></span><input type="range" id="g4Shift" min="-3" max="3" step="0.5" value="0"><output id="g4Shifto"></output></label>
+    </div>
+    <div class="read">
+      <div><b class="c" id="g4A"></b><span id="g4AL" data-i18n="ch4.read.a"></span></div>
+      <div><b class="g" id="g4B"></b><span id="g4BL" data-i18n="ch4.read.b"></span></div>
+      <div><b class="r" id="g4C"></b><span id="g4CL" data-i18n="ch4.read.c"></span></div>
+      <div><b class="n" id="g4D"></b><span id="g4DL" data-i18n="ch4.read.d"></span></div>
+    </div>
+    <p class="say" id="g4Say" aria-live="polite"></p>
+  </figure></div>
+  <div class="wrap">
+    <p data-i18n-html="ch4.p3"></p>
+    <p data-i18n-html="ch4.p4"></p>
+    <p class="take" data-i18n-html="ch4.limit"></p>
+  </div>
+</section>
+
+<!-- 05 Comparing countries: PPP & Inequality -->
+<section class="ch" id="ch5">
+  <div class="wrap">
+    <div class="num">05</div>
+    <h2 data-i18n="ch5.title"></h2>
+    <p class="law" data-i18n-html="ch5.law"></p>
+    <p data-i18n-html="ch5.p1"></p>
+    <p data-i18n-html="ch5.p2"></p>
+    <div class="eq" data-i18n-html="ch5.eq"></div>
+  </div>
+  <div class="wide"><figure class="lab">
+    <h3 data-i18n="ch5.model.title"></h3>
+    <p class="how" data-i18n-html="ch5.model.how"></p>
+    <div class="ctl">
+      <div class="seg" role="radiogroup" data-i18n-aria="ch5.ctl.mode">
+        <label><input type="radio" name="g5Mode" value="ppp" checked><span data-i18n="ch5.mode.ppp"></span></label>
+        <label><input type="radio" name="g5Mode" value="lorenz"><span data-i18n="ch5.mode.lorenz"></span></label>
+      </div>
+    </div>
+    <canvas class="cv tall" id="g5Cv" role="img" data-i18n-aria="ch5.model.aria"></canvas>
+    <div class="ctl" id="g5CtlPpp">
+      <label class="rng"><span data-i18n="ch5.ctl.at"></span><input type="range" id="g5AT" min="0.20" max="1.00" step="0.05" value="0.35"><output id="g5ATo"></output></label>
+      <label class="rng"><span data-i18n="ch5.ctl.an"></span><input type="range" id="g5AN" min="0.30" max="1.20" step="0.05" value="0.60"><output id="g5ANo"></output></label>
+    </div>
+    <div class="ctl hidden" id="g5CtlLor">
+      <label class="rng"><span data-i18n="ch5.ctl.top"></span><input type="range" id="g5Top" min="20" max="55" step="1" value="35"><output id="g5Topo"></output></label>
+      <label class="rng"><span data-i18n="ch5.ctl.grow"></span><input type="range" id="g5Grow" min="0" max="50" step="5" value="20"><output id="g5Growo"></output></label>
+      <label class="chk"><input type="checkbox" id="g5Skew" checked><span data-i18n="ch5.ctl.skew"></span></label>
+    </div>
+    <div class="read">
+      <div><b class="c" id="g5A"></b><span id="g5AL" data-i18n="ch5.read.a"></span></div>
+      <div><b class="g" id="g5B"></b><span id="g5BL" data-i18n="ch5.read.b"></span></div>
+      <div><b class="v" id="g5C"></b><span id="g5CL" data-i18n="ch5.read.c"></span></div>
+      <div><b class="n" id="g5D"></b><span id="g5DL" data-i18n="ch5.read.d"></span></div>
+    </div>
+    <p class="say" id="g5Say" aria-live="polite"></p>
+  </figure></div>
+  <div class="wrap">
+    <p data-i18n-html="ch5.p3"></p>
+    <p data-i18n-html="ch5.p4"></p>
+    <p class="see" data-i18n-html="ch5.see"></p>
+    <p class="take" data-i18n-html="ch5.limit"></p>
+  </div>
+</section>
+
+<!-- 06 Labour market -->
+<section class="ch" id="ch6">
+  <div class="wrap">
+    <div class="num">06</div>
+    <h2 data-i18n="ch6.title"></h2>
+    <p class="law" data-i18n-html="ch6.law"></p>
+    <p data-i18n-html="ch6.p1"></p>
+    <p data-i18n-html="ch6.p2"></p>
+  </div>
+  <div class="wide"><figure class="lab">
+    <h3 data-i18n="ch6.model.title"></h3>
+    <p class="how" data-i18n-html="ch6.model.how"></p>
+    <div class="ctl">
+      <div class="seg" role="radiogroup" data-i18n-aria="ch6.ctl.mode">
+        <label><input type="radio" name="g6Mode" value="defs" checked><span data-i18n="ch6.mode.defs"></span></label>
+        <label><input type="radio" name="g6Mode" value="beveridge"><span data-i18n="ch6.mode.bev"></span></label>
+        <label><input type="radio" name="g6Mode" value="okun"><span data-i18n="ch6.mode.okun"></span></label>
+      </div>
+    </div>
+    <canvas class="cv tall" id="g6Cv" role="img" data-i18n-aria="ch6.model.aria"></canvas>
+    <div class="ctl" id="g6CtlDefs">
+      <label class="rng"><span data-i18n="ch6.ctl.disc"></span><input type="range" id="g6Disc" min="0" max="15" step="1" value="0"><output id="g6Disco"></output></label>
+      <label class="rng"><span data-i18n="ch6.ctl.pt"></span><input type="range" id="g6Pt" min="0" max="30" step="2" value="0"><output id="g6Pto"></output></label>
+    </div>
+    <div class="ctl hidden" id="g6CtlBev">
+      <label class="rng"><span data-i18n="ch6.ctl.match"></span><input type="range" id="g6Match" min="0.70" max="1.30" step="0.05" value="1.00"><output id="g6Matcho"></output></label>
+    </div>
+    <div class="ctl hidden" id="g6CtlOkun">
+      <div class="seg" role="radiogroup" data-i18n-aria="ch6.ctl.era">
+        <label><input type="radio" name="g6Era" value="all" checked><span data-i18n="ch6.era.all"></span></label>
+        <label><input type="radio" name="g6Era" value="pre"><span data-i18n="ch6.era.pre"></span></label>
+        <label><input type="radio" name="g6Era" value="gfc"><span data-i18n="ch6.era.gfc"></span></label>
+        <label><input type="radio" name="g6Era" value="post"><span data-i18n="ch6.era.post"></span></label>
+      </div>
+    </div>
+    <div class="read">
+      <div><b class="c" id="g6A"></b><span id="g6AL" data-i18n="ch6.read.a"></span></div>
+      <div><b class="g" id="g6B"></b><span id="g6BL" data-i18n="ch6.read.b"></span></div>
+      <div><b class="n" id="g6C"></b><span id="g6CL" data-i18n="ch6.read.c"></span></div>
+      <div><b class="r" id="g6D"></b><span id="g6DL" data-i18n="ch6.read.d"></span></div>
+    </div>
+    <p class="say" id="g6Say" aria-live="polite"></p>
+  </figure></div>
+  <div class="wrap">
+    <p data-i18n-html="ch6.p3"></p>
+    <p data-i18n-html="ch6.p4"></p>
+    <p class="see" data-i18n-html="ch6.see"></p>
+    <p class="take" data-i18n-html="ch6.limit"></p>
+  </div>
+</section>
+
+<!-- 07 Business cycle & Sahm rule -->
+<section class="ch" id="ch7">
+  <div class="wrap">
+    <div class="num">07</div>
+    <h2 data-i18n="ch7.title"></h2>
+    <p class="law" data-i18n-html="ch7.law"></p>
+    <p data-i18n-html="ch7.p1"></p>
+    <p data-i18n-html="ch7.p2"></p>
+    <div class="eq" data-i18n-html="ch7.eq"></div>
+  </div>
+  <div class="wide"><figure class="lab">
+    <h3 data-i18n="ch7.model.title"></h3>
+    <p class="how" data-i18n-html="ch7.model.how"></p>
+    <div class="ctl">
+      <div class="seg" role="radiogroup" data-i18n-aria="ch7.ctl.mode">
+        <label><input type="radio" name="g7Mode" value="sahm" checked><span data-i18n="ch7.mode.sahm"></span></label>
+        <label><input type="radio" name="g7Mode" value="gap"><span data-i18n="ch7.mode.gap"></span></label>
+      </div>
+    </div>
+    <canvas class="cv tall" id="g7Cv" role="img" data-i18n-aria="ch7.model.aria"></canvas>
+    <div class="ctl" id="g7CtlSahm">
+      <label class="rng"><span data-i18n="ch7.ctl.thresh"></span><input type="range" id="g7Thresh" min="0.30" max="0.80" step="0.05" value="0.50"><output id="g7Thresho"></output></label>
+      <label class="chk"><input type="checkbox" id="g7Zoom"><span data-i18n="ch7.ctl.zoom"></span></label>
+    </div>
+    <div class="read">
+      <div><b class="c" id="g7A"></b><span id="g7AL" data-i18n="ch7.read.a"></span></div>
+      <div><b class="g" id="g7B"></b><span id="g7BL" data-i18n="ch7.read.b"></span></div>
+      <div><b class="r" id="g7C"></b><span id="g7CL" data-i18n="ch7.read.c"></span></div>
+      <div><b class="n" id="g7D"></b><span id="g7DL" data-i18n="ch7.read.d"></span></div>
+    </div>
+    <p class="say" id="g7Say" aria-live="polite"></p>
+  </figure></div>
+  <div class="wrap">
+    <p data-i18n-html="ch7.p3"></p>
+    <p data-i18n-html="ch7.p4"></p>
+    <p class="take" data-i18n-html="ch7.limit"></p>
+  </div>
+</section>
+
+<!-- 08 Solow growth accounting & TFP -->
+<section class="ch" id="ch8">
+  <div class="wrap">
+    <div class="num">08</div>
+    <h2 data-i18n="ch8.title"></h2>
+    <p class="law" data-i18n-html="ch8.law"></p>
+    <p data-i18n-html="ch8.p1"></p>
+    <p data-i18n-html="ch8.p2"></p>
+    <div class="eq" data-i18n-html="ch8.eq"></div>
+  </div>
+  <div class="wide"><figure class="lab">
+    <h3 data-i18n="ch8.model.title"></h3>
+    <p class="how" data-i18n-html="ch8.model.how"></p>
+    <div class="ctl">
+      <div class="seg" role="radiogroup" data-i18n-aria="ch8.ctl.period">
+        <label><input type="radio" name="g8Per" value="1960-1973"><span data-i18n="ch8.per.p1"></span></label>
+        <label><input type="radio" name="g8Per" value="1973-1995"><span data-i18n="ch8.per.p2"></span></label>
+        <label><input type="radio" name="g8Per" value="1995-2005" checked><span data-i18n="ch8.per.p3"></span></label>
+        <label><input type="radio" name="g8Per" value="2005-2019"><span data-i18n="ch8.per.p4"></span></label>
+        <label><input type="radio" name="g8Per" value="2019-2023"><span data-i18n="ch8.per.p5"></span></label>
+      </div>
+    </div>
+    <canvas class="cv" id="g8Cv" role="img" data-i18n-aria="ch8.model.aria"></canvas>
+    <div class="ctl">
+      <label class="rng"><span data-i18n="ch8.ctl.alpha"></span><input type="range" id="g8Alpha" min="0.25" max="0.55" step="0.01" value="0.39"><output id="g8Alphao"></output></label>
+      <label class="chk"><input type="checkbox" id="g8AutoA" checked><span data-i18n="ch8.ctl.auto"></span></label>
+      <label class="chk"><input type="checkbox" id="g8HC"><span data-i18n="ch8.ctl.hc"></span></label>
+    </div>
+    <div class="read">
+      <div><b class="c" id="g8Gy"></b><span data-i18n="ch8.read.gy"></span></div>
+      <div><b class="g" id="g8Cap"></b><span data-i18n="ch8.read.cap"></span></div>
+      <div><b class="n" id="g8Lab"></b><span data-i18n="ch8.read.lab"></span></div>
+      <div><b class="v" id="g8Tfp"></b><span data-i18n="ch8.read.tfp"></span></div>
+    </div>
+    <p class="say" id="g8Say" aria-live="polite"></p>
+  </figure></div>
+  <div class="wrap">
+    <p data-i18n-html="ch8.p3"></p>
+    <p data-i18n-html="ch8.p4"></p>
+    <p class="take" data-i18n-html="ch8.limit"></p>
+  </div>
+</section>
+
+<!-- 09 What GDP leaves out -->
+<section class="ch" id="ch9">
+  <div class="wrap">
+    <div class="num">09</div>
+    <h2 data-i18n="ch9.title"></h2>
+    <p class="law" data-i18n-html="ch9.law"></p>
+    <p data-i18n-html="ch9.p1"></p>
+    <p data-i18n-html="ch9.p2"></p>
+  </div>
+  <div class="wide"><figure class="lab">
+    <h3 data-i18n="ch9.model.title"></h3>
+    <p class="how" data-i18n-html="ch9.model.how"></p>
+    <canvas class="cv" id="g9Cv" role="img" data-i18n-aria="ch9.model.aria"></canvas>
+    <div class="ctl">
+      <label class="rng"><span data-i18n="ch9.ctl.home"></span><input type="range" id="g9Home" min="0" max="23" step="1" value="0"><output id="g9Homeo"></output></label>
+      <label class="rng"><span data-i18n="ch9.ctl.dis"></span><input type="range" id="g9Dis" min="0" max="20" step="1" value="0"><output id="g9Diso"></output></label>
+    </div>
+    <div class="ctl">
+      <label class="chk"><input type="checkbox" id="g9Depr"><span data-i18n="ch9.ctl.depr"></span></label>
+      <label class="chk"><input type="checkbox" id="g9Env"><span data-i18n="ch9.ctl.env"></span></label>
+    </div>
+    <div class="read">
+      <div><b class="c" id="g9Gdp"></b><span data-i18n="ch9.read.gdp"></span></div>
+      <div><b class="g" id="g9Svc"></b><span data-i18n="ch9.read.svc"></span></div>
+      <div><b class="n" id="g9Adj"></b><span data-i18n="ch9.read.adj"></span></div>
+      <div><b class="r" id="g9Wealth"></b><span data-i18n="ch9.read.wealth"></span></div>
+    </div>
+    <p class="say" id="g9Say" aria-live="polite"></p>
+  </figure></div>
+  <div class="wrap">
+    <p data-i18n-html="ch9.p3"></p>
+    <p data-i18n-html="ch9.p4"></p>
+    <p class="take" data-i18n-html="ch9.limit"></p>
+  </div>
+</section>
+
+<!-- 10 Frontier -->
+<section class="ch" id="ch10">
+  <div class="wrap">
+    <div class="num">10</div>
+    <h2 data-i18n="ch10.title"></h2>
+    <p class="law" data-i18n-html="ch10.law"></p>
+    <p data-i18n-html="ch10.p1"></p>
+    <p data-i18n-html="ch10.p2"></p>
+  </div>
+  <div class="wide"><figure class="lab">
+    <h3 data-i18n="ch10.model.title"></h3>
+    <p class="how" data-i18n-html="ch10.model.how"></p>
+    <canvas class="cv" id="g10Cv" role="img" data-i18n-aria="ch10.model.aria"></canvas>
+    <div class="ctl" id="g10CtlSurv">
+      <label class="rng"><span data-i18n="ch10.ctl.resp"></span><input type="range" id="g10Resp" min="20" max="80" step="1" value="35"><output id="g10Respo"></output></label>
+      <label class="rng"><span data-i18n="ch10.ctl.bias"></span><input type="range" id="g10Bias" min="0" max="4" step="0.2" value="1.5"><output id="g10Biaso"></output></label>
+    </div>
+    <div class="read">
+      <div><b class="c" id="g10A"></b><span id="g10AL" data-i18n="ch10.sv.a"></span></div>
+      <div><b class="g" id="g10B"></b><span id="g10BL" data-i18n="ch10.sv.b"></span></div>
+      <div><b class="v" id="g10C"></b><span id="g10CL" data-i18n="ch10.sv.c"></span></div>
+      <div><b class="r" id="g10D"></b><span id="g10DL" data-i18n="ch10.sv.d"></span></div>
+    </div>
+    <p class="say" id="g10Say" aria-live="polite"></p>
+  </figure></div>
+  <div class="wrap">
+    <p data-i18n-html="ch10.p3"></p>
+    <div class="tbl" id="frTableWrap"></div>
+    <p data-i18n-html="ch10.p4"></p>
+    <div class="three">
+      <div><h4 style="color:var(--green)" data-i18n="ch10.est.h"></h4><span data-i18n-html="ch10.est.b"></span></div>
+      <div><h4 style="color:var(--cyan)" data-i18n="ch10.dem.h"></h4><span data-i18n-html="ch10.dem.b"></span></div>
+      <div><h4 style="color:var(--gold)" data-i18n="ch10.con.h"></h4><span data-i18n-html="ch10.con.b"></span></div>
+    </div>
+    <p class="take" data-i18n-html="ch10.limit"></p>
+  </div>
+</section>
+
+<!-- 11 Closing checklist -->
+<section class="ch" id="ch11">
+  <div class="wrap">
+    <div class="num">11</div>
+    <h2 data-i18n="ch11.title"></h2>
+    <p class="law" data-i18n-html="ch11.law"></p>
+    <p data-i18n-html="ch11.p1"></p>
+    <ol class="plain qs">
+      <li data-i18n-html="ch11.q1"></li>
+      <li data-i18n-html="ch11.q2"></li>
+      <li data-i18n-html="ch11.q3"></li>
+      <li data-i18n-html="ch11.q4"></li>
+      <li data-i18n-html="ch11.q5"></li>
+    </ol>
+    <div class="sum" data-i18n-html="ch11.sum"></div>
+    <p style="margin-top:2em" data-i18n-html="ch11.links"></p>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap" data-i18n-html="footer"></div></footer>
+
+<script src="data.js"></script>
+<script src="models.js"></script>
+<script src="copy.zh.js"></script>
+<script src="copy.en.js" onerror="void 0"></script>
+<script src="app.js"></script>
+</body>
+</html>

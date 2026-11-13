@@ -1,0 +1,102 @@
+{
+  "slug": "how-an-economy-is-measured",
+  "path": "economics/macro/how-an-economy-is-measured/",
+  "category": "economics",
+  "subtopic": "macro",
+  "subtopicName": { "zh": "宏观经济与国民核算", "en": "Macroeconomics & Measurement" },
+  "stage": "university",
+  "title": { "zh": "经济是怎样被计量的", "en": "How an Economy Is Measured" },
+  "desc": {
+    "zh": "一个经济体“好不好”，到底是怎么量出来的？从 GDP 三面等价、物价指数与 CPI、增长率陷阱、PPP 与基尼系数、劳动力市场、周期与萨姆规则、索洛分解，到 GDP 边界与 2025 SNA 前沿。",
+    "en": "How do we measure how well an economy is doing? From the three-sided GDP identity, price indexes and CPI, growth-rate traps, PPP and Gini, labour markets, business cycles and the Sahm rule, and Solow growth accounting to GDP boundaries and the 2025 SNA frontier."
+  },
+  "tags": [
+    { "zh": "宏观经济", "en": "Macroeconomics" },
+    { "zh": "GDP", "en": "GDP" },
+    { "zh": "通胀与CPI", "en": "Inflation & CPI" },
+    { "zh": "国民核算", "en": "National Accounts" },
+    { "zh": "长文", "en": "Long-form Essay" }
+  ],
+  "concepts": [
+    {
+      "id": "gdp-three-ways",
+      "title": { "zh": "GDP 三面等价与增加值", "en": "GDP Three Ways & Value Added" },
+      "desc": { "zh": "生产法、支出法与收入法为何必然相等，为何减去进口不是“进口拉低 GDP”，以及无偿家务的生产边界。", "en": "Why production, expenditure, and income approaches must match, why subtracting imports cancels out, and where the production boundary sits." },
+      "aliases": { "zh": ["GDP", "国内生产总值", "增加值", "三面等价", "生产法", "支出法", "收入法", "净出口为什么减进口", "国民生产净值", "家务计入GDP吗"], "en": ["gdp", "gross domestic product", "value added", "three approaches to gdp", "why does gdp subtract imports", "production boundary", "ndp"] },
+      "anchor": "#ch1",
+      "relatedPages": ["where-money-comes-from"]
+    },
+    {
+      "id": "price-indexes-chain-fisher",
+      "title": { "zh": "名义与实际、链式费雪指数与替代偏差", "en": "Nominal vs Real, Chained Fisher & Substitution Bias" },
+      "desc": { "zh": "拉氏指数、帕氏指数与链式费雪指数如何拆开价与量，替代偏差从何而来，以及 CPI 与 GDP 平减指数的分叉。", "en": "How Laspeyres, Paasche, and chained Fisher indexes separate price from quantity, why substitution bias arises, and how CPI diverges from the GDP deflator." },
+      "aliases": { "zh": ["名义GDP", "实际GDP", "拉氏指数", "帕氏指数", "链式费雪指数", "替代偏差", "GDP平减指数", "平减指数和CPI区别"], "en": ["nominal vs real gdp", "laspeyres", "paasche", "chained fisher index", "substitution bias", "gdp deflator vs cpi"] },
+      "anchor": "#ch2",
+      "relatedPages": ["where-money-comes-from"]
+    },
+    {
+      "id": "cpi-oer-hedonic-core",
+      "title": { "zh": "CPI 权重、等价租金 OER 与质量调整", "en": "CPI Weights, Owners' Equivalent Rent & Hedonic Adjustment" },
+      "desc": { "zh": "为什么个人体感通胀常偏离官方 CPI：篮子权重、自住业主等价租金（OER）、特征价格质量调整与核心通胀。", "en": "Why personal inflation differs from official CPI: expenditure weights, owners' equivalent rent, hedonic quality adjustments, and core CPI/PCE." },
+      "aliases": { "zh": ["CPI", "消费者物价指数", "体感通胀", "核心通胀", "自住等价租金", "OER", "特征价格法", "质量调整", "波斯金委员会"], "en": ["cpi", "consumer price index", "core inflation", "owners equivalent rent", "hedonic quality adjustment", "boskin commission", "pce inflation"] },
+      "anchor": "#ch3",
+      "relatedPages": ["where-money-comes-from"]
+    },
+    {
+      "id": "growth-traps-saar-revisions",
+      "title": { "zh": "折年率、基数效应、季节调整与数据修订", "en": "Annualised Rates, Base Effects, Seasonal Adjustment & Revisions" },
+      "desc": { "zh": "环比折年与同比的区别、低基数回声、2×4 中心移动平均季调失灵，以及 ALFRED 真实 GDP 历史修订档案。", "en": "q/q SAAR vs y/y, base-effect echoes, seasonal adjustment shifts, and real-time ALFRED GDP vintage revisions (2008Q4, 2020Q2, 2022H1)." },
+      "aliases": { "zh": ["环比折年率", "同比增长", "基数效应", "季节调整", "数据修订", "2022年美国技术性衰退", "ALFRED"], "en": ["saar", "base effect", "seasonal adjustment", "gdp revisions", "alfred vintages", "quarter over quarter vs year over year"] },
+      "anchor": "#ch4",
+      "relatedPages": ["numbers-lie"]
+    },
+    {
+      "id": "ppp-balassa-samuelson-gini",
+      "title": { "zh": "购买力平价 PPP、均值与中位数及基尼系数", "en": "Purchasing Power Parity, Mean vs Median & Gini Coefficient" },
+      "desc": { "zh": "巴拉萨–萨缪尔森效应为何让低工资国家按 PPP 的 GDP 翻倍，以及顶层集中增长下人均 GDP 与中位数的分化。", "en": "Why the Balassa-Samuelson effect boosts PPP GDP in lower-wage economies, and how top-heavy growth splits mean GDP per capita from median income." },
+      "aliases": { "zh": ["购买力平价", "PPP", "汇率GDP和PPP区别", "巴拉萨萨缪尔森效应", "洛伦兹曲线", "基尼系数", "平均数和中位数"], "en": ["ppp", "purchasing power parity", "balassa samuelson", "lorenz curve", "gini coefficient", "mean vs median income"] },
+      "anchor": "#ch5",
+      "relatedPages": ["where-money-comes-from", "mean-median-mode", "numbers-lie", "scarcity-moves"]
+    },
+    {
+      "id": "labour-u3-u6-beveridge-okun",
+      "title": { "zh": "U-3 与 U-6 失业率、贝弗里奇曲线与奥肯定律", "en": "U-3 vs U-6 Unemployment, Beveridge Curve & Okun's Law" },
+      "desc": { "zh": "灰心退出求职如何“美化”U-3、劳动参与率、美国 2001–2026 贝弗里奇曲线轨迹，以及跨越时期的奥肯定律斜率漂移。", "en": "How discouraged workers distort U-3, labour force participation, the 2001-2026 US Beveridge curve trajectory, and shifting Okun's law slopes." },
+      "aliases": { "zh": ["失业率", "U-3", "U-6", "劳动参与率", "贝弗里奇曲线", "职位空缺率", "奥肯定律", "城镇调查失业率"], "en": ["unemployment rate", "u3 vs u6", "labor force participation", "beveridge curve", "okuns law", "job openings"] },
+      "anchor": "#ch6",
+      "relatedPages": ["regression-correlation", "numbers-lie"]
+    },
+    {
+      "id": "business-cycle-sahm-potential",
+      "title": { "zh": "经济周期、潜在产出与萨姆规则", "en": "Business Cycles, Potential Output & the Sahm Rule" },
+      "desc": { "zh": "为什么“两季负增长”不是 NBER 衰退标准、萨姆规则 1960–2026 的 11 次触发与 2024 年假阳性，以及 CBO 潜在产出修订。", "en": "Why two negative quarters do not define an NBER recession, all 11 Sahm rule triggers including July 2024, and revisions to CBO potential output." },
+      "aliases": { "zh": ["经济周期", "经济衰退定义", "NBER", "萨姆规则", "潜在产出", "产出缺口", "2024年萨姆规则"], "en": ["business cycle", "recession definition", "nber", "sahm rule", "potential output", "output gap"] },
+      "anchor": "#ch7",
+      "relatedPages": ["where-money-comes-from"]
+    },
+    {
+      "id": "solow-growth-accounting-tfp",
+      "title": { "zh": "索洛增长核算与全要素生产率（TFP）", "en": "Solow Growth Accounting & Total Factor Productivity" },
+      "desc": { "zh": "产出增长如何拆成资本、工时、人力资本与“无知余数” TFP，以及 1960–2023 美国战后生产率分解实证。", "en": "Decomposing growth into capital, hours, human capital, and the TFP residual across US postwar eras (1960-2023 Penn World Table & FRED)." },
+      "aliases": { "zh": ["全要素生产率", "TFP", "索洛余数", "增长核算", "劳动生产率", "资本深化", "人力资本"], "en": ["total factor productivity", "tfp", "solow residual", "growth accounting", "labor productivity", "capital deepening"] },
+      "anchor": "#ch8",
+      "relatedPages": ["scarcity-moves"]
+    },
+    {
+      "id": "beyond-gdp-boundaries",
+      "title": { "zh": "GDP 之外：家务、折旧、灾难悖论与卫星账户", "en": "Beyond GDP: Home Production, Depreciation & Disaster Paradox" },
+      "desc": { "zh": "BEA 家务卫星账户（约占 23%–26%）、国内生产净值 NDP、飓风重建推高 GDP 的会计悖论与环境外部性。", "en": "Household production satellite accounts (~23-26%), net domestic product NDP, why disaster reconstruction raises GDP while destroying wealth, and environmental costs." },
+      "aliases": { "zh": ["GDP局限性", "国内生产净值", "NDP", "家庭生产", "卫星账户", "破窗谬误", "灾难GDP悖论", "绿色GDP"], "en": ["limits of gdp", "beyond gdp", "home production", "satellite accounts", "net domestic product", "broken window fallacy"] },
+      "anchor": "#ch9",
+      "relatedPages": ["scarcity-moves"]
+    },
+    {
+      "id": "frontier-gdpb-2025sna-nowcasting",
+      "title": { "zh": "前沿测量：免费数字品、GDP-B、2025 SNA 与实时预测", "en": "Measurement Frontier: Free Digital Goods, GDP-B, 2025 SNA & Nowcasting" },
+      "desc": { "zh": "零元数字服务与消费者剩余（GDP-B）、2025 年 3 月联合国 2025 SNA 新标准、调查回复率下跌与央行实时预测。", "en": "Valuing zero-price digital services and AI via GDP-B, the March 2025 SNA overhaul, declining survey response rates, and real-time central-bank nowcasting." },
+      "aliases": { "zh": ["GDP-B", "免费数字品", "2025 SNA", "国民账户体系", "数据资产", "调查回复率", "实时预测", "GDPNow"], "en": ["gdp-b", "free digital goods", "2025 sna", "system of national accounts", "survey nonresponse", "nowcasting", "gdpnow"] },
+      "anchor": "#ch10",
+      "relatedPages": ["numbers-lie", "where-money-comes-from"]
+    }
+  ]
+}
