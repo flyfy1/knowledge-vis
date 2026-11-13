@@ -104,6 +104,10 @@ const setRange = (page, id, v) => page.evaluate(([id, v]) => {
         const stripped = await page.evaluate(() => {
           const clone = document.body.cloneNode(true);
           clone.querySelectorAll('#langToggle').forEach(n => n.remove());
+          const origZh = document.querySelectorAll('.page-provenance .provenance-zh');
+          clone.querySelectorAll('.page-provenance .provenance-zh').forEach((n, i) => {
+            if (origZh[i] && getComputedStyle(origZh[i]).display === 'none') n.remove();
+          });
           return clone.innerText;
         });
         ok(!CJK.test(stripped), `${tag}: CJK leaked in EN DOM`);

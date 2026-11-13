@@ -154,6 +154,7 @@ window.KNOWLEDGE_ESSAYS = [
   "what-is-a-black-hole", "how-vaccines-work", "why-the-planet-warms", "why-the-sky-is-blue",
   "where-a-mortgage-payment-goes", "why-fermented-tofu-tastes-good",
   "how-soy-sauce-gets-its-flavor",
+  "how-hybrid-attention-remembers",
   "scarcity-moves"
 ];
 
@@ -353,6 +354,16 @@ window.KNOWLEDGE_PAGES = [
     },
     tags: [{ zh: "发酵", en: "Fermentation" }, { zh: "酱油", en: "Soy Sauce" }, { zh: "食品化学", en: "Food Chemistry" }, { zh: "长文", en: "Long-form Essay" }],
     category: "food", subtopic: "flavor", stage: "senior", status: "live", path: "food/flavor/how-soy-sauce-gets-its-flavor/"
+  },
+  {
+    slug: "how-hybrid-attention-remembers",
+    title: { zh: "混合注意力是怎么“记住”长文的", en: "How Hybrid Attention Models Remember" },
+    desc: {
+      zh: "为什么标准大模型读得越长，内存账单就按长度线性变厚？从 KV Cache、矩阵结合律、快权重容量上限、Delta 擦写规则、Gated DeltaNet 遗忘门到 3:1 混合注意力与屋顶线吞吐，用九个可动手模型一路讲透。",
+      en: "Why does a standard LLM memory bill grow linearly with context length? Walk through KV cache accounting, matrix associativity, fast-weight capacity limits, the delta rule, Gated DeltaNet, 3:1 hybrids, and roofline decode speed in nine live models."
+    },
+    tags: [{ zh: "混合注意力", en: "Hybrid Attention" }, { zh: "线性注意力", en: "Linear Attention" }, { zh: "KV Cache", en: "KV Cache" }, { zh: "Gated DeltaNet", en: "Gated DeltaNet" }, { zh: "长文", en: "Long-form Essay" }],
+    category: "computing", subtopic: "ml", stage: "university", status: "live", path: "computing/ml/how-hybrid-attention-remembers/"
   },
   {
     slug: "fourier",

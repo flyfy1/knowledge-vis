@@ -3084,6 +3084,18 @@
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5); English copy drafted by Claude Code (claude-haiku-5-5); independently reviewed 2026-11-12 by a separate Claude Code session (same model), see the page BRIEF.md; cross-model review pending",
       "path": "food/flavor/how-soy-sauce-gets-its-flavor/index.html"
+    },
+    "how-hybrid-attention-remembers": {
+      "developer": "Antigravity",
+      "edition": "antigravity-how-hybrid-attention-remembers-20261113",
+      "kind": "original",
+      "sourceRevision": "1a0ec5bc97d12ac64abcf65e7b9435e87bb409fa",
+      "scope": {
+        "zh": "整篇长文从零编写：KV Cache 内存账本、线性注意力结合律、快权重容量上限、Delta 擦写规则、Gated DeltaNet 衰减门、分块并行 SSD、3:1 混合注意力精确召回与本地屋顶线吞吐",
+        "en": "Whole essay written from scratch: KV cache accounting, linear attention associativity, fast-weight capacity limits, the delta rule, Gated DeltaNet forgetting, chunkwise SSD training, 3:1 hybrid recall bookmarks, and local decode roofline throughput"
+      },
+      "originalAuthorship": "written from scratch in zh and en by Antigravity (gemini-4-hydrogen), 2026-11-13; self-checked with models.cjs, browser.cjs, and canvas-text-overlap --sweep; independent cross-model review pending",
+      "path": "computing/ml/how-hybrid-attention-remembers/index.html"
     }
   },
   "exceptions": {

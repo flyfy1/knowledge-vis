@@ -1,11 +1,11 @@
 {
   "counts": {
     "groups": 11,
-    "nodes": 367,
-    "edges": 533,
+    "nodes": 376,
+    "edges": 541,
     "trails": 14,
     "questions": 124,
-    "fragments": 188
+    "fragments": 189
   },
   "conflicts": [],
   "suspendedEdges": [],
@@ -146,6 +146,41 @@
       "taughtBy": [
         "positive-predictive-value",
         "epidemic-r0"
+      ]
+    },
+    {
+      "concept": "kv-cache-vs-fixed-state",
+      "page": "attention-mechanism",
+      "taughtBy": [
+        "attention-mechanism"
+      ]
+    },
+    {
+      "concept": "linear-attention-associativity",
+      "page": "attention-mechanism",
+      "taughtBy": [
+        "attention-mechanism"
+      ]
+    },
+    {
+      "concept": "fast-weight-capacity",
+      "page": "embeddings",
+      "taughtBy": [
+        "embeddings"
+      ]
+    },
+    {
+      "concept": "hybrid-ratio-exact-recall",
+      "page": "attention-mechanism",
+      "taughtBy": [
+        "attention-mechanism"
+      ]
+    },
+    {
+      "concept": "hybrid-attention-frontier-2026",
+      "page": "llm-sampling",
+      "taughtBy": [
+        "llm-sampling"
       ]
     },
     {
@@ -1075,10 +1110,10 @@
     }
   ],
   "unknownAliasIds": [],
-  "sizeBytes": 721973,
+  "sizeBytes": 733569,
   "questionsBytes": 173024,
-  "combinedBytes": 894997,
-  "indexBytes": 90117,
+  "combinedBytes": 906593,
+  "indexBytes": 91621,
   "chunkBytes": {
     "math.nodes": 51664,
     "math.edges": 89636,
@@ -1104,8 +1139,8 @@
     "earth.nodes": 25871,
     "earth.edges": 19025,
     "earth.questions": 6822,
-    "computing.nodes": 19139,
-    "computing.edges": 18476,
+    "computing.nodes": 24980,
+    "computing.edges": 22111,
     "computing.questions": 2766,
     "society.nodes": 49933,
     "society.edges": 32751,

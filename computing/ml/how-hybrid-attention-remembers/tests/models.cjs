@@ -46,8 +46,9 @@ check('no CJK in copy.en.js, app.js, models.js, or index.html (except 中 toggle
     assert.ok(!CJK.test(txt), `${f} must contain no CJK characters`);
   }
   const html = fs.readFileSync(path.join(dir, 'index.html'), 'utf8')
-    .replace('<button type="button" data-lang="zh">中</button>', '');
-  assert.ok(!CJK.test(html), 'index.html must contain no CJK outside #langToggle');
+    .replace('<button type="button" data-lang="zh">中</button>', '')
+    .replace(/<details class="page-provenance"[\s\S]*?<\/details>/, '');
+  assert.ok(!CJK.test(html), 'index.html must contain no CJK outside #langToggle and static .page-provenance label');
 });
 
 check('Ch1 kvBudget matches calibrated 64K and 256K footprints', () => {

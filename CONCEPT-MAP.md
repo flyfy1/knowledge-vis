@@ -2705,7 +2705,7 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 <!-- GENERATED:atlas-nodes -->
 ## 三、图谱节点索引（生成，勿手改）
 
-367 个概念 · 533 条关系 · 11 个分区 · 由 scripts/build-atlas-data.cjs --concept-map 生成。节点排序与 data.js 一致（分区序、学段序、order、id）。
+376 个概念 · 541 条关系 · 11 个分区 · 由 scripts/build-atlas-data.cjs --concept-map 生成。节点排序与 data.js 一致（分区序、学段序、order、id）。
 
 ### 01 数学基础 / Mathematical tools
 
@@ -3044,11 +3044,20 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 图算法 / Graph algorithms | ../computing/algorithms/graph-algorithms/#step1 | graph-algorithms#step1 |
 | 图形渲染管线 · 从坐标到像素 / The graphics pipeline · from coordinates to pixels | ../computing/graphics/computer-graphics/#step0 | computer-graphics#step0 |
 | 哈希 / Hashing | ../computing/algorithms/hashing/#step0 | hashing#step0 |
+| KV Cache 与固定大小状态 / KV Cache vs Fixed-Size Recurrent State | ../computing/ml/how-hybrid-attention-remembers/#ch1 | how-hybrid-attention-remembers |
 | 延迟与带宽 / Latency & bandwidth | ../computing/systems/tcp-congestion/#step1 | tcp-congestion#step1 |
 | 副本与 quorum · 一致性和可用性的取舍 / Replicas & quorums · consistency vs availability | ../computing/systems/distributed-systems/#step0 | distributed-systems#step0 |
 | 机械臂运动学 · 从关节角到末端 / Robot-arm kinematics · from joint angles to the hand | ../computing/graphics/robot-kinematics/#step0 | robot-kinematics#step0 |
 | 排序算法 · 冒泡、归并与快排 / Sorting algorithms · bubble, merge and quicksort | ../computing/algorithms/sorting/#step2 | sorting#step2 |
 | TCP 拥塞控制 · 试探与退让 / TCP congestion control · probe and back off | ../computing/systems/tcp-congestion/#step4 | tcp-congestion#step4 |
+| 线性注意力的矩阵结合律 / Linear Attention via Matrix Associativity | ../computing/ml/how-hybrid-attention-remembers/#ch2 | how-hybrid-attention-remembers |
+| 快权重联想记忆与容量上限 / Fast-Weight Memory & Rank Capacity | ../computing/ml/how-hybrid-attention-remembers/#ch3 | how-hybrid-attention-remembers |
+| Delta 规则：先擦后写的投影更新 / The Delta Rule: Erase Before Writing | ../computing/ml/how-hybrid-attention-remembers/#ch4 | how-hybrid-attention-remembers |
+| Gated DeltaNet 与选择性遗忘门 / Gated DeltaNet & Selective Decay | ../computing/ml/how-hybrid-attention-remembers/#ch5 | how-hybrid-attention-remembers |
+| 分块并行训练与结构化状态空间对偶 / Chunkwise Training & State Space Duality | ../computing/ml/how-hybrid-attention-remembers/#ch6 | how-hybrid-attention-remembers |
+| 3:1 混合注意力与大海捞针精确回忆 / 3:1 Hybrid Ratio & Exact Recall Bookmarks | ../computing/ml/how-hybrid-attention-remembers/#ch7 | how-hybrid-attention-remembers |
+| 屋顶线下的长上下文吐字加速 / Roofline Decode Speedup at Long Context | ../computing/ml/how-hybrid-attention-remembers/#ch8 | how-hybrid-attention-remembers |
+| 混合注意力前沿谱系（2026 年 11 月） / Hybrid Attention Landscape (Nov 2026) | ../computing/ml/how-hybrid-attention-remembers/#ch9 | how-hybrid-attention-remembers |
 
 ### 10 经济与社会 / Economy & society
 
@@ -3285,3 +3294,18 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | Low-link bridge test | `leetcode/1192/#step3` | Tree edge p–c is critical exactly when low[c] > tin[p]. |
 
 <!-- /leetcode-1192-campaign -->
+
+<!-- how-hybrid-attention-remembers -->
+
+| Concept | Deep link | What the chapter teaches |
+| --- | --- | --- |
+| KV Cache vs fixed state | `computing/ml/how-hybrid-attention-remembers/#ch1` | Standard O(L) KV cache ledger vs O(1) recurrent state in a 32-layer 9B hybrid. |
+| Linear attention associativity | `computing/ml/how-hybrid-attention-remembers/#ch2` | Regrouping (QK^T)V into Q(K^T V) after removing softmax. |
+| Fast-weight rank capacity | `computing/ml/how-hybrid-attention-remembers/#ch3` | Orthogonal key capacity ceiling d and interference when pure addition overwrites keys. |
+| Delta rule memory overwrite | `computing/ml/how-hybrid-attention-remembers/#ch4` | Reading S_{t-1}k_t and writing only the residual to erase before writing. |
+| Gated DeltaNet forgetting | `computing/ml/how-hybrid-attention-remembers/#ch5` | Combining Mamba-2 global decay α_t with targeted delta erasure. |
+| Chunkwise SSD parallelism | `computing/ml/how-hybrid-attention-remembers/#ch6` | Turning serial recurrence into intra-chunk C×C matmuls plus chunk-boundary scans. |
+| 3:1 hybrid exact recall | `computing/ml/how-hybrid-attention-remembers/#ch7` | Why 25% full-attention anchors restore needle-in-a-haystack lookup while cutting 75% KV. |
+| Bandwidth-bound decode roofline | `computing/ml/how-hybrid-attention-remembers/#ch8` | How KV traffic reduction translates directly into local tokens/s speedup. |
+
+<!-- /how-hybrid-attention-remembers -->
