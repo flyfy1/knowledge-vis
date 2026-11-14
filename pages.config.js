@@ -158,6 +158,8 @@ window.KNOWLEDGE_ESSAYS = [
   "how-hybrid-attention-remembers",
   "why-compute-waits-for-memory",
   "why-nvme-is-fast",
+  "what-a-drive-is-made-of",
+  "how-sata-works",
   "how-an-economy-is-measured",
   "scarcity-moves"
 ];
@@ -388,6 +390,26 @@ window.KNOWLEDGE_PAGES = [
     },
     tags: [{ zh: "NVMe", en: "NVMe" }, { zh: "存储系统", en: "Storage Systems" }, { zh: "PCIe", en: "PCIe" }, { zh: "SSD 原理", en: "SSD Architecture" }, { zh: "长文", en: "Long-form Essay" }],
     category: "computing", subtopic: "systems", stage: "university", status: "live", path: "computing/systems/why-nvme-is-fast/"
+  },
+  {
+    slug: "what-a-drive-is-made-of",
+    title: { zh: "硬盘里到底是什么", en: "What a Drive Is Made Of" },
+    desc: {
+      zh: "机械硬盘和固态硬盘里装的东西完全不同，电脑却用同一套方式读它们。八个可以拖动的模型：编了号的扇区、寻道和转动、叠瓦磁道、闪存单元里的电压层、纠错码和寿命、闪存翻译层、接口与协议的分层地图、一次读取的时间花在哪。",
+      en: "A hard disk and a solid-state drive contain completely different things, yet the computer reads both the same way. Eight models you can push: numbered sectors, seek and rotation, shingled tracks, voltage levels in a flash cell, error correction and lifetime, the flash translation layer, a layered map of connectors and protocols, and where the time of one read goes."
+    },
+    tags: [{ zh: "存储系统", en: "Storage Systems" }, { zh: "机械硬盘", en: "Hard Disk Drives" }, { zh: "固态硬盘", en: "Solid-State Drives" }, { zh: "闪存", en: "NAND Flash" }, { zh: "长文", en: "Long-form Essay" }],
+    category: "computing", subtopic: "systems", stage: "university", status: "live", path: "computing/systems/what-a-drive-is-made-of/"
+  },
+  {
+    slug: "how-sata-works",
+    title: { zh: "SATA 为什么用了二十多年", en: "Why SATA Has Lasted Over Twenty Years" },
+    desc: {
+      zh: "一根七针的数据线、一套 2004 年定下的主机接口，为什么到 2026 年还接在最大的机械硬盘上？七个可以拖动的模型：并行总线的时序预算、8b/10b 编码器、一条读命令的帧、旋转盘片上的 NCQ、链路省电、端口倍增器、机械硬盘和 6 Gb/s 的距离。",
+      en: "Why is a seven-pin data cable, with a host interface fixed in 2004, still what the largest hard drives plug into in 2026? Seven models you can drag: the timing budget of a parallel bus, an 8b/10b encoder, the frames of one read command, NCQ on a spinning platter, link power states, a port multiplier, and how far a hard disk is from 6 Gb/s."
+    },
+    tags: [{ zh: "SATA", en: "SATA" }, { zh: "存储系统", en: "Storage Systems" }, { zh: "机械硬盘", en: "Hard Disk Drives" }, { zh: "串行链路", en: "Serial Links" }, { zh: "长文", en: "Long-form Essay" }],
+    category: "computing", subtopic: "systems", stage: "university", status: "live", path: "computing/systems/how-sata-works/"
   },
   {
     slug: "how-an-economy-is-measured",

@@ -220,6 +220,34 @@ chapters.push(
   ['配制酱油', 'naturally brewed soy sauce', SOY + '#ch8'],
   ['酱油为什么那么咸', 'sodium in soy sauce', SOY + '#ch9'],
 );
+// Storage series (2026-11-14): what a drive is made of (S1) and SATA (S2). 固态硬盘为什么比机械硬盘快 moved
+// here from why-nvme-is-fast #ch1; the seek-time words belong to S1 #ch2, not S2's NCQ chapter.
+const DRIVE = 'computing/systems/what-a-drive-is-made-of/', SATA = 'computing/systems/how-sata-works/';
+chapters.push(
+  ['4K 对齐', 'what is LBA', DRIVE + '#ch1'],
+  ['机械硬盘为什么慢', 'seek time', DRIVE + '#ch2'],
+  ['硬盘寻道时间', 'hard drive seek time', DRIVE + '#ch2'],
+  ['叠瓦盘', 'SMR drive', DRIVE + '#ch3'],
+  ['HAMR 是什么', 'HAMR', DRIVE + '#ch3'],
+  ['QLC 是什么', 'what is QLC', DRIVE + '#ch4'],
+  ['QLC 寿命', 'SSD lifespan', DRIVE + '#ch5'],
+  ['硬盘为什么会坏', 'how long does an SSD last', DRIVE + '#ch5'],
+  ['磨损均衡', 'flash translation layer', DRIVE + '#ch6'],
+  ['M.2 接口是不是都是 NVMe', 'is M.2 always NVMe', DRIVE + '#ch7'],
+  ['机械硬盘和固态硬盘区别', 'SSD vs HDD', DRIVE + '#ch8'],
+  ['固态硬盘为什么比机械硬盘快', 'why is an SSD faster than a hard drive', DRIVE + '#ch8'],
+  ['最大的硬盘有多大', 'largest hard drive', DRIVE + '#ch9'],
+  ['SATA 是什么', 'what is SATA', SATA + '#ch1'],
+  ['IDE 和 SATA 区别', 'IDE vs SATA', SATA + '#ch2'],
+  ['8b/10b', '8b10b', SATA + '#ch3'],
+  ['FIS 是什么', 'what is a FIS', SATA + '#ch4'],
+  ['NCQ', 'native command queuing', SATA + '#ch5'],
+  ['DevSleep', 'SATA hot plug', SATA + '#ch6'],
+  ['eSATA', 'port multiplier', SATA + '#ch7'],
+  ['SATA 为什么只有 6Gb/s', 'why is SATA only 6 Gb/s', SATA + '#ch8'],
+  ['SATA 会被淘汰吗', 'is SATA dead', SATA + '#ch9'],
+  ['硬盘规格怎么看', 'how to read a hard drive spec sheet', SATA + '#ch10'],
+);
 for (const [zh, en, href] of chapters) for (const q of [zh, en]) {
   const hit = first(q);
   ok(hit && (hit.href === href || (href.endsWith('/') && hit.href.startsWith(href))), `"${q}" opens ${href} (got ${hit && hit.href})`);

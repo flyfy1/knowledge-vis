@@ -274,6 +274,14 @@ anchor and aliases. It is a schema-2 fragment `atlas/graph/lessons/<slug>.json`:
   `search-index.js` is now 191,319 of 200,000 bytes: the next essay does not fit without first shrinking
   the index or raising the limit with a stated reason.
 
+- Storage series (2026-11-14): what-a-drive-is-made-of (9 concepts) and how-sata-works (10) → computing, no
+  `--region` needed. 14 hand-written edges: 9 between chapters, 2 from S1 #ch7 / #ch2 into S2 #ch1 / #ch5, 3 into
+  why-nvme-is-fast (#ch1, #ch2, #ch6). One word, one owner: 固态硬盘为什么比机械硬盘快 left why-nvme-is-fast #ch1 for
+  S1 #ch8 (the NVMe fragment was re-imported); the seek-time and slow-random-read words left S2 #ch5 for S1 #ch2,
+  and "is every M.2 drive NVMe" left S2 #ch1 for S1 #ch7. Plain HDD / hard drive (#ch2), HAMR (#ch3), SSD (#ch8)
+  and 8b10b (S2 #ch3) were added so the chapter is first. `tests/concept-search.cjs` pins 23 zh/en pairs. The
+  search chunks total 226,215 bytes; computing.js stays under the 60,000-byte chunk limit.
+
 ### Commands for the integrator
 
 ```sh

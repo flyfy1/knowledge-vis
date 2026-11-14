@@ -1,11 +1,11 @@
 {
   "counts": {
     "groups": 11,
-    "nodes": 405,
-    "edges": 569,
+    "nodes": 424,
+    "edges": 583,
     "trails": 14,
     "questions": 124,
-    "fragments": 192
+    "fragments": 194
   },
   "conflicts": [],
   "suspendedEdges": [],
@@ -412,6 +412,34 @@
       "page": "llm-sampling",
       "taughtBy": [
         "llm-sampling"
+      ]
+    },
+    {
+      "concept": "sata-protocol-layers",
+      "page": "why-nvme-is-fast",
+      "taughtBy": [
+        "nvme-protocol-overhead",
+        "nvme-pcie-lanes-littles-law",
+        "nvme-64k-queues",
+        "nvme-ring-doorbell-dma",
+        "ssd-nand-channel-parallelism",
+        "ssd-write-amplification-trim",
+        "nvme-polling-vs-interrupts",
+        "nvme-pcie6-zns-gpudirect"
+      ]
+    },
+    {
+      "concept": "why-sata-stopped-at-6g",
+      "page": "why-nvme-is-fast",
+      "taughtBy": [
+        "nvme-protocol-overhead",
+        "nvme-pcie-lanes-littles-law",
+        "nvme-64k-queues",
+        "nvme-ring-doorbell-dma",
+        "ssd-nand-channel-parallelism",
+        "ssd-write-amplification-trim",
+        "nvme-polling-vs-interrupts",
+        "nvme-pcie6-zns-gpudirect"
       ]
     },
     {
@@ -896,6 +924,111 @@
       ]
     },
     {
+      "concept": "hdd-seek-rotation-latency",
+      "page": "why-nvme-is-fast",
+      "taughtBy": [
+        "nvme-protocol-overhead",
+        "nvme-pcie-lanes-littles-law",
+        "nvme-64k-queues",
+        "nvme-ring-doorbell-dma",
+        "ssd-nand-channel-parallelism",
+        "ssd-write-amplification-trim",
+        "nvme-polling-vs-interrupts",
+        "nvme-pcie6-zns-gpudirect"
+      ]
+    },
+    {
+      "concept": "nand-cell-levels-slc-qlc",
+      "page": "quantum-tunneling",
+      "taughtBy": [
+        "quantum-tunneling"
+      ]
+    },
+    {
+      "concept": "nand-cell-levels-slc-qlc",
+      "page": "binomial-normal",
+      "taughtBy": [
+        "binomial-normal"
+      ]
+    },
+    {
+      "concept": "flash-endurance-ecc-tbw",
+      "page": "inside-a-phone",
+      "taughtBy": [
+        "gps-pseudorange-clock-bias",
+        "accelerometer-proof-mass",
+        "dead-reckoning-drift",
+        "capacitive-touch-interpolation",
+        "shot-noise-frame-stacking",
+        "metamerism-rgb-subpixels",
+        "predictive-compression-entropy",
+        "path-loss-shannon-capacity",
+        "hamming-code",
+        "handover-hysteresis",
+        "battery-internal-resistance",
+        "measurement-signal-noise-method"
+      ]
+    },
+    {
+      "concept": "flash-translation-layer-gc",
+      "page": "why-nvme-is-fast",
+      "taughtBy": [
+        "nvme-protocol-overhead",
+        "nvme-pcie-lanes-littles-law",
+        "nvme-64k-queues",
+        "nvme-ring-doorbell-dma",
+        "ssd-nand-channel-parallelism",
+        "ssd-write-amplification-trim",
+        "nvme-polling-vs-interrupts",
+        "nvme-pcie6-zns-gpudirect"
+      ]
+    },
+    {
+      "concept": "storage-interface-layer-map",
+      "page": "why-nvme-is-fast",
+      "taughtBy": [
+        "nvme-protocol-overhead",
+        "nvme-pcie-lanes-littles-law",
+        "nvme-64k-queues",
+        "nvme-ring-doorbell-dma",
+        "ssd-nand-channel-parallelism",
+        "ssd-write-amplification-trim",
+        "nvme-polling-vs-interrupts",
+        "nvme-pcie6-zns-gpudirect"
+      ]
+    },
+    {
+      "concept": "ssd-vs-hdd-latency-bandwidth",
+      "page": "why-nvme-is-fast",
+      "taughtBy": [
+        "nvme-protocol-overhead",
+        "nvme-pcie-lanes-littles-law",
+        "nvme-64k-queues",
+        "nvme-ring-doorbell-dma",
+        "ssd-nand-channel-parallelism",
+        "ssd-write-amplification-trim",
+        "nvme-polling-vs-interrupts",
+        "nvme-pcie6-zns-gpudirect"
+      ]
+    },
+    {
+      "concept": "ssd-vs-hdd-latency-bandwidth",
+      "page": "why-compute-waits-for-memory",
+      "taughtBy": [
+        "pipeline-memory-stall",
+        "memory-hierarchy-cache-walk",
+        "cache-tiling-blocking",
+        "memory-wall-littles-law",
+        "amdahl-gustafson-bus-cap",
+        "gpu-systolic-array",
+        "roofline-model",
+        "llm-inference-memory-bound",
+        "data-movement-energy-hbm",
+        "memory-wall-frontier-2026",
+        "memory-diagnostic-checklist"
+      ]
+    },
+    {
       "concept": "schwarzschild-radius",
       "page": "gravity-orbits",
       "taughtBy": [
@@ -1375,10 +1508,10 @@
     }
   ],
   "unknownAliasIds": [],
-  "sizeBytes": 778893,
+  "sizeBytes": 806238,
   "questionsBytes": 173024,
-  "combinedBytes": 951917,
-  "indexBytes": 96414,
+  "combinedBytes": 979262,
+  "indexBytes": 99671,
   "chunkBytes": {
     "math.nodes": 51664,
     "math.edges": 89636,
@@ -1404,8 +1537,8 @@
     "earth.nodes": 25871,
     "earth.edges": 19025,
     "earth.questions": 6822,
-    "computing.nodes": 38785,
-    "computing.edges": 30187,
+    "computing.nodes": 54821,
+    "computing.edges": 36921,
     "computing.questions": 2766,
     "society.nodes": 58077,
     "society.edges": 41022,

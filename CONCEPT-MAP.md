@@ -2705,7 +2705,7 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 <!-- GENERATED:atlas-nodes -->
 ## 三、图谱节点索引（生成，勿手改）
 
-405 个概念 · 569 条关系 · 11 个分区 · 由 scripts/build-atlas-data.cjs --concept-map 生成。节点排序与 data.js 一致（分区序、学段序、order、id）。
+424 个概念 · 583 条关系 · 11 个分区 · 由 scripts/build-atlas-data.cjs --concept-map 生成。节点排序与 data.js 一致（分区序、学段序、order、id）。
 
 ### 01 数学基础 / Mathematical tools
 
@@ -3040,6 +3040,7 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 真实处理器：规模而非新原理 / Real Processors: Scale, Not New Principles | ../computing/systems/switches-that-compute/#ch11 | switches-that-compute |
 | 大 O 记号 · 增长的形状 / Big O notation · the shape of growth | ../computing/algorithms/sorting/#step4 | sorting#step4 |
 | 二分查找 / Binary search | ../computing/algorithms/binary-search/#step0 | binary-search#step0 |
+| 块设备、扇区与 LBA（512e / 4Kn） / Block devices, sectors and LBA (512e / 4Kn) | ../computing/systems/what-a-drive-is-made-of/#ch1 | what-a-drive-is-made-of |
 | CNN 特征图 / CNN feature maps | ../computing/ml/cnn-feature-maps/#step0 | cnn-feature-maps#step0 |
 | 图算法 / Graph algorithms | ../computing/algorithms/graph-algorithms/#step1 | graph-algorithms#step1 |
 | 图形渲染管线 · 从坐标到像素 / The graphics pipeline · from coordinates to pixels | ../computing/graphics/computer-graphics/#step0 | computer-graphics#step0 |
@@ -3050,32 +3051,50 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 流水线与访存停顿 / Pipeline Stalls from Memory Latency | ../computing/systems/why-compute-waits-for-memory/#ch1 | why-compute-waits-for-memory |
 | 副本与 quorum · 一致性和可用性的取舍 / Replicas & quorums · consistency vs availability | ../computing/systems/distributed-systems/#step0 | distributed-systems#step0 |
 | 机械臂运动学 · 从关节角到末端 / Robot-arm kinematics · from joint angles to the hand | ../computing/graphics/robot-kinematics/#step0 | robot-kinematics#step0 |
+| SATA、ATA 命令集与 AHCI 的分层 / SATA Layers: Wire, ATA Commands and AHCI | ../computing/systems/how-sata-works/#ch1 | how-sata-works |
 | 排序算法 · 冒泡、归并与快排 / Sorting algorithms · bubble, merge and quicksort | ../computing/algorithms/sorting/#step2 | sorting#step2 |
 | TCP 拥塞控制 · 试探与退让 / TCP congestion control · probe and back off | ../computing/systems/tcp-congestion/#step4 | tcp-congestion#step4 |
+| 机械硬盘：寻道、转动等待与外圈更快 / Hard disks: seek, rotational latency and faster outer tracks | ../computing/systems/what-a-drive-is-made-of/#ch2 | what-a-drive-is-made-of |
 | 线性注意力的矩阵结合律 / Linear Attention via Matrix Associativity | ../computing/ml/how-hybrid-attention-remembers/#ch2 | how-hybrid-attention-remembers |
 | 存储层级与缓存命中 / Memory Latency Hierarchy and Cache Locality | ../computing/systems/why-compute-waits-for-memory/#ch2 | why-compute-waits-for-memory |
 | PCIe 多车道与队列深度 / PCIe Lanes and Little's Law in Storage | ../computing/systems/why-nvme-is-fast/#ch2 | why-nvme-is-fast |
+| 并行 ATA 为什么跑不快：时序预算与线间偏斜 / Why Parallel ATA Topped Out: Timing Budget and Skew | ../computing/systems/how-sata-works/#ch2 | how-sata-works |
+| 8b/10b 编码与逗号码 / 8b/10b Encoding and the Comma | ../computing/systems/how-sata-works/#ch3 | how-sata-works |
 | 矩阵分块与时间局部性 / Loop Tiling and Temporal Locality | ../computing/systems/why-compute-waits-for-memory/#ch3 | why-compute-waits-for-memory |
 | 快权重联想记忆与容量上限 / Fast-Weight Memory & Rank Capacity | ../computing/ml/how-hybrid-attention-remembers/#ch3 | how-hybrid-attention-remembers |
 | 64K 并行队列与无锁扩展 / 64K Parallel Queues and Lock-Free Scaling | ../computing/systems/why-nvme-is-fast/#ch3 | why-nvme-is-fast |
+| 叠瓦式记录（SMR）与热辅助记录（HAMR） / Shingled (SMR) and heat-assisted (HAMR) recording | ../computing/systems/what-a-drive-is-made-of/#ch3 | what-a-drive-is-made-of |
 | Delta 规则：先擦后写的投影更新 / The Delta Rule: Erase Before Writing | ../computing/ml/how-hybrid-attention-remembers/#ch4 | how-hybrid-attention-remembers |
 | 内存墙与利特尔法则 / The Memory Wall and Little's Law | ../computing/systems/why-compute-waits-for-memory/#ch4 | why-compute-waits-for-memory |
+| 闪存单元：SLC、MLC、TLC、QLC、PLC 与读裕量 / Flash cells: SLC to PLC and the read margin | ../computing/systems/what-a-drive-is-made-of/#ch4 | what-a-drive-is-made-of |
 | 环形队列、门铃寄存器与 DMA / SQ/CQ Ring Buffers, Doorbells & DMA | ../computing/systems/why-nvme-is-fast/#ch4 | why-nvme-is-fast |
+| FIS 帧：一条读命令在线上的样子 / FIS Frames: One Read Command on the Wire | ../computing/systems/how-sata-works/#ch4 | how-sata-works |
 | 多核扩展、阿姆达尔与总线瓶颈 / Multicore Scaling, Amdahl, and Bus Contention | ../computing/systems/why-compute-waits-for-memory/#ch5 | why-compute-waits-for-memory |
+| 闪存为什么会坏：擦写次数、纠错码、TBW 与 DWPD / Why flash wears out: P/E cycles, ECC, TBW and DWPD | ../computing/systems/what-a-drive-is-made-of/#ch5 | what-a-drive-is-made-of |
 | Gated DeltaNet 与选择性遗忘门 / Gated DeltaNet & Selective Decay | ../computing/ml/how-hybrid-attention-remembers/#ch5 | how-hybrid-attention-remembers |
+| NCQ：机械盘自己排队 / NCQ: Letting a Hard Disk Reorder Its Queue | ../computing/systems/how-sata-works/#ch5 | how-sata-works |
 | SSD 多通道 NAND 并行 / Multi-Channel NAND Die Parallelism | ../computing/systems/why-nvme-is-fast/#ch5 | why-nvme-is-fast |
 | 分块并行训练与结构化状态空间对偶 / Chunkwise Training & State Space Duality | ../computing/ml/how-hybrid-attention-remembers/#ch6 | how-hybrid-attention-remembers |
+| 闪存翻译层（FTL）：不能原地改写与垃圾回收 / The flash translation layer: no in-place updates, garbage collection | ../computing/systems/what-a-drive-is-made-of/#ch6 | what-a-drive-is-made-of |
 | GPU 并发与脉动阵列 / GPU Throughput and Systolic Arrays | ../computing/systems/why-compute-waits-for-memory/#ch6 | why-compute-waits-for-memory |
+| 热插拔与链路省电：Partial、Slumber、DevSleep / Hot Plug and Link Power: Partial, Slumber, DevSleep | ../computing/systems/how-sata-works/#ch6 | how-sata-works |
 | 写放大、垃圾回收与 Trim / Write Amplification, Garbage Collection & Trim | ../computing/systems/why-nvme-is-fast/#ch6 | why-nvme-is-fast |
 | 3:1 混合注意力与大海捞针精确回忆 / 3:1 Hybrid Ratio & Exact Recall Bookmarks | ../computing/ml/how-hybrid-attention-remembers/#ch7 | how-hybrid-attention-remembers |
 | 轮询 vs 中断（io_uring / SPDK） / Polling vs. Interrupts (io_uring / SPDK) | ../computing/systems/why-nvme-is-fast/#ch7 | why-nvme-is-fast |
+| 端口倍增器、eSATA、mSATA 与 M.2 SATA / Port Multipliers, eSATA, mSATA and M.2 SATA | ../computing/systems/how-sata-works/#ch7 | how-sata-works |
 | 屋顶线模型与算术强度 / The Roofline Model and Arithmetic Intensity | ../computing/systems/why-compute-waits-for-memory/#ch7 | why-compute-waits-for-memory |
+| 存储接口分层地图：外形、连接器、链路、传输、命令集 / Storage interface map: form factor, connector, link, transport, command set | ../computing/systems/what-a-drive-is-made-of/#ch7 | what-a-drive-is-made-of |
 | 屋顶线下的长上下文吐字加速 / Roofline Decode Speedup at Long Context | ../computing/ml/how-hybrid-attention-remembers/#ch8 | how-hybrid-attention-remembers |
 | 大模型推理的内存瓶颈 / Why LLM Inference Is Memory-Bound | ../computing/systems/why-compute-waits-for-memory/#ch8 | why-compute-waits-for-memory |
 | PCIe 6.0、ZNS 与 GPUDirect Storage / PCIe 6.0, ZNS & GPUDirect Storage | ../computing/systems/why-nvme-is-fast/#ch8 | why-nvme-is-fast |
+| 固态硬盘为什么比机械硬盘快：延迟与带宽 / Why SSDs are faster than hard disks: latency and bandwidth | ../computing/systems/what-a-drive-is-made-of/#ch8 | what-a-drive-is-made-of |
+| 为什么 SATA 停在 6 Gb/s / Why SATA Stopped at 6 Gb/s | ../computing/systems/how-sata-works/#ch8 | how-sata-works |
 | 数据搬运能耗与 HBM 封装 / Data Movement Energy and HBM Packaging | ../computing/systems/why-compute-waits-for-memory/#ch9 | why-compute-waits-for-memory |
 | 混合注意力前沿谱系（2026 年 11 月） / Hybrid Attention Landscape (Nov 2026) | ../computing/ml/how-hybrid-attention-remembers/#ch9 | how-hybrid-attention-remembers |
+| SATA 的前沿（截至 2026 年 11 月） / Where SATA Stands (as of November 2026) | ../computing/systems/how-sata-works/#ch9 | how-sata-works |
+| 存储前沿（2026 年 11 月）：HAMR 出货、闪存层数、QLC 与 PLC / Storage frontier (Nov 2026): HAMR shipping, NAND layers, QLC and PLC | ../computing/systems/what-a-drive-is-made-of/#ch9 | what-a-drive-is-made-of |
 | HBM4、共封装光学与算力前沿 / HBM4, Co-Packaged Optics, and the 2026 Frontier | ../computing/systems/why-compute-waits-for-memory/#ch10 | why-compute-waits-for-memory |
+| 读硬盘规格表时问三件事 / Three Questions for a Drive Spec Sheet | ../computing/systems/how-sata-works/#ch10 | how-sata-works |
 | 诊断芯片与程序的四个问题 / Four Questions for Any Chip or Slow Program | ../computing/systems/why-compute-waits-for-memory/#ch11 | why-compute-waits-for-memory |
 
 ### 10 经济与社会 / Economy & society

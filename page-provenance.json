@@ -3125,13 +3125,44 @@
       "developer": "Antigravity",
       "edition": "antigravity-why-nvme-is-fast-20261114",
       "kind": "original",
-      "sourceRevision": "fb63041c849aaff247f0c5a2fd866596b3da9ce9",
+      "sourceRevision": "ee47aac908295e07b35b41d1fa6cb71fb5c00dbb",
       "scope": {
         "zh": "整篇长文从零编写：延迟拆解、总线宽度与利特尔法则、64K 并行队列、环形队列与门铃 DMA、多通道 NAND 并行、写放大与 Trim、轮询与中断，以及 PCIe 6.0 与 GPUDirect 前沿",
         "en": "Whole essay written from scratch: latency breakdown, bus width and Little's Law, 64K parallel queues, SQ/CQ ring buffers and DMA, NAND channel parallelism, write amplification and Trim, polling vs. interrupts, and PCIe 6.0 / GPUDirect frontier"
       },
       "originalAuthorship": "written from scratch in zh and en by Antigravity (gemini-4-hydrogen), 2026-11-14; verified with models.cjs, browser.cjs, and canvas-text-overlap --sweep, see BRIEF.md",
-      "path": "computing/systems/why-nvme-is-fast/index.html"
+      "path": "computing/systems/why-nvme-is-fast/index.html",
+      "originalSourceRevision": "fb63041c849aaff247f0c5a2fd866596b3da9ce9",
+      "previousSourceRevision": "fb63041c849aaff247f0c5a2fd866596b3da9ce9",
+      "provenanceEvidence": "specs/reviews/why-nvme-is-fast-alias-move-20261114.md"
+    },
+    "what-a-drive-is-made-of": {
+      "developer": "Claude Code",
+      "edition": "claude-code-what-a-drive-is-made-of-20261114",
+      "kind": "original",
+      "sourceRevision": "12590007e23947f6a146273c2b672aa57a7d9b25",
+      "scope": {
+        "zh": "整篇长文从零编写：编了号的扇区与 512e、寻道与转动、叠瓦记录、闪存单元的电压层、纠错码与寿命、闪存翻译层、接口分层地图、一次读取的时间、存储前沿",
+        "en": "Whole essay written from scratch: numbered sectors and 512e, seek and rotation, shingled recording, voltage levels in a flash cell, error correction and lifetime, the flash translation layer, the layered interface map, where the time of one read goes, the storage frontier"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5); English copy drafted by Claude Code (claude-haiku-5-5); independently reviewed 2026-11-14 by a separate Claude Code session (same model), see the page BRIEF.md; cross-model review pending",
+      "path": "computing/systems/what-a-drive-is-made-of/index.html",
+      "originalSourceRevision": "745f535e962557f640b39422e4b9d9db7afe2f6f",
+      "previousSourceRevision": "745f535e962557f640b39422e4b9d9db7afe2f6f"
+    },
+    "how-sata-works": {
+      "developer": "Claude Code",
+      "edition": "claude-code-how-sata-works-20261114",
+      "kind": "original",
+      "sourceRevision": "12590007e23947f6a146273c2b672aa57a7d9b25",
+      "scope": {
+        "zh": "整篇长文从零编写：SATA、ATA 与 AHCI 的分层、并行总线的时序预算、8b/10b 编码与加扰、一条读命令的帧、NCQ、热插拔与链路省电、端口倍增器与 eSATA、为什么停在 6 Gb/s、SATA 前沿",
+        "en": "Whole essay written from scratch: the SATA, ATA and AHCI layers, the timing budget of a parallel bus, 8b/10b encoding and scrambling, the frames of one read command, NCQ, hot plug and link power, port multipliers and eSATA, why SATA stopped at 6 Gb/s, the SATA frontier"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5); English copy drafted by Claude Code (claude-haiku-5-5); independently reviewed 2026-11-14 by a separate Claude Code session (same model), see the page BRIEF.md; cross-model review pending",
+      "path": "computing/systems/how-sata-works/index.html",
+      "originalSourceRevision": "d1df3df80d6feef8082b1c6c7601b1af1397965a",
+      "previousSourceRevision": "d1df3df80d6feef8082b1c6c7601b1af1397965a"
     }
   },
   "exceptions": {

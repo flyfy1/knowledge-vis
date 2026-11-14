@@ -94,10 +94,18 @@ types ("为什么要打疫苗", "how does my phone know where I am"), not only t
 | where-a-mortgage-payment-goes | economics/money/where-a-mortgage-payment-goes/ | 9 (`#ch1…#ch9`) | society | `ESSAY_BASE_URL` |
 | why-fermented-tofu-tastes-good | food/flavor/why-fermented-tofu-tastes-good/ | 9 (`#ch1…#ch9`) | matter | `ESSAY_BASE_URL` |
 | how-soy-sauce-gets-its-flavor | food/flavor/how-soy-sauce-gets-its-flavor/ | 9 concepts in 10 chapters (`#ch1…#ch9`) | matter | `ESSAY_BASE_URL` |
+| why-compute-waits-for-memory | computing/systems/why-compute-waits-for-memory/ | 11 (`#ch1…#ch11`) | computing | `ESSAY_BASE_URL` |
+| why-nvme-is-fast | computing/systems/why-nvme-is-fast/ | 8 (`#ch1…#ch8`) | computing | `ESSAY_BASE_URL` |
+| what-a-drive-is-made-of | computing/systems/what-a-drive-is-made-of/ | 9 concepts in 10 chapters (`#ch1…#ch9`) | computing | `ESSAY_BASE_URL` |
+| how-sata-works | computing/systems/how-sata-works/ | 10 (`#ch1…#ch10`) | computing | `ESSAY_BASE_URL` |
 
-The eleven from 2026-11-11 and the two food essays of 2026-11-12 were built by Claude Code (claude-opus-5-5). The English copy was drafted by Claude
+The eleven from 2026-11-11, the two food essays of 2026-11-12 and the two storage essays of 2026-11-14
+(what-a-drive-is-made-of, how-sata-works) were built by Claude Code (claude-opus-5-5). The English copy was drafted by Claude
 Code (claude-haiku-5-5). A separate Claude Code session of the same model reviewed each essay and revised
 it (no human or cross-model review yet). Each BRIEF.md records what was and was not checked.
+why-compute-waits-for-memory and why-nvme-is-fast were built by Antigravity (gemini-4-hydrogen) in both
+languages and self-checked only; neither has been independently reviewed. (how-hybrid-attention-remembers and
+how-an-economy-is-measured, also by Antigravity, are live but have no row here yet.)
 
 ### numbers-lie: 数字没有说谎，结论却错了
 
@@ -204,6 +212,52 @@ and "soy sauce" moved here from the tofu essay's #ch7 (one word, one owner), whi
 label. Known limits (BRIEF): the ch4 fit uses 8 of Zhou's 14 points (RMS 0.08; 0.15 on all 14) and says so;
 koji cardinal temperatures are second-hand; the 2021 SAMR notice and the 2000 edition's text were not read
 in the original. Task brief: specs/essay-briefs/TASK-how-soy-sauce-gets-its-flavor.md.
+
+### why-compute-waits-for-memory: 为什么计算一直在等内存
+
+Built by Antigravity (gemini-4-hydrogen), 2026-11-13, zh and en; registered by Antigravity in 0c48c596. Self-checked
+only (its BRIEF calls the check an independent review, but the checker is the same agent and model); no independent
+review. Why a processor that can do quadrillions of operations a second spends most of its time waiting: a 5-stage
+pipeline with memory stalls, the latency ladder and an LRU cache simulator, loop tiling, the memory wall and
+Little's law, multicore scaling and bus contention, GPU systolic arrays, the roofline model, why LLM inference is
+memory-bound, data-movement energy and HBM packaging, the HBM4 frontier, and four questions for any chip. Atlas
+edges: 11 between chapters, 3 to other pages (switches-that-compute, tcp-congestion latency-bandwidth,
+how-hybrid-attention-remembers).
+
+### why-nvme-is-fast: NVMe 为什么这么快
+
+Built by Antigravity (gemini-4-hydrogen), 2026-11-14, zh and en (fb63041c); registered by Antigravity in f3804144.
+Self-checked only (models.cjs, browser.cjs, canvas sweep); no independent review. Latency breakdown (AHCI overhead
+once media drops from 8.5 ms to flash), PCIe lanes against SATA's ~552 MB/s and Little's law, 64K queues against
+AHCI's one 32-slot queue, ring buffers and doorbells, NAND die parallelism, write amplification and Trim, polling
+against interrupts, and the PCIe 6.0 / ZNS / GPUDirect frontier. Its fragment has no edges of its own; the storage
+essays add edges into its #ch1, #ch2 and #ch6. 固态硬盘为什么比机械硬盘快 left its #ch1 for what-a-drive-is-made-of #ch8
+on 2026-11-14 (ee47aac9); the label was repointed to that commit with `provenanceEvidence` pointing at
+specs/reviews/why-nvme-is-fast-alias-move-20261114.md, since the commit is Claude Code's and the edition is
+Antigravity's (see specs/visual-page-provenance.md, 2026-11-14).
+
+### what-a-drive-is-made-of: 硬盘里到底是什么
+
+Storage series S1 (specs/essay-briefs/TASK-storage-series.md, Yangyu 2026-11-14). A hard disk and an SSD hold
+completely different things, yet the computer reads both the same way: numbered blocks and 512e read-modify-write,
+seek and rotation (Ruemmler & Wilkes fitted to the Barracuda 7200.12), shingled recording, flash voltage levels and
+RBER, endurance from the ECC model and the lifetime equation (Cai et al. 2017; σ0 and k solved so MLC = 3,000 and
+TLC = 1,000 P/E, the page says so), a page-mapped FTL, the five-layer interface map (form factor, connector, link,
+transport, command set), latency against bandwidth, a dated frontier and three closing questions. It owns the
+SSD-vs-HDD words (固态硬盘为什么比机械硬盘快, 机械硬盘和固态硬盘区别, SSD vs HDD, SSD at #ch8) and the seek-time words
+(#ch2). Ch7 links how-sata-works; SAS, USB and network routes are plain text until those essays exist. Atlas
+edges: 4 between chapters, 2 to why-nvme-is-fast (#ch1, #ch6).
+
+### how-sata-works: SATA 为什么用了二十多年
+
+Storage series S2. Why a seven-pin cable with a 2004 host interface still connects the largest hard drives: the
+SATA / ATA / AHCI layers, the Ultra DMA timing budget (ATA/ATAPI-7 Table 51, Annex E), 8b/10b and the scrambler
+(all 512 entries of SATA 3.5a Table 88, Annex A CRC and scrambler outputs pinned), the five frames of a READ FPDMA
+QUEUED with wire accounting, NCQ on a spinning disk, link power break-even, port multipliers and eSATA / mSATA /
+M.2, why SATA stopped at 6 Gb/s, a dated frontier and three spec-sheet questions. It links S1 #ch2, #ch4 and #ch7
+live (its models.cjs checks those anchors exist); the seek-time words and "is every M.2 drive NVMe" left its #ch5
+and #ch1 for S1 at registration. Tuned: seek-curve shape, link-on and Partial powers (sensitivity in each chapter's
+limit paragraph). Atlas edges: 5 between chapters, 2 to S1 (#ch2, #ch7), 1 to why-nvme-is-fast (#ch2).
 
 ### scarcity-moves: 稀缺会搬家
 

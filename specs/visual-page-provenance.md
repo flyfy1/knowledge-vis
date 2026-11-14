@@ -129,3 +129,15 @@ no `Built-By`. The removed label had claimed Codex; that claim had no evidence a
 and `.claude`. `.claude/` holds agent tooling, including git worktrees that are whole copies of the site;
 their labels belong to those branches, not to this checkout, and made the test fail whenever a worktree
 existed. No site page lives under `.claude/`.
+
+## Cross-developer repoint — 2026-11-14 Claude Code
+
+`why-nvme-is-fast` is an Antigravity original edition. The storage-series registrar (Claude Code) changed one
+file in its directory (a search alias in `REGISTRY.json`, ee47aac908295e07b35b41d1fa6cb71fb5c00dbb), so the label
+had to be repointed, but the new source revision carries `Built-By: Claude Code`, which does not prove the
+`Antigravity` developer. The record therefore keeps `developer: "Antigravity"` and `kind: "original"`, sets
+`originalSourceRevision` and `previousSourceRevision` to the creation commit fb63041c, and points
+`provenanceEvidence` at `specs/reviews/why-nvme-is-fast-alias-move-20261114.md`, committed in the same commit, whose
+heading names Antigravity and which states that the commit's own work is a mechanical alias move. This is the first
+repoint where the repointing commit's builder differs from the edition's developer; later ones should do the same
+(evidence note in the repointing commit) rather than relabel the edition or add a false `Built-By`.
