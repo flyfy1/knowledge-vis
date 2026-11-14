@@ -25,7 +25,7 @@
       "title": { "zh": "NVMe 与存储协议开销转移", "en": "NVMe and Shifting Storage Bottlenecks" },
       "desc": { "zh": "闪存把介质延迟从 8.5 ms 降到 75 μs 后，旧协议 AHCI 的开销占比从 0.3% 飙升到 25% 以上；NVMe 将其压回 5 μs。", "en": "Once flash cut media latency from 8.5 ms to 75 us, AHCI overhead jumped from 0.3% to 25%+; NVMe trims it back to ~5 us." },
       "aliases": {
-        "zh": ["NVMe 为什么快", "NVMe 和 SATA 区别", "AHCI 协议瓶颈", "固态硬盘为什么比机械硬盘快"],
+        "zh": ["NVMe 为什么快", "NVMe 和 SATA 区别", "AHCI 协议瓶颈"],
         "en": ["why is NVMe fast", "NVMe vs SATA", "AHCI overhead", "NVMe vs AHCI"]
       },
       "anchor": "#ch1",
