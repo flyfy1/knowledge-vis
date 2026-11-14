@@ -3120,6 +3120,18 @@
       },
       "originalAuthorship": "written from scratch in zh and en by Antigravity (gemini-4-hydrogen), 2026-11-13; independently reviewed by Antigravity (gemini-4-hydrogen) with models.cjs, FRED/ALFRED/IMF/UN/BEA spot-checks, browser.cjs, and canvas-text-overlap --sweep, see BRIEF.md",
       "path": "economics/macro/how-an-economy-is-measured/index.html"
+    },
+    "why-nvme-is-fast": {
+      "developer": "Antigravity",
+      "edition": "antigravity-why-nvme-is-fast-20261114",
+      "kind": "original",
+      "sourceRevision": "ee18c8b5f0bee156467e07ebb83985012c705d9a",
+      "scope": {
+        "zh": "整篇长文从零编写：延迟拆解、总线宽度与利特尔法则、64K 并行队列、环形队列与门铃 DMA、多通道 NAND 并行、写放大与 Trim、轮询与中断，以及 PCIe 6.0 与 GPUDirect 前沿",
+        "en": "Whole essay written from scratch: latency breakdown, bus width and Little's Law, 64K parallel queues, SQ/CQ ring buffers and DMA, NAND channel parallelism, write amplification and Trim, polling vs. interrupts, and PCIe 6.0 / GPUDirect frontier"
+      },
+      "originalAuthorship": "written from scratch in zh and en by Antigravity (gemini-4-hydrogen), 2026-11-14; verified with models.cjs, browser.cjs, and canvas-text-overlap --sweep, see BRIEF.md",
+      "path": "computing/systems/why-nvme-is-fast/index.html"
     }
   },
   "exceptions": {

@@ -157,6 +157,7 @@ window.KNOWLEDGE_ESSAYS = [
   "how-soy-sauce-gets-its-flavor",
   "how-hybrid-attention-remembers",
   "why-compute-waits-for-memory",
+  "why-nvme-is-fast",
   "how-an-economy-is-measured",
   "scarcity-moves"
 ];
@@ -377,6 +378,16 @@ window.KNOWLEDGE_PAGES = [
     },
     tags: [{ zh: "计算机体系结构", en: "Computer Architecture" }, { zh: "内存墙", en: "Memory Wall" }, { zh: "缓存与局部性", en: "Cache & Locality" }, { zh: "屋顶线模型", en: "Roofline Model" }, { zh: "HBM 与 AI 芯片", en: "HBM & AI Chips" }, { zh: "长文", en: "Long-form Essay" }],
     category: "computing", subtopic: "systems", stage: "university", status: "live", path: "computing/systems/why-compute-waits-for-memory/"
+  },
+  {
+    slug: "why-nvme-is-fast",
+    title: { zh: "NVMe 为什么这么快", en: "Why NVMe Is So Fast" },
+    desc: {
+      zh: "同样是闪存颗粒，为什么换上 NVMe 协议和 PCIe 通道就能快出好几倍？八个交互模型带你从延迟拆解、总线宽度、64K 并行队列、环形门铃、NAND 多通道、写放大与 Trim、轮询与中断，一路走到 PCIe 6.0 与 GPUDirect 前沿。",
+      en: "Why does switching from SATA/AHCI to NVMe over PCIe multiply storage speed? Eight interactive models trace the shift from latency breakdown, bus lanes, and 64K parallel queues to ring buffers, NAND channels, write amplification, polling, and PCIe 6.0 GPUDirect."
+    },
+    tags: [{ zh: "NVMe", en: "NVMe" }, { zh: "存储系统", en: "Storage Systems" }, { zh: "PCIe", en: "PCIe" }, { zh: "SSD 原理", en: "SSD Architecture" }, { zh: "长文", en: "Long-form Essay" }],
+    category: "computing", subtopic: "systems", stage: "university", status: "live", path: "computing/systems/why-nvme-is-fast/"
   },
   {
     slug: "how-an-economy-is-measured",

@@ -5,7 +5,7 @@ window.KNOWLEDGE_CONCEPTS = {
   "atlas": "atlas/",
   "regions": [["math","数学基础","Mathematical tools"], ["waves","运动与波动","Motion & waves"], ["circuits","电路与能量","Circuits & energy"], ["systems","系统与响应","Systems & response"], ["measurement","测量与不确定性","Measurement & uncertainty"], ["matter","物质与变化","Matter & change"], ["life","生命与生态","Life & ecology"], ["earth","地球与宇宙","Earth & cosmos"], ["computing","计算与智能","Computing & AI"], ["society","经济与社会","Economy & society"], ["tech","技术与设备","Technology & devices"]],
   "fields": ["id","region","href","titleZh","titleEn","aliasesZh","aliasesEn","summaryZh","summaryEn"],
-  "chunks": ["search/chunks/math.js?v=184665ea42","search/chunks/waves.js?v=df3d24ce95","search/chunks/circuits.js?v=f73c2ffb1b","search/chunks/systems.js?v=dcf776f50b","search/chunks/measurement.js?v=1cc96de1d1","search/chunks/matter.js?v=3d27dfbc9f","search/chunks/life.js?v=c58491d971","search/chunks/earth.js?v=0c278dfc0c","search/chunks/computing.js?v=6155a1cfae","search/chunks/society.js?v=29ced15015","search/chunks/tech.js?v=b79095bb0f"],
+  "chunks": ["search/chunks/math.js?v=184665ea42","search/chunks/waves.js?v=df3d24ce95","search/chunks/circuits.js?v=f73c2ffb1b","search/chunks/systems.js?v=dcf776f50b","search/chunks/measurement.js?v=1cc96de1d1","search/chunks/matter.js?v=3d27dfbc9f","search/chunks/life.js?v=c58491d971","search/chunks/earth.js?v=0c278dfc0c","search/chunks/computing.js?v=f43b57ae71","search/chunks/society.js?v=29ced15015","search/chunks/tech.js?v=b79095bb0f"],
   "concepts": [],
   "add": function (rows) { for (var i = 0; i < rows.length; i++) this.concepts.push(rows[i]); }
 };

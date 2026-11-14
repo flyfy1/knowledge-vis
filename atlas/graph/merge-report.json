@@ -1,11 +1,11 @@
 {
   "counts": {
     "groups": 11,
-    "nodes": 397,
+    "nodes": 405,
     "edges": 569,
     "trails": 14,
     "questions": 124,
-    "fragments": 191
+    "fragments": 192
   },
   "conflicts": [],
   "suspendedEdges": [],
@@ -1238,6 +1238,23 @@
       ]
     },
     {
+      "concept": "nvme-pcie-lanes-littles-law",
+      "page": "why-compute-waits-for-memory",
+      "taughtBy": [
+        "pipeline-memory-stall",
+        "memory-hierarchy-cache-walk",
+        "cache-tiling-blocking",
+        "memory-wall-littles-law",
+        "amdahl-gustafson-bus-cap",
+        "gpu-systolic-array",
+        "roofline-model",
+        "llm-inference-memory-bound",
+        "data-movement-energy-hbm",
+        "memory-wall-frontier-2026",
+        "memory-diagnostic-checklist"
+      ]
+    },
+    {
       "concept": "planetary-energy-balance",
       "page": "climate-energy",
       "taughtBy": [
@@ -1358,10 +1375,10 @@
     }
   ],
   "unknownAliasIds": [],
-  "sizeBytes": 772298,
+  "sizeBytes": 778893,
   "questionsBytes": 173024,
-  "combinedBytes": 945322,
-  "indexBytes": 95323,
+  "combinedBytes": 951917,
+  "indexBytes": 96414,
   "chunkBytes": {
     "math.nodes": 51664,
     "math.edges": 89636,
@@ -1387,7 +1404,7 @@
     "earth.nodes": 25871,
     "earth.edges": 19025,
     "earth.questions": 6822,
-    "computing.nodes": 33465,
+    "computing.nodes": 38785,
     "computing.edges": 30187,
     "computing.questions": 2766,
     "society.nodes": 58077,

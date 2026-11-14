@@ -2705,7 +2705,7 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 <!-- GENERATED:atlas-nodes -->
 ## 三、图谱节点索引（生成，勿手改）
 
-397 个概念 · 569 条关系 · 11 个分区 · 由 scripts/build-atlas-data.cjs --concept-map 生成。节点排序与 data.js 一致（分区序、学段序、order、id）。
+405 个概念 · 569 条关系 · 11 个分区 · 由 scripts/build-atlas-data.cjs --concept-map 生成。节点排序与 data.js 一致（分区序、学段序、order、id）。
 
 ### 01 数学基础 / Mathematical tools
 
@@ -3046,6 +3046,7 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 哈希 / Hashing | ../computing/algorithms/hashing/#step0 | hashing#step0 |
 | KV Cache 与固定大小状态 / KV Cache vs Fixed-Size Recurrent State | ../computing/ml/how-hybrid-attention-remembers/#ch1 | how-hybrid-attention-remembers |
 | 延迟与带宽 / Latency & bandwidth | ../computing/systems/tcp-congestion/#step1 | tcp-congestion#step1 |
+| NVMe 与存储协议开销转移 / NVMe and Shifting Storage Bottlenecks | ../computing/systems/why-nvme-is-fast/#ch1 | why-nvme-is-fast |
 | 流水线与访存停顿 / Pipeline Stalls from Memory Latency | ../computing/systems/why-compute-waits-for-memory/#ch1 | why-compute-waits-for-memory |
 | 副本与 quorum · 一致性和可用性的取舍 / Replicas & quorums · consistency vs availability | ../computing/systems/distributed-systems/#step0 | distributed-systems#step0 |
 | 机械臂运动学 · 从关节角到末端 / Robot-arm kinematics · from joint angles to the hand | ../computing/graphics/robot-kinematics/#step0 | robot-kinematics#step0 |
@@ -3053,18 +3054,25 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | TCP 拥塞控制 · 试探与退让 / TCP congestion control · probe and back off | ../computing/systems/tcp-congestion/#step4 | tcp-congestion#step4 |
 | 线性注意力的矩阵结合律 / Linear Attention via Matrix Associativity | ../computing/ml/how-hybrid-attention-remembers/#ch2 | how-hybrid-attention-remembers |
 | 存储层级与缓存命中 / Memory Latency Hierarchy and Cache Locality | ../computing/systems/why-compute-waits-for-memory/#ch2 | why-compute-waits-for-memory |
+| PCIe 多车道与队列深度 / PCIe Lanes and Little's Law in Storage | ../computing/systems/why-nvme-is-fast/#ch2 | why-nvme-is-fast |
 | 矩阵分块与时间局部性 / Loop Tiling and Temporal Locality | ../computing/systems/why-compute-waits-for-memory/#ch3 | why-compute-waits-for-memory |
 | 快权重联想记忆与容量上限 / Fast-Weight Memory & Rank Capacity | ../computing/ml/how-hybrid-attention-remembers/#ch3 | how-hybrid-attention-remembers |
+| 64K 并行队列与无锁扩展 / 64K Parallel Queues and Lock-Free Scaling | ../computing/systems/why-nvme-is-fast/#ch3 | why-nvme-is-fast |
 | Delta 规则：先擦后写的投影更新 / The Delta Rule: Erase Before Writing | ../computing/ml/how-hybrid-attention-remembers/#ch4 | how-hybrid-attention-remembers |
 | 内存墙与利特尔法则 / The Memory Wall and Little's Law | ../computing/systems/why-compute-waits-for-memory/#ch4 | why-compute-waits-for-memory |
+| 环形队列、门铃寄存器与 DMA / SQ/CQ Ring Buffers, Doorbells & DMA | ../computing/systems/why-nvme-is-fast/#ch4 | why-nvme-is-fast |
 | 多核扩展、阿姆达尔与总线瓶颈 / Multicore Scaling, Amdahl, and Bus Contention | ../computing/systems/why-compute-waits-for-memory/#ch5 | why-compute-waits-for-memory |
 | Gated DeltaNet 与选择性遗忘门 / Gated DeltaNet & Selective Decay | ../computing/ml/how-hybrid-attention-remembers/#ch5 | how-hybrid-attention-remembers |
+| SSD 多通道 NAND 并行 / Multi-Channel NAND Die Parallelism | ../computing/systems/why-nvme-is-fast/#ch5 | why-nvme-is-fast |
 | 分块并行训练与结构化状态空间对偶 / Chunkwise Training & State Space Duality | ../computing/ml/how-hybrid-attention-remembers/#ch6 | how-hybrid-attention-remembers |
 | GPU 并发与脉动阵列 / GPU Throughput and Systolic Arrays | ../computing/systems/why-compute-waits-for-memory/#ch6 | why-compute-waits-for-memory |
+| 写放大、垃圾回收与 Trim / Write Amplification, Garbage Collection & Trim | ../computing/systems/why-nvme-is-fast/#ch6 | why-nvme-is-fast |
 | 3:1 混合注意力与大海捞针精确回忆 / 3:1 Hybrid Ratio & Exact Recall Bookmarks | ../computing/ml/how-hybrid-attention-remembers/#ch7 | how-hybrid-attention-remembers |
+| 轮询 vs 中断（io_uring / SPDK） / Polling vs. Interrupts (io_uring / SPDK) | ../computing/systems/why-nvme-is-fast/#ch7 | why-nvme-is-fast |
 | 屋顶线模型与算术强度 / The Roofline Model and Arithmetic Intensity | ../computing/systems/why-compute-waits-for-memory/#ch7 | why-compute-waits-for-memory |
 | 屋顶线下的长上下文吐字加速 / Roofline Decode Speedup at Long Context | ../computing/ml/how-hybrid-attention-remembers/#ch8 | how-hybrid-attention-remembers |
 | 大模型推理的内存瓶颈 / Why LLM Inference Is Memory-Bound | ../computing/systems/why-compute-waits-for-memory/#ch8 | why-compute-waits-for-memory |
+| PCIe 6.0、ZNS 与 GPUDirect Storage / PCIe 6.0, ZNS & GPUDirect Storage | ../computing/systems/why-nvme-is-fast/#ch8 | why-nvme-is-fast |
 | 数据搬运能耗与 HBM 封装 / Data Movement Energy and HBM Packaging | ../computing/systems/why-compute-waits-for-memory/#ch9 | why-compute-waits-for-memory |
 | 混合注意力前沿谱系（2026 年 11 月） / Hybrid Attention Landscape (Nov 2026) | ../computing/ml/how-hybrid-attention-remembers/#ch9 | how-hybrid-attention-remembers |
 | HBM4、共封装光学与算力前沿 / HBM4, Co-Packaged Optics, and the 2026 Frontier | ../computing/systems/why-compute-waits-for-memory/#ch10 | why-compute-waits-for-memory |
