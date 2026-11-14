@@ -1,0 +1,120 @@
+{
+  "slug": "what-a-drive-is-made-of",
+  "path": "computing/systems/what-a-drive-is-made-of/",
+  "category": "computing",
+  "subtopic": "systems",
+  "stage": "university",
+  "title": { "zh": "硬盘里到底是什么", "en": "What a Drive Is Made Of" },
+  "desc": {
+    "zh": "机械硬盘和固态硬盘里装的东西完全不同，电脑却用同一套方式读它们。八个可以拖动的模型：编了号的扇区、寻道和转动、叠瓦磁道、闪存单元里的电压层、纠错码和寿命、闪存翻译层、接口与协议的分层地图、一次读取的时间花在哪。",
+    "en": "A hard disk and a solid-state drive contain completely different things, yet the computer reads both the same way. Eight models you can push: numbered sectors, seek and rotation, shingled tracks, voltage levels in a flash cell, error correction and lifetime, the flash translation layer, a layered map of connectors and protocols, and where the time of one read goes."
+  },
+  "tags": [
+    { "zh": "存储系统", "en": "Storage Systems" },
+    { "zh": "机械硬盘", "en": "Hard Disk Drives" },
+    { "zh": "固态硬盘", "en": "Solid-State Drives" },
+    { "zh": "闪存", "en": "NAND Flash" },
+    { "zh": "长文", "en": "Long-form Essay" }
+  ],
+  "concepts": [
+    {
+      "id": "block-device-lba-sectors",
+      "title": { "zh": "块设备、扇区与 LBA（512e / 4Kn）", "en": "Block devices, sectors and LBA (512e / 4Kn)" },
+      "desc": { "zh": "硬盘对电脑只是一排编了号的格子；4096 字节的物理扇区模拟 512 字节时，没对齐的写入要先读后写。", "en": "To the computer a drive is a numbered row of blocks; when 4096-byte physical sectors emulate 512-byte ones, misaligned writes become read-modify-write." },
+      "aliases": {
+        "zh": ["硬盘是怎么存数据的", "扇区是什么", "LBA 是什么", "512e 和 4Kn 区别", "4K 对齐是什么", "分区为什么要 4K 对齐", "逻辑块地址"],
+        "en": ["what is a disk sector", "what is LBA", "512e vs 4Kn", "4K alignment", "why align partitions", "advanced format drive"]
+      },
+      "anchor": "#ch1",
+      "relatedPages": []
+    },
+    {
+      "id": "hdd-seek-rotation-latency",
+      "title": { "zh": "机械硬盘：寻道、转动等待与外圈更快", "en": "Hard disks: seek, rotational latency and faster outer tracks" },
+      "desc": { "zh": "一次随机读要等磁臂摆过去、等盘片转半圈；寻道短距离按平方根、长距离按直线增长；外圈一圈装得多所以顺序读更快。", "en": "A random read waits for the arm and for half a turn; seek time grows as a square root for short seeks and linearly for long ones; outer tracks hold more per turn, so sequential reads are faster there." },
+      "aliases": {
+        "zh": ["机械硬盘为什么慢", "机械硬盘怎么工作", "7200 转和 5400 转区别", "硬盘转速有什么用", "寻道时间是什么", "机械硬盘随机读写为什么慢", "硬盘越往后越慢", "磁头离盘面多高"],
+        "en": ["how does a hard drive work", "why are hard drives slow", "7200 vs 5400 rpm", "seek time", "rotational latency", "why HDD random IOPS is low", "short stroking"]
+      },
+      "anchor": "#ch2",
+      "relatedPages": ["why-nvme-is-fast"]
+    },
+    {
+      "id": "smr-shingled-recording-hamr",
+      "title": { "zh": "叠瓦式记录（SMR）与热辅助记录（HAMR）", "en": "Shingled (SMR) and heat-assisted (HAMR) recording" },
+      "desc": { "zh": "磁道叠起来能多装一些，但改一条要重写后面整组；容量增益很快饱和，改写代价线性增长。", "en": "Overlapping tracks store more, but changing one means rewriting the rest of its band; the capacity gain saturates while the rewrite cost grows linearly." },
+      "aliases": {
+        "zh": ["叠瓦盘是什么", "SMR 和 CMR 区别", "叠瓦盘为什么写入慢", "NAS 能不能用叠瓦盘", "HAMR 是什么", "热辅助磁记录", "面密度"],
+        "en": ["SMR vs CMR", "what is shingled magnetic recording", "why are SMR drives slow to write", "HAMR hard drive", "areal density"]
+      },
+      "anchor": "#ch3",
+      "relatedPages": []
+    },
+    {
+      "id": "nand-cell-levels-slc-qlc",
+      "title": { "zh": "闪存单元：SLC、MLC、TLC、QLC、PLC 与读裕量", "en": "Flash cells: SLC to PLC and the read margin" },
+      "desc": { "zh": "每格存 n 位就要在同一个电压窗口里分 2ⁿ 层；层越多间距越窄，相邻钟形重叠，读错的概率按正态尾巴急升。", "en": "Storing n bits per cell splits one voltage window into 2ⁿ levels; more levels mean narrower gaps, overlapping bell curves and error rates that climb along a Gaussian tail." },
+      "aliases": {
+        "zh": ["SLC MLC TLC QLC 区别", "QLC 是什么", "TLC 和 QLC 哪个耐用", "闪存是怎么存数据的", "固态硬盘怎么存数据", "阈值电压", "浮栅和电荷俘获"],
+        "en": ["SLC vs MLC vs TLC vs QLC", "what is QLC NAND", "how does flash memory store data", "threshold voltage distribution", "PLC NAND"]
+      },
+      "anchor": "#ch4",
+      "relatedPages": ["quantum-tunneling", "binomial-normal"]
+    },
+    {
+      "id": "flash-endurance-ecc-tbw",
+      "title": { "zh": "闪存为什么会坏：擦写次数、纠错码、TBW 与 DWPD", "en": "Why flash wears out: P/E cycles, ECC, TBW and DWPD" },
+      "desc": { "zh": "每次擦写让电压分布变宽，纠错码能扛住的误码率决定能擦写多少次；寿命 = 擦写次数 ×（1+预留）÷ 每年写入。断电保存随温度按阿伦尼乌斯关系变快流失。", "en": "Each program/erase cycle widens the voltage spread; the error rate ECC can absorb sets the cycle count; lifetime = cycles × (1 + spare) ÷ yearly writes. Unpowered retention falls with temperature by Arrhenius." },
+      "aliases": {
+        "zh": ["固态硬盘寿命", "固态硬盘能用多久", "QLC 寿命", "TBW 是什么意思", "DWPD 是什么", "擦写次数 P/E", "硬盘为什么会坏", "固态硬盘断电放久了会丢数据吗", "纠错码 LDPC BCH"],
+        "en": ["SSD lifespan", "how long does an SSD last", "QLC endurance", "what is TBW", "what is DWPD", "P/E cycles", "SSD data retention unpowered", "LDPC BCH in SSD"]
+      },
+      "anchor": "#ch5",
+      "relatedPages": ["inside-a-phone"]
+    },
+    {
+      "id": "flash-translation-layer-gc",
+      "title": { "zh": "闪存翻译层（FTL）：不能原地改写与垃圾回收", "en": "The flash translation layer: no in-place updates, garbage collection" },
+      "desc": { "zh": "闪存按页写、按块擦，所以固态硬盘把新数据写到别处，再改地址表；空白块不够时搬走有效页、整块擦除。", "en": "Flash writes pages but erases blocks, so an SSD writes new data elsewhere and updates a map; when free blocks run low it moves valid pages out and erases whole blocks." },
+      "aliases": {
+        "zh": ["FTL 是什么", "闪存转换层", "固态硬盘为什么不能覆盖写", "垃圾回收 GC", "固态硬盘地址映射", "无缓存固态硬盘", "磨损均衡"],
+        "en": ["what is an FTL", "flash translation layer", "why SSD cannot overwrite in place", "SSD garbage collection", "wear leveling", "DRAM-less SSD"]
+      },
+      "anchor": "#ch6",
+      "relatedPages": ["why-nvme-is-fast"]
+    },
+    {
+      "id": "storage-interface-layer-map",
+      "title": { "zh": "存储接口分层地图：外形、连接器、链路、传输、命令集", "en": "Storage interface map: form factor, connector, link, transport, command set" },
+      "desc": { "zh": "M.2、U.2、E1.S 是外形和连接器，SATA、SAS、PCIe 是链路，ATA、SCSI、NVMe 是命令集；逐层对得上盘才能用。", "en": "M.2, U.2 and E1.S are form factors and connectors, SATA, SAS and PCIe are links, ATA, SCSI and NVMe are command sets; a drive works only when every layer matches." },
+      "aliases": {
+        "zh": ["M.2 接口是不是都是 NVMe", "M.2 SATA 和 M.2 NVMe 区别", "M.2 B 键 M 键", "SAS 和 SATA 能混用吗", "SAS 盘能插 SATA 口吗", "U.2 是什么", "U.3 三模", "E1.S EDSFF", "硬盘接口有哪些", "移动硬盘盒怎么工作"],
+        "en": ["is M.2 always NVMe", "M.2 SATA vs M.2 NVMe", "M.2 B key M key", "can SAS and SATA mix", "SAS drive in SATA port", "what is U.2", "U.3 tri-mode", "EDSFF E1.S", "storage interface types"]
+      },
+      "anchor": "#ch7",
+      "relatedPages": ["why-nvme-is-fast"]
+    },
+    {
+      "id": "ssd-vs-hdd-latency-bandwidth",
+      "title": { "zh": "固态硬盘为什么比机械硬盘快：延迟与带宽", "en": "Why SSDs are faster than hard disks: latency and bandwidth" },
+      "desc": { "zh": "一次读取 = 延迟 + 大小 ÷ 带宽；小而散的读机械盘慢上百倍，大块连续读只慢几倍；分界线约等于延迟乘带宽。", "en": "One read = latency + size ÷ bandwidth; for small scattered reads a hard disk is hundreds of times slower, for large sequential ones only a few times; the break-even size is latency × bandwidth." },
+      "aliases": {
+        "zh": ["固态硬盘为什么比机械硬盘快", "机械硬盘和固态硬盘区别", "SSD 和 HDD 区别", "小文件为什么拷得慢", "机械硬盘拷大文件也不慢", "延迟和带宽区别"],
+        "en": ["SSD vs HDD", "why is an SSD faster than a hard drive", "why copying many small files is slow", "latency vs bandwidth storage"]
+      },
+      "anchor": "#ch8",
+      "relatedPages": ["why-nvme-is-fast", "why-compute-waits-for-memory"]
+    },
+    {
+      "id": "storage-frontier-2026",
+      "title": { "zh": "存储前沿（2026 年 11 月）：HAMR 出货、闪存层数、QLC 与 PLC", "en": "Storage frontier (Nov 2026): HAMR shipping, NAND layers, QLC and PLC" },
+      "desc": { "zh": "44 TB 热辅助硬盘批量出货，245 TB 的 QLC 固态盘出货，321 层闪存量产，400 层以上和 PLC 尚待证实或商用。", "en": "44 TB HAMR drives shipping in volume, 245 TB QLC SSDs shipping, 321-layer NAND in production; 400+ layers and PLC not yet confirmed or commercial." },
+      "aliases": {
+        "zh": ["最大的硬盘有多大", "最大的固态硬盘", "HAMR 硬盘出货了吗", "闪存多少层了", "PLC 闪存什么时候出", "硬盘还会继续变大吗"],
+        "en": ["largest hard drive 2026", "largest SSD", "HAMR shipping", "NAND layer count 2026", "PLC flash status"]
+      },
+      "anchor": "#ch9",
+      "relatedPages": []
+    }
+  ]
+}
