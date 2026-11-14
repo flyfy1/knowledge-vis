@@ -26,7 +26,7 @@
       "desc": { "zh": "SATA 只管线和帧，命令来自 T13 的 ATA 命令集，主机这边的寄存器接口是 Intel 的 AHCI；M.2 是插槽形状，不是协议。", "en": "SATA defines the wire and the frames; the commands come from T13's ATA set and the host-side register interface is Intel's AHCI. M.2 is a slot shape, not a protocol." },
       "aliases": {
         "zh": ["SATA 和 AHCI 区别", "SATA 是什么", "AHCI 是什么", "BIOS 里的 AHCI 模式是什么", "SATA 协议分层"],
-        "en": ["what is SATA", "SATA vs AHCI", "is every M.2 drive NVMe", "what is AHCI mode", "SATA protocol layers"]
+        "en": ["what is SATA", "SATA vs AHCI", "what is AHCI mode", "SATA protocol layers"]
       },
       "anchor": "#ch1",
       "relatedPages": ["why-nvme-is-fast"]
@@ -48,7 +48,7 @@
       "desc": { "zh": "每 8 位变 10 位：连续相同的位不超过 5 个、0 和 1 的累计差不超过 ±1，K28.5 里的逗号让接收端对齐字节。6 Gb/s 因此只剩 600 MB/s。", "en": "Each byte becomes 10 bits: no more than five equal bits in a row, a running disparity held to ±1, and a comma in K28.5 so the receiver can find byte edges. That is why 6 Gb/s carries 600 MB/s." },
       "aliases": {
         "zh": ["8b/10b 编码", "为什么 6Gb/s 只有 600MB/s", "running disparity 是什么", "K28.5 逗号码", "SATA 加扰"],
-        "en": ["8b/10b encoding", "why 6 Gb/s is only 600 MB/s", "running disparity", "K28.5 comma", "SATA scrambler"]
+        "en": ["8b/10b encoding", "8b10b", "why 6 Gb/s is only 600 MB/s", "running disparity", "K28.5 comma", "SATA scrambler"]
       },
       "anchor": "#ch3",
       "relatedPages": []
@@ -69,8 +69,8 @@
       "title": { "zh": "NCQ：机械盘自己排队", "en": "NCQ: Letting a Hard Disk Reorder Its Queue" },
       "desc": { "zh": "最多 32 条命令交给盘，盘按寻道加旋转的总时间挑下一条；模型里深度 16 的随机读比按到达顺序快一倍左右。", "en": "Up to 32 commands are handed to the drive, which picks the next one by seek plus rotation time. In the model, random reads at depth 16 run about twice as fast as first-come order." },
       "aliases": {
-        "zh": ["NCQ 是什么", "原生命令队列", "机械硬盘随机读为什么慢", "电梯算法 磁盘调度", "硬盘寻道时间"],
-        "en": ["what is NCQ", "native command queuing", "why hard drives are slow at random reads", "disk scheduling elevator", "hard drive seek time"]
+        "zh": ["NCQ 是什么", "原生命令队列", "电梯算法 磁盘调度"],
+        "en": ["what is NCQ", "native command queuing", "disk scheduling elevator"]
       },
       "anchor": "#ch5",
       "relatedPages": []
