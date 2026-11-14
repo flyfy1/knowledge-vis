@@ -191,3 +191,7 @@ registered with zh and en.
   waits until smooth scrolling has stopped; the old forced click on the 1 px input could land while the page was still
   scrolling, so "ch2 15k rpm 95 IOPS" failed about once in a dozen runs. No numeric check changed. Scripts load with
   `?v=20261115`.
+
+- Registrar (2026-11-15, storage series S5): ch7.p4 now links storage-over-a-network (the network route, no longer
+  "planned"), zh and en; `tests/models.cjs` checks it and that zh and en carry the same S5 links. Scripts load with
+  `?v=20261115b` (a second change on the day the `20261115` scripts were deployed).

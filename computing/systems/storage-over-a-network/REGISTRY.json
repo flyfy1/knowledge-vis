@@ -87,7 +87,8 @@
           "网络共享文件夹为什么慢",
           "NFS close-to-open 一致性",
           "NFS 属性缓存",
-          "Samba 是什么"
+          "Samba 是什么",
+          "NAS 是什么"
         ],
         "en": [
           "what protocol does a NAS use",
@@ -95,7 +96,8 @@
           "why copying small files from a NAS is slow",
           "NFS close-to-open consistency",
           "NFS attribute cache",
-          "SMB compounding"
+          "SMB compounding",
+          "what is a NAS"
         ]
       },
       "anchor": "#ch2",
@@ -255,7 +257,8 @@
           "NVMe/TCP 和 iSCSI 区别",
           "NVMe-oF 胶囊",
           "NVMe over RDMA",
-          "FC-NVMe"
+          "FC-NVMe",
+          "NVMe over TCP 是什么"
         ],
         "en": [
           "what is NVMe-oF",
@@ -264,7 +267,8 @@
           "NVMe/TCP vs iSCSI",
           "NVMe-oF capsule",
           "NVMe over RDMA",
-          "FC-NVMe"
+          "FC-NVMe",
+          "what is NVMe over TCP"
         ]
       },
       "anchor": "#ch7",
@@ -298,7 +302,8 @@
           "multipath failover time",
           "multipath load balancing policy",
           "storage path failover",
-          "dm-multipath"
+          "dm-multipath",
+          "multipath"
         ]
       },
       "anchor": "#ch8",
@@ -332,7 +337,8 @@
           "RS(10,4)",
           "object storage durability",
           "how many nines of durability",
-          "MTTDL"
+          "MTTDL",
+          "erasure coding vs replication"
         ]
       },
       "anchor": "#ch9",

@@ -282,6 +282,11 @@ const T88 = '1001110100/0110001011,0111010100/1000101011,1011010100/0100101011,1
   check('en keys = zh keys', Object.keys(EN).sort().join('|'), Object.keys(Z).sort().join('|'));
   check('en S1 links = zh S1 links', s1Links(Object.values(EN).join('')).map(m => m[0]).sort().join(' '), s1Links(Object.values(Z).join('')).map(m => m[0]).sort().join(' '));
   check('en S4 links = zh S4 links', s4Links(Object.values(EN).join('')).map(m => m[0]).sort().join(' '), s4Links(Object.values(Z).join('')).map(m => m[0]).sort().join(' '));
+  // the network-storage essay S5 is live (2026-11-15): ch10.links points at it
+  const s5Links = v => [...v.matchAll(/storage-over-a-network\/(#ch\d+)?/g)].map(m => m[0]);
+  check('links to S5 (ch10.links)', s5Links(Object.values(Z).join('')).join(' '), 'storage-over-a-network/');
+  check('ch10.links links S5', s5Links(Z['ch10.links']).length, 1);
+  check('en S5 links = zh S5 links', s5Links(Object.values(EN).join('')).sort().join(' '), s5Links(Object.values(Z).join('')).sort().join(' '));
   check('en S3 links = zh S3 links', s3Links(Object.values(EN).join('')).map(m => m[0]).sort().join(' '), s3Links(Object.values(Z).join('')).map(m => m[0]).sort().join(' '));
   for (const k of Object.keys(Z)) check('en placeholders ' + k, ph(EN[k]), ph(Z[k]));
   if (stub) { check('en stub mirrors zh exactly', JSON.stringify(EN), JSON.stringify(Z)); console.log('NOTE: copy.en.js is a stub (enStub); English registry match skipped until it is translated'); }

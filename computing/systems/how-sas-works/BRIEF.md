@@ -250,3 +250,9 @@ search coverage; SPL-4/SAS-4 normative text (paywalled): SOF/EOF size, real inte
   essay, zh and en; `tests/models.cjs` checks them and now also checks S3's aliases against S4's. #ch7 takes SAS 和 SATA
   能混用吗, SAS 盘能插 SATA 口吗, can SAS and SATA mix and SAS drive in SATA port from what-a-drive-is-made-of #ch7, since this
   chapter answers them directly. Scripts load with `?v=20261115`.
+
+- Registrar (2026-11-15, storage series S5): ch1.p3 links Fibre Channel (FCP) to storage-over-a-network #ch4 and iSCSI to
+  its #ch3; ch11.links links the essay, #ch3 (iSCSI), #ch4 (Fibre Channel) and #ch7 (NVMe-oF) instead of "still to come",
+  zh and en; `tests/models.cjs` checks the anchors and checks S3's aliases against S5's. #ch4 keeps 多路径是什么 and
+  multipath storage; S5 #ch8 takes plain 多路径 and multipath (its chapter is about splitting traffic between paths).
+  Scripts load with `?v=20261115b`.

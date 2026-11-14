@@ -252,15 +252,16 @@ const zf = (x, d) => M.fmt(x, d, 'zh');
   const owned = new Map();
   for (const a of ['NVMe 为什么快', 'NVMe 和 SATA 区别', 'NVMe vs SATA', 'AHCI 协议瓶颈', 'AHCI overhead', 'NVMe vs AHCI', 'SATA III 速度上限', '队列深度 QD 是什么', 'queue depth',
     'NVMe 64K 队列', 'AHCI 32 queue depth limit', 'write amplification', '写放大', 'TRIM', 'Trim']) owned.set(norm(a), 'TASK');
-  for (const sib of ['why-nvme-is-fast', 'what-a-drive-is-made-of', 'how-sata-works', 'how-sas-works']) {
+  for (const sib of ['why-nvme-is-fast', 'what-a-drive-is-made-of', 'how-sata-works', 'how-sas-works', 'storage-over-a-network']) {
     const p = path.join(DIR, '..', sib, 'REGISTRY.json');
     if (fs.existsSync(p)) for (const c of JSON.parse(fs.readFileSync(p, 'utf8')).concepts) for (const a of [...c.aliases.zh, ...c.aliases.en]) owned.set(norm(a), sib);
   }
   for (const c of R.concepts) for (const a of [...c.aliases.zh, ...c.aliases.en]) { n++; if (owned.has(norm(a))) { fails++; console.error(`FAIL alias owned by ${owned.get(norm(a))}: ${a}`); } }
   // live sibling links must point at chapters that exist; S3 (how-sas-works) is live since 2026-11-14 and is
-  // linked from ch6.p1 and ch11.links (its chapter 2, the CDB), the same in zh and en
+  // linked from ch6.p1 and ch11.links (its chapter 2, the CDB), the same in zh and en; S5 (storage-over-a-network,
+  // live 2026-11-15) is linked from ch6.p1 and ch11.links (its chapter 3, iSCSI)
   const all = Object.values(Z).join('');
-  for (const sib of ['what-a-drive-is-made-of', 'how-sata-works', 'why-nvme-is-fast', 'how-sas-works']) {
+  for (const sib of ['what-a-drive-is-made-of', 'how-sata-works', 'why-nvme-is-fast', 'how-sas-works', 'storage-over-a-network']) {
     const sh = fs.readFileSync(path.join(DIR, '..', sib, 'index.html'), 'utf8');
     for (const m of all.matchAll(new RegExp(sib + '/(#ch\\d+)?', 'g'))) if (m[1]) check(`${sib} anchor ${m[1]}`, sh.includes(`id="${m[1].slice(1)}"`), true);
   }
@@ -268,12 +269,17 @@ const zf = (x, d) => M.fmt(x, d, 'zh');
   check('ch6.p1 links S3 #ch2', sasLinks(Z['ch6.p1']).join(), 'how-sas-works/#ch2');
   check('ch11.links links S3 #ch2', sasLinks(Z['ch11.links']).join(), 'how-sas-works/#ch2');
   check('links to S3 (ch6.p1, ch11.links)', sasLinks(all).length, 2);
+  const netLinks = v => v.match(/storage-over-a-network\/#?\w*/g) || [];
+  check('ch6.p1 links S5 #ch3', netLinks(Z['ch6.p1']).join(), 'storage-over-a-network/#ch3');
+  check('ch11.links links S5 #ch3', netLinks(Z['ch11.links']).join(), 'storage-over-a-network/#ch3');
+  check('links to S5 (ch6.p1, ch11.links)', netLinks(all).length, 2);
   const sas = JSON.parse(fs.readFileSync(path.join(DIR, '..', 'how-sas-works', 'REGISTRY.json'), 'utf8'));
   says('ch6.p1', '《' + sas.title.zh + '》'); says('ch11.links', '《' + sas.title.zh + '》');
   for (const k of ['ch1.p2', 'ch6.p2', 'ch5.p2', 'ch9.p1', 'ch11.links']) { n++; if (!/href=/.test(Z[k])) { fails++; console.error('FAIL expected a sibling link in ' + k); } }
 
   const ectx = { window: {} }; vm.runInNewContext(fs.readFileSync(path.join(DIR, 'copy.en.js'), 'utf8'), ectx);
   const EN = ectx.window.ESSAY_COPY.en, stub = ectx.window.ESSAY_COPY.enStub === true, ph = s => [...s.matchAll(/\{(\w+)\}/g)].map(m => m[1]).sort().join(',');
+  check('en S5 links = zh S5 links', (Object.values(EN).join('').match(/storage-over-a-network\/#?\w*/g) || []).sort().join(' '), (all.match(/storage-over-a-network\/#?\w*/g) || []).sort().join(' '));
   check('en S3 links = zh S3 links', (Object.values(EN).join('').match(/how-sas-works\/#?\w*/g) || []).sort().join(' '), (all.match(/how-sas-works\/#?\w*/g) || []).sort().join(' '));
   check('en keys = zh keys', Object.keys(EN).sort().join('|'), Object.keys(Z).sort().join('|'));
   for (const k of Object.keys(Z)) check('en placeholders ' + k, ph(EN[k]), ph(Z[k]));

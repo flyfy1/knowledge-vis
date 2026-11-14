@@ -250,7 +250,7 @@ const P = M.prose();
   // one word, one owner: aliases of the sibling essays are not ours to take
   const norm = s => s.toLowerCase().replace(/\s+/g, '');
   const owned = new Map();
-  for (const sib of ['why-nvme-is-fast', 'what-a-drive-is-made-of', 'how-sata-works', 'how-usb-drives-talk']) {
+  for (const sib of ['why-nvme-is-fast', 'what-a-drive-is-made-of', 'how-sata-works', 'how-usb-drives-talk', 'storage-over-a-network']) {
     const f = path.join(DIR, '..', sib, 'REGISTRY.json');
     if (fs.existsSync(f)) for (const c of JSON.parse(fs.readFileSync(f, 'utf8')).concepts) for (const a of [...c.aliases.zh, ...c.aliases.en]) owned.set(norm(a), sib);
   }
@@ -261,7 +261,8 @@ const P = M.prose();
     } }
   // links into sibling essays point at chapters that exist there
   // the USB essay S4 (live 2026-11-15) is linked from ch1.p3 (#ch5, UAS) and ch11.links
-  for (const sib of ['what-a-drive-is-made-of', 'how-sata-works', 'why-nvme-is-fast', 'how-usb-drives-talk']) {
+  // the network-storage essay S5 (live 2026-11-15): ch1.p3 (FCP #ch4, iSCSI #ch3) and ch11.links (#ch3, #ch4, #ch7, essay)
+  for (const sib of ['what-a-drive-is-made-of', 'how-sata-works', 'why-nvme-is-fast', 'how-usb-drives-talk', 'storage-over-a-network']) {
     const sh = fs.readFileSync(path.join(DIR, '..', sib, 'index.html'), 'utf8');
     for (const v of Object.values(Z)) for (const m of v.matchAll(new RegExp(sib + '/(#[\\w-]+)', 'g'))) check(sib + ' anchor ' + m[1], sh.includes(`id="${m[1].slice(1)}"`), true);
   }
@@ -270,6 +271,10 @@ const P = M.prose();
   const s4Links = o => Object.values(o).join('').match(/how-usb-drives-talk\/#?\w*/g) || [];
   check('links to S4 (ch1.p3 #ch5, ch11.links)', s4Links(Z).sort().join(' '), 'how-usb-drives-talk/ how-usb-drives-talk/#ch5');
   check('en S4 links = zh S4 links', s4Links(EN).sort().join(' '), s4Links(Z).sort().join(' '));
+  const s5Links = o => Object.values(o).join('').match(/storage-over-a-network\/#?\w*/g) || [];
+  check('ch1.p3 links S5 (#ch3, #ch4)', (Z['ch1.p3'].match(/storage-over-a-network\/#?\w*/g) || []).sort().join(' '), 'storage-over-a-network/#ch3 storage-over-a-network/#ch4');
+  check('links to S5 (ch1.p3, ch11.links)', s5Links(Z).sort().join(' '), 'storage-over-a-network/ storage-over-a-network/#ch3 storage-over-a-network/#ch3 storage-over-a-network/#ch4 storage-over-a-network/#ch4 storage-over-a-network/#ch7');
+  check('en S5 links = zh S5 links', s5Links(EN).sort().join(' '), s5Links(Z).sort().join(' '));
   check('en keys = zh keys', Object.keys(EN).sort().join('|'), Object.keys(Z).sort().join('|'));
   for (const k of Object.keys(Z)) check('en placeholders ' + k, ph(EN[k]), ph(Z[k]));
   if (stub) { check('en stub mirrors zh exactly', JSON.stringify(EN), JSON.stringify(Z)); console.log('NOTE: copy.en.js is a stub (enStub); English registry match skipped until it is translated'); }

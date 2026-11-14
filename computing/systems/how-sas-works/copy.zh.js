@@ -76,7 +76,7 @@ window.ESSAY_COPY.zh = {
   "ch1.r.ff.what": "盘上的 SAS 插头（比 SATA 多一组第二端口的触点），背板插座，多通道线缆",
   "ch1.r.ff.who": "SFF 委员会（今属 SNIA）：SFF-8482 等",
   "ch1.r.ff.ch": "第 4、7 章",
-  "ch1.p3": "这张表要记住的只有一件事：<strong>SCSI 不等于 SAS</strong>。同一套 SCSI 命令，也跑在光纤通道（FCP）、以太网上的 iSCSI、U 盘和移动硬盘用的 <a href='../how-usb-drives-talk/#ch5'>UAS</a> 上；反过来，SAS 线上也跑不是 SCSI 的东西（STP 里装的是 ATA 命令）。SAS 在 2003 年成为标准（INCITS 376-2003），接替的是并行 SCSI；SATA 也在差不多时候接替了并行 ATA，两条路从那时起就共用相近的线和插头。",
+  "ch1.p3": "这张表要记住的只有一件事：<strong>SCSI 不等于 SAS</strong>。同一套 SCSI 命令，也跑在<a href='../storage-over-a-network/#ch4'>光纤通道</a>（FCP）、以太网上的 <a href='../storage-over-a-network/#ch3'>iSCSI</a>、U 盘和移动硬盘用的 <a href='../how-usb-drives-talk/#ch5'>UAS</a> 上；反过来，SAS 线上也跑不是 SCSI 的东西（STP 里装的是 ATA 命令）。SAS 在 2003 年成为标准（INCITS 376-2003），接替的是并行 SCSI；SATA 也在差不多时候接替了并行 ATA，两条路从那时起就共用相近的线和插头。",
   "ch1.limit": "这张表是简化的。SAS 标准里还有管理机柜的 SES 命令、给扩展器分区的 SMP 函数、给磁带机的 SSC 命令集等，这里只讲硬盘用到的部分。",
 
   /* ── 02 ── */
@@ -383,7 +383,7 @@ window.ESSAY_COPY.zh = {
   "ch11.q2": "<strong>盘接了几条路？</strong>只有双端口的盘插在双控背板上，才真有两条路；SATA 盘接在同一块背板上只有一条，除非加转接板（第 4、7 章）。",
   "ch11.q3": "<strong>谁在校验数据？</strong>盘是不是格式化成 520 / 4160 字节的扇区、控制器和驱动有没有打开 PI；打开了能抓住途中改坏的数据和「写错地方」，但抓不住「写丢了」，那要靠更上层（第 8 章）。",
   "ch11.sum": "SAS 能在机房里留这么久，靠的不是快：<em>一套比线还老的命令，一个盘上的两条路，一台交换机一样的扩展器，和每 512 字节后面的 8 个字节</em>。这几样东西 SATA 没有，NVMe 正在一样一样补上。",
-  "ch11.links": "接着读：<a href='../what-a-drive-is-made-of/'>《硬盘里到底是什么》</a>讲盘片、闪存和整张接口地图；<a href='../how-sata-works/'>《SATA 为什么用了二十多年》</a>讲 SATA 的编码、帧和 NCQ；<a href='../why-nvme-is-fast/'>《NVMe 为什么这么快》</a>讲闪存为什么离开 SAS 和 SATA。<a href='../how-usb-drives-talk/'>《移动硬盘为什么跑不满》</a>讲 USB 上的 SCSI 命令和硬盘盒里的翻译。之后还会有网络存储（iSCSI、光纤通道、NVMe-oF）一篇。",
+  "ch11.links": "接着读：<a href='../what-a-drive-is-made-of/'>《硬盘里到底是什么》</a>讲盘片、闪存和整张接口地图；<a href='../how-sata-works/'>《SATA 为什么用了二十多年》</a>讲 SATA 的编码、帧和 NCQ；<a href='../why-nvme-is-fast/'>《NVMe 为什么这么快》</a>讲闪存为什么离开 SAS 和 SATA。<a href='../how-usb-drives-talk/'>《移动硬盘为什么跑不满》</a>讲 USB 上的 SCSI 命令和硬盘盒里的翻译。<a href='../storage-over-a-network/'>《隔着网线的硬盘》</a>讲网络存储：<a href='../storage-over-a-network/#ch3'>iSCSI</a>、<a href='../storage-over-a-network/#ch4'>光纤通道</a>和 <a href='../storage-over-a-network/#ch7'>NVMe-oF</a>。",
 
   "footer.sources": "出处：T10 技术委员会草案列表（t10.org/drafts.htm，各标准的状态与日期，2026-11-14 打开）；T10 提案 03-245r4（SSP 帧与 COMMAND 信息单元，2004）、05-190r2（SAS-1.1 第 5 章：插头与插座，2005）、02-482r0（SAS 内部线缆，2002）、02-335r2（宽端口上的连接，2002）、05-144r7（SAS-2 分区，2005）、06-188r2（STP 亲和关系，2006）；希捷《SCSI 命令参考手册》100293068 Rev. L（2020，表 107–113）；RFC 7143（iSCSI）；Linux 内核 lib/crc/crc-t10dif-main.c 与 include/linux/t10-pi.h；CRC RevEng 目录（CRC-16/T10-DIF）；smp_utils 手册页 smp_conf_zone_perm_tbl(8)；希捷 Exos 数据表 DS2046.1-2512；铠侠 PM7-R 产品页；NIST/SEMATECH《工程统计手册》8.1.8.2–8.1.8.3；Bairavasundaram 等，An Analysis of Data Corruption in the Storage Stack，FAST '08；Xia 等，A Study of Forward Error Correction Codes for SAS Channels，Signal Integrity Journal，2018 年 12 月；STA 与 INCITS/SCSI 新闻稿（2024-07-23）；STA plugfest 新闻稿（2026-10-27）；Blocks & Files，SAS roadmap hits speed bump as NVMe cruises in（2023-11-23）。",
   "footer.models": "模型：CDB 与两种信封按上述表格逐位拼出；一次读的时间按 SSP 帧长度和每条道的有效速率计算，开关门时间是调出来的参数；可用度用串并联可靠性框图，路径零件的数字是调出来的参数；扇出用 Erlang C；宽端口是逐事件的确定性模拟；PI 用真实的 CRC-16/T10-DIF；纠错用 RS(30,26) 的符号计数加泊松到达的串错误。",

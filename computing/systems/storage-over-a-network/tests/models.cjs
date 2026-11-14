@@ -293,11 +293,16 @@ const SAYKEY = /\.say\.|^u\.|\.cv\.|^ch8\.unit/;
     if (m[2]) check(`anchor ${m[1]}${m[2]}`, fs.readFileSync(f, 'utf8').includes(`id="${m[2].slice(1)}"`), true);
   }
   for (const m of all.matchAll(/href='(#ch\d+)'/g)) check('own anchor ' + m[1], html.includes(`id="${m[1].slice(1)}"`), true);
-  check('no link to the unregistered USB draft', /how-usb-drives-talk/.test(all), false);
+  // the USB essay S4 is live (2026-11-15): ch11.links links it and its #ch6 (SCSI translation in the enclosure)
+  const usbLinks = v => v.match(/how-usb-drives-talk\/#?\w*/g) || [];
+  check('links to S4 (ch11.links: essay, #ch6)', usbLinks(all).sort().join(' '), 'how-usb-drives-talk/ how-usb-drives-talk/#ch6');
+  check('ch11.links holds the S4 links', usbLinks(Z['ch11.links']).length, 2);
 
   const ectx = { window: {} }; vm.runInNewContext(fs.readFileSync(path.join(DIR, 'copy.en.js'), 'utf8'), ectx);
   const EN = ectx.window.ESSAY_COPY.en, stub = ectx.window.ESSAY_COPY.enStub === true, ph = s => [...s.matchAll(/\{(\w+)\}/g)].map(m => m[1]).sort().join(',');
   check('en keys = zh keys', Object.keys(EN).sort().join('|'), Object.keys(Z).sort().join('|'));
+  { const hrefs = o => (Object.values(o).join('').match(/href='[^']*'/g) || []).sort().join(' ');
+    check('en links = zh links', hrefs(EN), hrefs(Z)); }
   for (const k of Object.keys(Z)) check('en placeholders ' + k, ph(EN[k] || ''), ph(Z[k]));
   if (stub) { check('en stub mirrors zh exactly', JSON.stringify(EN), JSON.stringify(Z)); console.log('NOTE: copy.en.js is a stub (enStub); English registry match skipped until it is translated'); }
   else { check('registry title en', R.title.en, EN['doc.title'].split(' · ')[0]); check('registry desc en', R.desc.en, EN['doc.desc']); }

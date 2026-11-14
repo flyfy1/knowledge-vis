@@ -47,6 +47,12 @@ function branch(name, o) { n++; const s = Z[o.key]; if (s == null) { fails++; co
   check('ch7.p4 links S4', /how-usb-drives-talk\//.test(Z['ch7.p4']), true);
   for (const v of Object.values(Z)) for (const m of v.matchAll(/how-usb-drives-talk\/#(ch\d+)/g)) check('USB anchor ' + m[1], usb.includes(`id="${m[1]}"`), true);
   check('en USB links = zh USB links', usbLinks(EN).sort().join(' '), usbLinks(Z).sort().join(' '));
+  // the network-storage essay (S5, live 2026-11-15): ch7.p4 links it; any anchor must exist there, the same in zh and en
+  const net = fs.readFileSync(path.join(DIR, '..', 'storage-over-a-network', 'index.html'), 'utf8');
+  const netLinks = o => Object.values(o).join('').match(/storage-over-a-network\/#?\w*/g) || [];
+  check('ch7.p4 links S5', /storage-over-a-network\//.test(Z['ch7.p4']), true);
+  for (const v of Object.values(Z)) for (const m of v.matchAll(/storage-over-a-network\/#(ch\d+)/g)) check('S5 anchor ' + m[1], net.includes(`id="${m[1]}"`), true);
+  check('en S5 links = zh S5 links', netLinks(EN).sort().join(' '), netLinks(Z).sort().join(' '));
   // relative links to other site pages exist
   for (const v of Object.values(Z)) for (const m of v.matchAll(/href=\\?"(\.\.\/[^"#\\]+)/g)) check('link target exists ' + m[1], fs.existsSync(path.join(DIR, m[1], 'index.html')), true);
 }

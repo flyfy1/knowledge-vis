@@ -148,7 +148,7 @@ model test checks keys, placeholders, and that `title.en`/`desc.en` in `REGISTRY
 - zh title 隔着网线的硬盘 / en Drives Across a Wire; category computing, subtopic systems, stage university.
 - Links out (live): what-a-drive-is-made-of #ch1 #ch7, how-sas-works #ch2 #ch4, why-nvme-is-fast #ch1 #ch3 #ch4
   #ch8, tcp-congestion #step1 #step4, distributed-systems #step0, why-compute-waits-for-memory #ch10.
-- Mentioned as plain text (not linked): 《移动硬盘为什么跑不满》 (S4 draft). The tech/networks drafts
+- Mentioned as plain text (not linked) at build time: 《移动硬盘为什么跑不满》 (S4 draft); linked since registration (below). The tech/networks drafts
   (how-a-web-page-arrives for RTT/TCP, how-much-a-wire-can-carry #ch8 for Reed–Solomon) are not linked because
   they are not registered; link ch2/ch6 and ch9 to them once they are.
 - Suggested atlas edges: ch1→ch2, ch1→ch3, ch3→ch7, ch5→ch6, ch5→ch7, ch4→ch6 (credits ↔ PFC), ch8 → how-sas-works
@@ -245,3 +245,22 @@ motion). Canvas sweep (`--sweep`, scroll-aware): first run found 27 states where
   Windows Server 2025 not including the initiator: vendor note via search only.
 - Backblaze failure and drive-day counts: secondary only (consistent with the primary 1.36%).
 - XORing Elephants figures (10–20% of ~2 PB/day, 3000 nodes): not reopened.
+
+## Registrar (2026-11-15)
+
+- After the reviewer's last edit the registrar reran `tests/models.cjs` (1478 checks), `tests/browser.cjs` and the canvas
+  sweep (1538 states): all PASS, then committed the essay as reviewed (d7abd777).
+- Cross-links: ch11.links links how-usb-drives-talk and its #ch6 (SCSI translation in the enclosure) instead of "in
+  preparation", zh and en; `tests/models.cjs` replaces the "no link to the unregistered USB draft" check with checks of those
+  two links and checks that zh and en carry the same links. Every outbound link (25 per language) resolves to a page and an
+  anchor. S1 ch7.p4, S2 ch10.links, S3 ch1.p3 (#ch3, #ch4) and ch11.links (#ch3, #ch4, #ch7), S4 ch6.p1 and ch11.links (#ch3)
+  link this essay. The tech/networks drafts stay unlinked (not registered); S6 does not exist yet.
+- Search aliases added from the one-click check (homepage and atlas, the 20 queries of the registrar's brief plus about
+  60 variants and neighbour words): NAS 是什么, what is a NAS (#ch2); NVMe over TCP 是什么, what is NVMe over TCP (#ch7);
+  multipath (#ch8; 多路径 already landed here, 多路径是什么 and multipath storage stay on how-sas-works #ch4); erasure coding vs
+  replication (#ch9). None is owned by another page. Words left with their owners: 数据副本, data replication, CAP 定理
+  (distributed-systems), 网络延迟, network latency, 丢包重传 (tcp-congestion), Reed-Solomon (how-sas-works #ch9), iSCSI CDB,
+  SCSI 命令 (how-sas-works #ch2).
+- `index.html` loads its four scripts with `?v=20261115` (specs/essays.md, "Cache keys").
+- Atlas edges: 13 (6 between chapters; 1 from what-a-drive-is-made-of #ch7, 2 from how-sas-works #ch2 and #ch4, 2 from
+  why-nvme-is-fast #ch1 and #ch4, 1 from tcp-congestion step 1, 1 from distributed-systems).

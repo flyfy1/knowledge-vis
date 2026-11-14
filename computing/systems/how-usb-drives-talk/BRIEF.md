@@ -206,3 +206,7 @@ Screenshots (not committed): /tmp/agent-tasks/storage/review-s4/shots and /figs.
   区别, Thunderbolt vs USB4, USB4 vs Thunderbolt (#ch8); SD 卡速度, U 盘速度, SD card speed, USB flash drive speed (#ch9).
   None is owned by another page. 移动硬盘盒怎么工作 stays on what-a-drive-is-made-of #ch7, which owns it.
 - `index.html` loads its four scripts with `?v=20261115` (specs/essays.md, "Cache keys").
+- Registrar (2026-11-15, storage series S5): ch6.p1 links iSCSI to storage-over-a-network #ch3, and ch11.links adds one
+  sentence linking the same chapter (the SCSI commands sent across a network), zh and en; `tests/models.cjs` checks both
+  links and checks S4's aliases against S5's. S5's ch11.links now links this essay and its #ch6. Scripts load with
+  `?v=20261115b` (a second change on the day the `20261115` scripts were deployed).

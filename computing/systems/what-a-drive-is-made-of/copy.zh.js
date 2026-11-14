@@ -291,7 +291,7 @@ window.ESSAY_COPY.zh = {
   "ch7.say.fail.conn": "{d} 和{s}卡在{l}：两边的插头和插座不是同一种规格，不能当作对得上。",
   "ch7.say.fail.lane": "{d} 插进{s}：插得进去，却卡在{l}：插槽里接的线和盘说的不是一种电信号，电脑认不出这块盘。",
   "ch7.p3": "几组值得记住的组合：M.2 SATA 盘插进只接 PCIe 的 M.2 插槽，卡在第三层，插得进、认不出；SATA 盘能插进 SAS 盘位，SAS 盘插不进 SATA 口；USB 硬盘盒里不管装的是什么，电脑看到的都是 USB，盒子里有一颗芯片在两边翻译。U.2 和 SAS、SATA 共用 2.5 英寸外形，也有能同时接这三种盘的“三模”背板（U.3，SFF-TA-1001 规范）；哪种 U.2 盘能插哪种 U.3 盘位，我读到的二手资料说法不一，所以没放进模型。",
-  "ch7.p4": "这一页之后会有几篇分别讲地图上的每一条路：<a href=\"../how-sata-works/\">SATA 怎样把一个读请求打包上线</a>，<a href=\"../how-sas-works/#ch7\">SAS 为什么能接 SATA 盘而不能反过来</a>，<a href=\"../how-usb-drives-talk/\">USB 硬盘盒为什么常常比标称慢</a>，以及通过网络用一块盘（筹备中）。PCIe 和 NVMe 的那一条，已经在<a href=\"../why-nvme-is-fast/\">「NVMe 为什么这么快」</a>里，SATA 线的速度上限在<a href=\"../why-nvme-is-fast/#ch2\">它的第二章</a>。",
+  "ch7.p4": "这一页之后会有几篇分别讲地图上的每一条路：<a href=\"../how-sata-works/\">SATA 怎样把一个读请求打包上线</a>，<a href=\"../how-sas-works/#ch7\">SAS 为什么能接 SATA 盘而不能反过来</a>，<a href=\"../how-usb-drives-talk/\">USB 硬盘盒为什么常常比标称慢</a>，以及<a href=\"../storage-over-a-network/\">隔着网络用一块盘</a>。PCIe 和 NVMe 的那一条，已经在<a href=\"../why-nvme-is-fast/\">「NVMe 为什么这么快」</a>里，SATA 线的速度上限在<a href=\"../why-nvme-is-fast/#ch2\">它的第二章</a>。",
   "ch7.limit": "模型的边界：它只做逐层的“对不对得上”，不管速度代际（PCIe 4.0 的盘插进 3.0 的插槽能用，只是慢）、供电、BIOS 设置和 M.2 的长度。M.2 的键和插槽接线来自厂商资料和二手资料，PCI-SIG 的 M.2 规范原文我没有读到。",
 
   /* ── 08 ── */

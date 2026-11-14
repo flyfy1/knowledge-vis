@@ -203,3 +203,7 @@ Not verified:
   label and waits until the radio is checked, `show()` waits until smooth scrolling has stopped; the forced click on the
   1 px input could land mid-scroll, so "ch2 40-conductor mode 6 not allowed" failed occasionally. No numeric check
   changed. Scripts load with `?v=20261115`.
+
+- Registrar (2026-11-15, storage series S5): ch10.links links storage-over-a-network (《隔着网线的硬盘》, "Drives Across a
+  Wire") instead of "networked storage will get an essay", zh and en; `tests/models.cjs` checks it. Scripts load with
+  `?v=20261115b`.
