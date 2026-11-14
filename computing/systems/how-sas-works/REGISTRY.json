@@ -235,7 +235,9 @@
           "SAS 控制器怎么认 SATA 硬盘",
           "SAS 硬盘接口为什么多一块",
           "转接板 interposer",
-          "SATA 硬盘接 SAS 背板"
+          "SATA 硬盘接 SAS 背板",
+          "SAS 和 SATA 能混用吗",
+          "SAS 盘能插 SATA 口吗"
         ],
         "en": [
           "SATA tunneling protocol",
@@ -243,7 +245,9 @@
           "SATA drive on SAS controller",
           "SAS interposer",
           "why SAS connector has extra pins",
-          "SATA drive in SAS backplane"
+          "SATA drive in SAS backplane",
+          "can SAS and SATA mix",
+          "SAS drive in SATA port"
         ]
       },
       "anchor": "#ch7",

@@ -183,3 +183,11 @@ activation energy (kept as a slider); PCI-SIG M.2 spec and SNIA SFF texts (keys,
 connector keying; real SMR band sizes; HDD inner/outer radius; Samsung V10 production status; ZDNet Korea "delay to
 2027" report not opened. Registrar: REGISTRY.json has no `languages` field; English now passes, so the page can be
 registered with zh and en.
+
+- Registrar (2026-11-15, storage series S4): ch7.p4 now links how-usb-drives-talk (the USB route, no longer "planned"),
+  zh and en; `tests/models.cjs` checks it. SAS 和 SATA 能混用吗, SAS 盘能插 SATA 口吗, can SAS and SATA mix and SAS drive in
+  SATA port moved from #ch7 to how-sas-works #ch7, whose chapter answers them directly (one word, one owner).
+  `tests/browser.cjs`: `pick()` now clicks the radio's visible label and waits until the radio is checked, and `show()`
+  waits until smooth scrolling has stopped; the old forced click on the 1 px input could land while the page was still
+  scrolling, so "ch2 15k rpm 95 IOPS" failed about once in a dozen runs. No numeric check changed. Scripts load with
+  `?v=20261115`.

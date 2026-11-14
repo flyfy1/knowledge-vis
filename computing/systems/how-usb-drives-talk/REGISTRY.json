@@ -51,13 +51,17 @@
           "USB 硬盘盒里面是什么",
           "电脑怎么识别 U 盘",
           "USB 大容量存储类是什么",
-          "桥接芯片是什么"
+          "桥接芯片是什么",
+          "硬盘盒",
+          "硬盘盒是什么"
         ],
         "en": [
           "how does a USB external drive work",
           "what is inside a USB drive enclosure",
           "USB mass storage class",
-          "what is a USB bridge chip"
+          "what is a USB bridge chip",
+          "SSD enclosure",
+          "what is an SSD enclosure"
         ]
       },
       "anchor": "#ch1",
@@ -240,12 +244,14 @@
           "硬盘盒发烫正常吗",
           "固态硬盘过热降速",
           "拷大文件越来越慢",
-          "移动硬盘拷一会就变慢"
+          "移动硬盘拷一会就变慢",
+          "硬盘盒发热降速"
         ],
         "en": [
           "external SSD thermal throttling",
           "SSD enclosure overheating",
-          "copy speed drops after a few minutes"
+          "copy speed drops after a few minutes",
+          "SSD enclosure thermal throttling"
         ]
       },
       "anchor": "#ch7",
@@ -267,13 +273,17 @@
           "雷电 4 硬盘盒速度",
           "USB4 硬盘盒为什么有时很慢",
           "雷电 5 移动硬盘多快",
-          "PCIe 隧道是什么"
+          "PCIe 隧道是什么",
+          "USB4 和雷电区别",
+          "雷电和 USB4 区别"
         ],
         "en": [
           "Thunderbolt vs USB enclosure",
           "USB4 NVMe enclosure speed",
           "Thunderbolt 5 SSD speed",
-          "PCIe tunneling USB4"
+          "PCIe tunneling USB4",
+          "Thunderbolt vs USB4",
+          "USB4 vs Thunderbolt"
         ]
       },
       "anchor": "#ch8",
@@ -297,13 +307,17 @@
           "U 盘写入速度为什么低",
           "SD 卡 UHS-I 和 UHS-II 区别",
           "SD Express 是什么",
-          "存储卡为什么写得慢"
+          "存储卡为什么写得慢",
+          "SD 卡速度",
+          "U 盘速度"
         ],
         "en": [
           "why is my USB flash drive slow",
           "SD card UHS-I vs UHS-II",
           "what is SD Express",
-          "why memory cards write slowly"
+          "why memory cards write slowly",
+          "SD card speed",
+          "USB flash drive speed"
         ]
       },
       "anchor": "#ch9",

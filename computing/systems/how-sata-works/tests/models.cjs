@@ -268,6 +268,11 @@ const T88 = '1001110100/0110001011,0111010100/1000101011,1011010100/0100101011,1
   for (const v of Object.values(Z)) for (const m of s1Links(v)) if (m[1]) check('S1 anchor ' + m[1], s1.includes(`id="${m[1].slice(1)}"`), true);
   // the SAS essay S3 is live (2026-11-14): ch1.limit and ch10.links point at it; anchors must exist there
   const s3 = fs.readFileSync(path.join(DIR, '..', 'how-sas-works', 'index.html'), 'utf8');
+  // the USB essay S4 is live (2026-11-15): ch10.q2 (#ch6) and ch10.links point at it; anchors must exist there
+  const s4 = fs.readFileSync(path.join(DIR, '..', 'how-usb-drives-talk', 'index.html'), 'utf8');
+  const s4Links = v => [...v.matchAll(/how-usb-drives-talk\/(#ch\d+)?/g)];
+  check('links to S4 (ch10.q2, ch10.links)', s4Links(Z['ch10.q2'] + Z['ch10.links']).length, 2);
+  for (const v of Object.values(Z)) for (const m of s4Links(v)) if (m[1]) check('S4 anchor ' + m[1], s4.includes(`id="${m[1].slice(1)}"`), true);
   const s3Links = v => [...v.matchAll(/how-sas-works\/(#ch\d+)?/g)];
   check('links to S3 (ch1.limit, ch10.links)', s3Links(Object.values(Z).join('')).length, 2);
   for (const v of Object.values(Z)) for (const m of s3Links(v)) if (m[1]) check('S3 anchor ' + m[1], s3.includes(`id="${m[1].slice(1)}"`), true);
@@ -276,6 +281,7 @@ const T88 = '1001110100/0110001011,0111010100/1000101011,1011010100/0100101011,1
   const EN = ectx.window.ESSAY_COPY.en, stub = ectx.window.ESSAY_COPY.enStub === true, ph = s => [...s.matchAll(/\{(\w+)\}/g)].map(m => m[1]).sort().join(',');
   check('en keys = zh keys', Object.keys(EN).sort().join('|'), Object.keys(Z).sort().join('|'));
   check('en S1 links = zh S1 links', s1Links(Object.values(EN).join('')).map(m => m[0]).sort().join(' '), s1Links(Object.values(Z).join('')).map(m => m[0]).sort().join(' '));
+  check('en S4 links = zh S4 links', s4Links(Object.values(EN).join('')).map(m => m[0]).sort().join(' '), s4Links(Object.values(Z).join('')).map(m => m[0]).sort().join(' '));
   check('en S3 links = zh S3 links', s3Links(Object.values(EN).join('')).map(m => m[0]).sort().join(' '), s3Links(Object.values(Z).join('')).map(m => m[0]).sort().join(' '));
   for (const k of Object.keys(Z)) check('en placeholders ' + k, ph(EN[k]), ph(Z[k]));
   if (stub) { check('en stub mirrors zh exactly', JSON.stringify(EN), JSON.stringify(Z)); console.log('NOTE: copy.en.js is a stub (enStub); English registry match skipped until it is translated'); }

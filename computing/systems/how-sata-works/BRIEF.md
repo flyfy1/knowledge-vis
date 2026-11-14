@@ -198,3 +198,8 @@ Not verified:
 - Intel AHCI 1.0 press release and the Barracuda 7200.12 manual not re-opened.
 - "Real drive firmware has a similar [aging] safeguard" (ch5.p3) is unsourced but generic.
 
+- Registrar (2026-11-15, storage series S4): ch10.q2 links how-usb-drives-talk #ch6 (the USB bridge) and ch10.links
+  links the essay, zh and en; `tests/models.cjs` checks the anchors. `tests/browser.cjs`: `pick()` clicks the visible
+  label and waits until the radio is checked, `show()` waits until smooth scrolling has stopped; the forced click on the
+  1 px input could land mid-scroll, so "ch2 40-conductor mode 6 not allowed" failed occasionally. No numeric check
+  changed. Scripts load with `?v=20261115`.

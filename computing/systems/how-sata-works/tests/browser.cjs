@@ -36,8 +36,17 @@ async function open(browser, width, opts = {}) {
 }
 const text = (page, sel) => page.$eval(sel, e => e.textContent.trim());
 const setRange = (page, id, v) => page.evaluate(([id, v]) => { const e = document.getElementById(id); e.value = v; e.dispatchEvent(new Event('input', { bubbles: true })); }, [id, String(v)]);
-const show = async (page, sel, ms = 0) => { await page.$eval(sel, e => e.scrollIntoView({ block: 'center' })); if (ms) await page.waitForTimeout(ms); };
-const pick = (page, name, value) => page.click(`input[name=${name}][value="${value}"]`, { force: true });
+// html { scroll-behavior: smooth } makes scrollIntoView animate for up to about a second; wait until scrollY has
+// not moved for three frames, so later clicks and canvas reads see the page at rest (2026-11-15: a forced click
+// during the animation missed its radio once in ch2 and the readout kept its old value).
+const settle = page => page.evaluate(() => new Promise(r => { let y = scrollY, n = 0; const f = () => { if (scrollY === y) { if (++n >= 3) return r(); } else { y = scrollY; n = 0; } requestAnimationFrame(f); }; requestAnimationFrame(f); }));
+const show = async (page, sel, ms = 0) => { await page.$eval(sel, e => e.scrollIntoView({ block: 'center' })); await settle(page); if (ms) await page.waitForTimeout(ms); };
+// click the visible 48 px label (Playwright waits for it to be stable), then wait until the radio is checked
+const pick = async (page, name, value) => {
+  const sel = `input[name=${name}][value="${value}"]`;
+  await page.click(`label:has(> ${sel})`);
+  await page.waitForFunction(s => document.querySelector(s).checked, sel, { timeout: 5000 });
+};
 const canvasHash = (page, id) => page.$eval('#' + id, c => { const d = c.toDataURL(); let h = 0; for (let i = 0; i < d.length; i += 7) h = (h * 31 + d.charCodeAt(i)) | 0; return h; });
 
 (async () => {

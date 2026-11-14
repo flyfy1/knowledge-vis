@@ -238,7 +238,7 @@ window.ESSAY_COPY.zh = {
   /* ── 06 ── */
   "ch6.title": "盒子里的翻译和最窄的一段",
   "ch6.law": "桥接芯片收到的是 SCSI，发给盘的是 ATA 或 NVMe。它决定了三件事：往盘那边开几条路，哪些命令翻得过去，以及一次拷贝最后停在哪一段。",
-  "ch6.p1": "SCSI 命令是一串固定格式的字节，用在 SAS 盘、iSCSI 和 USB 存储上（它的来历和写法见本系列的《服务器硬盘为什么用 SAS》）。盒子里的盘不说 SCSI：SATA 盘说 ATA，NVMe 盘说 NVMe。所以芯片得逐条翻。SATA 那一侧有 T10 的标准《SCSI/ATA 翻译》（SAT，ANSI INCITS 431-2007 起）；NVMe 那一侧有 NVM Express 组织发布的《SCSI 翻译参考》。几条最常用的命令是这样对上的：",
+  "ch6.p1": "SCSI 命令是一串固定格式的字节，用在 SAS 盘、iSCSI 和 USB 存储上（它的来历和写法见本系列的<a href='../how-sas-works/#ch2'>《服务器硬盘为什么用 SAS》第 2 章</a>）。盒子里的盘不说 SCSI：SATA 盘说 ATA，NVMe 盘说 NVMe。所以芯片得逐条翻。SATA 那一侧有 T10 的标准《SCSI/ATA 翻译》（SAT，ANSI INCITS 431-2007 起）；NVMe 那一侧有 NVM Express 组织发布的《SCSI 翻译参考》。几条最常用的命令是这样对上的：",
   "ch6.th.scsi": "SCSI 命令",
   "ch6.th.ata": "SATA 盘收到",
   "ch6.th.nvme": "NVMe 盘收到",
@@ -405,7 +405,7 @@ window.ESSAY_COPY.zh = {
   "ch11.q2": "<strong>最窄的是哪一段？</strong>盘的顺序读、桥接芯片的下行（PCIe 几乘几）、USB 的有效值、Bulk-Only 还是 UASP（第 4–6 章），逐段比，取最小的。拷很久的话，再加上热（第 7 章）。",
   "ch11.q3": "<strong>它走 USB 桥接，还是 PCIe 隧道？</strong>前者要翻译 SCSI，SMART 和释放命令看芯片（第 6 章）；后者没有翻译，但要电脑打开 PCIe 隧道（第 8 章）。",
   "ch11.sum": "回到开头：7,250 MB/s 的盘装进 USB 盒子只剩几百到两三千 MB/s，是因为它一路要过好几道窄门。<em>名字</em>说的是线速，扣掉编码、包头和协议，规范给的有效值在 5 Gb/s 上只剩 {g1share}，10 Gb/s 上剩 {g2share}；<em>Bulk-Only</em>一次只办一件事，小块读远低于线速；<em>UASP</em>用队列把等待叠起来；<em>桥接芯片</em>往盘那边常常只开两条 PCIe 通道；<em>热</em>会让长拷贝越拷越慢。雷电和 USB4 的 PCIe 隧道拿掉了翻译，上限才从 USB 的一两千 MB/s 跳到几千 MB/s。",
-  "ch11.links": "接着读：<a href='../what-a-drive-is-made-of/'>《硬盘里到底是什么》</a>画了整张存储地图，<a href='../how-sata-works/'>《SATA 为什么用了二十多年》</a>讲盒子里那块 SATA 盘的另一侧，<a href='../why-nvme-is-fast/'>《NVMe 为什么这么快》</a>讲 PCIe 和 NVMe 队列。SCSI 命令本身见本系列的《服务器硬盘为什么用 SAS》。",
+  "ch11.links": "接着读：<a href='../what-a-drive-is-made-of/'>《硬盘里到底是什么》</a>画了整张存储地图，<a href='../how-sata-works/'>《SATA 为什么用了二十多年》</a>讲盒子里那块 SATA 盘的另一侧，<a href='../why-nvme-is-fast/'>《NVMe 为什么这么快》</a>讲 PCIe 和 NVMe 队列。SCSI 命令本身见本系列的<a href='../how-sas-works/#ch2'>《服务器硬盘为什么用 SAS》</a>第 2 章。",
 
   "footer": "<p><strong>来源。</strong>Universal Serial Bus Specification Revision 2.0（USB-IF，2023-02-24 文件包）：§5.3.3，表 5-10。Universal Serial Bus 3.2 Specification Revision 1.1（2022 年 6 月）：修订记录，表 3-1，§4.3.1.1，§4.4.6.4，§4.4.11，§7.2.1，表 7-14、7-15。USB4 Specification Version 2.0（2025 年 11 月整合版）：修订记录，§2.2.10.3，§3.1.1.2，§3.2，§4.3.1，§11。USB-IF：USB 80Gbps 新闻稿（2022-10-18），USB Data Performance Language Usage Guidelines（2024 年 1 月）。USB Mass Storage Class Bulk-Only Transport Revision 1.0（1999）；Mass Storage Specification Overview 1.4（2010-02-19）；USB Attached SCSI Protocol Revision 1.0（2009-06-24）。NVM Express: SCSI Translation Reference 1.1。smartmontools 的 smartctl(8) 手册（SAT 与 NVMe 桥接设备类型）。Linux 内核 drivers/usb/storage/uas.c、unusual_uas.h，drivers/ata/libata-scsi.c，include/scsi/scsi_proto.h（2026-11-14 读）。JMicron JMS583、JMS581D、JMS586A 产品简介。英特尔雷电 5 技术简介（2023 年 9 月）。SD 协会总线速度页面。三星 990 EVO Plus 数据表 1.0 版、870 EVO 数据表 1.1 版。E. D. Lazowska 等，Quantitative System Performance（1984），第 5 章。Incropera 与 DeWitt，Fundamentals of Heat and Mass Transfer，§5.2。SK hynix，ISSCC 2023 论文 28.2。前沿一章用到的评测与新闻见 BRIEF.md。</p><p>由 AI 写成。模型是简化的，文中标出了哪些参数是调出来的。这不是购买建议。</p>"
 };

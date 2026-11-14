@@ -246,3 +246,7 @@ SAS-5/SNT status rests on t10.org alone (primary); 24G+ feature list on the pr.c
 search coverage; SPL-4/SAS-4 normative text (paywalled): SOF/EOF size, real interleave, persistent-connection mechanics;
 02-335r2 full text; SFF-8482 geometry; FAST '08 beyond the abstract; whether 528/4224 formats are used for PI.
 
+- Registrar (2026-11-15, storage series S4): ch1.p3 links UAS to how-usb-drives-talk #ch5 and ch11.links links that
+  essay, zh and en; `tests/models.cjs` checks them and now also checks S3's aliases against S4's. #ch7 takes SAS 和 SATA
+  能混用吗, SAS 盘能插 SATA 口吗, can SAS and SATA mix and SAS drive in SATA port from what-a-drive-is-made-of #ch7, since this
+  chapter answers them directly. Scripts load with `?v=20261115`.

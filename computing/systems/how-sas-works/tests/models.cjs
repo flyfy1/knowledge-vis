@@ -250,7 +250,7 @@ const P = M.prose();
   // one word, one owner: aliases of the sibling essays are not ours to take
   const norm = s => s.toLowerCase().replace(/\s+/g, '');
   const owned = new Map();
-  for (const sib of ['why-nvme-is-fast', 'what-a-drive-is-made-of', 'how-sata-works']) {
+  for (const sib of ['why-nvme-is-fast', 'what-a-drive-is-made-of', 'how-sata-works', 'how-usb-drives-talk']) {
     const f = path.join(DIR, '..', sib, 'REGISTRY.json');
     if (fs.existsSync(f)) for (const c of JSON.parse(fs.readFileSync(f, 'utf8')).concepts) for (const a of [...c.aliases.zh, ...c.aliases.en]) owned.set(norm(a), sib);
   }
@@ -260,12 +260,16 @@ const P = M.prose();
       n++; if (mine.has(norm(a))) { fails++; console.error('FAIL alias used twice: ' + a); } mine.add(norm(a));
     } }
   // links into sibling essays point at chapters that exist there
-  for (const sib of ['what-a-drive-is-made-of', 'how-sata-works', 'why-nvme-is-fast']) {
+  // the USB essay S4 (live 2026-11-15) is linked from ch1.p3 (#ch5, UAS) and ch11.links
+  for (const sib of ['what-a-drive-is-made-of', 'how-sata-works', 'why-nvme-is-fast', 'how-usb-drives-talk']) {
     const sh = fs.readFileSync(path.join(DIR, '..', sib, 'index.html'), 'utf8');
     for (const v of Object.values(Z)) for (const m of v.matchAll(new RegExp(sib + '/(#[\\w-]+)', 'g'))) check(sib + ' anchor ' + m[1], sh.includes(`id="${m[1].slice(1)}"`), true);
   }
   const ctx2 = (p2) => { const c2 = { window: {} }; vm.runInNewContext(fs.readFileSync(p2, 'utf8'), c2); return c2.window.ESSAY_COPY; };
   const E = ctx2(path.join(DIR, 'copy.en.js')), EN = E.en, stub = E.enStub === true, ph = s => [...s.matchAll(/\{(\w+)\}/g)].map(m => m[1]).sort().join(',');
+  const s4Links = o => Object.values(o).join('').match(/how-usb-drives-talk\/#?\w*/g) || [];
+  check('links to S4 (ch1.p3 #ch5, ch11.links)', s4Links(Z).sort().join(' '), 'how-usb-drives-talk/ how-usb-drives-talk/#ch5');
+  check('en S4 links = zh S4 links', s4Links(EN).sort().join(' '), s4Links(Z).sort().join(' '));
   check('en keys = zh keys', Object.keys(EN).sort().join('|'), Object.keys(Z).sort().join('|'));
   for (const k of Object.keys(Z)) check('en placeholders ' + k, ph(EN[k]), ph(Z[k]));
   if (stub) { check('en stub mirrors zh exactly', JSON.stringify(EN), JSON.stringify(Z)); console.log('NOTE: copy.en.js is a stub (enStub); English registry match skipped until it is translated'); }

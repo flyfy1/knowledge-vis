@@ -88,8 +88,8 @@
       "title": { "zh": "存储接口分层地图：外形、连接器、链路、传输、命令集", "en": "Storage interface map: form factor, connector, link, transport, command set" },
       "desc": { "zh": "M.2、U.2、E1.S 是外形和连接器，SATA、SAS、PCIe 是链路，ATA、SCSI、NVMe 是命令集；逐层对得上盘才能用。", "en": "M.2, U.2 and E1.S are form factors and connectors, SATA, SAS and PCIe are links, ATA, SCSI and NVMe are command sets; a drive works only when every layer matches." },
       "aliases": {
-        "zh": ["M.2 接口是不是都是 NVMe", "M.2 SATA 和 M.2 NVMe 区别", "M.2 B 键 M 键", "SAS 和 SATA 能混用吗", "SAS 盘能插 SATA 口吗", "U.2 是什么", "U.3 三模", "E1.S EDSFF", "硬盘接口有哪些", "移动硬盘盒怎么工作"],
-        "en": ["is M.2 always NVMe", "is every M.2 drive NVMe", "M.2 SATA vs M.2 NVMe", "M.2 SATA vs NVMe", "M.2 B key M key", "can SAS and SATA mix", "SAS drive in SATA port", "what is U.2", "U.3 tri-mode", "EDSFF E1.S", "storage interface types"]
+        "zh": ["M.2 接口是不是都是 NVMe", "M.2 SATA 和 M.2 NVMe 区别", "M.2 B 键 M 键", "U.2 是什么", "U.3 三模", "E1.S EDSFF", "硬盘接口有哪些", "移动硬盘盒怎么工作"],
+        "en": ["is M.2 always NVMe", "is every M.2 drive NVMe", "M.2 SATA vs M.2 NVMe", "M.2 SATA vs NVMe", "M.2 B key M key", "what is U.2", "U.3 tri-mode", "EDSFF E1.S", "storage interface types"]
       },
       "anchor": "#ch7",
       "relatedPages": ["why-nvme-is-fast"]

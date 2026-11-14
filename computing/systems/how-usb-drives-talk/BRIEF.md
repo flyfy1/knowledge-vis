@@ -109,7 +109,8 @@ Not verified from a primary source (the page labels them as reported or leaves t
 - Keep spec-quoted strings as the spec wrote them in English ("500 MB/sec", "450 MB/sec or less", "in excess of
   400MB/s", "host directed", "September 31, 1999").
 - 「USB 20Gbps」 etc. are the USB-IF logo names: keep them as written.
-- S3 (服务器硬盘为什么用 SAS) is cited as plain text, not a link, until it is registered.
+- S3 (服务器硬盘为什么用 SAS) was cited as plain text until it was registered; since 2026-11-15 ch6.p1 and ch11.links link its
+  chapter 2 (the CDB) in both languages (see Registrar below).
 
 ## Review
 
@@ -192,3 +193,16 @@ Unverified (unchanged, and the page marks them):
 Tests after review: `node tests/models.cjs` → PASS 2446 checks; `tests/browser.cjs` → PASS (zh+en at
 1280/390/320, reduced motion); `tests/canvas-text-overlap.cjs --sweep` → PASS 921 canvas states, zh/en.
 Screenshots (not committed): /tmp/agent-tasks/storage/review-s4/shots and /figs.
+
+## Registrar (2026-11-15)
+
+- After the reviewer's last copy edit the registrar reran `tests/models.cjs` (2446 checks), `tests/browser.cjs` and the canvas
+  sweep (921 states): all PASS, then committed the essay as reviewed.
+- Cross-links: ch6.p1 and ch11.links now link how-sas-works #ch2 (SCSI command blocks), zh and en; `tests/models.cjs` checks
+  the anchor and that zh and en carry the same S3 links (the old "no live link to how-sas-works" check is gone). S1 ch7.p4,
+  S2 ch10.q2 (#ch6) and ch10.links, S3 ch1.p3 (UAS, #ch5) and ch11.links link this essay.
+- Search aliases added from the one-click check (homepage and atlas, 44 zh/en queries first): 硬盘盒, 硬盘盒是什么, SSD
+  enclosure, what is an SSD enclosure (#ch1); 硬盘盒发热降速, SSD enclosure thermal throttling (#ch7); USB4 和雷电区别, 雷电和 USB4
+  区别, Thunderbolt vs USB4, USB4 vs Thunderbolt (#ch8); SD 卡速度, U 盘速度, SD card speed, USB flash drive speed (#ch9).
+  None is owned by another page. 移动硬盘盒怎么工作 stays on what-a-drive-is-made-of #ch7, which owns it.
+- `index.html` loads its four scripts with `?v=20261115` (specs/essays.md, "Cache keys").
