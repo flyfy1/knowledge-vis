@@ -5,13 +5,13 @@
       "developer": "Claude Code",
       "edition": "claude-atlas-knowledge-search-20261111",
       "kind": "revised",
-      "sourceRevision": "5e1343d3bb5bded9371d4fa4c95b0ebd84517ca8",
+      "sourceRevision": "565108dbe1d70020355d0a983cff9ccdbeaf471b",
       "scope": {
-        "zh": "保留既有知识地图、实验与关系；改为通用知识地图，先载入小索引、详情按区域按需载入，搜索覆盖别名与说明；并入另外 66 个课程页的概念，关系在发布前逐条审核；并入六篇长文的 62 个章节概念与 74 条关系；搜索识别问句的多余词与“A 和 B 的区别”式比较，补充日常说法别名，并入《稀缺会搬家》的 15 个章节概念；并入第二批五篇长文的 43 个章节概念与 40 条关系；并入存储系列两篇长文的 19 个章节概念与 14 条关系",
-        "en": "Retains the atlas, its experiments and relations; reframed as a general knowledge atlas that loads a small index first and region details on demand, with search over aliases and descriptions; adds concepts for 66 more lesson pages, with their relations reviewed before release; adds 62 chapter concepts and 74 relations from six long-form essays; search recognises question scaffolding and \"A vs B\" comparisons, with everyday aliases and the 15 chapter concepts of Scarcity Moves; adds 43 chapter concepts and 40 relations from five more long-form essays; adds 19 chapter concepts and 14 relations from the two storage-series essays"
+        "zh": "保留既有知识地图、实验与关系；改为通用知识地图，先载入小索引、详情按区域按需载入，搜索覆盖别名与说明；并入另外 66 个课程页的概念，关系在发布前逐条审核；并入六篇长文的 62 个章节概念与 74 条关系；搜索识别问句的多余词与“A 和 B 的区别”式比较，补充日常说法别名，并入《稀缺会搬家》的 15 个章节概念；并入第二批五篇长文的 43 个章节概念与 40 条关系；并入存储系列三篇长文的 30 个章节概念与 27 条关系",
+        "en": "Retains the atlas, its experiments and relations; reframed as a general knowledge atlas that loads a small index first and region details on demand, with search over aliases and descriptions; adds concepts for 66 more lesson pages, with their relations reviewed before release; adds 62 chapter concepts and 74 relations from six long-form essays; search recognises question scaffolding and \"A vs B\" comparisons, with everyday aliases and the 15 chapter concepts of Scarcity Moves; adds 43 chapter concepts and 40 relations from five more long-form essays; adds 30 chapter concepts and 27 relations from the three storage-series essays"
       },
       "originalAuthorship": "not asserted; prior contributions retained",
-      "previousSourceRevision": "0a2b96f403be4731970c2691d9a2dee704a36c3e"
+      "previousSourceRevision": "5e1343d3bb5bded9371d4fa4c95b0ebd84517ca8"
     },
     "complex-numbers": {
       "developer": "Codex",
@@ -225,15 +225,15 @@
       "developer": "Claude Code",
       "edition": "claude-atlas-galaxy-knowledge-search-20261111",
       "kind": "revised",
-      "sourceRevision": "5e1343d3bb5bded9371d4fa4c95b0ebd84517ca8",
+      "sourceRevision": "565108dbe1d70020355d0a983cff9ccdbeaf471b",
       "scope": {
-        "zh": "保留既有三维知识星图；标题与说明改为通用知识地图；共享图谱并入另外 66 个课程页的概念，以及十三篇长文、存储系列两篇长文与《稀缺会搬家》的章节概念",
-        "en": "Retains the 3D galaxy; title and descriptions reframed for the general knowledge atlas; its shared graph adds concepts for 66 more lesson pages and the chapter concepts of thirteen long-form essays, of the two storage-series essays and of Scarcity Moves"
+        "zh": "保留既有三维知识星图；标题与说明改为通用知识地图；共享图谱并入另外 66 个课程页的概念，以及十三篇长文、存储系列三篇长文与《稀缺会搬家》的章节概念",
+        "en": "Retains the 3D galaxy; title and descriptions reframed for the general knowledge atlas; its shared graph adds concepts for 66 more lesson pages and the chapter concepts of thirteen long-form essays, of the three storage-series essays and of Scarcity Moves"
       },
       "originalAuthorship": "existing atlas contributions retained; galaxy presentation developed with Codex",
       "path": "atlas/galaxy.html",
       "integrationRevision": "cb457b914170078cb61f96eb6377b35ab68fd0a1",
-      "previousSourceRevision": "0a2b96f403be4731970c2691d9a2dee704a36c3e"
+      "previousSourceRevision": "5e1343d3bb5bded9371d4fa4c95b0ebd84517ca8"
     },
     "leetcode/42": {
       "developer": "Codex",
