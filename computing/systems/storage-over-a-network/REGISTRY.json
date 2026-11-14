@@ -1,0 +1,401 @@
+{
+  "slug": "storage-over-a-network",
+  "path": "computing/systems/storage-over-a-network/",
+  "category": "computing",
+  "subtopic": "systems",
+  "stage": "university",
+  "title": {
+    "zh": "隔着网线的硬盘",
+    "en": "Drives Across a Wire"
+  },
+  "desc": {
+    "zh": "硬盘插在别的机器里，你的电脑为什么能把它当成自己的盘？NAS 和 SAN 差在哪，数据中心为什么把 NVMe 搬到网线上？九个可以拖动的模型：改一个字节的三种代价、小文件和往返时间、iSCSI 的 R2T、光纤通道的信用、每一跳的延迟账、丢包的代价、NVMe-oF 的消息、两条路径的排队、三副本和纠删码。",
+    "en": "Why can your computer use a disk that sits in another machine as if it were its own? How do NAS and SAN differ, and why do data centres put NVMe on the network? Nine models you can drag: what changing one byte costs at three levels, small files and round trips, iSCSI's R2T, Fibre Channel credits, the latency of each hop, the cost of a lost packet, NVMe-oF's messages, queueing on two paths, and replication versus erasure coding."
+  },
+  "tags": [
+    {
+      "zh": "网络存储",
+      "en": "Network storage"
+    },
+    {
+      "zh": "NVMe-oF",
+      "en": "NVMe-oF"
+    },
+    {
+      "zh": "iSCSI",
+      "en": "iSCSI"
+    },
+    {
+      "zh": "光纤通道",
+      "en": "Fibre Channel"
+    },
+    {
+      "zh": "RDMA",
+      "en": "RDMA"
+    }
+  ],
+  "concepts": [
+    {
+      "id": "block-file-object-storage",
+      "title": {
+        "zh": "块、文件与对象存储：NAS 和 SAN 的分别",
+        "en": "Block, file and object storage: how NAS and SAN differ"
+      },
+      "desc": {
+        "zh": "客户端向对面要的是块、文件里的字节还是整个对象，决定了谁管文件系统、能不能共享。",
+        "en": "Whether a client asks for blocks, bytes of a file or whole objects decides who runs the file system and what can be shared."
+      },
+      "aliases": {
+        "zh": [
+          "块存储 文件存储 对象存储 区别",
+          "NAS 和 SAN 区别",
+          "什么是 SAN",
+          "什么是块存储",
+          "对象存储是什么",
+          "网络存储有哪几种",
+          "两台电脑能挂同一块 iSCSI 盘吗"
+        ],
+        "en": [
+          "block vs file vs object storage",
+          "NAS vs SAN",
+          "what is a SAN",
+          "what is block storage",
+          "what is object storage",
+          "types of network storage"
+        ]
+      },
+      "anchor": "#ch1",
+      "relatedPages": [
+        "what-a-drive-is-made-of"
+      ]
+    },
+    {
+      "id": "nas-file-protocols",
+      "title": {
+        "zh": "NAS 的文件协议：NFS、SMB 与小文件的往返",
+        "en": "NAS file protocols: NFS, SMB and small-file round trips"
+      },
+      "desc": {
+        "zh": "每个文件都要和服务器问几次，往返时间乘上文件数，就是小文件拷得慢的原因。",
+        "en": "Every file costs a few round trips to the server; round-trip time times the number of files is why small files copy slowly."
+      },
+      "aliases": {
+        "zh": [
+          "NAS 用什么协议",
+          "NFS 和 SMB 区别",
+          "为什么从 NAS 拷小文件很慢",
+          "网络共享文件夹为什么慢",
+          "NFS close-to-open 一致性",
+          "NFS 属性缓存",
+          "Samba 是什么"
+        ],
+        "en": [
+          "what protocol does a NAS use",
+          "NFS vs SMB",
+          "why copying small files from a NAS is slow",
+          "NFS close-to-open consistency",
+          "NFS attribute cache",
+          "SMB compounding"
+        ]
+      },
+      "anchor": "#ch2",
+      "relatedPages": [
+        "tcp-congestion"
+      ]
+    },
+    {
+      "id": "iscsi",
+      "title": {
+        "zh": "iSCSI：SCSI 命令走 TCP，写要等 R2T",
+        "en": "iSCSI: SCSI commands over TCP, writes wait for R2T"
+      },
+      "desc": {
+        "zh": "iSCSI 把 SCSI 命令装进 48 字节的包头，写入要等目标端的 R2T，往返越长等得越久。",
+        "en": "iSCSI wraps SCSI commands in a 48-byte header; writes wait for the target's R2T, and longer round trips mean longer waits."
+      },
+      "aliases": {
+        "zh": [
+          "iSCSI 是什么",
+          "iSCSI 原理",
+          "IQN 是什么",
+          "iSCSI 发起端和目标端",
+          "R2T 是什么",
+          "iSCSI 写入慢",
+          "InitialR2T ImmediateData"
+        ],
+        "en": [
+          "what is iSCSI",
+          "how iSCSI works",
+          "iSCSI IQN name",
+          "iSCSI initiator and target",
+          "iSCSI R2T",
+          "iSCSI write latency over distance"
+        ]
+      },
+      "anchor": "#ch3",
+      "relatedPages": [
+        "how-sas-works",
+        "tcp-congestion"
+      ]
+    },
+    {
+      "id": "fibre-channel-credits",
+      "title": {
+        "zh": "光纤通道的缓冲区信用与距离",
+        "en": "Fibre Channel buffer-to-buffer credits and distance"
+      },
+      "desc": {
+        "zh": "光纤通道按对方空缓冲区的数目发帧，从不丢包；距离越长、速率越高，要的信用越多。",
+        "en": "Fibre Channel sends only as many frames as the receiver has free buffers, so it never drops them; longer and faster links need more credits."
+      },
+      "aliases": {
+        "zh": [
+          "光纤通道是什么",
+          "FC SAN 是什么",
+          "缓冲区信用 BB_Credit",
+          "光纤通道为什么不丢包",
+          "光纤通道长距离要多少信用",
+          "16G 32G 64G 光纤通道"
+        ],
+        "en": [
+          "what is Fibre Channel",
+          "FC SAN",
+          "buffer-to-buffer credits",
+          "BB_Credit distance",
+          "why Fibre Channel is lossless",
+          "long distance Fibre Channel link"
+        ]
+      },
+      "anchor": "#ch4",
+      "relatedPages": []
+    },
+    {
+      "id": "network-storage-latency",
+      "title": {
+        "zh": "网络存储的延迟账：介质、协议栈、光纤与交换机",
+        "en": "The latency budget of network storage"
+      },
+      "desc": {
+        "zh": "盘快到几十微秒时，网络协议栈加的十几到二十几微秒就成了延迟的大头。",
+        "en": "Once a drive answers in tens of microseconds, the network stack's added 5 to 20 microseconds becomes the largest part of the latency."
+      },
+      "aliases": {
+        "zh": [
+          "网络存储延迟",
+          "远程存储为什么慢",
+          "NVMe over TCP 延迟多少",
+          "存储网络延迟由什么组成",
+          "光纤每公里延迟多少"
+        ],
+        "en": [
+          "network storage latency",
+          "remote storage latency budget",
+          "NVMe/TCP latency",
+          "how much latency does a network add to storage",
+          "fiber latency per km"
+        ]
+      },
+      "anchor": "#ch5",
+      "relatedPages": [
+        "why-nvme-is-fast"
+      ]
+    },
+    {
+      "id": "rdma-roce-lossless",
+      "title": {
+        "zh": "RDMA、RoCE v2 与无损以太网",
+        "en": "RDMA, RoCE v2 and lossless Ethernet"
+      },
+      "desc": {
+        "zh": "RDMA 绕开操作系统直接写对方内存，但常见网卡丢一个包就回退重发，所以要求以太网不丢包。",
+        "en": "RDMA writes straight into the peer's memory without the OS, but common NICs go back N on a loss, so they want an Ethernet that does not drop."
+      },
+      "aliases": {
+        "zh": [
+          "RDMA 是什么",
+          "RoCE 是什么",
+          "RoCE v2",
+          "无损以太网",
+          "PFC 流控",
+          "内核旁路 零拷贝",
+          "为什么 RDMA 怕丢包",
+          "DCQCN"
+        ],
+        "en": [
+          "what is RDMA",
+          "what is RoCE",
+          "RoCE v2",
+          "lossless Ethernet",
+          "priority flow control PFC",
+          "kernel bypass zero copy",
+          "go-back-N RDMA",
+          "DCQCN"
+        ]
+      },
+      "anchor": "#ch6",
+      "relatedPages": [
+        "tcp-congestion"
+      ]
+    },
+    {
+      "id": "nvme-over-fabrics",
+      "title": {
+        "zh": "NVMe-oF：胶囊、NVMe/TCP 与 NVMe/RDMA",
+        "en": "NVMe-oF: capsules, NVMe/TCP and NVMe/RDMA"
+      },
+      "desc": {
+        "zh": "NVMe-oF 把本机 NVMe 的命令和完成项原样装进胶囊，经 TCP、RDMA 或光纤通道送到对面的队列。",
+        "en": "NVMe-oF carries local NVMe's commands and completions unchanged in capsules over TCP, RDMA or Fibre Channel to queues on the far side."
+      },
+      "aliases": {
+        "zh": [
+          "NVMe-oF 是什么",
+          "NVMe over Fabrics",
+          "NVMe over TCP",
+          "NVMe/TCP 和 iSCSI 区别",
+          "NVMe-oF 胶囊",
+          "NVMe over RDMA",
+          "FC-NVMe"
+        ],
+        "en": [
+          "what is NVMe-oF",
+          "NVMe over Fabrics",
+          "NVMe over TCP",
+          "NVMe/TCP vs iSCSI",
+          "NVMe-oF capsule",
+          "NVMe over RDMA",
+          "FC-NVMe"
+        ]
+      },
+      "anchor": "#ch7",
+      "relatedPages": [
+        "why-nvme-is-fast"
+      ]
+    },
+    {
+      "id": "multipath-ana-alua",
+      "title": {
+        "zh": "多路径的分流与切换：ALUA 与 ANA",
+        "en": "Splitting and failing over across paths: ALUA and ANA"
+      },
+      "desc": {
+        "zh": "平时只走最优路，忙时分一部分给次优路；平时负载太高，最优路一断剩下的路就接不住。",
+        "en": "Use the optimized path in normal times and spill to the other under load; run too hot and the remaining path cannot carry a failover."
+      },
+      "aliases": {
+        "zh": [
+          "ALUA 是什么",
+          "ANA 是什么",
+          "存储多路径切换",
+          "多路径负载均衡策略",
+          "存储链路断了怎么办",
+          "dm-multipath",
+          "存储切换要多久"
+        ],
+        "en": [
+          "ALUA",
+          "NVMe ANA",
+          "multipath failover time",
+          "multipath load balancing policy",
+          "storage path failover",
+          "dm-multipath"
+        ]
+      },
+      "anchor": "#ch8",
+      "relatedPages": [
+        "how-sas-works"
+      ]
+    },
+    {
+      "id": "replication-vs-erasure-coding",
+      "title": {
+        "zh": "三副本与纠删码：空间、持久性与修理代价",
+        "en": "Replication vs erasure coding: space, durability and repair"
+      },
+      "desc": {
+        "zh": "RS(10,4) 只多 40% 空间就能扛四块坏盘，代价是修一块要读十块。",
+        "en": "RS(10,4) survives four failures for 40% extra space, at the cost of reading ten blocks to repair one."
+      },
+      "aliases": {
+        "zh": [
+          "三副本",
+          "三副本和纠删码区别",
+          "纠删码存储开销",
+          "RS(10,4)",
+          "对象存储怎么保证不丢数据",
+          "数据持久性几个 9",
+          "MTTDL 是什么"
+        ],
+        "en": [
+          "3x replication vs erasure coding",
+          "erasure coding storage overhead",
+          "RS(10,4)",
+          "object storage durability",
+          "how many nines of durability",
+          "MTTDL"
+        ]
+      },
+      "anchor": "#ch9",
+      "relatedPages": [
+        "distributed-systems"
+      ]
+    },
+    {
+      "id": "network-storage-frontier",
+      "title": {
+        "zh": "网络存储的前沿（截至 2026 年 11 月）",
+        "en": "The network storage frontier (as of November 2026)"
+      },
+      "desc": {
+        "zh": "NVMe 2.4 规范集、128G 光纤通道、Ultra Ethernet 1.0、Windows 的 NVMe-oF 预览与 CXL 4.0，分已定、已做、宣称三类。",
+        "en": "The NVMe 2.4 set, 128G Fibre Channel, Ultra Ethernet 1.0, Windows' NVMe-oF preview and CXL 4.0, sorted into specified, shipped and claimed."
+      },
+      "aliases": {
+        "zh": [
+          "NVMe-oF 现在怎么样",
+          "128G 光纤通道",
+          "Ultra Ethernet 是什么",
+          "超以太网",
+          "Windows 支持 NVMe over TCP 吗",
+          "CXL 内存池和存储有什么区别"
+        ],
+        "en": [
+          "NVMe-oF status 2026",
+          "128G Fibre Channel",
+          "Ultra Ethernet",
+          "Windows NVMe over TCP",
+          "CXL vs network storage"
+        ]
+      },
+      "anchor": "#ch10",
+      "relatedPages": [
+        "why-compute-waits-for-memory"
+      ]
+    },
+    {
+      "id": "network-storage-checklist",
+      "title": {
+        "zh": "看到网络存储时问的三件事",
+        "en": "Three questions to ask about network storage"
+      },
+      "desc": {
+        "zh": "借给你的是什么、一次请求几个来回、断了一条路接不接得住。",
+        "en": "What you are lent, how many round trips a request takes, and whether the remaining path can carry a failure."
+      },
+      "aliases": {
+        "zh": [
+          "网络存储参数怎么看",
+          "SAN 和 NAS 规格怎么看",
+          "网络存储为什么卡顿"
+        ],
+        "en": [
+          "how to read network storage specs",
+          "questions to ask about network storage",
+          "why network storage stalls"
+        ]
+      },
+      "anchor": "#ch11",
+      "relatedPages": []
+    }
+  ]
+}

@@ -1,0 +1,161 @@
+# BRIEF — 隔着网线的硬盘 (Drives Across a Wire)
+
+Built-By: Claude Code (claude-opus-5-5)
+Verified-By: self-check by builder (node model test, browser test zh at 1280/390/320 and reduced motion, canvas sweep, screenshots at three widths); independent review pending
+Category: computing 计算机 / subtopic systems 系统 · Stage: university
+Series: storage series S5 (`specs/essay-briefs/TASK-storage-series.md`)
+Format: long interactive essay. Chinese is complete; `copy.en.js` is a same-keys stub (`window.ESSAY_COPY.enStub = true`), so the page shows Chinese in both modes until it is translated.
+Files: index.html, copy.zh.js, copy.en.js (stub), models.js, app.js, REGISTRY.json, tests/models.cjs, tests/browser.cjs
+
+## The one question
+
+硬盘明明插在别的机器里，你的电脑为什么能把它当成自己的盘？同样叫网络存储，为什么有的叫 NAS、有的叫 SAN，数据中心又为什么要把 NVMe 搬到网线上？
+Refined on the page into one question: **一块盘离开机箱、隔了一段网络之后，什么变贵了？** The answer that runs through
+the chapters: round trips (who waits for whom), losses (who resends), distance (light at 4.9 µs/km) and broken
+paths (who takes over). Each protocol is a choice of which side pays for these.
+
+## Changes from the task's suggested ladder
+
+- ch1 merges "place on the layer map" with "block vs file vs object". The map is a table of eight protocols by
+  level / command language / transport / wire, in S1 ch7's vocabulary. Model: bytes moved to change k bytes.
+- ch2 NAS: model is the asymptotic bounds of operational analysis (files in flight ÷ per-file time vs link rate)
+  instead of a separate close-to-open model; close-to-open is prose with RFC 7530 §10.3.1 and nfs(5) defaults.
+- ch3 iSCSI does not redo the 48-byte BHS byte layout (S3 ch2 already builds the CDB inside it; linked). The
+  model is the write path under RFC 7143's negotiated keys (InitialR2T, ImmediateData, FirstBurstLength,
+  MaxBurstLength, MRDSL, MaxOutstandingR2T=1): round trips, PDUs, time.
+- ch4 FC credits: sliding-window model, animated link plus utilisation curve; generations in prose.
+- ch5 latency budget uses measured fabric round trips (SPDK 24.05, null bdev) rather than per-layer guesses;
+  pairs with NVMe ch1 and reuses its media presets.
+- ch6 TCP/RDMA: model compares go-back-N, ideal selective repeat and the Mathis TCP bound vs loss rate.
+- ch7 NVMe-oF: capsule-by-capsule message ladder for iSCSI, NVMe/TCP, NVMe/RDMA; FC-NVMe prose only (not opened).
+- ch8 multipath: two M/M/1 paths with the square-root split, plus failover; Linux timeouts in prose. Links S3 ch4
+  for the availability arithmetic instead of redoing it.
+- ch9 replication vs EC kept to one model (overhead, MTTDL nines, repair reads).
+- ch10 frontier, ch11 closing (three questions). 11 chapters, 9 models.
+
+## Chapters, models, published results, tuned parameters
+
+1. **块、文件、对象** — Law: what you ask the far side for decides who owns the file system. Model `LEVEL.cost`:
+   block = whole 4 KiB blocks (+ a read of a partial block if not cached); file = the k bytes (NFS/SMB WRITE);
+   object = whole object (+ GET if not cached). Exact accounting of the protocols' semantics. Limits: no metadata,
+   journal or headers; aligned start.
+2. **NAS** — Model `NAS.run`: D = k·RTT + s/B; X = min(P/D, B/s); T = N/X (Lazowska et al. 1984 ch. 5 bounds).
+   Test checks the bound against a fluid simulation of P workers sharing the link. "Round trips per file" k is a
+   knob, not a measured count (said on the page).
+3. **iSCSI** — Model `ISCSI.write`: RFC 7143 §13.10–13.17 rules; TCP/IP/Ethernet overhead per 1448-byte segment
+   (MTU 1500 with timestamps; preamble + IFG counted). Time = rounds·RTT + wire/rate (no TCP window limit, no
+   overlap: said on the page). Test hand-counts the default 1 MiB case (4 R2T, 127 Data-Out, 133 PDUs, 5 rounds).
+4. **Fibre Channel** — Model `FC.run`: U = min(1, W·t_f/(t_f + 2·t_prop)) (Stallings §7.1); need = ceil(2t_p/t_f)+1;
+   frame = payload + 36 + 24 idle bytes; 4.90 µs/km (group index 1.47). Test checks against an event simulation
+   of a credit-limited link, and against Brocade's "LinkSpeed/2 credits per km" rule (model within 15%).
+5. **Latency budget** — Model `BUDGET.run`: media (NVMe essay ch1 presets 8500/75/10 µs) + measured fabric RTT +
+   2·d·4.90 µs + 2·hops·switch. **Tuned:** switch 1 µs per traversal; halving/doubling with three switches moves a
+   NAND read from 99.4 to 108.4 µs (page says so; test pins share stays 20–35%).
+6. **Loss** — Model `LOSS.run`: GBN U = (1−p)/(1+(W−1)p) (Stallings §7.3), SR U = 1−p, Mathis
+   (MSS/RTT)·√1.5/√p capped at link. Test checks GBN against a slot simulation and both inversions.
+7. **NVMe-oF capsules** — Model `CAPS.run`: message lists from NVMe/TCP 1.1 Figures 30–34 (72/24/24/24 bytes),
+   RFC 7143 BHS 48, RoCE v2 headers (Eth 14, IPv4 20, UDP 8, BTH 12, RETH 16, AETH 4, ICRC 4, FCS 4). Pure
+   ACKs not counted; one C2HData per read; RDMA MTU 4096. Test hand-counts a TCP read and an RDMA write.
+8. **Multipath** — Model `MP`: T = p/(μ1−pλ) + (1−p)/(μ2−(1−p)λ) (Kleinrock vol. 1); optimum by the square-root
+   rule (test checks against brute-force minimisation at five loads). **Tuned:** path-2 speed = 0.5 × path 1;
+   test pins that at 0.25× and 1× the conclusions (spilling beats optimized-only at 80k/s; failover unstable
+   unless the paths are equal) hold as stated.
+9. **Replication vs EC** — Model `EC.run`: overhead n/k, tolerance n−k (exact); MTTDL ≈ μ^m/(λ^(m+1)·n(n−1)…(n−m))
+   (standard Markov approximation); test checks it within 5% of the exact absorbing-chain solution for all four
+   schemes. AFR from Backblaze 2025 counts (4317 failures / 115,638,676 drive days = 1.36%). **Tuned:** MTTR 24 h;
+   48 h lowers both by about one nine, order unchanged (pinned). Greenan/Plank/Wylie 2010 critique cited on page.
+10. **Frontier** — data block `FRONTIER` in models.js; dates pinned by the test.
+11. **Three questions** — no model.
+
+## Sources (opened by me on 2026-11-14 or 2026-11-15 unless stated)
+
+- RFC 7143, iSCSI (Consolidated), April 2014 — https://www.rfc-editor.org/rfc/rfc7143.txt (2026-11-14): §11.2.1
+  BHS 48 bytes; §13.1 digests (CRC32C) default None; §13.10 InitialR2T Yes; §13.11 ImmediateData Yes and the
+  unsolicited-data table; §13.12 MRDSL 8192; §13.13 MaxBurstLength 262144; §13.14 FirstBurstLength 65536;
+  §13.17 MaxOutstandingR2T 1; iqn examples; port 3260.
+- RFC 7530, NFSv4, March 2015 — https://www.rfc-editor.org/rfc/rfc7530.txt (2026-11-15): §10.3.1 revalidate after
+  OPEN, flush before CLOSE; COMPOUND procedure.
+- Linux nfs(5) — https://man7.org/linux/man-pages/man5/nfs.5.html (2026-11-15): acregmin 3, acregmax 60,
+  acdirmin 30, acdirmax 60; cto default.
+- NVM Express TCP Transport Specification Revision 1.1, 2024-08-05 —
+  https://nvmexpress.org/wp-content/uploads/NVM-Express-TCP-Transport-Specification-Revision-1.1-2024.08.05-Ratified.pdf
+  (2026-11-14): Figure 11 capsule sizes, Figure 26 ICReq HLEN 128, Figure 30 CapsuleCmd HLEN 72, Figure 31
+  CapsuleResp 24, Figures 32–34 H2CData/C2HData/R2T 24, C2HData SUCCESS flag, §3.3.1.1 digests.
+- Linux kernel sources (github.com/torvalds/linux master, 2026-11-14): include/linux/nvme-tcp.h (struct layouts,
+  digest 4), include/rdma/ib_pack.h (header byte counts), drivers/infiniband/sw/rxe/rxe_hdr.h (RETH, AETH),
+  drivers/nvme/host/fabrics.h (ctrl_loss_tmo 600, reconnect_delay 10, fast_io_fail off), drivers/nvme/host/nvme.h
+  (NVME_DEFAULT_KATO 5). open-iscsi etc/iscsid.conf (replacement_timeout 120, noop_out 5/5).
+- IANA service names and ports CSV (2026-11-14): iscsi-target 3260, nvme 4420, nvme-disc 8009, roce 4791/udp
+  registered 2014-10-17.
+- SPDK NVMe-oF TCP and RDMA Performance Reports, Release 24.05 (Mellanox ConnectX-5) —
+  https://review.spdk.io/download/performance-reports/SPDK_tcp_mlx_perf_report_2405.pdf and
+  …/SPDK_rdma_mlx_perf_report_2405.pdf (2026-11-14): Test case 3, Tables 21/22, QD1 4 KiB random read, null bdev,
+  point-to-point without switch, Xeon Gold 6348, Linux 6.0.18: TCP SPDK 17.50 µs, kernel 21.39 µs; RDMA SPDK
+  4.72 µs, kernel 12.10 µs.
+- Chelsio, "100G Kernel and User Space NVMe/TCP Using Chelsio Offload" (2021) —
+  https://www.chelsio.com/wp-content/uploads/resources/t6-100g-nvmetcp-offload.pdf (2026-11-14): kernel TCP↔kernel
+  TCP 4K read delta 21.46 µs. Vendor of offload NICs; used only as a cross-check of the kernel number.
+- Wikipedia, "Fibre Channel" speed table, citing the FCIA speedmap (2026-11-14). FCIA PDFs returned 403.
+- Brocade buffer-credit rule (LinkSpeed/2 per km for full frames), via search excerpts of Fabric OS admin guides and
+  an IBM community post by David Green, 2020-10-14 (https://community.ibm.com/…/distance-link-tuning-on-fibre-channel-networks, opened 2026-11-14).
+- R. Mittal et al., "Revisiting Network Support for RDMA", SIGCOMM 2018, arXiv:1806.08159 (2026-11-14): RoCE needs
+  PFC; current NICs use go-back-N.
+- M. Sathiamoorthy et al., "XORing Elephants", PVLDB 6(5) 2013, arXiv:1301.3791 (2026-11-14): Facebook HDFS
+  RS(10,4), 40% overhead, repair transfers 10 blocks, repair traffic 10–20% of ~2 PB/day in a 3000-node cluster.
+- Backblaze Drive Stats for 2025 (published 2026-02-12), via search result excerpts of the blog and the Business
+  Wire release (2026-11-15): 4,317 failures, 115,638,676 drive days, AFR 1.36%.
+- kernelnewbies Linux 5.0 (2026-11-15): NVMe/TCP host and target drivers; released 2019-03-03.
+
+## Facts that will go stale (frontier, as of November 2026)
+
+- NVMe 2.4 specification set released 2026-08-04 (nvmexpress.org/specifications, 2026-11-14; also The Register
+  2026-08-04 and Business Wire 2026-08-04 via search).
+- UEC Specification 1.0, 2025-06-11 (Linux Foundation press release https://www.linuxfoundation.org/press/uec-launches-spec-1.0, 2026-11-14). Claim "millions of endpoints" attributed.
+- CXL 4.0, 2025-11-18, 128 GT/s (CXL Consortium release PDF and Blocks & Files 2025-11-24, via search excerpts; PDF not opened).
+- Microsoft Windows Server Insider in-box NVMe-oF initiator (TCP, RDMA), Tech Community post dated 2026-03-13
+  (opened 2026-11-14); not in released Windows Server 2025 (vendor note via search).
+- Broadcom Brocade X8 directors and G820 56-port 128G switch, 2025-11-19 (StorageReview 2025-11-19, opened
+  2026-11-14; Broadcom IR page returned 403). 128G HBAs: none found.
+- 256GFC / FC-PI-9 as next FCIA step: from search excerpt of the FCIA 2024 Solutions Guide (PDF 403).
+
+## Checked / not checked
+
+Checked: every number in the prose is a `prose()` placeholder or a SPEC/FRONTIER/DEFAULTS value (test enforces);
+every model re-derived independently in the test; every live sentence branch reached; every link to a site page
+and anchor exists; no sibling-owned alias (S1, S2, S3, USB draft, NVMe, why-compute-waits-for-memory, both
+tech/networks drafts) is taken.
+
+Not verified from a primary source:
+- FC frame layout (SOF 4, header 24, data ≤ 2112, CRC 4, EOF 4 = 2148; six idles between frames): FC-FS is
+  paywalled; from secondary sources. Per-generation MB/s and 128GFC = 12,425 MB/s: Wikipedia's copy of the FCIA
+  speedmap. The frame size is a control on the page, so the qualitative conclusion does not hinge on it.
+- SMB2 compounding (MS-SMB2) and port 445: not opened.
+- S3 "PUT replaces the whole object" semantics: from general knowledge of the API; not opened.
+- Stallings, Kleinrock, Lazowska, Mathis 1997, Guo et al. 2016, DCQCN, Greenan et al. 2010: cited from memory
+  of the texts; formulas re-derived in the test, papers not reopened.
+- Light at 4.90 µs/km uses a group index of 1.47 (typical silica fibre); no datasheet opened.
+- CXL 4.0 date and rate, NVMe 2.4 contents, Backblaze counts: search excerpts or secondary pages, not the PDFs.
+- How many round trips real NFS/SMB clients make per small file: not measured; the page treats it as a knob.
+
+## For the translator
+
+All strings are in `copy.zh.js`; `copy.en.js` mirrors it with `enStub = true`. Translate every value, keep
+every `{placeholder}` and every `<a href>` target, then delete the `enStub` line. Number formatting, units and
+canvas labels already switch by language. `REGISTRY.json` already has English titles, descriptions and aliases;
+the test will check that `title.en` equals `doc.title` (before " · ") and `desc.en` equals `doc.desc` once the
+stub flag is gone.
+
+## For the registrar
+
+- zh title 隔着网线的硬盘 / en Drives Across a Wire; category computing, subtopic systems, stage university.
+- Links out (live): what-a-drive-is-made-of #ch1 #ch7, how-sas-works #ch2 #ch4, why-nvme-is-fast #ch1 #ch3 #ch4
+  #ch8, tcp-congestion #step1 #step4, distributed-systems #step0, why-compute-waits-for-memory #ch10.
+- Mentioned as plain text (not linked): 《移动硬盘为什么跑不满》 (S4 draft). The tech/networks drafts
+  (how-a-web-page-arrives for RTT/TCP, how-much-a-wire-can-carry #ch8 for Reed–Solomon) are not linked because
+  they are not registered; link ch2/ch6 and ch9 to them once they are.
+- Suggested atlas edges: ch1→ch2, ch1→ch3, ch3→ch7, ch5→ch6, ch5→ch7, ch4→ch6 (credits ↔ PFC), ch8 → how-sas-works
+  #ch4, ch5 → why-nvme-is-fast #ch1, ch9 → distributed-systems.
+
+## Review
+
+Pending.
