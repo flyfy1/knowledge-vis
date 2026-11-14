@@ -41,7 +41,7 @@
     bridges: { jms583: { usb: 'g2x1', pcie: [3, 2], date: '2018-05-15' }, jms581d: { usb: 'g2x1', pcie: [3, 2], sata: true, date: '2020-01-20' },
       jms586a: { usb: 'g2x2', pcie: [3, 2], date: '2021-07-01' } },
     // Intel Thunderbolt 5 technology brief (2023-09): PC data requirements, PCIe 64 Gbps (TB5) and 32 Gbps (TB4)
-    tb: { tb4Pcie: 32, tb5Pcie: 64, tb5Link: 80, tb5Boost: 120, tb5Usb3: 10, tb4Usb3: 10, tb5Date: '2023-09' },
+    tb: { tb4Pcie: 32, tb5Pcie: 64, tb5Link: 80, tb5Boost: 120, tb5Usb3: 10, tb4Usb3: 10, tb5Date: '2023-09' },   // TB5 USB 3 10 Gbps carries a footnote "Available up to USB 3: 20 Gbps"
     // SD Association bus speed page: SD Express 985 / 1970 / 3940 MB/s; UHS-I 104, UHS-II 312 (half duplex), UHS-III 624
     sd: { uhs1: 104, uhs2: 312, uhs3: 624, ex7: 985, ex8: 3940 },
     // drive data sheets: a PCIe 4.0 x4 drive (Samsung 990 EVO Plus rev 1.0: 7,250 MB/s read 2/4 TB; read 5.5 W at 4 TB;
@@ -266,7 +266,7 @@
       u2n64: [USB2.pack(64).n, 0], u2mb64: [USB2.pack(64).bps / 1e6, 1], u2raw: [USB2.rawMBps(), 0],
       // ch3
       g1raw: [LINE.rawMBps('g1x1'), 0], g1fr: [LINE.framedMBps('g1x1'), 0], g2raw: [LINE.rawMBps('g2x1'), 0], g2fr: [LINE.framedMBps('g2x1'), 0],
-      g22raw: [LINE.rawMBps('g2x2'), 0], g1pe: [LINE.packetEff('g1x1'), 1, 'pct'], g2pe: [LINE.packetEff('g2x1'), 1, 'pct'],
+      g22raw: [LINE.rawMBps('g2x2'), 0], g1share: [SPEC.usb3.g1Eff / (LINE.lineGbps('g1x1') * 125), 0, 'pct'], g2share: [SPEC.usb3.g2Eff / (LINE.lineGbps('g2x1') * 125), 0, 'pct'], g1pe: [LINE.packetEff('g1x1'), 1, 'pct'], g2pe: [LINE.packetEff('g2x1'), 1, 'pct'],
       u4g3raw: [LINE.lineGbps('u4g3') * 128 / 132, 1], u4g4lane: [MODES.u4g4.gbps, 2],
       // ch4
       b4: [b4.X, 1], b4iops: [b4.iops, 0], b128: [b128.X, 0], b1m: [b1m.X, 0], b90: [Q.sizeFor(0.9, L2, D) / K, 0], b64g1: [b64g1.X, 0],
@@ -282,7 +282,7 @@
       T5p: [HEAT.steady(HEAT.rate('tb5'), R.plastic, 25), 0], T5a: [HEAT.steady(HEAT.rate('tb5'), R.al, 25), 0],
       ts5p: [HEAT.tStar(HEAT.rate('tb5'), R.plastic, 25), 0], avg5p: [h5p.avg, 0], avg20p: [h20p.avg, 0], avg10p: [h10p.avg, 0], avg5a: [h5a.avg, 0],
       tau: [R.plastic * HEAT.C / 60, 1], T20lo: [HEAT.steady(HEAT.rate('g2x2'), R.plastic / 2, 25), 0], T20hi: [HEAT.steady(HEAT.rate('g2x2'), R.plastic * 2, 25), 0],
-      ts20p: [HEAT.tStar(HEAT.rate('g2x2'), R.plastic, 25) / 60, 1], durMin: [HEAT.dur / 60, 0],
+      ts20p: [HEAT.tStar(HEAT.rate('g2x2'), R.plastic, 25) / 60, 1], ts20h: [HEAT.tStar(HEAT.rate('g2x2'), R.plastic, 25, HEAT.C / 2) / 60, 1], ts20d: [HEAT.tStar(HEAT.rate('g2x2'), R.plastic, 25, HEAT.C * 2) / 60, 1], durMin: [HEAT.dur / 60, 0],
       // ch8
       t4: [t4.X, 0], t5: [t5.X, 0], tnp: [tnp.X, 0], t4lo: [Math.min(...etas), 0], t4hi: [Math.max(...etas), 0], rep34: [FRONTIER.tb34Reported, 0],
       rep5lo: [FRONTIER.tb5Reported[0], 0], rep5hi: [FRONTIER.tb5Reported[1], 0], tunRaw4: [SPEC.tb.tb4Pcie * 1000 / 8, 0],

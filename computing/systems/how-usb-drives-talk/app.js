@@ -76,7 +76,7 @@ function axes(c, f, xLab, yLab) {
   c.strokeStyle = C.line; c.lineWidth = 1; c.beginPath(); c.moveTo(f.L, f.T); c.lineTo(f.L, f.B); c.lineTo(f.R, f.B); c.stroke();
   c.fillStyle = C.mute; c.font = FONT;
   if (yLab) { c.textAlign = 'left'; c.fillText(yLab, f.L + 6, f.T - 12); }
-  if (xLab) { c.textAlign = 'right'; c.fillText(xLab, f.R, f.B + 26); }
+  if (xLab) { c.textAlign = 'right'; const xw = c.measureText(xLab).width, f0 = c.font; if (xw > f.R - 4) c.font = FONT.replace('12px', (12 * Math.max(0.7, (f.R - 4) / xw)).toFixed(1) + 'px'); c.fillText(xLab, f.R, f.B + 26); c.font = f0; }
 }
 function spacedTicks(c, items, y, maxW) { let lastR = -Infinity; c.textAlign = 'center'; for (const [x0, s] of items) { const w = c.measureText(s).width, x = maxW ? Math.min(Math.max(x0, w / 2 + 2), maxW - w / 2 - 2) : x0; if (x - w / 2 < lastR + 6) continue; c.fillText(s, x, y); lastR = x + w / 2; } }
 function yTicks(c, f, vals, fmtv) {
@@ -86,14 +86,22 @@ function yTicks(c, f, vals, fmtv) {
 function path(c, pts, X, Y, col, lw, dash) { c.strokeStyle = col; c.lineWidth = lw || 2.2; c.lineJoin = 'round'; if (dash) c.setLineDash(dash); c.beginPath(); pts.forEach((p, i) => c[i ? 'lineTo' : 'moveTo'](X(p[0]), Y(p[1]))); c.stroke(); c.setLineDash([]); }
 function hline(c, f, y, col, dash) { c.strokeStyle = col; c.lineWidth = 1.3; c.setLineDash(dash || [5, 4]); c.beginPath(); c.moveTo(f.L, y); c.lineTo(f.R, y); c.stroke(); c.setLineDash([]); }
 function dot(c, x, y, col, r) { c.fillStyle = col; c.beginPath(); c.arc(x, y, r || 4.5, 0, 6.283); c.fill(); }
-function labelFont(c, labels, cap) { c.font = FONT; let lw = 0; for (const s of labels) lw = Math.max(lw, c.measureText(s).width); const k = lw + 14 > cap ? Math.max(0.7, (cap - 14) / lw) : 1; return { font: FONT.replace('12px', (12 * k).toFixed(1) + 'px'), w: Math.min(lw * k + 14, cap) }; }
+// bar labels: a label too wide for the label column is split at the space nearest its middle (review 2026-11-14:
+// English stage names at 320 px ran off the canvas), then the whole column shrinks to at most 70 % if still needed
+function splitLabel(c, s, cap) {
+  if (c.measureText(s).width + 14 <= cap || s.indexOf(' ') < 0) return [s];
+  let best = [s], bw = Infinity;
+  for (let i = s.indexOf(' '); i >= 0; i = s.indexOf(' ', i + 1)) { const a = s.slice(0, i), b = s.slice(i + 1), m = Math.max(c.measureText(a).width, c.measureText(b).width); if (m < bw) { bw = m; best = [a, b]; } }
+  return best;
+}
+function labelFont(c, labels, cap) { c.font = FONT; const lines = new Map(); let lw = 0; for (const s of labels) { const ls = splitLabel(c, s, cap); lines.set(s, ls); for (const l of ls) lw = Math.max(lw, c.measureText(l).width); } const k = lw + 14 > cap ? Math.max(0.7, (cap - 14) / lw) : 1; return { font: FONT.replace('12px', (12 * k).toFixed(1) + 'px'), w: Math.min(lw * k + 14, cap), lines, lh: 13 * k }; }
 // horizontal bars: rows of [label, value, colour]; value text sits after the bar, or inside it when there is no room
 function bars(c, w, h, rows, max, hiIdx) {
   const labs = rows.map(r => r[0]), lf = labelFont(c, labs, Math.min(170, w * 0.36));
   const L = lf.w, R = w - 10, T = 10, B = h - 10, rh = (B - T) / rows.length, X = v => L + (R - L) * Math.min(v, max) / max;
   rows.forEach(([lab, v, col, txt], i) => {
     const y = T + i * rh + rh / 2, bh = Math.min(22, rh * 0.56);
-    c.font = lf.font; c.textAlign = 'right'; c.fillStyle = i === hiIdx ? C.gold : C.ink; c.fillText(lab, L - 8, y); c.font = FONT;
+    c.font = lf.font; c.textAlign = 'right'; c.fillStyle = i === hiIdx ? C.gold : C.ink; const ls = lf.lines.get(lab) || [lab]; ls.forEach((l, j) => c.fillText(l, L - 8, y + (j - (ls.length - 1) / 2) * lf.lh)); c.font = FONT;
     c.fillStyle = C.dimfill; c.fillRect(L, y - bh / 2, R - L, bh);
     if (v > 0) { c.fillStyle = col; c.fillRect(L, y - bh / 2, Math.max(1.5, X(v) - L), bh); }
     if (txt) {

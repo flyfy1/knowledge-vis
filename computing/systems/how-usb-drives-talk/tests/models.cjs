@@ -158,12 +158,12 @@ const zf = (x, d) => M.fmt(x, d, 'zh');
 {
   const P = M.prose();
   const want = { mf: '7500', u2n: '13', u2left: '129', u2max: '53.2', u2eff: '88.7', u2n64: '63', u2mb64: '32.3', u2raw: '60',
-    g1raw: '500', g1fr: '485', g2raw: '1212', g2fr: '1171', g22raw: '2424', g1pe: '97.0', g2pe: '96.6', u4g3raw: '38.8', u4g4lane: '40.23',
+    g1raw: '500', g1fr: '485', g2raw: '1212', g2fr: '1171', g22raw: '2424', g1share: '72', g2share: '88', g1pe: '97.0', g2pe: '96.6', u4g3raw: '38.8', u4g4lane: '40.23',
     b4: '39.5', b4iops: '9641', b128: '598', b1m: '996', b90: '967', b64g1: '267', b4h: '52.0', b4d: '26.6', b90h: '725', b90d: '1450',
     u4q32: '1024', u4q32k: '250', u4q8: '316', u128q4: '1100', knee128: '1.8', knee4: '28', cpuH: '2048', cpuD: '512', linQd: '254',
     c10: '1100', c20: '2200', c20x2: '1674', c20on10: '1100', c10bot: '996', cSata: '560', p3x2: '1674', p3x4: '3348', lane3: '984.6',
     Pfull: '6.5', P10: '3.1', T10p: '68', T20p: '77', T5p: '112', T5a: '62', ts5p: '256', avg5p: '3343', avg20p: '1861', avg10p: '1100', avg5a: '6695',
-    tau: '5.8', T20lo: '51', T20hi: '129', ts20p: '11.7', durMin: '15',
+    tau: '5.8', T20lo: '51', T20hi: '129', ts20p: '11.7', ts20h: '5.9', ts20d: '23.4', durMin: '15',
     t4: '3400', t5: '6695', tnp: '1100', t4lo: '3200', t4hi: '3680', rep34: '2800', rep5lo: '5400', rep5hi: '6650', tunRaw4: '4000',
     st1: '194', st2: '335', stu2: '51', stBus: '335', stDies: '1.7' };
   for (const [k, [v, d, kind]] of Object.entries(P)) check('prose ' + k, kind === 'pct' ? f(v * 100, d) : f(v, d), want[k]);
@@ -179,6 +179,14 @@ const zf = (x, d) => M.fmt(x, d, 'zh');
   check('ch4: 4 KiB far below the link', P.b4[0] < 0.05 * 1100, true); check('ch5: UAS QD32 at 4 KiB is chip-bound', Q.uas(4096, 1100, 7250, 32).lim, 'cpu');
   check('ch7: 10 Gb/s plastic does not throttle', HEAT.sim(HEAT.rate('g2x1'), 14, 25).tFirst, null); check('ch7: TB5 aluminium does not throttle', HEAT.sim(HEAT.rate('tb5'), 6, 25).tFirst, null);
   check('ch8: model above the reported TB3/4 figure', P.t4lo[0] > FRONTIER.tb34Reported, true);
+  // review 2026-11-14: claims added by the independent reviewer
+  check('ch8.p4: tunnel vs no-tunnel is a factor of three', Math.round(P.t4[0] / P.tnp[0]), 3); says('ch8.p4', '差三倍');
+  check('ch7.limit: heat capacity does not move the equilibrium', [12.5, 25, 50, 100].every(C => HEAT.sim(HEAT.rate('g2x2'), 14, 25, { C, dur: 20000 }).tFirst != null) && HEAT.steady(HEAT.rate('g2x2'), 14, 25) > HEAT.thr, true);
+  check('ch7.limit: doubled C does not throttle within the run', HEAT.sim(HEAT.rate('g2x2'), 14, 25, { C: 50 }).tFirst, null);
+  near('ch7.limit: halved C throttles at the closed form', HEAT.sim(HEAT.rate('g2x2'), 14, 25, { C: 12.5 }).tFirst / 60, P.ts20h[0], 0.01);
+  check('ch5.limit: halved tCpu, QD32 4 KiB becomes link-bound', Q.uas(4096, 1100, 7250, 32, { tCpu: Q.tCpu / 2 }).lim, 'link');
+  check('ch7.p4: a 15-minute copy at 20 Gb/s in plastic throttles', HEAT.sim(HEAT.rate('g2x2'), 14, 25).tFirst != null, true);
+  check('ch11.sum: Gen 1 effective share is 450 / 625', P.g1share[0], 450 / 625);
   check('ch9: one die is flash-bound, two are bus-bound', STICK.write(1, 194, 'u5bot').neck + ' ' + STICK.write(2, 194, 'u5bot').neck, 'flash bus');
 }
 
