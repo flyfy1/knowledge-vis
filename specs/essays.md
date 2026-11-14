@@ -77,9 +77,11 @@ types ("为什么要打疫苗", "how does my phone know where I am"), not only t
    The essay's own `index.html` loads `models.js`, `copy.zh.js`, `copy.en.js` and `app.js` with a date key,
    `<script src="copy.zh.js?v=YYYYMMDD">`, and whoever changes one of those files sets the key on all four to the
    day of the change. Reason (2026-11-15): Cloudflare caches the scripts for four hours (`cache-control:
-   max-age=14400`) but not the HTML, so without a new key readers get the new page with the old text. The storage
-   essays (what-a-drive-is-made-of, how-sata-works, how-sas-works, how-usb-drives-talk) and why-nvme-is-fast use it
-   since 2026-11-15; older essays do not yet, so add the key the next time one of them changes.
+   max-age=14400`) but not the HTML, so without a new key readers get the new page with the old text. If the scripts
+   were already deployed under today's key, append a letter (`?v=20261115b`, then `c`) so the new key differs. The
+   storage essays (what-a-drive-is-made-of, how-sata-works, how-sas-works, how-usb-drives-talk, storage-over-a-network)
+   and why-nvme-is-fast use it since 2026-11-15; older essays do not yet, so add the key the next time one of them
+   changes.
 8. Add rows to CONCEPT-MAP.md.
 
 ## The essays
@@ -106,9 +108,10 @@ types ("为什么要打疫苗", "how does my phone know where I am"), not only t
 | how-sata-works | computing/systems/how-sata-works/ | 10 (`#ch1…#ch10`) | computing | `ESSAY_BASE_URL` |
 | how-sas-works | computing/systems/how-sas-works/ | 11 (`#ch1…#ch11`) | computing | `ESSAY_BASE_URL` |
 | how-usb-drives-talk | computing/systems/how-usb-drives-talk/ | 11 (`#ch1…#ch11`) | computing | `ESSAY_BASE_URL` |
+| storage-over-a-network | computing/systems/storage-over-a-network/ | 11 (`#ch1…#ch11`) | computing | `ESSAY_BASE_URL` |
 
-The eleven from 2026-11-11, the two food essays of 2026-11-12 and the four storage essays of 2026-11-14/15
-(what-a-drive-is-made-of, how-sata-works, how-sas-works, how-usb-drives-talk) were built by Claude Code (claude-opus-5-5). The English copy was drafted by Claude
+The eleven from 2026-11-11, the two food essays of 2026-11-12 and the five storage essays of 2026-11-14/15
+(what-a-drive-is-made-of, how-sata-works, how-sas-works, how-usb-drives-talk, storage-over-a-network) were built by Claude Code (claude-opus-5-5). The English copy was drafted by Claude
 Code (claude-haiku-5-5). A separate Claude Code session of the same model reviewed each essay and revised
 it (no human or cross-model review yet). Each BRIEF.md records what was and was not checked.
 why-compute-waits-for-memory and why-nvme-is-fast were built by Antigravity (gemini-4-hydrogen) in both
@@ -255,8 +258,7 @@ RBER, endurance from the ECC model and the lifetime equation (Cai et al. 2017; �
 TLC = 1,000 P/E, the page says so), a page-mapped FTL, the five-layer interface map (form factor, connector, link,
 transport, command set), latency against bandwidth, a dated frontier and three closing questions. It owns the
 SSD-vs-HDD words (固态硬盘为什么比机械硬盘快, 机械硬盘和固态硬盘区别, SSD vs HDD, SSD at #ch8) and the seek-time words
-(#ch2). Ch7 links how-sata-works, how-sas-works #ch7 and how-usb-drives-talk; the network route is plain text until
-that essay exists. SAS 和 SATA 能混用吗 / can SAS and SATA mix left its #ch7 for how-sas-works #ch7 on 2026-11-15; it keeps
+(#ch2). Ch7 links how-sata-works, how-sas-works #ch7, how-usb-drives-talk and (since 2026-11-15) storage-over-a-network. SAS 和 SATA 能混用吗 / can SAS and SATA mix left its #ch7 for how-sas-works #ch7 on 2026-11-15; it keeps
 移动硬盘盒怎么工作 (#ch7). Atlas edges: 4 between chapters, 2 to
 why-nvme-is-fast (#ch1, #ch6).
 
@@ -271,7 +273,7 @@ live (its models.cjs checks those anchors exist); the seek-time words and "is ev
 and #ch1 for S1 at registration. Tuned: seek-curve shape, link-on and Partial powers (sensitivity in each chapter's
 limit paragraph). Atlas edges: 5 between chapters, 2 to S1 (#ch2, #ch7), 1 to why-nvme-is-fast (#ch2). Ch1.limit
 (SATA over a SAS link) links how-sas-works #ch7 and ch10.links links that essay; its models.cjs checks the S3 anchors.
-Since 2026-11-15 ch10.q2 links how-usb-drives-talk #ch6 and ch10.links links that essay as well.
+Since 2026-11-15 ch10.q2 links how-usb-drives-talk #ch6 and ch10.links links that essay as well, and storage-over-a-network.
 
 ### how-sas-works: 服务器硬盘为什么用 SAS
 
@@ -283,7 +285,9 @@ and CRC-16/T10-DIF, 24G SAS 128b/150b with RS(30,26) and interleaving, a dated f
 questions. It owns SAS 和 SATA 区别 / SAS vs SATA and SAS 是什么 (#ch1), SCSI 命令 / CDB (#ch2), 双端口硬盘 (#ch4),
 SAS 扩展器 (#ch5), T10 PI and 数据完整性校验 (#ch8), 24G SAS (#ch9), and since 2026-11-15 the plug-compatibility questions
 (SAS 和 SATA 能混用吗, SAS 盘能插 SATA 口吗, can SAS and SATA mix, SAS drive in SATA port; #ch7), which left S1 #ch7 because
-this chapter answers them directly. Ch1.p3 (UAS) links how-usb-drives-talk #ch5 and ch11.links links that essay. Tuned: the 0.5 µs connection open/close time (saturation at about 16 drives either way, halved or
+this chapter answers them directly. Ch1.p3 (UAS) links how-usb-drives-talk #ch5 and ch11.links links that essay. Since S5 (2026-11-15) ch1.p3 also links
+storage-over-a-network #ch4 (FCP) and #ch3 (iSCSI), and ch11.links that essay, #ch3, #ch4 and #ch7. #ch4 keeps 多路径是什么
+and multipath storage; plain 多路径 / multipath went to S5 #ch8. Tuned: the 0.5 µs connection open/close time (saturation at about 16 drives either way, halved or
 doubled). Atlas edges: 5 between chapters, 3 from S1 (#ch5, #ch7 twice), 4 from S2 (#ch1, #ch3, #ch4, #ch8),
 1 from poisson-process. At registration ch5.p2's "previous chapter" was corrected to chapter 3.
 
@@ -300,10 +304,31 @@ enclosure (#ch1), USB 3.2 Gen 2x2 and 40Gbps (#ch3), 什么是 UASP (#ch5), 硬�
 Thunderbolt vs USB4 (#ch8), U 盘为什么慢 and SD 卡速度 (#ch9). 移动硬盘盒怎么工作 stays on S1 #ch7. Tuned: the 50 µs command
 round trip and flash first byte, the 4 µs bridge cost per command (the "4 KiB QD32 is chip-bound" sentence depends on
 it and the page says so), η = 0.85 and the heat constants; sensitivities are in each chapter's limit paragraph and
-pinned. It links S1 #ch7, S2 #ch3, S3 #ch2 and why-nvme-is-fast #ch2, #ch5, #ch6. Atlas edges: 5 between chapters, 1
+pinned. It links S1 #ch7, S2 #ch3, S3 #ch2 and why-nvme-is-fast #ch2, #ch5, #ch6, and since 2026-11-15 storage-over-a-network #ch3
+(ch6.p1, ch11.links). Atlas edges: 5 between chapters, 1
 from S1, 2 from S2 (#ch3, #ch10), 2 from S3 (#ch2, #ch1), 5 from why-nvme-is-fast (#ch2 three times, #ch5, #ch6).
 Not verified (BRIEF): the TB3/TB4 ~2,800 MB/s and TB5 enclosure figures (reviews and forums), the ISSCC 2023 paper body,
 SAT itself.
+
+### storage-over-a-network: 隔着网线的硬盘
+
+Storage series S5. A disk in another machine used as if it were local: what gets expensive once a drive leaves the box
+(round trips, losses, distance at 4.9 µs/km, broken paths), and which side each protocol makes pay. Block, file and
+object on the layer map (bytes moved to change k bytes), NAS small-file round trips (Lazowska's asymptotic bounds; NFS
+close-to-open from RFC 7530), the iSCSI write path under RFC 7143's keys (R2T, ImmediateData, burst lengths), Fibre
+Channel buffer credits against distance (checked against Brocade's per-km rule), a latency budget from SPDK 24.05's
+measured fabric round trips, loss under go-back-N, selective repeat and Mathis (RDMA, RoCE v2, PFC), NVMe-oF capsules
+(NVMe/TCP 1.1 figures, RoCE v2 headers), multipath with the square-root split, failover and ALUA/ANA, replication against
+erasure coding (overhead, MTTDL, Backblaze 2025 AFR), a dated frontier and three questions. It owns the network-storage
+words: NAS 和 SAN 区别 / NAS vs SAN, block vs file vs object (#ch1), NAS 用什么协议, NFS 和 SMB 区别 (#ch2), iSCSI (#ch3),
+光纤通道 / Fibre Channel (#ch4), 网络存储延迟 (#ch5), RDMA, RoCE (#ch6), NVMe-oF, NVMe over TCP (#ch7), 多路径 / multipath,
+ALUA, ANA (#ch8), 三副本, 纠删码, erasure coding vs replication (#ch9). Replication, consensus and latency words stay on
+distributed-systems and tcp-congestion. Tuned: switch time 1 µs per traversal, path-2 speed 0.5×, MTTR 24 h (each with
+its sensitivity pinned). It links S1 #ch1 and #ch7, S3 #ch2 and #ch4, S4 and its #ch6, why-nvme-is-fast #ch1, #ch3, #ch4
+and #ch8, why-compute-waits-for-memory #ch10, tcp-congestion and distributed-systems. Atlas edges: 6 between chapters, 1
+from S1, 2 from S3, 2 from why-nvme-is-fast, 1 from tcp-congestion, 1 from distributed-systems. Not verified (BRIEF): the
+FC-FS frame layout, MS-SMB2, S3 PUT semantics, several textbooks cited from memory, most frontier dates via two outlets
+rather than the primary pages.
 
 ### scarcity-moves: 稀缺会搬家
 

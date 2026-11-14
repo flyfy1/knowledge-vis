@@ -297,6 +297,15 @@ anchor and aliases. It is a schema-2 fragment `atlas/graph/lessons/<slug>.json`:
   computing region passed the 45,000-byte split, so search/chunks/computing.js became computing-1.js (44,936) and
   computing-2.js (7,216); the build reports 239,592 bytes with the manifest.
 
+- Storage series S5 (2026-11-15): storage-over-a-network (11 concepts) → computing. 13 hand-written edges, all in the S5
+  fragment: 6 between chapters (#ch1 → #ch2 and #ch3, #ch3 → #ch7, #ch5 → #ch6 and #ch7, #ch4 → #ch6 as a connection), 1
+  from S1 (#ch7 → #ch1), 2 from S3 (#ch2 → #ch3, #ch4 → #ch8), 2 from why-nvme-is-fast (#ch1 → #ch5, #ch4 → #ch7), 1 from
+  tcp-congestion (step 1 → #ch2), 1 from distributed-systems (step 0 → #ch9, connection). One word, one owner: 多路径是什么 and
+  multipath storage stay on how-sas-works #ch4 (S5 #ch8 takes plain 多路径 and multipath); 数据副本, data replication, CAP 定理
+  stay on distributed-systems; 网络延迟, network latency, 丢包重传 stay on tcp-congestion. S5 took no alias from another page.
+  `tests/concept-search.cjs` pins 16 zh/en pairs for S5. The search chunks total 246,999 bytes; computing-1.js is 44,713 of
+  60,000.
+
 ### Commands for the integrator
 
 ```sh

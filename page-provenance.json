@@ -3140,7 +3140,7 @@
       "developer": "Claude Code",
       "edition": "claude-code-what-a-drive-is-made-of-20261114",
       "kind": "original",
-      "sourceRevision": "5afdd0325e169533f59cc77515991e612b79aca9",
+      "sourceRevision": "e2630ba1be7d0bb9acaa04618c347ee277cdfba5",
       "scope": {
         "zh": "整篇长文从零编写：编了号的扇区与 512e、寻道与转动、叠瓦记录、闪存单元的电压层、纠错码与寿命、闪存翻译层、接口分层地图、一次读取的时间、存储前沿",
         "en": "Whole essay written from scratch: numbered sectors and 512e, seek and rotation, shingled recording, voltage levels in a flash cell, error correction and lifetime, the flash translation layer, the layered interface map, where the time of one read goes, the storage frontier"
@@ -3148,13 +3148,13 @@
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5); English copy drafted by Claude Code (claude-haiku-5-5); independently reviewed 2026-11-14 by a separate Claude Code session (same model), see the page BRIEF.md; cross-model review pending",
       "path": "computing/systems/what-a-drive-is-made-of/index.html",
       "originalSourceRevision": "745f535e962557f640b39422e4b9d9db7afe2f6f",
-      "previousSourceRevision": "d8ffc61dbf95b2962500cfd727ac33bca8ddce7f"
+      "previousSourceRevision": "5afdd0325e169533f59cc77515991e612b79aca9"
     },
     "how-sata-works": {
       "developer": "Claude Code",
       "edition": "claude-code-how-sata-works-20261114",
       "kind": "original",
-      "sourceRevision": "5afdd0325e169533f59cc77515991e612b79aca9",
+      "sourceRevision": "e2630ba1be7d0bb9acaa04618c347ee277cdfba5",
       "scope": {
         "zh": "整篇长文从零编写：SATA、ATA 与 AHCI 的分层、并行总线的时序预算、8b/10b 编码与加扰、一条读命令的帧、NCQ、热插拔与链路省电、端口倍增器与 eSATA、为什么停在 6 Gb/s、SATA 前沿",
         "en": "Whole essay written from scratch: the SATA, ATA and AHCI layers, the timing budget of a parallel bus, 8b/10b encoding and scrambling, the frames of one read command, NCQ, hot plug and link power, port multipliers and eSATA, why SATA stopped at 6 Gb/s, the SATA frontier"
@@ -3162,13 +3162,13 @@
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5); English copy drafted by Claude Code (claude-haiku-5-5); independently reviewed 2026-11-14 by a separate Claude Code session (same model), see the page BRIEF.md; cross-model review pending",
       "path": "computing/systems/how-sata-works/index.html",
       "originalSourceRevision": "d1df3df80d6feef8082b1c6c7601b1af1397965a",
-      "previousSourceRevision": "d8ffc61dbf95b2962500cfd727ac33bca8ddce7f"
+      "previousSourceRevision": "5afdd0325e169533f59cc77515991e612b79aca9"
     },
     "how-sas-works": {
       "developer": "Claude Code",
       "edition": "claude-code-how-sas-works-20261114",
       "kind": "original",
-      "sourceRevision": "5afdd0325e169533f59cc77515991e612b79aca9",
+      "sourceRevision": "e2630ba1be7d0bb9acaa04618c347ee277cdfba5",
       "scope": {
         "zh": "整篇长文从零编写：SAS 的分层与 SCSI 命令、READ 命令块与 LUN、一次 SSP 读的帧和连接、双端口与多路径的可用度、扩展器扇出、宽端口、SAS 口为什么认 SATA 盘、T10 PI 端到端校验、24G SAS 的编码与纠错、SAS 前沿",
         "en": "Whole essay written from scratch: the SAS layers and SCSI commands, the READ command block and LUNs, the frames and connections of one SSP read, dual-port and multipath availability, expander fan-out, wide ports, why a SAS port accepts a SATA drive, T10 PI end-to-end protection, 24G SAS coding and error correction, the SAS frontier"
@@ -3176,13 +3176,13 @@
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5); English copy drafted by Claude Code (claude-haiku-5-5); independently reviewed 2026-11-14 by a separate Claude Code session (same model), see the page BRIEF.md; cross-model review pending",
       "path": "computing/systems/how-sas-works/index.html",
       "originalSourceRevision": "122add13f0ad4fae1a7fcf9275d66d686a0d2b91",
-      "previousSourceRevision": "d8ffc61dbf95b2962500cfd727ac33bca8ddce7f"
+      "previousSourceRevision": "5afdd0325e169533f59cc77515991e612b79aca9"
     },
     "how-usb-drives-talk": {
       "developer": "Claude Code",
       "edition": "claude-code-how-usb-drives-talk-20261115",
       "kind": "original",
-      "sourceRevision": "5afdd0325e169533f59cc77515991e612b79aca9",
+      "sourceRevision": "e2630ba1be7d0bb9acaa04618c347ee277cdfba5",
       "scope": {
         "zh": "整篇长文从零编写：USB 存储在协议地图上的位置、USB 2.0 的主机调度与微帧、USB 命名与线速、Bulk-Only 的 CBW 与 CSW、UASP 的命令队列、桥接芯片的 SCSI 翻译与瓶颈链条、移动固态的发热降速、雷电与 USB4 的 PCIe 隧道、U 盘和存储卡、USB 存储前沿",
         "en": "Whole essay written from scratch: where USB storage sits on the protocol map, USB 2.0 host scheduling and microframes, USB naming and line rates, Bulk-Only CBW and CSW, UASP command queuing, the bridge chip's SCSI translation and the bottleneck chain, thermal throttling of external SSDs, the PCIe tunnel of Thunderbolt and USB4, flash drives and memory cards, the USB storage frontier"
@@ -3190,7 +3190,21 @@
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5); English copy drafted by Claude Code (claude-haiku-5-5); independently reviewed 2026-11-14 by a separate Claude Code session (same model), see the page BRIEF.md; cross-model review pending",
       "path": "computing/systems/how-usb-drives-talk/index.html",
       "originalSourceRevision": "16ff77685e808eec3fbe130b1774f1fc67f02fef",
-      "previousSourceRevision": "16ff77685e808eec3fbe130b1774f1fc67f02fef"
+      "previousSourceRevision": "5afdd0325e169533f59cc77515991e612b79aca9"
+    },
+    "storage-over-a-network": {
+      "developer": "Claude Code",
+      "edition": "claude-code-storage-over-a-network-20261115",
+      "kind": "original",
+      "sourceRevision": "e2630ba1be7d0bb9acaa04618c347ee277cdfba5",
+      "scope": {
+        "zh": "整篇长文从零编写：块、文件与对象存储、NAS 的文件协议与小文件往返、iSCSI 的写入路径、光纤通道的缓冲区信用、网络存储的延迟账、丢包与 RDMA/RoCE、NVMe-oF 的胶囊、多路径与 ALUA/ANA、三副本与纠删码、网络存储前沿",
+        "en": "Whole essay written from scratch: block, file and object storage, NAS file protocols and small-file round trips, the iSCSI write path, Fibre Channel buffer credits, the latency budget of network storage, loss and RDMA/RoCE, NVMe-oF capsules, multipath with ALUA/ANA, replication and erasure coding, the network storage frontier"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5); English copy drafted by Claude Code (claude-haiku-5-5); independently reviewed 2026-11-15 by a separate Claude Code session (same model), see the page BRIEF.md; cross-model review pending",
+      "path": "computing/systems/storage-over-a-network/index.html",
+      "originalSourceRevision": "d7abd777173f07baff977c7cea84ec601ed668c7",
+      "previousSourceRevision": "d7abd777173f07baff977c7cea84ec601ed668c7"
     }
   },
   "exceptions": {

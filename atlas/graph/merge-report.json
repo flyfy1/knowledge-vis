@@ -1,11 +1,11 @@
 {
   "counts": {
     "groups": 11,
-    "nodes": 446,
-    "edges": 611,
+    "nodes": 457,
+    "edges": 624,
     "trails": 14,
     "questions": 124,
-    "fragments": 196
+    "fragments": 197
   },
   "conflicts": [],
   "suspendedEdges": [],
@@ -1027,6 +1027,131 @@
       ]
     },
     {
+      "concept": "block-file-object-storage",
+      "page": "what-a-drive-is-made-of",
+      "taughtBy": [
+        "block-device-lba-sectors",
+        "hdd-seek-rotation-latency",
+        "smr-shingled-recording-hamr",
+        "nand-cell-levels-slc-qlc",
+        "flash-endurance-ecc-tbw",
+        "flash-translation-layer-gc",
+        "storage-interface-layer-map",
+        "ssd-vs-hdd-latency-bandwidth",
+        "storage-frontier-2026"
+      ]
+    },
+    {
+      "concept": "nas-file-protocols",
+      "page": "tcp-congestion",
+      "taughtBy": [
+        "latency-bandwidth",
+        "tcp-congestion-control"
+      ]
+    },
+    {
+      "concept": "iscsi",
+      "page": "how-sas-works",
+      "taughtBy": [
+        "sas-protocol-layers",
+        "scsi-cdb-lun",
+        "ssp-connection-overhead",
+        "dual-port-multipath",
+        "sas-expander-fanout",
+        "sas-wide-port",
+        "sata-tunneling-protocol",
+        "t10-pi-dif",
+        "sas4-fec",
+        "sas-frontier",
+        "reading-sas-specs"
+      ]
+    },
+    {
+      "concept": "iscsi",
+      "page": "tcp-congestion",
+      "taughtBy": [
+        "latency-bandwidth",
+        "tcp-congestion-control"
+      ]
+    },
+    {
+      "concept": "network-storage-latency",
+      "page": "why-nvme-is-fast",
+      "taughtBy": [
+        "nvme-protocol-overhead",
+        "nvme-pcie-lanes-littles-law",
+        "nvme-64k-queues",
+        "nvme-ring-doorbell-dma",
+        "ssd-nand-channel-parallelism",
+        "ssd-write-amplification-trim",
+        "nvme-polling-vs-interrupts",
+        "nvme-pcie6-zns-gpudirect"
+      ]
+    },
+    {
+      "concept": "rdma-roce-lossless",
+      "page": "tcp-congestion",
+      "taughtBy": [
+        "latency-bandwidth",
+        "tcp-congestion-control"
+      ]
+    },
+    {
+      "concept": "nvme-over-fabrics",
+      "page": "why-nvme-is-fast",
+      "taughtBy": [
+        "nvme-protocol-overhead",
+        "nvme-pcie-lanes-littles-law",
+        "nvme-64k-queues",
+        "nvme-ring-doorbell-dma",
+        "ssd-nand-channel-parallelism",
+        "ssd-write-amplification-trim",
+        "nvme-polling-vs-interrupts",
+        "nvme-pcie6-zns-gpudirect"
+      ]
+    },
+    {
+      "concept": "multipath-ana-alua",
+      "page": "how-sas-works",
+      "taughtBy": [
+        "sas-protocol-layers",
+        "scsi-cdb-lun",
+        "ssp-connection-overhead",
+        "dual-port-multipath",
+        "sas-expander-fanout",
+        "sas-wide-port",
+        "sata-tunneling-protocol",
+        "t10-pi-dif",
+        "sas4-fec",
+        "sas-frontier",
+        "reading-sas-specs"
+      ]
+    },
+    {
+      "concept": "replication-vs-erasure-coding",
+      "page": "distributed-systems",
+      "taughtBy": [
+        "quorum-replication"
+      ]
+    },
+    {
+      "concept": "network-storage-frontier",
+      "page": "why-compute-waits-for-memory",
+      "taughtBy": [
+        "pipeline-memory-stall",
+        "memory-hierarchy-cache-walk",
+        "cache-tiling-blocking",
+        "memory-wall-littles-law",
+        "amdahl-gustafson-bus-cap",
+        "gpu-systolic-array",
+        "roofline-model",
+        "llm-inference-memory-bound",
+        "data-movement-energy-hbm",
+        "memory-wall-frontier-2026",
+        "memory-diagnostic-checklist"
+      ]
+    },
+    {
       "concept": "binary-numbers",
       "page": "place-value",
       "taughtBy": [
@@ -1655,10 +1780,10 @@
     }
   ],
   "unknownAliasIds": [],
-  "sizeBytes": 842233,
+  "sizeBytes": 860287,
   "questionsBytes": 173024,
-  "combinedBytes": 1015257,
-  "indexBytes": 103238,
+  "combinedBytes": 1033311,
+  "indexBytes": 105157,
   "chunkBytes": {
     "math.nodes": 51664,
     "math.edges": 89636,
@@ -1684,8 +1809,8 @@
     "earth.nodes": 25871,
     "earth.edges": 19025,
     "earth.questions": 6822,
-    "computing.nodes": 72068,
-    "computing.edges": 49765,
+    "computing.nodes": 80982,
+    "computing.edges": 56024,
     "computing.questions": 2766,
     "society.nodes": 58077,
     "society.edges": 41022,

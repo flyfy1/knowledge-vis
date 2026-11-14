@@ -162,6 +162,7 @@ window.KNOWLEDGE_ESSAYS = [
   "how-sata-works",
   "how-sas-works",
   "how-usb-drives-talk",
+  "storage-over-a-network",
   "how-an-economy-is-measured",
   "scarcity-moves"
 ];
@@ -432,6 +433,16 @@ window.KNOWLEDGE_PAGES = [
     },
     tags: [{ zh: "USB", en: "USB" }, { zh: "存储系统", en: "Storage Systems" }, { zh: "移动硬盘", en: "External Drives" }, { zh: "雷电与 USB4", en: "Thunderbolt and USB4" }, { zh: "长文", en: "Long-form Essay" }],
     category: "computing", subtopic: "systems", stage: "university", status: "live", path: "computing/systems/how-usb-drives-talk/"
+  },
+  {
+    slug: "storage-over-a-network",
+    title: { zh: "隔着网线的硬盘", en: "Drives Across a Wire" },
+    desc: {
+      zh: "硬盘插在别的机器里，你的电脑为什么能把它当成自己的盘？NAS 和 SAN 差在哪，数据中心为什么把 NVMe 搬到网线上？九个可以拖动的模型：改一个字节的三种代价、小文件和往返时间、iSCSI 的 R2T、光纤通道的信用、每一跳的延迟账、丢包的代价、NVMe-oF 的消息、两条路径的排队、三副本和纠删码。",
+      en: "Why can your computer use a disk that sits in another machine as if it were its own? How do NAS and SAN differ, and why do data centres put NVMe on the network? Nine models you can drag: what changing one byte costs at three levels, small files and round trips, iSCSI's R2T, Fibre Channel credits, the latency of each hop, the cost of a lost packet, NVMe-oF's messages, queueing on two paths, and replication versus erasure coding."
+    },
+    tags: [{ zh: "网络存储", en: "Network Storage" }, { zh: "iSCSI", en: "iSCSI" }, { zh: "NVMe-oF", en: "NVMe-oF" }, { zh: "存储系统", en: "Storage Systems" }, { zh: "长文", en: "Long-form Essay" }],
+    category: "computing", subtopic: "systems", stage: "university", status: "live", path: "computing/systems/storage-over-a-network/"
   },
   {
     slug: "how-an-economy-is-measured",

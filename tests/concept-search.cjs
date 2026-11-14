@@ -288,6 +288,27 @@ chapters.push(
   ['USB4 v2 是什么', 'fastest USB in 2026', USB + '#ch10'],
   ['移动硬盘参数怎么看', 'how to read USB speed labels', USB + '#ch11'],
 );
+// Storage series S5 (2026-11-15): network storage. 多路径是什么 / multipath storage stay on S3 #ch4; replication, consensus and
+// latency words stay on distributed-systems and tcp-congestion.
+const NET = 'computing/systems/storage-over-a-network/';
+chapters.push(
+  ['NAS 和 SAN 区别', 'NAS vs SAN', NET + '#ch1'],
+  ['什么是 SAN', 'what is a SAN', NET + '#ch1'],
+  ['块存储 文件存储 对象存储 区别', 'block vs file vs object storage', NET + '#ch1'],
+  ['NAS 用什么协议', 'what is a NAS', NET + '#ch2'],
+  ['iSCSI 是什么', 'iSCSI', NET + '#ch3'],
+  ['光纤通道', 'Fibre Channel', NET + '#ch4'],
+  ['网络存储延迟', 'network storage latency', NET + '#ch5'],
+  ['RDMA 是什么', 'RDMA', NET + '#ch6'],
+  ['RoCE', 'what is RoCE', NET + '#ch6'],
+  ['什么是 NVMe-oF', 'NVMe over Fabrics', NET + '#ch7'],
+  ['NVMe over TCP', 'what is NVMe over TCP', NET + '#ch7'],
+  ['多路径', 'multipath', NET + '#ch8'],
+  ['三副本', 'erasure coding vs replication', NET + '#ch9'],
+  ['纠删码', 'erasure coding', NET + '#ch9'],
+  ['Ultra Ethernet 是什么', 'Ultra Ethernet', NET + '#ch10'],
+  ['网络存储参数怎么看', 'how to read network storage specs', NET + '#ch11'],
+);
 for (const [zh, en, href] of chapters) for (const q of [zh, en]) {
   const hit = first(q);
   ok(hit && (hit.href === href || (href.endsWith('/') && hit.href.startsWith(href))), `"${q}" opens ${href} (got ${hit && hit.href})`);
