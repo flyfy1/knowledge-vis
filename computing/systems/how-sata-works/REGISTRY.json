@@ -1,0 +1,134 @@
+{
+  "slug": "how-sata-works",
+  "path": "computing/systems/how-sata-works/",
+  "category": "computing",
+  "subtopic": "systems",
+  "stage": "university",
+  "title": {
+    "zh": "SATA 为什么用了二十多年",
+    "en": "Why SATA Has Lasted Over Twenty Years"
+  },
+  "desc": {
+    "zh": "一根七针的数据线、一套 2004 年定下的主机接口，为什么到 2026 年还接在最大的机械硬盘上？七个可以拖动的模型：并行总线的时序预算、8b/10b 编码器、一条读命令的帧、旋转盘片上的 NCQ、链路省电、端口倍增器、机械硬盘和 6 Gb/s 的距离。",
+    "en": "Why is a seven-pin data cable, with a host interface fixed in 2004, still what the largest hard drives plug into in 2026? Seven models you can drag: the timing budget of a parallel bus, an 8b/10b encoder, the frames of one read command, NCQ on a spinning platter, link power states, a port multiplier, and how far a hard disk is from 6 Gb/s."
+  },
+  "tags": [
+    { "zh": "SATA", "en": "SATA" },
+    { "zh": "存储系统", "en": "Storage Systems" },
+    { "zh": "机械硬盘", "en": "Hard Disk Drives" },
+    { "zh": "串行链路", "en": "Serial Links" },
+    { "zh": "长文", "en": "Long-form Essay" }
+  ],
+  "concepts": [
+    {
+      "id": "sata-protocol-layers",
+      "title": { "zh": "SATA、ATA 命令集与 AHCI 的分层", "en": "SATA Layers: Wire, ATA Commands and AHCI" },
+      "desc": { "zh": "SATA 只管线和帧，命令来自 T13 的 ATA 命令集，主机这边的寄存器接口是 Intel 的 AHCI；M.2 是插槽形状，不是协议。", "en": "SATA defines the wire and the frames; the commands come from T13's ATA set and the host-side register interface is Intel's AHCI. M.2 is a slot shape, not a protocol." },
+      "aliases": {
+        "zh": ["SATA 和 AHCI 区别", "SATA 是什么", "AHCI 是什么", "BIOS 里的 AHCI 模式是什么", "SATA 协议分层"],
+        "en": ["what is SATA", "SATA vs AHCI", "is every M.2 drive NVMe", "what is AHCI mode", "SATA protocol layers"]
+      },
+      "anchor": "#ch1",
+      "relatedPages": ["why-nvme-is-fast"]
+    },
+    {
+      "id": "parallel-ata-timing-skew",
+      "title": { "zh": "并行 ATA 为什么跑不快：时序预算与线间偏斜", "en": "Why Parallel ATA Topped Out: Timing Budget and Skew" },
+      "desc": { "zh": "Ultra DMA 6 每 15 ns 交出一次数据，建立、保持和线间偏斜要挤进同一个窗口；串行链路把时钟藏进数据里，偏斜问题就没了。", "en": "Ultra DMA 6 hands over data every 15 ns, and setup, hold and wire-to-wire skew must fit in that window. A serial link hides the clock in the data, so skew stops mattering." },
+      "aliases": {
+        "zh": ["IDE 和 SATA 区别", "为什么并行总线被串行取代", "PATA 为什么淘汰", "80 芯排线", "Ultra DMA 133"],
+        "en": ["IDE vs SATA", "why serial replaced parallel buses", "parallel ATA skew", "why PATA died", "Ultra DMA 133 limit"]
+      },
+      "anchor": "#ch2",
+      "relatedPages": []
+    },
+    {
+      "id": "8b10b-encoding",
+      "title": { "zh": "8b/10b 编码与逗号码", "en": "8b/10b Encoding and the Comma" },
+      "desc": { "zh": "每 8 位变 10 位：连续相同的位不超过 5 个、0 和 1 的累计差不超过 ±1，K28.5 里的逗号让接收端对齐字节。6 Gb/s 因此只剩 600 MB/s。", "en": "Each byte becomes 10 bits: no more than five equal bits in a row, a running disparity held to ±1, and a comma in K28.5 so the receiver can find byte edges. That is why 6 Gb/s carries 600 MB/s." },
+      "aliases": {
+        "zh": ["8b/10b 编码", "为什么 6Gb/s 只有 600MB/s", "running disparity 是什么", "K28.5 逗号码", "SATA 加扰"],
+        "en": ["8b/10b encoding", "why 6 Gb/s is only 600 MB/s", "running disparity", "K28.5 comma", "SATA scrambler"]
+      },
+      "anchor": "#ch3",
+      "relatedPages": []
+    },
+    {
+      "id": "sata-fis-frames",
+      "title": { "zh": "FIS 帧：一条读命令在线上的样子", "en": "FIS Frames: One Read Command on the Wire" },
+      "desc": { "zh": "READ FPDMA QUEUED 走五种帧：主机发命令，盘回应、发 DMA Setup、送数据、最后用 Set Device Bits 报完成；每帧有原语握手、CRC 和加扰。", "en": "A READ FPDMA QUEUED uses five frame types: command, register reply, DMA Setup, data, and Set Device Bits for completion, each wrapped in primitive handshakes, a CRC and scrambling." },
+      "aliases": {
+        "zh": ["FIS 是什么", "SATA 帧结构", "SATA 原语 ALIGN", "SATA CRC", "小块读为什么效率低"],
+        "en": ["what is a FIS", "SATA frame structure", "SATA primitives ALIGN", "SATA link layer", "READ FPDMA QUEUED"]
+      },
+      "anchor": "#ch4",
+      "relatedPages": []
+    },
+    {
+      "id": "ncq-rotational-scheduling",
+      "title": { "zh": "NCQ：机械盘自己排队", "en": "NCQ: Letting a Hard Disk Reorder Its Queue" },
+      "desc": { "zh": "最多 32 条命令交给盘，盘按寻道加旋转的总时间挑下一条；模型里深度 16 的随机读比按到达顺序快一倍左右。", "en": "Up to 32 commands are handed to the drive, which picks the next one by seek plus rotation time. In the model, random reads at depth 16 run about twice as fast as first-come order." },
+      "aliases": {
+        "zh": ["NCQ 是什么", "原生命令队列", "机械硬盘随机读为什么慢", "电梯算法 磁盘调度", "硬盘寻道时间"],
+        "en": ["what is NCQ", "native command queuing", "why hard drives are slow at random reads", "disk scheduling elevator", "hard drive seek time"]
+      },
+      "anchor": "#ch5",
+      "relatedPages": []
+    },
+    {
+      "id": "sata-link-power-hotplug",
+      "title": { "zh": "热插拔与链路省电：Partial、Slumber、DevSleep", "en": "Hot Plug and Link Power: Partial, Slumber, DevSleep" },
+      "desc": { "zh": "睡得越深醒得越慢：三种状态的唤醒上限是 10 µs、10 ms 和 20 ms。空闲多长才值得睡，取决于省下的功率和醒来的代价。", "en": "Deeper sleep wakes slower: the exit limits are 10 µs, 10 ms and 20 ms. Whether a gap is long enough to sleep through depends on the power saved against the cost of waking." },
+      "aliases": {
+        "zh": ["DevSleep", "SATA 热插拔", "硬盘省电模式", "ALPM 链路电源管理", "笔记本固态硬盘待机功耗"],
+        "en": ["DevSleep", "SATA hot plug", "SATA link power management", "ALPM Partial Slumber", "SSD idle power laptop"]
+      },
+      "anchor": "#ch6",
+      "relatedPages": []
+    },
+    {
+      "id": "port-multiplier-esata-msata",
+      "title": { "zh": "端口倍增器、eSATA、mSATA 与 M.2 SATA", "en": "Port Multipliers, eSATA, mSATA and M.2 SATA" },
+      "desc": { "zh": "一个口最多挂 15 块盘，但按命令切换时同一时间只有一块在干活；eSATA、mSATA、M.2 改的是线和插头，协议没变。", "en": "One port can fan out to 15 drives, but with command-based switching only one works at a time. eSATA, mSATA and M.2 change the cable and connector, not the protocol." },
+      "aliases": {
+        "zh": ["端口倍增器", "eSATA", "mSATA 和 M.2 区别", "M.2 SATA 固态", "一个 SATA 口接多块硬盘"],
+        "en": ["SATA port multiplier", "eSATA", "mSATA vs M.2", "M.2 SATA SSD", "FIS-based switching"]
+      },
+      "anchor": "#ch7",
+      "relatedPages": []
+    },
+    {
+      "id": "why-sata-stopped-at-6g",
+      "title": { "zh": "为什么 SATA 停在 6 Gb/s", "en": "Why SATA Stopped at 6 Gb/s" },
+      "desc": { "zh": "最快的 SATA 固态盘已经顶到链路，而机械盘外圈只有约 285 MB/s，离 6 Gb/s 还差一半；固态盘改走 PCIe，SATA 留给机械盘。", "en": "The fastest SATA SSDs already hit the link, while a hard disk's outer edge reads about 285 MB/s, half of 6 Gb/s. SSDs moved to PCIe and SATA stayed with spinning disks." },
+      "aliases": {
+        "zh": ["SATA 为什么只有 6Gb/s", "为什么没有 SATA 4", "SATA Express 是什么", "机械硬盘需要更快的接口吗", "机械硬盘最快多少"],
+        "en": ["why is SATA only 6 Gb/s", "why no SATA 4", "what was SATA Express", "do hard drives need a faster interface", "hard drive max sequential speed"]
+      },
+      "anchor": "#ch8",
+      "relatedPages": ["why-nvme-is-fast"]
+    },
+    {
+      "id": "sata-frontier-2026",
+      "title": { "zh": "SATA 的前沿（截至 2026 年 11 月）", "en": "Where SATA Stands (as of November 2026)" },
+      "desc": { "zh": "规范最后一版是 2021 年的 3.5a；44 TB 机械盘已经出货，多路并行读和 NVMe 机械盘是下一步要看的。", "en": "The last revision is 3.5a from 2021; 44 TB hard drives ship, and parallel-read heads and NVMe hard drives are what to watch next." },
+      "aliases": {
+        "zh": ["SATA 还会更新吗", "SATA 会被淘汰吗", "NVMe 机械硬盘", "SATA 最新版本"],
+        "en": ["is SATA dead", "will SATA be replaced", "NVMe hard drive", "latest SATA revision"]
+      },
+      "anchor": "#ch9",
+      "relatedPages": []
+    },
+    {
+      "id": "reading-a-drive-spec-sheet",
+      "title": { "zh": "读硬盘规格表时问三件事", "en": "Three Questions for a Drive Spec Sheet" },
+      "desc": { "zh": "标的速度是线速还是盘速、是顺序还是随机、在多深的队列下测的。", "en": "Is the quoted speed the link or the drive, sequential or random, and at what queue depth?" },
+      "aliases": {
+        "zh": ["硬盘规格怎么看", "硬盘标的速度是什么速度", "规格表上的 IOPS 怎么看"],
+        "en": ["how to read a hard drive spec sheet", "what a drive speed rating means", "what IOPS on a spec sheet means"]
+      },
+      "anchor": "#ch10",
+      "relatedPages": []
+    }
+  ]
+}
