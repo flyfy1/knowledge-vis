@@ -71,6 +71,7 @@
 
 - **长文 13 篇加《稀缺》**，都是中英双语、经过独立评审。清单见 `pages.config.js` 的 `KNOWLEDGE_ESSAYS`。
 - **食物分区**（Yangyu 2026-11-12 提出）：新分类 `food`（饮食与风味）、子主题 `flavor`（味道从哪来），第一篇是 `food/flavor/why-fermented-tofu-tastes-good/`（酱豆腐为什么好吃，兼讲松花蛋）。图谱里归在 `matter` 分区，后续食物长文导入时继续用 `--region matter`。任务书在 [specs/essay-briefs/TASK-why-fermented-tofu-tastes-good.md](specs/essay-briefs/TASK-why-fermented-tofu-tastes-good.md)，可作为下一篇的模板。第二篇是 `food/flavor/how-soy-sauce-gets-its-flavor/`（酱油是怎么酿出来的），任务书 [specs/essay-briefs/TASK-how-soy-sauce-gets-its-flavor.md](specs/essay-briefs/TASK-how-soy-sauce-gets-its-flavor.md)。草稿分支 `drafts/food-20261112` 上的两篇都已被 `main` 上的版本取代。它的第 7 章有一张「谁来切、切什么、靠什么挡住腐败」的表（酱油、奶酪、火腿、鱼露、纳豆、臭豆腐），每一行都可以是这个分区的下一篇。
+- **存储系列**（Yangyu 2026-11-14，任务书 [specs/essay-briefs/TASK-storage-series.md](specs/essay-briefs/TASK-storage-series.md)）：S1 `computing/systems/what-a-drive-is-made-of/`（硬盘里到底是什么）和 S2 `computing/systems/how-sata-works/`（SATA 为什么用了二十多年）已上线（`bb361d4b`），中英双语、经另一个 Claude Code 会话独立评审，图谱归 `computing` 分区。S1 第 7 章已链接 S2，SAS、USB、网络存储三条仍是纯文本，等 S3–S5 上线后改成链接。「固态硬盘为什么比机械硬盘快」从 NVMe 那篇移到 S1 第 8 章；NVMe 那篇仍是 Antigravity 原创版本，标签重指方式见 specs/visual-page-provenance.md（2026-11-14）。S3 `how-sas-works` 在写；S4 `how-usb-drives-talk`、S5 `storage-over-a-network`、S6 `how-phone-storage-works`（可选）排队。
 - **LeetCode**：登记表 204 条。2026-11-11 新增 12 课、修订 28 课，评审记录在 [specs/leetcode-review-2026-11-11.md](specs/leetcode-review-2026-11-11.md)。
 - **搜索**：疑问句、比较式查询、一批别名（`9f4751c6`）。
 
