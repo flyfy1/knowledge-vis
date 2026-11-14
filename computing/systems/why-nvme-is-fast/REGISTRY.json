@@ -1,0 +1,112 @@
+{
+  "slug": "why-nvme-is-fast",
+  "path": "computing/systems/why-nvme-is-fast/",
+  "category": "computing",
+  "subtopic": "systems",
+  "stage": "university",
+  "title": {
+    "zh": "NVMe 为什么这么快",
+    "en": "Why NVMe Is So Fast"
+  },
+  "desc": {
+    "zh": "同样是闪存颗粒，为什么换上 NVMe 协议和 PCIe 通道就能快出好几倍？八个交互模型带你从延迟拆解、总线宽度、64K 并行队列、环形门铃、NAND 多通道、写放大与 Trim、轮询与中断，一路走到 PCIe 6.0 与 GPUDirect 前沿。",
+    "en": "Why does switching from SATA/AHCI to NVMe over PCIe multiply storage speed? Eight interactive models trace the shift from latency breakdown, bus lanes, and 64K parallel queues to ring buffers, NAND channels, write amplification, polling, and PCIe 6.0 GPUDirect."
+  },
+  "tags": [
+    { "zh": "NVMe", "en": "NVMe" },
+    { "zh": "存储系统", "en": "Storage Systems" },
+    { "zh": "PCIe", "en": "PCIe" },
+    { "zh": "SSD 原理", "en": "SSD Architecture" },
+    { "zh": "长文", "en": "Long-form Essay" }
+  ],
+  "concepts": [
+    {
+      "id": "nvme-protocol-overhead",
+      "title": { "zh": "NVMe 与存储协议开销转移", "en": "NVMe and Shifting Storage Bottlenecks" },
+      "desc": { "zh": "闪存把介质延迟从 8.5 ms 降到 75 μs 后，旧协议 AHCI 的开销占比从 0.3% 飙升到 25% 以上；NVMe 将其压回 5 μs。", "en": "Once flash cut media latency from 8.5 ms to 75 us, AHCI overhead jumped from 0.3% to 25%+; NVMe trims it back to ~5 us." },
+      "aliases": {
+        "zh": ["NVMe 为什么快", "NVMe 和 SATA 区别", "AHCI 协议瓶颈", "固态硬盘为什么比机械硬盘快"],
+        "en": ["why is NVMe fast", "NVMe vs SATA", "AHCI overhead", "NVMe vs AHCI"]
+      },
+      "anchor": "#ch1",
+      "relatedPages": []
+    },
+    {
+      "id": "nvme-pcie-lanes-littles-law",
+      "title": { "zh": "PCIe 多车道与队列深度", "en": "PCIe Lanes and Little's Law in Storage" },
+      "desc": { "zh": "SATA III 有效极限仅 552 MB/s，而 PCIe 4.0/5.0/6.0 ×4 分别达到 7.1/14.2/28.5 GB/s；按利特尔法则，低队列深度仍跑不满宽总线。", "en": "SATA III caps near 552 MB/s while PCIe 4.0/5.0/6.0 x4 reach 7.1/14.2/28.5 GB/s; by Little's Law, QD=1 still leaves wide buses idle." },
+      "aliases": {
+        "zh": ["PCIe 4.0 5.0 6.0 SSD 速度", "SATA III 速度上限", "队列深度 QD 是什么"],
+        "en": ["PCIe vs SATA bandwidth", "queue depth Little's law", "why QD1 is slow on NVMe"]
+      },
+      "anchor": "#ch2",
+      "relatedPages": ["why-compute-waits-for-memory"]
+    },
+    {
+      "id": "nvme-64k-queues",
+      "title": { "zh": "64K 并行队列与无锁扩展", "en": "64K Parallel Queues and Lock-Free Scaling" },
+      "desc": { "zh": "AHCI 只有 1 条 32 槽位队列导致多核抢锁倒退；NVMe 支持 64K×64K 队列，每核独占队列实现线性扩展。", "en": "AHCI's single 32-slot queue collapses under multicore spinlock contention; NVMe's 64K queues give each core a lock-free path." },
+      "aliases": {
+        "zh": ["NVMe 64K 队列", "AHCI 1×32 队列", "多核抢锁", "为什么 NVMe IOPS 高"],
+        "en": ["NVMe 64K queues", "AHCI 32 queue depth limit", "NVMe multicore scaling"]
+      },
+      "anchor": "#ch3",
+      "relatedPages": []
+    },
+    {
+      "id": "nvme-ring-doorbell-dma",
+      "title": { "zh": "环形队列、门铃寄存器与 DMA", "en": "SQ/CQ Ring Buffers, Doorbells & DMA" },
+      "desc": { "zh": "主机内存里的 SQ/CQ 环形队列配合仅 2 次 Posted 门铃写与 PCIe DMA，消除 AHCI 的阻塞式 MMIO 读取。", "en": "Host-RAM SQ/CQ ring buffers with posted doorbell writes and PCIe DMA eliminate AHCI's blocking uncached MMIO reads." },
+      "aliases": {
+        "zh": ["NVMe 提交队列 完成队列", "Doorbell 门铃寄存器", "SQ CQ 环形队列", "MSI-X 中断"],
+        "en": ["NVMe submission completion queue", "NVMe doorbell register", "NVMe DMA"]
+      },
+      "anchor": "#ch4",
+      "relatedPages": []
+    },
+    {
+      "id": "ssd-nand-channel-parallelism",
+      "title": { "zh": "SSD 多通道 NAND 并行", "en": "Multi-Channel NAND Die Parallelism" },
+      "desc": { "zh": "单颗 NAND 读页需约 50 μs；主控通过 4–8 通道数十颗芯片并行交织，将并发吞吐推向百万 IOPS。", "en": "A single NAND die takes ~50 us per read; striping across 4-8 channels and dozens of dies multiplies IOPS." },
+      "aliases": {
+        "zh": ["SSD 多通道", "NAND 闪存并行", "为什么 QD32 比 QD1 快"],
+        "en": ["SSD channel interleaving", "NAND die parallelism"]
+      },
+      "anchor": "#ch5",
+      "relatedPages": []
+    },
+    {
+      "id": "ssd-write-amplification-trim",
+      "title": { "zh": "写放大、垃圾回收与 Trim", "en": "Write Amplification, Garbage Collection & Trim" },
+      "desc": { "zh": "NAND 按页写按块擦，稳态写放大 WAF = 1/(1-v)；预留空间与 Trim 决定盘满时的持续写入速度。", "en": "NAND writes in pages but erases in blocks; steady-state WAF = 1/(1-v) makes over-provisioning and Trim critical." },
+      "aliases": {
+        "zh": ["写放大 WAF", "SSD Trim 原理", "为什么 SSD 装满会变慢", "预留空间 OP"],
+        "en": ["write amplification factor", "SSD Trim", "why full SSD slows down"]
+      },
+      "anchor": "#ch6",
+      "relatedPages": []
+    },
+    {
+      "id": "nvme-polling-vs-interrupts",
+      "title": { "zh": "轮询 vs 中断（io_uring / SPDK）", "en": "Polling vs. Interrupts (io_uring / SPDK)" },
+      "desc": { "zh": "10 μs 时代中断上下文切换开销占比剧增；高 IOPS 下忙轮询不仅降延迟，总 CPU 消耗也低于中断。", "en": "At 10 us media latency, interrupt wakeups add huge overhead; above ~286k IOPS, busy polling saves both latency and CPU." },
+      "aliases": {
+        "zh": ["io_uring IOPOLL", "SPDK 轮询模式", "NVMe 中断与轮询"],
+        "en": ["io_uring polling vs interrupt", "SPDK NVMe polling"]
+      },
+      "anchor": "#ch7",
+      "relatedPages": []
+    },
+    {
+      "id": "nvme-pcie6-zns-gpudirect",
+      "title": { "zh": "PCIe 6.0、ZNS 与 GPUDirect Storage", "en": "PCIe 6.0, ZNS & GPUDirect Storage" },
+      "desc": { "zh": "2026 年企业级 PCIe 6.0 SSD 达 28 GB/s，GPUDirect Storage 绕过 CPU 内存直通 GPU 显存，ZNS 消除 FTL 写放大。", "en": "2026 enterprise PCIe 6.0 SSDs reach ~28 GB/s, GPUDirect Storage DMAs straight to GPU HBM, and ZNS removes FTL write amplification." },
+      "aliases": {
+        "zh": ["GPUDirect Storage", "ZNS 分区命名空间", "PCIe 6.0 SSD", "大模型权重加载存储"],
+        "en": ["GPUDirect Storage", "ZNS Zoned Namespaces", "PCIe 6.0 NVMe SSD"]
+      },
+      "anchor": "#ch8",
+      "relatedPages": []
+    }
+  ]
+}
