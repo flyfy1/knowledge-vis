@@ -1,0 +1,353 @@
+{
+  "slug": "how-sas-works",
+  "path": "computing/systems/how-sas-works/",
+  "category": "computing",
+  "subtopic": "systems",
+  "stage": "university",
+  "title": {
+    "zh": "服务器硬盘为什么用 SAS",
+    "en": "Why Server Drives Use SAS"
+  },
+  "desc": {
+    "zh": "同样的盘片，SATA 版和 SAS 版装进机房，为什么服务器偏偏要 SAS？七个可以拖动的模型：一条 SCSI 命令的字节、一次读要开几次连接、两条路径的可用度、扩展器后面的扇出、宽端口的四条道、T10 PI 的 8 字节校验、24G 的纠错码。",
+    "en": "The same platters ship as SATA and as SAS drives; why do servers insist on SAS? Seven models you can drag: the bytes of one SCSI command, how many connections one read opens, the availability of two paths, fan-out behind an expander, the four lanes of a wide port, the 8-byte T10 PI check, and the error-correcting code of 24G."
+  },
+  "tags": [
+    {
+      "zh": "SAS",
+      "en": "SAS"
+    },
+    {
+      "zh": "SCSI",
+      "en": "SCSI"
+    },
+    {
+      "zh": "存储系统",
+      "en": "Storage Systems"
+    },
+    {
+      "zh": "串行链路",
+      "en": "Serial Links"
+    },
+    {
+      "zh": "长文",
+      "en": "Long-form Essay"
+    }
+  ],
+  "concepts": [
+    {
+      "id": "sas-protocol-layers",
+      "title": {
+        "zh": "SAS 的分层：SCSI 命令、SSP/STP/SMP 与物理层",
+        "en": "SAS Layers: SCSI Commands, SSP/STP/SMP and the Phy"
+      },
+      "desc": {
+        "zh": "SAS 自己只管线、帧和连接，命令来自 T10 的 SCSI 命令集；SSP 运 SCSI，STP 运 SATA，SMP 管扩展器。",
+        "en": "SAS defines the wire, frames and connections; the commands come from T10's SCSI set. SSP carries SCSI, STP tunnels SATA, SMP manages expanders."
+      },
+      "aliases": {
+        "zh": [
+          "SAS 是什么",
+          "SAS 协议分层",
+          "SSP STP SMP 区别",
+          "SAS 和 SCSI 的关系"
+        ],
+        "en": [
+          "what is SAS",
+          "SAS protocol layers",
+          "SSP vs STP vs SMP",
+          "Serial Attached SCSI"
+        ]
+      },
+      "anchor": "#ch1",
+      "relatedPages": [
+        "how-sata-works",
+        "what-a-drive-is-made-of"
+      ]
+    },
+    {
+      "id": "scsi-cdb-lun",
+      "title": {
+        "zh": "SCSI 命令块 CDB、LUN 与标签队列",
+        "en": "The SCSI CDB, LUNs and Tagged Queuing"
+      },
+      "desc": {
+        "zh": "READ(6)/(10)/(16) 的地址字段只有 21/32/64 位，决定了能寻址多大的盘；同一个 CDB 可以装进 SAS、USB、iSCSI 或光纤通道。",
+        "en": "The address field of READ(6)/(10)/(16) is 21, 32 or 64 bits wide, which sets how large a drive it can address; the same CDB rides inside SAS, USB, iSCSI or Fibre Channel."
+      },
+      "aliases": {
+        "zh": [
+          "CDB 是什么",
+          "LUN 是什么",
+          "SCSI 还在用吗",
+          "2TB 限制",
+          "READ(16) 和 READ(10) 区别",
+          "SCSI 标签队列"
+        ],
+        "en": [
+          "what is a SCSI CDB",
+          "what is a LUN",
+          "is SCSI still used",
+          "2 TB limit READ(10)",
+          "SCSI tagged command queuing",
+          "iSCSI CDB"
+        ]
+      },
+      "anchor": "#ch2",
+      "relatedPages": []
+    },
+    {
+      "id": "ssp-connection-overhead",
+      "title": {
+        "zh": "SSP 的一次读：帧和两次连接",
+        "en": "One SSP Read: Frames and Two Connections"
+      },
+      "desc": {
+        "zh": "一次 4 KiB 读要发命令帧、数据帧和响应帧，还要开关两次连接；小块读的线路效率因此明显低于大块读。",
+        "en": "A 4 KiB read sends a command frame, data frames and a response frame and opens two connections, so small reads use the link far less efficiently than large ones."
+      },
+      "aliases": {
+        "zh": [
+          "SAS 帧结构",
+          "SSP 帧",
+          "SAS 连接建立",
+          "SAS 小块读效率"
+        ],
+        "en": [
+          "SAS frame structure",
+          "SSP frame",
+          "SAS OPEN connection",
+          "SAS small read efficiency"
+        ]
+      },
+      "anchor": "#ch3",
+      "relatedPages": []
+    },
+    {
+      "id": "dual-port-multipath",
+      "title": {
+        "zh": "双端口与多路径的可用度算术",
+        "en": "Availability Arithmetic of Dual Port and Multipath"
+      },
+      "desc": {
+        "zh": "两条独立路径的不可用度相乘；双路径之后，剩下的停机主要来自盘本身和切换时间。",
+        "en": "Two independent paths multiply their unavailabilities; once there are two, the remaining downtime comes mostly from the drive itself and the failover pause."
+      },
+      "aliases": {
+        "zh": [
+          "硬盘双端口是什么",
+          "多路径是什么",
+          "双控制器存储",
+          "SAS 双端口有什么用",
+          "几个九 可用性怎么算"
+        ],
+        "en": [
+          "SAS dual port",
+          "multipath storage",
+          "dual controller array",
+          "how to compute availability nines",
+          "MPIO"
+        ]
+      },
+      "anchor": "#ch4",
+      "relatedPages": []
+    },
+    {
+      "id": "sas-expander-fanout",
+      "title": {
+        "zh": "SAS 扩展器、地址与分区",
+        "en": "SAS Expanders, Addresses and Zoning"
+      },
+      "desc": {
+        "zh": "扩展器让几十上百块盘共享几条上行道；顺序读时机械盘很快把上行道占满，随机读时几乎不占。",
+        "en": "An expander lets dozens or hundreds of drives share a few uplink lanes; sequential hard-disk reads soon fill the uplink, random reads barely use it."
+      },
+      "aliases": {
+        "zh": [
+          "SAS 扩展器",
+          "SAS 地址",
+          "SAS 分区 zoning",
+          "JBOD 怎么接那么多盘",
+          "扩展器背板"
+        ],
+        "en": [
+          "SAS expander",
+          "SAS address WWN",
+          "SAS zoning",
+          "JBOD fan-out",
+          "expander backplane"
+        ]
+      },
+      "anchor": "#ch5",
+      "relatedPages": []
+    },
+    {
+      "id": "sas-wide-port",
+      "title": {
+        "zh": "宽端口：四条道不能合成一条",
+        "en": "Wide Ports: Four Lanes Are Not One Fast Lane"
+      },
+      "desc": {
+        "zh": "一个连接只占宽端口的一条道，所以一块盘最多用一条道的带宽，四条道要四块盘才能用满。",
+        "en": "Each connection holds one lane of a wide port, so one drive gets at most one lane, and it takes four drives to fill four lanes."
+      },
+      "aliases": {
+        "zh": [
+          "宽端口",
+          "SAS 宽端口",
+          "Mini-SAS 四通道线",
+          "x4 SAS 线带宽"
+        ],
+        "en": [
+          "SAS wide port",
+          "SAS x4 link",
+          "wide port bandwidth",
+          "narrow port vs wide port"
+        ]
+      },
+      "anchor": "#ch6",
+      "relatedPages": []
+    },
+    {
+      "id": "sata-tunneling-protocol",
+      "title": {
+        "zh": "STP：SAS 口为什么认 SATA 盘",
+        "en": "STP: Why a SAS Port Accepts a SATA Drive"
+      },
+      "desc": {
+        "zh": "SAS 控制器会说 SATA（STP），SAS 插座也接受 SATA 盘的插头；反过来 SATA 主机不会说 SCSI，插头也被挡住。",
+        "en": "A SAS controller speaks SATA through STP and a SAS receptacle accepts a SATA plug; a SATA host does not speak SCSI and the plug is keyed out."
+      },
+      "aliases": {
+        "zh": [
+          "STP 是什么",
+          "SATA 隧道协议",
+          "SAS 控制器怎么认 SATA 硬盘",
+          "SAS 硬盘接口为什么多一块",
+          "转接板 interposer"
+        ],
+        "en": [
+          "SATA tunneling protocol",
+          "STP SAS",
+          "SATA drive on SAS controller",
+          "SAS interposer",
+          "why SAS connector has extra pins"
+        ]
+      },
+      "anchor": "#ch7",
+      "relatedPages": []
+    },
+    {
+      "id": "t10-pi-dif",
+      "title": {
+        "zh": "T10 PI：每个块多 8 字节",
+        "en": "T10 PI: Eight More Bytes per Block"
+      },
+      "desc": {
+        "zh": "保护信息由 CRC-16 守卫、应用标签和引用标签组成，从主机一路带到盘上，能抓住内存里翻转的位和写错地址的块。",
+        "en": "Protection information is a CRC-16 guard, an application tag and a reference tag, carried from host to platter; it catches bits flipped in memory and blocks written to the wrong address."
+      },
+      "aliases": {
+        "zh": [
+          "T10 PI 是什么",
+          "DIF DIX",
+          "520 字节扇区",
+          "硬盘静默损坏",
+          "CRC-16 T10-DIF",
+          "端到端数据保护"
+        ],
+        "en": [
+          "T10 PI",
+          "T10 DIF",
+          "520-byte sectors",
+          "silent data corruption",
+          "CRC-16 T10-DIF",
+          "end-to-end data protection"
+        ]
+      },
+      "anchor": "#ch8",
+      "relatedPages": []
+    },
+    {
+      "id": "sas4-fec",
+      "title": {
+        "zh": "24G SAS 的 128b/150b 编码与纠错",
+        "en": "24G SAS: 128b/150b Coding and FEC"
+      },
+      "desc": {
+        "zh": "SAS-4 用 RS(30,26) 纠错把每码字两个坏符号修回来；连串的突发错误会压垮它，交织能救回来。",
+        "en": "SAS-4 uses an RS(30,26) code that repairs two bad symbols per codeword; burst errors overwhelm it and interleaving brings it back."
+      },
+      "aliases": {
+        "zh": [
+          "24G SAS",
+          "128b/150b",
+          "SAS-4 前向纠错",
+          "RS 码 纠错",
+          "为什么 24G 只有 2400MB/s"
+        ],
+        "en": [
+          "24G SAS",
+          "128b/150b encoding",
+          "SAS-4 FEC",
+          "Reed-Solomon RS(30,26)",
+          "why 22.5 Gbaud"
+        ]
+      },
+      "anchor": "#ch9",
+      "relatedPages": []
+    },
+    {
+      "id": "sas-frontier",
+      "title": {
+        "zh": "SAS 的前沿（截至 2026 年 11 月）",
+        "en": "The SAS Frontier (as of November 2026)"
+      },
+      "desc": {
+        "zh": "SAS-5 草案在 INCITS 审批，24G+ 仍是 22.5 Gbaud；机械盘大多还走 SAS 或 SATA。",
+        "en": "The SAS-5 draft is in INCITS approval and 24G+ stays at 22.5 Gbaud; most hard drives still ship on SAS or SATA."
+      },
+      "aliases": {
+        "zh": [
+          "SAS 还会更新吗",
+          "SAS-5",
+          "24G+ SAS",
+          "SAS 会被 NVMe 取代吗",
+          "48G SAS"
+        ],
+        "en": [
+          "is SAS dead",
+          "SAS-5",
+          "24G+ SAS",
+          "will NVMe replace SAS",
+          "48G SAS"
+        ]
+      },
+      "anchor": "#ch10",
+      "relatedPages": []
+    },
+    {
+      "id": "reading-sas-specs",
+      "title": {
+        "zh": "看到 SAS 时问三件事",
+        "en": "Three Questions When You See SAS"
+      },
+      "desc": {
+        "zh": "是哪一代、几条道、盘有没有双端口和 PI。",
+        "en": "Which generation, how many lanes, and does the drive have two ports and PI?"
+      },
+      "aliases": {
+        "zh": [
+          "SAS 规格怎么看",
+          "SAS 12G 24G 区别"
+        ],
+        "en": [
+          "how to read SAS specs",
+          "SAS 12G vs 24G"
+        ]
+      },
+      "anchor": "#ch11",
+      "relatedPages": []
+    }
+  ]
+}
