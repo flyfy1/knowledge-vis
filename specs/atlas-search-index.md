@@ -282,6 +282,12 @@ anchor and aliases. It is a schema-2 fragment `atlas/graph/lessons/<slug>.json`:
   and 8b10b (S2 #ch3) were added so the chapter is first. `tests/concept-search.cjs` pins 23 zh/en pairs. The
   search chunks total 226,215 bytes; computing.js stays under the 60,000-byte chunk limit.
 
+- Storage series S3 (2026-11-14): how-sas-works (11 concepts) → computing. 13 hand-written edges: 5 between chapters,
+  3 from S1 (#ch7 → #ch1 and #ch7, #ch5 → #ch8), 4 from S2 (#ch1 → #ch7, #ch3 → #ch9, #ch4 → #ch3, #ch8 → #ch10), 1 from
+  poisson-process (→ #ch5). All live in the S3 fragment. One word, one owner: SAS 和 SATA 能混用吗 and SAS 盘能插 SATA 口吗
+  stay on S1 #ch7; S3 took no alias from S1, S2 or why-nvme-is-fast. `tests/concept-search.cjs` pins 14 zh/en pairs.
+  The search chunks total 232,237 bytes; computing.js is 44,843 of 60,000.
+
 ### Commands for the integrator
 
 ```sh

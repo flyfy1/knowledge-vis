@@ -248,6 +248,24 @@ chapters.push(
   ['SATA 会被淘汰吗', 'is SATA dead', SATA + '#ch9'],
   ['硬盘规格怎么看', 'how to read a hard drive spec sheet', SATA + '#ch10'],
 );
+// Storage series S3 (2026-11-14): SAS. SAS 和 SATA 能混用吗 stays on S1 #ch7, which owns it.
+const SAS = 'computing/systems/how-sas-works/';
+chapters.push(
+  ['SAS 和 SATA 区别', 'SAS vs SATA', SAS + '#ch1'],
+  ['SAS 硬盘是什么', 'what is SAS', SAS + '#ch1'],
+  ['SCSI 命令', 'SCSI command', SAS + '#ch2'],
+  ['CDB', 'what is a LUN', SAS + '#ch2'],
+  ['SSP 帧', 'SAS frame structure', SAS + '#ch3'],
+  ['双端口硬盘', 'dual-port SSD', SAS + '#ch4'],
+  ['SAS 扩展器', 'SAS expander', SAS + '#ch5'],
+  ['宽端口', 'SAS wide port', SAS + '#ch6'],
+  ['STP 是什么', 'SATA drive in SAS backplane', SAS + '#ch7'],
+  ['T10 PI', 'silent data corruption', SAS + '#ch8'],
+  ['数据完整性校验', 'T10 DIF', SAS + '#ch8'],
+  ['24G SAS', '24G SAS speed', SAS + '#ch9'],
+  ['SAS 会被淘汰吗', 'is SAS dead', SAS + '#ch10'],
+  ['SAS 规格怎么看', 'how to read SAS specs', SAS + '#ch11'],
+);
 for (const [zh, en, href] of chapters) for (const q of [zh, en]) {
   const hit = first(q);
   ok(hit && (hit.href === href || (href.endsWith('/') && hit.href.startsWith(href))), `"${q}" opens ${href} (got ${hit && hit.href})`);

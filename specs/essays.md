@@ -98,9 +98,10 @@ types ("为什么要打疫苗", "how does my phone know where I am"), not only t
 | why-nvme-is-fast | computing/systems/why-nvme-is-fast/ | 8 (`#ch1…#ch8`) | computing | `ESSAY_BASE_URL` |
 | what-a-drive-is-made-of | computing/systems/what-a-drive-is-made-of/ | 9 concepts in 10 chapters (`#ch1…#ch9`) | computing | `ESSAY_BASE_URL` |
 | how-sata-works | computing/systems/how-sata-works/ | 10 (`#ch1…#ch10`) | computing | `ESSAY_BASE_URL` |
+| how-sas-works | computing/systems/how-sas-works/ | 11 (`#ch1…#ch11`) | computing | `ESSAY_BASE_URL` |
 
-The eleven from 2026-11-11, the two food essays of 2026-11-12 and the two storage essays of 2026-11-14
-(what-a-drive-is-made-of, how-sata-works) were built by Claude Code (claude-opus-5-5). The English copy was drafted by Claude
+The eleven from 2026-11-11, the two food essays of 2026-11-12 and the three storage essays of 2026-11-14
+(what-a-drive-is-made-of, how-sata-works, how-sas-works) were built by Claude Code (claude-opus-5-5). The English copy was drafted by Claude
 Code (claude-haiku-5-5). A separate Claude Code session of the same model reviewed each essay and revised
 it (no human or cross-model review yet). Each BRIEF.md records what was and was not checked.
 why-compute-waits-for-memory and why-nvme-is-fast were built by Antigravity (gemini-4-hydrogen) in both
@@ -245,8 +246,9 @@ RBER, endurance from the ECC model and the lifetime equation (Cai et al. 2017; �
 TLC = 1,000 P/E, the page says so), a page-mapped FTL, the five-layer interface map (form factor, connector, link,
 transport, command set), latency against bandwidth, a dated frontier and three closing questions. It owns the
 SSD-vs-HDD words (固态硬盘为什么比机械硬盘快, 机械硬盘和固态硬盘区别, SSD vs HDD, SSD at #ch8) and the seek-time words
-(#ch2). Ch7 links how-sata-works; SAS, USB and network routes are plain text until those essays exist. Atlas
-edges: 4 between chapters, 2 to why-nvme-is-fast (#ch1, #ch6).
+(#ch2). Ch7 links how-sata-works and how-sas-works #ch7; the USB and network routes are plain text until those
+essays exist. It keeps SAS 和 SATA 能混用吗 / can SAS and SATA mix (#ch7). Atlas edges: 4 between chapters, 2 to
+why-nvme-is-fast (#ch1, #ch6).
 
 ### how-sata-works: SATA 为什么用了二十多年
 
@@ -257,7 +259,21 @@ QUEUED with wire accounting, NCQ on a spinning disk, link power break-even, port
 M.2, why SATA stopped at 6 Gb/s, a dated frontier and three spec-sheet questions. It links S1 #ch2, #ch4 and #ch7
 live (its models.cjs checks those anchors exist); the seek-time words and "is every M.2 drive NVMe" left its #ch5
 and #ch1 for S1 at registration. Tuned: seek-curve shape, link-on and Partial powers (sensitivity in each chapter's
-limit paragraph). Atlas edges: 5 between chapters, 2 to S1 (#ch2, #ch7), 1 to why-nvme-is-fast (#ch2).
+limit paragraph). Atlas edges: 5 between chapters, 2 to S1 (#ch2, #ch7), 1 to why-nvme-is-fast (#ch2). Ch1.limit
+(SATA over a SAS link) links how-sas-works #ch7 and ch10.links links that essay; its models.cjs checks the S3 anchors.
+
+### how-sas-works: 服务器硬盘为什么用 SAS
+
+Storage series S3. The same platters ship as SATA and as SAS drives; why do servers insist on SAS? The SAS layers
+(SCSI commands over SSP, SATA over STP, SMP for expanders), the READ(6)/(10)/(16) CDB with its SSP and iSCSI
+envelopes, the frames and two connections of one SSP read, dual-port and multipath availability, expander fan-out
+(Erlang C against a simulation), wide ports (one connection holds one lane), why a SAS bay takes a SATA drive, T10 PI
+and CRC-16/T10-DIF, 24G SAS 128b/150b with RS(30,26) and interleaving, a dated frontier and three spec-sheet
+questions. It owns SAS 和 SATA 区别 / SAS vs SATA and SAS 是什么 (#ch1), SCSI 命令 / CDB (#ch2), 双端口硬盘 (#ch4),
+SAS 扩展器 (#ch5), T10 PI and 数据完整性校验 (#ch8), 24G SAS (#ch9); the plug-compatibility questions (SAS 和 SATA 能混用吗)
+stay on S1 #ch7. Tuned: the 0.5 µs connection open/close time (saturation at about 16 drives either way, halved or
+doubled). Atlas edges: 5 between chapters, 3 from S1 (#ch5, #ch7 twice), 4 from S2 (#ch1, #ch3, #ch4, #ch8),
+1 from poisson-process. At registration ch5.p2's "previous chapter" was corrected to chapter 3.
 
 ### scarcity-moves: 稀缺会搬家
 

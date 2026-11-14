@@ -1,11 +1,11 @@
 {
   "counts": {
     "groups": 11,
-    "nodes": 424,
-    "edges": 583,
+    "nodes": 435,
+    "edges": 596,
     "trails": 14,
     "questions": 124,
-    "fragments": 194
+    "fragments": 195
   },
   "conflicts": [],
   "suspendedEdges": [],
@@ -412,6 +412,37 @@
       "page": "llm-sampling",
       "taughtBy": [
         "llm-sampling"
+      ]
+    },
+    {
+      "concept": "sas-protocol-layers",
+      "page": "how-sata-works",
+      "taughtBy": [
+        "sata-protocol-layers",
+        "parallel-ata-timing-skew",
+        "8b10b-encoding",
+        "sata-fis-frames",
+        "ncq-rotational-scheduling",
+        "sata-link-power-hotplug",
+        "port-multiplier-esata-msata",
+        "why-sata-stopped-at-6g",
+        "sata-frontier-2026",
+        "reading-a-drive-spec-sheet"
+      ]
+    },
+    {
+      "concept": "sas-protocol-layers",
+      "page": "what-a-drive-is-made-of",
+      "taughtBy": [
+        "block-device-lba-sectors",
+        "hdd-seek-rotation-latency",
+        "smr-shingled-recording-hamr",
+        "nand-cell-levels-slc-qlc",
+        "flash-endurance-ecc-tbw",
+        "flash-translation-layer-gc",
+        "storage-interface-layer-map",
+        "ssd-vs-hdd-latency-bandwidth",
+        "storage-frontier-2026"
       ]
     },
     {
@@ -1508,10 +1539,10 @@
     }
   ],
   "unknownAliasIds": [],
-  "sizeBytes": 806238,
+  "sizeBytes": 822804,
   "questionsBytes": 173024,
-  "combinedBytes": 979262,
-  "indexBytes": 99671,
+  "combinedBytes": 995828,
+  "indexBytes": 101246,
   "chunkBytes": {
     "math.nodes": 51664,
     "math.edges": 89636,
@@ -1526,7 +1557,7 @@
     "systems.edges": 43469,
     "systems.questions": 21577,
     "measurement.nodes": 35687,
-    "measurement.edges": 63322,
+    "measurement.edges": 63662,
     "measurement.questions": 30144,
     "matter.nodes": 29536,
     "matter.edges": 18917,
@@ -1537,8 +1568,8 @@
     "earth.nodes": 25871,
     "earth.edges": 19025,
     "earth.questions": 6822,
-    "computing.nodes": 54821,
-    "computing.edges": 36921,
+    "computing.nodes": 62871,
+    "computing.edges": 42762,
     "computing.questions": 2766,
     "society.nodes": 58077,
     "society.edges": 41022,

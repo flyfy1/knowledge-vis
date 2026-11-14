@@ -160,6 +160,7 @@ window.KNOWLEDGE_ESSAYS = [
   "why-nvme-is-fast",
   "what-a-drive-is-made-of",
   "how-sata-works",
+  "how-sas-works",
   "how-an-economy-is-measured",
   "scarcity-moves"
 ];
@@ -410,6 +411,16 @@ window.KNOWLEDGE_PAGES = [
     },
     tags: [{ zh: "SATA", en: "SATA" }, { zh: "存储系统", en: "Storage Systems" }, { zh: "机械硬盘", en: "Hard Disk Drives" }, { zh: "串行链路", en: "Serial Links" }, { zh: "长文", en: "Long-form Essay" }],
     category: "computing", subtopic: "systems", stage: "university", status: "live", path: "computing/systems/how-sata-works/"
+  },
+  {
+    slug: "how-sas-works",
+    title: { zh: "服务器硬盘为什么用 SAS", en: "Why Server Drives Use SAS" },
+    desc: {
+      zh: "同样的盘片，SATA 版和 SAS 版装进机房，为什么服务器偏偏要 SAS？七个可以拖动的模型：一条 SCSI 命令的字节、一次读要开几次连接、两条路径的可用度、扩展器后面的扇出、宽端口的四条道、T10 PI 的 8 字节校验、24G 的纠错码。",
+      en: "The same platters ship as SATA and as SAS drives; why do servers insist on SAS? Seven models you can drag: the bytes of one SCSI command, how many connections one read opens, the availability of two paths, fan-out behind an expander, the four lanes of a wide port, the 8-byte T10 PI check, and the error-correcting code of 24G."
+    },
+    tags: [{ zh: "SAS", en: "SAS" }, { zh: "SCSI", en: "SCSI" }, { zh: "存储系统", en: "Storage Systems" }, { zh: "串行链路", en: "Serial Links" }, { zh: "长文", en: "Long-form Essay" }],
+    category: "computing", subtopic: "systems", stage: "university", status: "live", path: "computing/systems/how-sas-works/"
   },
   {
     slug: "how-an-economy-is-measured",
