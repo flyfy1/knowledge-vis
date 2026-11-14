@@ -1,0 +1,366 @@
+{
+  "slug": "how-usb-drives-talk",
+  "path": "computing/systems/how-usb-drives-talk/",
+  "category": "computing",
+  "subtopic": "systems",
+  "stage": "university",
+  "title": {
+    "zh": "移动硬盘为什么跑不满",
+    "en": "Why a USB Drive Never Hits Its Label"
+  },
+  "desc": {
+    "zh": "一块能跑 7 GB/s 的 NVMe 固态装进 USB 硬盘盒，为什么只剩几百 MB/s 到两三 GB/s？包装上的 Gen 2×2、40Gbps 说的是什么？九个可以拖动的模型：USB 2.0 的微帧、从名字到线速、Bulk-Only 的一问一答、UASP 的队列、桥接链条上的瓶颈、发热降速、雷电与 USB4 的 PCIe 隧道、U 盘里的几颗闪存。",
+    "en": "Why does a 7 GB/s NVMe SSD in a USB enclosure measure a few hundred MB/s to two or three GB/s, and what do “Gen 2×2” and “40Gbps” on the box mean? Nine models you can drag: the USB 2.0 microframe, from a name to the line rate, Bulk-Only’s one-at-a-time exchange, UASP’s queue, the bottleneck along the bridge chain, thermal throttling, the PCIe tunnel of Thunderbolt and USB4, and the few dies inside a flash drive."
+  },
+  "tags": [
+    {
+      "zh": "USB",
+      "en": "USB"
+    },
+    {
+      "zh": "存储系统",
+      "en": "Storage Systems"
+    },
+    {
+      "zh": "移动硬盘",
+      "en": "External Drives"
+    },
+    {
+      "zh": "雷电与 USB4",
+      "en": "Thunderbolt and USB4"
+    },
+    {
+      "zh": "长文",
+      "en": "Long-form Essay"
+    }
+  ],
+  "concepts": [
+    {
+      "id": "usb-storage-layers",
+      "title": {
+        "zh": "USB 存储在协议地图上的位置：两段协议和一颗桥接芯片",
+        "en": "Where USB Storage Sits: Two Stacks and a Bridge Chip"
+      },
+      "desc": {
+        "zh": "电脑看到的是一个说 SCSI 的 USB 大容量存储设备，盘看到的是说 SATA 或 NVMe 的主机，中间是桥接芯片。",
+        "en": "The computer sees a USB mass-storage device that speaks SCSI; the drive sees a SATA or NVMe host; a bridge chip sits between them."
+      },
+      "aliases": {
+        "zh": [
+          "移动硬盘是怎么工作的",
+          "USB 硬盘盒里面是什么",
+          "电脑怎么识别 U 盘",
+          "USB 大容量存储类是什么",
+          "桥接芯片是什么"
+        ],
+        "en": [
+          "how does a USB external drive work",
+          "what is inside a USB drive enclosure",
+          "USB mass storage class",
+          "what is a USB bridge chip"
+        ]
+      },
+      "anchor": "#ch1",
+      "relatedPages": [
+        "what-a-drive-is-made-of"
+      ]
+    },
+    {
+      "id": "usb-host-scheduling-microframe",
+      "title": {
+        "zh": "USB 由主机调度：微帧与批量传输上限",
+        "en": "USB Is Host-Scheduled: Microframes and the Bulk Ceiling"
+      },
+      "desc": {
+        "zh": "USB 设备不能主动发数据；USB 2.0 每 125 微秒一个微帧，批量传输最多 53.2 MB/s（规范表 5-10）。",
+        "en": "USB devices cannot start a transfer; USB 2.0 runs 125 µs microframes and bulk transfers top out at 53.2 MB/s (Table 5-10)."
+      },
+      "aliases": {
+        "zh": [
+          "USB 2.0 最高速度是多少",
+          "USB 2.0 为什么这么慢",
+          "USB 微帧是什么",
+          "USB 轮询是什么意思",
+          "USB 主机控制器怎么调度"
+        ],
+        "en": [
+          "USB 2.0 max transfer speed",
+          "why is USB 2.0 slow",
+          "USB microframe",
+          "USB host polling",
+          "USB bulk transfer limit"
+        ]
+      },
+      "anchor": "#ch2",
+      "relatedPages": []
+    },
+    {
+      "id": "usb-naming-line-rates",
+      "title": {
+        "zh": "USB 命名与线速：Gen 1、Gen 2、×2 和编码",
+        "en": "USB Names and Line Rates: Gen 1, Gen 2, ×2 and Encoding"
+      },
+      "desc": {
+        "zh": "USB 3.0、3.1 Gen 1、3.2 Gen 1 是同一个 5 Gb/s；名字只说线速，扣掉 8b/10b 或 128b/132b 编码、包头和协议才是能用的字节。",
+        "en": "USB 3.0, 3.1 Gen 1 and 3.2 Gen 1 are the same 5 Gb/s link; the name gives the line rate, and encoding, packet headers and protocol come off before the usable bytes."
+      },
+      "aliases": {
+        "zh": [
+          "USB 3.2 Gen 2x2 是什么",
+          "USB 3.0 3.1 3.2 区别",
+          "USB 3.1 Gen 1 是什么",
+          "40Gbps 是什么意思",
+          "USB 80Gbps 是什么",
+          "USB 接口速度怎么看",
+          "USB Gen 1 和 Gen 2 区别",
+          "128b/132b 编码"
+        ],
+        "en": [
+          "what does USB 3.2 Gen 2x2 mean",
+          "USB 3.0 vs 3.1 vs 3.2",
+          "USB naming explained",
+          "USB 10Gbps vs 20Gbps",
+          "USB 80Gbps",
+          "128b/132b encoding"
+        ]
+      },
+      "anchor": "#ch3",
+      "relatedPages": [
+        "how-sata-works"
+      ]
+    },
+    {
+      "id": "usb-bulk-only-transport",
+      "title": {
+        "zh": "Bulk-Only 传输：CBW、数据、CSW，一次一条",
+        "en": "Bulk-Only Transport: CBW, Data, CSW, One at a Time"
+      },
+      "desc": {
+        "zh": "31 字节的 CBW 包着一条 SCSI 命令，13 字节的 CSW 回状态；一次只允许一条命令，小块读远低于链路速度。",
+        "en": "A 31-byte CBW wraps a SCSI command and a 13-byte CSW returns status; only one command is allowed at a time, so small reads fall far below the link rate."
+      },
+      "aliases": {
+        "zh": [
+          "Bulk-Only 是什么",
+          "BOT 协议",
+          "CBW 和 CSW 是什么",
+          "U 盘拷小文件为什么慢",
+          "USB 存储一次只能一条命令"
+        ],
+        "en": [
+          "USB bulk-only transport",
+          "what is a CBW",
+          "CBW CSW",
+          "why copying small files to a USB drive is slow"
+        ]
+      },
+      "anchor": "#ch4",
+      "relatedPages": [
+        "why-nvme-is-fast"
+      ]
+    },
+    {
+      "id": "uasp-command-queuing",
+      "title": {
+        "zh": "UASP：四条管道、标签和 USB 3 的流",
+        "en": "UASP: Four Pipes, Tags and USB 3 Streams"
+      },
+      "desc": {
+        "zh": "UASP 把命令、状态、读写数据分到四条管道，每条命令带标签，借 USB 3 的流同时挂几十条命令，把等待重叠掉。",
+        "en": "UASP splits command, status and data onto four pipes and tags each command; with USB 3 streams dozens of commands overlap their waits."
+      },
+      "aliases": {
+        "zh": [
+          "什么是 UASP",
+          "UASP 有什么用",
+          "UASP 和 BOT 区别",
+          "UAS 协议",
+          "USB Attached SCSI 是什么"
+        ],
+        "en": [
+          "what is UASP",
+          "UASP vs BOT",
+          "USB Attached SCSI",
+          "UAS protocol"
+        ]
+      },
+      "anchor": "#ch5",
+      "relatedPages": [
+        "why-nvme-is-fast"
+      ]
+    },
+    {
+      "id": "usb-bridge-translation-bottleneck",
+      "title": {
+        "zh": "桥接芯片：SCSI 翻译与链条上的瓶颈",
+        "en": "The Bridge Chip: SCSI Translation and the Bottleneck"
+      },
+      "desc": {
+        "zh": "桥接芯片把 SCSI 翻成 ATA 或 NVMe；一次拷贝停在盘、桥接下行、USB 链路三段中最窄的那一段。",
+        "en": "The bridge translates SCSI into ATA or NVMe; a copy runs at the narrowest of the drive, the bridge's downstream lanes and the USB link."
+      },
+      "aliases": {
+        "zh": [
+          "移动硬盘为什么这么慢",
+          "硬盘盒为什么跑不满",
+          "移动固态硬盘为什么达不到标称速度",
+          "硬盘盒支持 TRIM 吗",
+          "硬盘盒能看 SMART 吗",
+          "USB 转 NVMe 芯片",
+          "SCSI 转 NVMe 翻译"
+        ],
+        "en": [
+          "why is my external SSD slow",
+          "USB enclosure bottleneck",
+          "TRIM over USB",
+          "SMART through a USB enclosure",
+          "SCSI to NVMe translation",
+          "USB to NVMe bridge"
+        ]
+      },
+      "anchor": "#ch6",
+      "relatedPages": [
+        "what-a-drive-is-made-of",
+        "why-nvme-is-fast"
+      ]
+    },
+    {
+      "id": "external-ssd-thermal-throttling",
+      "title": {
+        "zh": "移动固态的发热降速：集总热容模型",
+        "en": "External SSD Thermal Throttling: A Lumped Thermal Model"
+      },
+      "desc": {
+        "zh": "盘和芯片的热从小盒子里散出去，温度按指数逼近 T环境 + R·P；高过保护温度就降速，长拷贝的平均速度跟着掉。",
+        "en": "Heat from the drive and chip leaves a small box; temperature approaches ambient + R·P exponentially, and above the protection point the drive slows, pulling down the average of a long copy."
+      },
+      "aliases": {
+        "zh": [
+          "移动固态硬盘发热降速",
+          "硬盘盒发烫正常吗",
+          "固态硬盘过热降速",
+          "拷大文件越来越慢",
+          "移动硬盘拷一会就变慢"
+        ],
+        "en": [
+          "external SSD thermal throttling",
+          "SSD enclosure overheating",
+          "copy speed drops after a few minutes"
+        ]
+      },
+      "anchor": "#ch7",
+      "relatedPages": []
+    },
+    {
+      "id": "thunderbolt-usb4-pcie-tunnel",
+      "title": {
+        "zh": "雷电与 USB4 的 PCIe 隧道：不翻译的路",
+        "en": "PCIe Tunnelling in Thunderbolt and USB4"
+      },
+      "desc": {
+        "zh": "雷电和支持 PCIe 隧道的 USB4 把盘直接接到电脑的 NVMe 驱动上，上限是隧道分到的 PCIe 带宽（雷电 4 为 32 Gb/s，雷电 5 为 64 Gb/s）。",
+        "en": "Thunderbolt and USB4 hosts with PCIe tunnelling connect the drive straight to the NVMe driver; the cap is the PCIe share of the tunnel (32 Gb/s for Thunderbolt 4, 64 Gb/s for Thunderbolt 5)."
+      },
+      "aliases": {
+        "zh": [
+          "雷电硬盘盒和 USB 硬盘盒区别",
+          "雷电 4 硬盘盒速度",
+          "USB4 硬盘盒为什么有时很慢",
+          "雷电 5 移动硬盘多快",
+          "PCIe 隧道是什么"
+        ],
+        "en": [
+          "Thunderbolt vs USB enclosure",
+          "USB4 NVMe enclosure speed",
+          "Thunderbolt 5 SSD speed",
+          "PCIe tunneling USB4"
+        ]
+      },
+      "anchor": "#ch8",
+      "relatedPages": [
+        "why-nvme-is-fast"
+      ]
+    },
+    {
+      "id": "flash-drive-sd-card-speed",
+      "title": {
+        "zh": "U 盘和存储卡：几颗闪存与总线",
+        "en": "Flash Drives and Memory Cards: A Few Dies and a Bus"
+      },
+      "desc": {
+        "zh": "U 盘和存储卡里只有一两颗闪存，写入速度是颗数乘每颗速度，再与总线和协议比谁小。",
+        "en": "A flash drive or card holds one or two dies; write speed is dies times per-die speed, capped by the bus and protocol."
+      },
+      "aliases": {
+        "zh": [
+          "U 盘为什么慢",
+          "U 盘写入速度为什么低",
+          "SD 卡 UHS-I 和 UHS-II 区别",
+          "SD Express 是什么",
+          "存储卡为什么写得慢"
+        ],
+        "en": [
+          "why is my USB flash drive slow",
+          "SD card UHS-I vs UHS-II",
+          "what is SD Express",
+          "why memory cards write slowly"
+        ]
+      },
+      "anchor": "#ch9",
+      "relatedPages": [
+        "why-nvme-is-fast"
+      ]
+    },
+    {
+      "id": "usb-storage-frontier-2026",
+      "title": {
+        "zh": "USB 与雷电存储的前沿（2026 年 11 月）",
+        "en": "The USB and Thunderbolt Storage Frontier (November 2026)"
+      },
+      "desc": {
+        "zh": "USB4 2.0 已定 80 Gb/s，雷电 5 的 PCIe 隧道为 64 Gb/s；评测报告的雷电 5 盒子顺序读约 5.4–6.7 GB/s。",
+        "en": "USB4 2.0 defines 80 Gb/s and Thunderbolt 5 a 64 Gb/s PCIe tunnel; reviewers report Thunderbolt 5 enclosures reading about 5.4–6.7 GB/s."
+      },
+      "aliases": {
+        "zh": [
+          "USB4 v2 是什么",
+          "雷电 5 现在怎么样",
+          "USB 最快能多快",
+          "USB 80Gbps 有产品吗"
+        ],
+        "en": [
+          "USB4 version 2 status",
+          "Thunderbolt 5 status",
+          "fastest USB in 2026"
+        ]
+      },
+      "anchor": "#ch10",
+      "relatedPages": []
+    },
+    {
+      "id": "reading-usb-speed-labels",
+      "title": {
+        "zh": "看包装时问三件事",
+        "en": "Three Questions for a USB Speed Label"
+      },
+      "desc": {
+        "zh": "先换算线速并看两头谈成哪档，再找链条上最窄的一段，最后看它走 USB 桥接还是 PCIe 隧道。",
+        "en": "Convert the name to a line rate and check what both ends negotiate, find the narrowest stage, and ask whether it goes through a USB bridge or a PCIe tunnel."
+      },
+      "aliases": {
+        "zh": [
+          "移动硬盘参数怎么看",
+          "USB 速度标识怎么看",
+          "硬盘盒规格怎么看"
+        ],
+        "en": [
+          "how to read USB speed labels",
+          "external drive spec sheet",
+          "what to check on a USB enclosure box"
+        ]
+      },
+      "anchor": "#ch11",
+      "relatedPages": []
+    }
+  ]
+}
