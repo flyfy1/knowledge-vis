@@ -5,10 +5,12 @@
 // Optional SHOT_DIR=/tmp/... writes full-page screenshots at each width (never into the repo).
 // Checks at 1280/390/320: no console/page errors, no horizontal overflow, no text clipped inside its box, every
 // control at least 48×48 px, toggle reads 中 | EN, no raw copy keys, every readout and live sentence filled. Then the
-// language toggle (English is a stub: the page must fall back to Chinese and say so in <html lang>), keyboard
-// operation of a slider, each of the nine models responding to its controls with the numbers the models give, and
-// reduced motion (no smooth scroll; the ch4 link does not animate). When copy.en.js is translated (enStub removed),
-// the same width sweep also runs in English and checks that no Chinese is left, including canvas text.
+// language toggle (if copy.en.js were ever a stub again, the page must fall back to Chinese and say so in <html lang>),
+// keyboard operation of a slider, each of the nine models responding to its controls with the numbers the models give,
+// and reduced motion (no smooth scroll; the ch4 link does not animate). The width sweep runs in both languages and in
+// English checks that no Chinese is left, including canvas text.
+// Controls are driven as a reader would: radios and checkboxes by clicking their visible pill or label (no forced
+// clicks on the 1-px inputs), and every assertion first waits for its condition (up to 3 s) instead of a fixed sleep.
 const { chromium } = require('playwright');
 const path = require('path');
 const M = require(path.join(__dirname, '..', 'models.js'));
@@ -27,20 +29,37 @@ async function open(browser, width, opts = {}) {
   const errors = [];
   page.on('console', m => { if (m.type() === 'error') errors.push(m.text()); });
   page.on('requestfailed', r => errors.push('request failed ' + r.url()));
-  page.on('response', r => { if (r.status() >= 400 && !/copy\.en\.js$/.test(r.url())) errors.push(r.status() + ' ' + r.url()); });
+  page.on('response', r => { if (r.status() >= 400) errors.push(r.status() + ' ' + r.url()); });
   page.on('pageerror', e => errors.push('page error: ' + e.message));
   await page.addInitScript(l => { try { localStorage.setItem('knowledge-lang', l); } catch (e) {} }, opts.lang || 'zh');
   await page.addInitScript(() => { window.__ft = new Set(); const f = CanvasRenderingContext2D.prototype.fillText;
     CanvasRenderingContext2D.prototype.fillText = function (t, ...a) { window.__ft.add(String(t)); return f.call(this, t, ...a); }; });
   await page.goto(url);
   await page.waitForFunction(() => window.__essayReady === true);
-  page.__errors = () => errors.filter(e => !e.startsWith('Failed to load resource') && !/request failed .*copy\.en\.js$/.test(e));
+  page.__errors = () => errors.filter(e => !e.startsWith('Failed to load resource'));
   return page;
 }
 const text = (page, sel) => page.$eval(sel, e => e.textContent.trim());
 const setRange = (page, id, v) => page.evaluate(([id, v]) => { const e = document.getElementById(id); e.value = v; e.dispatchEvent(new Event('input', { bubbles: true })); }, [id, String(v)]);
 const show = async (page, sel, ms = 0) => { await page.$eval(sel, e => e.scrollIntoView({ block: 'center' })); if (ms) await page.waitForTimeout(ms); };
-const pick = (page, name, value) => page.click(`input[name=${name}][value="${value}"]`, { force: true });
+// click the visible pill (actionability checks on), then wait until the input really is checked
+const pick = async (page, name, value) => {
+  const sel = `input[name=${name}][value="${value}"]`;
+  await page.click(`label:has(> ${sel})`);
+  await page.waitForFunction(s => document.querySelector(s).checked, sel, { timeout: 3000 });
+};
+const tick = async (page, sel, on) => {
+  if ((await page.$eval(sel, e => e.checked)) !== on) await page.click(`label:has(> ${sel})`);
+  await page.waitForFunction(([s, v]) => document.querySelector(s).checked === v, [sel, on], { timeout: 3000 });
+};
+// wait (up to 3 s) until every [selector, predicate-on-text] pair holds; the ok() that follows reports what it saw
+const until = async (page, pairs) => {
+  for (let i = 0; i < 60; i++) {
+    let all = true;
+    for (const [sel, pred] of pairs) { const v = await text(page, sel); if (!(typeof pred === 'function' ? pred(v) : v === pred)) { all = false; break; } }
+    if (all) return; await page.waitForTimeout(50);
+  }
+};
 const canvasHash = (page, id) => page.$eval('#' + id, c => { const d = c.toDataURL(); let h = 0; for (let i = 0; i < d.length; i += 7) h = (h * 31 + d.charCodeAt(i)) | 0; return h; });
 
 (async () => {
@@ -125,66 +144,70 @@ const canvasHash = (page, id) => page.$eval('#' + id, c => { const d = c.toDataU
     // ch1 three levels: keyboard on the slider
     await show(page, '#lvCv', 200);
     ok((await text(page, '#lvB')) === '8 KiB' && (await text(page, '#lvF')) === '1 字节' && (await text(page, '#lvO')) === '16 MiB', 'ch1 defaults, got ' + await text(page, '#lvB') + ' / ' + await text(page, '#lvO'));
-    await page.focus('#lvK'); for (let i = 0; i < 12; i++) await page.keyboard.press('ArrowRight'); await page.waitForTimeout(80);
+    await page.focus('#lvK'); for (let i = 0; i < 12; i++) await page.keyboard.press('ArrowRight'); await until(page, [['#lvKo', '4 KiB'], ['#lvB', '4 KiB']]);
     ok((await text(page, '#lvKo')) === '4 KiB' && (await text(page, '#lvB')) === '4 KiB', 'ch1 slider by keyboard to 4 KiB: aligned block, got ' + await text(page, '#lvKo') + ' ' + await text(page, '#lvB'));
-    await page.check('#lvC', { force: true }); await setRange(page, 'lvK', 0); await page.waitForTimeout(80);
+    await tick(page, '#lvC', true); await setRange(page, 'lvK', 0); await until(page, [['#lvB', '4 KiB'], ['#lvO', '8 MiB']]);
     ok((await text(page, '#lvB')) === '4 KiB' && (await text(page, '#lvO')) === '8 MiB', 'ch1 cached halves block and object');
 
     // ch2 small files
     await show(page, '#nsCv', 200);
     ok(same(await text(page, '#nsT'), P.nasT[0]), 'ch2 default total, got ' + await text(page, '#nsT'));
-    await setRange(page, 'nsR', 10); await page.waitForTimeout(80);
+    await setRange(page, 'nsR', 10); await until(page, [['#nsT', v => same(v, M.NAS.run(1000, 64, 30, 3, 1, 1).T)]]);
     ok(same(await text(page, '#nsT'), M.NAS.run(1000, 64, 30, 3, 1, 1).T), 'ch2 30 ms total, got ' + await text(page, '#nsT'));
-    await pick(page, 'nsP', '16'); await page.waitForTimeout(80);
+    await pick(page, 'nsP', '16'); await until(page, [['#nsT', v => same(v, M.NAS.run(1000, 64, 30, 3, 16, 1).T)]]);
     ok(same(await text(page, '#nsT'), M.NAS.run(1000, 64, 30, 3, 16, 1).T), 'ch2 16 in flight, got ' + await text(page, '#nsT'));
 
     // ch3 iSCSI
     await show(page, '#isCv', 200);
     ok((await text(page, '#isRt')) === zf(P.i0rt[0], 0) && (await text(page, '#isPdu')) === zf(P.i0pdu[0], 0), 'ch3 defaults rounds/PDUs');
-    await setRange(page, 'isR', 8); await page.waitForTimeout(80);
+    await setRange(page, 'isR', 8); await until(page, [['#isT', v => same(v, P.iWT[0])]]);
     ok(same(await text(page, '#isT'), P.iWT[0]), 'ch3 10 ms time, got ' + await text(page, '#isT'));
-    await pick(page, 'isP', 'big'); await page.waitForTimeout(80);
+    await pick(page, 'isP', 'big'); await until(page, [['#isRt', '1']]);
     ok((await text(page, '#isRt')) === '1', 'ch3 big profile: one round');
 
     // ch4 FC: animates, credits
     await show(page, '#fcCv', 300);
     ok((await text(page, '#fcN')) === zf(P.fcNeed[0], 0) && (await text(page, '#fcU')) === zf(P.fcUtil[0] * 100, 0) + '%', 'ch4 defaults need/util, got ' + await text(page, '#fcN') + ' ' + await text(page, '#fcU'));
     const a = await canvasHash(page, 'fcCv'); await page.waitForTimeout(600); ok(a !== await canvasHash(page, 'fcCv'), 'ch4 link animates');
-    await setRange(page, 'fcC', 14); await page.waitForTimeout(80);
+    await setRange(page, 'fcC', 14); await until(page, [['#fcU', '100%']]);
     ok((await text(page, '#fcU')) === '100%', 'ch4 2000 credits fill 50 km');
 
     // ch5 budget
     await show(page, '#bdCv', 200);
     ok((await text(page, '#bdSh')) === zf(P.bnS[0] * 100, 0) + '%', 'ch5 NAND tcp kernel share');
-    await pick(page, 'bdM', 'hdd'); await page.waitForTimeout(80);
+    await pick(page, 'bdM', 'hdd'); await until(page, [['#bdSh', zf(P.bhS[0] * 100, 2) + '%']]);
     ok((await text(page, '#bdSh')) === zf(P.bhS[0] * 100, 2) + '%', 'ch5 HDD share, got ' + await text(page, '#bdSh'));
-    await pick(page, 'bdM', 'ull'); await pick(page, 'bdT', 'rdmaSpdk'); await page.waitForTimeout(80);
+    await pick(page, 'bdM', 'ull'); await pick(page, 'bdT', 'rdmaSpdk'); await until(page, [['#bdSh', zf(P.bruS[0] * 100, 0) + '%']]);
     ok((await text(page, '#bdSh')) === zf(P.bruS[0] * 100, 0) + '%', 'ch5 ULL RDMA share');
+    await setRange(page, 'bdD', 100); await pick(page, 'bdT', 'local'); await until(page, [['#bdSh', '0%']]);
+    ok((await text(page, '#bdSh')) === '0%' && (await text(page, '#bdSay')).includes('本机'), 'ch5 local drive ignores distance, got ' + await text(page, '#bdSh'));
 
     // ch6 loss
     await show(page, '#lsCv', 200);
     ok((await text(page, '#lsW')) === zf(P.lW[0], 0) && (await text(page, '#lsGbn')) === zf(P.l3g[0] * 100, 0) + '%', 'ch6 defaults');
-    await setRange(page, 'lsP', -2); await page.waitForTimeout(80);
+    await setRange(page, 'lsP', -2); await until(page, [['#lsGbn', zf(P.l2g[0] * 100, 0) + '%']]);
     ok((await text(page, '#lsGbn')) === zf(P.l2g[0] * 100, 0) + '%', 'ch6 1% loss');
 
     // ch7 capsules
     await show(page, '#cpCv', 200);
     ok((await text(page, '#cpM')) === zf(P.ctM[0], 0) && (await text(page, '#cpRt')) === '1', 'ch7 tcp read');
-    await pick(page, 'cpO', 'write'); await page.uncheck('#cpI', { force: true }); await page.waitForTimeout(80);
+    await pick(page, 'cpO', 'write'); await tick(page, '#cpI', false); await until(page, [['#cpRt', zf(P.cwtRt[0], 0)]]);
     ok((await text(page, '#cpRt')) === zf(P.cwtRt[0], 0), 'ch7 tcp write without ICD: 2 round trips');
-    await pick(page, 'cpT', 'iscsi'); await pick(page, 'cpS', '65536'); await page.waitForTimeout(80);
+    await pick(page, 'cpT', 'iscsi'); await pick(page, 'cpS', '65536'); await until(page, [['#cpM', v => +v > 10]]);
     ok(+(await text(page, '#cpM')) > 10, 'ch7 iSCSI 64 KiB write has many messages');
 
     // ch8 multipath
     await show(page, '#mpCv', 200);
     ok(same(await text(page, '#mpO'), P.mpOpt[0]) && (await text(page, '#mpF')) === '∞', 'ch8 defaults, got ' + await text(page, '#mpO') + ' ' + await text(page, '#mpF'));
-    await setRange(page, 'mpL', 45); await page.waitForTimeout(80);
+    await setRange(page, 'mpL', 45); await until(page, [['#mpF', v => same(v, P.mp45F[0])]]);
     ok(same(await text(page, '#mpF'), P.mp45F[0]), 'ch8 failover at 45k, got ' + await text(page, '#mpF'));
+    await setRange(page, 'mpQ', 0.2); await setRange(page, 'mpL', 145); await until(page, [['#mpS', '—']]);
+    ok((await text(page, '#mpS')) === '—' && (await text(page, '#mpSay')).includes('怎么分都接不住'), 'ch8 beyond both paths, got ' + await text(page, '#mpSay'));
 
     // ch9 EC
     await show(page, '#ecCv', 200);
     ok((await text(page, '#ecO')) === zf(P.e10o[0], 1) + ' 倍' && (await text(page, '#ecN')) === zf(P.e10n[0], 1) + ' 个 9', 'ch9 RS(10,4) defaults, got ' + await text(page, '#ecO') + ' ' + await text(page, '#ecN'));
-    await pick(page, 'ecS', 'rep3'); await page.waitForTimeout(80);
+    await pick(page, 'ecS', 'rep3'); await until(page, [['#ecN', zf(P.e3n[0], 1) + ' 个 9']]);
     ok((await text(page, '#ecN')) === zf(P.e3n[0], 1) + ' 个 9', 'ch9 3x');
     ok(!page.__errors().length, 'drive: errors: ' + page.__errors().join(' | '));
     await page.close();
@@ -205,5 +228,5 @@ const canvasHash = (page, id) => page.$eval('#' + id, c => { const d = c.toDataU
 
   await browser.close();
   if (fails.length) { console.error(fails.map(f => 'FAIL ' + f).join('\n')); process.exit(1); }
-  console.log(`PASS: browser smoke test (${langs.join('+')} at 1280/390/320: overflow, clipped text, 48px targets, raw keys, placeholders, readouts, live sentences; toggle with stub fallback, keyboard, all nine models driven, reduced motion)`);
+  console.log(`PASS: browser smoke test (${langs.join('+')} at 1280/390/320: overflow, clipped text, 48px targets, raw keys, placeholders, readouts, live sentences; language toggle, keyboard, label clicks with condition waits, all nine models driven, reduced motion)`);
 })().catch(e => { console.error(e); process.exit(1); });

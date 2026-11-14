@@ -139,6 +139,27 @@ const pv = k => P[k][0];
   check('writes with data in the command: 1 round trip on all three', ['iscsi', 'tcp', 'rdma'].every(tr => CAPS.run(tr, 'write', 4096, { icd: true }).rt === 1), true);
 }
 
+/* ── 06 Mathis constant: the page uses √(3/2); the alternatives it quotes move the TCP line by the stated amounts and
+   leave it far below go-back-N at the defaults ── */
+{
+  const A = LOSS.mathisAlt, C0 = Math.sqrt(1.5), l = LOSS.run(1e-3, 100, 20);
+  near('Mathis delayed-ACK constant √(3/4)', A.delayed, Math.sqrt(0.75), 0.005);
+  n++; if (!(1 - A.delayed / C0 > 0.25 && 1 - A.delayed / C0 < 0.32)) { fails++; console.error('FAIL delayed-ACK constant should move the TCP line down by about 30%'); }
+  n++; if (!(A.random / C0 - 1 > 0 && A.random / C0 - 1 < 0.1)) { fails++; console.error('FAIL random-loss constant should move the TCP line up by under 10%'); }
+  for (const c of [A.delayed, A.random]) { n++; if (!(l.tcp * c / C0 < l.gbn / 2)) { fails++; console.error(`FAIL with C=${c} TCP should stay far below go-back-N at the defaults`); } }
+}
+
+/* ── review 2026-11-15: live-sentence states that used to read wrongly ── */
+{
+  check('ch2 16 MiB files at 50 µs: not "stuck on round trips"', M.say.nas(1000, 16384, 0.05, 3, 1, 1).key, 'ch2.say.bwNear');
+  check('ch2 default stays round-trip bound', M.say.nas(1000, 64, 0.5, 3, 1, 1).key, 'ch2.say.rtt');
+  const loc = BUDGET.run(BUDGET.media.ull, 'local', 100, 6);
+  check('ch5 local drive ignores distance and switches', loc.net, 0); check('ch5 local sentence with distance set', M.say.budget(BUDGET.media.ull, 'local', 100, 6).key, 'ch5.say.local');
+  check('ch8 beyond both paths: overAll', M.say.mp(145, 100, 0.2).key, 'ch8.say.overAll');
+  check('ch8 beyond the optimised path only: over', M.say.mp(145, 100, 1).key, 'ch8.say.over');
+  const e = EC.run(9, 6, 0.005, 1); n++; if (!isFinite(e.nines) || e.nines < 15) { fails++; console.error('FAIL ch9 nines must stay finite when the yearly loss probability is tiny, got ' + e.nines); }
+}
+
 /* ── 08 multipath: square-root rule = brute-force minimum ── */
 {
   for (const [lam, mu1, q] of [[80, 100, 0.5], [20, 100, 0.5], [120, 100, 0.5], [60, 100, 0.25], [140, 100, 0.9]]) {
@@ -187,7 +208,7 @@ const SAYKEY = /\.say\.|^u\.|\.cv\.|^ch8\.unit/;
 {
   const allowed = new Set();
   const walk = o => { if (o == null) return; if (typeof o === 'number') { allowed.add(String(o)); return; } if (typeof o === 'string') { for (const m of o.matchAll(/\d+(\.\d+)?/g)) { allowed.add(m[0]); allowed.add(String(+m[0])); } return; } if (typeof o === 'object') for (const v of Object.values(o)) walk(v); };
-  walk(SPEC); walk(FRONTIER); walk(DEFAULTS); walk(BUDGET.fabric); walk(BUDGET.media); walk(BUDGET.chelsioKernelTcp); walk(BUDGET.switchUs); walk(LOSS.roceMtu); walk(LOSS.tcpMss);
+  walk(SPEC); walk(FRONTIER); walk(DEFAULTS); walk(BUDGET.fabric); walk(BUDGET.media); walk(BUDGET.chelsioKernelTcp); walk(BUDGET.switchUs); walk(LOSS.roceMtu); walk(LOSS.tcpMss); walk(LOSS.mathisAlt);
   walk(LEVEL.block);
   // derived from the defaults, written as words or binary sizes in the prose
   const DERIVED = { '0.5': 'nas rtt / ratio', '8': 'S = 8 MiB; immediate 8 KiB', '1': 'k = 1 byte, 1 MiB', '64': 'KiB sizes', '16': '16 MiB burst max', '1500': 'MTU', '4': '4 KiB', '100': '100 Gb/s', '20': 'RTT 20 µs', '200': 'RTT 200 µs', '30': 'rtt far', '10': 'RTT 10 ms, 10 km, 10 Gb/s', '50': '50 km', '40': 'credits', '2': 'two switches, double', '3': 'NFS attr min', '6': 'RS(6,3)', '9': 'RS(6,3) n', '24': 'mttr', '48': 'mttr doubled', '11': '“11 个 9” vendor claim', '128': 'CXL GT/s, 128G', '256': '256GFC', '56': 'ports', '12425': '128GFC MB/s', '2.0': 'NVMe 2.0 (2021)', '2021': 'NVMe 2.0 year', '2015': 'RFC 7530 date', '1975': 'Kleinrock', '1984': 'Lazowska', '1997': 'Mathis', '2018': 'IRN', '2016': 'Guo', '2013': 'VLDB', '2010': 'HotStorage', '2014': 'RFC 7143', '2025': 'Backblaze year', '2026': 'as-of year', '7': 'chapter', '27': 'CCR volume', '7530': 'RFC', '802.1': 'IEEE 802.1Qbb', '5': '5 µs per km in the summary; Linux keep-alive', '1.1': 'NVMe/TCP rev', '12': 'month', '15': 'day', '05': 'month', '2.4': 'NVMe 2.4', '4.0': 'CXL 4.0', '5.0': 'Linux 5.0', '24.05': 'SPDK release', '6348': 'Xeon model', '6.0.18': 'kernel', '123456': 'example block number (as in the SATA essay)', '512': 'frame payload option' };

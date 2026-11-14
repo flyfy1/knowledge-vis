@@ -47,8 +47,9 @@
     nfs: { acregmin: 3, acregmax: 60, acdirmin: 30, acdirmax: 60 },
     // Linux kernel defaults: drivers/nvme/host/fabrics.h (ctrl_loss_tmo 600 s, reconnect_delay 10 s,
     // fast_io_fail_tmo off), drivers/nvme/host/nvme.h (keep-alive 5 s); open-iscsi etc/iscsid.conf
-    // (replacement_timeout 120 s, NOP-Out every 5 s with a 5 s timeout)
-    linux: { kato: 5, ctrlLoss: 600, reconnect: 10, iscsiRepl: 120, noopInt: 5, noopTmo: 5, nvmeTcpSince: '5.0', nvmeTcpSinceDate: '2019-03-03' },
+    // (replacement_timeout 120 s, NOP-Out every 5 s with a 5 s timeout). kaPeriod: drivers/nvme/host/core.c
+    // nvme_keep_alive_work_period() sends a Keep Alive every kato/2 (NVMe 1.4 §7.12.1), halved again with TBKAS.
+    linux: { kato: 5, kaPeriod: 2.5, ctrlLoss: 600, reconnect: 10, iscsiRepl: 120, noopInt: 5, noopTmo: 5, nvmeTcpSince: '5.0', nvmeTcpSinceDate: '2019-03-03' },
     // Backblaze Drive Stats for 2025 (published 2026-02-12): 4,317 failures in 115,638,676 drive days
     bb: { failures: 4317, driveDays: 115638676, afrQuoted: 1.36, published: '2026-02-12' },
     // XORing Elephants (Sathiamoorthy et al., PVLDB 2013): Facebook HDFS RS(10,4), repair transfers 10 blocks
@@ -163,7 +164,8 @@
     media: { hdd: 8500, nand: 75, ull: 10 },
     switchUs: 1.0,                     // TUNED: one switch traversal each way (cut-through class), µs
     run(mediaUs, tr, km, hops, sw) {
-      const f = BUDGET.fabric[tr], prop = 2 * km * FC.usPerKm(), swc = 2 * hops * (sw == null ? BUDGET.switchUs : sw);
+      // a local drive has no network: distance and switches do not apply
+      const loc = tr === 'local', f = BUDGET.fabric[tr], prop = loc ? 0 : 2 * km * FC.usPerKm(), swc = loc ? 0 : 2 * hops * (sw == null ? BUDGET.switchUs : sw);
       const net = f + prop + swc, total = mediaUs + net;
       return { media: mediaUs, fabric: f, prop, sw: swc, net, total, share: net / total, iops: 1e6 / total };
     }
@@ -174,6 +176,9 @@
      Reno-style TCP under random loss (Mathis et al., CCR 1997): rate ≤ (MSS/RTT)·√(3/2)/√p, capped at the link. ── */
   const LOSS = {
     roceMtu: 4096, tcpMss: 1448,
+    // Mathis et al. 1997, Table 1: C = √(3/2) ≈ 1.22 for periodic loss without delayed ACKs (used here); quoted on the
+    // page as alternatives: about 1.31 for random loss and about 0.87 (√(3/4)) with delayed ACKs
+    mathisAlt: { random: 1.31, delayed: 0.87 },
     run(p, gbps, rttUs) {
       const rate = gbps * 1e9, rtt = rttUs * 1e-6;
       const W = Math.max(1, rate * rtt / (LOSS.roceMtu * 8));
@@ -273,7 +278,7 @@
       const m = n - k, lam = -Math.log(1 - afr) / 8760, mu = 1 / mttrH;
       let prod = 1; for (let i = 0; i <= m; i++) prod *= (n - i);
       const mttdl = Math.pow(mu, m) / (Math.pow(lam, m + 1) * prod);
-      const pYear = 1 - Math.exp(-8760 / mttdl);
+      const pYear = -Math.expm1(-8760 / mttdl);   // expm1 keeps precision when the yearly probability is tiny
       return { m, overhead: n / k, mttdl, pYear, nines: -Math.log10(pYear), repairReads: k };
     }
   };
@@ -361,7 +366,8 @@
     },
     nas(N, s, rtt, k, P, g) {
       const r = NAS.run(N, s, rtt, k, P, g), v = { T: r.T, big: r.big, ratio: r.ratio, util: r.util, sStar: r.sStar };
-      if (r.bound === 'bw') return { key: 'ch2.say.bwNear', v };   // bandwidth-bound: never slower than one big file
+      // bandwidth-bound, or within 25% of one big file: the round trips no longer set the pace
+      if (r.bound === 'bw' || r.ratio < 1.25) return { key: 'ch2.say.bwNear', v };
       return { key: r.ratio >= 10 ? 'ch2.say.rttBad' : 'ch2.say.rtt', v };
     },
     iscsi(W, rtt, g, prof) {
@@ -378,7 +384,7 @@
     },
     budget(media, tr, km, hops) {
       const r = BUDGET.run(media, tr, km, hops), v = { share: r.share, net: r.net, total: r.total, iops: r.iops };
-      if (tr === 'local' && km === 0 && hops === 0) return { key: 'ch5.say.local', v };
+      if (tr === 'local') return { key: 'ch5.say.local', v };
       if (r.share < 0.05) return { key: 'ch5.say.tiny', v };
       if (r.share >= 0.5) return { key: 'ch5.say.dom', v };
       return { key: 'ch5.say.mid', v };
@@ -395,6 +401,7 @@
     },
     mp(lam, mu1, ratio) {
       const r = MP.run(lam, mu1, ratio), v = { opt: r.T.opt, best: r.T.best, pb: r.pol.best, fail1: r.fail1, rr: r.T.rr };
+      if (!isFinite(r.T.best)) return { key: 'ch8.say.overAll', v };   // more than both paths together can serve
       if (!isFinite(r.T.opt)) return { key: 'ch8.say.over', v };
       if (!isFinite(r.fail1)) return { key: r.pol.best > 0.999 ? 'ch8.say.noFailOpt' : 'ch8.say.noFail', v };
       if (r.pol.best > 0.999) return { key: 'ch8.say.optOnly', v };

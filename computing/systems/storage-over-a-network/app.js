@@ -28,11 +28,11 @@ function t(key, vars) {
 }
 const fmt = (x, d) => M.fmt(x, d, effLang());
 const auto = v => (Math.abs(v) >= 100 ? 0 : Math.abs(v) >= 10 ? 1 : 2);
-const pct = (x, d) => t('u.pct', { v: fmt(x * 100, d == null ? (x < 0.01 ? 2 : x < 0.1 || (x > 0.99 && x < 1) ? 1 : 0) : d) });
-function dur(sec, d) { const u = M.tunit(sec); return t('u.' + u.u, { v: fmt(u.v, d == null ? auto(u.v) : d) }); }
+const pct = (x, d) => t('u.pct', { v: fmt(x * 100, d == null ? (x === 0 ? 0 : x < 0.01 ? 2 : x < 0.1 || (x > 0.99 && x < 1) ? 1 : 0) : d) });
+function dur(sec, d) { if (sec === 0) return t('u.us', { v: fmt(0, 0) }); const u = M.tunit(sec); return t('u.' + u.u, { v: fmt(u.v, d == null ? auto(u.v) : d) }); }
 function bytes(b) { const u = M.bunit(b); return t('u.' + u.u, { v: fmt(u.v, u.u === 'B' || Number.isInteger(u.v) ? 0 : auto(u.v)) }); }
 const times = x => t('u.x', { v: fmt(x, x >= 10 ? 0 : 1) });
-const mbs = x => t('u.MBps', { v: fmt(x, x >= 100 ? 0 : 1) });
+const mbs = x => t('u.MBps', { v: fmt(x, x >= 100 ? 0 : x >= 1 ? 1 : x >= 0.01 ? 2 : 3) });
 // numbers quoted in the prose, computed from the models and formatted for the current language
 let PROSE = null;
 function proseVars() { PROSE = PROSE || M.prose(); const o = {}; for (const [k, [v, d, kind]] of Object.entries(PROSE)) o[k] = kind === 'pct' ? pct(v, d) : fmt(v, d); return o; }
@@ -367,7 +367,7 @@ const lossPct = q => pct(q, Math.max(0, Math.min(6, 1 - Math.floor(log10(q * 100
   function text() {
     const r = M.MP.run(lam(), mu1, q()), z = M.say.mp(lam(), mu1, q()), v = z.v, us = x => isFinite(x) ? dur(x / 1000, x >= 0.01 ? 0 : 1) : '∞';
     put('#mpLo', t('u.iops', { v: fmt(lam() * 1000, 0) })); put('#mpQo', t('ch8.unit.q', { v: pct(q(), 0) }));
-    put('#mpO', us(r.T.opt)); put('#mpB', us(r.T.best)); put('#mpS', pct(r.pol.best, 0)); put('#mpF', us(r.fail1));
+    put('#mpO', us(r.T.opt)); put('#mpB', us(r.T.best)); put('#mpS', isFinite(r.T.best) ? pct(r.pol.best, 0) : '—'); put('#mpF', us(r.fail1));
     putHTML('#mpSay', t(z.key, { opt: us(v.opt), best: us(v.best), pb: pct(v.pb, 0), fail1: us(v.fail1), rr: us(v.rr) }));
   }
   wire(sim, text, ['#mpL', '#mpQ'], []);

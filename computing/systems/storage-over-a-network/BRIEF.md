@@ -1,11 +1,11 @@
 # BRIEF — 隔着网线的硬盘 (Drives Across a Wire)
 
 Built-By: Claude Code (claude-opus-5-5)
-Verified-By: self-check by builder (node model test, browser test zh at 1280/390/320 and reduced motion, canvas sweep, screenshots at three widths); independent review pending
+Verified-By: Claude Code (claude-opus-5-5): independent review of zh+en copy, models, sources and tests, 2026-11-15 (see Review); builder self-check (node model test, browser test zh at 1280/390/320 and reduced motion, canvas sweep, screenshots at three widths)
 Category: computing 计算机 / subtopic systems 系统 · Stage: university
 Series: storage series S5 (`specs/essay-briefs/TASK-storage-series.md`)
-Format: long interactive essay. Chinese is complete; `copy.en.js` is a same-keys stub (`window.ESSAY_COPY.enStub = true`), so the page shows Chinese in both modes until it is translated.
-Files: index.html, copy.zh.js, copy.en.js (stub), models.js, app.js, REGISTRY.json, tests/models.cjs, tests/browser.cjs
+Format: long interactive essay, Chinese and English (`copy.en.js` has the same keys and placeholders; the `enStub` flag is gone). Who translated it is not recorded in this directory; check the commit trailers.
+Files: index.html, copy.zh.js, copy.en.js, models.js, app.js, REGISTRY.json, tests/models.cjs, tests/browser.cjs
 
 ## The one question
 
@@ -139,11 +139,9 @@ Not verified from a primary source:
 
 ## For the translator
 
-All strings are in `copy.zh.js`; `copy.en.js` mirrors it with `enStub = true`. Translate every value, keep
-every `{placeholder}` and every `<a href>` target, then delete the `enStub` line. Number formatting, units and
-canvas labels already switch by language. `REGISTRY.json` already has English titles, descriptions and aliases;
-the test will check that `title.en` equals `doc.title` (before " · ") and `desc.en` equals `doc.desc` once the
-stub flag is gone.
+Done: `copy.en.js` is a full translation, revised in the review below. Keep it key-for-key with `copy.zh.js`; the
+model test checks keys, placeholders, and that `title.en`/`desc.en` in `REGISTRY.json` equal `doc.title` (before
+" · ") and `doc.desc`.
 
 ## For the registrar
 
@@ -158,4 +156,92 @@ stub flag is gone.
 
 ## Review
 
-Pending.
+Reviewer: Claude Code (claude-opus-5-5), separate session; did not build or translate the page. Date 2026-11-15.
+Scope: zh and en read in full, every key of `copy.zh.js` and `copy.en.js`; every model driven to its extremes and
+awkward middle values in both languages with the live sentence read each time (script in
+/tmp/agent-tasks/storage/review-s5/); models re-derived by hand; sources reopened as listed below.
+Verified-By form: `Claude Code (claude-opus-5-5): independent review of zh+en copy, models, sources, tests`.
+
+### Checks (re-derived or reopened)
+
+- ch1: 1 byte in 8 MiB cold = 4096 read + 4096 write = 8192 B; object GET+PUT = 16 MiB. Exact.
+- ch2: D = 3·0.5 ms + 65536/125e6 s = 2.024 ms; T = 2.02 s; big file 0.526 s; s* = k·RTT·B = 183 KiB; at 30 ms,
+  16 in flight: 1000/(16/90.52 ms) = 5.66 s. Matches the asymptotic bound X ≤ min(N/(D+Z), 1/D_max) (Lazowska ch. 5,
+  with k·RTT as think time Z). Close-to-open: RFC 7530 §10.3.1 reopened (both rules; conditions now stated, see below).
+- ch3: RFC 7143 reopened (rfc-editor txt): §11.2.1 BHS 48 bytes; §13.10 InitialR2T Yes; §13.11 ImmediateData Yes
+  and the unsolicited-data table; §13.12 MRDSL 8192 and the FirstBurstLength cap on unsolicited PDUs; §13.13
+  MaxBurstLength 262144; §13.14 FirstBurstLength 65536 (≤ MaxBurstLength); §13.17 MaxOutstandingR2T 1; §4.2.7.4
+  iqn example. Hand count for 1 MiB: 8 KiB immediate, 4 R2T, 127 Data-Out, 133 PDUs, 5 round trips. Agrees.
+- ch4: tf = 2172 B/1600 MB/s = 1.3575 µs; 50 km: need ceil(490.3/1.3575)+1 = 363; U = 40·1.3575/491.7 = 11%.
+  Brocade rule: 2·d·5 µs/km ÷ (2148·10 bit / 8.5 GBd) ≈ 3.96 ≈ 8/2 per km at 8GFC, i.e. the same formula; model
+  363 vs rule 400 per 100 km (9% apart). Wikipedia speed table reopened: 1/2/4/8/16/32/64/128GFC = 100…6400, 12,425
+  MB/s; market years 1997/2011/2016/2020 as stated. FC-FS frame layout still secondary.
+- ch5: SPDK 24.05 TCP and RDMA reports reopened (PDF text extracted): Tables 21/22, QD1 4 KiB random read, null
+  bdev: TCP 17.50 / 21.39 µs, RDMA 4.72 / 12.10 µs; Xeon Gold 6348, ConnectX-5, Linux 6.0.18, point-to-point
+  "without any switches". NVMe essay presets 8500/75/10 µs confirmed in its models.js.
+- ch6: Stallings GBN U = (1−p)/(1+2ap) with W = 2a+1 → (1−p)/(1+(W−1)p). Mathis 1997 reopened (CCR PDF): sawtooth
+  derivation gives C = √(3/2) for periodic loss; Table 1 (page 2, rendered and read) lists 1.22 = √(3/2), 0.87 =
+  √(3/4) with delayed ACKs, 1.31 random loss (0.93 delayed); the alternatives 1.31 and 0.87
+  are now stated in ch6.limit and pinned (TCP still far below GBN at the defaults).
+- ch7: NVMe/TCP 1.1 PDF reopened: Figure 26 ICReq HLEN 128, Figure 30 CapsuleCmd 72, Figures 31–34 24 bytes,
+  SUCCESS flag in the last C2HData suppresses the response capsule. Hand count of a 4 KiB TCP read: 162 + 4390 B
+  on the wire, 456 B overhead, 90.0%.
+- ch8: Square-root rule derived: minimise Σ λi/(μi−λi) s.t. Σλi = λ → μi/(μi−λi)² equal → μi−λi ∝ √μi. Defaults:
+  λ1 = 100 − 10·70/17.07 = 59.0k (74%), T = 27.0 µs. Linux defaults reopened (kernel master): NVME_DEFAULT_KATO 5,
+  NVMF_DEF_RECONNECT_DELAY 10, NVMF_DEF_CTRL_LOSS_TMO 600; `nvme_keep_alive_work_period()` sends every kato/2.
+- ch9: MTTDL ≈ μ^m/(λ^(m+1)·n(n−1)…(n−m)) is the standard approximation with one repair at a time (parallel repair
+  would add a factor m!); 3×: 9.9 nines, RS(10,4): 14.2. Halving/doubling MTTR pinned by the builder.
+- Frontier, two places each: NVMe 2.4 on 2026-08-04 (The Register and Business Wire via search; set includes TCP
+  1.3 and RDMA 1.3); Windows Server NVMe-oF initiator preview post 2026-03-13 (Microsoft Tech Community and Lightbits
+  2026-05-28 release, via search); Broadcom X8/G820 2025-11-19, G820 56×128G (All About Circuits, Investing.com via
+  search); UEC 1.0 2025-06-11, "millions of endpoints", "modern RDMA for Ethernet and IP" (Linux Foundation release,
+  opened); CXL 4.0 2025-11-18, 128 GT/s (CXL Consortium release PDF and Converge Digest, via search); Backblaze 2025
+  AFR 1.36% (Backblaze blog, opened; failure and drive-day counts only via TechRadar/StorageReview, and they reproduce
+  1.36%).
+- Links and anchors (18 targets) resolve; no alias of S1–S4, NVMe or the memory essay is taken; English titles of
+  linked pages match `pages.config.js`; no CJK in English mode (browser test, including canvas text and aria).
+- No buying advice; vendor claims (UEC scale, "11 nines", Broadcom "first") are attributed.
+
+### Changes
+
+- ch8.p4 (zh+en): **error fixed** — the Linux NVMe-oF host does not send a keep-alive every 5 s; 5 s is the
+  timeout and the command goes every 2.5 s (`SPEC.linux.kaPeriod`).
+- ch2: the live sentence said "stuck on round trips, link only 99.9% used" for 16 MiB files; it now switches to the
+  "almost as fast as one big file" sentence within 25% of the big-file time (models.js `say.nas`, pinned).
+- ch5: choosing "local PCIe" with distance or switches set added fibre and switch time to a local drive and said
+  the network dominated; local now ignores both (models.js `BUDGET.run`, pinned). Live sentence no longer reads
+  "每秒 … 次/秒" / "per second per second". Zero shows as 0 µs / 0%, not 0.00 ns / 0.00%. ch5.limit now says the null
+  bdev figure also contains the host I/O stack, so the network share is slightly overstated.
+- ch8: new sentence when load exceeds both paths together (it used to say "the best split is ∞"); the spill
+  sentence no longer claims the optimised path "has begun to queue" when the paths are equal; best-share readout
+  shows — when no split works.
+- ch9: yearly loss probability uses expm1, so the nines no longer show "—" for small MTTR and AFR (prose values
+  unchanged at the printed precision).
+- ch3: small speeds keep two or three decimals (0.04 MB/s, not 0.0 MB/s).
+- ch2.p2: RFC 7530 §10.3.1 conditions stated (absent delegation; the OPEN check is mandatory only for some opens).
+- ch6.limit: Mathis constant assumption and its alternatives, with the direction and size of the shift.
+- English: table headers now "Protocol / Asks for / Command language / Carried by / Wire / In this essay" with values
+  "Files / Blocks / Whole objects"; on ≤ 640 px the header row is removed (each cell already carries its column name),
+  which also fixes header cells sticking out of the viewport at 390/320 in English. "untick" → "tick" (zh 勾掉 →
+  勾上: the box starts unticked). Plurals in ch7/ch9 sentences ("1 round trips", "1 drive failures", "block(s)") and
+  "(64 R2T)" rewritten. ch6.law "dislike loss" → "cope worst with loss"; hero and ch11.sum: 接 is "another path takes
+  over", not "reconnect"/"replace a cable" (zh made explicit the same way).
+- tests/browser.cjs: radios and checkboxes clicked through their visible labels (no forced clicks on 1-px inputs),
+  each assertion waits for its condition (≤ 3 s) instead of an 80 ms sleep; copy.en.js 404 filter and stub comments
+  removed; new drive checks for the local-drive and overload fixes. tests/models.cjs: pins for the fixed sentence
+  states, the Mathis alternatives and finite nines.
+
+### Results
+
+`node tests/models.cjs` PASS 1478 checks. `tests/browser.cjs` PASS three runs in a row (zh+en at 1280/390/320, reduced
+motion). Canvas sweep (`--sweep`, scroll-aware): first run found 27 states where the English ch9 axis label "No loss in a year (nines)" ran past the 320 px canvas; shortened to "Nines, one year"; rerun PASS 1538 states, zh+en × 1280/390/320. Table header "Chapter" renamed "In this essay" (stacked cells read "In this essay: Chapter 2"). Screenshots in /tmp/agent-tasks/storage/review-s5/shots/.
+
+### Unverified
+
+- FC-FS frame layout (2148 B, six idles) and per-generation encodings: secondary only (FCIA and INCITS PDFs not
+  opened). SMB2 compounding (MS-SMB2), S3 PUT semantics, Stallings, Kleinrock, Lazowska, Guo 2016, Greenan 2010,
+  Mittal 2018 text: not reopened (formulas re-derived instead).
+- Frontier dates other than UEC and Backblaze AFR: search excerpts from two outlets each, primary pages not opened.
+  Windows Server 2025 not including the initiator: vendor note via search only.
+- Backblaze failure and drive-day counts: secondary only (consistent with the primary 1.36%).
+- XORing Elephants figures (10–20% of ~2 PB/day, 3000 nodes): not reopened.

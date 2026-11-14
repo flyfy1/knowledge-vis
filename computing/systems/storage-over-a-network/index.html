@@ -121,7 +121,7 @@
   table.fam tr.hi td { background:rgba(233,185,73,.07); }
   @media (max-width:640px) {
     table.fam, table.fam tbody, table.fam tr, table.fam td { display:block; width:100%; }
-    table.fam thead { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); }
+    table.fam thead { display:none; }   /* each cell carries its column name via data-h::before */
     table.fam tr { border-bottom:1px solid var(--line); padding:8px 0; }
     table.fam td { border:0; padding:2px 0; }
     table.fam td[data-h]::before { content:attr(data-h) "："; color:var(--mute); font-weight:400; }
