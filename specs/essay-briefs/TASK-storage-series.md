@@ -7,6 +7,23 @@ built by Antigravity, self-checked only, not independently reviewed).
 All essays go in `computing/systems/` beside the NVMe essay (no new subtopic). Stage: university.
 Order: S1 first (it gives the others their vocabulary), S2 alongside; S3–S6 queued.
 
+## Status (2026-11-15)
+
+S1–S5 are live in zh and en, each reviewed by a separate Claude Code session (same model; cross-model review pending).
+Essay commit → deployed at:
+
+| | Page | Essay commit | Live at |
+|---|---|---|---|
+| S1 | `what-a-drive-is-made-of` 硬盘里到底是什么 | `745f535e` | `bb361d4b` |
+| S2 | `how-sata-works` SATA 为什么用了二十多年 | `d1df3df8` | `bb361d4b` |
+| S3 | `how-sas-works` 服务器硬盘为什么用 SAS | `122add13` | `cfc408ab` |
+| S4 | `how-usb-drives-talk` 移动硬盘为什么跑不满 | `16ff7768` | `d3848685` |
+| S5 | `storage-over-a-network` 隔着网线的硬盘 | `d7abd777` | `d604470d` |
+
+All five link one another where the text mentions the other route (the S1–S5 labels point at `e2630ba1`, the last
+cross-link commit). S6 `how-phone-storage-works` (optional) is not started; S1–S5 mention no S6 page, so nothing is
+waiting to be linked. The "Queued" list below is the original spec, kept for reference.
+
 ## Briefs to follow (all essays)
 
 - `specs/essay-briefs/BRIEF-BATCH3.md`, and through it `STANDARD.md` and `BRIEF-COMMON.md`, plus
