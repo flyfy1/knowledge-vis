@@ -48,7 +48,7 @@ const pick = (page, name, value) => page.click(`input[name=${name}][value="${val
     ok(await page.evaluate(() => document.documentElement.lang) === (lang === 'zh' || stub ? (lang === 'zh' ? 'zh-CN' : 'en') : 'en'), `${tag}: html lang`);
     for (const fig of await page.$$('figure')) {
       await fig.evaluate(e => e.scrollIntoView({ block: 'center' })); await page.waitForTimeout(250);
-      if (SHOT && lang === 'zh') { const id = await fig.evaluate(e => e.closest('section').id + '-' + [...e.closest('section').querySelectorAll('figure')].indexOf(e)); await fig.screenshot({ path: `${SHOT}/fig-${id}-${width}.png` }); }
+      if (SHOT) { const id = await fig.evaluate(e => e.closest('section').id + '-' + [...e.closest('section').querySelectorAll('figure')].indexOf(e)); await fig.screenshot({ path: `${SHOT}/fig-${id}-${lang}-${width}.png` }); }
     }
     const clipped = await page.evaluate(() => [...document.querySelectorAll('figure *, .toc a, #langToggle button, table.lay td')].filter(e => {
       if (!e.childNodes.length || ![...e.childNodes].some(n => n.nodeType === 3 && n.textContent.trim())) return false;

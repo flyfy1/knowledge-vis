@@ -1,9 +1,9 @@
 # BRIEF — 硬盘里到底是什么 (What a Drive Is Made Of)
 
 Built-By: Claude Code (claude-opus-5-5)
-Verified-By: self-check by builder (node model test, browser test zh at 1280/390/320 plus en stub, canvas sweep, screenshots at three widths); independent review pending
+Verified-By: self-check by builder (node model test, browser test zh at 1280/390/320 plus en stub, canvas sweep, screenshots at three widths); Claude Code (claude-opus-5-5), separate session, independent review 2026-11-14 (models re-derived, sources and frontier re-checked, zh+en read and laid out at 1280/390/320) — see Review
 Category: computing 计算机 / subtopic systems · Stage: university
-Format: long interactive essay; copy.zh.js written; copy.en.js is a same-keys stub (values still Chinese) for a translator
+Format: long interactive essay; copy.zh.js written by builder; copy.en.js translated afterwards and corrected in review
 Files: index.html, copy.zh.js, copy.en.js (stub), models.js, app.js, REGISTRY.json, tests/models.cjs, tests/browser.cjs
 Task: specs/essay-briefs/TASK-storage-series.md § S1 (Yangyu, 2026-11-14)
 
@@ -117,3 +117,69 @@ linked from ch5, is the nearest).
 zh title 硬盘里到底是什么 / en What a Drive Is Made Of; one-line desc in REGISTRY.json; category computing,
 subtopic systems (both exist); stage university; `languages: ["zh"]` until copy.en.js is translated. Repoint the
 NVMe page's 固态硬盘为什么比机械硬盘快 alias to #ch8 here.
+
+## Review
+
+Reviewer: Claude Code (claude-opus-5-5), separate session; did not build the page. Date: 2026-11-14.
+Scope: whole essay in zh and en; every model driven; models re-derived; physical/standards facts and every frontier
+fact re-checked; ch7 map; overlap with why-nvme-is-fast; English quality and layout.
+
+### What I checked
+- **Models re-derived independently** (a separate Python script, own Simpson integration, bisection, log-gamma
+  binomial tail): seek fit A = −1.969, B = 0.816, full stroke 17.36 ms, mean seek 8.50 ms, random read 12.69 ms /
+  78.8 IOPS / 67% seek, short-stroke 10%: 3.11 ms / 137 IOPS, 5,400 / 15,000 rpm: 71 / 95 IOPS; zoned-recording mean
+  rate OD(1+ρ)/2 = 187 MB/s (174–199 for ρ 0.4–0.6); SMR gain B/((B−1)q+1) and mean rewrite (B+1)/2, default 22%,
+  5.5 tracks, 92 ms, 11×; RBER with Gray code (TLC new 7.1e−16, QLC 5.2e−5, PLC 0.014); ECC limit t = 40 at 1e−15:
+  1.15e−3 (1e−16: 1.07e−3); σ0 = 54 mV, k = 9.45e−5 V/cycle; SLC 9,838, QLC 179, PLC 0; t = 20/80 → QLC 83/292;
+  Cai Eq. 4 lifetime 4.5 y; TBW→DWPD 0.33; Arrhenius 3.8×/25× (1.1 eV), 2.1×/5.8× (0.6 eV); ch8 latencies, ratios
+  and break-even sizes. All agree with models.js to the printed digits.
+- **Calibration halving/doubling**: QLC 0–1,590 holds when one calibration point moves at a time; moving both in
+  opposite directions (MLC 1,500 with TLC 2,000) inverts the ordering, so the prose now says "either one, the other
+  fixed" and the monotone test covers all four one-at-a-time cases.
+- **Primary sources opened**: Ruemmler & Wilkes Table 2 (3.24 + 0.400√d, d = 383; 8.00 + 0.008d; 1,962 cyl;
+  4,002 rpm) from the PDF text; Barracuda 7200.12 manual (track-to-track < 1.0 ms read, average seek read < 8.5 ms,
+  average latency 4.16 ms); Cai et al. (arXiv 1711.11427 HTML: "1x-nm (i.e., 15–19 nm) MLC and TLC … ~3,000 and
+  ~1,000 P/E cycles", Eq. 4, ECC range 1e−3–1e−2); 990 PRO 1 TB 22K IOPS QD1 (datasheet + Samsung product page);
+  870 EVO 13,000 IOPS QD1 (datasheet via search + AnandTech).
+- **Frontier, each in two places**: Seagate Mozaic 4+ 44 TB, 2026-03-03 (Seagate page + investors.seagate.com);
+  still the largest shipping HDD found as of Nov 2026. WD 2026-02-03 release (opened) and StorageReview 2026-08-06
+  (40 TB shipping in the quarter ended 2026-07-03; 44 TB HAMR 1H 2027). Micron 6600 ION 245 TB 2026-05-05, U.2 and
+  E3.L (Micron release + StorageReview). SK hynix 321-layer 2 Tb QLC 2025-08-25 (PR Newswire copies, Tom's
+  Hardware) and PQC21 shipping to Dell 2026-04 (SK hynix newsroom, Korea Herald). Samsung V10 400+ layers at FMS
+  2026 (Samsung newsroom, TrendForce); mass-production status still conflicting. SK hynix MSC 5-bit at IEDM Dec 2025
+  (Blocks & Files, TechRadar).
+- **ch7 map**: all 56 drive × slot pairs read. Correct as modelled; SATA/SAS plugs into U.2 bays fit and fail at
+  the electrical layer (SFF-8639 takes SFF-8482 plugs); SAS drive in SATA port fails at the connector.
+- **Overlap with why-nvme-is-fast**: no NVMe-owned words in aliases apart from 固态硬盘为什么比机械硬盘快 (taken over
+  by decision; the NVMe REGISTRY still lists it — registrar to repoint). No chapter re-derives an NVMe model.
+- **English**: read in full; titles of linked pages match pages.config.js; toggle 中 | EN; no CJK in English mode
+  (browser sweep incl. canvas strings, aria, title, meta).
+
+### What I changed
+- ch2.p1: thermal fly-height control described correctly (the element protrudes to within 1–2 nm of the disk, not
+  "another 1–2 nm").
+- ch2.p3: no longer says the NVMe page's 8,500 µs is "seek only" (that page says head move and rotation); now says
+  it equals this model's average seek and the model with the half-turn gives 12.7 ms (pinned).
+- ch5.p5: halving/doubling sentence made precise (see above); test extended.
+- ch7: SATA-in-SAS sentence: a SAS controller speaks SATA directly; STP is the tunnel through expanders. USB
+  enclosure labels now say 2.5-inch / M.2 (a 3.5-inch drive failing the form-factor layer was otherwise unexplained).
+  Inline layer names in sentences use new `ch7.lay.*` keys (lower-case in English).
+- ch8.law, ch10.q3: "bandwidth gap only a few times" was false for NVMe (40×): now "a few times to a few tens of
+  times". English ch8 live sentence no longer says the HDD spends its time "seeking" (latency includes rotation).
+- ch8 model: HDD latency no longer double-counts the 4 KiB transfer (seek + half-turn only); no printed number moved.
+- ch9: WD updated to reported shipping of 40 TB (Aug 2026) and 44 TB HAMR 1H 2027; SK hynix updated with PQC21
+  shipping (Apr 2026); FRONTIER block, footer and tests updated.
+- English layout: open-block label shortened ("Block 6 (open)") — was clipped at 390/320; ch2 lower axis label
+  shortened — ran off the canvas at 320.
+- tests/browser.cjs: figure screenshots now taken in both languages.
+
+### Results
+node tests/models.cjs: PASS 834/834. tests/browser.cjs: PASS (zh and en, 1280/390/320, reduced motion).
+canvas-text-overlap --sweep: PASS, 936 states, zh/en, 1280/390/320.
+
+### Still unverified
+Head fly height (Berkeley CML PDFs not opened); 512e white papers (WD/Seagate); JESD218 text and the retention
+activation energy (kept as a slider); PCI-SIG M.2 spec and SNIA SFF texts (keys, U.3 rules); T10 text for SAS/SATA
+connector keying; real SMR band sizes; HDD inner/outer radius; Samsung V10 production status; ZDNet Korea "delay to
+2027" report not opened. Registrar: REGISTRY.json has no `languages` field; English now passes, so the page can be
+registered with zh and en.

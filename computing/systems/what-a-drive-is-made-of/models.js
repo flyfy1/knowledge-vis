@@ -250,7 +250,7 @@
       sata: { iops: 13000, bw: 560 },
       nvme: { iops: 22000, bw: 7450 }
     },
-    lat(id) { return id === 'hdd' ? disk.random(7200, 1).t / 1000 : 1 / this.DEV[id].iops; },   // seconds
+    lat(id) { if (id !== 'hdd') return 1 / this.DEV[id].iops; const r = disk.random(7200, 1); return (r.seek + r.rot) / 1000; },   // seconds; HDD: seek + half a turn (transfer is added by time())
     bw(id) { return id === 'hdd' ? disk.meanSeq(7200) : this.DEV[id].bw; },                     // MB/s
     time(id, bytes) { const l = this.lat(id), x = bytes / (this.bw(id) * 1e6); return { t: l + x, lat: l, xfer: x, latShare: l / (l + x) }; },
     // the size at which latency and transfer take equal time
@@ -261,9 +261,9 @@
      demonstrated by the company named, claim = roadmap or report, not independently confirmed. */
   const FRONTIER = [
     { id: 'seagate', status: 'demo', date: '2026-03-03', v: { tb: 44, perDisk: 4, goalDisk: 10, goalTb: 100 } },
-    { id: 'wd', status: 'claim', date: '2026-02-03', v: { tb: 40, volumeYear: 2026, hamrRamp: 2027, goalTb: 100, goalYear: 2029 } },
+    { id: 'wd', status: 'demo', date: '2026-08-06', v: { tb: 40, volumeYear: 2026, hamrRamp: 2027, goalTb: 100, goalYear: 2029, shipQuarterEnd: '2026-07-03', hamrTb: 44 } }, // Feb release + StorageReview 2026-08-06 (earnings call)
     { id: 'micron', status: 'demo', date: '2026-05-05', v: { tb: 245, kioxiaTb: 245.76, kioxiaDate: '2025-07' } },
-    { id: 'hynix', status: 'demo', date: '2025-08-25', v: { layers: 321, tbit: 2 } },
+    { id: 'hynix', status: 'demo', date: '2025-08-25', v: { layers: 321, tbit: 2, firstSsd: '2026-04' } }, // PQC21 to Dell, SK hynix newsroom 2026-04-08
     { id: 'samsung', status: 'claim', date: '2026-08-05', v: { layers: 400 } },
     { id: 'plc', status: 'claim', date: '2026-11', v: { solidigmYear: 2022, hynixIedm: '2025-12' } }
   ];
@@ -334,7 +334,7 @@
       if (!dh) return { key: 'ch6.say.start', v };
       return { key: f.gcRuns ? 'ch6.say.gc' : 'ch6.say.nogc', v };
     },
-    map(d, s) { const r = map.check(d, s); return { key: 'ch7.say.' + r.key, v: { d: { k: 'ch7.d.' + d }, s: { k: 'ch7.s.' + s }, l: r.fail ? { k: 'ch7.layer.' + r.fail } : '' } }; },
+    map(d, s) { const r = map.check(d, s); return { key: 'ch7.say.' + r.key, v: { d: { k: 'ch7.d.' + d }, s: { k: 'ch7.s.' + s }, l: r.fail ? { k: 'ch7.lay.' + r.fail } : '' } }; },
     e2e(bytes) {
       const h = e2e.time('hdd', bytes), a = e2e.time('sata', bytes), n = e2e.time('nvme', bytes), [sv, su] = size(bytes);
       const v = { s: sv, su: { k: 'unit.' + su }, x1: fmt(h.t / a.t, h.t / a.t < 10 ? 1 : 0), x2: fmt(h.t / n.t, h.t / n.t < 10 ? 1 : 0), hl: fmt(h.latShare * 100, h.latShare > 0.99 || h.latShare < 0.01 ? 1 : 0) };

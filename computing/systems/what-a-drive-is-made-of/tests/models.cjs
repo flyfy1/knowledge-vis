@@ -65,7 +65,7 @@ function branch(name, o) { n++; const s = Z[o.key]; if (s == null) { fails++; co
   says('ch2.p3', '平均寻道 ' + f1(r.seek) + ' 毫秒');
   says('ch2.p3', '每秒也只到约 ' + f0(D.random(15000, 1).iops) + ' 次'); says('ch2.p3', '5,400 转是约 ' + f0(D.random(5400, 1).iops) + ' 次');
   const sh = D.random(7200, 0.1); says('ch2.p3', '最外面 10% 的范围'); says('ch2.p3', '平均寻道缩到 ' + f1(sh.seek) + ' 毫秒，每秒约 ' + f0(sh.iops) + ' 次');
-  says('ch2.p3', '8,500 微秒'); check('ch2 NVMe page 8,500 us = seek only', f0(D.AVG * 1000), '8,500');
+  says('ch2.p3', '8,500 微秒'); check('ch2 NVMe page 8,500 us equals the average seek', f0(D.AVG * 1000), '8,500');
   says('ch2.p4', '外圈 ' + f0(D.odRate(7200)) + ' MB/s，内圈约 ' + f0(D.idRate(7200)) + ' MB/s，整盘平均约 ' + f0(D.meanSeq(7200)) + ' MB/s');
   says('ch2.limit', '半径比 ' + f1(D.RHO));
   { const save = D.RHO, out = [0.4, 0.6].map(x => { D.RHO = x; return [D.meanSeq(7200), D.random(7200, 1).t]; }); D.RHO = save;
@@ -120,7 +120,7 @@ function branch(name, o) { n++; const s = Z[o.key]; if (s == null) { fails++; co
   const qs = []; for (const cal of [{ mlc: 1500, tlc: 1000 }, { mlc: 6000, tlc: 1000 }, { mlc: 3000, tlc: 500 }, { mlc: 3000, tlc: 2000 }]) { const save = Cl.CAL; Cl.CAL = cal; Cl._w = {}; qs.push(Cl.endurance(4, E.P0, Cl.wear(E.P0))); Cl.CAL = save; Cl._w = {}; }
   says('ch5.p5', 'QLC 的预测从 ' + f0(Math.min(...qs)) + ' 变到约 ' + f0(Math.max(...qs)) + ' 次');
   // the robust claim: each extra bit cuts endurance under every calibration tried
-  for (const cal of [{ mlc: 1500, tlc: 1000 }, { mlc: 3000, tlc: 2000 }, { mlc: 3000, tlc: 1000 }]) { const save = Cl.CAL; Cl.CAL = cal; Cl._w = {}; const w = Cl.wear(E.P0), e = [1, 2, 3, 4].map(b => Cl.endurance(b, E.P0, w)); Cl.CAL = save; Cl._w = {}; check('ch5 monotone ' + JSON.stringify(cal), e[0] > e[1] && e[1] > e[2] && e[2] > e[3], true); }
+  for (const cal of [{ mlc: 1500, tlc: 1000 }, { mlc: 6000, tlc: 1000 }, { mlc: 3000, tlc: 500 }, { mlc: 3000, tlc: 2000 }, { mlc: 3000, tlc: 1000 }]) { const save = Cl.CAL; Cl.CAL = cal; Cl._w = {}; const w = Cl.wear(E.P0), e = [1, 2, 3, 4].map(b => Cl.endurance(b, E.P0, w)); Cl.CAL = save; Cl._w = {}; check('ch5 monotone ' + JSON.stringify(cal), e[0] > e[1] && e[1] > e[2] && e[2] > e[3], true); }
   // lifetime
   check('ch5 OP', f1(E.OP * 100), '7.4'); says('ch5.p6', '预留空间这里取 ' + f1(E.OP * 100) + '%');
   says('ch5.p6', 'TLC 擦写 1,000 次、每天写满 0.33 遍、写放大 2，约 ' + f1(E.years(1000, E.OP, 0.33, 2)) + ' 年');
@@ -193,6 +193,8 @@ function branch(name, o) { n++; const s = Z[o.key]; if (s == null) { fails++; co
   says('ch9.f.micron', '2026 年 5 月 5 日'); says('ch9.f.micron', F.micron.v.tb + ' TB');
   says('ch9.f.hynix', '2025 年 8 月 25 日'); says('ch9.f.hynix', F.hynix.v.layers + ' 层、单颗 ' + F.hynix.v.tbit + ' Tb');
   says('ch9.f.samsung', F.samsung.v.layers + ' 层以上'); says('ch9.f.samsung', '无法独立证实');
+  says('ch9.f.wd', '截至 ' + F.wd.v.shipQuarterEnd.replace(/^(\d+)-0?(\d+)-0?(\d+)$/, '$1 年 $2 月 $3 日') + '的季度'); says('ch9.f.wd', F.wd.v.hamrTb + ' TB 的 HAMR 盘'); says('ch9.f.hynix', F.hynix.v.firstSsd.replace(/^(\d+)-0?(\d+)$/, '$1 年 $2 月') + '，第一款用它的固态盘');
+  says('ch2.p3', '这个模型把半圈转动等待也加上，是约 ' + f1(M.disk.random(7200, 1).t) + ' 毫秒');
   says('ch9.title', '2026 年 11 月');
   says('ch9.f.wd', F.wd.v.volumeYear + ' 年下半年量产'); says('ch9.f.micron', 'Kioxia 在 ' + F.micron.v.kioxiaDate.replace('-0', ' 年 ').replace('-', ' 年 ') + ' 月也发布过 ' + F.micron.v.kioxiaTb + ' TB');
   says('ch9.f.plc', 'Solidigm ' + F.plc.v.solidigmYear + ' 年'); says('ch9.f.plc', 'SK hynix ' + F.plc.v.hynixIedm.replace('-', ' 年 ') + ' 月在 IEDM');
