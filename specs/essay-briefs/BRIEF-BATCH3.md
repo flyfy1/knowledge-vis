@@ -53,7 +53,7 @@ model of quality. You build one more, on the topic in your task message.
   goes in `/tmp/agent-tasks/essays/<slug>/`, and browser test output (screenshots) must go there too, not into the
   repo.
 - Local server on the port in your task: `python3 -m http.server <port> --bind 127.0.0.1` from the repo root;
-  stop it when done. Playwright: `NODE_PATH=~/Documents/integ-life/integ-games/node_modules`. Browser tests serially.
+  stop it when done. Playwright: `NODE_PATH=~/fast/integ-life/integ-games/node_modules`. Browser tests serially.
 - Do not weaken a test or a tolerance to get green.
 
 ## Verify before reporting

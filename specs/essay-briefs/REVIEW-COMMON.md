@@ -16,7 +16,7 @@ You review **and fix** one essay, working only inside its directory. Do not comm
 clean anything: other agents are working in this repository and one is committing. Leave your changes in the
 working tree. Scratch files go in `/tmp/agent-tasks/essays/review-<slug>/`. Local server on the port given in
 your task (`python3 -m http.server <port> --bind 127.0.0.1` from the repo root), stopped when done. Playwright:
-`NODE_PATH=~/Documents/integ-life/integ-games/node_modules`.
+`NODE_PATH=~/fast/integ-life/integ-games/node_modules`.
 
 ## What to do, in this order
 1. **Read the essay as its reader, in Chinese, top to bottom in a browser at 1280**, using every model as the

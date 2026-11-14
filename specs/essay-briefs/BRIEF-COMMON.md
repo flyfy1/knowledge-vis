@@ -108,7 +108,7 @@ textbook term.
 - Local server: use the port given in your task (`python3 -m http.server <port> --bind 127.0.0.1` from the repo
   root). Stop it when done; do not touch other ports.
 - Playwright is not installed in this repo: run node with
-  `NODE_PATH=~/Documents/integ-life/integ-games/node_modules`.
+  `NODE_PATH=~/fast/integ-life/integ-games/node_modules`.
 - Do not weaken a test or widen a tolerance to make it pass; if a number in the prose does not match the model,
   fix the prose or the model.
 

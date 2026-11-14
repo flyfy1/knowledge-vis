@@ -60,7 +60,7 @@ HOME_TEST_URL=http://127.0.0.1:18871/ node tests/home-concept-search.cjs   # 浏
 - 新增长文（一篇讲透一个领域）：标准、文件布局与登记步骤见 [specs/essays.md](specs/essays.md)。
 - 给文章页加概念、加分区：`node scripts/atlas-import-registry.cjs <页面目录>`、`--add-region`，细则见 [specs/atlas-search-index.md](specs/atlas-search-index.md)。
 
-- Playwright 不在本仓库，运行时加上 `NODE_PATH=~/Documents/integ-life/integ-games/node_modules`。
+- Playwright 不在本仓库，运行时加上 `NODE_PATH=~/fast/integ-life/integ-games/node_modules`。
 - **浏览器测试串行跑**，不要并行。
 - 大批测试会改写 `leetcode/*/tests/evidence` 和 `biology/cells/photosynthesis/tests/evidence`。每跑完一次就 `git checkout` 这两处，除非这次就是要更新证据。
 - 数值结论（如「误差在 ±X% 以内」）要用细扫测试钉住。**不要为了让测试通过而放宽容差或加粗网格**：先查结论本身对不对。
