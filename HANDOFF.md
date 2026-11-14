@@ -1,6 +1,6 @@
 # HANDOFF.md — 开工前先读
 
-最后更新：2026-11-12，由 Claude Code 主会话（team lead）在食物分区前两篇长文（酱豆腐、酱油）上线后更新。
+最后更新：2026-11-14，由存储系列登记 Agent（Claude Code）在 S1、S2 上线后更新第二部分。
 
 这份文件有两部分：
 
@@ -63,11 +63,11 @@
 
 ---
 
-## 第二部分：现状（2026-11-12）
+## 第二部分：现状（2026-11-14）
 
 ### 已上线
 
-线上内容到 `03cfdbb3` 为止（其后只有本文件的更新）（https://visual.integ.life），已推送到 `origin/main`。
+线上内容到 `bb361d4b` 为止（其后只有本文件的更新）（https://visual.integ.life），已推送到 `origin/main`。
 
 - **长文 13 篇加《稀缺》**，都是中英双语、经过独立评审。清单见 `pages.config.js` 的 `KNOWLEDGE_ESSAYS`。
 - **食物分区**（Yangyu 2026-11-12 提出）：新分类 `food`（饮食与风味）、子主题 `flavor`（味道从哪来），第一篇是 `food/flavor/why-fermented-tofu-tastes-good/`（酱豆腐为什么好吃，兼讲松花蛋）。图谱里归在 `matter` 分区，后续食物长文导入时继续用 `--region matter`。任务书在 [specs/essay-briefs/TASK-why-fermented-tofu-tastes-good.md](specs/essay-briefs/TASK-why-fermented-tofu-tastes-good.md)，可作为下一篇的模板。第二篇是 `food/flavor/how-soy-sauce-gets-its-flavor/`（酱油是怎么酿出来的），任务书 [specs/essay-briefs/TASK-how-soy-sauce-gets-its-flavor.md](specs/essay-briefs/TASK-how-soy-sauce-gets-its-flavor.md)。草稿分支 `drafts/food-20261112` 上的两篇都已被 `main` 上的版本取代。它的第 7 章有一张「谁来切、切什么、靠什么挡住腐败」的表（酱油、奶酪、火腿、鱼露、纳豆、臭豆腐），每一行都可以是这个分区的下一篇。
@@ -103,7 +103,7 @@
 
 ### 下一步，按顺序
 
-1. **先处理搜索索引上限**。`atlas/search-index.js` 是 191,319 / 200,000 字节（两篇食物长文各用掉五六千），**下一篇长文登记不进去**，必须先做这一步。要么压缩索引，要么提高上限并说明理由；不要为了过测试悄悄改上限。
+1. ~~搜索索引上限~~：已解决。搜索在 `4afe29f3` 改为按分区分片（`search/chunks/*.js`，单片上限 60,000 字节），不再有 200 KB 总上限；2026-11-14 登记存储两篇后共 226,215 字节。
 2. **17 篇草稿走完流水线**：Haiku 翻译 → 独立评审 → 登记（[specs/essays.md](specs/essays.md)、`scripts/atlas-import-registry.cjs`）→ 推送部署。
 3. **排队的深度长文**：规格在 [specs/essay-briefs/QUEUE-DEEP2.md](specs/essay-briefs/QUEUE-DEEP2.md) 第 1–6 节（经济怎么衡量、内存层级、电磁波、反应方向、化学键、衍生品定价），第 8 节之后是待写规格的清单。
 4. **缺失的前置页面**。各草稿报告里重复最多的：模运算与有限域、吉布斯自由能与化学势、弹性与边际收益、麦克斯韦–玻尔兹曼分布、通胀怎么测量、Fick 扩散、互信息与 KL 散度。缺口审计的完整结论在 [specs/essay-briefs/GAP-AUDIT-NOTES.md](specs/essay-briefs/GAP-AUDIT-NOTES.md)。
