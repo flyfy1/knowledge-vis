@@ -248,7 +248,8 @@ chapters.push(
   ['SATA 会被淘汰吗', 'is SATA dead', SATA + '#ch9'],
   ['硬盘规格怎么看', 'how to read a hard drive spec sheet', SATA + '#ch10'],
 );
-// Storage series S3 (2026-11-14): SAS. SAS 和 SATA 能混用吗 stays on S1 #ch7, which owns it.
+// Storage series S3 (2026-11-14): SAS. SAS 和 SATA 能混用吗 and SAS 盘能插 SATA 口吗 moved here from S1 #ch7 on 2026-11-15:
+// S3 #ch7 (why a SAS bay takes a SATA drive) answers them directly.
 const SAS = 'computing/systems/how-sas-works/';
 chapters.push(
   ['SAS 和 SATA 区别', 'SAS vs SATA', SAS + '#ch1'],
@@ -265,6 +266,27 @@ chapters.push(
   ['24G SAS', '24G SAS speed', SAS + '#ch9'],
   ['SAS 会被淘汰吗', 'is SAS dead', SAS + '#ch10'],
   ['SAS 规格怎么看', 'how to read SAS specs', SAS + '#ch11'],
+  ['SAS 和 SATA 能混用吗', 'can SAS and SATA mix', SAS + '#ch7'],
+  ['SAS 盘能插 SATA 口吗', 'SAS drive in SATA port', SAS + '#ch7'],
+);
+// Storage series S4 (2026-11-15): USB drives. 移动硬盘盒怎么工作 stays on S1 #ch7, which owns it.
+const USB = 'computing/systems/how-usb-drives-talk/';
+chapters.push(
+  ['移动硬盘是怎么工作的', 'how does a USB external drive work', USB + '#ch1'],
+  ['硬盘盒', 'SSD enclosure', USB + '#ch1'],
+  ['USB 2.0 为什么这么慢', 'USB 2.0 max speed', USB + '#ch2'],
+  ['USB 3.2 Gen 2x2 是什么', 'USB 3.2 Gen 2x2', USB + '#ch3'],
+  ['40Gbps', 'USB 3.0 vs 3.1 vs 3.2', USB + '#ch3'],
+  ['Bulk-Only 是什么', 'USB bulk-only transport', USB + '#ch4'],
+  ['什么是 UASP', 'what is UASP', USB + '#ch5'],
+  ['移动硬盘为什么这么慢', 'why is my external SSD slow', USB + '#ch6'],
+  ['移动固态为什么跑不满', 'USB enclosure bottleneck', USB + '#ch6'],
+  ['硬盘盒发热降速', 'external SSD thermal throttling', USB + '#ch7'],
+  ['USB4 和雷电区别', 'Thunderbolt vs USB4', USB + '#ch8'],
+  ['U 盘为什么慢', 'why is my USB flash drive slow', USB + '#ch9'],
+  ['SD 卡速度', 'SD card speed', USB + '#ch9'],
+  ['USB4 v2 是什么', 'fastest USB in 2026', USB + '#ch10'],
+  ['移动硬盘参数怎么看', 'how to read USB speed labels', USB + '#ch11'],
 );
 for (const [zh, en, href] of chapters) for (const q of [zh, en]) {
   const hit = first(q);

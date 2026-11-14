@@ -161,6 +161,7 @@ window.KNOWLEDGE_ESSAYS = [
   "what-a-drive-is-made-of",
   "how-sata-works",
   "how-sas-works",
+  "how-usb-drives-talk",
   "how-an-economy-is-measured",
   "scarcity-moves"
 ];
@@ -421,6 +422,16 @@ window.KNOWLEDGE_PAGES = [
     },
     tags: [{ zh: "SAS", en: "SAS" }, { zh: "SCSI", en: "SCSI" }, { zh: "存储系统", en: "Storage Systems" }, { zh: "串行链路", en: "Serial Links" }, { zh: "长文", en: "Long-form Essay" }],
     category: "computing", subtopic: "systems", stage: "university", status: "live", path: "computing/systems/how-sas-works/"
+  },
+  {
+    slug: "how-usb-drives-talk",
+    title: { zh: "移动硬盘为什么跑不满", en: "Why a USB Drive Never Hits Its Label" },
+    desc: {
+      zh: "一块能跑 7 GB/s 的 NVMe 固态装进 USB 硬盘盒，为什么只剩几百 MB/s 到两三 GB/s？包装上的 Gen 2×2、40Gbps 说的是什么？九个可以拖动的模型：USB 2.0 的微帧、从名字到线速、Bulk-Only 的一问一答、UASP 的队列、桥接链条上的瓶颈、发热降速、雷电与 USB4 的 PCIe 隧道、U 盘里的几颗闪存。",
+      en: "Why does a 7 GB/s NVMe SSD in a USB enclosure measure a few hundred MB/s to two or three GB/s, and what do “Gen 2×2” and “40Gbps” on the box mean? Nine models you can drag: the USB 2.0 microframe, from a name to the line rate, Bulk-Only’s one-at-a-time exchange, UASP’s queue, the bottleneck along the bridge chain, thermal throttling, the PCIe tunnel of Thunderbolt and USB4, and the few dies inside a flash drive."
+    },
+    tags: [{ zh: "USB", en: "USB" }, { zh: "存储系统", en: "Storage Systems" }, { zh: "移动硬盘", en: "External Drives" }, { zh: "雷电与 USB4", en: "Thunderbolt and USB4" }, { zh: "长文", en: "Long-form Essay" }],
+    category: "computing", subtopic: "systems", stage: "university", status: "live", path: "computing/systems/how-usb-drives-talk/"
   },
   {
     slug: "how-an-economy-is-measured",

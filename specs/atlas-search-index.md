@@ -288,6 +288,15 @@ anchor and aliases. It is a schema-2 fragment `atlas/graph/lessons/<slug>.json`:
   stay on S1 #ch7; S3 took no alias from S1, S2 or why-nvme-is-fast. `tests/concept-search.cjs` pins 14 zh/en pairs.
   The search chunks total 232,237 bytes; computing.js is 44,843 of 60,000.
 
+- Storage series S4 (2026-11-15): how-usb-drives-talk (11 concepts) → computing. 15 hand-written edges, all in the S4
+  fragment: 5 between chapters (#ch4 → #ch5 and #ch9, #ch1 and #ch3 → #ch6, #ch6 → #ch8), 1 from S1 (#ch7 → #ch1), 2 from
+  S2 (#ch3 → #ch3, #ch10 → #ch6), 2 from S3 (#ch2 → #ch6, #ch1 → #ch5), 5 from why-nvme-is-fast (#ch2 → #ch4, #ch5 and #ch8;
+  #ch5 → #ch9; #ch6 → #ch6). One word, one owner: SAS 和 SATA 能混用吗, SAS 盘能插 SATA 口吗, can SAS and SATA mix and SAS drive
+  in SATA port moved from S1 #ch7 to S3 #ch7 (both fragments re-imported, edges kept); 移动硬盘盒怎么工作 stays on S1 #ch7.
+  S4 took no alias from another page. `tests/concept-search.cjs` pins 15 zh/en pairs for S4 plus the moved pair. The
+  computing region passed the 45,000-byte split, so search/chunks/computing.js became computing-1.js (44,936) and
+  computing-2.js (7,216); the build reports 239,592 bytes with the manifest.
+
 ### Commands for the integrator
 
 ```sh

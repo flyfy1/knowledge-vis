@@ -1,11 +1,11 @@
 {
   "counts": {
     "groups": 11,
-    "nodes": 435,
-    "edges": 596,
+    "nodes": 446,
+    "edges": 611,
     "trails": 14,
     "questions": 124,
-    "fragments": 195
+    "fragments": 196
   },
   "conflicts": [],
   "suspendedEdges": [],
@@ -529,6 +529,122 @@
       "page": "acid-base-equilibrium",
       "taughtBy": [
         "weak-acid-equilibrium"
+      ]
+    },
+    {
+      "concept": "usb-storage-layers",
+      "page": "what-a-drive-is-made-of",
+      "taughtBy": [
+        "block-device-lba-sectors",
+        "hdd-seek-rotation-latency",
+        "smr-shingled-recording-hamr",
+        "nand-cell-levels-slc-qlc",
+        "flash-endurance-ecc-tbw",
+        "flash-translation-layer-gc",
+        "storage-interface-layer-map",
+        "ssd-vs-hdd-latency-bandwidth",
+        "storage-frontier-2026"
+      ]
+    },
+    {
+      "concept": "usb-naming-line-rates",
+      "page": "how-sata-works",
+      "taughtBy": [
+        "sata-protocol-layers",
+        "parallel-ata-timing-skew",
+        "8b10b-encoding",
+        "sata-fis-frames",
+        "ncq-rotational-scheduling",
+        "sata-link-power-hotplug",
+        "port-multiplier-esata-msata",
+        "why-sata-stopped-at-6g",
+        "sata-frontier-2026",
+        "reading-a-drive-spec-sheet"
+      ]
+    },
+    {
+      "concept": "usb-bulk-only-transport",
+      "page": "why-nvme-is-fast",
+      "taughtBy": [
+        "nvme-protocol-overhead",
+        "nvme-pcie-lanes-littles-law",
+        "nvme-64k-queues",
+        "nvme-ring-doorbell-dma",
+        "ssd-nand-channel-parallelism",
+        "ssd-write-amplification-trim",
+        "nvme-polling-vs-interrupts",
+        "nvme-pcie6-zns-gpudirect"
+      ]
+    },
+    {
+      "concept": "uasp-command-queuing",
+      "page": "why-nvme-is-fast",
+      "taughtBy": [
+        "nvme-protocol-overhead",
+        "nvme-pcie-lanes-littles-law",
+        "nvme-64k-queues",
+        "nvme-ring-doorbell-dma",
+        "ssd-nand-channel-parallelism",
+        "ssd-write-amplification-trim",
+        "nvme-polling-vs-interrupts",
+        "nvme-pcie6-zns-gpudirect"
+      ]
+    },
+    {
+      "concept": "usb-bridge-translation-bottleneck",
+      "page": "what-a-drive-is-made-of",
+      "taughtBy": [
+        "block-device-lba-sectors",
+        "hdd-seek-rotation-latency",
+        "smr-shingled-recording-hamr",
+        "nand-cell-levels-slc-qlc",
+        "flash-endurance-ecc-tbw",
+        "flash-translation-layer-gc",
+        "storage-interface-layer-map",
+        "ssd-vs-hdd-latency-bandwidth",
+        "storage-frontier-2026"
+      ]
+    },
+    {
+      "concept": "usb-bridge-translation-bottleneck",
+      "page": "why-nvme-is-fast",
+      "taughtBy": [
+        "nvme-protocol-overhead",
+        "nvme-pcie-lanes-littles-law",
+        "nvme-64k-queues",
+        "nvme-ring-doorbell-dma",
+        "ssd-nand-channel-parallelism",
+        "ssd-write-amplification-trim",
+        "nvme-polling-vs-interrupts",
+        "nvme-pcie6-zns-gpudirect"
+      ]
+    },
+    {
+      "concept": "thunderbolt-usb4-pcie-tunnel",
+      "page": "why-nvme-is-fast",
+      "taughtBy": [
+        "nvme-protocol-overhead",
+        "nvme-pcie-lanes-littles-law",
+        "nvme-64k-queues",
+        "nvme-ring-doorbell-dma",
+        "ssd-nand-channel-parallelism",
+        "ssd-write-amplification-trim",
+        "nvme-polling-vs-interrupts",
+        "nvme-pcie6-zns-gpudirect"
+      ]
+    },
+    {
+      "concept": "flash-drive-sd-card-speed",
+      "page": "why-nvme-is-fast",
+      "taughtBy": [
+        "nvme-protocol-overhead",
+        "nvme-pcie-lanes-littles-law",
+        "nvme-64k-queues",
+        "nvme-ring-doorbell-dma",
+        "ssd-nand-channel-parallelism",
+        "ssd-write-amplification-trim",
+        "nvme-polling-vs-interrupts",
+        "nvme-pcie6-zns-gpudirect"
       ]
     },
     {
@@ -1539,10 +1655,10 @@
     }
   ],
   "unknownAliasIds": [],
-  "sizeBytes": 822804,
+  "sizeBytes": 842233,
   "questionsBytes": 173024,
-  "combinedBytes": 995828,
-  "indexBytes": 101246,
+  "combinedBytes": 1015257,
+  "indexBytes": 103238,
   "chunkBytes": {
     "math.nodes": 51664,
     "math.edges": 89636,
@@ -1568,8 +1684,8 @@
     "earth.nodes": 25871,
     "earth.edges": 19025,
     "earth.questions": 6822,
-    "computing.nodes": 62871,
-    "computing.edges": 42762,
+    "computing.nodes": 72068,
+    "computing.edges": 49765,
     "computing.questions": 2766,
     "society.nodes": 58077,
     "society.edges": 41022,

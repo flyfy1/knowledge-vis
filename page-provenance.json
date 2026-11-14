@@ -3125,7 +3125,7 @@
       "developer": "Antigravity",
       "edition": "antigravity-why-nvme-is-fast-20261114",
       "kind": "original",
-      "sourceRevision": "ee47aac908295e07b35b41d1fa6cb71fb5c00dbb",
+      "sourceRevision": "5afdd0325e169533f59cc77515991e612b79aca9",
       "scope": {
         "zh": "整篇长文从零编写：延迟拆解、总线宽度与利特尔法则、64K 并行队列、环形队列与门铃 DMA、多通道 NAND 并行、写放大与 Trim、轮询与中断，以及 PCIe 6.0 与 GPUDirect 前沿",
         "en": "Whole essay written from scratch: latency breakdown, bus width and Little's Law, 64K parallel queues, SQ/CQ ring buffers and DMA, NAND channel parallelism, write amplification and Trim, polling vs. interrupts, and PCIe 6.0 / GPUDirect frontier"
@@ -3133,14 +3133,14 @@
       "originalAuthorship": "written from scratch in zh and en by Antigravity (gemini-4-hydrogen), 2026-11-14; verified with models.cjs, browser.cjs, and canvas-text-overlap --sweep, see BRIEF.md",
       "path": "computing/systems/why-nvme-is-fast/index.html",
       "originalSourceRevision": "fb63041c849aaff247f0c5a2fd866596b3da9ce9",
-      "previousSourceRevision": "fb63041c849aaff247f0c5a2fd866596b3da9ce9",
-      "provenanceEvidence": "specs/reviews/why-nvme-is-fast-alias-move-20261114.md"
+      "previousSourceRevision": "ee47aac908295e07b35b41d1fa6cb71fb5c00dbb",
+      "provenanceEvidence": "specs/reviews/why-nvme-is-fast-cache-key-20261115.md"
     },
     "what-a-drive-is-made-of": {
       "developer": "Claude Code",
       "edition": "claude-code-what-a-drive-is-made-of-20261114",
       "kind": "original",
-      "sourceRevision": "d8ffc61dbf95b2962500cfd727ac33bca8ddce7f",
+      "sourceRevision": "5afdd0325e169533f59cc77515991e612b79aca9",
       "scope": {
         "zh": "整篇长文从零编写：编了号的扇区与 512e、寻道与转动、叠瓦记录、闪存单元的电压层、纠错码与寿命、闪存翻译层、接口分层地图、一次读取的时间、存储前沿",
         "en": "Whole essay written from scratch: numbered sectors and 512e, seek and rotation, shingled recording, voltage levels in a flash cell, error correction and lifetime, the flash translation layer, the layered interface map, where the time of one read goes, the storage frontier"
@@ -3148,13 +3148,13 @@
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5); English copy drafted by Claude Code (claude-haiku-5-5); independently reviewed 2026-11-14 by a separate Claude Code session (same model), see the page BRIEF.md; cross-model review pending",
       "path": "computing/systems/what-a-drive-is-made-of/index.html",
       "originalSourceRevision": "745f535e962557f640b39422e4b9d9db7afe2f6f",
-      "previousSourceRevision": "12590007e23947f6a146273c2b672aa57a7d9b25"
+      "previousSourceRevision": "d8ffc61dbf95b2962500cfd727ac33bca8ddce7f"
     },
     "how-sata-works": {
       "developer": "Claude Code",
       "edition": "claude-code-how-sata-works-20261114",
       "kind": "original",
-      "sourceRevision": "d8ffc61dbf95b2962500cfd727ac33bca8ddce7f",
+      "sourceRevision": "5afdd0325e169533f59cc77515991e612b79aca9",
       "scope": {
         "zh": "整篇长文从零编写：SATA、ATA 与 AHCI 的分层、并行总线的时序预算、8b/10b 编码与加扰、一条读命令的帧、NCQ、热插拔与链路省电、端口倍增器与 eSATA、为什么停在 6 Gb/s、SATA 前沿",
         "en": "Whole essay written from scratch: the SATA, ATA and AHCI layers, the timing budget of a parallel bus, 8b/10b encoding and scrambling, the frames of one read command, NCQ, hot plug and link power, port multipliers and eSATA, why SATA stopped at 6 Gb/s, the SATA frontier"
@@ -3162,13 +3162,13 @@
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5); English copy drafted by Claude Code (claude-haiku-5-5); independently reviewed 2026-11-14 by a separate Claude Code session (same model), see the page BRIEF.md; cross-model review pending",
       "path": "computing/systems/how-sata-works/index.html",
       "originalSourceRevision": "d1df3df80d6feef8082b1c6c7601b1af1397965a",
-      "previousSourceRevision": "12590007e23947f6a146273c2b672aa57a7d9b25"
+      "previousSourceRevision": "d8ffc61dbf95b2962500cfd727ac33bca8ddce7f"
     },
     "how-sas-works": {
       "developer": "Claude Code",
       "edition": "claude-code-how-sas-works-20261114",
       "kind": "original",
-      "sourceRevision": "d8ffc61dbf95b2962500cfd727ac33bca8ddce7f",
+      "sourceRevision": "5afdd0325e169533f59cc77515991e612b79aca9",
       "scope": {
         "zh": "整篇长文从零编写：SAS 的分层与 SCSI 命令、READ 命令块与 LUN、一次 SSP 读的帧和连接、双端口与多路径的可用度、扩展器扇出、宽端口、SAS 口为什么认 SATA 盘、T10 PI 端到端校验、24G SAS 的编码与纠错、SAS 前沿",
         "en": "Whole essay written from scratch: the SAS layers and SCSI commands, the READ command block and LUNs, the frames and connections of one SSP read, dual-port and multipath availability, expander fan-out, wide ports, why a SAS port accepts a SATA drive, T10 PI end-to-end protection, 24G SAS coding and error correction, the SAS frontier"
@@ -3176,7 +3176,21 @@
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5); English copy drafted by Claude Code (claude-haiku-5-5); independently reviewed 2026-11-14 by a separate Claude Code session (same model), see the page BRIEF.md; cross-model review pending",
       "path": "computing/systems/how-sas-works/index.html",
       "originalSourceRevision": "122add13f0ad4fae1a7fcf9275d66d686a0d2b91",
-      "previousSourceRevision": "122add13f0ad4fae1a7fcf9275d66d686a0d2b91"
+      "previousSourceRevision": "d8ffc61dbf95b2962500cfd727ac33bca8ddce7f"
+    },
+    "how-usb-drives-talk": {
+      "developer": "Claude Code",
+      "edition": "claude-code-how-usb-drives-talk-20261115",
+      "kind": "original",
+      "sourceRevision": "5afdd0325e169533f59cc77515991e612b79aca9",
+      "scope": {
+        "zh": "整篇长文从零编写：USB 存储在协议地图上的位置、USB 2.0 的主机调度与微帧、USB 命名与线速、Bulk-Only 的 CBW 与 CSW、UASP 的命令队列、桥接芯片的 SCSI 翻译与瓶颈链条、移动固态的发热降速、雷电与 USB4 的 PCIe 隧道、U 盘和存储卡、USB 存储前沿",
+        "en": "Whole essay written from scratch: where USB storage sits on the protocol map, USB 2.0 host scheduling and microframes, USB naming and line rates, Bulk-Only CBW and CSW, UASP command queuing, the bridge chip's SCSI translation and the bottleneck chain, thermal throttling of external SSDs, the PCIe tunnel of Thunderbolt and USB4, flash drives and memory cards, the USB storage frontier"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5); English copy drafted by Claude Code (claude-haiku-5-5); independently reviewed 2026-11-14 by a separate Claude Code session (same model), see the page BRIEF.md; cross-model review pending",
+      "path": "computing/systems/how-usb-drives-talk/index.html",
+      "originalSourceRevision": "16ff77685e808eec3fbe130b1774f1fc67f02fef",
+      "previousSourceRevision": "16ff77685e808eec3fbe130b1774f1fc67f02fef"
     }
   },
   "exceptions": {
