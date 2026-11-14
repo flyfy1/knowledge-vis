@@ -219,7 +219,7 @@ function SPEC() { return M.SPEC; }
     const pp = P(), r = A.run(d(), p(), pp);
     put('#avMo', t('u.hours', { v: fmt(pp.ctrlMtbf, 0) })); put('#avRo', t('u.hours', { v: fmt(pp.mttr, 0) })); put('#avFo', t('u.sec', { v: fmt(pp.failoverS, 0) }));
     put('#avTot', t('u.minyr', { v: fmt(r.total, r.total >= 10 ? 0 : 1) })); put('#avNines', t('ch4.unit.n', { v: fmt(r.nines, 1) }));
-    put('#avTop', t('ch4.part.' + r.top)); put('#avUse', t('ch4.unit.p', { v: r.usable }));
+    put('#avTop', t('ch4.part.' + r.top)); put('#avUse', t(r.usable === 1 ? 'ch4.unit.p1' : 'ch4.unit.p', { v: r.usable }));
     const s = M.say.avail(d(), p(), pp), v = s.v;
     putHTML('#avSay', t(s.key, { total: dur(v.total * 60), nines: fmt(v.nines, 1), top: t('ch4.part.' + v.top) }));
   }
@@ -255,7 +255,7 @@ function SPEC() { return M.SPEC; }
   });
   function text() {
     const N = +sN.value, r = F.run(N, k(), wk(), l(), g());
-    put('#fnNo', t('ch5.unit.n', { v: N }));
+    put('#fnNo', t(N === 1 ? 'ch5.unit.n1' : 'ch5.unit.n', { v: N }));
     put('#fnDone', t('u.MBps', { v: fmt(r.doneMB, 0) })); put('#fnCap', t('u.MBps', { v: fmt(r.capMB, 0) }));
     put('#fnRho', r.saturated ? pct(1) : pct(r.rho, r.rho < 0.1 ? 1 : 0)); put('#fnWait', isFinite(r.waitUs) ? dur(r.waitUs * 1e-6) : '∞');
     const s = M.say.fan(N, k(), wk(), l(), g()), v = s.v;
@@ -299,7 +299,7 @@ function SPEC() { return M.SPEC; }
     step(dt) { if (playing && !reduce) { W.step(S, dt * span / 4); draw(); } else if (this.dirty) { draw(); this.dirty = false; } }
   });
   function text() {
-    put('#wdKo', t('ch5.unit.n', { v: K() }));
+    put('#wdKo', t(K() === 1 ? 'ch5.unit.n1' : 'ch5.unit.n', { v: K() }));
     put('#wdMB', t('u.MBps', { v: fmt(meas.MBps, 0) })); put('#wdPer', t('u.MBps', { v: fmt(meas.perDrive, 0) }));
     put('#wdUtil', pct(meas.util)); put('#wdWait', waitText(meas.waitUs));
     const s = M.say.wide(meas, K(), LANES), v = s.v;
@@ -376,7 +376,7 @@ function SPEC() { return M.SPEC; }
   });
   function text() {
     const r = F.run(ber(), b(), k());
-    put('#fcEo', sci(ber())); put('#fcBo', t('ch9.unit.b', { v: b() }));
+    put('#fcEo', sci(ber())); put('#fcBo', t(b() === 1 ? 'ch9.unit.b1' : 'ch9.unit.b', { v: b() }));
     put('#fcP', sci(r.pCw)); put('#fcEvery', dur(r.everyS)); put('#fcOk', pct(r.singleOk)); put('#fcNo', dur(r.noFecEveryS));
     const s = M.say.fec(ber(), b(), k()), v = s.v;
     putHTML('#fcSay', t(s.key, { every: dur(v.every), ok: pct(v.ok), nofec: dur(v.nofec), p: sci(v.p) }));

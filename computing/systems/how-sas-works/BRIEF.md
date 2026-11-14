@@ -1,10 +1,10 @@
 # BRIEF — 服务器硬盘为什么用 SAS (Why Server Drives Use SAS)
 
 Built-By: Claude Code (claude-opus-5-5)
-Verified-By: self-check by builder (node model test, browser test zh at 1280/390/320 and reduced motion, canvas sweep, screenshots at 1280/390/320 and reduced motion); independent review pending
+Verified-By: self-check by builder (node model test, browser test zh at 1280/390/320 and reduced motion, canvas sweep, screenshots at 1280/390/320 and reduced motion); Claude Code (claude-opus-5-5), independent review in a separate session 2026-11-14 (standards fields, model derivations, frontier facts, zh+en text, layout; see Review)
 Category: computing 计算机 / subtopic systems 系统 · Stage: university
 Series: storage series S3 (`specs/essay-briefs/TASK-storage-series.md`)
-Format: long interactive essay. Chinese complete; copy.en.js is a same-keys stub (`enStub`), translation later.
+Format: long interactive essay. Chinese complete; English translated (enStub removed) and reviewed 2026-11-14.
 Files: index.html, copy.zh.js, copy.en.js (stub), models.js, app.js, REGISTRY.json, tests/models.cjs, tests/browser.cjs
 
 ## The one question
@@ -75,7 +75,7 @@ Key numbers (all from `prose()`):
   - 24 HDDs reading sequentially want 6,840 MB/s against a 4,592 MB/s 12G ×4 uplink, which saturates at 16 drives
   - 96 HDDs reading randomly keep the uplink 1.9% busy
 - **Wide port:**
-  - one 24G SSD gets 2,274 MB/s, and four lanes carry 9,103 MB/s
+  - one 24G SSD gets 2,276 MB/s (= one lane), and four lanes carry 9,105 MB/s (throughput measured from lane busy time since the review)
   - 12 HDDs at 74% utilisation wait 17.8 µs, and 24 HDDs wait 571 µs
 - **T10 PI:**
   - the first missed triple is bits (0, 35, 3,281)
@@ -173,3 +173,72 @@ copy.en.js is a same-keys copy of copy.zh.js with `window.ESSAY_COPY.enStub = tr
 page shows Chinese, and the tests skip the English sweep and the registry-en title match. Translate every value,
 keep every `{placeholder}` and HTML tag, then delete the `enStub` line. The English title must equal
 REGISTRY.json `title.en` ("Why Server Drives Use SAS"). Regenerate nothing by script after translation starts.
+
+## Review
+
+Reviewer: Claude Code (claude-opus-5-5), separate session, did not build the page. Date: 2026-11-14.
+
+Scope: whole essay in zh and en; every model driven in a browser (1280 en/zh, 390 zh, 320 en); every prose
+number against `prose()` and its test pin; standards facts and frontier facts against primary sources.
+
+Checks (independently re-derived or opened):
+- READ(6)/(10)/(16) from SBC field knowledge (the Seagate manual was not re-opened in review): opcodes 08h/28h/88h; LBA 21 bits in bytes 1–3 / 32 bits
+  in 2–5 / 64 bits in 2–9; length byte 4 (0 = 256) / bytes 7–8 / 10–13. SSP COMMAND IU 28 B, attribute in byte 9
+  bits 2–0 (SIMPLE 000b, HOQ 001b, ORDERED 010b, as SAM); iSCSI BHS checked against RFC 7143 §11.3 (opened): opcode 01h, F|R|W|ATTR in byte 1 (C1h for a
+  SIMPLE read), LUN 8–15, expected length 20–23, CDB 32–47.
+- One 4 KiB read at 24G by hand: 64 + 4 × 36 + 4096 + 60 = 4,364 B; 4,364 / 2,400 B/µs + 2 × 0.5 µs = 2.818 µs;
+  1.707 / 2.818 = 61%, 354.8k reads/s; persistent 4096 / 4364 = 94%.
+- Link rates: 3/6/12 Gbaud × 8/10 = 300/600/1,200 MB/s; 22.5 × 128/150 = 19.2 Gb/s = 2,400 MB/s. Kioxia 24G SAS
+  tech brief (2023) confirms 22.5 Gb/s, 128b/150b = 128b/130b + 20-bit FEC, 2.4 GB/s per lane.
+- RS(30,26): Xia et al. (SIJ 2018, full PDF via Wayback, read in full) state "RS (30, 26), T=2, 5-bit/symbol",
+  150-bit codeword. (The review task said GF(2^10); that is the 802.3bj 100GbE code, not SAS-4. The page is right.)
+  Binomial by hand: C(30,3)(5e-6)^3 = 5.1e-13 per codeword; 1.5e8 codewords/s gives one every 3.7 h; no FEC one
+  bad packet every 44.4 µs.
+- Availability by hand: path unavailability 1.147e-4 = 60.3 min/yr + drive 5.05 = 65 min; two paths 0.41 s +
+  5.05 min + 2 × 0.1256 failures/yr × 30 s = 7.5 s (page: 8 s), total 5.2 min. Exos AFR 0.35% = MTBF 2.5 M h (data sheet opened).
+- Erlang C: 24 HDD × 2,174 IO/s vs 4 / 114.17 µs gives cap 4,592 MB/s, saturation at 16.1 drives (16.2 / 16.0
+  when the tuned open/close time is halved / doubled, so the prose now says "about 16"). 12 HDDs: Erlang C wait
+  56 µs vs simulation 17.8 µs, so "Erlang C gives a longer wait" holds.
+- CRC-16/T10-DIF: own Python implementation, check value D0DB; all 4096 single-bit syndromes distinct and
+  non-zero; first undetected triple (bit 0 = MSB of byte 0) is (0, 35, 3281). Polynomial has 11 terms (odd).
+- STP: page agrees with S1 (direct attach speaks SATA; STP only through an expander).
+- Frontier: t10.org/drafts.htm (SAS-5 INCITS 561 r04 2026-05-11 INCITS Approval; SNT INCITS 584 r05 2026-04-22
+  Development; SAS-4.1 567-2023, SPL-5 554-2023); pr.com 24G+ release 2024-07-23 (five features incl. persistent
+  connections; SAS-4.1 listed); STA plugfest release 2026-10-27 (2026-09-27..30, SNT, SBC-5, managed cables);
+  Blocks & Files 2023-11-23 (Brett: no 48G, 24G+ at 22.5 Gbps); Kioxia PM7-R page (4,150/4,200 MB/s, 720K IOPS).
+- Siblings: no exact search-word overlap with what-a-drive-is-made-of, how-sata-works, why-nvme-is-fast; all
+  sibling links and anchors (#ch3 #ch4 #ch5 #ch7 #ch8, inside-a-phone #ecc, poisson-process) exist; English
+  titles match pages.config.js. doc.title/doc.desc equal REGISTRY title/desc in both languages.
+
+Changes:
+- Facts: ch7.p3 said the second path "is physically connected" to a SATA drive (it is not: no second port; affiliation
+  is about sharing through one expander). ch5.p1 had expanders "report via SMP"; now IDENTIFY + SMP DISCOVER.
+  ch9.p2 "more than 7 bits" -> "7 or more" (Xia). ch9.p3 attributed the interleaving 1e-14 result to EMC's channel;
+  it is HPE's long channel (2e-9 -> ~1e-14). ch9.law implied the encoding alone doubled the rate. ch8.p3 "the extra
+  bytes are these tags" for 528/4224 -> only 520/4160 are 8 B per 512. ch11.q3 said PI covers only misplaced
+  writes. ch6.limit "SAS-4 added fairness arbitration" (unsourced) -> arbitration wait time in OPEN frames.
+  ch10.demo3 Blocks & Files wording (no 24G HDDs, few SSDs). ch5.p3 "exceed by 2.0 times" -> "ask for 2.0 times";
+  "the same drives get 2,276 each" -> per-drive ceiling.
+- Model: `WIDE.measure` counted completed transfers in a 20 ms window, so 24 HDDs read 4,601 MB/s, above the
+  4,592 MB/s cap chapter 5 quotes. It now measures from lane busy time; pins updated (w1/wLane 2,276, w4/w6 9,105,
+  wh 3,413, wh24 4,592) and a new test pins sim throughput = ch5 cap. Note: with busy-time accounting a
+  saturated port equals lanes × bytes / hold by construction, so that pin guards consistency, not independent
+  corroboration; the simulation's own evidence is the wait times and the unsaturated 12-HDD throughput.
+- English: ch1.law "outlived" mistranslation; hero.sub; "9s" -> "nines"; singular "1 drive / 1 bit / 1 path"
+  (new keys in both copies); "unit symptom" -> "syndrome"; ch4 sliders overlapped at 1280 (row split in index.html).
+- Live sentences: ch4.say.failover attached the total downtime to the switchover pause (now separate clauses);
+  zh ch5.say.sat "超出 1.5 倍" -> "需求是上限的 1.5 倍"; ch4.law "hours to seconds" now names the all-paths-down term.
+- Tests: says() pins for the corrected facts; browser test clicks the visible labels (forced clicks on 1-px inputs
+  were flaky under smooth scroll). footer.ai updated in both languages.
+
+- zh pass (coordinator follow-up): copy.zh.js read in full, every key. Fixed ch1.law "活得更宽" (now matches en:
+  runs over more kinds of wire); sibling link texts 《SATA》 -> full registered title 《SATA 为什么用了二十多年》 (ch3, ch9,
+  ch10) and 《泊松过程 · 随机到达的规律》; ch9.law doubled 再; ch9.p1 "线上并没有 24 G" -> no quantity is 24 Gbit/s;
+  "取一倍" -> 加倍 (ch3.p4, ch4.p4); spacing after {placeholders} in live sentences. Terms checked against
+  how-sata-works/copy.zh.js (双字, 帧头, 原语, 链路层, 盘片, 机械盘). No remaining zh/en claim differences found.
+
+Unverified: (zh and en both read in full)
+SAS-5/SNT status rests on t10.org alone (primary); 24G+ feature list on the pr.com release plus Tom's Hardware
+search coverage; SPL-4/SAS-4 normative text (paywalled): SOF/EOF size, real interleave, persistent-connection mechanics;
+02-335r2 full text; SFF-8482 geometry; FAST '08 beyond the abstract; whether 528/4224 formats are used for PI.
+

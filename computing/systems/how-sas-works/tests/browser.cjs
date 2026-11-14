@@ -37,7 +37,10 @@ async function open(browser, width, opts = {}) {
 const text = (page, sel) => page.$eval(sel, e => e.textContent.trim());
 const setRange = (page, id, v) => page.evaluate(([id, v]) => { const e = document.getElementById(id); e.value = v; e.dispatchEvent(new Event('input', { bubbles: true })); }, [id, String(v)]);
 const show = async (page, sel, ms = 0) => { await page.$eval(sel, e => e.scrollIntoView({ block: 'center' })); if (ms) await page.waitForTimeout(ms); };
-const pick = (page, name, value) => page.click(`input[name=${name}][value="${value}"]`, { force: true });
+// Click the visible pill or checkbox label as a reader would (actionability checks on, no force). Forced clicks on the
+// 1-px hidden inputs were flaky under html { scroll-behavior:smooth } (review runs, 2026-11-14).
+const pick = (page, name, value) => page.click(`label:has(> input[name=${name}][value="${value}"])`);
+const tick = async (page, sel, on) => { if ((await page.$eval(sel, e => e.checked)) !== on) await page.click(`label:has(> ${sel})`); if ((await page.$eval(sel, e => e.checked)) !== on) throw new Error('could not set ' + sel); };
 const canvasHash = (page, id) => page.$eval('#' + id, c => { const d = c.toDataURL(); let h = 0; for (let i = 0; i < d.length; i += 7) h = (h * 31 + d.charCodeAt(i)) | 0; return h; });
 
 (async () => {
@@ -140,9 +143,9 @@ const canvasHash = (page, id) => page.$eval('#' + id, c => { const d = c.toDataU
     const r4 = M.SSP.read(4096, 'sas4');
     ok((await text(page, '#spEff')) === pc(r4.eff), 'ch3 4 KiB efficiency, got ' + await text(page, '#spEff'));
     ok((await text(page, '#spWire')) === zf(r4.f.total, 0) + ' 字节', 'ch3 wire bytes, got ' + await text(page, '#spWire'));
-    await page.check('#spP', { force: true }); await page.waitForTimeout(80);
+    await tick(page, '#spP', true); await page.waitForTimeout(80);
     ok((await text(page, '#spEff')) === pc(M.SSP.read(4096, 'sas4', null, true).eff), 'ch3 persistent connection, got ' + await text(page, '#spEff'));
-    await page.uncheck('#spP', { force: true }); await pick(page, 'spN', '1048576'); await page.waitForTimeout(80);
+    await tick(page, '#spP', false); await pick(page, 'spN', '1048576'); await page.waitForTimeout(80);
     ok((await text(page, '#spEff')) === pc(M.SSP.read(1048576, 'sas4').eff), 'ch3 1 MiB, got ' + await text(page, '#spEff'));
     await pick(page, 'spN', '4096');
 
@@ -184,9 +187,9 @@ const canvasHash = (page, id) => page.$eval('#' + id, c => { const d = c.toDataU
     // ch8 T10 PI
     await show(page, '#piCv', 200);
     ok((await text(page, '#piOut')) === '写入被拒，主机重写', 'ch8 memory flip with PI is rejected, got ' + await text(page, '#piOut'));
-    await page.uncheck('#piOn', { force: true }); await page.waitForTimeout(80);
+    await tick(page, '#piOn', false); await page.waitForTimeout(80);
     ok((await text(page, '#piOut')) === '静默损坏' && (await text(page, '#piGuard')) === '未启用', 'ch8 without PI: silent');
-    await page.check('#piOn', { force: true }); await pick(page, 'piN', 'tri'); await page.waitForTimeout(80);
+    await tick(page, '#piOn', true); await pick(page, 'piN', 'tri'); await page.waitForTimeout(80);
     ok((await text(page, '#piOut')) === '静默损坏' && (await text(page, '#piGuard')) === (await text(page, '#piSeen')), 'ch8 the missed triple slips past the guard');
     ok(await page.$eval('#piB', e => e.disabled), 'ch8 bit slider disabled for the fixed triple');
     await pick(page, 'piN', '1'); await pick(page, 'piF', 'misdir'); await page.waitForTimeout(80);

@@ -102,6 +102,10 @@ const P = M.prose();
   near('12 HDDs carry 12 x 285 when lanes are not full', h12.MBps, 12 * 285, 0.01);
   check('12 HDDs: sim wait shorter than Erlang C', h12.waitUs < FAN.run(12, 'hdd', 'seq', 4, 'sas3').waitUs, true);
   says('ch6.p3', '上一章的 Erlang C 公式对同样的 12 块机械盘算出的等待会长一些');
+  // review 2026-11-14: a saturated wide port must never read above the uplink limit chapter 5 quotes for the same lanes
+  const h24 = WIDE.measure(24, 'hdd', 131072, 4, 'sas3');
+  check('24 HDDs: sim throughput <= ch5 uplink cap', h24.MBps <= FAN.run(24, 'hdd', 'seq', 4, 'sas3').capMB + 1e-6, true);
+  near('24 HDDs: sim throughput = ch5 uplink cap', h24.MBps, FAN.run(24, 'hdd', 'seq', 4, 'sas3').capMB, 0.002);
   check('deterministic', WIDE.measure(3, 'hdd', 4096, 4, 'sas3').MBps, WIDE.measure(3, 'hdd', 4096, 4, 'sas3').MBps);
 }
 
@@ -149,7 +153,9 @@ const P = M.prose();
   says('hero.lead', '两个端口怎样把停机时间从一小时压到几分钟'); check('one path ~ an hour, two paths a few minutes', P.sMin[0] > 45 && P.sMin[0] < 90 && P.dMin[0] > 2 && P.dMin[0] < 10, true);
   says('ch3.p1', '64 位的全球唯一名'); check('SAS address bits', SPEC.sasAddrBits || 64, 64);
   says('ch5.p1', '128 组和 256 组'); check('zone groups', JSON.stringify(SPEC.zoneGroups || [128, 256]), '[128,256]');
-  says('ch5.p3', '96 块盘也只让上行忙 {hRandRho}'); says('ch5.p3', '8 块就超出上限 {sSeqOver} 倍'); says('ch5.p3', '24 块 SAS 机械盘做顺序读');
+  says('ch5.p3', '96 块盘也只让上行忙 {hRandRho}'); says('ch5.p3', '8 块想送的量是上限的 {sSeqOver} 倍'); says('ch5.p3', '24 块 SAS 机械盘做顺序读');
+  // review 2026-11-14: facts corrected against sources (SATA plug has no second port; Xia et al.: 7-bit bursts, interleaving result is the HPE long channel)
+  says('ch7.p3', '它的插头没有第二个端口'); says('ch4.say.failover', '这块盘一年共约 {total} 读不到'); says('ch9.p2', '7 位或更长'); says('ch9.p3', '在 HPE 的长信道上'); says('ch11.q3', '抓不住「写丢了」');
   check('ch5 cases as stated', /FAN\.run\(24, 'hdd', 'seq', 4, 'sas3'\), hddRand = FAN\.run\(96, 'hdd', 'rand', 4, 'sas3'\), ssdSeq = FAN\.run\(8, 'ssd', 'seq', 4, 'sas3'\)/.test(mod), true);
   says('ch6.limit', '固态盘取数据表上的 4,200 MB/s，机械盘取外圈 285 MB/s'); says('ch6.limit', '缓冲区最多攒 4 次传输'); says('ch6.limit', '0.5 微秒');
   check('buffer cap 4 transfers', /cap = 4 \* s\.bytes/.test(mod), true);
@@ -177,8 +183,8 @@ const P = M.prose();
     cmdB: '64', dataB: '4,240', respB: '60', totB: '4,364', r4us: '2.82', r4eff: '61%', r4iops: '355,000', r4pEff: '94%', r4pIops: '550,000', r1eff: '96.4%',
     r4effLo: '45%', r4effHi: '74%', r12iops: '216,000', sMin: '65', dMin: '5.2', dPaths: '0.41', dFail: '8', dDrive: '5.0', sNines: '3.9', dNines: '5.0',
     sataMin: '65', sataIMin: '9.4', iMin: '4.2', halfMin: '107', dblMin: '44', dualHalfMin: '5.3', hSeqDemand: '6,840', hSeqCap: '4,592', hSeqSat: '16',
-    hRandRho: '1.9%', sSeqPer: '1,148', sSeqOver: '2.0', s24Per: '2,276', w1: '2,274', w4: '9,103', w6: '9,103', wLane: '2,276', wh: '3,408', whUtil: '74%',
-    whWait: '17.8', wh24: '4,601', wh24Wait: '571', pm7: '4,200', pm7Lanes: '1.85', triA: '0', triB: '35', triC: '3,281', gbN: '65,536', gbMiss: '0',
+    hRandRho: '1.9%', sSeqPer: '1,148', sSeqOver: '2.0', s24Per: '2,276', w1: '2,276', w4: '9,105', w6: '9,105', wLane: '2,276', wh: '3,413', whUtil: '74%',
+    whWait: '17.8', wh24: '4,592', wh24Wait: '571', pm7: '4,200', pm7Lanes: '1.85', triA: '0', triB: '35', triC: '3,281', gbN: '65,536', gbMiss: '0',
     f1: '5.1 × 10⁻¹³', f1s: '3.7', f7: '4.3 × 10⁻⁶', f7s: '1.6', f7i: '1.2 × 10⁻¹⁴', f7is: '7', nofec: '44.4', ok7: '80%', ok10: '20%', bin6: '5.1 × 10⁻¹³' };
   for (const [k, v] of Object.entries(pinned)) check('prose ' + k, P[k] ? fz(P[k]) : 'missing', v);
   for (const k of Object.keys(P)) { n++; if (!(k in pinned)) { fails++; console.error('FAIL prose() value ' + k + ' not pinned'); } }

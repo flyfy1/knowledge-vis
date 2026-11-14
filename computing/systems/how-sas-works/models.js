@@ -203,7 +203,10 @@
       const m0 = s.moved, b0 = s.busyUs, w0 = s.waits, n0 = s.nWait, t0 = s.t;
       this.step(s, 20000);
       const T = s.t - t0;
-      return { MBps: (s.moved - m0) / T, perDrive: (s.moved - m0) / T / K, util: (s.busyUs - b0) / (T * lanes), waitUs: s.nWait > n0 ? (s.waits - w0) / (s.nWait - n0) : 0, hold: s.hold, laneMB: s.bytes / s.hold };
+      // throughput from lane busy time (bytes / hold per busy µs): counts in-flight connections pro rata, so a short
+      // window cannot over-count completions and a saturated port reads exactly its lane limit
+      const MBps = (s.busyUs - b0) * s.bytes / s.hold / T;
+      return { MBps, perDrive: MBps / K, util: (s.busyUs - b0) / (T * lanes), waitUs: s.nWait > n0 ? (s.waits - w0) / (s.nWait - n0) : 0, hold: s.hold, laneMB: s.bytes / s.hold };
     }
   };
 
