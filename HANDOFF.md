@@ -1,6 +1,6 @@
 # HANDOFF.md — 开工前先读
 
-最后更新：2026-11-14，由存储系列登记 Agent（Claude Code）在 S3 上线后更新第二部分。
+最后更新：2026-11-15，由存储系列登记 Agent（Claude Code）在 S4 上线后更新第二部分。
 
 这份文件有两部分：
 
@@ -63,15 +63,15 @@
 
 ---
 
-## 第二部分：现状（2026-11-14）
+## 第二部分：现状（2026-11-15）
 
 ### 已上线
 
-线上内容到 `cfc408ab` 为止（其后只有本文件的更新）（https://visual.integ.life），已推送到 `origin/main`。
+线上内容到 `d3848685` 为止（其后只有本文件的更新）（https://visual.integ.life），已推送到 `origin/main`。
 
-- **长文 16 篇加《稀缺》**，都是中英双语、经过独立评审；另有 Antigravity 的 4 篇只做过自查（见 specs/essays.md）。清单见 `pages.config.js` 的 `KNOWLEDGE_ESSAYS`。
+- **长文 17 篇加《稀缺》**，都是中英双语、经过独立评审；另有 Antigravity 的 4 篇只做过自查（见 specs/essays.md）。清单见 `pages.config.js` 的 `KNOWLEDGE_ESSAYS`。
 - **食物分区**（Yangyu 2026-11-12 提出）：新分类 `food`（饮食与风味）、子主题 `flavor`（味道从哪来），第一篇是 `food/flavor/why-fermented-tofu-tastes-good/`（酱豆腐为什么好吃，兼讲松花蛋）。图谱里归在 `matter` 分区，后续食物长文导入时继续用 `--region matter`。任务书在 [specs/essay-briefs/TASK-why-fermented-tofu-tastes-good.md](specs/essay-briefs/TASK-why-fermented-tofu-tastes-good.md)，可作为下一篇的模板。第二篇是 `food/flavor/how-soy-sauce-gets-its-flavor/`（酱油是怎么酿出来的），任务书 [specs/essay-briefs/TASK-how-soy-sauce-gets-its-flavor.md](specs/essay-briefs/TASK-how-soy-sauce-gets-its-flavor.md)。草稿分支 `drafts/food-20261112` 上的两篇都已被 `main` 上的版本取代。它的第 7 章有一张「谁来切、切什么、靠什么挡住腐败」的表（酱油、奶酪、火腿、鱼露、纳豆、臭豆腐），每一行都可以是这个分区的下一篇。
-- **存储系列**（Yangyu 2026-11-14，任务书 [specs/essay-briefs/TASK-storage-series.md](specs/essay-briefs/TASK-storage-series.md)）：S1 `computing/systems/what-a-drive-is-made-of/`（硬盘里到底是什么）和 S2 `computing/systems/how-sata-works/`（SATA 为什么用了二十多年）已上线（`bb361d4b`），S3 `computing/systems/how-sas-works/`（服务器硬盘为什么用 SAS）已上线（`cfc408ab`），都是中英双语、经另一个 Claude Code 会话独立评审，图谱归 `computing` 分区。S1 第 7 章已链接 S2 和 S3 第 7 章，S2 第 1、10 章已链接 S3；USB、网络存储两条仍是纯文本，等 S4、S5 上线后改成链接。「SAS 和 SATA 能混用吗」留在 S1 第 7 章。「固态硬盘为什么比机械硬盘快」从 NVMe 那篇移到 S1 第 8 章；NVMe 那篇仍是 Antigravity 原创版本，标签重指方式见 specs/visual-page-provenance.md（2026-11-14）。S4 `how-usb-drives-talk` 在写；S5 `storage-over-a-network`、S6 `how-phone-storage-works`（可选）排队。
+- **存储系列**（Yangyu 2026-11-14，任务书 [specs/essay-briefs/TASK-storage-series.md](specs/essay-briefs/TASK-storage-series.md)）：S1 `computing/systems/what-a-drive-is-made-of/`（硬盘里到底是什么）和 S2 `computing/systems/how-sata-works/`（SATA 为什么用了二十多年）已上线（`bb361d4b`），S3 `computing/systems/how-sas-works/`（服务器硬盘为什么用 SAS）已上线（`cfc408ab`），S4 `computing/systems/how-usb-drives-talk/`（移动硬盘为什么跑不满）已上线（`d3848685`），都是中英双语、经另一个 Claude Code 会话独立评审，图谱归 `computing` 分区。S1 第 7 章已链接 S2、S3 第 7 章和 S4；S2 第 1、10 章链接 S3，第 10 章链接 S4；S3 第 1、11 章链接 S4；S4 第 6、11 章链接 S3 第 2 章。网络存储一条仍是纯文本，等 S5 上线后改成链接。「SAS 和 SATA 能混用吗」「SAS 盘能插 SATA 口吗」2026-11-15 从 S1 第 7 章移到 S3 第 7 章；「移动硬盘盒怎么工作」留在 S1 第 7 章。「固态硬盘为什么比机械硬盘快」在 S1 第 8 章。NVMe 那篇仍是 Antigravity 原创版本，两次重指（别名、缓存键）的方式见 specs/visual-page-provenance.md（2026-11-14）和 specs/reviews/。这五页的脚本带 `?v=20261115` 缓存键（Cloudflare 把 JS 缓存 4 小时，HTML 不缓存），约定写在 specs/essays.md 第 7 步。S1、S2 的 browser.cjs 偶发失败已修（平滑滚动中强制点击 1 px 单选框会点空）。S5 `storage-over-a-network` 在写；S6 `how-phone-storage-works`（可选）排队。
 - **LeetCode**：登记表 204 条。2026-11-11 新增 12 课、修订 28 课，评审记录在 [specs/leetcode-review-2026-11-11.md](specs/leetcode-review-2026-11-11.md)。
 - **搜索**：疑问句、比较式查询、一批别名（`9f4751c6`）。
 
