@@ -35,6 +35,12 @@ function branch(name, o) { n++; const s = Z[o.key]; if (s == null) { fails++; co
   // links to the NVMe essay point at anchors that exist there
   const nv = fs.readFileSync(path.join(DIR, '..', 'why-nvme-is-fast', 'index.html'), 'utf8');
   for (const v of Object.values(Z)) for (const m of v.matchAll(/why-nvme-is-fast\/#(ch\d+)/g)) check('NVMe anchor ' + m[1], nv.includes(`id="${m[1]}"`), true);
+  // links to the SAS essay (S3, live 2026-11-14) point at anchors that exist there, the same in zh and en
+  const sas = fs.readFileSync(path.join(DIR, '..', 'how-sas-works', 'index.html'), 'utf8');
+  const sasLinks = o => Object.values(o).join('').match(/how-sas-works\/#?\w*/g) || [];
+  check('ch7.p4 links S3', /how-sas-works\/#ch7/.test(Z['ch7.p4']), true);
+  for (const v of Object.values(Z)) for (const m of v.matchAll(/how-sas-works\/#(ch\d+)/g)) check('SAS anchor ' + m[1], sas.includes(`id="${m[1]}"`), true);
+  check('en SAS links = zh SAS links', sasLinks(EN).sort().join(' '), sasLinks(Z).sort().join(' '));
   // relative links to other site pages exist
   for (const v of Object.values(Z)) for (const m of v.matchAll(/href=\\?"(\.\.\/[^"#\\]+)/g)) check('link target exists ' + m[1], fs.existsSync(path.join(DIR, m[1], 'index.html')), true);
 }

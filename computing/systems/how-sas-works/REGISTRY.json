@@ -50,13 +50,18 @@
           "SAS 是什么",
           "SAS 协议分层",
           "SSP STP SMP 区别",
-          "SAS 和 SCSI 的关系"
+          "SAS 和 SCSI 的关系",
+          "SAS 和 SATA 区别",
+          "SAS 硬盘是什么",
+          "SAS 接口"
         ],
         "en": [
           "what is SAS",
           "SAS protocol layers",
           "SSP vs STP vs SMP",
-          "Serial Attached SCSI"
+          "Serial Attached SCSI",
+          "SAS vs SATA",
+          "SAS interface"
         ]
       },
       "anchor": "#ch1",
@@ -82,7 +87,8 @@
           "SCSI 还在用吗",
           "2TB 限制",
           "READ(16) 和 READ(10) 区别",
-          "SCSI 标签队列"
+          "SCSI 标签队列",
+          "SCSI 命令"
         ],
         "en": [
           "what is a SCSI CDB",
@@ -90,7 +96,8 @@
           "is SCSI still used",
           "2 TB limit READ(10)",
           "SCSI tagged command queuing",
-          "iSCSI CDB"
+          "iSCSI CDB",
+          "SCSI command"
         ]
       },
       "anchor": "#ch2",
@@ -139,14 +146,17 @@
           "多路径是什么",
           "双控制器存储",
           "SAS 双端口有什么用",
-          "几个九 可用性怎么算"
+          "几个九 可用性怎么算",
+          "双端口硬盘"
         ],
         "en": [
           "SAS dual port",
           "multipath storage",
           "dual controller array",
           "how to compute availability nines",
-          "MPIO"
+          "MPIO",
+          "dual-port SSD",
+          "dual-port drive"
         ]
       },
       "anchor": "#ch4",
@@ -224,14 +234,16 @@
           "SATA 隧道协议",
           "SAS 控制器怎么认 SATA 硬盘",
           "SAS 硬盘接口为什么多一块",
-          "转接板 interposer"
+          "转接板 interposer",
+          "SATA 硬盘接 SAS 背板"
         ],
         "en": [
           "SATA tunneling protocol",
           "STP SAS",
           "SATA drive on SAS controller",
           "SAS interposer",
-          "why SAS connector has extra pins"
+          "why SAS connector has extra pins",
+          "SATA drive in SAS backplane"
         ]
       },
       "anchor": "#ch7",
@@ -254,7 +266,9 @@
           "520 字节扇区",
           "硬盘静默损坏",
           "CRC-16 T10-DIF",
-          "端到端数据保护"
+          "端到端数据保护",
+          "数据完整性校验",
+          "静默数据损坏"
         ],
         "en": [
           "T10 PI",
@@ -262,7 +276,9 @@
           "520-byte sectors",
           "silent data corruption",
           "CRC-16 T10-DIF",
-          "end-to-end data protection"
+          "end-to-end data protection",
+          "data integrity check",
+          "DIF"
         ]
       },
       "anchor": "#ch8",
@@ -284,14 +300,16 @@
           "128b/150b",
           "SAS-4 前向纠错",
           "RS 码 纠错",
-          "为什么 24G 只有 2400MB/s"
+          "为什么 24G 只有 2400MB/s",
+          "24G SAS 速度"
         ],
         "en": [
           "24G SAS",
           "128b/150b encoding",
           "SAS-4 FEC",
           "Reed-Solomon RS(30,26)",
-          "why 22.5 Gbaud"
+          "why 22.5 Gbaud",
+          "24G SAS speed"
         ]
       },
       "anchor": "#ch9",
@@ -313,7 +331,9 @@
           "SAS-5",
           "24G+ SAS",
           "SAS 会被 NVMe 取代吗",
-          "48G SAS"
+          "48G SAS",
+          "SAS 会被淘汰吗",
+          "NVMe 会取代 SAS 吗"
         ],
         "en": [
           "is SAS dead",

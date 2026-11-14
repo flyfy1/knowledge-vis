@@ -237,6 +237,10 @@ Changes:
   "取一倍" -> 加倍 (ch3.p4, ch4.p4); spacing after {placeholders} in live sentences. Terms checked against
   how-sata-works/copy.zh.js (双字, 帧头, 原语, 链路层, 盘片, 机械盘). No remaining zh/en claim differences found.
 
+- Registrar (2026-11-14): ch5.p2 said the lane-hold time is "the model in the previous chapter" (zh 上一章); chapter 4 is
+  availability, the hold-time model is chapter 3, so both copies now say chapter 3. Search aliases added from the
+  one-click check (see REGISTRY.json).
+
 Unverified: (zh and en both read in full)
 SAS-5/SNT status rests on t10.org alone (primary); 24G+ feature list on the pr.com release plus Tom's Hardware
 search coverage; SPL-4/SAS-4 normative text (paywalled): SOF/EOF size, real interleave, persistent-connection mechanics;
