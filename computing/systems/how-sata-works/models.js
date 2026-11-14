@@ -310,6 +310,8 @@
       const W = E / m;
       return { W, lat, pSleep: e, save: 1 - W / p.on };
     },
+    // the mean idle gap (s) past which DevSleep draws less than Slumber, with no timeout (bisection on a log scale)
+    devOverSlumber(P) { let a = 1e-3, b = 10; for (let i = 0; i < 60; i++) { const m = Math.sqrt(a * b); if (this.run('devslp', m, 0, P).W < this.run('slumber', m, 0, P).W) b = m; else a = m; } return Math.sqrt(a * b); },
     best(m, tau, P, latCap) {
       let b = 'on', bw = Infinity;
       for (const s of ['on', 'partial', 'slumber', 'devslp']) { const r = this.run(s, m, tau, P); if (latCap != null && r.lat > latCap) continue; if (r.W < bw - 1e-12) { bw = r.W; b = s; } }
@@ -383,6 +385,7 @@
       beShi: [Math.max(POWER.breakEven('slumber', scaled('on', 0.5)), POWER.breakEven('slumber', scaled('on', 2))) * 1e3, 1],
       bePlo: [Math.min(POWER.breakEven('partial', scaled('partial', 0.5)), POWER.breakEven('partial', scaled('partial', 2))) * 1e6, 1],
       bePhi: [Math.max(POWER.breakEven('partial', scaled('partial', 0.5)), POWER.breakEven('partial', scaled('partial', 2))) * 1e6, 1],
+      xDS: [POWER.devOverSlumber() * 1e3, 0], xDSlo: [POWER.devOverSlumber(scaled('on', 0.5)) * 1e3, 0], xDShi: [POWER.devOverSlumber(scaled('on', 2)) * 1e3, 0],
       two: [PM.seq(2, 'fbs', 3).mbps, 0], cap3: [PM.seq(3, 'fbs', 3).mbps, 0], cbs: [pmc.iops, 0], one: [pm4.one, 0], fbs4: [pm4.iops, 0],
       need: [HDD.densToReach(HDD.ssdSeq, 7200), 1], od10: [HDD.od(7200, 10 / 3), 0], od15: [HDD.od(15000, 1), 0], hbd2: [HDD.od(7200, 1, 2), 0]
     };

@@ -1,10 +1,10 @@
 # BRIEF — SATA 为什么用了二十多年 (Why SATA Has Lasted Over Twenty Years)
 
 Built-By: Claude Code (claude-opus-5-5)
-Verified-By: self-check by builder (node model test, browser test zh at 1280/390/320 and reduced motion, canvas sweep, screenshots at three widths); independent review pending
+Verified-By: self-check by builder (node model test, browser test zh at 1280/390/320 and reduced motion, canvas sweep, screenshots at three widths); Claude Code (claude-opus-5-5), independent review in a separate session 2026-11-14 (scope under "Review")
 Category: computing 计算机 / subtopic systems 系统 · Stage: university
 Series: storage series S2 (`specs/essay-briefs/TASK-storage-series.md`)
-Format: long interactive essay. Chinese is complete. **English is a stub** (see "For the translator").
+Format: long interactive essay. Chinese and English are both complete (the `enStub` flag has been removed; "For the translator" below is historical).
 Files: index.html, copy.zh.js, copy.en.js (stub), models.js, app.js, REGISTRY.json, tests/models.cjs, tests/browser.cjs
 
 ## The one question
@@ -127,3 +127,74 @@ copy.en.js is a same-keys copy of copy.zh.js with `window.ESSAY_COPY.enStub = tr
 page treats English as absent and shows Chinese; tests skip the English sweeps and the registry-en title match.
 Translate every value, keep every `{placeholder}` and HTML tag, then delete the `enStub` line. The English title
 must equal REGISTRY.json `title.en` ("Why SATA Has Lasted Over Twenty Years") plus the " · …" suffix pattern.
+
+## Review
+
+Reviewer: Claude Code (claude-opus-5-5), separate session from the builder. Date: 2026-11-14.
+Scope: the whole essay in zh and en; every model driven in the browser; models re-derived from their sources;
+standards facts against the SATA 3.5a and ATA/ATAPI-7 PDFs (downloaded from the URLs above and searched as text);
+frontier facts against primary sources plus a second source; sister-essay overlap; English quality.
+
+Checks done:
+- ATA/ATAPI-7 Vol 2 rev 4b Table 51 (t2CYCTYP, tCYC, tDS, tDH for modes 0–6) and Annex E.5.1.1 (negative and positive
+  skew −5.99/5.38 ns, −4.34/3.83 for mode 5 and −3.6/3.06 for mode 6, and −70/−36/−22 ns extra for 40-conductor
+  modes 0–2) all match `UDMA`. Recomputed by hand: mode 6 uses 12.76 of 13.0 ns; mode 5 has only 0.03 ns, so it fails
+  first (×1.004), then mode 6 (×1.04) and mode 4 (×1.32). The budget is the page's own sum (stated in ch2.limit).
+- 8b/10b: parsed SATA 3.5a Table 88 straight from the spec text with my own script (not the test's typed copy):
+  all 256 bytes × both RDs match `B8.encode`; K28.3/K28.5 match Table 89. Random 20,000-byte stream: longest run 5,
+  running-sum swing 6, as ch3.p3 says.
+- CRC and scrambler: the Annex A.1.5 trace (11E353FD … 319FFF6F) and the A.2.4 outputs (C2D2768D, 1F26B368, …) read
+  from the spec match the test's pins. Hex view: 08608027 XOR C2D2768D = CAB2F6AA, as shown.
+- READ FPDMA QUEUED: field layout (SECTOR COUNT in FEATURES, TAG in COUNT(7:3), DEVICE bit 6, 60h) per §13.6.4.1;
+  DMA Setup is 7 Dwords with the TAG in Dword 1 (§13.6 figure); SDB carries ACT(31:0) in Dword 1. Order and senders
+  (H2D from host; D2H with BSY cleared, DMA Setup, Data, SDB from the drive) are right.
+- Wire account for 4 KiB re-derived by hand: FIS 5+5+7+1025+2 = 1044, +15 (SOF/CRC/EOF) = 1059, +200 handshake
+  (5 frames × 2 × 20) = 1259, +8 ALIGN = 1267 Dwords, 8.45 µs, 81% payload. The 20-Dword round trip is Table 95's HOLD/HOLDA
+  example, used as a stand-in for every handshake (stated on the page).
+- NCQ: QD1 FIFO 78 IOPS ≈ 1/(8.5 + 4.17 + transfer ms), checked by hand; the SATF gain over FIFO at QD32 stays 2.26–2.58×
+  across the tuned sweep and 187–189 IOPS across seeds 1–4, so "more than double" survives.
+- Link power: break-even P_on·L/(P_on − P_s) gives 16.7 µs / 12.5 ms / 20.3 ms; the ch6 fix (divide energy per gap by
+  the mean gap, not by gap + wake) is right: it makes the curve cross "always on" exactly at break-even (τ = 0), while the
+  old denominator could never exceed P_on. DevSleep at 1 s: 5.5 mW and ~20 ms, recomputed by hand. MDAT hold term
+  E[(MDAT − X)+] checked.
+- Port multiplier arithmetic (4 × 131 = 526 FBS; CBS drain 112; seq 570 then cap 580) and HDD sqrt rule (3.9×, 520,
+  594, 570) recomputed.
+- Spec facts read in SATA 3.5a: revision dates (§1, incl. 3.5 on 2020-07-01, 3.5a "changed the words master and slave"),
+  SATA Express obsoleted in 3.4 (TPR082), DevSleep and M.2 in 3.2, mSATA in 3.1, Table 78 exit latencies, Table 79
+  MDAT/DETO, Table 76 OOB times, ALIGN pair every 256 Dwords, hot plug "R" for backplane and "NS" for internal cable
+  (Table 1), "Gen3i is not defined for eSATA" (note 6), port multipliers up to 15 device ports.
+- Frontier, two places each: Seagate 44 TB Mozaic 4+ in volume to two hyperscalers (Seagate release 2026-03-03, plus
+  trade press); WD 40 TB shipping in the quarter ended 2026-07-03, 44 TB HAMR H1 2027, 60 TB 2028, 100 TB 2029, HBD 2×
+  shown / 8× by 2030, Dual Pivot 2028 (StorageReview 2026-08-06, plus Tom's Hardware and other press, all citing WD);
+  no SATA revision after 3.5a (SATA-IO purchase page, plus search); SATA Express announced Aug 2011, 8/16 Gb/s (Engadget
+  2011-08-10 and others). Exos DS2045.4-2511 (SATA 6Gb/s, 285 MB/s, 170 IOPS QD16, idle A 6.9 W, 3 TB/platter) and the 870 EVO
+  sheet (560 MB/s, idle DIPM on 30 mW, DevSleep 2.5 mW for 250/500 GB, 2.0 W read) were checked in the PDFs.
+- No search-word overlap: no alias in REGISTRY.json appears in the aliases of why-nvme-is-fast or what-a-drive-is-made-of
+  (they share only category tags). Chapters point to NVMe #ch1–#ch3 for the multicore queue and 552 MB/s results instead of
+  redoing them.
+
+Changes made:
+- ch4 canvas: the "… dwords in total" line was clipped at 320 px in English; it now shrinks to fit (`fitFont` in
+  app.js, also used for the frame names), and the English label is shorter.
+- ch6.limit (zh+en): added how far the DevSleep-over-Slumber crossover moves when the tuned awake power is halved or
+  doubled (27–109 ms; 55 ms by default), and ch6.p3 now quotes the computed crossover ("past about {xDS} ms") instead of a
+  hard-coded "0.1 s", which failed between 100 and 109 ms at the doubled end. New `POWER.devOverSlumber`, prose keys xDS/xDSlo/xDShi, pinned in tests.
+- ch2.p3: "above ×k4 only mode 3 remains" → the fastest mode left is mode 3 (modes 0–2 also close); pinned with
+  `UDMA.fastest` just above/below k6 and k4.
+- ch5.p2: dropped "like an elevator" (SSTF is not the elevator/SCAN algorithm). ch5.p4: "why 32" now says the
+  format fixes it (5-bit tag, 32-bit SActive) before the one-arm argument; pinned.
+- ch7 eSATA: misquote "Gen3i is not applicable to eSATA" → the spec's words "Gen3i is not defined for eSATA"; pinned.
+- ch4.p3: "Measured SATA SSDs are rated at 560" (measured vs rated) → rated at up to 560 MB/s (zh likewise).
+- English only: "{wire} Mb/s per second"; "tens of milliseconds" where the Chinese and the model say ten-odd ms
+  (ch4.p4, ch10.q2); "the largest 44 TB HAMR drive" wording; OCP spec named an NVMe hard-drive specification;
+  "tenfold" → more than tenfold (30 vs 2.5 mW).
+- This BRIEF: header no longer says English is a stub.
+
+Not verified:
+- Benini et al. 2000 not opened (the break-even formula is the standard one and re-derived above).
+- The 150 mW / 60 mW link powers remain tuned; Slumber 30 mW remains a stand-in.
+- WD's 40 TB shipping and HBD figures rest on trade press quoting WD's earnings call, not a WD document I opened.
+- OCP NVMe HDD spec revision/date not re-opened; SATA Express 2011-08-09 date taken from press of 2011-08-10.
+- Intel AHCI 1.0 press release and the Barracuda 7200.12 manual not re-opened.
+- "Real drive firmware has a similar [aging] safeguard" (ch5.p3) is unsourced but generic.
+

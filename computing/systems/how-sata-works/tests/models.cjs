@@ -135,7 +135,11 @@ const T88 = '1001110100/0110001011,0111010100/1000101011,1011010100/0100101011,1
   check('best at 1 ms', POWER.best(1e-3, 0), 'partial'); says('ch6.p3', '平均空闲 1 毫秒时最省的是 Partial');
   for (const m of [0.1, 0.3, 1, 10]) check('best at ' + m + ' s', POWER.best(m, 0), 'devslp');
   check('not DevSleep at 50 ms', POWER.best(0.05, 0) !== 'devslp', true); check('sleeping on short gaps costs energy', POWER.run('slumber', 1e-3, 0).save < 0, true); check('break-even is where Slumber at a fixed gap pays off', POWER.run('slumber', 1e-3, 0).W > POWER.P.on, true);
-  check('chart clip', /YM = 300/.test(app), true); says('ch6.model.how', '超过 300 毫瓦的部分截掉了'); says('ch6.p3', '0.1 秒以上就轮到 DevSleep');
+  check('chart clip', /YM = 300/.test(app), true); says('ch6.model.how', '超过 300 毫瓦的部分截掉了'); says('ch6.p3', '约 {xDS} 毫秒以上就轮到 DevSleep'); check('DevSleep beats Slumber just past xDS', POWER.best(M.prose().xDS[0] * 1.05e-3, 0), 'devslp'); check('Slumber beats DevSleep just below xDS', POWER.run('slumber', M.prose().xDS[0] * 0.95e-3, 0).W < POWER.run('devslp', M.prose().xDS[0] * 0.95e-3, 0).W, true);
+  // reviewer additions (2026-11-14): spec quote for eSATA (3.5a Table 1 note 6), the 5-bit tag behind "why 32",
+  // and the fastest UDMA mode just past each skew threshold quoted in ch2.p3
+  says('ch7.r.esata.diff', '「eSATA 没有定义 Gen3i」'); check('tag bits', Math.log2(SPEC.tags), 5); says('ch5.p4', '标签只有 5 位'); says('ch5.p4', 'SActive 只有 32 位');
+  { const Pz = M.prose(); check('fastest just above k6', UDMA.fastest(80, Pz.k6[0] + 0.005), 4); check('fastest just above k4', UDMA.fastest(80, Pz.k4[0] + 0.005), 3); check('fastest just below k4', UDMA.fastest(80, Pz.k4[0] - 0.005), 4); says('ch2.p3', '以上最快只剩第 3 档'); }
   check('PM ports / cables', SPEC.pmPorts + '/' + SPEC.cableExt + '/' + SPEC.cableInt, '15/2/1'); says('ch7.law', '15 块盘'); says('ch7.law', '2 米'); says('ch7.p1', '15 块盘');
   says('ch7.r.esata.diff', '线最长 2 米（机箱内 1 米）'); says('ch7.r.esata.diff', '3 Gb/s');
   check('mSATA / M.2 revs', SPEC.msataRev + rev('3.1').slice(0, 4) + '/' + SPEC.m2Rev + rev('3.2').slice(0, 4), '3.12011/3.22013');
@@ -191,7 +195,7 @@ const T88 = '1001110100/0110001011,0111010100/1000101011,1011010100/0100101011,1
   const want = { u6: '133.3', u6used: '12.76', u6mar: '0.24', u5mar: '0.03', u2used40: '45.37', k6: '1.04', k4: '1.32', nosk: '6.1', wire: '66.7', lines: '1067', g1: '150',
     r1: '150', r2: '300', r3: '600', dw4: '1267', us4: '8.45', eff4: '81', eff1: '35', fr256: '20', eff256: '97', mb256: '580', rev: '8.33', half: '4.17',
     q1: '78', s8: '131', s16: '158', s32: '190', t16: '132', p32: '491', p1: '19', lo: '148', hi: '168', glo: '1.89', ghi: '2.14',
-    bePartial: '16.7', beSlumber: '12.5', beDev: '20.3', dev1: '5.5', devSave1: '96', devLat1: '20', beSlo: '11.1', beShi: '16.7', bePlo: '12.5', bePhi: '50.0',
+    bePartial: '16.7', beSlumber: '12.5', beDev: '20.3', dev1: '5.5', devSave1: '96', devLat1: '20', beSlo: '11.1', beShi: '16.7', bePlo: '12.5', bePhi: '50.0', xDS: '55', xDSlo: '27', xDShi: '109',
     two: '570', cap3: '580', cbs: '112', one: '131', fbs4: '526', need: '3.9', od10: '520', od15: '594', hbd2: '570' };
   for (const [k, [v, d, kind]] of Object.entries(P)) check('prose ' + k, kind === 'pct' ? f(v * 100, d) : f(v, d), want[k]);
   check('every prose value pinned', Object.keys(P).sort().join(','), Object.keys(want).sort().join(','));

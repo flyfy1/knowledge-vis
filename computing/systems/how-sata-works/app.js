@@ -86,6 +86,8 @@ function yTicks(c, f, vals, fmtv) {
 function path(c, pts, X, Y, col, lw, dash) { c.strokeStyle = col; c.lineWidth = lw || 2.2; c.lineJoin = 'round'; if (dash) c.setLineDash(dash); c.beginPath(); pts.forEach((p, i) => c[i ? 'lineTo' : 'moveTo'](X(p[0]), Y(p[1]))); c.stroke(); c.setLineDash([]); }
 function tag(c, s, x, y, col, align, font) { c.font = font || FONT; const w = c.measureText(s).width; const x0 = align === 'right' ? x - w : align === 'center' ? x - w / 2 : x; c.fillStyle = C.bg; c.fillRect(x0 - 3, y - 8, w + 6, 16); c.fillStyle = col; c.textAlign = 'left'; c.fillText(s, x0, y); c.font = FONT; return [x0 - 3, x0 + w + 3]; }
 function dot(c, x, y, col, r) { c.fillStyle = col; c.beginPath(); c.arc(x, y, r || 4.5, 0, 6.283); c.fill(); }
+// a font scaled down (never below 75%) so one line of text fits in cap pixels
+function fitFont(c, s, cap, base) { c.font = base || FONT; const tw = c.measureText(s).width; const k = tw > cap ? Math.max(0.75, cap / tw) : 1; return (base || FONT).replace('12px', (12 * k).toFixed(1) + 'px'); }
 function labelFont(c, labels, cap) { c.font = FONT; let lw = 0; for (const s of labels) lw = Math.max(lw, c.measureText(s).width); const k = lw + 14 > cap ? Math.max(0.7, (cap - 14) / lw) : 1; return { font: FONT.replace('12px', (12 * k).toFixed(1) + 'px'), w: Math.min(lw * k + 14, cap) }; }
 
 /* ───────── 02 Ultra DMA budget ───────── */
@@ -105,7 +107,7 @@ function labelFont(c, labels, cap) { c.font = FONT; let lw = 0; for (const s of 
       for (let m = 0; m < 7; m++) {
         const b = U.budget(m, cb, kk), y = T + m * rh, bh = rh * 0.56, y0 = y + (rh - bh) / 2;
         c.font = lf.font; c.textAlign = 'right'; c.fillStyle = m === sel ? C.gold : C.ink; c.fillText(labs[m], L - 8, y + rh / 2); c.font = FONT;
-        if (!b.allowed) { c.fillStyle = C.mute; c.textAlign = 'left'; c.fillText(t('ch2.cv.forbid'), L + 6, y + rh / 2); continue; }
+        if (!b.allowed) { const fs = t('ch2.cv.forbid'); c.font = fitFont(c, fs, R - L - 8); c.fillStyle = C.mute; c.textAlign = 'left'; c.fillText(fs, L + 6, y + rh / 2); c.font = FONT; continue; }
         let x = 0; const seg = (v, col) => { const a = X(x / b.cyc), z = X(Math.min(max, (x + v) / b.cyc)); c.fillStyle = col; c.fillRect(a, y0, Math.max(0, z - a), bh); x += v; };
         c.globalAlpha = m === sel ? 1 : 0.55;
         seg(b.ds + b.dh, C.cyan); seg(b.skew, C.red); if (b.settle) seg(b.settle, C.violet);
@@ -224,11 +226,12 @@ function labelFont(c, labels, cap) { c.font = FONT; let lw = 0; for (const s of 
         c.strokeStyle = col; c.lineWidth = on ? 2.4 : 1.4; c.beginPath(); c.moveTo(x0, y); c.lineTo(x1, y); c.stroke();
         const dir = x1 > x0 ? 1 : -1; c.fillStyle = col; c.beginPath(); c.moveTo(x1, y); c.lineTo(x1 - dir * 9, y - 5); c.lineTo(x1 - dir * 9, y + 5); c.fill();
         const name = id === 'data' && nData > 1 ? t('ch4.cv.dataN', { n: nData }) : t('ch4.cv.' + id);
-        tag(c, name, (xh + xd) / 2, y - 13, on ? C.ink : C.mute, 'center');
+        tag(c, name, (xh + xd) / 2, y - 13, on ? C.ink : C.mute, 'center', fitFont(c, name, w - 16));
         const f = rf.frames.find(q => q.id === id), dws = id === 'data' ? rf.frames.filter(q => q.id === 'data').reduce((a, q) => a + q.len, 0) : f.len;
         tag(c, t('ch4.cv.dw', { n: fmt(dws, 0) }), (xh + xd) / 2, y + 12, C.mute, 'center', MONO);
       });
-      c.fillStyle = C.mute; c.textAlign = 'center'; c.fillText(t('ch4.cv.total', { n: fmt(wire.total, 0) }), w / 2, B - 2);
+      const tot = t('ch4.cv.total', { n: fmt(wire.total, 0) }); c.font = fitFont(c, tot, w - 12);
+      c.fillStyle = C.mute; c.textAlign = 'center'; c.fillText(tot, w / 2, B - 2); c.font = FONT;
     }
   });
   function hexView() {
