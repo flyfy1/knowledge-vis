@@ -133,14 +133,14 @@
     },
     {
       "id": "interconnect-frontier-2026",
-      "title": { "zh": "互连的前沿（截至 2026 年 11 月）：UCIe 3.0、3D 堆叠、CXL 4.0", "en": "The Interconnect Frontier (as of November 2026): UCIe 3.0, 3D Stacking, CXL 4.0" },
+      "title": { "zh": "互连的前沿（截至 2026 年 11 月）：UCIe 3.0 与 4.0、3D 堆叠、CXL 4.0", "en": "The Interconnect Frontier (as of November 2026): UCIe 3.0 and 4.0, 3D Stacking, CXL 4.0" },
       "desc": {
-        "zh": "已经确定的、已经做出来的、只是传闻的分开说：UCIe 3.0 规范、Xeon 6+ 的混合键合、CXL 4.0、泄露的下一代芯片组上行链路。",
-        "en": "What is established, demonstrated and only claimed, kept apart: the UCIe 3.0 specification, Xeon 6+ hybrid bonding, CXL 4.0, and the leaked next-generation chipset uplink."
+        "zh": "已经确定的、已经做出来的、只是传闻的分开说：UCIe 3.0 与 4.0 规范、Xeon 6+ 的混合键合、CXL 4.0、泄露的下一代芯片组上行链路。",
+        "en": "What is established, demonstrated and only claimed, kept apart: the UCIe 3.0 and 4.0 specifications, Xeon 6+ hybrid bonding, CXL 4.0, and the leaked next-generation chipset uplink."
       },
       "aliases": {
-        "zh": ["UCIe 3.0", "混合键合", "Foveros Direct", "DMI 5.0"],
-        "en": ["UCIe 3.0", "hybrid bonding", "Foveros Direct", "DMI 5.0"]
+        "zh": ["UCIe 3.0", "UCIe 4.0", "混合键合", "Foveros Direct", "DMI 5.0"],
+        "en": ["UCIe 3.0", "UCIe 4.0", "hybrid bonding", "Foveros Direct", "DMI 5.0"]
       },
       "anchor": "#ch9",
       "relatedPages": []

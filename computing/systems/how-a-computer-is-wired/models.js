@@ -224,6 +224,7 @@
   const FRONTIER = {
     asOf: '2026-11',
     ucie3: '2025-08-05', ucie3GT: [48, 64],
+    ucie4: '2026-11-12',            // UCIe 4.0: uciexpress.org/specifications + Business Wire release 2026-11-12 (on-package memory link, power-optimised profiles)
     cxl4: '2025-11-18', cxl4GT: 128,
     xeon6plus: '2026-06', xeon6plusCores: 288,
     novaLakeLeak: { dmiLanes: [2, 4], gen: 5 }     // leaked, not announced by Intel

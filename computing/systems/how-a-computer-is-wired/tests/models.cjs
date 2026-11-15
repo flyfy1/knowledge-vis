@@ -82,7 +82,7 @@ const f = (x, d) => x.toFixed(d);
   check('ch2.p4: doubling the clock halves the loads (13 → 6)', LINE.maxLoads(66.667, 66, C14), Math.floor(LINE.maxLoads(33.333, 33, C14) / 2));
   says('ch2.p4', '刚过 50% 的门限'); says('dg2.b.vih', '50%'); check('Vih = 0.5 Vcc', SPEC.pci.vih, 0.5);
   says('ch2.p4', '把每个负载加到 20 pF');
-  says('ch2.limit', '6 个加 2 个插槽、或 2 个加 4 个插槽'); says('ch2.limit', '150–190 ps/英寸、60–100 Ω');
+  says('ch2.limit', '6 个负载加 2 个插槽、或 2 个负载加 4 个插槽'); says('ch2.limit', '主板本身不规定阻抗'); check('Z0 tuned at the bottom of the card range', LINE.z0, SPEC.pci.z0[0]); check('tpd tuned at the middle of the card range', LINE.tpd, (SPEC.pci.tpd[0] + SPEC.pci.tpd[1]) / 2); says('ch2.limit', '150–190 ps/英寸、60–100 Ω');
   check('tuned within spec', LINE.tpd >= SPEC.pci.tpd[0] && LINE.tpd <= SPEC.pci.tpd[1] && LINE.z0 >= SPEC.pci.z0[0] && LINE.z0 <= SPEC.pci.z0[1], true);
   says('ch2.limit', '线速取到 190'); says('ch2.limit', '阻抗取到 100 Ω');
   check('ch2.limit: model above the spec\'s typical 8 loads', LINE.maxLoads(33.333, 33, C14) > SPEC.pci.typicalLoads, true);
@@ -101,7 +101,7 @@ const f = (x, d) => x.toFixed(d);
   near('max-min x', t.rate.x, 1 / 3, 1e-12); near('max-min w takes the rest of B', t.rate.w, 2 / 3, 1e-12);
   says('ch3.p2', '64 位的<strong>前端总线</strong>'); says('ch3.p2', '两路 DDR400'); says('ch3.p2', 'AGP 8X'); says('ch3.p2', 'Intel 2004 年数据手册');
   check('875P date', SPEC.i875.date.slice(0, 4), '2004'); check('DDR400 dual channel = 6.4 GB/s', 2 * 8 * 400 / 1000, SPEC.i875.mem); check('FSB 800 × 8 B', 800 * 8 / 1000, SPEC.i875.fsb);
-  says('ch3.p4', '每块 150 MB/s'); check('SATA 1.5 Gb/s each', NB.sataEach * 1000, 150);
+  says('ch3.p4', '每个最高 150 MB/s'); says('ch3.p4', '接口的上限'); check('SATA 1.5 Gb/s each', NB.sataEach * 1000, 150);
   says('dg3.cap', '252525-002');
 }
 
@@ -189,7 +189,7 @@ const f = (x, d) => x.toFixed(d);
 /* ── frontier ── */
 {
   says('ch9.title', '2026 年 11 月'); check('as of', FRONTIER.asOf, '2026-11');
-  says('ch9.e3', '2025 年 8 月 5 日'); check('UCIe 3.0', FRONTIER.ucie3, '2025-08-05'); check('UCIe 3.0 = SPEC', SPEC.ucie.v3, FRONTIER.ucie3); says('ch9.e3', '在 32 GT/s 之上');
+  says('ch9.e3', '2025 年 8 月 5 日'); says('ch9.e3', '2026 年 11 月 12 日联盟又发布了 UCIe 4.0'); check('UCIe 4.0 date', FRONTIER.ucie4, '2026-11-12'); check('UCIe 3.0', FRONTIER.ucie3, '2025-08-05'); check('UCIe 3.0 = SPEC', SPEC.ucie.v3, FRONTIER.ucie3); says('ch9.e3', '在 32 GT/s 之上');
   says('ch9.d2', '2025 年 11 月 18 日'); check('CXL 4.0', FRONTIER.cxl4, '2025-11-18'); says('ch9.d2', 'PCIe 7.0');
   says('ch9.d1', '2026 年 6 月的 Computex'); check('Xeon 6+', FRONTIER.xeon6plus, '2026-06');
   says('ch9.c1', 'DMI 5.0，高端型号 ×4、低端 ×2'); check('leak', FRONTIER.novaLakeLeak.dmiLanes.join() + ' ' + FRONTIER.novaLakeLeak.gen, '2,4 5'); says('ch9.c1', '不是 Intel 公布的数字');
@@ -311,7 +311,7 @@ const f = (x, d) => x.toFixed(d);
     "ch9.title": "2026 11",
     "ch9.e1": "8",
     "ch9.e2": "2017",
-    "ch9.e3": "3.0 2025 8 5 32 1.0 2.0 2026 11",
+    "ch9.e3": "3.0 2025 8 5 32 1.0 2.0 2026 11 12 4.0 4.0",
     "ch9.d1": "2026 6 6 3 3 6",
     "ch9.d2": "4.0 2025 11 18 7.0 7.0",
     "ch9.c1": "2026 900 5.0 4 2",

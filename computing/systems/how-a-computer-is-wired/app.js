@@ -263,6 +263,9 @@ PANELS.dg8 = { aria: 'dg8.aria', panels: [{ h: 300, draw(K) {
   [[20, 'b-gold', 'dg8.ctl'], [126, 'b-cyan', 'dg8.t1'], [232, 'b-cyan', 'dg8.t2']].forEach(([x, cls, k]) => {
     K.line(`M${x + 28} 110 V196 M${x + 62} 150 V196`, 'l'); K.box(x, 196, 90, 44, cls, k);
   });
+  // junction dots: a wire joins a line only where a dot is drawn (the SDA taps and the second pull-up cross SCL / SDA)
+  const jd = (x, y) => K.line(`M${x - 3.6} ${y} a3.6 3.6 0 1 0 7.2 0 a3.6 3.6 0 1 0 -7.2 0`, 'jd');
+  [20, 126, 232].forEach(x => { jd(x + 28, 110); jd(x + 62, 150); }); jd(262, 110); jd(304, 150);
   K.text(222, 132, 'dg8.cb', { maxW: 64, cls: 't-mute', fs: 13.2 });
   K.text(170, 266, 'dg8.note1', { maxW: 320, cls: 't-mute', fs: 13.2 });
   K.text(170, 288, 'dg8.note2', { maxW: 320, cls: 't-mute', fs: 13.2 });
@@ -395,7 +398,7 @@ const ns = (x, d) => t('u.ns', { v: fmt(x, d == null ? (x < 10 ? 1 : 0) : d) });
       path(c, [[20, Math.min(need, ymax)], [100, Math.min(need, ymax)]], fr.X, fr.Y, C.gold, 2.2, [6, 4]);
       const fm = L.fmax(n, cp, C0);
       if (fm >= 20 && fm <= 100) { c.strokeStyle = C.mute; c.setLineDash([3, 4]); c.beginPath(); c.moveTo(fr.X(fm), fr.T); c.lineTo(fr.X(fm), fr.B); c.stroke(); c.setLineDash([]);
-        const s = t('ch2.cv.fmax', { f: fmt(fm, 0) }); c.font = FONT; const sw = c.measureText(s).width; c.fillStyle = C.ink; c.textAlign = fr.X(fm) + 6 + sw > fr.R ? 'right' : 'left'; c.fillText(s, fr.X(fm) + (c.textAlign === 'right' ? -6 : 6), fr.T + 8); }
+        const s = t('ch2.cv.fmax', { f: fmt(fm, 0) }); c.font = FONT; const sw = c.measureText(s).width; c.fillStyle = C.ink; let lx = fr.X(fm) + 6; if (lx + sw > fr.R) lx = fr.X(fm) - 6 - sw; lx = Math.max(2, Math.min(lx, fr.R - sw)); c.textAlign = 'left'; c.fillText(s, lx, fr.T + 8); }   /* kept inside the canvas (long English label at 320 px) */
       dot(c, fr.X(f()), fr.Y(Math.max(0, Math.min(ymax, L.tpropBudget(f(), cp)))), need <= L.tpropBudget(f(), cp) ? C.green : C.red, 5.5);
     }
   });
@@ -438,9 +441,9 @@ const ns = (x, d) => t('u.ns', { v: fmt(x, d == null ? (x < 10 ? 1 : 0) : d) });
   const p = () => ({ pkg: +sP.value / 100, remote: +sR.value / 100 }), m = () => +sM.value;
   const sim = reg(cv, { draw() {
     const { c, w, h } = fit(cv), s = M.NUMA.shares(p()), lat = M.NUMA.lat(p());
-    const rows = [[t('ch4.bar.local'), Z.local, C.green, t('ch4.bar.fmt', { lat: ns(Z.local), s: pct(s.local) })],
-      [t('ch4.bar.pkg'), Z.pkg, C.cyan, t('ch4.bar.fmt', { lat: ns(Z.pkg), s: pct(s.pkg) })],
-      [t('ch4.bar.remote'), Z.remote, C.red, t('ch4.bar.fmt', { lat: ns(Z.remote), s: pct(s.remote) })],
+    const rows = [[t('ch4.bar.local'), Z.local, C.green, t('ch4.bar.fmt', { lat: ns(Z.local), s: pct(s.local, 1) })],
+      [t('ch4.bar.pkg'), Z.pkg, C.cyan, t('ch4.bar.fmt', { lat: ns(Z.pkg), s: pct(s.pkg, 1) })],
+      [t('ch4.bar.remote'), Z.remote, C.red, t('ch4.bar.fmt', { lat: ns(Z.remote), s: pct(s.remote, 1) })],
       [t('ch4.bar.avg'), lat, C.gold, ns(lat, 1)]];
     bars(c, w, h, rows, 220, 3);
   } });
