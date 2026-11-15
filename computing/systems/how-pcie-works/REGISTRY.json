@@ -47,14 +47,16 @@
           "PCIe 是怎么连接设备的",
           "根复合体是什么",
           "PCIe 交换芯片",
-          "PCIe 拓扑"
+          "PCIe 拓扑",
+          "PCIe"
         ],
         "en": [
           "what is PCIe",
           "how does PCIe work",
           "PCIe root complex",
           "PCIe switch",
-          "PCIe topology"
+          "PCIe topology",
+          "PCI Express"
         ]
       },
       "anchor": "#ch1"
@@ -77,7 +79,8 @@
           "PCIe 各代速度",
           "128b/130b 编码",
           "PCIe 降速运行",
-          "PCIe 通道不够怎么办"
+          "PCIe 通道不够怎么办",
+          "PCIe 4.0 和 5.0 区别"
         ],
         "en": [
           "PCIe lanes",
@@ -85,7 +88,8 @@
           "PCIe generation speeds",
           "128b/130b encoding",
           "PCIe link width negotiation",
-          "not enough PCIe lanes"
+          "not enough PCIe lanes",
+          "PCIe 4.0 vs 5.0"
         ]
       },
       "anchor": "#ch2",

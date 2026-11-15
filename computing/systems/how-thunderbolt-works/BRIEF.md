@@ -200,3 +200,16 @@ names in the PD diagram and list (Source_Capabilities, EPR_Mode …) are spec id
   same ratio, so no number depends on it); whether shipping TB4 hosts use Max Link BW or allocation mode for two 4K
   monitors; the Thunderspy USB4/TB4 claim; the TB4 "two 4K or one 8K" wording (newsroom; the TB5 brief's TB4 column says
   "Dual 4K"); TB5 brief's PAM3 0.63/0.5 conditions; Linux 5.0 IOMMU/ATS details.
+
+## Registrar (2026-11-15)
+
+- The plain-text citations of 《PCIe 为什么能一代一代翻倍》 became links, zh and en: ch3.p5 → how-pcie-works #ch2, ch11.links →
+  the page. how-usb-drives-talk ch8.p1 now links #ch2 (multi-protocol tunnel) and ch8.p2 links #ch9 (the Thunderbolt
+  requirements); how-pcie-works ch12.links and how-a-computer-is-wired ch10.links link the page.
+- One word, one owner: USB4 和雷电区别, 雷电和 USB4 区别, Thunderbolt vs USB4 and USB4 vs Thunderbolt moved from
+  how-usb-drives-talk #ch8 to #ch9. Search words from the one-click check: #ch7 PD 快充协议 (快充 itself stays with
+  inside-a-phone and the battery draft), #ch9 雷电 5, 雷电 5 是什么, Thunderbolt 5, what is Thunderbolt 5, #ch11 雷电,
+  Thunderbolt, USB-C 能干什么, what can USB-C do. how-usb-drives-talk #ch3 gained 40Gbps, which tied with #ch5 here.
+- `tests/models.cjs`: B1 is checked as a link with an existing anchor, en links must equal zh links, the "no provenance
+  label" check is gone. `tests/browser.cjs` skips the hidden zh span of the provenance label in the English "no Chinese
+  left" check, as the other essays do. Scripts stay at `?v=20261115`.

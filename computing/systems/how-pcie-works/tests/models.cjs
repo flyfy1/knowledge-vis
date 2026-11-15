@@ -291,7 +291,6 @@ const hx = a => TLP.hex(a).join(' ');
     if (others.length) { fails++; console.error(`FAIL Chinese text in ${file}: ${others.slice(0, 3).join(' ')}`); }
   }
   check('cache keys ?v=20261115', (html.match(/\.js\?v=20261115/g) || []).length, 4);
-  check('no provenance label yet (the registrar adds it)', /page-provenance/.test(html), false);
   const R = JSON.parse(fs.readFileSync(path.join(DIR, 'REGISTRY.json'), 'utf8'));
   check('registry slug/path', R.slug + ' ' + R.path, 'how-pcie-works computing/systems/how-pcie-works/');
   check('registry category', [R.category, R.subtopic, R.stage].join('/'), 'computing/systems/university');
@@ -311,7 +310,9 @@ const hx = a => TLP.hex(a).join(' ');
   // sibling links point at chapters that exist, and quote the sibling's title
   const all = Object.values(Z).join('');
   const SIB = { 'how-sata-works': '../how-sata-works/', 'why-nvme-is-fast': '../why-nvme-is-fast/', 'how-usb-drives-talk': '../how-usb-drives-talk/', 'what-a-drive-is-made-of': '../what-a-drive-is-made-of/',
-    'storage-over-a-network': '../storage-over-a-network/', 'how-sas-works': '../how-sas-works/', 'frequency-response': '../../../signal/systems/frequency-response/', 'inside-a-phone': '../../../tech/devices/inside-a-phone/' };
+    'storage-over-a-network': '../storage-over-a-network/', 'how-sas-works': '../how-sas-works/', 'frequency-response': '../../../signal/systems/frequency-response/', 'inside-a-phone': '../../../tech/devices/inside-a-phone/',
+    // bus series B2 and B6, live since 2026-11-15
+    'how-a-computer-is-wired': '../how-a-computer-is-wired/', 'how-thunderbolt-works': '../how-thunderbolt-works/' };
   for (const [sib, rel] of Object.entries(SIB)) {
     const sdir = path.resolve(DIR, rel), sh = fs.readFileSync(path.join(sdir, 'index.html'), 'utf8');
     let hits = 0;
@@ -320,8 +321,9 @@ const hx = a => TLP.hex(a).join(' ');
   }
   for (const [k, a] of [['ch2.p2', 'how-sata-works/#ch3'], ['ch1.p1', 'how-sata-works/#ch2'], ['ch2.p6', 'why-nvme-is-fast/#ch2'], ['ch7.p1', 'why-nvme-is-fast/#ch4'], ['ch7.p5', 'why-nvme-is-fast/#ch7'],
     ['ch11.d2', 'why-nvme-is-fast/#ch8'], ['ch12.links', 'how-usb-drives-talk/#ch8'], ['ch12.links', 'what-a-drive-is-made-of/#ch7'], ['ch4.p5', 'storage-over-a-network/#ch4'],
-    ['ch5.p5', 'storage-over-a-network/#ch6'], ['ch10.p4', 'how-sas-works/#ch9'], ['ch10.p1', 'inside-a-phone/#ecc'], ['ch8.p1', 'frequency-response/']]) says(k, a);
-  for (const sib of ['why-nvme-is-fast', 'how-sata-works', 'how-usb-drives-talk', 'what-a-drive-is-made-of', 'storage-over-a-network', 'how-sas-works']) {
+    ['ch5.p5', 'storage-over-a-network/#ch6'], ['ch10.p4', 'how-sas-works/#ch9'], ['ch10.p1', 'inside-a-phone/#ecc'], ['ch8.p1', 'frequency-response/'],
+    ['ch1.limit', 'how-a-computer-is-wired/#ch5'], ['ch12.links', 'how-a-computer-is-wired/'], ['ch12.links', 'how-thunderbolt-works/']]) says(k, a);
+  for (const sib of ['why-nvme-is-fast', 'how-sata-works', 'how-usb-drives-talk', 'what-a-drive-is-made-of', 'storage-over-a-network', 'how-sas-works', 'how-a-computer-is-wired', 'how-thunderbolt-works']) {
     const t = JSON.parse(fs.readFileSync(path.join(DIR, '..', sib, 'REGISTRY.json'), 'utf8')).title.zh; n++;
     if (!all.includes('《' + t + '》')) { fails++; console.error('FAIL sibling title not quoted: ' + t); }
   }
@@ -331,6 +333,8 @@ const hx = a => TLP.hex(a).join(' ');
   const ectx = { window: {} }; vm.runInNewContext(fs.readFileSync(path.join(DIR, 'copy.en.js'), 'utf8'), ectx);
   const EN = ectx.window.ESSAY_COPY.en, stub = ectx.window.ESSAY_COPY.enStub === true, ph = s => [...s.matchAll(/\{(\w+)\}/g)].map(m => m[1]).sort().join(',');
   check('en keys = zh keys', Object.keys(EN).sort().join('|'), Object.keys(Z).sort().join('|'));
+  const hrefs = o => (Object.values(o).join('').match(/href=["']\.\.\/[^"']+/g) || []).sort().join(' ');
+  check('en links = zh links', hrefs(EN), hrefs(Z));
   for (const k of Object.keys(Z)) check('en placeholders ' + k, ph(EN[k]), ph(Z[k]));
   if (stub) { check('en stub mirrors zh exactly', JSON.stringify(EN), JSON.stringify(Z)); console.log('NOTE: copy.en.js is a stub (enStub); English registry match skipped until it is translated'); }
   else { check('registry title en', R.title.en, EN['doc.title'].split(' · ')[0]); check('registry desc en', R.desc.en, EN['doc.desc']); }

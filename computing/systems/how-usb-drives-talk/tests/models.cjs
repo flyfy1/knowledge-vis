@@ -282,6 +282,15 @@ const zf = (x, d) => M.fmt(x, d, 'zh');
   check('en S5 links = zh S5 links', (Object.values(EN).join('').match(/storage-over-a-network\/#?\w*/g) || []).sort().join(' '), (all.match(/storage-over-a-network\/#?\w*/g) || []).sort().join(' '));
   check('en S3 links = zh S3 links', (Object.values(EN).join('').match(/how-sas-works\/#?\w*/g) || []).sort().join(' '), (all.match(/how-sas-works\/#?\w*/g) || []).sort().join(' '));
   check('en keys = zh keys', Object.keys(EN).sort().join('|'), Object.keys(Z).sort().join('|'));
+  // the bus series (B1 how-pcie-works, B2 how-a-computer-is-wired, B6 how-thunderbolt-works, live 2026-11-15): anchors exist, zh = en
+  for (const sib of ['how-pcie-works', 'how-a-computer-is-wired', 'how-thunderbolt-works']) {
+    const sh = fs.readFileSync(path.join(DIR, '..', sib, 'index.html'), 'utf8'), bl = o => Object.values(o).join('').match(new RegExp(sib + '/(#ch\\d+)?', 'g')) || [];
+    for (const m of bl(Z)) if (m.includes('#')) check(sib + ' anchor ' + m, sh.includes('id="' + m.split('#')[1] + '"'), true);
+    check('en ' + sib + ' links = zh', bl(EN).sort().join(' '), bl(Z).sort().join(' '));
+  }
+  check('ch8.p1 links how-thunderbolt-works/#ch2', Z['ch8.p1'].includes('how-thunderbolt-works/#ch2'), true);
+  check('ch8.p1 links how-pcie-works/#ch1', Z['ch8.p1'].includes('how-pcie-works/#ch1'), true);
+  check('ch8.p2 links how-thunderbolt-works/#ch9', Z['ch8.p2'].includes('how-thunderbolt-works/#ch9'), true);
   for (const k of Object.keys(Z)) check('en placeholders ' + k, ph(EN[k]), ph(Z[k]));
   if (stub) { check('en stub mirrors zh exactly', JSON.stringify(EN), JSON.stringify(Z)); console.log('NOTE: copy.en.js is a stub (enStub); English registry match skipped until it is translated'); }
   else { check('registry title en', R.title.en, EN['doc.title'].split(' · ')[0]); check('registry desc en', R.desc.en, EN['doc.desc']); }

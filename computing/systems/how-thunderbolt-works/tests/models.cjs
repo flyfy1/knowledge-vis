@@ -262,7 +262,7 @@ const zf = (x, d) => M.fmt(x, d, 'zh');
     const others = (src.match(/[一-鿿]+/g) || []).filter(x => !(file === 'index.html' && x === '中'));
     if (others.length) { fails++; console.error(`FAIL Chinese text in ${file}: ${others.slice(0, 3).join(' ')}`); }
   }
-  check('no lesson-shell', /lesson-shell/.test(html), false); check('no provenance label', /page-provenance/.test(html), false);
+  check('no lesson-shell', /lesson-shell/.test(html), false);
   check('nine diagrams', (html.match(/<figure class="dg"/g) || []).length, 9);
   check('a few phrases that would be buying advice are absent', /推荐购买|值得买的|买这款/.test(Object.values(Z).join('')), false);
   const R = JSON.parse(fs.readFileSync(path.join(DIR, 'REGISTRY.json'), 'utf8'));
@@ -280,16 +280,19 @@ const zf = (x, d) => M.fmt(x, d, 'zh');
   for (const L of ['zh', 'en']) { const ours = new Set(); for (const c of R.concepts) for (const a of c.aliases[L]) { n++; if (ours.has(norm(a))) { fails++; console.error('FAIL duplicate alias ' + a); } ours.add(norm(a)); } }
   // sibling links point at chapters that exist; B1 (how-pcie-works) is named in plain text, never linked
   const all = Object.values(Z).join('');
-  for (const sib of ['how-usb-drives-talk', 'why-nvme-is-fast']) {
+  for (const sib of ['how-usb-drives-talk', 'why-nvme-is-fast', 'how-pcie-works']) {
     const sh = fs.readFileSync(path.join(DIR, '..', sib, 'index.html'), 'utf8');
     for (const m of all.matchAll(new RegExp(sib + '/(#ch\\d+)', 'g'))) check(`${sib} anchor ${m[1]}`, sh.includes(`id="${m[1].slice(1)}"`), true);
   }
   check('S4 links: #ch3 and #ch8', [...new Set(all.match(/how-usb-drives-talk\/#ch\d+/g))].sort().join(), 'how-usb-drives-talk/#ch3,how-usb-drives-talk/#ch8');
-  check('B1 not linked', /how-pcie-works/.test(all), false); says('ch3.p5', '《PCIe 为什么能一代一代翻倍》'); says('ch11.links', '《PCIe 为什么能一代一代翻倍》');
+  // B1 is live since 2026-11-15: the plain-text citations became links
+  says('ch3.p5', 'how-pcie-works/#ch2'); says('ch11.links', 'how-pcie-works/'); says('ch3.p5', '《PCIe 为什么能一代一代翻倍》'); says('ch11.links', '《PCIe 为什么能一代一代翻倍》');
 
   const ectx = { window: {} }; vm.runInNewContext(fs.readFileSync(path.join(DIR, 'copy.en.js'), 'utf8'), ectx);
   const EN = ectx.window.ESSAY_COPY.en, stub = ectx.window.ESSAY_COPY.enStub === true, ph = s => [...s.matchAll(/\{(\w+)\}/g)].map(m => m[1]).sort().join(',');
   check('en keys = zh keys', Object.keys(EN).sort().join('|'), Object.keys(Z).sort().join('|'));
+  const hrefs = o => (Object.values(o).join('').match(/href=["']\.\.\/[^"']+/g) || []).sort().join(' ');
+  check('en links = zh links', hrefs(EN), hrefs(Z));
   for (const k of Object.keys(Z)) check('en placeholders ' + k, ph(EN[k]), ph(Z[k]));
   if (stub) { check('en stub mirrors zh exactly', JSON.stringify(EN), JSON.stringify(Z)); console.log('NOTE: copy.en.js is a stub (enStub); English registry match skipped until it is translated'); }
   else { check('registry title en', R.title.en, EN['doc.title'].split(' · ')[0]); check('registry desc en', R.desc.en, EN['doc.desc']); }

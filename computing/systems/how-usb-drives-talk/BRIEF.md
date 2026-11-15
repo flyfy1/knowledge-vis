@@ -210,3 +210,9 @@ Screenshots (not committed): /tmp/agent-tasks/storage/review-s4/shots and /figs.
   sentence linking the same chapter (the SCSI commands sent across a network), zh and en; `tests/models.cjs` checks both
   links and checks S4's aliases against S5's. S5's ch11.links now links this essay and its #ch6. Scripts load with
   `?v=20261115b` (a second change on the day the `20261115` scripts were deployed).
+- Registrar (2026-11-15, bus series B1/B2/B6): ch8.p1 links 「多协议隧道」 to how-thunderbolt-works #ch2 and 「PCIe 交换芯片」 to
+  how-pcie-works #ch1; ch8.p2 links 「雷电的规格」 to how-thunderbolt-works #ch9, zh and en; `tests/models.cjs` checks the three
+  links and that zh and en carry the same bus-series links. One word, one owner: USB4 和雷电区别, 雷电和 USB4 区别, Thunderbolt
+  vs USB4 and USB4 vs Thunderbolt moved from #ch8 to how-thunderbolt-works #ch9, which answers them in full; #ch8 keeps the
+  enclosure words and PCIe 隧道是什么. #ch3 gains 40Gbps (it tied with how-thunderbolt-works #ch5 on the homepage). Scripts
+  load with `?v=20261115c` (a third change on the day).

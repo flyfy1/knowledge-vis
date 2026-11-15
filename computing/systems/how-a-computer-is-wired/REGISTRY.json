@@ -27,8 +27,8 @@
         "en": "One set of wires every device hangs on, with one talker at a time; the PCI specification's Table 3-5 shows how each transaction's fixed overhead eats into 132 MB/s."
       },
       "aliases": {
-        "zh": ["总线是什么", "共享总线", "PCI 总线", "PCI 总线是什么", "总线仲裁", "地址数据复用", "总线带宽为什么不够分", "点对点和总线的区别"],
-        "en": ["what is a computer bus", "shared bus", "PCI bus", "bus arbitration", "multiplexed address and data", "shared bus vs point to point"]
+        "zh": ["总线是什么", "共享总线", "PCI 总线", "PCI 总线是什么", "总线仲裁", "地址数据复用", "总线带宽为什么不够分", "点对点和总线的区别", "总线"],
+        "en": ["what is a computer bus", "shared bus", "PCI bus", "bus arbitration", "multiplexed address and data", "shared bus vs point to point", "computer bus"]
       },
       "anchor": "#ch1",
       "relatedPages": ["how-sata-works"]

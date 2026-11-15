@@ -181,3 +181,16 @@ Micron 9650 and Credo items; Cadence's "first workshop" claim.
 Not changed (design notes): the FEC retry probability (≈7e-7 at 1e-6) assumes independent byte errors and is lower
 than burst-error figures in Das Sharma's papers; the limit text says so. The narrow d5 shows "Address [63:32]" on both
 half-rows of DW2/DW3 (high half on top), which is correct but repetitive.
+
+## Registrar (2026-11-15)
+
+- Links to the bus-series siblings, live together with this page, zh and en: ch1.limit now points at
+  how-a-computer-is-wired #ch5 (where a board's lanes come from) instead of "another essay"; ch12.links adds one sentence
+  linking how-a-computer-is-wired and how-thunderbolt-works. Pages that now link here: how-a-computer-is-wired (#ch1, #ch2,
+  #ch11 and the page), how-thunderbolt-works (#ch2 and the page), how-usb-drives-talk ch8.p1 (#ch1), why-nvme-is-fast ch2.p2
+  (#ch2), what-a-drive-is-made-of ch7.p4 (the page).
+- Search words from the one-click check: #ch1 PCIe / PCI Express, #ch2 PCIe 4.0 和 5.0 区别 / PCIe 4.0 vs 5.0. This page owns
+  the generic PCIe words; why-nvme-is-fast keeps PCIe 4.0 5.0 6.0 SSD 速度, PCIe vs SATA bandwidth and MSI-X 中断 (so the
+  plain query "MSI-X" still opens its #ch4).
+- `tests/models.cjs`: the two siblings join the anchor and title checks, en links must equal zh links, and the "no provenance
+  label yet" check is gone (the label is added at registration). Scripts stay at `?v=20261115` (never deployed before).

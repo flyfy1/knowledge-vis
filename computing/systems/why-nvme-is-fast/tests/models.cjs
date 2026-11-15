@@ -157,5 +157,15 @@ for (const k of Object.keys(Z)) {
   says(E, 'en', 'ch8.f2', '1.4 s'); says(E, 'en', 'ch8.f2', '6.2 s');
 }
 
+{
+  // the bus series (B1 how-pcie-works, B2 how-a-computer-is-wired, B6 how-thunderbolt-works, live 2026-11-15): anchors exist, zh = en
+  for (const sib of ['how-pcie-works', 'how-a-computer-is-wired', 'how-thunderbolt-works']) {
+    const sh = fs.readFileSync(path.join(__dirname, '..', '..', sib, 'index.html'), 'utf8'), bl = o => Object.values(o).join('').match(new RegExp(sib + '/(#ch\\d+)?', 'g')) || [];
+    for (const m of bl(Z)) if (m.includes('#')) check(sib + ' anchor ' + m, sh.includes('id="' + m.split('#')[1] + '"'), true);
+    check('en ' + sib + ' links = zh', bl(E).sort().join(' '), bl(Z).sort().join(' '));
+  }
+  check('ch2.p2 links how-pcie-works/#ch2', Z['ch2.p2'].includes('how-pcie-works/#ch2'), true);
+}
+
 console.log(`${n} checks, ${fails} failures`);
 process.exit(fails ? 1 : 0);

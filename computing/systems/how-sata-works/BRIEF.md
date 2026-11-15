@@ -207,3 +207,7 @@ Not verified:
 - Registrar (2026-11-15, storage series S5): ch10.links links storage-over-a-network (《隔着网线的硬盘》, "Drives Across a
   Wire") instead of "networked storage will get an essay", zh and en; `tests/models.cjs` checks it. Scripts load with
   `?v=20261115b`.
+
+- Registrar (2026-11-15, bus series B1/B2/B6): ch2.limit gains one sentence linking how-a-computer-is-wired #ch2 (loading
+  and reflections on the parallel PCI bus, the other enemy besides skew), zh and en; `tests/models.cjs` checks it and that
+  zh and en carry the same bus-series links. B2 #ch2 links back to this chapter. Scripts load with `?v=20261115c`.

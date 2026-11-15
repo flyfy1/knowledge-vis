@@ -49,7 +49,7 @@ window.ESSAY_COPY.zh = {
   "ch2.title": "总线通道：单行道 SATA 与多车道 PCIe",
   "ch2.law": "一条半双工的窄线缆无论里面闪存有多快，都会把吞吐量锁死在接口上限；PCIe 给 SSD 接上了直通 CPU 的多条全双工高速车道。",
   "ch2.p1": "SATA III 标称 6 Gbps，听起来接近每秒 750 MB，但因为采用 <strong>8b/10b 编码</strong>（每传 8 位有效数据就要附带 2 位控制编码），物理层效率只有 80%，原始带宽只剩 <strong>600 MB/s</strong>，再扣掉帧头协议开销，实际有效载荷极限大约只有 <strong>552 MB/s</strong>。",
-  "ch2.p2": "NVMe 放弃了单独的 SATA 控制器，直接插在 <strong>PCIe（Peripheral Component Interconnect Express）</strong> 总线上。常见消费级与企业级 M.2/U.2 接口提供 <strong>4 条全双工车道（×4）</strong>，PCIe 3.0/4.0/5.0 改用更省开销的 <strong>128b/130b 编码</strong>（效率 98.5%），有效吞吐依次跃升到 <strong>3,545 MB/s</strong>、<strong>7,089 MB/s</strong> 和 <strong>14,178 MB/s</strong>；而最新的 PCIe 6.0 ×4（PAM4 调制）更是达到约 <strong>28,500 MB/s</strong>。",
+  "ch2.p2": "NVMe 放弃了单独的 SATA 控制器，直接插在 <strong><a href=\"../how-pcie-works/#ch2\">PCIe</a>（Peripheral Component Interconnect Express）</strong> 总线上。常见消费级与企业级 M.2/U.2 接口提供 <strong>4 条全双工车道（×4）</strong>，PCIe 3.0/4.0/5.0 改用更省开销的 <strong>128b/130b 编码</strong>（效率 98.5%），有效吞吐依次跃升到 <strong>3,545 MB/s</strong>、<strong>7,089 MB/s</strong> 和 <strong>14,178 MB/s</strong>；而最新的 PCIe 6.0 ×4（PAM4 调制）更是达到约 <strong>28,500 MB/s</strong>。",
   "ch2.lab.title": "实验 2 · 总线极限与利特尔法则（Little's Law）",
   "ch2.lab.how": "选择总线代际，再拖动「队列深度 QD」和「单次读延迟」滑杆：看看为什么光有 PCIe 4.0/5.0 的宽马路，队列深度只有 1 时照样跑不满。",
   "ch2.ctl.bus": "接口总线",

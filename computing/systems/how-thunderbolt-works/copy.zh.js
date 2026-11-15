@@ -129,7 +129,7 @@ window.ESSAY_COPY.zh = {
   "ch3.p2": "分到的数字会写成调度器的权重。USB4 §5.3.3 的调度规则是：不同优先级组之间严格按优先级，同一组里按权重轮转（weighted round robin，权重 1 到 15），而且「不偷懒」：谁的队列空着，下一位就接着发。所以连接管理器给 PCIe 的那份数字不是上限，是「大家都在抢时你至少能拿到多少」。",
   "ch3.p3": "把一台 4K 60 Hz 显示器、一个 USB 3 设备和一块 NVMe 固态（经 PCIe 隧道）接在同一条雷电 4 链路上。每个方向扣掉编码和包头之后能用 {sCap4} Gb/s。显示器拿走 {s0dp} Gb/s，USB 设备拿走 {s0usb} Gb/s，往盘里写大约只剩 {s0drive} MB/s。拔掉显示器，写入升到 {sNoDrive} MB/s；USB 设备也拔掉，就到了雷电 4 PCIe 隧道的上限 32 Gb/s，即 {sNoUsbDrive} MB/s。",
   "ch3.p4": "有一件事一拖就能看出来：<strong>显示信号只往一个方向走</strong>，从电脑到屏幕。从盘里读数据走的是另一个方向，那边没有显示器，所以接着显示器读盘仍有 {sReadDrive} MB/s。雷电 5 的「带宽增强」（Bandwidth Boost）把 4 条线改成 3 条往下、1 条往上：两台 6K 显示器加一块盘，写盘从 {s5w} MB/s 升到 {s5bbw} MB/s，读盘却从 {s5r} MB/s 跌到 {s5bbr} MB/s——往上只剩一条线了。",
-  "ch3.p5": "存储那一篇的<a href='../how-usb-drives-talk/#ch8'>第 8 章</a>算过一块盘单独走雷电 PCIe 隧道能跑多快；这里看的是它和别人挤在一起时。PCIe 本身怎样一代一代翻倍，见本系列《PCIe 为什么能一代一代翻倍》。",
+  "ch3.p5": "存储那一篇的<a href='../how-usb-drives-talk/#ch8'>第 8 章</a>算过一块盘单独走雷电 PCIe 隧道能跑多快；这里看的是它和别人挤在一起时。PCIe 本身怎样一代一代翻倍，见本系列<a href='../how-pcie-works/#ch2'>《PCIe 为什么能一代一代翻倍》</a>。",
   "ch3.model.title": "模型 3 · 一条链路上的三条隧道",
   "ch3.model.how": "选链路、显示器和盘的方向。两根条分别是往下（电脑到设备）和往上，紫色是显示，青色是 USB 3，金色是 PCIe 隧道里的盘，灰色是空着的。",
   "ch3.model.aria": "两个方向上显示、USB 和 PCIe 的带宽占用",
@@ -437,7 +437,7 @@ window.ESSAY_COPY.zh = {
   "ch11.q2": "<b>同一条线上还挂着谁？</b>显示器先拿走它要的那份，而且只占往下的方向（第 3 章）；串起来的设备共享最上面那条线和同一条 PCIe 隧道（第 4 章）。",
   "ch11.q3": "<b>线缆是不是电子标记的、能过多大电流？</b>3 A 的线最多 60 W，没有 EPR 标记最多 100 W（第 7 章）；高速信号的距离也由线决定（第 5 章）。",
   "ch11.sum": "<p>一句话：USB-C 插座给了 24 根针，CC 线让插头不分正反并谈好电压；USB4 的路由器把显示、USB 和 PCIe 装进同一种 4 字节包头的包里，在同一组线上轮流走；连接管理器先给显示器预留，再把剩下的按权重分；雷电 4 和雷电 5 是在这套公开协议上加的一份必选清单。</p>",
-  "ch11.links": "相关的页：<a href='../how-usb-drives-talk/#ch3'>移动硬盘为什么跑不满 · 包装上的数字</a>，<a href='../how-usb-drives-talk/#ch8'>同一篇 · 雷电与 USB4：不翻译的路</a>，<a href='../why-nvme-is-fast/#ch2'>NVMe 为什么这么快 · 总线通道</a>，<a href='../why-nvme-is-fast/#ch4'>同一篇 · 环形队列与门铃</a>。PCIe 本身见本系列《PCIe 为什么能一代一代翻倍》。",
+  "ch11.links": "相关的页：<a href='../how-usb-drives-talk/#ch3'>移动硬盘为什么跑不满 · 包装上的数字</a>，<a href='../how-usb-drives-talk/#ch8'>同一篇 · 雷电与 USB4：不翻译的路</a>，<a href='../why-nvme-is-fast/#ch2'>NVMe 为什么这么快 · 总线通道</a>，<a href='../why-nvme-is-fast/#ch4'>同一篇 · 环形队列与门铃</a>。PCIe 本身见本系列<a href='../how-pcie-works/'>《PCIe 为什么能一代一代翻倍》</a>。",
 
   /* ── diagrams ── */
   "dg1.aria": "USB Type-C 插座 24 根针的排列",

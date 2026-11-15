@@ -199,3 +199,16 @@ Book titles of sibling essays should use their registered English titles.
   - Canvas labels on the ch7 model shrink to about 8–9 px at 320 px (canvas, not a §4a diagram); not changed.
   - tests/browser.cjs checks label-vs-label and label-vs-SVG overlap but not label-vs-box or label-on-line; the two
     English diagram problems above were found only in screenshots.
+
+## Registrar (2026-11-15)
+
+- The plain-text citations of 《PCIe 为什么能一代一代翻倍》 became links, zh and en: ch1.limit → how-pcie-works #ch1 (the
+  real point-to-point interface), ch2.p5 and ch5.p5 → #ch2 (doubling; ×16 vs ×8), ch9.d2 → #ch11 (PCIe 7.0); ch10.links adds
+  how-pcie-works and how-thunderbolt-works. Pages that now link here: how-pcie-works ch1.limit (#ch5) and ch12.links,
+  how-sata-works ch2.limit (#ch2). B3, B4, B5 and why-chips-are-hard (unregistered draft) stay plain text.
+- Search words from the one-click check: #ch1 总线 / computer bus. 主板上的 PCIe 是从哪来的, DMI, PCH and 芯片组 stay here
+  (no collision). 芯粒 and chiplets reach #ch7 through its title only: the draft tech/semiconductors/why-chips-are-hard lists
+  芯粒, 小芯片 and chiplets as its own aliases, and the reserved list in `tests/models.cjs` keeps them off this page. When that
+  draft is registered, check that 芯粒 / chiplets go where the registrar decides and that UCIe / die-to-die stay here.
+- `tests/models.cjs`: how-pcie-works and how-thunderbolt-works join the live-sibling whitelist and anchor checks, the "B1 as
+  plain text" check became link checks, en links must equal zh links. Scripts stay at `?v=20261115`.

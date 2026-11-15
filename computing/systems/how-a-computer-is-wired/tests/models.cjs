@@ -438,12 +438,15 @@ const f = (x, d) => x.toFixed(d);
   }
   // live sibling links must point at chapters that exist
   const all = Object.values(Z).join('');
-  for (const sib of ['what-a-drive-is-made-of', 'how-sata-works', 'why-nvme-is-fast', 'how-usb-drives-talk', 'why-compute-waits-for-memory']) {
+  for (const sib of ['what-a-drive-is-made-of', 'how-sata-works', 'why-nvme-is-fast', 'how-usb-drives-talk', 'why-compute-waits-for-memory', 'how-pcie-works', 'how-thunderbolt-works']) {
     const sh = fs.readFileSync(path.join(DIR, '..', sib, 'index.html'), 'utf8');
     for (const m of all.matchAll(new RegExp('\\.\\./' + sib + '/(#ch\\d+)?', 'g'))) if (m[1]) check(`${sib} anchor ${m[1]}`, sh.includes(`id="${m[1].slice(1)}"`), true);
   }
-  check('links only to live siblings', [...all.matchAll(/href="\.\.\/([\w-]+)\//g)].map(m => m[1]).every(s => ['what-a-drive-is-made-of', 'how-sata-works', 'why-nvme-is-fast', 'how-usb-drives-talk', 'why-compute-waits-for-memory'].includes(s)), true);
-  check('B1 named as plain text, not linked', /how-pcie-works/.test(all), false); says('ch5.p5', '《PCIe 为什么能一代一代翻倍》');
+  check('links only to live siblings', [...all.matchAll(/href="\.\.\/([\w-]+)\//g)].map(m => m[1]).every(s => ['what-a-drive-is-made-of', 'how-sata-works', 'why-nvme-is-fast', 'how-usb-drives-talk', 'why-compute-waits-for-memory', 'how-pcie-works', 'how-thunderbolt-works'].includes(s)), true);
+  // B1 and B6 are live since 2026-11-15: the plain-text citations became links (anchors checked above)
+  for (const [k, a] of [['ch1.limit', 'how-pcie-works/#ch1'], ['ch2.p5', 'how-pcie-works/#ch2'], ['ch5.p5', 'how-pcie-works/#ch2'], ['ch9.d2', 'how-pcie-works/#ch11'],
+    ['ch10.links', 'how-pcie-works/'], ['ch10.links', 'how-thunderbolt-works/']]) says(k, a);
+  says('ch5.p5', '《PCIe 为什么能一代一代翻倍》'); says('ch10.links', '《雷电接口是怎么工作的》');
   check('why-chips-are-hard named as plain text, not linked', /why-chips-are-hard/.test(all), false); says('ch7.p1', '《芯片为什么越来越难做》');
   const sata = JSON.parse(fs.readFileSync(path.join(DIR, '..', 'how-sata-works', 'REGISTRY.json'), 'utf8'));
   says('ch2.p2', '《' + sata.title.zh + '》');
@@ -453,6 +456,8 @@ const f = (x, d) => x.toFixed(d);
   const ectx = { window: {} }; vm.runInNewContext(fs.readFileSync(path.join(DIR, 'copy.en.js'), 'utf8'), ectx);
   const EN = ectx.window.ESSAY_COPY.en, stub = ectx.window.ESSAY_COPY.enStub === true, ph = s => [...s.matchAll(/\{(\w+)\}/g)].map(m => m[1]).sort().join(',');
   check('en keys = zh keys', Object.keys(EN).sort().join('|'), Object.keys(Z).sort().join('|'));
+  const hrefs = o => (Object.values(o).join('').match(/href=["']\.\.\/[^"']+/g) || []).sort().join(' ');
+  check('en links = zh links', hrefs(EN), hrefs(Z));
   for (const k of Object.keys(Z)) check('en placeholders ' + k, ph(EN[k] || ''), ph(Z[k]));
   if (stub) { check('en stub mirrors zh exactly', JSON.stringify(EN), JSON.stringify(Z)); console.log('NOTE: copy.en.js is a stub (enStub); English registry match skipped until it is translated'); }
   else { check('registry title en', R.title.en, EN['doc.title'].split(' · ')[0]); check('registry desc en', R.desc.en, EN['doc.desc']); }

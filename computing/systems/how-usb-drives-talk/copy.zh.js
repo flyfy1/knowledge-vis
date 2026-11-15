@@ -330,8 +330,8 @@ window.ESSAY_COPY.zh = {
   /* ── 08 ── */
   "ch8.title": "雷电与 USB4：不翻译的路",
   "ch8.law": "雷电和支持 PCIe 隧道的 USB4 不把盘当 SCSI 设备：它们把一段 PCIe 链路装在线里，盘直接接到电脑的 NVMe 驱动上。没有翻译，也没有 Bulk-Only，上限变成隧道分到的 PCIe 带宽。",
-  "ch8.p1": "USB4 规范把自己描述成一个「多协议隧道」：一根线里同时装 USB 3、DisplayPort 和 PCIe，各占一份带宽。盒子里如果是一颗 PCIe 交换芯片而不是 USB 桥接芯片，电脑看到的就是一块真正的 NVMe 盘，用的是和主板上那块一样的驱动、一样的队列（<a href='../why-nvme-is-fast/#ch2'>NVMe 那一篇</a>）。SMART、释放命令、固件更新都原样通过。",
-  "ch8.p2": "但这条路有两个条件。第一，USB4 规范写明：USB4 主机「可以选择支持」PCIe 隧道，不是必须。不支持的电脑上，盒子如果还带一个 USB 3 桥接（有的芯片两种都做），就退回 USB 3 那一侧；只做 PCIe 的雷电盒子在这样的口上根本用不了。第二，隧道分给 PCIe 多少，由雷电的规格定：英特尔的雷电 5 技术简介列出对电脑的数据要求，雷电 4 是 PCIe 32 Gb/s，雷电 5 是 PCIe 64 Gb/s（PCIe 4.0）。下面是第 6 章同一条链，只是把 USB 那一段换成隧道：",
+  "ch8.p1": "USB4 规范把自己描述成一个「<a href='../how-thunderbolt-works/#ch2'>多协议隧道</a>」：一根线里同时装 USB 3、DisplayPort 和 PCIe，各占一份带宽。盒子里如果是一颗 <a href='../how-pcie-works/#ch1'>PCIe 交换芯片</a>而不是 USB 桥接芯片，电脑看到的就是一块真正的 NVMe 盘，用的是和主板上那块一样的驱动、一样的队列（<a href='../why-nvme-is-fast/#ch2'>NVMe 那一篇</a>）。SMART、释放命令、固件更新都原样通过。",
+  "ch8.p2": "但这条路有两个条件。第一，USB4 规范写明：USB4 主机「可以选择支持」PCIe 隧道，不是必须。不支持的电脑上，盒子如果还带一个 USB 3 桥接（有的芯片两种都做），就退回 USB 3 那一侧；只做 PCIe 的雷电盒子在这样的口上根本用不了。第二，隧道分给 PCIe 多少，由<a href='../how-thunderbolt-works/#ch9'>雷电的规格</a>定：英特尔的雷电 5 技术简介列出对电脑的数据要求，雷电 4 是 PCIe 32 Gb/s，雷电 5 是 PCIe 64 Gb/s（PCIe 4.0）。下面是第 6 章同一条链，只是把 USB 那一段换成隧道：",
   "ch8.model.title": "模型 · 同一条链，换成 PCIe 隧道",
   "ch8.model.how": "选<strong>电脑口</strong>，拖动<strong>包头效率</strong>（调出来的参数），看最窄的一段从哪里移到哪里。盒子里是 PCIe 4.0 ×4 下行，盘还是那块 7,250 MB/s 的。",
   "ch8.model.aria": "PCIe 隧道路径下盘、下行、隧道三段的上限",

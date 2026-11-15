@@ -127,6 +127,7 @@ const diagramProblems = (page, ids) => page.evaluate(ids => {
         for (let n; (n = walker.nextNode());) {
           const el = n.parentElement; if (!rx.test(n.textContent)) continue;
           if (el.closest('#langToggle') && n.textContent.trim() === '中') continue;
+          const pz = el.closest('.page-provenance .provenance-zh'); if (pz && getComputedStyle(pz).display === 'none') continue;
           out.push('text "' + n.textContent.trim().slice(0, 24) + '"');
         }
         for (const e of document.querySelectorAll('[aria-label]')) if (rx.test(e.getAttribute('aria-label'))) out.push('aria ' + e.getAttribute('aria-label').slice(0, 24));

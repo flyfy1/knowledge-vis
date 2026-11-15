@@ -261,7 +261,8 @@
           "为什么 65W 充电器只有 60W",
           "5A 线和 3A 线区别",
           "PD 诱骗",
-          "PDO 是什么"
+          "PDO 是什么",
+          "PD 快充协议"
         ],
         "en": [
           "USB Power Delivery",
@@ -329,14 +330,22 @@
           "USB4 是不是雷电",
           "USB4 40Gbps 和雷电 4 一样吗",
           "雷电 3 和 USB4 兼容吗",
-          "USB4 必须支持 PCIe 吗"
+          "USB4 必须支持 PCIe 吗",
+          "USB4 和雷电区别",
+          "雷电和 USB4 区别",
+          "雷电 5",
+          "雷电 5 是什么"
         ],
         "en": [
           "Thunderbolt 4 vs Thunderbolt 5",
           "is USB4 the same as Thunderbolt",
           "USB4 40Gbps vs Thunderbolt 4",
           "is Thunderbolt 3 compatible with USB4",
-          "does USB4 require PCIe tunneling"
+          "does USB4 require PCIe tunneling",
+          "Thunderbolt vs USB4",
+          "USB4 vs Thunderbolt",
+          "Thunderbolt 5",
+          "what is Thunderbolt 5"
         ]
       },
       "anchor": "#ch9",
@@ -387,13 +396,17 @@
           "雷电接口原理",
           "一根 USB-C 线为什么能接所有东西",
           "雷电是什么",
-          "Thunderbolt 是什么"
+          "Thunderbolt 是什么",
+          "USB-C 能干什么",
+          "雷电"
         ],
         "en": [
           "how Thunderbolt works",
           "what is Thunderbolt",
           "how one USB-C cable carries everything",
-          "Thunderbolt explained"
+          "Thunderbolt explained",
+          "what can USB-C do",
+          "Thunderbolt"
         ]
       },
       "anchor": "#ch11",

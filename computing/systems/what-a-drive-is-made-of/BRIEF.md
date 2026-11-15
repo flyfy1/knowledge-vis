@@ -195,3 +195,7 @@ registered with zh and en.
 - Registrar (2026-11-15, storage series S5): ch7.p4 now links storage-over-a-network (the network route, no longer
   "planned"), zh and en; `tests/models.cjs` checks it and that zh and en carry the same S5 links. Scripts load with
   `?v=20261115b` (a second change on the day the `20261115` scripts were deployed).
+
+- Registrar (2026-11-15, bus series B1/B2/B6): ch7.p4 links the word PCIe to how-pcie-works (《PCIe 为什么能一代一代翻倍》),
+  zh and en; `tests/models.cjs` checks it and that zh and en carry the same bus-series links. Scripts load with
+  `?v=20261115c` (a third change on the day).
