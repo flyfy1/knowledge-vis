@@ -387,7 +387,7 @@ in parallel. Concept results link straight to the anchor.
 
 ```sh
 node scripts/build-atlas-data.cjs --check          # atlas drift + up-front index limit
-node scripts/build-search-index.cjs --check        # sharded search drift + per-chunk limit
+node scripts/build-search-index.cjs --check        # sharded search drift + per-chunk limit + every listed file tracked by git
 node atlas/tests/data-quality.cjs                  # aliases shape, chapter anchors
 node atlas/tests/registry-import.cjs               # REGISTRY → fragment → preview build + search build, refusals, add-region
 node tests/concept-search.cjs                      # matcher rules, question words, everyday terms and essay chapters in both languages
@@ -395,6 +395,14 @@ node scripts/test_index_pagination.cjs             # homepage source contract
 NODE_PATH=~/Documents/integ-life/integ-games/node_modules HOME_TEST_URL=http://127.0.0.1:18890/ node tests/home-concept-search.cjs
 NODE_PATH=~/Documents/integ-life/integ-games/node_modules ATLAS_BASE_URL=http://127.0.0.1:18890 node atlas/tests/browser.cjs
 ```
+
+Tracked-chunk gate (2026-11-15, B3/B4 registrar): `build-search-index.cjs --check` also runs `git ls-files --error-unmatch`
+on `search/manifest.js` and on every chunk the manifest lists, and exits 1 (`UNTRACKED: …`) if git does not know one of them.
+Reason: the A1/A3 registration (601bf01c) generated `search/chunks/computing-3.js` and wrote it into the manifest without
+committing it, and since the site deploys from `git archive HEAD` the live homepage requested a missing chunk until 1aa9a22f.
+Tracked or staged both pass, so after a build that creates a new chunk, `git add` it before running `--check`; that is the
+intended order. Outside a git work tree (an exported tree, the `--out` preview) the check prints a warning and is skipped.
+Before pushing, `git status --short search/ atlas/` should still show nothing untracked or modified.
 
 ## Changed on purpose in existing tests
 

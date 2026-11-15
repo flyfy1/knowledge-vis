@@ -198,6 +198,23 @@ if (args.has('--check')) {
     console.log(`DRIFT: stale search chunks without a region: ${stale.join(', ')}`);
     process.exit(1);
   }
+  // Every file the manifest lists must be known to git, or a deploy from `git archive HEAD` ships a manifest that
+  // points at a missing chunk (601bf01c generated search/chunks/computing-3.js but never committed it; the live
+  // homepage requested a 404 until 1aa9a22f). `git ls-files --error-unmatch` accepts tracked and staged files, so a
+  // freshly generated chunk fails here until it is `git add`ed. Skipped with a warning outside a git work tree.
+  let inGit = false;
+  try { inGit = execSync('git rev-parse --is-inside-work-tree', { cwd: root, stdio: ['ignore', 'pipe', 'ignore'] }).toString().trim() === 'true'; } catch (_) {}
+  if (!inGit) console.log('WARN: not inside a git work tree; skipped the tracked-chunk check.');
+  else {
+    const listed = [manifestPath, ...[...chunkFiles.keys()].map(name => path.join(chunksDir, name))].map(p => path.relative(root, p));
+    const untracked = listed.filter(rel => {
+      try { execSync(`git ls-files --error-unmatch -- "${rel}"`, { cwd: root, stdio: 'ignore' }); return false; } catch (_) { return true; }
+    });
+    if (untracked.length) {
+      console.log(`UNTRACKED: search files listed in the manifest are not tracked by git (git add them with the registration): ${untracked.join(', ')}`);
+      process.exit(1);
+    }
+  }
 } else {
   fs.mkdirSync(chunksDir, { recursive: true });
   fs.writeFileSync(manifestPath, manifestJS);
