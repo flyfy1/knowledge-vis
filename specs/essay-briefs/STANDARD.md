@@ -63,7 +63,34 @@ A chapter takes 3–6 minutes. Models appear only where they help: ch5 uses case
 - **Colour:** near-black ground (#0c0e13), one warm accent (gold, for "your choice") and one cool accent (cyan); red means loss, violet is the third series.
 - **Type:** serif for titles and laws, sans body at 17px/1.85, mono for numbers. Measure is capped near 35em.
 - **Space:** 90–110px between chapters.
-- **Deliberately absent:** quizzes, icons, images, step chrome, usage instructions, libraries.
+- **Deliberately absent:** quizzes, icons, raster images and photos, step chrome, usage instructions, libraries.
+  Static schematic diagrams are required, not absent: see §4a.
+
+## 4a. Diagrams (示意图) — required from 2026-11-15
+
+Yangyu, 2026-11-15: "在生成的时候，我希望你可以生成一些对应的示意图。示意图可以没有交互，有就行". Models show how a
+quantity behaves; diagrams show what the thing *is*. A reader should see the structure before pushing a model.
+
+- **How many.** Every chapter that introduces a structure gets at least one diagram, and an essay has at least
+  six. A structure is a topology (a tree of switches, a bus, a mesh), a layer stack, a frame/packet/field layout,
+  a timing or message sequence between two sides, a physical cross-section (a platter and head, a flash cell, a
+  connector), or a before/after comparison. Chapters that are only an argument over numbers can skip it.
+- **No interaction needed.** A diagram is static. It sits before the model in its chapter, in a `<figure>` with a
+  `<figcaption>`, as wide as the prose column or the model card.
+- **Format.** Inline SVG written by the page (in `index.html`, or built in `app.js` from a small spec), with a
+  `viewBox` so it scales. No raster images, no external files or libraries. Colours from the page palette, and the
+  same colour for the same thing everywhere on the page (e.g. host always cyan, device always gold).
+- **Text comes from the copy files.** Every label, caption and `aria-label` is a key in `copy.zh.js` and
+  `copy.en.js`, so the translator covers it and English mode shows no CJK. The SVG has `role="img"` and an
+  `aria-label` from copy.
+- **Honest scale.** Numbers drawn on a diagram come from `models.js` and are pinned in `tests/models.cjs` like
+  prose numbers. Otherwise the caption says it is schematic (示意，不按比例 / schematic, not to scale).
+- **Narrow screens.** Rendered label text stays at 11 px or more at 320 px wide. If a wide diagram would shrink
+  below that, provide a portrait variant (swap at ≤ 640 px) or split it, rather than shrinking it further.
+- **Tests.** `tests/browser.cjs` checks, at 1280/390/320 in both languages, that each diagram is present, that
+  its labels are non-empty, that no label's bounding box runs outside the SVG or overlaps another label, and that
+  rendered label size is at least 11 px. Look at screenshots of every diagram; the check cannot see a label on a
+  line.
 
 ## 5. Checklist: a page meets the bar if
 
@@ -80,6 +107,8 @@ A chapter takes 3–6 minutes. Models appear only where they help: ch5 uses case
 11. Simulations step on `dt` and run only while visible.
 12. Site rules pass: bilingual, 48px targets, reduced motion, 1280/390/320, text contrast of at least 4.5:1.
 13. It ends with something usable, not a recap.
+14. Every chapter that introduces a structure has a static diagram (at least six per essay), with labels from the
+    copy files, honest scale, and the checks in §4a passing.
 
 ## 6. Weaknesses: do not copy
 

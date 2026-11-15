@@ -12,6 +12,9 @@ The first essay was `demos/scarcity-moves/`. Six more were added on 2026-11-11 a
 - **One page, chapters, models.** About 8–12 chapters. Each chapter has an anchor (`#ch1…`, `#c1…` or a word
   such as `#gps`) and at least one interactive model. The prose states only numbers the models produce.
   `tests/models.cjs` recomputes every number in the prose from `models.js`.
+- **Diagrams.** From 2026-11-15 (Yangyu), every chapter that introduces a structure also has a static schematic
+  diagram, at least six per essay: inline SVG, labels from the copy files, schematic or pinned to the models.
+  Rules in specs/essay-briefs/STANDARD.md §4a.
 - **Copy outside the markup.** All visible text lives in `copy.zh.js`; the English is in `copy.en.js`, which
   has the same keys and placeholders. A missing key falls back to Chinese. `index.html`, `app.js` and
   `models.js` contain no Chinese except the 中 toggle label and the site's static provenance label, which

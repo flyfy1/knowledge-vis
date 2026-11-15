@@ -56,6 +56,11 @@ your task (`python3 -m http.server <port> --bind 127.0.0.1` from the repo root),
 6. Extend `tests/browser.cjs` so it also runs in English (now that `copy.en.js` exists it should check that no
    CJK characters remain visible in English mode apart from the 中 toggle label, and repeat the overflow and
    target-size checks). Run all the page's tests at the end and report the actual output lines.
+7. **Diagrams** (STANDARD.md §4a, required from 2026-11-15). Check that every chapter introducing a structure
+   has a static diagram (at least six per essay), that each diagram matches the prose and is technically right
+   (field widths, layer order, which side sends what), that drawn numbers are pinned or the caption says
+   schematic, and that labels are readable and not overlapping at 1280/390/320 in both languages. Look at a
+   screenshot of every diagram. Add missing diagrams if they take under an hour; otherwise report them.
 
 ## Judgement calls
 - If a chapter's model is not really a model (a slider that scales hand-set bars, an invented formula), say so
