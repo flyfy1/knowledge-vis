@@ -227,3 +227,7 @@ Not verified from a primary source
   its #ch9 to #ch8 (ch8 compares NVLink 5 with PCIe 5.0 ×16). The memory essay keeps HBM, CoWoS and co-packaged optics.
   One-click additions: plain CXL on #ch3 and plain NVLink on #ch8 (the page tags otherwise won), 内存池化 / memory pooling on #ch6.
 - Scripts stay at `?v=20261115r` (never deployed).
+
+Power/NIC registrar (2026-11-15): tests/models.cjs forbade a page-provenance label ("no provenance label yet") and had failed since the
+label was added at registration (011e6f9b). It now requires exactly one label, as how-memory-talks' test does since 4e4585ca (the CJK
+check already stripped the label). Test-only change: scripts stay at `?v=20261115r`; the label is repointed to this commit.

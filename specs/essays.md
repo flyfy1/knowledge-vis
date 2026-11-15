@@ -638,6 +638,8 @@ ch12.links), how-a-computer-is-wired ch9.d2 (#ch3) and how-pcie-works ch11.e3 (#
 (#ch4, #ch7), 1 from how-virtual-memory-works #ch12, 1 from storage-over-a-network #ch6, 2 into how-pcie-works #ch11 and
 how-a-computer-is-wired #ch9. Not verified (BRIEF): UALink's flit sizes and 2025-04-08 date, Das Sharma Table 4's 256 B CXL.mem
 cell, which NVIDIA Rubin figure is final (3,000 vs 3,600 GB/s).
+tests/models.cjs requires exactly one page-provenance label since 2026-11-15 (power/NIC registrar; it used to forbid one and failed
+since 011e6f9b), as how-memory-talks' test does since 4e4585ca.
 
 ### how-a-gpu-computes: GPU 是怎么算的
 

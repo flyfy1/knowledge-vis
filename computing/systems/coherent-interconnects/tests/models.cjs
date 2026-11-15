@@ -353,7 +353,8 @@ const ymd = s => { const [y, m, d] = s.split('-').map(Number); return d ? `${y} 
     const others = (src.match(/[一-鿿]+/g) || []).filter(x => !(file === 'index.html' && x === '中'));
     if (others.length) { fails++; console.error(`FAIL Chinese text in ${file}: ${others.slice(0, 3).join(' ')}`); }
   }
-  check('no provenance label yet (the registrar adds it)', /<details class="page-provenance"/.test(html), false);
+  // the page-provenance label was added at registration (011e6f9b); it is bilingual by contract and stripped before the CJK check above
+  check('one page-provenance label', (html.match(/<details class="page-provenance"/g) || []).length, 1);
   const R = JSON.parse(fs.readFileSync(path.join(DIR, 'REGISTRY.json'), 'utf8'));
   check('registry slug/path', R.slug + ' ' + R.path, 'coherent-interconnects computing/systems/coherent-interconnects/');
   check('registry category', [R.category, R.subtopic, R.stage].join('/'), 'computing/systems/university');
