@@ -111,6 +111,33 @@ Starting chapter list:
 - **B5 · `small-buses`** (optional) — I²C, SPI, UART, CAN in depth: addressing, arbitration, clock stretching,
   baud tolerance, CAN bit stuffing and arbitration.
 
+## B6 · `computing/systems/how-thunderbolt-works/` (port 18936; after B1, which it builds on)
+
+Requested by Yangyu, 2026-11-15: "雷电接口是怎么工作的，我也希望看到". `how-usb-drives-talk` #ch8 already covers the
+PCIe tunnel *for a storage enclosure* (bandwidth cap, ~3 GB/s on TB3/4); link it, don't redo it. One question:
+一根 USB-C 线，为什么能同时带显示器、网卡、硬盘和充电，还能一台接一台串下去？雷电和 USB4 到底是什么关系？
+
+Starting chapter list:
+1. 在地图上的位置: the Type-C connector (24 pins, which pairs carry what, orientation/flip via CC), and the
+   difference between a connector, a link (USB4/TB) and the protocols tunnelled through it.
+2. 路由器与隧道: USB4/TB routers, adapters and paths; PCIe, DisplayPort and USB 3 tunnels share one link; a
+   packet (transport-layer header, HopID) in outline from the USB4 spec.
+3. 带宽怎么分: DisplayPort gets reserved/isochronous bandwidth first, PCIe and USB 3 share what is left; model a
+   link with a display, a dock and a drive, and what each gets (link B1 for PCIe itself).
+4. 串联: daisy chains and hubs, hop latency, the 6-device TB chain rule, bandwidth shared along the chain.
+5. 线缆与信号: passive vs active cables, length limits per speed, retimers; TB3 20.625 GBd NRZ, USB4 Gen3, TB5/USB4
+   v2 PAM3 80 Gb/s and the asymmetric 120/40 mode (Bandwidth Boost); model the asymmetric split.
+6. 显示器: DisplayPort tunnelling vs DP Alt Mode; how many 4K/6K/8K displays fit (pixel clock × bpp, DSC).
+7. 供电: USB Power Delivery negotiation (PDOs, 5/9/15/20 V, EPR to 48 V / 240 W), e-marker cables; model the
+   negotiation and the cable limit.
+8. 安全：PCIe over a cable means DMA from outside — Thunderclap/Thunderspy, IOMMU and Kernel DMA Protection.
+9. 雷电与 USB4 的关系: Intel's TB3 donation to USB-IF (2019), USB4 v1/v2, TB4/TB5 as certified USB4 profiles with
+   required features; what is mandatory vs optional on each.
+10. 前沿在哪 (as of Nov 2026). 11. Short closing.
+
+Diagrams: the Type-C pinout; a router with its adapters and tunnels; a daisy chain; the PAM3 symmetric vs
+asymmetric lane split; a PD negotiation sequence; a dock's internal topology (schematic).
+
 ## Report (reply, under 450 words)
 
 Chapter ladder one line each, what changed from the list above, figures of merit, tuned parameters, frontier
