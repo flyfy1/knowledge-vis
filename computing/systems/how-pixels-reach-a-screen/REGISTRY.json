@@ -1,0 +1,522 @@
+{
+  "slug": "how-pixels-reach-a-screen",
+  "path": "computing/systems/how-pixels-reach-a-screen/",
+  "category": "computing",
+  "subtopic": "systems",
+  "stage": "university",
+  "title": {
+    "zh": "像素是怎么到屏幕上的",
+    "en": "How Pixels Reach a Screen"
+  },
+  "desc": {
+    "zh": "一块 4K 屏每秒刷新 120 次，就是每秒要送出近十亿个像素，每个都得在对的时刻亮成对的颜色。它们怎么从显卡的一块内存，经过一根线，变成眼前的光？画面为什么会撕裂、卡顿？十一个可以动手的模型：一帧有多少字节，按真实时序表算像素时钟，撕裂与垂直同步的时间线，可变刷新率与低帧率补偿，颜色管线与查找表，一根线放不放得下一种画面，4:2:0 抽掉了什么，一行像素有多少时间充电，眼睛跟着看时的运动模糊，HDR 的 PQ 曲线，以及从点鼠标到屏幕变亮的延迟。",
+    "en": "A 4K screen refreshing 120 times a second has to deliver nearly a billion pixels a second, each lit the right colour at the right moment. How do they get from a block of GPU memory, through one cable, to light in front of your eyes, and why does the picture tear or stutter? Eleven hands-on models: how many bytes a frame takes, the pixel clock from real timing tables, a tearing and vsync timeline, variable refresh with low framerate compensation, the colour pipeline and its lookup tables, whether a cable fits a given mode, what 4:2:0 throws away, how long a row of pixels has to charge, motion blur when the eye tracks, the HDR PQ curve, and the latency from mouse click to light."
+  },
+  "tags": [
+    {
+      "zh": "显示器",
+      "en": "Displays"
+    },
+    {
+      "zh": "显卡",
+      "en": "Graphics Cards"
+    },
+    {
+      "zh": "DisplayPort",
+      "en": "DisplayPort"
+    },
+    {
+      "zh": "HDR",
+      "en": "HDR"
+    },
+    {
+      "zh": "计算机体系结构",
+      "en": "Computer Architecture"
+    },
+    {
+      "zh": "长文",
+      "en": "Long-form Essay"
+    }
+  ],
+  "concepts": [
+    {
+      "id": "framebuffer",
+      "title": {
+        "zh": "帧缓冲：一帧就是一块内存",
+        "en": "The framebuffer: a frame is a block of memory"
+      },
+      "desc": {
+        "zh": "4K 一帧 RGBA8 约 31.6 MiB，120 Hz 时显示引擎每秒要从显存读走近 4 GB；sRGB 编码把更多码值留给暗部。",
+        "en": "A 4K RGBA8 frame is about 31.6 MiB; at 120 Hz the display engine reads nearly 4 GB a second from video memory. sRGB encoding spends more codes on the darks."
+      },
+      "anchor": "#ch1",
+      "aliases": {
+        "zh": [
+          "像素是怎么到屏幕上的",
+          "显示器是怎么显示画面的",
+          "画面是怎么显示出来的",
+          "帧缓冲",
+          "帧缓冲是什么",
+          "4K 一帧多大",
+          "像素格式",
+          "RGBA8",
+          "10 位帧缓冲",
+          "sRGB 和线性",
+          "为什么图像要存成 sRGB"
+        ],
+        "en": [
+          "how do pixels get to the screen",
+          "how does a monitor display an image",
+          "framebuffer",
+          "what is a framebuffer",
+          "framebuffer size",
+          "pixel format",
+          "RGBA8",
+          "10-bit framebuffer",
+          "sRGB vs linear",
+          "why images are stored in sRGB"
+        ]
+      }
+    },
+    {
+      "id": "pixel-clock",
+      "title": {
+        "zh": "像素时钟与消隐：按真实时序表算",
+        "en": "Pixel clock and blanking, from real timing tables"
+      },
+      "desc": {
+        "zh": "CTA-861 的 4K 60 Hz 时序总尺寸 4400 × 2250，像素时钟 594 MHz，一行 7.41 微秒；CVT 精简消隐把消隐从 16% 压到 5%。",
+        "en": "The CTA-861 4K 60 Hz timing is 4400 × 2250 in total at 594 MHz, 7.41 µs a line; CVT reduced blanking cuts blanking from 16% to 5%."
+      },
+      "anchor": "#ch2",
+      "aliases": {
+        "zh": [
+          "像素时钟",
+          "消隐",
+          "消隐区",
+          "前肩 后肩",
+          "行同步 场同步",
+          "显示时序",
+          "CTA-861 时序",
+          "4K60 像素时钟",
+          "594 MHz",
+          "显示器为什么要消隐"
+        ],
+        "en": [
+          "pixel clock",
+          "blanking interval",
+          "front porch back porch",
+          "hsync vsync",
+          "display timing",
+          "CTA-861 timing",
+          "4K60 pixel clock",
+          "594 MHz pixel clock",
+          "why displays have blanking"
+        ]
+      }
+    },
+    {
+      "id": "tearing-vsync",
+      "title": {
+        "zh": "撕裂、垂直同步与卡顿",
+        "en": "Tearing, vsync and stutter"
+      },
+      "desc": {
+        "zh": "不同步就在扫描中途换帧，出现撕裂；垂直同步等到场消隐再换，没撕裂但 48 帧放进 60 Hz 时每帧停 16.7 或 33.3 毫秒，节奏乱了。",
+        "en": "Flipping mid-scan tears the image; vsync waits for vertical blanking, so no tear, but 48 fps on a 60 Hz screen holds frames for 16.7 or 33.3 ms and the pacing breaks."
+      },
+      "anchor": "#ch3",
+      "aliases": {
+        "zh": [
+          "画面撕裂",
+          "屏幕撕裂",
+          "垂直同步",
+          "双缓冲",
+          "三缓冲",
+          "垂直同步为什么卡",
+          "垂直同步延迟",
+          "开垂直同步帧率减半",
+          "画面撕裂是什么原因"
+        ],
+        "en": [
+          "screen tearing",
+          "what causes screen tearing",
+          "vsync",
+          "double buffering",
+          "triple buffering",
+          "why vsync stutters",
+          "vsync input lag",
+          "mailbox present mode",
+          "FIFO present mode",
+          "vsync halves frame rate"
+        ]
+      }
+    },
+    {
+      "id": "variable-refresh",
+      "title": {
+        "zh": "可变刷新率与低帧率补偿",
+        "en": "Variable refresh rate and low framerate compensation"
+      },
+      "desc": {
+        "zh": "可变刷新率把场前肩拉长，等新帧画好再读；帧率低于屏幕范围时，低帧率补偿把同一帧均匀地重读几遍，前提是最高刷新率至少是最低的两倍。",
+        "en": "VRR stretches the vertical front porch until the next frame is ready; below the panel range, LFC repeats each frame evenly, which needs a maximum at least twice the minimum."
+      },
+      "anchor": "#ch4",
+      "aliases": {
+        "zh": [
+          "可变刷新率",
+          "VRR",
+          "自适应同步",
+          "Adaptive-Sync",
+          "FreeSync",
+          "G-SYNC",
+          "低帧率补偿",
+          "LFC",
+          "VRR 范围",
+          "FreeSync 是什么"
+        ],
+        "en": [
+          "variable refresh rate",
+          "what is VRR",
+          "Adaptive-Sync",
+          "FreeSync",
+          "G-SYNC",
+          "low framerate compensation",
+          "LFC",
+          "VRR range",
+          "what is FreeSync"
+        ]
+      }
+    },
+    {
+      "id": "display-engine",
+      "title": {
+        "zh": "显示引擎、合成器与颜色管线",
+        "en": "Display engine, compositor and colour pipeline"
+      },
+      "desc": {
+        "zh": "显示引擎读几个图层、缩放、叠在一起，再走去伽马查找表、颜色矩阵、伽马查找表；合成器能让出路来时，游戏的帧直接翻到屏上。",
+        "en": "The display engine scans several planes, scales and blends them, then applies degamma LUT, colour matrix and gamma LUT; when the compositor steps aside, a game frame flips straight to the screen."
+      },
+      "anchor": "#ch5",
+      "aliases": {
+        "zh": [
+          "显示引擎",
+          "显示控制器",
+          "硬件图层",
+          "叠加层",
+          "桌面合成器",
+          "窗口合成",
+          "DWM",
+          "Wayland 合成器",
+          "独立翻转",
+          "多平面叠加",
+          "MPO",
+          "颜色管线",
+          "伽马 LUT",
+          "色彩空间转换矩阵"
+        ],
+        "en": [
+          "display engine",
+          "display controller",
+          "hardware planes",
+          "overlay planes",
+          "desktop compositor",
+          "desktop window manager",
+          "Wayland compositor",
+          "independent flip",
+          "multiplane overlay",
+          "colour pipeline",
+          "gamma LUT",
+          "degamma LUT",
+          "colour transform matrix"
+        ]
+      }
+    },
+    {
+      "id": "display-link",
+      "title": {
+        "zh": "DisplayPort 与 HDMI：一根线放得下什么",
+        "en": "DisplayPort and HDMI: what fits in one cable"
+      },
+      "desc": {
+        "zh": "4K 120 Hz 10 位要 35.64 Gb/s，HBR3 四通道只有 25.92 Gb/s；链路训练经辅助通道写 DPCD 寄存器，一级级调电压摆幅和预加重。",
+        "en": "4K 120 Hz at 10 bits needs 35.64 Gb/s, more than HBR3’s 25.92 Gb/s; link training writes DPCD registers over AUX and steps voltage swing and pre-emphasis."
+      },
+      "anchor": "#ch6",
+      "aliases": {
+        "zh": [
+          "DisplayPort 原理",
+          "DP 是怎么工作的",
+          "DP 通道",
+          "HBR3",
+          "UHBR20",
+          "链路训练",
+          "MST",
+          "HDMI 2.1 FRL",
+          "TMDS",
+          "HDMI 和 DP 区别",
+          "HDMI 和 DisplayPort 哪个好",
+          "4K 120Hz 要什么线",
+          "8b/10b 和 128b/132b"
+        ],
+        "en": [
+          "how DisplayPort works",
+          "DisplayPort lanes",
+          "HBR3",
+          "UHBR20",
+          "DP link training",
+          "DisplayPort MST",
+          "HDMI FRL",
+          "TMDS",
+          "FRL vs TMDS",
+          "HDMI vs DisplayPort",
+          "which cable for 4K 120Hz",
+          "8b/10b vs 128b/132b"
+        ]
+      }
+    },
+    {
+      "id": "dsc-chroma",
+      "title": {
+        "zh": "DSC 与 4:2:0：压一压画面",
+        "en": "DSC and 4:2:0: squeezing the picture"
+      },
+      "desc": {
+        "zh": "DSC 把每像素 30 位压到 12 位左右，4K 240 Hz 才放得进 HBR3；4:2:0 让四个像素共用一个颜色，红字蓝底的边缘就糊了。",
+        "en": "DSC squeezes 30 bits a pixel to about 12 so 4K 240 Hz fits HBR3; 4:2:0 shares one colour among four pixels, so red text on blue smears."
+      },
+      "anchor": "#ch7",
+      "aliases": {
+        "zh": [
+          "DSC 有损吗",
+          "视觉无损",
+          "4:2:0",
+          "色度抽样",
+          "色度采样",
+          "4:4:4 和 4:2:0 区别",
+          "YUV420 字发糊"
+        ],
+        "en": [
+          "is DSC lossy",
+          "visually lossless",
+          "chroma subsampling",
+          "4:2:0",
+          "4:4:4 vs 4:2:0",
+          "YCbCr 4:2:0 text blurry"
+        ]
+      }
+    },
+    {
+      "id": "panel-rows",
+      "title": {
+        "zh": "屏里面：时序控制器和一行的充电时间",
+        "en": "Inside the panel: the TCON and the time a row gets"
+      },
+      "desc": {
+        "zh": "栅极驱动一次打开一行晶体管，源极驱动同时给这一行充电；4K 60 Hz 一行只有 7.41 微秒，刷新率翻倍，时间减半，晶体管不够快就写不准。",
+        "en": "The gate driver opens one row of transistors while the source drivers charge it; at 4K 60 Hz a row gets 7.41 µs, and doubling the refresh halves it."
+      },
+      "anchor": "#ch8",
+      "aliases": {
+        "zh": [
+          "TCON",
+          "时序控制器",
+          "行驱动 列驱动",
+          "栅极驱动",
+          "源极驱动",
+          "有源矩阵",
+          "TFT 背板",
+          "薄膜晶体管",
+          "IGZO",
+          "LTPS",
+          "屏幕是怎么一行一行刷新的"
+        ],
+        "en": [
+          "TCON",
+          "timing controller",
+          "gate driver",
+          "source driver",
+          "active matrix",
+          "TFT backplane",
+          "thin film transistor",
+          "IGZO",
+          "LTPS",
+          "how a screen refreshes row by row"
+        ]
+      }
+    },
+    {
+      "id": "motion-blur",
+      "title": {
+        "zh": "液晶、OLED 与运动模糊",
+        "en": "LCD, OLED and motion blur"
+      },
+      "desc": {
+        "zh": "保持型显示一帧亮到底，眼睛跟着运动时边缘被抹开约一帧移动的距离；提高刷新率或插黑帧能缩短，响应慢的液晶再加一截。",
+        "en": "A sample-and-hold display stays lit all frame, so an eye tracking motion sees edges smeared by about one frame of movement; higher refresh or black frames shorten it."
+      },
+      "anchor": "#ch9",
+      "aliases": {
+        "zh": [
+          "OLED 和 LCD 区别",
+          "液晶屏原理",
+          "LCD 背光",
+          "运动模糊",
+          "保持型显示",
+          "响应时间",
+          "GtG",
+          "MPRT",
+          "插黑帧",
+          "PWM 调光",
+          "DC 调光",
+          "OLED 频闪",
+          "Mini LED",
+          "Micro LED"
+        ],
+        "en": [
+          "OLED vs LCD",
+          "how does an LCD work",
+          "LCD backlight",
+          "motion blur",
+          "sample and hold",
+          "response time",
+          "GtG vs MPRT",
+          "MPRT",
+          "black frame insertion",
+          "PWM dimming",
+          "DC dimming",
+          "OLED flicker",
+          "mini LED",
+          "micro LED"
+        ]
+      }
+    },
+    {
+      "id": "hdr-pq",
+      "title": {
+        "zh": "HDR 与 PQ 曲线",
+        "en": "HDR and the PQ curve"
+      },
+      "desc": {
+        "zh": "PQ 按绝对亮度编码，10 位 0 到 10000 尼特，相邻两级亮度差一直接近看得出的门槛；普通伽马拉到 1000 尼特，暗部每级跳得太大。",
+        "en": "PQ encodes absolute luminance, 0 to 10,000 nits in 10 bits, keeping each step near the visible threshold; a plain gamma stretched to 1,000 nits jumps too far in the darks."
+      },
+      "anchor": "#ch10",
+      "aliases": {
+        "zh": [
+          "HDR 是什么",
+          "尼特",
+          "nits",
+          "PQ 曲线",
+          "HDR10",
+          "ST 2084",
+          "局部调光",
+          "分区背光",
+          "HDR 发灰",
+          "HDR 为什么发白"
+        ],
+        "en": [
+          "what is HDR",
+          "nits",
+          "PQ curve",
+          "HDR10",
+          "SMPTE ST 2084",
+          "local dimming",
+          "why HDR looks washed out",
+          "perceptual quantizer"
+        ]
+      }
+    },
+    {
+      "id": "display-latency",
+      "title": {
+        "zh": "从点鼠标到屏幕变亮",
+        "en": "From mouse click to photons"
+      },
+      "desc": {
+        "zh": "延迟是一串等待加起来的：鼠标轮询、等下一帧、画和排队、合成器、扫到屏幕中间、像素变过去；最大的一段常常是排队。",
+        "en": "Latency is a sum of waits: mouse polling, the next frame, render and queue, the compositor, scan-out to mid-screen and pixel response; the queue is often the biggest."
+      },
+      "anchor": "#ch11",
+      "aliases": {
+        "zh": [
+          "显示延迟",
+          "输入延迟",
+          "端到端延迟",
+          "点击到屏幕的延迟",
+          "游戏输入延迟从哪来"
+        ],
+        "en": [
+          "display latency",
+          "input lag",
+          "end-to-end latency",
+          "click to photon latency",
+          "where game input lag comes from"
+        ]
+      }
+    },
+    {
+      "id": "display-frontier",
+      "title": {
+        "zh": "显示的前沿（2026 年 11 月）",
+        "en": "The display frontier (November 2026)"
+      },
+      "desc": {
+        "zh": "DP 2.1b 与 DP80LL 线缆、HDMI 2.2 的 96 Gb/s、720 Hz 的 OLED、笔记本屏的 Panel Replay：每一项和本页哪个模型有关。",
+        "en": "DP 2.1b and DP80LL cables, HDMI 2.2 at 96 Gb/s, 720 Hz OLED and Panel Replay on laptop panels, and which model on the page each one touches."
+      },
+      "anchor": "#ch12",
+      "aliases": {
+        "zh": [
+          "DP 2.1b",
+          "DP80LL",
+          "HDMI 2.2",
+          "Ultra96",
+          "720Hz OLED",
+          "面板自刷新",
+          "PSR",
+          "Panel Replay",
+          "eDP 1.5"
+        ],
+        "en": [
+          "DisplayPort 2.1b",
+          "DP80LL",
+          "HDMI 2.2",
+          "Ultra96 cable",
+          "720 Hz OLED",
+          "panel self refresh",
+          "Panel Replay",
+          "eDP 1.5"
+        ]
+      }
+    },
+    {
+      "id": "display-troubleshoot",
+      "title": {
+        "zh": "屏幕不对劲时问的三件事",
+        "en": "Three questions when a screen misbehaves"
+      },
+      "desc": {
+        "zh": "刷新率选不上去、画面撕裂或一顿一顿、动起来糊或开 HDR 发灰：先问线放不放得下，再问哪两个钟对不上，最后问是像素慢还是数不对。",
+        "en": "Refresh rate will not go up, tearing or stutter, blur in motion or grey HDR: ask whether the link fits, which two clocks disagree, and whether the pixels are slow or the numbers are wrong."
+      },
+      "anchor": "#ch13",
+      "aliases": {
+        "zh": [
+          "显示器参数怎么看",
+          "为什么显示器跑不到 144Hz",
+          "显示器黑屏没信号",
+          "刷新率设不上去"
+        ],
+        "en": [
+          "how to read monitor specs",
+          "why won't my monitor run at 144Hz",
+          "monitor no signal",
+          "can't select refresh rate"
+        ]
+      }
+    }
+  ]
+}

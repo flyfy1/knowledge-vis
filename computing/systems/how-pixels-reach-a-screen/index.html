@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="category" content="computing"><meta name="stage" content="university">
+<title>像素是怎么到屏幕上的 · 一篇可以动手的长文</title>
+<meta name="description" content="一块 4K 屏每秒刷新 120 次，就是每秒要送出近十亿个像素，每个都得在对的时刻亮成对的颜色。它们怎么从显卡的一块内存，经过一根线，变成眼前的光？画面为什么会撕裂、卡顿？十一个可以动手的模型：一帧有多少字节，按真实时序表算像素时钟，撕裂与垂直同步的时间线，可变刷新率与低帧率补偿，颜色管线与查找表，一根线放不放得下一种画面，4:2:0 抽掉了什么，一行像素有多少时间充电，眼睛跟着看时的运动模糊，HDR 的 PQ 曲线，以及从点鼠标到屏幕变亮的延迟。">
+<link rel="icon" href="data:,">
+<style>
+  :root { --bg:#0c0e13; --card:#141821; --card2:#1a1f2b; --line:#2b3242; --ink:#ebe8e0; --body:#d5d7de; --mute:#a3aab8; --dim:#9098a8;
+    --gold:#e9b949; --cyan:#63c7e6; --red:#f07a6d; --green:#7ad6a0; --violet:#b39dfb; --dimfill:#3a4254;
+    --serif:"Songti SC","STSong","Noto Serif CJK SC","Source Han Serif SC","SimSun",Georgia,serif;
+    --sans:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC",system-ui,sans-serif;
+    --mono:ui-monospace,Menlo,Consolas,monospace; }
+  * { box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior:auto; } *, *::before, *::after { transition:none !important; animation:none !important; } }
+  body { margin:0; background:var(--bg); color:var(--ink); font:17px/1.85 var(--sans); -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+  a { color:var(--cyan); }
+  a:focus-visible, button:focus-visible, input:focus-visible, [tabindex]:focus-visible { outline:2px solid var(--gold); outline-offset:3px; }
+  .wrap { max-width:760px; margin:0 auto; padding:0 20px; }
+  .wide { max-width:980px; margin:0 auto; padding:0 20px; }
+
+  .topbar { position:absolute; top:0; left:0; right:0; z-index:5; display:flex; justify-content:space-between; align-items:center; padding:8px 12px; gap:8px; }
+  .back { display:inline-flex; align-items:center; min-height:48px; padding:0 10px; color:var(--mute); text-decoration:none; font-size:14px; }
+  .back:hover { color:var(--ink); }
+  #langToggle { display:flex; border:1px solid var(--line); border-radius:999px; overflow:hidden; background:var(--card); }
+  #langToggle button { min-width:48px; min-height:48px; border:0; border-radius:0; background:transparent; color:var(--mute); font:600 14px/1 var(--sans); padding:0 12px; cursor:pointer; }
+  #langToggle button + button { border-left:1px solid var(--line); }
+  #langToggle button[aria-pressed="true"] { background:rgba(233,185,73,.16); color:var(--gold); }
+
+  .hero { min-height:88vh; display:flex; align-items:center; border-bottom:1px solid var(--line); }
+  .hero .wrap { padding-top:96px; padding-bottom:64px; width:100%; }
+  .kicker { font:12px/1.4 var(--mono); letter-spacing:.24em; color:var(--gold); text-transform:uppercase; }
+  h1 { font:400 clamp(44px,9vw,104px)/1.12 var(--serif); letter-spacing:.04em; margin:.3em 0 .25em; }
+  .sub { font:400 clamp(18px,2.6vw,25px)/1.6 var(--serif); margin:0 0 1.4em; }
+  .lead { color:var(--body); max-width:36em; }
+  .note { font-size:15px; color:var(--mute); border-left:2px solid var(--line); padding-left:14px; margin-top:1.8em; max-width:36em; line-height:1.75; }
+  .note strong { color:var(--ink); font-weight:600; }
+
+  .toc { padding:52px 0 8px; }
+  .toc h2 { font:12px/1 var(--mono); letter-spacing:.24em; color:var(--mute); margin:0 0 14px; font-weight:400; }
+  .toc ol { list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); gap:0 22px; }
+  .toc a { display:flex; align-items:center; gap:12px; min-height:48px; text-decoration:none; color:var(--ink); border-bottom:1px solid var(--line); font-size:15px; line-height:1.4; }
+  .toc a:hover { color:var(--gold); }
+  .toc a span { font:12px/1 var(--mono); color:var(--mute); }
+
+  .ch { padding-top:96px; }
+  .num { font:400 15px/1 var(--mono); color:var(--gold); letter-spacing:.2em; }
+  .ch h2 { font:400 clamp(26px,4.2vw,38px)/1.35 var(--serif); margin:.45em 0 .5em; letter-spacing:.02em; }
+  .law { font:400 clamp(19px,2.5vw,23px)/1.7 var(--serif); border-left:3px solid var(--gold); padding:4px 0 4px 18px; margin:0 0 1.5em; }
+  .ch p { margin:0 0 1.15em; color:var(--body); }
+  .ch p strong, .ch li strong { color:var(--ink); font-weight:600; }
+  .ch ul, .ch ol.plain { padding-left:1.3em; margin:0 0 1.2em; color:var(--body); }
+  .ch li { margin:.45em 0; }
+  .take { color:var(--mute) !important; font-size:15.5px; }
+  .tag { display:inline-block; font:600 12px/1 var(--sans); padding:5px 8px; border-radius:6px; margin-right:6px; vertical-align:2px; white-space:nowrap; }
+  .tag.h { background:rgba(122,214,160,.16); color:var(--green); } .tag.m { background:rgba(233,185,73,.16); color:var(--gold); } .tag.l { background:rgba(240,122,109,.16); color:var(--red); }
+
+  figure.lab { margin:34px auto; background:var(--card); border:1px solid var(--line); border-radius:16px; padding:22px 22px 18px; }
+  .lab h3 { margin:0 0 4px; font:600 16px/1.5 var(--sans); color:var(--ink); }
+  .lab .how { margin:0 0 14px; font-size:14.5px; color:var(--mute); line-height:1.65; }
+  .cv { width:100%; height:300px; display:block; border-radius:10px; background:#0f1219; touch-action:pan-y; }
+  .cv.tall { height:360px; } .cv.short { height:170px; margin-top:10px; }
+  .ctl { display:flex; flex-wrap:wrap; gap:4px 22px; align-items:center; margin:12px 0 2px; font-size:14.5px; color:var(--mute); }
+  .ctl label.rng { display:flex; align-items:center; gap:10px; flex:1 1 260px; min-width:0; min-height:48px; }
+  .ctl label.rng > span { flex:0 0 auto; white-space:nowrap; }
+  .toc a b { font-weight:400; }
+  .ctl output { flex:0 0 auto; white-space:nowrap; min-width:4.6em; text-align:right; color:var(--ink); font:500 14px/1.3 var(--mono); }
+  input[type=range] { flex:1 1 auto; min-width:80px; height:48px; margin:0; accent-color:var(--gold); background:transparent; cursor:pointer; }
+  label.chk { display:inline-flex; align-items:center; gap:10px; min-height:48px; padding:0 4px; cursor:pointer; color:var(--ink); }
+  input[type=checkbox], input[type=radio] { accent-color:var(--gold); width:20px; height:20px; margin:0; cursor:pointer; }
+  .seg { display:inline-flex; flex-wrap:wrap; gap:6px; align-items:center; }
+  .seg .lbl { margin-right:4px; }
+  .seg label { display:inline-flex; align-items:center; justify-content:center; gap:8px; min-height:48px; min-width:48px; padding:0 14px; border:1px solid var(--line); border-radius:999px; background:var(--card2); color:var(--ink); cursor:pointer; font-size:14px; }
+  .seg label:has(input:checked) { border-color:var(--gold); color:var(--gold); background:rgba(233,185,73,.12); }
+  .seg input { position:absolute; opacity:0; width:1px; height:1px; }
+  .seg label:has(input:focus-visible) { outline:2px solid var(--gold); outline-offset:2px; }
+  button.b { font:inherit; font-size:14.5px; color:var(--ink); background:var(--card2); border:1px solid var(--line); border-radius:999px; min-height:48px; padding:0 18px; cursor:pointer; line-height:1.3; }
+  button.b:hover { border-color:var(--gold); }
+  button.b[aria-pressed="true"] { background:rgba(233,185,73,.16); border-color:var(--gold); color:var(--gold); }
+  .read { display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:10px; margin-top:14px; }
+  .read div { background:var(--card2); border-radius:10px; padding:10px 12px; font-size:13px; color:var(--mute); line-height:1.5; min-width:0; }
+  .read b { display:block; font:600 20px/1.3 var(--sans); color:var(--ink); font-variant-numeric:tabular-nums; overflow-wrap:anywhere; }
+  .read b.g { color:var(--gold); } .read b.r { color:var(--red); } .read b.c { color:var(--cyan); } .read b.n { color:var(--green); } .read b.v { color:var(--violet); }
+  .say { margin:14px 0 0; font-size:15px; color:var(--ink); line-height:1.7; min-height:3.4em; }
+  .say em { font-style:normal; color:var(--gold); }
+  .legend { display:flex; flex-wrap:wrap; gap:6px 18px; font-size:13.5px; color:var(--mute); margin-top:10px; }
+  .legend i { display:inline-block; width:14px; height:4px; border-radius:2px; margin-right:6px; vertical-align:3px; }
+  .legend i.dash { background:repeating-linear-gradient(90deg,currentColor 0 4px,transparent 4px 7px) !important; }
+  .legend i.band { height:10px; vertical-align:0; }
+
+  .sum { margin:50px 0 0; padding:24px 24px; border:1px solid var(--line); border-radius:16px; background:linear-gradient(180deg,rgba(233,185,73,.07),transparent); font:400 clamp(17px,2.2vw,20px)/1.95 var(--serif); }
+  .sum em { font-style:normal; color:var(--gold); }
+  .qs { counter-reset:q; list-style:none; padding:0 !important; }
+  .qs li { counter-increment:q; position:relative; padding:14px 0 14px 46px !important; border-bottom:1px solid var(--line); margin:0 !important; }
+  .qs li::before { content:counter(q); position:absolute; left:0; top:14px; width:30px; height:30px; border-radius:50%; border:1px solid var(--gold); color:var(--gold); font:600 14px/28px var(--mono); text-align:center; }
+
+  footer { margin:100px 0 0; padding:40px 0 70px; border-top:1px solid var(--line); color:var(--mute); font-size:14px; line-height:1.8; }
+  footer a { color:var(--mute); }
+  .sr { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+  @media (max-width:640px) {
+    body { font-size:16px; } .wrap,.wide { padding:0 16px; }
+    figure.lab { padding:16px 12px 14px; border-radius:14px; }
+    .cv { height:250px; } .cv.tall { height:330px; } .cv.short { height:150px; }
+    .ch { padding-top:76px; } .read { grid-template-columns:repeat(2,minmax(0,1fr)); } .read b { font-size:17px; }
+    .ctl label.rng { flex-basis:100%; }
+  }
+  @media (max-width:420px) {
+    .ctl label.rng { flex-wrap:wrap; gap:0 10px; justify-content:space-between; }
+    .ctl label.rng input[type=range] { order:3; flex:1 1 100%; }
+    .ctl label.rng > span { flex:1 1 0; min-width:0; white-space:normal; line-height:1.4; }
+  }
+  .gold { color:var(--gold); } .cyan { color:var(--cyan); }
+  .cv.xtall { height:440px; }
+  @media (max-width:640px) {
+    .cv.xtall { height:420px; }
+  }
+  .orgs { display:flex; flex-wrap:wrap; gap:6px; margin:0 0 4px; }
+  .orgs span { font-size:13px; padding:4px 9px; border-radius:999px; background:var(--card2); color:var(--mute); border:1px solid var(--line); }
+  .orgs span.on { color:var(--red); border-color:rgba(240,122,109,.5); }
+  .sub3 { font:600 18px/1.5 var(--sans); color:var(--ink); margin:1.8em 0 .6em; }
+  label.txt { display:flex; align-items:center; gap:10px; flex:1 1 260px; min-height:48px; }
+  label.txt input { flex:1 1 auto; min-width:0; min-height:48px; padding:0 14px; border:1px solid var(--line); border-radius:10px; background:var(--card2); color:var(--ink); font:500 16px/1 var(--mono); }
+  .syms { display:flex; flex-wrap:wrap; gap:6px; margin-top:10px; font:12.5px/1.45 var(--mono); }
+  .syms span { background:var(--card2); border-radius:8px; padding:5px 8px; color:var(--mute); }
+  .syms span b { color:var(--ink); font-weight:600; } .syms span.k b { color:var(--red); }
+  .syms span i { font-style:normal; color:var(--gold); }
+  pre.hex { margin:12px 0 0; padding:12px 14px; background:#0f1219; border-radius:10px; color:var(--body); font:13px/1.6 var(--mono); white-space:pre-wrap; overflow-wrap:anywhere; }
+  pre.hex .c { color:var(--cyan); } pre.hex .g { color:var(--gold); } pre.hex .m { color:var(--mute); }
+  .step { margin:6px 0 0; font-size:15px; color:var(--ink); line-height:1.7; min-height:3.4em; }
+  .step em { font-style:normal; color:var(--gold); }
+  .seg.wrapmany label { padding:0 12px; }
+  pre.hex .r { color:var(--red); } pre.hex .v { color:var(--violet); } pre.hex .n { color:var(--green); }
+  figure.dia { margin:30px 0 26px; padding:0; }
+  figure.dia .svg svg { display:block; width:100%; height:auto; margin:0 auto; }
+  figure.dia .svg svg.n { max-width:440px; }
+  figure.dia figcaption { margin-top:10px; font-size:14px; line-height:1.65; color:var(--mute); }
+  svg text { font-family:var(--sans); fill:var(--ink); }
+  svg text.m { fill:var(--mute); } svg text.g { fill:var(--gold); } svg text.c { fill:var(--cyan); } svg text.r { fill:var(--red); } svg text.n { fill:var(--green); } svg text.v { fill:var(--violet); } svg text.k { fill:#0c0e13; }
+  svg text.mono { font-family:var(--mono); }
+  .ctl > .lbl { color:var(--mute); }
+  .bits { display:flex; flex-wrap:wrap; gap:6px; margin:14px 0 4px; font:13px/1.4 var(--mono); }
+  .bits span { display:inline-flex; flex-direction:column; align-items:flex-start; padding:6px 9px; border-radius:8px; background:var(--card2); border:1px solid var(--line); color:var(--body); overflow-wrap:anywhere; min-width:0; max-width:100%; }
+  .bits span i { font-style:normal; font-size:12px; color:var(--mute); }
+  .bits span.t { border-color:rgba(179,157,251,.55); } .bits span.t b { color:var(--violet); }
+  .bits span.x { border-color:rgba(99,199,230,.55); } .bits span.x b { color:var(--cyan); }
+  .bits span.o { border-color:rgba(233,185,73,.55); } .bits span.o b { color:var(--gold); }
+  .bits span.p { border-color:rgba(240,122,109,.6); } .bits span.p b { color:var(--red); }
+  .bits b { font-weight:600; word-break:break-all; }
+  .sets { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:6px; margin:12px 0 4px; font:13px/1.4 var(--mono); }
+  .sets div { background:var(--card2); border:1px solid var(--line); border-radius:8px; padding:6px 8px; color:var(--mute); min-width:0; overflow-wrap:anywhere; }
+  .sets div b { display:block; color:var(--ink); font-weight:600; }
+  .sets div.hit { border-color:var(--green); } .sets div.miss { border-color:var(--red); }
+  .trail { display:flex; flex-wrap:wrap; gap:4px; margin:10px 0 0; font:12.5px/1.3 var(--mono); }
+  .trail span { padding:4px 6px; border-radius:6px; background:var(--card2); color:var(--mute); }
+  .trail span.h { color:var(--green); } .trail span.m { color:var(--red); } .trail span.now { outline:1px solid var(--gold); }
+  .cores { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; margin:6px 0 4px; }
+  .cores div { background:var(--card2); border-radius:10px; padding:10px 12px; font-size:13px; color:var(--mute); line-height:1.5; min-width:0; }
+  .cores div b { display:block; font:600 22px/1.3 var(--mono); color:var(--ink); }
+  .cores b.M { color:var(--red); } .cores b.E { color:var(--gold); } .cores b.S { color:var(--cyan); } .cores b.I { color:var(--mute); }
+  pre.code { margin:14px 0 1.2em; padding:12px 14px; background:#0f1219; border:1px solid var(--line); border-radius:10px; color:var(--body); font:13px/1.6 var(--mono); white-space:pre-wrap; overflow-wrap:anywhere; }
+  @media (max-width:640px) { .sets { grid-template-columns:repeat(2,minmax(0,1fr)); } .cores { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+
+  .st4 { width:100%; border-collapse:separate; border-spacing:4px; margin:10px 0 4px; font:13px/1.3 var(--mono); table-layout:fixed; }
+  .st4 th { color:var(--mute); font:600 12.5px/1.3 var(--sans); text-align:center; padding:2px; }
+  .st4 th:first-child { text-align:left; }
+  .st4 td { background:var(--card2); border-radius:8px; text-align:center; padding:8px 2px; color:var(--mute); }
+  .st4 td:first-child { background:transparent; text-align:left; color:var(--ink); font:600 13px/1.3 var(--sans); }
+  .st4 td b { font-weight:700; font-size:16px; }
+  .st4 td.M b { color:var(--red); } .st4 td.O b { color:var(--violet); } .st4 td.E b { color:var(--gold); } .st4 td.S b { color:var(--cyan); } .st4 td.I b { color:#6f7787; } .st4 td.D b { color:var(--red); } .st4 td.V b { color:var(--cyan); }
+  .st4 td.now { outline:1px solid var(--gold); }
+  .duo { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; margin:10px 0 4px; }
+  .duo div { background:var(--card2); border-radius:10px; padding:10px 12px; font-size:13px; color:var(--mute); line-height:1.5; min-width:0; }
+  .duo div b { display:block; font:600 18px/1.35 var(--mono); color:var(--ink); }
+  .steps { list-style:none; display:flex; flex-wrap:wrap; gap:6px; padding:0; margin:10px 0 0; font-size:13px; }
+  .steps li { padding:5px 9px; border-radius:8px; background:var(--card2); color:var(--mute); }
+  .steps li.done { color:var(--ink); } .steps li.now { outline:1px solid var(--gold); color:var(--gold); }
+  .coreBtns { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:6px; margin:10px 0 2px; }
+  .coreBtns div { display:flex; flex-direction:column; gap:6px; min-width:0; }
+  .coreBtns button.b { padding:0 6px; font-size:13.5px; width:100%; }
+  .lit { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; margin:10px 0 4px; }
+  .lit pre { margin:0; padding:10px 12px; background:#0f1219; border:1px solid var(--line); border-radius:10px; color:var(--body); font:13px/1.7 var(--mono); white-space:pre-wrap; overflow-wrap:anywhere; min-width:0; }
+  .lit pre b { color:var(--mute); font-weight:400; display:block; font-family:var(--sans); }
+  table.out { width:100%; border-collapse:collapse; font-size:14px; margin:10px 0 4px; }
+  table.out th, table.out td { text-align:center; padding:9px 4px; border-bottom:1px solid var(--line); color:var(--body); }
+  table.out th { color:var(--mute); font-weight:600; font-size:13px; }
+  table.out td:first-child { font-family:var(--mono); color:var(--ink); }
+  table.out tr.odd td { background:rgba(240,122,109,.08); }
+  table.out td.y { color:var(--green); font-weight:600; } table.out td.n { color:#8a92a2; }
+  table.out th, table.out td { white-space:nowrap; } table.out small.om { display:block; font:12px/1.3 var(--sans); color:var(--red); }
+  @media (max-width:420px) { table.out { font-size:13px; } table.out th { font-size:12px; } table.out th, table.out td { padding:8px 2px; } }
+  .small { font-size:13.5px; color:var(--mute); line-height:1.65; margin:8px 0 0; }
+  code { font-family:var(--mono); font-size:.9em; color:var(--ink); background:rgba(255,255,255,.05); padding:1px 4px; border-radius:4px; }
+  @media (max-width:640px) { .duo { grid-template-columns:repeat(2,minmax(0,1fr)); } .coreBtns { grid-template-columns:repeat(2,minmax(0,1fr)); } .lit { grid-template-columns:1fr; } .st4 { font-size:12px; } .st4 td b { font-size:14px; } }
+
+  .chainL { list-style:none; padding:0; margin:12px 0 4px; display:grid; gap:8px; }
+  .chainL li { background:var(--card2); border:1px solid var(--line); border-radius:10px; padding:10px 12px; font-size:14px; color:var(--body); line-height:1.55; overflow-wrap:anywhere; }
+  .chainL li b { color:var(--ink); } .chainL li.ok { border-color:rgba(122,214,160,.6); } .chainL li.bad { border-color:rgba(240,122,109,.75); } .chainL li.skip { opacity:.55; }
+  .chainL li small { display:block; color:var(--mute); font:12.5px/1.5 var(--mono); }
+  pre.hex .h { background:rgba(233,185,73,.18); color:var(--gold); border-radius:3px; }
+  .ctl .grow { flex:1 1 100%; }
+  .seg label[hidden], label.chk[hidden] { display:none; }
+  label.txt { flex-basis:200px; min-width:0; max-width:100%; }
+  #rvLin, #rvOff { font-size:clamp(14px,4.4vw,20px); }
+
+  .cv.tl { height:230px; } .cv.prof { height:260px; }
+  @media (max-width:640px) { .cv.tl { height:250px; } .cv.prof { height:240px; } #sbCv { height:auto; aspect-ratio:2 / 1; } }
+  .stages { list-style:none; padding:0; margin:12px 0 4px; display:grid; gap:6px; font:13px/1.5 var(--mono); }
+  .stages li { display:grid; grid-template-columns:minmax(0,1.1fr) minmax(0,2fr); gap:10px; background:var(--card2); border-radius:8px; padding:8px 10px; color:var(--body); }
+  .stages li span { font-family:var(--sans); color:var(--mute); overflow-wrap:anywhere; }
+  .stages li b { color:var(--ink); font-weight:600; overflow-wrap:anywhere; }
+  .stages li i { display:inline-block; width:12px; height:12px; border-radius:3px; margin-right:6px; vertical-align:-1px; }
+  .fr { margin:0 0 1.2em; padding:0; list-style:none; }
+  .fr li { margin:0 0 .9em; color:var(--body); }
+  .sub3 { font:600 18px/1.5 var(--sans); color:var(--ink); margin:1.8em 0 .6em; }
+</style>
+<link rel="stylesheet" href="../../../site-nav.css?v=sn-20261115">
+</head>
+<body>
+<div class="topbar">
+  <a class="back" href="../../../" data-i18n="nav.back"></a>
+  <div id="langToggle" role="group" data-i18n-aria="nav.lang"><button type="button" data-lang="zh" aria-pressed="false">中</button><button type="button" data-lang="en" aria-pressed="false">EN</button></div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="kicker" data-i18n="hero.kicker"></div>
+    <h1 data-i18n="hero.title"></h1>
+    <p class="sub" data-i18n-html="hero.sub"></p>
+    <p class="lead" data-i18n-html="hero.lead"></p>
+    <p class="note" data-i18n-html="hero.note"></p>
+  </div>
+</header>
+
+<nav class="wrap toc" data-i18n-aria="toc.label">
+  <h2 data-i18n="toc.title"></h2>
+  <ol>
+    <li><a href="#ch1"><span>01</span><b data-i18n="toc.ch1"></b></a></li>
+    <li><a href="#ch2"><span>02</span><b data-i18n="toc.ch2"></b></a></li>
+    <li><a href="#ch3"><span>03</span><b data-i18n="toc.ch3"></b></a></li>
+    <li><a href="#ch4"><span>04</span><b data-i18n="toc.ch4"></b></a></li>
+    <li><a href="#ch5"><span>05</span><b data-i18n="toc.ch5"></b></a></li>
+    <li><a href="#ch6"><span>06</span><b data-i18n="toc.ch6"></b></a></li>
+    <li><a href="#ch7"><span>07</span><b data-i18n="toc.ch7"></b></a></li>
+    <li><a href="#ch8"><span>08</span><b data-i18n="toc.ch8"></b></a></li>
+    <li><a href="#ch9"><span>09</span><b data-i18n="toc.ch9"></b></a></li>
+    <li><a href="#ch10"><span>10</span><b data-i18n="toc.ch10"></b></a></li>
+    <li><a href="#ch11"><span>11</span><b data-i18n="toc.ch11"></b></a></li>
+    <li><a href="#ch12"><span>12</span><b data-i18n="toc.ch12"></b></a></li>
+    <li><a href="#ch13"><span>13</span><b data-i18n="toc.ch13"></b></a></li>
+  </ol>
+</nav>
+
+<main>
+<section class="ch" id="ch1">
+  <div class="wrap">
+    <div class="num">01</div>
+    <h2 data-i18n="ch1.title"></h2>
+    <p class="law" data-i18n-html="ch1.law"></p>
+    <p data-i18n-html="ch1.p1"></p><figure class="dia" data-dg="overview"><div class="svg"></div><figcaption data-i18n-html="dg.overview.cap"></figcaption></figure><p data-i18n-html="ch1.p2"></p><figure class="dia" data-dg="fmt"><div class="svg"></div><figcaption data-i18n-html="dg.fmt.cap"></figcaption></figure><p data-i18n-html="ch1.p3"></p><p data-i18n-html="ch1.p4"></p>
+  </div>
+  <div class="wide"><figure class="lab">
+    <h3 data-i18n="ch1.model.title"></h3>
+    <p class="how" data-i18n-html="ch1.model.how"></p>
+    <div class="ctl"><div class="seg" role="radiogroup" data-i18n-aria="ch1.ctl.res"><span class="lbl" data-i18n="ch1.ctl.res"></span><label><input type="radio" name="fbR" value="fhd"><span data-i18n="ch1.res.fhd"></span></label><label><input type="radio" name="fbR" value="qhd"><span data-i18n="ch1.res.qhd"></span></label><label><input type="radio" name="fbR" value="uhd" checked><span data-i18n="ch1.res.uhd"></span></label><label><input type="radio" name="fbR" value="k8"><span data-i18n="ch1.res.k8"></span></label></div></div><div class="ctl"><div class="seg" role="radiogroup" data-i18n-aria="ch1.ctl.fmt"><span class="lbl" data-i18n="ch1.ctl.fmt"></span><label><input type="radio" name="fbF" value="rgba8" checked><span data-i18n="ch1.fmt.rgba8"></span></label><label><input type="radio" name="fbF" value="rgb10a2"><span data-i18n="ch1.fmt.rgb10a2"></span></label><label><input type="radio" name="fbF" value="fp16"><span data-i18n="ch1.fmt.fp16"></span></label></div></div><div class="ctl"><div class="seg" role="radiogroup" data-i18n-aria="ch1.ctl.hz"><span class="lbl" data-i18n="ch1.ctl.hz"></span><label><input type="radio" name="fbH" value="60"><span data-i18n="u.hz.60"></span></label><label><input type="radio" name="fbH" value="120" checked><span data-i18n="u.hz.120"></span></label><label><input type="radio" name="fbH" value="144"><span data-i18n="u.hz.144"></span></label><label><input type="radio" name="fbH" value="240"><span data-i18n="u.hz.240"></span></label></div></div><div class="ctl"><div class="seg" role="radiogroup" data-i18n-aria="ch1.ctl.buf"><span class="lbl" data-i18n="ch1.ctl.buf"></span><label><input type="radio" name="fbB" value="2"><span data-i18n="ch1.buf.2"></span></label><label><input type="radio" name="fbB" value="3" checked><span data-i18n="ch1.buf.3"></span></label></div></div><div class="read"><div><b class="g" id="fbFrame"></b><span data-i18n-html="ch1.read.frame"></span></div><div><b class="" id="fbTotal"></b><span data-i18n-html="ch1.read.total"></span></div><div><b class="c" id="fbPx"></b><span data-i18n-html="ch1.read.px"></span></div><div><b class="" id="fbBw"></b><span data-i18n-html="ch1.read.bw"></span></div></div><p class="say" id="fbSay" aria-live="polite"></p>
+  </figure></div>
+  <div class="wrap">
+    <p data-i18n-html="ch1.p5"></p><p class="take" data-i18n-html="ch1.limit"></p>
+  </div>
+</section>
+<section class="ch" id="ch2">
+  <div class="wrap">
+    <div class="num">02</div>
+    <h2 data-i18n="ch2.title"></h2>
+    <p class="law" data-i18n-html="ch2.law"></p>
+    <p data-i18n-html="ch2.p1"></p><p data-i18n-html="ch2.p2"></p><figure class="dia" data-dg="raster"><div class="svg"></div><figcaption data-i18n-html="dg.raster.cap"></figcaption></figure><p data-i18n-html="ch2.p3"></p>
+  </div>
+  <div class="wide"><figure class="lab">
+    <h3 data-i18n="ch2.model.title"></h3>
+    <p class="how" data-i18n-html="ch2.model.how"></p>
+    <canvas class="cv short" id="tmCv" role="img" data-i18n-aria="ch2.model.aria"></canvas><div class="legend"><span><i style="background:var(--gold)"></i><span data-i18n="ch2.cv.act"></span></span><span><i style="background:var(--dimfill)"></i><span data-i18n="ch2.cv.blank"></span></span><span><i style="background:var(--red)"></i><span data-i18n="ch2.cv.sync"></span></span></div><div class="ctl"><div class="seg" role="radiogroup" data-i18n-aria="ch2.ctl.preset"><span class="lbl" data-i18n="ch2.ctl.preset"></span><label><input type="radio" name="tmP" value="cta16"><span data-i18n="ch2.p.cta16"></span></label><label><input type="radio" name="tmP" value="cta97" checked><span data-i18n="ch2.p.cta97"></span></label><label><input type="radio" name="tmP" value="cvt4k60"><span data-i18n="ch2.p.cvt4k60"></span></label><label><input type="radio" name="tmP" value="cta118"><span data-i18n="ch2.p.cta118"></span></label><label><input type="radio" name="tmP" value="cta117"><span data-i18n="ch2.p.cta117"></span></label><label><input type="radio" name="tmP" value="cta199"><span data-i18n="ch2.p.cta199"></span></label></div></div><div class="ctl"><label class="rng"><span data-i18n="ch2.ctl.hfp"></span><input type="range" id="tmHfp" min="0" max="1200" step="2" value="176"><output id="tmHfpo"></output></label></div><div class="ctl"><label class="rng"><span data-i18n="ch2.ctl.hbp"></span><input type="range" id="tmHbp" min="0" max="600" step="2" value="296"><output id="tmHbpo"></output></label></div><div class="ctl"><label class="rng"><span data-i18n="ch2.ctl.vfp"></span><input type="range" id="tmVfp" min="1" max="200" step="1" value="8"><output id="tmVfpo"></output></label></div><div class="read"><div><b class="" id="tmTot"></b><span data-i18n-html="ch2.read.tot"></span></div><div><b class="g" id="tmPclk"></b><span data-i18n-html="ch2.read.pclk"></span></div><div><b class="c" id="tmLine"></b><span data-i18n-html="ch2.read.line"></span></div><div><b class="" id="tmVbl"></b><span data-i18n-html="ch2.read.vbl"></span></div><div><b class="" id="tmBlank"></b><span data-i18n-html="ch2.read.blank"></span></div></div><p class="say" id="tmSay" aria-live="polite"></p>
+  </figure></div>
+  <div class="wrap">
+    <p data-i18n-html="ch2.p4"></p><p data-i18n-html="ch2.p5"></p><p class="take" data-i18n-html="ch2.limit"></p>
+  </div>
+</section>
+<section class="ch" id="ch3">
+  <div class="wrap">
+    <div class="num">03</div>
+    <h2 data-i18n="ch3.title"></h2>
+    <p class="law" data-i18n-html="ch3.law"></p>
+    <p data-i18n-html="ch3.p1"></p><p data-i18n-html="ch3.p2"></p><figure class="dia" data-dg="flip"><div class="svg"></div><figcaption data-i18n-html="dg.flip.cap"></figcaption></figure><p data-i18n-html="ch3.p3"></p>
+  </div>
+  <div class="wide"><figure class="lab">
+    <h3 data-i18n="ch3.model.title"></h3>
+    <p class="how" data-i18n-html="ch3.model.how"></p>
+    <canvas class="cv tl" id="psCv" role="img" data-i18n-aria="ch3.model.aria"></canvas><div class="ctl"><div class="seg" role="radiogroup" data-i18n-aria="ch3.ctl.mode"><span class="lbl" data-i18n="ch3.ctl.mode"></span><label><input type="radio" name="psM" value="immediate"><span data-i18n="ch3.m.immediate"></span></label><label><input type="radio" name="psM" value="fifo2"><span data-i18n="ch3.m.fifo2"></span></label><label><input type="radio" name="psM" value="fifo3" checked><span data-i18n="ch3.m.fifo3"></span></label><label><input type="radio" name="psM" value="mailbox"><span data-i18n="ch3.m.mailbox"></span></label></div></div><div class="ctl"><label class="rng"><span data-i18n="ch3.ctl.fps"></span><input type="range" id="psF" min="20" max="200" step="1" value="48"><output id="psFo"></output></label></div><div class="ctl"><div class="seg" role="radiogroup" data-i18n-aria="ch3.ctl.hz"><span class="lbl" data-i18n="ch3.ctl.hz"></span><label><input type="radio" name="psH" value="60" checked><span data-i18n="u.hz.60"></span></label><label><input type="radio" name="psH" value="120"><span data-i18n="u.hz.120"></span></label><label><input type="radio" name="psH" value="144"><span data-i18n="u.hz.144"></span></label></div></div><div class="ctl"><label class="rng"><span data-i18n="ch3.ctl.jit"></span><input type="range" id="psJ" min="0" max="30" step="1" value="0"><output id="psJo"></output></label></div><div class="read"><div><b class="g" id="psShown"></b><span data-i18n-html="ch3.read.shown"></span></div><div><b class="r" id="psTears"></b><span data-i18n-html="ch3.read.tears"></span></div><div><b class="" id="psPace"></b><span data-i18n-html="ch3.read.pace"></span></div><div><b class="c" id="psLat"></b><span data-i18n-html="ch3.read.lat"></span></div></div><p class="say" id="psSay" aria-live="polite"></p>
+  </figure></div>
+  <div class="wrap">
+    <p data-i18n-html="ch3.p4"></p><p data-i18n-html="ch3.p5"></p><p class="take" data-i18n-html="ch3.limit"></p>
+  </div>
+</section>
+<section class="ch" id="ch4">
+  <div class="wrap">
+    <div class="num">04</div>
+    <h2 data-i18n="ch4.title"></h2>
+    <p class="law" data-i18n-html="ch4.law"></p>
+    <p data-i18n-html="ch4.p1"></p><p data-i18n-html="ch4.p2"></p><figure class="dia" data-dg="vrr"><div class="svg"></div><figcaption data-i18n-html="dg.vrr.cap"></figcaption></figure>
+  </div>
+  <div class="wide"><figure class="lab">
+    <h3 data-i18n="ch4.model.title"></h3>
+    <p class="how" data-i18n-html="ch4.model.how"></p>
+    <canvas class="cv tl" id="vrCv" role="img" data-i18n-aria="ch4.model.aria"></canvas><div class="ctl"><label class="rng"><span data-i18n="ch4.ctl.fps"></span><input type="range" id="vrF" min="15" max="160" step="1" value="48"><output id="vrFo"></output></label></div><div class="ctl"><div class="seg" role="radiogroup" data-i18n-aria="ch4.ctl.range"><span class="lbl" data-i18n="ch4.ctl.range"></span><label><input type="radio" name="vrR" value="35_60" checked><span data-i18n="ch4.r.35_60"></span></label><label><input type="radio" name="vrR" value="48_120"><span data-i18n="ch4.r.48_120"></span></label><label><input type="radio" name="vrR" value="48_144"><span data-i18n="ch4.r.48_144"></span></label></div></div><div class="ctl"><label class="chk"><input type="checkbox" id="vrL" checked><span data-i18n="ch4.ctl.lfc"></span></label></div><div class="ctl"><label class="rng"><span data-i18n="ch4.ctl.jit"></span><input type="range" id="vrJ" min="0" max="30" step="1" value="0"><output id="vrJo"></output></label></div><div class="read"><div><b class="g" id="vrShown"></b><span data-i18n-html="ch4.read.shown"></span></div><div><b class="v" id="vrRep"></b><span data-i18n-html="ch4.read.rep"></span></div><div><b class="" id="vrPace"></b><span data-i18n-html="ch4.read.pace"></span></div><div><b class="c" id="vrLat"></b><span data-i18n-html="ch4.read.lat"></span></div></div><p class="say" id="vrSay" aria-live="polite"></p>
+  </figure></div>
+  <div class="wrap">
+    <p data-i18n-html="ch4.p3"></p><p data-i18n-html="ch4.p4"></p><p data-i18n-html="ch4.p5"></p><p class="take" data-i18n-html="ch4.limit"></p>
+  </div>
+</section>
+<section class="ch" id="ch5">
+  <div class="wrap">
+    <div class="num">05</div>
+    <h2 data-i18n="ch5.title"></h2>
+    <p class="law" data-i18n-html="ch5.law"></p>
+    <p data-i18n-html="ch5.p1"></p><p data-i18n-html="ch5.p2"></p><p data-i18n-html="ch5.p3"></p><figure class="dia" data-dg="engine"><div class="svg"></div><figcaption data-i18n-html="dg.engine.cap"></figcaption></figure><p data-i18n-html="ch5.p4"></p>
+  </div>
+  <div class="wide"><figure class="lab">
+    <h3 data-i18n="ch5.model.title"></h3>
+    <p class="how" data-i18n-html="ch5.model.how"></p>
+    <div class="ctl"><div class="seg" role="radiogroup" data-i18n-aria="ch5.ctl.col"><span class="lbl" data-i18n="ch5.ctl.col"></span><label><input type="radio" name="coC" value="red" checked><span data-i18n="ch5.c.red"></span></label><label><input type="radio" name="coC" value="skin"><span data-i18n="ch5.c.skin"></span></label><label><input type="radio" name="coC" value="grey"><span data-i18n="ch5.c.grey"></span></label><label><input type="radio" name="coC" value="dark"><span data-i18n="ch5.c.dark"></span></label></div></div><div class="ctl"><div class="seg" role="radiogroup" data-i18n-aria="ch5.ctl.tgt"><span class="lbl" data-i18n="ch5.ctl.tgt"></span><label><input type="radio" name="coT" value="srgb"><span data-i18n="ch5.t.srgb"></span></label><label><input type="radio" name="coT" value="p3" checked><span data-i18n="ch5.t.p3"></span></label><label><input type="radio" name="coT" value="pq"><span data-i18n="ch5.t.pq"></span></label></div></div><div class="ctl"><div class="seg" role="radiogroup" data-i18n-aria="ch5.ctl.bits"><span class="lbl" data-i18n="ch5.ctl.bits"></span><label><input type="radio" name="coB" value="8" checked><span data-i18n="ch5.b.8"></span></label><label><input type="radio" name="coB" value="10"><span data-i18n="ch5.b.10"></span></label></div></div><div class="ctl"><div class="seg" role="radiogroup" data-i18n-aria="ch5.ctl.lut"><span class="lbl" data-i18n="ch5.ctl.lut"></span><label><input type="radio" name="coL" value="17"><span data-i18n="ch5.l.17"></span></label><label><input type="radio" name="coL" value="33"><span data-i18n="ch5.l.33"></span></label><label><input type="radio" name="coL" value="256"><span data-i18n="ch5.l.256"></span></label><label><input type="radio" name="coL" value="1024" checked><span data-i18n="ch5.l.1024"></span></label></div></div><ul class="stages" id="coSt"></ul><div class="read"><div><b class="g" id="coOut"></b><span data-i18n-html="ch5.read.out"></span></div><div><b class="c" id="coLv"></b><span data-i18n-html="ch5.read.lv"></span></div><div><b class="" id="coErr"></b><span data-i18n-html="ch5.read.err"></span></div></div><p class="say" id="coSay" aria-live="polite"></p>
+  </figure></div>
+  <div class="wrap">
+    <p data-i18n-html="ch5.p5"></p><p data-i18n-html="ch5.p6"></p><p class="take" data-i18n-html="ch5.limit"></p>
+  </div>
+</section>
+<section class="ch" id="ch6">
+  <div class="wrap">
+    <div class="num">06</div>
+    <h2 data-i18n="ch6.title"></h2>
+    <p class="law" data-i18n-html="ch6.law"></p>
+    <p data-i18n-html="ch6.p1"></p><figure class="dia" data-dg="dp"><div class="svg"></div><figcaption data-i18n-html="dg.dp.cap"></figcaption></figure><p data-i18n-html="ch6.p2"></p><p data-i18n-html="ch6.p3"></p><figure class="dia" data-dg="train"><div class="svg"></div><figcaption data-i18n-html="dg.train.cap"></figcaption></figure><p data-i18n-html="ch6.p4"></p>
+  </div>
+  <div class="wide"><figure class="lab">
+    <h3 data-i18n="ch6.model.title"></h3>
+    <p class="how" data-i18n-html="ch6.model.how"></p>
+    <canvas class="cv tall" id="lkCv" role="img" data-i18n-aria="ch6.model.aria"></canvas><div class="legend"><span><i style="background:var(--green)"></i><span data-i18n="ch6.leg.fit"></span></span><span><i style="background:var(--red)"></i><span data-i18n="ch6.leg.no"></span></span><span><i style="background:var(--gold)"></i><span data-i18n="ch6.leg.need"></span></span></div><div class="ctl"><div class="seg" role="radiogroup" data-i18n-aria="ch6.ctl.mode"><span class="lbl" data-i18n="ch6.ctl.mode"></span><label><input type="radio" name="lkM" value="fhd60"><span data-i18n="ch6.mo.fhd60"></span></label><label><input type="radio" name="lkM" value="qhd144"><span data-i18n="ch6.mo.qhd144"></span></label><label><input type="radio" name="lkM" value="uhd60"><span data-i18n="ch6.mo.uhd60"></span></label><label><input type="radio" name="lkM" value="uhd120" checked><span data-i18n="ch6.mo.uhd120"></span></label><label><input type="radio" name="lkM" value="uhd144"><span data-i18n="ch6.mo.uhd144"></span></label><label><input type="radio" name="lkM" value="uhd240"><span data-i18n="ch6.mo.uhd240"></span></label><label><input type="radio" name="lkM" value="k8_60"><span data-i18n="ch6.mo.k8_60"></span></label></div></div><div class="ctl"><div class="seg" role="radiogroup" data-i18n-aria="ch6.ctl.bpc"><span class="lbl" data-i18n="ch6.ctl.bpc"></span><label><input type="radio" name="lkB" value="8"><span data-i18n="ch6.bpc.8"></span></label><label><input type="radio" name="lkB" value="10" checked><span data-i18n="ch6.bpc.10"></span></label><label><input type="radio" name="lkB" value="12"><span data-i18n="ch6.bpc.12"></span></label></div></div><div class="ctl"><div class="seg" role="radiogroup" data-i18n-aria="ch6.ctl.chroma"><span class="lbl" data-i18n="ch6.ctl.chroma"></span><label><input type="radio" name="lkC" value="444" checked><span data-i18n="ch6.ch.444"></span></label><label><input type="radio" name="lkC" value="422"><span data-i18n="ch6.ch.422"></span></label><label><input type="radio" name="lkC" value="420"><span data-i18n="ch6.ch.420"></span></label></div></div><div class="ctl"><div class="seg" role="radiogroup" data-i18n-aria="ch6.ctl.dsc"><span class="lbl" data-i18n="ch6.ctl.dsc"></span><label><input type="radio" name="lkD" value="0" checked><span data-i18n="ch6.dsc.0"></span></label><label><input type="radio" name="lkD" value="12"><span data-i18n="ch6.dsc.12"></span></label><label><input type="radio" name="lkD" value="10"><span data-i18n="ch6.dsc.10"></span></label><label><input type="radio" name="lkD" value="8"><span data-i18n="ch6.dsc.8"></span></label></div></div><div class="read"><div><b class="" id="lkPclk"></b><span data-i18n-html="ch6.read.pclk"></span></div><div><b class="g" id="lkNeed"></b><span data-i18n-html="ch6.read.need"></span></div><div><b class="n" id="lkFirst"></b><span data-i18n-html="ch6.read.first"></span></div></div><p class="say" id="lkSay" aria-live="polite"></p>
+  </figure></div>
+  <div class="wrap">
+    <p data-i18n-html="ch6.p5"></p><p data-i18n-html="ch6.p6"></p><p class="take" data-i18n-html="ch6.limit"></p>
+  </div>
+</section>
+<section class="ch" id="ch7">
+  <div class="wrap">
+    <div class="num">07</div>
+    <h2 data-i18n="ch7.title"></h2>
+    <p class="law" data-i18n-html="ch7.law"></p>
+    <p data-i18n-html="ch7.p1"></p><p data-i18n-html="ch7.p2"></p><figure class="dia" data-dg="chroma"><div class="svg"></div><figcaption data-i18n-html="dg.chroma.cap"></figcaption></figure>
+  </div>
+  <div class="wide"><figure class="lab">
+    <h3 data-i18n="ch7.model.title"></h3>
+    <p class="how" data-i18n-html="ch7.model.how"></p>
+    <canvas class="cv " id="sbCv" role="img" data-i18n-aria="ch7.model.aria"></canvas><div class="ctl"><div class="seg" role="radiogroup" data-i18n-aria="ch7.ctl.pat"><span class="lbl" data-i18n="ch7.ctl.pat"></span><label><input type="radio" name="sbP" value="text" checked><span data-i18n="ch7.p.text"></span></label><label><input type="radio" name="sbP" value="photo"><span data-i18n="ch7.p.photo"></span></label><label><input type="radio" name="sbP" value="lines"><span data-i18n="ch7.p.lines"></span></label></div></div><div class="ctl"><div class="seg" role="radiogroup" data-i18n-aria="ch7.ctl.mode"><span class="lbl" data-i18n="ch7.ctl.mode"></span><label><input type="radio" name="sbM" value="444"><span data-i18n="ch7.m.444"></span></label><label><input type="radio" name="sbM" value="422"><span data-i18n="ch7.m.422"></span></label><label><input type="radio" name="sbM" value="420" checked><span data-i18n="ch7.m.420"></span></label></div></div><div class="read"><div><b class="" id="sbBits"></b><span data-i18n-html="ch7.read.bits"></span></div><div><b class="g" id="sbMean"></b><span data-i18n-html="ch7.read.mean"></span></div><div><b class="r" id="sbWorst"></b><span data-i18n-html="ch7.read.worst"></span></div><div><b class="" id="sbBad"></b><span data-i18n-html="ch7.read.bad"></span></div></div><p class="say" id="sbSay" aria-live="polite"></p>
+  </figure></div>
+  <div class="wrap">
+    <p data-i18n-html="ch7.p3"></p><p data-i18n-html="ch7.p4"></p><p data-i18n-html="ch7.p5"></p><p class="take" data-i18n-html="ch7.limit"></p>
+  </div>
+</section>
+<section class="ch" id="ch8">
+  <div class="wrap">
+    <div class="num">08</div>
+    <h2 data-i18n="ch8.title"></h2>
+    <p class="law" data-i18n-html="ch8.law"></p>
+    <p data-i18n-html="ch8.p1"></p><p data-i18n-html="ch8.p2"></p><figure class="dia" data-dg="tft"><div class="svg"></div><figcaption data-i18n-html="dg.tft.cap"></figcaption></figure><p data-i18n-html="ch8.p3"></p>
+  </div>
+  <div class="wide"><figure class="lab">
+    <h3 data-i18n="ch8.model.title"></h3>
+    <p class="how" data-i18n-html="ch8.model.how"></p>
+    <canvas class="cv " id="rwCv" role="img" data-i18n-aria="ch8.model.aria"></canvas><div class="ctl"><div class="seg" role="radiogroup" data-i18n-aria="ch8.ctl.rows"><span class="lbl" data-i18n="ch8.ctl.rows"></span><label><input type="radio" name="rwR" value="1080"><span data-i18n="ch8.r.1080"></span></label><label><input type="radio" name="rwR" value="1440"><span data-i18n="ch8.r.1440"></span></label><label><input type="radio" name="rwR" value="2160" checked><span data-i18n="ch8.r.2160"></span></label></div></div><div class="ctl"><label class="rng"><span data-i18n="ch8.ctl.hz"></span><input type="range" id="rwH" min="0" max="7" step="1" value="1"><output id="rwHo"></output></label></div><div class="ctl"><div class="seg" role="radiogroup" data-i18n-aria="ch8.ctl.tech"><span class="lbl" data-i18n="ch8.ctl.tech"></span><label><input type="radio" name="rwT" value="asi" checked><span data-i18n="ch8.t.asi"></span></label><label><input type="radio" name="rwT" value="oxide"><span data-i18n="ch8.t.oxide"></span></label><label><input type="radio" name="rwT" value="ltps"><span data-i18n="ch8.t.ltps"></span></label></div></div><div class="read"><div><b class="g" id="rwLine"></b><span data-i18n-html="ch8.read.line"></span></div><div><b class="" id="rwTau"></b><span data-i18n-html="ch8.read.tau"></span></div><div><b class="r" id="rwErr"></b><span data-i18n-html="ch8.read.err"></span></div><div><b class="c" id="rwMax"></b><span data-i18n-html="ch8.read.max"></span></div></div><p class="say" id="rwSay" aria-live="polite"></p><p class="small" data-i18n-html="ch8.tuned"></p>
+  </figure></div>
+  <div class="wrap">
+    <p data-i18n-html="ch8.p4"></p><p data-i18n-html="ch8.p5"></p><p class="take" data-i18n-html="ch8.limit"></p>
+  </div>
+</section>
+<section class="ch" id="ch9">
+  <div class="wrap">
+    <div class="num">09</div>
+    <h2 data-i18n="ch9.title"></h2>
+    <p class="law" data-i18n-html="ch9.law"></p>
+    <p data-i18n-html="ch9.p1"></p><figure class="dia" data-dg="stack"><div class="svg"></div><figcaption data-i18n-html="dg.stack.cap"></figcaption></figure><p data-i18n-html="ch9.p2"></p><p data-i18n-html="ch9.p3"></p>
+  </div>
+  <div class="wide"><figure class="lab">
+    <h3 data-i18n="ch9.model.title"></h3>
+    <p class="how" data-i18n-html="ch9.model.how"></p>
+    <canvas class="cv prof" id="blCv" role="img" data-i18n-aria="ch9.model.aria"></canvas><div class="ctl"><div class="seg" role="radiogroup" data-i18n-aria="ch9.ctl.v"><span class="lbl" data-i18n="ch9.ctl.v"></span><label><input type="radio" name="blV" value="240"><span data-i18n="ch9.v.240"></span></label><label><input type="radio" name="blV" value="480"><span data-i18n="ch9.v.480"></span></label><label><input type="radio" name="blV" value="960" checked><span data-i18n="ch9.v.960"></span></label><label><input type="radio" name="blV" value="1920"><span data-i18n="ch9.v.1920"></span></label><label><input type="radio" name="blV" value="3840"><span data-i18n="ch9.v.3840"></span></label></div></div><div class="ctl"><div class="seg" role="radiogroup" data-i18n-aria="ch9.ctl.hz"><span class="lbl" data-i18n="ch9.ctl.hz"></span><label><input type="radio" name="blH" value="60" checked><span data-i18n="u.hz.60"></span></label><label><input type="radio" name="blH" value="120"><span data-i18n="u.hz.120"></span></label><label><input type="radio" name="blH" value="240"><span data-i18n="u.hz.240"></span></label><label><input type="radio" name="blH" value="480"><span data-i18n="u.hz.480"></span></label></div></div><div class="ctl"><div class="seg" role="radiogroup" data-i18n-aria="ch9.ctl.duty"><span class="lbl" data-i18n="ch9.ctl.duty"></span><label><input type="radio" name="blD" value="1" checked><span data-i18n="ch9.d.1"></span></label><label><input type="radio" name="blD" value="0.5"><span data-i18n="ch9.d.0.5"></span></label><label><input type="radio" name="blD" value="0.25"><span data-i18n="ch9.d.0.25"></span></label></div></div><div class="ctl"><div class="seg" role="radiogroup" data-i18n-aria="ch9.ctl.tau"><span class="lbl" data-i18n="ch9.ctl.tau"></span><label><input type="radio" name="blT" value="oled" checked><span data-i18n="ch9.t.oled"></span></label><label><input type="radio" name="blT" value="fast"><span data-i18n="ch9.t.fast"></span></label><label><input type="radio" name="blT" value="slow"><span data-i18n="ch9.t.slow"></span></label></div></div><div class="read"><div><b class="g" id="blW"></b><span data-i18n-html="ch9.read.w"></span></div><div><b class="" id="blMs"></b><span data-i18n-html="ch9.read.ms"></span></div><div><b class="c" id="blHold"></b><span data-i18n-html="ch9.read.hold"></span></div></div><p class="say" id="blSay" aria-live="polite"></p>
+  </figure></div>
+  <div class="wrap">
+    <p data-i18n-html="ch9.p4"></p><p data-i18n-html="ch9.p5"></p><p class="take" data-i18n-html="ch9.limit"></p>
+  </div>
+</section>
+<section class="ch" id="ch10">
+  <div class="wrap">
+    <div class="num">10</div>
+    <h2 data-i18n="ch10.title"></h2>
+    <p class="law" data-i18n-html="ch10.law"></p>
+    <p data-i18n-html="ch10.p1"></p><p data-i18n-html="ch10.p2"></p>
+  </div>
+  <div class="wide"><figure class="lab">
+    <h3 data-i18n="ch10.model.title"></h3>
+    <p class="how" data-i18n-html="ch10.model.how"></p>
+    <canvas class="cv tall" id="pqCv" role="img" data-i18n-aria="ch10.model.aria"></canvas><div class="legend"><span><i style="background:var(--gold)"></i><span data-i18n="ch10.leg.pq"></span></span><span><i style="background:var(--cyan)"></i><span data-i18n="ch10.leg.g"></span></span></div><div class="ctl"><label class="rng"><span data-i18n="ch10.ctl.nits"></span><input type="range" id="pqN" min="0" max="60" step="1" value="30"><output id="pqNo"></output></label></div><div class="ctl"><div class="seg" role="radiogroup" data-i18n-aria="ch10.ctl.peak"><span class="lbl" data-i18n="ch10.ctl.peak"></span><label><input type="radio" name="pqK" value="100"><span data-i18n="ch10.pk.100"></span></label><label><input type="radio" name="pqK" value="1000" checked><span data-i18n="ch10.pk.1000"></span></label><label><input type="radio" name="pqK" value="10000"><span data-i18n="ch10.pk.10000"></span></label></div></div><div class="read"><div><b class="g" id="pqC"></b><span data-i18n-html="ch10.read.pq"></span></div><div><b class="g" id="pqS"></b><span data-i18n-html="ch10.read.pqs"></span></div><div><b class="c" id="pqG"></b><span data-i18n-html="ch10.read.g"></span></div><div><b class="c" id="pqGs"></b><span data-i18n-html="ch10.read.gs"></span></div></div><p class="say" id="pqSay" aria-live="polite"></p>
+  </figure></div>
+  <div class="wrap">
+    <p data-i18n-html="ch10.p3"></p><p data-i18n-html="ch10.p4"></p><p class="take" data-i18n-html="ch10.limit"></p>
+  </div>
+</section>
+<section class="ch" id="ch11">
+  <div class="wrap">
+    <div class="num">11</div>
+    <h2 data-i18n="ch11.title"></h2>
+    <p class="law" data-i18n-html="ch11.law"></p>
+    <p data-i18n-html="ch11.p1"></p><figure class="dia" data-dg="lat"><div class="svg"></div><figcaption data-i18n-html="dg.lat.cap"></figcaption></figure>
+  </div>
+  <div class="wide"><figure class="lab">
+    <h3 data-i18n="ch11.model.title"></h3>
+    <p class="how" data-i18n-html="ch11.model.how"></p>
+    <canvas class="cv tall" id="ltCv" role="img" data-i18n-aria="ch11.model.aria"></canvas><div class="ctl"><label class="rng"><span data-i18n="ch11.ctl.fps"></span><input type="range" id="ltF" min="30" max="360" step="1" value="120"><output id="ltFo"></output></label></div><div class="ctl"><div class="seg" role="radiogroup" data-i18n-aria="ch11.ctl.hz"><span class="lbl" data-i18n="ch11.ctl.hz"></span><label><input type="radio" name="ltH" value="60"><span data-i18n="u.hz.60"></span></label><label><input type="radio" name="ltH" value="120" checked><span data-i18n="u.hz.120"></span></label><label><input type="radio" name="ltH" value="144"><span data-i18n="u.hz.144"></span></label><label><input type="radio" name="ltH" value="240"><span data-i18n="u.hz.240"></span></label></div></div><div class="ctl"><div class="seg" role="radiogroup" data-i18n-aria="ch11.ctl.mode"><span class="lbl" data-i18n="ch11.ctl.mode"></span><label><input type="radio" name="ltM" value="immediate"><span data-i18n="ch11.m.immediate"></span></label><label><input type="radio" name="ltM" value="fifo2"><span data-i18n="ch11.m.fifo2"></span></label><label><input type="radio" name="ltM" value="fifo3" checked><span data-i18n="ch11.m.fifo3"></span></label><label><input type="radio" name="ltM" value="mailbox"><span data-i18n="ch11.m.mailbox"></span></label><label><input type="radio" name="ltM" value="vrr"><span data-i18n="ch11.m.vrr"></span></label></div></div><div class="ctl"><label class="chk"><input type="checkbox" id="ltC" checked><span data-i18n="ch11.ctl.comp"></span></label></div><div class="ctl"><div class="seg" role="radiogroup" data-i18n-aria="ch11.ctl.panel"><span class="lbl" data-i18n="ch11.ctl.panel"></span><label><input type="radio" name="ltP" value="lcd" checked><span data-i18n="ch11.pn.lcd"></span></label><label><input type="radio" name="ltP" value="oled"><span data-i18n="ch11.pn.oled"></span></label></div></div><div class="ctl"><div class="seg" role="radiogroup" data-i18n-aria="ch11.ctl.poll"><span class="lbl" data-i18n="ch11.ctl.poll"></span><label><input type="radio" name="ltQ" value="125" checked><span data-i18n="ch11.po.125"></span></label><label><input type="radio" name="ltQ" value="1000"><span data-i18n="ch11.po.1000"></span></label><label><input type="radio" name="ltQ" value="8000"><span data-i18n="ch11.po.8000"></span></label></div></div><div class="read"><div><b class="g" id="ltTot"></b><span data-i18n-html="ch11.read.tot"></span></div><div><b class="" id="ltBig"></b><span data-i18n-html="ch11.read.big"></span></div></div><p class="say" id="ltSay" aria-live="polite"></p><p class="small" data-i18n-html="ch11.tuned"></p>
+  </figure></div>
+  <div class="wrap">
+    <p data-i18n-html="ch11.p2"></p><p class="take" data-i18n-html="ch11.limit"></p>
+  </div>
+</section>
+<section class="ch" id="ch12">
+  <div class="wrap">
+    <div class="num">12</div>
+    <h2 data-i18n="ch12.title"></h2>
+    <p class="law" data-i18n-html="ch12.law"></p>
+    <h3 class="sub3" data-i18n="ch12.h.est"></h3><ul class="fr"><li data-i18n-html="ch12.e1"></li><li data-i18n-html="ch12.e2"></li><li data-i18n-html="ch12.e3"></li><li data-i18n-html="ch12.e4"></li></ul><h3 class="sub3" data-i18n="ch12.h.demo"></h3><ul class="fr"><li data-i18n-html="ch12.d1"></li></ul><h3 class="sub3" data-i18n="ch12.h.claim"></h3><ul class="fr"><li data-i18n-html="ch12.c1"></li><li data-i18n-html="ch12.c2"></li></ul><p data-i18n-html="ch12.p1"></p>
+  </div>
+</section>
+<section class="ch" id="ch13">
+  <div class="wrap">
+    <div class="num">13</div>
+    <h2 data-i18n="ch13.title"></h2>
+    <p class="law" data-i18n-html="ch13.law"></p>
+    <ol class="plain qs"><li data-i18n-html="ch13.q1"></li><li data-i18n-html="ch13.q2"></li><li data-i18n-html="ch13.q3"></li></ol><div class="sum" data-i18n-html="ch13.sum"></div><p style="margin-top:2em" data-i18n-html="ch13.links"></p>
+  </div>
+</section>
+</main>
+<footer><div class="wrap" data-i18n-html="footer"></div></footer>
+
+<script src="models.js?v=20261115b"></script>
+<script src="copy.zh.js?v=20261115b"></script>
+<script src="copy.en.js?v=20261115b" onerror="void 0"></script>
+<script src="app.js?v=20261115b"></script>
+<script defer src="../../../site-nav.js?v=sn-20261115"></script>
+</body>
+</html>
