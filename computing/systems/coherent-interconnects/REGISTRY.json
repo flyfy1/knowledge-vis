@@ -1,0 +1,368 @@
+{
+  "slug": "coherent-interconnects",
+  "path": "computing/systems/coherent-interconnects/",
+  "category": "computing",
+  "subtopic": "systems",
+  "stage": "university",
+  "title": {
+    "zh": "芯片之间怎么共用内存",
+    "en": "How Chips Share Memory"
+  },
+  "desc": {
+    "zh": "一台服务器里的 CPU、GPU、加速卡和内存扩展卡各有各的内存，为什么现在都想共用一块？靠一根 PCIe 线怎么做到缓存一致？几十上百块 GPU 又怎么连成一台机器？九个可以动手的模型：复制还是共享、CXL 数据帧的槽位账、三类设备的消息、内存扩展与冷热分层、内存池、背向作废、一步步走的环形全归约、全归约要多久、纵向与横向扩展；另有 NVLink 对照表和封装里的一致性。",
+    "en": "A server's CPU, GPUs, accelerators and memory-expansion cards each have their own memory. Why do they all want to share one, how is a cache kept coherent across a PCIe wire, and how are dozens of GPUs joined into one machine? Nine hands-on models: copy or share, the slot accounting of CXL flits, the messages of the three device types, memory expansion and hot/cold tiering, memory pooling, back-invalidate, ring all-reduce step by step, how long an all-reduce takes, and scale-up versus scale-out; plus an NVLink table and coherence inside one package."
+  },
+  "tags": [
+    {
+      "zh": "CXL",
+      "en": "CXL"
+    },
+    {
+      "zh": "NVLink",
+      "en": "NVLink"
+    },
+    {
+      "zh": "计算机体系结构",
+      "en": "Computer Architecture"
+    },
+    {
+      "zh": "互连",
+      "en": "Interconnects"
+    }
+  ],
+  "concepts": [
+    {
+      "id": "copy-or-share",
+      "title": {
+        "zh": "复制还是共享：零拷贝的吸引力",
+        "en": "Copy or share: why zero-copy appeals"
+      },
+      "desc": {
+        "zh": "DMA 整块复制有固定开销；一致地按行读，带宽由利特尔法则决定。用到的比例低于一个门槛时，多大的缓冲区都是共享快。",
+        "en": "A DMA copy has a fixed cost; reading lines coherently gets the bandwidth Little's law allows. Below a threshold fraction, sharing wins at any buffer size."
+      },
+      "anchor": "#ch1",
+      "aliases": {
+        "zh": [
+          "零拷贝",
+          "一致性共享内存",
+          "复制还是共享内存",
+          "DMA 复制的开销"
+        ],
+        "en": [
+          "zero-copy",
+          "coherent shared memory",
+          "copy vs share memory",
+          "DMA copy overhead"
+        ]
+      }
+    },
+    {
+      "id": "coherence-over-a-link",
+      "title": {
+        "zh": "一致性跨过一根线：家代理",
+        "en": "Coherence across a link: the home agent"
+      },
+      "desc": {
+        "zh": "设备的缓存加入主机的一致性：每一行由主机的家代理管，设备要先问家，主机的核心要写时家通知设备作废。",
+        "en": "A device's cache joins the host's coherence: the host's home agent owns every line, the device asks it first, and it tells the device to invalidate before a core writes."
+      },
+      "anchor": "#ch2",
+      "aliases": {
+        "zh": [
+          "家代理",
+          "设备缓存一致性",
+          "加速器缓存一致"
+        ],
+        "en": [
+          "home agent",
+          "device cache coherence",
+          "coherent accelerator"
+        ]
+      }
+    },
+    {
+      "id": "cxl-protocols",
+      "title": {
+        "zh": "CXL 的三种协议和数据帧",
+        "en": "CXL's three protocols and flits"
+      },
+      "desc": {
+        "zh": "CXL.io、CXL.cache、CXL.mem 共用 PCIe 物理层；68 字节帧的槽位账决定一根 ×16 链路实际能搬多少。",
+        "en": "CXL.io, CXL.cache and CXL.mem share the PCIe physical layer; the slot accounting of the 68-byte flit sets what a ×16 link really carries."
+      },
+      "anchor": "#ch3",
+      "aliases": {
+        "zh": [
+          "什么是 CXL",
+          "CXL 是什么",
+          "CXL.mem CXL.cache 区别",
+          "CXL 带宽",
+          "CXL 帧"
+        ],
+        "en": [
+          "what is CXL",
+          "CXL.io CXL.cache CXL.mem",
+          "CXL bandwidth",
+          "CXL flit"
+        ]
+      }
+    },
+    {
+      "id": "cxl-device-types",
+      "title": {
+        "zh": "CXL 的三类设备",
+        "en": "The three CXL device types"
+      },
+      "desc": {
+        "zh": "第 1 类只缓存（智能网卡），第 2 类缓存又带内存（GPU、FPGA），第 3 类只开放内存（内存扩展卡）；每一步动作对应哪些消息。",
+        "en": "Type 1 only caches (smart NICs), Type 2 caches and has memory (GPUs, FPGAs), Type 3 only exposes memory (expansion cards); which messages each action costs."
+      },
+      "anchor": "#ch4",
+      "aliases": {
+        "zh": [
+          "CXL Type 3",
+          "CXL 第 3 类设备",
+          "CXL 设备类型",
+          "HDM"
+        ],
+        "en": [
+          "CXL Type 1 2 3",
+          "CXL device types",
+          "host-managed device memory"
+        ]
+      }
+    },
+    {
+      "id": "cxl-memory-expansion",
+      "title": {
+        "zh": "内存扩展卡与冷热分层",
+        "en": "Memory expansion and hot/cold tiering"
+      },
+      "desc": {
+        "zh": "CXL 内存比本地慢一档：实测延迟和带宽，以及按页面热度把冷页放过去时平均延迟怎么变。",
+        "en": "CXL memory is one step slower than local: measured latency and bandwidth, and how average latency moves when cold pages are placed there by popularity."
+      },
+      "anchor": "#ch5",
+      "aliases": {
+        "zh": [
+          "内存扩展卡",
+          "CXL 延迟",
+          "CXL 内存扩展",
+          "冷热分层",
+          "平坦内存模式"
+        ],
+        "en": [
+          "CXL memory expansion",
+          "CXL latency",
+          "memory expander",
+          "hot cold page tiering",
+          "flat memory mode"
+        ]
+      }
+    },
+    {
+      "id": "memory-pooling-switch",
+      "title": {
+        "zh": "内存池与 CXL 交换机",
+        "en": "Memory pools and CXL switches"
+      },
+      "desc": {
+        "zh": "几台主机合用一块内存能少备多少：统计复用，受需求相关性限制；多逻辑设备与交换机多一跳的代价。",
+        "en": "How much less memory hosts need when they share a pool: statistical multiplexing limited by correlated demand; multi-logical devices and the cost of a switch hop."
+      },
+      "anchor": "#ch6",
+      "aliases": {
+        "zh": [
+          "CXL 交换机",
+          "多逻辑设备",
+          "内存搁浅",
+          "IDE 链路加密"
+        ],
+        "en": [
+          "CXL switch",
+          "multi-logical device",
+          "stranded memory",
+          "CXL IDE"
+        ]
+      }
+    },
+    {
+      "id": "back-invalidate",
+      "title": {
+        "zh": "背向作废：几台主机共用一行",
+        "en": "Back-invalidate: several hosts sharing one line"
+      },
+      "desc": {
+        "zh": "CXL 3.0 让内存设备自己维护目录，要作废其他主机的副本时发 BISnp；写得越多、主机越多，作废越多。",
+        "en": "CXL 3.0 lets the memory device keep a directory and send BISnp to invalidate other hosts' copies; more writes and more hosts mean more invalidations."
+      },
+      "anchor": "#ch7",
+      "aliases": {
+        "zh": [
+          "背向作废",
+          "back-invalidate 是什么",
+          "CXL 3.0 共享内存",
+          "GFAM"
+        ],
+        "en": [
+          "back-invalidate",
+          "BISnp",
+          "CXL 3.0 shared memory",
+          "global fabric attached memory"
+        ]
+      }
+    },
+    {
+      "id": "nvlink-nvswitch",
+      "title": {
+        "zh": "NVLink 与 NVSwitch",
+        "en": "NVLink and NVSwitch"
+      },
+      "desc": {
+        "zh": "NVLink 4/5/6 每块 GPU 的带宽（换算成每个方向），NVSwitch 把 72 块 GPU 两两连通成一个 NVLink 域。",
+        "en": "NVLink 4/5/6 bandwidth per GPU (converted to per direction), and how NVSwitch joins 72 GPUs into one NVLink domain."
+      },
+      "anchor": "#ch8",
+      "aliases": {
+        "zh": [
+          "NVLink 是什么",
+          "NVSwitch",
+          "NVL72",
+          "NVLink 域"
+        ],
+        "en": [
+          "what is NVLink",
+          "NVSwitch",
+          "NVL72",
+          "NVLink domain"
+        ]
+      }
+    },
+    {
+      "id": "ring-all-reduce",
+      "title": {
+        "zh": "环形全归约",
+        "en": "Ring all-reduce"
+      },
+      "desc": {
+        "zh": "归约分散加全收集，每块卡发出 2(N−1)/N 份数据，是带宽最优的；在真实链路上一次梯度同步要多久。",
+        "en": "Reduce-scatter plus all-gather, each GPU sending 2(N−1)/N of the data, the bandwidth-optimal bound; how long one gradient sync takes on real links."
+      },
+      "anchor": "#ch9",
+      "aliases": {
+        "zh": [
+          "环形全归约",
+          "全归约",
+          "梯度同步",
+          "all-reduce 是什么"
+        ],
+        "en": [
+          "ring all-reduce",
+          "all-reduce",
+          "gradient synchronization",
+          "reduce-scatter all-gather"
+        ]
+      }
+    },
+    {
+      "id": "scale-up-scale-out",
+      "title": {
+        "zh": "纵向扩展、横向扩展与 UALink",
+        "en": "Scale-up, scale-out and UALink"
+      },
+      "desc": {
+        "zh": "域内走 NVLink、域间走网络的两层全归约，域越大网络上的字节越少；UALink 1.0 是加速器之间的开放互连。",
+        "en": "Two-level all-reduce, NVLink inside a domain and the network between them: bigger domains put fewer bytes on the network. UALink 1.0 is the open accelerator interconnect."
+      },
+      "anchor": "#ch10",
+      "aliases": {
+        "zh": [
+          "scale-up scale-out 区别",
+          "纵向扩展",
+          "横向扩展",
+          "UALink",
+          "分层全归约"
+        ],
+        "en": [
+          "scale-up vs scale-out",
+          "UALink",
+          "hierarchical all-reduce",
+          "accelerator interconnect"
+        ]
+      }
+    },
+    {
+      "id": "in-package-coherence",
+      "title": {
+        "zh": "封装里的一致性：MI300A 与 Grace Hopper",
+        "en": "Coherence in one package: MI300A and Grace Hopper"
+      },
+      "desc": {
+        "zh": "MI300A 让 CPU 和 GPU 芯粒共用同一块 HBM3；Grace Hopper 用一致的 NVLink-C2C 连起两块各带内存的芯片。",
+        "en": "MI300A lets CPU and GPU chiplets share one HBM3; Grace Hopper joins two chips with their own memory over coherent NVLink-C2C."
+      },
+      "anchor": "#ch11",
+      "aliases": {
+        "zh": [
+          "Grace Hopper 内存一致",
+          "NVLink-C2C",
+          "MI300A",
+          "CPU GPU 统一内存"
+        ],
+        "en": [
+          "Grace Hopper coherence",
+          "NVLink-C2C",
+          "MI300A",
+          "CPU GPU unified memory"
+        ]
+      }
+    },
+    {
+      "id": "interconnect-frontier",
+      "title": {
+        "zh": "互连的前沿（2026 年 11 月）",
+        "en": "Interconnect frontier (November 2026)"
+      },
+      "desc": {
+        "zh": "CXL 4.0、UALink 2.0、Vera Rubin NVL72、800 Gb/s 网卡和共封装光学交换机：哪些已出货，哪些还在纸上。",
+        "en": "CXL 4.0, UALink 2.0, Vera Rubin NVL72, 800 Gb/s NICs and co-packaged-optics switches: what ships and what is still on paper."
+      },
+      "anchor": "#ch12",
+      "aliases": {
+        "zh": [
+          "CXL 4.0",
+          "UALink 2.0",
+          "Vera Rubin NVL72"
+        ],
+        "en": [
+          "CXL 4.0",
+          "UALink 2.0",
+          "Vera Rubin NVL72"
+        ]
+      }
+    },
+    {
+      "id": "judge-an-interconnect",
+      "title": {
+        "zh": "看一套互连的三个问题",
+        "en": "Three questions to ask of an interconnect"
+      },
+      "desc": {
+        "zh": "共享的是什么，每个方向多少带宽、来回多少纳秒，一致性由谁保证、跨多大的范围。",
+        "en": "What is shared, how much bandwidth per direction and how many nanoseconds per round trip, and who keeps it coherent over how wide a domain."
+      },
+      "anchor": "#ch13",
+      "aliases": {
+        "zh": [
+          "怎么看懂一套互连",
+          "互连带宽 每个方向"
+        ],
+        "en": [
+          "how to judge an interconnect",
+          "interconnect bandwidth per direction"
+        ]
+      }
+    }
+  ]
+}
