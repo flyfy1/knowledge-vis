@@ -1,0 +1,379 @@
+{
+  "slug": "how-a-nic-moves-packets",
+  "path": "computing/systems/how-a-nic-moves-packets/",
+  "category": "computing",
+  "subtopic": "systems",
+  "stage": "university",
+  "title": {
+    "zh": "网卡是怎么搬运数据包的",
+    "en": "How a Network Card Moves Packets"
+  },
+  "desc": {
+    "zh": "一张 400G 网卡，每秒要收三千多万个包，平均每个包只有三十纳秒，比一次内存访问还短。它怎么在 CPU 几乎不插手的情况下，把包从光纤里搬进正确的那个程序的内存？十个可以动手的模型：一帧以太网和它的校验码，线速下每个包的时间，描述符为什么要提前取，PCIe 装不装得下 400G，RSS 的托普利茨哈希，几条大流怎么把队列压歪，分段和接收卸载省多少 CPU，DDIO 的缓存为什么会漏，发送环里排多少字节才合适，内核协议栈、XDP 和 DPDK 各要几个核，以及训练集群里 ECMP 和包喷洒的差别。",
+    "en": "A 400G network card receives more than thirty million packets a second, about thirty nanoseconds each, less than one memory access. How does it move them from the fibre into the memory of the right program with the CPU hardly involved? Ten hands-on models: one Ethernet frame and its check sequence, the time per packet at line rate, why descriptors are fetched ahead, whether PCIe can carry 400G, the Toeplitz hash behind RSS, how a few big flows skew the queues, how much CPU segmentation and receive offloads save, why DDIO leaks, how many bytes belong in the transmit ring, how many cores the kernel stack, XDP and DPDK need, and ECMP versus packet spraying in a training cluster."
+  },
+  "tags": [
+    {
+      "zh": "网络",
+      "en": "Networking"
+    },
+    {
+      "zh": "网卡",
+      "en": "Network Cards"
+    },
+    {
+      "zh": "计算机体系结构",
+      "en": "Computer Architecture"
+    },
+    {
+      "zh": "长文",
+      "en": "Long-form Essay"
+    }
+  ],
+  "concepts": [
+    {
+      "id": "nic-anatomy",
+      "title": {
+        "zh": "网卡里有什么：物理层、MAC、队列和 DMA",
+        "en": "Inside a network card: PHY, MAC, queues and DMA"
+      },
+      "desc": {
+        "zh": "网卡是一台小机器：把光变回比特，认出帧，选好队列，再自己通过 PCIe 把包写进主机内存。",
+        "en": "A NIC is a small machine: it turns light back into bits, finds frames, picks a queue and writes packets into host memory over PCIe by itself."
+      },
+      "anchor": "#ch1",
+      "aliases": {
+        "zh": [
+          "网卡是怎么工作的",
+          "网卡里有什么",
+          "网络接口卡",
+          "网卡怎么搬运数据包"
+        ],
+        "en": [
+          "how does a network card work",
+          "network interface card",
+          "what is inside a NIC",
+          "how a NIC moves packets"
+        ]
+      }
+    },
+    {
+      "id": "ethernet-frame",
+      "title": {
+        "zh": "一帧以太网，和线速下每个包的时间",
+        "en": "One Ethernet frame, and the time per packet at line rate"
+      },
+      "desc": {
+        "zh": "64 到 1518 字节，线上再加 20 字节；400G 跑满小帧时每 1.7 纳秒一个包。帧尾的 CRC-32 一错就扔。",
+        "en": "64 to 1518 bytes plus 20 on the wire; at 400G with small frames a packet arrives every 1.7 ns. A wrong CRC-32 at the end means the frame is dropped."
+      },
+      "anchor": "#ch2",
+      "aliases": {
+        "zh": [
+          "以太网帧",
+          "以太网帧格式",
+          "帧校验序列",
+          "巨型帧",
+          "线速包率"
+        ],
+        "en": [
+          "Ethernet frame",
+          "Ethernet frame format",
+          "frame check sequence",
+          "jumbo frame",
+          "packets per second at line rate"
+        ]
+      }
+    },
+    {
+      "id": "rx-path",
+      "title": {
+        "zh": "收一个包要走的路：描述符要提前取",
+        "en": "The receive path: descriptors fetched ahead"
+      },
+      "desc": {
+        "zh": "网卡事先取回空缓冲区的地址，自己 DMA 写包、写回描述符；一次取要等半微秒，所以路上要有几百个描述符。",
+        "en": "The NIC fetches free buffer addresses ahead, DMAs the packet and writes the descriptor back; a fetch takes half a microsecond, so hundreds are in flight."
+      },
+      "anchor": "#ch3",
+      "aliases": {
+        "zh": [
+          "网卡怎么收包",
+          "接收描述符写回",
+          "描述符预取"
+        ],
+        "en": [
+          "how a NIC receives a packet",
+          "descriptor prefetch",
+          "descriptor write-back"
+        ]
+      }
+    },
+    {
+      "id": "pcie-per-packet",
+      "title": {
+        "zh": "每个包的 PCIe 开销：400G 小包装不下",
+        "en": "PCIe bytes per packet: small packets at 400G do not fit"
+      },
+      "desc": {
+        "zh": "TLP 头和描述符让 64 字节的包在 PCIe 上变成一百多字节；PCIe 5.0 ×16 只能跑到 400G 线速的九成多。",
+        "en": "TLP headers and descriptors turn a 64-byte packet into more than a hundred PCIe bytes; PCIe 5.0 ×16 reaches only about nine tenths of 400G line rate."
+      },
+      "anchor": "#ch4",
+      "aliases": {
+        "zh": [
+          "400G 网卡 PCIe 够不够",
+          "每个包的 PCIe 开销"
+        ],
+        "en": [
+          "PCIe bandwidth for a 400G NIC",
+          "PCIe overhead per packet"
+        ]
+      }
+    },
+    {
+      "id": "rss",
+      "title": {
+        "zh": "RSS：托普利茨哈希把连接分给队列",
+        "en": "RSS: a Toeplitz hash spreads connections over queues"
+      },
+      "desc": {
+        "zh": "地址和端口算一个 32 位哈希，低几位查间接表选队列；同一连接总在一个队列，几条大流却可能撞在一起。",
+        "en": "Addresses and ports give a 32-bit hash whose low bits index a table of queues; a connection stays on one queue, but a few big flows can collide."
+      },
+      "anchor": "#ch5",
+      "aliases": {
+        "zh": [
+          "RSS",
+          "接收端缩放",
+          "托普利茨哈希",
+          "Toeplitz 哈希",
+          "RSS 间接表"
+        ],
+        "en": [
+          "receive side scaling",
+          "Toeplitz hash",
+          "RSS indirection table"
+        ]
+      }
+    },
+    {
+      "id": "flow-steering",
+      "title": {
+        "zh": "把包送到对的核心：RFS、aRFS 和亲和性",
+        "en": "Steering packets to the right core: RFS, aRFS and affinity"
+      },
+      "desc": {
+        "zh": "RSS 只管均匀；RFS 记住程序在哪个核心，aRFS 让网卡的流表直接把包送过去，跨插槽每次多一百纳秒。",
+        "en": "RSS only spreads; RFS remembers where the program runs and aRFS makes the NIC flow table send packets there; crossing sockets costs about 100 ns."
+      },
+      "anchor": "#ch6",
+      "aliases": {
+        "zh": [
+          "aRFS",
+          "加速 RFS",
+          "接收流导向",
+          "网卡中断亲和性"
+        ],
+        "en": [
+          "accelerated RFS",
+          "receive flow steering",
+          "NIC interrupt affinity"
+        ]
+      }
+    },
+    {
+      "id": "offloads",
+      "title": {
+        "zh": "交给网卡做：校验、TSO 分段、GRO 和 LRO",
+        "en": "Offloads: checksums, TSO, GRO and LRO"
+      },
+      "desc": {
+        "zh": "按包算的开销靠合并变小：一次发送切成几十帧交给网卡，收到的帧并成 64 KB；剩下的大头是拷贝。",
+        "en": "Per-packet costs shrink by batching: one send is cut into dozens of frames by the NIC, received frames merge into 64 KB; copying is what remains."
+      },
+      "anchor": "#ch7",
+      "aliases": {
+        "zh": [
+          "TSO 分段卸载",
+          "GRO",
+          "LRO",
+          "校验和卸载",
+          "网卡卸载"
+        ],
+        "en": [
+          "TCP segmentation offload",
+          "generic receive offload",
+          "large receive offload",
+          "checksum offload",
+          "NIC offloads"
+        ]
+      }
+    },
+    {
+      "id": "ddio",
+      "title": {
+        "zh": "DDIO：包写进缓存，和漏掉的那部分",
+        "en": "DDIO: packets written into the cache, and the leak"
+      },
+      "desc": {
+        "zh": "网卡直接写进三级缓存的两路；在途缓冲区比它大时，包没读就被挤回内存（leaky DMA）。",
+        "en": "The NIC writes straight into two ways of the L3; when the buffers in flight are larger, packets are evicted before they are read (leaky DMA)."
+      },
+      "anchor": "#ch8",
+      "aliases": {
+        "zh": [
+          "DDIO",
+          "直接缓存访问",
+          "leaky DMA"
+        ],
+        "en": [
+          "Data Direct I/O",
+          "direct cache access"
+        ]
+      }
+    },
+    {
+      "id": "bql",
+      "title": {
+        "zh": "发包的路和 BQL：发送环里排多少字节",
+        "en": "The transmit path and BQL: how many bytes to queue"
+      },
+      "desc": {
+        "zh": "塞满发送环，小包要排几毫秒；BQL 只让环里排「刚好不断档」的字节，排队留给 qdisc。",
+        "en": "A full transmit ring makes a small packet wait milliseconds; BQL keeps just enough bytes to keep the link busy and leaves queueing to the qdisc."
+      },
+      "anchor": "#ch9",
+      "aliases": {
+        "zh": [
+          "BQL",
+          "字节队列限制",
+          "网卡发送环",
+          "网卡怎么发包"
+        ],
+        "en": [
+          "byte queue limits",
+          "NIC transmit ring",
+          "how a NIC sends a packet"
+        ]
+      }
+    },
+    {
+      "id": "xdp",
+      "title": {
+        "zh": "XDP 与 AF_XDP：在驱动里处理包",
+        "en": "XDP and AF_XDP: handling packets in the driver"
+      },
+      "desc": {
+        "zh": "在分配 skb 之前跑一段 eBPF：一个核心每秒丢两千多万个包，协议栈只有几百万。",
+        "en": "An eBPF program runs before any skb is allocated: one core drops over twenty million packets a second, the stack a few million."
+      },
+      "anchor": "#ch10",
+      "aliases": {
+        "zh": [
+          "XDP",
+          "AF_XDP",
+          "eBPF 网络"
+        ],
+        "en": [
+          "eXpress Data Path"
+        ]
+      }
+    },
+    {
+      "id": "rdma-nic",
+      "title": {
+        "zh": "网卡里的 RDMA：队列对和单边写",
+        "en": "RDMA inside the NIC: queue pairs and one-sided writes"
+      },
+      "desc": {
+        "zh": "程序把工作请求放进和网卡共用的队列，网卡把数据写进另一台机器登记过的内存，对方 CPU 不参与。",
+        "en": "A program posts a work request to a queue shared with the NIC, and the NIC writes into registered memory on another machine without its CPU."
+      },
+      "anchor": "#ch11",
+      "aliases": {
+        "zh": [
+          "队列对",
+          "单边写",
+          "RDMA verbs",
+          "SmartNIC",
+          "DPU"
+        ],
+        "en": [
+          "queue pair",
+          "one-sided write"
+        ]
+      }
+    },
+    {
+      "id": "ai-nic",
+      "title": {
+        "zh": "训练集群里的网卡：ECMP 和包喷洒",
+        "en": "NICs in training clusters: ECMP and packet spraying"
+      },
+      "desc": {
+        "zh": "按流哈希选路，几条大流会撞到同一条路；按包喷洒、网卡乱序重组，各条路才一样忙。",
+        "en": "Hashing flows onto paths lets a few big flows collide; spraying packets and reordering them in the NIC keeps every path equally busy."
+      },
+      "anchor": "#ch12",
+      "aliases": {
+        "zh": [
+          "包喷洒",
+          "ECMP",
+          "等价多路径",
+          "PTP 硬件时间戳"
+        ],
+        "en": [
+          "packet spraying",
+          "equal-cost multipath",
+          "PTP hardware timestamping"
+        ]
+      }
+    },
+    {
+      "id": "nic-frontier",
+      "title": {
+        "zh": "网卡的前沿（2026 年 11 月）",
+        "en": "The network-card frontier (November 2026)"
+      },
+      "desc": {
+        "zh": "800G 网卡在卖，1.6T 已发布；UEC 规范 1.0、1.1 相继发布；共封装光学先上交换机。",
+        "en": "800G NICs ship and 1.6T is announced; UEC specifications 1.0 and 1.1 are out; co-packaged optics arrive first in switches."
+      },
+      "anchor": "#ch13",
+      "aliases": {
+        "zh": [
+          "UEC 1.1",
+          "800G 网卡",
+          "1.6T 网卡"
+        ],
+        "en": [
+          "800G NIC",
+          "1.6T NIC"
+        ]
+      }
+    },
+    {
+      "id": "nic-checklist",
+      "title": {
+        "zh": "看一张网卡时问的三件事",
+        "en": "Three questions to ask of a network card"
+      },
+      "desc": {
+        "zh": "小包时每秒多少个，PCIe 和缓存装不装得下，CPU 要为每个包做什么。",
+        "en": "How many small packets a second, whether PCIe and the cache can hold them, and what the CPU must do per packet."
+      },
+      "anchor": "#ch14",
+      "aliases": {
+        "zh": [
+          "怎么看网卡规格",
+          "网卡选型"
+        ],
+        "en": [
+          "how to read a NIC spec sheet",
+          "choosing a network card"
+        ]
+      }
+    }
+  ]
+}
