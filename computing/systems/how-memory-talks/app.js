@@ -411,7 +411,7 @@ DG.hammer = (L) => {
       rows.split('').forEach((k, i) => { const [cc, a] = kinds[k]; g.box(x, y + 18 + i * 26, w, 20, cc, { a, rx: 3, sw: k === 'V' ? 2.6 : 1.2 }); });
     };
     if (wide) { panel(20, 30, 320, 'single', 'oovavoo'); panel(380, 30, 320, 'double', 'ovaVavo');
-      [['agg', C.red, 'r'], ['vic', C.gold, 'g'], ['ok', C.dimfill, 'm']].forEach(([k, cc, cl], i) => { const x = [20, 250, 520][i]; g.swatch(x, 262, cc); g.text(x + 20, 262, 'dg.hammer.' + k, { c: cl }); });
+      [['agg', C.red, 'r'], ['vic', C.gold, 'g'], ['ok', C.dimfill, 'm']].forEach(([k, cc, cl], i) => { const x = [20, 275, 525][i]; g.swatch(x, 262, cc); g.text(x + 20, 262, 'dg.hammer.' + k, { c: cl }); });
     } else { panel(10, 20, 320, 'single', 'oovavoo'); panel(10, 236, 320, 'double', 'ovaVavo');
       [['agg', C.red, 'r'], ['vic', C.gold, 'g'], ['ok', C.dimfill, 'm']].forEach(([k, cc, cl], i) => { const y = 470 + i * 28; g.swatch(10, y, cc); g.text(30, y, 'dg.hammer.' + k, { c: cl }); });
     }
@@ -495,7 +495,7 @@ function renderDiagrams(force) {
     const o = opts(), z = M.say.ch3(...o), s = z.v, T = s.T, k = s.chain.counts, I = s.idle;
     const v = { h: fmt(k.hit, 0), m: fmt(k.miss, 0), c: fmt(k.conflict, 0), lat: U('ns', s.chain.avgLat * T.tck, 1), hit: U('ns', I.hit * T.tck, 1) };
     put('#c3H', t('ch3.hmc', v)); put('#c3L', v.lat); put('#c3G', U('gbs', s.flood.gbps, 1));
-    put('#c3I', t('ch3.idle', { h: fmt(I.hit * T.tck, 1), m: fmt(I.miss * T.tck, 1), c: U('ns', I.conflict * T.tck, 1) }));
+    put('#c3I', t('ch3.idle', { h: fmt(I.hit * T.tck, 2), m: fmt(I.miss * T.tck, 2), c: U('ns', I.conflict * T.tck, 2) }));
     putHTML('#c3Say', t(z.key, v));
   }
   sim.text = text;
@@ -712,7 +712,7 @@ function clRows() {
     const yt = niceTicks(Math.max(r.worst, hc) * 1.12, 4), top = yt[yt.length - 1], Lm = leftFor(c, yt.map(v => fmt(v, 0)));
     const f = frame(w, h, [30, 12, 16, Lm], 0, r.rows.length, 0, top);
     const hl = t('ch10.cv.hc', { v: fmt(hc, 0) }); c.font = FONT; const hw = c.measureText(hl).width;
-    yTicks(c, f, yt, v => fmt(v, 0)); axes(c, f, null, t('ch10.cv.y'), w - hw - 44);
+    yTicks(c, f, yt, v => fmt(v, 0)); axes(c, f, null, t('ch10.cv.y'), w - hw - 52);
     const bw = (f.R - f.L) / r.rows.length;
     r.rows.forEach((v, i) => { const y = f.Y(v); c.fillStyle = v >= hc ? C.red : C.cyan; c.fillRect(f.L + i * bw + bw * 0.15, y, Math.max(1, bw * 0.7), f.B - y); });
     const yh = f.Y(hc); c.strokeStyle = C.gold; c.setLineDash([6, 4]); c.lineWidth = 1.6; c.beginPath(); c.moveTo(f.L, yh); c.lineTo(f.R, yh); c.stroke(); c.setLineDash([]);

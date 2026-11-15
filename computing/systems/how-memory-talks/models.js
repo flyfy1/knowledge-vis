@@ -87,7 +87,7 @@
     lp5x: { gbps: 10.7, date: '2024-04-17', vendor: 'Samsung' },
     lp6: { doc: 'JESD209-6', date: '2025-07-09', minMts: 10667, maxMts: 14400, subDq: 12 },
     mrdimm: { gen1: 8800, xeon6900: 8800, xeon6700: 8000, gen2: 12800, bufDoc: 'JESD82-552', bufDate: '2026-04-30' },
-    record: { mts: 13606, prev: 13556.8, who: 'saltycroissant', moduleGB: 24, reported: '2026-07-03' },
+    record: { mts: 13606, prev: 13556, who: 'saltycroissant', moduleGB: 24, reported: '2026-07-03' },
     ddr6: { lo: 8800, hi: 17600 }
   };
 
@@ -293,6 +293,22 @@
     const r = { fixed: c.fixed / c.total, due: c.due / c.total, silent: c.silent / c.total, total: c.total };
     eccMemo[key] = r; return r;
   }
+  // the share of double errors a (136,128) SEC code miscorrects depends on which 136 of the 255 nonzero 8-bit columns its
+  // H matrix uses. 'textbook': columns 1…136 (the code above, 88 %); 'oddweight': all 128 odd-weight columns (which
+  // include the 8 check-bit unit vectors) plus the 8 smallest even-weight ones. Two odd columns XOR to an even value,
+  // so most double errors land on an unused syndrome. Neither is JEDEC's matrix.
+  function secColumns(layout) {
+    const pc = v => { let w = 0; while (v) { w += v & 1; v >>= 1; } return w; }, out = [];
+    if (layout === 'textbook') { for (let v = 1; v <= 136; v++) out.push(v); return out; }
+    for (let v = 1; v < 256; v++) if (pc(v) % 2) out.push(v);
+    for (let v = 1; v < 256 && out.length < 136; v++) if (!(pc(v) % 2)) out.push(v);
+    return out;
+  }
+  function secDouble(layout) {
+    const cols = secColumns(layout), set = new Set(cols); let silent = 0, total = 0;
+    for (let i = 0; i < cols.length; i++) for (let j = i + 1; j < cols.length; j++) { total++; if (set.has(cols[i] ^ cols[j])) silent++; }
+    return { silent: silent / total, due: 1 - silent / total, total, cols: cols.length, distinct: set.size };
+  }
   function eccExample(code, k, seed) {
     const n = code === 'sec' ? 136 : 72, R = rng(seed), set = new Set();
     while (set.size < k) set.add(1 + Math.floor(R() * n));
@@ -399,7 +415,7 @@
       amd1: [FACTS.amd9950x.oneDpc, 0], amd2: [FACTS.amd9950x.twoDpc, 0], amdR: [FACTS.amd9950x.twoDpc / FACTS.amd9950x.oneDpc, 0, 'pct'],
       // ch8
       odData: [SPEC.ddr5.odEcc.data, 0], odCheck: [SPEC.ddr5.odEcc.check, 0], eccSo: [SPEC.ddr5.eccSubSodimm, 0], eccRd: [SPEC.ddr5.eccSubRdimm, 0],
-      e1fix: [e1.fixed, 0, 'pct'], e2sil: [e2.silent, 0, 'pct'], e2due: [e2.due, 0, 'pct'], d2due: [d2.due, 0, 'pct'], d3sil: [d3.silent, 0, 'pct'], e2n: [e2.total, 0],
+      e1fix: [e1.fixed, 0, 'pct'], e2sil: [e2.silent, 0, 'pct'], e2due: [e2.due, 0, 'pct'], d2due: [d2.due, 0, 'pct'], d3sil: [d3.silent, 0, 'pct'], e2n: [e2.total, 0], e2silOdd: [secDouble('oddweight').silent, 0, 'pct'],
       // ch9
       s32nrz: [s32.nrz.nyq, 0], s32pam3: [s32.pam3.nyq, 1], s32pam4: [s32.pam4.nyq, 0], xNP3: [crossNrzPam3(), 1], xP3P4: [crossPam3Pam4(), 1], xNP3g: [crossTo(crossNrzPam3()), 0], xP3P4g: [crossTo(crossPam3Pam4()), 0], sigK: [SIG.k, 1],
       xNP3g2: [crossTo(crossNrzPam3()) / 2, 0], xNP3gh: [crossTo(crossNrzPam3()) * 2, 0],
@@ -412,7 +428,7 @@
       rhPer: [hN.perInt, 0], rhWorstN: [hN.worst / 1000, 0], rhT2: [hT2.worst, 0], rhT10: [hT10.worst / 1000, 1], rhT10f: [hT10.flips, 0], rhT10b: [hT10b.flips, 0], rhP10: [hP10.worst, 0], rhP10a: [hP10.alerts, 0], rhNbo: [hP10.nbo, 0],
       rhK: [RH.trrK, 0], rhT10k16: [hT10k16.worst, 0], rhT10k4: [hT10k4.worst / 1000, 1], rhT10n: [hT10n.worst / 1000, 1], 
       // frontier
-      rec: [FRONTIER.record.mts, 0], recPrev: [FRONTIER.record.prev, 1], d6lo: [FRONTIER.ddr6.lo, 0], d6hi: [FRONTIER.ddr6.hi, 0], prac88: [FRONTIER.prac.maxMts, 0]
+      rec: [FRONTIER.record.mts, 0], recPrev: [FRONTIER.record.prev, 0], d6lo: [FRONTIER.ddr6.lo, 0], d6hi: [FRONTIER.ddr6.hi, 0], prac88: [FRONTIER.prac.maxMts, 0]
     };
   }
 
@@ -473,5 +489,5 @@
 
   return { LINE, SPEC, BINS, BIN_ORDER, FACTS, FRONTIER, rng, refresh, ddr4RfcCheck, MAPS, geomBits, totalBits, mapAddr, parseHex, ADDR,
     timing, genericTiming, simulate, idle, TR, trace, ch3, ch3M, latency, BW, bwTrace, bandwidth, bandwidthM, BG, bgTrace, bankGroups, bankGroupsM, FLY, flyby,
-    ECC, decode, eccStats, eccExample, SIG, signal, crossNrzPam3, crossPam3Pam4, pam3Pairs, RH, hammer, hammerM, maxActs, prose, fmt, say };
+    ECC, decode, eccStats, eccExample, secColumns, secDouble, SIG, signal, crossNrzPam3, crossPam3Pam4, pam3Pairs, RH, hammer, hammerM, maxActs, prose, fmt, say };
 });

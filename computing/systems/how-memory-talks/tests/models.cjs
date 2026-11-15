@@ -73,7 +73,7 @@ const zf = (x, d) => M.fmt(x, d, 'zh');
   check('LPDDR5X 10.7 Gb/s Samsung 2024-04-17', [FRONTIER.lp5x.gbps, FRONTIER.lp5x.vendor, FRONTIER.lp5x.date].join(), '10.7,Samsung,2024-04-17');
   check('LPDDR6 JESD209-6 2025-07-09, 10667–14400, 12-DQ subchannels', [FRONTIER.lp6.doc, FRONTIER.lp6.date, FRONTIER.lp6.minMts, FRONTIER.lp6.maxMts, FRONTIER.lp6.subDq].join(), 'JESD209-6,2025-07-09,10667,14400,12');
   check('MRDIMM 8800 / 6900P 8800 / 6700P 8000 / gen 2 12800, JESD82-552 2026-04-30', [FRONTIER.mrdimm.gen1, FRONTIER.mrdimm.xeon6900, FRONTIER.mrdimm.xeon6700, FRONTIER.mrdimm.gen2, FRONTIER.mrdimm.bufDoc, FRONTIER.mrdimm.bufDate].join(), '8800,8800,8000,12800,JESD82-552,2026-04-30');
-  check('record 13606 (prev 13556.8), 24 GB, reported 2026-07-03', [FRONTIER.record.mts, FRONTIER.record.prev, FRONTIER.record.moduleGB, FRONTIER.record.reported].join(), '13606,13556.8,24,2026-07-03');
+  check('record 13606 (prev 13556, per the Duck-IT article text), 24 GB, reported 2026-07-03', [FRONTIER.record.mts, FRONTIER.record.prev, FRONTIER.record.moduleGB, FRONTIER.record.reported].join(), '13606,13556,24,2026-07-03');
   check('DDR6 reported 8800–17600', [FRONTIER.ddr6.lo, FRONTIER.ddr6.hi].join(), '8800,17600');
   const ymd = s => { const [y, m, d] = s.split('-').map(Number); return `${y} 年 ${m} 月 ${d} 日`; };
   says('ch11.e1', ymd(FRONTIER.prac.date)); says('ch11.e1', FRONTIER.prac.doc); says('ch11.e2', ymd(FRONTIER.lp6.date)); says('ch11.e2', FRONTIER.lp6.doc);
@@ -257,6 +257,20 @@ function replay(T, r, o) {
   check('decode by hand: SEC one error at 5 → fixed; at 3 and 5 → syndrome 6 → silent', [M.decode('sec', [5]), M.decode('sec', [3, 5])].join(), 'fixed,silent');
   check('decode by hand: SEC 100 and 200? no — positions ≤ 136: 129 and 1 → syndrome 128 → silent; 129 and 8 → 137 → due', [M.decode('sec', [1, 129]), M.decode('sec', [8, 129])].join(), 'silent,due');
   check('decode by hand: SECDED overall parity bit alone → fixed', M.decode('secded', [72]), 'fixed');
+  // (136,128) layouts, recounted independently: textbook columns 1..136 agree with the decoder's enumeration; the
+  // odd-weight layout (128 odd-weight columns + 8 smallest even-weight) by direct reasoning: odd⊕odd is even and lands
+  // on a used column only if it is one of the 8 even ones; odd⊕even is odd and always used; even⊕even is even.
+  {
+    const tb = M.secDouble('textbook'); check('textbook (136,128) double-error silent share = decoder enumeration', f(tb.silent, 9), f(e2.silent, 9));
+    const cols = M.secColumns('oddweight'), pc = v => v.toString(2).split('').filter(c => c === '1').length;
+    check('odd-weight layout: 136 distinct nonzero 8-bit columns incl. the 8 unit vectors', [cols.length, new Set(cols).size, cols.every(c => c > 0 && c < 256), [1, 2, 4, 8, 16, 32, 64, 128].every(u => cols.includes(u))].join(), '136,136,true,true');
+    const odd = cols.filter(c => pc(c) % 2), even = cols.filter(c => !(pc(c) % 2)), evSet = new Set(even);
+    check('odd-weight layout: 128 odd + 8 even columns (the literals in ch8.p4)', [odd.length, even.length].join(), '128,8');
+    let mis = odd.length * even.length; for (let i = 0; i < odd.length; i++) for (let j = i + 1; j < odd.length; j++) if (evSet.has(odd[i] ^ odd[j])) mis++;
+    for (let i = 0; i < even.length; i++) for (let j = i + 1; j < even.length; j++) if (evSet.has(even[i] ^ even[j])) mis++;
+    check('odd-weight layout silent share, recounted by parity classes', f(M.secDouble('oddweight').silent, 9), f(mis / 9180, 9));
+    check('odd-weight layout far below the textbook layout', M.secDouble('oddweight').silent < 0.25 && tb.silent > 0.85, true);
+  }
   const ex = M.eccExample('sec', 2, 1); check('example syndrome = xor of positions', ex.syndrome, ex.pos[0] ^ ex.pos[1]);
   says('ch8.model.how', '(136,128)'); says('ch8.model.how', '(72,64)'); check('code sizes', [M.ECC.sec.n, M.ECC.sec.k, M.ECC.secded.n, M.ECC.secded.k].join(), '136,128,72,64');
   says('ch8.p3', '32 位数据加 4 位校验'); says('ch8.p3', '加 8 位'); check('36 = 32 + 4, 40 = 32 + 8', [D5.eccSubSodimm - D5.subWidth, D5.eccSubRdimm - D5.subWidth].join(), '4,8');
@@ -322,12 +336,12 @@ function replay(T, r, o) {
     bwPeak: '25.6', bwDimm: '51.2', bw1_0: '1.3', bw32_0: '21.9', bw32_0f: '86', bw8_9f: '93', bw1_1f: '49', bwN: '400', bl16bytes: '64', bl8bytes: '64', pref: '16', vdd: '1.1', pmicIn: '5', core6: '400', peak2ch: '102.4',
     bgN: '256', ccdl64: '16', ccds: '8', g1_64: '49', g2_64: '95', g1_32: '98', g1_88: '36', ccdl88: '22', faw1k: '32', faw2k: '40', rrds: '8', gn1k: '95', gn2k: '77',
     flyPs: '93.7', flySpan: '375', ui64: '156.3', flyUi64: '2.4', flyUi4: '0.15', flyUi32: '1.20', pitch: '14', flyChips: '5', flyUiH: '1.2', flyUiD: '4.8', tpd: '170', amd1: '5600', amd2: '3600', amdR: '64',
-    odData: '128', odCheck: '8', eccSo: '36', eccRd: '40', e1fix: '100', e2sil: '88', e2due: '12', d2due: '100', d3sil: '76', e2n: '9180',
+    odData: '128', odCheck: '8', eccSo: '36', eccRd: '40', e1fix: '100', e2sil: '88', e2due: '12', d2due: '100', d3sil: '76', e2n: '9180', e2silOdd: '17',
     s32nrz: '16', s32pam3: '10.7', s32pam4: '8', xNP3: '18.1', xP3P4: '21.1', xNP3g: '30', xP3P4g: '35', sigK: '1.2', xNP3g2: '15', xNP3gh: '60', g7max: '48', g7w: '32', g7dev: '192', r5090: '1792', r5090g: '28', r5090w: '512',
     lp5x: '10.7', lp6lo: '10667', lp6hi: '14400', lp6dq: '12', camLo: '8', camHi: '128', mr1: '8800', mr1half: '4400', mr2: '12800', mrX7: '8000', mrBw: '70.4',
     kimN: '129', kimV: '110', kimMin: '139', kimWin: '64', kimRC: '50', kimMax: '1.28', k20chips: '1580', k20min: '9.6', k20row: '4.8', trrN: '42', trrV: '13', trrSides: '19',
     rhPer: '75', rhWorstN: '614', rhT2: '75', rhT10: '122.9', rhT10f: '5', rhT10b: '0', rhP10: '2399', rhP10a: '1010', rhNbo: '1200', rhK: '8', rhT10k16: '136', rhT10k4: '122.9', rhT10n: '122.9',
-    rec: '13606', recPrev: '13556.8', d6lo: '8800', d6hi: '17600', prac88: '8800' };
+    rec: '13606', recPrev: '13556', d6lo: '8800', d6hi: '17600', prac88: '8800' };
   for (const [k, [v, d, kind]] of Object.entries(P)) check('prose ' + k, kind === 'pct' ? f(v * 100, d) : f(v, d), want[k]);
   check('every prose value pinned', Object.keys(P).sort().join(','), Object.keys(want).sort().join(','));
   const used = new Set();

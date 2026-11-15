@@ -10,7 +10,7 @@
 // the drawing, not overlapping another label, and rendered at 11 px or more. Then the language toggle (English is a
 // stub: the page falls back to Chinese and says so in <html lang>), keyboard operation of a slider, each of the
 // models responding to its controls with the numbers the models give, and reduced motion. When copy.en.js is
-// translated (enStub removed), the same width sweep also runs in English and checks that no Chinese is left,
+// translated (enStub removed; done, reviewed 2026-11-15), the same width sweep also runs in English and checks that no Chinese is left,
 // including canvas and SVG text.
 const { chromium } = require('playwright');
 const path = require('path');
@@ -271,6 +271,26 @@ function diagramCheck() {
     await setRange(page, 'rhN', 2); await pick(page, 'rhM', 'none'); await pick(page, 'rhH', '139000'); await page.waitForTimeout(150);
     ok((await text(page, '#rhW')) === zf(P.rhWorstN[0] * 1000, 0) && (await text(page, '#rhX')) === '—', 'ch10 no mitigation, two aggressors');
     ok(!page.__errors().length, 'drive: errors: ' + page.__errors().join(' | '));
+    await page.close();
+  }
+
+  // English drive (review 2026-11-15): clear labels restored, English number formats, no "1 bits"
+  if (!stub) {
+    const page = await open(browser, 320, { lang: 'en' });
+    const P = M.prose(), ef = (x, d) => M.fmt(x, d, 'en');
+    ok((await page.$eval('label.txt > span', e => e.textContent.trim())) === 'Physical address', 'en: ch2 address label reads "Physical address"');
+    const lab = await page.$eval('label.txt', e => { const s = e.querySelector('span').getBoundingClientRect(), i = e.querySelector('input').getBoundingClientRect(), l = e.getBoundingClientRect(); return { ok: i.width >= 120 && i.right <= l.right + 1 && s.right <= l.right + 1 }; });
+    ok(lab.ok, 'en 320: address label and input fit (input at least 120 px wide)');
+    ok(JSON.stringify(await page.$$eval('table.fam th', t => t.map(e => e.textContent))) === JSON.stringify(['Bin', 'Type', 'CL-tRCD-tRP', 'CL in nanoseconds', 'Row miss (tRCD + CL)', 'Peak per 64-bit channel']), 'en: ch4 table headers in full');
+    await show(page, '#adA', 150);
+    ok((await text(page, '#adR')) === ef(P.mRow[0], 0), 'en: ch2 row uses an English thousands separator');
+    await show(page, '#c3Cv', 200);
+    ok((await text(page, '#c3I')) === `${ef(P.hit6[0], 2)} / ${ef(P.miss6[0], 2)} / ${ef(P.conf6[0], 2)} ns`, 'en: ch3 idle hit/miss/conflict match the prose, got ' + await text(page, '#c3I'));
+    await show(page, '#ecCv', 250);
+    const ft = await page.evaluate(() => [...window.__ft]);
+    ok(ft.includes('1-bit error') && !ft.some(x => /\b1 bits\b/.test(x)), 'en: ch8 canvas labels read "1-bit error"');
+    ok((await page.$eval('#ch8', e => e.textContent)).includes(ef(P.e2silOdd[0] * 100, 0) + '%'), 'en: ch8 quotes the odd-weight layout share');
+    ok(!page.__errors().length, 'en drive: errors: ' + page.__errors().join(' | '));
     await page.close();
   }
 
