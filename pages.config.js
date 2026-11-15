@@ -173,6 +173,8 @@ window.KNOWLEDGE_ESSAYS = [
   "how-cores-share-memory",
   "how-memory-talks",
   "coherent-interconnects",
+  "how-a-gpu-computes",
+  "how-a-computer-boots",
   "how-an-economy-is-measured",
   "scarcity-moves"
 ];
@@ -553,6 +555,26 @@ window.KNOWLEDGE_PAGES = [
     },
     tags: [{ zh: "CXL", en: "CXL" }, { zh: "NVLink", en: "NVLink" }, { zh: "计算机体系结构", en: "Computer Architecture" }, { zh: "互连", en: "Interconnects" }, { zh: "长文", en: "Long-form Essay" }],
     category: "computing", subtopic: "systems", stage: "university", status: "live", path: "computing/systems/coherent-interconnects/"
+  },
+  {
+    slug: "how-a-gpu-computes",
+    title: { zh: "GPU 是怎么算的", en: "How a GPU Computes" },
+    desc: {
+      zh: "一块 GPU 有上万个「核」，每个都比 CPU 的核笨得多。它是怎么把一张图、一次矩阵乘法拆给这么多笨核同时做的？为什么同一段代码，写法稍微一变，GPU 上能慢好几倍？十个可以动手的模型：缓存和多线程两种藏延迟的办法，把一张图映射到网格、线程块和线程束，线程束调度器逐拍模拟，H100 一个 SM 能养多少线程束，分支发散，合并访存，共享内存的 bank 冲突，分块矩阵乘法的两级屋顶，各种数字格式下张量核心的峰值，以及把三角形光栅化成 2×2 像素组。",
+      en: "A GPU has tens of thousands of \"cores\", each far simpler than a CPU core. How does it split an image or a matrix multiply across so many of them at once? Why can the same code run several times slower on a GPU after a small change in how it is written? Ten hands-on models: caches versus more threads as two ways to hide latency, mapping an image onto a grid of blocks and warps, a cycle-by-cycle warp scheduler, how many warps one H100 SM can hold, branch divergence, memory coalescing, shared-memory bank conflicts, two roofs for a tiled matrix multiply, tensor-core peaks across number formats, and rasterising a triangle into 2×2 pixel quads."
+    },
+    tags: [{ zh: "GPU", en: "GPU" }, { zh: "CUDA", en: "CUDA" }, { zh: "并行计算", en: "Parallel Computing" }, { zh: "计算机体系结构", en: "Computer Architecture" }, { zh: "长文", en: "Long-form Essay" }],
+    category: "computing", subtopic: "systems", stage: "university", status: "live", path: "computing/systems/how-a-gpu-computes/"
+  },
+  {
+    slug: "how-a-computer-boots",
+    title: { zh: "电脑是怎么开机的", en: "How a Computer Boots" },
+    desc: {
+      zh: "按下电源键到看到登录界面，大约十几秒。一颗刚上电、什么都不知道的 CPU，是怎么找到第一条指令、找到内存、找到硬盘、把操作系统请进来的？它又怎么确认请进来的不是恶意代码？十个可以动手的模型：ATX 电源的上电时序，复位向量的地址，SPI 闪存读一行要多久，开机每一段花多少时间，ACPI 表的校验和，GUID 分区表与 CRC32，安全启动的签名链，撤销一个签过名的引导程序要付什么代价，TPM 的 PCR 扩展，以及叫醒其余核心的时间。",
+      en: "About a dozen seconds pass between pressing the power button and the login screen. How does a CPU that knows nothing find its first instruction, its memory, its disk and the operating system, and how does it make sure what it loads is not malicious? Ten hands-on models: ATX power-on timing, the reset-vector address, how long an SPI flash read takes, where boot time goes, an ACPI table checksum, the GUID partition table with CRC32, the Secure Boot signature chain, the cost of revoking a signed boot loader, TPM PCR extends, and how long it takes to wake the other cores."
+    },
+    tags: [{ zh: "开机", en: "Booting" }, { zh: "固件", en: "Firmware" }, { zh: "安全启动", en: "Secure Boot" }, { zh: "计算机体系结构", en: "Computer Architecture" }, { zh: "长文", en: "Long-form Essay" }],
+    category: "computing", subtopic: "systems", stage: "university", status: "live", path: "computing/systems/how-a-computer-boots/"
   },
   {
     slug: "how-an-economy-is-measured",

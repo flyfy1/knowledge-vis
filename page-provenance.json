@@ -3103,7 +3103,7 @@
       "developer": "Antigravity",
       "edition": "antigravity-why-compute-waits-for-memory-20261113",
       "kind": "original",
-      "sourceRevision": "52df5521dd38f69bb21c905a281dfb50b406cd00",
+      "sourceRevision": "4e4585ca7ea2c86fca070e65cd299efba47476c7",
       "scope": {
         "zh": "整篇长文从零编写：五级流水线停顿、存储层级延迟阶梯、组相联缓存遍历、矩阵分块、内存墙与利特尔法则、多核总线瓶颈、脉动阵列、屋顶线模型、大模型推理、能耗与 HBM4 前沿",
         "en": "Whole essay written from scratch: 5-stage pipeline stalls, latency hierarchy, set-associative cache walk, matrix tiling, memory wall and Little's Law, multicore bus ceiling, systolic arrays, roofline model, LLM decode inference, energy ledger, and HBM4 frontier"
@@ -3111,8 +3111,8 @@
       "originalAuthorship": "written from scratch in zh and en by Antigravity (gemini-4-hydrogen), 2026-11-13; independently reviewed by Antigravity (gemini-4-hydrogen) with models.cjs, 7 hardware spot-checks, browser.cjs, and canvas-text-overlap --sweep, see BRIEF.md",
       "path": "computing/systems/why-compute-waits-for-memory/index.html",
       "originalSourceRevision": "e975710b809d0fe16d35a09db8d12ea686ecc6e8",
-      "previousSourceRevision": "d34e98bbf19fef76f37dadaeae3876691a3539a1",
-      "provenanceEvidence": "specs/reviews/why-compute-waits-for-memory-cxl-nvlink-alias-move-20261115.md"
+      "previousSourceRevision": "52df5521dd38f69bb21c905a281dfb50b406cd00",
+      "provenanceEvidence": "specs/reviews/why-compute-waits-for-memory-gpu-link-20261115.md"
     },
     "how-an-economy-is-measured": {
       "developer": "Antigravity",
@@ -3145,7 +3145,7 @@
       "developer": "Claude Code",
       "edition": "claude-code-what-a-drive-is-made-of-20261114",
       "kind": "original",
-      "sourceRevision": "4353c314ac11349650d72a09efdb89b421407152",
+      "sourceRevision": "4e4585ca7ea2c86fca070e65cd299efba47476c7",
       "scope": {
         "zh": "整篇长文从零编写：编了号的扇区与 512e、寻道与转动、叠瓦记录、闪存单元的电压层、纠错码与寿命、闪存翻译层、接口分层地图、一次读取的时间、存储前沿",
         "en": "Whole essay written from scratch: numbered sectors and 512e, seek and rotation, shingled recording, voltage levels in a flash cell, error correction and lifetime, the flash translation layer, the layered interface map, where the time of one read goes, the storage frontier"
@@ -3153,7 +3153,7 @@
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5); English copy drafted by Claude Code (claude-haiku-5-5); independently reviewed 2026-11-14 by a separate Claude Code session (same model), see the page BRIEF.md; cross-model review pending",
       "path": "computing/systems/what-a-drive-is-made-of/index.html",
       "originalSourceRevision": "745f535e962557f640b39422e4b9d9db7afe2f6f",
-      "previousSourceRevision": "e2630ba1be7d0bb9acaa04618c347ee277cdfba5"
+      "previousSourceRevision": "4353c314ac11349650d72a09efdb89b421407152"
     },
     "how-sata-works": {
       "developer": "Claude Code",
@@ -3215,7 +3215,7 @@
       "developer": "Claude Code",
       "edition": "claude-code-how-pcie-works-20261115",
       "kind": "original",
-      "sourceRevision": "52df5521dd38f69bb21c905a281dfb50b406cd00",
+      "sourceRevision": "4e4585ca7ea2c86fca070e65cd299efba47476c7",
       "scope": {
         "zh": "整篇长文从零编写：PCIe 的树形拓扑、通道与六次翻倍、TLP 的字节与效率、信用流控、ACK/NAK 重发、开机枚举与 BAR、DMA 与 MSI 中断、通道损耗与重定时器、NRZ 与 PAM4 眼图、FLIT 与前向纠错、PCIe 前沿",
         "en": "Whole essay written from scratch: the PCIe tree, lanes and six doublings, TLP bytes and efficiency, credit-based flow control, ACK/NAK replay, enumeration and BARs, DMA and MSI interrupts, channel loss and retimers, NRZ vs PAM4 eyes, FLIT and forward error correction, the PCIe frontier"
@@ -3223,13 +3223,13 @@
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5); English copy drafted by Claude Code (claude-haiku-5-5); independently reviewed 2026-11-15 by a separate Claude Code session (same model), see the page BRIEF.md; cross-model review pending",
       "path": "computing/systems/how-pcie-works/index.html",
       "originalSourceRevision": "7174f8e4f9aa585bae317b5edcd7fd2d16ae1db7",
-      "previousSourceRevision": "4353c314ac11349650d72a09efdb89b421407152"
+      "previousSourceRevision": "52df5521dd38f69bb21c905a281dfb50b406cd00"
     },
     "how-a-computer-is-wired": {
       "developer": "Claude Code",
       "edition": "claude-code-how-a-computer-is-wired-20261115",
       "kind": "original",
-      "sourceRevision": "52df5521dd38f69bb21c905a281dfb50b406cd00",
+      "sourceRevision": "4e4585ca7ea2c86fca070e65cd299efba47476c7",
       "scope": {
         "zh": "整篇长文从零编写：共享的 PCI 总线、负载与反射波、北桥与南桥、集成内存控制器与 NUMA、芯片组的上行链路、环形总线与网格、芯粒与 UCIe、I²C 与上拉电阻、互连前沿",
         "en": "Whole essay written from scratch: the shared PCI bus, bus loading and reflected waves, northbridge and southbridge, the integrated memory controller and NUMA, the chipset uplink, ring and mesh on-die networks, chiplets and UCIe, I²C and pull-up resistors, the interconnect frontier"
@@ -3237,7 +3237,7 @@
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5); English copy drafted by Claude Code (claude-haiku-5-5); independently reviewed 2026-11-15 by a separate Claude Code session (same model), see the page BRIEF.md; cross-model review pending",
       "path": "computing/systems/how-a-computer-is-wired/index.html",
       "originalSourceRevision": "56d96c4cce22ef94a17f346404291c283a150cff",
-      "previousSourceRevision": "4353c314ac11349650d72a09efdb89b421407152"
+      "previousSourceRevision": "52df5521dd38f69bb21c905a281dfb50b406cd00"
     },
     "how-thunderbolt-works": {
       "developer": "Claude Code",
@@ -3313,7 +3313,7 @@
       "developer": "Claude Code",
       "edition": "claude-code-how-cores-share-memory-20261115",
       "kind": "original",
-      "sourceRevision": "52df5521dd38f69bb21c905a281dfb50b406cd00",
+      "sourceRevision": "4e4585ca7ea2c86fca070e65cd299efba47476c7",
       "scope": {
         "zh": "整篇长文从零编写：两份缓存一份旧了、一致性的两条规矩、MSI MESI MOESI 窥探协议、目录协议、两个线程各加一百万次、原子指令、核心之间搬一行要多久、顺序一致性与存储缓冲、x86 和 Arm 的栅栏与获取释放、自旋锁的扩展性、多核一致性前沿",
         "en": "Whole essay written from scratch: two caches and one stale copy, the two rules of coherence, MSI, MESI and MOESI snooping, directory protocols, two threads adding a million each, atomic instructions, how long a line takes to move between cores, sequential consistency and the store buffer, x86 and Arm fences, acquire and release, how spinlocks scale, the multicore coherence frontier"
@@ -3321,13 +3321,13 @@
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5); English copy drafted by Claude Code (claude-haiku-5-5); independently reviewed 2026-11-15 by a separate Claude Code session (same model), see the page BRIEF.md; cross-model review pending",
       "path": "computing/systems/how-cores-share-memory/index.html",
       "originalSourceRevision": "445f4b67fe0e89ce0db93107837c39047054ebd2",
-      "previousSourceRevision": "d34e98bbf19fef76f37dadaeae3876691a3539a1"
+      "previousSourceRevision": "52df5521dd38f69bb21c905a281dfb50b406cd00"
     },
     "how-memory-talks": {
       "developer": "Claude Code",
       "edition": "claude-code-how-memory-talks-20261115",
       "kind": "original",
-      "sourceRevision": "52df5521dd38f69bb21c905a281dfb50b406cd00",
+      "sourceRevision": "4e4585ca7ea2c86fca070e65cd299efba47476c7",
       "scope": {
         "zh": "整篇长文从零编写：会漏电的电容与 DRAM 刷新、bank 行列与地址切分、五个命令与时序（行命中、未命中、冲突）、CL 的周期与纳秒、64 字节突发与 DDR5 子通道、bank 组与 tCCD_L、飞越式布线与内存训练、片上 ECC 与旁路 ECC、LPDDR5X GDDR7 CAMM2 与 MRDIMM、行锤与防护、内存前沿",
         "en": "Whole essay written from scratch: the leaking capacitor and DRAM refresh, banks, rows, columns and the address split, the five commands and their timings (row hit, miss and conflict), CL in cycles and nanoseconds, the 64-byte burst and DDR5 subchannels, bank groups and tCCD_L, fly-by routing and memory training, on-die and side-band ECC, LPDDR5X, GDDR7, CAMM2 and MRDIMM, row hammer and its defences, the memory frontier"
@@ -3335,7 +3335,7 @@
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5); English copy drafted by Claude Code (claude-haiku-5-5); independently reviewed 2026-11-15 by a separate Claude Code session (same model), see the page BRIEF.md; cross-model review pending",
       "path": "computing/systems/how-memory-talks/index.html",
       "originalSourceRevision": "d165655d2de8a88223debb752bf1562bc35792fb",
-      "previousSourceRevision": "d165655d2de8a88223debb752bf1562bc35792fb"
+      "previousSourceRevision": "52df5521dd38f69bb21c905a281dfb50b406cd00"
     },
     "coherent-interconnects": {
       "developer": "Claude Code",
@@ -3350,6 +3350,34 @@
       "path": "computing/systems/coherent-interconnects/index.html",
       "originalSourceRevision": "0f6572c0307ac0895711de97470b932709b327d1",
       "previousSourceRevision": "0f6572c0307ac0895711de97470b932709b327d1"
+    },
+    "how-a-gpu-computes": {
+      "developer": "Claude Code",
+      "edition": "claude-code-how-a-gpu-computes-20261115",
+      "kind": "original",
+      "sourceRevision": "4e4585ca7ea2c86fca070e65cd299efba47476c7",
+      "scope": {
+        "zh": "整篇长文从零编写：缓存与多线程两种藏延迟的办法、网格线程块与线程束、线程束调度与占用率、分支发散、合并访存、共享内存的 bank 冲突、分块矩阵乘法的两级屋顶、张量核心与数字格式、像素按 2×2 着色、GPU 的存储层次与不做的一致性、GPU 前沿",
+        "en": "Whole essay written from scratch: caches versus many threads as two ways to hide latency, grids, thread blocks and warps, warp scheduling and occupancy, branch divergence, memory coalescing, shared-memory bank conflicts, two roofs for a tiled matrix multiply, tensor cores and number formats, 2×2 quad shading, the GPU memory hierarchy and the coherence it skips, the GPU frontier"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5); English copy drafted by Claude Code (claude-haiku-5-5); independently reviewed 2026-11-15 by a separate Claude Code session (same model), see the page BRIEF.md; cross-model review pending",
+      "path": "computing/systems/how-a-gpu-computes/index.html",
+      "originalSourceRevision": "e844143c1168a1f0f4da51e87bd3e6b0fd240e70",
+      "previousSourceRevision": "e844143c1168a1f0f4da51e87bd3e6b0fd240e70"
+    },
+    "how-a-computer-boots": {
+      "developer": "Claude Code",
+      "edition": "claude-code-how-a-computer-boots-20261115",
+      "kind": "original",
+      "sourceRevision": "4e4585ca7ea2c86fca070e65cd299efba47476c7",
+      "scope": {
+        "zh": "整篇长文从零编写：ATX 上电时序与 PWR_OK、复位向量、SPI 闪存读取、CPU 之前先醒的安全芯片与微码、用缓存当内存与开机时间线、UEFI 阶段与 ACPI 表、GUID 分区表与 CRC32、安全启动签名链、撤销签过名的引导程序、度量启动与 TPM、交给内核与叫醒其余核心、Arm 与苹果的开机链、开机前沿",
+        "en": "Whole essay written from scratch: ATX power-on timing and PWR_OK, the reset vector, SPI flash reads, the security chips and microcode that wake before the CPU, cache as RAM and the boot timeline, UEFI phases and ACPI tables, the GUID partition table and CRC32, the Secure Boot signature chain, revoking signed boot loaders, measured boot and the TPM, the kernel handoff and waking the other cores, Arm and Apple boot chains, the boot frontier"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5); English copy drafted by Claude Code (claude-haiku-5-5); independently reviewed 2026-11-15 by a separate Claude Code session (same model), see the page BRIEF.md; cross-model review pending",
+      "path": "computing/systems/how-a-computer-boots/index.html",
+      "originalSourceRevision": "509b4d6e5e33f05f41836ce60e3e8f816b2cf6ec",
+      "previousSourceRevision": "509b4d6e5e33f05f41836ce60e3e8f816b2cf6ec"
     }
   },
   "exceptions": {

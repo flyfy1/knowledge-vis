@@ -83,7 +83,7 @@ types ("为什么要打疫苗", "how does my phone know where I am"), not only t
    max-age=14400`) but not the HTML, so without a new key readers get the new page with the old text. If the scripts
    were already deployed under today's key, append a letter (`?v=20261115b`, then `c`) so the new key differs. The
    storage essays (what-a-drive-is-made-of, how-sata-works, how-sas-works, how-usb-drives-talk, storage-over-a-network),
-   the bus essays (how-pcie-works, how-a-computer-is-wired, how-thunderbolt-works, how-memory-talks, coherent-interconnects), how-cpu-caches-work, how-a-cpu-runs-a-program, how-virtual-memory-works, how-a-cpu-guesses-ahead, how-cores-share-memory, why-compute-waits-for-memory and why-nvme-is-fast use it since 2026-11-15; older essays do not yet, so add the key the next time one of them
+   the bus essays (how-pcie-works, how-a-computer-is-wired, how-thunderbolt-works, how-memory-talks, coherent-interconnects), how-cpu-caches-work, how-a-cpu-runs-a-program, how-virtual-memory-works, how-a-cpu-guesses-ahead, how-cores-share-memory, how-a-gpu-computes, how-a-computer-boots, why-compute-waits-for-memory and why-nvme-is-fast use it since 2026-11-15; older essays do not yet, so add the key the next time one of them
    changes.
 8. Add rows to CONCEPT-MAP.md.
 
@@ -122,11 +122,13 @@ types ("为什么要打疫苗", "how does my phone know where I am"), not only t
 | how-cores-share-memory | computing/systems/how-cores-share-memory/ | 12 (`#ch1…#ch12`) | computing | `ESSAY_BASE_URL` |
 | how-memory-talks | computing/systems/how-memory-talks/ | 12 (`#ch1…#ch12`) | computing | `ESSAY_BASE_URL` |
 | coherent-interconnects | computing/systems/coherent-interconnects/ | 13 (`#ch1…#ch13`) | computing | `ESSAY_BASE_URL` |
+| how-a-gpu-computes | computing/systems/how-a-gpu-computes/ | 12 (`#ch1…#ch12`) | computing | `ESSAY_BASE_URL` |
+| how-a-computer-boots | computing/systems/how-a-computer-boots/ | 14 (`#ch1…#ch14`) | computing | `ESSAY_BASE_URL` |
 
 The eleven from 2026-11-11, the two food essays of 2026-11-12 and the five storage essays of 2026-11-14/15
 (what-a-drive-is-made-of, how-sata-works, how-sas-works, how-usb-drives-talk, storage-over-a-network) and the three bus essays of
 2026-11-15 (how-pcie-works, how-a-computer-is-wired, how-thunderbolt-works, and later how-memory-talks and coherent-interconnects) and the architecture essays how-cpu-caches-work,
-how-a-cpu-runs-a-program, how-virtual-memory-works, how-a-cpu-guesses-ahead and how-cores-share-memory (2026-11-15) were built by Claude Code (claude-opus-5-5). The English copy was drafted by Claude
+how-a-cpu-runs-a-program, how-virtual-memory-works, how-a-cpu-guesses-ahead, how-cores-share-memory, how-a-gpu-computes and how-a-computer-boots (2026-11-15) were built by Claude Code (claude-opus-5-5). The English copy was drafted by Claude
 Code (claude-haiku-5-5). A separate Claude Code session of the same model reviewed each essay and revised
 it (no human or cross-model review yet). Each BRIEF.md records what was and was not checked.
 why-compute-waits-for-memory and why-nvme-is-fast were built by Antigravity (gemini-4-hydrogen) in both
@@ -268,6 +270,7 @@ memory pooling from #ch10 to coherent-interconnects #ch6 (team-lead decision: B4
 energy words, #ch10 keeps HBM4, HBM3e, Rubin, co-packaged optics and PIM. ch5.p2's existing words "DDR 内存通道" / "DDR channels" now
 link how-memory-talks #ch5. Scripts `?v=20261115b`; label repointed to that commit (52df5521, previous d34e98bb) with
 specs/reviews/why-compute-waits-for-memory-cxl-nvlink-alias-move-20261115.md as evidence (the edition stays Antigravity's).
+A6/boot registrar (2026-11-15): ch6.p1 links its existing words about warps (足够多独立线程（Warp） / thousands of independent threads (warps)) to how-a-gpu-computes #ch3; label at 4e4585ca (previous 52df5521, original e975710b), evidence specs/reviews/why-compute-waits-for-memory-gpu-link-20261115.md; scripts `?v=20261115c`. #ch6 keeps 张量核 / tensor core and GPU vs CPU (pinned).
 
 ### why-nvme-is-fast: NVMe 为什么这么快
 
@@ -300,6 +303,7 @@ SSD-vs-HDD words (固态硬盘为什么比机械硬盘快, 机械硬盘和固态
 移动硬盘盒怎么工作 (#ch7). Atlas edges: 4 between chapters, 2 to
 why-nvme-is-fast (#ch1, #ch6).
 Since the bus series (2026-11-15) ch7.p4 links the word PCIe to how-pcie-works; scripts at `?v=20261115c`.
+A6/boot registrar (2026-11-15): ch1.p3 links its words 分区表 / partition table to how-a-computer-boots #ch7 (GPT, protective MBR); label at 4e4585ca (previous 4353c314), scripts `?v=20261115d`.
 
 ### how-sata-works: SATA 为什么用了二十多年
 
@@ -394,6 +398,7 @@ pages (why-nvme-is-fast #ch2 and #ch4, how-usb-drives-talk #ch8). Not verified (
 (second-hand via ServeTheHome and eeNews), Gen6/7 loss budgets (vendor material), PAM4 Gray order and FLIT byte-to-interleave
 assignment in PCIe 6.0. B4 is linked since it went live (2026-11-15): ch11.e3 (CXL 4.0) gains one sentence linking coherent-interconnects
 #ch3; label at 52df5521 (previous 4353c314), scripts `?v=20261115b`. The CXL words (什么是 CXL, CXL 是什么, what is CXL) it reserved are B4's.
+A6/boot registrar (2026-11-15): ch6.limit gains one sentence linking how-a-computer-boots #ch6 (where in the boot the firmware enumerates); PCIe 枚举 / PCIe enumeration stay on #ch6 here (pinned). Label at 4e4585ca (previous 52df5521), scripts `?v=20261115c`.
 
 ### how-a-computer-is-wired: 电脑里的零件是怎么连起来的
 
@@ -417,6 +422,7 @@ between chapters, 1 from how-sata-works (#ch2), 2 from why-compute-waits-for-mem
 numbers, the Xeon 6+ launch date. B4 is linked since it went live (2026-11-15): ch9.d2 links coherent-interconnects #ch3 where it
 said the series might cover CXL later; ch8.p5 (B5, small buses) stays plain text. Label at 52df5521 (previous 4353c314), scripts
 `?v=20261115b`; the reserved CXL / NVLink words are B4's, 内存频率 / CL 值 are B3's.
+A6/boot registrar (2026-11-15): ch8.p5 links its words BIOS 闪存 / the BIOS flash to how-a-computer-boots #ch3; plain SPI / SPI bus stay on #ch8 here (pinned) while the boot essay takes SPI 闪存 / SPI flash / quad SPI read. Label at 4e4585ca (previous 52df5521), scripts `?v=20261115c`.
 
 ### how-thunderbolt-works: 雷电接口是怎么工作的
 
@@ -555,6 +561,7 @@ ch12.links), A3 ch13.links and A4 ch12.links link here. Scripts `?v=20261115b`. 
 how-cpu-caches-work (#ch5, #ch9 twice), 3 from how-a-computer-is-wired (#ch4, #ch6, #ch7), 1 from A4 #ch8. Not verified (BRIEF):
 the Arm ARM and the RISC-V RVWMO chapter, the Primer, Sewell et al. and Mellor-Crummey & Scott texts, the current Intel SDM
 chapter number, Lamport 1979.
+A6/boot registrar (2026-11-15): ch12.links gains one clause linking how-a-gpu-computes #ch10 (why GPU L1s are not kept coherent); 缓存一致性 / cache coherence stay on #ch1 here (pinned; A6 #ch10 has only "GPU cache coherence"). Label at 4e4585ca (previous 52df5521), scripts `?v=20261115c`.
 
 ### how-memory-talks: 内存是怎么和 CPU 说话的
 
@@ -587,6 +594,7 @@ how-cpu-caches-work #ch1, 1 from why-compute-waits-for-memory #ch4, 1 to why-com
 how-a-computer-is-wired #ch2, 1 from how-sata-works #ch2, 1 from how-thunderbolt-works #ch5, 1 from how-pcie-works #ch9. Not verified
 (BRIEF): the JEDEC documents themselves (403), GDDR7 48 Gb/s per pin, CAMM2 8–128 GB, LPDDR6 rates, RTX 5090 28 Gb/s, GDDR7's PAM3
 code table beyond the unused pair.
+A6/boot registrar (2026-11-15): ch7.p4 links how-a-computer-boots #ch5 (memory training on the boot timeline); 内存训练 / memory training stay on #ch7 here (pinned). Its tests/models.cjs now requires the provenance label (it forbade it and failed since 011e6f9b). Label at 4e4585ca (previous 52df5521), scripts `?v=20261115s`.
 
 ### coherent-interconnects: 芯片之间怎么共用内存
 
@@ -617,6 +625,64 @@ ch12.links), how-a-computer-is-wired ch9.d2 (#ch3) and how-pcie-works ch11.e3 (#
 (#ch4, #ch7), 1 from how-virtual-memory-works #ch12, 1 from storage-over-a-network #ch6, 2 into how-pcie-works #ch11 and
 how-a-computer-is-wired #ch9. Not verified (BRIEF): UALink's flit sizes and 2025-04-08 date, Das Sharma Table 4's 256 B CXL.mem
 cell, which NVIDIA Rubin figure is final (3,000 vs 3,600 GB/s).
+
+### how-a-gpu-computes: GPU 是怎么算的
+
+Computer architecture series A6 (TASK-arch-series.md). A GPU has tens of thousands of simple cores: how does it split an image or a
+matrix multiply across them, and why can a small rewrite make the same code several times slower? Two ways to spend transistors (AMAT
+with a cache against Little's law with many threads), grid / block / warp / lane (thread ID = x + y·Dx), a cycle-by-cycle warp scheduler
+checked against its closed form plus H100 occupancy limits, branch divergence with an active mask, memory coalescing into 32-byte
+sectors, shared-memory bank conflicts (gcd(s, 32), the 33-column pad), tiled matrix multiply on a two-level roofline, tensor cores and
+number formats (m16n8k16, peaks against a GEMM roofline on H100 and B200), 2×2 quad shading, the GPU memory hierarchy without L1
+coherence, a dated frontier and a checklist. Eleven static diagrams. Essay commit e844143c; label at 4e4585ca (the cross-link, alias and
+one-click commit). Review note specs/reviews/how-a-gpu-computes-review-20261115.md. It owns GPU 是怎么工作的 / how does a GPU work, 显卡是怎么
+工作的, GPU 为什么快 / why are GPUs fast (#ch1), 线程束 / warp, SIMT, CUDA 线程块 (#ch2), 线程束调度, 占用率 / occupancy (#ch3), 分支发散 / warp
+divergence (#ch4), 合并访存 / memory coalescing (#ch5), bank 冲突, GPU 共享内存 / GPU shared memory (#ch6), 共享内存分块, GEMM 怎么写快 (#ch7),
+MMA 指令, FP8 E4M3 E5M2, m16n8k16, wgmma (#ch8), quad shading, 2×2 像素组 (#ch9), GPU 内存层次, GPU 为什么不做缓存一致性 / GPU cache coherence
+(#ch10), Blackwell Ultra, B300, MI355X, MI455X (#ch11), GPU 代码为什么慢 (#ch12); its page tags GPU and CUDA open the page top. **Near-ties
+(2026-11-15, registrar decision after the one-click check):** "GPU cache coherence" is kept, plain cache coherence / 缓存一致性 still open
+how-cores-share-memory #ch1; "GPU shared memory" is kept, "shared memory bus bottleneck" still opens why-compute-waits-for-memory #ch5 and
+"coherent shared memory" coherent-interconnects #ch1. Plain "shared memory" / 共享内存 had no exact owner (the memory essay #ch5 matched at
+75 by prefix); they now open #ch6 through its title 共享内存的 bank 冲突, not through the alias. Left to their owners: 张量核 / tensor core,
+GPU vs CPU, 为什么 AI 用 GPU, roofline, HBM (why-compute-waits-for-memory), 渲染管线 / 光栅化 (computer-graphics), NVLink, all-reduce
+(coherent-interconnects), GDDR7 (how-memory-talks). It links why-compute-waits-for-memory (#ch3, #ch4, #ch6–#ch9, the page),
+how-cpu-caches-work #ch1, how-a-cpu-guesses-ahead #ch9, how-cores-share-memory (#ch3, #ch4), how-pcie-works, how-memory-talks #ch9,
+coherent-interconnects (#ch8, #ch11, the page) and computer-graphics; why-compute-waits-for-memory ch6.p1 (#ch3) and how-cores-share-memory
+ch12.links (#ch10) link here. Scripts `?v=20261115r`. Atlas edges (20, in its fragment): 8 between chapters, 3 into #ch1 (how-cpu-caches-work
+#ch1, why-compute-waits-for-memory #ch4, how-a-cpu-guesses-ahead #ch9), 2 into #ch7 and 2 into #ch8 from why-compute-waits-for-memory
+(#ch3, #ch7; #ch7, #ch6), 1 from its #ch6 into #ch3, 3 into #ch10 (how-cores-share-memory #ch3, #ch4, how-memory-talks #ch9), 1 from
+coherent-interconnects #ch8 into #ch11. Not verified (BRIEF): the PTX wgmma operand rules, atomics carried out in L2, Volta's one path
+per cycle, the Volkov talk, MI355X figures, the Rubin sparsity label, Narasiman 2011, Fatahalian 2010, Pineda 1988, Williams 2009.
+
+### how-a-computer-boots: 电脑是怎么开机的
+
+Computer architecture series, first of the queued system essays (TASK-arch-series.md). About a dozen seconds pass between the power
+button and the login screen: how does a CPU that knows nothing find its first instruction, its memory, its disk and the operating
+system, and how does it know what it loads is not malicious? ATX power-on timing and PWR_OK, the x86 reset vector, SPI flash read
+timing, the security processors and microcode that wake first, cache as RAM and a boot timeline with S3 / S4 / S0ix, UEFI phases with a
+byte-exact ACPI MADT, a GPT builder and parser with real CRC32, the Secure Boot chain with an RSA verifier, revocation (dbx, SBAT,
+BootHole, BlackLotus), measured boot with SHA-256 PCR extends, the kernel handoff and INIT-SIPI-SIPI, Arm and Apple boot chains, a dated
+frontier (the 2011 certificates expiring in 2026) and three questions. Thirteen static diagrams. Essay commit 509b4d6e; label at 4e4585ca.
+Review note specs/reviews/how-a-computer-boots-review-20261115.md. It owns 上电时序 / PWR_OK, 按电源键后发生了什么, 电脑开机过程, 开机过程 /
+how does a computer boot, boot process (#ch1), 复位向量 / reset vector, CPU 第一条指令 (#ch2), SPI 闪存 / SPI flash, BIOS 芯片, 四线 SPI 读 /
+quad SPI read (#ch3), 硬件信任根, Boot Guard, AMD PSP, Intel CSME, 微码更新 (#ch4), 用缓存当内存, 开机时间都花在哪, 睡眠和休眠的区别 (#ch5),
+UEFI, 传统 BIOS 与 UEFI, BIOS 是什么 / BIOS, ACPI 表, MADT (#ch6), GPT 分区表, MBR 与 GPT, EFI 系统分区 (#ch7), 安全启动 / Secure Boot,
+安全启动信任链 / Secure Boot chain of trust, shim, db 和 dbx (#ch8), dbx 撤销, BootHole, BlackLotus, SBAT (#ch9), 度量启动, TPM PCR, BitLocker
+要恢复密钥 (#ch10), INIT-SIPI-SIPI, 多核启动 (#ch11), TF-A, iBoot, DeviceTree (#ch12), 安全启动证书过期, openSIL, Pluton (#ch13), 电脑开不了机
+(#ch14); its page tags 开机 / Booting and 固件 / Firmware open the page top. **Alias decisions (2026-11-15):** #ch8 uses "Secure Boot
+chain of trust" / 安全启动信任链 (and keeps 开机信任链), never the bare "chain of trust", which is reserved for the unregistered draft
+a-secret-in-public #ch6 (until it registers, a bare query reaches #ch8 only by substring, score 55); #ch3 keeps SPI flash / quad SPI read,
+distinct from plain SPI / SPI bus on how-a-computer-is-wired #ch8 (pinned). Bare BIOS used to open a biology page by substring and TF-A
+how-memory-talks #ch6 through tFAW; both now land here. Left to their owners: 内存训练 (how-memory-talks #ch7), PCIe 枚举, BAR
+(how-pcie-works #ch6), SPI, eSPI, I2C (how-a-computer-is-wired), IOMMU, DMA 攻击 (how-thunderbolt-works #ch8), the signature and hash words
+(a-secret-in-public), bare GPT (the language model). It links how-pcie-works #ch6, how-a-computer-is-wired #ch8, how-thunderbolt-works #ch8,
+how-memory-talks #ch7, how-virtual-memory-works #ch3, what-a-drive-is-made-of #ch1, how-a-cpu-runs-a-program, how-cores-share-memory and
+rsa-encryption; 《当着所有人的面约定一个秘密》 (ch8.p2, ch14.links) stays plain text until a-secret-in-public registers. how-memory-talks ch7.p4
+(#ch5), how-pcie-works ch6.limit (#ch6), how-a-computer-is-wired ch8.p5 (#ch3) and what-a-drive-is-made-of ch1.p3 (#ch7) link here. Scripts
+`?v=20261115r`. Atlas edges (16, in its fragment): 10 between chapters, 1 each from how-memory-talks #ch7, how-pcie-works #ch6,
+how-a-computer-is-wired #ch8, what-a-drive-is-made-of #ch1, how-virtual-memory-works #ch3 and rsa-encryption. Not verified (BRIEF): Boot
+Guard, CSME-first and PSP internals, the W25Q256JV command table (not reopened), the ACPI 6.6 date, the openSIL schedule, chipset SPI
+limits, the Apple guide wording, the ESET and Eclypsium pages; the stage durations are tuned.
 
 ### scarcity-moves: 稀缺会搬家
 

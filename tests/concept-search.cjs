@@ -524,6 +524,56 @@ chapters.push(
   ['CXL 4.0', 'UALink 2.0', B4 + '#ch12'],
   ['怎么看懂一套互连', 'how to judge an interconnect', B4 + '#ch13'],
 );
+// Architecture series A6 and the boot essay (2026-11-15). A6 owns the CUDA / SIMT words (warp, occupancy, divergence, coalescing, bank
+// conflicts, MMA formats, quad shading, GPU memory hierarchy); its page tags GPU and CUDA open its page top. Near-ties kept after the
+// one-click check: "GPU cache coherence" (#ch10) while plain cache coherence / 缓存一致性 stay on how-cores-share-memory, and "GPU shared
+// memory" (#ch6) while "shared memory bus bottleneck" stays on why-compute-waits-for-memory #ch5 and "coherent shared memory" on
+// coherent-interconnects #ch1. The memory essay keeps 张量核 / tensor core and GPU vs CPU. The boot essay owns the firmware words; #ch8 takes
+// "Secure Boot chain of trust" / 安全启动信任链, never the bare "chain of trust" (reserved for a-secret-in-public #ch6); #ch3 keeps SPI flash /
+// quad SPI read while plain SPI / SPI bus stay on how-a-computer-is-wired #ch8; 内存训练 stays on how-memory-talks #ch7, PCIe 枚举 on how-pcie-works #ch6.
+const A6 = 'computing/systems/how-a-gpu-computes/', BOOT = 'computing/systems/how-a-computer-boots/';
+chapters.push(
+  ['GPU', 'CUDA', A6],
+  ['GPU 是怎么工作的', 'how does a GPU work', A6 + '#ch1'],
+  ['显卡是怎么工作的', 'why are GPUs fast', A6 + '#ch1'],
+  ['线程束', 'warp', A6 + '#ch2'],
+  ['SIMT', 'CUDA thread block', A6 + '#ch2'],
+  ['占用率', 'occupancy', A6 + '#ch3'],
+  ['分支发散', 'warp divergence', A6 + '#ch4'],
+  ['合并访存', 'memory coalescing', A6 + '#ch5'],
+  ['bank 冲突', 'shared memory bank conflict', A6 + '#ch6'],
+  ['GPU 共享内存', 'GPU shared memory', A6 + '#ch6'],
+  ['GEMM 怎么写快', 'fast GEMM kernel', A6 + '#ch7'],
+  ['FP8 E4M3 E5M2', 'm16n8k16', A6 + '#ch8'],
+  ['2×2 像素组', 'quad shading', A6 + '#ch9'],
+  ['GPU 为什么不做缓存一致性', 'GPU cache coherence', A6 + '#ch10'],
+  ['B300', 'AMD MI455X', A6 + '#ch11'],
+  ['GPU 代码为什么慢', 'why is my GPU code slow', A6 + '#ch12'],
+  ['缓存一致性', 'cache coherence', A5 + '#ch1'],
+  ['张量核', 'tensor core', 'computing/systems/why-compute-waits-for-memory/#ch6'],
+  ['开机', 'firmware', BOOT],
+  ['电脑开机过程', 'how does a computer boot', BOOT + '#ch1'],
+  ['上电时序', 'PWR_OK', BOOT + '#ch1'],
+  ['复位向量', 'reset vector', BOOT + '#ch2'],
+  ['SPI 闪存', 'quad SPI read', BOOT + '#ch3'],
+  ['BIOS 芯片', 'SPI flash', BOOT + '#ch3'],
+  ['SPI', 'SPI bus', 'computing/systems/how-a-computer-is-wired/#ch8'],
+  ['硬件信任根', 'Boot Guard', BOOT + '#ch4'],
+  ['用缓存当内存', 'sleep vs hibernate', BOOT + '#ch5'],
+  ['内存训练', 'memory training', 'computing/systems/how-memory-talks/#ch7'],
+  ['BIOS', 'legacy BIOS vs UEFI', BOOT + '#ch6'],
+  ['UEFI', 'ACPI tables', BOOT + '#ch6'],
+  ['PCIe 枚举', 'PCIe enumeration', 'computing/systems/how-pcie-works/#ch6'],
+  ['GPT 分区表', 'GPT vs MBR', BOOT + '#ch7'],
+  ['安全启动信任链', 'Secure Boot chain of trust', BOOT + '#ch8'],
+  ['安全启动', 'shim bootloader', BOOT + '#ch8'],
+  ['BlackLotus', 'dbx revocation', BOOT + '#ch9'],
+  ['度量启动', 'TPM PCR', BOOT + '#ch10'],
+  ['多核启动', 'INIT-SIPI-SIPI', BOOT + '#ch11'],
+  ['可信固件 TF-A', 'TF-A', BOOT + '#ch12'],
+  ['安全启动证书过期', 'Pluton', BOOT + '#ch13'],
+  ['电脑开不了机', 'computer will not boot', BOOT + '#ch14'],
+);
 for (const [zh, en, href] of chapters) for (const q of [zh, en]) {
   const hit = first(q);
   ok(hit && (hit.href === href || (href.endsWith('/') && hit.href.startsWith(href))), `"${q}" opens ${href} (got ${hit && hit.href})`);

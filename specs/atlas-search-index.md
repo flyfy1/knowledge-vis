@@ -376,6 +376,23 @@ anchor and aliases. It is a schema-2 fragment `atlas/graph/lessons/<slug>.json`:
   `tests/concept-search.cjs` pins 37 zh/en pairs (18 B3, 19 B4, including the moved words). The search chunks total 314,561 bytes;
   computing-3.js grew and no new chunk was created (computing-1.js is 44,900 of 60,000). `build-search-index.cjs --check` now also
   fails on an untracked chunk (see § Tests).
+- Architecture series A6 and the boot essay (2026-11-15): how-a-gpu-computes (12 concepts) and how-a-computer-boots (14) → computing.
+  36 hand-written edges. A6 fragment (20): 8 between chapters (#ch1 → #ch3; #ch2 → #ch3, #ch4, #ch5, #ch9; #ch5 → #ch6 → #ch7 → #ch8),
+  from how-cpu-caches-work #ch1, why-compute-waits-for-memory #ch4 and how-a-cpu-guesses-ahead #ch9 → #ch1, from
+  why-compute-waits-for-memory #ch6 → #ch3 (its ch6.p1 now links here) and → #ch8, #ch3 → #ch7, #ch7 → #ch7 and #ch8, from
+  how-cores-share-memory #ch3 and #ch4 and how-memory-talks #ch9 → #ch10, from coherent-interconnects #ch8 → #ch11. Boot fragment (16):
+  10 between chapters (#ch1 → #ch2 → #ch3 → #ch4; #ch5 → #ch6 → #ch7, #ch8, #ch11; #ch8 → #ch9 → #ch13; #ch8 → #ch10), from
+  how-memory-talks #ch7 → #ch5, how-pcie-works #ch6 → #ch6, how-a-computer-is-wired #ch8 → #ch3, what-a-drive-is-made-of #ch1 → #ch7,
+  how-virtual-memory-works #ch3 → #ch11 and the rsa-encryption lesson (math region) → #ch8. Alias decisions: boot #ch8 takes "Secure Boot
+  chain of trust" / 安全启动信任链, never the bare "chain of trust" (reserved for a-secret-in-public #ch6); boot #ch3 keeps SPI flash / quad
+  SPI read beside plain SPI / SPI bus on how-a-computer-is-wired #ch8; A6 keeps "GPU cache coherence" and "GPU shared memory" because the
+  bare sibling words still land on their owners (cache coherence on how-cores-share-memory #ch1, "shared memory bus bottleneck" on
+  why-compute-waits-for-memory #ch5, "coherent shared memory" on coherent-interconnects #ch1); plain "shared memory" / 共享内存, unowned,
+  now open A6 #ch6 through its title. One-click additions: A6 #ch1 显卡是怎么工作的, GPU 为什么快 / how does a graphics card work, why are
+  GPUs fast; boot #ch1 电脑开机过程, 开机过程, 电脑怎么开机 / how does a computer boot, boot process; #ch6 BIOS 是什么 / BIOS (bare BIOS opened
+  a biology page by substring); #ch12 TF-A (it opened how-memory-talks #ch6 through tFAW). `tests/concept-search.cjs` pins 40 zh/en
+  pairs (16 A6, 19 boot, 5 owners kept). The search chunks total 328,257 bytes; the build created `search/chunks/computing-4.js`, which
+  is committed with the registration (git add before `--check`).
 
 ### Commands for the integrator
 
