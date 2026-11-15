@@ -230,6 +230,13 @@ const f = (x, d = 0) => x.toFixed(d);
   // A4/A5 registrar, 2026-11-15: 取指 译码 执行 belongs to switches-that-compute #ch9 (it tied with #ch1 here and won the zh query)
   check('alias moved to switches-that-compute #ch9: 取指 译码 执行', mine.has('取指 译码 执行'), false);
   for (const a of ['流水线气泡', '数据旁路', 'CPI', 'pipeline stall', 'forwarding', 'load-use hazard', 'instruction pipeline']) check('alias kept: ' + a, mine.has(a), true);
+  // B3/B4 registrar, 2026-11-15: NVLink 带宽 / NVLink vs PCIe (#ch9) moved to coherent-interconnects #ch8, CXL 内存池 / CXL memory
+  // pooling (#ch10) to its #ch6; the HBM, CoWoS and co-packaged-optics words stay. ch5.p2 links how-memory-talks #ch5 (DDR channels).
+  for (const a of ['NVLink 带宽', 'NVLink vs PCIe', 'CXL 内存池', 'CXL memory pooling']) check('alias moved to coherent-interconnects: ' + a, mine.has(a), false);
+  for (const a of ['HBM 高带宽内存', 'CoWoS', 'HBM4', '共封装光学 CPO', 'co-packaged optics']) check('alias kept: ' + a, mine.has(a), true);
+  const b3 = fs.readFileSync(path.join(__dirname, '..', '..', 'how-memory-talks', 'index.html'), 'utf8');
+  check('ch5.p2 links how-memory-talks #ch5', Z['ch5.p2'].includes('../how-memory-talks/#ch5') && E['ch5.p2'].includes('../how-memory-talks/#ch5'), true);
+  check('how-memory-talks anchor #ch5', b3.includes('id="ch5"'), true);
 }
 
 /* ── live sentence templates check ── */

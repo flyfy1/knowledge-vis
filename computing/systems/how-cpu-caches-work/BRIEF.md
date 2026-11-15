@@ -255,3 +255,8 @@ Unverified
 - Alias ownership: this page keeps 伪共享 / false sharing and MESI 状态 / MESI states (#ch9); A5 takes 缓存一致性 / cache
   coherence (#ch1) and MESI 协议 / MOESI / MSI 协议 / 总线窥探 (#ch3), which were unowned.
 - Scripts move to `?v=20261115c` (`?v=20261115b` was deployed with the A1/A3 registration).
+
+## Registrar of B3 and B4 (2026-11-15)
+
+- ch12.links gains one clause linking B3 (`how-memory-talks`, the DRAM side below the caches), zh and en; tests/models.cjs requires
+  it and checks B3's quoted title. No alias changed. Scripts move to `?v=20261115d` (`c` was deployed).

@@ -375,7 +375,7 @@ window.ESSAY_COPY.zh = {
   "ch11.h.est": "已经定下",
   "ch11.e1": "<strong>PCIe 7.0</strong> 于 2025 年 6 月向成员发布：128 GT/s，沿用 PAM4 和 FLIT，×16 两个方向合计 {f7bi} GB/s（按原始速率算，未扣 FLIT 开销）。同时发布的「光学感知重定时器」ECN 修订了 6.4 和 7.0，让重定时器可以接光链路。（ServeTheHome 转述，2025-06-15；eeNews Europe，2025-06-12）",
   "ch11.e2": "<strong>PCIe 8.0</strong> 的草案 0.3 于 2025 年 9 月、草案 0.5 于 2026 年 5 月发给成员，目标 {f8gts} GT/s。（ServeTheHome 转述，2026-05-06；Tom's Hardware 同期报道）",
-  "ch11.e3": "<strong>CXL 4.0</strong>（2025 年 11 月）建在 PCIe 7.0 的物理层上，128 GT/s。（CXL 联盟白皮书）",
+  "ch11.e3": "<strong>CXL 4.0</strong>（2025 年 11 月）建在 PCIe 7.0 的物理层上，128 GT/s。（CXL 联盟白皮书）CXL 怎样在这根线上跑内存和缓存一致性，见<a href='../coherent-interconnects/#ch3'>《芯片之间怎么共用内存》第 3 章</a>。",
   "ch11.h.demo": "已经做出来",
   "ch11.d1": "第一次 PCIe 6.x 合规测试研讨会于 2026-07-31 结束；Credo 的 Gen6 ×16 重定时器通过合规、进入了 6.x 集成商名单。（Credo 新闻稿，经 innovationopenlab 转载，2026-08-31）",
   "ch11.d2": "美光 9650 PCIe 6.0 固态在 2026 年 2 月进入量产（二手报道）。它的速度和意义见<a href='../why-nvme-is-fast/#ch8'>《NVMe 为什么这么快》第 8 章</a>，这里不重复。",

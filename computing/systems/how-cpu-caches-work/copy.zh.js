@@ -445,7 +445,7 @@ window.ESSAY_COPY.zh = {
   "ch12.q2": "<strong>哪几级私有，哪几级共享，L3 和 L2 什么关系？</strong>包含式容量只算 L3，排他式算两者之和（第 6 章）；几个核心写同一行会互相作废（第 9 章）。",
   "ch12.q3": "<strong>我的程序的访问有没有规律？</strong>有固定步长就能被预取（第 8 章）；有没有一次性的大扫描，会不会挤走热数据（第 4 章）；写多不多，写完马上用还是很久以后才用（第 5 章）。",
   "ch12.sum": "回到开头：内存要等 {dramNs} 纳秒，约 {dram} 个周期。<em>按行搬</em>让邻近的数据一次进来；<em>按组放</em>让查找只比几个标记；<em>多级接力</em>让 {zL1} KiB 的 L1 在 {zL1lat} 个周期里接住最常用的那一小块，{zL3} MiB 的 L3 在 {zL3lat} 个周期里接住大的那块。第 1 章的程序三级全开，只有 {memShare} 的访问去内存，平均每次 {amat3} 个周期。",
-  "ch12.links": "接着读：<a href='../why-compute-waits-for-memory/'>《为什么计算一直在等内存》</a>讲整条延迟梯子、矩阵分块和内存墙；<a href='../switches-that-compute/#ch11'>《一堆开关是怎么学会算数的》第 11 章</a>讲真实处理器在我们搭的那台上多了什么。页表和 TLB 见<a href='../how-virtual-memory-works/'>《虚拟内存是怎么工作的》</a>；多核之间怎样约定读写的先后，见<a href='../how-cores-share-memory/'>《多个核心怎么共用一块内存》</a>。",
+  "ch12.links": "接着读：<a href='../why-compute-waits-for-memory/'>《为什么计算一直在等内存》</a>讲整条延迟梯子、矩阵分块和内存墙；<a href='../switches-that-compute/#ch11'>《一堆开关是怎么学会算数的》第 11 章</a>讲真实处理器在我们搭的那台上多了什么。页表和 TLB 见<a href='../how-virtual-memory-works/'>《虚拟内存是怎么工作的》</a>；多核之间怎样约定读写的先后，见<a href='../how-cores-share-memory/'>《多个核心怎么共用一块内存》</a>；缓存之下那几十纳秒的内存访问里发生了什么，见<a href='../how-memory-talks/'>《内存是怎么和 CPU 说话的》</a>。",
 
   "dg.split.aria": "示意图：Zen 5 L1 数据缓存把一个 48 位地址切成标记、组号和行内偏移三段",
   "dg.split.cap": "Zen 5 的 L1 数据缓存怎样切一个地址：{zL1} KiB、{zL1w} 路、64 字节一行，于是 {z1sets} 组。位号按 48 位虚拟地址标；真正比对的标记来自翻译后的物理地址（第 7 章）。",

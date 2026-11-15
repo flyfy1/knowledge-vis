@@ -328,3 +328,17 @@ Not checked:
   secondary sources only. GDDR7's PAM3 code table: search summaries of AnandTech/Cadence say (0,0) is the unused pair,
   as in diagram pam3; the other assignments remain illustrative.
 
+
+## Registrar (2026-11-15)
+
+- Essay commit d165655d (this tree as reviewed, on drafts/buses-20261115 as 9921fda8). Registered with B4 in one batch.
+- Links: ch11.c3 links B4 #ch5 (memory expansion) and ch12.links B4's page top, zh and en, where the page said a later essay
+  would cover CXL. Siblings now link here: B4 ch3.p4 (#ch5, under this page's title; it quoted the task file's working title)
+  and ch13.links; how-cpu-caches-work ch12.links; why-compute-waits-for-memory ch5.p2 (#ch5, "DDR 内存通道"). tests/models.cjs
+  requires the B4 links (it used to forbid them) and checks B4's quoted title.
+- Aliases: one-click additions #ch4 CL 值越高越慢吗, #ch7 插四根内存为什么降频, #ch8 ECC 内存 (zh; unowned on the live site).
+  Generic ECC / ecc memory / 内存纠错ECC stay reserved: plain ECC is the elliptic-curve alias of the unregistered draft
+  a-secret-in-public, ecc memory / 内存纠错ECC sit on the Hamming-code chapter of the unregistered draft how-much-a-wire-can-carry;
+  whoever registers those drafts decides (this page's #ch8 is the better landing for "ECC memory"). pages.config.js tags add
+  内存条 / Memory Modules, so 内存条 and 内存条是怎么工作的 open the page top. CXL words are on B4.
+- Scripts move to `?v=20261115r` (never deployed under any key).

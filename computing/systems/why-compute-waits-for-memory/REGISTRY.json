@@ -114,8 +114,8 @@
       "title": { "zh": "数据搬运能耗与 HBM 封装", "en": "Data Movement Energy and HBM Packaging" },
       "desc": { "zh": "从片外 DRAM 读取数据的能耗是浮点加法的几百倍；HBM 靠极短极宽的硅中介层连线降低距离与能耗。", "en": "Fetching a word from off-chip DRAM costs hundreds of times more energy than adding it; HBM stacks dies on a wide interposer to shorten wires." },
       "aliases": {
-        "zh": ["HBM 高带宽内存", "数据搬运能耗", "Horowitz 能耗", "为什么 HBM 这么贵", "CoWoS", "NVLink 带宽"],
-        "en": ["HBM high bandwidth memory", "data movement energy", "Horowitz energy table", "why HBM matters", "NVLink vs PCIe"]
+        "zh": ["HBM 高带宽内存", "数据搬运能耗", "Horowitz 能耗", "为什么 HBM 这么贵", "CoWoS"],
+        "en": ["HBM high bandwidth memory", "data movement energy", "Horowitz energy table", "why HBM matters"]
       },
       "anchor": "#ch9",
       "relatedPages": ["why-chips-are-hard"]
@@ -125,8 +125,8 @@
       "title": { "zh": "HBM4、共封装光学与算力前沿", "en": "HBM4, Co-Packaged Optics, and the 2026 Frontier" },
       "desc": { "zh": "2026 年末 AI 芯片迈向 2048-bit HBM4 与共封装光学，同时 PIM 与神经形态硬件仍在与生态和成本博弈。", "en": "Late-2026 hardware pushes toward 2048-bit HBM4 and co-packaged optics while PIM and neuromorphic chips face area and software hurdles." },
       "aliases": {
-        "zh": ["HBM4", "HBM3e", "B200 H100 对比", "Rubin", "共封装光学 CPO", "CXL 内存池", "存算一体 PIM"],
-        "en": ["HBM4", "HBM3e", "Blackwell B200 bandwidth", "co-packaged optics", "CXL memory pooling", "processing in memory PIM"]
+        "zh": ["HBM4", "HBM3e", "B200 H100 对比", "Rubin", "共封装光学 CPO", "存算一体 PIM"],
+        "en": ["HBM4", "HBM3e", "Blackwell B200 bandwidth", "co-packaged optics", "processing in memory PIM"]
       },
       "anchor": "#ch10",
       "relatedPages": ["why-chips-are-hard", "what-a-frontier-model-takes"]

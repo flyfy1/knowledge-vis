@@ -212,3 +212,9 @@ Book titles of sibling essays should use their registered English titles.
   draft is registered, check that 芯粒 / chiplets go where the registrar decides and that UCIe / die-to-die stay here.
 - `tests/models.cjs`: how-pcie-works and how-thunderbolt-works join the live-sibling whitelist and anchor checks, the "B1 as
   plain text" check became link checks, en links must equal zh links. Scripts stay at `?v=20261115`.
+
+## Registrar of B3 and B4 (2026-11-15)
+
+- ch9.d2 said the series might cover CXL later; it now links B4 `coherent-interconnects` #ch3, zh and en. tests/models.cjs allows
+  the link and checks the anchor and the quoted title. ch8.p5 (B5, small buses, not written) stays plain text. No alias changed;
+  the reserved CXL / NVLink words now belong to B4. Scripts move to `?v=20261115b`.

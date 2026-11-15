@@ -365,7 +365,8 @@ const ymd = s => { const [y, m, d] = s.split('-').map(Number); return d ? `${y} 
   // one word, one owner. Words the siblings own (and words the task file assigns to them) are linked, not claimed.
   const norm = s => s.toLowerCase().replace(/\s+/g, '');
   const owned = new Map();
-  for (const a of ['NVLink 带宽', 'NVLink vs PCIe', 'CXL 内存池', 'CXL memory pooling', '共封装光学', 'co-packaged optics', 'Infinity Fabric', '侦听过滤器', 'snoop filter', '目录协议', 'directory protocol',
+  // NVLink 带宽 / NVLink vs PCIe (memory essay #ch9) and CXL 内存池 / CXL memory pooling (#ch10) moved here on 2026-11-15 (registrar)
+  for (const a of ['共封装光学', 'co-packaged optics', 'Infinity Fabric', '侦听过滤器', 'snoop filter', '目录协议', 'directory protocol',
     '一致性域', 'coherence domain', '每比特能耗', 'pJ per bit', 'AMAT', 'Ultra Ethernet', '超以太网', 'RDMA', '缓存一致性', 'cache coherence', 'MESI', 'MOESI', 'NUMA', '芯粒', 'chiplet']) owned.set(norm(a), 'TASK');
   for (const sib of ['how-cores-share-memory', 'storage-over-a-network', 'why-compute-waits-for-memory', 'how-virtual-memory-works', 'how-pcie-works', 'how-a-computer-is-wired', 'how-thunderbolt-works',
     'how-cpu-caches-work', 'how-a-cpu-runs-a-program', 'switches-that-compute', 'how-memory-talks']) {
@@ -376,7 +377,7 @@ const ymd = s => { const [y, m, d] = s.split('-').map(Number); return d ? `${y} 
   { const where = new Map(); for (const c of R.concepts) for (const a of new Set([...c.aliases.zh, ...c.aliases.en].map(norm))) { n++; if (where.has(a)) { fails++; console.error(`FAIL alias ${a} in ${where.get(a)} and ${c.id}`); } where.set(a, c.id); } }
   // live sibling links point at chapters that exist; quoted titles match the siblings' own titles
   const all = Object.values(Z).join('');
-  const SIBS = ['how-cores-share-memory', 'how-pcie-works', 'how-a-computer-is-wired', 'why-compute-waits-for-memory', 'how-virtual-memory-works', 'storage-over-a-network', 'how-cpu-caches-work'];
+  const SIBS = ['how-cores-share-memory', 'how-pcie-works', 'how-a-computer-is-wired', 'why-compute-waits-for-memory', 'how-virtual-memory-works', 'storage-over-a-network', 'how-cpu-caches-work', 'how-memory-talks'];
   for (const sib of SIBS) {
     const sh = fs.readFileSync(path.join(DIR, '..', sib, 'index.html'), 'utf8');
     for (const m of all.matchAll(new RegExp(sib + '/(#ch\\d+)?', 'g'))) if (m[1]) check(`${sib} anchor ${m[1]}`, sh.includes(`id="${m[1].slice(1)}"`), true);
@@ -385,8 +386,10 @@ const ymd = s => { const [y, m, d] = s.split('-').map(Number); return d ? `${y} 
   }
   const hrefs = [...all.matchAll(/href='([^']+)'/g)].map(m => m[1]);
   for (const h of hrefs) { n++; if (!new RegExp('^\\.\\./(' + SIBS.join('|') + ')/(#ch\\d+)?$').test(h)) { fails++; console.error('FAIL unexpected link ' + h); } }
-  // B3 is not live: named in plain text only, never linked
-  check('B3 not linked', /how-memory-talks/.test(all), false); says('ch3.p4', '《内存条是怎么和 CPU 说话的》');
+  // B3 is live since 2026-11-15: ch3.p4 links its #ch5 under its own title, ch13.links its page top
+  check('ch3.p4 links B3 #ch5', Z['ch3.p4'].includes("href='../how-memory-talks/#ch5'"), true); check('old B3 title gone', all.includes('《内存条是怎么和 CPU 说话的》'), false);
+  check('ch13.links links B3', Z['ch13.links'].includes("href='../how-memory-talks/'"), true);
+  for (const [k, a] of [['memory-pooling-switch', 'CXL 内存池'], ['memory-pooling-switch', 'CXL memory pooling'], ['nvlink-nvswitch', 'NVLink 带宽'], ['nvlink-nvswitch', 'NVLink vs PCIe']]) check(`${a} on ${k}`, R.concepts.find(c => c.id === k).aliases[/[一-鿿]/.test(a) ? 'zh' : 'en'].includes(a), true);
   for (const k of ['ch1.p2', 'ch1.p3', 'ch2.p1', 'ch7.p2', 'ch8.p4', 'ch10.p5', 'ch11.p1', 'ch12.p2', 'ch13.links']) { n++; if (!/href=/.test(Z[k])) { fails++; console.error('FAIL expected a sibling link in ' + k); } }
   // no buying advice or vendor ranking
   check('no ranking words', /最好的(?:产品|厂商)|值得买|推荐购买|性价比最高/.test(all.replace('不评价哪家的产品值得买', '')), false);

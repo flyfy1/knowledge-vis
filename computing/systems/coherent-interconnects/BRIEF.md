@@ -213,3 +213,17 @@ Not verified from a primary source
 - Das Sharma Table 4 is an image: whether it already lists CXL.mem read on the 256 B flit (the page calls that cell its
   own derivation) is unchecked.
 - Which NVIDIA Rubin figure is final (3,000 vs 3,600 GB/s); Pond / Sun full texts beyond the cited sentences.
+
+## Registrar (2026-11-15)
+
+- Essay commit 0f6572c0 (this tree as reviewed, on drafts/buses-20261115 as d8304a07). Registered with B3 in one batch.
+- Links: ch3.p4 now quotes B3 under its real title 《内存是怎么和 CPU 说话的》 / "How Memory Talks to the CPU" and links its #ch5
+  (DDR5 channel bandwidth); ch13.links adds B3's page top. Siblings now link here: B3 ch11.c3 (#ch5) and ch12.links; A5
+  how-cores-share-memory ch11.p2 and ch12.links; how-a-computer-is-wired ch9.d2 (#ch3); how-pcie-works ch11.e3 (#ch3).
+  tests/models.cjs requires the B3 links (it used to forbid them).
+- Aliases moved here (registrar decision; why-compute-waits-for-memory is Antigravity's edition, note in
+  specs/reviews/why-compute-waits-for-memory-cxl-nvlink-alias-move-20261115.md): CXL 内存池 / CXL memory pooling from its #ch10 to
+  #ch6 (pooling is answered in depth here; storage-over-a-network keeps CXL 内存池和存储有什么区别), NVLink 带宽 / NVLink vs PCIe from
+  its #ch9 to #ch8 (ch8 compares NVLink 5 with PCIe 5.0 ×16). The memory essay keeps HBM, CoWoS and co-packaged optics.
+  One-click additions: plain CXL on #ch3 and plain NVLink on #ch8 (the page tags otherwise won), 内存池化 / memory pooling on #ch6.
+- Scripts stay at `?v=20261115r` (never deployed).

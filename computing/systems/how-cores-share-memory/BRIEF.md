@@ -247,3 +247,9 @@ Test results after the review: tests/models.cjs PASS 11,605 checks; tests/browse
   总线窥探和目录协议的区别, snooping vs directory; #ch5 为什么多线程加法结果不对, 多线程加法结果不对, why multithreaded counter gives
   wrong result; #ch8 内存模型, memory model; #ch9 x86 和 ARM 内存序, 内存序, x86 vs Arm memory ordering, memory ordering.
 - Scripts stay at `?v=20261115` (first deployment).
+
+## Registrar of B3 and B4 (2026-11-15)
+
+- B4 (`coherent-interconnects`) is live, so ch11.p2 and ch12.links link its page top, zh and en, instead of naming "a later essay
+  on links between chips". tests/models.cjs requires both links (it used to require the plain text) and checks B4's quoted title.
+- No alias changed. Scripts move to `?v=20261115b` (`?v=20261115` was deployed).

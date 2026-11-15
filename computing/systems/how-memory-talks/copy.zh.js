@@ -462,7 +462,7 @@ window.ESSAY_COPY.zh = {
   "ch11.h.claim": "还在路上的，或某一方的说法",
   "ch11.c1": "<span class='tag l'>进行中</span>JEDEC 2026 年 4 月 30 日的新闻稿：MRDIMM 的数据缓冲芯片标准 JESD82-552 已发布，第二代 MRDIMM 模组标准「接近完成」，目标每通道 {mr2} MT/s。",
   "ch11.c2": "<span class='tag l'>说法</span>DDR6：我没有找到 JEDEC 已发布的 DDR6 标准；常被引用的 {d6lo} 到 {d6hi} MT/s 来自标准发布之前的行业报道。",
-  "ch11.c3": "<span class='tag l'>指路</span>CXL 内存扩展：把内存挂在 PCIe 的物理层上，用串行线换来插槽之外的容量，代价是多一段延迟。本系列后续一篇讲片间一致性互连的文章会细说。",
+  "ch11.c3": "<span class='tag l'>指路</span>CXL 内存扩展：把内存挂在 PCIe 的物理层上，用串行线换来插槽之外的容量，代价是多一段延迟。细节见<a href='../coherent-interconnects/#ch5'>《芯片之间怎么共用内存》第 5 章</a>。",
   "ch11.p2": "把这几条连起来看：第 7 章的那段并行线，是内存提速的主要障碍。LPDDR 把线缩到几毫米，GDDR 把每个符号多塞半个比特，MRDIMM 让内存条上的芯片只跑一半的速度，CXL 干脆换成串行线。DDR5 自己则靠训练、均衡和逐行计数，在同一种插槽里继续撑。",
   "ch11.limit": "这一章的数字最容易过时。JEDEC 网站本身拒绝了我的访问，标准的日期取自转载的新闻稿；超频纪录取自报道，没有在 HWBOT 上直接核对。",
 
@@ -472,7 +472,7 @@ window.ESSAY_COPY.zh = {
   "ch12.q2": "<strong>我的程序等的是延迟还是带宽？</strong>一个接一个地追指针，等的是延迟，频率高帮不上多少；成片地读、几个核一起读，吃的是带宽，要看通道数、行命中和 bank 并行（第 5、6 章）。",
   "ch12.q3": "<strong>插几根、跑在什么速度上？</strong>每条通道插两根会降频（第 7 章）；标定的高频档是厂商标定，不是标准；需要可靠性的机器要旁路 ECC，DDR5 芯片里的 ECC 不算（第 8 章）。",
   "ch12.sum": "回到开头：DDR5-6400 CL32 快了没有？等一次的时间，<em>没有</em>：CL 是 {cl5x} 纳秒，和 DDR4-3200 CL16 一样。每秒搬走的数据，<em>翻了一倍</em>：一根内存条 {bwDimm} GB/s。CPU 要一个字节时，内存控制器把地址拆成通道、bank 和行，开行（{rcd6} 个周期）、读（{cl6} 个周期）、送完 64 字节（{bl2} 个周期），行冲突时先关行（{rp6} 个周期）；同时还要每 {refi5} 微秒刷新一次，还要躲着同组的 bank、数着每一行被开了几次。内存条还在用一大排并行线，是因为串行线的转换要多花几纳秒，而内存最在乎的就是那几十纳秒；代价是每根线开机都要训练，插多了就得降频。",
-  "ch12.links": "接着读：<a href='../how-cpu-caches-work/'>《CPU 的三级缓存是怎么工作的》</a>讲内存之上的那几级；<a href='../why-compute-waits-for-memory/'>《为什么计算一直在等内存》</a>讲内存墙、延迟和带宽、HBM；<a href='../how-a-computer-is-wired/#ch4'>《电脑里的零件是怎么连起来的》第 4 章</a>讲内存控制器为什么搬进了 CPU、两个插座之间的远近；<a href='../how-pcie-works/'>《PCIe 为什么能一代一代翻倍》</a>讲另一种路：串行线。CXL 这类片间一致性互连，留给本系列后续的一篇。",
+  "ch12.links": "接着读：<a href='../how-cpu-caches-work/'>《CPU 的三级缓存是怎么工作的》</a>讲内存之上的那几级；<a href='../why-compute-waits-for-memory/'>《为什么计算一直在等内存》</a>讲内存墙、延迟和带宽、HBM；<a href='../how-a-computer-is-wired/#ch4'>《电脑里的零件是怎么连起来的》第 4 章</a>讲内存控制器为什么搬进了 CPU、两个插座之间的远近；<a href='../how-pcie-works/'>《PCIe 为什么能一代一代翻倍》</a>讲另一种路：串行线。CXL 这类片间一致性互连，见<a href='../coherent-interconnects/'>《芯片之间怎么共用内存》</a>。",
 
   "footer": "<p><strong>来源。</strong>SK hynix 16Gb DDR5 SDRAM 数据手册 H5CG48AGBDX018N 第 1.0 版（2022 年 7 月）；SK hynix 8Gb DDR4 SDRAM 数据手册 H5AN8G8NCJR 第 1.5 版（2019 年 3 月）；Micron 16Gb DDR5 SDRAM Die Rev D 补充手册第 F 版（2024 年 4 月）；Micron DDR5 SODIMM Core 第 F 版（2023 年 5 月）；SQRAM（研华）DDR5-4800 RDIMM 数据手册第 1.1 版（2022 年 12 月）。AMD 锐龙 9 9950X 产品页；英特尔酷睿 Ultra 200S Plus 快速参考指南；G.SKILL F5-6400J3239G16GX2（PC Gamer 评测）与 Corsair CMK16GX4M2B3200C16 的规格。Kim 等，ISCA 2014；Kim 等，ISCA 2020；Frigo 等，IEEE S&P 2020。JEDEC 关于 JESD79-5C、JESD209-6、JESD239、JESD318 和 MRDIMM 的新闻稿（经转载）；Samsung LPDDR5X 新闻稿（2024-04-17）；Tom's Hardware 与英特尔支持页关于 MRDIMM 的说明；Duck-IT Tech News 关于 DDR5 超频纪录的报道（2026-07-03）。以上在 2026 年 11 月 15 日查阅；哪些只见到转载或搜索摘要，BRIEF.md 里逐条写明。经典结果：Rixner 等（2000，FR-FCFS 调度）；Hamming（1950）；Misra、Gries（1982，频繁项计数）。教科书：Jacob、Ng、Wang，《Memory Systems: Cache, DRAM, Disk》（2008）。</p><p>链接与网址见本页目录里的 BRIEF.md。本页只讲机制，不评价产品。</p>"
 };

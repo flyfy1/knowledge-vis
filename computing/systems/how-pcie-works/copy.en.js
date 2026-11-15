@@ -375,7 +375,7 @@ window.ESSAY_COPY.en = {
   "ch11.h.est": "Settled",
   "ch11.e1": "<strong>PCIe 7.0</strong> was released to members in June 2025: 128 GT/s, keeping PAM4 and FLITs, and {f7bi} GB/s combined for ×16 in both directions (raw rate, before FLIT overhead). The optical-aware retimer ECN published alongside it revised 6.4 and 7.0 so that retimers can connect to optical links. (reported by ServeTheHome, 2025-06-15; eeNews Europe, 2025-06-12)",
   "ch11.e2": "Draft 0.3 of <strong>PCIe 8.0</strong> went to members in September 2025, and draft 0.5 in May 2026, targeting {f8gts} GT/s. (reported by ServeTheHome, 2026-05-06, and Tom’s Hardware at the same time)",
-  "ch11.e3": "<strong>CXL 4.0</strong> (November 2025) is built on the PCIe 7.0 physical layer, at 128 GT/s. (CXL Consortium white paper)",
+  "ch11.e3": "<strong>CXL 4.0</strong> (November 2025) is built on the PCIe 7.0 physical layer, at 128 GT/s. (CXL Consortium white paper) How CXL carries memory and cache coherence over this link is covered in <a href='../coherent-interconnects/#ch3'>“How Chips Share Memory”, Chapter 3</a>.",
   "ch11.h.demo": "Built and tested",
   "ch11.d1": "The first PCIe 6.x compliance workshop ended on 31 July 2026. Credo’s Gen6 ×16 retimer passed compliance and joined the 6.x Integrators List. (Credo press release, reposted by innovationopenlab, 2026-08-31)",
   "ch11.d2": "Micron’s 9650 PCIe 6.0 SSD entered volume production in February 2026 (second-hand reports). Its speed and significance are covered in <a href='../why-nvme-is-fast/#ch8'>“Why NVMe Is So Fast”, Chapter 8</a>, and are not repeated here.",

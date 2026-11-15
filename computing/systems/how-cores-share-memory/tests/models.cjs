@@ -420,18 +420,21 @@ const P = M.prose();
   check('no alias twice on this page', new Set(mineAll).size, mineAll.length);
   for (const w of ['缓存一致性', 'cache coherence', 'MESI 协议', 'MOESI', 'MSI 协议', '总线窥探', 'bus snooping']) check('A5 takes ' + w, mineAll.includes(norm(w)), true);
   // links: only live siblings, chapters that exist; A4 is linked since it went live with this page (registrar, 2026-11-15:
-  // ch11.p2 -> #ch8, ch12.links -> page top); B4 (being written) stays plain text
+  // ch11.p2 -> #ch8, ch12.links -> page top); B4 likewise since it went live (B3/B4 registrar, 2026-11-15: ch11.p2 and ch12.links -> page top)
   const all = Object.values(Z).join('');
   const hrefs = [...all.matchAll(/href='([^']+)'/g)].map(m => m[1]);
-  for (const h of hrefs) { n++; if (!/^\.\.\/(how-cpu-caches-work|how-a-computer-is-wired|why-compute-waits-for-memory|distributed-systems|how-a-cpu-guesses-ahead)\/(#ch\d+)?$/.test(h)) { fails++; console.error('FAIL unexpected link ' + h); } }
-  for (const sib of ['how-cpu-caches-work', 'how-a-computer-is-wired', 'why-compute-waits-for-memory', 'distributed-systems', 'how-a-cpu-guesses-ahead']) {
+  for (const h of hrefs) { n++; if (!/^\.\.\/(how-cpu-caches-work|how-a-computer-is-wired|why-compute-waits-for-memory|distributed-systems|how-a-cpu-guesses-ahead|coherent-interconnects)\/(#ch\d+)?$/.test(h)) { fails++; console.error('FAIL unexpected link ' + h); } }
+  for (const sib of ['how-cpu-caches-work', 'how-a-computer-is-wired', 'why-compute-waits-for-memory', 'distributed-systems', 'how-a-cpu-guesses-ahead', 'coherent-interconnects']) {
     const sh = fs.readFileSync(path.join(DIR, '..', sib, 'index.html'), 'utf8');
     for (const m of all.matchAll(new RegExp("href='\\.\\./" + sib + "/(#ch\\d+)?'", 'g'))) if (m[1]) check(`${sib} anchor ${m[1]}`, sh.includes(`id="${m[1].slice(1)}"`), true);
   }
   check('ch11.p2 links A4 #ch8 (store buffer, memory disambiguation)', Z['ch11.p2'].includes("href='../how-a-cpu-guesses-ahead/#ch8'"), true);
   check('ch12.links links A4', Z['ch12.links'].includes("href='../how-a-cpu-guesses-ahead/'"), true);
   check('no plain-text "later essay on guessing ahead" left', /往前猜的那一篇|讲乱序执行的一篇/.test(all), false);
-  says('ch11.p2', 'CXL'); says('ch11.p2', '后续一篇讲片间互连的文章');
+  says('ch11.p2', 'CXL'); check('ch11.p2 links B4', Z['ch11.p2'].includes("href='../coherent-interconnects/'"), true);
+  check('ch12.links links B4', Z['ch12.links'].includes("href='../coherent-interconnects/'"), true);
+  check('no plain-text "later essay on links between chips" left', /后续一篇讲片间互连|本系列后续还有讲 CXL/.test(all), false);
+  { const cz = { window: {} }; vm.runInNewContext(fs.readFileSync(path.join(DIR, '..', 'coherent-interconnects', 'copy.zh.js'), 'utf8'), cz); check('B4 title quoted as in its copy', all.includes('《' + cz.window.ESSAY_COPY.zh['hero.title'] + '》'), true); }
   { const cz = { window: {} }; vm.runInNewContext(fs.readFileSync(path.join(DIR, '..', 'how-a-cpu-guesses-ahead', 'copy.zh.js'), 'utf8'), cz); check('A4 title quoted as in its copy', all.includes('《' + cz.window.ESSAY_COPY.zh['hero.title'] + '》'), true); }
   check('A2 linked at #ch9 (MESI states, false sharing)', hrefs.includes('../how-cpu-caches-work/#ch9'), true);
   check('memory essay linked at #ch5 (Amdahl, bus contention)', hrefs.includes('../why-compute-waits-for-memory/#ch5'), true);

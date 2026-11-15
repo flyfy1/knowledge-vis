@@ -98,7 +98,8 @@
           "CXL 是什么",
           "CXL.mem CXL.cache 区别",
           "CXL 带宽",
-          "CXL 帧"
+          "CXL 帧",
+          "CXL"
         ],
         "en": [
           "what is CXL",
@@ -177,13 +178,17 @@
           "CXL 交换机",
           "多逻辑设备",
           "内存搁浅",
-          "IDE 链路加密"
+          "IDE 链路加密",
+          "CXL 内存池",
+          "内存池化"
         ],
         "en": [
           "CXL switch",
           "multi-logical device",
           "stranded memory",
-          "CXL IDE"
+          "CXL IDE",
+          "CXL memory pooling",
+          "memory pooling"
         ]
       }
     },
@@ -229,13 +234,16 @@
           "NVLink 是什么",
           "NVSwitch",
           "NVL72",
-          "NVLink 域"
+          "NVLink 域",
+          "NVLink 带宽",
+          "NVLink"
         ],
         "en": [
           "what is NVLink",
           "NVSwitch",
           "NVL72",
-          "NVLink domain"
+          "NVLink domain",
+          "NVLink vs PCIe"
         ]
       }
     },

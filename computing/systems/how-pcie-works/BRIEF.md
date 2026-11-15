@@ -194,3 +194,8 @@ half-rows of DW2/DW3 (high half on top), which is correct but repetitive.
   plain query "MSI-X" still opens its #ch4).
 - `tests/models.cjs`: the two siblings join the anchor and title checks, en links must equal zh links, and the "no provenance
   label yet" check is gone (the label is added at registration). Scripts stay at `?v=20261115` (never deployed before).
+
+## Registrar of B3 and B4 (2026-11-15)
+
+- ch11.e3 (CXL 4.0) gains one sentence linking B4 `coherent-interconnects` #ch3 (the CXL protocols and flits), zh and en;
+  tests/models.cjs checks the link, its anchor and the quoted title. No alias changed. Scripts move to `?v=20261115b`.

@@ -399,7 +399,7 @@ const f = (x, d) => x.toFixed(d);
   // #ch4, ch7.limit and ch12.links the page top); A5 is linked since it went live (A4/A5 registrar, 2026-11-15: ch9.p1 and
   // ch12.links the page top, ch9.limit #ch3)
   const all = Object.values(Z).join('');
-  for (const sib of ['why-compute-waits-for-memory', 'switches-that-compute', 'how-virtual-memory-works', 'how-cores-share-memory']) {
+  for (const sib of ['why-compute-waits-for-memory', 'switches-that-compute', 'how-virtual-memory-works', 'how-cores-share-memory', 'how-memory-talks']) {
     const sh = fs.readFileSync(path.join(DIR, '..', sib, 'index.html'), 'utf8');
     for (const m of all.matchAll(new RegExp(sib + '/(#ch\\d+)?', 'g'))) if (m[1]) check(`${sib} anchor ${m[1]}`, sh.includes(`id="${m[1].slice(1)}"`), true);
   }
@@ -411,7 +411,10 @@ const f = (x, d) => x.toFixed(d);
   check('no plain-text "later essay on virtual memory" left', /后续一篇讲虚拟内存/.test(all), false);
   { const vz = { window: {} }; vm.runInNewContext(fs.readFileSync(path.join(DIR, '..', 'how-virtual-memory-works', 'copy.zh.js'), 'utf8'), vz); check('A3 title quoted as in its copy', all.includes('《' + vz.window.ESSAY_COPY.zh['hero.title'] + '》'), true); }
   const hrefs = [...all.matchAll(/href='([^']+)'/g)].map(m => m[1]);
-  for (const h of hrefs) { n++; if (!/^\.\.\/(why-compute-waits-for-memory|switches-that-compute|how-virtual-memory-works|how-cores-share-memory)\/(#ch\d+)?$/.test(h)) { fails++; console.error('FAIL unexpected link ' + h); } }
+  // B3 is linked since it went live (B3/B4 registrar, 2026-11-15: ch12.links the page top)
+  check('ch12.links links B3', Z['ch12.links'].includes("href='../how-memory-talks/'"), true);
+  { const vz = { window: {} }; vm.runInNewContext(fs.readFileSync(path.join(DIR, '..', 'how-memory-talks', 'copy.zh.js'), 'utf8'), vz); check('B3 title quoted as in its copy', all.includes('《' + vz.window.ESSAY_COPY.zh['hero.title'] + '》'), true); }
+  for (const h of hrefs) { n++; if (!/^\.\.\/(why-compute-waits-for-memory|switches-that-compute|how-virtual-memory-works|how-cores-share-memory|how-memory-talks)\/(#ch\d+)?$/.test(h)) { fails++; console.error('FAIL unexpected link ' + h); } }
 
   const ectx = { window: {} }; vm.runInNewContext(fs.readFileSync(path.join(DIR, 'copy.en.js'), 'utf8'), ectx);
   const EN = ectx.window.ESSAY_COPY.en, stub = ectx.window.ESSAY_COPY.enStub === true, ph = s => [...s.matchAll(/\{(\w+)\}/g)].map(m => m[1]).sort().join(',');

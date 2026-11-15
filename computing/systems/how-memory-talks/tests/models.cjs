@@ -459,7 +459,7 @@ function replay(T, r, o) {
   // sibling links point at chapters that exist
   const all = Object.values(Z).join('');
   const hrefs = [...all.matchAll(/href='([^']+)'/g)].map(m => m[1]);
-  const SIBS = ['switches-that-compute', 'why-compute-waits-for-memory', 'what-a-drive-is-made-of', 'how-cpu-caches-work', 'how-a-computer-is-wired', 'how-sata-works', 'how-pcie-works', 'how-thunderbolt-works'];
+  const SIBS = ['switches-that-compute', 'why-compute-waits-for-memory', 'what-a-drive-is-made-of', 'how-cpu-caches-work', 'how-a-computer-is-wired', 'how-sata-works', 'how-pcie-works', 'how-thunderbolt-works', 'coherent-interconnects'];
   for (const h of hrefs) {
     const m = h.match(/^\.\.\/([\w-]+)\/(#ch\d+)?$/); n++;
     if (!m || !SIBS.includes(m[1])) { fails++; console.error('FAIL unexpected link ' + h); continue; }
@@ -469,7 +469,10 @@ function replay(T, r, o) {
     if (!h.startsWith('../') || path.dirname(dir) !== path.dirname(DIR)) { /* links are written as ../<slug>/, so the sibling must sit in the same folder */ n++; if (path.dirname(dir) !== path.dirname(DIR)) { fails++; console.error('FAIL link is not a sibling folder: ' + h); } }
     if (m[2]) check(`${m[1]} anchor ${m[2]}`, fs.readFileSync(path.join(dir, 'index.html'), 'utf8').includes(`id="${m[2].slice(1)}"`), true);
   }
-  check('CXL / the coherent-interconnect essay is plain text only', /coherent-interconnects/.test(all), false);
+  // B4 is live since 2026-11-15: ch11.c3 links its #ch5 (memory expansion), ch12.links its page top
+  check('ch11.c3 links B4 #ch5', Z['ch11.c3'].includes("href='../coherent-interconnects/#ch5'"), true);
+  check('ch12.links links B4', Z['ch12.links'].includes("href='../coherent-interconnects/'"), true);
+  check('no plain-text "later essay on interconnects" left', /后续一篇讲片间|留给本系列后续/.test(all), false);
   for (const [k, sib] of [['ch1.p2', 'switches-that-compute'], ['ch1.p2', 'what-a-drive-is-made-of'], ['ch3.p5', 'how-cpu-caches-work'], ['ch4.p4', 'why-compute-waits-for-memory'], ['ch7.p1', 'how-sata-works'], ['ch7.p3', 'how-pcie-works'], ['ch9.p2', 'how-thunderbolt-works'], ['ch9.p3', 'why-compute-waits-for-memory']])
     check(`${k} links ${sib}`, Z[k].includes(`href='../${sib}/`), true);
   // sibling titles quoted as in their copy
