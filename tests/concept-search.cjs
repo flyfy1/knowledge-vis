@@ -430,6 +430,55 @@ chapters.push(
   ['怎么看缺页次数', 'how to measure TLB misses', A3 + '#ch13'],
   ['Belady 最优替换', 'Belady optimal replacement', CACHE + '#ch4'],
 );
+// Architecture series A4 and A5 (2026-11-15). A4 owns the branch-prediction, out-of-order and speculation words (推测执行 /
+// speculative execution on #ch8; A3 never carried them); plain 分支预测 / branch prediction sit on #ch1 so the chapter beats the
+// page tag. A5 takes 缓存一致性 / cache coherence (#ch1) and MESI 协议 / MOESI / MSI 协议 / 总线窥探 (#ch3), unowned until now; A2 keeps
+// 伪共享 / false sharing / MESI 状态 (#ch9), how-pcie-works #ch7 keeps plain MSI. 取指 译码 执行 left why-compute-waits-for-memory #ch1
+// (Antigravity edition, specs/reviews/why-compute-waits-for-memory-fetch-decode-alias-20261115.md), so switches #ch9 owns it.
+const A4 = 'computing/systems/how-a-cpu-guesses-ahead/', A5 = 'computing/systems/how-cores-share-memory/';
+chapters.push(
+  ['分支预测', 'branch prediction', A4 + '#ch1'],
+  ['分支预测器', 'branch predictor', A4 + '#ch1'],
+  ['为什么猜错越来越贵', 'branch misprediction cost', A4 + '#ch1'],
+  ['为什么排序后的数组处理更快', 'why is a sorted array faster', A4 + '#ch2'],
+  ['2 位饱和计数器', 'two-bit saturating counter', A4 + '#ch2'],
+  ['gshare', 'global history', A4 + '#ch3'],
+  ['TAGE', 'TAGE predictor', A4 + '#ch4'],
+  ['返回地址栈', 'return address stack', A4 + '#ch5'],
+  ['超标量', 'superscalar', A4 + '#ch6'],
+  ['乱序执行', 'out-of-order execution', A4 + '#ch7'],
+  ['寄存器重命名', 'register renaming', A4 + '#ch7'],
+  ['Tomasulo', 'Tomasulo algorithm', A4 + '#ch7'],
+  ['重排序缓冲 ROB', 'reorder buffer', A4 + '#ch8'],
+  ['推测执行', 'speculative execution', A4 + '#ch8'],
+  ['乱序窗口', 'out-of-order window', A4 + '#ch9'],
+  ['幽灵漏洞 Spectre', 'Spectre', A4 + '#ch10'],
+  ['Retbleed', 'Branch Privilege Injection', A4 + '#ch11'],
+  ['怎么减少分支预测失败', 'how to reduce branch mispredictions', A4 + '#ch12'],
+  ['缓存一致性', 'cache coherence', A5 + '#ch1'],
+  ['单写多读', 'SWMR', A5 + '#ch2'],
+  ['MESI 协议', 'MESI protocol', A5 + '#ch3'],
+  ['MOESI', 'MSI 协议', A5 + '#ch3'],
+  ['总线窥探', 'bus snooping', A5 + '#ch3'],
+  ['目录协议', 'snooping vs directory', A5 + '#ch4'],
+  ['为什么多线程加法结果不对', 'race condition', A5 + '#ch5'],
+  ['竞态条件', 'is i++ thread safe', A5 + '#ch5'],
+  ['原子操作', 'atomic operations', A5 + '#ch6'],
+  ['CAS 比较并交换', 'compare and swap', A5 + '#ch6'],
+  ['LL/SC', 'load-linked store-conditional', A5 + '#ch6'],
+  ['核间延迟', 'core-to-core latency', A5 + '#ch7'],
+  ['内存模型', 'memory model', A5 + '#ch8'],
+  ['顺序一致性', 'sequential consistency', A5 + '#ch8'],
+  ['内存屏障', 'memory barrier', A5 + '#ch9'],
+  ['x86 和 ARM 内存序', 'TSO vs weak ordering', A5 + '#ch9'],
+  ['TSO', 'acquire release', A5 + '#ch9'],
+  ['自旋锁', 'MCS lock', A5 + '#ch10'],
+  ['MCS 锁', 'spinlock', A5 + '#ch10'],
+  ['一致性域', 'how many cores share coherent memory', A5 + '#ch11'],
+  ['多线程共享变量怎么写', 'how to write shared data in multithreaded code', A5 + '#ch12'],
+  ['取指 译码 执行', 'fetch decode execute', SW + '#ch9'],
+  ['伪共享', 'MESI states', CACHE + '#ch9'],
+);
 for (const [zh, en, href] of chapters) for (const q of [zh, en]) {
   const hit = first(q);
   ok(hit && (hit.href === href || (href.endsWith('/') && hit.href.startsWith(href))), `"${q}" opens ${href} (got ${hit && hit.href})`);

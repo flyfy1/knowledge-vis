@@ -83,7 +83,7 @@ types ("为什么要打疫苗", "how does my phone know where I am"), not only t
    max-age=14400`) but not the HTML, so without a new key readers get the new page with the old text. If the scripts
    were already deployed under today's key, append a letter (`?v=20261115b`, then `c`) so the new key differs. The
    storage essays (what-a-drive-is-made-of, how-sata-works, how-sas-works, how-usb-drives-talk, storage-over-a-network),
-   the bus essays (how-pcie-works, how-a-computer-is-wired, how-thunderbolt-works), how-cpu-caches-work, how-a-cpu-runs-a-program, how-virtual-memory-works, why-compute-waits-for-memory and why-nvme-is-fast use it since 2026-11-15; older essays do not yet, so add the key the next time one of them
+   the bus essays (how-pcie-works, how-a-computer-is-wired, how-thunderbolt-works), how-cpu-caches-work, how-a-cpu-runs-a-program, how-virtual-memory-works, how-a-cpu-guesses-ahead, how-cores-share-memory, why-compute-waits-for-memory and why-nvme-is-fast use it since 2026-11-15; older essays do not yet, so add the key the next time one of them
    changes.
 8. Add rows to CONCEPT-MAP.md.
 
@@ -118,11 +118,13 @@ types ("为什么要打疫苗", "how does my phone know where I am"), not only t
 | how-cpu-caches-work | computing/systems/how-cpu-caches-work/ | 12 (`#ch1…#ch12`) | computing | `ESSAY_BASE_URL` |
 | how-a-cpu-runs-a-program | computing/systems/how-a-cpu-runs-a-program/ | 12 (`#ch1…#ch12`) | computing | `ESSAY_BASE_URL` |
 | how-virtual-memory-works | computing/systems/how-virtual-memory-works/ | 13 (`#ch1…#ch13`) | computing | `ESSAY_BASE_URL` |
+| how-a-cpu-guesses-ahead | computing/systems/how-a-cpu-guesses-ahead/ | 12 (`#ch1…#ch12`) | computing | `ESSAY_BASE_URL` |
+| how-cores-share-memory | computing/systems/how-cores-share-memory/ | 12 (`#ch1…#ch12`) | computing | `ESSAY_BASE_URL` |
 
 The eleven from 2026-11-11, the two food essays of 2026-11-12 and the five storage essays of 2026-11-14/15
 (what-a-drive-is-made-of, how-sata-works, how-sas-works, how-usb-drives-talk, storage-over-a-network) and the three bus essays of
 2026-11-15 (how-pcie-works, how-a-computer-is-wired, how-thunderbolt-works) and the architecture essays how-cpu-caches-work,
-how-a-cpu-runs-a-program and how-virtual-memory-works (2026-11-15) were built by Claude Code (claude-opus-5-5). The English copy was drafted by Claude
+how-a-cpu-runs-a-program, how-virtual-memory-works, how-a-cpu-guesses-ahead and how-cores-share-memory (2026-11-15) were built by Claude Code (claude-opus-5-5). The English copy was drafted by Claude
 Code (claude-haiku-5-5). A separate Claude Code session of the same model reviewed each essay and revised
 it (no human or cross-model review yet). Each BRIEF.md records what was and was not checked.
 why-compute-waits-for-memory and why-nvme-is-fast were built by Antigravity (gemini-4-hydrogen) in both
@@ -171,7 +173,8 @@ runs a program and 机器码 / machine code left #ch9, and 流水线 / pipelinin
 atlas/graph/aliases.json), all for how-a-cpu-runs-a-program; #ch9 keeps 程序计数器, 取指 译码 执行 / fetch decode execute,
 冯·诺依曼结构 and 计算机怎么执行指令, #ch4 keeps 关键路径 / critical path, #ch11 keeps plain 缓存 / cache. Its label was repointed for
 the first time (c0cc5c40, original and previous 9451df5d); only REGISTRY.json changed and it is a Claude Code edition, so
-no review note. 取指 译码 执行 is also an alias of why-compute-waits-for-memory #ch1, which wins the zh tie (older collision).
+no review note. 取指 译码 执行 was also an alias of why-compute-waits-for-memory #ch1, which won the zh tie; the A4/A5 registrar
+removed it there (2026-11-15), so it lands on #ch9 (pinned in tests/concept-search.cjs).
 
 ### what-is-a-black-hole: 黑洞到底是什么
 
@@ -254,6 +257,10 @@ associative cache from its #ch2 to how-cpu-caches-work (team-lead decision in TA
 ch2.p3 linking that essay, gave its scripts `?v=20261115` and repointed the label to that commit (88dafe9c) with
 specs/reviews/why-compute-waits-for-memory-alias-move-20261115.md as evidence (the edition stays Antigravity's). #ch2 keeps
 缓存命中率, cache hierarchy, 按行遍历 按列遍历, 空间局部性 / spatial locality, row major vs column major and the latency ladder.
+On 2026-11-15 the A4/A5 registrar removed 取指 译码 执行 from #ch1 (it tied with switches-that-compute #ch9 and won the zh
+query for a chapter about stalls) and repointed the label to that commit (d34e98bb, previous 88dafe9c) with
+specs/reviews/why-compute-waits-for-memory-fetch-decode-alias-20261115.md as evidence; no script changed (keys stay `?v=20261115`).
+#ch1 keeps the stall, forwarding, load-use, CPI and "instruction pipeline" words.
 
 ### why-nvme-is-fast: NVMe 为什么这么快
 
@@ -428,7 +435,7 @@ tag / index / offset split with a toy direct-mapped cache, associativity and Hil
 random, SRRIP, BRRIP against Belady), write-back vs write-through with a write buffer, inclusive / non-inclusive / exclusive
 L3 and five real cores, why L1 is small (VIPT, page × ways, with the Neoverse V3 and Apple exceptions), next-line and stride
 prefetching (and the LRU cliff at distance 5), a first look at MESI with false sharing, the pointer-chase staircase, a dated
-frontier and a closing. Eleven static diagrams. Essay commit 476c9f45; label at c0cc5c40 (previous 88dafe9c). It owns, since 2026-11-15, L1 L2
+frontier and a closing. Eleven static diagrams. Essay commit 476c9f45; label at d34e98bb (previous c0cc5c40). It owns, since 2026-11-15, L1 L2
 L3 缓存 / L1 L2 L3 cache and CPU 缓存 / CPU cache (#ch1), 缓存行 / cache line and 直接映射缓存 (#ch2), 组相联缓存 / set
 associative cache, 3C, 缓存未命中 / 缓存缺失 (#ch3), LRU, 伪 LRU, RRIP (#ch4), 写回 写直达 (#ch5), 包含式 / 排他式 / 独占式缓存
 (#ch6), VIPT and 为什么 L1 这么小 (#ch7), 硬件预取 / cache prefetching (#ch8), 伪共享 / false sharing and MESI 状态 / MESI
@@ -439,7 +446,9 @@ return nothing until it is registered; #ch9 takes only MESI 状态 and false sha
 why-compute-waits-for-memory (#ch2, #ch3, #ch4, the page) and switches-that-compute #ch11; that essay's ch2.p3 links back.
 switches-that-compute does not link here (its only cache mention is a list item, and its browser test requires 48 × 48
 links). A3 is linked since it went live (2026-11-15): ch7.p2 and ch10.limit to how-virtual-memory-works #ch4, ch7.limit and
-ch12.links to its page top; scripts `?v=20261115b`. A5 is named in plain text. Atlas edges: 8 between chapters, 4 from why-compute-waits-for-
+ch12.links to its page top; A5 is linked since it went live (2026-11-15): ch9.p1 and ch12.links to how-cores-share-memory's page top,
+ch9.limit to its #ch3; label at d34e98bb (previous c0cc5c40), scripts `?v=20261115c`. A5 took 缓存一致性 / cache coherence, MESI 协议,
+MOESI, MSI 协议 and 总线窥探; #ch9 keeps 伪共享 / false sharing and MESI 状态. Atlas edges: 8 between chapters, 4 from why-compute-waits-for-
 memory (#ch2 twice, #ch3, #ch4), 1 from switches-that-compute #ch11. Not verified (BRIEF): Arm's Neoverse V3 TRM (quoted via
 jia.je), Intel Xeon 6980P cache, Zen 6 (claimed), Apple's ways and latencies, Skymont L1.
 
@@ -459,7 +468,8 @@ a program, x86 和 Arm 区别, 微架构 (#ch1), RISC-V, RISC-V 指令格式, �
 ISA, machine-code, title and pipelining words moved from switches-that-compute #ch9 / #ch11 (registrar decision); 关键路径 /
 critical path stays on switches #ch4; 流水线气泡, forwarding, load-use hazard, pipeline stall, CPI and "instruction pipeline" stay
 on why-compute-waits-for-memory #ch1. The exact English title opens the page top. It links switches-that-compute #ch7 and
-#ch9, why-compute-waits-for-memory #ch1 and how-cpu-caches-work; A4 is named in plain text. Atlas edges: 8 between chapters,
+#ch9, why-compute-waits-for-memory #ch1 and how-cpu-caches-work; A4 is linked since it went live (2026-11-15): ch6.limit to how-a-cpu-guesses-ahead #ch6, ch8.p3 to #ch2,
+ch12.links to its page top (label at d34e98bb, previous c0cc5c40; scripts `?v=20261115b`). Atlas edges: 8 between chapters,
 2 from switches-that-compute (#ch9, #ch7), 1 to why-compute-waits-for-memory #ch1. Not verified (BRIEF): the RVA23 PDF date,
 P&H's exact first-pipeline text and RISC-V-edition figure, Nova Lake from Intel's own PDF, "a dozen or more cycles" per
 mispredict (order of magnitude).
@@ -480,11 +490,59 @@ paging, EPT (#ch11), 安卓 16 KB 页 (#ch12), dTLB-load-misses (#ch13). Left to
 how-cpu-caches-work, IOMMU words on how-thunderbolt-works #ch8, NUMA on how-a-computer-is-wired #ch4, CXL 内存池 on
 why-compute-waits-for-memory. It links how-cpu-caches-work (#ch4, #ch7, #ch10), why-compute-waits-for-memory #ch2,
 how-pcie-works #ch7, how-thunderbolt-works #ch8 and what-a-drive-is-made-of #ch8; how-cpu-caches-work links back (#ch4 and the
-page top); how-thunderbolt-works does not (no page-table sentence there). A4 is named in plain text. Atlas edges: 9 between
+page top); how-thunderbolt-works does not (no page-table sentence there). A4 and A5 are linked since they went live (2026-11-15): ch10.p4
+to how-a-cpu-guesses-ahead #ch10 (Spectre), ch13.links to both page tops (label at d34e98bb, previous c0cc5c40; scripts
+`?v=20261115b`). 推测执行 / speculative execution were never here; they stay on A4 #ch8. Atlas edges: 9 between
 chapters, 1 to how-cpu-caches-work #ch7, 3 from how-cpu-caches-work (#ch4, #ch10) and why-compute-waits-for-memory #ch2, 1 from
 what-a-drive-is-made-of #ch8, 1 from how-pcie-works #ch7, 1 to how-thunderbolt-works #ch8. Not verified (BRIEF): Zen 5 L2
 DTLB associativity, 1 GiB entries and walker count (AMD 58455 not reopened), the 990 PRO and Barracuda figures, the Linux
 command lines.
+
+### how-a-cpu-guesses-ahead: CPU 是怎么猜着往前跑的
+
+Computer architecture series A4 (TASK-arch-series.md). A branch takes a dozen cycles to resolve and the CPU does not wait: how
+does it guess so well, why can hundreds of instructions be in flight, and why does guessing leak secrets? The cost of a
+mispredict on a wide, deep core (CPI = 1/W + f_br × (1 − acc) × penalty, Zen 5), 1-bit and 2-bit counters with the sorted
+array, global history and gshare, TAGE in outline (compared with gshare at its best history length), the BTB and return
+address stack, superscalar issue, out-of-order execution with renaming against a scoreboard and an in-order core, the reorder
+buffer with precise exceptions and squashing, window size against accuracy, a toy Spectre v1 machine (models.js only, no
+timers), a dated frontier (Branch Privilege Injection, BTR, CBP2025) and a closing. Eight static diagrams. Essay commit
+50a4a3c2; label at d34e98bb (the cross-link and one-click commit), registration in the following commit. It owns 分支预测 /
+branch prediction, 分支预测器, 分支预测是什么, 分支预测失败的代价 (#ch1), 两位饱和计数器 / 2 位计数器, 为什么排序后的数组处理更快, 无分支代码
+(#ch2), gshare, 全局历史 (#ch3), TAGE (#ch4), BTB, 返回地址栈 / RAS (#ch5), 超标量, ILP, IPC 是什么 (#ch6), 乱序执行, 寄存器重命名,
+Tomasulo, 保留站 (#ch7), 重排序缓冲 / ROB, 精确异常, 推测执行 / speculative execution, 内存消歧 (#ch8), 乱序窗口, ROB 大小 (#ch9),
+Spectre / 幽灵漏洞, retpoline, Flush+Reload (#ch10), Retbleed, Branch Privilege Injection, CBP2025 (#ch11), 怎么减少分支预测失败 (#ch12).
+Left to their owners: 控制冒险, 静态分支预测, 性能铁律 / CPI on how-a-cpu-runs-a-program; pipeline stall and latency hiding on
+why-compute-waits-for-memory; KPTI and Meltdown on how-virtual-memory-works #ch10. 推测执行 sits on #ch8 (speculation and
+squashing), not #ch10: A3 never carried it, so there was no move to decide. It links how-a-cpu-runs-a-program (#ch8, #ch9),
+how-cpu-caches-work (#ch8, #ch10), how-virtual-memory-works (#ch7, #ch10), why-compute-waits-for-memory (#ch1, #ch4) and
+how-cores-share-memory #ch8; A1 (ch6.limit, ch8.p3, ch12.links), A3 (ch10.p4, ch13.links) and A5 (ch11.p2, ch12.links) link
+here. Scripts `?v=20261115r`. Atlas edges: 8 between chapters, 4 from A1 (#ch8 twice, #ch9, #ch6), 1 from A3 #ch7, 1 from
+why-compute-waits-for-memory #ch4, 1 to A3 #ch10. Not verified (BRIEF): AMD 58455 itself (penalty corroborated by a forum
+quotation), X925's 768 (WikiChip claim), the original Smith, Yeh & Patt, Tomasulo and Seznec papers.
+
+### how-cores-share-memory: 多个核心怎么共用一块内存
+
+Computer architecture series A5 (TASK-arch-series.md). Eight cores with their own caches must see one memory: how do the others
+learn of a change, why do two threads adding a million each not reach two million, and why does a program correct on one CPU
+fail on another? Two caches and a stale copy, the two coherence invariants, snooping MSI / MESI / MOESI on one engine,
+directories (storage and messages per miss to 256 cores), the lost update counted exactly and simulated, atomic instructions
+(LOCK, CAS, LL/SC, LSE), a contended line on measured Bergamo latencies, sequential consistency and the store buffer with a
+litmus enumerator checked against the x86-TSO paper, x86 vs Arm fences and acquire/release, lock scaling (TAS, TTAS, ticket,
+MCS), a dated frontier and a closing. Twelve static diagrams. Essay commit 445f4b67; label at d34e98bb. It owns 缓存一致性 /
+cache coherence (#ch1), 单写多读 / SWMR (#ch2), MESI 协议 / MESI protocol, MOESI, MSI 协议, 总线窥探 / bus snooping (#ch3), 目录协议,
+snooping vs directory (#ch4), 竞态条件 / race condition, 为什么多线程加法结果不对, i++ 是线程安全的吗 (#ch5), 原子操作, CAS 比较并交换 /
+compare and swap, LL/SC (#ch6), 核间延迟 / core-to-core latency (#ch7), 顺序一致性, 内存模型 / memory model, 存储缓冲 (#ch8), TSO,
+内存屏障 / memory barrier, x86 和 ARM 内存序, acquire release (#ch9), 自旋锁, MCS 锁 (#ch10), 一致性域 (#ch11), 多线程共享变量怎么写
+(#ch12). These coherence words were unowned until now (TASK-arch-series.md left them for A5). Left to their owners: 伪共享 /
+false sharing and MESI 状态 on how-cpu-caches-work #ch9, plain MSI on how-pcie-works #ch7, MSI-X on why-nvme-is-fast, NUMA on
+how-a-computer-is-wired #ch4, the replica-consistency words on distributed-systems. It links how-cpu-caches-work (#ch5, #ch9, the
+page), how-a-computer-is-wired (#ch4, #ch6, #ch7, the page), why-compute-waits-for-memory #ch5, distributed-systems and
+how-a-cpu-guesses-ahead (#ch8, the page); B4 (coherent interconnects, being written) is named in plain text. A2 (ch9.p1, ch9.limit,
+ch12.links), A3 ch13.links and A4 ch12.links link here. Scripts `?v=20261115`. Atlas edges: 8 between chapters, 3 from
+how-cpu-caches-work (#ch5, #ch9 twice), 3 from how-a-computer-is-wired (#ch4, #ch6, #ch7), 1 from A4 #ch8. Not verified (BRIEF):
+the Arm ARM and the RISC-V RVWMO chapter, the Primer, Sewell et al. and Mellor-Crummey & Scott texts, the current Intel SDM
+chapter number, Lamport 1979.
 
 ### scarcity-moves: 稀缺会搬家
 

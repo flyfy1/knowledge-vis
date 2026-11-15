@@ -169,6 +169,8 @@ window.KNOWLEDGE_ESSAYS = [
   "how-cpu-caches-work",
   "how-a-cpu-runs-a-program",
   "how-virtual-memory-works",
+  "how-a-cpu-guesses-ahead",
+  "how-cores-share-memory",
   "how-an-economy-is-measured",
   "scarcity-moves"
 ];
@@ -509,6 +511,26 @@ window.KNOWLEDGE_PAGES = [
     },
     tags: [{ zh: "虚拟内存", en: "Virtual Memory" }, { zh: "操作系统", en: "Operating Systems" }, { zh: "计算机体系结构", en: "Computer Architecture" }, { zh: "长文", en: "Long-form Essay" }],
     category: "computing", subtopic: "systems", stage: "university", status: "live", path: "computing/systems/how-virtual-memory-works/"
+  },
+  {
+    slug: "how-a-cpu-guesses-ahead",
+    title: { zh: "CPU 是怎么猜着往前跑的", en: "How a CPU Guesses Ahead" },
+    desc: {
+      zh: "一条分支要等十几拍才知道往哪走，CPU 却不等：它先猜，猜对了白赚，猜错了推倒重来。它怎么猜得这么准？为什么一颗 CPU 能同时有几百条指令在路上？这种猜测又为什么会泄露秘密？十个模型：1 位与 2 位计数器、排序数组、gshare、TAGE、返回栈、超标量、寄存器重命名与重排序缓冲、窗口大小、Spectre 的玩具机器。",
+      en: "A branch takes a dozen cycles to resolve, and a CPU does not wait: it guesses, gains when right and starts over when wrong. How does it guess so well? Why can one CPU have hundreds of instructions in flight? And why does the guessing leak secrets? Ten models: 1-bit and 2-bit counters, the sorted array, gshare, TAGE, the return stack, superscalar issue, renaming and the reorder buffer, window size, and a toy machine for Spectre."
+    },
+    tags: [{ zh: "分支预测", en: "Branch Prediction" }, { zh: "乱序执行", en: "Out-of-order Execution" }, { zh: "计算机体系结构", en: "Computer Architecture" }, { zh: "长文", en: "Long-form Essay" }],
+    category: "computing", subtopic: "systems", stage: "university", status: "live", path: "computing/systems/how-a-cpu-guesses-ahead/"
+  },
+  {
+    slug: "how-cores-share-memory",
+    title: { zh: "多个核心怎么共用一块内存", en: "How Cores Share Memory" },
+    desc: {
+      zh: "八个核心各有自己的缓存，却要看到同一块内存。一个核心改了一个数，别的核心怎么知道？为什么两个线程各加一百万次，结果却不是两百万？为什么有的 CPU 上程序对，换一种 CPU 就错？九个可以动手的模型：缓存一致性的两条规矩，MSI、MESI 与 MOESI 的窥探模拟器，目录协议，丢失的更新，CAS 与原子加法，核心之间搬一行要多久，顺序一致性、x86-TSO 与弱内存模型的石蕊测试，以及四种自旋锁的扩展性。",
+      en: "Eight cores each have their own caches, yet must see one memory. When one core changes a number, how do the others find out? Why do two threads that each add one a million times not end at two million? Why does a program that runs correctly on one CPU fail on another? Nine hands-on models: the two rules of cache coherence, a snooping simulator for MSI, MESI and MOESI, directory protocols, the lost update, CAS and fetch-and-add, how long a line takes to move between cores, litmus tests under sequential consistency, x86-TSO and a weak memory model, and how four spinlocks scale."
+    },
+    tags: [{ zh: "缓存一致性", en: "Cache Coherence" }, { zh: "内存模型", en: "Memory Models" }, { zh: "计算机体系结构", en: "Computer Architecture" }, { zh: "并发", en: "Concurrency" }, { zh: "长文", en: "Long-form Essay" }],
+    category: "computing", subtopic: "systems", stage: "university", status: "live", path: "computing/systems/how-cores-share-memory/"
   },
   {
     slug: "how-an-economy-is-measured",
