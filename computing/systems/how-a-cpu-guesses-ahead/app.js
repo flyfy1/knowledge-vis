@@ -161,7 +161,7 @@ DG.fsm = (L) => {
   return { W, H, draw(g) {
     const cols = [C.red, C.red, C.green, C.green], names = ['dg.fsm.s0', 'dg.fsm.s1', 'dg.fsm.s2', 'dg.fsm.s3'], cls = ['r', 'r', 'n', 'n'];
     if (L === 'w') {
-      const X = i => 50 + i * 170, y = 90, bw = 110, bh = 60;
+      const X = i => 42 + i * 168, y = 90, bw = 126, bh = 60;
       for (let i = 0; i < 4; i++) { g.box(X(i), y, bw, bh, cols[i]); g.text(X(i) + bw / 2, y + 20, { raw: String(i) }, { a: 'middle', mono: 1, fs: 17, weight: 700, c: cls[i] }); g.text(X(i) + bw / 2, y + 42, names[i], { a: 'middle', fs: 13.5 }); }
       for (let i = 0; i < 3; i++) { const x1 = X(i) + bw, x2 = X(i + 1); g.line(x1 + 2, y + 18, x2 - 3, y + 18, C.green, { arrow: 1 }); g.line(x2 - 2, y + 44, x1 + 3, y + 44, C.red, { arrow: 1 }); g.text((x1 + x2) / 2, y - 6, 'dg.fsm.t', { a: 'middle', c: 'n' }); g.text((x1 + x2) / 2, y + bh + 14, 'dg.fsm.n', { a: 'middle', c: 'r' }); }
       g.path(`M ${X(3) + bw} ${y + 14} C ${X(3) + bw + 42} ${y - 4}, ${X(3) + bw + 42} ${y + 46}, ${X(3) + bw + 3} ${y + 40}`, C.green, { arrow: 1 }); g.text(X(3) + bw + 22, y - 24, 'dg.fsm.t', { a: 'middle', c: 'n' });
@@ -313,7 +313,8 @@ DG.ooo = (L) => {
       const ux = [140, 236, 332, 448], uw = [86, 86, 106, 86], uk = ['dg.ooo.alu', 'dg.ooo.mul', 'dg.ooo.ld', 'dg.ooo.br'];
       ux.forEach((x, i) => { G(x, 226, uw[i], 44, uk[i], C.cyan, 'c'); g.line(367, 176, x + uw[i] / 2, 224, C.cyan, { arrow: 1 }); });
       G(332, 296, 106, 40, 'dg.ooo.lsq', C.cyan, 'c'); g.line(385, 270, 385, 294, C.cyan);
-      G(560, 222, 140, 48, 'dg.ooo.prf', C.violet, 'v'); g.line(534, 248, 558, 248, C.violet, { arrow: 1 });
+      G(560, 222, 140, 48, 'dg.ooo.prf', C.violet, 'v');
+      [183, 279, 365, 511].forEach(x => g.line(x, 270, x, 282, C.violet)); g.line(183, 282, 630, 282, C.violet); g.line(630, 282, 630, 272, C.violet, { arrow: 1 });
       G(560, 120, 140, 46, 'dg.ooo.com', C.gold, 'g'); g.line(630, 90, 630, 118, C.gold, { arrow: 1 });
       g.path('M 491 270 L 491 360 L 85 360 L 85 92', C.red, { arrow: 1, dash: '5 4' }); g.text(110, 384, 'dg.ooo.redirect', { c: 'r' });
     } else {
@@ -336,7 +337,7 @@ DG.ooo = (L) => {
 // the reorder buffer as a ring (ch8): head at 3, tail at 10
 DG.rob = (L) => {
   const W = L === 'w' ? 720 : 340, H = L === 'w' ? 290 : 400;
-  const kind = i => (i === 3 ? 'miss' : i === 4 || i === 5 ? 'done' : i === 6 ? 'br' : i >= 7 && i <= 9 ? 'sq' : i === 10 || i < 3 || i > 10 ? 'free' : 'wait');
+  const kind = i => (i === 3 ? 'miss' : i === 4 ? 'done' : i === 5 ? 'wait' : i === 6 ? 'br' : i >= 7 && i <= 9 ? 'sq' : i === 10 || i < 3 || i > 10 ? 'free' : 'wait');
   const sty = { miss: [C.red, 0.2], done: [C.green, 0.2], br: [C.violet, 0.22], sq: [C.red, 0.06], wait: [C.cyan, 0.14], free: [C.dimfill, 0.35] };
   return { W, H, draw(g) {
     const slot = (x, y, w, i) => { const k = kind(i), [col, a] = sty[k]; g.box(x, y, w, 44, col, { a, rx: 6, dash: k === 'sq' ? '4 3' : 'none', sw: k === 'br' ? 2.4 : 1.4 }); g.text(x + w / 2, y + 22, { raw: String(i) }, { a: 'middle', mono: 1, c: k === 'free' ? 'm' : '' }); };

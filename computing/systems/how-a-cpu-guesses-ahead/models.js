@@ -268,9 +268,12 @@
     const k = tk + ':' + B; if (cmpMemo[k]) return cmpMemo[k];
     const c = budgetCfg(B), tr = trace(tk);
     const p2 = makePred('2bit', c.bimodal), pg = makePred('gshare', c.gshare), pt = makePred('tage', c.tage);
-    const a = runPred(p2, tr).acc, g = runPred(pg, tr).acc, tg = runPred(pt, tr);
+    const a = runPred(p2, tr).acc, gFull = runPred(pg, tr).acc, tg = runPred(pt, tr);
+    // gshare gets the history length that suits this trace best (swept 0..n, the most favourable comparison for it);
+    // gshareFull is McFarling's usual setting, history as long as the index (h = n)
+    let g = -1, gH = 0; for (let h = 0; h <= c.gshare.bits; h++) { const x = runPred(makePred('gshare', { bits: c.gshare.bits, hist: h }), tr).acc; if (x > g + 1e-12) { g = x; gH = h; } }
     const tot = pt.stats.prov.reduce((x, y) => x + y, 0);
-    return (cmpMemo[k] = { bimodal: a, gshare: g, tage: tg.acc, bits: { bimodal: p2.bits, gshare: pg.bits, tage: pt.bits }, longest: pt.stats.prov[TAGE.M] / tot, baseShare: pt.stats.prov[0] / tot, lens: pt.lens });
+    return (cmpMemo[k] = { bimodal: a, gshare: g, gshareH: gH, gshareFull: gFull, tage: tg.acc, bits: { bimodal: p2.bits, gshare: pg.bits, tage: pt.bits }, longest: pt.stats.prov[TAGE.M] / tot, baseShare: pt.stats.prov[0] / tot, lens: pt.lens });
   }
 
   /* ── 05 returns: a return address stack against "last target" in the BTB, on nested calls ──
@@ -562,7 +565,7 @@
       // ch4
       tL1: [c16.lens[0], 0], tL2: [c16.lens[1], 0], tL3: [c16.lens[2], 0], tL4: [c16.lens[3], 0], tM: [TAGE.M, 0],
       cmB: [c16.bimodal, 1, 'pct'], cmG: [c16.gshare, 1, 'pct'], cmT: [c16.tage, 1, 'pct'], clG: [cl.gshare, 1, 'pct'], clT: [cl.tage, 1, 'pct'],
-      ccG: [cc.gshare, 1, 'pct'], ccT: [cc.tage, 1, 'pct'], cuB: [cu.bimodal, 1, 'pct'], cuT: [cu.tage, 1, 'pct'], c4T: [c4.tage, 1, 'pct'], c32T: [c32.tage, 1, 'pct'], c32G: [c32.gshare, 1, 'pct'],
+      ccG: [cc.gshare, 1, 'pct'], cmGf: [c16.gshareFull, 1, 'pct'], cmGh: [c16.gshareH, 0], gsN: [budgetCfg(16384).gshare.bits, 0], ccT: [cc.tage, 1, 'pct'], cuB: [cu.bimodal, 1, 'pct'], cuT: [cu.tage, 1, 'pct'], c4T: [c4.tage, 1, 'pct'], c32T: [c32.tage, 1, 'pct'], c32G: [c32.gshare, 1, 'pct'],
       // ch5
       zBtb1: [ZEN.l1btb / 1024, 0], zBtb2: [ZEN.l2btb / 1024, 0], zRas: [ZEN.ras, 0], zInd: [ZEN.indirect, 0], lcRas: [CHIPS.lionCove.ras, 0], xRas: [CHIPS.x925.ras, 0],
       r16: [ras16.rate, 1, 'pct'], r24: [ras24.rate, 1, 'pct'], r32: [ras32.rate, 1, 'pct'], rBtb: [ras16.btbRate, 0, 'pct'],

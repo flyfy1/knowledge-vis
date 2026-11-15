@@ -1,10 +1,10 @@
 # BRIEF — CPU 是怎么猜着往前跑的 (How a CPU Guesses Ahead)
 
 Built-By: Claude Code (claude-opus-5-5)
-Verified-By: self-check by builder (node model test, browser test zh at 1280/390/320 and reduced motion, canvas sweep, screenshots of every model and diagram at three widths); independent review pending
+Verified-By: self-check by builder (node model test, browser test zh at 1280/390/320 and reduced motion, canvas sweep, screenshots of every model and diagram at three widths); Claude Code (claude-opus-5-5), independent review in a separate session, 2026-11-15: zh and en read in full, models re-derived, diagrams checked at 1280/390/320 in both languages (see Review)
 Category: computing 计算机 / subtopic systems 系统 · Stage: university
 Series: computer architecture series A4 (`specs/essay-briefs/TASK-arch-series.md`)
-Format: long interactive essay. Chinese written in full; `copy.en.js` is a same-keys stub (`enStub = true`), so the page shows Chinese in both modes until it is translated.
+Format: long interactive essay, zh and en (`copy.en.js` translated; no `enStub`).
 Files: index.html, copy.zh.js, copy.en.js, models.js, app.js, REGISTRY.json, tests/models.cjs, tests/browser.cjs
 
 ## The one question
@@ -23,8 +23,8 @@ Files: index.html, copy.zh.js, copy.en.js, models.js, app.js, REGISTRY.json, tes
 
 1. Cost of a wrong guess. CPI = 1/W + f_br × (1 − acc) × penalty. Zen 5 (W 8, 15 cycles) at 95 % loses 55 % of time, IPC 3.6; the A1 pipeline loses 2 %. TUNED f_br = 1/5; at 1/10 and 1/3 the loss is 38 % and 67 %.
 2. 1-bit / 2-bit counters (Smith 1981) on a loop with an if (K = 4, p = 0.9): never-taken 15.6 %, BTFN 48.8 %, 1-bit 69.7 %, 2-bit 84.0 %; inner exit 50 % vs 25 % misses (twice vs once per exit). Sorted array: 32,768 values, 2-bit misses 3 times sorted, 49.8 % unsorted; 8.6 vs 1.13 cycles/element (7.6×), measured 11.54 s vs 1.93 s on Stack Overflow; branchless 1.75.
-3. gshare (McFarling 1993): eqntott-style correlated branches 62.8 % → 74.3 % at h = 2 (75 % is the ceiling); a 4-trip loop 88.9 % → 99.9 % at h = 8; the mixed trace barely gains in a 64-entry table (71.1 → 76.7 %): aliasing.
-4. TAGE (Seznec & Michaud 2006): 4 tagged tables, history 4/10/25/64, 8-bit tags, 3-bit ctr, 2-bit u, alt-on-new-alloc, u halved every 2^14 branches. At 16 Kbit, mixed trace: 2-bit 73.4 %, gshare 75.8 %, TAGE 85.8 %; long loop gshare 96.7 % vs TAGE 99.8 %; TAGE at 4 Kbit (84.4 %) beats gshare at 32 Kbit (75.4 %). TAGE's configuration uses 1/16 more bits than the budget (stated on the page and pinned).
+3. gshare (McFarling 1993): eqntott-style correlated branches 62.8 % → 74.3 % at h = 2 (75 % is the ceiling: four branches per pass with the loop back-edge, two of them coin tosses); a 4-trip loop 88.9 % → 99.9 % at h = 8; the mixed trace barely gains in a 64-entry table (71.1 → 76.7 %): aliasing.
+4. TAGE (Seznec & Michaud 2006): 4 tagged tables, history 4/10/25/64, 8-bit tags, 3-bit ctr, 2-bit u, alt-on-new-alloc, u halved every 2^14 branches. At 16 Kbit, mixed trace: 2-bit 73.4 %, gshare 75.8 % at h = n (13) and 83.6 % at its best h (2), TAGE 85.8 %; long loop best-h gshare 96.9 % vs TAGE 99.8 %; TAGE at 4 Kbit (84.4 %) slightly above best-h gshare at 32 Kbit (83.6 %). (Changed in review: compare() now gives gshare its best history length per trace.) TAGE's configuration uses 1/16 more bits than the budget (stated on the page and pinned).
 5. BTB and return stack: call chain of depth D (TUNED: two call sites per level, a quarter of calls repeated). D = 24: BTB-last-target 50 % wrong, 16-entry RAS 2.5 %, 24 or 52 entries 0 %; D = 32 with 24 entries 0.4 %.
 6. Superscalar: 8-instruction dot-product loop, all L1 hits. In-order IPC 0.61 / 0.99 / 0.99 at width 1 / 4 / 8; out-of-order 3.74 / 7.01 at 4 / 8.
 7. OoO stepper (rename R10000-style, scoreboard CDC 6600-style, in-order), 12 iterations, a[i] misses every 2nd iteration (TUNED) to L3 (46 cycles): 351 / 307 / 156 cycles; ROB 16: 290.
@@ -72,7 +72,7 @@ ch11 (as of 2026-11): ROB sizes of Lion Cove / X925, CBP2025 as the latest champ
 ## Checked / not checked
 
 Screenshots were taken after the last layout change (all eight diagrams and every model at 1280/390/320, the ch7/ch8 steppers mid-run); reduced motion was checked by the browser test (no smooth scroll, still canvas, diagrams pass) and a full-page shot at 390, where off-screen canvases are blank by design.
-Checked: tests/models.cjs (hand-worked predictors, RAS by definition, core invariants including in-order commit and exact commits before a fault, toy machine, every prose number pinned, tuned-parameter sweeps, sibling aliases and anchors); tests/browser.cjs (1280/390/320, reduced motion, eight diagrams, every model driven); canvas-text-overlap sweep; screenshots of every model and diagram at three widths. Not checked: English (stub), screen-reader pass.
+Checked: tests/models.cjs (hand-worked predictors, RAS by definition, core invariants including in-order commit and exact commits before a fault, toy machine, every prose number pinned, tuned-parameter sweeps, sibling aliases and anchors); tests/browser.cjs (1280/390/320, reduced motion, eight diagrams, every model driven); canvas-text-overlap sweep; screenshots of every model and diagram at three widths. Not checked by the builder: English (checked in review, below), screen-reader pass.
 
 ## For the translator
 
@@ -86,3 +86,29 @@ Keys carry HTML (`<strong>`, `<em>`, `<code>`, `<a href>`); keep placeholders `{
 - Siblings that name this essay in plain text and should link it once it is live: A1 ch6.limit and ch8.p3 (→ #ch2 / #ch7), A3 ch10.p4 (→ #ch10). A2 names only A5. This page names A5 in plain text (ch12.links) and does not link it.
 - A5 (how-cores-share-memory) is being built concurrently and had no REGISTRY.json when this page's owned-alias check ran (the check reads it when it exists): rerun `node computing/systems/how-a-cpu-guesses-ahead/tests/models.cjs` before registering. Most likely collisions: 内存消歧 / memory disambiguation (A5) and 推测执行 / speculative execution (A3's Meltdown chapter).
 - Search pins worth adding: 为什么排序后的数组更快 → #ch2; Spectre → #ch10; 乱序执行 → #ch7.
+
+## Review
+
+Reviewer: Claude Code (claude-opus-5-5), separate session; did not build the page. Date: 2026-11-15.
+Scope: zh and en read in full (every key of copy.zh.js and copy.en.js); every model driven in the browser at 1280; eight diagrams screenshotted at 1280/390/320 in zh and en (scratch in /tmp/agent-tasks/arch/review-a4/).
+
+Checks
+- Independent script (own 1-bit/2-bit/gshare/RAS code on the page's traces, own cost formula) reproduces: CPI formula 54.5 % lost / IPC 3.64 (Zen 5, 8 wide, 15 cycles, f = 1/5, 95 %), A1 2.0 %, 90 % 70.6 %, 99 % 19.4 %, f = 1/10 37.5 %, 1/3 66.7 %; with the penalty at the ends of AMD's range (12 / 18) 49 % / 59 %. Loop-with-if 15.6 / 48.8 / 69.7 / 84.0 %, inner exit 50 % vs 25 %; sorted 3 misses, unsorted 49.8 %, 8.59 vs 1.127 cycles (7.6×), branchless 1.75; gshare 62.8 → 74.3, 88.9 → 99.9, 71.1 / 76.7 / 78.6; RAS 50 % / 2.5 % / 0 / 0 / 0.4 %. The formula's assumption (ideal IPC = width) is stated in ch1.limit.
+- Core simulator, by hand: in-order width 1 = 13 cycles per 8-instruction pass (0.615); width 4 ≈ 8 per pass (0.99); OoO width 8 limited by three 1-cycle recurrences (7.01 incl. start-up). Stepped core: 351 ≈ 12 × 8 + 6 × (46 − 4) + tail; 156 ≈ misses overlapping in pairs; ROB 16 (290) cannot hold two misses' worth of instructions; fault at pass index 3 commits 3 × 8 = 24; mispredict 13 = FE 10 + 3 to resolve; 160 / 800 instructions between misses = 1 / (1/8 × 0.05 / 0.01). Invariants are pinned by the existing tests; no second simulator was written.
+- Spectre toy: only models.js state (a Set as cache, Gaussian noise); no timers, clflush, SharedArrayBuffer or WebAssembly (test checks this); the only code shown is the paper's two-line Listing 1. Nothing runnable against hardware.
+- Sources opened by the reviewer: Spectre PDF (10 KB/s and < 0.01 % on i7-4650U, Haswell ROB 192 micro-ops, Listing 1 with * 4096, "a few percent to a factor of 4 or more", Intel/AMD/ARM confirmed); Stack Overflow 11227809 via the API (2012-06-27, 32768, 11.54 s vs 1.93 s, ratio 5.98); Zen 5 penalty "12 to 18 cycles … common case 15" quoted on the AnandTech forum (thread 2619688, post 41283341) alongside the Zen 4 guide's "11 to 18 … 13" wording (the AMD zip itself returned an HTML page to curl); Chips and Cheese Lion Cove (576 / 512, rename 8 from 6, RAS 24 from 20); Arm newsroom blog 2024-09-23 ("2x increase in max instruction-window capacity", no number) for X925, now cited in ch11.c1; VUSec BTR page (CCS 2026, 8 B/s, CVE-2026-64507/64508, vendors: IBPB exists, fix in software) and The Register 2026-09-30 (same attack, CCS 2026; also 5.7 / 5.4 KB/s figures not used); CBP2025 page (2025-06-21, ISCA 2025 Tokyo, 192 KB, 64 KB TAGE-SC-L baseline from CBP2016). McFarling TN-36 (June 1993) as gshare's origin: confirmed through secondary sources (course notes, MPR 1997); the note's PDF could not be text-extracted here.
+- Sibling links and anchors resolve (A1 #ch8 #ch9, A3 #ch7 #ch10, A2 #ch8 #ch10, memory essay #ch1 #ch4); English titles match pages.config.js (now tested). No registered REGISTRY.json or atlas/search file uses 推测执行 / speculative execution / 内存消歧 / memory disambiguation, so they stay here; A5 has a REGISTRY.json and the owned-alias test passes against it.
+
+Changes
+- ch4 fairness (model change): gshare in the equal-storage comparison ran at h = n (13 bits), its worst setting on the mixed trace (75.8 %); at its best h (2) it gets 83.6 %. compare() now sweeps h and keeps the best (the most favourable comparison for gshare) and also returns the h = n figure. ch4.p3 rewritten: it wrongly said the gap came mainly from the long loop; per-segment misses show the h = n gap is dilution of short-history branches, and the remaining gap to best-h gshare lies entirely in the loop segments (pinned). 4 Kbit TAGE vs 32 Kbit gshare is now "slightly above" (84.4 vs 83.6). TAGE's extra 1/16 storage is fair in effect: doubling gshare's budget does not improve it (pinned).
+- English: ch3.p2 had the eqntott polarity reversed (third branch "not taken" when the first two agree; the model and zh say taken / skips); doubled unit "{cyc} cycles" in three live sentences; ch9 Zen 5 cell garbled ("each of 224"); table headers now "ROB size (instructions in flight)" and "Instructions per cycle (stage)", with the stage in the Zen 5 / Lion Cove cells (zh too); FSM arcs "taken"/"not" → T / NT with the legend in the caption.
+- Diagrams: FSM boxes widened (1280) and captions made layout-neutral ("towards state 3 / 0"); ROB legend's "Waiting" now has a slot, caption says the tail moves back from 10 to 7; OoO write-back drawn as a bus from all units to the physical registers (it came from the branch unit only); TAGE caption names the alternate (T1) and says table sizes are not to scale.
+- ch2.p4: the sorted-array weakness is no longer attributed to 2-bit counters specifically. ch3.p3 explains the 75 % ceiling. ch11.c1 cites Arm's own blog; ch11.d4 describes BTR as the VUSec page does. Narrow-screen table header made a 1 px visually-hidden block (the longer English header overflowed at 320). Script keys bumped to ?v=20261115r.
+- tests/models.cjs: new pins for cmGf / cmGh / gsN and the changed cmG, clG, ccG, c32G; best-h sweep, TAGE > best-h gshare at every budget, loop-segment attribution; English sibling titles, doubled-unit, eqntott-polarity and T/NT checks.
+
+Unverified
+- AMD 58455 itself (penalty, ROB 448, PRF 240, BTB, RAS 52) not opened by the reviewer; penalty corroborated only by a forum quotation.
+- X925 768 remains WikiChip's figure (labelled a claim); Arm publishes only "2x".
+- Hennessy & Patterson ch. 3 (eqntott example), Seznec & Michaud 2006 (TAGE description follows the 2016 paper), Smith 1981, Yeh & Patt 1991, Tomasulo 1967, Smith & Pleszkun 1985, Yeager 1996: not opened; the attributions are the standard ones.
+- Branch Privilege Injection and Retbleed figures, Intel guidance dates: not re-opened.
+- "4 Kbit TAGE beats 32 Kbit gshare" holds by 0.8 points only against best-h gshare; not swept over other mixes. Screen-reader pass not done.

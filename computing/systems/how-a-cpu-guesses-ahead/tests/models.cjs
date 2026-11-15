@@ -84,7 +84,7 @@ const f = (x, d) => x.toFixed(d);
   { const a = Math.cbrt(16); check('lengths by the formula', [0, 1, 2, 3].map(i => Math.floor(4 * Math.pow(a, i) + 0.5)).join(), M.tageLengths(4, 4, 64).join()); }
   // storage: 2-bit and gshare exactly the budget; TAGE 1/16 more (tags and useful counters)
   for (const B of M.BUDGETS) { const b = M.compare('mix', B).bits; check('bimodal = gshare = budget ' + B, [b.bimodal, b.gshare].join(), [B, B].join()); check('TAGE = budget × 17/16, ' + B, b.tage, B * 17 / 16); }
-  says('ch4.model.how', 'TAGE 的配置多出十六分之一');
+  says('ch4.model.how', 'TAGE 的配置多出十六分之一'); says('ch4.model.how', '最有利的历史长度');
   says('ch4.p3', '预算 16 Kbit（2 KB）'); check('16 Kbit is a budget', M.BUDGETS.includes(16 * 1024), true); check('16 Kbit = 2 KB', 16 * 1024 / 8, 2048);
   says('ch4.p3', '从 32 Kbit 降到 4 Kbit'); check('4 and 32 Kbit are the end budgets', [M.BUDGETS[0], M.BUDGETS[M.BUDGETS.length - 1]].join(), '4096,32768');
   // the long loop needs 2K + 2 outcomes of history; gshare at 16 Kbit uses 13
@@ -177,7 +177,7 @@ const f = (x, d) => x.toFixed(d);
     s2acc: '84.0', s1acc: '69.7', snacc: '15.6', sbacc: '48.8', s2in: '25', s1in: '50', s2fw: '10.9', s1fw: '18.1', sbfw: '90',
     soN: '32768', soMiss: '3', suRate: '49.8', s5Rate: '2.6', suCyc: '8.6', soCyc: '1.13', soX: '7.6', blCyc: '1.75', soSlow: '11.54', soFast: '1.93', soMeas: '6', soW: '4', blN: '7', strip: '48',
     gcBi: '62.8', gc2: '74.3', gl0: '88.9', gl8: '99.9', gm6: '76.7', gm6b: '71.1', gm10: '78.6',
-    tL1: '4', tL2: '10', tL3: '25', tL4: '64', tM: '4', cmB: '73.4', cmG: '75.8', cmT: '85.8', clG: '96.7', clT: '99.8', ccG: '73.2', ccT: '75.0', cuB: '74.8', cuT: '74.9', c4T: '84.4', c32T: '86.0', c32G: '75.4',
+    tL1: '4', tL2: '10', tL3: '25', tL4: '64', tM: '4', cmB: '73.4', cmG: '83.6', cmGf: '75.8', cmGh: '2', gsN: '13', cmT: '85.8', clG: '96.9', clT: '99.8', ccG: '74.8', ccT: '75.0', cuB: '74.8', cuT: '74.9', c4T: '84.4', c32T: '86.0', c32G: '83.6',
     zBtb1: '16', zBtb2: '8', zRas: '52', zInd: '3072', lcRas: '24', xRas: '29', r16: '2.5', r24: '0.0', r32: '0.4', rBtb: '50',
     rows: '14', lat: '4', i1in: '0.61', i4in: '0.99', i8in: '0.99', i4oo: '3.74', i8oo: '7.01',
     stIn: '351', stSb: '307', stOo: '156', st16: '290', stX: '2.3', stN: '96', stL3: '46', stIt: '12', l2: '14', l3: '46', mem: '399', memC: '399', stEvery: '2', stMax: '32',
@@ -209,6 +209,20 @@ const f = (x, d) => x.toFixed(d);
   check('ch3: mix gains little', P.gm6[0] - P.gm6b[0] < 0.1, true);
   check('ch4: TAGE > gshare > bimodal on the mix at 16 Kbit', P.cmT[0] > P.cmG[0] && P.cmG[0] > P.cmB[0], true);
   check('ch4: TAGE at 4 Kbit beats gshare at 32 Kbit', P.c4T[0] > P.c32G[0], true);
+  // review 2026-11-15: gshare is compared at its best history length (swept 0..n), which is the fair opponent
+  check('ch4: best-h gshare beats h = n gshare on the mix (dilution, ch3)', P.cmG[0] > P.cmGf[0] + 0.05, true);
+  check('ch4: h = n is the usual gshare (13 bits at 16 Kbit)', [P.gsN[0], M.compare('mix', 16384).gshareFull].join(), [13, M.runPred(M.makePred('gshare', { bits: 13, hist: 13 }), M.trace('mix')).acc].join());
+  for (const B of M.BUDGETS) { const c = M.compare('mix', B); let best = 0; for (let h = 0; h <= M.budgetCfg(B).gshare.bits; h++) best = Math.max(best, M.runPred(M.makePred('gshare', { bits: M.budgetCfg(B).gshare.bits, hist: h }), M.trace('mix')).acc);
+    check('ch4: compare() gshare is the best over h, ' + B, c.gshare, best); check('ch4: TAGE beats best-h gshare on the mix, ' + B, c.tage > c.gshare, true); }
+  check('ch4: doubling gshare 16 → 32 Kbit does not help (so TAGE’s extra 1/16 is not the reason)', M.compare('mix', 32768).gshare <= M.compare('mix', 16384).gshare + 1e-12, true);
+  says('ch4.p3', '差出来的部分全在那几个循环上');
+  { // the gap between TAGE and best-h gshare on the mix lies in the loop segments (pc ranges of loopIf/longLoop blocks)
+    const B = 16384, c = M.budgetCfg(B), tr = M.trace('mix'), cm = M.compare('mix', B);
+    const seg = pc => (pc >= 0x40000 || (pc >= 0x30000 && pc < 0x40000) || (pc >= 0x10000 && pc < 0x20000)) ? 'loop' : 'other';
+    const miss = pred => { const r = M.runPred(pred, tr), o = { loop: 0, other: 0 }; for (const [pc, q] of Object.entries(r.per)) o[seg(+pc)] += q.miss; return o; };
+    const g = miss(M.makePred('gshare', { bits: c.gshare.bits, hist: cm.gshareH })), t = miss(M.makePred('tage', c.tage));
+    check('ch4: TAGE gains on the loops, not elsewhere', (g.loop - t.loop) >= (g.loop + g.other) - (t.loop + t.other) && g.other - t.other <= 0, true);
+  }
   check('ch4: random data defeats both', Math.abs(P.cuT[0] - P.cuB[0]) < 0.01, true);
   check('ch5: BTB-only return prediction far worse than any RAS', P.rBtb[0] > 10 * P.r16[0], true);
   check('ch6: in-order flat with width, ooo near width', P.i8in[0] - P.i4in[0] < 0.05 && P.i8oo[0] > 0.85 * 8, true);
@@ -323,6 +337,16 @@ const f = (x, d) => x.toFixed(d);
   for (const k of Object.keys(Z)) check('en placeholders ' + k, ph(EN[k]), ph(Z[k]));
   if (stub) { check('en stub mirrors zh exactly', JSON.stringify(EN), JSON.stringify(Z)); console.log('NOTE: copy.en.js is a stub (enStub); English registry match skipped until it is translated'); }
   else { check('registry title en', R.title.en, EN['doc.title'].split(' · ')[0]); check('registry desc en', R.desc.en, EN['doc.desc']); }
+  // review 2026-11-15: English checks
+  { const cfg = fs.readFileSync(path.join(DIR, '../../../pages.config.js'), 'utf8'), allEn = Object.values(EN).join(' ');
+    for (const sib of ['how-a-cpu-runs-a-program', 'how-cpu-caches-work', 'how-virtual-memory-works', 'why-compute-waits-for-memory']) {
+      const m = new RegExp('slug: "' + sib + '",\\s*title: \\{ zh: "[^"]*", en: "([^"]+)"').exec(cfg); check(sib + ' en title found in pages.config.js', !!m, true);
+      if (m) check(sib + ' en title quoted as registered', allEn.includes(m[1].replace(/'/g, '’')) || allEn.includes(m[1]), true); }
+    // u.cyc already carries the unit: strings that take {cyc}/{cost}/{win}/{t} from cyc() must not add it again
+    for (const k of ['ch2.say.some', 'ch2.say.random', 'ch2.say.bl', 'ch10.say.fence', 'ch10.say.leak']) check('no doubled unit in ' + k, /\{(cyc|cost|win|t)\} cycles/.test(EN[k]), false);
+    // eqntott: branch 3 is taken (skips the block) when branches 1 and 2 went the same way, as corrTrace builds it
+    check('en ch3.p2 polarity matches corrTrace', EN['ch3.p2'].includes('the third is certainly taken'), true);
+    check('en FSM arcs T / NT with the legend in the caption', [EN['dg.fsm.t'], EN['dg.fsm.n'], /T are taken.*NT are not-taken/.test(EN['dg.fsm.cap'])].join(), 'T,NT,true'); }
 }
 
 if (fails) { console.error(`\n${fails} of ${n} checks failed`); process.exit(1); }
