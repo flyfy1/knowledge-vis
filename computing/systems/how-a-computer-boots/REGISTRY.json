@@ -1,0 +1,404 @@
+{
+  "slug": "how-a-computer-boots",
+  "path": "computing/systems/how-a-computer-boots/",
+  "category": "computing",
+  "subtopic": "systems",
+  "stage": "university",
+  "title": {
+    "zh": "电脑是怎么开机的",
+    "en": "How a Computer Boots"
+  },
+  "desc": {
+    "zh": "按下电源键到看到登录界面，大约十几秒。一颗刚上电、什么都不知道的 CPU，是怎么找到第一条指令、找到内存、找到硬盘、把操作系统请进来的？它又怎么确认请进来的不是恶意代码？十个可以动手的模型：ATX 电源的上电时序，复位向量的地址，SPI 闪存读一行要多久，开机每一段花多少时间，ACPI 表的校验和，GUID 分区表与 CRC32，安全启动的签名链，撤销一个签过名的引导程序要付什么代价，TPM 的 PCR 扩展，以及叫醒其余核心的时间。",
+    "en": "About a dozen seconds pass between pressing the power button and the login screen. How does a CPU that knows nothing find its first instruction, its memory, its disk and the operating system, and how does it make sure what it loads is not malicious? Ten hands-on models: ATX power-on timing, the reset-vector address, how long an SPI flash read takes, where boot time goes, an ACPI table checksum, the GUID partition table with CRC32, the Secure Boot signature chain, the cost of revoking a signed boot loader, TPM PCR extends, and how long it takes to wake the other cores."
+  },
+  "tags": [
+    {
+      "zh": "开机",
+      "en": "Booting"
+    },
+    {
+      "zh": "固件",
+      "en": "Firmware"
+    },
+    {
+      "zh": "安全启动",
+      "en": "Secure Boot"
+    },
+    {
+      "zh": "计算机体系结构",
+      "en": "Computer Architecture"
+    },
+    {
+      "zh": "长文",
+      "en": "Long-form Essay"
+    }
+  ],
+  "concepts": [
+    {
+      "id": "power-sequencing",
+      "title": {
+        "zh": "上电时序：PWR_OK 之前 CPU 一直在复位里",
+        "en": "Power sequencing: the CPU stays in reset until PWR_OK"
+      },
+      "desc": {
+        "zh": "ATX 电源的三路电压要在 200 毫秒内进到范围，再等 100 到 250 毫秒才拉高 PWR_OK；某一路进不了范围，PWR_OK 就永远不来。",
+        "en": "The ATX rails must reach regulation within 200 ms, then the supply waits 100 to 250 ms before raising PWR_OK; if one rail never reaches its window, PWR_OK never comes."
+      },
+      "anchor": "#ch1",
+      "aliases": {
+        "zh": [
+          "上电时序",
+          "PWR_OK",
+          "按电源键后发生了什么",
+          "开机风扇转屏幕不亮"
+        ],
+        "en": [
+          "power sequencing",
+          "PWR_OK signal",
+          "power good signal",
+          "ATX power-on timing"
+        ]
+      }
+    },
+    {
+      "id": "reset-vector",
+      "title": {
+        "zh": "复位向量：第一条指令在 0xFFFFFFF0",
+        "en": "The reset vector: the first instruction at 0xFFFFFFF0"
+      },
+      "desc": {
+        "zh": "复位后 CS 的隐藏基址是 FFFF0000H、EIP 是 FFF0H，第一条指令取自 4 GiB 之下 16 字节，主板把固件闪存接在那里。",
+        "en": "After reset the hidden CS base is FFFF0000H and EIP is FFF0H, so the first fetch is 16 bytes below 4 GiB, where the board maps the firmware flash."
+      },
+      "anchor": "#ch2",
+      "aliases": {
+        "zh": [
+          "复位向量",
+          "CPU 第一条指令",
+          "0xFFFFFFF0"
+        ],
+        "en": [
+          "reset vector",
+          "first instruction after reset",
+          "x86 reset address"
+        ]
+      }
+    },
+    {
+      "id": "spi-flash-firmware",
+      "title": {
+        "zh": "SPI 闪存：固件放在哪，读一行要多久",
+        "en": "SPI flash: where firmware lives and how long a read takes"
+      },
+      "desc": {
+        "zh": "按 W25Q256JV 数据手册的命令表算：03h 读 64 字节要 10.88 微秒，四线 EBh 只要 1.11 微秒，开场白占多少决定了快慢。",
+        "en": "From the W25Q256JV command table: a 64-byte read takes 10.88 µs with 03h and 1.11 µs with quad-I/O EBh; the fixed command overhead decides the speed."
+      },
+      "anchor": "#ch3",
+      "aliases": {
+        "zh": [
+          "SPI 闪存",
+          "BIOS 芯片",
+          "固件存在哪",
+          "四线 SPI 读"
+        ],
+        "en": [
+          "SPI flash",
+          "BIOS chip",
+          "where firmware is stored",
+          "quad SPI read"
+        ]
+      }
+    },
+    {
+      "id": "hardware-root-of-trust",
+      "title": {
+        "zh": "硬件信任根：CPU 之前先醒的安全芯片",
+        "en": "Hardware root of trust: the security processor that wakes first"
+      },
+      "desc": {
+        "zh": "AMD 的 PSP 先校验固件、训练内存，再放开 x86 核心；Intel 的 Boot Guard 由微码校验 ACM，ACM 再用熔丝里的公钥哈希校验固件开头。",
+        "en": "AMD's PSP verifies firmware and trains DRAM before releasing the x86 cores; Intel Boot Guard has microcode verify an ACM, which checks the first firmware block against a key hash in fuses."
+      },
+      "anchor": "#ch4",
+      "aliases": {
+        "zh": [
+          "硬件信任根",
+          "Boot Guard",
+          "AMD PSP",
+          "Intel CSME",
+          "微码更新"
+        ],
+        "en": [
+          "hardware root of trust",
+          "Intel Boot Guard",
+          "AMD Platform Security Processor",
+          "microcode update"
+        ]
+      }
+    },
+    {
+      "id": "cache-as-ram-boot-time",
+      "title": {
+        "zh": "用缓存当内存，以及开机时间花在哪",
+        "en": "Cache as RAM, and where boot time goes"
+      },
+      "desc": {
+        "zh": "内存训练之前，固件把缓存锁住当栈用；第一次开机训练占了大半时间，睡眠 S3、休眠 S4、现代待机 S0ix 各跳过不同的段。",
+        "en": "Before DRAM is trained, firmware locks cache lines to use as a stack; on a first boot training dominates, and S3, S4 and S0ix each skip different stages."
+      },
+      "anchor": "#ch5",
+      "aliases": {
+        "zh": [
+          "用缓存当内存",
+          "Cache-As-RAM",
+          "开机时间都花在哪",
+          "睡眠和休眠的区别",
+          "S3 S4 S0ix"
+        ],
+        "en": [
+          "cache as RAM",
+          "boot time breakdown",
+          "sleep vs hibernate",
+          "modern standby S0ix"
+        ]
+      }
+    },
+    {
+      "id": "uefi-phases-acpi",
+      "title": {
+        "zh": "UEFI 的阶段与 ACPI 表",
+        "en": "UEFI phases and the ACPI tables"
+      },
+      "desc": {
+        "zh": "SEC、PEI、DXE、BDS 一层层把机器搭起来，老式 BIOS 只读第一个扇区到 0x7C00；固件交给操作系统 ACPI 表，MADT 的校验和让所有字节加起来为 0。",
+        "en": "SEC, PEI, DXE and BDS build the machine up in layers, where legacy BIOS just loads sector 0 to 0x7C00; firmware hands over ACPI tables, and a MADT checksum makes every byte sum to 0."
+      },
+      "anchor": "#ch6",
+      "aliases": {
+        "zh": [
+          "UEFI",
+          "UEFI 启动阶段",
+          "SEC PEI DXE BDS",
+          "传统 BIOS 与 UEFI",
+          "ACPI 表",
+          "MADT"
+        ],
+        "en": [
+          "UEFI boot phases",
+          "legacy BIOS vs UEFI",
+          "ACPI tables"
+        ]
+      }
+    },
+    {
+      "id": "gpt-partition-table",
+      "title": {
+        "zh": "GUID 分区表：表头、CRC32 与备份",
+        "en": "The GUID partition table: header, CRC32 and the backup"
+      },
+      "desc": {
+        "zh": "真的 92 字节 GPT 表头和 CRC32：改一个字节，固件改读硬盘末尾的备份；改完重算 CRC 就发现不了。MBR 最多管 2 TiB。",
+        "en": "A real 92-byte GPT header with CRC32: change one byte and firmware falls back to the backup at the end of the disk; recompute the CRC and nothing notices. MBR tops out at 2 TiB."
+      },
+      "anchor": "#ch7",
+      "aliases": {
+        "zh": [
+          "GPT 分区表",
+          "GUID 分区表",
+          "MBR 与 GPT",
+          "EFI 系统分区",
+          "ESP 分区"
+        ],
+        "en": [
+          "GUID partition table",
+          "GPT vs MBR",
+          "EFI system partition",
+          "protective MBR"
+        ]
+      }
+    },
+    {
+      "id": "secure-boot-chain",
+      "title": {
+        "zh": "安全启动：一级验一级的签名链",
+        "en": "Secure Boot: a chain of signature checks"
+      },
+      "desc": {
+        "zh": "固件用 db 验 shim，shim 验 GRUB 和内核，先查 dbx；真的 SHA-256 加小号 RSA，换掉一环看它断在哪。",
+        "en": "Firmware checks shim against db, shim checks GRUB and the kernel, dbx first; real SHA-256 and a small RSA show where the chain breaks."
+      },
+      "anchor": "#ch8",
+      "aliases": {
+        "zh": [
+          "安全启动",
+          "Secure Boot",
+          "开机信任链",
+          "shim",
+          "db 和 dbx"
+        ],
+        "en": [
+          "UEFI Secure Boot",
+          "boot chain of trust",
+          "shim bootloader",
+          "db and dbx"
+        ]
+      }
+    },
+    {
+      "id": "secure-boot-revocation",
+      "title": {
+        "zh": "撤销签过名的引导程序：dbx、SBAT 与整张证书",
+        "en": "Revoking signed boot loaders: dbx, SBAT and whole certificates"
+      },
+      "desc": {
+        "zh": "BootHole 往 dbx 加了 150 个哈希；BlackLotus 之后微软拉黑整张 PCA 2011。按哈希、按代数、按证书三种办法的代价对比。",
+        "en": "BootHole put 150 hashes into dbx; after BlackLotus Microsoft revoked the whole PCA 2011 certificate. Compares revoking by hash, by generation and by certificate."
+      },
+      "anchor": "#ch9",
+      "aliases": {
+        "zh": [
+          "dbx 撤销",
+          "BootHole",
+          "BlackLotus",
+          "SBAT",
+          "引导程序病毒"
+        ],
+        "en": [
+          "dbx revocation",
+          "bootkit"
+        ]
+      }
+    },
+    {
+      "id": "measured-boot-tpm",
+      "title": {
+        "zh": "度量启动：TPM 的 PCR 扩展",
+        "en": "Measured boot: TPM PCR extends"
+      },
+      "desc": {
+        "zh": "新值 = SHA-256(旧值 ‖ 度量)，只能往前算；钥匙封存在哪几个 PCR 上，决定升级固件后要不要输恢复密钥。",
+        "en": "New value = SHA-256(old ‖ measurement), forward only; which PCRs a key is sealed to decides whether a firmware update asks for the recovery key."
+      },
+      "anchor": "#ch10",
+      "aliases": {
+        "zh": [
+          "度量启动",
+          "TPM PCR",
+          "PCR 扩展",
+          "BitLocker 要恢复密钥",
+          "TPM 封存"
+        ],
+        "en": [
+          "measured boot",
+          "PCR extend",
+          "BitLocker recovery key prompt",
+          "TPM sealing"
+        ]
+      }
+    },
+    {
+      "id": "kernel-handoff-smp",
+      "title": {
+        "zh": "交给内核，INIT-SIPI-SIPI 叫醒其余核心",
+        "en": "Kernel handoff and waking the other cores with INIT-SIPI-SIPI"
+      },
+      "desc": {
+        "zh": "引导程序按启动协议交出控制，内核打开自己的分页，再用 INIT 和两次 SIPI 叫醒其余核心；并行叫醒让 112 线程从约 800 毫秒降到约 80 毫秒。",
+        "en": "The loader hands over by the boot protocol, the kernel sets up its own paging, then wakes the other cores with INIT and two SIPIs; parallel bring-up took 112 threads from about 800 ms to about 80 ms."
+      },
+      "anchor": "#ch11",
+      "aliases": {
+        "zh": [
+          "INIT-SIPI-SIPI",
+          "多核启动",
+          "叫醒其他核心",
+          "内核启动协议",
+          "initramfs"
+        ],
+        "en": [
+          "multiprocessor boot",
+          "AP bring-up",
+          "Linux boot protocol"
+        ]
+      }
+    },
+    {
+      "id": "arm-apple-boot",
+      "title": {
+        "zh": "Arm 与苹果的开机链",
+        "en": "How Arm and Apple machines boot"
+      },
+      "desc": {
+        "zh": "Arm 可信固件分 BL1、BL2、BL31、BL33；苹果从启动 ROM 里的根证书公钥开始，经 LLB、iBoot 验到内核。",
+        "en": "Arm Trusted Firmware runs BL1, BL2, BL31 and BL33; Apple starts from the root CA key in the Boot ROM and verifies LLB, iBoot and the kernel in turn."
+      },
+      "anchor": "#ch12",
+      "aliases": {
+        "zh": [
+          "Arm 启动流程",
+          "可信固件 TF-A",
+          "苹果安全启动链",
+          "iBoot",
+          "DeviceTree"
+        ],
+        "en": [
+          "Arm boot flow",
+          "Trusted Firmware-A",
+          "Apple boot chain"
+        ]
+      }
+    },
+    {
+      "id": "boot-frontier-2026",
+      "title": {
+        "zh": "开机的前沿：证书到期、开源固件与 Pluton",
+        "en": "The frontier: certificate expiry, open firmware and Pluton"
+      },
+      "desc": {
+        "zh": "微软三张 2011 年安全启动证书在 2026 年到期并换成 2023 版；AMD 的 openSIL、集成进 CPU 的 Pluton。截至 2026 年 11 月。",
+        "en": "Microsoft's three 2011 Secure Boot certificates expired in 2026 and were replaced by 2023 ones; AMD openSIL and the Pluton security processor. As of November 2026."
+      },
+      "anchor": "#ch13",
+      "aliases": {
+        "zh": [
+          "安全启动证书过期",
+          "微软 2023 证书",
+          "openSIL",
+          "Pluton",
+          "coreboot"
+        ],
+        "en": [
+          "Secure Boot certificate expiry 2026",
+          "Microsoft UEFI CA 2023",
+          "Microsoft Pluton"
+        ]
+      }
+    },
+    {
+      "id": "boot-troubleshooting",
+      "title": {
+        "zh": "开不了机时问的三件事",
+        "en": "Three questions when a computer will not boot"
+      },
+      "desc": {
+        "zh": "卡在固件之前还是之中，安全启动是不认识还是被拉黑，钥匙封在哪几个 PCR 上。",
+        "en": "Is it stuck before or inside firmware, does Secure Boot not know the file or has it been revoked, and which PCRs is the key sealed to."
+      },
+      "anchor": "#ch14",
+      "aliases": {
+        "zh": [
+          "电脑开不了机",
+          "开机黑屏排查",
+          "升级固件后要恢复密钥"
+        ],
+        "en": [
+          "computer will not boot",
+          "boot troubleshooting",
+          "recovery key after firmware update"
+        ]
+      }
+    }
+  ]
+}
