@@ -1,0 +1,377 @@
+{
+  "slug": "how-a-cpu-guesses-ahead",
+  "path": "computing/systems/how-a-cpu-guesses-ahead/",
+  "category": "computing",
+  "subtopic": "systems",
+  "stage": "university",
+  "title": {
+    "zh": "CPU 是怎么猜着往前跑的",
+    "en": "How a CPU Guesses Ahead"
+  },
+  "desc": {
+    "zh": "一条分支要等十几拍才知道往哪走，CPU 却不等：它先猜，猜对了白赚，猜错了推倒重来。它怎么猜得这么准？为什么一颗 CPU 能同时有几百条指令在路上？这种猜测又为什么会泄露秘密？十个模型：1 位与 2 位计数器、排序数组、gshare、TAGE、返回栈、超标量、寄存器重命名与重排序缓冲、窗口大小、Spectre 的玩具机器。",
+    "en": "A branch takes a dozen cycles to resolve, and a CPU does not wait: it guesses, gains when right and starts over when wrong. How does it guess so well? Why can one CPU have hundreds of instructions in flight? And why does the guessing leak secrets? Ten models: 1-bit and 2-bit counters, the sorted array, gshare, TAGE, the return stack, superscalar issue, renaming and the reorder buffer, window size, and a toy machine for Spectre."
+  },
+  "tags": [
+    {
+      "zh": "分支预测",
+      "en": "Branch Prediction"
+    },
+    {
+      "zh": "乱序执行",
+      "en": "Out-of-order Execution"
+    },
+    {
+      "zh": "计算机体系结构",
+      "en": "Computer Architecture"
+    },
+    {
+      "zh": "长文",
+      "en": "Long-form Essay"
+    }
+  ],
+  "concepts": [
+    {
+      "id": "mispredict-cost-wide-core",
+      "title": {
+        "zh": "为什么猜错越来越贵",
+        "en": "Why a wrong guess costs more on a wide core"
+      },
+      "desc": {
+        "zh": "一次猜错要扔掉的是「拍数 × 每拍条数」：Zen 5 约 15 拍、每拍 8 条，95% 的准确率就丢掉一半以上的时间。",
+        "en": "A wrong guess throws away cycles × width: about 15 cycles at 8 per cycle on Zen 5, so 95% accuracy loses more than half the time."
+      },
+      "anchor": "#ch1",
+      "aliases": {
+        "zh": [
+          "分支预测是什么",
+          "为什么需要分支预测",
+          "分支预测失败的代价",
+          "分支预测准确率",
+          "猜错一次丢多少"
+        ],
+        "en": [
+          "what is branch prediction",
+          "why branch prediction matters",
+          "branch misprediction cost",
+          "branch prediction accuracy",
+          "misprediction penalty on wide cores"
+        ]
+      }
+    },
+    {
+      "id": "two-bit-counter",
+      "title": {
+        "zh": "1 位与 2 位饱和计数器、排序数组为什么快",
+        "en": "1-bit and 2-bit counters; why the sorted array is faster"
+      },
+      "desc": {
+        "zh": "2 位计数器要错两次才改主意，循环出口只错一次；排好序的数组让 if 变得可猜，无分支写法则根本不猜。",
+        "en": "A 2-bit counter needs two misses to change its mind, so a loop exit costs one miss; sorting makes the if predictable, and branchless code does not guess at all."
+      },
+      "anchor": "#ch2",
+      "aliases": {
+        "zh": [
+          "两位饱和计数器",
+          "2 位计数器",
+          "动态分支预测",
+          "为什么排序后的数组处理更快",
+          "无分支代码",
+          "条件传送"
+        ],
+        "en": [
+          "two-bit saturating counter",
+          "2-bit counter",
+          "dynamic branch prediction",
+          "why is processing a sorted array faster",
+          "branchless code",
+          "conditional move"
+        ]
+      }
+    },
+    {
+      "id": "gshare",
+      "title": {
+        "zh": "全局历史与 gshare",
+        "en": "Global history and gshare"
+      },
+      "desc": {
+        "zh": "把最近几条分支的结果和地址异或起来查表，相关的分支就能互相提示；表太小时历史越长反而越乱。",
+        "en": "XOR the outcomes of recent branches with the address to index the table, so correlated branches inform each other; in a small table longer history only dilutes it."
+      },
+      "anchor": "#ch3",
+      "aliases": {
+        "zh": [
+          "gshare",
+          "全局历史",
+          "两级分支预测",
+          "分支相关性",
+          "分支历史寄存器"
+        ],
+        "en": [
+          "gshare",
+          "global history",
+          "two-level branch predictor",
+          "branch correlation",
+          "global history register"
+        ]
+      }
+    },
+    {
+      "id": "tage",
+      "title": {
+        "zh": "TAGE 预测器",
+        "en": "The TAGE predictor"
+      },
+      "desc": {
+        "zh": "几张表各用几何级数长度的历史并带标记，最长的命中说了算；同样存储下比 gshare 准。",
+        "en": "Several tagged tables with geometric history lengths; the longest hit decides, and at equal storage it beats gshare."
+      },
+      "anchor": "#ch4",
+      "aliases": {
+        "zh": [
+          "TAGE",
+          "TAGE 预测器",
+          "几何历史长度",
+          "现代 CPU 怎么做分支预测",
+          "TAGE-SC-L"
+        ],
+        "en": [
+          "TAGE",
+          "TAGE predictor",
+          "geometric history length",
+          "how modern CPUs predict branches",
+          "TAGE-SC-L"
+        ]
+      }
+    },
+    {
+      "id": "btb-ras",
+      "title": {
+        "zh": "分支目标缓冲与返回地址栈",
+        "en": "Branch target buffer and return address stack"
+      },
+      "desc": {
+        "zh": "方向猜对还不够，还要知道跳到哪：BTB 记目标，返回栈记函数返回地址，栈不够深就开始猜错。",
+        "en": "Direction is not enough; the target must be known too: the BTB remembers targets and the return stack return addresses, which go wrong when calls nest deeper than the stack."
+      },
+      "anchor": "#ch5",
+      "aliases": {
+        "zh": [
+          "BTB",
+          "分支目标缓冲",
+          "返回地址栈",
+          "RAS",
+          "间接跳转预测"
+        ],
+        "en": [
+          "BTB",
+          "branch target buffer",
+          "return address stack",
+          "RAS",
+          "indirect branch prediction"
+        ]
+      }
+    },
+    {
+      "id": "superscalar-ilp",
+      "title": {
+        "zh": "超标量与指令级并行",
+        "en": "Superscalar issue and instruction-level parallelism"
+      },
+      "desc": {
+        "zh": "每拍能发几条取决于指令之间的依赖；按顺序发射时宽了也用不上，乱序才吃得到并行。",
+        "en": "How many instructions issue per cycle depends on dependences between them; in-order issue cannot use extra width, out-of-order can."
+      },
+      "anchor": "#ch6",
+      "aliases": {
+        "zh": [
+          "超标量",
+          "指令级并行",
+          "ILP",
+          "IPC 是什么",
+          "多发射"
+        ],
+        "en": [
+          "superscalar",
+          "instruction-level parallelism",
+          "ILP",
+          "what is IPC",
+          "multiple issue"
+        ]
+      }
+    },
+    {
+      "id": "ooo-renaming",
+      "title": {
+        "zh": "乱序执行与寄存器重命名",
+        "en": "Out-of-order execution and register renaming"
+      },
+      "desc": {
+        "zh": "把架构寄存器改名到物理寄存器，假依赖（WAR、WAW）消失，只剩真依赖；准备好的指令先走。",
+        "en": "Renaming architectural registers onto physical ones removes false dependences (WAR, WAW), leaving only true ones; ready instructions go first."
+      },
+      "anchor": "#ch7",
+      "aliases": {
+        "zh": [
+          "乱序执行",
+          "寄存器重命名",
+          "Tomasulo 算法",
+          "保留站",
+          "假依赖",
+          "记分板"
+        ],
+        "en": [
+          "out-of-order execution",
+          "register renaming",
+          "Tomasulo algorithm",
+          "reservation station",
+          "false dependence",
+          "scoreboarding"
+        ]
+      }
+    },
+    {
+      "id": "rob-precise",
+      "title": {
+        "zh": "重排序缓冲与精确异常",
+        "en": "The reorder buffer and precise exceptions"
+      },
+      "desc": {
+        "zh": "乱序执行、按序提交：ROB 从头部按顺序认账，猜错或出错时把后面的全部作废，程序看起来像一条条执行。",
+        "en": "Execute out of order, commit in order: the ROB retires from its head, and on a mispredict or fault everything younger is discarded, so the program appears sequential."
+      },
+      "anchor": "#ch8",
+      "aliases": {
+        "zh": [
+          "重排序缓冲",
+          "ROB",
+          "精确异常",
+          "按序提交",
+          "推测执行",
+          "内存消歧"
+        ],
+        "en": [
+          "reorder buffer",
+          "ROB",
+          "precise exceptions",
+          "in-order commit",
+          "speculative execution",
+          "memory disambiguation"
+        ]
+      }
+    },
+    {
+      "id": "window-size",
+      "title": {
+        "zh": "乱序窗口有多大",
+        "en": "How big the out-of-order window is"
+      },
+      "desc": {
+        "zh": "Zen 5 448、Lion Cove 576：窗口越大越能藏住缓存缺失，但每几百条就有一次猜错，窗口再大也填不满。",
+        "en": "Zen 5 448, Lion Cove 576: a bigger window hides more cache misses, but with a mispredict every few hundred instructions it never fills."
+      },
+      "anchor": "#ch9",
+      "aliases": {
+        "zh": [
+          "乱序窗口",
+          "ROB 大小",
+          "指令窗口",
+          "在飞指令数",
+          "Zen 5 ROB"
+        ],
+        "en": [
+          "out-of-order window",
+          "ROB size",
+          "instruction window",
+          "instructions in flight",
+          "Zen 5 reorder buffer"
+        ]
+      }
+    },
+    {
+      "id": "spectre",
+      "title": {
+        "zh": "Spectre：猜测为什么会泄露秘密",
+        "en": "Spectre: why guessing leaks secrets"
+      },
+      "desc": {
+        "zh": "猜错的指令结果被扔掉，但它们读过的缓存行留下了；用页面里的玩具机器看越界读怎样经由计时泄露，以及 lfence 和下标掩码怎么堵。",
+        "en": "Results of wrongly guessed instructions are discarded, but the cache lines they touched remain; a toy machine on the page shows how an out-of-bounds read leaks through timing, and how lfence and index masking stop it."
+      },
+      "anchor": "#ch10",
+      "aliases": {
+        "zh": [
+          "Spectre",
+          "幽灵漏洞",
+          "推测执行漏洞",
+          "边界检查绕过",
+          "侧信道攻击",
+          "Flush+Reload",
+          "retpoline"
+        ],
+        "en": [
+          "Spectre",
+          "Spectre v1",
+          "speculative execution vulnerability",
+          "bounds check bypass",
+          "side-channel attack",
+          "Flush+Reload",
+          "retpoline"
+        ]
+      }
+    },
+    {
+      "id": "frontier",
+      "title": {
+        "zh": "分支预测与推测执行的前沿（截至 2026 年 11 月）",
+        "en": "The frontier of prediction and speculation (as of November 2026)"
+      },
+      "desc": {
+        "zh": "新的预测器还在比赛，新的推测执行漏洞还在出现：Branch Privilege Injection、Branch Target Reuse，以及它们的补丁代价。",
+        "en": "New predictors still compete and new speculation flaws keep appearing: Branch Privilege Injection, Branch Target Reuse, and what their fixes cost."
+      },
+      "anchor": "#ch11",
+      "aliases": {
+        "zh": [
+          "Branch Privilege Injection",
+          "Retbleed",
+          "分支预测锦标赛",
+          "CBP2025",
+          "推测执行新漏洞"
+        ],
+        "en": [
+          "Branch Privilege Injection",
+          "Retbleed",
+          "branch prediction championship",
+          "CBP2025",
+          "new speculative execution attacks"
+        ]
+      }
+    },
+    {
+      "id": "reading-branchy-code",
+      "title": {
+        "zh": "看一段代码时问三件事",
+        "en": "Three questions about a piece of code"
+      },
+      "desc": {
+        "zh": "分支能不能猜、依赖链有多长、缺失能不能重叠。",
+        "en": "Can its branches be predicted, how long are its dependence chains, can its misses overlap."
+      },
+      "anchor": "#ch12",
+      "aliases": {
+        "zh": [
+          "怎么减少分支预测失败",
+          "分支预测失败怎么查",
+          "branch-misses"
+        ],
+        "en": [
+          "how to reduce branch mispredictions",
+          "how to measure branch mispredictions",
+          "branch-misses"
+        ]
+      }
+    }
+  ]
+}

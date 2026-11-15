@@ -1,0 +1,602 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="category" content="computing"><meta name="stage" content="university">
+<title>CPU 是怎么猜着往前跑的 · 一篇可以动手的长文</title>
+<meta name="description" content="一条分支要等十几拍才知道往哪走，CPU 却不等：它先猜，猜对了白赚，猜错了推倒重来。它怎么猜得这么准？为什么一颗 CPU 能同时有几百条指令在路上？这种猜测又为什么会泄露秘密？十个模型：1 位与 2 位计数器、排序数组、gshare、TAGE、返回栈、超标量、寄存器重命名与重排序缓冲、窗口大小、Spectre 的玩具机器。">
+<link rel="icon" href="data:,">
+<style>
+  :root { --bg:#0c0e13; --card:#141821; --card2:#1a1f2b; --line:#2b3242; --ink:#ebe8e0; --body:#d5d7de; --mute:#a3aab8; --dim:#9098a8;
+    --gold:#e9b949; --cyan:#63c7e6; --red:#f07a6d; --green:#7ad6a0; --violet:#b39dfb; --dimfill:#3a4254;
+    --serif:"Songti SC","STSong","Noto Serif CJK SC","Source Han Serif SC","SimSun",Georgia,serif;
+    --sans:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC",system-ui,sans-serif;
+    --mono:ui-monospace,Menlo,Consolas,monospace; }
+  * { box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior:auto; } *, *::before, *::after { transition:none !important; animation:none !important; } }
+  body { margin:0; background:var(--bg); color:var(--ink); font:17px/1.85 var(--sans); -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+  a { color:var(--cyan); }
+  a:focus-visible, button:focus-visible, input:focus-visible, [tabindex]:focus-visible { outline:2px solid var(--gold); outline-offset:3px; }
+  .wrap { max-width:760px; margin:0 auto; padding:0 20px; }
+  .wide { max-width:980px; margin:0 auto; padding:0 20px; }
+
+  .topbar { position:absolute; top:0; left:0; right:0; z-index:5; display:flex; justify-content:space-between; align-items:center; padding:8px 12px; gap:8px; }
+  .back { display:inline-flex; align-items:center; min-height:48px; padding:0 10px; color:var(--mute); text-decoration:none; font-size:14px; }
+  .back:hover { color:var(--ink); }
+  #langToggle { display:flex; border:1px solid var(--line); border-radius:999px; overflow:hidden; background:var(--card); }
+  #langToggle button { min-width:48px; min-height:48px; border:0; border-radius:0; background:transparent; color:var(--mute); font:600 14px/1 var(--sans); padding:0 12px; cursor:pointer; }
+  #langToggle button + button { border-left:1px solid var(--line); }
+  #langToggle button[aria-pressed="true"] { background:rgba(233,185,73,.16); color:var(--gold); }
+
+  .hero { min-height:88vh; display:flex; align-items:center; border-bottom:1px solid var(--line); }
+  .hero .wrap { padding-top:96px; padding-bottom:64px; width:100%; }
+  .kicker { font:12px/1.4 var(--mono); letter-spacing:.24em; color:var(--gold); text-transform:uppercase; }
+  h1 { font:400 clamp(44px,9vw,104px)/1.12 var(--serif); letter-spacing:.04em; margin:.3em 0 .25em; }
+  .sub { font:400 clamp(18px,2.6vw,25px)/1.6 var(--serif); margin:0 0 1.4em; }
+  .lead { color:var(--body); max-width:36em; }
+  .note { font-size:15px; color:var(--mute); border-left:2px solid var(--line); padding-left:14px; margin-top:1.8em; max-width:36em; line-height:1.75; }
+  .note strong { color:var(--ink); font-weight:600; }
+
+  .toc { padding:52px 0 8px; }
+  .toc h2 { font:12px/1 var(--mono); letter-spacing:.24em; color:var(--mute); margin:0 0 14px; font-weight:400; }
+  .toc ol { list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); gap:0 22px; }
+  .toc a { display:flex; align-items:center; gap:12px; min-height:48px; text-decoration:none; color:var(--ink); border-bottom:1px solid var(--line); font-size:15px; line-height:1.4; }
+  .toc a:hover { color:var(--gold); }
+  .toc a span { font:12px/1 var(--mono); color:var(--mute); }
+
+  .ch { padding-top:96px; }
+  .num { font:400 15px/1 var(--mono); color:var(--gold); letter-spacing:.2em; }
+  .ch h2 { font:400 clamp(26px,4.2vw,38px)/1.35 var(--serif); margin:.45em 0 .5em; letter-spacing:.02em; }
+  .law { font:400 clamp(19px,2.5vw,23px)/1.7 var(--serif); border-left:3px solid var(--gold); padding:4px 0 4px 18px; margin:0 0 1.5em; }
+  .ch p { margin:0 0 1.15em; color:var(--body); }
+  .ch p strong, .ch li strong { color:var(--ink); font-weight:600; }
+  .ch ul, .ch ol.plain { padding-left:1.3em; margin:0 0 1.2em; color:var(--body); }
+  .ch li { margin:.45em 0; }
+  .take { color:var(--mute) !important; font-size:15.5px; }
+  .tag { display:inline-block; font:600 12px/1 var(--sans); padding:5px 8px; border-radius:6px; margin-right:6px; vertical-align:2px; white-space:nowrap; }
+  .tag.h { background:rgba(122,214,160,.16); color:var(--green); } .tag.m { background:rgba(233,185,73,.16); color:var(--gold); } .tag.l { background:rgba(240,122,109,.16); color:var(--red); }
+
+  figure.lab { margin:34px auto; background:var(--card); border:1px solid var(--line); border-radius:16px; padding:22px 22px 18px; }
+  .lab h3 { margin:0 0 4px; font:600 16px/1.5 var(--sans); color:var(--ink); }
+  .lab .how { margin:0 0 14px; font-size:14.5px; color:var(--mute); line-height:1.65; }
+  .cv { width:100%; height:300px; display:block; border-radius:10px; background:#0f1219; touch-action:pan-y; }
+  .cv.tall { height:360px; } .cv.short { height:170px; margin-top:10px; }
+  .ctl { display:flex; flex-wrap:wrap; gap:4px 22px; align-items:center; margin:12px 0 2px; font-size:14.5px; color:var(--mute); }
+  .ctl label.rng { display:flex; align-items:center; gap:10px; flex:1 1 260px; min-width:0; min-height:48px; }
+  .ctl label.rng > span { flex:0 0 auto; white-space:nowrap; }
+  .toc a b { font-weight:400; }
+  .ctl output { flex:0 0 auto; white-space:nowrap; min-width:4.6em; text-align:right; color:var(--ink); font:500 14px/1.3 var(--mono); }
+  input[type=range] { flex:1 1 auto; min-width:80px; height:48px; margin:0; accent-color:var(--gold); background:transparent; cursor:pointer; }
+  label.chk { display:inline-flex; align-items:center; gap:10px; min-height:48px; padding:0 4px; cursor:pointer; color:var(--ink); }
+  input[type=checkbox], input[type=radio] { accent-color:var(--gold); width:20px; height:20px; margin:0; cursor:pointer; }
+  .seg { display:inline-flex; flex-wrap:wrap; gap:6px; align-items:center; }
+  .seg .lbl { margin-right:4px; }
+  .seg label { display:inline-flex; align-items:center; justify-content:center; gap:8px; min-height:48px; min-width:48px; padding:0 14px; border:1px solid var(--line); border-radius:999px; background:var(--card2); color:var(--ink); cursor:pointer; font-size:14px; }
+  .seg label:has(input:checked) { border-color:var(--gold); color:var(--gold); background:rgba(233,185,73,.12); }
+  .seg input { position:absolute; opacity:0; width:1px; height:1px; }
+  .seg label:has(input:focus-visible) { outline:2px solid var(--gold); outline-offset:2px; }
+  button.b { font:inherit; font-size:14.5px; color:var(--ink); background:var(--card2); border:1px solid var(--line); border-radius:999px; min-height:48px; padding:0 18px; cursor:pointer; line-height:1.3; }
+  button.b:hover { border-color:var(--gold); }
+  button.b[aria-pressed="true"] { background:rgba(233,185,73,.16); border-color:var(--gold); color:var(--gold); }
+  .read { display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:10px; margin-top:14px; }
+  .read div { background:var(--card2); border-radius:10px; padding:10px 12px; font-size:13px; color:var(--mute); line-height:1.5; min-width:0; }
+  .read b { display:block; font:600 20px/1.3 var(--sans); color:var(--ink); font-variant-numeric:tabular-nums; overflow-wrap:anywhere; }
+  .read b.g { color:var(--gold); } .read b.r { color:var(--red); } .read b.c { color:var(--cyan); } .read b.n { color:var(--green); } .read b.v { color:var(--violet); }
+  .say { margin:14px 0 0; font-size:15px; color:var(--ink); line-height:1.7; min-height:3.4em; }
+  .say em { font-style:normal; color:var(--gold); }
+  .legend { display:flex; flex-wrap:wrap; gap:6px 18px; font-size:13.5px; color:var(--mute); margin-top:10px; }
+  .legend i { display:inline-block; width:14px; height:4px; border-radius:2px; margin-right:6px; vertical-align:3px; }
+  .legend i.dash { background:repeating-linear-gradient(90deg,currentColor 0 4px,transparent 4px 7px) !important; }
+  .legend i.band { height:10px; vertical-align:0; }
+
+  .sum { margin:50px 0 0; padding:24px 24px; border:1px solid var(--line); border-radius:16px; background:linear-gradient(180deg,rgba(233,185,73,.07),transparent); font:400 clamp(17px,2.2vw,20px)/1.95 var(--serif); }
+  .sum em { font-style:normal; color:var(--gold); }
+  .qs { counter-reset:q; list-style:none; padding:0 !important; }
+  .qs li { counter-increment:q; position:relative; padding:14px 0 14px 46px !important; border-bottom:1px solid var(--line); margin:0 !important; }
+  .qs li::before { content:counter(q); position:absolute; left:0; top:14px; width:30px; height:30px; border-radius:50%; border:1px solid var(--gold); color:var(--gold); font:600 14px/28px var(--mono); text-align:center; }
+
+  footer { margin:100px 0 0; padding:40px 0 70px; border-top:1px solid var(--line); color:var(--mute); font-size:14px; line-height:1.8; }
+  footer a { color:var(--mute); }
+  .sr { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+  @media (max-width:640px) {
+    body { font-size:16px; } .wrap,.wide { padding:0 16px; }
+    figure.lab { padding:16px 12px 14px; border-radius:14px; }
+    .cv { height:250px; } .cv.tall { height:330px; } .cv.short { height:150px; }
+    .ch { padding-top:76px; } .read { grid-template-columns:repeat(2,minmax(0,1fr)); } .read b { font-size:17px; }
+    .ctl label.rng { flex-basis:100%; }
+  }
+  @media (max-width:420px) {
+    .ctl label.rng { flex-wrap:wrap; gap:0 10px; justify-content:space-between; }
+    .ctl label.rng input[type=range] { order:3; flex:1 1 100%; }
+    .ctl label.rng > span { flex:1 1 0; min-width:0; white-space:normal; line-height:1.4; }
+  }
+  .gold { color:var(--gold); } .cyan { color:var(--cyan); }
+  .cv.xtall { height:440px; }
+  table.fam { width:100%; border-collapse:collapse; font-size:14.5px; line-height:1.6; margin:10px 0 1.4em; }
+  table.fam th, table.fam td { text-align:left; vertical-align:top; padding:10px 10px; border-bottom:1px solid var(--line); color:var(--body); }
+  table.fam th { color:var(--mute); font-weight:600; font-size:13px; }
+  table.fam td:first-child { color:var(--ink); font-weight:600; white-space:nowrap; }
+  table.fam tr.hi td { background:rgba(233,185,73,.07); }
+  @media (max-width:640px) {
+    table.fam, table.fam tbody, table.fam tr, table.fam td { display:block; width:100%; }
+    table.fam thead { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); }
+    table.fam tr { border-bottom:1px solid var(--line); padding:8px 0; }
+    table.fam td { border:0; padding:2px 0; }
+    table.fam td:first-child { white-space:normal; }
+    table.fam td[data-h]::before { content:attr(data-h) "："; color:var(--mute); font-weight:400; }
+    html:not([lang^="zh"]) table.fam td[data-h]::before { content:attr(data-h) ": "; }
+    .cv.xtall { height:420px; }
+  }
+  .orgs { display:flex; flex-wrap:wrap; gap:6px; margin:0 0 4px; }
+  .orgs span { font-size:13px; padding:4px 9px; border-radius:999px; background:var(--card2); color:var(--mute); border:1px solid var(--line); }
+  .orgs span.on { color:var(--red); border-color:rgba(240,122,109,.5); }
+  .sub3 { font:600 18px/1.5 var(--sans); color:var(--ink); margin:1.8em 0 .6em; }
+  label.txt { display:flex; align-items:center; gap:10px; flex:1 1 260px; min-height:48px; }
+  label.txt input { flex:1 1 auto; min-width:0; min-height:48px; padding:0 14px; border:1px solid var(--line); border-radius:10px; background:var(--card2); color:var(--ink); font:500 16px/1 var(--mono); }
+  .syms { display:flex; flex-wrap:wrap; gap:6px; margin-top:10px; font:12.5px/1.45 var(--mono); }
+  .syms span { background:var(--card2); border-radius:8px; padding:5px 8px; color:var(--mute); }
+  .syms span b { color:var(--ink); font-weight:600; } .syms span.k b { color:var(--red); }
+  .syms span i { font-style:normal; color:var(--gold); }
+  pre.hex { margin:12px 0 0; padding:12px 14px; background:#0f1219; border-radius:10px; color:var(--body); font:13px/1.6 var(--mono); white-space:pre-wrap; overflow-wrap:anywhere; }
+  pre.hex .c { color:var(--cyan); } pre.hex .g { color:var(--gold); } pre.hex .m { color:var(--mute); }
+  .step { margin:6px 0 0; font-size:15px; color:var(--ink); line-height:1.7; min-height:3.4em; }
+  .step em { font-style:normal; color:var(--gold); }
+  .seg.wrapmany label { padding:0 12px; }
+  pre.hex .r { color:var(--red); } pre.hex .v { color:var(--violet); } pre.hex .n { color:var(--green); }
+  figure.dia { margin:30px 0 26px; padding:0; }
+  figure.dia .svg svg { display:block; width:100%; height:auto; margin:0 auto; }
+  figure.dia .svg svg.n { max-width:440px; }
+  figure.dia figcaption { margin-top:10px; font-size:14px; line-height:1.65; color:var(--mute); }
+  svg text { font-family:var(--sans); fill:var(--ink); }
+  svg text.m { fill:var(--mute); } svg text.g { fill:var(--gold); } svg text.c { fill:var(--cyan); } svg text.r { fill:var(--red); } svg text.n { fill:var(--green); } svg text.v { fill:var(--violet); } svg text.k { fill:#0c0e13; }
+  svg text.mono { font-family:var(--mono); }
+  .ctl > .lbl { color:var(--mute); }
+  .bits { display:flex; flex-wrap:wrap; gap:6px; margin:14px 0 4px; font:13px/1.4 var(--mono); }
+  .bits span { display:inline-flex; flex-direction:column; align-items:flex-start; padding:6px 9px; border-radius:8px; background:var(--card2); border:1px solid var(--line); color:var(--body); overflow-wrap:anywhere; min-width:0; max-width:100%; }
+  .bits span i { font-style:normal; font-size:12px; color:var(--mute); }
+  .bits span.t { border-color:rgba(179,157,251,.55); } .bits span.t b { color:var(--violet); }
+  .bits span.x { border-color:rgba(99,199,230,.55); } .bits span.x b { color:var(--cyan); }
+  .bits span.o { border-color:rgba(233,185,73,.55); } .bits span.o b { color:var(--gold); }
+  .bits span.p { border-color:rgba(240,122,109,.6); } .bits span.p b { color:var(--red); }
+  .bits b { font-weight:600; word-break:break-all; }
+  .sets { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:6px; margin:12px 0 4px; font:13px/1.4 var(--mono); }
+  .sets div { background:var(--card2); border:1px solid var(--line); border-radius:8px; padding:6px 8px; color:var(--mute); min-width:0; overflow-wrap:anywhere; }
+  .sets div b { display:block; color:var(--ink); font-weight:600; }
+  .sets div.hit { border-color:var(--green); } .sets div.miss { border-color:var(--red); }
+  .trail { display:flex; flex-wrap:wrap; gap:4px; margin:10px 0 0; font:12.5px/1.3 var(--mono); }
+  .trail span { padding:4px 6px; border-radius:6px; background:var(--card2); color:var(--mute); }
+  .trail span.h { color:var(--green); } .trail span.m { color:var(--red); } .trail span.now { outline:1px solid var(--gold); }
+  .cores { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; margin:6px 0 4px; }
+  .cores div { background:var(--card2); border-radius:10px; padding:10px 12px; font-size:13px; color:var(--mute); line-height:1.5; min-width:0; }
+  .cores div b { display:block; font:600 22px/1.3 var(--mono); color:var(--ink); }
+  .cores b.M { color:var(--red); } .cores b.E { color:var(--gold); } .cores b.S { color:var(--cyan); } .cores b.I { color:var(--mute); }
+  pre.code { margin:14px 0 1.2em; padding:12px 14px; background:#0f1219; border:1px solid var(--line); border-radius:10px; color:var(--body); font:13px/1.6 var(--mono); white-space:pre-wrap; overflow-wrap:anywhere; }
+  @media (max-width:640px) { .sets { grid-template-columns:repeat(2,minmax(0,1fr)); } .cores { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+
+  .strip { display:grid; grid-template-columns:repeat(auto-fill,minmax(30px,1fr)); gap:4px; margin:12px 0 4px; font:12px/1 var(--mono); }
+  .strip span { position:relative; display:flex; align-items:center; justify-content:center; height:30px; border-radius:6px; background:var(--card2); color:var(--ink); border:1px solid var(--line); }
+  .strip span.ok { border-color:rgba(122,214,160,.7); background:rgba(122,214,160,.12); }
+  .strip span.no { border-color:rgba(240,122,109,.8); background:rgba(240,122,109,.16); }
+  .strip span i { position:absolute; left:3px; right:3px; bottom:2px; height:3px; border-radius:2px; }
+  .strip span i.f { background:var(--gold); } .strip span i.n { background:var(--cyan); } .strip span i.o { background:var(--violet); }
+  .robv { display:grid; grid-template-columns:repeat(auto-fill,minmax(176px,1fr)); gap:5px; margin:12px 0 4px; font:12.5px/1.35 var(--mono); }
+  .robv div { display:flex; justify-content:space-between; gap:6px; padding:6px 8px; border-radius:7px; background:var(--card2); border:1px solid var(--line); color:var(--body); min-width:0; }
+  .robv div b { font-weight:500; color:var(--ink); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; min-width:0; }
+  .robv div i { font-style:normal; color:var(--mute); white-space:nowrap; flex:0 0 auto; }
+  .robv div.run { border-color:var(--gold); } .robv div.run i { color:var(--gold); }
+  .robv div.done { border-color:rgba(122,214,160,.7); } .robv div.done i { color:var(--green); }
+  .robv div.miss { border-color:var(--red); } .robv div.miss i { color:var(--red); }
+  .robv div.ghost { border-style:dashed; border-color:var(--violet); opacity:.85; } .robv div.ghost b { color:var(--violet); text-decoration:line-through; }
+  .robv div.head { outline:2px solid var(--cyan); outline-offset:1px; }
+  .robv p { grid-column:1/-1; margin:0; color:var(--mute); font-family:var(--sans); font-size:14px; }
+  .ratv { display:flex; flex-wrap:wrap; gap:6px; margin:8px 0 4px; font:12.5px/1.4 var(--mono); align-items:center; }
+  .ratv span { background:var(--card2); border-radius:7px; padding:5px 8px; color:var(--mute); }
+  .ratv span b { color:var(--cyan); font-weight:600; }
+  .ratv .lbl { background:none; padding:0 4px 0 0; font-family:var(--sans); }
+</style>
+</head>
+<body>
+<div class="topbar">
+  <a class="back" href="../../../" data-i18n="nav.back"></a>
+  <div id="langToggle" role="group" data-i18n-aria="nav.lang"><button type="button" data-lang="zh" aria-pressed="false">中</button><button type="button" data-lang="en" aria-pressed="false">EN</button></div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="kicker" data-i18n="hero.kicker"></div>
+    <h1 data-i18n="hero.title"></h1>
+    <p class="sub" data-i18n-html="hero.sub"></p>
+    <p class="lead" data-i18n-html="hero.lead"></p>
+    <p class="note" data-i18n-html="hero.note"></p>
+  </div>
+</header>
+
+<nav class="wrap toc" data-i18n-aria="toc.label">
+  <h2 data-i18n="toc.title"></h2>
+  <ol>
+    <li><a href="#ch1"><span>01</span><b data-i18n="toc.ch1"></b></a></li>
+    <li><a href="#ch2"><span>02</span><b data-i18n="toc.ch2"></b></a></li>
+    <li><a href="#ch3"><span>03</span><b data-i18n="toc.ch3"></b></a></li>
+    <li><a href="#ch4"><span>04</span><b data-i18n="toc.ch4"></b></a></li>
+    <li><a href="#ch5"><span>05</span><b data-i18n="toc.ch5"></b></a></li>
+    <li><a href="#ch6"><span>06</span><b data-i18n="toc.ch6"></b></a></li>
+    <li><a href="#ch7"><span>07</span><b data-i18n="toc.ch7"></b></a></li>
+    <li><a href="#ch8"><span>08</span><b data-i18n="toc.ch8"></b></a></li>
+    <li><a href="#ch9"><span>09</span><b data-i18n="toc.ch9"></b></a></li>
+    <li><a href="#ch10"><span>10</span><b data-i18n="toc.ch10"></b></a></li>
+    <li><a href="#ch11"><span>11</span><b data-i18n="toc.ch11"></b></a></li>
+    <li><a href="#ch12"><span>12</span><b data-i18n="toc.ch12"></b></a></li>
+  </ol>
+</nav>
+
+<main>
+<section class="ch" id="ch1">
+  <div class="wrap">
+    <div class="num">01</div>
+    <h2 data-i18n="ch1.title"></h2>
+    <p class="law" data-i18n-html="ch1.law"></p>
+    <p data-i18n-html="ch1.p1"></p>
+    <p data-i18n-html="ch1.p2"></p>
+  </div>
+  <div class="wide"><figure class="lab">
+    <h3 data-i18n="ch1.model.title"></h3>
+    <p class="how" data-i18n-html="ch1.model.how"></p>
+    <canvas class="cv" id="cpCv" role="img" data-i18n-aria="ch1.model.aria"></canvas>
+    <div class="legend"><span><i style="background:var(--gold)"></i><span data-i18n="ch1.cv.you"></span></span><span><i style="background:var(--mute)"></i><span data-i18n="ch1.cv.a1"></span></span></div>
+    <div class="ctl"><label class="rng"><span data-i18n="ch1.ctl.w"></span><input type="range" id="cpW" min="1" max="8" step="1" value="8"><output id="cpWo"></output></label></div>
+    <div class="ctl"><label class="rng"><span data-i18n="ch1.ctl.p"></span><input type="range" id="cpP" min="2" max="25" step="1" value="15"><output id="cpPo"></output></label></div>
+    <div class="ctl"><label class="rng"><span data-i18n="ch1.ctl.a"></span><input type="range" id="cpA" min="0" max="11" step="1" value="5"><output id="cpAo"></output></label></div>
+    <div class="ctl"><button type="button" class="b" id="cpA1" data-i18n="ch1.btn.a1"></button><button type="button" class="b" id="cpZen" data-i18n="ch1.btn.zen"></button></div>
+    <div class="read">
+      <div><b class="g" id="cpCpi"></b><span data-i18n-html="ch1.read.cpi"></span></div>
+      <div><b class="c" id="cpIpc"></b><span data-i18n-html="ch1.read.ipc"></span></div>
+      <div><b class="r" id="cpLost"></b><span data-i18n-html="ch1.read.lost"></span></div>
+      <div><b class="" id="cpSlots"></b><span data-i18n-html="ch1.read.slots"></span></div>
+    </div>
+    <p class="say" id="cpSay" aria-live="polite"></p>
+  </figure></div>
+  <div class="wrap">
+    <p data-i18n-html="ch1.p3"></p>
+    <p class="take" data-i18n-html="ch1.limit"></p>
+  </div>
+</section>
+
+<section class="ch" id="ch2">
+  <div class="wrap">
+    <div class="num">02</div>
+    <h2 data-i18n="ch2.title"></h2>
+    <p class="law" data-i18n-html="ch2.law"></p>
+    <p data-i18n-html="ch2.p1"></p>
+    <p data-i18n-html="ch2.p2"></p>
+    <figure class="dia" data-dg="fsm"><div class="svg"></div><figcaption data-i18n-html="dg.fsm.cap"></figcaption></figure>
+  </div>
+  <div class="wide"><figure class="lab">
+    <h3 data-i18n="ch2.model.title"></h3>
+    <p class="how" data-i18n-html="ch2.model.how"></p>
+    <div class="ctl"><label class="rng"><span data-i18n="ch2.ctl.k"></span><input type="range" id="k2K" min="0" max="8" step="1" value="2"><output id="k2Ko"></output></label></div>
+    <div class="ctl"><label class="rng"><span data-i18n="ch2.ctl.p"></span><input type="range" id="k2P" min="0" max="6" step="1" value="4"><output id="k2Po"></output></label></div>
+    <div class="ctl"><div class="seg" role="radiogroup" data-i18n-aria="ch2.ctl.kind"><span class="lbl" data-i18n="ch2.ctl.kind"></span><label><input type="radio" name="k2Kind" value="nt"><span data-i18n="ch2.kind.nt"></span></label><label><input type="radio" name="k2Kind" value="btfn"><span data-i18n="ch2.kind.btfn"></span></label><label><input type="radio" name="k2Kind" value="1bit"><span data-i18n="ch2.kind.1bit"></span></label><label><input type="radio" name="k2Kind" value="2bit" checked><span data-i18n="ch2.kind.2bit"></span></label></div></div>
+    <div class="strip" id="k2Strip" role="img" data-i18n-aria="ch2.model.aria"></div>
+    <div class="legend"><span><i style="background:var(--gold)"></i><span data-i18n="ch2.strip.fwd"></span></span><span><i style="background:var(--cyan)"></i><span data-i18n="ch2.strip.inner"></span></span><span><i style="background:var(--violet)"></i><span data-i18n="ch2.strip.outer"></span></span></div>
+    <div class="read">
+      <div><b class="" id="k2nt"></b><span data-i18n-html="ch2.read.nt"></span></div>
+      <div><b class="v" id="k2bt"></b><span data-i18n-html="ch2.read.btfn"></span></div>
+      <div><b class="c" id="k2b1"></b><span data-i18n-html="ch2.read.1bit"></span></div>
+      <div><b class="g" id="k2b2"></b><span data-i18n-html="ch2.read.2bit"></span></div>
+    </div>
+    <p class="say" id="k2Say" aria-live="polite"></p>
+  </figure></div>
+  <div class="wrap">
+    <p data-i18n-html="ch2.p3"></p>
+    <p data-i18n-html="ch2.p4"></p>
+  </div>
+  <div class="wide"><figure class="lab">
+    <h3 data-i18n="ch2.model2.title"></h3>
+    <p class="how" data-i18n-html="ch2.model2.how"></p>
+    <canvas class="cv" id="soCv" role="img" data-i18n-aria="ch2.model2.aria"></canvas>
+    <div class="ctl"><label class="rng"><span data-i18n="ch2.ctl.dis"></span><input type="range" id="soD" min="0" max="9" step="1" value="9"><output id="soDo"></output></label></div>
+    <div class="ctl"><label class="chk"><input type="checkbox" id="soBl"><span data-i18n="ch2.ctl.bl"></span></label></div>
+    <div class="read">
+      <div><b class="r" id="soMiss"></b><span data-i18n-html="ch2.read.miss"></span></div>
+      <div><b class="g" id="soCyc"></b><span data-i18n-html="ch2.read.cyc"></span></div>
+      <div><b class="" id="soVs"></b><span data-i18n-html="ch2.read.vs"></span></div>
+    </div>
+    <p class="say" id="soSay" aria-live="polite"></p>
+  </figure></div>
+  <div class="wrap">
+    <p data-i18n-html="ch2.p5"></p>
+    <p class="take" data-i18n-html="ch2.limit"></p>
+  </div>
+</section>
+
+<section class="ch" id="ch3">
+  <div class="wrap">
+    <div class="num">03</div>
+    <h2 data-i18n="ch3.title"></h2>
+    <p class="law" data-i18n-html="ch3.law"></p>
+    <p data-i18n-html="ch3.p1"></p>
+    <pre class="code" data-i18n-aria="ch3.code.aria" data-i18n="ch3.code"></pre>
+    <p data-i18n-html="ch3.p2"></p>
+    <figure class="dia" data-dg="gs"><div class="svg"></div><figcaption data-i18n-html="dg.gs.cap"></figcaption></figure>
+  </div>
+  <div class="wide"><figure class="lab">
+    <h3 data-i18n="ch3.model.title"></h3>
+    <p class="how" data-i18n-html="ch3.model.how"></p>
+    <canvas class="cv" id="gsCv" role="img" data-i18n-aria="ch3.model.aria"></canvas>
+    <div class="ctl"><div class="seg wrapmany" role="radiogroup" data-i18n-aria="ch3.ctl.trace"><span class="lbl" data-i18n="ch3.ctl.trace"></span><label><input type="radio" name="gsT" value="corr" checked><span data-i18n="ch3.tr.corr"></span></label><label><input type="radio" name="gsT" value="loop4"><span data-i18n="ch3.tr.loop4"></span></label><label><input type="radio" name="gsT" value="mix"><span data-i18n="ch3.tr.mix"></span></label></div></div>
+    <div class="ctl"><div class="seg" role="radiogroup" data-i18n-aria="ch3.ctl.size"><span class="lbl" data-i18n="ch3.ctl.size"></span><label><input type="radio" name="gsN" value="6"><span data-i18n="ch3.size.6"></span></label><label><input type="radio" name="gsN" value="10" checked><span data-i18n="ch3.size.10"></span></label></div></div>
+    <div class="ctl"><label class="rng"><span data-i18n="ch3.ctl.h"></span><input type="range" id="gsH" min="0" max="10" step="1" value="2"><output id="gsHo"></output></label></div>
+    <div class="read">
+      <div><b class="g" id="gsG"></b><span data-i18n-html="ch3.read.g"></span></div>
+      <div><b class="" id="gsB"></b><span data-i18n-html="ch3.read.b"></span></div>
+      <div><b class="c" id="gsD"></b><span data-i18n-html="ch3.read.d"></span></div>
+    </div>
+    <p class="say" id="gsSay" aria-live="polite"></p>
+  </figure></div>
+  <div class="wrap">
+    <p data-i18n-html="ch3.p3"></p>
+    <p class="take" data-i18n-html="ch3.limit"></p>
+  </div>
+</section>
+
+<section class="ch" id="ch4">
+  <div class="wrap">
+    <div class="num">04</div>
+    <h2 data-i18n="ch4.title"></h2>
+    <p class="law" data-i18n-html="ch4.law"></p>
+    <p data-i18n-html="ch4.p1"></p>
+    <figure class="dia" data-dg="tage"><div class="svg"></div><figcaption data-i18n-html="dg.tage.cap"></figcaption></figure>
+    <p data-i18n-html="ch4.p2"></p>
+  </div>
+  <div class="wide"><figure class="lab">
+    <h3 data-i18n="ch4.model.title"></h3>
+    <p class="how" data-i18n-html="ch4.model.how"></p>
+    <canvas class="cv xtall" id="cmCv" role="img" data-i18n-aria="ch4.model.aria"></canvas>
+    <div class="legend"><span><i style="background:var(--mute)"></i><span data-i18n="ch4.p.bimodal"></span></span><span><i style="background:var(--cyan)"></i><span data-i18n="ch4.p.gshare"></span></span><span><i style="background:var(--gold)"></i><span data-i18n="ch4.p.tage"></span></span></div>
+    <div class="ctl"><div class="seg" role="radiogroup" data-i18n-aria="ch4.ctl.b"><span class="lbl" data-i18n="ch4.ctl.b"></span><label><input type="radio" name="cmB" value="4096"><span>4 Kbit</span></label><label><input type="radio" name="cmB" value="8192"><span>8 Kbit</span></label><label><input type="radio" name="cmB" value="16384" checked><span>16 Kbit</span></label><label><input type="radio" name="cmB" value="32768"><span>32 Kbit</span></label></div></div>
+    <div class="read">
+      <div><b class="" id="cmRb"></b><span data-i18n-html="ch4.read.b"></span></div>
+      <div><b class="c" id="cmRg"></b><span data-i18n-html="ch4.read.g"></span></div>
+      <div><b class="g" id="cmRt"></b><span data-i18n-html="ch4.read.t"></span></div>
+      <div><b class="" id="cmBits"></b><span data-i18n-html="ch4.read.bits"></span></div>
+    </div>
+    <p class="say" id="cmSay" aria-live="polite"></p>
+  </figure></div>
+  <div class="wrap">
+    <p data-i18n-html="ch4.p3"></p>
+    <p class="take" data-i18n-html="ch4.limit"></p>
+  </div>
+</section>
+
+<section class="ch" id="ch5">
+  <div class="wrap">
+    <div class="num">05</div>
+    <h2 data-i18n="ch5.title"></h2>
+    <p class="law" data-i18n-html="ch5.law"></p>
+    <p data-i18n-html="ch5.p1"></p>
+    <figure class="dia" data-dg="btb"><div class="svg"></div><figcaption data-i18n-html="dg.btb.cap"></figcaption></figure>
+    <p data-i18n-html="ch5.p2"></p>
+  </div>
+  <div class="wide"><figure class="lab">
+    <h3 data-i18n="ch5.model.title"></h3>
+    <p class="how" data-i18n-html="ch5.model.how"></p>
+    <canvas class="cv" id="rsCv" role="img" data-i18n-aria="ch5.model.aria"></canvas>
+    <div class="ctl"><label class="rng"><span data-i18n="ch5.ctl.d"></span><input type="range" id="rsD" min="0" max="7" step="1" value="5"><output id="rsDo"></output></label></div>
+    <div class="ctl"><div class="seg wrapmany" role="radiogroup" data-i18n-aria="ch5.ctl.s"><span class="lbl" data-i18n="ch5.ctl.s"></span><label><input type="radio" name="rsS" value="4"><span>4</span></label><label><input type="radio" name="rsS" value="8"><span>8</span></label><label><input type="radio" name="rsS" value="16" checked><span>16</span></label><label><input type="radio" name="rsS" value="24"><span>24</span></label><label><input type="radio" name="rsS" value="32"><span>32</span></label><label><input type="radio" name="rsS" value="52"><span>52</span></label><label><input type="radio" name="rsS" value="64"><span>64</span></label></div></div>
+    <div class="read">
+      <div><b class="g" id="rsR"></b><span data-i18n-html="ch5.read.ras"></span></div>
+      <div><b class="r" id="rsB"></b><span data-i18n-html="ch5.read.btb"></span></div>
+      <div><b class="" id="rsN"></b><span data-i18n-html="ch5.read.n"></span></div>
+    </div>
+    <p class="say" id="rsSay" aria-live="polite"></p>
+  </figure></div>
+  <div class="wrap">
+    <p data-i18n-html="ch5.p3"></p>
+    <p class="take" data-i18n-html="ch5.limit"></p>
+  </div>
+</section>
+
+<section class="ch" id="ch6">
+  <div class="wrap">
+    <div class="num">06</div>
+    <h2 data-i18n="ch6.title"></h2>
+    <p class="law" data-i18n-html="ch6.law"></p>
+    <p data-i18n-html="ch6.p1"></p>
+    <pre class="code" data-i18n-aria="ch6.code.aria" data-i18n="ch6.code"></pre>
+  </div>
+  <div class="wide"><figure class="lab">
+    <h3 data-i18n="ch6.model.title"></h3>
+    <p class="how" data-i18n-html="ch6.model.how"></p>
+    <canvas class="cv tall" id="ilCv" role="img" data-i18n-aria="ch6.model.aria"></canvas>
+    <div class="legend"><span><i style="background:var(--cyan)"></i><span data-i18n="ch6.k.load"></span></span><span><i style="background:var(--red)"></i><span data-i18n="ch6.k.mul"></span></span><span><i style="background:var(--gold)"></i><span data-i18n="ch6.k.alu"></span></span><span><i style="background:var(--violet)"></i><span data-i18n="ch6.k.br"></span></span></div>
+    <div class="ctl"><label class="rng"><span data-i18n="ch6.ctl.w"></span><input type="range" id="ilW" min="0" max="5" step="1" value="3"><output id="ilWo"></output></label></div>
+    <div class="ctl"><div class="seg" role="radiogroup" data-i18n-aria="ch6.ctl.mode"><span class="lbl" data-i18n="ch6.ctl.mode"></span><label><input type="radio" name="ilM" value="inorder" checked><span data-i18n="ch6.mode.inorder"></span></label><label><input type="radio" name="ilM" value="ooo"><span data-i18n="ch6.mode.ooo"></span></label></div></div>
+    <div class="read">
+      <div><b class="r" id="ilIn"></b><span data-i18n-html="ch6.read.in"></span></div>
+      <div><b class="g" id="ilOo"></b><span data-i18n-html="ch6.read.oo"></span></div>
+      <div><b class="" id="ilCap"></b><span data-i18n-html="ch6.read.cap"></span></div>
+    </div>
+    <p class="say" id="ilSay" aria-live="polite"></p>
+  </figure></div>
+  <div class="wrap">
+    <p data-i18n-html="ch6.p2"></p>
+    <p class="take" data-i18n-html="ch6.limit"></p>
+  </div>
+</section>
+
+<section class="ch" id="ch7">
+  <div class="wrap">
+    <div class="num">07</div>
+    <h2 data-i18n="ch7.title"></h2>
+    <p class="law" data-i18n-html="ch7.law"></p>
+    <p data-i18n-html="ch7.p1"></p>
+    <figure class="dia" data-dg="ren"><div class="svg"></div><figcaption data-i18n-html="dg.ren.cap"></figcaption></figure>
+    <p data-i18n-html="ch7.p2"></p>
+    <figure class="dia" data-dg="ooo"><div class="svg"></div><figcaption data-i18n-html="dg.ooo.cap"></figcaption></figure>
+  </div>
+  <div class="wide"><figure class="lab">
+    <h3 data-i18n="ch7.model.title"></h3>
+    <p class="how" data-i18n-html="ch7.model.how"></p>
+    <div class="ctl"><div class="seg wrapmany" role="radiogroup" data-i18n-aria="ch7.ctl.mode"><span class="lbl" data-i18n="ch7.ctl.mode"></span><label><input type="radio" name="c7M" value="inorder"><span data-i18n="ch7.mode.inorder"></span></label><label><input type="radio" name="c7M" value="scoreboard"><span data-i18n="ch7.mode.scoreboard"></span></label><label><input type="radio" name="c7M" value="ooo" checked><span data-i18n="ch7.mode.ooo"></span></label></div></div>
+    <div class="ctl"><div class="seg" role="radiogroup" data-i18n-aria="ch7.ctl.rob"><span class="lbl" data-i18n="ch7.ctl.rob"></span><label><input type="radio" name="c7R" value="8"><span>8</span></label><label><input type="radio" name="c7R" value="16"><span>16</span></label><label><input type="radio" name="c7R" value="32" checked><span>32</span></label></div></div>
+    <div class="ctl"><div class="seg wrapmany" role="radiogroup" data-i18n-aria="ch7.ctl.miss"><span class="lbl" data-i18n="ch7.ctl.miss"></span><label><input type="radio" name="c7L" value="l2"><span data-i18n-html="ch7.miss.l2"></span></label><label><input type="radio" name="c7L" value="l3" checked><span data-i18n-html="ch7.miss.l3"></span></label><label><input type="radio" name="c7L" value="mem"><span data-i18n-html="ch7.miss.mem"></span></label></div></div>
+    <div class="ctl"><button type="button" class="b" id="c7Step" data-i18n="ch7.btn.step"></button><button type="button" class="b" id="c7Ten" data-i18n="ch7.btn.ten"></button><button type="button" class="b" id="c7Run" data-i18n="ch7.btn.run"></button><button type="button" class="b" id="c7Reset" data-i18n="ch7.btn.reset"></button></div>
+    <div class="ratv" id="c7Rat" role="list" data-i18n-aria="ch7.rat.aria"></div>
+    <div class="robv" id="c7Rob" role="list" data-i18n-aria="ch7.rob.aria"></div>
+    <div class="read">
+      <div><b class="g" id="c7C"></b><span data-i18n-html="ch7.read.cyc"></span></div>
+      <div><b class="n" id="c7Com"></b><span data-i18n-html="ch7.read.com"></span></div>
+      <div><b class="c" id="c7Fly"></b><span data-i18n-html="ch7.read.fly"></span></div>
+      <div><b class="" id="c7Tot"></b><span data-i18n-html="ch7.read.total"></span></div>
+    </div>
+    <p class="step" id="c7Totals"></p>
+    <p class="say" id="c7Say" aria-live="polite"></p>
+  </figure></div>
+  <div class="wrap">
+    <p data-i18n-html="ch7.p3"></p>
+    <p class="take" data-i18n-html="ch7.limit"></p>
+  </div>
+</section>
+
+<section class="ch" id="ch8">
+  <div class="wrap">
+    <div class="num">08</div>
+    <h2 data-i18n="ch8.title"></h2>
+    <p class="law" data-i18n-html="ch8.law"></p>
+    <p data-i18n-html="ch8.p1"></p>
+    <figure class="dia" data-dg="rob"><div class="svg"></div><figcaption data-i18n-html="dg.rob.cap"></figcaption></figure>
+    <p data-i18n-html="ch8.p2"></p>
+  </div>
+  <div class="wide"><figure class="lab">
+    <h3 data-i18n="ch8.model.title"></h3>
+    <p class="how" data-i18n-html="ch8.model.how"></p>
+    <div class="ctl"><div class="seg wrapmany" role="radiogroup" data-i18n-aria="ch8.ctl.ev"><span class="lbl" data-i18n="ch8.ctl.ev"></span><label><input type="radio" name="c8E" value="none"><span data-i18n="ch8.ev.none"></span></label><label><input type="radio" name="c8E" value="mp" checked><span data-i18n="ch8.ev.mp"></span></label><label><input type="radio" name="c8E" value="fault"><span data-i18n="ch8.ev.fault"></span></label></div></div>
+    <div class="ctl"><button type="button" class="b" id="c8Step" data-i18n="ch7.btn.step"></button><button type="button" class="b" id="c8Ten" data-i18n="ch7.btn.ten"></button><button type="button" class="b" id="c8Run" data-i18n="ch7.btn.run"></button><button type="button" class="b" id="c8Reset" data-i18n="ch7.btn.reset"></button></div>
+    <div class="ratv" id="c8Rat" role="list" data-i18n-aria="ch7.rat.aria"></div>
+    <div class="robv" id="c8Rob" role="list" data-i18n-aria="ch7.rob.aria"></div>
+    <div class="read">
+      <div><b class="g" id="c8C"></b><span data-i18n-html="ch7.read.cyc"></span></div>
+      <div><b class="n" id="c8Com"></b><span data-i18n-html="ch7.read.com"></span></div>
+      <div><b class="c" id="c8Fly"></b><span data-i18n-html="ch7.read.fly"></span></div>
+      <div><b class="r" id="c8Sq"></b><span data-i18n-html="ch8.read.sq"></span></div>
+    </div>
+    <p class="say" id="c8Say" aria-live="polite"></p>
+  </figure></div>
+  <div class="wrap">
+    <p data-i18n-html="ch8.p3"></p>
+    <p data-i18n-html="ch8.p4"></p>
+    <p class="take" data-i18n-html="ch8.limit"></p>
+  </div>
+</section>
+
+<section class="ch" id="ch9">
+  <div class="wrap">
+    <div class="num">09</div>
+    <h2 data-i18n="ch9.title"></h2>
+    <p class="law" data-i18n-html="ch9.law"></p>
+    <p data-i18n-html="ch9.p1"></p>
+    <table class="fam"><thead><tr><th data-i18n="ch9.th.core"></th><th data-i18n="ch9.th.rob"></th><th data-i18n="ch9.th.w"></th><th data-i18n="ch9.th.src"></th></tr></thead><tbody>
+      <tr><td data-i18n="ch9.r.hsw"></td><td data-h="" data-hk="ch9.th.rob" data-i18n-html="ch9.r.hsw.rob"></td><td data-h="" data-hk="ch9.th.w" data-i18n-html="ch9.r.hsw.w"></td><td data-h="" data-hk="ch9.th.src" data-i18n-html="ch9.r.hsw.src"></td></tr>
+      <tr class="hi"><td data-i18n="ch9.r.zen"></td><td data-h="" data-hk="ch9.th.rob" data-i18n-html="ch9.r.zen.rob"></td><td data-h="" data-hk="ch9.th.w" data-i18n-html="ch9.r.zen.w"></td><td data-h="" data-hk="ch9.th.src" data-i18n-html="ch9.r.zen.src"></td></tr>
+      <tr><td data-i18n="ch9.r.lc"></td><td data-h="" data-hk="ch9.th.rob" data-i18n-html="ch9.r.lc.rob"></td><td data-h="" data-hk="ch9.th.w" data-i18n-html="ch9.r.lc.w"></td><td data-h="" data-hk="ch9.th.src" data-i18n-html="ch9.r.lc.src"></td></tr>
+      <tr><td data-i18n="ch9.r.x925"></td><td data-h="" data-hk="ch9.th.rob" data-i18n-html="ch9.r.x925.rob"></td><td data-h="" data-hk="ch9.th.w" data-i18n-html="ch9.r.x925.w"></td><td data-h="" data-hk="ch9.th.src" data-i18n-html="ch9.r.x925.src"></td></tr>
+    </tbody></table>
+    <p data-i18n-html="ch9.p2"></p>
+  </div>
+  <div class="wide"><figure class="lab">
+    <h3 data-i18n="ch9.model.title"></h3>
+    <p class="how" data-i18n-html="ch9.model.how"></p>
+    <canvas class="cv tall" id="wnCv" role="img" data-i18n-aria="ch9.model.aria"></canvas>
+    <div class="legend"><span><i style="background:var(--gold)"></i><span data-i18n="ch9.acc.1"></span></span><span><i style="background:var(--green)"></i><span>99%</span></span><span><i style="background:var(--cyan)"></i><span>95%</span></span><span><i style="background:var(--red)"></i><span>90%</span></span></div>
+    <div class="ctl"><label class="rng"><span data-i18n="ch9.ctl.rob"></span><input type="range" id="wnR" min="0" max="5" step="1" value="5"><output id="wnRo"></output></label></div>
+    <div class="ctl"><div class="seg wrapmany" role="radiogroup" data-i18n-aria="ch9.ctl.acc"><span class="lbl" data-i18n="ch9.ctl.acc"></span><label><input type="radio" name="wnA" value="1" checked><span data-i18n="ch9.acc.1"></span></label><label><input type="radio" name="wnA" value="0.99"><span>99%</span></label><label><input type="radio" name="wnA" value="0.95"><span>95%</span></label><label><input type="radio" name="wnA" value="0.9"><span>90%</span></label></div></div>
+    <div class="ctl"><div class="seg wrapmany" role="radiogroup" data-i18n-aria="ch9.ctl.miss"><span class="lbl" data-i18n="ch9.ctl.miss"></span><label><input type="radio" name="wnL" value="l3" checked><span data-i18n-html="ch7.miss.l3"></span></label><label><input type="radio" name="wnL" value="mem"><span data-i18n-html="ch7.miss.mem"></span></label></div></div>
+    <div class="read">
+      <div><b class="g" id="wnI"></b><span data-i18n-html="ch9.read.ipc"></span></div>
+      <div><b class="c" id="wnM"></b><span data-i18n-html="ch9.read.mlp"></span></div>
+      <div><b class="r" id="wnB"></b><span data-i18n-html="ch9.read.btw"></span></div>
+    </div>
+    <p class="say" id="wnSay" aria-live="polite"></p>
+  </figure></div>
+  <div class="wrap">
+    <p data-i18n-html="ch9.p3"></p>
+    <p class="take" data-i18n-html="ch9.limit"></p>
+  </div>
+</section>
+
+<section class="ch" id="ch10">
+  <div class="wrap">
+    <div class="num">10</div>
+    <h2 data-i18n="ch10.title"></h2>
+    <p class="law" data-i18n-html="ch10.law"></p>
+    <p data-i18n-html="ch10.p1"></p>
+    <pre class="code" data-i18n-aria="ch10.code.aria" data-i18n="ch10.code"></pre>
+    <p data-i18n-html="ch10.p2"></p>
+    <figure class="dia" data-dg="sp"><div class="svg"></div><figcaption data-i18n-html="dg.sp.cap"></figcaption></figure>
+  </div>
+  <div class="wide"><figure class="lab">
+    <h3 data-i18n="ch10.model.title"></h3>
+    <p class="how" data-i18n-html="ch10.model.how"></p>
+    <canvas class="cv" id="spCv" role="img" data-i18n-aria="ch10.model.aria"></canvas>
+    <div class="ctl"><div class="seg wrapmany" role="radiogroup" data-i18n-aria="ch10.ctl.mit"><span class="lbl" data-i18n="ch10.ctl.mit"></span><label><input type="radio" name="spM" value="none" checked><span data-i18n="ch10.mit.none"></span></label><label><input type="radio" name="spM" value="lfence"><span data-i18n="ch10.mit.lfence"></span></label><label><input type="radio" name="spM" value="mask"><span data-i18n="ch10.mit.mask"></span></label></div></div>
+    <div class="ctl"><label class="rng"><span data-i18n="ch10.ctl.train"></span><input type="range" id="spT" min="0" max="8" step="1" value="6"><output id="spTo"></output></label></div>
+    <div class="ctl"><label class="rng"><span data-i18n="ch10.ctl.noise"></span><input type="range" id="spN" min="0" max="6" step="1" value="2"><output id="spNo"></output></label></div>
+    <div class="ctl"><button type="button" class="b" id="spOne" data-i18n="ch10.btn.one"></button><button type="button" class="b" id="spAll" data-i18n="ch10.btn.all"></button><button type="button" class="b" id="spReset" data-i18n="ch10.btn.reset"></button></div>
+    <div class="read">
+      <div><b class="g" id="spGot"></b><span data-i18n-html="ch10.read.got"></span></div>
+      <div><b class="r" id="spStr"></b><span data-i18n-html="ch10.read.str"></span></div>
+      <div><b class="c" id="spWin"></b><span data-i18n-html="ch10.read.win"></span></div>
+      <div><b class="" id="spCost"></b><span data-i18n-html="ch10.read.cost"></span></div>
+    </div>
+    <p class="say" id="spSay" aria-live="polite"></p>
+  </figure></div>
+  <div class="wrap">
+    <p data-i18n-html="ch10.p3"></p>
+    <p data-i18n-html="ch10.p4"></p>
+    <p class="take" data-i18n-html="ch10.limit"></p>
+  </div>
+</section>
+
+<section class="ch" id="ch11">
+  <div class="wrap">
+    <div class="num">11</div>
+    <h2 data-i18n="ch11.title"></h2>
+    <p class="law" data-i18n-html="ch11.law"></p>
+    <p data-i18n-html="ch11.p1"></p>
+    <h3 class="sub3" data-i18n="ch11.h.est"></h3>
+    <ul><li data-i18n-html="ch11.e1"></li><li data-i18n-html="ch11.e2"></li><li data-i18n-html="ch11.e3"></li></ul>
+    <h3 class="sub3" data-i18n="ch11.h.demo"></h3>
+    <ul><li data-i18n-html="ch11.d1"></li><li data-i18n-html="ch11.d2"></li><li data-i18n-html="ch11.d3"></li><li data-i18n-html="ch11.d4"></li></ul>
+    <h3 class="sub3" data-i18n="ch11.h.claim"></h3>
+    <ul><li data-i18n-html="ch11.c1"></li><li data-i18n-html="ch11.c2"></li></ul>
+    <p data-i18n-html="ch11.p2"></p>
+    <p class="take" data-i18n-html="ch11.limit"></p>
+  </div>
+</section>
+
+<section class="ch" id="ch12">
+  <div class="wrap">
+    <div class="num">12</div>
+    <h2 data-i18n="ch12.title"></h2>
+    <p class="law" data-i18n-html="ch12.law"></p>
+    <ol class="plain qs">
+      <li data-i18n-html="ch12.q1"></li>
+      <li data-i18n-html="ch12.q2"></li>
+      <li data-i18n-html="ch12.q3"></li>
+    </ol>
+    <div class="sum" data-i18n-html="ch12.sum"></div>
+    <p style="margin-top:2em" data-i18n-html="ch12.links"></p>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap" data-i18n-html="footer"></div></footer>
+
+<script src="models.js?v=20261115"></script>
+<script src="copy.zh.js?v=20261115"></script>
+<script src="copy.en.js?v=20261115" onerror="void 0"></script>
+<script src="app.js?v=20261115"></script>
+</body>
+</html>
