@@ -55,9 +55,14 @@ node atlas/tests/data-quality.cjs
 node tests/concept-search.cjs                     # 匹配规则 + 十个日常词的落点
 node atlas/tests/registry-import.cjs              # 文章 REGISTRY.json → 图谱片段 + 搜索分片
 HOME_TEST_URL=http://127.0.0.1:18871/ node tests/home-concept-search.cjs   # 浏览器
+# 站内导航（面包屑、子主题视图、自动链接；登记新页面后先跑 node scripts/build-site-nav.cjs）
+node scripts/build-site-nav.cjs --check
+node tests/site-nav.cjs
+SITE_NAV_BASE_URL=http://127.0.0.1:18871/ node tests/site-nav-browser.cjs   # 浏览器
 ```
 
 - 新增长文（一篇讲透一个领域）：标准、文件布局与登记步骤见 [specs/essays.md](specs/essays.md)。
+- 站内导航（面包屑、`/<分类>/<子主题>/` 目录页、正文里《页面标题》自动变链接）：见 [specs/site-navigation.md](specs/site-navigation.md)。每个上线页面都引入 `site-nav.css` / `site-nav.js`，由 `scripts/build-site-nav.cjs` 生成，不手写。
 - 给文章页加概念、加分区：`node scripts/atlas-import-registry.cjs <页面目录>`、`--add-region`，细则见 [specs/atlas-search-index.md](specs/atlas-search-index.md)。
 
 - Playwright 不在本仓库，运行时加上 `NODE_PATH=~/fast/integ-life/integ-games/node_modules`。

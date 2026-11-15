@@ -27,6 +27,7 @@ Views come from URL state; nothing is stored besides the language.
 | --- | --- |
 | `/` | Home: **Featured**, then **Long Reads**, then **More entrances** |
 | `?category=<id>` | All pages of the category on one page, grouped by subtopic |
+| `?category=<id>&subtopic=<id>` | Only that subtopic of the category (2026-11-15, specs/site-navigation.md) |
 | `?stage=<id>` | All pages of the stage, grouped by category (registry order) |
 | `?category=<id>&stage=<id>` | Category view filtered by stage (AND); empty groups disappear |
 | `?s=<words>` | Search results; combines with `category` / `stage` as a scope (AND) |
@@ -65,6 +66,18 @@ and a page count. Pages whose `subtopic` is missing or not registered go into a
 trailing "其他 / Other" group. If the category as a whole has only one group (for
 example Demos, Language, Engineering) the heading is omitted; a stage filter does
 not change whether headings are shown.
+
+### Subtopic view and breadcrumb (2026-11-15)
+
+`?category=<id>&subtopic=<id>` lists only the pages of that registered subtopic, without a group heading.
+In the category view every registered group heading is a link (48 px tall) to its subtopic view; the
+「其他 / Other」 group has none. Category and subtopic views show a breadcrumb above the grid:
+`全部 › <category> › <subtopic>` / `All › …` (two levels in a category view), each item a real link with a
+48 × 48 target and `aria-current="page"` on the current level. Plain clicks on a crumb or a heading switch in
+place with `pushState` (focus moves to the subtopic crumb after a heading click, to the Featured chip after
+「全部」); modified clicks open the URL. Pressing the pressed category chip again leaves the subtopic view.
+`/<category>/<subtopic>/` is a generated redirect stub to this view. Contract and tests:
+specs/site-navigation.md, `tests/site-nav.cjs`, `tests/site-nav-browser.cjs`.
 
 ### Cards
 
@@ -118,6 +131,8 @@ Chinese-only badge) and
 ## URL contract
 
 - `category`, `stage`: registered ids; unknown values fall back to the home view.
+- `subtopic`: a subtopic id registered under the current category; otherwise it is ignored (category view)
+  and dropped on the next URL write. Selecting another category drops it.
   Changing a chip uses `history.pushState`, so Back/Forward and reload restore it.
 - `s`: site search, written with `replaceState`; dropped in the LeetCode view.
 - `q`: LeetCode search only.

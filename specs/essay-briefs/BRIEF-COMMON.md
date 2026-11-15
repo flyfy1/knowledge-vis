@@ -63,6 +63,13 @@ and follow §7 for fitting the format to site rules. In particular:
   top right, state in `localStorage['knowledge-lang']` inside try/catch with an in-memory fallback, first visit
   follows `navigator.language`, switching is instant and redraws canvases.
 - A back link to the site index at the top (relative URL to the repo root, e.g. `../../../`), like other pages.
+- Site navigation (specs/site-navigation.md): put `<link rel="stylesheet" href="../../../site-nav.css?v=sn-20261115">`
+  in `<head>` and `<script defer src="../../../site-nav.js?v=sn-20261115"></script>` as the last line of `<body>`
+  (the registrar's `node scripts/build-site-nav.cjs` adds or corrects them). It draws the breadcrumb
+  首页 › category › subtopic above your `<h1>` (or above a `.kicker` line right before it) and turns exact
+  titles of other site pages written as 《title》 / “Title” into links. Name other pages by their exact
+  `pages.config.js` title in those brackets; add `data-no-autolink` to an element whose 《…》 must stay text
+  (for example a book that shares a page's title).
 - Do **not** add the `page-provenance` header label, and do not load `lesson-shell.js`; the integrator adds the
   label once the commit exists. You may take the dark palette and type choices of the reference page (see
   STANDARD.md §4) but fix its contrast and target-size problems: all text ≥ 4.5:1, every interactive target

@@ -43,6 +43,8 @@ The first essay was `demos/scarcity-moves/`. Six more were added on 2026-11-11 a
   models.js         pure functions, UMD (page + node)
   app.js            drawing, wiring, i18n, on-screen gating
   REGISTRY.json     the essay's concepts for the atlas and search
+                    (index.html also loads ../../../site-nav.css and, last in <body>, site-nav.js:
+                    breadcrumb and auto-links, added by scripts/build-site-nav.cjs; specs/site-navigation.md)
   BRIEF.md          builder notes, sources, checked / not checked, review
   tests/models.cjs  tests/browser.cjs
 ```
@@ -64,7 +66,10 @@ types ("为什么要打疫苗", "how does my phone know where I am"), not only t
    first repointed.
 4. **pages.config.js.** Add the category and subtopic if they are new, plus a `<category>/index.html`
    redirect (copy `probability/index.html`). Add the entry and append the slug to `window.KNOWLEDGE_ESSAYS`.
-   Set `languages: ["zh"]` if there is no English yet.
+   Set `languages: ["zh"]` if there is no English yet. Then run `node scripts/build-site-nav.cjs` (adds the
+   site-nav include to the page, the subtopic redirect stub and the page to `site-nav-data.js`) and
+   `node tests/site-nav.cjs`; see specs/site-navigation.md. Quoting another page's exact title in 《》 / “”
+   makes it a link automatically.
 5. **Atlas.** Run `node scripts/atlas-import-registry.cjs <dir>/` (first `--add-region`, or decide on
    `--region`, when the category has no region). Write the edges by hand into
    `atlas/graph/lessons/<slug>.json`, only where one chapter builds on another or where the chapter links
