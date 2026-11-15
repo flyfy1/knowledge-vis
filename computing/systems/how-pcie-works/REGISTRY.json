@@ -9,8 +9,8 @@
     "en": "Why PCIe Keeps Doubling"
   },
   "desc": {
-    "zh": "显卡、固态、网卡都插在 PCIe 上。这条总线二十多年里速度翻了七次，靠的是什么？一次读写在线上到底发生了什么？十个可以拖动的模型：链路协商、TLP 包头、信用流控、ACK/NAK 重发、开机枚举、MSI 中断、走线损耗、PAM4 眼图、FEC 和 FLIT。",
-    "en": "Graphics cards, SSDs and network cards all plug into PCIe. Its speed has doubled seven times in over twenty years: how, and what actually happens on the wire during one read or write? Ten models you can drag: link negotiation, TLP headers, credit flow control, ACK/NAK replay, enumeration, MSI interrupts, trace loss, PAM4 eyes, FEC and FLITs."
+    "zh": "显卡、固态、网卡都插在 PCIe 上。这条总线二十多年里速度翻了六次，靠的是什么？一次读写在线上到底发生了什么？十个可以拖动的模型：链路协商、TLP 包头、信用流控、ACK/NAK 重发、开机枚举、MSI 中断、走线损耗、PAM4 眼图、FEC 和 FLIT。",
+    "en": "Graphics cards, SSDs and network cards all plug into PCIe. Its speed has doubled six times in over twenty years: how, and what actually happens on the wire during one read or write? Ten models you can drag: link negotiation, TLP headers, credit flow control, ACK/NAK replay, enumeration, MSI interrupts, trace loss, PAM4 eyes, FEC and FLITs."
   },
   "tags": [
     {

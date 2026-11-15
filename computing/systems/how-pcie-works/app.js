@@ -262,8 +262,10 @@ DIAG.d4 = (W, n) => {
     cells.forEach(([k, col], i) => { b += box(x, 20, wide[i], 60, col, { rx: 3, a: 0.16 }) + lb(x + wide[i] / 2, 50, t('d4.' + k), wide[i] - 8); x += wide[i]; });
     const leg = [['cyan', 'tl'], ['gold', 'dll'], ['violet', 'phy']];
     leg.forEach(([col, k], i) => { const lx = 90 + i * 260; b += box(lx, 110, 22, 22, col, { rx: 3, a: 0.4 }) + lb(lx + 32, 121, t('d4.' + k), 220, { a: 'start' }); });
-    b += lb(450, 172, t('d4.note'), 860, { c: 'm' });
-    return { h: 200, body: b };
+    // the note starts below the tallest legend entry and the figure grows with it
+    const ly = 121 + Math.max(...leg.map(([, k]) => nLines(t('d4.' + k), 220) - 1)) * 19 / 2 + 22, nl = nLines(t('d4.note'), 860);
+    b += lb(450, ly + 10, t('d4.note'), 860, { c: 'm', top: true });
+    return { h: ly + 10 + nl * 19 + 4, body: b };
   }
   cells.forEach(([k, col], i) => { b += box(80, 10 + i * 46, 190, 42, col, { rx: 3, a: 0.16 }) + lb(175, 31 + i * 46, t('d4.' + k), 180); });
   const leg = [['cyan', 'tl'], ['gold', 'dll'], ['violet', 'phy']];
@@ -295,15 +297,16 @@ DIAG.d5 = (W, n) => {
     const nl = nLines(t('d5.note'), 860); b += lb(20, y + 4, t('d5.note'), 860, { a: 'start', c: 'm', top: true });
     return { h: y + 4 + nl * 19 + 6, body: b };
   }
-  const X0 = 10, BW = 330, bit = BW / 16;
+  const X0 = 10, BW = 330;
   for (const [tk, dws] of groups) {
     const nl = nLines(t(tk), 330); b += lb(X0, y + 10, t(tk), 330, { a: 'start', c: 'g', top: true }); y += 10 + nl * 19 + 4;
     for (const [name, lay] of dws) {
-      b += tx(X0, y + 9, name + ' · ' + t('d5.bits.hi'), { a: 'start', c: 'm' }); y += 22;
-      // split the DW's fields at bit 16 into an upper and a lower row
-      let acc = 0; const rowsF = [[], []];
-      for (const [k, bits] of lay) { let left = bits; while (left > 0) { const r = acc < 16 ? 0 : 1, room = (r + 1) * 16 - acc, take = Math.min(left, room); rowsF[r].push([k, take]); acc += take; left -= take; } }
-      rowsF.forEach((fs, r) => { let x = X0; for (const [k, bits] of fs) { b += cell(x, y, bits * bit, 34, k); x += bits * bit; } y += 38; });
+      // split the DW into rows of 16 bits; DW0, whose one-bit flags would not fit a 16-bit row at 320 px, into bytes
+      const RB = lay === T.DW0 ? 8 : 16, rb = BW / RB;
+      b += tx(X0, y + 9, name + ' · ' + t(RB === 8 ? 'd5.bits.byte' : 'd5.bits.hi'), { a: 'start', c: 'm' }); y += 22;
+      let acc = 0; const rowsF = Array.from({ length: 32 / RB }, () => []);
+      for (const [k, bits] of lay) { let left = bits; while (left > 0) { const r = Math.floor(acc / RB), room = (r + 1) * RB - acc, take = Math.min(left, room); rowsF[r].push([k, take]); acc += take; left -= take; } }
+      rowsF.forEach(fs => { let x = X0; for (const [k, bits] of fs) { b += cell(x, y, bits * rb, 34, k); x += bits * rb; } y += 38; });
       y += 6;
     }
     y += 4;
@@ -373,12 +376,15 @@ DIAG.d8 = (W, n) => {
   const COL = { bar0: 'gold', bar1: 'gold', bar2: 'gold', bar3: 'gold', bar4: 'gold', bar5: 'gold', vid: 'cyan', did: 'cyan', class: 'cyan', cmd: 'violet', htype: 'violet', cap: 'green' };
   const X0 = n ? 52 : 70, CW = n ? 72 : 118, RH = 26;
   let b = ['+3', '+2', '+1', '+0'].map((s, i) => tx(X0 + CW * i + CW / 2, 12, s, { c: 'm' })).join('');
+  let y = 26;
   rows.forEach((r, i) => {
-    const y = 26 + i * RH; let x = X0;
-    b += tx(X0 - 8, y + RH / 2, (i * 4).toString(16).toUpperCase().padStart(2, '0') + 'h', { a: 'end', c: 'm' });
-    for (const [k, bytes] of r) { const w = bytes * CW; b += box(x, y, w, RH, COL[k] || 'line', { rx: 1, a: COL[k] ? 0.16 : 0.05, sw: 1 }) + lb(x + w / 2, y + RH / 2, t('d8.f.' + k), w - 6); x += w; }
+    // a row grows when one of its labels wraps (narrow variant, longer English labels)
+    const rh = Math.max(RH, ...r.map(([k, bytes]) => nLines(t('d8.f.' + k), bytes * CW - 6) * 19 + 7)); let x = X0;
+    b += tx(X0 - 8, y + rh / 2, (i * 4).toString(16).toUpperCase().padStart(2, '0') + 'h', { a: 'end', c: 'm' });
+    for (const [k, bytes] of r) { const w = bytes * CW; b += box(x, y, w, rh, COL[k] || 'line', { rx: 1, a: COL[k] ? 0.16 : 0.05, sw: 1 }) + lb(x + w / 2, y + rh / 2, t('d8.f.' + k), w - 6); x += w; }
+    y += rh;
   });
-  const gy = 26 + 16 * RH;
+  const gy = y;
   // ECAM: bus 8 | dev 5 | fn 3 | reg 12 bits, to scale
   const ex = n ? 10 : 590, ew = n ? 330 : 296, ey = n ? gy + 30 : 40, bit = ew / 28;
   b += lb(ex, ey, t('d8.ecam'), ew, { a: 'start', c: 'g', top: true });
@@ -583,7 +589,7 @@ const upct = u => u >= 0.999995 ? t('u.pct', { v: '≈ 100' }) : pct(u, u > 0.99
 /* ───────── 04 credits ───────── */
 (() => {
   const cv = $('#fcCv'), sB = $('#fcB'), sR = $('#fcR'), cS = $('#fcS');
-  const o = () => { const sc = cS.checked; return { payload: +radioVal('fcP'), hdr: sc ? 4096 : M.FC.maxHdr, data: +sB.value, rtt: +sR.value, scaled: sc }; };
+  const o = () => { const sc = cS.checked; return { payload: +radioVal('fcP'), hdr: sc ? M.FC.maxHdr * M.FC.scaleMax : M.FC.maxHdr, data: +sB.value, rtt: +sR.value, scaled: sc }; };
   const sim = reg(cv, {
     draw() {
       const { c, w, h } = fit(cv), p = o(), T = 3000, r = M.FC.sim(p, T), max = Math.max(p.data, 64);
@@ -606,7 +612,7 @@ const upct = u => u >= 0.999995 ? t('u.pct', { v: '≈ 100' }) : pct(u, u > 0.99
     putHTML('#fcSay', t(z.key, { u: pct(v.util), X: gbps(v.X, 1), W: fmt(v.W, 0), need: fmt(v.needData, 0), needH: fmt(v.needHdr, 0), buf: fmt(p.data, 0), kb: fmt(v.needData * 16 / 1000, 1) }));
   }
   sim.text = text;
-  const go = () => { sB.max = cS.checked ? 8192 : M.FC.maxData; if (+sB.value > +sB.max) sB.value = sB.max; sim.dirty = true; text(); };
+  const go = () => { sB.max = cS.checked ? M.FC.scaledSlider : M.FC.maxData; if (+sB.value > +sB.max) sB.value = sB.max; sim.dirty = true; text(); };
   sB.addEventListener('input', go); sR.addEventListener('input', go); cS.addEventListener('change', go); onAll(radios('fcP'), 'change', go);
   text();
 })();

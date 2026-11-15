@@ -50,7 +50,11 @@
   };
 
   /* ── 03 TLPs. Header 3 DW (32-bit address) or 4 DW (64-bit), Fmt/Type from Budruk et al. 2003 Table 3-6 (Fmt
-     widened to 3 bits in later revisions); field widths per rtlp-lib's transcription of the spec. Data link layer adds a
+     widened to 3 bits in later revisions); field widths per rtlp-lib's transcription of the spec. Completion Lower
+     Address is 7 bits [6:0] (AMD PG346 Completer Completion Descriptor, quoting the spec's "least significant 7 bits";
+     rtlp-lib's own API says "7-bit Lower Address"; its tlp.md range [63:58] is a transcription slip, not another header).
+     Gen3 STP token (Ajanovic, Intel, Hot Chips 2009): 4 bits 1111, 11-bit length, 4-bit frame CRC, parity, 12-bit
+     sequence number = 4 bytes; no END symbol. Gen3 DLLP: SDP (F0h ACh) + 4 bytes + 16-bit CRC = 8 bytes. Data link layer adds a
      2-byte sequence number and a 4-byte LCRC; the physical layer adds framing (STP and END symbols in 8b/10b, a 4-byte
      STP token that carries the sequence number in 128b/130b). Total per TLP outside the header: 8 bytes in both,
      consistent with Das Sharma 2022 slide 13 (a 4-DW TLP costs 24 bytes at 128b/130b). ── */
@@ -95,11 +99,14 @@
 
   /* ── 04 credit-based flow control. Data credit = 16 bytes (4 DW), header credit = one header; counters 8 bits (header)
      and 12 bits (data) counting mod 256 / 4096; the receiver never advertises more than 127 header or 2047 data credits
-     beyond its buffer head (Colton 2024; Xillybus). The transmitter's gate: send if
+     beyond its buffer head (Colton 2024; Efinix PCIe controller guide). Scaled flow control (PCIe 4.0 on) multiplies
+     each credit by 1, 4 or 16 (NVIDIA patent US9904653: text says up to 2032 header / 32,752 data credits at ×16, i.e. 127·16 and 2047·16;
+     its Table 1 lists 2031 / 32751, so the page's 2032 is the patent-text figure, not a spec-exact cap); the model's
+     scaled mode uses the ×16 header cap and leaves the data slider (≤ 8192) under the ×16 data cap. The transmitter's gate: send if
      (CREDIT_LIMIT − (CREDITS_CONSUMED + needed)) mod 2^n ≤ 2^(n−1).
      Round trip `rtt` (TUNED reader parameter): from the end of a TLP to its credits arriving back at the sender. ── */
   const FC = {
-    dataUnit: 16, maxHdr: 127, maxData: 2047, hdrMod: 256, dataMod: 4096,
+    dataUnit: 16, maxHdr: 127, maxData: 2047, hdrMod: 256, dataMod: 4096, scaleMax: 16, scales: [1, 4, 16], scaledSlider: 8192,
     need(payload) { return { h: 1, d: Math.ceil(payload / this.dataUnit) }; },
     gate(limit, consumed, need, mod) { return ((limit - (consumed + need)) % mod + mod) % mod <= mod / 2; },
     tau(payload, L) { return (payload + 16 + TLP.perTlp) / L; },                         // ns on the wire, 4-DW header
@@ -134,12 +141,14 @@
 
   /* ── 05 ACK/NAK replay. A TLP of L bytes is hit with probability p = 1 − (1 − BER)^(8L); the link replays every TLP
      after the bad one (go-back-N). Stallings, Data and Computer Communications, ARQ: with the window covering the round
-     trip, U = (1 − p) / (1 + 2a·p), 2a = round trip / frame time; selective repeat U = 1 − p. 12-bit sequence numbers;
-     REPLAY_NUM is a 2-bit counter: the fourth replay in a row without progress retrains the link. ── */
+     trip, U = (1 − p) / (1 + 2a·p), where 1 + 2a = K = (frame time + round trip) / frame time is the number of frames
+     resent per error (`ratio` below), so 2a = ratio − 1 (review 2026-11-15: the build used ratio for 2a, an off-by-one);
+     selective repeat U = 1 − p. 12-bit sequence numbers; REPLAY_NUM is a 2-bit counter: when the fourth replay of the
+     same TLP would start, it rolls over and the link retrains first. ── */
   const ARQ = {
     seqBits: 12, replayRoll: 4, berSpec: 1e-12,
     pErr(bytes, ber) { return -Math.expm1(8 * bytes * Math.log1p(-ber)); },
-    gbn(p, ratio) { return (1 - p) / (1 + ratio * p); },
+    gbn(p, ratio) { return (1 - p) / (1 + (ratio - 1) * p); },
     sr(p) { return 1 - p; },
     tlp(o) {
       const L = o.L || LINK5x16(), bytes = o.payload + 16 + TLP.perTlp, tau = bytes / L, p = this.pErr(bytes, o.ber), ratio = (tau + o.rtt) / tau;
@@ -355,6 +364,7 @@
       r512: [r512.eff, 1, 'pct'], r64: [r64.eff, 1, 'pct'], r64n: [r64.ncpl, 0], r512n: [r512.ncpl, 0], r512q: [r512.nreq, 0],
       // ch4
       fcU: [fc.util, 0, 'pct'], fcX: [fc.X, 1], fcW: [fc.W, 0], fcTau: [fc.tau, 2], fcNeed: [fc.needData, 0], fcNeedKB: [fc.needData * 16 / 1000, 1], capKiB: [FC.maxData * 16 / 1024, 0],
+      capS: [FC.maxData * FC.scaleMax, 0], capSKiB: [FC.maxData * FC.scaleMax * 16 / 1024, 0], hdrS: [FC.maxHdr * FC.scaleMax, 0],
       fcHalf: [fcHalf.util, 0, 'pct'], fcDbl: [fcDbl.util, 0, 'pct'], fc128: [fc128.util, 0, 'pct'], fc128W: [fc128.W, 0],
       // ch5
       e12: [a12.errPerSec, 2], p12: [a12.p, 1, 'sci'], p8: [a8.p, 1, 'sci'], u8: [a8.U, 2, 'pct'], p6: [a6.p, 2, 'pct'], u6: [a6.U, 0, 'pct'], u6sr: [a6.Usr, 1, 'pct'],
@@ -364,6 +374,7 @@
       // ch8
       a16: [LOSS.alpha('fr4', 16), 2], a16l: [LOSS.alpha('low', 16), 2], fix5: [LOSS.fixed(5), 1], r5f: [LOSS.reach(5, 'fr4'), 1], r5m: [LOSS.reach(5, 'mid'), 1], r5l: [LOSS.reach(5, 'low'), 1],
       r6m: [LOSS.reach(6, 'mid'), 1], r7m: [LOSS.reach(7, 'mid'), 1], r7l: [LOSS.reach(7, 'low'), 1], left5: [36 - LOSS.fixed(5), 1], r7mHalf: [r7k(0.5), 1], r7mDbl: [r7k(2), 1],
+      r5mAlt: [(LOSS.GEN[5].budget - 9 - LOSS.GEN[5].conn - LOSS.GEN[5].card) / LOSS.alpha('mid', 16), 1],   // Astera Labs split: package 9 dB, board 16 dB
       // ch9
       pen: [EYE.penaltyDb, 2], nrz12: [nrz12, 1], pam12: [pam12, 1], pam6: [pam6, 1], gap12: [pam12 - nrz12, 1], gapUse: [pam6 - nrz12, 1],
       loss16: [f16, 1], loss32: [f32, 1], lossGap: [f32 - f16, 1],

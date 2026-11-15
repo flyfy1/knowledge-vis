@@ -100,7 +100,11 @@ const hx = a => TLP.hex(a).join(' ');
   // tuned: the round trip, halved and doubled
   check('RTT halved → 100%', pv('fcHalf'), '100%'); check('RTT doubled → 28%', pv('fcDbl'), '28%');
   check('MPS 128 is header-bound', FC.closed({ payload: 128, hdr: 127, data: 2047, rtt: 1000 }).lim, 'hdr'); check('fc128 31%', pv('fc128'), '31%');
-  check('scaled flow control lifts the cap', FC.closed({ payload: 256, hdr: 4096, data: 8192, rtt: 1000 }).util, 1);
+  check('scaled flow control (×16 header cap 2032) fills the link', FC.closed({ payload: 256, hdr: FC.maxHdr * FC.scaleMax, data: 8192, rtt: 1000 }).util, 1);
+  check('scale factors 1/4/16', FC.scales.join('/'), '1/4/16'); says('ch4.p5', '1、4 或 16'); says('ch4.p5', String(FC.scaledSlider)); check('scaled slider within the ×16 data cap', FC.scaledSlider <= FC.maxData * FC.scaleMax, true);
+  says('ch2.p1', '100 MHz'); says('d4.note', '4 字节'); says('d4.note', '11 位'); says('d4.note', '12 位'); says('d4.note', '8 字节');
+  check('×16 scaled caps 2032 / 32,752 (≈512 KiB)', pv('hdrS') + ' ' + pv('capS') + ' ' + pv('capSKiB'), '2,032 32,752 512');
+  check('the ×16 cap covers the slowest default: 128 B at 2000 ns', FC.closed({ payload: 128, hdr: 2032, data: 8192, rtt: 2000 }).util, 1);
   says('ch4.p4', '1000 纳秒'); says('ch4.p4', '500 纳秒'); says('ch4.p4', '2000 纳秒'); says('ch4.p4', '256 字节'); says('ch4.p4', '128 字节');
 }
 
@@ -108,13 +112,17 @@ const hx = a => TLP.hex(a).join(' ');
 {
   const a = ARQ.tlp({ payload: 256, ber: 1e-6, rtt: 1000 });
   near('p = 1 − (1 − BER)^(8L), L = 280', a.p, 1 - Math.pow(1 - 1e-6, 8 * 280), 1e-12);
-  near('go-back-N U = (1 − p)/(1 + ratio·p) (Stallings)', a.U, (1 - a.p) / (1 + a.ratio * a.p), 1e-12); near('selective repeat 1 − p', a.Usr, 1 - a.p, 1e-12);
+  near('go-back-N U = (1 − p)/(1 + 2a·p), 1 + 2a = ratio (Stallings)', a.U, (1 - a.p) / (1 + (a.ratio - 1) * a.p), 1e-12);
+  // independent derivation: each error wastes K = ratio frame times (the bad frame plus the frames sent until the NAK
+  // arrives); expected frame times per delivered frame = 1 + K·p/(1 − p)
+  near('go-back-N from first principles', a.U, 1 / (1 + a.ratio * a.p / (1 - a.p)), 1e-12);
+  near('go-back-N, hand value at 1e-6 / 256 B / 1000 ns', a.U, 0.66360, 5e-5); near('selective repeat 1 − p', a.Usr, 1 - a.p, 1e-12);
   near('errors per second at 1e-12 on 512 Gb/s', ARQ.tlp({ payload: 256, ber: 1e-12, rtt: 1000 }).errPerSec, 0.512, 1e-9);
   check('four replays in a row retrain (2-bit REPLAY_NUM)', ARQ.replayRoll, 4); says('ch5.p3', '2 位'); says('ch5.p3', '四次');
-  check('e12', pv('e12'), '0.51'); check('p12', pv('p12'), '2.2 × 10⁻⁹'); check('p8', pv('p8'), '2.2 × 10⁻⁵'); check('u8', pv('u8'), '99.49%');
+  check('e12', pv('e12'), '0.51'); check('p12', pv('p12'), '2.2 × 10⁻⁹'); check('p8', pv('p8'), '2.2 × 10⁻⁵'); check('u8', pv('u8'), '99.50%');
   check('p6', pv('p6'), '0.22%'); check('u6', pv('u6'), '66%'); check('u6sr', pv('u6sr'), '99.8%'); check('ratio', pv('ratio'), '226'); check('buf KB', pv('buf'), '63');
   check('RTT halved → 80%', pv('u6half'), '80%'); check('RTT doubled → 50%', pv('u6dbl'), '50%');
-  check('4096 B → 63%', pv('u6big'), '63%'); check('128 B → 66%', pv('u6small'), '66%');
+  check('4096 B → 65%', pv('u6big'), '65%'); check('Astera split: mid-loss Gen5 reach 8.0 in', pv('r5mAlt'), '8.0'); check('128 B → 66%', pv('u6small'), '66%');
   says('ch5.p1', '10⁻¹²'); says('ch5.p5', '4096 字节'); says('ch5.p5', '128 字节'); says('ch5.p5', '500 纳秒'); says('ch5.p5', '2000 纳秒'); says('ch5.p4', '256 字节');
 }
 
@@ -158,7 +166,7 @@ const hx = a => TLP.hex(a).join(' ');
   check('MSI-X entry bytes', hx(MSI.entry(0xFEE02000, 0x41, false)), '00 20 E0 FE 00 00 00 00 41 00 00 00 00 00 00 00');
   const t = MSI.tlp(0xFEE02000, 0x41, 0x0400, 0);
   check('MSI write header', hx(t.hdr.bytes), '40 00 00 01 04 00 00 0F FE E0 20 00'); check('MSI payload', hx(t.data), '41 00 00 00');
-  says('ch7.p4', '0xfee0300c'); says('ch7.p4', '0x4171'); says('ch7.p4', '3 号'); says('ch7.p4', '0x71'); says('ch7.p3', '16 字节'); says('ch7.p3', 'FEE');
+  says('ch7.p4', '0xfee0300c'); says('ch7.p4', '0x4171'); says('ch7.p4', '0x03'); says('ch7.p4', 'DM=1'); says('ch7.p4', '逻辑目标'); check('Billauer record is logical mode (DM=1, RH=1)', k.dm + '/' + k.rh, '1/1'); says('ch7.p4', '0x71'); says('ch7.p3', '16 字节'); says('ch7.p3', 'FEE');
 }
 
 /* ── 08 channel loss ── */
@@ -259,7 +267,7 @@ const hx = a => TLP.hex(a).join(' ');
   const D = { d1: ['cpu', 'mem', 'rc', 'gpu', 'sw', 'usb', 'ssd', 'nic', 'slot', 'note'], d3: ['r1', 'r2', 'r3', 'data', 'ohfmt', 'oh1', 'oh2', 'oh3'],
     d4: ['stp', 'seq', 'hdr', 'data', 'ecrc', 'lcrc', 'end', 'tl', 'dll', 'phy', 'note'], d7: ['tx', 'rx', 'm7', 'm8', 'm9', 'nak', 'r8', 'r9', 'ack', 'n.ok', 'n.bad', 'n.drop', 'n.nakn', 'n.ok8', 'n.ok9', 'n.ackn'],
     d9: ['cpu', 'apic', 'rc', 'iommu', 'mem', 'dev', 's1', 's2', 's3', 's4', 's5'], d10: ['cpu', 'ret', 'conn', 'dev', 'board', 'cardt', 's.pkg', 's.board', 's.conn', 's.card'], d12: ['tlp', 'dlp', 'crc', 'fec', 'il'],
-    d5: ['f.fmt', 'f.type', 'f.tc', 'f.attr', 'f.len', 'f.rid', 'f.tag', 'f.lbe', 'f.fbe', 'f.addrhi', 'f.addrlo', 'f.cid', 'f.st', 'f.bc', 'f.la', 't1', 't2'], d8: ['e.bus', 'e.dev', 'e.fn', 'e.reg', 'l1', 'l2', 'l3', 'l4', 'ex'] };
+    d5: ['f.fmt', 'f.type', 'f.tc', 'f.attr', 'f.len', 'f.rid', 'f.tag', 'f.lbe', 'f.fbe', 'f.addrhi', 'f.addrlo', 'f.cid', 'f.st', 'f.bc', 'f.la', 't1', 't2', 'bits.hi', 'bits.byte'], d8: ['e.bus', 'e.dev', 'e.fn', 'e.reg', 'l1', 'l2', 'l3', 'l4', 'ex'] };
   for (const [d, ks] of Object.entries(D)) for (const k of ks) keys.add(d + '.' + k);
   for (const [, , k] of CFG.type0) keys.add('d8.f.' + k);
   for (const k of keys) { n++; if (Z[k] == null) { fails++; console.error('FAIL missing zh key ' + k); } }

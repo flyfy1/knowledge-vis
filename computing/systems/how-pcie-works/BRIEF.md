@@ -1,10 +1,10 @@
 # BRIEF — PCIe 为什么能一代一代翻倍 (Why PCIe Keeps Doubling)
 
 Built-By: Claude Code (claude-opus-5-5)
-Verified-By: self-check by builder (node model test, browser test zh at 1280/390/320 and reduced motion, canvas sweep, screenshots of every model and diagram at 1280, spot checks at 320 and 390 with reduced motion); independent review pending
+Verified-By: self-check by builder (node model test, browser test zh at 1280/390/320 and reduced motion, canvas sweep, screenshots of every model and diagram at 1280, spot checks at 320 and 390 with reduced motion); Claude Code (claude-opus-5-5), separate session, independent review 2026-11-15: zh and en read in full, models re-derived, 12 diagrams screenshotted at 1280/390/320 zh/en (see Review)
 Category: computing 计算机 / subtopic systems 系统 · Stage: university
 Series: bus series B1 (`specs/essay-briefs/TASK-bus-series.md`)
-Format: long interactive essay. copy.zh.js is complete; copy.en.js is a same-keys stub (`enStub = true`) awaiting translation.
+Format: long interactive essay. copy.zh.js and copy.en.js are complete and key-for-key identical (English translated; `enStub` removed).
 Files: index.html, copy.zh.js, copy.en.js, models.js, app.js, REGISTRY.json, tests/models.cjs, tests/browser.cjs
 
 ## The one question
@@ -50,7 +50,7 @@ Files: index.html, copy.zh.js, copy.en.js, models.js, app.js, REGISTRY.json, tes
 | Gen6/7 package + connector loss | = Gen5 (10 dB) | ch8 | Gen7 mid-loss reach 5.2 → 6.7 in | → 2.1 in |
 | Dk of all boards | 4.35 | ch8 | chosen so mid-loss dielectric = Hargin 0.48 dB/in at 10 GHz | |
 | MMIO base, device list | 0x80000000, GPU/switch/SSD/NIC/USB | ch6 | moving the base changes no size (pinned in tests) | |
-| scaled flow control | modelled as "no cap" | ch4 | real scale factors not verified | |
+| scaled flow control | ×16: header cap 127·16 = 2032, data slider up to 8192 (< 32,752) | ch4 | factors 1/4/16 from NVIDIA patent US9904653 | |
 
 ## Sources (all opened 2026-11-15)
 
@@ -77,6 +77,8 @@ Secondary (used where the primary could not be fetched):
 - Micron 9650 mass production (2026-02): Micron IR page https://micron.gcs-web.com/node/50236 and press coverage; the page only links why-nvme-is-fast #ch8 for it.
 - MSOE course notes (overview cross-check) — https://faculty-web.msoe.edu/johnsontimoj/EE4980/files4980/parallel_communications_pcie.pdf ; rtlp-lib field table — https://docs.rs/crate/rtlp-lib/0.5.0/source/tlp.md
 
+Added in review (2026-11-15): AMD PG346 https://docs.amd.com/r/en-US/pg346-cpm-pcie/Completer-Completion-Descriptor-Format ; Ajanovic, Hot Chips 2009 https://old.hotchips.org/wp-content/uploads/hc_archives/hc21/1_sun/HC21.23.1.SystemInterconnectTutorial-Epub/HC21.23.131.Ajanovic-Intel-PCIeGen3.pdf ; Astera Labs https://www.asteralabs.com/insights/pci-express-5-0-architecture-channel-insertion-loss-budget/ ; NVIDIA patent https://patents.google.com/patent/US9904653 ; Billauer (moved) https://billauer.se/blog/?p=1119 ; eeNews Europe https://www.eenewseurope.com/en/pci-sig-announces-pcie-7-0-and-optical-interconnect-revision-for-ai-and-data-centres
+
 Could not be opened: pcisig.com, BusinessWire (PCI-SIG optical release, Cadence 6.x compliance release), Intel FPGA
 docs (redirects), allaboutcircuits, signalintegrityjournal (403).
 
@@ -94,9 +96,9 @@ the slide-13 latency table (every row, to 5e-9 ns); config header offsets; ECAM 
 address/data bits and a real record; MSI-X entry layout; Gen5/6/7 budgets; retimer reach; FLIT byte budget.
 
 Not verified from a primary source:
-- Completion Lower Address width: 7 bits used (PCIe spec as quoted by Xillybus/Budruk); rtlp-lib shows 6. 
-- Scaled flow control factors (modelled only as removing the cap) and the generation that introduced it.
-- The Gen3+ STP token layout (only its total, 8 bytes per TLP with LCRC, is used).
+- (Settled in review: Completion Lower Address is 7 bits; see Review.)
+- Scaled flow control: factors now from a patent and vendor guides (see Review); not from the spec text.
+- (Settled in review: Gen3 STP token layout from Intel's Hot Chips 2009 slides; see Review.)
 - FLIT byte order and which interleave each byte belongs to (d12 says the assignment is schematic).
 - PAM4 Gray-code level order in PCIe 6.0 (d11 labels follow standard Gray coding).
 - Gen7 loss budget (pre-release vendor material); Gen6/7 package and connector losses (assumed = Gen5).
@@ -111,3 +113,71 @@ copy.en.js mirrors copy.zh.js key for key. Keep every `{placeholder}`, every `<a
 sibling titles in English as they appear in each sibling's REGISTRY.json. Diagram labels must stay short (they are
 laid out at 15 SVG units; long labels wrap). Remove `window.ESSAY_COPY.enStub = true;` when done; the tests then
 also check the English registry title/desc and run the browser sweep in English.
+
+## Review
+
+Reviewer: Claude Code (claude-opus-5-5), separate session; did not build the page. Date: 2026-11-15.
+Scope: every key of copy.zh.js and copy.en.js read in full; every model driven and its prose numbers re-derived by
+hand or an independent formula; all 12 diagrams screenshotted at 1280/390/320 in zh and en; sources below opened.
+
+Checks re-derived (all reproduce): Gen5 ×16 = 32·16·128/130/8 = 63.0 GB/s; 4 KiB write at MPS 256 = 4096/(4096+16·24)
+= 91.4%; credits at 1000 ns: τ = 280/63.0 = 4.44 ns, W = 127, U = 127·4.44/1004.4 = 56% (500 ns → 100%, 2000 ns → 28%);
+BER 1e-6: p = 1−(1−1e-6)^2240 = 0.22%, go-back-N 66%, selective 99.8%; Gen6 FLIT no-FEC 49%, FEC retry 7e-7;
+board reach (36 − 19.5)/1.99 = 8.3 in (Gen5 mid), (36 − 19)/3.27 = 5.2 in (Gen7 mid), halved/doubled 6.7/2.1 in;
+FLIT crossover 1.911·(m+6)/(m+4) = 2 at m = 38.8 DW; PAM4 penalty 20·log10 3 = 9.54 dB; NRZ 1e-12 at 23.0 dB.
+
+Errors found and fixed (zh and en in sync, tests updated):
+- "速度翻了七次 / doubled seven times" (hero, desc, ch2 title, toc, ch12, index.html meta, REGISTRY desc): Gen1→Gen7 is
+  six doublings (ch12 itself lists six generations). Now 六次 / six. (The TASK file's one question also says 七次.)
+- Go-back-N model: used (1−p)/(1+K·p) with K = frames resent per error; Stallings' formula is (1−p)/(1+2a·p) with
+  1+2a = K. Fixed in models.js (also feeds ch10); test now checks the formula and an independent first-principles
+  derivation. Prose moved: 4096 B at 1e-6 63% → 65%; 10⁻⁸ 99.49% → 99.50%; other rounded values unchanged.
+- ch7.p4 / ch7.say.real: the lspci record 0xfee0300c has DM=1 (logical mode), so destination 0x03 is a bit mask of
+  cores, not "3 号中断控制器 / interrupt controller 3". Rewritten; test pins DM=1/RH=1.
+- ch3.p4: MRRS is not negotiated along the path (only MPS is); reworded.
+- ch5.p3: REPLAY_NUM rolls over when the fourth replay would start (after three unsuccessful replays), and the link
+  retrains before replaying; reworded, readout label likewise.
+- d4 note: Gen3 does not replace the END with a token: STP is a 4-byte token (11-bit length, frame CRC, parity, 12-bit
+  sequence number) and there is no END. Rewritten.
+- ch2.p1, d2 caption: "没有时钟线 / no clock wire" → no clock travels with the data; the slot's 100 MHz reference
+  clock is mentioned.
+- ch4.p5/limit and the model: scaled flow control now stated as PCIe 4.0 on, factors 1/4/16, ×16 caps 2032 header and
+  32,752 data credits (≈512 KiB); the model's checkbox uses the ×16 header cap (2032) instead of an arbitrary 4096.
+- ch10.p1: "回退 N 帧会吃掉一大半带宽 / most of the bandwidth" → about half (the model gives 49% left).
+- ch8.limit: adds Astera Labs' Gen5 split (package 9, board 16 dB) → mid-loss reach 8.0 in vs 8.3 in (pinned).
+- d5 caption: field widths are not in Linux headers; now credited to the spec via MindShare and AMD IP guides.
+- English: ISO-style dates in prose (as of 2026-11, in 2025-06 …) → month names.
+- Layout: d5 at 320 px crammed T8/A2/LN/TH and TD/EP into unreadable 16-bit rows → DW0 drawn one byte per row in the
+  narrow variant (new key d5.bits.byte); d8 at 320 px had wrapped labels spilling out of cells (Hdr type, Lat timer,
+  Cache line, Subsystem vendor, Cap pointer) → rows grow with their labels; d4 at 1280 (en) note ran outside the SVG
+  after the longer Gen3 note → height follows the note.
+
+Second-hand facts upgraded to a primary or near-primary source (opened 2026-11-15):
+- Completion Lower Address = 7 bits [6:0]: AMD PG346 Completer Completion Descriptor (quotes the spec's "least
+  significant 7 bits"); rtlp-lib's own API doc also says "7-bit Lower Address", so its tlp.md range [63:58] (6 bits,
+  bits 57:56 missing) is a transcription slip, not a different header. Applies to the non-FLIT completion header.
+  https://docs.amd.com/r/en-US/pg346-cpm-pcie/Completer-Completion-Descriptor-Format ; https://docs.rs/rtlp-lib/0.5.0/rtlp_lib/struct.CompletionReqDW23.html
+- Gen3 STP token layout, implicit END, SDP (F0h ACh) + 6-byte DLLP = 8 bytes, "8G chosen over 10G due to eye margin":
+  M. Ajanovic (Intel), "PCI Express 3.0 Overview", Hot Chips 21 (2009) —
+  https://old.hotchips.org/wp-content/uploads/hc_archives/hc21/1_sun/HC21.23.1.SystemInterconnectTutorial-Epub/HC21.23.131.Ajanovic-Intel-PCIeGen3.pdf
+- MSI record 0xfee0300c / 0x4171: Billauer's blog opened (now at https://billauer.se/blog/?p=1119).
+- Gen5 36 dB at 16 GHz: Astera Labs (also gives the 9/16/1.5/9.5 split and Gen4 28 dB) —
+  https://www.asteralabs.com/insights/pci-express-5-0-architecture-channel-insertion-loss-budget/ ; NVIDIA BlueField-3 manual.
+- Scaled flow control factors 1/4/16 and ×16 caps (2032 / 32,752 in the patent text; its Table 1 lists 2031 / 32,751): NVIDIA patent US9904653 (Glaser, Runhaar),
+  https://patents.google.com/patent/US9904653 — not the spec, but the proposal it came from; non-scaled caps 127/2047
+  also in Efinix's PCIe controller guide (search snippet; page since 404).
+- PCIe 7.0 release (June 2025, 128 GT/s, 512 GB/s ×16 bidirectional, PAM4 + FLIT, optical-aware retimer ECN amending
+  6.4 and 7.0): second place = eeNews Europe 2025-06-12,
+  https://www.eenewseurope.com/en/pci-sig-announces-pcie-7-0-and-optical-interconnect-revision-for-ai-and-data-centres
+- PCIe 8.0 draft 0.5 (May 2026; draft 0.3 Sept 2025; 256 GT/s; keeps PAM4 and FLIT; ~1 TB/s ×16; 2028): ServeTheHome
+  re-opened (confirms PAM4/FLIT retained, so ch10.p6 stands) and Tom's Hardware headline.
+
+Still second-hand or unverified: everything from pcisig.com itself (pcisig.com, BusinessWire 403, Wayback blocked);
+the PCIe 4.0 start of scaled flow control; Gen6 32 dB and Gen7 ≈36 dB loss budgets (vendor material only); the
+replay timer value (not used numerically); the Gen6/7 package/connector split (tuned); PAM4 Gray order in PCIe 6.0;
+FLIT byte-to-interleave assignment (caption says schematic); Lower Address width in FLIT-mode headers (not drawn);
+Micron 9650 and Credo items; Cadence's "first workshop" claim.
+
+Not changed (design notes): the FEC retry probability (≈7e-7 at 1e-6) assumes independent byte errors and is lower
+than burst-error figures in Das Sharma's papers; the limit text says so. The narrow d5 shows "Address [63:32]" on both
+half-rows of DW2/DW3 (high half on top), which is correct but repetitive.
