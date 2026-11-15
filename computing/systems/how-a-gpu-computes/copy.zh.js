@@ -451,7 +451,7 @@ window.ESSAY_COPY.zh = {
   "ch11.h.claim": "说法",
   "ch11.c1": "NVIDIA 的 HGX 页面给 Rubin 每卡写的是 NVFP4 推理 {rbInf} PFLOPS、训练 {rbTr} PFLOPS，{rbMem} GB HBM4、{rbBw} TB/s，并称 Vera Rubin「正在全面量产」（2026 年 11 月 15 日查看）。NVIDIA 没有写明 50 PFLOPS 是不是带稀疏的数，有媒体报道把它标为带稀疏的数；若是这样，它不能直接和第 8 章里不带稀疏的峰值比。这些是厂商规格，还没有独立测量。",
   "ch11.c2": "AMD Instinct MI455X（CDNA 5）：ServeTheHome 2026 年 8 月 12 日的介绍里，{mi4St} 个 {mi4Gb} GB 的 HBM4 共 {mi4Mem} GB、约 {mi4Bw} TB/s，FP4 不带稀疏「略高于 {mi4Fp4} PFLOPS」，计算芯片用台积电 N2，运算单元改成 RDNA 那样的 32 宽。数字来自 AMD，尚未独立测量。",
-  "ch11.p2": "还没解决的：显存带宽涨得比峰值算力慢，FP4 的峰值越高，第 8 章那种「矩阵不够大就喂不饱」就越常见；一块卡的功耗已经到上千瓦；程序越来越难写，Hopper 和 Blackwell 上跑满张量核心要用异步搬运（TMA）和 warpgroup 指令，好在大部分人用的是库和 Triton 这类编译器。多块卡怎么连起来、怎么一起算，见<a href='../coherent-interconnects/#ch8'>《芯片之间怎么共用内存》第 8 章</a>（NVLink）和第 9 章（全归约）。",
+  "ch11.p2": "还没解决的：显存带宽涨得比峰值算力慢，FP4 的峰值越高，第 8 章那种「矩阵不够大就喂不饱」就越常见；一块卡的功耗已经到上千瓦（这么多电怎么送进去，见<a href='../how-power-reaches-the-cpu/#ch10'>《电是怎么送进 CPU 的》第 10 章</a>）；程序越来越难写，Hopper 和 Blackwell 上跑满张量核心要用异步搬运（TMA）和 warpgroup 指令，好在大部分人用的是库和 Triton 这类编译器。多块卡怎么连起来、怎么一起算，见<a href='../coherent-interconnects/#ch8'>《芯片之间怎么共用内存》第 8 章</a>（NVLink）和第 9 章（全归约）。",
   "ch11.limit": "型号、日期和峰值会过时；这一章的数字集中放在 models.js 的 SRC 和 FRONTIER 里，写明了日期，方便更新。",
 
   "ch12.title": "收尾：写 GPU 代码前问三件事",

@@ -371,7 +371,7 @@ const P = M.prose();
   // links: only live siblings, chapters that exist; B3 and B4 are named in plain text until they are live
   const all = Object.values(Z).join('');
   const hrefs = [...all.matchAll(/href='([^']+)'/g)].map(m => m[1]);
-  const SIBS = ['how-cpu-caches-work', 'why-compute-waits-for-memory', 'how-a-cpu-guesses-ahead', 'how-cores-share-memory', 'how-pcie-works', 'how-memory-talks', 'coherent-interconnects', 'how-pixels-reach-a-screen'];
+  const SIBS = ['how-cpu-caches-work', 'why-compute-waits-for-memory', 'how-a-cpu-guesses-ahead', 'how-cores-share-memory', 'how-pcie-works', 'how-memory-talks', 'coherent-interconnects', 'how-pixels-reach-a-screen', 'how-power-reaches-the-cpu'];
   for (const h of hrefs) { n++; if (!new RegExp('^\\.\\./(' + SIBS.join('|') + ')/(#ch\\d+)?$').test(h) && h !== '../../graphics/computer-graphics/') { fails++; console.error('FAIL unexpected link ' + h); } }
   const cfg = fs.readFileSync(path.join(ROOT, 'pages.config.js'), 'utf8');
   for (const sib of SIBS) {
@@ -388,6 +388,7 @@ const P = M.prose();
   check('no plain-text "this series also has" left', /本系列还有讲|本系列讲片间互连的那一篇|本系列讲内存条的那一篇/.test(all), false);
   check('memory essay linked at #ch6 (tensor cores, systolic arrays)', hrefs.includes('../why-compute-waits-for-memory/#ch6'), true);
   check('memory essay linked at #ch7 and #ch8 (roofline, inference)', hrefs.includes('../why-compute-waits-for-memory/#ch7') && hrefs.includes('../why-compute-waits-for-memory/#ch8'), true);
+  check('power essay linked at #ch10 from ch11.p2 (a kilowatt a card)', Z['ch11.p2'].includes("href='../how-power-reaches-the-cpu/#ch10'"), true);
   check('pixels essay linked at #ch1 from ch9.p2 (framebuffer)', Z['ch9.p2'].includes("href='../how-pixels-reach-a-screen/#ch1'"), true);
   check('A5 linked at #ch3 and #ch4 (snooping, directories)', hrefs.includes('../how-cores-share-memory/#ch3') && hrefs.includes('../how-cores-share-memory/#ch4'), true);
 

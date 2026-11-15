@@ -169,3 +169,6 @@ Not re-opened by the reviewer: Ren et al. (100 / 400–500 / 30 / 700 cycles), F
   (#ch5), why-nvme-is-fast ch7.p2 (#ch11; Antigravity edition, note specs/reviews/why-nvme-is-fast-os-link-20261115.md),
   how-a-computer-boots ch11.p6 (#ch9), how-thunderbolt-works ch8.p2 (#ch8), storage-over-a-network ch6.p1 (#ch12).
   《网页是怎么来到你手机上的》 (ch14.links) stays plain text: tech/networks/how-a-web-page-arrives is an unregistered draft.
+
+Power/NIC registrar (2026-11-15): ch6.limit links its "(RSS)" to how-a-nic-moves-packets #ch5 and ch7.limit gains one sentence linking #ch3
+(how the card fetches descriptors ahead and writes them back), zh and en; the test allows and requires both. Scripts `?v=20261115b`.

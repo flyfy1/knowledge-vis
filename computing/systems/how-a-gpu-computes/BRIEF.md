@@ -133,3 +133,6 @@ All keys in `copy.zh.js`; `copy.en.js` mirrors it (translated, then edited in re
 
 OS/pixels registrar (2026-11-15): ch9.p2 links how-pixels-reach-a-screen #ch1 (where the framebuffer goes). #ch1 takes 显卡 / graphics
 card (the pixels essay's page tag 显卡 / Graphics Cards would otherwise take bare 显卡). Scripts `?v=20261115s`.
+
+Power/NIC registrar (2026-11-15): ch11.p2 (zh, en) links "a card's power draw has reached over a kilowatt" to how-power-reaches-the-cpu
+#ch10 (one clause); the test allows and requires the link. Scripts `?v=20261115t`.

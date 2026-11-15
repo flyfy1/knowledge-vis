@@ -378,7 +378,7 @@ const ymd = s => { const [y, m, d] = s.split('-').map(Number); return d ? `${y} 
   { const where = new Map(); for (const c of R.concepts) for (const a of new Set([...c.aliases.zh, ...c.aliases.en].map(norm))) { n++; if (where.has(a)) { fails++; console.error(`FAIL alias ${a} in ${where.get(a)} and ${c.id}`); } where.set(a, c.id); } }
   // live sibling links point at chapters that exist; quoted titles match the siblings' own titles
   const all = Object.values(Z).join('');
-  const SIBS = ['how-cores-share-memory', 'how-pcie-works', 'how-a-computer-is-wired', 'why-compute-waits-for-memory', 'how-virtual-memory-works', 'storage-over-a-network', 'how-cpu-caches-work', 'how-memory-talks'];
+  const SIBS = ['how-cores-share-memory', 'how-pcie-works', 'how-a-computer-is-wired', 'why-compute-waits-for-memory', 'how-virtual-memory-works', 'storage-over-a-network', 'how-cpu-caches-work', 'how-memory-talks', 'how-a-nic-moves-packets'];
   for (const sib of SIBS) {
     const sh = fs.readFileSync(path.join(DIR, '..', sib, 'index.html'), 'utf8');
     for (const m of all.matchAll(new RegExp(sib + '/(#ch\\d+)?', 'g'))) if (m[1]) check(`${sib} anchor ${m[1]}`, sh.includes(`id="${m[1].slice(1)}"`), true);
@@ -389,6 +389,8 @@ const ymd = s => { const [y, m, d] = s.split('-').map(Number); return d ? `${y} 
   for (const h of hrefs) { n++; if (!new RegExp('^\\.\\./(' + SIBS.join('|') + ')/(#ch\\d+)?$').test(h)) { fails++; console.error('FAIL unexpected link ' + h); } }
   // B3 is live since 2026-11-15: ch3.p4 links its #ch5 under its own title, ch13.links its page top
   check('ch3.p4 links B3 #ch5', Z['ch3.p4'].includes("href='../how-memory-talks/#ch5'"), true); check('old B3 title gone', all.includes('《内存条是怎么和 CPU 说话的》'), false);
+  // the NIC essay is live since 2026-11-15 (power/NIC registrar): ch10.limit links its #ch12 (ECMP and packet spraying)
+  check('ch10.limit links the NIC essay #ch12', Z['ch10.limit'].includes("href='../how-a-nic-moves-packets/#ch12'"), true);
   check('ch13.links links B3', Z['ch13.links'].includes("href='../how-memory-talks/'"), true);
   for (const [k, a] of [['memory-pooling-switch', 'CXL 内存池'], ['memory-pooling-switch', 'CXL memory pooling'], ['nvlink-nvswitch', 'NVLink 带宽'], ['nvlink-nvswitch', 'NVLink vs PCIe']]) check(`${a} on ${k}`, R.concepts.find(c => c.id === k).aliases[/[一-鿿]/.test(a) ? 'zh' : 'en'].includes(a), true);
   for (const k of ['ch1.p2', 'ch1.p3', 'ch2.p1', 'ch7.p2', 'ch8.p4', 'ch10.p5', 'ch11.p1', 'ch12.p2', 'ch13.links']) { n++; if (!/href=/.test(Z[k])) { fails++; console.error('FAIL expected a sibling link in ' + k); } }

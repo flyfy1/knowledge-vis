@@ -241,6 +241,10 @@ const f = (x, d = 0) => x.toFixed(d);
   const a6 = fs.readFileSync(path.join(__dirname, '..', '..', 'how-a-gpu-computes', 'index.html'), 'utf8');
   check('ch6.p1 links how-a-gpu-computes #ch3', Z['ch6.p1'].includes('../how-a-gpu-computes/#ch3') && E['ch6.p1'].includes('../how-a-gpu-computes/#ch3'), true);
   check('how-a-gpu-computes anchor #ch3', a6.includes('id="ch3"'), true);
+  // power/NIC registrar, 2026-11-15: ch5.p1 links its existing words "动态功耗公式" / "dynamic power formula" to how-power-reaches-the-cpu #ch2
+  const pw = fs.readFileSync(path.join(__dirname, '..', '..', 'how-power-reaches-the-cpu', 'index.html'), 'utf8');
+  check('ch5.p1 links how-power-reaches-the-cpu #ch2', Z['ch5.p1'].includes('../how-power-reaches-the-cpu/#ch2">动态功耗公式</a>') && E['ch5.p1'].includes('../how-power-reaches-the-cpu/#ch2">dynamic power formula</a>'), true);
+  check('how-power-reaches-the-cpu anchor #ch2', pw.includes('id="ch2"'), true);
 }
 
 /* ── live sentence templates check ── */

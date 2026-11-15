@@ -207,3 +207,7 @@ half-rows of DW2/DW3 (high half on top), which is correct but repetitive.
 
 OS/pixels registrar (2026-11-15): ch6.p5 links how-the-os-talks-to-hardware #ch4 (reading and writing the registers behind a BAR) and
 ch7.p3 its #ch5 (the interrupt path after MSI). MSI / MSI-X stay on #ch7 here. Scripts `?v=20261115d`.
+
+Power/NIC registrar (2026-11-15): REGISTRY.json #ch3 gains PCIe 开销 / PCIe overhead, PCIe bandwidth (the NIC essay's #ch4 phrases
+"每个包的 PCIe 开销" / "PCIe bandwidth for a 400G NIC" contain them and would otherwise take the bare words). No copy or script change;
+#ch10 has no sentence about network cards, so no link was added. Scripts stay at `?v=20261115d`.

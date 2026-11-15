@@ -104,3 +104,15 @@ FRONTIER in models.js (asOf 2026-11): Panther Lake availability, A16 production,
 - Alias change by the reviewer: `LLC` (reads as last-level cache in a computing search) replaced by `防掉压`.
 - Words left to siblings (reserved in tests/models.cjs): 漏电 / leakage current / 功率密度 / 背面供电 / backside power delivery / 登纳德缩放 / 暗硅 (why-chips-are-hard draft); AI data center power (frontier-model draft); CPU 频率 / 主频为什么有上限 (switches-that-compute #ch7); Dennard scaling (why-compute-waits-for-memory #ch5); USB PD words (Thunderbolt); power sequencing / PWR_OK / S3 S4 S0ix (boot); buck / boost (power-converters); Ohm's law.
 - Scripts carry `?v=20261115`; models.js, app.js and both copy files changed in review, so bump the key at registration if this version was ever served.
+
+## Registration (2026-11-15, power/NIC registrar)
+
+- Scripts `?v=20261115b` (models.js, app.js and both copy files changed in review); tests/models.cjs accepts a lettered key.
+- One-click additions: #ch3 电源怎么选 / PSU wattage, how to choose a PSU. 防掉压 stays instead of bare LLC (bare LLC still opens
+  nothing here). Page tags 供电, 电源管理 / Power Delivery, Power Management open the page top (bare "Power Delivery" used to open
+  how-thunderbolt-works #ch7 through "USB Power Delivery"; USB PD itself stays there).
+- Siblings now link here: how-a-computer-boots ch1.p3 (#ch4, the regulator that makes the core voltage), how-a-gpu-computes ch11.p2
+  (#ch10, a kilowatt a card), why-compute-waits-for-memory ch5.p1 links its words "动态功耗公式" / "dynamic power formula" (#ch2).
+  physics/circuits/power-converters (no CPU sentence) and how-thunderbolt-works #ch7 (USB PD chargers, not CPU power) were checked
+  and left alone.
+- Atlas: 18 hand-written edges (10 between chapters, 8 with siblings).

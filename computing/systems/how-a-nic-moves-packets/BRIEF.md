@@ -114,3 +114,17 @@ UEC versions (1.1 current as of 2026-10), 802.3dj status, ConnectX-8/9 and Thor 
 Checked against the source: Neugebauer §3 (24/24/20 B, 2+6+4+12 B, 62.96 → 57.88 Gb/s, the simple-NIC list, Niantic 40/8 are *TX* descriptors), §6 (520/547/947 ns, DDIO 10 % and +70 ns, remote +100 ns); XDP paper (24, 43.5, 4.8, 1.8, 115, 4.5 Mpps, 82 / 2 µs, E5-1650 v4 3.6 GHz); Cai (42, 55, 49 % copy with GRO + jumbo before aRFS, 49 % miss rate, Gold 6128 3.4 GHz, worst-case IRQ placement without aRFS); Farshin (6.5 MiB, 26.6 %, ~30 % / 30 %, Gold 6140 18 × 1.375 MiB 11 ways, Tootoonchian's leaky DMA); scaling.rst (≥ 4× table, 65536, aRFS:RFS = RSS:RPS, one queue per CPU, no HT benefit); Microsoft (2–8× processors); 802.3dj ballot e-mail; Thor Ultra (2025-10-14, PCIe Gen6 x16, sampling, multipathing / out-of-order / selective retransmission); LF UEC 1.0 (2025-06-11, no technical details, as the page says); Network World UEC 1.1 (2026-10-12); NVIDIA SuperNIC (CX-8 800 Gb/s Gen6, CX-9 1.6 Tb/s per GPU).
 Recomputed independently: 400G at 64 B (84 B on the wire) 595.2 Mpps / 1.68 ns, at 1518 B 32.5 Mpps / 30.8 ns; Gen5 x16 504.1 Gb/s after 128b/130b, × (1 − 8.07 %) = 463.4; 106 B × 8 × 595.2 M = 504.8 Gb/s → 91.8 %; 64 uniformly random balls in 64 bins give a mean of 1/max = 0.26 (20 000 trials, independent script), matching the Toeplitz-hashed 26 %.
 Not checked by the reviewer: the ConnectX-7 message rate (330–370 M/s), the ConnectX-9 firmware date, the NVIDIA CPO blog, the LWN article.
+
+## Registration (2026-11-15, power/NIC registrar)
+
+- Scripts `?v=20261115b` (models.js and both copy files changed in review).
+- One-click additions: #ch1 网卡 / network card, NIC (the page tag 网卡 opened the page top). Page tag 网络 / Networking became 网络硬件 /
+  Network Hardware (REGISTRY and pages.config.js): 网络 would have taken bare 网络 from tcp-congestion.
+- Collisions resolved on the owners' side: bare RDMA tied at 80 between storage-over-a-network #ch6 and #ch11 here (title names RDMA),
+  so S5 #ch6 gains the alias RDMA; PCIe 开销 / PCIe overhead / PCIe bandwidth became aliases of how-pcie-works #ch3 (this page's
+  per-packet phrases contain them); "packet" became an alias of tcp-congestion (#ch8's title says packets). Bare TSO stays on
+  how-cores-share-memory #ch9 (total store order).
+- Siblings now link here: how-the-os-talks-to-hardware ch6.limit (#ch5, RSS) and ch7.limit (#ch3, descriptor prefetch and write-back),
+  storage-over-a-network ch6.p1 (#ch11, queue pairs and one-sided writes), coherent-interconnects ch10.limit (#ch12, ECMP and spraying).
+  how-pcie-works #ch10 and how-cpu-caches-work were checked and left alone (no sentence about NICs or DDIO).
+- Atlas: 20 hand-written edges (10 between chapters, 10 with siblings).

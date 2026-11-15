@@ -341,7 +341,7 @@ const P = M.prose();
   // links: only live siblings, chapters that exist, titles quoted as in their copy
   const all = Object.values(Z).join('');
   const LIVE = ['how-a-cpu-runs-a-program', 'how-virtual-memory-works', 'how-a-computer-boots', 'how-pcie-works', 'why-nvme-is-fast', 'how-thunderbolt-works', 'how-cores-share-memory',
-    'how-a-cpu-guesses-ahead', 'what-a-drive-is-made-of', 'how-cpu-caches-work', 'coherent-interconnects'];
+    'how-a-cpu-guesses-ahead', 'what-a-drive-is-made-of', 'how-cpu-caches-work', 'coherent-interconnects', 'how-a-nic-moves-packets'];
   const hrefs = [...all.matchAll(/href='([^']+)'/g)].map(m => m[1]);
   for (const h of hrefs) { n++; if (!new RegExp('^\\.\\./(' + LIVE.join('|') + ')/(#ch\\d+)?$').test(h)) { fails++; console.error('FAIL unexpected link ' + h); } }
   for (const sib of LIVE) {
@@ -353,7 +353,7 @@ const P = M.prose();
   for (const [h, why] of [['../how-virtual-memory-works/#ch10', 'KPTI'], ['../how-pcie-works/#ch6', 'BAR'], ['../how-pcie-works/#ch7', 'MSI'], ['../why-nvme-is-fast/#ch4', 'queues'], ['../why-nvme-is-fast/#ch7', 'polling'],
     ['../how-thunderbolt-works/#ch8', 'IOMMU'], ['../how-a-computer-boots/#ch11', 'handoff'], ['../how-a-computer-boots/#ch6', 'ACPI'], ['../how-a-computer-boots/#ch12', 'Arm ELs'], ['../how-cores-share-memory/#ch9', 'barriers'],
     ['../how-a-cpu-guesses-ahead/#ch10', 'Spectre'], ['../what-a-drive-is-made-of/#ch1', 'LBA'], ['../what-a-drive-is-made-of/#ch2', 'HDD'], ['../how-virtual-memory-works/#ch3', 'paging'], ['../how-virtual-memory-works/#ch4', 'TLB'],
-    ['../coherent-interconnects/#ch3', 'CXL'], ['../how-a-cpu-runs-a-program/#ch8', 'exceptions'], ['../how-cpu-caches-work/', 'caches']]) check(`links ${h} (${why})`, hrefs.includes(h), true);
+    ['../coherent-interconnects/#ch3', 'CXL'], ['../how-a-cpu-runs-a-program/#ch8', 'exceptions'], ['../how-cpu-caches-work/', 'caches'], ['../how-a-nic-moves-packets/#ch5', 'RSS, ch6.limit'], ['../how-a-nic-moves-packets/#ch3', 'descriptor prefetch and write-back, ch7.limit']]) check(`links ${h} (${why})`, hrefs.includes(h), true);
   // the unregistered siblings are named in plain text, ready for the registrar to link
   check('how-a-web-page-arrives named in plain text, not linked', [all.includes('《网页是怎么来到你手机上的》'), /how-a-web-page-arrives|a-secret-in-public/.test(all)].join(), 'true,false');
   // no exploit detail in the security paragraph

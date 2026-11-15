@@ -317,3 +317,6 @@ Reviewer, 2026-11-15: moved out of this list — the GPT header and entry layout
 
 OS/pixels registrar (2026-11-15): ch11.p6 links how-the-os-talks-to-hardware #ch9 (how the initramfs drivers find their devices).
 Scripts `?v=20261115s`.
+
+Power/NIC registrar (2026-11-15): ch1.p3 (zh, en) links its words about the board's regulator to how-power-reaches-the-cpu #ch4; the test
+allows and requires the link. Scripts `?v=20261115t`.

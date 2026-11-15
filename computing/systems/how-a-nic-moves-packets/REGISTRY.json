@@ -14,8 +14,8 @@
   },
   "tags": [
     {
-      "zh": "网络",
-      "en": "Networking"
+      "zh": "网络硬件",
+      "en": "Network Hardware"
     },
     {
       "zh": "网卡",
@@ -44,12 +44,15 @@
       "anchor": "#ch1",
       "aliases": {
         "zh": [
+          "网卡",
           "网卡是怎么工作的",
           "网卡里有什么",
           "网络接口卡",
           "网卡怎么搬运数据包"
         ],
         "en": [
+          "network card",
+          "NIC",
           "how does a network card work",
           "network interface card",
           "what is inside a NIC",

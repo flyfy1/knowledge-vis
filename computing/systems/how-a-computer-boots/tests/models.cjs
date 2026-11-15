@@ -375,7 +375,7 @@ const sha = b => crypto.createHash('sha256').update(Buffer.from(b)).digest('hex'
   for (const w of ['安全启动', 'Secure Boot', '复位向量', 'reset vector', 'UEFI', 'GUID 分区表', '度量启动', 'measured boot', 'INIT-SIPI-SIPI']) check('this page takes ' + w, mineAll.includes(norm(w)), true);
   // links: only live siblings, chapters that exist, titles quoted as in their copy
   const all = Object.values(Z).join('');
-  const LIVE = ['how-a-cpu-runs-a-program', 'how-a-computer-is-wired', 'how-pcie-works', 'how-virtual-memory-works', 'what-a-drive-is-made-of', 'how-thunderbolt-works', 'how-cores-share-memory', 'how-memory-talks', 'rsa-encryption', 'how-the-os-talks-to-hardware'];
+  const LIVE = ['how-a-cpu-runs-a-program', 'how-a-computer-is-wired', 'how-pcie-works', 'how-virtual-memory-works', 'what-a-drive-is-made-of', 'how-thunderbolt-works', 'how-cores-share-memory', 'how-memory-talks', 'rsa-encryption', 'how-the-os-talks-to-hardware', 'how-power-reaches-the-cpu'];
   const hrefs = [...all.matchAll(/href='([^']+)'/g)].map(m => m[1]);
   for (const h of hrefs) { n++; if (!new RegExp('^\\.\\./(' + LIVE.join('|') + ')/(#ch\\d+)?$').test(h)) { fails++; console.error('FAIL unexpected link ' + h); } }
   for (const sib of LIVE) {
@@ -386,6 +386,8 @@ const sha = b => crypto.createHash('sha256').update(Buffer.from(b)).digest('hex'
   }
   check('rsa-encryption title as in pages.config.js', all.includes('《RSA 公钥加密》') && fs.readFileSync(path.join(ROOT, 'pages.config.js'), 'utf8').includes('title: { zh: "RSA 公钥加密 ·'), true);
   for (const [h, why] of [['../how-pcie-works/#ch6', 'enumeration'], ['../how-memory-talks/#ch7', 'training'], ['../how-a-computer-is-wired/#ch8', 'SPI'], ['../how-thunderbolt-works/#ch8', 'IOMMU'], ['../how-virtual-memory-works/#ch3', 'paging'], ['../what-a-drive-is-made-of/#ch1', 'LBA'], ['../how-the-os-talks-to-hardware/#ch9', 'driver probe, ch11.p6']]) check(`links ${h} (${why})`, hrefs.includes(h), true);
+  // the power essay is live since 2026-11-15 (power/NIC registrar): ch1.p3 links its #ch4 (the VRM that makes the core voltage)
+  check('ch1.p3 links the power essay #ch4', Z['ch1.p3'].includes("href='../how-power-reaches-the-cpu/#ch4'"), true);
   // the unregistered sibling is named in plain text, ready for the registrar to link
   check('a-secret-in-public named in plain text', (all.match(/《当着所有人的面约定一个秘密》/g) || []).length, 2);
   check('a-secret-in-public not linked yet', /a-secret-in-public/.test(all), false);

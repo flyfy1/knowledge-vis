@@ -126,7 +126,7 @@
       "desc": { "zh": "2026 年末 AI 芯片迈向 2048-bit HBM4 与共封装光学，同时 PIM 与神经形态硬件仍在与生态和成本博弈。", "en": "Late-2026 hardware pushes toward 2048-bit HBM4 and co-packaged optics while PIM and neuromorphic chips face area and software hurdles." },
       "aliases": {
         "zh": ["HBM4", "HBM3e", "B200 H100 对比", "Rubin", "共封装光学 CPO", "存算一体 PIM"],
-        "en": ["HBM4", "HBM3e", "Blackwell B200 bandwidth", "co-packaged optics", "processing in memory PIM"]
+        "en": ["HBM4", "HBM3e", "Blackwell B200 bandwidth", "co-packaged optics", "CPO", "processing in memory PIM"]
       },
       "anchor": "#ch10",
       "relatedPages": ["why-chips-are-hard", "what-a-frontier-model-takes"]

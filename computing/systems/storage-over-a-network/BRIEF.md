@@ -268,3 +268,6 @@ motion). Canvas sweep (`--sweep`, scroll-aware): first run found 27 states where
 OS/pixels registrar (2026-11-15): ch6.p1 links how-the-os-talks-to-hardware #ch12 (kernel bypass inside one machine). RDMA 是什么 / RDMA
 and "kernel bypass zero copy" stay on #ch6 here (pinned); plain "kernel bypass" / 内核旁路 open the OS essay #ch12. Scripts
 `?v=20261115b`.
+
+Power/NIC registrar (2026-11-15): ch6.p1 (zh, en) links how-a-nic-moves-packets #ch11 (queue pairs and one-sided writes inside the card);
+#ch6 gains the alias RDMA (it tied at 80 with the NIC essay's #ch11, whose title names RDMA). Scripts `?v=20261115c`.
