@@ -37,8 +37,8 @@
       "title": { "zh": "存储层级与缓存命中", "en": "Memory Latency Hierarchy and Cache Locality" },
       "desc": { "zh": "从 L1 到 DRAM 慢了约 80 倍；因为硬件按缓存行搬运，按行遍历与按列遍历矩阵的流量可差 8 倍。", "en": "DRAM is roughly 80x slower than L1 cache; because hardware fetches full cache lines, row-major vs column-major matrix walks can differ by 8x in traffic." },
       "aliases": {
-        "zh": ["缓存命中率", "L1 L2 L3 缓存", "按行遍历 按列遍历", "空间局部性", "缓存行", "组相联缓存", "为什么二维数组按行更快"],
-        "en": ["cache hierarchy", "L1 L2 L3 DRAM latency", "row major vs column major", "spatial locality", "cache line", "set associative cache"]
+        "zh": ["缓存命中率", "按行遍历 按列遍历", "空间局部性", "为什么二维数组按行更快"],
+        "en": ["cache hierarchy", "L1 L2 L3 DRAM latency", "row major vs column major", "spatial locality"]
       },
       "anchor": "#ch2",
       "relatedPages": []

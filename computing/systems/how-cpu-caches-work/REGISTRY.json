@@ -48,14 +48,16 @@
           "为什么缓存不能做得又大又快",
           "多级缓存",
           "重用距离",
-          "L1 L2 L3 缓存"
+          "L1 L2 L3 缓存",
+          "CPU 缓存"
         ],
         "en": [
           "why three levels of cache",
           "multi-level cache",
           "why caches cannot be big and fast",
           "reuse distance",
-          "L1 L2 L3 cache"
+          "L1 L2 L3 cache",
+          "CPU cache"
         ]
       }
     },
@@ -105,7 +107,10 @@
           "冲突缺失",
           "强制缺失 容量缺失 冲突缺失",
           "3C 模型",
-          "全相联缓存"
+          "全相联缓存",
+          "缓存未命中",
+          "三种缓存未命中",
+          "缓存缺失"
         ],
         "en": [
           "set associative cache",
@@ -113,7 +118,8 @@
           "conflict miss",
           "compulsory capacity conflict misses",
           "3C model",
-          "fully associative cache"
+          "fully associative cache",
+          "cache miss types"
         ]
       }
     },
@@ -192,7 +198,8 @@
           "受害者缓存",
           "L3 缓存为什么共享",
           "私有 L2 共享 L3",
-          "Zen 5 缓存结构"
+          "Zen 5 缓存结构",
+          "独占式缓存"
         ],
         "en": [
           "inclusive cache",
@@ -228,7 +235,8 @@
           "VIPT",
           "virtually indexed physically tagged",
           "cache aliasing",
-          "L1 size limit page size times ways"
+          "L1 size limit page size times ways",
+          "why is L1 cache so small"
         ]
       }
     },
@@ -256,7 +264,9 @@
           "stride prefetcher",
           "next-line prefetch",
           "prefetch coverage and accuracy",
-          "software prefetch"
+          "software prefetch",
+          "cache prefetching",
+          "hardware prefetcher"
         ]
       }
     },

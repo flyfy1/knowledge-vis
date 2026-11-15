@@ -210,6 +210,25 @@ const f = (x, d = 0) => x.toFixed(d);
   says('ch10.f4', '19.2 TB/s');
 }
 
+/* ── architecture series A2 (how-cpu-caches-work, live 2026-11-15): the ch2 link resolves, zh = en, moved aliases gone ── */
+{
+  const ectx = { window: {} };
+  vm.runInNewContext(fs.readFileSync(path.join(__dirname, '..', 'copy.en.js'), 'utf8'), ectx);
+  const E = ectx.window.ESSAY_COPY.en, sib = 'how-cpu-caches-work';
+  const sh = fs.readFileSync(path.join(__dirname, '..', '..', sib, 'index.html'), 'utf8');
+  const bl = o => Object.values(o).join('').match(new RegExp(sib + '/(#ch\\d+)?', 'g')) || [];
+  for (const m of bl(Z)) if (m.includes('#')) check(sib + ' anchor ' + m, sh.includes('id="' + m.split('#')[1] + '"'), true);
+  check('ch2.p3 links ' + sib, Z['ch2.p3'].includes('../' + sib + '/'), true);
+  check('en ' + sib + ' links = zh', bl(E).sort().join(' '), bl(Z).sort().join(' '));
+  check('zh title of ' + sib, Z['ch2.p3'].includes('《CPU 的三级缓存是怎么工作的》'), true);
+  check('en title of ' + sib, E['ch2.p3'].includes("How a CPU's Three Levels of Cache Work"), true);
+  // one word, one owner (TASK-arch-series.md): these cache words moved to how-cpu-caches-work
+  const R = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'REGISTRY.json'), 'utf8'));
+  const mine = new Set(R.concepts.flatMap(c => [...c.aliases.zh, ...c.aliases.en]));
+  for (const a of ['L1 L2 L3 缓存', '缓存行', '组相联缓存', 'cache line', 'set associative cache', 'L1 L2 L3 cache']) check('alias moved to ' + sib + ': ' + a, mine.has(a), false);
+  for (const a of ['缓存命中率', 'cache hierarchy', '空间局部性', 'spatial locality']) check('alias kept: ' + a, mine.has(a), true);
+}
+
 /* ── live sentence templates check ── */
 for (const [k, v] of Object.entries(Z)) {
   if (/\.say(\.|$)/.test(k)) {

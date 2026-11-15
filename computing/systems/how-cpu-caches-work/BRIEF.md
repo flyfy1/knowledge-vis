@@ -222,3 +222,16 @@ Unverified
 - Prefetcher page-boundary and stride-range caveat in ch8.limit: general knowledge (Intel's optimisation manual), not
   opened for this review. Apple 4 KiB-page VMs: general knowledge.
 - The model's Zen 5 L3 is LRU, non-inclusive fill-on-miss, not the real victim/shadow-tag design (stated on the page).
+
+## Registrar (2026-11-15)
+
+- Alias move done as decided in TASK-arch-series.md: L1 L2 L3 缓存 / L1 L2 L3 cache (#ch1), 缓存行 / cache line (#ch2),
+  组相联缓存 / set associative cache (#ch3) left why-compute-waits-for-memory #ch2, which keeps 缓存命中率, cache hierarchy,
+  locality and the row/column words. That page's ch2.p3 now ends with one sentence linking here (zh and en).
+- Search words from the one-click check: #ch1 CPU 缓存 / CPU cache (so 「CPU 缓存是什么」 and "what is CPU cache" open the
+  chapter, not the page top); #ch3 缓存未命中, 三种缓存未命中, 缓存缺失, cache miss types; #ch6 独占式缓存; #ch7 "why is L1 cache so
+  small"; #ch8 cache prefetching, hardware prefetcher. Plain 缓存 / cache stay with switches-that-compute #ch11. 缓存一致性,
+  cache coherence, MESI 协议 and MOESI are left for A5 and have no result until it is registered.
+- switches-that-compute #ch11 does not link here: its only mention (ch11.scale.cache) is a list item, and that page's
+  browser test requires every link to be a 48 × 48 target, which an inline word is not.
+- Scripts stay at `?v=20261115` (never deployed before).
