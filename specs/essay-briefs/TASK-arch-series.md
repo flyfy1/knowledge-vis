@@ -21,7 +21,9 @@ en stub, Haiku translates, separate Opus review of both languages, registrar). *
 | A5 | `how-cores-share-memory` 多个核心怎么共用一块内存 | `445f4b67` | `c79af41c` | live, zh + en, reviewed by a separate Claude Code session (same model; cross-model review pending) |
 | A6 | `how-a-gpu-computes` GPU 是怎么算的 | `e844143c` | `9b09a7f7` | live, zh + en, reviewed by a separate Claude Code session (same model; cross-model review pending) |
 | — | `how-a-computer-boots` 电脑是怎么开机的 | `509b4d6e` | `9b09a7f7` | live, zh + en, reviewed by a separate Claude Code session (same model; cross-model review pending) |
-| — | how pixels reach a screen, how power reaches the CPU, how a NIC moves packets, how the OS talks to hardware | — | — | queued next, specs to be written when dispatched |
+| — | `how-the-os-talks-to-hardware` 操作系统是怎么和硬件说话的 | `20a942e2` | `26daf4af` | live, zh + en, reviewed by a separate Claude Code session (same model; cross-model review pending) |
+| — | `how-pixels-reach-a-screen` 像素是怎么到屏幕上的 | `3e6bf23d` | `26daf4af` | live, zh + en, reviewed by a separate Claude Code session (same model; cross-model review pending) |
+| — | how power reaches the CPU, how a NIC moves packets | — | — | queued next, specs to be written when dispatched |
 
 A2: alias move, cross-link and one-click aliases in `88dafe9c` (the label points there), registration `644c2aee`. The
 "One word, one owner" decision below is done: L1 L2 L3 缓存, 缓存行, 组相联缓存, cache line, set associative cache (and L1 L2
@@ -61,7 +63,21 @@ ch1.p3 (#ch7). A1, A3 and A4 were checked and not linked (no plain-text mention)
 boot #ch8 takes "Secure Boot chain of trust" / 安全启动信任链, never the bare "chain of trust" (a-secret-in-public #ch6); boot #ch3 keeps
 SPI flash / quad SPI read beside B2's SPI / SPI bus; A6 keeps "GPU cache coherence" and "GPU shared memory" (the bare words stay with
 A5, the memory essay and B4). The boot essay names a-secret-in-public in plain text (ch8.p2, ch14.links): link it when that draft goes
-live. Next queued: how pixels reach a screen, how power reaches the CPU, how a NIC moves packets, how the OS talks to hardware.
+live.
+
+The OS and pixels essays: cross-links, alias decisions and one-click aliases in `e916a267` (both labels, and the repointed
+how-virtual-memory-works, how-pcie-works, why-nvme-is-fast, how-a-computer-boots, how-thunderbolt-works, storage-over-a-network and
+how-a-gpu-computes labels, point there), registration `863f6b5f`, cache keys `26daf4af`. Review notes
+specs/reviews/how-the-os-talks-to-hardware-review-20261115.md and specs/reviews/how-pixels-reach-a-screen-review-20261115.md. Links into
+the OS essay: A3 ch10.limit (#ch3) and ch11.p3 (#ch8), B1 ch6.p5 (#ch4) and ch7.p3 (#ch5), NVMe ch7.p2 (#ch11; Antigravity edition, note
+specs/reviews/why-nvme-is-fast-os-link-20261115.md), boot ch11.p6 (#ch9), B6 ch8.p2 (#ch8), S5 ch6.p1 (#ch12); into the pixels essay: B6
+ch6.p1 (#ch2) and ch6.p4 (#ch7), A6 ch9.p2 (#ch1). B3 #ch9, S4 #ch8 and inside-a-phone #screen were checked and not linked (no sentence
+on the topic). Aliases: the OS essay takes no RDMA (S5 #ch6) and only DMA 是什么 / what is DMA (bare DMA unowned); "kernel bypass" opens OS
+#ch12, "kernel bypass zero copy" S5 #ch6; 中断 / interrupt, io_uring and 操作系统 / operating system now open OS #ch5, #ch11, #ch1. The pixels
+essay takes no 显示流压缩 / Display Stream Compression; B6 #ch6 owns them and bare DSC, pixels #ch7 keeps DSC 有损吗 / is DSC lossy / 视觉无损;
+A6 #ch1 takes 显卡 / graphics card. The OS essay names 《网页是怎么来到你手机上的》 in plain text (ch14.links): link it when
+tech/networks/how-a-web-page-arrives goes live. Known inconsistency left for B6's owner: B6 ch6.p4 counts 25.92 Gb/s for HBR3 with DSC;
+DSC on 8b/10b DP needs FEC (25.31 Gb/s, pixels ch7.p4). Next queued: how power reaches the CPU, how a NIC moves packets.
 
 ## The course, in reading order
 
@@ -82,9 +98,9 @@ Existing pages are marked (live). New essays are A1–A6; B and S are the other 
 
 Yangyu, 2026-11-15: "我希望最终的效果是可以通过这个课程，把计算机各个部件的运行原理都讲清楚". So the course also needs,
 queued after the above (spec to be written when dispatched): how a computer boots (firmware, UEFI, POST, the boot
-chain; live since 2026-11-15 as `how-a-computer-boots`); how pixels reach a screen (GPU display engine, DisplayPort/HDMI, refresh, VRR); how power reaches the CPU
+chain; live since 2026-11-15 as `how-a-computer-boots`); how pixels reach a screen (GPU display engine, DisplayPort/HDMI, refresh, VRR; live since 2026-11-15 as `how-pixels-reach-a-screen`); how power reaches the CPU
 (PSU, VRMs, DVFS, why chips throttle); how a network card moves packets (NIC, DMA rings, offloads, RSS); how the
-OS talks to hardware (drivers, interrupts, system calls). Check `pages.config.js` and the untracked drafts
+OS talks to hardware (drivers, interrupts, system calls; live since 2026-11-15 as `how-the-os-talks-to-hardware`). Check `pages.config.js` and the untracked drafts
 (`tech/devices`, `tech/networks`, `tech/semiconductors/why-chips-are-hard`) before speccing each, and link the
 existing chips/transistor pages rather than repeating them.
 
