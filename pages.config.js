@@ -166,6 +166,7 @@ window.KNOWLEDGE_ESSAYS = [
   "how-pcie-works",
   "how-a-computer-is-wired",
   "how-thunderbolt-works",
+  "how-cpu-caches-work",
   "how-an-economy-is-measured",
   "scarcity-moves"
 ];
@@ -476,6 +477,16 @@ window.KNOWLEDGE_PAGES = [
     },
     tags: [{ zh: "USB-C", en: "USB-C" }, { zh: "雷电与 USB4", en: "Thunderbolt and USB4" }, { zh: "接口与总线", en: "Interfaces and Buses" }, { zh: "USB PD 充电", en: "USB Power Delivery" }, { zh: "长文", en: "Long-form Essay" }],
     category: "computing", subtopic: "systems", stage: "university", status: "live", path: "computing/systems/how-thunderbolt-works/"
+  },
+  {
+    slug: "how-cpu-caches-work",
+    title: { zh: "CPU 的三级缓存是怎么工作的", en: "How a CPU's Three Levels of Cache Work" },
+    desc: {
+      zh: "内存要等几十纳秒，CPU 一纳秒能做好几件事。几十 KB 到几十 MB 的缓存怎样让它大部分时候不用等？为什么分三级、每级为什么是现在这个大小？十个在真实地址序列上跑的缓存模型：地址怎么拆、相联度与三种缺失、LRU 与 RRIP、写回与写缓冲、包含与排他、L1 的容量上限、预取、MESI 与伪共享、追指针的延迟台阶。",
+      en: "Memory takes tens of nanoseconds and a CPU does several things every nanosecond. How do caches of tens of kilobytes to tens of megabytes keep it from waiting most of the time? Why three levels, and why is each the size it is? Ten cache models run on real address traces: splitting an address, associativity and the three kinds of miss, LRU and RRIP, write-back and write buffers, inclusive and exclusive levels, the limit on L1 size, prefetching, MESI and false sharing, and the latency staircase of a pointer chase."
+    },
+    tags: [{ zh: "CPU 缓存", en: "CPU Caches" }, { zh: "计算机体系结构", en: "Computer Architecture" }, { zh: "内存层级", en: "Memory Hierarchy" }, { zh: "长文", en: "Long-form Essay" }],
+    category: "computing", subtopic: "systems", stage: "university", status: "live", path: "computing/systems/how-cpu-caches-work/"
   },
   {
     slug: "how-an-economy-is-measured",

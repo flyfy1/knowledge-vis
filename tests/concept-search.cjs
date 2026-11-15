@@ -356,6 +356,33 @@ chapters.push(
   ['雷电接口是什么', 'what is Thunderbolt', TB + '#ch11'],
   ['USB-C 能干什么', 'what can USB-C do', TB + '#ch11'],
 );
+// Architecture series A2 (2026-11-15). L1 L2 L3 缓存, 缓存行, 组相联缓存, cache line and set associative cache moved from
+// why-compute-waits-for-memory #ch2 (TASK-arch-series.md "One word, one owner"); that chapter keeps 缓存命中率, cache hierarchy
+// and the locality words. Plain 缓存 / cache stay with switches-that-compute #ch11. 缓存一致性 / cache coherence / MESI 协议 /
+// MOESI are left for A5 (no result until it is registered).
+const CACHE = 'computing/systems/how-cpu-caches-work/', MEMW = 'computing/systems/why-compute-waits-for-memory/';
+chapters.push(
+  ['L1 L2 L3 缓存', 'L1 L2 L3 cache', CACHE + '#ch1'],
+  ['CPU 缓存是什么', 'what is CPU cache', CACHE + '#ch1'],
+  ['缓存行', 'cache line', CACHE + '#ch2'],
+  ['直接映射', 'direct mapped cache', CACHE + '#ch2'],
+  ['组相联', 'set associative cache', CACHE + '#ch3'],
+  ['缓存未命中 三种', 'cache miss types', CACHE + '#ch3'],
+  ['LRU 替换', 'pseudo LRU', CACHE + '#ch4'],
+  ['伪 LRU', 'LRU', CACHE + '#ch4'],
+  ['写回 写直达', 'write-back vs write-through', CACHE + '#ch5'],
+  ['包含式 独占式 L3', 'inclusive vs exclusive cache', CACHE + '#ch6'],
+  ['为什么 L1 这么小', 'why is L1 cache so small', CACHE + '#ch7'],
+  ['VIPT', 'virtually indexed physically tagged', CACHE + '#ch7'],
+  ['硬件预取', 'cache prefetching', CACHE + '#ch8'],
+  ['伪共享', 'false sharing', CACHE + '#ch9'],
+  ['MESI 状态', 'MESI states', CACHE + '#ch9'],
+  ['追指针测试', 'pointer chasing benchmark', CACHE + '#ch10'],
+  ['3D V-Cache', 'stacked cache', CACHE + '#ch11'],
+  ['怎么看 CPU 缓存参数', 'how to read CPU cache specs', CACHE + '#ch12'],
+  ['缓存命中率', 'cache hierarchy', MEMW + '#ch2'],
+  ['空间局部性', 'spatial locality', MEMW + '#ch2'],
+);
 for (const [zh, en, href] of chapters) for (const q of [zh, en]) {
   const hit = first(q);
   ok(hit && (hit.href === href || (href.endsWith('/') && hit.href.startsWith(href))), `"${q}" opens ${href} (got ${hit && hit.href})`);

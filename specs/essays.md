@@ -83,7 +83,7 @@ types ("为什么要打疫苗", "how does my phone know where I am"), not only t
    max-age=14400`) but not the HTML, so without a new key readers get the new page with the old text. If the scripts
    were already deployed under today's key, append a letter (`?v=20261115b`, then `c`) so the new key differs. The
    storage essays (what-a-drive-is-made-of, how-sata-works, how-sas-works, how-usb-drives-talk, storage-over-a-network),
-   the bus essays (how-pcie-works, how-a-computer-is-wired, how-thunderbolt-works) and why-nvme-is-fast use it since 2026-11-15; older essays do not yet, so add the key the next time one of them
+   the bus essays (how-pcie-works, how-a-computer-is-wired, how-thunderbolt-works), how-cpu-caches-work, why-compute-waits-for-memory and why-nvme-is-fast use it since 2026-11-15; older essays do not yet, so add the key the next time one of them
    changes.
 8. Add rows to CONCEPT-MAP.md.
 
@@ -115,10 +115,12 @@ types ("为什么要打疫苗", "how does my phone know where I am"), not only t
 | how-pcie-works | computing/systems/how-pcie-works/ | 12 (`#ch1…#ch12`) | computing | `ESSAY_BASE_URL` |
 | how-a-computer-is-wired | computing/systems/how-a-computer-is-wired/ | 10 (`#ch1…#ch10`) | computing | `ESSAY_BASE_URL` |
 | how-thunderbolt-works | computing/systems/how-thunderbolt-works/ | 11 (`#ch1…#ch11`) | computing | `ESSAY_BASE_URL` |
+| how-cpu-caches-work | computing/systems/how-cpu-caches-work/ | 12 (`#ch1…#ch12`) | computing | `ESSAY_BASE_URL` |
 
 The eleven from 2026-11-11, the two food essays of 2026-11-12 and the five storage essays of 2026-11-14/15
 (what-a-drive-is-made-of, how-sata-works, how-sas-works, how-usb-drives-talk, storage-over-a-network) and the three bus essays of
-2026-11-15 (how-pcie-works, how-a-computer-is-wired, how-thunderbolt-works) were built by Claude Code (claude-opus-5-5). The English copy was drafted by Claude
+2026-11-15 (how-pcie-works, how-a-computer-is-wired, how-thunderbolt-works) and the architecture essay how-cpu-caches-work
+(2026-11-15) were built by Claude Code (claude-opus-5-5). The English copy was drafted by Claude
 Code (claude-haiku-5-5). A separate Claude Code session of the same model reviewed each essay and revised
 it (no human or cross-model review yet). Each BRIEF.md records what was and was not checked.
 why-compute-waits-for-memory and why-nvme-is-fast were built by Antigravity (gemini-4-hydrogen) in both
@@ -240,7 +242,11 @@ pipeline with memory stalls, the latency ladder and an LRU cache simulator, loop
 Little's law, multicore scaling and bus contention, GPU systolic arrays, the roofline model, why LLM inference is
 memory-bound, data-movement energy and HBM packaging, the HBM4 frontier, and four questions for any chip. Atlas
 edges: 11 between chapters, 3 to other pages (switches-that-compute, tcp-congestion latency-bandwidth,
-how-hybrid-attention-remembers).
+how-hybrid-attention-remembers). On 2026-11-15 the A2 registrar moved L1 L2 L3 缓存, 缓存行, 组相联缓存, cache line and set
+associative cache from its #ch2 to how-cpu-caches-work (team-lead decision in TASK-arch-series.md), appended one sentence to
+ch2.p3 linking that essay, gave its scripts `?v=20261115` and repointed the label to that commit (88dafe9c) with
+specs/reviews/why-compute-waits-for-memory-alias-move-20261115.md as evidence (the edition stays Antigravity's). #ch2 keeps
+缓存命中率, cache hierarchy, 按行遍历 按列遍历, 空间局部性 / spatial locality, row major vs column major and the latency ladder.
 
 ### why-nvme-is-fast: NVMe 为什么这么快
 
@@ -405,6 +411,29 @@ not redone), why-nvme-is-fast #ch2 and #ch4, and how-pcie-works (#ch2 and the pa
 from how-usb-drives-talk (#ch8 twice, #ch3), 1 from why-nvme-is-fast (#ch4), 1 from how-pcie-works (#ch2), 2 into
 how-usb-drives-talk #ch8. Not verified (BRIEF): which DP reservation route a TB4 product uses, the Thunderspy authors'
 claim about USB4, USB4's own DMA-protection wording.
+
+### how-cpu-caches-work: CPU 的三级缓存是怎么工作的
+
+Computer architecture series A2 (requested by Yangyu 2026-11-15, specs/essay-briefs/TASK-arch-series.md). Memory takes tens
+of nanoseconds and a core does several things a nanosecond: how do caches of tens of KB to tens of MB keep it from waiting,
+why three levels, and why each is the size it is? AMAT on Zen 5's documented latencies with Mattson reuse distance, the
+tag / index / offset split with a toy direct-mapped cache, associativity and Hill's 3C misses, replacement (LRU, tree-PLRU,
+random, SRRIP, BRRIP against Belady), write-back vs write-through with a write buffer, inclusive / non-inclusive / exclusive
+L3 and five real cores, why L1 is small (VIPT, page × ways, with the Neoverse V3 and Apple exceptions), next-line and stride
+prefetching (and the LRU cliff at distance 5), a first look at MESI with false sharing, the pointer-chase staircase, a dated
+frontier and a closing. Eleven static diagrams. Essay commit 476c9f45; label at 88dafe9c. It owns, since 2026-11-15, L1 L2
+L3 缓存 / L1 L2 L3 cache and CPU 缓存 / CPU cache (#ch1), 缓存行 / cache line and 直接映射缓存 (#ch2), 组相联缓存 / set
+associative cache, 3C, 缓存未命中 / 缓存缺失 (#ch3), LRU, 伪 LRU, RRIP (#ch4), 写回 写直达 (#ch5), 包含式 / 排他式 / 独占式缓存
+(#ch6), VIPT and 为什么 L1 这么小 (#ch7), 硬件预取 / cache prefetching (#ch8), 伪共享 / false sharing and MESI 状态 / MESI
+states (#ch9), 追指针 / cache latency staircase (#ch10), 3D V-Cache (#ch11), 怎么看 CPU 缓存参数 (#ch12). The first five moved
+from why-compute-waits-for-memory #ch2 (team-lead decision); 缓存命中率 and cache hierarchy stay there, plain 缓存 / cache stay
+with switches-that-compute #ch11. 缓存一致性 / cache coherence, MESI 协议 and MOESI are left for A5 how-cores-share-memory and
+return nothing until it is registered; #ch9 takes only MESI 状态 and false sharing, which it answers. It links
+why-compute-waits-for-memory (#ch2, #ch3, #ch4, the page) and switches-that-compute #ch11; that essay's ch2.p3 links back.
+switches-that-compute does not link here (its only cache mention is a list item, and its browser test requires 48 × 48
+links). A3 (virtual memory) and A5 are named in plain text. Atlas edges: 8 between chapters, 4 from why-compute-waits-for-
+memory (#ch2 twice, #ch3, #ch4), 1 from switches-that-compute #ch11. Not verified (BRIEF): Arm's Neoverse V3 TRM (quoted via
+jia.je), Intel Xeon 6980P cache, Zen 6 (claimed), Apple's ways and latencies, Skymont L1.
 
 ### scarcity-moves: 稀缺会搬家
 

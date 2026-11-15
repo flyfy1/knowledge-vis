@@ -1,11 +1,11 @@
 {
   "counts": {
     "groups": 11,
-    "nodes": 490,
-    "edges": 660,
+    "nodes": 502,
+    "edges": 673,
     "trails": 14,
     "questions": 124,
-    "fragments": 200
+    "fragments": 201
   },
   "conflicts": [],
   "suspendedEdges": [],
@@ -1989,10 +1989,10 @@
     }
   ],
   "unknownAliasIds": [],
-  "sizeBytes": 912665,
+  "sizeBytes": 930990,
   "questionsBytes": 173024,
-  "combinedBytes": 1085689,
-  "indexBytes": 110314,
+  "combinedBytes": 1104014,
+  "indexBytes": 112033,
   "chunkBytes": {
     "math.nodes": 51664,
     "math.edges": 89636,
@@ -2018,8 +2018,8 @@
     "earth.nodes": 25871,
     "earth.edges": 19025,
     "earth.questions": 6822,
-    "computing.nodes": 108662,
-    "computing.edges": 72613,
+    "computing.nodes": 117679,
+    "computing.edges": 79132,
     "computing.questions": 2766,
     "society.nodes": 58077,
     "society.edges": 41022,

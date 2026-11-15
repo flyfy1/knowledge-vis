@@ -75,20 +75,15 @@
       "aliases": {
         "zh": [
           "缓存命中率",
-          "L1 L2 L3 缓存",
           "按行遍历 按列遍历",
           "空间局部性",
-          "缓存行",
-          "组相联缓存",
           "为什么二维数组按行更快"
         ],
         "en": [
           "cache hierarchy",
           "L1 L2 L3 DRAM latency",
           "row major vs column major",
-          "spatial locality",
-          "cache line",
-          "set associative cache"
+          "spatial locality"
         ]
       }
     },

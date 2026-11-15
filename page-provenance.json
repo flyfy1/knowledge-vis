@@ -3101,13 +3101,16 @@
       "developer": "Antigravity",
       "edition": "antigravity-why-compute-waits-for-memory-20261113",
       "kind": "original",
-      "sourceRevision": "e975710b809d0fe16d35a09db8d12ea686ecc6e8",
+      "sourceRevision": "88dafe9cf9e0d2033532214be9e5b414e9e38c9c",
       "scope": {
         "zh": "整篇长文从零编写：五级流水线停顿、存储层级延迟阶梯、组相联缓存遍历、矩阵分块、内存墙与利特尔法则、多核总线瓶颈、脉动阵列、屋顶线模型、大模型推理、能耗与 HBM4 前沿",
         "en": "Whole essay written from scratch: 5-stage pipeline stalls, latency hierarchy, set-associative cache walk, matrix tiling, memory wall and Little's Law, multicore bus ceiling, systolic arrays, roofline model, LLM decode inference, energy ledger, and HBM4 frontier"
       },
       "originalAuthorship": "written from scratch in zh and en by Antigravity (gemini-4-hydrogen), 2026-11-13; independently reviewed by Antigravity (gemini-4-hydrogen) with models.cjs, 7 hardware spot-checks, browser.cjs, and canvas-text-overlap --sweep, see BRIEF.md",
-      "path": "computing/systems/why-compute-waits-for-memory/index.html"
+      "path": "computing/systems/why-compute-waits-for-memory/index.html",
+      "originalSourceRevision": "e975710b809d0fe16d35a09db8d12ea686ecc6e8",
+      "previousSourceRevision": "e975710b809d0fe16d35a09db8d12ea686ecc6e8",
+      "provenanceEvidence": "specs/reviews/why-compute-waits-for-memory-alias-move-20261115.md"
     },
     "how-an-economy-is-measured": {
       "developer": "Antigravity",
@@ -3247,6 +3250,20 @@
       "path": "computing/systems/how-thunderbolt-works/index.html",
       "originalSourceRevision": "3954bb68e0109ee46029b9d2fa11d36fb9e23223",
       "previousSourceRevision": "3954bb68e0109ee46029b9d2fa11d36fb9e23223"
+    },
+    "how-cpu-caches-work": {
+      "developer": "Claude Code",
+      "edition": "claude-code-how-cpu-caches-work-20261115",
+      "kind": "original",
+      "sourceRevision": "88dafe9cf9e0d2033532214be9e5b414e9e38c9c",
+      "scope": {
+        "zh": "整篇长文从零编写：为什么要分三级缓存与平均访问时间、地址拆成标记组号偏移、相联度与三种缺失、LRU 伪 LRU 与 RRIP 替换、写回写直达与写缓冲、包含与排他的 L3、为什么 L1 这么小（VIPT）、硬件预取、MESI 入门与伪共享、追指针的延迟台阶、缓存前沿",
+        "en": "Whole essay written from scratch: why three levels and average access time, splitting an address into tag, index and offset, associativity and the three kinds of miss, LRU, pseudo-LRU and RRIP replacement, write-back, write-through and the write buffer, inclusive and exclusive L3, why L1 is small (VIPT), hardware prefetching, a first look at MESI and false sharing, the pointer-chase latency staircase, the cache frontier"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5); English copy drafted by Claude Code (claude-haiku-5-5); independently reviewed 2026-11-15 by a separate Claude Code session (same model), see the page BRIEF.md; cross-model review pending",
+      "path": "computing/systems/how-cpu-caches-work/index.html",
+      "originalSourceRevision": "476c9f45bca2027a59414bae25b787ac6a4e0a7b",
+      "previousSourceRevision": "476c9f45bca2027a59414bae25b787ac6a4e0a7b"
     }
   },
   "exceptions": {

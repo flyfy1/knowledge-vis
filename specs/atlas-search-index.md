@@ -319,6 +319,17 @@ anchor and aliases. It is a schema-2 fragment `atlas/graph/lessons/<slug>.json`:
   registered). `tests/concept-search.cjs` pins 42 zh/en pairs for the three essays (the moved pair now on B6 #ch9). The search
   chunks total 267,262 bytes; computing-1.js is 44,946 of 60,000.
 
+- Architecture series A2 (2026-11-15): how-cpu-caches-work (12 concepts) → computing. 13 hand-written edges, all in the A2
+  fragment: 8 between chapters (#ch2 → #ch3, #ch7 and #ch9; #ch3 → #ch4 and #ch10; #ch4 → #ch8; #ch1 → #ch6 and #ch10), 4 from
+  why-compute-waits-for-memory (#ch2 → #ch1 and #ch2, #ch4 → #ch1, #ch3 → #ch10), 1 from switches-that-compute (#ch11 → #ch1).
+  One word, one owner: L1 L2 L3 缓存, 缓存行, 组相联缓存, cache line and set associative cache moved from
+  why-compute-waits-for-memory #ch2 to A2 #ch1–#ch3 (team-lead decision, TASK-arch-series.md; that fragment re-imported, its
+  14 edges kept); 缓存命中率, cache hierarchy and the locality words stay there; plain 缓存 / cache stay on switches-that-compute
+  #ch11. One-click additions: CPU 缓存 / CPU cache on #ch1 (the page tag "CPU 缓存" otherwise won), 缓存未命中 / 缓存缺失 / cache
+  miss types on #ch3, 独占式缓存 on #ch6, cache prefetching / hardware prefetcher on #ch8. 缓存一致性, cache coherence, MESI 协议
+  and MOESI are left unowned for A5. `tests/concept-search.cjs` pins 18 zh/en pairs for A2 and 2 for the memory essay's kept
+  words. The search chunks total 273,901 bytes; computing-1.js is 44,589 of 60,000.
+
 ### Commands for the integrator
 
 ```sh
