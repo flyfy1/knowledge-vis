@@ -1,0 +1,404 @@
+{
+  "slug": "how-the-os-talks-to-hardware",
+  "path": "computing/systems/how-the-os-talks-to-hardware/",
+  "category": "computing",
+  "subtopic": "systems",
+  "stage": "university",
+  "title": {
+    "zh": "操作系统是怎么和硬件说话的",
+    "en": "How the OS Talks to Hardware"
+  },
+  "desc": {
+    "zh": "程序里写一句 read()，几微秒后数据就从硬盘或网卡那里来了，可用户程序碰不到任何硬件。这句话怎么穿过那堵墙，找到对的驱动和设备，再把结果送回来？九个可以动手的模型：一条指令在哪个特权级会被拦下，系统调用的寄存器约定，一次进出内核要多少周期，读设备寄存器为什么贵，中断、轮询和 NAPI 各花多少 CPU，描述符环多大才不丢包，驱动怎么和设备配对，一次 read() 在每一层花多久，以及 epoll 和 io_uring 每次 I/O 要几次系统调用。",
+    "en": "A read() in your program brings data back from a disk or a network card within microseconds, yet a user program cannot touch any hardware. How does that one line cross the wall, find the right driver and device, and bring the result back? Nine hands-on models: which instruction traps at which privilege level, the system-call register convention, the cycles of one kernel crossing, why reading a device register is expensive, the CPU cost of interrupts, polling and NAPI, how large a descriptor ring must be not to drop packets, how drivers bind to devices, where one read() spends its time layer by layer, and how many system calls epoll and io_uring make per I/O."
+  },
+  "tags": [
+    {
+      "zh": "操作系统",
+      "en": "Operating Systems"
+    },
+    {
+      "zh": "驱动",
+      "en": "Device Drivers"
+    },
+    {
+      "zh": "系统调用",
+      "en": "System Calls"
+    },
+    {
+      "zh": "计算机体系结构",
+      "en": "Computer Architecture"
+    },
+    {
+      "zh": "长文",
+      "en": "Long-form Essay"
+    }
+  ],
+  "concepts": [
+    {
+      "id": "privilege-levels",
+      "title": {
+        "zh": "特权级：CPU 每条指令都查「你现在是谁」",
+        "en": "Privilege levels: the CPU checks who you are on every instruction"
+      },
+      "desc": {
+        "zh": "在 ring 3 或 EL0 上，读写端口、关中断、换页表的指令一执行就被硬件拦下；Linux 把它变成 SIGSEGV 或 SIGILL。",
+        "en": "At ring 3 or EL0, port I/O, disabling interrupts or switching page tables traps in hardware; Linux turns it into SIGSEGV or SIGILL."
+      },
+      "anchor": "#ch1",
+      "aliases": {
+        "zh": [
+          "特权级",
+          "保护环",
+          "ring 0",
+          "异常级别",
+          "用户态和内核态"
+        ],
+        "en": [
+          "privilege levels",
+          "protection rings",
+          "ring zero",
+          "exception levels",
+          "user mode vs kernel mode"
+        ]
+      }
+    },
+    {
+      "id": "system-call",
+      "title": {
+        "zh": "系统调用：程序故意触发的一次异常",
+        "en": "The system call: an exception the program raises on purpose"
+      },
+      "desc": {
+        "zh": "syscall 或 svc 把 CPU 切到内核的固定入口；编号放在 rax（arm64 是 x8），内核按编号查表。",
+        "en": "syscall or svc jumps to a fixed kernel entry; the number sits in rax (x8 on arm64) and the kernel looks it up in a table."
+      },
+      "anchor": "#ch2",
+      "aliases": {
+        "zh": [
+          "系统调用",
+          "系统调用是什么",
+          "syscall 指令",
+          "系统调用号"
+        ],
+        "en": [
+          "system call",
+          "what is a syscall",
+          "syscall ABI",
+          "system call number"
+        ]
+      }
+    },
+    {
+      "id": "syscall-cost",
+      "title": {
+        "zh": "一次进出内核要多少周期",
+        "en": "What one kernel crossing costs"
+      },
+      "desc": {
+        "zh": "进出本身一两百个周期；KPTI 让每次多付几百个，批量才能把门票摊薄。",
+        "en": "The crossing itself is a hundred or two cycles; KPTI adds hundreds more, and only batching spreads the cost."
+      },
+      "anchor": "#ch3",
+      "aliases": {
+        "zh": [
+          "系统调用开销",
+          "系统调用为什么慢",
+          "进出内核的代价"
+        ],
+        "en": [
+          "syscall cost",
+          "system call overhead",
+          "cost of a kernel crossing"
+        ]
+      }
+    },
+    {
+      "id": "mmio",
+      "title": {
+        "zh": "设备寄存器：物理地址上的一段「假内存」",
+        "en": "Device registers: a stretch of pretend memory"
+      },
+      "desc": {
+        "zh": "写寄存器发出去就走，读寄存器要等一次 PCIe 来回，约半微秒；所以驱动尽量不读设备。",
+        "en": "A register write is posted; a read waits a PCIe round trip of about half a microsecond, so drivers avoid reading devices."
+      },
+      "anchor": "#ch4",
+      "aliases": {
+        "zh": [
+          "MMIO 是什么",
+          "内存映射 I/O",
+          "端口 I/O",
+          "inb outb",
+          "设备寄存器"
+        ],
+        "en": [
+          "memory-mapped I/O",
+          "what is MMIO",
+          "port I/O",
+          "device registers",
+          "inb and outb"
+        ]
+      }
+    },
+    {
+      "id": "interrupt-handling",
+      "title": {
+        "zh": "中断走过的路：向量、上半部、下半部",
+        "en": "The path of an interrupt: vector, top half, bottom half"
+      },
+      "desc": {
+        "zh": "一次写变成本地 APIC 上的向量号，核心按 IDT 跳进处理函数；上半部只做最急的事，其余交给软中断或中断线程。",
+        "en": "A write becomes a vector at the local APIC, the core jumps through the IDT; the top half does the urgent part, softirqs or threaded handlers do the rest."
+      },
+      "anchor": "#ch5",
+      "aliases": {
+        "zh": [
+          "中断处理",
+          "上半部 下半部",
+          "软中断",
+          "softirq",
+          "中断向量表",
+          "APIC 是什么"
+        ],
+        "en": [
+          "interrupt handling",
+          "top half and bottom half",
+          "Linux softirq",
+          "interrupt descriptor table",
+          "what is an APIC"
+        ]
+      }
+    },
+    {
+      "id": "napi",
+      "title": {
+        "zh": "NAPI：先中断，再一批批轮询",
+        "en": "NAPI: interrupt first, then poll in batches"
+      },
+      "desc": {
+        "zh": "包来得密时每包一次中断会让核心活锁；NAPI 在第一个中断后关掉中断、每次最多轮询 64 个包。",
+        "en": "At high packet rates an interrupt per packet livelocks the core; NAPI masks interrupts after the first and polls up to 64 packets at a time."
+      },
+      "anchor": "#ch6",
+      "aliases": {
+        "zh": [
+          "NAPI",
+          "中断合并",
+          "中断风暴",
+          "接收活锁"
+        ],
+        "en": [
+          "NAPI polling",
+          "interrupt coalescing",
+          "interrupt storm",
+          "receive livelock"
+        ]
+      }
+    },
+    {
+      "id": "descriptor-ring",
+      "title": {
+        "zh": "DMA 与描述符环",
+        "en": "DMA and the descriptor ring"
+      },
+      "desc": {
+        "zh": "驱动在内存里摆一圈描述符，网卡自己把数据写进去；两个只往前走的计数器追上了就满，满了就丢包。",
+        "en": "The driver lays out a ring of descriptors and the NIC writes data into them; two free-running counters meet when it is full, and then packets drop."
+      },
+      "anchor": "#ch7",
+      "aliases": {
+        "zh": [
+          "描述符环",
+          "DMA 是什么",
+          "直接内存访问",
+          "接收环大小"
+        ],
+        "en": [
+          "descriptor ring",
+          "what is DMA",
+          "direct memory access",
+          "RX ring size"
+        ]
+      }
+    },
+    {
+      "id": "dma-remapping",
+      "title": {
+        "zh": "给设备装一张页表",
+        "en": "A page table for devices"
+      },
+      "desc": {
+        "zh": "设备给出的 I/O 虚拟地址经 IOMMU 翻译，每个设备只看得见映射给它的几页。",
+        "en": "Device addresses are I/O virtual addresses translated by the IOMMU; each device sees only the pages mapped for it."
+      },
+      "anchor": "#ch8",
+      "aliases": {
+        "zh": [
+          "DMA 重映射",
+          "IOVA",
+          "设备页表"
+        ],
+        "en": [
+          "DMA remapping",
+          "I/O virtual address",
+          "device page table"
+        ]
+      }
+    },
+    {
+      "id": "driver-model",
+      "title": {
+        "zh": "驱动模型：比对、probe、绑定",
+        "en": "The driver model: match, probe, bind"
+      },
+      "desc": {
+        "zh": "总线把设备的 ID 和驱动的表逐条比对，对上了调用 probe()；缺依赖时返回 -EPROBE_DEFER，等别的绑定成功后重试。",
+        "en": "The bus compares device IDs with each driver table and calls probe() on a match; a missing dependency returns -EPROBE_DEFER and is retried after another bind."
+      },
+      "anchor": "#ch9",
+      "aliases": {
+        "zh": [
+          "驱动模型",
+          "驱动怎么认出设备",
+          "probe 函数",
+          "EPROBE_DEFER"
+        ],
+        "en": [
+          "Linux driver model",
+          "driver probe",
+          "deferred probe",
+          "how drivers find devices"
+        ]
+      }
+    },
+    {
+      "id": "io-stack",
+      "title": {
+        "zh": "一次 read() 穿过的每一层",
+        "en": "Every layer one read() crosses"
+      },
+      "desc": {
+        "zh": "页缓存命中不到一微秒；不命中时穿过文件系统、块层和驱动，在最快的盘上软件已经和设备一样慢。",
+        "en": "A page-cache hit takes under a microsecond; a miss crosses the file system, block layer and driver, and on the fastest drives the software is as slow as the device."
+      },
+      "anchor": "#ch10",
+      "aliases": {
+        "zh": [
+          "VFS",
+          "页缓存",
+          "O_DIRECT",
+          "缓冲 I/O",
+          "Linux I/O 栈"
+        ],
+        "en": [
+          "virtual file system",
+          "page cache",
+          "O_DIRECT flag",
+          "buffered I/O",
+          "Linux I/O stack"
+        ]
+      }
+    },
+    {
+      "id": "epoll-io-uring",
+      "title": {
+        "zh": "少走几次门：epoll 与 io_uring",
+        "en": "Fewer crossings: epoll and io_uring"
+      },
+      "desc": {
+        "zh": "epoll 一次告诉你哪些连接有数据；io_uring 用两个共享的环一次交一批、收一批。",
+        "en": "epoll reports which connections are ready in one call; io_uring uses two shared rings to submit and reap a batch at a time."
+      },
+      "anchor": "#ch11",
+      "aliases": {
+        "zh": [
+          "epoll",
+          "io_uring 是什么",
+          "异步 I/O",
+          "Linux 异步 I/O"
+        ],
+        "en": [
+          "epoll API",
+          "what is io_uring",
+          "asynchronous I/O",
+          "Linux async I/O"
+        ]
+      }
+    },
+    {
+      "id": "kernel-bypass",
+      "title": {
+        "zh": "绕开内核，以及虚拟机里的设备",
+        "en": "Kernel bypass and devices in virtual machines"
+      },
+      "desc": {
+        "zh": "DPDK、SPDK 和 RDMA 把队列直接交给用户程序；virtio 和 SR-IOV 把设备交给虚拟机。",
+        "en": "DPDK, SPDK and RDMA hand queues straight to a user program; virtio and SR-IOV hand devices to virtual machines."
+      },
+      "anchor": "#ch12",
+      "aliases": {
+        "zh": [
+          "DPDK",
+          "virtio",
+          "SR-IOV",
+          "用户态驱动",
+          "内核旁路"
+        ],
+        "en": [
+          "Data Plane Development Kit",
+          "virtio devices",
+          "single-root I/O virtualization",
+          "user-space drivers",
+          "kernel bypass"
+        ]
+      }
+    },
+    {
+      "id": "os-hardware-frontier",
+      "title": {
+        "zh": "前沿：io_uring 的安全代价、Rust 驱动、用户态",
+        "en": "The frontier: io_uring security, Rust drivers, user space"
+      },
+      "desc": {
+        "zh": "2026 年 11 月：io_uring 是内核里最常被攻击的部分之一；Linux 6.18 收进了 Rust 写的 Binder，7.4 删掉了 C 版本。",
+        "en": "November 2026: io_uring is among the most attacked parts of the kernel; Linux 6.18 merged the Rust Binder and 7.4 removed the C one."
+      },
+      "anchor": "#ch13",
+      "aliases": {
+        "zh": [
+          "Rust 写驱动",
+          "Linux 内核 Rust",
+          "io_uring 安全"
+        ],
+        "en": [
+          "Rust in the Linux kernel",
+          "Rust drivers",
+          "io_uring security"
+        ]
+      }
+    },
+    {
+      "id": "io-troubleshooting",
+      "title": {
+        "zh": "程序卡在 I/O 上时问的三件事",
+        "en": "Three questions when a program is stuck on I/O"
+      },
+      "desc": {
+        "zh": "时间花在链上的哪一段，每次 I/O 走了几次门，CPU 是在干活还是在等。",
+        "en": "Which link of the chain takes the time, how many crossings each I/O makes, and whether the CPU is working or waiting."
+      },
+      "anchor": "#ch14",
+      "aliases": {
+        "zh": [
+          "程序卡在 I/O 上",
+          "I/O 性能排查"
+        ],
+        "en": [
+          "program stuck on I/O",
+          "I/O performance troubleshooting"
+        ]
+      }
+    }
+  ]
+}
