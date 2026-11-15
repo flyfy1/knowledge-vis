@@ -35,6 +35,8 @@ const f = (x, d) => x.toFixed(d);
   check('Linux 5level-paging: 256 TiB / 64 TiB → 128 PiB / 4 PiB', [L.va4 / TiB, L.pa4 / TiB, L.va5 / PiB, L.pa5 / PiB].join(), '256,64,128,4');
   check('256 TiB = 2^48 bytes, 128 PiB = 2^57', [L.va4 === Math.pow(2, 48), L.va5 === Math.pow(2, 57)].join(), 'true,true');
   check('5-level unconditional commit 2025-05-17', [L.unconditional, FRONTIER.linux5].join(), '2025-05-17,2025-05-17');
+  check('…shipped in Linux 6.16, released 2025-07-27 (in v6.16-rc1, not in v6.15)', [FRONTIER.linux5Release, FRONTIER.linux5ReleaseDate].join(), '6.16,2025-07-27');
+  says('ch12.d1', '2025 年 7 月 27 日'); says('ch12.d1', '{lx5rel}');
   const z = FACTS.zen5;
   check('Zen 5 DTLB 96 / 4096 16-way / 1G 1024; ITLB 64 / 2048', [z.l1dtlb, z.l2dtlb, z.l2dtlbWays, z.l2dtlb1g, z.l1itlb, z.l2itlb].join(), '96,4096,16,1024,64,2048');
   check('Zen 5 6 walkers, 64-entry PDC', [z.walkers, z.pdc].join(), '6,64');
@@ -66,6 +68,8 @@ const f = (x, d) => x.toFixed(d);
     // once memory itself is short (16 MiB × 35 steps ≈ 2 × RAM) the two allocators refuse different processes and the
     // counts can cross by one; below that, paging never refuses more than first fit
     n++; if (m <= 14 && r.failP > r.failB) { fails++; console.error(`FAIL ch1 mean ${m}: paging refused more than first fit`); }
+    // …and where it does (mean 16: 159 vs 160), the live sentence must say memory is full, not credit fragmentation
+    r.hist.forEach((h, t) => { const k = M.say.frag(m, t).key; n++; if (h.failB > 0 && h.failP > 0 && (h.failP >= h.failB) !== (k === 'ch1.say.full')) { fails++; console.error(`FAIL ch1 mean ${m} step ${t}: ${h.failB} vs ${h.failP} gives ${k}`); } });
     n++; if (r.failP > r.failB * 1.05 + 1) { fails++; console.error(`FAIL ch1 mean ${m}: paging refused clearly more than first fit`); }
     n++; if (r.hist.some(h => h.largest > h.free)) { fails++; console.error(`FAIL ch1 mean ${m}: a hole larger than all free memory`); }
     n++; if (r.hist.some((h, i) => i && (h.failB < r.hist[i - 1].failB || h.failP < r.hist[i - 1].failP))) { fails++; console.error(`FAIL ch1 mean ${m}: refusals not cumulative`); }
@@ -219,12 +223,22 @@ const f = (x, d) => x.toFixed(d);
   for (const [a, b, r] of [[4, 4, 24], [5, 5, 35], [4, 3, 19], [3, 3, 15], [4, 0, 4]]) check(`nested ${a}×${b} = nm + n + m`, M.nested(a, b).refs, r);
   check('grid cells = (n+1)(m+1) − 1 (the data itself is not a read)', M.nested(4, 4).grid, 24);
   says('ch11.law', '24'); says('ch11.p1', '2008'); says('ch11.p2', '15% 到 38%');
+  // numbers drawn on the diagrams
+  const nn = M.nested(4, 4).refs, hostReads = 4 * (4 + 1);
+  says('dg.nested.total', `4 × 4 + 4 + 4 = ${nn}`); says('dg.nested.cap', `4 × 5 = ${hostReads}`); says('dg.nested.cap', `一共 ${nn} 次`); check('host reads + guest reads = nm + n + m', hostReads + 4, nn);
+  says('dg.nested.aria', `${nn} 次`); says('dg.split.vpn', `${48 - 12} 位`); says('dg.split.off', '12 位'); says('dg.split.aria', `${48 - 12} 位`);
+  says('dg.pte.cap', `最多 ${FACTS.sdm.pa}`); says('dg.pwc.full', `读 ${M.walkC(1 * GiB, 4 * KiB, false, false).perWalk} 次`); says('dg.pwc.hit', '只读 1 次');
+  check('app.js walk diagram bit ranges = SDM §5.5', /ranges = \[\[47, 39\], \[38, 30\], \[29, 21\], \[20, 12\]\]/.test(app), true);
+  check('the PDE-hit read count equals one leaf read', M.walk(M.parseVA(M.TOY.presets.heap), false, 'r').steps.length - 3, 1);
 }
 
 /* ── tuned parameters: halved / doubled (BRIEF.md lists the same) ── */
 {
   // ch1 lifetime / seed: paging never refuses more than first fit, and at mean 6 first fit refuses more
   for (const seed of [3, 7, 21, 99]) { const r = M.frag(6, { seed }); check(`ch1 seed ${seed}: first fit refuses more`, r.failB > r.failP, true); }
+  // lifetimes halved (5–30) and doubled (20–120): the load band moves, but at the first mean where anything is refused,
+  // first fit refuses more than paging (halved: 10 MiB 6 vs 0; doubled: 3 MiB 7 vs 4, after which memory saturates)
+  for (const [a, b] of [[5, 30], [20, 120]]) { const sv = [M.FRAG.lifeMin, M.FRAG.lifeMax]; M.FRAG.lifeMin = a; M.FRAG.lifeMax = b; const r = M.FRAG.means.map(m => M.frag(m)).find(x => x.failB > 0); check(`ch1 life ${a}–${b}: first refusals come from first fit`, !!r && r.failB > r.failP, true); [M.FRAG.lifeMin, M.FRAG.lifeMax] = sv; }
   // ch5 PWC sizes 16 / 64 instead of 32: the PWC still cuts the 1 GiB walk to under half
   const save = [M.WALK.pde, M.WALK.pdpte];
   for (const s of [16, 64]) { M.WALK.pde = s; M.WALK.pdpte = s; const r = M.walkCost(1 * GiB, 4 * KiB, true, false); check(`ch5 PWC ${s}: reads per walk < 2.5`, r.perWalk < 2.5, true); const r64 = M.walkCost(64 * GiB, 4 * KiB, true, false); check(`ch5 PWC ${s}: 64 GiB needs more reads than 1 GiB`, r64.perWalk > r.perWalk, true); }
@@ -251,7 +265,7 @@ const f = (x, d) => x.toFixed(d);
     va4: '48', va5: '57', pa: '52', vaTiB: '256', va5PiB: '128', pa4TiB: '64', pa5PiB: '4',
     tlbL1: '96', tlbL2: '4096', tlbW: '16', tlb1g: '1024', itlb1: '64', itlb2: '2048', reachL1: '384', reachL2: '16', reachL2h: '8',
     r4: '90.8', r2: '0.0', s4: '0.20', c4: '100', c2: '0.0', r4closed: '90.6',
-    walkers: '6', pdc: '64', pwcT: '32', w1miss: '98', w1refs: '4', w1prefs: '1.94', w1pbest: '30.7', w1pworst: '765', w1worst: '1576', w64refs: '2.50', w64worst: '1001', w16miss: '0.1', w1p5refs: '1.94', dram: '399', l2lat: '14', l1lat: '4',
+    lx5rel: '6.16', walkers: '6', pdc: '64', pwcT: '32', w1miss: '98', w1refs: '4', w1prefs: '1.94', w1pbest: '30.7', w1pworst: '765', w1worst: '1576', w64refs: '2.50', w64worst: '1001', w16miss: '0.1', w1p5refs: '1.94', dram: '399', l2lat: '14', l1lat: '4',
     h4miss: '99.9', h2miss: '50', h1gmiss: '0.0', h4worst: '800', h2worst: '203', h1gworst: '4', h2refs: '1.00', reach1g: '1024', hs2bloat: '16', hs4alloc: '1', hs2alloc: '16',
     minorUs: '0.53', minorHi: '2.5', touchUs: '0.11', nvmeUs: '45', hddMs: '12.7', dramNs: '70', minorX: '8', nvmeX: '649', hddX: '180857',
     emSlow: '1.001', enSlow: '1.06', ehSlow: '19', eh6Slow: '1.2', en10: '6484', eh10: '1808561', em10: '66',
@@ -374,6 +388,52 @@ const f = (x, d) => x.toFixed(d);
   for (const k of Object.keys(Z)) check('en placeholders ' + k, ph(EN[k]), ph(Z[k]));
   if (stub) { check('en stub mirrors zh exactly', JSON.stringify(EN), JSON.stringify(Z)); console.log('NOTE: copy.en.js is a stub (enStub); English registry match skipped until it is translated'); }
   else { check('registry title en', R.title.en, EN['doc.title'].split(' · ')[0]); check('registry desc en', R.desc.en, EN['doc.desc']); }
+
+  // English prose literals (the zh ones are pinned above with says())
+  const saysEn = (key, phrase) => { n++; if (!EN[key] || !EN[key].includes(phrase)) { fails++; console.error(`FAIL en prose ${key} should contain "${phrase}"`); } };
+  for (const [k, ps] of Object.entries({
+    'ch1.model.how': ['256 MiB', '10 to 60 steps'], 'ch1.p4': ['mean of 6 MiB', 'mean of 3 MiB', 'mean of 12 MiB'],
+    'ch2.p1': ['2<sup>12</sup>'], 'ch2.p2': ['2<sup>20</sup>', '2<sup>36</sup>', '512 entries'], 'ch2.p3': ['1/512', '2,048 entries', '47-bit', '42-bit'],
+    'ch3.p1': ['Bits 47 to 39', 'Bits 38 to 30', 'Bits 29 to 21', 'Bits 20 to 12', '11 to 0', '9 + 9 + 9 + 9 + 12 = 48', '128 TiB'],
+    'ch3.p2': ['Bit 0, P', 'Bit 1, R/W', 'Bit 2, U/S', 'Bit 5, A', 'Bit 6, D', 'Bit 8, G', 'Bits 12 and up', 'Bit 63, XD', 'bit 7 is PS'], 'ch3.p3': ['56 to 48'],
+    'ch4.p1': ['512 eight-byte'], 'ch4.p3': ['64 MiB', '1,536 entries', '512 reads'], 'ch5.p1': ['two or three levels'],
+    'ch6.model.how': ['4 KiB of every 64 KiB'], 'ch6.p3': ['16 GiB array', '1 TiB'],
+    'ch7.p2': ['22,000', '8.5 ms', '4.16 ms', '0.50 and 0.63', '7,200 rpm'], 'ch7.src.nvme': ['22K'], 'ch7.src.hdd': ['8.5 + 4.16'], 'ch7.src.minor': ['15 November 2026'],
+    'ch7.p3': ['10%', '1968'], 'ch8.p1': ['1966'], 'ch8.p2': [M.REF.belady.join(' '), '1969'], 'ch8.p3': ['1970', '3 frames', '4 frames'],
+    'ch9.p2': ['10%'], 'ch10.p1': ['12 bits'], 'ch10.p3': ['4 processes', 'one system call per 1,000 accesses', '6 processes', '8 processes'],
+    'ch10.p4': ['2018', 'a hundred cycles', '4 processes'], 'ch11.law': ['24'], 'ch11.p1': ['2008'], 'ch11.p2': ['15% to 38%'],
+    'ch12.title': ['November 2026'], 'ch12.e1': ['September 2026'], 'ch12.e2': ['48-bit'], 'ch12.d1': ['17 May 2025', '27 July 2025', '{lx5rel}'],
+    'ch12.d2': ['16384', '15 November 2026'], 'ch12.c2': ['1 February 2027'], 'ch3.p1': ['September 2026'],
+    'dg.nested.total': ['= 24'], 'dg.nested.cap': ['4 × 5 = 20', '24 reads'], 'dg.split.vpn': ['36 bits'], 'dg.split.off': ['12 bits'], 'dg.pte.cap': ['up to 52'], 'dg.pwc.full': ['4 reads'], 'dg.pwc.hit': ['1 read'] })) for (const p of ps) saysEn(k, p);
+
+  // doubled units: a placeholder that app.js fills with a unit-bearing string (t('u.X', …), cyc(), pct(), size(),
+  // or a format key such as ch7.pfmt) must not be followed in the template by that unit again ("4 次 次", "16 倍 倍").
+  // Built from app.js so every live sentence key is covered in every state, in both languages.
+  {
+    // which say keys each call can show: the M.say.<fn> used in the same text() function, and the keys that fn returns
+    const msrc = fs.readFileSync(path.join(DIR, 'models.js'), 'utf8'), sayBody = msrc.slice(msrc.indexOf('const say = {'));
+    const keysOf = fn => { const a = sayBody.indexOf('\n    ' + fn + '('), rest = sayBody.slice(a + 6), e = rest.search(/\n {4}(\w+\(|\};)/); return [...rest.slice(0, e < 0 ? undefined : e).matchAll(/'(ch\d+\.say\.\w+)'/g)].map(m => m[1]); };
+    const unitOf = {};   // say key → placeholder → Set of unit-template keys
+    const addU = (keys, ph, key) => { for (const k of keys) { unitOf[k] = unitOf[k] || {}; (unitOf[k][ph] = unitOf[k][ph] || new Set()).add(key); } };
+    let calls = 0;
+    for (const call of app.matchAll(/t\(z\.key, \{([\s\S]*?)\}\)\);/g)) {
+      const before = app.slice(0, call.index), fn = [...before.matchAll(/M\.say\.(\w+)\(/g)].pop()[1], keys = keysOf(fn), body = call[1];
+      calls++;
+      for (const m of body.matchAll(/(\w+):\s*t\('((?:u|ch\d+)\.\w+)'/g)) addU(keys, m[1], m[2]);
+      for (const m of body.matchAll(/(\w+):\s*(cyc|pct|size|us)\(/g)) addU(keys, m[1], { cyc: 'u.cyc', pct: 'u.pct', size: 'u.KiB', us: 'u.us' }[m[2]]);
+    }
+    n++; if (calls < 10 || !(unitOf['ch5.say.nopwc'] || {}).refs || !(unitOf['ch5.say.nopwc'] || {}).levels || !(unitOf['ch6.say.bloat'] || {}).bloat) { fails++; console.error('FAIL doubled-unit check could not read the say calls in app.js'); }
+    for (const [L, C] of [['zh', Z], ['en', EN]]) {
+      const suffix = k => { const s = (C[k] || '').replace(/\{v\}/, '').trim(); return s.replace(/^[^\p{L}%]+|[^\p{L}%]+$/gu, ''); };
+      for (const [k, v] of Object.entries(C)) if (/\.say\./.test(k)) for (const m of v.matchAll(/\{(\w+)\}((?:<\/?\w+>|\s)*)([^\s<{][^<{]{0,12})/g)) {
+        for (const uk of (unitOf[k] || {})[m[1]] || []) {
+          const keys = uk === 'u.KiB' ? ['u.B', 'u.KiB', 'u.MiB', 'u.GiB', 'u.TiB', 'u.PiB'] : [uk];
+          for (const kk of keys) { const u = suffix(kk); if (!u) continue; n++;
+            const after = m[3].trim(); if (after.startsWith(u) || (L === 'en' && after.split(/\s+/)[0] === u.split(/\s+/).pop())) { fails++; console.error(`FAIL doubled unit in ${L} ${k}: {${m[1]}} already carries "${u}" but is followed by "${after}"`); } }
+        }
+      }
+    }
+  }
 }
 
 if (fails) { console.error(`\n${fails} of ${n} checks failed`); process.exit(1); }

@@ -7,11 +7,12 @@
 // Checks at 1280/390/320: no console/page errors, no horizontal overflow, no text clipped inside its box, every
 // control at least 48×48 px, toggle reads 中 | EN, no raw copy keys, every readout and live sentence filled; the
 // static diagrams (STANDARD §4a): an <svg role=img> with an aria-label from the copy, every label non-empty, inside
-// the drawing, not overlapping another label, and rendered at 11 px or more. Then the language toggle (English is a
-// stub: the page falls back to Chinese and says so in <html lang>), keyboard operation of a slider, each of the
-// models responding to its controls with the numbers the models give, and reduced motion. When copy.en.js is
-// translated (enStub removed), the same width sweep also runs in English and checks that no Chinese is left,
-// including canvas and SVG text.
+// the drawing, not overlapping another label, and rendered at 11 px or more. Then the language toggle, keyboard
+// operation of a slider, each of the models responding to its controls with the numbers the models give, a sweep of
+// every live sentence over every control state in both languages (doubled units, placeholders, CJK in English), and
+// reduced motion. copy.en.js is translated, so the width sweep runs in zh and en and checks that no Chinese is left
+// in English mode, including canvas and SVG text. (If copy.en.js were ever a stub with enStub = true, the page would
+// fall back to Chinese and the English passes would be skipped.)
 const { chromium } = require('playwright');
 const path = require('path');
 const M = require(path.join(__dirname, '..', 'models.js'));
@@ -270,6 +271,47 @@ function diagramCheck() {
     await pick(page, 'nsH', '0'); await page.waitForTimeout(40);
     ok((await text(page, '#nsR')) === '5 次', 'ch11 not virtualised: five reads');
     ok(!page.__errors().length, 'drive: errors: ' + page.__errors().join(' | '));
+    await page.close();
+  }
+
+  // every live sentence in every state the controls can reach, both languages: no doubled units ("4 次 次", "16 倍 倍",
+  // "reads reads"), no unfilled placeholder, no CJK in English. Each section: every radio/checkbox combination, and in
+  // each combination every value of every slider (the others at their defaults).
+  for (const lang of langs) {
+    const page = await open(browser, 1280, { lang });
+    const res = await page.evaluate(() => {
+      const out = { states: 0, bad: [], texts: new Set() };
+      const fire = (e, ev) => e.dispatchEvent(new Event(ev, { bubbles: true }));
+      for (const say of document.querySelectorAll('p.say')) {
+        const sec = say.closest('section'), inputs = [...sec.querySelectorAll('input')];
+        const radios = {}; inputs.filter(i => i.type === 'radio').forEach(r => { (radios[r.name] = radios[r.name] || []).push(r); });
+        const checks = inputs.filter(i => i.type === 'checkbox'), ranges = inputs.filter(i => i.type === 'range');
+        const def = { r: Object.fromEntries(Object.entries(radios).map(([n, rs]) => [n, rs.find(r => r.checked)])), c: checks.map(c => c.checked), g: ranges.map(r => r.value) };
+        const groups = [...Object.values(radios), ...checks.map(c => [c, null])];
+        let combos = [[]]; for (const g of groups) { const nx = []; for (const c of combos) for (const o of g) nx.push([...c, o]); combos = nx; }
+        if (combos.length > 400) combos = combos.filter((_, i) => i % Math.ceil(combos.length / 400) === 0);
+        const end = sec.querySelector('#fgEnd');
+        const read = () => { if (end) end.click(); const s = say.textContent; out.states++; out.texts.add(s); return s; };
+        for (const combo of combos) {
+          groups.forEach((g, gi) => { const o = combo[gi]; if (g[1] === null) { const want = o !== null; if (g[0].checked !== want) { g[0].checked = want; fire(g[0], 'change'); } } else if (!o.checked) { o.checked = true; fire(o, 'change'); } });
+          read();
+          ranges.forEach((r, ri) => {
+            const lo = +r.min, hi = +r.max, st = +r.step || 1, nvals = Math.floor((hi - lo) / st) + 1, every = Math.max(1, Math.ceil(nvals / 60));
+            for (let k = 0; k < nvals; k += every) { r.value = String(lo + k * st); fire(r, 'input'); read(); }
+            r.value = def.g[ri]; fire(r, 'input');
+          });
+        }
+        Object.values(def.r).forEach(r => { if (r && !r.checked) { r.checked = true; fire(r, 'change'); } });
+        checks.forEach((c, i) => { if (c.checked !== def.c[i]) { c.checked = def.c[i]; fire(c, 'change'); } });
+      }
+      out.texts = [...out.texts]; return out;
+    });
+    const dbl = lang === 'zh' ? /(次|倍|级|张|项|个|周期|字节)\s+\1|倍\s*倍/ : /\b(reads?|levels?|tables?|pages?|entries|cycles|processes|times|bytes)\s+\1\b|×\s*times|\bper 1,000 accesses per\b/i;
+    const badTexts = res.texts.filter(s => dbl.test(s) || /\{\w+\}/.test(s) || s.trim().length < 10 || (lang === 'en' && CJK.test(s)));
+    ok(res.states > 700, `${lang}: live-sentence sweep visited only ${res.states} states`);
+    ok(!badTexts.length, `${lang}: live sentences with doubled units, placeholders or wrong script (${badTexts.length} of ${res.texts.length}): ${badTexts.slice(0, 3).join(' || ')}`);
+    ok(!page.__errors().length, `${lang} sweep: errors: ` + page.__errors().join(' | '));
+    console.log(`  live-sentence sweep ${lang}: ${res.states} states, ${res.texts.length} distinct sentences`);
     await page.close();
   }
 

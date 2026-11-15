@@ -379,7 +379,9 @@
   const FRONTIER = {
     asOf: '2026-11',
     android: { version: 15, deadline: '2027-02-01', launch: 3.16, launchMax: 30, power: 4.56, camHot: 4.48, camCold: 6.60, boot: 8, bootMs: 950 },
-    linux5: '2025-05-17', apple: { page: 16 * KiB }
+    // commit 7212b58d is contained in v6.16-rc1 and v6.16 and not in v6.15 (GitHub compare API, opened 2026-11-15);
+    // Linux 6.16 was released on 2025-07-27 (the v6.16 tag; kernelnewbies.org/Linux_6.16)
+    linux5: '2025-05-17', linux5Release: 6.16, linux5ReleaseDate: '2025-07-27', apple: { page: 16 * KiB }
   };
 
   /* ── numbers quoted in the prose: [value, decimals, kind] ── */
@@ -434,7 +436,7 @@
       n44: [n44.refs, 0], n55: [n55.refs, 0], n43: [n43.refs, 0], n33: [n33.refs, 0], n44x: [n44.refs / 4, 0],
       // ch12
       anLaunch: [A.launch, 2], anMax: [A.launchMax, 0], anPower: [A.power, 2], anCamH: [A.camHot, 2], anCamC: [A.camCold, 2], anBoot: [A.boot, 0], anBootMs: [A.bootMs, 0], anVer: [A.version, 0],
-      apPage: [FACTS.hostPage / KiB, 0], arm16: [FACTS.arm.k16, 0], arm64a: [FACTS.arm.k64[0], 0], arm64b: [FACTS.arm.k64[1], 0], arm4a: [FACTS.arm.k4[0], 0], cr3c: [FACTS.kpti.cr3Cycles, 0]
+      lx5rel: [FRONTIER.linux5Release, 2], apPage: [FACTS.hostPage / KiB, 0], arm16: [FACTS.arm.k16, 0], arm64a: [FACTS.arm.k64[0], 0], arm64b: [FACTS.arm.k64[1], 0], arm4a: [FACTS.arm.k4[0], 0], cr3c: [FACTS.kpti.cr3Cycles, 0]
     };
   }
 
@@ -453,6 +455,9 @@
       const v = Object.assign({ mean }, h);
       if (h.failB === 0) return { key: 'ch1.say.none', v };
       if (h.failP === 0) return { key: 'ch1.say.bbOnly', v };
+      // past saturation the two allocators hold different processes and the counts are noise around "memory full":
+      // paging can refuse as many or one more (mean 16 MiB, seed 7: 159 vs 160); the sentence must not credit fragmentation
+      if (h.failP >= h.failB) return { key: 'ch1.say.full', v };
       return { key: 'ch1.say.both', v };
     },
     table(va, page, heap) {

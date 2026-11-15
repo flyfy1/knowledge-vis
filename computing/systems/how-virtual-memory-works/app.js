@@ -168,7 +168,7 @@ function wrapTexts(svg) {
 const DG = {};
 // two processes, two page tables, one physical memory; libc shared (ch1). Schematic.
 DG.map = (L) => {
-  const wide = L === 'w', W = wide ? 720 : 340, H = wide ? 350 : 390;
+  const wide = L === 'w', W = wide ? 720 : 340, H = wide ? 362 : 390;
   return { W, H, draw(g) {
     const ax = wide ? [40, 160] : [10, 92], fx = wide ? [300, 420] : [135, 205], bx = wide ? [560, 680] : [248, 330], top = wide ? 74 : 92;
     const hy = wide ? 26 : 22, hw = wide ? 150 : 82;
@@ -192,7 +192,7 @@ DG.map = (L) => {
       g.line(bx[0], y + bh / 2, fx[1] + 2, fy(mapB[i]) + fh / 2, shared ? C.gold : C.violet, { arrow: 1 });
     });
     if (wide) { g.text(ax[0] - 6, top + 10, 'dg.map.zero', { a: 'end', c: 'm', mono: 1 }); g.text(bx[1] + 6, top + 10, 'dg.map.zero', { a: 'start', c: 'm', mono: 1 }); }
-    const ly = top + 186 + bh + (wide ? 30 : 34);
+    const ly = top + 186 + bh + (wide ? 46 : 34);
     g.box(fx[0], ly - 7, 14, 14, C.gold, { solid: true, rx: 3 }); g.text(fx[0] + 22, ly, 'dg.map.shared', { c: 'g' });
   } };
 };
@@ -208,7 +208,7 @@ DG.split = (L) => {
     const yb = y + h + 14;
     g.text(x0 + 2, yb, { raw: '47' }, { mono: 1, c: 'm' }); g.text(x1 - 4, yb, { raw: '12' }, { a: 'end', mono: 1, c: 'm' });
     g.text(x1 + 4, yb, { raw: '11' }, { mono: 1, c: 'm' }); g.text(x2 - 2, yb, { raw: '0' }, { a: 'end', mono: 1, c: 'm' });
-    const cx = wide ? 270 : 120, tx = wide ? [170, 370] : [40, 200], ty = 118;
+    const cx = wide ? 270 : 160, tx = wide ? [170, 370] : [60, 220], ty = 118;
     g.line(cx, y + h, cx, ty - 2, C.red, { arrow: 1 });
     g.box(tx[0], ty, tx[1] - tx[0], 36, C.mute, { a: 0.1 }); g.text(cx, ty + 18, wide ? 'dg.split.table' : 'dg.split.tableS', { a: 'middle' });
     const py = 192;
@@ -281,18 +281,18 @@ DG.pte = (L) => {
   const wide = L === 'w', low = [['—', 11], ['—', 10], ['—', 9], ['G', 8], ['PAT', 7], ['D', 6], ['A', 5], ['PCD', 4], ['PWT', 3], ['U/S', 2], ['R/W', 1], ['P', 0]];
   const legend = ['dg.pte.P', 'dg.pte.RW', 'dg.pte.US', 'dg.pte.PWT', 'dg.pte.PCD', 'dg.pte.A', 'dg.pte.D', 'dg.pte.PAT', 'dg.pte.G'];
   if (wide) return { W: 720, H: 280, draw(g) {
-    const y = 40, h = 40, seg = [[20, 80, C.red, { raw: 'XD' }, 'r'], [80, 170, C.violet, 'dg.pte.pk', 'v'], [170, 240, C.mute, 'dg.pte.ign', 'm'], [240, 560, C.cyan, 'dg.pte.pfn', 'c'], [560, 700, C.gold, 'dg.pte.low', 'g']];
+    const y = 40, h = 40, seg = [[20, 70, C.red, { raw: 'XD' }, 'r'], [70, 150, C.violet, 'dg.pte.pk', 'v'], [150, 240, C.mute, 'dg.pte.ign', 'm'], [240, 300, C.mute, 'dg.pte.rsv', 'm'], [300, 560, C.cyan, 'dg.pte.pfn', 'c'], [560, 700, C.gold, 'dg.pte.low', 'g']];
     seg.forEach(([a, b, col, k, c]) => { g.box(a, y, b - a, h, col, { rx: 0, a: 0.14 }); g.text((a + b) / 2, y + h / 2, k, { a: 'middle', c }); });
-    [['63', 22, 'start'], ['62', 82, 'start'], ['58', 172, 'start'], ['M−1', 242, 'start'], ['12', 556, 'end'], ['11', 564, 'start'], ['0', 698, 'end']].forEach(([s, x, a]) => g.text(x, 24, { raw: s }, { a, mono: 1, c: 'm' }));
+    [['63', 22, 'start'], ['62', 72, 'start'], ['58', 152, 'start'], ['51', 242, 'start'], ['M−1', 302, 'start'], ['12', 556, 'end'], ['11', 564, 'start'], ['0', 698, 'end']].forEach(([s, x, a]) => g.text(x, 24, { raw: s }, { a, mono: 1, c: 'm' }));
     const ry = 120, cw = 680 / 12;
     g.line(560, y + h, 20, ry, C.gold, { dash: '4 4', sw: 1 }); g.line(700, y + h, 700, ry, C.gold, { dash: '4 4', sw: 1 });
     low.forEach(([s, b], i) => { const x = 20 + i * cw; g.box(x, ry, cw, 36, b > 8 ? C.mute : C.gold, { rx: 0, a: b > 8 ? 0.06 : 0.14 }); g.text(x + cw / 2, ry + 18, { raw: s }, { a: 'middle', mono: 1, c: b > 8 ? 'm' : '' }); g.text(x + cw / 2, ry + 50, { raw: String(b) }, { a: 'middle', mono: 1, c: 'm' }); });
     legend.forEach((k, i) => g.text(20 + (i % 3) * 230, 206 + Math.floor(i / 3) * 26, k, {}));
   } };
   return { W: 340, H: 380, draw(g) {
-    const y = 34, h = 40, seg = [[10, 40, C.red, { raw: 'XD' }, 'r'], [40, 92, C.violet, 'dg.pte.pk', 'v'], [92, 134, C.mute, 'dg.pte.ign', 'm'], [134, 250, C.cyan, 'dg.pte.pfnS', 'c'], [250, 330, C.gold, { raw: '11–0' }, 'g']];
+    const y = 34, h = 40, seg = [[10, 38, C.red, { raw: 'XD' }, 'r'], [38, 88, C.violet, 'dg.pte.pk', 'v'], [88, 134, C.mute, 'dg.pte.ignS', 'm'], [134, 154, C.mute, { raw: '0' }, 'm'], [154, 250, C.cyan, 'dg.pte.pfnS', 'c'], [250, 330, C.gold, { raw: '11–0' }, 'g']];
     seg.forEach(([a, b, col, k, c]) => { g.box(a, y, b - a, h, col, { rx: 0, a: 0.14 }); g.text((a + b) / 2, y + h / 2, k, { a: 'middle', c, mono: typeof k === 'object' }); });
-    [['63', 10, 'start'], ['62', 42, 'start'], ['58', 94, 'start'], ['M−1', 136, 'start'], ['12', 247, 'end'], ['11', 253, 'start'], ['0', 330, 'end']].forEach(([s, x, a]) => g.text(x, 18, { raw: s }, { a, mono: 1, c: 'm' }));
+    [['63', 10, 'start'], ['62', 40, 'start'], ['58', 90, 'start'], ['M−1', 156, 'start'], ['12', 247, 'end'], ['11', 253, 'start'], ['0', 330, 'end']].forEach(([s, x, a]) => g.text(x, 18, { raw: s }, { a, mono: 1, c: 'm' }));
     const cw = 320 / 6;
     g.line(250, y + h, 10, 100, C.gold, { dash: '4 4', sw: 1 }); g.line(330, y + h, 330, 100, C.gold, { dash: '4 4', sw: 1 });
     low.forEach(([s, b], i) => { const r = Math.floor(i / 6), x = 10 + (i % 6) * cw, yy = 100 + r * 70; g.box(x, yy, cw, 34, b > 8 ? C.mute : C.gold, { rx: 0, a: b > 8 ? 0.06 : 0.14 }); g.text(x + cw / 2, yy + 17, { raw: s }, { a: 'middle', mono: 1, c: b > 8 ? 'm' : '' }); g.text(x + cw / 2, yy + 48, { raw: String(b) }, { a: 'middle', mono: 1, c: 'm' }); });
@@ -320,8 +320,8 @@ DG.tlb = (L) => {
     g.box(10, 320, 150, 70, C.green, { a: 0.1 }); g.text(85, 355, 'dg.tlb.pa', { a: 'middle', w: 136, va: 'mid' });
     g.line(215, 160, 245, 206, C.red, { arrow: 1 }); g.text(196, 190, 'dg.tlb.miss', { a: 'end', c: 'r' });
     g.box(190, 208, 140, 40, C.red, { a: 0.1 }); g.text(260, 228, 'dg.tlb.walker', { a: 'middle' });
-    g.line(260, 248, 260, 288, C.red, { arrow: 1 }); g.box(190, 290, 140, 40, C.mute, { a: 0.1 }); g.text(260, 310, 'dg.tlb.pt', { a: 'middle' });
-    g.line(310, 208, 236, 150, C.gold, { arrow: 1, dash: '5 4' }); g.text(330, 172, 'dg.tlb.fill', { a: 'end', c: 'g' });
+    g.line(260, 248, 260, 288, C.red, { arrow: 1 }); g.box(190, 290, 140, 48, C.mute, { a: 0.1 }); g.text(260, 314, 'dg.tlb.pt', { a: 'middle', w: 126, va: 'mid' });
+    g.line(310, 208, 236, 150, C.gold, { arrow: 1, dash: '5 4' }); g.text(238, 112, 'dg.tlb.fill', { c: 'g', w: 96, va: 'bot' });
   } };
 };
 // page-walk cache skipping levels (ch5)
@@ -347,12 +347,12 @@ DG.fault = (L) => {
   const wide = L === 'w';
   const X = wide ? [130, 380, 630] : [56, 178, 296], H = wide ? 340 : 500, rows = wide ? [66, 112, 160, 208, 252, 300] : [70, 150, 228, 306, 382, 454];
   return { W: wide ? 720 : 340, H, draw(g) {
-    ['dg.fault.cpu', 'dg.fault.os', 'dg.fault.disk'].forEach((k, i) => { g.box(X[i] - (wide ? 60 : 44), 8, wide ? 120 : 88, 30, [C.cyan, C.gold, C.violet][i], { a: 0.14 }); g.text(X[i], 23, k, { a: 'middle', c: ['c', 'g', 'v'][i] }); g.line(X[i], 38, X[i], H - 10, C.line, { dash: '4 4', sw: 1.2 }); });
+    ['dg.fault.cpu', wide ? 'dg.fault.os' : 'dg.fault.osS', 'dg.fault.disk'].forEach((k, i) => { g.box(X[i] - (wide ? 75 : 44), 8, wide ? 150 : 88, 30, [C.cyan, C.gold, C.violet][i], { a: 0.14 }); g.text(X[i], 23, k, { a: 'middle', c: ['c', 'g', 'v'][i] }); g.line(X[i], 38, X[i], H - 10, C.line, { dash: '4 4', sw: 1.2 }); });
     const arrow = (n, from, to, key, col) => {
       const y = rows[n - 1], a = X[from], b = X[to];
       g.badge(wide ? 30 : 14, y, n, col);
       g.line(a + (b > a ? 4 : -4), y, b + (b > a ? -4 : 4), y, col, { arrow: 1 });
-      g.text((a + b) / 2, y - (wide ? 13 : 14), key, { a: 'middle', w: wide ? 230 : 104, va: wide ? 'top' : 'bot' });
+      g.text((a + b) / 2, y - (wide ? 13 : 14), key, { a: 'middle', w: wide ? 244 : 104, va: 'bot' });
     };
     const self = (n, at, key, col, side) => {
       const y = rows[n - 1]; g.badge(wide ? 30 : 14, y, n, col); g.circle(X[at], y, 5, col, { solid: true });
@@ -402,7 +402,7 @@ DG.nested = (L) => {
   return { W: wide ? 720 : 340, H: wide ? 340 : 360, draw(g) {
     const lx = wide ? 20 : 8, cx0 = wide ? 130 : 84, cw = wide ? 108 : 46, step = wide ? 116 : 50, cy0 = wide ? 52 : 58, ch = wide ? 38 : 36, rstep = wide ? 46 : 44;
     for (let j = 0; j <= n; j++) g.text(cx0 + j * step + cw / 2, wide ? 26 : 14, j < n ? 'dg.nested.g' : 'dg.nested.data', { a: 'middle', c: j < n ? 'c' : 'g', vars: { i: j + 1 }, w: wide ? 0 : cw, va: 'top' });
-    for (let i = 0; i <= m; i++) g.text(lx, cy0 + i * rstep + ch / 2, i < m ? 'dg.nested.h' : 'dg.nested.gl', { c: i < m ? 'r' : 'c', vars: { i: i + 1 } });
+    for (let i = 0; i <= m; i++) g.text(lx, cy0 + i * rstep + ch / 2, i < m ? 'dg.nested.h' : 'dg.nested.gl', { c: i < m ? 'r' : 'c', vars: { i: i + 1 }, w: wide ? 0 : cx0 - lx - 6, va: 'mid' });
     let k = 0;
     for (let j = 0; j <= n; j++) for (let i = 0; i <= m; i++) {
       const x = cx0 + j * step, y = cy0 + i * rstep, guest = i === m, data = j === n && guest;
@@ -558,7 +558,7 @@ const PCOL = { 4096: C.red, 16384: C.violet, 2097152: C.cyan };
     const r = M.walkC(W(), 4096, cb.checked, five()), z = M.say.walkCost(W(), 4096, cb.checked, five());
     put('#wcWo', size(W()));
     put('#wcM', pct(r.missRate, r.missRate < 0.01 ? 2 : 0)); put('#wcR', t('u.refs', { v: fmt(r.perWalk, 2) })); put('#wcB', cyc(r.best)); put('#wcX', cyc(r.worst));
-    putHTML('#wcSay', t(z.key, { W: size(W()), miss: pct(r.missRate, r.missRate < 0.01 ? 2 : 0), refs: t('u.refs', { v: fmt(r.perWalk, 2) }), best: cyc(r.best), worst: cyc(r.worst), levels: t('u.levels', { v: r.levels }), reach: size(r.reach) }));
+    putHTML('#wcSay', t(z.key, { W: size(W()), miss: pct(r.missRate, r.missRate < 0.01 ? 2 : 0), refs: t('u.refs', { v: fmt(r.perWalk, Number.isInteger(r.perWalk) ? 0 : 2) }), best: cyc(r.best), worst: cyc(r.worst), levels: t('u.levels', { v: r.levels }), reach: size(r.reach) }));
   }
   sim.text = text;
   const go = () => { sim.dirty = true; text(); };
