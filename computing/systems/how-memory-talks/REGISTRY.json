@@ -1,0 +1,359 @@
+{
+  "slug": "how-memory-talks",
+  "path": "computing/systems/how-memory-talks/",
+  "category": "computing",
+  "subtopic": "systems",
+  "stage": "university",
+  "title": {
+    "zh": "内存是怎么和 CPU 说话的",
+    "en": "How Memory Talks to the CPU"
+  },
+  "desc": {
+    "zh": "内存条上写着 DDR5-6400、CL32，频率越高延迟数字反而越大，它到底快了没有？CPU 要一个字节，内存条里发生了哪些事？为什么内存条这么多年还在用一大排并行的线？十个模型：刷新占掉多少时间、一个地址落进哪一行、一个按周期走的 DRAM 命令模拟器、CL 的周期与纳秒、带宽与行命中、bank 组、飞越式布线与训练、片上 ECC 与旁路 ECC、PAM3、行锤与防护。",
+    "en": "A DDR5-6400 CL32 module has a bigger latency number than DDR4: is it faster? What happens inside the module when the CPU asks for one byte? Why does memory still use a wide set of parallel wires? Ten models: how much time refresh takes, which row an address lands in, a cycle-by-cycle DRAM command simulator, CL in cycles and nanoseconds, bandwidth against row hits, bank groups, fly-by routing and training, on-die and side-band ECC, PAM3, and row hammer with its defences."
+  },
+  "tags": [
+    {
+      "zh": "内存",
+      "en": "Memory"
+    },
+    {
+      "zh": "DRAM",
+      "en": "DRAM"
+    },
+    {
+      "zh": "计算机体系结构",
+      "en": "Computer Architecture"
+    },
+    {
+      "zh": "长文",
+      "en": "Long-form Essay"
+    }
+  ],
+  "concepts": [
+    {
+      "id": "dram-refresh",
+      "title": {
+        "zh": "一个比特是一只会漏的电容：DRAM 刷新",
+        "en": "A bit is a leaking capacitor: DRAM refresh"
+      },
+      "desc": {
+        "zh": "1T1C 单元靠电荷存一位，读是破坏性的，电荷几十毫秒就漏光；刷新每 3.9 微秒一次，tRFC 随芯片容量变长。按数据手册算刷新占掉的时间。",
+        "en": "A 1T1C cell holds a bit as charge; reads are destructive and the charge leaks within tens of milliseconds. Refresh comes every 3.9 µs and tRFC grows with chip density; the share of time it takes, from datasheet figures."
+      },
+      "anchor": "#ch1",
+      "aliases": {
+        "zh": [
+          "DRAM 刷新",
+          "内存为什么要刷新",
+          "tRFC 是什么",
+          "1T1C 单元",
+          "灵敏放大器"
+        ],
+        "en": [
+          "DRAM refresh",
+          "why DRAM needs refresh",
+          "tRFC",
+          "1T1C DRAM cell",
+          "sense amplifier"
+        ]
+      }
+    },
+    {
+      "id": "dram-address-mapping",
+      "title": {
+        "zh": "bank、行、列与地址切分",
+        "en": "Banks, rows, columns and address mapping"
+      },
+      "desc": {
+        "zh": "一颗 DDR5 芯片 32 个 bank、8 个 bank 组，每个 bank 65536 行；内存控制器把物理地址切成通道、子通道、bank 组、bank、行和列。",
+        "en": "A DDR5 chip has 32 banks in 8 bank groups, 65,536 rows per bank; the memory controller splits a physical address into channel, subchannel, bank group, bank, row and column."
+      },
+      "anchor": "#ch2",
+      "aliases": {
+        "zh": [
+          "内存 bank 和行",
+          "行缓冲",
+          "内存地址映射",
+          "DRAM 行列地址"
+        ],
+        "en": [
+          "DRAM bank row column",
+          "row buffer",
+          "DRAM address mapping",
+          "physical address to DRAM row"
+        ]
+      }
+    },
+    {
+      "id": "dram-commands-timing",
+      "title": {
+        "zh": "五个命令和时序：行命中、未命中、冲突",
+        "en": "Five commands and their timings: row hit, miss and conflict"
+      },
+      "desc": {
+        "zh": "ACT、RD、WR、PRE、REF 之间要等 tRCD、CL、tRP、tRAS、tRC；一个按周期走的模拟器比较开页和关页。",
+        "en": "ACT, RD, WR, PRE and REF must wait tRCD, CL, tRP, tRAS and tRC; a cycle-by-cycle simulator compares open- and close-page policies."
+      },
+      "anchor": "#ch3",
+      "aliases": {
+        "zh": [
+          "内存时序 CL-tRCD-tRP",
+          "行命中 行冲突",
+          "开页 关页策略",
+          "tRCD tRP tRAS"
+        ],
+        "en": [
+          "DRAM timings CL tRCD tRP",
+          "row hit row miss row conflict",
+          "open page vs close page",
+          "FR-FCFS scheduling"
+        ]
+      }
+    },
+    {
+      "id": "cas-latency-ns",
+      "title": {
+        "zh": "CL 折成纳秒",
+        "en": "CAS latency in nanoseconds"
+      },
+      "desc": {
+        "zh": "CL 是周期数：纳秒数 = CL × 2000 ÷ 传输速率。DDR5-6400 CL32 和 DDR4-3200 CL16 都是 10 纳秒；标准档在 13 到 17 纳秒之间。",
+        "en": "CL counts cycles: nanoseconds = CL × 2000 ÷ transfer rate. DDR5-6400 CL32 and DDR4-3200 CL16 are both 10 ns; JEDEC bins sit between 13 and 17 ns."
+      },
+      "anchor": "#ch4",
+      "aliases": {
+        "zh": [
+          "CL 值",
+          "CL 是什么",
+          "内存频率越高延迟越高吗",
+          "DDR5 延迟比 DDR4 高吗",
+          "XMP 是什么"
+        ],
+        "en": [
+          "CAS latency",
+          "CL in nanoseconds",
+          "is DDR5 slower than DDR4",
+          "does higher memory frequency mean higher latency",
+          "XMP profile"
+        ]
+      }
+    },
+    {
+      "id": "ddr5-burst-subchannel",
+      "title": {
+        "zh": "64 字节一次突发与 DDR5 子通道",
+        "en": "64-byte bursts and DDR5 subchannels"
+      },
+      "desc": {
+        "zh": "DDR5 用 BL16 和两个 32 位子通道，每次正好一个缓存行；实际带宽取决于行命中率和 bank 并行。",
+        "en": "DDR5 uses BL16 and two 32-bit subchannels so each burst is one cache line; achieved bandwidth depends on row hits and bank parallelism."
+      },
+      "anchor": "#ch5",
+      "aliases": {
+        "zh": [
+          "DDR5 子通道",
+          "突发长度 BL16",
+          "内存条峰值带宽",
+          "内存条上的 PMIC",
+          "16n 预取"
+        ],
+        "en": [
+          "DDR5 subchannels",
+          "burst length BL16",
+          "DIMM peak bandwidth",
+          "on-DIMM PMIC",
+          "16n prefetch"
+        ]
+      }
+    },
+    {
+      "id": "bank-groups",
+      "title": {
+        "zh": "bank 组与 tCCD_L",
+        "en": "Bank groups and tCCD_L"
+      },
+      "desc": {
+        "zh": "同组两次读隔 tCCD_L，换组只隔 tCCD_S；DDR5-6400 下同组连读只能用一半的数据线。tRRD 与 tFAW 限制开行。",
+        "en": "Two reads in one bank group are tCCD_L apart, across groups only tCCD_S; at DDR5-6400 same-group reads use half the data bus. tRRD and tFAW limit activations."
+      },
+      "anchor": "#ch6",
+      "aliases": {
+        "zh": [
+          "bank 组",
+          "tCCD_L",
+          "tFAW",
+          "DDR5 bank group"
+        ],
+        "en": [
+          "bank groups",
+          "tCCD_L tCCD_S",
+          "tFAW four activate window",
+          "DDR5 bank group"
+        ]
+      }
+    },
+    {
+      "id": "dimms-per-channel-training",
+      "title": {
+        "zh": "插几根：飞越式布线与训练",
+        "en": "DIMMs per channel: fly-by routing and training"
+      },
+      "desc": {
+        "zh": "时钟和命令线一颗接一颗经过芯片，DDR5-6400 下芯片之间的到达差超过一个比特宽，必须开机训练；每通道两根内存条会降频。",
+        "en": "Clock and command run past the chips one after another; at DDR5-6400 the arrival spread exceeds a bit time, so training is required, and two DIMMs per channel run slower."
+      },
+      "anchor": "#ch7",
+      "aliases": {
+        "zh": [
+          "内存条插四根为什么降频",
+          "内存训练",
+          "飞越式拓扑",
+          "一通道两根内存",
+          "开机内存训练黑屏"
+        ],
+        "en": [
+          "why four DIMMs run slower",
+          "memory training",
+          "fly-by topology",
+          "2DPC memory speed",
+          "DDR5 long boot memory training"
+        ]
+      }
+    },
+    {
+      "id": "ddr5-ecc",
+      "title": {
+        "zh": "片上 ECC 和旁路 ECC",
+        "en": "On-die ECC and side-band ECC"
+      },
+      "desc": {
+        "zh": "DDR5 芯片里的 ECC 只修存坏的单个位、不报告；旁路 ECC 由内存控制器检查整条路径。汉明码的每种出错位置都枚举一遍。",
+        "en": "DDR5's on-die ECC fixes single stored bit errors and does not report them; side-band ECC is checked by the memory controller over the whole path. Every error pattern of the Hamming codes is enumerated."
+      },
+      "anchor": "#ch8",
+      "aliases": {
+        "zh": [
+          "DDR5 自带 ECC 吗",
+          "片上 ECC",
+          "旁路 ECC",
+          "DDR5 ECC 和 ECC 内存的区别"
+        ],
+        "en": [
+          "is DDR5 ECC memory",
+          "on-die ECC",
+          "side-band ECC",
+          "DDR5 on-die ECC vs ECC DIMM"
+        ]
+      }
+    },
+    {
+      "id": "lpddr-gddr-mrdimm",
+      "title": {
+        "zh": "LPDDR、GDDR7、CAMM2 与 MRDIMM",
+        "en": "LPDDR, GDDR7, CAMM2 and MRDIMM"
+      },
+      "desc": {
+        "zh": "线越短越快：LPDDR 焊在处理器旁，GDDR7 用 PAM3 一个符号送 1.5 比特，MRDIMM 用缓冲芯片让两个面交错。",
+        "en": "Shorter wires go faster: LPDDR sits beside the processor, GDDR7 sends 1.5 bits per symbol with PAM3, MRDIMM interleaves two ranks through a buffer chip."
+      },
+      "anchor": "#ch9",
+      "aliases": {
+        "zh": [
+          "LPDDR5X",
+          "GDDR7",
+          "CAMM2",
+          "MRDIMM",
+          "GDDR7 为什么用 PAM3",
+          "板载内存和内存条区别"
+        ],
+        "en": [
+          "LPDDR5X",
+          "GDDR7",
+          "CAMM2",
+          "MRDIMM",
+          "why GDDR7 uses PAM3",
+          "soldered memory vs DIMM"
+        ]
+      }
+    },
+    {
+      "id": "rowhammer",
+      "title": {
+        "zh": "行锤与防护：TRR、RFM、PRAC",
+        "en": "Row hammer and its defences: TRR, RFM, PRAC"
+      },
+      "desc": {
+        "zh": "反复激活一行会让邻行漏电翻转；定向刷新会被多攻击行绕过，DDR5 的逐行激活计数（PRAC）按次数补刷。只数次数，不涉及攻击做法。",
+        "en": "Activating one row over and over makes its neighbours flip; target row refresh can be overwhelmed by many aggressors, and DDR5's per-row activation counting (PRAC) refreshes by count. Counts only, no attack recipe."
+      },
+      "anchor": "#ch10",
+      "aliases": {
+        "zh": [
+          "行锤 RowHammer",
+          "行锤攻击",
+          "PRAC 逐行激活计数",
+          "TRR 定向刷新",
+          "RFM 刷新管理"
+        ],
+        "en": [
+          "Rowhammer",
+          "row hammer attack",
+          "PRAC per-row activation counting",
+          "target row refresh TRR",
+          "refresh management RFM"
+        ]
+      }
+    },
+    {
+      "id": "memory-frontier-2026",
+      "title": {
+        "zh": "内存的前沿（截至 2026 年 11 月）",
+        "en": "The memory frontier (as of November 2026)"
+      },
+      "desc": {
+        "zh": "JESD79-5C 写到 DDR5-8800 并加入 PRAC；LPDDR6 标准已发布；MRDIMM 第二代在路上；DDR6 还没有发布的标准。",
+        "en": "JESD79-5C reaches DDR5-8800 and adds PRAC; LPDDR6 is published; second-generation MRDIMM is on the way; DDR6 has no published standard yet."
+      },
+      "anchor": "#ch11",
+      "aliases": {
+        "zh": [
+          "DDR6",
+          "LPDDR6",
+          "DDR5 超频纪录",
+          "DDR5-8800"
+        ],
+        "en": [
+          "DDR6",
+          "LPDDR6",
+          "DDR5 overclocking record",
+          "DDR5-8800"
+        ]
+      }
+    },
+    {
+      "id": "reading-a-memory-module",
+      "title": {
+        "zh": "看一根内存条时问三件事",
+        "en": "Three questions to ask of a memory module"
+      },
+      "desc": {
+        "zh": "CL 折成纳秒是多少；程序等的是延迟还是带宽；插几根、跑在什么速度上。",
+        "en": "What CL is in nanoseconds; whether the program waits on latency or bandwidth; how many modules per channel and at what speed."
+      },
+      "anchor": "#ch12",
+      "aliases": {
+        "zh": [
+          "怎么看内存条参数",
+          "内存条上的数字什么意思",
+          "DDR5-6400 CL32 快吗"
+        ],
+        "en": [
+          "how to read memory module specs",
+          "what the numbers on a RAM stick mean",
+          "is DDR5-6400 CL32 fast"
+        ]
+      }
+    }
+  ]
+}
