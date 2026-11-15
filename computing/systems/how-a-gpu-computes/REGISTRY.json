@@ -1,0 +1,357 @@
+{
+  "slug": "how-a-gpu-computes",
+  "path": "computing/systems/how-a-gpu-computes/",
+  "category": "computing",
+  "subtopic": "systems",
+  "stage": "university",
+  "title": {
+    "zh": "GPU 是怎么算的",
+    "en": "How a GPU Computes"
+  },
+  "desc": {
+    "zh": "一块 GPU 有上万个「核」，每个都比 CPU 的核笨得多。它是怎么把一张图、一次矩阵乘法拆给这么多笨核同时做的？为什么同一段代码，写法稍微一变，GPU 上能慢好几倍？十个可以动手的模型：缓存和多线程两种藏延迟的办法，把一张图映射到网格、线程块和线程束，线程束调度器逐拍模拟，H100 一个 SM 能养多少线程束，分支发散，合并访存，共享内存的 bank 冲突，分块矩阵乘法的两级屋顶，各种数字格式下张量核心的峰值，以及把三角形光栅化成 2×2 像素组。",
+    "en": "A GPU has tens of thousands of \"cores\", each far simpler than a CPU core. How does it split an image or a matrix multiply across so many of them at once? Why can the same code run several times slower on a GPU after a small change in how it is written? Ten hands-on models: caches versus more threads as two ways to hide latency, mapping an image onto a grid of blocks and warps, a cycle-by-cycle warp scheduler, how many warps one H100 SM can hold, branch divergence, memory coalescing, shared-memory bank conflicts, two roofs for a tiled matrix multiply, tensor-core peaks across number formats, and rasterising a triangle into 2×2 pixel quads."
+  },
+  "tags": [
+    {
+      "zh": "GPU",
+      "en": "GPU"
+    },
+    {
+      "zh": "CUDA",
+      "en": "CUDA"
+    },
+    {
+      "zh": "并行计算",
+      "en": "Parallel Computing"
+    },
+    {
+      "zh": "计算机体系结构",
+      "en": "Computer Architecture"
+    },
+    {
+      "zh": "长文",
+      "en": "Long-form Essay"
+    }
+  ],
+  "concepts": [
+    {
+      "id": "gpu-latency-hiding",
+      "title": {
+        "zh": "两种花晶体管的办法：缓存，还是更多线程",
+        "en": "Two ways to spend transistors: caches or more threads"
+      },
+      "desc": {
+        "zh": "CPU 用大缓存和乱序执行让一个线程少等；GPU 同时养很多线程，一个在等就换另一个。拖命中率和线程数，看两种机器各忙多少。",
+        "en": "A CPU spends area on caches and out-of-order execution so one thread waits less; a GPU keeps many threads and switches when one waits. Drag the hit rate and the thread count to see how busy each machine is."
+      },
+      "anchor": "#ch1",
+      "aliases": {
+        "zh": [
+          "GPU 是怎么工作的",
+          "GPU 延迟隐藏",
+          "GPU 为什么核多",
+          "GPU 靠多线程藏延迟"
+        ],
+        "en": [
+          "how does a GPU work",
+          "GPU latency hiding",
+          "why GPUs have so many cores",
+          "latency hiding with threads"
+        ]
+      }
+    },
+    {
+      "id": "cuda-grid-block-warp",
+      "title": {
+        "zh": "网格、线程块、线程束：一张图怎么拆给两百万个线程",
+        "en": "Grid, block, warp: splitting an image across two million threads"
+      },
+      "desc": {
+        "zh": "程序员只写一个像素怎么算；硬件按块分给 SM，每 32 个线程切成一个线程束。选图和块的形状，看要多少块、多少线程白跑、某个像素落在哪个线程束。",
+        "en": "The programmer writes how one pixel is computed; hardware hands blocks to SMs and cuts every 32 threads into a warp. Pick an image and a block shape to see how many blocks, how many idle threads, and which warp a pixel lands in."
+      },
+      "anchor": "#ch2",
+      "aliases": {
+        "zh": [
+          "线程束",
+          "SIMT",
+          "CUDA 线程块",
+          "CUDA 线程编号",
+          "CUDA 网格 线程块 线程"
+        ],
+        "en": [
+          "warp",
+          "single instruction multiple threads",
+          "CUDA thread block",
+          "CUDA grid block thread",
+          "CUDA thread index"
+        ]
+      }
+    },
+    {
+      "id": "warp-scheduling-occupancy",
+      "title": {
+        "zh": "线程束调度与占用率",
+        "en": "Warp scheduling and occupancy"
+      },
+      "desc": {
+        "zh": "调度器每拍从准备好的线程束里挑一个发指令。逐拍模拟要多少线程束才能藏住显存的几百拍，再看 H100 的一个 SM 被寄存器、共享内存卡住只能养几个。",
+        "en": "Each cycle the scheduler issues from one ready warp. A cycle-by-cycle simulation shows how many warps hide hundreds of cycles of memory latency, and how registers and shared memory limit what one H100 SM can hold."
+      },
+      "anchor": "#ch3",
+      "aliases": {
+        "zh": [
+          "线程束调度",
+          "占用率",
+          "GPU 占用率",
+          "CUDA 占用率怎么算",
+          "寄存器太多 占用率低"
+        ],
+        "en": [
+          "warp scheduler",
+          "occupancy",
+          "CUDA occupancy",
+          "GPU occupancy calculator",
+          "register pressure occupancy"
+        ]
+      }
+    },
+    {
+      "id": "warp-divergence",
+      "title": {
+        "zh": "分支发散：一个线程束走了两条路",
+        "en": "Warp divergence: one warp, two paths"
+      },
+      "desc": {
+        "zh": "32 个线程只有一条指令流，在 if 上分开时两条路都要走一遍。拖走 if 的比例，看效率怎么掉。",
+        "en": "A warp has one instruction stream, so when its threads split at an if, both paths run in turn. Drag the share that takes the branch to see the efficiency fall."
+      },
+      "anchor": "#ch4",
+      "aliases": {
+        "zh": [
+          "分支发散",
+          "线程束分化",
+          "GPU 上 if 为什么慢",
+          "活动掩码"
+        ],
+        "en": [
+          "warp divergence",
+          "branch divergence",
+          "why if statements are slow on GPU",
+          "active mask"
+        ]
+      }
+    },
+    {
+      "id": "memory-coalescing",
+      "title": {
+        "zh": "合并访存：32 个地址，几次读",
+        "en": "Memory coalescing: 32 addresses, how many reads"
+      },
+      "desc": {
+        "zh": "一个线程束的 32 次读按 32 字节一段取。挨着读取 4 段，按步长读最多取 32 段。改访问方式，看搬来的字节用上多少。",
+        "en": "A warp's 32 loads are served in 32-byte sectors: adjacent addresses need 4, a stride can need 32. Change the access pattern and see how much of the moved data is used."
+      },
+      "anchor": "#ch5",
+      "aliases": {
+        "zh": [
+          "合并访存",
+          "GPU 访存合并",
+          "CUDA 访存为什么慢",
+          "按列读为什么慢 GPU"
+        ],
+        "en": [
+          "memory coalescing",
+          "coalesced access",
+          "uncoalesced memory access",
+          "strided access GPU"
+        ]
+      }
+    },
+    {
+      "id": "shared-memory-bank-conflicts",
+      "title": {
+        "zh": "共享内存的 bank 冲突",
+        "en": "Shared-memory bank conflicts"
+      },
+      "desc": {
+        "zh": "共享内存分成 32 个 bank，每个 bank 每拍交出一个字。按步长读，看几路冲突；32×32 的块按列读，补一列就不冲突。",
+        "en": "Shared memory has 32 banks, each delivering one word per cycle. Read with a stride to see the conflict degree; reading a 32×32 tile by column conflicts until each row gets one word of padding."
+      },
+      "anchor": "#ch6",
+      "aliases": {
+        "zh": [
+          "bank 冲突",
+          "共享内存 bank 冲突",
+          "GPU 共享内存",
+          "共享内存补一列"
+        ],
+        "en": [
+          "shared memory bank conflict",
+          "bank conflict",
+          "GPU shared memory",
+          "shared memory padding"
+        ]
+      }
+    },
+    {
+      "id": "tiled-matmul-gpu",
+      "title": {
+        "zh": "分块矩阵乘法的两级屋顶",
+        "en": "Tiled matrix multiply: two levels of roofs"
+      },
+      "desc": {
+        "zh": "先搬一块进共享内存，再搬一小块进寄存器反复用。选块大小和每线程的小块，看显存、共享内存和峰值三层哪一层先压下来。",
+        "en": "Stage a tile in shared memory, then a smaller block in registers, and reuse it. Pick the tile size and per-thread block to see which of three roofs (memory, shared memory, peak) binds first."
+      },
+      "anchor": "#ch7",
+      "aliases": {
+        "zh": [
+          "共享内存分块",
+          "寄存器分块",
+          "CUDA 矩阵乘法优化",
+          "GEMM 怎么写快"
+        ],
+        "en": [
+          "shared memory tiling",
+          "register tiling",
+          "CUDA matrix multiply optimization",
+          "fast GEMM kernel"
+        ]
+      }
+    },
+    {
+      "id": "mma-number-formats",
+      "title": {
+        "zh": "矩阵乘加指令与数字格式",
+        "en": "Matrix multiply-accumulate instructions and number formats"
+      },
+      "desc": {
+        "zh": "一条 MMA 指令让整个线程束算一小块矩阵乘加；格式越窄峰值越高，但矩阵要够大才喂得饱。选卡、格式和矩阵大小，看能跑多快。",
+        "en": "One MMA instruction has the whole warp compute a small matrix multiply-accumulate; narrower formats have higher peaks, but only large matrices can feed them. Pick a GPU, a format and a size to see the speed."
+      },
+      "anchor": "#ch8",
+      "aliases": {
+        "zh": [
+          "MMA 指令",
+          "FP8 E4M3 E5M2",
+          "FP4 格式",
+          "mma.sync m16n8k16",
+          "wgmma 指令"
+        ],
+        "en": [
+          "MMA instruction",
+          "mma.sync",
+          "wgmma",
+          "FP8 formats",
+          "m16n8k16"
+        ]
+      }
+    },
+    {
+      "id": "pixel-quads",
+      "title": {
+        "zh": "像素按 2×2 着色：小三角形为什么费",
+        "en": "Shading in 2×2 quads: why small triangles cost"
+      },
+      "desc": {
+        "zh": "顶点和像素也变成线程上 SM，像素按 2×2 一组着色。拖三角形大小，看盖住的像素和要跑的线程差多少。",
+        "en": "Vertices and pixels also become threads on the SMs, and pixels are shaded in 2×2 quads. Drag the triangle size to compare the pixels covered with the threads run."
+      },
+      "anchor": "#ch9",
+      "aliases": {
+        "zh": [
+          "像素着色怎么上 SM",
+          "2×2 像素组",
+          "小三角形 性能",
+          "统一着色器"
+        ],
+        "en": [
+          "quad shading",
+          "2×2 quad",
+          "quad overshading",
+          "helper lanes"
+        ]
+      }
+    },
+    {
+      "id": "gpu-memory-hierarchy",
+      "title": {
+        "zh": "GPU 的存储层次，和不做的一致性",
+        "en": "The GPU memory hierarchy, and the coherence it skips"
+      },
+      "desc": {
+        "zh": "每个 SM 有自己的寄存器和 L1/共享内存，全片共用 L2，再往外是显存。各 SM 的 L1 之间不做硬件一致性，跨块交接要靠原子操作和栅栏。",
+        "en": "Each SM has its own registers and L1/shared memory; the chip shares an L2, then device memory. The SMs' L1s are not kept coherent by hardware, so handing data between blocks needs atomics and fences."
+      },
+      "anchor": "#ch10",
+      "aliases": {
+        "zh": [
+          "GPU 内存层次",
+          "GPU 为什么不做缓存一致性",
+          "__threadfence",
+          "GPU L1 和 L2"
+        ],
+        "en": [
+          "GPU memory hierarchy",
+          "GPU cache coherence",
+          "GPU memory fence",
+          "GPU L2 cache"
+        ]
+      }
+    },
+    {
+      "id": "gpu-frontier-2026",
+      "title": {
+        "zh": "前沿在哪（2026 年 11 月）",
+        "en": "Where the frontier is (November 2026)"
+      },
+      "desc": {
+        "zh": "Blackwell Ultra、Rubin、MI355X 和 MI455X：格式更窄、峰值更高、显存跟不上；双芯片封装；CUDA 与 ROCm 的版本。",
+        "en": "Blackwell Ultra, Rubin, MI355X and MI455X: narrower formats, higher peaks, memory that cannot keep up; two-die packages; CUDA and ROCm releases."
+      },
+      "anchor": "#ch11",
+      "aliases": {
+        "zh": [
+          "Blackwell Ultra",
+          "B300",
+          "MI355X",
+          "MI455X",
+          "RTX 5090 有多少核"
+        ],
+        "en": [
+          "Blackwell Ultra GPU",
+          "B300 GPU",
+          "AMD MI355X",
+          "AMD MI455X",
+          "RTX 5090 CUDA cores"
+        ]
+      }
+    },
+    {
+      "id": "gpu-code-checklist",
+      "title": {
+        "zh": "写 GPU 代码前问三件事",
+        "en": "Three questions before writing GPU code"
+      },
+      "desc": {
+        "zh": "拆得开吗、走得齐吗、读得近吗：把前面各章收成一张清单，再指向讲内存、缓存和互连的各篇。",
+        "en": "Can it be split, do the threads move together, are the reads close: the chapters condensed into a checklist, with pointers to the essays on memory, caches and interconnects."
+      },
+      "anchor": "#ch12",
+      "aliases": {
+        "zh": [
+          "怎么写快的 CUDA 代码",
+          "CUDA 优化清单",
+          "GPU 代码为什么慢"
+        ],
+        "en": [
+          "CUDA performance tips",
+          "how to write fast CUDA",
+          "why is my GPU code slow"
+        ]
+      }
+    }
+  ]
+}
