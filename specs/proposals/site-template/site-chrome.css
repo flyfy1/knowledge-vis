@@ -1,0 +1,13 @@
+/* Shared chrome added by the site template: breadcrumb and the generated "linked from / related" block.
+   Uses the page's own custom properties when present, with fallbacks. */
+.crumbs { display:flex; flex-wrap:wrap; align-items:center; gap:0 2px; margin:0 0 18px -10px; font-size:13.5px; line-height:1.4; }
+.crumbs a, .crumbs [aria-current] { display:inline-flex; align-items:center; min-height:48px; padding:0 10px; color:var(--mute,#a3aab8); text-decoration:none; }
+.crumbs a:hover { color:var(--ink,#ebe8e0); text-decoration:underline; }
+.crumbs [aria-current] { color:var(--dim,#9098a8); padding-left:4px; }
+.crumbs .sep { color:var(--line,#2b3242); }
+.ch.xref h2 { font-size:22px; margin:0 0 .6em; }
+.xref-list { list-style:none; padding:0; margin:0 0 2em; }
+.xref-list li { padding:10px 0; border-bottom:1px solid var(--line,#2b3242); color:var(--body,#d5d7de); font-size:15px; line-height:1.7; }
+.xref-list a { display:inline-block; min-height:24px; }
+@media (max-width:640px) { .crumbs { margin-bottom:8px; } .crumbs [aria-current], .crumbs [aria-current] + .sep, .crumbs .sep:nth-last-child(2) { display:none; } }
+@media (max-width:420px) { .crumbs { font-size:13px; } .crumbs a { padding:0 6px; } }
