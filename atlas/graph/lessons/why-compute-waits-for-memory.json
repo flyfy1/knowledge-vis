@@ -369,15 +369,13 @@
           "数据搬运能耗",
           "Horowitz 能耗",
           "为什么 HBM 这么贵",
-          "CoWoS",
-          "NVLink 带宽"
+          "CoWoS"
         ],
         "en": [
           "HBM high bandwidth memory",
           "data movement energy",
           "Horowitz energy table",
-          "why HBM matters",
-          "NVLink vs PCIe"
+          "why HBM matters"
         ]
       }
     },
@@ -412,7 +410,6 @@
           "B200 H100 对比",
           "Rubin",
           "共封装光学 CPO",
-          "CXL 内存池",
           "存算一体 PIM"
         ],
         "en": [
@@ -420,7 +417,6 @@
           "HBM3e",
           "Blackwell B200 bandwidth",
           "co-packaged optics",
-          "CXL memory pooling",
           "processing in memory PIM"
         ]
       }

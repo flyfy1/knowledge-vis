@@ -2705,7 +2705,7 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 <!-- GENERATED:atlas-nodes -->
 ## 三、图谱节点索引（生成，勿手改）
 
-551 个概念 · 730 条关系 · 11 个分区 · 由 scripts/build-atlas-data.cjs --concept-map 生成。节点排序与 data.js 一致（分区序、学段序、order、id）。
+576 个概念 · 771 条关系 · 11 个分区 · 由 scripts/build-atlas-data.cjs --concept-map 生成。节点排序与 data.js 一致（分区序、学段序、order、id）。
 
 ### 01 数学基础 / Mathematical tools
 
@@ -3045,6 +3045,8 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 缓存一致性问题：两份缓存，一份旧了 / The coherence problem: two caches, one stale copy | ../computing/systems/how-cores-share-memory/#ch1 | how-cores-share-memory |
 | 为什么要缓存，为什么不止一级 / Why caches, and why more than one level | ../computing/systems/how-cpu-caches-work/#ch1 | how-cpu-caches-work |
 | CNN 特征图 / CNN feature maps | ../computing/ml/cnn-feature-maps/#step0 | cnn-feature-maps#step0 |
+| 复制还是共享：零拷贝的吸引力 / Copy or share: why zero-copy appeals | ../computing/systems/coherent-interconnects/#ch1 | coherent-interconnects |
+| 一个比特是一只会漏的电容：DRAM 刷新 / A bit is a leaking capacitor: DRAM refresh | ../computing/systems/how-memory-talks/#ch1 | how-memory-talks |
 | 图算法 / Graph algorithms | ../computing/algorithms/graph-algorithms/#step1 | graph-algorithms#step1 |
 | 图形渲染管线 · 从坐标到像素 / The graphics pipeline · from coordinates to pixels | ../computing/graphics/computer-graphics/#step0 | computer-graphics#step0 |
 | 哈希 / Hashing | ../computing/algorithms/hashing/#step0 | hashing#step0 |
@@ -3068,6 +3070,8 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 为什么并行总线跑不快：负载、反射波和时钟 / Why a Parallel Bus Can't Go Fast: Loading, Reflected Waves and the Clock | ../computing/systems/how-a-computer-is-wired/#ch2 | how-a-computer-is-wired |
 | 一个地址怎么被拆开 / How an address is split | ../computing/systems/how-cpu-caches-work/#ch2 | how-cpu-caches-work |
 | 一致性的两条规矩：单写多读与数据值 / Two invariants: single writer, multiple readers, and data value | ../computing/systems/how-cores-share-memory/#ch2 | how-cores-share-memory |
+| 一致性跨过一根线：家代理 / Coherence across a link: the home agent | ../computing/systems/coherent-interconnects/#ch2 | coherent-interconnects |
+| bank、行、列与地址切分 / Banks, rows, columns and address mapping | ../computing/systems/how-memory-talks/#ch2 | how-memory-talks |
 | 机械硬盘：寻道、转动等待与外圈更快 / Hard disks: seek, rotational latency and faster outer tracks | ../computing/systems/what-a-drive-is-made-of/#ch2 | what-a-drive-is-made-of |
 | 线性注意力的矩阵结合律 / Linear Attention via Matrix Associativity | ../computing/ml/how-hybrid-attention-remembers/#ch2 | how-hybrid-attention-remembers |
 | 存储层级与缓存命中 / Memory Latency Hierarchy and Cache Locality | ../computing/systems/why-compute-waits-for-memory/#ch2 | why-compute-waits-for-memory |
@@ -3085,6 +3089,8 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 相联度与三种缺失 / Associativity and the three kinds of miss | ../computing/systems/how-cpu-caches-work/#ch3 | how-cpu-caches-work |
 | 矩阵分块与时间局部性 / Loop Tiling and Temporal Locality | ../computing/systems/why-compute-waits-for-memory/#ch3 | why-compute-waits-for-memory |
 | 把一个循环翻译成机器码 / Hand-compiling a loop to machine code | ../computing/systems/how-a-cpu-runs-a-program/#ch3 | how-a-cpu-runs-a-program |
+| CXL 的三种协议和数据帧 / CXL's three protocols and flits | ../computing/systems/coherent-interconnects/#ch3 | coherent-interconnects |
+| 五个命令和时序：行命中、未命中、冲突 / Five commands and their timings: row hit, miss and conflict | ../computing/systems/how-memory-talks/#ch3 | how-memory-talks |
 | 快权重联想记忆与容量上限 / Fast-Weight Memory & Rank Capacity | ../computing/ml/how-hybrid-attention-remembers/#ch3 | how-hybrid-attention-remembers |
 | 全局历史与 gshare / Global history and gshare | ../computing/systems/how-a-cpu-guesses-ahead/#ch3 | how-a-cpu-guesses-ahead |
 | iSCSI：SCSI 命令走 TCP，写要等 R2T / iSCSI: SCSI commands over TCP, writes wait for R2T | ../computing/systems/storage-over-a-network/#ch3 | storage-over-a-network |
@@ -3098,6 +3104,8 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 一条 USB4 链路怎么分带宽 / How One USB4 Link Is Shared | ../computing/systems/how-thunderbolt-works/#ch3 | how-thunderbolt-works |
 | x86-64 四级页表逐位走一遍 / An x86-64 four-level page walk, bit by bit | ../computing/systems/how-virtual-memory-works/#ch3 | how-virtual-memory-works |
 | 满了换谁：LRU、伪 LRU 与 RRIP / Replacement: LRU, pseudo-LRU and RRIP | ../computing/systems/how-cpu-caches-work/#ch4 | how-cpu-caches-work |
+| CL 折成纳秒 / CAS latency in nanoseconds | ../computing/systems/how-memory-talks/#ch4 | how-memory-talks |
+| CXL 的三类设备 / The three CXL device types | ../computing/systems/coherent-interconnects/#ch4 | coherent-interconnects |
 | Delta 规则：先擦后写的投影更新 / The Delta Rule: Erase Before Writing | ../computing/ml/how-hybrid-attention-remembers/#ch4 | how-hybrid-attention-remembers |
 | 目录协议：核心多了怎么办 / Directory coherence for many cores | ../computing/systems/how-cores-share-memory/#ch4 | how-cores-share-memory |
 | 双端口与多路径的可用度算术 / Availability Arithmetic of Dual Port and Multipath | ../computing/systems/how-sas-works/#ch4 | how-sas-works |
@@ -3118,6 +3126,8 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 写回、写直达与写缓冲 / Write-back, write-through and the write buffer | ../computing/systems/how-cpu-caches-work/#ch5 | how-cpu-caches-work |
 | 今天的主板：CPU 直连和芯片组的上行链路 / Today's Motherboard: CPU Lanes and the Chipset Uplink | ../computing/systems/how-a-computer-is-wired/#ch5 | how-a-computer-is-wired |
 | 最慢的那条指令定了时钟 / The slowest instruction sets the clock | ../computing/systems/how-a-cpu-runs-a-program/#ch5 | how-a-cpu-runs-a-program |
+| 内存扩展卡与冷热分层 / Memory expansion and hot/cold tiering | ../computing/systems/coherent-interconnects/#ch5 | coherent-interconnects |
+| 64 字节一次突发与 DDR5 子通道 / 64-byte bursts and DDR5 subchannels | ../computing/systems/how-memory-talks/#ch5 | how-memory-talks |
 | 闪存为什么会坏：擦写次数、纠错码、TBW 与 DWPD / Why flash wears out: P/E cycles, ECC, TBW and DWPD | ../computing/systems/what-a-drive-is-made-of/#ch5 | what-a-drive-is-made-of |
 | Gated DeltaNet 与选择性遗忘门 / Gated DeltaNet & Selective Decay | ../computing/ml/how-hybrid-attention-remembers/#ch5 | how-hybrid-attention-remembers |
 | 丢失的更新：两个线程各加一百万次 / The lost update: two threads each add a million | ../computing/systems/how-cores-share-memory/#ch5 | how-cores-share-memory |
@@ -3130,6 +3140,7 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | UASP：四条管道、标签和 USB 3 的流 / UASP: Four Pipes, Tags and USB 3 Streams | ../computing/systems/how-usb-drives-talk/#ch5 | how-usb-drives-talk |
 | 80 Gb/s 怎么来：PAM3 与 3+1 非对称 / Where 80 Gb/s Comes From: PAM3 and 3+1 | ../computing/systems/how-thunderbolt-works/#ch5 | how-thunderbolt-works |
 | 原子指令：LOCK、CAS、LL/SC 与 LSE / Atomic instructions: LOCK, CAS, LL/SC and LSE | ../computing/systems/how-cores-share-memory/#ch6 | how-cores-share-memory |
+| bank 组与 tCCD_L / Bank groups and tCCD_L | ../computing/systems/how-memory-talks/#ch6 | how-memory-talks |
 | 三级各管什么：包含、排他与共享 L3 / What each level does: inclusive, exclusive and the shared L3 | ../computing/systems/how-cpu-caches-work/#ch6 | how-cpu-caches-work |
 | 分块并行训练与结构化状态空间对偶 / Chunkwise Training & State Space Duality | ../computing/ml/how-hybrid-attention-remembers/#ch6 | how-hybrid-attention-remembers |
 | USB-C 接显示器要多少带宽 / How Much a Monitor Needs over USB-C | ../computing/systems/how-thunderbolt-works/#ch6 | how-thunderbolt-works |
@@ -3137,6 +3148,7 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 闪存翻译层（FTL）：不能原地改写与垃圾回收 / The flash translation layer: no in-place updates, garbage collection | ../computing/systems/what-a-drive-is-made-of/#ch6 | what-a-drive-is-made-of |
 | GPU 并发与脉动阵列 / GPU Throughput and Systolic Arrays | ../computing/systems/why-compute-waits-for-memory/#ch6 | why-compute-waits-for-memory |
 | 大页：2 MiB 和 1 GiB / Huge pages: 2 MiB and 1 GiB | ../computing/systems/how-virtual-memory-works/#ch6 | how-virtual-memory-works |
+| 内存池与 CXL 交换机 / Memory pools and CXL switches | ../computing/systems/coherent-interconnects/#ch6 | coherent-interconnects |
 | 芯片里面的路：环形总线和网格 / Roads Inside the Chip: Ring Bus and Mesh | ../computing/systems/how-a-computer-is-wired/#ch6 | how-a-computer-is-wired |
 | 开机枚举、配置空间与 BAR / Enumeration, Configuration Space and BARs | ../computing/systems/how-pcie-works/#ch6 | how-pcie-works |
 | RDMA、RoCE v2 与无损以太网 / RDMA, RoCE v2 and lossless Ethernet | ../computing/systems/storage-over-a-network/#ch6 | storage-over-a-network |
@@ -3145,9 +3157,11 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 写放大、垃圾回收与 Trim / Write Amplification, Garbage Collection & Trim | ../computing/systems/why-nvme-is-fast/#ch6 | why-nvme-is-fast |
 | 超标量与指令级并行 / Superscalar issue and instruction-level parallelism | ../computing/systems/how-a-cpu-guesses-ahead/#ch6 | how-a-cpu-guesses-ahead |
 | 桥接芯片：SCSI 翻译与链条上的瓶颈 / The Bridge Chip: SCSI Translation and the Bottleneck | ../computing/systems/how-usb-drives-talk/#ch6 | how-usb-drives-talk |
+| 背向作废：几台主机共用一行 / Back-invalidate: several hosts sharing one line | ../computing/systems/coherent-interconnects/#ch7 | coherent-interconnects |
 | 核心之间搬一行要多久 / How long a line takes to move between cores | ../computing/systems/how-cores-share-memory/#ch7 | how-cores-share-memory |
 | 数据冒险与转发路径 / Data hazards and the forwarding paths | ../computing/systems/how-a-cpu-runs-a-program/#ch7 | how-a-cpu-runs-a-program |
 | 芯粒之间的连线：UCIe 和每比特的能耗 / Links Between Chiplets: UCIe and Energy per Bit | ../computing/systems/how-a-computer-is-wired/#ch7 | how-a-computer-is-wired |
+| 插几根：飞越式布线与训练 / DIMMs per channel: fly-by routing and training | ../computing/systems/how-memory-talks/#ch7 | how-memory-talks |
 | 移动固态的发热降速：集总热容模型 / External SSD Thermal Throttling: A Lumped Thermal Model | ../computing/systems/how-usb-drives-talk/#ch7 | how-usb-drives-talk |
 | 3:1 混合注意力与大海捞针精确回忆 / 3:1 Hybrid Ratio & Exact Recall Bookmarks | ../computing/ml/how-hybrid-attention-remembers/#ch7 | how-hybrid-attention-remembers |
 | 为什么 L1 这么小 / Why L1 is small | ../computing/systems/how-cpu-caches-work/#ch7 | how-cpu-caches-work |
@@ -3163,10 +3177,12 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | USB PD：谈出来的瓦数与 EPR / USB Power Delivery: Negotiated Watts and EPR | ../computing/systems/how-thunderbolt-works/#ch7 | how-thunderbolt-works |
 | 预取：下一行与步长 / Prefetching: next-line and stride | ../computing/systems/how-cpu-caches-work/#ch8 | how-cpu-caches-work |
 | 控制冒险：分支的代价 / Control hazards: the cost of a branch | ../computing/systems/how-a-cpu-runs-a-program/#ch8 | how-a-cpu-runs-a-program |
+| 片上 ECC 和旁路 ECC / On-die ECC and side-band ECC | ../computing/systems/how-memory-talks/#ch8 | how-memory-talks |
 | 屋顶线下的长上下文吐字加速 / Roofline Decode Speedup at Long Context | ../computing/ml/how-hybrid-attention-remembers/#ch8 | how-hybrid-attention-remembers |
 | 到今天还共用的小总线：I²C 和上拉电阻 / The Small Buses Still Shared Today: I²C and Pull-up Resistors | ../computing/systems/how-a-computer-is-wired/#ch8 | how-a-computer-is-wired |
 | 大模型推理的内存瓶颈 / Why LLM Inference Is Memory-Bound | ../computing/systems/why-compute-waits-for-memory/#ch8 | why-compute-waits-for-memory |
 | 多路径的分流与切换：ALUA 与 ANA / Splitting and failing over across paths: ALUA and ANA | ../computing/systems/storage-over-a-network/#ch8 | storage-over-a-network |
+| NVLink 与 NVSwitch / NVLink and NVSwitch | ../computing/systems/coherent-interconnects/#ch8 | coherent-interconnects |
 | PCIe 6.0、ZNS 与 GPUDirect Storage / PCIe 6.0, ZNS & GPUDirect Storage | ../computing/systems/why-nvme-is-fast/#ch8 | why-nvme-is-fast |
 | 内存不够时换出谁 / Which page to evict | ../computing/systems/how-virtual-memory-works/#ch8 | how-virtual-memory-works |
 | 通道损耗预算与重定时器 / Channel Loss Budgets and Retimers | ../computing/systems/how-pcie-works/#ch8 | how-pcie-works |
@@ -3184,8 +3200,10 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 混合注意力前沿谱系（2026 年 11 月） / Hybrid Attention Landscape (Nov 2026) | ../computing/ml/how-hybrid-attention-remembers/#ch9 | how-hybrid-attention-remembers |
 | 互连的前沿（截至 2026 年 11 月）：UCIe 3.0 与 4.0、3D 堆叠、CXL 4.0 / The Interconnect Frontier (as of November 2026): UCIe 3.0 and 4.0, 3D Stacking, CXL 4.0 | ../computing/systems/how-a-computer-is-wired/#ch9 | how-a-computer-is-wired |
 | 性能的铁律 / The iron law of performance | ../computing/systems/how-a-cpu-runs-a-program/#ch9 | how-a-cpu-runs-a-program |
+| LPDDR、GDDR7、CAMM2 与 MRDIMM / LPDDR, GDDR7, CAMM2 and MRDIMM | ../computing/systems/how-memory-talks/#ch9 | how-memory-talks |
 | PAM4 与眼图 / PAM4 and Eye Diagrams | ../computing/systems/how-pcie-works/#ch9 | how-pcie-works |
 | 三副本与纠删码：空间、持久性与修理代价 / Replication vs erasure coding: space, durability and repair | ../computing/systems/storage-over-a-network/#ch9 | storage-over-a-network |
+| 环形全归约 / Ring all-reduce | ../computing/systems/coherent-interconnects/#ch9 | coherent-interconnects |
 | 24G SAS 的 128b/150b 编码与纠错 / 24G SAS: 128b/150b Coding and FEC | ../computing/systems/how-sas-works/#ch9 | how-sas-works |
 | SATA 的前沿（截至 2026 年 11 月） / Where SATA Stands (as of November 2026) | ../computing/systems/how-sata-works/#ch9 | how-sata-works |
 | 存储前沿（2026 年 11 月）：HAMR 出货、闪存层数、QLC 与 PLC / Storage frontier (Nov 2026): HAMR shipping, NAND layers, QLC and PLC | ../computing/systems/what-a-drive-is-made-of/#ch9 | what-a-drive-is-made-of |
@@ -3200,7 +3218,9 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | FLIT 模式与前向纠错 / FLIT Mode and Forward Error Correction | ../computing/systems/how-pcie-works/#ch10 | how-pcie-works |
 | 读硬盘规格表时问三件事 / Three Questions for a Drive Spec Sheet | ../computing/systems/how-sata-works/#ch10 | how-sata-works |
 | 看一台机器的三个问题 / Three Questions for Reading a Machine | ../computing/systems/how-a-computer-is-wired/#ch10 | how-a-computer-is-wired |
+| 行锤与防护：TRR、RFM、PRAC / Row hammer and its defences: TRR, RFM, PRAC | ../computing/systems/how-memory-talks/#ch10 | how-memory-talks |
 | SAS 的前沿（截至 2026 年 11 月） / The SAS Frontier (as of November 2026) | ../computing/systems/how-sas-works/#ch10 | how-sas-works |
+| 纵向扩展、横向扩展与 UALink / Scale-up, scale-out and UALink | ../computing/systems/coherent-interconnects/#ch10 | coherent-interconnects |
 | Spectre：猜测为什么会泄露秘密 / Spectre: why guessing leaks secrets | ../computing/systems/how-a-cpu-guesses-ahead/#ch10 | how-a-cpu-guesses-ahead |
 | 锁的扩展性：TAS、TTAS、排号锁与 MCS / Lock scaling: TAS, TTAS, ticket and MCS | ../computing/systems/how-cores-share-memory/#ch10 | how-cores-share-memory |
 | 雷电与 USB4 的前沿（2026） / Thunderbolt and USB4 Frontier (2026) | ../computing/systems/how-thunderbolt-works/#ch10 | how-thunderbolt-works |
@@ -3208,20 +3228,25 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 缓存的前沿（2026 年 11 月） / The cache frontier (November 2026) | ../computing/systems/how-cpu-caches-work/#ch11 | how-cpu-caches-work |
 | 前沿（2026 年 11 月）：几百个核心的一致性域 / Frontier (November 2026): coherence domains of hundreds of cores | ../computing/systems/how-cores-share-memory/#ch11 | how-cores-share-memory |
 | 分支预测与推测执行的前沿（截至 2026 年 11 月） / The frontier of prediction and speculation (as of November 2026) | ../computing/systems/how-a-cpu-guesses-ahead/#ch11 | how-a-cpu-guesses-ahead |
+| 封装里的一致性：MI300A 与 Grace Hopper / Coherence in one package: MI300A and Grace Hopper | ../computing/systems/coherent-interconnects/#ch11 | coherent-interconnects |
 | 指令集的前沿（2026 年 11 月） / The ISA frontier (November 2026) | ../computing/systems/how-a-cpu-runs-a-program/#ch11 | how-a-cpu-runs-a-program |
 | 诊断芯片与程序的四个问题 / Four Questions for Any Chip or Slow Program | ../computing/systems/why-compute-waits-for-memory/#ch11 | why-compute-waits-for-memory |
+| 内存的前沿（截至 2026 年 11 月） / The memory frontier (as of November 2026) | ../computing/systems/how-memory-talks/#ch11 | how-memory-talks |
 | 虚拟机里的二维页表 / Two-dimensional page walks in virtual machines | ../computing/systems/how-virtual-memory-works/#ch11 | how-virtual-memory-works |
 | 看到网络存储时问的三件事 / Three questions to ask about network storage | ../computing/systems/storage-over-a-network/#ch11 | storage-over-a-network |
 | PCIe 7.0、8.0 与合规测试的进展 / Where PCIe 7.0, 8.0 and Compliance Stand | ../computing/systems/how-pcie-works/#ch11 | how-pcie-works |
 | 看到 SAS 时问三件事 / Three Questions When You See SAS | ../computing/systems/how-sas-works/#ch11 | how-sas-works |
 | 看包装时问三件事 / Three Questions for a USB Speed Label | ../computing/systems/how-usb-drives-talk/#ch11 | how-usb-drives-talk |
 | 雷电接口是怎么工作的 / How Thunderbolt Works | ../computing/systems/how-thunderbolt-works/#ch11 | how-thunderbolt-works |
+| 互连的前沿（2026 年 11 月） / Interconnect frontier (November 2026) | ../computing/systems/coherent-interconnects/#ch12 | coherent-interconnects |
 | PCIe 翻倍的三种办法 / Three Ways PCIe Doubled | ../computing/systems/how-pcie-works/#ch12 | how-pcie-works |
+| 看一根内存条时问三件事 / Three questions to ask of a memory module | ../computing/systems/how-memory-talks/#ch12 | how-memory-talks |
 | 看一段代码时问三件事 / Three questions about a piece of code | ../computing/systems/how-a-cpu-guesses-ahead/#ch12 | how-a-cpu-guesses-ahead |
 | 看一颗芯片的缓存时问三件事 / Three questions about a chip's caches | ../computing/systems/how-cpu-caches-work/#ch12 | how-cpu-caches-work |
 | 看代码、比 CPU 时问的三件事 / Three questions for code and for CPUs | ../computing/systems/how-a-cpu-runs-a-program/#ch12 | how-a-cpu-runs-a-program |
 | 写共享数据前问三件事 / Three questions before writing shared data | ../computing/systems/how-cores-share-memory/#ch12 | how-cores-share-memory |
 | 虚拟内存的前沿（2026 年 11 月） / The frontier of virtual memory (November 2026) | ../computing/systems/how-virtual-memory-works/#ch12 | how-virtual-memory-works |
+| 看一套互连的三个问题 / Three questions to ask of an interconnect | ../computing/systems/coherent-interconnects/#ch13 | coherent-interconnects |
 | 程序慢的时候问三件事 / Three questions when a program is slow | ../computing/systems/how-virtual-memory-works/#ch13 | how-virtual-memory-works |
 
 ### 10 经济与社会 / Economy & society

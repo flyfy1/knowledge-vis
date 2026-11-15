@@ -83,7 +83,7 @@ types ("为什么要打疫苗", "how does my phone know where I am"), not only t
    max-age=14400`) but not the HTML, so without a new key readers get the new page with the old text. If the scripts
    were already deployed under today's key, append a letter (`?v=20261115b`, then `c`) so the new key differs. The
    storage essays (what-a-drive-is-made-of, how-sata-works, how-sas-works, how-usb-drives-talk, storage-over-a-network),
-   the bus essays (how-pcie-works, how-a-computer-is-wired, how-thunderbolt-works), how-cpu-caches-work, how-a-cpu-runs-a-program, how-virtual-memory-works, how-a-cpu-guesses-ahead, how-cores-share-memory, why-compute-waits-for-memory and why-nvme-is-fast use it since 2026-11-15; older essays do not yet, so add the key the next time one of them
+   the bus essays (how-pcie-works, how-a-computer-is-wired, how-thunderbolt-works, how-memory-talks, coherent-interconnects), how-cpu-caches-work, how-a-cpu-runs-a-program, how-virtual-memory-works, how-a-cpu-guesses-ahead, how-cores-share-memory, why-compute-waits-for-memory and why-nvme-is-fast use it since 2026-11-15; older essays do not yet, so add the key the next time one of them
    changes.
 8. Add rows to CONCEPT-MAP.md.
 
@@ -120,10 +120,12 @@ types ("为什么要打疫苗", "how does my phone know where I am"), not only t
 | how-virtual-memory-works | computing/systems/how-virtual-memory-works/ | 13 (`#ch1…#ch13`) | computing | `ESSAY_BASE_URL` |
 | how-a-cpu-guesses-ahead | computing/systems/how-a-cpu-guesses-ahead/ | 12 (`#ch1…#ch12`) | computing | `ESSAY_BASE_URL` |
 | how-cores-share-memory | computing/systems/how-cores-share-memory/ | 12 (`#ch1…#ch12`) | computing | `ESSAY_BASE_URL` |
+| how-memory-talks | computing/systems/how-memory-talks/ | 12 (`#ch1…#ch12`) | computing | `ESSAY_BASE_URL` |
+| coherent-interconnects | computing/systems/coherent-interconnects/ | 13 (`#ch1…#ch13`) | computing | `ESSAY_BASE_URL` |
 
 The eleven from 2026-11-11, the two food essays of 2026-11-12 and the five storage essays of 2026-11-14/15
 (what-a-drive-is-made-of, how-sata-works, how-sas-works, how-usb-drives-talk, storage-over-a-network) and the three bus essays of
-2026-11-15 (how-pcie-works, how-a-computer-is-wired, how-thunderbolt-works) and the architecture essays how-cpu-caches-work,
+2026-11-15 (how-pcie-works, how-a-computer-is-wired, how-thunderbolt-works, and later how-memory-talks and coherent-interconnects) and the architecture essays how-cpu-caches-work,
 how-a-cpu-runs-a-program, how-virtual-memory-works, how-a-cpu-guesses-ahead and how-cores-share-memory (2026-11-15) were built by Claude Code (claude-opus-5-5). The English copy was drafted by Claude
 Code (claude-haiku-5-5). A separate Claude Code session of the same model reviewed each essay and revised
 it (no human or cross-model review yet). Each BRIEF.md records what was and was not checked.
@@ -261,6 +263,11 @@ On 2026-11-15 the A4/A5 registrar removed 取指 译码 执行 from #ch1 (it tie
 query for a chapter about stalls) and repointed the label to that commit (d34e98bb, previous 88dafe9c) with
 specs/reviews/why-compute-waits-for-memory-fetch-decode-alias-20261115.md as evidence; no script changed (keys stay `?v=20261115`).
 #ch1 keeps the stall, forwarding, load-use, CPI and "instruction pipeline" words.
+On 2026-11-15 the B3/B4 registrar moved NVLink 带宽 / NVLink vs PCIe from #ch9 to coherent-interconnects #ch8 and CXL 内存池 / CXL
+memory pooling from #ch10 to coherent-interconnects #ch6 (team-lead decision: B4 answers both in depth); #ch9 keeps HBM, CoWoS and the
+energy words, #ch10 keeps HBM4, HBM3e, Rubin, co-packaged optics and PIM. ch5.p2's existing words "DDR 内存通道" / "DDR channels" now
+link how-memory-talks #ch5. Scripts `?v=20261115b`; label repointed to that commit (52df5521, previous d34e98bb) with
+specs/reviews/why-compute-waits-for-memory-cxl-nvlink-alias-move-20261115.md as evidence (the edition stays Antigravity's).
 
 ### why-nvme-is-fast: NVMe 为什么这么快
 
@@ -385,7 +392,8 @@ storage-over-a-network, how-sas-works, frequency-response, inside-a-phone, how-a
 how-thunderbolt-works. Atlas edges: 7 between chapters, 2 from how-sata-works (#ch3 → #ch2, #ch2 → #ch1), 3 into storage
 pages (why-nvme-is-fast #ch2 and #ch4, how-usb-drives-talk #ch8). Not verified (BRIEF): everything from pcisig.com itself
 (second-hand via ServeTheHome and eeNews), Gen6/7 loss budgets (vendor material), PAM4 Gray order and FLIT byte-to-interleave
-assignment in PCIe 6.0.
+assignment in PCIe 6.0. B4 is linked since it went live (2026-11-15): ch11.e3 (CXL 4.0) gains one sentence linking coherent-interconnects
+#ch3; label at 52df5521 (previous 4353c314), scripts `?v=20261115b`. The CXL words (什么是 CXL, CXL 是什么, what is CXL) it reserved are B4's.
 
 ### how-a-computer-is-wired: 电脑里的零件是怎么连起来的
 
@@ -406,7 +414,9 @@ system boards), 10 misses in flight per core (stated and pinned). It links how-s
 why-compute-waits-for-memory #ch4/#ch5, how-pcie-works (#ch1, #ch2, #ch11) and how-thunderbolt-works. Atlas edges: 6
 between chapters, 1 from how-sata-works (#ch2), 2 from why-compute-waits-for-memory (#ch4, #ch9), 2 from / to how-pcie-works
 (#ch2 → B1 #ch1, B1 #ch2 → #ch5). Not verified (BRIEF): the AMD chipset uplink generation (PCIe 4.0 ×4, press), UCIe 4.0
-numbers, the Xeon 6+ launch date.
+numbers, the Xeon 6+ launch date. B4 is linked since it went live (2026-11-15): ch9.d2 links coherent-interconnects #ch3 where it
+said the series might cover CXL later; ch8.p5 (B5, small buses) stays plain text. Label at 52df5521 (previous 4353c314), scripts
+`?v=20261115b`; the reserved CXL / NVLink words are B4's, 内存频率 / CL 值 are B3's.
 
 ### how-thunderbolt-works: 雷电接口是怎么工作的
 
@@ -447,7 +457,8 @@ why-compute-waits-for-memory (#ch2, #ch3, #ch4, the page) and switches-that-comp
 switches-that-compute does not link here (its only cache mention is a list item, and its browser test requires 48 × 48
 links). A3 is linked since it went live (2026-11-15): ch7.p2 and ch10.limit to how-virtual-memory-works #ch4, ch7.limit and
 ch12.links to its page top; A5 is linked since it went live (2026-11-15): ch9.p1 and ch12.links to how-cores-share-memory's page top,
-ch9.limit to its #ch3; label at d34e98bb (previous c0cc5c40), scripts `?v=20261115c`. A5 took 缓存一致性 / cache coherence, MESI 协议,
+ch9.limit to its #ch3; B3 is linked since it went live (2026-11-15): one clause in ch12.links to how-memory-talks; label at 52df5521
+(previous d34e98bb), scripts `?v=20261115d`. A5 took 缓存一致性 / cache coherence, MESI 协议,
 MOESI, MSI 协议 and 总线窥探; #ch9 keeps 伪共享 / false sharing and MESI 状态. Atlas edges: 8 between chapters, 4 from why-compute-waits-for-
 memory (#ch2 twice, #ch3, #ch4), 1 from switches-that-compute #ch11. Not verified (BRIEF): Arm's Neoverse V3 TRM (quoted via
 jia.je), Intel Xeon 6980P cache, Zen 6 (claimed), Apple's ways and latencies, Skymont L1.
@@ -538,11 +549,74 @@ compare and swap, LL/SC (#ch6), 核间延迟 / core-to-core latency (#ch7), 顺�
 false sharing and MESI 状态 on how-cpu-caches-work #ch9, plain MSI on how-pcie-works #ch7, MSI-X on why-nvme-is-fast, NUMA on
 how-a-computer-is-wired #ch4, the replica-consistency words on distributed-systems. It links how-cpu-caches-work (#ch5, #ch9, the
 page), how-a-computer-is-wired (#ch4, #ch6, #ch7, the page), why-compute-waits-for-memory #ch5, distributed-systems and
-how-a-cpu-guesses-ahead (#ch8, the page); B4 (coherent interconnects, being written) is named in plain text. A2 (ch9.p1, ch9.limit,
-ch12.links), A3 ch13.links and A4 ch12.links link here. Scripts `?v=20261115`. Atlas edges: 8 between chapters, 3 from
+how-a-cpu-guesses-ahead (#ch8, the page) and, since B4 went live (2026-11-15), coherent-interconnects (ch11.p2 and ch12.links, page top;
+label at 52df5521, previous d34e98bb). A2 (ch9.p1, ch9.limit,
+ch12.links), A3 ch13.links and A4 ch12.links link here. Scripts `?v=20261115b`. Atlas edges: 8 between chapters, 3 from
 how-cpu-caches-work (#ch5, #ch9 twice), 3 from how-a-computer-is-wired (#ch4, #ch6, #ch7), 1 from A4 #ch8. Not verified (BRIEF):
 the Arm ARM and the RISC-V RVWMO chapter, the Primer, Sewell et al. and Mellor-Crummey & Scott texts, the current Intel SDM
 chapter number, Lamport 1979.
+
+### how-memory-talks: 内存是怎么和 CPU 说话的
+
+Bus series B3 (specs/essay-briefs/TASK-bus-series.md). A DDR5-6400 CL32 module has a bigger latency number than DDR4: is it faster,
+what happens inside the module when the CPU asks for one byte, and why does memory still use a wide set of parallel wires? A bit
+as a leaking capacitor and what refresh costs (DDR4/DDR5 tRFC, tREFI, FGR, same-bank refresh), banks, rows and columns with a
+physical address split bit by bit, the five DRAM commands on a cycle-by-cycle simulator checked against every timing rule (hit,
+miss, conflict; open vs close page; FR-FCFS), CL in cycles and nanoseconds on real JEDEC bins and two XMP kits, BL16 and the DDR5
+subchannels, bank groups with tCCD_L and tFAW, fly-by routing, DIMMs per channel and training, on-die vs side-band ECC with exact
+Hamming enumeration, LPDDR5X, GDDR7 PAM3, CAMM2 and MRDIMM, row hammer with TRR, RFM and PRAC, a dated frontier and a closing.
+Eleven static diagrams. Essay commit d165655d; label at 52df5521 (the cross-link, alias and one-click commit). It owns the DDR
+words: DRAM 刷新 / DRAM refresh, tRFC, 1T1C (#ch1), 内存 bank 和行, 行缓冲 / row buffer, 内存地址映射 (#ch2), 内存时序 CL-tRCD-tRP,
+行命中 行冲突, 开页 关页策略 (#ch3), CL 值, CL 是什么, CL 值越高越慢吗, DDR5 延迟比 DDR4 高吗, 内存频率越高延迟越高吗, CAS latency,
+XMP (#ch4), DDR5 子通道, BL16, 内存条峰值带宽 (#ch5), bank 组 / bank groups, tCCD_L, tFAW (#ch6), 内存条插四根为什么降频, 插四根内存为什么
+降频, 内存训练, 飞越式拓扑 / fly-by (#ch7), DDR5 自带 ECC 吗, 片上 ECC / on-die ECC, 旁路 ECC, ECC 内存 (#ch8), LPDDR5X, GDDR7, CAMM2,
+MRDIMM, GDDR7 为什么用 PAM3 (#ch9), 行锤 RowHammer / row hammer, PRAC, TRR, RFM (#ch10), DDR6, LPDDR6, DDR5-8800 (#ch11), 怎么看内存条参数
+(#ch12). Its page tags 内存 / Memory, 内存条 / Memory Modules and DRAM open the page top for those plain words (内存 used to land on
+how-virtual-memory-works #ch8, memory on why-compute-waits-for-memory #ch2). **ECC decision:** nothing on the live site owned ECC
+内存, so #ch8 takes it (zh). Plain ECC is the elliptic-curve alias of the unregistered draft a-secret-in-public, and ecc memory /
+内存纠错ECC sit on the Hamming-code chapter of the unregistered draft how-much-a-wire-can-carry; this page's tests reserve them.
+When either draft is registered, decide: ECC memory belongs here (#ch8 compares ECC DIMMs with on-die ECC), plain ECC is ambiguous
+(crypto vs error correction). Left to their owners: 内存控制器 / NUMA (how-a-computer-is-wired), 内存墙, 延迟与带宽的区别, HBM
+(why-compute-waits-for-memory), PAM3 是什么 (how-thunderbolt-works #ch5), PAM4 / NRZ (how-pcie-works #ch9), CXL words
+(coherent-interconnects). It links switches-that-compute #ch6, why-compute-waits-for-memory (#ch2, #ch4, #ch5, #ch9, the page),
+what-a-drive-is-made-of #ch4, how-cpu-caches-work (#ch1, the page), how-a-computer-is-wired (#ch2, #ch4), how-sata-works #ch2,
+how-pcie-works (#ch2, #ch9, the page), how-thunderbolt-works #ch5 and coherent-interconnects (ch11.c3 #ch5, ch12.links); B4 ch3.p4
+(#ch5) and ch13.links, how-cpu-caches-work ch12.links and why-compute-waits-for-memory ch5.p2 (#ch5) link here. Scripts
+`?v=20261115r`. Atlas edges (15, in its fragment): 7 between chapters, 1 from why-compute-waits-for-memory #ch2, 1 from
+how-cpu-caches-work #ch1, 1 from why-compute-waits-for-memory #ch4, 1 to why-compute-waits-for-memory #ch5, 1 from
+how-a-computer-is-wired #ch2, 1 from how-sata-works #ch2, 1 from how-thunderbolt-works #ch5, 1 from how-pcie-works #ch9. Not verified
+(BRIEF): the JEDEC documents themselves (403), GDDR7 48 Gb/s per pin, CAMM2 8–128 GB, LPDDR6 rates, RTX 5090 28 Gb/s, GDDR7's PAM3
+code table beyond the unused pair.
+
+### coherent-interconnects: 芯片之间怎么共用内存
+
+Bus series B4 (TASK-bus-series.md). A server's CPU, GPUs, accelerators and memory-expansion cards each have their own memory: why do
+they all want to share one, how is a cache kept coherent across a PCIe wire, and how are dozens of GPUs joined into one machine?
+Copy or share (DMA against CXL.cache by size and requests in flight), coherence across a link with a home agent, the three CXL
+protocols and the 68 B / 256 B flit accounting (Das Sharma et al.), the three device types, memory expansion with hot/cold tiering on
+measured cards (Liu et al.), pooling and CXL switches (Pond's stranded memory, a Monte Carlo pool), back-invalidate (CXL 3.0, GFAM),
+NVLink and NVSwitch generations, ring all-reduce stepped and timed, scale-up vs scale-out with UALink and a hierarchical all-reduce,
+coherence inside a package (MI300A, Grace Hopper, NVLink-C2C), a dated frontier and three questions. Ten static diagrams. Essay
+commit 0f6572c0; label at 52df5521. It owns 零拷贝 / zero-copy (#ch1), 家代理 / home agent (#ch2), 什么是 CXL, CXL 是什么, plain CXL,
+what is CXL, CXL.mem CXL.cache 区别, CXL 帧 (#ch3), CXL Type 3, CXL 设备类型, HDM (#ch4), CXL 内存扩展, CXL 延迟, 冷热分层 (#ch5), CXL
+交换机, 多逻辑设备, 内存搁浅, CXL 内存池 / CXL memory pooling, 内存池化 / memory pooling (#ch6), 背向作废 / back-invalidate, GFAM (#ch7),
+NVLink 是什么, plain NVLink, NVSwitch, NVL72, NVLink 带宽 / NVLink vs PCIe (#ch8), 环形全归约 / ring all-reduce, all-reduce (#ch9),
+scale-up scale-out 区别, UALink, 分层全归约 (#ch10), Grace Hopper, NVLink-C2C, MI300A (#ch11), CXL 4.0, UALink 2.0, Vera Rubin NVL72
+(#ch12), 怎么看懂一套互连 (#ch13). **Moves (2026-11-15, team-lead decision):** CXL 内存池 / CXL memory pooling from
+why-compute-waits-for-memory #ch10 and NVLink 带宽 / NVLink vs PCIe from its #ch9 (Antigravity edition; note in
+specs/reviews/why-compute-waits-for-memory-cxl-nvlink-alias-move-20261115.md); storage-over-a-network #ch10 keeps CXL 内存池和存储有什么
+区别. Plain CXL (#ch3) and NVLink (#ch8) were added so the chapter beats the page tags. Left to their owners: 缓存一致性, MESI, 目录协议,
+一致性域 (how-cores-share-memory), NUMA, 芯粒 / chiplets, Infinity Fabric (how-a-computer-is-wired), HBM, 共封装光学 / co-packaged
+optics (why-compute-waits-for-memory), RDMA, Ultra Ethernet (storage-over-a-network). It links how-pcie-works (#ch3, #ch7, #ch10, the
+page), why-compute-waits-for-memory (#ch4, #ch9, #ch10, the page), how-cores-share-memory (#ch1, #ch3, #ch4, #ch7, the page),
+how-cpu-caches-work #ch9, how-a-computer-is-wired (#ch4, #ch7, the page), how-virtual-memory-works (#ch12, the page),
+storage-over-a-network (#ch6, #ch10) and how-memory-talks (ch3.p4 #ch5, ch13.links); B3 (ch11.c3 #ch5, ch12.links), A5 (ch11.p2,
+ch12.links), how-a-computer-is-wired ch9.d2 (#ch3) and how-pcie-works ch11.e3 (#ch3) link here. Scripts `?v=20261115r`. Atlas edges
+(26, in its fragment): 9 between chapters, 3 from how-cores-share-memory (#ch3, #ch4, #ch7), 3 from how-pcie-works (#ch3, #ch7,
+#ch10), 3 from why-compute-waits-for-memory (#ch4, #ch9, #ch10), 2 from how-memory-talks (#ch5, #ch7), 2 from how-a-computer-is-wired
+(#ch4, #ch7), 1 from how-virtual-memory-works #ch12, 1 from storage-over-a-network #ch6, 2 into how-pcie-works #ch11 and
+how-a-computer-is-wired #ch9. Not verified (BRIEF): UALink's flit sizes and 2025-04-08 date, Das Sharma Table 4's 256 B CXL.mem
+cell, which NVIDIA Rubin figure is final (3,000 vs 3,600 GB/s).
 
 ### scarcity-moves: 稀缺会搬家
 

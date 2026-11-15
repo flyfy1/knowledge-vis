@@ -171,6 +171,8 @@ window.KNOWLEDGE_ESSAYS = [
   "how-virtual-memory-works",
   "how-a-cpu-guesses-ahead",
   "how-cores-share-memory",
+  "how-memory-talks",
+  "coherent-interconnects",
   "how-an-economy-is-measured",
   "scarcity-moves"
 ];
@@ -531,6 +533,26 @@ window.KNOWLEDGE_PAGES = [
     },
     tags: [{ zh: "缓存一致性", en: "Cache Coherence" }, { zh: "内存模型", en: "Memory Models" }, { zh: "计算机体系结构", en: "Computer Architecture" }, { zh: "并发", en: "Concurrency" }, { zh: "长文", en: "Long-form Essay" }],
     category: "computing", subtopic: "systems", stage: "university", status: "live", path: "computing/systems/how-cores-share-memory/"
+  },
+  {
+    slug: "how-memory-talks",
+    title: { zh: "内存是怎么和 CPU 说话的", en: "How Memory Talks to the CPU" },
+    desc: {
+      zh: "内存条上写着 DDR5-6400、CL32，频率越高延迟数字反而越大，它到底快了没有？CPU 要一个字节，内存条里发生了哪些事？为什么内存条这么多年还在用一大排并行的线？十个模型：刷新占掉多少时间、一个地址落进哪一行、一个按周期走的 DRAM 命令模拟器、CL 的周期与纳秒、带宽与行命中、bank 组、飞越式布线与训练、片上 ECC 与旁路 ECC、PAM3、行锤与防护。",
+      en: "A DDR5-6400 CL32 module has a bigger latency number than DDR4: is it faster? What happens inside the module when the CPU asks for one byte? Why does memory still use a wide set of parallel wires? Ten models: how much time refresh takes, which row an address lands in, a cycle-by-cycle DRAM command simulator, CL in cycles and nanoseconds, bandwidth against row hits, bank groups, fly-by routing and training, on-die and side-band ECC, PAM3, and row hammer with its defences."
+    },
+    tags: [{ zh: "内存", en: "Memory" }, { zh: "内存条", en: "Memory Modules" }, { zh: "DRAM", en: "DRAM" }, { zh: "计算机体系结构", en: "Computer Architecture" }, { zh: "长文", en: "Long-form Essay" }],
+    category: "computing", subtopic: "systems", stage: "university", status: "live", path: "computing/systems/how-memory-talks/"
+  },
+  {
+    slug: "coherent-interconnects",
+    title: { zh: "芯片之间怎么共用内存", en: "How Chips Share Memory" },
+    desc: {
+      zh: "一台服务器里的 CPU、GPU、加速卡和内存扩展卡各有各的内存，为什么现在都想共用一块？靠一根 PCIe 线怎么做到缓存一致？几十上百块 GPU 又怎么连成一台机器？九个可以动手的模型：复制还是共享、CXL 数据帧的槽位账、三类设备的消息、内存扩展与冷热分层、内存池、背向作废、一步步走的环形全归约、全归约要多久、纵向与横向扩展；另有 NVLink 对照表和封装里的一致性。",
+      en: "A server's CPU, GPUs, accelerators and memory-expansion cards each have their own memory. Why do they all want to share one, how is a cache kept coherent across a PCIe wire, and how are dozens of GPUs joined into one machine? Nine hands-on models: copy or share, the slot accounting of CXL flits, the messages of the three device types, memory expansion and hot/cold tiering, memory pooling, back-invalidate, ring all-reduce step by step, how long an all-reduce takes, and scale-up versus scale-out; plus an NVLink table and coherence inside one package."
+    },
+    tags: [{ zh: "CXL", en: "CXL" }, { zh: "NVLink", en: "NVLink" }, { zh: "计算机体系结构", en: "Computer Architecture" }, { zh: "互连", en: "Interconnects" }, { zh: "长文", en: "Long-form Essay" }],
+    category: "computing", subtopic: "systems", stage: "university", status: "live", path: "computing/systems/coherent-interconnects/"
   },
   {
     slug: "how-an-economy-is-measured",

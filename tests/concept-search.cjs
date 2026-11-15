@@ -479,6 +479,51 @@ chapters.push(
   ['取指 译码 执行', 'fetch decode execute', SW + '#ch9'],
   ['伪共享', 'MESI states', CACHE + '#ch9'],
 );
+// Bus series B3 and B4 (2026-11-15). B3 owns the DDR words (DDR5, CL 值, 内存频率, row hammer, LPDDR5X, GDDR7, CAMM2, MRDIMM, 片上 ECC;
+// its page tags 内存 / 内存条 / DRAM open its page top); B4 owns the CXL, NVLink / NVSwitch / UALink and all-reduce words, with plain
+// CXL on #ch3 and plain NVLink on #ch8 so the chapter beats the page tag. CXL 内存池 / CXL memory pooling moved from
+// why-compute-waits-for-memory #ch10 to B4 #ch6, NVLink 带宽 / NVLink vs PCIe from its #ch9 to B4 #ch8 (Antigravity edition, note in
+// specs/reviews/why-compute-waits-for-memory-cxl-nvlink-alias-move-20261115.md).
+const B3 = 'computing/systems/how-memory-talks/', B4 = 'computing/systems/coherent-interconnects/';
+chapters.push(
+  ['内存条是怎么工作的', 'how does DRAM work', B3],
+  ['DRAM 为什么要刷新', 'DRAM refresh', B3 + '#ch1'],
+  ['内存 bank 是什么', 'row buffer', B3 + '#ch2'],
+  ['行缓冲', 'DRAM address mapping', B3 + '#ch2'],
+  ['内存时序 CL tRCD tRP', 'row hit row miss row conflict', B3 + '#ch3'],
+  ['CL 值越高越慢吗', 'CAS latency', B3 + '#ch4'],
+  ['DDR5 和 DDR4 区别', 'DDR5 vs DDR4', B3 + '#ch4'],
+  ['DDR5 子通道', 'DDR5 subchannels', B3 + '#ch5'],
+  ['bank 组', 'bank group', B3 + '#ch6'],
+  ['插四根内存为什么降频', 'why four DIMMs run slower', B3 + '#ch7'],
+  ['内存训练', 'memory training', B3 + '#ch7'],
+  ['DDR5 自带 ECC 吗', 'on-die ECC', B3 + '#ch8'],
+  ['ECC 内存', 'is DDR5 ECC memory', B3 + '#ch8'],
+  ['LPDDR5X', 'CAMM2', B3 + '#ch9'],
+  ['MRDIMM', 'GDDR7 PAM3', B3 + '#ch9'],
+  ['行锤 row hammer', 'row hammer', B3 + '#ch10'],
+  ['DDR6', 'LPDDR6', B3 + '#ch11'],
+  ['怎么看内存条参数', 'how to read memory module specs', B3 + '#ch12'],
+  ['零拷贝', 'zero-copy', B4 + '#ch1'],
+  ['家代理', 'home agent', B4 + '#ch2'],
+  ['CXL 是什么', 'what is CXL', B4 + '#ch3'],
+  ['CXL', 'CXL flit', B4 + '#ch3'],
+  ['CXL Type 3', 'CXL device types', B4 + '#ch4'],
+  ['CXL 内存扩展', 'CXL memory expansion', B4 + '#ch5'],
+  ['CXL 内存池', 'memory pooling', B4 + '#ch6'],
+  ['内存池化', 'CXL memory pooling', B4 + '#ch6'],
+  ['背向作废', 'back-invalidate', B4 + '#ch7'],
+  ['NVLink 是什么', 'NVLink', B4 + '#ch8'],
+  ['NVSwitch', 'NVL72', B4 + '#ch8'],
+  ['NVLink 带宽', 'NVLink vs PCIe', B4 + '#ch8'],
+  ['环形 all-reduce', 'ring all-reduce', B4 + '#ch9'],
+  ['all-reduce', 'all-reduce 是什么', B4 + '#ch9'],
+  ['scale-up scale-out', 'scale-up vs scale-out', B4 + '#ch10'],
+  ['UALink', 'hierarchical all-reduce', B4 + '#ch10'],
+  ['Grace Hopper', 'MI300A', B4 + '#ch11'],
+  ['CXL 4.0', 'UALink 2.0', B4 + '#ch12'],
+  ['怎么看懂一套互连', 'how to judge an interconnect', B4 + '#ch13'],
+);
 for (const [zh, en, href] of chapters) for (const q of [zh, en]) {
   const hit = first(q);
   ok(hit && (hit.href === href || (href.endsWith('/') && hit.href.startsWith(href))), `"${q}" opens ${href} (got ${hit && hit.href})`);
