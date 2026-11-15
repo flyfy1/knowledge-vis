@@ -26,9 +26,9 @@ A2: alias move, cross-link and one-click aliases in `88dafe9c` (the label points
 "One word, one owner" decision below is done: L1 L2 L3 缓存, 缓存行, 组相联缓存, cache line, set associative cache (and L1 L2
 L3 cache) are on A2 #ch1–#ch3; why-compute-waits-for-memory #ch2 keeps 缓存命中率, cache hierarchy and the locality words, and
 its ch2.p3 links A2 (Antigravity edition; note in specs/reviews/why-compute-waits-for-memory-alias-move-20261115.md). A2 #ch9
-takes MESI 状态 and false sharing; 缓存一致性, cache coherence, MESI 协议 and MOESI are left for A5 (no result until then).
+takes MESI 状态 and false sharing; 缓存一致性, cache coherence, MESI 协议 and MOESI were left for A5 (A5 took them when it went live).
 switches-that-compute #ch11 does not link A2 (its cache mention is a list item; its browser test requires 48 × 48 links).
-A2 names A5 (ch9.p1, ch9.limit and ch12.links) in plain text: link it when it goes live. Its A3 mentions are links since A3
+A2's A5 mentions (ch9.p1, ch9.limit and ch12.links) are links since A5 went live (below). Its A3 mentions are links since A3
 went live (ch7.p2 and ch10.limit to A3 #ch4, ch7.limit and ch12.links to the page top; scripts `?v=20261115b`).
 
 A1 and A3: alias move, A2 -> A3 links and one-click aliases in `c0cc5c40` (both labels, and the repointed A2 and
@@ -37,7 +37,7 @@ instruction set and CPU 怎么执行程序 / how a CPU runs a program (A1 #ch1),
 (A1 #ch6, with 指令流水线 / CPU 流水线) left switches-that-compute #ch9 / #ch11; switches keeps 程序计数器, fetch decode execute,
 冯·诺依曼结构 and 关键路径 / critical path (#ch4); the memory essay #ch1 keeps stalls, forwarding, CPI and "instruction pipeline".
 A3 owns Belady 异常 / Belady's anomaly (A2 #ch4 keeps Belady 最优替换 / LRU); IOMMU stays on Thunderbolt #ch8, NUMA on B2, CXL
-内存池 on the memory essay. Plain text still waiting for A4: A1 ch6.limit and ch8.p3, A3 ch10.p4. how-thunderbolt-works #ch8
+内存池 on the memory essay. The A4 mentions in A1 ch6.limit and ch8.p3 and A3 ch10.p4 are links since A4 went live (below). how-thunderbolt-works #ch8
 does not link A3 (no page-table sentence there). The 取指 译码 执行 collision is fixed (below).
 
 A4 and A5: cross-links, alias decisions and one-click aliases in `d34e98bb` (both labels, and the repointed A1, A2, A3 and
