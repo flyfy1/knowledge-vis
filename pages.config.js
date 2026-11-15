@@ -163,6 +163,9 @@ window.KNOWLEDGE_ESSAYS = [
   "how-sas-works",
   "how-usb-drives-talk",
   "storage-over-a-network",
+  "how-pcie-works",
+  "how-a-computer-is-wired",
+  "how-thunderbolt-works",
   "how-an-economy-is-measured",
   "scarcity-moves"
 ];
@@ -443,6 +446,36 @@ window.KNOWLEDGE_PAGES = [
     },
     tags: [{ zh: "网络存储", en: "Network Storage" }, { zh: "iSCSI", en: "iSCSI" }, { zh: "NVMe-oF", en: "NVMe-oF" }, { zh: "存储系统", en: "Storage Systems" }, { zh: "长文", en: "Long-form Essay" }],
     category: "computing", subtopic: "systems", stage: "university", status: "live", path: "computing/systems/storage-over-a-network/"
+  },
+  {
+    slug: "how-pcie-works",
+    title: { zh: "PCIe 为什么能一代一代翻倍", en: "Why PCIe Keeps Doubling" },
+    desc: {
+      zh: "显卡、固态、网卡都插在 PCIe 上。这条总线二十多年里速度翻了六次，靠的是什么？一次读写在线上到底发生了什么？十个可以拖动的模型：链路协商、TLP 包头、信用流控、ACK/NAK 重发、开机枚举、MSI 中断、走线损耗、PAM4 眼图、FEC 和 FLIT。",
+      en: "Graphics cards, SSDs and network cards all plug into PCIe. Its speed has doubled six times in over twenty years: how, and what actually happens on the wire during one read or write? Ten models you can drag: link negotiation, TLP headers, credit flow control, ACK/NAK replay, enumeration, MSI interrupts, trace loss, PAM4 eyes, FEC and FLITs."
+    },
+    tags: [{ zh: "PCIe", en: "PCIe" }, { zh: "计算机总线", en: "Computer Buses" }, { zh: "信号完整性", en: "Signal Integrity" }, { zh: "长文", en: "Long-form Essay" }],
+    category: "computing", subtopic: "systems", stage: "university", status: "live", path: "computing/systems/how-pcie-works/"
+  },
+  {
+    slug: "how-a-computer-is-wired",
+    title: { zh: "电脑里的零件是怎么连起来的", en: "How the Parts of a Computer Are Wired Together" },
+    desc: {
+      zh: "CPU、内存、显卡、硬盘、USB 口，各自走的是哪条路？为什么早年的电脑是一根大家共用的总线，今天却变成一张点对点的网？八个可以拖动的模型和八张结构图：PCI 总线的时间账、反射波与负载、北桥的汇合点、两路服务器的远近内存、芯片组上行链路、片上环形与网格、芯粒之间的能耗、I²C 上拉电阻。",
+      en: "Which path do the CPU, memory, graphics card, drives and USB ports each take? Why were early computers built around one bus everyone shared, and why is today's machine a web of point-to-point links? Eight models you can drag and eight structure diagrams: the PCI bus's time budget, reflected waves and loading, the northbridge as a meeting point, near and far memory in a two-socket server, the chipset uplink, rings and meshes on a die, energy between chiplets, and I²C pull-up resistors."
+    },
+    tags: [{ zh: "计算机体系结构", en: "Computer Architecture" }, { zh: "总线与互连", en: "Buses and Interconnects" }, { zh: "主板", en: "Motherboards" }, { zh: "长文", en: "Long-form Essay" }],
+    category: "computing", subtopic: "systems", stage: "university", status: "live", path: "computing/systems/how-a-computer-is-wired/"
+  },
+  {
+    slug: "how-thunderbolt-works",
+    title: { zh: "雷电接口是怎么工作的", en: "How Thunderbolt Works" },
+    desc: {
+      zh: "一根 USB-C 线，为什么能同时带显示器、网卡、硬盘和充电，还能一台接一台串下去？雷电和 USB4 到底是什么关系？八个可以拖动的模型：CC 线上的分压、带校验的 4 字节包头、一条链路怎么分给几条隧道、菊花链、PAM3 与 3+1 非对称、显示器要多少带宽、PD 怎么谈出 140 瓦、IOMMU 按页开门。",
+      en: "Why can one USB-C cable carry a monitor, a network adapter, a drive and charging at once, and chain one device after another? How do Thunderbolt and USB4 relate? Eight models you can drag: the CC divider, the 4-byte header with its check, how one link is shared among tunnels, the daisy chain, PAM3 and the 3+1 split, what a monitor needs, how PD negotiates 140 W, and the IOMMU's page-sized doors."
+    },
+    tags: [{ zh: "USB-C", en: "USB-C" }, { zh: "雷电与 USB4", en: "Thunderbolt and USB4" }, { zh: "接口与总线", en: "Interfaces and Buses" }, { zh: "USB PD 充电", en: "USB Power Delivery" }, { zh: "长文", en: "Long-form Essay" }],
+    category: "computing", subtopic: "systems", stage: "university", status: "live", path: "computing/systems/how-thunderbolt-works/"
   },
   {
     slug: "how-an-economy-is-measured",

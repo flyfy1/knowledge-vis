@@ -3125,7 +3125,7 @@
       "developer": "Antigravity",
       "edition": "antigravity-why-nvme-is-fast-20261114",
       "kind": "original",
-      "sourceRevision": "5afdd0325e169533f59cc77515991e612b79aca9",
+      "sourceRevision": "4353c314ac11349650d72a09efdb89b421407152",
       "scope": {
         "zh": "整篇长文从零编写：延迟拆解、总线宽度与利特尔法则、64K 并行队列、环形队列与门铃 DMA、多通道 NAND 并行、写放大与 Trim、轮询与中断，以及 PCIe 6.0 与 GPUDirect 前沿",
         "en": "Whole essay written from scratch: latency breakdown, bus width and Little's Law, 64K parallel queues, SQ/CQ ring buffers and DMA, NAND channel parallelism, write amplification and Trim, polling vs. interrupts, and PCIe 6.0 / GPUDirect frontier"
@@ -3133,14 +3133,14 @@
       "originalAuthorship": "written from scratch in zh and en by Antigravity (gemini-4-hydrogen), 2026-11-14; verified with models.cjs, browser.cjs, and canvas-text-overlap --sweep, see BRIEF.md",
       "path": "computing/systems/why-nvme-is-fast/index.html",
       "originalSourceRevision": "fb63041c849aaff247f0c5a2fd866596b3da9ce9",
-      "previousSourceRevision": "ee47aac908295e07b35b41d1fa6cb71fb5c00dbb",
-      "provenanceEvidence": "specs/reviews/why-nvme-is-fast-cache-key-20261115.md"
+      "previousSourceRevision": "5afdd0325e169533f59cc77515991e612b79aca9",
+      "provenanceEvidence": "specs/reviews/why-nvme-is-fast-pcie-link-20261115.md"
     },
     "what-a-drive-is-made-of": {
       "developer": "Claude Code",
       "edition": "claude-code-what-a-drive-is-made-of-20261114",
       "kind": "original",
-      "sourceRevision": "e2630ba1be7d0bb9acaa04618c347ee277cdfba5",
+      "sourceRevision": "4353c314ac11349650d72a09efdb89b421407152",
       "scope": {
         "zh": "整篇长文从零编写：编了号的扇区与 512e、寻道与转动、叠瓦记录、闪存单元的电压层、纠错码与寿命、闪存翻译层、接口分层地图、一次读取的时间、存储前沿",
         "en": "Whole essay written from scratch: numbered sectors and 512e, seek and rotation, shingled recording, voltage levels in a flash cell, error correction and lifetime, the flash translation layer, the layered interface map, where the time of one read goes, the storage frontier"
@@ -3148,13 +3148,13 @@
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5); English copy drafted by Claude Code (claude-haiku-5-5); independently reviewed 2026-11-14 by a separate Claude Code session (same model), see the page BRIEF.md; cross-model review pending",
       "path": "computing/systems/what-a-drive-is-made-of/index.html",
       "originalSourceRevision": "745f535e962557f640b39422e4b9d9db7afe2f6f",
-      "previousSourceRevision": "5afdd0325e169533f59cc77515991e612b79aca9"
+      "previousSourceRevision": "e2630ba1be7d0bb9acaa04618c347ee277cdfba5"
     },
     "how-sata-works": {
       "developer": "Claude Code",
       "edition": "claude-code-how-sata-works-20261114",
       "kind": "original",
-      "sourceRevision": "e2630ba1be7d0bb9acaa04618c347ee277cdfba5",
+      "sourceRevision": "4353c314ac11349650d72a09efdb89b421407152",
       "scope": {
         "zh": "整篇长文从零编写：SATA、ATA 与 AHCI 的分层、并行总线的时序预算、8b/10b 编码与加扰、一条读命令的帧、NCQ、热插拔与链路省电、端口倍增器与 eSATA、为什么停在 6 Gb/s、SATA 前沿",
         "en": "Whole essay written from scratch: the SATA, ATA and AHCI layers, the timing budget of a parallel bus, 8b/10b encoding and scrambling, the frames of one read command, NCQ, hot plug and link power, port multipliers and eSATA, why SATA stopped at 6 Gb/s, the SATA frontier"
@@ -3162,7 +3162,7 @@
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5); English copy drafted by Claude Code (claude-haiku-5-5); independently reviewed 2026-11-14 by a separate Claude Code session (same model), see the page BRIEF.md; cross-model review pending",
       "path": "computing/systems/how-sata-works/index.html",
       "originalSourceRevision": "d1df3df80d6feef8082b1c6c7601b1af1397965a",
-      "previousSourceRevision": "5afdd0325e169533f59cc77515991e612b79aca9"
+      "previousSourceRevision": "e2630ba1be7d0bb9acaa04618c347ee277cdfba5"
     },
     "how-sas-works": {
       "developer": "Claude Code",
@@ -3182,7 +3182,7 @@
       "developer": "Claude Code",
       "edition": "claude-code-how-usb-drives-talk-20261115",
       "kind": "original",
-      "sourceRevision": "e2630ba1be7d0bb9acaa04618c347ee277cdfba5",
+      "sourceRevision": "4353c314ac11349650d72a09efdb89b421407152",
       "scope": {
         "zh": "整篇长文从零编写：USB 存储在协议地图上的位置、USB 2.0 的主机调度与微帧、USB 命名与线速、Bulk-Only 的 CBW 与 CSW、UASP 的命令队列、桥接芯片的 SCSI 翻译与瓶颈链条、移动固态的发热降速、雷电与 USB4 的 PCIe 隧道、U 盘和存储卡、USB 存储前沿",
         "en": "Whole essay written from scratch: where USB storage sits on the protocol map, USB 2.0 host scheduling and microframes, USB naming and line rates, Bulk-Only CBW and CSW, UASP command queuing, the bridge chip's SCSI translation and the bottleneck chain, thermal throttling of external SSDs, the PCIe tunnel of Thunderbolt and USB4, flash drives and memory cards, the USB storage frontier"
@@ -3190,7 +3190,7 @@
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5); English copy drafted by Claude Code (claude-haiku-5-5); independently reviewed 2026-11-14 by a separate Claude Code session (same model), see the page BRIEF.md; cross-model review pending",
       "path": "computing/systems/how-usb-drives-talk/index.html",
       "originalSourceRevision": "16ff77685e808eec3fbe130b1774f1fc67f02fef",
-      "previousSourceRevision": "5afdd0325e169533f59cc77515991e612b79aca9"
+      "previousSourceRevision": "e2630ba1be7d0bb9acaa04618c347ee277cdfba5"
     },
     "storage-over-a-network": {
       "developer": "Claude Code",
@@ -3205,6 +3205,48 @@
       "path": "computing/systems/storage-over-a-network/index.html",
       "originalSourceRevision": "d7abd777173f07baff977c7cea84ec601ed668c7",
       "previousSourceRevision": "d7abd777173f07baff977c7cea84ec601ed668c7"
+    },
+    "how-pcie-works": {
+      "developer": "Claude Code",
+      "edition": "claude-code-how-pcie-works-20261115",
+      "kind": "original",
+      "sourceRevision": "4353c314ac11349650d72a09efdb89b421407152",
+      "scope": {
+        "zh": "整篇长文从零编写：PCIe 的树形拓扑、通道与六次翻倍、TLP 的字节与效率、信用流控、ACK/NAK 重发、开机枚举与 BAR、DMA 与 MSI 中断、通道损耗与重定时器、NRZ 与 PAM4 眼图、FLIT 与前向纠错、PCIe 前沿",
+        "en": "Whole essay written from scratch: the PCIe tree, lanes and six doublings, TLP bytes and efficiency, credit-based flow control, ACK/NAK replay, enumeration and BARs, DMA and MSI interrupts, channel loss and retimers, NRZ vs PAM4 eyes, FLIT and forward error correction, the PCIe frontier"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5); English copy drafted by Claude Code (claude-haiku-5-5); independently reviewed 2026-11-15 by a separate Claude Code session (same model), see the page BRIEF.md; cross-model review pending",
+      "path": "computing/systems/how-pcie-works/index.html",
+      "originalSourceRevision": "7174f8e4f9aa585bae317b5edcd7fd2d16ae1db7",
+      "previousSourceRevision": "7174f8e4f9aa585bae317b5edcd7fd2d16ae1db7"
+    },
+    "how-a-computer-is-wired": {
+      "developer": "Claude Code",
+      "edition": "claude-code-how-a-computer-is-wired-20261115",
+      "kind": "original",
+      "sourceRevision": "4353c314ac11349650d72a09efdb89b421407152",
+      "scope": {
+        "zh": "整篇长文从零编写：共享的 PCI 总线、负载与反射波、北桥与南桥、集成内存控制器与 NUMA、芯片组的上行链路、环形总线与网格、芯粒与 UCIe、I²C 与上拉电阻、互连前沿",
+        "en": "Whole essay written from scratch: the shared PCI bus, bus loading and reflected waves, northbridge and southbridge, the integrated memory controller and NUMA, the chipset uplink, ring and mesh on-die networks, chiplets and UCIe, I²C and pull-up resistors, the interconnect frontier"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5); English copy drafted by Claude Code (claude-haiku-5-5); independently reviewed 2026-11-15 by a separate Claude Code session (same model), see the page BRIEF.md; cross-model review pending",
+      "path": "computing/systems/how-a-computer-is-wired/index.html",
+      "originalSourceRevision": "56d96c4cce22ef94a17f346404291c283a150cff",
+      "previousSourceRevision": "56d96c4cce22ef94a17f346404291c283a150cff"
+    },
+    "how-thunderbolt-works": {
+      "developer": "Claude Code",
+      "edition": "claude-code-how-thunderbolt-works-20261115",
+      "kind": "original",
+      "sourceRevision": "4353c314ac11349650d72a09efdb89b421407152",
+      "scope": {
+        "zh": "整篇长文从零编写：USB-C 的 24 根针与 CC 线、USB4 路由器与隧道包头、一条链路的带宽分配、菊花链、PAM3 与非对称模式、显示器要多少带宽、USB PD 与 EPR、DMA 攻击与 IOMMU、雷电 4/5 与 USB4 的必选清单、雷电前沿",
+        "en": "Whole essay written from scratch: the 24 pins of USB-C and the CC wire, USB4 routers and the tunnel header, bandwidth allocation on one link, daisy chains, PAM3 and the asymmetric mode, display bandwidth, USB PD and EPR, DMA attacks and the IOMMU, what Thunderbolt 4/5 require beyond USB4, the Thunderbolt frontier"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5); English copy drafted by Claude Code (claude-haiku-5-5); independently reviewed 2026-11-15 by a separate Claude Code session (same model), see the page BRIEF.md; cross-model review pending",
+      "path": "computing/systems/how-thunderbolt-works/index.html",
+      "originalSourceRevision": "3954bb68e0109ee46029b9d2fa11d36fb9e23223",
+      "previousSourceRevision": "3954bb68e0109ee46029b9d2fa11d36fb9e23223"
     }
   },
   "exceptions": {

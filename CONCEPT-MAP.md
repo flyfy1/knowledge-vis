@@ -2705,7 +2705,7 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 <!-- GENERATED:atlas-nodes -->
 ## 三、图谱节点索引（生成，勿手改）
 
-457 个概念 · 624 条关系 · 11 个分区 · 由 scripts/build-atlas-data.cjs --concept-map 生成。节点排序与 data.js 一致（分区序、学段序、order、id）。
+490 个概念 · 660 条关系 · 11 个分区 · 由 scripts/build-atlas-data.cjs --concept-map 生成。节点排序与 data.js 一致（分区序、学段序、order、id）。
 
 ### 01 数学基础 / Mathematical tools
 
@@ -3049,86 +3049,119 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | KV Cache 与固定大小状态 / KV Cache vs Fixed-Size Recurrent State | ../computing/ml/how-hybrid-attention-remembers/#ch1 | how-hybrid-attention-remembers |
 | 延迟与带宽 / Latency & bandwidth | ../computing/systems/tcp-congestion/#step1 | tcp-congestion#step1 |
 | NVMe 与存储协议开销转移 / NVMe and Shifting Storage Bottlenecks | ../computing/systems/why-nvme-is-fast/#ch1 | why-nvme-is-fast |
+| PCIe 的拓扑：根复合体、交换芯片和端点组成的树 / PCIe Topology: a Tree of Root Complex, Switches and Endpoints | ../computing/systems/how-pcie-works/#ch1 | how-pcie-works |
 | 流水线与访存停顿 / Pipeline Stalls from Memory Latency | ../computing/systems/why-compute-waits-for-memory/#ch1 | why-compute-waits-for-memory |
 | 副本与 quorum · 一致性和可用性的取舍 / Replicas & quorums · consistency vs availability | ../computing/systems/distributed-systems/#step0 | distributed-systems#step0 |
 | 机械臂运动学 · 从关节角到末端 / Robot-arm kinematics · from joint angles to the hand | ../computing/graphics/robot-kinematics/#step0 | robot-kinematics#step0 |
 | SAS 的分层：SCSI 命令、SSP/STP/SMP 与物理层 / SAS Layers: SCSI Commands, SSP/STP/SMP and the Phy | ../computing/systems/how-sas-works/#ch1 | how-sas-works |
 | SATA、ATA 命令集与 AHCI 的分层 / SATA Layers: Wire, ATA Commands and AHCI | ../computing/systems/how-sata-works/#ch1 | how-sata-works |
+| 共享总线：PCI 的仲裁、复用和时间账 / The Shared Bus: PCI Arbitration, Multiplexing and Its Time Budget | ../computing/systems/how-a-computer-is-wired/#ch1 | how-a-computer-is-wired |
 | 排序算法 · 冒泡、归并与快排 / Sorting algorithms · bubble, merge and quicksort | ../computing/algorithms/sorting/#step2 | sorting#step2 |
 | TCP 拥塞控制 · 试探与退让 / TCP congestion control · probe and back off | ../computing/systems/tcp-congestion/#step4 | tcp-congestion#step4 |
+| USB-C 的 24 根针和 CC 线 / The 24 Pins of USB-C and the CC Line | ../computing/systems/how-thunderbolt-works/#ch1 | how-thunderbolt-works |
 | USB 存储在协议地图上的位置：两段协议和一颗桥接芯片 / Where USB Storage Sits: Two Stacks and a Bridge Chip | ../computing/systems/how-usb-drives-talk/#ch1 | how-usb-drives-talk |
+| 为什么并行总线跑不快：负载、反射波和时钟 / Why a Parallel Bus Can't Go Fast: Loading, Reflected Waves and the Clock | ../computing/systems/how-a-computer-is-wired/#ch2 | how-a-computer-is-wired |
 | 机械硬盘：寻道、转动等待与外圈更快 / Hard disks: seek, rotational latency and faster outer tracks | ../computing/systems/what-a-drive-is-made-of/#ch2 | what-a-drive-is-made-of |
 | 线性注意力的矩阵结合律 / Linear Attention via Matrix Associativity | ../computing/ml/how-hybrid-attention-remembers/#ch2 | how-hybrid-attention-remembers |
 | 存储层级与缓存命中 / Memory Latency Hierarchy and Cache Locality | ../computing/systems/why-compute-waits-for-memory/#ch2 | why-compute-waits-for-memory |
 | NAS 的文件协议：NFS、SMB 与小文件的往返 / NAS file protocols: NFS, SMB and small-file round trips | ../computing/systems/storage-over-a-network/#ch2 | storage-over-a-network |
 | PCIe 多车道与队列深度 / PCIe Lanes and Little's Law in Storage | ../computing/systems/why-nvme-is-fast/#ch2 | why-nvme-is-fast |
 | 并行 ATA 为什么跑不快：时序预算与线间偏斜 / Why Parallel ATA Topped Out: Timing Budget and Skew | ../computing/systems/how-sata-works/#ch2 | how-sata-works |
+| PCIe 通道与代：x16、x4 和每代的速率 / PCIe Lanes and Generations: x16, x4 and the Rate of Each Generation | ../computing/systems/how-pcie-works/#ch2 | how-pcie-works |
 | SCSI 命令块 CDB、LUN 与标签队列 / The SCSI CDB, LUNs and Tagged Queuing | ../computing/systems/how-sas-works/#ch2 | how-sas-works |
 | USB 由主机调度：微帧与批量传输上限 / USB Is Host-Scheduled: Microframes and the Bulk Ceiling | ../computing/systems/how-usb-drives-talk/#ch2 | how-usb-drives-talk |
+| USB4 路由器与隧道：4 字节包头 / USB4 Routers and Tunnels: the 4-Byte Header | ../computing/systems/how-thunderbolt-works/#ch2 | how-thunderbolt-works |
 | 8b/10b 编码与逗号码 / 8b/10b Encoding and the Comma | ../computing/systems/how-sata-works/#ch3 | how-sata-works |
 | 矩阵分块与时间局部性 / Loop Tiling and Temporal Locality | ../computing/systems/why-compute-waits-for-memory/#ch3 | why-compute-waits-for-memory |
 | 快权重联想记忆与容量上限 / Fast-Weight Memory & Rank Capacity | ../computing/ml/how-hybrid-attention-remembers/#ch3 | how-hybrid-attention-remembers |
 | iSCSI：SCSI 命令走 TCP，写要等 R2T / iSCSI: SCSI commands over TCP, writes wait for R2T | ../computing/systems/storage-over-a-network/#ch3 | storage-over-a-network |
+| 北桥与南桥：前端总线、AGP 和汇合点 / Northbridge and Southbridge: the Front-Side Bus, AGP and the Meeting Point | ../computing/systems/how-a-computer-is-wired/#ch3 | how-a-computer-is-wired |
 | 64K 并行队列与无锁扩展 / 64K Parallel Queues and Lock-Free Scaling | ../computing/systems/why-nvme-is-fast/#ch3 | why-nvme-is-fast |
+| TLP：PCIe 上的包和包头 / TLPs: the Packets and Headers of PCIe | ../computing/systems/how-pcie-works/#ch3 | how-pcie-works |
 | 叠瓦式记录（SMR）与热辅助记录（HAMR） / Shingled (SMR) and heat-assisted (HAMR) recording | ../computing/systems/what-a-drive-is-made-of/#ch3 | what-a-drive-is-made-of |
 | SSP 的一次读：帧和两次连接 / One SSP Read: Frames and Two Connections | ../computing/systems/how-sas-works/#ch3 | how-sas-works |
 | USB 命名与线速：Gen 1、Gen 2、×2 和编码 / USB Names and Line Rates: Gen 1, Gen 2, ×2 and Encoding | ../computing/systems/how-usb-drives-talk/#ch3 | how-usb-drives-talk |
+| 一条 USB4 链路怎么分带宽 / How One USB4 Link Is Shared | ../computing/systems/how-thunderbolt-works/#ch3 | how-thunderbolt-works |
 | Delta 规则：先擦后写的投影更新 / The Delta Rule: Erase Before Writing | ../computing/ml/how-hybrid-attention-remembers/#ch4 | how-hybrid-attention-remembers |
 | 双端口与多路径的可用度算术 / Availability Arithmetic of Dual Port and Multipath | ../computing/systems/how-sas-works/#ch4 | how-sas-works |
 | 光纤通道的缓冲区信用与距离 / Fibre Channel buffer-to-buffer credits and distance | ../computing/systems/storage-over-a-network/#ch4 | storage-over-a-network |
 | 内存墙与利特尔法则 / The Memory Wall and Little's Law | ../computing/systems/why-compute-waits-for-memory/#ch4 | why-compute-waits-for-memory |
 | 闪存单元：SLC、MLC、TLC、QLC、PLC 与读裕量 / Flash cells: SLC to PLC and the read margin | ../computing/systems/what-a-drive-is-made-of/#ch4 | what-a-drive-is-made-of |
+| 内存控制器进了 CPU：NUMA 和远近内存 / The Memory Controller Moves into the CPU: NUMA and Near and Far Memory | ../computing/systems/how-a-computer-is-wired/#ch4 | how-a-computer-is-wired |
 | 环形队列、门铃寄存器与 DMA / SQ/CQ Ring Buffers, Doorbells & DMA | ../computing/systems/why-nvme-is-fast/#ch4 | why-nvme-is-fast |
+| PCIe 的信用流控 / Credit-Based Flow Control in PCIe | ../computing/systems/how-pcie-works/#ch4 | how-pcie-works |
 | FIS 帧：一条读命令在线上的样子 / FIS Frames: One Read Command on the Wire | ../computing/systems/how-sata-works/#ch4 | how-sata-works |
+| 雷电菊花链：一台接一台 / Daisy-Chaining Thunderbolt Devices | ../computing/systems/how-thunderbolt-works/#ch4 | how-thunderbolt-works |
 | Bulk-Only 传输：CBW、数据、CSW，一次一条 / Bulk-Only Transport: CBW, Data, CSW, One at a Time | ../computing/systems/how-usb-drives-talk/#ch4 | how-usb-drives-talk |
 | 多核扩展、阿姆达尔与总线瓶颈 / Multicore Scaling, Amdahl, and Bus Contention | ../computing/systems/why-compute-waits-for-memory/#ch5 | why-compute-waits-for-memory |
+| 今天的主板：CPU 直连和芯片组的上行链路 / Today's Motherboard: CPU Lanes and the Chipset Uplink | ../computing/systems/how-a-computer-is-wired/#ch5 | how-a-computer-is-wired |
 | 闪存为什么会坏：擦写次数、纠错码、TBW 与 DWPD / Why flash wears out: P/E cycles, ECC, TBW and DWPD | ../computing/systems/what-a-drive-is-made-of/#ch5 | what-a-drive-is-made-of |
 | Gated DeltaNet 与选择性遗忘门 / Gated DeltaNet & Selective Decay | ../computing/ml/how-hybrid-attention-remembers/#ch5 | how-hybrid-attention-remembers |
 | NCQ：机械盘自己排队 / NCQ: Letting a Hard Disk Reorder Its Queue | ../computing/systems/how-sata-works/#ch5 | how-sata-works |
 | 网络存储的延迟账：介质、协议栈、光纤与交换机 / The latency budget of network storage | ../computing/systems/storage-over-a-network/#ch5 | storage-over-a-network |
+| ACK/NAK 与重发缓冲 / ACK/NAK and the Replay Buffer | ../computing/systems/how-pcie-works/#ch5 | how-pcie-works |
 | SAS 扩展器、地址与分区 / SAS Expanders, Addresses and Zoning | ../computing/systems/how-sas-works/#ch5 | how-sas-works |
 | SSD 多通道 NAND 并行 / Multi-Channel NAND Die Parallelism | ../computing/systems/why-nvme-is-fast/#ch5 | why-nvme-is-fast |
 | UASP：四条管道、标签和 USB 3 的流 / UASP: Four Pipes, Tags and USB 3 Streams | ../computing/systems/how-usb-drives-talk/#ch5 | how-usb-drives-talk |
+| 80 Gb/s 怎么来：PAM3 与 3+1 非对称 / Where 80 Gb/s Comes From: PAM3 and 3+1 | ../computing/systems/how-thunderbolt-works/#ch5 | how-thunderbolt-works |
 | 分块并行训练与结构化状态空间对偶 / Chunkwise Training & State Space Duality | ../computing/ml/how-hybrid-attention-remembers/#ch6 | how-hybrid-attention-remembers |
+| USB-C 接显示器要多少带宽 / How Much a Monitor Needs over USB-C | ../computing/systems/how-thunderbolt-works/#ch6 | how-thunderbolt-works |
 | 闪存翻译层（FTL）：不能原地改写与垃圾回收 / The flash translation layer: no in-place updates, garbage collection | ../computing/systems/what-a-drive-is-made-of/#ch6 | what-a-drive-is-made-of |
 | GPU 并发与脉动阵列 / GPU Throughput and Systolic Arrays | ../computing/systems/why-compute-waits-for-memory/#ch6 | why-compute-waits-for-memory |
+| 芯片里面的路：环形总线和网格 / Roads Inside the Chip: Ring Bus and Mesh | ../computing/systems/how-a-computer-is-wired/#ch6 | how-a-computer-is-wired |
+| 开机枚举、配置空间与 BAR / Enumeration, Configuration Space and BARs | ../computing/systems/how-pcie-works/#ch6 | how-pcie-works |
 | RDMA、RoCE v2 与无损以太网 / RDMA, RoCE v2 and lossless Ethernet | ../computing/systems/storage-over-a-network/#ch6 | storage-over-a-network |
 | 宽端口：四条道不能合成一条 / Wide Ports: Four Lanes Are Not One Fast Lane | ../computing/systems/how-sas-works/#ch6 | how-sas-works |
 | 热插拔与链路省电：Partial、Slumber、DevSleep / Hot Plug and Link Power: Partial, Slumber, DevSleep | ../computing/systems/how-sata-works/#ch6 | how-sata-works |
 | 写放大、垃圾回收与 Trim / Write Amplification, Garbage Collection & Trim | ../computing/systems/why-nvme-is-fast/#ch6 | why-nvme-is-fast |
 | 桥接芯片：SCSI 翻译与链条上的瓶颈 / The Bridge Chip: SCSI Translation and the Bottleneck | ../computing/systems/how-usb-drives-talk/#ch6 | how-usb-drives-talk |
+| 芯粒之间的连线：UCIe 和每比特的能耗 / Links Between Chiplets: UCIe and Energy per Bit | ../computing/systems/how-a-computer-is-wired/#ch7 | how-a-computer-is-wired |
 | 移动固态的发热降速：集总热容模型 / External SSD Thermal Throttling: A Lumped Thermal Model | ../computing/systems/how-usb-drives-talk/#ch7 | how-usb-drives-talk |
 | 3:1 混合注意力与大海捞针精确回忆 / 3:1 Hybrid Ratio & Exact Recall Bookmarks | ../computing/ml/how-hybrid-attention-remembers/#ch7 | how-hybrid-attention-remembers |
 | NVMe-oF：胶囊、NVMe/TCP 与 NVMe/RDMA / NVMe-oF: capsules, NVMe/TCP and NVMe/RDMA | ../computing/systems/storage-over-a-network/#ch7 | storage-over-a-network |
 | 轮询 vs 中断（io_uring / SPDK） / Polling vs. Interrupts (io_uring / SPDK) | ../computing/systems/why-nvme-is-fast/#ch7 | why-nvme-is-fast |
+| DMA 与 MSI：中断也是一次写内存 / DMA and MSI: an Interrupt Is a Memory Write | ../computing/systems/how-pcie-works/#ch7 | how-pcie-works |
 | 端口倍增器、eSATA、mSATA 与 M.2 SATA / Port Multipliers, eSATA, mSATA and M.2 SATA | ../computing/systems/how-sata-works/#ch7 | how-sata-works |
 | 屋顶线模型与算术强度 / The Roofline Model and Arithmetic Intensity | ../computing/systems/why-compute-waits-for-memory/#ch7 | why-compute-waits-for-memory |
 | STP：SAS 口为什么认 SATA 盘 / STP: Why a SAS Port Accepts a SATA Drive | ../computing/systems/how-sas-works/#ch7 | how-sas-works |
 | 存储接口分层地图：外形、连接器、链路、传输、命令集 / Storage interface map: form factor, connector, link, transport, command set | ../computing/systems/what-a-drive-is-made-of/#ch7 | what-a-drive-is-made-of |
+| USB PD：谈出来的瓦数与 EPR / USB Power Delivery: Negotiated Watts and EPR | ../computing/systems/how-thunderbolt-works/#ch7 | how-thunderbolt-works |
 | 屋顶线下的长上下文吐字加速 / Roofline Decode Speedup at Long Context | ../computing/ml/how-hybrid-attention-remembers/#ch8 | how-hybrid-attention-remembers |
+| 到今天还共用的小总线：I²C 和上拉电阻 / The Small Buses Still Shared Today: I²C and Pull-up Resistors | ../computing/systems/how-a-computer-is-wired/#ch8 | how-a-computer-is-wired |
 | 大模型推理的内存瓶颈 / Why LLM Inference Is Memory-Bound | ../computing/systems/why-compute-waits-for-memory/#ch8 | why-compute-waits-for-memory |
 | 多路径的分流与切换：ALUA 与 ANA / Splitting and failing over across paths: ALUA and ANA | ../computing/systems/storage-over-a-network/#ch8 | storage-over-a-network |
 | PCIe 6.0、ZNS 与 GPUDirect Storage / PCIe 6.0, ZNS & GPUDirect Storage | ../computing/systems/why-nvme-is-fast/#ch8 | why-nvme-is-fast |
+| 通道损耗预算与重定时器 / Channel Loss Budgets and Retimers | ../computing/systems/how-pcie-works/#ch8 | how-pcie-works |
 | 固态硬盘为什么比机械硬盘快：延迟与带宽 / Why SSDs are faster than hard disks: latency and bandwidth | ../computing/systems/what-a-drive-is-made-of/#ch8 | what-a-drive-is-made-of |
 | T10 PI：每个块多 8 字节 / T10 PI: Eight More Bytes per Block | ../computing/systems/how-sas-works/#ch8 | how-sas-works |
+| 雷电 DMA 攻击与 IOMMU / Thunderbolt DMA Attacks and the IOMMU | ../computing/systems/how-thunderbolt-works/#ch8 | how-thunderbolt-works |
 | 雷电与 USB4 的 PCIe 隧道：不翻译的路 / PCIe Tunnelling in Thunderbolt and USB4 | ../computing/systems/how-usb-drives-talk/#ch8 | how-usb-drives-talk |
 | 为什么 SATA 停在 6 Gb/s / Why SATA Stopped at 6 Gb/s | ../computing/systems/how-sata-works/#ch8 | how-sata-works |
 | 数据搬运能耗与 HBM 封装 / Data Movement Energy and HBM Packaging | ../computing/systems/why-compute-waits-for-memory/#ch9 | why-compute-waits-for-memory |
 | U 盘和存储卡：几颗闪存与总线 / Flash Drives and Memory Cards: A Few Dies and a Bus | ../computing/systems/how-usb-drives-talk/#ch9 | how-usb-drives-talk |
 | 混合注意力前沿谱系（2026 年 11 月） / Hybrid Attention Landscape (Nov 2026) | ../computing/ml/how-hybrid-attention-remembers/#ch9 | how-hybrid-attention-remembers |
+| 互连的前沿（截至 2026 年 11 月）：UCIe 3.0 与 4.0、3D 堆叠、CXL 4.0 / The Interconnect Frontier (as of November 2026): UCIe 3.0 and 4.0, 3D Stacking, CXL 4.0 | ../computing/systems/how-a-computer-is-wired/#ch9 | how-a-computer-is-wired |
+| PAM4 与眼图 / PAM4 and Eye Diagrams | ../computing/systems/how-pcie-works/#ch9 | how-pcie-works |
 | 三副本与纠删码：空间、持久性与修理代价 / Replication vs erasure coding: space, durability and repair | ../computing/systems/storage-over-a-network/#ch9 | storage-over-a-network |
 | 24G SAS 的 128b/150b 编码与纠错 / 24G SAS: 128b/150b Coding and FEC | ../computing/systems/how-sas-works/#ch9 | how-sas-works |
 | SATA 的前沿（截至 2026 年 11 月） / Where SATA Stands (as of November 2026) | ../computing/systems/how-sata-works/#ch9 | how-sata-works |
 | 存储前沿（2026 年 11 月）：HAMR 出货、闪存层数、QLC 与 PLC / Storage frontier (Nov 2026): HAMR shipping, NAND layers, QLC and PLC | ../computing/systems/what-a-drive-is-made-of/#ch9 | what-a-drive-is-made-of |
+| 雷电 4/5 与 USB4 的必选清单 / Thunderbolt 4/5 vs USB4: the Mandatory List | ../computing/systems/how-thunderbolt-works/#ch9 | how-thunderbolt-works |
 | HBM4、共封装光学与算力前沿 / HBM4, Co-Packaged Optics, and the 2026 Frontier | ../computing/systems/why-compute-waits-for-memory/#ch10 | why-compute-waits-for-memory |
 | 网络存储的前沿（截至 2026 年 11 月） / The network storage frontier (as of November 2026) | ../computing/systems/storage-over-a-network/#ch10 | storage-over-a-network |
+| FLIT 模式与前向纠错 / FLIT Mode and Forward Error Correction | ../computing/systems/how-pcie-works/#ch10 | how-pcie-works |
 | 读硬盘规格表时问三件事 / Three Questions for a Drive Spec Sheet | ../computing/systems/how-sata-works/#ch10 | how-sata-works |
+| 看一台机器的三个问题 / Three Questions for Reading a Machine | ../computing/systems/how-a-computer-is-wired/#ch10 | how-a-computer-is-wired |
 | SAS 的前沿（截至 2026 年 11 月） / The SAS Frontier (as of November 2026) | ../computing/systems/how-sas-works/#ch10 | how-sas-works |
+| 雷电与 USB4 的前沿（2026） / Thunderbolt and USB4 Frontier (2026) | ../computing/systems/how-thunderbolt-works/#ch10 | how-thunderbolt-works |
 | USB 与雷电存储的前沿（2026 年 11 月） / The USB and Thunderbolt Storage Frontier (November 2026) | ../computing/systems/how-usb-drives-talk/#ch10 | how-usb-drives-talk |
 | 诊断芯片与程序的四个问题 / Four Questions for Any Chip or Slow Program | ../computing/systems/why-compute-waits-for-memory/#ch11 | why-compute-waits-for-memory |
 | 看到网络存储时问的三件事 / Three questions to ask about network storage | ../computing/systems/storage-over-a-network/#ch11 | storage-over-a-network |
+| PCIe 7.0、8.0 与合规测试的进展 / Where PCIe 7.0, 8.0 and Compliance Stand | ../computing/systems/how-pcie-works/#ch11 | how-pcie-works |
 | 看到 SAS 时问三件事 / Three Questions When You See SAS | ../computing/systems/how-sas-works/#ch11 | how-sas-works |
 | 看包装时问三件事 / Three Questions for a USB Speed Label | ../computing/systems/how-usb-drives-talk/#ch11 | how-usb-drives-talk |
+| 雷电接口是怎么工作的 / How Thunderbolt Works | ../computing/systems/how-thunderbolt-works/#ch11 | how-thunderbolt-works |
+| PCIe 翻倍的三种办法 / Three Ways PCIe Doubled | ../computing/systems/how-pcie-works/#ch12 | how-pcie-works |
 
 ### 10 经济与社会 / Economy & society
 

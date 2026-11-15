@@ -306,6 +306,19 @@ anchor and aliases. It is a schema-2 fragment `atlas/graph/lessons/<slug>.json`:
   `tests/concept-search.cjs` pins 16 zh/en pairs for S5. The search chunks total 246,999 bytes; computing-1.js is 44,713 of
   60,000.
 
+- Bus series B1, B2, B6 (2026-11-15): how-pcie-works (12 concepts), how-a-computer-is-wired (10) and how-thunderbolt-works (11)
+  → computing. 36 hand-written edges, all in the three new fragments: B1 12 (7 between chapters, 2 from how-sata-works, 3 into
+  why-nvme-is-fast #ch2/#ch4 and how-usb-drives-talk #ch8), B2 11 (6 between chapters, 1 from how-sata-works, 2 from
+  why-compute-waits-for-memory, 2 between B1 and B2), B6 13 (6 between chapters, 3 from how-usb-drives-talk, 1 from
+  why-nvme-is-fast, 1 from B1, 2 into how-usb-drives-talk #ch8). One word, one owner: USB4 和雷电区别, 雷电和 USB4 区别,
+  Thunderbolt vs USB4 and USB4 vs Thunderbolt moved from how-usb-drives-talk #ch8 to how-thunderbolt-works #ch9 (S4 fragment
+  re-imported, edges kept; S4 #ch3 gained plain 40Gbps, which had tied with B6 #ch5). B1 owns the generic PCIe words (plus
+  plain PCIe / PCI Express, which tied with the NVMe page tag); why-nvme-is-fast keeps PCIe 4.0 5.0 6.0 SSD 速度, PCIe vs SATA
+  bandwidth and MSI-X 中断. 主板上的 PCIe 是从哪来的, DMI, PCH and 芯片组 sit on B2 #ch5 without collision. 芯粒 / chiplets reach
+  B2 #ch7 through its title only (the unregistered why-chips-are-hard draft lists them; 小芯片 has no result until it is
+  registered). `tests/concept-search.cjs` pins 42 zh/en pairs for the three essays (the moved pair now on B6 #ch9). The search
+  chunks total 267,262 bytes; computing-1.js is 44,946 of 60,000.
+
 ### Commands for the integrator
 
 ```sh

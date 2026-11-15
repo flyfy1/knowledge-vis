@@ -1,11 +1,11 @@
 {
   "counts": {
     "groups": 11,
-    "nodes": 457,
-    "edges": 624,
+    "nodes": 490,
+    "edges": 660,
     "trails": 14,
     "questions": 124,
-    "fragments": 197
+    "fragments": 200
   },
   "conflicts": [],
   "suspendedEdges": [],
@@ -146,6 +146,103 @@
       "taughtBy": [
         "positive-predictive-value",
         "epidemic-r0"
+      ]
+    },
+    {
+      "concept": "shared-bus-pci",
+      "page": "how-sata-works",
+      "taughtBy": [
+        "sata-protocol-layers",
+        "parallel-ata-timing-skew",
+        "8b10b-encoding",
+        "sata-fis-frames",
+        "ncq-rotational-scheduling",
+        "sata-link-power-hotplug",
+        "port-multiplier-esata-msata",
+        "why-sata-stopped-at-6g",
+        "sata-frontier-2026",
+        "reading-a-drive-spec-sheet"
+      ]
+    },
+    {
+      "concept": "bus-loading-reflected-wave",
+      "page": "how-sata-works",
+      "taughtBy": [
+        "sata-protocol-layers",
+        "parallel-ata-timing-skew",
+        "8b10b-encoding",
+        "sata-fis-frames",
+        "ncq-rotational-scheduling",
+        "sata-link-power-hotplug",
+        "port-multiplier-esata-msata",
+        "why-sata-stopped-at-6g",
+        "sata-frontier-2026",
+        "reading-a-drive-spec-sheet"
+      ]
+    },
+    {
+      "concept": "numa-two-socket",
+      "page": "why-compute-waits-for-memory",
+      "taughtBy": [
+        "pipeline-memory-stall",
+        "memory-hierarchy-cache-walk",
+        "cache-tiling-blocking",
+        "memory-wall-littles-law",
+        "amdahl-gustafson-bus-cap",
+        "gpu-systolic-array",
+        "roofline-model",
+        "llm-inference-memory-bound",
+        "data-movement-energy-hbm",
+        "memory-wall-frontier-2026",
+        "memory-diagnostic-checklist"
+      ]
+    },
+    {
+      "concept": "chipset-uplink",
+      "page": "why-nvme-is-fast",
+      "taughtBy": [
+        "nvme-protocol-overhead",
+        "nvme-pcie-lanes-littles-law",
+        "nvme-64k-queues",
+        "nvme-ring-doorbell-dma",
+        "ssd-nand-channel-parallelism",
+        "ssd-write-amplification-trim",
+        "nvme-polling-vs-interrupts",
+        "nvme-pcie6-zns-gpudirect"
+      ]
+    },
+    {
+      "concept": "chipset-uplink",
+      "page": "how-usb-drives-talk",
+      "taughtBy": [
+        "usb-storage-layers",
+        "usb-host-scheduling-microframe",
+        "usb-naming-line-rates",
+        "usb-bulk-only-transport",
+        "uasp-command-queuing",
+        "usb-bridge-translation-bottleneck",
+        "external-ssd-thermal-throttling",
+        "thunderbolt-usb4-pcie-tunnel",
+        "flash-drive-sd-card-speed",
+        "usb-storage-frontier-2026",
+        "reading-usb-speed-labels"
+      ]
+    },
+    {
+      "concept": "die-to-die-links",
+      "page": "why-compute-waits-for-memory",
+      "taughtBy": [
+        "pipeline-memory-stall",
+        "memory-hierarchy-cache-walk",
+        "cache-tiling-blocking",
+        "memory-wall-littles-law",
+        "amdahl-gustafson-bus-cap",
+        "gpu-systolic-array",
+        "roofline-model",
+        "llm-inference-memory-bound",
+        "data-movement-energy-hbm",
+        "memory-wall-frontier-2026",
+        "memory-diagnostic-checklist"
       ]
     },
     {
@@ -415,6 +512,70 @@
       ]
     },
     {
+      "concept": "pcie-lanes-generations",
+      "page": "how-sata-works",
+      "taughtBy": [
+        "sata-protocol-layers",
+        "parallel-ata-timing-skew",
+        "8b10b-encoding",
+        "sata-fis-frames",
+        "ncq-rotational-scheduling",
+        "sata-link-power-hotplug",
+        "port-multiplier-esata-msata",
+        "why-sata-stopped-at-6g",
+        "sata-frontier-2026",
+        "reading-a-drive-spec-sheet"
+      ]
+    },
+    {
+      "concept": "pcie-flow-control",
+      "page": "storage-over-a-network",
+      "taughtBy": [
+        "block-file-object-storage",
+        "nas-file-protocols",
+        "iscsi",
+        "fibre-channel-credits",
+        "network-storage-latency",
+        "rdma-roce-lossless",
+        "nvme-over-fabrics",
+        "multipath-ana-alua",
+        "replication-vs-erasure-coding",
+        "network-storage-frontier",
+        "network-storage-checklist"
+      ]
+    },
+    {
+      "concept": "pcie-dma-msi",
+      "page": "why-nvme-is-fast",
+      "taughtBy": [
+        "nvme-protocol-overhead",
+        "nvme-pcie-lanes-littles-law",
+        "nvme-64k-queues",
+        "nvme-ring-doorbell-dma",
+        "ssd-nand-channel-parallelism",
+        "ssd-write-amplification-trim",
+        "nvme-polling-vs-interrupts",
+        "nvme-pcie6-zns-gpudirect"
+      ]
+    },
+    {
+      "concept": "pcie-flit",
+      "page": "how-sas-works",
+      "taughtBy": [
+        "sas-protocol-layers",
+        "scsi-cdb-lun",
+        "ssp-connection-overhead",
+        "dual-port-multipath",
+        "sas-expander-fanout",
+        "sas-wide-port",
+        "sata-tunneling-protocol",
+        "t10-pi-dif",
+        "sas4-fec",
+        "sas-frontier",
+        "reading-sas-specs"
+      ]
+    },
+    {
       "concept": "sas-protocol-layers",
       "page": "how-sata-works",
       "taughtBy": [
@@ -529,6 +690,54 @@
       "page": "acid-base-equilibrium",
       "taughtBy": [
         "weak-acid-equilibrium"
+      ]
+    },
+    {
+      "concept": "usb4-bandwidth-allocation",
+      "page": "how-usb-drives-talk",
+      "taughtBy": [
+        "usb-storage-layers",
+        "usb-host-scheduling-microframe",
+        "usb-naming-line-rates",
+        "usb-bulk-only-transport",
+        "uasp-command-queuing",
+        "usb-bridge-translation-bottleneck",
+        "external-ssd-thermal-throttling",
+        "thunderbolt-usb4-pcie-tunnel",
+        "flash-drive-sd-card-speed",
+        "usb-storage-frontier-2026",
+        "reading-usb-speed-labels"
+      ]
+    },
+    {
+      "concept": "thunderbolt-dma-iommu",
+      "page": "why-nvme-is-fast",
+      "taughtBy": [
+        "nvme-protocol-overhead",
+        "nvme-pcie-lanes-littles-law",
+        "nvme-64k-queues",
+        "nvme-ring-doorbell-dma",
+        "ssd-nand-channel-parallelism",
+        "ssd-write-amplification-trim",
+        "nvme-polling-vs-interrupts",
+        "nvme-pcie6-zns-gpudirect"
+      ]
+    },
+    {
+      "concept": "thunderbolt-vs-usb4-requirements",
+      "page": "how-usb-drives-talk",
+      "taughtBy": [
+        "usb-storage-layers",
+        "usb-host-scheduling-microframe",
+        "usb-naming-line-rates",
+        "usb-bulk-only-transport",
+        "uasp-command-queuing",
+        "usb-bridge-translation-bottleneck",
+        "external-ssd-thermal-throttling",
+        "thunderbolt-usb4-pcie-tunnel",
+        "flash-drive-sd-card-speed",
+        "usb-storage-frontier-2026",
+        "reading-usb-speed-labels"
       ]
     },
     {
@@ -1780,10 +1989,10 @@
     }
   ],
   "unknownAliasIds": [],
-  "sizeBytes": 860287,
+  "sizeBytes": 912665,
   "questionsBytes": 173024,
-  "combinedBytes": 1033311,
-  "indexBytes": 105157,
+  "combinedBytes": 1085689,
+  "indexBytes": 110314,
   "chunkBytes": {
     "math.nodes": 51664,
     "math.edges": 89636,
@@ -1809,8 +2018,8 @@
     "earth.nodes": 25871,
     "earth.edges": 19025,
     "earth.questions": 6822,
-    "computing.nodes": 80982,
-    "computing.edges": 56024,
+    "computing.nodes": 108662,
+    "computing.edges": 72613,
     "computing.questions": 2766,
     "society.nodes": 58077,
     "society.edges": 41022,

@@ -82,8 +82,8 @@ types ("为什么要打疫苗", "how does my phone know where I am"), not only t
    day of the change. Reason (2026-11-15): Cloudflare caches the scripts for four hours (`cache-control:
    max-age=14400`) but not the HTML, so without a new key readers get the new page with the old text. If the scripts
    were already deployed under today's key, append a letter (`?v=20261115b`, then `c`) so the new key differs. The
-   storage essays (what-a-drive-is-made-of, how-sata-works, how-sas-works, how-usb-drives-talk, storage-over-a-network)
-   and why-nvme-is-fast use it since 2026-11-15; older essays do not yet, so add the key the next time one of them
+   storage essays (what-a-drive-is-made-of, how-sata-works, how-sas-works, how-usb-drives-talk, storage-over-a-network),
+   the bus essays (how-pcie-works, how-a-computer-is-wired, how-thunderbolt-works) and why-nvme-is-fast use it since 2026-11-15; older essays do not yet, so add the key the next time one of them
    changes.
 8. Add rows to CONCEPT-MAP.md.
 
@@ -112,9 +112,13 @@ types ("为什么要打疫苗", "how does my phone know where I am"), not only t
 | how-sas-works | computing/systems/how-sas-works/ | 11 (`#ch1…#ch11`) | computing | `ESSAY_BASE_URL` |
 | how-usb-drives-talk | computing/systems/how-usb-drives-talk/ | 11 (`#ch1…#ch11`) | computing | `ESSAY_BASE_URL` |
 | storage-over-a-network | computing/systems/storage-over-a-network/ | 11 (`#ch1…#ch11`) | computing | `ESSAY_BASE_URL` |
+| how-pcie-works | computing/systems/how-pcie-works/ | 12 (`#ch1…#ch12`) | computing | `ESSAY_BASE_URL` |
+| how-a-computer-is-wired | computing/systems/how-a-computer-is-wired/ | 10 (`#ch1…#ch10`) | computing | `ESSAY_BASE_URL` |
+| how-thunderbolt-works | computing/systems/how-thunderbolt-works/ | 11 (`#ch1…#ch11`) | computing | `ESSAY_BASE_URL` |
 
 The eleven from 2026-11-11, the two food essays of 2026-11-12 and the five storage essays of 2026-11-14/15
-(what-a-drive-is-made-of, how-sata-works, how-sas-works, how-usb-drives-talk, storage-over-a-network) were built by Claude Code (claude-opus-5-5). The English copy was drafted by Claude
+(what-a-drive-is-made-of, how-sata-works, how-sas-works, how-usb-drives-talk, storage-over-a-network) and the three bus essays of
+2026-11-15 (how-pcie-works, how-a-computer-is-wired, how-thunderbolt-works) were built by Claude Code (claude-opus-5-5). The English copy was drafted by Claude
 Code (claude-haiku-5-5). A separate Claude Code session of the same model reviewed each essay and revised
 it (no human or cross-model review yet). Each BRIEF.md records what was and was not checked.
 why-compute-waits-for-memory and why-nvme-is-fast were built by Antigravity (gemini-4-hydrogen) in both
@@ -250,7 +254,11 @@ on 2026-11-14 (ee47aac9); the label was repointed to that commit with `provenanc
 specs/reviews/why-nvme-is-fast-alias-move-20261114.md, since the commit is Claude Code's and the edition is
 Antigravity's (see specs/visual-page-provenance.md, 2026-11-14). On 2026-11-15 the S4 registrar added the
 `?v=20261115` script keys to its `index.html` (no text, model or test changed) and repointed the label the same way,
-with specs/reviews/why-nvme-is-fast-cache-key-20261115.md as evidence.
+with specs/reviews/why-nvme-is-fast-cache-key-20261115.md as evidence. On 2026-11-15 the bus-series registrar linked the
+existing word PCIe in ch2.p2 to how-pcie-works #ch2, moved its scripts to `?v=20261115b` and repointed the label to that
+commit (4353c314) with specs/reviews/why-nvme-is-fast-pcie-link-20261115.md as evidence. It keeps the storage-specific
+PCIe words (PCIe 4.0 5.0 6.0 SSD 速度, PCIe vs SATA bandwidth, MSI-X 中断; plain "MSI-X" opens its #ch4); the generic ones
+belong to how-pcie-works.
 
 ### what-a-drive-is-made-of: 硬盘里到底是什么
 
@@ -264,6 +272,7 @@ SSD-vs-HDD words (固态硬盘为什么比机械硬盘快, 机械硬盘和固态
 (#ch2). Ch7 links how-sata-works, how-sas-works #ch7, how-usb-drives-talk and (since 2026-11-15) storage-over-a-network. SAS 和 SATA 能混用吗 / can SAS and SATA mix left its #ch7 for how-sas-works #ch7 on 2026-11-15; it keeps
 移动硬盘盒怎么工作 (#ch7). Atlas edges: 4 between chapters, 2 to
 why-nvme-is-fast (#ch1, #ch6).
+Since the bus series (2026-11-15) ch7.p4 links the word PCIe to how-pcie-works; scripts at `?v=20261115c`.
 
 ### how-sata-works: SATA 为什么用了二十多年
 
@@ -277,6 +286,8 @@ and #ch1 for S1 at registration. Tuned: seek-curve shape, link-on and Partial po
 limit paragraph). Atlas edges: 5 between chapters, 2 to S1 (#ch2, #ch7), 1 to why-nvme-is-fast (#ch2). Ch1.limit
 (SATA over a SAS link) links how-sas-works #ch7 and ch10.links links that essay; its models.cjs checks the S3 anchors.
 Since 2026-11-15 ch10.q2 links how-usb-drives-talk #ch6 and ch10.links links that essay as well, and storage-over-a-network.
+Since the bus series (2026-11-15) ch2.limit has one more sentence linking how-a-computer-is-wired #ch2 (loading and
+reflections on the PCI bus); scripts at `?v=20261115c`.
 
 ### how-sas-works: 服务器硬盘为什么用 SAS
 
@@ -303,13 +314,16 @@ encoding → packet framing → the spec's own effective figure), Bulk-Only's CB
 same bound at N commands (Lazowska), the bridge's SCSI translation and the bottleneck chain, thermal throttling with a
 lumped RC model, the Thunderbolt / USB4 PCIe tunnel, flash drives and SD cards, a dated frontier and three questions
 for the box. It owns the external-drive words: 移动硬盘为什么这么慢 / why is my external SSD slow (#ch6), 硬盘盒 / SSD
-enclosure (#ch1), USB 3.2 Gen 2x2 and 40Gbps (#ch3), 什么是 UASP (#ch5), 硬盘盒发热降速 (#ch7), USB4 和雷电区别 /
-Thunderbolt vs USB4 (#ch8), U 盘为什么慢 and SD 卡速度 (#ch9). 移动硬盘盒怎么工作 stays on S1 #ch7. Tuned: the 50 µs command
+enclosure (#ch1), USB 3.2 Gen 2x2 and 40Gbps (#ch3), 什么是 UASP (#ch5), 硬盘盒发热降速 (#ch7), U 盘为什么慢 and SD 卡速度 (#ch9).
+USB4 和雷电区别 / Thunderbolt vs USB4 (and the reversed forms) left #ch8 for how-thunderbolt-works #ch9 on 2026-11-15; #ch8
+keeps the enclosure words and PCIe 隧道是什么, and #ch3 gained plain 40Gbps (it tied with how-thunderbolt-works #ch5). 移动硬盘盒怎么工作 stays on S1 #ch7. Tuned: the 50 µs command
 round trip and flash first byte, the 4 µs bridge cost per command (the "4 KiB QD32 is chip-bound" sentence depends on
 it and the page says so), η = 0.85 and the heat constants; sensitivities are in each chapter's limit paragraph and
 pinned. It links S1 #ch7, S2 #ch3, S3 #ch2 and why-nvme-is-fast #ch2, #ch5, #ch6, and since 2026-11-15 storage-over-a-network #ch3
 (ch6.p1, ch11.links). Atlas edges: 5 between chapters, 1
 from S1, 2 from S2 (#ch3, #ch10), 2 from S3 (#ch2, #ch1), 5 from why-nvme-is-fast (#ch2 three times, #ch5, #ch6).
+Since the bus series (2026-11-15) ch8.p1 links how-thunderbolt-works #ch2 and how-pcie-works #ch1, ch8.p2 links
+how-thunderbolt-works #ch9; scripts at `?v=20261115c`.
 Not verified (BRIEF): the TB3/TB4 ~2,800 MB/s and TB5 enclosure figures (reviews and forums), the ISSCC 2023 paper body,
 SAT itself.
 
@@ -332,6 +346,65 @@ and #ch8, why-compute-waits-for-memory #ch10, tcp-congestion and distributed-sys
 from S1, 2 from S3, 2 from why-nvme-is-fast, 1 from tcp-congestion, 1 from distributed-systems. Not verified (BRIEF): the
 FC-FS frame layout, MS-SMB2, S3 PUT semantics, several textbooks cited from memory, most frontier dates via two outlets
 rather than the primary pages.
+
+### how-pcie-works: PCIe 为什么能一代一代翻倍
+
+Bus series B1 (specs/essay-briefs/TASK-bus-series.md). Graphics cards, SSDs and NICs all sit on PCIe; how did it double six
+times from Gen1 to Gen7, and what happens on the wire in one read? The PCIe tree (root complex, switches, endpoints), one
+lane and the generation table with the Gen3 decision (8 GT/s scrambled over 10 GT/s 8b/10b, Froelich 2008), TLP bytes and
+efficiency against MPS/MRRS (two real header dumps), credit flow control with the modular rule and scaled flow control
+(NVIDIA patent US9904653), ACK/NAK replay with go-back-N after Stallings, a depth-first enumerator with BAR sizing and ECAM,
+MSI/MSI-X as a memory write (a real lspci record), channel loss budgets and retimers, NRZ vs PAM4 eyes, FLIT mode with FEC
+and Das Sharma's latency table, a dated frontier and a closing. Twelve static diagrams (STANDARD §4a). It owns the generic
+PCIe words: PCIe / PCI Express, PCIe 是什么 / what is PCIe (#ch1), PCIe 通道 / PCIe lanes, x16 x4 区别, 显卡插 x8 会慢吗,
+PCIe 通道不够怎么办, PCIe 4.0 和 5.0 区别 (#ch2), TLP (#ch3), PCIe 流控 (#ch4), PCIe 重传 (#ch5), PCIe 枚举, BAR 是什么 (#ch6),
+MSI 中断 (#ch7), 重定时器 / retimer (#ch8), PAM4 (#ch9), FLIT (#ch10), PCIe 7.0 / 8.0 (#ch11); why-nvme-is-fast keeps the
+storage-specific ones. Tuned: credit, ACK and FLIT round trips (1000 ns), Gen6/7 package and connector loss (= Gen5), board
+Dk (sensitivities stated and pinned). It links why-nvme-is-fast, how-sata-works, how-usb-drives-talk, what-a-drive-is-made-of,
+storage-over-a-network, how-sas-works, frequency-response, inside-a-phone, how-a-computer-is-wired (#ch5) and
+how-thunderbolt-works. Atlas edges: 7 between chapters, 2 from how-sata-works (#ch3 → #ch2, #ch2 → #ch1), 3 into storage
+pages (why-nvme-is-fast #ch2 and #ch4, how-usb-drives-talk #ch8). Not verified (BRIEF): everything from pcisig.com itself
+(second-hand via ServeTheHome and eeNews), Gen6/7 loss budgets (vendor material), PAM4 Gray order and FLIT byte-to-interleave
+assignment in PCIe 6.0.
+
+### how-a-computer-is-wired: 电脑里的零件是怎么连起来的
+
+Bus series B2. CPU, memory, graphics, disks and USB: which road does each take, and why did one shared bus become a
+point-to-point network? Sharing never went away, it moved: PCI 3.0 Table 3-5 reproduced on a shared bus, the Table 7-7
+budget against a loaded line (reflected-wave switching, §4.3.6.2), the Intel 875P / ICH5 northbridge era, the memory
+controller in the CPU and NUMA with AMD's ISSCC 2018 Zeppelin latencies, today's board (Z890 / AM5) with CPU lanes and a
+shared DMI uplink, ring vs mesh on-die networks (closed forms), chiplets and UCIe energy per bit, I²C rise time against
+pull-up and bus capacitance (UM10204), a dated frontier (UCIe 4.0 of 2026-11-12, CXL 4.0, DMI 5.0 as a leak) and three
+questions. Eight static diagrams. It owns 共享总线, 总线 / computer bus, PCI 总线 (#ch1), 反射波 (#ch2), 北桥, 南桥 /
+northbridge, southbridge, FSB (#ch3), NUMA (#ch4), 芯片组 / chipset, PCH, DMI, 主板上的 PCIe 是从哪来的 (#ch5; DMI/PCH/芯片组
+had no collision), 环形总线, 网格, NoC (#ch6), UCIe, die-to-die (#ch7), I2C, 上拉电阻, SMBus, SPI (#ch8). **Chiplet words:**
+芯粒 and chiplets reach #ch7 through its title only; the unregistered draft tech/semiconductors/why-chips-are-hard lists 芯粒,
+小芯片 and chiplets as aliases, and this page's tests reserve them. When that draft is registered, decide where 芯粒 /
+chiplets land (its yield chapter explains why designs are split; #ch7 here explains how the pieces talk) and recheck
+UCIe / die-to-die. Tuned: tpd 170 ps/in and Z0 60 Ω (the favourable end of the add-in-card ranges; the spec sets none for
+system boards), 10 misses in flight per core (stated and pinned). It links how-sata-works #ch2, what-a-drive-is-made-of #ch7, why-nvme-is-fast, how-usb-drives-talk,
+why-compute-waits-for-memory #ch4/#ch5, how-pcie-works (#ch1, #ch2, #ch11) and how-thunderbolt-works. Atlas edges: 6
+between chapters, 1 from how-sata-works (#ch2), 2 from why-compute-waits-for-memory (#ch4, #ch9), 2 from / to how-pcie-works
+(#ch2 → B1 #ch1, B1 #ch2 → #ch5). Not verified (BRIEF): the AMD chipset uplink generation (PCIe 4.0 ×4, press), UCIe 4.0
+numbers, the Xeon 6+ launch date.
+
+### how-thunderbolt-works: 雷电接口是怎么工作的
+
+Bus series B6 (requested by Yangyu 2026-11-15). One USB-C cable carries a display, a network card, a disk and power and
+chains device after device; what are Thunderbolt and USB4 to each other? The 24 pins of Type-C R2.5 and the CC divider
+(Table 4-36), USB4 routers and tunnels with the 4-byte transport header and its HEC (USB4 2.0 Table 5-2, Appendix A), the
+connection manager's bandwidth rules (CM Guide 2.0 ch. 6), daisy chains and the depth limit, PAM3 and the 3+1 asymmetric
+mode, display bandwidth from CVT-RB2 pixel clocks, USB PD and EPR negotiation (PD r3.3), DMA attacks and the IOMMU
+(Thunderclap, Thunderspy), Thunderbolt 4/5 as required-feature profiles of USB4, a dated frontier and a closing. Nine
+static diagrams. It owns USB-C 引脚定义 (#ch1), USB4 隧道是什么 (#ch2), 扩展坞带宽怎么分 (#ch3), 雷电串联 / daisy chain
+(#ch4), PAM3 (#ch5), USB-C 接显示器, DP Alt Mode (#ch6), USB PD, PD 快充协议, EPR (#ch7; plain 快充 stays with inside-a-phone
+and the battery draft), DMA 攻击, IOMMU (#ch8), 雷电 4 和雷电 5 区别, 雷电 5 / Thunderbolt 5, and since 2026-11-15 USB4 和雷电区别
+/ Thunderbolt vs USB4 (#ch9, moved from how-usb-drives-talk #ch8, which answered it only for a storage enclosure), 雷电 /
+Thunderbolt, 雷电接口是什么, USB-C 能干什么 (#ch11). It links how-usb-drives-talk #ch3 and #ch8 (the single-drive tunnel is
+not redone), why-nvme-is-fast #ch2 and #ch4, and how-pcie-works (#ch2 and the page). Atlas edges: 6 between chapters, 3
+from how-usb-drives-talk (#ch8 twice, #ch3), 1 from why-nvme-is-fast (#ch4), 1 from how-pcie-works (#ch2), 2 into
+how-usb-drives-talk #ch8. Not verified (BRIEF): which DP reservation route a TB4 product uses, the Thunderspy authors'
+claim about USB4, USB4's own DMA-protection wording.
 
 ### scarcity-moves: 稀缺会搬家
 
