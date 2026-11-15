@@ -17,9 +17,10 @@ en stub, Haiku translates, separate Opus review of both languages, registrar). *
 | A1 | `how-a-cpu-runs-a-program` CPU 是怎么运行一个程序的 | `0daab2e9` | `e41b1fe0` | live, zh + en, reviewed by a separate Claude Code session (same model; cross-model review pending) |
 | A2 | `how-cpu-caches-work` CPU 的三级缓存是怎么工作的 | `476c9f45` | `781c2db7` | live, zh + en, reviewed by a separate Claude Code session (same model; cross-model review pending) |
 | A3 | `how-virtual-memory-works` 虚拟内存是怎么工作的 | `df11763e` | `e41b1fe0` | live, zh + en, reviewed by a separate Claude Code session (same model; cross-model review pending) |
-| A4 | `how-a-cpu-guesses-ahead` | — | — | being written (untracked draft) |
-| A5 | `how-cores-share-memory` | — | — | being written (untracked draft) |
-| A6 | | | | queued (optional) |
+| A4 | `how-a-cpu-guesses-ahead` CPU 是怎么猜着往前跑的 | `50a4a3c2` | `c79af41c` | live, zh + en, reviewed by a separate Claude Code session (same model; cross-model review pending) |
+| A5 | `how-cores-share-memory` 多个核心怎么共用一块内存 | `445f4b67` | `c79af41c` | live, zh + en, reviewed by a separate Claude Code session (same model; cross-model review pending) |
+| A6 | `how-a-gpu-computes` | — | — | queued (optional), not dispatched |
+| — | boot, display, power, NIC, OS-and-hardware essays (list below) | — | — | queued, specs to be written when dispatched |
 
 A2: alias move, cross-link and one-click aliases in `88dafe9c` (the label points there), registration `644c2aee`. The
 "One word, one owner" decision below is done: L1 L2 L3 缓存, 缓存行, 组相联缓存, cache line, set associative cache (and L1 L2
@@ -37,8 +38,18 @@ instruction set and CPU 怎么执行程序 / how a CPU runs a program (A1 #ch1),
 冯·诺依曼结构 and 关键路径 / critical path (#ch4); the memory essay #ch1 keeps stalls, forwarding, CPI and "instruction pipeline".
 A3 owns Belady 异常 / Belady's anomaly (A2 #ch4 keeps Belady 最优替换 / LRU); IOMMU stays on Thunderbolt #ch8, NUMA on B2, CXL
 内存池 on the memory essay. Plain text still waiting for A4: A1 ch6.limit and ch8.p3, A3 ch10.p4. how-thunderbolt-works #ch8
-does not link A3 (no page-table sentence there). Known: 取指 译码 执行 is also an alias of why-compute-waits-for-memory #ch1
-(Antigravity edition), which wins the zh tie over switches #ch9.
+does not link A3 (no page-table sentence there). The 取指 译码 执行 collision is fixed (below).
+
+A4 and A5: cross-links, alias decisions and one-click aliases in `d34e98bb` (both labels, and the repointed A1, A2, A3 and
+why-compute-waits-for-memory labels, point there), registration `1aa9a22f`, cache keys `c79af41c`. Links: A1 ch6.limit (A4 #ch6),
+ch8.p3 (A4 #ch2), ch12.links; A3 ch10.p4 (A4 #ch10), ch13.links (A4 and A5); A2 ch9.p1, ch12.links, ch9.limit (A5 #ch3); A4
+ch12.links (A5 #ch8); A5 ch11.p2 (A4 #ch8), ch12.links. A5 names B4 (coherent interconnects) in plain text: link it when B4 goes
+live; A1's diagram label dg.layers.u3s ("后续文章") is SVG text and stays. Aliases: A5 took 缓存一致性 / cache coherence, MESI 协议,
+MOESI, MSI 协议, 总线窥探 (unowned since A2); A2 keeps 伪共享 / false sharing / MESI 状态; plain MSI stays on how-pcie-works #ch7; A4
+owns 推测执行 / speculative execution on #ch8 (A3 never carried them); distributed-systems keeps its consistency words. 取指 译码 执行
+was removed from why-compute-waits-for-memory #ch1 (Antigravity edition; note
+specs/reviews/why-compute-waits-for-memory-fetch-decode-alias-20261115.md), so it lands on switches-that-compute #ch9 (pinned).
+The series A1–A5 is live; A6 and the boot / display / power / NIC / OS items below are queued.
 
 ## The course, in reading order
 
