@@ -19,8 +19,9 @@ en stub, Haiku translates, separate Opus review of both languages, registrar). *
 | A3 | `how-virtual-memory-works` 虚拟内存是怎么工作的 | `df11763e` | `e41b1fe0` | live, zh + en, reviewed by a separate Claude Code session (same model; cross-model review pending) |
 | A4 | `how-a-cpu-guesses-ahead` CPU 是怎么猜着往前跑的 | `50a4a3c2` | `c79af41c` | live, zh + en, reviewed by a separate Claude Code session (same model; cross-model review pending) |
 | A5 | `how-cores-share-memory` 多个核心怎么共用一块内存 | `445f4b67` | `c79af41c` | live, zh + en, reviewed by a separate Claude Code session (same model; cross-model review pending) |
-| A6 | `how-a-gpu-computes` | — | — | queued (optional), not dispatched |
-| — | boot, display, power, NIC, OS-and-hardware essays (list below) | — | — | queued, specs to be written when dispatched |
+| A6 | `how-a-gpu-computes` GPU 是怎么算的 | `e844143c` | `9b09a7f7` | live, zh + en, reviewed by a separate Claude Code session (same model; cross-model review pending) |
+| — | `how-a-computer-boots` 电脑是怎么开机的 | `509b4d6e` | `9b09a7f7` | live, zh + en, reviewed by a separate Claude Code session (same model; cross-model review pending) |
+| — | how pixels reach a screen, how power reaches the CPU, how a NIC moves packets, how the OS talks to hardware | — | — | queued next, specs to be written when dispatched |
 
 A2: alias move, cross-link and one-click aliases in `88dafe9c` (the label points there), registration `644c2aee`. The
 "One word, one owner" decision below is done: L1 L2 L3 缓存, 缓存行, 组相联缓存, cache line, set associative cache (and L1 L2
@@ -49,7 +50,18 @@ MOESI, MSI 协议, 总线窥探 (unowned since A2); A2 keeps 伪共享 / false s
 owns 推测执行 / speculative execution on #ch8 (A3 never carried them); distributed-systems keeps its consistency words. 取指 译码 执行
 was removed from why-compute-waits-for-memory #ch1 (Antigravity edition; note
 specs/reviews/why-compute-waits-for-memory-fetch-decode-alias-20261115.md), so it lands on switches-that-compute #ch9 (pinned).
-The series A1–A5 is live; A6 and the boot / display / power / NIC / OS items below are queued.
+The series A1–A5 is live.
+
+A6 and the boot essay: cross-links, alias decisions and one-click aliases in `4e4585ca` (both labels, and the repointed
+why-compute-waits-for-memory, how-cores-share-memory, how-memory-talks, how-pcie-works, how-a-computer-is-wired and
+what-a-drive-is-made-of labels, point there), registration `0f111cc4`, cache keys `9b09a7f7`. Review notes
+specs/reviews/how-a-gpu-computes-review-20261115.md and specs/reviews/how-a-computer-boots-review-20261115.md. Links into A6: the
+memory essay ch6.p1 (#ch3), A5 ch12.links (#ch10); into the boot essay: B3 ch7.p4 (#ch5), B1 ch6.limit (#ch6), B2 ch8.p5 (#ch3), S1
+ch1.p3 (#ch7). A1, A3 and A4 were checked and not linked (no plain-text mention); A6 and the boot essay do not link each other. Aliases:
+boot #ch8 takes "Secure Boot chain of trust" / 安全启动信任链, never the bare "chain of trust" (a-secret-in-public #ch6); boot #ch3 keeps
+SPI flash / quad SPI read beside B2's SPI / SPI bus; A6 keeps "GPU cache coherence" and "GPU shared memory" (the bare words stay with
+A5, the memory essay and B4). The boot essay names a-secret-in-public in plain text (ch8.p2, ch14.links): link it when that draft goes
+live. Next queued: how pixels reach a screen, how power reaches the CPU, how a NIC moves packets, how the OS talks to hardware.
 
 ## The course, in reading order
 
@@ -62,7 +74,7 @@ Existing pages are marked (live). New essays are A1–A6; B and S are the other 
 5. **A3 `how-virtual-memory-works`** — pages, page tables, TLB.
 6. **A4 `how-a-cpu-guesses-ahead`** — branch prediction, out-of-order, speculation, Spectre.
 7. **A5 `how-cores-share-memory`** — coherence, consistency models, atomics.
-8. **A6 `how-a-gpu-computes`** (queued, optional) — SIMT, warps, occupancy; links the memory essay #ch6.
+8. (live) **A6 `how-a-gpu-computes`** — SIMT, warps, occupancy, coalescing, tiling, tensor cores; links the memory essay #ch6.
 9. B3 memory bus (DDR), B1 PCIe, B2 how a computer is wired, B4 coherent interconnects (CXL, NVLink).
 10. S1–S5 storage, and `why-nvme-is-fast`.
 
@@ -70,7 +82,7 @@ Existing pages are marked (live). New essays are A1–A6; B and S are the other 
 
 Yangyu, 2026-11-15: "我希望最终的效果是可以通过这个课程，把计算机各个部件的运行原理都讲清楚". So the course also needs,
 queued after the above (spec to be written when dispatched): how a computer boots (firmware, UEFI, POST, the boot
-chain); how pixels reach a screen (GPU display engine, DisplayPort/HDMI, refresh, VRR); how power reaches the CPU
+chain; live since 2026-11-15 as `how-a-computer-boots`); how pixels reach a screen (GPU display engine, DisplayPort/HDMI, refresh, VRR); how power reaches the CPU
 (PSU, VRMs, DVFS, why chips throttle); how a network card moves packets (NIC, DMA rings, offloads, RSS); how the
 OS talks to hardware (drivers, interrupts, system calls). Check `pages.config.js` and the untracked drafts
 (`tech/devices`, `tech/networks`, `tech/semiconductors/why-chips-are-hard`) before speccing each, and link the
