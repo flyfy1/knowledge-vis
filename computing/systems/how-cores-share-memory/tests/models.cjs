@@ -36,9 +36,9 @@ const P = M.prose();
   check('9950X cross-CCD nearly 200 ns (2024-08-14)', [LAT.zen5desk.crossCcd, LAT.zen5desk.date].join(), '200,2024-08-14');
   check('EPYC 9965: 192 cores, launched 2024-10-10', [FRONTIER.epyc9965.cores, FRONTIER.epyc9965.launch].join(), '192,2024-10-10');
   const V = FRONTIER.venice;
-  check('Venice: 256 cores, 8 CCDs × 32, CCX 16, 1024 MB L3, reported 2026-07-23', [V.cores, V.ccds, V.ccdCores, V.ccxCores, V.l3, V.reported].join(), '256,8,32,16,1024,2026-07-23');
+  check('Venice: 256 Zen 6c cores, 8 CCDs × 32, 1024 MB L3, announced 2026-07-22, GA 2026-11-10', [V.cores, V.core, V.ccds, V.ccdCores, V.l3, V.announced, V.ga].join(), '256,Zen 6c,8,32,1024,2026-07-22,2026-11-10');
   check('Venice: CCDs × cores per CCD = cores', V.ccds * V.ccdCores, V.cores);
-  check('Venice: two CCX per CCD', V.ccdCores / V.ccxCores, 2);
+  check('Venice: 8 CCDs × 128 MB L3 = 1024 MB', V.ccds * 128, V.l3);
   const X6 = FRONTIER.xeon6p;
   check('Xeon 6+: 288 cores, 576 MB L3, 2 sockets, reported 2026-06-01', [X6.cores, X6.l3, X6.sockets, X6.reported].join(), '288,576,2,2026-06-01');
   check('Apple TSO patch 2024-04-11', FRONTIER.appleTso.date, '2024-04-11');
@@ -48,9 +48,8 @@ const P = M.prose();
   check('years: MCS 1991, x86-TSO 2010, Primer 2nd ed. 2020', [FRONTIER.mcs.year, FRONTIER.tso.year, FRONTIER.primer.year].join(), '1991,2010,2020');
   // dates as written in the prose
   for (const [k, s] of [['ch7.p2', '2024 年 6 月 22 日'], ['ch11.d4', '2024 年 6 月 22 日'], ['ch7.p2', '2024 年 8 月 14 日'], ['ch11.d1', '2024 年 10 月 10 日'],
-    ['ch11.d2', '2026 年 7 月 23 日'], ['ch11.d3', '2026 年 6 月 1 日'], ['ch11.d5', '2024 年 4 月 11 日'], ['ch11.d6', 'PACT 2015'], ['ch11.e3', '1991 年'],
-    ['ch11.e2', '2010 年'], ['ch11.e1', '2020 年'], ['ch10.p2', '1991 年'], ['ch9.p1', '2010 年'], ['ch11.d2', '2026 年第四季度']]) says(k, s);
-  check('Venice SP7 quarter', FRONTIER.venice.sp7, 'Q4 2026');
+    ['ch11.d2', '2026 年 7 月 22 日'], ['ch11.d3', '2026 年 6 月 1 日'], ['ch11.d5', '2024 年 4 月 11 日'], ['ch11.d6', 'PACT 2015'], ['ch11.e3', '1991 年'],
+    ['ch11.e2', '2010 年'], ['ch11.e1', '2020 年'], ['ch10.p2', '1991 年'], ['ch9.p1', '2010 年'], ['ch11.d2', '2026 年 11 月 10 日'], ['ch11.d2', '2026 年 7 月 22 日']]) says(k, s);
 }
 
 /* ── 01–03 the snooping engine, by hand ── */
@@ -251,7 +250,7 @@ const P = M.prose();
     const sc = L(t, s, 'sc').allowed, tso = L(t, s, 'tso').allowed, wk = L(t, s, 'weak').allowed;
     check(`SC ⊆ TSO ⊆ weak, ${t}/${s}`, sc.every(o => tso.includes(o)) && tso.every(o => wk.includes(o)), true);
   }
-  says('ch8.p5', '8-1 到 8-9'); says('ch8.p2', '1979');
+  says('ch8.p5', '例 8-1 是 MP'); says('ch8.p2', '1979');
 }
 
 /* ── 10 locks ── */
@@ -307,7 +306,7 @@ const P = M.prose();
     bIntraLo: '30', bIntraHi: '40', bCrossLo: '100', bCrossHi: '120', bSock: '200', bSockMax: '212', z5cross: '200',
     piRate0: '32', piRate1: '24', pcRate: '9.9', psRate: '5.0', ppRate: '2000', piMs: '62', piMsHi: '82', psMs: '402', ppMs: '1', p8Rate: '32', pingT: '1',
     tas4: '55', tas16: '301', tas64: '1261', ttas4: '11.9', ttas16: '47.3', ttas64: '195', tk4: '6.0', tk16: '18.2', tk64: '66', mcs4: '8.0', mcs16: '8.0', mcs64: '8.0', lockH: '20', tasH2: '599',
-    e9965: '192', vCores: '256', vCcd: '8', vCcdC: '32', vCcx: '16', vL3: '1024', x6Cores: '288', x6L3: '576', x6S: '2', x6Dom: '576', tdCores: '256', armRuns: '1000000', armSeen: '458', vClaim: '70', x6Claim: '30' };
+    e9965: '192', vCores: '256', vCcd: '8', vCcdC: '32', vL3: '1024', x6Cores: '288', x6L3: '576', x6S: '2', x6Dom: '576', tdCores: '256', armRuns: '1000000', armSeen: '458', vClaim: '70', x6Claim: '30' };
   for (const [k, [v, d, kind]] of Object.entries(P)) check('prose ' + k, kind === 'pct' ? f(v * 100, d) : f(v, d), want[k]);
   check('every prose value pinned', Object.keys(P).sort().join(','), Object.keys(want).sort().join(','));
   const used = new Set();
@@ -441,6 +440,45 @@ const P = M.prose();
   for (const k of Object.keys(Z)) check('en placeholders ' + k, ph(EN[k]), ph(Z[k]));
   if (stub) { check('en stub mirrors zh exactly', JSON.stringify(EN), JSON.stringify(Z)); console.log('NOTE: copy.en.js is a stub (enStub); English registry match skipped until it is translated'); }
   else { check('registry title en', R.title.en, EN['doc.title'].split(' · ')[0]); check('registry desc en', R.desc.en, EN['doc.desc']); }
+}
+
+/* ── reviewer additions (2026-11-15): English facts and the caveats added beside numbers ── */
+{
+  const ectx = { window: {} }; vm.runInNewContext(fs.readFileSync(path.join(DIR, 'copy.en.js'), 'utf8'), ectx);
+  const EN = ectx.window.ESSAY_COPY.en;
+  const sayEn = (key, phrase) => { n++; if (!EN[key] || !EN[key].includes(phrase)) { fails++; console.error(`FAIL en ${key} should contain "${phrase}"`); } };
+  for (const [k, s] of [['ch7.p2', '22 June 2024'], ['ch11.d4', '22 June 2024'], ['ch7.p2', '14 August 2024'], ['ch11.d1', '10 October 2024'],
+    ['ch11.d2', '22 July 2026'], ['ch11.d2', '10 November 2026'], ['ch11.d2', 'Zen 6c'], ['ch11.d3', '1 June 2026'], ['ch11.d5', '11 April 2024'], ['ch11.d6', 'PACT 2015'],
+    ['ch8.p5', '8-1 is MP'], ['ch8.p5', '8-2 is LB'], ['ch8.p5', '8-3 is SB'], ['ch8.p5', '8-9 is SB with xchg']]) sayEn(k, s);
+  says('ch11.d2', 'Zen 6c');
+  for (const [k, s] of [['ch8.p5', '8-1 是 MP'], ['ch8.p5', '8-2 是 LB'], ['ch8.p5', '8-3 是 SB'], ['ch8.p5', '8-9 是用 xchg 的 SB']]) says(k, s);
+  // the Intel examples named in ch8.p5 are the outcomes the enumerator gives under x86-TSO
+  check('Intel 8-1 = MP forbidden', M.litmus('MP', 'none', 'tso').oddAllowed, false);
+  check('Intel 8-2 = LB forbidden', M.litmus('LB', 'none', 'tso').oddAllowed, false);
+  check('Intel 8-3 = SB allowed', M.litmus('SB', 'none', 'tso').oddAllowed, true);
+  check('Intel 8-9 = SB with xchg forbidden', M.litmus('SB', 'lock', 'tso').oddAllowed, false);
+  // no Chinese anywhere in the English copy
+  const cjk = Object.entries(EN).filter(([k, v]) => typeof v === 'string' && /[　-鿿＀-￯]/.test(v)).map(([k]) => k);
+  check('no CJK in copy.en.js', cjk.join(','), '');
+  // sibling titles in English match pages.config.js
+  const cfg = fs.readFileSync(path.join(ROOT, 'pages.config.js'), 'utf8');
+  const enTitle = slug => { const m = cfg.match(new RegExp('slug: "' + slug + '"[\\s\\S]*?title: \\{ zh: "[^"]*", en: "([^"]*)"')); return m && m[1]; };
+  for (const sl of ['how-cpu-caches-work', 'how-a-computer-is-wired', 'why-compute-waits-for-memory', 'distributed-systems']) {
+    const tt = enTitle(sl); n++; if (!tt || !Object.values(EN).some(v => v.includes(tt))) { fails++; console.error('FAIL en title of ' + sl + ' not quoted as in pages.config.js: ' + tt); }
+  }
+  // ch3.p4 caveat: under MOESI the producer's line ends in O (dirty, never evicted), under MESI memory is current
+  const pcMo = M.presetRun('prodcons', 'moesi').sys, pcMe = M.presetRun('prodcons', 'mesi').sys;
+  check('ch3: MOESI prodcons ends with the O line dirty', pcMo.st[0][0] + (pcMo.mem[0] !== pcMo.latest[0]), 'Otrue');
+  check('ch3: MESI prodcons ends with memory current', pcMe.mem[0] === pcMe.latest[0], true);
+  check('ch3: MSI memory reads = 1 writer fill + 2 readers × 4 rounds', M.presetRun('prodcons', 'msi').led.memRd, 1 + 2 * M.SIM.rounds);
+  check('ch3: MESI memory reads = the writer fill only', M.presetRun('prodcons', 'mesi').led.memRd, 1);
+  // ch7 readout: two million additions in total; shared or private, n = 2 gives the prose values
+  check('ch7: private, 2 threads, 2 M additions = ppMs', f(M.pingPong(2, 'intra', 'private').timeFor(2e6 / 2) / 1e6, 0), f(P.ppMs[0], 0));
+  check('ch7: shared, 8 threads, 2 M additions = 62 ms', f(M.pingPong(8, 'intra', 'shared', 0).timeFor(2e6) / 1e6, 0), '62');
+  // ch2.p3: at step 3 without a protocol both readouts read broken
+  const iv3 = M.invariants(M.stale('none', 3).sys); check('ch2.p3: step 3, no protocol: both rules broken', [iv3.swmr, iv3.value].join(), 'false,false');
+  // Venice: the CCX split is not claimed
+  check('Venice: no CCX claim in prose', /簇/.test(Z['ch11.d2']) || /cluster/.test(EN['ch11.d2']), false);
 }
 
 if (fails) { console.error(`\n${fails} of ${n} checks failed`); process.exit(1); }

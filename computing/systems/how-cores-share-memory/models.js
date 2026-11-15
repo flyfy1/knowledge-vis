@@ -31,7 +31,7 @@
   const FRONTIER = {
     asOf: '2026-11',
     epyc9965: { cores: 192, launch: '2024-10-10' },                                   // AMD press release 2024-10-10
-    venice: { cores: 256, ccds: 8, ccdCores: 32, ccxCores: 16, l3: 1024, reported: '2026-07-23', sp7: 'Q4 2026' }, // Club386, StorageReview 2026-07-23
+    venice: { cores: 256, core: 'Zen 6c', ccds: 8, ccdCores: 32, l3: 1024, announced: '2026-07-22', ga: '2026-11-10' }, // hwbusters 2026-07-22 (launch at Advancing AI 2026); StorageReview SP7 review 2026-11-10 (EPYC 9996: 256 Zen 6c cores, 8 CCDs × 32, 1024 MB L3, GA 2026-11-10). How a 32-core CCD is split into L3-sharing complexes: sources disagree, not claimed
     xeon6p: { cores: 288, l3: 576, sockets: 2, reported: '2026-06-01' },              // The Register 2026-06-01 (Xeon 6+ "Clearwater Forest")
     appleTso: { date: '2024-04-11' },                                                 // Hector Martin, "[PATCH 0/4] arm64: Support the TSO memory model"
     tardis: { year: 2015, cores: 256, arxiv: '1501.04504' },
@@ -442,7 +442,7 @@
       tas4: [lk.tas[4], 0], tas16: [lk.tas[16], 0], tas64: [lk.tas[64], 0], ttas4: [lk.ttas[4], 1], ttas16: [lk.ttas[16], 1], ttas64: [lk.ttas[64], 0], tk4: [lk.ticket[4], 1], tk16: [lk.ticket[16], 1], tk64: [lk.ticket[64], 0],
       mcs4: [lk.mcs[4], 1], mcs16: [lk.mcs[16], 1], mcs64: [lk.mcs[64], 1], lockH: [LOCK.H, 0], tasH2: [tasH2, 0],
       // frontier
-      e9965: [FRONTIER.epyc9965.cores, 0], vCores: [V.cores, 0], vCcd: [V.ccds, 0], vCcdC: [V.ccdCores, 0], vCcx: [V.ccxCores, 0], vL3: [V.l3, 0], x6Cores: [X6.cores, 0], x6L3: [X6.l3, 0], x6S: [X6.sockets, 0], x6Dom: [X6.cores * X6.sockets, 0],
+      e9965: [FRONTIER.epyc9965.cores, 0], vCores: [V.cores, 0], vCcd: [V.ccds, 0], vCcdC: [V.ccdCores, 0], vL3: [V.l3, 0], x6Cores: [X6.cores, 0], x6L3: [X6.l3, 0], x6S: [X6.sockets, 0], x6Dom: [X6.cores * X6.sockets, 0],
       tdCores: [FRONTIER.tardis.cores, 0], armRuns: [FRONTIER.armMp.runs, 0], armSeen: [FRONTIER.armMp.seen, 0], vClaim: [FRONTIER.claims.venicePerf, 0], x6Claim: [FRONTIER.claims.xeon6pPerThread, 0]
     };
     return PROSE_CACHE;

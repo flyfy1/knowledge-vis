@@ -1,11 +1,10 @@
 # BRIEF — 多个核心怎么共用一块内存 (How Cores Share Memory)
 
 Built-By: Claude Code (claude-opus-5-5)
-Verified-By: self-check by builder (node model test, browser test zh at 1280/390/320 and reduced motion, canvas sweep, screenshots of every model and diagram at three widths); independent review pending
+Verified-By: self-check by builder (node model test, browser test zh at 1280/390/320 and reduced motion, canvas sweep, screenshots of every model and diagram at three widths); Claude Code (claude-opus-5-5), separate session, independent review 2026-11-15: zh and en read in full, models re-derived, frontier facts re-checked, diagrams viewed in both languages (see Review)
 Category: computing 计算机 / subtopic systems 系统 · Stage: university
 Series: computer architecture series A5 (`specs/essay-briefs/TASK-arch-series.md`)
-Format: long interactive essay. Chinese written in full; `copy.en.js` is a same-keys stub (`enStub = true`), so
-the page falls back to Chinese until it is translated.
+Format: long interactive essay, zh and en (`copy.en.js` translated; no `enStub`).
 Files: index.html, copy.zh.js, copy.en.js, models.js, app.js, REGISTRY.json, tests/models.cjs, tests/browser.cjs
 
 ## The one question
@@ -109,11 +108,18 @@ mcs (MCS queue: tail pointer, nodes, release). Twelve in all.
 - AMD press release, 5th Gen EPYC (2024-10-10): https://ir.amd.com/news-events/press-releases/detail/1219/ —
   EPYC 9965, 192 Zen 5c cores.
 - Club386, "AMD 256-core Zen 6 EPYC Venice": https://www.club386.com/amd-256-core-zen-6-epyc-venice/ and
-  StorageReview's report (2026-07-23) — 256 cores, 8 CCDs × 32, 16-core CCX, up to 1024 MB L3, SP7 in Q4 2026, "+70 %".
+  StorageReview's report (2026-07-23) — 256 cores, 8 CCDs × 32, up to 1024 MB L3, "+70 %". (Builder's 16-core CCX
+  claim removed by the reviewer, see Review.)
+- Reviewer, opened 2026-11-15: hwbusters, "AMD launches Zen 6 with EPYC Venice" (2026-07-22):
+  https://hwbusters.com/news/amd-launches-zen-6-with-epyc-venice-256-cores-on-tsmc-2nm/ — launch at Advancing AI
+  2026, 256 cores, Zen 6c CCD 32 cores / 128 MB L3, "more than 70%" (vendor). StorageReview, "AMD EPYC Venice SP7
+  review" (2026-11-10): https://www.storagereview.com/review/amd-epyc-venice-sp7-review — EPYC 9996, 256 Zen 6c
+  cores, 1,024 MB L3, SP7 "generally available on November 10"; "a Zen 6c CCD has 32 cores sharing 128MB of L3".
 - The Register (2026-06-01): https://www.theregister.com/a/5248150 — Xeon 6+ "Clearwater Forest", 288 E-cores,
   576 MB L3, two sockets.
 - Hector Martin, "[PATCH 0/4] arm64: Support the TSO memory model" (2024-04-11):
-  https://lists.openwall.net/linux-kernel/2024/04/11/40 — Apple's per-thread TSO bit, used by Rosetta 2.
+  https://lists.openwall.net/linux-kernel/2024/04/11/40 — Apple's per-thread TSO bit, exposed through PR_SET_MEM_MODEL for x86 emulators (the patch names FEX-Emu; Rosetta 2's use of the bit is
+  common knowledge, not stated in this source).
 - X. Yu, S. Devadas, "Tardis: Time Traveling Coherence Algorithm for Distributed Shared Memory", PACT 2015:
   https://arxiv.org/abs/1501.04504 — O(log N) bits per line, 256-core simulation.
 - cppreference, std::memory_order: https://en.cppreference.com/w/cpp/atomic/memory_order.
@@ -122,8 +128,11 @@ mcs (MCS queue: tail pointer, nodes, release). Twelve in all.
 
 - Arm ARM (DDI 0487) memory-model chapter B2: not opened (not fetchable); the Arm white paper and Learning Path
   were used instead. The weak model is "Armv8 / RVWMO style" as described in Chapters, not a full Arm model.
-- Intel SDM statement that a locked RMW on cacheable memory locks the cache line, not the bus: from memory and the
-  Primer's discussion; the SDM itself was not opened. The prose says "一般是".
+- Intel SDM cache locking: now checked by the reviewer against an SDM Vol. 3A mirror, §8.1.4 (older numbering):
+  "For the P6 and more recent processor families, if the area of memory being locked ... is cached ... as
+  write-back memory and is completely contained in a cache line, the processor may not assert the LOCK# signal ...
+  This operation is called 'cache locking.'" (https://xem.github.io/minix86/manual/intel-x86-and-64-manual-vol3/o_fe12b1e2a880e0ce-261.html).
+  The prose keeps "一般是" / "normally" because the SDM says "may". Current Intel PDF (chapter renumbered) not opened.
 - AnandTech core-to-core latency tables: the site has closed; not used.
 - 9950X cross-CCD latency later improved by firmware: secondary reports only; the prose says "刚上市时".
 - Venice "+70 %" (StorageReview) and Xeon 6+ "+30 % per thread vs 192-core EPYC 9965" (Tom's Hardware headline seen
@@ -133,7 +142,7 @@ mcs (MCS queue: tail pointer, nodes, release). Twelve in all.
 
 ## Facts that will go stale
 
-Venice core counts and L3 (reported, not shipping until Q4 2026), Xeon 6+ figures, the largest coherent domain,
+Venice core counts and L3 (SP7 generally available 2026-11-10), Xeon 6+ figures, the largest coherent domain,
 Apple's TSO mode support in Linux. FRONTIER.asOf = 2026-11.
 
 ## Checked / not checked
@@ -148,7 +157,7 @@ against every sibling REGISTRY.json, atlas lessons and aliases.json; link whitel
 at 1280 / 390 / 320 (overflow, clipping, 48 px targets, twelve diagrams: role, aria, labels inside, no overlap,
 ≥ 11 px), every model driven, reduced motion; canvas text sweep. Screenshots viewed: every diagram at 1280, 390
 and 320; every model at 1280, 390 and 320. Reduced motion (390) checked by the browser test; its full-page screenshot is too tall to inspect by eye.
-Not checked: English (stub); real hardware behaviour beyond the cited measurements; dependency-ordered litmus
+Not checked (builder): English (stub at the time; now reviewed, see Review); real hardware behaviour beyond the cited measurements; dependency-ordered litmus
 tests (none modelled); non-multi-copy-atomic behaviour (Armv7, POWER).
 
 ## For the translator
@@ -168,3 +177,60 @@ parameter". 「石蕊测试」 = "litmus test"; 「排号锁」 = "ticket lock";
 - A4 (how-a-cpu-guesses-ahead) and B4 (CXL / NVLink) are named in plain text in ch11.p2; link them when live.
   A2 names this page in plain text (ch9.p1, ch12.links): link it when this page goes live.
 - No provenance label, pages.config, atlas or search edits made.
+
+## Review
+
+Reviewer: Claude Code (claude-opus-5-5), separate session; did not build the page. Date: 2026-11-15.
+Scope: zh and en read in full (every key of copy.zh.js and copy.en.js), every model driven in the browser, all 12
+diagrams viewed at 1280 / 390 / 320 in both languages, models re-derived with an independent script.
+
+Checks (independent Python, own engine and RNG): MSI / MESI / MOESI preset counts — private 48 / 32 / 32 tx (16
+BusUpgr), prodcons 20 / 20 / 16 tx with 4 / 4 / 0 writebacks, migratory 47 / 46 / 31 tx with 15 / 15 / 0 writebacks,
+read-only 4 — all as the page. MOESI removes exactly the M→S flush writebacks on a remote read; eviction writebacks
+are unchanged (private: 16 under every protocol), and in "one writer, three readers" the O line ends dirty (one
+writeback deferred, not removed). Directory storage (N + 2)/512: 12.89 % at 64, 50.4 % at 256, 200.4 % at 1024;
+coarse 25.4 %, pointers 8.4 %. Lost update brute force k ≤ 4: 6 / 70 / 924 / 12,870 orders, min 1 / 2 / 2 / 2;
+the correct orders are exactly C(2k, k), so 20 / 924 = 2.16 % at k = 3 and 252 / 184,756 = 0.14 % at k = 5. Race:
+other seeds give 34.9–35.0 % at b = 4 and 31.8–34.2 % at b = 1024 (page seed 33–35 %). CAS: 2.84, 5.48, 10.5 steps
+and 81 % failures at 32 threads (page 2.86, 5.5, 10.6). Contended line 1/(T + 1 ns): 32.3, 24.4, 9.9, 5.0 M/s;
+62 / 82 / 402 ms. Locks: TAS = (n − 1)·H + 1 (1261 at 64, 599 at H = 40, 16 cores). Litmus: all eight test/sync
+cases match the published SC / x86-TSO / Armv8 results; Intel SDM examples 8-1 (MP), 8-2 (LB), 8-3 (SB) opened in
+an SDM mirror (https://xem.github.io/minix86/manual/intel-x86-and-64-manual-vol3/o_fe12b1e2a880e0ce-265.html),
+8-9 (SB with xchg) confirmed by search. Spot-checked sources: Chips and Cheese Bergamo (30–40 / 100–120 / ~200 /
+just over 212 ns, 2024-06-22), Arm Learning Path MP (458 of 1,000,000), Venice (hwbusters + StorageReview), Xeon
+6+ (288 E-cores, 576 MB L3, 2S, Intel's +30 % per-thread claim: Tom's Hardware headline and other reports), Tardis
+(arXiv abstract: O(log N), 16 / 64 / 256 cores, "similar performance to directory protocols"), Apple TSO patch
+(openwall, 2024-04-11). Links resolve to existing anchors; sibling titles match pages.config.js.
+
+Changes:
+- ch11.d2 Venice: the 256-core part is Zen 6c (was "Zen 6"); the "two 16-core clusters per CCD" claim removed
+  (StorageReview: 32 cores share 128 MB; sources disagree); dates now launch 2026-07-22 and SP7 GA 2026-11-10
+  (was "Q4 2026"). FRONTIER.venice updated (ccxCores removed); test pins the new fields.
+- ch3.p4: MOESI's 0 writebacks in "one writer, three readers" now says the O line ends dirty and owes one writeback;
+  MSI's 9 memory reads no longer called "readers" (1 is the writer's fill; MESI's 1 is that fill).
+- ch2.p3: at step 3 without a protocol both readouts already say broken (the model says so); prose said step 4.
+- ch5.p5: "两头正好抵消 / cancel" → "大致抵消 / roughly cancel", with the seed caveat.
+- ch7.p2: cross-chiplet link now to B2 #ch7 (chiplets), cross-socket to #ch4.
+- ch7 readout "time for two threads to add a million each" was wrong for n ≠ 2 (it showed 2 M additions for any n,
+  and private mode showed 1 M per thread): now "time for two million additions in total", private split over n.
+- ch8.p5: the Intel examples are named (8-1 MP, 8-2 LB, 8-3 SB, 8-9 SB + xchg) and marked as the old Chapter 8
+  numbering; ch9.limit: Arm is other-multi-copy atomic (own-store forwarding), which the weak model omits.
+- ch11.d5: the Linux patch is for x86 emulators such as FEX-Emu (the source does not mention Rosetta).
+- English: ch10 title ("does waiting longer…" → "do more waiters…"); "Odd (r1, r2)" → "Non-SC (r1, r2)" and
+  "odd outcome" → "non-SC outcome" everywhere, glossed in ch8.p4 and the litmus caption (zh gloss of 怪结果 too);
+  epochs caption no longer glosses a label that does not exist ("(R)"; R/W is glossed); "is then evicted" (the core)
+  → "loses the line"; ch12.sum broken sentence; ch1.read.last; ch5.say.k1; diagram labels shortened where they
+  touched box edges (atomic "Read, add, write; held in M", sbuf "Store buffer (FIFO)" glossed in caption, race
+  "Read 5"); "Core 0" kept on one line in the ch3 grid.
+- Diagrams: MESI legend (1280) no longer runs into the next line sample (two rows); MESI circles larger at ≤ 600 px;
+  snooping diagram at ≤ 600 px puts four cores in one row so no snoop line crosses another core's box.
+- tests/models.cjs: English dates and facts, Intel example mapping, no CJK in copy.en.js, sibling English titles,
+  MOESI deferred writeback, MSI/MESI memory reads, ch7 readout, ch2 step 3, no CCX claim.
+
+Unverified: Arm ARM B2 and the RISC-V RVWMO chapter not opened (Arm Learning Path and white paper only); Primer 2nd
+ed., Sewell et al. text and Mellor-Crummey & Scott not opened by the reviewer (PDFs not readable in this
+environment; the SDM examples they cite were checked directly); current Intel SDM chapter number for the examples;
+Club386 / The Register pages not reopened; Lamport 1979 original.
+
+Test results after the review: tests/models.cjs PASS 11,605 checks; tests/browser.cjs PASS three runs in a row (zh + en at
+1280 / 390 / 320, reduced motion); canvas-text-overlap --sweep PASS, 582 canvas states, zh/en, scroll-aware mode.

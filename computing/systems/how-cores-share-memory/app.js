@@ -218,9 +218,9 @@ DG.epochs = (L) => {
 };
 // ch3: snooping bus
 DG.snoop = (L) => {
-  const wide = L === 'w', W = wide ? 720 : 340, H = wide ? 300 : 430;
+  const wide = L === 'w', W = wide ? 720 : 340, H = wide ? 300 : 312;
   return { W, H, draw(g) {
-    const pos = wide ? [0, 1, 2, 3].map(i => [20 + i * 175, 14]) : [[10, 14], [180, 14], [10, 124], [180, 124]], cw = wide ? 155 : 150, busY = wide ? 160 : 252;
+    const pos = [0, 1, 2, 3].map(i => wide ? [20 + i * 175, 14] : [8 + i * 82, 14]), cw = wide ? 155 : 76, busY = wide ? 160 : 156;
     pos.forEach(([x, y], i) => {
       const me = i === 2, col = me ? C.gold : C.cyan;
       lbox(g, x, y, cw, 32, col, 'dg.snoop.core', { vars: { c: i }, c: me ? 'g' : 'c' });
@@ -231,18 +231,18 @@ DG.snoop = (L) => {
     g.line(10, busY, W - 10, busY, C.violet, { sw: 4 });
     g.text(W / 2, busY + 18, 'dg.snoop.bus', { a: 'middle', c: 'v', w: W - 30, va: 'top' });
     const reqX = pos[2][0] + cw / 2;
-    g.text(reqX + 8, wide ? 120 : 214, 'dg.snoop.req', { c: 'g', mono: 1, fs: 13 });
-    g.text(10, wide ? 206 : 296, 'dg.snoop.listen', { c: 'r', w: wide ? 420 : 250 }); g.text(10, wide ? 228 : 318, 'dg.snoop.listen2', { c: 'r', w: wide ? 420 : 250 });
-    const mx = wide ? 480 : 10, my = wide ? 236 : 360;
+    g.text(reqX + 8, wide ? 120 : 118, 'dg.snoop.req', { c: 'g', mono: 1, fs: 13 });
+    g.text(10, wide ? 206 : 202, 'dg.snoop.listen', { c: 'r', w: wide ? 420 : 250 }); g.text(10, wide ? 228 : 224, 'dg.snoop.listen2', { c: 'r', w: wide ? 420 : 250 });
+    const mx = wide ? 480 : 10, my = wide ? 236 : 260;
     lbox(g, mx, my, wide ? 220 : 320, 40, C.mute, 'dg.snoop.mem', { c: 'm' });
     g.line(wide ? 590 : 316, my - 2, wide ? 590 : 316, busY + 4, C.green, { arrow: 1 }); g.text(wide ? 600 : 306, my - 16, 'dg.snoop.data', { c: 'n', a: wide ? 'start' : 'end' });
   } };
 };
 // ch3: the full MESI state machine. Solid: own reads/writes; dashed: snooped bus requests; thin grey: evictions.
 DG.mesi = (L) => {
-  const wide = L === 'w', W = wide ? 720 : 340, H = wide ? 600 : 880;
+  const wide = L === 'w', W = wide ? 720 : 340, H = wide ? 622 : 880;
   return { W, H, draw(g) {
-    const P = wide ? { E: [150, 80], M: [570, 80], I: [150, 320], S: [570, 320] } : { E: [70, 70], M: [270, 70], I: [70, 300], S: [270, 300] }, r = wide ? 40 : 34;
+    const P = wide ? { E: [150, 80], M: [570, 80], I: [150, 320], S: [570, 320] } : { E: [70, 70], M: [270, 70], I: [70, 300], S: [270, 300] }, r = wide ? 40 : 38;
     const style = { p: {}, s: { dash: '6 5' }, e: { sw: 1.2 } };
     // [from, to, badge, kind, perpendicular offset, badge position along the line]
     const E = [['E', 'M', 4, 'p', 0, 0.5], ['I', 'E', 1, 'p', -14, 0.3], ['E', 'I', 9, 's', 0, 0.5], ['E', 'I', 12, 'e', -14, 0.24],
@@ -258,9 +258,9 @@ DG.mesi = (L) => {
     badges.forEach(([x, y, n, col]) => g.badge(x, y, n, col));
     for (const k of ['M', 'E', 'S', 'I']) { const [x, y] = P[k]; g.circle(x, y, r, ST_COL[k]); g.text(x, y - 8, { raw: k }, { a: 'middle', mono: 1, fs: 18, weight: 700, c: { M: 'r', E: 'g', S: 'c', I: 'm' }[k] }); g.text(x, y + 13, 'dg.mesi.' + k, { a: 'middle', fs: 13.5, c: 'm' }); }
     const ly = wide ? 392 : 372, leg = [['dg.mesi.legP', {}, C.ink], ['dg.mesi.legS', { dash: '6 5' }, C.ink], ['dg.mesi.legE', { sw: 1.2 }, C.mute]];
-    leg.forEach(([k, o, col], i) => { const x = wide ? 20 + i * 235 : 10, y = wide ? ly : ly + i * 26; g.line(x, y, x + 36, y, col, o); g.text(x + 44, y, k, { c: 'm', fs: 13 }); });
+    leg.forEach(([k, o, col], i) => { const x = wide ? 20 + (i % 2) * 350 : 10, y = wide ? ly + Math.floor(i / 2) * 24 : ly + i * 26; g.line(x, y, x + 36, y, col, o); g.text(x + 44, y, k, { c: 'm', fs: 13 }); });
     for (let n = 1; n <= 12; n++) {
-      const x = wide ? 20 + ((n - 1) % 2) * 350 : 10, y = wide ? 430 + Math.floor((n - 1) / 2) * 30 : 462 + (n - 1) * 34;
+      const x = wide ? 20 + ((n - 1) % 2) * 350 : 10, y = wide ? 452 + Math.floor((n - 1) / 2) * 30 : 462 + (n - 1) * 34;
       g.badge(x + 10, y, n, C.dimfill); g.text(x + 28, y, 'dg.mesi.e' + n, { w: wide ? 318 : 296 });
     }
   } };
@@ -655,7 +655,7 @@ const lg = x => Math.log10(x);
   } });
   function text() {
     const [n, place, mode] = opts(), r = M.pingPong(n, place, mode, 0), z = M.say.ping(n, place, mode);
-    const total = r.totalRate * 1000, per = r.perThread * 1000, time = mode === 'private' ? r.timeFor(1e6) : r.timeFor(2e6);
+    const total = r.totalRate * 1000, per = r.perThread * 1000, time = mode === 'private' ? r.timeFor(2e6 / n) : r.timeFor(2e6);   // two million additions in total, split over n threads
     put('#ppNo', fmt(n, 0)); put('#ppPer', ns(r.perInc, r.perInc < 10 ? 1 : 0)); put('#ppTot', mps(total)); put('#ppTh', mps(per));
     put('#ppTime', n >= 2 ? t('u.ms', { v: fmt(time / 1e6, time < 1e7 ? 1 : 0) }) : t('u.none'));
     putHTML('#ppSay', t(z.key, { n: fmt(n, 0), place: t('ch7.pl.' + place), per: ns(r.perInc, 1), total: mps(total), thread: mps(per) }));
