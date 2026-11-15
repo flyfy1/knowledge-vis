@@ -211,3 +211,15 @@ Files: index.html, copy.zh.js, copy.en.js, models.js, app.js, REGISTRY.json, tes
 - 990 PRO and Barracuda figures (from the sibling BRIEF), the 70 ns DRAM figure, and the 15–38% of Bhargava et al.
   were not reopened. The Linux command lines in ch1, ch6 and ch13 were not run on Linux.
 - The minor-fault measurement (0.53 µs) was not repeated.
+
+## Registrar (2026-11-15)
+
+- One-click additions: #ch1 虚拟内存, 为什么需要虚拟内存, virtual memory (the page tag otherwise beat the chapter); #ch2 页表, page
+  table (#ch3's "page table walk" otherwise won); #ch10 上下文切换 TLB; #ch11 虚拟化 页表. Belady 异常 / Belady's anomaly stay on
+  #ch8 and Belady 最优替换 / LRU on how-cpu-caches-work #ch4 (different concepts; both probed). IOMMU words stay on
+  how-thunderbolt-works #ch8, NUMA on how-a-computer-is-wired #ch4, CXL 内存池 on why-compute-waits-for-memory.
+- how-cpu-caches-work now links here (ch7.p2 and ch10.limit to #ch4, ch7.limit and ch12.links to the page top).
+  how-thunderbolt-works #ch8 does not link back: no sentence there mentions page tables.
+- Links to how-cpu-caches-work #ch4 / #ch7 / #ch10, why-compute-waits-for-memory #ch2, how-pcie-works #ch7,
+  how-thunderbolt-works #ch8 and what-a-drive-is-made-of verified. A4 stays plain text. Scripts at `?v=20261115` (first
+  deployment).

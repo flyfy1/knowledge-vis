@@ -48,14 +48,22 @@
           "x86 和 Arm 有什么区别",
           "x86 Arm RISC-V 区别",
           "微架构",
-          "架构和微架构的区别"
+          "架构和微架构的区别",
+          "指令集",
+          "ISA",
+          "指令集是什么",
+          "CPU 怎么执行程序"
         ],
         "en": [
           "what is an instruction set architecture",
           "x86 vs ARM vs RISC-V",
           "microarchitecture",
           "architecture vs microarchitecture",
-          "what does ISA mean"
+          "what does ISA mean",
+          "instruction set",
+          "ISA",
+          "what is an ISA",
+          "how a CPU runs a program"
         ]
       },
       "anchor": "#ch1",
@@ -84,7 +92,9 @@
           "汇编怎么变成二进制",
           "立即数编码",
           "R 型 I 型 S 型 B 型",
-          "RISC-V 寄存器"
+          "RISC-V 寄存器",
+          "汇编怎么变成机器码",
+          "RISC-V 是什么"
         ],
         "en": [
           "RISC-V instruction formats",
@@ -94,7 +104,8 @@
           "immediate encoding",
           "R-type I-type instruction",
           "RISC-V registers",
-          "RISC-V assembler"
+          "RISC-V assembler",
+          "what is RISC-V"
         ]
       },
       "anchor": "#ch2",
@@ -120,14 +131,16 @@
           "一行代码变成几条指令",
           "循环展开",
           "手工编译",
-          "汇编语言入门"
+          "汇编语言入门",
+          "机器码"
         ],
         "en": [
           "C to assembly",
           "how many instructions does a loop take",
           "loop unrolling",
           "hand-compiling C",
-          "assembly language basics"
+          "assembly language basics",
+          "machine code"
         ]
       },
       "anchor": "#ch3",
@@ -219,7 +232,10 @@
           "流水线寄存器",
           "经典 RISC 流水线",
           "流水线为什么能加速",
-          "冒险是什么"
+          "冒险是什么",
+          "流水线",
+          "指令流水线",
+          "CPU 流水线"
         ],
         "en": [
           "five-stage pipeline",
@@ -227,7 +243,9 @@
           "pipeline registers",
           "classic RISC pipeline",
           "pipeline hazards",
-          "why pipelining speeds up a CPU"
+          "why pipelining speeds up a CPU",
+          "pipelining",
+          "CPU pipeline"
         ]
       },
       "anchor": "#ch6",
@@ -289,7 +307,8 @@
           "流水线冲刷",
           "猜不跳",
           "静态分支预测",
-          "延迟分支"
+          "延迟分支",
+          "分支为什么慢"
         ],
         "en": [
           "control hazard",
@@ -297,7 +316,8 @@
           "pipeline flush",
           "predict not taken",
           "static branch prediction",
-          "delayed branch"
+          "delayed branch",
+          "why are branches slow"
         ]
       },
       "anchor": "#ch8",
@@ -356,7 +376,8 @@
           "精简指令集 复杂指令集",
           "微操作",
           "x86 为什么是 CISC",
-          "x86 指令长度"
+          "x86 指令长度",
+          "µop"
         ],
         "en": [
           "CISC vs RISC",
@@ -364,7 +385,8 @@
           "uops",
           "x86 instruction decoding",
           "variable-length instructions",
-          "is x86 RISC inside"
+          "is x86 RISC inside",
+          "µops"
         ]
       },
       "anchor": "#ch10",

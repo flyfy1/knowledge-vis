@@ -390,22 +390,26 @@ const f = (x, d) => x.toFixed(d);
   const owned = new Map();
   for (const a of ['缓存命中率', 'cache hierarchy', '按行遍历 按列遍历', '空间局部性', 'spatial locality', 'row major vs column major', '缓存', 'cache', 'AMAT', '缓存颠簸', 'cache thrashing',
     '时间局部性', 'temporal locality', '流水线', 'pipelining', '指令集', 'ISA']) owned.set(norm(a), 'TASK');
-  for (const sib of ['why-compute-waits-for-memory', 'switches-that-compute', 'how-pcie-works', 'how-a-computer-is-wired', 'how-thunderbolt-works']) {
+  for (const sib of ['why-compute-waits-for-memory', 'switches-that-compute', 'how-a-cpu-runs-a-program', 'how-virtual-memory-works', 'how-pcie-works', 'how-a-computer-is-wired', 'how-thunderbolt-works']) {
     const p = path.join(DIR, '..', sib, 'REGISTRY.json');
     if (fs.existsSync(p)) for (const c of JSON.parse(fs.readFileSync(p, 'utf8')).concepts) for (const a of [...c.aliases.zh, ...c.aliases.en]) if (!(sib === 'why-compute-waits-for-memory' && MOVED.has(norm(a)))) owned.set(norm(a), sib);
   }
   for (const c of R.concepts) for (const a of [...c.aliases.zh, ...c.aliases.en]) { n++; if (owned.has(norm(a))) { fails++; console.error(`FAIL alias owned by ${owned.get(norm(a))}: ${a}`); } }
-  // live sibling links must point at chapters that exist; A3 and A5 are named in plain text, not linked
+  // live sibling links must point at chapters that exist; A3 is linked since it went live (2026-11-15: ch7.p2 and ch10.limit
+  // #ch4, ch7.limit and ch12.links the page top); A5 is still named in plain text, not linked
   const all = Object.values(Z).join('');
-  for (const sib of ['why-compute-waits-for-memory', 'switches-that-compute']) {
+  for (const sib of ['why-compute-waits-for-memory', 'switches-that-compute', 'how-virtual-memory-works']) {
     const sh = fs.readFileSync(path.join(DIR, '..', sib, 'index.html'), 'utf8');
     for (const m of all.matchAll(new RegExp(sib + '/(#ch\\d+)?', 'g'))) if (m[1]) check(`${sib} anchor ${m[1]}`, sh.includes(`id="${m[1].slice(1)}"`), true);
   }
   for (const k of ['ch1.p1', 'ch1.p3', 'ch2.p1', 'ch10.p4', 'ch12.links']) { n++; if (!/href=/.test(Z[k])) { fails++; console.error('FAIL expected a sibling link in ' + k); } }
-  check('no links to the unwritten A3 / A5', /how-virtual-memory-works|how-cores-share-memory/.test(all), false);
-  says('ch7.p2', '后续一篇讲虚拟内存的文章'); says('ch9.p1', '后续一篇讲多核共享内存的文章');
+  check('no links to the unwritten A5', /how-cores-share-memory/.test(all), false);
+  says('ch9.p1', '后续一篇讲多核共享内存的文章');
+  for (const [k, h] of [['ch7.p2', '../how-virtual-memory-works/#ch4'], ['ch7.limit', '../how-virtual-memory-works/'], ['ch10.limit', '../how-virtual-memory-works/#ch4'], ['ch12.links', '../how-virtual-memory-works/']]) check(`${k} links A3 (${h})`, Z[k].includes(`href='${h}'`), true);
+  check('no plain-text "later essay on virtual memory" left', /后续一篇讲虚拟内存/.test(all), false);
+  { const vz = { window: {} }; vm.runInNewContext(fs.readFileSync(path.join(DIR, '..', 'how-virtual-memory-works', 'copy.zh.js'), 'utf8'), vz); check('A3 title quoted as in its copy', all.includes('《' + vz.window.ESSAY_COPY.zh['hero.title'] + '》'), true); }
   const hrefs = [...all.matchAll(/href='([^']+)'/g)].map(m => m[1]);
-  for (const h of hrefs) { n++; if (!/^\.\.\/(why-compute-waits-for-memory|switches-that-compute)\/(#ch\d+)?$/.test(h)) { fails++; console.error('FAIL unexpected link ' + h); } }
+  for (const h of hrefs) { n++; if (!/^\.\.\/(why-compute-waits-for-memory|switches-that-compute|how-virtual-memory-works)\/(#ch\d+)?$/.test(h)) { fails++; console.error('FAIL unexpected link ' + h); } }
 
   const ectx = { window: {} }; vm.runInNewContext(fs.readFileSync(path.join(DIR, 'copy.en.js'), 'utf8'), ectx);
   const EN = ectx.window.ESSAY_COPY.en, stub = ectx.window.ESSAY_COPY.enStub === true, ph = s => [...s.matchAll(/\{(\w+)\}/g)].map(m => m[1]).sort().join(',');

@@ -49,7 +49,9 @@
           "虚拟地址和物理地址",
           "进程地址空间",
           "外部碎片",
-          "基址和界限"
+          "基址和界限",
+          "虚拟内存",
+          "为什么需要虚拟内存"
         ],
         "en": [
           "what is virtual memory",
@@ -57,7 +59,8 @@
           "virtual vs physical address",
           "process address space",
           "external fragmentation",
-          "base and bound"
+          "base and bound",
+          "virtual memory"
         ]
       }
     },
@@ -79,7 +82,8 @@
           "多级页表",
           "为什么页表要分级",
           "页内偏移",
-          "4KB 页"
+          "4KB 页",
+          "页表"
         ],
         "en": [
           "page and page frame",
@@ -87,7 +91,8 @@
           "multi-level page table",
           "why page tables are hierarchical",
           "page offset",
-          "4 KiB page"
+          "4 KiB page",
+          "page table"
         ]
       }
     },
@@ -324,7 +329,8 @@
           "页表隔离",
           "Meltdown 补丁",
           "全局页",
-          "TLB 击落"
+          "TLB 击落",
+          "上下文切换 TLB"
         ],
         "en": [
           "PCID",
@@ -356,7 +362,8 @@
           "EPT 扩展页表",
           "NPT",
           "虚拟机内存翻译",
-          "影子页表"
+          "影子页表",
+          "虚拟化 页表"
         ],
         "en": [
           "nested paging",

@@ -195,3 +195,18 @@ Unverified / left:
 - Design note, not changed: per-element times are total/n at n=1,000, so the speed-ups (2.7, 2.2, 6.0, 6.8) are exact model ratios
   while the rounded readouts (1.80/0.80/0.70) suggest 2.25 and 6.86.
 - Registrar: 指令集 / ISA / 机器码 / 流水线 still on switches-that-compute; not moved here. Script cache keys not bumped.
+
+## Registrar (2026-11-15)
+
+- Alias move (registrar decision on the TASK-arch-series.md notes): 指令集 / instruction set / ISA, CPU 怎么执行程序 / how a CPU
+  runs a program (#ch1), 机器码 / machine code (#ch3) and 流水线 / pipelining (#ch6) left switches-that-compute #ch9 / #ch11,
+  which keeps 程序计数器, 取指 译码 执行 / fetch decode execute, 冯·诺依曼结构 and 计算机怎么执行指令. 指令流水线 and CPU 流水线 left
+  the switches #ch11 node's extra aliases in atlas/graph/aliases.json for #ch6; "instruction pipeline" stays on
+  why-compute-waits-for-memory #ch1, as do 流水线气泡, forwarding, load-use hazard, pipeline stall and CPI. 关键路径 / critical
+  path stays on switches #ch4. tests/models.cjs checks the moved words are here and no longer reserves them.
+- One-click additions: #ch1 指令集是什么, what is an ISA; #ch2 RISC-V 是什么, what is RISC-V, 汇编怎么变成机器码; #ch6 指令流水线,
+  CPU 流水线, CPU pipeline; #ch8 分支为什么慢, why are branches slow; #ch10 µop, µops. "How a CPU runs a program" opens the page
+  top (its exact title); 取指 译码 执行 lands on why-compute-waits-for-memory #ch1, which shares that alias with switches #ch9
+  (older collision, not changed here).
+- Links into switches-that-compute #ch7 / #ch9, why-compute-waits-for-memory #ch1 and how-cpu-caches-work verified (anchors
+  and quoted titles). A4 stays plain text. Scripts at `?v=20261115` (first deployment).

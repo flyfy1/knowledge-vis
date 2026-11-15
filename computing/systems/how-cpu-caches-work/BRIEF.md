@@ -235,3 +235,13 @@ Unverified
 - switches-that-compute #ch11 does not link here: its only mention (ch11.scale.cache) is a list item, and that page's
   browser test requires every link to be a 48 × 48 target, which an inline word is not.
 - Scripts stay at `?v=20261115` (never deployed before).
+
+## Registrar of A1 and A3 (2026-11-15)
+
+- A3 (`how-virtual-memory-works`) is live, so the four plain-text mentions of "a later essay on virtual memory" are links
+  now, zh and en: ch7.p2 and ch10.limit to A3 #ch4 (the TLB; ch10.limit names chapters 4 to 6), ch7.limit and ch12.links to
+  its page top. ch9.p1, ch9.limit and ch12.links still name A5 in plain text. tests/models.cjs now requires those four links
+  (it used to forbid them), checks A3's anchors and quoted title, allows only links to the memory essay,
+  switches-that-compute and A3, and also checks this page's aliases against A1 and A3.
+- No link to A1: no chapter of this page mentions pipelines or instruction execution.
+- Scripts move to `?v=20261115b` (`?v=20261115` was deployed with the A2 registration).

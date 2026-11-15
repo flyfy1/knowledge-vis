@@ -52,7 +52,7 @@
       "anchor": "#ch8", "relatedPages": [] },
     { "id": "stored-program-machine", "title": { "zh": "存储程序与取指执行", "en": "Stored Programs and Fetch–Execute" },
       "desc": { "zh": "一台 16 字节、7 条指令的机器，用重复加法做乘法；指令也只是内存里的数。", "en": "A 16-byte, 7-instruction machine multiplies by repeated addition; instructions are just numbers in memory." },
-      "aliases": { "zh": ["CPU 怎么执行程序", "程序计数器", "取指 译码 执行", "冯·诺依曼结构", "机器码", "指令集", "计算机怎么执行指令"], "en": ["how a CPU runs a program", "program counter", "fetch decode execute", "von Neumann architecture", "machine code", "instruction set"] },
+      "aliases": { "zh": ["程序计数器", "取指 译码 执行", "冯·诺依曼结构", "计算机怎么执行指令"], "en": ["program counter", "fetch decode execute", "von Neumann architecture"] },
       "anchor": "#ch9", "relatedPages": [] },
     { "id": "floating-point-rounding", "title": { "zh": "浮点数为什么不精确", "en": "Why Floating Point Is Inexact" },
       "desc": { "zh": "0.1 在二进制里写不完，存进有限的尾数要取整，所以 0.1 + 0.2 得到 0.30000000000000004。", "en": "0.1 never ends in binary, so it is rounded into a finite mantissa and 0.1 + 0.2 becomes 0.30000000000000004." },
@@ -60,7 +60,7 @@
       "anchor": "#ch10", "relatedPages": [] },
     { "id": "real-processor-scale", "title": { "zh": "真实处理器：规模而非新原理", "en": "Real Processors: Scale, Not New Principles" },
       "desc": { "zh": "流水线、先行进位、缓存和多核都是同样零件的更多份；附 2038 年问题等可带走的结论。", "en": "Pipelining, carry-lookahead, caches and many cores are more of the same parts; with takeaways like the year-2038 problem." },
-      "aliases": { "zh": ["流水线", "缓存", "芯片有多少晶体管", "2038 年问题", "CPU 和我们搭的有什么区别"], "en": ["pipelining", "cache", "transistor count", "year 2038 problem", "how real CPUs differ"] },
+      "aliases": { "zh": ["缓存", "芯片有多少晶体管", "2038 年问题", "CPU 和我们搭的有什么区别"], "en": ["cache", "transistor count", "year 2038 problem", "how real CPUs differ"] },
       "anchor": "#ch11", "relatedPages": ["hashing", "entropy"] }
   ]
 }

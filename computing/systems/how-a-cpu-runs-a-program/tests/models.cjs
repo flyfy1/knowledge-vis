@@ -277,16 +277,22 @@ const f = (x, d) => x.toFixed(d);
   for (const c of R.concepts) check('anchor ' + c.anchor, html.includes('id="' + c.anchor.slice(1) + '"'), true);
   for (const c of R.concepts) { n++; if (!c.aliases.zh.length || !c.aliases.en.length || !c.title.en || !c.desc.en) { fails++; console.error('FAIL concept incomplete ' + c.id); } }
   check('one concept per chapter', R.concepts.map(c => c.anchor).join(), Array.from({ length: 12 }, (_, i) => '#ch' + (i + 1)).join());
-  // one word, one owner (TASK-arch-series.md): switches-that-compute #ch9/#ch11 keep 机器码, 指令集, 程序计数器, fetch-decode-execute,
-  // pipelining, 流水线; the memory essay #ch1 keeps pipeline stall, load-use hazard, forwarding, CPI. The registrar decides 指令集 / ISA.
+  // one word, one owner (TASK-arch-series.md). Registrar, 2026-11-15: 指令集 / ISA / instruction set, CPU 怎么执行程序 / how a CPU
+  // runs a program (#ch1), 机器码 / machine code (#ch3) and 流水线 / pipelining (#ch6) moved here from switches-that-compute #ch9 /
+  // #ch11, which keeps 程序计数器, fetch-decode-execute and 冯·诺依曼结构; switches #ch4 keeps 关键路径 / critical path; the memory
+  // essay #ch1 keeps pipeline stall, load-use hazard, forwarding, CPI.
   const norm = s => s.toLowerCase().replace(/\s+/g, '');
   const owned = new Map();
-  for (const a of ['指令集', 'ISA', 'instruction set', '机器码', 'machine code', '流水线', 'pipelining', 'CPI', 'forwarding', 'load-use hazard', 'pipeline stall', '关键路径', 'critical path']) owned.set(norm(a), 'TASK');
-  for (const sib of ['why-compute-waits-for-memory', 'switches-that-compute', 'how-cpu-caches-work', 'how-pcie-works', 'how-a-computer-is-wired', 'how-thunderbolt-works']) {
+  for (const a of ['CPI', 'forwarding', 'load-use hazard', 'pipeline stall', '关键路径', 'critical path', '程序计数器', 'program counter', 'fetch decode execute', '冯·诺依曼结构']) owned.set(norm(a), 'TASK');
+  for (const sib of ['why-compute-waits-for-memory', 'switches-that-compute', 'how-cpu-caches-work', 'how-virtual-memory-works', 'how-pcie-works', 'how-a-computer-is-wired', 'how-thunderbolt-works']) {
     const p = path.join(DIR, '..', sib, 'REGISTRY.json');
     if (fs.existsSync(p)) for (const c of JSON.parse(fs.readFileSync(p, 'utf8')).concepts) for (const a of [...c.aliases.zh, ...c.aliases.en]) owned.set(norm(a), sib);
   }
   for (const c of R.concepts) for (const a of [...c.aliases.zh, ...c.aliases.en]) { n++; if (owned.has(norm(a))) { fails++; console.error(`FAIL alias owned by ${owned.get(norm(a))}: ${a}`); } }
+  for (const [anchor, words] of [['#ch1', ['指令集', 'ISA', 'instruction set', 'CPU 怎么执行程序', 'how a CPU runs a program']], ['#ch3', ['机器码', 'machine code']], ['#ch6', ['流水线', 'pipelining']]]) {
+    const c = R.concepts.find(x => x.anchor === anchor), mine = new Set([...c.aliases.zh, ...c.aliases.en].map(norm));
+    for (const w of words) check(`moved alias ${w} on ${anchor}`, mine.has(norm(w)), true);
+  }
   // live sibling links must point at chapters that exist; A4 is named in plain text, not linked
   const all = Object.values(Z).join('');
   for (const sib of ['why-compute-waits-for-memory', 'switches-that-compute', 'how-cpu-caches-work']) {
