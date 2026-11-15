@@ -451,7 +451,8 @@ not redone), why-nvme-is-fast #ch2 and #ch4, and how-pcie-works (#ch2 and the pa
 from how-usb-drives-talk (#ch8 twice, #ch3), 1 from why-nvme-is-fast (#ch4), 1 from how-pcie-works (#ch2), 2 into
 how-usb-drives-talk #ch8. Not verified (BRIEF): which DP reservation route a TB4 product uses, the Thunderspy authors'
 claim about USB4, USB4's own DMA-protection wording.
-OS/pixels registrar (2026-11-15): ch8.p2 links how-the-os-talks-to-hardware #ch8; ch6.p1 links how-pixels-reach-a-screen #ch2 and ch6.p4 its #ch7. #ch6 takes bare DSC, 显示流压缩 and Display Stream Compression (unowned; the pixels essay left the DSC definitions here). Known inconsistency, not changed: ch6.p4 counts 25.92 Gb/s for HBR3 ×4 with DSC, but DSC on 8b/10b DP requires FEC (25.31 Gb/s). Label at e916a267 (previous 70d9f2e1), scripts `?v=20261115b`.
+OS/pixels registrar (2026-11-15): ch8.p2 links how-the-os-talks-to-hardware #ch8; ch6.p1 links how-pixels-reach-a-screen #ch2 and ch6.p4 its #ch7. #ch6 takes bare DSC, 显示流压缩 and Display Stream Compression (unowned; the pixels essay left the DSC definitions here). Label at e916a267 (previous 70d9f2e1), scripts `?v=20261115b`.
+**FEC fix (2026-11-15, power/NIC registrar):** DSC on an 8b/10b DP link (Alt Mode HBR2/HBR3, the DP 1.4 stream in a TB4 tunnel) runs with FEC, (256·6 + 1)/(256·250) = 2.4016 % (Linux drm_dp_bw_overhead, i915 intel_dp_supports_dsc; specs/reviews/how-pixels-reach-a-screen-review-20261115.md finding 3). `SCREEN.fecK` applies it only to those links and only to a DSC setting (bpp < 18): Alt Mode capacity 25.92 → 25.31 Gb/s, Max Link BW gives the stream 1/k of the reserved link, allocation mode reserves need × k; UHBR (77.37) already includes FEC. ch6.p4 now computes 8K60 30-bit with FEC: HBR3 ×4 leaves {hbr3fec} = 25.31 Gb/s, so DSC must reach ≤ 12.2 bpp (×2.45; 12.5 without FEC); the 12-bit example still fits. The figure differs from how-pixels-reach-a-screen's 10.63 bpp because that page uses the CTA-861 8K60 timing, this one CVT-RB2. ch6.limit says what is modelled; the #scD readout uses `SCREEN.bppMax`. Scripts `?v=20261115c`.
 
 ### how-cpu-caches-work: CPU 的三级缓存是怎么工作的
 
@@ -753,8 +754,8 @@ to their owners: 像素 / pixel, 色域 / gamut, RGB 子像素 (inside-a-phone #
 (how-a-gpu-computes #ch9). It links how-a-gpu-computes #ch9, how-thunderbolt-works #ch6, how-usb-drives-talk #ch8, how-pcie-works #ch8,
 how-memory-talks #ch9, computer-graphics and inside-a-phone #screen; how-thunderbolt-works ch6.p1 (#ch2) and ch6.p4 (#ch7) and
 how-a-gpu-computes ch9.p2 (#ch1) link here. Scripts `?v=20261115b`. Atlas edges (18, in its fragment): 9 between chapters, 9 from siblings.
-**Known inconsistency (not changed):** how-thunderbolt-works ch6.p4 fits 8K60 30-bit into HBR3 at 25.92 Gb/s with DSC; this page shows DSC
-on 8b/10b DP needs FEC (25.31 Gb/s). Not verified (BRIEF): HDMI FRL RS-FEC overhead, HDMI 2.2 line coding, AMD's 2.5× LFC range, the
+how-thunderbolt-works ch6.p4 used to fit 8K60 30-bit into HBR3 at 25.92 Gb/s with DSC; since 2026-11-15 its model deducts the FEC this page
+explains (25.31 Gb/s, ≤ 12.2 bpp on CVT-RB2 timing). Not verified (BRIEF): HDMI FRL RS-FEC overhead, HDMI 2.2 line coding, AMD's 2.5× LFC range, the
 BT.2100 / BT.2087 PDFs, LG Display's 720 Hz OLED.
 
 ### scarcity-moves: 稀缺会搬家

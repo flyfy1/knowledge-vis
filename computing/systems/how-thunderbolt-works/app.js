@@ -578,8 +578,9 @@ function stacked(c, w, h, rows, max) {
     const o = opts(), z = M.say.screen(o), r = z.v, tun = r.kind === 'tun';
     methodGroup().querySelectorAll('input').forEach(i => { i.disabled = !tun; }); methodGroup().style.opacity = tun ? '' : '.45';
     put('#scNd', gb(r.need, 2)); put('#scF', t('ch6.fitfmt', { a: fmt(r.fit, 0), b: fmt(o.count, 0) })); put('#scU', t('ch6.usedfmt', { u: fmt(r.used, 1), c: fmt(r.cap, 1) }));
-    const bppMax = M.VIDEO.bppFor(o.mode, tun ? Math.min(r.cap, M.SCREEN.conn[o.conn].stream) : r.cap);
-    put('#scD', bppMax >= o.bpp ? t('ch6.nodsc') : t('ch6.bppfmt', { v: fmt(bppMax, 1) }));
+    // uncompressed fits: no DSC; otherwise the DSC bits per pixel that fit (FEC deducted on 8b/10b links)
+    const bm = M.SCREEN.bppMax({ mode: o.mode, conn: o.conn }), plainBpp = M.SCREEN.isDsc(o.bpp) ? 24 : o.bpp;
+    put('#scD', bm.plain >= plainBpp ? t('ch6.nodsc') : t('ch6.bppfmt', { v: fmt(bm.dsc, 1) }));
     const second = r.rows[1];
     putHTML('#scSay', t(z.key, { need: gb(r.need, 2), fit: fmt(r.fit, 0), n: fmt(o.count, 0), cap: gb(r.cap, 2), res2: second && second.cfg ? t('ch6.cfgfmt', { rate: second.cfg.rate, l: second.cfg.lanes, bw: gb(second.cfg.bw, 2) }) : '' }));
   }

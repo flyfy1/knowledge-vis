@@ -62,7 +62,9 @@
     },
     // VESA: DisplayPort 2.0 release (2019-06-26): up to 20 Gbps/lane, 128b/132b, maximum payload 77.37 Gbps;
     // USB DevDays 2019 VESA slides: DP 1.4 HBR3 usable 25.92 Gbps, 4K60 24 bpp on 2 lanes, 5K60 24 bpp on 4 lanes
-    dp: { uhbr20: 20, payload21: 77.37, hbr3x4: 25.92, hbr3x2: 12.96, dp20date: '2019-06-26' },
+    // Linux drm_dp_bw_overhead(): FEC on an 8b/10b DP link costs (256·6 + 1)/(256·250) = 2.4016 %, and FEC must be on for DSC
+    // on an external DP link (i915 intel_dp_supports_dsc(); how-pixels-reach-a-screen ch7.p4). 128b/132b's 77.37 already includes FEC.
+    dp: { uhbr20: 20, payload21: 77.37, hbr3x4: 25.92, hbr3x2: 12.96, dp20date: '2019-06-26', fec8b10b: (256 * 6 + 1) / (256 * 250) },
     // VESA CVT 1.2 reduced blanking version 2 (formula as published; not opened, see BRIEF): 80-pixel horizontal blank,
     // at least 460 µs vertical blank, V front porch ≥ 1, V sync 8, V back porch ≥ 6 lines
     cvt: { hBlank: 80, minVblankUs: 460, minVbiLines: 15 },
@@ -267,31 +269,45 @@
      asks for (DP BW Allocation Mode). ── */
   const SCREEN = {
     conn: {
-      alt4: { kind: 'alt', cap: SPEC.dp.hbr3x4 }, alt2: { kind: 'alt', cap: SPEC.dp.hbr3x2 }, alt21: { kind: 'alt', cap: SPEC.dp.payload21 },
-      tb4: { kind: 'tun', raw: 40, stream: SPEC.dp.hbr3x4, method: 'maxlink' },
+      alt4: { kind: 'alt', cap: SPEC.dp.hbr3x4, b8: true }, alt2: { kind: 'alt', cap: SPEC.dp.hbr3x2, b8: true }, alt21: { kind: 'alt', cap: SPEC.dp.payload21 },
+      tb4: { kind: 'tun', raw: 40, stream: SPEC.dp.hbr3x4, method: 'maxlink', b8: true },
       tb5: { kind: 'tun', raw: 80, stream: SPEC.dp.payload21, method: 'bwalloc' },
       tb5bb: { kind: 'tun', raw: 120, stream: SPEC.dp.payload21, method: 'bwalloc' }
     },
+    // a bit depth below 18 (6 bits a colour, the least uncompressed RGB carries) can only be a DSC setting
+    isDsc(bpp) { return bpp < 18; },
+    // a DSC stream on an 8b/10b DP link (HBR2/HBR3: Alt Mode, Thunderbolt 4's DP 1.4 tunnel) runs with FEC, so the link
+    // carries 1 / (1 + 2.4016 %) of its payload rate: HBR3 × 4 25.92 → 25.31 Gb/s. UHBR links already count their FEC.
+    fecK(conn, bpp) { return this.conn[conn].b8 && this.isDsc(bpp) ? 1 + SPEC.dp.fec8b10b : 1; },
     run(o) {
       // dpMax: the highest DP link rate the monitors advertise (4 lanes); under Max Link BW the CM reserves that link
       const p = Object.assign({ mode: 'uhd60', count: 2, bpp: 24, conn: 'tb4', method: null, dpMax: 'HBR3' }, o || {});
       const c = Object.assign({}, this.conn[p.conn]); if (p.method && c.kind === 'tun') c.method = p.method;
-      const need = VIDEO.need(p.mode, p.bpp), rows = [];
+      const need = VIDEO.need(p.mode, p.bpp), rows = [], k = this.fecK(p.conn, p.bpp), fec = k > 1;
       if (c.kind === 'alt') {
-        // MST shares one DP link among the displays
-        let used = 0; for (let i = 0; i < p.count; i++) { const ok = used + need <= c.cap + 1e-9; rows.push({ need, got: ok ? need : 0, ok }); if (ok) used += need; }
-        return { p, need, rows, cap: c.cap, used, kind: 'alt', fit: rows.filter(r => r.ok).length };
+        // MST shares one DP link among the displays; with FEC the link's payload shrinks
+        const cap = c.cap / k;
+        let used = 0; for (let i = 0; i < p.count; i++) { const ok = used + need <= cap + 1e-9; rows.push({ need, got: ok ? need : 0, ok }); if (ok) used += need; }
+        return { p, need, rows, cap, used, kind: 'alt', fec, fit: rows.filter(r => r.ok).length };
       }
       const avail = (1 - SPEC.cm.guard) * c.raw; let left = avail; let used = 0;
       for (let i = 0; i < p.count; i++) {
         if (c.method === 'maxlink') {          // 8b/10b links only (CM Guide §6.2.1): the stream is also held to HBR3 × 4
-          const cfg = ALLOC.maxLinkFit(left, p.dpMax); const res = cfg ? cfg.bw : 0, ok = res >= need - 1e-9;
+          // the reservation is the whole DP link; with FEC on, the stream gets 1/k of it
+          const cfg = ALLOC.maxLinkFit(left, p.dpMax); const res = cfg ? cfg.bw : 0, ok = res / k >= need - 1e-9;
           rows.push({ need, res, cfg, ok }); left -= res; if (ok) used += need;
         } else {
-          const ok = need <= Math.min(left, c.stream) + 1e-9; rows.push({ need, res: ok ? need : 0, ok }); if (ok) { left -= need; used += need; }
+          // the DPTX asks for what the stream occupies on its DP link, FEC included
+          const link = need * k, ok = link <= Math.min(left, c.stream) + 1e-9; rows.push({ need, res: ok ? link : 0, ok }); if (ok) { left -= link; used += need; }
         }
       }
-      return { p, need, rows, cap: avail, used, left, kind: 'tun', method: c.method, fit: rows.filter(r => r.ok).length };
+      return { p, need, rows, cap: avail, used, left, kind: 'tun', method: c.method, fec, fit: rows.filter(r => r.ok).length };
+    },
+    // the highest bits per pixel one stream may have on this connection: uncompressed (no FEC), and as DSC (FEC on 8b/10b links)
+    bppMax(o) {
+      const p = Object.assign({ mode: 'uhd60', conn: 'tb4' }, o || {}), c = this.conn[p.conn];
+      const cap = c.kind === 'alt' ? c.cap : Math.min((1 - SPEC.cm.guard) * c.raw, c.stream), k = c.b8 ? 1 + SPEC.dp.fec8b10b : 1;
+      return { plain: VIDEO.bppFor(p.mode, cap), dsc: VIDEO.bppFor(p.mode, cap / k) };
     }
   };
 
@@ -403,6 +419,7 @@
     const c4k = VIDEO.cvt(3840, 2160, 60), n4k = VIDEO.need('uhd60', 24), n5k = VIDEO.need('k5_60', 24), n6k24 = VIDEO.need('k6_60', 24), n6k30 = VIDEO.need('k6_60', 30), n8k30 = VIDEO.need('k8_60', 30), n4k90x3 = 3 * VIDEO.cvt(3840, 2160, 90).pclk * 30 / 1e9;
     const scTb4 = SCREEN.run({}), scTb4h2 = SCREEN.run({ dpMax: 'HBR2' }), scTb4bw = SCREEN.run({ method: 'bwalloc' }), sc6k30 = SCREEN.run({ conn: 'tb5', mode: 'k6_60', bpp: 30 }), sc6k30bb = SCREEN.run({ conn: 'tb5bb', mode: 'k6_60', bpp: 30 }), sc6k24 = SCREEN.run({ conn: 'tb5', mode: 'k6_60', bpp: 24 });
     const pd65 = PD.run(65, 'c3', 65, false), pd100c3 = PD.run(100, 'c3', 100, false), pd140c5 = PD.run(140, 'c5', 140, true), pd140c3 = PD.run(140, 'c3', 140, true), pd240 = PD.run(240, 'c5', 240, true);
+    const hbr3fec = SPEC.dp.hbr3x4 / (1 + SPEC.dp.fec8b10b);
     const io = IOMMU.run(1536, 64, 'iommu'), ioOff = IOMMU.run(1536, 64, 'off'), ioB = IOMMU.run(1536, 64, 'bounce'), io2k = IOMMU.run(2048, 64, 'iommu'), io4k = IOMMU.run(4096, 64, 'iommu');
     return {
       // ch1
@@ -420,7 +437,7 @@
       g4fec: [480 / 504, 1, 'pct'], g3fecLoss: [1 - SPEC.usb4.fec23[0] / SPEC.usb4.fec23[1], 0, 'pct'], pam3db: [LANES.eye(3).db, 1], pam4db: [LANES.eye(4).db, 1], pam3baud: [LANES.relBaud(3), 2], nyq3: [LANES.nyquist('g3x2'), 0], nyq4: [LANES.nyquist('g4'), 1],
       // ch6
       pclk4k: [c4k.pclk / 1e6, 2], htot4k: [c4k.hTot, 0], vtot4k: [c4k.vTot, 0], n4k: [n4k, 2], n5k: [n5k, 1], n6k24: [n6k24, 1], n6k30: [n6k30, 1], n8k30: [n8k30, 1], n4k90x3: [n4k90x3, 1],
-      dsc8k: [VIDEO.bppFor('k8_60', SPEC.dp.hbr3x4), 1], dscRatio8k: [30 / VIDEO.bppFor('k8_60', SPEC.dp.hbr3x4), 2],
+      dsc8k: [VIDEO.bppFor('k8_60', hbr3fec), 1], dscRatio8k: [30 / VIDEO.bppFor('k8_60', hbr3fec), 2], hbr3fec: [hbr3fec, 2], fecPct: [SPEC.dp.fec8b10b, 1, 'pct'], dsc8kNoFec: [VIDEO.bppFor('k8_60', SPEC.dp.hbr3x4), 1],
       scTb4fit: [scTb4.fit, 0], scTb4bwfit: [scTb4bw.fit, 0], sc6k30: [sc6k30.fit, 0], sc6k30bb: [sc6k30bb.fit, 0], sc6k24: [sc6k24.fit, 0], tb4second: [scTb4.rows[1].res, 2], tb4first: [scTb4.rows[0].res, 2], tb4h2each: [scTb4h2.rows[0].res, 2], tb4h2fit: [scTb4h2.fit, 0],
       // ch7
       pd65w: [pd65.pick.w, 0], pd100c3: [pd100c3.pick.w, 0], pd140c5: [pd140c5.pick.w, 0], pd140c3: [pd140c3.pick.w, 0], pd240a: [pd240.pick.a, 0], pdWire: [pd140c5.wire, 1], pdWireSpr: [pd65.wire, 1],
@@ -454,7 +471,7 @@
     screen(o) {
       const r = SCREEN.run(o), all = r.fit === r.p.count;
       if (r.kind === 'alt') return { key: all ? 'ch6.say.altok' : 'ch6.say.altno', v: r };
-      if (r.method === 'maxlink' && !all && r.rows.some(x => x.cfg && x.cfg.bw < x.need)) return { key: 'ch6.say.maxlink', v: r };
+      if (r.method === 'maxlink' && !all && r.rows.some(x => x.cfg && !x.ok)) return { key: 'ch6.say.maxlink', v: r };
       return { key: all ? 'ch6.say.tunok' : 'ch6.say.tunno', v: r };
     },
     pd(pdp, cable, need, epr) {

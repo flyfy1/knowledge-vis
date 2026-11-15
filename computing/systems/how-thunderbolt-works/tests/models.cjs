@@ -175,7 +175,7 @@ const zf = (x, d) => M.fmt(x, d, 'zh');
     s5w: '869', s5bbw: '5215', s5r: '8000', s5bbr: '3477', s0dp: '12.5', s0drive: '1994', s0usb: '9.7', sNoDrive: '3562', sReadDrive: '3562', sCap4: '38.2', sNoUsbDrive: '4000',
     ch3each: '1333', ch1each: '4000', ch6live: '5', ch6tlive: '6', chdEach: '1069', chRtt: '6', chRttShare: '11', chRttH: '6', chRttD: '19',
     tbt3coded: '20.0', g3coded: '38.79', g4lane: '40.23', g4down: '76.6', g4asymDown: '114.9', g4asymUp: '38.3', g4fec: '95.2', g3fecLoss: '3', pam3db: '-6.0', pam4db: '-9.5', pam3baud: '0.64', nyq3: '10', nyq4: '12.8',
-    pclk4k: '522.61', htot4k: '3920', vtot4k: '2222', n4k: '12.54', n5k: '22.2', n6k24: '30.6', n6k30: '38.2', n8k30: '62.1', n4k90x3: '71.6', dsc8k: '12.5', dscRatio8k: '2.39',
+    pclk4k: '522.61', htot4k: '3920', vtot4k: '2222', n4k: '12.54', n5k: '22.2', n6k24: '30.6', n6k30: '38.2', n8k30: '62.1', n4k90x3: '71.6', dsc8k: '12.2', dscRatio8k: '2.45', hbr3fec: '25.31', fecPct: '2.4', dsc8kNoFec: '12.5',
     scTb4fit: '1', scTb4bwfit: '2', sc6k30: '1', sc6k30bb: '2', sc6k24: '2', tb4second: '8.64', tb4first: '25.92', tb4h2each: '17.28', tb4h2fit: '2',
     pd65w: '60', pd100c3: '60', pd140c5: '140', pd140c3: '60', pd240a: '5', pdWire: '18.5', pdWireSpr: '4.6',
     ioPagesE: '48.1', ioMappedE: '193', ioExposedE: '97', ioPages7: '43', ioBuf: '96', ioOff: '256', io2kE: '65', io4k: '0' };
@@ -194,6 +194,19 @@ const zf = (x, d) => M.fmt(x, d, 'zh');
   check('ch5: PAM3 eye half of NRZ', f(LANES.eye(3).h, 3), '0.500'); check('ch5: PAM4 a third', f(LANES.eye(4).h, 3), '0.333');
   check('ch6: Max Link BW lights one of two 4K; allocation mode lights both', P.scTb4fit[0] + '/' + P.scTb4bwfit[0], '1/2');
   check('ch6: 8K DSC ratio from 30 bpp', f(30 / P.dsc8k[0], 2), f(P.dscRatio8k[0], 2));
+  // DSC on 8b/10b DP needs FEC (2.4016 %, Linux drm_dp_bw_overhead; how-pixels-reach-a-screen ch7.p4), 2026-11-15
+  check('FEC overhead (256·6 + 1)/(256·250)', f(SPEC.dp.fec8b10b * 100, 4), '2.4016');
+  check('HBR3 ×4 with FEC', f(SPEC.dp.hbr3x4 / (1 + SPEC.dp.fec8b10b), 2), '25.31');
+  check('ch6: 8K60 30 bpp still fits HBR3 with DSC + FEC at ≤ 12.2 bpp; DSC 12 lights it on Alt Mode 4 lanes and in a TB4 tunnel',
+    [SCREEN.run({ mode: 'k8_60', count: 1, bpp: 12, conn: 'alt4' }).fit, SCREEN.run({ mode: 'k8_60', count: 1, bpp: 12, conn: 'tb4' }).fit, SCREEN.run({ mode: 'k8_60', count: 1, bpp: 12, conn: 'tb4', method: 'bwalloc' }).fit].join(), '1,1,1');
+  check('ch6: FEC only on 8b/10b links and only with DSC', Object.keys(SCREEN.conn).map(c => [24, 30, 12].map(b => SCREEN.fecK(c, b) > 1 ? 1 : 0).join('')).join(' '), '001 001 000 001 000 000');
+  check('ch6: alt4 DSC capacity is 25.31', f(SCREEN.run({ mode: 'k8_60', count: 1, bpp: 12, conn: 'alt4' }).cap, 2), '25.31');
+  check('ch6: alt4 uncompressed capacity stays 25.92', f(SCREEN.run({ mode: 'uhd60', count: 1, bpp: 24, conn: 'alt4' }).cap, 2), '25.92');
+  check('ch6: UHBR20 keeps 77.37 with DSC', f(SCREEN.run({ mode: 'k8_60', count: 1, bpp: 12, conn: 'alt21' }).cap, 2), '77.37');
+  check('ch6: bwalloc reservation on TB4 includes FEC', f(SCREEN.run({ mode: 'k8_60', count: 1, bpp: 12, conn: 'tb4', method: 'bwalloc' }).rows[0].res / VIDEO.need('k8_60', 12), 6), f(1 + SPEC.dp.fec8b10b, 6));
+  check('ch6: bppMax DSC on tb4 equals the prose 8K figure', f(SCREEN.bppMax({ mode: 'k8_60', conn: 'tb4' }).dsc, 4), f(P.dsc8k[0], 4));
+  { const ec = { window: {} }; vm.runInNewContext(fs.readFileSync(path.join(DIR, 'copy.en.js'), 'utf8'), ec);
+    check('ch6: no literal 25.92 left in ch6.p4 (FEC figure comes from the model)', /25\.92/.test(Z['ch6.p4']) || /25\.92/.test(ec.window.ESSAY_COPY.en['ch6.p4']), false); }
   check('ch7: 65 W charger on 3 A cable gives 60 W because of the cable', M.say.pd(65, 'c3', 65, false).key, 'ch7.say.short.cable');
   check('ch7: 140 W charger, 3 A cable, EPR sink: cable is the reason', M.say.pd(140, 'c3', 140, true).key, 'ch7.say.short.cable');
   check('ch8: 2 KiB buffers still expose (another owner in the half page)', P.io2kE[0] > 0, true);

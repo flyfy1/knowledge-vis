@@ -219,3 +219,13 @@ OS/pixels registrar (2026-11-15): ch8.p2 links how-the-os-talks-to-hardware #ch8
 how-pixels-reach-a-screen left the definitions here). Known inconsistency, not changed: ch6.p4 counts the full 25.92 Gb/s of HBR3 ×4
 for DSC, but DSC on 8b/10b DisplayPort requires FEC (2.4016 %), leaving 25.31 (how-pixels-reach-a-screen ch7.p4; Linux
 intel_dp_supports_dsc, drm_dp_bw_overhead). Scripts `?v=20261115b`.
+
+Power/NIC registrar (2026-11-15), FEC fix: DSC on an 8b/10b DisplayPort link needs FEC, which costs (256·6 + 1)/(256·250) = 2.4016 %
+(Linux drm_dp_bw_overhead(); i915 intel_dp_supports_dsc() refuses DSC on external DP without FEC; found in
+specs/reviews/how-pixels-reach-a-screen-review-20261115.md, finding 3). models.js: `SPEC.dp.fec8b10b`, `SCREEN.isDsc` (bpp < 18),
+`SCREEN.fecK` (alt2, alt4, tb4 with a DSC setting), `SCREEN.bppMax`; Alt Mode DSC capacity 25.92 → 25.31, Max Link BW gives the DSC
+stream 1/k of the reserved link, allocation mode reserves need × k; UHBR rows unchanged (77.37 includes FEC). ch6.p4 (zh, en):
+8K60 30-bit fits HBR3 with DSC at ≤ 12.2 bpp (×2.45; 12.5 without FEC; was 12.5 / ×2.39 against 25.92); ch6.limit says FEC is
+modelled; the #scD readout uses bppMax. say.maxlink now fires on the FEC-aware fit. tests/models.cjs pins the overhead, 25.31, which
+links get FEC, the three 8K60 DSC-12 fits and that ch6.p4 quotes no literal 25.92. The 12.2 differs from the pixels essay's 10.63 only
+by timing (CVT-RB2 here, CTA-861 there). Scripts `?v=20261115c`.
