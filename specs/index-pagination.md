@@ -48,6 +48,14 @@ Views come from URL state; nothing is stored besides the language.
    "Chinese only" badge in English mode; there is no badge in Chinese mode. The
    section sits after Featured so the first featured card stays in the first desktop
    viewport. What counts as an essay and how to add one: specs/essays.md.
+   The test does not pin the list (since 2026-11-15; the pinned copy had gone stale
+   and failed every registration after 2026-11-13). It derives membership: every live
+   page whose directory has a `REGISTRY.json` must be in `KNOWLEDGE_ESSAYS` and every
+   entry must have one whose `slug` and `path` match; no duplicates. It pins order:
+   the batches decided up to 2026-11-13 keep their relative order, the rows of the
+   table in specs/essays.md § The essays appear in table order, and `scarcity-moves`
+   comes last. Registering an essay (append the slug before `scarcity-moves`, add its
+   table row) therefore needs no edit to the test.
 3. **More entrances**: four link tiles: Knowledge Atlas (`atlas/`), LeetCode
    (`?category=leetcode`), Demos (`?category=demos`) and Claude Code Parallel
    Editions (`variants/claude-code/`). This is the homepage's link to the editions

@@ -26,16 +26,38 @@ if (JSON.stringify(Array.from(w.KNOWLEDGE_FEATURED)) !== JSON.stringify(expected
 const slugs = new Set(w.KNOWLEDGE_PAGES.map((p) => p.slug));
 for (const s of w.KNOWLEDGE_FEATURED) if (!slugs.has(s)) fail(`featured slug not registered: ${s}`);
 
-// Long reads (2026-11-11 + 2026-11-12 food essays + 2026-11-13 wave 2): the six essays of the batch, the five of the second batch,
-// two food essays, wave 2 essays, then scarcity-moves, which set their standard.
-const expectedEssays = ['numbers-lie', 'body-in-balance', 'inside-a-phone', 'where-money-comes-from',
+// Long reads. Membership is derived, not pinned (2026-11-15: the pinned list had gone stale after 2026-11-13 and failed every
+// registration since): an essay is a live page whose directory carries a REGISTRY.json (specs/essays.md § Files), and every such
+// page is an essay. Order: the batches decided up to 2026-11-13 keep their relative order, the rows of the table in specs/essays.md
+// § The essays appear in table order, and scarcity-moves, which set their standard, comes last.
+const essayList = Array.from(w.KNOWLEDGE_ESSAYS || []);
+if (!essayList.length) fail('KNOWLEDGE_ESSAYS is empty');
+if (new Set(essayList).size !== essayList.length) fail('KNOWLEDGE_ESSAYS has duplicates: ' + JSON.stringify(essayList));
+if (essayList[essayList.length - 1] !== 'scarcity-moves') fail('scarcity-moves must close KNOWLEDGE_ESSAYS');
+const isSubsequence = (sub, list) => { let i = 0; for (const x of list) if (x === sub[i]) i++; return i === sub.length; };
+const decidedOrder = ['numbers-lie', 'body-in-balance', 'inside-a-phone', 'where-money-comes-from',
   'same-votes-different-winner', 'switches-that-compute',
   'what-is-a-black-hole', 'how-vaccines-work', 'why-the-planet-warms', 'why-the-sky-is-blue',
   'where-a-mortgage-payment-goes', 'why-fermented-tofu-tastes-good', 'how-soy-sauce-gets-its-flavor',
   'how-hybrid-attention-remembers', 'why-compute-waits-for-memory', 'how-an-economy-is-measured', 'scarcity-moves'];
-if (JSON.stringify(Array.from(w.KNOWLEDGE_ESSAYS || [])) !== JSON.stringify(expectedEssays)) {
-  fail('KNOWLEDGE_ESSAYS differs from the decided list: ' + JSON.stringify(w.KNOWLEDGE_ESSAYS));
+if (!isSubsequence(decidedOrder, essayList)) fail('KNOWLEDGE_ESSAYS lost the decided batch order: ' + JSON.stringify(essayList));
+const withRegistry = w.KNOWLEDGE_PAGES.filter((p) => p.status === 'live' && p.category !== 'leetcode'
+  && fs.existsSync(path.join(root, p.path, 'REGISTRY.json'))).map((p) => p.slug);
+for (const s of withRegistry) if (!essayList.includes(s)) fail(`live page with a REGISTRY.json is missing from KNOWLEDGE_ESSAYS: ${s}`);
+for (const s of essayList) {
+  const pg = w.KNOWLEDGE_PAGES.find((p) => p.slug === s);
+  if (!pg) continue;   // reported below
+  const regFile = path.join(root, pg.path, 'REGISTRY.json');
+  if (!fs.existsSync(regFile)) fail(`essay has no REGISTRY.json: ${s} (${pg.path})`);
+  const reg = JSON.parse(fs.readFileSync(regFile, 'utf8'));
+  if (reg.slug !== s || reg.path.replace(/\/?$/, '/') !== pg.path.replace(/\/?$/, '/')) fail(`REGISTRY.json of ${s} names ${reg.slug} at ${reg.path}`);
 }
+const essaysSpec = fs.readFileSync(path.join(root, 'specs/essays.md'), 'utf8');
+const table = essaysSpec.slice(essaysSpec.indexOf('## The essays'));
+const tableSlugs = [...table.matchAll(/^\| ([a-z0-9-]+) \| [^|]+\/ \|/gm)].map((m) => m[1]).filter((s) => s !== 'scarcity-moves');
+if (tableSlugs.length < 30) fail('could not read the essay table in specs/essays.md (' + tableSlugs.length + ' rows)');
+for (const s of tableSlugs) if (!essayList.includes(s)) fail(`specs/essays.md lists ${s}, KNOWLEDGE_ESSAYS does not`);
+if (!isSubsequence(tableSlugs, essayList)) fail('KNOWLEDGE_ESSAYS is not in the order of the table in specs/essays.md');
 for (const s of w.KNOWLEDGE_ESSAYS) {
   const pg = w.KNOWLEDGE_PAGES.find((p) => p.slug === s);
   if (!pg) fail(`essay slug not registered: ${s}`);
