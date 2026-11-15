@@ -1,0 +1,403 @@
+{
+  "slug": "how-thunderbolt-works",
+  "path": "computing/systems/how-thunderbolt-works/",
+  "category": "computing",
+  "subtopic": "systems",
+  "stage": "university",
+  "title": {
+    "zh": "雷电接口是怎么工作的",
+    "en": "How Thunderbolt Works"
+  },
+  "desc": {
+    "zh": "一根 USB-C 线，为什么能同时带显示器、网卡、硬盘和充电，还能一台接一台串下去？雷电和 USB4 到底是什么关系？八个可以拖动的模型：CC 线上的分压、带校验的 4 字节包头、一条链路怎么分给几条隧道、菊花链、PAM3 与 3+1 非对称、显示器要多少带宽、PD 怎么谈出 140 瓦、IOMMU 按页开门。",
+    "en": "Why can one USB-C cable carry a monitor, a network adapter, a drive and charging at once, and chain one device after another? How do Thunderbolt and USB4 relate? Eight models you can drag: the CC divider, the 4-byte header with its check, how one link is shared among tunnels, the daisy chain, PAM3 and the 3+1 split, what a monitor needs, how PD negotiates 140 W, and the IOMMU's page-sized doors."
+  },
+  "tags": [
+    {
+      "zh": "USB-C",
+      "en": "USB-C"
+    },
+    {
+      "zh": "雷电与 USB4",
+      "en": "Thunderbolt and USB4"
+    },
+    {
+      "zh": "接口与总线",
+      "en": "Interfaces and Buses"
+    },
+    {
+      "zh": "USB PD 充电",
+      "en": "USB Power Delivery"
+    },
+    {
+      "zh": "长文",
+      "en": "Long-form Essay"
+    }
+  ],
+  "concepts": [
+    {
+      "id": "usb-c-pinout-cc",
+      "title": {
+        "zh": "USB-C 的 24 根针和 CC 线",
+        "en": "The 24 Pins of USB-C and the CC Line"
+      },
+      "desc": {
+        "zh": "USB-C 插座两排各 12 根针、旋转对称；线里只有一根 CC 导线，CC 针上的分压同时告诉电脑插头朝向和对面肯给多少电流（56/22/10 kΩ 对应默认/1.5 A/3 A）。",
+        "en": "The Type-C receptacle has two rotationally symmetric rows of 12 pins; the cable carries one CC wire, so the divider on a CC pin tells both the plug orientation and the advertised current (56/22/10 kΩ for default/1.5 A/3 A)."
+      },
+      "aliases": {
+        "zh": [
+          "USB-C 引脚定义",
+          "Type-C 接口引脚",
+          "USB-C 为什么正反都能插",
+          "CC 引脚是干什么的",
+          "CC 线",
+          "Rp Rd 电阻",
+          "USB-C 怎么知道插反了",
+          "电子标记线是什么",
+          "E-Marker 芯片",
+          "VCONN 是什么"
+        ],
+        "en": [
+          "USB-C pinout",
+          "Type-C pin assignment",
+          "why USB-C is reversible",
+          "what is the CC pin",
+          "Rp and Rd resistors",
+          "USB-C orientation detection",
+          "e-marked cable",
+          "what is VCONN"
+        ]
+      },
+      "anchor": "#ch1",
+      "relatedPages": []
+    },
+    {
+      "id": "usb4-router-tunnel",
+      "title": {
+        "zh": "USB4 路由器与隧道：4 字节包头",
+        "en": "USB4 Routers and Tunnels: the 4-Byte Header"
+      },
+      "desc": {
+        "zh": "USB4 和雷电不在线上同时跑三种协议：DP、USB 3、PCIe 各进一个适配器，被切成带 4 字节包头（PDF、HopID、Length、HEC）的包，按 HopID 逐跳转发；HEC 是能纠正单比特错误的 CRC-8。",
+        "en": "USB4 and Thunderbolt carry DisplayPort, USB 3 and PCIe as packets with a 4-byte header (PDF, HopID, Length, HEC), forwarded hop by hop by HopID; the HEC is a CRC-8 that corrects single-bit errors."
+      },
+      "aliases": {
+        "zh": [
+          "USB4 隧道是什么",
+          "USB4 协议隧道",
+          "雷电隧道",
+          "USB4 路由器",
+          "HopID 是什么",
+          "雷电怎么同时传视频和数据",
+          "一根线怎么同时传显示和数据",
+          "USB4 包头",
+          "HEC 校验"
+        ],
+        "en": [
+          "USB4 tunneling",
+          "what is USB4 tunnelling",
+          "USB4 router",
+          "HopID",
+          "how Thunderbolt carries video and data",
+          "USB4 transport layer packet",
+          "USB4 HEC"
+        ]
+      },
+      "anchor": "#ch2",
+      "relatedPages": []
+    },
+    {
+      "id": "usb4-bandwidth-allocation",
+      "title": {
+        "zh": "一条 USB4 链路怎么分带宽",
+        "en": "How One USB4 Link Is Shared"
+      },
+      "desc": {
+        "zh": "连接管理器先留 10% 余量，先给显示器预留，每条 USB3/PCIe 路径至少 1.5 Gb/s，剩下的平分，再按权重轮转调度；显示只占往下的方向，所以读盘不和显示器抢。",
+        "en": "The Connection Manager keeps a 10% guard band, reserves display bandwidth first, gives each USB3/PCIe path at least 1.5 Gb/s and splits the rest; displays only use the downstream direction, so reading a drive does not compete with them."
+      },
+      "aliases": {
+        "zh": [
+          "扩展坞带宽怎么分",
+          "接了显示器硬盘变慢",
+          "雷电扩展坞为什么硬盘慢",
+          "扩展坞里面有什么",
+          "USB4 连接管理器",
+          "雷电带宽分配",
+          "Bandwidth Boost 是什么",
+          "带宽增强"
+        ],
+        "en": [
+          "dock bandwidth sharing",
+          "why is my drive slower with a monitor on the dock",
+          "what is inside a Thunderbolt dock",
+          "USB4 connection manager",
+          "Thunderbolt bandwidth allocation",
+          "Thunderbolt 5 Bandwidth Boost"
+        ]
+      },
+      "anchor": "#ch3",
+      "relatedPages": [
+        "how-usb-drives-talk"
+      ]
+    },
+    {
+      "id": "thunderbolt-daisy-chain",
+      "title": {
+        "zh": "雷电菊花链：一台接一台",
+        "en": "Daisy-Chaining Thunderbolt Devices"
+      },
+      "desc": {
+        "zh": "每台设备里有路由器，下行口就是下一条链路；最上面那条线要带下面所有流量，串起来的盘共享同一条 PCIe 隧道；USB4 最多 5 层，兼容雷电 3 时 6 层。",
+        "en": "Each device holds a router whose downstream port starts the next link; the top link carries everything below it and chained drives share one PCIe tunnel; USB4 allows depth 5, 6 in Thunderbolt 3 compatibility."
+      },
+      "aliases": {
+        "zh": [
+          "雷电菊花链",
+          "雷电能串几个设备",
+          "雷电串联",
+          "菊花链是什么",
+          "雷电设备串联会变慢吗",
+          "USB4 能串联吗"
+        ],
+        "en": [
+          "Thunderbolt daisy chain",
+          "how many Thunderbolt devices can be chained",
+          "daisy chaining",
+          "does daisy chaining slow Thunderbolt",
+          "USB4 daisy chain"
+        ]
+      },
+      "anchor": "#ch4",
+      "relatedPages": []
+    },
+    {
+      "id": "usb4-pam3-asymmetric",
+      "title": {
+        "zh": "80 Gb/s 怎么来：PAM3 与 3+1 非对称",
+        "en": "Where 80 Gb/s Comes From: PAM3 and 3+1"
+      },
+      "desc": {
+        "zh": "USB4 2.0 Gen 4 用三电平，每 7 个符号装 11 位，25.6 GBd、每条线约 40 Gb/s；非对称模式把四条线改成三去一回，往下 120、往上 40。",
+        "en": "USB4 2.0 Gen 4 uses three levels, 11 bits in 7 symbols at 25.6 GBd, about 40 Gb/s per lane; the asymmetric mode turns the four lanes into three one way and one back, 120 down and 40 up."
+      },
+      "aliases": {
+        "zh": [
+          "PAM3 是什么",
+          "三电平信号",
+          "USB4 80Gbps 原理",
+          "雷电 5 为什么能 80G",
+          "雷电 5 120Gbps",
+          "非对称链路",
+          "USB4 Gen 4",
+          "40Gbps 和 80Gbps 区别"
+        ],
+        "en": [
+          "what is PAM3",
+          "PAM3 signalling",
+          "how USB4 reaches 80 Gbps",
+          "Thunderbolt 5 120 Gbps",
+          "USB4 asymmetric link",
+          "USB4 Gen 4"
+        ]
+      },
+      "anchor": "#ch5",
+      "relatedPages": []
+    },
+    {
+      "id": "display-over-usb-c",
+      "title": {
+        "zh": "USB-C 接显示器要多少带宽",
+        "en": "How Much a Monitor Needs over USB-C"
+      },
+      "desc": {
+        "zh": "一台显示器要的带宽是像素时钟（含消隐）乘以每像素位数；DP Alt Mode 直接占用高速线，隧道里则看连接管理器按整条 DP 链路还是按需预留，后者决定第二台屏幕亮不亮。",
+        "en": "A display needs pixel clock (with blanking) times bits per pixel; DP Alt Mode takes the high-speed pairs directly, while in a tunnel the Connection Manager reserves either the whole DP link or what is needed, which decides whether a second screen lights up."
+      },
+      "aliases": {
+        "zh": [
+          "USB-C 接显示器",
+          "DP Alt Mode 是什么",
+          "雷电能接几台显示器",
+          "雷电 4 接两台 4K",
+          "4K 60Hz 需要多少带宽",
+          "USB-C 视频输出",
+          "第二台显示器不亮",
+          "DSC 压缩是什么",
+          "USB4 显示器带宽"
+        ],
+        "en": [
+          "USB-C to monitor",
+          "what is DP Alt Mode",
+          "how many monitors on Thunderbolt",
+          "4K 60Hz bandwidth",
+          "second monitor not working on dock",
+          "what is DSC",
+          "USB4 display bandwidth"
+        ]
+      },
+      "anchor": "#ch6",
+      "relatedPages": []
+    },
+    {
+      "id": "usb-pd-epr",
+      "title": {
+        "zh": "USB PD：谈出来的瓦数与 EPR",
+        "en": "USB Power Delivery: Negotiated Watts and EPR"
+      },
+      "desc": {
+        "zh": "插上时只有 5 V，更高电压靠 CC 线上的 PD 消息谈定；3 A 的线最多 60 W，没有 EPR 标记最多 100 W；EPR 的 28/36/48 V 可到 240 W。",
+        "en": "VBUS starts at 5 V; higher voltages are negotiated by PD messages on CC; a 3 A cable caps at 60 W and a non-EPR cable at 100 W; EPR adds 28/36/48 V up to 240 W."
+      },
+      "aliases": {
+        "zh": [
+          "USB PD 协议",
+          "PD 充电原理",
+          "USB-C 充电功率怎么协商",
+          "EPR 是什么",
+          "240W 充电",
+          "140W 充电线",
+          "为什么 65W 充电器只有 60W",
+          "5A 线和 3A 线区别",
+          "PD 诱骗",
+          "PDO 是什么"
+        ],
+        "en": [
+          "USB Power Delivery",
+          "how USB-C charging negotiates power",
+          "what is EPR",
+          "USB PD 240W",
+          "why does my 65W charger only give 60W",
+          "5A vs 3A USB-C cable",
+          "what is a PDO"
+        ]
+      },
+      "anchor": "#ch7",
+      "relatedPages": []
+    },
+    {
+      "id": "thunderbolt-dma-iommu",
+      "title": {
+        "zh": "雷电 DMA 攻击与 IOMMU",
+        "en": "Thunderbolt DMA Attacks and the IOMMU"
+      },
+      "desc": {
+        "zh": "PCIe 隧道让外接设备能直接读写内存；IOMMU 按 4 KiB 页放行，所以缓冲区同页的其他数据也被暴露（Thunderclap）；Thunderspy 攻击雷电 1–3 控制器；Kernel DMA Protection 在登录前拦住不支持重映射的设备。",
+        "en": "A PCIe tunnel lets an external device read and write memory; the IOMMU grants whole 4 KiB pages, exposing whatever shares a page with a buffer (Thunderclap); Thunderspy targets Thunderbolt 1–3 controllers; Kernel DMA Protection blocks devices without remapping until sign-in."
+      },
+      "aliases": {
+        "zh": [
+          "雷电安全吗",
+          "雷电 DMA 攻击",
+          "Thunderspy",
+          "Thunderclap",
+          "IOMMU 是什么",
+          "VT-d 是什么",
+          "内核 DMA 保护",
+          "外接设备读内存"
+        ],
+        "en": [
+          "is Thunderbolt secure",
+          "Thunderbolt DMA attack",
+          "Thunderspy",
+          "Thunderclap",
+          "what is an IOMMU",
+          "Kernel DMA Protection",
+          "VT-d"
+        ]
+      },
+      "anchor": "#ch8",
+      "relatedPages": [
+        "why-nvme-is-fast"
+      ]
+    },
+    {
+      "id": "thunderbolt-vs-usb4-requirements",
+      "title": {
+        "zh": "雷电 4/5 与 USB4 的必选清单",
+        "en": "Thunderbolt 4/5 vs USB4: the Mandatory List"
+      },
+      "desc": {
+        "zh": "USB4 建立在英特尔贡献的雷电协议上；协议几乎相同，区别在保证：USB4 主机的 PCIe 隧道可选，雷电 4/5 把 PCIe 隧道、速率、显示、充电和 DMA 保护都定为必须并要求认证。",
+        "en": "USB4 is built on the Thunderbolt protocol Intel contributed; the protocols are nearly the same and the difference is in guarantees: PCIe tunnelling is optional on USB4 hosts, while Thunderbolt 4/5 make it, the speed, displays, charging and DMA protection mandatory with certification."
+      },
+      "aliases": {
+        "zh": [
+          "雷电 4 和雷电 5 区别",
+          "雷电 4 和 USB4 有什么不同",
+          "USB4 是不是雷电",
+          "USB4 40Gbps 和雷电 4 一样吗",
+          "雷电 3 和 USB4 兼容吗",
+          "USB4 必须支持 PCIe 吗"
+        ],
+        "en": [
+          "Thunderbolt 4 vs Thunderbolt 5",
+          "is USB4 the same as Thunderbolt",
+          "USB4 40Gbps vs Thunderbolt 4",
+          "is Thunderbolt 3 compatible with USB4",
+          "does USB4 require PCIe tunneling"
+        ]
+      },
+      "anchor": "#ch9",
+      "relatedPages": [
+        "how-usb-drives-talk"
+      ]
+    },
+    {
+      "id": "thunderbolt-frontier",
+      "title": {
+        "zh": "雷电与 USB4 的前沿（2026）",
+        "en": "Thunderbolt and USB4 Frontier (2026)"
+      },
+      "desc": {
+        "zh": "截至 2026 年 11 月：USB4 2.0 与 PD 3.3 是现行规范，雷电 5 已出货；值得盯住 DP 带宽分配模式的普及和外接 PCIe 的 IOMMU 默认策略。",
+        "en": "As of November 2026: USB4 2.0 and PD 3.3 are current, Thunderbolt 5 ships; watch for DP bandwidth allocation mode support and default IOMMU policy for external PCIe."
+      },
+      "aliases": {
+        "zh": [
+          "雷电 5 普及了吗",
+          "USB PD 3.3",
+          "Type-C 2.5 规范",
+          "雷电接口最新进展"
+        ],
+        "en": [
+          "Thunderbolt 5 adoption",
+          "USB PD 3.3",
+          "USB Type-C 2.5",
+          "latest Thunderbolt news"
+        ]
+      },
+      "anchor": "#ch10",
+      "relatedPages": []
+    },
+    {
+      "id": "thunderbolt-summary",
+      "title": {
+        "zh": "雷电接口是怎么工作的",
+        "en": "How Thunderbolt Works"
+      },
+      "desc": {
+        "zh": "一根 USB-C 线能带多少东西，取决于三层：插座和线缆能过什么，路由器之间谈成了什么，连接管理器怎么分。",
+        "en": "What one USB-C cable can carry depends on three layers: what the connector and cable pass, what the routers negotiate, and how the Connection Manager divides it."
+      },
+      "aliases": {
+        "zh": [
+          "雷电接口是怎么工作的",
+          "雷电接口原理",
+          "一根 USB-C 线为什么能接所有东西",
+          "雷电是什么",
+          "Thunderbolt 是什么"
+        ],
+        "en": [
+          "how Thunderbolt works",
+          "what is Thunderbolt",
+          "how one USB-C cable carries everything",
+          "Thunderbolt explained"
+        ]
+      },
+      "anchor": "#ch11",
+      "relatedPages": []
+    }
+  ]
+}
