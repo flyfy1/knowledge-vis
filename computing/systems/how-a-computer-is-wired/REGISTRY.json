@@ -1,0 +1,163 @@
+{
+  "slug": "how-a-computer-is-wired",
+  "path": "computing/systems/how-a-computer-is-wired/",
+  "category": "computing",
+  "subtopic": "systems",
+  "stage": "university",
+  "title": {
+    "zh": "电脑里的零件是怎么连起来的",
+    "en": "How the Parts of a Computer Are Wired Together"
+  },
+  "desc": {
+    "zh": "CPU、内存、显卡、硬盘、USB 口，各自走的是哪条路？为什么早年的电脑是一根大家共用的总线，今天却变成一张点对点的网？八个可以拖动的模型和八张结构图：PCI 总线的时间账、反射波与负载、北桥的汇合点、两路服务器的远近内存、芯片组上行链路、片上环形与网格、芯粒之间的能耗、I²C 上拉电阻。",
+    "en": "Which path do the CPU, memory, graphics card, drives and USB ports each take? Why were early computers built around one bus everyone shared, and why is today's machine a web of point-to-point links? Eight models you can drag and eight structure diagrams: the PCI bus's time budget, reflected waves and loading, the northbridge as a meeting point, near and far memory in a two-socket server, the chipset uplink, rings and meshes on a die, energy between chiplets, and I²C pull-up resistors."
+  },
+  "tags": [
+    { "zh": "计算机体系结构", "en": "Computer Architecture" },
+    { "zh": "总线与互连", "en": "Buses and Interconnects" },
+    { "zh": "主板", "en": "Motherboards" },
+    { "zh": "长文", "en": "Long-form Essay" }
+  ],
+  "concepts": [
+    {
+      "id": "shared-bus-pci",
+      "title": { "zh": "共享总线：PCI 的仲裁、复用和时间账", "en": "The Shared Bus: PCI Arbitration, Multiplexing and Its Time Budget" },
+      "desc": {
+        "zh": "一组所有设备并联的线，同一时刻只能有一个设备说话；PCI 规范表 3-5 的例子说明每笔传输的固定开销怎样吃掉 132 MB/s。",
+        "en": "One set of wires every device hangs on, with one talker at a time; the PCI specification's Table 3-5 shows how each transaction's fixed overhead eats into 132 MB/s."
+      },
+      "aliases": {
+        "zh": ["总线是什么", "共享总线", "PCI 总线", "PCI 总线是什么", "总线仲裁", "地址数据复用", "总线带宽为什么不够分", "点对点和总线的区别"],
+        "en": ["what is a computer bus", "shared bus", "PCI bus", "bus arbitration", "multiplexed address and data", "shared bus vs point to point"]
+      },
+      "anchor": "#ch1",
+      "relatedPages": ["how-sata-works"]
+    },
+    {
+      "id": "bus-loading-reflected-wave",
+      "title": { "zh": "为什么并行总线跑不快：负载、反射波和时钟", "en": "Why a Parallel Bus Can't Go Fast: Loading, Reflected Waves and the Clock" },
+      "desc": {
+        "zh": "每多挂一个设备，线就更慢、阻抗更低；PCI 靠反射波把电平推到门限，66 MHz 时能挂的设备只剩 33 MHz 的一半。",
+        "en": "Each extra device slows the line and lowers its impedance; PCI relies on the reflected wave to reach the threshold, and at 66 MHz it can carry half as many loads as at 33 MHz."
+      },
+      "aliases": {
+        "zh": ["反射波", "反射波切换", "总线负载", "PCI 为什么只能插几个槽", "66MHz PCI 为什么插槽少", "传输线反射", "总线上挂的设备越多越慢"],
+        "en": ["reflected wave switching", "bus loading", "why PCI has few slots", "transmission line reflection", "loaded transmission line"]
+      },
+      "anchor": "#ch2",
+      "relatedPages": ["how-sata-works"]
+    },
+    {
+      "id": "northbridge-southbridge",
+      "title": { "zh": "北桥与南桥：前端总线、AGP 和汇合点", "en": "Northbridge and Southbridge: the Front-Side Bus, AGP and the Meeting Point" },
+      "desc": {
+        "zh": "以 Intel 875P 为例：CPU、显卡、南桥和网卡各走一条点对点的线，最后都挤进北桥里同一个内存控制器。",
+        "en": "Taking the Intel 875P: CPU, graphics, southbridge and network each have a point-to-point link, and all of them squeeze into one memory controller in the northbridge."
+      },
+      "aliases": {
+        "zh": ["北桥", "南桥", "北桥南桥", "北桥是什么", "南桥是什么", "前端总线", "FSB", "AGP", "Hub Interface"],
+        "en": ["northbridge", "southbridge", "northbridge and southbridge", "front side bus", "what is the FSB", "AGP"]
+      },
+      "anchor": "#ch3",
+      "relatedPages": []
+    },
+    {
+      "id": "numa-two-socket",
+      "title": { "zh": "内存控制器进了 CPU：NUMA 和远近内存", "en": "The Memory Controller Moves into the CPU: NUMA and Near and Far Memory" },
+      "desc": {
+        "zh": "两路服务器上每颗 CPU 带自己的内存；用 AMD ISSCC 2018 的 90 / 145 / 200 纳秒算访问的平均延迟和带宽。",
+        "en": "In a two-socket server each CPU has its own memory; AMD's ISSCC 2018 figures of 90, 145 and 200 ns give the average latency and bandwidth."
+      },
+      "aliases": {
+        "zh": ["NUMA", "NUMA 是什么", "非一致内存访问", "远端内存", "双路服务器内存", "内存控制器", "集成内存控制器", "跨插座访问内存", "numactl", "UPI", "QPI", "Infinity Fabric"],
+        "en": ["NUMA", "what is NUMA", "non-uniform memory access", "remote memory latency", "two socket server memory", "integrated memory controller", "UPI link", "Infinity Fabric"]
+      },
+      "anchor": "#ch4",
+      "relatedPages": ["why-compute-waits-for-memory"]
+    },
+    {
+      "id": "chipset-uplink",
+      "title": { "zh": "今天的主板：CPU 直连和芯片组的上行链路", "en": "Today's Motherboard: CPU Lanes and the Chipset Uplink" },
+      "desc": {
+        "zh": "显卡和最快的固态接 CPU，其余设备挂在芯片组下，共用一条 DMI 4.0 ×8 或 PCIe 4.0 ×4 的上行链路；几样东西一起忙时谁会变慢。",
+        "en": "Graphics and the fastest SSD hang off the CPU; everything else sits behind the chipset and shares one DMI 4.0 ×8 or PCIe 4.0 ×4 uplink. Which device slows down when several are busy."
+      },
+      "aliases": {
+        "zh": ["芯片组", "芯片组是什么", "PCH", "DMI", "DMI 是什么", "M.2 接在 CPU 还是芯片组", "主板上的 PCIe 是从哪来的", "芯片组通道和 CPU 通道", "两块固态同时读会变慢吗", "主板框图怎么看"],
+        "en": ["chipset", "what is a chipset", "PCH", "what is DMI", "chipset lanes vs CPU lanes", "M.2 slot CPU or chipset", "chipset uplink bottleneck", "motherboard block diagram"]
+      },
+      "anchor": "#ch5",
+      "relatedPages": ["why-nvme-is-fast", "how-usb-drives-talk"]
+    },
+    {
+      "id": "network-on-chip",
+      "title": { "zh": "芯片里面的路：环形总线和网格", "en": "Roads Inside the Chip: Ring Bus and Mesh" },
+      "desc": {
+        "zh": "核少时一圈环就够，核多了环的平均跳数线性增长；网格只随核数的平方根增长，吞吐也高得多。",
+        "en": "A ring is enough for a few cores; as cores grow its average hop count grows linearly, while a mesh grows with the square root and carries far more traffic."
+      },
+      "aliases": {
+        "zh": ["片上网络", "环形总线", "环形总线 网格", "CPU 内部怎么连", "核心之间怎么通信", "网格架构", "NoC"],
+        "en": ["network on chip", "ring bus", "mesh interconnect", "ring vs mesh", "how CPU cores are connected", "NoC"]
+      },
+      "anchor": "#ch6",
+      "relatedPages": []
+    },
+    {
+      "id": "die-to-die-links",
+      "title": { "zh": "芯粒之间的连线：UCIe 和每比特的能耗", "en": "Links Between Chiplets: UCIe and Energy per Bit" },
+      "desc": {
+        "zh": "拆开的芯片要连回来；标准封装和先进封装每比特的能耗、每毫米芯片边能出多少带宽，决定了芯粒之间能连多宽。",
+        "en": "Split dies have to be wired back together; energy per bit and bandwidth per millimetre of die edge, in standard and advanced packaging, set how wide a chiplet link can be."
+      },
+      "aliases": {
+        "zh": ["UCIe", "UCIe 是什么", "芯粒之间怎么连", "die-to-die", "芯片间互连", "硅中介层", "硅桥", "每比特能耗", "3D 堆叠"],
+        "en": ["UCIe", "what is UCIe", "die-to-die interconnect", "die to die link", "silicon interposer", "silicon bridge", "energy per bit", "pJ per bit", "3D stacking"]
+      },
+      "anchor": "#ch7",
+      "relatedPages": ["why-chips-are-hard", "why-compute-waits-for-memory"]
+    },
+    {
+      "id": "i2c-pull-up",
+      "title": { "zh": "到今天还共用的小总线：I²C 和上拉电阻", "en": "The Small Buses Still Shared Today: I²C and Pull-up Resistors" },
+      "desc": {
+        "zh": "I²C 用两根开漏线和上拉电阻；按 UM10204 第 7.1 节，上升时间 0.8473·Rp·Cb 决定了上拉电阻的范围。",
+        "en": "I²C uses two open-drain lines and pull-up resistors; by UM10204 §7.1 the rise time 0.8473·Rp·Cb sets the allowed range of the pull-up."
+      },
+      "aliases": {
+        "zh": ["I2C", "I2C 是什么", "I²C", "IIC", "上拉电阻多大", "I2C 上拉电阻", "I2C 上升时间", "SMBus", "SPI", "eSPI", "开漏输出"],
+        "en": ["I2C", "what is I2C", "I2C pull-up resistor value", "I2C rise time", "SMBus", "SPI bus", "open drain"]
+      },
+      "anchor": "#ch8",
+      "relatedPages": []
+    },
+    {
+      "id": "interconnect-frontier-2026",
+      "title": { "zh": "互连的前沿（截至 2026 年 11 月）：UCIe 3.0、3D 堆叠、CXL 4.0", "en": "The Interconnect Frontier (as of November 2026): UCIe 3.0, 3D Stacking, CXL 4.0" },
+      "desc": {
+        "zh": "已经确定的、已经做出来的、只是传闻的分开说：UCIe 3.0 规范、Xeon 6+ 的混合键合、CXL 4.0、泄露的下一代芯片组上行链路。",
+        "en": "What is established, demonstrated and only claimed, kept apart: the UCIe 3.0 specification, Xeon 6+ hybrid bonding, CXL 4.0, and the leaked next-generation chipset uplink."
+      },
+      "aliases": {
+        "zh": ["UCIe 3.0", "混合键合", "Foveros Direct", "DMI 5.0"],
+        "en": ["UCIe 3.0", "hybrid bonding", "Foveros Direct", "DMI 5.0"]
+      },
+      "anchor": "#ch9",
+      "relatedPages": []
+    },
+    {
+      "id": "reading-a-system",
+      "title": { "zh": "看一台机器的三个问题", "en": "Three Questions for Reading a Machine" },
+      "desc": {
+        "zh": "这个设备挂在谁下面、和谁共用一段路、数据到内存要跨几道边界。",
+        "en": "Whose link does a device hang on, what path does it share, and how many boundaries does data cross on the way to memory."
+      },
+      "aliases": {
+        "zh": ["电脑里的零件是怎么连起来的", "电脑内部结构", "电脑各部件怎么连接", "主板上的线是怎么走的"],
+        "en": ["how are computer parts connected", "how a computer is wired", "computer interconnect overview"]
+      },
+      "anchor": "#ch10",
+      "relatedPages": []
+    }
+  ]
+}
