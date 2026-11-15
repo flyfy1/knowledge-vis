@@ -3206,7 +3206,7 @@
       "developer": "Antigravity",
       "edition": "antigravity-why-nvme-is-fast-20261114",
       "kind": "original",
-      "sourceRevision": "70d9f2e1d9949f8e22c7c2bfbe329268ebf1d15b",
+      "sourceRevision": "e916a2675223df3fe63f6e93cd1441124438b909",
       "scope": {
         "zh": "整篇长文从零编写：延迟拆解、总线宽度与利特尔法则、64K 并行队列、环形队列与门铃 DMA、多通道 NAND 并行、写放大与 Trim、轮询与中断，以及 PCIe 6.0 与 GPUDirect 前沿",
         "en": "Whole essay written from scratch: latency breakdown, bus width and Little's Law, 64K parallel queues, SQ/CQ ring buffers and DMA, NAND channel parallelism, write amplification and Trim, polling vs. interrupts, and PCIe 6.0 / GPUDirect frontier"
@@ -3214,8 +3214,8 @@
       "originalAuthorship": "written from scratch in zh and en by Antigravity (gemini-4-hydrogen), 2026-11-14; verified with models.cjs, browser.cjs, and canvas-text-overlap --sweep, see BRIEF.md",
       "path": "computing/systems/why-nvme-is-fast/index.html",
       "originalSourceRevision": "fb63041c849aaff247f0c5a2fd866596b3da9ce9",
-      "previousSourceRevision": "4353c314ac11349650d72a09efdb89b421407152",
-      "provenanceEvidence": "specs/reviews/site-navigation-sweep-20261115.md"
+      "previousSourceRevision": "70d9f2e1d9949f8e22c7c2bfbe329268ebf1d15b",
+      "provenanceEvidence": "specs/reviews/why-nvme-is-fast-os-link-20261115.md"
     },
     "what-a-drive-is-made-of": {
       "developer": "Claude Code",
@@ -3277,7 +3277,7 @@
       "developer": "Claude Code",
       "edition": "claude-code-storage-over-a-network-20261115",
       "kind": "original",
-      "sourceRevision": "70d9f2e1d9949f8e22c7c2bfbe329268ebf1d15b",
+      "sourceRevision": "e916a2675223df3fe63f6e93cd1441124438b909",
       "scope": {
         "zh": "整篇长文从零编写：块、文件与对象存储、NAS 的文件协议与小文件往返、iSCSI 的写入路径、光纤通道的缓冲区信用、网络存储的延迟账、丢包与 RDMA/RoCE、NVMe-oF 的胶囊、多路径与 ALUA/ANA、三副本与纠删码、网络存储前沿",
         "en": "Whole essay written from scratch: block, file and object storage, NAS file protocols and small-file round trips, the iSCSI write path, Fibre Channel buffer credits, the latency budget of network storage, loss and RDMA/RoCE, NVMe-oF capsules, multipath with ALUA/ANA, replication and erasure coding, the network storage frontier"
@@ -3285,13 +3285,13 @@
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5); English copy drafted by Claude Code (claude-haiku-5-5); independently reviewed 2026-11-15 by a separate Claude Code session (same model), see the page BRIEF.md; cross-model review pending",
       "path": "computing/systems/storage-over-a-network/index.html",
       "originalSourceRevision": "d7abd777173f07baff977c7cea84ec601ed668c7",
-      "previousSourceRevision": "e2630ba1be7d0bb9acaa04618c347ee277cdfba5"
+      "previousSourceRevision": "70d9f2e1d9949f8e22c7c2bfbe329268ebf1d15b"
     },
     "how-pcie-works": {
       "developer": "Claude Code",
       "edition": "claude-code-how-pcie-works-20261115",
       "kind": "original",
-      "sourceRevision": "70d9f2e1d9949f8e22c7c2bfbe329268ebf1d15b",
+      "sourceRevision": "e916a2675223df3fe63f6e93cd1441124438b909",
       "scope": {
         "zh": "整篇长文从零编写：PCIe 的树形拓扑、通道与六次翻倍、TLP 的字节与效率、信用流控、ACK/NAK 重发、开机枚举与 BAR、DMA 与 MSI 中断、通道损耗与重定时器、NRZ 与 PAM4 眼图、FLIT 与前向纠错、PCIe 前沿",
         "en": "Whole essay written from scratch: the PCIe tree, lanes and six doublings, TLP bytes and efficiency, credit-based flow control, ACK/NAK replay, enumeration and BARs, DMA and MSI interrupts, channel loss and retimers, NRZ vs PAM4 eyes, FLIT and forward error correction, the PCIe frontier"
@@ -3299,7 +3299,7 @@
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5); English copy drafted by Claude Code (claude-haiku-5-5); independently reviewed 2026-11-15 by a separate Claude Code session (same model), see the page BRIEF.md; cross-model review pending",
       "path": "computing/systems/how-pcie-works/index.html",
       "originalSourceRevision": "7174f8e4f9aa585bae317b5edcd7fd2d16ae1db7",
-      "previousSourceRevision": "4e4585ca7ea2c86fca070e65cd299efba47476c7"
+      "previousSourceRevision": "70d9f2e1d9949f8e22c7c2bfbe329268ebf1d15b"
     },
     "how-a-computer-is-wired": {
       "developer": "Claude Code",
@@ -3319,7 +3319,7 @@
       "developer": "Claude Code",
       "edition": "claude-code-how-thunderbolt-works-20261115",
       "kind": "original",
-      "sourceRevision": "70d9f2e1d9949f8e22c7c2bfbe329268ebf1d15b",
+      "sourceRevision": "e916a2675223df3fe63f6e93cd1441124438b909",
       "scope": {
         "zh": "整篇长文从零编写：USB-C 的 24 根针与 CC 线、USB4 路由器与隧道包头、一条链路的带宽分配、菊花链、PAM3 与非对称模式、显示器要多少带宽、USB PD 与 EPR、DMA 攻击与 IOMMU、雷电 4/5 与 USB4 的必选清单、雷电前沿",
         "en": "Whole essay written from scratch: the 24 pins of USB-C and the CC wire, USB4 routers and the tunnel header, bandwidth allocation on one link, daisy chains, PAM3 and the asymmetric mode, display bandwidth, USB PD and EPR, DMA attacks and the IOMMU, what Thunderbolt 4/5 require beyond USB4, the Thunderbolt frontier"
@@ -3327,7 +3327,7 @@
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5); English copy drafted by Claude Code (claude-haiku-5-5); independently reviewed 2026-11-15 by a separate Claude Code session (same model), see the page BRIEF.md; cross-model review pending",
       "path": "computing/systems/how-thunderbolt-works/index.html",
       "originalSourceRevision": "3954bb68e0109ee46029b9d2fa11d36fb9e23223",
-      "previousSourceRevision": "4353c314ac11349650d72a09efdb89b421407152"
+      "previousSourceRevision": "70d9f2e1d9949f8e22c7c2bfbe329268ebf1d15b"
     },
     "how-cpu-caches-work": {
       "developer": "Claude Code",
@@ -3361,7 +3361,7 @@
       "developer": "Claude Code",
       "edition": "claude-code-how-virtual-memory-works-20261115",
       "kind": "original",
-      "sourceRevision": "70d9f2e1d9949f8e22c7c2bfbe329268ebf1d15b",
+      "sourceRevision": "e916a2675223df3fe63f6e93cd1441124438b909",
       "scope": {
         "zh": "整篇长文从零编写：为什么要虚拟地址与外部碎片、页和多级页表、x86-64 四级页表逐位走一遍、TLB 与覆盖范围、TLB 缺失的代价与页表遍历缓存、大页、缺页与按需调页、页面置换与 Belady 异常、fork 与写时复制、进程切换与 PCID 和 KPTI、虚拟机的二维页表、虚拟内存前沿",
         "en": "Whole essay written from scratch: why virtual addresses and external fragmentation, pages and multi-level page tables, an x86-64 four-level walk bit by bit, the TLB and its reach, the cost of a TLB miss and the page-walk cache, huge pages, page faults and demand paging, page replacement and Belady's anomaly, fork and copy-on-write, context switches with PCID and KPTI, two-dimensional page walks in virtual machines, the virtual-memory frontier"
@@ -3369,7 +3369,7 @@
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5); English copy drafted by Claude Code (claude-haiku-5-5); independently reviewed 2026-11-15 by a separate Claude Code session (same model), see the page BRIEF.md; cross-model review pending",
       "path": "computing/systems/how-virtual-memory-works/index.html",
       "originalSourceRevision": "df11763e66e3f101dcfc3fb3b0ee3b951b7e8494",
-      "previousSourceRevision": "d34e98bbf19fef76f37dadaeae3876691a3539a1"
+      "previousSourceRevision": "70d9f2e1d9949f8e22c7c2bfbe329268ebf1d15b"
     },
     "how-a-cpu-guesses-ahead": {
       "developer": "Claude Code",
@@ -3431,7 +3431,7 @@
       "developer": "Claude Code",
       "edition": "claude-code-how-a-gpu-computes-20261115",
       "kind": "original",
-      "sourceRevision": "70d9f2e1d9949f8e22c7c2bfbe329268ebf1d15b",
+      "sourceRevision": "e916a2675223df3fe63f6e93cd1441124438b909",
       "scope": {
         "zh": "整篇长文从零编写：缓存与多线程两种藏延迟的办法、网格线程块与线程束、线程束调度与占用率、分支发散、合并访存、共享内存的 bank 冲突、分块矩阵乘法的两级屋顶、张量核心与数字格式、像素按 2×2 着色、GPU 的存储层次与不做的一致性、GPU 前沿",
         "en": "Whole essay written from scratch: caches versus many threads as two ways to hide latency, grids, thread blocks and warps, warp scheduling and occupancy, branch divergence, memory coalescing, shared-memory bank conflicts, two roofs for a tiled matrix multiply, tensor cores and number formats, 2×2 quad shading, the GPU memory hierarchy and the coherence it skips, the GPU frontier"
@@ -3439,13 +3439,13 @@
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5); English copy drafted by Claude Code (claude-haiku-5-5); independently reviewed 2026-11-15 by a separate Claude Code session (same model), see the page BRIEF.md; cross-model review pending",
       "path": "computing/systems/how-a-gpu-computes/index.html",
       "originalSourceRevision": "e844143c1168a1f0f4da51e87bd3e6b0fd240e70",
-      "previousSourceRevision": "4e4585ca7ea2c86fca070e65cd299efba47476c7"
+      "previousSourceRevision": "70d9f2e1d9949f8e22c7c2bfbe329268ebf1d15b"
     },
     "how-a-computer-boots": {
       "developer": "Claude Code",
       "edition": "claude-code-how-a-computer-boots-20261115",
       "kind": "original",
-      "sourceRevision": "70d9f2e1d9949f8e22c7c2bfbe329268ebf1d15b",
+      "sourceRevision": "e916a2675223df3fe63f6e93cd1441124438b909",
       "scope": {
         "zh": "整篇长文从零编写：ATX 上电时序与 PWR_OK、复位向量、SPI 闪存读取、CPU 之前先醒的安全芯片与微码、用缓存当内存与开机时间线、UEFI 阶段与 ACPI 表、GUID 分区表与 CRC32、安全启动签名链、撤销签过名的引导程序、度量启动与 TPM、交给内核与叫醒其余核心、Arm 与苹果的开机链、开机前沿",
         "en": "Whole essay written from scratch: ATX power-on timing and PWR_OK, the reset vector, SPI flash reads, the security chips and microcode that wake before the CPU, cache as RAM and the boot timeline, UEFI phases and ACPI tables, the GUID partition table and CRC32, the Secure Boot signature chain, revoking signed boot loaders, measured boot and the TPM, the kernel handoff and waking the other cores, Arm and Apple boot chains, the boot frontier"
@@ -3453,7 +3453,35 @@
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5); English copy drafted by Claude Code (claude-haiku-5-5); independently reviewed 2026-11-15 by a separate Claude Code session (same model), see the page BRIEF.md; cross-model review pending",
       "path": "computing/systems/how-a-computer-boots/index.html",
       "originalSourceRevision": "509b4d6e5e33f05f41836ce60e3e8f816b2cf6ec",
-      "previousSourceRevision": "4e4585ca7ea2c86fca070e65cd299efba47476c7"
+      "previousSourceRevision": "70d9f2e1d9949f8e22c7c2bfbe329268ebf1d15b"
+    },
+    "how-the-os-talks-to-hardware": {
+      "developer": "Claude Code",
+      "edition": "claude-code-how-the-os-talks-to-hardware-20261115",
+      "kind": "original",
+      "sourceRevision": "e916a2675223df3fe63f6e93cd1441124438b909",
+      "scope": {
+        "zh": "整篇长文从零编写：特权级、系统调用与它的代价、设备寄存器（MMIO 与端口 I/O）、中断走过的路、中断与轮询和 NAPI、DMA 与描述符环、IOMMU、驱动怎么认出设备、一次 read() 穿过的每一层、epoll 与 io_uring、绕开内核、操作系统与硬件的前沿",
+        "en": "Whole essay written from scratch: privilege levels, system calls and their cost, device registers (MMIO and port I/O), the path of an interrupt, interrupts, polling and NAPI, DMA and descriptor rings, the IOMMU, how drivers find devices, every layer of one read(), epoll and io_uring, kernel bypass, the OS-and-hardware frontier"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5); English copy drafted by Claude Code (claude-haiku-5-5); independently reviewed 2026-11-15 by a separate Claude Code session (same model), see the page BRIEF.md and specs/reviews/how-the-os-talks-to-hardware-review-20261115.md; cross-model review pending",
+      "path": "computing/systems/how-the-os-talks-to-hardware/index.html",
+      "originalSourceRevision": "20a942e2f71f7b831c9f3843c8362a004b8558a3",
+      "previousSourceRevision": "20a942e2f71f7b831c9f3843c8362a004b8558a3"
+    },
+    "how-pixels-reach-a-screen": {
+      "developer": "Claude Code",
+      "edition": "claude-code-how-pixels-reach-a-screen-20261115",
+      "kind": "original",
+      "sourceRevision": "e916a2675223df3fe63f6e93cd1441124438b909",
+      "scope": {
+        "zh": "整篇长文从零编写：帧缓冲、像素时钟与消隐、撕裂与垂直同步、可变刷新率与低帧率补偿、显示引擎与合成器和颜色管线、DisplayPort 与 HDMI 链路、DSC 与 4:2:0、时序控制器与一行的充电时间、LCD 与 OLED 和运动模糊、HDR 与 PQ 曲线、从点击到屏幕的延迟、显示前沿",
+        "en": "Whole essay written from scratch: the framebuffer, pixel clock and blanking, tearing and vsync, variable refresh and low framerate compensation, the display engine, compositor and colour pipeline, DisplayPort and HDMI links, DSC and 4:2:0, the timing controller and row time, LCD, OLED and motion blur, HDR and the PQ curve, click-to-photon latency, the display frontier"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5); English copy drafted by Claude Code (claude-haiku-5-5); independently reviewed 2026-11-15 by a separate Claude Code session (same model), see the page BRIEF.md and specs/reviews/how-pixels-reach-a-screen-review-20261115.md; cross-model review pending",
+      "path": "computing/systems/how-pixels-reach-a-screen/index.html",
+      "originalSourceRevision": "3e6bf23d4915087961f4098abf08f7a2b518d589",
+      "previousSourceRevision": "3e6bf23d4915087961f4098abf08f7a2b518d589"
     }
   },
   "exceptions": {

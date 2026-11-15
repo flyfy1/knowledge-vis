@@ -175,6 +175,8 @@ window.KNOWLEDGE_ESSAYS = [
   "coherent-interconnects",
   "how-a-gpu-computes",
   "how-a-computer-boots",
+  "how-the-os-talks-to-hardware",
+  "how-pixels-reach-a-screen",
   "how-an-economy-is-measured",
   "scarcity-moves"
 ];
@@ -575,6 +577,26 @@ window.KNOWLEDGE_PAGES = [
     },
     tags: [{ zh: "开机", en: "Booting" }, { zh: "固件", en: "Firmware" }, { zh: "安全启动", en: "Secure Boot" }, { zh: "计算机体系结构", en: "Computer Architecture" }, { zh: "长文", en: "Long-form Essay" }],
     category: "computing", subtopic: "systems", stage: "university", status: "live", path: "computing/systems/how-a-computer-boots/"
+  },
+  {
+    slug: "how-the-os-talks-to-hardware",
+    title: { zh: "操作系统是怎么和硬件说话的", en: "How the OS Talks to Hardware" },
+    desc: {
+      zh: "程序里写一句 read()，几微秒后数据就从硬盘或网卡那里来了，可用户程序碰不到任何硬件。这句话怎么穿过那堵墙，找到对的驱动和设备，再把结果送回来？九个可以动手的模型：一条指令在哪个特权级会被拦下，系统调用的寄存器约定，一次进出内核要多少周期，读设备寄存器为什么贵，中断、轮询和 NAPI 各花多少 CPU，描述符环多大才不丢包，驱动怎么和设备配对，一次 read() 在每一层花多久，以及 epoll 和 io_uring 每次 I/O 要几次系统调用。",
+      en: "A read() in your program brings data back from a disk or a network card within microseconds, yet a user program cannot touch any hardware. How does that one line cross the wall, find the right driver and device, and bring the result back? Nine hands-on models: which instruction traps at which privilege level, the system-call register convention, the cycles of one kernel crossing, why reading a device register is expensive, the CPU cost of interrupts, polling and NAPI, how large a descriptor ring must be not to drop packets, how drivers bind to devices, where one read() spends its time layer by layer, and how many system calls epoll and io_uring make per I/O."
+    },
+    tags: [{ zh: "操作系统", en: "Operating Systems" }, { zh: "驱动", en: "Device Drivers" }, { zh: "系统调用", en: "System Calls" }, { zh: "计算机体系结构", en: "Computer Architecture" }, { zh: "长文", en: "Long-form Essay" }],
+    category: "computing", subtopic: "systems", stage: "university", status: "live", path: "computing/systems/how-the-os-talks-to-hardware/"
+  },
+  {
+    slug: "how-pixels-reach-a-screen",
+    title: { zh: "像素是怎么到屏幕上的", en: "How Pixels Reach a Screen" },
+    desc: {
+      zh: "一块 4K 屏每秒刷新 120 次，就是每秒要送出近十亿个像素，每个都得在对的时刻亮成对的颜色。它们怎么从显卡的一块内存，经过一根线，变成眼前的光？画面为什么会撕裂、卡顿？十一个可以动手的模型：一帧有多少字节，按真实时序表算像素时钟，撕裂与垂直同步的时间线，可变刷新率与低帧率补偿，颜色管线与查找表，一根线放不放得下一种画面，4:2:0 抽掉了什么，一行像素有多少时间充电，眼睛跟着看时的运动模糊，HDR 的 PQ 曲线，以及从点鼠标到屏幕变亮的延迟。",
+      en: "A 4K screen refreshing 120 times a second has to deliver nearly a billion pixels a second, each lit the right colour at the right moment. How do they get from a block of GPU memory, through one cable, to light in front of your eyes, and why does the picture tear or stutter? Eleven hands-on models: how many bytes a frame takes, the pixel clock from real timing tables, a tearing and vsync timeline, variable refresh with low framerate compensation, the colour pipeline and its lookup tables, whether a cable fits a given mode, what 4:2:0 throws away, how long a row of pixels has to charge, motion blur when the eye tracks, the HDR PQ curve, and the latency from mouse click to light."
+    },
+    tags: [{ zh: "显示器", en: "Displays" }, { zh: "显卡", en: "Graphics Cards" }, { zh: "DisplayPort", en: "DisplayPort" }, { zh: "HDR", en: "HDR" }, { zh: "计算机体系结构", en: "Computer Architecture" }, { zh: "长文", en: "Long-form Essay" }],
+    category: "computing", subtopic: "systems", stage: "university", status: "live", path: "computing/systems/how-pixels-reach-a-screen/"
   },
   {
     slug: "how-an-economy-is-measured",

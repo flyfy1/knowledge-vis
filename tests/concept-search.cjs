@@ -574,6 +574,62 @@ chapters.push(
   ['安全启动证书过期', 'Pluton', BOOT + '#ch13'],
   ['电脑开不了机', 'computer will not boot', BOOT + '#ch14'],
 );
+// OS and pixels essays (2026-11-15, OS/pixels registrar). The OS essay leaves RDMA to storage-over-a-network #ch6 and keeps only
+// DMA 是什么 / what is DMA (bare DMA is unowned: it ties at 80 between the OS essay #ch7 and how-pcie-works #ch7, not pinned); its
+// "kernel bypass" (#ch12) and storage-over-a-network's "kernel bypass zero copy" (#ch6) each land on their own chapter. Plain 中断 /
+// interrupt and io_uring were unowned and now open #ch5 and #ch11; 操作系统 / operating system open #ch1 (they tied between two page tags).
+// The pixels essay leaves the DSC definitions to how-thunderbolt-works #ch6, which now also takes bare DSC, 显示流压缩 and Display Stream
+// Compression (they had no owner and returned nothing); it keeps DSC 有损吗 / is DSC lossy / 视觉无损 / visually lossless on #ch7. Its page
+// tag 显卡 / Graphics Cards would take bare 显卡, so 显卡 / graphics card are aliases of how-a-gpu-computes #ch1.
+const OSP = 'computing/systems/how-the-os-talks-to-hardware/', PIX = 'computing/systems/how-pixels-reach-a-screen/';
+chapters.push(
+  ['操作系统', 'operating system', OSP + '#ch1'],
+  ['操作系统怎么和硬件通信', 'how does the OS talk to hardware', OSP + '#ch1'],
+  ['用户态和内核态', 'user mode vs kernel mode', OSP + '#ch1'],
+  ['系统调用', 'what is a syscall', OSP + '#ch2'],
+  ['系统调用开销', 'syscall cost', OSP + '#ch3'],
+  ['MMIO 是什么', 'memory-mapped I/O', OSP + '#ch4'],
+  ['中断', 'interrupt', OSP + '#ch5'],
+  ['软中断', 'what is an APIC', OSP + '#ch5'],
+  ['NAPI', 'interrupt coalescing', OSP + '#ch6'],
+  ['DMA 是什么', 'what is DMA', OSP + '#ch7'],
+  ['描述符环', 'descriptor ring', OSP + '#ch7'],
+  ['DMA 重映射', 'IOVA', OSP + '#ch8'],
+  ['IOMMU 是什么', 'IOMMU', 'computing/systems/how-thunderbolt-works/#ch8'],
+  ['驱动模型', 'driver probe', OSP + '#ch9'],
+  ['页缓存', 'page cache', OSP + '#ch10'],
+  ['io_uring', 'epoll', OSP + '#ch11'],
+  ['内核旁路', 'kernel bypass', OSP + '#ch12'],
+  ['DPDK', 'SR-IOV', OSP + '#ch12'],
+  ['RDMA 是什么', 'RDMA', 'computing/systems/storage-over-a-network/#ch6'],
+  ['RoCE', 'kernel bypass zero copy', 'computing/systems/storage-over-a-network/#ch6'],
+  ['Rust 写驱动', 'Rust in the Linux kernel', OSP + '#ch13'],
+  ['程序卡在 I/O 上', 'I/O performance troubleshooting', OSP + '#ch14'],
+  ['显示器是怎么工作的', 'how does a monitor work', PIX + '#ch1'],
+  ['帧缓冲', 'framebuffer', PIX + '#ch1'],
+  ['像素时钟', 'pixel clock', PIX + '#ch2'],
+  ['刷新率', 'refresh rate', PIX + '#ch2'],
+  ['画面撕裂', 'screen tearing', PIX + '#ch3'],
+  ['垂直同步', 'vsync', PIX + '#ch3'],
+  ['可变刷新率', 'FreeSync', PIX + '#ch4'],
+  ['桌面合成器', 'color management', PIX + '#ch5'],
+  ['HDMI 和 DP 区别', 'HDMI vs DisplayPort', PIX + '#ch6'],
+  ['DP', 'HDMI', PIX + '#ch6'],
+  ['4K 120Hz 要什么线', 'which cable for 4K 120Hz', PIX + '#ch6'],
+  ['DSC 有损吗', 'is DSC lossy', PIX + '#ch7'],
+  ['视觉无损', 'visually lossless', PIX + '#ch7'],
+  ['4:2:0', 'chroma subsampling', PIX + '#ch7'],
+  ['DSC', 'Display Stream Compression', 'computing/systems/how-thunderbolt-works/#ch6'],
+  ['显示流压缩', 'what is DSC', 'computing/systems/how-thunderbolt-works/#ch6'],
+  ['TCON', 'timing controller', PIX + '#ch8'],
+  ['OLED 和 LCD 区别', 'motion blur', PIX + '#ch9'],
+  ['HDR 是什么', 'what is HDR', PIX + '#ch10'],
+  ['PQ 曲线', 'nits', PIX + '#ch10'],
+  ['输入延迟', 'input lag', PIX + '#ch11'],
+  ['HDMI 2.2', '720 Hz OLED', PIX + '#ch12'],
+  ['为什么显示器跑不到 144Hz', 'how to read monitor specs', PIX + '#ch13'],
+  ['显卡', 'graphics card', A6 + '#ch1'],
+);
 for (const [zh, en, href] of chapters) for (const q of [zh, en]) {
   const hit = first(q);
   ok(hit && (hit.href === href || (href.endsWith('/') && hit.href.startsWith(href))), `"${q}" opens ${href} (got ${hit && hit.href})`);

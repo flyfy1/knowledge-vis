@@ -393,6 +393,24 @@ anchor and aliases. It is a schema-2 fragment `atlas/graph/lessons/<slug>.json`:
   a biology page by substring); #ch12 TF-A (it opened how-memory-talks #ch6 through tFAW). `tests/concept-search.cjs` pins 40 zh/en
   pairs (16 A6, 19 boot, 5 owners kept). The search chunks total 328,257 bytes; the build created `search/chunks/computing-4.js`, which
   is committed with the registration (git add before `--check`).
+- Architecture series, the OS and pixels essays (2026-11-15): how-the-os-talks-to-hardware (14 concepts) and how-pixels-reach-a-screen
+  (13) → computing. 46 hand-written edges. OS fragment (28): 11 between chapters (#ch1 → #ch2 → #ch3, #ch10; #ch3 → #ch11, #ch12; #ch4 →
+  #ch7 → #ch8; #ch5 → #ch6 → #ch12; #ch9 → #ch10 → #ch11), from how-virtual-memory-works #ch3 and how-a-computer-boots #ch12 → #ch1, boot
+  #ch11 → #ch2 and #ch9, how-virtual-memory-works #ch10 → #ch3, how-pcie-works #ch6 → #ch4 and #ch9, #ch7 → #ch5, why-nvme-is-fast #ch4 →
+  #ch7, #ch7 → #ch6 and #ch11, how-cores-share-memory #ch9 → #ch7, how-thunderbolt-works #ch8 and how-virtual-memory-works #ch11 → #ch8,
+  boot #ch6 → #ch9, what-a-drive-is-made-of #ch1 → #ch10, storage-over-a-network #ch6 → #ch12. Pixels fragment (18): 9 between chapters
+  (#ch1 → #ch2, #ch10; #ch2 → #ch3, #ch6, #ch8; #ch3 → #ch4, #ch11; #ch6 → #ch7; #ch5 → #ch11), from how-a-gpu-computes #ch9,
+  how-memory-talks #ch9 and the computer-graphics lesson → #ch1, how-thunderbolt-works #ch6 → #ch2, #ch6 and #ch7, how-usb-drives-talk
+  #ch8 and how-pcie-works #ch8 → #ch6, inside-a-phone #screen (tech region) → #ch5. Alias decisions: the OS essay takes no RDMA
+  (storage-over-a-network #ch6) and only DMA 是什么 / what is DMA (bare DMA is unowned and ties at 80 between OS #ch7 and how-pcie-works
+  #ch7; not pinned); "kernel bypass" / 内核旁路 open OS #ch12, "kernel bypass zero copy" storage-over-a-network #ch6. The pixels essay takes
+  no 显示流压缩 / Display Stream Compression; how-thunderbolt-works #ch6 now owns them and bare DSC (they returned nothing before), pixels
+  #ch7 keeps DSC 有损吗 / is DSC lossy / 视觉无损 / visually lossless. One-click additions: OS #ch1 操作系统, 操作系统怎么和硬件通信, 程序怎么
+  访问硬件 / operating system, how does the OS talk to hardware, how do programs access hardware (操作系统 / operating system tied between
+  two page tags), #ch5 中断 / interrupt, #ch11 io_uring (it opened #ch13); pixels #ch1 显示器是怎么工作的 / how does a monitor work, #ch2
+  刷新率 / refresh rate, #ch5 颜色管理 / color management, #ch6 DP, HDMI (bare DP opened OS #ch12 through DPDK); how-a-gpu-computes #ch1 显卡
+  / graphics card (the pixels page tag 显卡 / Graphics Cards would take bare 显卡). `tests/concept-search.cjs` pins 46 zh/en pairs (19 OS,
+  21 pixels, 6 on other owners: IOMMU, RDMA, RoCE, DSC twice, 显卡). The search chunks total 344,376 bytes; no new chunk.
 
 ### Commands for the integrator
 

@@ -88,7 +88,7 @@ types ("为什么要打疫苗", "how does my phone know where I am"), not only t
    max-age=14400`) but not the HTML, so without a new key readers get the new page with the old text. If the scripts
    were already deployed under today's key, append a letter (`?v=20261115b`, then `c`) so the new key differs. The
    storage essays (what-a-drive-is-made-of, how-sata-works, how-sas-works, how-usb-drives-talk, storage-over-a-network),
-   the bus essays (how-pcie-works, how-a-computer-is-wired, how-thunderbolt-works, how-memory-talks, coherent-interconnects), how-cpu-caches-work, how-a-cpu-runs-a-program, how-virtual-memory-works, how-a-cpu-guesses-ahead, how-cores-share-memory, how-a-gpu-computes, how-a-computer-boots, why-compute-waits-for-memory and why-nvme-is-fast use it since 2026-11-15; older essays do not yet, so add the key the next time one of them
+   the bus essays (how-pcie-works, how-a-computer-is-wired, how-thunderbolt-works, how-memory-talks, coherent-interconnects), how-cpu-caches-work, how-a-cpu-runs-a-program, how-virtual-memory-works, how-a-cpu-guesses-ahead, how-cores-share-memory, how-a-gpu-computes, how-a-computer-boots, how-the-os-talks-to-hardware, how-pixels-reach-a-screen, why-compute-waits-for-memory and why-nvme-is-fast use it since 2026-11-15; older essays do not yet, so add the key the next time one of them
    changes.
 8. Add rows to CONCEPT-MAP.md.
 
@@ -129,11 +129,13 @@ types ("为什么要打疫苗", "how does my phone know where I am"), not only t
 | coherent-interconnects | computing/systems/coherent-interconnects/ | 13 (`#ch1…#ch13`) | computing | `ESSAY_BASE_URL` |
 | how-a-gpu-computes | computing/systems/how-a-gpu-computes/ | 12 (`#ch1…#ch12`) | computing | `ESSAY_BASE_URL` |
 | how-a-computer-boots | computing/systems/how-a-computer-boots/ | 14 (`#ch1…#ch14`) | computing | `ESSAY_BASE_URL` |
+| how-the-os-talks-to-hardware | computing/systems/how-the-os-talks-to-hardware/ | 14 (`#ch1…#ch14`) | computing | `ESSAY_BASE_URL` |
+| how-pixels-reach-a-screen | computing/systems/how-pixels-reach-a-screen/ | 13 (`#ch1…#ch13`) | computing | `ESSAY_BASE_URL` |
 
 The eleven from 2026-11-11, the two food essays of 2026-11-12 and the five storage essays of 2026-11-14/15
 (what-a-drive-is-made-of, how-sata-works, how-sas-works, how-usb-drives-talk, storage-over-a-network) and the three bus essays of
 2026-11-15 (how-pcie-works, how-a-computer-is-wired, how-thunderbolt-works, and later how-memory-talks and coherent-interconnects) and the architecture essays how-cpu-caches-work,
-how-a-cpu-runs-a-program, how-virtual-memory-works, how-a-cpu-guesses-ahead, how-cores-share-memory, how-a-gpu-computes and how-a-computer-boots (2026-11-15) were built by Claude Code (claude-opus-5-5). The English copy was drafted by Claude
+how-a-cpu-runs-a-program, how-virtual-memory-works, how-a-cpu-guesses-ahead, how-cores-share-memory, how-a-gpu-computes, how-a-computer-boots, how-the-os-talks-to-hardware and how-pixels-reach-a-screen (2026-11-15) were built by Claude Code (claude-opus-5-5). The English copy was drafted by Claude
 Code (claude-haiku-5-5). A separate Claude Code session of the same model reviewed each essay and revised
 it (no human or cross-model review yet). Each BRIEF.md records what was and was not checked.
 why-compute-waits-for-memory and why-nvme-is-fast were built by Antigravity (gemini-4-hydrogen) in both
@@ -294,6 +296,7 @@ existing word PCIe in ch2.p2 to how-pcie-works #ch2, moved its scripts to `?v=20
 commit (4353c314) with specs/reviews/why-nvme-is-fast-pcie-link-20261115.md as evidence. It keeps the storage-specific
 PCIe words (PCIe 4.0 5.0 6.0 SSD 速度, PCIe vs SATA bandwidth, MSI-X 中断; plain "MSI-X" opens its #ch4); the generic ones
 belong to how-pcie-works.
+OS/pixels registrar (2026-11-15): ch7.p2 links its existing words io_uring IOPOLL to how-the-os-talks-to-hardware #ch11; label at e916a267 (previous 70d9f2e1, original fb63041c), evidence specs/reviews/why-nvme-is-fast-os-link-20261115.md; scripts `?v=20261115c`. SPDK and io_uring IOPOLL stay here.
 
 ### what-a-drive-is-made-of: 硬盘里到底是什么
 
@@ -382,6 +385,7 @@ and #ch8, why-compute-waits-for-memory #ch10, tcp-congestion and distributed-sys
 from S1, 2 from S3, 2 from why-nvme-is-fast, 1 from tcp-congestion, 1 from distributed-systems. Not verified (BRIEF): the
 FC-FS frame layout, MS-SMB2, S3 PUT semantics, several textbooks cited from memory, most frontier dates via two outlets
 rather than the primary pages.
+OS/pixels registrar (2026-11-15): ch6.p1 links how-the-os-talks-to-hardware #ch12 (kernel bypass inside one machine); RDMA 是什么 / RDMA and "kernel bypass zero copy" stay on #ch6 here (pinned), plain "kernel bypass" / 内核旁路 open the OS essay #ch12. Label at e916a267 (previous 70d9f2e1), scripts `?v=20261115b`.
 
 ### how-pcie-works: PCIe 为什么能一代一代翻倍
 
@@ -404,6 +408,7 @@ pages (why-nvme-is-fast #ch2 and #ch4, how-usb-drives-talk #ch8). Not verified (
 assignment in PCIe 6.0. B4 is linked since it went live (2026-11-15): ch11.e3 (CXL 4.0) gains one sentence linking coherent-interconnects
 #ch3; label at 52df5521 (previous 4353c314), scripts `?v=20261115b`. The CXL words (什么是 CXL, CXL 是什么, what is CXL) it reserved are B4's.
 A6/boot registrar (2026-11-15): ch6.limit gains one sentence linking how-a-computer-boots #ch6 (where in the boot the firmware enumerates); PCIe 枚举 / PCIe enumeration stay on #ch6 here (pinned). Label at 4e4585ca (previous 52df5521), scripts `?v=20261115c`.
+OS/pixels registrar (2026-11-15): ch6.p5 links how-the-os-talks-to-hardware #ch4 (registers behind a BAR) and ch7.p3 its #ch5 (the interrupt path after MSI); MSI / MSI-X stay on #ch7 here. Label at e916a267 (previous 70d9f2e1), scripts `?v=20261115d`.
 
 ### how-a-computer-is-wired: 电脑里的零件是怎么连起来的
 
@@ -446,6 +451,7 @@ not redone), why-nvme-is-fast #ch2 and #ch4, and how-pcie-works (#ch2 and the pa
 from how-usb-drives-talk (#ch8 twice, #ch3), 1 from why-nvme-is-fast (#ch4), 1 from how-pcie-works (#ch2), 2 into
 how-usb-drives-talk #ch8. Not verified (BRIEF): which DP reservation route a TB4 product uses, the Thunderspy authors'
 claim about USB4, USB4's own DMA-protection wording.
+OS/pixels registrar (2026-11-15): ch8.p2 links how-the-os-talks-to-hardware #ch8; ch6.p1 links how-pixels-reach-a-screen #ch2 and ch6.p4 its #ch7. #ch6 takes bare DSC, 显示流压缩 and Display Stream Compression (unowned; the pixels essay left the DSC definitions here). Known inconsistency, not changed: ch6.p4 counts 25.92 Gb/s for HBR3 ×4 with DSC, but DSC on 8b/10b DP requires FEC (25.31 Gb/s). Label at e916a267 (previous 70d9f2e1), scripts `?v=20261115b`.
 
 ### how-cpu-caches-work: CPU 的三级缓存是怎么工作的
 
@@ -519,6 +525,7 @@ chapters, 1 to how-cpu-caches-work #ch7, 3 from how-cpu-caches-work (#ch4, #ch10
 what-a-drive-is-made-of #ch8, 1 from how-pcie-works #ch7, 1 to how-thunderbolt-works #ch8. Not verified (BRIEF): Zen 5 L2
 DTLB associativity, 1 GiB entries and walker count (AMD 58455 not reopened), the 990 PRO and Barracuda figures, the Linux
 command lines.
+OS/pixels registrar (2026-11-15): ch10.limit links how-the-os-talks-to-hardware #ch3 (the cost of one crossing) and ch11.p3 its #ch8 (the IOMMU mappings a driver makes). Label at e916a267 (previous 70d9f2e1), scripts `?v=20261115c`.
 
 ### how-a-cpu-guesses-ahead: CPU 是怎么猜着往前跑的
 
@@ -658,6 +665,7 @@ ch12.links (#ch10) link here. Scripts `?v=20261115r`. Atlas edges (20, in its fr
 (#ch3, #ch7; #ch7, #ch6), 1 from its #ch6 into #ch3, 3 into #ch10 (how-cores-share-memory #ch3, #ch4, how-memory-talks #ch9), 1 from
 coherent-interconnects #ch8 into #ch11. Not verified (BRIEF): the PTX wgmma operand rules, atomics carried out in L2, Volta's one path
 per cycle, the Volkov talk, MI355X figures, the Rubin sparsity label, Narasiman 2011, Fatahalian 2010, Pineda 1988, Williams 2009.
+OS/pixels registrar (2026-11-15): ch9.p2 links how-pixels-reach-a-screen #ch1 (the framebuffer); #ch1 takes 显卡 / graphics card (the pixels essay's page tag 显卡 would take bare 显卡). Label at e916a267 (previous 70d9f2e1), scripts `?v=20261115s`.
 
 ### how-a-computer-boots: 电脑是怎么开机的
 
@@ -688,6 +696,66 @@ rsa-encryption; 《当着所有人的面约定一个秘密》 (ch8.p2, ch14.link
 how-a-computer-is-wired #ch8, what-a-drive-is-made-of #ch1, how-virtual-memory-works #ch3 and rsa-encryption. Not verified (BRIEF): Boot
 Guard, CSME-first and PSP internals, the W25Q256JV command table (not reopened), the ACPI 6.6 date, the openSIL schedule, chipset SPI
 limits, the Apple guide wording, the ESET and Eclypsium pages; the stage durations are tuned.
+OS/pixels registrar (2026-11-15): ch11.p6 links how-the-os-talks-to-hardware #ch9 (how the initramfs drivers find their devices). Label at e916a267 (previous 70d9f2e1), scripts `?v=20261115s`.
+
+### how-the-os-talks-to-hardware: 操作系统是怎么和硬件说话的
+
+Computer architecture series, queued system essay (TASK-arch-series.md). A read() in a program brings data back from a disk or a network
+card within microseconds, yet a user program cannot touch any hardware: how does that line cross the wall, find the right driver and
+device, and bring the result back? Privilege levels on x86 rings and Arm exception levels, the system call (register contents on x86-64
+and arm64), the cost of a crossing with and without KPTI / PCID, MMIO and port I/O, the path of an interrupt (diagram), interrupts against
+polling and NAPI on a seeded simulation, DMA and descriptor rings with wrapping counters, the IOMMU, match / probe / bind with
+-EPROBE_DEFER, one read() through every layer, epoll and io_uring, kernel bypass (DPDK, SPDK, VFIO, virtio, SR-IOV), a dated frontier
+(Linux 7.4-rc2 / 7.3.4, Rust in the kernel, Google's io_uring bounty) and three questions. Ten static diagrams. Essay commit 20a942e2;
+label at e916a267 (the cross-link, alias and one-click commit). Review note specs/reviews/how-the-os-talks-to-hardware-review-20261115.md.
+It owns 特权级, 用户态和内核态 / user mode vs kernel mode, ring 0, 操作系统 / operating system, 操作系统怎么和硬件通信 / how does the OS talk to
+hardware (#ch1), 系统调用 / system call, what is a syscall (#ch2), 系统调用开销 / syscall cost (#ch3), MMIO 是什么, 端口 I/O / memory-mapped
+I/O, port I/O (#ch4), 中断 / interrupt, 中断处理, 软中断, APIC 是什么 (#ch5), NAPI, 中断合并 / interrupt coalescing, 接收活锁 (#ch6), 描述符环,
+DMA 是什么 / what is DMA, 直接内存访问 (#ch7), DMA 重映射, IOVA (#ch8), 驱动模型, driver probe, EPROBE_DEFER (#ch9), VFS, 页缓存 / page cache,
+O_DIRECT (#ch10), epoll, io_uring, 异步 I/O (#ch11), DPDK, virtio, SR-IOV, 用户态驱动, 内核旁路 / kernel bypass (#ch12), Rust 写驱动 / Rust in
+the Linux kernel, io_uring 安全 (#ch13), 程序卡在 I/O 上 (#ch14); its page tags 操作系统, 驱动, 系统调用 / Operating Systems, Device Drivers,
+System Calls open the page top. **Alias decisions (2026-11-15, review and registrar):** RDMA / remote direct memory access stay on
+storage-over-a-network #ch6; bare DMA is not taken (the unregistered draft why-a-few-firms-win uses it for the Digital Markets Act; on the
+live site it ties at 80 between #ch7 and how-pcie-works #ch7, not pinned); "kernel bypass" / 内核旁路 open #ch12 while
+storage-over-a-network's "kernel bypass zero copy" opens its #ch6 (both pinned). Left to their owners: IOMMU, DMA 攻击
+(how-thunderbolt-works #ch8), MSI / MSI-X, BAR (how-pcie-works), doorbells, SQ/CQ, SPDK and io_uring IOPOLL (why-nvme-is-fast), KPTI, PCID,
+page faults (how-virtual-memory-works), 内存屏障 (how-cores-share-memory). It links how-virtual-memory-works (#ch3, #ch4, #ch10),
+how-pcie-works (#ch6, #ch7), why-nvme-is-fast (#ch4, #ch7), how-thunderbolt-works #ch8, how-a-computer-boots (#ch6, #ch11, #ch12),
+how-cores-share-memory #ch9, how-a-cpu-guesses-ahead #ch10, how-a-cpu-runs-a-program #ch8, how-cpu-caches-work, coherent-interconnects #ch3
+and what-a-drive-is-made-of (#ch1, #ch2); 《网页是怎么来到你手机上的》 (ch14.links) stays plain text until tech/networks/how-a-web-page-arrives
+registers. how-virtual-memory-works ch10.limit (#ch3) and ch11.p3 (#ch8), how-pcie-works ch6.p5 (#ch4) and ch7.p3 (#ch5), why-nvme-is-fast
+ch7.p2 (#ch11), how-a-computer-boots ch11.p6 (#ch9), how-thunderbolt-works ch8.p2 (#ch8) and storage-over-a-network ch6.p1 (#ch12) link
+here. Scripts `?v=20261115`. Atlas edges (28, in its fragment): 11 between chapters, 17 from the siblings it links or that link it (see
+specs/atlas-search-index.md). Not verified (BRIEF): Ren et al. cycle counts, Lee Fig. 4(a) values, FlexSC, the Arm MSR-at-EL0 pseudocode,
+IOMMU strict / lazy costs, virtio 1.3 final status, whether the C Binder removal landed exactly in 7.4-rc1.
+
+### how-pixels-reach-a-screen: 像素是怎么到屏幕上的
+
+Computer architecture series, queued system essay (TASK-arch-series.md). A 4K screen at 120 Hz has to deliver nearly a billion pixels a
+second: how do they get from a block of GPU memory, through one cable, to light, and why does the picture tear or stutter? The
+framebuffer, pixel clock and blanking on CTA-861 and CVT-RB2 timings, tearing and stutter on an event-driven present queue (immediate /
+FIFO / mailbox), variable refresh and LFC, the display engine, compositor and colour pipeline (KMS planes, DEGAMMA / CTM / GAMMA), DisplayPort
+and HDMI links with training (UHBR payloads from Linux's 96.71 %), DSC with the FEC that 8b/10b DP requires and 4:2:0 on text, the timing
+controller and row time, LCD / OLED and motion blur, HDR and PQ, a click-to-photon waterfall, a dated frontier and three questions. Twelve
+static diagrams. Essay commit 3e6bf23d; label at e916a267. Review note specs/reviews/how-pixels-reach-a-screen-review-20261115.md. It owns
+像素是怎么到屏幕上的, 显示器是怎么工作的 / how does a monitor work, 帧缓冲 / framebuffer, sRGB 和线性 (#ch1), 像素时钟 / pixel clock, 消隐,
+刷新率 / refresh rate (#ch2), 画面撕裂 / screen tearing, 垂直同步 / vsync, 三缓冲 (#ch3), 可变刷新率 / VRR, FreeSync, G-SYNC, LFC (#ch4),
+显示引擎, 桌面合成器, 颜色管理 / color management, 伽马 LUT (#ch5), DP, HDMI, HDMI 和 DP 区别 / HDMI vs DisplayPort, 4K 120Hz 要什么线, 链路训练,
+TMDS, FRL (#ch6), DSC 有损吗 / is DSC lossy, 视觉无损 / visually lossless, 4:2:0, 色度抽样 / chroma subsampling (#ch7), TCON, 时序控制器, TFT
+背板 (#ch8), OLED 和 LCD 区别 / OLED vs LCD, 运动模糊 / motion blur, 响应时间, PWM 调光 (#ch9), HDR 是什么 / what is HDR, nits, PQ 曲线, HDR10
+(#ch10), 输入延迟 / input lag, 显示延迟 (#ch11), HDMI 2.2, DP80LL, 720Hz OLED, Panel Replay (#ch12), 显示器参数怎么看, 为什么显示器跑不到 144Hz
+(#ch13); its page tags 显示器 / Displays, DisplayPort and HDR open the page top. **Alias decisions (2026-11-15, review and registrar):**
+显示流压缩 / Display Stream Compression stay off this page (the review left the DSC definitions to how-thunderbolt-works); they had no owner
+and returned nothing, so how-thunderbolt-works #ch6 now takes them with bare DSC (it already had DSC 压缩是什么 / what is DSC). The page tag
+显卡 / Graphics Cards would take bare 显卡 from the GPU essay, so 显卡 / graphics card are aliases of how-a-gpu-computes #ch1 (pinned). Left
+to their owners: 像素 / pixel, 色域 / gamut, RGB 子像素 (inside-a-phone #screen), DP Alt Mode, USB-C 接显示器, 4K 60Hz 需要多少带宽
+(how-thunderbolt-works #ch6), GDDR7 (how-memory-talks #ch9), PAM4 / NRZ (how-pcie-works #ch9), 渲染管线 (computer-graphics), quad shading
+(how-a-gpu-computes #ch9). It links how-a-gpu-computes #ch9, how-thunderbolt-works #ch6, how-usb-drives-talk #ch8, how-pcie-works #ch8,
+how-memory-talks #ch9, computer-graphics and inside-a-phone #screen; how-thunderbolt-works ch6.p1 (#ch2) and ch6.p4 (#ch7) and
+how-a-gpu-computes ch9.p2 (#ch1) link here. Scripts `?v=20261115b`. Atlas edges (18, in its fragment): 9 between chapters, 9 from siblings.
+**Known inconsistency (not changed):** how-thunderbolt-works ch6.p4 fits 8K60 30-bit into HBR3 at 25.92 Gb/s with DSC; this page shows DSC
+on 8b/10b DP needs FEC (25.31 Gb/s). Not verified (BRIEF): HDMI FRL RS-FEC overhead, HDMI 2.2 line coding, AMD's 2.5× LFC range, the
+BT.2100 / BT.2087 PDFs, LG Display's 720 Hz OLED.
 
 ### scarcity-moves: 稀缺会搬家
 
