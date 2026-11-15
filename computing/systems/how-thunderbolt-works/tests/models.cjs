@@ -292,6 +292,10 @@ const zf = (x, d) => M.fmt(x, d, 'zh');
   const EN = ectx.window.ESSAY_COPY.en, stub = ectx.window.ESSAY_COPY.enStub === true, ph = s => [...s.matchAll(/\{(\w+)\}/g)].map(m => m[1]).sort().join(',');
   check('en keys = zh keys', Object.keys(EN).sort().join('|'), Object.keys(Z).sort().join('|'));
   const hrefs = o => (Object.values(o).join('').match(/href=["']\.\.\/[^"']+/g) || []).sort().join(' ');
+  // the OS and pixels essays, live since 2026-11-15: ch8.p2 -> OS #ch8 (IOMMU mappings), ch6.p1 -> pixels #ch2 (pixel clock), ch6.p4 -> pixels #ch7 (DSC)
+  says('ch8.p2', "href='../how-the-os-talks-to-hardware/#ch8'"); says('ch8.p2', '《操作系统是怎么和硬件说话的》');
+  says('ch6.p1', "href='../how-pixels-reach-a-screen/#ch2'"); says('ch6.p4', "href='../how-pixels-reach-a-screen/#ch7'"); says('ch6.p1', '《像素是怎么到屏幕上的》');
+  for (const [sib, a] of [['how-the-os-talks-to-hardware', 'ch8'], ['how-pixels-reach-a-screen', 'ch2'], ['how-pixels-reach-a-screen', 'ch7']]) check(`${sib} anchor #${a}`, fs.readFileSync(path.join(DIR, '..', sib, 'index.html'), 'utf8').includes(`id="${a}"`), true);
   check('en links = zh links', hrefs(EN), hrefs(Z));
   for (const k of Object.keys(Z)) check('en placeholders ' + k, ph(EN[k]), ph(Z[k]));
   if (stub) { check('en stub mirrors zh exactly', JSON.stringify(EN), JSON.stringify(Z)); console.log('NOTE: copy.en.js is a stub (enStub); English registry match skipped until it is translated'); }

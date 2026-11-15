@@ -232,3 +232,6 @@ Files: index.html, copy.zh.js, copy.en.js, models.js, app.js, REGISTRY.json, tes
 - 推测执行 / speculative execution: this page never carried them; they stay on A4 #ch8 (speculation and squashing), and the
   Meltdown sentence here links A4 #ch10. KPTI and Meltdown 补丁 stay here (#ch10).
 - Scripts move to `?v=20261115b` (`?v=20261115` was deployed with the A1/A3 registration).
+
+OS/pixels registrar (2026-11-15): ch10.limit links how-the-os-talks-to-hardware #ch3 (the cost of one kernel crossing, which this page
+does not measure) and ch11.p3 links its #ch8 (how a driver fills the IOMMU's page table). Scripts `?v=20261115c`.

@@ -381,6 +381,9 @@ const f = (x, d) => x.toFixed(d);
   for (const want of ['../how-cpu-caches-work/#ch7', '../how-cpu-caches-work/#ch10', '../why-compute-waits-for-memory/#ch2', '../how-thunderbolt-works/#ch8', '../how-pcie-works/#ch7']) check('links to ' + want, hrefs.includes(want), true);
   // A4 and A5 are linked since they went live (A4/A5 registrar, 2026-11-15): ch10.p4 -> A4 #ch10 (Spectre), ch13.links -> both page tops
   for (const [k, h] of [['ch10.p4', '../how-a-cpu-guesses-ahead/#ch10'], ['ch13.links', '../how-a-cpu-guesses-ahead/'], ['ch13.links', '../how-cores-share-memory/']]) check(`${k} links ${h}`, Z[k].includes(`href='${h}'`), true);
+  // the OS essay, live since 2026-11-15 (OS/pixels registrar): ch10.limit -> #ch3 (cost of one crossing), ch11.p3 -> #ch8 (IOMMU mappings)
+  for (const [k, h] of [['ch10.limit', '../how-the-os-talks-to-hardware/#ch3'], ['ch11.p3', '../how-the-os-talks-to-hardware/#ch8']]) check(`${k} links ${h}`, Z[k].includes(`href='${h}'`), true);
+  { const vz = { window: {} }; vm.runInNewContext(fs.readFileSync(path.join(DIR, '..', 'how-the-os-talks-to-hardware', 'copy.zh.js'), 'utf8'), vz); check('OS essay title quoted as in its copy', all.includes('《' + vz.window.ESSAY_COPY.zh['hero.title'] + '》'), true); }
   check('no plain-text "later essay" on A4 / A5 left', /后续一篇讲 CPU|后续两篇文章/.test(all), false);
   for (const sib of ['how-a-cpu-guesses-ahead', 'how-cores-share-memory']) { const vz = { window: {} }; vm.runInNewContext(fs.readFileSync(path.join(DIR, '..', sib, 'copy.zh.js'), 'utf8'), vz); check(sib + ' title quoted as in its copy', all.includes('《' + vz.window.ESSAY_COPY.zh['hero.title'] + '》'), true); }
 

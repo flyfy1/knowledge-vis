@@ -213,3 +213,9 @@ names in the PD diagram and list (Source_Capabilities, EPR_Mode …) are spec id
 - `tests/models.cjs`: B1 is checked as a link with an existing anchor, en links must equal zh links, the "no provenance
   label" check is gone. `tests/browser.cjs` skips the hidden zh span of the provenance label in the English "no Chinese
   left" check, as the other essays do. Scripts stay at `?v=20261115`.
+
+OS/pixels registrar (2026-11-15): ch8.p2 links how-the-os-talks-to-hardware #ch8 (DMA remapping); ch6.p1 links how-pixels-reach-a-screen
+#ch2 (pixel clock and blanking) and ch6.p4 its #ch7 (DSC). #ch6 takes bare DSC, 显示流压缩 and Display Stream Compression (unowned;
+how-pixels-reach-a-screen left the definitions here). Known inconsistency, not changed: ch6.p4 counts the full 25.92 Gb/s of HBR3 ×4
+for DSC, but DSC on 8b/10b DisplayPort requires FEC (2.4016 %), leaving 25.31 (how-pixels-reach-a-screen ch7.p4; Linux
+intel_dp_supports_dsc, drm_dp_bw_overhead). Scripts `?v=20261115b`.

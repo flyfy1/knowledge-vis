@@ -130,3 +130,6 @@ All keys in `copy.zh.js`; `copy.en.js` mirrors it (translated, then edited in re
   not linked from here or to here (no shared topic).
 - tests/models.cjs allows the provenance label (stripped in the CJK check) and a lettered cache key. Scripts move to
   `?v=20261115r` (never deployed).
+
+OS/pixels registrar (2026-11-15): ch9.p2 links how-pixels-reach-a-screen #ch1 (where the framebuffer goes). #ch1 takes 显卡 / graphics
+card (the pixels essay's page tag 显卡 / Graphics Cards would otherwise take bare 显卡). Scripts `?v=20261115s`.

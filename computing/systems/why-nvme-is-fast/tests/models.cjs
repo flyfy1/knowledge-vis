@@ -165,6 +165,10 @@ for (const k of Object.keys(Z)) {
     check('en ' + sib + ' links = zh', bl(E).sort().join(' '), bl(Z).sort().join(' '));
   }
   check('ch2.p2 links how-pcie-works/#ch2', Z['ch2.p2'].includes('how-pcie-works/#ch2'), true);
+  // the OS essay, live since 2026-11-15: ch7.p2 links its #ch11 (io_uring) on the words io_uring IOPOLL
+  { const sh = fs.readFileSync(path.join(__dirname, '..', '..', 'how-the-os-talks-to-hardware', 'index.html'), 'utf8');
+    check('OS essay anchor #ch11', sh.includes('id="ch11"'), true);
+    for (const [O, l] of [[Z, 'zh'], [E, 'en']]) check(l + ' ch7.p2 links OS essay #ch11', O['ch7.p2'].includes('<a href="../how-the-os-talks-to-hardware/#ch11"><strong>io_uring IOPOLL</strong></a>'), true); }
 }
 
 console.log(`${n} checks, ${fails} failures`);

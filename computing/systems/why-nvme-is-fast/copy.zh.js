@@ -153,7 +153,7 @@ window.ESSAY_COPY.zh = {
   "ch7.title": "轮询 vs 中断：微秒时代的最后几微秒",
   "ch7.law": "当一次读写只需要十微秒，让 CPU 休眠再靠硬件中断唤醒的开销，就已经超过了读写本身。",
   "ch7.p1": "传统操作系统处理 I/O 靠<strong>硬件中断（Interrupt）</strong>：CPU 发完命令就去干别的或休眠，等硬盘做完后发一个信号打断 CPU、保存上下文、切换回原线程。这套机制在毫秒级的机械硬盘时代非常划算——省下了宝贵的 CPU 时间。",
-  "ch7.p2": "但面对超低延迟 NVMe SSD 时，情况反转了。如果介质读取只要 <strong>10 微秒</strong>，而一次中断加上下文切换就要花掉 <strong>6 微秒</strong>，中断就平白增加了 <strong>60%</strong> 的延迟（总计 <strong>16.0 微秒</strong>）。于是 Linux 的 <strong>io_uring IOPOLL</strong> 和用户态框架 <strong>SPDK</strong> 引入了<strong>轮询（Polling）</strong>：让一个核心死盯完成队列 CQ，把这 6 微秒的上下文切换压缩到约 <strong>0.5 微秒</strong>（总延迟降到 <strong>10.5 微秒</strong>，快了 <strong>34.4%</strong>）。",
+  "ch7.p2": "但面对超低延迟 NVMe SSD 时，情况反转了。如果介质读取只要 <strong>10 微秒</strong>，而一次中断加上下文切换就要花掉 <strong>6 微秒</strong>，中断就平白增加了 <strong>60%</strong> 的延迟（总计 <strong>16.0 微秒</strong>）。于是 Linux 的 <a href=\"../how-the-os-talks-to-hardware/#ch11\"><strong>io_uring IOPOLL</strong></a> 和用户态框架 <strong>SPDK</strong> 引入了<strong>轮询（Polling）</strong>：让一个核心死盯完成队列 CQ，把这 6 微秒的上下文切换压缩到约 <strong>0.5 微秒</strong>（总延迟降到 <strong>10.5 微秒</strong>，快了 <strong>34.4%</strong>）。",
   "ch7.lab.title": "实验 7 · 中断 vs 轮询的延迟与 CPU 交叉点",
   "ch7.lab.how": "拖动「介质延迟」和「目标 IOPS」，看看在什么并发频率下，死等轮询反而比省电的中断更省 CPU。",
   "ch7.ctl.media": "介质延迟",

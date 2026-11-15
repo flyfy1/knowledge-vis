@@ -167,3 +167,19 @@ Keep {placeholders}; units come from u.*. "宣称" = "claimed"; "示意，不按
   画面撕裂, 垂直同步, 可变刷新率, FreeSync, 像素时钟, 帧缓冲, 链路训练, 4:2:0, OLED vs LCD, PQ 曲线, 显示延迟.
 - Links to computer-graphics and inside-a-phone are cross-category (`../../graphics/…`, `../../../tech/devices/…`);
   the test checks they are live in pages.config.js.
+
+## Registrar (2026-11-15)
+
+- Essay commit 3e6bf23d (this tree as reviewed, with the review note specs/reviews/how-pixels-reach-a-screen-review-20261115.md).
+  Registered together with how-the-os-talks-to-hardware. The hand-added site-nav lines (sn-20261115) pass build-site-nav --check.
+- Alias decisions after the one-click check: 显示流压缩 / Display Stream Compression stay off this page, as the review decided, and
+  went to how-thunderbolt-works #ch6 with bare DSC (they had no owner and returned nothing; bare DSC opened #ch7 here by prefix).
+  #ch7 keeps DSC 有损吗 / is DSC lossy / 视觉无损 / visually lossless. The page tag 显卡 / Graphics Cards would have taken bare 显卡
+  from the GPU essay, so 显卡 / graphics card became aliases of how-a-gpu-computes #ch1. 像素 / pixel and 色域 / gamut stay on
+  inside-a-phone #screen. One-click additions: #ch1 显示器是怎么工作的 / how does a monitor work; #ch2 刷新率 / refresh rate; #ch5
+  颜色管理 / color management; #ch6 DP, HDMI (bare DP opened the OS essay through DPDK). Pinned in tests/concept-search.cjs.
+- Siblings now link here: how-thunderbolt-works ch6.p1 (#ch2) and ch6.p4 (#ch7), how-a-gpu-computes ch9.p2 (#ch1). Not linked:
+  how-memory-talks #ch9 (GDDR, no sentence about the screen), how-usb-drives-talk #ch8 (DisplayPort only named as a tunnel),
+  inside-a-phone #screen (colour vision and metamerism, nothing about scan-out).
+- Known inconsistency (not changed): how-thunderbolt-works ch6.p4 fits 8K60 30-bit into HBR3 at 25.92 Gb/s with DSC; this page's
+  ch7.p4 shows that DSC on 8b/10b DP needs FEC, which leaves 25.31 Gb/s. The Thunderbolt model would need the same FEC rule.

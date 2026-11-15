@@ -314,3 +314,6 @@ Reviewer, 2026-11-15: moved out of this list — the GPT header and entry layout
   how-a-cpu-runs-a-program were checked and not linked: neither mentions the reset vector or boot. 《当着所有人的面约定一个秘密》 stays
   plain text (a-secret-in-public is not registered).
 - tests/models.cjs allows the provenance label. Scripts move to `?v=20261115r` (never deployed).
+
+OS/pixels registrar (2026-11-15): ch11.p6 links how-the-os-talks-to-hardware #ch9 (how the initramfs drivers find their devices).
+Scripts `?v=20261115s`.

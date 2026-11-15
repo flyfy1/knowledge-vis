@@ -204,3 +204,6 @@ half-rows of DW2/DW3 (high half on top), which is correct but repetitive.
 
 - ch6.limit gains one sentence linking how-a-computer-boots #ch6 (where in the boot the firmware enumerates), zh and en;
   tests/models.cjs checks the link, its anchor and the quoted title. No alias changed. Scripts move to `?v=20261115c`.
+
+OS/pixels registrar (2026-11-15): ch6.p5 links how-the-os-talks-to-hardware #ch4 (reading and writing the registers behind a BAR) and
+ch7.p3 its #ch5 (the interrupt path after MSI). MSI / MSI-X stay on #ch7 here. Scripts `?v=20261115d`.

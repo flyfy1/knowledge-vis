@@ -62,7 +62,8 @@
           "RGBA8",
           "10 位帧缓冲",
           "sRGB 和线性",
-          "为什么图像要存成 sRGB"
+          "为什么图像要存成 sRGB",
+          "显示器是怎么工作的"
         ],
         "en": [
           "how do pixels get to the screen",
@@ -74,7 +75,8 @@
           "RGBA8",
           "10-bit framebuffer",
           "sRGB vs linear",
-          "why images are stored in sRGB"
+          "why images are stored in sRGB",
+          "how does a monitor work"
         ]
       }
     },
@@ -100,7 +102,8 @@
           "CTA-861 时序",
           "4K60 像素时钟",
           "594 MHz",
-          "显示器为什么要消隐"
+          "显示器为什么要消隐",
+          "刷新率"
         ],
         "en": [
           "pixel clock",
@@ -111,7 +114,8 @@
           "CTA-861 timing",
           "4K60 pixel clock",
           "594 MHz pixel clock",
-          "why displays have blanking"
+          "why displays have blanking",
+          "refresh rate"
         ]
       }
     },
@@ -215,7 +219,8 @@
           "MPO",
           "颜色管线",
           "伽马 LUT",
-          "色彩空间转换矩阵"
+          "色彩空间转换矩阵",
+          "颜色管理"
         ],
         "en": [
           "display engine",
@@ -230,7 +235,8 @@
           "colour pipeline",
           "gamma LUT",
           "degamma LUT",
-          "colour transform matrix"
+          "colour transform matrix",
+          "color management"
         ]
       }
     },
@@ -259,7 +265,9 @@
           "HDMI 和 DP 区别",
           "HDMI 和 DisplayPort 哪个好",
           "4K 120Hz 要什么线",
-          "8b/10b 和 128b/132b"
+          "8b/10b 和 128b/132b",
+          "DP",
+          "HDMI"
         ],
         "en": [
           "how DisplayPort works",

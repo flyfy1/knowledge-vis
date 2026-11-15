@@ -264,3 +264,7 @@ motion). Canvas sweep (`--sweep`, scroll-aware): first run found 27 states where
 - `index.html` loads its four scripts with `?v=20261115` (specs/essays.md, "Cache keys").
 - Atlas edges: 13 (6 between chapters; 1 from what-a-drive-is-made-of #ch7, 2 from how-sas-works #ch2 and #ch4, 2 from
   why-nvme-is-fast #ch1 and #ch4, 1 from tcp-congestion step 1, 1 from distributed-systems).
+
+OS/pixels registrar (2026-11-15): ch6.p1 links how-the-os-talks-to-hardware #ch12 (kernel bypass inside one machine). RDMA 是什么 / RDMA
+and "kernel bypass zero copy" stay on #ch6 here (pinned); plain "kernel bypass" / 内核旁路 open the OS essay #ch12. Scripts
+`?v=20261115b`.

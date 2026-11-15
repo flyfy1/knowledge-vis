@@ -152,3 +152,20 @@ These cover all eight named in the task (rings/ELs, syscall, MMIO map, interrupt
 
 Checked against sources opened 2026-11-15: Google kCTF blog (60 % "exploited the io_uring component", ~1 M USD for io_uring alone, ChromeOS/Android/production servers), Axboe io_uring.pdf (free flowing 32-bit counters, 1.7 M / 1.2 M / 608 K, 12–20 M no-ops, 1..4096 entries, inline completion of cached reads), LWN 1049831 ("no longer experimental"), Hardware Busters 2026-09-19 (the Llamas statement is the reporter's paraphrase, not a quote), SPDK about ("polled-mode"), kernel docs device-io (port space "generally not as fast", posted writes), e1000 (16 B, 256, 48–4096), e1000e (4000 / 20000), Arrakis OSDI'14 Table 1 (1.26, 3.36, 6.19, 1.44, 0.38; E5-2430 2.2 GHz; the extra 2.2 µs is the context switch from idle), syscall_64.tbl at v7.4-rc2 and v7.3 (max 472 fchroot), scripts/syscall.tbl (read 63, io_uring_enter 426), Makefile v7.4-rc2, kernel.org releases.json (stable 7.3.4), master drivers/android (only binder/, Kconfig, Makefile), virtio 1.3 (still CSD01 as far as found).
 Not re-opened by the reviewer: Ren et al. (100 / 400–500 / 30 / 700 cycles), FlexSC, Neugebauer, Lee Fig. 4(a) (figure text not extractable; whether its 12.82 µs total already includes syscall entry/exit is unknown, now said on the page), Haas & Leis, the Arm ARM accessor pseudocode for MSR TTBR0_EL1 at EL0 (disclosed in ch1.limit), IOMMU strict/lazy (qualitative; matches the iommu.strict kernel parameter as I know it).
+
+## Registrar (2026-11-15)
+
+- Essay commit 20a942e2 (this tree as reviewed, with the review note specs/reviews/how-the-os-talks-to-hardware-review-20261115.md).
+  Registered together with how-pixels-reach-a-screen.
+- Alias decisions after the one-click check on the homepage ranking: RDMA stays off this page (storage-over-a-network #ch6 owns RDMA
+  是什么 / RDMA); of the DMA words only DMA 是什么 / what is DMA are here (bare DMA is unowned; it ties at 80 between #ch7 and
+  how-pcie-works #ch7 and is not pinned; the unregistered draft why-a-few-firms-win uses it for the Digital Markets Act). "kernel bypass"
+  / 内核旁路 open #ch12 while storage-over-a-network's "kernel bypass zero copy" still opens its #ch6 (both pinned). IOMMU stays on
+  how-thunderbolt-works #ch8, SPDK on why-nvme-is-fast #ch7. One-click additions: #ch1 操作系统, 操作系统怎么和硬件通信, 程序怎么访问
+  硬件 / operating system, how does the OS talk to hardware, how do programs access hardware (操作系统 / operating system tied between
+  this page's tag and how-virtual-memory-works' tag); #ch5 中断 / interrupt; #ch11 io_uring (it opened #ch13 through io_uring 安全).
+  Pinned in tests/concept-search.cjs.
+- Siblings now link here: how-virtual-memory-works ch10.limit (#ch3) and ch11.p3 (#ch8), how-pcie-works ch6.p5 (#ch4) and ch7.p3
+  (#ch5), why-nvme-is-fast ch7.p2 (#ch11; Antigravity edition, note specs/reviews/why-nvme-is-fast-os-link-20261115.md),
+  how-a-computer-boots ch11.p6 (#ch9), how-thunderbolt-works ch8.p2 (#ch8), storage-over-a-network ch6.p1 (#ch12).
+  《网页是怎么来到你手机上的》 (ch14.links) stays plain text: tech/networks/how-a-web-page-arrives is an unregistered draft.

@@ -297,6 +297,8 @@ const SAYKEY = /\.say\.|^u\.|\.cv\.|^ch8\.unit/;
   const usbLinks = v => v.match(/how-usb-drives-talk\/#?\w*/g) || [];
   check('links to S4 (ch11.links: essay, #ch6)', usbLinks(all).sort().join(' '), 'how-usb-drives-talk/ how-usb-drives-talk/#ch6');
   check('ch11.links holds the S4 links', usbLinks(Z['ch11.links']).length, 2);
+  // the OS essay, live since 2026-11-15: ch6.p1 links its #ch12 (kernel bypass inside one machine)
+  check('ch6.p1 links the OS essay #ch12', Z['ch6.p1'].includes("href='../how-the-os-talks-to-hardware/#ch12'") && Z['ch6.p1'].includes('《操作系统是怎么和硬件说话的》'), true);
 
   const ectx = { window: {} }; vm.runInNewContext(fs.readFileSync(path.join(DIR, 'copy.en.js'), 'utf8'), ectx);
   const EN = ectx.window.ESSAY_COPY.en, stub = ectx.window.ESSAY_COPY.enStub === true, ph = s => [...s.matchAll(/\{(\w+)\}/g)].map(m => m[1]).sort().join(',');

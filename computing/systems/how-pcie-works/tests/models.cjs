@@ -316,7 +316,9 @@ const hx = a => TLP.hex(a).join(' ');
     // bus series B4, live since 2026-11-15 (ch11.e3, CXL)
     'coherent-interconnects': '../coherent-interconnects/',
     // the boot essay, live since 2026-11-15 (ch6.limit: where in the boot the roll call happens)
-    'how-a-computer-boots': '../how-a-computer-boots/' };
+    'how-a-computer-boots': '../how-a-computer-boots/',
+    // the OS essay, live since 2026-11-15 (ch6.p5: register reads and writes, ch7.p3: the interrupt path after MSI)
+    'how-the-os-talks-to-hardware': '../how-the-os-talks-to-hardware/' };
   for (const [sib, rel] of Object.entries(SIB)) {
     const sdir = path.resolve(DIR, rel), sh = fs.readFileSync(path.join(sdir, 'index.html'), 'utf8');
     let hits = 0;
@@ -326,8 +328,8 @@ const hx = a => TLP.hex(a).join(' ');
   for (const [k, a] of [['ch2.p2', 'how-sata-works/#ch3'], ['ch1.p1', 'how-sata-works/#ch2'], ['ch2.p6', 'why-nvme-is-fast/#ch2'], ['ch7.p1', 'why-nvme-is-fast/#ch4'], ['ch7.p5', 'why-nvme-is-fast/#ch7'],
     ['ch11.d2', 'why-nvme-is-fast/#ch8'], ['ch12.links', 'how-usb-drives-talk/#ch8'], ['ch12.links', 'what-a-drive-is-made-of/#ch7'], ['ch4.p5', 'storage-over-a-network/#ch4'],
     ['ch5.p5', 'storage-over-a-network/#ch6'], ['ch10.p4', 'how-sas-works/#ch9'], ['ch10.p1', 'inside-a-phone/#ecc'], ['ch8.p1', 'frequency-response/'],
-    ['ch1.limit', 'how-a-computer-is-wired/#ch5'], ['ch12.links', 'how-a-computer-is-wired/'], ['ch12.links', 'how-thunderbolt-works/'], ['ch11.e3', 'coherent-interconnects/#ch3'], ['ch6.limit', 'how-a-computer-boots/#ch6']]) says(k, a);
-  for (const sib of ['why-nvme-is-fast', 'how-sata-works', 'how-usb-drives-talk', 'what-a-drive-is-made-of', 'storage-over-a-network', 'how-sas-works', 'how-a-computer-is-wired', 'how-thunderbolt-works', 'coherent-interconnects', 'how-a-computer-boots']) {
+    ['ch1.limit', 'how-a-computer-is-wired/#ch5'], ['ch12.links', 'how-a-computer-is-wired/'], ['ch12.links', 'how-thunderbolt-works/'], ['ch11.e3', 'coherent-interconnects/#ch3'], ['ch6.limit', 'how-a-computer-boots/#ch6'], ['ch6.p5', 'how-the-os-talks-to-hardware/#ch4'], ['ch7.p3', 'how-the-os-talks-to-hardware/#ch5']]) says(k, a);
+  for (const sib of ['why-nvme-is-fast', 'how-sata-works', 'how-usb-drives-talk', 'what-a-drive-is-made-of', 'storage-over-a-network', 'how-sas-works', 'how-a-computer-is-wired', 'how-thunderbolt-works', 'coherent-interconnects', 'how-a-computer-boots', 'how-the-os-talks-to-hardware']) {
     const t = JSON.parse(fs.readFileSync(path.join(DIR, '..', sib, 'REGISTRY.json'), 'utf8')).title.zh; n++;
     if (!all.includes('《' + t + '》')) { fails++; console.error('FAIL sibling title not quoted: ' + t); }
   }
