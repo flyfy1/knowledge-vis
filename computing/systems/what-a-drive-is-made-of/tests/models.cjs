@@ -54,7 +54,9 @@ function branch(name, o) { n++; const s = Z[o.key]; if (s == null) { fails++; co
   for (const v of Object.values(Z)) for (const m of v.matchAll(/storage-over-a-network\/#(ch\d+)/g)) check('S5 anchor ' + m[1], net.includes(`id="${m[1]}"`), true);
   check('en S5 links = zh S5 links', netLinks(EN).sort().join(' '), netLinks(Z).sort().join(' '));
   // the bus series (B1 how-pcie-works, B2 how-a-computer-is-wired, B6 how-thunderbolt-works, live 2026-11-15): anchors exist, zh = en
-  for (const sib of ['how-pcie-works', 'how-a-computer-is-wired', 'how-thunderbolt-works']) {
+  // the boot essay (live 2026-11-15): ch1.p3 links its words "分区表" / "partition table" to its #ch7 (GPT and MBR)
+  check('ch1.p3 links the boot essay #ch7', Z['ch1.p3'].includes('../how-a-computer-boots/#ch7') && EN['ch1.p3'].includes('../how-a-computer-boots/#ch7'), true);
+  for (const sib of ['how-pcie-works', 'how-a-computer-is-wired', 'how-thunderbolt-works', 'how-a-computer-boots']) {
     const sh = fs.readFileSync(path.join(DIR, '..', sib, 'index.html'), 'utf8'), bl = o => Object.values(o).join('').match(new RegExp(sib + '/(#ch\\d+)?', 'g')) || [];
     for (const m of bl(Z)) if (m.includes('#')) check(sib + ' anchor ' + m, sh.includes('id="' + m.split('#')[1] + '"'), true);
     check('en ' + sib + ' links = zh', bl(EN).sort().join(' '), bl(Z).sort().join(' '));

@@ -114,3 +114,19 @@ All keys in `copy.zh.js`; `copy.en.js` mirrors it (translated, then edited in re
 - Aliases avoided by hand (near-ties of words siblings own): 张量核心 / tensor cores (why-compute-waits-for-memory owns 张量核 / tensor core), 渲染管线 / 光栅化 / GPU 渲染 (computer-graphics), roofline / 屋顶线 / 算术强度, HBM, GDDR7, NVLink, all-reduce, 缓存一致性, 量化 / MFU. Near-tie kept: "GPU cache coherence" (A5 owns "cache coherence"); drop it if the search sends it to the wrong page. Review changed REGISTRY.json aliases: 像素着色器 / pixel shader → 像素着色怎么上 SM / quad shading (rendering-pipeline words belong to computer-graphics); TF32 是什么, BF16 和 FP16 区别 / TF32 format → mma.sync m16n8k16, wgmma 指令 / m16n8k16 (the page only names the formats, it does not explain them); CUDA ROCm Triton / CUDA vs ROCm → GPU 代码为什么慢 / why is my GPU code slow (the page does not compare vendors).
 - Links: memory essay #ch3 #ch4 #ch6 #ch7 #ch8 #ch9 and top; A2 #ch1; A4 #ch9; A5 #ch3 #ch4; B1 top; B3 #ch9; B4 #ch8 #ch11 and top; computer-graphics top. B3 and B4 went live while this page was built; they are linked (tests check each is live in pages.config.js).
 - Prerequisites the site lacks: an essay on the CPU pipeline / SIMD vector units (the page contrasts against "one wide vector" without a sibling to link), and one on floating-point formats (FP8 / FP4 exponents and mantissas are only named).
+
+## Registrar (2026-11-15)
+
+- Essay commit e844143c (this tree as reviewed, with the review note specs/reviews/how-a-gpu-computes-review-20261115.md).
+  Registered together with the boot essay.
+- Near-ties checked on the homepage ranking: "GPU cache coherence" (#ch10) is kept, plain cache coherence / 缓存一致性 still open
+  how-cores-share-memory #ch1; "GPU shared memory" (#ch6) is kept, "shared memory bus bottleneck" still opens
+  why-compute-waits-for-memory #ch5 and "coherent shared memory" coherent-interconnects #ch1. Plain "shared memory" / 共享内存 had no
+  owner; they now open #ch6 through its title (共享内存的 bank 冲突), not through the near-tie alias. 张量核 / tensor core and GPU vs CPU
+  stay on the memory essay #ch6. One-click additions on #ch1: 显卡是怎么工作的, GPU 为什么快 / how does a graphics card work, why are
+  GPUs fast. Pinned in tests/concept-search.cjs.
+- Siblings now link here: why-compute-waits-for-memory ch6.p1 (#ch3, its existing words about warps; Antigravity edition, note
+  specs/reviews/why-compute-waits-for-memory-gpu-link-20261115.md) and how-cores-share-memory ch12.links (#ch10). The boot essay is
+  not linked from here or to here (no shared topic).
+- tests/models.cjs allows the provenance label (stripped in the CJK check) and a lettered cache key. Scripts move to
+  `?v=20261115r` (never deployed).

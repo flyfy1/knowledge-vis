@@ -296,3 +296,21 @@ Reviewer, 2026-11-15: moved out of this list — the GPT header and entry layout
   - how-pcie-works #ch6, how-a-computer-is-wired #ch8, how-thunderbolt-works #ch8
   - how-virtual-memory-works #ch3, what-a-drive-is-made-of #ch1
   - how-a-cpu-runs-a-program, how-cores-share-memory
+
+## Registrar (2026-11-15)
+
+- Essay commit 509b4d6e (this tree as reviewed, with the review note specs/reviews/how-a-computer-boots-review-20261115.md).
+  Registered together with A6.
+- Alias decisions on the reviewer's two points: #ch8 "boot chain of trust" became "Secure Boot chain of trust", and zh gains
+  安全启动信任链 (开机信任链 kept); the bare "chain of trust" stays reserved for a-secret-in-public #ch6. While that draft is
+  unregistered, a bare "chain of trust" query reaches #ch8 only by substring (score 55), so the draft's exact alias will win once
+  it registers. #ch3 keeps SPI 闪存 / SPI flash / 四线 SPI 读 / quad SPI read; plain SPI and SPI bus still open how-a-computer-is-wired #ch8.
+- One-click additions: #ch1 电脑开机过程, 开机过程, 电脑怎么开机 / how does a computer boot, boot process, computer boot process, what
+  happens when you press the power button; #ch6 BIOS 是什么 / BIOS (bare BIOS used to open a biology page by substring); #ch12 TF-A
+  (it used to open how-memory-talks #ch6 through tFAW). 内存训练 stays on how-memory-talks #ch7, PCIe 枚举 on how-pcie-works #ch6.
+  Pinned in tests/concept-search.cjs.
+- Siblings now link here: how-memory-talks ch7.p4 (#ch5), how-pcie-works ch6.limit (#ch6), how-a-computer-is-wired ch8.p5 (#ch3,
+  its words "BIOS 闪存"), what-a-drive-is-made-of ch1.p3 (#ch7, its words "分区表"). how-virtual-memory-works and
+  how-a-cpu-runs-a-program were checked and not linked: neither mentions the reset vector or boot. 《当着所有人的面约定一个秘密》 stays
+  plain text (a-secret-in-public is not registered).
+- tests/models.cjs allows the provenance label. Scripts move to `?v=20261115r` (never deployed).

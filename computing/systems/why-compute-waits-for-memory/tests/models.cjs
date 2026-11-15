@@ -237,6 +237,10 @@ const f = (x, d = 0) => x.toFixed(d);
   const b3 = fs.readFileSync(path.join(__dirname, '..', '..', 'how-memory-talks', 'index.html'), 'utf8');
   check('ch5.p2 links how-memory-talks #ch5', Z['ch5.p2'].includes('../how-memory-talks/#ch5') && E['ch5.p2'].includes('../how-memory-talks/#ch5'), true);
   check('how-memory-talks anchor #ch5', b3.includes('id="ch5"'), true);
+  // A6/boot registrar, 2026-11-15: ch6.p1 links its existing words about warps to how-a-gpu-computes #ch3 (warp scheduling)
+  const a6 = fs.readFileSync(path.join(__dirname, '..', '..', 'how-a-gpu-computes', 'index.html'), 'utf8');
+  check('ch6.p1 links how-a-gpu-computes #ch3', Z['ch6.p1'].includes('../how-a-gpu-computes/#ch3') && E['ch6.p1'].includes('../how-a-gpu-computes/#ch3'), true);
+  check('how-a-gpu-computes anchor #ch3', a6.includes('id="ch3"'), true);
 }
 
 /* ── live sentence templates check ── */

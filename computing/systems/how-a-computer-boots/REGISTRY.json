@@ -51,13 +51,20 @@
           "上电时序",
           "PWR_OK",
           "按电源键后发生了什么",
-          "开机风扇转屏幕不亮"
+          "开机风扇转屏幕不亮",
+          "电脑开机过程",
+          "开机过程",
+          "电脑怎么开机"
         ],
         "en": [
           "power sequencing",
           "PWR_OK signal",
           "power good signal",
-          "ATX power-on timing"
+          "ATX power-on timing",
+          "what happens when you press the power button",
+          "how does a computer boot",
+          "boot process",
+          "computer boot process"
         ]
       }
     },
@@ -183,12 +190,14 @@
           "SEC PEI DXE BDS",
           "传统 BIOS 与 UEFI",
           "ACPI 表",
-          "MADT"
+          "MADT",
+          "BIOS 是什么"
         ],
         "en": [
           "UEFI boot phases",
           "legacy BIOS vs UEFI",
-          "ACPI tables"
+          "ACPI tables",
+          "BIOS"
         ]
       }
     },
@@ -235,12 +244,13 @@
           "安全启动",
           "Secure Boot",
           "开机信任链",
+          "安全启动信任链",
           "shim",
           "db 和 dbx"
         ],
         "en": [
           "UEFI Secure Boot",
-          "boot chain of trust",
+          "Secure Boot chain of trust",
           "shim bootloader",
           "db and dbx"
         ]
@@ -346,6 +356,7 @@
         "en": [
           "Arm boot flow",
           "Trusted Firmware-A",
+          "TF-A",
           "Apple boot chain"
         ]
       }

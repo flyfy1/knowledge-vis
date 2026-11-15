@@ -253,3 +253,9 @@ Test results after the review: tests/models.cjs PASS 11,605 checks; tests/browse
 - B4 (`coherent-interconnects`) is live, so ch11.p2 and ch12.links link its page top, zh and en, instead of naming "a later essay
   on links between chips". tests/models.cjs requires both links (it used to require the plain text) and checks B4's quoted title.
 - No alias changed. Scripts move to `?v=20261115b` (`?v=20261115` was deployed).
+
+## Registrar of A6 and the boot essay (2026-11-15)
+
+- ch12.links gains one clause linking how-a-gpu-computes #ch10 (why a GPU does not keep its SMs' L1 caches coherent; that
+  chapter builds on this page's #ch3 and #ch4), zh and en; tests/models.cjs allows A6 and checks the link and quoted title.
+  缓存一致性 / cache coherence stay here (A6 #ch10 has only "GPU cache coherence"). Scripts move to `?v=20261115c`.

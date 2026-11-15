@@ -218,3 +218,8 @@ Book titles of sibling essays should use their registered English titles.
 - ch9.d2 said the series might cover CXL later; it now links B4 `coherent-interconnects` #ch3, zh and en. tests/models.cjs allows
   the link and checks the anchor and the quoted title. ch8.p5 (B5, small buses, not written) stays plain text. No alias changed;
   the reserved CXL / NVLink words now belong to B4. Scripts move to `?v=20261115b`.
+
+## Registrar of A6 and the boot essay (2026-11-15)
+
+- ch8.p5 links its existing words "BIOS 闪存" / "the BIOS flash" to how-a-computer-boots #ch3 (SPI flash), zh and en;
+  tests/models.cjs allows the sibling and checks the link. Plain SPI / SPI bus stay here (#ch8). Scripts move to `?v=20261115c`.

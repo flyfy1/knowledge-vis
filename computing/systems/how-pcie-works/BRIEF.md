@@ -199,3 +199,8 @@ half-rows of DW2/DW3 (high half on top), which is correct but repetitive.
 
 - ch11.e3 (CXL 4.0) gains one sentence linking B4 `coherent-interconnects` #ch3 (the CXL protocols and flits), zh and en;
   tests/models.cjs checks the link, its anchor and the quoted title. No alias changed. Scripts move to `?v=20261115b`.
+
+## Registrar of A6 and the boot essay (2026-11-15)
+
+- ch6.limit gains one sentence linking how-a-computer-boots #ch6 (where in the boot the firmware enumerates), zh and en;
+  tests/models.cjs checks the link, its anchor and the quoted title. No alias changed. Scripts move to `?v=20261115c`.

@@ -51,13 +51,17 @@
           "GPU 是怎么工作的",
           "GPU 延迟隐藏",
           "GPU 为什么核多",
-          "GPU 靠多线程藏延迟"
+          "GPU 靠多线程藏延迟",
+          "显卡是怎么工作的",
+          "GPU 为什么快"
         ],
         "en": [
           "how does a GPU work",
           "GPU latency hiding",
           "why GPUs have so many cores",
-          "latency hiding with threads"
+          "latency hiding with threads",
+          "how does a graphics card work",
+          "why are GPUs fast"
         ]
       }
     },

@@ -438,16 +438,18 @@ const f = (x, d) => x.toFixed(d);
   }
   // live sibling links must point at chapters that exist
   const all = Object.values(Z).join('');
-  for (const sib of ['what-a-drive-is-made-of', 'how-sata-works', 'why-nvme-is-fast', 'how-usb-drives-talk', 'why-compute-waits-for-memory', 'how-pcie-works', 'how-thunderbolt-works', 'coherent-interconnects']) {
+  for (const sib of ['what-a-drive-is-made-of', 'how-sata-works', 'why-nvme-is-fast', 'how-usb-drives-talk', 'why-compute-waits-for-memory', 'how-pcie-works', 'how-thunderbolt-works', 'coherent-interconnects', 'how-a-computer-boots']) {
     const sh = fs.readFileSync(path.join(DIR, '..', sib, 'index.html'), 'utf8');
     for (const m of all.matchAll(new RegExp('\\.\\./' + sib + '/(#ch\\d+)?', 'g'))) if (m[1]) check(`${sib} anchor ${m[1]}`, sh.includes(`id="${m[1].slice(1)}"`), true);
   }
-  check('links only to live siblings', [...all.matchAll(/href="\.\.\/([\w-]+)\//g)].map(m => m[1]).every(s => ['what-a-drive-is-made-of', 'how-sata-works', 'why-nvme-is-fast', 'how-usb-drives-talk', 'why-compute-waits-for-memory', 'how-pcie-works', 'how-thunderbolt-works', 'coherent-interconnects'].includes(s)), true);
+  check('links only to live siblings', [...all.matchAll(/href="\.\.\/([\w-]+)\//g)].map(m => m[1]).every(s => ['what-a-drive-is-made-of', 'how-sata-works', 'why-nvme-is-fast', 'how-usb-drives-talk', 'why-compute-waits-for-memory', 'how-pcie-works', 'how-thunderbolt-works', 'coherent-interconnects', 'how-a-computer-boots'].includes(s)), true);
   // B1 and B6 are live since 2026-11-15: the plain-text citations became links (anchors checked above)
   for (const [k, a] of [['ch1.limit', 'how-pcie-works/#ch1'], ['ch2.p5', 'how-pcie-works/#ch2'], ['ch5.p5', 'how-pcie-works/#ch2'], ['ch9.d2', 'how-pcie-works/#ch11'],
     ['ch10.links', 'how-pcie-works/'], ['ch10.links', 'how-thunderbolt-works/'], ['ch9.d2', 'coherent-interconnects/#ch3']]) says(k, a);
   // B4 is live since 2026-11-15 (B3/B4 registrar): ch9.d2 links it where it said the series would cover CXL later
   says('ch9.d2', '《芯片之间怎么共用内存》'); check('no plain-text "CXL later" left', /本系列以后会单独写/.test(all), false);
+  // the boot essay is live since 2026-11-15 (A6/boot registrar): ch8.p5 links its words "BIOS 闪存" to its #ch3 (SPI flash)
+  says('ch8.p5', 'how-a-computer-boots/#ch3');
   says('ch5.p5', '《PCIe 为什么能一代一代翻倍》'); says('ch10.links', '《雷电接口是怎么工作的》');
   check('why-chips-are-hard named as plain text, not linked', /why-chips-are-hard/.test(all), false); says('ch7.p1', '《芯片为什么越来越难做》');
   const sata = JSON.parse(fs.readFileSync(path.join(DIR, '..', 'how-sata-works', 'REGISTRY.json'), 'utf8'));

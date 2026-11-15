@@ -342,3 +342,10 @@ Not checked:
   whoever registers those drafts decides (this page's #ch8 is the better landing for "ECC memory"). pages.config.js tags add
   内存条 / Memory Modules, so 内存条 and 内存条是怎么工作的 open the page top. CXL words are on B4.
 - Scripts move to `?v=20261115r` (never deployed under any key).
+
+## Registrar of A6 and the boot essay (2026-11-15)
+
+- ch7.p4 ends with a link to how-a-computer-boots #ch5 (where training sits in the boot timeline), zh and en, under that page's
+  title. tests/models.cjs allows and requires it, and now expects the provenance label added at registration (011e6f9b) instead
+  of forbidding it, stripping it before the CJK check; both checks had failed since that commit. No alias changed. Scripts move
+  to `?v=20261115s`.

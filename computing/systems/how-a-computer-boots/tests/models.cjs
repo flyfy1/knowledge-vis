@@ -336,7 +336,8 @@ const sha = b => crypto.createHash('sha256').update(Buffer.from(b)).digest('hex'
     const others = (src.match(/[一-鿿、，。：；（）「」《》]+/g) || []).filter(x => !(file === 'index.html' && x === '中'));
     if (others.length) { fails++; console.error(`FAIL Chinese text in ${file}: ${others.slice(0, 3).join(' ')}`); }
   }
-  check('no provenance label on the page (the registrar adds it)', /page-provenance/.test(html), false);
+  // the registrar adds one bilingual page-provenance label (stripped in the CJK check above)
+  check('at most one provenance label', (html.match(/<details class="page-provenance"/g) || []).length <= 1, true);
   const R = JSON.parse(fs.readFileSync(path.join(DIR, 'REGISTRY.json'), 'utf8'));
   check('registry slug/path', R.slug + ' ' + R.path, 'how-a-computer-boots computing/systems/how-a-computer-boots/');
   check('registry category', [R.category, R.subtopic, R.stage].join('/'), 'computing/systems/university');
