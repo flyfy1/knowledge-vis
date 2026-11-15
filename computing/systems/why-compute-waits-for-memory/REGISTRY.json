@@ -26,7 +26,7 @@
       "title": { "zh": "流水线与访存停顿", "en": "Pipeline Stalls from Memory Latency" },
       "desc": { "zh": "五级流水线每拍完成一条指令，但一旦遇到等内存的数据相关，后续指令只能停顿吐气泡。", "en": "A 5-stage pipeline retires one instruction per cycle until a memory-latency hazard fills the pipe with stall bubbles." },
       "aliases": {
-        "zh": ["流水线气泡", "CPU 为什么会等内存", "取指 译码 执行", "数据旁路", "CPI", "AI 芯片为什么大部分时间都在等"],
+        "zh": ["流水线气泡", "CPU 为什么会等内存", "数据旁路", "CPI", "AI 芯片为什么大部分时间都在等"],
         "en": ["pipeline stall", "instruction pipeline", "load-use hazard", "forwarding", "why does an AI chip wait", "why compute waits for memory"]
       },
       "anchor": "#ch1",

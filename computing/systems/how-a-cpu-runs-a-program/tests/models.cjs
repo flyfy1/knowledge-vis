@@ -255,7 +255,8 @@ const f = (x, d) => x.toFixed(d);
     n++; if (!new RegExp('\\b' + m[1] + '\\s*:|[{,]\\s*' + m[1] + '\\s*[,}]').test(app)) { fails++; console.error(`FAIL placeholder {${m[1]}} in ${k} is never supplied by app.js`); }
   }
   check('six or more diagrams', [...html.matchAll(/class="dia" data-dg="/g)].length >= 6, true);
-  check('script cache keys', [...html.matchAll(/src="(\w+(?:\.\w+)?\.js)\?v=(\d+)"/g)].map(m => m[1] + '@' + m[2]).join(' '), 'models.js@20261115 copy.zh.js@20261115 copy.en.js@20261115 app.js@20261115');
+  // A4/A5 registrar, 2026-11-15: copy changed after ?v=20261115 was deployed, so the same-day letter key (specs/essays.md step 7)
+  check('script cache keys', [...html.matchAll(/src="(\w+(?:\.\w+)?\.js)\?v=(\d+[a-z]?)"/g)].map(m => m[1] + '@' + m[2]).join(' '), 'models.js@20261115b copy.zh.js@20261115b copy.en.js@20261115b app.js@20261115b');
   for (const file of ['index.html', 'app.js', 'models.js']) {
     let src = fs.readFileSync(path.join(DIR, file), 'utf8');
     if (file === 'index.html') {
@@ -284,7 +285,7 @@ const f = (x, d) => x.toFixed(d);
   const norm = s => s.toLowerCase().replace(/\s+/g, '');
   const owned = new Map();
   for (const a of ['CPI', 'forwarding', 'load-use hazard', 'pipeline stall', '关键路径', 'critical path', '程序计数器', 'program counter', 'fetch decode execute', '冯·诺依曼结构']) owned.set(norm(a), 'TASK');
-  for (const sib of ['why-compute-waits-for-memory', 'switches-that-compute', 'how-cpu-caches-work', 'how-virtual-memory-works', 'how-pcie-works', 'how-a-computer-is-wired', 'how-thunderbolt-works']) {
+  for (const sib of ['why-compute-waits-for-memory', 'switches-that-compute', 'how-cpu-caches-work', 'how-virtual-memory-works', 'how-a-cpu-guesses-ahead', 'how-cores-share-memory', 'how-pcie-works', 'how-a-computer-is-wired', 'how-thunderbolt-works']) {
     const p = path.join(DIR, '..', sib, 'REGISTRY.json');
     if (fs.existsSync(p)) for (const c of JSON.parse(fs.readFileSync(p, 'utf8')).concepts) for (const a of [...c.aliases.zh, ...c.aliases.en]) owned.set(norm(a), sib);
   }
@@ -293,18 +294,20 @@ const f = (x, d) => x.toFixed(d);
     const c = R.concepts.find(x => x.anchor === anchor), mine = new Set([...c.aliases.zh, ...c.aliases.en].map(norm));
     for (const w of words) check(`moved alias ${w} on ${anchor}`, mine.has(norm(w)), true);
   }
-  // live sibling links must point at chapters that exist; A4 is named in plain text, not linked
+  // live sibling links must point at chapters that exist; A4 is linked since it went live (A4/A5 registrar, 2026-11-15:
+  // ch6.limit -> #ch6, ch8.p3 -> #ch2, ch12.links -> page top); A3 and A5 are not mentioned
   const all = Object.values(Z).join('');
-  for (const sib of ['why-compute-waits-for-memory', 'switches-that-compute', 'how-cpu-caches-work']) {
+  for (const sib of ['why-compute-waits-for-memory', 'switches-that-compute', 'how-cpu-caches-work', 'how-a-cpu-guesses-ahead']) {
     const sh = fs.readFileSync(path.join(DIR, '..', sib, 'index.html'), 'utf8');
     for (const m of all.matchAll(new RegExp(sib + '/(#ch\\d+)?', 'g'))) if (m[1]) check(`${sib} anchor ${m[1]}`, sh.includes(`id="${m[1].slice(1)}"`), true);
   }
   says('ch1.p2', '七种指令'); { const sz = { window: {} }; vm.runInNewContext(fs.readFileSync(path.join(DIR, '..', 'switches-that-compute', 'copy.zh.js'), 'utf8'), sz); const S = sz.window.ESSAY_COPY.zh; check('switches #ch9 has seven instructions and 4+4 bits', /七种指令/.test(S['ch9.p2']) && /高 4 位/.test(S['ch9.p2']) && /低 4 位/.test(S['ch9.p2']), true); }
   for (const k of ['ch1.p2', 'ch5.p1', 'ch6.p3', 'ch7.p4', 'ch7.limit', 'ch12.links']) { n++; if (!/href=/.test(Z[k])) { fails++; console.error('FAIL expected a sibling link in ' + k); } }
-  check('no links to the unwritten A3 / A4 / A5', /how-a-cpu-guesses-ahead|how-virtual-memory-works|how-cores-share-memory/.test(all), false);
-  says('ch8.p3', '后续一篇讲分支预测和乱序执行的文章'); says('ch6.limit', '后续一篇讲分支预测和乱序执行的文章');
+  for (const [k, h] of [['ch6.limit', '../how-a-cpu-guesses-ahead/#ch6'], ['ch8.p3', '../how-a-cpu-guesses-ahead/#ch2'], ['ch12.links', '../how-a-cpu-guesses-ahead/']]) check(`${k} links A4 (${h})`, Z[k].includes(`href='${h}'`), true);
+  check('no plain-text "later essay on branch prediction" left', /后续一篇讲分支预测|系列后面的一篇/.test(all), false);
+  { const vz = { window: {} }; vm.runInNewContext(fs.readFileSync(path.join(DIR, '..', 'how-a-cpu-guesses-ahead', 'copy.zh.js'), 'utf8'), vz); check('A4 title quoted as in its copy', all.includes('《' + vz.window.ESSAY_COPY.zh['hero.title'] + '》'), true); }
   const hrefs = [...all.matchAll(/href='([^']+)'/g)].map(m => m[1]);
-  for (const h of hrefs) { n++; if (!/^\.\.\/(why-compute-waits-for-memory|switches-that-compute|how-cpu-caches-work)\/(#ch\d+)?$/.test(h)) { fails++; console.error('FAIL unexpected link ' + h); } }
+  for (const h of hrefs) { n++; if (!/^\.\.\/(why-compute-waits-for-memory|switches-that-compute|how-cpu-caches-work|how-a-cpu-guesses-ahead)\/(#ch\d+)?$/.test(h)) { fails++; console.error('FAIL unexpected link ' + h); } }
 
   const ectx = { window: {} }; vm.runInNewContext(fs.readFileSync(path.join(DIR, 'copy.en.js'), 'utf8'), ectx);
   const EN = ectx.window.ESSAY_COPY.en, stub = ectx.window.ESSAY_COPY.enStub === true, ph = s => [...s.matchAll(/\{(\w+)\}/g)].map(m => m[1]).sort().join(',');
@@ -312,6 +315,8 @@ const f = (x, d) => x.toFixed(d);
   for (const k of Object.keys(Z)) check('en placeholders ' + k, ph(EN[k]), ph(Z[k]));
   if (stub) { check('en stub mirrors zh exactly', JSON.stringify(EN), JSON.stringify(Z)); console.log('NOTE: copy.en.js is a stub (enStub); English registry match skipped until it is translated'); }
   else { check('registry title en', R.title.en, EN['doc.title'].split(' · ')[0]); check('registry desc en', R.desc.en, EN['doc.desc']); }
+  { const a4 = { window: {} }; vm.runInNewContext(fs.readFileSync(path.join(DIR, '..', 'how-a-cpu-guesses-ahead', 'copy.en.js'), 'utf8'), a4); const t4 = a4.window.ESSAY_COPY.en['doc.title'].split(' · ')[0];
+    for (const [k, h] of [['ch6.limit', '../how-a-cpu-guesses-ahead/#ch6'], ['ch8.p3', '../how-a-cpu-guesses-ahead/#ch2'], ['ch12.links', '../how-a-cpu-guesses-ahead/']]) check(`en ${k} links A4 and quotes its title`, EN[k].includes(`href='${h}'`) && EN[k].includes(t4), true); }
 }
 
 if (fails) { console.error(`\n${fails} of ${n} checks failed`); process.exit(1); }

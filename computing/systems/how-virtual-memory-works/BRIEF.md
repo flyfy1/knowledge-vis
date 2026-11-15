@@ -223,3 +223,12 @@ Files: index.html, copy.zh.js, copy.en.js, models.js, app.js, REGISTRY.json, tes
 - Links to how-cpu-caches-work #ch4 / #ch7 / #ch10, why-compute-waits-for-memory #ch2, how-pcie-works #ch7,
   how-thunderbolt-works #ch8 and what-a-drive-is-made-of verified. A4 stays plain text. Scripts at `?v=20261115` (first
   deployment).
+
+## Registrar of A4 and A5 (2026-11-15)
+
+- A4 and A5 are live: ch10.p4 links A4 #ch10 (Spectre; it named "a later essay on how CPUs guess ahead"), and ch13.links,
+  which named both as "two later essays", links A4's and A5's page tops, zh and en. tests/models.cjs requires those links (it
+  used to forbid them), checks the quoted titles and checks this page's aliases against A4 and A5.
+- 推测执行 / speculative execution: this page never carried them; they stay on A4 #ch8 (speculation and squashing), and the
+  Meltdown sentence here links A4 #ch10. KPTI and Meltdown 补丁 stay here (#ch10).
+- Scripts move to `?v=20261115b` (`?v=20261115` was deployed with the A1/A3 registration).

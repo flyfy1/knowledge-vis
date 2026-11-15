@@ -316,7 +316,8 @@ const f = (x, d) => x.toFixed(d);
   for (const c of R.concepts) for (const a of [...c.aliases.zh, ...c.aliases.en]) { n++; if (owned.has(norm(a))) { fails++; console.error(`FAIL alias owned by ${owned.get(norm(a))}: ${a}`); } }
   // sibling links point at chapters that exist
   const all = Object.values(Z).join('');
-  const SIBS = ['how-a-cpu-runs-a-program', 'how-cpu-caches-work', 'how-virtual-memory-works', 'why-compute-waits-for-memory'];
+  // A5 (how-cores-share-memory) is linked since it went live with this page (registrar, 2026-11-15)
+  const SIBS = ['how-a-cpu-runs-a-program', 'how-cpu-caches-work', 'how-virtual-memory-works', 'why-compute-waits-for-memory', 'how-cores-share-memory'];
   for (const sib of SIBS) {
     const sh = fs.readFileSync(path.join(DIR, '..', sib, 'index.html'), 'utf8');
     for (const m of all.matchAll(new RegExp(sib + '/(#ch\\d+)?', 'g'))) if (m[1]) check(`${sib} anchor ${m[1]}`, sh.includes(`id="${m[1].slice(1)}"`), true);
@@ -328,8 +329,8 @@ const f = (x, d) => x.toFixed(d);
     ['ch9.p3', '../why-compute-waits-for-memory/#ch4'], ['ch8.limit', '../how-virtual-memory-works/#ch7'], ['ch10.p4', '../how-virtual-memory-works/#ch10'], ['ch12.q3', '../how-cpu-caches-work/#ch10']]) check(`${k} links ${h}`, Z[k].includes(`href='${h}'`), true);
   const hrefs = [...all.matchAll(/href='([^']+)'/g)].map(m => m[1]);
   for (const h of hrefs) { n++; if (!new RegExp('^\\.\\./(' + SIBS.join('|') + ')/(#ch\\d+)?$').test(h)) { fails++; console.error('FAIL unexpected link ' + h); } }
-  check('no links to the unwritten A5', /how-cores-share-memory/.test(all), false);
-  says('ch12.links', '后续一篇讲多核共享内存的文章');
+  check('ch12.links links A5 #ch8 (memory consistency)', Z['ch12.links'].includes("href='../how-cores-share-memory/#ch8'"), true);
+  check('no plain-text "later essay on shared memory" left', /后续一篇讲多核共享内存/.test(all), false);
 
   const ectx = { window: {} }; vm.runInNewContext(fs.readFileSync(path.join(DIR, 'copy.en.js'), 'utf8'), ectx);
   const EN = ectx.window.ESSAY_COPY.en, stub = ectx.window.ESSAY_COPY.enStub === true, ph = s => [...s.matchAll(/\{(\w+)\}/g)].map(m => m[1]).sort().join(',');
@@ -346,6 +347,10 @@ const f = (x, d) => x.toFixed(d);
     for (const k of ['ch2.say.some', 'ch2.say.random', 'ch2.say.bl', 'ch10.say.fence', 'ch10.say.leak']) check('no doubled unit in ' + k, /\{(cyc|cost|win|t)\} cycles/.test(EN[k]), false);
     // eqntott: branch 3 is taken (skips the block) when branches 1 and 2 went the same way, as corrTrace builds it
     check('en ch3.p2 polarity matches corrTrace', EN['ch3.p2'].includes('the third is certainly taken'), true);
+    { const a5 = { window: {} }; vm.runInNewContext(fs.readFileSync(path.join(DIR, '..', 'how-cores-share-memory', 'copy.en.js'), 'utf8'), a5);
+      const t5 = a5.window.ESSAY_COPY.en['doc.title'].split(' · ')[0];
+      check('A5 en title quoted as in its copy', allEn.includes(t5), true);
+      check('en ch12.links links A5 #ch8', EN['ch12.links'].includes("href='../how-cores-share-memory/#ch8'"), true); }
     check('en FSM arcs T / NT with the legend in the caption', [EN['dg.fsm.t'], EN['dg.fsm.n'], /T are taken.*NT are not-taken/.test(EN['dg.fsm.cap'])].join(), 'T,NT,true'); }
 }
 

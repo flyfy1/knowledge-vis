@@ -210,3 +210,13 @@ Unverified / left:
   (older collision, not changed here).
 - Links into switches-that-compute #ch7 / #ch9, why-compute-waits-for-memory #ch1 and how-cpu-caches-work verified (anchors
   and quoted titles). A4 stays plain text. Scripts at `?v=20261115` (first deployment).
+
+## Registrar of A4 and A5 (2026-11-15)
+
+- A4 (`how-a-cpu-guesses-ahead`) is live, so the three plain-text mentions are links now, zh and en: ch6.limit to A4 #ch6
+  (superscalar and out-of-order, "chapters 6 and 7"), ch8.p3 to A4 #ch2 (dynamic prediction with counters), ch12.links to its
+  page top. The diagram label dg.layers.u3s (后续文章 / Later essay) is SVG text, not a link, and stays. tests/models.cjs
+  requires those links (it used to forbid them), checks A4's anchors and quoted title in both languages, and checks this
+  page's aliases against A4 and A5.
+- 取指 译码 执行 no longer collides: it was removed from why-compute-waits-for-memory #ch1 and lands on switches-that-compute #ch9.
+- Scripts move to `?v=20261115b` (`?v=20261115` was deployed with the A1/A3 registration).

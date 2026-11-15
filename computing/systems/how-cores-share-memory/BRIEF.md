@@ -234,3 +234,16 @@ Club386 / The Register pages not reopened; Lamport 1979 original.
 
 Test results after the review: tests/models.cjs PASS 11,605 checks; tests/browser.cjs PASS three runs in a row (zh + en at
 1280 / 390 / 320, reduced motion); canvas-text-overlap --sweep PASS, 582 canvas states, zh/en, scroll-aware mode.
+
+## Registrar (2026-11-15)
+
+- Essay commit 445f4b67 (this tree as reviewed, on drafts/arch-20261115 as b00a3be6). Registered with A4 in one batch.
+- Links: ch11.p2 links A4 #ch8 (out-of-order execution with the store buffer, memory disambiguation) and ch12.links links A4's
+  page top, zh and en; B4 (coherent interconnects, being written) stays plain text. Siblings now link here: A2 ch9.p1, ch12.links
+  (page top) and ch9.limit (#ch3); A3 ch13.links; A4 ch12.links (#ch8). tests/models.cjs allows and requires the A4 links and
+  checks A4's quoted titles.
+- Aliases: as planned, this page takes 缓存一致性 / cache coherence (#ch1) and MESI 协议 / MOESI / MSI 协议 / 总线窥探 (#ch3); plain
+  MSI stays with how-pcie-works #ch7 (MSI interrupts), MSI-X 中断 with why-nvme-is-fast. One-click additions: #ch4 窥探和目录的区别,
+  总线窥探和目录协议的区别, snooping vs directory; #ch5 为什么多线程加法结果不对, 多线程加法结果不对, why multithreaded counter gives
+  wrong result; #ch8 内存模型, memory model; #ch9 x86 和 ARM 内存序, 内存序, x86 vs Arm memory ordering, memory ordering.
+- Scripts stay at `?v=20261115` (first deployment).

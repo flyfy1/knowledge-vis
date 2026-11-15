@@ -68,8 +68,8 @@
       },
       "anchor": "#ch4",
       "aliases": {
-        "zh": ["目录协议", "基于目录的缓存一致性", "侦听过滤器", "三跳事务", "目录存储开销"],
-        "en": ["directory protocol", "directory-based coherence", "snoop filter", "three-hop transaction", "directory storage overhead"]
+        "zh": ["目录协议", "基于目录的缓存一致性", "侦听过滤器", "三跳事务", "目录存储开销", "窥探和目录的区别", "总线窥探和目录协议的区别"],
+        "en": ["directory protocol", "directory-based coherence", "snoop filter", "three-hop transaction", "directory storage overhead", "snooping vs directory"]
       }
     },
     {
@@ -81,8 +81,8 @@
       },
       "anchor": "#ch5",
       "aliases": {
-        "zh": ["竞态条件", "数据竞争", "i++ 是线程安全的吗", "两个线程加一百万次结果不对", "丢失更新"],
-        "en": ["race condition", "data race", "is i++ thread safe", "lost update", "counter increment race"]
+        "zh": ["竞态条件", "数据竞争", "i++ 是线程安全的吗", "两个线程加一百万次结果不对", "丢失更新", "为什么多线程加法结果不对", "多线程加法结果不对"],
+        "en": ["race condition", "data race", "is i++ thread safe", "lost update", "counter increment race", "why multithreaded counter gives wrong result"]
       }
     },
     {
@@ -120,8 +120,8 @@
       },
       "anchor": "#ch8",
       "aliases": {
-        "zh": ["顺序一致性", "内存一致性模型", "存储缓冲", "石蕊测试", "内存重排序"],
-        "en": ["sequential consistency", "memory consistency model", "store buffer", "litmus test", "memory reordering"]
+        "zh": ["顺序一致性", "内存一致性模型", "存储缓冲", "石蕊测试", "内存重排序", "内存模型"],
+        "en": ["sequential consistency", "memory consistency model", "store buffer", "litmus test", "memory reordering", "memory model"]
       }
     },
     {
@@ -133,8 +133,8 @@
       },
       "anchor": "#ch9",
       "aliases": {
-        "zh": ["TSO", "x86 内存模型", "ARM 内存模型", "内存屏障", "获取释放语义", "C++ 内存模型", "Java 内存模型"],
-        "en": ["x86-TSO", "Arm memory model", "memory barrier", "acquire release semantics", "C++ memory model", "Java memory model", "weak memory ordering"]
+        "zh": ["TSO", "x86 内存模型", "ARM 内存模型", "内存屏障", "获取释放语义", "C++ 内存模型", "Java 内存模型", "x86 和 ARM 内存序", "内存序"],
+        "en": ["x86-TSO", "Arm memory model", "memory barrier", "acquire release semantics", "C++ memory model", "Java memory model", "weak memory ordering", "x86 vs Arm memory ordering", "memory ordering"]
       }
     },
     {

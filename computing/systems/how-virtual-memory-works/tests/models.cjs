@@ -358,7 +358,7 @@ const f = (x, d) => x.toFixed(d);
   // one word, one owner: no alias already held by a sibling essay
   const norm = s => s.toLowerCase().replace(/\s+/g, '');
   const owned = new Map();
-  for (const sib of ['how-cpu-caches-work', 'why-compute-waits-for-memory', 'switches-that-compute', 'how-pcie-works', 'how-a-computer-is-wired', 'how-thunderbolt-works', 'what-a-drive-is-made-of', 'how-a-cpu-runs-a-program']) {
+  for (const sib of ['how-cpu-caches-work', 'why-compute-waits-for-memory', 'switches-that-compute', 'how-pcie-works', 'how-a-computer-is-wired', 'how-thunderbolt-works', 'what-a-drive-is-made-of', 'how-a-cpu-runs-a-program', 'how-a-cpu-guesses-ahead', 'how-cores-share-memory']) {
     const p = path.join(DIR, '..', sib, 'REGISTRY.json');
     if (fs.existsSync(p)) for (const c of JSON.parse(fs.readFileSync(p, 'utf8')).concepts) for (const a of [...c.aliases.zh, ...c.aliases.en]) owned.set(norm(a), sib);
   }
@@ -379,8 +379,10 @@ const f = (x, d) => x.toFixed(d);
     if (m[2]) check('anchor exists ' + h, fs.readFileSync(sh, 'utf8').includes(`id="${m[2].slice(1)}"`), true);
   }
   for (const want of ['../how-cpu-caches-work/#ch7', '../how-cpu-caches-work/#ch10', '../why-compute-waits-for-memory/#ch2', '../how-thunderbolt-works/#ch8', '../how-pcie-works/#ch7']) check('links to ' + want, hrefs.includes(want), true);
-  check('no links to the unwritten A4 / A5', /how-cores-share-memory|speculat|out-of-order/.test(hrefs.join()), false);
-  says('ch10.p4', '后续一篇讲 CPU 怎样提前猜测执行的文章');
+  // A4 and A5 are linked since they went live (A4/A5 registrar, 2026-11-15): ch10.p4 -> A4 #ch10 (Spectre), ch13.links -> both page tops
+  for (const [k, h] of [['ch10.p4', '../how-a-cpu-guesses-ahead/#ch10'], ['ch13.links', '../how-a-cpu-guesses-ahead/'], ['ch13.links', '../how-cores-share-memory/']]) check(`${k} links ${h}`, Z[k].includes(`href='${h}'`), true);
+  check('no plain-text "later essay" on A4 / A5 left', /后续一篇讲 CPU|后续两篇文章/.test(all), false);
+  for (const sib of ['how-a-cpu-guesses-ahead', 'how-cores-share-memory']) { const vz = { window: {} }; vm.runInNewContext(fs.readFileSync(path.join(DIR, '..', sib, 'copy.zh.js'), 'utf8'), vz); check(sib + ' title quoted as in its copy', all.includes('《' + vz.window.ESSAY_COPY.zh['hero.title'] + '》'), true); }
 
   const ectx = { window: {} }; vm.runInNewContext(fs.readFileSync(path.join(DIR, 'copy.en.js'), 'utf8'), ectx);
   const EN = ectx.window.ESSAY_COPY.en, stub = ectx.window.ESSAY_COPY.enStub === true, ph = s => [...s.matchAll(/\{(\w+)\}/g)].map(m => m[1]).sort().join(',');

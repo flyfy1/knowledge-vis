@@ -112,3 +112,16 @@ Unverified
 - Hennessy & Patterson ch. 3 (eqntott example), Seznec & Michaud 2006 (TAGE description follows the 2016 paper), Smith 1981, Yeh & Patt 1991, Tomasulo 1967, Smith & Pleszkun 1985, Yeager 1996: not opened; the attributions are the standard ones.
 - Branch Privilege Injection and Retbleed figures, Intel guidance dates: not re-opened.
 - "4 Kbit TAGE beats 32 Kbit gshare" holds by 0.8 points only against best-h gshare; not swept over other mixes. Screen-reader pass not done.
+
+## Registrar (2026-11-15)
+
+- Essay commit 50a4a3c2 (this tree as reviewed, on drafts/arch-20261115 as 7d7d67df). Registered with A5 in one batch.
+- Links: ch12.links now links A5 #ch8 ("chapters 8 and 9": sequential consistency, x86 and Arm) where it named "a later essay
+  on shared memory in multicore systems", zh and en. Siblings now link here: A1 ch6.limit (#ch6), ch8.p3 (#ch2) and ch12.links;
+  A3 ch10.p4 (#ch10) and ch13.links; A5 ch11.p2 (#ch8) and ch12.links. tests/models.cjs requires the A5 link and checks its
+  quoted titles.
+- Aliases: 推测执行 / speculative execution stay on #ch8. A3 never carried them, so there was nothing to move; #ch8 (speculation,
+  squashing, in-order commit) answers "what is speculative execution", and #ch10 answers Spectre. One-click additions: plain
+  分支预测, 分支预测器, branch prediction, branch predictor on #ch1 (the page tag "分支预测 / Branch Prediction" otherwise won).
+  Every query in the registrar's list lands on its chapter (tests/concept-search.cjs pins them).
+- Scripts stay at `?v=20261115r` (set in review; first deployment).

@@ -245,3 +245,13 @@ Unverified
   switches-that-compute and A3, and also checks this page's aliases against A1 and A3.
 - No link to A1: no chapter of this page mentions pipelines or instruction execution.
 - Scripts move to `?v=20261115b` (`?v=20261115` was deployed with the A2 registration).
+
+## Registrar of A4 and A5 (2026-11-15)
+
+- A5 (`how-cores-share-memory`) is live, so the three plain-text mentions of "a later essay on shared memory across cores" are
+  links now, zh and en: ch9.p1 and ch12.links to A5's page top, ch9.limit to A5 #ch3 ("chapters 3, 4 and 7": MOESI, directories,
+  moving a line). tests/models.cjs requires them (it used to forbid them), checks A5's quoted title and checks this page's
+  aliases against A4 and A5.
+- Alias ownership: this page keeps 伪共享 / false sharing and MESI 状态 / MESI states (#ch9); A5 takes 缓存一致性 / cache
+  coherence (#ch1) and MESI 协议 / MOESI / MSI 协议 / 总线窥探 (#ch3), which were unowned.
+- Scripts move to `?v=20261115c` (`?v=20261115b` was deployed with the A1/A3 registration).

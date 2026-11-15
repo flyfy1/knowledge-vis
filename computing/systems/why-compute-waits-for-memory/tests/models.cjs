@@ -227,6 +227,9 @@ const f = (x, d = 0) => x.toFixed(d);
   const mine = new Set(R.concepts.flatMap(c => [...c.aliases.zh, ...c.aliases.en]));
   for (const a of ['L1 L2 L3 缓存', '缓存行', '组相联缓存', 'cache line', 'set associative cache', 'L1 L2 L3 cache']) check('alias moved to ' + sib + ': ' + a, mine.has(a), false);
   for (const a of ['缓存命中率', 'cache hierarchy', '空间局部性', 'spatial locality']) check('alias kept: ' + a, mine.has(a), true);
+  // A4/A5 registrar, 2026-11-15: 取指 译码 执行 belongs to switches-that-compute #ch9 (it tied with #ch1 here and won the zh query)
+  check('alias moved to switches-that-compute #ch9: 取指 译码 执行', mine.has('取指 译码 执行'), false);
+  for (const a of ['流水线气泡', '数据旁路', 'CPI', 'pipeline stall', 'forwarding', 'load-use hazard', 'instruction pipeline']) check('alias kept: ' + a, mine.has(a), true);
 }
 
 /* ── live sentence templates check ── */
