@@ -10,6 +10,23 @@ All essays in `computing/systems/`, stage university, same pipeline as the bus s
 en stub, Haiku translates, separate Opus review of both languages, registrar). **Static diagrams are required**
 (STANDARD.md §4a). Briefs, structural model, hard rules: as in TASK-bus-series.md "Briefs to follow".
 
+## Status (2026-11-15)
+
+| | Page | Essay commit | Live at | State |
+|---|---|---|---|---|
+| A1 | `how-a-cpu-runs-a-program` | — | — | in progress (untracked draft in the working tree) |
+| A2 | `how-cpu-caches-work` CPU 的三级缓存是怎么工作的 | `476c9f45` | `781c2db7` | live, zh + en, reviewed by a separate Claude Code session (same model; cross-model review pending) |
+| A3 | `how-virtual-memory-works` | — | — | in progress (untracked draft in the working tree) |
+| A4–A6 | | | | queued |
+
+A2: alias move, cross-link and one-click aliases in `88dafe9c` (the label points there), registration `644c2aee`. The
+"One word, one owner" decision below is done: L1 L2 L3 缓存, 缓存行, 组相联缓存, cache line, set associative cache (and L1 L2
+L3 cache) are on A2 #ch1–#ch3; why-compute-waits-for-memory #ch2 keeps 缓存命中率, cache hierarchy and the locality words, and
+its ch2.p3 links A2 (Antigravity edition; note in specs/reviews/why-compute-waits-for-memory-alias-move-20261115.md). A2 #ch9
+takes MESI 状态 and false sharing; 缓存一致性, cache coherence, MESI 协议 and MOESI are left for A5 (no result until then).
+switches-that-compute #ch11 does not link A2 (its cache mention is a list item; its browser test requires 48 × 48 links).
+A2 names A3 (virtual memory, ch7.p2 and ch12.links) and A5 (ch9.p1 and ch12.links) in plain text: link them when they go live.
+
 ## The course, in reading order
 
 Existing pages are marked (live). New essays are A1–A6; B and S are the other two series.
