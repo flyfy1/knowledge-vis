@@ -83,7 +83,7 @@ types ("为什么要打疫苗", "how does my phone know where I am"), not only t
    max-age=14400`) but not the HTML, so without a new key readers get the new page with the old text. If the scripts
    were already deployed under today's key, append a letter (`?v=20261115b`, then `c`) so the new key differs. The
    storage essays (what-a-drive-is-made-of, how-sata-works, how-sas-works, how-usb-drives-talk, storage-over-a-network),
-   the bus essays (how-pcie-works, how-a-computer-is-wired, how-thunderbolt-works), how-cpu-caches-work, why-compute-waits-for-memory and why-nvme-is-fast use it since 2026-11-15; older essays do not yet, so add the key the next time one of them
+   the bus essays (how-pcie-works, how-a-computer-is-wired, how-thunderbolt-works), how-cpu-caches-work, how-a-cpu-runs-a-program, how-virtual-memory-works, why-compute-waits-for-memory and why-nvme-is-fast use it since 2026-11-15; older essays do not yet, so add the key the next time one of them
    changes.
 8. Add rows to CONCEPT-MAP.md.
 
@@ -116,11 +116,13 @@ types ("为什么要打疫苗", "how does my phone know where I am"), not only t
 | how-a-computer-is-wired | computing/systems/how-a-computer-is-wired/ | 10 (`#ch1…#ch10`) | computing | `ESSAY_BASE_URL` |
 | how-thunderbolt-works | computing/systems/how-thunderbolt-works/ | 11 (`#ch1…#ch11`) | computing | `ESSAY_BASE_URL` |
 | how-cpu-caches-work | computing/systems/how-cpu-caches-work/ | 12 (`#ch1…#ch12`) | computing | `ESSAY_BASE_URL` |
+| how-a-cpu-runs-a-program | computing/systems/how-a-cpu-runs-a-program/ | 12 (`#ch1…#ch12`) | computing | `ESSAY_BASE_URL` |
+| how-virtual-memory-works | computing/systems/how-virtual-memory-works/ | 13 (`#ch1…#ch13`) | computing | `ESSAY_BASE_URL` |
 
 The eleven from 2026-11-11, the two food essays of 2026-11-12 and the five storage essays of 2026-11-14/15
 (what-a-drive-is-made-of, how-sata-works, how-sas-works, how-usb-drives-talk, storage-over-a-network) and the three bus essays of
-2026-11-15 (how-pcie-works, how-a-computer-is-wired, how-thunderbolt-works) and the architecture essay how-cpu-caches-work
-(2026-11-15) were built by Claude Code (claude-opus-5-5). The English copy was drafted by Claude
+2026-11-15 (how-pcie-works, how-a-computer-is-wired, how-thunderbolt-works) and the architecture essays how-cpu-caches-work,
+how-a-cpu-runs-a-program and how-virtual-memory-works (2026-11-15) were built by Claude Code (claude-opus-5-5). The English copy was drafted by Claude
 Code (claude-haiku-5-5). A separate Claude Code session of the same model reviewed each essay and revised
 it (no human or cross-model review yet). Each BRIEF.md records what was and was not checked.
 why-compute-waits-for-memory and why-nvme-is-fast were built by Antigravity (gemini-4-hydrogen) in both
@@ -164,7 +166,12 @@ Atlas edges: 7 between chapters, 4 to other pages.
 From relays to a 16-byte stored-program machine: gates, NAND universality, binary, adders, two's
 complement, latches and clocks, and floating-point rounding (0.1 + 0.2). Every circuit is simulated gate by
 gate. Atlas edges: 11 between chapters, 3 to other pages. Known gap (BRIEF): at 320 px the chapter 1 SVG
-labels shrink to about 8 px.
+labels shrink to about 8 px. Alias move (2026-11-15, A1 registration): 指令集 / instruction set, CPU 怎么执行程序 / how a CPU
+runs a program and 机器码 / machine code left #ch9, and 流水线 / pipelining left #ch11 (with 指令流水线 and CPU 流水线 from
+atlas/graph/aliases.json), all for how-a-cpu-runs-a-program; #ch9 keeps 程序计数器, 取指 译码 执行 / fetch decode execute,
+冯·诺依曼结构 and 计算机怎么执行指令, #ch4 keeps 关键路径 / critical path, #ch11 keeps plain 缓存 / cache. Its label was repointed for
+the first time (c0cc5c40, original and previous 9451df5d); only REGISTRY.json changed and it is a Claude Code edition, so
+no review note. 取指 译码 执行 is also an alias of why-compute-waits-for-memory #ch1, which wins the zh tie (older collision).
 
 ### what-is-a-black-hole: 黑洞到底是什么
 
@@ -421,7 +428,7 @@ tag / index / offset split with a toy direct-mapped cache, associativity and Hil
 random, SRRIP, BRRIP against Belady), write-back vs write-through with a write buffer, inclusive / non-inclusive / exclusive
 L3 and five real cores, why L1 is small (VIPT, page × ways, with the Neoverse V3 and Apple exceptions), next-line and stride
 prefetching (and the LRU cliff at distance 5), a first look at MESI with false sharing, the pointer-chase staircase, a dated
-frontier and a closing. Eleven static diagrams. Essay commit 476c9f45; label at 88dafe9c. It owns, since 2026-11-15, L1 L2
+frontier and a closing. Eleven static diagrams. Essay commit 476c9f45; label at c0cc5c40 (previous 88dafe9c). It owns, since 2026-11-15, L1 L2
 L3 缓存 / L1 L2 L3 cache and CPU 缓存 / CPU cache (#ch1), 缓存行 / cache line and 直接映射缓存 (#ch2), 组相联缓存 / set
 associative cache, 3C, 缓存未命中 / 缓存缺失 (#ch3), LRU, 伪 LRU, RRIP (#ch4), 写回 写直达 (#ch5), 包含式 / 排他式 / 独占式缓存
 (#ch6), VIPT and 为什么 L1 这么小 (#ch7), 硬件预取 / cache prefetching (#ch8), 伪共享 / false sharing and MESI 状态 / MESI
@@ -431,9 +438,53 @@ with switches-that-compute #ch11. 缓存一致性 / cache coherence, MESI 协议
 return nothing until it is registered; #ch9 takes only MESI 状态 and false sharing, which it answers. It links
 why-compute-waits-for-memory (#ch2, #ch3, #ch4, the page) and switches-that-compute #ch11; that essay's ch2.p3 links back.
 switches-that-compute does not link here (its only cache mention is a list item, and its browser test requires 48 × 48
-links). A3 (virtual memory) and A5 are named in plain text. Atlas edges: 8 between chapters, 4 from why-compute-waits-for-
+links). A3 is linked since it went live (2026-11-15): ch7.p2 and ch10.limit to how-virtual-memory-works #ch4, ch7.limit and
+ch12.links to its page top; scripts `?v=20261115b`. A5 is named in plain text. Atlas edges: 8 between chapters, 4 from why-compute-waits-for-
 memory (#ch2 twice, #ch3, #ch4), 1 from switches-that-compute #ch11. Not verified (BRIEF): Arm's Neoverse V3 TRM (quoted via
 jia.je), Intel Xeon 6980P cache, Zen 6 (claimed), Apple's ways and latencies, Skymont L1.
+
+### how-a-cpu-runs-a-program: CPU 是怎么运行一个程序的
+
+Computer architecture series A1 (TASK-arch-series.md). How does a line of code become clock-by-clock work inside a CPU, and
+why can the same program run several times faster with different code or a different CPU? The ISA as a contract (diagram),
+RV32I registers and the six instruction formats with an encoder/decoder on real bit fields, one C loop hand-compiled three
+ways, the single-cycle datapath and control signals, the slowest instruction setting the clock (800/700/600/500 ps), the
+five-stage pipeline, data hazards and the forwarding unit, control hazards (stall vs predict-not-taken, EX vs ID), the iron
+law over three versions and four machines, CISC vs RISC with six real x86-64 encodings and micro-ops, a dated ISA frontier
+(RVA23, Armv9.8, APX/AVX10) and a closing. Eight static diagrams. Essay commit 0daab2e9; label at c0cc5c40 (the alias-move
+and one-click commit). It owns, since 2026-11-15, 指令集 / ISA / instruction set, 指令集是什么, CPU 怎么执行程序 / how a CPU runs
+a program, x86 和 Arm 区别, 微架构 (#ch1), RISC-V, RISC-V 指令格式, 汇编怎么变成机器码 (#ch2), 机器码 / machine code (#ch3), 数据通路,
+单周期 CPU (#ch4), 时钟周期由什么决定 (#ch5), 流水线 / pipelining, 五级流水线, 指令流水线, CPU 流水线 (#ch6), 数据冒险 (#ch7),
+控制冒险, 分支为什么慢 (#ch8), 性能铁律 / CPU 性能公式 (#ch9), CISC 和 RISC 区别, 微操作 / µop (#ch10), RVA23 / APX (#ch11). The
+ISA, machine-code, title and pipelining words moved from switches-that-compute #ch9 / #ch11 (registrar decision); 关键路径 /
+critical path stays on switches #ch4; 流水线气泡, forwarding, load-use hazard, pipeline stall, CPI and "instruction pipeline" stay
+on why-compute-waits-for-memory #ch1. The exact English title opens the page top. It links switches-that-compute #ch7 and
+#ch9, why-compute-waits-for-memory #ch1 and how-cpu-caches-work; A4 is named in plain text. Atlas edges: 8 between chapters,
+2 from switches-that-compute (#ch9, #ch7), 1 to why-compute-waits-for-memory #ch1. Not verified (BRIEF): the RVA23 PDF date,
+P&H's exact first-pipeline text and RISC-V-edition figure, Nova Lake from Intel's own PDF, "a dozen or more cycles" per
+mispredict (order of magnitude).
+
+### how-virtual-memory-works: 虚拟内存是怎么工作的
+
+Computer architecture series A3 (TASK-arch-series.md). Every program believes it has a whole memory starting at 0 while
+dozens share one; the CPU translates every address, so why is that not slow? First fit vs paging on the same seeded
+arrivals, flat vs multi-level page tables, the x86-64 four-level walk bit by bit (SDM Table 5-20) and five-level paging, the
+TLB and its reach (Zen 5), the cost of a miss with a page-walk cache, huge pages, page faults and demand paging (EAT),
+replacement (FIFO, Clock, LRU, OPT, Belady's anomaly), fork and copy-on-write with mmap, context switches with PCID/ASID,
+shootdown and KPTI, nested paging ((n+1)(m+1) − 1), a dated frontier (Linux 6.16, Android 16 KB pages, Arm granules, CXL
+demotion) and a closing. Nine static diagrams. Essay commit df11763e; label at c0cc5c40. It owns 虚拟内存 / virtual memory and
+为什么需要虚拟内存 (#ch1), 页表 / page table and 多级页表 (#ch2), 四级页表, CR3, 五级分页 (#ch3), TLB 是什么 / what is a TLB (#ch4),
+页表遍历缓存 / page walk cache (#ch5), 大页 / huge pages, THP (#ch6), 缺页 / page fault, 按需调页 (#ch7), 页面置换, Belady 异常 /
+Belady's anomaly (#ch8), 写时复制 / copy-on-write, fork 为什么快, mmap (#ch9), PCID, KPTI, 上下文切换 TLB (#ch10), 嵌套页表 / nested
+paging, EPT (#ch11), 安卓 16 KB 页 (#ch12), dTLB-load-misses (#ch13). Left to their owners: VIPT and Belady 最优替换 / LRU on
+how-cpu-caches-work, IOMMU words on how-thunderbolt-works #ch8, NUMA on how-a-computer-is-wired #ch4, CXL 内存池 on
+why-compute-waits-for-memory. It links how-cpu-caches-work (#ch4, #ch7, #ch10), why-compute-waits-for-memory #ch2,
+how-pcie-works #ch7, how-thunderbolt-works #ch8 and what-a-drive-is-made-of #ch8; how-cpu-caches-work links back (#ch4 and the
+page top); how-thunderbolt-works does not (no page-table sentence there). A4 is named in plain text. Atlas edges: 9 between
+chapters, 1 to how-cpu-caches-work #ch7, 3 from how-cpu-caches-work (#ch4, #ch10) and why-compute-waits-for-memory #ch2, 1 from
+what-a-drive-is-made-of #ch8, 1 from how-pcie-works #ch7, 1 to how-thunderbolt-works #ch8. Not verified (BRIEF): Zen 5 L2
+DTLB associativity, 1 GiB entries and walker count (AMD 58455 not reopened), the 990 PRO and Barracuda figures, the Linux
+command lines.
 
 ### scarcity-moves: 稀缺会搬家
 

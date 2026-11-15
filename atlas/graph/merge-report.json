@@ -1,11 +1,11 @@
 {
   "counts": {
     "groups": 11,
-    "nodes": 502,
-    "edges": 673,
+    "nodes": 527,
+    "edges": 700,
     "trails": 14,
     "questions": 124,
-    "fragments": 201
+    "fragments": 203
   },
   "conflicts": [],
   "suspendedEdges": [],
@@ -243,6 +243,630 @@
         "data-movement-energy-hbm",
         "memory-wall-frontier-2026",
         "memory-diagnostic-checklist"
+      ]
+    },
+    {
+      "concept": "isa-contract",
+      "page": "switches-that-compute",
+      "taughtBy": [
+        "relay-logic-gates",
+        "nand-universality",
+        "binary-numbers",
+        "ripple-carry-adder",
+        "twos-complement-overflow",
+        "latch-metastability",
+        "clock-counter",
+        "mux-alu",
+        "stored-program-machine",
+        "floating-point-rounding",
+        "real-processor-scale"
+      ]
+    },
+    {
+      "concept": "isa-contract",
+      "page": "why-compute-waits-for-memory",
+      "taughtBy": [
+        "pipeline-memory-stall",
+        "memory-hierarchy-cache-walk",
+        "cache-tiling-blocking",
+        "memory-wall-littles-law",
+        "amdahl-gustafson-bus-cap",
+        "gpu-systolic-array",
+        "roofline-model",
+        "llm-inference-memory-bound",
+        "data-movement-energy-hbm",
+        "memory-wall-frontier-2026",
+        "memory-diagnostic-checklist"
+      ]
+    },
+    {
+      "concept": "isa-contract",
+      "page": "how-cpu-caches-work",
+      "taughtBy": [
+        "cache-levels-why",
+        "cache-address-split",
+        "cache-associativity-3c",
+        "cache-replacement",
+        "cache-write-policy",
+        "cache-inclusion",
+        "l1-size-vipt",
+        "cache-prefetch",
+        "false-sharing",
+        "cache-latency-staircase",
+        "cache-frontier",
+        "reading-cache-specs"
+      ]
+    },
+    {
+      "concept": "riscv-instruction-formats",
+      "page": "switches-that-compute",
+      "taughtBy": [
+        "relay-logic-gates",
+        "nand-universality",
+        "binary-numbers",
+        "ripple-carry-adder",
+        "twos-complement-overflow",
+        "latch-metastability",
+        "clock-counter",
+        "mux-alu",
+        "stored-program-machine",
+        "floating-point-rounding",
+        "real-processor-scale"
+      ]
+    },
+    {
+      "concept": "riscv-instruction-formats",
+      "page": "why-compute-waits-for-memory",
+      "taughtBy": [
+        "pipeline-memory-stall",
+        "memory-hierarchy-cache-walk",
+        "cache-tiling-blocking",
+        "memory-wall-littles-law",
+        "amdahl-gustafson-bus-cap",
+        "gpu-systolic-array",
+        "roofline-model",
+        "llm-inference-memory-bound",
+        "data-movement-energy-hbm",
+        "memory-wall-frontier-2026",
+        "memory-diagnostic-checklist"
+      ]
+    },
+    {
+      "concept": "riscv-instruction-formats",
+      "page": "how-cpu-caches-work",
+      "taughtBy": [
+        "cache-levels-why",
+        "cache-address-split",
+        "cache-associativity-3c",
+        "cache-replacement",
+        "cache-write-policy",
+        "cache-inclusion",
+        "l1-size-vipt",
+        "cache-prefetch",
+        "false-sharing",
+        "cache-latency-staircase",
+        "cache-frontier",
+        "reading-cache-specs"
+      ]
+    },
+    {
+      "concept": "compile-a-loop",
+      "page": "switches-that-compute",
+      "taughtBy": [
+        "relay-logic-gates",
+        "nand-universality",
+        "binary-numbers",
+        "ripple-carry-adder",
+        "twos-complement-overflow",
+        "latch-metastability",
+        "clock-counter",
+        "mux-alu",
+        "stored-program-machine",
+        "floating-point-rounding",
+        "real-processor-scale"
+      ]
+    },
+    {
+      "concept": "compile-a-loop",
+      "page": "why-compute-waits-for-memory",
+      "taughtBy": [
+        "pipeline-memory-stall",
+        "memory-hierarchy-cache-walk",
+        "cache-tiling-blocking",
+        "memory-wall-littles-law",
+        "amdahl-gustafson-bus-cap",
+        "gpu-systolic-array",
+        "roofline-model",
+        "llm-inference-memory-bound",
+        "data-movement-energy-hbm",
+        "memory-wall-frontier-2026",
+        "memory-diagnostic-checklist"
+      ]
+    },
+    {
+      "concept": "compile-a-loop",
+      "page": "how-cpu-caches-work",
+      "taughtBy": [
+        "cache-levels-why",
+        "cache-address-split",
+        "cache-associativity-3c",
+        "cache-replacement",
+        "cache-write-policy",
+        "cache-inclusion",
+        "l1-size-vipt",
+        "cache-prefetch",
+        "false-sharing",
+        "cache-latency-staircase",
+        "cache-frontier",
+        "reading-cache-specs"
+      ]
+    },
+    {
+      "concept": "single-cycle-datapath",
+      "page": "switches-that-compute",
+      "taughtBy": [
+        "relay-logic-gates",
+        "nand-universality",
+        "binary-numbers",
+        "ripple-carry-adder",
+        "twos-complement-overflow",
+        "latch-metastability",
+        "clock-counter",
+        "mux-alu",
+        "stored-program-machine",
+        "floating-point-rounding",
+        "real-processor-scale"
+      ]
+    },
+    {
+      "concept": "single-cycle-datapath",
+      "page": "why-compute-waits-for-memory",
+      "taughtBy": [
+        "pipeline-memory-stall",
+        "memory-hierarchy-cache-walk",
+        "cache-tiling-blocking",
+        "memory-wall-littles-law",
+        "amdahl-gustafson-bus-cap",
+        "gpu-systolic-array",
+        "roofline-model",
+        "llm-inference-memory-bound",
+        "data-movement-energy-hbm",
+        "memory-wall-frontier-2026",
+        "memory-diagnostic-checklist"
+      ]
+    },
+    {
+      "concept": "single-cycle-datapath",
+      "page": "how-cpu-caches-work",
+      "taughtBy": [
+        "cache-levels-why",
+        "cache-address-split",
+        "cache-associativity-3c",
+        "cache-replacement",
+        "cache-write-policy",
+        "cache-inclusion",
+        "l1-size-vipt",
+        "cache-prefetch",
+        "false-sharing",
+        "cache-latency-staircase",
+        "cache-frontier",
+        "reading-cache-specs"
+      ]
+    },
+    {
+      "concept": "clock-set-by-slowest",
+      "page": "switches-that-compute",
+      "taughtBy": [
+        "relay-logic-gates",
+        "nand-universality",
+        "binary-numbers",
+        "ripple-carry-adder",
+        "twos-complement-overflow",
+        "latch-metastability",
+        "clock-counter",
+        "mux-alu",
+        "stored-program-machine",
+        "floating-point-rounding",
+        "real-processor-scale"
+      ]
+    },
+    {
+      "concept": "clock-set-by-slowest",
+      "page": "why-compute-waits-for-memory",
+      "taughtBy": [
+        "pipeline-memory-stall",
+        "memory-hierarchy-cache-walk",
+        "cache-tiling-blocking",
+        "memory-wall-littles-law",
+        "amdahl-gustafson-bus-cap",
+        "gpu-systolic-array",
+        "roofline-model",
+        "llm-inference-memory-bound",
+        "data-movement-energy-hbm",
+        "memory-wall-frontier-2026",
+        "memory-diagnostic-checklist"
+      ]
+    },
+    {
+      "concept": "clock-set-by-slowest",
+      "page": "how-cpu-caches-work",
+      "taughtBy": [
+        "cache-levels-why",
+        "cache-address-split",
+        "cache-associativity-3c",
+        "cache-replacement",
+        "cache-write-policy",
+        "cache-inclusion",
+        "l1-size-vipt",
+        "cache-prefetch",
+        "false-sharing",
+        "cache-latency-staircase",
+        "cache-frontier",
+        "reading-cache-specs"
+      ]
+    },
+    {
+      "concept": "five-stage-pipeline",
+      "page": "switches-that-compute",
+      "taughtBy": [
+        "relay-logic-gates",
+        "nand-universality",
+        "binary-numbers",
+        "ripple-carry-adder",
+        "twos-complement-overflow",
+        "latch-metastability",
+        "clock-counter",
+        "mux-alu",
+        "stored-program-machine",
+        "floating-point-rounding",
+        "real-processor-scale"
+      ]
+    },
+    {
+      "concept": "five-stage-pipeline",
+      "page": "why-compute-waits-for-memory",
+      "taughtBy": [
+        "pipeline-memory-stall",
+        "memory-hierarchy-cache-walk",
+        "cache-tiling-blocking",
+        "memory-wall-littles-law",
+        "amdahl-gustafson-bus-cap",
+        "gpu-systolic-array",
+        "roofline-model",
+        "llm-inference-memory-bound",
+        "data-movement-energy-hbm",
+        "memory-wall-frontier-2026",
+        "memory-diagnostic-checklist"
+      ]
+    },
+    {
+      "concept": "five-stage-pipeline",
+      "page": "how-cpu-caches-work",
+      "taughtBy": [
+        "cache-levels-why",
+        "cache-address-split",
+        "cache-associativity-3c",
+        "cache-replacement",
+        "cache-write-policy",
+        "cache-inclusion",
+        "l1-size-vipt",
+        "cache-prefetch",
+        "false-sharing",
+        "cache-latency-staircase",
+        "cache-frontier",
+        "reading-cache-specs"
+      ]
+    },
+    {
+      "concept": "data-hazard-forwarding",
+      "page": "switches-that-compute",
+      "taughtBy": [
+        "relay-logic-gates",
+        "nand-universality",
+        "binary-numbers",
+        "ripple-carry-adder",
+        "twos-complement-overflow",
+        "latch-metastability",
+        "clock-counter",
+        "mux-alu",
+        "stored-program-machine",
+        "floating-point-rounding",
+        "real-processor-scale"
+      ]
+    },
+    {
+      "concept": "data-hazard-forwarding",
+      "page": "why-compute-waits-for-memory",
+      "taughtBy": [
+        "pipeline-memory-stall",
+        "memory-hierarchy-cache-walk",
+        "cache-tiling-blocking",
+        "memory-wall-littles-law",
+        "amdahl-gustafson-bus-cap",
+        "gpu-systolic-array",
+        "roofline-model",
+        "llm-inference-memory-bound",
+        "data-movement-energy-hbm",
+        "memory-wall-frontier-2026",
+        "memory-diagnostic-checklist"
+      ]
+    },
+    {
+      "concept": "data-hazard-forwarding",
+      "page": "how-cpu-caches-work",
+      "taughtBy": [
+        "cache-levels-why",
+        "cache-address-split",
+        "cache-associativity-3c",
+        "cache-replacement",
+        "cache-write-policy",
+        "cache-inclusion",
+        "l1-size-vipt",
+        "cache-prefetch",
+        "false-sharing",
+        "cache-latency-staircase",
+        "cache-frontier",
+        "reading-cache-specs"
+      ]
+    },
+    {
+      "concept": "control-hazard",
+      "page": "switches-that-compute",
+      "taughtBy": [
+        "relay-logic-gates",
+        "nand-universality",
+        "binary-numbers",
+        "ripple-carry-adder",
+        "twos-complement-overflow",
+        "latch-metastability",
+        "clock-counter",
+        "mux-alu",
+        "stored-program-machine",
+        "floating-point-rounding",
+        "real-processor-scale"
+      ]
+    },
+    {
+      "concept": "control-hazard",
+      "page": "why-compute-waits-for-memory",
+      "taughtBy": [
+        "pipeline-memory-stall",
+        "memory-hierarchy-cache-walk",
+        "cache-tiling-blocking",
+        "memory-wall-littles-law",
+        "amdahl-gustafson-bus-cap",
+        "gpu-systolic-array",
+        "roofline-model",
+        "llm-inference-memory-bound",
+        "data-movement-energy-hbm",
+        "memory-wall-frontier-2026",
+        "memory-diagnostic-checklist"
+      ]
+    },
+    {
+      "concept": "control-hazard",
+      "page": "how-cpu-caches-work",
+      "taughtBy": [
+        "cache-levels-why",
+        "cache-address-split",
+        "cache-associativity-3c",
+        "cache-replacement",
+        "cache-write-policy",
+        "cache-inclusion",
+        "l1-size-vipt",
+        "cache-prefetch",
+        "false-sharing",
+        "cache-latency-staircase",
+        "cache-frontier",
+        "reading-cache-specs"
+      ]
+    },
+    {
+      "concept": "iron-law-of-performance",
+      "page": "switches-that-compute",
+      "taughtBy": [
+        "relay-logic-gates",
+        "nand-universality",
+        "binary-numbers",
+        "ripple-carry-adder",
+        "twos-complement-overflow",
+        "latch-metastability",
+        "clock-counter",
+        "mux-alu",
+        "stored-program-machine",
+        "floating-point-rounding",
+        "real-processor-scale"
+      ]
+    },
+    {
+      "concept": "iron-law-of-performance",
+      "page": "why-compute-waits-for-memory",
+      "taughtBy": [
+        "pipeline-memory-stall",
+        "memory-hierarchy-cache-walk",
+        "cache-tiling-blocking",
+        "memory-wall-littles-law",
+        "amdahl-gustafson-bus-cap",
+        "gpu-systolic-array",
+        "roofline-model",
+        "llm-inference-memory-bound",
+        "data-movement-energy-hbm",
+        "memory-wall-frontier-2026",
+        "memory-diagnostic-checklist"
+      ]
+    },
+    {
+      "concept": "iron-law-of-performance",
+      "page": "how-cpu-caches-work",
+      "taughtBy": [
+        "cache-levels-why",
+        "cache-address-split",
+        "cache-associativity-3c",
+        "cache-replacement",
+        "cache-write-policy",
+        "cache-inclusion",
+        "l1-size-vipt",
+        "cache-prefetch",
+        "false-sharing",
+        "cache-latency-staircase",
+        "cache-frontier",
+        "reading-cache-specs"
+      ]
+    },
+    {
+      "concept": "cisc-risc-micro-ops",
+      "page": "switches-that-compute",
+      "taughtBy": [
+        "relay-logic-gates",
+        "nand-universality",
+        "binary-numbers",
+        "ripple-carry-adder",
+        "twos-complement-overflow",
+        "latch-metastability",
+        "clock-counter",
+        "mux-alu",
+        "stored-program-machine",
+        "floating-point-rounding",
+        "real-processor-scale"
+      ]
+    },
+    {
+      "concept": "cisc-risc-micro-ops",
+      "page": "why-compute-waits-for-memory",
+      "taughtBy": [
+        "pipeline-memory-stall",
+        "memory-hierarchy-cache-walk",
+        "cache-tiling-blocking",
+        "memory-wall-littles-law",
+        "amdahl-gustafson-bus-cap",
+        "gpu-systolic-array",
+        "roofline-model",
+        "llm-inference-memory-bound",
+        "data-movement-energy-hbm",
+        "memory-wall-frontier-2026",
+        "memory-diagnostic-checklist"
+      ]
+    },
+    {
+      "concept": "cisc-risc-micro-ops",
+      "page": "how-cpu-caches-work",
+      "taughtBy": [
+        "cache-levels-why",
+        "cache-address-split",
+        "cache-associativity-3c",
+        "cache-replacement",
+        "cache-write-policy",
+        "cache-inclusion",
+        "l1-size-vipt",
+        "cache-prefetch",
+        "false-sharing",
+        "cache-latency-staircase",
+        "cache-frontier",
+        "reading-cache-specs"
+      ]
+    },
+    {
+      "concept": "isa-frontier-2026",
+      "page": "switches-that-compute",
+      "taughtBy": [
+        "relay-logic-gates",
+        "nand-universality",
+        "binary-numbers",
+        "ripple-carry-adder",
+        "twos-complement-overflow",
+        "latch-metastability",
+        "clock-counter",
+        "mux-alu",
+        "stored-program-machine",
+        "floating-point-rounding",
+        "real-processor-scale"
+      ]
+    },
+    {
+      "concept": "isa-frontier-2026",
+      "page": "why-compute-waits-for-memory",
+      "taughtBy": [
+        "pipeline-memory-stall",
+        "memory-hierarchy-cache-walk",
+        "cache-tiling-blocking",
+        "memory-wall-littles-law",
+        "amdahl-gustafson-bus-cap",
+        "gpu-systolic-array",
+        "roofline-model",
+        "llm-inference-memory-bound",
+        "data-movement-energy-hbm",
+        "memory-wall-frontier-2026",
+        "memory-diagnostic-checklist"
+      ]
+    },
+    {
+      "concept": "isa-frontier-2026",
+      "page": "how-cpu-caches-work",
+      "taughtBy": [
+        "cache-levels-why",
+        "cache-address-split",
+        "cache-associativity-3c",
+        "cache-replacement",
+        "cache-write-policy",
+        "cache-inclusion",
+        "l1-size-vipt",
+        "cache-prefetch",
+        "false-sharing",
+        "cache-latency-staircase",
+        "cache-frontier",
+        "reading-cache-specs"
+      ]
+    },
+    {
+      "concept": "reading-code-speed",
+      "page": "switches-that-compute",
+      "taughtBy": [
+        "relay-logic-gates",
+        "nand-universality",
+        "binary-numbers",
+        "ripple-carry-adder",
+        "twos-complement-overflow",
+        "latch-metastability",
+        "clock-counter",
+        "mux-alu",
+        "stored-program-machine",
+        "floating-point-rounding",
+        "real-processor-scale"
+      ]
+    },
+    {
+      "concept": "reading-code-speed",
+      "page": "why-compute-waits-for-memory",
+      "taughtBy": [
+        "pipeline-memory-stall",
+        "memory-hierarchy-cache-walk",
+        "cache-tiling-blocking",
+        "memory-wall-littles-law",
+        "amdahl-gustafson-bus-cap",
+        "gpu-systolic-array",
+        "roofline-model",
+        "llm-inference-memory-bound",
+        "data-movement-energy-hbm",
+        "memory-wall-frontier-2026",
+        "memory-diagnostic-checklist"
+      ]
+    },
+    {
+      "concept": "reading-code-speed",
+      "page": "how-cpu-caches-work",
+      "taughtBy": [
+        "cache-levels-why",
+        "cache-address-split",
+        "cache-associativity-3c",
+        "cache-replacement",
+        "cache-write-policy",
+        "cache-inclusion",
+        "l1-size-vipt",
+        "cache-prefetch",
+        "false-sharing",
+        "cache-latency-staircase",
+        "cache-frontier",
+        "reading-cache-specs"
       ]
     },
     {
@@ -1989,10 +2613,10 @@
     }
   ],
   "unknownAliasIds": [],
-  "sizeBytes": 930990,
+  "sizeBytes": 969558,
   "questionsBytes": 173024,
-  "combinedBytes": 1104014,
-  "indexBytes": 112033,
+  "combinedBytes": 1142582,
+  "indexBytes": 115561,
   "chunkBytes": {
     "math.nodes": 51664,
     "math.edges": 89636,
@@ -2018,8 +2642,8 @@
     "earth.nodes": 25871,
     "earth.edges": 19025,
     "earth.questions": 6822,
-    "computing.nodes": 117679,
-    "computing.edges": 79132,
+    "computing.nodes": 138017,
+    "computing.edges": 91839,
     "computing.questions": 2766,
     "society.nodes": 58077,
     "society.edges": 41022,

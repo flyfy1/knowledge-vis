@@ -2991,13 +2991,15 @@
       "developer": "Claude Code",
       "edition": "claude-code-switches-that-compute-20261111",
       "kind": "original",
-      "sourceRevision": "9451df5d55d135ce5b9fa1c2f823bc787f7e4670",
+      "sourceRevision": "c0cc5c40598d5f1dfad6b830370e3f49991a0c35",
       "scope": {
         "zh": "整篇长文从零编写：继电器与逻辑门、与非门的完备性、二进制、加法器、补码与溢出、锁存器与存储程序计算机、浮点舍入",
         "en": "Whole essay written from scratch: relays and logic gates, NAND universality, binary, adders, two’s complement and overflow, latches and the stored-program machine, floating-point rounding"
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5); English copy drafted by Claude Code (claude-haiku-5-5); independently reviewed 2026-11-11 by a separate Claude Code session (same model), see the page BRIEF.md; cross-model review pending",
-      "path": "computing/systems/switches-that-compute/index.html"
+      "path": "computing/systems/switches-that-compute/index.html",
+      "previousSourceRevision": "9451df5d55d135ce5b9fa1c2f823bc787f7e4670",
+      "originalSourceRevision": "9451df5d55d135ce5b9fa1c2f823bc787f7e4670"
     },
     "what-is-a-black-hole": {
       "developer": "Claude Code",
@@ -3255,7 +3257,7 @@
       "developer": "Claude Code",
       "edition": "claude-code-how-cpu-caches-work-20261115",
       "kind": "original",
-      "sourceRevision": "88dafe9cf9e0d2033532214be9e5b414e9e38c9c",
+      "sourceRevision": "c0cc5c40598d5f1dfad6b830370e3f49991a0c35",
       "scope": {
         "zh": "整篇长文从零编写：为什么要分三级缓存与平均访问时间、地址拆成标记组号偏移、相联度与三种缺失、LRU 伪 LRU 与 RRIP 替换、写回写直达与写缓冲、包含与排他的 L3、为什么 L1 这么小（VIPT）、硬件预取、MESI 入门与伪共享、追指针的延迟台阶、缓存前沿",
         "en": "Whole essay written from scratch: why three levels and average access time, splitting an address into tag, index and offset, associativity and the three kinds of miss, LRU, pseudo-LRU and RRIP replacement, write-back, write-through and the write buffer, inclusive and exclusive L3, why L1 is small (VIPT), hardware prefetching, a first look at MESI and false sharing, the pointer-chase latency staircase, the cache frontier"
@@ -3263,7 +3265,35 @@
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5); English copy drafted by Claude Code (claude-haiku-5-5); independently reviewed 2026-11-15 by a separate Claude Code session (same model), see the page BRIEF.md; cross-model review pending",
       "path": "computing/systems/how-cpu-caches-work/index.html",
       "originalSourceRevision": "476c9f45bca2027a59414bae25b787ac6a4e0a7b",
-      "previousSourceRevision": "476c9f45bca2027a59414bae25b787ac6a4e0a7b"
+      "previousSourceRevision": "88dafe9cf9e0d2033532214be9e5b414e9e38c9c"
+    },
+    "how-a-cpu-runs-a-program": {
+      "developer": "Claude Code",
+      "edition": "claude-code-how-a-cpu-runs-a-program-20261115",
+      "kind": "original",
+      "sourceRevision": "c0cc5c40598d5f1dfad6b830370e3f49991a0c35",
+      "scope": {
+        "zh": "整篇长文从零编写：指令集是软件和硬件之间的合同、RISC-V 的寄存器和六种指令格式、把一个循环手工翻译成机器码、单周期数据通路与控制信号、最慢的指令定时钟、五级流水线、数据冒险与转发、控制冒险与分支代价、性能铁律、CISC 与 RISC 和 x86 的微操作、指令集前沿",
+        "en": "Whole essay written from scratch: the ISA as a contract between software and hardware, RISC-V registers and its six instruction formats, hand-compiling a loop to machine code, the single-cycle datapath and control signals, the slowest instruction setting the clock, the five-stage pipeline, data hazards and forwarding, control hazards and the cost of branches, the iron law of performance, CISC vs RISC and x86 micro-ops, the ISA frontier"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5); English copy drafted by Claude Code (claude-haiku-5-5); independently reviewed 2026-11-15 by a separate Claude Code session (same model), see the page BRIEF.md; cross-model review pending",
+      "path": "computing/systems/how-a-cpu-runs-a-program/index.html",
+      "originalSourceRevision": "0daab2e9a661c5fbfcca42643a2f772b0e6e27f8",
+      "previousSourceRevision": "0daab2e9a661c5fbfcca42643a2f772b0e6e27f8"
+    },
+    "how-virtual-memory-works": {
+      "developer": "Claude Code",
+      "edition": "claude-code-how-virtual-memory-works-20261115",
+      "kind": "original",
+      "sourceRevision": "c0cc5c40598d5f1dfad6b830370e3f49991a0c35",
+      "scope": {
+        "zh": "整篇长文从零编写：为什么要虚拟地址与外部碎片、页和多级页表、x86-64 四级页表逐位走一遍、TLB 与覆盖范围、TLB 缺失的代价与页表遍历缓存、大页、缺页与按需调页、页面置换与 Belady 异常、fork 与写时复制、进程切换与 PCID 和 KPTI、虚拟机的二维页表、虚拟内存前沿",
+        "en": "Whole essay written from scratch: why virtual addresses and external fragmentation, pages and multi-level page tables, an x86-64 four-level walk bit by bit, the TLB and its reach, the cost of a TLB miss and the page-walk cache, huge pages, page faults and demand paging, page replacement and Belady's anomaly, fork and copy-on-write, context switches with PCID and KPTI, two-dimensional page walks in virtual machines, the virtual-memory frontier"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5); English copy drafted by Claude Code (claude-haiku-5-5); independently reviewed 2026-11-15 by a separate Claude Code session (same model), see the page BRIEF.md; cross-model review pending",
+      "path": "computing/systems/how-virtual-memory-works/index.html",
+      "originalSourceRevision": "df11763e66e3f101dcfc3fb3b0ee3b951b7e8494",
+      "previousSourceRevision": "df11763e66e3f101dcfc3fb3b0ee3b951b7e8494"
     }
   },
   "exceptions": {

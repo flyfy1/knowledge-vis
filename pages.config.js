@@ -167,6 +167,8 @@ window.KNOWLEDGE_ESSAYS = [
   "how-a-computer-is-wired",
   "how-thunderbolt-works",
   "how-cpu-caches-work",
+  "how-a-cpu-runs-a-program",
+  "how-virtual-memory-works",
   "how-an-economy-is-measured",
   "scarcity-moves"
 ];
@@ -487,6 +489,26 @@ window.KNOWLEDGE_PAGES = [
     },
     tags: [{ zh: "CPU 缓存", en: "CPU Caches" }, { zh: "计算机体系结构", en: "Computer Architecture" }, { zh: "内存层级", en: "Memory Hierarchy" }, { zh: "长文", en: "Long-form Essay" }],
     category: "computing", subtopic: "systems", stage: "university", status: "live", path: "computing/systems/how-cpu-caches-work/"
+  },
+  {
+    slug: "how-a-cpu-runs-a-program",
+    title: { zh: "CPU 是怎么运行一个程序的", en: "How a CPU Runs a Program" },
+    desc: {
+      zh: "你写的一行代码，最后怎么变成 CPU 里一拍一拍的动作？同一个程序，为什么换一种写法、换一颗 CPU，速度能差好几倍？从指令集这份合同讲起：RISC-V 的寄存器和六种指令格式、把一个循环手工翻译成机器码、单周期数据通路和它的关键路径、五级流水线、数据冒险与转发、分支的代价、性能铁律、x86 怎么在内部拆成小操作，以及 RVA23、Armv9.8、APX 这些 2026 年的前沿。每个模型都是真的：汇编器、指令解释器、逐拍的流水线模拟器。",
+      en: "How does a line of code become clock-by-clock work inside a CPU, and why can the same program run several times faster with different code or a different CPU? Starting from the instruction set as a contract: RISC-V registers and its six instruction formats, hand-compiling a loop to machine code, the single-cycle datapath and its longest path, the five-stage pipeline, data hazards and forwarding, the cost of branches, the iron law of performance, how x86 splits instructions into micro-ops, and the 2026 frontier (RVA23, Armv9.8, APX). Every model is real: an assembler, an instruction interpreter and a cycle-by-cycle pipeline simulator."
+    },
+    tags: [{ zh: "指令集", en: "Instruction Sets" }, { zh: "RISC-V", en: "RISC-V" }, { zh: "流水线", en: "Pipelining" }, { zh: "计算机体系结构", en: "Computer Architecture" }, { zh: "长文", en: "Long-form Essay" }],
+    category: "computing", subtopic: "systems", stage: "university", status: "live", path: "computing/systems/how-a-cpu-runs-a-program/"
+  },
+  {
+    slug: "how-virtual-memory-works",
+    title: { zh: "虚拟内存是怎么工作的", en: "How Virtual Memory Works" },
+    desc: {
+      zh: "每个程序都以为自己独占一整块从 0 开始的内存，几十个程序却挤在同一条内存里。CPU 每读一个字节都要先翻译地址，为什么还不慢？十一个可以动手的模型：连续分配与外部碎片、页表的大小、x86-64 四级页表逐位走一遍、TLB 与它的覆盖范围、页表遍历缓存、大页、缺页的代价、FIFO 与 LRU 与时钟算法、写时复制、PCID 与 KPTI、虚拟机的二维页表。",
+      en: "Every program believes it has a whole memory to itself, starting at address 0, while dozens of programs share the same physical memory. The CPU translates an address before every byte it reads; why is that not slow? Eleven hands-on models: contiguous allocation and external fragmentation, the size of a page table, an x86-64 four-level walk bit by bit, the TLB and its reach, the page-walk cache, huge pages, the cost of a page fault, FIFO, LRU and the clock algorithm, copy-on-write, PCID and KPTI, and the two-dimensional walk inside a virtual machine."
+    },
+    tags: [{ zh: "虚拟内存", en: "Virtual Memory" }, { zh: "操作系统", en: "Operating Systems" }, { zh: "计算机体系结构", en: "Computer Architecture" }, { zh: "长文", en: "Long-form Essay" }],
+    category: "computing", subtopic: "systems", stage: "university", status: "live", path: "computing/systems/how-virtual-memory-works/"
   },
   {
     slug: "how-an-economy-is-measured",

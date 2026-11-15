@@ -374,21 +374,15 @@
       ],
       "aliases": {
         "zh": [
-          "CPU 怎么执行程序",
           "程序计数器",
           "取指 译码 执行",
           "冯·诺依曼结构",
-          "机器码",
-          "指令集",
           "计算机怎么执行指令"
         ],
         "en": [
-          "how a CPU runs a program",
           "program counter",
           "fetch decode execute",
-          "von Neumann architecture",
-          "machine code",
-          "instruction set"
+          "von Neumann architecture"
         ]
       }
     },
@@ -461,14 +455,12 @@
       ],
       "aliases": {
         "zh": [
-          "流水线",
           "缓存",
           "芯片有多少晶体管",
           "2038 年问题",
           "CPU 和我们搭的有什么区别"
         ],
         "en": [
-          "pipelining",
           "cache",
           "transistor count",
           "year 2038 problem",

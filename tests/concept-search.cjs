@@ -383,6 +383,53 @@ chapters.push(
   ['缓存命中率', 'cache hierarchy', MEMW + '#ch2'],
   ['空间局部性', 'spatial locality', MEMW + '#ch2'],
 );
+// Architecture series A1 and A3 (2026-11-15). 指令集 / ISA / instruction set, CPU 怎么执行程序 / how a CPU runs a program, 机器码 /
+// machine code moved from switches-that-compute #ch9 to A1 #ch1 / #ch3, 流水线 / pipelining from switches #ch11 to A1 #ch6; switches
+// #ch9 keeps the program counter, fetch-decode-execute and von Neumann words, #ch4 keeps 关键路径 / critical path. The exact English
+// title "how a CPU runs a program" opens the A1 page top. A3 owns Belady 异常 / Belady's anomaly; A2 #ch4 keeps Belady 最优替换 / LRU.
+const A1 = 'computing/systems/how-a-cpu-runs-a-program/', A3 = 'computing/systems/how-virtual-memory-works/', SW = 'computing/systems/switches-that-compute/';
+chapters.push(
+  ['指令集', 'instruction set', A1 + '#ch1'],
+  ['指令集是什么', 'what is an ISA', A1 + '#ch1'],
+  ['CPU 怎么执行程序', 'ISA', A1 + '#ch1'],
+  ['RISC-V 指令格式', 'RISC-V instruction formats', A1 + '#ch2'],
+  ['RISC-V 是什么', 'what is RISC-V', A1 + '#ch2'],
+  ['机器码', 'machine code', A1 + '#ch3'],
+  ['数据通路', 'datapath', A1 + '#ch4'],
+  ['单周期 CPU', 'single cycle CPU', A1 + '#ch4'],
+  ['单周期为什么慢', 'what sets the clock period', A1 + '#ch5'],
+  ['五级流水线', 'five-stage pipeline', A1 + '#ch6'],
+  ['流水线', 'pipelining', A1 + '#ch6'],
+  ['数据冒险', 'data hazard', A1 + '#ch7'],
+  ['控制冒险', 'control hazard', A1 + '#ch8'],
+  ['分支为什么慢', 'branch penalty', A1 + '#ch8'],
+  ['CPU 性能公式', 'iron law of performance', A1 + '#ch9'],
+  ['CISC 和 RISC 区别', 'CISC vs RISC', A1 + '#ch10'],
+  ['微操作 µop', 'micro-ops', A1 + '#ch10'],
+  ['RVA23', 'Intel APX', A1 + '#ch11'],
+  ['比较 CPU 性能看什么', 'how to compare CPU performance', A1 + '#ch12'],
+  ['程序计数器', 'fetch decode execute', SW + '#ch9'],
+  ['冯·诺依曼结构', 'von Neumann architecture', SW + '#ch9'],
+  ['关键路径', 'critical path', SW + '#ch4'],
+  ['虚拟内存是什么', 'what is virtual memory', A3 + '#ch1'],
+  ['为什么需要虚拟内存', 'virtual memory', A3 + '#ch1'],
+  ['页表', 'page table', A3 + '#ch2'],
+  ['多级页表', 'multi-level page table', A3 + '#ch2'],
+  ['四级页表', 'four-level paging', A3 + '#ch3'],
+  ['TLB 是什么', 'what is a TLB', A3 + '#ch4'],
+  ['TLB 缺失代价', 'page walk cache', A3 + '#ch5'],
+  ['大页', 'huge pages', A3 + '#ch6'],
+  ['缺页', 'page fault', A3 + '#ch7'],
+  ['页面置换', "Belady's anomaly", A3 + '#ch8'],
+  ['Belady 异常', 'page replacement', A3 + '#ch8'],
+  ['写时复制', 'copy-on-write', A3 + '#ch9'],
+  ['fork 为什么快', 'why is fork fast', A3 + '#ch9'],
+  ['上下文切换 TLB', 'KPTI', A3 + '#ch10'],
+  ['嵌套页表 虚拟化', 'nested paging', A3 + '#ch11'],
+  ['安卓 16 KB 页', '16 KB page size', A3 + '#ch12'],
+  ['怎么看缺页次数', 'how to measure TLB misses', A3 + '#ch13'],
+  ['Belady 最优替换', 'Belady optimal replacement', CACHE + '#ch4'],
+);
 for (const [zh, en, href] of chapters) for (const q of [zh, en]) {
   const hit = first(q);
   ok(hit && (hit.href === href || (href.endsWith('/') && hit.href.startsWith(href))), `"${q}" opens ${href} (got ${hit && hit.href})`);

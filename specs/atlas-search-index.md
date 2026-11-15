@@ -329,6 +329,20 @@ anchor and aliases. It is a schema-2 fragment `atlas/graph/lessons/<slug>.json`:
   miss types on #ch3, 独占式缓存 on #ch6, cache prefetching / hardware prefetcher on #ch8. 缓存一致性, cache coherence, MESI 协议
   and MOESI are left unowned for A5. `tests/concept-search.cjs` pins 18 zh/en pairs for A2 and 2 for the memory essay's kept
   words. The search chunks total 273,901 bytes; computing-1.js is 44,589 of 60,000.
+- Architecture series A1 and A3 (2026-11-15): how-a-cpu-runs-a-program (12 concepts) and how-virtual-memory-works (13) →
+  computing. 27 hand-written edges. A1 fragment (11): 8 between chapters (#ch1 → #ch2; #ch2 → #ch3 and #ch4; #ch4 → #ch5; #ch5
+  → #ch6; #ch6 → #ch7 and #ch8; #ch8 → #ch9), 2 from switches-that-compute (#ch9 → #ch1, #ch7 → #ch5), 1 to
+  why-compute-waits-for-memory (#ch7 → #ch1). A3 fragment (16): 9 between chapters (#ch1 → #ch2 → #ch3 → #ch4 → #ch5; #ch4 →
+  #ch6 and #ch10; #ch5 → #ch6; #ch3 → #ch11; #ch7 → #ch8), A3 #ch4 → how-cpu-caches-work #ch7 (source A2 #ch7, which now links
+  A3 #ch4), 3 from how-cpu-caches-work #ch4 / #ch10 and why-compute-waits-for-memory #ch2, 1 from what-a-drive-is-made-of #ch8,
+  1 from how-pcie-works #ch7, 1 to how-thunderbolt-works #ch8. One word, one owner: 指令集 / instruction set, CPU 怎么执行程序 / how
+  a CPU runs a program and 机器码 / machine code moved from switches-that-compute #ch9, 流水线 / pipelining from #ch11 (and 指令流水线
+  / CPU 流水线 / instruction pipeline removed from that node in atlas/graph/aliases.json; "instruction pipeline" remains on
+  why-compute-waits-for-memory #ch1), all to A1; the switches fragment was re-imported (14 edges kept). A3 owns Belady 异常 /
+  Belady's anomaly; A2 #ch4 keeps Belady 最优替换 / LRU. One-click additions: plain 虚拟内存 / virtual memory on A3 #ch1 (the page
+  tag otherwise won), 页表 / page table on #ch2 (#ch3's "page table walk" otherwise won), RISC-V 是什么, 分支为什么慢, µop on A1.
+  `tests/concept-search.cjs` pins 40 zh/en pairs (19 A1, 17 A3, 3 for switches' kept words, 1 for A2's Belady). The search
+  chunks total 288,536 bytes; computing-2.js is 44,889 of 60,000.
 
 ### Commands for the integrator
 
