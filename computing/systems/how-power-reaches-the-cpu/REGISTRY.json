@@ -1,0 +1,365 @@
+{
+  "slug": "how-power-reaches-the-cpu",
+  "path": "computing/systems/how-power-reaches-the-cpu/",
+  "category": "computing",
+  "subtopic": "systems",
+  "stage": "university",
+  "title": {
+    "zh": "电是怎么送进 CPU 的",
+    "en": "How Power Reaches the CPU"
+  },
+  "desc": {
+    "zh": "一颗 CPU 只用一伏左右的电压，却能吃下两三百瓦，也就是两百安上下的电流，负载还会在十来纳秒里猛跳上百安。电是怎么从墙上的插座一路送进芯片的？芯片为什么会自己降频？八个可以动手的模型：从插座到晶粒每一段丢掉多少电，功率怎么随电压和频率涨，电源在什么负载下最省，多相稳压怎么把纹波抵掉，负载一跳电压往下掉多少，跑完一件事用多快的频率最省电，空闲时睡多深，以及功率墙和散热器怎么一起决定频率。",
+    "en": "A CPU runs on about one volt, yet it can draw 200 to 300 watts, roughly 200 amps, and its load can jump by a hundred amps in about ten nanoseconds. How does power get from the wall socket into the chip, and why does the chip slow itself down? Eight hands-on models: how much each stage from the wall to the die loses, how power grows with voltage and frequency, at what load a power supply is most efficient, how a multiphase regulator cancels its ripple, how far the voltage sags when the load jumps, which clock finishes a job on the least energy, how deep to sleep when idle, and how power limits and the cooler together set the clock."
+  },
+  "tags": [
+    {
+      "zh": "计算机体系结构",
+      "en": "Computer Architecture"
+    },
+    {
+      "zh": "供电",
+      "en": "Power Delivery"
+    },
+    {
+      "zh": "电源管理",
+      "en": "Power Management"
+    },
+    {
+      "zh": "长文",
+      "en": "Long-form Essay"
+    }
+  ],
+  "concepts": [
+    {
+      "id": "power-delivery-chain",
+      "title": {
+        "zh": "供电链：从插座到晶粒一路降压",
+        "en": "The power-delivery chain: stepping down from the wall to the die"
+      },
+      "desc": {
+        "zh": "220 伏交流 → 约 400 伏直流 → 12 伏 → 一伏左右；电压每降一级电流就涨一级，每一级都丢几个百分点变成热。",
+        "en": "220 V AC → about 400 V DC → 12 V → about one volt; each step down raises the current and loses a few percent as heat."
+      },
+      "anchor": "#ch1",
+      "aliases": {
+        "zh": [
+          "CPU 供电",
+          "电是怎么送进 CPU 的",
+          "CPU 用多少电流",
+          "主板供电"
+        ],
+        "en": [
+          "CPU power delivery",
+          "how does power reach the CPU",
+          "CPU current draw",
+          "motherboard power delivery"
+        ]
+      }
+    },
+    {
+      "id": "dynamic-power",
+      "title": {
+        "zh": "动态功耗：功率随电压平方走",
+        "en": "Dynamic power: power goes with voltage squared"
+      },
+      "desc": {
+        "zh": "每次翻转都要给电容充放电，能量正比于 C·V²；频率越高电压越高，功率近似随频率三次方涨。",
+        "en": "Every switching event charges and discharges capacitance, energy proportional to C·V²; higher clocks need higher voltage, so power grows roughly with the cube of frequency."
+      },
+      "anchor": "#ch2",
+      "aliases": {
+        "zh": [
+          "动态功耗",
+          "CPU 功耗公式",
+          "V/f 曲线",
+          "CPU 为什么电压这么低"
+        ],
+        "en": [
+          "dynamic power",
+          "CPU power formula",
+          "V/f curve",
+          "why CPU voltage is so low"
+        ]
+      }
+    },
+    {
+      "id": "psu-efficiency",
+      "title": {
+        "zh": "电源效率与 80 PLUS",
+        "en": "PSU efficiency and 80 PLUS"
+      },
+      "desc": {
+        "zh": "电脑电源整流、做功率因数校正、隔着变压器降到 12 伏；在一半负载附近最省，很轻负载时效率掉得最多。",
+        "en": "A PC power supply rectifies, corrects the power factor and steps down to 12 V across a transformer; it is most efficient near half load and worst at very light load."
+      },
+      "anchor": "#ch3",
+      "aliases": {
+        "zh": [
+          "电源效率",
+          "电源转换效率",
+          "电源瓦数怎么选",
+          "功率因数校正",
+          "ATX 电源"
+        ],
+        "en": [
+          "80 PLUS",
+          "PSU efficiency",
+          "power supply efficiency",
+          "what wattage PSU",
+          "power factor correction",
+          "ATX power supply"
+        ]
+      }
+    },
+    {
+      "id": "multiphase-vrm",
+      "title": {
+        "zh": "多相稳压（VRM）",
+        "en": "Multiphase voltage regulators (VRM)"
+      },
+      "desc": {
+        "zh": "主板上十几相降压电路轮流开关，把 12 伏降到一伏左右，各相的纹波互相抵掉；相数越多每相越凉。",
+        "en": "A dozen interleaved buck phases on the motherboard step 12 V down to about a volt; their ripple cancels and more phases run cooler."
+      },
+      "anchor": "#ch4",
+      "aliases": {
+        "zh": [
+          "供电相数",
+          "多相供电",
+          "CPU 供电模块",
+          "纹波抵消"
+        ],
+        "en": [
+          "VRM",
+          "voltage regulator module",
+          "multiphase buck",
+          "power phases",
+          "ripple cancellation"
+        ]
+      }
+    },
+    {
+      "id": "load-line-decoupling",
+      "title": {
+        "zh": "负载线与去耦电容",
+        "en": "Load line and decoupling"
+      },
+      "desc": {
+        "zh": "电流几纳秒内跳上百安，稳压器来不及反应，靠一层层电容顶住；负载线让电压随电流有意下斜，把落差预先算好。",
+        "en": "Current can jump by a hundred amps in nanoseconds; layers of capacitors hold the voltage until the regulator responds, and the load line lets voltage sag on purpose."
+      },
+      "anchor": "#ch5",
+      "aliases": {
+        "zh": [
+          "负载线",
+          "Load-Line Calibration",
+          "防掉压",
+          "去耦电容",
+          "电压跌落",
+          "供电网络阻抗"
+        ],
+        "en": [
+          "load line",
+          "adaptive voltage positioning",
+          "decoupling capacitors",
+          "voltage droop",
+          "PDN impedance",
+          "target impedance"
+        ]
+      }
+    },
+    {
+      "id": "current-into-die",
+      "title": {
+        "zh": "几百安怎么进到晶粒里",
+        "en": "How hundreds of amps get into the die"
+      },
+      "desc": {
+        "zh": "电流分给插座里的大量电源/地触点和封装下几千个凸点；电流过密会引起电迁移。片上稳压（FIVR）和电源门控在晶粒内部再分一次。",
+        "en": "Current is split across many power and ground contacts in the socket and thousands of bumps under the die; too much density causes electromigration. On-die regulators (FIVR) and power gating split it again."
+      },
+      "anchor": "#ch6",
+      "aliases": {
+        "zh": [
+          "电迁移",
+          "片上稳压",
+          "电源门控",
+          "CPU 插座针脚"
+        ],
+        "en": [
+          "electromigration",
+          "FIVR",
+          "on-die voltage regulator",
+          "power gating",
+          "socket power pins"
+        ]
+      }
+    },
+    {
+      "id": "dvfs-race-to-idle",
+      "title": {
+        "zh": "调频调压与冲刺再睡",
+        "en": "DVFS and race to idle"
+      },
+      "desc": {
+        "zh": "操作系统在 P-state 之间挑频率和电压；完成定量工作最省电的频率常在 V/f 曲线的拐点附近，不一定是最快。",
+        "en": "The OS picks P-states, frequency and voltage together; for a fixed job the most energy-efficient clock is usually near the knee of the V/f curve, not the fastest."
+      },
+      "anchor": "#ch7",
+      "aliases": {
+        "zh": [
+          "动态调频调压",
+          "P-state",
+          "冲刺再睡",
+          "CPU 调频"
+        ],
+        "en": [
+          "DVFS",
+          "dynamic voltage and frequency scaling",
+          "P-states",
+          "race to idle",
+          "schedutil",
+          "CPU frequency scaling"
+        ]
+      }
+    },
+    {
+      "id": "c-states",
+      "title": {
+        "zh": "C-state：空闲时睡多深",
+        "en": "C-states: how deep to sleep when idle"
+      },
+      "desc": {
+        "zh": "越深的 C-state 越省电但醒得越慢，还要睡够目标驻留时间才划算；空闲调速器每次都在猜这次会闲多久。",
+        "en": "Deeper C-states save more but wake slower and must last their target residency; the idle governor guesses each time how long the idle will last."
+      },
+      "anchor": "#ch8",
+      "aliases": {
+        "zh": [
+          "C-state",
+          "CPU 空闲状态",
+          "CPU 睡眠状态",
+          "menu 调速器",
+          "C6"
+        ],
+        "en": [
+          "C-states",
+          "CPU idle states",
+          "cpuidle",
+          "menu governor",
+          "target residency",
+          "package C-states"
+        ]
+      }
+    },
+    {
+      "id": "power-limits-thermal",
+      "title": {
+        "zh": "功率墙与温度墙：PL1、PL2、Tau",
+        "en": "Power and thermal limits: PL1, PL2, Tau"
+      },
+      "desc": {
+        "zh": "CPU 降频一是功率墙（PL2 冲刺、PL1 管平均、Tau 是时间常数），二是温度墙（结温碰到 Tj max）；散热器只解决后者。",
+        "en": "A CPU throttles either at the power limit (PL2 burst, PL1 average, Tau time constant) or at the thermal limit (junction temperature at Tj max); a better cooler only helps the second."
+      },
+      "anchor": "#ch9",
+      "aliases": {
+        "zh": [
+          "CPU 降频",
+          "CPU 为什么降频",
+          "功率墙",
+          "温度墙",
+          "热阻",
+          "温度降频"
+        ],
+        "en": [
+          "CPU throttling",
+          "why does my CPU throttle",
+          "PL1 PL2",
+          "power limit",
+          "thermal throttling",
+          "thermal resistance",
+          "Tjmax",
+          "Tau turbo time"
+        ]
+      }
+    },
+    {
+      "id": "datacenter-power",
+      "title": {
+        "zh": "数据中心供电：48 伏与 800 伏直流",
+        "en": "Data-center power: 48 V and 800 V DC"
+      },
+      "desc": {
+        "zh": "一颗加速器一千瓦、一个机架上百千瓦：机架电压从 12 伏升到 48 伏，再走向 800 伏直流，因为同功率下线损随电压平方下降。",
+        "en": "Accelerators draw a kilowatt each and racks over a hundred: rack power moves from 12 V to 48 V and toward 800 V DC, because line loss falls with the square of voltage."
+      },
+      "anchor": "#ch10",
+      "aliases": {
+        "zh": [
+          "48 伏供电",
+          "800 伏直流",
+          "机架供电",
+          "Open Rack",
+          "母线槽供电"
+        ],
+        "en": [
+          "48 V rack power",
+          "800 V DC",
+          "rack power distribution",
+          "Open Rack V3",
+          "busbar power"
+        ]
+      }
+    },
+    {
+      "id": "power-frontier",
+      "title": {
+        "zh": "供电前沿（2026 年 11 月）",
+        "en": "Power-delivery frontier (November 2026)"
+      },
+      "desc": {
+        "zh": "背面供电（PowerVia、Super Power Rail）、贴在芯片下的垂直供电模块、800 伏直流机架：哪些已经量产，哪些还在演示。",
+        "en": "Backside power (PowerVia, Super Power Rail), vertical power modules under the chip, 800 V DC racks: what ships and what is still a demo."
+      },
+      "anchor": "#ch11",
+      "aliases": {
+        "zh": [
+          "垂直供电",
+          "A16 工艺"
+        ],
+        "en": [
+          "PowerVia",
+          "Super Power Rail",
+          "vertical power delivery",
+          "TSMC A16"
+        ]
+      }
+    },
+    {
+      "id": "throttle-checklist",
+      "title": {
+        "zh": "电脑降频时先查哪一段",
+        "en": "Which stage limits first when a PC throttles"
+      },
+      "desc": {
+        "zh": "电源、稳压模块、电容、触点、热阻、功率墙各有上限；跑不满时先找哪一段先到顶。",
+        "en": "PSU, VRM, capacitors, contacts, thermal resistance and power limits each have a ceiling; when a machine falls short, find which one hits first."
+      },
+      "anchor": "#ch12",
+      "aliases": {
+        "zh": [
+          "降频排查",
+          "CPU 跑不满",
+          "供电瓶颈"
+        ],
+        "en": [
+          "throttling checklist",
+          "CPU not reaching boost",
+          "power bottleneck"
+        ]
+      }
+    }
+  ]
+}
