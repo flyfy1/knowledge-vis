@@ -208,8 +208,10 @@ const diagramProblems = (page, ids) => page.evaluate(ids => {
     ok((await text(page, '#chLv')) === '5 / 7', 'ch4 USB4 keeps five');
     await pick(page, 'chM', 'tbt3'); await page.waitForTimeout(40);
     ok((await text(page, '#chLv')) === '6 / 7', 'ch4 TBT3 mode keeps six');
-    const h0 = await canvasHash(page, 'chCv'); await page.$eval('#chDp', e => e.click()); await page.waitForTimeout(120);
-    ok(h0 !== await canvasHash(page, 'chCv'), 'ch4 display checkbox redraws');
+    await page.waitForTimeout(120); const h0 = await canvasHash(page, 'chCv'); await page.$eval('#chDp', e => e.click());
+    // wait for the next frames to repaint (polls up to 1 s; the canvas redraws on requestAnimationFrame)
+    let h1 = h0; for (let i = 0; i < 20 && h1 === h0; i++) { await page.waitForTimeout(50); h1 = await canvasHash(page, 'chCv'); }
+    ok(h0 !== h1, 'ch4 display checkbox redraws');
 
     // ch5 lanes
     await show(page, '#lnCv', 200);
@@ -243,7 +245,8 @@ const diagramProblems = (page, ids) => page.evaluate(ids => {
 
     // ch8 IOMMU
     await show(page, '#ioCv', 200);
-    ok((await text(page, '#ioX')) === P.ioExposed[0] + ' KiB', 'ch8 default exposure');
+    ok((await text(page, '#ioX')) === M.IOMMU.run(1536, 64, 'iommu', 7).exposed / 1024 + ' KiB', 'ch8 default exposure (the seed-7 layout)');
+    ok((await text(page, '#ioEx')).split(' / ')[0] === String(P.ioPages7[0]), 'ch8 default layout page count is the one the prose quotes');
     await pick(page, 'ioS', '4096'); await page.waitForTimeout(40);
     ok((await text(page, '#ioX')) === '0 KiB', 'ch8 page-sized buffers expose nothing');
     await pick(page, 'ioS', '1536'); await pick(page, 'ioM', 'off'); await page.waitForTimeout(40);

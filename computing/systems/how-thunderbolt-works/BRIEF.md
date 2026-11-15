@@ -1,11 +1,11 @@
 # BRIEF — 雷电接口是怎么工作的 (How Thunderbolt Works)
 
 Built-By: Claude Code (claude-opus-5-5)
-Verified-By: self-check by builder (node model test, browser test zh at 1280/390/320 and reduced motion, canvas sweep, screenshots of every model and diagram at 1280/390/320); independent review pending
+Verified-By: self-check by builder (node model test, browser test zh at 1280/390/320 and reduced motion, canvas sweep, screenshots of every model and diagram at 1280/390/320); Claude Code (claude-opus-5-5), independent review 2026-11-15: zh and en read in full, models re-derived against the primary specs, diagrams at 1280/390/320 zh/en (see Review)
 Authorship-Impact: authored
 Category: computing 计算机 / subtopic systems 系统 · Stage: university
 Series: bus series B6 (`specs/essay-briefs/TASK-bus-series.md`)
-Format: long interactive essay. Chinese written in full; `copy.en.js` is a same-keys stub (`enStub = true`), translation pending.
+Format: long interactive essay. Chinese written in full; `copy.en.js` translated (same keys), reviewed in the browser 2026-11-15.
 Files: index.html, copy.zh.js, copy.en.js, models.js, app.js, REGISTRY.json, tests/models.cjs, tests/browser.cjs
 
 ## The one question
@@ -83,7 +83,8 @@ consequence every tolerance corner lands in its window and `ch1.say.bad` is unre
 - Thunderspy (Ruytenberg, 2020): https://thunderspy.io/
 - Apple newsroom, M4 Pro and M4 Max (2024-10-30), regional copy of the release:
   https://www.apple.com/ca/newsroom/2024/10/apple-introduces-m4-pro-and-m4-max/
-- Panther Lake (secondary only): https://www.pcworld.com/article/2935377/intels-new-panther-lake-cpu-11-essential-facts-you-should-know.html ,
+- Intel Core Ultra Series 3 Processors Quick Reference Guide v1 (opened by the reviewer 2026-11-15): https://cdrdv2-public.intel.com/871380/Intel%20Core%20Ultra%20Series%203%20Processors%20-%20Quick%20Reference%20Guide%20v1.pdf
+- Panther Lake (secondary): https://www.servethehome.com/intel-launches-core-ultra-series-3-mobile-processors-panther-lake-roars-to-life/2/ , https://www.pcworld.com/article/2935377/intels-new-panther-lake-cpu-11-essential-facts-you-should-know.html ,
   https://www.techspot.com/news/110816-intel-launches-core-ultra-series-3-panther-lake.html
 
 ## Facts that will go stale
@@ -101,7 +102,7 @@ EPR sequence, TB5 brief figures, TB4 newsroom figures, DP 2.0 release figures.
 Not verified from a primary source (flagged on the page where used):
 - the VESA CVT 1.2 standard itself (formula from published descriptions, cross-checked with one cvt12 output);
 - the VESA DP Alt Mode standard itself (pin assignments C/D from TI datasheets and VESA DevDays slides);
-- Panther Lake: integrated TB4, TB5 only via discrete controller on some SKUs (secondary reports; marked "claim");
+- (resolved in review) Panther Lake is now checked against Intel's own Core Ultra Series 3 quick reference guide;
 - Thunderclap paper body (abstract, slides and project page only); Linux 5.0 enabling the IOMMU for Thunderbolt
   and disabling ATS (secondary);
 - USB4's position on DMA protection for hosts (no primary text found; the ch9 table says "由平台决定");
@@ -123,3 +124,79 @@ names in the PD diagram and list (Source_Capabilities, EPR_Mode …) are spec id
 - Avoided: "快充" (why-batteries-hold-so-little), "快充为什么发热" (inside-a-phone), bare "DMA" (why-a-few-firms-win,
   Digital Markets Act). Words like "PCIe 隧道是什么" stay with how-usb-drives-talk.
 - B1 (how-pcie-works) is named in plain text in ch3.p5 and ch11.links, not linked; add the link once B1 is live.
+
+## Review
+
+- Reviewer: Claude Code (claude-opus-5-5), separate session; did not build the page. Date: 2026-11-15.
+- Scope: zh and en read in full (every key of copy.zh.js and copy.en.js); all eight models driven in the browser; all nine
+  diagrams screenshotted at 1280/390/320 in zh and en.
+- Checks against primary text I opened myself (spec PDFs re-extracted with pypdf into /tmp/agent-tasks/buses/review-b6/):
+  - Type-C R2.5 Table 3-4 (all 24 pins, B12 facing A1), Tables 4-27/4-28/4-29/4-36, Table 3-1 (0.8 m for USB4 Gen 3/Gen 4
+    passive; full-featured cables must be e-marked).
+  - CC 1 mV rounding: correct, not a hidden model error. Table 4-36's upper edges are exactly the worst-case resistor
+    corners (5.5 V, Rp −5 %, Rd +10 %: 0.6121 V and 2.0420 V) rounded to the table's millivolt; Table 4-28 also gives
+    2.04 V. The lower edges (0.277, 0.746, 1.369 V) sit below every corner (resistor, current-source and 3.3 V pull-up),
+    so the old sentence "the windows are cut at the worst-case corners" was true only for upper edges; reworded.
+  - USB4 2.0 Table 5-2 (PDF 31:28, SuppID 27, Rsvd 26:23, HopID 22:16, Length 15:8, HEC 7:0), §5.1.2.1.1 HEC (07h/00h/55h,
+    shall correct single-bit errors; uncorrectable: drop, count, retrain / Gen 4 recovery); Appendix A three HEC examples
+    recomputed with an independent script (D4, 37, DA) and 32 distinct single-bit syndromes.
+  - §5.2: tunnelled packets use HopIDs 8 to Max Input HopID. §6.1 depths 0–5, §13.4.1 depths 0–6, §13.6.1 (depth 6
+    recommended). §11: a host has one Downstream PCIe Adapter per downstream port; hubs must tunnel PCIe. §2.2.10: host
+    must do USB3, DP and host-to-host; PCIe optional. §4.x: Gen 2 required, Gen 3 optional for hosts/devices, required
+    for hubs; RS-FEC RS(198,194) negotiated at Gen 3; Gen 4 25.6 GBd PAM3, 11 bits / 7 trits, RS(504,480).
+  - CM Guide 2.0 §6.1.2.3/6.1.2.4 (90 %, 1.5 Gb/s floors, 80 G example 72/4, weights 14/9/9/4), §6.2.1 (Max Link BW
+    reserves the *maximum* rate/lane count, 8b/10b only; 40 G example 25.92 + 8.64; BW Allocation Mode needs a
+    Version 2.0 DP IN adapter and DPTX support), Table 6-2 (120/40).
+  - PD r3.3 §3.2.2–3.2.4, Tables 3.1 and 3.6 (65 W on a 3 A cable → Present PDP 60 W → 20 V × 3 A: right), §6.5.18
+    (EPR_Source_Capabilities padded to 7 SPR slots, Extended, chunked), §6.5.1.1 (26-byte chunks), §7.30.1 (EPR entry
+    order, cable discovery on SOP').
+  - Intel TB5 technology brief Figure 2 and note 4; Microsoft Kernel DMA Protection page (updated 2026-10-08; no
+    protection during boot); thunderclap.io and the NDSS abstract; thunderspy.io; Intel Core Ultra Series 3 quick
+    reference guide; Apple M4 Pro/Max TB5 (Apple spec page and TidBITS, 2024-10-30).
+  - Hand checks of CVT-RB2 4K60 (3920 × 2222, 522.614 MHz), 6K60 and 8K60 pixel clocks, the ch3 share numbers
+    (1,994 / 3,562 / 869 → 5,215 / 8,000 → 3,477 MB/s) from the CM rules and work-conserving WRR.
+  - Search words: no alias collides with any other REGISTRY.json or atlas/graph entry; S4 #ch3/#ch8 linked, not repeated.
+  - English doc.title follows the sister pattern "<title> · a long essay you can play with" (also used by
+    how-usb-drives-talk, what-a-drive-is-made-of and others); accepted.
+- Changes (zh and en in sync; every new number pinned in tests/models.cjs):
+  - ch6.p3: the page said TB4 "uses Max Link BW" and so lights only one of two 4K monitors, contradicting Intel's
+    two-4K promise quoted two paragraphs later. Now: Max Link BW is the default for 8b/10b DP links and reserves the
+    monitor's *maximum* link; two monitors topping out at HBR2 ×4 reserve 17.28 each and both fit (new model option
+    SCREEN.run dpMax, pinned `tb4h2each`, `tb4h2fit`); allocation mode needs host and GPU support; which route a TB4
+    product uses is stated as unverified.
+  - ch8.p3: the quoted 172/76/44 KiB came from one seeded layout (43 pages, 2.5 SD below the 48.1-page mean), so the
+    prose stopped matching after "shuffle". Now quotes the closed-form expectation (48.1 pages, ~193 KiB mapped, ~97 KiB
+    exposed, ~65 KiB at 2 KiB) and names the default layout's 43 pages; a 400-layout mean test pins it.
+  - ch7 PD wire time: the model omitted the cable's Discover Identity ACK (5 objects) and counted EPR_Source_Capabilities
+    as nSpr + nEpr objects. Now 7 padded SPR slots + EPR PDOs + EPR AVS, Extended, 26-byte chunks with a chunk request:
+    14.1 → 18.5 ms (pinned with an independent bit count); ch7.limit says chunked format is assumed.
+  - ch2.p2: "at most 127 paths per port" → HopID max value 127, tunnel paths from 8, so at most 120 (`hopPaths`).
+  - ch5.limit: claimed Gen 2/3 RS-FEC was "folded into the coding efficiency"; it was not. Now: negotiated, model leaves
+    it off, costs another ~3 % when on (`g3fecLoss`). ch5.p1/say.tbt3: TB3's 20.625 → 20 no longer attributed to
+    128b/132b (ratio stated as 2 bits in 66). ch5.p5: active cables use retimers or linear redrivers.
+  - ch7.p5, ch9 table, ch10.d1: TB5 charging is "required for notebooks under 140 W, up to 240 W allowed (EPR supported,
+    not required)", parallel to TB4's 100 W; both require 15 W for accessories.
+  - ch4.p4: TB4 accessories have four Thunderbolt ports (usually one up, three down), not "4 downstream ports".
+    ch4.p2: one PCIe downstream adapter per host port.
+  - ch1.p1 pin arithmetic (8 + 4 + …), D+/D− joined on the board, not "in the socket" (also ch1.limit); ch1.p3 upper/lower
+    window edges.
+  - ch8.p1/p2: Thunderclap emulated an Intel 82574L NIC; affected macOS, FreeBSD, Linux, Windows; "sub-page exposure is
+    what the paper says" softened to what thunderclap.io says. ch8.p4: Thunderspy author's claim that USB4/TB4 are also
+    affected, labelled as the author's claim.
+  - ch10.c1: Panther Lake now cites Intel's quick reference guide (4 integrated TB4 ports; discrete TB5 on some SKUs).
+  - Registered title 《NVMe 为什么这么快》 (was 《NVMe 为什么快》, two places). English: "Annex A" → "Appendix A";
+    "lanes" → "wire pairs" where a direction is meant (USB4 lanes are bidirectional); §5.2 and the Intel guide added to
+    the footer.
+  - Diagrams: dgPd heads clipped at the SVG edge at 320/390 (fixed in app.js: lifelines inset by half a head width);
+    dgRouter cable label wrapped wider than its pill (fixed); dgDock en "Downstream" overflowed its box at 320 (label now
+    "USB4 port (out)"); dgPd en divider shortened.
+  - Canvases (English, found by the sweep): the ch4 "Device 6 unallocated" labels ran off the left edge at 320 (rows
+    without a bar now write their label in the empty bar area), and the ch8 bounce-buffer note ran off both edges at
+    390/320 (now wraps; the page grid gives up the room).
+  - tests/browser.cjs: the ch4 redraw check now waits for the next frames (it failed 2 of 4 runs on a 120 ms fixed wait);
+    the ch8 default-exposure check reads the seeded layout from the model; new check that the page count shown is the
+    one the prose quotes.
+- Unverified: the VESA CVT and DP Alt Mode standards themselves (as before); TB3's own line code (64b/66b vs 128b/132b;
+  same ratio, so no number depends on it); whether shipping TB4 hosts use Max Link BW or allocation mode for two 4K
+  monitors; the Thunderspy USB4/TB4 claim; the TB4 "two 4K or one 8K" wording (newsroom; the TB5 brief's TB4 column says
+  "Dual 4K"); TB5 brief's PAM3 0.63/0.5 conditions; Linux 5.0 IOMMU/ATS details.

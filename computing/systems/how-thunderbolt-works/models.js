@@ -32,7 +32,7 @@
     // USB4 Specification Version 2.0 (November 2025 build)
     usb4: {
       v1: '2019-08', v2: '2022-10', build: '2025-11-19',
-      hdrBytes: 4, maxPayload: 256, hopBits: 7,                // §5.1.2, Table 5-2
+      hdrBytes: 4, maxPayload: 256, hopBits: 7, hopFirst: 8,   // §5.1.2, Table 5-2; §5.2: tunnelled packets use HopIDs 8 and up
       hec: { poly: 0x07, init: 0x00, xorOut: 0x55 },            // §5.1.2.1.1
       hecExamples: [[0xD0, 0xFF, 0x13, 0xD4], [0xF0, 0xDF, 0x11, 0x37], [0x10, 0x01, 0x08, 0xDA]],  // Figure A-1: bits 31:24, 23:16, 15:8, HEC
       depthUsb4: 5, depthTbt3: 6,                               // §6.1 (depths 0–5) and §13.4.1 (depths 0–6)
@@ -273,7 +273,8 @@
       tb5bb: { kind: 'tun', raw: 120, stream: SPEC.dp.payload21, method: 'bwalloc' }
     },
     run(o) {
-      const p = Object.assign({ mode: 'uhd60', count: 2, bpp: 24, conn: 'tb4', method: null }, o || {});
+      // dpMax: the highest DP link rate the monitors advertise (4 lanes); under Max Link BW the CM reserves that link
+      const p = Object.assign({ mode: 'uhd60', count: 2, bpp: 24, conn: 'tb4', method: null, dpMax: 'HBR3' }, o || {});
       const c = Object.assign({}, this.conn[p.conn]); if (p.method && c.kind === 'tun') c.method = p.method;
       const need = VIDEO.need(p.mode, p.bpp), rows = [];
       if (c.kind === 'alt') {
@@ -284,7 +285,7 @@
       const avail = (1 - SPEC.cm.guard) * c.raw; let left = avail; let used = 0;
       for (let i = 0; i < p.count; i++) {
         if (c.method === 'maxlink') {          // 8b/10b links only (CM Guide §6.2.1): the stream is also held to HBR3 × 4
-          const cfg = ALLOC.maxLinkFit(left); const res = cfg ? cfg.bw : 0, ok = res >= need - 1e-9;
+          const cfg = ALLOC.maxLinkFit(left, p.dpMax); const res = cfg ? cfg.bw : 0, ok = res >= need - 1e-9;
           rows.push({ need, res, cfg, ok }); left -= res; if (ok) used += need;
         } else {
           const ok = need <= Math.min(left, c.stream) + 1e-9; rows.push({ need, res: ok ? need : 0, ok }); if (ok) { left -= need; used += need; }
@@ -335,9 +336,22 @@
     // time on the CC wire at 300 kbps: preamble 64 bits, SOP 4 K-codes × 5, header 4 × 5, each data object 8 × 5,
     // CRC 8 × 5, EOP 5; every message is acknowledged by a GoodCRC (no data objects). Gaps and supply transitions excluded.
     bits(nDo) { return 64 + 20 + 20 + 40 * nDo + 40 + 5; },
+    // data objects per message. Cable discovery is a Discover Identity request on SOP' (VDM header) and the passive
+    // EPR cable's ACK (VDM header, ID Header, Cert Stat, Product, Passive Cable VDO: 5 objects, PD §6.4.12.3).
+    // EPR_Source_Capabilities (§6.5.18) is an Extended Message: SPR objects 0-filled to position 7, the EPR fixed PDOs
+    // from position 8, then the one EPR AVS APDO; sent in Chunks of at most 26 bytes (MaxExtendedMsgChunkLen), each
+    // with a 2-byte extended header, the receiver asking for each Chunk after the first (§6.5.1.1, Chunked format).
+    msgDos(m, nSpr, nEpr) {
+      if (m === 'cable_id') return [1, 5];
+      if (m === 'epr_caps') {
+        const data = 4 * (7 + nEpr + 1), out = [];
+        for (let off = 0; off < data; off += 26) { if (off) out.push(1); out.push(Math.ceil((2 + Math.min(26, data - off)) / 4)); }
+        return out;
+      }
+      return [{ src_caps: nSpr, request: 1, accept: 0, ps_rdy: 0, epr_enter: 1, epr_ack: 1, epr_ok: 1, epr_request: 2 }[m]];
+    },
     wireMs(msgs, nSpr, nEpr) {
-      const dos = { src_caps: nSpr, request: 1, accept: 0, ps_rdy: 0, epr_enter: 1, epr_ack: 1, cable_id: 1, epr_ok: 1, epr_caps: nSpr + nEpr, epr_request: 2 };
-      let b = 0; for (const m of msgs) b += this.bits(dos[m]) + this.bits(0);
+      let b = 0; for (const m of msgs) for (const n of this.msgDos(m, nSpr, nEpr)) b += this.bits(n) + this.bits(0);
       return b / SPEC.pd.bitKbps;          // bits / (kbit/s) = ms
     }
   };
@@ -387,14 +401,14 @@
       chH = CHAIN.run({ tHop: CHAIN.tHop / 2 }), chD = CHAIN.run({ tHop: CHAIN.tHop * 2 });
     const d = m => LANES.dir(m, 'down'), u = m => LANES.dir(m, 'up');
     const c4k = VIDEO.cvt(3840, 2160, 60), n4k = VIDEO.need('uhd60', 24), n5k = VIDEO.need('k5_60', 24), n6k24 = VIDEO.need('k6_60', 24), n6k30 = VIDEO.need('k6_60', 30), n8k30 = VIDEO.need('k8_60', 30), n4k90x3 = 3 * VIDEO.cvt(3840, 2160, 90).pclk * 30 / 1e9;
-    const scTb4 = SCREEN.run({}), scTb4bw = SCREEN.run({ method: 'bwalloc' }), sc6k30 = SCREEN.run({ conn: 'tb5', mode: 'k6_60', bpp: 30 }), sc6k30bb = SCREEN.run({ conn: 'tb5bb', mode: 'k6_60', bpp: 30 }), sc6k24 = SCREEN.run({ conn: 'tb5', mode: 'k6_60', bpp: 24 });
+    const scTb4 = SCREEN.run({}), scTb4h2 = SCREEN.run({ dpMax: 'HBR2' }), scTb4bw = SCREEN.run({ method: 'bwalloc' }), sc6k30 = SCREEN.run({ conn: 'tb5', mode: 'k6_60', bpp: 30 }), sc6k30bb = SCREEN.run({ conn: 'tb5bb', mode: 'k6_60', bpp: 30 }), sc6k24 = SCREEN.run({ conn: 'tb5', mode: 'k6_60', bpp: 24 });
     const pd65 = PD.run(65, 'c3', 65, false), pd100c3 = PD.run(100, 'c3', 100, false), pd140c5 = PD.run(140, 'c5', 140, true), pd140c3 = PD.run(140, 'c3', 140, true), pd240 = PD.run(240, 'c5', 240, true);
     const io = IOMMU.run(1536, 64, 'iommu'), ioOff = IOMMU.run(1536, 64, 'off'), ioB = IOMMU.run(1536, 64, 'bounce'), io2k = IOMMU.run(2048, 64, 'iommu'), io4k = IOMMU.run(4096, 64, 'iommu');
     return {
       // ch1
       cc0: [cc0, 2], cc15: [cc15, 2], cc30: [cc30, 2], cc0lo: [CC.v('usb', 'lo'), 3], cc0hi: [CC.v('usb', 'hi'), 3], cc30lo: [CC.v('a30', 'lo'), 3], cc30hi: [CC.v('a30', 'hi'), 3],
       // ch2
-      eff256: [PKT.eff(256), 1, 'pct'], eff64: [PKT.eff(64), 1, 'pct'], eff5: [PKT.eff(5), 1, 'pct'], hopMax: [Math.pow(2, SPEC.usb4.hopBits) - 1, 0],
+      eff256: [PKT.eff(256), 1, 'pct'], eff64: [PKT.eff(64), 1, 'pct'], eff5: [PKT.eff(5), 1, 'pct'], hopMax: [Math.pow(2, SPEC.usb4.hopBits) - 1, 0], hopPaths: [Math.pow(2, SPEC.usb4.hopBits) - SPEC.usb4.hopFirst, 0],
       // ch3
       ex80avail: [cm80.avail, 0], ex80bulk: [cm80.bulkEach, 0],
       s5w: [s5.driveMBps, 0], s5bbw: [s5bb.driveMBps, 0], s5r: [s5R.driveMBps, 0], s5bbr: [s5bbR.driveMBps, 0], s0dp: [s0.dirs.down.dpUse, 1], s0drive: [s0.driveMBps, 0], s0usb: [s0.dirs.down.usb, 1], sNoDrive: [sNo.driveMBps, 0], sReadDrive: [sRead.driveMBps, 0], sCap4: [s0.dirs.down.cap, 1], sNoUsbDrive: [sNoUsb.driveMBps, 0],
@@ -403,15 +417,15 @@
       chRttH: [chH.rttShare, 0, 'pct'], chRttD: [chD.rttShare, 0, 'pct'],
       // ch5
       tbt3coded: [d('tbt3').coded / 2, 1], g3coded: [d('g3x2').coded, 2], g4lane: [LANES.modes.g4.rate, 2], g4down: [d('g4').coded, 1], g4asymDown: [d('g4asym').coded, 1], g4asymUp: [u('g4asym').coded, 1],
-      g4fec: [480 / 504, 1, 'pct'], pam3db: [LANES.eye(3).db, 1], pam4db: [LANES.eye(4).db, 1], pam3baud: [LANES.relBaud(3), 2], nyq3: [LANES.nyquist('g3x2'), 0], nyq4: [LANES.nyquist('g4'), 1],
+      g4fec: [480 / 504, 1, 'pct'], g3fecLoss: [1 - SPEC.usb4.fec23[0] / SPEC.usb4.fec23[1], 0, 'pct'], pam3db: [LANES.eye(3).db, 1], pam4db: [LANES.eye(4).db, 1], pam3baud: [LANES.relBaud(3), 2], nyq3: [LANES.nyquist('g3x2'), 0], nyq4: [LANES.nyquist('g4'), 1],
       // ch6
       pclk4k: [c4k.pclk / 1e6, 2], htot4k: [c4k.hTot, 0], vtot4k: [c4k.vTot, 0], n4k: [n4k, 2], n5k: [n5k, 1], n6k24: [n6k24, 1], n6k30: [n6k30, 1], n8k30: [n8k30, 1], n4k90x3: [n4k90x3, 1],
       dsc8k: [VIDEO.bppFor('k8_60', SPEC.dp.hbr3x4), 1], dscRatio8k: [30 / VIDEO.bppFor('k8_60', SPEC.dp.hbr3x4), 2],
-      scTb4fit: [scTb4.fit, 0], scTb4bwfit: [scTb4bw.fit, 0], sc6k30: [sc6k30.fit, 0], sc6k30bb: [sc6k30bb.fit, 0], sc6k24: [sc6k24.fit, 0], tb4second: [scTb4.rows[1].res, 2], tb4first: [scTb4.rows[0].res, 2],
+      scTb4fit: [scTb4.fit, 0], scTb4bwfit: [scTb4bw.fit, 0], sc6k30: [sc6k30.fit, 0], sc6k30bb: [sc6k30bb.fit, 0], sc6k24: [sc6k24.fit, 0], tb4second: [scTb4.rows[1].res, 2], tb4first: [scTb4.rows[0].res, 2], tb4h2each: [scTb4h2.rows[0].res, 2], tb4h2fit: [scTb4h2.fit, 0],
       // ch7
       pd65w: [pd65.pick.w, 0], pd100c3: [pd100c3.pick.w, 0], pd140c5: [pd140c5.pick.w, 0], pd140c3: [pd140c3.pick.w, 0], pd240a: [pd240.pick.a, 0], pdWire: [pd140c5.wire, 1], pdWireSpr: [pd65.wire, 1],
       // ch8
-      ioExposed: [io.exposed / 1024, 0], ioMapped: [io.mapped / 1024, 0], ioBuf: [io.bufBytes / 1024, 0], ioOff: [ioOff.mapped / 1024, 0], io2k: [io2k.exposed / 1024, 0], io4k: [io4k.exposed / 1024, 0]
+      ioPagesE: [IOMMU.expectedPages(1536, 64), 1], ioMappedE: [IOMMU.expectedPages(1536, 64) * 4, 0], ioExposedE: [IOMMU.expectedPages(1536, 64) * 4 - io.bufBytes / 1024, 0], io2kE: [IOMMU.expectedPages(2048, 64) * 4 - io2k.bufBytes / 1024, 0], ioPages7: [io.lay.pages.size, 0], ioBuf: [io.bufBytes / 1024, 0], ioOff: [ioOff.mapped / 1024, 0], io4k: [io4k.exposed / 1024, 0]
     };
   }
 

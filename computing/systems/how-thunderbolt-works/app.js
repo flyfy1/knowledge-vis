@@ -166,7 +166,7 @@ const DIAGRAMS = {
     lines.push(...cols.map((x, i) => [x + cw / 2, yAdB, yBand, colC[i]]));
     y = hostTop + hostH;
     // the link
-    const linkLab = t('dg2.link'), linkLines = wrap(linkLab, W - 2 * m - 20, 12), linkH = 22 + linkLines.length * 16;
+    const linkLab = t('dg2.link'), linkLines = wrap(linkLab, W - 2 * m - W * 0.24 - 16, 12), linkH = 22 + linkLines.length * 16;
     const linkBg = S.rect(m + W * 0.12, y + 6, W - 2 * m - W * 0.24, linkH - 12, { fill: '#10141c', stroke: C.line, rx: 10 });
     const xs = [0.3, 0.5, 0.7].map(f => m + (W - 2 * m) * f);
     let linkTx = ''; linkLines.forEach((l, i) => { linkTx += S.text(W / 2, y + linkH / 2 + (i - (linkLines.length - 1) / 2) * 16, l, { fill: C.body, halo: true }); });
@@ -322,9 +322,9 @@ const DIAGRAMS = {
 
   // 07 the EPR negotiation (USB PD r3.3 §7.30.1, Figure 7.3); each message is answered by a GoodCRC, not drawn
   dgPd(W) {
-    const m = 8, xs = [m + (W - 2 * m) * 0.12, m + (W - 2 * m) * 0.5, m + (W - 2 * m) * 0.88], heads = ['dg8.cable', 'dg8.src', 'dg8.snk'];
+    const m = 8, heads = ['dg8.cable', 'dg8.src', 'dg8.snk'];
     let s = '', y = 6;
-    const hw = Math.min(120, (W - 2 * m) / 3 - 6), hh = Math.max(...heads.map(k => boxH(hw, t(k), { size: 12 })));
+    const hw = Math.min(120, (W - 2 * m) / 3 - 6), side = Math.max((W - 2 * m) * 0.12, hw / 2 + 1), xs = [m + side, W / 2, W - m - side], hh = Math.max(...heads.map(k => boxH(hw, t(k), { size: 12 })));
     heads.forEach((k, i) => { s += box(xs[i] - hw / 2, y, hw, t(k), { minH: hh, stroke: i === 1 ? C.red : i === 2 ? C.cyan : C.violet }).svg; });
     y += hh + 16; const top = y;
     const seq = [[1, 2, 'Source_Capabilities'], [2, 1, 'Request'], [1, 2, 'Accept'], [1, 2, 'PS_RDY'], ['div', 'dg8.spr'],
@@ -404,10 +404,12 @@ function fitFont(c, s, maxW, base) { let k = 1; c.font = FONT; const w = c.measu
 
 // stacked horizontal bars: rows [{ label, total, segs: [[value, colour, text?]] }], all on one scale `max`
 function stacked(c, w, h, rows, max) {
-  c.font = FONT; let lw = 0; rows.forEach(r => { lw = Math.max(lw, c.measureText(r.label).width); });
+  c.font = FONT; let lw = 0; const empty = r => !r.total && !r.segs.length; rows.forEach(r => { if (!empty(r)) lw = Math.max(lw, c.measureText(r.label).width); });
   const L = Math.min(lw + 16, w * 0.34), R = w - 10, T = 12, B = h - 22, rh = (B - T) / rows.length, X = v => L + (R - L) * Math.min(v, max) / max;
   rows.forEach((r, i) => {
     const y = T + i * rh + rh / 2, bh = Math.min(26, rh * 0.55);
+    // a row with no bar (a device that was not enumerated) writes its label into the empty bar area instead
+    if (empty(r)) { fitFont(c, r.label, R - L); c.fillStyle = C.gold; c.textAlign = 'left'; c.fillText(r.label, L, y); c.font = FONT; return; }
     fitFont(c, r.label, L - 10); c.fillStyle = r.hi ? C.gold : C.ink; c.textAlign = 'right'; c.fillText(r.label, L - 8, y); c.font = FONT;
     c.fillStyle = C.dimfill; c.fillRect(L, y - bh / 2, X(r.total) - L, bh);
     let x = L;
@@ -611,7 +613,9 @@ function stacked(c, w, h, rows, max) {
   const sim = reg(cv, {
     draw() {
       const { c, w, h } = fit(cv), o = opts(), r = M.IOMMU.run(o.s, o.N, o.mode, seed), lay = r.lay, P = lay.P, m = lay.m;
-      const cols = w >= 560 ? 16 : 8, rowsN = Math.ceil(P / cols), g = 4, pw = (w - 16 - (cols - 1) * g) / cols, ph = (h - 30 - (rowsN - 1) * g) / rowsN;
+      // the note under the grid wraps on narrow screens; the grid gives up the room it needs
+      const s2 = t(o.mode === 'bounce' ? 'ch8.cv.bounce' : 'ch8.cv.note', { p: fmt(P, 0) }), ls = wrap(s2, w - 16, 12);
+      const cols = w >= 560 ? 16 : 8, rowsN = Math.ceil(P / cols), g = 4, pw = (w - 16 - (cols - 1) * g) / cols, ph = (h - 30 - 15 * (ls.length - 1) - (rowsN - 1) * g) / rowsN;
       for (let p = 0; p < P; p++) {
         const x = 8 + (p % cols) * (pw + g), y = 8 + Math.floor(p / cols) * (ph + g), mapped = o.mode === 'off' ? true : o.mode === 'bounce' ? false : lay.pages.has(p);
         c.fillStyle = C.card2; c.fillRect(x, y, pw, ph);
@@ -622,7 +626,7 @@ function stacked(c, w, h, rows, max) {
         }
         if (mapped) { c.strokeStyle = C.cyan; c.lineWidth = 1.4; c.strokeRect(x + 0.5, y + 0.5, pw - 1, ph - 1); c.lineWidth = 1; }
       }
-      c.fillStyle = C.mute; c.textAlign = 'center'; const s2 = t(o.mode === 'bounce' ? 'ch8.cv.bounce' : 'ch8.cv.note', { p: fmt(P, 0) }); fitFont(c, s2, w - 16); c.fillText(s2, w / 2, h - 10); c.font = FONT;
+      c.fillStyle = C.mute; c.textAlign = 'center'; c.font = FONT; ls.forEach((l, i) => c.fillText(l, w / 2, h - 10 - (ls.length - 1 - i) * 15));
     }
   });
   function text() {

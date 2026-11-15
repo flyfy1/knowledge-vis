@@ -93,7 +93,7 @@ const zf = (x, d) => M.fmt(x, d, 'zh');
   check('chain of 7 in USB4 mode keeps 5', CHAIN.run({ n: 7 }).live, 5);
   check('first link carries the sum', f(CHAIN.run({ n: 4 }).links[0].load, 6), f(CHAIN.run({ n: 4 }).pcieTotal, 6));
   says('ch4.p3', '每跳 1 微秒'); check('tHop TUNED 1 µs', CHAIN.tHop, 1); says('ch4.p3', '约 50 微秒'); check('tFlash 50', CHAIN.tFlash, 50);
-  says('ch4.p4', '4 个雷电下行口');
+  says('ch4.p4', '4 个雷电口');
 }
 
 /* ── 05 lanes ── */
@@ -171,14 +171,14 @@ const zf = (x, d) => M.fmt(x, d, 'zh');
 {
   const P = M.prose();
   const want = { cc0: '0.42', cc15: '0.94', cc30: '1.69', cc0lo: '0.304', cc0hi: '0.612', cc30lo: '1.445', cc30hi: '2.042',
-    eff256: '98.5', eff64: '94.1', eff5: '41.7', hopMax: '127', ex80avail: '72', ex80bulk: '4',
+    eff256: '98.5', eff64: '94.1', eff5: '41.7', hopMax: '127', hopPaths: '120', ex80avail: '72', ex80bulk: '4',
     s5w: '869', s5bbw: '5215', s5r: '8000', s5bbr: '3477', s0dp: '12.5', s0drive: '1994', s0usb: '9.7', sNoDrive: '3562', sReadDrive: '3562', sCap4: '38.2', sNoUsbDrive: '4000',
     ch3each: '1333', ch1each: '4000', ch6live: '5', ch6tlive: '6', chdEach: '1069', chRtt: '6', chRttShare: '11', chRttH: '6', chRttD: '19',
-    tbt3coded: '20.0', g3coded: '38.79', g4lane: '40.23', g4down: '76.6', g4asymDown: '114.9', g4asymUp: '38.3', g4fec: '95.2', pam3db: '-6.0', pam4db: '-9.5', pam3baud: '0.64', nyq3: '10', nyq4: '12.8',
+    tbt3coded: '20.0', g3coded: '38.79', g4lane: '40.23', g4down: '76.6', g4asymDown: '114.9', g4asymUp: '38.3', g4fec: '95.2', g3fecLoss: '3', pam3db: '-6.0', pam4db: '-9.5', pam3baud: '0.64', nyq3: '10', nyq4: '12.8',
     pclk4k: '522.61', htot4k: '3920', vtot4k: '2222', n4k: '12.54', n5k: '22.2', n6k24: '30.6', n6k30: '38.2', n8k30: '62.1', n4k90x3: '71.6', dsc8k: '12.5', dscRatio8k: '2.39',
-    scTb4fit: '1', scTb4bwfit: '2', sc6k30: '1', sc6k30bb: '2', sc6k24: '2', tb4second: '8.64', tb4first: '25.92',
-    pd65w: '60', pd100c3: '60', pd140c5: '140', pd140c3: '60', pd240a: '5', pdWire: '14.1', pdWireSpr: '4.6',
-    ioExposed: '76', ioMapped: '172', ioBuf: '96', ioOff: '256', io2k: '44', io4k: '0' };
+    scTb4fit: '1', scTb4bwfit: '2', sc6k30: '1', sc6k30bb: '2', sc6k24: '2', tb4second: '8.64', tb4first: '25.92', tb4h2each: '17.28', tb4h2fit: '2',
+    pd65w: '60', pd100c3: '60', pd140c5: '140', pd140c3: '60', pd240a: '5', pdWire: '18.5', pdWireSpr: '4.6',
+    ioPagesE: '48.1', ioMappedE: '193', ioExposedE: '97', ioPages7: '43', ioBuf: '96', ioOff: '256', io2kE: '65', io4k: '0' };
   for (const [k, [v, d, kind]] of Object.entries(P)) check('prose ' + k, kind === 'pct' ? f(v * 100, d) : f(v, d), want[k]);
   check('every prose value pinned', Object.keys(P).sort().join(','), Object.keys(want).sort().join(','));
   const used = new Set();
@@ -196,7 +196,28 @@ const zf = (x, d) => M.fmt(x, d, 'zh');
   check('ch6: 8K DSC ratio from 30 bpp', f(30 / P.dsc8k[0], 2), f(P.dscRatio8k[0], 2));
   check('ch7: 65 W charger on 3 A cable gives 60 W because of the cable', M.say.pd(65, 'c3', 65, false).key, 'ch7.say.short.cable');
   check('ch7: 140 W charger, 3 A cable, EPR sink: cable is the reason', M.say.pd(140, 'c3', 140, true).key, 'ch7.say.short.cable');
-  check('ch8: 2 KiB buffers still expose (another owner in the half page)', P.io2k[0] > 0, true);
+  check('ch8: 2 KiB buffers still expose (another owner in the half page)', P.io2kE[0] > 0, true);
+  // reviewer additions (2026-11-15)
+  // TB5 brief Figure 2 and note 4: TB4 required for notebooks under 100 W, TB5 under 140 W, up to 240 W available
+  says('ch7.p5', '140 W 以下'); says('ch9.r.charge.tb5', '140 W 以下'); says('ch9.r.charge.tb4', '100 W 以下');
+  // Intel Core Ultra Series 3 quick reference guide: 4 integrated TB4 ports, discrete TB5 on some SKUs
+  says('ch10.c1', '集成 4 个雷电 4 口');
+  check('ch2: tunnel HopIDs run 8..127 (USB4 §5.2)', P.hopPaths[0], 127 - 8 + 1);
+  check('ch6: two monitors that top out at HBR2 x4 both fit under Max Link BW (17.28 x 2 <= 36)', P.tb4h2each[0] * 2 <= 36 && P.tb4h2fit[0] === 2, true);
+  { // ch8: the prose quotes the expectation, not one draw; the closed form agrees with a 400-layout mean, and the default draw is shown as one layout
+    let sum = 0; for (let k = 1; k <= 400; k++) sum += IOMMU.run(1536, 64, 'iommu', k).lay.pages.size;
+    near('ch8: expected pages vs 400-layout mean', sum / 400, P.ioPagesE[0], 0.6);
+    check('ch8: exposed = mapped - buffers', f(P.ioMappedE[0] - P.ioBuf[0], 3), f(P.ioExposedE[0], 3));
+  }
+  { // ch7: EPR wire time recomputed independently: bits per message = 64 preamble + 20 SOP + 20 header + 40 per data object
+    // + 40 CRC + 5 EOP, each followed by a 0-object GoodCRC. SPR: caps (4), Request (1), Accept, PS_RDY. EPR: Enter (1),
+    // Ack (1), Discover Identity SOP' (1) and the cable's ACK (5), Enter Succeeded (1), EPR_Source_Capabilities as an
+    // Extended Message of 4 x (7 + 1 + 1) = 36 bytes in 26-byte Chunks: 28 bytes (7), a Chunk request (1), 12 bytes (3);
+    // EPR_Request (2), Accept, PS_RDY.
+    const b = k => 149 + 40 * k, g = b(0), objs = [4, 1, 0, 0, 1, 1, 1, 5, 1, 7, 1, 3, 2, 0, 0];
+    near('ch7: EPR wire time, independent count', P.pdWire[0], objs.reduce((s2, k) => s2 + b(k) + g, 0) / 300, 1e-9);
+    near('ch7: SPR wire time, independent count', P.pdWireSpr[0], [4, 1, 0, 0].reduce((s2, k) => s2 + b(k) + g, 0) / 300, 1e-9);
+  }
 }
 
 /* ── sentence branches at the extremes of each control ── */
