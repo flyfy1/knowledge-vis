@@ -170,6 +170,8 @@ function diagramCheck() {
     ok((await page.$eval('#ch9', e => e.textContent)).includes(zf(P.arNv5[0], 0) + ' 毫秒'), 'ch9 prose quotes the NVLink 5 all-reduce');
     ok((await page.$$eval('#nvRows tr', r => r.length)) === 3, 'ch8 NVLink table has three rows');
     ok((await page.$eval('#nvRows', e => e.textContent)).includes(gbps(M.nvLinkPerDir(5), 0)), 'ch8 table: NVLink 5 per-link per-direction');
+    { const r6 = await page.$eval('#nvRows tr:last-child', e => e.textContent);
+      ok(r6.includes('初步') && r6.includes('约 ' + gbps(M.nvLinkPerDir(6), 0)) && r6.includes(zf(M.SRC.nvlink[6].gpuBidir, 0)), 'ch8 table: NVLink 6 row marked preliminary, per-link cell marked approximate, got ' + r6); }
 
     // ch1 copy or share
     await show(page, '#shCv', 200);

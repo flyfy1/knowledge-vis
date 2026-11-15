@@ -45,11 +45,14 @@ const ymd = s => { const [y, m, d] = s.split('-').map(Number); return d ? `${y} 
   const P = SRC.pond;
   check('Pond: +70–90 ns, rack > 180 ns, local 78 ns', [P.addLo, P.addHi, P.rack, P.local].join(), '70,90,180,78');
   check('Pond: stranded 3–27 % at p95; 16–32 sockets save 10 %; 7 % cost; 1–5 % perf; pools of 8–16', [P.strandLo, P.strandHi, P.p, P.saveLo, P.saveHi, P.poolSave, P.costSave, P.perfLo, P.perfHi, P.poolLo, P.poolHi].join(), '3,27,95,16,32,10,7,1,5,8,16');
-  check('Sun et al.: emulation off by up to 26 %', SRC.sun.vsEmu, 26);
+  check('Sun et al.: true CXL memory up to 26 % lower latency than NUMA emulation', SRC.sun.vsEmu, 26);
+  says('ch5.p3', '低最多 {sunEmu}%');
   const nv = SRC.nvlink;
-  check('NVLink 4/5/6 per GPU (both directions)', [4, 5, 6].map(g => nv[g].gpuBidir).join(), '900,1800,3600');
+  check('NVLink 4/5/6 per GPU (both directions)', [4, 5, 6].map(g => nv[g].gpuBidir).join(), '900,1800,3000');   // en-US NVLink + Vera Rubin pages, 2026-11-15
   check('NVLink 4/5/6 links per GPU', [4, 5, 6].map(g => nv[g].links).join(), '18,18,36');
-  check('NVLink Switch aggregate 130 / 260 TB/s', [nv[5].aggTB, nv[6].aggTB].join(), '130,260');
+  check('NVLink Switch aggregate 130 / 216 TB/s', [nv[5].aggTB, nv[6].aggTB].join(), '130,216');
+  check('NVLink 6 figures on the en-GB / en-EU NVLink pages', [FRONTIER.rubinOther.gpuBidir, FRONTIER.rubinOther.aggTB].join(), '3600,260');
+  check('NVL72 aggregate = 72 × per-GPU (both NVLink 5 and 6)', [5, 6].every(g => Math.abs(72 * nv[g].gpuBidir / 1000 - nv[g].aggTB) < 1), true);
   check('Vera Rubin NVL72: 72 GPUs, 288 GB HBM4', [SRC.rubin.gpus, SRC.rubin.hbmGB].join(), '72,288');
   check('NICs 400 / 800 Gb/s', [SRC.nic.cx7Gbps, SRC.nic.cx8Gbps].join(), '400,800');
   const U = SRC.ualink;
@@ -78,7 +81,8 @@ const ymd = s => { const [y, m, d] = s.split('-').map(Number); return d ? `${y} 
   check('CXL ×16 at 32 GT/s raw (flit mode, no 128b/130b)', M.rawGBps(32, 16), 64);
   check('NVLink 5 per GPU per direction = 1,800 / 2', M.nvPerDir(5), 900);
   check('NVLink 4 per link per direction = 900 / 2 / 18', M.nvLinkPerDir(4), 25);
-  check('NVLink 6 per link per direction = 3,600 / 2 / 36', M.nvLinkPerDir(6), 50);
+  near('NVLink 6 per link per direction = 3,000 / 2 / 36 (a quotient; NVIDIA gives no per-link rate)', M.nvLinkPerDir(6), 41.667, 0.001);
+  says('ch8.p2', '平均每条每个方向约 {nv6pl} GB/s'); says('ch8.genPre', '初步');
   check('400 Gb/s = 50 GB/s', M.nicGBps(400), 50);
   check('UALink x4 station 800 Gb/s = 100 GB/s per direction', M.ualinkStationGBps(), 100);
   near('DDR5-4800 channel 38.4 GB/s', M.DDR5_4800, 38.4, 1e-9);
@@ -187,6 +191,11 @@ const ymd = s => { const [y, m, d] = s.split('-').map(Number); return d ? `${y} 
   says('ch7.p4', '只读不写时，16 台主机'); says('ch7.p4', '写的比例到 5%'); says('ch7.p4', '4 台主机'); says('ch7.p4', '写到 20%'); says('ch7.p4', '只有需要的一半');
   check('16 / 4 hosts, 5 % / 20 % writes, half-size directory are choices', [16, 4].every(h => M.DIR.hosts.includes(h)) && [0.05, 0.2].every(w => M.DIR.writes.includes(w)) && M.DIR.caps.includes(0.5), true);
   says('ch7.p2', '主机 1 和主机 3'); says('ch7.p2', '主机 4');
+  // reviewer 2026-11-15: the count is a steady-state rate, not a start-up transient; doubling the warm-up moves it < 5 %
+  { const m = { exports: {} }; new Function('module', 'exports', fs.readFileSync(path.join(DIR, 'models.js'), 'utf8'))(m, m.exports);
+    m.exports.DIR.warm = 2 * M.DIR.warm;   // a fresh copy, so the cached result of M is not reused
+    for (const [h, w] of [[16, 0.05], [4, 0.05], [16, 0.2]]) near(`ch7: ${h} hosts, ${w * 100} % writes, warm-up doubled`, m.exports.fabricDir(h, w, 2).bi / M.fabricDir(h, w, 2).bi, 1, 0.05); }
+  check('ch6: switch adder = direct adder + survey switch adder (one baseline)', M.pool(32).add, (SRC.pond.addLo + SRC.pond.addHi) / 2 + (SRC.cxl.switchAdderLo + SRC.cxl.switchAdderHi) / 2);
 }
 
 /* ── ch8/ch9 ring all-reduce ── */
@@ -264,12 +273,12 @@ const ymd = s => { const [y, m, d] = s.split('-').map(Number); return d ? `${y} 
     locLat: '111', locBw: '246', aLat: '214', bLat: '271', cLatDev: '394', dLat: '239', aBw: '24', bBw: '22', dBw: '52', estDirect: '170', estSwitch: '250', pondLo: '70', pondHi: '90', pondLocal: '78', sunEmu: '26', zipfS: '0.9', pages: '4096',
     t50q: '11', t50lat: '126', t50slow: '13', t50rq: '50', t50rlat: '175', t80q: '25', t80slow: '29', reach5: '23', reach5h: '8', reach5s: '62', tqq: '4', tqbw: '256', bwBest: '298', qBest: '17', tSwSlow: '14',
     mldMax: '16', swLo: '62', swHi: '70', pondRack: '180', pondSw: '70', strandLo: '3', strandHi: '27', pondSave: '10', pondCost: '7', perfLo: '1', perfHi: '5', poolCv: '0.35', p8: '16', p16: '17', p64: '17', p16h: '10', p16d: '26', p16i: '38', p16c: '0', poolRho: '0.5',
-    gfd: '4096', pbrBits: '12', mldNodes: '32', dirW: '1024', dRO: '0.0', dW5: '305', dW5fan: '5.4', dW5h4: '156', dW5h4fan: '2.4', dCap: '896', dW20: '747', dW20share: '94',
-    nv4: '900', nv5: '1800', nv6: '3600', nv4l: '18', nv6l: '36', nv4pl: '25', nv5pl: '50', nv6pl: '50', nv5d: '900', agg5: '130', agg6: '260', agg5c: '129.6', agg6c: '259.2', nvVsPcie: '14',
-    ringN: '4', ringSteps: '6', arS: '16', arPer: '31.6', arNv5: '35', arIb: '632', arPc: '501', arNv6: '18', ar70: '307', ar8nv4: '62', alphaNv: '2', alphaNet: '5', alphaPc: '3', ar70ib: '5.5', ar70lat: '0.71', a1bw: '3.9', a1lat: '0.028', arEq: '130', nic400: '50', nic800: '100',
+    gfd: '4096', pbrBits: '12', mldNodes: '32', dirW: '1024', dRO: '0.0', dW5: '470', dW5fan: '8.8', dW5h4: '179', dW5h4fan: '2.7', dCap: '941', dW20: '913', dW20share: '99',
+    nv4: '900', nv5: '1800', nv6: '3000', nv4l: '18', nv6l: '36', nv4pl: '25', nv5pl: '50', nv6pl: '42', nv5d: '900', agg5: '130', agg6: '216', agg5c: '129.6', agg6c: '216.0', nvVsPcie: '14',
+    ringN: '4', ringSteps: '6', arS: '16', arPer: '31.6', arNv5: '35', arIb: '632', arPc: '501', arNv6: '21', ar70: '307', ar8nv4: '62', alphaNv: '2', alphaNet: '5', alphaPc: '3', ar70ib: '5.5', ar70lat: '0.71', a1bw: '3.9', a1lat: '0.028', arEq: '130', nic400: '50', nic800: '100',
     h1: '0.39', h8: '0.98', hFlat: '5.7', hSpeed: '15', hOut1: '0.08', hUp1: '0.31', ualLane: '200', ualSig: '212.5', ualSt: '100', ualMax: '1024', ualBits: '10', ualTl: '64', ualDl: '640',
     ghC2c: '900', ghC2cDir: '450', ghVs: '7.1', ghPj: '1.3', ghW: '9.4', ghLp: '512', ghLpBw: '546', ghHbm: '96', ghHbmBw: '3000', miCores: '24', miCcd: '3', miXcd: '6', miCu: '38', miCus: '228', miHbm: '128', miTb: '5.3', miIc: '256',
-    cxl4gts: '128', cxl4ret: '4', rubGpu: '3600', rubAgg: '260', rubHbm: '288', cpoPorts: '144', cpoGbps: '800', cx8: '800' };
+    cxl4gts: '128', cxl4ret: '4', rubGpu: '3000', rubAgg: '216', rubHbm: '288', rubGpuOld: '3600', rubAggOld: '260', cpoPorts: '144', cpoGbps: '800', cx8: '800' };
   for (const [k, [v, d, kind]] of Object.entries(P)) check('prose ' + k, kind === 'pct' ? f(v * 100, d) : f(v, d), want[k]);
   check('every prose value pinned', Object.keys(P).sort().join(','), Object.keys(want).sort().join(','));
   const used = new Set();

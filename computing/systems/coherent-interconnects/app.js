@@ -295,9 +295,10 @@ DG.exp = (L) => {
     g.text(422, 228, 'dg.exp.dimm', { a: 'middle', c: 'm' });
     g.text(422, 252, 'dg.exp.cardLat', { a: 'middle', c: 'm', vars: { lat: fmt(d.lat, 0), bw: fmt(d.bw, 0) } });
     g.text(706, 24, 'dg.exp.pages', { a: 'end' });
-    for (let i = 0; i < 17; i++) { const hot = i < 5; g.box(536 + i * 10, 48, 8, 24, hot ? C.gold : C.cyan, { solid: true, rx: 2, nostroke: true, a: hot ? 1 : 0.6 }); }
-    g.text(706, 196, 'dg.exp.hot', { a: 'end', c: 'g' }); g.text(706, 224, 'dg.exp.cold', { a: 'end', c: 'c' });
-    g.line(534, 56, 242, 40, C.gold, { dash: '4 4', arrow: 1 }); g.line(620, 74, 524, 170, C.cyan, { dash: '4 4', arrow: 1 });
+    // hot pages take the local memory's colour (cyan), cold pages the expander's (gold)
+    for (let i = 0; i < 17; i++) { const hot = i < 5; g.box(536 + i * 10, 48, 8, 24, hot ? C.cyan : C.gold, { solid: true, rx: 2, nostroke: true, a: hot ? 1 : 0.6 }); }
+    g.text(706, 196, 'dg.exp.hot', { a: 'end', c: 'c' }); g.text(706, 224, 'dg.exp.cold', { a: 'end', c: 'g' });
+    g.line(534, 56, 242, 40, C.cyan, { dash: '4 4', arrow: 1 }); g.line(620, 74, 524, 170, C.gold, { dash: '4 4', arrow: 1 });
   } };
   return { W: 340, H: 540, draw(g) {
     g.box(10, 10, 320, 58, C.cyan, { a: 0.12 }); g.text(170, 28, 'dg.exp.ddr', { a: 'middle', c: 'c' }); g.text(170, 50, 'dg.exp.ddrLat', { a: 'middle', c: 'm', vars: { lat: fmt(loc.lat, 0), bw: fmt(loc.bw, 0) } });
@@ -310,8 +311,8 @@ DG.exp = (L) => {
     g.text(170, 324, 'dg.exp.dimm', { a: 'middle', c: 'm' });
     g.text(170, 344, 'dg.exp.cardLat', { a: 'middle', c: 'm', vars: { lat: fmt(d.lat, 0), bw: fmt(d.bw, 0) } });
     g.text(10, 386, 'dg.exp.pages', { w: 320 });
-    g.text(10, 416, 'dg.exp.hot', { c: 'g', w: 320 }); g.text(10, 446, 'dg.exp.cold', { c: 'c', w: 320 });
-    for (let i = 0; i < 32; i++) { const hot = i < 10; g.box(10 + i * 10, 476, 8, 24, hot ? C.gold : C.cyan, { solid: true, rx: 2, nostroke: true, a: hot ? 1 : 0.6 }); }
+    g.text(10, 416, 'dg.exp.hot', { c: 'c', w: 320 }); g.text(10, 446, 'dg.exp.cold', { c: 'g', w: 320 });
+    for (let i = 0; i < 32; i++) { const hot = i < 10; g.box(10 + i * 10, 476, 8, 24, hot ? C.cyan : C.gold, { solid: true, rx: 2, nostroke: true, a: hot ? 1 : 0.6 }); }
   } };
 };
 
@@ -357,10 +358,11 @@ DG.nvl = (L) => {
   const rack = (g, x, y, wd) => {
     g.box(x, y, wd, 290, C.gold, { a: 0.04 }); g.text(x + wd / 2, y + 20, 'dg.nvl.rack', { a: 'middle', weight: 600, w: wd - 16 });
     const tray = (ty) => { g.box(x + 12, ty, wd - 24, 28, C.mute, { a: 0.1 }); g.text(x + 20, ty + 14, 'dg.nvl.tray', { c: 'm' }); const n = 4, sx = x + wd - 24 - n * 30; for (let i = 0; i < n; i++) g.box(sx + i * 30, ty + 6, 22, 16, C.gold, { solid: true, rx: 3, nostroke: true }); };
+    // every GPU of every tray reaches the switch tray: the lines run from the outer trays, behind the inner ones
+    for (let i = 0; i < 4; i++) { const lx = x + wd - 24 - 4 * 30 + i * 30 + 11; g.line(lx, y + 66, lx, y + 116, C.cyan, { sw: 1.2 }); g.line(lx, y + 156, lx, y + 206, C.cyan, { sw: 1.2 }); }
     tray(y + 44); tray(y + 78);
     g.box(x + 12, y + 116, wd - 24, 40, C.cyan, { a: 0.16 }); g.text(x + wd / 2, y + 136, 'dg.nvl.sw', { a: 'middle', c: 'c' });
     tray(y + 166); tray(y + 200);
-    for (const ty of [y + 106, y + 166]) for (let i = 0; i < 4; i++) { const lx = x + wd - 24 - 4 * 30 + i * 30 + 11; g.line(lx, ty === y + 106 ? y + 100 : y + 156, lx, ty === y + 106 ? y + 116 : y + 166, C.cyan, { sw: 1.2 }); }
     g.text(x + wd / 2, y + 252, 'dg.nvl.up', { a: 'middle', c: 'g', vars: up, w: wd - 16 });
   };
   if (LW(L)) return { W: 720, H: 330, draw(g) {
@@ -449,7 +451,9 @@ function nvRows() {
   const hk = ['ch8.th.gen', 'ch8.th.arch', 'ch8.th.bidir', 'ch8.th.links', 'ch8.th.perLink', 'ch8.th.domain'];
   for (const gN of [4, 5, 6]) {
     const o = M.SRC.nvlink[gN], tr = document.createElement('tr'); if (gN === 5) tr.className = 'hi';
-    [t('ch8.gen', { g: gN }), o.arch, gbps(o.gpuBidir, 0), fmt(o.links, 0), gbps(M.nvLinkPerDir(gN), 0), t('ch8.domain', { n: fmt(o.domain, 0) })].forEach((s, i) => { const td = document.createElement('td'); td.textContent = s; td.dataset.h = t(hk[i]); tr.appendChild(td); });
+    // NVLink 6 is preliminary and NVIDIA gives no per-link rate: the row says so, and the per-link cell is a quotient
+    const pre = gN === 6;
+    [t(pre ? 'ch8.genPre' : 'ch8.gen', { g: gN }), o.arch, gbps(o.gpuBidir, 0), fmt(o.links, 0), pre ? t('ch8.approx', { v: gbps(M.nvLinkPerDir(gN), 0) }) : gbps(M.nvLinkPerDir(gN), 0), t('ch8.domain', { n: fmt(o.domain, 0) })].forEach((s, i) => { const td = document.createElement('td'); td.textContent = s; td.dataset.h = t(hk[i]); tr.appendChild(td); });
     tb.appendChild(tr);
   }
 }

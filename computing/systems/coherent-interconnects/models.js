@@ -63,10 +63,12 @@
     sun: { vsEmu: 26 },
     // NVIDIA NVLink and NVLink Switch page (nvidia.com/en-us/data-center/nvlink, opened 2026-11-15): per-GPU
     // bandwidth (both directions summed), max links per GPU, NVLink Switch aggregate per domain. "Preliminary" for Rubin.
+    // Rubin (reviewer, 2026-11-15): the en-US NVLink page and the en-US Vera Rubin NVL72 page both give 3,000 GB/s per
+    // GPU and 216 TB/s per NVL72; the en-GB / en-EU copies of the NVLink page still show the launch figures 3,600 / 260.
     nvlink: {
       4: { gpuBidir: 900, links: 18, arch: 'Hopper', domain: 8, aggTB: 7.2 },
       5: { gpuBidir: 1800, links: 18, arch: 'Blackwell', domain: 72, aggTB: 130 },
-      6: { gpuBidir: 3600, links: 36, arch: 'Rubin', domain: 72, aggTB: 260 }
+      6: { gpuBidir: 3000, links: 36, arch: 'Rubin', domain: 72, aggTB: 216 }
     },
     // NVIDIA Vera Rubin NVL72 page (opened 2026-11-15): 72 Rubin GPUs, 36 Vera CPUs, 288 GB HBM4 per GPU; "ramping into
     // full production". NVLink page: every NVLink Switch has SHARP engines for in-network reductions and multicast.
@@ -240,7 +242,7 @@
     const own = quant(single, POOL.q), poolSize = quant(over, POOL.q);
     const without = N * own, withPool = N + poolSize;
     const tierKey = N <= 1 ? 'none' : N <= SRC.cxl.mldMax ? 'mld' : 'switch';
-    const add = tierKey === 'none' ? 0 : tierKey === 'mld' ? (SRC.pond.addLo + SRC.pond.addHi) / 2 : SRC.cxl.estSwitch - SRC.pond.local;
+    const add = tierKey === 'none' ? 0 : tierKey === 'mld' ? (SRC.pond.addLo + SRC.pond.addHi) / 2 : (SRC.pond.addLo + SRC.pond.addHi) / 2 + (SRC.cxl.switchAdderLo + SRC.cxl.switchAdderHi) / 2;   // direct adder + the survey's switch adder (one baseline; was 250 − Pond's 78)
     const res = { N, rho, cv, own, poolSize, without, withPool, saved: N <= 1 ? 0 : Math.max(0, 1 - withPool / without), tierKey, add };
     poolCache.set(key, res); return res;
   }
@@ -248,15 +250,18 @@
   /* ── ch7: a memory device shared by H hosts keeps a directory (I / S with a sharer set / E with an owner). A write
      back-invalidates every other sharer (BISnp); a read of a line another host owns back-invalidates the owner; when
      the directory is full, the least recently used entry is evicted and every holder of it is back-invalidated.
-     W shared lines, uniform choice, seeded. Counts BISnp messages per 1,000 accesses. */
-  const DIR = { W: 1024, n: 20000, hosts: [1, 2, 4, 8, 16], writes: [0, 0.01, 0.05, 0.2, 0.5], caps: [0.25, 0.5, 1, 2] };
+     W shared lines, uniform choice, seeded. Counts BISnp messages per 1,000 accesses, measured over n accesses after a
+     warm-up of `warm` accesses (about 100 per line), so the sharer sets have reached their steady size. (Reviewer,
+     2026-11-15: without the warm-up the count was a start-up transient: 305 per 1,000 at n = 20,000, 451 at 200,000.) */
+  const DIR = { W: 1024, warm: 100000, n: 20000, hosts: [1, 2, 4, 8, 16], writes: [0, 0.01, 0.05, 0.2, 0.5], caps: [0.25, 0.5, 1, 2] };
   const dirCache = new Map();
   function fabricDir(H, wf, cap) {
     const key = [H, wf, cap].join(':'); if (dirCache.has(key)) return dirCache.get(key);
     const W = DIR.W, C = Math.max(1, Math.round(cap * W)), r = rng(7 + H * 131);
     const dir = new Map();   // line → { st: 'S'|'E', who: Set }, insertion order = LRU order
     let bi = 0, biWrite = 0, biRead = 0, biCap = 0, writes = 0, writesBI = 0, fanSum = 0, misses = 0;
-    for (let i = 0; i < DIR.n; i++) {
+    for (let i = 0; i < DIR.warm + DIR.n; i++) {
+      if (i === DIR.warm) { bi = biWrite = biRead = biCap = writes = writesBI = fanSum = misses = 0; }
       const h = Math.floor(r() * H), line = Math.floor(r() * W), isW = r() < wf;
       let e = dir.get(line);
       if (e) { dir.delete(line); dir.set(line, e); }
@@ -340,6 +345,8 @@
     cxl4: { date: SRC.cxl.dates.v4, gts: SRC.cxl.gts.v4, retimers: 4 },
     xeon6: { cxl: '2.0', fmmRatio: 1 },
     rubin: { gpuBidir: SRC.nvlink[6].gpuBidir, aggTB: SRC.nvlink[6].aggTB, gpus: SRC.rubin.gpus },
+    // the same NVLink page on nvidia.com/en-gb and /en-eu (opened 2026-11-15) still shows the earlier figures
+    rubinOther: { gpuBidir: 3600, aggTB: 260 },
     ualink: { v1: SRC.ualink.released, v2: SRC.ualink.v2, products: 2027 },
     cpo: { announced: '2025-03-18', quantumPorts: 144, portGbps: 800, spectrumYear: 2026 },
     cx8: { date: '2025-05-18', gbps: SRC.nic.cx8Gbps }
@@ -398,7 +405,7 @@
       ghC2c: [gh.c2cBidir, 0], ghC2cDir: [gh.c2c, 0], ghVs: [gh.c2cBidir / (2 * pcieGBps(16)), 1], ghPj: [gh.pjBit, 1], ghW: [gh.c2cBidir * 8 * gh.pjBit / 1000, 1], ghLp: [gh.lpddrGB, 0], ghLpBw: [gh.lpddrBW, 0], ghHbm: [gh.hbmGB, 0], ghHbmBw: [gh.hbmBW, 0],
       miCores: [mi.cores, 0], miCcd: [mi.ccds, 0], miXcd: [mi.xcds, 0], miCu: [mi.cuPer, 0], miCus: [mi.xcds * mi.cuPer, 0], miHbm: [mi.hbmGB, 0], miTb: [mi.hbmTB, 1], miIc: [mi.icMB, 0],
       // ch12 frontier
-      cxl4gts: [FRONTIER.cxl4.gts, 0], cxl4ret: [FRONTIER.cxl4.retimers, 0], rubGpu: [FRONTIER.rubin.gpuBidir, 0], rubAgg: [FRONTIER.rubin.aggTB, 0], rubHbm: [SRC.rubin.hbmGB, 0],
+      cxl4gts: [FRONTIER.cxl4.gts, 0], cxl4ret: [FRONTIER.cxl4.retimers, 0], rubGpu: [FRONTIER.rubin.gpuBidir, 0], rubAgg: [FRONTIER.rubin.aggTB, 0], rubHbm: [SRC.rubin.hbmGB, 0], rubGpuOld: [FRONTIER.rubinOther.gpuBidir, 0], rubAggOld: [FRONTIER.rubinOther.aggTB, 0],
       cpoPorts: [FRONTIER.cpo.quantumPorts, 0], cpoGbps: [FRONTIER.cpo.portGbps, 0], cx8: [FRONTIER.cx8.gbps, 0]
     };
   }
