@@ -1,0 +1,372 @@
+{
+  "slug": "how-pcie-works",
+  "path": "computing/systems/how-pcie-works/",
+  "category": "computing",
+  "subtopic": "systems",
+  "stage": "university",
+  "title": {
+    "zh": "PCIe 为什么能一代一代翻倍",
+    "en": "Why PCIe Keeps Doubling"
+  },
+  "desc": {
+    "zh": "显卡、固态、网卡都插在 PCIe 上。这条总线二十多年里速度翻了七次，靠的是什么？一次读写在线上到底发生了什么？十个可以拖动的模型：链路协商、TLP 包头、信用流控、ACK/NAK 重发、开机枚举、MSI 中断、走线损耗、PAM4 眼图、FEC 和 FLIT。",
+    "en": "Graphics cards, SSDs and network cards all plug into PCIe. Its speed has doubled seven times in over twenty years: how, and what actually happens on the wire during one read or write? Ten models you can drag: link negotiation, TLP headers, credit flow control, ACK/NAK replay, enumeration, MSI interrupts, trace loss, PAM4 eyes, FEC and FLITs."
+  },
+  "tags": [
+    {
+      "zh": "PCIe",
+      "en": "PCIe"
+    },
+    {
+      "zh": "计算机总线",
+      "en": "Computer Buses"
+    },
+    {
+      "zh": "信号完整性",
+      "en": "Signal Integrity"
+    },
+    {
+      "zh": "长文",
+      "en": "Long-form Essay"
+    }
+  ],
+  "concepts": [
+    {
+      "id": "pcie-topology",
+      "title": {
+        "zh": "PCIe 的拓扑：根复合体、交换芯片和端点组成的树",
+        "en": "PCIe Topology: a Tree of Root Complex, Switches and Endpoints"
+      },
+      "desc": {
+        "zh": "PCIe 没有共享总线：每台设备一条点对点链路，所有链路连成根在 CPU 里的树。",
+        "en": "PCIe has no shared bus: each device gets its own point-to-point link, and the links form a tree rooted in the CPU."
+      },
+      "aliases": {
+        "zh": [
+          "PCIe 是什么",
+          "PCIe 是怎么连接设备的",
+          "根复合体是什么",
+          "PCIe 交换芯片",
+          "PCIe 拓扑"
+        ],
+        "en": [
+          "what is PCIe",
+          "how does PCIe work",
+          "PCIe root complex",
+          "PCIe switch",
+          "PCIe topology"
+        ]
+      },
+      "anchor": "#ch1"
+    },
+    {
+      "id": "pcie-lanes-generations",
+      "title": {
+        "zh": "PCIe 通道与代：x16、x4 和每代的速率",
+        "en": "PCIe Lanes and Generations: x16, x4 and the Rate of Each Generation"
+      },
+      "desc": {
+        "zh": "一条通道是两对差分线；每代靠提符号率、换编码或换调制翻倍；链路两头取共同的最高代和宽度。",
+        "en": "A lane is two differential pairs; each generation doubled by raising the symbol rate, changing the encoding or changing the modulation; both ends settle on the highest common generation and width."
+      },
+      "aliases": {
+        "zh": [
+          "PCIe 通道",
+          "x16 x4 区别",
+          "显卡插 x8 会慢吗",
+          "PCIe 各代速度",
+          "128b/130b 编码",
+          "PCIe 降速运行",
+          "PCIe 通道不够怎么办"
+        ],
+        "en": [
+          "PCIe lanes",
+          "x16 vs x8 vs x4",
+          "PCIe generation speeds",
+          "128b/130b encoding",
+          "PCIe link width negotiation",
+          "not enough PCIe lanes"
+        ]
+      },
+      "anchor": "#ch2",
+      "relatedPages": [
+        "how-sata-works"
+      ]
+    },
+    {
+      "id": "pcie-tlp",
+      "title": {
+        "zh": "TLP：PCIe 上的包和包头",
+        "en": "TLPs: the Packets and Headers of PCIe"
+      },
+      "desc": {
+        "zh": "读是请求加完成包，写只发不等；包头的每一位、MPS 和 MRRS 怎样决定效率。",
+        "en": "A read is a request plus completions, a write is posted; every bit of the header, and how MPS and MRRS set the efficiency."
+      },
+      "aliases": {
+        "zh": [
+          "TLP 是什么",
+          "PCIe 包头格式",
+          "MPS MRRS 是什么",
+          "PCIe 有效带宽",
+          "PCIe 协议开销"
+        ],
+        "en": [
+          "what is a TLP",
+          "PCIe TLP header format",
+          "MPS and MRRS",
+          "PCIe effective bandwidth",
+          "PCIe protocol overhead"
+        ]
+      },
+      "anchor": "#ch3"
+    },
+    {
+      "id": "pcie-flow-control",
+      "title": {
+        "zh": "PCIe 的信用流控",
+        "en": "Credit-Based Flow Control in PCIe"
+      },
+      "desc": {
+        "zh": "接收方先报缓冲，发送方花一点记一点；信用盖不住往返时链路跑不满。",
+        "en": "The receiver advertises its buffers and the sender spends them; when credits cannot cover the round trip the link idles."
+      },
+      "aliases": {
+        "zh": [
+          "PCIe 流控",
+          "PCIe 信用机制",
+          "UpdateFC 是什么",
+          "PCIe 为什么不丢包"
+        ],
+        "en": [
+          "PCIe flow control",
+          "PCIe flow control credits",
+          "UpdateFC DLLP",
+          "why PCIe does not drop packets"
+        ]
+      },
+      "anchor": "#ch4",
+      "relatedPages": [
+        "storage-over-a-network"
+      ]
+    },
+    {
+      "id": "pcie-ack-nak",
+      "title": {
+        "zh": "ACK/NAK 与重发缓冲",
+        "en": "ACK/NAK and the Replay Buffer"
+      },
+      "desc": {
+        "zh": "序号、LCRC 和回退 N 帧：误码率怎样变成有效带宽的损失。",
+        "en": "Sequence numbers, LCRC and go-back-N: how a bit-error rate turns into lost bandwidth."
+      },
+      "aliases": {
+        "zh": [
+          "PCIe 重传",
+          "PCIe ACK NAK",
+          "LCRC 是什么",
+          "PCIe 误码率 10^-12",
+          "PCIe 重放缓冲"
+        ],
+        "en": [
+          "PCIe replay",
+          "PCIe ACK NAK",
+          "what is LCRC",
+          "PCIe bit error rate",
+          "PCIe replay buffer"
+        ]
+      },
+      "anchor": "#ch5"
+    },
+    {
+      "id": "pcie-enumeration",
+      "title": {
+        "zh": "开机枚举、配置空间与 BAR",
+        "en": "Enumeration, Configuration Space and BARs"
+      },
+      "desc": {
+        "zh": "深度优先给总线编号，写全 1 读回量出 BAR 大小，再按 1 MiB 粒度分窗口；ECAM 怎样把配置空间映射成内存。",
+        "en": "Depth-first bus numbering, sizing BARs by writing all ones, 1 MiB bridge windows, and how ECAM maps configuration space into memory."
+      },
+      "aliases": {
+        "zh": [
+          "PCIe 枚举",
+          "BAR 是什么",
+          "PCIe 配置空间",
+          "ECAM 是什么",
+          "总线号 设备号 功能号",
+          "lspci 怎么看"
+        ],
+        "en": [
+          "PCIe enumeration",
+          "what is a BAR",
+          "PCIe configuration space",
+          "what is ECAM",
+          "bus device function",
+          "PCIe BAR sizing"
+        ]
+      },
+      "anchor": "#ch6"
+    },
+    {
+      "id": "pcie-dma-msi",
+      "title": {
+        "zh": "DMA 与 MSI：中断也是一次写内存",
+        "en": "DMA and MSI: an Interrupt Is a Memory Write"
+      },
+      "desc": {
+        "zh": "门铃、DMA、IOMMU，以及 x86 上 MSI 地址和数据的每一位。",
+        "en": "Doorbells, DMA, the IOMMU, and every bit of an x86 MSI address and data word."
+      },
+      "aliases": {
+        "zh": [
+          "MSI 中断是什么",
+          "PCIe 中断怎么实现",
+          "设备怎么通知 CPU",
+          "MSI 地址 0xFEE"
+        ],
+        "en": [
+          "what is MSI",
+          "how PCIe interrupts work",
+          "message signaled interrupts",
+          "MSI address format"
+        ]
+      },
+      "anchor": "#ch7",
+      "relatedPages": [
+        "why-nvme-is-fast"
+      ]
+    },
+    {
+      "id": "pcie-channel-loss",
+      "title": {
+        "zh": "通道损耗预算与重定时器",
+        "en": "Channel Loss Budgets and Retimers"
+      },
+      "desc": {
+        "zh": "每代的损耗预算怎样分给封装、插槽、插卡和走线，板材和重定时器决定能走多远。",
+        "en": "How each generation's loss budget is split between package, slot, card and trace, and how board material and retimers set the reach."
+      },
+      "aliases": {
+        "zh": [
+          "PCIe 走线损耗",
+          "PCIe 5.0 走线长度",
+          "重定时器是什么",
+          "retimer 和 redriver 区别",
+          "PCB 板材损耗"
+        ],
+        "en": [
+          "PCIe channel loss",
+          "PCIe 5.0 trace length",
+          "what is a retimer",
+          "retimer vs redriver",
+          "PCIe insertion loss budget"
+        ]
+      },
+      "anchor": "#ch8"
+    },
+    {
+      "id": "pcie-pam4",
+      "title": {
+        "zh": "PAM4 与眼图",
+        "en": "PAM4 and Eye Diagrams"
+      },
+      "desc": {
+        "zh": "四个电平、一个符号两比特，眼高只剩三分之一；为什么 PCIe 6.0 选 PAM4 而不翻倍频率。",
+        "en": "Four levels and two bits per symbol leave eyes a third as tall; why PCIe 6.0 chose PAM4 over doubling the frequency."
+      },
+      "aliases": {
+        "zh": [
+          "PAM4 是什么",
+          "NRZ 和 PAM4 区别",
+          "眼图是什么",
+          "PCIe 6.0 为什么用 PAM4"
+        ],
+        "en": [
+          "what is PAM4",
+          "NRZ vs PAM4",
+          "what is an eye diagram",
+          "why PCIe 6.0 uses PAM4"
+        ]
+      },
+      "anchor": "#ch9"
+    },
+    {
+      "id": "pcie-flit",
+      "title": {
+        "zh": "FLIT 模式与前向纠错",
+        "en": "FLIT Mode and Forward Error Correction"
+      },
+      "desc": {
+        "zh": "256 字节的 FLIT、三路交织 FEC 和 CRC；FLIT 对小包和大包的延迟与带宽。",
+        "en": "The 256-byte FLIT with three-way interleaved FEC and CRC; what FLIT mode does to latency and bandwidth for small and large packets."
+      },
+      "aliases": {
+        "zh": [
+          "FLIT 是什么",
+          "PCIe 6.0 FEC",
+          "PCIe 6.0 延迟",
+          "PCIe 6.0 为什么要纠错"
+        ],
+        "en": [
+          "what is a FLIT",
+          "PCIe 6.0 FEC",
+          "PCIe 6.0 latency",
+          "PCIe FLIT mode"
+        ]
+      },
+      "anchor": "#ch10",
+      "relatedPages": [
+        "how-sas-works"
+      ]
+    },
+    {
+      "id": "pcie-frontier",
+      "title": {
+        "zh": "PCIe 7.0、8.0 与合规测试的进展",
+        "en": "Where PCIe 7.0, 8.0 and Compliance Stand"
+      },
+      "desc": {
+        "zh": "截至 2026 年 11 月：7.0 已发布，8.0 草案，6.x 合规测试开始，按已定、已做出、声称三类分开。",
+        "en": "As of November 2026: 7.0 released, 8.0 in draft, 6.x compliance testing under way, kept apart as established, demonstrated and claimed."
+      },
+      "aliases": {
+        "zh": [
+          "PCIe 7.0",
+          "PCIe 8.0",
+          "PCIe 8.0 什么时候出",
+          "PCIe 7.0 速度"
+        ],
+        "en": [
+          "PCIe 7.0",
+          "PCIe 8.0",
+          "PCIe 8.0 release date",
+          "PCIe 7.0 speed"
+        ]
+      },
+      "anchor": "#ch11"
+    },
+    {
+      "id": "pcie-summary",
+      "title": {
+        "zh": "PCIe 翻倍的三种办法",
+        "en": "Three Ways PCIe Doubled"
+      },
+      "desc": {
+        "zh": "提符号率、换编码、换调制，以及每一招在物理上付的账。",
+        "en": "Raising the symbol rate, changing the encoding, changing the modulation, and the physical bill each one ran up."
+      },
+      "aliases": {
+        "zh": [
+          "PCIe 为什么每代翻倍",
+          "PCIe 速度怎么提升的"
+        ],
+        "en": [
+          "why PCIe doubles every generation",
+          "how PCIe got faster"
+        ]
+      },
+      "anchor": "#ch12"
+    }
+  ]
+}
