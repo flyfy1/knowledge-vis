@@ -1,0 +1,366 @@
+{
+  "slug": "how-cpu-caches-work",
+  "path": "computing/systems/how-cpu-caches-work/",
+  "category": "computing",
+  "subtopic": "systems",
+  "stage": "university",
+  "title": {
+    "zh": "CPU 的三级缓存是怎么工作的",
+    "en": "How a CPU's Three Levels of Cache Work"
+  },
+  "desc": {
+    "zh": "内存要等几十纳秒，CPU 一纳秒能做好几件事。几十 KB 到几十 MB 的缓存怎样让它大部分时候不用等？为什么分三级、每级为什么是现在这个大小？十个在真实地址序列上跑的缓存模型：地址怎么拆、相联度与三种缺失、LRU 与 RRIP、写回与写缓冲、包含与排他、L1 的容量上限、预取、MESI 与伪共享、追指针的延迟台阶。",
+    "en": "Memory takes tens of nanoseconds and a CPU does several things every nanosecond. How do caches of tens of kilobytes to tens of megabytes keep it from waiting most of the time? Why three levels, and why is each the size it is? Ten cache models run on real address traces: splitting an address, associativity and the three kinds of miss, LRU and RRIP, write-back and write buffers, inclusive and exclusive levels, the limit on L1 size, prefetching, MESI and false sharing, and the latency staircase of a pointer chase."
+  },
+  "tags": [
+    {
+      "zh": "CPU 缓存",
+      "en": "CPU Caches"
+    },
+    {
+      "zh": "计算机体系结构",
+      "en": "Computer Architecture"
+    },
+    {
+      "zh": "内存层级",
+      "en": "Memory Hierarchy"
+    },
+    {
+      "zh": "长文",
+      "en": "Long-form Essay"
+    }
+  ],
+  "concepts": [
+    {
+      "id": "cache-levels-why",
+      "title": {
+        "zh": "为什么要缓存，为什么不止一级",
+        "en": "Why caches, and why more than one level"
+      },
+      "desc": {
+        "zh": "存储越大越慢；几级缓存叠起来，让大部分访问在最近的一级办完。用 Zen 5 的真实延迟和重用距离算平均每次访问的周期。",
+        "en": "Bigger storage is slower; stacked levels let most accesses finish in the nearest one. Average cycles per access from Zen 5's documented latencies and reuse distance."
+      },
+      "anchor": "#ch1",
+      "aliases": {
+        "zh": [
+          "为什么 CPU 要有三级缓存",
+          "为什么缓存不能做得又大又快",
+          "多级缓存",
+          "重用距离",
+          "L1 L2 L3 缓存"
+        ],
+        "en": [
+          "why three levels of cache",
+          "multi-level cache",
+          "why caches cannot be big and fast",
+          "reuse distance",
+          "L1 L2 L3 cache"
+        ]
+      }
+    },
+    {
+      "id": "cache-address-split",
+      "title": {
+        "zh": "一个地址怎么被拆开",
+        "en": "How an address is split"
+      },
+      "desc": {
+        "zh": "64 字节一行；地址切成标记、组号、行内偏移；直接映射的玩具缓存上两个数组互相挤掉。",
+        "en": "64-byte lines; an address splits into tag, index and offset; two arrays evict each other in a direct-mapped toy cache."
+      },
+      "anchor": "#ch2",
+      "aliases": {
+        "zh": [
+          "缓存行",
+          "标记 组号 偏移",
+          "地址怎么映射到缓存",
+          "直接映射缓存",
+          "64 字节缓存行"
+        ],
+        "en": [
+          "cache line",
+          "tag index offset",
+          "address mapping in a cache",
+          "direct-mapped cache",
+          "64-byte cache line"
+        ]
+      }
+    },
+    {
+      "id": "cache-associativity-3c",
+      "title": {
+        "zh": "相联度与三种缺失",
+        "en": "Associativity and the three kinds of miss"
+      },
+      "desc": {
+        "zh": "直接映射、组相联、全相联；用 Hill 的办法把缺失分成强制、容量、冲突，在同一个程序上扫容量和路数。",
+        "en": "Direct-mapped, set-associative and fully associative; Hill's method splits misses into compulsory, capacity and conflict, swept over size and ways on one program."
+      },
+      "anchor": "#ch3",
+      "aliases": {
+        "zh": [
+          "组相联缓存",
+          "相联度",
+          "冲突缺失",
+          "强制缺失 容量缺失 冲突缺失",
+          "3C 模型",
+          "全相联缓存"
+        ],
+        "en": [
+          "set associative cache",
+          "associativity",
+          "conflict miss",
+          "compulsory capacity conflict misses",
+          "3C model",
+          "fully associative cache"
+        ]
+      }
+    },
+    {
+      "id": "cache-replacement",
+      "title": {
+        "zh": "满了换谁：LRU、伪 LRU 与 RRIP",
+        "en": "Replacement: LRU, pseudo-LRU and RRIP"
+      },
+      "desc": {
+        "zh": "组满了换谁；比缓存稍大的循环让 LRU 一次不中；树形伪 LRU、随机、SRRIP、BRRIP 和 Belady 最优。",
+        "en": "Which line to evict; a loop slightly bigger than the cache defeats LRU; tree pseudo-LRU, random, SRRIP, BRRIP and Belady's optimum."
+      },
+      "anchor": "#ch4",
+      "aliases": {
+        "zh": [
+          "缓存替换策略",
+          "LRU",
+          "伪 LRU",
+          "RRIP",
+          "Belady 最优替换"
+        ],
+        "en": [
+          "cache replacement policy",
+          "LRU",
+          "pseudo-LRU",
+          "tree PLRU",
+          "RRIP",
+          "Belady optimal replacement"
+        ]
+      }
+    },
+    {
+      "id": "cache-write-policy",
+      "title": {
+        "zh": "写回、写直达与写缓冲",
+        "en": "Write-back, write-through and the write buffer"
+      },
+      "desc": {
+        "zh": "两种写法、写分配、脏位和写缓冲；四种策略各读写多少字节，写缓冲多深核心才不用等。",
+        "en": "Two ways to write, write-allocate, the dirty bit and the write buffer; bytes moved under four policies and how deep the buffer must be."
+      },
+      "anchor": "#ch5",
+      "aliases": {
+        "zh": [
+          "写回 写直达",
+          "写回缓存",
+          "写分配",
+          "脏位",
+          "写缓冲"
+        ],
+        "en": [
+          "write-back vs write-through",
+          "write-back cache",
+          "write allocate",
+          "dirty bit",
+          "write buffer"
+        ]
+      }
+    },
+    {
+      "id": "cache-inclusion",
+      "title": {
+        "zh": "三级各管什么：包含、排他与共享 L3",
+        "en": "What each level does: inclusive, exclusive and the shared L3"
+      },
+      "desc": {
+        "zh": "L1 分指令和数据、L2 私有、L3 共享切片；包含、非包含、排他三种关系下两级能装多少；Zen 5、Lion Cove、Neoverse V3、Apple M6 的真实配置。",
+        "en": "Split L1, private L2, sliced shared L3; how much two levels hold when inclusive, non-inclusive or exclusive; the real configurations of Zen 5, Lion Cove, Neoverse V3 and Apple M6."
+      },
+      "anchor": "#ch6",
+      "aliases": {
+        "zh": [
+          "包含式缓存",
+          "排他式缓存",
+          "受害者缓存",
+          "L3 缓存为什么共享",
+          "私有 L2 共享 L3",
+          "Zen 5 缓存结构"
+        ],
+        "en": [
+          "inclusive cache",
+          "exclusive cache",
+          "victim cache",
+          "non-inclusive cache",
+          "shared L3 cache",
+          "Zen 5 cache hierarchy"
+        ]
+      }
+    },
+    {
+      "id": "l1-size-vipt",
+      "title": {
+        "zh": "为什么 L1 这么小",
+        "en": "Why L1 is small"
+      },
+      "desc": {
+        "zh": "L1 用虚拟地址选组、物理地址比标记；组号要落在页内偏移里，容量就卡在页大小 × 路数。",
+        "en": "L1 picks a set with virtual bits and compares physical tags; the index must sit inside the page offset, so size stops at page size × ways."
+      },
+      "anchor": "#ch7",
+      "aliases": {
+        "zh": [
+          "为什么 L1 缓存这么小",
+          "VIPT",
+          "虚拟索引物理标记",
+          "缓存别名",
+          "L1 缓存大小限制"
+        ],
+        "en": [
+          "why L1 cache is small",
+          "VIPT",
+          "virtually indexed physically tagged",
+          "cache aliasing",
+          "L1 size limit page size times ways"
+        ]
+      }
+    },
+    {
+      "id": "cache-prefetch",
+      "title": {
+        "zh": "预取：下一行与步长",
+        "en": "Prefetching: next-line and stride"
+      },
+      "desc": {
+        "zh": "硬件预取器怎么猜下一行；按指令记步长的预取表；覆盖率和准确率，链表为什么预取不了。",
+        "en": "How hardware prefetchers guess the next line; the per-instruction stride table; coverage and accuracy, and why linked lists defeat it."
+      },
+      "anchor": "#ch8",
+      "aliases": {
+        "zh": [
+          "硬件预取",
+          "步长预取",
+          "预取器",
+          "预取覆盖率 准确率",
+          "软件预取"
+        ],
+        "en": [
+          "hardware prefetching",
+          "stride prefetcher",
+          "next-line prefetch",
+          "prefetch coverage and accuracy",
+          "software prefetch"
+        ]
+      }
+    },
+    {
+      "id": "false-sharing",
+      "title": {
+        "zh": "MESI 入门与伪共享",
+        "en": "A first look at MESI, and false sharing"
+      },
+      "desc": {
+        "zh": "一行在两个核心里各有一份时的 MESI 状态；两个不相干的计数器挤在同一行，行在核心之间来回搬。",
+        "en": "The MESI states of one line held by two cores; two unrelated counters in one line make the line bounce between cores."
+      },
+      "anchor": "#ch9",
+      "aliases": {
+        "zh": [
+          "伪共享",
+          "false sharing",
+          "MESI 状态",
+          "两个核心写同一缓存行"
+        ],
+        "en": [
+          "false sharing fix",
+          "MESI states",
+          "two cores writing one cache line",
+          "cache line ping-pong"
+        ]
+      }
+    },
+    {
+      "id": "cache-latency-staircase",
+      "title": {
+        "zh": "追指针：看得见的缓存台阶",
+        "en": "Pointer chasing: the cache staircase you can measure"
+      },
+      "desc": {
+        "zh": "随机链表追指针，延迟随工作集一级级上跳；4 KiB 页让 L2 提前缺失，大页让各组均匀；查看本机缓存的命令。",
+        "en": "Chasing a random chain, latency steps up level by level; 4 KiB pages make L2 miss early and huge pages even out the sets; commands to read your own caches."
+      },
+      "anchor": "#ch10",
+      "aliases": {
+        "zh": [
+          "追指针测试",
+          "缓存延迟台阶",
+          "怎么测缓存延迟",
+          "大页对缓存的影响",
+          "lscpu 查看缓存"
+        ],
+        "en": [
+          "pointer chasing benchmark",
+          "cache latency staircase",
+          "measure cache latency",
+          "huge pages and cache sets",
+          "lscpu caches"
+        ]
+      }
+    },
+    {
+      "id": "cache-frontier",
+      "title": {
+        "zh": "缓存的前沿（2026 年 11 月）",
+        "en": "The cache frontier (November 2026)"
+      },
+      "desc": {
+        "zh": "叠在芯片下面的 3D V-Cache、服务器和 AI 芯片的几百 MB 大缓存、SRAM 几乎不再缩小，按证据强弱分类并注明日期。",
+        "en": "3D V-Cache stacked under the die, server and AI chips with hundreds of MB of cache, SRAM that has nearly stopped shrinking; sorted by strength of evidence, with dates."
+      },
+      "anchor": "#ch11",
+      "aliases": {
+        "zh": [
+          "3D V-Cache",
+          "堆叠缓存",
+          "SRAM 微缩停滞",
+          "大缓存芯片"
+        ],
+        "en": [
+          "3D V-Cache",
+          "stacked cache",
+          "SRAM scaling",
+          "large last-level cache"
+        ]
+      }
+    },
+    {
+      "id": "reading-cache-specs",
+      "title": {
+        "zh": "看一颗芯片的缓存时问三件事",
+        "en": "Three questions about a chip's caches"
+      },
+      "desc": {
+        "zh": "每级多大几路几个周期、哪几级共享与包含关系、程序的访问有没有规律。",
+        "en": "How big, how many ways and how many cycles at each level; which levels are shared and how they include each other; whether the program's accesses have a pattern."
+      },
+      "anchor": "#ch12",
+      "aliases": {
+        "zh": [
+          "怎么看 CPU 缓存参数",
+          "CPU 缓存怎么比较"
+        ],
+        "en": [
+          "how to read CPU cache specs",
+          "comparing CPU caches"
+        ]
+      }
+    }
+  ]
+}
