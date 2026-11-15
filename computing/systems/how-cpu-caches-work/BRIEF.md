@@ -1,10 +1,10 @@
 # BRIEF — CPU 的三级缓存是怎么工作的 (How a CPU's Three Levels of Cache Work)
 
 Built-By: Claude Code (claude-opus-5-5)
-Verified-By: self-check by builder (node model test, browser test zh at 1280/390/320 and reduced motion, canvas sweep, screenshots of every model and diagram at three widths); independent review pending
+Verified-By: self-check by builder (node model test, browser test zh at 1280/390/320 and reduced motion, canvas sweep, screenshots of every model and diagram at three widths); Claude Code (claude-opus-5-5), independent review 2026-11-15, zh and en in full (see Review)
 Category: computing 计算机 / subtopic systems 系统 · Stage: university
 Series: computer architecture series A2 (`specs/essay-briefs/TASK-arch-series.md`)
-Format: long interactive essay. Chinese written in full; `copy.en.js` is a same-keys stub (`enStub = true`), so the page shows Chinese until it is translated.
+Format: long interactive essay. Chinese written in full; `copy.en.js` is a full translation (same keys), reviewed 2026-11-15.
 Files: index.html, copy.zh.js, copy.en.js, models.js, app.js, REGISTRY.json, tests/models.cjs, tests/browser.cjs
 
 ## The one question
@@ -23,7 +23,7 @@ Files: index.html, copy.zh.js, copy.en.js, models.js, app.js, REGISTRY.json, tes
 - ch7 states the page × ways limit as a constraint with named exceptions (Neoverse V3 handles aliases in hardware;
   Apple uses 16 KiB pages).
 - ch8 shows a real failure mode found by the model: a column walk with a 4096-byte stride puts every element in one
-  8-way set, so prefetching 8 strides ahead evicts its own prefetches (coverage 99 % at distance 4, 0 % at 8).
+  8-way set, so prefetching 8 strides ahead evicts its own prefetches (coverage 99 % at distance 4, 0 % from distance 5 on: under LRU a prefetch d ahead must outlive 2(d − 1) newer lines, 2·4 + 1 = 9 > 8 ways).
 - ch9 adds a step-by-step two-core MESI model beside the false-sharing model.
 - ch10 adds the page-size effect on the staircase (random physical frames under 4 KiB pages overload some L2 sets).
 - ch12 is the short closing: three questions to ask of a chip's caches.
@@ -50,7 +50,7 @@ set-associative, LRU / tree-PLRU / random / SRRIP / BRRIP) except where noted.
    % = Belady. Random seed 5; seeds 5–8 give 56.5–57.1 %. BRRIP ε = 1/32 (RRIP paper, via a secondary summary).
 5. Writes: 32 KiB 8-way L1, stencil over 16 KiB ×4 then a 64 KiB input with 8-store bursts. Read miss 14 cycles
    (Zen 5 L2), write buffer drains one entry per 3 cycles (**TUNED TW**). Write-through 85 KiB written vs
-   write-back 37 KiB; allocate reads 102 KiB vs 80 KiB. Write-through waits 35 % / 3 % / 0 % at depth 0 / 4 / 8.
+   write-back 37 KiB; allocate reads 101 KiB vs 80 KiB (reviewer: was 102 from a trace that read 128 B past the 64 KiB input; clamped). Write-through waits 35 % / 3 % / 0 % at depth 0 / 4 / 8.
    Sensitivity: TW halved → 0 % at depth 4; doubled → 23 %.
 6. Inclusive / non-inclusive / exclusive, L2 and L3 16-way LRU under uniform random reads, sizes scaled 1/16
    (hit rate depends only on W / capacity). At W = 2 MiB with 1 MiB L3 per core: 50 % / 58 % / 100 %; 502
@@ -61,7 +61,7 @@ set-associative, LRU / tree-PLRU / random / SRRIP / BRRIP) except where noted.
    silent, next-line 7 % accurate; scan + random probes → next-line 34 % accurate, stride 100 % accurate, 50 %
    coverage.
 9. MESI (Illinois) table; false sharing, two cores × 1,000 load+store adds. Transfer/upgrade cost TC = 100 cycles
-   (**TUNED**). Same line alternating each add: 3,999 messages, 201.9 cycles/add; padded 2 messages, 2.10.
+   (**TUNED**). Same line alternating each add: 3,999 messages, 202 cycles/add (exactly 201.95; was shown as 201.9 by binary rounding, fmt now rounds the decimal value); padded 2 messages, 2.10.
    Sensitivity: TC halved → 102, doubled → 402 (linear).
 10. Pointer chase, exact steady state of per-set LRU on Zen 5's three levels, random physical frames (seed 41).
     24 KiB → 4, 512 KiB → 14, 16 MiB → 51, 128 MiB → 399 cycles (70 ns). 1 MiB: 31 with 4 KiB pages, 14 with 2 MiB.
@@ -120,8 +120,7 @@ transitions) · false (false sharing on one 64-byte line). Eleven in all.
 - Arm Neoverse V3 TRM 107734 (https://developer.arm.com/documentation/107734/latest/): JavaScript-rendered, not
   opened. L1D 64 KiB 4-way "VIPT behaving as PIPT", RRIP-style L1D and PLRU L1I replacement, L2 2/3 MiB are taken
   from jia.je's quotation.
-- RRIP paper PDF (BRRIP ε = 1/32, SRRIP insertion at 2): the mirror failed; taken from a secondary summary
-  (https://wangziqi2013.github.io/paper/2018/06/19/RRIP.html).
+- RRIP paper PDF: builder could not open it; the reviewer opened it on 2026-11-15 (see Review).
 - Intel Xeon 6980P "504M Cache": only the title of Intel's product page, seen in search results; the page
   returned Access Denied. The prose says so.
 - Zen 6 figures: Club386's report of AMD's presentation; no AMD document found. Listed under 「说法」.
@@ -145,7 +144,7 @@ associative conflict = 0, misses = independent run; Belady ≥ every policy; reu
 trace; MESI table (8 cases); VIPT closed form over 96 configurations; every live-sentence branch reached; browser
 test at 1280/390/320 (overflow, clipping, 48 px targets, eleven diagrams: aria, labels inside, no overlap,
 ≥ 11 px), every model driven, reduced motion; canvas text sweep. Screenshots viewed: all eleven diagrams at 1280 and 320; models ch1, ch3, ch4, ch7, ch8 at 1280, ch5, ch6, ch10 at 320, ch9 (both) at 390. The 390 reduced-motion page was checked by the browser test; it has no animations, and its full-page screenshot was too tall to inspect by eye.
-Not checked: English (stub); timing of real prefetchers; real L3 replacement and hashing; TLB costs in ch10.
+Not checked (builder): English (then a stub; now reviewed, see Review); timing of real prefetchers; real L3 replacement and hashing; TLB costs in ch10.
 
 ## For the translator
 
@@ -162,3 +161,64 @@ units): keep `dg.*S` keys short. 「调出来的参数」 = "tuned parameter".
 - For A5: this page takes 伪共享 / false sharing and "MESI 状态 / MESI states" for its first look; 缓存一致性,
   cache coherence, MESI 协议, MOESI are deliberately left for A5.
 - No provenance label or pages.config/atlas edits made.
+
+## Review
+
+Reviewer: Claude Code (claude-opus-5-5), separate session, independent of the builder. Date 2026-11-15.
+Verified-By: Claude Code (claude-opus-5-5) — independent review: zh and en copy read in full (every key), every model
+re-derived with an own script, five-core table and frontier facts spot-checked against sources opened, eleven diagrams
+viewed at 1280/390/320 zh/en.
+
+Checks
+- Own script (/tmp/agent-tasks/arch/review-a2/scripts/indep.js, own cache, 3C, Belady, MESI, staircase code; only the
+  seeded rng and trace recipes copied) reproduces: L1D/L2/L3 64/1,024/32,768 sets, 6/10/15 index bits; toy 16/4/4;
+  3C 13,312 accesses, 224 compulsory, 16 KiB DM and 2-way 12,416 (12,192 conflict), 4-way = FA = 224, FA 8 KiB 896
+  (672 capacity), 8 KiB 2-way 11,520 conflict; loop 1.25×: LRU 0, PLRU 1.7, random 57.1, SRRIP 0, BRRIP 64.1, OPT
+  71.7 %; scan: 30 / 45 / 57.5 / 57.5 %; PLRU bits after fill 0–7 + touch 2 = 1,0,0,0,1,0,0, victim 4; write traffic
+  85.4 / 37.4 KiB, reads 80 / 101.4 KiB; AMAT 23.39, memory 51 % of time; false sharing 3,999 msgs, 201.95 / 101.975
+  / 401.9 cycles, padded 2.10; staircase 4 / 14 / 50.7 / 399 cycles, 1 MiB 31.3 (4 KiB) vs 14 (2 MiB), 768 KiB 19.8
+  vs 14, seeds 1–123 give 28–32 and 17–24; matrix prefetch 99 % at d ≤ 4, 0 % at d ≥ 5; VIPT 48 KiB/12 fits, 64 KiB/4
+  needs 2 extra bits.
+- Model logic against the named results: SRRIP (2-bit RRPV, insert 2, hit → 0, age all until a 3) and BRRIP (insert 3,
+  2 with p = 1/32) match the paper (opened: jaleels.org copy; 2-bit RRIP, ε = 1/32 in its footnote 6); tree-PLRU, Belady (no bypass), Hill 3C,
+  Illinois MESI with cache-to-cache supply, Chen & Baer RPT states are as stated.
+- Sources opened by me: AMD 58455 rev 1.00 (kernel bugzilla copy, text extracted): L1I 32 KB 8-way; L1D 48 KB 12-way
+  write-back, 4–5 cycle integer load-to-use; L2 1 MB 16-way inclusive of L1, ≥ 14 cycles; L3 "up to 96-MB
+  (depending on SOC configuration) ... shared by the cores inside a CPU complex", populated by L2 victims, lines
+  invalidated on store hits or single-core reads, shadow tags, average 46 cycles; prefetchers L1 stream/stride (incl.
+  2-D interval)/region, L2 stream/up-down; utag way predictor. Chips and Cheese 9950X (2024-08-14): "just over 70
+  ns", cross-cluster "nearly 200 ns". Club386 (2026-11-11): Zen 6 4 MB L3/core, 12-core CCD 48 MB, Zen 6c 32 cores
+  128 MB, from AMD's launch event; labelled 「说法」. jia.je Neoverse V3: TRM quotes (64 KB 4-way VIPT behaving as
+  PIPT, RRIP L1D, PLRU L1I, L2 2 MB 8-way / 3 MB 12-way), 4-cycle L1D, alias test correct but 1.66× slower. This Mac's
+  sysctl: Apple M6, 128 KiB L1D, 192 KiB L1I, 20 MiB L2, 128 B line, 16 KiB page.
+- Links: ../why-compute-waits-for-memory/#ch2 #ch3 #ch4 and ../switches-that-compute/#ch11 resolve; English titles
+  match pages.config.js. Alias moves in REGISTRY.json match the TASK decision (L1 L2 L3 缓存/cache #ch1, 缓存行/cache
+  line #ch2, 组相联缓存/set associative cache #ch3).
+
+Changes (zh and en together)
+- ch11.e3: "a Zen 5 chip has up to 96 MB of L3" was wrong (EPYC 9755, Zen 5, has 512 MB); the guide's 96 MB is per CCX.
+  ch7.p4 likewise: per-CCX L3, and "the fastest data cache (Intel's L0)" stays at tens of KiB (Lion Cove L1 is 192 KiB).
+- ch6.p3: Zen 5's L3 described as close to exclusive (the guide's victim fill and invalidate-on-hit rule) instead of
+  "typical of non-inclusive".
+- ch7.p3 / ch11.d3: Neoverse V3 aliasing is correct but 1.66× slower (jia.je); Apple: ways and indexing unpublished, and
+  4 KiB-page Linux VMs run on these cores, so large pages may not be Apple's only measure.
+- ch8.p3: the cliff is at 5 steps, not 8; explanation rewritten (2(d − 1) + 1 lines for 8 ways), pinned for d = 1…8.
+  ch8.limit: real prefetchers generally stop at 4 KiB pages and some only learn strides of a few KB.
+- ch1.p3: ratio sentence restricted to Zen 5 and corrected (20–30× size, 3–4× latency; L3 → memory 8–9×), pinned.
+- ch6.law and the ring diagram caption: L2 "usually" private; Apple and Intel's small cores share L2 (the page's own
+  table said so).
+- Diagrams: split tag compared "at once" (was "one by one") and the tag is physical; MESI caption lists the omitted
+  arcs (I → M on a write miss, E → I on a remote write); MESI circles enlarged so English state names fit; Zen 5 L2
+  label, stride-table issue box and "No pred." shortened in English (overflowed their boxes); narrow VIPT uses a short
+  set-index label (overflowed at 320 in English); narrow PLRU taller for the fuller English note.
+- models.js: write trace no longer reads 128 B past the 64 KiB input (wbRead 102 → 101 KiB); fmt rounds the decimal
+  value (201.95 → 202.0); fsPer quoted as 202. English: plural fix in the false-sharing sentence, "of distinct lines".
+
+Unverified
+- (Resolved) RRIP paper opened at jaleels.org/ajaleel/publications/isca2010-rrip.pdf: footnote "We use 32-entry SDMs,
+  10-bit PSEL counter and ε = 1/32"; "for the remainder of the paper we only focus on 2-bit RRIP"; RRIP inserts with a
+  long re-reference interval; BRRIP inserts the majority with distant. ch4.limit updated.
+- Lion Cove / Lunar Lake / Skymont figures, EPYC 9755, MI300X, 9800X3D, N2 SRAM figures: not re-opened by me.
+- Prefetcher page-boundary and stride-range caveat in ch8.limit: general knowledge (Intel's optimisation manual), not
+  opened for this review. Apple 4 KiB-page VMs: general knowledge.
+- The model's Zen 5 L3 is LRU, non-inclusive fill-on-miss, not the real victim/shadow-tag design (stated on the page).

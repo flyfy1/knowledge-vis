@@ -226,7 +226,8 @@
   function writeTrace() {
     const l = [], U = 0x600000, IN = 0x700000, OUT = 0x800000, n = 16 * KiB / 8;
     for (let r = 0; r < 4; r++) for (let i = 0; i < n; i++) { l.push([U + 8 * Math.max(0, i - 1), 0]); l.push([U + 8 * i, 0]); l.push([U + 8 * Math.min(n - 1, i + 1), 0]); l.push([U + 8 * i, 1]); }
-    for (let b = 0, o = 0; b < 64 * KiB / 8; b += 24) { for (let i = b; i < b + 24; i++) l.push([IN + 8 * i, 0]); for (let j = 0; j < 8; j++, o++) l.push([OUT + 8 * o, 1]); }
+    const nIn = 64 * KiB / 8;   // the input is exactly 64 KiB: the last block of 24 stops at its end
+    for (let b = 0, o = 0; b < nIn; b += 24) { for (let i = b; i < Math.min(b + 24, nIn); i++) l.push([IN + 8 * i, 0]); for (let j = 0; j < 8; j++, o++) l.push([OUT + 8 * o, 1]); }
     return fromList(l);
   }
   function writes(policy, depth, opts) {
@@ -475,7 +476,7 @@
     const hW = 2 * HIER.l2, hi = hierarchy('incl', HIER.l3.dense, hW), he = hierarchy('excl', HIER.l3.dense, hW), hn = hierarchy('nincl', HIER.l3.dense, hW);
     const hW4 = 5 * HIER.l2, hdi = hierarchy('incl', HIER.l3.desk, hW4), hde = hierarchy('excl', HIER.l3.desk, hW4);
     const v1 = vipt(ZEN.l1d.size, ZEN.l1d.ways, 4 * KiB), vN = vipt(CHIPS.neoV3.l1d.size, CHIPS.neoV3.l1d.ways, 4 * KiB);
-    const ps = prefetch('stride', 'stride', 4, 1), pl = prefetch('list', 'stride', 4, 1), pn = prefetch('stride', 'next', 4, 1), pm = prefetch('matrix', 'stride', 4, 1), pml = prefetch('mix', 'next', 4, 1), pms = prefetch('mix', 'stride', 4, 1), pm8 = prefetch('matrix', 'stride', 8, 1), pln = prefetch('list', 'next', 4, 1);
+    const ps = prefetch('stride', 'stride', 4, 1), pl = prefetch('list', 'stride', 4, 1), pn = prefetch('stride', 'next', 4, 1), pm = prefetch('matrix', 'stride', 4, 1), pml = prefetch('mix', 'next', 4, 1), pms = prefetch('mix', 'stride', 4, 1), pm8 = prefetch('matrix', 'stride', 8, 1), pm5 = prefetch('matrix', 'stride', 5, 1), pln = prefetch('list', 'next', 4, 1);
     const fs1 = falseSharing(true, 1), fp1 = falseSharing(false, 1), fs64 = falseSharing(true, 64), fsH = falseSharing(true, 1, { TC: FS.TC / 2 }), fsD = falseSharing(true, 1, { TC: FS.TC * 2 });
     const st = W => staircase(W, 4 * KiB), s24 = st(24 * KiB), s512 = st(512 * KiB), s16 = st(16 * MiB), s128 = st(128 * MiB), s1m4 = st(1 * MiB), s1mH = staircase(1 * MiB, 2 * MiB);
     const s768 = st(768 * KiB), s768H = staircase(768 * KiB, 2 * MiB);
@@ -507,9 +508,9 @@
       // ch8
       pfSize: [PF.size / KiB, 0], pfWays: [PF.ways, 0],
       pfStrideCov: [ps.coverage, 0, 'pct'], pfStrideAcc: [ps.accuracy, 0, 'pct'], pfListIss: [pl.issued, 0], pfNextCov: [pn.coverage, 0, 'pct'], pfNextAcc: [pn.accuracy, 0, 'pct'],
-      pfMatCov: [pm.coverage, 0, 'pct'], pfMixNextAcc: [pml.accuracy, 0, 'pct'], pfMixStrideAcc: [pms.accuracy, 0, 'pct'], pfMixNextCov: [pml.coverage, 0, 'pct'], pfMixStrideCov: [pms.coverage, 0, 'pct'], pfMat8Cov: [pm8.coverage, 0, 'pct'], pfListNextAcc: [pln.accuracy, 0, 'pct'], pfListNextCov: [pln.coverage, 0, 'pct'],
+      pfMatCov: [pm.coverage, 0, 'pct'], pfMixNextAcc: [pml.accuracy, 0, 'pct'], pfMixStrideAcc: [pms.accuracy, 0, 'pct'], pfMixNextCov: [pml.coverage, 0, 'pct'], pfMixStrideCov: [pms.coverage, 0, 'pct'], pfMat8Cov: [pm8.coverage, 0, 'pct'], pfMat5Cov: [pm5.coverage, 0, 'pct'], pfListNextAcc: [pln.accuracy, 0, 'pct'], pfListNextCov: [pln.coverage, 0, 'pct'],
       // ch9
-      fsTx: [fs1.tx, 0], fpTx: [fp1.tx, 0], fsPer: [fs1.perAdd, 1], fpPer: [fp1.perAdd, 2], fs64Tx: [fs64.tx, 0], fsN: [FS.N, 0], fsPerH: [fsH.perAdd, 0], fsPerD: [fsD.perAdd, 0], fsTC: [FS.TC, 0],
+      fsTx: [fs1.tx, 0], fpTx: [fp1.tx, 0], fsPer: [fs1.perAdd, 0], fpPer: [fp1.perAdd, 2], fs64Tx: [fs64.tx, 0], fsN: [FS.N, 0], fsPerH: [fsH.perAdd, 0], fsPerD: [fsD.perAdd, 0], fsTC: [FS.TC, 0],
       // ch10
       // real-chip figures and dated frontier facts quoted in the prose (sources in CHIPS / FRONTIER and BRIEF.md)
       zL1: [ZEN.l1d.size / KiB, 0], zL1w: [ZEN.l1d.ways, 0], zL1lat: [ZEN.l1d.lat, 0], zL1max: [ZEN.l1d.latMax, 0], zL1i: [ZEN.l1i.size / KiB, 0], zL1iw: [ZEN.l1i.ways, 0],
@@ -531,6 +532,8 @@
   function fmt(x, d, lang) {
     if (x == null || !isFinite(x)) return '—';
     const s = (d == null ? (Math.abs(x) >= 100 ? 0 : Math.abs(x) >= 10 ? 1 : 2) : d);
+    // round half away from zero on the decimal value (201.95 → 202.0, not 201.9 from its binary representation)
+    const k = Math.pow(10, s); x = Math.sign(x) * Math.round(Math.abs(x) * k * (1 + 1e-12)) / k;
     return Number(x).toLocaleString(lang === 'en' ? 'en-US' : 'zh-CN', { minimumFractionDigits: s, maximumFractionDigits: s });
   }
 

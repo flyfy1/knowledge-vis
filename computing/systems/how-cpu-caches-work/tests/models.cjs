@@ -208,7 +208,21 @@ const f = (x, d) => x.toFixed(d);
   }
   check('list: the stride prefetcher never issues', M.prefetch('list', 'stride', 4, 1).issued, 0);
   check('matrix column: every element in one set (4096 B stride, 64 sets)', (4096 / LINE) % (M.PF.size / LINE / M.PF.ways), 0);
-  says('ch8.p3', '每条记录 256 字节'); says('ch8.p3', '每行 4096 字节'); says('ch8.p3', '往前取 4 步'); says('ch8.p3', '往前取 8 步'); says('ch8.p3', '一组只有 8 路');
+  // reviewer: the cliff. In the single set, a line prefetched d steps ahead must outlive the d − 1 later prefetches and
+  // the d − 1 demand hits that refresh newer lines meanwhile: 2(d − 1) + 1 ≤ ways, so d ≤ 4 with 8 ways. The prose says
+  // "4 steps 99 %, 5 or more 0 %".
+  for (let d = 1; d <= 8; d++) { const cov = M.prefetch('matrix', 'stride', d, 1).coverage, fitsLRU = 2 * (d - 1) + 1 <= M.PF.ways;
+    check('matrix column, distance ' + d + ': covered iff 2(d-1)+1 <= ways', fitsLRU ? cov > 0.98 : cov === 0, true); }
+  says('ch8.p3', '5 步');
+  // reviewer: the ratios quoted in ch1.p3 ("Zen 5: each cache level outwards 20–30× larger, 3–4× slower; L3 → memory 8–9×")
+  { const r = [ZEN.l2.size / ZEN.l1d.size, ZEN.l3.size / ZEN.l2.size], l = [ZEN.l2.lat / ZEN.l1d.lat, ZEN.l3.lat / ZEN.l2.lat], m = M.dramCycles() / ZEN.l3.lat;
+    check('ch1.p3 size ratios 20–30×', r.every(x => x >= 20 && x <= 33), true); check('ch1.p3 latency ratios 3–4×', l.every(x => x >= 3 && x < 4), true);
+    check('ch1.p3 L3 → memory 8–9×', m >= 8 && m < 9, true);
+    says('ch1.p3', '以 Zen 5 为例，三级缓存每往外一级，容量大二十到三十多倍，延迟也多三四倍'); says('ch1.p3', '再多八九倍'); }
+  // reviewer: jia.je's aliasing test (Graviton 5): 8,778,731,053 vs 5,298,206,743 cycles = 1.66×
+  check('Neoverse V3 alias slowdown 1.66×', (8778731053 / 5298206743).toFixed(2), '1.66'); says('ch7.p3', '1.66 倍'); says('ch11.d3', '1.66 倍');
+  says('ch11.e3', '一个核心复合体共享的 L3 最多');
+  says('ch8.p3', '每条记录 256 字节'); says('ch8.p3', '每行 4096 字节'); says('ch8.p3', '往前取 4 步'); says('ch8.p3', '往前取 5 步'); says('ch8.p3', '8 步也是'); says('ch8.p3', '2 × 4 + 1 = 9 行抢 8 路'); says('ch8.p3', '一组只有 8 路');
   check('pf ways 8', M.PF.ways, 8); check('ch8 default distance 4', /id="pfD"[^>]*value="4"/.test(html), true);
   says('ch8.p4', '4 MiB 的散列表'); check('hash table 65,536 lines = 4 MiB', 65536 * LINE, 4 * MiB);
 }
@@ -265,12 +279,12 @@ const f = (x, d) => x.toFixed(d);
     progArr: '4', progGap: '64', progTable: '2', progLook: '256', progReps: '4',
     c3n: '13312', c3comp: '224', dm16: '12416', dm16conf: '12192', w2_16: '12416', w4_16: '224', fa16: '224', fa8cap: '672', fa8: '896', dm64: '12416', dm64conf: '12192', w2_8conf: '11520',
     lruLoop: '0.0', plruLoop: '1.7', rndLoop: '57.1', srripLoop: '0.0', brripLoop: '64.1', optLoop: '71.7', lruScan: '30.0', srripScan: '45.0', brripScan: '57.5', optScan: '57.5',
-    wSize: '32', wWays: '8', wTR: '14', wTW: '3', wtWrite: '85', wbWrite: '37', wbRead: '102', wtRead: '80', wbnaWrite: '37', stores: '10928', wtWait0: '35', wtWait4: '3', wtWait8: '0', wbWait4: '0.0', wtWaitH: '0', wtWaitD: '23',
+    wSize: '32', wWays: '8', wTR: '14', wTW: '3', wtWrite: '85', wbWrite: '37', wbRead: '101', wtRead: '80', wbnaWrite: '37', stores: '10928', wtWait0: '35', wtWait4: '3', wtWait8: '0', wbWait4: '0.0', wtWaitH: '0', wtWaitD: '23',
     hWmib: '2', hW4mib: '5', hInc: '50', hExc: '100', hNin: '58', hBack: '502', hDeskI: '80', hDeskE: '91',
     v1low: '12', v1page: '12', vNextra: '2', vNlimit: '16', apNeedW: '8',
     pfSize: '32', pfWays: '8', pfStrideCov: '100', pfStrideAcc: '100', pfListIss: '0', pfNextCov: '0', pfNextAcc: '0', pfMatCov: '99', pfMixNextAcc: '34', pfMixStrideAcc: '100', pfMixNextCov: '25', pfMixStrideCov: '50',
-    pfMat8Cov: '0', pfListNextAcc: '7', pfListNextCov: '6',
-    fsTx: '3999', fpTx: '2', fsPer: '201.9', fpPer: '2.10', fs64Tx: '63', fsN: '1000', fsPerH: '102', fsPerD: '402', fsTC: '100',
+    pfMat8Cov: '0', pfMat5Cov: '0', pfListNextAcc: '7', pfListNextCov: '6',
+    fsTx: '3999', fpTx: '2', fsPer: '202', fpPer: '2.10', fs64Tx: '63', fsN: '1000', fsPerH: '102', fsPerD: '402', fsTC: '100',
     zL1: '48', zL1w: '12', zL1lat: '4', zL1max: '5', zL1i: '32', zL1iw: '8', zL2: '1', zL2w: '16', zL2lat: '14', zL3: '32', zL3w: '16', zL3lat: '46', zL3n: '8', zL3max: '96',
     ghz: '5.7', r9L3: '64', dramNs: '70', sxL3: '16', sxN: '4', sxcL3: '8', sxcN: '8',
     lcL0: '48', lcL0lat: '4', lcL1: '192', lcL1lat: '9', lcL2: '2.5', lcL2b: '3', lcL2lat: '17', rcL1: '48', rcL1lat: '5', rcL2: '2',

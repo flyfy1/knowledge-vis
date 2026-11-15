@@ -217,7 +217,7 @@ function plruState() {
   return { bits, victim: lo, pathN, touched: 2 };
 }
 DG.plru = (L) => {
-  const W = L === 'w' ? 720 : 340, H = L === 'w' ? 320 : 330, st = plruState();
+  const W = L === 'w' ? 720 : 340, H = L === 'w' ? 320 : 370, st = plruState();
   return { W, H, draw(g) {
     const wide = L === 'w', lvY = wide ? [44, 110, 176] : [40, 104, 168], leafY = wide ? 226 : 214, span = wide ? 720 : 340;
     const pos = n => { const lvl = Math.floor(Math.log2(n)), k = n - Math.pow(2, lvl), cnt = Math.pow(2, lvl); return [span * (k + 0.5) / cnt, lvY[lvl]]; };
@@ -341,7 +341,7 @@ DG.vipt = (L) => {
       const ib = v.lowBits - off;
       g.box(X(v.lowBits - 1), rows[r], ib * bw, rh, C.cyan); g.box(X(off - 1), rows[r], off * bw, rh, C.mute, { a: 0.1 });
       if (v.extra) g.box(X(v.lowBits - 1), rows[r], v.extra * bw, rh, C.red, { a: 0.3, sw: 2 });
-      g.text(X(v.lowBits - 1) + ib * bw / 2 + (v.extra ? v.extra * bw / 2 : 0), rows[r] + rh / 2, 'dg.vipt.idx', { a: 'middle', c: 'c', vars: { n: ib } });
+      g.text(X(v.lowBits - 1) + ib * bw / 2 + (v.extra ? v.extra * bw / 2 : 0), rows[r] + rh / 2, wide ? 'dg.vipt.idx' : 'dg.vipt.idxS', { a: 'middle', c: 'c', vars: { n: ib } });
       g.text(X(off - 1) + off * bw / 2, rows[r] + rh / 2, wide ? 'dg.vipt.lo' : 'dg.vipt.loS', { a: 'middle', vars: { n: off } });
     }
     g.line(X(pb - 1), rows[0] - 8, X(pb - 1), rows[2] + rh + 8, C.gold, { dash: '5 4' });
@@ -363,7 +363,7 @@ DG.rpt = (L) => {
       g.line(550, ty + 35, 588, ty + 35, C.cyan, { arrow: 1 }); g.box(590, ty + 12, 120, 48, C.green); g.text(650, ty + 36, 'dg.rpt.issue', { a: 'middle', c: 'n', w: 108, va: 'mid' });
       g.text(10, 160, 'dg.rpt.e1', { w: 700 }); g.text(10, 192, 'dg.rpt.e2', { w: 700, c: 'm' });
     } else {
-      g.line(170, 130, 170, 160, C.cyan, { arrow: 1 }); g.box(70, 162, 200, 44, C.green); g.text(170, 184, 'dg.rpt.issue', { a: 'middle', c: 'n' });
+      g.line(170, 130, 170, 160, C.cyan, { arrow: 1 }); g.box(70, 162, 200, 44, C.green); g.text(170, 184, 'dg.rpt.issue', { a: 'middle', c: 'n', w: 188, va: 'mid' });
       g.text(10, 236, 'dg.rpt.e1', { w: 320 }); g.text(10, 320, 'dg.rpt.e2', { w: 320, c: 'm' });
     }
   } };
@@ -372,7 +372,7 @@ DG.rpt = (L) => {
 DG.mesi = (L) => {
   const W = L === 'w' ? 720 : 340, H = L === 'w' ? 480 : 650;
   return { W, H, draw(g) {
-    const wide = L === 'w', P = wide ? { E: [150, 70], M: [570, 70], I: [150, 250], S: [570, 250] } : { E: [70, 60], M: [270, 60], I: [70, 230], S: [270, 230] }, r = 32;
+    const wide = L === 'w', P = wide ? { E: [150, 70], M: [570, 70], I: [150, 250], S: [570, 250] } : { E: [70, 60], M: [270, 60], I: [70, 230], S: [270, 230] }, r = 37;
     const col = { M: C.red, E: C.gold, S: C.cyan, I: C.mute };
     const edge = (a, b, n, dx, dy, bpos) => {
       const [x1, y1] = P[a], [x2, y2] = P[b], d = Math.hypot(x2 - x1, y2 - y1), ux = (x2 - x1) / d, uy = (y2 - y1) / d;

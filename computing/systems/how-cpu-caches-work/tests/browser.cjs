@@ -242,6 +242,10 @@ function diagramCheck() {
     ok((await text(page, '#pfC')) === pct(P.pfStrideCov[0], 0), 'ch8 default stride coverage, got ' + await text(page, '#pfC'));
     await pick(page, 'pfT', 'matrix'); await setRange(page, 'pfD', 8); await page.waitForTimeout(80);
     ok((await text(page, '#pfC')) === pct(P.pfMat8Cov[0], 0), 'ch8 matrix, distance 8, got ' + await text(page, '#pfC'));
+    await setRange(page, 'pfD', 4); await page.waitForTimeout(80);
+    ok((await text(page, '#pfC')) === pct(P.pfMatCov[0], 0), 'ch8 matrix, distance 4, got ' + await text(page, '#pfC'));
+    await setRange(page, 'pfD', 5); await page.waitForTimeout(80);
+    ok((await text(page, '#pfC')) === pct(P.pfMat5Cov[0], 0), 'ch8 matrix, distance 5 (the cliff), got ' + await text(page, '#pfC'));
     await pick(page, 'pfT', 'list'); await page.waitForTimeout(60);
     ok((await text(page, '#pfA')) === '—', 'ch8 list: stride prefetcher silent');
     await pick(page, 'pfM', 'none'); await page.waitForTimeout(60);
