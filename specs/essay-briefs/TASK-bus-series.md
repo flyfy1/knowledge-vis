@@ -54,7 +54,7 @@ Order: B1 and B2 first; B3–B5 queued.
 
 ## B1 · `computing/systems/how-pcie-works/` (port 18931)
 
-PCIe 为什么能一代一代翻倍 — one question: 显卡、固态、网卡都插在 PCIe 上。这条总线 20 多年来速度翻了七次，靠的是什么？
+PCIe 为什么能一代一代翻倍 — one question: 显卡、固态、网卡都插在 PCIe 上。这条总线 20 多年来速度翻了六次，靠的是什么？
 一次读写在这根线上到底发生了什么？
 
 Starting chapter list (reorder, merge, drop; report what changed):
