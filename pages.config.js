@@ -177,6 +177,8 @@ window.KNOWLEDGE_ESSAYS = [
   "how-a-computer-boots",
   "how-the-os-talks-to-hardware",
   "how-pixels-reach-a-screen",
+  "how-power-reaches-the-cpu",
+  "how-a-nic-moves-packets",
   "how-an-economy-is-measured",
   "scarcity-moves"
 ];
@@ -597,6 +599,26 @@ window.KNOWLEDGE_PAGES = [
     },
     tags: [{ zh: "显示器", en: "Displays" }, { zh: "显卡", en: "Graphics Cards" }, { zh: "DisplayPort", en: "DisplayPort" }, { zh: "HDR", en: "HDR" }, { zh: "计算机体系结构", en: "Computer Architecture" }, { zh: "长文", en: "Long-form Essay" }],
     category: "computing", subtopic: "systems", stage: "university", status: "live", path: "computing/systems/how-pixels-reach-a-screen/"
+  },
+  {
+    slug: "how-power-reaches-the-cpu",
+    title: { zh: "电是怎么送进 CPU 的", en: "How Power Reaches the CPU" },
+    desc: {
+      zh: "一颗 CPU 只用一伏左右的电压，却能吃下两三百瓦，也就是两百安上下的电流，负载还会在十来纳秒里猛跳上百安。电是怎么从墙上的插座一路送进芯片的？芯片为什么会自己降频？八个可以动手的模型：从插座到晶粒每一段丢掉多少电，功率怎么随电压和频率涨，电源在什么负载下最省，多相稳压怎么把纹波抵掉，负载一跳电压往下掉多少，跑完一件事用多快的频率最省电，空闲时睡多深，以及功率墙和散热器怎么一起决定频率。",
+      en: "A CPU runs on about one volt, yet it can draw 200 to 300 watts, roughly 200 amps, and its load can jump by a hundred amps in about ten nanoseconds. How does power get from the wall socket into the chip, and why does the chip slow itself down? Eight hands-on models: how much each stage from the wall to the die loses, how power grows with voltage and frequency, at what load a power supply is most efficient, how a multiphase regulator cancels its ripple, how far the voltage sags when the load jumps, which clock finishes a job on the least energy, how deep to sleep when idle, and how power limits and the cooler together set the clock."
+    },
+    tags: [{ zh: "供电", en: "Power Delivery" }, { zh: "电源管理", en: "Power Management" }, { zh: "计算机体系结构", en: "Computer Architecture" }, { zh: "长文", en: "Long-form Essay" }],
+    category: "computing", subtopic: "systems", stage: "university", status: "live", path: "computing/systems/how-power-reaches-the-cpu/"
+  },
+  {
+    slug: "how-a-nic-moves-packets",
+    title: { zh: "网卡是怎么搬运数据包的", en: "How a Network Card Moves Packets" },
+    desc: {
+      zh: "一张 400G 网卡，每秒要收三千多万个包，平均每个包只有三十纳秒，比一次内存访问还短。它怎么在 CPU 几乎不插手的情况下，把包从光纤里搬进正确的那个程序的内存？十个可以动手的模型：一帧以太网和它的校验码，线速下每个包的时间，描述符为什么要提前取，PCIe 装不装得下 400G，RSS 的托普利茨哈希，几条大流怎么把队列压歪，分段和接收卸载省多少 CPU，DDIO 的缓存为什么会漏，发送环里排多少字节才合适，内核协议栈、XDP 和 DPDK 各要几个核，以及训练集群里 ECMP 和包喷洒的差别。",
+      en: "A 400G network card receives more than thirty million packets a second, about thirty nanoseconds each, less than one memory access. How does it move them from the fibre into the memory of the right program with the CPU hardly involved? Ten hands-on models: one Ethernet frame and its check sequence, the time per packet at line rate, why descriptors are fetched ahead, whether PCIe can carry 400G, the Toeplitz hash behind RSS, how a few big flows skew the queues, how much CPU segmentation and receive offloads save, why DDIO leaks, how many bytes belong in the transmit ring, how many cores the kernel stack, XDP and DPDK need, and ECMP versus packet spraying in a training cluster."
+    },
+    tags: [{ zh: "网卡", en: "Network Cards" }, { zh: "网络硬件", en: "Network Hardware" }, { zh: "计算机体系结构", en: "Computer Architecture" }, { zh: "长文", en: "Long-form Essay" }],
+    category: "computing", subtopic: "systems", stage: "university", status: "live", path: "computing/systems/how-a-nic-moves-packets/"
   },
   {
     slug: "how-an-economy-is-measured",

@@ -630,6 +630,66 @@ chapters.push(
   ['为什么显示器跑不到 144Hz', 'how to read monitor specs', PIX + '#ch13'],
   ['显卡', 'graphics card', A6 + '#ch1'],
 );
+// Power and NIC essays (2026-11-15, power/NIC registrar). The power essay takes 防掉压 for Load-Line Calibration (bare LLC reads as last-level
+// cache and is not taken); 电源怎么选 / PSU wattage join #ch3; the USB PD words stay on how-thunderbolt-works #ch7, power sequencing on
+// how-a-computer-boots #ch1, buck on power-converters, Dennard scaling on why-compute-waits-for-memory #ch5. The NIC essay's #ch1 takes 网卡 /
+// network card / NIC (its page tag 网卡 would otherwise open the page top); its page tag is 网络硬件 / Network Hardware, not 网络, so bare 网络
+// stays on tcp-congestion. Bare RDMA tied at 80 between storage-over-a-network #ch6 and NIC #ch11 (whose title names RDMA), so S5 #ch6 gains
+// the alias RDMA; PCIe 开销 / PCIe overhead / PCIe bandwidth are aliases of how-pcie-works #ch3 (the NIC's per-packet phrases contain them);
+// packet is an alias of tcp-congestion (NIC #ch8's title says packets); CPO is an alias of why-compute-waits-for-memory #ch10 (it matched
+// "CPU power formula" by one letter). Bare TSO stays on how-cores-share-memory (total store order); NAPI, DPDK, SR-IOV, kernel bypass on the OS essay.
+const PWR = 'computing/systems/how-power-reaches-the-cpu/', NIC = 'computing/systems/how-a-nic-moves-packets/';
+chapters.push(
+  ['CPU 供电', 'how does power reach the CPU', PWR + '#ch1'],
+  ['主板供电', 'CPU power delivery', PWR + '#ch1'],
+  ['动态功耗', 'dynamic power', PWR + '#ch2'],
+  ['CPU 为什么电压这么低', 'V/f curve', PWR + '#ch2'],
+  ['电源怎么选', 'PSU wattage', PWR + '#ch3'],
+  ['电源瓦数怎么选', '80 PLUS', PWR + '#ch3'],
+  ['电源效率', 'PSU', PWR + '#ch3'],
+  ['供电相数', 'VRM', PWR + '#ch4'],
+  ['多相供电', 'power phases', PWR + '#ch4'],
+  ['防掉压', 'load line', PWR + '#ch5'],
+  ['去耦电容', 'voltage droop', PWR + '#ch5'],
+  ['电迁移', 'FIVR', PWR + '#ch6'],
+  ['动态调频调压', 'DVFS', PWR + '#ch7'],
+  ['冲刺再睡', 'race to idle', PWR + '#ch7'],
+  ['C-state', 'C-states', PWR + '#ch8'],
+  ['CPU 空闲状态', 'menu governor', PWR + '#ch8'],
+  ['CPU 降频', 'CPU throttling', PWR + '#ch9'],
+  ['CPU 为什么降频', 'why does my CPU throttle', PWR + '#ch9'],
+  ['温度墙', 'PL1 PL2', PWR + '#ch9'],
+  ['48 伏供电', '800 V DC', PWR + '#ch10'],
+  ['垂直供电', 'PowerVia', PWR + '#ch11'],
+  ['降频排查', 'CPU not reaching boost', PWR + '#ch12'],
+  ['PD 快充协议', 'USB PD', 'computing/systems/how-thunderbolt-works/#ch7'],
+  ['上电时序', 'PWR_OK', BOOT + '#ch1'],
+  ['登纳德缩放', 'Dennard scaling', 'computing/systems/why-compute-waits-for-memory/#ch5'],
+  ['共封装光学 CPO', 'CPO', 'computing/systems/why-compute-waits-for-memory/#ch10'],
+  ['网卡', 'network card', NIC + '#ch1'],
+  ['网卡是怎么工作的', 'NIC', NIC + '#ch1'],
+  ['以太网帧', 'Ethernet frame', NIC + '#ch2'],
+  ['巨型帧', 'jumbo frame', NIC + '#ch2'],
+  ['网卡怎么收包', 'descriptor prefetch', NIC + '#ch3'],
+  ['400G 网卡 PCIe 够不够', 'PCIe overhead per packet', NIC + '#ch4'],
+  ['PCIe 开销', 'PCIe overhead', 'computing/systems/how-pcie-works/#ch3'],
+  ['RSS', 'receive side scaling', NIC + '#ch5'],
+  ['托普利茨哈希', 'Toeplitz hash', NIC + '#ch5'],
+  ['aRFS', 'receive flow steering', NIC + '#ch6'],
+  ['TSO 分段卸载', 'TCP segmentation offload', NIC + '#ch7'],
+  ['GRO', 'checksum offload', NIC + '#ch7'],
+  ['DDIO', 'leaky DMA', NIC + '#ch8'],
+  ['BQL', 'byte queue limits', NIC + '#ch9'],
+  ['XDP', 'AF_XDP', NIC + '#ch10'],
+  ['队列对', 'RDMA verbs', NIC + '#ch11'],
+  ['SmartNIC', 'DPU', NIC + '#ch11'],
+  ['RDMA', 'RDMA', 'computing/systems/storage-over-a-network/#ch6'],
+  ['包喷洒', 'ECMP', NIC + '#ch12'],
+  ['UEC 1.1', '800G NIC', NIC + '#ch13'],
+  ['网卡选型', 'how to read a NIC spec sheet', NIC + '#ch14'],
+  ['网络', 'packet', 'computing/systems/tcp-congestion/'],
+  ['TSO', 'TSO', 'computing/systems/how-cores-share-memory/#ch9'],
+);
 for (const [zh, en, href] of chapters) for (const q of [zh, en]) {
   const hit = first(q);
   ok(hit && (hit.href === href || (href.endsWith('/') && hit.href.startsWith(href))), `"${q}" opens ${href} (got ${hit && hit.href})`);

@@ -411,6 +411,20 @@ anchor and aliases. It is a schema-2 fragment `atlas/graph/lessons/<slug>.json`:
   刷新率 / refresh rate, #ch5 颜色管理 / color management, #ch6 DP, HDMI (bare DP opened OS #ch12 through DPDK); how-a-gpu-computes #ch1 显卡
   / graphics card (the pixels page tag 显卡 / Graphics Cards would take bare 显卡). `tests/concept-search.cjs` pins 46 zh/en pairs (19 OS,
   21 pixels, 6 on other owners: IOMMU, RDMA, RoCE, DSC twice, 显卡). The search chunks total 344,376 bytes; no new chunk.
+- Architecture series, the power and NIC essays (2026-11-15): how-power-reaches-the-cpu (12 concepts) and how-a-nic-moves-packets (14)
+  → computing. 38 hand-written edges. Power fragment (18): 10 between chapters (#ch1 → #ch3, #ch4, #ch10; #ch4 → #ch5 → #ch6 → #ch11;
+  #ch2 → #ch7 → #ch8; #ch2 → #ch9 → #ch12), from how-a-computer-boots #ch1 → #ch3 and #ch4, the buck concept (power-converters) → #ch4,
+  switches-that-compute #ch7 and why-compute-waits-for-memory #ch5 → #ch2, how-thunderbolt-works #ch7 → #ch3, boot #ch5 → #ch8,
+  how-a-gpu-computes #ch11 → #ch10. NIC fragment (20): 10 between chapters (#ch1 → #ch2, #ch3; #ch2 → #ch4; #ch3 → #ch4, #ch8, #ch9, #ch10;
+  #ch5 → #ch6, #ch12; #ch11 → #ch12), from how-the-os-talks-to-hardware #ch6 and #ch7 → #ch3, #ch12 → #ch10, how-pcie-works #ch3 and #ch10
+  → #ch4, how-cpu-caches-work #ch3 → #ch8, how-a-computer-is-wired #ch4 → #ch6, storage-over-a-network #ch6 → #ch11,
+  coherent-interconnects #ch9 and #ch10 → #ch12. Alias decisions: the power essay takes 防掉压, not bare LLC; the NIC essay's #ch1 takes 网卡
+  / network card / NIC and its page tag is 网络硬件 / Network Hardware, so bare 网络 stays on tcp-congestion. Owners kept their words by gaining
+  aliases: storage-over-a-network #ch6 RDMA (tied at 80 with NIC #ch11), how-pcie-works #ch3 PCIe 开销 / PCIe overhead / PCIe bandwidth,
+  tcp-congestion's first concept "packet", why-compute-waits-for-memory #ch10 CPO (one-letter match on "CPU power formula"). A
+  before/after sweep of the 7,912 existing aliases and tags changed only the new page tags (供电, 电源管理, Power Delivery, Power Management,
+  网卡, Network Cards). `tests/concept-search.cjs` pins 49 zh/en pairs (22 power, 19 NIC, 8 on other owners: USB PD, power sequencing,
+  Dennard scaling, CPO, PCIe overhead, RDMA, 网络 / packet, TSO). The search chunks total 357,603 bytes; no new chunk.
 
 ### Commands for the integrator
 

@@ -88,7 +88,7 @@ types ("为什么要打疫苗", "how does my phone know where I am"), not only t
    max-age=14400`) but not the HTML, so without a new key readers get the new page with the old text. If the scripts
    were already deployed under today's key, append a letter (`?v=20261115b`, then `c`) so the new key differs. The
    storage essays (what-a-drive-is-made-of, how-sata-works, how-sas-works, how-usb-drives-talk, storage-over-a-network),
-   the bus essays (how-pcie-works, how-a-computer-is-wired, how-thunderbolt-works, how-memory-talks, coherent-interconnects), how-cpu-caches-work, how-a-cpu-runs-a-program, how-virtual-memory-works, how-a-cpu-guesses-ahead, how-cores-share-memory, how-a-gpu-computes, how-a-computer-boots, how-the-os-talks-to-hardware, how-pixels-reach-a-screen, why-compute-waits-for-memory and why-nvme-is-fast use it since 2026-11-15; older essays do not yet, so add the key the next time one of them
+   the bus essays (how-pcie-works, how-a-computer-is-wired, how-thunderbolt-works, how-memory-talks, coherent-interconnects), how-cpu-caches-work, how-a-cpu-runs-a-program, how-virtual-memory-works, how-a-cpu-guesses-ahead, how-cores-share-memory, how-a-gpu-computes, how-a-computer-boots, how-the-os-talks-to-hardware, how-pixels-reach-a-screen, how-power-reaches-the-cpu, how-a-nic-moves-packets, why-compute-waits-for-memory and why-nvme-is-fast use it since 2026-11-15; older essays do not yet, so add the key the next time one of them
    changes.
 8. Add rows to CONCEPT-MAP.md.
 
@@ -131,11 +131,13 @@ types ("为什么要打疫苗", "how does my phone know where I am"), not only t
 | how-a-computer-boots | computing/systems/how-a-computer-boots/ | 14 (`#ch1…#ch14`) | computing | `ESSAY_BASE_URL` |
 | how-the-os-talks-to-hardware | computing/systems/how-the-os-talks-to-hardware/ | 14 (`#ch1…#ch14`) | computing | `ESSAY_BASE_URL` |
 | how-pixels-reach-a-screen | computing/systems/how-pixels-reach-a-screen/ | 13 (`#ch1…#ch13`) | computing | `ESSAY_BASE_URL` |
+| how-power-reaches-the-cpu | computing/systems/how-power-reaches-the-cpu/ | 12 (`#ch1…#ch12`) | computing | `ESSAY_BASE_URL` |
+| how-a-nic-moves-packets | computing/systems/how-a-nic-moves-packets/ | 14 (`#ch1…#ch14`) | computing | `ESSAY_BASE_URL` |
 
 The eleven from 2026-11-11, the two food essays of 2026-11-12 and the five storage essays of 2026-11-14/15
 (what-a-drive-is-made-of, how-sata-works, how-sas-works, how-usb-drives-talk, storage-over-a-network) and the three bus essays of
 2026-11-15 (how-pcie-works, how-a-computer-is-wired, how-thunderbolt-works, and later how-memory-talks and coherent-interconnects) and the architecture essays how-cpu-caches-work,
-how-a-cpu-runs-a-program, how-virtual-memory-works, how-a-cpu-guesses-ahead, how-cores-share-memory, how-a-gpu-computes, how-a-computer-boots, how-the-os-talks-to-hardware and how-pixels-reach-a-screen (2026-11-15) were built by Claude Code (claude-opus-5-5). The English copy was drafted by Claude
+how-a-cpu-runs-a-program, how-virtual-memory-works, how-a-cpu-guesses-ahead, how-cores-share-memory, how-a-gpu-computes, how-a-computer-boots, how-the-os-talks-to-hardware, how-pixels-reach-a-screen, how-power-reaches-the-cpu and how-a-nic-moves-packets (2026-11-15) were built by Claude Code (claude-opus-5-5). The English copy was drafted by Claude
 Code (claude-haiku-5-5). A separate Claude Code session of the same model reviewed each essay and revised
 it (no human or cross-model review yet). Each BRIEF.md records what was and was not checked.
 why-compute-waits-for-memory and why-nvme-is-fast were built by Antigravity (gemini-4-hydrogen) in both
@@ -278,6 +280,7 @@ energy words, #ch10 keeps HBM4, HBM3e, Rubin, co-packaged optics and PIM. ch5.p2
 link how-memory-talks #ch5. Scripts `?v=20261115b`; label repointed to that commit (52df5521, previous d34e98bb) with
 specs/reviews/why-compute-waits-for-memory-cxl-nvlink-alias-move-20261115.md as evidence (the edition stays Antigravity's).
 A6/boot registrar (2026-11-15): ch6.p1 links its existing words about warps (足够多独立线程（Warp） / thousands of independent threads (warps)) to how-a-gpu-computes #ch3; label at 4e4585ca (previous 52df5521, original e975710b), evidence specs/reviews/why-compute-waits-for-memory-gpu-link-20261115.md; scripts `?v=20261115c`. #ch6 keeps 张量核 / tensor core and GPU vs CPU (pinned).
+Power/NIC registrar (2026-11-15): ch5.p1 links its words "动态功耗公式" / "dynamic power formula" to how-power-reaches-the-cpu #ch2 and #ch10 gains the alias CPO (note specs/reviews/why-compute-waits-for-memory-power-link-20261115.md); label at d0821bc1 (previous 70d9f2e1), scripts `?v=20261115d`.
 
 ### why-nvme-is-fast: NVMe 为什么这么快
 
@@ -386,6 +389,7 @@ from S1, 2 from S3, 2 from why-nvme-is-fast, 1 from tcp-congestion, 1 from distr
 FC-FS frame layout, MS-SMB2, S3 PUT semantics, several textbooks cited from memory, most frontier dates via two outlets
 rather than the primary pages.
 OS/pixels registrar (2026-11-15): ch6.p1 links how-the-os-talks-to-hardware #ch12 (kernel bypass inside one machine); RDMA 是什么 / RDMA and "kernel bypass zero copy" stay on #ch6 here (pinned), plain "kernel bypass" / 内核旁路 open the OS essay #ch12. Label at e916a267 (previous 70d9f2e1), scripts `?v=20261115b`.
+Power/NIC registrar (2026-11-15): ch6.p1 links how-a-nic-moves-packets #ch11; #ch6 gains bare RDMA (it tied with the NIC essay's #ch11). Label at d0821bc1 (previous e916a267), scripts `?v=20261115c`.
 
 ### how-pcie-works: PCIe 为什么能一代一代翻倍
 
@@ -409,6 +413,7 @@ assignment in PCIe 6.0. B4 is linked since it went live (2026-11-15): ch11.e3 (C
 #ch3; label at 52df5521 (previous 4353c314), scripts `?v=20261115b`. The CXL words (什么是 CXL, CXL 是什么, what is CXL) it reserved are B4's.
 A6/boot registrar (2026-11-15): ch6.limit gains one sentence linking how-a-computer-boots #ch6 (where in the boot the firmware enumerates); PCIe 枚举 / PCIe enumeration stay on #ch6 here (pinned). Label at 4e4585ca (previous 52df5521), scripts `?v=20261115c`.
 OS/pixels registrar (2026-11-15): ch6.p5 links how-the-os-talks-to-hardware #ch4 (registers behind a BAR) and ch7.p3 its #ch5 (the interrupt path after MSI); MSI / MSI-X stay on #ch7 here. Label at e916a267 (previous 70d9f2e1), scripts `?v=20261115d`.
+Power/NIC registrar (2026-11-15): #ch3 gains PCIe 开销 / PCIe overhead, PCIe bandwidth (REGISTRY only; the NIC essay's #ch4 phrases contain them). #ch10 has no NIC sentence and is not linked. Label at d0821bc1 (previous e916a267), scripts unchanged.
 
 ### how-a-computer-is-wired: 电脑里的零件是怎么连起来的
 
@@ -640,6 +645,7 @@ how-a-computer-is-wired #ch9. Not verified (BRIEF): UALink's flit sizes and 2025
 cell, which NVIDIA Rubin figure is final (3,000 vs 3,600 GB/s).
 tests/models.cjs requires exactly one page-provenance label since 2026-11-15 (power/NIC registrar; it used to forbid one and failed
 since 011e6f9b), as how-memory-talks' test does since 4e4585ca.
+Power/NIC registrar (2026-11-15): ch10.limit links how-a-nic-moves-packets #ch12; tests/models.cjs requires the one page-provenance label (888856c4). Label at d0821bc1 (previous 70d9f2e1), scripts `?v=20261115s`.
 
 ### how-a-gpu-computes: GPU 是怎么算的
 
@@ -669,6 +675,7 @@ ch12.links (#ch10) link here. Scripts `?v=20261115r`. Atlas edges (20, in its fr
 coherent-interconnects #ch8 into #ch11. Not verified (BRIEF): the PTX wgmma operand rules, atomics carried out in L2, Volta's one path
 per cycle, the Volkov talk, MI355X figures, the Rubin sparsity label, Narasiman 2011, Fatahalian 2010, Pineda 1988, Williams 2009.
 OS/pixels registrar (2026-11-15): ch9.p2 links how-pixels-reach-a-screen #ch1 (the framebuffer); #ch1 takes 显卡 / graphics card (the pixels essay's page tag 显卡 would take bare 显卡). Label at e916a267 (previous 70d9f2e1), scripts `?v=20261115s`.
+Power/NIC registrar (2026-11-15): ch11.p2 links how-power-reaches-the-cpu #ch10 (a kilowatt a card). Label at d0821bc1 (previous e916a267), scripts `?v=20261115t`.
 
 ### how-a-computer-boots: 电脑是怎么开机的
 
@@ -700,6 +707,7 @@ how-a-computer-is-wired #ch8, what-a-drive-is-made-of #ch1, how-virtual-memory-w
 Guard, CSME-first and PSP internals, the W25Q256JV command table (not reopened), the ACPI 6.6 date, the openSIL schedule, chipset SPI
 limits, the Apple guide wording, the ESET and Eclypsium pages; the stage durations are tuned.
 OS/pixels registrar (2026-11-15): ch11.p6 links how-the-os-talks-to-hardware #ch9 (how the initramfs drivers find their devices). Label at e916a267 (previous 70d9f2e1), scripts `?v=20261115s`.
+Power/NIC registrar (2026-11-15): ch1.p3 links how-power-reaches-the-cpu #ch4 (the regulator that makes the core voltage); power sequencing and PWR_OK stay here. Label at d0821bc1 (previous e916a267), scripts `?v=20261115t`.
 
 ### how-the-os-talks-to-hardware: 操作系统是怎么和硬件说话的
 
@@ -731,6 +739,7 @@ ch7.p2 (#ch11), how-a-computer-boots ch11.p6 (#ch9), how-thunderbolt-works ch8.p
 here. Scripts `?v=20261115`. Atlas edges (28, in its fragment): 11 between chapters, 17 from the siblings it links or that link it (see
 specs/atlas-search-index.md). Not verified (BRIEF): Ren et al. cycle counts, Lee Fig. 4(a) values, FlexSC, the Arm MSR-at-EL0 pseudocode,
 IOMMU strict / lazy costs, virtio 1.3 final status, whether the C Binder removal landed exactly in 7.4-rc1.
+Power/NIC registrar (2026-11-15): ch6.limit links how-a-nic-moves-packets #ch5 (RSS) and ch7.limit its #ch3 (descriptor prefetch and write-back); NAPI, descriptor ring, DPDK, SR-IOV and kernel bypass stay here. Label at d0821bc1 (previous e916a267), scripts `?v=20261115b`.
 
 ### how-pixels-reach-a-screen: 像素是怎么到屏幕上的
 
@@ -759,6 +768,66 @@ how-a-gpu-computes ch9.p2 (#ch1) link here. Scripts `?v=20261115b`. Atlas edges 
 how-thunderbolt-works ch6.p4 used to fit 8K60 30-bit into HBR3 at 25.92 Gb/s with DSC; since 2026-11-15 its model deducts the FEC this page
 explains (25.31 Gb/s, ≤ 12.2 bpp on CVT-RB2 timing). Not verified (BRIEF): HDMI FRL RS-FEC overhead, HDMI 2.2 line coding, AMD's 2.5× LFC range, the
 BT.2100 / BT.2087 PDFs, LG Display's 720 Hz OLED.
+
+### how-power-reaches-the-cpu: 电是怎么送进 CPU 的
+
+Computer architecture series, queued system essay (TASK-arch-series.md). A CPU runs on about one volt yet draws two or three hundred watts,
+some two hundred amps, and the load jumps within about ten nanoseconds: how does power get from the wall socket into the chip, and why
+does the chip slow itself down? The chain from wall to die (253 W at the CPU draws 401 W at the wall), dynamic power and leakage on an
+alpha-power V/f curve, the PSU and 80 PLUS (a three-point loss fit, ATX 3 rev 2.1a), the multiphase VRM (TI SLVA882B ripple
+cancellation), the load line and decoupling on a time-domain PDN ladder and |Z(f)|, pins, bumps, electromigration, FIVR and power gating,
+DVFS and race to idle, C-states under a menu-style governor over intel_idle's Skylake table, PL1 / PL2 / Tau over a thermal RC chain,
+data-centre power (48 V, 800 V DC), a dated frontier (PowerVia, A16, vertical power) and three questions. Ten static diagrams. Essay
+commit e8b05fa7; label at d0821bc1 (the cross-link, alias and one-click commit). Review note
+specs/reviews/how-power-reaches-the-cpu-review-20261115.md. It owns CPU 供电, 电是怎么送进 CPU 的, 主板供电 / CPU power delivery, how does
+power reach the CPU (#ch1), 动态功耗, V/f 曲线, CPU 为什么电压这么低 / dynamic power (#ch2), 电源效率, 电源瓦数怎么选, 电源怎么选, 功率因数校正,
+ATX 电源 / 80 PLUS, PSU efficiency, what wattage PSU, PSU wattage, how to choose a PSU (#ch3), 供电相数, 多相供电, 纹波抵消 / VRM, power phases
+(#ch4), 负载线, Load-Line Calibration, 防掉压, 去耦电容, 电压跌落 / load line, adaptive voltage positioning, voltage droop, PDN impedance (#ch5),
+电迁移, 片上稳压, 电源门控 / FIVR, power gating (#ch6), 动态调频调压, P-state, 冲刺再睡 / DVFS, race to idle, schedutil (#ch7), C-state, CPU 空闲状态,
+menu 调速器 / C-states, cpuidle, target residency (#ch8), CPU 降频, CPU 为什么降频, 功率墙, 温度墙, 热阻 / CPU throttling, why does my CPU throttle,
+PL1 PL2, Tjmax (#ch9), 48 伏供电, 800 伏直流, 机架供电 / 48 V rack power, 800 V DC, Open Rack V3 (#ch10), 垂直供电, A16 工艺 / PowerVia, Super
+Power Rail (#ch11), 降频排查, CPU 跑不满 / throttling checklist, CPU not reaching boost (#ch12); its page tags 供电, 电源管理 / Power Delivery,
+Power Management open the page top. **Alias decisions (2026-11-15, review and registrar):** bare LLC is not taken (it reads as last-level
+cache); #ch5 has 防掉压 and Load-Line Calibration instead. Left to their owners: USB PD, EPR (how-thunderbolt-works #ch7), power sequencing,
+PWR_OK, S3 S4 S0ix (how-a-computer-boots #ch1, #ch5), buck / boost (power-converters), Dennard scaling / 登纳德缩放
+(why-compute-waits-for-memory #ch5), CPU 频率 / 主频为什么有上限 (switches-that-compute #ch7); 漏电 / leakage current, 背面供电 / backside power
+delivery, 功率密度, 暗硅 wait for the why-chips-are-hard draft and AI data center power for the frontier-model draft. CPO (it matched "CPU
+power formula" by one letter) became an alias of why-compute-waits-for-memory #ch10. It links how-a-computer-boots (#ch1, #ch5),
+power-converters, ohms-law, how-thunderbolt-works #ch7, switches-that-compute #ch7, why-compute-waits-for-memory #ch5,
+how-a-cpu-guesses-ahead, how-cpu-caches-work and how-a-gpu-computes #ch11; how-a-computer-boots ch1.p3 (#ch4), how-a-gpu-computes ch11.p2
+(#ch10) and why-compute-waits-for-memory ch5.p1 (#ch2) link here. 《芯片为什么越来越难做》 and 《按下开关的那一刻，电是从哪儿来的》 stay
+plain text until those drafts register. Scripts `?v=20261115b`. Atlas edges (18, in its fragment): 10 between chapters, 8 with siblings.
+Not verified (BRIEF): the 230 W PPT, Smith 1999, the 14900K's Tau, A16 in production, PROCHOT bidirectionality, per-cluster rails.
+
+### how-a-nic-moves-packets: 网卡是怎么搬运数据包的
+
+Computer architecture series, queued system essay (TASK-arch-series.md). A 400G card has 1.68 ns per 64-byte packet: how does it get
+packets into memory and onto the right core without the CPU touching every byte? Inside a NIC (PHY, MAC, queues, DMA), the Ethernet frame
+with a real CRC-32 and the line-rate budget, the receive path and descriptor prefetch, PCIe bytes per packet (Neugebauer et al.), RSS and
+the Toeplitz hash (Microsoft's 16 verification values), RPS / RFS / aRFS / XPS and IRQ affinity, checksum, TSO and GRO offloads on a fit to
+Cai et al., DDIO and leaky DMA on an LRU simulation, the transmit path and BQL, XDP / AF_XDP / DPDK, RDMA inside the NIC (verbs, queue
+pairs, one-sided writes, SmartNIC / DPU), ECMP against packet spraying with PTP, a dated frontier (802.3dj, UEC 1.0 / 1.1, Thor Ultra,
+ConnectX-8 / -9) and three questions. Eight static diagrams. Essay commit 230d5aac; label at d0821bc1. Review note
+specs/reviews/how-a-nic-moves-packets-review-20261115.md. It owns 网卡, 网卡是怎么工作的, 网卡里有什么, 网络接口卡 / network card, NIC, how does a
+network card work, network interface card (#ch1), 以太网帧, 帧校验序列, 巨型帧, 线速包率 / Ethernet frame, jumbo frame (#ch2), 网卡怎么收包, 描述符
+预取 / descriptor prefetch, descriptor write-back (#ch3), 400G 网卡 PCIe 够不够, 每个包的 PCIe 开销 (#ch4), RSS, 接收端缩放, 托普利茨哈希 / receive
+side scaling, Toeplitz hash (#ch5), aRFS, 接收流导向, 网卡中断亲和性 (#ch6), TSO 分段卸载, GRO, LRO, 校验和卸载 / checksum offload (#ch7), DDIO,
+直接缓存访问, leaky DMA (#ch8), BQL, 字节队列限制, 网卡发送环 (#ch9), XDP, AF_XDP, eBPF 网络 (#ch10), 队列对, 单边写, RDMA verbs, SmartNIC, DPU
+(#ch11), 包喷洒, ECMP, PTP 硬件时间戳 (#ch12), UEC 1.1, 800G 网卡, 1.6T 网卡 (#ch13), 怎么看网卡规格, 网卡选型 (#ch14); its page tags 网卡,
+网络硬件 / Network Cards, Network Hardware open the page top (the builder's tag 网络 / Networking would have taken bare 网络 from
+tcp-congestion). **Alias decisions (2026-11-15, review and registrar):** bare RDMA tied at 80 with storage-over-a-network #ch6, so that
+chapter gained the alias RDMA (pinned); PCIe 开销 / PCIe overhead / PCIe bandwidth are aliases of how-pcie-works #ch3 and "packet" of
+tcp-congestion, because this page's longer phrases and #ch8's title contain them. Left to their owners: bare TSO (how-cores-share-memory,
+total store order), NAPI, descriptor ring, DPDK, SR-IOV, kernel bypass, interrupt coalescing (how-the-os-talks-to-hardware), RoCE, PFC,
+DCQCN, lossless Ethernet (storage-over-a-network #ch6), MSI / MSI-X, TLP (how-pcie-works, why-nvme-is-fast), NUMA (how-a-computer-is-wired),
+all-reduce, scale-out (coherent-interconnects), Ultra Ethernet (storage-over-a-network #ch10), MTU, 丢包 (tcp-congestion and the
+web-page draft). It links how-the-os-talks-to-hardware (#ch6, #ch7, #ch12), how-pcie-works (#ch3, #ch9, #ch10), how-cpu-caches-work
+(#ch1, #ch3), how-a-computer-is-wired #ch4, storage-over-a-network #ch6, coherent-interconnects (#ch9, #ch10),
+why-compute-waits-for-memory #ch10, tcp-congestion, distributed-systems and how-a-gpu-computes; how-the-os-talks-to-hardware ch6.limit
+(#ch5) and ch7.limit (#ch3), storage-over-a-network ch6.p1 (#ch11) and coherent-interconnects ch10.limit (#ch12) link here.
+《网页是怎么来到你手机上的》 and 《一根线到底能传多少信息》 stay plain text until those drafts register. Scripts `?v=20261115b`. Atlas edges
+(20, in its fragment): 10 between chapters, 10 with siblings. Not verified (BRIEF): the 802.3df / 802.3dj approval dates, Gen6 FLIT header
+sizes, DDIO's replacement policy, the ConnectX-7 message rate.
 
 ### scarcity-moves: 稀缺会搬家
 

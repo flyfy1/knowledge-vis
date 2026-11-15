@@ -124,14 +124,17 @@
           "PCIe 包头格式",
           "MPS MRRS 是什么",
           "PCIe 有效带宽",
-          "PCIe 协议开销"
+          "PCIe 协议开销",
+          "PCIe 开销"
         ],
         "en": [
           "what is a TLP",
           "PCIe TLP header format",
           "MPS and MRRS",
           "PCIe effective bandwidth",
-          "PCIe protocol overhead"
+          "PCIe protocol overhead",
+          "PCIe overhead",
+          "PCIe bandwidth"
         ]
       }
     },
