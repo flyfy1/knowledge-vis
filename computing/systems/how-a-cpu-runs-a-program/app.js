@@ -304,7 +304,8 @@ function gridSnippet(L, rows, c0, c1, o) {
   const X = c => x0 + (c - c0) * cw, Y = i => top + i * (rh + gap);
   const H = top + rows.length * (rh + gap) + (o.extraH || 0);
   return { W, H, X, Y, cw, rh, draw(g) {
-    for (let c = c0; c <= c1; c++) g.text(X(c) + cw / 2, 14, wide ? 'dg.fwd.cyc' : { raw: String(c) }, { a: 'middle', c: 'm', vars: { c } });
+    if (wide) g.text(8, 14, 'dg.fwd.cyc', { c: 'm' });   // one row label; the columns carry bare cycle numbers
+    for (let c = c0; c <= c1; c++) g.text(X(c) + cw / 2, 14, { raw: String(c) }, { a: 'middle', c: 'm' });
     rows.forEach((r, i) => {
       const y = Y(i), ins = M.PROG[o.v][r.k];
       g.text(8, y + rh / 2, { raw: wide ? ins.src.replace(/,\s*/g, ', ') : r.op }, { mono: 1, c: r.flushed ? 'r' : '' });

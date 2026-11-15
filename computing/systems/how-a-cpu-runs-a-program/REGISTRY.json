@@ -9,8 +9,8 @@
     "en": "How a CPU Runs a Program"
   },
   "desc": {
-    "zh": "你写的一行代码，最后怎么变成 CPU 里一拍一拍的动作？同一个程序，为什么换一种写法、换一颗 CPU，速度能差好几倍？从指令集这份合同讲起：RISC-V 的寄存器和六种指令格式、把一个循环手工翻译成机器码、单周期数据通路和它的关键路径、五级流水线、数据相关与转发、分支的代价、性能铁律、x86 怎么在内部拆成小操作，以及 RVA23、Armv9.8、APX 这些 2026 年的前沿。每个模型都是真的：汇编器、指令解释器、逐拍的流水线模拟器。",
-    "en": "How does a line of code become clock-by-clock work inside a CPU, and why can the same program run several times faster with different code or a different CPU? Starting from the instruction set as a contract: RISC-V registers and its six instruction formats, hand-compiling a loop to machine code, the single-cycle datapath and its longest path, the five-stage pipeline, data dependences and forwarding, the cost of branches, the iron law of performance, how x86 splits instructions into micro-ops, and the 2026 frontier (RVA23, Armv9.8, APX). Every model is real: an assembler, an instruction interpreter and a cycle-by-cycle pipeline simulator."
+    "zh": "你写的一行代码，最后怎么变成 CPU 里一拍一拍的动作？同一个程序，为什么换一种写法、换一颗 CPU，速度能差好几倍？从指令集这份合同讲起：RISC-V 的寄存器和六种指令格式、把一个循环手工翻译成机器码、单周期数据通路和它的关键路径、五级流水线、数据冒险与转发、分支的代价、性能铁律、x86 怎么在内部拆成小操作，以及 RVA23、Armv9.8、APX 这些 2026 年的前沿。每个模型都是真的：汇编器、指令解释器、逐拍的流水线模拟器。",
+    "en": "How does a line of code become clock-by-clock work inside a CPU, and why can the same program run several times faster with different code or a different CPU? Starting from the instruction set as a contract: RISC-V registers and its six instruction formats, hand-compiling a loop to machine code, the single-cycle datapath and its longest path, the five-stage pipeline, data hazards and forwarding, the cost of branches, the iron law of performance, how x86 splits instructions into micro-ops, and the 2026 frontier (RVA23, Armv9.8, APX). Every model is real: an assembler, an instruction interpreter and a cycle-by-cycle pipeline simulator."
   },
   "tags": [
     {

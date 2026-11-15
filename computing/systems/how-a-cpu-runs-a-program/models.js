@@ -387,7 +387,7 @@
     { id: 'push', asm: 'push rbx', bytes: '53', roles: 'o', ops: ['agu', 'store'], rv: ['addi sp, sp, -4', 'sw s1, 0(sp)'] }
   ];
   for (const x of X86) { x.len = x.bytes.split(' ').length; x.rvProg = x.rv.map(s => { const r = parse(s, null, 0); if (!r.ok) throw new Error('x86 rv ' + s + ': ' + r.err); return r; }); }
-  const X86_MAXLEN = 15;   // Intel SDM vol. 2, §2.3.11 (not re-opened for this page; see BRIEF.md)
+  const X86_MAXLEN = 15;   // Intel SDM vol. 2, §2.3.11 "The maximum length of an Intel 64 and IA-32 instruction remains 15 bytes" (read in a mirrored copy, 2026-11-15; see BRIEF.md)
 
   /* ── dated facts for the frontier chapter (sources and dates opened in BRIEF.md) ── */
   const FRONTIER = {
@@ -448,7 +448,7 @@
     asm(r) {
       if (!r) return { key: 'ch2.say.empty', v: {} };
       if (!r.ok) return { key: 'ch2.say.err.' + r.err, v: r };
-      return { key: 'ch2.say.' + r.o.f, v: r };
+      return { key: 'ch2.say.' + r.o.f + (OPS[r.o.op].shamt ? 'sh' : ''), v: r };   // shifts: shamt in 24:20, funct7 above it
     },
     interp(e) {
       if (!e) return { key: 'ch3.say.start', v: {} };

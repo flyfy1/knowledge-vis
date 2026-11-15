@@ -85,6 +85,11 @@ const f = (x, d) => x.toFixed(d);
   check('addi -1: top 12 bits all ones', M.parse('addi a0, a0, -1').w >>> 20, 0xfff);
   check('diagram machine code = lw t2, 0(t1)', Z['dg.layers.mc'].includes(M.hex8(M.parse('lw t2, 0(t1)').w)), true);
   says('ch2.say.err.range', '−2048 到 2047'); says('ch2.say.err.range', '0 到 31');
+  // shifts: shamt sits in bits 24:20, funct7 in 31:25 (review 2026-11-15)
+  check('slli shamt field', (M.parse('slli t1, t0, 2').w >>> 20) & 31, 2); check('srai funct7', M.parse('srai a0, a1, 31').w >>> 25, 0b0100000);
+  says('ch2.say.Ish', '第 24 到 20 位'); check('shift sentence', M.say.asm(M.parse('slli t1, t0, 2')).key, 'ch2.say.Ish'); check('addi sentence', M.say.asm(M.parse('addi a0, a0, 1')).key, 'ch2.say.I');
+  // RV32I without C: IALIGN = 32, offsets in units of 2 bytes (isa v20260120 §2.5)
+  says('ch2.say.err.align', '4 字节对齐');
   says('ch3.p4', '偏移是 −12'); check('v2 bne offset', M.PROG.v2[6].o.imm, -12);
 }
 
@@ -194,13 +199,17 @@ const f = (x, d) => x.toFixed(d);
   check('as of', F.asOf, '2026-11'); says('ch11.title', '2026 年 11 月');
   says('ch11.e1', 'v20260120'); says('ch11.e1', ymd(F.isaManual)); says('ch11.e1', F.rv32iVersion + ' 版');
   says('ch11.d1', ymd(F.rva23.announced)); says('ch11.d1', ymd(F.rva23.ratified)); says('ch11.d1', 'Ubuntu ' + F.ubuntu.release); says('ch11.d1', ymd(F.k3.canonicalPost));
-  says('ch11.d2', ymd(F.arm97.posted)); says('ch11.d2', ymd(F.arm98.posted)); says('ch11.c1', ymd(F.apx.intelPage)); says('ch11.c2', '2025 年 11 月');
+  says('ch11.d2', ymd(F.arm97.posted)); says('ch11.d2', ymd(F.arm98.posted)); says('ch11.c1', ymd(F.apx.intelPage));
+  says('ch11.c1', '取数少 {apxLoads}%'); says('ch11.c1', '存数少 {apxStores}% 以上'); says('ch11.c1', '指令少 {apxInsns}%');   // Intel APX page: 10% fewer loads, more than 20% fewer stores, 10% fewer instructions
+  says('ch10.p3', '2.3.11');
+  // ch5.law: the default waste is 23%, not most of the time
+  check('waste is a minority of the cycle', M.critical().waste < 0.5, true); says('ch5.law', '一段时间白白浪费'); says('ch11.c2', '2025 年 11 月');
 }
 
 /* ── sentence branches at the extremes of each control ── */
 {
   const seen = new Set(), add = z => seen.add(z.key);
-  for (const s of ['', 'add a0, a0, t2', 'lw t2, 0(t1)', 'sw a0, 0(a3)', 'blt t0, a2, -20', 'lui a0, 0x12345', 'jal ra, 2048', 'frob', 'add a0', 'add q, a0, a0', 'addi a0, a0, x', 'addi a0, a0, 5000', 'beq a0, a1, 3'])
+  for (const s of ['', 'add a0, a0, t2', 'srai a0, a1, 31', 'lw t2, 0(t1)', 'sw a0, 0(a3)', 'blt t0, a2, -20', 'lui a0, 0x12345', 'jal ra, 2048', 'frob', 'add a0', 'add q, a0, a0', 'addi a0, a0, x', 'addi a0, a0, 5000', 'beq a0, a1, 3'])
     add(M.say.asm(s ? M.parse(s, null, 0) : null));
   add(M.say.asm({ ok: false, err: 'hex' }));
   for (const v of M.VERSIONS) { add(M.say.interp(null)); for (const e of M.run(v, 2).trace) add(M.say.interp(e)); }
@@ -210,7 +219,7 @@ const f = (x, d) => x.toFixed(d);
   for (const v of M.VERSIONS) for (const nn of [2, 4]) for (const cfg of [{}, { fwd: false }, { resolve: 'ID' }, { policy: 'stall' }, { policy: 'stall', resolve: 'ID' }]) { const p = M.pipeline(v, nn, cfg); add(M.say.pipe(p, 6)); add(M.say.pipe(p, 7)); add(M.say.pipe(p, 8)); }
   for (const v of M.VERSIONS) for (const m of M.MACHINES) add(M.say.iron(v, m));
   for (const x of M.X86) add(M.say.x86(x.id));
-  const all = ['ch2.say.empty', 'ch2.say.R', 'ch2.say.I', 'ch2.say.S', 'ch2.say.B', 'ch2.say.U', 'ch2.say.J', 'ch2.say.err.op', 'ch2.say.err.args', 'ch2.say.err.reg', 'ch2.say.err.imm', 'ch2.say.err.range', 'ch2.say.err.align', 'ch2.say.err.hex',
+  const all = ['ch2.say.empty', 'ch2.say.R', 'ch2.say.I', 'ch2.say.Ish', 'ch2.say.S', 'ch2.say.B', 'ch2.say.U', 'ch2.say.J', 'ch2.say.err.op', 'ch2.say.err.args', 'ch2.say.err.reg', 'ch2.say.err.imm', 'ch2.say.err.range', 'ch2.say.err.align', 'ch2.say.err.hex',
     'ch3.say.start', 'ch3.say.alu', 'ch3.say.load', 'ch3.say.store', 'ch3.say.brT', 'ch3.say.brN', 'ch3.say.ret',
     'ch4.say.R', 'ch4.say.I', 'ch4.say.load', 'ch4.say.store', 'ch4.say.brT', 'ch4.say.brN', 'ch4.say.ret',
     'ch5.say.mem', 'ch5.say.alu', 'ch5.say.balanced', 'ch6.say.gaps', 'ch7.say.nofwd', 'ch7.say.loaduse', 'ch7.say.clean',
