@@ -6,24 +6,33 @@ Requested by Yangyu on 2026-11-15: "我也希望能看到关于 PCIe 以及其�
 
 ## Status (2026-11-15)
 
-B1, B2 and B6 are live in zh and en, each reviewed by a separate Claude Code session (same model; cross-model review
-pending). Essay commit → deployed at:
+B1–B4 and B6 are live in zh and en, each reviewed by a separate Claude Code session (same model; cross-model review
+pending). B5 `small-buses` is optional and not started. Essay commit → deployed at:
 
 | | Page | Essay commit | Live at |
 |---|---|---|---|
 | B1 | `how-pcie-works` PCIe 为什么能一代一代翻倍 | `7174f8e4` | `81155e94` |
 | B2 | `how-a-computer-is-wired` 电脑里的零件是怎么连起来的 | `56d96c4c` | `81155e94` |
+| B3 | `how-memory-talks` 内存是怎么和 CPU 说话的 | `d165655d` | `922cad5c` |
+| B4 | `coherent-interconnects` 芯片之间怎么共用内存 | `0f6572c0` | `922cad5c` |
+| B5 | `small-buses` (optional) | not started | — |
 | B6 | `how-thunderbolt-works` 雷电接口是怎么工作的 | `3954bb68` | `81155e94` |
 
-The three link one another, and S1, S2, S4 and why-nvme-is-fast link them (cross-link commit `4353c314`, registration
-`e9a01a13`; the labels point at `4353c314`). USB4 和雷电区别 / Thunderbolt vs USB4 moved from S4 #ch8 to B6 #ch9.
-B3 `how-memory-talks`, B4 `coherent-interconnects` and B5 `small-buses` are queued (spec below, not dispatched); B2 and
-B6 mention them only in plain text (B2 ch8.p5 for B5, ch9.d2 for CXL / B4), so link those sentences when they go live.
+B1, B2, B6 link one another, and S1, S2, S4 and why-nvme-is-fast link them (cross-link commit `4353c314`, registration
+`e9a01a13`). USB4 和雷电区别 / Thunderbolt vs USB4 moved from S4 #ch8 to B6 #ch9.
+
+B3 and B4 (cross-link commit `52df5521`, registration `011e6f9b`, cache keys `922cad5c`; their labels point at `52df5521`):
+B3 ↔ B4 (B3 ch11.c3 → B4 #ch5, ch12.links; B4 ch3.p4 → B3 #ch5, ch13.links); A5 how-cores-share-memory ch11.p2 and ch12.links,
+B2 ch9.d2 and B1 ch11.e3 link B4 (#ch3 for the CXL sentences); how-cpu-caches-work ch12.links and why-compute-waits-for-memory
+ch5.p2 link B3. Alias moves: CXL 内存池 / CXL memory pooling from the memory essay #ch10 to B4 #ch6, NVLink 带宽 / NVLink vs PCIe
+from its #ch9 to B4 #ch8 (Antigravity edition; specs/reviews/why-compute-waits-for-memory-cxl-nvlink-alias-move-20261115.md).
+B3 owns the DDR words and ECC 内存; plain ECC and ecc memory stay reserved for the unregistered drafts a-secret-in-public and
+how-much-a-wire-can-carry. B2 ch8.p5 still names B5 in plain text; link it if B5 is written.
 
 All essays go in `computing/systems/`. Stage: university. Pipeline as for the storage series: Opus builds
 `copy.zh.js` (en is a same-keys stub with `enStub = true`), Haiku translates, a separate Opus session
 reviews both languages in full, a designated registrar commits, registers and deploys.
-Order: B1 and B2 first; B3–B5 queued.
+Order: B1 and B2 first, then B6, B3, B4; B5 optional.
 
 ## Briefs to follow (all essays)
 
@@ -117,7 +126,7 @@ Starting chapter list:
 9. 前沿在哪 (as of Nov 2026).
 10. Short closing.
 
-## Queued (spec only; not yet dispatched)
+## B3–B5 specs (B3 and B4 written and live; B5 optional, not dispatched)
 
 - **B3 · `how-memory-talks`** — the DDR interface: commands (ACT/RD/WR/PRE), timings CL/tRCD/tRP in cycles vs ns
   (why "faster" DDR has higher CL), burst length and prefetch, banks/bank groups, DDR5 two subchannels and on-die
