@@ -1,0 +1,442 @@
+{
+  "slug": "how-a-cpu-runs-a-program",
+  "path": "computing/systems/how-a-cpu-runs-a-program/",
+  "category": "computing",
+  "subtopic": "systems",
+  "stage": "university",
+  "title": {
+    "zh": "CPU 是怎么运行一个程序的",
+    "en": "How a CPU Runs a Program"
+  },
+  "desc": {
+    "zh": "你写的一行代码，最后怎么变成 CPU 里一拍一拍的动作？同一个程序，为什么换一种写法、换一颗 CPU，速度能差好几倍？从指令集这份合同讲起：RISC-V 的寄存器和六种指令格式、把一个循环手工翻译成机器码、单周期数据通路和它的关键路径、五级流水线、数据相关与转发、分支的代价、性能铁律、x86 怎么在内部拆成小操作，以及 RVA23、Armv9.8、APX 这些 2026 年的前沿。每个模型都是真的：汇编器、指令解释器、逐拍的流水线模拟器。",
+    "en": "How does a line of code become clock-by-clock work inside a CPU, and why can the same program run several times faster with different code or a different CPU? Starting from the instruction set as a contract: RISC-V registers and its six instruction formats, hand-compiling a loop to machine code, the single-cycle datapath and its longest path, the five-stage pipeline, data dependences and forwarding, the cost of branches, the iron law of performance, how x86 splits instructions into micro-ops, and the 2026 frontier (RVA23, Armv9.8, APX). Every model is real: an assembler, an instruction interpreter and a cycle-by-cycle pipeline simulator."
+  },
+  "tags": [
+    {
+      "zh": "指令集",
+      "en": "instruction set"
+    },
+    {
+      "zh": "RISC-V",
+      "en": "RISC-V"
+    },
+    {
+      "zh": "流水线",
+      "en": "pipeline"
+    },
+    {
+      "zh": "计算机体系结构",
+      "en": "computer architecture"
+    }
+  ],
+  "concepts": [
+    {
+      "id": "isa-contract",
+      "title": {
+        "zh": "指令集架构：软件和硬件之间的合同",
+        "en": "The ISA: a contract between software and hardware"
+      },
+      "desc": {
+        "zh": "指令集规定指令和它们的效果，不规定速度；x86、Arm、RISC-V 是三份合同，不是三颗芯片。",
+        "en": "An ISA fixes the instructions and their effects, not their speed; x86, Arm and RISC-V are three contracts, not three chips."
+      },
+      "aliases": {
+        "zh": [
+          "指令集架构是什么",
+          "ISA 是什么意思",
+          "x86 和 Arm 有什么区别",
+          "x86 Arm RISC-V 区别",
+          "微架构",
+          "架构和微架构的区别"
+        ],
+        "en": [
+          "what is an instruction set architecture",
+          "x86 vs ARM vs RISC-V",
+          "microarchitecture",
+          "architecture vs microarchitecture",
+          "what does ISA mean"
+        ]
+      },
+      "anchor": "#ch1",
+      "relatedPages": [
+        "switches-that-compute",
+        "why-compute-waits-for-memory",
+        "how-cpu-caches-work"
+      ]
+    },
+    {
+      "id": "riscv-instruction-formats",
+      "title": {
+        "zh": "RISC-V 的寄存器和六种指令格式",
+        "en": "RISC-V registers and the six instruction formats"
+      },
+      "desc": {
+        "zh": "RV32I 有 32 个寄存器、六种 32 位格式，寄存器编号永远在同样的位上；页面上可以把任意一条指令编码成机器码，或者反过来。",
+        "en": "RV32I has 32 registers and six 32-bit formats with register fields always in the same bits; encode any instruction to machine code on the page, or back."
+      },
+      "aliases": {
+        "zh": [
+          "RISC-V",
+          "RV32I",
+          "RISC-V 指令格式",
+          "指令编码",
+          "汇编怎么变成二进制",
+          "立即数编码",
+          "R 型 I 型 S 型 B 型",
+          "RISC-V 寄存器"
+        ],
+        "en": [
+          "RISC-V instruction formats",
+          "RV32I encoding",
+          "instruction encoding",
+          "how assembly becomes binary",
+          "immediate encoding",
+          "R-type I-type instruction",
+          "RISC-V registers",
+          "RISC-V assembler"
+        ]
+      },
+      "anchor": "#ch2",
+      "relatedPages": [
+        "switches-that-compute",
+        "why-compute-waits-for-memory",
+        "how-cpu-caches-work"
+      ]
+    },
+    {
+      "id": "compile-a-loop",
+      "title": {
+        "zh": "把一个循环翻译成机器码",
+        "en": "Hand-compiling a loop to machine code"
+      },
+      "desc": {
+        "zh": "同一行 C 有不同的翻译：下标、指针、展开三种写法每个元素 6、4、3 条指令。",
+        "en": "One line of C, three translations: indexing, a pointer and unrolling take 6, 4 and 3 instructions per element."
+      },
+      "aliases": {
+        "zh": [
+          "C 代码怎么变成汇编",
+          "一行代码变成几条指令",
+          "循环展开",
+          "手工编译",
+          "汇编语言入门"
+        ],
+        "en": [
+          "C to assembly",
+          "how many instructions does a loop take",
+          "loop unrolling",
+          "hand-compiling C",
+          "assembly language basics"
+        ]
+      },
+      "anchor": "#ch3",
+      "relatedPages": [
+        "switches-that-compute",
+        "why-compute-waits-for-memory",
+        "how-cpu-caches-work"
+      ]
+    },
+    {
+      "id": "single-cycle-datapath",
+      "title": {
+        "zh": "单周期数据通路和控制信号",
+        "en": "The single-cycle datapath and its control signals"
+      },
+      "desc": {
+        "zh": "一拍做完一条指令：PC、指令存储器、寄存器堆、ALU、数据存储器，由七根控制线决定哪些路接通。",
+        "en": "One instruction per clock: PC, instruction memory, register file, ALU and data memory, with seven control lines choosing the paths."
+      },
+      "aliases": {
+        "zh": [
+          "单周期 CPU",
+          "数据通路",
+          "控制信号",
+          "CPU 内部结构",
+          "控制单元"
+        ],
+        "en": [
+          "single-cycle datapath",
+          "single cycle CPU",
+          "datapath",
+          "control signals",
+          "control unit",
+          "RegWrite ALUSrc MemtoReg"
+        ]
+      },
+      "anchor": "#ch4",
+      "relatedPages": [
+        "switches-that-compute",
+        "why-compute-waits-for-memory",
+        "how-cpu-caches-work"
+      ]
+    },
+    {
+      "id": "clock-set-by-slowest",
+      "title": {
+        "zh": "最慢的那条指令定了时钟",
+        "en": "The slowest instruction sets the clock"
+      },
+      "desc": {
+        "zh": "单周期的时钟要盖住 lw 的全程，其他指令白等；切成五段后每段按最慢的一段算。",
+        "en": "A single-cycle clock must cover the whole of lw, so other instructions wait; split into five stages, each stage runs at the pace of the slowest."
+      },
+      "aliases": {
+        "zh": [
+          "单周期为什么慢",
+          "时钟周期由什么决定",
+          "最慢的指令决定时钟",
+          "流水线为什么不能快五倍"
+        ],
+        "en": [
+          "why single-cycle CPUs are slow",
+          "what sets the clock period",
+          "unbalanced pipeline stages",
+          "why a five-stage pipeline is not five times faster"
+        ]
+      },
+      "anchor": "#ch5",
+      "relatedPages": [
+        "switches-that-compute",
+        "why-compute-waits-for-memory",
+        "how-cpu-caches-work"
+      ]
+    },
+    {
+      "id": "five-stage-pipeline",
+      "title": {
+        "zh": "五级流水线",
+        "en": "The five-stage pipeline"
+      },
+      "desc": {
+        "zh": "IF、ID、EX、MEM、WB 五段之间放流水线寄存器，五条指令同时在路上；每条不变快，吞吐量变大。",
+        "en": "Pipeline registers between IF, ID, EX, MEM and WB keep five instructions in flight; none gets faster, throughput rises."
+      },
+      "aliases": {
+        "zh": [
+          "五级流水线",
+          "IF ID EX MEM WB",
+          "流水线寄存器",
+          "经典 RISC 流水线",
+          "流水线为什么能加速",
+          "冒险是什么"
+        ],
+        "en": [
+          "five-stage pipeline",
+          "IF ID EX MEM WB",
+          "pipeline registers",
+          "classic RISC pipeline",
+          "pipeline hazards",
+          "why pipelining speeds up a CPU"
+        ]
+      },
+      "anchor": "#ch6",
+      "relatedPages": [
+        "switches-that-compute",
+        "why-compute-waits-for-memory",
+        "how-cpu-caches-work"
+      ]
+    },
+    {
+      "id": "data-hazard-forwarding",
+      "title": {
+        "zh": "数据冒险与转发路径",
+        "en": "Data hazards and the forwarding paths"
+      },
+      "desc": {
+        "zh": "下一条要用上一条的结果时，从 EX/MEM 和 MEM/WB 把数递回 ALU；只剩取数后紧跟着用要停一拍，调度可以藏住它。",
+        "en": "When an instruction needs its predecessor's result, values go back to the ALU from EX/MEM and MEM/WB; only a use right after a load still waits a cycle, which scheduling can hide."
+      },
+      "aliases": {
+        "zh": [
+          "数据冒险",
+          "数据相关",
+          "写后读",
+          "转发单元",
+          "指令调度",
+          "RAW 冒险"
+        ],
+        "en": [
+          "data hazard",
+          "RAW hazard",
+          "read after write",
+          "forwarding unit",
+          "bypass paths",
+          "instruction scheduling"
+        ]
+      },
+      "anchor": "#ch7",
+      "relatedPages": [
+        "switches-that-compute",
+        "why-compute-waits-for-memory",
+        "how-cpu-caches-work"
+      ]
+    },
+    {
+      "id": "control-hazard",
+      "title": {
+        "zh": "控制冒险：分支的代价",
+        "en": "Control hazards: the cost of a branch"
+      },
+      "desc": {
+        "zh": "分支在 EX 段才知道跳不跳，猜不跳猜错要冲掉两条；把比较提前到 ID 只冲一条，但可能多一拍数据停顿。",
+        "en": "A branch resolves in EX; predicting not-taken wrongly flushes two instructions; comparing in ID flushes one but can add a data stall."
+      },
+      "aliases": {
+        "zh": [
+          "控制冒险",
+          "分支的代价",
+          "流水线冲刷",
+          "猜不跳",
+          "静态分支预测",
+          "延迟分支"
+        ],
+        "en": [
+          "control hazard",
+          "branch penalty",
+          "pipeline flush",
+          "predict not taken",
+          "static branch prediction",
+          "delayed branch"
+        ]
+      },
+      "anchor": "#ch8",
+      "relatedPages": [
+        "switches-that-compute",
+        "why-compute-waits-for-memory",
+        "how-cpu-caches-work"
+      ]
+    },
+    {
+      "id": "iron-law-of-performance",
+      "title": {
+        "zh": "性能的铁律",
+        "en": "The iron law of performance"
+      },
+      "desc": {
+        "zh": "运行时间 = 指令数 × 每条指令平均几拍 × 每拍多长；写法、微架构、电路各管一项，三项相乘。",
+        "en": "Time = instructions × cycles per instruction × clock period; code, microarchitecture and circuits each own one factor, and they multiply."
+      },
+      "aliases": {
+        "zh": [
+          "性能铁律",
+          "程序运行时间怎么算",
+          "主频高就一定快吗",
+          "指令数乘 CPI 乘时钟周期",
+          "CPU 性能公式"
+        ],
+        "en": [
+          "iron law of performance",
+          "CPU performance equation",
+          "is higher clock speed always faster",
+          "execution time formula",
+          "instructions times CPI times clock period"
+        ]
+      },
+      "anchor": "#ch9",
+      "relatedPages": [
+        "switches-that-compute",
+        "why-compute-waits-for-memory",
+        "how-cpu-caches-work"
+      ]
+    },
+    {
+      "id": "cisc-risc-micro-ops",
+      "title": {
+        "zh": "CISC 与 RISC，x86 的微操作",
+        "en": "CISC vs RISC and x86 micro-ops"
+      },
+      "desc": {
+        "zh": "x86 一条指令可以读内存、运算、写内存，长度可变；现代 x86 芯片在译码时把它拆成像 RISC 一样的微操作。",
+        "en": "One x86 instruction can load, compute and store, at variable length; modern x86 chips decode it into RISC-like micro-ops."
+      },
+      "aliases": {
+        "zh": [
+          "CISC 和 RISC 区别",
+          "精简指令集 复杂指令集",
+          "微操作",
+          "x86 为什么是 CISC",
+          "x86 指令长度"
+        ],
+        "en": [
+          "CISC vs RISC",
+          "micro-ops",
+          "uops",
+          "x86 instruction decoding",
+          "variable-length instructions",
+          "is x86 RISC inside"
+        ]
+      },
+      "anchor": "#ch10",
+      "relatedPages": [
+        "switches-that-compute",
+        "why-compute-waits-for-memory",
+        "how-cpu-caches-work"
+      ]
+    },
+    {
+      "id": "isa-frontier-2026",
+      "title": {
+        "zh": "指令集的前沿（2026 年 11 月）",
+        "en": "The ISA frontier (November 2026)"
+      },
+      "desc": {
+        "zh": "RVA23 配置、Armv9.7 和 9.8、x86 的 APX 与 AVX10：兼容性和更少的指令。",
+        "en": "RVA23, Armv9.7 and 9.8, x86 APX and AVX10: compatibility and fewer instructions."
+      },
+      "aliases": {
+        "zh": [
+          "RVA23",
+          "Armv9.8",
+          "Intel APX",
+          "AVX10",
+          "RISC-V 现状",
+          "RISC-V 能取代 Arm 吗"
+        ],
+        "en": [
+          "RVA23 profile",
+          "Armv9.8-A",
+          "Intel APX",
+          "AVX10",
+          "RISC-V adoption 2026",
+          "can RISC-V replace ARM"
+        ]
+      },
+      "anchor": "#ch11",
+      "relatedPages": [
+        "switches-that-compute",
+        "why-compute-waits-for-memory",
+        "how-cpu-caches-work"
+      ]
+    },
+    {
+      "id": "reading-code-speed",
+      "title": {
+        "zh": "看代码、比 CPU 时问的三件事",
+        "en": "Three questions for code and for CPUs"
+      },
+      "desc": {
+        "zh": "会变成多少条指令、会在哪里停、比的是不是同一个程序跑完的时间。",
+        "en": "How many instructions, where it will stall, and whether you are comparing the time to run the same program."
+      },
+      "aliases": {
+        "zh": [
+          "怎么判断代码快不快",
+          "比较 CPU 性能看什么",
+          "怎么看编译出来的汇编"
+        ],
+        "en": [
+          "how to tell if code is fast",
+          "how to compare CPU performance",
+          "how to read compiler output"
+        ]
+      },
+      "anchor": "#ch12",
+      "relatedPages": [
+        "switches-that-compute",
+        "why-compute-waits-for-memory",
+        "how-cpu-caches-work"
+      ]
+    }
+  ]
+}
