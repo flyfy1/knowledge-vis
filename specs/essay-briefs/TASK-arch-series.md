@@ -23,7 +23,8 @@ en stub, Haiku translates, separate Opus review of both languages, registrar). *
 | — | `how-a-computer-boots` 电脑是怎么开机的 | `509b4d6e` | `9b09a7f7` | live, zh + en, reviewed by a separate Claude Code session (same model; cross-model review pending) |
 | — | `how-the-os-talks-to-hardware` 操作系统是怎么和硬件说话的 | `20a942e2` | `26daf4af` | live, zh + en, reviewed by a separate Claude Code session (same model; cross-model review pending) |
 | — | `how-pixels-reach-a-screen` 像素是怎么到屏幕上的 | `3e6bf23d` | `26daf4af` | live, zh + en, reviewed by a separate Claude Code session (same model; cross-model review pending) |
-| — | how power reaches the CPU, how a NIC moves packets | — | — | queued next, specs to be written when dispatched |
+| — | `how-power-reaches-the-cpu` 电是怎么送进 CPU 的 | `e8b05fa7` | `b38d9e07` | live, zh + en, reviewed by a separate Claude Code session (same model; cross-model review pending) |
+| — | `how-a-nic-moves-packets` 网卡是怎么搬运数据包的 | `230d5aac` | `b38d9e07` | live, zh + en, reviewed by a separate Claude Code session (same model; cross-model review pending) |
 
 A2: alias move, cross-link and one-click aliases in `88dafe9c` (the label points there), registration `644c2aee`. The
 "One word, one owner" decision below is done: L1 L2 L3 缓存, 缓存行, 组相联缓存, cache line, set associative cache (and L1 L2
@@ -76,8 +77,26 @@ on the topic). Aliases: the OS essay takes no RDMA (S5 #ch6) and only DMA 是什
 #ch12, "kernel bypass zero copy" S5 #ch6; 中断 / interrupt, io_uring and 操作系统 / operating system now open OS #ch5, #ch11, #ch1. The pixels
 essay takes no 显示流压缩 / Display Stream Compression; B6 #ch6 owns them and bare DSC, pixels #ch7 keeps DSC 有损吗 / is DSC lossy / 视觉无损;
 A6 #ch1 takes 显卡 / graphics card. The OS essay names 《网页是怎么来到你手机上的》 in plain text (ch14.links): link it when
-tech/networks/how-a-web-page-arrives goes live. Known inconsistency left for B6's owner: B6 ch6.p4 counts 25.92 Gb/s for HBR3 with DSC;
-DSC on 8b/10b DP needs FEC (25.31 Gb/s, pixels ch7.p4). Next queued: how power reaches the CPU, how a NIC moves packets.
+tech/networks/how-a-web-page-arrives goes live. The B6 DSC/FEC inconsistency was fixed on 2026-11-15 (93d7b195, below).
+
+The power and NIC essays: cross-links, alias decisions and one-click aliases in `d0821bc1` (both labels, and the repointed
+how-a-computer-boots, how-a-gpu-computes, why-compute-waits-for-memory, how-the-os-talks-to-hardware, storage-over-a-network,
+coherent-interconnects and how-pcie-works labels, point there), registration `3539c70a`, cache keys `b38d9e07`. Review notes
+specs/reviews/how-power-reaches-the-cpu-review-20261115.md and specs/reviews/how-a-nic-moves-packets-review-20261115.md. Links into the
+power essay: boot ch1.p3 (#ch4), A6 ch11.p2 (#ch10), the memory essay ch5.p1 (#ch2; Antigravity edition, note
+specs/reviews/why-compute-waits-for-memory-power-link-20261115.md); into the NIC essay: OS ch6.limit (#ch5) and ch7.limit (#ch3), S5 ch6.p1
+(#ch11), B4 ch10.limit (#ch12). power-converters, B6 #ch7, B1 #ch10 and A2 were checked and not linked (no sentence on the topic).
+Aliases: power keeps 防掉压 (no bare LLC) and #ch3 takes 电源怎么选 / PSU wattage; NIC #ch1 takes 网卡 / network card / NIC, and its page tag
+is 网络硬件 / Network Hardware so bare 网络 stays on tcp-congestion; S5 #ch6 gains RDMA, B1 #ch3 PCIe 开销 / PCIe overhead / PCIe bandwidth,
+the memory essay #ch10 CPO, tcp-congestion "packet", so the owners keep them; bare TSO stays on A5 (total store order). The power essay
+names 《芯片为什么越来越难做》 and 《按下开关的那一刻，电是从哪儿来的》 in plain text, the NIC essay 《网页是怎么来到你手机上的》 and
+《一根线到底能传多少信息》: link them when those drafts go live. Same round: B6 ch6.p4 now deducts FEC for DSC on 8b/10b DP (HBR3 ×4
+25.31 Gb/s; 8K60 30-bit fits at ≤ 12.2 bpp on CVT-RB2 timing, `93d7b195`), B4's test requires its label (`888856c4`), and
+scripts/test_index_pagination.cjs derives the Long Reads membership instead of pinning a stale list (`dc85cae0`).
+
+**The queued list is complete.** Candidate follow-ups (not specced): retrofit static diagrams into S1–S5 (they predate STANDARD §4a);
+B5 `small-buses` (I²C, SPI, UART, SMBus; B2 ch8 still names it in plain text); S6 `how-phone-storage-works` (UFS, eMMC); a CPU SIMD /
+floating-point formats essay (IEEE 754, FP16 / BF16 / FP8 / FP4, AVX-512 and SVE), suggested by the A6 builder.
 
 ## The course, in reading order
 
