@@ -929,15 +929,15 @@ anchor; a link to the page top has no anchor).
 
 ## 时钟与角度 · 两根针的赛跑 / Clocks & Angles · A Race Between Two Hands → 对称与旋转 · 对折与转圈 / Symmetry & Rotation · Folding and Turning
 
-- `clock-angles` → `symmetry-rotation#step2`
+- `clock-angles#step5` → `symmetry-rotation#step2`
 
 ## 时钟与角度 · 两根针的赛跑 / Clocks & Angles · A Race Between Two Hands → 圆周角 · 为什么恰好是一半 / Inscribed Angles · Why Exactly Half
 
-- `clock-angles` → `circle-angles#step0`
+- `clock-angles#step5` → `circle-angles#step0`
 
 ## 时钟与角度 · 两根针的赛跑 / Clocks & Angles · A Race Between Two Hands → 一次函数 · 斜率是陡缓，截距是起点 / Linear Functions · Slope Is Steepness, Intercept Is the Start
 
-- `clock-angles` → `linear-functions#step0`
+- `clock-angles#step5` → `linear-functions#step0`
 
 ## 决策树与信息增益 / Decision Trees and Information Gain → 二分查找 · 每次砍掉一半 / Binary Search · Halve the Candidates
 

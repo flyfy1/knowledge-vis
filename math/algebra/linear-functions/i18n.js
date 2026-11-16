@@ -118,7 +118,7 @@ const STR = {
     "site.bl.7": "<a href=\"../patterns-sequences/\">找规律 · 不画也能报出第 100 个</a>：<a href=\"../patterns-sequences/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>",
     "site.bl.8": "<a href=\"../simultaneous-equations/\">二元一次方程组 · 两条直线的交点</a>：<a href=\"../simultaneous-equations/#step5\">该课第 5 步</a> → <a href=\"#step3\">本页第 3 步</a>",
     "site.bl.9": "<a href=\"../../arithmetic/chicken-rabbit/\">鸡兔同笼 · 先假设，差额会说话</a>：→ <a href=\"#step3\">本页第 3 步</a>",
-    "site.bl.10": "<a href=\"../../geometry/clock-angles/\">时钟与角度 · 两根针的赛跑</a>：→ <a href=\"#step0\">本页第 0 步</a>",
+    "site.bl.10": "<a href=\"../../geometry/clock-angles/\">时钟与角度 · 两根针的赛跑</a>：<a href=\"../../geometry/clock-angles/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>",
     "site.bl.11": "<a href=\"../../../physics/mechanics/velocity-vt/\">速度与 v-t 图 · 面积就是路</a>：→ <a href=\"#step0\">本页第 0 步</a>",
     "site.bl.12": "<a href=\"../../../physics/optics/pinhole-camera/\">小孔成像 · 一个孔的相机</a>：→ <a href=\"#step2\">本页第 2 步</a>"
   },
@@ -232,7 +232,7 @@ const STR = {
     "site.bl.7": "<a href=\"../patterns-sequences/\">Patterns · Name the 100th Without Drawing It</a>: <a href=\"../patterns-sequences/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>",
     "site.bl.8": "<a href=\"../simultaneous-equations/\">Simultaneous Equations · Where Two Lines Meet</a>: <a href=\"../simultaneous-equations/#step5\">its step 5</a> → <a href=\"#step3\">this page step 3</a>",
     "site.bl.9": "<a href=\"../../arithmetic/chicken-rabbit/\">Chickens & Rabbits · Assume First, Let the Gap Speak</a>: → <a href=\"#step3\">this page step 3</a>",
-    "site.bl.10": "<a href=\"../../geometry/clock-angles/\">Clocks & Angles · A Race Between Two Hands</a>: → <a href=\"#step0\">this page step 0</a>",
+    "site.bl.10": "<a href=\"../../geometry/clock-angles/\">Clocks & Angles · A Race Between Two Hands</a>: <a href=\"../../geometry/clock-angles/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>",
     "site.bl.11": "<a href=\"../../../physics/mechanics/velocity-vt/\">Speed and the v–t Graph · Area Is Distance</a>: → <a href=\"#step0\">this page step 0</a>",
     "site.bl.12": "<a href=\"../../../physics/optics/pinhole-camera/\">Pinhole Camera · A Camera With One Tiny Hole</a>: → <a href=\"#step2\">this page step 2</a>"
   }
