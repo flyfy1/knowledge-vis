@@ -646,11 +646,12 @@ anchor; a link to the page top has no anchor).
 
 ## 信号检测论 · 分得清，和愿意说“有”，是两回事 / Signal Detection Theory · Telling Apart vs. Willing to Say “Yes” → 二项分布到正态 · 钉板上长出的钟形 / Binomial to Normal · The Bell Curve Growing on a Pegboard
 
-- `signal-detection` → `binomial-normal#step3`: ? → binomial-normal
+- `signal-detection#step1` → `binomial-normal#step3`: ? → binomial-normal
 
 ## 信号检测论 · 分得清，和愿意说“有”，是两回事 / Signal Detection Theory · Telling Apart vs. Willing to Say “Yes” → 贝叶斯 · 先查底子，再看证据 / Bayes · Check the Base Rate Before the Evidence
 
-- `signal-detection` → `bayes-updating#step2`
+- `signal-detection#step5` → `bayes-updating#step2`
+- `signal-detection#step6` → `bayes-updating#step2`
 
 ## 无知之幕 · 不知道自己会是谁时，你选哪种社会 / The Veil of Ignorance · Choosing a Society Before You Know Who You Will Be → 风险池化与保险 · 一万人各摊一点 / Risk Pooling & Insurance · Ten Thousand People Each Chip In
 

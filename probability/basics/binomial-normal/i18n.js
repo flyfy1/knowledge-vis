@@ -89,7 +89,7 @@ const STR = {
     "site.bl.1": "<a href=\"../../../computing/systems/what-a-drive-is-made-of/\">硬盘里到底是什么</a>：<a href=\"../../../computing/systems/what-a-drive-is-made-of/#ch4\">该文第 4 章</a>；<a href=\"../../../computing/systems/what-a-drive-is-made-of/#ch10\">该文第 10 章</a>",
     "site.bl.2": "<a href=\"../../inference/hypothesis-testing/\">假设检验与 p 值 · 法庭模型判硬币冤不冤</a>：<a href=\"../../inference/hypothesis-testing/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>",
     "site.bl.3": "<a href=\"../../stochastic/markov-chains/\">马尔可夫链 · 下一步只看现在</a>：<a href=\"../../stochastic/markov-chains/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>",
-    "site.bl.4": "<a href=\"../../../psychology/cognition/signal-detection/\">信号检测论 · 分得清，和愿意说“有”，是两回事</a>：→ <a href=\"#step3\">本页第 3 步</a>",
+    "site.bl.4": "<a href=\"../../../psychology/cognition/signal-detection/\">信号检测论 · 分得清，和愿意说“有”，是两回事</a>：<a href=\"../../../psychology/cognition/signal-detection/#step1\">该课第 1 步</a> → <a href=\"#step3\">本页第 3 步</a>",
     "site.bl.5": "<a href=\"../../../society/civics/same-votes-different-winner/\">同一批选票，不同的赢家 · 投票规则与公平</a>：<a href=\"../../../society/civics/same-votes-different-winner/#ch9\">该文第 9 章</a> → <a href=\"#step5\">本页第 5 步</a>"
   },
   en: {
@@ -180,7 +180,7 @@ const STR = {
     "site.bl.1": "<a href=\"../../../computing/systems/what-a-drive-is-made-of/\">What a Drive Is Made Of</a>: <a href=\"../../../computing/systems/what-a-drive-is-made-of/#ch4\">its chapter 4</a>; <a href=\"../../../computing/systems/what-a-drive-is-made-of/#ch10\">its chapter 10</a>",
     "site.bl.2": "<a href=\"../../inference/hypothesis-testing/\">Hypothesis Testing & p-Values · A Courtroom for a Coin</a>: <a href=\"../../inference/hypothesis-testing/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>",
     "site.bl.3": "<a href=\"../../stochastic/markov-chains/\">Markov Chains · The Next Step Depends Only on Now</a>: <a href=\"../../stochastic/markov-chains/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>",
-    "site.bl.4": "<a href=\"../../../psychology/cognition/signal-detection/\">Signal Detection Theory · Telling Apart vs. Willing to Say “Yes”</a>: → <a href=\"#step3\">this page step 3</a>",
+    "site.bl.4": "<a href=\"../../../psychology/cognition/signal-detection/\">Signal Detection Theory · Telling Apart vs. Willing to Say “Yes”</a>: <a href=\"../../../psychology/cognition/signal-detection/#step1\">its step 1</a> → <a href=\"#step3\">this page step 3</a>",
     "site.bl.5": "<a href=\"../../../society/civics/same-votes-different-winner/\">Same Ballots, Different Winner · Voting Rules and Fairness</a>: <a href=\"../../../society/civics/same-votes-different-winner/#ch9\">its chapter 9</a> → <a href=\"#step5\">this page step 5</a>"
   }
 };
