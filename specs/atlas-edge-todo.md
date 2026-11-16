@@ -1261,11 +1261,11 @@ anchor; a link to the page top has no anchor).
 
 ## 欧姆定律 · 电流是调出来的 / Ohm’s Law · Current You Tune by Hand → 电化学 · 电子沿导线跑，还是被电推着跑 / Electrochemistry · Electrons Running Down the Wire, or Pushed Along
 
-- `ohms-law` → `electrochemistry#step1`
+- `ohms-law#step5` → `electrochemistry#step1`
 
 ## 欧姆定律 · 电流是调出来的 / Ohm’s Law · Current You Tune by Hand → 电场 · 看不见的力画成图 / Electric Fields · Drawing an Invisible Force
 
-- `ohms-law` → `electric-fields#step3`
+- `ohms-law#step5` → `electric-fields#step3`
 
 ## 泊松过程 · 随机到达的规律 / The Poisson Process · The Pattern in Random Arrivals → 概率分布 · 随机性也有形状 / Probability Distributions · Randomness Has a Shape
 

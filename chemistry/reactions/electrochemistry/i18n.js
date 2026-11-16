@@ -68,7 +68,7 @@ const STR={
     "site.crumb.cat": "化学",
     "site.crumb.sub": "化学反应",
     "site.bl.title": "被这些页面引用",
-    "site.bl.1": "<a href=\"../../../physics/circuits/ohms-law/\">欧姆定律 · 电流是调出来的</a>：→ <a href=\"#step1\">本页第 1 步</a>",
+    "site.bl.1": "<a href=\"../../../physics/circuits/ohms-law/\">欧姆定律 · 电流是调出来的</a>：<a href=\"../../../physics/circuits/ohms-law/#step5\">该课第 5 步</a> → <a href=\"#step1\">本页第 1 步</a>",
     "site.bl.2": "<a href=\"../../../tech/devices/inside-a-phone/\">一部手机里的十个道理</a>：→ <a href=\"#step1\">本页第 1 步</a>"
   },
   en: {
@@ -139,7 +139,7 @@ const STR={
     "site.crumb.cat": "Chemistry",
     "site.crumb.sub": "Reactions",
     "site.bl.title": "Linked from",
-    "site.bl.1": "<a href=\"../../../physics/circuits/ohms-law/\">Ohm’s Law · Current You Tune by Hand</a>: → <a href=\"#step1\">this page step 1</a>",
+    "site.bl.1": "<a href=\"../../../physics/circuits/ohms-law/\">Ohm’s Law · Current You Tune by Hand</a>: <a href=\"../../../physics/circuits/ohms-law/#step5\">its step 5</a> → <a href=\"#step1\">this page step 1</a>",
     "site.bl.2": "<a href=\"../../../tech/devices/inside-a-phone/\">Ten Ideas Inside One Phone</a>: → <a href=\"#step1\">this page step 1</a>"
   }
 };

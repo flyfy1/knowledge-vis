@@ -1,0 +1,46 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "ohms-law",
+ "refs": [
+  {
+   "from": "s0e",
+   "to": "simple-circuits",
+   "anchor": "step4"
+  }
+ ],
+ "backlinks": [
+  {
+   "from": "how-power-reaches-the-cpu",
+   "links": [
+    {
+     "from": "ch1",
+     "to": null
+    }
+   ]
+  },
+  {
+   "from": "series-parallel",
+   "links": [
+    {
+     "from": null,
+     "to": "step1"
+    },
+    {
+     "from": null,
+     "to": "step3"
+    }
+   ]
+  },
+  {
+   "from": "inside-a-phone",
+   "links": [
+    {
+     "from": null,
+     "to": "step4"
+    }
+   ]
+  }
+ ],
+ "related": [],
+ "bindings": []
+}
