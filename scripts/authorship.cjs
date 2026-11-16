@@ -6,6 +6,8 @@
 //   node scripts/authorship.cjs --summary      agents per top-level directory
 //   node scripts/authorship.cjs --write        write authorship/inventory.json
 //   node scripts/authorship.cjs --commits      list commit attributions (audit)
+//   node scripts/authorship.cjs --json <file>  the same records as JSON (tests)
+//   AUTHORSHIP_ROOT=<repo> node scripts/authorship.cjs …   run against another git repo
 //
 // History is the only source of truth. A commit is attributed from, in order:
 //   1. authorship/overrides.json "commits" entries (human-confirmed facts);
@@ -15,11 +17,16 @@
 //   4. otherwise "unattributed". Nothing is guessed.
 // A commit with "Authorship-Impact: mechanical" (pure moves, path rewrites,
 // regenerated output) is recorded but does not make its agent an author.
+// A "Derived-From: <old path> -> <new path>" line (one per pair, several
+// allowed) says the commit wrote <new path> from <old path> (e.g. the template
+// converter turning copy.zh.js into content.zh.md). The new file inherits the
+// old file's record as it stood before that commit, like a rename, but the old
+// file keeps its own record because it stays committed (AUTHORSHIP.md §4).
 const fs = require('node:fs');
 const path = require('node:path');
 const { execFileSync } = require('node:child_process');
 
-const root = path.resolve(__dirname, '..');
+const root = process.env.AUTHORSHIP_ROOT ? path.resolve(process.env.AUTHORSHIP_ROOT) : path.resolve(__dirname, '..');
 const agentsFile = path.join(root, 'authorship', 'agents.json');
 const overridesFile = path.join(root, 'authorship', 'overrides.json');
 const inventoryFile = path.join(root, 'authorship', 'inventory.json');
@@ -59,6 +66,30 @@ function attribute(hash, body) {
   return { agent: 'unattributed', model: 'unavailable', basis: 'none', impact };
 }
 
+// Derived-From: <old> -> <new>, one pair per line; paths are repo-relative.
+const normPath = p => p.trim().replace(/^\.\//, '').replace(/^\/+/, '');
+function derivedPairs(body) {
+  const out = [];
+  for (const m of body.matchAll(/^Derived-From:\s*(.+?)\s*->\s*(.+?)\s*$/gim)) out.push([normPath(m[1]), normPath(m[2])]);
+  return out;
+}
+const cloneRec = r => JSON.parse(JSON.stringify(r));
+// Several sources for one new file: counts add up, the earliest creation wins.
+function mergeRecs(recs) {
+  const out = cloneRec(recs[0]);
+  for (const r of recs.slice(1)) {
+    for (const k of ['agents', 'mechanical']) for (const [a, b] of Object.entries(r[k])) {
+      const t = out[k][a] = out[k][a] || { commits: 0, linesAdded: 0 };
+      t.commits += b.commits; t.linesAdded += b.linesAdded;
+    }
+    if (r.created.date < out.created.date) out.created = cloneRec(r.created);
+    if (r.last && (!out.last || r.last.date > out.last.date)) out.last = cloneRec(r.last);
+    if (r.renamedFrom) out.renamedFrom = [...(out.renamedFrom || []), ...r.renamedFrom];
+    if (r.derivedFrom) out.derivedFrom = [...(out.derivedFrom || []), ...r.derivedFrom];
+  }
+  return out;
+}
+
 // One pass over history, oldest first, following renames.
 function build() {
   const SEP = '\x1e', END = '\x1f';
@@ -79,6 +110,14 @@ function build() {
     if (isMerge && !/^Authorship-Impact:/im.test(body)) a.impact = 'mechanical';
     commits.push({ hash: hash.slice(0, 8), date, subject: body.split('\n')[0], ...a });
     const tok = stat.replace(/^\n/, '').split('\0');
+    // Derived-From: snapshot the sources before this commit's own changes touch them.
+    const derived = new Map(); // new path -> { recs, from }
+    for (const [from, to] of derivedPairs(body)) {
+      const src = files.get(from);
+      if (!src) { (a.derivedMissing = a.derivedMissing || []).push(from); continue; }
+      const d = derived.get(to) || { recs: [], from: [] };
+      d.recs.push(cloneRec(src)); d.from.push(from); derived.set(to, d);
+    }
     for (let i = 0; i < tok.length; i++) {
       const t = tok[i].replace(/^\n/, '');
       if (!t) continue;
@@ -89,6 +128,11 @@ function build() {
       if (file === '') { from = tok[++i]; file = tok[++i]; }
       let rec = from ? files.get(from) : files.get(file);
       if (from) files.delete(from);
+      if (!rec && derived.has(file)) {
+        const d = derived.get(file); derived.delete(file);
+        rec = mergeRecs(d.recs);
+        rec.derivedFrom = [...(rec.derivedFrom || []), ...d.from.map(f => ({ path: f, commit: hash.slice(0, 8), date }))];
+      }
       if (!rec) {
         rec = { created: { agent: a.agent, model: a.model, commit: hash.slice(0, 8), date }, agents: {}, mechanical: {}, last: null };
         if (a.impact === 'mechanical') rec.created.mechanical = true;
@@ -127,6 +171,7 @@ function build() {
       ...(Object.keys(rec.mechanical).length ? { mechanical: rec.mechanical } : {}),
       ...(rec.last ? { lastAuthored: rec.last } : {}),
       ...(rec.renamedFrom ? { renamedFrom: rec.renamedFrom } : {}),
+      ...(rec.derivedFrom ? { derivedFrom: rec.derivedFrom } : {}),
       ...(fo ? { override: fo } : {}),
       ...(rec.pendingChange ? { pendingChange: true } : {}),
     };
@@ -135,6 +180,13 @@ function build() {
 }
 
 const args = process.argv.slice(2);
+if (args.includes('--json')) {
+  const { out } = build();
+  const pick = {};
+  for (const f of args.filter(x => !x.startsWith('--'))) pick[f] = out[f] || null;
+  console.log(JSON.stringify(pick, null, 1));
+  process.exit(0);
+}
 const { out, commits } = build();
 if (args.includes('--commits')) {
   for (const c of commits) console.log([c.hash, c.date, c.agent, c.model, c.basis, c.impact, c.subject.slice(0, 70)].join('\t'));
@@ -164,6 +216,7 @@ if (args.includes('--commits')) {
     if (r.created) console.log(`  created: ${r.created.agent} (${r.created.model}) ${r.created.commit} ${r.created.date}`);
     for (const [a, s] of Object.entries(r.agents || {})) console.log(`  ${a}: ${s.commits} commits, +${s.linesAdded} lines`);
     for (const [a, s] of Object.entries(r.mechanical || {})) console.log(`  ${a} (mechanical only): ${s.commits} commits`);
+    for (const d of r.derivedFrom || []) console.log(`  derived from: ${d.path} (${d.commit} ${d.date})`);
   }
 } else {
   console.log('usage: node scripts/authorship.cjs <file>... | --summary | --write | --commits');

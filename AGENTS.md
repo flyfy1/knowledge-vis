@@ -46,6 +46,7 @@
 node tests/page-provenance-core.cjs
 node <页面目录>/tests/*.cjs                       # 各页自带测试
 node scripts/authorship.cjs <文件>                # 查归属
+node tests/authorship-derived-from.cjs            # Derived-From trailer（改了 scripts/authorship.cjs 时跑）
 python3 -m http.server 18871 --bind 127.0.0.1     # 浏览器测试用的本地服务器，用完要停
 PROVENANCE_BASE_URL=http://127.0.0.1:18871 node tests/page-provenance-browser.cjs
 # 知识地图与搜索（改了 atlas/graph、atlas/、search/、首页搜索时跑）

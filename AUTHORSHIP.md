@@ -56,6 +56,7 @@ Authorship-Impact: authored | mechanical
 | `mechanical` | 只做过机械变更的 Agent（不算作者） |
 | `lastAuthored` | 最后一次「写作」性质的修改 |
 | `renamedFrom` | 历史上用过的路径（搬目录不会丢失作者） |
+| `derivedFrom` | 由哪个（哪些）旧文件派生而来，以及派生发生在哪个提交（见下方「派生」） |
 
 一个提交按以下顺序归属，先命中的为准：
 
@@ -63,6 +64,18 @@ Authorship-Impact: authored | mechanical
 2. 正文或 trailer 中的 `Built-By:` 行，用注册表匹配；
 3. 指向已登记 Agent 的 `Co-Authored-By:` 行；
 4. 以上都没有，记为 `unattributed`。
+
+**派生（`Derived-From:`）。** 内容换了文件形式、旧文件仍然留在仓库里时（例如站点模板的转换器把 `copy.zh.js` 写成 `content.zh.md`，`copy.zh.js` 此后作为构建产物继续提交），git 认不出这是重命名：每一行的写法都变了，新文件看起来像是转换提交从零加进来的，按上面的规则会记成 `unattributed`。这种提交要在说明末尾为每一对文件写一行：
+
+```
+Derived-From: <旧路径> -> <新路径>
+```
+
+- 一个提交可以写多行；同一个新文件可以有多个来源（例如 `figures/ch2-model.html` 来自 `index.html`）。路径都相对仓库根目录。
+- `scripts/authorship.cjs` 把它当作**继承**：新文件从旧文件在该提交之前的完整记录开始（`created`、各 Agent 的提交数与行数、`lastAuthored`），记在 `derivedFrom` 里，与 `renamedFrom` 分开；多个来源时计数相加，`created` 取最早的一个。旧文件**保留**自己的记录，不像重命名那样被移走。
+- 派生提交本身照常归属：转换器的提交写 `Authorship-Impact: mechanical`，只进新文件的 `mechanical`，不会让执行者成为作者。此后对新文件的写作提交照常累加。
+- 只在新文件于该提交首次出现时生效；新文件已经存在、或旧路径在历史里找不到时，这一行不起作用（不猜）。
+- 只能用于内容确实由旧文件机械转写而来的情况，转换要有逐字节或逐键的等价检查（见 specs/site-template.md）。不能用它把一个 Agent 的作品挂到另一个文件上。
 
 ## 5. 未归属文件与更正
 
@@ -111,3 +124,4 @@ node scripts/authorship.cjs --write                                 # 生成完�
 | --- | --- | --- | --- |
 | 2026-11-08 | 初版 | Claude Code（claude-opus-5-5） | Yangyu（口头要求起草） |
 | 2026-11-13 | §2 注册 `antigravity` Agent | Antigravity | Yangyu（对话同意） |
+| 2026-11-16 | §4 增加派生规则：`Derived-From: <旧路径> -> <新路径>` trailer，`scripts/authorship.cjs` 据此让新文件继承旧文件的归属，旧文件保留自己的记录（站点模板提案 specs/proposals/site-template.md 的决定 D3） | Claude Code（claude-opus-5-5） | Yangyu（对话同意，2026-11-16 批准站点模板提案并按推荐取 D1–D10，原话：「OK，就按照你的方案来吧。补设计图的话，你可以先通过 SVG 生成的方式去；如果需要画图的话，你可以通过我的 LLM proxy 去调用其他的 API 做图片生成」） |
