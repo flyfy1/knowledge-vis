@@ -489,7 +489,7 @@ anchor; a link to the page top has no anchor).
 
 ## 排序与大 O · 增长的形状 / Sorting & Big O · The Shape of Growth → 梯度下降 · 摸黑下山 / Gradient Descent · Feeling Your Way Downhill
 
-- `sorting` → `gradient-descent#step2`
+- `sorting#step6` → `gradient-descent#step2`
 
 ## 分数 · 把整体切开来数 / Fractions · Cutting the Whole to Count → 蒙特卡洛 · 撒豆子算 π / Monte Carlo · Counting π with Scattered Beans
 

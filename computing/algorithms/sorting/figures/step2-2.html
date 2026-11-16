@@ -1,0 +1,51 @@
+<div id="s2-merge-panel">
+      <p class="formula" data-i18n="s2formulaM"></p>
+      <div class="stage"><canvas id="s2split-canvas" height="118"></canvas></div>
+      <p class="hint" data-i18n-html="s2splitCap"></p>
+      <div class="stage"><canvas id="s2m-canvas" height="340"></canvas></div>
+      <div class="btn-row">
+        <button class="btn" id="s2m-step" data-i18n="stepCmp"></button>
+        <button class="btn" id="s2m-play" data-i18n="play"></button>
+        <button class="btn" id="s2m-reset" data-i18n="reset"></button>
+        <button class="btn" id="s2m-seed" data-i18n="newSeed"></button>
+      </div>
+      <p class="readout" id="s2m-readout"></p>
+    </div>
+
+    <div id="s2-quick-panel" style="display:none">
+      <p class="formula" data-i18n="s2formulaQ"></p>
+      <div class="btn-row">
+        <span style="color:var(--muted);font-size:14.5px;align-self:center" data-i18n="s2pivotLab"></span>
+        <div class="seg-toggle" id="s2-pivot">
+          <button type="button" data-pivot="last" class="active" data-i18n="s2lastP"></button>
+          <button type="button" data-pivot="random" data-i18n="s2randP"></button>
+        </div>
+        <div class="seg-toggle" id="s2-preset">
+          <button type="button" data-preset="random" class="active" data-i18n="presetRandom"></button>
+          <button type="button" data-preset="sorted" data-i18n="presetSorted"></button>
+        </div>
+      </div>
+      <div class="stage"><canvas id="s2q-canvas" height="340"></canvas></div>
+      <div class="btn-row">
+        <button class="btn" id="s2q-step" data-i18n="stepCmp"></button>
+        <button class="btn" id="s2q-play" data-i18n="play"></button>
+        <button class="btn" id="s2q-reset" data-i18n="reset"></button>
+        <button class="btn" id="s2q-seed" data-i18n="newSeed"></button>
+      </div>
+      <p class="readout" id="s2q-readout"></p>
+      <p class="readout" id="s2q-note" style="display:none"></p>
+    </div>
+
+    <div class="tbl-wrap">
+      <table class="cmp-tbl">
+        <thead><tr>
+          <th data-i18n="tblAlgo"></th><th data-i18n="tblBest"></th>
+          <th data-i18n="tblAvg"></th><th data-i18n="tblWorst"></th>
+          <th data-i18n="tblNote"></th>
+        </tr></thead>
+        <tbody>
+          <tr><td data-i18n="algMerge"></td><td>O(n log n)</td><td>O(n log n)</td><td>O(n log n)</td><td data-i18n="tblMerNote"></td></tr>
+          <tr><td data-i18n="algQuick"></td><td>O(n log n)</td><td>O(n log n)</td><td>O(n²)</td><td data-i18n="tblQuiNote"></td></tr>
+        </tbody>
+      </table>
+    </div>

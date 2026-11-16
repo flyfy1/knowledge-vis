@@ -1,0 +1,36 @@
+<div class="btn-row" role="group" aria-label="algorithm">
+      <div class="seg-toggle" id="s1-algo">
+        <button type="button" data-algo="bubble" class="active" data-i18n="algBubble"></button>
+        <button type="button" data-algo="selection" data-i18n="algSelection"></button>
+      </div>
+      <div class="seg-toggle" id="s1-preset">
+        <button type="button" data-preset="random" class="active" data-i18n="presetRandom"></button>
+        <button type="button" data-preset="nearly" data-i18n="presetNearly"></button>
+        <button type="button" data-preset="sorted" data-i18n="presetSorted"></button>
+        <button type="button" data-preset="reversed" data-i18n="presetReversed"></button>
+      </div>
+    </div>
+    <div class="stage">
+      <canvas id="s1-canvas" height="340"></canvas>
+    </div>
+    <div class="btn-row">
+      <button class="btn" id="s1-step" data-i18n="stepCmp"></button>
+      <button class="btn" id="s1-play" data-i18n="play"></button>
+      <button class="btn" id="s1-reset" data-i18n="reset"></button>
+      <button class="btn" id="s1-seed" data-i18n="newSeed"></button>
+    </div>
+    <p class="readout" id="s1-readout"></p>
+    <p class="readout" id="s1-note" style="display:none"></p>
+    <div class="tbl-wrap">
+      <table class="cmp-tbl">
+        <thead><tr>
+          <th data-i18n="tblAlgo"></th><th data-i18n="tblBest"></th>
+          <th data-i18n="tblAvg"></th><th data-i18n="tblWorst"></th>
+          <th data-i18n="tblNote"></th>
+        </tr></thead>
+        <tbody>
+          <tr><td data-i18n="algBubble"></td><td>O(n)</td><td>O(n²)</td><td>O(n²)</td><td data-i18n="tblBubNote"></td></tr>
+          <tr><td data-i18n="algSelection"></td><td>O(n²)</td><td>O(n²)</td><td>O(n²)</td><td data-i18n="tblSelNote"></td></tr>
+        </tbody>
+      </table>
+    </div>
