@@ -28,3 +28,11 @@ Every state has a text readout in addition to color or motion. Language changes 
 ## Deferred / excluded
 
 No audio claims, dialect coverage, acoustic waveform, external assets, network fetch, learner telemetry, or production registration. `pages.config.js` is updated centrally by the integrating task.
+
+## Fix 2026-11-16 — step-3 button read "next4"
+
+- The step-3 "continue" button (`<a href="#step4" data-i18n="next4">`) named a key neither table defined, and `t()`
+  returns the key itself, so with JavaScript it read "next4" in both languages.
+- Fix: `next4` in both tables (zh 继续：自测 ↓, the button's hand-written text; en "Continue: take the quiz ↓").
+- Prevention: the site-template lesson converter refuses a page whose markup names a key its table lacks
+  (specs/reviews/lesson-string-table-fixes-20261116.md).
