@@ -777,7 +777,7 @@ anchor; a link to the page top has no anchor).
 
 ## 同分异构体 · 同一组原子，不同的拼法 / Isomers · The Same Atoms, Put Together Differently → 粒子与物态 · 热闹程度即温度 / Particles & States · Temperature Is How Wildly They Move
 
-- `isomers` → `particles-states#step4`
+- `isomers#step5` → `particles-states#step4`
 
 ## 经纬网 / Latitude & Longitude → 昼夜交替 · 地球自己在转 / Day and Night · The Earth Itself Is Turning
 
