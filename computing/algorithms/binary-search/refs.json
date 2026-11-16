@@ -1,0 +1,45 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "binary-search",
+ "refs": [],
+ "backlinks": [
+  {
+   "from": "recursion-divide",
+   "links": [
+    {
+     "from": null,
+     "to": "step1"
+    }
+   ]
+  },
+  {
+   "from": "decision-trees",
+   "links": [
+    {
+     "from": null,
+     "to": "step1"
+    }
+   ]
+  },
+  {
+   "from": "switches-that-compute",
+   "links": [
+    {
+     "from": "ch3",
+     "to": null
+    }
+   ]
+  },
+  {
+   "from": "newton-method",
+   "links": [
+    {
+     "from": null,
+     "to": "step1"
+    }
+   ]
+  }
+ ],
+ "related": [],
+ "bindings": []
+}
