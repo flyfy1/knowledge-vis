@@ -107,7 +107,7 @@ const STR = {
     "site.bl.10": "<a href=\"../../../physics/matter/density/\">密度</a>：<a href=\"../../../physics/matter/density/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>、<a href=\"#step2\">本页第 2 步</a>",
     "site.bl.11": "<a href=\"../../../physics/matter/pressure/\">压强</a>：<a href=\"../../../physics/matter/pressure/#step5\">该课第 5 步</a> → <a href=\"#step1\">本页第 1 步</a>",
     "site.bl.12": "<a href=\"../../../physics/thermal/frozen-bubble/\">冰冻肥皂泡 · 水膜里的结晶</a>：<a href=\"../../../physics/thermal/frozen-bubble/#step2\">该课第 2 步</a> → <a href=\"#step2\">本页第 2 步</a>",
-    "site.bl.13": "<a href=\"../../../physics/thermal/kinetic-theory/\">气体压强的微观图景 · 撞墙的账本</a>：→ <a href=\"#step1\">本页第 1 步</a>"
+    "site.bl.13": "<a href=\"../../../physics/thermal/kinetic-theory/\">气体压强的微观图景 · 撞墙的账本</a>：<a href=\"../../../physics/thermal/kinetic-theory/#step5\">该课第 5 步</a> → <a href=\"#step1\">本页第 1 步</a>"
   },
   en: {
     docTitle: "Particles & States of Matter · One Interaction per Step",
@@ -215,7 +215,7 @@ const STR = {
     "site.bl.10": "<a href=\"../../../physics/matter/density/\">Density</a>: <a href=\"../../../physics/matter/density/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>, <a href=\"#step2\">this page step 2</a>",
     "site.bl.11": "<a href=\"../../../physics/matter/pressure/\">Pressure</a>: <a href=\"../../../physics/matter/pressure/#step5\">its step 5</a> → <a href=\"#step1\">this page step 1</a>",
     "site.bl.12": "<a href=\"../../../physics/thermal/frozen-bubble/\">Frozen Soap Bubbles · Ice in a Thin Film</a>: <a href=\"../../../physics/thermal/frozen-bubble/#step2\">its step 2</a> → <a href=\"#step2\">this page step 2</a>",
-    "site.bl.13": "<a href=\"../../../physics/thermal/kinetic-theory/\">The Microscopic Picture of Gas Pressure · A Ledger of Wall Hits</a>: → <a href=\"#step1\">this page step 1</a>"
+    "site.bl.13": "<a href=\"../../../physics/thermal/kinetic-theory/\">The Microscopic Picture of Gas Pressure · A Ledger of Wall Hits</a>: <a href=\"../../../physics/thermal/kinetic-theory/#step5\">its step 5</a> → <a href=\"#step1\">this page step 1</a>"
   }
 };
 let _lang = null;
