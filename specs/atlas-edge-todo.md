@@ -1312,15 +1312,15 @@ anchor; a link to the page top has no anchor).
 
 ## 狭义相对论 · 同时性的线倾斜了 / Special Relativity · The Lines of “Now” Tilt → 多普勒效应 · 驶近变尖，驶远变沉 / The Doppler Effect · Higher as It Approaches, Lower as It Leaves
 
-- `relativity` → `doppler-effect#step0`
+- `relativity#step5` → `doppler-effect#step0`
 
 ## 狭义相对论 · 同时性的线倾斜了 / Special Relativity · The Lines of “Now” Tilt → 光电效应 · 光是一份一份的 / The Photoelectric Effect · Light Comes in Packets
 
-- `relativity` → `photoelectric-effect#step0`
+- `relativity#step5` → `photoelectric-effect#step0`
 
 ## 狭义相对论 · 同时性的线倾斜了 / Special Relativity · The Lines of “Now” Tilt → 牛顿运动定律 · F = ma 是调出来的 / Newton’s Laws of Motion · F = ma, Tuned by Hand
 
-- `relativity` → `newton-laws#step0`
+- `relativity#step5` → `newton-laws#step0`
 
 ## 风险池化与保险 · 一万人各摊一点 / Risk Pooling & Insurance · Ten Thousand People Each Chip In → 概率分布 · 随机性也有形状 / Probability Distributions · Randomness Has a Shape
 

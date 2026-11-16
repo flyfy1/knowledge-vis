@@ -99,7 +99,7 @@ const STR = {
     "site.bl.title": "被这些页面引用",
     "site.bl.1": "<a href=\"../../../math/linear-algebra/vectors/\">向量 · 有方向的量</a>：<a href=\"../../../math/linear-algebra/vectors/#step1\">该课第 1 步</a> → <a href=\"#step2\">本页第 2 步</a>；<a href=\"../../../math/linear-algebra/vectors/#step5\">该课第 5 步</a> → <a href=\"#step2\">本页第 2 步</a>",
     "site.bl.2": "<a href=\"../projectile-circular/\">抛体与圆周 · 一直在掉，但总掉不到地上</a>：<a href=\"../projectile-circular/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>",
-    "site.bl.3": "<a href=\"../../modern/relativity/\">狭义相对论 · 同时性的线倾斜了</a>：→ <a href=\"#step0\">本页第 0 步</a>",
+    "site.bl.3": "<a href=\"../../modern/relativity/\">狭义相对论 · 同时性的线倾斜了</a>：<a href=\"../../modern/relativity/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>",
     "site.bl.4": "<a href=\"../../../tech/devices/inside-a-phone/\">一部手机里的十个道理</a>：→ <a href=\"#step5\">本页第 5 步</a>"
   },
   en: {
@@ -200,7 +200,7 @@ const STR = {
     "site.bl.title": "Linked from",
     "site.bl.1": "<a href=\"../../../math/linear-algebra/vectors/\">Vectors · Quantities With a Direction</a>: <a href=\"../../../math/linear-algebra/vectors/#step1\">its step 1</a> → <a href=\"#step2\">this page step 2</a>; <a href=\"../../../math/linear-algebra/vectors/#step5\">its step 5</a> → <a href=\"#step2\">this page step 2</a>",
     "site.bl.2": "<a href=\"../projectile-circular/\">Projectiles & Circular Motion · Always Falling, Never Landing</a>: <a href=\"../projectile-circular/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>",
-    "site.bl.3": "<a href=\"../../modern/relativity/\">Special Relativity · The Lines of “Now” Tilt</a>: → <a href=\"#step0\">this page step 0</a>",
+    "site.bl.3": "<a href=\"../../modern/relativity/\">Special Relativity · The Lines of “Now” Tilt</a>: <a href=\"../../modern/relativity/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>",
     "site.bl.4": "<a href=\"../../../tech/devices/inside-a-phone/\">Ten Ideas Inside One Phone</a>: → <a href=\"#step5\">this page step 5</a>"
   }
 };

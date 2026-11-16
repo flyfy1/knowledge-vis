@@ -68,7 +68,7 @@ const STR={
     "site.bl.1": "<a href=\"../blackbody-radiation/\">黑体辐射 · 热的物体为什么发光</a>：<a href=\"../blackbody-radiation/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>",
     "site.bl.2": "<a href=\"../double-slit/\">双缝实验 · 一颗一颗的粒子，也走出干涉条纹</a>：<a href=\"../double-slit/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>",
     "site.bl.3": "<a href=\"../quantum-tunneling/\">量子隧穿 · 穿墙的是概率，不是子弹</a>：<a href=\"../quantum-tunneling/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>",
-    "site.bl.4": "<a href=\"../relativity/\">狭义相对论 · 同时性的线倾斜了</a>：→ <a href=\"#step0\">本页第 0 步</a>"
+    "site.bl.4": "<a href=\"../relativity/\">狭义相对论 · 同时性的线倾斜了</a>：<a href=\"../relativity/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>"
   },
   en: {
     pageTitle: "The Photoelectric Effect · Light Comes in Packets",
@@ -138,7 +138,7 @@ const STR={
     "site.bl.1": "<a href=\"../blackbody-radiation/\">Blackbody Radiation · Why Hot Things Glow</a>: <a href=\"../blackbody-radiation/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>",
     "site.bl.2": "<a href=\"../double-slit/\">The Double-Slit Experiment · Single Particles Still Build Fringes</a>: <a href=\"../double-slit/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>",
     "site.bl.3": "<a href=\"../quantum-tunneling/\">Quantum Tunnelling · What Passes Through the Wall Is a Probability</a>: <a href=\"../quantum-tunneling/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>",
-    "site.bl.4": "<a href=\"../relativity/\">Special Relativity · The Lines of “Now” Tilt</a>: → <a href=\"#step0\">this page step 0</a>"
+    "site.bl.4": "<a href=\"../relativity/\">Special Relativity · The Lines of “Now” Tilt</a>: <a href=\"../relativity/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>"
   }
 };
 
