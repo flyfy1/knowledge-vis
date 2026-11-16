@@ -1,0 +1,14 @@
+<figure class="lab">
+    <h3 data-i18n="ch4.model.title"></h3>
+    <p class="how" data-i18n-html="ch4.model.how"></p>
+    <canvas class="cv" id="rpCv" role="img" data-i18n-aria="ch4.model.aria"></canvas>
+    <div class="ctl"><div class="seg" role="radiogroup" data-i18n-aria="ch4.ctl.trace"><span class="lbl" data-i18n="ch4.ctl.trace"></span><label><input type="radio" name="rpT" value="loop" checked><span data-i18n="ch4.tr.loop"></span></label><label><input type="radio" name="rpT" value="scan"><span data-i18n="ch4.tr.scan"></span></label><label><input type="radio" name="rpT" value="prog"><span data-i18n="ch4.tr.prog"></span></label></div></div>
+    <div class="ctl"><label class="rng"><span data-i18n="ch4.ctl.loop"></span><input type="range" id="rpL" min="0.5" max="3" step="0.05" value="1.25"><output id="rpLo"></output></label></div>
+    <div class="read">
+      <div><b class="" id="rpLru"></b><span data-i18n-html="ch4.read.lru"></span></div>
+      <div><b class="c" id="rpRnd"></b><span data-i18n-html="ch4.read.random"></span></div>
+      <div><b class="g" id="rpRr"></b><span data-i18n-html="ch4.read.brrip"></span></div>
+      <div><b class="n" id="rpOpt"></b><span data-i18n-html="ch4.read.opt"></span></div>
+    </div>
+    <p class="say" id="rpSay" aria-live="polite"></p>
+  </figure>

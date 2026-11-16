@@ -1,0 +1,15 @@
+<figure class="lab">
+    <h3 data-i18n="ch5.model.title"></h3>
+    <p class="how" data-i18n-html="ch5.model.how"></p>
+    <canvas class="cv xtall" id="wrCv" role="img" data-i18n-aria="ch5.model.aria"></canvas>
+    <div class="legend"><span><i style="background:var(--cyan)"></i><span data-i18n="ch5.leg.read"></span></span><span><i style="background:var(--red)"></i><span data-i18n="ch5.leg.write"></span></span></div>
+    <div class="ctl"><div class="seg wrapmany" role="radiogroup" data-i18n-aria="ch5.ctl.pol"><span class="lbl" data-i18n="ch5.ctl.pol"></span><label><input type="radio" name="wrP" value="wt-na"><span data-i18n="ch5.pol.wt-na"></span></label><label><input type="radio" name="wrP" value="wt-a"><span data-i18n="ch5.pol.wt-a"></span></label><label><input type="radio" name="wrP" value="wb-na"><span data-i18n="ch5.pol.wb-na"></span></label><label><input type="radio" name="wrP" value="wb-a" checked><span data-i18n="ch5.pol.wb-a"></span></label></div></div>
+    <div class="ctl"><div class="seg" role="radiogroup" data-i18n-aria="ch5.ctl.depth"><span class="lbl" data-i18n="ch5.ctl.depth"></span><label><input type="radio" name="wrD" value="0"><span>0</span></label><label><input type="radio" name="wrD" value="1"><span>1</span></label><label><input type="radio" name="wrD" value="2"><span>2</span></label><label><input type="radio" name="wrD" value="4" checked><span>4</span></label><label><input type="radio" name="wrD" value="8"><span>8</span></label><label><input type="radio" name="wrD" value="16"><span>16</span></label></div></div>
+    <div class="read">
+      <div><b class="c" id="wrR"></b><span data-i18n-html="ch5.read.read"></span></div>
+      <div><b class="r" id="wrW"></b><span data-i18n-html="ch5.read.write"></span></div>
+      <div><b class="" id="wrO"></b><span data-i18n-html="ch5.read.ops"></span></div>
+      <div><b class="g" id="wrS"></b><span data-i18n-html="ch5.read.wait"></span></div>
+    </div>
+    <p class="say" id="wrSay" aria-live="polite"></p>
+  </figure>

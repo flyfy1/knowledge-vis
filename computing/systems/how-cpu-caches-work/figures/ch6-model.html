@@ -1,0 +1,16 @@
+<figure class="lab">
+    <h3 data-i18n="ch6.model.title"></h3>
+    <p class="how" data-i18n-html="ch6.model.how"></p>
+    <canvas class="cv tall" id="hiCv" role="img" data-i18n-aria="ch6.model.aria"></canvas>
+    <div class="legend"><span><i style="background:var(--red)"></i><span data-i18n="ch6.k.incl"></span></span><span><i style="background:var(--cyan)"></i><span data-i18n="ch6.k.nincl"></span></span><span><i style="background:var(--gold)"></i><span data-i18n="ch6.k.excl"></span></span></div>
+    <div class="ctl"><div class="seg" role="radiogroup" data-i18n-aria="ch6.ctl.kind"><span class="lbl" data-i18n="ch6.ctl.kind"></span><label><input type="radio" name="hiK" value="incl"><span data-i18n="ch6.k.incl"></span></label><label><input type="radio" name="hiK" value="nincl"><span data-i18n="ch6.k.nincl"></span></label><label><input type="radio" name="hiK" value="excl" checked><span data-i18n="ch6.k.excl"></span></label></div></div>
+    <div class="ctl"><div class="seg" role="radiogroup" data-i18n-aria="ch6.ctl.l3"><span class="lbl" data-i18n="ch6.ctl.l3"></span><label><input type="radio" name="hiL" value="dense" checked><span data-i18n="ch6.l3.dense"></span></label><label><input type="radio" name="hiL" value="desk"><span data-i18n="ch6.l3.desk"></span></label></div></div>
+    <div class="ctl"><label class="rng"><span data-i18n="ch6.ctl.w"></span><input type="range" id="hiW" min="0" max="9" step="1" value="4"><output id="hiWo"></output></label></div>
+    <div class="read">
+      <div><b class="g" id="hiH"></b><span data-i18n-html="ch6.read.hit"></span></div>
+      <div><b class="c" id="hiH2"></b><span data-i18n-html="ch6.read.l2"></span></div>
+      <div><b class="" id="hiCap"></b><span data-i18n-html="ch6.read.cap"></span></div>
+      <div><b class="r" id="hiB"></b><span data-i18n-html="ch6.read.back"></span></div>
+    </div>
+    <p class="say" id="hiSay" aria-live="polite"></p>
+  </figure>

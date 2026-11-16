@@ -1,0 +1,168 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "how-cpu-caches-work",
+ "refs": [],
+ "backlinks": [
+  {
+   "from": "coherent-interconnects",
+   "links": [
+    {
+     "from": "ch2",
+     "to": "ch9"
+    }
+   ]
+  },
+  {
+   "from": "how-a-cpu-guesses-ahead",
+   "links": [
+    {
+     "from": "ch9",
+     "to": "ch8"
+    },
+    {
+     "from": "ch12",
+     "to": "ch10"
+    },
+    {
+     "from": "ch12",
+     "to": null
+    }
+   ]
+  },
+  {
+   "from": "how-a-cpu-runs-a-program",
+   "links": [
+    {
+     "from": "ch7",
+     "to": null
+    },
+    {
+     "from": "ch12",
+     "to": null
+    }
+   ]
+  },
+  {
+   "from": "how-a-gpu-computes",
+   "links": [
+    {
+     "from": "ch1",
+     "to": "ch1"
+    },
+    {
+     "from": "ch12",
+     "to": null
+    }
+   ]
+  },
+  {
+   "from": "how-a-nic-moves-packets",
+   "links": [
+    {
+     "from": "ch2",
+     "to": "ch1"
+    },
+    {
+     "from": "ch8",
+     "to": "ch3"
+    },
+    {
+     "from": "ch14",
+     "to": null
+    }
+   ]
+  },
+  {
+   "from": "how-cores-share-memory",
+   "links": [
+    {
+     "from": "ch1",
+     "to": "ch5"
+    },
+    {
+     "from": "ch2",
+     "to": "ch9"
+    },
+    {
+     "from": "ch7",
+     "to": "ch9"
+    },
+    {
+     "from": "ch12",
+     "to": "ch9"
+    },
+    {
+     "from": "ch12",
+     "to": null
+    }
+   ]
+  },
+  {
+   "from": "how-memory-talks",
+   "links": [
+    {
+     "from": "ch3",
+     "to": "ch1"
+    },
+    {
+     "from": "ch12",
+     "to": null
+    }
+   ]
+  },
+  {
+   "from": "how-power-reaches-the-cpu",
+   "links": [
+    {
+     "from": "ch2",
+     "to": null
+    }
+   ]
+  },
+  {
+   "from": "how-the-os-talks-to-hardware",
+   "links": [
+    {
+     "from": "ch4",
+     "to": null
+    }
+   ]
+  },
+  {
+   "from": "how-virtual-memory-works",
+   "links": [
+    {
+     "from": "ch4",
+     "to": "ch7"
+    },
+    {
+     "from": "ch5",
+     "to": "ch10"
+    },
+    {
+     "from": "ch6",
+     "to": "ch10"
+    },
+    {
+     "from": "ch8",
+     "to": "ch4"
+    },
+    {
+     "from": "ch13",
+     "to": null
+    }
+   ]
+  },
+  {
+   "from": "why-compute-waits-for-memory",
+   "links": [
+    {
+     "from": "ch2",
+     "to": null
+    }
+   ]
+  }
+ ],
+ "related": [],
+ "bindings": []
+}

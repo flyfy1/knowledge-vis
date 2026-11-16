@@ -1,0 +1,14 @@
+<figure class="lab">
+    <h3 data-i18n="ch10.model.title"></h3>
+    <p class="how" data-i18n-html="ch10.model.how"></p>
+    <canvas class="cv tall" id="stCv" role="img" data-i18n-aria="ch10.model.aria"></canvas>
+    <div class="legend"><span><i style="background:var(--gold)"></i><span data-i18n="ch10.leg.model"></span></span><span><i class="dash" style="color:var(--cyan)"></i><span data-i18n="ch10.leg.doc"></span></span></div>
+    <div class="ctl"><div class="seg" role="radiogroup" data-i18n-aria="ch10.ctl.page"><span class="lbl" data-i18n="ch10.ctl.page"></span><label><input type="radio" name="stP" value="4096" checked><span data-i18n="ch10.p.4k"></span></label><label><input type="radio" name="stP" value="2097152"><span data-i18n="ch10.p.2m"></span></label></div></div>
+    <div class="ctl"><label class="rng"><span data-i18n="ch10.ctl.w"></span><input type="range" id="stW" min="12" max="27" step="0.5" value="20"><output id="stWo"></output></label></div>
+    <div class="read">
+      <div><b class="g" id="stC"></b><span data-i18n-html="ch10.read.cyc"></span></div>
+      <div><b class="c" id="stN"></b><span data-i18n-html="ch10.read.ns"></span></div>
+      <div><b class="" id="stS"></b><span data-i18n-html="ch10.read.served"></span></div>
+    </div>
+    <p class="say" id="stSay" aria-live="polite"></p>
+  </figure>

@@ -1,0 +1,15 @@
+<figure class="lab">
+    <h3 data-i18n="ch7.model.title"></h3>
+    <p class="how" data-i18n-html="ch7.model.how"></p>
+    <div class="ctl"><div class="seg" role="radiogroup" data-i18n-aria="ch7.ctl.page"><span class="lbl" data-i18n="ch7.ctl.page"></span><label><input type="radio" name="vpP" value="4096" checked><span>4 KiB</span></label><label><input type="radio" name="vpP" value="16384"><span>16 KiB</span></label><label><input type="radio" name="vpP" value="65536"><span>64 KiB</span></label></div></div>
+    <div class="ctl"><div class="seg" role="radiogroup" data-i18n-aria="ch7.ctl.ways"><span class="lbl" data-i18n="ch7.ctl.ways"></span><label><input type="radio" name="vpW" value="4"><span>4</span></label><label><input type="radio" name="vpW" value="8"><span>8</span></label><label><input type="radio" name="vpW" value="12" checked><span>12</span></label><label><input type="radio" name="vpW" value="16"><span>16</span></label></div></div>
+    <div class="ctl"><label class="rng"><span data-i18n="ch7.ctl.size"></span><input type="range" id="vpS" min="0" max="7" step="1" value="2"><output id="vpSo"></output></label></div>
+    <div class="bits" id="vpBits" aria-hidden="true"></div>
+    <div class="read">
+      <div><b class="g" id="vpLim"></b><span data-i18n-html="ch7.read.limit"></span></div>
+      <div><b class="c" id="vpLow"></b><span data-i18n-html="ch7.read.low"></span></div>
+      <div><b class="" id="vpPg"></b><span data-i18n-html="ch7.read.page"></span></div>
+      <div><b class="r" id="vpAl"></b><span data-i18n-html="ch7.read.alias"></span></div>
+    </div>
+    <p class="say" id="vpSay" aria-live="polite"></p>
+  </figure>

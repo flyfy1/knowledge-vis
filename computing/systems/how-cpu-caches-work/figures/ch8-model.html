@@ -1,0 +1,15 @@
+<figure class="lab">
+    <h3 data-i18n="ch8.model.title"></h3>
+    <p class="how" data-i18n-html="ch8.model.how"></p>
+    <canvas class="cv" id="pfCv" role="img" data-i18n-aria="ch8.model.aria"></canvas>
+    <div class="ctl"><div class="seg wrapmany" role="radiogroup" data-i18n-aria="ch8.ctl.trace"><span class="lbl" data-i18n="ch8.ctl.trace"></span><label><input type="radio" name="pfT" value="stride" checked><span data-i18n="ch8.tr.stride"></span></label><label><input type="radio" name="pfT" value="matrix"><span data-i18n="ch8.tr.matrix"></span></label><label><input type="radio" name="pfT" value="list"><span data-i18n="ch8.tr.list"></span></label><label><input type="radio" name="pfT" value="mix"><span data-i18n="ch8.tr.mix"></span></label></div></div>
+    <div class="ctl"><div class="seg" role="radiogroup" data-i18n-aria="ch8.ctl.mode"><span class="lbl" data-i18n="ch8.ctl.mode"></span><label><input type="radio" name="pfM" value="none"><span data-i18n="ch8.m.none"></span></label><label><input type="radio" name="pfM" value="next"><span data-i18n="ch8.m.next"></span></label><label><input type="radio" name="pfM" value="stride" checked><span data-i18n="ch8.m.stride"></span></label></div><div class="seg" role="radiogroup" data-i18n-aria="ch8.ctl.deg"><span class="lbl" data-i18n="ch8.ctl.deg"></span><label><input type="radio" name="pfG" value="1" checked><span>1</span></label><label><input type="radio" name="pfG" value="2"><span>2</span></label><label><input type="radio" name="pfG" value="4"><span>4</span></label></div></div>
+    <div class="ctl"><label class="rng"><span data-i18n="ch8.ctl.dist"></span><input type="range" id="pfD" min="1" max="32" step="1" value="4"><output id="pfDo"></output></label></div>
+    <div class="read">
+      <div><b class="" id="pfB"></b><span data-i18n-html="ch8.read.base"></span></div>
+      <div><b class="g" id="pfMi"></b><span data-i18n-html="ch8.read.miss"></span></div>
+      <div><b class="c" id="pfC"></b><span data-i18n-html="ch8.read.cov"></span></div>
+      <div><b class="r" id="pfA"></b><span data-i18n-html="ch8.read.acc"></span></div>
+    </div>
+    <p class="say" id="pfSay" aria-live="polite"></p>
+  </figure>
