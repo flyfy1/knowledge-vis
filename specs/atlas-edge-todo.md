@@ -1032,11 +1032,11 @@ anchor; a link to the page top has no anchor).
 
 ## 多边形内角和 · 撕下来拼一拼 / Polygon Angle Sums · Tear and Rearrange → 勾股定理 · 一步一交互 / The Pythagorean Theorem · One Interaction at a Time
 
-- `polygon-angles` → `pythagoras#step0`
+- `polygon-angles#step5` → `pythagoras#step0`
 
 ## 多边形内角和 · 撕下来拼一拼 / Polygon Angle Sums · Tear and Rearrange → 对称与旋转 · 对折与转圈 / Symmetry & Rotation · Folding and Turning
 
-- `polygon-angles` → `symmetry-rotation#step2`
+- `polygon-angles#step5` → `symmetry-rotation#step2`
 
 ## 概率与频率 · 转得越多，越贴近概率 / Probability & Frequency · The More Spins, the Closer to the Probability → 概率分布 · 随机性也有形状 / Probability Distributions · Randomness Has a Shape
 
