@@ -168,7 +168,7 @@ const STR = {
     "site.bl.1": "<a href=\"../../../atlas/\">知识地图 · 概念与联系</a>：→ <a href=\"#step5\">本页第 5 步</a>",
     "site.bl.2": "<a href=\"../../../computing/systems/how-pcie-works/\">PCIe 为什么能一代一代翻倍</a>：<a href=\"../../../computing/systems/how-pcie-works/#ch8\">该文第 8 章</a>",
     "site.bl.3": "<a href=\"../../../physics/waves/resonance/\">共振 · 踩中节拍，小推也能荡高</a>：<a href=\"../../../physics/waves/resonance/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>",
-    "site.bl.4": "<a href=\"../../sampling/modulation/\">调制与频移 · 把信号搬上高频运走</a>：→ <a href=\"#step2\">本页第 2 步</a>、<a href=\"#step5\">本页第 5 步</a>",
+    "site.bl.4": "<a href=\"../../sampling/modulation/\">调制与频移 · 把信号搬上高频运走</a>：<a href=\"../../sampling/modulation/#step3\">该课第 3 步</a> → <a href=\"#step2\">本页第 2 步</a>；<a href=\"../../sampling/modulation/#step6\">该课第 6 步</a> → <a href=\"#step5\">本页第 5 步</a>",
     "site.bl.5": "<a href=\"../../transforms/fourier/\">傅里叶变换 · 一步一交互</a>：<a href=\"../../transforms/fourier/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>"
   },
   en: {
@@ -331,7 +331,7 @@ const STR = {
     "site.bl.1": "<a href=\"../../../atlas/\">Knowledge Atlas · Concepts & Connections</a>: → <a href=\"#step5\">this page step 5</a>",
     "site.bl.2": "<a href=\"../../../computing/systems/how-pcie-works/\">Why PCIe Keeps Doubling</a>: <a href=\"../../../computing/systems/how-pcie-works/#ch8\">its chapter 8</a>",
     "site.bl.3": "<a href=\"../../../physics/waves/resonance/\">Resonance · Push in Time and a Small Force Goes a Long Way</a>: <a href=\"../../../physics/waves/resonance/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>",
-    "site.bl.4": "<a href=\"../../sampling/modulation/\">Modulation · Shipping Signals on a Carrier</a>: → <a href=\"#step2\">this page step 2</a>, <a href=\"#step5\">this page step 5</a>",
+    "site.bl.4": "<a href=\"../../sampling/modulation/\">Modulation · Shipping Signals on a Carrier</a>: <a href=\"../../sampling/modulation/#step3\">its step 3</a> → <a href=\"#step2\">this page step 2</a>; <a href=\"../../sampling/modulation/#step6\">its step 6</a> → <a href=\"#step5\">this page step 5</a>",
     "site.bl.5": "<a href=\"../../transforms/fourier/\">The Fourier Transform · One Interaction at a Time</a>: <a href=\"../../transforms/fourier/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>"
   }
 };

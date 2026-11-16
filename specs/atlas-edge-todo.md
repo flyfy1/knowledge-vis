@@ -476,8 +476,8 @@ anchor; a link to the page top has no anchor).
 
 ## 调制与频移 · 把信号搬上高频运走 / Modulation · Shipping Signals on a Carrier → 频率响应与滤波 · 按频率挑食的盒子 / Frequency Response & Filters · A Box That Eats by Frequency
 
-- `modulation` → `frequency-response#step2`
-- `modulation` → `frequency-response#step5`: ? → resonance
+- `modulation#step3` → `frequency-response#step2`
+- `modulation#step6` → `frequency-response#step5`: ? → resonance
 
 ## 卡尔曼滤波 · 在预测与测量之间称重 / Kalman Filter · Weighing Prediction Against Measurement → 特征值与特征向量 · 矩阵不转的那些方向 / Eigenvalues & Eigenvectors · The Directions a Matrix Cannot Turn
 

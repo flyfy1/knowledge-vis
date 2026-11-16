@@ -1,0 +1,31 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "modulation",
+ "refs": [],
+ "backlinks": [
+  {
+   "from": "fourier",
+   "links": [
+    {
+     "from": "step6",
+     "to": "step1"
+    }
+   ]
+  },
+  {
+   "from": "inside-a-phone",
+   "links": [
+    {
+     "from": null,
+     "to": "step1"
+    },
+    {
+     "from": null,
+     "to": "step4"
+    }
+   ]
+  }
+ ],
+ "related": [],
+ "bindings": []
+}

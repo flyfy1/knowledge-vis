@@ -1,0 +1,15 @@
+<div class="controls">
+      <label><span><span data-i18n="s5tgtLab"></span></span>
+        <span class="btn-row" style="margin:0">
+          <button class="btn active" id="s5-tgt-0" data-i18n="staA"></button>
+          <button class="btn" id="s5-tgt-1" data-i18n="staB"></button>
+          <button class="btn" id="s5-tgt-2" data-i18n="staC"></button>
+        </span></label>
+      <label><span><span data-i18n="s5tuneLab"></span> <span class="val" id="s5-tune-val">150 Hz</span></span>
+        <input type="range" id="s5-tune" min="110" max="310" step="1" value="150"></label>
+      <label><span><span data-i18n="s5spaceLab"></span> <span class="val" id="s5-space-val">1.00</span></span>
+        <input type="range" id="s5-space" min="0.55" max="1.45" step="0.05" value="1"></label>
+    </div>
+    <div class="stage"><canvas id="s5-spec" height="270"></canvas></div>
+    <div class="stage"><canvas id="s5-wave" height="240"></canvas></div>
+    <p class="readout" id="s5-readout"></p>

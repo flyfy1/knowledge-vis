@@ -34,11 +34,11 @@
    "from": "modulation",
    "links": [
     {
-     "from": null,
+     "from": "step3",
      "to": "step2"
     },
     {
-     "from": null,
+     "from": "step6",
      "to": "step5"
     }
    ]
