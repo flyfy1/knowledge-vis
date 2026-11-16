@@ -570,7 +570,7 @@ anchor; a link to the page top has no anchor).
 
 ## 圆周角 · 为什么恰好是一半 / Inscribed Angles · Why Exactly Half → 对称与旋转 · 对折与转圈 / Symmetry & Rotation · Folding and Turning
 
-- `circle-angles` → `symmetry-rotation#step2`
+- `circle-angles#step6` → `symmetry-rotation#step2`
 
 ## 复数 · 平面上的旋转 / Complex Numbers · Rotation on the Plane → 特征值与特征向量 · 矩阵不转的那些方向 / Eigenvalues & Eigenvectors · The Directions a Matrix Cannot Turn
 
