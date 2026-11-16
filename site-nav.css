@@ -24,3 +24,6 @@ a.site-autolink { overflow-wrap:anywhere; }
 .xref-list { list-style:none; padding:0; margin:0 0 2em; }
 .xref-list li { padding:10px 0; border-bottom:1px solid var(--line,#2b3242); color:var(--body,#d5d7de); font-size:15px; line-height:1.7; overflow-wrap:anywhere; }
 .xref-list a { display:inline-block; min-height:24px; }
+/* The page title that starts a row runs inline, so its ：/: stays on the title's last line at 320 px (an inline-block
+   title filled the line and pushed the colon onto a line of its own). The padding keeps its tap box at 24 px or more. */
+.xref-list li > a:first-child { display:inline; padding:4px 0; }
