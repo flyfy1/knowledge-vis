@@ -1,0 +1,17 @@
+<div class="btn-row">
+      <button class="btn big active" id="s3-down" aria-pressed="true" data-i18n="s3down"></button>
+      <button class="btn big" id="s3-diag" aria-pressed="false" data-i18n="s3diag"></button>
+    </div>
+    <div class="stage">
+      <p class="stage-title" data-i18n="dragHint3d"></p>
+      <div class="viewport3d"><canvas id="s3-canvas" tabindex="0" role="img" aria-label="3D scene"></canvas><div class="labels" aria-hidden="true"></div></div>
+    </div>
+    <div class="btn-row">
+      <button class="btn" id="s3-view" data-i18n="viewBtn"></button>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="s3sLab"></span> <span class="val" id="s3-s-val">0 m</span></span>
+        <input type="range" id="s3-s" min="0" max="1.6" step="0.1" value="0">
+      </label>
+    </div>
+    <p class="readout" id="s3-readout"></p>

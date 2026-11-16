@@ -1,0 +1,36 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "lever-pulley",
+ "refs": [],
+ "backlinks": [
+  {
+   "from": "float-sink",
+   "links": [
+    {
+     "from": "step5",
+     "to": "step0"
+    }
+   ]
+  },
+  {
+   "from": "pressure",
+   "links": [
+    {
+     "from": "step5",
+     "to": "step2"
+    }
+   ]
+  },
+  {
+   "from": "mechanical-energy",
+   "links": [
+    {
+     "from": null,
+     "to": "step3"
+    }
+   ]
+  }
+ ],
+ "related": [],
+ "bindings": []
+}
