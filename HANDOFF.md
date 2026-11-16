@@ -1,6 +1,6 @@
 # HANDOFF.md — 开工前先读
 
-最后更新：2026-11-16，模板 Phase 2 的独立评审 Agent（Claude Code）在第 1c 条加了评审结论；在此之前模板 Phase 2 的提交 Agent（Claude Code）在「模板迁移与示意图补齐」加了第 1c 条、改了末尾「pages.config.js 仍手改」一句和第 2 部分「未上线：17 篇中文草稿」的登记说明；在此之前模板后续改进的提交 Agent（Claude Code）在「模板迁移与示意图补齐」加了第 1b 条、改了第 1a 条的「没转换」和第 3 条的遗留；在此之前 SIMD/浮点长文的登记 Agent（Claude Code）更新了「模板迁移与示意图补齐」第 1a、3 条（批次 A 已在线、SIMD 长文上线）；在此之前模板 Phase 1 批次 A 的提交 Agent（Claude Code）在「模板迁移与示意图补齐」加了第 1a 条；在此之前 SVG 视口检查的登记 Agent（Claude Code）更新了「模板迁移与示意图补齐」第 2 条的遗留项；在此之前存储 S1–S5 补图的登记 Agent（Claude Code）更新了「模板迁移与示意图补齐」第 2 条和存储系列的示意图状态；在此之前模板 Phase 0 的提交 Agent 更新了该节；第二部分其余内容仍是 2026-11-15 供电与网卡两篇上线后的状态。
+最后更新：2026-11-16，模板 Phase 3 批次 A 的提交 Agent（Claude Code）在「模板迁移与示意图补齐」加了第 1d 条；在此之前模板 Phase 2 的独立评审 Agent（Claude Code）在第 1c 条加了评审结论；在此之前模板 Phase 2 的提交 Agent（Claude Code）在「模板迁移与示意图补齐」加了第 1c 条、改了末尾「pages.config.js 仍手改」一句和第 2 部分「未上线：17 篇中文草稿」的登记说明；在此之前模板后续改进的提交 Agent（Claude Code）在「模板迁移与示意图补齐」加了第 1b 条、改了第 1a 条的「没转换」和第 3 条的遗留；在此之前 SIMD/浮点长文的登记 Agent（Claude Code）更新了「模板迁移与示意图补齐」第 1a、3 条（批次 A 已在线、SIMD 长文上线）；在此之前模板 Phase 1 批次 A 的提交 Agent（Claude Code）在「模板迁移与示意图补齐」加了第 1a 条；在此之前 SVG 视口检查的登记 Agent（Claude Code）更新了「模板迁移与示意图补齐」第 2 条的遗留项；在此之前存储 S1–S5 补图的登记 Agent（Claude Code）更新了「模板迁移与示意图补齐」第 2 条和存储系列的示意图状态；在此之前模板 Phase 0 的提交 Agent 更新了该节；第二部分其余内容仍是 2026-11-15 供电与网卡两篇上线后的状态。
 
 这份文件有两部分：
 
@@ -159,6 +159,12 @@
    - **署名缺口（不能用提交修复）：** `71144070` 的 Built-By 里写了「run by Claude Code」，authorship.cjs 因此把 227 个新 page.json 记成 `created: claude-code`（应为 script；内容不受影响）。要改得由 Yangyu 确认 `authorship/overrides.json`，见规范 §3b。Pages 工作流还没跑 `build-registry --check`（稀疏检出不含 specs/，原因见 §3b）；`site-registry.json`（约 750 KB）不在部署排除表里，要不要排除由 Yangyu 定。
    - **独立评审（2026-11-16，specs/reviews/site-template-phase2-review-20261116.md）：结论是修完即可部署（推送仍需授权）。** 修复 `e0c9483b`：手贴行时普通运行不再悄悄丢掉它（改为拒绝并指向 `--adopt`），`--adopt` 先全部校验再写，`build-pages` 对只有登记字段的 page.json 给出明确报错；§3b 补了两人同时登记的合并办法。待 Yangyu 决定：`5de49541` 标为 authored 却改了 227 个手写页的 include 行，使 earth/astronomy/kepler-orbits/index.html 的 primary 从 unattributed 变成 claude-code（无标签受影响）。
    - **没做 / 推迟：** page.json 取代 REGISTRY.json（概念仍在 REGISTRY.json，`atlas-import-registry.cjs` 已能读 page.json 的 `concepts`；理由见规范 §3b）；手写页面上不显示被引用列表（registry 里有）。
+1d. **Phase 3 批次 A（课程页，lesson-shell 那一批）：2026-11-16 提交，未推送、未部署，等独立评审**（规范 specs/site-template.md §3c、§10）。
+   - **工具：** `8a781839`（authored）：`scripts/lib/lesson.cjs`、`templates/layouts/lesson.html`，convert-essay.cjs 认得课程页（有 i18n.js、没有 copy.zh.js）。键名原样保留，生成的文件仍叫 `i18n.js`，app.js 和各页测试不用改。转换过的课程页改字：改 `content.zh.md` / `content.en.md`（步骤里不是普通段落的标记在 `figures/stepN-K.html`），然后跑 `node scripts/build-pages.cjs <目录>`，升 page.json 的 `version`；**不要再手改 index.html 或 i18n.js**（`--check` 会报漂移）。
+   - **转换（各一个 mechanical 提交，Built-By 为 script）：** 17 页：linear-transform、central-limit-theorem、monte-carlo、bayes-updating、eigenvectors、plate-tectonics、climate-energy、thermodynamics、frozen-bubble、sampling、laplace、fourier、frequency-response、lti-systems、convolution、kalman、inverted-pendulum。每页在父提交上关掉页面外框和预填后重建，index.html 逐字节一致，两张字符串表逐键相等；然后 version 20261116a。提交号见规范 §10。
+   - **跳过：** trigonometry（zh 表里 `s4bridge` 写了两次，后一行是英文，所以中文页那里显示英文，en 表缺这个键；它自己的 tangent-core 测试在 HEAD 上就失败。要由页面作者单独修，修完即可转换）；power-converters（没有 i18n.js）。
+   - **遗留：** 页面上已有的手写旧文字（eigenvectors 23 处等）留着，清掉会改变无 JS 时的显示，应单独提交；大多数课程的运行时不翻译 `data-i18n-aria`，静态面包屑因此不带 aria-label；frequency-response 指向 atlas 带查询串的链接被报为「不是线上页面」（只是警告）。其余约 164 个课程页还没转换（试转结果和估算见规范 §12）。
+
 2. **S1–S5 补示意图：2026-11-16 完成并上线**（`9fcb9fac` 内容、`b2d49a1c` 标签重指）。沿用旧格式（内联 SVG，标签来自 copy 文件），走了 构建 → 独立评审 → 登记。现在转换器可以处理这五篇了。
    - 外溢视口检查的 `e.closest('svg')` 跳过：其余 16 篇也已改为只跳过 `<defs>`（`c3cef443`，标签重指见下一个提交），全部通过，没有页面需要改版式；switches-that-compute 没有逐元素的视口检查，探测过 320 宽下不溢出。
 3. **CPU SIMD 与浮点一篇：2026-11-16 上线**。`computing/systems/how-a-cpu-does-math/`（CPU 是怎么算小数的，又怎么一次算一排），第一篇直接用 Markdown 模板写的长文，14 章、14 个模型、13 张静态示意图，中英双语（英文 Haiku 翻译），经另一个 Claude Code 会话独立评审（specs/reviews/how-a-cpu-does-math-review-20261116.md）。

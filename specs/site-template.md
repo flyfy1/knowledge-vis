@@ -238,7 +238,8 @@ and `{{htmlAttrs}}` (chrome), `{{title}}` (zh value of `titleKey`), `{{v}}` (`?v
 `{{siteNavCss}}` / `{{siteNavJs}}` (from `build-site-nav.cjs`), `{{crumbs}}` (the static breadcrumb, where site-nav.js
 mounted it: before the `<h1>`, or before an eyebrow/kicker line above it), `{{provenance}}`, `{{badges}}` (shared layout
 only: the edition-compare link when `variants/claude-code/<slug>/` exists), `{{stepNav}}` (one item per step),
-`{{steps}}` and `{{linkedFrom}}` (after `</main>`; its box is a `.step-inner`). An unknown slot fails; a slot with
+`{{steps}}` and `{{linkedFrom}}` (after `</main>`; its box is a `.step-inner`, centred like a step by
+`section.site-xref` in `lesson-shell.css`, because the pages centre steps through their own `.step` rule). An unknown slot fails; a slot with
 content to render but missing from the frame fails.
 
 **legacyLayout** (converted pages; safe to delete, then the page shows drift until rebuilt):
@@ -712,6 +713,52 @@ passed (4516 checks). The full build failed only the CJK-in-`index.html` check o
   1280/390/320, unchanged), canvas sweep (SAS 948, PCIe 1192 states), `--all --check` 22 pages,
   0 lint lines.
 
+**Phase 3 batch A: lessons (2026-11-16, committed, not pushed or deployed until reviewed).**
+- **Tooling** 8a781839 (authored), and e7e3b876 (authored: `lesson-shell.css` centres the linked-from block): `scripts/lib/lesson.cjs`, `templates/layouts/lesson.html`, the lesson path in
+  `convert-essay.cjs`, step backlinks, `titleInContent` in the registry, tests/site-template.cjs §6 with
+  `tests/fixtures/site-template/demo/basics/fixture-lesson/` (format in §3c).
+- **Scope:** 19 pages load `lesson-shell.css/js` outside `variants/`. 17 converted, one mechanical commit each
+  (`Built-By: script (deterministic, no model: scripts/convert-essay.cjs)`): linear-transform 9fadb994,
+  central-limit-theorem 62914961, monte-carlo 4f942864, bayes-updating b3aaf0a3, eigenvectors b7befbf4,
+  plate-tectonics 9d571f52, climate-energy 6a9dbed5, thermodynamics 496cd20d, frozen-bubble d24c5a8b, sampling
+  49b20142, laplace 02911189, fourier b5630898, frequency-response 56539c21, lti-systems 1b1a645e, convolution
+  ba3cd9e4, kalman 611830de, inverted-pendulum b5ce02fd. Each round-tripped at its parent (no chrome, no pre-fill:
+  index.html byte-identical; both i18n.js tables equal key for key; the runtime around them identical), then
+  `version` 20261116a and the full build. A commit also carries the regenerated `site-registry.json` /
+  `specs/atlas-edge-todo.md` and the generated linked-from rows of already-converted pages it links to. `page.json`
+  existed before (Phase 2), so there is no `index.html -> page.json` line; `content.zh.md` inherits the page's
+  author through `Derived-From: i18n.js -> content.zh.md` (checked with `scripts/authorship.cjs`).
+- **Skipped:** trigonometry (its zh table defines `s4bridge` twice; the second, English line wins, so zh shows English
+  there, en lacks the key, and the page's own tangent-core test already fails on HEAD; the fix is the page owner's,
+  as a separate authored change, then it converts like the rest); power-converters (no `i18n.js`: its steps are
+  built by JS, nothing to convert).
+- **Links:** live `SiteNav.report()` on all 19 lessons, zh and en, 1280, after scrolling through: 0 runtime
+  auto-links, so no `[[ref]]` was added by hand. The converter itself turned inline links to registered pages into
+  `[[refs]]` where they render back exactly (eigenvectors 5, kalman 2, frozen-bubble 2, linear-transform 1). The
+  registry now credits lesson links to steps: ref edges 1084 -> 1093 (same pages, step anchors on the source side).
+- **Checked on the full build** (scratch mirror identical to the commits except the `?v=` key): the pages' node
+  tests and browser tests (same results as HEAD; lti-systems audio-browser times out on `#s2-audio-stop` on HEAD
+  too, and sampling pair-core / convolution support-core read a pre-move commit with `git show` that is not in
+  this clone, so they fail on HEAD too and pass with that read pointed at the current app.js), tests/lesson-shell.cjs,
+  site-nav-browser (374), page-provenance-browser (272), home-concept-search (31), `--all --check` 39 pages with
+  0 lint lines. Canvas sweep (1280/390/320, zh/en): 8 pages pass; 9 report findings, the same as the HEAD copy swept
+  the same way (monte-carlo 612, bayes-updating 579, frequency-response 573, sampling 504, laplace 394, eigenvectors
+  375, linear-transform 252, convolution 13, thermodynamics 2; the only differences are animation frames and a
+  randomly dealt question), because the conversion does not touch app.js or the canvases. Those findings belong to
+  the pages, not to this batch.
+- **Visual check** against live (linear-transform, eigenvectors, frozen-bubble, convolution; 1280/390/320, zh/en,
+  reduced motion): first-screen screenshots pixel-identical in 22 of 24. In the other two (convolution 1280, zh and
+  en) the live page has step 0's nav pill lit at load and the build does not. The HEAD copy served locally does not
+  light it either: live, site-nav.js inserts the breadcrumb after load, the steps move, and the scroll spy (which only
+  ever sets `active`) keeps a state from before the move. The static breadcrumb removes that move. The linked-from
+  block first rendered flush left (the pages centre steps through their own `.step` rule, which the block does not
+  carry); `lesson-shell.css` now centres it (see §3c), checked on all 17 pages at 1280/390/320 (left edge equal to
+  the steps', no horizontal overflow).
+- **Warnings left on purpose:** `stale:` hand-written text inside `figures/` that is not the zh string
+  (eigenvectors 23, bayes-updating 4, sampling, fourier, lti-systems, frequency-response 1 each). Emptying them is
+  a rendered change for no-JS readers, so it is a separate commit by the page owner. frequency-response links to
+  `../../../atlas/?trail=…`, which the raw-link check reports as not a live page (resolveHref ignores query strings).
+
 ## 11. Authorship
 
 - Conversion commits use `Derived-From:` (AUTHORSHIP.md §4) so `content.<lang>.md` inherits the history of
@@ -729,7 +776,18 @@ passed (4516 checks). The full build failed only the CJK-in-`index.html` check o
     hand-written page would need site-nav.js to show them;
   - the 335 pairs in `specs/atlas-edge-todo.md` need a human (or an agent with sources) to write edges where a
     reason holds.
-- **Phase 3:** the lesson layout and the `i18n.js` converter.
+- **Phase 3:** batch A (the lesson-shell lessons) is done (§10). Left: trigonometry after its table fix,
+  power-converters (no table), and the other lessons, which use `i18n.js` without lesson-shell and differ more in
+  header and step markup; each new shape is a converter extension proved on its own page before a batch.
+  Dry run of `convert-essay.cjs` at 8a781839 over the 164 unconverted lessons with an `i18n.js` (HEAD copy, nothing
+  committed): 38 round-trip byte for byte as they are. Of the rest:
+  - 79 stop at `<html lang="en">` (the page's no-JS language): one `legacyLayout` field;
+  - 16 have a step whose heading is not a keyed `<h2>`;
+  - 21 name a key the table lacks (`stepWord` in 19: written by a shared runtime, so it needs a declared
+    runtime-key list; phonemes `next4` and coordinate-plane `reset` are real gaps);
+  - 6 have zh-only `sNbridge` keys like trigonometry (parabola, circle-angles, lever-pulley, pinhole-camera,
+    reflection-refraction, trigonometry): table fixes by the owners first;
+  - 2 have no `STR` table, 1 has `<noscript>` in `<main>`, 1 has a placeholder mismatch (fractions `s5roImp`).
 - **Later:**
   - the unbound-digit lint;
   - static `/en/` twins;
