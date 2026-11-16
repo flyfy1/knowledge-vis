@@ -1190,7 +1190,7 @@ anchor; a link to the page top has no anchor).
 
 ## 外部性与公地悲剧 · 账记在谁头上 / Externalities & the Tragedy of the Commons · Who Pays the Bill → 气候反馈 · 一笔一笔对上能量账 / Climate Feedback · Balance the Energy Ledger
 
-- `externalities` → `climate-feedback#step0`
+- `externalities#step5` → `climate-feedback#step0`
 
 ## 引力透镜 · 宇宙里的凸透镜 / Gravitational Lensing · A Cosmic Convex Lens → 凸透镜成像 · 远近变像 / The Convex Lens · Near or Far, the Image Transforms
 
