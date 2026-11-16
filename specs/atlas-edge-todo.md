@@ -938,7 +938,7 @@ anchor; a link to the page top has no anchor).
 
 ## 词向量 · 把词摆成地图 / Word Embeddings · Words as a Map → 二维线性变换 · 矩阵如何挪动平面 / 2D Linear Transformations · How Matrices Move the Plane
 
-- `embeddings` → `linear-transform#step1`
+- `embeddings#step5` → `linear-transform#step1`
 
 ## 浮与沉 · 排开的水托住了谁 / Float & Sink · What the Displaced Water Holds Up → 杠杆与滑轮 · 支点挪一挪，省力见分晓 / Levers & Pulleys · Move the Fulcrum, Feel the Trade
 
