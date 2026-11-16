@@ -37,6 +37,10 @@ jobs:
             !evidence/
             !provenance/
 
+      # 站点模板（specs/site-template.md）：已迁移页面的生成物必须与源文件一致，否则不发布。
+      - name: Template outputs are current
+        run: node scripts/build-pages.cjs --all --check
+
       - name: Assemble _site
         run: |
           set -euo pipefail
@@ -45,7 +49,7 @@ jobs:
             --exclude='/.git/' --exclude='/.github/' --exclude='.git*' --exclude='.env*' \
             --exclude='/_site/' \
             --exclude='/specs/' --exclude='/docs/' --exclude='/worklog/' \
-            --exclude='/scripts/' --exclude='/deploy/' --exclude='/tests/' \
+            --exclude='/scripts/' --exclude='/templates/' --exclude='/deploy/' --exclude='/tests/' \
             --exclude='/authorship/' --exclude='/.agent/' --exclude='/.runs/' \
             --exclude='/node_modules/' --exclude='/package.json' --exclude='/package-lock.json' \
             --exclude='/platform-shots/' --exclude='/platform-review-shots/' \

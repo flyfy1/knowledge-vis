@@ -15,3 +15,10 @@
 a.site-autolink { overflow-wrap:anywhere; }
 @media (forced-colors: active) { .site-nav a { opacity:1; } .site-nav a:focus-visible { outline-color:Highlight; } }
 @media print { .site-nav { display:none; } }
+/* Template pages (specs/site-template.md) render the breadcrumb above statically, with the same markup, and
+   add a generated "linked from / related" block before the footer. */
+.site-xref { padding:56px 0 24px; border-top:1px solid var(--line,#2b3242); }
+.site-xref h2 { font-size:22px; line-height:1.4; margin:0 0 .6em; }
+.xref-list { list-style:none; padding:0; margin:0 0 2em; }
+.xref-list li { padding:10px 0; border-bottom:1px solid var(--line,#2b3242); color:var(--body,#d5d7de); font-size:15px; line-height:1.7; overflow-wrap:anywhere; }
+.xref-list a { display:inline-block; min-height:24px; }

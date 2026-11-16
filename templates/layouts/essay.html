@@ -1,0 +1,38 @@
+<!doctype html>
+{{generated}}<html lang="zh-CN"{{htmlAttrs}}>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="category" content="{{category}}"><meta name="stage" content="{{stage}}">
+<title>{{title}}</title>
+<meta name="description" content="{{desc}}">
+<link rel="icon" href="data:,">
+<style>
+{{style}}</style>
+{{gap.afterStyle}}<link rel="stylesheet" href="{{up}}page-provenance.css">
+{{siteNavCss}}
+</head>
+<body>
+<div class="topbar">
+  <a class="back" href="{{up}}" data-i18n="nav.back"></a>
+  <div id="langToggle" role="group" data-i18n-aria="nav.lang"><button type="button" data-lang="zh" aria-pressed="false">中</button><button type="button" data-lang="en" aria-pressed="false">EN</button></div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+{{crumbs}}    <div class="kicker" data-i18n="hero.kicker"></div>
+    <h1 data-i18n="hero.title"></h1>{{heroBlocks}}{{provenance}}  </div>
+</header>
+
+<nav class="wrap toc" data-i18n-aria="toc.label">
+  <h2 data-i18n="toc.title"></h2>
+  <ol>
+{{toc}}  </ol>
+</nav>
+
+<main>
+{{chapters}}</main>
+{{gap.afterMain}}<footer><div class="wrap" data-i18n-html="footer"></div></footer>
+{{gap.afterFooter}}{{scripts}}{{siteNavJs}}
+</body>
+</html>

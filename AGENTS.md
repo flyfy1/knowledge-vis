@@ -56,12 +56,16 @@ node atlas/tests/data-quality.cjs
 node tests/concept-search.cjs                     # 匹配规则 + 十个日常词的落点
 node atlas/tests/registry-import.cjs              # 文章 REGISTRY.json → 图谱片段 + 搜索分片
 HOME_TEST_URL=http://127.0.0.1:18871/ node tests/home-concept-search.cjs   # 浏览器
+# 站点模板（改了 scripts/build-pages.cjs、scripts/lib/template.cjs、scripts/convert-essay.cjs、templates/ 或任何带 page.json 的页面时跑）
+node scripts/build-pages.cjs --all --check        # 已迁移页面的生成物与源文件一致 + 双语对齐 + [[引用]] + 数字绑定
+node tests/site-template.cjs                      # 夹具构建、失败模式、转换器 round trip
 # 站内导航（面包屑、子主题视图、自动链接；登记新页面后先跑 node scripts/build-site-nav.cjs）
 node scripts/build-site-nav.cjs --check
 node tests/site-nav.cjs
 SITE_NAV_BASE_URL=http://127.0.0.1:18871/ node tests/site-nav-browser.cjs   # 浏览器
 ```
 
+- **已迁移到站点模板的页面**（目录里有 `page.json`）：改 `content.zh.md` / `content.en.md` / `figures/` / `page.json`，再跑 `node scripts/build-pages.cjs <页面目录>`；不要手改生成的 `index.html`、`copy.*.js`、`refs.json`。细则见 [specs/site-template.md](specs/site-template.md)。
 - 新增长文（一篇讲透一个领域）：标准、文件布局与登记步骤见 [specs/essays.md](specs/essays.md)。
 - 站内导航（面包屑、`/<分类>/<子主题>/` 目录页、正文里《页面标题》自动变链接）：见 [specs/site-navigation.md](specs/site-navigation.md)。每个上线页面都引入 `site-nav.css` / `site-nav.js`，由 `scripts/build-site-nav.cjs` 生成，不手写。
 - 给文章页加概念、加分区：`node scripts/atlas-import-registry.cjs <页面目录>`、`--add-region`，细则见 [specs/atlas-search-index.md](specs/atlas-search-index.md)。
