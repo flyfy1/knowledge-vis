@@ -1,0 +1,54 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "electric-fields",
+ "refs": [],
+ "backlinks": [
+  {
+   "from": "molecular-shapes",
+   "links": [
+    {
+     "from": "step5",
+     "to": "step0"
+    }
+   ]
+  },
+  {
+   "from": "periodic-trends",
+   "links": [
+    {
+     "from": "step5",
+     "to": "step0"
+    }
+   ]
+  },
+  {
+   "from": "electrochemistry",
+   "links": [
+    {
+     "from": "step5",
+     "to": "step3"
+    }
+   ]
+  },
+  {
+   "from": "ohms-law",
+   "links": [
+    {
+     "from": "step5",
+     "to": "step3"
+    }
+   ]
+  },
+  {
+   "from": "magnetic-force",
+   "links": [
+    {
+     "from": null,
+     "to": "step4"
+    }
+   ]
+  }
+ ],
+ "related": [],
+ "bindings": []
+}
