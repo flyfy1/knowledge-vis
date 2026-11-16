@@ -1131,7 +1131,7 @@ anchor; a link to the page top has no anchor).
 
 ## 碳循环 · 大气里的碳去了哪里 / The Carbon Cycle · Where the Atmosphere’s Carbon Goes → 能量金字塔 · 为什么顶级捕食者那么少 / The Energy Pyramid · Why Top Predators Are Rare
 
-- `carbon-cycle` → `energy-pyramid#step0`
+- `carbon-cycle#step5` → `energy-pyramid#step0`
 
 ## 卡诺循环 · 热机的效率上限 / The Carnot Cycle · The Ceiling on Heat-Engine Efficiency → 熵 · 惊讶的平均值 / Entropy · The Average of Surprise
 
