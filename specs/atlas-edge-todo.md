@@ -683,7 +683,7 @@ anchor; a link to the page top has no anchor).
 
 ## 圆锥曲线 / Conic Sections → 圆周角 · 为什么恰好是一半 / Inscribed Angles · Why Exactly Half
 
-- `conic-sections` → `circle-angles#step0`
+- `conic-sections#step5` → `circle-angles#step0`
 
 ## 等高线 / Contour Lines → 梯度下降 · 摸黑下山 / Gradient Descent · Feeling Your Way Downhill
 

@@ -141,7 +141,7 @@ const STR = {
     "site.bl.title": "被这些页面引用",
     "site.bl.1": "<a href=\"../inverse-proportion/\">反比例函数 · 此消彼长</a>：<a href=\"../inverse-proportion/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>",
     "site.bl.2": "<a href=\"../../calculus/derivative/\">导数 · 把平均压成此刻</a>：<a href=\"../../calculus/derivative/#step3\">该课第 3 步</a> → <a href=\"#step2\">本页第 2 步</a>；<a href=\"../../calculus/derivative/#step5\">该课第 5 步</a> → <a href=\"#step2\">本页第 2 步</a>",
-    "site.bl.3": "<a href=\"../../geometry/conic-sections/\">圆锥曲线</a>：→ <a href=\"#step0\">本页第 0 步</a>"
+    "site.bl.3": "<a href=\"../../geometry/conic-sections/\">圆锥曲线</a>：<a href=\"../../geometry/conic-sections/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>"
   },
   en: {
     docTitle: "Quadratic Functions & the Parabola · The Arc of a Shot — One Interaction at a Time",
@@ -276,7 +276,7 @@ const STR = {
     "site.bl.title": "Linked from",
     "site.bl.1": "<a href=\"../inverse-proportion/\">Inverse Proportion · One Up, One Down</a>: <a href=\"../inverse-proportion/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>",
     "site.bl.2": "<a href=\"../../calculus/derivative/\">The Derivative · Squeezing the Average into the Instant</a>: <a href=\"../../calculus/derivative/#step3\">its step 3</a> → <a href=\"#step2\">this page step 2</a>; <a href=\"../../calculus/derivative/#step5\">its step 5</a> → <a href=\"#step2\">this page step 2</a>",
-    "site.bl.3": "<a href=\"../../geometry/conic-sections/\">Conic Sections</a>: → <a href=\"#step0\">this page step 0</a>"
+    "site.bl.3": "<a href=\"../../geometry/conic-sections/\">Conic Sections</a>: <a href=\"../../geometry/conic-sections/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>"
   }
 };
 
