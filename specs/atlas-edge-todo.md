@@ -934,7 +934,7 @@ anchor; a link to the page top has no anchor).
 
 ## 决策树与信息增益 / Decision Trees and Information Gain → 二分查找 · 每次砍掉一半 / Binary Search · Halve the Candidates
 
-- `decision-trees` → `binary-search#step1`
+- `decision-trees#step5` → `binary-search#step1`
 
 ## 词向量 · 把词摆成地图 / Word Embeddings · Words as a Map → 二维线性变换 · 矩阵如何挪动平面 / 2D Linear Transformations · How Matrices Move the Plane
 

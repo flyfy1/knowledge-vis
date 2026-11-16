@@ -1,0 +1,29 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "decision-trees",
+ "refs": [
+  {
+   "from": "s0e",
+   "to": "entropy",
+   "anchor": "step3"
+  },
+  {
+   "from": "s3e",
+   "to": "overfitting",
+   "anchor": "step1"
+  }
+ ],
+ "backlinks": [
+  {
+   "from": "overfitting",
+   "links": [
+    {
+     "from": null,
+     "to": "step3"
+    }
+   ]
+  }
+ ],
+ "related": [],
+ "bindings": []
+}
