@@ -1,0 +1,28 @@
+<!doctype html>
+{{generated}}<html lang="zh-CN"{{htmlAttrs}}>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{{title}}</title>
+  <link rel="stylesheet" href="../../../lesson-shell.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../../../edition-compare.css">
+{{siteNavCss}}
+</head>
+<body>
+<header class="site-head">
+  <div class="head-top">
+    <a class="back-link" href="/" data-i18n="back"></a>
+    <div class="lang-toggle"><button data-lang="zh">中</button><button data-lang="en">EN</button></div>
+  </div>
+  {{crumbs}}<h1 data-i18n="title"></h1>
+  <p class="tagline" data-i18n="tagline"></p>
+</header>
+<p class="edition-compare"><a href="../../../variants/claude-code/climate-energy/"><span class="ec-zh" lang="zh-CN">对照 Claude Code 版 →</span><span class="ec-en" lang="en">Compare with the Claude Code edition →</span></a></p>
+<nav class="step-nav">{{stepNav}}</nav>
+<main>{{steps}}</main>{{linkedFrom}}
+<footer data-i18n="foot">气候能量账本 · 一束光，四次交互。所有数值为教学模型。</footer>
+<script src="i18n.js{{v}}"></script><script src="app.js"></script>
+{{siteNavJs}}
+</body>
+</html>

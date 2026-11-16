@@ -1,0 +1,67 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "climate-energy",
+ "refs": [],
+ "backlinks": [
+  {
+   "from": "seasons-orbit",
+   "links": [
+    {
+     "from": null,
+     "to": "step0"
+    }
+   ]
+  },
+  {
+   "from": "atmospheric-circulation",
+   "links": [
+    {
+     "from": null,
+     "to": "step0"
+    }
+   ]
+  },
+  {
+   "from": "carbon-cycle",
+   "links": [
+    {
+     "from": null,
+     "to": "step2"
+    }
+   ]
+  },
+  {
+   "from": "water-cycle",
+   "links": [
+    {
+     "from": null,
+     "to": "step0"
+    }
+   ]
+  },
+  {
+   "from": "why-the-planet-warms",
+   "links": [
+    {
+     "from": "ch1",
+     "to": "step0"
+    },
+    {
+     "from": "ch8",
+     "to": "step0"
+    }
+   ]
+  },
+  {
+   "from": "why-the-sky-is-blue",
+   "links": [
+    {
+     "from": "ch10",
+     "to": null
+    }
+   ]
+  }
+ ],
+ "related": [],
+ "bindings": []
+}
