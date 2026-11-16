@@ -981,11 +981,11 @@ anchor; a link to the page top has no anchor).
 
 ## 磁铁 · 铁屑显出看不见的线 / Magnets · Iron Filings Reveal Unseen Lines → 勾股定理 · 一步一交互 / The Pythagorean Theorem · One Interaction at a Time
 
-- `magnets` → `pythagoras#step0`
+- `magnets#step5` → `pythagoras#step0`
 
 ## 磁铁 · 铁屑显出看不见的线 / Magnets · Iron Filings Reveal Unseen Lines → 坐标系 · 点的地址 / The Coordinate Plane · Addresses for Points
 
-- `magnets` → `coordinate-plane#step2`: ? → coordinate-plane
+- `magnets#step5` → `coordinate-plane#step2`: ? → coordinate-plane
 
 ## 平均数、中位数、众数之争 · 三个“平均”三个故事 / Mean, Median, Mode · Three “Averages”, Three Stories → 条形图 · 让数字站成一排比高矮 / Bar Charts · Numbers Standing in a Row
 
