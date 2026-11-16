@@ -114,7 +114,7 @@ const STR = {
     "site.crumb.sub": "数与运算",
     "site.bl.title": "被这些页面引用",
     "site.bl.1": "<a href=\"../../../computing/systems/rsa-encryption/\">RSA 公钥加密 · 乘起来容易，拆开来难</a>：<a href=\"../../../computing/systems/rsa-encryption/#step5\">该课第 5 步</a> → <a href=\"#step3\">本页第 3 步</a>",
-    "site.bl.2": "<a href=\"../intervals-fences/\">间隔与植树 · 段数和点数差一</a>：→ <a href=\"#step0\">本页第 0 步</a>",
+    "site.bl.2": "<a href=\"../intervals-fences/\">间隔与植树 · 段数和点数差一</a>：<a href=\"../intervals-fences/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>",
     "site.bl.3": "<a href=\"../negative-numbers/\">负数 · 0 以下的世界</a>：→ <a href=\"#step1\">本页第 1 步</a>",
     "site.bl.4": "<a href=\"../place-value/\">位值与计数器 · 满十进一</a>：→ <a href=\"#step0\">本页第 0 步</a>"
   },
@@ -224,7 +224,7 @@ const STR = {
     "site.crumb.sub": "Numbers & Operations",
     "site.bl.title": "Linked from",
     "site.bl.1": "<a href=\"../../../computing/systems/rsa-encryption/\">RSA Public-Key Encryption · Easy to Multiply, Hard to Split</a>: <a href=\"../../../computing/systems/rsa-encryption/#step5\">its step 5</a> → <a href=\"#step3\">this page step 3</a>",
-    "site.bl.2": "<a href=\"../intervals-fences/\">Intervals & Fences · Gaps and Posts Differ by One</a>: → <a href=\"#step0\">this page step 0</a>",
+    "site.bl.2": "<a href=\"../intervals-fences/\">Intervals & Fences · Gaps and Posts Differ by One</a>: <a href=\"../intervals-fences/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>",
     "site.bl.3": "<a href=\"../negative-numbers/\">Negative Numbers · The World Below Zero</a>: → <a href=\"#step1\">this page step 1</a>",
     "site.bl.4": "<a href=\"../place-value/\">Place Value & the Counting Frame · Ten Makes One</a>: → <a href=\"#step0\">this page step 0</a>"
   }

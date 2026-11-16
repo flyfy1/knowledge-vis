@@ -954,11 +954,11 @@ anchor; a link to the page top has no anchor).
 
 ## 间隔与植树 · 段数和点数差一 / Intervals & Fences · Gaps and Posts Differ by One → 除法与余数 · 分不完的那一点 / Division & Remainders · What Is Left Over
 
-- `intervals-fences` → `division-remainder#step0`
+- `intervals-fences#step5` → `division-remainder#step0`
 
 ## 间隔与植树 · 段数和点数差一 / Intervals & Fences · Gaps and Posts Differ by One → 方程天平 · 两边同做一件事 / Equations on a Balance · Do the Same to Both Sides
 
-- `intervals-fences` → `equation-scale#step3`
+- `intervals-fences#step5` → `equation-scale#step3`
 
 ## 反比例函数 · 此消彼长 / Inverse Proportion · One Up, One Down → 乘法是面积 · 点阵铺成一块地 / Multiplication Is Area · Arrays Become a Tiled Floor
 
