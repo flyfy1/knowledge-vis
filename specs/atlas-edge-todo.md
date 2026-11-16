@@ -1111,7 +1111,7 @@ anchor; a link to the page top has no anchor).
 
 ## 大气环流与季风 · 风从哪里来 / Atmospheric Circulation & Monsoons · Where Winds Come From → 经纬网 / Latitude & Longitude
 
-- `atmospheric-circulation` → `latitude-longitude#step0`
+- `atmospheric-circulation#step5` → `latitude-longitude#step0`
 
 ## 拍卖 · 报价与真话 / Auctions · Bidding and Telling the Truth → 概率分布 · 随机性也有形状 / Probability Distributions · Randomness Has a Shape
 
