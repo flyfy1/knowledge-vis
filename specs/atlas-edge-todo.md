@@ -801,7 +801,7 @@ anchor; a link to the page top has no anchor).
 
 ## 分子与原子 / Molecules & Atoms → 原子结构 · 质子数定它是谁 / Atomic Structure · The Proton Count Decides What It Is
 
-- `molecules-atoms` → `atomic-structure#step1`: ? → atomic-structure
+- `molecules-atoms#step5` → `atomic-structure#step1`: ? → atomic-structure
 
 ## 自然选择 · 胡椒蛾的颜色为什么翻转 / Natural Selection · Why the Peppered Moth Flipped Colour → DNA 复制与翻译 · 拉链、抄写和流水线 / DNA Replication and Translation · A Zipper, a Copy and an Assembly Line
 
