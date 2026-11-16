@@ -1,0 +1,36 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "how-power-reaches-the-cpu",
+ "refs": [],
+ "backlinks": [
+  {
+   "from": "how-a-computer-boots",
+   "links": [
+    {
+     "from": "ch1",
+     "to": "ch4"
+    }
+   ]
+  },
+  {
+   "from": "how-a-gpu-computes",
+   "links": [
+    {
+     "from": "ch11",
+     "to": "ch10"
+    }
+   ]
+  },
+  {
+   "from": "why-compute-waits-for-memory",
+   "links": [
+    {
+     "from": "ch5",
+     "to": "ch2"
+    }
+   ]
+  }
+ ],
+ "related": [],
+ "bindings": []
+}
