@@ -493,4 +493,77 @@ function lessonSite() {
   }
 }
 
+// 6b. Lesson shapes of Phase 3 batch B (specs/site-template.md §3c): <html lang="en">, a step whose <h2> sits inside a
+//     wrapper, keys a second runtime table defines (page.json runtimeKeys), and a placeholder repeated a different
+//     number of times in zh and en (page.json placeholderRepeats). Each variant fails to convert on the batch A converter.
+{
+  const variant = mutate => { const s = lessonSite(); mutate(s.d); return s; };
+  const edit = (dd, f, a, z) => { const p = path.join(dd, f), s = fs.readFileSync(p, 'utf8'); assert.ok(s.includes(a), f + ' contains ' + a); fs.writeFileSync(p, s.replace(a, z)); };
+  const convertAndBuild = s => ({ c: run('convert-essay.cjs', s.d, '--root', s.root), b: () => run('build-pages.cjs', s.d, '--root', s.root) });
+
+  // <html lang="en">: the page's own no-JS language stays as written in layout.html
+  {
+    const s = variant(dd => edit(dd, 'index.html', '<html lang="zh-CN">', '<html lang="en">'));
+    const { c, b } = convertAndBuild(s);
+    ok(c.code === 0 && /round trip \(no chrome, no pre-fill\): index\.html byte-identical/.test(c.out), 'a lesson with <html lang="en"> converts byte for byte:\n' + c.out);
+    ok(fs.readFileSync(path.join(s.d, 'layout.html'), 'utf8').includes('{{generated}}<html lang="en"{{htmlAttrs}}>'), 'layout.html keeps lang="en"');
+    const r = b();
+    ok(r.code === 0 && fs.readFileSync(path.join(s.d, 'index.html'), 'utf8').includes('\n<html lang="en" data-template="lesson">'), 'the full build keeps lang="en" and adds data-template:\n' + r.out);
+  }
+
+  // a step whose <h2> is inside a wrapper (<div class="finale"> around the whole step): the heading holds the key, the
+  // markup stays in the partial (h2part=1)
+  const finale = dd => {
+    edit(dd, 'index.html', '</section>\n\n</main>', '</section>\n\n<section class="step" id="step2" data-step="2">\n  <div class="step-inner">\n    <div class="finale"><p class="step-kicker" data-i18n="s2k"></p><h2 data-i18n="s2t"></h2><p class="explain" data-i18n-html="s2e"></p></div>\n  </div>\n</section>\n\n</main>');
+    edit(dd, 'index.html', '<a href="#step1" class="nav-step" data-nav="1" data-i18n="nav1">1 动手</a>\n', '<a href="#step1" class="nav-step" data-nav="1" data-i18n="nav1">1 动手</a>\n  <a href="#step2" class="nav-step" data-nav="2" data-i18n="nav2">2 收尾</a>\n');
+    edit(dd, 'i18n.js', "    s1done: '完成',\n", "    s1done: '完成',\n    nav2: '2 收尾', s2k: '第 2 步 · 收尾', s2t: '收尾标题', s2e: '收尾说明。',\n");
+    edit(dd, 'i18n.js', "    s1done: 'Done',\n", "    s1done: 'Done',\n    nav2: '2 Wrap-up', s2k: 'Step 2 · Wrap-up', s2t: 'Wrap-up title', s2e: 'Wrap-up text.',\n");
+  };
+  {
+    const s = variant(finale);
+    const { c, b } = convertAndBuild(s);
+    ok(c.code === 0 && /converted lesson fixture-lesson: 3 steps/.test(c.out), 'a step whose <h2> sits in a wrapper converts:\n' + c.out);
+    const zh = fs.readFileSync(path.join(s.d, 'content.zh.md'), 'utf8'), en = fs.readFileSync(path.join(s.d, 'content.en.md'), 'utf8');
+    ok(zh.includes('## 收尾标题 {#step2 h2=s2t h2part=1}') && en.includes('## Wrap-up title {#step2 h2=s2t h2part=1}') && !/\ns2t: /.test(zh), 'the wrapped <h2> is the step heading (h2part=1), its key defined once');
+    ok(fs.readFileSync(path.join(s.d, 'figures', 'step2-1.html'), 'utf8').startsWith('<div class="finale"><p class="step-kicker" data-i18n="s2k"></p><h2 data-i18n="s2t"></h2>'), 'the wrapper stays in the step partial');
+    const r = b(), o = fs.readFileSync(path.join(s.d, 'index.html'), 'utf8');
+    ok(r.code === 0 && o.includes('<div class="finale"><p class="step-kicker" data-i18n="s2k">第 2 步 · 收尾</p><h2 data-i18n="s2t">收尾标题</h2>') && o.includes('data-i18n="nav2">2 收尾</a>'), 'the full build pre-fills the wrapped heading and adds its nav item:\n' + r.out);
+  }
+
+  // keys a second table of the runtime defines (a shared COMMON table merged into STR): page.json runtimeKeys
+  const common = dd => {
+    edit(dd, 'i18n.js', '};\n\nlet lang', "};\nconst COMMON = { zh: { more: '更多', unused: '无' }, en: { more: 'More', unused: 'None' } };\nfor (const l of ['zh', 'en']) Object.assign(STR[l], COMMON[l]);\n\nlet lang");
+    edit(dd, 'index.html', '    <p class="hint" data-i18n-html="s0hint"></p>\n', '    <p class="hint" data-i18n-html="s0hint"></p>\n    <p class="more" data-i18n="more"></p>\n');
+  };
+  {
+    const s = variant(common);
+    const { c, b } = convertAndBuild(s);
+    ok(c.code === 0, 'a lesson whose markup names a key of a second runtime table converts:\n' + c.out);
+    const pj = JSON.parse(fs.readFileSync(path.join(s.d, 'page.json'), 'utf8'));
+    ok(JSON.stringify(pj.runtimeKeys) === '["more"]', 'page.json runtimeKeys lists the markup key the runtime table supplies (not its unused keys): ' + JSON.stringify(pj.runtimeKeys));
+    ok(!/\nmore: /.test(fs.readFileSync(path.join(s.d, 'content.zh.md'), 'utf8')) && fs.readFileSync(path.join(s.d, 'i18n.shell.js'), 'utf8').includes("const COMMON = { zh: { more: '更多'"), 'the runtime key stays in i18n.shell.js, not in content');
+    const r = b();
+    ok(r.code === 0 && fs.readFileSync(path.join(s.d, 'index.html'), 'utf8').includes('<p class="more" data-i18n="more"></p>'), 'the full build accepts it and leaves the element to the runtime:\n' + r.out);
+    const again = (label, mut, re) => { const s2 = variant(common); assert.equal(run('convert-essay.cjs', s2.d, '--root', s2.root).code, 0); mut(s2.d); const x = run('build-pages.cjs', s2.d, '--root', s2.root); ok(x.code === 1 && re.test(x.out), `lesson failure mode "${label}" exits 1 and says so:\n${x.out}`); modes++; };
+    again('runtime key also in content', dd => { edit(dd, 'content.zh.md', 'docTitle:', 'more: 更多\ndocTitle:'); edit(dd, 'content.en.md', 'docTitle:', 'more: More\ndocTitle:'); }, /runtimeKeys names more, which content also defines/);
+    again('runtime key no table defines', dd => edit(dd, 'i18n.shell.js', "more: '更多', ", ''), /runtimeKeys names more, but no other zh\/en string table in i18n\.shell\.js defines it/);
+    again('markup key nobody defines', dd => { const f = fs.readdirSync(path.join(dd, 'figures')).find(x => fs.readFileSync(path.join(dd, 'figures', x), 'utf8').includes('data-i18n="more"')); edit(dd, 'figures/' + f, 'data-i18n="more"', 'data-i18n="gone"'); }, /figures\/step0-\d\.html names key gone/);
+    const s3 = variant(dd => { common(dd); edit(dd, 'i18n.js', "zh: { more: '更多', unused: '无' }", "zh: { unused: '无' }"); });
+    const c3 = run('convert-essay.cjs', s3.d, '--root', s3.root);
+    ok(c3.code === 1 && /markup names key\(s\) the string table does not define: more/.test(c3.out), 'a markup key no runtime table defines in both languages still stops the converter:\n' + c3.out);
+  }
+
+  // a placeholder repeated a different number of times in zh and en: page.json placeholderRepeats (same set)
+  {
+    const s = variant(dd => edit(dd, 'i18n.js', "s0say: '已运行 {n} 次',", "s0say: '已运行 {n} 次（共 {n} 次）',"));
+    const { c, b } = convertAndBuild(s);
+    ok(c.code === 0 && JSON.stringify(JSON.parse(fs.readFileSync(path.join(s.d, 'page.json'), 'utf8')).placeholderRepeats) === '["s0say"]', 'a repeated placeholder converts and is recorded in placeholderRepeats:\n' + c.out);
+    ok(b().code === 0, 'and builds');
+    edit(s.d, 'content.en.md', 's0say: Ran {n} times', 's0say: Ran {m} times');
+    const x = b();
+    ok(x.code === 1 && /parity: runtime placeholders differ in s0say \(placeholderRepeats allows a different count, not a different set\)/.test(x.out), 'placeholderRepeats does not allow a different set of placeholders:\n' + x.out);
+    modes++;
+  }
+}
+
 console.log(`PASS site template: ${n} checks (repo --all --check, fixture build, ${modes} failure modes, converter round trip, lessons)`);

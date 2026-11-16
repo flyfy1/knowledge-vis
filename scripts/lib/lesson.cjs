@@ -56,6 +56,21 @@ function splitI18n(text) {
   }
   return null;
 }
+// Every other `NAME = { zh: {…}, en: {…} }` string table in the page's runtime (i18n.shell.js), e.g. a shared
+// COMMON table merged into STR at run time: the keys it defines in both languages. page.json runtimeKeys names the
+// ones the markup uses (§3c).
+function shellKeys(shell) {
+  const keys = new Set();
+  for (const m of shell.matchAll(/\b(?:const|let|var)\s+[A-Za-z_$][\w$]*\s*=\s*\{/g)) {
+    const open = m.index + m[0].length - 1, end = literalEnd(shell, open);
+    if (end < 0) continue;
+    let o;
+    try { o = vm.runInNewContext('(' + shell.slice(open, end) + ')', {}); } catch (e) { continue; }
+    if (!isTable(o)) continue;
+    for (const k of Object.keys(o.zh)) if (k in o.en) keys.add(k);
+  }
+  return keys;
+}
 const IDENT = /^[A-Za-z_$][\w$]*$/;
 function serializeTables(tables, order) {
   const one = l => '  ' + l + ': {\n' + order[l].map(k => `    ${IDENT.test(k) ? k : JSON.stringify(k)}: ${JSON.stringify(tables[l][k])}`).join(',\n') + '\n  }';
@@ -221,13 +236,32 @@ function buildLesson(dir, opts = {}) {
   }
   if (!C.zh || !C.en) return { errors, warnings, outputs: {} };
 
+  /* runtime keys (page.json runtimeKeys): keys the markup names that another table in i18n.shell.js defines (a shared
+     COMMON table the runtime merges into STR). They are not content: content may not define them, and the build
+     checks the shell still defines each in zh and en. */
+  const runtimeKeys = new Set(meta.runtimeKeys || []);
+  if (runtimeKeys.size) {
+    const sf = path.join(dir, SHELL), have = fs.existsSync(sf) ? shellKeys(fs.readFileSync(sf, 'utf8').split(MARK).join('{}')) : new Set();
+    for (const k of runtimeKeys) {
+      if (k in C.zh.copy || k in C.en.copy) errors.push(`page.json runtimeKeys names ${k}, which content also defines (a key lives in one place)`);
+      else if (!have.has(k)) errors.push(`page.json runtimeKeys names ${k}, but no other zh/en string table in ${SHELL} defines it in both languages`);
+    }
+  }
+  const defined = k => k in C.zh.copy || runtimeKeys.has(k);
+
   /* parity: same skeleton, same key set, same runtime placeholders and link targets per key */
   const hrefs = s => [...String(s).matchAll(/href=(["'])([^"']*)\1/g)].map(m => m[2]).sort().join(' ');
   const tok = (s, re) => (String(s).match(re) || []).sort().join(' ');
+  // page.json placeholderRepeats: keys whose translations use the same placeholders a different number of times
+  // (zh 「读作 {q} 又 {d} 分之 {r}」 repeats {q}); the set of placeholders must still be equal
+  const repeats = new Set(meta.placeholderRepeats || []);
+  const tset = (s, re) => [...new Set(String(s).match(re) || [])].sort().join(' ');
+  for (const k of repeats) if (!(k in C.zh.copy)) errors.push(`page.json placeholderRepeats names ${k}, which content.zh.md does not define`);
   if (JSON.stringify(C.zh.skel) !== JSON.stringify(C.en.skel)) errors.push('parity: zh and en differ in structure (steps, blocks, keys)');
   for (const k of C.zh.order) {
     if (!(k in C.en.copy)) { errors.push('parity: en lacks ' + k); continue; }
-    if (tok(C.zh.copy[k], t.RUNTIME) !== tok(C.en.copy[k], t.RUNTIME)) errors.push('parity: runtime placeholders differ in ' + k);
+    if (tok(C.zh.copy[k], t.RUNTIME) !== tok(C.en.copy[k], t.RUNTIME) && !(repeats.has(k) && tset(C.zh.copy[k], t.RUNTIME) === tset(C.en.copy[k], t.RUNTIME)))
+      errors.push('parity: runtime placeholders differ in ' + k + (repeats.has(k) ? ' (placeholderRepeats allows a different count, not a different set)' : ''));
     if (hrefs(C.zh.copy[k]) !== hrefs(C.en.copy[k])) errors.push('parity: link targets differ in ' + k);
   }
   for (const k of C.en.order) if (!(k in C.zh.copy)) errors.push('parity: zh lacks ' + k);
@@ -248,7 +282,7 @@ function buildLesson(dir, opts = {}) {
     const f = path.join(dir, 'figures', name + '.html');
     if (!fs.existsSync(f)) { errors.push(`missing partial figures/${name}.html`); return (partials[name] = ''); }
     const s = fs.readFileSync(f, 'utf8').replace(/\n$/, '');
-    for (const k of t.i18nKeysIn(s)) if (!(k in C.zh.copy)) errors.push(`figures/${name}.html names key ${k}, which no content block defines`);
+    for (const k of t.i18nKeysIn(s)) if (!defined(k)) errors.push(`figures/${name}.html names key ${k}, which no content block (or page.json runtimeKeys) defines`);
     // text written inside a keyed element that is not its zh string: shown until the runtime replaces it (no-JS readers keep it)
     for (const m of s.matchAll(/<(\w+)\b[^<>]*?\bdata-i18n(-html)?="([^"]+)"[^<>]*>([^<]+)<\/\1>/g)) if (m[4].trim()) stale.push(`${name}:${m[3]}`);
     return (partials[name] = s);
@@ -370,7 +404,7 @@ function buildLesson(dir, opts = {}) {
     linkedFrom: xrefs,
   }, errors, path.relative(site.root, layoutFile));
   if (meta.titleKey && !(meta.titleKey in Z)) errors.push(`page.json titleKey ${meta.titleKey} is not defined in content.zh.md`);
-  for (const k of t.i18nKeysIn(html)) if (!(k in Z)) errors.push(`the page names key ${k} (layout or chrome), which no content block defines`);
+  for (const k of t.i18nKeysIn(html)) if (!defined(k)) errors.push(`the page names key ${k} (layout or chrome), which no content block (or page.json runtimeKeys) defines`);
   if (stale.length) warnings.push(`stale: ${stale.length} keyed element(s) in figures/ hold hand-written text that is not their zh string (${stale.slice(0, 4).join(', ')}${stale.length > 4 ? ', …' : ''}); the runtime replaces it, readers without JS see it. Empty them (a rendered change for no-JS readers only) in a commit of their own`);
   // pre-fill: every empty element (§8); without it, exactly the elements the hand-written page had filled
   // aria-labels only where the page's runtime translates data-i18n-aria (most lesson runtimes do not)
@@ -458,6 +492,9 @@ function convertLesson(dir, opts = {}) {
   if (H.includes('{{')) fail('index.html contains "{{", which the layout uses for its slots');
   if (split.shell.split(MARK).length !== 2) fail('i18n.js contains the table marker');
   const Z = split.tables.zh, E = split.tables.en;
+  const shellHas = shellKeys(split.shell.split(MARK).join('{}'));
+  const runtimeKeys = []; // markup keys the table lacks but another table of the runtime defines (page.json runtimeKeys)
+  const isRuntime = k => !(k in Z) && shellHas.has(k) && (runtimeKeys.includes(k) || !!runtimeKeys.push(k));
   {
     const a = Object.keys(Z).filter(k => !(k in E)), b = Object.keys(E).filter(k => !(k in Z));
     if (a.length || b.length) fail(`the zh and en tables have different keys (only zh: ${a.join(', ') || '-'}; only en: ${b.join(', ') || '-'}); a lesson's content needs the same keys in both languages`);
@@ -472,7 +509,8 @@ function convertLesson(dir, opts = {}) {
   const nav = includes.includeLines(page.path);
   once(new RegExp(t.reEsc(nav.link)), 'current site-nav.css include'); frame = frame.replace(nav.link, '{{siteNavCss}}');
   once(new RegExp(t.reEsc(nav.script)), 'current site-nav.js include'); frame = frame.replace(nav.script, '{{siteNavJs}}');
-  once(/<html lang="zh-CN">/, '<html lang="zh-CN">'); frame = frame.replace('<html lang="zh-CN">', '{{generated}}<html lang="zh-CN"{{htmlAttrs}}>');
+  // <html lang="…"> stays as written (79 lessons declare "en", their no-JS language); the chrome adds data-template
+  once(/<html lang="[\w-]+">/, '<html lang="…">'); frame = frame.replace(/<html lang="([\w-]+)">/, (all, l) => `{{generated}}<html lang="${l}"{{htmlAttrs}}>`);
   // <title>: from the key whose zh value it is (docTitle, title), else it stays literal
   let titleKey = null;
   {
@@ -632,12 +670,21 @@ function convertLesson(dir, opts = {}) {
       if (last && last.kind === 'part' && last.open) last.raw += nd.lead + nd.raw;
       else items.push({ kind: 'part', raw: nd.raw, lead: nd.lead, open: true });
     });
+    // no top-level <h2>: the step's keyed <h2> may sit inside a wrapper (<div class="finale"> around the whole step).
+    // The heading defines its key and the markup stays in the partial (h2part=1).
+    if (!st.h2) for (const it of items) {
+      if (it.kind !== 'part') continue;
+      const m = it.raw.match(/<h2\b[^<>]*\bdata-i18n(-html)?="([^"]+)"[^<>]*>/);
+      if (!m) continue;
+      if (m[2] in Z && !owner.has(m[2]) && headOk(m[2], [`#${st.id}`, `h2=${m[2]}`, 'h2part=1'])) { st.h2 = { key: m[2], part: true, html: !!m[1], at: 0, lead: it.lead }; owner.set(m[2], st.id); }
+      break;
+    }
     let pn = 0;
     for (const it of items) if (it.kind === 'part') {
       it.name = `${st.id}-${++pn}`; delete it.open;
       it.keys = t.i18nKeysIn(it.raw).filter(k => k in Z && !owner.has(k));
       it.keys.forEach(k => owner.set(k, st.id));
-      const missing = t.i18nKeysIn(it.raw).filter(k => !(k in Z));
+      const missing = t.i18nKeysIn(it.raw).filter(k => !(k in Z) && !isRuntime(k));
       if (missing.length) fail(`${st.id}: markup names key(s) the string table does not define: ${missing.join(', ')}`);
     }
     st.items = items;
@@ -649,7 +696,7 @@ function convertLesson(dir, opts = {}) {
     let cur = 'global';
     for (const k of keysZ) { if (owner.has(k)) { cur = owner.get(k); continue; } leftover[cur].push(k); owner.set(k, cur); }
   }
-  const missingFrame = t.i18nKeysIn(frame).filter(k => !(k in Z));
+  const missingFrame = t.i18nKeysIn(frame).filter(k => !(k in Z) && !isRuntime(k));
   if (missingFrame.length) fail(`the page names key(s) the string table does not define: ${missingFrame.join(', ')}`);
 
   /* ── 3. legacy whitespace ── */
@@ -719,6 +766,13 @@ function convertLesson(dir, opts = {}) {
   if (version) metaOut.version = version;
   if (titleKey) metaOut.titleKey = titleKey;
   if (enCjk.length) metaOut.enCjk = enCjk;
+  if (runtimeKeys.length) metaOut.runtimeKeys = runtimeKeys;
+  {
+    // the hand-written tables already repeat a placeholder a different number of times in zh and en (same set)
+    const R = t.RUNTIME, ms = v => (String(v).match(R) || []).sort().join(' '), st = v => [...new Set(String(v).match(R) || [])].sort().join(' ');
+    const rep = keysZ.filter(k => ms(Z[k]) !== ms(E[k]) && st(Z[k]) === st(E[k]));
+    if (rep.length) metaOut.placeholderRepeats = rep;
+  }
   metaOut.legacyLayout = L;
   const written = [];
   const write = (rel, s) => { fs.mkdirSync(path.dirname(path.join(dir, rel)), { recursive: true }); fs.writeFileSync(path.join(dir, rel), s); written.push(rel); };
@@ -768,4 +822,4 @@ function convertLesson(dir, opts = {}) {
   };
 }
 
-module.exports = { compileLesson, buildLesson, convertLesson, splitI18n, serializeTables, unfill, fillSome, MARK, SHELL, LAYOUT_FILE, DEFAULTS };
+module.exports = { compileLesson, buildLesson, convertLesson, splitI18n, shellKeys, serializeTables, unfill, fillSome, MARK, SHELL, LAYOUT_FILE, DEFAULTS };

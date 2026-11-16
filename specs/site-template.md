@@ -180,7 +180,8 @@ steps (`<section id="stepN">`) behind a step nav. `page.json` `"layout": "lesson
 ```
 <category>/<subtopic>/<slug>/
   page.json        registry fields (title and desc stay here: a lesson's card title is not its <h1>), layout "lesson",
-                   version (the ?v= of i18n.js), titleKey (the key <title> shows), enCjk, legacyLayout   (source)
+                   version (the ?v= of i18n.js), titleKey (the key <title> shows), enCjk, legacyLayout;
+                   optional runtimeKeys, placeholderRepeats (below)                                     (source)
   content.zh.md    page-wide strings, then one "## <h2 text> {#stepN h2=<key>}" per step                   (source)
   content.en.md    the same skeleton in English                                                         (source)
   layout.html      a converted page's own frame: its head, header, nav, footer and scripts with {{slots}}  (source)
@@ -225,7 +226,8 @@ s0say: 已运行 {n} 次
 
 - Heading attributes: `h2=<key>`; `h2id=<id>` (an `id` on the h2); `i18n=html` (`data-i18n-html`); `.class`;
   `nav=<key>`; `pre=N` (N blocks above the h2; the default is the leading `.step-kicker` paragraphs); `h2part=1` (the
-  h2 is written in one of the step's partials, because its hand-written text was not its zh string; the heading still
+  h2 is written in one of the step's partials, because its hand-written text was not its zh string, or because it sits
+  inside a wrapper such as `<div class="finale">` that holds the whole step (15 lessons of batch B); the heading still
   defines the key).
 - Paragraph attributes: `{#key}` always; `.class`; `tag=div|h3|h4`; `i18n=text` for `data-i18n` (default
   `data-i18n-html`). Inline Markdown and `[[refs]]` as in §4–5; the converter writes them only where they render back
@@ -264,6 +266,19 @@ the frame names exists; an English string with Chinese fails unless `page.json` 
 records the keys that already do, such as a footer `二维线性变换 Linear Maps`); the D10 lint; raw-link warnings. No
 registry-text check (the title stays in page.json). Warnings: `stale:` names keyed elements in `figures/` whose
 hand-written text is not their zh string (the runtime replaces it; readers without JS see it).
+
+**Batch B shapes (2026-11-16).** Each is recorded by the converter, so a conversion commit needs no hand edit:
+- `<html lang="…">` stays as written in `layout.html` (79 lessons declare `en`, their language without JavaScript; the
+  runtime sets it on load). No page.json field: the frame is the page's own. The build pre-fills the zh strings
+  regardless, as for every lesson.
+- `page.json` `runtimeKeys: ["stepWord", …]`: keys the markup names that a second `{zh, en}` table in `i18n.shell.js`
+  defines (19 lessons merge a shared `COMMON` table into `STR` at run time: `back`, `stepWord`, `obsLab`, `foot`, …).
+  They are not content: the build fails when content defines one, or when no other table in the shell defines it in
+  both languages, and treats them as defined in the partial and frame checks. They are not pre-filled (the generated
+  table does not hold them), as before conversion.
+- `page.json` `placeholderRepeats: ["s5roImp"]`: keys whose zh and en strings use the same placeholders a different
+  number of times (fractions zh 「读作 {q} 又 {d} 分之 {r}」 has no English counterpart). Parity then compares the set of
+  placeholders instead of the multiset; a different set still fails (chicken-rabbit, fractions, polygon-angles).
 
 **Pre-fill and aria.** Every empty keyed element is pre-filled as for essays. `aria-label` is pre-filled only when the
 page's runtime (`i18n.shell.js` or `app.js`) translates `data-i18n-aria`; most lesson runtimes do not, and a Chinese
