@@ -1,0 +1,24 @@
+<div class="controls">
+      <label><span><span data-i18n="s1ang"></span> <span class="val" id="s1-ang-val">10°</span></span>
+        <input type="range" id="s1-ang" min="-30" max="30" step="1" value="10">
+      </label>
+    </div>
+    <div class="dual">
+      <div class="half">
+        <div class="stage">
+          <p class="stage-title" data-i18n="s1inv"></p>
+          <canvas id="s1-inv" height="260" style="height:260px"></canvas>
+        </div>
+        <p class="readout" id="s1-inv-ro"></p>
+      </div>
+      <div class="half">
+        <div class="stage">
+          <p class="stage-title" data-i18n="s1hang"></p>
+          <canvas id="s1-hang" height="260" style="height:260px"></canvas>
+        </div>
+        <p class="readout" data-i18n="s1hangNote"></p>
+      </div>
+    </div>
+    <div class="btn-row">
+      <button class="btn primary" id="s1-release" data-i18n="s1release"></button>
+    </div>

@@ -400,7 +400,7 @@ anchor; a link to the page top has no anchor).
 
 ## 反馈与控制 · 双轮车为什么倒不下去 / Feedback & Control · Why the Two-Wheeled Bot Never Falls → 冲激与 LTI · 给系统一巴掌 / Impulse & LTI · Slap the System
 
-- `inverted-pendulum` → `lti-systems#step2`: ? → impulse
+- `inverted-pendulum#step2` → `lti-systems#step2`: feedback → impulse
 - `inverted-pendulum` → `lti-systems#step3`: ? → lti
 
 ## 反馈与控制 · 双轮车为什么倒不下去 / Feedback & Control · Why the Two-Wheeled Bot Never Falls → 拉普拉斯与 ROC · 给频率配一个寿命 / Laplace Transform & ROC · Giving Frequencies a Lifespan

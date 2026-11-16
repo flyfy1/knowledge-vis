@@ -7,7 +7,7 @@
    "from": "inverted-pendulum",
    "links": [
     {
-     "from": null,
+     "from": "step2",
      "to": "step2"
     },
     {
