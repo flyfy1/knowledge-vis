@@ -1,0 +1,16 @@
+<figure class="lab">
+    <h3 data-i18n="ch5.model.title"></h3>
+    <p class="how" data-i18n-html="ch5.model.how"></p>
+    <canvas class="cv tall" id="uaCv" role="img" data-i18n-aria="ch5.model.aria"></canvas>
+    <div class="legend"><span><i style="background:var(--mute)"></i><span data-i18n="ch5.read.bot"></span></span><span><i style="background:var(--gold)"></i><span data-i18n="ch5.read.uas"></span></span><span><i style="background:var(--red)"></i><span data-i18n="ch4.cv.cap"></span></span></div>
+    <div class="ctl"><div class="seg" role="radiogroup" data-i18n-aria="ch5.ctl.n"><span class="lbl" data-i18n="ch5.ctl.n"></span><label><input type="radio" name="uaN" value="1"><span>1</span></label><label><input type="radio" name="uaN" value="2"><span>2</span></label><label><input type="radio" name="uaN" value="4" checked><span>4</span></label><label><input type="radio" name="uaN" value="8"><span>8</span></label><label><input type="radio" name="uaN" value="16"><span>16</span></label><label><input type="radio" name="uaN" value="32"><span>32</span></label></div></div>
+    <div class="ctl"><div class="seg" role="radiogroup" data-i18n-aria="ch4.ctl.link"><span class="lbl" data-i18n="ch4.ctl.link"></span><label><input type="radio" name="uaK" value="g1x1"><span data-i18n="ch4.link.g1x1"></span></label><label><input type="radio" name="uaK" value="g2x1" checked><span data-i18n="ch4.link.g2x1"></span></label><label><input type="radio" name="uaK" value="g2x2"><span data-i18n="ch4.link.g2x2"></span></label></div></div>
+    <div class="ctl"><label class="rng"><span data-i18n="ch4.ctl.size"></span><input type="range" id="uaS" min="12" max="22" step="0.5" value="15"><output id="uaSo"></output></label></div>
+    <div class="read">
+      <div><b class="" id="uaB"></b><span data-i18n-html="ch5.read.bot"></span></div>
+      <div><b class="g" id="uaU"></b><span data-i18n-html="ch5.read.uas"></span></div>
+      <div><b class="c" id="uaG"></b><span data-i18n-html="ch5.read.gain"></span></div>
+      <div><b class="v" id="uaKn"></b><span data-i18n-html="ch5.read.knee"></span></div>
+    </div>
+    <p class="say" id="uaSay" aria-live="polite"></p>
+  </figure>

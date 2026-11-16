@@ -1,0 +1,115 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "how-usb-drives-talk",
+ "refs": [],
+ "backlinks": [
+  {
+   "from": "how-a-computer-is-wired",
+   "links": [
+    {
+     "from": "ch10",
+     "to": null
+    }
+   ]
+  },
+  {
+   "from": "how-pcie-works",
+   "links": [
+    {
+     "from": "ch12",
+     "to": "ch8"
+    }
+   ]
+  },
+  {
+   "from": "how-pixels-reach-a-screen",
+   "links": [
+    {
+     "from": "ch6",
+     "to": "ch8"
+    },
+    {
+     "from": "ch13",
+     "to": "ch8"
+    }
+   ]
+  },
+  {
+   "from": "how-sas-works",
+   "links": [
+    {
+     "from": "ch1",
+     "to": "ch5"
+    },
+    {
+     "from": "ch11",
+     "to": null
+    }
+   ]
+  },
+  {
+   "from": "how-sata-works",
+   "links": [
+    {
+     "from": "ch10",
+     "to": "ch6"
+    },
+    {
+     "from": "ch10",
+     "to": null
+    }
+   ]
+  },
+  {
+   "from": "how-thunderbolt-works",
+   "links": [
+    {
+     "from": "ch3",
+     "to": "ch8"
+    },
+    {
+     "from": "ch4",
+     "to": "ch8"
+    },
+    {
+     "from": "ch9",
+     "to": "ch3"
+    },
+    {
+     "from": "ch11",
+     "to": "ch3"
+    },
+    {
+     "from": "ch11",
+     "to": "ch8"
+    }
+   ]
+  },
+  {
+   "from": "storage-over-a-network",
+   "links": [
+    {
+     "from": "ch11",
+     "to": null
+    },
+    {
+     "from": "ch11",
+     "to": "ch6"
+    }
+   ]
+  },
+  {
+   "from": "what-a-drive-is-made-of",
+   "links": [
+    {
+     "from": "ch7",
+     "to": null
+    }
+   ]
+  }
+ ],
+ "related": [
+  "why-nvme-is-fast"
+ ],
+ "bindings": []
+}

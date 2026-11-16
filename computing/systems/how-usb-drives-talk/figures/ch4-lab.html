@@ -1,0 +1,15 @@
+<figure class="lab">
+    <h3 data-i18n="ch4.model2.title"></h3>
+    <p class="how" data-i18n-html="ch4.model2.how"></p>
+    <canvas class="cv tall" id="boCv" role="img" data-i18n-aria="ch4.model2.aria"></canvas>
+    <div class="legend"><span><i style="background:var(--gold)"></i><span data-i18n="ch4.read.x"></span></span><span><i style="background:var(--red)"></i><span data-i18n="ch4.cv.cap"></span></span></div>
+    <div class="ctl"><div class="seg" role="radiogroup" data-i18n-aria="ch4.ctl.link"><span class="lbl" data-i18n="ch4.ctl.link"></span><label><input type="radio" name="boK" value="hs"><span data-i18n="ch4.link.hs"></span></label><label><input type="radio" name="boK" value="g1x1"><span data-i18n="ch4.link.g1x1"></span></label><label><input type="radio" name="boK" value="g2x1" checked><span data-i18n="ch4.link.g2x1"></span></label><label><input type="radio" name="boK" value="g2x2"><span data-i18n="ch4.link.g2x2"></span></label></div></div>
+    <div class="ctl"><label class="rng"><span data-i18n="ch4.ctl.size"></span><input type="range" id="boS" min="12" max="22" step="0.5" value="12"><output id="boSo"></output></label><label class="rng"><span data-i18n="ch4.ctl.tcmd"></span><input type="range" id="boT" min="10" max="200" step="5" value="50"><output id="boTo"></output></label></div>
+    <div class="read">
+      <div><b class="g" id="boX"></b><span data-i18n-html="ch4.read.x"></span></div>
+      <div><b class="" id="boI"></b><span data-i18n-html="ch4.read.iops"></span></div>
+      <div><b class="c" id="boU"></b><span data-i18n-html="ch4.read.share"></span></div>
+      <div><b class="r" id="boW"></b><span data-i18n-html="ch4.read.wait"></span></div>
+    </div>
+    <p class="say" id="boSay" aria-live="polite"></p>
+  </figure>

@@ -1,0 +1,15 @@
+<figure class="lab">
+    <h3 data-i18n="ch9.model.title"></h3>
+    <p class="how" data-i18n-html="ch9.model.how"></p>
+    <canvas class="cv short" id="skCv" role="img" data-i18n-aria="ch9.model.aria"></canvas>
+    <div class="legend"><span><i style="background:var(--violet)"></i><span data-i18n="ch9.st.flash"></span></span><span><i style="background:var(--cyan)"></i><span data-i18n="ch9.st.bus"></span></span></div>
+    <div class="ctl"><div class="seg" role="radiogroup" data-i18n-aria="ch9.ctl.dies"><span class="lbl" data-i18n="ch9.ctl.dies"></span><label><input type="radio" name="skD" value="1" checked><span>1</span></label><label><input type="radio" name="skD" value="2"><span>2</span></label><label><input type="radio" name="skD" value="4"><span>4</span></label></div><label class="rng"><span data-i18n="ch9.ctl.die"></span><input type="range" id="skW" min="20" max="194" step="1" value="194"><output id="skWo"></output></label></div>
+    <div class="ctl"><div class="seg wrapmany" role="radiogroup" data-i18n-aria="ch9.ctl.bus"><span class="lbl" data-i18n="ch9.ctl.bus"></span><label><input type="radio" name="skB" value="u2bot"><span data-i18n="ch9.bus.u2bot"></span></label><label><input type="radio" name="skB" value="u5bot" checked><span data-i18n="ch9.bus.u5bot"></span></label><label><input type="radio" name="skB" value="u5uas"><span data-i18n="ch9.bus.u5uas"></span></label><label><input type="radio" name="skB" value="uhs1"><span data-i18n="ch9.bus.uhs1"></span></label><label><input type="radio" name="skB" value="uhs2"><span data-i18n="ch9.bus.uhs2"></span></label><label><input type="radio" name="skB" value="ex7"><span data-i18n="ch9.bus.ex7"></span></label></div></div>
+    <div class="read">
+      <div><b class="g" id="skX"></b><span data-i18n-html="ch9.read.x"></span></div>
+      <div><b class="v" id="skF"></b><span data-i18n-html="ch9.read.flash"></span></div>
+      <div><b class="c" id="skU"></b><span data-i18n-html="ch9.read.bus"></span></div>
+      <div><b class="" id="skN"></b><span data-i18n-html="ch9.read.need"></span></div>
+    </div>
+    <p class="say" id="skSay" aria-live="polite"></p>
+  </figure>
