@@ -1,0 +1,79 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "how-memory-talks",
+ "refs": [],
+ "backlinks": [
+  {
+   "from": "coherent-interconnects",
+   "links": [
+    {
+     "from": "ch3",
+     "to": "ch5"
+    },
+    {
+     "from": "ch13",
+     "to": null
+    }
+   ]
+  },
+  {
+   "from": "how-a-computer-boots",
+   "links": [
+    {
+     "from": "ch5",
+     "to": "ch7"
+    },
+    {
+     "from": "ch14",
+     "to": "ch7"
+    }
+   ]
+  },
+  {
+   "from": "how-a-gpu-computes",
+   "links": [
+    {
+     "from": "ch10",
+     "to": "ch9"
+    },
+    {
+     "from": "ch12",
+     "to": null
+    }
+   ]
+  },
+  {
+   "from": "how-cpu-caches-work",
+   "links": [
+    {
+     "from": "ch12",
+     "to": null
+    }
+   ]
+  },
+  {
+   "from": "how-pixels-reach-a-screen",
+   "links": [
+    {
+     "from": "ch1",
+     "to": "ch9"
+    },
+    {
+     "from": "ch13",
+     "to": "ch9"
+    }
+   ]
+  },
+  {
+   "from": "why-compute-waits-for-memory",
+   "links": [
+    {
+     "from": "ch5",
+     "to": "ch5"
+    }
+   ]
+  }
+ ],
+ "related": [],
+ "bindings": []
+}

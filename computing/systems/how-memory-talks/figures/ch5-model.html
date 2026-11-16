@@ -1,0 +1,14 @@
+<figure class="lab">
+    <h3 data-i18n="ch5.model.title"></h3>
+    <p class="how" data-i18n-html="ch5.model.how"></p>
+    <canvas class="cv" id="bwCv" role="img" data-i18n-aria="ch5.model.aria"></canvas>
+    <div class="ctl"><div class="seg" role="radiogroup" data-i18n-aria="ch5.ctl.banks"><span class="lbl" data-i18n="ch5.ctl.banks"></span><label><input type="radio" name="bwB" value="1"><span>1</span></label><label><input type="radio" name="bwB" value="2"><span>2</span></label><label><input type="radio" name="bwB" value="4"><span>4</span></label><label><input type="radio" name="bwB" value="8" checked><span>8</span></label><label><input type="radio" name="bwB" value="16"><span>16</span></label><label><input type="radio" name="bwB" value="32"><span>32</span></label></div></div>
+    <div class="ctl"><label class="rng"><span data-i18n="ch5.ctl.hit"></span><input type="range" id="bwH" min="0" max="1" step="0.1" value="0.5"><output id="bwHo"></output></label></div>
+    <div class="read">
+      <div><b class="g" id="bwG"></b><span data-i18n-html="ch5.read.gb"></span></div>
+      <div><b class="" id="bwF"></b><span data-i18n-html="ch5.read.frac"></span></div>
+      <div><b class="c" id="bwD"></b><span data-i18n-html="ch5.read.dimm"></span></div>
+      <div><b class="n" id="bwR"></b><span data-i18n-html="ch5.read.hit"></span></div>
+    </div>
+    <p class="say" id="bwSay" aria-live="polite"></p>
+  </figure>

@@ -1,0 +1,16 @@
+<figure class="lab">
+    <h3 data-i18n="ch3.model.title"></h3>
+    <p class="how" data-i18n-html="ch3.model.how"></p>
+    <canvas class="cv" id="c3Cv" role="img" data-i18n-aria="ch3.model.aria"></canvas>
+    <div class="legend"><span><i style="background:var(--violet)"></i>PRE</span><span><i style="background:var(--cyan)"></i>ACT</span><span><i style="background:var(--gold)"></i>RD</span><span><i style="background:var(--green)"></i><span data-i18n="ch3.cv.data"></span></span></div>
+    <div class="ctl"><div class="seg wrapmany" role="radiogroup" data-i18n-aria="ch3.ctl.trace"><span class="lbl" data-i18n="ch3.ctl.trace"></span><label><input type="radio" name="c3T" value="stream"><span data-i18n="ch3.tr.stream"></span></label><label><input type="radio" name="c3T" value="random" checked><span data-i18n="ch3.tr.random"></span></label><label><input type="radio" name="c3T" value="pingpong"><span data-i18n="ch3.tr.pingpong"></span></label></div></div>
+    <div class="ctl"><div class="seg wrapmany" role="radiogroup" data-i18n-aria="ch3.ctl.policy"><span class="lbl" data-i18n="ch3.ctl.policy"></span><label><input type="radio" name="c3P" value="open" checked><span data-i18n="ch3.pol.open"></span></label><label><input type="radio" name="c3P" value="close"><span data-i18n="ch3.pol.close"></span></label></div></div>
+    <div class="ctl"><div class="seg wrapmany" role="radiogroup" data-i18n-aria="ch3.ctl.bin"><span class="lbl" data-i18n="ch3.ctl.bin"></span><label><input type="radio" name="c3B" value="ddr4-3200aa"><span data-i18n="ch3.bin.ddr4-3200aa"></span></label><label><input type="radio" name="c3B" value="ddr5-6400b" checked><span data-i18n="ch3.bin.ddr5-6400b"></span></label><label><input type="radio" name="c3B" value="ddr5-6400x"><span data-i18n="ch3.bin.ddr5-6400x"></span></label></div></div>
+    <div class="read">
+      <div><b class="" id="c3H"></b><span data-i18n-html="ch3.read.hmc"></span></div>
+      <div><b class="g" id="c3L"></b><span data-i18n-html="ch3.read.lat"></span></div>
+      <div><b class="c" id="c3G"></b><span data-i18n-html="ch3.read.gb"></span></div>
+      <div><b class="" id="c3I"></b><span data-i18n-html="ch3.read.idle"></span></div>
+    </div>
+    <p class="say" id="c3Say" aria-live="polite"></p>
+  </figure>

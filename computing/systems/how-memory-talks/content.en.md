@@ -1,0 +1,667 @@
+---
+lang: en
+title: How Memory Talks to the CPU · a long essay you can play with
+desc: A DDR5-6400 CL32 module has a bigger latency number than DDR4: is it faster? What happens inside the module when the CPU asks for one byte? Why does memory still use a wide set of parallel wires? Ten models: how much time refresh takes, which row an address lands in, a cycle-by-cycle DRAM command simulator, CL in cycles and nanoseconds, bandwidth against row hits, bank groups, fly-by routing and training, on-die and side-band ECC, PAM3, and row hammer with its defences.
+---
+
+::: strings
+nav.back: ← Knowledge index
+nav.lang: Language
+toc.label: Contents
+toc.title: Contents
+u.pct: {v}%
+u.ns: {v} ns
+u.ps: {v} ps
+u.ck: {v} cycles
+u.us: {v} µs
+u.gbs: {v} GB/s
+u.ghz: {v} GHz
+u.gbaud: {v} GBd
+u.gbps: {v} Gb/s
+u.mts: {v} MT/s
+u.ui: {v} bit times
+u.mm: {v} mm
+u.k: {v} thousand
+u.n: {v}
+u.none: —
+:::
+
+# How Memory Talks to the CPU {#hero}
+
+::: strings
+kicker: Computing · Systems · a long essay you can play with
+:::
+
+A memory module is labelled DDR5-6400 CL32. The higher the clock, the bigger the latency number. So is it faster or not?<br>When the CPU asks for one byte, what actually happens inside the memory module? {.sub}
+
+There is a third question too. Every other wire in the computer has become a fast serial pair (PCIe, SATA, USB). Why does memory still use a wide set of parallel wires? We start with a small capacitor that holds charge: why it leaks, and why a read destroys it. Then how billions of these capacitors are arranged into banks, rows and columns; the five commands the memory controller uses to drive them, and how many cycles each one must wait. Why the CL number keeps growing while the real wait has not got longer. And what limits bandwidth when you move 64 bytes at a time. The second half asks why adding memory modules lowers the clock, what ECC actually protects, how memory soldered to the motherboard differs from memory on a graphics card, and why opening the same row again and again can flip a bit in the next row. **Every model is calculated step by step from real timing parameters**: the timings come from SK hynix and Micron datasheets, refresh and ECC come from the DDR5 standard as quoted in those datasheets, and row hammer comes from papers published since 2014. {.lead}
+
+An AI wrote this page. Every number from a datasheet is labelled with its generation and speed bin. **Where the page says “tuned parameter”, the value was chosen so the model can run. It was not measured**, and the text says how far the conclusion moves if that value doubles. Vendor overclock profiles (XMP) are kept apart from the JEDEC standard bins. This page explains mechanisms only. **It does not recommend any product**, and it does not describe how to carry out a row hammer attack. {.note}
+
+## A bit is a leaky capacitor {#ch1}
+
+::: strings
+toc: A bit is a leaky capacitor
+:::
+
+A bit in memory is whether a tiny capacitor holds charge. The charge slowly leaks away, and reading it empties it, so the memory must keep reading each row and writing it back. The bigger the chip, the more time this takes. {.law}
+
+Picture a row of small cups, full for a 1 and empty for a 0. Each cup has a hairline crack in its base, so after a while the water drains out. To check whether a cup is full, you must tip it into a long tube and see whether the water level rises. Once tipped, the cup is empty, and it has to be filled again. This is how DRAM stores data: one transistor works as a switch, and one capacitor acts as the cup. It is called a **1T1C cell**.
+
+To read, the switches for a whole row open at once, and each capacitor shares its charge with a long wire that runs to it (the **bit line**). The bit line is much larger than the capacitor, so its voltage moves only a little. A **sense amplifier** at the end of the bit line amplifies that small difference into a full 0 or 1, and writes the value back into the capacitor at the same time. A read is therefore **destructive**, but the amplifier restores every row it reads. Another way to store a bit is a latch: six transistors, no leakage, no refresh, but far more area (see <a href='../switches-that-compute/#ch6'>“How a Pile of Switches Learned to Do Arithmetic”, Chapter 6</a> and <a href='../why-compute-waits-for-memory/#ch2'>“Why Compute Waits for Memory”, Chapter 2</a>). A flash cell in a solid-state drive keeps its charge behind an insulating layer for years, but it writes slowly and wears out (see <a href='../what-a-drive-is-made-of/#ch4'>“What a Drive Is Made Of”, Chapter 4</a>). A DRAM capacitor loses its charge in tens of milliseconds, in exchange for reads and writes in tens of nanoseconds.
+
+::: diagram dg-cell keys=dg.cell
+cap: Figure 1 · One 1T1C cell and its sense amplifier (schematic, not to scale). The word line turns on the transistor, and the capacitor and bit line share charge. The amplifier compares the bit line with the reference line, amplifies the difference and writes it back to the capacitor.
+aria: Structure diagram: a DRAM cell is one transistor and one capacitor. The transistor gate is on the word line and its drain is on the bit line. The bit line goes to a sense amplifier, whose other side connects to a reference bit line. The result is written back after reading.
+wl: Word line (selects a row)
+bl: Bit line
+ref: Reference
+t: Transistor
+c: Capacitor: charged = 1
+sa: Sense amplifier
+leak: Charge leaks
+e1: ① The word line rises: every transistor in the row switches on
+e2: ② The capacitor shares its charge with the bit line, which moves only a little
+e3: ③ The amplifier pushes the difference to full scale, reads 0 or 1, and writes back
+:::
+
+So the memory controller must send a **refresh** command (REF) regularly. DDR5 rule: send {refN} refreshes within {refMs} ms, which is one every {refi5} µs on average (this interval is called tREFI). DDR4 sends one every {refi4} µs. During a refresh the whole group of chips can do nothing, and that time is called tRFC. The bigger the chip, the more rows it must refresh, so tRFC grows: from {rfc4a} ns for a 2 Gb DDR4 chip to {rfc4} ns at 8 Gb and {rfc4b} ns at 16 Gb.
+
+::: lab ch1-model
+model.title: How much time refresh takes
+model.how: Pick a chip and a refresh mode to see what share of the chip's time goes to refresh, and how much longer a random read waits on average. tRFC and tREFI are datasheet numbers. The “extra wait” is simple probability: a read lands in a refresh with probability tRFC ÷ tREFI, and once it does, it waits half a tRFC on average.
+model.aria: Bar chart: share of time busy with refresh for several chips. The current choice is highlighted.
+ctl.chip: Chip
+chip.d4_2: DDR4 2 Gb
+chip.d4_4: DDR4 4 Gb
+chip.d4_8: DDR4 8 Gb
+chip.d4_16: DDR4 16 Gb
+chip.d5_8: DDR5 8 Gb
+chip.d5_16: DDR5 16 Gb
+ctl.mode: Refresh mode
+mode.ab: All banks together
+mode.fgr: Fine-granularity (half interval)
+mode.sb: One bank at a time
+ctl.hot: Chip above 85°C
+read.refi: Refresh interval, tREFI
+read.rfc: One refresh, tRFC
+read.busy: Time busy with refresh
+read.extra: Extra wait for a random read
+say.normal: One refresh every {refi}, each lasting {rfc}: the chip spends *{busy}* of its time refreshing, and a random read waits {extra} longer on average.
+say.hot: Above 85°C, charge leaks faster, so the interval halves to {refi}. Busy time doubles to *{busy}*, and a random read waits {extra} longer on average.
+say.fgr: Fine-granularity refresh: one every {refi}, each lasting only {rfc}. The total busy share is *{busy}*, a little more than one full refresh, but each stall is short, so a random read waits only {extra} longer on average.
+say.sb: One bank at a time: each bank is blocked for {rfc} every {refi}, so that bank is busy *{busy}* of the time while the others carry on. A random read waits only {extra} longer on average.
+:::
+
+A default DDR5 16 Gb chip spends {busy5} of its time refreshing, and a random read waits {ext5} ns longer on average. DDR4 at 8 Gb is {busy4}, and at 16 Gb it is {busy4b}. Double the chip and tRFC grows with it, so the refresh share grows too. DDR5 halves the interval to {refi5} µs and offers two remedies. **Fine-granularity refresh** halves the amount refreshed each time ({rfc5f} ns). The total busy share rises slightly to {busy5f}, but the average extra wait falls to {ext5f} ns. **Same-bank refresh** (REFsb) locks only one bank in each group, for {rfc5s} ns. The other banks keep reading and writing, and the average extra wait is only {ext5s} ns. Above 85°C the interval halves again, and the busy share doubles to {busy5h}.
+
+The “extra wait” here counts only the case where a read meets a refresh, and it assumes reads arrive at random times. A real memory controller moves refreshes into idle time, or finishes pending reads before refreshing, so the real effect is usually smaller. The tRFC values for 24 Gb and 32 Gb chips are marked “to be determined” in every datasheet I opened, so they are not used here. {.take}
+
+## Which row an address lands in {#ch2}
+
+::: strings
+toc: Which row an address lands in
+:::
+
+A memory module is not one long line of cells. It has dozens of banks, and each bank has tens of thousands of rows. To read one value, the whole row containing it must first be moved into the row buffer. The memory controller splits the address the CPU gives it into channel, subchannel, bank group, bank, row and column. {.law}
+
+A library's books are not in one line. First comes the floor, then the shelf, then the row on the shelf, and finally the position within the row. Pull a whole row off the shelf and put it on the table (this is the slow step), and any book on the table is then quick to reach. To fetch from a different row, the current row must go back first.
+
+In a DRAM chip, the “shelf” is called a **bank**. A DDR5 16 Gb chip (the x8 kind, which sends 8 bits at a time) has {banks} banks, grouped into {bgs} **bank groups** of {bpg} each. Each bank has {rows} rows, and each row holds {page} bytes (the part of that row inside this chip). Opening a row is called **activation**: all {page} bytes of the row are read by the sense amplifiers and held there. That row of amplifiers is the **row buffer**. Any column in the open row can then be read quickly, until the row is closed and written back.
+
+::: diagram dg-bank keys=dg.bank
+cap: Figure 2 · One bank. The row address selects a row, which goes into the row buffer. The column address picks a run from the row buffer and sends it out (schematic, not to scale; row and byte counts from the Micron 16 Gb DDR5 datasheet). RA = row address, CA = column address.
+aria: Structure diagram: a bank is an array of rows and columns. The row decoder selects one row, which is loaded into the row buffer (the sense amplifiers) below. The column select then picks a short run from the row buffer and sends it to the data lines.
+rowdec: Row decoder
+array: {rows} rows × {page} bytes
+open: Activated row
+rb: Row buffer (sense amplifiers)
+coldec: Column select
+dq: Data lines (8 bits per chip)
+ra: RA
+ca: CA
+:::
+
+A common 16 GB DDR5 memory module is {chips} of these chips side by side, forming a 32-bit **subchannel**. Two subchannels make up one module. The {chips} chips in one subchannel always act together: their same row adds up to {rowKiB} KiB, which holds exactly {linesRow} cache lines of 64 bytes. The CPU usually has two channels, with one module in each. So a physical address must be cut into several fields, and the memory controller decides which bits mean what. A common scheme keeps the lowest few bits for the offset inside a cache line, then moves upward through channel, subchannel, column, bank group and bank. The top dozen or so bits are the row number.
+
+::: diagram dg-addr keys=dg.addr
+cap: Figure 3 · One way to cut a {abits}-bit address across two channels, each with one 16 GB single-rank module (“row-first”). BG = bank group, SC = subchannel, Ch = channel. The bit widths come from the chip's row and column counts. The memory controller decides the order of the fields; the model below lets you change it.
+aria: Structure diagram: a 35-bit physical address is cut from high to low into row, bank, bank group, column, subchannel, channel and byte-offset fields, with the bit count of each field marked.
+row: Row {n} bits
+ba: Bank {n}
+bg: BG {n}
+col: Col {n}
+sub: SC {n}
+ch: Ch {n}
+off: Offset {n}
+hi: High bits
+lo: Low bits
+e1: Offset: byte within a 64-byte line; memory never sends one byte alone
+e2: Channel/subchannel bits low: neighbouring lines alternate
+e3: Column bits below bank: a stream of lines stays in one open row
+:::
+
+::: lab ch2-model
+model.title: Enter an address and see where it lands
+model.how: Enter a hexadecimal physical address (up to {abits} bits, which covers {agib} GiB across two channels), then switch the scheme to see which channel, bank and row it lands in. “Group-first” puts the bank group below the column: consecutive cache lines first go round all 8 bank groups. Chapter 6 explains why.
+ctl.addr: Physical address
+ctl.scheme: Scheme
+sch.rowfirst: Row-first
+sch.bgfirst: Group-first
+read.ch: Channel · subchannel
+read.bank: Bank group · bank in group
+read.row: Row
+read.col: Column (which 64-byte block)
+chsub: {ch} · {sub}
+bgba: {bg} · {ba}
+bits.f.off: Offset {n} bits
+bits.f.ch: Channel {n} bits
+bits.f.sub: Subchannel {n} bits
+bits.f.col: Column {n} bits
+bits.f.bg: Bank group {n} bits
+bits.f.ba: Bank {n} bits
+bits.f.rank: Rank {n} bits
+bits.f.row: Row {n} bits
+say.map: This address goes to channel {ch}, subchannel {sub}: bank group {bg}, bank {ba} within the group (bank {bank} on the chip), row {row}, and it is block {col} of 64 bytes in that row. The next cache line (address + 64) goes to another channel or subchannel. The next cache line in the same subchannel (address + {step}) lands in {next}.
+say.over: This address is more than {abits} bits long. Two 16 GB modules cannot hold it, and the extra high bits have nowhere to go.
+say.bad: Enter a hexadecimal number, for example 0x23A5C9E48.
+next.col: the same row of the same bank, next column
+next.bg: the same row in the next bank group
+next.row: a different bank or a different row
+:::
+
+The default address 0x23A5C9E48 is cut row-first. It lands in channel {mCh}, subchannel {mSub}, bank group {mBg}, bank {mBa} of the group, row {mRow}, column {mCol}. A {abits}-bit address is exactly {agib} GiB: two {dimmGB} GB modules, each with two subchannels, and {chips} chips of {dens} Gb per subchannel. A real memory controller also XORs some row bits into the bank number, so two large arrays do not land on the same bank by accident. The next chapter shows how bad it is when they do.
+
+Only a single-rank module is drawn here (one rank, or side). A double-rank module needs one more bit to choose the side. Each vendor's memory controller uses a scheme that is not published, often with XOR. The two schemes here are only to show what each field controls. {.take}
+
+## Five commands, a chain of waits {#ch3}
+
+::: strings
+toc: Five commands, a chain of waits
+:::
+
+The memory controller drives memory with only five commands: activate a row (ACT), read (RD), write (WR), close a row (PRE) and refresh (REF). Each command must wait a set number of cycles before the next, and latency is the sum of those waits. If the row you want is already open, the access is fastest. If a different row is open, it is slowest. {.law}
+
+Back to the library: the book you want is on the row already on the table, so you reach it straight away. If the table is empty, you first fetch a row. If the table holds another row, that row must go back before the new one is fetched. These three cases are called a **row hit**, a **row miss** (the bank is empty) and a **row conflict**.
+
+The datasheet gives the wait for each step in clock cycles. Take JEDEC DDR5-6400B as an example (one cycle is {tck6} ps). After sending ACT, wait **tRCD** = {rcd6} cycles before a read. After sending RD, wait **CL** = {cl6} cycles for the data to appear, then use {bl2} cycles to send the 64 bytes. Once a row is open it must stay open for at least **tRAS** = {ras6} cycles before it can close. After sending PRE, wait **tRP** = {rp6} cycles before the next row can be opened. Two ACTs to the same bank must be at least **tRC** = tRAS + tRP = {rc6} cycles apart, which is about {rc6ns} ns.
+
+::: diagram dg-timing keys=dg.timing
+cap: Figure 4 · A row conflict on DDR5-6400B, drawn to scale in cycles (numbers from the model's timing table). PRE = precharge (close the row), ACT = activate (open a row), RD = read, CL = CAS latency, CMD = command. A hit has only the last two segments; a miss lacks the first one.
+aria: Timing diagram: the horizontal axis is clock cycles, drawn to scale. It shows PRE, ACT and RD commands. After PRE comes tRP, after ACT comes tRCD, after RD comes CL, then the data burst. The total conflict latency is marked.
+cmd: CMD
+data: Data
+pre: PRE
+act: ACT
+rd: RD
+trp: tRP {n}
+trcd: tRCD {n}
+cl: CL {n}
+bl: Burst {n}
+hit: Hit: {n} cycles = {ns} ns
+miss: Miss: {n} cycles = {ns} ns
+conf: Conflict: {n} cycles = {ns} ns
+:::
+
+The latency of each case is the sum of its waits. A hit is CL + burst = {hit6c} cycles, {hit6} ns. A miss adds tRCD: {miss6c} cycles, {miss6} ns. A conflict adds tRP as well: {conf6c} cycles, {conf6} ns. The simulator below follows these rules cycle by cycle. It issues at most one command per cycle, and every command must satisfy all the waiting rules (including tRRD, tFAW and tCCD, which later chapters explain).
+
+::: lab ch3-model
+model.title: A cycle-by-cycle DRAM command simulator
+model.how: Pick an access pattern and a row policy to see how many of the {trN} reads are hits, misses and conflicts, and how long each read waits on average. “Streaming” reads consecutive cache lines (group-first mapping, which rotates through the 8 bank groups in the same row). “Random” picks a bank and row at random each time. “Ping-pong” alternates between two rows that happen to sit in the same bank. The diagram above shows the commands and data of the first few reads. Each read waits for the previous one, like following a pointer. The last cell shows the throughput when all {trN} reads are queued together.
+model.aria: Timeline: the ACT, RD and PRE commands and data bursts of the first few reads, laid out in time order.
+cv.data: Data
+ctl.trace: Access pattern
+tr.stream: Streaming
+tr.random: Random
+tr.pingpong: Ping-pong between two arrays
+ctl.policy: After a read
+pol.open: Leave row open (open page)
+pol.close: Close at once (close page)
+ctl.bin: Memory
+bin.ddr4-3200aa: DDR4-3200 JEDEC bin
+bin.ddr5-6400b: DDR5-6400 JEDEC bin
+bin.ddr5-6400x: DDR5-6400 CL32
+read.hmc: Hit · miss · conflict
+read.lat: Average per read (each read waits)
+read.gb: Throughput with all reads queued
+read.idle: Single read: hit / miss / conflict
+hmc: {h} · {m} · {c}
+idle: {h} / {m} / {c}
+cv.cmd: Command
+cv.t: Time (ns)
+say.hits: Mostly row hits ({h} of them): the row needed stays open. The average is *{lat}* per read, close to the single-read hit time of {hit}.
+say.conflicts: Mostly conflicts ({c} of them): each read must close the other row before opening its own. The average is *{lat}* per read.
+say.misses: {m} misses and {c} conflicts: an open row does not help, because the next access is almost always to another row. The average is *{lat}* per read.
+say.missclose: Close at once: the next access always finds the bank empty, so all {m} reads are misses. The average is *{lat}* per read, and the tRP wait of a conflict is saved.
+:::
+
+On DDR5-6400B, streaming reads average {sSlat} ns per read. Apart from the first few, which must open rows, they are all hits. Random reads average {sRlat} ns, with {sRmiss} of the {trN} reads missing and {sRconf} conflicting. With close-page, every read is a miss, and the average falls to {sRclat} ns. So neither open nor close page is always better. Open page pays off when access is regular, and close page pays off when it is not. Ping-pong is the worst case. Open page averages {sPlat} ns, and close page still takes {sPclat} ns, because two row openings in the same bank must be at least tRC apart, however they are scheduled. This is the “two large arrays on one bank” problem from the previous chapter.
+
+These figures are only the memory chip's own time. From a CPU read to the data arriving, the request also crosses the caches, the on-chip network and the memory controller's queue. A typical desktop processor measures about {dramNs} ns for one memory read (see <a href='../how-cpu-caches-work/#ch1'>“How a CPU's Three Levels of Cache Work”, Chapter 1</a>). The chip's few tens of nanoseconds are a large part of that, but not all of it.
+
+The simulator handles reads only. It has no writes (they have their own tWR and read-to-write turnaround waits). It has no refresh (Chapter 1 covers that separately). It issues at most one command per cycle, while DDR5 ACT in practice occupies two cycles; this is simplified to one. The scheduler is the usual “serve hits first, then open rows in arrival order” (FR-FCFS, Rixner et al. 2000). Random accesses are generated from a fixed seed, so every run is the same. {.take}
+
+## CL keeps growing, the wait does not {#ch4}
+
+::: strings
+toc: CL keeps growing, the wait does not
+:::
+
+CL is a count of cycles, not a time. Double the clock and a cycle is half as long. Double CL, and the wait in nanoseconds stays the same. Over twenty years, real memory latency has barely changed. What has changed is how much data it can move per second. {.law}
+
+Which is longer, waiting 16 ticks or 32 ticks? It depends on how long a tick is. The DDR4-3200 clock runs at 1600 MHz, so one cycle is {tck4} ns. The DDR5-6400 clock runs at 3200 MHz, so one cycle is {tck5} ns. (“6400” is the number of transfers per second: data moves on both the rising and the falling edge of the clock.) To convert CL to nanoseconds: CL × 2000 ÷ transfer rate.
+
+The table lists several speed bins. The JEDEC standard bins come from SK hynix and Micron datasheets. Rows marked “vendor overclock” are profiles set by memory makers, using higher voltages and selected chips (XMP profiles). They are not part of the standard.
+
+::: html ch4-html
+th.bin: Bin
+th.kind: Type
+th.t: CL-tRCD-tRP
+th.cl: CL in nanoseconds
+th.miss: Row miss (tRCD + CL)
+th.peak: Peak per 64-bit channel
+:::
+
+The vendor-overclocked DDR5-6400 CL32 has a CL of {cl5x} ns. The DDR4-3200 CL16 of ten years ago also gives {cl4x} ns. The JEDEC DDR4-3200AA is {cl43} ns, and the DDR5-6400B is {cl56} ns. So the CL of standard bins also stays between 13 and 17 ns. Over the same period, the peak bandwidth per 64-bit channel rose from {peak4} GB/s to {peak6} GB/s.
+
+::: lab ch4-model
+model.title: CL calculator
+model.how: Drag the transfer rate and CL to see the CL in nanoseconds, and compare it with the bins in the table. Each dot on the chart is one bin from the table. The horizontal axis is the rate, and the vertical axis is the CL in nanoseconds. The dashed line is the curve where CL stays fixed and the nanoseconds fall as the rate rises.
+model.aria: Scatter plot: transfer rate on the horizontal axis and CL in nanoseconds on the vertical axis. It marks each speed bin and your chosen point, and draws the constant-CL curves.
+ctl.mts: Transfer rate
+ctl.cl: CL (cycles)
+read.tck: One cycle
+read.cl: CL in time
+read.burst: Send 64 bytes (BL16)
+read.peak: Peak per 64-bit channel
+kind.jedec: JEDEC standard bin
+kind.xmp: Vendor overclock
+kind.xmpv: Vendor overclock, {v} V
+bin.ddr4-3200aa: DDR4-3200AA
+bin.ddr4-3200x: DDR4-3200
+bin.ddr5-4800b: DDR5-4800B
+bin.ddr5-5600b: DDR5-5600B
+bin.ddr5-6400b: DDR5-6400B
+bin.ddr5-6400x: DDR5-6400
+bin.ddr5-7200i: DDR5-7200 (Intel test setting)
+cv.x: Transfer rate (MT/s)
+cv.y: CL (ns)
+cv.iso: CL {n}
+say.same: CL {cl} at {mts} is *{ns}*, the same as DDR4-3200 CL16 at {ref}. Its bandwidth is {x} times as high.
+say.faster: CL {cl} at {mts} is *{ns}*, shorter than DDR4-3200 CL16 at {ref}. Its bandwidth is {x} times as high.
+say.slower: CL {cl} at {mts} is *{ns}*, longer than DDR4-3200 CL16 at {ref}. Its bandwidth is {x} times as high.
+:::
+
+So is DDR5 faster or not? It depends on what your program is waiting for. A random read waits for the miss time, tRCD + CL. In the table, the vendor-overclocked DDR5-6400 takes {miss5x} ns and DDR4-3200 CL16 takes {miss4x} ns, which is about the same. The part that moves the 64 bytes takes {burst4} ns on DDR4-3200 (8 transfers on a 64-bit bus) and {burst6} ns on DDR5-6400 (16 transfers on a 32-bit subchannel), which is also about the same. What has really doubled is how many reads can be in flight at once, and how many bytes can be moved per second. A program that follows a chain of pointers, one after another, waits on latency, and DDR5 does little for it. A program that reads whole arrays, or several cores reading at once, uses bandwidth, and DDR5 is much faster for it. For the general relation between latency and bandwidth (Little's law), see <a href='../why-compute-waits-for-memory/#ch4'>“Why Compute Waits for Memory”, Chapter 4</a>.
+
+This compares only the memory chip timings. It leaves out the memory controller and the on-chip network, which stay the same when the same CPU uses different modules. Running a vendor profile needs a motherboard and CPU memory controller that can keep up. It is operation beyond the standard. {.take}
+
+## Moving 64 bytes at a time {#ch5}
+
+::: strings
+toc: Moving 64 bytes at a time
+:::
+
+A memory module sends one cache line at a time: 64 bytes, in a continuous run called a burst. Peak bandwidth is the bus width times the transfer rate. How close you get to the peak depends on how many accesses are row hits, and how many banks can work at once. {.law}
+
+When moving house, one trip with a full box is better than one trip per book. The time on the road cannot be avoided, so each trip should carry more. The DRAM array itself is slow. Inside the DDR5 chip, the core takes {pref} times the pin width from the row buffer on each access (called **{pref}n prefetch**), and then sends it out in {pref} transfers on the pins. At 6400 MT/s, the core needs only {core6} million fetches per second.
+
+A DDR4 module is one 64-bit channel, and a burst is 8 transfers (BL8): 8 × 8 bytes = {bl8bytes} bytes. DDR5 lengthens the burst to 16 transfers (BL16). At 64 bits wide, that would be 128 bytes per burst, twice a cache line, and half of it would be wasted. So DDR5 splits each module into **two independent 32-bit subchannels**: 16 × 4 bytes = {bl16bytes} bytes, which is exactly one line. Each subchannel receives its own commands, so the two can read two unrelated places at once. DDR5 also moves the power management IC (PMIC) onto the module. On desktop and laptop modules, the motherboard supplies only {pmicIn} V, and the module steps it down to the {vdd} V the chips need.
+
+::: diagram dg-dimm keys=dg.dimm
+cap: Figure 5 · One DDR5 module (schematic, not to scale). Its two 32-bit subchannels are independent. The PMIC turns the 5 V from the motherboard into 1.1 V. The SPD chip records the module type and timings, and the CPU reads them at boot over a small I2C-style bus. CA = command/address; SPD = serial presence detect.
+aria: Structure diagram: a DDR5 module split into left and right 32-bit subchannels, each with its own chips and command-address lines. In the middle are the power management IC and the SPD chip that records the module's details. A module with ECC has one extra chip per subchannel.
+subA: Subchannel A: 32 bits
+subB: Subchannel B: 32 bits
+chip: x8
+ecc: ECC
+pmic: PMIC: 5 V → 1.1 V
+spd: SPD hub
+caA: CA A
+caB: CA B
+note: One burst per subchannel: 16 × 4 bytes = 64 bytes
+:::
+
+The peak of one DDR5-6400 module is 6400 million transfers per second × 8 bytes = {bwDimm} GB/s, which is {bwPeak} GB/s per subchannel. A desktop with two channels reaches {peak2ch} GB/s. But the peak needs the data lines to carry data on every cycle. The simulator from Chapter 3 is used below: {bwN} reads are queued together, to see how much one subchannel actually delivers.
+
+::: lab ch5-model
+model.title: Peak against actual: row hits and bank parallelism
+model.how: Choose how many banks the reads are spread across, and drag the probability that the next read is in the same row. You see the throughput of one subchannel. The curve is the result for the current bank count, as the hit probability runs from 0 to 1. The gold dot is your chosen point. The simulator, the timings (DDR5-6400B) and the scheduling are the same as in Chapter 3.
+model.aria: Line chart: the probability that the next read is in the same row on the horizontal axis, and the actual throughput of one subchannel on the vertical axis. A dashed line marks the peak, and the current choice is shown.
+ctl.banks: Spread across this many banks
+ctl.hit: Probability the next read is in the same row
+read.gb: One subchannel, actual
+read.frac: Share of peak
+read.dimm: Whole module (two subchannels)
+read.hit: Actual row-hit rate
+cv.x: Probability the next read is in the same row
+cv.y: Throughput (GB/s)
+cv.peak: Peak {v}
+say.full: {nb} banks, hit probability {p}: reaches *{frac}* of peak, {gb}. The waits for opening rows are hidden by reads from other banks.
+say.one: Only 1 bank: at hit probability {p} it reaches just *{frac}* of peak. On hits it is held back by tCCD_L within the group, and on misses by tRC.
+say.mid: {nb} banks, hit probability {p}: *{frac}* of peak, {gb}. More banks and more hits both push it up.
+say.conflict: {nb} banks, hit probability {p}: mostly conflicts, *{frac}* of peak, {gb}. With too few banks, the time to close and open rows cannot be hidden.
+:::
+
+If every read goes to one bank and each is a new row, one subchannel delivers only {bw1_0} GB/s, because each read waits for a full tRC. With the same all-new rows spread over {banks} banks, it delivers {bw32_0} GB/s, which is {bw32_0f} of peak: while one bank opens a row, the others send data. Eight banks with a 90% hit rate reach {bw8_9f}. One bank with every read a hit reaches only {bw1_1f}, and the reason is in the next chapter. Real programs fall between these cases. So “this module delivers {bwDimm} GB/s” is an upper limit, and everyday use gets less. For what happens when several cores fight over the same bandwidth, see <a href='../why-compute-waits-for-memory/#ch5'>“Why Compute Waits for Memory”, Chapter 5</a>.
+
+Only one subchannel, one rank and reads only are modelled. Refresh and read-to-write turnaround are left out. The bank and row of each read are generated at random from a fixed seed. If the two subchannels are loaded symmetrically, the whole module delivers twice this. {.take}
+
+## Bank groups: why back-to-back reads are half speed {#ch6}
+
+::: strings
+toc: Bank groups: why back-to-back reads are half speed
+:::
+
+Two reads in the same bank group must be at least tCCD_L apart. Reads in different groups need only tCCD_S, which is the length of one burst. The higher the clock, the more these two numbers diverge, so consecutive reads should rotate through the bank groups. {.law}
+
+A kitchen has eight cooktops, each with its own sink. Two dishes from the same cooktop must wait for the pan to be washed in between, but switching to another cooktop needs no wait. DDR4 began grouping banks. Banks in the same group share part of the internal data path, and back-to-back reads from the same group must give that path time to recover.
+
+::: diagram dg-bg keys=dg.bg
+cap: Figure 6 · The eight bank groups of a DDR5 chip (schematic, not to scale). At DDR5-6400, two reads in the same group are {ccdl64} cycles apart, and reads in different groups only {ccds} cycles, which is the time one BL16 burst occupies the data lines. tCCD_L/S = long/short column-to-column delay.
+aria: Structure diagram: the eight bank groups of one DDR5 chip. Each group has four banks that share the group's internal data path, which joins the chip's data pins. Two reads in the same group are tCCD_L apart; reads in different groups are tCCD_S apart.
+grp: Group {n}
+bank: Bank
+io: Data pins
+same: Same group: tCCD_L = {n} cycles
+diff: Other group: tCCD_S = {n} cycles
+:::
+
+The datasheet gives tCCD_S = {ccds} cycles and tCCD_L = max(8 cycles, 5 ns). At DDR5-3200, 5 ns is exactly 8 cycles, so the two are equal and grouping makes no difference. At DDR5-6400, 5 ns is {ccdl64} cycles, so back-to-back reads in one group can use only half the data lines. At DDR5-8800, 5 ns is {ccdl88} cycles. The same holds for activation: two ACTs in the same group must be tRRD_L apart, and in different groups tRRD_S = {rrds} cycles apart. Also, any 4 ACTs must fall within tFAW, which limits the instantaneous current.
+
+::: lab ch6-model
+model.title: Rotating through several bank groups
+model.how: Choose how many bank groups back-to-back reads rotate through, and drag the transfer rate to see how much of the time the data lines are busy. Tick “every read opens a new row” to see when tRRD and tFAW start to bite. Then tick “x16 chip” for a 2 KB row, which makes tFAW longer. This is still the Chapter 3 simulator, with {bgN} reads queued together. At each rate, CL and tRCD are 16 ns rounded up to whole cycles.
+model.aria: Bar chart: the share of time the data lines are busy at each transfer rate. The current rate is highlighted.
+ctl.groups: Rotate through this many bank groups
+ctl.mts: Transfer rate
+ctl.newrow: Every read opens a new row
+ctl.x16: x16 chip (2 KB per row)
+read.ccdl: tCCD_L
+read.frac: Data-line utilisation
+read.gb: One subchannel
+cv.y: Data-line utilisation
+say.same: All in one bank group: at {mts}, back-to-back reads in the group are {ccdl} cycles apart, but a burst takes only 8. The data lines reach just *{frac}*.
+say.sameok: All in one bank group, but at {mts} 5 ns is only {ccdl} cycles, which is the same as across groups. The data lines reach *{frac}*.
+say.rot: Rotating through {g} bank groups: consecutive reads are always in different groups, only 8 cycles apart. The data lines reach *{frac}*.
+say.faw: Every read opens a new row: activations are limited by tFAW (at most 4 in {faw} cycles). The data lines reach only *{frac}*.
+say.fawok: Every read opens a new row, but the window of 4 activations, {faw} cycles, is exactly four bursts long. The data lines still reach *{frac}*.
+:::
+
+At DDR5-6400, consecutive reads all in one bank group keep the data lines at {g1_64}. Rotating through two groups brings this to {g2_64}. At DDR5-3200, a single group still reaches {g1_32}, but at DDR5-8800 a single group falls to {g1_88}. The higher the clock, the more grouping matters. This is why the group-first mapping of Chapter 2 is useful, and why Chapter 3's streaming reads rotate through all 8 groups. As for tFAW: an x8 chip has a 1 KB row, and tFAW is {faw1k} cycles, which is exactly four bursts. So even with every read opening a new row, it reaches {gn1k}. An x16 chip has a 2 KB row, and tFAW is {faw2k} cycles, which leaves {gn2k}.
+
+When 8 groups are rotated, each group still has 4 banks inside it. When “opens a new row” is ticked, several consecutive reads cycle through the 4 banks within a group. Refresh and writes are not considered. The data-line utilisation is calculated over the total time of {bgN} reads. The first few reads must open rows, so even the rotating case never quite reaches 100%. {.take}
+
+## Adding modules, how the wires run {#ch7}
+
+::: strings
+toc: Adding modules, how the wires run
+:::
+
+A memory's data lines are a wide set of parallel wires. The more chips on a wire, and the farther it runs, the harder it is for the signal to settle within one bit time. DDR copes by sending a strobe pair with every 8 data lines and calibrating the delay of each line at boot. That is why filling all four slots lowers the clock. {.law}
+
+A crowd shouts a slogan. If people stand close together and there are few of them, everyone shouts in time. If there are many people in a long line, the one at the end hears the cue late. On one data line with a single module, only that module's few chips are connected. Add a second module, and the wire bends through an extra stretch and carries another group of chips. The edges of the signal become slower and more reflections appear. The principle that longer wires become more chaotic is covered in <a href='../how-a-computer-is-wired/#ch2'>“How the Parts of a Computer Are Wired Together”, Chapter 2</a>. Sixteen wires that run together but differ slightly in speed are covered in <a href='../how-sata-works/#ch2'>“Why SATA Has Lasted Over Twenty Years”, Chapter 2</a>.
+
+This is how AMD specifies memory for the Ryzen 9 9950X. With one module per channel, the maximum is DDR5-{amd1}. With two modules, the maximum is DDR5-{amd2}, which is {amdR} of the one-module figure, for both single-rank and dual-rank modules. To fit more memory, servers use registered DIMMs (RDIMMs), which relay the command and address lines once on the module. The newest approach is MRDIMM, covered in Chapter 9.
+
+::: diagram dg-dpc keys=dg.dpc
+cap: Figure 7 · One module per channel, and two (schematic, not to scale). Data lines are point-to-point, or branch in the two-module case. Clock and command lines pass the chips one after another on the module (fly-by), so each chip receives the clock at a slightly different time.
+aria: Structure diagram: the top channel has one module, and its data lines run straight from the memory controller to the chips. The bottom channel has two modules. Its data lines branch at the first module's slot, and the second module is farther away. Command and clock lines pass each chip in turn on every module (fly-by).
+mc: Memory controller
+one: 1 module per channel
+two: 2 modules per channel
+dq: Data lines (a DQS pair per 8 lines)
+fly: Clock, command: chip by chip
+stub: Stub: extra branch, extra chips
+d1: Module
+d2: Second module
+:::
+
+Why not use serial wires instead? PCIe uses a pair of wires with the clock hidden in the data, so it does not mind differences between wires (see <a href='../how-pcie-works/#ch2'>“Why PCIe Keeps Doubling”, Chapter 2</a>). The cost is serialisation and encoding at both ends, which adds a delay to every read. Memory cares most about those few tens of nanoseconds. DDR's answer is to keep the wires short and measure the differences, then correct for them. Each group of 8 data lines has a strobe pair (DQS), and the data travels with it. At boot, the memory controller runs **training** on every line. It scans the delays, finds the middle of each bit's window and stores it. The clock and command lines pass the chips one after another on the module (fly-by), so each chip sees the clock at a different time. This offset is also corrected by training (write levelling).
+
+::: lab ch7-model
+model.title: Fly-by routing: how much later each chip sees the clock
+model.how: {flyChips} chips sit along the clock line, with neighbours a few millimetres apart (**tuned parameter**, default {pitch} mm). The signal travels {tpd} ps per inch on the board (the same value used in “How the Parts of a Computer Are Wired Together”). Drag the transfer rate and the spacing to see how much later the last chip is than the first, measured in bit times. Anything beyond half a bit time reads wrongly without training.
+model.aria: Schematic: the moment each chip sees the clock, placed on a time axis, with a background of bit-time cells.
+ctl.mts: Transfer rate
+ctl.pitch: Chip spacing
+read.ui: One bit time
+read.step: Difference between neighbours
+read.span: First chip to last chip
+read.spanui: In bit times
+cv.t: Time (ps)
+cv.chip: Chip {n}
+say.train: At {mts}, one bit lasts only {ui}, and the last chip arrives {span} late: that is *{x}*. Without per-chip calibration, data would land in the wrong bit.
+say.fine: At {mts}, one bit lasts {ui}, and the last chip is only {span} late (*{x}*). A single common timing point is enough.
+:::
+
+With the default spacing, neighbouring chips differ by {flyPs} ps, and the five chips span {flySpan} ps from end to end. At DDR5-6400, one bit lasts only {ui64} ps, so the span is {flyUi64} bit times. The same wiring at DDR-400 speed would be only {flyUi4} (modules of that era did not yet use fly-by routing), and at DDR5-3200 it is {flyUi32}. Halving the spacing gives {flyUiH} bit times, and doubling gives {flyUiD}. The conclusion holds: at today's speeds, training is not an optional extra but a condition for booting at all. This is also why the computer goes dark for a while the first time it boots after a module is changed or the frequency is altered (where training sits in the boot and how long it takes: <a href='../how-a-computer-boots/#ch5'>“How a Computer Boots”, Chapter 5</a>).
+
+The model counts only the difference in wire length. It leaves out reflections, crosstalk and jitter in the chips, all of which also consume bit time. So it cannot reproduce AMD's two speeds. It shows only why calibration is needed for each chip and each line. The chip spacing is a tuned parameter. {.take}
+
+## What ECC protects {#ch8}
+
+::: strings
+toc: What ECC protects
+:::
+
+Every DDR5 chip contains ECC, but it corrects only a bit that has gone bad inside the chip. It does not tell the CPU, and it cannot see errors on the wire. To protect the whole path from chip to CPU, you need a memory module with extra ECC chips. {.law}
+
+A courier delivers a parcel. The warehouse checks it before dispatch, which is one layer of protection. You check it again when you sign at the door, which is another. The first layer finds damage done in the warehouse, and only the second finds damage done in transit. The principle of error correction is to store a few extra check bits, so that a single flipped bit can be located and fixed.
+
+The error correction inside a DDR5 chip is called **on-die ECC**. For every {odData} data bits there are {odCheck} check bits, which are calculated on write and stored together. On read, the chip checks the data itself, corrects any single-bit error, and then sends it out. The datasheet is clear about the limits. If the check result matches no single bit, the chip reports “detected, not correctable”. A corrected read is not written back to the array, and the memory controller is not told about each read. There is only a periodic scrub function (ECS) that scans and counts errors. On-die ECC exists so that smaller, more error-prone cells can still be sold. Its purpose is not to make the computer more reliable.
+
+**Side-band ECC** is a different thing. The module has one extra chip per subchannel. A laptop or desktop DDR5 ECC module has {eccSo} bits per subchannel (32 data bits plus 4 check bits), and a server RDIMM has {eccRd} bits (plus 8 check bits). The check bits are calculated and checked by the memory controller in the CPU. So it can see both a bad bit in a chip and an error on the wire, and it reports both to the operating system.
+
+::: diagram dg-ecc keys=dg.ecc
+cap: Figure 8 · The range each kind of ECC protects (schematic, not to scale). On-die ECC sits in the chip and protects storage. Side-band ECC sits in the CPU's memory controller and protects storage and transfer.
+aria: Structure diagram: on the left, the memory controller. In the middle, the wires. On the right, one DRAM chip. On-die ECC checks sit inside the chip and cover only the array. Side-band ECC checks are generated and verified by the memory controller and cover the whole path between chip, wires and controller.
+mc: Memory controller (CPU)
+wire: Wires on the module
+chip: DRAM chip
+array: Storage array
+od: On-die ECC: {d} + {c} bits
+sb: Side-band ECC logic
+odr: Protects storage only
+sbr: Protects the whole path, reports errors
+:::
+
+::: lab ch8-model
+model.title: How many flipped bits can be corrected?
+model.how: Choose a code and the number of bits flipped in one codeword. You see, across all possible error positions, how many are corrected, how many are detected but not correctable, and how many silently become wrong data. Every error position is enumerated, not sampled. The codes are textbook Hamming codes. (136,128) corrects one bit and is the same size as the DDR5 on-die ECC, but its parity-check matrix is the textbook layout, not JEDEC's. (72,64) corrects one bit and detects two, the classic shape of DDR4 side-band ECC. “Pick an example” draws one random set of error positions and works out the syndrome.
+model.aria: Stacked bars: for 1, 2 and 3 flipped bits, the share that is corrected, detected but not correctable, and silently wrong.
+ctl.code: Code
+code.none: No ECC
+code.sec: (136,128) corrects 1 bit
+code.secded: (72,64) corrects 1, detects 2
+ctl.k: Bits flipped in one codeword
+k.1: 1 bit
+k.2: 2 bits
+k.3: 3 bits
+btn.ex: Pick an example
+read.fixed: Corrected
+read.due: Detected, not correctable
+read.silent: Silently wrong
+read.n: Number of error-position combinations
+cv.k: {k}-bit error
+ex: Example: flipped bit(s) {pos}; syndrome {s}. {out}
+ex.none: Example: flipped bit(s) {pos}; there are no check bits, so the data is simply wrong.
+out.fixed: Corrected.
+out.due: Reported as “not correctable”.
+out.silent: Another bit was “corrected” in error. The data is wrong, and nobody knows.
+say.none: No ECC: every flipped bit stays flipped, and *all* of them silently become wrong data.
+say.fixed: 1 bit flipped: *{fixed}* of cases are corrected.
+say.due: {k} bits flipped: {due} are detected and reported as not correctable, and *{silent}* silently go wrong.
+say.silent: {k} bits flipped: *{silent}* of cases silently go wrong (the syndrome points to another bit, which gets “corrected” in error), and {due} are detected.
+:::
+
+With one bit in error, both codes correct it ({e1fix} of cases). With two bits in error, (136,128) detects only {e2due}, and {e2sil} of cases “correct” a third bit, so the data is wrong while the result looks normal. All {e2n} combinations were counted. That share depends on how the parity-check matrix is laid out. With the same 136 bits and 8 check bits, using all 128 columns with an odd number of 1s plus 8 even ones, only {e2silOdd} of two-bit errors go silently wrong (two odd columns XOR to an even value, which mostly lands on an unused syndrome). (72,64) adds an overall parity bit, so all {d2due} two-bit errors are detected. With three bits in error, (72,64) still lets {d3sil} go silently wrong. So on-die ECC and side-band ECC are not alternatives. The inner layer fixes single bits that went bad in storage, and the outer layer is not fooled by two errors that happen to line up.
+
+The (136,128) code in the model is the textbook layout: positions 1 to 136, with check bits at positions 1, 2, 4, … 128. Real DDR5 on-die ECC uses a parity-check matrix defined by JEDEC itself, which I have not seen, so its silent-error share is not the 88% here. The two layouts in the fourth paragraph only show how far that share can move. The codes used by side-band ECC in DDR5 server modules differ between CPU vendors, and some can correct even a whole failed chip. Only the classic (72,64) is used here. The model assumes all error positions are equally likely. {.take}
+
+## Memory that is not in a slot {#ch9}
+
+::: strings
+toc: Memory that is not in a slot
+:::
+
+The shorter the wire, the cleaner the signal, so it can run faster and use less power. Phones and thin laptops solder memory next to the processor. Graphics cards solder memory around the GPU and send one and a half bits per symbol. Servers put a buffer chip on the module. All of them are working against the wire problem of Chapter 7. {.law}
+
+**LPDDR** is for phones and laptops. There is no memory module: the chips are soldered to the board next to the processor, or stacked on top of it (package-on-package). The wires are short, the load is light and the voltage is low, so it can run faster for the same power. In April 2024 Samsung announced LPDDR5X at {lp5x} Gb/s per pin. The cost is that it is soldered down and cannot be replaced. **CAMM2** is a compromise. It is a press-fit memory module standard that JEDEC published in 2023. It places LPDDR5X or DDR5 on a small board pressed flat against the motherboard, with no long edge connector or slots. Capacities run from {camLo} GB to {camHi} GB.
+
+::: diagram dg-pop keys=dg.pop
+cap: Figure 9 · A memory module and package-on-package (schematic, not to scale). Each module signal travels across the board, through the slot and the edge contacts. LPDDR is stacked on or beside the processor, with only a few millimetres to cover.
+aria: Structure diagram: on the left, a memory module in a slot. Its signals travel through motherboard traces, the slot and the edge contacts before reaching the chips. On the right, package-on-package: memory chips are stacked directly on the processor package, so the traces are very short.
+dimm: Module
+slot: Slot + edge contacts
+board: Board traces: cm
+cpu: Processor
+lp: LPDDR chips
+short: In package: millimetres
+pkg: Package-on-package (PoP)
+:::
+
+**GDDR** is memory for graphics cards. It is soldered around the GPU, and each chip is 32 bits wide, with pins running several times faster than DDR. GDDR6 sends 1 bit per symbol (NRZ, two levels). GDDR7, announced in March 2024, uses **PAM3** instead: three levels, and two symbols give 9 combinations, of which 8 are used to represent 3 bits. At the same bit rate, the symbol rate is only two-thirds of the original. For how three-level signalling is told apart, and why Thunderbolt 5 uses it too, see <a href='../how-thunderbolt-works/#ch5'>“How Thunderbolt Works”, Chapter 5</a>. For four-level PAM4 and eye diagrams, see <a href='../how-pcie-works/#ch9'>“Why PCIe Keeps Doubling”, Chapter 9</a>.
+
+::: diagram dg-pam3 keys=dg.pam3
+cap: Figure 10 · Two PAM3 symbols have 3 × 3 = 9 combinations, and 8 of them represent 3 bits (schematic). I did not see the JEDEC text giving GDDR7's exact mapping.
+aria: Schematic: two consecutive PAM3 symbols, each able to be negative, zero or positive. Together they form 3 × 3 = 9 combinations, of which 8 represent the 8 values of 3 bits, and one is unused.
+s1: Symbol 1
+s2: Symbol 2
+unused: Unused
+note: 3 bits ↔ 2 symbols: 1.5 bits per symbol
+:::
+
+::: lab ch9-model
+model.title: Is it worth sending several bits per symbol?
+model.how: Drag the bit rate per pin to compare NRZ, PAM3 and PAM4. More levels mean a lower symbol rate and less loss on the line, but the gaps between levels are smaller. Line loss grows linearly with frequency. The slope is a **tuned parameter** (default {sigK} dB per GHz), which you can also drag. The vertical axis is the remaining eye height, relative to NRZ with no loss.
+model.aria: Line chart: bit rate per pin on the horizontal axis, and remaining eye height on the vertical axis. Three lines show NRZ, PAM3 and PAM4, with the current bit rate marked.
+ctl.gbps: Bit rate per pin
+ctl.k: Line-loss slope (tuned parameter)
+read.nrz: NRZ Nyquist frequency
+read.pam3: PAM3 Nyquist frequency
+read.pam4: PAM4 Nyquist frequency
+read.best: Widest eye
+kfmt: {v} dB/GHz
+s.nrz: NRZ
+s.pam3: PAM3
+s.pam4: PAM4
+cv.x: Bit rate per pin (Gb/s)
+cv.y: Remaining eye height
+say.nrz: {g}: the loss is still small, and NRZ with two levels has the widest eye (*{e}*). There is no need for more levels.
+say.pam3: {g}: the loss on NRZ is now too high. PAM3 has a symbol rate one-third lower, and its eye is the widest (*{e}*).
+say.pam4: {g}: the loss is higher still, so even the smaller level gaps of PAM4 pay off. Its eye is the widest (*{e}*).
+:::
+
+On this line, at 32 Gb/s per pin, the NRZ Nyquist frequency is {s32nrz} GHz, PAM3 is {s32pam3} GHz and PAM4 is {s32pam4} GHz. Above a loss of {xNP3} dB at the NRZ Nyquist frequency, PAM3 starts to beat NRZ. Above {xP3P4} dB, PAM4 beats PAM3 again. With the default slope, PAM3 is best between {xNP3g} Gb/s and {xP3P4g} Gb/s per pin. Halving the slope moves this window up, starting at {xNP3gh} Gb/s. Doubling it moves the window to start at {xNP3g2} Gb/s. The position of the window depends on the line, so a graphics card choosing PAM3 and PCIe 6.0 choosing PAM4 are each a judgement about their own wires. The GDDR7 standard goes up to {g7max} Gb/s per pin, and a {g7w}-bit chip at that rate gives {g7dev} GB/s. The RTX 5090 of 2025 runs at {r5090g} Gb/s with a {r5090w}-bit bus, for a total of {r5090} GB/s. For HBM, which stacks memory beside the GPU and uses thousands of short wires, see <a href='../why-compute-waits-for-memory/#ch9'>“Why Compute Waits for Memory”, Chapter 9</a>.
+
+Servers take another route: **MRDIMM** (multiplexed-rank DIMM) puts a data buffer chip on the module. The chips on each rank run at half speed, and the buffer interleaves the two ranks onto the channel. The first generation runs at {mr1} MT/s per channel, while the chips themselves run at only {mr1half}. The Intel Xeon 6 6900P series supports {mr1}, and the 6700P and 6500P series support {mrX7}. The peak of one channel is {mrBw} GB/s.
+
+The eye-height model has a single linear loss slope. It has no reflections, crosstalk, noise or equaliser, so it shows only the direction of the trade-off (more levels, slower symbols). It cannot say which standard generation to choose. {.take}
+
+## Row hammer: opening one row too often {#ch10}
+
+::: strings
+toc: Row hammer: opening one row too often
+:::
+
+Cells are packed ever closer. Repeatedly opening one row makes the charge leak faster from the rows next to it. If the refresh cannot keep up, bits flip. This is called row hammer. The defence is to count how many times each row has been opened. DDR5 wrote this into the standard in 2024. {.law}
+
+Someone upstairs stamps their feet all the time, and the dust falls from the ceiling below bit by bit. Normally, cleaning once a month is enough. Stamp hard enough and the dust falls faster than anyone can clean it. Repeatedly activating one row of DRAM raises and lowers its word line again and again, which speeds up the leakage of the capacitors in the rows next to it.
+
+::: diagram dg-hammer keys=dg.hammer
+cap: Figure 11 · Single-sided and double-sided row hammer (schematic, not to scale). The row repeatedly activated is the aggressor, and the adjacent rows are victims. A victim sandwiched between two aggressors receives the activations from both sides added together.
+aria: Schematic: several rows of cells in one bank. The row being activated again and again is the aggressor, and the rows above and below are victims. With an aggressor on each side, the victim in the middle is pressed from both sides.
+agg: Aggressor: opened repeatedly
+vic: Victim: charge leaks faster
+ok: Normal row
+single: Single-sided
+double: Double-sided
+:::
+
+Kim et al. published the first systematic study at ISCA in 2014. They tested {kimN} DDR3 modules, and {kimV} of them could have bits flipped this way, with as few as {kimMin} thousand activations. At that time one refresh window was {kimWin} ms, and two activations in the same bank were about {kimRC} ns apart. So in one window a row could be opened up to {kimMax} million times, far above the threshold. In 2020 the same team tested {k20chips} newer chips. The most vulnerable needed only {k20min} thousand activations (each side {k20row} thousand). The denser the chip, the lower the threshold.
+
+The early remedy was **target row refresh** (TRR). The chip keeps a small table of the rows that have been opened most recently, and during normal refresh it also refreshes their neighbours. The size of the table is a vendor secret. Frigo et al. found in 2020 that hammering many rows at once can make the small table miss some of them. Of the {trrN} DDR4 modules they tested, {trrV} could be broken this way, and some needed up to {trrSides} aggressor rows.
+
+::: lab ch10-model
+model.title: One bank, two refresh windows: how often a victim row is opened
+model.how: The attacker spreads a bank's activations across N aggressor rows in turn (one row apart, so each victim is pressed from both sides). Each refresh interval allows {rhPer} activations (tREFI minus tRFC, divided by tRC). Choose a defence and a flip threshold to see the victim row with the most activations, accumulated between two refreshes. The TRR table holds {rhK} rows. Per-row counting raises an alert when a row reaches a quarter of the threshold, so the controller can refresh its neighbours. The table size and the alert ratio are **tuned parameters**. Only the number of activations is counted here. No attack method is described.
+model.aria: Bar chart: the number of activations each victim row accumulates between two refreshes. A horizontal line marks the flip threshold.
+ctl.n: Number of aggressor rows
+ctl.mit: Defence
+mit.none: None
+mit.trr: Target row refresh (table of {rhK} rows)
+mit.prac: Per-row activation counting (PRAC)
+ctl.hc: Flip threshold
+read.worst: Most-hit victim row
+read.flips: Victim rows above the threshold
+read.per: Activations per aggressor row per cycle
+read.extra: Alerts / TRR refreshes
+cv.y: Victim activations
+cv.hc: Threshold {v}
+say.flipnone: No defence: a victim row is opened *{worst}* times between two refreshes. With a threshold of {hc}, {flips} rows flip.
+say.flip: {n} aggressor rows exceed what the table can track. A victim row accumulates *{worst}* activations against a threshold of {hc}, so {flips} rows flip.
+say.trrok: TRR can track {n} aggressor rows. The worst victim accumulates *{worst}* activations, below the threshold of {hc}.
+say.safe: No defence, but {n} aggressor rows share the activations. The worst victim gets *{worst}*, below the threshold of {hc}.
+say.prac: Per-row counting: any row that reaches {nbo} activations raises an alert and is refreshed. The worst victim gets *{worst}*, below the threshold of {hc}. There were {alerts} alerts.
+:::
+
+With no defence, a victim row sandwiched between two aggressors is opened {rhWorstN} thousand times between two refreshes, far above the 2014 threshold. With a TRR table of {rhK} rows, a victim gets at most {rhT2} activations against two aggressors. With 10 aggressors, though, the victim accumulates {rhT10} thousand. At a threshold of 10,000, {rhT10f} rows flip, and the worst victim gets as many as with no defence ({rhT10n} thousand). At the 2014 threshold of 139 thousand, the number of flipped rows is {rhT10b}. More aggressors mean fewer activations for each row. Growing the table to 16 rows brings the figure down to {rhT10k16} activations with 10 aggressors. Shrinking it to 4 rows leaves {rhT10k4} thousand, the same as no defence. Per-row counting does not depend on how many aggressors there are. At a threshold of 4,800, a row raises an alert when it reaches {rhNbo} activations, and the worst victim gets {rhP10}. The cost is {rhP10a} alerts in two refresh windows, each of which must pause for a refresh.
+
+This is why the JESD79-5C DDR5 standard, published in April 2024, added **per-row activation counting** (PRAC). Each row has a counter beside it. It increments on each activation, and when the threshold is reached the memory controller pauses and refreshes the neighbours. Before this, DDR5 had **RFM**: the memory controller counts activations per bank, and when the count is reached it sends a “refresh management” command, letting the chip decide which rows to refresh. PRAC makes closing a row a little slower, because the counter must be written back. That is its cost.
+
+The model assumes an attacker who fills every refresh interval with activations and hammers only one bank. In real chips, each victim row has its own threshold, and activations also affect neighbours two rows away. The real TRR algorithm is not published. Here a table that counts frequent items (Misra–Gries) stands in for it. Such a table happens to catch some counts and miss others. Halving the PRAC alert ratio (to one eighth) or doubling it (to one half) still gives no flips at any threshold. {.take}
+
+## Where the frontier is (as of November 2026) {#ch11}
+
+::: strings
+toc: Where the frontier is
+:::
+
+DDR5 keeps getting faster, and the standard now reaches {prac88} MT/s. DDR6 is still being drafted. LPDDR6, which is soldered to the board, has a standard first, and servers use MRDIMM and CXL to add bandwidth and capacity beyond the number of slots. {.law}
+
+The claims fall into three groups by strength of evidence. Each has a date. Figures go out of date, but the date shows how old they are.
+
+### Written into a standard {#h.est .sub3}
+
+- <span class='tag h'>Standard</span>On 17 April 2024 JEDEC updated the DDR5 standard to JESD79-5C. It raises speed bins to DDR5-{prac88} and adds per-row activation counting (PRAC). {#e1}
+- <span class='tag h'>Standard</span>On 9 July 2025 JEDEC published LPDDR6 (JESD209-6): {lp6lo} to {lp6hi} million transfers per second, with two {lp6dq}-bit subchannels per chip. {#e2}
+- <span class='tag h'>Standard</span>GDDR7 (JESD239, 5 March 2024) uses PAM3. CAMM2 (JESD318, published 5 December 2023) standardises the press-fit module. {#e3}
+
+### Built and measured by someone {#h.demo .sub3}
+
+- <span class='tag m'>Measured</span>Overclocking record: according to Duck-IT Tech News on 3 July 2026, saltycroissant ran a 24 GB module at DDR5-{rec}, with liquid nitrogen cooling. The earlier record, announced by Gigabyte at Computex in June, was {recPrev}. This is the limit of one module, one channel, under liquid nitrogen. It is not a speed you can run every day. {#d1}
+- <span class='tag m'>Measured</span>Samsung announced LPDDR5X at {lp5x} Gb/s per pin on 17 April 2024. The first generation of MRDIMM, at {mr1} MT/s, is already in use on Intel Xeon 6. {#d2}
+
+### Still in progress, or one party's claim {#h.claim .sub3}
+
+- <span class='tag l'>In progress</span>JEDEC press release of 30 April 2026: the MRDIMM data buffer standard JESD82-552 has been published, and the second-generation MRDIMM module standard is “nearing completion”, targeting {mr2} MT/s per channel. {#c1}
+- <span class='tag l'>Claim</span>DDR6: I did not find a published JEDEC DDR6 standard. The range of {d6lo} to {d6hi} MT/s that is often quoted comes from industry reports made before any standard was released. {#c2}
+- <span class='tag l'>Pointer</span>CXL memory expansion: memory attached over the PCIe physical layer. It trades a short extra delay for capacity beyond the slots, using serial wires. <a href='../coherent-interconnects/#ch5'>“How Chips Share Memory”, Chapter 5</a> covers it in more detail. {#c3}
+
+Taken together: the parallel wires of Chapter 7 are the main obstacle to faster memory. LPDDR shortens the wires to a few millimetres. GDDR packs an extra half bit into each symbol. MRDIMM lets the chips on a module run at half speed. CXL switches to serial wires altogether. DDR5 itself keeps going in the same slot, using training, equalisation and per-row counting.
+
+The numbers in this chapter age fastest. JEDEC's website refused my access, so the standard dates come from reprinted press releases. The overclocking record comes from a news report and was not checked directly on HWBOT. {.take}
+
+## Closing: three questions for any memory module {#ch12}
+
+::: strings
+toc: Closing: three questions for any memory module
+:::
+
+The numbers on a memory module are of two kinds. One is a count of cycles, which must be multiplied by the length of a cycle to become a time. The other is transfers per second, which must be multiplied by the bus width to become bandwidth. Latency has barely changed in twenty years, while bandwidth has doubled again and again. {.law}
+
+{.plain .qs}
+1. **What is CL in nanoseconds?**CL × 2000 ÷ transfer rate. DDR5-6400 CL32 is {cl5x} ns, the same as DDR4-3200 CL16. The CL of standard bins is between 13 and 17 ns (Chapter 4). What decides a random read is the miss time, tRCD + CL, plus tRP when a conflict adds it (Chapter 3). {#q1}
+2. **Is my program waiting on latency or bandwidth?**If it follows a chain of pointers, one after another, it waits on latency, and a higher clock will not help much. If it reads whole arrays, or several cores read at once, it uses bandwidth, and what matters is the channel count, row hits and bank parallelism (Chapters 5 and 6). {#q2}
+3. **How many modules, and at what speed?**Two modules per channel lowers the clock (Chapter 7). A rated high-speed profile is a vendor overclock, not a standard. Machines that need reliability need side-band ECC. The ECC inside DDR5 chips does not count (Chapter 8). {#q3}
+
+Back to the start: is DDR5-6400 CL32 faster or not? For one wait, *no*. The CL is {cl5x} ns, the same as DDR4-3200 CL16. For data moved per second, it has *doubled*: one module delivers {bwDimm} GB/s. When the CPU asks for one byte, the memory controller splits the address into channel, bank and row. It opens the row ({rcd6} cycles), reads ({cl6} cycles), and sends the 64 bytes ({bl2} cycles). If another row is open, it first closes that row ({rp6} cycles). Meanwhile it refreshes every {refi5} µs, avoids banks busy in the same group, and counts how often each row has been opened. Memory still uses a wide set of parallel wires because the conversion in a serial link costs a few extra nanoseconds, and memory cares most about those few tens of nanoseconds. The price is that every wire must be trained at boot, and adding modules means a lower clock. {#sum .sum tag=div}
+
+Read on: <a href='../how-cpu-caches-work/'>“How a CPU's Three Levels of Cache Work”</a> covers the levels above memory. <a href='../why-compute-waits-for-memory/'>“Why Compute Waits for Memory”</a> covers the memory wall, latency and bandwidth, and HBM. <a href='../how-a-computer-is-wired/#ch4'>“How the Parts of a Computer Are Wired Together”, Chapter 4</a> explains why the memory controller moved into the CPU, and the distances between two sockets. <a href='../how-pcie-works/'>“Why PCIe Keeps Doubling”</a> covers the other route: serial wires. <a href='../coherent-interconnects/'>“How Chips Share Memory”</a> covers chip-to-chip coherent interconnects such as CXL. {#links style="margin-top:2em"}
+
+::: footer
+**Sources.** SK hynix 16Gb DDR5 SDRAM datasheet H5CG48AGBDX018N, revision 1.0 (July 2022). SK hynix 8Gb DDR4 SDRAM datasheet H5AN8G8NCJR, revision 1.5 (March 2019). Micron 16Gb DDR5 SDRAM Die Rev D addendum, revision F (April 2024). Micron DDR5 SODIMM Core, revision F (May 2023). SQRAM (Advantech) DDR5-4800 RDIMM datasheet, revision 1.1 (December 2022). AMD Ryzen 9 9950X product page. Intel Core Ultra 200S Plus quick reference guide. G.SKILL F5-6400J3239G16GX2 (PC Gamer review) and Corsair CMK16GX4M2B3200C16 specifications. Kim et al., ISCA 2014. Kim et al., ISCA 2020. Frigo et al., IEEE S&P 2020. JEDEC press releases on JESD79-5C, JESD209-6, JESD239, JESD318 and MRDIMM (reprinted). Samsung LPDDR5X press release (17 April 2024). Tom's Hardware and Intel support pages on MRDIMM. Duck-IT Tech News report on the DDR5 overclocking record (3 July 2026). All were consulted on 15 November 2026. BRIEF.md states item by item which were seen only as reprints or search summaries. Classic results: Rixner et al. (2000, FR-FCFS scheduling); Hamming (1950); Misra and Gries (1982, frequent-item counting). Textbook: Jacob, Ng and Wang, “Memory Systems: Cache, DRAM, Disk” (2008).
+
+Links and URLs are listed in BRIEF.md for this page. This page explains mechanisms only and does not judge products.
+:::

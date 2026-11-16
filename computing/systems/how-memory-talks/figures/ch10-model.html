@@ -1,0 +1,15 @@
+<figure class="lab">
+    <h3 data-i18n="ch10.model.title"></h3>
+    <p class="how" data-i18n-html="ch10.model.how"></p>
+    <canvas class="cv" id="rhCv" role="img" data-i18n-aria="ch10.model.aria"></canvas>
+    <div class="ctl"><label class="rng"><span data-i18n="ch10.ctl.n"></span><input type="range" id="rhN" min="2" max="24" step="1" value="10"><output id="rhNo"></output></label></div>
+    <div class="ctl"><div class="seg wrapmany" role="radiogroup" data-i18n-aria="ch10.ctl.mit"><span class="lbl" data-i18n="ch10.ctl.mit"></span><label><input type="radio" name="rhM" value="none"><span data-i18n="ch10.mit.none"></span></label><label><input type="radio" name="rhM" value="trr" checked><span data-i18n-html="ch10.mit.trr"></span></label><label><input type="radio" name="rhM" value="prac"><span data-i18n="ch10.mit.prac"></span></label></div></div>
+    <div class="ctl"><div class="seg wrapmany" role="radiogroup" data-i18n-aria="ch10.ctl.hc"><span class="lbl" data-i18n="ch10.ctl.hc"></span><label><input type="radio" name="rhH" value="4800"><span>4,800</span></label><label><input type="radio" name="rhH" value="10000" checked><span>10,000</span></label><label><input type="radio" name="rhH" value="20000"><span>20,000</span></label><label><input type="radio" name="rhH" value="50000"><span>50,000</span></label><label><input type="radio" name="rhH" value="139000"><span>139,000</span></label></div></div>
+    <div class="read">
+      <div><b class="r" id="rhW"></b><span data-i18n-html="ch10.read.worst"></span></div>
+      <div><b class="g" id="rhF"></b><span data-i18n-html="ch10.read.flips"></span></div>
+      <div><b class="" id="rhP"></b><span data-i18n-html="ch10.read.per"></span></div>
+      <div><b class="c" id="rhX"></b><span data-i18n-html="ch10.read.extra"></span></div>
+    </div>
+    <p class="say" id="rhSay" aria-live="polite"></p>
+  </figure>

@@ -1,0 +1,15 @@
+<figure class="lab">
+    <h3 data-i18n="ch9.model.title"></h3>
+    <p class="how" data-i18n-html="ch9.model.how"></p>
+    <canvas class="cv" id="sgCv" role="img" data-i18n-aria="ch9.model.aria"></canvas>
+    <div class="legend"><span><i style="background:var(--cyan)"></i>NRZ</span><span><i style="background:var(--gold)"></i>PAM3</span><span><i style="background:var(--violet)"></i>PAM4</span></div>
+    <div class="ctl"><label class="rng"><span data-i18n="ch9.ctl.gbps"></span><input type="range" id="sgG" min="8" max="48" step="1" value="32"><output id="sgGo"></output></label></div>
+    <div class="ctl"><label class="rng"><span data-i18n="ch9.ctl.k"></span><input type="range" id="sgK" min="0.6" max="2.4" step="0.1" value="1.2"><output id="sgKo"></output></label></div>
+    <div class="read">
+      <div><b class="c" id="sgN"></b><span data-i18n-html="ch9.read.nrz"></span></div>
+      <div><b class="g" id="sg3"></b><span data-i18n-html="ch9.read.pam3"></span></div>
+      <div><b class="v" id="sg4"></b><span data-i18n-html="ch9.read.pam4"></span></div>
+      <div><b class="" id="sgB"></b><span data-i18n-html="ch9.read.best"></span></div>
+    </div>
+    <p class="say" id="sgSay" aria-live="polite"></p>
+  </figure>
