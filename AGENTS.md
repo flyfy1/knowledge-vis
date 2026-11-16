@@ -66,6 +66,8 @@ SITE_NAV_BASE_URL=http://127.0.0.1:18871/ node tests/site-nav-browser.cjs   # �
 ```
 
 - **已迁移到站点模板的页面**（目录里有 `page.json`）：改 `content.zh.md` / `content.en.md` / `figures/` / `page.json`，再跑 `node scripts/build-pages.cjs <页面目录>`；不要手改生成的 `index.html`、`copy.*.js`、`refs.json`。细则见 [specs/site-template.md](specs/site-template.md)。
+  - 已迁移页面的「被这些页面引用」是生成的：任何页面（迁移与否）新加、删掉或改了指向已迁移页面的链接，被指向的页面就会漂移，`--all --check` 和 Pages 工作流会失败，直到跑一次 `node scripts/build-pages.cjs --all` 并把重建的页面一起提交。
+  - 页面测试读 `index.html` 时用 `scripts/lib/prefill.cjs` 的 `unprefill(html, Z)` 去掉预填的中文（只去掉预填的，手写的仍会被查出来）；按 copy 表数链接时跳过生成的 `site.*` 键。
 - 新增长文（一篇讲透一个领域）：标准、文件布局与登记步骤见 [specs/essays.md](specs/essays.md)。
 - 站内导航（面包屑、`/<分类>/<子主题>/` 目录页、正文里《页面标题》自动变链接）：见 [specs/site-navigation.md](specs/site-navigation.md)。每个上线页面都引入 `site-nav.css` / `site-nav.js`，由 `scripts/build-site-nav.cjs` 生成，不手写。
 - 给文章页加概念、加分区：`node scripts/atlas-import-registry.cjs <页面目录>`、`--add-region`，细则见 [specs/atlas-search-index.md](specs/atlas-search-index.md)。

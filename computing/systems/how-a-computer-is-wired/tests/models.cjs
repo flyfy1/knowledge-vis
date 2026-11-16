@@ -11,7 +11,10 @@ const DIR = path.join(__dirname, '..');
 const M = require(path.join(DIR, 'models.js'));
 const ctx = { window: {} }; vm.runInNewContext(fs.readFileSync(path.join(DIR, 'copy.zh.js'), 'utf8'), ctx);
 const Z = ctx.window.ESSAY_COPY.zh;
-const html = fs.readFileSync(path.join(DIR, 'index.html'), 'utf8');
+// index.html may be a template build with the zh copy pre-filled (specs/site-template.md §8); every check reads
+// the markup with exactly that pre-fill removed, so hand-typed text still shows (scripts/lib/prefill.cjs).
+const { unprefill } = require(path.join(DIR, '..', '..', '..', 'scripts', 'lib', 'prefill.cjs'));
+const html = unprefill(fs.readFileSync(path.join(DIR, 'index.html'), 'utf8'), Z);
 const app = fs.readFileSync(path.join(DIR, 'app.js'), 'utf8');
 const { SPEC, PCI, LINE, maxmin, NB, NUMA, BOARD, NOC, D2D, I2C, FRONTIER } = M;
 
@@ -325,7 +328,7 @@ const f = (x, d) => x.toFixed(d);
   };
   const lits = v => (v.replace(/\{\w+\}/g, '').replace(/href="[^"]*"/g, '').replace(/<[^>]+>/g, '').match(/\d[\d,.]*\d|\d/g) || []).join(' ');
   for (const [k, v] of Object.entries(Z)) {
-    if (/\.say\./.test(k)) continue;
+    if (/\.say\./.test(k) || k.startsWith('site.')) continue; // site.*: the template's generated breadcrumb and backlinks, not prose
     const got = lits(v); if (!got && !(k in LITERALS)) continue;
     check('literal numbers in ' + k, got, LITERALS[k] || '');
   }
@@ -403,6 +406,7 @@ const f = (x, d) => x.toFixed(d);
   for (const file of ['index.html', 'app.js', 'models.js']) {
     let src = fs.readFileSync(path.join(DIR, file), 'utf8');
     if (file === 'index.html') {
+      src = unprefill(src, Z);
       const tt = src.match(/<title>([^<]*)<\/title>/)[1], md = src.match(/<meta name="description" content="([^"]*)">/)[1];
       check('static title = doc.title', tt, Z['doc.title']); check('static meta = doc.desc', md, Z['doc.desc']);
       src = src.replace(/<title>[^<]*<\/title>/, '').replace(/<meta name="description" content="[^"]*">/, '');
@@ -437,7 +441,7 @@ const f = (x, d) => x.toFixed(d);
     n++; if (mine.has(L + norm(a))) { fails++; console.error('FAIL alias used twice on this page ' + a); } mine.add(L + norm(a));
   }
   // live sibling links must point at chapters that exist
-  const all = Object.values(Z).join('');
+  const all = Object.keys(Z).filter(k => !k.startsWith('site.')).map(k => Z[k]).join(''); // site.*: generated backlinks (specs/site-template.md §8), not prose
   for (const sib of ['what-a-drive-is-made-of', 'how-sata-works', 'why-nvme-is-fast', 'how-usb-drives-talk', 'why-compute-waits-for-memory', 'how-pcie-works', 'how-thunderbolt-works', 'coherent-interconnects', 'how-a-computer-boots']) {
     const sh = fs.readFileSync(path.join(DIR, '..', sib, 'index.html'), 'utf8');
     for (const m of all.matchAll(new RegExp('\\.\\./' + sib + '/(#ch\\d+)?', 'g'))) if (m[1]) check(`${sib} anchor ${m[1]}`, sh.includes(`id="${m[1].slice(1)}"`), true);

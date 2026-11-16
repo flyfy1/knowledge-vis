@@ -37,6 +37,13 @@ The first essay was `demos/scarcity-moves/`. Six more were added on 2026-11-11 a
   diagram wider than a 320 px screen would pass (a reviewer forced one SVG to 420 px at 320: 0 failures with
   the skip, 24 without). The clipped-text check has no SVG skip at all. Restored in the five storage essays in
   9fcb9fac and in the other computing/systems essays on 2026-11-16 (specs/reviews/storage-diagrams-s1-s3-review-20261116.md item 4).
+  On a template page (specs/site-template.md) `index.html` carries the zh copy pre-filled and generated
+  `site.*` keys (breadcrumb, backlinks, related pages). `tests/models.cjs` reads `index.html` through
+  `unprefill(html, Z)` from `scripts/lib/prefill.cjs`, which removes exactly the pre-filled values and nothing
+  else, so the "no Chinese in index.html" check and the empty-element regexes keep their meaning: a hand-typed
+  string, or text in a `data-i18n` element that is not that key's value, still fails. Link counts and literal-number
+  scans over the copy table skip `site.*` keys. Added to the computing/systems essays on 2026-11-16 (template
+  Phase 1 batch A); a no-op on pages that are not yet converted.
 
 ## Files
 

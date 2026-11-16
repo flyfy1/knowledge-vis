@@ -9,7 +9,13 @@ const DIR = path.join(__dirname, '..');
 const M = require(path.join(DIR, 'models.js'));
 const ctx = { window: {} }; vm.runInNewContext(fs.readFileSync(path.join(DIR, 'copy.zh.js'), 'utf8'), ctx);
 const Z = ctx.window.ESSAY_COPY.zh;
-const html = fs.readFileSync(path.join(DIR, 'index.html'), 'utf8');
+// site.* keys are the template's generated breadcrumb, backlinks and related pages (specs/site-template.md §8), not prose:
+// the link checks below count only the page's own copy.
+const prose = o => Object.keys(o).filter(k => !k.startsWith('site.')).map(k => o[k]);
+// index.html may be a template build with the zh copy pre-filled (specs/site-template.md §8); every check reads
+// the markup with exactly that pre-fill removed, so hand-typed text still shows (scripts/lib/prefill.cjs).
+const { unprefill } = require(path.join(DIR, '..', '..', '..', 'scripts', 'lib', 'prefill.cjs'));
+const html = unprefill(fs.readFileSync(path.join(DIR, 'index.html'), 'utf8'), Z);
 const app = fs.readFileSync(path.join(DIR, 'app.js'), 'utf8');
 const { SPEC, USB2, MODES, LABELS, LINE, Q, WRAP, CHAIN, HEAT, STICK, FRONTIER } = M;
 
@@ -229,6 +235,7 @@ const zf = (x, d) => M.fmt(x, d, 'zh');
   for (const file of ['index.html', 'app.js', 'models.js']) {
     let src = fs.readFileSync(path.join(DIR, file), 'utf8');
     if (file === 'index.html') {
+      src = unprefill(src, Z);
       const tt = src.match(/<title>([^<]*)<\/title>/)[1], md = src.match(/<meta name="description" content="([^"]*)">/)[1];
       check('static title = doc.title', tt, Z['doc.title']); check('static meta = doc.desc', md, Z['doc.desc']);
       src = src.replace(/<title>[^<]*<\/title>/, '').replace(/<meta name="description" content="[^"]*">/, '');
@@ -260,7 +267,7 @@ const zf = (x, d) => M.fmt(x, d, 'zh');
   // live sibling links must point at chapters that exist; S3 (how-sas-works) is live since 2026-11-14 and is
   // linked from ch6.p1 and ch11.links (its chapter 2, the CDB), the same in zh and en; S5 (storage-over-a-network,
   // live 2026-11-15) is linked from ch6.p1 and ch11.links (its chapter 3, iSCSI)
-  const all = Object.values(Z).join('');
+  const all = prose(Z).join('');
   for (const sib of ['what-a-drive-is-made-of', 'how-sata-works', 'why-nvme-is-fast', 'how-sas-works', 'storage-over-a-network']) {
     const sh = fs.readFileSync(path.join(DIR, '..', sib, 'index.html'), 'utf8');
     for (const m of all.matchAll(new RegExp(sib + '/(#ch\\d+)?', 'g'))) if (m[1]) check(`${sib} anchor ${m[1]}`, sh.includes(`id="${m[1].slice(1)}"`), true);
@@ -279,8 +286,8 @@ const zf = (x, d) => M.fmt(x, d, 'zh');
 
   const ectx = { window: {} }; vm.runInNewContext(fs.readFileSync(path.join(DIR, 'copy.en.js'), 'utf8'), ectx);
   const EN = ectx.window.ESSAY_COPY.en, stub = ectx.window.ESSAY_COPY.enStub === true, ph = s => [...s.matchAll(/\{(\w+)\}/g)].map(m => m[1]).sort().join(',');
-  check('en S5 links = zh S5 links', (Object.values(EN).join('').match(/storage-over-a-network\/#?\w*/g) || []).sort().join(' '), (all.match(/storage-over-a-network\/#?\w*/g) || []).sort().join(' '));
-  check('en S3 links = zh S3 links', (Object.values(EN).join('').match(/how-sas-works\/#?\w*/g) || []).sort().join(' '), (all.match(/how-sas-works\/#?\w*/g) || []).sort().join(' '));
+  check('en S5 links = zh S5 links', (prose(EN).join('').match(/storage-over-a-network\/#?\w*/g) || []).sort().join(' '), (all.match(/storage-over-a-network\/#?\w*/g) || []).sort().join(' '));
+  check('en S3 links = zh S3 links', (prose(EN).join('').match(/how-sas-works\/#?\w*/g) || []).sort().join(' '), (all.match(/how-sas-works\/#?\w*/g) || []).sort().join(' '));
   check('en keys = zh keys', Object.keys(EN).sort().join('|'), Object.keys(Z).sort().join('|'));
   // the bus series (B1 how-pcie-works, B2 how-a-computer-is-wired, B6 how-thunderbolt-works, live 2026-11-15): anchors exist, zh = en
   for (const sib of ['how-pcie-works', 'how-a-computer-is-wired', 'how-thunderbolt-works']) {

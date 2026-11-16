@@ -68,6 +68,22 @@ const good = freshSite();
   ok(!/\{=|\[\[/.test(zh + en + html), 'no template syntax leaks into outputs');
   const c = build(good, '--check');
   ok(c.code === 0 && /OK demo\/basics\/fixture-essay/.test(c.out), '--check passes right after a build:\n' + c.out);
+
+  // unprefill (scripts/lib/prefill.cjs) is the exact inverse of pre-fill, and removes nothing else.
+  const { unprefill } = require(path.join(repo, 'scripts', 'lib', 'prefill.cjs'));
+  const T = require(path.join(repo, 'scripts', 'lib', 'template.cjs'));
+  const Z = T.loadCopy(path.join(d, 'copy.zh.js'));
+  const bare = T.buildEssay(d, { root: good, prefill: false }).outputs['index.html'];
+  ok(bare !== html && unprefill(html, Z) === bare, 'unprefill(pre-filled page) equals the build without pre-fill');
+  ok(unprefill(bare, Z) === bare, 'unprefill leaves a page without pre-fill unchanged');
+  const cjk = s => /[㐀-鿿]/.test(s.replace(/<title>[^<]*<\/title>|<meta name="description"[^>]*>|<details class="page-provenance"[\s\S]*?<\/details>/g, '').replace(/>中</g, '><'));
+  ok(!cjk(unprefill(html, Z)), 'nothing Chinese is left in the fixture page once pre-fill is undone');
+  const inject = (from, to) => { assert.ok(html.includes(from), 'fixture html contains ' + from); return unprefill(html.replace(from, to), Z); };
+  ok(cjk(inject('<p class="say" id="fxSay" aria-live="polite"></p>', '<p class="say" id="fxSay" aria-live="polite">手写</p>')), 'a hand-typed Chinese string in an element without a key survives unprefill');
+  const navBack = `data-i18n="nav.back">${T.esc(Z['nav.back'])}</a>`;
+  ok(cjk(inject(navBack, 'data-i18n="nav.back">手写的返回</a>')), 'Chinese inside a data-i18n element that is not that key\'s value survives unprefill');
+  ok(cjk(inject(navBack, `data-i18n="nav.back">${T.esc(Z['nav.back'])}手写</a>`)), 'the copy value followed by extra hand-typed Chinese survives unprefill');
+  ok(cjk(inject('aria-label="结构图：上层和下层"', 'aria-label="手写的标签"')), 'an aria-label that is not the key\'s value survives unprefill');
 }
 
 // 2b. Two migrated pages: generated backlinks (site.* keys, pre-filled index.html) never feed back as links,

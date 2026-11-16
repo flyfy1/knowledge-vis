@@ -226,7 +226,8 @@ and one `--all` pass would no longer be final (review 2026-11-16).
   `data-source-revision` / link / short SHA is then satisfied by the build.
 - **Pre-fill:** the zh text inside every empty `data-i18n*` element and `aria-label` from `data-i18n-aria`, so
   readers without JS see the essay. Values with `{v}` placeholders are left to `app.js`. `"prefill": false` in
-  `page.json` turns it off.
+  `page.json` turns it off. `scripts/lib/prefill.cjs` holds `prefill` and its exact inverse `unprefill`, which page
+  tests use to read the markup without it (§10 step 3).
 
 ## 9. How agents edit a migrated page
 
@@ -275,8 +276,8 @@ and STANDARD.md still applies; only the files differ.
 5. **Build and test.** Run `node scripts/build-pages.cjs <dir>`; the `draft:` warning is expected until
    registration. Write `content.en.md` (§9 translation contract) and rebuild until parity passes. Then run the
    page tests, the canvas sweep and the independent review on the built output.
-   - Pre-fill puts Chinese into `index.html`. A test that forbids CJK in `index.html` must skip the contents of
-     `data-i18n*` elements and `aria-label`s, or the page sets `"prefill": false` (§10 step 3).
+   - Pre-fill puts Chinese into `index.html`. A test that inspects the markup reads it through
+     `unprefill(html, Z)` from `scripts/lib/prefill.cjs` (§10 step 3), or the page sets `"prefill": false`.
 6. **Commit.** Commit sources and outputs together, never the outputs alone.
 7. **Registration.** Follow essays.md「Registering」:
    - add the row to `pages.config.js`;
@@ -301,11 +302,16 @@ registered.
      then convert. Only how-a-gpu-computes has two today.
 2. Run the page's `tests/models.cjs` and `tests/browser.cjs` on a `--no-chrome --no-prefill` build. Its
    `index.html` is identical to the old page, and its copy tables are equal key for key.
-3. **Decide on pre-fill before the full build.** how-memory-talks and how-a-computer-boots, and probably most of
-   the 2026-11-15 computing essays, have a `tests/models.cjs` check that forbids CJK in `index.html`, so it fails
-   on pre-filled text. Resolve it per page, either way:
-   - set `"prefill": false` in `page.json`;
-   - or, in a separate authored commit, teach that check to ignore the contents of `data-i18n*` elements.
+3. **Decide on pre-fill before the full build.** Most 2026-11-15 computing essays have a `tests/models.cjs` check
+   that forbids CJK in `index.html`, and some match regexes that expect empty elements (`<figcaption …></figcaption>`),
+   so they fail on pre-filled text. Resolve it per page, either way:
+   - in a separate authored commit, read `index.html` in the test through `unprefill(html, Z)` from
+     `scripts/lib/prefill.cjs`. It is the exact inverse of pre-fill (same file, so they cannot drift): it removes a
+     value only where it sits in the element whose key it is, and an `aria-label` only where it equals that key's
+     value. A hand-typed string, or extra text next to a value, survives and still fails the check
+     (tests/site-template.cjs pins this). On a page that is not yet converted it is a no-op. Checks that count links
+     or literal numbers over the copy table skip the generated `site.*` keys. This is what batch A did;
+   - or set `"prefill": false` in `page.json`.
 
    Do not loosen any other assertion.
 4. Run the full build (`node scripts/build-pages.cjs <page-dir>`), the page tests again and the canvas sweep.

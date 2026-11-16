@@ -10,7 +10,13 @@ const DIR = path.join(__dirname, '..');
 const M = require(path.join(DIR, 'models.js'));
 const ctx = { window: {} }; vm.runInNewContext(fs.readFileSync(path.join(DIR, 'copy.zh.js'), 'utf8'), ctx);
 const Z = ctx.window.ESSAY_COPY.zh;
-const html = fs.readFileSync(path.join(DIR, 'index.html'), 'utf8');
+// site.* keys are the template's generated breadcrumb, backlinks and related pages (specs/site-template.md §8), not prose:
+// the link checks below count only the page's own copy.
+const prose = o => Object.keys(o).filter(k => !k.startsWith('site.')).map(k => o[k]);
+// index.html may be a template build with the zh copy pre-filled (specs/site-template.md §8); every check reads
+// the markup with exactly that pre-fill removed, so hand-typed text still shows (scripts/lib/prefill.cjs).
+const { unprefill } = require(path.join(DIR, '..', '..', '..', 'scripts', 'lib', 'prefill.cjs'));
+const html = unprefill(fs.readFileSync(path.join(DIR, 'index.html'), 'utf8'), Z);
 const app = fs.readFileSync(path.join(DIR, 'app.js'), 'utf8');
 const { SPEC, DEFAULTS, LEVEL, NAS, ISCSI, FC, BUDGET, LOSS, CAPS, MP, EC, FRONTIER, KiB, MiB } = M;
 const P = M.prose();
@@ -264,6 +270,7 @@ const SAYKEY = /\.say\.|^u\.|\.cv\.|^ch8\.unit/;
   for (const file of ['index.html', 'app.js', 'models.js']) {
     let src = fs.readFileSync(path.join(DIR, file), 'utf8');
     if (file === 'index.html') {
+      src = unprefill(src, Z);
       const tt = src.match(/<title>([^<]*)<\/title>/)[1], md = src.match(/<meta name="description" content="([^"]*)">/)[1];
       check('static title = doc.title', tt, Z['doc.title']); check('static meta = doc.desc', md, Z['doc.desc']);
       src = src.replace(/<title>[^<]*<\/title>/, '').replace(/<meta name="description" content="[^"]*">/, '');
@@ -289,7 +296,7 @@ const SAYKEY = /\.say\.|^u\.|\.cv\.|^ch8\.unit/;
   for (const s of sib) { const f = path.join(DIR, '..', '..', '..', s, 'REGISTRY.json'); if (fs.existsSync(f)) for (const c of JSON.parse(fs.readFileSync(f, 'utf8')).concepts) for (const a of [...c.aliases.zh, ...c.aliases.en]) owned.set(norm(a), s); }
   for (const c of R.concepts) for (const a of [...c.aliases.zh, ...c.aliases.en]) { n++; if (owned.has(norm(a))) { fails++; console.error(`FAIL alias owned by ${owned.get(norm(a))}: ${a}`); } }
   // links to other site pages: the page exists and the anchor exists there
-  const all = Object.values(Z).join('');
+  const all = prose(Z).join('');
   for (const m of all.matchAll(/href='\.\.\/([\w-]+)\/(#[\w-]+)?'/g)) {
     const f = path.join(DIR, '..', m[1], 'index.html'); n++;
     if (!fs.existsSync(f)) { fails++; console.error('FAIL link to missing page ' + m[1]); continue; }

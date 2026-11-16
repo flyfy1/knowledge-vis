@@ -15,7 +15,10 @@ const ROOT = path.join(DIR, '..', '..', '..');
 const M = require(path.join(DIR, 'models.js'));
 const ctx = { window: {} }; vm.runInNewContext(fs.readFileSync(path.join(DIR, 'copy.zh.js'), 'utf8'), ctx);
 const Z = ctx.window.ESSAY_COPY.zh;
-const html = fs.readFileSync(path.join(DIR, 'index.html'), 'utf8');
+// index.html may be a template build with the zh copy pre-filled (specs/site-template.md §8); every check reads
+// the markup with exactly that pre-fill removed, so hand-typed text still shows (scripts/lib/prefill.cjs).
+const { unprefill } = require(path.join(DIR, '..', '..', '..', 'scripts', 'lib', 'prefill.cjs'));
+const html = unprefill(fs.readFileSync(path.join(DIR, 'index.html'), 'utf8'), Z);
 const app = fs.readFileSync(path.join(DIR, 'app.js'), 'utf8');
 const { SRC, FRONTIER } = M, H = SRC.h100;
 
@@ -320,12 +323,15 @@ const P = M.prose();
   for (const [k, v] of Object.entries(Z)) if (/^dg\./.test(k)) for (const m of v.matchAll(/\{(\w+)\}/g)) { n++; if (!new RegExp(`'${k.replace(/\./g, '\\.')}'[^\\n]*vars: \\{[^}]*\\b${m[1]}\\b`).test(app)) { fails++; console.error(`FAIL {${m[1]}} in ${k} not supplied`); } }
   check('eleven diagrams (six or more required)', [...html.matchAll(/class="dia" data-dg="/g)].length, 11);
   check('every diagram has a spec, an aria label and a caption', [...html.matchAll(/data-dg="(\w+)"/g)].every(m => app.includes('DG.' + m[1] + ' =') && Z['dg.' + m[1] + '.aria'] && Z['dg.' + m[1] + '.cap']), true);
-  check('script cache keys on all four scripts', (html.match(/\.js\?v=20261115[a-z]?"/g) || []).length, 4);
+  // a template page (specs/site-template.md) takes its ?v= key from page.json (§9 step 4); the hand-written page keeps the pinned one
+  const VER = fs.existsSync(path.join(DIR, 'page.json')) ? JSON.parse(fs.readFileSync(path.join(DIR, 'page.json'), 'utf8')).version : null;
+  check('script cache keys on all four scripts', (html.match(new RegExp('\\.js\\?v=' + (VER || '20261115[a-z]?') + '"', 'g')) || []).length, 4);
   // the registrar adds one bilingual page-provenance label (skipped in the CJK check below)
   check('at most one provenance label', (html.match(/<details class="page-provenance"/g) || []).length <= 1, true);
   for (const file of ['index.html', 'app.js', 'models.js']) {
     let src = fs.readFileSync(path.join(DIR, file), 'utf8');
     if (file === 'index.html') {
+      src = unprefill(src, Z);
       const tt = src.match(/<title>([^<]*)<\/title>/)[1], md = src.match(/<meta name="description" content="([^"]*)">/)[1];
       check('static title = doc.title', tt, Z['doc.title']); check('static meta = doc.desc', md, Z['doc.desc']);
       src = src.replace(/<title>[^<]*<\/title>/, '').replace(/<meta name="description" content="[^"]*">/, '');

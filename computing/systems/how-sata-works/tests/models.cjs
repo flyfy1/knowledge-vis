@@ -9,7 +9,13 @@ const DIR = path.join(__dirname, '..');
 const M = require(path.join(DIR, 'models.js'));
 const ctx = { window: {} }; vm.runInNewContext(fs.readFileSync(path.join(DIR, 'copy.zh.js'), 'utf8'), ctx);
 const Z = ctx.window.ESSAY_COPY.zh;
-const html = fs.readFileSync(path.join(DIR, 'index.html'), 'utf8');
+// site.* keys are the template's generated breadcrumb, backlinks and related pages (specs/site-template.md §8), not prose:
+// the link checks below count only the page's own copy.
+const prose = o => Object.keys(o).filter(k => !k.startsWith('site.')).map(k => o[k]);
+// index.html may be a template build with the zh copy pre-filled (specs/site-template.md §8); every check reads
+// the markup with exactly that pre-fill removed, so hand-typed text still shows (scripts/lib/prefill.cjs).
+const { unprefill } = require(path.join(DIR, '..', '..', '..', 'scripts', 'lib', 'prefill.cjs'));
+const html = unprefill(fs.readFileSync(path.join(DIR, 'index.html'), 'utf8'), Z);
 const app = fs.readFileSync(path.join(DIR, 'app.js'), 'utf8'), mod = fs.readFileSync(path.join(DIR, 'models.js'), 'utf8');
 const { SPEC, UDMA, B8, LINK, DISK, POWER, PM, HDD, FRONTIER } = M;
 
@@ -238,6 +244,7 @@ const T88 = '1001110100/0110001011,0111010100/1000101011,1011010100/0100101011,1
   for (const file of ['index.html', 'app.js', 'models.js']) {
     let src = fs.readFileSync(path.join(DIR, file), 'utf8');
     if (file === 'index.html') {
+      src = unprefill(src, Z);
       const tt = src.match(/<title>([^<]*)<\/title>/)[1], md = src.match(/<meta name="description" content="([^"]*)">/)[1];
       check('static title = doc.title', tt, Z['doc.title']); check('static meta = doc.desc', md, Z['doc.desc']);
       src = src.replace(/<title>[^<]*<\/title>/, '').replace(/<meta name="description" content="[^"]*">/, '');
@@ -264,30 +271,30 @@ const T88 = '1001110100/0110001011,0111010100/1000101011,1011010100/0100101011,1
   // the sibling essay S1 is live (2026-11-14): its links must point at chapters that exist there, in both languages
   const s1 = fs.readFileSync(path.join(DIR, '..', 'what-a-drive-is-made-of', 'index.html'), 'utf8');
   const s1Links = v => [...v.matchAll(/what-a-drive-is-made-of\/(#ch\d+)?/g)];
-  n++; if (s1Links(Object.values(Z).join('')).length < 7) { fails++; console.error('FAIL expected links to S1 in ch1.p2, ch1.p3, ch5.p1, ch10.links'); }
-  for (const v of Object.values(Z)) for (const m of s1Links(v)) if (m[1]) check('S1 anchor ' + m[1], s1.includes(`id="${m[1].slice(1)}"`), true);
+  n++; if (s1Links(prose(Z).join('')).length < 7) { fails++; console.error('FAIL expected links to S1 in ch1.p2, ch1.p3, ch5.p1, ch10.links'); }
+  for (const v of prose(Z)) for (const m of s1Links(v)) if (m[1]) check('S1 anchor ' + m[1], s1.includes(`id="${m[1].slice(1)}"`), true);
   // the SAS essay S3 is live (2026-11-14): ch1.limit and ch10.links point at it; anchors must exist there
   const s3 = fs.readFileSync(path.join(DIR, '..', 'how-sas-works', 'index.html'), 'utf8');
   // the USB essay S4 is live (2026-11-15): ch10.q2 (#ch6) and ch10.links point at it; anchors must exist there
   const s4 = fs.readFileSync(path.join(DIR, '..', 'how-usb-drives-talk', 'index.html'), 'utf8');
   const s4Links = v => [...v.matchAll(/how-usb-drives-talk\/(#ch\d+)?/g)];
   check('links to S4 (ch10.q2, ch10.links)', s4Links(Z['ch10.q2'] + Z['ch10.links']).length, 2);
-  for (const v of Object.values(Z)) for (const m of s4Links(v)) if (m[1]) check('S4 anchor ' + m[1], s4.includes(`id="${m[1].slice(1)}"`), true);
+  for (const v of prose(Z)) for (const m of s4Links(v)) if (m[1]) check('S4 anchor ' + m[1], s4.includes(`id="${m[1].slice(1)}"`), true);
   const s3Links = v => [...v.matchAll(/how-sas-works\/(#ch\d+)?/g)];
-  check('links to S3 (ch1.limit, ch10.links)', s3Links(Object.values(Z).join('')).length, 2);
-  for (const v of Object.values(Z)) for (const m of s3Links(v)) if (m[1]) check('S3 anchor ' + m[1], s3.includes(`id="${m[1].slice(1)}"`), true);
+  check('links to S3 (ch1.limit, ch10.links)', s3Links(prose(Z).join('')).length, 2);
+  for (const v of prose(Z)) for (const m of s3Links(v)) if (m[1]) check('S3 anchor ' + m[1], s3.includes(`id="${m[1].slice(1)}"`), true);
 
   const ectx = { window: {} }; vm.runInNewContext(fs.readFileSync(path.join(DIR, 'copy.en.js'), 'utf8'), ectx);
   const EN = ectx.window.ESSAY_COPY.en, stub = ectx.window.ESSAY_COPY.enStub === true, ph = s => [...s.matchAll(/\{(\w+)\}/g)].map(m => m[1]).sort().join(',');
   check('en keys = zh keys', Object.keys(EN).sort().join('|'), Object.keys(Z).sort().join('|'));
-  check('en S1 links = zh S1 links', s1Links(Object.values(EN).join('')).map(m => m[0]).sort().join(' '), s1Links(Object.values(Z).join('')).map(m => m[0]).sort().join(' '));
-  check('en S4 links = zh S4 links', s4Links(Object.values(EN).join('')).map(m => m[0]).sort().join(' '), s4Links(Object.values(Z).join('')).map(m => m[0]).sort().join(' '));
+  check('en S1 links = zh S1 links', s1Links(prose(EN).join('')).map(m => m[0]).sort().join(' '), s1Links(prose(Z).join('')).map(m => m[0]).sort().join(' '));
+  check('en S4 links = zh S4 links', s4Links(prose(EN).join('')).map(m => m[0]).sort().join(' '), s4Links(prose(Z).join('')).map(m => m[0]).sort().join(' '));
   // the network-storage essay S5 is live (2026-11-15): ch10.links points at it
   const s5Links = v => [...v.matchAll(/storage-over-a-network\/(#ch\d+)?/g)].map(m => m[0]);
-  check('links to S5 (ch10.links)', s5Links(Object.values(Z).join('')).join(' '), 'storage-over-a-network/');
+  check('links to S5 (ch10.links)', s5Links(prose(Z).join('')).join(' '), 'storage-over-a-network/');
   check('ch10.links links S5', s5Links(Z['ch10.links']).length, 1);
-  check('en S5 links = zh S5 links', s5Links(Object.values(EN).join('')).sort().join(' '), s5Links(Object.values(Z).join('')).sort().join(' '));
-  check('en S3 links = zh S3 links', s3Links(Object.values(EN).join('')).map(m => m[0]).sort().join(' '), s3Links(Object.values(Z).join('')).map(m => m[0]).sort().join(' '));
+  check('en S5 links = zh S5 links', s5Links(prose(EN).join('')).sort().join(' '), s5Links(prose(Z).join('')).sort().join(' '));
+  check('en S3 links = zh S3 links', s3Links(prose(EN).join('')).map(m => m[0]).sort().join(' '), s3Links(prose(Z).join('')).map(m => m[0]).sort().join(' '));
   // the bus series (B1 how-pcie-works, B2 how-a-computer-is-wired, B6 how-thunderbolt-works, live 2026-11-15): anchors exist, zh = en
   for (const sib of ['how-pcie-works', 'how-a-computer-is-wired', 'how-thunderbolt-works']) {
     const sh = fs.readFileSync(path.join(DIR, '..', sib, 'index.html'), 'utf8'), bl = o => Object.values(o).join('').match(new RegExp(sib + '/(#ch\\d+)?', 'g')) || [];
