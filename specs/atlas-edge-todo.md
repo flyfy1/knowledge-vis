@@ -1323,7 +1323,7 @@ anchor; a link to the page top has no anchor).
 
 ## RSA 公钥加密 · 乘起来容易，拆开来难 / RSA Public-Key Encryption · Easy to Multiply, Hard to Split → 除法与余数 · 分不完的那一点 / Division & Remainders · What Is Left Over
 
-- `rsa-encryption` → `division-remainder#step3`
+- `rsa-encryption#step5` → `division-remainder#step3`
 
 ## 地震波探地心 · 地核是被波“照”出来的 / Seismic Waves · The Core Was “Lit Up” by Waves → 波的干涉 · 闹与静的图样 / Interference · A Pattern of Loud and Still
 
