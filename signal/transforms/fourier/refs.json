@@ -16,7 +16,11 @@
    "from": "vowel-space",
    "links": [
     {
-     "from": null,
+     "from": "step0",
+     "to": "step5"
+    },
+    {
+     "from": "step5",
      "to": "step5"
     }
    ]

@@ -132,7 +132,7 @@ const I18N = {
     "site.crumb.cat": "语言与语言学",
     "site.crumb.sub": "语音与音系",
     "site.bl.title": "被这些页面引用",
-    "site.bl.1": "<a href=\"../vowel-space/\">元音空间 · 用两个共振峰给元音定位</a>：→ <a href=\"#step0\">本页第 0 步</a>、<a href=\"#step1\">本页第 1 步</a>"
+    "site.bl.1": "<a href=\"../vowel-space/\">元音空间 · 用两个共振峰给元音定位</a>：<a href=\"../vowel-space/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>、<a href=\"#step1\">本页第 1 步</a>"
   },
   en: {
     docTitle: "Speech Sounds & Phonemes · From Mouth to Contrast",
@@ -265,7 +265,7 @@ const I18N = {
     "site.crumb.cat": "Language & Linguistics",
     "site.crumb.sub": "Phonetics & Phonology",
     "site.bl.title": "Linked from",
-    "site.bl.1": "<a href=\"../vowel-space/\">Vowel Space · Placing Vowels by Two Formants</a>: → <a href=\"#step0\">this page step 0</a>, <a href=\"#step1\">this page step 1</a>"
+    "site.bl.1": "<a href=\"../vowel-space/\">Vowel Space · Placing Vowels by Two Formants</a>: <a href=\"../vowel-space/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>, <a href=\"#step1\">this page step 1</a>"
   }
 };
 let lang=localStorage.getItem('knowledge-lang')||'zh';
