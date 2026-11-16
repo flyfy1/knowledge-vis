@@ -57,8 +57,8 @@ function adopt() {
     if (existing && existing.slug !== row.slug) { problems.push(`${at}: ${row.path}page.json has slug "${existing.slug}"`); return; }
     for (const k of ['title', 'desc']) for (const l of REG.LANGS) if (typeof (row[k] || {})[l] !== 'string') problems.push(`${at}: ${k}.${l} must be a string`);
     if (!Array.isArray(row.tags)) problems.push(`${at}: tags must be a list of {zh, en}`);
-    if (existing && existing.layout) {
-      // a template page: title and desc stay in the content; the row must agree with it
+    if (REG.titleInContent(existing)) {
+      // an essay template page: title and desc stay in the content; the row must agree with it (a lesson keeps them in page.json)
       const c = REG.contentText(dir, problems, at);
       for (const k of ['title', 'desc']) for (const l of REG.LANGS) if (c[k][l] != null && row[k] && c[k][l] !== row[k][l]) problems.push(`${at}: ${k}.${l} differs from content.${l}.md (a template page's ${k} lives there; edit the content instead)`);
     }
@@ -293,7 +293,7 @@ function diagnose(reg) {
   for (const [s, r] of inFile) {
     if (!inJson.has(s)) { out.push(`  "${s}" is in the KNOWLEDGE_PAGES block but no page.json registers it: the block is generated, so a hand-added row is lost on the next run. Write ${r.path || '<dir>/'}page.json instead, or run node scripts/build-registry.cjs --adopt to move the row there.`); continue; }
     const want = inJson.get(s).row, diff = Object.keys({ ...r, ...want }).filter(k => JSON.stringify(r[k]) !== JSON.stringify(want[k]));
-    if (diff.length) out.push(`  "${s}": the block differs from ${inJson.get(s).dir}page.json in ${diff.join(', ')}${inJson.get(s).template ? ' (a template page: title and desc come from content.<lang>.md)' : ''}. Edit page.json (or run --adopt to take the hand edit), not the block.`);
+    if (diff.length) out.push(`  "${s}": the block differs from ${inJson.get(s).dir}page.json in ${diff.join(', ')}${REG.titleInContent(inJson.get(s).meta) ? ' (an essay template page: title and desc come from content.<lang>.md)' : ''}. Edit page.json (or run --adopt to take the hand edit), not the block.`);
   }
   for (const s of inJson.keys()) if (!inFile.has(s)) out.push(`  "${s}" is registered by ${inJson.get(s).dir}page.json but not in the block yet.`);
   const order = [...inFile.keys()].filter(s => inJson.has(s)), want = [...inJson.keys()].filter(s => inFile.has(s));

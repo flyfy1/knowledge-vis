@@ -14,12 +14,15 @@ const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(
 const HAS_RUNTIME = /\{[a-zA-Z_][\w]*\}/;
 const fillable = v => v != null && v !== '' && !HAS_RUNTIME.test(v);
 
-function prefill(html, Z) {
+// opts.aria === false: leave aria-labels alone (a lesson whose runtime does not translate data-i18n-aria, so a pre-filled
+// Chinese aria-label would stay Chinese after the switch to English; specs/site-template.md §3c).
+function prefill(html, Z, opts = {}) {
   html = html.replace(/(<(\w+)\b[^<>]*?\bdata-i18n(-html)?="([^"]+)"[^<>]*>)(<\/\2>)/g, (m, open, tag, ishtml, k, close) => {
     const val = Z[k];
     if (val == null || HAS_RUNTIME.test(val)) return m;
     return open + (ishtml ? val : esc(val)) + close;
   });
+  if (opts.aria === false) return html;
   return html.replace(/<(\w+)\b([^<>]*?)\bdata-i18n-aria="([^"]+)"([^<>]*)>/g, (m, tag, a, k, b) => {
     if (/\baria-label=/.test(a + b) || Z[k] == null) return m;
     return `<${tag}${a}data-i18n-aria="${k}" aria-label="${esc(Z[k])}"${b}>`;

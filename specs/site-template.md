@@ -170,6 +170,109 @@ files is outside this phase. What landed: `atlas-import-registry.cjs <dir>` read
 present, else `REGISTRY.json` (both is an error), and the registry reads concepts' `relatedPages` from either. Moving
 concepts into page.json, page by page, and redefining "essay" as `kind: "essay"` is a later step.
 
+### 3c. Lessons (Phase 3, 2026-11-16)
+
+A lesson is a page whose strings live in an `i18n.js` table (`const STR = { zh: {…}, en: {…} }`) and whose body is
+steps (`<section id="stepN">`) behind a step nav. `page.json` `"layout": "lesson"` makes it a template page; the same
+`build-pages.cjs` builds it and `convert-essay.cjs` converts it (it recognises a lesson by an `i18n.js` and no
+`copy.zh.js`, so conversion commits keep the one `Built-By` line of §10).
+
+```
+<category>/<subtopic>/<slug>/
+  page.json        registry fields (title and desc stay here: a lesson's card title is not its <h1>), layout "lesson",
+                   version (the ?v= of i18n.js), titleKey (the key <title> shows), enCjk, legacyLayout   (source)
+  content.zh.md    page-wide strings, then one "## <h2 text> {#stepN h2=<key>}" per step                   (source)
+  content.en.md    the same skeleton in English                                                         (source)
+  layout.html      a converted page's own frame: its head, header, nav, footer and scripts with {{slots}}  (source)
+  figures/*.html   step markup that is not a plain keyed paragraph (stages, controls, cards)            (source)
+  i18n.shell.js    the page's i18n runtime with /*@i18n-table@*/ where the table goes                   (source)
+  style.css app.js unchanged page code                                                                  (source)
+  index.html i18n.js refs.json                                                                          (GENERATED)
+templates/layouts/lesson.html  the shared frame for a lesson written natively (no layout.html)
+scripts/lib/lesson.cjs         compileLesson, buildLesson, convertLesson, splitI18n
+```
+
+**Content.** Keys are the table's own keys, flat and absolute (`s0e`, `nav0`, `docTitle`): app.js and the page tests
+name them, so they survive unchanged. No positional keys.
+
+```markdown
+---
+lang: zh
+---
+
+::: strings                                  ← page-wide keys (header, footer, <title>, app-only keys before step 0)
+docTitle: 二维线性变换 · 一步一交互
+:::
+
+## 四个数，拖动整个平面 {#step0 h2=s0t}        ← <section id="step0">, its <h2 data-i18n="s0t">
+
+::: strings
+nav0: 0 网格变形                              ← the step-nav item of this step (nav=<key> when it is not nav<N>)
+:::
+
+第 0 步 · 钩子 {#s0k .step-kicker i18n=text}   ← <p class="step-kicker" data-i18n="s0k"> (rendered above the h2)
+
+矩阵 **A** 不需要逐点…… {#s0e .explain}        ← <p class="explain" data-i18n-html="s0e">
+
+::: html step0-1                             ← figures/step0-1.html and the keys it names
+pIdentity: 单位矩阵
+:::
+
+::: strings                                  ← keys only app.js uses, with the step they belong to
+s0say: 已运行 {n} 次
+:::
+```
+
+- Heading attributes: `h2=<key>`; `h2id=<id>` (an `id` on the h2); `i18n=html` (`data-i18n-html`); `.class`;
+  `nav=<key>`; `pre=N` (N blocks above the h2; the default is the leading `.step-kicker` paragraphs); `h2part=1` (the
+  h2 is written in one of the step's partials, because its hand-written text was not its zh string; the heading still
+  defines the key).
+- Paragraph attributes: `{#key}` always; `.class`; `tag=div|h3|h4`; `i18n=text` for `data-i18n` (default
+  `data-i18n-html`). Inline Markdown and `[[refs]]` as in §4–5; the converter writes them only where they render back
+  to the exact string.
+- Anything else in a step (and every `<h2>` / paragraph whose value has a line break or edge spaces) is `::: html`.
+  Lists, `:::` lab/diagram/footer, `###` and `---` are errors in a lesson.
+
+**Frame.** `layout.html` (or `templates/layouts/lesson.html`) holds the page outside the steps. Slots: `{{generated}}`
+and `{{htmlAttrs}}` (chrome), `{{title}}` (zh value of `titleKey`), `{{v}}` (`?v=<version>` on `i18n.js`), `{{up}}`,
+`{{siteNavCss}}` / `{{siteNavJs}}` (from `build-site-nav.cjs`), `{{crumbs}}` (the static breadcrumb, where site-nav.js
+mounted it: before the `<h1>`, or before an eyebrow/kicker line above it), `{{provenance}}`, `{{badges}}` (shared layout
+only: the edition-compare link when `variants/claude-code/<slug>/` exists), `{{stepNav}}` (one item per step),
+`{{steps}}` and `{{linkedFrom}}` (after `</main>`; its box is a `.step-inner`). An unknown slot fails; a slot with
+content to render but missing from the frame fails.
+
+**legacyLayout** (converted pages; safe to delete, then the page shows drift until rebuilt):
+- `section` (the step's open and close markup, `{id}` / `{n}` patterns or one string per step), `indent` and `leads`
+  (whitespace before blocks), `mainGaps` (text between steps, including the hand-written `<!-- 步骤 N -->` comments),
+  `stepNav` (`{item, end}` pattern, or `false` when the hand-written nav stays literal in `layout.html`);
+- `filled`: the elements the hand-written page had pre-filled (`key`, `key#2`, `aria:key`). A build with
+  `--no-prefill` fills exactly these, so the round trip is byte for byte; the normal build pre-fills every empty element
+  (§8) anyway;
+- `label`: the hand-written shape of the provenance label with `{{developer}}`, `{{edition}}`, `{{sourceRevision}}`,
+  `{{short}}`, `{{scope.zh}}`, `{{scope.en}}`, `{{kind.zh}}`, `{{kind.en}}`; the values come from `page-provenance.json`,
+  so a repoint is an edit there plus a rebuild. Without `label` the standard label (§8) renders.
+
+**i18n.js.** Generated: a GENERATED comment, then `i18n.shell.js` with the table in place of the marker, written as
+`{ zh: { key: "value", … }, en: {…} }` (identifier keys bare, so tests that look for `s0t:` or slice to `\n};` keep
+working). The output name stays `i18n.js`, so `app.js`, `index.html` script tags and page tests are untouched. The
+chrome's `site.*` strings are appended to both tables. `page.json` `version` is the `?v=` of the i18n.js script tag;
+bump it whenever the generated file changes (§9 step 4).
+
+**Checks** (as §7, adapted): parity of skeleton, key set, `{v}` placeholders and link targets; every key a partial or
+the frame names exists; an English string with Chinese fails unless `page.json` `enCjk` lists its key (the converter
+records the keys that already do, such as a footer `二维线性变换 Linear Maps`); the D10 lint; raw-link warnings. No
+registry-text check (the title stays in page.json). Warnings: `stale:` names keyed elements in `figures/` whose
+hand-written text is not their zh string (the runtime replaces it; readers without JS see it).
+
+**Pre-fill and aria.** Every empty keyed element is pre-filled as for essays. `aria-label` is pre-filled only when the
+page's runtime (`i18n.shell.js` or `app.js`) translates `data-i18n-aria`; most lesson runtimes do not, and a Chinese
+`aria-label` would then stay Chinese in English. The static breadcrumb's `aria-label` is therefore missing on those
+pages (site-nav.js set 页面位置 / Breadcrumb at run time).
+
+**Backlinks.** A link in a lesson is credited to its step: the linked-from row on the target reads
+`《课名》：该课第 N 步 → 本页第 M 章` / `Title: its step N → this page chapter M`, and a lesson's own linked-from block
+names steps (`本页第 N 步` / `this page step N`).
+
 ## 4. Content format
 
 ```markdown

@@ -33,6 +33,27 @@ const pjBefore = fs.existsSync(pjFile) ? fs.readFileSync(pjFile, 'utf8') : null;
 const pjOld = pjBefore != null ? JSON.parse(pjBefore) : null;
 if (pjOld && pjOld.layout) { console.error(sitePath + ' already has page.json with a layout (already migrated)'); process.exit(1); }
 
+// A lesson (Phase 3, specs/site-template.md §3c): strings in an i18n.js STR table, steps in <section id="stepN">.
+// The same command converts it, through scripts/lib/lesson.cjs, so conversions keep one Built-By line.
+if (!fs.existsSync(path.join(dir, 'copy.zh.js')) && (fs.existsSync(path.join(dir, 'i18n.js')) || /class="step-nav/.test(fs.readFileSync(path.join(dir, 'index.html'), 'utf8')))) {
+  if (!fs.existsSync(path.join(dir, 'i18n.js'))) { console.error(`convert ${page.slug}: a lesson without i18n.js (its strings are not in a STR table the converter can read); not converted`); process.exit(1); }
+  let r;
+  try { r = require('./lib/lesson.cjs').convertLesson(dir, { root }); } catch (e) {
+    if (e instanceof T.TemplateError) { console.error(e.message); process.exit(1); }
+    throw e;
+  }
+  if (!r.ok) {
+    console.error(r.problems.slice(0, 30).map(p => 'MISMATCH ' + p).join('\n'));
+    console.error(`convert ${r.slug}: round trip failed (${r.problems.length} problems); sources left in ${r.sitePath} for inspection` +
+      (pjBefore != null ? ' (page.json restored to its registry fields; the attempted one is page.json.converted)' : ''));
+    process.exit(1);
+  }
+  console.log(`converted lesson ${r.slug}: ${r.summary}; round trip (no chrome, no pre-fill): index.html byte-identical, i18n.js string tables equal in zh and en and the runtime around them identical`);
+  console.log('commit trailers:');
+  for (const d of r.derived) console.log('Derived-From: ' + d);
+  process.exit(0);
+}
+
 const html = fs.readFileSync(path.join(dir, 'index.html'), 'utf8');
 const COPY = { zh: T.loadCopy(path.join(dir, 'copy.zh.js')), en: T.loadCopy(path.join(dir, 'copy.en.js')) };
 const fail = msg => { console.error(`convert ${page.slug}: ${msg}`); process.exit(1); };

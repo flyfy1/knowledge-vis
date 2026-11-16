@@ -10,8 +10,9 @@
  * fixture site (tests/fixtures/site-template/) is such a site, and so was the repo before the Phase 2 seed commit.
  *
  * A page.json is a template page (built by scripts/build-pages.cjs) when it has a "layout". A metadata-only
- * page.json (no layout) only registers its hand-written page. Template pages take title and desc from the
- * content (`# … {#hero}` heading and front-matter desc); metadata-only pages carry them in page.json.
+ * page.json (no layout) only registers its hand-written page. Essay template pages take title and desc from the
+ * content (`# … {#hero}` heading and front-matter desc); metadata-only pages and lesson template pages
+ * ("layout": "lesson", whose card title is not the lesson's <h1>) carry them in page.json.
  *
  * Plain node, no dependencies. Every function takes an explicit site root.
  */
@@ -67,6 +68,9 @@ function readConfig(root) {
 }
 
 /* ───────── content of a template page: title and desc ───────── */
+// Essay template pages hold title and desc in their content. A lesson ("layout": "lesson") keeps them in page.json:
+// its card title differs from the <h1> and the <title> on every lesson (specs/site-template.md §3c).
+const titleInContent = meta => !!(meta && meta.layout) && meta.layout !== 'lesson';
 function frontMatter(text) {
   const lines = text.split('\n'), front = {};
   if (lines[0] !== '---') return front;
@@ -140,7 +144,7 @@ function pagesFromJson(root, config) {
     if (meta.languages != null && !template && !(Array.isArray(meta.languages) && meta.languages.length && meta.languages.every(l => LANGS.includes(l)))) p.push('languages: a list such as ["zh"] (a page in one language only)');
     if (meta.order != null && !(Number.isInteger(meta.order) && meta.order > 0)) p.push('order: a positive integer (or leave it out: the page goes after every ordered page)');
     let title = meta.title, desc = meta.desc;
-    if (template) {
+    if (titleInContent(meta)) {
       if (meta.title != null || meta.desc != null) p.push('title/desc: a template page takes them from content.<lang>.md (the # … {#hero} heading and the front-matter desc); remove them from page.json');
       const c = contentText(path.join(root, rel), p, 'content');
       title = c.title; desc = c.desc;
@@ -227,7 +231,7 @@ function guessKind(root, row) {
 // Merge a KNOWLEDGE_PAGES row into a page.json (existing or new). Key order: identity and place first, then the
 // template fields an existing page.json already had.
 function metaFromRow(root, row, existing, order) {
-  const template = !!(existing && existing.layout);
+  const template = titleInContent(existing);
   const m = { slug: row.slug, kind: (existing && existing.kind) || guessKind(root, row) };
   if (!template) { m.title = row.title; m.desc = row.desc; }
   m.tags = row.tags;
@@ -235,12 +239,12 @@ function metaFromRow(root, row, existing, order) {
   m.category = row.category;
   if (row.subtopic != null) m.subtopic = row.subtopic;
   m.stage = row.stage; m.status = row.status; m.path = row.path; m.order = order;
-  for (const [k, v] of Object.entries(existing || {})) if (!(k in m) && !['title', 'desc'].includes(k)) m[k] = v;
+  for (const [k, v] of Object.entries(existing || {})) if (!(k in m) && !(template && ['title', 'desc'].includes(k))) m[k] = v;
   return m;
 }
 
 module.exports = {
   LANGS, STAGES, STATUSES, KINDS, FENCE_START, FENCE_END, FENCE_BANNER, ROW_FIELDS,
   readConfig, loadRegistry, scanPageJson, pagesFromJson, contentText, frontMatter,
-  renderRow, renderBlock, withBlock, guessKind, metaFromRow,
+  renderRow, renderBlock, withBlock, guessKind, metaFromRow, titleInContent,
 };

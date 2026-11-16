@@ -301,9 +301,11 @@ function fillLayout(name, slots) {
  */
 const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const CHROME_TEXT = {
-  zh: { aria: '页面位置', home: '首页', bl: '被这些页面引用', rel: '相关页面', ch: n => `第 ${n} 章`, src: n => `该文第 ${n} 章`, here: '本页' },
-  en: { aria: 'Breadcrumb', home: 'Home', bl: 'Linked from', rel: 'Related pages', ch: n => `chapter ${n}`, src: n => `its chapter ${n}`, here: 'this page' },
+  zh: { aria: '页面位置', home: '首页', bl: '被这些页面引用', rel: '相关页面', ch: n => `第 ${n} 章`, src: n => `该文第 ${n} 章`, here: '本页', step: n => `第 ${n} 步`, srcStep: n => `该课第 ${n} 步` },
+  en: { aria: 'Breadcrumb', home: 'Home', bl: 'Linked from', rel: 'Related pages', ch: n => `chapter ${n}`, src: n => `its chapter ${n}`, here: 'this page', step: n => `step ${n}`, srcStep: n => `its step ${n}` },
 };
+// The source side of a backlink row: an essay chapter (chN, 该文第 N 章) or a lesson step (stepN, 该课第 N 步; Phase 3).
+const srcLabel = (t, from) => (/^step\d+$/.test(from) ? t.srcStep(from.slice(4)) : /^ch\d+$/.test(from) ? t.src(from.slice(2)) : '#' + from);
 const RUNTIME = /\{[a-zA-Z_][\w]*\}/g, HAS_RUNTIME = /\{[a-zA-Z_][\w]*\}/;
 
 function readJson(f) { return JSON.parse(fs.readFileSync(f, 'utf8')); }
@@ -446,16 +448,22 @@ function scanLinks(site) {
         // Keys come in document order, so a key outside the chN.* namespace (a diagram's dg.x.cap) is credited to the
         // chapter it sits in: the last chN seen before it.
         try {
+          if (readJson(path.join(d, 'page.json')).layout === 'lesson') {
+            // a lesson (Phase 3): flat keys, each credited to the step it sits in (stepN.<key>)
+            const c = require('./lesson.cjs').compileLesson(d, 'zh', { site, page: p, errors: [] });
+            entries = c.order.map(k => [c.stepOf[k] ? c.stepOf[k] + '.' + k : k, c.copy[k]]);
+          } else {
           const c = compileLang(d, 'zh', { site, page: p, bindings: loadBindings(d, []), errors: [] });
           let ch = null;
           entries = c.order.map(k => { const m = /^(ch\d+)\./.exec(k); if (m) ch = m[1]; return [m ? k : (ch && !/^(hero|nav|toc|doc|footer)\b/.test(k) ? ch + '.' + k : k), c.copy[k]]; });
+          }
         } catch (e) { continue; }
       } else if (f === 'copy.zh.js') { try { entries = Object.entries(loadCopy(file)); } catch (e) { continue; } }
       else entries = [[null, fs.readFileSync(file, 'utf8')]];
       for (const [k, v] of entries) for (const m of String(v).matchAll(/href=\\?["']([^"'\\]+)\\?["']/g)) {
         const r = resolveHref(site, p.path, m[1]);
         if (!r || r[0] === p) continue;
-        all.push({ src: p, dst: r[0], from: k && /^ch\d+\./.test(k) ? k.split('.')[0] : null, to: r[1] });
+        all.push({ src: p, dst: r[0], from: k && /^(ch|step)\d+\./.test(k) ? k.split('.')[0] : null, to: r[1] });
       }
     }
   }
@@ -569,6 +577,7 @@ function buildEssay(dir, opts = {}) {
   dir = path.resolve(dir);
   const sitePath = path.relative(site.root, dir).split(path.sep).join('/') + '/';
   const meta = readJson(path.join(dir, 'page.json'));
+  if (meta.layout === 'lesson') return require('./lesson.cjs').buildLesson(dir, opts); // Phase 3 (§3c)
   let page = site.bySlug.get(meta.slug);
   if (!page && site.byPath.has(sitePath)) return { errors: [`page.json slug "${meta.slug}" differs from the slug registered for ${sitePath}: "${site.byPath.get(sitePath).slug}"`], warnings, outputs: {} };
   if (!page) {
@@ -736,7 +745,7 @@ function buildEssay(dir, opts = {}) {
       BL.forEach((r, i) => {
         const href = relHref(page.path, r.p.path), groups = new Map();
         for (const x of r.links) { const g = groups.get(x.from || '') || []; if (x.to && !g.includes(x.to)) g.push(x.to); groups.set(x.from || '', g); }
-        const parts = [...groups].map(([from, tos]) => (from ? `<a href="${href}#${from}">${t.src(from.slice(2))}</a>` : '') +
+        const parts = [...groups].map(([from, tos]) => (from ? `<a href="${href}#${from}">${srcLabel(t, from)}</a>` : '') +
           (tos.length ? (from ? ' → ' : '→ ') + tos.map(to => `<a href="#${to}">${t.here}${l === 'zh' ? '' : ' '}${chapNo(to) ? t.ch(chapNo(to)) : '#' + to}</a>`).join(l === 'zh' ? '、' : ', ') : ''));
         add('site.bl.' + (i + 1), `<a href="${href}">${titleOf(r.p, l)}</a>` + (parts.some(Boolean) ? (l === 'zh' ? '：' : ': ') + parts.filter(Boolean).join(l === 'zh' ? '；' : '; ') : ''));
       });
@@ -871,4 +880,5 @@ module.exports = {
   fillLayout, buildEssay, migratedPages, TemplateError, esc, prefill, unprefill, scanLinks, scanBacklinks, isTemplateDir,
   compileLang, loadBindings,
   svgLabels, labelRoom, emWidth, plainText,
+  CHROME_TEXT, srcLabel, provenanceLabel, siteNavIncludes, readJson, splitTrail, CJK, reEsc, RUNTIME, HAS_RUNTIME,
 };

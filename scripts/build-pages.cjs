@@ -14,6 +14,8 @@
  *
  * Sources per page: page.json, content.zh.md, content.en.md, page.css, figures/*.html, optional bindings.cjs
  * (+ models.js). Outputs carry a GENERATED header: edit the sources and rebuild, never the outputs.
+ * A lesson ("layout": "lesson", specs/site-template.md §3c) builds index.html, i18n.js and refs.json from page.json,
+ * content.<lang>.md, figures/*.html, i18n.shell.js and its layout.html (or templates/layouts/lesson.html).
  */
 const fs = require('fs');
 const path = require('path');

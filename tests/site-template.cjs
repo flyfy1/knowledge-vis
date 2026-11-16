@@ -369,4 +369,123 @@ failsWith('--- right after a lab', r => { for (const l of ['zh', 'en']) edit(r, 
   ok(u.w.SiteNav && !u.w.SiteNav.skipped && u.touched.includes('script'), 'site-nav.js still loads its data on other pages');
 }
 
-console.log(`PASS site template: ${n} checks (repo --all --check, fixture build, ${modes} failure modes, converter round trip)`);
+// 6. Lessons (Phase 3, specs/site-template.md §3c): a hand-written lesson (index.html + i18n.js STR table) converts to
+//    content.<lang>.md, layout.html, figures/ and i18n.shell.js that rebuild it byte for byte; the full build adds the
+//    chrome; the registry keeps a lesson's card title in page.json. The fixture lesson is registered only here.
+const LESSON = 'demo/basics/fixture-lesson';
+function lessonSite() {
+  const root = freshSite(), d = path.join(root, LESSON);
+  const { includeLines } = require(path.join(repo, 'scripts', 'build-site-nav.cjs'));
+  const inc = includeLines(LESSON + '/');
+  const f = path.join(d, 'index.html');
+  // the label is written here, not in the fixture file: tests/page-provenance-core.cjs counts every labelled .html in the repo
+  const label = '<details class="page-provenance" data-developer="Codex" data-edition="codex-fixture-20261116" data-source-revision="1111111111111111111111111111111111111111">\n' +
+    '      <summary><span class="provenance-zh" lang="zh-CN">Codex 开发 · 改进版本</span><span class="provenance-en" lang="en">Developed with Codex · Revised edition</span></summary>\n' +
+    '      <p><span class="provenance-zh" lang="zh-CN">改进范围：样例范围。</span><span class="provenance-en" lang="en">Scope: Fixture scope.</span></p>\n' +
+    '      <p><span class="provenance-zh" lang="zh-CN">版本：</span><span class="provenance-en" lang="en">Edition: </span><code>codex-fixture-20261116</code> · <a href="https://github.com/flyfy1/knowledge-vis/commit/1111111111111111111111111111111111111111"><span class="provenance-zh" lang="zh-CN">源码修订</span><span class="provenance-en" lang="en">Source revision</span> · 11111111</a></p>\n' +
+    '    </details>';
+  fs.writeFileSync(f, fs.readFileSync(f, 'utf8').replace('<!--SITE-NAV-CSS-->', inc.link).replace('<!--SITE-NAV-JS-->', inc.script).replace('<!--LABEL-->', label));
+  const cfg = path.join(root, 'pages.config.js');
+  fs.writeFileSync(cfg, fs.readFileSync(cfg, 'utf8').replace(/\];\s*$/, `  { slug: 'fixture-lesson', path: '${LESSON}/', status: 'live', category: 'demo', subtopic: 'basics', stage: 'senior',\n    title: { zh: '样例小课（卡片标题）', en: 'A Sample Lesson (card title)' } },\n];\n`));
+  fs.writeFileSync(path.join(root, 'page-provenance.json'), JSON.stringify({ pages: { 'fixture-lesson': { developer: 'Codex', edition: 'codex-fixture-20261116', kind: 'revised',
+    sourceRevision: '1111111111111111111111111111111111111111', scope: { zh: '样例范围', en: 'Fixture scope' } } } }, null, 1));
+  // a lesson page.json registers the page and keeps its card title (Phase 2 seed shape)
+  fs.writeFileSync(path.join(d, 'page.json'), JSON.stringify({ slug: 'fixture-lesson', kind: 'lesson', title: { zh: '样例小课（卡片标题）', en: 'A Sample Lesson (card title)' },
+    desc: { zh: '两步。', en: 'Two steps.' }, tags: [], category: 'demo', subtopic: 'basics', stage: 'senior', status: 'live', path: LESSON + '/', order: 30 }, null, 2) + '\n');
+  return { root, d };
+}
+{
+  const REG = require(path.join(repo, 'scripts', 'lib', 'registry.cjs'));
+  ok(typeof REG.titleInContent === 'function' && REG.titleInContent({ layout: 'essay' }) === true && REG.titleInContent({ layout: 'lesson' }) === false && REG.titleInContent({}) === false,
+    'registry: an essay template page takes title/desc from its content, a lesson keeps them in page.json');
+  const m = REG.metaFromRow(repo, { slug: 'x', title: { zh: '卡', en: 'Card' }, desc: { zh: 'd', en: 'd' }, tags: [], category: 'c', stage: 'senior', status: 'live', path: 'c/x/' }, { slug: 'x', kind: 'lesson', layout: 'lesson', version: 'v1' }, 10);
+  ok(m.title && m.title.en === 'Card' && m.layout === 'lesson' && m.version === 'v1', 'registry: --adopt keeps a lesson card title next to its template fields');
+
+  const { root, d } = lessonSite();
+  const html = fs.readFileSync(path.join(d, 'index.html'), 'utf8'), i18nOld = fs.readFileSync(path.join(d, 'i18n.js'), 'utf8');
+  const c = run('convert-essay.cjs', d, '--root', root);
+  ok(c.code === 0 && /converted lesson fixture-lesson: 2 steps/.test(c.out), 'convert-essay.cjs converts a lesson:\n' + c.out);
+  ok(/round trip \(no chrome, no pre-fill\): index\.html byte-identical, i18n\.js string tables equal in zh and en and the runtime around them identical/.test(c.out), 'the lesson converter reports its equivalence proof');
+  for (const t of ['i18n.js -> demo/basics/fixture-lesson/content.zh.md', 'i18n.js -> demo/basics/fixture-lesson/content.en.md', 'i18n.js -> demo/basics/fixture-lesson/i18n.shell.js',
+    'index.html -> demo/basics/fixture-lesson/layout.html', 'index.html -> demo/basics/fixture-lesson/figures/step0-1.html'])
+    ok(c.out.includes('Derived-From: demo/basics/fixture-lesson/' + t), 'lesson Derived-From: ' + t);
+  ok(!/index\.html -> demo\/basics\/fixture-lesson\/page\.json/.test(c.out), 'no index.html -> page.json line: the registered lesson already had page.json (AUTHORSHIP.md §4)');
+  ok(fs.readFileSync(path.join(d, 'index.html'), 'utf8') === html && fs.readFileSync(path.join(d, 'i18n.js'), 'utf8') === i18nOld, 'the converter leaves index.html and i18n.js alone');
+  const zh = fs.readFileSync(path.join(d, 'content.zh.md'), 'utf8'), en = fs.readFileSync(path.join(d, 'content.en.md'), 'utf8');
+  ok(zh.includes('## 先看一眼 {#step0 h2=s0t}') && en.includes('## A first look {#step0 h2=s0t}'), 'steps are ## headings with their #stepN anchor and h2 key');
+  ok(zh.includes('## 新的标题文字 {#step1 h2=s1t h2part=1}') && fs.readFileSync(path.join(d, 'figures', 'step1-1.html'), 'utf8').startsWith('<h2 id="s1-title" data-i18n="s1t">旧的标题文字</h2>'), 'an <h2> with stale hand-written text keeps its markup in a partial; the heading holds the key');
+  ok(zh.includes('第 0 步 · 钩子 {#s0k .step-kicker i18n=text}') && zh.includes('{#s0e .explain}'), 'keyed paragraphs keep their keys and classes');
+  ok(zh.includes('[[fixture-essay#ch2|样例长文第二章]]') && zh.includes('**加粗**'), 'inline HTML strings become Markdown and [[refs]] where they round-trip');
+  ok(zh.includes('::: html step0-1\ns0aria: 样例画布\ns0run: 开始\n:::'), 'other step markup is an ::: html partial with its keys');
+  ok(/::: strings\ns0say: 已运行 \{n\} 次\n:::/.test(zh), 'keys only app.js uses stay with their step');
+  ok(/^---\nlang: zh\n---\n\n::: strings\ndocTitle: /.test(zh) && zh.includes('\nfoot: 样例小课 · fixture\n'), 'page-wide keys open the file');
+  const pj = JSON.parse(fs.readFileSync(path.join(d, 'page.json'), 'utf8'));
+  ok(pj.layout === 'lesson' && pj.title.zh === '样例小课（卡片标题）' && pj.version === 'w1' && pj.titleKey === 'docTitle', 'page.json: lesson layout, card title kept, i18n.js cache key, title key');
+  ok(pj.legacyLayout.filled.includes('pageTitle') && !pj.legacyLayout.filled.includes('s0e') && pj.legacyLayout.mainGaps[0].includes('<!-- ============ 步骤 0'), 'legacyLayout records the hand pre-fill and the comments between steps');
+  const lay = fs.readFileSync(path.join(d, 'layout.html'), 'utf8');
+  ok(lay.includes('<title>{{title}}</title>') && lay.includes('<script src="i18n.js{{v}}"></script>') && lay.includes('    {{crumbs}}<h1 data-i18n="pageTitle"></h1>') && lay.includes('{{provenance}}') && lay.includes('<main>{{steps}}</main>{{linkedFrom}}') && lay.includes('aria-label="步骤导航">{{stepNav}}</nav>'), 'layout.html is the hand-written frame with slots');
+  ok(!/[一-鿿]/.test(lay.replace(/<!--[\s\S]*?-->|aria-label="[^"]*"|>中</g, '')), 'layout.html holds no Chinese text (pre-filled text went back to the content)');
+  const prov = pj.legacyLayout.label;
+  ok(prov.includes('data-source-revision="{{sourceRevision}}"') && prov.includes('· {{short}}</a>') && prov.includes('改进范围：{{scope.zh}}。') && prov.includes('<code>{{edition}}</code>'), 'the label keeps its shape; its values come from page-provenance.json');
+  ok(fs.readFileSync(path.join(d, 'i18n.shell.js'), 'utf8').includes('const STR = /*@i18n-table@*/;\n\nlet lang'), 'i18n.shell.js is the runtime with a marker for the table');
+
+  // full build: chrome, pre-fill, generated i18n.js
+  const b = run('build-pages.cjs', d, '--root', root);
+  ok(b.code === 0, 'the converted lesson builds:\n' + b.out);
+  ok(/WARN .*stale: 1 keyed element/.test(b.out), 'the build names hand-written text that is not the zh string (stale)');
+  const out = fs.readFileSync(path.join(d, 'index.html'), 'utf8'), js = fs.readFileSync(path.join(d, 'i18n.js'), 'utf8');
+  ok(/^<!DOCTYPE html>\n<!-- GENERATED by scripts\/build-pages\.cjs[^\n]*-->\n<html lang="zh-CN" data-template="lesson">/.test(out), 'index.html: GENERATED and data-template="lesson"');
+  ok(/<p class="backline">[^\n]*\n    <nav class="site-nav" data-no-autolink data-i18n-aria="site\.crumb\.aria"><ol>.*<\/ol><\/nav>\n    <h1 data-i18n="pageTitle">样例小课<\/h1>/.test(out), 'the static breadcrumb sits right above the <h1>, where site-nav.js put it');
+  ok(out.includes('<p class="explain" data-i18n-html="s0e">这一页引用 <a href="../fixture-essay/#ch2">样例长文第二章</a>，并且 <strong>加粗</strong> 一处。</p>'), 'empty keyed elements are pre-filled');
+  ok(out.includes('<p class="hint" data-i18n-html="s0hint"></p>'), 'values with {placeholders} are left to the runtime');
+  ok(out.includes('<canvas id="s0-canvas" height="200" data-i18n-aria="s0aria"></canvas>'), 'no aria-label pre-fill when the runtime does not translate data-i18n-aria');
+  ok(out.includes('data-developer="Codex" data-edition="codex-fixture-20261116" data-source-revision="1111111111111111111111111111111111111111"'), 'the label is rendered from page-provenance.json');
+  ok(out.includes('<script src="i18n.js?v=w1"></script>') && out.includes('<a href="#step1" class="nav-step" data-nav="1" data-i18n="nav1">1 动手</a>'), 'cache key from page.json; step nav generated from the steps');
+  ok(js.startsWith('/* GENERATED by scripts/build-pages.cjs from content.zh.md, content.en.md and i18n.shell.js.') && /\nconst STR = \{\n  zh: \{\n    docTitle: "样例小课 · 一步一交互",/.test(js) && js.includes('\n};\n\nlet lang'), 'i18n.js: GENERATED header, the table with bare keys, the runtime around it');
+  const L = require(path.join(repo, 'scripts', 'lib', 'lesson.cjs'));
+  const tb = L.splitI18n(js).tables, tOld = L.splitI18n(i18nOld).tables;
+  ok(tb.en['site.crumb.home'] === 'Home' && tb.zh['site.crumb.cat'] === '演示' && Object.keys(tOld.zh).every(k => tb.zh[k] === tOld.zh[k] && tb.en[k] === tOld.en[k]), 'chrome strings join the STR tables; every old string is unchanged');
+  ok(run('build-pages.cjs', d, '--root', root, '--check').code === 0, '--check passes after the build');
+  fs.appendFileSync(path.join(d, 'i18n.js'), '\n// hand edit\n');
+  const dr = run('build-pages.cjs', d, '--root', root, '--check');
+  ok(dr.code === 1 && /DRIFT .*i18n\.js/.test(dr.out), 'a hand edit of the generated i18n.js is drift');
+
+  // the lesson's step is the source chapter of a backlink on a template essay
+  const be = build(root);
+  ok(be.code === 0 && fs.readFileSync(path.join(pageDir(root), 'index.html'), 'utf8').includes('<a href="../fixture-lesson/#step0">该课第 0 步</a> → <a href="#ch2">本页第 2 章</a>'), 'a link from a lesson step reads 该课第 N 步 in the linked-from block:\n' + be.out);
+  ok(be.code === 0 && fs.readFileSync(path.join(pageDir(root), 'copy.en.js'), 'utf8').includes('its step 0'), 'and its step N in English');
+
+  // failure modes of a lesson
+  const fresh = () => { const s = lessonSite(); assert.equal(run('convert-essay.cjs', s.d, '--root', s.root).code, 0); return s; };
+  const lfail = (label, mutate, re) => {
+    const s = fresh();
+    mutate(s.d);
+    const r = run('build-pages.cjs', s.d, '--root', s.root);
+    ok(r.code === 1 && re.test(r.out), `lesson failure mode "${label}" exits 1 and says so:\n${r.out}`);
+    modes++;
+  };
+  const sed = (dd, f, a, z) => { const p = path.join(dd, f), s = fs.readFileSync(p, 'utf8'); assert.ok(s.includes(a), f + ' contains ' + a); fs.writeFileSync(p, s.replace(a, z)); };
+  lfail('en lacks a key', dd => sed(dd, 'content.en.md', 's1done: Done\n', ''), /parity: en lacks s1done/);
+  lfail('untranslated English', dd => sed(dd, 'content.en.md', 's1done: Done', 's1done: 完成'), /en: 1 string\(s\) hold Chinese text .*s1done/);
+  lfail('unknown slot in layout.html', dd => sed(dd, 'layout.html', '{{steps}}', '{{steps}}{{nope}}'), /unknown slot \{\{nope\}\}/);
+  lfail('partial names an undefined key', dd => sed(dd, 'figures/step0-1.html', 'data-i18n="s0run"', 'data-i18n="s0gone"'), /figures\/step0-1\.html names key s0gone/);
+  lfail('label without a page-provenance entry', dd => fs.writeFileSync(path.join(path.dirname(path.dirname(path.dirname(dd))), 'page-provenance.json'), '{"pages":{}}'), /legacyLayout\.label is set, but page-provenance\.json has no entry/);
+  lfail('table marker missing', dd => sed(dd, 'i18n.shell.js', '/*@i18n-table@*/', '{}'), /i18n\.shell\.js must hold/);
+
+  // A new lesson written natively uses the shared layout (templates/layouts/lesson.html): no layout.html, no legacyLayout.
+  {
+    const s = fresh();
+    fs.rmSync(path.join(s.d, 'layout.html'));
+    const p2 = JSON.parse(fs.readFileSync(path.join(s.d, 'page.json'), 'utf8'));
+    delete p2.legacyLayout; delete p2.version;
+    fs.writeFileSync(path.join(s.d, 'page.json'), JSON.stringify(p2, null, 2));
+    sed(s.d, 'content.zh.md', 'docTitle:', 'navAria: 步骤\ndocTitle:'); sed(s.d, 'content.en.md', 'docTitle:', 'navAria: Steps\ndocTitle:');
+    const r = run('build-pages.cjs', s.d, '--root', s.root);
+    const o = fs.readFileSync(path.join(s.d, 'index.html'), 'utf8');
+    ok(r.code === 0 && /^<!doctype html>\n<!-- GENERATED/.test(o) && o.includes('<header class="site-head">\n  <div class="head-main">') && o.includes('<link rel="stylesheet" href="../../../lesson-shell.css">') &&
+      o.includes('\n  <a href="#step0" class="nav-step" data-nav="0" data-i18n="nav0">0 钩子</a>') && o.includes('<section class="step" id="step1" data-step="1">\n  <div class="step-inner">\n    <p class="step-kicker"') &&
+      o.includes('<details class="page-provenance" data-developer="Codex"') && o.includes('<script src="../../../lesson-shell.js"></script>'), 'a native lesson builds from templates/layouts/lesson.html:\n' + r.out);
+  }
+}
+
+console.log(`PASS site template: ${n} checks (repo --all --check, fixture build, ${modes} failure modes, converter round trip, lessons)`);
