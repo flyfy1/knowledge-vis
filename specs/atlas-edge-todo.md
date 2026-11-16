@@ -729,11 +729,11 @@ anchor; a link to the page top has no anchor).
 
 ## 电化学 · 电子沿导线跑，还是被电推着跑 / Electrochemistry · Electrons Running Down the Wire, or Pushed Along → 化学平衡 · 人数不变，人还在跑 / Chemical Equilibrium · Still Moving at Balance
 
-- `electrochemistry` → `chemical-equilibrium#step0`
+- `electrochemistry#step5` → `chemical-equilibrium#step0`
 
 ## 电化学 · 电子沿导线跑，还是被电推着跑 / Electrochemistry · Electrons Running Down the Wire, or Pushed Along → 活化能 · 反应要翻过的那座山 / Activation Energy · The Hill a Reaction Has to Climb
 
-- `electrochemistry` → `activation-energy#step4`
+- `electrochemistry#step5` → `activation-energy#step4`
 
 ## 电磁感应 · 磁通量一变，电压就来 / Electromagnetic Induction · Change the Flux, Get a Voltage → 磁场与洛伦兹力 · 力总是垂直于速度 / Magnetic Force · The Force Is Always Sideways to the Velocity
 
