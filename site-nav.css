@@ -4,7 +4,9 @@
   letter-spacing:normal; text-transform:none; text-align:left; max-width:100%; }
 .site-nav ol { display:flex; flex-wrap:wrap; align-items:center; list-style:none; margin:0 0 0 -10px; padding:0; gap:0; }
 .site-nav li { display:flex; align-items:center; min-width:0; margin:0; padding:0; }
-.site-nav li + li::before { content:"›"; margin:0; opacity:.6; }
+/* The separator trails each item but the last, so when the trail wraps (320 px, English) "›" ends a line instead of
+   starting the next one. */
+.site-nav li:not(:last-child)::after { content:"›"; margin:0; opacity:.6; }
 .site-nav a { display:inline-flex; align-items:center; justify-content:center; min-height:48px; min-width:48px; padding:0 10px;
   color:inherit; opacity:.86; text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px;
   text-decoration-color:currentColor; overflow-wrap:anywhere; box-sizing:border-box; }

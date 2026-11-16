@@ -57,6 +57,9 @@ Details of the home page: specs/index-pagination.md.
   `KNOWLEDGE_SUBTOPICS`, links to `/`, `/?category=` and `/?category=&subtopic=` with a relative URL that
   goes up through the page's depth. Pages without a registered subtopic (`atlas/`, `leetcode/`,
   `investment/atlas/`, the two demos) get two levels.
+  - The `›` separator is drawn after each item but the last (`li:not(:last-child)::after` in `site-nav.css`), so
+    when the trail wraps (English at 320 px) a line ends with `›` instead of the next line starting with one
+    (2026-11-16, site-template Phase 1 batch A review).
 - **Placement**: inside an element marked `data-site-nav` if the page has one; otherwise immediately before
   the page's only `<h1>`, or before the `.kicker` / `.eyebrow` line right above it. That keeps it in the
   normal flow of the header on every layout (essay heroes under an absolute top bar, lesson-shell headers,
