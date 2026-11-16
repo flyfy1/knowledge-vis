@@ -1,0 +1,16 @@
+<figure class="lab">
+    <h3 data-i18n="ch1.model.title"></h3>
+    <p class="how" data-i18n-html="ch1.model.how"></p>
+    <canvas class="cv tall" id="shCv" role="img" data-i18n-aria="ch1.model.aria"></canvas>
+    <div class="legend"><span><i style="background:var(--cyan)"></i><span data-i18n="ch1.leg.copy"></span></span><span><i style="background:var(--gold)"></i><span data-i18n="ch1.leg.share"></span></span></div>
+    <div class="ctl"><label class="rng"><span data-i18n="ch1.ctl.size"></span><input type="range" id="shS" min="12" max="30" step="1" value="20"><output id="shSo"></output></label></div>
+    <div class="ctl"><div class="seg" role="radiogroup" data-i18n-aria="ch1.ctl.frac"><span class="lbl" data-i18n="ch1.ctl.frac"></span><label><input type="radio" name="shF" value="1"><span data-i18n="ch1.frac.1"></span></label><label><input type="radio" name="shF" value="0.25"><span data-i18n="ch1.frac.0.25"></span></label><label><input type="radio" name="shF" value="0.05" checked><span data-i18n="ch1.frac.0.05"></span></label><label><input type="radio" name="shF" value="0.01"><span data-i18n="ch1.frac.0.01"></span></label></div></div>
+    <div class="ctl"><div class="seg" role="radiogroup" data-i18n-aria="ch1.ctl.mlp"><span class="lbl" data-i18n="ch1.ctl.mlp"></span><label><input type="radio" name="shM" value="16"><span>16</span></label><label><input type="radio" name="shM" value="64" checked><span>64</span></label><label><input type="radio" name="shM" value="256"><span>256</span></label></div></div>
+    <div class="read">
+      <div><b class="c" id="shCopy"></b><span data-i18n-html="ch1.read.copy"></span></div>
+      <div><b class="g" id="shShare"></b><span data-i18n-html="ch1.read.share"></span></div>
+      <div><b class="" id="shBw"></b><span data-i18n-html="ch1.read.bw"></span></div>
+      <div><b class="v" id="shX"></b><span data-i18n-html="ch1.read.x"></span></div>
+    </div>
+    <p class="say" id="shSay" aria-live="polite"></p>
+  </figure>

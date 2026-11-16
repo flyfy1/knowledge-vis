@@ -1,0 +1,15 @@
+<figure class="lab">
+    <h3 data-i18n="ch10.model.title"></h3>
+    <p class="how" data-i18n-html="ch10.model.how"></p>
+    <canvas class="cv" id="hiCv" role="img" data-i18n-aria="ch10.model.aria"></canvas>
+    <div class="legend"><span><i class="band" style="background:var(--gold)"></i><span data-i18n="ch10.cv.up"></span></span><span><i class="band" style="background:var(--red)"></i><span data-i18n="ch10.cv.out"></span></span></div>
+    <div class="ctl"><div class="seg" role="radiogroup" data-i18n-aria="ch10.ctl.total"><span class="lbl" data-i18n="ch10.ctl.total"></span><label><input type="radio" name="hiT" value="576"><span>576</span></label><label><input type="radio" name="hiT" value="2304"><span>2,304</span></label><label><input type="radio" name="hiT" value="9216" checked><span>9,216</span></label></div><div class="seg" role="radiogroup" data-i18n-aria="ch10.ctl.g"><span class="lbl" data-i18n="ch10.ctl.g"></span><label><input type="radio" name="hiG" value="8"><span>8</span></label><label><input type="radio" name="hiG" value="72" checked><span>72</span></label></div></div>
+    <div class="ctl"><div class="seg" role="radiogroup" data-i18n-aria="ch10.ctl.nic"><span class="lbl" data-i18n="ch10.ctl.nic"></span><label><input type="radio" name="hiNic" value="400" checked><span>400 Gb/s</span></label><label><input type="radio" name="hiNic" value="800"><span>800 Gb/s</span></label></div><div class="seg wrapmany" role="radiogroup" data-i18n-aria="ch10.ctl.params"><span class="lbl" data-i18n="ch10.ctl.params"></span><label><input type="radio" name="hiP" value="8e9"><span data-i18n="ch9.p.8e9"></span></label><label><input type="radio" name="hiP" value="70e9" checked><span data-i18n="ch9.p.70e9"></span></label><label><input type="radio" name="hiP" value="405e9"><span data-i18n="ch9.p.405e9"></span></label></div></div>
+    <div class="read">
+      <div><b class="g" id="hiTot"></b><span data-i18n-html="ch10.read.t"></span></div>
+      <div><b class="" id="hiUp"></b><span data-i18n-html="ch10.read.up"></span></div>
+      <div><b class="r" id="hiOut"></b><span data-i18n-html="ch10.read.out"></span></div>
+      <div><b class="v" id="hiFlat"></b><span data-i18n-html="ch10.read.flat"></span></div>
+    </div>
+    <p class="say" id="hiSay" aria-live="polite"></p>
+  </figure>

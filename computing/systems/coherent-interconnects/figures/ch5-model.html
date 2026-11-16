@@ -1,0 +1,16 @@
+<figure class="lab">
+    <h3 data-i18n="ch5.model.title"></h3>
+    <p class="how" data-i18n-html="ch5.model.how"></p>
+    <canvas class="cv tall" id="tiCv" role="img" data-i18n-aria="ch5.model.aria"></canvas>
+    <div class="legend"><span><i style="background:var(--gold)"></i><span data-i18n="ch5.leg.hot"></span></span><span><i class="dash" style="color:var(--mute)"></i><span data-i18n="ch5.leg.rand"></span></span><span><i style="background:var(--green)"></i><span data-i18n="ch5.leg.bw"></span></span></div>
+    <div class="ctl"><label class="rng"><span data-i18n="ch5.ctl.p"></span><input type="range" id="tiP" min="0" max="100" step="1" value="50"><output id="tiPo"></output></label></div>
+    <div class="ctl"><div class="seg" role="radiogroup" data-i18n-aria="ch5.ctl.s"><span class="lbl" data-i18n="ch5.ctl.s"></span><label><input type="radio" name="tiS" value="0.45"><span>0.45</span></label><label><input type="radio" name="tiS" value="0.9" checked><span>0.9</span></label><label><input type="radio" name="tiS" value="1.2"><span>1.2</span></label></div><div class="seg" role="radiogroup" data-i18n-aria="ch5.ctl.place"><span class="lbl" data-i18n="ch5.ctl.place"></span><label><input type="radio" name="tiPl" value="hot" checked><span data-i18n="ch5.place.hot"></span></label><label><input type="radio" name="tiPl" value="random"><span data-i18n="ch5.place.random"></span></label></div></div>
+    <div class="ctl"><div class="seg wrapmany" role="radiogroup" data-i18n-aria="ch5.ctl.dev"><span class="lbl" data-i18n="ch5.ctl.dev"></span><label><input type="radio" name="tiD" value="a"><span data-i18n="ch5.dev.a"></span></label><label><input type="radio" name="tiD" value="b"><span data-i18n="ch5.dev.b"></span></label><label><input type="radio" name="tiD" value="d" checked><span data-i18n="ch5.dev.d"></span></label><label><input type="radio" name="tiD" value="sw"><span data-i18n="ch5.dev.sw"></span></label></div></div>
+    <div class="read">
+      <div><b class="g" id="tiQ"></b><span data-i18n-html="ch5.read.q"></span></div>
+      <div><b class="" id="tiLat"></b><span data-i18n-html="ch5.read.lat"></span></div>
+      <div><b class="r" id="tiSlow"></b><span data-i18n-html="ch5.read.slow"></span></div>
+      <div><b class="n" id="tiBw"></b><span data-i18n-html="ch5.read.bw"></span></div>
+    </div>
+    <p class="say" id="tiSay" aria-live="polite"></p>
+  </figure>

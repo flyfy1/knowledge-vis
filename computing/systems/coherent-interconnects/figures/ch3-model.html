@@ -1,0 +1,15 @@
+<figure class="lab">
+    <h3 data-i18n="ch3.model.title"></h3>
+    <p class="how" data-i18n-html="ch3.model.how"></p>
+    <canvas class="cv short" id="flCv" role="img" data-i18n-aria="ch3.model.aria"></canvas>
+    <div class="legend"><span><i class="band" style="background:var(--gold)"></i><span data-i18n="ch3.cv.data"></span></span><span><i class="band" style="background:var(--cyan)"></i><span data-i18n="ch3.cv.hdr"></span></span><span><i class="band" style="background:#5a6274"></i><span data-i18n="ch3.cv.oh"></span></span></div>
+    <div class="ctl"><div class="seg wrapmany" role="radiogroup" data-i18n-aria="ch3.ctl.kind"><span class="lbl" data-i18n="ch3.ctl.kind"></span><label><input type="radio" name="flK" value="memRd" checked><span data-i18n="ch3.kind.memRd"></span></label><label><input type="radio" name="flK" value="cacheRd"><span data-i18n="ch3.kind.cacheRd"></span></label><label><input type="radio" name="flK" value="cacheWr"><span data-i18n="ch3.kind.cacheWr"></span></label></div></div>
+    <div class="ctl"><div class="seg" role="radiogroup" data-i18n-aria="ch3.ctl.mode"><span class="lbl" data-i18n="ch3.ctl.mode"></span><label><input type="radio" name="flM" value="68" checked><span data-i18n="ch3.mode.68"></span></label><label><input type="radio" name="flM" value="256"><span data-i18n="ch3.mode.256"></span></label></div><div class="seg" role="radiogroup" data-i18n-aria="ch3.ctl.w"><span class="lbl" data-i18n="ch3.ctl.w"></span><label><input type="radio" name="flW" value="4"><span>×4</span></label><label><input type="radio" name="flW" value="8"><span>×8</span></label><label><input type="radio" name="flW" value="16" checked><span>×16</span></label></div></div>
+    <div class="read">
+      <div><b class="" id="flRaw"></b><span data-i18n-html="ch3.read.raw"></span></div>
+      <div><b class="g" id="flReal"></b><span data-i18n-html="ch3.read.real"></span></div>
+      <div><b class="c" id="flEff"></b><span data-i18n-html="ch3.read.eff"></span></div>
+      <div><b class="v" id="flDdr"></b><span data-i18n-html="ch3.read.ddr"></span></div>
+    </div>
+    <p class="say" id="flSay" aria-live="polite"></p>
+  </figure>

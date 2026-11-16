@@ -1,0 +1,16 @@
+<figure class="lab">
+    <h3 data-i18n="ch7.model.title"></h3>
+    <p class="how" data-i18n-html="ch7.model.how"></p>
+    <canvas class="cv short" id="diCv" role="img" data-i18n-aria="ch7.model.aria"></canvas>
+    <div class="legend"><span><i class="band" style="background:var(--red)"></i><span data-i18n="ch7.cv.write"></span></span><span><i class="band" style="background:var(--violet)"></i><span data-i18n="ch7.cv.read"></span></span><span><i class="band" style="background:var(--cyan)"></i><span data-i18n="ch7.cv.cap"></span></span></div>
+    <div class="ctl"><div class="seg" role="radiogroup" data-i18n-aria="ch7.ctl.h"><span class="lbl" data-i18n="ch7.ctl.h"></span><label><input type="radio" name="diH" value="1"><span>1</span></label><label><input type="radio" name="diH" value="2"><span>2</span></label><label><input type="radio" name="diH" value="4"><span>4</span></label><label><input type="radio" name="diH" value="8"><span>8</span></label><label><input type="radio" name="diH" value="16" checked><span>16</span></label></div></div>
+    <div class="ctl"><div class="seg" role="radiogroup" data-i18n-aria="ch7.ctl.w"><span class="lbl" data-i18n="ch7.ctl.w"></span><label><input type="radio" name="diW" value="0"><span>0%</span></label><label><input type="radio" name="diW" value="0.01"><span>1%</span></label><label><input type="radio" name="diW" value="0.05" checked><span>5%</span></label><label><input type="radio" name="diW" value="0.2"><span>20%</span></label><label><input type="radio" name="diW" value="0.5"><span>50%</span></label></div></div>
+    <div class="ctl"><div class="seg" role="radiogroup" data-i18n-aria="ch7.ctl.cap"><span class="lbl" data-i18n="ch7.ctl.cap"></span><label><input type="radio" name="diC" value="0.25"><span data-i18n="ch7.cap.0.25"></span></label><label><input type="radio" name="diC" value="0.5"><span data-i18n="ch7.cap.0.5"></span></label><label><input type="radio" name="diC" value="1"><span data-i18n="ch7.cap.1"></span></label><label><input type="radio" name="diC" value="2" checked><span data-i18n="ch7.cap.2"></span></label></div></div>
+    <div class="read">
+      <div><b class="g" id="diBi"></b><span data-i18n-html="ch7.read.bi"></span></div>
+      <div><b class="r" id="diFan"></b><span data-i18n-html="ch7.read.fan"></span></div>
+      <div><b class="" id="diWait"></b><span data-i18n-html="ch7.read.wait"></span></div>
+      <div><b class="c" id="diCap"></b><span data-i18n-html="ch7.read.cap"></span></div>
+    </div>
+    <p class="say" id="diSay" aria-live="polite"></p>
+  </figure>
