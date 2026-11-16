@@ -1,0 +1,45 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "division-remainder",
+ "refs": [],
+ "backlinks": [
+  {
+   "from": "rsa-encryption",
+   "links": [
+    {
+     "from": "step5",
+     "to": "step3"
+    }
+   ]
+  },
+  {
+   "from": "intervals-fences",
+   "links": [
+    {
+     "from": null,
+     "to": "step0"
+    }
+   ]
+  },
+  {
+   "from": "negative-numbers",
+   "links": [
+    {
+     "from": null,
+     "to": "step1"
+    }
+   ]
+  },
+  {
+   "from": "place-value",
+   "links": [
+    {
+     "from": null,
+     "to": "step0"
+    }
+   ]
+  }
+ ],
+ "related": [],
+ "bindings": []
+}

@@ -25,7 +25,11 @@
    "from": "division-remainder",
    "links": [
     {
-     "from": null,
+     "from": "step2",
+     "to": "step1"
+    },
+    {
+     "from": "step4",
      "to": "step1"
     }
    ]
