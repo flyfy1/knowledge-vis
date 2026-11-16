@@ -1253,7 +1253,7 @@ anchor; a link to the page top has no anchor).
 
 ## 牛顿法求根 · 沿切线一刀跳向零点 / Newton’s Method · Leap to the Root Along a Tangent → 梯度下降 · 摸黑下山 / Gradient Descent · Feeling Your Way Downhill
 
-- `newton-method` → `gradient-descent#step0`: ? → gradient-descent
+- `newton-method#step5` → `gradient-descent#step0`: ? → gradient-descent
 
 ## 微分方程相图 · 捕食者与猎物的回路 / ODE Phase Portraits · Predators and Prey in a Loop → 种群增长 · S 形曲线从哪来 / Population Growth · Where the S-Curve Comes From
 

@@ -180,7 +180,7 @@ const STR = {
     "site.bl.4": "<a href=\"../cnn-feature-maps/\">卷积神经网络的特征图 · 小窗口怎样“看”图</a>：<a href=\"../cnn-feature-maps/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>",
     "site.bl.5": "<a href=\"../overfitting/\">过拟合</a>：<a href=\"../overfitting/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>",
     "site.bl.6": "<a href=\"../../../earth/geo/contour-lines/\">等高线</a>：<a href=\"../../../earth/geo/contour-lines/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>",
-    "site.bl.7": "<a href=\"../../../math/calculus/newton-method/\">牛顿法求根 · 沿切线一刀跳向零点</a>：→ <a href=\"#step0\">本页第 0 步</a>",
+    "site.bl.7": "<a href=\"../../../math/calculus/newton-method/\">牛顿法求根 · 沿切线一刀跳向零点</a>：<a href=\"../../../math/calculus/newton-method/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>",
     "site.bl.8": "<a href=\"../../../math/linear-algebra/eigenvectors/\">特征值与特征向量 · 矩阵不转的那些方向</a>：<a href=\"../../../math/linear-algebra/eigenvectors/#step4\">该课第 4 步</a> → <a href=\"#step2\">本页第 2 步</a>；<a href=\"../../../math/linear-algebra/eigenvectors/#step6\">该课第 6 步</a> → <a href=\"#step2\">本页第 2 步</a>",
     "site.bl.9": "<a href=\"../../../probability/statistics/regression-correlation/\">回归与相关 · 散点云里拉一条最贴的线</a>：→ <a href=\"#step6\">本页第 6 步</a>",
     "site.bl.10": "<a href=\"../../../probability/stochastic/entropy/\">熵 · 惊讶的平均值</a>：→ <a href=\"#step6\">本页第 6 步</a>"
@@ -357,7 +357,7 @@ const STR = {
     "site.bl.4": "<a href=\"../cnn-feature-maps/\">CNN Feature Maps · How a Small Window “Sees” an Image</a>: <a href=\"../cnn-feature-maps/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>",
     "site.bl.5": "<a href=\"../overfitting/\">Overfitting</a>: <a href=\"../overfitting/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>",
     "site.bl.6": "<a href=\"../../../earth/geo/contour-lines/\">Contour Lines</a>: <a href=\"../../../earth/geo/contour-lines/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>",
-    "site.bl.7": "<a href=\"../../../math/calculus/newton-method/\">Newton’s Method · Leap to the Root Along a Tangent</a>: → <a href=\"#step0\">this page step 0</a>",
+    "site.bl.7": "<a href=\"../../../math/calculus/newton-method/\">Newton’s Method · Leap to the Root Along a Tangent</a>: <a href=\"../../../math/calculus/newton-method/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>",
     "site.bl.8": "<a href=\"../../../math/linear-algebra/eigenvectors/\">Eigenvalues & Eigenvectors · The Directions a Matrix Cannot Turn</a>: <a href=\"../../../math/linear-algebra/eigenvectors/#step4\">its step 4</a> → <a href=\"#step2\">this page step 2</a>; <a href=\"../../../math/linear-algebra/eigenvectors/#step6\">its step 6</a> → <a href=\"#step2\">this page step 2</a>",
     "site.bl.9": "<a href=\"../../../probability/statistics/regression-correlation/\">Regression & Correlation · The Best Line Through a Cloud</a>: → <a href=\"#step6\">this page step 6</a>",
     "site.bl.10": "<a href=\"../../../probability/stochastic/entropy/\">Entropy · The Average of Surprise</a>: → <a href=\"#step6\">this page step 6</a>"

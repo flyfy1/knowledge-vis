@@ -56,7 +56,11 @@
    "from": "newton-method",
    "links": [
     {
-     "from": null,
+     "from": "step0",
+     "to": "step1"
+    },
+    {
+     "from": "step5",
      "to": "step1"
     }
    ]
