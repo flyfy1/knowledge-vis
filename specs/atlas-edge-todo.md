@@ -967,11 +967,11 @@ anchor; a link to the page top has no anchor).
 
 ## 大语言模型如何逐词生成 / How an LLM Writes Word by Word → 熵 · 惊讶的平均值 / Entropy · The Average of Surprise
 
-- `llm-sampling` → `entropy#step2`: ? → information-entropy
+- `llm-sampling#step5` → `entropy#step2`: ? → information-entropy
 
 ## 大语言模型如何逐词生成 / How an LLM Writes Word by Word → 蒙特卡洛 · 撒豆子算 π / Monte Carlo · Counting π with Scattered Beans
 
-- `llm-sampling` → `monte-carlo#step1`
+- `llm-sampling#step5` → `monte-carlo#step1`
 
 ## 磁铁 · 铁屑显出看不见的线 / Magnets · Iron Filings Reveal Unseen Lines → 勾股定理 · 一步一交互 / The Pythagorean Theorem · One Interaction at a Time
 

@@ -112,7 +112,7 @@ const STR = {
     "site.bl.1": "<a href=\"../backpropagation/\">反向传播 · 误差沿网络回流</a>：<a href=\"../backpropagation/#step5\">该课第 5 步</a> → <a href=\"#step4\">本页第 4 步</a>",
     "site.bl.2": "<a href=\"../embeddings/\">词向量 · 把词摆成地图</a>：<a href=\"../embeddings/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>",
     "site.bl.3": "<a href=\"../how-hybrid-attention-remembers/\">混合注意力是怎么“记住”长文的</a>：→ <a href=\"#step1\">本页第 1 步</a>",
-    "site.bl.4": "<a href=\"../llm-sampling/\">大语言模型如何逐词生成</a>：→ <a href=\"#step1\">本页第 1 步</a>"
+    "site.bl.4": "<a href=\"../llm-sampling/\">大语言模型如何逐词生成</a>：<a href=\"../llm-sampling/#step5\">该课第 5 步</a> → <a href=\"#step1\">本页第 1 步</a>"
   },
   en: {
     docTitle: "Attention · Every Word Decides Where to Look",
@@ -226,7 +226,7 @@ const STR = {
     "site.bl.1": "<a href=\"../backpropagation/\">Backpropagation · Error Flows Back Through the Network</a>: <a href=\"../backpropagation/#step5\">its step 5</a> → <a href=\"#step4\">this page step 4</a>",
     "site.bl.2": "<a href=\"../embeddings/\">Word Embeddings · Words as a Map</a>: <a href=\"../embeddings/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>",
     "site.bl.3": "<a href=\"../how-hybrid-attention-remembers/\">How Hybrid Attention Models Remember</a>: → <a href=\"#step1\">this page step 1</a>",
-    "site.bl.4": "<a href=\"../llm-sampling/\">How an LLM Writes Word by Word</a>: → <a href=\"#step1\">this page step 1</a>"
+    "site.bl.4": "<a href=\"../llm-sampling/\">How an LLM Writes Word by Word</a>: <a href=\"../llm-sampling/#step5\">its step 5</a> → <a href=\"#step1\">this page step 1</a>"
   }
 };
 let currentLang = 'en';
