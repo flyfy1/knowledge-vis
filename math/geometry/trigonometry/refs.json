@@ -1,0 +1,85 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "trigonometry",
+ "refs": [],
+ "backlinks": [
+  {
+   "from": "atlas",
+   "links": [
+    {
+     "from": null,
+     "to": "step1"
+    }
+   ]
+  },
+  {
+   "from": "complex-numbers",
+   "links": [
+    {
+     "from": "step1",
+     "to": "step1"
+    },
+    {
+     "from": "step6",
+     "to": "step2"
+    }
+   ]
+  },
+  {
+   "from": "pythagoras",
+   "links": [
+    {
+     "from": "step6",
+     "to": "step1"
+    }
+   ]
+  },
+  {
+   "from": "reflection-refraction",
+   "links": [
+    {
+     "from": null,
+     "to": "step1"
+    }
+   ]
+  },
+  {
+   "from": "interference",
+   "links": [
+    {
+     "from": null,
+     "to": "step2"
+    }
+   ]
+  },
+  {
+   "from": "standing-wave",
+   "links": [
+    {
+     "from": null,
+     "to": "step2"
+    }
+   ]
+  },
+  {
+   "from": "fourier",
+   "links": [
+    {
+     "from": "step3",
+     "to": "step1"
+    }
+   ]
+  },
+  {
+   "from": "z-transform",
+   "links": [
+    {
+     "from": null,
+     "to": "step0"
+    }
+   ]
+  }
+ ],
+ "related": [],
+ "bindings": []
+}
