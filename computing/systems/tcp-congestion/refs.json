@@ -1,0 +1,48 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "tcp-congestion",
+ "refs": [],
+ "backlinks": [
+  {
+   "from": "shortest-path",
+   "links": [
+    {
+     "from": "step5",
+     "to": "step0"
+    }
+   ]
+  },
+  {
+   "from": "how-a-nic-moves-packets",
+   "links": [
+    {
+     "from": "ch9",
+     "to": null
+    },
+    {
+     "from": "ch14",
+     "to": null
+    }
+   ]
+  },
+  {
+   "from": "storage-over-a-network",
+   "links": [
+    {
+     "from": "ch2",
+     "to": "step1"
+    },
+    {
+     "from": "ch3",
+     "to": "step4"
+    },
+    {
+     "from": "ch11",
+     "to": null
+    }
+   ]
+  }
+ ],
+ "related": [],
+ "bindings": []
+}

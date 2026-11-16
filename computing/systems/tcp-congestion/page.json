@@ -28,5 +28,39 @@
   "stage": "university",
   "status": "live",
   "path": "computing/systems/tcp-congestion/",
-  "order": 1130
+  "order": 1130,
+  "layout": "lesson",
+  "version": "20261116a",
+  "titleKey": "docTitle",
+  "legacyLayout": {
+    "_note": "Whitespace and markup of the hand-written lesson this page was converted from, so the conversion could be checked byte for byte (specs/site-template.md §3c).",
+    "section": {
+      "open": "<section class=\"step\" id=\"{id}\"><div class=\"step-inner\">",
+      "close": "</div></section>"
+    },
+    "indent": "",
+    "mainGaps": [
+      "\n",
+      "\n",
+      "\n",
+      "\n",
+      "\n",
+      "\n",
+      "\n"
+    ],
+    "stepNav": {
+      "item": "<a href=\"#{id}\" data-i18n=\"{key}\"></a>",
+      "end": ""
+    },
+    "filled": [
+      "back",
+      "pageTitle",
+      "nav0",
+      "nav1",
+      "nav2",
+      "nav3",
+      "nav4",
+      "nav5"
+    ]
+  }
 }
