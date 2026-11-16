@@ -1,0 +1,57 @@
+'use strict';
+const STR = /*@i18n-table@*/;
+let _lang = null;
+let _langMem = 'zh'; // localStorage 不可用时的内存退化
+function storedLang() {
+  try {
+    const v = window.localStorage.getItem('knowledge-lang');
+    if (v === 'zh' || v === 'en') return v;
+  } catch (e) { /* 退化为内存变量 */ }
+  return null;
+}
+function saveLang(v) {
+  _langMem = v;
+  try { window.localStorage.setItem('knowledge-lang', v); } catch (e) { /* 忽略 */ }
+}
+function getLang() {
+  if (_lang) return _lang;
+  return storedLang() || _langMem;
+}
+function t(key, params) {
+  let s = (STR[getLang()] && STR[getLang()][key]) || STR.zh[key] || key;
+  if (params) for (const k in params) s = s.split('{' + k + '}').join(String(params[k]));
+  return s;
+}
+const langRefreshers = [];
+function onLangRefresh(fn) { langRefreshers.push(fn); }
+function applyLang(lang) {
+  _lang = lang;
+  saveLang(lang);
+  document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+  document.title = t('docTitle');
+  document.querySelectorAll('[data-i18n-aria]').forEach(el => el.setAttribute('aria-label', t(el.dataset.i18nAria)));
+  document.querySelectorAll('[data-i18n-title]').forEach(el => el.title = t(el.dataset.i18nTitle));
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    el.textContent = t(el.getAttribute('data-i18n'));
+  });
+  document.querySelectorAll('[data-i18n-html]').forEach(el => {
+    el.innerHTML = t(el.getAttribute('data-i18n-html'));
+  });
+  document.querySelectorAll('#langToggle button').forEach(b => {
+    b.classList.toggle('active', b.dataset.lang === lang);
+    b.setAttribute('aria-pressed', String(b.dataset.lang === lang));
+  });
+  langRefreshers.forEach(fn => { try { fn(lang); } catch (e) { console.error(e); } });
+}
+function initLangToggle() {
+  const box = document.getElementById('langToggle');
+  if (!box) return;
+  box.querySelectorAll('button').forEach(b => {
+    b.addEventListener('click', () => {
+      if (b.dataset.lang !== getLang()) applyLang(b.dataset.lang);
+    });
+  });
+  applyLang(getLang());
+}
+/* 先定语言，再渲染：DOMContentLoaded 的第一批监听里先应用语言 */
+document.addEventListener('DOMContentLoaded', initLangToggle);
