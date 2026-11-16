@@ -7,3 +7,4 @@
 - 测试：`tests/browser.cjs`：构建者在外溢视口检查里加的 `e.closest('svg')` 跳过把 `<svg>` 自身也排除了（比屏幕宽的 SVG 查不出来），评审改回只跳过 `<defs>`；裁切文字检查里从不生效的 SVG 豁免已删除。
 - 未处理（不阻塞）：SAS 插头几何（S8–S14 在 SATA 缺口处）是示意，图注已说明没读 SFF-8482。
 - 2026-11-16 模板迁移准备（Claude Code，claude-opus-5-5；specs/site-template.md §10 第 3 步，同批次 A 的 `9a470caf`）：`tests/models.cjs` 通过 `scripts/lib/prefill.cjs` 的 `unprefill(html, Z)` 读 `index.html`（含「index.html 里没有中文」检查），统计 S4/S5 链接和兄弟篇锚点时跳过生成的 `site.*` 键。手写页面上不起作用；转换后的完整构建上照样通过，手写的 `<p>手写</p>` 仍被查出。标签指向 `b44d5f06`（previous `9fcb9fac`），脚本没改，缓存键不变。
+- 2026-11-16 模板迁移（`0c3676fa`，机械转换）后补回运行时自动链接（D10 之后 site-nav.js 不再在模板页上把《标题》变成链接）：线上 `SiteNav.report()` 在本页有 3 处（zh ch1.p2、zh ch7.p1、en ch1.p2，都指向《硬盘里到底是什么》），与构建 lint 一致。现在都是 `[[what-a-drive-is-made-of#ch7|…]]`：正文点名第 7 章，所以链到 #ch7（运行时链到页首）。ch7.p1 原来书名没链接、「第 7 章」单独链接，英文是一个链接覆盖书名和章，现在两种语言都是一个链接覆盖「书名 + 第 7 章」，链接数不变；en ch7.p1 的单引号链接也改成 `[[…]]`。`--all --check` 0 条 lint。缓存键 `20261116c`（what-a-drive-is-made-of 只多了生成的被引用行，也升到 `20261116c`，标签不重指）。

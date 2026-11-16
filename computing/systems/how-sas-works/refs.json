@@ -1,7 +1,18 @@
 {
  "_generated": "by scripts/build-pages.cjs; do not edit",
  "page": "how-sas-works",
- "refs": [],
+ "refs": [
+  {
+   "from": "ch1.p2",
+   "to": "what-a-drive-is-made-of",
+   "anchor": "ch7"
+  },
+  {
+   "from": "ch7.p1",
+   "to": "what-a-drive-is-made-of",
+   "anchor": "ch7"
+  }
+ ],
  "backlinks": [
   {
    "from": "how-pcie-works",

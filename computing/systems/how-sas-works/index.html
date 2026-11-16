@@ -213,7 +213,7 @@
     <h2 data-i18n="ch1.title">SAS 在地图上的哪里</h2>
     <p class="law" data-i18n-html="ch1.law">SAS 的全名是「串行连接的 SCSI」。名字里已经分好了两层：SCSI 是说什么话，「串行连接」是怎么把话送过去。前者比后者老将近二十年，跑过的线也比它多得多。</p>
     <p data-i18n-html="ch1.p1">机房里的人说「这是一块 SAS 盘」，指的通常是那个比 SATA 口多出一截的金手指。但跟 SATA 一样，「SAS」这个词下面叠着好几层，每层由不同的文件规定。最上面是 <strong>SCSI 命令集</strong>：「从第几号块开始读几块」这样的句子怎么写成字节，由 INCITS 下面的 T10 委员会定，第一版 SCSI 标准是 1986 年的。下面才是 SAS 自己的几层：把命令装成帧的传输层，在两个端口之间搭临时连接的链路层，把几条物理通道捆成一个端口的端口层，以及管差分信号和编码的物理层。从 SAS-2.1 起，T10 把协议部分单独拆成《SAS 协议层》（SPL）系列，物理层留在 SAS-2.1、SAS-3、SAS-4 这些文件里。</p>
-    <p data-i18n-html="ch1.p2">姊妹篇《硬盘里到底是什么》第 7 章把 SATA、SAS、PCIe/NVMe、USB 放在同一张分层地图上；这里只放大 SAS 那一列：</p>
+    <p data-i18n-html="ch1.p2">姊妹篇<a href="../what-a-drive-is-made-of/#ch7">《硬盘里到底是什么》第 7 章</a>把 SATA、SAS、PCIe/NVMe、USB 放在同一张分层地图上；这里只放大 SAS 那一列：</p>
     <table class="fam"><thead><tr><th data-i18n="ch1.th.layer">层</th><th data-i18n="ch1.th.what">管什么</th><th data-i18n="ch1.th.who">谁定的</th><th data-i18n="ch1.th.ch">本文</th></tr></thead><tbody>
       <tr><td data-i18n="ch1.r.cmd">命令集（SCSI）</td><td data-h="" data-hk="ch1.th.what" data-i18n-html="ch1.r.cmd.what">说什么：READ、WRITE、INQUIRY，命令的排队规则，以及每块数据后面的保护信息</td><td data-h="" data-hk="ch1.th.who" data-i18n-html="ch1.r.cmd.who">T10：SAM（体系结构）、SPC（通用命令）、SBC（块设备命令）</td><td data-h="" data-hk="ch1.th.ch" data-i18n-html="ch1.r.cmd.ch">第 2、8 章</td></tr>
       <tr><td data-i18n="ch1.r.tr">传输层</td><td data-h="" data-hk="ch1.th.what" data-i18n-html="ch1.r.tr.what">三种协议：SSP 送 SCSI 命令和数据，STP 把 SATA 的帧装进 SAS 连接里，SMP 用来管理扩展器</td><td data-h="" data-hk="ch1.th.who" data-i18n-html="ch1.r.tr.who">T10：SPL（SAS-2.1 以前写在 SAS 标准里）</td><td data-h="" data-hk="ch1.th.ch" data-i18n-html="ch1.r.tr.ch">第 3、7 章</td></tr>
@@ -366,7 +366,7 @@
     <div class="num">07</div>
     <h2 data-i18n="ch7.title">SATA 盘为什么能插 SAS 口</h2>
     <p class="law" data-i18n-html="ch7.law">SAS 从一开始就打算兼容 SATA：插头是 SATA 插头加一截，控制器会说 SATA 的话。反过来就不行：SATA 口没有那一截，SATA 控制器也不会说 SCSI。</p>
-    <p data-i18n-html="ch7.p1">先看插头。按 T10 的 SAS-1.1 草案（第 5 章，2005）：SAS 盘的插头把信号引脚放在和 SATA 盘一样的位置，另外多一组 S8–S14 触点给第二个端口；SAS 的插座写明可以接 SATA 盘的插头，这时只接上主端口和电源。通常的解释是：那组多出来的触点占的正是 SATA 插头上信号段和电源段之间那道缺口，SATA 插座在那里是实心的，所以 SAS 盘插不进 SATA 口。这个几何细节写在 SFF-8482 里，我没有读到原文，只读到 T10 草案里的引脚表。（《硬盘里到底是什么》<a href='../what-a-drive-is-made-of/#ch7'>第 7 章</a>的配对模型可以把这些组合都试一遍。）</p>
+    <p data-i18n-html="ch7.p1">先看插头。按 T10 的 SAS-1.1 草案（第 5 章，2005）：SAS 盘的插头把信号引脚放在和 SATA 盘一样的位置，另外多一组 S8–S14 触点给第二个端口；SAS 的插座写明可以接 SATA 盘的插头，这时只接上主端口和电源。通常的解释是：那组多出来的触点占的正是 SATA 插头上信号段和电源段之间那道缺口，SATA 插座在那里是实心的，所以 SAS 盘插不进 SATA 口。这个几何细节写在 SFF-8482 里，我没有读到原文，只读到 T10 草案里的引脚表。（<a href="../what-a-drive-is-made-of/#ch7">《硬盘里到底是什么》第 7 章</a>的配对模型可以把这些组合都试一遍。）</p>
     <figure class="dia" data-dg="plug"><div class="svg"></div><figcaption data-i18n-html="dg.plug.cap">图 8　SATA 盘和 SAS 盘的插头（示意，不按比例）。SAS 插座可以接 SATA 盘，这时只接上主端口和电源。多出来的那组触点占的是 SATA 插头上的那道缺口，这是常见的解释；规定插头几何形状的 SFF-8482 原文我没有读到。</figcaption></figure>
     <p data-i18n-html="ch7.p2">再看话。SAS 控制器接到 SATA 盘时用 STP（SATA 隧道协议）：先像对待 SAS 盘一样经过扩展器 OPEN 一条连接，连接里面跑的就是原封不动的 SATA 帧，按 T10 的说法，STP 的链路层直接用 SATA 的链路层状态机，只改了几处让它通过端口层说话。盘直接接在控制器上时连隧道都不用，控制器的通道直接切到 SATA 模式。操作系统那边，控制器或驱动把 SCSI 命令翻译成 ATA 命令（T10 的 SAT 标准），上层还是把它当一块 SCSI 盘。</p>
     <p data-i18n-html="ch7.p3">麻烦在于 SATA 盘以为世界上只有一台主机。两个控制器都想跟它说话时，SATA 的帧里没有地方写「这是谁发的命令」，两边的命令会混在一起。STP 用「亲和关系」（affiliation）来防这件事：一个控制器先占住这块盘，别的控制器来 OPEN 会被拒绝，回 OPEN_REJECT（STP RESOURCES BUSY），直到占住的一方松手（T10 提案 06-188r2）。所以第 4 章模型里，SATA 盘插在双控背板上只算一条路：它的插头没有第二个端口，背板上 B 路的触点碰不到它；就算两个控制器经同一个扩展器都够得着它，亲和关系也只让一方占用。要真正两路都用，得加转接板，第 4 章的模型已经算过它的代价。</p>
@@ -474,10 +474,10 @@
 
 <footer><div class="wrap"><p data-i18n-html="footer.sources">出处：T10 技术委员会草案列表（t10.org/drafts.htm，各标准的状态与日期，2026-11-14 打开）；T10 提案 03-245r4（SSP 帧与 COMMAND 信息单元，2004）、05-190r2（SAS-1.1 第 5 章：插头与插座，2005）、02-482r0（SAS 内部线缆，2002）、02-335r2（宽端口上的连接，2002）、05-144r7（SAS-2 分区，2005）、06-188r2（STP 亲和关系，2006）；希捷《SCSI 命令参考手册》100293068 Rev. L（2020，表 107–113）；RFC 7143（iSCSI）；Linux 内核 lib/crc/crc-t10dif-main.c 与 include/linux/t10-pi.h；CRC RevEng 目录（CRC-16/T10-DIF）；smp_utils 手册页 smp_conf_zone_perm_tbl(8)；希捷 Exos 数据表 DS2046.1-2512；铠侠 PM7-R 产品页；NIST/SEMATECH《工程统计手册》8.1.8.2–8.1.8.3；Bairavasundaram 等，An Analysis of Data Corruption in the Storage Stack，FAST '08；Xia 等，A Study of Forward Error Correction Codes for SAS Channels，Signal Integrity Journal，2018 年 12 月；STA 与 INCITS/SCSI 新闻稿（2024-07-23）；STA plugfest 新闻稿（2026-10-27）；Blocks & Files，SAS roadmap hits speed bump as NVMe cruises in（2023-11-23）。</p><p data-i18n-html="footer.models">模型：CDB 与两种信封按上述表格逐位拼出；一次读的时间按 SSP 帧长度和每条道的有效速率计算，开关门时间是调出来的参数；可用度用串并联可靠性框图，路径零件的数字是调出来的参数；扇出用 Erlang C；宽端口是逐事件的确定性模拟；PI 用真实的 CRC-16/T10-DIF；纠错用 RS(30,26) 的符号计数加泊松到达的串错误。</p><p data-i18n-html="footer.ai">这一页由 Claude Code（claude-opus-5-5）编写；2026-11-14 由 Claude Code（claude-opus-5-5）在另一会话中独立评审，核对了标准字段、模型推导和前沿事实。</p></div></footer>
 
-<script src="models.js?v=20261116b"></script>
-<script src="copy.zh.js?v=20261116b"></script>
-<script src="copy.en.js?v=20261116b" onerror="void 0"></script>
-<script src="app.js?v=20261116b"></script>
+<script src="models.js?v=20261116c"></script>
+<script src="copy.zh.js?v=20261116c"></script>
+<script src="copy.en.js?v=20261116c" onerror="void 0"></script>
+<script src="app.js?v=20261116c"></script>
 <script defer src="../../../site-nav.js?v=sn-20261116"></script>
 </body>
 </html>
