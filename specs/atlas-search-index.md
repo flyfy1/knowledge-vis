@@ -425,6 +425,17 @@ anchor and aliases. It is a schema-2 fragment `atlas/graph/lessons/<slug>.json`:
   before/after sweep of the 7,912 existing aliases and tags changed only the new page tags (供电, 电源管理, Power Delivery, Power Management,
   网卡, Network Cards). `tests/concept-search.cjs` pins 49 zh/en pairs (22 power, 19 NIC, 8 on other owners: USB PD, power sequencing,
   Dennard scaling, CPO, PCIe overhead, RDMA, 网络 / packet, TSO). The search chunks total 357,603 bytes; no new chunk.
+- Architecture series, the SIMD / floating-point essay (2026-11-16, the first native template page): how-a-cpu-does-math (13 concepts)
+  → computing. 21 hand-written edges: 12 between chapters (#ch1 → #ch2 → #ch3 → #ch5, #ch6; #ch1 → #ch4, #ch7 → #ch8; #ch9 → #ch10,
+  #ch11, #ch12; #ch5 → #ch10; #ch6 → #ch11), switches-that-compute #ch10 → #ch1 and #ch5 → #ch4, #ch7 → how-a-gpu-computes #ch8 → #ch12,
+  #ch8 → why-compute-waits-for-memory #ch8, how-a-cpu-guesses-ahead #ch2 → #ch9, how-cpu-caches-work #ch2 → #ch10,
+  how-power-reaches-the-cpu #ch2 and why-compute-waits-for-memory #ch7 → #ch11. Alias decisions: bare 浮点数 / floating point / IEEE 754
+  move from switches-that-compute #ch10 to #ch1 (the essay is entirely about floats; switches keeps 0.1 + 0.2, 浮点误差, 精度丢失,
+  rounding error, double vs float); #ch1 also takes 浮点, 浮点数格式 / floating point format, #ch3 四舍五入, #ch7 bare FP8 / E4M3 / E5M2,
+  #ch8 bare FP4 (how-a-gpu-computes #ch8 keeps "FP8 E4M3 E5M2", "FP4 格式", "FP8 formats"). 量化 still ties with
+  where-money-comes-from #ch2 and was left. A before/after sweep of the 6,898 existing aliases and tags changed exactly 浮点数, IEEE 754
+  and the tag "Floating Point" (all to #ch1). `tests/concept-search.cjs` pins 23 zh/en pairs (21 on the new page, 2 on owners that keep
+  their words). The search chunks total 365,637 bytes; no new chunk.
 
 ### Commands for the integrator
 

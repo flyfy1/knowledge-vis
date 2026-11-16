@@ -126,7 +126,7 @@ types ("为什么要打疫苗", "how does my phone know where I am"), not only t
    were already deployed under today's key, append a letter (`?v=20261115b`, then `c`) so the new key differs.
    On a template page the key is `page.json.version`; set it and rebuild. The
    storage essays (what-a-drive-is-made-of, how-sata-works, how-sas-works, how-usb-drives-talk, storage-over-a-network),
-   the bus essays (how-pcie-works, how-a-computer-is-wired, how-thunderbolt-works, how-memory-talks, coherent-interconnects), how-cpu-caches-work, how-a-cpu-runs-a-program, how-virtual-memory-works, how-a-cpu-guesses-ahead, how-cores-share-memory, how-a-gpu-computes, how-a-computer-boots, how-the-os-talks-to-hardware, how-pixels-reach-a-screen, how-power-reaches-the-cpu, how-a-nic-moves-packets, why-compute-waits-for-memory and why-nvme-is-fast use it since 2026-11-15; older essays do not yet, so add the key the next time one of them
+   the bus essays (how-pcie-works, how-a-computer-is-wired, how-thunderbolt-works, how-memory-talks, coherent-interconnects), how-cpu-caches-work, how-a-cpu-runs-a-program, how-virtual-memory-works, how-a-cpu-guesses-ahead, how-cores-share-memory, how-a-gpu-computes, how-a-computer-boots, how-the-os-talks-to-hardware, how-pixels-reach-a-screen, how-power-reaches-the-cpu, how-a-nic-moves-packets, why-compute-waits-for-memory and why-nvme-is-fast use it since 2026-11-15, switches-that-compute since 2026-11-16 (template pages, including how-a-cpu-does-math, through page.json.version); older essays do not yet, so add the key the next time one of them
    changes.
 8. Add rows to CONCEPT-MAP.md.
 
@@ -163,6 +163,7 @@ types ("为什么要打疫苗", "how does my phone know where I am"), not only t
 | how-virtual-memory-works | computing/systems/how-virtual-memory-works/ | 13 (`#ch1…#ch13`) | computing | `ESSAY_BASE_URL` |
 | how-a-cpu-guesses-ahead | computing/systems/how-a-cpu-guesses-ahead/ | 12 (`#ch1…#ch12`) | computing | `ESSAY_BASE_URL` |
 | how-cores-share-memory | computing/systems/how-cores-share-memory/ | 12 (`#ch1…#ch12`) | computing | `ESSAY_BASE_URL` |
+| how-a-cpu-does-math | computing/systems/how-a-cpu-does-math/ | 13 concepts in 14 chapters (`#ch1…#ch13`) | computing | `ESSAY_BASE_URL` |
 | how-memory-talks | computing/systems/how-memory-talks/ | 12 (`#ch1…#ch12`) | computing | `ESSAY_BASE_URL` |
 | coherent-interconnects | computing/systems/coherent-interconnects/ | 13 (`#ch1…#ch13`) | computing | `ESSAY_BASE_URL` |
 | how-a-gpu-computes | computing/systems/how-a-gpu-computes/ | 12 (`#ch1…#ch12`) | computing | `ESSAY_BASE_URL` |
@@ -175,7 +176,7 @@ types ("为什么要打疫苗", "how does my phone know where I am"), not only t
 The eleven from 2026-11-11, the two food essays of 2026-11-12 and the five storage essays of 2026-11-14/15
 (what-a-drive-is-made-of, how-sata-works, how-sas-works, how-usb-drives-talk, storage-over-a-network) and the three bus essays of
 2026-11-15 (how-pcie-works, how-a-computer-is-wired, how-thunderbolt-works, and later how-memory-talks and coherent-interconnects) and the architecture essays how-cpu-caches-work,
-how-a-cpu-runs-a-program, how-virtual-memory-works, how-a-cpu-guesses-ahead, how-cores-share-memory, how-a-gpu-computes, how-a-computer-boots, how-the-os-talks-to-hardware, how-pixels-reach-a-screen, how-power-reaches-the-cpu and how-a-nic-moves-packets (2026-11-15) were built by Claude Code (claude-opus-5-5). The English copy was drafted by Claude
+how-a-cpu-runs-a-program, how-virtual-memory-works, how-a-cpu-guesses-ahead, how-cores-share-memory, how-a-gpu-computes, how-a-computer-boots, how-the-os-talks-to-hardware, how-pixels-reach-a-screen, how-power-reaches-the-cpu and how-a-nic-moves-packets (2026-11-15), and how-a-cpu-does-math (2026-11-16, the first essay written directly in the Markdown site template) were built by Claude Code (claude-opus-5-5). The English copy was drafted by Claude
 Code (claude-haiku-5-5). A separate Claude Code session of the same model reviewed each essay and revised
 it (no human or cross-model review yet). Each BRIEF.md records what was and was not checked.
 why-compute-waits-for-memory and why-nvme-is-fast were built by Antigravity (gemini-4-hydrogen) in both
@@ -226,6 +227,7 @@ atlas/graph/aliases.json), all for how-a-cpu-runs-a-program; #ch9 keeps 程序�
 the first time (c0cc5c40, original and previous 9451df5d); only REGISTRY.json changed and it is a Claude Code edition, so
 no review note. 取指 译码 执行 was also an alias of why-compute-waits-for-memory #ch1, which won the zh tie; the A4/A5 registrar
 removed it there (2026-11-15), so it lands on #ch9 (pinned in tests/concept-search.cjs).
+SIMD/float registrar (2026-11-16): bare 浮点数 and IEEE 754 left #ch10 for how-a-cpu-does-math #ch1; #ch10 keeps 0.1 + 0.2, 浮点误差, 精度丢失, rounding error, double vs float. New ch10.see line (a 48 px .see link like ch3/ch5) to that essay's #ch1. Scripts get their first cache key, `?v=20261116`. Label at 1ef6c3b9 (previous 70d9f2e1).
 
 ### what-is-a-black-hole: 黑洞到底是什么
 
@@ -538,6 +540,7 @@ memory (#ch2 twice, #ch3, #ch4), 1 from switches-that-compute #ch11. Not verifie
 jia.je), Intel Xeon 6980P cache, Zen 6 (claimed), Apple's ways and latencies, Skymont L1.
 SVG-check registrar (2026-11-16): browser.cjs outside-viewport check skips only <defs> again (not the <svg>), clipped-text SVG skip removed in c3cef443 (test only, page passes at 1280/390/320 zh+en); label at c3cef443 (previous 70d9f2e1), no script change.
 Template Phase 1 batch A (2026-11-16): tests/models.cjs reads index.html through unprefill() and skips generated site.* keys in link/number scans (9a470caf, test only, no-op before conversion). Label at 9a470caf (previous c3cef443), no script change.
+SIMD/float registrar (2026-11-16): only the generated linked-from rows changed (how-a-cpu-does-math ch10 links #ch2); page.json version 20261116b, label not repointed (generated backlinks are mechanical, D4).
 
 ### how-a-cpu-runs-a-program: CPU 是怎么运行一个程序的
 
@@ -562,6 +565,7 @@ P&H's exact first-pipeline text and RISC-V-edition figure, Nova Lake from Intel'
 mispredict (order of magnitude).
 SVG-check registrar (2026-11-16): browser.cjs outside-viewport check skips only <defs> again (not the <svg>), clipped-text SVG skip removed in c3cef443 (test only, page passes at 1280/390/320 zh+en); label at c3cef443 (previous 70d9f2e1), no script change.
 Template Phase 1 batch A (2026-11-16): tests/models.cjs reads index.html through unprefill() and skips generated site.* keys in link/number scans (9a470caf, test only, no-op before conversion). Label at 9a470caf (previous c3cef443), no script change.
+SIMD/float registrar (2026-11-16): ch11.e2 links how-a-cpu-does-math #ch9 (vector and matrix instructions) and ch12.links its page top, as [[refs]]; tests/models.cjs also scans double-quoted [[ref]] links outside site.* rows. Label at 1ef6c3b9 (previous 144500ef), page.json version 20261116b.
 
 ### how-virtual-memory-works: 虚拟内存是怎么工作的
 
@@ -614,6 +618,7 @@ why-compute-waits-for-memory #ch4, 1 to A3 #ch10. Not verified (BRIEF): AMD 5845
 quotation), X925's 768 (WikiChip claim), the original Smith, Yeh & Patt, Tomasulo and Seznec papers.
 SVG-check registrar (2026-11-16): browser.cjs outside-viewport check skips only <defs> again (not the <svg>), clipped-text SVG skip removed in c3cef443 (test only, page passes at 1280/390/320 zh+en); label at c3cef443 (previous 70d9f2e1), no script change.
 Template Phase 1 batch A (2026-11-16): tests/models.cjs reads index.html through unprefill() and skips generated site.* keys in link/number scans (9a470caf, test only, no-op before conversion). Label at 9a470caf (previous c3cef443), no script change.
+SIMD/float registrar (2026-11-16): only the generated linked-from rows changed (how-a-cpu-does-math ch9 links #ch2); page.json version 20261116b, label not repointed (generated backlinks are mechanical, D4).
 
 ### how-cores-share-memory: 多个核心怎么共用一块内存
 
@@ -641,6 +646,30 @@ chapter number, Lamport 1979.
 A6/boot registrar (2026-11-15): ch12.links gains one clause linking how-a-gpu-computes #ch10 (why GPU L1s are not kept coherent); 缓存一致性 / cache coherence stay on #ch1 here (pinned; A6 #ch10 has only "GPU cache coherence"). Label at 4e4585ca (previous 52df5521), scripts `?v=20261115c`.
 SVG-check registrar (2026-11-16): browser.cjs outside-viewport check skips only <defs> again (not the <svg>), clipped-text SVG skip removed in c3cef443 (test only, page passes at 1280/390/320 zh+en); label at c3cef443 (previous 70d9f2e1), no script change.
 Template Phase 1 batch A (2026-11-16): tests/models.cjs reads index.html through unprefill() and skips generated site.* keys in link/number scans (9a470caf, test only, no-op before conversion). Index markup normalised in bb10f897 (whitespace-only lines before </section>; no rendered change). Label at 9a470caf (previous c3cef443), no script change.
+
+### how-a-cpu-does-math: CPU 是怎么算小数的，又怎么一次算一排
+
+Architecture series, the SIMD / floating-point essay the A6 builder asked for (TASK-arch-series.md follow-ups), and the first essay
+written directly in the Markdown site template (content.zh.md / content.en.md → scripts/build-pages.cjs; specs/site-template.md §9a).
+Fourteen chapters: the three fields of binary32 with an exact BigInt encoder, ulp spacing and the float clock, rounding modes with
+guard / round / sticky, subnormals, NaN and infinity with FTZ, cancellation and summation (naive, pairwise, Kahan), FMA, FP16 / BF16 /
+FP8 with a generated format table, INT8 and OCP MX block scaling (an outlier of 1000 in MXFP8 is stored as 896), SIMD lanes and masks,
+auto-vectorisation, FMA latency and throughput with AVX-512 frequency licences, SVE / SME / AMX, a dated frontier and three closing
+questions. 14 labs, 13 static SVG diagrams (wide and narrow variants generated by tools/diagrams*.cjs); bindings.cjs carries 106
+model-computed numbers into the prose. Essay commit b6dcadc4 (English by Claude Code, claude-haiku-5-5); registration and cross-links
+c7795a74 + 1ef6c3b9 (the atlas fragment went in alone by a shell slip); label at 1ef6c3b9 (original and previous b6dcadc4);
+page.json version 20261116. It owns, since 2026-11-16, 浮点数 / floating point / IEEE 754 (moved from switches-that-compute #ch10), 浮点,
+浮点数格式, 单精度 双精度, binary32 (#ch1), ulp, machine epsilon (#ch2), 舍入模式, 四舍五入, 随机舍入 (#ch3), 次正规数, NaN, FTZ (#ch4),
+Kahan 求和, catastrophic cancellation (#ch5), FMA, 融合乘加 (#ch6), BF16, FP16, 半精度, bare FP8 / E4M3 / E5M2 (#ch7), INT8 量化, MX 格式,
+NVFP4, bare FP4 (#ch8), SIMD, AVX-512, NEON, 掩码寄存器 (#ch9), 自动向量化 (#ch10), AVX-512 降频, CPU 算力, multiple accumulators
+(#ch11), SVE, SME, AMX (#ch12), AVX10.2, P3109 (#ch13). switches #ch10 keeps 0.1 + 0.2, 浮点误差, rounding error, double vs float;
+how-a-gpu-computes #ch8 keeps "FP8 E4M3 E5M2", "FP4 格式", "FP8 formats"; FLOPS stays on why-compute-waits-for-memory #ch7. It links
+switches-that-compute (#ch5, #ch10), how-a-cpu-runs-a-program, how-a-cpu-guesses-ahead #ch2, how-cpu-caches-work #ch2,
+why-compute-waits-for-memory #ch7 and #ch8, how-a-gpu-computes #ch8 and how-power-reaches-the-cpu #ch2; the draft
+what-a-frontier-model-takes is named in plain text in ch14 (link it when that draft is registered). Linked from how-a-gpu-computes ch1
+(#ch9) and its ch8 take (#ch7, #ch8), how-a-cpu-runs-a-program ch11.e2 (#ch9) and ch12.links, switches-that-compute ch10.see (#ch1).
+Not verified (BRIEF, review): the AVX10.2 rev 7.0 text, P3109 arXiv 2606.04028, Zen 5's 2 × 512-bit loads per cycle (one source),
+Intel's AMX ops per cycle (via Wikipedia).
 
 ### how-memory-talks: 内存是怎么和 CPU 说话的
 
@@ -743,6 +772,7 @@ OS/pixels registrar (2026-11-15): ch9.p2 links how-pixels-reach-a-screen #ch1 (t
 Power/NIC registrar (2026-11-15): ch11.p2 links how-power-reaches-the-cpu #ch10 (a kilowatt a card). Label at d0821bc1 (previous e916a267), scripts `?v=20261115t`.
 SVG-check registrar (2026-11-16): browser.cjs outside-viewport check skips only <defs> again (not the <svg>), clipped-text SVG skip removed in c3cef443 (test only, page passes at 1280/390/320 zh+en); label at c3cef443 (previous d0821bc1), no script change.
 Template Phase 1 batch A (2026-11-16): tests/models.cjs reads index.html through unprefill() and skips generated site.* keys in link/number scans (9a470caf, test only, no-op before conversion). Index markup normalised in bb10f897 (its two adjacent <style> blocks merged; no rendered change). Label at 9a470caf (previous c3cef443), no script change.
+SIMD/float registrar (2026-11-16): ch1 links how-a-cpu-does-math #ch9 (one slot in a wide vector) and the ch8 take its #ch7 and #ch8 (FP8, FP4 scaling), as [[refs]]; tests/models.cjs also scans double-quoted [[ref]] links outside site.* rows. Bare FP8 / FP4 now land there; #ch8 keeps "FP8 E4M3 E5M2", "FP8 formats", "FP4 格式". Label at 1ef6c3b9 (previous 9a470caf), page.json version 20261116b.
 
 ### how-a-computer-boots: 电脑是怎么开机的
 
@@ -873,6 +903,7 @@ plain text until those drafts register. Scripts `?v=20261115b`. Atlas edges (18,
 Not verified (BRIEF): the 230 W PPT, Smith 1999, the 14900K's Tau, A16 in production, PROCHOT bidirectionality, per-cluster rails.
 SVG-check registrar (2026-11-16): browser.cjs outside-viewport check skips only <defs> again (not the <svg>), clipped-text SVG skip removed in c3cef443 (test only, page passes at 1280/390/320 zh+en); label at c3cef443 (previous d0821bc1), no script change.
 Template Phase 1 batch A (2026-11-16): tests/models.cjs reads index.html through unprefill() and skips generated site.* keys in link/number scans (9a470caf, test only, no-op before conversion). Label at 9a470caf (previous c3cef443), no script change.
+SIMD/float registrar (2026-11-16): only the generated linked-from rows changed (how-a-cpu-does-math ch11 links #ch2); page.json version 20261116b, label not repointed (generated backlinks are mechanical, D4).
 
 ### how-a-nic-moves-packets: 网卡是怎么搬运数据包的
 

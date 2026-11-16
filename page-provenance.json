@@ -5,13 +5,13 @@
       "developer": "Claude Code",
       "edition": "claude-atlas-knowledge-search-20261111",
       "kind": "revised",
-      "sourceRevision": "3539c70a30ae329dc2b1af6855529299415cd133",
+      "sourceRevision": "1ef6c3b980a6448434e5028248838f33efc7f1f9",
       "scope": {
-        "zh": "并入操作系统与像素两篇长文的 27 个章节概念与 46 条关系；并入供电与网卡两篇长文的 26 个章节概念与 38 条关系",
-        "en": "adds 27 chapter concepts and 46 relations from the OS and pixels essays; adds 26 chapter concepts and 38 relations from the power and NIC essays"
+        "zh": "并入供电与网卡两篇长文的 26 个章节概念与 38 条关系；并入 SIMD 与浮点一篇长文的 13 个章节概念与 21 条关系",
+        "en": "adds 26 chapter concepts and 38 relations from the power and NIC essays; adds 13 chapter concepts and 21 relations from the SIMD and floating-point essay"
       },
       "originalAuthorship": "not asserted; prior contributions retained",
-      "previousSourceRevision": "863f6b5f8d5fc9952834bb7de4a1620fa81de975"
+      "previousSourceRevision": "3539c70a30ae329dc2b1af6855529299415cd133"
     },
     "complex-numbers": {
       "developer": "Codex",
@@ -257,15 +257,15 @@
       "developer": "Claude Code",
       "edition": "claude-atlas-galaxy-knowledge-search-20261111",
       "kind": "revised",
-      "sourceRevision": "3539c70a30ae329dc2b1af6855529299415cd133",
+      "sourceRevision": "1ef6c3b980a6448434e5028248838f33efc7f1f9",
       "scope": {
-        "zh": "保留既有三维知识星图；标题与说明改为通用知识地图；共享图谱并入另外 66 个课程页的概念，以及十三篇长文、存储系列五篇长文、总线系列五篇长文、体系结构系列十一篇长文与《稀缺会搬家》的章节概念",
-        "en": "Retains the 3D galaxy; title and descriptions reframed for the general knowledge atlas; its shared graph adds concepts for 66 more lesson pages and the chapter concepts of thirteen long-form essays, of the five storage-series essays, of the five bus-series essays, of the eleven architecture-series essays and of Scarcity Moves"
+        "zh": "保留既有三维知识星图；标题与说明改为通用知识地图；共享图谱并入另外 66 个课程页的概念，以及十三篇长文、存储系列五篇长文、总线系列五篇长文、体系结构系列十二篇长文与《稀缺会搬家》的章节概念",
+        "en": "Retains the 3D galaxy; title and descriptions reframed for the general knowledge atlas; its shared graph adds concepts for 66 more lesson pages and the chapter concepts of thirteen long-form essays, of the five storage-series essays, of the five bus-series essays, of the twelve architecture-series essays and of Scarcity Moves"
       },
       "originalAuthorship": "existing atlas contributions retained; galaxy presentation developed with Codex",
       "path": "atlas/galaxy.html",
       "integrationRevision": "cb457b914170078cb61f96eb6377b35ab68fd0a1",
-      "previousSourceRevision": "863f6b5f8d5fc9952834bb7de4a1620fa81de975"
+      "previousSourceRevision": "3539c70a30ae329dc2b1af6855529299415cd133"
     },
     "leetcode/42": {
       "developer": "Codex",
@@ -3049,14 +3049,14 @@
       "developer": "Claude Code",
       "edition": "claude-code-switches-that-compute-20261111",
       "kind": "original",
-      "sourceRevision": "70d9f2e1d9949f8e22c7c2bfbe329268ebf1d15b",
+      "sourceRevision": "1ef6c3b980a6448434e5028248838f33efc7f1f9",
       "scope": {
         "zh": "整篇长文从零编写：继电器与逻辑门、与非门的完备性、二进制、加法器、补码与溢出、锁存器与存储程序计算机、浮点舍入",
         "en": "Whole essay written from scratch: relays and logic gates, NAND universality, binary, adders, two’s complement and overflow, latches and the stored-program machine, floating-point rounding"
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5); English copy drafted by Claude Code (claude-haiku-5-5); independently reviewed 2026-11-11 by a separate Claude Code session (same model), see the page BRIEF.md; cross-model review pending",
       "path": "computing/systems/switches-that-compute/index.html",
-      "previousSourceRevision": "c0cc5c40598d5f1dfad6b830370e3f49991a0c35",
+      "previousSourceRevision": "70d9f2e1d9949f8e22c7c2bfbe329268ebf1d15b",
       "originalSourceRevision": "9451df5d55d135ce5b9fa1c2f823bc787f7e4670"
     },
     "what-is-a-black-hole": {
@@ -3347,7 +3347,7 @@
       "developer": "Claude Code",
       "edition": "claude-code-how-a-cpu-runs-a-program-20261115",
       "kind": "original",
-      "sourceRevision": "144500ef093832f77c48a0612075bee8c3048f39",
+      "sourceRevision": "1ef6c3b980a6448434e5028248838f33efc7f1f9",
       "scope": {
         "zh": "整篇长文从零编写：指令集是软件和硬件之间的合同、RISC-V 的寄存器和六种指令格式、把一个循环手工翻译成机器码、单周期数据通路与控制信号、最慢的指令定时钟、五级流水线、数据冒险与转发、控制冒险与分支代价、性能铁律、CISC 与 RISC 和 x86 的微操作、指令集前沿",
         "en": "Whole essay written from scratch: the ISA as a contract between software and hardware, RISC-V registers and its six instruction formats, hand-compiling a loop to machine code, the single-cycle datapath and control signals, the slowest instruction setting the clock, the five-stage pipeline, data hazards and forwarding, control hazards and the cost of branches, the iron law of performance, CISC vs RISC and x86 micro-ops, the ISA frontier"
@@ -3355,7 +3355,7 @@
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5); English copy drafted by Claude Code (claude-haiku-5-5); independently reviewed 2026-11-15 by a separate Claude Code session (same model), see the page BRIEF.md; cross-model review pending",
       "path": "computing/systems/how-a-cpu-runs-a-program/index.html",
       "originalSourceRevision": "0daab2e9a661c5fbfcca42643a2f772b0e6e27f8",
-      "previousSourceRevision": "9a470caf2cbab9074d88816d56817f5a915d3eda"
+      "previousSourceRevision": "144500ef093832f77c48a0612075bee8c3048f39"
     },
     "how-virtual-memory-works": {
       "developer": "Claude Code",
@@ -3431,7 +3431,7 @@
       "developer": "Claude Code",
       "edition": "claude-code-how-a-gpu-computes-20261115",
       "kind": "original",
-      "sourceRevision": "9a470caf2cbab9074d88816d56817f5a915d3eda",
+      "sourceRevision": "1ef6c3b980a6448434e5028248838f33efc7f1f9",
       "scope": {
         "zh": "整篇长文从零编写：缓存与多线程两种藏延迟的办法、网格线程块与线程束、线程束调度与占用率、分支发散、合并访存、共享内存的 bank 冲突、分块矩阵乘法的两级屋顶、张量核心与数字格式、像素按 2×2 着色、GPU 的存储层次与不做的一致性、GPU 前沿",
         "en": "Whole essay written from scratch: caches versus many threads as two ways to hide latency, grids, thread blocks and warps, warp scheduling and occupancy, branch divergence, memory coalescing, shared-memory bank conflicts, two roofs for a tiled matrix multiply, tensor cores and number formats, 2×2 quad shading, the GPU memory hierarchy and the coherence it skips, the GPU frontier"
@@ -3439,7 +3439,7 @@
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5); English copy drafted by Claude Code (claude-haiku-5-5); independently reviewed 2026-11-15 by a separate Claude Code session (same model), see the page BRIEF.md; cross-model review pending",
       "path": "computing/systems/how-a-gpu-computes/index.html",
       "originalSourceRevision": "e844143c1168a1f0f4da51e87bd3e6b0fd240e70",
-      "previousSourceRevision": "c3cef443bee88cb580a52b84e8efa8466f3d1f20"
+      "previousSourceRevision": "9a470caf2cbab9074d88816d56817f5a915d3eda"
     },
     "how-a-computer-boots": {
       "developer": "Claude Code",
@@ -3515,13 +3515,15 @@
       "developer": "Claude Code",
       "edition": "claude-code-how-a-cpu-does-math-20261116",
       "kind": "original",
-      "sourceRevision": "b6dcadc4caafebb54d52f0f70e5ffe1fe6c9677a",
+      "sourceRevision": "1ef6c3b980a6448434e5028248838f33efc7f1f9",
       "scope": {
         "zh": "整篇长文从零编写：binary32 的三段位、ulp、舍入模式、次正规数与 NaN、抵消与求和、FMA、FP16 与 BF16 与 8 位浮点、INT8 与块缩放格式、SIMD 与掩码、自动向量化、乘加的延迟吞吐与宽向量降频、SVE 与 SME 与 AMX、CPU 数值计算前沿",
         "en": "Whole essay written from scratch: the three fields of binary32, ulps, rounding modes, subnormals and NaN, cancellation and summation, FMA, FP16, BF16 and 8-bit floats, INT8 and block-scaled formats, SIMD and masks, auto-vectorisation, FMA latency, throughput and wide-vector downclocking, SVE, SME and AMX, the CPU numerics frontier"
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as the first essay in the Markdown site template; English copy translated by Claude Code (claude-haiku-5-5); independently reviewed 2026-11-16 by a separate Claude Code session (same model), see the page BRIEF.md and specs/reviews/how-a-cpu-does-math-review-20261116.md; cross-model review pending",
-      "path": "computing/systems/how-a-cpu-does-math/index.html"
+      "path": "computing/systems/how-a-cpu-does-math/index.html",
+      "originalSourceRevision": "b6dcadc4caafebb54d52f0f70e5ffe1fe6c9677a",
+      "previousSourceRevision": "b6dcadc4caafebb54d52f0f70e5ffe1fe6c9677a"
     }
   },
   "exceptions": {
