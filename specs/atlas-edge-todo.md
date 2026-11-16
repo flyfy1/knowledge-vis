@@ -697,11 +697,11 @@ anchor; a link to the page top has no anchor).
 
 ## 溶解与饱和 / Dissolution & Saturation → 粒子与物态 · 热闹程度即温度 / Particles & States · Temperature Is How Wildly They Move
 
-- `dissolution-saturation` → `particles-states#step3`
+- `dissolution-saturation#step5` → `particles-states#step3`
 
 ## 溶解与饱和 / Dissolution & Saturation → 反应速率 · 数一数成功碰撞 / Reaction Rates · Counting Successful Collisions
 
-- `dissolution-saturation` → `reaction-rates#step0`: ? → collision-theory
+- `dissolution-saturation#step5` → `reaction-rates#step0`: ? → collision-theory
 
 ## DNA 复制与翻译 · 拉链、抄写和流水线 / DNA Replication and Translation · A Zipper, a Copy and an Assembly Line → 遗传与概率 · 从配子到表型 / Genetics & Probability · From Gametes to Phenotypes
 

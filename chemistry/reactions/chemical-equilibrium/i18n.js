@@ -133,7 +133,7 @@ const STR = {
     "site.bl.5": "<a href=\"../reaction-rates/\">反应速率 · 数一数成功碰撞</a>：<a href=\"../reaction-rates/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>",
     "site.bl.6": "<a href=\"../../solutions/acid-base-equilibrium/\">酸碱平衡 · 分子在两边来回走</a>：→ <a href=\"#step0\">本页第 0 步</a>",
     "site.bl.7": "<a href=\"../../solutions/buffer-capacity/\">缓冲溶液 · 把 pH 稳住</a>：<a href=\"../../solutions/buffer-capacity/#step4\">该课第 4 步</a> → <a href=\"#step2\">本页第 2 步</a>",
-    "site.bl.8": "<a href=\"../../solutions/dissolution-saturation/\">溶解与饱和</a>：→ <a href=\"#step0\">本页第 0 步</a>",
+    "site.bl.8": "<a href=\"../../solutions/dissolution-saturation/\">溶解与饱和</a>：<a href=\"../../solutions/dissolution-saturation/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>",
     "site.bl.9": "<a href=\"../../solutions/titration-curves/\">滴定曲线 · 终点附近 pH 的“悬崖”</a>：→ <a href=\"#step0\">本页第 0 步</a>"
   },
   en: {
@@ -269,7 +269,7 @@ const STR = {
     "site.bl.5": "<a href=\"../reaction-rates/\">Reaction Rates · Counting Successful Collisions</a>: <a href=\"../reaction-rates/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>",
     "site.bl.6": "<a href=\"../../solutions/acid-base-equilibrium/\">Acid–Base Equilibrium · Molecules Move Both Ways</a>: → <a href=\"#step0\">this page step 0</a>",
     "site.bl.7": "<a href=\"../../solutions/buffer-capacity/\">Buffer Capacity · Holding pH Steady</a>: <a href=\"../../solutions/buffer-capacity/#step4\">its step 4</a> → <a href=\"#step2\">this page step 2</a>",
-    "site.bl.8": "<a href=\"../../solutions/dissolution-saturation/\">Dissolution & Saturation</a>: → <a href=\"#step0\">this page step 0</a>",
+    "site.bl.8": "<a href=\"../../solutions/dissolution-saturation/\">Dissolution & Saturation</a>: <a href=\"../../solutions/dissolution-saturation/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>",
     "site.bl.9": "<a href=\"../../solutions/titration-curves/\">Titration Curves · The pH Cliff Near the End Point</a>: → <a href=\"#step0\">this page step 0</a>"
   }
 };

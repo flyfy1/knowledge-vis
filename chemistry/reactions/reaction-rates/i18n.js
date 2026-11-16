@@ -102,7 +102,7 @@ const STR = {
     "site.bl.4": "<a href=\"../combustion-triangle/\">燃烧三要素</a>：<a href=\"../combustion-triangle/#step5\">该课第 5 步</a> → <a href=\"#step3\">本页第 3 步</a>、<a href=\"#step2\">本页第 2 步</a>",
     "site.bl.5": "<a href=\"../mass-conservation/\">质量守恒 · 原子一个都不丢</a>：<a href=\"../mass-conservation/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>",
     "site.bl.6": "<a href=\"../../solutions/acid-base-equilibrium/\">酸碱平衡 · 分子在两边来回走</a>：→ <a href=\"#step0\">本页第 0 步</a>",
-    "site.bl.7": "<a href=\"../../solutions/dissolution-saturation/\">溶解与饱和</a>：→ <a href=\"#step0\">本页第 0 步</a>",
+    "site.bl.7": "<a href=\"../../solutions/dissolution-saturation/\">溶解与饱和</a>：<a href=\"../../solutions/dissolution-saturation/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>",
     "site.bl.8": "<a href=\"../../../food/flavor/how-soy-sauce-gets-its-flavor/\">酱油是怎么酿出来的</a>：<a href=\"../../../food/flavor/how-soy-sauce-gets-its-flavor/#ch10\">该文第 10 章</a>",
     "site.bl.9": "<a href=\"../../../food/flavor/why-fermented-tofu-tastes-good/\">酱豆腐为什么好吃</a>：<a href=\"../../../food/flavor/why-fermented-tofu-tastes-good/#ch9\">该文第 9 章</a>"
   },
@@ -208,7 +208,7 @@ const STR = {
     "site.bl.4": "<a href=\"../combustion-triangle/\">The Fire Triangle</a>: <a href=\"../combustion-triangle/#step5\">its step 5</a> → <a href=\"#step3\">this page step 3</a>, <a href=\"#step2\">this page step 2</a>",
     "site.bl.5": "<a href=\"../mass-conservation/\">Mass Conservation · Not a Single Atom Lost</a>: <a href=\"../mass-conservation/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>",
     "site.bl.6": "<a href=\"../../solutions/acid-base-equilibrium/\">Acid–Base Equilibrium · Molecules Move Both Ways</a>: → <a href=\"#step0\">this page step 0</a>",
-    "site.bl.7": "<a href=\"../../solutions/dissolution-saturation/\">Dissolution & Saturation</a>: → <a href=\"#step0\">this page step 0</a>",
+    "site.bl.7": "<a href=\"../../solutions/dissolution-saturation/\">Dissolution & Saturation</a>: <a href=\"../../solutions/dissolution-saturation/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>",
     "site.bl.8": "<a href=\"../../../food/flavor/how-soy-sauce-gets-its-flavor/\">How Soy Sauce Gets Its Flavor</a>: <a href=\"../../../food/flavor/how-soy-sauce-gets-its-flavor/#ch10\">its chapter 10</a>",
     "site.bl.9": "<a href=\"../../../food/flavor/why-fermented-tofu-tastes-good/\">Why Fermented Tofu Tastes Good</a>: <a href=\"../../../food/flavor/why-fermented-tofu-tastes-good/#ch9\">its chapter 9</a>"
   }
