@@ -107,12 +107,12 @@ fixed, together with a backlink defect that made `--all` need two passes. Deploy
 | Check | Result |
 | --- | --- |
 | `build-pages --all --check` | PASS 19, 0 lint lines |
-| `tests/site-template.cjs` | PASS 104 (90 before; the new checks fail on the old library) |
+| `tests/site-template.cjs` | PASS 104 (89 at 07c86274; +15 checks, which fail on the old library) |
 | `build-site-nav --check`, `tests/site-nav.cjs` | PASS 248 includes, PASS 2267 |
 | `tests/page-provenance-core.cjs` | PASS 271 |
 | `build-atlas-data --check`, `build-search-index --check`, `atlas/tests/data-quality.cjs`, `tests/concept-search.cjs` | PASS |
 | `tests/models.cjs`, all 19 pages | PASS |
-| `tests/browser.cjs` (zh+en, 1280/390/320) | PASS: the 8 edited pages + wired (before 25da71be, same content); cpu-caches, gpu, boot, sata, nic on the final state |
+| `tests/browser.cjs` (zh+en, 1280/390/320) | PASS: the 8 edited pages + wired, run while the caption-credit change (144500ef) landed, which altered only the linked-from rows of cpu-caches and nic; those two, plus gpu, boot and sata, were rerun on the final state (25da71be) |
 | `PROVENANCE_BASE_URL=… tests/page-provenance-browser.cjs` | PASS 271 page headers (both locales, desktop/320, keyboard, no-JS, forced colours) |
 | `SITE_NAV_BASE_URL=… tests/site-nav-browser.cjs` | PASS 367 |
 | Live vs new, rendered text + links, 19 pages × zh/en | identical text, no link lost, no console errors |
@@ -133,6 +133,22 @@ fixed, together with a backlink defect that made `--all` need two passes. Deploy
     text.
 - **Linked-from.** The block reads clearly in both languages: 该文第 N 章 → 本页第 N 章 / its chapter N → this page
   chapter N.
+
+## Decisions for the lead
+
+- **Labels.** 144500ef changed generated files in all 19 page directories, but only 8 have new content. Their
+  labels point to 144500ef (25da71be). The other 11 changed only in generated backlink rows, which is treated as
+  mechanical, like D4:
+  - the 11: how-a-computer-boots, how-a-computer-is-wired,
+    how-a-cpu-guesses-ahead, how-a-gpu-computes, how-cpu-caches-work, how-pixels-reach-a-screen,
+    how-power-reaches-the-cpu, how-sata-works, how-the-os-talks-to-hardware, how-thunderbolt-works and
+    how-usb-drives-talk.
+
+  42fba818 repointed pages whose only change was a test file. To match that stricter reading, do one mechanical
+  commit: edit `page-provenance.json` for the 11, then `build-pages --all`.
+- **Script keys.** `page.json.version` was not bumped, which departs from §9 step 4. No batch A key has been served
+  yet (5). If a bump is preferred anyway, set all 19 to the next letter before deploying.
+- **Deploy size.** The deploy carries 248 `index.html` files that differ only by the sn- token, plus the 19 pages.
 
 ## Residual (not blocking)
 
