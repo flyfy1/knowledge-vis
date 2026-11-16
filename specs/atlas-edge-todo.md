@@ -481,6 +481,7 @@ anchor; a link to the page top has no anchor).
 
 ## 卡尔曼滤波 · 在预测与测量之间称重 / Kalman Filter · Weighing Prediction Against Measurement → 特征值与特征向量 · 矩阵不转的那些方向 / Eigenvalues & Eigenvectors · The Directions a Matrix Cannot Turn
 
+- `kalman#step5` → `eigenvectors#step5`
 - `kalman` → `eigenvectors#step5`
 
 ## 卡尔曼滤波 · 在预测与测量之间称重 / Kalman Filter · Weighing Prediction Against Measurement → 冲激与 LTI · 给系统一巴掌 / Impulse & LTI · Slap the System

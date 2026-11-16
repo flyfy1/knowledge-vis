@@ -28,5 +28,31 @@
   "stage": "university",
   "status": "live",
   "path": "signal/control/kalman/",
-  "order": 630
+  "order": 630,
+  "layout": "lesson",
+  "version": "20261116a",
+  "enCjk": [
+    "s2formula"
+  ],
+  "legacyLayout": {
+    "_note": "Whitespace and markup of the hand-written lesson this page was converted from, so the conversion could be checked byte for byte (specs/site-template.md §3c).",
+    "mainGaps": [
+      "\n\n<!-- ============ 步骤 0：钩子 ============ -->\n",
+      "\n\n<!-- ============ 步骤 1：两种笨办法 ============ -->\n",
+      "\n\n<!-- ============ 步骤 2：预测—更新 ============ -->\n",
+      "\n\n<!-- ============ 步骤 3：K 的拔河 ============ -->\n",
+      "\n\n<!-- ============ 步骤 4：稳态 ============ -->\n",
+      "\n\n<!-- ============ 步骤 5：二维追踪 ============ -->\n",
+      "\n\n<!-- ============ 步骤 6：终章 ============ -->\n",
+      "\n\n"
+    ],
+    "stepNav": {
+      "item": "\n  <a href=\"#{id}\" class=\"nav-step\" data-nav=\"{n}\" data-i18n=\"{key}\"></a>",
+      "end": "\n"
+    },
+    "filled": [
+      "back",
+      "pageTitle"
+    ]
+  }
 }

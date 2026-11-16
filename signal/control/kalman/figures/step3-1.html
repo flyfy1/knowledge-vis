@@ -1,0 +1,34 @@
+<div class="stage"><canvas id="s3-cv" height="320" style="height:320px"></canvas></div>
+    <div class="controls">
+      <label><span><span data-i18n="s3qLab"></span> <span class="val" id="s3-q-val"></span></span>
+        <input type="range" id="s3-q" min="0" max="1000" step="1" value="333"></label>
+      <label><span><span data-i18n="s3rLab"></span> <span class="val" id="s3-r-val"></span></span>
+        <input type="range" id="s3-r" min="0" max="1000" step="1" value="410"></label>
+    </div>
+    <div class="k-hero">
+      <span class="k-num" id="s3-k-num">K</span>
+      <span class="k-lab" data-i18n-html="s3kLab"></span>
+    </div>
+    <p class="readout" id="s3-readout"></p>
+    <div class="btn-row" id="s3-presets">
+      <button class="btn" data-preset="model" data-i18n="s3pModel"></button>
+      <button class="btn" data-preset="balanced" data-i18n="s3pBalanced"></button>
+      <button class="btn" data-preset="meas" data-i18n="s3pMeas"></button>
+    </div>
+    <div class="mini-row">
+      <div class="mini-card">
+        <h3 data-i18n="s3pModel"></h3>
+        <div class="stage"><canvas id="s3-m1" height="150" style="height:150px"></canvas></div>
+        <p class="mini-ro" id="s3-m1-ro"></p>
+      </div>
+      <div class="mini-card">
+        <h3 data-i18n="s3pBalanced"></h3>
+        <div class="stage"><canvas id="s3-m2" height="150" style="height:150px"></canvas></div>
+        <p class="mini-ro" id="s3-m2-ro"></p>
+      </div>
+      <div class="mini-card">
+        <h3 data-i18n="s3pMeas"></h3>
+        <div class="stage"><canvas id="s3-m3" height="150" style="height:150px"></canvas></div>
+        <p class="mini-ro" id="s3-m3-ro"></p>
+      </div>
+    </div>

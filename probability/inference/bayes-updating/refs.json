@@ -79,6 +79,10 @@
    "from": "kalman",
    "links": [
     {
+     "from": "step2",
+     "to": "step3"
+    },
+    {
      "from": null,
      "to": "step3"
     }

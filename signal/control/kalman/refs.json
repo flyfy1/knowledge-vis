@@ -1,0 +1,49 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "kalman",
+ "refs": [],
+ "backlinks": [
+  {
+   "from": "eigenvectors",
+   "links": [
+    {
+     "from": "step5",
+     "to": "step5"
+    },
+    {
+     "from": null,
+     "to": "step5"
+    }
+   ]
+  },
+  {
+   "from": "bayes-updating",
+   "links": [
+    {
+     "from": null,
+     "to": "step2"
+    }
+   ]
+  },
+  {
+   "from": "inverted-pendulum",
+   "links": [
+    {
+     "from": null,
+     "to": "step6"
+    }
+   ]
+  },
+  {
+   "from": "inside-a-phone",
+   "links": [
+    {
+     "from": null,
+     "to": "step2"
+    }
+   ]
+  }
+ ],
+ "related": [],
+ "bindings": []
+}

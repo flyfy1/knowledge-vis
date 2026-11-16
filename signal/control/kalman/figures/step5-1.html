@@ -1,0 +1,19 @@
+<p class="explain" id="s5-explain" data-i18n-html="s5e"></p>
+    <div class="btn-row" id="s5-man">
+      <button class="btn" data-man="on" data-i18n="s5manOn"></button>
+      <button class="btn" data-man="off" data-i18n="s5manOff"></button>
+    </div>
+    <div class="matrix-block" id="s5-matrices"></div>
+    <div class="stage"><canvas id="s5-pos" height="300" style="height:300px"></canvas></div>
+    <div class="stage"><canvas id="s5-vel" height="240" style="height:240px"></canvas></div>
+    <div class="controls">
+      <label><span><span data-i18n="s5qLab"></span> <span class="val" id="s5-q-val"></span></span>
+        <input type="range" id="s5-q" min="0" max="1000" step="1" value="500"></label>
+    </div>
+    <div class="btn-row" id="s5-presets">
+      <button class="btn" data-q="0.0005" data-i18n="s5pSmall"></button>
+      <button class="btn" data-q="0.02" data-i18n="s5pMid"></button>
+      <button class="btn" data-q="0.2" data-i18n="s5pBig"></button>
+    </div>
+    <p class="readout" id="s5-readout"></p>
+    <p class="hint" id="s5-hint" data-i18n-html="s5hint"></p>
