@@ -56,7 +56,7 @@
     "site.bl.1": "<a href=\"../../astronomy/seasons-orbit/\">地球公转与四季</a>：<a href=\"../../astronomy/seasons-orbit/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>",
     "site.bl.2": "<a href=\"../atmospheric-circulation/\">大气环流与季风 · 风从哪里来</a>：<a href=\"../atmospheric-circulation/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>",
     "site.bl.3": "<a href=\"../carbon-cycle/\">碳循环 · 大气里的碳去了哪里</a>：<a href=\"../carbon-cycle/#step5\">该课第 5 步</a> → <a href=\"#step2\">本页第 2 步</a>",
-    "site.bl.4": "<a href=\"../water-cycle/\">水的循环 · 一滴水的旅行</a>：→ <a href=\"#step0\">本页第 0 步</a>",
+    "site.bl.4": "<a href=\"../water-cycle/\">水的循环 · 一滴水的旅行</a>：<a href=\"../water-cycle/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>",
     "site.bl.5": "<a href=\"../why-the-planet-warms/\">一点点二氧化碳 · 地球为什么会变暖</a>：<a href=\"../why-the-planet-warms/#ch1\">该文第 1 章</a> → <a href=\"#step0\">本页第 0 步</a>；<a href=\"../why-the-planet-warms/#ch8\">该文第 8 章</a> → <a href=\"#step0\">本页第 0 步</a>",
     "site.bl.6": "<a href=\"../../../physics/optics/why-the-sky-is-blue/\">天为什么是蓝的</a>：<a href=\"../../../physics/optics/why-the-sky-is-blue/#ch10\">该文第 10 章</a>"
   },
@@ -115,7 +115,7 @@
     "site.bl.1": "<a href=\"../../astronomy/seasons-orbit/\">Earth’s Orbit & the Seasons</a>: <a href=\"../../astronomy/seasons-orbit/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>",
     "site.bl.2": "<a href=\"../atmospheric-circulation/\">Atmospheric Circulation & Monsoons · Where Winds Come From</a>: <a href=\"../atmospheric-circulation/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>",
     "site.bl.3": "<a href=\"../carbon-cycle/\">The Carbon Cycle · Where the Atmosphere’s Carbon Goes</a>: <a href=\"../carbon-cycle/#step5\">its step 5</a> → <a href=\"#step2\">this page step 2</a>",
-    "site.bl.4": "<a href=\"../water-cycle/\">The Water Cycle · One Drop’s Journey</a>: → <a href=\"#step0\">this page step 0</a>",
+    "site.bl.4": "<a href=\"../water-cycle/\">The Water Cycle · One Drop’s Journey</a>: <a href=\"../water-cycle/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>",
     "site.bl.5": "<a href=\"../why-the-planet-warms/\">A Little CO₂ · Why the Planet Warms</a>: <a href=\"../why-the-planet-warms/#ch1\">its chapter 1</a> → <a href=\"#step0\">this page step 0</a>; <a href=\"../why-the-planet-warms/#ch8\">its chapter 8</a> → <a href=\"#step0\">this page step 0</a>",
     "site.bl.6": "<a href=\"../../../physics/optics/why-the-sky-is-blue/\">Why Is the Sky Blue?</a>: <a href=\"../../../physics/optics/why-the-sky-is-blue/#ch10\">its chapter 10</a>"
   }

@@ -1083,11 +1083,11 @@ anchor; a link to the page top has no anchor).
 
 ## 水的循环 · 一滴水的旅行 / The Water Cycle · One Drop’s Journey → 气候能量账本 · 太阳光如何变成温度 / Climate Energy Ledger · How Sunlight Becomes Temperature
 
-- `water-cycle` → `climate-energy#step0`
+- `water-cycle#step5` → `climate-energy#step0`
 
 ## 水的循环 · 一滴水的旅行 / The Water Cycle · One Drop’s Journey → 气候反馈 · 一笔一笔对上能量账 / Climate Feedback · Balance the Energy Ledger
 
-- `water-cycle` → `climate-feedback#step0`
+- `water-cycle#step5` → `climate-feedback#step0`
 
 ## 小波 · 让窗口随频率伸缩 / Wavelets · Windows That Stretch With Frequency → 卷积 · 一步一交互 / Convolution · One Interaction at a Time
 
