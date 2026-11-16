@@ -355,5 +355,6 @@ console.log(`converted ${page.slug}: ${sections.length} chapters, ${Object.keys(
   `round trip (no chrome, no pre-fill): index.html byte-identical, copy tables equal in zh and en`);
 console.log('commit trailers:');
 for (const l of T.LANGS) console.log(`Derived-From: ${sitePath}copy.${l}.js -> ${sitePath}content.${l}.md`);
+console.log(`Derived-From: ${sitePath}index.html -> ${sitePath}page.json`);
 console.log(`Derived-From: ${sitePath}index.html -> ${sitePath}page.css`);
 for (const name of parts.keys()) console.log(`Derived-From: ${sitePath}index.html -> ${sitePath}figures/${name}.html`);

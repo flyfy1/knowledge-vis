@@ -138,11 +138,36 @@ async function pages(browser) {
     await ctx.close();
   }
 
-  // Essay: auto-links before and after switching language in place.
+  // Template essay: the runtime linker stays off (<html data-template>, specs/site-template.md D10); its title
+  // mentions are static links. how-sas-works hosted the auto-link checks below until its conversion (0c3676fa,
+  // b5cdc9bd restored its three runtime links as [[refs]] to what-a-drive-is-made-of#ch7; review 2026-11-16).
+  for (const lang of ['zh', 'en']) {
+    const tctx = await ctxFor(browser, lang, 1280);
+    const tp = await tctx.newPage();
+    await tp.goto(BASE + 'computing/systems/how-sas-works/');
+    await waitNav(tp);
+    eq(await tp.evaluate(() => [SiteNav.skipped, SiteNav.report().length]), ['data-template', 0], `template essay ${lang}: runtime linker off`);
+    eq(await tp.evaluate(() => document.querySelectorAll('main [data-i18n-html="ch1.p2"] a[href="../what-a-drive-is-made-of/#ch7"], main [data-i18n-html="ch7.p1"] a[href="../what-a-drive-is-made-of/#ch7"]').length), 2, `template essay ${lang}: the restored static links`);
+    eq(await tp.evaluate(() => document.querySelectorAll('a.site-autolink').length), 0, `template essay ${lang}: no runtime links`);
+    await tctx.close();
+  }
+
+  // Hand-written essay: auto-links before and after switching language in place. No hand-written essay mentions
+  // another live title in its own copy any more, so the test adds one keyed paragraph to both copy tables; the
+  // page's own applyLang re-renders it on the switch, as it would a real paragraph.
   const ctx = await ctxFor(browser, 'zh', 1280);
   const page = await ctx.newPage();
-  await page.goto(BASE + 'computing/systems/how-sas-works/');
+  await page.goto(BASE + 'computing/systems/why-compute-waits-for-memory/');
   await waitNav(page);
+  eq(await page.evaluate(() => SiteNav.report().length), 0, 'hand-written host essay has no auto-links of its own');
+  await page.evaluate(() => {
+    window.ESSAY_COPY.zh['fx.auto'] = '姊妹篇《硬盘里到底是什么》第 7 章；再说一次《硬盘里到底是什么》。';
+    window.ESSAY_COPY.en['fx.auto'] = 'The sister essay “What a Drive Is Made Of”, Chapter 7.';
+    const p = document.createElement('p');
+    p.id = 'fxAuto'; p.setAttribute('data-i18n-html', 'fx.auto'); p.innerHTML = window.ESSAY_COPY.zh['fx.auto'];
+    document.querySelector('main').appendChild(p);
+  });
+  await page.waitForTimeout(300);
   const zhLinks = await page.evaluate(() => SiteNav.report().map((r) => [r.title, r.href]));
   eq(zhLinks, [['硬盘里到底是什么', '../../../computing/systems/what-a-drive-is-made-of/'], ['硬盘里到底是什么', '../../../computing/systems/what-a-drive-is-made-of/']], 'essay zh auto-links');
   await page.locator('#langToggle button[data-lang="en"]').click();
@@ -168,7 +193,7 @@ async function pages(browser) {
       '<button id="inBtn">《硬盘里到底是什么》</button>',
       '<p data-no-autolink id="optOut">《硬盘里到底是什么》</p>',
       '<div data-no-autolink><p id="optOutDeep">《硬盘里到底是什么》</p></div>',
-      '<p id="self">《服务器硬盘为什么用 SAS》</p>',
+      '<p id="self">《为什么计算一直在等内存》</p>',
       '<p id="short">《一堆开关》</p>',
       '<p id="cite"><cite>What a Drive Is Made Of</cite></p>',
       '<svg><text id="inSvg">《硬盘里到底是什么》</text></svg>',

@@ -42,7 +42,7 @@ for (const dir of dirs) {
   if (!fs.existsSync(path.join(dir, 'page.json'))) { console.error(`ERROR ${rel}: no page.json (not a migrated page)`); failed++; continue; }
   let res;
   try { res = T.buildEssay(dir, opts); } catch (e) { console.error(`ERROR ${rel}: ${e.stack || e.message}`); failed++; continue; }
-  if (PRINT === 'bindings') { printBindings(rel, res); continue; }
+  if (PRINT === 'bindings') { printBindings(rel, res); if (res.errors.length) failed++; continue; }
   if (PRINT === 'budgets') { printBudgets(rel, dir, res); if (res.errors.length) failed++; continue; }
   for (const w of res.warnings) console.warn(`WARN ${rel}: ${w}`);
   if (res.errors.length) { console.error(res.errors.map(e => `ERROR ${rel}: ${e}`).join('\n')); failed++; continue; }
