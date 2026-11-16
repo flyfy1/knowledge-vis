@@ -1,0 +1,100 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "how-the-os-talks-to-hardware",
+ "refs": [],
+ "backlinks": [
+  {
+   "from": "how-a-computer-boots",
+   "links": [
+    {
+     "from": "ch11",
+     "to": "ch9"
+    }
+   ]
+  },
+  {
+   "from": "how-a-nic-moves-packets",
+   "links": [
+    {
+     "from": "ch1",
+     "to": null
+    },
+    {
+     "from": "ch3",
+     "to": "ch7"
+    },
+    {
+     "from": "ch3",
+     "to": "ch6"
+    },
+    {
+     "from": "ch10",
+     "to": "ch12"
+    },
+    {
+     "from": "ch11",
+     "to": "ch12"
+    },
+    {
+     "from": "ch14",
+     "to": null
+    }
+   ]
+  },
+  {
+   "from": "how-pcie-works",
+   "links": [
+    {
+     "from": "ch6",
+     "to": "ch4"
+    },
+    {
+     "from": "ch7",
+     "to": "ch5"
+    }
+   ]
+  },
+  {
+   "from": "how-thunderbolt-works",
+   "links": [
+    {
+     "from": "ch8",
+     "to": "ch8"
+    }
+   ]
+  },
+  {
+   "from": "how-virtual-memory-works",
+   "links": [
+    {
+     "from": "ch10",
+     "to": "ch3"
+    },
+    {
+     "from": "ch11",
+     "to": "ch8"
+    }
+   ]
+  },
+  {
+   "from": "storage-over-a-network",
+   "links": [
+    {
+     "from": "ch6",
+     "to": "ch12"
+    }
+   ]
+  },
+  {
+   "from": "why-nvme-is-fast",
+   "links": [
+    {
+     "from": "ch7",
+     "to": "ch11"
+    }
+   ]
+  }
+ ],
+ "related": [],
+ "bindings": []
+}
