@@ -1360,16 +1360,17 @@ anchor; a link to the page top has no anchor).
 
 ## 声音是波 · 看见自己的声音 / Sound Is a Wave · Seeing Your Own Voice → 声音从振动来 · 米粒会跳的鼓 / Sound from Vibration · A Drum with Jumping Rice
 
-- `sound-waves` → `sound-vibration#step1`
-- `sound-waves` → `sound-vibration#step2`: ? → sound-vibration
+- `sound-waves#step0` → `sound-vibration#step1`
+- `sound-waves#step5` → `sound-vibration#step2`: ? → sound-vibration
 
 ## 声音是波 · 看见自己的声音 / Sound Is a Wave · Seeing Your Own Voice → 驻波 · 原地起伏的波 / Standing Waves · The Wave That Stays in Place
 
-- `sound-waves` → `standing-wave#step0`
+- `sound-waves#step2` → `standing-wave#step0`
+- `sound-waves#step5` → `standing-wave#step0`
 
 ## 声音是波 · 看见自己的声音 / Sound Is a Wave · Seeing Your Own Voice → 多普勒效应 · 驶近变尖，驶远变沉 / The Doppler Effect · Higher as It Approaches, Lower as It Leaves
 
-- `sound-waves` → `doppler-effect#step0`
+- `sound-waves#step5` → `doppler-effect#step0`
 
 ## 泰勒级数 · 把曲线一项项贴上去 / Taylor Series · Patch the Curve Term by Term → 指数与对数 · 翻倍与逆问 / Exponentials & Logarithms · Doubling and the Reverse Question
 

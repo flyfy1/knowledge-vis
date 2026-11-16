@@ -83,7 +83,7 @@ const STR = {
     "site.crumb.cat": "物理与电路",
     "site.crumb.sub": "波与声",
     "site.bl.title": "被这些页面引用",
-    "site.bl.1": "<a href=\"../sound-waves/\">声音是波 · 看见自己的声音</a>：→ <a href=\"#step1\">本页第 1 步</a>、<a href=\"#step2\">本页第 2 步</a>"
+    "site.bl.1": "<a href=\"../sound-waves/\">声音是波 · 看见自己的声音</a>：<a href=\"../sound-waves/#step0\">该课第 0 步</a> → <a href=\"#step1\">本页第 1 步</a>；<a href=\"../sound-waves/#step5\">该课第 5 步</a> → <a href=\"#step2\">本页第 2 步</a>"
   },
   en: {
     back: "← Knowledge Index",
@@ -167,7 +167,7 @@ const STR = {
     "site.crumb.cat": "Physics & Circuits",
     "site.crumb.sub": "Waves & Sound",
     "site.bl.title": "Linked from",
-    "site.bl.1": "<a href=\"../sound-waves/\">Sound Is a Wave · Seeing Your Own Voice</a>: → <a href=\"#step1\">this page step 1</a>, <a href=\"#step2\">this page step 2</a>"
+    "site.bl.1": "<a href=\"../sound-waves/\">Sound Is a Wave · Seeing Your Own Voice</a>: <a href=\"../sound-waves/#step0\">its step 0</a> → <a href=\"#step1\">this page step 1</a>; <a href=\"../sound-waves/#step5\">its step 5</a> → <a href=\"#step2\">this page step 2</a>"
   }
 };
 let currentLang = 'en';

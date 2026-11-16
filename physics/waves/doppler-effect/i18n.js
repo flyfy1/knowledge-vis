@@ -63,7 +63,7 @@ const STR={
     "site.crumb.sub": "波与声",
     "site.bl.title": "被这些页面引用",
     "site.bl.1": "<a href=\"../../modern/relativity/\">狭义相对论 · 同时性的线倾斜了</a>：<a href=\"../../modern/relativity/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>",
-    "site.bl.2": "<a href=\"../sound-waves/\">声音是波 · 看见自己的声音</a>：→ <a href=\"#step0\">本页第 0 步</a>"
+    "site.bl.2": "<a href=\"../sound-waves/\">声音是波 · 看见自己的声音</a>：<a href=\"../sound-waves/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>"
   },
   en: {
     pageTitle: "The Doppler Effect · Higher as It Approaches, Lower as It Leaves",
@@ -128,7 +128,7 @@ const STR={
     "site.crumb.sub": "Waves & Sound",
     "site.bl.title": "Linked from",
     "site.bl.1": "<a href=\"../../modern/relativity/\">Special Relativity · The Lines of “Now” Tilt</a>: <a href=\"../../modern/relativity/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>",
-    "site.bl.2": "<a href=\"../sound-waves/\">Sound Is a Wave · Seeing Your Own Voice</a>: → <a href=\"#step0\">this page step 0</a>"
+    "site.bl.2": "<a href=\"../sound-waves/\">Sound Is a Wave · Seeing Your Own Voice</a>: <a href=\"../sound-waves/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>"
   }
 };
 
