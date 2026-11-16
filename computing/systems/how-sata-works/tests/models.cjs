@@ -300,5 +300,48 @@ const T88 = '1001110100/0110001011,0111010100/1000101011,1011010100/0100101011,1
   else { check('registry title en', R.title.en, EN['doc.title'].split(' · ')[0]); check('registry desc en', R.desc.en, EN['doc.desc']); }
 }
 
+/* ── static diagrams (STANDARD §4a): numbers drawn or quoted in a caption come from the models; every label key the
+   drawing code asks for exists in both languages ── */
+{
+  const E = vm.runInNewContext(fs.readFileSync(path.join(DIR, 'copy.en.js'), 'utf8') + ';window.ESSAY_COPY', { window: {} }).en;
+  const sayZ = (k, ph) => { n++; if (!Z[k] || !Z[k].includes(ph)) { fails++; console.error(`FAIL zh ${k} should contain "${ph}"`); } };
+  const sayE = (k, ph) => { n++; if (!E[k] || !E[k].includes(ph)) { fails++; console.error(`FAIL en ${k} should contain "${ph}"`); } };
+  const dk = new Set([...app.matchAll(/'(dg\.[\w.]*\w)'/g)].map(m => m[1]));
+  for (const m of html.matchAll(/data-dg="(\w+)"/g)) for (const s of ['aria', 'cap']) dk.add('dg.' + m[1] + '.' + s);
+  for (const [d, ks] of Object.entries({ stack: ['cmd', 'hci', 'tr', 'link', 'phy'], pwr: ['on', 'partial', 'slumber', 'devslp'], seq: ['h2d', 'd2h', 'dmas', 'data', 'sdb'], fis: ['b0', 'b1', 'b2', 'b3'] })) for (const k of ks) dk.add(`dg.${d}.${k}`);
+  for (const k of [...dk]) if (/^dg\.\w+$/.test(k)) dk.delete(k);
+  for (const k of dk) { n++; if (Z[k] == null || E[k] == null) { fails++; console.error('FAIL diagram key missing in zh or en: ' + k); } }
+  for (const k of Object.keys(Z)) if (/^dg\./.test(k)) check('diagram key used: ' + k, dk.has(k), true);
+  check('eight diagrams', [...html.matchAll(/<figure class="dia" data-dg="(\w+)">/g)].map(m => m[1]).join(), 'stack,wires,enc,fis,seq,ncq,pwr,pm');
+  // Figure 2: pins and lines
+  check('dg.wires data lines', M.UDMA.dataLines, 16); check('dg.wires pins', [M.SPEC.signalPins, M.SPEC.gndPins, M.SPEC.pairs].join(), '7,3,2');
+  sayZ('dg.wires.aria', '16 根数据线'); sayZ('dg.wires.cap', '16 根线'); sayE('dg.wires.cap', 'all 16 lines');
+  // Figure 3: the drawn code words are the encoder's (whose tables the spec-table test above already pins)
+  check('dg.enc D0.0 RD−', M.B8.encode(0, -1).code, '1001110100'); check('dg.enc D0.0 RD+', M.B8.encode(0, 1).code, '0110001011');
+  check('dg.enc K28.5 RD−', M.B8.encodeK(5, -1).code, '0011111010'); check('dg.enc comma first 7', M.B8.commas(M.B8.encodeK(5, -1).code)[0], 0);
+  check('dg.enc D0.0 keeps RD−', M.B8.encode(0, -1).rd, -1);
+  for (const ph of ['100111 0100', '011000 1011', '0011111']) { sayZ('dg.enc.aria', ph); sayE('dg.enc.aria', ph); }
+  // Figures 4 and 5: frame lengths and the first Dword of the H2D FIS
+  const fr = M.LINK.readFrames(8).frames, len = id => fr.find(f => f.id === id).len, d0 = M.LINK.h2dRead(0, 8, 0)[0];
+  check('dg.seq frames', fr.map(f => f.id + ':' + f.len).join(), 'h2d:5,d2h:5,dmas:7,data:1025,sdb:2');
+  check('dg.fis first Dword bytes', [0, 1, 2, 3].map(i => ((d0 >>> (8 * i)) & 255).toString(16)).join(), '27,80,60,8');
+  check('dg.fis tag in Dword 3 COUNT(7:3)', M.LINK.h2dRead(0, 8, 5)[3], 5 << 3);
+  for (const ph of ['27h，5 个双字', '34h，5 个双字', '41h，7 个双字', '46h，1 + 1,024 个双字', 'A1h，2 个双字']) sayZ('dg.seq.aria', ph);
+  for (const ph of ['27h, 5 Dwords', '34h, 5 Dwords', '41h, 7 Dwords', '46h, 1 + 1,024 Dwords', 'A1h, 2 Dwords']) sayE('dg.seq.aria', ph);
+  for (const ph of ['5 个双字', '27h', '80h', '60h']) sayZ('dg.fis.aria', ph);
+  sayZ('ch4.p2', '类型 27h，5 个双字'); sayZ('ch4.p2', '（34h）'); sayZ('ch4.p2', '（41h）'); sayZ('ch4.p2', '（46h）'); sayZ('ch4.p2', '（A1h）');
+  // Figure 6: 32 tags; the rotation angles drawn are 400° and 260°
+  check('dg.ncq tags', M.SPEC.tags, 32);
+  for (const ph of ['1.1 圈', '0.7 圈', '32 位']) sayZ('dg.ncq.aria', ph);
+  check('dg.ncq drawn turns', /A: \[150, [\d.]+\], B: \[260, [\d.]+\], C: \[40, [\d.]+\]/.test(app), true);
+  // Figure 7: exit latencies and the DEVSLP hold time are the spec's
+  check('dg.pwr exits', [M.SPEC.exit.partial * 1e6, M.SPEC.exit.slumber * 1e3, M.SPEC.exit.devslp * 1e3, M.SPEC.mdat * 1e3].join(), '10,10,20,10');
+  for (const ph of ['10 微秒', '10 毫秒', '20 毫秒', '至少保持 10 毫秒']) sayZ('dg.pwr.aria', ph);
+  for (const ph of ['10 µs', '10 ms', '20 ms', 'at least 10 ms']) sayE('dg.pwr.aria', ph);
+  sayZ('ch6.p1', '醒来不超过 10 微秒'); sayZ('ch6.p1', '醒来不超过 20 毫秒'); sayZ('ch6.p1', '至少要保持 10 毫秒');
+  // Figure 8: up to 15 drives
+  check('dg.pm ports', M.SPEC.pmPorts, 15); sayZ('dg.pm.aria', '最多 15 块'); sayE('dg.pm.aria', 'up to 15'); sayZ('ch7.law', '15 块盘');
+}
+
 if (fails) { console.error(`\n${fails} of ${n} checks failed`); process.exit(1); }
 console.log(`PASS: ${n} checks (spec tables, Annex A examples, and every number in the prose match the models)`);

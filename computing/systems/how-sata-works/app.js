@@ -45,6 +45,7 @@ function applyLang() {
   document.querySelectorAll('[data-i18n-aria]').forEach(e => { e.setAttribute('aria-label', t(e.dataset.i18nAria)); });
   document.querySelectorAll('[data-hk]').forEach(e => { e.dataset.h = t(e.dataset.hk); });
   document.querySelectorAll('#langToggle button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.lang === lang)));
+  renderDiagrams(true);
   sims.forEach(s => { s.dirty = true; if (s.text) s.text(); });
 }
 document.querySelectorAll('#langToggle button').forEach(b => b.addEventListener('click', () => { lang = b.dataset.lang; writeLang(lang); applyLang(); }));
@@ -61,11 +62,302 @@ function fit(cv) {
 const sims = [];
 const io = new IntersectionObserver(es => es.forEach(e => { for (const s of sims) if (s.cvs.includes(e.target)) { e.target.__vis = e.isIntersecting; s.vis = s.cvs.some(cv => cv.__vis); s.dirty = true; } }), { rootMargin: '60px' });
 function reg(cvs, o) { o.cvs = [].concat(cvs); o.vis = false; o.dirty = true; sims.push(o); o.cvs.forEach(cv => io.observe(cv)); return o; }
-window.addEventListener('resize', () => sims.forEach(s => { s.dirty = true; }));
+window.addEventListener('resize', () => { sims.forEach(s => { s.dirty = true; }); renderDiagrams(false); });
 const radios = name => [...document.querySelectorAll(`input[name=${name}]`)];
 const radioVal = name => radios(name).find(r => r.checked).value;
 const put = (sel, s) => { const e = $(sel); if (e.textContent !== s) e.textContent = s; };
 const putHTML = (sel, s) => { const e = $(sel); if (e.__h !== s) { e.innerHTML = s; e.__h = s; } };
+
+/* ───────── static diagrams (STANDARD §4a): inline SVG built from small specs, labels from copy ─────────
+   Two layouts: 'w' (viewBox 720 wide, prose column ≥ 600 px) and 'n' (viewBox 340 wide). Text is 14 units, so it
+   renders at ≥ 11.7 px in either layout at its narrowest. A label with a width limit wraps onto more lines. */
+const NS = 'http://www.w3.org/2000/svg';
+const FS = 14, LH = 18;
+function S(tag, a, parent) { const e = document.createElementNS(NS, tag); for (const k in a) e.setAttribute(k, a[k]); if (parent) parent.appendChild(e); return e; }
+const tint = (col, a) => { const n = parseInt(col.slice(1), 16); return `rgba(${n >> 16},${(n >> 8) & 255},${n & 255},${a})`; };
+function mk(svg) {
+  const g = {
+    box(x, y, w, h, col, o) { o = o || {}; S('rect', { x, y, width: w, height: h, rx: o.rx == null ? 8 : o.rx, fill: o.solid ? col : tint(col, o.a == null ? 0.13 : o.a), stroke: o.nostroke ? 'none' : col, 'stroke-width': o.sw || 1.4, 'stroke-dasharray': o.dash || 'none' }, svg); },
+    line(x1, y1, x2, y2, col, o) { o = o || {}; S('line', { x1, y1, x2, y2, stroke: col || C.mute, 'stroke-width': o.sw || 1.6, 'stroke-dasharray': o.dash || 'none', 'marker-end': o.arrow ? `url(#ar-${(col || C.mute).slice(1)})` : 'none', 'marker-start': o.both ? `url(#ar-${(col || C.mute).slice(1)})` : 'none' }, svg); },
+    path(d, col, o) { o = o || {}; S('path', { d, fill: o.fill ? tint(o.fill, o.a == null ? 0.13 : o.a) : 'none', stroke: col || C.mute, 'stroke-width': o.sw || 1.6, 'stroke-dasharray': o.dash || 'none', 'marker-end': o.arrow ? `url(#ar-${(col || C.mute).slice(1)})` : 'none' }, svg); },
+    circle(cx, cy, r, col, o) { o = o || {}; S('circle', { cx, cy, r, fill: o.solid ? col : o.none ? 'none' : tint(col, o.a == null ? 0.14 : o.a), stroke: col, 'stroke-width': o.sw || 1.6, 'stroke-dasharray': o.dash || 'none' }, svg); },
+    // text: key (or {raw}), position, options: a = start|middle|end, c = colour class, w = wrap width, vars
+    text(x, y, key, o) {
+      o = o || {}; const s = typeof key === 'object' ? key.raw : t(key, o.vars);
+      const e = S('text', { x, y, 'font-size': o.fs || FS, 'text-anchor': o.a || 'start', 'dominant-baseline': 'central', class: (o.c || '') + (o.mono ? ' mono' : '') }, svg);
+      e.textContent = s; if (o.w) { e.dataset.w = o.w; e.dataset.va = o.va || 'top'; } if (o.weight) e.setAttribute('font-weight', o.weight);
+      return e;
+    },
+    swatch(x, y, col) { g.box(x, y - 6, 12, 12, col, { solid: true, rx: 3 }); },
+    // a numbered marker (narrow layouts list what each number is underneath)
+    num(x, y, n, col) { g.circle(x, y, 10, col || C.ink, { solid: true, sw: 1 }); g.text(x, y + 0.5, { raw: String(n) }, { a: 'middle', c: 'k', fs: 13.5, weight: 700 }); }
+  };
+  return g;
+}
+function arrowDefs(svg) {
+  const d = S('defs', {}, svg);
+  for (const col of [C.mute, C.gold, C.cyan, C.red, C.green, C.violet, C.ink]) {
+    const m = S('marker', { id: 'ar-' + col.slice(1), viewBox: '0 0 10 10', refX: 9, refY: 5, markerWidth: 7, markerHeight: 7, orient: 'auto-start-reverse' }, d);
+    S('path', { d: 'M0,0 L10,5 L0,10 z', fill: col }, m);
+  }
+}
+// wrap text that has a width limit: split at spaces (or between CJK characters) into tspans
+function wrapTexts(svg) {
+  for (const e of svg.querySelectorAll('text[data-w]')) {
+    const maxw = +e.dataset.w; if (e.getComputedTextLength() <= maxw) continue;
+    const s = e.textContent, x = e.getAttribute('x'), y0 = +e.getAttribute('y'), cjk = /[\u3000-\u9fff\uff00-\uffef]/.test(s);
+    const toks = cjk ? s.match(/[A-Za-z0-9.,%+×–\-/()\[\]:_]+|\s+|./g) : s.split(/(\s+)/);
+    e.textContent = ''; let lines = [], cur = '';
+    const probe = S('tspan', {}, e);
+    for (const tk of toks) { const nx = cur + tk; probe.textContent = nx; if (e.getComputedTextLength() > maxw && cur.trim()) { lines.push(cur.trim()); cur = tk.trim() ? tk : ''; } else cur = nx; }
+    if (cur.trim()) lines.push(cur.trim()); e.removeChild(probe);
+    const off = e.dataset.va === 'mid' ? -(lines.length - 1) * LH / 2 : 0;
+    lines.forEach((l, i) => { const ts = S('tspan', { x, y: y0 + off + i * LH }, e); ts.textContent = l; });
+  }
+}
+const DG = {};
+const pt = (cx, cy, r, deg) => [cx + r * Math.cos(deg * Math.PI / 180), cy - r * Math.sin(deg * Math.PI / 180)];
+const arc = (cx, cy, r, d0, d1) => { const [x0, y0] = pt(cx, cy, r, d0), [x1, y1] = pt(cx, cy, r, d1); return `M${x0.toFixed(1)},${y0.toFixed(1)} A${r},${r} 0 ${Math.abs(d1 - d0) > 180 ? 1 : 0},${d1 > d0 ? 0 : 1} ${x1.toFixed(1)},${y1.toFixed(1)}`; };
+const hex2 = v => v.toString(16).toUpperCase().padStart(2, '0') + 'h';
+
+// the layers on each side of the cable; host cyan, drive violet (ch1); schematic
+DG.stack = (L) => {
+  const wide = L === 'w', W = wide ? 720 : 340, H = wide ? 410 : 516;
+  const rows = ['cmd', 'hci', 'tr', 'link', 'phy'];
+  return { W, H, draw(g) {
+    if (wide) {
+      const hx = 10, dx = 460, cw = 250, y0 = 44, rh = 62, bh = 52;
+      g.text(hx + cw / 2, 20, 'dg.stack.host', { a: 'middle', c: 'c', weight: 600 });
+      g.text(dx + cw / 2, 20, 'dg.stack.dev', { a: 'middle', c: 'v', weight: 600 });
+      g.box(hx - 4, y0 + 2 * rh - 6, dx + cw - hx + 8, 3 * rh + 2, C.gold, { a: 0.05, dash: '5 4', rx: 10 });
+      rows.forEach((k, i) => {
+        const y = y0 + i * rh;
+        g.box(hx, y, cw, bh, C.cyan, { rx: 6, a: 0.1 }); g.text(hx + cw / 2, y + bh / 2, 'dg.stack.' + k, { a: 'middle', w: cw - 14, va: 'mid' });
+        if (k === 'hci') { g.box(dx, y, cw, bh, C.mute, { rx: 6, a: 0, dash: '4 3', sw: 1 }); g.text(dx + cw / 2, y + bh / 2, 'dg.stack.nohci', { a: 'middle', c: 'm', w: cw - 14, va: 'mid' }); }
+        else { g.box(dx, y, cw, bh, C.violet, { rx: 6, a: 0.1 }); g.text(dx + cw / 2, y + bh / 2, 'dg.stack.' + k, { a: 'middle', w: cw - 14, va: 'mid' }); }
+        if (k !== 'hci' && k !== 'phy') g.line(hx + cw + 6, y + bh / 2, dx - 6, y + bh / 2, C.mute, { dash: '4 4', sw: 1.2, arrow: 1, both: 1 });
+      });
+      g.text(360, y0 + rh + bh / 2, 'dg.stack.peer', { a: 'middle', c: 'm', w: 180, va: 'mid' });
+      const yp = y0 + 4 * rh + bh / 2;
+      g.line(hx + cw + 4, yp - 5, dx - 4, yp - 5, C.ink, { sw: 2.2, arrow: 1 });
+      g.line(dx - 4, yp + 5, hx + cw + 4, yp + 5, C.ink, { sw: 2.2, arrow: 1 });
+      g.text(360, y0 + 5 * rh + 14, 'dg.stack.wire', { a: 'middle' });
+      g.text(hx, y0 + 5 * rh + 44, 'dg.stack.band', { c: 'g' });
+    } else {
+      // one column: a cyan bar on the left = present at the host, a violet bar on the right = present at the drive
+      const x = 6, w = 328, y0 = 52, rh = 70, bh = 60;
+      g.text(x, 20, 'dg.stack.host', { c: 'c', weight: 600 }); g.text(x + w, 20, 'dg.stack.dev', { a: 'end', c: 'v', weight: 600 });
+      g.box(x - 3, y0 + 2 * rh - 5, w + 6, 3 * rh, C.gold, { a: 0.05, dash: '5 4', rx: 10 });
+      rows.forEach((k, i) => {
+        const y = y0 + i * rh;
+        g.box(x + 10, y, w - 20, bh, C.mute, { rx: 6, a: 0.08, sw: 1 });
+        g.box(x, y, 8, bh, C.cyan, { solid: true, rx: 3 });
+        if (k === 'hci') g.box(x + w - 8, y, 8, bh, C.mute, { rx: 3, a: 0, dash: '3 3', sw: 1 }); else g.box(x + w - 8, y, 8, bh, C.violet, { solid: true, rx: 3 });
+        g.text(x + w / 2, y + bh / 2, 'dg.stack.' + k, { a: 'middle', w: w - 40, va: 'mid' });
+      });
+      g.text(x, y0 + 5 * rh + 6, 'dg.stack.band', { c: 'g', w });
+      g.text(x, y0 + 5 * rh + 44, 'dg.stack.nbars', { c: 'm', w });
+    }
+  } };
+};
+// parallel ATA's 16 data lines and a strobe vs SATA's two pairs (ch2); schematic
+DG.wires = (L) => {
+  const wide = L === 'w', W = wide ? 720 : 340, H = wide ? 330 : 540;
+  const U = M.UDMA, S = M.SPEC;
+  return { W, H, draw(g) {
+    const pata = (ox, oy) => {
+      g.text(ox, oy, 'dg.wires.pata', { c: 'm', weight: 600, w: 320, vars: { n: U.dataLines } });
+      const x0 = ox + 46, x1 = ox + 276, y0 = oy + 30, dy = 9;
+      g.box(ox, y0 - 6, 40, U.dataLines * dy + 30, C.mute, { rx: 4, a: 0.12 }); g.box(x1 + 6, y0 - 6, 40, U.dataLines * dy + 30, C.mute, { rx: 4, a: 0.12 });
+      let s = 5; const tx = []; for (let i = 0; i < U.dataLines; i++) { s = (s * 69069 + 1) % 4294967296; tx.push(Math.round((s / 4294967296 - 0.5) * 34)); }
+      const xm = (x0 + x1) / 2 - 10;
+      g.box(xm - 19, y0 - 6, 38, U.dataLines * dy + 4, C.red, { a: 0.12, rx: 2, sw: 0.8 });
+      for (let i = 0; i < U.dataLines; i++) { const y = y0 + i * dy, xt = xm + tx[i]; g.path(`M${x0},${y + 3} H${xt} L${xt + 3},${y - 2} H${x1}`, C.cyan, { sw: 1.1 }); }
+      const ys = y0 + U.dataLines * dy + 12; g.path(`M${x0},${ys + 3} H${xm + 26} L${xm + 29},${ys - 3} H${x1}`, C.gold, { sw: 2 });
+      g.text(ox + 20, ys + 34, 'dg.wires.snd', { a: 'middle', c: 'm' }); g.text(x1 + 26, ys + 34, 'dg.wires.rcv', { a: 'middle', c: 'm' });
+      g.text(xm, ys + 34, 'dg.wires.skew', { a: 'middle', c: 'r' });
+      g.text(x0 + 8, ys + 14, 'dg.wires.strobe', { c: 'g', fs: 13.5 });
+    };
+    const sata = (ox, oy) => {
+      g.text(ox, oy, 'dg.wires.sata', { c: 'm', weight: 600, w: 320 });
+      const x0 = ox + 62, x1 = ox + 260, y0 = oy + 46;
+      g.box(ox, y0 - 18, 56, 84, C.cyan, { rx: 4, a: 0.12 }); g.box(x1 + 6, y0 - 18, 56, 84, C.violet, { rx: 4, a: 0.12 });
+      g.text(ox + 28, y0 + 24, 'dg.wires.host', { a: 'middle', c: 'c' }); g.text(x1 + 34, y0 + 24, 'dg.wires.dev', { a: 'middle', c: 'v' });
+      for (const [y, back] of [[y0, 0], [y0 + 48, 1]]) {
+        g.line(back ? x1 : x0, y - 3, back ? x0 : x1, y - 3, C.ink, { sw: 1.4, arrow: 1 }); g.line(back ? x1 : x0, y + 3, back ? x0 : x1, y + 3, C.ink, { sw: 1.4, arrow: 1 });
+        g.text((x0 + x1) / 2, y - 16, back ? 'dg.wires.pairB' : 'dg.wires.pairA', { a: 'middle' });
+      }
+      // the 7-pin data connector, pin order from the standard's pin table
+      const pins = ['G', 'A+', 'A−', 'G', 'B−', 'B+', 'G'], pw = 40, px = ox + 20, py = y0 + 118;
+      g.text(px, py - 12, 'dg.wires.pins', { c: 'm', vars: { n: S.signalPins, g: S.gndPins } });
+      pins.forEach((p, i) => { const gnd = p === 'G'; g.box(px + i * pw, py, pw - 4, 28, gnd ? C.mute : C.ink, { rx: 3, a: gnd ? 0.15 : 0.08 }); g.text(px + i * pw + (pw - 4) / 2, py + 14, { raw: p }, { a: 'middle', mono: 1, c: gnd ? 'm' : '' }); });
+      g.text(ox, py + 52, 'dg.wires.cdr', { c: 'n', w: 320 });
+    };
+    if (wide) { pata(16, 22); sata(384, 22); } else { pata(6, 20); sata(6, 272); }
+  } };
+};
+// 8b/10b: the byte 00h through the two sub-block tables, from either running disparity; K28.5's comma (ch3)
+DG.enc = (L) => {
+  const wide = L === 'w', W = wide ? 720 : 340, H = wide ? 330 : 470;
+  const lo = M.B8.encode(0, -1).code, hi = M.B8.encode(0, 1).code, k = M.B8.encodeK(5, -1).code;
+  return { W, H, draw(g) {
+    const cw = wide ? 28 : 22, a6 = wide ? 120 : 44, a4 = a6 + 6 * cw + (wide ? 60 : 30), lx = wide ? 20 : 4;
+    const cells = (x, y, bits, col, hl) => bits.split('').forEach((b, i) => { const on = hl && hl(i); g.box(x + i * cw + 1, y, cw - 2, 26, on ? C.violet : col, { rx: 3, a: on ? 0.35 : 0.18, sw: 1 }); g.text(x + i * cw + cw / 2, y + 13, { raw: b }, { a: 'middle', mono: 1 }); });
+    const i5 = a6 + cw / 2, i3 = a4 + cw / 2;
+    g.text(i5, 20, 'dg.enc.lo5', { c: 'm', w: 5 * cw + 40 }); g.text(i3, 20, 'dg.enc.hi3', { c: 'm', w: 3 * cw + 60 });
+    cells(i5, 34, '00000', C.mute); cells(i3, 34, '000', C.mute);
+    g.line(a6 + 3 * cw, 62, a6 + 3 * cw, 78, C.mute, { arrow: 1 }); g.line(a4 + 2 * cw, 62, a4 + 2 * cw, 78, C.mute, { arrow: 1 });
+    g.box(a6, 80, 6 * cw, 26, C.mute, { rx: 5, a: 0.1, sw: 1 }); g.text(a6 + 3 * cw, 93, 'dg.enc.t6', { a: 'middle', c: 'm' });
+    g.box(a4, 80, 4 * cw, 26, C.mute, { rx: 5, a: 0.1, sw: 1 }); g.text(a4 + 2 * cw, 93, 'dg.enc.t4', { a: 'middle', c: 'm' });
+    'abcdei'.split('').forEach((c, i) => g.text(a6 + i * cw + cw / 2, 122, { raw: c }, { a: 'middle', mono: 1, c: 'm', fs: 13 }));
+    'fghj'.split('').forEach((c, i) => g.text(a4 + i * cw + cw / 2, 122, { raw: c }, { a: 'middle', mono: 1, c: 'm', fs: 13 }));
+    const rows = [[138, lo, 'dg.enc.rdm'], [172, hi, 'dg.enc.rdp']];
+    for (const [y, code, key] of rows) { cells(a6, y, code.slice(0, 6), C.gold); cells(a4, y, code.slice(6), C.gold); g.text(lx, y + 13, { raw: key === 'dg.enc.rdm' ? 'RD−' : 'RD+' }, { mono: 1, c: 'g' }); }
+    if (wide) {
+      g.text(a4 + 4 * cw + 20, 172, 'dg.enc.pick', { w: 720 - (a4 + 4 * cw + 26), va: 'mid' });
+      g.text(lx, 236, 'dg.enc.k', { c: 'v' }); cells(a6, 252, k, C.mute, i => i < 7);
+      g.text(a6 + 10 * cw + 16, 265, 'dg.enc.comma', { c: 'v', w: 720 - (a6 + 10 * cw + 22), va: 'mid' });
+      g.text(lx, 310, 'dg.enc.order', { c: 'm', w: 680 });
+    } else {
+      g.text(lx, 222, 'dg.enc.pick', { w: 330 });
+      g.text(lx, 292, 'dg.enc.k', { c: 'v' }); cells(a6, 306, k, C.mute, i => i < 7);
+      g.text(lx, 356, 'dg.enc.comma', { c: 'v', w: 330 });
+      g.text(lx, 418, 'dg.enc.order', { c: 'm', w: 330 });
+    }
+  } };
+};
+// one frame on the wire, a Register Host-to-Device FIS with its first Dword opened up (ch4); Dwords to scale
+DG.fis = (L) => {
+  const wide = L === 'w', W = wide ? 720 : 340, H = wide ? 290 : 468;
+  const fr = M.LINK.readFrames(8).frames, h2d = fr[0].len, d0 = M.LINK.h2dRead(0, 8, 0)[0];
+  const bytes = [0, 1, 2, 3].map(i => (d0 >>> (8 * i)) & 255);
+  return { W, H, draw(g) {
+    const n = h2d + 3, x0 = wide ? 40 : 10, dw = wide ? 80 : 40, y = wide ? 44 : 60;
+    g.text(x0, 18, 'dg.fis.frame', { c: 'm', w: W - 2 * x0, vars: { n: h2d } });
+    const lab = i => i === 0 ? 'SOF' : i === n - 2 ? 'CRC' : i === n - 1 ? 'EOF' : (wide ? 'DW' : '') + (i - 1);
+    for (let i = 0; i < n; i++) {
+      const prim = i === 0 || i === n - 1, crc = i === n - 2, col = prim ? C.mute : crc ? C.violet : C.cyan;
+      g.box(x0 + i * dw + 1, y, dw - 2, 34, col, { rx: 4, a: i === 1 ? 0.35 : 0.15, sw: i === 1 ? 2 : 1 });
+      g.text(x0 + i * dw + dw / 2, y + 17, { raw: lab(i) }, { a: 'middle', mono: 1, fs: 13, c: prim ? 'm' : crc ? 'v' : '' });
+    }
+    g.line(x0 + dw + 4, y + 44, x0 + (n - 2) * dw - 4, y + 44, C.cyan, { sw: 1.2, both: 1, arrow: 1 });
+    g.text(x0 + (n / 2) * dw - dw / 2, y + 60, 'dg.fis.fis', { a: 'middle', c: 'c', vars: { n: h2d } });
+    const keys = ['b0', 'b1', 'b2', 'b3'];
+    if (wide) {
+      const by = 150, bw = 160;
+      g.text(x0, by - 22, 'dg.fis.dw0', { c: 'm' });
+      bytes.forEach((v, i) => { g.box(x0 + i * bw + 1, by, bw - 2, 86, C.cyan, { rx: 5, a: 0.1, sw: 1 }); g.text(x0 + i * bw + bw / 2, by + 16, { raw: hex2(v) }, { a: 'middle', mono: 1, c: 'c' }); g.text(x0 + i * bw + bw / 2, by + 54, 'dg.fis.' + keys[i], { a: 'middle', w: bw - 14, va: 'mid' }); });
+      g.text(x0, by + 110, 'dg.fis.note', { c: 'm', w: 640 });
+    } else {
+      const by = 188;
+      g.text(x0, by - 28, 'dg.fis.dw0', { c: 'm', w: 320, va: 'mid' });
+      bytes.forEach((v, i) => { const yy = by + i * 48; g.box(x0, yy, 320, 42, C.cyan, { rx: 5, a: 0.1, sw: 1 }); g.text(x0 + 10, yy + 21, { raw: hex2(v) }, { mono: 1, c: 'c' }); g.text(x0 + 56, yy + 21, 'dg.fis.' + keys[i], { w: 256, va: 'mid' }); });
+      g.text(x0, by + 4 * 48 + 16, 'dg.fis.note', { c: 'm', w: 320 });
+    }
+  } };
+};
+// the five frames of one READ FPDMA QUEUED of 4 KiB; host cyan, drive violet (ch4); time not to scale
+DG.seq = (L) => {
+  const wide = L === 'w', W = wide ? 720 : 340, H = wide ? 420 : 560;
+  const fr = M.LINK.readFrames(8).frames, len = id => fr.find(f => f.id === id).len;
+  const steps = [['h2d', 0x27, 1], ['d2h', 0x34, 0], ['wait'], ['dmas', 0x41, 0], ['data', 0x46, 0], ['sdb', 0xA1, 0]];
+  return { W, H, draw(g) {
+    const hx = wide ? 120 : 26, dx = wide ? 600 : 314, top = 56, step = wide ? 62 : 84;
+    g.box(hx - 50 < 2 ? 2 : hx - 50, 14, wide ? 100 : 48, 30, C.cyan, { rx: 6 }); g.text(hx - 50 < 2 ? 26 : hx, 29, 'dg.seq.host', { a: 'middle', c: 'c' });
+    g.box(wide ? dx - 50 : dx - 24, 14, wide ? 100 : 48, 30, C.violet, { rx: 6 }); g.text(dx, 29, 'dg.seq.dev', { a: 'middle', c: 'v' });
+    g.line(hx, 46, hx, H - 14, C.cyan, { sw: 1, dash: '2 4' }); g.line(dx, 46, dx, H - 14, C.violet, { sw: 1, dash: '2 4' });
+    steps.forEach(([id, ty, toDev], i) => {
+      const y = top + 34 + i * step + (wide ? 0 : 20);
+      if (id === 'wait') { g.box(hx + 10, y - 26, dx - hx - 20, 40, C.mute, { a: 0.06, dash: '4 4', sw: 1, rx: 6 }); g.text((hx + dx) / 2, y - 6, 'dg.seq.wait', { a: 'middle', c: 'm', w: dx - hx - 40, va: 'mid' }); return; }
+      const col = toDev ? C.cyan : C.violet;
+      g.line(toDev ? hx + 2 : dx - 2, y, toDev ? dx - 2 : hx + 2, y, col, { sw: 2, arrow: 1 });
+      g.text((hx + dx) / 2, y - (wide ? 14 : 32), 'dg.seq.' + id, { a: 'middle', c: toDev ? 'c' : 'v', w: dx - hx - 24, vars: { t: hex2(ty), n: fmt(len(id), 0), d: fmt(len(id) - 1, 0) } });
+    });
+  } };
+};
+// NCQ: the same three requests in arrival order and nearest-first, rotation only; the 32-bit SActive (ch5); schematic
+DG.ncq = (L) => {
+  const wide = L === 'w', W = wide ? 720 : 340, H = wide ? 380 : 610;
+  // angle each request must turn before it reaches the head, in degrees, and its track radius
+  const Q = { A: [150, 0.72], B: [260, 0.5], C: [40, 0.88] }, fifo = ['A', 'B', 'C'];
+  const turn = order => { let pos = 0, tot = 0; for (const k of order) { const d = ((Q[k][0] - pos) % 360 + 360) % 360; tot += d; pos = Q[k][0]; } return tot; };
+  const satf = (() => { let pos = 0, left = fifo.slice(), out = []; while (left.length) { left.sort((a, b) => ((Q[a][0] - pos) % 360 + 360) % 360 - ((Q[b][0] - pos) % 360 + 360) % 360); const k = left.shift(); out.push(k); pos = Q[k][0]; } return out; })();
+  return { W, H, draw(g) {
+    const disk = (cx, cy, R, order, col, key) => {
+      g.circle(cx, cy, R, C.mute, { a: 0.06, sw: 1 }); g.circle(cx, cy, R * 0.22, C.mute, { a: 0.3, sw: 1 });
+      g.path(arc(cx, cy, R + 10, 200, 250), C.mute, { arrow: 1, sw: 1.4 });
+      g.box(cx - 6, cy - R - 6, 12, 12, C.gold, { solid: true, rx: 2 });
+      for (const k of fifo) { const [d, r] = Q[k], [x, y] = pt(cx, cy, R * r, 90 - d); g.circle(x, y, 5, C.cyan, { solid: true }); g.text(x + 9, y - 1, { raw: k }, { mono: 1, c: 'c', fs: 13.5 }); g.num(x - 16, y - 2, order.indexOf(k) + 1, col); }
+      g.text(cx, cy + R + 28, key, { a: 'middle', c: col === C.gold ? 'g' : 'm', w: wide ? 340 : 320, vars: { o: order.join(' → '), d: Math.round(turn(order)), r: fmt(turn(order) / 360, 1) } });
+    };
+    const sa = (x0, y0, w) => {
+      const n = M.SPEC.tags, cw = w / n, on = [3, 7, 12];
+      g.text(x0, y0, 'dg.ncq.sact', { c: 'm', w, vars: { n } });
+      for (let i = 0; i < n; i++) { const set = on.includes(i); g.box(x0 + i * cw + 0.5, y0 + 16, cw - 1, 20, set ? C.gold : C.mute, { rx: 2, a: set ? 0.6 : 0.12, sw: 0.8 }); }
+      g.text(x0 + w, y0 + 50, { raw: '0' }, { a: 'end', mono: 1, c: 'm', fs: 13 }); g.text(x0, y0 + 50, { raw: String(n - 1) }, { mono: 1, c: 'm', fs: 13 });
+      g.text(x0 + w / 2, y0 + 50, 'dg.ncq.bit', { a: 'middle', c: 'g' });
+    };
+    if (wide) { disk(180, 140, 92, fifo, C.mute, 'dg.ncq.fifo'); disk(540, 140, 92, satf, C.gold, 'dg.ncq.satf'); sa(20, 312, 680); }
+    else { disk(170, 120, 84, fifo, C.mute, 'dg.ncq.fifo'); disk(170, 360, 84, satf, C.gold, 'dg.ncq.satf'); sa(10, 530, 320); }
+  } };
+};
+// the link's sleep states, deeper to the right; exit latencies are the standard's maxima (ch6); power not to scale
+DG.pwr = (L) => {
+  const wide = L === 'w', W = wide ? 720 : 340, H = wide ? 300 : 440, S = M.SPEC;
+  const st = [['on', C.mute, 'm', null], ['partial', C.cyan, 'c', S.exit.partial], ['slumber', C.gold, 'g', S.exit.slumber], ['devslp', C.green, 'n', S.exit.devslp]];
+  return { W, H, draw(g) {
+    st.forEach(([k, col, cl, ex], i) => {
+      const x = wide ? 20 + i * 172 : 10 + i * 34, y = wide ? 20 + i * 40 : 20 + i * 92, bw = wide ? 160 : 200;
+      g.box(x, y, bw, 38, col, { rx: 6, a: 0.16 }); g.text(x + bw / 2, y + 19, 'dg.pwr.' + k, { a: 'middle', c: cl });
+      g.text(x + (wide ? 4 : 2), y + 54, ex == null ? 'dg.pwr.awake' : 'dg.pwr.exit', { c: 'm', w: wide ? 164 : W - x - 26, vars: { t: dur(ex || 0, 0) } });
+      if (k === 'devslp') g.text(x + (wide ? 4 : 2), y + (wide ? 80 : 74), 'dg.pwr.pin', { c: 'n', w: wide ? 164 : W - x - 26, vars: { t: dur(S.mdat, 0) } });
+    });
+    if (wide) { g.line(20, 262, 700, 262, C.ink, { arrow: 1, sw: 1.4 }); g.text(20, 284, 'dg.pwr.axis', { c: 'm' }); }
+    else { g.line(326, 30, 326, 400, C.ink, { arrow: 1, sw: 1.4 }); g.text(10, 422, 'dg.pwr.axis', { c: 'm', w: 320 }); }
+  } };
+};
+// a port multiplier: one host port, up to 15 drives; command- vs FIS-based switching on the shared link (ch7); schematic
+DG.pm = (L) => {
+  const wide = L === 'w', W = wide ? 720 : 340, H = wide ? 380 : 520, S = M.SPEC, D = ['A', 'B', 'C', 'D'];
+  return { W, H, draw(g) {
+    const drive = (x, y, w, h, k) => { g.box(x, y, w, h, C.violet, { rx: 5, a: 0.14 }); g.text(x + w / 2, y + h / 2, 'dg.pm.drive', { a: 'middle', c: 'v', vars: { k } }); };
+    const tl = (x0, y0, w, key, seq) => {
+      g.text(x0, y0, key, { c: 'm', w });
+      const n = seq.length, bw = w / n;
+      const by = y0 + (wide ? 14 : 44); seq.forEach((k, i) => { if (!k) return; g.box(x0 + i * bw + 1, by, bw - 2, 24, C.violet, { rx: 3, a: 0.3, sw: 0.8 }); g.text(x0 + i * bw + bw / 2, by + 12, { raw: k }, { a: 'middle', mono: 1, fs: 13 }); });
+    };
+    const cbs = ['A', 'A', 'A', 'A', 'B', 'B', 'B', 'B', 'C', 'C', 'C', 'C'], fbs = ['A', 'B', 'C', 'A', 'B', 'C', 'A', 'B', 'C', 'A', 'B', 'C'];
+    if (wide) {
+      g.box(20, 70, 120, 50, C.cyan, { rx: 6 }); g.text(80, 95, 'dg.pm.host', { a: 'middle', c: 'c', w: 110, va: 'mid' });
+      g.line(140, 95, 228, 95, C.ink, { sw: 2.4 }); g.text(184, 80, 'dg.pm.one', { a: 'middle', c: 'm' });
+      g.box(230, 60, 140, 70, C.gold, { rx: 6, a: 0.12 }); g.text(300, 95, 'dg.pm.pm', { a: 'middle', c: 'g', w: 130, va: 'mid' });
+      D.forEach((k, i) => { const y = 22 + i * 44; drive(470, y, 110, 34, k); g.line(370, 95, 468, y + 17, C.mute, { sw: 1.2 }); });
+      g.text(590, 160, 'dg.pm.max', { c: 'v', w: 125, vars: { n: S.pmPorts } });
+      g.text(230, 150, 'dg.pm.field', { c: 'm', w: 230 });
+      tl(20, 242, 680, 'dg.pm.cbs', cbs); tl(20, 304, 680, 'dg.pm.fbs', fbs);
+    } else {
+      g.box(10, 10, 150, 44, C.cyan, { rx: 6 }); g.text(85, 32, 'dg.pm.host', { a: 'middle', c: 'c', w: 140, va: 'mid' });
+      g.line(85, 54, 85, 94, C.ink, { sw: 2.4 }); g.text(95, 74, 'dg.pm.one', { c: 'm' });
+      g.box(10, 96, 150, 56, C.gold, { rx: 6, a: 0.12 }); g.text(85, 124, 'dg.pm.pm', { a: 'middle', c: 'g', w: 140, va: 'mid' });
+      D.forEach((k, i) => { const y = 10 + i * 42; drive(218, y, 112, 32, k); g.line(160, 124, 216, y + 16, C.mute, { sw: 1.2 }); });
+      g.text(218, 192, 'dg.pm.max', { c: 'v', w: 118, vars: { n: S.pmPorts } });
+      g.text(10, 250, 'dg.pm.field', { c: 'm', w: 320 });
+      tl(10, 316, 320, 'dg.pm.cbs', cbs); tl(10, 410, 320, 'dg.pm.fbs', fbs);
+    }
+  } };
+};
+let dgLayout = new WeakMap();
+function renderDiagrams(force) {
+  for (const fig of document.querySelectorAll('figure.dia')) {
+    const box = fig.querySelector('.svg'), L = fig.clientWidth >= 600 ? 'w' : 'n';
+    if (!force && dgLayout.get(fig) === L + effLang()) continue;
+    dgLayout.set(fig, L + effLang());
+    const spec = DG[fig.dataset.dg](L);
+    box.textContent = '';
+    const svg = S('svg', { viewBox: `0 0 ${spec.W} ${spec.H}`, role: 'img', 'aria-label': t('dg.' + fig.dataset.dg + '.aria'), class: L }, box);
+    arrowDefs(svg); spec.draw(mk(svg)); wrapTexts(svg);
+  }
+}
 const onAll = (els, ev, fn) => els.forEach(e => e.addEventListener(ev, fn));
 
 function frame(w, h, m, x0, x1, y0, y1) {

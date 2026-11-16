@@ -230,5 +230,40 @@ function branch(name, o) { n++; const s = Z[o.key]; if (s == null) { fails++; co
   for (const x of M.FRONTIER) check('frontier status ' + x.id, ['est', 'demo', 'claim'].includes(x.status), true);
 }
 
+/* ── static diagrams (STANDARD §4a): every number drawn or quoted in a caption comes from the models; every label
+   key the drawing code asks for exists in both languages ── */
+{
+  const saysEn = (key, phrase) => { n++; if (!EN[key] || !EN[key].includes(phrase)) { fails++; console.error(`FAIL en ${key} should contain "${phrase}"`); } };
+  const app = fs.readFileSync(path.join(DIR, 'app.js'), 'utf8');
+  const dgKeys = new Set([...app.matchAll(/'(dg\.[\w.]*\w)'/g)].map(m => m[1]));
+  for (const m of html.matchAll(/data-dg="(\w+)"/g)) for (const s of ['aria', 'cap']) dgKeys.add('dg.' + m[1] + '.' + s);
+  for (const [d, ks] of Object.entries({ hdd: ['platter', 'spindle', 'head', 'arm', 'vcm', 'target', 'rot', 'seek'], lba: ['rmw', 'full', 'idle', 't'], layers: ['ssd25', 'm2nvme', 'sas25'] })) for (const k of ks) dgKeys.add(`dg.${d}.${k}`);
+  for (const k of [...dgKeys]) if (/^dg\.\w+$/.test(k)) dgKeys.delete(k);
+  for (const k of dgKeys) { check('diagram key in zh: ' + k, Z[k] != null, true); check('diagram key in en: ' + k, EN[k] != null, true); }
+  check('eight diagrams on the page', [...html.matchAll(/<figure class="dia" data-dg="(\w+)">/g)].map(m => m[1]).join(), 'lba,hdd,stack,smr,cell,cw,ftl,layers');
+  for (const k of Object.keys(Z)) if (/^dg\./.test(k)) check('diagram key used: ' + k, dgKeys.has(k), true);
+  // Figure 1: 512e, a 4 KiB write at sector 63 and at sector 2048 (cells in proportion to bytes)
+  const S = M.sector, a = S.write(63, 4), b = S.write(2048, 4);
+  check('dg.lba 8 logical sectors per physical', S.PHYS / S.LOG, S.PER); check('dg.lba PER', S.PER, 8);
+  check('dg.lba 63: sectors 63–70 touch two physical sectors, both partly', [a.p0 * 8, a.p1 * 8 + 7, a.touched, a.partial].join(), '56,71,2,2');
+  check('dg.lba 2048: sectors 2048–2055 fill one physical sector', [b.p0 * 8, b.touched, b.partial].join(), '2048,1,0');
+  for (const [k, ph] of [['dg.lba.cap', '每 8 格是一个 4096 字节'], ['dg.lba.cap', '从第 63 号开始'], ['dg.lba.cap', '从第 2048 号开始'], ['dg.lba.aria', '第 63 到 70 号'], ['dg.lba.aria', '16 个 512 字节']]) says(k, ph);
+  for (const [k, ph] of [['dg.lba.cap', 'every 8 cells form one 4096-byte'], ['dg.lba.cap', 'Starting at sector 63'], ['dg.lba.aria', 'sectors 63 to 70']]) saysEn(k, ph);
+  // Figure 6: one codeword (bar lengths in proportion to bits)
+  const E = M.ecc;
+  check('dg.cw data bits', E.K, 8192); check('dg.cw check bits = 14 t', E.M * E.T, 560); check('dg.cw length', E.len(E.T), 8752); check('dg.cw rate', f1(E.rate(E.T) * 100), '93.6');
+  for (const ph of ['8,192 位数据', '560 位校验', '8,752 位', '不超过 40 个']) says('dg.cw.aria', ph);
+  for (const ph of ['560 位校验', '最多纠正 40 个错位', '码率 93.6%']) says('dg.cw.cap', ph);
+  for (const ph of ['560 check bits', 'correct 40 bit errors', 'code rate of 93.6%']) saysEn('dg.cw.cap', ph);
+  says('ch5.p3', '每 1 KiB 纠正 40 位（码率 93.6%）');
+  // Figure 7: 4 pages per block, as in the model
+  check('dg.ftl pages per block = model', new M.ftl.FTL().P, 4); says('dg.ftl.cap', '一块画 4 页'); saysEn('dg.ftl.cap', '4 pages per block');
+  // Figure 8: the three columns are the model's drive table
+  check('dg.layers drives exist', ['ssd25', 'm2nvme', 'sas25'].every(d => M.map.DRIVES[d]), true);
+  check('dg.layers aria lists the model values (zh)', ['ssd25', 'm2nvme', 'sas25'].every(d => M.map.LAYERS.every(k => Z['dg.layers.aria'].includes(Z['ch7.v.' + M.map.DRIVES[d][k]].replace('（2280 等）', '')))), true);
+  // Figure 3: the head flying height is the prose's figure
+  says('ch2.p1', '小于 5 纳米'); says('dg.stack.fly', '不到 5 纳米');
+}
+
 console.log(`${fails ? 'FAIL' : 'PASS'}: ${n - fails}/${n} checks (models, prose numbers, sentence branches, tuned-parameter sensitivity, registry and links)`);
 process.exit(fails ? 1 : 0);

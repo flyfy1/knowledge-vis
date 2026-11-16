@@ -256,3 +256,17 @@ search coverage; SPL-4/SAS-4 normative text (paywalled): SOF/EOF size, real inte
   zh and en; `tests/models.cjs` checks the anchors and checks S3's aliases against S5's. #ch4 keeps 多路径是什么 and
   multipath storage; S5 #ch8 takes plain 多路径 and multipath (its chapter is about splitting traffic between paths).
   Scripts load with `?v=20261115b`.
+
+- Diagram review (2026-11-16, Claude Code (claude-opus-5-5), independent reviewer; did not build the diagrams): every
+  drawn number and label checked against the standards/sources and models.js; screenshots of every diagram at
+  1280/390/320 in zh and en; models, browser, canvas --sweep and site-nav tests run. Tests: the outside-viewport check
+  in `tests/browser.cjs` had been changed to skip everything inside `<svg>` (including the `<svg>` itself, so an SVG
+  wider than the viewport went unchecked); it now skips only `<defs>`. The clipped-text check no longer skips SVG (that
+  skip never fired). Full report: specs/reviews/storage-diagrams-s1-s3-review-20261116.md.
+  Fixed: Figure 4 (connection) wide layout, a wrapped label sat on the OPEN arrow (labels now centred above the arrow)
+  and the expander lifeline ran through labels (labels get a background halo, class `h`); Figure 5 (dual port) wide
+  layout, path A and path B shared one vertical wire at x=372 (path B now at x=382); dg.ssp.note response IU 24 → at least
+  24 bytes; dg.plug.ok: STP only applies through an expander. `tests/models.cjs`: the dg placeholder exemption no longer
+  covers dg.*.cap / dg.*.aria.
+  Diagram facts checked: READ(6/10/16) layouts; SSP 24 + 1,024 + 4; COMMAND IU 28; PI 2+2+4, 0x8BB7, Type 1 ref = LBA
+  low 32 bits; 24G 150 = 2 + 128 + 20, RS(30,26) over 5-bit symbols, t = 2, 22.5 × 128/150 = 19.2 Gb/s.

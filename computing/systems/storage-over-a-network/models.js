@@ -299,6 +299,25 @@
 
   /* ── numbers quoted in the prose. Each entry is [value, decimals, kind]; the page formats it for the current
      language and tests/models.cjs pins every one. ── */
+  /* ── numbers drawn on the static diagrams (STANDARD §4a), [value, decimals]; tests/models.cjs pins every one.
+     ch2 is drawn to scale for DG_FILES files at the chapter's defaults; the iSCSI ladder is the default 1 MiB write. ── */
+  const DG_FILES = 3;
+  function dgVals() {
+    const D = DEFAULTS, n = NAS.run(D.nas.N, D.nas.s, D.nas.rtt, D.nas.k, D.nas.P, D.nas.g), dat = n.D * 1000 - D.nas.k * D.nas.rtt;
+    const w = ISCSI.write(D.is.W, D.is.rtt, D.is.g, D.is.prof), P = PROFILES[D.is.prof], F = SPEC.fc, N = SPEC.nvmeTcp, R = SPEC.roce, E = SPEC.eth, rs = EC.SCHEMES.rs104;
+    const o = {
+      files: [DG_FILES, 0], rtt: [D.nas.rtt, 1], dat: [dat, 2], k: [D.nas.k, 0], s: [D.nas.s, 0], tA: [DG_FILES * n.D * 1000, 2], tB: [D.nas.k * D.nas.rtt + DG_FILES * dat, 2],
+      W: [D.is.W / MiB, 0], imm: [w.imm / KiB, 0], mr: [P.MRDSL / KiB, 0], r2t: [w.r2t, 0], pdus: [w.pdus, 0], rounds: [w.rounds, 0],
+      sof: [F.sof, 0], fhdr: [F.hdr, 0], fpay: [F.payloadMax, 0], fcrc: [F.crc, 0], feof: [F.eof, 0], fmax: [F.frameMax, 0], idle: [F.idle, 0], uskm: [FC.usPerKm(), 2],
+      sw: [BUDGET.switchUs, 0], fLo: [BUDGET.fabric.rdmaSpdk, 2], fHi: [BUDGET.fabric.tcpKernel, 2], nand: [BUDGET.media.nand, 0],
+      bhs: [SPEC.iscsi.bhs, 0], cdb: [16, 0],          // RFC 7143 §11.3: the SCSI Command BHS carries a 16-byte CDB field
+      sqe: [N.sqe, 0], cqe: [N.cqe, 0], ch: [N.ch, 0], cmd: [N.cmd, 0], bth: [R.bth, 0], udp: [R.udp, 0], port: [R.port, 0], ip: [E.ip4, 0], tcp: [E.tcp, 0], eth: [E.hdr, 0],
+      ek: [rs.k, 0], em: [rs.n - rs.k, 0], en: [rs.n, 0], ov: [rs.n / rs.k, 1], rep: [EC.SCHEMES.rep3.n, 0], rov: [EC.SCHEMES.rep3.n / EC.SCHEMES.rep3.k, 0]
+    };
+    w.bursts.slice(1).forEach((b, i) => { o['b' + (i + 1)] = [b / KiB, 0]; o['c' + (i + 1)] = [Math.ceil(b / P.MRDSL), 0]; });
+    return o;
+  }
+
   function prose() {
     const c1 = LEVEL.cost(1, 8 * MiB, false), c1c = LEVEL.cost(1, 8 * MiB, true);
     const n0 = NAS.run(1000, 64, 0.5, 3, 1, 1), nW = NAS.run(1000, 64, 30, 3, 1, 1), nW16 = NAS.run(1000, 64, 30, 3, 16, 1), nW1 = NAS.run(1000, 64, 30, 1, 16, 1);
@@ -414,5 +433,5 @@
     }
   };
 
-  return { SPEC, DEFAULTS, LEVEL, NAS, ISCSI, FC, BUDGET, LOSS, CAPS, MP, EC, FRONTIER, KiB, MiB, fmt, tunit, bunit, say, clamp, tcpWire, prose };
+  return { SPEC, DEFAULTS, LEVEL, NAS, ISCSI, FC, BUDGET, LOSS, CAPS, MP, EC, FRONTIER, KiB, MiB, fmt, tunit, bunit, say, clamp, tcpWire, prose, dgVals };
 });

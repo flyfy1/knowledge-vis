@@ -163,6 +163,13 @@
   .verdict { margin:12px 0 0; font:600 17px/1.5 var(--sans); }
   .verdict.y { color:var(--green); } .verdict.n { color:var(--red); }
   .read.three { grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); }
+  figure.dia { margin:30px 0 26px; padding:0; }
+  figure.dia .svg svg { display:block; width:100%; height:auto; margin:0 auto; }
+  figure.dia .svg svg.n { max-width:440px; }
+  figure.dia figcaption { margin-top:10px; font-size:14px; line-height:1.65; color:var(--mute); }
+  svg text { font-family:var(--sans); fill:var(--ink); }
+  svg text.m { fill:var(--mute); } svg text.g { fill:var(--gold); } svg text.c { fill:var(--cyan); } svg text.r { fill:var(--red); } svg text.n { fill:var(--green); } svg text.v { fill:var(--violet); } svg text.k { fill:#0c0e13; }
+  svg text.mono { font-family:var(--mono); }
 </style>
 
 <link rel="stylesheet" href="../../../page-provenance.css">
@@ -209,6 +216,7 @@
     <p class="law" data-i18n-html="ch1.law"></p>
     <p data-i18n-html="ch1.p1"></p>
     <p data-i18n-html="ch1.p2"></p>
+    <figure class="dia" data-dg="lba"><div class="svg"></div><figcaption data-i18n-html="dg.lba.cap"></figcaption></figure>
   </div>
   <div class="wide"><figure class="lab">
     <h3 data-i18n="ch1.model.title"></h3>
@@ -236,6 +244,8 @@
     <p class="law" data-i18n-html="ch2.law"></p>
     <p data-i18n-html="ch2.p1"></p>
     <p data-i18n-html="ch2.p2"></p>
+    <figure class="dia" data-dg="hdd"><div class="svg"></div><figcaption data-i18n-html="dg.hdd.cap"></figcaption></figure>
+    <figure class="dia" data-dg="stack"><div class="svg"></div><figcaption data-i18n-html="dg.stack.cap"></figcaption></figure>
   </div>
   <div class="wide"><figure class="lab">
     <h3 data-i18n="ch2.model.title"></h3>
@@ -268,6 +278,7 @@
     <p class="law" data-i18n-html="ch3.law"></p>
     <p data-i18n-html="ch3.p1"></p>
     <p data-i18n-html="ch3.p2"></p>
+    <figure class="dia" data-dg="smr"><div class="svg"></div><figcaption data-i18n-html="dg.smr.cap"></figcaption></figure>
   </div>
   <div class="wide"><figure class="lab">
     <h3 data-i18n="ch3.model.title"></h3>
@@ -298,6 +309,7 @@
     <p class="law" data-i18n-html="ch4.law"></p>
     <p data-i18n-html="ch4.p1"></p>
     <p data-i18n-html="ch4.p2"></p>
+    <figure class="dia" data-dg="cell"><div class="svg"></div><figcaption data-i18n-html="dg.cell.cap"></figcaption></figure>
   </div>
   <div class="wide"><figure class="lab">
     <h3 data-i18n="ch4.model.title"></h3>
@@ -327,6 +339,7 @@
     <p class="law" data-i18n-html="ch5.law"></p>
     <p data-i18n-html="ch5.p1"></p>
     <p data-i18n-html="ch5.p2"></p>
+    <figure class="dia" data-dg="cw"><div class="svg"></div><figcaption data-i18n-html="dg.cw.cap"></figcaption></figure>
   </div>
   <div class="wide"><figure class="lab">
     <h3 data-i18n="ch5.model.title"></h3>
@@ -376,6 +389,7 @@
     <p class="law" data-i18n-html="ch6.law"></p>
     <p data-i18n-html="ch6.p1"></p>
     <p data-i18n-html="ch6.p2"></p>
+    <figure class="dia" data-dg="ftl"><div class="svg"></div><figcaption data-i18n-html="dg.ftl.cap"></figcaption></figure>
   </div>
   <div class="wide"><figure class="lab">
     <h3 data-i18n="ch6.model.title"></h3>
@@ -407,6 +421,7 @@
     <p class="law" data-i18n-html="ch7.law"></p>
     <p data-i18n-html="ch7.p1"></p>
     <p data-i18n-html="ch7.p2"></p>
+    <figure class="dia" data-dg="layers"><div class="svg"></div><figcaption data-i18n-html="dg.layers.cap"></figcaption></figure>
   </div>
   <div class="wide"><figure class="lab">
     <h3 data-i18n="ch7.model.title"></h3>
@@ -487,10 +502,10 @@
 
 <footer><div class="wrap" data-i18n-html="footer"></div></footer>
 
-<script src="models.js?v=20261115d"></script>
-<script src="copy.zh.js?v=20261115d"></script>
-<script src="copy.en.js?v=20261115d" onerror="void 0"></script>
-<script src="app.js?v=20261115d"></script>
+<script src="models.js?v=20261116a"></script>
+<script src="copy.zh.js?v=20261116a"></script>
+<script src="copy.en.js?v=20261116a" onerror="void 0"></script>
+<script src="app.js?v=20261116a"></script>
 <script defer src="../../../site-nav.js?v=sn-20261115"></script>
 </body>
 </html>

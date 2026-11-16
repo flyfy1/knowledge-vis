@@ -197,8 +197,11 @@ const pv = k => P[k][0];
 const SAYKEY = /\.say\.|^u\.|\.cv\.|^ch8\.unit/;
 {
   const used = new Set();
+  // diagram labels (not captions) are filled from dgVals() and per-row values instead; checked as strictly as prose
+  const DGV = M.dgVals(), DGROW = ['i', 'b', 'c', 'n'];
   for (const [k, v] of Object.entries(Z)) {
     if (SAYKEY.test(k)) continue;
+    if (/^dg\./.test(k) && !/\.cap$/.test(k)) { for (const m of v.matchAll(/\{(\w+)\}/g)) { n++; if (!(m[1] in DGV) && !DGROW.includes(m[1])) { fails++; console.error(`FAIL placeholder {${m[1]}} in ${k} is not a diagram number`); } } continue; }
     for (const m of v.matchAll(/\{(\w+)\}/g)) { used.add(m[1]); n++; if (!(m[1] in P)) { fails++; console.error(`FAIL placeholder {${m[1]}} in ${k} is not produced by prose()`); } }
   }
   for (const k of Object.keys(P)) { n++; if (!used.has(k)) { fails++; console.error(`FAIL prose() value ${k} is never quoted`); } }
@@ -309,6 +312,56 @@ const SAYKEY = /\.say\.|^u\.|\.cv\.|^ch8\.unit/;
   for (const k of Object.keys(Z)) check('en placeholders ' + k, ph(EN[k] || ''), ph(Z[k]));
   if (stub) { check('en stub mirrors zh exactly', JSON.stringify(EN), JSON.stringify(Z)); console.log('NOTE: copy.en.js is a stub (enStub); English registry match skipped until it is translated'); }
   else { check('registry title en', R.title.en, EN['doc.title'].split(' · ')[0]); check('registry desc en', R.desc.en, EN['doc.desc']); }
+}
+
+/* ── static diagrams (STANDARD §4a, added 2026-11-16): every number drawn comes from dgVals() and is pinned here;
+   the literal numbers in captions and aria labels are checked against the models; every key exists ── */
+{
+  const D = M.dgVals(), zf = (x, d) => M.fmt(x, d, 'zh');
+  const wantDg = { files: '3', rtt: '0.5', dat: '0.52', k: '3', s: '64', tA: '6.07', tB: '3.07', W: '1', imm: '8', mr: '8', r2t: '4', pdus: '133', rounds: '5',
+    sof: '4', fhdr: '24', fpay: '2112', fcrc: '4', feof: '4', fmax: '2148', idle: '24', uskm: '4.90', sw: '1', fLo: '4.72', fHi: '21.39', nand: '75',
+    bhs: '48', cdb: '16', sqe: '64', cqe: '16', ch: '8', cmd: '72', bth: '12', udp: '8', port: '4791', ip: '20', tcp: '20', eth: '14',
+    ek: '10', em: '4', en: '14', ov: '1.4', rep: '3', rov: '3', b1: '256', c1: '32', b2: '256', c2: '32', b3: '256', c3: '32', b4: '248', c4: '31' };
+  for (const [k, [v, d]] of Object.entries(D)) check('diagram number ' + k, v.toFixed(d), wantDg[k]);
+  check('every diagram number pinned', Object.keys(D).sort().join(','), Object.keys(wantDg).sort().join(','));
+  // the drawings agree with the models and the prose
+  const w = ISCSI.write(MiB, DEFAULTS.is.rtt, DEFAULTS.is.g, 'rfc');
+  check('iscsi ladder: bursts add up to 1 MiB', (D.imm[0] + D.b1[0] + D.b2[0] + D.b3[0] + D.b4[0]) * KiB, MiB);
+  check('iscsi ladder: Data-Out count = the model', D.c1[0] + D.c2[0] + D.c3[0] + D.c4[0], w.dataOut);
+  check('iscsi ladder: R2Ts and rounds = prose', D.r2t[0] + ' ' + D.rounds[0], pv('i0r') + ' ' + pv('i0rt'));
+  check('iscsi ladder: PDUs = 1 + R2Ts + Data-Outs + 1', 1 + D.r2t[0] + w.dataOut + 1, D.pdus[0]);
+  check('nas: one file = k round trips + data = the model', (D.k[0] * D.rtt[0] + D.dat[0]).toFixed(6), (NAS.run(1000, 64, 0.5, 3, 1, 1).D * 1000).toFixed(6));
+  check('nas: per-file time = prose nasD', (D.tA[0] / D.files[0]).toFixed(2), pv('nasD').toFixed(2));
+  check('fc: frame fields add up to the maximum frame', D.sof[0] + D.fhdr[0] + D.fpay[0] + D.fcrc[0] + D.feof[0], D.fmax[0]);
+  check('fc: frame + idle = the model\'s frame bytes', D.fmax[0] + D.idle[0], FC.frameBytes(SPEC.fc.payloadMax));
+  check('fc/path: µs per km = prose fcUs', D.uskm[0].toFixed(2), pv('fcUs').toFixed(2));
+  check('caps: NVMe/TCP command header = common header + SQE', D.ch[0] + D.sqe[0], D.cmd[0]);
+  check('ec: n = k + m', D.ek[0] + D.em[0], D.en[0]); check('ec: overhead = n/k', D.ov[0], D.en[0] / D.ek[0]);
+  check('ec: three replicas survive 2 failures', EC.run(3, 1, 0.0136, 24).m, 2); says('dg.ec.rn', '坏 2 块');
+  check('rdma: path legend spans the measured fabrics', D.fLo[0] + ' ' + D.fHi[0], Math.min(...Object.values(BUDGET.fabric).filter(x => x > 0)) + ' ' + Math.max(...Object.values(BUDGET.fabric)));
+  says('dg.nas.cap', '往返 ' + zf(DEFAULTS.nas.rtt, 1) + ' 毫秒'); says('dg.nas.cap', '每个文件 ' + DEFAULTS.nas.k + ' 次来回'); says('dg.nas.cap', DEFAULTS.nas.s + ' KiB');
+  says('dg.nas.aria', '三个 ' + D.s[0] + ' KiB'); says('dg.nas.aria', '三次来回');
+  says('dg.iscsi.aria', '写 ' + D.W[0] + ' MiB'); says('dg.iscsi.aria', D.imm[0] + ' KiB 立即数据'); says('dg.iscsi.aria', '要 ' + D.b1[0] + ' KiB'); says('dg.iscsi.aria', D.c1[0] + ' 个 Data-Out');
+  says('dg.iscsi.aria', '第 ' + D.r2t[0] + ' 个 R2T 要 ' + D.b4[0] + ' KiB'); says('dg.iscsi.aria', D.c4[0] + ' 个 Data-Out'); says('dg.iscsi.aria', '共 ' + D.rounds[0] + ' 个来回');
+  says('dg.iscsi.cap', '写 ' + D.W[0] + ' MiB'); says('dg.iscsi.cap', '只许 ' + SPEC.iscsi.MaxOutR2T + ' 个 R2T');
+  says('dg.fc.aria', '帧起始 ' + D.sof[0] + ' 字节、帧头 ' + D.fhdr[0] + ' 字节、数据最多 ' + D.fpay[0] + ' 字节、CRC ' + D.fcrc[0] + ' 字节、帧结束 ' + D.feof[0] + ' 字节'); says('dg.fc.aria', D.idle[0] + ' 字节的空闲');
+  says('dg.caps.aria', D.bhs[0] + ' 字节的 iSCSI 包头'); says('dg.caps.aria', D.sqe[0] + ' 字节的 NVMe 命令装进 ' + D.cmd[0] + ' 字节'); says('dg.caps.aria', D.bth[0] + ' 字节的 InfiniBand');
+  says('dg.ec.aria', '切成 ' + D.ek[0] + ' 块'); says('dg.ec.aria', D.em[0] + ' 块校验'); says('dg.ec.aria', D.en[0] + ' 块放在 ' + D.en[0] + ' 台'); says('dg.ec.aria', '另外 ' + D.ek[0] + ' 台'); says('dg.ec.cap', D.ek[0] + ' 台机器');
+  says('dg.gbn.aria', '发出 8 个包'); says('dg.gbn.cap', '只画了 8 个包');
+  // every key the diagrams draw exists; every dg.* key is drawn
+  const used = new Set([...app.matchAll(/'(dg\.\w+\.\w+)'(?!\s*\+)/g)].map(m => m[1]));
+  for (const c of ['block', 'file', 'obj']) for (const x of ['', 'q', 'see']) used.add('dg.level.' + x + c);
+  for (const c of ['i', 't', 'r']) { used.add('dg.caps.t' + c); used.add('dg.caps.n' + c); }
+  for (const x of ['cdb', 'bhs', 'tcp', 'ip', 'eth', 'sqe', 'pdu', 'send', 'bth', 'udp']) used.add('dg.caps.' + x);
+  for (const x of ['sent', 'gbn', 'sr']) used.add('dg.gbn.' + x);
+  const figs = [...html.matchAll(/<figure class="dia" data-dg="(\w+)"><div class="svg"><\/div><figcaption data-i18n-html="dg\.(\w+)\.cap"><\/figcaption><\/figure>/g)];
+  check('ten diagrams in the memory-essay figure shape', figs.map(m => m[1]).join(','), 'level,nas,iscsi,fc,path,rdma,gbn,caps,mp,ec');
+  for (const m of figs) { check('caption key matches ' + m[1], m[2], m[1]); used.add('dg.' + m[1] + '.aria'); used.add('dg.' + m[1] + '.cap'); check('DG spec for ' + m[1], app.includes('DG.' + m[1] + ' = '), true); }
+  for (const k of used) { n++; if (Z[k] == null) { fails++; console.error('FAIL missing diagram key ' + k); } }
+  for (const k of Object.keys(Z).filter(k => /^dg\./.test(k))) { n++; if (!used.has(k)) { fails++; console.error('FAIL diagram key never drawn: ' + k); } }
+  const ectx2 = { window: {} }; vm.runInNewContext(fs.readFileSync(path.join(DIR, 'copy.en.js'), 'utf8'), ectx2);
+  const EN2 = ectx2.window.ESSAY_COPY.en, digits = s => (s.replace(/\{\w+\}/g, '').replace(/<a [^>]*>/g, '').replace(/<[^>]+>/g, '').match(/\d+(?:[.,]\d+)*/g) || []).map(x => x.replace(/,/g, '')).sort().join(' ');
+  for (const k of Object.keys(Z).filter(k => /^dg\./.test(k))) check('diagram numbers zh = en in ' + k, digits(EN2[k] || ''), digits(Z[k]));
 }
 
 if (fails) { console.error(`\n${fails} of ${n} checks failed`); process.exit(1); }

@@ -291,6 +291,19 @@
     };
   }
 
+  /* ── numbers drawn on the static diagrams (STANDARD §4a), [value, decimals]; tests/models.cjs pins every one ── */
+  function dgVals() {
+    const u2 = USB2.pack(SPEC.usb2.maxPacket), c = CHAIN.usb({ box: 'g2x2', host: 'g2x2', bridge: 'p3x2' }), st = STICK.write(1, SPEC.die.tlcWriteMBps, 'u5bot');
+    return {
+      mf: [USB2.perMicroframe(), 0], us: [SPEC.usb2.microframeUs, 0], n: [u2.n, 0], pay: [SPEC.usb2.maxPacket, 0], oh: [SPEC.usb2.overhead, 0], left: [u2.remaining, 0],
+      hdr: [SPEC.usb3.hdrG1, 0], dpps: [SPEC.usb3.dppStart, 0], max: [SPEC.usb3.maxPayload, 0], crc: [SPEC.usb3.crc32, 0], dppe: [SPEC.usb3.dppEnd, 0],
+      e1a: [MODES.g1x1.enc[0], 0], e1b: [MODES.g1x1.enc[1], 0], e2a: [MODES.g2x1.enc[0], 0], e2b: [MODES.g2x1.enc[1], 0],
+      cbw: [SPEC.bot.cbwBytes, 0], csw: [SPEC.bot.cswBytes, 0], cdb: [SPEC.bot.maxCb, 0], streams: [SPEC.usb3.streamsMax, 0],
+      drive: [c.stages[0][1], 0], bridge: [c.stages[1][1], 0], usb: [c.stages[2][1], 0], x: [c.X, 0],
+      rp: [HEAT.Rbox.plastic, 0], ra: [HEAT.Rbox.al, 0], die: [SPEC.die.tlcWriteMBps, 0], bus: [st.bus, 0]
+    };
+  }
+
   /* ── formatting: language-aware ── */
   function fmt(x, d, lang) {
     if (x == null || !isFinite(x)) return '—';
@@ -350,5 +363,5 @@
     }
   };
 
-  return { SPEC, USB2, MODES, LABELS, LINE, Q, WRAP, XLATE, CHAIN, HEAT, STICK, FRONTIER, fmt, tunit, say, clamp, prose };
+  return { SPEC, USB2, MODES, LABELS, LINE, Q, WRAP, XLATE, CHAIN, HEAT, STICK, FRONTIER, fmt, tunit, say, clamp, prose, dgVals };
 });

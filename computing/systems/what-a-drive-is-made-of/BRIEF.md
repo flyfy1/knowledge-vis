@@ -204,3 +204,13 @@ registered with zh and en.
 
 - ch1.p3 links its existing words "分区表" / "partition table" to how-a-computer-boots #ch7 (GPT, protective MBR), zh and en;
   tests/models.cjs checks the link and its anchor. No alias changed. Scripts move to `?v=20261115d`.
+
+- Diagram review (2026-11-16, Claude Code (claude-opus-5-5), independent reviewer; did not build the diagrams): every
+  drawn number and label checked against the standards/sources and models.js; screenshots of every diagram at
+  1280/390/320 in zh and en; models, browser, canvas --sweep and site-nav tests run. Tests: the outside-viewport check
+  in `tests/browser.cjs` had been changed to skip everything inside `<svg>` (including the `<svg>` itself, so an SVG
+  wider than the viewport went unchecked); it now skips only `<defs>`. The clipped-text check no longer skips SVG (that
+  skip never fired). Full report: specs/reviews/storage-diagrams-s1-s3-review-20261116.md.
+  Fixed: Figure 7 (FTL) narrow layout, the before panel's note ran into the after heading (after panel moved down 12).
+  Diagram facts checked: 512e straddle at 63 vs 2048; BCH 8,192 + 14×40 = 8,752 bits, 93.6%; SMR rewrite 2→6; FTL 0.1→1.1.
+  Residual: the ECC caption says one bit over t loses the chunk (read-retry/soft decoding not mentioned), as the prose does.

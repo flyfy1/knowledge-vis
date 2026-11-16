@@ -189,7 +189,7 @@ const P = M.prose();
   for (const [k, v] of Object.entries(pinned)) check('prose ' + k, P[k] ? fz(P[k]) : 'missing', v);
   for (const k of Object.keys(P)) { n++; if (!(k in pinned)) { fails++; console.error('FAIL prose() value ' + k + ' not pinned'); } }
   const used = new Set();
-  for (const [k, v] of Object.entries(Z)) if (!/\.say\.|^ch\d+\.(hex|read|cv|ctl|unit)|^u\.|^ch8\.garbage$/.test(k)) for (const m of v.matchAll(/\{(\w+)\}/g)) {
+  for (const [k, v] of Object.entries(Z)) if (!/\.say\.|^ch\d+\.(hex|read|cv|ctl|unit)|^u\.|^ch8\.garbage$|^dg\.\w+\.(?!cap$|aria$)/.test(k)) for (const m of v.matchAll(/\{(\w+)\}/g)) {
     used.add(m[1]); n++; if (!(m[1] in P)) { fails++; console.error(`FAIL prose placeholder {${m[1]}} in ${k} is not in prose()`); }
   }
   for (const k of Object.keys(P)) { n++; if (!used.has(k)) { fails++; console.error('FAIL prose() value ' + k + ' is never quoted'); } }
@@ -281,5 +281,58 @@ const P = M.prose();
   else { check('registry title en', R.title.en, EN['doc.title'].split(' · ')[0]); check('registry desc en', R.desc.en, EN['doc.desc']); }
 }
 
+/* ── static diagrams (STANDARD §4a): numbers drawn or quoted in a caption come from the models; every label key the
+   drawing code asks for exists in both languages ── */
+{
+  const E = vm.runInNewContext(fs.readFileSync(path.join(DIR, 'copy.en.js'), 'utf8') + ';window.ESSAY_COPY', { window: {} }).en;
+  const sayZ = (k, ph) => { n++; if (!Z[k] || !Z[k].includes(ph)) { fails++; console.error(`FAIL zh ${k} should contain "${ph}"`); } };
+  const sayE = (k, ph) => { n++; if (!E[k] || !E[k].includes(ph)) { fails++; console.error(`FAIL en ${k} should contain "${ph}"`); } };
+  const dk = new Set([...app.matchAll(/'(dg\.[\w.]*\w)'/g)].map(m => m[1]));
+  for (const m of html.matchAll(/data-dg="(\w+)"/g)) for (const s of ['aria', 'cap']) dk.add('dg.' + m[1] + '.' + s);
+  // keys the drawing code builds by concatenation ('dg.stack.' + k and so on)
+  for (const [d, ks] of Object.entries({ stack: ['cssp', 'cstp', 'csmp', 'ssp', 'stp', 'smp', 'link', 'port', 'phy'], cdb: ['op', 'lba', 'len', 'other'],
+    conn: ['ini', 'exp', 'tgt', 'open', 'acc', 'cmd', 'close', 'open2', 'acc2', 'data', 'resp'], dual: ['ca', 'cb', 'ea', 'eb', 'sas', 'sata'],
+    plug: ['sata', 'sas', 'ok', 'no'], pi: ['guard', 'app', 'ref', 'guardd', 'appd', 'refd'] })) for (const k of ks) dk.add(`dg.${d}.${k}`);
+  for (const k of [...dk]) if (/^dg\.\w+$/.test(k)) dk.delete(k);
+  for (const k of ['dg.stack.l', 'dg.stack.c']) dk.delete(k);   // prefixes of 'dg.stack.l' + k, 'dg.stack.c' + k
+  for (const k of dk) { n++; if (Z[k] == null || E[k] == null) { fails++; console.error('FAIL diagram key missing in zh or en: ' + k); } }
+  for (const k of Object.keys(Z)) if (/^dg\./.test(k)) check('diagram key used: ' + k, dk.has(k), true);
+  check('ten diagrams', [...html.matchAll(/<figure class="dia" data-dg="(\w+)">/g)].map(m => m[1]).join(), 'stack,cdb,ssp,conn,dual,exp,wide,plug,pi,spl');
+  // Figure 2: the three CDBs, byte by byte from CDB.build
+  check('dg.cdb sizes and opcodes', ['r6', 'r10', 'r16'].map(o => SPEC.cdb[o].len + ':' + SPEC.cdb[o].op.toString(16)).join(), '6:8,10:28,16:88');
+  check('dg.cdb address/length bits', ['r6', 'r10', 'r16'].map(o => SPEC.cdb[o].lbaBits + '/' + SPEC.cdb[o].lenBits).join(), '21/8,32/16,64/32');
+  check('dg.cdb field bytes', ['r6', 'r10', 'r16'].map(o => { const b = CDB.build(o, 0, 1); return b.lbaField.join('-') + ',' + b.lenField.join('-'); }).join(' '), '1-3,4-4 2-5,7-8 2-9,10-13');
+  for (const ph of ['READ(6) 共 6 字节，操作码 08h，地址 21 位，长度 8 位', 'READ(10) 共 10 字节，操作码 28h，地址 32 位，长度 16 位', 'READ(16) 共 16 字节，操作码 88h，地址 64 位，长度 32 位']) sayZ('dg.cdb.aria', ph);
+  sayZ('dg.cdb.cap', '21 位、32 位、64 位');
+  // Figure 3: the SSP frame, bytes to scale; Figure 4: 4 KiB is four DATA frames
+  check('dg.ssp frame bytes', [SPEC.ssp.hdr, SPEC.ssp.dataMax, SPEC.ssp.crc, SPEC.ssp.hdr + SPEC.ssp.dataMax + SPEC.ssp.crc].join(), '24,1024,4,1052');
+  check('dg.ssp command/response IU', [SPEC.ssp.cmdIU, SPEC.ssp.respIU].join(), '28,24');
+  check('dg.conn data frames for 4 KiB', SSP.frames(4096).nData, 4);
+  for (const ph of ['1,052 字节', '24 字节帧头', '1,024 字节', '4 字节 CRC']) sayZ('dg.ssp.aria', ph);
+  sayZ('dg.ssp.cap', '切成 4 帧'); sayE('dg.ssp.cap', 'cut into 4 frames'); sayZ('dg.conn.aria', '4 个数据帧'); sayZ('dg.conn.cap', '4 KiB');
+  // Figure 7: a ×4 wide port, as in ch6
+  check('dg.wide lanes drawn', /H = wide \? \d+ : \d+, lanes = 4;/.test(app), true); sayZ('ch6.p1', '4 条通道'); sayZ('dg.wide.port', '4 条通道'); sayE('dg.wide.port', '4 lanes');
+  // Figure 9: the 520-byte block and its 8-byte tuple
+  check('dg.pi block', [SPEC.pi.sectors512[1], SPEC.pi.sectors512[1] - SPEC.pi.bytes, SPEC.pi.bytes].join(), '520,512,8');
+  check('dg.pi polynomial', SPEC.pi.poly.toString(16).toUpperCase(), '8BB7');
+  check('dg.pi tuple 2+2+4', /\['guard', 2, [^\]]+\], \['app', 2, [^\]]+\], \['ref', 4, /.test(app), true);
+  for (const ph of ['520 字节', '512 字节', '8 字节', '2 字节守卫标签', '2 字节应用标签', '4 字节参考标签']) sayZ('dg.pi.aria', ph);
+  sayZ('dg.pi.cap', '低 32 位'); sayE('dg.pi.cap', 'low 32 bits');
+  // Figure 10: the 24G packet, bits to scale
+  const F = SPEC.fec, G = SPEC.gens[3];
+  check('dg.spl packet bits', [G.num, G.den, F.k * F.symBits - G.num, (F.n - F.k) * F.symBits].join(), '128,150,2,20');
+  check('dg.spl RS code', [F.n, F.k, F.symBits, F.t].join(), '30,26,5,2'); check('dg.spl t = (n-k)/2', F.t, (F.n - F.k) / 2);
+  check('dg.spl efficiency and data rate', (G.num / G.den * 100).toFixed(1) + ' ' + (G.gbaud * G.num / G.den).toFixed(1), '85.3 19.2');
+  check('dg.spl label literals match the model', Z['dg.spl.eff'].includes(`${G.num}/${G.den}`) && Z['dg.spl.eff'].includes(String(G.gbaud)) && E['dg.spl.eff'].includes(`${G.num}/${G.den}`) && E['dg.spl.eff'].includes(String(G.gbaud)), true);
+  // a 7-bit burst from the last bit of a symbol touches three 5-bit symbols
+  { const b0 = 9 * F.symBits + F.symBits - 1, b1 = b0 + 6; check('dg.spl burst symbols', Math.floor(b1 / F.symBits) - Math.floor(b0 / F.symBits) + 1, 3); check('dg.spl burst beats t', 3 > F.t, true); }
+  for (const ph of ['150 位', '2 位头', '128 位数据', '20 位 Reed-Solomon', '30 个 5 位', '3 个符号']) sayZ('dg.spl.aria', ph);
+  for (const ph of ['130 位', '26 个 5 位', 'RS(30,26)', '4 个校验符号', '2 个错的符号']) sayZ('dg.spl.cap', ph);
+  // schematic captions say so
+  for (const d of ['stack', 'conn', 'dual', 'exp', 'wide', 'plug']) { sayZ(`dg.${d}.cap`, '示意'); sayE(`dg.${d}.cap`, 'schematic'); }
+  for (const d of ['ssp', 'pi', 'spl']) { sayZ(`dg.${d}.cap`, '比例'); sayE(`dg.${d}.cap`, 'proportion'); }
+  sayZ('dg.plug.cap', 'SFF-8482'); sayE('dg.plug.cap', 'SFF-8482');
+}
+
 if (fails) { console.error(`\n${fails} of ${n} checks failed`); process.exit(1); }
-console.log(`PASS: ${n} checks (CDB layouts, SSP and iSCSI envelopes, CRC-16 T10-DIF, Erlang C, RS(30,26) bound, and every number in the prose match the models)`);
+console.log(`PASS: ${n} checks (CDB layouts, SSP and iSCSI envelopes, CRC-16 T10-DIF, Erlang C, RS(30,26) bound, every number in the prose and the ten static diagrams match the models)`);

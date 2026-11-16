@@ -2,14 +2,17 @@
 // Browser smoke test for the USB storage essay.
 // Usage: ESSAY_BASE_URL=http://127.0.0.1:18906 NODE_PATH=~/fast/integ-life/integ-games/node_modules \
 //   node computing/systems/how-usb-drives-talk/tests/browser.cjs
-// Optional SHOT_DIR=/tmp/... writes full-page screenshots at each width (never into the repo).
+// Optional SHOT_DIR=/tmp/... writes full-page screenshots and one screenshot per diagram at each width and language
+// (never into the repo).
 // Checks at 1280/390/320: no console/page errors, no horizontal overflow, no text clipped inside its box, every
 // control at least 48×48 px, toggle reads 中 | EN, no raw copy keys, every readout and live sentence filled. Then the
 // language toggle (English is a stub: the page must fall back to Chinese and say so in <html lang>), keyboard
 // operation of a slider, each of the nine models responding to its controls with the numbers the models give, and
 // reduced motion (no smooth scroll; the ch7 heat trace does not animate and its play button is disabled). When
 // copy.en.js is translated (enStub removed), the same width sweep also runs in English and checks that no Chinese
-// is left, including canvas text.
+// is left, including canvas and SVG text. The static diagrams (STANDARD §4a, added 2026-11-16): nine <svg role=img>
+// with an aria-label from the copy, every label non-empty, inside the drawing, not overlapping another label, and
+// rendered at 11 px or more, in the wide layout at 1280 and the narrow one at 390 and 320, in both languages.
 const { chromium } = require('playwright');
 const path = require('path');
 const M = require(path.join(__dirname, '..', 'models.js'));
@@ -41,6 +44,39 @@ const setRange = (page, id, v) => page.evaluate(([id, v]) => { const e = documen
 const show = async (page, sel, ms = 0) => { await page.$eval(sel, e => e.scrollIntoView({ block: 'center' })); if (ms) await page.waitForTimeout(ms); };
 // click the input itself (it is visually hidden inside its label; a coordinate click can land on the sticky header)
 const pick = (page, name, value) => page.$eval(`input[name=${name}][value="${value}"]`, e => e.click());
+// every static diagram: role, aria, caption, labels non-empty, inside the viewBox, boxed labels inside their box, no two labels overlapping, ≥ 11 px rendered
+function diagramCheck() {
+  const out = [];
+  for (const fig of document.querySelectorAll('figure.dia')) {
+    const name = fig.dataset.dg, svg = fig.querySelector('svg');
+    if (!svg) { out.push(name + ': no svg'); continue; }
+    if (svg.getAttribute('role') !== 'img') out.push(name + ': role');
+    const al = svg.getAttribute('aria-label') || '';
+    if (al.length < 8 || /^dg\./.test(al)) out.push(name + ': aria-label "' + al + '"');
+    const cap = fig.querySelector('figcaption'); if (!cap || cap.textContent.trim().length < 8) out.push(name + ': caption');
+    const vb = svg.viewBox.baseVal, k = svg.getBoundingClientRect().width / vb.width;
+    const boxes = [];
+    for (const t of svg.querySelectorAll('text')) {
+      const s = t.textContent.trim();
+      if (!s || /^dg\./.test(s) || /\{\w+\}/.test(s)) { out.push(name + ': label "' + s + '"'); continue; }
+      const b = t.getBBox(), fs = parseFloat(t.getAttribute('font-size')) * k;
+      if (fs < 11) out.push(`${name}: "${s.slice(0, 12)}" renders at ${fs.toFixed(1)}px`);
+      if (b.x < -0.5 || b.y < -0.5 || b.x + b.width > vb.width + 0.5 || b.y + b.height > vb.height + 0.5) out.push(`${name}: "${s.slice(0, 14)}" outside the drawing`);
+      if (t.dataset.in) {   // a label centred in a box (lbox) stays inside that box, 2 units clear of its border
+        const [x, y, w, h] = t.dataset.in.split(',').map(Number);
+        if (b.x < x + 2 || b.y < y + 2 || b.x + b.width > x + w - 2 || b.y + b.height > y + h - 2) out.push(`${name}: "${s.slice(0, 14)}" spills out of its box`);
+      }
+      boxes.push([s, b]);
+    }
+    for (let i = 0; i < boxes.length; i++) for (let j = i + 1; j < boxes.length; j++) {
+      const [s1, a] = boxes[i], [s2, b] = boxes[j], pad = 1;
+      const ix = Math.min(a.x + a.width, b.x + b.width) - Math.max(a.x, b.x), iy = Math.min(a.y + a.height, b.y + b.height) - Math.max(a.y, b.y);
+      if (ix > pad && iy > pad) out.push(`${name}: "${s1.slice(0, 12)}" overlaps "${s2.slice(0, 12)}"`);
+    }
+  }
+  return out;
+}
+const DIAGRAMS = ['stack', 'mframe', 'pkt', 'bot', 'uas', 'chain', 'heat', 'tunnel', 'stick'];
 const canvasHash = (page, id) => page.$eval('#' + id, c => { const d = c.toDataURL(); let h = 0; for (let i = 0; i < d.length; i += 7) h = (h * 31 + d.charCodeAt(i)) | 0; return h; });
 
 (async () => {
@@ -56,6 +92,12 @@ const canvasHash = (page, id) => page.$eval('#' + id, c => { const d = c.toDataU
     ok(await page.evaluate(() => document.documentElement.lang) === (lang === 'zh' ? 'zh-CN' : 'en'), `${tag}: html lang`);
     ok(JSON.stringify(await page.$$eval('#langToggle button', bs => bs.map(b => b.textContent.trim()))) === '["中","EN"]', `${tag}: toggle should read 中 | EN`);
     for (const fig of await page.$$('figure')) { await fig.evaluate(e => e.scrollIntoView({ block: 'center' })); await page.waitForTimeout(250); }
+    const dg = await page.evaluate(diagramCheck);
+    ok(!dg.length, `${tag}: diagrams: ${dg.slice(0, 8).join(' | ')}`);
+    ok(JSON.stringify(await page.$$eval('figure.dia', fs => fs.map(f => f.dataset.dg))) === JSON.stringify(DIAGRAMS), `${tag}: the nine diagrams in chapter order`);
+    ok(await page.$$eval('figure.dia svg', s => s.length) === DIAGRAMS.length, `${tag}: every diagram drawn`);
+    const layouts = await page.$$eval('figure.dia svg', s => s.map(e => e.getAttribute('class')).join(''));
+    ok(width >= 1280 ? /^w+$/.test(layouts) : /^n+$/.test(layouts), `${tag}: diagram layouts ${layouts}`);
     const clipped = await page.evaluate(() => [...document.querySelectorAll('figure *, .toc a, #langToggle button, table.fam td')].filter(e => {
       if (e.closest('pre.hex')) return false;                // the hex dump scrolls inside its own box
       if (!e.childNodes.length || ![...e.childNodes].some(n => n.nodeType === 3 && n.textContent.trim())) return false;
@@ -75,6 +117,7 @@ const canvasHash = (page, id) => page.$eval('#' + id, c => { const d = c.toDataU
     });
     ok(!small.length, `${tag}: targets under 48px: ${small.join(', ')}`);
     const wide = await page.evaluate(() => [...document.querySelectorAll('main *')].filter(e => {
+      if (e.closest('defs')) return false;                   // marker shapes are not laid out; the <svg> and what it draws are checked
       if (e.closest('pre.hex')) return false;
       const r = e.getBoundingClientRect(); return r.width && (r.right > innerWidth + 1 || r.left < -1); }).slice(0, 5).map(e => e.tagName + '#' + e.id + '.' + e.className));
     ok(!wide.length, `${tag}: elements outside the viewport: ${wide.join(', ')}`);
@@ -104,7 +147,14 @@ const canvasHash = (page, id) => page.$eval('#' + id, c => { const d = c.toDataU
       ok(!leftovers.length, `${tag}: Chinese left in English mode: ${leftovers.join(' | ')}`);
     }
     ok(!page.__errors().length, `${tag}: errors: ${page.__errors().join(' | ')}`);
-    if (SHOT) await page.screenshot({ path: `${SHOT}/full-${lang}-${width}.png`, fullPage: true });
+    if (SHOT) {
+      await page.screenshot({ path: `${SHOT}/full-${lang}-${width}.png`, fullPage: true });
+      for (const fig of await page.$$('figure.dia')) {
+        const id = await fig.evaluate(e => e.dataset.dg);
+        await fig.evaluate(e => e.scrollIntoView({ block: 'center' })); await page.waitForTimeout(150);
+        await fig.screenshot({ path: `${SHOT}/${lang}-${width}-dg-${id}.png` });
+      }
+    }
     await page.close();
   }
 
@@ -116,6 +166,7 @@ const canvasHash = (page, id) => page.$eval('#' + id, c => { const d = c.toDataU
     ok(await page.evaluate(() => localStorage.getItem('knowledge-lang')) === 'en', 'EN stored');
     ok(await page.evaluate(() => document.documentElement.lang) === (stub ? 'zh-CN' : 'en'), 'lang follows the text actually shown');
     ok((await text(page, 'h1')).length > 0, 'title still filled after switching');
+    if (!stub) ok(await page.$$eval('figure.dia svg', s => s.every(e => !/[\u3000-\u9fff]/.test(e.getAttribute('aria-label') + e.textContent))), 'diagrams redrawn in English on the toggle');
     await page.click('#langToggle [data-lang=zh]');
     ok(await page.evaluate(() => document.documentElement.lang) === 'zh-CN', 'ZH toggle back');
     const P = M.prose();
@@ -215,6 +266,9 @@ const canvasHash = (page, id) => page.$eval('#' + id, c => { const d = c.toDataU
     const a = await canvasHash(page, 'htCv'); await page.waitForTimeout(700);
     ok(a === await canvasHash(page, 'htCv'), 'reduced motion: ch7 canvas is still');
     ok((await text(page, '#htV')).length > 0, 'reduced motion: ch7 readouts filled');
+    for (const fig of await page.$$('figure.dia')) { await fig.evaluate(e => e.scrollIntoView({ block: 'center' })); await page.waitForTimeout(60); }
+    const dgr = await page.evaluate(diagramCheck);
+    ok(!dgr.length, 'reduced motion: diagrams: ' + dgr.slice(0, 4).join(' | '));
     ok(!page.__errors().length, 'reduced: errors: ' + page.__errors().join(' | '));
     if (SHOT) await page.screenshot({ path: `${SHOT}/reduced-390.png`, fullPage: true });
     await page.close();
@@ -222,5 +276,5 @@ const canvasHash = (page, id) => page.$eval('#' + id, c => { const d = c.toDataU
 
   await browser.close();
   if (fails.length) { console.error(fails.map(f => 'FAIL ' + f).join('\n')); process.exit(1); }
-  console.log(`PASS: browser smoke test (${langs.join('+')} at 1280/390/320: overflow, clipped text, 48px targets, raw keys, placeholders, readouts, live sentences; toggle with stub fallback, keyboard, all nine models driven, reduced motion)`);
+  console.log(`PASS: browser smoke test (${langs.join('+')} at 1280/390/320: overflow, clipped text, 48px targets, raw keys, placeholders, readouts, live sentences, nine diagrams (role, aria, caption, labels inside, no overlap, ≥ 11 px, wide/narrow layout); toggle with stub fallback, keyboard, all nine models driven, reduced motion)`);
 })().catch(e => { console.error(e); process.exit(1); });

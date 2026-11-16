@@ -296,5 +296,45 @@ const zf = (x, d) => M.fmt(x, d, 'zh');
   else { check('registry title en', R.title.en, EN['doc.title'].split(' · ')[0]); check('registry desc en', R.desc.en, EN['doc.desc']); }
 }
 
+/* ── static diagrams (STANDARD §4a, added 2026-11-16): every number drawn comes from dgVals() and is pinned here;
+   the literal numbers in captions and aria labels are checked against the models; every key exists ── */
+{
+  const D = M.dgVals(), wantDg = { mf: '7500', us: '125', n: '13', pay: '512', oh: '55', left: '129', hdr: '20', dpps: '4', max: '1024', crc: '4', dppe: '4',
+    e1a: '8', e1b: '10', e2a: '128', e2b: '132', cbw: '31', csw: '13', cdb: '16', streams: '65533', drive: '7250', bridge: '1674', usb: '2200', x: '1674',
+    rp: '14', ra: '6', die: '194', bus: '335' };
+  for (const [k, [v, d]] of Object.entries(D)) check('diagram number ' + k, f(v, d), wantDg[k]);
+  check('every diagram number pinned', Object.keys(D).sort().join(','), Object.keys(wantDg).sort().join(','));
+  // the drawn numbers are the model's own: Table 5-10 at 512 bytes, the chain's narrowest link, the BOT wrappers, a 128 KiB Bulk-Only bus
+  check('mframe: n × (512 + 55) + left = 7,500', D.n[0] * (D.pay[0] + D.oh[0]) + D.left[0], D.mf[0]);
+  check('pkt: overhead of a full packet = 32 bytes', D.hdr[0] + D.dpps[0] + D.crc[0] + D.dppe[0], 32); says('dg.pkt.cap', '32 字节开销'); says('dg.pkt.cap', zf(D.max[0], 0) + ' 字节数据');
+  check('chain: the narrowest link is the bridge and sets the copy', CHAIN.usb({ box: 'g2x2', host: 'g2x2', bridge: 'p3x2' }).neck + ' ' + f(D.x[0], 0), 'bridge ' + f(D.bridge[0], 0));
+  check('chain: the same box as the prose c20x2', f(D.x[0], 0), f(M.prose().c20x2[0], 0));
+  check('stick: the bus is the ch9 5 Gb/s Bulk-Only figure', f(D.bus[0], 0), f(M.prose().stBus[0], 0)); says('dg.stick.bus', zf(STICK.S / 1024, 0) + ' KiB');
+  check('stack: protocol codes 50h / 62h', SPEC.msco.bbb.toString(16) + ' ' + SPEC.msco.uas.toString(16), '50 62');
+  says('dg.mframe.cap', zf(D.pay[0], 0) + ' 字节数据'); says('dg.mframe.cap', zf(D.oh[0], 0) + ' 字节开销');
+  says('dg.mframe.aria', zf(D.us[0], 0) + ' 微秒'); says('dg.mframe.aria', zf(D.n[0], 0) + ' 笔'); says('dg.mframe.aria', zf(D.pay[0], 0) + ' 字节数据加 ' + zf(D.oh[0], 0) + ' 字节开销'); says('dg.mframe.aria', '剩 ' + zf(D.left[0], 0) + ' 字节');
+  says('dg.pkt.aria', zf(D.hdr[0], 0) + ' 字节的头包'); says('dg.pkt.aria', zf(D.dpps[0], 0) + ' 字节起始符'); says('dg.pkt.aria', zf(D.max[0], 0) + ' 字节数据'); says('dg.pkt.aria', zf(D.crc[0], 0) + ' 字节 CRC-32'); says('dg.pkt.aria', zf(D.dppe[0], 0) + ' 字节结束符');
+  says('dg.pkt.aria', '每 10 位里 8 位'); says('dg.pkt.aria', '每 132 位里 128 位');
+  says('dg.bot.aria', zf(D.cbw[0], 0) + ' 字节的 CBW'); says('dg.bot.aria', zf(D.csw[0], 0) + ' 字节的 CSW');
+  says('dg.chain.aria', 'NVMe 盘 ' + zf(D.drive[0], 0) + ' MB/s'); says('dg.chain.aria', '约 ' + zf(D.bridge[0], 0) + ' MB/s'); says('dg.chain.aria', '约 ' + zf(D.usb[0], 0) + ' MB/s');
+  says('dg.stick.aria', '写 ' + zf(D.die[0], 0) + ' MB/s');
+  // every key the diagrams draw exists; every dg.* key is drawn
+  const used = new Set([...app.matchAll(/'(dg\.\w+\.\w+)'/g)].map(m => m[1]));
+  for (const c of ['a', 'b']) for (const x of ['t', '1', '2', 'l', '3', 'n']) used.add('dg.tunnel.' + c + x);
+  for (const x of ['cmd', 'st', 'din', 'dout']) used.add('dg.uas.' + x);
+  const figs = [...html.matchAll(/<figure class="dia" data-dg="(\w+)"><div class="svg"><\/div><figcaption data-i18n-html="dg\.(\w+)\.cap"><\/figcaption><\/figure>/g)];
+  check('nine diagrams in the memory-essay figure shape', figs.map(m => m[1]).join(','), 'stack,mframe,pkt,bot,uas,chain,heat,tunnel,stick');
+  for (const m of figs) { check('caption key matches ' + m[1], m[2], m[1]); used.add('dg.' + m[1] + '.aria'); used.add('dg.' + m[1] + '.cap'); check('DG spec for ' + m[1], app.includes('DG.' + m[1] + ' = '), true); }
+  for (const k of used) { n++; if (Z[k] == null) { fails++; console.error('FAIL missing diagram key ' + k); } }
+  for (const k of Object.keys(Z).filter(k => /^dg\./.test(k))) { n++; if (!used.has(k)) { fails++; console.error('FAIL diagram key never drawn: ' + k); } }
+  // label placeholders are diagram numbers (or the two protocol codes); caption placeholders are prose values (checked above)
+  for (const k of Object.keys(Z).filter(k => /^dg\./.test(k) && !/\.cap$/.test(k))) for (const m of Z[k].matchAll(/\{(\w+)\}/g)) {
+    n++; if (!(m[1] in D) && !['bot', 'uas', 'n'].includes(m[1])) { fails++; console.error(`FAIL {${m[1]}} in ${k} is not a diagram number`); }
+  }
+  const ectx2 = { window: {} }; vm.runInNewContext(fs.readFileSync(path.join(DIR, 'copy.en.js'), 'utf8'), ectx2);
+  const EN2 = ectx2.window.ESSAY_COPY.en, digits = s => (s.replace(/\{\w+\}/g, '').replace(/<[^>]+>/g, '').match(/\d+(?:[.,]\d+)*/g) || []).map(x => x.replace(/,/g, '')).sort().join(' ');
+  for (const k of Object.keys(Z).filter(k => /^dg\./.test(k))) check('diagram numbers zh = en in ' + k, digits(EN2[k] || ''), digits(Z[k]));
+}
+
 if (fails) { console.error(`\n${fails} of ${n} checks failed`); process.exit(1); }
 console.log(`PASS: ${n} checks (USB 2.0 Table 5-10, USB 3.2 Table 7-14, BOT wrappers, closed forms, and every number in the prose match the models)`);

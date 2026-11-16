@@ -45,6 +45,36 @@ const pick = async (page, name, value) => {
   await page.waitForFunction(s => document.querySelector(s).checked, sel, { timeout: 5000 });
 };
 
+// every static diagram (STANDARD §4a): role, aria, caption, labels non-empty, inside the viewBox, no two labels
+// overlapping, ≥ 11 px rendered (copied from how-memory-talks/tests/browser.cjs)
+function diagramCheck() {
+  const out = [];
+  for (const fig of document.querySelectorAll('figure.dia')) {
+    const name = fig.dataset.dg, svg = fig.querySelector('svg');
+    if (!svg) { out.push(name + ': no svg'); continue; }
+    if (svg.getAttribute('role') !== 'img') out.push(name + ': role');
+    const al = svg.getAttribute('aria-label') || '';
+    if (al.length < 8 || /^dg\./.test(al)) out.push(name + ': aria-label "' + al + '"');
+    const cap = fig.querySelector('figcaption'); if (!cap || cap.textContent.trim().length < 8) out.push(name + ': caption');
+    const vb = svg.viewBox.baseVal, k = svg.getBoundingClientRect().width / vb.width;
+    const boxes = [];
+    for (const t of svg.querySelectorAll('text')) {
+      const s = t.textContent.trim();
+      if (!s || /^(dg|ch\d+)\./.test(s) || /\{\w+\}/.test(s)) { out.push(name + ': label "' + s + '"'); continue; }
+      const b = t.getBBox(), fs = parseFloat(t.getAttribute('font-size')) * k;
+      if (fs < 11) out.push(`${name}: "${s.slice(0, 12)}" renders at ${fs.toFixed(1)}px`);
+      if (b.x < -0.5 || b.y < -0.5 || b.x + b.width > vb.width + 0.5 || b.y + b.height > vb.height + 0.5) out.push(`${name}: "${s.slice(0, 14)}" outside the drawing`);
+      boxes.push([s, b]);
+    }
+    for (let i = 0; i < boxes.length; i++) for (let j = i + 1; j < boxes.length; j++) {
+      const [s1, a] = boxes[i], [s2, b] = boxes[j], pad = 1;
+      const ix = Math.min(a.x + a.width, b.x + b.width) - Math.max(a.x, b.x), iy = Math.min(a.y + a.height, b.y + b.height) - Math.max(a.y, b.y);
+      if (ix > pad && iy > pad) out.push(`${name}: "${s1.slice(0, 12)}" overlaps "${s2.slice(0, 12)}"`);
+    }
+  }
+  return out;
+}
+
 (async () => {
   const browser = await chromium.launch();
   const CJK = /[　-〿㐀-鿿＀-￯]/;
@@ -58,6 +88,16 @@ const pick = async (page, name, value) => {
     for (const fig of await page.$$('figure')) {
       await fig.evaluate(e => e.scrollIntoView({ block: 'center' })); await page.waitForTimeout(250);
       if (SHOT) { const id = await fig.evaluate(e => e.closest('section').id + '-' + [...e.closest('section').querySelectorAll('figure')].indexOf(e)); await fig.screenshot({ path: `${SHOT}/fig-${id}-${lang}-${width}.png` }); }
+    }
+    const dg = await page.evaluate(diagramCheck);
+    ok(!dg.length, `${tag}: diagrams: ${dg.slice(0, 8).join(' | ')}`);
+    ok(await page.$$eval('figure.dia svg', s => s.length) >= 6, `${tag}: at least six diagrams`);
+    const layouts = await page.$$eval('figure.dia svg', s => s.map(e => e.getAttribute('class')).join(''));
+    ok(width >= 1280 ? /^w+$/.test(layouts) : /^n+$/.test(layouts), `${tag}: diagram layouts ${layouts}`);
+    if (SHOT) for (const fig of await page.$$('figure.dia')) {
+      const id = await fig.evaluate(e => e.dataset.dg);
+      await fig.evaluate(e => e.scrollIntoView({ block: 'center', behavior: 'instant' })); await page.waitForTimeout(120);
+      await fig.screenshot({ path: `${SHOT}/${lang}-${width}-dg-${id}.png` });
     }
     const clipped = await page.evaluate(() => [...document.querySelectorAll('figure *, .toc a, #langToggle button, table.lay td')].filter(e => {
       if (!e.childNodes.length || ![...e.childNodes].some(n => n.nodeType === 3 && n.textContent.trim())) return false;
@@ -76,7 +116,7 @@ const pick = async (page, name, value) => {
       return out;
     });
     ok(!small.length, `${tag}: targets under 48px: ${small.slice(0, 6).join(', ')}`);
-    const wide = await page.evaluate(() => [...document.querySelectorAll('main *')].filter(e => { const r = e.getBoundingClientRect(); return r.width && (r.right > innerWidth + 1 || r.left < -1); }).slice(0, 5).map(e => e.tagName + '#' + e.id + '.' + e.className));
+    const wide = await page.evaluate(() => [...document.querySelectorAll('main *')].filter(e => { if (e.closest('defs')) return false; const r = e.getBoundingClientRect(); return r.width && (r.right > innerWidth + 1 || r.left < -1); }).slice(0, 5).map(e => e.tagName + '#' + e.id + '.' + e.className));
     ok(!wide.length, `${tag}: elements outside the viewport: ${wide.join(', ')}`);
     const raw = await page.evaluate(() => [...document.querySelectorAll('[data-i18n],[data-i18n-html]')].filter(e => /^\w+(\.\w+)+$/.test(e.textContent.trim())).map(e => e.textContent.trim()).slice(0, 5));
     ok(!raw.length, `${tag}: raw keys shown: ${raw.join(', ')}`);
@@ -196,6 +236,7 @@ const pick = async (page, name, value) => {
     ok(await page.evaluate(() => getComputedStyle(document.documentElement).scrollBehavior) === 'auto', 'reduced motion: no smooth scroll');
     await show(page, '#skCv', 300);
     ok(await page.$eval('#skCv', c => c.width > 1), 'reduced motion: ch2 drawn');
+    { const dg = await page.evaluate(diagramCheck); ok(!dg.length, 'reduced motion: diagrams: ' + dg.slice(0, 4).join(' | ')); }
     ok(!page.__errors().length, 'reduced: errors: ' + page.__errors().join(' | '));
     if (SHOT) await page.screenshot({ path: `${SHOT}/reduced-390.png`, fullPage: true });
     await page.close();
@@ -203,5 +244,5 @@ const pick = async (page, name, value) => {
 
   await browser.close();
   if (fails.length) { console.error(fails.map(f => 'FAIL ' + f).join('\n')); process.exit(1); }
-  console.log('PASS: browser smoke test (zh and en at 1280/390/320: overflow, clipped text, 48px targets, raw keys, readouts, live sentences, English CJK sweep when translated; toggle, keyboard, all eight figures driven in zh, reduced motion)');
+  console.log('PASS: browser smoke test (zh and en at 1280/390/320: overflow, clipped text, 48px targets, raw keys, readouts, live sentences, English CJK sweep when translated; toggle, keyboard, all eight figures driven in zh, eight static diagrams (role, aria, labels inside, no overlap, ≥ 11 px), reduced motion)');
 })().catch(e => { console.error(e); process.exit(1); });

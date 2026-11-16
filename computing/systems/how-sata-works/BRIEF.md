@@ -211,3 +211,14 @@ Not verified:
 - Registrar (2026-11-15, bus series B1/B2/B6): ch2.limit gains one sentence linking how-a-computer-is-wired #ch2 (loading
   and reflections on the parallel PCI bus, the other enemy besides skew), zh and en; `tests/models.cjs` checks it and that
   zh and en carry the same bus-series links. B2 #ch2 links back to this chapter. Scripts load with `?v=20261115c`.
+
+- Diagram review (2026-11-16, Claude Code (claude-opus-5-5), independent reviewer; did not build the diagrams): every
+  drawn number and label checked against the standards/sources and models.js; screenshots of every diagram at
+  1280/390/320 in zh and en; models, browser, canvas --sweep and site-nav tests run. Tests: the outside-viewport check
+  in `tests/browser.cjs` had been changed to skip everything inside `<svg>` (including the `<svg>` itself, so an SVG
+  wider than the viewport went unchecked); it now skips only `<defs>`. The clipped-text check no longer skips SVG (that
+  skip never fired). Full report: specs/reviews/storage-diagrams-s1-s3-review-20261116.md.
+  Fixed: Figure 7 (power states) narrow layout, the Awake description ran onto the axis arrow.
+  Diagram facts checked: pinout G A+ A− G B− B+ G with pair A host-transmit; D0.0 100111 0100 / 011000 1011; K28.5 RD−
+  0011111010 comma; H2D Dword 0 = 27h 80h 60h 08h, tag in Count(7:3); FIS types/lengths 27h 5, 34h 5, 41h 7, 46h 1+1,024,
+  A1h 2; exits 10 µs / 10 ms / 20 ms, MDAT 10 ms; 15 PM ports; NCQ 400° vs 260°. Only K28.5 RD− is drawn (labelled as such).

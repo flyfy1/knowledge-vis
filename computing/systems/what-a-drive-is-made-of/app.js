@@ -37,6 +37,7 @@ function applyLang() {
   document.querySelectorAll('[data-i18n-html]').forEach(e => { e.innerHTML = t(e.dataset.i18nHtml); });
   document.querySelectorAll('[data-i18n-aria]').forEach(e => { e.setAttribute('aria-label', t(e.dataset.i18nAria)); });
   document.querySelectorAll('#langToggle button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.lang === lang)));
+  renderDiagrams(true);
   sims.forEach(s => { s.dirty = true; });
   texts.forEach(f => f());
 }
@@ -53,11 +54,317 @@ function fit(cv) {
 }
 const io = new IntersectionObserver(es => es.forEach(e => { for (const s of sims) if (s.cvs.includes(e.target)) { s.vis = s.cvs.some(cv => cv.__vis = (cv === e.target ? e.isIntersecting : cv.__vis)); s.dirty = true; } }), { rootMargin: '60px' });
 function reg(cvs, o) { o.cvs = [].concat(cvs); o.vis = false; o.dirty = true; sims.push(o); o.cvs.forEach(cv => io.observe(cv)); return o; }
-window.addEventListener('resize', () => sims.forEach(s => { s.dirty = true; }));
+window.addEventListener('resize', () => { sims.forEach(s => { s.dirty = true; }); renderDiagrams(false); });
 const radios = name => [...document.querySelectorAll(`input[name=${name}]`)];
 const radioVal = name => radios(name).find(r => r.checked).value;
 const put = (sel, s) => { const e = $(sel); if (e.textContent !== s) e.textContent = s; };
 const putHTML = (sel, s) => { const e = $(sel); if (e.__h !== s) { e.innerHTML = s; e.__h = s; } };
+
+/* ───────── static diagrams (STANDARD §4a): inline SVG built from small specs, labels from copy ─────────
+   Two layouts: 'w' (viewBox 720 wide, prose column ≥ 600 px) and 'n' (viewBox 340 wide). Text is 14 units, so it
+   renders at ≥ 11.7 px in either layout at its narrowest. A label with a width limit wraps onto more lines. */
+const NS = 'http://www.w3.org/2000/svg';
+const FS = 14, LH = 18;
+function S(tag, a, parent) { const e = document.createElementNS(NS, tag); for (const k in a) e.setAttribute(k, a[k]); if (parent) parent.appendChild(e); return e; }
+const tint = (col, a) => { const n = parseInt(col.slice(1), 16); return `rgba(${n >> 16},${(n >> 8) & 255},${n & 255},${a})`; };
+function mk(svg) {
+  const g = {
+    box(x, y, w, h, col, o) { o = o || {}; S('rect', { x, y, width: w, height: h, rx: o.rx == null ? 8 : o.rx, fill: o.solid ? col : tint(col, o.a == null ? 0.13 : o.a), stroke: o.nostroke ? 'none' : col, 'stroke-width': o.sw || 1.4, 'stroke-dasharray': o.dash || 'none' }, svg); },
+    line(x1, y1, x2, y2, col, o) { o = o || {}; S('line', { x1, y1, x2, y2, stroke: col || C.mute, 'stroke-width': o.sw || 1.6, 'stroke-dasharray': o.dash || 'none', 'marker-end': o.arrow ? `url(#ar-${(col || C.mute).slice(1)})` : 'none', 'marker-start': o.both ? `url(#ar-${(col || C.mute).slice(1)})` : 'none' }, svg); },
+    path(d, col, o) { o = o || {}; S('path', { d, fill: o.fill ? tint(o.fill, o.a == null ? 0.13 : o.a) : 'none', stroke: col || C.mute, 'stroke-width': o.sw || 1.6, 'stroke-dasharray': o.dash || 'none', 'marker-end': o.arrow ? `url(#ar-${(col || C.mute).slice(1)})` : 'none' }, svg); },
+    circle(cx, cy, r, col, o) { o = o || {}; S('circle', { cx, cy, r, fill: o.solid ? col : o.none ? 'none' : tint(col, o.a == null ? 0.14 : o.a), stroke: col, 'stroke-width': o.sw || 1.6, 'stroke-dasharray': o.dash || 'none' }, svg); },
+    // text: key (or {raw}), position, options: a = start|middle|end, c = colour class, w = wrap width, vars
+    text(x, y, key, o) {
+      o = o || {}; const s = typeof key === 'object' ? key.raw : t(key, o.vars);
+      const e = S('text', { x, y, 'font-size': o.fs || FS, 'text-anchor': o.a || 'start', 'dominant-baseline': 'central', class: (o.c || '') + (o.mono ? ' mono' : '') }, svg);
+      e.textContent = s; if (o.w) { e.dataset.w = o.w; e.dataset.va = o.va || 'top'; } if (o.weight) e.setAttribute('font-weight', o.weight);
+      return e;
+    },
+    swatch(x, y, col) { g.box(x, y - 6, 12, 12, col, { solid: true, rx: 3 }); },
+    // a numbered marker (narrow layouts list what each number is underneath)
+    num(x, y, n, col) { g.circle(x, y, 10, col || C.ink, { solid: true, sw: 1 }); g.text(x, y + 0.5, { raw: String(n) }, { a: 'middle', c: 'k', fs: 13.5, weight: 700 }); }
+  };
+  return g;
+}
+function arrowDefs(svg) {
+  const d = S('defs', {}, svg);
+  for (const col of [C.mute, C.gold, C.cyan, C.red, C.green, C.violet, C.ink]) {
+    const m = S('marker', { id: 'ar-' + col.slice(1), viewBox: '0 0 10 10', refX: 9, refY: 5, markerWidth: 7, markerHeight: 7, orient: 'auto-start-reverse' }, d);
+    S('path', { d: 'M0,0 L10,5 L0,10 z', fill: col }, m);
+  }
+}
+// wrap text that has a width limit: split at spaces (or between CJK characters) into tspans
+function wrapTexts(svg) {
+  for (const e of svg.querySelectorAll('text[data-w]')) {
+    const maxw = +e.dataset.w; if (e.getComputedTextLength() <= maxw) continue;
+    const s = e.textContent, x = e.getAttribute('x'), y0 = +e.getAttribute('y'), cjk = /[\u3000-\u9fff\uff00-\uffef]/.test(s);
+    const toks = cjk ? s.match(/[A-Za-z0-9.,%+×–\-/()\[\]:_]+|\s+|./g) : s.split(/(\s+)/);
+    e.textContent = ''; let lines = [], cur = '';
+    const probe = S('tspan', {}, e);
+    for (const tk of toks) { const nx = cur + tk; probe.textContent = nx; if (e.getComputedTextLength() > maxw && cur.trim()) { lines.push(cur.trim()); cur = tk.trim() ? tk : ''; } else cur = nx; }
+    if (cur.trim()) lines.push(cur.trim()); e.removeChild(probe);
+    const off = e.dataset.va === 'mid' ? -(lines.length - 1) * LH / 2 : 0;
+    lines.forEach((l, i) => { const ts = S('tspan', { x, y: y0 + off + i * LH }, e); ts.textContent = l; });
+  }
+}
+const DG = {};
+const pt = (cx, cy, r, deg) => [cx + r * Math.cos(deg * Math.PI / 180), cy - r * Math.sin(deg * Math.PI / 180)];
+const arc = (cx, cy, r, d0, d1) => { const [x0, y0] = pt(cx, cy, r, d0), [x1, y1] = pt(cx, cy, r, d1); return `M${x0.toFixed(1)},${y0.toFixed(1)} A${r},${r} 0 ${Math.abs(d1 - d0) > 180 ? 1 : 0},${d1 > d0 ? 0 : 1} ${x1.toFixed(1)},${y1.toFixed(1)}`; };
+// numbered list under a narrow drawing: items = [[n, key, cls]], one row every `dy`
+const numList = (g, items, x, y, dy, w) => items.forEach(([n, k, c, vars], i) => { g.num(x + 10, y + i * dy, n); g.text(x + 28, y + i * dy, k, { c, w: w - 28, vars }); });
+
+// 512e: a 4 KiB write at two partition starts, cells in proportion to bytes (ch1)
+DG.lba = (L) => {
+  const wide = L === 'w', W = wide ? 720 : 340, P = M.sector.PER, cw = wide ? 40 : 19, x0 = wide ? 40 : 18, H = wide ? 320 : 356;
+  const n = Math.round(4 * 1024 / M.sector.LOG);  // a 4 KiB write in 512-byte logical sectors
+  return { W, H, draw(g) {
+    const X = i => x0 + i * cw;
+    const panel = (y, start, k) => {
+      const base = Math.floor(start / P) * P, w = M.sector.write(start, 4);
+      g.text(x0, y, 'dg.lba.' + k, { c: 'm', weight: 600, vars: { a: String(start) } });
+      for (let p = 0; p < 2; p++) g.text(X(p * P) + 2, y + 22, { raw: String(base + p * P) }, { mono: 1, c: base + p * P === start ? 'g' : 'c', fs: 13 });
+      if (start % P) g.text(X(start - base) + cw / 2, y + 22, { raw: String(start) }, { a: 'middle', mono: 1, c: 'g', fs: 13 });
+      for (let i = 0; i < 2 * P; i++) { const lba = base + i, inW = lba >= start && lba < start + n; g.box(X(i) + 1, y + 32, cw - 2, 30, inW ? C.gold : C.dimfill, { rx: 3, a: inW ? 0.4 : 0.35, sw: 1 }); }
+      for (let p = 0; p < 2; p++) {
+        const pi = Math.floor(base / P) + p, hit = pi >= w.p0 && pi <= w.p1, lo = (base + p * P), full = hit && lo >= start && lo + P - 1 <= start + n - 1;
+        const col = !hit ? C.mute : full ? C.green : C.red, key = !hit ? 'idle' : full ? 'full' : 'rmw';
+        g.box(X(p * P) + 1, y + 68, P * cw - 2, 28, col, { rx: 4, a: 0.12 });
+        g.text(X(p * P) + P * cw / 2, y + 82, 'dg.lba.' + key, { a: 'middle', c: !hit ? 'm' : full ? 'n' : 'r' });
+      }
+      const s0 = start - base;
+      if (s0) g.text(X(s0 + n), y + 114, 'dg.lba.wr', { a: 'end', c: 'g', vars: { a: String(start), b: String(start + n - 1) } });
+      else g.text(X(0), y + 114, 'dg.lba.wr', { c: 'g', vars: { a: String(start), b: String(start + n - 1) } });
+    };
+    panel(20, 63, 't'); panel(162, 2048, 't');
+    g.text(x0, wide ? 298 : 316, 'dg.lba.note', { c: 'm', w: W - 2 * x0, vars: { phys: String(M.sector.PHYS), per: String(P), log: String(M.sector.LOG) } });
+  } };
+};
+// a platter from above: tracks, head, arm, actuator; seek and rotation (ch2); schematic
+DG.hdd = (L) => {
+  const wide = L === 'w', W = wide ? 720 : 340, H = wide ? 300 : 576;
+  const K = ['platter', 'spindle', 'head', 'arm', 'vcm', 'target', 'rot', 'seek'];
+  return { W, H, draw(g) {
+    const cx = wide ? 330 : 170, cy = wide ? 150 : 145, R = wide ? 125 : 116, s = R / 125;
+    const P = (r, d) => pt(cx, cy, r * s, d);
+    g.circle(cx, cy, R, C.violet, { a: 0.1 });
+    for (const r of [60, 75, 105, 120]) g.circle(cx, cy, r * s, C.violet, { none: true, sw: 0.8 });
+    g.circle(cx, cy, 90 * s, C.gold, { none: true, sw: 1.6 });
+    g.path(arc(cx, cy, 90 * s, 200, 232), C.gold, { sw: 7 });
+    g.circle(cx, cy, 26 * s, C.mute, { a: 0.5 });
+    const [hx, hy] = P(90, 30), pv = wide ? [505, 235] : [298, 248];
+    g.path(arc(cx, cy, 136 * s, 158, 112), C.ink, { arrow: 1, sw: 1.6 });
+    const [a0x, a0y] = P(64, 40), [a1x, a1y] = P(116, 40);
+    g.line(a0x, a0y, a1x, a1y, C.ink, { arrow: 1, both: 1, sw: 1.6 });
+    g.box(pv[0] - 22, pv[1] - 22, 44, 44, C.cyan, { rx: 6 });
+    g.line(pv[0], pv[1], hx, hy, C.cyan, { sw: 5 });
+    g.box(hx - 6, hy - 6, 12, 12, C.cyan, { solid: true, rx: 2 });
+    if (wide) {
+      const lab = (k, x, y, a, c, lead) => { if (lead) g.line(lead[0], lead[1], lead[2], lead[3], C.mute, { sw: 1 }); g.text(x, y, 'dg.hdd.' + k, { a, c, w: a === 'end' ? 165 : 168, va: 'mid' }); };
+      const [ex, ey] = P(125, 150), [tx, ty] = P(90, 216), [sx, sy] = P(26, 200);
+      lab('rot', 190, 46, 'end', '', null);
+      lab('platter', 190, 112, 'end', 'v', [ex - 2, ey, 196, 112]);
+      lab('spindle', 190, 178, 'end', 'm', [sx, sy, 196, 178]);
+      lab('target', 190, 246, 'end', 'g', [tx, ty, 196, 246]);
+      lab('seek', 548, 52, 'start', '', [a1x + 3, a1y - 3, 542, 52]);
+      lab('head', 548, 106, 'start', 'c', [hx + 8, hy, 542, 106]);
+      const mx = (pv[0] + hx) / 2, my = (pv[1] + hy) / 2;
+      lab('arm', 548, 162, 'start', 'c', [mx + 6, my, 542, 162]);
+      lab('vcm', 548, 236, 'start', 'c', [pv[0] + 24, pv[1], 542, 236]);
+    } else {
+      const [ex, ey] = P(140, 168), [tx, ty] = P(104, 216), [rx, ry] = P(150, 135), [kx, ky] = P(132, 40);
+      g.num(ex, ey, 1); g.num(cx, cy, 2); g.num(hx + 22, hy - 4, 3);
+      g.num((pv[0] + hx) / 2 + 18, (pv[1] + hy) / 2, 4); g.num(pv[0], pv[1], 5); g.num(tx, ty, 6); g.num(rx, ry, 7); g.num(kx, ky, 8);
+      numList(g, K.map((k, i) => [i + 1, 'dg.hdd.' + k, ['v', 'm', 'c', 'c', 'c', 'g', '', ''][i]]), 6, 296, 36, 328);
+    }
+  } };
+};
+// the stack seen from the side: platters on one spindle, a head on every surface, one comb (ch2); schematic
+DG.stack = (L) => {
+  const wide = L === 'w', W = wide ? 720 : 340, H = wide ? 312 : 360;
+  return { W, H, draw(g) {
+    const px0 = wide ? 60 : 16, px1 = wide ? 330 : 180, sp = (px0 + px1) / 2, ys = [70, 130, 190], hx = wide ? 300 : 158, ax = wide ? 640 : 296;
+    g.box(sp - 6, 40, 12, 180, C.mute, { rx: 2, a: 0.4 });
+    ys.forEach(y => g.box(px0, y - 4, px1 - px0, 8, C.violet, { rx: 2, a: 0.55 }));
+    g.box(ax, 44, 34, 172, C.cyan, { rx: 6 });
+    const arms = [52, 100, 160, 208];
+    arms.forEach((y, i) => {
+      g.line(hx + 12, y, ax, y, C.cyan, { sw: 3 });
+      if (i > 0) g.box(hx, ys[i - 1] + 5, 14, 6, C.cyan, { solid: true, rx: 1 });   // head under the platter above
+      if (i < 3) g.box(hx, ys[i] - 11, 14, 6, C.cyan, { solid: true, rx: 1 });      // head on the platter below
+      g.line(hx + 7, i > 0 ? ys[i - 1] + 11 : y, hx + 7, i < 3 ? ys[i] - 11 : y, C.cyan, { sw: 2 });
+    });
+    g.text(sp, 24, 'dg.stack.spindle', { a: 'middle', c: 'm' });
+    if (wide) {
+      g.text(ax + 34, 24, 'dg.stack.vcm', { a: 'end', c: 'c' });
+      g.text(px0, 244, 'dg.stack.count', { c: 'v', vars: { p: 3, h: 6 } });
+      g.text(px0, 270, 'dg.stack.comb', { c: 'c' });
+      g.text(px0, 296, 'dg.stack.fly', {});
+    } else {
+      g.text(ax + 34, 24, 'dg.stack.vcm', { a: 'end', c: 'c' });
+      g.text(10, 248, 'dg.stack.count', { c: 'v', w: 320, vars: { p: 3, h: 6 } });
+      g.text(10, 290, 'dg.stack.comb', { c: 'c', w: 320 });
+      g.text(10, 332, 'dg.stack.fly', { w: 320 });
+    }
+  } };
+};
+// conventional vs shingled tracks (ch3); schematic, pitch drawn at half a write width
+DG.smr = (L) => {
+  const wide = L === 'w', W = wide ? 720 : 340, H = wide ? 300 : 560;
+  return { W, H, draw(g) {
+    const trk = (x, y, w, h, i, faded) => { g.box(x, y, w, h, C.bg, { solid: true, nostroke: true, rx: 2 }); g.box(x, y, w, h, C.violet, { rx: 2, a: faded ? 0.08 : (i % 2 ? 0.2 : 0.45), sw: 1 }); };
+    const cmr = (ox, oy, tw, aw) => {
+      g.text(ox, oy, 'dg.smr.cmr', { c: 'm', weight: 600, w: wide ? 330 : 320 });
+      const x = ox + 6, tx = x + tw + 34;
+      for (let i = 0; i < 5; i++) trk(x, oy + 26 + i * 38, tw, 28, i);
+      const y2 = oy + 26 + 2 * 38, yg = oy + 26 + 3 * 38 + 33;
+      g.box(x + tw + 8, y2, 14, 28, C.cyan, { solid: true, rx: 2 });
+      g.text(tx, y2 + 14, 'dg.smr.whead', { c: 'c', w: aw, va: 'mid' });
+      g.line(x + tw - 30, yg, tx - 6, yg, C.mute, { sw: 1 });
+      g.text(tx, yg, 'dg.smr.gap1', { c: 'm', w: aw, va: 'mid' });
+      g.text(ox, oy + 26 + 5 * 38 + 14, 'dg.smr.cmrfix', { c: 'n', w: wide ? 330 : 320 });
+    };
+    const smr = (ox, oy, tw, aw) => {
+      g.text(ox, oy, 'dg.smr.smr', { c: 'm', weight: 600, w: wide ? 330 : 320 });
+      const x = ox + 16, y0 = oy + 26, p = 15, th = 30;
+      for (let i = 0; i < 6; i++) trk(x, y0 + i * p, tw, th, i);
+      const y1 = y0 + 5 * p + th, y2 = y1 + 16;
+      for (let i = 0; i < 3; i++) trk(x, y2 + i * p, tw, th, i, true);
+      const bx = x + tw + 8, tx = bx + 14;
+      g.box(x, y0 + p, tw, p, C.cyan, { a: 0, sw: 2, rx: 1 });
+      g.line(x + tw + 1, y0 + p * 1.5, tx - 4, y0 + p * 1.5, C.cyan, { sw: 1 });
+      g.text(tx, y0 + p * 1.5, 'dg.smr.rstrip', { c: 'c', w: aw, va: 'top' });
+      g.line(bx, y0, bx, y1, C.violet, { sw: 1.2 }); g.line(bx - 4, y0, bx, y0, C.violet, { sw: 1.2 }); g.line(bx - 4, y1, bx, y1, C.violet, { sw: 1.2 });
+      g.text(tx, y0 + 4.6 * p, 'dg.smr.band', { c: 'v', w: aw });
+      g.text(tx, (y1 + y2) / 2 + 22, 'dg.smr.gap', { c: 'm', w: aw });
+      g.line(x - 8, y0 + p * 1.5, x - 8, y0 + 5 * p + 15, C.red, { sw: 2, arrow: 1 });
+      g.text(ox, y2 + 2 * p + th + 24, 'dg.smr.rewrite', { c: 'r', w: wide ? 330 : 320 });
+    };
+    if (wide) { cmr(10, 20, 170, 140); smr(370, 20, 140, 160); }
+    else { cmr(4, 18, 150, 136); smr(4, 300, 130, 166); }
+  } };
+};
+// one flash cell in cross-section (ch4); schematic
+DG.cell = (L) => {
+  const wide = L === 'w', W = wide ? 720 : 340, H = wide ? 300 : 496;
+  return { W, H, draw(g) {
+    const gx = wide ? 170 : 70, gw = wide ? 190 : 170, sx0 = wide ? 70 : 10, sw = wide ? 390 : 290, y = wide ? 40 : 34;
+    const gh = wide ? 38 : 48, bo = 12, st = 24, tu = 10, yb = y + gh, ys = yb + bo, yt = ys + st, yc = yt + tu;
+    g.box(gx, y, gw, gh, C.cyan, { rx: 4 }); g.text(gx + gw / 2, y + gh / 2, 'dg.cell.gate', { a: 'middle', c: 'c', w: gw - 12, va: 'mid' });
+    g.box(gx, yb, gw, bo, C.mute, { rx: 0, a: 0.3, sw: 1 });
+    g.box(gx, ys, gw, st, C.violet, { rx: 0, a: 0.25, sw: 1 });
+    for (let i = 0; i < 8; i++) g.circle(gx + 18 + i * (gw - 36) / 7, ys + st / 2, 3.4, C.gold, { solid: true, sw: 0.5 });
+    g.box(gx, yt, gw, tu, C.mute, { rx: 0, a: 0.3, sw: 1 });
+    g.box(sx0, yc, sw, wide ? 150 : 140, C.mute, { rx: 4, a: 0.07, sw: 1 });
+    const dw = wide ? 92 : 62, dh = 40;
+    g.box(sx0 + 8, yc, dw, dh, C.green, { rx: 4, a: 0.15 }); g.text(sx0 + 8 + dw / 2, yc + dh / 2, 'dg.cell.src', { a: 'middle', c: 'n' });
+    g.box(sx0 + sw - 8 - dw, yc, dw, dh, C.green, { rx: 4, a: 0.15 }); g.text(sx0 + sw - 8 - dw / 2, yc + dh / 2, 'dg.cell.drn', { a: 'middle', c: 'n' });
+    g.line(gx + 4, yc + 6, gx + gw - 4, yc + 6, C.green, { sw: 1.4, dash: '4 3' });
+    g.text(gx + gw / 2, yc + 26, 'dg.cell.ch', { a: 'middle', c: 'n', w: gw - 10 });
+    g.text(sx0 + sw / 2, yc + (wide ? 120 : 112), 'dg.cell.sub', { a: 'middle', c: 'm' });
+    const ux = gx + 34;
+    g.line(ux, yc + 2, ux, ys + st - 2, C.gold, { sw: 2, arrow: 1 });
+    if (wide) {
+      const lx = 492;
+      g.line(gx + gw, yb + bo / 2, lx - 6, 50, C.mute, { sw: 1 }); g.text(lx, 50, 'dg.cell.block', { c: 'm', w: 225, va: 'mid' });
+      g.line(gx + gw, ys + st / 2, lx - 6, 98, C.mute, { sw: 1 }); g.text(lx, 98, 'dg.cell.store', { c: 'v', w: 225, va: 'mid' });
+      g.line(gx + gw, yt + tu / 2, lx - 6, 152, C.mute, { sw: 1 }); g.text(lx, 152, 'dg.cell.tunnel', { c: 'm', w: 225, va: 'mid' });
+      g.text(150, 64, 'dg.cell.write', { a: 'end', c: 'g', w: 140, va: 'mid' });
+      g.text(lx, 222, 'dg.cell.vth', { c: 'g', w: 225, va: 'mid' });
+    } else {
+      const r = gx + gw, nx = [r + 18, r + 46, r + 74];
+      [[yb + bo / 2, 1], [ys + st / 2, 2], [yt + tu / 2, 3]].forEach(([yy, k], i) => { g.line(r, yy, nx[i] - 10, yy, C.mute, { sw: 1 }); g.num(nx[i], yy, k); });
+      g.num(ux + 20, (yc + ys + st) / 2 + 2, 4);
+      numList(g, [[1, 'dg.cell.block', 'm'], [2, 'dg.cell.store', 'v'], [3, 'dg.cell.tunnel', 'm'], [4, 'dg.cell.write', 'g']], 6, 296, 40, 328);
+      g.text(6, 460, 'dg.cell.vth', { c: 'g', w: 328 });
+    }
+  } };
+};
+// one ECC codeword, bar lengths in proportion to bits (ch5); the error positions are illustrative
+DG.cw = (L) => {
+  const wide = L === 'w', W = wide ? 720 : 340, H = wide ? 250 : 300;
+  const E = M.ecc, K = E.K, T = E.T, len = E.len(T), par = E.M * T;
+  return { W, H, draw(g) {
+    const x0 = wide ? 20 : 10, bw = W - 2 * x0, dw = bw * K / len;
+    g.text(x0, 22, 'dg.cw.len', { c: 'm', vars: { l: fmt(len), r: fmt(E.rate(T) * 100, 1) } });
+    g.box(x0, 40, dw, 44, C.gold, { rx: 4, a: 0.25 }); g.text(x0 + dw / 2, 62, 'dg.cw.data', { a: 'middle', c: 'g', vars: { k: fmt(K) } });
+    g.box(x0 + dw, 40, bw - dw, 44, C.violet, { rx: 4, a: 0.4 });
+    g.line(x0 + dw + (bw - dw) / 2, 86, x0 + dw + (bw - dw) / 2, 98, C.violet, { sw: 1 });
+    g.text(x0 + bw, 110, 'dg.cw.par', { a: 'end', c: 'v', vars: { m: E.M, t: T, p: fmt(par) } });
+    const strip = (y, key, nErr, seed) => {
+      g.text(x0, y, key, { c: nErr > T ? 'r' : 'n', vars: { t: T }, w: bw });
+      const yy = y + (wide ? 18 : 34);
+      g.box(x0, yy, bw, 18, C.dimfill, { rx: 3, a: 0.4, sw: 1 });
+      let s = seed; for (let i = 0; i < nErr; i++) { s = (s * 1103515245 + 12345) % 2147483648; const x = x0 + 3 + (s / 2147483648) * (bw - 6); g.line(x, yy + 2, x, yy + 16, C.red, { sw: 1.6 }); }
+    };
+    strip(wide ? 146 : 150, 'dg.cw.ok', 6, 7);
+    strip(wide ? 204 : 226, 'dg.cw.bad', 52, 3);
+  } };
+};
+// out-of-place update: an overwrite before and after (ch6); 4 pages per block as in the model
+DG.ftl = (L) => {
+  const wide = L === 'w', W = wide ? 720 : 340, H = wide ? 300 : 592, P = 4;
+  return { W, H, draw(g) {
+    const panel = (px, py, after) => {
+      g.text(px, py, after ? 'dg.ftl.after' : 'dg.ftl.before', { c: 'm', weight: 600 });
+      g.box(px, py + 18, 320, 32, C.cyan, { rx: 6 });
+      g.text(px + 160, py + 34, 'dg.ftl.map', { a: 'middle', c: 'c', vars: { a: after ? '1.1' : '0.1' } });
+      const bx = [px + 26, px + 180], bw = 136, top = py + 76;
+      g.text(bx[0], top, 'dg.ftl.b0', { c: 'm' }); g.text(bx[1], top, 'dg.ftl.b1', { c: 'g' });
+      const pages = [[4, 5, 6, 7], [8, after ? 5 : null, null, null]];
+      for (let b = 0; b < 2; b++) for (let p = 0; p < P; p++) {
+        const v = pages[b][p], y = top + 14 + p * 34, dead = after && b === 0 && p === 1, hot = (after && b === 1 && p === 1) || (!after && b === 0 && p === 1);
+        if (v == null) { g.box(bx[b], y, bw, 28, C.mute, { rx: 4, a: 0, dash: '4 3', sw: 1 }); g.text(bx[b] + bw / 2, y + 14, 'dg.ftl.free', { a: 'middle', c: 'm' }); continue; }
+        g.box(bx[b], y, bw, 28, dead ? C.red : C.gold, { rx: 4, a: 0.18, sw: hot ? 2.4 : 1 });
+        if (hot) g.box(bx[b] - 2, y - 2, bw + 4, 32, C.cyan, { rx: 5, a: 0, sw: 2 });
+        g.text(bx[b] + bw / 2, y + 14, dead ? 'dg.ftl.dead' : 'dg.ftl.lba', { a: 'middle', c: dead ? 'r' : 'g', vars: { n: v } });
+      }
+      const ty = top + 14 + 34 + 14;
+      if (!after) g.path(`M${px + 10},${py + 50} V${ty} H${bx[0] - 4}`, C.cyan, { arrow: 1 });
+      else g.path(`M${px + 170},${py + 50} V${ty} H${bx[1] - 4}`, C.cyan, { arrow: 1 });
+      g.text(px, top + 14 + 4 * 34 + 18, after ? 'dg.ftl.nafter' : 'dg.ftl.nbefore', { c: after ? 'r' : 'm', w: 320 });
+    };
+    if (wide) { panel(20, 20, false); panel(380, 20, true); }
+    else { panel(10, 20, false); panel(10, 318, true); }
+  } };
+};
+// five layers of "interface" for three drives (ch7); values from the model's drive table
+DG.layers = (L) => {
+  const wide = L === 'w', W = wide ? 720 : 340, H = wide ? 344 : 560, D = ['ssd25', 'm2nvme', 'sas25'];
+  return { W, H, draw(g) {
+    const Ls = M.map.LAYERS;
+    if (wide) {
+      const cx = [170, 354, 538], cw = 172, y0 = 64, rh = 50;
+      D.forEach((d, j) => g.text(cx[j] + cw / 2, 30, 'dg.layers.' + d, { a: 'middle', c: 'm', weight: 600, w: cw - 8, va: 'mid' }));
+      Ls.forEach((k, i) => {
+        const y = y0 + i * rh;
+        g.text(20, y + 20, 'ch7.layer.' + k, { c: 'm', w: 140, va: 'mid' });
+        D.forEach((d, j) => { const m2 = j === 1 && i < 2; g.box(cx[j], y, cw, 40, m2 ? C.gold : C.cyan, { rx: 6, a: 0.08, sw: m2 ? 2 : 1 }); g.text(cx[j] + cw / 2, y + 20, 'ch7.v.' + M.map.DRIVES[d][k], { a: 'middle', w: cw - 12, va: 'mid' }); });
+      });
+      g.text(20, y0 + 5 * rh + 18, 'dg.layers.note', { c: 'g', w: 680 });
+    } else {
+      const cx = [8, 118, 228], cw = 104, y0 = 96, rh = 80;
+      D.forEach((d, j) => g.text(cx[j] + cw / 2, 18, 'dg.layers.' + d, { a: 'middle', c: 'm', weight: 600, w: cw - 4 }));
+      Ls.forEach((k, i) => {
+        const y = y0 + i * rh;
+        g.text(8, y, 'ch7.layer.' + k, { c: 'm' });
+        D.forEach((d, j) => { const m2 = j === 1 && i < 2; g.box(cx[j], y + 14, cw, 56, m2 ? C.gold : C.cyan, { rx: 6, a: 0.08, sw: m2 ? 2 : 1 }); g.text(cx[j] + cw / 2, y + 42, 'ch7.v.' + M.map.DRIVES[d][k], { a: 'middle', w: cw - 8, va: 'mid' }); });
+      });
+      g.text(8, y0 + 5 * rh + 6, 'dg.layers.note', { c: 'g', w: 324 });
+    }
+  } };
+};
+let dgLayout = new WeakMap();
+function renderDiagrams(force) {
+  for (const fig of document.querySelectorAll('figure.dia')) {
+    const box = fig.querySelector('.svg'), L = fig.clientWidth >= 600 ? 'w' : 'n';
+    if (!force && dgLayout.get(fig) === L + effLang()) continue;
+    dgLayout.set(fig, L + effLang());
+    const spec = DG[fig.dataset.dg](L);
+    box.textContent = '';
+    const svg = S('svg', { viewBox: `0 0 ${spec.W} ${spec.H}`, role: 'img', 'aria-label': t('dg.' + fig.dataset.dg + '.aria'), class: L }, box);
+    arrowDefs(svg); spec.draw(mk(svg)); wrapTexts(svg);
+  }
+}
 const bind = (sim, text, inputs, radioNames) => {
   const go = () => { sim.dirty = true; text(); };
   inputs.forEach(e => e.addEventListener('input', go));
