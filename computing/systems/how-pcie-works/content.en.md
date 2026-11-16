@@ -1,0 +1,774 @@
+---
+lang: en
+title: Why PCIe Keeps Doubling · a long essay you can play with
+desc: Graphics cards, SSDs and network cards all plug into PCIe. Its speed has doubled six times in over twenty years: how, and what actually happens on the wire during one read or write? Ten models you can drag: link negotiation, TLP headers, credit flow control, ACK/NAK replay, enumeration, MSI interrupts, trace loss, PAM4 eyes, FEC and FLITs.
+---
+
+::: strings
+nav.back: ← Knowledge index
+nav.lang: Language
+toc.label: Contents
+toc.title: Contents
+u.pct: {v}%
+u.GBps: {v} GB/s
+u.ns: {v} ns
+u.dB: {v} dB
+u.dBin: {v} dB/in
+u.in: {v} in
+u.B: {v} bytes
+u.KiB: {v} KiB
+u.MiB: {v} MiB
+u.x: {v} times
+u.none: —
+:::
+
+# Why PCIe Keeps Doubling {#hero}
+
+::: strings
+kicker: Computing · Systems · a long essay you can play with
+:::
+
+Graphics cards, SSDs and network cards all plug into PCIe. Its speed has doubled six times in over twenty years.<br>What keeps it doubling, and what actually happens on the wire during one read or write? {.sub}
+
+We start with a tree: how PCIe connects devices to the CPU, what a lane is made of, and where each generation’s doubling comes from. Then we follow one read or write: how it is cut into packets, what each bit of the header means, how the sender makes sure the other end has room before it sends, how a bad packet is resent, how devices get their addresses at boot, and how a device moves data by itself and then calls the CPU. Last, back to the physics: why faster means shorter traces, why the sixth generation switched to two bits per symbol, and why it then moved to fixed-size blocks. **Every model is a rule from the specification, a table from it, or a textbook result**, scaled down to run in a web page. {.lead}
+
+An AI wrote this page. Header widths, configuration-space offsets and the MSI address format come from the specification, the Linux kernel headers and the Intel manual. Rates, overheads and latencies were checked item by item against public PCI-SIG material. **Where the text says “tuned parameter”, the value was chosen so the model can compute, not measured**, and the text says how far the conclusion moves when it is halved or doubled. This page covers mechanisms and specifications only, and **does not judge which motherboard or card is worth buying**. {.note}
+
+## One tree, not one bus {#ch1}
+
+::: strings
+toc: One tree, not one bus
+:::
+
+PCIe has no shared “bus”. Each device has its own point-to-point link to the device above it, and all the links together form a tree whose root sits in the CPU. {.law}
+
+Before PCIe, PCI was a real bus: a row of parallel wires with every card hung on it. Only one card could talk at a time, and the more cards, the more crowded it got. Parallel wires also needed the signals on dozens of wires to arrive together, which made higher clock speeds hard. The first PCIe version (2003) changed both. It went **serial**: one pair of wires carries one stream of bits. And it went **point-to-point**: each link joins exactly two ends. Why serial beats parallel is shown in a model you can drag in <a href='../how-sata-works/#ch2'>“Why SATA Has Lasted Over Twenty Years”, Chapter 2</a>.
+
+The root of the tree is in the CPU and is called the **root complex**. It connects to memory and CPU cores on one side and has several root ports on the other. Each root port connects to one device, or to a **switch** that fans it out into several more links. The graphics card, the SSD and the network card are the leaves of the tree, called **endpoints**.
+
+::: diagram dg-d1 keys=d1 place=wide
+cap: Figure 1 · PCIe’s topology is a tree: the root is in the CPU, and the leaves are devices. Devices and lane counts are illustrative.
+cpu: CPU core
+mem: Memory
+rc: Root complex (in CPU)
+gpu: Graphics card
+sw: Switch
+usb: USB controller
+ssd: SSD
+nic: Network card
+slot: Empty slot
+note: Each wire is a separate point-to-point link, labelled with its lane count. A switch shares one upstream link among several downstream devices.
+aria: Schematic: the CPU and memory connect to the root complex, which has three links to a graphics card, a switch and a USB controller; the switch connects to an SSD, a network card and an empty slot
+:::
+
+To the operating system the tree looks just like the old bus. Every PCIe device still appears as a “PCI device”, with the same configuration-space layout, and it talks through a range of memory addresses (Chapter 6). That is how PCIe stays backwards compatible: old drivers do not need to change.
+
+Next we walk down the tree: what a lane is and how its speed doubled generation by generation (Chapter 2); how one read or write is cut into packets (Chapter 3); how packets avoid overrunning the receiver (Chapter 4) and how bad ones are resent (Chapter 5); who assigns device addresses at boot (Chapter 6); and how a device moves data by itself and calls the CPU (Chapter 7). Then back to the physics: why faster means shorter traces (Chapter 8), why the sixth generation uses two bits per symbol (Chapter 9), and why it then moved to fixed-size FLITs (Chapter 10).
+
+This diagram leaves out the link between the CPU and the chipset, and the links between several CPUs. Some of those are PCIe and some are not. How motherboard lanes are shared among the slots is covered in <a href='../how-a-computer-is-wired/#ch5'>“How the Parts of a Computer Are Wired Together”, Chapter 5</a>. {.take}
+
+## One lane, six doublings {#ch2}
+
+::: strings
+toc: One lane, six doublings
+:::
+
+Each generation doubles the speed in only three ways: double the symbols per second; waste less on encoding; or let one symbol carry two bits. From Gen1 to Gen7, all three have been used. {.law}
+
+A **lane** is two differential pairs, one for each direction (Figure 2). “Differential” means a bit is carried by the voltage difference between two wires. Outside interference hits both wires equally, so the difference stays the same. No clock wire travels alongside the data (the slot does carry a 100 MHz reference clock, but only as a reference for the circuits at each end). The receiver recovers the clock from the transitions in the data, so the data must not stay the same for too long. Making sure it keeps changing is the job of the encoding.
+
+::: diagram dg-d2 keys=d2 place=wide
+cap: Figure 2 · One lane: two differential pairs, one per direction. No clock wire runs alongside the data.
+a: Device A
+b: Device B
+tx: Transmit
+rx: Receive
+pair: One differential pair: A → B
+ac: Series capacitors block DC; clock is in the data
+pair2: Other pair: B → A
+lane: One lane = two differential pairs, one per direction, both running at once. ×16 means 16 lanes side by side.
+aria: Schematic: two differential pairs between device A and device B, one from A to B and one from B to A, each wire with a series capacitor
+:::
+
+Gen1 uses 8b/10b encoding: every 8 bits of data are sent as 10 bits, which guarantees transitions and DC balance, at the cost of {enc10} of the line rate. One lane at 2.5 GT/s (2.5 billion transfers per second) leaves only {g1} GB/s in each direction. Gen2 (2007) doubled the rate to 5 GT/s, giving {g2} GB/s. The details of 8b/10b are the same as in SATA; see <a href='../how-sata-works/#ch3'>“Why SATA Has Lasted Over Twenty Years”, Chapter 3</a>.
+
+Gen3 ran into the first real problem. Following the old pattern, the next step would be 10 GT/s. In 2008 PCI-SIG compared two options. One was 8 GT/s with a new encoding, 128b/130b (2 sync bits per 128 bits, with transitions guaranteed by scrambling), giving {o8} Gb/s of usable data. The other was 10 GT/s staying with 8b/10b, giving {o10} Gb/s: almost the same. But the same lane loses {oDb} dB less at 4 GHz (the Nyquist frequency of 8 GT/s) than at 5 GHz, and Chapter 8 shows how much those few dB are worth. So Gen3 (2010) raised the rate only from 5 to 8 GT/s, yet its bandwidth is {g3g2} times Gen2’s, at {g3} GB/s per lane (Figure 3).
+
+::: diagram dg-d3 keys=d3 place=wide
+cap: Figure 3 · How much each of three encodings spends on overhead, drawn to scale. The FLIT overhead looks bigger, but it replaces each TLP’s own framing and checks (Chapter 10).
+r1: 8b/10b (Gen1–2)
+r2: 128b/130b (Gen3–5)
+r3: FLIT (Gen6 on)
+data: Data
+ohfmt: Overhead {v}
+oh1: 2 extra bits per 8 bits
+oh2: 2 sync bits per 128 bits
+oh3: Link info, CRC, FEC
+aria: Bar chart: data and overhead shares of the three encodings, drawn to scale
+:::
+
+The next two generations went back to the old pattern: Gen4 at 16 GT/s (2017) and Gen5 at 32 GT/s (2019), with the same encoding and an overhead of {enc130}. Gen5 ×16 gives {g5x16} GB/s in each direction. Beyond that, two voltage levels stop being enough. Gen6 (2022), at 64 GT/s, did not raise the symbol rate. Instead one symbol carries two bits (PAM4, Chapter 9), giving {g6lane} GB/s per lane. The encoding became fixed 256-byte FLITs, with an overhead of {flitOh}, but each packet’s own framing and check bits are dropped as well (Chapter 10). Gen7 (2025) runs at 128 GT/s, about {g7lane} GB/s per lane in each direction.
+
+::: lab ch2-model
+model.title: The speed the two ends agree on
+model.how: Choose the generation and width that each **card** and **slot** supports, and see which speed the link settles at and how much bandwidth each direction gets.
+model.aria: Bar chart: the card’s full speed compared with the bandwidth the link settles at
+ctl.cg: Card · gen
+ctl.cw: Card · width
+ctl.sg: Slot · gen
+ctl.sw: Slot · width
+read.link: Negotiated link
+read.bw: Bandwidth per direction
+read.share: Share of the card’s full speed
+read.eq: Previous gen at twice the width (equal bandwidth)
+bar.card: Card at full speed
+bar.link: Negotiated link
+linkfmt: Gen{g} ×{w}
+say.both: Both generation and width are held back by the slot. The link settles at {link}, {bw} per direction: only {share} of the card’s full {full}.
+say.gen: The width is enough, but the slot’s generation holds it back. The link settles at {link}, {bw} per direction, which is {share} of the card’s full {full}.
+say.width: The generation is enough, but the slot has fewer lanes. The link settles at {link}, {bw} per direction, which is {share} of the card’s full {full}.
+say.card: The slot is stronger than the card, so the link follows the card: {link}, {bw} per direction, the card’s full speed.
+say.match: Both ends match: {link}, {bw} per direction.
+:::
+
+The two ends negotiate when the link comes up. Each reports the speeds and widths it supports, and they settle on the highest they share. So a Gen4 card works in a Gen3 slot, but runs at Gen3; a ×16 card in a slot wired for only 8 lanes runs at ×8. Bandwidth is the product of the two: Gen4 ×8 equals Gen3 ×16, both {g4x8} GB/s. Whether a slower link actually slows a card depends on how much data the card really moves. This page does not run such benchmarks.
+
+All the GB/s figures here are per direction, after encoding overhead but before packet headers (Chapter 3). The two directions can run at the same time, and vendors often add them together and call the result “bidirectional”, which doubles the number. For why NVMe SSDs usually use ×4, and where each generation’s limits come from, see <a href='../why-nvme-is-fast/#ch2'>“Why NVMe Is So Fast”, Chapter 2</a>.
+
+This does not count the time for link training or for entering and leaving power-saving states. It also leaves out the power-saving mode from Gen6 on, which can switch off some lanes. {.take}
+
+## One read or write, several packets {#ch3}
+
+::: strings
+toc: One read or write, several packets
+:::
+
+Everything on PCIe (reads, writes, configuration and interrupts) is the same kind of packet: a transaction-layer packet, or TLP. A write is send-only. A read is a question and an answer: one request goes out, and one or more completion packets carrying data come back. {.law}
+
+To software, reading or writing a register on a graphics card or SSD is much like reading or writing memory: one instruction, one address. On the link, that instruction becomes a TLP. PCIe has three layers (Figure 4). The **transaction layer** builds the TLP and writes its header: what it is for, the address, the length and who asked. The **data link layer** adds a sequence number and a 32-bit LCRC, used for acknowledgements and replays (Chapter 5). The **physical layer** adds the start and end of the frame and spreads the bytes across the lanes.
+
+Each TLP carries 8 extra bytes outside its header: the sequence number, the LCRC and the framing. The header itself is 3 or 4 DW (1 DW = 4 bytes). Addresses below 4 GiB must use the 3-DW short header; above that, the 4-DW header is used.
+
+::: diagram dg-d4 keys=d4 place=wide
+cap: Figure 4 · A TLP on the wire, and what each layer adds.
+stp: "STP\nstart"
+seq: "Seq. no.\n12 bits"
+hdr: "TLP header\n3–4 DW"
+data: "Data\n0–4096 bytes"
+ecrc: "ECRC\n(optional)"
+lcrc: "LCRC\n32 bits"
+end: "END\nend"
+tl: Transaction layer: header and data (ECRC optional)
+dll: Data link layer: sequence number and LCRC, for ACK and replay
+phy: Physical layer: start and end of the frame
+note: Widths are illustrative, not to scale. This follows the Gen1–2 framing. From Gen3 the start is a 4-byte STP token (11-bit length, frame check and the 12-bit sequence number) and there is no END, but each TLP still adds 8 bytes beyond its header in total.
+aria: Schematic: a TLP on the wire from left to right: frame start, sequence number, header, data, optional ECRC, LCRC, frame end, with colours marking which layer each belongs to
+:::
+
+Figure 5 shows every bit of the header. The first fields, Fmt and Type, together say what kind of packet this is. The three bits of Fmt say whether the header is 3 or 4 DW and whether data follows; Type says whether it is memory, I/O, configuration, message or completion. Length has 10 bits, counted in DW, with a maximum of 1024 DW, which is 4096 bytes. The **requester ID** is the sender’s bus:device.function number, and **Tag** is the number it gave this request. A completion copies both back, so the requester can match it up. This is what lets one device have many reads in flight without mixing them up.
+
+::: diagram dg-d5 keys=d5 place=wide
+cap: Figure 5 · Every bit of a packet header, drawn to scale. Above: a memory request with a 64-bit address. Below: a completion. Field widths follow the PCIe specification as given in the MindShare textbook and AMD’s PCIe IP guides (Lower Address is 7 bits).
+t1: 64-bit address memory read or write request (4-DW header)
+t2: Completion (3-DW header): DW1 and DW2; DW0 as above
+bits.hi: High 16 bits at top
+bits.byte: one byte per row
+note: Drawn to scale, one bit per equal width. A2 = Attr[2], LN = lightweight notification, TH = TLP processing hints, TD = ECRC present, EP = data poisoned, AT = address translation, T9 and T8 = extended Tag bits, M = BCM, R = reserved, PH = processing hint.
+f.fmt: Fmt
+f.type: Type
+f.tc: TC
+f.attr: Attr
+f.len: Length (DW)
+f.rid: Requester ID
+f.tag: Tag
+f.lbe: Last BE
+f.fbe: First BE
+f.addrhi: Address [63:32]
+f.addrlo: Address [31:2]
+f.cid: Completer ID
+f.st: Status
+f.bc: Bytes left
+f.la: Lower address
+aria: Header bitmap drawn to scale: each field of the four DWs of a request packet, and each field of the second and third DWs of a completion packet
+:::
+
+A packet’s size has two limits. **MPS** (maximum payload size) is the most data one write or completion packet can carry. **MRRS** (maximum read request size) is the most one read request may ask for. Both lie between 128 and 4096 bytes. At boot the system sets MPS to a value that every hop along the path supports; MRRS is the requester’s own setting, chosen for each device by the system or the driver. Read data can also be split into smaller pieces: the specification lets the completer cut completions on 64- or 128-byte boundaries.
+
+::: lab ch3-model
+model.title: Cutting one block into packets
+model.how: Choose **write** or **read**, set MPS, MRRS and how completions are split, and drag **transfer size**. Below the curve is the header of the first packet, byte by byte.
+model.aria: Curve: transfer efficiency against transfer size, comparing several MPS values
+leg.cur: Current MPS
+leg.other: Other MPS
+ctl.op: Operation
+op.wr: Write
+op.rd: Read
+ctl.mps: MPS
+ctl.mrrs: MRRS
+ctl.cpl: Completions
+cpl.mps: Split at MPS
+cpl.64: Split at 64 bytes
+ctl.size: Transfer size
+hex.aria: Header of the first packet, in hexadecimal bytes
+read.n: Packets
+read.wire: Total bytes on the data-direction wire
+read.eff: Efficiency
+read.x: Equivalent on Gen5 ×16
+cv.x: Transfer size
+cv.y: Efficiency %
+n.wr: {n} write packets
+n.rd: {q} requests, {c} completions
+hex.mwr: Header of the first write packet (MWr, 64-bit address, {len} bytes of data)
+hex.mrd: Header of the first read request (MRd, 64-bit address, asks for {len} bytes)
+hex.dw0: DW0: Fmt={fmt}, Type=00000 (memory), Length={len} DW
+hex.dw1: DW1: requester ID 04:00.0, Tag 2A, last and first byte enables
+hex.addr: DW2–3: address, high 32 bits first
+hex.cpld: Header of the first completion packet (CplD, {len} bytes of data)
+hex.cdw0: DW0: Fmt=010, Type=01010 (completion)
+hex.cdw1: DW1: completer ID, status 0 (success), {bc} bytes left
+hex.cdw2: DW2: requester ID and Tag copied back, lower address
+say.wr: Write {size}: cut at MPS {mps} bytes into {c} packets. Headers and checks add {oh} in all, so efficiency is {eff}, which on Gen5 ×16 comes to {X}.
+say.small: Packets too small: write {size}. Headers and checks add {oh}, so efficiency is only {eff}, which comes to {X}.
+say.rd: Read {size}: {q} read requests go out and {c} completion packets with data come back. Data-direction efficiency is {eff}, which comes to {X}.
+say.rdsplit: Completions are split at {cpl} bytes, smaller than MPS {mps}. A read of {size} brings back {c} completions, and efficiency falls to {eff}, which comes to {X}.
+:::
+
+Playing with the numbers shows how much packet size matters. For a 4 KiB write: at MPS 128 the efficiency is {w128}, at 256 it is {w256} and at 512 it is {w512}; a small 64-byte write manages only {w64}. Reads cost more, because each completion packet carries its own header. 4 KiB as 512-byte requests ({r512q} of them) and 256-byte completions ({r512n} of them) gives {r512}. If the completer splits at 64 bytes, {r64n} completion packets come back and the efficiency drops to {r64}.
+
+So the Gen5 ×16 figure of {g5x16} GB/s has to be multiplied by an efficiency first: a large write at MPS 256 keeps {w256}, which is {w256X} GB/s. Read requests travel the other way, and since each direction has its own pair of wires, they do not compete with the writes.
+
+This assumes a 4-DW header throughout (64-bit addresses). It leaves out the bandwidth taken by acknowledgements and credit updates (Chapters 4 and 5), and the different arithmetic of Gen6 FLIT mode (Chapter 10). {.take}
+
+## Count the room before sending {#ch4}
+
+::: strings
+toc: Count the room before sending
+:::
+
+A PCIe link never drops packets because it is overrun. The receiver tells the sender in advance how much buffer it has (its credits). The sender spends a little with each packet and keeps count. When the credits run out it waits, and the credits come back once the receiver has room again. {.law}
+
+If the sender simply sent whenever it liked, a full receiver buffer could only drop packets, and those would have to be resent: slow, and hard to keep in order. PCIe’s answer is **credits**. As soon as the link comes up, the receiver reports a header credit and a data credit for each of three classes of packet: posted writes; non-posted requests such as reads, which need a reply; and completions. One data credit is 16 bytes, and one header credit is one packet header.
+
+The sender keeps two numbers (Figure 6). CL is the running total of the limit the other end has granted. CC is the running total the sender has spent. To send a packet, it first checks whether CC plus this packet’s cost would exceed CL: if not, it sends; if so, it waits. When the receiver takes a packet out of its buffer, it sends a short UpdateFC packet that raises the limit. The counters are only 8 bits (headers) and 12 bits (data), and they wrap around, so comparisons are done modulo the counter size.
+
+::: diagram dg-d6 keys=d6 place=wide
+cap: Figure 6 · The credit loop: sending a packet spends credits, and UpdateFC returns them. P = posted (writes), NP = non-posted (requests that need a reply, such as reads), Cpl = completions.
+tx: Sender
+rx: Receiver
+cl: Limit CL: granted by the other end
+cc: Spent CC: used by this end
+rule: Can send if CL − (CC + this packet’s cost) ≥ 0 (modulo)
+hdr: Header
+data: Data
+unit: 1 data credit = {d} bytes; 1 header credit = 1 header
+tlp: TLP (uses credits)
+upd: UpdateFC (returns credits)
+aria: Schematic: the sender keeps a limit and a spent count and sends TLPs; the receiver has header and data buffers for each of writes, read requests and completions, and returns credits to the sender with UpdateFC
+:::
+
+The rule is simple; the trouble is the round trip. A packet takes time to cross the link, to be taken out of the buffer and for its UpdateFC to come back. During that time the sender can spend only the credits it has in hand. To keep the modulo comparison valid, the receiver may advertise at most 127 header credits and 2047 data credits (about {capKiB} KiB).
+
+::: lab ch4-model
+model.title: Do the credits cover the round trip?
+model.how: Set **data per packet**, the **data credits advertised** by the receiver and the **round-trip time**, and watch how the sender’s credits run down and come back.
+model.aria: Line: the sender’s data credits in hand over time; each square along the bottom is one packet sent
+leg.avail: Data credits in hand
+leg.send: Packet sent
+ctl.p: Data per packet
+ctl.scaled: Scaled flow control (×16)
+ctl.buf: Data credits advertised
+ctl.rtt: Credit round trip (tuned parameter)
+read.u: Link utilisation
+read.x: Effective throughput
+read.w: Packets in flight
+read.need: Data credits needed to fill the link
+cv.x: Time (ns)
+cv.y: Data credits
+say.full: Credits are enough: {buf} data credits cover the round trip, and the link reaches {u}, {X}.
+say.hdr: Held back by header credits: at most {W} packets in flight, utilisation {u}, {X}. Filling the link would need {needH} header credits.
+say.data: Held back by data credits: {buf} data credits cover only {W} packets in flight, utilisation {u}, {X}. Filling the link would need {need} (about {kb} KB).
+:::
+
+By default, a 256-byte packet occupies the link for {fcTau} ns on Gen5 ×16. If the round trip is 1000 ns, keeping the link full needs {fcNeed} data credits in flight (about {fcNeedKB} KB). But the limit is 2047, which covers only {fcW} packets in flight at once. The result is that the link uses only {fcU}, which is {fcX} GB/s. The 1000 ns round trip is a **tuned parameter**; this page found no reliable measured value. Halve it to 500 ns and the link reaches {fcHalf}; double it to 2000 ns and only {fcDbl} is left. With 128-byte packets the limit is the header credits: 127 headers cover only {fc128W} packets in flight, so utilisation is {fc128}.
+
+From PCIe 4.0 the two ends can agree on **scaled flow control**: the counters stay the same width, but each credit can stand for 1, 4 or 16 units, so a much larger buffer can be advertised. At 16 times, that is up to {hdrS} header credits and {capS} data credits (about {capSKiB} KiB). Tick the box and the model uses the 16-times header limit and lets the data credits go up to 8192, so you can see how large a buffer would have to be. Credits are not unique to PCIe; Fibre Channel does the same. See <a href='../storage-over-a-network/#ch4'>“Drives Across a Wire”, Chapter 4</a>.
+
+The model has only one class of packet (writes) flowing in one direction, and the buffer size and round trip are assumed. The scaling factors (1, 4, 16) and their start in PCIe 4.0 come from the patent that proposed them (FPGA vendors’ guides only confirm the 127/2047 limits and that the scale fields exist); this page has not read the specification text. {.take}
+
+## Resend when it goes wrong {#ch5}
+
+::: strings
+toc: Resend when it goes wrong
+:::
+
+Every TLP carries a 12-bit sequence number and a 32-bit check (LCRC). The receiver accepts packets in order and answers ACK if they are good, or NAK if they are bad. The sender keeps every unacknowledged packet in a buffer; on a NAK it resends everything from the bad one onwards. {.law}
+
+Bits on the wire do go wrong. The specification requires a bit error rate of no more than 10⁻¹² per lane. On Gen5 ×16 that still means about {e12} bits in error every second. That is not many, but it cannot be ignored. The data link layer finds them and makes them good, so nothing above it needs to know.
+
+Figure 7 shows one error. TLP 8’s LCRC fails, so the receiver discards it. TLP 9, right after it, is undamaged, but its sequence number is not the 8 the receiver is waiting for, so it is discarded too. The receiver answers with a NAK meaning “I have 7 and everything before it.” The sender resends from 8, replaying the packets in its buffer. This scheme is called **go-back-N**. The receiver never has to store out-of-order packets, but one error means resending a whole run.
+
+::: diagram dg-d7 keys=d7 place=wide
+cap: Figure 7 · One error and its resend: TLP 8 is bad, 9 is discarded with it, and both are sent again from the replay buffer.
+tx: Sender
+rx: Receiver
+m7: TLP 7
+m8: TLP 8
+m9: TLP 9
+nak: NAK 7
+r8: TLP 8 (resent)
+r9: TLP 9 (resent)
+ack: ACK 9
+n.ok: In order: accepted
+n.bad: LCRC bad: dropped
+n.drop: Out of order: dropped
+n.nakn: Resend from 8
+n.ok8: Good this time
+n.ok9: Accepted
+n.ackn: ACK to 9: buffer freed
+aria: Timing diagram: the sender sends TLPs 7, 8 and 9; 8 fails its check and 9 is discarded; the receiver returns NAK 7; the sender resends 8 and 9; the receiver returns ACK 9
+:::
+
+An ACK need not follow every packet. The receiver can collect a batch and confirm everything up to a sequence number with one ACK. If replies stop coming, the sender’s replay timer fires and it resends on its own. If three replays of the same packet make no progress, the 2-bit counter REPLAY_NUM rolls over to 0 on the fourth, and the link retrains before replaying.
+
+::: lab ch5-model
+model.title: How much bandwidth errors eat
+model.how: Drag the **bit error rate**, choose **data per packet** and the **resend method**, and watch the effective bandwidth fall.
+model.aria: Curve: effective bandwidth against bit error rate, comparing several packet sizes
+leg.cur: Current packet size
+leg.other: Other packet sizes
+ctl.ber: Bit error rate
+ctl.p: Data per packet
+ctl.mode: Resend method
+mode.gbn: Go-back-N
+mode.sr: Resend only the bad one
+ctl.rtt: ACK round trip (tuned parameter)
+read.p: Chance a packet is in error
+read.err: Bits in error per second on the wire
+read.u: Share of bandwidth usable
+read.retrain: Four failures of one packet in a row: link retrains
+cv.x: Bit error rate
+cv.y: Usable bandwidth %
+cv.spec: Spec 10⁻¹²
+persec: {v} per second
+never: almost never
+years: about once every {v} years
+say.clean: The chance a packet is in error is only {p}, so replays cost almost nothing: usable bandwidth {u}. About {err} bits per second are still in error on the wire, and all of them are put right.
+say.some: The chance a packet is in error is {p}, and replays take a small share: usable bandwidth {u}.
+say.bad: The chance a packet is in error is {p}. Each error means resending about {ratio} packets in flight, and usable bandwidth falls to {u}. The replay buffer must hold about {buf} of data already sent.
+:::
+
+At 10⁻¹², the chance that a 256-byte packet is in error is only {p12}, so replays cost almost nothing. Push the rate to 10⁻⁸ and each packet has a {p8} chance of error, and efficiency is still {u8}. At 10⁻⁶ the chance per packet is {p6}, which looks small. But with go-back-N, each error means resending all the roughly {ratio} packets in flight, and efficiency drops to {u6}. Resending only the bad one would give {u6sr}. The replay buffer has to hold everything sent in one round trip, about {buf} KB.
+
+The 1000 ns round trip is a **tuned parameter**: halve it to 500 ns and efficiency at 10⁻⁶ is {u6half}; double it to 2000 ns and it is {u6dbl}. Changing the packet size does not rescue it either: at 4096 bytes it is {u6big}, at 128 bytes {u6small}. Big packets are more likely to be hit, but fewer are in flight, and the two nearly cancel. The sixth generation can accept a raw error rate of 10⁻⁶ only because it first corrects most errors on the link (Chapter 10). The same trade-off in RDMA networks is covered in <a href='../storage-over-a-network/#ch6'>“Drives Across a Wire”, Chapter 6</a>.
+
+The model assumes bit errors are independent and that the window covers one round trip. It leaves out the loss of a NAK itself, replay-timer timeouts, and the 16-bit CRC on the small ACK/NAK packets. The exact length of the replay timer has not been checked against the specification. {.take}
+
+## Roll call at boot {#ch6}
+
+::: strings
+toc: Roll call at boot
+:::
+
+At boot, nobody knows what is hanging off the tree. The firmware or operating system starts at bus 0 and asks about each one in turn, numbers every bus, finds out how much address space each device needs, and then hands out address windows from the bottom up. {.law}
+
+Every PCIe function has a **configuration space**. Its first 64 bytes are a fixed-format header (Figure 8), holding the vendor ID, device ID, class code and up to six **BARs** (base address registers). The whole space is 4096 bytes. The first 256 bytes are the same as in old PCI, and the rest holds the extra capabilities PCIe added. Machines today access it through ECAM: the bus, device, function and register numbers are combined into one memory address, which is read or written directly.
+
+The roll call is depth-first. Starting at bus 0, it reads the vendor ID of each device number in turn; all 1s means nothing is there. When it finds a bridge (a root port, or a switch’s upstream or downstream port), it gives the bus on the far side a new number (the secondary bus), goes down and keeps counting. On the way back it writes the highest number it covers (the subordinate bus). This way every bridge knows which range of bus numbers is its own, so configuration requests can be routed down the right branch.
+
+::: diagram dg-d8 keys=d8 place=wide
+cap: Figure 8 · The 64-byte configuration header (type 0, for endpoints) and how an ECAM address is built. Offsets and fields come from Linux’s pci_regs.h.
+f.did: Device ID
+f.vid: Vendor ID
+f.sts: Status
+f.cmd: Command
+f.class: Class code
+f.rev: Rev
+f.bist: BIST
+f.htype: Hdr type
+f.lat: Lat timer
+f.cls: Cache line
+f.bar0: BAR0
+f.bar1: BAR1
+f.bar2: BAR2
+f.bar3: BAR3
+f.bar4: BAR4
+f.bar5: BAR5
+f.cis: CardBus CIS
+f.sid: Subsystem ID
+f.svid: Subsystem vendor
+f.rom: Expansion ROM address
+f.rsv: Reserved
+f.cap: Cap pointer
+f.maxlat: Max_Lat
+f.mingnt: Min_Gnt
+f.ipin: Int pin
+f.iline: Int line
+ecam: ECAM: configuration space read and written directly by memory address
+e.bus: Bus
+e.dev: Device
+e.fn: Fn
+e.reg: Register
+l1: Bus number, 8 bits: up to 256 buses
+l2: Device number, 5 bits: 32 devices per bus
+l3: Function number (Fn), 3 bits: 8 functions per device
+l4: Register, 12 bits: 4096 bytes of configuration space per function; the first 256 bytes are the same as old PCI
+ex: Example: BAR0 of bus 4, device 0, function 0 is at the ECAM base + {addr}
+aria: Table diagram: the 64-byte configuration header, with its fields listed by offset from 00h to 3Ch; beside it the bit split of an ECAM address: bus 8 bits, device 5 bits, function 3 bits, register 12 bits
+:::
+
+A device states how much address space it needs through a small trick: write all 1s to its BAR and read it back. The device holds at 0 the low bits it does not use. Strip the flag bits from the read-back value, invert and add one, and you have the size. A BAR’s size is always a power of 2, and its address must be aligned to that size. Then, from the bottom up, each bridge needs one window that covers everything below it. Memory windows are sized in units of 1 MiB.
+
+::: lab ch6-model
+model.title: Roll call, then address assignment
+model.how: Press **next step** to see the roll call in order, or **finish all** to see the finished address assignment. Change the **BAR size** of the card in the empty slot to see how the windows move.
+model.aria: Address map: where each device BAR and each bridge window sits in the memory address space
+leg.bar: Device BAR
+leg.win: Bridge window
+btn.step: Next step
+btn.all: Finish all
+btn.reset: Start over
+ctl.card: Insert a card in the empty slot
+ctl.bar: That card’s BAR
+th.dev: Device
+th.bdf: Bus:dev.fn
+th.bus: Bus number
+th.mem: Memory address
+read.bus: Buses
+read.used: Windows take
+read.waste: Lost to alignment
+read.probe: BAR read-back after writing all 1s
+cv.map: Address map (base is a tuned value)
+cv.zoom: Zoom: the switch’s window
+dev.gpu: Graphics card
+dev.ssd: SSD
+dev.nic: Network card
+dev.usb: USB controller
+dev.card: Card in empty slot
+br.rp: Root port
+br.sw: Switch upstream port
+br.dp: Switch downstream port
+busfmt: {p} → {s}…{u}
+nowin: No window
+log.start: Not started. Press “Next step” to begin the roll call at bus 0.
+log.ep: Found {dev} at {bdf}: read its BAR and note how much address space it needs.
+log.br: Found {kind} at {bdf}: number the bus below it {sec}, and go down.
+log.close: {kind} {bdf} is finished below: it covers buses {sec} to {sub}.
+log.done: Roll call finished in {n} steps. Addresses are assigned.
+say.step: Step {n} of {total}. Addresses are assigned only after the whole roll call is done and the sizes have been worked out from the bottom up.
+say.card: {buses} buses in all. Devices need {sum} in total, but the windows take {used}, with {waste} lost to alignment. The card in the empty slot needs only {bar}, yet its downstream port takes a window of {win}.
+say.done: {buses} buses in all. Devices need {sum} in total; the windows take {used}, with {waste} lost to alignment. The empty downstream port has no device, so it needs no window.
+:::
+
+On this example machine (the device list and the starting addresses are **tuned parameters**, chosen to show the rules; changing the starting address does not change any of the sizes below), the roll call finds {buses} buses. The devices’ BARs add up to {barSum} MiB, but the windows take {used} MiB, and alignment and the 1 MiB granularity waste {waste} MiB. Insert a card needing only {cardBar} KiB in the empty slot, and its downstream port takes a window of its own, {cardWin} MiB. With the slot empty, the total is {used0} MiB. With 64-bit addresses this waste does not matter, but in the range below 4 GiB it really can crowd out other things.
+
+After the roll call, each device’s BAR is a window in the memory address space. The CPU reads and writes that range, and the root complex and the bridges along the way route each request to the device by its window. The driver controls the device through this window (Chapter 7; what reading and writing the registers behind it looks like: see <a href='../how-the-os-talks-to-hardware/#ch4'>“How the OS Talks to Hardware”, Chapter 4</a>).
+
+This does not show prefetchable windows, 64-bit BARs, I/O space, virtual functions or the space reserved for hot-plug. Real firmware may allocate in a different order. Where in the boot the firmware does this roll call is covered in <a href='../how-a-computer-boots/#ch6'>“How a Computer Boots”, Chapter 6</a>. {.take}
+
+## An interrupt is also a memory write {#ch7}
+
+::: strings
+toc: An interrupt is also a memory write
+:::
+
+A device does not call the CPU over a dedicated wire. It writes its data into memory itself (DMA). When the work is done, it writes a fixed value to an agreed address. That write is the interrupt. {.law}
+
+This is how a driver gets a device to work (Figure 9). It first prepares the command and data buffers in memory, then writes once to a doorbell register in the device’s BAR. The device hears the doorbell, sends read requests to fetch the command, then sends read and write requests to move the data. All of these are TLPs the device starts itself. This is **DMA**, and the data does not pass through the CPU. How NVMe’s queues and doorbells talk is shown in <a href='../why-nvme-is-fast/#ch4'>“Why NVMe Is So Fast”, Chapter 4</a>.
+
+The address a device sees is not necessarily the real physical address. Modern machines have an **IOMMU** in the root complex. Like the CPU’s page tables, it translates the addresses a device uses into physical addresses, and it stops the device from touching memory that is not its own. When a virtual machine is given a device directly, the IOMMU is what keeps that device’s accesses out of the rest of memory.
+
+::: diagram dg-d9 keys=d9 place=wide
+cap: Figure 9 · A device doing a job: doorbell, then DMA, then a memory write to report completion.
+cpu: CPU
+apic: Interrupt controller (APIC)
+rc: Root complex
+iommu: IOMMU: device address → physical address
+mem: Memory
+dev: Device (e.g. network card)
+s1: ① The CPU puts command and data buffers in memory.
+s2: ② The CPU writes the doorbell in the device’s BAR. The write crosses the root complex and reaches the device as a memory-write TLP.
+s3: ③ The device sends read and write TLPs itself to move data (DMA). The IOMMU translates its addresses into physical ones and stops out-of-range access.
+s4: ④ When done, the device sends a memory write to an address starting with FEE, with the interrupt vector as its data. This is MSI.
+s5: ⑤ The root complex passes the write to the interrupt controller, which interrupts the CPU to check the result.
+aria: Schematic: CPU, memory, interrupt controller, root complex with IOMMU, and device, with five steps: place the command, ring the doorbell, DMA, MSI write, notify the CPU
+:::
+
+When the work is done, the device has to tell the CPU. Old PCI had four dedicated interrupt wires, shared between devices. PCIe does not use such wires; it uses **MSI** (message-signalled interrupts). The driver tells the device an address and a data value in advance, and when the device wants an interrupt, it writes that data to that address. On x86, the address falls in a range starting with FEE. The root complex sees it and passes it to the interrupt controller. The address says which core to send the interrupt to, and the data holds the interrupt vector (how it travels on from the interrupt controller to the driver: see <a href='../how-the-os-talks-to-hardware/#ch5'>“How the OS Talks to Hardware”, Chapter 5</a>). **MSI-X** gives each device a whole table, 16 bytes per entry, allowing many interrupts, each sent to a different core.
+
+::: lab ch7-model
+model.title: Building an MSI
+model.how: Choose a **target core** and an **interrupt vector**, and see the MSI-X table entry and each byte of the write packet on the wire; or look at a record read from a real machine.
+ctl.pre: Source
+pre.own: Set it yourself
+pre.real: A record from a real machine
+ctl.dest: Target core (APIC ID)
+ctl.vec: Interrupt vector
+hex.aria: Hexadecimal bytes of an MSI-X table entry and of an interrupt write packet
+hex.entry: MSI-X table entry (16 bytes, little-endian)
+hex.alo: Message address, low 32 bits: 0x{a}
+hex.ahi: Message address, high 32 bits: 0
+hex.data: Message data: 0x{d}
+hex.ctl: Vector control: 0 = not masked
+hex.tlp: Packet on the wire when the device raises an interrupt: a 1-DW memory write
+hex.dw0: DW0: MWr, 3-DW header (address below 4 GiB), Length 1
+hex.dw1: DW1: requester ID, Tag, first byte enables 1111
+hex.dw2: DW2: address = message address
+hex.pay: Data = message data (little-endian)
+mode.0: Fixed
+mode.1: Lowest priority
+mode.2: SMI
+mode.3: Reserved
+mode.4: NMI
+mode.5: INIT
+mode.6: Reserved
+mode.7: ExtINT
+say.own: The device writes 0x{d} to address 0x{a}. The leading FEE says “this is an interrupt”; the target core is {dest}; the vector in the data is {vec}, delivered as “{mode}”. To the CPU this is just an ordinary memory write that happens to land on the interrupt controller’s address.
+say.real: This one is from a real machine: address 0x{a}, data 0x{d}. Decoded, the destination field is {dest}, RH={rh}, DM={dm} (DM=1 means logical mode: the field is a bit mask selecting a group of cores, not one core’s number), vector {vec}, delivered as “{mode}”.
+:::
+
+The “one real machine” record comes from lspci output on a Linux machine: address 0xfee0300c, data 0x4171. Decoded with the Intel manual: the destination field is 0x03 with RH=1 and DM=1, which is logical destination mode, so 0x03 is not one core’s number but a bit mask selecting a group of cores; delivery is lowest priority (to whichever core in that group is running at the lowest priority), and the vector is 0x71. An interrupt travels the same path as an ordinary write and is the same kind of packet, and under PCIe’s ordering rules it cannot overtake the writes the device sent earlier. So when the CPU receives the interrupt, the data is already in memory.
+
+This also explains how an NVMe drive lets each CPU core receive its own completion notices: each queue has its own MSI-X interrupt, sent to the matching core. When interrupts come too often, drivers simply stop waiting for them and poll instead. See <a href='../why-nvme-is-fast/#ch7'>“Why NVMe Is So Fast”, Chapter 7</a>.
+
+This covers only the x86 MSI address format. Other platforms, such as ARM, use different interrupt-controller formats. It also does not explain how the old interrupt wires are emulated with messages in PCIe. {.take}
+
+## Faster means shorter {#ch8}
+
+::: strings
+toc: Faster means shorter
+:::
+
+The higher the frequency, the more signal a trace loses per inch. Each generation has a total loss budget for the whole path. The package, the slot and the add-in card take a fixed share first, and what is left is for the motherboard trace. {.law}
+
+A signal on a circuit board loses energy in two ways. Copper losses (skin effect and surface roughness) rise with the square root of frequency, and dielectric absorption in the board material rises linearly with frequency. The frequency that matters is the **Nyquist frequency**, half the symbol rate: Gen5’s 32 GT/s gives 16 GHz; Gen6 uses PAM4, but its symbol rate is unchanged, so it is still 16 GHz; Gen7 is 32 GHz. For how to read a loss-against-frequency curve, see <a href='../../../signal/systems/frequency-response/'>“Frequency Response & Filters”</a>.
+
+Each generation gives the whole chip-to-chip path a total loss budget: Gen5 at 16 GHz is 36 dB; Gen6 is 32 dB (PAM4 leaves a smaller eye, Chapter 9); Gen7 at 32 GHz is about 36 dB. The budget is first shared out to the CPU package, the slot and the add-in card (Figure 10). Using the test configuration of an instrument maker, these three together take {fix5} dB for Gen5, leaving only {left5} dB for the motherboard trace.
+
+::: diagram dg-d10 keys=d10 place=wide
+cap: Figure 10 · One Gen5 lane and its loss budget. The budget bar is to scale; the lane above is illustrative.
+cpu: CPU (root port)
+ret: Retimer (optional)
+conn: Slot
+dev: Device on the card
+board: Board trace
+cardt: Card trace
+bar: How Gen5’s {b} dB loss budget ({f} GHz) is shared:
+s.pkg: CPU package {v} dB
+s.board: Board trace {v} dB
+s.conn: Slot {v} dB
+s.card: Card {v} dB
+connlab: Shared out per the instrument maker’s configuration: the slot takes {v} dB (the narrowest cell of the bar), and the rest goes to the board trace. Adding a retimer splits the link into two segments, each with its own complete budget.
+aria: Schematic: from the CPU through the board trace and an optional retimer to the slot and the card; below, a to-scale budget bar split into package, board trace, slot and card
+:::
+
+Ordinary FR-4 board material loses about {a16} dB per inch at 16 GHz; low-loss material about {a16l} dB. Divide the dozen-odd dB left over by that, and you know the reach. Losses are not a dead end. The receiver’s equalisers (CTLE lifts the high frequencies; DFE subtracts the tail using bits it has already decided) win back part of the budget, and the budget is the limit once those are counted. When a link is too long, add a **retimer**. It fully recovers the bits and sends them out again, splitting the link into two segments, each with a complete budget of its own. A link may have at most two retimers.
+
+::: lab ch8-model
+model.title: Does one trace stay within budget?
+model.how: Choose the **generation** and **material**, drag the **trace length**, add **retimers**, and see whether the longest segment is still inside the budget.
+model.aria: Lines: total loss against trace length for three materials, compared with the budget line
+leg.fr4: Ordinary FR-4
+leg.mid: Mid-loss
+leg.low: Low-loss
+leg.bud: Budget (one per segment)
+ctl.gen: Generation
+gen.5: Gen5 · 16 GHz
+gen.6: Gen6 · 16 GHz
+gen.7: Gen7 · 32 GHz
+ctl.mat: Material
+mat.fr4: Ordinary FR-4
+mat.mid: Mid-loss
+mat.low: Low-loss
+ctl.len: Trace length
+ctl.ret: Retimers
+read.a: Loss per inch
+read.t: Total loss of the longest segment
+read.m: Margin left to budget
+read.r: Reach of this material
+cv.x: Trace length (in)
+cv.y: Total loss dB ({f} GHz)
+cv.bud: Allowed {v} dB
+say.ok: It passes. The {seg} trace plus the fixed losses of package, slot and card come to {each} in total, against a budget of {bud}, leaving {m}. This material reaches {reach} at most.
+say.okret: With {k} retimer(s), the trace is cut into segments of {seg} each, and each is checked against its own budget. The longest comes to {each}, within {bud}, leaving {m}.
+say.fail: It fails: one segment comes to {each}, over the budget of {bud} by {m}. Use low-loss material, or add a retimer.
+say.failmax: Even with both retimers it fails: each segment comes to {each}, over the budget by {m}. Only a shorter trace or a different material will do.
+:::
+
+By this model, Gen5 on ordinary FR-4 reaches only about {r5f} inches; with mid-loss material, {r5m} inches; with low-loss material, {r5l} inches. Gen6’s budget is tighter: mid-loss material leaves {r6m} inches. Gen7 doubles the frequency: {r7m} inches with mid-loss material and {r7l} inches with low-loss. This is why server motherboards increasingly use low-loss material and retimers, and move part of the link out of the board and into cables.
+
+Two values are **tuned parameters**. The board’s dielectric constant is 4.35, chosen so that mid-loss material at 10 GHz matches the dielectric loss given by Hargin. Gen6 and Gen7 package and connector losses are assumed equal to Gen5’s. If Gen7’s two figures are halved, mid-loss material reaches {r7mHalf} inches; if doubled, only {r7mDbl} inches.
+
+A real design needs a full channel simulation, covering reflections, crosstalk, vias and loss that varies with temperature. This model only adds up insertion loss by length. With retimers, the model charges each segment the same fixed loss, which is conservative. The Gen7 budget comes from vendor test material published before the specification was released. Vendors split the Gen5 budget slightly differently: Astera Labs gives 9 dB to the package and 16 dB to the board, which puts mid-loss reach at {r5mAlt} inches instead of {r5m}. {.take}
+
+## Two bits per symbol {#ch9}
+
+::: strings
+toc: Two bits per symbol
+:::
+
+PAM4 uses four levels, so each symbol carries two bits: the symbol rate stays the same and the bit rate doubles. The price is three eyes squeezed into the same swing, each only a third as tall, which costs {pen} dB of signal-to-noise ratio. {.law}
+
+By the sixth generation, doubling the symbol rate again would put the Nyquist frequency at 32 GHz, and the loss would rise sharply. A 10-inch mid-loss trace loses {loss16} dB at 16 GHz and {loss32} dB at 32 GHz, a gap of {lossGap} dB. PCIe 6.0 chose not to raise the frequency but to change the modulation. NRZ carries one bit per symbol on two levels; PAM4 uses four levels, so each symbol carries two bits (Figure 11).
+
+An **eye diagram** overlays many symbols. The open space in the middle is the “eye”, and the receiver decides levels at its centre. Noise smears the lines and closes the eye. For the same peak-to-peak swing, each PAM4 eye is only a third the height of an NRZ eye, and under the same noise the error rate is worse by several orders of magnitude. Adjacent levels are assigned by Gray code, so a one-level slip flips only one bit.
+
+::: diagram dg-d11 keys=d11 place=wide
+cap: Figure 11 · The same swing: NRZ has one eye, PAM4 has three. Levels are labelled in Gray code.
+nrz: NRZ (Gen1–5)
+pam: PAM4 (Gen6 on)
+nrzf: Two levels, one eye: the eye height is the whole swing
+pamf: Four levels, three eyes: each only a third as tall, {db} dB less signal-to-noise
+aria: Schematic: with the same swing, NRZ shows one large eye; PAM4 shows three smaller eyes stacked, with levels labelled in Gray code
+:::
+
+For NRZ to reach 10⁻¹², the signal-to-noise ratio (defined here as swing divided by the standard deviation of the noise) needs about {nrz12} dB. PAM4 needs {pam12} dB, which is {gap12} dB more. PCIe 6.0’s answer is not to chase 10⁻¹²: it accepts a raw error rate of 10⁻⁶, where PAM4 needs only {pam6} dB, {gapUse} dB more than NRZ needs for 10⁻¹². The remaining errors are left to FEC (Chapter 10).
+
+::: lab ch9-model
+model.title: The same noise, two eyes
+model.how: Drag the **signal-to-noise ratio** and see how the NRZ and PAM4 eyes are smeared by the noise, and how much their error rates differ.
+model.aria: Two eye diagrams: NRZ with two levels and PAM4 with four, both with the same noise added
+ctl.snr: Signal-to-noise ratio
+read.nrz: NRZ error rate
+read.pam: PAM4 error rate
+read.needn: NRZ needs for 10⁻¹²
+read.needp: PAM4 needs for 10⁻⁶
+cv.nrz: NRZ: 1 bit per symbol
+cv.pam: PAM4: 2 bits per symbol
+say.noisy: Too much noise: NRZ’s error rate is {n}, not yet at 10⁻¹²; PAM4’s is {p}.
+say.mid: NRZ is enough ({n}), but PAM4 is not: {p}, above the 10⁻⁶ that FEC can handle.
+say.clean: Both are enough: NRZ {n}; PAM4 {p}, already below 10⁻⁶, and the rest is left to FEC.
+:::
+
+At the default setting, NRZ is already far below 10⁻¹², but PAM4 is still above 10⁻⁶. The same lane needs several more dB once the modulation changes. Roughly, doubling the frequency costs {lossGap} dB of loss, while PAM4 at 10⁻⁶ needs only {gapUse} dB more, which is much cheaper. These few dB are recovered by stronger equalisation (pre-emphasis at the transmitter, decision feedback at the receiver) and by better board material.
+
+PAM4 was not invented by PCIe; high-speed Ethernet had used it for some time. PCIe adopted it later because it is more sensitive to latency: errors must be corrected quickly and blocks must be small. That is where the FLIT of the next chapter comes from.
+
+The noise here is white Gaussian noise. It leaves out intersymbol interference, jitter and equalisation. Real eye diagrams are usually closed by these. {.take}
+
+## Fixed-size FLITs: correct first, then resend {#ch10}
+
+::: strings
+toc: FLITs: correct first
+:::
+
+From Gen6, the link no longer sends TLPs one at a time. It sends fixed 256-byte FLITs: 236 bytes carry TLPs, and the rest is link-layer information, CRC and FEC. FEC corrects most errors on the spot, the CRC catches what is left, and only then is anything resent. {.law}
+
+At a raw error rate of 10⁻⁶, the Chapter 5 method would give every packet a chance of error of a few in a thousand, and go-back-N would eat about half the bandwidth. So Gen6 adds **forward error correction** (FEC) before any resending. The sender adds a few check bytes, and the receiver uses them to correct the bad bytes directly, without waiting for a resend. The basic idea of error-correcting codes is shown by the Hamming code in <a href='../../../tech/devices/inside-a-phone/#ecc'>“Ten Ideas Inside One Phone”</a>.
+
+FEC needs fixed-size blocks, so Gen6 cuts the link’s data into 256-byte **FLITs** (Figure 12): 236 bytes of TLP, 6 bytes of data-link information (acknowledgements and credits), 8 bytes of CRC and 6 bytes of FEC. The FEC is interleaved across three paths, each able to correct one bad byte. PAM4 errors often come in runs, and interleaving spreads a run across the three paths. After correction, the CRC checks again, and a FLIT that still fails is resent.
+
+::: diagram dg-d12 keys=d12 place=wide
+cap: Figure 12 · A 256-byte FLIT, one cell per byte.
+tlp: TLP {v} bytes
+dlp: Link-layer info {v} bytes
+crc: CRC {v} bytes
+fec: FEC {v} bytes
+il: One cell per byte, drawn to scale. The three shades of dot mark three interleaved paths, each with 2 bytes of FEC and able to correct 1 bad byte. The assignment of bytes to paths is schematic.
+aria: 256-byte FLIT drawn to scale, one cell per byte: the first 236 cells are TLP, followed by 6 cells of link-layer info, 8 cells of CRC and 6 cells of FEC
+:::
+
+Error checking and correction together add less than {decNs} ns of latency. TLPs no longer carry their own sequence numbers, LCRCs and framing: those moved into the FLIT and are computed once per FLIT. So although the FLIT has a fixed overhead of {flitOh}, it saves the 8 bytes each packet used to carry.
+
+::: lab ch10-model
+model.title: How many errors FEC corrects
+model.how: Drag the **raw error rate**, switch **FEC** on or off, choose the **resend method**, and see the effective bandwidth of Gen6 ×16.
+model.aria: Curves: effective bandwidth against raw error rate for three approaches
+leg.gbn: No FEC · go-back-N
+leg.sr: No FEC · resend only the bad one
+leg.fec: With FEC
+ctl.ber: Raw error rate
+ctl.fec: FEC on
+ctl.mode: Resend method
+mode.sr: Resend only the bad one
+read.p: Chance a FLIT must be resent
+read.u: Share of bandwidth usable
+read.x: Effective throughput of Gen6 ×16
+read.t: Time for one FLIT on the wire
+:::
+
+At 10⁻⁶ with no FEC, each FLIT has a {pNo} chance of needing a resend. The roughly {flitRatio} FLITs in flight in a round trip would all have to be resent, leaving {uNo} of the bandwidth usable. Resending only the bad one still gives {uNoSr}. With FEC, the resend chance drops to {pFec}, and usable bandwidth is {uFec}. The 1000 ns round trip is still a **tuned parameter**: without FEC, halving it gives {uNoHalf} and doubling gives {uNoDbl}; with FEC, almost nothing changes. Server drive interfaces also added FEC at 24G; see <a href='../how-sas-works/#ch9'>“Why Server Drives Use SAS”, Chapter 9</a>.
+
+::: lab ch10-lab
+model2.title: FLITs for small packets and large ones
+model2.how: Drag the **TLP data size**, choose **×1 or ×16**, and compare how long one TLP takes to send (Das Sharma 2022’s method).
+model2.aria: Two curves: time to send one TLP against data size, for 128b/130b and for FLITs
+leg.130: 128b/130b · Gen5
+leg.flit: FLIT · Gen6
+ctl.dw: TLP data
+ctl.w: Lanes
+read.a: 128b/130b at 32 GT/s
+read.b: FLIT at 64 GT/s
+read.s: Bandwidth relative to Gen5
+cv.x: Raw error rate
+cv.y: Usable bandwidth %
+cv.fber: Target 10⁻⁶
+say.fec: With FEC, each interleaved path corrects on the spot as long as it has no more than one bad byte. The resend chance falls to {p}, usable bandwidth is {u}, {X}.
+say.nofecbad: No FEC: any one bad byte in the 256 bytes means a resend, a chance of {p}. With “{mode}”, usable bandwidth is only {u}, {X}.
+say.nofec: No FEC: the resend chance is {p}. With “{mode}”, usable bandwidth is {u}, {X}.
+cv2.x: TLP data (DW)
+cv2.y: Time to send one TLP (ns)
+dwfmt: {v} DW ({b} bytes)
+say.slower: A small {dw} DW packet: a FLIT waits half a block on average, so it is {d} slower ({a} against {b}). Its bandwidth is {s} that of Gen5.
+say.faster: A {dw} DW packet: the doubled rate outweighs the wait, so the FLIT is {d} faster ({a} against {b}). Its bandwidth is {s} that of Gen5.
+:::
+
+FLITs are not always faster. A TLP waits on average half a FLIT before it can leave. Das Sharma’s 2022 presentation has a table that works this out in detail, and this model reproduces it. At ×1, a small packet with no data is {lat0x1} ns slower, while a 1024-DW packet is {lat1024x1} ns faster. On bandwidth, small packets gain the most: the per-packet overhead is spread out by the FLIT, so a 1-DW packet has {sc1} times Gen5’s bandwidth. Large packets gain less than double ({sc1024} times), because the FLIT’s fixed overhead is larger than the overhead large packets already had. The two curves cross at about {cross} DW ({crossB} bytes).
+
+So “Gen6 doubles the bandwidth” means more than double for small packets and slightly less than double for large ones. Gen7 keeps PAM4 and FLITs and only doubles the symbol rate. The Gen8 draft follows the same approach (Chapter 11).
+
+The model assumes byte errors are independent. Real PAM4 links produce errors in runs, which the specification handles with precoding and interleaving. CRC and FEC are counted by byte; the actual codes are not simulated. {.take}
+
+## Where the frontier is (as of November 2026) {#ch11}
+
+::: strings
+toc: Where the frontier is
+:::
+
+The items below fall into three groups: what has been settled in the specification, what has been built and tested, and what standards bodies or vendors say they will deliver. Sources and dates are in brackets. {.law}
+
+This page could not open the PCI-SIG website or its press releases directly. Every entry about PCI-SIG therefore comes second-hand, and is labelled as such.
+
+### Settled {#h.est .sub3}
+
+- **PCIe 7.0** was released to members in June 2025: 128 GT/s, keeping PAM4 and FLITs, and {f7bi} GB/s combined for ×16 in both directions (raw rate, before FLIT overhead). The optical-aware retimer ECN published alongside it revised 6.4 and 7.0 so that retimers can connect to optical links. (reported by ServeTheHome, 2025-06-15; eeNews Europe, 2025-06-12) {#e1}
+- Draft 0.3 of **PCIe 8.0** went to members in September 2025, and draft 0.5 in May 2026, targeting {f8gts} GT/s. (reported by ServeTheHome, 2026-05-06, and Tom’s Hardware at the same time) {#e2}
+- **CXL 4.0** (November 2025) is built on the PCIe 7.0 physical layer, at 128 GT/s. (CXL Consortium white paper) How CXL carries memory and cache coherence over this link is covered in <a href='../coherent-interconnects/#ch3'>“How Chips Share Memory”, Chapter 3</a>. {#e3}
+
+### Built and tested {#h.demo .sub3}
+
+- The first PCIe 6.x compliance workshop ended on 31 July 2026. Credo’s Gen6 ×16 retimer passed compliance and joined the 6.x Integrators List. (Credo press release, reposted by innovationopenlab, 2026-08-31) {#d1}
+- Micron’s 9650 PCIe 6.0 SSD entered volume production in February 2026 (second-hand reports). Its speed and significance are covered in <a href='../why-nvme-is-fast/#ch8'>“Why NVMe Is So Fast”, Chapter 8</a>, and are not repeated here. {#d2}
+- Before that, the same Credo retimer, which can run PCIe 6.0, had already passed PCI-SIG compliance testing at 32 GT/s (Gen5 speed). (Credo press release, 2026-02-10) {#d3}
+
+### Announced plans {#h.claim .sub3}
+
+- The full PCIe 8.0 specification is targeted for 2028, at about {f8bi} GB/s combined for ×16 in both directions (raw rate). This is a plan, not a fact. (PCI-SIG, reported by ServeTheHome, 2026-05-06) {#c1}
+- Cadence calls the July 2026 event the “first” 6.x compliance workshop. This page found no PCI-SIG original to confirm that. {#c2}
+- The Gen7 loss budget in Chapter 8 (about 36 dB at 32 GHz) comes from vendor test material (Tektronix, Samtec) published around 2023–2024, before the specification was released. This page has not checked the values in the final specification. {#c3}
+
+These entries will go out of date. The mechanisms in Chapters 1 to 10 will not change with them.
+
+This page does not benchmark or recommend any product. {.take}
+
+## Back to the start {#ch12}
+
+::: strings
+toc: Back to the start
+:::
+
+PCIe’s doubling over more than twenty years has come partly from raising the symbol rate, and partly from wasting less of each symbol. Every step has to be paid for physically. {.law}
+
+{.plain .qs}
+1. **What generation, and how many lanes, did this link settle on?** Bandwidth is the product of the two, and both ends use the highest level they share (Chapter 2). {#q1}
+2. **How big is each transfer?** The smaller the packet, the larger the share taken by headers and completions. Credits and round trips decide whether the link can be filled (Chapters 3 and 4). {#q2}
+3. **What does this generation use to double?** A higher frequency, a new encoding or a new modulation. Each step has a physical bill: loss, eye height and error correction (Chapters 8 to 10). {#q3}
+
+Back to the two opening questions. Speed has doubled six times. Gen2, Gen4, Gen5 and Gen7 doubled the symbol rate; Gen3 replaced 8b/10b and cut the encoding overhead from {enc10} to {enc130}; Gen6 added PAM4 and FLITs. Each time, the cost was paid in board material, retimers, equalisation and error correction. On the wire, one read or write is one or more TLPs, with headers, sequence numbers and checks, sent when credits allow and then acknowledged or resent. The device moves its own data by DMA, and when it is done it calls the CPU with one memory write. {#sum .sum tag=div}
+
+Further reading: <a href='../why-nvme-is-fast/'>“Why NVMe Is So Fast”</a> covers the most common storage protocol on PCIe. <a href='../how-usb-drives-talk/#ch8'>“Why a USB Drive Never Hits Its Label”, Chapter 8</a> covers how PCIe runs inside Thunderbolt and USB4 tunnels. <a href='../what-a-drive-is-made-of/#ch7'>“What a Drive Is Made Of”, Chapter 7</a> puts form factors, connectors, links and protocols on one map. <a href='../how-sata-works/'>“Why SATA Has Lasted Over Twenty Years”</a> covers the serial link that came before PCIe. <a href='../how-a-computer-is-wired/'>“How the Parts of a Computer Are Wired Together”</a> covers the shared bus before PCIe and where a motherboard’s lanes come from. <a href='../how-thunderbolt-works/'>“How Thunderbolt Works”</a> covers how the PCIe tunnel shares one USB-C cable with displays and USB 3. {#links style="margin-top:2em"}
+
+::: footer
+**Sources.** D. Das Sharma, PCI Express 6.0 Specification (PCI-SIG / OFA presentation, 2022), the generation, latency and bandwidth tables on slides 4 and 13. R. Budruk, D. Anderson and T. Shanley, PCI Express System Architecture (MindShare), Chapter 3 (the publisher’s free sample chapter). D. Froelich, PCI Express 3.0 PHY Electrical Layer Requirements (PCI-SIG presentation, 2008), on the trade-off between 8 GT/s and 10 GT/s and on insertion loss. Linux kernel include/uapi/linux/pci_regs.h, include/linux/pci-ecam.h, drivers/pci/ecam.c and include/linux/pci.h (read 2026-11-15). AMD PCIe IP guide PG346 (the 7-bit Lower Address of completions). M. Ajanovic (Intel), PCIe 3.0 presentation at Hot Chips 2009 (the STP token). Astera Labs, how the PCIe 5.0 insertion-loss budget is split. NVIDIA patent US9904653 (scaled flow-control factors). Intel 64 and IA-32 Architectures Software Developer’s Manual, Volume 3A, §10.11 (MSI address and data format). E. Billauer’s blog, lspci output (an MSI example). G. Colton’s blog (2024-11-09) and Xillybus documentation: credit limits of 127 and 2047. W. Stallings, Data and Computer Communications, the ARQ section. J. Proakis, Digital Communications, M-PAM error rates. TI application note SNLA401 (loss budgets, retimers and redrivers); Tektronix’s 2023 PCIe 7.0 introduction and PCIe 6.0 test material; Samtec DesignCon 2024 presentation. Z. Hargin (Siemens, 2025-10-09), on conductor and dielectric loss. CXL Consortium, CXL 4.0 white paper. Credo press releases (2026-02-10, 2026-08-31). ServeTheHome reports (2025-06-15, 2026-05-06). The URL and access date for each source are given in BRIEF.md.
+
+Written by an AI. The model is simplified, and the text marks which parameters were tuned. This is not a buying guide.
+:::
