@@ -630,7 +630,7 @@ anchor; a link to the page top has no anchor).
 
 ## 反馈控制 · 先看差多少，再决定推多少 / Feedback Control · See the Error, Then Act → 拉普拉斯与 ROC · 给频率配一个寿命 / Laplace Transform & ROC · Giving Frequencies a Lifespan
 
-- `pid-control` → `laplace#step4`: ? → poles
+- `pid-control#step5` → `laplace#step4`: ? → poles
 
 ## 缓冲溶液 · 把 pH 稳住 / Buffer Capacity · Holding pH Steady → 化学平衡 · 人数不变，人还在跑 / Chemical Equilibrium · Still Moving at Balance
 

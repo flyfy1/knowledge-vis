@@ -1,0 +1,31 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "pid-control",
+ "refs": [],
+ "backlinks": [
+  {
+   "from": "body-in-balance",
+   "links": [
+    {
+     "from": "ch4",
+     "to": "step1"
+    },
+    {
+     "from": "ch10",
+     "to": "step1"
+    }
+   ]
+  },
+  {
+   "from": "step-response",
+   "links": [
+    {
+     "from": null,
+     "to": "step3"
+    }
+   ]
+  }
+ ],
+ "related": [],
+ "bindings": []
+}
