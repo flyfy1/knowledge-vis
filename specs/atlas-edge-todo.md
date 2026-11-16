@@ -825,7 +825,7 @@ anchor; a link to the page top has no anchor).
 
 ## pH 标度 / The pH Scale → 缓冲溶液 · 把 pH 稳住 / Buffer Capacity · Holding pH Steady
 
-- `ph-scale` → `buffer-capacity#step2`
+- `ph-scale#step5` → `buffer-capacity#step2`
 
 ## 光电效应 · 光是一份一份的 / The Photoelectric Effect · Light Comes in Packets → 原子结构 · 质子数定它是谁 / Atomic Structure · The Proton Count Decides What It Is
 
