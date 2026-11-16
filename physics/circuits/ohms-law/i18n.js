@@ -91,7 +91,7 @@ const STR = {
     "site.crumb.sub": "电路",
     "site.bl.title": "被这些页面引用",
     "site.bl.1": "<a href=\"../../../computing/systems/how-power-reaches-the-cpu/\">电是怎么送进 CPU 的</a>：<a href=\"../../../computing/systems/how-power-reaches-the-cpu/#ch1\">该文第 1 章</a>",
-    "site.bl.2": "<a href=\"../series-parallel/\">串联与并联 · 电流的分与合</a>：→ <a href=\"#step1\">本页第 1 步</a>、<a href=\"#step3\">本页第 3 步</a>",
+    "site.bl.2": "<a href=\"../series-parallel/\">串联与并联 · 电流的分与合</a>：<a href=\"../series-parallel/#step0\">该课第 0 步</a> → <a href=\"#step1\">本页第 1 步</a>；<a href=\"../series-parallel/#step5\">该课第 5 步</a> → <a href=\"#step1\">本页第 1 步</a>、<a href=\"#step3\">本页第 3 步</a>",
     "site.bl.3": "<a href=\"../../../tech/devices/inside-a-phone/\">一部手机里的十个道理</a>：→ <a href=\"#step4\">本页第 4 步</a>"
   },
   en: {
@@ -184,7 +184,7 @@ const STR = {
     "site.crumb.sub": "Circuits",
     "site.bl.title": "Linked from",
     "site.bl.1": "<a href=\"../../../computing/systems/how-power-reaches-the-cpu/\">How Power Reaches the CPU</a>: <a href=\"../../../computing/systems/how-power-reaches-the-cpu/#ch1\">its chapter 1</a>",
-    "site.bl.2": "<a href=\"../series-parallel/\">Series & Parallel · Splitting and Merging Current</a>: → <a href=\"#step1\">this page step 1</a>, <a href=\"#step3\">this page step 3</a>",
+    "site.bl.2": "<a href=\"../series-parallel/\">Series & Parallel · Splitting and Merging Current</a>: <a href=\"../series-parallel/#step0\">its step 0</a> → <a href=\"#step1\">this page step 1</a>; <a href=\"../series-parallel/#step5\">its step 5</a> → <a href=\"#step1\">this page step 1</a>, <a href=\"#step3\">this page step 3</a>",
     "site.bl.3": "<a href=\"../../../tech/devices/inside-a-phone/\">Ten Ideas Inside One Phone</a>: → <a href=\"#step4\">this page step 4</a>"
   }
 };
