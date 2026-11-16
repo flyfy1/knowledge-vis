@@ -921,11 +921,11 @@ anchor; a link to the page top has no anchor).
 
 ## 圆的认识 · 圆规、半径与 π / The Circle · Compass, Radius and π → 对称与旋转 · 对折与转圈 / Symmetry & Rotation · Folding and Turning
 
-- `circle-intro` → `symmetry-rotation#step2`
+- `circle-intro#step5` → `symmetry-rotation#step2`
 
 ## 圆的认识 · 圆规、半径与 π / The Circle · Compass, Radius and π → 乘法是面积 · 点阵铺成一块地 / Multiplication Is Area · Arrays Become a Tiled Floor
 
-- `circle-intro` → `area-model#step1`: ? → area-model-multiplication
+- `circle-intro#step5` → `area-model#step1`: ? → area-model-multiplication
 
 ## 时钟与角度 · 两根针的赛跑 / Clocks & Angles · A Race Between Two Hands → 对称与旋转 · 对折与转圈 / Symmetry & Rotation · Folding and Turning
 

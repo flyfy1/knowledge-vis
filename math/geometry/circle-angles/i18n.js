@@ -101,7 +101,7 @@ const STR = {
     "site.crumb.cat": "数学基础",
     "site.crumb.sub": "几何",
     "site.bl.title": "被这些页面引用",
-    "site.bl.1": "<a href=\"../circle-intro/\">圆的认识 · 圆规、半径与 π</a>：→ <a href=\"#step0\">本页第 0 步</a>",
+    "site.bl.1": "<a href=\"../circle-intro/\">圆的认识 · 圆规、半径与 π</a>：<a href=\"../circle-intro/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>",
     "site.bl.2": "<a href=\"../clock-angles/\">时钟与角度 · 两根针的赛跑</a>：→ <a href=\"#step0\">本页第 0 步</a>",
     "site.bl.3": "<a href=\"../conic-sections/\">圆锥曲线</a>：→ <a href=\"#step0\">本页第 0 步</a>",
     "site.bl.4": "<a href=\"../polygon-angles/\">多边形内角和 · 撕下来拼一拼</a>：→ <a href=\"#step1\">本页第 1 步</a>"
@@ -206,7 +206,7 @@ const STR = {
     "site.crumb.cat": "Mathematical Foundations",
     "site.crumb.sub": "Geometry",
     "site.bl.title": "Linked from",
-    "site.bl.1": "<a href=\"../circle-intro/\">The Circle · Compass, Radius and π</a>: → <a href=\"#step0\">this page step 0</a>",
+    "site.bl.1": "<a href=\"../circle-intro/\">The Circle · Compass, Radius and π</a>: <a href=\"../circle-intro/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>",
     "site.bl.2": "<a href=\"../clock-angles/\">Clocks & Angles · A Race Between Two Hands</a>: → <a href=\"#step0\">this page step 0</a>",
     "site.bl.3": "<a href=\"../conic-sections/\">Conic Sections</a>: → <a href=\"#step0\">this page step 0</a>",
     "site.bl.4": "<a href=\"../polygon-angles/\">Polygon Angle Sums · Tear and Rearrange</a>: → <a href=\"#step1\">this page step 1</a>"
