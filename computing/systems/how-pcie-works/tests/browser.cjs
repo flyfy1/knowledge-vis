@@ -93,7 +93,7 @@ const diagramProblems = page => page.evaluate(() => {
     ok(!dp.length, `${tag}: diagrams: ${dp.join(' | ')}`);
     ok(await page.evaluate(w => [...document.querySelectorAll('svg.dg')].every(s => s.viewBox.baseVal.width === (s.getBoundingClientRect().width >= 700 ? 900 : 350)), width), `${tag}: diagram variant matches its width`);
     const clipped = await page.evaluate(() => [...document.querySelectorAll('figure *, .toc a, #langToggle button, table.fam td')].filter(e => {
-      if (e.closest('pre.hex') || e.closest('svg')) return false;
+      if (e.closest('pre.hex')) return false;
       if (!e.childNodes.length || ![...e.childNodes].some(n => n.nodeType === 3 && n.textContent.trim())) return false;
       const cs = getComputedStyle(e); if (cs.overflow === 'visible' && cs.textOverflow !== 'ellipsis') return false;
       return e.scrollWidth > e.clientWidth + 1; }).slice(0, 5).map(e => (e.id || e.tagName) + ' "' + e.textContent.trim().slice(0, 20) + '"'));

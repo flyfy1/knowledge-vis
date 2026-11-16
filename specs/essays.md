@@ -32,6 +32,11 @@ The first essay was `demos/scarcity-moves/`. Six more were added on 2026-11-11 a
   from an env var). Run the canvas sweep as well:
   `CANVAS_BASE_URL=… node tests/canvas-text-overlap.cjs --sweep <path>/`. It switches to scroll-aware mode by
   itself for canvases that draw only on screen.
+  In `browser.cjs` the "elements outside the viewport" check skips only elements inside `<defs>` (marker
+  shapes are not laid out); it must not skip `e.closest('svg')`, which also exempts the `<svg>` itself, so a
+  diagram wider than a 320 px screen would pass (a reviewer forced one SVG to 420 px at 320: 0 failures with
+  the skip, 24 without). The clipped-text check has no SVG skip at all. Restored in the five storage essays in
+  9fcb9fac and in the other computing/systems essays on 2026-11-16 (specs/reviews/storage-diagrams-s1-s3-review-20261116.md item 4).
 
 ## Files
 

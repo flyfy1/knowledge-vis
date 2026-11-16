@@ -93,7 +93,7 @@ function diagramCheck() {
     const layouts = await page.$$eval('figure.dia svg', s => s.map(e => e.getAttribute('class')).join(''));
     ok(width >= 1280 ? /^w+$/.test(layouts) : /^n+$/.test(layouts), `${tag}: diagram layouts ${layouts}`);
     const clipped = await page.evaluate(() => [...document.querySelectorAll('figure *, .toc a, #langToggle button, table.fam td')].filter(e => {
-      if (e.closest('svg') || e.closest('pre.code')) return false;
+      if (e.closest('pre.code')) return false;
       if (!e.childNodes.length || ![...e.childNodes].some(n => n.nodeType === 3 && n.textContent.trim())) return false;
       const cs = getComputedStyle(e); if (cs.overflow === 'visible' && cs.textOverflow !== 'ellipsis') return false;
       return e.scrollWidth > e.clientWidth + 1; }).slice(0, 5).map(e => (e.id || e.tagName) + ' "' + e.textContent.trim().slice(0, 20) + '"'));
@@ -111,7 +111,7 @@ function diagramCheck() {
     });
     ok(!small.length, `${tag}: targets under 48px: ${small.join(', ')}`);
     const wide = await page.evaluate(() => [...document.querySelectorAll('main *')].filter(e => {
-      if (e.closest('svg')) return false;
+      if (e.closest('defs')) return false;   // marker shapes are not laid out; the <svg> and what it draws are checked
       const r = e.getBoundingClientRect(); return r.width && (r.right > innerWidth + 1 || r.left < -1); }).slice(0, 5).map(e => e.tagName + '#' + e.id + '.' + e.className));
     ok(!wide.length, `${tag}: elements outside the viewport: ${wide.join(', ')}`);
     const raw = await page.evaluate(() => [...document.querySelectorAll('[data-i18n],[data-i18n-html]')].filter(e => /^\w+(\.[\w-]+)+$/.test(e.textContent.trim())).map(e => e.textContent.trim()).slice(0, 5));

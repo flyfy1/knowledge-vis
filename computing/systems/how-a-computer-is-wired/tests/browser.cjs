@@ -61,7 +61,6 @@ const canvasHash = (page, id) => page.$eval('#' + id, c => { const d = c.toDataU
     ok(JSON.stringify(await page.$$eval('#langToggle button', bs => bs.map(b => b.textContent.trim()))) === '["中","EN"]', `${tag}: toggle should read 中 | EN`);
     for (const fig of await page.$$('figure')) { await fig.evaluate(e => e.scrollIntoView({ block: 'center' })); await page.waitForTimeout(200); }
     const clipped = await page.evaluate(() => [...document.querySelectorAll('figure *, .toc a, #langToggle button')].filter(e => {
-      if (e.closest('svg')) return false;
       if (!e.childNodes.length || ![...e.childNodes].some(n => n.nodeType === 3 && n.textContent.trim())) return false;
       const cs = getComputedStyle(e); if (cs.overflow === 'visible' && cs.textOverflow !== 'ellipsis') return false;
       return e.scrollWidth > e.clientWidth + 1; }).slice(0, 5).map(e => (e.id || e.tagName) + ' "' + e.textContent.trim().slice(0, 20) + '"'));
@@ -79,7 +78,7 @@ const canvasHash = (page, id) => page.$eval('#' + id, c => { const d = c.toDataU
     });
     ok(!small.length, `${tag}: targets under 48px: ${small.join(', ')}`);
     const wide = await page.evaluate(() => [...document.querySelectorAll('main *')].filter(e => {
-      if (e.closest('svg')) return false;
+      if (e.closest('defs')) return false;   // marker shapes are not laid out; the <svg> and what it draws are checked
       const r = e.getBoundingClientRect(); return r.width && (r.right > innerWidth + 1 || r.left < -1); }).slice(0, 5).map(e => e.tagName + '#' + e.id + '.' + e.className));
     ok(!wide.length, `${tag}: elements outside the viewport: ${wide.join(', ')}`);
     const raw = await page.evaluate(() => [...document.querySelectorAll('[data-i18n],[data-i18n-html]')].filter(e => /^[a-z]\w*(\.\w+)+$/.test(e.textContent.trim())).map(e => e.textContent.trim()).slice(0, 5));
