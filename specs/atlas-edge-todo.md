@@ -468,7 +468,7 @@ anchor; a link to the page top has no anchor).
 
 ## 频率响应与滤波 · 按频率挑食的盒子 / Frequency Response & Filters · A Box That Eats by Frequency → 傅里叶变换 · 一步一交互 / The Fourier Transform · One Interaction at a Time
 
-- `frequency-response` → `fourier#step5`: ? → fourier, spectrum
+- `frequency-response#step0` → `fourier#step5`: freqresp → fourier, spectrum
 
 ## 频率响应与滤波 · 按频率挑食的盒子 / Frequency Response & Filters · A Box That Eats by Frequency → Z 变换 · 把 s 平面卷成单位圆 / The Z-Transform · Rolling the s-Plane into the Unit Circle
 

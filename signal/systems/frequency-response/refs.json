@@ -1,0 +1,58 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "frequency-response",
+ "refs": [],
+ "backlinks": [
+  {
+   "from": "atlas",
+   "links": [
+    {
+     "from": null,
+     "to": "step5"
+    }
+   ]
+  },
+  {
+   "from": "how-pcie-works",
+   "links": [
+    {
+     "from": "ch8",
+     "to": null
+    }
+   ]
+  },
+  {
+   "from": "resonance",
+   "links": [
+    {
+     "from": null,
+     "to": "step0"
+    }
+   ]
+  },
+  {
+   "from": "modulation",
+   "links": [
+    {
+     "from": null,
+     "to": "step2"
+    },
+    {
+     "from": null,
+     "to": "step5"
+    }
+   ]
+  },
+  {
+   "from": "fourier",
+   "links": [
+    {
+     "from": "step5",
+     "to": "step0"
+    }
+   ]
+  }
+ ],
+ "related": [],
+ "bindings": []
+}

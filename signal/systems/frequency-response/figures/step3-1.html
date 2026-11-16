@@ -1,0 +1,16 @@
+<p class="formula" data-i18n="s3formula">|H(ω)| = |sin(Mω/2)| / (M·|sin(ω/2)|)；零点 k 非 M 的倍数；ω=2πq 时 |H|=1</p>
+    <div class="controls">
+      <label><span><span data-i18n="s3mLab"></span> <span class="val" id="s3-m-val">8</span></span>
+        <input type="range" id="s3-m" min="2" max="32" step="1" value="8"></label>
+      <label><span><span data-i18n="s3wLab"></span> <span class="val" id="s3-w-val">0.785</span></span>
+        <input type="range" id="s3-w" min="0.05" max="3.141592653589793" step="any" aria-describedby="s3-frequency-help" value="0.785"></label>
+    </div>
+    <div class="btn-row">
+      <button class="btn" id="s3-p-zero" data-i18n="s3pZero"></button>
+      <button class="btn" id="s3-p-side" data-i18n="s3pSide"></button>
+      <button class="btn" id="s3-p-pass" data-i18n="s3pPass"></button>
+    </div>
+    <div class="stage"><canvas id="s3-mag" height="250" style="height:250px"></canvas></div>
+    <div class="stage"><canvas id="s3-tone" height="230" style="height:230px"></canvas></div>
+    <p class="readout" id="s3-readout"></p>
+    <p class="hint" id="s3-frequency-help" data-i18n-html="s3hint"></p>

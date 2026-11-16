@@ -1,0 +1,12 @@
+<div class="controls">
+      <label><span><span data-i18n="s4sigLab"></span></span>
+        <span class="btn-row" style="margin:0">
+          <button class="btn active" id="s4-sig-pulse" data-i18n="s4sigPulse"></button>
+          <button class="btn" id="s4-sig-square" data-i18n="s4sigSquare"></button>
+        </span></label>
+      <label><span><span data-i18n="s4tauLab">纯延迟 τ<sub>d</sub> / RC 的 τ（同一滑杆）</span> <span class="val" id="s4-tau-val">0.60 s</span></span>
+        <input type="range" id="s4-tau" min="0.1" max="1.5" step="0.02" value="0.6"></label>
+    </div>
+    <div class="stage"><canvas id="s4-wave" height="270" style="height:270px"></canvas></div>
+    <div class="stage"><canvas id="s4-phase" height="230" style="height:230px"></canvas></div>
+    <p class="readout" id="s4-readout"></p>
