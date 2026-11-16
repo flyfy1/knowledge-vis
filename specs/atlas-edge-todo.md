@@ -1392,7 +1392,7 @@ anchor; a link to the page top has no anchor).
 
 ## 费率与复利 · 1% 的费率怎么吃掉回报 / Fees & Compounding · How Does a 1% Fee Eat Returns → 利率与债券 · 利率升为什么债价跌 / Interest Rates & Bonds · Why Do Bond Prices Fall When Rates Rise
 
-- `fees-compounding` → `interest-rates-bonds#step1`
+- `fees-compounding#step5` → `interest-rates-bonds#step1`
 
 ## 利率与债券 · 利率升为什么债价跌 / Interest Rates & Bonds · Why Do Bond Prices Fall When Rates Rise → 供需与市场均衡 · 价格线如何相交 / Supply & Demand · Where the Market Clears
 
