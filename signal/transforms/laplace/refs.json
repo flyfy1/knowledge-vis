@@ -25,7 +25,11 @@
    "from": "step-response",
    "links": [
     {
-     "from": null,
+     "from": "step4",
+     "to": "step4"
+    },
+    {
+     "from": "step6",
      "to": "step4"
     }
    ]

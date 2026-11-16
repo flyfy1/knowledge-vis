@@ -81,7 +81,7 @@ const STRINGS = {
     "site.crumb.sub": "控制工程",
     "site.bl.title": "被这些页面引用",
     "site.bl.1": "<a href=\"../../../biology/body/body-in-balance/\">身体是怎么稳住的</a>：<a href=\"../../../biology/body/body-in-balance/#ch4\">该文第 4 章</a> → <a href=\"#step1\">本页第 1 步</a>；<a href=\"../../../biology/body/body-in-balance/#ch10\">该文第 10 章</a> → <a href=\"#step1\">本页第 1 步</a>",
-    "site.bl.2": "<a href=\"../step-response/\">阶跃响应 · 阻尼比决定冲多远，固有频率决定多快</a>：→ <a href=\"#step3\">本页第 3 步</a>"
+    "site.bl.2": "<a href=\"../step-response/\">阶跃响应 · 阻尼比决定冲多远，固有频率决定多快</a>：<a href=\"../step-response/#step6\">该课第 6 步</a> → <a href=\"#step3\">本页第 3 步</a>"
   },
   en: {
     pageTitle: "Feedback Control · Measure the gap, then choose the push",
@@ -162,7 +162,7 @@ const STRINGS = {
     "site.crumb.sub": "Control Engineering",
     "site.bl.title": "Linked from",
     "site.bl.1": "<a href=\"../../../biology/body/body-in-balance/\">How the Body Keeps Things Steady</a>: <a href=\"../../../biology/body/body-in-balance/#ch4\">its chapter 4</a> → <a href=\"#step1\">this page step 1</a>; <a href=\"../../../biology/body/body-in-balance/#ch10\">its chapter 10</a> → <a href=\"#step1\">this page step 1</a>",
-    "site.bl.2": "<a href=\"../step-response/\">Step Response · Damping Sets the Overshoot, Natural Frequency Sets the Speed</a>: → <a href=\"#step3\">this page step 3</a>"
+    "site.bl.2": "<a href=\"../step-response/\">Step Response · Damping Sets the Overshoot, Natural Frequency Sets the Speed</a>: <a href=\"../step-response/#step6\">its step 6</a> → <a href=\"#step3\">this page step 3</a>"
   }
 };
 
