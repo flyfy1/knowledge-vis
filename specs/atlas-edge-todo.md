@@ -695,12 +695,12 @@ anchor; a link to the page top has no anchor).
 
 ## 密度 / Density → 粒子与物态 · 热闹程度即温度 / Particles & States · Temperature Is How Wildly They Move
 
-- `density` → `particles-states#step0`
-- `density` → `particles-states#step2`
+- `density#step5` → `particles-states#step0`
+- `density#step5` → `particles-states#step2`
 
 ## 密度 / Density → 质量守恒 · 原子一个都不丢 / Mass Conservation · Not a Single Atom Lost
 
-- `density` → `mass-conservation#step0`
+- `density#step5` → `mass-conservation#step0`
 
 ## 溶解与饱和 / Dissolution & Saturation → 粒子与物态 · 热闹程度即温度 / Particles & States · Temperature Is How Wildly They Move
 

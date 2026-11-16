@@ -120,7 +120,7 @@ const STR = {
     "site.bl.3": "<a href=\"../chemical-equilibrium/\">化学平衡 · 人数不变，人还在跑</a>：<a href=\"../chemical-equilibrium/#step5\">该课第 5 步</a> → <a href=\"#step1\">本页第 1 步</a>",
     "site.bl.4": "<a href=\"../combustion-triangle/\">燃烧三要素</a>：<a href=\"../combustion-triangle/#step5\">该课第 5 步</a> → <a href=\"#step4\">本页第 4 步</a>",
     "site.bl.5": "<a href=\"../equation-balancing/\">化学方程式配平</a>：<a href=\"../equation-balancing/#step5\">该课第 5 步</a> → <a href=\"#step2\">本页第 2 步</a>",
-    "site.bl.6": "<a href=\"../../../physics/matter/density/\">密度</a>：→ <a href=\"#step0\">本页第 0 步</a>"
+    "site.bl.6": "<a href=\"../../../physics/matter/density/\">密度</a>：<a href=\"../../../physics/matter/density/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>"
   },
   en: {
     docTitle: "Mass Conservation · Not a Single Atom Lost",
@@ -241,7 +241,7 @@ const STR = {
     "site.bl.3": "<a href=\"../chemical-equilibrium/\">Chemical Equilibrium · Still Moving at Balance</a>: <a href=\"../chemical-equilibrium/#step5\">its step 5</a> → <a href=\"#step1\">this page step 1</a>",
     "site.bl.4": "<a href=\"../combustion-triangle/\">The Fire Triangle</a>: <a href=\"../combustion-triangle/#step5\">its step 5</a> → <a href=\"#step4\">this page step 4</a>",
     "site.bl.5": "<a href=\"../equation-balancing/\">Balancing Chemical Equations</a>: <a href=\"../equation-balancing/#step5\">its step 5</a> → <a href=\"#step2\">this page step 2</a>",
-    "site.bl.6": "<a href=\"../../../physics/matter/density/\">Density</a>: → <a href=\"#step0\">this page step 0</a>"
+    "site.bl.6": "<a href=\"../../../physics/matter/density/\">Density</a>: <a href=\"../../../physics/matter/density/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>"
   }
 };
 let lang;
