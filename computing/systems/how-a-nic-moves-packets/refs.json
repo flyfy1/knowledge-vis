@@ -1,0 +1,44 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "how-a-nic-moves-packets",
+ "refs": [],
+ "backlinks": [
+  {
+   "from": "coherent-interconnects",
+   "links": [
+    {
+     "from": "ch10",
+     "to": "ch12"
+    }
+   ]
+  },
+  {
+   "from": "how-the-os-talks-to-hardware",
+   "links": [
+    {
+     "from": "ch6",
+     "to": "ch5"
+    },
+    {
+     "from": "ch7",
+     "to": "ch3"
+    }
+   ]
+  },
+  {
+   "from": "storage-over-a-network",
+   "links": [
+    {
+     "from": "ch6",
+     "to": "ch11"
+    },
+    {
+     "from": null,
+     "to": "ch11"
+    }
+   ]
+  }
+ ],
+ "related": [],
+ "bindings": []
+}
