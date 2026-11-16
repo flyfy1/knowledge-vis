@@ -1,0 +1,36 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "mean-median-mode",
+ "refs": [],
+ "backlinks": [
+  {
+   "from": "how-an-economy-is-measured",
+   "links": [
+    {
+     "from": "ch5",
+     "to": null
+    }
+   ]
+  },
+  {
+   "from": "numbers-lie",
+   "links": [
+    {
+     "from": null,
+     "to": "step1"
+    }
+   ]
+  },
+  {
+   "from": "regression-correlation",
+   "links": [
+    {
+     "from": null,
+     "to": "step0"
+    }
+   ]
+  }
+ ],
+ "related": [],
+ "bindings": []
+}

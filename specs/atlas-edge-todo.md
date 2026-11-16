@@ -991,15 +991,15 @@ anchor; a link to the page top has no anchor).
 
 ## 平均数、中位数、众数之争 · 三个“平均”三个故事 / Mean, Median, Mode · Three “Averages”, Three Stories → 条形图 · 让数字站成一排比高矮 / Bar Charts · Numbers Standing in a Row
 
-- `mean-median-mode` → `bar-charts#step3`: ? → bar-charts
+- `mean-median-mode#step5` → `bar-charts#step3`: ? → bar-charts
 
 ## 平均数、中位数、众数之争 · 三个“平均”三个故事 / Mean, Median, Mode · Three “Averages”, Three Stories → 平均数 · 移多补少 / Averages · Level by Pouring
 
-- `mean-median-mode` → `averaging-leveling#step1`
+- `mean-median-mode#step5` → `averaging-leveling#step1`
 
 ## 平均数、中位数、众数之争 · 三个“平均”三个故事 / Mean, Median, Mode · Three “Averages”, Three Stories → 概率分布 · 随机性也有形状 / Probability Distributions · Randomness Has a Shape
 
-- `mean-median-mode` → `probability-distribution#step1`
+- `mean-median-mode#step5` → `probability-distribution#step1`
 
 ## 月相 · 从地球看被照亮的那一半 / Moon Phases · The Lit Half, Seen from Earth → 小孔成像 · 一个孔的相机 / Pinhole Camera · A Camera With One Tiny Hole
 

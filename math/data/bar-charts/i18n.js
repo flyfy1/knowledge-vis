@@ -83,7 +83,7 @@ const STR = {
     "site.crumb.sub": "统计图表",
     "site.bl.title": "被这些页面引用",
     "site.bl.1": "<a href=\"../averaging-leveling/\">平均数 · 移多补少</a>：<a href=\"../averaging-leveling/#step5\">该课第 5 步</a> → <a href=\"#step3\">本页第 3 步</a>",
-    "site.bl.2": "<a href=\"../../../probability/statistics/mean-median-mode/\">平均数、中位数、众数之争 · 三个“平均”三个故事</a>：→ <a href=\"#step3\">本页第 3 步</a>"
+    "site.bl.2": "<a href=\"../../../probability/statistics/mean-median-mode/\">平均数、中位数、众数之争 · 三个“平均”三个故事</a>：<a href=\"../../../probability/statistics/mean-median-mode/#step5\">该课第 5 步</a> → <a href=\"#step3\">本页第 3 步</a>"
   },
   en: {
     back: "← Knowledge Index",
@@ -167,7 +167,7 @@ const STR = {
     "site.crumb.sub": "Data & Charts",
     "site.bl.title": "Linked from",
     "site.bl.1": "<a href=\"../averaging-leveling/\">Averages · Level by Pouring</a>: <a href=\"../averaging-leveling/#step5\">its step 5</a> → <a href=\"#step3\">this page step 3</a>",
-    "site.bl.2": "<a href=\"../../../probability/statistics/mean-median-mode/\">Mean, Median, Mode · Three “Averages”, Three Stories</a>: → <a href=\"#step3\">this page step 3</a>"
+    "site.bl.2": "<a href=\"../../../probability/statistics/mean-median-mode/\">Mean, Median, Mode · Three “Averages”, Three Stories</a>: <a href=\"../../../probability/statistics/mean-median-mode/#step5\">its step 5</a> → <a href=\"#step3\">this page step 3</a>"
   }
 };
 let currentLang = 'en';

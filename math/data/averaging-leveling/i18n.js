@@ -91,7 +91,7 @@ const STR = {
     "site.crumb.cat": "数学基础",
     "site.crumb.sub": "统计图表",
     "site.bl.title": "被这些页面引用",
-    "site.bl.1": "<a href=\"../../../probability/statistics/mean-median-mode/\">平均数、中位数、众数之争 · 三个“平均”三个故事</a>：→ <a href=\"#step1\">本页第 1 步</a>"
+    "site.bl.1": "<a href=\"../../../probability/statistics/mean-median-mode/\">平均数、中位数、众数之争 · 三个“平均”三个故事</a>：<a href=\"../../../probability/statistics/mean-median-mode/#step5\">该课第 5 步</a> → <a href=\"#step1\">本页第 1 步</a>"
   },
   en: {
     back: "← Knowledge Index",
@@ -183,7 +183,7 @@ const STR = {
     "site.crumb.cat": "Mathematical Foundations",
     "site.crumb.sub": "Data & Charts",
     "site.bl.title": "Linked from",
-    "site.bl.1": "<a href=\"../../../probability/statistics/mean-median-mode/\">Mean, Median, Mode · Three “Averages”, Three Stories</a>: → <a href=\"#step1\">this page step 1</a>"
+    "site.bl.1": "<a href=\"../../../probability/statistics/mean-median-mode/\">Mean, Median, Mode · Three “Averages”, Three Stories</a>: <a href=\"../../../probability/statistics/mean-median-mode/#step5\">its step 5</a> → <a href=\"#step1\">this page step 1</a>"
   }
 };
 let currentLang = 'en';
