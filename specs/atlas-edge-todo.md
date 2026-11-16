@@ -1245,11 +1245,13 @@ anchor; a link to the page top has no anchor).
 
 ## 牛顿运动定律 · F = ma 是调出来的 / Newton’s Laws of Motion · F = ma, Tuned by Hand → 速度与 v-t 图 · 面积就是路 / Speed and the v–t Graph · Area Is Distance
 
-- `newton-laws` → `velocity-vt#step1`: ? → velocity-vt
+- `newton-laws#step0` → `velocity-vt#step1`: ? → velocity-vt
+- `newton-laws#step5` → `velocity-vt#step1`: ? → velocity-vt
 
 ## 牛顿运动定律 · F = ma 是调出来的 / Newton’s Laws of Motion · F = ma, Tuned by Hand → 动量与碰撞 · 速度不是全部 / Momentum & Collisions · Speed Is Not the Whole Story
 
-- `newton-laws` → `momentum-collision#step1`
+- `newton-laws#step4` → `momentum-collision#step1`
+- `newton-laws#step5` → `momentum-collision#step1`
 
 ## 牛顿法求根 · 沿切线一刀跳向零点 / Newton’s Method · Leap to the Root Along a Tangent → 梯度下降 · 摸黑下山 / Gradient Descent · Feeling Your Way Downhill
 

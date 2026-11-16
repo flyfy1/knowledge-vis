@@ -1,0 +1,60 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "newton-laws",
+ "refs": [
+  {
+   "from": "s0e",
+   "to": "velocity-vt",
+   "anchor": "step1"
+  },
+  {
+   "from": "s4e",
+   "to": "momentum-collision",
+   "anchor": "step1"
+  }
+ ],
+ "backlinks": [
+  {
+   "from": "vectors",
+   "links": [
+    {
+     "from": "step1",
+     "to": "step2"
+    },
+    {
+     "from": "step5",
+     "to": "step2"
+    }
+   ]
+  },
+  {
+   "from": "projectile-circular",
+   "links": [
+    {
+     "from": null,
+     "to": "step0"
+    }
+   ]
+  },
+  {
+   "from": "relativity",
+   "links": [
+    {
+     "from": null,
+     "to": "step0"
+    }
+   ]
+  },
+  {
+   "from": "inside-a-phone",
+   "links": [
+    {
+     "from": null,
+     "to": "step5"
+    }
+   ]
+  }
+ ],
+ "related": [],
+ "bindings": []
+}
