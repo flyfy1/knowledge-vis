@@ -1118,7 +1118,7 @@ anchor; a link to the page top has no anchor).
 
 ## 拍卖 · 报价与真话 / Auctions · Bidding and Telling the Truth → 概率分布 · 随机性也有形状 / Probability Distributions · Randomness Has a Shape
 
-- `auction-basics` → `probability-distribution#step1`
+- `auction-basics#step5` → `probability-distribution#step1`
 
 ## 二项分布到正态 · 钉板上长出的钟形 / Binomial to Normal · The Bell Curve Growing on a Pegboard → 概率分布 · 随机性也有形状 / Probability Distributions · Randomness Has a Shape
 
