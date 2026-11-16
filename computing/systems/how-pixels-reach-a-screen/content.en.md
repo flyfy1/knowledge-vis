@@ -1,0 +1,815 @@
+---
+lang: en
+title: How Pixels Reach a Screen · a long essay you can play with
+desc: A 4K screen refreshing 120 times a second has to deliver nearly a billion pixels a second, each lit the right colour at the right moment. How do they get from a block of GPU memory, through one cable, to light in front of your eyes, and why does the picture tear or stutter? Eleven hands-on models: how many bytes a frame takes, the pixel clock from real timing tables, a tearing and vsync timeline, variable refresh with low framerate compensation, the colour pipeline and its lookup tables, whether a cable fits a given mode, what 4:2:0 throws away, how long a row of pixels has to charge, motion blur when the eye tracks, the HDR PQ curve, and the latency from mouse click to light.
+---
+
+::: strings
+nav.back: ← Knowledge index
+nav.lang: Language
+toc.label: Contents
+toc.title: Contents
+u.ms: {v} ms
+u.us: {v} µs
+u.mhz: {v} MHz
+u.gbps: {v} Gb/s
+u.gbs: {v} GB/s
+u.mib: {v} MiB
+u.pct: {v}%
+u.fps: {v} fps
+u.perS: {v}/s
+u.px: {v} px
+u.hz: {v} Hz
+u.codes: {v} levels
+u.nits: {v} nits
+u.bpp: {v} bits/pixel
+u.pxs: {v} px/s
+u.hz.60: 60 Hz
+u.hz.120: 120 Hz
+u.hz.144: 144 Hz
+u.hz.240: 240 Hz
+u.hz.480: 480 Hz
+u.none: —
+:::
+
+# How Pixels Reach a Screen {#hero}
+
+::: strings
+kicker: Computing · Systems · a long essay you can play with
+:::
+
+A 4K screen that refreshes 120 times a second needs nearly a billion pixels a second.<br>How do they get from a block of memory on the graphics card, down one cable, to the light in front of you? {.sub}
+
+3840 × 2160 × 120 comes to {pxPerS} pixels a second: {pxPerSyi} × 10⁸, just short of a billion. Each one has to light up in the right colour at the right moment. A little late and you get a torn line across the picture; one frame late and you get a stutter. The story below follows the pixel. It starts as a few bytes in video memory, then the **display engine** reads them out one row at a time on a strict timetable, stacks other layers on top, converts them to the screen's colours, and packs them into a serial stream of bits sent down a DisplayPort or HDMI cable. At the other end, the **timing controller** in the screen hands them out to thousands of row and column lines, and the transistor in each pixel charges up within a few microseconds while the liquid crystal turns or the organic material lights up. Two questions run through the middle: **why a picture tears or stutters**, and **how long it takes from a mouse click to the screen lighting up**. **Each model is a small version of something real**: the pixel clock comes from the CTA-861 timing table in the Linux kernel, the timelines step through Vulkan's present modes frame by frame, and the PQ curve is computed from SMPTE ST 2084. {.lead}
+
+This page was written by an AI. Its rules come from primary sources (the Linux kernel's drm_edid.c, drm_dp.h and KMS documentation, the CVT formula in edid-decode, VESA's published material on DisplayPort, DSC and eDP, the HDMI Forum's HDMI 2.2 figures (as reported by the trade press; the specification itself was not opened), ITU-R BT.2100 and BT.709, and Microsoft's documentation on the DXGI flip model), and each one says where it came from and when. **Values marked “tuned parameter” were chosen so the model can calculate; they were not measured**, and the text says how the conclusion changes when one is doubled. This page does not rank any brand and gives no buying advice. {.note}
+
+## One frame is one block of memory {#ch1}
+
+::: strings
+toc: One frame is one block of memory
+:::
+
+A frame on the screen is, on the graphics card, a block of bytes in video memory: a few bytes per pixel, laid out row after row. Every refresh, this whole block is read from start to finish, whether or not the picture has changed. {.law}
+
+Think of the card stunt at a stadium opening ceremony: thousands of people each hold a coloured board, and from the stands a picture appears. Each person has a sheet saying which colour to hold at each second. The graphics card's **framebuffer** is that sheet: a block of video memory that says, row by row, what colour each pixel should be.
+
+::: diagram dg-overview keys=dg.overview
+cap: The route a pixel takes (schematic, not to scale). The left half is on the graphics card, the right half is in the screen, and only one cable joins them. The frame the GPU has drawn sits in video memory. The display engine reads it out on the timetable, stacks the layers and converts the colours, then hands it to the encoder to become a serial signal. The timing controller (TCON) in the screen takes it in and passes it to the row and column drivers.
+aria: The route of a pixel: the framebuffer in video memory, the display engine, the encoder and one cable, then the timing controller and row and column drivers in the panel, and finally the pixels
+vram: VRAM
+fb: Framebuffer (2–3)
+gpu: GPU draws in
+de: Display engine
+de2: planes · scale · colour
+phy: Encoder
+phy2: DP / HDMI
+cable: One cable
+tcon: Timing controller
+drv: Row & column drivers
+panel: Pixel array
+card: On the card
+mon: In the monitor
+:::
+
+The number of bytes one pixel takes is its **pixel format**. The most common, RGBA8, gives 8 bits each to red, green, blue and transparency, so 4 bytes per pixel. RGB10A2 squeezes transparency into 2 bits and gives each colour 10 bits, still 4 bytes. For HDR and linear-light compositing, FP16 is used: a 16-bit floating-point number per channel, 8 bytes per pixel.
+
+::: diagram dg-fmt keys=dg.fmt
+cap: How many bits one pixel takes in memory (bit widths drawn to scale). RGBA8 and RGB10A2 are both 32 bits per pixel; the latter takes 6 of alpha's 8 bits and gives the three colours 2 more each. FP16 is 64 bits, for holding HDR and linear light.
+aria: Bits per pixel in memory for three pixel formats: RGBA8 has 8 bits per channel, RGB10A2 has three 10-bit channels plus 2 bits, FP16 has a 16-bit half-precision float per channel
+rgba8: RGBA8 · 32 bits
+rgb10: RGB10A2 · 32 bits
+fp16: FP16 · 64 bits
+r8: R 8
+g8: G 8
+b8: B 8
+a8: A 8
+r10: R 10
+g10: G 10
+b10: B 10
+a2: A2
+r16: R 16
+g16: G 16
+b16: B 16
+a16: A 16
+:::
+
+The stored numbers are usually not the light intensity itself but the result of a curve, typically the sRGB curve. The reason is the dark end: the eye is more sensitive to differences in dark areas. Take the darkest 1% of light: {darkSrgb} of the 256 sRGB codes fall in that range, but storing linear intensity directly leaves only {darkLin} codes for it, and the dark areas break into visible bands. So the numbers in the framebuffer are *encoded*; before blending or lighting you must convert them back to linear light (the display engine in chapter 5 does this).
+
+The GPU draws these bytes: vertices, rasterisation, pixel shading, and finally writing into the framebuffer. For that stage, see <a href='../how-a-gpu-computes/#ch9'>“How a GPU Computes”, chapter 9</a> and <a href='../../graphics/computer-graphics/'>“Computer Graphics · From Coordinates to Pixels”</a>. This essay starts from the moment the writing is done.
+
+::: lab ch1-model
+model.title: Model 1 · How big a frame is, and how many bytes a second it reads
+model.how: Choose the resolution, pixel format, refresh rate and number of buffers. See how much video memory one frame takes, and how many bytes the screen reads from video memory each second.
+ctl.res: Resolution
+res.fhd: 1080p
+res.qhd: 1440p
+res.uhd: 4K
+res.k8: 8K
+ctl.fmt: Format
+fmt.rgba8: RGBA8
+fmt.rgb10a2: RGB10A2
+fmt.fp16: FP16
+ctl.hz: Refresh rate
+ctl.buf: Buffers
+buf.2: Two
+buf.3: Three
+read.frame: One frame
+read.total: All buffers
+read.px: Pixels a second (visible only)
+read.bw: Read from video memory per second
+say.ok: At every refresh, the display engine reads this {frame} from start to finish, {hz} times a second, which is *{bw}*. Even if the picture does not move at all, the reading never stops.
+say.fp16: FP16 takes 8 bytes per pixel, so the same picture doubles the bytes read: *{bw}* per second. That is why an HDR frame is usually converted to 10 bits in the last step before it is sent out.
+say.huge: This is already *{bw}* read continuously, just to send the same picture out again and again. The bandwidth of video memory can cope, but the power cost is real. Chapter 12 explains how a laptop screen can make it stop.
+:::
+
+4K, RGBA8, 120 Hz, three buffers: one frame is {frameMiB} MiB, the three buffers total {fb3MiB} MiB, and {readGBps} GB/s is read each second. In the same format at 60 Hz it is {read60} GB/s; with FP16 it is {fp16GBps} GB/s. Against the total bandwidth of video memory, which runs to several hundred GB/s, this is a small share (for the memory itself, see <a href='../how-memory-talks/#ch9'>“How Memory Talks to the CPU”, chapter 9</a>). But it has two special features: **it cannot be late**, because the screen will not wait; and **it never stops**, because it reads even when the picture has not changed. The display engine has its own buffer in front that reads a little early and keeps the data, precisely to guard against video memory being briefly busy.
+
+This model counts only the framebuffer itself. Real drivers also use compressed formats (each graphics vendor has its own lossless compression, which reads fewer bytes), tiled storage, and separate layers for the cursor and video, which chapter 5 covers. {.take}
+
+## Read row by row: the pixel clock {#ch2}
+
+::: strings
+toc: Read row by row: the pixel clock
+:::
+
+The display engine reads the framebuffer one pixel at a time, on a timetable: after each row of visible pixels there is a stretch of blank time, and after each frame's visible rows there is more. Visible plus blank, multiplied by the refresh rate, gives the pixel clock. {.law}
+
+An old typewriter, after finishing a line, had to push the carriage back to the left and advance the paper before typing the next line. That time spent pushing back typed nothing. Display timings keep the same blank time, called **blanking**. Originally the beam of a cathode-ray tube had to sweep back from right to left and from bottom to top, and it had to be switched off during that time.
+
+Today's panels have no electron beam, but the blank time is still there because it has other uses: HDMI carries audio and information packets about the picture inside it, and the circuits in the screen use it to align each row and frame. Variable refresh, in chapter 4, works by stretching it. In one row there are, in order, the visible pixels, the **front porch**, the **sync pulse** and the **back porch**; the rows in a frame are arranged the same way.
+
+::: diagram dg-raster keys=dg.raster
+cap: The timing of one frame, drawn in both directions (the numbers come from CTA-861 mode 97, which the models on this page use; the proportions are schematic). You read the way you read text: finish one row from left to right, return to the start of the row during blanking, then read the next row. After the last row, return to the top left during vertical blanking.
+aria: Timing of one frame: the visible area is at the top left; to its right, in order, are the row front porch, sync and back porch; below, in order, are the frame front porch, sync and back porch
+act: Visible area 3840 × 2160
+hfp: Front porch {hfp97}
+hs: Sync {hs97}
+hbp: Back porch {hbp97}
+vfp: Front porch {vfp97}
+vs: Sync {vs97}
+vbp: Back porch {vbp97}
+htot: {h97} clocks a row
+vtot: {v97} rows a frame
+scan: Reading direction
+hb: Row blanking
+vb: Frame blanking
+:::
+
+The timings used by TVs and HDMI devices are registered in the CTA-861 standard, with one number for each resolution and refresh rate; the Linux kernel's drm_edid.c copies the whole table. Mode 97 is 4K at 60 Hz: a row has 3840 visible pixels, a front porch of {hfp97}, sync of {hs97}, a back porch of {hbp97}, for a total of {h97}; a frame has 2160 visible rows, a front porch of {vfp97}, sync of {vs97}, a back porch of {vbp97}, for a total of {v97} rows. {h97} × {v97} × 60 gives a pixel clock of exactly {pclk97} MHz.
+
+::: lab ch2-model
+model.title: Model 2 · Pixel clock from a real timing table
+model.how: Choose a timing table, then drag the front and back porches. Grey in the picture is blanking, gold is the visible area. Read the pixel clock, the time for one row, and how long the vertical blanking lasts. Once you change a value, it is no longer a standard timing.
+model.aria: The total pixel area of one frame, drawn to scale, with the visible part in gold and the blanking in grey
+cv.act: Visible
+cv.blank: Blanking
+cv.sync: Sync pulse
+ctl.preset: Timing table
+p.cta16: 1080p60 · CTA 16
+p.cta97: 4K60 · CTA 97
+p.cvt4k60: 4K60 · CVT reduced 2
+p.cta118: 4K120 · CTA 118
+p.cta117: 4K100 · CTA 117
+p.cta199: 8K60 · CTA 199
+ctl.hfp: Row front porch
+ctl.hbp: Row back porch
+ctl.vfp: Frame front porch
+read.tot: Total size
+read.pclk: Pixel clock
+read.line: Time per row
+read.vbl: Frame blanking
+read.blank: Time spent blanking
+say.std: This is a standard timing: {tot}, pixel clock *{pclk}*, {line} per row, and each frame has {vbl} of nothing on screen.
+say.edit: After the edit, the pixel clock becomes *{pclk}*. The graphics card can send it, but the screen only accepts the timings it reported in its EDID, so it will most likely show “unsupported mode”.
+say.fast: The pixel clock is now *{pclk}*, faster than the standard timing for 4K at 120 Hz. The data to be carried down the cable grows with it; chapter 6 shows which cables can still carry it.
+:::
+
+The two tables are more interesting side by side. Mode 118 is 4K at 120 Hz, with the same timing as mode 97 but twice as fast, {pclk118} MHz. Mode 117 is 4K at 100 Hz, yet its pixel clock is also {pclk118} MHz: it stretches each row to {h117} clocks, and the extra is all blanking. **Blanking is also used as padding**, so several refresh rates can share one clock, which makes the receiving circuit simpler.
+
+Computer monitors often use another method, VESA's CVT reduced blanking (version 2): each row keeps only 80 pixels of blank time, and the frame blanking is the fewest rows that cover 460 microseconds. The same 4K at 60 Hz comes out as {hCvt} × {vCvt}, {pclkCvt} MHz, with blanking taking {blankCvt} of the total, against {blank97} in the CTA table. Less blanking means less bandwidth. This is the formula that <a href='../how-thunderbolt-works/#ch6'>“How Thunderbolt Works”, chapter 6</a> uses to work out how much bandwidth a monitor needs, so it is not repeated here. The “nearly a billion” at the start counts only visible pixels; including blanking, a 4K 120 Hz link carries {pclk118} million pixel clocks a second.
+
+The model changes only the front and back porches; the sync width and the visible area stay put. Real monitors also check sync polarity, the maximum pixel clock and the refresh range they support, and reject anything that does not match. The CVT formula is taken from edid-decode's implementation; VESA's original CVT text was not opened for this page. {.take}
+
+## Where tearing and stutter come from {#ch3}
+
+::: strings
+toc: Where tearing and stutter come from
+:::
+
+How long the GPU takes to draw a frame is its own business; how often the screen reads a frame is fixed by the timing table. The two clocks do not line up. Ignore that and you get tearing; wait and you get stutter or extra latency. No method avoids all three. {.law}
+
+Two people passing plates: one washes, one dries. The dryer takes one at a fixed interval, neither fast nor slow; the washer is sometimes quick and sometimes slow. If the washer hands a plate over as soon as it is done, the dryer may switch plates halfway through drying. If the washer waits for the dryer to reach out, the plates keep the dryer's rhythm but arrive in fits and starts.
+
+To keep the GPU from having a half-drawn frame read out, you need at least two buffers: the GPU draws into the **back buffer**, the display engine reads the **front buffer**, and when the drawing is done the two swap roles. This is called a **flip**. A flip only changes an address; no data moves. One question remains: when to flip.
+
+::: diagram dg-flip keys=dg.flip
+cap: Double buffering and tearing (schematic, not to scale). Top: the GPU draws the back buffer while the display engine reads the front buffer; a flip only swaps two pointers. Bottom: if the flip waits for vertical blanking, the whole frame is new. If it flips as soon as drawing finishes, the row being read at the moment of the flip becomes the tearing line.
+aria: Double buffering: the GPU draws into the back buffer while the display engine reads the front buffer; at a flip the two swap. If the flip happens halfway through a read, the top of the screen shows the old frame, the bottom shows the new one, and a torn line sits between them
+front: Front buffer: being read
+back: Back buffer: GPU drawing
+swap: Flip = swap
+gpu: GPU
+de: Display engine
+vs: Flip in vertical blanking
+now: Flip as soon as drawn
+old: Old frame N
+new: New frame N+1
+tear: Tear line
+whole: Whole frame is N+1
+:::
+
+Vulkan writes several approaches down as present modes (VkPresentModeKHR). **Immediate** (IMMEDIATE): flip as soon as drawing finishes. **First in, first out** (FIFO): finished frames queue up, and each vertical blanking takes one; this is what people usually mean by **vsync**. With only one back buffer, the GPU must wait once it has handed over a frame; with two back buffers, it can start the next frame first. **Mailbox** (MAILBOX): also flips in vertical blanking, but the queue keeps only the newest finished frame, and older ones are thrown away.
+
+::: lab ch3-model
+model.title: Model 3 · What appears on screen when two clocks do not line up
+model.how: The top row is frames drawn by the GPU, the bottom row is the frame the screen shows at each refresh; matching colours mean the same frame, and red lines mark tearing. Choose a present mode, drag the GPU's frame rate and jitter, and see the frame rate on screen, the tearing, the pacing and the latency.
+model.aria: Timeline: the top row shows the start and end of each GPU frame, the bottom row shows which frame the screen displays at each refresh; red lines mark tearing
+ctl.mode: Present mode
+m.immediate: Immediate (unsynced)
+m.fifo2: Vsync · double buffer
+m.fifo3: Vsync · triple buffer
+m.mailbox: Mailbox
+ctl.fps: GPU frame rate
+ctl.hz: Screen refresh rate
+ctl.jit: Frame-time jitter
+read.shown: Frame rate on screen
+read.tears: Tearing
+read.pace: Pacing error (average)
+read.lat: Start drawing to start showing
+cv.gpu: GPU
+cv.scr: Screen
+cv.t: Time (ms)
+say.tear: *{tears}* tearing lines a second. The GPU flips as soon as it finishes, and wherever the screen is reading at that moment, the picture breaks. The advantage is the shortest latency, {lat} on average.
+say.notear: No tearing this time: every flip happens to land in vertical blanking. As soon as the frame rate or the jitter changes, the tearing lines come back.
+say.stutter: No tearing, but the rhythm is off: the screen shows {shown}, yet each frame stays up for anywhere between {hmin} and {hmax} while the content moves at a steady pace. The average error is *{pace}*. This is stutter.
+say.even: The rhythm is even: each frame stays on screen for the same time, {shown}. The cost is latency *{lat}*.
+say.queue: The GPU is faster than the screen, so frames wait in a queue. Each finished frame must wait for those before it to show, and latency climbs to *{lat}*, about {n} refreshes. The motion is smooth, but the feel is “mushy”.
+say.mailbox: Mailbox mode: the GPU keeps drawing, each refresh takes only the newest frame, and the rest are thrown away ({drop} frames dropped this second). No tearing, latency *{lat}*, shorter than queued vsync.
+:::
+
+Using an example from the Linux kernel documentation: the GPU draws {kFps} frames a second and the screen runs at {kHz} Hz. With triple-buffered vsync, the screen also shows {kFps} frames a second, but the frames are not held equally: in every four, three stay up for {f3h48min} ms and one for {f3h48max} ms. The content moves at a steady pace, but with an average error of {f3p48} ms. This uneven feel is called **stutter**; in film it is called judder. Double buffering is worse: once the GPU has handed over a frame, it must wait for the next flip before it can start drawing, so the frame rate drops straight to {f2Shown}, with latency {f2Lat} ms. This is the familiar “turn on vsync and the frame rate halves.” Turn sync off and there are {imTears} tearing lines a second, but latency is only {imLat} ms.
+
+When the GPU is faster than the screen, the sums change. At {fastFps} frames a second on a 60 Hz screen: double-buffered vsync has a latency of {f2fastLat} ms; triple-buffered queueing makes each frame wait for the two before it, so latency rises to {f3Lat} ms; mailbox mode keeps only the newest frame, with latency {mbLat} ms and {mbDrop} frames dropped a second. **The more buffers queued, the smoother, and the later**. When chapter 11 adds up the total latency, this model appears again.
+
+In the model, each frame time is an average plus uniform jitter. Real frame times have long tails (loading, shader compilation). Drivers and games also apply frame-rate limits and lead adjustments (for example, capping the frame rate a little below the refresh rate), and none of these is modelled. “Latency” is counted from the start of drawing a frame to the reading of its first row; it excludes input and the screen itself. {.take}
+
+## Make the screen wait for the picture: variable refresh {#ch4}
+
+::: strings
+toc: Make the screen wait for the picture: variable refresh
+:::
+
+If the two clocks do not match, let the screen's clock follow the GPU. After each frame is read, the screen waits in blanking, and when a new frame arrives it starts reading the next one. There is a limit to how long it can wait. If the frame rate falls below that lower limit, the old frame has to be repeated to fill the gap. {.law}
+
+A bus runs to a timetable; if a passenger reaches the stop just after it has left, they wait for the next one. Change the rule to “leave when everyone is aboard” and the waiting is saved. But the bus cannot wait forever: passengers grow impatient if it waits too long. So it waits a while at most, and when the time is up it drives a lap empty and comes back.
+
+**Variable refresh rate** (VRR) works this way. VESA's Adaptive-Sync is written into DisplayPort, HDMI 2.1 has its own VRR, and AMD and NVIDIA each have their own certification names (FreeSync and G-SYNC). The principle fits in one sentence in the Linux kernel documentation: the screen waits in the **vertical front porch** until a flip arrives or it times out. The shortest frame is the normal timing (the highest refresh rate); the longest frame is set by the lowest refresh rate the screen supports.
+
+::: diagram dg-vrr keys=dg.vrr
+cap: What variable refresh does (schematic, not to scale). Top: with fixed refresh the reading rhythm does not change, and when a frame is late the previous frame is repeated. Bottom: the screen stretches the **vertical front porch** and waits until a new frame is delivered before it reads the next one. But the wait is capped at the lowest refresh rate the screen supports; when that time runs out without a new frame, the old frame is read again.
+aria: Fixed and variable refresh compared on a timeline: with fixed refresh a finished frame waits for the next refresh; with variable refresh the screen stretches the vertical front porch and starts reading when the new frame arrives
+fixed: Fixed refresh
+var: Variable refresh
+scan: Read a frame
+porch: Stretched front porch
+ready: New frame ready
+wait: Wait for next refresh
+repeat: Repeat old frame
+limit: Max wait: 1 / lowest rate
+:::
+
+::: lab ch4-model
+model.title: Model 4 · The same timeline, with variable refresh
+model.how: This is the timeline from model 3, with the screen on variable refresh. Drag the GPU frame rate, choose the screen's refresh range, and switch low framerate compensation (LFC) on or off. See what the screen does when a frame falls inside the range, below it, or above it.
+model.aria: Timeline with variable refresh: the top row shows GPU frames, the bottom row shows which frame the screen displays at each refresh, and repeated old frames are hatched
+ctl.fps: GPU frame rate
+ctl.range: Screen refresh range
+r.35_60: 35–60 Hz
+r.48_120: 48–120 Hz
+r.48_144: 48–144 Hz
+ctl.lfc: Low framerate compensation (LFC)
+ctl.jit: Frame-time jitter
+read.shown: Frame rate on screen
+read.rep: Old frames repeated
+read.pace: Pacing error (average)
+read.lat: Start drawing to start showing
+say.smooth: The frame rate is within the screen's range: the screen starts reading as soon as each frame is ready, and each frame stays on screen as long as it took to draw. Pacing error *{pace}*, latency {lat}.
+say.cap: The GPU is faster than the screen's maximum refresh rate, so variable refresh cannot help. It falls back to queued vsync, with latency *{lat}*. The usual fix is to cap the frame rate a little below the maximum refresh rate.
+say.lfc: The frame rate is below the screen's lower limit. Low framerate compensation repeats the old frame evenly, based on the interval of the previous frame ({rep} times a second), so the new frame falls exactly into a gap: pacing error *{pace}*.
+say.nolfc: The frame rate is below the screen's lower limit and there is no low framerate compensation. The screen waits until it times out and repeats the old frame; the new frame then happens to arrive halfway through the repeat and has to wait again. Pacing error *{pace}*.
+:::
+
+Again from the kernel documentation: the GPU draws {kFps} frames a second, and the screen's range is {kMin} to {kMax} Hz. With variable refresh on, each frame starts being read as soon as it is ready: pacing error {vrPace} ms, latency {vrLat} ms, which is the time to draw one frame. The documentation also notes the cost: the panel's brightness changes with the length of the front porch, and when the front porch varies a lot, some panels can show flicker.
+
+When the frame rate falls below the range, the screen waits at most {vPmax} ms (1/{kMin} of a second) before it has to repeat the old frame; one repeat takes a whole frame's time, at least {vPmin} ms. When the GPU hands over a frame every {v25ms} ms, a new frame often arrives halfway through a repeat and has to wait again: pacing error {v25Pace} ms. **Low framerate compensation** (LFC) works like this: the driver measures the interval between frames and repeats the old frame evenly at a fraction of that interval, so the next frame falls exactly into a gap. The pacing error becomes {v25lPace}.
+
+This needs a wide enough range. When an interval is split in two, each half cannot be shorter than the shortest frame, so the maximum refresh rate must be at least 2 times the minimum. 35 to 60 Hz is only {vRatio} times, and for frame intervals between {vPmax} and {vP2min} ms there is no way to split it: at one frame every 31 ms, compensation still leaves a pacing error of {v31Pace} ms. Vendor material often says 2.5 times, for margin; this page could not verify that figure from a primary source. At the other end, when the GPU is faster than the maximum refresh rate, variable refresh cannot help and it falls back to queueing: at {fastFps} frames a second, latency is {vrFastLat} ms.
+
+The low framerate compensation in the model predicts only from the interval of the previous frame, so when jitter is large it guesses wrong, and the rhythm can be worse than with no compensation at all. Real driver algorithms are not public. Variable refresh also does not care about content: if the picture itself is rendered unevenly, the screen shows that faithfully, and it still looks uneven. {.take}
+
+## Display engine and compositor {#ch5}
+
+::: strings
+toc: Display engine and compositor
+:::
+
+A frame on screen is often not one buffer but several stacked together: the desktop, video and the cursor. The stacking can be done by the operating system's compositor on the GPU, or handed to the display engine while it reads out. The latter saves a copy and also a frame of time. {.law}
+
+A class wall newspaper can be pasted up on one large sheet, with the headline, photos and text, and then copied all at once; or several transparencies can be laid over one another on the copier and printed together. The first takes an extra step; the second needs a copier that can stack transparencies.
+
+Several windows are open on the desktop, and each program draws its own window. The program that combines them into one frame is called a **compositor**: DWM on Windows, the Wayland compositors on Linux, and the Quartz Compositor on macOS. Composition means drawing each window again on the GPU into a new buffer, and that result usually cannot be shown until the next refresh, so it adds a frame of latency.
+
+The display engine stacks layers too; its unit is the **plane**. In Linux KMS each plane reads a framebuffer, can change format and scale, and is blended with other planes by alpha, then handed to the stage that reads out on timing (KMS calls it the CRTC). Microsoft's documentation calls the case where this is used DirectFlip: a full-screen program hands its buffer straight to the display engine while the compositor sleeps. When the picture is a different size, hardware scaling is used (the documentation's example is {fitLo} to {fitHi} times); and when it covers only part of the screen, **multiplane overlay** (MPO) is used. This state of bypassing the compositor is called independent flip, and combined with a waitable swap chain it can reach 1 frame of latency.
+
+::: diagram dg-engine keys=dg.engine
+cap: Inside the display engine (schematic, not to scale; real hardware differs in stages and order, and this follows the Linux KMS properties). Each layer reads its own buffer, converts format, scales, and is stacked into a frame by alpha. Then colour takes three steps: the **de-gamma** lookup table turns the encoded values back into linear light, the **colour matrix** converts them to the screen's primaries, and the **gamma** lookup table encodes the values the screen needs.
+aria: The display engine pipeline: the main, video and cursor layers each read a buffer, convert format, scale, and blend into one frame; then de-gamma lookup table, colour matrix, gamma lookup table and dithering, and output to the encoder
+p1: Main layer: desktop
+p2: Overlay: video
+p3: Cursor
+cv: Format conversion
+sc: Scaling
+bl: Blend
+dg: De-gamma LUT
+ctm: Colour matrix 3×3
+gm: Gamma LUT
+di: Dither
+out: Encoder
+crtc: CRTC: read out on timing
+:::
+
+After stacking comes colour. The framebuffer holds sRGB-encoded numbers (chapter 1), but the screen's primaries and brightness curve are all different. KMS defines three steps in order: the **de-gamma lookup table** (DEGAMMA_LUT) turns the encoded values back into linear light; the **colour matrix** (CTM, 3×3) converts them to the screen's primaries; and the **gamma lookup table** (GAMMA_LUT) encodes the result into the values the screen needs. For the primaries and colour gamut themselves, see the section on screens in <a href='../../../tech/devices/inside-a-phone/#screen'>“Ten Ideas Inside One Phone”</a>.
+
+::: lab ch5-model
+model.title: Model 5 · One colour through the colour pipeline
+model.how: Choose an input colour, the type of screen, the output bit depth and the number of entries in the gamma lookup table. See what this colour becomes at each step. Then see how a 0-to-255 grey ramp fares through the same pipeline: how many levels survive, and the largest error.
+ctl.col: Input colour
+c.red: Pure red
+c.skin: Skin tone
+c.grey: Mid grey
+c.dark: Dark grey
+ctl.tgt: Screen
+t.srgb: sRGB screen
+t.p3: Wide-gamut (P3) screen
+t.pq: HDR (BT.2020 + PQ)
+ctl.bits: Output
+b.8: 8 bits
+b.10: 10 bits
+ctl.lut: Gamma lookup table
+l.17: 17 entries
+l.33: 33 entries
+l.256: 256 entries
+l.1024: 1024 entries
+read.out: Values sent
+read.lv: Grey levels surviving (of 256)
+read.err: Largest error in the lookup table
+st.in: Framebuffer (sRGB-encoded)
+st.lin: After de-gamma (linear light)
+st.ctm: After colour matrix (screen primaries)
+st.out: After gamma LUT (values sent)
+st.nits: Brightness (nits)
+say.srgb: On an sRGB screen the three steps cancel out: de-gamma and then gamma put it back, the matrix is the identity, and what is sent is *{out}*, the same as in the framebuffer.
+say.p3: On a wide-gamut screen the reds are redder. The same sRGB red uses only part of the P3 primaries: what is sent is *{out}*, no longer 255, 0, 0. Without this step, every colour looks oversaturated.
+say.pq: In HDR mode, sRGB white is placed at {sdr} nits (a setting in the system); the colour is first converted to BT.2020 primaries and then encoded with PQ, and the 10-bit value sent out is *{out}*. PQ is steep in the dark, and a lookup table with {n} entries spaced evenly in linear light is off by up to *{err}*, so this table cannot be sampled evenly.
+say.band: The lookup table has only {n} entries, evenly spaced in linear light. Where the curve is steepest in the darks, interpolation is off the most, by up to *{err}*. Of 256 grey levels, only {lv} survive, and the dark areas break into rings.
+:::
+
+Three things can be seen in the model. On an sRGB screen the three steps cancel out, and the values sent match the framebuffer. On a wide-gamut screen, pure red 255, 0, 0 is sent as {p3R}, {p3G}, {p3B}: the first row of the BT.709-to-BT.2020 matrix is {m00}, {m01}, {m02}, computed from the two sets of primaries and the D65 white point, matching the four-decimal figures printed in ITU-R BT.2087. In HDR mode the same red becomes {pqR}, {pqG}… (10-bit PQ, with white at {sdrNits} nits; this is an adjustable system setting, and this page uses that value).
+
+The third lesson is about the number of lookup table entries. A gamma table with 17 entries spaced evenly in linear light, run through a 256-level grey ramp, is off by up to {lut17} levels, and only {lut17lv} survive; with 1024 entries, all {lut1024lv} levels survive. The PQ curve of HDR is steeper: 17 entries are off by up to {lutPq17} levels. So hardware lookup tables are often not spaced evenly: entries are dense in the darks and sparse in the brights. This is also one source of the banding that appears in dark areas after a colour profile is installed.
+
+In the model, de-gamma is the exact formula; only the gamma table is quantised. Real hardware has finite entries in both tables, a fixed number of bits per entry, matrix coefficients in fixed point, and a dithering step that turns the extra precision into fine noise. How out-of-gamut colours are handled (clipping or compression) is not modelled here. {.take}
+
+## One cable: DisplayPort and HDMI {#ch6}
+
+::: strings
+toc: One cable: DisplayPort and HDMI
+:::
+
+What travels on the cable is the pixel clock multiplied by the bits per pixel, plus the overhead of encoding. DisplayPort and HDMI are both several high-speed serial lanes; they differ in how they encode and how they carry the clock. Whether a picture fits on a cable comes down to comparing this product with the cable's usable bandwidth. {.law}
+
+When one truck cannot carry the whole load, you send four trucks, each with part of it, and reassemble it at the other end. On the road each box needs a label and padding, so the trucks are never fully loaded.
+
+::: diagram dg-dp keys=dg.dp
+cap: One DisplayPort connection (schematic, not to scale). Pixels do not travel on a separate clock line: the bytes of a frame are dealt out across the four main link lanes, and the clock is recovered from the data. During blanking, the lanes carry audio and data packets describing the picture. The auxiliary channel is a slow two-way line used to read the screen's capabilities and to do link training.
+aria: A DisplayPort link: between the source and the sink are four main link lanes, one auxiliary channel and a hot-plug detect line; on the main link the bytes of a pixel are dealt out across four lanes, each byte becomes 10 bits under 8b/10b, and every 128 bits gets 4 bits of header under 128b/132b
+src: GPU (source)
+snk: Screen (sink)
+l0: Lane 0
+l1: Lane 1
+l2: Lane 2
+l3: Lane 3
+aux: AUX channel (two-way, slow)
+hpd: Hot-plug detect
+c8: 8b/10b: 10 bits per 8, 80% efficient
+c128: 128b/132b: 4 header bits per 128, about 97% efficient
+px: Pixel bytes dealt across four lanes
+:::
+
+**DisplayPort** has four main link lanes, each a differential pair, with pixel bytes dealt out across them in turn. There is no separate clock line; the receiver recovers the clock from the transitions in the data. The rates before DP 1.4 were called RBR, HBR, HBR2 and HBR3, from 1.62 to 8.1 Gb/s per lane, using 8b/10b encoding. Four HBR3 lanes give 32.4 Gb/s, enough for a picture of {capHbr3} Gb/s. From DP 2.0 on, UHBR10, 13.5 and 20 use 128b/132b encoding; four UHBR20 lanes carry {capUhbr20} Gb/s (VESA's figure). 128b/132b on its own is 97% efficient; after error correction and control symbols the Linux kernel counts {uhbrEff}, and 80 × {uhbrEff} gives exactly that number. This page uses the same efficiency for UHBR10 and UHBR13.5.
+
+Once a cable is plugged in, the two ends first hold a negotiation called **link training**. The source reads the screen's capabilities over the AUX channel and writes the rate and lane count into the screen's registers (in the kernel headers these are 0x100 and 0x101; the rate is written in multiples of 0.27 Gb/s, so 0x1e is 8.1). It then sends training patterns, and the screen reports whether each lane has locked; if not, the source adjusts voltage swing and pre-emphasis as the screen asks. If the cable is too long or too poor, it drops one rate step and tries again. This is why “after changing the cable, more refresh rates can be selected.” One link can also carry several streams to several screens in time slots; this is called MST.
+
+::: diagram dg-train keys=dg.train
+cap: Link training (schematic; register addresses are from the Linux kernel's drm_dp.h). The source writes the rate and lane count into the screen's DPCD registers over AUX, then sends two kinds of training pattern in turn. Each round it reads back each lane's status, and raises voltage swing and pre-emphasis one step at a time, from 0 to 3, as the screen requests, until everything locks. If it fails, it drops one rate step and tries again.
+aria: The sequence of DisplayPort link training: write the rate and lane count registers via the AUX channel, send training pattern 1 until clock recovery, then send training patterns 2 to 4 until equalisation and symbol lock, adjusting voltage swing and pre-emphasis as the sink asks
+s1: Write 0x100 rate, 0x101 lanes
+s2: Send pattern 1: clock recovery
+s3: Read 0x202: CR_DONE?
+s4: Send patterns 2/3/4: equalisation
+s5: Read 0x202: equalised, locked?
+s6: Start sending picture
+adj: No: adjust swing and pre-emphasis (levels 0–3)
+down: Still no: drop one rate step
+:::
+
+**HDMI** originally used TMDS: three data lines and one clock line, with each 10-bit character carrying 8 bits of data, and the character rate tracking the pixel clock. HDMI 2.0 tops out at 600 MHz. The 4K 60 Hz CTA timing at 8 bits per colour is exactly {char4k60} MHz, which just fits; at 10 bits it needs {char4k60h} MHz, which does not fit, so the options are 4:2:2 (still {char4k60_422} MHz) or 4:2:0 ({char4k60_420} MHz). HDMI 2.1 switches to FRL: the clock line also carries data, with four lanes at 12 Gb/s each and 16b/18b encoding, for about {capFrl} Gb/s (before FRL's own error correction is taken off; see the end of this chapter).
+
+::: lab ch6-model
+model.title: Model 6 · Which cable fits which picture
+model.how: Choose a picture (resolution and refresh rate, with timing from the CTA table or CVT reduced version 2, using model 2), the bit depth, the chroma sampling and DSC compression. Each bar is the data a link can carry; the gold line is what this picture needs. Green means it fits, red means it does not, and grey means the combination does not exist.
+model.aria: The data each DisplayPort and HDMI link can carry, compared with the data the chosen picture needs
+leg.fit: Fits
+leg.no: Does not fit
+leg.need: Needed by this picture
+ctl.mode: Picture
+mo.fhd60: 1080p 60
+mo.qhd144: 1440p 144
+mo.uhd60: 4K 60
+mo.uhd120: 4K 120
+mo.uhd144: 4K 144
+mo.uhd240: 4K 240
+mo.k8_60: 8K 60
+ctl.bpc: Per colour
+bpc.8: 8 bits
+bpc.10: 10 bits
+bpc.12: 12 bits
+ctl.chroma: Chroma
+ch.444: 4:4:4
+ch.422: 4:2:2
+ch.420: 4:2:0
+ctl.dsc: DSC
+dsc.0: No compression
+dsc.12: 12 bits/pixel
+dsc.10: 10 bits/pixel
+dsc.8: 8 bits/pixel
+read.pclk: Pixel clock
+read.need: Picture data to carry
+read.first: Smallest link that fits
+lk.hdmi14: HDMI 1.4 TMDS
+lk.hdmi20: HDMI 2.0 TMDS
+lk.hbr2: DP HBR2 ×4
+lk.hbr3: DP HBR3 ×4
+lk.frl48: HDMI 2.1 FRL
+lk.uhbr10: DP UHBR10 ×4
+lk.uhbr135: DP UHBR13.5 ×4
+lk.uhbr20: DP UHBR20 ×4
+lk.frl96: HDMI 2.2 (claimed)
+cv.na: n/a
+say.fit: This picture needs *{need}* a second (pixel clock {pclk} × {bpp}); the smallest link that fits is {first}.
+say.dsc: Compressed to {bpp}, it needs only *{need}* a second, so {first} fits. HDMI's TMDS does not support DSC, which is why those two are grey.
+say.none: It needs *{need}* a second, and no cable here can carry it. Lower the refresh rate, lower the colour depth, use 4:2:0, or turn on DSC.
+:::
+
+A few numbers: 4K at 60 Hz with 8-bit 4:4:4 needs {need4k60} Gb/s; 4K at 120 Hz with 10 bits needs {need4k120} Gb/s, more than HBR3's {capHbr3}; the smallest link that fits is UHBR10 ({capUhbr10}), then HDMI 2.1 FRL and UHBR13.5 ({capUhbr135}). 4K at 240 Hz with 10 bits, by CVT, needs {need4k240} Gb/s, and 8K at 60 Hz with 10 bits needs {need8k} Gb/s; among settled standards only UHBR20 carries these (the claimed HDMI 2.2 would too). HDMI 2.0's TMDS carries {capHdmi20} Gb/s: the 600 MHz character rate times three lines times 8 bits.
+
+A monitor on a USB-C port either has its DP lanes connected directly to the high-speed wires of the socket (Alt Mode), or is carried in a USB4 or Thunderbolt tunnel. How that bandwidth is divided and how many devices can connect is covered in chapter 6 of <a href='../how-thunderbolt-works/#ch6'>“How Thunderbolt Works”</a>. How USB data sharing the same socket is separated from the picture is in chapter 8 of <a href='../how-usb-drives-talk/#ch8'>“Why a USB Drive Never Hits Its Label”</a>. How each lane reaches billions of bits a second (differential pairs, equalisation, retimers) is in chapter 8 of <a href='../how-pcie-works/#ch8'>“Why PCIe Keeps Doubling”</a>; the physical layer raises the same kind of problem.
+
+The model treats DP as “pixel clock × bits per pixel ≤ usable bandwidth”. It leaves out the audio carried in blanking, the MST time-slot overhead and the details of DP packing. An 8b/10b DP link must turn on forward error correction (FEC) whenever it uses DSC, and the model takes off the {fecPct} the Linux kernel counts for it. FRL subtracts only 16b/18b, not its Reed–Solomon error correction; the HDMI specification was not opened for this page, so the FRL figures will be slightly higher than real. HDMI 2.2's 96 Gb/s is the total rate HDMI Forum published; its encoding was not found for this page, so the bar in the chart uses a 16b/18b estimate and is marked as claimed. {.take}
+
+## Squeeze it: DSC and 4:2:0 {#ch7}
+
+::: strings
+toc: Squeeze it: DSC and 4:2:0
+:::
+
+When a cable is too small there are two ways to squeeze. 4:2:0 throws away three quarters of the colour samples: the eye cannot see this in a photograph, but it can see it in coloured text. DSC is a line-by-line real-time compression that cuts the bits per pixel to about a third of the original, which VESA calls “visually lossless”. {.law}
+
+Copy a watercolour painting, shrink it to a black-and-white outline and colour it in by hand: large areas of colour come out right, but fine coloured strokes blur.
+
+**Chroma subsampling** first converts RGB into one brightness Y′ and two colour-difference signals, Cb and Cr (using the BT.709 formulas). Brightness is kept for every pixel, while colour is kept only in part: 4:2:2 shares one colour between two horizontal pixels, and 4:2:0 shares one among four pixels. At 8 bits, 4:4:4 is 24 bits per pixel and 4:2:0 is 12 bits, halving the data. TV signals and video files have always been stored this way, because the eye is far less sensitive to colour detail than to brightness detail.
+
+::: diagram dg-chroma keys=dg.chroma
+cap: Chroma subsampling (schematic). Each cell is a pixel, and each pixel has its own brightness (Y′); the dots are colour (Cb, Cr) samples. 4:2:2 shares one colour between two pixels horizontally; 4:2:0 shares one among each 2×2 block of four.
+aria: Three chroma sampling schemes: 4:4:4 gives every pixel its own colour; 4:2:2 shares one colour between every two pixels; 4:2:0 shares one colour among each 2×2 block of four pixels; every pixel has its own brightness
+444: 4:4:4
+422: 4:2:2
+420: 4:2:0
+y: Brightness in every cell
+c: ● colour sample
+b444: 24 bits/pixel
+b422: 16 bits/pixel
+b420: 12 bits/pixel
+:::
+
+::: lab ch7-model
+model.title: Model 7 · What 4:2:0 throws away
+model.how: Choose a 16×12-pixel picture: red text on blue, a smooth photo, or fine red-green vertical lines. Choose a sampling scheme. The left is the original; the right is the sampled and reconstructed version (colour averaged over 2×2 and copied back). See how far the average is off, and how many pixels are off enough to notice.
+model.aria: On the left, the enlarged pixels of the original; on the right, the enlarged pixels after sampling and reconstruction
+ctl.pat: Picture
+p.text: Red text on blue
+p.photo: Photo
+p.lines: Fine red-green lines
+ctl.mode: Sampling
+m.444: 4:4:4
+m.422: 4:2:2
+m.420: 4:2:0
+read.bits: Per pixel (8-bit)
+read.mean: Average error (0–255)
+read.worst: Largest error
+read.bad: Pixels off by more than 16
+cv.src: Original
+cv.out: After sampling
+say.full: 4:4:4 throws nothing away, so the reconstruction matches the original.
+say.bad: Only part of the colour is kept, and the coloured edges blur: {bad} of the pixels are off by more than 16, and the largest error is *{worst}*. Brightness is untouched, so the shapes of the letters survive, but the colour bleeds into the neighbours.
+say.fine: Colour changes slowly in this picture to begin with, so the discarded samples barely make a difference: the average error is only *{mean}*.
+:::
+
+Red text on blue, at 4:2:0, is off by {subT} on average, with {subTbad} of the pixels off by more than 16. A smooth photo is off by only {subP} on average, and not one pixel exceeds 16. Fine red-green vertical lines cannot survive even 4:2:2: the largest error is {subLworst}. So when a TV is used as a computer screen, or the cable only allows 4:2:0, coloured text on web pages and in code gets coloured fringes and blur, while video looks fine.
+
+**DSC** (Display Stream Compression, published by VESA in 2014) is the other route. It compresses line by line, predicting each pixel from the line above and the pixels already sent on this line, so the delay is only a few lines, and the decoder in the screen stays small. VESA says RGB can be compressed 3:1, and native 4:2:0 a further 2:1. Using model 6: 4K at 240 Hz with 10 bits in 4:4:4 needs {need4k240} Gb/s, and to fit into HBR3 each pixel must be compressed to below {dsc240} bits, about {dscRatio240}:1. One detail is easy to miss: an 8b/10b link such as DP 1.4 must turn on forward error correction (FEC) whenever it uses DSC, which takes {fecPct} and leaves HBR3 with {capHbr3Fec} Gb/s; leave that out and {dsc240nf} bits would seem enough. Compressed only to 12 bits, it still needs {need240d} Gb/s and does not fit. 8K at 60 Hz must be compressed to {dsc8k} bits.
+
+“Visually lossless” is VESA's term: under its specified subjective tests, viewers cannot tell compressed from uncompressed. It is not mathematically lossless, and certain patterns (such as fine test stripes) may show artefacts. Compression has a practical cost too: the graphics card needs an encoder and the screen needs a decoder, and some graphics cards can drive fewer screens with DSC on.
+
+The 4:2:0 in the model uses the simplest 2×2 averaging and copy-back reconstruction. Real video encoders and TVs use better filters, so the error is smaller, but the problem with fine coloured lines does not go away. The DSC algorithm (prediction, quantisation, rate control) is not implemented here; only its target bit count is used. {.take}
+
+## Inside the panel: a few microseconds per row {#ch8}
+
+::: strings
+toc: Inside the panel: a few microseconds per row
+:::
+
+Inside the screen, nothing changes a whole frame at once. The gate driver opens one row at a time, the source driver writes each pixel's voltage in that row together, and then it moves to the next row. The higher the refresh rate and the more rows there are, the less time each row has to charge. {.law}
+
+At a canteen, a row of people holds out their trays at once, and the server fills them one by one along the row, then moves to the next row. The more rows there are and the shorter the serving time, the less time each row gets, and some trays do not get filled.
+
+The signal reaches the screen and first goes into the **timing controller** (TCON). It arranges the incoming pixels by row, does some processing of its own for the panel (for example, liquid-crystal “overdrive”: a little extra voltage is applied when a pixel must change quickly), and sends them to two kinds of driver chip: the **gate driver** handles rows, and the **source driver** handles columns. In a laptop, the link between screen and graphics is eDP, the embedded version of DisplayPort.
+
+::: diagram dg-tft keys=dg.tft
+cap: A corner of an active matrix (schematic, not to scale). Each pixel has one thin-film transistor (TFT) and one storage capacitor. The gate driver raises one gate line at a time, turning on all the transistors in that row; the source driver puts each column's voltage on the vertical lines at the same time, charging the capacitors. Then that row is switched off and the next row is opened.
+aria: Active matrix: horizontal gate lines open one row of transistors at a time, vertical source lines write each column's voltage into that row's pixel capacitors; the timing controller drives the gate driver and source driver
+tcon: Timing controller
+gate: Gate driver (one row at a time)
+src: Source driver (one voltage per column)
+on: This row: on
+off: Other rows: off
+px: Pixel: TFT + capacitor
+row: Gate line
+col: Source line
+:::
+
+Each pixel has a **thin-film transistor** (TFT) as a switch, and a small capacitor. When the gate line of a row goes high, the transistor conducts, and the voltage on the vertical line charges the capacitor; when the gate line goes low, the transistor turns off, and the capacitor holds the voltage until the next frame. This is called an **active matrix**: each pixel has its own switch, so once a row is written it stays held. At 4K at 60 Hz, a frame has {vtot2160} rows and a row lasts only {row60} microseconds; at 240 Hz only {row240} microseconds remain.
+
+::: lab ch8-model
+model.title: Model 8 · Is one row's time enough to charge a pixel?
+model.how: Choose the number of rows, the refresh rate and the transistor type. The pixel is modelled as a resistor and a capacitor, charging as 1 − e^(−t/τ). See how far the voltage is still from its target within one row's time, convert that into how many 10-bit grey levels are off (accurate if within half a level), and see how fast this transistor type can go at most.
+model.aria: Charging curve of a pixel's voltage during one row's time, with the accuracy required
+ctl.rows: Rows
+r.1080: 1080
+r.1440: 1440
+r.2160: 2160
+ctl.hz: Refresh rate
+ctl.tech: Transistor
+t.asi: Amorphous silicon
+t.oxide: Oxide (IGZO)
+t.ltps: Low-temperature polysilicon
+read.line: Time per row
+read.tau: τ (tuned parameter)
+read.err: Still off (10-bit grey levels)
+read.max: Highest this transistor reaches
+tuned: τ is a tuned parameter (order of magnitude), not a measured value for any panel: amorphous silicon {tauAsi} µs, oxide {tauOx} µs, low-temperature polysilicon lower still. Doubling τ halves the highest refresh rate.
+cv.t: Time within a row (µs)
+cv.v: Fraction of target charged
+cv.line: End of row
+say.ok: A row has {line}, which is {k} times τ. The voltage is off by less than half a level, so the writing is accurate.
+say.short: A row has only {line}, and the voltage is still off by *{err}*. At this number of rows, this transistor reaches at most about {max}. To go faster you need transistors with higher mobility, or the precharging and split-drive methods described below.
+:::
+
+By this model, a 2160-row panel using amorphous silicon needs {needAsi} µs to charge to within half a level, so its highest rate is about {hzMaxAsi} Hz; at 120 Hz it is off by {asiErr120} levels. With oxide, the highest is about {hzMaxOx} Hz. This is why large high-refresh screens often use oxide or low-temperature polysilicon backplanes. Real panels have other methods: opening the next row's gate a little early to “precharge”, splitting the screen into top and bottom halves that are written at the same time, or sharing one source line among several columns in turn.
+
+An OLED pixel has two more transistors: one as a switch, and one that supplies current to the organic emitting layer according to the voltage on the capacitor, and it must also compensate for differences between transistors (several transistors plus a capacitor, written nTmC). A liquid crystal responds to voltage, but an OLED to current, so the OLED pixel circuit is more complex, and its backplane is mostly low-temperature polysilicon or oxide.
+
+The model treats one pixel and its stretch of line as a single RC. In reality it is a long, distributed network of resistance and capacitance, and pixels far from the drivers charge more slowly. It also ignores leakage when the transistor is off, delay in the gate signal, and the way the liquid crystal's own capacitance changes with voltage. {.take}
+
+## LCD, OLED and motion blur {#ch9}
+
+::: strings
+toc: LCD, OLED and motion blur
+:::
+
+Each frame on screen is a still picture held for a whole frame's time. When the eye follows a moving object smoothly, the picture jumps from frame to frame, so the image is smeared across the retina. The width of the smear is the speed multiplied by how long each frame stays lit, plus the time the pixel itself takes to change. {.law}
+
+Sitting in a car and looking at a billboard by the road, your eyes follow it without thinking. If the billboard jumped backwards frame by frame, the eyes' smooth tracking and its jumps would not match, and the letters would blur.
+
+::: diagram dg-stack keys=dg.stack
+cap: Cross-sections of the two screens (schematic, not to scale). An LCD does not emit light itself: the backlight is always on, and two polarisers with the liquid crystal between them act like an adjustable blind, while the colour filter splits white light into red, green and blue. Each OLED subpixel emits light itself, and when it is off it is black.
+aria: Cross-section comparison of an LCD and an OLED. The LCD from bottom to top: backlight, lower polariser, TFT glass, liquid-crystal layer, colour filter, upper polariser. The OLED from bottom to top: TFT backplane, anode, organic emitting layer, cathode, encapsulation, circular polariser
+lcd: LCD
+oled: OLED
+bl: Backlight (LED + light guide)
+pol1: Polariser
+tft: TFT glass (pixel electrodes)
+lc: Liquid crystal: turns with voltage
+cf: Colour filter R G B
+pol2: Polariser
+bp: TFT backplane
+an: Anode
+em: Organic emitting layer
+ca: Cathode
+enc: Encapsulation
+cp: Circular polariser
+light: Light
+:::
+
+An **LCD** does not emit light itself: the backlight is always on, and light first passes a polariser, then the liquid-crystal layer, which turns the molecules by an angle according to the voltage, changing the polarisation of the light; a second polariser decides how much passes; a colour filter splits white light into red, green and blue. Liquid-crystal molecules take time to turn, a few milliseconds; this is the **response time** (grey-to-grey, GtG). An **OLED** subpixel is a layer of organic material that emits light when current passes through it, and the change takes microseconds. When it is off it is fully black, which is why its contrast is so high.
+
+But both kinds of screen are **sample-and-hold**: each frame stays lit until the next. For an object moving at {bv} pixels a second, at 60 Hz it jumps {ramp60} pixels per frame, and those {ramp60} pixels are smeared into a slope on the retina; the width from 10% to 90% is {blur60} pixels. This has nothing to do with how fast the pixel changes; a screen with zero response time has the same blur.
+
+::: lab ch9-model
+model.title: Model 9 · How wide an edge smears when the eye tracks it
+model.how: A bright-to-dark boundary moves to the right, and the eye follows it. Choose the speed, the refresh rate, the fraction of each frame that is lit (less than 100% when black frames are inserted or the backlight strobes), and how fast the screen responds. The curve is the brightness seen on the retina; the gold band is 10% to 90%.
+model.aria: Brightness curve of a moving edge on the retina, from bright to dark, with the 10% to 90% width marked
+ctl.v: Speed
+v.240: 240
+v.480: 480
+v.960: 960
+v.1920: 1920
+v.3840: 3840
+ctl.hz: Refresh rate
+ctl.duty: Lit per frame
+d.1: 100% (hold)
+d.0.5: 50%
+d.0.25: 25%
+ctl.tau: Screen
+t.oled: OLED
+t.fast: Fast LCD
+t.slow: Slow LCD
+read.w: Blur width (10–90%)
+read.ms: Converted to time
+read.hold: Jump per frame × fraction lit
+cv.x: Position on retina (pixels, 0 at edge)
+cv.y: Brightness seen
+say.hold: Each frame jumps {jump}, the picture stays lit, and the edge smears *{w}*, about 80% of the jump distance. A faster response does not change that.
+say.strobe: Each frame is lit only {duty}, so the smear shortens to *{w}*. The cost is lower average brightness, and if the flicker between light and dark is not fast enough, some people will see flicker.
+say.lcd: The LCD turns slowly, so the pixel has not reached its target before the next frame arrives, and the blur is wider than plain hold: *{w}*.
+:::
+
+There are only two ways to shorten it. One is to **raise the refresh rate**: each frame jumps less, and at 240 Hz the same speed smears only {blur240} pixels. The other is to **light only part of each frame**: insert black frames, or strobe the LCD's backlight at the end of each frame. Lit for 25% of the time, even 60 Hz gives only {blurStrobe} pixels, which is why cathode-ray tubes look sharp. A slow LCD adds its own trail: at 120 Hz, a slow LCD gives {blurLcd} pixels, and an OLED gives {blurOled} pixels. The industry converts this width into time and calls it MPRT (motion picture response time).
+
+How OLED dims is related too. One method is **PWM dimming**: the current stays the same, but it is switched on and off several times within each frame, and the fraction on sets the brightness; at low frequencies, people sensitive to flicker feel discomfort. The other is **DC dimming**: the current is simply reduced, with no flicker, but at very low brightness the differences between pixels show. **Mini LED** is still an LCD, with the backlight replaced by thousands of small LEDs that can be dimmed zone by zone (chapter 10). **Micro LED** uses one inorganic LED per subpixel, emitting light by itself like OLED; the difficulty is making millions of them small enough and transferring them to a backplane.
+
+The model assumes the eye tracks perfectly, each pixel changes only once, and the change is a first-order exponential. Real LCDs rise and fall at different speeds, overdrive can overshoot, and OLED PWM is split into several segments within a frame. The response speeds of the three screen types (time constants of OLED {tauO} ms, fast LCD {tauF} ms and slow LCD {tauS} ms) are tuned parameters. Doubling the response time widens the blur for the LCD settings and barely changes it for OLED. {.take}
+
+## HDR: brightness is measured in nits {#ch10}
+
+::: strings
+toc: HDR: brightness is measured in nits
+:::
+
+An SDR value means “this fraction of the screen's maximum”, and how bright that maximum is depends on the screen. HDR numbers correspond directly to absolute brightness, in nits (candela per square metre). The PQ curve divides 0 to 10000 nits into 1024 levels, spaced to match the eye's greater sensitivity in the dark. {.law}
+
+Saying a cup of water is “half full” means different things for different cup sizes; saying “250 millilitres” means the same in any cup. The 128 of SDR is “half full”; HDR's numbers are “millilitres”.
+
+SDR video was mastered for screens of about 100 nits; a brighter screen simply makes it brighter. **HDR** must show highlights of several thousand nits while keeping near-zero darks, and the proportional sRGB-type curve does not have enough levels for this. The **PQ curve** used by HDR10 (SMPTE ST 2084, also adopted in ITU-R BT.2100) maps absolute brightness to the signal: at 10 bits, 1 nit is level {pq1}, 100 nits is level {pq100}, and 1000 nits is level {pqTop}; half the levels go to everything below 100 nits.
+
+::: lab ch10-model
+model.title: Model 10 · The PQ curve, and a stretched gamma curve
+model.how: Drag the brightness (logarithmic scale). The gold line is PQ; the cyan line is a 2.4-power gamma curve, stretched to the peak you choose. See which level this brightness falls on, and how far adjacent levels are apart in brightness percentage: the bigger the gap, the more likely banding is in smooth gradients.
+model.aria: Relation between 10-bit signal value and brightness: the PQ curve and the gamma 2.4 curve, with logarithmic brightness on the horizontal axis
+leg.pq: PQ (ST 2084)
+leg.g: Gamma 2.4, stretched to peak
+ctl.nits: Brightness
+ctl.peak: Peak of the gamma curve
+pk.100: 100 nits
+pk.1000: 1000 nits
+pk.10000: 10000 nits
+read.pq: PQ level (10-bit)
+read.pqs: PQ step to next level
+read.g: Gamma level
+read.gs: Gamma step to next level
+cv.x: Brightness (nits, log)
+cv.y: 10-bit signal value
+say.pqwins: At {nits}, adjacent PQ levels differ by only *{pqs}*, while the gamma curve stretched to {peak} differs by {gs}. PQ gives finer steps in the dark, and that is its purpose.
+say.close: At {nits}, adjacent PQ levels differ by *{pqs}*, and the gamma curve by {gs}; the two are about the same.
+say.clip: {nits} is above the gamma curve's peak of {peak}, so it can only stop at the highest level; PQ runs all the way to 10000 nits.
+:::
+
+The model shows why the old curve was not simply stretched: a gamma 2.4 stretched to 1000 nits has adjacent levels near 1 nit differing by {gStep1}, while PQ's differ by {pqStep1}; at 100 nits, PQ's adjacent levels differ by {pqStep100}. PQ is designed so that the step from one level to the next is about equally hard to notice across the whole range (derived by Miller and colleagues in 2013 from Barten's contrast sensitivity model; that paper was not opened for this page).
+
+The signal can specify ten thousand nits, but the screen cannot reach it. Monitor peaks are mostly a few hundred to a thousand or two nits, so every screen must do **tone mapping**: pulling highlights above its capacity down. An LCD's black is not black enough either, since the backlight leaks light. **Local dimming** divides the backlight into many zones and dims the dark ones; the more zones, the more accurate, but there is a halo around the edges of zones. When HDR is switched on in a computer, ordinary windows often look “grey”, mostly because the system puts SDR white at a modest brightness (the {sdrNits}-nit setting in model 5 is exactly such a setting), and the screen's tone mapping then compresses it again.
+
+The model's PQ uses the BT.2100 formula and constants with the full 10-bit range (0–1023). TV signals often use the narrow range (64–940), which has fewer levels. HDR10's static metadata, the dynamic metadata of various formats, and the tone-mapping curves are not modelled here. {.take}
+
+## From mouse click to light {#ch11}
+
+::: strings
+toc: From mouse click to light
+:::
+
+Latency is a sum of waits: waiting for the computer to notice the click, waiting for the next game frame to start, drawing and queueing, compositing, reading to the row you are looking at, and the pixel changing. The largest part is often not in the screen but in the queue. {.law}
+
+Posting a letter: wait for the postman to collect it, wait for sorting, travel, arrive downstairs, then wait for you to go down and open the mailbox. Each stage is short, but together they add up to several days.
+
+::: diagram dg-lat keys=dg.lat
+cap: From mouse click to light on screen, latency in segments (schematic, not to scale). The first two segments are spent inside the computer waiting to be seen; the middle segment is drawing and queueing (model 3); the rest send the picture out, read it to the row you are looking at, and let the pixels change.
+aria: The segments from mouse click to light on screen: mouse polling, waiting for the next game tick, simulation and rendering with queueing, compositor, scanning to the middle of the screen, the panel changing
+poll: Mouse polling
+tick: Wait for frame start
+render: Draw + queue
+comp: Compositor
+scan: Scan to mid-screen
+panel: Pixel changes
+pc: In the computer
+disp: On the display link
+:::
+
+::: lab ch11-model
+model.title: Model 11 · The latency waterfall
+model.how: One bar per stage, added up from top to bottom. The “draw + queue” stage is computed directly from the timeline of model 3 (same present mode, with 10% jitter on frame times). Drag the frame rate, and choose the refresh rate, the present mode, whether it goes through the compositor, the screen type and the mouse polling rate.
+model.aria: Latency waterfall: the stage delays are added up one after another to give the total delay
+ctl.fps: Game frame rate
+ctl.hz: Refresh rate
+ctl.mode: Present
+m.immediate: Immediate
+m.fifo2: Vsync double buffer
+m.fifo3: Vsync triple buffer
+m.mailbox: Mailbox
+m.vrr: Variable refresh
+ctl.comp: Through compositor (windowed)
+ctl.panel: Screen
+pn.lcd: LCD
+pn.oled: OLED
+ctl.poll: Mouse polling
+po.125: 125 Hz
+po.1000: 1000 Hz
+po.8000: 8000 Hz
+read.tot: Total latency
+read.big: Largest stage
+tuned: Tuned parameters: the pixel response is taken as {panLcd} ms for LCD and {panOled} ms for OLED (one representative value each); the compositor is counted as waiting one extra refresh. The first two stages are averages: half the polling interval, and half the frame time.
+st.poll: Mouse polling
+st.tick: Wait for frame start
+st.render: Draw + queue (model 3)
+st.compose: Compositor
+st.scan: Scan to mid-screen
+st.panel: Pixel changes
+say.poll: The largest stage is mouse polling ({v}): the mouse is asked whether it has moved only at intervals.
+say.render: The largest stage is drawing and queueing ({v}): finished frames wait in the queue to be shown. Shortening the queue (immediate, mailbox, variable refresh, or a frame-rate cap) helps more than changing the screen.
+say.compose: The largest stage is the compositor ({v}): in windowed mode the picture is handed to the system to be composited, then waits for one more refresh.
+say.scan: The largest stage is scanning to mid-screen ({v}): the screen reads from top to bottom, and the row you are looking at has to wait until it is reached.
+say.panel: The largest stage is the pixel changing ({v}): a slow LCD takes several milliseconds to reach its target.
+:::
+
+Two extremes: at {l0fps} frames a second with a {l0fps} Hz screen, triple-buffered vsync, windowed mode through the compositor, an LCD and a {l0poll} Hz mouse, the total is {lat0} ms, of which drawing and queueing is {lat0r} and the compositor {lat0c}. With the same frame rate but variable refresh, full-screen bypassing the compositor, OLED and a {l1poll} Hz mouse, the total is {lat1} ms. The screen's own stage (scanning plus pixel change) is only a small part in both cases.
+
+This is an addition of averages, not a distribution: each stage has jitter, and measured latency is a range. The game engine's internal pipeline (one frame each on the CPU and GPU), the number of pre-rendered frames in the driver, and the display's own image processing (a TV's “game mode” turns that off) are not modelled separately. {.take}
+
+## The frontier of displays {#ch12}
+
+::: strings
+toc: The frontier of displays
+:::
+
+As of November 2026, the bandwidth standards have moved ahead of the screens: cables can carry more than most screens can show, and the difficulty has shifted to how long a cable can be, and how fast, bright and power-efficient a screen can be. {.law}
+
+### Settled standards {#h.est .sub3}
+
+{.fr}
+- <span class='tag h'>Settled</span>**DisplayPort 2.1b and the DP80LL cable**: VESA announced on 6 January 2025 that 2.1b would be released in spring 2025; four UHBR20 lanes, 80 Gb/s in total. The previously certified passive cables manage only about 1 metre; the new DP80LL active cable reaches 3 metres. {#e1}
+- <span class='tag h'>Settled</span>**HDMI 2.2**: HDMI Forum published it in June 2025 (reported by CE Pro on 25 June 2025), with a total rate of 96 Gb/s and a new Ultra96 cable; examples given include 12K at 120 Hz and 16K at 60 Hz. Note its labelling: Ultra96 is used for products that support 64, 80 or 96 Gb/s, and “HDMI 2.2” does not by itself mean 96 Gb/s. {#e2}
+- <span class='tag h'>Settled</span>**Laptop screen power saving**: VESA published eDP 1.5 on 27 October 2021, adding Panel Replay on top of panel self-refresh and allowing variable refresh and self-refresh to be used together. The screen stores the last frame, so when the picture is still the graphics card can stop the constant reading described in chapter 1. {#e3}
+- <span class='tag h'>Settled</span>**Variable refresh certification**: on 2 May 2022 VESA introduced the AdaptiveSync Display and MediaSync Display certifications, which test refresh range, flicker and dropped frames; a revision followed in May 2023. {#e4}
+
+### In production or demonstrated {#h.demo .sub3}
+
+{.fr}
+- <span class='tag m'>Vendor says in mass production</span>**720 Hz OLED**: LG Display announced in September 2026 that it had begun mass production of a 24.5-inch, 1920 × 1080, 720 Hz gaming OLED panel, with a claimed response time of 0.02 ms (reported by Notebookcheck on 21 September 2026). By the algorithm of model 8, a 1080-row screen at 720 Hz has only {row720} µs per row; by model 9, an object moving at {bv} pixels a second jumps only {jump720} pixels per frame. {#d1}
+
+### Claimed, to be watched {#h.claim .sub3}
+
+{.fr}
+- <span class='tag l'>Wait and see</span>For cable and screen speeds to really match, the graphics card, cable and screen must all support the same tier (such as UHBR20 or 96 Gb/s FRL), and the cable length must be within the specification. As of writing, few products support the highest tiers, and this page has not checked them one by one. {#c1}
+- <span class='tag l'>Open problems</span>Higher refresh rates need shorter charging times per row (chapter 8), faster pixel response (chapter 9) and more bandwidth (chapter 6). Brighter OLEDs must solve lifetime and heat; Micro LED must solve the cost of making millions of LEDs small, transferring them and repairing them. {#c2}
+
+These dates will go out of date. The sources and the dates they were opened are in BRIEF.md in this directory, and the data is kept in FRONTIER in models.js so it can be updated later.
+
+## Three questions to ask when a screen is wrong {#ch13}
+
+::: strings
+toc: Three questions to ask when a screen is wrong
+:::
+
+Pixels travel along a chain: the framebuffer, the display engine, a cable, the circuits in the screen, then the pixel itself. When a screen is wrong, first ask which link in the chain is at fault. {.law}
+
+{.plain .qs}
+1. **The refresh rate will not select: is it the cable, the port or the screen?** Multiply the picture's pixel clock by the bits per pixel, and compare the result with the rate the cable has actually negotiated (chapters 2 and 6). If the cable cannot carry it, link training drops a rate step; if the port cannot, use DP or HDMI 2.1; if nothing fits, 4:2:0 makes coloured text fringe, and DSC is usually invisible (chapter 7). {#q1}
+2. **Tearing or jerky motion: which two clocks are out of step?** Tearing is a flip done whenever drawing finishes; a regular stutter means the frame rate and refresh rate are not in a whole-number ratio; a “mushy” feel means too many frames are queued (chapter 3). If the screen supports variable refresh, turn it on and cap the frame rate a little below the maximum refresh rate (chapter 4). {#q2}
+3. **Blurry in motion, grey in HDR: is it slow pixels or wrong numbers?** Motion blur mainly comes from hold (speed × the time each frame is lit); a higher refresh rate or black-frame insertion helps more than chasing response time (chapter 9). Under HDR, if ordinary windows look grey, first check how many nits the system places SDR white at (chapters 5 and 10). {#q3}
+
+Back to the opening question. A frame is a block of *framebuffer* in video memory, and the display engine reads it out row by row at the *pixel clock*. When the reading rhythm does not match the rhythm of the GPU's drawing, you get *tearing* and *stutter*; *variable refresh* makes the screen wait for the picture instead. The pixels read out are stacked with layers and converted to the screen's colours, then encoded for *DisplayPort* or *HDMI* as a few serial bit streams; if they do not fit, *DSC* or *4:2:0* squeezes them. In the screen, the *timing controller* opens one row at a time; each pixel charges in a few microseconds, then holds for a frame, and the eye tracking it smears it. {#sum .sum tag=div}
+
+Related essays: <a href='../how-a-gpu-computes/#ch9'>“How a GPU Computes”, chapter 9</a> (how the pixels in the framebuffer are drawn), <a href='../../graphics/computer-graphics/'>“Computer Graphics · From Coordinates to Pixels”</a> (the rendering pipeline), <a href='../how-thunderbolt-works/#ch6'>“How Thunderbolt Works”, chapter 6</a> (USB-C to a display, and how bandwidth is shared), <a href='../how-usb-drives-talk/#ch8'>“Why a USB Drive Never Hits Its Label”, chapter 8</a> (USB4 tunnels), <a href='../how-pcie-works/#ch8'>“Why PCIe Keeps Doubling”, chapter 8</a> (the signalling limits of one high-speed lane), <a href='../how-memory-talks/#ch9'>“How Memory Talks to the CPU”, chapter 9</a> (video memory), and <a href='../../../tech/devices/inside-a-phone/#screen'>“Ten Ideas Inside One Phone”</a> (how three primaries fool the eye). {#links style="margin-top:2em"}
+
+::: footer wrap=none
+How Pixels Reach a Screen · a long essay you can play with. Models and data: CTA-861 timings (Linux v6.12 drivers/gpu/drm/drm_edid.c, the edid_cea_modes_1 table), VESA CVT reduced blanking version 2 (edid-decode's calc-gtf-cvt.cpp), present modes (Vulkan VkPresentModeKHR), variable refresh (Linux KMS documentation “Variable Refresh Properties”), colour pipeline order (Linux KMS documentation DEGAMMA_LUT, CTM, GAMMA_LUT), the sRGB transfer function (IEC 61966-2-1), BT.709, P3 and BT.2020 primaries and D65 (ITU-R BT.709, SMPTE EG 432-1, ITU-R BT.2020), PQ (SMPTE ST 2084 / ITU-R BT.2100-2), DisplayPort rates and usable bandwidth (VESA DisplayPort 2.0 release announcement, 26 June 2019), DPCD registers (Linux v6.12 include/drm/display/drm_dp.h), 128b/132b efficiency and 8b/10b FEC overhead (Linux v6.12 drm_dp_helper.c), HDMI TMDS and FRL tiers (drm_edid.c), DSC (VESA DSC page), DirectFlip and independent flip (Microsoft, “For best performance, use DXGI flip model”). Sources, dates and unverified points are in BRIEF.md in this directory.
+:::
