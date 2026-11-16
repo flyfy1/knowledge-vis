@@ -12,7 +12,13 @@ const DIR = path.join(__dirname, '..');
 const M = require(path.join(DIR, 'models.js'));
 const ctx = { window: {} }; vm.runInNewContext(fs.readFileSync(path.join(DIR, 'copy.zh.js'), 'utf8'), ctx);
 const Z = ctx.window.ESSAY_COPY.zh;
-const html = fs.readFileSync(path.join(DIR, 'index.html'), 'utf8');
+// site.* keys are the template's generated breadcrumb, backlinks and related pages (specs/site-template.md §8), not prose:
+// the link and key checks below count only the page's own copy.
+const prose = o => Object.keys(o).filter(k => !k.startsWith('site.')).map(k => o[k]);
+// index.html may be a template build with the zh copy pre-filled (specs/site-template.md §8); every check reads
+// the markup with exactly that pre-fill removed, so hand-typed text still shows (scripts/lib/prefill.cjs).
+const { unprefill } = require(path.join(DIR, '..', '..', '..', 'scripts', 'lib', 'prefill.cjs'));
+const html = unprefill(fs.readFileSync(path.join(DIR, 'index.html'), 'utf8'), Z);
 const app = fs.readFileSync(path.join(DIR, 'app.js'), 'utf8');
 const { GENS, FLIT, LANE, GEN3, TLP, FC, ARQ, CFG, ENUM, MSI, LOSS, EYE, FEC, FRONTIER, MiB, KiB } = M;
 
@@ -271,7 +277,7 @@ const hx = a => TLP.hex(a).join(' ');
   for (const [d, ks] of Object.entries(D)) for (const k of ks) keys.add(d + '.' + k);
   for (const [, , k] of CFG.type0) keys.add('d8.f.' + k);
   for (const k of keys) { n++; if (Z[k] == null) { fails++; console.error('FAIL missing zh key ' + k); } }
-  for (const k of Object.keys(Z)) { n++; if (!keys.has(k)) { fails++; console.error('FAIL unused zh key ' + k); } }
+  for (const k of Object.keys(Z)) { if (k.startsWith('site.')) continue; n++; if (!keys.has(k)) { fails++; console.error('FAIL unused zh key ' + k); } }
   // the live sentences' placeholders are supplied by app.js
   for (const [k, v] of Object.entries(Z)) if (/\.say\.|\.log\.|\.hex\.|^ch\d+\.(n|persec|years|busfmt|linkfmt|dwfmt)/.test(k)) for (const m of v.matchAll(/\{(\w+)\}/g)) {
     n++; if (!new RegExp('\\b' + m[1] + '\\s*:|[{,]\\s*' + m[1] + '\\s*[,}]').test(app)) { fails++; console.error(`FAIL placeholder {${m[1]}} in ${k} is never supplied by app.js`); }
@@ -279,6 +285,7 @@ const hx = a => TLP.hex(a).join(' ');
   for (const file of ['index.html', 'app.js', 'models.js']) {
     let src = fs.readFileSync(path.join(DIR, file), 'utf8');
     if (file === 'index.html') {
+      src = unprefill(src, Z);
       const tt = src.match(/<title>([^<]*)<\/title>/)[1], md = src.match(/<meta name="description" content="([^"]*)">/)[1];
       check('static title = doc.title', tt, Z['doc.title']); check('static meta = doc.desc', md, Z['doc.desc']);
       src = src.replace(/<title>[^<]*<\/title>/, '').replace(/<meta name="description" content="[^"]*">/, '');
@@ -290,7 +297,9 @@ const hx = a => TLP.hex(a).join(' ');
     const others = (src.match(/[一-鿿]+/g) || []).filter(x => !(file === 'index.html' && x === '中'));
     if (others.length) { fails++; console.error(`FAIL Chinese text in ${file}: ${others.slice(0, 3).join(' ')}`); }
   }
-  check('cache keys ?v=20261115', (html.match(/\.js\?v=20261115/g) || []).length, 4);
+  // a template page (specs/site-template.md) takes its ?v= key from page.json (§9 step 4); the hand-written page keeps the pinned one
+  const VER = fs.existsSync(path.join(DIR, 'page.json')) ? JSON.parse(fs.readFileSync(path.join(DIR, 'page.json'), 'utf8')).version : null;
+  check('cache keys ?v=20261115 (page.json version on a template page)', (html.match(new RegExp('\\.js\\?v=' + (VER || '20261115'), 'g')) || []).length, 4);
   const R = JSON.parse(fs.readFileSync(path.join(DIR, 'REGISTRY.json'), 'utf8'));
   check('registry slug/path', R.slug + ' ' + R.path, 'how-pcie-works computing/systems/how-pcie-works/');
   check('registry category', [R.category, R.subtopic, R.stage].join('/'), 'computing/systems/university');
@@ -308,7 +317,7 @@ const hx = a => TLP.hex(a).join(' ');
   walk(path.join(DIR, '../../..'));
   for (const c of R.concepts) for (const a of [...c.aliases.zh, ...c.aliases.en]) { n++; if (owned.has(norm(a))) { fails++; console.error(`FAIL alias owned by ${owned.get(norm(a))}: ${a}`); } }
   // sibling links point at chapters that exist, and quote the sibling's title
-  const all = Object.values(Z).join('');
+  const all = prose(Z).join('');
   const SIB = { 'how-sata-works': '../how-sata-works/', 'why-nvme-is-fast': '../why-nvme-is-fast/', 'how-usb-drives-talk': '../how-usb-drives-talk/', 'what-a-drive-is-made-of': '../what-a-drive-is-made-of/',
     'storage-over-a-network': '../storage-over-a-network/', 'how-sas-works': '../how-sas-works/', 'frequency-response': '../../../signal/systems/frequency-response/', 'inside-a-phone': '../../../tech/devices/inside-a-phone/',
     // bus series B2 and B6, live since 2026-11-15
@@ -339,7 +348,7 @@ const hx = a => TLP.hex(a).join(' ');
   const ectx = { window: {} }; vm.runInNewContext(fs.readFileSync(path.join(DIR, 'copy.en.js'), 'utf8'), ectx);
   const EN = ectx.window.ESSAY_COPY.en, stub = ectx.window.ESSAY_COPY.enStub === true, ph = s => [...s.matchAll(/\{(\w+)\}/g)].map(m => m[1]).sort().join(',');
   check('en keys = zh keys', Object.keys(EN).sort().join('|'), Object.keys(Z).sort().join('|'));
-  const hrefs = o => (Object.values(o).join('').match(/href=["']\.\.\/[^"']+/g) || []).sort().join(' ');
+  const hrefs = o => (prose(o).join('').match(/href=["']\.\.\/[^"']+/g) || []).sort().join(' ');
   check('en links = zh links', hrefs(EN), hrefs(Z));
   for (const k of Object.keys(Z)) check('en placeholders ' + k, ph(EN[k]), ph(Z[k]));
   if (stub) { check('en stub mirrors zh exactly', JSON.stringify(EN), JSON.stringify(Z)); console.log('NOTE: copy.en.js is a stub (enStub); English registry match skipped until it is translated'); }

@@ -10,7 +10,13 @@ const DIR = path.join(__dirname, '..');
 const M = require(path.join(DIR, 'models.js'));
 const ctx = { window: {} }; vm.runInNewContext(fs.readFileSync(path.join(DIR, 'copy.zh.js'), 'utf8'), ctx);
 const Z = ctx.window.ESSAY_COPY.zh;
-const html = fs.readFileSync(path.join(DIR, 'index.html'), 'utf8');
+// site.* keys are the template's generated breadcrumb, backlinks and related pages (specs/site-template.md §8), not prose:
+// the link and key checks below count only the page's own copy.
+const prose = o => Object.keys(o).filter(k => !k.startsWith('site.')).map(k => o[k]);
+// index.html may be a template build with the zh copy pre-filled (specs/site-template.md §8); every check reads
+// the markup with exactly that pre-fill removed, so hand-typed text still shows (scripts/lib/prefill.cjs).
+const { unprefill } = require(path.join(DIR, '..', '..', '..', 'scripts', 'lib', 'prefill.cjs'));
+const html = unprefill(fs.readFileSync(path.join(DIR, 'index.html'), 'utf8'), Z);
 const app = fs.readFileSync(path.join(DIR, 'app.js'), 'utf8'), mod = fs.readFileSync(path.join(DIR, 'models.js'), 'utf8');
 const { SPEC, DRIVES, LINK, CDB, SSP, AVAIL, FAN, WIDE, PI, FEC, FRONTIER } = M;
 
@@ -230,6 +236,7 @@ const P = M.prose();
   for (const file of ['index.html', 'app.js', 'models.js']) {
     let src = fs.readFileSync(path.join(DIR, file), 'utf8');
     if (file === 'index.html') {
+      src = unprefill(src, Z);
       const tt = src.match(/<title>([^<]*)<\/title>/)[1], md = src.match(/<meta name="description" content="([^"]*)">/)[1];
       check('static title = doc.title', tt, Z['doc.title']); check('static meta = doc.desc', md, Z['doc.desc']);
       src = src.replace(/<title>[^<]*<\/title>/, '').replace(/<meta name="description" content="[^"]*">/, '');
@@ -264,14 +271,14 @@ const P = M.prose();
   // the network-storage essay S5 (live 2026-11-15): ch1.p3 (FCP #ch4, iSCSI #ch3) and ch11.links (#ch3, #ch4, #ch7, essay)
   for (const sib of ['what-a-drive-is-made-of', 'how-sata-works', 'why-nvme-is-fast', 'how-usb-drives-talk', 'storage-over-a-network']) {
     const sh = fs.readFileSync(path.join(DIR, '..', sib, 'index.html'), 'utf8');
-    for (const v of Object.values(Z)) for (const m of v.matchAll(new RegExp(sib + '/(#[\\w-]+)', 'g'))) check(sib + ' anchor ' + m[1], sh.includes(`id="${m[1].slice(1)}"`), true);
+    for (const v of prose(Z)) for (const m of v.matchAll(new RegExp(sib + '/(#[\\w-]+)', 'g'))) check(sib + ' anchor ' + m[1], sh.includes(`id="${m[1].slice(1)}"`), true);
   }
   const ctx2 = (p2) => { const c2 = { window: {} }; vm.runInNewContext(fs.readFileSync(p2, 'utf8'), c2); return c2.window.ESSAY_COPY; };
   const E = ctx2(path.join(DIR, 'copy.en.js')), EN = E.en, stub = E.enStub === true, ph = s => [...s.matchAll(/\{(\w+)\}/g)].map(m => m[1]).sort().join(',');
-  const s4Links = o => Object.values(o).join('').match(/how-usb-drives-talk\/#?\w*/g) || [];
+  const s4Links = o => prose(o).join('').match(/how-usb-drives-talk\/#?\w*/g) || [];
   check('links to S4 (ch1.p3 #ch5, ch11.links)', s4Links(Z).sort().join(' '), 'how-usb-drives-talk/ how-usb-drives-talk/#ch5');
   check('en S4 links = zh S4 links', s4Links(EN).sort().join(' '), s4Links(Z).sort().join(' '));
-  const s5Links = o => Object.values(o).join('').match(/storage-over-a-network\/#?\w*/g) || [];
+  const s5Links = o => prose(o).join('').match(/storage-over-a-network\/#?\w*/g) || [];
   check('ch1.p3 links S5 (#ch3, #ch4)', (Z['ch1.p3'].match(/storage-over-a-network\/#?\w*/g) || []).sort().join(' '), 'storage-over-a-network/#ch3 storage-over-a-network/#ch4');
   check('links to S5 (ch1.p3, ch11.links)', s5Links(Z).sort().join(' '), 'storage-over-a-network/ storage-over-a-network/#ch3 storage-over-a-network/#ch3 storage-over-a-network/#ch4 storage-over-a-network/#ch4 storage-over-a-network/#ch7');
   check('en S5 links = zh S5 links', s5Links(EN).sort().join(' '), s5Links(Z).sort().join(' '));
