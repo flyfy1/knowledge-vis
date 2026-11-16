@@ -1,0 +1,38 @@
+<div class="dual">
+      <div class="half">
+        <div class="stage">
+          <p class="stage-title" data-i18n="s4src"></p>
+          <canvas id="s4-src" height="252" style="height:252px"></canvas>
+        </div>
+      </div>
+      <div class="half">
+        <div class="stage">
+          <p class="stage-title" data-i18n="s4out"></p>
+          <canvas id="s4-out" height="252" style="height:252px"></canvas>
+        </div>
+      </div>
+    </div>
+    <div class="kernel-box">
+      <div class="kernel-grid" id="s4-kernel"></div>
+      <div class="kernel-side">
+        <label><span data-i18n="s4div"></span>
+          <input type="number" id="s4-div" value="16" step="1">
+        </label>
+        <label><span data-i18n="s4off"></span>
+          <input type="number" id="s4-off" value="0" step="1">
+        </label>
+      </div>
+    </div>
+    <div class="btn-row">
+      <button class="btn" id="s4-p-identity" data-i18n="pIdentity"></button>
+      <button class="btn active" id="s4-p-blur" data-i18n="pBlur"></button>
+      <button class="btn" id="s4-p-sharpen" data-i18n="pSharpen"></button>
+      <button class="btn" id="s4-p-edge" data-i18n="pEdge"></button>
+      <button class="btn" id="s4-p-emboss" data-i18n="pEmboss"></button>
+    </div>
+    <div class="formula-box">
+      <p class="stage-title" data-i18n="s4accT"></p>
+      <p class="readout" id="s4-acc-head"></p>
+      <div class="acc-grid" id="s4-acc-grid"></div>
+      <p class="readout" id="s4-acc-sum"></p>
+    </div>

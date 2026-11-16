@@ -1,0 +1,56 @@
+<div class="btn-row">
+      <button class="btn active" id="s5-tab-audio" data-i18n="tabAudio"></button>
+      <button class="btn" id="s5-tab-photo" data-i18n="tabPhoto"></button>
+      <button class="btn" id="s5-tab-data" data-i18n="tabData"></button>
+    </div>
+
+    <div class="tab-panel" id="s5-panel-audio">
+      <div class="stage">
+        <canvas id="s5-ir" height="150" style="height:150px"></canvas>
+      </div>
+      <div class="controls">
+        <label><span><span data-i18n="aDelay"></span> <span class="val" id="s5-delay-val">0.28</span></span>
+          <input type="range" id="s5-delay" min="0.12" max="0.5" step="0.02" value="0.28">
+        </label>
+        <label><span><span data-i18n="aDecay"></span> <span class="val" id="s5-decay-val">0.55</span></span>
+          <input type="range" id="s5-decay" min="0.2" max="0.85" step="0.05" value="0.55">
+        </label>
+        <label><span><span data-i18n="aReps"></span> <span class="val" id="s5-reps-val">4</span></span>
+          <input type="range" id="s5-reps" min="1" max="8" step="1" value="4">
+        </label>
+      </div>
+      <div class="btn-row">
+        <button class="btn" id="s5-play-dry" data-i18n="aDry"></button>
+        <button class="btn primary" id="s5-play-echo" data-i18n="aEcho"></button>
+      </div>
+      <p class="hint" data-i18n-html="s5aNote"></p>
+    </div>
+
+    <div class="tab-panel hidden" id="s5-panel-photo">
+      <div class="stage">
+        <canvas id="s5-photo" height="300" style="height:300px"></canvas>
+      </div>
+      <div class="controls">
+        <label><span><span data-i18n="pRadius"></span> <span class="val" id="s5-radius-val">3</span></span>
+          <input type="range" id="s5-radius" min="0" max="8" step="1" value="3">
+        </label>
+      </div>
+      <p class="hint" data-i18n="s5pNote"></p>
+    </div>
+
+    <div class="tab-panel hidden" id="s5-panel-data">
+      <div class="stage">
+        <canvas id="s5-data" height="280" style="height:280px"></canvas>
+      </div>
+      <div class="controls">
+        <label><span><span data-i18n="dPass"></span> <span class="val" id="s5-pass-val">3</span></span>
+          <input type="range" id="s5-pass" min="1" max="8" step="1" value="3">
+        </label>
+      </div>
+      <p class="legend">
+        <span class="dot dot-raw"></span><span data-i18n="legRaw"></span>
+        <span class="dot dot-box"></span><span data-i18n="legBox"></span>
+        <span class="dot dot-gauss"></span><span data-i18n="legGauss"></span>
+      </p>
+      <p class="hint" data-i18n="s5dNote"></p>
+    </div>
