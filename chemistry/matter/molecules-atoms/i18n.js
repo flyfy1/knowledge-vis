@@ -120,7 +120,7 @@ const STR = {
     "site.crumb.sub": "物质构成",
     "site.bl.title": "被这些页面引用",
     "site.bl.1": "<a href=\"../particles-states/\">粒子与物态 · 热闹程度即温度</a>：<a href=\"../particles-states/#step4\">该课第 4 步</a>",
-    "site.bl.2": "<a href=\"../../reactions/equation-balancing/\">化学方程式配平</a>：→ <a href=\"#step4\">本页第 4 步</a>"
+    "site.bl.2": "<a href=\"../../reactions/equation-balancing/\">化学方程式配平</a>：<a href=\"../../reactions/equation-balancing/#step5\">该课第 5 步</a> → <a href=\"#step4\">本页第 4 步</a>"
   },
   en: {
     languageLabel: "Language",
@@ -241,7 +241,7 @@ const STR = {
     "site.crumb.sub": "Structure of Matter",
     "site.bl.title": "Linked from",
     "site.bl.1": "<a href=\"../particles-states/\">Particles & States · Temperature Is How Wildly They Move</a>: <a href=\"../particles-states/#step4\">its step 4</a>",
-    "site.bl.2": "<a href=\"../../reactions/equation-balancing/\">Balancing Chemical Equations</a>: → <a href=\"#step4\">this page step 4</a>"
+    "site.bl.2": "<a href=\"../../reactions/equation-balancing/\">Balancing Chemical Equations</a>: <a href=\"../../reactions/equation-balancing/#step5\">its step 5</a> → <a href=\"#step4\">this page step 4</a>"
   }
 };
 let currentLang = null;

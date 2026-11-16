@@ -757,11 +757,11 @@ anchor; a link to the page top has no anchor).
 
 ## 化学方程式配平 / Balancing Chemical Equations → 分子与原子 / Molecules & Atoms
 
-- `equation-balancing` → `molecules-atoms#step4`
+- `equation-balancing#step5` → `molecules-atoms#step4`
 
 ## 化学方程式配平 / Balancing Chemical Equations → 化学平衡 · 人数不变，人还在跑 / Chemical Equilibrium · Still Moving at Balance
 
-- `equation-balancing` → `chemical-equilibrium#step0`
+- `equation-balancing#step5` → `chemical-equilibrium#step0`
 
 ## 食物网 / Food Webs → 光合作用 · 用光开工的糖厂 / Photosynthesis · A Sugar Factory Run by Light
 
