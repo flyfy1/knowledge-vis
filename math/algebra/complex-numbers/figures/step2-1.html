@@ -1,0 +1,28 @@
+<div class="stage">
+      <canvas id="s2-canvas" class="dragc" height="430"></canvas>
+    </div>
+    <form class="coordinate-editor" id="s2-editor" data-coordinate-target="z1" novalidate aria-labelledby="s2-editor-title">
+      <fieldset>
+        <legend id="s2-editor-title" data-i18n="editTitle"></legend>
+        <p class="hint" id="s2-edit-help" data-i18n="editHelp"></p>
+        <p class="hint" id="s2-edit-range" data-i18n="editRange2"></p>
+      <p id="s2-target-label" data-i18n="editTarget"></p>
+      <div class="btn-row" role="group" aria-labelledby="s2-target-label">
+        <button class="btn big mode" id="s2-target-z1" type="button" data-coordinate-key="z1" data-i18n="editFirst" aria-pressed="true">z₁</button>
+        <button class="btn big mode" id="s2-target-z2" type="button" data-coordinate-key="z2" data-i18n="editSecond" aria-pressed="false">z₂</button>
+      </div>
+      <div class="coordinate-fields">
+        <label><span><b data-edit-target-name>z</b> · <span data-i18n="editReal"></span></span>
+          <input id="s2-real" type="number" step="any" inputmode="decimal" aria-describedby="s2-edit-help s2-edit-range s2-edit-status">
+        </label>
+        <label><span><b data-edit-target-name>z</b> · <span data-i18n="editImag"></span></span>
+          <input id="s2-imag" type="number" step="any" inputmode="decimal" aria-describedby="s2-edit-help s2-edit-range s2-edit-status">
+        </label>
+      </div>
+      <button type="submit" class="btn big" id="s2-apply" data-i18n="editApply"></button>
+      <p class="hint coordinate-status" id="s2-edit-status" role="status" aria-live="polite" aria-atomic="true"></p>
+      </fieldset>
+    </form>
+    <p class="readout" id="s2-ro-sum"></p>
+    <p class="readout" id="s2-ro-re"></p>
+    <p class="readout" id="s2-ro-im"></p>

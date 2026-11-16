@@ -1,0 +1,32 @@
+<div class="stage">
+      <canvas id="s4-canvas" class="dragc" height="430"></canvas>
+    </div>
+    <form class="coordinate-editor" id="s4-editor" data-coordinate-target="z2" novalidate aria-labelledby="s4-editor-title">
+      <fieldset>
+        <legend id="s4-editor-title" data-i18n="editTitle"></legend>
+        <p class="hint" id="s4-edit-help" data-i18n="editHelp"></p>
+        <p class="hint" id="s4-edit-range" data-i18n="editRange4"></p>
+        <p class="hint" data-i18n="editTask4"></p>
+      <p id="s4-target-label" data-i18n="editTarget"></p>
+      <div class="btn-row" role="group" aria-labelledby="s4-target-label">
+        <button class="btn big mode" id="s4-target-z1" type="button" data-coordinate-key="z1" data-i18n="editFirst" aria-pressed="false">z₁</button>
+        <button class="btn big mode" id="s4-target-z2" type="button" data-coordinate-key="z2" data-i18n="editSecond" aria-pressed="true">z₂</button>
+      </div>
+      <div class="coordinate-fields">
+        <label><span><b data-edit-target-name>z</b> · <span data-i18n="editReal"></span></span>
+          <input id="s4-real" type="number" step="any" inputmode="decimal" aria-describedby="s4-edit-help s4-edit-range s4-edit-status">
+        </label>
+        <label><span><b data-edit-target-name>z</b> · <span data-i18n="editImag"></span></span>
+          <input id="s4-imag" type="number" step="any" inputmode="decimal" aria-describedby="s4-edit-help s4-edit-range s4-edit-status">
+        </label>
+      </div>
+      <button type="submit" class="btn big" id="s4-apply" data-i18n="editApply"></button>
+      <p class="hint coordinate-status" id="s4-edit-status" role="status" aria-live="polite" aria-atomic="true"></p>
+      </fieldset>
+    </form>
+    <div class="btn-row">
+      <span class="row-label" data-i18n="s4z2Lab"></span>
+      <button class="btn big mode s4pre" type="button" data-pre="0" data-i18n="s4pA"></button>
+      <button class="btn big mode s4pre" type="button" data-pre="1" data-i18n="s4pB"></button>
+      <button class="btn big mode s4pre" type="button" data-pre="2" data-i18n="s4pC"></button>
+    </div>

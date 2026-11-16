@@ -1,0 +1,28 @@
+<div class="stage">
+      <canvas id="s1-canvas" class="dragc" height="430"></canvas>
+    </div>
+    <form class="coordinate-editor" id="s1-editor" novalidate aria-labelledby="s1-editor-title">
+      <fieldset>
+        <legend id="s1-editor-title" data-i18n="editTitle"></legend>
+        <p class="hint" id="s1-edit-help" data-i18n="editHelp"></p>
+        <p class="hint" id="s1-edit-range" data-i18n="editRange1"></p>
+      <div class="coordinate-fields">
+        <label><span><b data-edit-target-name>z</b> · <span data-i18n="editReal"></span></span>
+          <input id="s1-real" type="number" step="any" inputmode="decimal" aria-describedby="s1-edit-help s1-edit-range s1-edit-status">
+        </label>
+        <label><span><b data-edit-target-name>z</b> · <span data-i18n="editImag"></span></span>
+          <input id="s1-imag" type="number" step="any" inputmode="decimal" aria-describedby="s1-edit-help s1-edit-range s1-edit-status">
+        </label>
+      </div>
+      <button type="submit" class="btn big" id="s1-apply" data-i18n="editApply"></button>
+      <p class="hint coordinate-status" id="s1-edit-status" role="status" aria-live="polite" aria-atomic="true"></p>
+      </fieldset>
+    </form>
+    <div class="btn-row">
+      <span class="row-label" data-i18n="s1preLab"></span>
+      <button class="btn big mode s1pre" type="button" data-pre="0" data-i18n="s1pA"></button>
+      <button class="btn big mode s1pre" type="button" data-pre="1" data-i18n="s1pB"></button>
+      <button class="btn big mode s1pre" type="button" data-pre="2" data-i18n="s1pC"></button>
+      <button class="btn big mode s1pre" type="button" data-pre="3" data-i18n="s1pD"></button>
+    </div>
+    <p class="readout" id="s1-ro"></p>

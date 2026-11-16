@@ -570,7 +570,7 @@ anchor; a link to the page top has no anchor).
 
 ## 复数 · 平面上的旋转 / Complex Numbers · Rotation on the Plane → 特征值与特征向量 · 矩阵不转的那些方向 / Eigenvalues & Eigenvectors · The Directions a Matrix Cannot Turn
 
-- `complex-numbers` → `eigenvectors#step2`
+- `complex-numbers#step6` → `eigenvectors#step2`
 
 ## 驻波 · 原地起伏的波 / Standing Waves · The Wave That Stays in Place → 三角函数 · 单位圆 / Trigonometric Functions · The Unit Circle
 
