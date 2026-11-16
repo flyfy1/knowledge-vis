@@ -148,7 +148,7 @@
      - `page.json` `dynamicKeys`：声明 `t('x.' + v)` 用到的键（声明了才对脚本做全量检查，批次 A 不受影响）。
      另加键控页脚、`---` 分栏、`place=wide` 示意图、`legacyLayout` 的 compactSections / compactToc / afterProvenanceCss，旧页面输出逐字节不变。
    - **SIMD 页（`79d42caa` authored，标签 `96958c09`）：** 去掉页内 `meta.en`，改用 `languages`、`dynamicKeys`、`generators`；版本 20261116b。
-   - **SAS、PCIe：** 测试适配 `b44d5f06`（authored）、标签 `3259a4fd`；SAS 转换 `0c3676fa`、补回 3 处运行时链接 `b5cdc9bd`（authored）；PCIe 转换 `50e7421e`。没有规整 HTML 的提交。线上 `SiteNav.report()`：SAS 3 处（都已改成 `[[…#ch7]]`），PCIe 0 处。缓存键：SAS、what-a-drive-is-made-of `20261116c`，PCIe `20261116a`。
+   - **SAS、PCIe：** 测试适配 `b44d5f06`（authored）、标签 `3259a4fd`；SAS 转换 `0c3676fa`、补回 3 处运行时链接 `b5cdc9bd`（authored；标签在 `21a4c2c8` 指向它）；PCIe 转换 `50e7421e`。没有规整 HTML 的提交。线上 `SiteNav.report()`：SAS 3 处（都已改成 `[[…#ch7]]`），PCIe 0 处。缓存键：SAS、what-a-drive-is-made-of `20261116c`，PCIe `20261116a`。
    - **遗留：** 部署前要独立评审；d54606f9 的提交说明里「47 项新断言在旧库上失败」数字不准，实际是 41 项断言失败，另有转换器 4b 段在旧库上直接崩溃（未逐项计数）。
 2. **S1–S5 补示意图：2026-11-16 完成并上线**（`9fcb9fac` 内容、`b2d49a1c` 标签重指）。沿用旧格式（内联 SVG，标签来自 copy 文件），走了 构建 → 独立评审 → 登记。现在转换器可以处理这五篇了。
    - 外溢视口检查的 `e.closest('svg')` 跳过：其余 16 篇也已改为只跳过 `<defs>`（`c3cef443`，标签重指见下一个提交），全部通过，没有页面需要改版式；switches-that-compute 没有逐元素的视口检查，探测过 320 宽下不溢出。
