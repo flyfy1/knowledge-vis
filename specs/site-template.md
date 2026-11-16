@@ -491,7 +491,7 @@ passed (4516 checks). The full build failed only the CJK-in-`index.html` check o
   the 20 pages already migrated did not change. No normalisation commit was needed.
 - **Order:** b44d5f06 (both `tests/models.cjs` read the markup through `unprefill` and skip `site.*`; authored),
   3259a4fd (labels repointed to it), 0c3676fa (how-sas-works converted), b5cdc9bd (its runtime links restored),
-  then 50e7421e (how-pcie-works converted). Each conversion round-tripped byte for byte at its parent, with both copy
+  then 50e7421e (how-pcie-works converted) and 21a4c2c8 (the how-sas-works label repointed to b5cdc9bd). Each conversion round-tripped byte for byte at its parent, with both copy
   tables equal, before its `version` bump; `--all --check` passes on every commit, and no other page drifted from
   either conversion.
 - **how-sas-works:** 11 chapters, 469 keys, 7 labs, 10 diagrams, 2 `::: html` partials. Version 20261116c. Live
