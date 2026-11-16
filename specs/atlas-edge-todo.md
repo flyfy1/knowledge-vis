@@ -796,7 +796,7 @@ anchor; a link to the page top has no anchor).
 
 ## 磁场与洛伦兹力 · 力总是垂直于速度 / Magnetic Force · The Force Is Always Sideways to the Velocity → 动量与碰撞 · 速度不是全部 / Momentum & Collisions · Speed Is Not the Whole Story
 
-- `magnetic-force` → `momentum-collision#step1`
+- `magnetic-force#step5` → `momentum-collision#step1`
 
 ## 减数分裂 · 洗牌、切半，造配子 / Meiosis · Shuffle, Halve, Make Gametes → 细胞 · 生命的最小单位间 / The Cell · Life's Smallest Workshop
 

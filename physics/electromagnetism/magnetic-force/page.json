@@ -20,5 +20,41 @@
   "stage": "senior",
   "status": "live",
   "path": "physics/electromagnetism/magnetic-force/",
-  "order": 1580
+  "order": 1580,
+  "layout": "lesson",
+  "runtimeKeys": [
+    "stepWord",
+    "obsLab",
+    "quizT",
+    "modelT",
+    "linksT",
+    "back",
+    "cat_physics",
+    "stage_senior",
+    "langLabel",
+    "navLabel",
+    "foot"
+  ],
+  "legacyLayout": {
+    "_note": "Whitespace and markup of the hand-written lesson this page was converted from, so the conversion could be checked byte for byte (specs/site-template.md §3c).",
+    "section": {
+      "open": "<section class=\"step\" id=\"{id}\" data-step=\"{n}\"><div class=\"step-inner\">",
+      "close": "</div></section>"
+    },
+    "indent": "",
+    "mainGaps": [
+      "\n",
+      "\n",
+      "\n",
+      "\n",
+      "\n",
+      "\n",
+      "\n"
+    ],
+    "stepNav": {
+      "item": "<a href=\"#{id}\" data-i18n=\"{key}\"></a>",
+      "end": ""
+    }
+  },
+  "version": "20261116a"
 }

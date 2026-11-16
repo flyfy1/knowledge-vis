@@ -68,7 +68,7 @@ const STR={
     "site.bl.2": "<a href=\"../../../chemistry/matter/periodic-trends/\">元素周期律 · 周期表上的渐变</a>：<a href=\"../../../chemistry/matter/periodic-trends/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>",
     "site.bl.3": "<a href=\"../../../chemistry/reactions/electrochemistry/\">电化学 · 电子沿导线跑，还是被电推着跑</a>：<a href=\"../../../chemistry/reactions/electrochemistry/#step5\">该课第 5 步</a> → <a href=\"#step3\">本页第 3 步</a>",
     "site.bl.4": "<a href=\"../../circuits/ohms-law/\">欧姆定律 · 电流是调出来的</a>：<a href=\"../../circuits/ohms-law/#step5\">该课第 5 步</a> → <a href=\"#step3\">本页第 3 步</a>",
-    "site.bl.5": "<a href=\"../magnetic-force/\">磁场与洛伦兹力 · 力总是垂直于速度</a>：→ <a href=\"#step4\">本页第 4 步</a>"
+    "site.bl.5": "<a href=\"../magnetic-force/\">磁场与洛伦兹力 · 力总是垂直于速度</a>：<a href=\"../magnetic-force/#step5\">该课第 5 步</a> → <a href=\"#step4\">本页第 4 步</a>"
   },
   en: {
     pageTitle: "Electric Fields · Drawing an Invisible Force",
@@ -138,7 +138,7 @@ const STR={
     "site.bl.2": "<a href=\"../../../chemistry/matter/periodic-trends/\">Periodic Trends · Gradients Across the Periodic Table</a>: <a href=\"../../../chemistry/matter/periodic-trends/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>",
     "site.bl.3": "<a href=\"../../../chemistry/reactions/electrochemistry/\">Electrochemistry · Electrons Running Down the Wire, or Pushed Along</a>: <a href=\"../../../chemistry/reactions/electrochemistry/#step5\">its step 5</a> → <a href=\"#step3\">this page step 3</a>",
     "site.bl.4": "<a href=\"../../circuits/ohms-law/\">Ohm’s Law · Current You Tune by Hand</a>: <a href=\"../../circuits/ohms-law/#step5\">its step 5</a> → <a href=\"#step3\">this page step 3</a>",
-    "site.bl.5": "<a href=\"../magnetic-force/\">Magnetic Force · The Force Is Always Sideways to the Velocity</a>: → <a href=\"#step4\">this page step 4</a>"
+    "site.bl.5": "<a href=\"../magnetic-force/\">Magnetic Force · The Force Is Always Sideways to the Velocity</a>: <a href=\"../magnetic-force/#step5\">its step 5</a> → <a href=\"#step4\">this page step 4</a>"
   }
 };
 
