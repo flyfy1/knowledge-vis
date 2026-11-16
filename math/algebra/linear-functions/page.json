@@ -28,5 +28,78 @@
   "stage": "junior",
   "status": "live",
   "path": "math/algebra/linear-functions/",
-  "order": 700
+  "order": 700,
+  "layout": "lesson",
+  "version": "20261116a",
+  "titleKey": "docTitle",
+  "enCjk": [
+    "foot"
+  ],
+  "legacyLayout": {
+    "_note": "Whitespace and markup of the hand-written lesson this page was converted from, so the conversion could be checked byte for byte (specs/site-template.md §3c).",
+    "leads": {
+      "q1t": "\n\n    ",
+      "q2t": "\n\n    ",
+      "q3t": "\n\n    "
+    },
+    "mainGaps": [
+      "\n\n<!-- ============ 第 0 步：爬坡（斜率） ============ -->\n",
+      "\n\n<!-- ============ 第 1 步：起点（截距） ============ -->\n",
+      "\n\n<!-- ============ 第 2 步：方程长出来 ============ -->\n",
+      "\n\n<!-- ============ 第 3 步：两条线相遇 ============ -->\n",
+      "\n\n<!-- ============ 第 4 步：自测 ============ -->\n",
+      "\n\n<!-- ============ 第 5 步：终章 ============ -->\n",
+      "\n\n"
+    ],
+    "stepNav": {
+      "item": "\n  <a href=\"#{id}\" class=\"nav-step\" data-nav=\"{n}\" data-i18n=\"{key}\"></a>",
+      "end": "\n"
+    },
+    "filled": [
+      "back",
+      "pageTitle",
+      "tagline",
+      "nav0",
+      "nav1",
+      "nav2",
+      "nav3",
+      "nav4",
+      "nav5",
+      "s0k",
+      "s0t",
+      "s0kLab",
+      "s0play",
+      "start",
+      "s1k",
+      "s1t",
+      "s1bLab",
+      "s2k",
+      "s2t",
+      "s2kLab",
+      "s2bLab",
+      "s2eqPre",
+      "s2prev",
+      "s2next",
+      "s3k",
+      "s3t",
+      "s3k2Lab",
+      "s3b2Lab",
+      "s4k",
+      "s4t",
+      "q1t",
+      "q2t",
+      "q2kLab",
+      "q2bLab",
+      "q3t",
+      "q3aBtn",
+      "q3bBtn",
+      "s5k",
+      "s5t",
+      "c1h",
+      "c2h",
+      "c3h",
+      "foot"
+    ],
+    "label": "<details class=\"page-provenance\" data-developer=\"{{developer}}\" data-edition=\"{{edition}}\" data-source-revision=\"{{sourceRevision}}\">\n      <summary><span class=\"provenance-zh\" lang=\"zh-CN\">{{developer}} 开发 · {{kind.zh}}</span><span class=\"provenance-en\" lang=\"en\">Developed with {{developer}} · {{kind.en}}</span></summary>\n      <p><span class=\"provenance-zh\" lang=\"zh-CN\">原页面的贡献保留；本版本的改进由 {{developer}} 完成。</span><span class=\"provenance-en\" lang=\"en\">This edition includes {{developer}} improvements and retains the original contributors’ work.</span></p>\n      <p><span class=\"provenance-zh\" lang=\"zh-CN\">改进范围：{{scope.zh}}。</span><span class=\"provenance-en\" lang=\"en\">Scope: {{scope.en}}.</span></p>\n      <p><span class=\"provenance-zh\" lang=\"zh-CN\">版本：</span><span class=\"provenance-en\" lang=\"en\">Edition: </span><code>{{edition}}</code> · <a href=\"https://github.com/flyfy1/knowledge-vis/commit/{{sourceRevision}}\"><span class=\"provenance-zh\" lang=\"zh-CN\">源码修订</span><span class=\"provenance-en\" lang=\"en\">Source revision</span>&nbsp;{{short}}</a></p>\n    </details>"
+  }
 }

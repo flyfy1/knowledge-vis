@@ -518,7 +518,7 @@ anchor; a link to the page top has no anchor).
 
 ## 一次函数 · 斜率是陡缓，截距是起点 / Linear Functions · Slope Is Steepness, Intercept Is the Start → 勾股定理 · 一步一交互 / The Pythagorean Theorem · One Interaction at a Time
 
-- `linear-functions` → `pythagoras#step5`
+- `linear-functions#step5` → `pythagoras#step5`
 
 ## 对称与旋转 · 对折与转圈 / Symmetry & Rotation · Folding and Turning → 周长 vs 面积 · 一根绳子两种账 / Perimeter vs Area · One Rope, Two Ledgers
 
