@@ -83,7 +83,7 @@ const STR={
     "site.crumb.cat": "生物",
     "site.crumb.sub": "细胞与分子",
     "site.bl.title": "被这些页面引用",
-    "site.bl.1": "<a href=\"../../ecology/natural-selection/\">自然选择 · 胡椒蛾的颜色为什么翻转</a>：→ <a href=\"#step4\">本页第 4 步</a>"
+    "site.bl.1": "<a href=\"../../ecology/natural-selection/\">自然选择 · 胡椒蛾的颜色为什么翻转</a>：<a href=\"../../ecology/natural-selection/#step5\">该课第 5 步</a> → <a href=\"#step4\">本页第 4 步</a>"
   },
   en: {
     pageTitle: "DNA Replication and Translation · A Zipper, a Copy and an Assembly Line",
@@ -168,7 +168,7 @@ const STR={
     "site.crumb.cat": "Biology",
     "site.crumb.sub": "Cells & Molecules",
     "site.bl.title": "Linked from",
-    "site.bl.1": "<a href=\"../../ecology/natural-selection/\">Natural Selection · Why the Peppered Moth Flipped Colour</a>: → <a href=\"#step4\">this page step 4</a>"
+    "site.bl.1": "<a href=\"../../ecology/natural-selection/\">Natural Selection · Why the Peppered Moth Flipped Colour</a>: <a href=\"../../ecology/natural-selection/#step5\">its step 5</a> → <a href=\"#step4\">this page step 4</a>"
   }
 };
 

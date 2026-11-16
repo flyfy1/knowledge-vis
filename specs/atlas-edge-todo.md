@@ -805,15 +805,15 @@ anchor; a link to the page top has no anchor).
 
 ## 自然选择 · 胡椒蛾的颜色为什么翻转 / Natural Selection · Why the Peppered Moth Flipped Colour → DNA 复制与翻译 · 拉链、抄写和流水线 / DNA Replication and Translation · A Zipper, a Copy and an Assembly Line
 
-- `natural-selection` → `dna-replication#step4`
+- `natural-selection#step5` → `dna-replication#step4`
 
 ## 自然选择 · 胡椒蛾的颜色为什么翻转 / Natural Selection · Why the Peppered Moth Flipped Colour → 遗传与概率 · 从配子到表型 / Genetics & Probability · From Gametes to Phenotypes
 
-- `natural-selection` → `genetics-probability#step0`
+- `natural-selection#step5` → `genetics-probability#step0`
 
 ## 自然选择 · 胡椒蛾的颜色为什么翻转 / Natural Selection · Why the Peppered Moth Flipped Colour → 种群生态学 · 增长如何被反馈改变 / Population Ecology · Growth Reshaped by Feedback
 
-- `natural-selection` → `population-ecology#step1`: ? → logistic-growth
+- `natural-selection#step5` → `population-ecology#step1`: ? → logistic-growth
 
 ## 找规律 · 不画也能报出第 100 个 / Patterns · Name the 100th Without Drawing It → 乘法是面积 · 点阵铺成一块地 / Multiplication Is Area · Arrays Become a Tiled Floor
 
