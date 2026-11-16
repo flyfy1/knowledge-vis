@@ -15,6 +15,7 @@ anchor; a link to the page top has no anchor).
 
 ## 冰冻肥皂泡 · 水膜里的结晶 / Frozen Soap Bubbles · Ice in a Thin Film → 光的反射与折射 · 拐弯的规矩 / Reflection & Refraction · How Light Bends
 
+- `frozen-bubble#step2` → `reflection-refraction#step2`
 - `frozen-bubble` → `reflection-refraction#step2`
 
 ## 数字没有说谎，结论却错了 / Every Number Was True, and the Conclusion Was Still Wrong → 中心极限定理 · 平均值总会变成钟形 / Central Limit Theorem · Averages Always Turn Bell-Shaped
