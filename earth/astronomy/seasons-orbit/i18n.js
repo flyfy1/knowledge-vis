@@ -127,7 +127,7 @@ const STR = {
     "site.bl.1": "<a href=\"../gravity-orbits/\">万有引力与轨道 · 横着扔出去，会落下、绕圈还是飞走</a>：<a href=\"../gravity-orbits/#step5\">该课第 5 步</a> → <a href=\"#step1\">本页第 1 步</a>",
     "site.bl.2": "<a href=\"../../climate/atmospheric-circulation/\">大气环流与季风 · 风从哪里来</a>：<a href=\"../../climate/atmospheric-circulation/#step5\">该课第 5 步</a> → <a href=\"#step2\">本页第 2 步</a>",
     "site.bl.3": "<a href=\"../../climate/why-the-planet-warms/\">一点点二氧化碳 · 地球为什么会变暖</a>：<a href=\"../../climate/why-the-planet-warms/#ch1\">该文第 1 章</a> → <a href=\"#step0\">本页第 0 步</a>",
-    "site.bl.4": "<a href=\"../../geo/latitude-longitude/\">经纬网</a>：→ <a href=\"#step1\">本页第 1 步</a>",
+    "site.bl.4": "<a href=\"../../geo/latitude-longitude/\">经纬网</a>：<a href=\"../../geo/latitude-longitude/#step5\">该课第 5 步</a> → <a href=\"#step1\">本页第 1 步</a>",
     "site.bl.5": "<a href=\"../../../physics/mechanics/projectile-circular/\">抛体与圆周 · 一直在掉，但总掉不到地上</a>：→ <a href=\"#step0\">本页第 0 步</a>"
   },
   en: {
@@ -256,7 +256,7 @@ const STR = {
     "site.bl.1": "<a href=\"../gravity-orbits/\">Gravity and Orbits · Throw It Sideways: Fall, Circle or Escape</a>: <a href=\"../gravity-orbits/#step5\">its step 5</a> → <a href=\"#step1\">this page step 1</a>",
     "site.bl.2": "<a href=\"../../climate/atmospheric-circulation/\">Atmospheric Circulation & Monsoons · Where Winds Come From</a>: <a href=\"../../climate/atmospheric-circulation/#step5\">its step 5</a> → <a href=\"#step2\">this page step 2</a>",
     "site.bl.3": "<a href=\"../../climate/why-the-planet-warms/\">A Little CO₂ · Why the Planet Warms</a>: <a href=\"../../climate/why-the-planet-warms/#ch1\">its chapter 1</a> → <a href=\"#step0\">this page step 0</a>",
-    "site.bl.4": "<a href=\"../../geo/latitude-longitude/\">Latitude & Longitude</a>: → <a href=\"#step1\">this page step 1</a>",
+    "site.bl.4": "<a href=\"../../geo/latitude-longitude/\">Latitude & Longitude</a>: <a href=\"../../geo/latitude-longitude/#step5\">its step 5</a> → <a href=\"#step1\">this page step 1</a>",
     "site.bl.5": "<a href=\"../../../physics/mechanics/projectile-circular/\">Projectiles & Circular Motion · Always Falling, Never Landing</a>: → <a href=\"#step0\">this page step 0</a>"
   }
 };

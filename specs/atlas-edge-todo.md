@@ -782,11 +782,11 @@ anchor; a link to the page top has no anchor).
 
 ## 经纬网 / Latitude & Longitude → 昼夜交替 · 地球自己在转 / Day and Night · The Earth Itself Is Turning
 
-- `latitude-longitude` → `day-night-rotation#step2`: ? → earth-rotation-day-night
+- `latitude-longitude#step5` → `day-night-rotation#step2`: ? → earth-rotation-day-night
 
 ## 经纬网 / Latitude & Longitude → 地球公转与四季 / Earth’s Orbit & the Seasons
 
-- `latitude-longitude` → `seasons-orbit#step1`
+- `latitude-longitude#step5` → `seasons-orbit#step1`
 
 ## 磁场与洛伦兹力 · 力总是垂直于速度 / Magnetic Force · The Force Is Always Sideways to the Velocity → 动量与碰撞 · 速度不是全部 / Momentum & Collisions · Speed Is Not the Whole Story
 
