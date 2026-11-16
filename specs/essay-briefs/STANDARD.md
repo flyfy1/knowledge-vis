@@ -78,10 +78,16 @@ quantity behaves; diagrams show what the thing *is*. A reader should see the str
 - **No interaction needed.** A diagram is static. It sits before the model in its chapter, in a `<figure>` with a
   `<figcaption>`, as wide as the prose column or the model card.
 - **Format.** Inline SVG written by the page (in `index.html`, or built in `app.js` from a small spec), with a
-  `viewBox` so it scales. No raster images, no external files or libraries. Colours from the page palette, and the
+  `viewBox` so it scales. On a page built from the site template (specs/site-template.md, adopted 2026-11-16),
+  a diagram is a `::: diagram <name> keys=<prefix>` block in `content.<lang>.md`. Its markup is the
+  language-neutral partial `figures/<name>.html`: either the `<figure class="dia" data-dg="…">` shell that
+  `app.js` fills, or an inline `<svg>` whose `<text>` elements carry `data-i18n` keys. Every label, caption and
+  aria string sits in the block, in both languages, and the build fails if the partial names an undefined key.
+  Unmigrated pages keep the old pattern: markup in `index.html`, strings in `copy.*.js`. No raster images, no external files or libraries. Colours from the page palette, and the
   same colour for the same thing everywhere on the page (e.g. host always cyan, device always gold).
 - **Text comes from the copy files.** Every label, caption and `aria-label` is a key in `copy.zh.js` and
-  `copy.en.js`, so the translator covers it and English mode shows no CJK. The SVG has `role="img"` and an
+  `copy.en.js` (on a template page, in the `::: diagram` block, which generates those files), so the translator
+  covers it and English mode shows no CJK. The SVG has `role="img"` and an
   `aria-label` from copy.
 - **Honest scale.** Numbers drawn on a diagram come from `models.js` and are pinned in `tests/models.cjs` like
   prose numbers. Otherwise the caption says it is schematic (示意，不按比例 / schematic, not to scale).

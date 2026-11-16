@@ -1,6 +1,6 @@
 # HANDOFF.md — 开工前先读
 
-最后更新：2026-11-15，由供电与网卡两篇的登记 Agent（Claude Code）在两篇上线后更新第二部分。
+最后更新：2026-11-16，模板 Phase 0 的提交 Agent（Claude Code）更新了「模板迁移与示意图补齐」一节；第二部分其余内容仍是 2026-11-15 供电与网卡两篇上线后的状态。
 
 这份文件有两部分：
 
@@ -114,7 +114,24 @@
 
 三条线，按提案 [specs/proposals/site-template.md](specs/proposals/site-template.md) 第 7 节：
 
-1. **Phase 0 基础**（不碰任何页面目录）：先单独提交 D3（`scripts/authorship.cjs` 认 `Derived-From:`，AUTHORSHIP.md §9），再落 `scripts/build-pages.cjs`、布局、`--check`，提案转为 `specs/site-template.md`，修订 specs/essays.md 与 STANDARD §4a，`site-nav.js` 跳过 `data-template` 页面。转换任何页面前，先用一篇带 SVG 示意图的长文验证 round trip 逐字节一致（原型没做 `::: diagram`）。
+1. **Phase 0 基础：2026-11-16 完成**（没有转换任何页面）。
+   - **提交：**
+     - D3（`Derived-From:` trailer，AUTHORSHIP.md §4 与 §9）在 `c94da8d5`；
+     - 工具在 `003feed0`：`scripts/build-pages.cjs`、`scripts/lib/template.cjs`、`scripts/convert-essay.cjs`、`templates/layouts/essay.html`、`tests/site-template.cjs` 和夹具 `tests/fixtures/site-template/`；
+     - `site-nav.js` 跳过 `data-template` 页面在 `8bbed67c`。
+   - **规范：** [specs/site-template.md](specs/site-template.md)（已采纳，含转换流程和 agent 怎么改已迁移页面）。
+   - **命令：** `node scripts/build-pages.cjs --all --check` 只查带 `page.json` 的线上页面，目前 0 个；`node tests/site-template.cjs`。
+   - **round trip**（在 /tmp 的镜像里用 HEAD 副本做）：
+     - 硬盘（S1）317 键；
+     - 内存（B3）459 键、11 张示意图；
+     - 开机 608 键、13 张示意图。
+
+     三篇都关掉 chrome 和预填后 `index.html` 逐字节一致，中英 copy 逐键相等，各页 `models.cjs`、`browser.cjs` 照原样通过。
+   - **Phase 1 要先定的一件事：** 内存、开机两篇（估计 2026-11-15 那批计算机长文大多如此）的 `models.cjs` 禁止 `index.html` 里出现中文，打开预填就会失败。每页二选一，写进 authored 提交：
+     - `page.json` 设 `"prefill": false`；
+     - 或者让检查跳过 `data-i18n*` 元素的内容。
+
+     不要放宽别的断言。
 2. **S1–S5 补示意图**：沿用旧格式（内联 SVG，标签来自 copy 文件），走 构建 → 独立评审 → 登记。落地之前，转换器不碰这五篇。
 3. **CPU SIMD 与浮点一篇**：等 Phase 0 落地后，作为第一篇直接用 Markdown 写的长文。
 

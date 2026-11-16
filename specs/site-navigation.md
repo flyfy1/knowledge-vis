@@ -7,6 +7,18 @@ Added 2026-11-15 by Claude Code (claude-opus-5-5) at Yangyu's request:
 
 Everything is generated from `pages.config.js`; nothing on a page is written by hand.
 
+**Template pages (2026-11-16, specs/site-template.md).**
+- Pages built by `scripts/build-pages.cjs` carry `<html data-template>`, a static breadcrumb with the same
+  markup (`nav.site-nav`) and build-time links. `site-nav.js` does nothing on them (it leaves a `SiteNav` stub
+  with `skipped: 'data-template'`).
+- For them the 《title》 auto-link becomes a build lint (D10).
+- `build-site-nav.cjs` reads `pages.config.js` through `scripts/lib/template.cjs`, the registry the template
+  build uses, so `site-nav-data.js` is a projection of it.
+- It never writes into a page that has a `page.json`: the layout emits the include lines from `includeLines()`.
+  A stale one is reported with the build-pages command.
+- `site-nav.css` also styles the generated "linked from / related" block (`.site-xref`). The `sn-` version was
+  not bumped for that, because no unmigrated page uses those classes.
+
 ## Files
 
 | File | What |
@@ -109,7 +121,8 @@ The script inserts `<link rel="stylesheet" href="../../../site-nav.css?v=…">` 
 `<body>` if the page has no `</head>`) and `<script defer src="../../../site-nav.js?v=…"></script>` as the
 last thing in `<body>`, so the page's own scripts have set `html[lang]` before it runs. It only touches
 pages that are `live` in `pages.config.js`; drafts are never edited. Builders may add the two lines
-themselves; the script leaves correct lines alone.
+themselves; the script leaves correct lines alone. Template pages (with `page.json`) are never edited:
+rebuild them with `node scripts/build-pages.cjs` instead.
 
 When a page's prose names another page, writing the exact title in 《》 or “” is enough for a link; a
 hand-written link with a chapter anchor (`../x/#ch7`) is still better where a chapter is meant.

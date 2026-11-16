@@ -1,6 +1,10 @@
 # Proposal: one site template — pages from Markdown + components, one registry, generated links
 
-- Status: **proposal, not adopted.** Nothing in the live site was changed. The prototype lives outside the repo.
+- Status: **adopted 2026-11-16** with every recommended default (D1–D10). The adopted spec is
+  [../site-template.md](../site-template.md), and it wins where the two differ. This file is kept as the
+  record of the measurements and the prototype. The reference copies in [site-template/](site-template/) are
+  superseded by `scripts/build-pages.cjs`, `scripts/lib/template.cjs`, `scripts/convert-essay.cjs` and
+  `templates/layouts/essay.html`.
 - Author: Claude Code (claude-opus-5-5), 2026-11-15, at Yangyu's request (this thread).
 - Supporting files: [site-template/](site-template/) (prototype build script, converter, chrome CSS, a sample chapter).
   Full prototype output and screenshots are archived at `~/Documents/archive/knowledge-vis/site-template-20261115/`.
