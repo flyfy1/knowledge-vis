@@ -84,7 +84,7 @@ const STR = {
     "site.bl.4": "<a href=\"../place-value/\">位值与计数器 · 满十进一</a>：<a href=\"../place-value/#step5\">该课第 5 步</a> → <a href=\"#step3\">本页第 3 步</a>",
     "site.bl.5": "<a href=\"../../geometry/circle-intro/\">圆的认识 · 圆规、半径与 π</a>：<a href=\"../../geometry/circle-intro/#step5\">该课第 5 步</a> → <a href=\"#step1\">本页第 1 步</a>",
     "site.bl.6": "<a href=\"../../geometry/perimeter-area/\">周长 vs 面积 · 一根绳子两种账</a>：<a href=\"../../geometry/perimeter-area/#step4\">该课第 4 步</a> → <a href=\"#step1\">本页第 1 步</a>",
-    "site.bl.7": "<a href=\"../../geometry/similarity-scaling/\">相似与缩放 · 长度、面积、体积各变几倍</a>：→ <a href=\"#step0\">本页第 0 步</a>",
+    "site.bl.7": "<a href=\"../../geometry/similarity-scaling/\">相似与缩放 · 长度、面积、体积各变几倍</a>：<a href=\"../../geometry/similarity-scaling/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>",
     "site.bl.8": "<a href=\"../../geometry/symmetry-rotation/\">对称与旋转 · 对折与转圈</a>：→ <a href=\"#step1\">本页第 1 步</a>",
     "site.bl.9": "<a href=\"../../../physics/mechanics/velocity-vt/\">速度与 v-t 图 · 面积就是路</a>：→ <a href=\"#step1\">本页第 1 步</a>"
   },
@@ -171,7 +171,7 @@ const STR = {
     "site.bl.4": "<a href=\"../place-value/\">Place Value & the Counting Frame · Ten Makes One</a>: <a href=\"../place-value/#step5\">its step 5</a> → <a href=\"#step3\">this page step 3</a>",
     "site.bl.5": "<a href=\"../../geometry/circle-intro/\">The Circle · Compass, Radius and π</a>: <a href=\"../../geometry/circle-intro/#step5\">its step 5</a> → <a href=\"#step1\">this page step 1</a>",
     "site.bl.6": "<a href=\"../../geometry/perimeter-area/\">Perimeter vs Area · One Rope, Two Ledgers</a>: <a href=\"../../geometry/perimeter-area/#step4\">its step 4</a> → <a href=\"#step1\">this page step 1</a>",
-    "site.bl.7": "<a href=\"../../geometry/similarity-scaling/\">Similarity & Scaling · Lengths, Areas and Volumes Each Change Differently</a>: → <a href=\"#step0\">this page step 0</a>",
+    "site.bl.7": "<a href=\"../../geometry/similarity-scaling/\">Similarity & Scaling · Lengths, Areas and Volumes Each Change Differently</a>: <a href=\"../../geometry/similarity-scaling/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>",
     "site.bl.8": "<a href=\"../../geometry/symmetry-rotation/\">Symmetry & Rotation · Folding and Turning</a>: → <a href=\"#step1\">this page step 1</a>",
     "site.bl.9": "<a href=\"../../../physics/mechanics/velocity-vt/\">Speed and the v–t Graph · Area Is Distance</a>: → <a href=\"#step1\">this page step 1</a>"
   }

@@ -1049,7 +1049,7 @@ anchor; a link to the page top has no anchor).
 
 ## 相似与缩放 · 长度、面积、体积各变几倍 / Similarity & Scaling · Lengths, Areas and Volumes Each Change Differently → 乘法是面积 · 点阵铺成一块地 / Multiplication Is Area · Arrays Become a Tiled Floor
 
-- `similarity-scaling` → `area-model#step0`
+- `similarity-scaling#step5` → `area-model#step0`
 
 ## 简单电路 · 电流要走一圈 / Simple Circuits · Current Must Go Round → 原子结构 · 质子数定它是谁 / Atomic Structure · The Proton Count Decides What It Is
 
