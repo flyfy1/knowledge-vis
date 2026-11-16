@@ -1,0 +1,33 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "poisson-process",
+ "refs": [
+  {
+   "from": "s2e",
+   "to": "probability-distribution",
+   "anchor": "step2"
+  }
+ ],
+ "backlinks": [
+  {
+   "from": "how-sas-works",
+   "links": [
+    {
+     "from": "ch5",
+     "to": null
+    }
+   ]
+  },
+  {
+   "from": "inside-a-phone",
+   "links": [
+    {
+     "from": null,
+     "to": "step2"
+    }
+   ]
+  }
+ ],
+ "related": [],
+ "bindings": []
+}

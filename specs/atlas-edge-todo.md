@@ -1273,11 +1273,12 @@ anchor; a link to the page top has no anchor).
 
 ## 泊松过程 · 随机到达的规律 / The Poisson Process · The Pattern in Random Arrivals → 概率分布 · 随机性也有形状 / Probability Distributions · Randomness Has a Shape
 
-- `poisson-process` → `probability-distribution#step2`
+- `poisson-process#step2` → `probability-distribution#step2`: poisson-process → ?
+- `poisson-process#step5` → `probability-distribution#step2`
 
 ## 泊松过程 · 随机到达的规律 / The Poisson Process · The Pattern in Random Arrivals → 中心极限定理 · 平均值总会变成钟形 / Central Limit Theorem · Averages Always Turn Bell-Shaped
 
-- `poisson-process` → `central-limit-theorem#step3`: ? → variance
+- `poisson-process#step5` → `central-limit-theorem#step3`: ? → variance
 
 ## 囚徒困境与演化博弈 · 合作怎样活下来 / The Prisoner’s Dilemma & Evolutionary Games · How Cooperation Survives → 种群增长 · S 形曲线从哪来 / Population Growth · Where the S-Curve Comes From
 

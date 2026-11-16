@@ -168,7 +168,7 @@ const STR = {
     "site.bl.10": "<a href=\"../../inference/bayes-updating/\">贝叶斯 · 先查底子，再看证据</a>：<a href=\"../../inference/bayes-updating/#step6\">该课第 6 步</a> → <a href=\"#step1\">本页第 1 步</a>",
     "site.bl.11": "<a href=\"../../statistics/central-limit-theorem/\">中心极限定理 · 平均值总会变成钟形</a>：<a href=\"../../statistics/central-limit-theorem/#step3\">该课第 3 步</a> → <a href=\"#step2\">本页第 2 步</a>；<a href=\"../../statistics/central-limit-theorem/#step6\">该课第 6 步</a> → <a href=\"#step2\">本页第 2 步</a>",
     "site.bl.12": "<a href=\"../bandit-arms/\">多臂老虎机 · 探索还是利用</a>：<a href=\"../bandit-arms/#step5\">该课第 5 步</a> → <a href=\"#step2\">本页第 2 步</a>",
-    "site.bl.13": "<a href=\"../poisson-process/\">泊松过程 · 随机到达的规律</a>：→ <a href=\"#step1\">本页第 1 步</a>",
+    "site.bl.13": "<a href=\"../poisson-process/\">泊松过程 · 随机到达的规律</a>：<a href=\"../poisson-process/#step5\">该课第 5 步</a> → <a href=\"#step1\">本页第 1 步</a>",
     "site.bl.14": "<a href=\"../risk-pooling/\">风险池化与保险 · 一万人各摊一点</a>：→ <a href=\"#step2\">本页第 2 步</a>"
   },
   en: {
@@ -331,7 +331,7 @@ const STR = {
     "site.bl.10": "<a href=\"../../inference/bayes-updating/\">Bayes · Check the Base Rate Before the Evidence</a>: <a href=\"../../inference/bayes-updating/#step6\">its step 6</a> → <a href=\"#step1\">this page step 1</a>",
     "site.bl.11": "<a href=\"../../statistics/central-limit-theorem/\">Central Limit Theorem · Averages Always Turn Bell-Shaped</a>: <a href=\"../../statistics/central-limit-theorem/#step3\">its step 3</a> → <a href=\"#step2\">this page step 2</a>; <a href=\"../../statistics/central-limit-theorem/#step6\">its step 6</a> → <a href=\"#step2\">this page step 2</a>",
     "site.bl.12": "<a href=\"../bandit-arms/\">Multi-Armed Bandits · Explore or Exploit</a>: <a href=\"../bandit-arms/#step5\">its step 5</a> → <a href=\"#step2\">this page step 2</a>",
-    "site.bl.13": "<a href=\"../poisson-process/\">The Poisson Process · The Pattern in Random Arrivals</a>: → <a href=\"#step1\">this page step 1</a>",
+    "site.bl.13": "<a href=\"../poisson-process/\">The Poisson Process · The Pattern in Random Arrivals</a>: <a href=\"../poisson-process/#step5\">its step 5</a> → <a href=\"#step1\">this page step 1</a>",
     "site.bl.14": "<a href=\"../risk-pooling/\">Risk Pooling & Insurance · Ten Thousand People Each Chip In</a>: → <a href=\"#step2\">this page step 2</a>"
   }
 };
