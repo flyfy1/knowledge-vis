@@ -14,6 +14,9 @@ const fixture = path.join(__dirname, 'fixtures', 'site-template');
 const base = fs.existsSync('/tmp/agent-tasks') ? '/tmp/agent-tasks' : os.tmpdir();
 const scratch = fs.mkdtempSync(path.join(base, 'site-template-test-'));
 const PAGE = 'demo/basics/fixture-essay';
+// The scratch copies are removed when the process exits, also after a failed assertion (follow-up review 2026-11-16:
+// they used to stay behind on failure). KEEP_SCRATCH=1 keeps them for inspection.
+process.on('exit', () => { if (!process.env.KEEP_SCRATCH) fs.rmSync(scratch, { recursive: true, force: true }); });
 let n = 0, modes = 0;
 const ok = (cond, msg) => { assert.ok(cond, msg); n++; };
 
@@ -157,6 +160,13 @@ failsWith('hand edit of the generated index.html', r => edit(r, 'index.html', '<
 failsWith('Markdown edited but not rebuilt', r => edit(r, 'content.zh.md', '先看结构。', '先看清结构。'), /DRIFT .*copy\.zh\.js/, ['--check']);
 failsWith('concept alias owned twice', r => { edit(r, 'content.zh.md', '[[concept:缓存行]]', '[[concept:重名]]'); edit(r, 'content.en.md', '[[concept:缓存行]]', '[[concept:重名]]'); }, /concept "重名" is ambiguous: fixture-dup-a, fixture-dup-b/);
 failsWith('unknown concept', r => edit(r, 'content.zh.md', '[[concept:缓存行]]', '[[concept:没有这个词]]'), /unknown concept "没有这个词"/);
+{
+  // concepts resolve as search matches them (NFKC, lower case, spaces / hyphens / middle dots ignored), still exactly
+  const root = freshSite();
+  for (const l of ['zh', 'en']) edit(root, `content.${l}.md`, '[[concept:缓存行]]', '[[concept:Cache-Line]]');
+  const r = build(root);
+  ok(r.code === 0 && fs.readFileSync(path.join(pageDir(root), 'index.html'), 'utf8').includes('<a href="../fixture-target/#ch2">缓存行</a>'), '[[concept:Cache-Line]] finds the concept titled "cache line":\n' + r.out);
+}
 failsWith('partial names a key no block defines', r => edit(r, 'figures/dg-stack.html', 'data-i18n="dg.stack.bottom"', 'data-i18n="dg.stack.middle"'), /figures\/dg-stack\.html names key dg\.stack\.middle/);
 failsWith('missing partial', r => edit(r, 'content.zh.md', '::: lab ch2-model', '::: lab ch2-modell'), [/missing partial figures\/ch2-modell\.html/, /parity: zh and en differ in structure/]);
 failsWith('page-wide string the layout needs is missing', r => edit(r, 'content.zh.md', 'toc.label: 目录\n', ''), /names key toc\.label \(layout or chrome\), which no content block defines/);
@@ -189,14 +199,23 @@ const enOnly = (from, to) => r => edit(r, 'content.en.md', from, to);
 // languages: a native English page holds no Chinese; "stub" is declared in page.json and marked on <html>
 failsWith('Chinese left in a native English page', enOnly('Where the model stops. {.take}', '模型的边界。 {.take}'), /en: 1 string\(s\) still hold Chinese text or \[EN pending\] \(ch2\.limit\)/);
 failsWith('[EN pending] left in a native English page', enOnly('Where the model stops. {.take}', '[EN pending] {.take}'), /still hold Chinese text or \[EN pending\] \(ch2\.limit\)/);
+failsWith('[en pending] in lower case', enOnly('Where the model stops. {.take}', '[en pending] {.take}'), /still hold Chinese text or \[EN pending\] \(ch2\.limit\)/);
+failsWith('Chinese inside an attribute of an English string', enOnly('Where the model stops. {.take}', 'Where the <abbr title="模型">model</abbr> stops. {.take}'), /still hold Chinese text or \[EN pending\] \(ch2\.limit\)/);
 failsWith('languages.en takes only native or stub', r => json(r, 'page.json', d => { d.languages = { en: 'draft' }; }), /page\.json languages\.en: "draft" is not allowed/);
+failsWith('languages.en "stub" on a registered page', r => { enOnly('Where the model stops. {.take}', '模型的边界。 {.take}')(r); json(r, 'page.json', d => { d.languages = { en: 'stub' }; }); },
+  /en is a stub \(page\.json languages\.en = "stub"\) on a registered page: translate content\.en\.md and remove the field before registering/);
 {
-  const root = freshSite();
-  enOnly('Where the model stops. {.take}', '模型的边界。 {.take}')(root);
-  json(root, 'page.json', d => { d.languages = { en: 'stub' }; });
-  const r = build(root);
-  ok(r.code === 0 && /WARN .*en is a stub \(page\.json languages\.en = "stub"\)/.test(r.out), 'languages.en "stub": Chinese allowed in English, with a warning:\n' + r.out);
-  ok(fs.readFileSync(path.join(pageDir(root), 'index.html'), 'utf8').includes('<html lang="zh-CN" data-template="essay" data-lang-en="stub">'), 'a stub page is marked data-lang-en="stub" on <html>, for app.js');
+  // a stub is fine while the page is a draft (not registered): a warning, and the <html> mark for app.js
+  const root = freshSite(), d = path.join(root, 'demo/basics/fixture-draft');
+  fs.cpSync(pageDir(root), d, { recursive: true });
+  const pj = path.join(d, 'page.json'), meta = JSON.parse(fs.readFileSync(pj, 'utf8'));
+  Object.assign(meta, { slug: 'fixture-draft', languages: { en: 'stub' }, category: 'demo', subtopic: 'basics', stage: 'university', path: 'demo/basics/fixture-draft/' });
+  fs.writeFileSync(pj, JSON.stringify(meta, null, 2));
+  const f = path.join(d, 'content.en.md');
+  fs.writeFileSync(f, fs.readFileSync(f, 'utf8').replace('Where the model stops. {.take}', '模型的边界。 {.take}'));
+  const r = run('build-pages.cjs', d, '--root', root);
+  ok(r.code === 0 && /WARN .*en is a stub \(page\.json languages\.en = "stub"\)/.test(r.out) && /draft: "fixture-draft" is not registered .*built from page\.json/.test(r.out), 'languages.en "stub" on a draft: Chinese allowed in English, with a warning; the draft builds from its page.json place fields:\n' + r.out);
+  ok(fs.readFileSync(path.join(d, 'index.html'), 'utf8').includes('<html lang="zh-CN" data-template="essay" data-lang-en="stub">'), 'a stub page is marked data-lang-en="stub" on <html>, for app.js');
   ok(!fs.readFileSync(path.join(pageDir(good), 'index.html'), 'utf8').includes('data-lang-en'), 'a native page carries no data-lang-en');
 }
 // diagram label room: estimated width against the viewBox and against labels on the same baseline, both languages
@@ -350,6 +369,4 @@ failsWith('--- right after a lab', r => { for (const l of ['zh', 'en']) edit(r, 
   ok(u.w.SiteNav && !u.w.SiteNav.skipped && u.touched.includes('script'), 'site-nav.js still loads its data on other pages');
 }
 
-// The scratch copies are removed on success (kept on failure, or with KEEP_SCRATCH=1).
-if (!process.env.KEEP_SCRATCH) fs.rmSync(scratch, { recursive: true, force: true });
 console.log(`PASS site template: ${n} checks (repo --all --check, fixture build, ${modes} failure modes, converter round trip)`);

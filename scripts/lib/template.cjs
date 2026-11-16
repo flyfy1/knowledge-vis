@@ -95,6 +95,25 @@ function resolveHref(site, fromPath, href) {
 }
 const relHref = (fromPath, toPath) => { const r = path.posix.relative(fromPath, toPath); return r ? r + '/' : './'; };
 
+/* Concept terms as search matches them (specs/atlas-search-index.md): atlas/data.js node ids, titles and aliases, where
+   the aliases are already merged from the node, atlas/graph/aliases.json and the essay fragments (build-atlas-data), and
+   each term is normalised with search/concept-search.js squash (NFKC, lower case, no spaces, hyphens, middle dots or
+   apostrophes). squashed term -> [node id]. */
+const SEARCH = require(path.join(REPO_ROOT, 'search', 'concept-search.js'));
+function conceptTerms(S) {
+  if (S._terms) return S._terms;
+  const m = new Map();
+  for (const x of S.nodes.values()) {
+    const terms = [x.id, x.title && x.title.zh, x.title && x.title.en, ...((x.aliases || {}).zh || []), ...((x.aliases || {}).en || [])];
+    for (const t of new Set(terms.filter(Boolean).map(SEARCH.squash))) {
+      if (!t) continue;
+      if (!m.has(t)) m.set(t, []);
+      m.get(t).push(x.id);
+    }
+  }
+  return (S._terms = m);
+}
+
 /* ───────── references: [[slug]], [[slug#ch7]], [[slug#ch7|text]], [[#ch3|text]], [[concept:id-or-alias]] ───────── */
 class TemplateError extends Error {}
 function resolveRef(target, ctx) {
@@ -103,10 +122,9 @@ function resolveRef(target, ctx) {
     const q = target.slice(8);
     let n = S.nodes.get(q);
     if (!n) { // by title or alias: one word, one owner. Two owners is an error, never a guess.
-      const hits = [...S.nodes.values()].filter(x => [x.title && x.title.zh, x.title && x.title.en,
-        ...((x.aliases || {}).zh || []), ...((x.aliases || {}).en || [])].includes(q));
-      if (hits.length > 1) throw new TemplateError(`concept "${q}" is ambiguous: ${hits.map(x => x.id).join(', ')}`);
-      n = hits[0];
+      const hits = conceptTerms(S).get(SEARCH.squash(q)) || [];
+      if (hits.length > 1) throw new TemplateError(`concept "${q}" is ambiguous: ${hits.join(', ')} (one word, one owner: write [[concept:<id>]], or move the alias in atlas/graph so one concept owns it)`);
+      n = S.nodes.get(hits[0]);
     }
     if (!n) throw new TemplateError(`unknown concept "${q}"`);
     const l = (n.lessons || []).find(x => x.primary) || (n.lessons || [])[0];
@@ -600,9 +618,13 @@ function buildEssay(dir, opts = {}) {
     if (!LANGS.includes(l) || !['native', 'stub'].includes(v) || (l === 'zh' && v !== 'native')) errors.push(`page.json languages.${l}: "${v}" is not allowed (zh is "native"; en is "native" or "stub")`);
   }
   const enStub = languages.en === 'stub';
-  if (enStub) warnings.push('en is a stub (page.json languages.en = "stub"): the page shows Chinese when English is chosen');
+  // A stub may be built and reviewed as a draft, but a registered page cannot ship one: readers choosing EN would get
+  // Chinese (follow-up review 2026-11-16, 5「Stub pages can ship」). The CJK test reads the raw string, so Chinese in an
+  // attribute (<abbr title="目录">) counts too, and the pending marker is matched in any case.
+  if (enStub && page.status !== 'draft') errors.push('en is a stub (page.json languages.en = "stub") on a registered page: translate content.en.md and remove the field before registering (a stub is allowed only while the page is a draft)');
+  else if (enStub) warnings.push('en is a stub (page.json languages.en = "stub"): the page shows Chinese when English is chosen');
   else {
-    const bad = C.en.order.filter(k => CJK.test(plainText(C.en.copy[k])) || /\[EN pending\]/.test(C.en.copy[k]));
+    const bad = C.en.order.filter(k => CJK.test(C.en.copy[k]) || /\[en pending\]/i.test(C.en.copy[k]));
     if (bad.length) errors.push(`en: ${bad.length} string(s) still hold Chinese text or [EN pending] (${bad.slice(0, 6).join(', ')}${bad.length > 6 ? ', …' : ''}); translate them, or set page.json "languages": {"en": "stub"} while the translation is pending`);
   }
 
