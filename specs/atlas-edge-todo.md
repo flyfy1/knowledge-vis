@@ -1149,7 +1149,7 @@ anchor; a link to the page top has no anchor).
 
 ## 混沌与三体 · 初始差一丝，结果天壤 / Chaos and the Three-Body Problem · Tiny Differences, Huge Outcomes → 指数与对数 · 翻倍与逆问 / Exponentials & Logarithms · Doubling and the Reverse Question
 
-- `chaos-threebody` → `exponents-logarithms#step0`
+- `chaos-threebody#step5` → `exponents-logarithms#step0`
 
 ## 卷积神经网络的特征图 · 小窗口怎样“看”图 / CNN Feature Maps · How a Small Window “Sees” an Image → 梯度下降 · 摸黑下山 / Gradient Descent · Feeling Your Way Downhill
 

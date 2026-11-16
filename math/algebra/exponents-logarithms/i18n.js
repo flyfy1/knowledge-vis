@@ -123,7 +123,7 @@ const STR = {
     "site.bl.9": "<a href=\"../sequences-series/\">数列与求和 · 叠砖与棋盘麦粒</a>：<a href=\"../sequences-series/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>",
     "site.bl.10": "<a href=\"../../arithmetic/place-value/\">位值与计数器 · 满十进一</a>：<a href=\"../../arithmetic/place-value/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>",
     "site.bl.11": "<a href=\"../../calculus/taylor-series/\">泰勒级数 · 把曲线一项项贴上去</a>：<a href=\"../../calculus/taylor-series/#step5\">该课第 5 步</a> → <a href=\"#step1\">本页第 1 步</a>",
-    "site.bl.12": "<a href=\"../../../physics/mechanics/chaos-threebody/\">混沌与三体 · 初始差一丝，结果天壤</a>：→ <a href=\"#step0\">本页第 0 步</a>"
+    "site.bl.12": "<a href=\"../../../physics/mechanics/chaos-threebody/\">混沌与三体 · 初始差一丝，结果天壤</a>：<a href=\"../../../physics/mechanics/chaos-threebody/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>"
   },
   en: {
     docTitle: "Exponentials & Logarithms · Multiply It Out, Ask It Back — One Interaction at a Time",
@@ -240,7 +240,7 @@ const STR = {
     "site.bl.9": "<a href=\"../sequences-series/\">Sequences & Series · Stacked Bricks and Chessboard Grains</a>: <a href=\"../sequences-series/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>",
     "site.bl.10": "<a href=\"../../arithmetic/place-value/\">Place Value & the Counting Frame · Ten Makes One</a>: <a href=\"../../arithmetic/place-value/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>",
     "site.bl.11": "<a href=\"../../calculus/taylor-series/\">Taylor Series · Patch the Curve Term by Term</a>: <a href=\"../../calculus/taylor-series/#step5\">its step 5</a> → <a href=\"#step1\">this page step 1</a>",
-    "site.bl.12": "<a href=\"../../../physics/mechanics/chaos-threebody/\">Chaos and the Three-Body Problem · Tiny Differences, Huge Outcomes</a>: → <a href=\"#step0\">this page step 0</a>"
+    "site.bl.12": "<a href=\"../../../physics/mechanics/chaos-threebody/\">Chaos and the Three-Body Problem · Tiny Differences, Huge Outcomes</a>: <a href=\"../../../physics/mechanics/chaos-threebody/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>"
   }
 };
 

@@ -80,7 +80,7 @@ const STR = {
     "site.bl.3": "<a href=\"../../../investment/rates/compound-interest/\">复利与贴现 · 时间是钱的形状</a>：<a href=\"../../../investment/rates/compound-interest/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>",
     "site.bl.4": "<a href=\"../../../math/applied/prisoners-dilemma/\">囚徒困境与演化博弈 · 合作怎样活下来</a>：<a href=\"../../../math/applied/prisoners-dilemma/#step5\">该课第 5 步</a> → <a href=\"#step2\">本页第 2 步</a>",
     "site.bl.5": "<a href=\"../../../math/calculus/ode-phase-portraits/\">微分方程相图 · 捕食者与猎物的回路</a>：<a href=\"../../../math/calculus/ode-phase-portraits/#step5\">该课第 5 步</a> → <a href=\"#step2\">本页第 2 步</a>",
-    "site.bl.6": "<a href=\"../../../physics/mechanics/chaos-threebody/\">混沌与三体 · 初始差一丝，结果天壤</a>：→ <a href=\"#step2\">本页第 2 步</a>"
+    "site.bl.6": "<a href=\"../../../physics/mechanics/chaos-threebody/\">混沌与三体 · 初始差一丝，结果天壤</a>：<a href=\"../../../physics/mechanics/chaos-threebody/#step5\">该课第 5 步</a> → <a href=\"#step2\">本页第 2 步</a>"
   },
   en: {
     docTitle: "Population Growth · Where the S-Curve Comes From — One Interaction per Step",
@@ -158,7 +158,7 @@ const STR = {
     "site.bl.3": "<a href=\"../../../investment/rates/compound-interest/\">Compound Interest & Discounting · Time Is the Shape of Money</a>: <a href=\"../../../investment/rates/compound-interest/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>",
     "site.bl.4": "<a href=\"../../../math/applied/prisoners-dilemma/\">The Prisoner’s Dilemma & Evolutionary Games · How Cooperation Survives</a>: <a href=\"../../../math/applied/prisoners-dilemma/#step5\">its step 5</a> → <a href=\"#step2\">this page step 2</a>",
     "site.bl.5": "<a href=\"../../../math/calculus/ode-phase-portraits/\">ODE Phase Portraits · Predators and Prey in a Loop</a>: <a href=\"../../../math/calculus/ode-phase-portraits/#step5\">its step 5</a> → <a href=\"#step2\">this page step 2</a>",
-    "site.bl.6": "<a href=\"../../../physics/mechanics/chaos-threebody/\">Chaos and the Three-Body Problem · Tiny Differences, Huge Outcomes</a>: → <a href=\"#step2\">this page step 2</a>"
+    "site.bl.6": "<a href=\"../../../physics/mechanics/chaos-threebody/\">Chaos and the Three-Body Problem · Tiny Differences, Huge Outcomes</a>: <a href=\"../../../physics/mechanics/chaos-threebody/#step5\">its step 5</a> → <a href=\"#step2\">this page step 2</a>"
   }
 };
 let _lang = null;
