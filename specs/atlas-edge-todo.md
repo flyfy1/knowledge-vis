@@ -1376,7 +1376,7 @@ anchor; a link to the page top has no anchor).
 
 ## 股票与债券 · 买到的到底是什么 / Stocks & Bonds · What Do You Actually Buy → 复利与贴现 · 时间是钱的形状 / Compound Interest & Discounting · Time Is the Shape of Money
 
-- `stocks-bonds` → `compound-interest#step0`
+- `stocks-bonds#step5` → `compound-interest#step0`: stocks-bonds → ?
 
 ## 风险与回报 · 为什么风险大承诺回报高 / Risk & Return · Why Do Riskier Things Usually Promise More → 概率分布 · 随机性也有形状 / Probability Distributions · Randomness Has a Shape
 
