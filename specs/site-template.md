@@ -299,7 +299,7 @@ registered.
    - A failed run leaves `page.json`. Delete the written sources (`page.json`, `content.*.md`, `page.css`,
      `figures/`) before you retry or commit anything else, or `--all --check` fails.
    - A page with more than one `<style>` block is refused. Merge them in `index.html` in a commit of its own,
-     then convert. Only how-a-gpu-computes has two today.
+     then convert. how-a-gpu-computes had two; they were merged in bb10f897.
 2. Run the page's `tests/models.cjs` and `tests/browser.cjs` on a `--no-chrome --no-prefill` build. Its
    `index.html` is identical to the old page, and its copy tables are equal key for key.
 3. **Decide on pre-fill before the full build.** Most 2026-11-15 computing essays have a `tests/models.cjs` check
@@ -359,6 +359,29 @@ how-a-gpu-computes after merging its two `<style>` blocks in a scratch copy. It 
 one `::: html` partial. `index.html` was byte-identical, both copy tables were equal key for key, and `tests/models.cjs`
 passed (4516 checks). The full build failed only the CJK-in-`index.html` check of step 3.
 
+**Phase 1 batch A (2026-11-16, computing/systems, committed, not pushed or deployed until reviewed).**
+- **Converted (19):** what-a-drive-is-made-of, how-sata-works, how-usb-drives-talk, storage-over-a-network,
+  how-memory-talks, coherent-interconnects, how-a-cpu-runs-a-program, how-a-cpu-guesses-ahead, how-cpu-caches-work,
+  how-a-computer-boots, how-the-os-talks-to-hardware, how-pixels-reach-a-screen, how-power-reaches-the-cpu,
+  how-a-nic-moves-packets, how-cores-share-memory, how-virtual-memory-works, how-a-gpu-computes,
+  how-a-computer-is-wired, how-thunderbolt-works, in commits fca24bb5 … 8b2dac73 (that order). One mechanical commit per page; each round-tripped byte for byte
+  at 42fba818 before its `version` bump, and `--all --check` passes on every intermediate commit (checked in a
+  `git archive` mirror, pages added in commit order).
+- **Before them:** bb10f897 (whitespace in four pages, the missing `</head>` in how-a-computer-is-wired, the GPU
+  `<style>` merge; no rendered change), 9a470caf (`unprefill`, page tests; authored), 42fba818 (labels repointed).
+- **Pre-fill:** on for all 19. No converter change was needed.
+- **Not converted:** how-sas-works (its footer is three keyed paragraphs, `footer.sources` / `.models` / `.ai`;
+  the layout has one `footer` key) and how-pcie-works (whole sections on one line, diagrams as `figure.diag` in
+  `.wide`). Both need converter variants. why-nvme-is-fast, why-compute-waits-for-memory and switches-that-compute
+  are later batches.
+- **Checked per page on the full build:** `tests/models.cjs`, `tests/browser.cjs` (zh+en 1280/390/320) and the
+  canvas sweep all pass. Screenshots of hero, breadcrumb and linked-from block (memory, storage, wired; 1280 and
+  320, zh and en) look right. One cosmetic point: at 320 px in English the breadcrumb wraps and its `›` separator
+  starts the second line (site-nav.css).
+- **Lint:** the runtime 《title》 linker no longer runs on these pages (D10). The build lists 19 such mentions
+  (for example 《NVMe 为什么这么快》 in storage-over-a-network ch5). They are left for the page owners to turn into
+  `[[slug]]` or keep as quotations.
+
 ## 11. Authorship
 
 - Conversion commits use `Derived-From:` (AUTHORSHIP.md §4) so `content.<lang>.md` inherits the history of
@@ -368,8 +391,8 @@ passed (4516 checks). The full build failed only the CJK-in-`index.html` check o
 
 ## 12. Not yet
 
-- **Phase 1:** converting the essays (storage/bus/CPU family first). Before converting S1–S5, wait until their
-  diagram retrofit has landed.
+- **Phase 1:** the rest of the essays (batch A is done, §10): how-sas-works and how-pcie-works need converter
+  variants; then the older essays with other hero or section shapes.
 - **Phase 2:**
   - `page.json` replaces `REGISTRY.json`;
   - `site-registry.json` and `scripts/build-registry.cjs`;

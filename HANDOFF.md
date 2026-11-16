@@ -1,6 +1,6 @@
 # HANDOFF.md — 开工前先读
 
-最后更新：2026-11-16，SVG 视口检查的登记 Agent（Claude Code）更新了「模板迁移与示意图补齐」第 2 条的遗留项；在此之前存储 S1–S5 补图的登记 Agent（Claude Code）更新了「模板迁移与示意图补齐」第 2 条和存储系列的示意图状态；在此之前模板 Phase 0 的提交 Agent 更新了该节；第二部分其余内容仍是 2026-11-15 供电与网卡两篇上线后的状态。
+最后更新：2026-11-16，模板 Phase 1 批次 A 的提交 Agent（Claude Code）在「模板迁移与示意图补齐」加了第 1a 条；在此之前 SVG 视口检查的登记 Agent（Claude Code）更新了「模板迁移与示意图补齐」第 2 条的遗留项；在此之前存储 S1–S5 补图的登记 Agent（Claude Code）更新了「模板迁移与示意图补齐」第 2 条和存储系列的示意图状态；在此之前模板 Phase 0 的提交 Agent 更新了该节；第二部分其余内容仍是 2026-11-15 供电与网卡两篇上线后的状态。
 
 这份文件有两部分：
 
@@ -132,6 +132,12 @@
      - 或者让检查跳过 `data-i18n*` 元素的内容。
 
      不要放宽别的断言。
+1a. **Phase 1 批次 A：2026-11-16 转换了 computing/systems 的 19 篇 Claude Code 长文**（已提交、未推送、未部署，等独立评审）。
+   - **页面：** what-a-drive-is-made-of、how-sata-works、how-usb-drives-talk、storage-over-a-network、how-memory-talks、coherent-interconnects、how-a-cpu-runs-a-program、how-a-cpu-guesses-ahead、how-cpu-caches-work、how-a-computer-boots、how-the-os-talks-to-hardware、how-pixels-reach-a-screen、how-power-reaches-the-cpu、how-a-nic-moves-packets、how-cores-share-memory、how-virtual-memory-works、how-a-gpu-computes、how-a-computer-is-wired、how-thunderbolt-works。每篇一个提交（`fca24bb5` … `8b2dac73`；`Built-By: script`、mechanical、`Derived-From:`），细节见 specs/site-template.md §10「Phase 1 batch A」。每篇的 models.cjs、browser.cjs、画布扫描都在完整构建上通过。
+   - **预填一律打开**（不用 `"prefill": false`）：页面测试改为通过 `scripts/lib/prefill.cjs` 的 `unprefill(html, Z)` 读 `index.html`，按 copy 表数链接和数字时跳过生成的 `site.*` 键（authored 提交 `9a470caf`，标签重指 `42fba818`）。准备提交 `bb10f897` 只规整了五页的空白、补了 B2 缺的 `</head>`、合并了 A6 的两个 `<style>`。
+   - **缓存键：** S1、S2 `?v=20261116b`，S4、S5 `?v=20261116e`，其余 15 篇 `?v=20261116a`（copy 文件多了 `site.*` 键）。
+   - **没转换：** how-sas-works（页脚是三个带键的段落 `footer.sources/models/ai`，布局只有一个 `footer` 键，要转换器变体）、how-pcie-works（整节写在一行、示意图是 `.wide` 里的 `figure.diag`，要转换器变体）；why-nvme-is-fast、why-compute-waits-for-memory、switches-that-compute 按计划留到后面的批次。
+   - **注意：** 迁移后 site-nav.js 不再在这些页面上把《标题》自动变成链接（D10）。`build-pages` 的 lint 列出了 19 处原来靠自动链接的提及（如 S5 第 5 章的《NVMe 为什么这么快》），要不要写成 `[[slug]]` 留给页面主人决定。how-a-computer-boots 的 models.cjs 读未提交的 a-secret-in-public/copy.zh.js，只能在工作区跑。
 2. **S1–S5 补示意图：2026-11-16 完成并上线**（`9fcb9fac` 内容、`b2d49a1c` 标签重指）。沿用旧格式（内联 SVG，标签来自 copy 文件），走了 构建 → 独立评审 → 登记。现在转换器可以处理这五篇了。
    - 外溢视口检查的 `e.closest('svg')` 跳过：其余 16 篇也已改为只跳过 `<defs>`（`c3cef443`，标签重指见下一个提交），全部通过，没有页面需要改版式；switches-that-compute 没有逐元素的视口检查，探测过 320 宽下不溢出。
 3. **CPU SIMD 与浮点一篇**：等 Phase 0 落地后，作为第一篇直接用 Markdown 写的长文。做法见 [specs/site-template.md](specs/site-template.md) §9a：未登记的草稿用 `REGISTRY.json` 直接构建，`app.js` 自带 i18n 运行时，预填与「index.html 不许有中文」的测试要二选一。
