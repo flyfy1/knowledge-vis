@@ -1,0 +1,63 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "mass-conservation",
+ "refs": [],
+ "backlinks": [
+  {
+   "from": "photosynthesis",
+   "links": [
+    {
+     "from": null,
+     "to": "step1"
+    }
+   ]
+  },
+  {
+   "from": "molecules-atoms",
+   "links": [
+    {
+     "from": "step5",
+     "to": "step1"
+    }
+   ]
+  },
+  {
+   "from": "chemical-equilibrium",
+   "links": [
+    {
+     "from": "step5",
+     "to": "step1"
+    }
+   ]
+  },
+  {
+   "from": "combustion-triangle",
+   "links": [
+    {
+     "from": "step5",
+     "to": "step4"
+    }
+   ]
+  },
+  {
+   "from": "equation-balancing",
+   "links": [
+    {
+     "from": "step5",
+     "to": "step2"
+    }
+   ]
+  },
+  {
+   "from": "density",
+   "links": [
+    {
+     "from": null,
+     "to": "step0"
+    }
+   ]
+  }
+ ],
+ "related": [],
+ "bindings": []
+}

@@ -601,11 +601,11 @@ anchor; a link to the page top has no anchor).
 
 ## 质量守恒 · 原子一个都不丢 / Mass Conservation · Not a Single Atom Lost → 粒子与物态 · 热闹程度即温度 / Particles & States · Temperature Is How Wildly They Move
 
-- `mass-conservation` → `particles-states#step0`
+- `mass-conservation#step5` → `particles-states#step0`
 
 ## 质量守恒 · 原子一个都不丢 / Mass Conservation · Not a Single Atom Lost → 反应速率 · 数一数成功碰撞 / Reaction Rates · Counting Successful Collisions
 
-- `mass-conservation` → `reaction-rates#step0`: ? → collision-theory
+- `mass-conservation#step5` → `reaction-rates#step0`: ? → collision-theory
 
 ## 细胞 · 生命的最小单位间 / The Cell · Life's Smallest Workshop → 粒子与物态 · 热闹程度即温度 / Particles & States · Temperature Is How Wildly They Move
 
