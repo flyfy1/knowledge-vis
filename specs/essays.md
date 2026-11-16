@@ -370,6 +370,7 @@ Since 2026-11-15 ch10.q2 links how-usb-drives-talk #ch6 and ch10.links links tha
 Since the bus series (2026-11-15) ch2.limit has one more sentence linking how-a-computer-is-wired #ch2 (loading and
 reflections on the PCI bus); scripts at `?v=20261115c`.
 Diagram retrofit registrar (2026-11-16): eight static diagrams (STANDARD §4a) added in 9fcb9fac, review specs/reviews/storage-diagrams-s1-s3-review-20261116.md, fixes mirrored in specs/how-sata-works.md; label at 9fcb9fac (previous 70d9f2e1), scripts `?v=20261116a`.
+Template Phase 1 batch A (2026-11-16): tests/models.cjs reads index.html through unprefill() and skips generated site.* keys in link/number scans (9a470caf, test only, no-op before conversion). Label at 9a470caf (previous 9fcb9fac), no script change.
 
 ### how-sas-works: 服务器硬盘为什么用 SAS
 
@@ -410,6 +411,7 @@ how-thunderbolt-works #ch9; scripts at `?v=20261115c`.
 Not verified (BRIEF): the TB3/TB4 ~2,800 MB/s and TB5 enclosure figures (reviews and forums), the ISSCC 2023 paper body,
 SAT itself.
 Diagram retrofit registrar (2026-11-16): nine static diagrams (STANDARD §4a) added in 9fcb9fac, review specs/reviews/storage-diagrams-s4-s5-review-20261116.md, fixes mirrored in specs/how-usb-drives-talk.md; label at 9fcb9fac (previous 70d9f2e1), scripts `?v=20261116d`.
+Template Phase 1 batch A (2026-11-16): tests/models.cjs reads index.html through unprefill() and skips generated site.* keys in link/number scans (9a470caf, test only, no-op before conversion). Label at 9a470caf (previous 9fcb9fac), no script change.
 
 ### storage-over-a-network: 隔着网线的硬盘
 
@@ -433,6 +435,7 @@ rather than the primary pages.
 OS/pixels registrar (2026-11-15): ch6.p1 links how-the-os-talks-to-hardware #ch12 (kernel bypass inside one machine); RDMA 是什么 / RDMA and "kernel bypass zero copy" stay on #ch6 here (pinned), plain "kernel bypass" / 内核旁路 open the OS essay #ch12. Label at e916a267 (previous 70d9f2e1), scripts `?v=20261115b`.
 Power/NIC registrar (2026-11-15): ch6.p1 links how-a-nic-moves-packets #ch11; #ch6 gains bare RDMA (it tied with the NIC essay's #ch11). Label at d0821bc1 (previous e916a267), scripts `?v=20261115c`.
 Diagram retrofit registrar (2026-11-16): ten static diagrams (STANDARD §4a) added in 9fcb9fac, review specs/reviews/storage-diagrams-s4-s5-review-20261116.md, fixes mirrored in specs/storage-over-a-network.md; label at 9fcb9fac (previous d0821bc1), scripts `?v=20261116d`.
+Template Phase 1 batch A (2026-11-16): tests/models.cjs reads index.html through unprefill() and skips generated site.* keys in link/number scans (9a470caf, test only, no-op before conversion). Label at 9a470caf (previous 9fcb9fac), no script change.
 
 ### how-pcie-works: PCIe 为什么能一代一代翻倍
 
@@ -483,6 +486,7 @@ said the series might cover CXL later; ch8.p5 (B5, small buses) stays plain text
 `?v=20261115b`; the reserved CXL / NVLink words are B4's, 内存频率 / CL 值 are B3's.
 A6/boot registrar (2026-11-15): ch8.p5 links its words BIOS 闪存 / the BIOS flash to how-a-computer-boots #ch3; plain SPI / SPI bus stay on #ch8 here (pinned) while the boot essay takes SPI 闪存 / SPI flash / quad SPI read. Label at 4e4585ca (previous 52df5521), scripts `?v=20261115c`.
 SVG-check registrar (2026-11-16): browser.cjs outside-viewport check skips only <defs> again (not the <svg>), clipped-text SVG skip removed in c3cef443 (test only, page passes at 1280/390/320 zh+en); label at c3cef443 (previous 70d9f2e1), no script change.
+Template Phase 1 batch A (2026-11-16): tests/models.cjs reads index.html through unprefill() and skips generated site.* keys in link/number scans (9a470caf, test only, no-op before conversion). Index markup normalised in bb10f897 (prose-column </div> on its own line and the missing </head>; no rendered change). Label at 9a470caf (previous c3cef443), no script change.
 
 ### how-thunderbolt-works: 雷电接口是怎么工作的
 
@@ -504,6 +508,7 @@ claim about USB4, USB4's own DMA-protection wording.
 OS/pixels registrar (2026-11-15): ch8.p2 links how-the-os-talks-to-hardware #ch8; ch6.p1 links how-pixels-reach-a-screen #ch2 and ch6.p4 its #ch7. #ch6 takes bare DSC, 显示流压缩 and Display Stream Compression (unowned; the pixels essay left the DSC definitions here). Label at e916a267 (previous 70d9f2e1), scripts `?v=20261115b`.
 **FEC fix (2026-11-15, power/NIC registrar):** DSC on an 8b/10b DP link (Alt Mode HBR2/HBR3, the DP 1.4 stream in a TB4 tunnel) runs with FEC, (256·6 + 1)/(256·250) = 2.4016 % (Linux drm_dp_bw_overhead, i915 intel_dp_supports_dsc; specs/reviews/how-pixels-reach-a-screen-review-20261115.md finding 3). `SCREEN.fecK` applies it only to those links and only to a DSC setting (bpp < 18): Alt Mode capacity 25.92 → 25.31 Gb/s, Max Link BW gives the stream 1/k of the reserved link, allocation mode reserves need × k; UHBR (77.37) already includes FEC. ch6.p4 now computes 8K60 30-bit with FEC: HBR3 ×4 leaves {hbr3fec} = 25.31 Gb/s, so DSC must reach ≤ 12.2 bpp (×2.45; 12.5 without FEC); the 12-bit example still fits. The figure differs from how-pixels-reach-a-screen's 10.63 bpp because that page uses the CTA-861 8K60 timing, this one CVT-RB2. ch6.limit says what is modelled; the #scD readout uses `SCREEN.bppMax`. Scripts `?v=20261115c`.
 SVG-check registrar (2026-11-16): browser.cjs clipped-text check loses its never-firing SVG skip in c3cef443 (test only, page passes at 1280/390/320 zh+en); label at c3cef443 (previous 93d7b195), no script change.
+Template Phase 1 batch A (2026-11-16): tests/models.cjs reads index.html through unprefill() and skips generated site.* keys in link/number scans (9a470caf, test only, no-op before conversion). Index markup normalised in bb10f897 (blank lines before </section>; no rendered change). Label at 9a470caf (previous c3cef443), no script change.
 
 ### how-cpu-caches-work: CPU 的三级缓存是怎么工作的
 
@@ -532,6 +537,7 @@ MOESI, MSI 协议 and 总线窥探; #ch9 keeps 伪共享 / false sharing and MES
 memory (#ch2 twice, #ch3, #ch4), 1 from switches-that-compute #ch11. Not verified (BRIEF): Arm's Neoverse V3 TRM (quoted via
 jia.je), Intel Xeon 6980P cache, Zen 6 (claimed), Apple's ways and latencies, Skymont L1.
 SVG-check registrar (2026-11-16): browser.cjs outside-viewport check skips only <defs> again (not the <svg>), clipped-text SVG skip removed in c3cef443 (test only, page passes at 1280/390/320 zh+en); label at c3cef443 (previous 70d9f2e1), no script change.
+Template Phase 1 batch A (2026-11-16): tests/models.cjs reads index.html through unprefill() and skips generated site.* keys in link/number scans (9a470caf, test only, no-op before conversion). Label at 9a470caf (previous c3cef443), no script change.
 
 ### how-a-cpu-runs-a-program: CPU 是怎么运行一个程序的
 
@@ -555,6 +561,7 @@ ch12.links to its page top (label at d34e98bb, previous c0cc5c40; scripts `?v=20
 P&H's exact first-pipeline text and RISC-V-edition figure, Nova Lake from Intel's own PDF, "a dozen or more cycles" per
 mispredict (order of magnitude).
 SVG-check registrar (2026-11-16): browser.cjs outside-viewport check skips only <defs> again (not the <svg>), clipped-text SVG skip removed in c3cef443 (test only, page passes at 1280/390/320 zh+en); label at c3cef443 (previous 70d9f2e1), no script change.
+Template Phase 1 batch A (2026-11-16): tests/models.cjs reads index.html through unprefill() and skips generated site.* keys in link/number scans (9a470caf, test only, no-op before conversion). Label at 9a470caf (previous c3cef443), no script change.
 
 ### how-virtual-memory-works: 虚拟内存是怎么工作的
 
@@ -581,6 +588,7 @@ DTLB associativity, 1 GiB entries and walker count (AMD 58455 not reopened), the
 command lines.
 OS/pixels registrar (2026-11-15): ch10.limit links how-the-os-talks-to-hardware #ch3 (the cost of one crossing) and ch11.p3 its #ch8 (the IOMMU mappings a driver makes). Label at e916a267 (previous 70d9f2e1), scripts `?v=20261115c`.
 SVG-check registrar (2026-11-16): browser.cjs outside-viewport check skips only <defs> again (not the <svg>), clipped-text SVG skip removed in c3cef443 (test only, page passes at 1280/390/320 zh+en); label at c3cef443 (previous e916a267), no script change.
+Template Phase 1 batch A (2026-11-16): tests/models.cjs reads index.html through unprefill() and skips generated site.* keys in link/number scans (9a470caf, test only, no-op before conversion). Index markup normalised in bb10f897 (a blank line in <head>; no rendered change). Label at 9a470caf (previous c3cef443), no script change.
 
 ### how-a-cpu-guesses-ahead: CPU 是怎么猜着往前跑的
 
@@ -605,6 +613,7 @@ here. Scripts `?v=20261115r`. Atlas edges: 8 between chapters, 4 from A1 (#ch8 t
 why-compute-waits-for-memory #ch4, 1 to A3 #ch10. Not verified (BRIEF): AMD 58455 itself (penalty corroborated by a forum
 quotation), X925's 768 (WikiChip claim), the original Smith, Yeh & Patt, Tomasulo and Seznec papers.
 SVG-check registrar (2026-11-16): browser.cjs outside-viewport check skips only <defs> again (not the <svg>), clipped-text SVG skip removed in c3cef443 (test only, page passes at 1280/390/320 zh+en); label at c3cef443 (previous 70d9f2e1), no script change.
+Template Phase 1 batch A (2026-11-16): tests/models.cjs reads index.html through unprefill() and skips generated site.* keys in link/number scans (9a470caf, test only, no-op before conversion). Label at 9a470caf (previous c3cef443), no script change.
 
 ### how-cores-share-memory: 多个核心怎么共用一块内存
 
@@ -631,6 +640,7 @@ the Arm ARM and the RISC-V RVWMO chapter, the Primer, Sewell et al. and Mellor-C
 chapter number, Lamport 1979.
 A6/boot registrar (2026-11-15): ch12.links gains one clause linking how-a-gpu-computes #ch10 (why GPU L1s are not kept coherent); 缓存一致性 / cache coherence stay on #ch1 here (pinned; A6 #ch10 has only "GPU cache coherence"). Label at 4e4585ca (previous 52df5521), scripts `?v=20261115c`.
 SVG-check registrar (2026-11-16): browser.cjs outside-viewport check skips only <defs> again (not the <svg>), clipped-text SVG skip removed in c3cef443 (test only, page passes at 1280/390/320 zh+en); label at c3cef443 (previous 70d9f2e1), no script change.
+Template Phase 1 batch A (2026-11-16): tests/models.cjs reads index.html through unprefill() and skips generated site.* keys in link/number scans (9a470caf, test only, no-op before conversion). Index markup normalised in bb10f897 (whitespace-only lines before </section>; no rendered change). Label at 9a470caf (previous c3cef443), no script change.
 
 ### how-memory-talks: 内存是怎么和 CPU 说话的
 
@@ -665,6 +675,7 @@ how-a-computer-is-wired #ch2, 1 from how-sata-works #ch2, 1 from how-thunderbolt
 code table beyond the unused pair.
 A6/boot registrar (2026-11-15): ch7.p4 links how-a-computer-boots #ch5 (memory training on the boot timeline); 内存训练 / memory training stay on #ch7 here (pinned). Its tests/models.cjs now requires the provenance label (it forbade it and failed since 011e6f9b). Label at 4e4585ca (previous 52df5521), scripts `?v=20261115s`.
 SVG-check registrar (2026-11-16): browser.cjs outside-viewport check skips only <defs> again (not the <svg>), clipped-text SVG skip removed in c3cef443 (test only, page passes at 1280/390/320 zh+en); label at c3cef443 (previous 70d9f2e1), no script change.
+Template Phase 1 batch A (2026-11-16): tests/models.cjs reads index.html through unprefill() and skips generated site.* keys in link/number scans (9a470caf, test only, no-op before conversion). Label at 9a470caf (previous c3cef443), no script change.
 
 ### coherent-interconnects: 芯片之间怎么共用内存
 
@@ -699,6 +710,7 @@ tests/models.cjs requires exactly one page-provenance label since 2026-11-15 (po
 since 011e6f9b), as how-memory-talks' test does since 4e4585ca.
 Power/NIC registrar (2026-11-15): ch10.limit links how-a-nic-moves-packets #ch12; tests/models.cjs requires the one page-provenance label (888856c4). Label at d0821bc1 (previous 70d9f2e1), scripts `?v=20261115s`.
 SVG-check registrar (2026-11-16): browser.cjs outside-viewport check skips only <defs> again (not the <svg>), clipped-text SVG skip removed in c3cef443 (test only, page passes at 1280/390/320 zh+en); label at c3cef443 (previous d0821bc1), no script change.
+Template Phase 1 batch A (2026-11-16): tests/models.cjs reads index.html through unprefill() and skips generated site.* keys in link/number scans (9a470caf, test only, no-op before conversion). Label at 9a470caf (previous c3cef443), no script change.
 
 ### how-a-gpu-computes: GPU 是怎么算的
 
@@ -730,6 +742,7 @@ per cycle, the Volkov talk, MI355X figures, the Rubin sparsity label, Narasiman 
 OS/pixels registrar (2026-11-15): ch9.p2 links how-pixels-reach-a-screen #ch1 (the framebuffer); #ch1 takes 显卡 / graphics card (the pixels essay's page tag 显卡 would take bare 显卡). Label at e916a267 (previous 70d9f2e1), scripts `?v=20261115s`.
 Power/NIC registrar (2026-11-15): ch11.p2 links how-power-reaches-the-cpu #ch10 (a kilowatt a card). Label at d0821bc1 (previous e916a267), scripts `?v=20261115t`.
 SVG-check registrar (2026-11-16): browser.cjs outside-viewport check skips only <defs> again (not the <svg>), clipped-text SVG skip removed in c3cef443 (test only, page passes at 1280/390/320 zh+en); label at c3cef443 (previous d0821bc1), no script change.
+Template Phase 1 batch A (2026-11-16): tests/models.cjs reads index.html through unprefill() and skips generated site.* keys in link/number scans (9a470caf, test only, no-op before conversion). Index markup normalised in bb10f897 (its two adjacent <style> blocks merged; no rendered change). Label at 9a470caf (previous c3cef443), no script change.
 
 ### how-a-computer-boots: 电脑是怎么开机的
 
@@ -763,6 +776,7 @@ limits, the Apple guide wording, the ESET and Eclypsium pages; the stage duratio
 OS/pixels registrar (2026-11-15): ch11.p6 links how-the-os-talks-to-hardware #ch9 (how the initramfs drivers find their devices). Label at e916a267 (previous 70d9f2e1), scripts `?v=20261115s`.
 Power/NIC registrar (2026-11-15): ch1.p3 links how-power-reaches-the-cpu #ch4 (the regulator that makes the core voltage); power sequencing and PWR_OK stay here. Label at d0821bc1 (previous e916a267), scripts `?v=20261115t`.
 SVG-check registrar (2026-11-16): browser.cjs outside-viewport check skips only <defs> again (not the <svg>), clipped-text SVG skip removed in c3cef443 (test only, page passes at 1280/390/320 zh+en); label at c3cef443 (previous d0821bc1), no script change.
+Template Phase 1 batch A (2026-11-16): tests/models.cjs reads index.html through unprefill() and skips generated site.* keys in link/number scans (9a470caf, test only, no-op before conversion). Label at 9a470caf (previous c3cef443), no script change.
 
 ### how-the-os-talks-to-hardware: 操作系统是怎么和硬件说话的
 
@@ -796,6 +810,7 @@ specs/atlas-search-index.md). Not verified (BRIEF): Ren et al. cycle counts, Lee
 IOMMU strict / lazy costs, virtio 1.3 final status, whether the C Binder removal landed exactly in 7.4-rc1.
 Power/NIC registrar (2026-11-15): ch6.limit links how-a-nic-moves-packets #ch5 (RSS) and ch7.limit its #ch3 (descriptor prefetch and write-back); NAPI, descriptor ring, DPDK, SR-IOV and kernel bypass stay here. Label at d0821bc1 (previous e916a267), scripts `?v=20261115b`.
 SVG-check registrar (2026-11-16): browser.cjs outside-viewport check skips only <defs> again (not the <svg>), clipped-text SVG skip removed in c3cef443 (test only, page passes at 1280/390/320 zh+en); label at c3cef443 (previous d0821bc1), no script change.
+Template Phase 1 batch A (2026-11-16): tests/models.cjs reads index.html through unprefill() and skips generated site.* keys in link/number scans (9a470caf, test only, no-op before conversion). Label at 9a470caf (previous c3cef443), no script change.
 
 ### how-pixels-reach-a-screen: 像素是怎么到屏幕上的
 
@@ -825,6 +840,7 @@ how-thunderbolt-works ch6.p4 used to fit 8K60 30-bit into HBR3 at 25.92 Gb/s wit
 explains (25.31 Gb/s, ≤ 12.2 bpp on CVT-RB2 timing). Not verified (BRIEF): HDMI FRL RS-FEC overhead, HDMI 2.2 line coding, AMD's 2.5× LFC range, the
 BT.2100 / BT.2087 PDFs, LG Display's 720 Hz OLED.
 SVG-check registrar (2026-11-16): browser.cjs outside-viewport check skips only <defs> again (not the <svg>), clipped-text SVG skip removed in c3cef443 (test only, page passes at 1280/390/320 zh+en); label at c3cef443 (previous e916a267), no script change.
+Template Phase 1 batch A (2026-11-16): tests/models.cjs reads index.html through unprefill() and skips generated site.* keys in link/number scans (9a470caf, test only, no-op before conversion). Label at 9a470caf (previous c3cef443), no script change.
 
 ### how-power-reaches-the-cpu: 电是怎么送进 CPU 的
 
@@ -856,6 +872,7 @@ how-a-cpu-guesses-ahead, how-cpu-caches-work and how-a-gpu-computes #ch11; how-a
 plain text until those drafts register. Scripts `?v=20261115b`. Atlas edges (18, in its fragment): 10 between chapters, 8 with siblings.
 Not verified (BRIEF): the 230 W PPT, Smith 1999, the 14900K's Tau, A16 in production, PROCHOT bidirectionality, per-cluster rails.
 SVG-check registrar (2026-11-16): browser.cjs outside-viewport check skips only <defs> again (not the <svg>), clipped-text SVG skip removed in c3cef443 (test only, page passes at 1280/390/320 zh+en); label at c3cef443 (previous d0821bc1), no script change.
+Template Phase 1 batch A (2026-11-16): tests/models.cjs reads index.html through unprefill() and skips generated site.* keys in link/number scans (9a470caf, test only, no-op before conversion). Label at 9a470caf (previous c3cef443), no script change.
 
 ### how-a-nic-moves-packets: 网卡是怎么搬运数据包的
 
@@ -887,6 +904,7 @@ why-compute-waits-for-memory #ch10, tcp-congestion, distributed-systems and how-
 (20, in its fragment): 10 between chapters, 10 with siblings. Not verified (BRIEF): the 802.3df / 802.3dj approval dates, Gen6 FLIT header
 sizes, DDIO's replacement policy, the ConnectX-7 message rate.
 SVG-check registrar (2026-11-16): browser.cjs outside-viewport check skips only <defs> again (not the <svg>), clipped-text SVG skip removed in c3cef443 (test only, page passes at 1280/390/320 zh+en); label at c3cef443 (previous d0821bc1), no script change.
+Template Phase 1 batch A (2026-11-16): tests/models.cjs reads index.html through unprefill() and skips generated site.* keys in link/number scans (9a470caf, test only, no-op before conversion). Label at 9a470caf (previous c3cef443), no script change.
 
 ### scarcity-moves: 稀缺会搬家
 
