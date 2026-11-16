@@ -530,11 +530,11 @@ anchor; a link to the page top has no anchor).
 
 ## 抛物线 · 投篮的弧线 / Parabolas · The Arc of a Shot → 一次函数 · 斜率是陡缓，截距是起点 / Linear Functions · Slope Is Steepness, Intercept Is the Start
 
-- `parabola` → `linear-functions#step0`
+- `parabola#step5` → `linear-functions#step0`
 
 ## 抛物线 · 投篮的弧线 / Parabolas · The Arc of a Shot → 勾股定理 · 一步一交互 / The Pythagorean Theorem · One Interaction at a Time
 
-- `parabola` → `pythagoras#step5`
+- `parabola#step5` → `pythagoras#step5`
 
 ## 速度与 v-t 图 · 面积就是路 / Speed and the v–t Graph · Area Is Distance → 一次函数 · 斜率是陡缓，截距是起点 / Linear Functions · Slope Is Steepness, Intercept Is the Start
 

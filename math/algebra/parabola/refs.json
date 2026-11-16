@@ -1,0 +1,36 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "parabola",
+ "refs": [],
+ "backlinks": [
+  {
+   "from": "inverse-proportion",
+   "links": [
+    {
+     "from": "step5",
+     "to": "step0"
+    }
+   ]
+  },
+  {
+   "from": "derivative",
+   "links": [
+    {
+     "from": null,
+     "to": "step2"
+    }
+   ]
+  },
+  {
+   "from": "conic-sections",
+   "links": [
+    {
+     "from": null,
+     "to": "step0"
+    }
+   ]
+  }
+ ],
+ "related": [],
+ "bindings": []
+}
