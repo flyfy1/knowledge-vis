@@ -1,0 +1,17 @@
+<figure class="lab">
+    <h3 data-i18n="ch4.model.title"></h3>
+    <p class="how" data-i18n-html="ch4.model.how"></p>
+    <canvas class="cv tall" id="tlCv" role="img" data-i18n-aria="ch4.model.aria"></canvas>
+    <div class="legend"><span><i style="background:var(--red)"></i>4 KiB</span><span><i style="background:var(--violet)"></i>16 KiB</span><span><i style="background:var(--cyan)"></i>2 MiB</span></div>
+    <div class="ctl"><div class="seg wrapmany" role="radiogroup" data-i18n-aria="ch4.ctl.trace"><span class="lbl" data-i18n="ch4.ctl.trace"></span><label><input type="radio" name="tlT" value="rand" checked><span data-i18n="ch4.tr.rand"></span></label><label><input type="radio" name="tlT" value="seq"><span data-i18n="ch4.tr.seq"></span></label><label><input type="radio" name="tlT" value="col"><span data-i18n="ch4.tr.col"></span></label></div></div>
+    <div class="ctl"><div class="seg" role="radiogroup" data-i18n-aria="ch4.ctl.page"><span class="lbl" data-i18n="ch4.ctl.page"></span><label><input type="radio" name="tlP" value="4096" checked><span>4 KiB</span></label><label><input type="radio" name="tlP" value="16384"><span>16 KiB</span></label><label><input type="radio" name="tlP" value="2097152"><span>2 MiB</span></label></div></div>
+    <div class="ctl"><label class="rng"><span data-i18n="ch4.ctl.w"></span><input type="range" id="tlW" min="0" max="8" step="1" value="4"><output id="tlWo"></output></label></div>
+    <div class="ctl"><label class="rng"><span data-i18n="ch4.ctl.e"></span><input type="range" id="tlE" min="0" max="10" step="1" value="8"><output id="tlEo"></output></label></div>
+    <div class="read">
+      <div><b class="r" id="tlM"></b><span data-i18n-html="ch4.read.miss"></span></div>
+      <div><b class="g" id="tlR"></b><span data-i18n-html="ch4.read.reach"></span></div>
+      <div><b class="" id="tlN"></b><span data-i18n-html="ch4.read.pages"></span></div>
+      <div><b class="c" id="tlK"></b><span data-i18n-html="ch4.read.per1k"></span></div>
+    </div>
+    <p class="say" id="tlSay" aria-live="polite"></p>
+  </figure>

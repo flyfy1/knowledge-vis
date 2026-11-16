@@ -1,0 +1,16 @@
+<figure class="lab">
+    <h3 data-i18n="ch3.model.title"></h3>
+    <p class="how" data-i18n-html="ch3.model.how"></p>
+    <div class="ctl"><label class="txt"><span data-i18n="ch3.ctl.addr"></span><input type="text" id="wkA" value="0x555555561a38" spellcheck="false" autocomplete="off" inputmode="text"></label></div>
+    <div class="ctl"><div class="seg wrapmany" role="radiogroup" data-i18n-aria="ch3.ctl.pre"><span class="lbl" data-i18n="ch3.ctl.pre"></span><label><input type="radio" name="wkPre" value="heap" checked><span data-i18n="ch3.pre.heap"></span></label><label><input type="radio" name="wkPre" value="code"><span data-i18n="ch3.pre.code"></span></label><label><input type="radio" name="wkPre" value="huge"><span data-i18n="ch3.pre.huge"></span></label><label><input type="radio" name="wkPre" value="absent"><span data-i18n="ch3.pre.absent"></span></label><label><input type="radio" name="wkPre" value="hole"><span data-i18n="ch3.pre.hole"></span></label><label><input type="radio" name="wkPre" value="kern"><span data-i18n="ch3.pre.kern"></span></label><label><input type="radio" name="wkPre" value="noncanon"><span data-i18n="ch3.pre.noncanon"></span></label></div></div>
+    <div class="ctl"><div class="seg" role="radiogroup" data-i18n-aria="ch3.ctl.lv"><span class="lbl" data-i18n="ch3.ctl.lv"></span><label><input type="radio" name="wkL" value="4" checked><span data-i18n="ch3.lv.4"></span></label><label><input type="radio" name="wkL" value="5"><span data-i18n="ch3.lv.5"></span></label></div><div class="seg" role="radiogroup" data-i18n-aria="ch3.ctl.acc"><span class="lbl" data-i18n="ch3.ctl.acc"></span><label><input type="radio" name="wkX" value="r" checked><span data-i18n="ch3.acc.r"></span></label><label><input type="radio" name="wkX" value="w"><span data-i18n="ch3.acc.w"></span></label><label><input type="radio" name="wkX" value="x"><span data-i18n="ch3.acc.x"></span></label></div></div>
+    <div class="bits" id="wkBits" aria-hidden="true"></div>
+    <pre class="hex" id="wkSteps" data-i18n-aria="ch3.steps.aria"></pre>
+    <div class="read">
+      <div><b class="g" id="wkPA"></b><span data-i18n-html="ch3.read.pa"></span></div>
+      <div><b class="c" id="wkRefs"></b><span data-i18n-html="ch3.read.refs"></span></div>
+      <div><b class="" id="wkPg"></b><span data-i18n-html="ch3.read.page"></span></div>
+      <div><b class="r" id="wkF"></b><span data-i18n-html="ch3.read.fault"></span></div>
+    </div>
+    <p class="say" id="wkSay" aria-live="polite"></p>
+  </figure>

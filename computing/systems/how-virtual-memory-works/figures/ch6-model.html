@@ -1,0 +1,14 @@
+<figure class="lab">
+    <h3 data-i18n="ch6.model.title"></h3>
+    <p class="how" data-i18n-html="ch6.model.how"></p>
+    <canvas class="cv" id="hgCv" role="img" data-i18n-aria="ch6.model.aria"></canvas>
+    <div class="ctl"><label class="rng"><span data-i18n="ch6.ctl.w"></span><input type="range" id="hgW" min="0" max="5" step="1" value="3"><output id="hgWo"></output></label></div>
+    <div class="ctl"><div class="seg" role="radiogroup" data-i18n-aria="ch6.ctl.page"><span class="lbl" data-i18n="ch6.ctl.page"></span><label><input type="radio" name="hgP" value="4096"><span>4 KiB</span></label><label><input type="radio" name="hgP" value="2097152" checked><span>2 MiB</span></label><label><input type="radio" name="hgP" value="1073741824"><span>1 GiB</span></label></div><div class="seg" role="radiogroup" data-i18n-aria="ch6.ctl.pat"><span class="lbl" data-i18n="ch6.ctl.pat"></span><label><input type="radio" name="hgS" value="0" checked><span data-i18n="ch6.pat.dense"></span></label><label><input type="radio" name="hgS" value="1"><span data-i18n="ch6.pat.sparse"></span></label></div></div>
+    <div class="read">
+      <div><b class="r" id="hgM"></b><span data-i18n-html="ch6.read.miss"></span></div>
+      <div><b class="g" id="hgR"></b><span data-i18n-html="ch6.read.reach"></span></div>
+      <div><b class="c" id="hgC"></b><span data-i18n-html="ch6.read.worst"></span></div>
+      <div><b class="v" id="hgA"></b><span data-i18n-html="ch6.read.alloc"></span></div>
+    </div>
+    <p class="say" id="hgSay" aria-live="polite"></p>
+  </figure>

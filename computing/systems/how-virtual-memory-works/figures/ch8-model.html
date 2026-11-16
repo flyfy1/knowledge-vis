@@ -1,0 +1,17 @@
+<figure class="lab">
+    <h3 data-i18n="ch8.model.title"></h3>
+    <p class="how" data-i18n-html="ch8.model.how"></p>
+    <canvas class="cv" id="rpCv" role="img" data-i18n-aria="ch8.model.aria"></canvas>
+    <div class="legend"><span><i style="background:var(--red)"></i>FIFO</span><span><i style="background:var(--violet)"></i><span data-i18n="ch8.pol.clock"></span></span><span><i style="background:var(--cyan)"></i>LRU</span><span><i style="background:var(--green)"></i>OPT</span></div>
+    <div class="ctl"><div class="seg wrapmany" role="radiogroup" data-i18n-aria="ch8.ctl.str"><span class="lbl" data-i18n="ch8.ctl.str"></span><label><input type="radio" name="rpS" value="belady" checked><span data-i18n="ch8.str.belady"></span></label><label><input type="radio" name="rpS" value="loop"><span data-i18n="ch8.str.loop"></span></label><label><input type="radio" name="rpS" value="local"><span data-i18n="ch8.str.local"></span></label></div></div>
+    <div class="ctl"><div class="seg wrapmany" role="radiogroup" data-i18n-aria="ch8.ctl.pol"><span class="lbl" data-i18n="ch8.ctl.pol"></span><label><input type="radio" name="rpPo" value="fifo" checked><span>FIFO</span></label><label><input type="radio" name="rpPo" value="clock"><span data-i18n="ch8.pol.clock"></span></label><label><input type="radio" name="rpPo" value="lru"><span>LRU</span></label><label><input type="radio" name="rpPo" value="opt"><span>OPT</span></label></div></div>
+    <div class="ctl"><label class="rng"><span data-i18n="ch8.ctl.f"></span><input type="range" id="rpF" min="1" max="8" step="1" value="4"><output id="rpFo"></output></label></div>
+    <div class="trail" id="rpTrail" role="list" data-i18n-aria="ch8.trail.aria"></div>
+    <div class="read">
+      <div><b class="r" id="rpFifo"></b><span data-i18n-html="ch8.read.fifo"></span></div>
+      <div><b class="v" id="rpClock"></b><span data-i18n-html="ch8.read.clock"></span></div>
+      <div><b class="c" id="rpLru"></b><span data-i18n-html="ch8.read.lru"></span></div>
+      <div><b class="n" id="rpOpt"></b><span data-i18n-html="ch8.read.opt"></span></div>
+    </div>
+    <p class="say" id="rpSay" aria-live="polite"></p>
+  </figure>

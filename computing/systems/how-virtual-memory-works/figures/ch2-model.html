@@ -1,0 +1,15 @@
+<figure class="lab">
+    <h3 data-i18n="ch2.model.title"></h3>
+    <p class="how" data-i18n-html="ch2.model.how"></p>
+    <div class="ctl"><label class="rng"><span data-i18n="ch2.ctl.va"></span><input type="range" id="tbV" min="32" max="57" step="1" value="48"><output id="tbVo"></output></label></div>
+    <div class="ctl"><div class="seg" role="radiogroup" data-i18n-aria="ch2.ctl.page"><span class="lbl" data-i18n="ch2.ctl.page"></span><label><input type="radio" name="tbP" value="4096" checked><span>4 KiB</span></label><label><input type="radio" name="tbP" value="16384"><span>16 KiB</span></label><label><input type="radio" name="tbP" value="65536"><span>64 KiB</span></label></div></div>
+    <div class="ctl"><label class="rng"><span data-i18n="ch2.ctl.heap"></span><input type="range" id="tbH" min="0" max="8" step="1" value="3"><output id="tbHo"></output></label></div>
+    <div class="bits" id="tbBits" aria-hidden="true"></div>
+    <div class="read">
+      <div><b class="r" id="tbF"></b><span data-i18n-html="ch2.read.flat"></span></div>
+      <div><b class="" id="tbL"></b><span data-i18n-html="ch2.read.levels"></span></div>
+      <div><b class="c" id="tbN"></b><span data-i18n-html="ch2.read.tables"></span></div>
+      <div><b class="g" id="tbB"></b><span data-i18n-html="ch2.read.bytes"></span></div>
+    </div>
+    <p class="say" id="tbSay" aria-live="polite"></p>
+  </figure>

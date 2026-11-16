@@ -1,0 +1,15 @@
+<figure class="lab">
+    <h3 data-i18n="ch7.model.title"></h3>
+    <p class="how" data-i18n-html="ch7.model.how"></p>
+    <canvas class="cv" id="efCv" role="img" data-i18n-aria="ch7.model.aria"></canvas>
+    <div class="legend"><span><i style="background:var(--green)"></i><span data-i18n="ch7.k.minor"></span></span><span><i style="background:var(--cyan)"></i><span data-i18n="ch7.k.nvme"></span></span><span><i style="background:var(--red)"></i><span data-i18n="ch7.k.hdd"></span></span></div>
+    <div class="ctl"><div class="seg wrapmany" role="radiogroup" data-i18n-aria="ch7.ctl.kind"><span class="lbl" data-i18n="ch7.ctl.kind"></span><label><input type="radio" name="efK" value="minor"><span data-i18n="ch7.k.minor"></span></label><label><input type="radio" name="efK" value="nvme" checked><span data-i18n="ch7.k.nvme"></span></label><label><input type="radio" name="efK" value="hdd"><span data-i18n="ch7.k.hdd"></span></label></div></div>
+    <div class="ctl"><label class="rng"><span data-i18n="ch7.ctl.p"></span><input type="range" id="efP" min="-8" max="-2" step="0.25" value="-4"><output id="efPo"></output></label></div>
+    <div class="read">
+      <div><b class="" id="efT"></b><span data-i18n-html="ch7.read.tf"></span></div>
+      <div><b class="g" id="efE"></b><span data-i18n-html="ch7.read.eat"></span></div>
+      <div><b class="r" id="efS"></b><span data-i18n-html="ch7.read.slow"></span></div>
+      <div><b class="c" id="ef10"></b><span data-i18n-html="ch7.read.p10"></span></div>
+    </div>
+    <p class="say" id="efSay" aria-live="polite"></p>
+  </figure>
