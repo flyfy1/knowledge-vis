@@ -27,20 +27,28 @@ function loadCopy(file) {
 }
 
 /* ───────── the registry ─────────
- * Phase 0/1: pages, categories and subtopics come from pages.config.js (live pages only), anchors are
- * scanned from each page's index.html (or its content files when it is migrated), concepts come from
- * atlas/data.js. Phase 2 inverts this so page.json is the source (specs/site-template.md).
+ * Pages, categories and subtopics come from scripts/lib/registry.cjs: every page.json with a "status" once
+ * pages.config.js has its GENERATED KNOWLEDGE_PAGES fence (Phase 2), the KNOWLEDGE_PAGES rows before that (and in the
+ * test fixture). Live pages only. Anchors are scanned from each page's index.html (or its content files when it is a
+ * template page), concepts come from atlas/data.js (node titles and aliases, merged with atlas/graph/aliases.json and
+ * the essay fragments by build-atlas-data).
  */
+const REG = require('./registry.cjs');
 function loadPagesConfig(root = REPO_ROOT) {
-  const w = {};
-  vm.runInNewContext(fs.readFileSync(path.join(root, 'pages.config.js'), 'utf8'), { window: w });
-  return w;
+  return REG.loadRegistry(root).config;
+}
+// A template page is a page.json with a "layout"; a metadata-only page.json just registers a hand-written page.
+function isTemplateDir(dir) {
+  const f = path.join(dir, 'page.json');
+  if (!fs.existsSync(f)) return false;
+  try { return !!JSON.parse(fs.readFileSync(f, 'utf8')).layout; } catch (e) { return false; }
 }
 const SITES = new Map();
 function createSite(root = REPO_ROOT) {
   root = path.resolve(root);
   if (SITES.has(root)) return SITES.get(root);
-  const w = loadPagesConfig(root);
+  const registry = REG.loadRegistry(root);
+  const w = registry.config;
   const pages = (w.KNOWLEDGE_PAGES || []).filter(p => p.status === 'live' && p.path);
   const bySlug = new Map(), byPath = new Map();
   for (const p of pages) {
@@ -55,10 +63,10 @@ function createSite(root = REPO_ROOT) {
   for (const n of (atlas.nodes || [])) nodes.set(n.id, n);
   const anchorCache = new Map();
   const site = {
-    root, config: w, pages, bySlug, byPath, nodes,
+    root, config: w, registry, pages, bySlug, byPath, nodes, atlas,
     cats: w.KNOWLEDGE_CATEGORIES || [], subs: w.KNOWLEDGE_SUBTOPICS || {},
     dirOf: p => path.join(root, p.path),
-    isMigrated: p => fs.existsSync(path.join(root, p.path, 'page.json')),
+    isMigrated: p => isTemplateDir(path.join(root, p.path)),
     anchors(p) {
       if (anchorCache.has(p.slug)) return anchorCache.get(p.slug);
       const d = path.join(root, p.path), set = new Set();
@@ -398,10 +406,13 @@ function loadBindings(dir, errors) {
   } catch (e) { errors.push('bindings.cjs: ' + e.message); return {}; }
 }
 
-function scanBacklinks(site, page) {
-  const out = new Map();
+// Every link between live pages, scanned once per site: [{ src, dst, from, to }] (src, dst: registry rows; from: the source
+// chapter "chN" or null; to: the target anchor or null). Self-links are left out. Used for backlinks (below) and by
+// scripts/build-registry.cjs for the registry's ref edges, so both see the same links.
+function scanLinks(site) {
+  if (site._links) return site._links;
+  const all = [];
   for (const p of site.pages) {
-    if (p === page) continue;
     const d = path.join(site.root, p.path);
     // A migrated page's links are in its sources: content.zh.md (compiled here, not read from the generated
     // copy.zh.js, so one --all pass is final even when an earlier page in the pass gained a link) and its
@@ -425,14 +436,22 @@ function scanBacklinks(site, page) {
       else entries = [[null, fs.readFileSync(file, 'utf8')]];
       for (const [k, v] of entries) for (const m of String(v).matchAll(/href=\\?["']([^"'\\]+)\\?["']/g)) {
         const r = resolveHref(site, p.path, m[1]);
-        if (!r || r[0] !== page) continue;
-        const from = k && /^ch\d+\./.test(k) ? k.split('.')[0] : null;
-        const row = out.get(p.slug) || { p, links: [] };
-        out.set(p.slug, row);
-        const sig = (from || '') + '>' + (r[1] || '');
-        if (!row.links.some(x => x.sig === sig)) row.links.push({ sig, from, to: r[1] });
+        if (!r || r[0] === p) continue;
+        all.push({ src: p, dst: r[0], from: k && /^ch\d+\./.test(k) ? k.split('.')[0] : null, to: r[1] });
       }
     }
+  }
+  return (site._links = all);
+}
+
+function scanBacklinks(site, page) {
+  const out = new Map();
+  for (const L of scanLinks(site)) {
+    if (L.dst !== page) continue;
+    const row = out.get(L.src.slug) || { p: L.src, links: [] };
+    out.set(L.src.slug, row);
+    const sig = (L.from || '') + '>' + (L.to || '');
+    if (!row.links.some(x => x.sig === sig)) row.links.push({ sig, from: L.from, to: L.to });
   }
   return [...out.values()].sort((a, b) => a.p.path.localeCompare(b.p.path));
 }
@@ -537,10 +556,12 @@ function buildEssay(dir, opts = {}) {
   if (!page) {
     // An unregistered draft (written natively in Markdown) builds from its REGISTRY.json, so it can be tested and
     // reviewed before registration. It is never in --all, nothing links to it yet, and it has no label.
-    const regFile = path.join(dir, 'REGISTRY.json'), reg = fs.existsSync(regFile) ? readJson(regFile) : null;
-    if (!reg || reg.slug !== meta.slug || !reg.path) return { errors: [`page.json slug "${meta.slug}" is not a live page in pages.config.js, and there is no REGISTRY.json with that slug and a path to build it as a draft`], warnings, outputs: {} };
+    // Its place comes from page.json when it already names one (category, path; Phase 2), else from REGISTRY.json.
+    const regFile = path.join(dir, 'REGISTRY.json'), reg = meta.path && meta.category ? meta : fs.existsSync(regFile) ? readJson(regFile) : null;
+    const from = reg === meta ? 'page.json' : 'REGISTRY.json';
+    if (!reg || reg.slug !== meta.slug || !reg.path) return { errors: [`page.json slug "${meta.slug}" is not a live page in the registry, and neither page.json (category, path) nor a REGISTRY.json with that slug and a path says where the draft lives`], warnings, outputs: {} };
     page = { slug: reg.slug, path: reg.path, category: reg.category, subtopic: reg.subtopic, stage: reg.stage, title: reg.title, status: 'draft' };
-    warnings.push(`draft: "${meta.slug}" is not registered in pages.config.js; built from REGISTRY.json (no backlinks, related pages or provenance label until registration)`);
+    warnings.push(`draft: "${meta.slug}" is not registered (its page.json has no "status": "live"); built from ${from} (no backlinks, related pages or provenance label until registration)`);
   }
   if (page.path.replace(/\/?$/, '/') !== sitePath) return { errors: [`page.json slug "${meta.slug}" is registered at ${page.path}, not ${sitePath}`], warnings, outputs: {} };
   const PREFILL = opts.prefill != null ? opts.prefill : meta.prefill !== false;
@@ -825,6 +846,7 @@ function migratedPages(root = REPO_ROOT) {
 module.exports = {
   REPO_ROOT, LANGS, loadCopy, loadPagesConfig, createSite, pick, titleOf, resolveHref, relHref, resolveRef,
   renderInline, unrenderInline, escapeInline, parseContent, parseAttrs, needsParaEscape, autoKey, i18nKeysIn,
-  fillLayout, buildEssay, migratedPages, TemplateError, esc, prefill, unprefill,
+  fillLayout, buildEssay, migratedPages, TemplateError, esc, prefill, unprefill, scanLinks, scanBacklinks, isTemplateDir,
+  compileLang, loadBindings,
   svgLabels, labelRoom, emWidth, plainText,
 };

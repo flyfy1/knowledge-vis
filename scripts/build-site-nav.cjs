@@ -5,10 +5,10 @@
  *                                              redirect stubs and the include lines in every live page
  *   node scripts/build-site-nav.cjs --check    fail if any of those three is out of date (no writes)
  *
- * Everything is derived from the site registry (scripts/lib/template.cjs; today it reads pages.config.js:
- * KNOWLEDGE_CATEGORIES, KNOWLEDGE_SUBTOPICS, live KNOWLEDGE_PAGES), so site-nav-data.js is a projection of
- * the same registry the template build uses. Only live pages are touched, so untracked drafts are never edited.
- * Pages built from the site template (a page.json next to index.html) are never written here: their include
+ * Everything is derived from the site registry (scripts/lib/registry.cjs: the live pages are the page.json files with a
+ * "status", categories and subtopics are the hand-edited part of pages.config.js), so site-nav-data.js is a projection
+ * of the same registry the template build uses. Only live pages are touched, so untracked drafts are never edited.
+ * Pages built from the site template (a page.json with a "layout") are never written here: their include
  * lines come from the layout, so a stale one is reported with the build-pages command that fixes it.
  *
  * NO_AUTOLINK lists mentions that match a page title exactly but must not become links
@@ -121,7 +121,7 @@ function plan() {
     const abs = path.join(root, file);
     if (!fs.existsSync(abs)) throw new Error('live page has no index.html: ' + file);
     const html = fs.readFileSync(abs, 'utf8');
-    files.push({ file, content: withInclude(html, p[1], file), page: true, template: fs.existsSync(path.join(root, p[1], 'page.json')) });
+    files.push({ file, content: withInclude(html, p[1], file), page: true, template: require('./lib/template.cjs').isTemplateDir(path.join(root, p[1])) });
   }
   return { data, files };
 }

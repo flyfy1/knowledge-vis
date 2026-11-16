@@ -25,7 +25,13 @@ const sitePath = path.relative(root, dir).split(path.sep).join('/') + '/';
 const site = T.createSite(root);
 const page = site.byPath.get(sitePath);
 if (!page) { console.error('not a live page in pages.config.js: ' + sitePath); process.exit(1); }
-if (fs.existsSync(path.join(dir, 'page.json'))) { console.error(sitePath + ' already has page.json (already migrated)'); process.exit(1); }
+// A page.json without "layout" only registers the hand-written page (Phase 2, scripts/lib/registry.cjs). The converter
+// merges the template fields into it and keeps the registry fields; title and desc move to the content (they must be
+// equal already). On a failed round trip the original page.json is put back, so the page stays registered.
+const pjFile = path.join(dir, 'page.json');
+const pjBefore = fs.existsSync(pjFile) ? fs.readFileSync(pjFile, 'utf8') : null;
+const pjOld = pjBefore != null ? JSON.parse(pjBefore) : null;
+if (pjOld && pjOld.layout) { console.error(sitePath + ' already has page.json with a layout (already migrated)'); process.exit(1); }
 
 const html = fs.readFileSync(path.join(dir, 'index.html'), 'utf8');
 const COPY = { zh: T.loadCopy(path.join(dir, 'copy.zh.js')), en: T.loadCopy(path.join(dir, 'copy.en.js')) };
@@ -316,7 +322,9 @@ if (!legacy.compactSections) sections.forEach(s => s.regions.forEach(r => r.kind
 let md;
 try { md = { zh: emit('zh'), en: emit('en') }; } catch (e) { fail(e.message); }
 const prov = fs.existsSync(path.join(root, 'page-provenance.json')) ? JSON.parse(fs.readFileSync(path.join(root, 'page-provenance.json'), 'utf8')).pages[page.slug] : null;
-const meta = { slug: page.slug, kind: 'essay', layout: 'essay', scripts, version };
+const meta = {};
+if (pjOld) for (const [k, v] of Object.entries(pjOld)) if (!['title', 'desc', 'languages'].includes(k)) meta[k] = v;
+Object.assign(meta, { slug: page.slug, kind: 'essay', layout: 'essay', scripts, version });
 if (prov && provenanceNote) meta.provenanceNote = provenanceNote;
 const L = {};
 if (legacy.join.length) L.join = legacy.join;
@@ -348,13 +356,18 @@ if (!res.errors.length) {
   }
 }
 const nParts = [...parts.values()].reduce((o, P) => (o[P.type] = (o[P.type] || 0) + 1, o), {});
-if (problems.length) { console.error(problems.slice(0, 30).map(p => 'MISMATCH ' + p).join('\n')); fail(`round trip failed (${problems.length} problems); sources left in ${sitePath} for inspection`); }
+if (problems.length) {
+  console.error(problems.slice(0, 30).map(p => 'MISMATCH ' + p).join('\n'));
+  if (pjBefore != null) { fs.writeFileSync(path.join(dir, 'page.json.converted'), JSON.stringify(meta, null, 2) + '\n'); fs.writeFileSync(pjFile, pjBefore); }
+  fail(`round trip failed (${problems.length} problems); sources left in ${sitePath} for inspection` + (pjBefore != null ? ' (page.json restored to its registry fields; the attempted one is page.json.converted)' : ''));
+}
 const refs = (md.zh.match(/\[\[/g) || []).length;
 console.log(`converted ${page.slug}: ${sections.length} chapters, ${Object.keys(COPY.zh).length} keys per language, ` +
   `${nParts.lab || 0} labs, ${nParts.diagram || 0} diagrams, ${nParts.html || 0} html partials, ${refs} [[refs]] in zh; ` +
   `round trip (no chrome, no pre-fill): index.html byte-identical, copy tables equal in zh and en`);
 console.log('commit trailers:');
 for (const l of T.LANGS) console.log(`Derived-From: ${sitePath}copy.${l}.js -> ${sitePath}content.${l}.md`);
-console.log(`Derived-From: ${sitePath}index.html -> ${sitePath}page.json`);
+// AUTHORSHIP.md §4 honours Derived-From only in the commit that creates the file; a registered page already has page.json.
+if (pjBefore == null) console.log(`Derived-From: ${sitePath}index.html -> ${sitePath}page.json`);
 console.log(`Derived-From: ${sitePath}index.html -> ${sitePath}page.css`);
 for (const name of parts.keys()) console.log(`Derived-From: ${sitePath}index.html -> ${sitePath}figures/${name}.html`);
