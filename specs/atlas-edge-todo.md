@@ -962,11 +962,11 @@ anchor; a link to the page top has no anchor).
 
 ## 反比例函数 · 此消彼长 / Inverse Proportion · One Up, One Down → 乘法是面积 · 点阵铺成一块地 / Multiplication Is Area · Arrays Become a Tiled Floor
 
-- `inverse-proportion` → `area-model#step1`: ? → area-model-multiplication
+- `inverse-proportion#step5` → `area-model#step1`: ? → area-model-multiplication
 
 ## 反比例函数 · 此消彼长 / Inverse Proportion · One Up, One Down → 抛物线 · 投篮的弧线 / Parabolas · The Arc of a Shot
 
-- `inverse-proportion` → `parabola#step0`
+- `inverse-proportion#step5` → `parabola#step0`
 
 ## 大语言模型如何逐词生成 / How an LLM Writes Word by Word → 熵 · 惊讶的平均值 / Entropy · The Average of Surprise
 
