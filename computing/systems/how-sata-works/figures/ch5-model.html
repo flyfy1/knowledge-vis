@@ -1,0 +1,16 @@
+<figure class="lab">
+    <h3 data-i18n="ch5.model.title"></h3>
+    <p class="how" data-i18n-html="ch5.model.how"></p>
+    <canvas class="cv tall" id="ncCv" role="img" data-i18n-aria="ch5.model.aria"></canvas>
+    <div class="ctl"><div class="seg" role="radiogroup" data-i18n-aria="ch5.ctl.pol"><span class="lbl" data-i18n="ch5.ctl.pol"></span><label><input type="radio" name="ncP" value="fifo"><span data-i18n="ch5.pol.fifo"></span></label><label><input type="radio" name="ncP" value="sstf"><span data-i18n="ch5.pol.sstf"></span></label><label><input type="radio" name="ncP" value="satf" checked><span data-i18n="ch5.pol.satf"></span></label></div></div>
+    <div class="ctl"><div class="seg" role="radiogroup" data-i18n-aria="ch5.ctl.q"><span class="lbl" data-i18n="ch5.ctl.q"></span><label><input type="radio" name="ncQ" value="1"><span>1</span></label><label><input type="radio" name="ncQ" value="2"><span>2</span></label><label><input type="radio" name="ncQ" value="4"><span>4</span></label><label><input type="radio" name="ncQ" value="8" checked><span>8</span></label><label><input type="radio" name="ncQ" value="16"><span>16</span></label><label><input type="radio" name="ncQ" value="32"><span>32</span></label></div><button type="button" class="b" id="ncPlay" aria-pressed="true" data-i18n="ch5.btn.pause"></button></div>
+    <canvas class="cv" id="nc2Cv" role="img" data-i18n-aria="ch5.model.aria2"></canvas>
+    <div class="legend"><span><i style="background:var(--mute)"></i><span data-i18n="ch5.pol.fifo"></span></span><span><i style="background:var(--cyan)"></i><span data-i18n="ch5.pol.sstf"></span></span><span><i style="background:var(--gold)"></i><span data-i18n="ch5.pol.satf"></span></span></div>
+    <div class="read">
+      <div><b class="g" id="ncIops"></b><span data-i18n-html="ch5.read.iops"></span></div>
+      <div><b class="c" id="ncSeek"></b><span data-i18n-html="ch5.read.seek"></span></div>
+      <div><b class="v" id="ncWait"></b><span data-i18n-html="ch5.read.wait"></span></div>
+      <div><b class="r" id="ncP95"></b><span data-i18n-html="ch5.read.p95"></span></div>
+    </div>
+    <p class="say" id="ncSay" aria-live="polite"></p>
+  </figure>

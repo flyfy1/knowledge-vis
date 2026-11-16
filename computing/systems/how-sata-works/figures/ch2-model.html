@@ -1,0 +1,15 @@
+<figure class="lab">
+    <h3 data-i18n="ch2.model.title"></h3>
+    <p class="how" data-i18n-html="ch2.model.how"></p>
+    <canvas class="cv tall" id="udCv" role="img" data-i18n-aria="ch2.model.aria"></canvas>
+    <div class="legend"><span><i style="background:var(--cyan)"></i><span data-i18n="ch2.leg.su"></span></span><span><i style="background:var(--red)"></i><span data-i18n="ch2.leg.skew"></span></span><span><i style="background:var(--violet)"></i><span data-i18n="ch2.leg.settle"></span></span><span><i style="background:var(--green)"></i><span data-i18n="ch2.leg.margin"></span></span></div>
+    <div class="ctl"><div class="seg" role="radiogroup" data-i18n-aria="ch2.ctl.mode"><span class="lbl" data-i18n="ch2.ctl.mode"></span><label><input type="radio" name="udM" value="0"><span>0</span></label><label><input type="radio" name="udM" value="1"><span>1</span></label><label><input type="radio" name="udM" value="2"><span>2</span></label><label><input type="radio" name="udM" value="3"><span>3</span></label><label><input type="radio" name="udM" value="4"><span>4</span></label><label><input type="radio" name="udM" value="5"><span>5</span></label><label><input type="radio" name="udM" value="6" checked><span>6</span></label></div></div>
+    <div class="ctl"><div class="seg" role="radiogroup" data-i18n-aria="ch2.ctl.cable"><span class="lbl" data-i18n="ch2.ctl.cable"></span><label><input type="radio" name="udC" value="80" checked><span data-i18n="ch2.cable.80"></span></label><label><input type="radio" name="udC" value="40"><span data-i18n="ch2.cable.40"></span></label></div><label class="rng"><span data-i18n="ch2.ctl.k"></span><input type="range" id="udK" min="0.5" max="1.5" step="0.01" value="1"><output id="udKo"></output></label></div>
+    <div class="read">
+      <div><b class="" id="udCyc"></b><span data-i18n-html="ch2.read.cyc"></span></div>
+      <div><b class="r" id="udUsed"></b><span data-i18n-html="ch2.read.used"></span></div>
+      <div><b class="n" id="udMar"></b><span data-i18n-html="ch2.read.margin"></span></div>
+      <div><b class="g" id="udRate"></b><span data-i18n-html="ch2.read.rate"></span></div>
+    </div>
+    <p class="say" id="udSay" aria-live="polite"></p>
+  </figure>

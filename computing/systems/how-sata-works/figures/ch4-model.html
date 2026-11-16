@@ -1,0 +1,17 @@
+<figure class="lab">
+    <h3 data-i18n="ch4.model.title"></h3>
+    <p class="how" data-i18n-html="ch4.model.how"></p>
+    <canvas class="cv xtall" id="fsCv" role="img" data-i18n-aria="ch4.model.aria"></canvas>
+    <div class="ctl"><button type="button" class="b" id="fsPrev" data-i18n="ch4.btn.prev"></button><button type="button" class="b" id="fsNext" data-i18n="ch4.btn.next"></button><button type="button" class="b" id="fsAll" data-i18n="ch4.btn.all"></button></div>
+    <p class="step" id="fsStep" aria-live="polite"></p>
+    <div class="ctl"><label class="rng"><span data-i18n="ch4.ctl.tag"></span><input type="range" id="fsT" min="0" max="31" step="1" value="5"><output id="fsTo"></output></label><label class="rng"><span data-i18n="ch4.ctl.lba"></span><input type="range" id="fsL" min="0" max="1000000" step="1" value="123456"><output id="fsLo"></output></label></div>
+    <div class="ctl"><div class="seg" role="radiogroup" data-i18n-aria="ch4.ctl.size"><span class="lbl" data-i18n="ch4.ctl.size"></span><label><input type="radio" name="fsN" value="1"><span data-i18n="ch4.size.1"></span></label><label><input type="radio" name="fsN" value="8" checked><span data-i18n="ch4.size.8"></span></label><label><input type="radio" name="fsN" value="64"><span data-i18n="ch4.size.64"></span></label><label><input type="radio" name="fsN" value="256"><span data-i18n="ch4.size.256"></span></label></div></div>
+    <pre class="hex" id="fsHex" data-i18n-aria="ch4.hex.aria" tabindex="0"></pre>
+    <div class="read">
+      <div><b class="" id="fsFr"></b><span data-i18n-html="ch4.read.frames"></span></div>
+      <div><b class="g" id="fsDw"></b><span data-i18n-html="ch4.read.dw"></span></div>
+      <div><b class="c" id="fsUs"></b><span data-i18n-html="ch4.read.us"></span></div>
+      <div><b class="n" id="fsEff"></b><span data-i18n-html="ch4.read.eff"></span></div>
+    </div>
+    <p class="say" id="fsSay" aria-live="polite"></p>
+  </figure>

@@ -1,0 +1,15 @@
+<figure class="lab">
+    <h3 data-i18n="ch6.model.title"></h3>
+    <p class="how" data-i18n-html="ch6.model.how"></p>
+    <canvas class="cv" id="pwCv" role="img" data-i18n-aria="ch6.model.aria"></canvas>
+    <div class="legend"><span><i style="background:var(--mute)"></i><span data-i18n="ch6.st.on"></span></span><span><i style="background:var(--cyan)"></i><span data-i18n="ch6.st.partial"></span></span><span><i style="background:var(--gold)"></i><span data-i18n="ch6.st.slumber"></span></span><span><i style="background:var(--green)"></i><span data-i18n="ch6.st.devslp"></span></span></div>
+    <div class="ctl"><div class="seg" role="radiogroup" data-i18n-aria="ch6.ctl.state"><span class="lbl" data-i18n="ch6.ctl.state"></span><label><input type="radio" name="pwS" value="on"><span data-i18n="ch6.st.on"></span></label><label><input type="radio" name="pwS" value="partial"><span data-i18n="ch6.st.partial"></span></label><label><input type="radio" name="pwS" value="slumber" checked><span data-i18n="ch6.st.slumber"></span></label><label><input type="radio" name="pwS" value="devslp"><span data-i18n="ch6.st.devslp"></span></label></div></div>
+    <div class="ctl"><label class="rng"><span data-i18n="ch6.ctl.gap"></span><input type="range" id="pwM" min="-4" max="1" step="0.05" value="-2"><output id="pwMo"></output></label><label class="rng"><span data-i18n="ch6.ctl.tau"></span><input type="range" id="pwT" min="0" max="100" step="1" value="0"><output id="pwTo"></output></label></div>
+    <div class="read">
+      <div><b class="g" id="pwW"></b><span data-i18n-html="ch6.read.w"></span></div>
+      <div><b class="n" id="pwSave"></b><span data-i18n-html="ch6.read.save"></span></div>
+      <div><b class="r" id="pwLat"></b><span data-i18n-html="ch6.read.lat"></span></div>
+      <div><b class="c" id="pwBest"></b><span data-i18n-html="ch6.read.best"></span></div>
+    </div>
+    <p class="say" id="pwSay" aria-live="polite"></p>
+  </figure>

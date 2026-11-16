@@ -1,0 +1,15 @@
+<figure class="lab">
+    <h3 data-i18n="ch7.model.title"></h3>
+    <p class="how" data-i18n-html="ch7.model.how"></p>
+    <canvas class="cv" id="pmCv" role="img" data-i18n-aria="ch7.model.aria"></canvas>
+    <div class="legend"><span><i style="background:var(--gold)"></i><span data-i18n="ch7.mode.fbs"></span></span><span><i style="background:var(--cyan)"></i><span data-i18n="ch7.mode.cbs"></span></span><span style="color:var(--red)"><i class="dash" style="background:var(--red)"></i><span data-i18n="ch7.leg.cap"></span></span></div>
+    <div class="ctl"><label class="rng"><span data-i18n="ch7.ctl.n"></span><input type="range" id="pmN" min="1" max="15" step="1" value="4"><output id="pmNo"></output></label></div>
+    <div class="ctl"><div class="seg" role="radiogroup" data-i18n-aria="ch7.ctl.mode"><span class="lbl" data-i18n="ch7.ctl.mode"></span><label><input type="radio" name="pmM" value="fbs" checked><span data-i18n="ch7.mode.fbs"></span></label><label><input type="radio" name="pmM" value="cbs"><span data-i18n="ch7.mode.cbs"></span></label></div><div class="seg" role="radiogroup" data-i18n-aria="ch7.ctl.work"><span class="lbl" data-i18n="ch7.ctl.work"></span><label><input type="radio" name="pmW" value="rand"><span data-i18n="ch7.work.rand"></span></label><label><input type="radio" name="pmW" value="seq" checked><span data-i18n="ch7.work.seq"></span></label></div></div>
+    <div class="ctl"><div class="seg" role="radiogroup" data-i18n-aria="ch7.ctl.link"><span class="lbl" data-i18n="ch7.ctl.link"></span><label><input type="radio" name="pmL" value="3" checked><span data-i18n="ch7.link.3"></span></label><label><input type="radio" name="pmL" value="2"><span data-i18n="ch7.link.2"></span></label></div></div>
+    <div class="read">
+      <div><b class="g" id="pmAgg"></b><span data-i18n-html="ch7.read.agg"></span></div>
+      <div><b class="" id="pmOne"></b><span data-i18n-html="ch7.read.one"></span></div>
+      <div><b class="r" id="pmCap"></b><span data-i18n-html="ch7.read.cap"></span></div>
+    </div>
+    <p class="say" id="pmSay" aria-live="polite"></p>
+  </figure>
