@@ -1,0 +1,26 @@
+<div class="stage">
+      <canvas id="s2-canvas" height="340" style="height:340px"></canvas>
+    </div>
+    <div class="btn-row">
+      <button class="btn par2 active" data-par="uniform" data-i18n="pUniform"></button>
+      <button class="btn par2" data-par="exp" data-i18n="pExp"></button>
+      <button class="btn par2" data-par="bimodal" data-i18n="pBimodal"></button>
+      <button class="btn par2" data-par="dice" data-i18n="pDice"></button>
+      <button class="btn par2" data-par="pareto" data-i18n="pPareto"></button>
+    </div>
+    <div class="btn-row" id="s2-alpha-row" style="display:none">
+      <button class="btn alp2" data-alpha="1.5" data-i18n="alpha15"></button>
+      <button class="btn alp2 active" data-alpha="3.5" data-i18n="alpha35"></button>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="nLab"></span> <span class="val" id="s2-n-val"></span></span>
+        <input type="range" id="s2-n" min="0" max="6" step="1" value="3">
+      </label>
+    </div>
+    <div class="btn-row">
+      <button class="btn primary" id="s2-run" data-i18n="runLab"></button>
+      <button class="btn" id="s2-seed" data-i18n="newSeed"></button>
+      <button class="btn" id="s2-reset" data-i18n="reset"></button>
+    </div>
+    <p class="readout" id="s2-readout"></p>
+    <p class="hint" id="s2-note"></p>

@@ -1,0 +1,117 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "central-limit-theorem",
+ "refs": [],
+ "backlinks": [
+  {
+   "from": "bar-charts",
+   "links": [
+    {
+     "from": null,
+     "to": "step0"
+    }
+   ]
+  },
+  {
+   "from": "binomial-normal",
+   "links": [
+    {
+     "from": null,
+     "to": "step2"
+    }
+   ]
+  },
+  {
+   "from": "probability-frequency",
+   "links": [
+    {
+     "from": null,
+     "to": "step0"
+    }
+   ]
+  },
+  {
+   "from": "numbers-lie",
+   "links": [
+    {
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  {
+   "from": "bayes-updating",
+   "links": [
+    {
+     "from": null,
+     "to": "step0"
+    }
+   ]
+  },
+  {
+   "from": "mean-median-mode",
+   "links": [
+    {
+     "from": null,
+     "to": "step0"
+    }
+   ]
+  },
+  {
+   "from": "bandit-arms",
+   "links": [
+    {
+     "from": null,
+     "to": "step2"
+    }
+   ]
+  },
+  {
+   "from": "entropy",
+   "links": [
+    {
+     "from": null,
+     "to": "step0"
+    }
+   ]
+  },
+  {
+   "from": "monte-carlo",
+   "links": [
+    {
+     "from": null,
+     "to": "step0"
+    }
+   ]
+  },
+  {
+   "from": "poisson-process",
+   "links": [
+    {
+     "from": null,
+     "to": "step3"
+    }
+   ]
+  },
+  {
+   "from": "risk-pooling",
+   "links": [
+    {
+     "from": null,
+     "to": "step3"
+    }
+   ]
+  },
+  {
+   "from": "inside-a-phone",
+   "links": [
+    {
+     "from": null,
+     "to": "step3"
+    }
+   ]
+  }
+ ],
+ "related": [],
+ "bindings": []
+}
