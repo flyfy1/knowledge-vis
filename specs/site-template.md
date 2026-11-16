@@ -241,21 +241,23 @@ registered.
    and requires `index.html` to be byte-identical and both copy tables key-for-key equal. If they are not, it
    exits 1 naming the first difference, and the sources stay for inspection. The old `index.html` and copy
    files are not touched.
-2. Run the page's `tests/models.cjs` and `tests/browser.cjs` on a `--no-chrome --no-prefill` build (identical
-   output), then on the full build. Run the canvas sweep on the full build.
-3. Commit the sources with the outputs unchanged. Write `Built-By: script (deterministic, no model:
-   scripts/convert-essay.cjs)` and `Authorship-Impact: mechanical`, and paste the `Derived-From:` lines the
-   converter prints. Name the operating agent in the body or Verified-By, not in Built-By: a registered agent
-   name there would attribute the commit to that agent (`authorship/agents.json`, first match wins).
-4. Commit the full build (chrome, pre-fill) separately as mechanical (`Built-By: script …`). `sourceRevision`
-   stays (D4).
-5. **Tests that forbid CJK in `index.html`.** how-memory-talks and how-a-computer-boots, and probably most of the
-   2026-11-15 computing essays, fail their `tests/models.cjs` on pre-filled text. Resolve per page, in an authored
-   commit, either way:
-   - set `"prefill": false`;
-   - or teach the check to ignore the contents of `data-i18n*` elements.
+2. Run the page's `tests/models.cjs` and `tests/browser.cjs` on a `--no-chrome --no-prefill` build, whose output
+   is identical to the old page.
+3. **Decide on pre-fill before the full build.** how-memory-talks and how-a-computer-boots, and probably most of
+   the 2026-11-15 computing essays, have a `tests/models.cjs` check that forbids CJK in `index.html`, so it fails
+   on pre-filled text. Resolve it per page, either way:
+   - set `"prefill": false` in `page.json`;
+   - or, in a separate authored commit, teach that check to ignore the contents of `data-i18n*` elements.
 
    Do not loosen any other assertion.
+4. Run the full build (`node scripts/build-pages.cjs <page-dir>`), the page tests again and the canvas sweep.
+5. Commit the sources **and** the rebuilt outputs in one commit, so that `--all --check` passes on every commit.
+   The moment `page.json` exists, `--all` picks the page up, and the old hand-written outputs count as drift.
+   - Trailers: `Built-By: script (deterministic, no model: scripts/convert-essay.cjs)` and
+     `Authorship-Impact: mechanical`, plus the `Derived-From:` lines the converter prints.
+   - Name the operating agent in the body or Verified-By, not in Built-By. A registered agent name there would
+     attribute the commit to that agent (`authorship/agents.json`, first match wins).
+   - `sourceRevision` stays (D4).
 
 **`legacyLayout` in page.json** records whitespace of the hand-written HTML so step 1 can compare byte for byte:
 - `join`: blocks written on the same line as the previous one;
