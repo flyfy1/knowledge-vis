@@ -463,7 +463,7 @@ A6/boot registrar (2026-11-15): ch6.limit gains one sentence linking how-a-compu
 OS/pixels registrar (2026-11-15): ch6.p5 links how-the-os-talks-to-hardware #ch4 (registers behind a BAR) and ch7.p3 its #ch5 (the interrupt path after MSI); MSI / MSI-X stay on #ch7 here. Label at e916a267 (previous 70d9f2e1), scripts `?v=20261115d`.
 Power/NIC registrar (2026-11-15): #ch3 gains PCIe 开销 / PCIe overhead, PCIe bandwidth (REGISTRY only; the NIC essay's #ch4 phrases contain them). #ch10 has no NIC sentence and is not linked. Label at d0821bc1 (previous e916a267), scripts unchanged.
 SVG-check registrar (2026-11-16): browser.cjs clipped-text check loses its never-firing SVG skip in c3cef443 (test only, page passes at 1280/390/320 zh+en); label at c3cef443 (previous d0821bc1), no script change.
-Template follow-up (2026-11-16): tests/models.cjs reads index.html through unprefill(html, Z), skips the generated site.* keys in the unused-key, sibling-link and en/zh href checks, and takes the cache key from page.json.version on a template page (as batch A, 9a470caf). Label at b44d5f06 (previous c3cef443), no script change.
+Template follow-up (2026-11-16): tests/models.cjs reads index.html through unprefill(html, Z), skips the generated site.* keys in the unused-key, sibling-link and en/zh href checks, and takes the cache key from page.json.version on a template page (as batch A, 9a470caf). Label at b44d5f06 (previous c3cef443), no script change. Converted to template sources in 50e7421e (mechanical; version 20261116a).
 
 ### how-a-computer-is-wired: 电脑里的零件是怎么连起来的
 

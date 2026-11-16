@@ -467,10 +467,10 @@ passed (4516 checks). The full build failed only the CJK-in-`index.html` check o
 - **Before them:** bb10f897 (whitespace in four pages, the missing `</head>` in how-a-computer-is-wired, the GPU
   `<style>` merge; no rendered change), 9a470caf (`unprefill`, page tests; authored), 42fba818 (labels repointed).
 - **Pre-fill:** on for all 19. No converter change was needed.
-- **Not converted:** how-sas-works (its footer is three keyed paragraphs, `footer.sources` / `.models` / `.ai`;
-  the layout has one `footer` key) and how-pcie-works (whole sections on one line, diagrams as `figure.diag` in
-  `.wide`). Both need converter variants. why-nvme-is-fast, why-compute-waits-for-memory and switches-that-compute
-  are later batches.
+- **Not converted in batch A:** how-sas-works (its footer is three keyed paragraphs, `footer.sources` / `.models` /
+  `.ai`; the layout had one `footer` key) and how-pcie-works (whole sections on one line, diagrams as `figure.diag`
+  in `.wide`). Both were converted in the template follow-up below. why-nvme-is-fast, why-compute-waits-for-memory
+  and switches-that-compute are later batches.
 - **Checked per page on the full build:** `tests/models.cjs`, `tests/browser.cjs` (zh+en 1280/390/320) and the
   canvas sweep all pass. Screenshots of hero, breadcrumb and linked-from block (memory, storage, wired; 1280 and
   320, zh and en) look right. One cosmetic point: at 320 px in English the breadcrumb wraps and its `›` separator
@@ -484,6 +484,27 @@ passed (4516 checks). The full build failed only the CJK-in-`index.html` check o
   「NVMe 为什么这么快」第五章 in what-a-drive-is-made-of ch6 (「」 quotes) and the unquoted English title in the
   how-virtual-memory-works footer.
 
+**Template follow-up (2026-11-16, committed, not pushed or deployed until reviewed).**
+- **Template:** d54606f9 added the layout and converter shapes the two pages needed, without touching their markup:
+  keyed footer paragraphs, `---` between two prose columns, `::: diagram … place=wide`, and `legacyLayout`
+  `compactSections`, `compactToc` and `gaps.afterProvenanceCss`. Every slot renders the old bytes when unused, so
+  the 20 pages already migrated did not change. No normalisation commit was needed.
+- **Order:** b44d5f06 (both `tests/models.cjs` read the markup through `unprefill` and skip `site.*`; authored),
+  3259a4fd (labels repointed to it), 0c3676fa (how-sas-works converted), b5cdc9bd (its runtime links restored),
+  then 50e7421e (how-pcie-works converted). Each conversion round-tripped byte for byte at its parent, with both copy
+  tables equal, before its `version` bump; `--all --check` passes on every commit, and no other page drifted from
+  either conversion.
+- **how-sas-works:** 11 chapters, 469 keys, 7 labs, 10 diagrams, 2 `::: html` partials. Version 20261116c. Live
+  `SiteNav.report()` showed three runtime links (zh ch1.p2, zh ch7.p1, en ch1.p2), the same three the lint listed;
+  b5cdc9bd made them `[[what-a-drive-is-made-of#ch7|…]]` in both languages. In ch7.p1 the zh title and a separate
+  `第 7 章` link became one link, like the English, so parity holds without an extra link. what-a-drive-is-made-of
+  gained only a generated linked-from row (version 20261116c, label not repointed).
+- **how-pcie-works:** 12 chapters, 555 keys, 10 labs, 12 diagrams (all `place=wide`), no `::: html`. Version
+  20261116a. Live `SiteNav.report()` shows no runtime links in either language, and the lint lists none.
+- **Checked on the full build:** `tests/models.cjs` (SAS 2152, PCIe 3993), `tests/browser.cjs` (zh+en
+  1280/390/320, unchanged), canvas sweep (SAS 948, PCIe 1192 states), `--all --check` 22 pages,
+  0 lint lines.
+
 ## 11. Authorship
 
 - Conversion commits use `Derived-From:` (AUTHORSHIP.md §4) so `content.<lang>.md` inherits the history of
@@ -493,8 +514,8 @@ passed (4516 checks). The full build failed only the CJK-in-`index.html` check o
 
 ## 12. Not yet
 
-- **Phase 1:** the rest of the essays (batch A is done, §10): how-sas-works and how-pcie-works need converter
-  variants; then the older essays with other hero or section shapes.
+- **Phase 1:** the rest of the essays (batch A and the two leftovers are done, §10): why-nvme-is-fast,
+  why-compute-waits-for-memory and switches-that-compute, then the older essays with other hero or section shapes.
 - **Phase 2:**
   - `page.json` replaces `REGISTRY.json`;
   - `site-registry.json` and `scripts/build-registry.cjs`;

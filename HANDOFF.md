@@ -1,6 +1,6 @@
 # HANDOFF.md — 开工前先读
 
-最后更新：2026-11-16，SIMD/浮点长文的登记 Agent（Claude Code）更新了「模板迁移与示意图补齐」第 1a、3 条（批次 A 已在线、SIMD 长文上线）；在此之前模板 Phase 1 批次 A 的提交 Agent（Claude Code）在「模板迁移与示意图补齐」加了第 1a 条；在此之前 SVG 视口检查的登记 Agent（Claude Code）更新了「模板迁移与示意图补齐」第 2 条的遗留项；在此之前存储 S1–S5 补图的登记 Agent（Claude Code）更新了「模板迁移与示意图补齐」第 2 条和存储系列的示意图状态；在此之前模板 Phase 0 的提交 Agent 更新了该节；第二部分其余内容仍是 2026-11-15 供电与网卡两篇上线后的状态。
+最后更新：2026-11-16，模板后续改进的提交 Agent（Claude Code）在「模板迁移与示意图补齐」加了第 1b 条、改了第 1a 条的「没转换」和第 3 条的遗留；在此之前 SIMD/浮点长文的登记 Agent（Claude Code）更新了「模板迁移与示意图补齐」第 1a、3 条（批次 A 已在线、SIMD 长文上线）；在此之前模板 Phase 1 批次 A 的提交 Agent（Claude Code）在「模板迁移与示意图补齐」加了第 1a 条；在此之前 SVG 视口检查的登记 Agent（Claude Code）更新了「模板迁移与示意图补齐」第 2 条的遗留项；在此之前存储 S1–S5 补图的登记 Agent（Claude Code）更新了「模板迁移与示意图补齐」第 2 条和存储系列的示意图状态；在此之前模板 Phase 0 的提交 Agent 更新了该节；第二部分其余内容仍是 2026-11-15 供电与网卡两篇上线后的状态。
 
 这份文件有两部分：
 
@@ -136,15 +136,27 @@
    - **页面：** what-a-drive-is-made-of、how-sata-works、how-usb-drives-talk、storage-over-a-network、how-memory-talks、coherent-interconnects、how-a-cpu-runs-a-program、how-a-cpu-guesses-ahead、how-cpu-caches-work、how-a-computer-boots、how-the-os-talks-to-hardware、how-pixels-reach-a-screen、how-power-reaches-the-cpu、how-a-nic-moves-packets、how-cores-share-memory、how-virtual-memory-works、how-a-gpu-computes、how-a-computer-is-wired、how-thunderbolt-works。每篇一个提交（`fca24bb5` … `8b2dac73`；`Built-By: script`、mechanical、`Derived-From:`），细节见 specs/site-template.md §10「Phase 1 batch A」。每篇的 models.cjs、browser.cjs、画布扫描都在完整构建上通过。
    - **预填一律打开**（不用 `"prefill": false`）：页面测试改为通过 `scripts/lib/prefill.cjs` 的 `unprefill(html, Z)` 读 `index.html`，按 copy 表数链接和数字时跳过生成的 `site.*` 键（authored 提交 `9a470caf`，标签重指 `42fba818`）。准备提交 `bb10f897` 只规整了五页的空白、补了 B2 缺的 `</head>`、合并了 A6 的两个 `<style>`。
    - **缓存键：** S1、S2 `?v=20261116b`，S4、S5 `?v=20261116e`，其余 15 篇 `?v=20261116a`（copy 文件多了 `site.*` 键）。
-   - **没转换：** how-sas-works（页脚是三个带键的段落 `footer.sources/models/ai`，布局只有一个 `footer` 键，要转换器变体）、how-pcie-works（整节写在一行、示意图是 `.wide` 里的 `figure.diag`，要转换器变体）；why-nvme-is-fast、why-compute-waits-for-memory、switches-that-compute 按计划留到后面的批次。
+   - **没转换：** how-sas-works、how-pcie-works 当时缺转换器变体，已在第 1b 条转换；why-nvme-is-fast、why-compute-waits-for-memory、switches-that-compute 按计划留到后面的批次。
    - **注意：** 迁移后 site-nav.js 不再在这些页面上把《标题》自动变成链接（D10）。`build-pages` 的 lint 列出了 19 处原来靠自动链接的提及（如 S5 第 5 章的《NVMe 为什么这么快》），要不要写成 `[[slug]]` 留给页面主人决定。how-a-computer-boots 的 models.cjs 读未提交的 a-secret-in-public/copy.zh.js，只能在工作区跑。
+1b. **模板后续改进 + SAS、PCIe 转换：2026-11-16 提交，未推送、未部署，等独立评审**（规范 specs/site-template.md §3a、§7、§9a、§10「Template follow-up」）。
+   - **模板（`d54606f9`，authored）：** 按 SIMD 长文 BRIEF 和评审记下的摩擦做了六件事，各有夹具测试（tests/site-template.cjs 104 → 155 项，新测试在旧库上失败）：
+     - `page.json` `"languages": {"en": "stub"}` 声明英文待译（`<html data-lang-en="stub">` 给 app.js 用）；默认 native，英文里留中文或 `[EN pending]` 构建失败；
+     - SVG 示意图标签宽度：构建按字符估宽，超出 viewBox 留给它的位置、或同一基线上两个标签相撞就失败；`--print-budgets <dir>` 给译者看每个标签的余量。SIMD 评审改过的 7 个英文标签能抓到 5 个，压在线上的 2 个抓不到（仍要截图）；
+     - `page.json` `generators`：生成的 partial 第一行带 GENERATED 头，`--check` 在临时副本里重跑生成器比对；
+     - `--print-bindings <dir>`；
+     - REGISTRY.json、pages.config.js 的标题和 desc 必须等于正文；
+     - `page.json` `dynamicKeys`：声明 `t('x.' + v)` 用到的键（声明了才对脚本做全量检查，批次 A 不受影响）。
+     另加键控页脚、`---` 分栏、`place=wide` 示意图、`legacyLayout` 的 compactSections / compactToc / afterProvenanceCss，旧页面输出逐字节不变。
+   - **SIMD 页（`79d42caa` authored，标签 `96958c09`）：** 去掉页内 `meta.en`，改用 `languages`、`dynamicKeys`、`generators`；版本 20261116b。
+   - **SAS、PCIe：** 测试适配 `b44d5f06`（authored）、标签 `3259a4fd`；SAS 转换 `0c3676fa`、补回 3 处运行时链接 `b5cdc9bd`（authored）；PCIe 转换 `50e7421e`。没有规整 HTML 的提交。线上 `SiteNav.report()`：SAS 3 处（都已改成 `[[…#ch7]]`），PCIe 0 处。缓存键：SAS、what-a-drive-is-made-of `20261116c`，PCIe `20261116a`。
+   - **遗留：** 部署前要独立评审；d54606f9 的提交说明里「47 项新断言在旧库上失败」数字不准，实际是 41 项断言失败，另有转换器 4b 段在旧库上直接崩溃（未逐项计数）。
 2. **S1–S5 补示意图：2026-11-16 完成并上线**（`9fcb9fac` 内容、`b2d49a1c` 标签重指）。沿用旧格式（内联 SVG，标签来自 copy 文件），走了 构建 → 独立评审 → 登记。现在转换器可以处理这五篇了。
    - 外溢视口检查的 `e.closest('svg')` 跳过：其余 16 篇也已改为只跳过 `<defs>`（`c3cef443`，标签重指见下一个提交），全部通过，没有页面需要改版式；switches-that-compute 没有逐元素的视口检查，探测过 320 宽下不溢出。
 3. **CPU SIMD 与浮点一篇：2026-11-16 上线**。`computing/systems/how-a-cpu-does-math/`（CPU 是怎么算小数的，又怎么一次算一排），第一篇直接用 Markdown 模板写的长文，14 章、14 个模型、13 张静态示意图，中英双语（英文 Haiku 翻译），经另一个 Claude Code 会话独立评审（specs/reviews/how-a-cpu-does-math-review-20261116.md）。
    - **提交：** 建页 `b6dcadc4`；登记与交叉链接 `c7795a74` + `1ef6c3b9`（图谱片段因 shell 失误单独进了前一个提交，两者同一说明）；标签与缓存键 `3a15d04b`；浏览器测试修正 `3d2b65c8`，本页标签指向它（original `b6dcadc4`，previous `1ef6c3b9`）。
    - **链接：** how-a-gpu-computes 第 1 章（宽向量 → 第 9 章）、第 8 章结论（FP8/FP4 缩放 → 第 7、8 章），how-a-cpu-runs-a-program 第 11 章 e2（→ 第 9 章）和第 12 章结尾（→ 页首），switches-that-compute 第 10 章新加的 `ch10.see`（→ 第 1 章）；这三页标签重指到 `1ef6c3b9`。缓存、猜测执行、供电三页只多了生成的被引用行，`page.json.version` 升到 `20261116b`，标签没重指（同批次 A 评审的处理）。GPU、A1 也是 `20261116b`；switches 第一次给四个脚本加 `?v=20261116`。
    - **别名：** 单独的「浮点数」「IEEE 754」从 switches 第 10 章移到新页第 1 章（另加 floating point、浮点、浮点数格式）；第 3 章拿四舍五入，第 7 章拿单独的 FP8/E4M3/E5M2，第 8 章拿单独的 FP4；A6 第 8 章保留「FP8 E4M3 E5M2」「FP4 格式」「FP8 formats」。别名前后扫描只有浮点数、IEEE 754 和标签 Floating Point 三处换主。
-   - **遗留：** 第 14 章以纯文本提到草稿《造出并运行一个最前沿的大语言模型，需要什么》（what-a-frontier-model-takes），那篇登记时改成 `[[…]]`。评审记下的模板摩擦（示意图标签宽度预算、生成的 partial、`--print-bindings`、REGISTRY 与 front matter 的 desc 一致性、控件内溢出检查）还没进模板。
+   - **遗留：** 第 14 章以纯文本提到草稿《造出并运行一个最前沿的大语言模型，需要什么》（what-a-frontier-model-takes），那篇登记时改成 `[[…]]`。评审记下的模板摩擦除「控件内溢出检查」外已在第 1b 条进模板（控件内溢出仍靠页面的 browser.cjs）。
 
 图片生成只作后备：示意图一律用 SVG；确需插画时经 Pi 网关（`ssh -N -L 8111:127.0.0.1:8111 pi`，`/v1/images/generations`，别名 `default-image`），不在 Mac 上起网关。登记仍串行，`pages.config.js` 在 Phase 2 之前仍手改。别人正在写的 17 篇草稿不转换，等它们登记后再说。
 
