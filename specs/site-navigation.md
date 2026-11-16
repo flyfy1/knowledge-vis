@@ -5,16 +5,17 @@ Added 2026-11-15 by Claude Code (claude-opus-5-5) at Yangyu's request:
 1. 「我在一个部分的话，希望可以看到它的 parent 页面是什么样子的。比如看到"计算机系统"，我点到"计算机"可以看到计算机的所有内容，然后"系统"就是计算机系统下面的内容。」
 2. 「如果你的文章里有对应的链接，我希望你可以都加上。比如，这里提到"硬盘里到底是什么"，我希望在那个地方是可以点击对应的。你可以考虑做一个 template 来动态生成，而不是自己去写这些东西。」
 
-Everything is generated from `pages.config.js`; nothing on a page is written by hand.
+Everything is generated from the site registry (page.json files and the hand-edited part of `pages.config.js`; specs/site-template.md §3b); nothing on a page is written by hand.
 
 **Template pages (2026-11-16, specs/site-template.md).**
 - Pages built by `scripts/build-pages.cjs` carry `<html data-template>`, a static breadcrumb with the same
   markup (`nav.site-nav`) and build-time links. `site-nav.js` does nothing on them (it leaves a `SiteNav` stub
   with `skipped: 'data-template'`).
 - For them the 《title》 auto-link becomes a build lint (D10).
-- `build-site-nav.cjs` reads `pages.config.js` through `scripts/lib/template.cjs`, the registry the template
-  build uses, so `site-nav-data.js` is a projection of it.
-- It never writes into a page that has a `page.json`: the layout emits the include lines from `includeLines()`.
+- `build-site-nav.cjs` reads the registry through `scripts/lib/template.cjs` (since Phase 2 the live pages are the
+  page.json files with a `"status"`, categories and subtopics the hand-edited part of `pages.config.js`;
+  specs/site-template.md §3b), the registry the template build uses, so `site-nav-data.js` is a projection of it.
+- It never writes into a template page (a `page.json` with a `"layout"`): the layout emits the include lines from `includeLines()`.
   A stale one is reported with the build-pages command.
 - `site-nav.css` also styles the generated "linked from / related" block (`.site-xref`). The `sn-` version was
   not bumped for that, because no unmigrated page uses those classes.

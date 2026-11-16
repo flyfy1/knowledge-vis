@@ -27,6 +27,16 @@
 - **每次修复都要同步更新对应的 spec**（缺了就新建）。只在 worklog 里记一笔不算完成。
 - **AUTHORSHIP.md 的修改需要 Yangyu 同意**，并在它的 §9 记一笔。
 
+## 登记页面：写 page.json，不手改 pages.config.js（2026-11-16 起）
+
+- `pages.config.js` 里 `window.KNOWLEDGE_PAGES` 那一段夹在 `GENERATED` 标记之间，由 `node scripts/build-registry.cjs` 从各页目录里的 `page.json` 生成。**不要往里加行、也不要改行**：`--check` 会失败，下一次生成会把手改丢掉。
+- 登记一个页面：
+  1. 在页面目录建 `page.json`（有 `"status": "live"` 才算登记；手写页面不要写 `"layout"`），字段与示例见 [specs/essays.md](specs/essays.md)「Registering an essay」第 4 步；
+  2. 跑 `node scripts/build-registry.cjs`，把它改写的 `pages.config.js`、`site-registry.json`、`CONCEPT-MAP.md`、`specs/atlas-edge-todo.md` 和 `page.json` 一起提交。
+- 新分类、新子主题、`KNOWLEDGE_FEATURED`、`KNOWLEDGE_ESSAYS` 的顺序仍在 `pages.config.js` 上半部分手改。
+- 已经手贴了一行？跑 `node scripts/build-registry.cjs --adopt`，它会把这一行搬进对应目录的 `page.json`。
+- 细则：[specs/site-template.md](specs/site-template.md) §3b。
+
 ## 页面署名标注（page-provenance）
 
 - 改了某页目录里的文件，就把该页在 `page-provenance.json` 里的 `sourceRevision` 更新为新提交（完整 40 位 SHA）。页头标签里的 `data-source-revision`、提交链接和短 SHA 要一起改。
@@ -56,16 +66,19 @@ node atlas/tests/data-quality.cjs
 node tests/concept-search.cjs                     # 匹配规则 + 十个日常词的落点
 node atlas/tests/registry-import.cjs              # 文章 REGISTRY.json → 图谱片段 + 搜索分片
 HOME_TEST_URL=http://127.0.0.1:18871/ node tests/home-concept-search.cjs   # 浏览器
-# 站点模板（改了 scripts/build-pages.cjs、scripts/lib/template.cjs、scripts/convert-essay.cjs、templates/ 或任何带 page.json 的页面时跑）
+# 站点模板（改了 scripts/build-pages.cjs、scripts/lib/template.cjs、scripts/convert-essay.cjs、templates/ 或任何带 "layout" 的 page.json 的页面时跑）
 node scripts/build-pages.cjs --all --check        # 已迁移页面的生成物与源文件一致 + 双语对齐 + [[引用]] + 数字绑定
 node tests/site-template.cjs                      # 夹具构建、失败模式、转换器 round trip
+# 站点登记表（page.json → pages.config.js KNOWLEDGE_PAGES、site-registry.json、CONCEPT-MAP 页面概念表、specs/atlas-edge-todo.md）
+node scripts/build-registry.cjs --check
+node tests/build-registry.cjs
 # 站内导航（面包屑、子主题视图、自动链接；登记新页面后先跑 node scripts/build-site-nav.cjs）
 node scripts/build-site-nav.cjs --check
 node tests/site-nav.cjs
 SITE_NAV_BASE_URL=http://127.0.0.1:18871/ node tests/site-nav-browser.cjs   # 浏览器
 ```
 
-- **已迁移到站点模板的页面**（目录里有 `page.json`）：改 `content.zh.md` / `content.en.md` / `figures/` / `page.json`，再跑 `node scripts/build-pages.cjs <页面目录>`；不要手改生成的 `index.html`、`copy.*.js`、`refs.json`。细则见 [specs/site-template.md](specs/site-template.md)。
+- **已迁移到站点模板的页面**（目录里的 `page.json` 有 `"layout"`；只有登记字段、没有 `layout` 的 `page.json` 是手写页面的登记行）：改 `content.zh.md` / `content.en.md` / `figures/` / `page.json`，再跑 `node scripts/build-pages.cjs <页面目录>`；不要手改生成的 `index.html`、`copy.*.js`、`refs.json`。细则见 [specs/site-template.md](specs/site-template.md)。
   - 已迁移页面的「被这些页面引用」是生成的：任何页面（迁移与否）新加、删掉或改了指向已迁移页面的链接，被指向的页面就会漂移，`--all --check` 和 Pages 工作流会失败，直到跑一次 `node scripts/build-pages.cjs --all` 并把重建的页面一起提交。
   - 页面测试读 `index.html` 时用 `scripts/lib/prefill.cjs` 的 `unprefill(html, Z)` 去掉预填的中文（只去掉预填的，手写的仍会被查出来）；按 copy 表数链接时跳过生成的 `site.*` 键。
 - 新增长文（一篇讲透一个领域）：标准、文件布局与登记步骤见 [specs/essays.md](specs/essays.md)。

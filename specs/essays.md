@@ -59,13 +59,16 @@ The first essay was `demos/scarcity-moves/`. Six more were added on 2026-11-11 a
                     breadcrumb and auto-links, added by scripts/build-site-nav.cjs; specs/site-navigation.md)
   BRIEF.md          builder notes, sources, checked / not checked, review
   tests/models.cjs  tests/browser.cjs
+  page.json         once registered: the registry row (slug, kind, title, desc, tags, place, status, order;
+                    no "layout"), from which pages.config.js KNOWLEDGE_PAGES is generated (Registering, step 4)
 ```
 
-**Pages migrated to the site template** (a `page.json` in the directory; specs/site-template.md) keep
+**Pages migrated to the site template** (a `page.json` with a `"layout"`; specs/site-template.md) keep
 `models.js`, `app.js`, `REGISTRY.json`, `BRIEF.md` and `tests/`. Their text and structure move into sources:
 
 ```
-  page.json         slug, layout, scripts, version (cache key), provenance note
+  page.json         slug, layout, scripts, version (cache key), provenance note, and the registry fields
+                    (place, status, tags, order; title and desc come from the content)
   content.zh.md     the Chinese text (front matter, chapters, ::: strings / lab / diagram / html / footer)
   content.en.md     the same skeleton in English
   page.css          the page's own styles
@@ -99,14 +102,34 @@ types ("为什么要打疫苗", "how does my phone know where I am"), not only t
    `page.json.provenanceNote`: edit those and rebuild, never the HTML. Do not set `originalSourceRevision` on first labelling:
    `tests/page-provenance-core.cjs` requires it to differ from `sourceRevision`. Add it when the label is
    first repointed.
-4. **pages.config.js.** Add the category and subtopic if they are new, plus a `<category>/index.html`
-   redirect (copy `probability/index.html`). Add the entry and append the slug to `window.KNOWLEDGE_ESSAYS`.
-   Set `languages: ["zh"]` if there is no English yet. Then run `node scripts/build-site-nav.cjs` (adds the
-   site-nav include to the page, the subtopic redirect stub and the page to `site-nav-data.js`) and
-   `node tests/site-nav.cjs`; see specs/site-navigation.md. A template page gets its include lines from the
-   layout, and build-site-nav never edits it. After registering any page, run `node scripts/build-pages.cjs
-   --all`, because template pages list their backlinks. Quoting another page's exact title in 《》 / “”
-   makes it a link automatically.
+4. **Register: page.json, not pages.config.js** (Phase 2, 2026-11-16; specs/site-template.md §3b). The
+   `KNOWLEDGE_PAGES` block of `pages.config.js` is generated: do not add or edit a row there by hand
+   (`node scripts/build-registry.cjs --check` fails, and the next run drops the row).
+   - Hand-edited, as before: a new category in `KNOWLEDGE_CATEGORIES` and subtopic in `KNOWLEDGE_SUBTOPICS`, plus a
+     `<category>/index.html` redirect (copy `probability/index.html`); append the slug to `window.KNOWLEDGE_ESSAYS`.
+   - **A hand-written essay** (the old pattern, e.g. the 17 drafts): create `<category>/<subtopic>/<slug>/page.json`
+     with the metadata only, copying title, desc and tags from its `REGISTRY.json`:
+     ```json
+     {"slug": "<slug>", "kind": "essay",
+      "title": {"zh": "…", "en": "…"}, "desc": {"zh": "…", "en": "…"},
+      "tags": [{"zh": "…", "en": "…"}],
+      "category": "<category>", "subtopic": "<subtopic>", "stage": "university",
+      "status": "live", "path": "<category>/<subtopic>/<slug>/"}
+     ```
+     No `"layout"` (that would make it a template page). Add `"languages": ["zh"]` if there is no English yet. Leave
+     `"order"` out: the page goes after every registered page.
+   - **A template essay** (content.zh.md): its `page.json` already exists; add `"category"`, `"subtopic"`,
+     `"stage"`, `"status": "live"`, `"path"` and `"tags"`. Title and desc stay in the content. A registered page may
+     not have `"languages": {"en": "stub"}` (build error).
+   - Then run `node scripts/build-registry.cjs`. It rewrites the KNOWLEDGE_PAGES block, `site-registry.json`, the
+     CONCEPT-MAP.md page → concept section and `specs/atlas-edge-todo.md`; commit them with the page.json.
+     If you already pasted a row into pages.config.js, `node scripts/build-registry.cjs --adopt` moves it into a
+     page.json.
+   - Then `node scripts/build-site-nav.cjs` (adds the site-nav include to the page, the subtopic redirect stub and the
+     page to `site-nav-data.js`) and `node tests/site-nav.cjs`; see specs/site-navigation.md. A template page gets
+     its include lines from the layout, and build-site-nav never edits it. After registering any page, run
+     `node scripts/build-pages.cjs --all`, because template pages list their backlinks. On a hand-written page,
+     quoting another page's exact title in 《》 / “” makes it a link automatically.
 5. **Atlas.** Run `node scripts/atlas-import-registry.cjs <dir>/` (first `--add-region`, or decide on
    `--region`, when the category has no region). Write the edges by hand into
    `atlas/graph/lessons/<slug>.json`, only where one chapter builds on another or where the chapter links
@@ -128,7 +151,10 @@ types ("为什么要打疫苗", "how does my phone know where I am"), not only t
    storage essays (what-a-drive-is-made-of, how-sata-works, how-sas-works, how-usb-drives-talk, storage-over-a-network),
    the bus essays (how-pcie-works, how-a-computer-is-wired, how-thunderbolt-works, how-memory-talks, coherent-interconnects), how-cpu-caches-work, how-a-cpu-runs-a-program, how-virtual-memory-works, how-a-cpu-guesses-ahead, how-cores-share-memory, how-a-gpu-computes, how-a-computer-boots, how-the-os-talks-to-hardware, how-pixels-reach-a-screen, how-power-reaches-the-cpu, how-a-nic-moves-packets, why-compute-waits-for-memory and why-nvme-is-fast use it since 2026-11-15, switches-that-compute since 2026-11-16 (template pages, including how-a-cpu-does-math, through page.json.version); older essays do not yet, so add the key the next time one of them
    changes.
-8. Add rows to CONCEPT-MAP.md.
+8. **CONCEPT-MAP.md and the registry.** After the atlas import (step 5), run `node scripts/build-registry.cjs` again:
+   the page → concept → anchor table in CONCEPT-MAP.md is generated from the atlas, so do not hand-write rows for
+   the essay. Its links that no atlas edge covers appear in `specs/atlas-edge-todo.md` (D9); write an edge only
+   where the reason holds (step 5). `node scripts/build-registry.cjs --check` must pass before committing.
 
 ## The essays
 

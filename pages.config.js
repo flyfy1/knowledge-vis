@@ -1,12 +1,15 @@
 /* ============================================================
  * 知识索引配置 —— visual.integ.life 首页的卡片与分类筛选从这里生成。
  *
- * 新增一个知识页时：
+ * 新增一个知识页时（2026-11-16 起，站点模板 Phase 2）：
  *   1. 在 <分类>/<子主题>/ 下建页面目录（如 signal/systems/convolution/），放入该页的 index.html 等文件；
- *   2. 在 KNOWLEDGE_PAGES 里加一条记录，status 设为 "live"、category 填分类 id；
+ *   2. 在该目录建 page.json（字段即下面的字段说明，外加 kind；status 设为 "live"），
+ *      然后跑 node scripts/build-registry.cjs：文件末尾的 KNOWLEDGE_PAGES 由它生成，不要手改那一段；
+ *      新分类、新子主题、精选与长文顺序仍在本文件上半部分手改；
  *   3. 重新部署即可，首页与筛选不用改。
+ *   细则：AGENTS.md「登记页面」、specs/essays.md「Registering an essay」、specs/site-template.md §3b。
  *
- * 字段说明（UI-I18N-SPEC.md「分类与标签」一节为权威约定）：
+ * 字段说明（UI-I18N-SPEC.md「分类与标签」一节为权威约定；page.json 里同名，另有 kind、order）：
  *   slug     唯一标识（通常与页面目录名一致；投资图谱为 atlas-investment）
  *   title    {zh, en} 双语标题（兼容旧格式：纯字符串）
  *   desc     {zh, en} 双语一句话说明（兼容旧格式：纯字符串）

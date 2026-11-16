@@ -442,8 +442,8 @@ anchor and aliases. It is a schema-2 fragment `atlas/graph/lessons/<slug>.json`:
 ```sh
 # once per new region (category tech/economics/society → region); the category is claimed in groups.json
 node scripts/atlas-import-registry.cjs --add-region tech --zh 技术与设备 --en "Technology & devices" --categories tech
-# once per essay, after the page is registered live in pages.config.js
-node scripts/atlas-import-registry.cjs tech/devices/<slug>/            # or .../REGISTRY.json; --region <id> to override
+# once per essay, after the page is registered live (its page.json, then node scripts/build-registry.cjs)
+node scripts/atlas-import-registry.cjs tech/devices/<slug>/            # page.json "concepts" if present, else REGISTRY.json; --region <id> to override
 node scripts/build-atlas-data.cjs --concept-map && node atlas/tests/data-quality.cjs
 # preview without touching the repo
 node scripts/build-atlas-data.cjs --extra-lessons /tmp/frags --out /tmp/atlas-preview

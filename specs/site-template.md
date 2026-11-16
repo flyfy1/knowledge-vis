@@ -5,7 +5,7 @@
 - Background, measurements and the prototype: [proposals/site-template.md](proposals/site-template.md).
   Where the two differ, this file wins.
 - Phase 0 (tooling, no page converted) landed 2026-11-16. Phases 1–3 are below; the plan of record is in
-  HANDOFF.md 「模板迁移与示意图补齐」.
+  HANDOFF.md 「模板迁移与示意图补齐」. Phase 2 (the registry, §3b) landed 2026-11-16, not yet reviewed or deployed.
 
 ## 1. Decisions as taken
 
@@ -35,10 +35,11 @@ node scripts/convert-essay.cjs <page-dir>       # migration: write sources next 
 node tests/site-template.cjs                    # fixture build, failure modes, converter round trip, site-nav skip
 ```
 
-- `--all` covers only live pages in `pages.config.js` whose directory has `page.json`. Untracked drafts and the
+- `--all` covers only registered live pages whose `page.json` has a `"layout"` (§3b). Untracked drafts and the
   fixture site are never included.
-- An unregistered draft is built by naming its directory. Its slug is not in `pages.config.js`, so the build reads
-  slug, path, category, subtopic, stage and title from the draft's `REGISTRY.json` and warns `draft: …`. The
+- An unregistered draft is built by naming its directory. Its page.json has no `"status"`, so the build reads
+  slug, path, category, subtopic and stage from its `page.json` when that names `category` and `path`, else from its
+  `REGISTRY.json` (and the title from there), and warns `draft: …`. The
   draft has no backlinks, related pages or provenance label, and no other page can `[[link]]` to it until it is
   registered. A `page.json` slug that differs from the slug registered for that directory is an error.
 - `--no-chrome --no-prefill` rebuild the pre-template page byte for byte. They exist for equivalence checks;
@@ -51,7 +52,8 @@ node tests/site-template.cjs                    # fixture build, failure modes, 
 ```
 <category>/<subtopic>/<slug>/
   page.json         slug, kind, layout, scripts, version (the ?v= cache key), provenanceNote; optional prefill,
-                    languages, dynamicKeys, generators, legacyLayout (§3a)
+                    languages, dynamicKeys, generators, legacyLayout (§3a); once registered also category,
+                    subtopic, stage, status, path, tags, order (§3b)
   content.zh.md     the Chinese text: front matter, chapters, directive blocks        (source, edit this)
   content.en.md     the same skeleton in English                                       (source, edit this)
   page.css          the page's own styles, inlined by the layout                       (source)
@@ -61,7 +63,7 @@ node tests/site-template.cjs                    # fixture build, failure modes, 
   bindings.cjs      optional: prose numbers computed from models.js                   (source)
   models.js app.js  unchanged page code                                                (source)
   index.html copy.zh.js copy.en.js refs.json                                           (GENERATED, do not edit)
-  REGISTRY.json BRIEF.md tests/                                                        (unchanged until Phase 2)
+  REGISTRY.json BRIEF.md tests/                                                        (unchanged; §3b)
 templates/layouts/essay.html   the essay layout (head, top bar, hero, TOC, sections, footer, scripts)
 scripts/lib/template.cjs       registry, refs, inline Markdown, content parser, builder
 ```
@@ -77,7 +79,68 @@ scripts/lib/template.cjs       registry, refs, inline Markdown, content parser, 
 | `"legacyLayout"` | whitespace of a converted hand-written page (§10). |
 
 Every generated file says so in its first line (`<!-- GENERATED … -->`, `/* GENERATED … */`, refs.json
-`"_generated"`). Category, subtopic, stage and titles still come from `pages.config.js` until Phase 2.
+`"_generated"`). Category, subtopic, stage and status come from the registry fields of `page.json` (§3b); title and
+desc from the content.
+
+### 3b. The registry (Phase 2, 2026-11-16)
+
+**One rule: a page is registered by a `page.json` with a `"status"`** (`"live"` or `"planned"`), in the page's own
+directory. Everything else is generated from those files by `node scripts/build-registry.cjs` (`--check` in tests):
+
+| Projection | What |
+| --- | --- |
+| `pages.config.js` `KNOWLEDGE_PAGES` | the block between `/* ===== GENERATED: KNOWLEDGE_PAGES …` and `/* ===== END GENERATED … */` (D8). The rest of the file (categories, stages, subtopics, FEATURED, ESSAYS order, the header) stays hand-edited. |
+| `site-registry.json` | `pages` (place, kind, status, template flag, title, desc, `anchors`, owned `concepts`), `adapters.leetcode`, `concepts` (atlas nodes whose primary lesson is a registered page: page, anchor, title, merged aliases), `edges` (`ref`: every scanned link between live pages, `slug#chN` → `slug#anchor`; `seeAlso`: REGISTRY.json `relatedPages`), `backlinks` (what template pages render). One entry per line. |
+| `CONCEPT-MAP.md` | the page → concept → anchor tables between `<!-- GENERATED:registry-concepts -->` markers, after the atlas appendix. Hand-written text elsewhere stays. |
+| `specs/atlas-edge-todo.md` | D9: linked page pairs that no atlas edge covers (rule in its header). Never turned into edges. |
+
+site-nav-data.js (build-site-nav.cjs) and the template build (build-pages.cjs) read the same registry through
+`scripts/lib/template.cjs` `createSite`, which calls `scripts/lib/registry.cjs`.
+
+**page.json kinds.**
+- **Metadata-only** (no `"layout"`): a hand-written page. Fields: `slug`, `kind` (essay | lesson | demo | tool),
+  `title` and `desc` `{zh, en}`, `tags`, optional `languages: ["zh"]`, `category`, `subtopic` (optional only for
+  entrance pages such as `atlas/`), `stage`, `status`, `path`, `order`. The seed commit wrote one for all 227
+  hand-written pages from their pages.config.js rows.
+- **Template page** (`"layout"`): the fields of §3/§3a plus `category`, `subtopic`, `stage`, `status`, `path`, `tags`,
+  `order`. No `title` / `desc` (an error): they are the `# … {#hero}` heading (plain text; markup there is an error)
+  and the front-matter `desc` of each `content.<lang>.md`.
+
+**Checks** (each names the page.json): `path` equals its directory, and is `<category>/<subtopic>/<slug>/` when a
+subtopic is given; category and subtopic exist in the hand-edited tables; stage, status and kind are known values;
+slugs and orders are unique; title, desc, tags are bilingual. Not scanned: `.git`, `node_modules`, `.claude`,
+`.agent`, `.runs`, `tests/fixtures/`, `specs/`, `variants/`, `templates/`.
+
+**Order.** The home page lists registered pages in block order (live first). It is page.json `"order"` (the seed
+used 10 × the old position); a page without one goes after every ordered page, by path. So a new registration leaves
+`order` out.
+
+**Hand edits.** `--check` compares the block with what the page.json files give and says what happened: a row with
+no page.json (pasted by hand: "write page.json, or run --adopt"), a field that differs from its page.json, a
+page.json not yet in the block, or `KNOWLEDGE_PAGES` changed outside the fence. `--adopt` moves rows that have no
+page.json into new ones (ordered last) and takes hand edits of existing rows into their page.json; on a template page
+a title or desc that differs from the content is refused. The same command, on the unfenced file, made the seed commit.
+
+**Commits (2026-11-16).** 75228954 tooling (inert until the fence exists); 71144070 the seed (`--adopt`: 227 new and 22
+merged page.json files, the fenced block; pages.config.js window deep-equal to 356de782, regeneration byte-identical,
+site-nav-data.js and all 22 template pages unchanged); c51930a1 concept refs through the search table and the stricter
+language checks; 5de49541 the linked-from colon at 320 px (site-nav.css, include key sn-20261116b on all 249 pages).
+
+**Mode switch.** A `pages.config.js` without the fence is read the old way (rows from KNOWLEDGE_PAGES). The test
+fixture site (`tests/fixtures/site-template/`) works like that; `tests/build-registry.cjs` covers both modes.
+
+**LeetCode, variants, atlas, home, demos (D5).** Entrance pages (`atlas/`, `investment/atlas/`, `leetcode/`,
+`demos/fable-flight/`, `demos/scarcity-moves/`) have metadata-only page.json files like any hand-written page; none is
+converted. The 204 LeetCode lessons stay on their pipeline: `site-registry.json` `adapters.leetcode` lists them from
+`leetcode/problems.config.js`, and they are not site pages for refs or backlinks. `variants/` is frozen and not in the
+registry. The home page reads the generated block as before.
+
+**REGISTRY.json is not replaced yet (deferred).** The plan was "page.json replaces REGISTRY.json". It is not clean
+now: REGISTRY.json carries the concepts (atlas import), essay tests read it, `scripts/test_index_pagination.cjs`
+defines an essay as a live page with a REGISTRY.json, its `tags` differ from the card tags on 9 pages, and deleting
+files is outside this phase. What landed: `atlas-import-registry.cjs <dir>` reads `page.json` `"concepts"` when
+present, else `REGISTRY.json` (both is an error), and the registry reads concepts' `relatedPages` from either. Moving
+concepts into page.json, page by page, and redefining "essay" as `kind: "essay"` is a later step.
 
 ## 4. Content format
 
@@ -201,8 +264,12 @@ keys, and the build fails if it names a key no block defines.
   inside the closing quote and `'` / `’` interchangeable, and `<cite>Title</cite>`. It never rewrites prose; decide,
   then write `[[slug]]` or leave the quotation. When a hand-written page is converted, every lint line is a link
   readers have today; the Phase 1 batch A review found the first version missed `“Title.”` (2026-11-16).
-- Concepts resolve through `atlas/data.js` node titles and aliases. The merged search alias table comes in
-  Phase 2.
+- Concepts resolve through the table search uses (Phase 2): `atlas/data.js` node ids, titles and aliases (the aliases
+  already merged from the node, `atlas/graph/aliases.json` and the essay fragments), each compared after
+  `search/concept-search.js` `squash` (NFKC, lower case; spaces, hyphens, middle dots, apostrophes ignored), so
+  `[[concept:Cache-Line]]` finds "cache line". It stays an exact match: search's prefix and contains scoring is not
+  used, so `[[concept:写放大]]` does not resolve (the NVMe concepts are titled「写放大、垃圾回收与 Trim」and aliased
+  「写放大 WAF」). A term two concepts own is an error naming both (40 such terms in atlas/data.js on 2026-11-16).
 
 ## 6. Numbers: bindings
 
@@ -225,8 +292,9 @@ chapter by chapter when the prose is next edited, not during migration.
 - **Partials:** each exists and names only defined keys.
 - **Layout keys:** every `data-i18n*` key in the built page, including those the layout and chrome name, is
   defined (§4 「Page-wide keys」).
-- **Languages:** unless `page.json` says `"languages": {"en": "stub"}`, no English string holds Chinese text or
-  `[EN pending]` (§3a).
+- **Languages:** unless `page.json` says `"languages": {"en": "stub"}`, no English string holds Chinese text (also inside
+  an attribute, `<abbr title="目录">`) or `[EN pending]` in any case (§3a). A stub on a registered page is an error,
+  on a draft a warning (follow-up review 2026-11-16 §5).
 - **Registry text:** `REGISTRY.json` `title.<lang>` equals the `# … {#hero}` heading and `desc.<lang>` equals the
   front-matter `desc`; a registered page's `pages.config.js` title equals the heading too. Edit them together
   (they merge in Phase 2). The SIMD review found an English desc an order of magnitude off the registry's.
@@ -370,7 +438,8 @@ below marked *(2026-11-16)* are template features added for them, so the next es
      is registered.
 7. **Commit.** Commit sources and outputs together, never the outputs alone.
 8. **Registration.** Follow essays.md「Registering」:
-   - add the row to `pages.config.js`;
+   - add the registry fields to `page.json` (`category`, `subtopic`, `stage`, `"status": "live"`, `path`, `tags`; §3b),
+     remove `"languages": {"en": "stub"}` (an error on a registered page) and run `node scripts/build-registry.cjs`;
    - add the `page-provenance.json` entry and rebuild the page (the label is rendered from it);
    - run `node scripts/build-pages.cjs --all`, which picks the page up and refreshes backlinks;
    - run `node scripts/build-site-nav.cjs` (it does not edit template pages) and `--all --check`.
@@ -386,8 +455,10 @@ registered.
    files are not touched.
    - The copy tables have the same keys and values, but key order may differ, so `copy.*.js` are not
      byte-identical.
-   - A failed run leaves `page.json`. Delete the written sources (`page.json`, `content.*.md`, `page.css`,
-     `figures/`) before you retry or commit anything else, or `--all --check` fails.
+   - The page's `page.json` is its registry row (§3b). The converter merges the template fields into it (keeping the
+     registry fields, dropping title and desc, which the content now holds). A failed run puts the original
+     `page.json` back (the attempted one is `page.json.converted`) and leaves `content.*.md`, `page.css` and
+     `figures/`; delete those before you retry or commit anything else.
    - A page with more than one `<style>` block is refused. Merge them in `index.html` in a commit of its own,
      then convert. how-a-gpu-computes had two; they were merged in bb10f897.
 2. Run the page's `tests/models.cjs` and `tests/browser.cjs` on a `--no-chrome --no-prefill` build. Its
@@ -409,7 +480,9 @@ registered.
    The moment `page.json` exists, `--all` picks the page up, and the old hand-written outputs count as drift.
    - Trailers: `Built-By: script (deterministic, no model: scripts/convert-essay.cjs)` and
      `Authorship-Impact: mechanical`, plus the `Derived-From:` lines the converter prints. Since 2026-11-16 these
-     include `index.html -> page.json` (page.json carries the provenance note); the batch A commits wrote it by
+     include `index.html -> page.json` (page.json carries the provenance note) when the converter creates page.json;
+     since Phase 2 every registered page already has one, so the line is not printed (AUTHORSHIP.md §4 honours it only
+     in the commit that creates the file); the batch A commits wrote it by
      hand, the how-sas-works and how-pcie-works conversions (0c3676fa, 50e7421e) left it out, so their
      `page.json` reads as created by the script (follow-up review 2026-11-16).
    - Name the operating agent in the body or Verified-By, not in Built-By. A registered agent name there would
@@ -519,13 +592,12 @@ passed (4516 checks). The full build failed only the CJK-in-`index.html` check o
 
 - **Phase 1:** the rest of the essays (batch A and the two leftovers are done, §10): why-nvme-is-fast,
   why-compute-waits-for-memory and switches-that-compute, then the older essays with other hero or section shapes.
-- **Phase 2:**
-  - `page.json` replaces `REGISTRY.json`;
-  - `site-registry.json` and `scripts/build-registry.cjs`;
-  - generated `KNOWLEDGE_PAGES` and CONCEPT-MAP tables, with `site-nav-data.js` projected from the new registry
-    (today it reads the same `pages.config.js` through `scripts/lib/template.cjs`);
-  - concept refs through the merged alias table;
-  - backlinks for every page.
+- **Phase 2 leftovers** (the rest landed, §3b):
+  - `page.json` replacing `REGISTRY.json` (deferred, §3b);
+  - backlinks are computed for every page (`site-registry.json` `backlinks`) but rendered only on template pages; a
+    hand-written page would need site-nav.js to show them;
+  - the 335 pairs in `specs/atlas-edge-todo.md` need a human (or an agent with sources) to write edges where a
+    reason holds.
 - **Phase 3:** the lesson layout and the `i18n.js` converter.
 - **Later:**
   - the unbound-digit lint;

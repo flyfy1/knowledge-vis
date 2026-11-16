@@ -1,6 +1,6 @@
 # HANDOFF.md — 开工前先读
 
-最后更新：2026-11-16，模板后续改进的提交 Agent（Claude Code）在「模板迁移与示意图补齐」加了第 1b 条、改了第 1a 条的「没转换」和第 3 条的遗留；在此之前 SIMD/浮点长文的登记 Agent（Claude Code）更新了「模板迁移与示意图补齐」第 1a、3 条（批次 A 已在线、SIMD 长文上线）；在此之前模板 Phase 1 批次 A 的提交 Agent（Claude Code）在「模板迁移与示意图补齐」加了第 1a 条；在此之前 SVG 视口检查的登记 Agent（Claude Code）更新了「模板迁移与示意图补齐」第 2 条的遗留项；在此之前存储 S1–S5 补图的登记 Agent（Claude Code）更新了「模板迁移与示意图补齐」第 2 条和存储系列的示意图状态；在此之前模板 Phase 0 的提交 Agent 更新了该节；第二部分其余内容仍是 2026-11-15 供电与网卡两篇上线后的状态。
+最后更新：2026-11-16，模板 Phase 2 的提交 Agent（Claude Code）在「模板迁移与示意图补齐」加了第 1c 条、改了末尾「pages.config.js 仍手改」一句和第 2 部分「未上线：17 篇中文草稿」的登记说明；在此之前模板后续改进的提交 Agent（Claude Code）在「模板迁移与示意图补齐」加了第 1b 条、改了第 1a 条的「没转换」和第 3 条的遗留；在此之前 SIMD/浮点长文的登记 Agent（Claude Code）更新了「模板迁移与示意图补齐」第 1a、3 条（批次 A 已在线、SIMD 长文上线）；在此之前模板 Phase 1 批次 A 的提交 Agent（Claude Code）在「模板迁移与示意图补齐」加了第 1a 条；在此之前 SVG 视口检查的登记 Agent（Claude Code）更新了「模板迁移与示意图补齐」第 2 条的遗留项；在此之前存储 S1–S5 补图的登记 Agent（Claude Code）更新了「模板迁移与示意图补齐」第 2 条和存储系列的示意图状态；在此之前模板 Phase 0 的提交 Agent 更新了该节；第二部分其余内容仍是 2026-11-15 供电与网卡两篇上线后的状态。
 
 这份文件有两部分：
 
@@ -102,6 +102,8 @@
 | `earth/geo/what-magnitude-means/` | |
 | `biology/body/why-we-get-sleepy/` | **模型在默认 τ=24.2 h 下给出的时差方向与实测数据相反**，评审要先判断这一点 |
 
+**登记方式（2026-11-16 起）：** 每篇在自己目录写一个只有登记字段的 `page.json`（标题、描述、标签从它的 `REGISTRY.json` 抄；不写 `layout`），跑 `node scripts/build-registry.cjs`，不要往 `pages.config.js` 的 KNOWLEDGE_PAGES 里加行；见第 1c 条。
+
 登记时要新建的分类或子主题：`arts/music`、`tech/networks`、`tech/energy`、`tech/semiconductors`、`computing/quantum`、`economics/markets`。
 
 ### 课程现状（2026-11-15）
@@ -150,6 +152,11 @@
    - **SIMD 页（`79d42caa` authored，标签 `96958c09`）：** 去掉页内 `meta.en`，改用 `languages`、`dynamicKeys`、`generators`；版本 20261116b。
    - **SAS、PCIe：** 测试适配 `b44d5f06`（authored）、标签 `3259a4fd`；SAS 转换 `0c3676fa`、补回 3 处运行时链接 `b5cdc9bd`（authored；标签在 `21a4c2c8` 指向它）；PCIe 转换 `50e7421e`。没有规整 HTML 的提交。线上 `SiteNav.report()`：SAS 3 处（都已改成 `[[…#ch7]]`），PCIe 0 处。缓存键：SAS、what-a-drive-is-made-of `20261116c`，PCIe `20261116a`。
    - **遗留：** 部署前要独立评审；d54606f9 的提交说明里「47 项新断言在旧库上失败」数字不准，实际是 41 项断言失败，另有转换器 4b 段在旧库上直接崩溃（未逐项计数）。
+1c. **Phase 2 登记表：2026-11-16 提交，未推送、未部署，等独立评审**（规范 specs/site-template.md §3b）。
+   - **规则变了：登记一个页面 = 在页面目录写 `page.json`（有 `"status": "live"`），再跑 `node scripts/build-registry.cjs`。** `pages.config.js` 的 `KNOWLEDGE_PAGES` 一段夹在 GENERATED 标记之间、由脚本生成，手改会让 `--check` 失败（报错里写明怎么办，`--adopt` 能把手贴的行搬进 page.json）。分类、子主题、FEATURED、ESSAYS 顺序仍手改。步骤写在 AGENTS.md「登记页面」和 specs/essays.md「Registering an essay」第 4 步。
+   - **提交：** `75228954` 工具（authored；`scripts/build-registry.cjs`、`scripts/lib/registry.cjs`、`tests/build-registry.cjs`，template.cjs / build-site-nav / convert-essay 改为「page.json 有 layout 才是模板页」）；`71144070` 种子（mechanical，`--adopt` 生成 227 个新 page.json、给 22 个模板页的 page.json 加登记字段，pages.config.js 换成生成段；求值后与 `356de782` 逐项相等，重新生成逐字节一致，site-nav-data.js 和 22 个模板页都没变）；`c51930a1` `[[concept:…]]` 走搜索的别名表（squash 归一，仍是精确匹配，两个概念共有的词报错），`languages.en: "stub"` 在已登记页面上是错误、草稿上是警告，英文里属性中的中文和小写 `[en pending]` 也报错，tests/site-template.cjs 失败时也清理临时目录；`5de49541` 「被这些页面引用」一行开头的标题改成 inline，320 宽下冒号不再单独换行（site-nav.css，include 键 `sn-20261116b`，249 个页面的 include 行跟着变）。
+   - **新生成物：** `site-registry.json`（页面、锚点、概念、ref / seeAlso 边、被引用、LeetCode 适配行）、CONCEPT-MAP.md 末尾的「页面 → 概念 → 锚点」表（生成段；以后登记不再手写逐页概念表）、`specs/atlas-edge-todo.md`（D9：有链接但没有图谱边的页面对，335 对待人工判断，脚本从不写边）。
+   - **没做 / 推迟：** page.json 取代 REGISTRY.json（概念仍在 REGISTRY.json，`atlas-import-registry.cjs` 已能读 page.json 的 `concepts`；理由见规范 §3b）；手写页面上不显示被引用列表（registry 里有）。
 2. **S1–S5 补示意图：2026-11-16 完成并上线**（`9fcb9fac` 内容、`b2d49a1c` 标签重指）。沿用旧格式（内联 SVG，标签来自 copy 文件），走了 构建 → 独立评审 → 登记。现在转换器可以处理这五篇了。
    - 外溢视口检查的 `e.closest('svg')` 跳过：其余 16 篇也已改为只跳过 `<defs>`（`c3cef443`，标签重指见下一个提交），全部通过，没有页面需要改版式；switches-that-compute 没有逐元素的视口检查，探测过 320 宽下不溢出。
 3. **CPU SIMD 与浮点一篇：2026-11-16 上线**。`computing/systems/how-a-cpu-does-math/`（CPU 是怎么算小数的，又怎么一次算一排），第一篇直接用 Markdown 模板写的长文，14 章、14 个模型、13 张静态示意图，中英双语（英文 Haiku 翻译），经另一个 Claude Code 会话独立评审（specs/reviews/how-a-cpu-does-math-review-20261116.md）。
@@ -158,7 +165,7 @@
    - **别名：** 单独的「浮点数」「IEEE 754」从 switches 第 10 章移到新页第 1 章（另加 floating point、浮点、浮点数格式）；第 3 章拿四舍五入，第 7 章拿单独的 FP8/E4M3/E5M2，第 8 章拿单独的 FP4；A6 第 8 章保留「FP8 E4M3 E5M2」「FP4 格式」「FP8 formats」。别名前后扫描只有浮点数、IEEE 754 和标签 Floating Point 三处换主。
    - **遗留：** 第 14 章以纯文本提到草稿《造出并运行一个最前沿的大语言模型，需要什么》（what-a-frontier-model-takes），那篇登记时改成 `[[…]]`。评审记下的模板摩擦除「控件内溢出检查」外已在第 1b 条进模板（控件内溢出仍靠页面的 browser.cjs）。
 
-图片生成只作后备：示意图一律用 SVG；确需插画时经 Pi 网关（`ssh -N -L 8111:127.0.0.1:8111 pi`，`/v1/images/generations`，别名 `default-image`），不在 Mac 上起网关。登记仍串行，`pages.config.js` 在 Phase 2 之前仍手改。别人正在写的 17 篇草稿不转换，等它们登记后再说。
+图片生成只作后备：示意图一律用 SVG；确需插画时经 Pi 网关（`ssh -N -L 8111:127.0.0.1:8111 pi`，`/v1/images/generations`，别名 `default-image`），不在 Mac 上起网关。登记仍串行；2026-11-16 起登记写 page.json、由 `scripts/build-registry.cjs` 生成 `pages.config.js` 的 KNOWLEDGE_PAGES（第 1c 条），不再手改那一段。别人正在写的 17 篇草稿不转换，等它们登记后再说。
 
 ### 下一步，按顺序
 
