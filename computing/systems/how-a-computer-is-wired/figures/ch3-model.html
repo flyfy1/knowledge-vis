@@ -1,0 +1,14 @@
+<figure class="lab">
+    <h3 data-i18n="ch3.model.title"></h3>
+    <p class="how" data-i18n-html="ch3.model.how"></p>
+    <canvas class="cv " id="nbCv" role="img" data-i18n-aria="ch3.model.aria"></canvas>
+    <div class="ctl"><label class="rng"><span data-i18n="ch3.ctl.cpu"></span><input type="range" id="nbC" min="0" max="6.4" step="0.1" value="6.4"><output id="nbCo"></output></label><label class="rng"><span data-i18n="ch3.ctl.gpu"></span><input type="range" id="nbG" min="0" max="2.1" step="0.1" value="2.1"><output id="nbGo"></output></label></div>
+    <div class="ctl"><label class="rng"><span data-i18n="ch3.ctl.sb"></span><input type="range" id="nbS" min="0" max="0.5" step="0.01" value="0.3"><output id="nbSo"></output></label><label class="chk"><input type="checkbox" id="nbE" checked><span data-i18n="ch3.ctl.gbe"></span></label></div>
+    <div class="read">
+      <div><b class="g" id="nbCpu"></b><span data-i18n-html="ch3.read.cpu"></span></div>
+      <div><b class="c" id="nbGpu"></b><span data-i18n-html="ch3.read.gpu"></span></div>
+      <div><b class="" id="nbSb"></b><span data-i18n-html="ch3.read.sb"></span></div>
+      <div><b class="v" id="nbMem"></b><span data-i18n-html="ch3.read.mem"></span></div>
+    </div>
+    <p class="say" id="nbSay" aria-live="polite"></p>
+  </figure>

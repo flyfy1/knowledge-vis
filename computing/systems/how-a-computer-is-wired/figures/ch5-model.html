@@ -1,0 +1,16 @@
+<figure class="lab">
+    <h3 data-i18n="ch5.model.title"></h3>
+    <p class="how" data-i18n-html="ch5.model.how"></p>
+    <canvas class="cv tall" id="bdCv" role="img" data-i18n-aria="ch5.model.aria"></canvas>
+    <div class="legend"><span><i style="background:var(--green)"></i><span data-i18n="ch5.leg.rate"></span></span><span><i style="background:var(--dimfill)"></i><span data-i18n="ch5.leg.want"></span></span></div>
+    <div class="ctl"><div class="seg" role="radiogroup" data-i18n-aria="ch5.ctl.plat"><span class="lbl" data-i18n="ch5.ctl.plat"></span><label><input type="radio" name="bdP" value="intel" checked><span data-i18n="ch5.plat.intel"></span></label><label><input type="radio" name="bdP" value="amd"><span data-i18n="ch5.plat.amd"></span></label></div></div>
+    <div class="ctl"><div class="seg" role="radiogroup" data-i18n-aria="ch5.ctl.ssd1"><span class="lbl" data-i18n="ch5.ctl.ssd1"></span><label><input type="radio" name="bdA" value="idle"><span data-i18n="ch5.op.idle"></span></label><label><input type="radio" name="bdA" value="read" checked><span data-i18n="ch5.op.read"></span></label></div><div class="seg" role="radiogroup" data-i18n-aria="ch5.ctl.ssd2"><span class="lbl" data-i18n="ch5.ctl.ssd2"></span><label><input type="radio" name="bdB" value="idle"><span data-i18n="ch5.op.idle"></span></label><label><input type="radio" name="bdB" value="read" checked><span data-i18n="ch5.op.read"></span></label><label><input type="radio" name="bdB" value="write"><span data-i18n="ch5.op.write"></span></label></div></div>
+    <div class="ctl"><label class="chk"><input type="checkbox" id="bdU" checked><span data-i18n="ch5.ctl.usb"></span></label><label class="chk"><input type="checkbox" id="bdS"><span data-i18n="ch5.ctl.sata"></span></label><label class="chk"><input type="checkbox" id="bdC"><span data-i18n="ch5.ctl.cpu"></span></label></div>
+    <div class="read">
+      <div><b class="g" id="bdUp"></b><span data-i18n-html="ch5.read.up"></span></div>
+      <div><b class="c" id="bdDn"></b><span data-i18n-html="ch5.read.dn"></span></div>
+      <div><b class="r" id="bdO"></b><span data-i18n-html="ch5.read.over"></span></div>
+      <div><b class="" id="bdW"></b><span data-i18n-html="ch5.read.slow"></span></div>
+    </div>
+    <p class="say" id="bdSay" aria-live="polite"></p>
+  </figure>

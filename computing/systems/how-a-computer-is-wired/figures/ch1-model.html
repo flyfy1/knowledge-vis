@@ -1,0 +1,15 @@
+<figure class="lab">
+    <h3 data-i18n="ch1.model.title"></h3>
+    <p class="how" data-i18n-html="ch1.model.how"></p>
+    <canvas class="cv tall" id="busCv" role="img" data-i18n-aria="ch1.model.aria"></canvas>
+    <div class="legend"><span><i style="background:var(--cyan)"></i><span data-i18n="ch1.leg.data"></span></span><span><i style="background:var(--red)"></i><span data-i18n="ch1.leg.oh"></span></span><span><i style="background:var(--dimfill)"></i><span data-i18n="ch1.leg.idle"></span></span></div>
+    <div class="ctl"><label class="rng"><span data-i18n="ch1.ctl.n"></span><input type="range" id="busN" min="1" max="12" step="1" value="6"><output id="busNo"></output></label><label class="rng"><span data-i18n="ch1.ctl.d"></span><input type="range" id="busD" min="5" max="60" step="5" value="30"><output id="busDo"></output></label></div>
+    <div class="ctl"><label class="rng"><span data-i18n="ch1.ctl.burst"></span><input type="range" id="busB" min="0" max="6" step="1" value="4"><output id="busBo"></output></label></div>
+    <div class="read">
+      <div><b class="" id="busE"></b><span data-i18n-html="ch1.read.eff"></span></div>
+      <div><b class="r" id="busEach"></b><span data-i18n-html="ch1.read.each"></span></div>
+      <div><b class="c" id="busP"></b><span data-i18n-html="ch1.read.p2p"></span></div>
+      <div><b class="g" id="busW"></b><span data-i18n-html="ch1.read.wait"></span></div>
+    </div>
+    <p class="say" id="busSay" aria-live="polite"></p>
+  </figure>

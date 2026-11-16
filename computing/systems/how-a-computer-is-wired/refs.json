@@ -1,0 +1,194 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "how-a-computer-is-wired",
+ "refs": [
+  {
+   "from": "ch1.limit",
+   "to": "how-pcie-works",
+   "anchor": "ch1"
+  },
+  {
+   "from": "ch2.p2",
+   "to": "how-sata-works",
+   "anchor": "ch2"
+  },
+  {
+   "from": "ch2.p5",
+   "to": "how-pcie-works",
+   "anchor": "ch2"
+  },
+  {
+   "from": "ch4.p3",
+   "to": "why-compute-waits-for-memory",
+   "anchor": "ch4"
+  },
+  {
+   "from": "ch4.p5",
+   "to": "why-compute-waits-for-memory",
+   "anchor": "ch5"
+  },
+  {
+   "from": "ch5.p5",
+   "to": "how-pcie-works",
+   "anchor": "ch2"
+  },
+  {
+   "from": "ch7.p5",
+   "to": "why-compute-waits-for-memory",
+   "anchor": "ch9"
+  },
+  {
+   "from": "ch8.p5",
+   "to": "how-a-computer-boots",
+   "anchor": "ch3"
+  },
+  {
+   "from": "ch9.d2",
+   "to": "coherent-interconnects",
+   "anchor": "ch3"
+  },
+  {
+   "from": "ch9.d2",
+   "to": "how-pcie-works",
+   "anchor": "ch11"
+  },
+  {
+   "from": "ch10.links",
+   "to": "how-pcie-works",
+   "anchor": null
+  },
+  {
+   "from": "ch10.links",
+   "to": "how-thunderbolt-works",
+   "anchor": null
+  },
+  {
+   "from": "ch10.links",
+   "to": "why-compute-waits-for-memory",
+   "anchor": null
+  },
+  {
+   "from": "ch10.links",
+   "to": "why-nvme-is-fast",
+   "anchor": null
+  },
+  {
+   "from": "ch10.links",
+   "to": "how-sata-works",
+   "anchor": null
+  },
+  {
+   "from": "ch10.links",
+   "to": "how-usb-drives-talk",
+   "anchor": null
+  },
+  {
+   "from": "ch10.links",
+   "to": "what-a-drive-is-made-of",
+   "anchor": "ch7"
+  }
+ ],
+ "backlinks": [
+  {
+   "from": "coherent-interconnects",
+   "links": [
+    {
+     "from": "ch2",
+     "to": "ch4"
+    },
+    {
+     "from": "ch11",
+     "to": "ch7"
+    },
+    {
+     "from": "ch13",
+     "to": null
+    }
+   ]
+  },
+  {
+   "from": "how-a-computer-boots",
+   "links": [
+    {
+     "from": "ch3",
+     "to": "ch8"
+    },
+    {
+     "from": "ch14",
+     "to": null
+    }
+   ]
+  },
+  {
+   "from": "how-a-nic-moves-packets",
+   "links": [
+    {
+     "from": "ch6",
+     "to": "ch4"
+    }
+   ]
+  },
+  {
+   "from": "how-cores-share-memory",
+   "links": [
+    {
+     "from": "ch4",
+     "to": "ch6"
+    },
+    {
+     "from": "ch7",
+     "to": "ch7"
+    },
+    {
+     "from": "ch7",
+     "to": "ch4"
+    },
+    {
+     "from": "ch12",
+     "to": null
+    }
+   ]
+  },
+  {
+   "from": "how-memory-talks",
+   "links": [
+    {
+     "from": "ch7",
+     "to": "ch2"
+    },
+    {
+     "from": "ch12",
+     "to": "ch4"
+    }
+   ]
+  },
+  {
+   "from": "how-pcie-works",
+   "links": [
+    {
+     "from": "ch1",
+     "to": "ch5"
+    },
+    {
+     "from": "ch12",
+     "to": null
+    }
+   ]
+  },
+  {
+   "from": "how-sata-works",
+   "links": [
+    {
+     "from": "ch2",
+     "to": "ch2"
+    }
+   ]
+  }
+ ],
+ "related": [
+  "why-compute-waits-for-memory",
+  "why-nvme-is-fast",
+  "how-usb-drives-talk"
+ ],
+ "bindings": []
+}

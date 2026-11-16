@@ -1,0 +1,15 @@
+<figure class="lab">
+    <h3 data-i18n="ch8.model.title"></h3>
+    <p class="how" data-i18n-html="ch8.model.how"></p>
+    <canvas class="cv " id="icCv" role="img" data-i18n-aria="ch8.model.aria"></canvas>
+    <div class="legend"><span><i style="background:var(--gold)"></i><span data-i18n="ch8.leg.v"></span></span><span><i style="background:var(--red)"></i><span data-i18n="ch8.leg.max"></span></span><span><i style="background:var(--mute)"></i><span data-i18n="ch8.leg.th"></span></span></div>
+    <div class="ctl"><div class="seg" role="radiogroup" data-i18n-aria="ch8.ctl.mode"><span class="lbl" data-i18n="ch8.ctl.mode"></span><label><input type="radio" name="icM" value="sm"><span data-i18n="ch8.mode.sm"></span></label><label><input type="radio" name="icM" value="fm" checked><span data-i18n="ch8.mode.fm"></span></label><label><input type="radio" name="icM" value="fmp"><span data-i18n="ch8.mode.fmp"></span></label></div><div class="seg" role="radiogroup" data-i18n-aria="ch8.ctl.vdd"><span class="lbl" data-i18n="ch8.ctl.vdd"></span><label><input type="radio" name="icV" value="3.3" checked><span data-i18n="ch8.vdd.33"></span></label><label><input type="radio" name="icV" value="5"><span data-i18n="ch8.vdd.5"></span></label></div></div>
+    <div class="ctl"><label class="rng"><span data-i18n="ch8.ctl.cb"></span><input type="range" id="icC" min="10" max="600" step="10" value="200"><output id="icCo"></output></label><label class="rng"><span data-i18n="ch8.ctl.rp"></span><input type="range" id="icR" min="0" max="20" step="1" value="12"><output id="icRo"></output></label></div>
+    <div class="read">
+      <div><b class="g" id="icT"></b><span data-i18n-html="ch8.read.tr"></span></div>
+      <div><b class="r" id="icX"></b><span data-i18n-html="ch8.read.trmax"></span></div>
+      <div><b class="c" id="icW"></b><span data-i18n-html="ch8.read.win"></span></div>
+      <div><b class="" id="icD"></b><span data-i18n-html="ch8.read.dev"></span></div>
+    </div>
+    <p class="say" id="icSay" aria-live="polite"></p>
+  </figure>

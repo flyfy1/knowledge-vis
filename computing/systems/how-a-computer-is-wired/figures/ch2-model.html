@@ -1,0 +1,15 @@
+<figure class="lab">
+    <h3 data-i18n="ch2.model.title"></h3>
+    <p class="how" data-i18n-html="ch2.model.how"></p>
+    <canvas class="cv tall" id="lnCv" role="img" data-i18n-aria="ch2.model.aria"></canvas>
+    <div class="legend"><span><i style="background:var(--red)"></i><span data-i18n="ch2.leg.budget"></span></span><span><i style="background:var(--gold)"></i><span data-i18n="ch2.leg.need"></span></span></div>
+    <div class="ctl"><div class="seg" role="radiogroup" data-i18n-aria="ch2.ctl.comp"><span class="lbl" data-i18n="ch2.ctl.comp"></span><label><input type="radio" name="lnC" value="33" checked><span data-i18n="ch2.comp.33"></span></label><label><input type="radio" name="lnC" value="66"><span data-i18n="ch2.comp.66"></span></label></div><label class="rng"><span data-i18n="ch2.ctl.f"></span><input type="range" id="lnF" min="20" max="100" step="1" value="33"><output id="lnFo"></output></label></div>
+    <div class="ctl"><label class="rng"><span data-i18n="ch2.ctl.n"></span><input type="range" id="lnN" min="1" max="16" step="1" value="8"><output id="lnNo"></output></label><label class="rng"><span data-i18n="ch2.ctl.c"></span><input type="range" id="lnL" min="5" max="25" step="0.25" value="14.25"><output id="lnLo"></output></label></div>
+    <div class="read">
+      <div><b class="r" id="lnT"></b><span data-i18n-html="ch2.read.budget"></span></div>
+      <div><b class="g" id="lnR"></b><span data-i18n-html="ch2.read.need"></span></div>
+      <div><b class="c" id="lnM"></b><span data-i18n-html="ch2.read.max"></span></div>
+      <div><b class="" id="lnV"></b><span data-i18n-html="ch2.read.step"></span></div>
+    </div>
+    <p class="say" id="lnSay" aria-live="polite"></p>
+  </figure>
