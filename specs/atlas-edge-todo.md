@@ -649,12 +649,12 @@ anchor; a link to the page top has no anchor).
 
 ## 血液循环 / Blood Circulation → 压强 / Pressure
 
-- `blood-circulation` → `pressure#step0`: ? → pressure
-- `blood-circulation` → `pressure#step2`
+- `blood-circulation#step5` → `pressure#step0`: ? → pressure
+- `blood-circulation#step5` → `pressure#step2`
 
 ## 血液循环 / Blood Circulation → 细胞 · 生命的最小单位间 / The Cell · Life's Smallest Workshop
 
-- `blood-circulation` → `cell-structure#step0`
+- `blood-circulation#step5` → `cell-structure#step0`
 
 ## 浮力与阿基米德 / Buoyancy & Archimedes → 压强 / Pressure
 
