@@ -1,6 +1,6 @@
 # HANDOFF.md — 开工前先读
 
-最后更新：2026-11-16，模板 Phase 1 批次 A 的提交 Agent（Claude Code）在「模板迁移与示意图补齐」加了第 1a 条；在此之前 SVG 视口检查的登记 Agent（Claude Code）更新了「模板迁移与示意图补齐」第 2 条的遗留项；在此之前存储 S1–S5 补图的登记 Agent（Claude Code）更新了「模板迁移与示意图补齐」第 2 条和存储系列的示意图状态；在此之前模板 Phase 0 的提交 Agent 更新了该节；第二部分其余内容仍是 2026-11-15 供电与网卡两篇上线后的状态。
+最后更新：2026-11-16，SIMD/浮点长文的登记 Agent（Claude Code）更新了「模板迁移与示意图补齐」第 1a、3 条（批次 A 已在线、SIMD 长文上线）；在此之前模板 Phase 1 批次 A 的提交 Agent（Claude Code）在「模板迁移与示意图补齐」加了第 1a 条；在此之前 SVG 视口检查的登记 Agent（Claude Code）更新了「模板迁移与示意图补齐」第 2 条的遗留项；在此之前存储 S1–S5 补图的登记 Agent（Claude Code）更新了「模板迁移与示意图补齐」第 2 条和存储系列的示意图状态；在此之前模板 Phase 0 的提交 Agent 更新了该节；第二部分其余内容仍是 2026-11-15 供电与网卡两篇上线后的状态。
 
 这份文件有两部分：
 
@@ -132,7 +132,7 @@
      - 或者让检查跳过 `data-i18n*` 元素的内容。
 
      不要放宽别的断言。
-1a. **Phase 1 批次 A：2026-11-16 转换了 computing/systems 的 19 篇 Claude Code 长文**（已提交、未推送、未部署，等独立评审）。
+1a. **Phase 1 批次 A：2026-11-16 转换了 computing/systems 的 19 篇 Claude Code 长文**（经独立评审 specs/reviews/site-template-phase1a-review-20261116.md 后已推送；SIMD 登记 Agent 2026-11-16 用 curl 看到线上 how-a-gpu-computes 已是 `data-template` 页面、`sn-20261116`，即已部署）。评审留给 team lead 的两件事仍未决：只改了生成的被引用行的 11 页要不要重指标签；批次 A 的 `page.json.version` 要不要整体升一个字母。
    - **页面：** what-a-drive-is-made-of、how-sata-works、how-usb-drives-talk、storage-over-a-network、how-memory-talks、coherent-interconnects、how-a-cpu-runs-a-program、how-a-cpu-guesses-ahead、how-cpu-caches-work、how-a-computer-boots、how-the-os-talks-to-hardware、how-pixels-reach-a-screen、how-power-reaches-the-cpu、how-a-nic-moves-packets、how-cores-share-memory、how-virtual-memory-works、how-a-gpu-computes、how-a-computer-is-wired、how-thunderbolt-works。每篇一个提交（`fca24bb5` … `8b2dac73`；`Built-By: script`、mechanical、`Derived-From:`），细节见 specs/site-template.md §10「Phase 1 batch A」。每篇的 models.cjs、browser.cjs、画布扫描都在完整构建上通过。
    - **预填一律打开**（不用 `"prefill": false`）：页面测试改为通过 `scripts/lib/prefill.cjs` 的 `unprefill(html, Z)` 读 `index.html`，按 copy 表数链接和数字时跳过生成的 `site.*` 键（authored 提交 `9a470caf`，标签重指 `42fba818`）。准备提交 `bb10f897` 只规整了五页的空白、补了 B2 缺的 `</head>`、合并了 A6 的两个 `<style>`。
    - **缓存键：** S1、S2 `?v=20261116b`，S4、S5 `?v=20261116e`，其余 15 篇 `?v=20261116a`（copy 文件多了 `site.*` 键）。
@@ -140,7 +140,11 @@
    - **注意：** 迁移后 site-nav.js 不再在这些页面上把《标题》自动变成链接（D10）。`build-pages` 的 lint 列出了 19 处原来靠自动链接的提及（如 S5 第 5 章的《NVMe 为什么这么快》），要不要写成 `[[slug]]` 留给页面主人决定。how-a-computer-boots 的 models.cjs 读未提交的 a-secret-in-public/copy.zh.js，只能在工作区跑。
 2. **S1–S5 补示意图：2026-11-16 完成并上线**（`9fcb9fac` 内容、`b2d49a1c` 标签重指）。沿用旧格式（内联 SVG，标签来自 copy 文件），走了 构建 → 独立评审 → 登记。现在转换器可以处理这五篇了。
    - 外溢视口检查的 `e.closest('svg')` 跳过：其余 16 篇也已改为只跳过 `<defs>`（`c3cef443`，标签重指见下一个提交），全部通过，没有页面需要改版式；switches-that-compute 没有逐元素的视口检查，探测过 320 宽下不溢出。
-3. **CPU SIMD 与浮点一篇**：等 Phase 0 落地后，作为第一篇直接用 Markdown 写的长文。做法见 [specs/site-template.md](specs/site-template.md) §9a：未登记的草稿用 `REGISTRY.json` 直接构建，`app.js` 自带 i18n 运行时，预填与「index.html 不许有中文」的测试要二选一。
+3. **CPU SIMD 与浮点一篇：2026-11-16 上线**。`computing/systems/how-a-cpu-does-math/`（CPU 是怎么算小数的，又怎么一次算一排），第一篇直接用 Markdown 模板写的长文，14 章、14 个模型、13 张静态示意图，中英双语（英文 Haiku 翻译），经另一个 Claude Code 会话独立评审（specs/reviews/how-a-cpu-does-math-review-20261116.md）。
+   - **提交：** 建页 `b6dcadc4`；登记与交叉链接 `c7795a74` + `1ef6c3b9`（图谱片段因 shell 失误单独进了前一个提交，两者同一说明）；标签与缓存键 `3a15d04b`；浏览器测试修正 `3d2b65c8`，本页标签指向它（original `b6dcadc4`，previous `1ef6c3b9`）。
+   - **链接：** how-a-gpu-computes 第 1 章（宽向量 → 第 9 章）、第 8 章结论（FP8/FP4 缩放 → 第 7、8 章），how-a-cpu-runs-a-program 第 11 章 e2（→ 第 9 章）和第 12 章结尾（→ 页首），switches-that-compute 第 10 章新加的 `ch10.see`（→ 第 1 章）；这三页标签重指到 `1ef6c3b9`。缓存、猜测执行、供电三页只多了生成的被引用行，`page.json.version` 升到 `20261116b`，标签没重指（同批次 A 评审的处理）。GPU、A1 也是 `20261116b`；switches 第一次给四个脚本加 `?v=20261116`。
+   - **别名：** 单独的「浮点数」「IEEE 754」从 switches 第 10 章移到新页第 1 章（另加 floating point、浮点、浮点数格式）；第 3 章拿四舍五入，第 7 章拿单独的 FP8/E4M3/E5M2，第 8 章拿单独的 FP4；A6 第 8 章保留「FP8 E4M3 E5M2」「FP4 格式」「FP8 formats」。别名前后扫描只有浮点数、IEEE 754 和标签 Floating Point 三处换主。
+   - **遗留：** 第 14 章以纯文本提到草稿《造出并运行一个最前沿的大语言模型，需要什么》（what-a-frontier-model-takes），那篇登记时改成 `[[…]]`。评审记下的模板摩擦（示意图标签宽度预算、生成的 partial、`--print-bindings`、REGISTRY 与 front matter 的 desc 一致性、控件内溢出检查）还没进模板。
 
 图片生成只作后备：示意图一律用 SVG；确需插画时经 Pi 网关（`ssh -N -L 8111:127.0.0.1:8111 pi`，`/v1/images/generations`，别名 `default-image`），不在 Mac 上起网关。登记仍串行，`pages.config.js` 在 Phase 2 之前仍手改。别人正在写的 17 篇草稿不转换，等它们登记后再说。
 

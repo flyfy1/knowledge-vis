@@ -10,7 +10,7 @@ All essays in `computing/systems/`, stage university, same pipeline as the bus s
 en stub, Haiku translates, separate Opus review of both languages, registrar). **Static diagrams are required**
 (STANDARD.md §4a). Briefs, structural model, hard rules: as in TASK-bus-series.md "Briefs to follow".
 
-## Status (2026-11-15)
+## Status (2026-11-16)
 
 | | Page | Essay commit | Live at | State |
 |---|---|---|---|---|
@@ -25,6 +25,7 @@ en stub, Haiku translates, separate Opus review of both languages, registrar). *
 | — | `how-pixels-reach-a-screen` 像素是怎么到屏幕上的 | `3e6bf23d` | `26daf4af` | live, zh + en, reviewed by a separate Claude Code session (same model; cross-model review pending) |
 | — | `how-power-reaches-the-cpu` 电是怎么送进 CPU 的 | `e8b05fa7` | `b38d9e07` | live, zh + en, reviewed by a separate Claude Code session (same model; cross-model review pending) |
 | — | `how-a-nic-moves-packets` 网卡是怎么搬运数据包的 | `230d5aac` | `b38d9e07` | live, zh + en, reviewed by a separate Claude Code session (same model; cross-model review pending) |
+| — | `how-a-cpu-does-math` CPU 是怎么算小数的，又怎么一次算一排 | `b6dcadc4` | `3a15d04b` | live 2026-11-16, zh + en, first native Markdown template page, reviewed by a separate Claude Code session (same model; cross-model review pending) |
 
 A2: alias move, cross-link and one-click aliases in `88dafe9c` (the label points there), registration `644c2aee`. The
 "One word, one owner" decision below is done: L1 L2 L3 缓存, 缓存行, 组相联缓存, cache line, set associative cache (and L1 L2
@@ -95,8 +96,10 @@ names 《芯片为什么越来越难做》 and 《按下开关的那一刻，电
 scripts/test_index_pagination.cjs derives the Long Reads membership instead of pinning a stale list (`dc85cae0`).
 
 **The queued list is complete.** Candidate follow-ups (not specced): ~~retrofit static diagrams into S1–S5~~ done 2026-11-16 (45 diagrams in `9fcb9fac`,
-labels repointed in `b2d49a1c`, reviews specs/reviews/storage-diagrams-s1-s3-review-20261116.md and -s4-s5-; live); B5 `small-buses` (I²C, SPI, UART, SMBus; B2 ch8 still names it in plain text); S6 `how-phone-storage-works` (UFS, eMMC); a CPU SIMD /
-floating-point formats essay (IEEE 754, FP16 / BF16 / FP8 / FP4, AVX-512 and SVE), suggested by the A6 builder.
+labels repointed in `b2d49a1c`, reviews specs/reviews/storage-diagrams-s1-s3-review-20261116.md and -s4-s5-; live); B5 `small-buses` (I²C, SPI, UART, SMBus; B2 ch8 still names it in plain text); S6 `how-phone-storage-works` (UFS, eMMC); ~~a CPU SIMD /
+floating-point formats essay (IEEE 754, FP16 / BF16 / FP8 / FP4, AVX-512 and SVE), suggested by the A6 builder~~ done 2026-11-16 as
+`how-a-cpu-does-math` (essay b6dcadc4, registration c7795a74 + 1ef6c3b9, labels 3a15d04b; A6 ch1 / ch8, A1 ch11 / ch12 and switches ch10
+link it; bare 浮点数 / IEEE 754 moved from switches #ch10 to its #ch1; its ch14 names the draft what-a-frontier-model-takes in plain text).
 
 ## The course, in reading order
 
@@ -109,6 +112,7 @@ Existing pages are marked (live). New essays are A1–A6; B and S are the other 
 5. **A3 `how-virtual-memory-works`** — pages, page tables, TLB.
 6. **A4 `how-a-cpu-guesses-ahead`** — branch prediction, out-of-order, speculation, Spectre.
 7. **A5 `how-cores-share-memory`** — coherence, consistency models, atomics.
+7a. (live) `how-a-cpu-does-math` — floating point (IEEE 754, rounding, FMA, FP16 / BF16 / FP8, block scaling), SIMD, auto-vectorisation, SVE / SME / AMX.
 8. (live) **A6 `how-a-gpu-computes`** — SIMT, warps, occupancy, coalescing, tiling, tensor cores; links the memory essay #ch6.
 9. B3 memory bus (DDR), B1 PCIe, B2 how a computer is wired, B4 coherent interconnects (CXL, NVLink).
 10. S1–S5 storage, and `why-nvme-is-fast`.

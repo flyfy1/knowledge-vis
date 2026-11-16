@@ -3515,7 +3515,7 @@
       "developer": "Claude Code",
       "edition": "claude-code-how-a-cpu-does-math-20261116",
       "kind": "original",
-      "sourceRevision": "1ef6c3b980a6448434e5028248838f33efc7f1f9",
+      "sourceRevision": "3d2b65c86d84f72fae1cff8d36c1f5cfbc801946",
       "scope": {
         "zh": "整篇长文从零编写：binary32 的三段位、ulp、舍入模式、次正规数与 NaN、抵消与求和、FMA、FP16 与 BF16 与 8 位浮点、INT8 与块缩放格式、SIMD 与掩码、自动向量化、乘加的延迟吞吐与宽向量降频、SVE 与 SME 与 AMX、CPU 数值计算前沿",
         "en": "Whole essay written from scratch: the three fields of binary32, ulps, rounding modes, subnormals and NaN, cancellation and summation, FMA, FP16, BF16 and 8-bit floats, INT8 and block-scaled formats, SIMD and masks, auto-vectorisation, FMA latency, throughput and wide-vector downclocking, SVE, SME and AMX, the CPU numerics frontier"
@@ -3523,7 +3523,7 @@
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as the first essay in the Markdown site template; English copy translated by Claude Code (claude-haiku-5-5); independently reviewed 2026-11-16 by a separate Claude Code session (same model), see the page BRIEF.md and specs/reviews/how-a-cpu-does-math-review-20261116.md; cross-model review pending",
       "path": "computing/systems/how-a-cpu-does-math/index.html",
       "originalSourceRevision": "b6dcadc4caafebb54d52f0f70e5ffe1fe6c9677a",
-      "previousSourceRevision": "b6dcadc4caafebb54d52f0f70e5ffe1fe6c9677a"
+      "previousSourceRevision": "1ef6c3b980a6448434e5028248838f33efc7f1f9"
     }
   },
   "exceptions": {
