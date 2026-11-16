@@ -1,6 +1,6 @@
 # HANDOFF.md — 开工前先读
 
-最后更新：2026-11-16，模板 Phase 2 的提交 Agent（Claude Code）在「模板迁移与示意图补齐」加了第 1c 条、改了末尾「pages.config.js 仍手改」一句和第 2 部分「未上线：17 篇中文草稿」的登记说明；在此之前模板后续改进的提交 Agent（Claude Code）在「模板迁移与示意图补齐」加了第 1b 条、改了第 1a 条的「没转换」和第 3 条的遗留；在此之前 SIMD/浮点长文的登记 Agent（Claude Code）更新了「模板迁移与示意图补齐」第 1a、3 条（批次 A 已在线、SIMD 长文上线）；在此之前模板 Phase 1 批次 A 的提交 Agent（Claude Code）在「模板迁移与示意图补齐」加了第 1a 条；在此之前 SVG 视口检查的登记 Agent（Claude Code）更新了「模板迁移与示意图补齐」第 2 条的遗留项；在此之前存储 S1–S5 补图的登记 Agent（Claude Code）更新了「模板迁移与示意图补齐」第 2 条和存储系列的示意图状态；在此之前模板 Phase 0 的提交 Agent 更新了该节；第二部分其余内容仍是 2026-11-15 供电与网卡两篇上线后的状态。
+最后更新：2026-11-16，模板 Phase 2 的独立评审 Agent（Claude Code）在第 1c 条加了评审结论；在此之前模板 Phase 2 的提交 Agent（Claude Code）在「模板迁移与示意图补齐」加了第 1c 条、改了末尾「pages.config.js 仍手改」一句和第 2 部分「未上线：17 篇中文草稿」的登记说明；在此之前模板后续改进的提交 Agent（Claude Code）在「模板迁移与示意图补齐」加了第 1b 条、改了第 1a 条的「没转换」和第 3 条的遗留；在此之前 SIMD/浮点长文的登记 Agent（Claude Code）更新了「模板迁移与示意图补齐」第 1a、3 条（批次 A 已在线、SIMD 长文上线）；在此之前模板 Phase 1 批次 A 的提交 Agent（Claude Code）在「模板迁移与示意图补齐」加了第 1a 条；在此之前 SVG 视口检查的登记 Agent（Claude Code）更新了「模板迁移与示意图补齐」第 2 条的遗留项；在此之前存储 S1–S5 补图的登记 Agent（Claude Code）更新了「模板迁移与示意图补齐」第 2 条和存储系列的示意图状态；在此之前模板 Phase 0 的提交 Agent 更新了该节；第二部分其余内容仍是 2026-11-15 供电与网卡两篇上线后的状态。
 
 这份文件有两部分：
 
@@ -157,6 +157,7 @@
    - **提交：** `75228954` 工具（authored；`scripts/build-registry.cjs`、`scripts/lib/registry.cjs`、`tests/build-registry.cjs`，template.cjs / build-site-nav / convert-essay 改为「page.json 有 layout 才是模板页」）；`71144070` 种子（mechanical，`--adopt` 生成 227 个新 page.json、给 22 个模板页的 page.json 加登记字段，pages.config.js 换成生成段；求值后与 `356de782` 逐项相等，重新生成逐字节一致，site-nav-data.js 和 22 个模板页都没变）；`c51930a1` `[[concept:…]]` 走搜索的别名表（squash 归一，仍是精确匹配，两个概念共有的词报错），`languages.en: "stub"` 在已登记页面上是错误、草稿上是警告，英文里属性中的中文和小写 `[en pending]` 也报错，tests/site-template.cjs 失败时也清理临时目录；`5de49541` 「被这些页面引用」一行开头的标题改成 inline，320 宽下冒号不再单独换行（site-nav.css，include 键 `sn-20261116b`，249 个页面的 include 行跟着变）。
    - **新生成物：** `site-registry.json`（页面、锚点、概念、ref / seeAlso 边、被引用、LeetCode 适配行）、CONCEPT-MAP.md 末尾的「页面 → 概念 → 锚点」表（生成段；以后登记不再手写逐页概念表）、`specs/atlas-edge-todo.md`（D9：有链接但没有图谱边的页面对，335 对待人工判断，脚本从不写边）。
    - **署名缺口（不能用提交修复）：** `71144070` 的 Built-By 里写了「run by Claude Code」，authorship.cjs 因此把 227 个新 page.json 记成 `created: claude-code`（应为 script；内容不受影响）。要改得由 Yangyu 确认 `authorship/overrides.json`，见规范 §3b。Pages 工作流还没跑 `build-registry --check`（稀疏检出不含 specs/，原因见 §3b）；`site-registry.json`（约 750 KB）不在部署排除表里，要不要排除由 Yangyu 定。
+   - **独立评审（2026-11-16，specs/reviews/site-template-phase2-review-20261116.md）：结论是修完即可部署（推送仍需授权）。** 修复 `e0c9483b`：手贴行时普通运行不再悄悄丢掉它（改为拒绝并指向 `--adopt`），`--adopt` 先全部校验再写，`build-pages` 对只有登记字段的 page.json 给出明确报错；§3b 补了两人同时登记的合并办法。待 Yangyu 决定：`5de49541` 标为 authored 却改了 227 个手写页的 include 行，使 earth/astronomy/kepler-orbits/index.html 的 primary 从 unattributed 变成 claude-code（无标签受影响）。
    - **没做 / 推迟：** page.json 取代 REGISTRY.json（概念仍在 REGISTRY.json，`atlas-import-registry.cjs` 已能读 page.json 的 `concepts`；理由见规范 §3b）；手写页面上不显示被引用列表（registry 里有）。
 2. **S1–S5 补示意图：2026-11-16 完成并上线**（`9fcb9fac` 内容、`b2d49a1c` 标签重指）。沿用旧格式（内联 SVG，标签来自 copy 文件），走了 构建 → 独立评审 → 登记。现在转换器可以处理这五篇了。
    - 外溢视口检查的 `e.closest('svg')` 跳过：其余 16 篇也已改为只跳过 `<defs>`（`c3cef443`，标签重指见下一个提交），全部通过，没有页面需要改版式；switches-that-compute 没有逐元素的视口检查，探测过 320 宽下不溢出。
