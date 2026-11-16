@@ -66,7 +66,6 @@ const STR = {
     s4k: '第 4 步 · 动滑轮与滑轮组：数段数定倍数',
     s4t: '轮子跟着重物走，力就分给了几段绳',
     s4bridge: '先数真正吊着动滑轮的绳段，再看 F=G/n：段数越多越省力，但同样绳长让重物升得更少。',
-    s4bridge: 'Count the rope sections supporting the moving pulley, then read F=G/n: more sections mean less force, but less lift for the same rope length.',
     s4e: '这一步要回答：<strong>滑轮的轴跟着重物一起动，会怎样？</strong>轴随重物一起移动的滑轮叫<strong>动滑轮</strong>，定、动滑轮搭配成的组合叫<strong>滑轮组</strong>。诀窍只有一句：直接吊着动滑轮与重物的那几段绳，叫<strong>承重绳段</strong>——有几段一起分担，拉力就是总重的几分之一。图上高亮的就是承重段，点「逐段数一数」让它们逐段亮起。先看单个动滑轮，再切滑轮组换段数。（理想口径：不计摩擦、动滑轮自重与绳重。）',
     s4mSingle: '单个动滑轮', s4mGroup: '滑轮组',
     s4nLab: '承重绳段数 n', s4n2: '2 段', s4n3: '3 段', s4n4: '4 段',
@@ -161,6 +160,7 @@ const STR = {
 
     s4k: 'Step 4 · Movable Pulleys & Systems: Count the Segments',
     s4t: 'When the wheel travels with the load, the force is shared by segments',
+    s4bridge: 'Count the rope sections supporting the moving pulley, then read F=G/n: more sections mean less force, but less lift for the same rope length.',
     s4e: 'This step answers: <strong>what changes when the pulley’s axle moves together with the load?</strong> A pulley whose axle travels with the load is a <strong>movable pulley</strong>; fixed and movable pulleys combined make a <strong>pulley system</strong>. The whole trick is one sentence: the rope segments that directly hold up the movable pulley and the load are the <strong>load-bearing segments</strong> — with that many segments sharing, the pull is that fraction of the total weight. The highlighted segments in the picture are the load-bearing ones; press “Count them one by one” to light them up in turn. Start with a single movable pulley, then switch to the system and change the count. (Ideal bookkeeping: no friction, no movable-pulley or rope weight.)',
     s4mSingle: 'Single movable pulley', s4mGroup: 'Pulley system',
     s4nLab: 'Load-bearing segments n', s4n2: '2 segments', s4n3: '3 segments', s4n4: '4 segments',
