@@ -1,0 +1,51 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "linear-transform",
+ "refs": [
+  {
+   "from": "final3",
+   "to": "eigenvectors",
+   "anchor": "step1"
+  }
+ ],
+ "backlinks": [
+  {
+   "from": "attention-mechanism",
+   "links": [
+    {
+     "from": null,
+     "to": "step1"
+    }
+   ]
+  },
+  {
+   "from": "embeddings",
+   "links": [
+    {
+     "from": null,
+     "to": "step1"
+    }
+   ]
+  },
+  {
+   "from": "simultaneous-equations",
+   "links": [
+    {
+     "from": null,
+     "to": "step0"
+    }
+   ]
+  },
+  {
+   "from": "vectors",
+   "links": [
+    {
+     "from": null,
+     "to": "step0"
+    }
+   ]
+  }
+ ],
+ "related": [],
+ "bindings": []
+}
