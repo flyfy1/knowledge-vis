@@ -1098,15 +1098,15 @@ anchor; a link to the page top has no anchor).
 
 ## 哈希 · 把任意输入压成固定指纹 / Hashing · Squeezing Any Input Into a Fixed Fingerprint → 数论与组合 · 把结构算出来 / Number Theory & Counting · Compute the Structure
 
-- `hashing` → `number-combinatorics#step0`: ? → prime-factorization
+- `hashing#step5` → `number-combinatorics#step0`: ? → prime-factorization
 
 ## 哈希 · 把任意输入压成固定指纹 / Hashing · Squeezing Any Input Into a Fixed Fingerprint → 熵 · 惊讶的平均值 / Entropy · The Average of Surprise
 
-- `hashing` → `entropy#step1`
+- `hashing#step5` → `entropy#step1`
 
 ## 哈希 · 把任意输入压成固定指纹 / Hashing · Squeezing Any Input Into a Fixed Fingerprint → 蒙特卡洛 · 撒豆子算 π / Monte Carlo · Counting π with Scattered Beans
 
-- `hashing` → `monte-carlo#step1`
+- `hashing#step5` → `monte-carlo#step1`
 
 ## 大气环流与季风 · 风从哪里来 / Atmospheric Circulation & Monsoons · Where Winds Come From → 经纬网 / Latitude & Longitude
 
