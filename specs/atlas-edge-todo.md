@@ -1039,11 +1039,11 @@ anchor; a link to the page top has no anchor).
 
 ## 概率与频率 · 转得越多，越贴近概率 / Probability & Frequency · The More Spins, the Closer to the Probability → 概率分布 · 随机性也有形状 / Probability Distributions · Randomness Has a Shape
 
-- `probability-frequency` → `probability-distribution#step0`: ? → probability-distribution
+- `probability-frequency#step5` → `probability-distribution#step0`: ? → probability-distribution
 
 ## 概率与频率 · 转得越多，越贴近概率 / Probability & Frequency · The More Spins, the Closer to the Probability → 中心极限定理 · 平均值总会变成钟形 / Central Limit Theorem · Averages Always Turn Bell-Shaped
 
-- `probability-frequency` → `central-limit-theorem#step0`
+- `probability-frequency#step5` → `central-limit-theorem#step0`
 
 ## 实数与数轴 · √2 落在哪一点 / Real Numbers & the Number Line · Where √2 Lands → 坐标系 · 点的地址 / The Coordinate Plane · Addresses for Points
 

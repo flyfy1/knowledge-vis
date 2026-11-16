@@ -1,0 +1,45 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "probability-frequency",
+ "refs": [],
+ "backlinks": [
+  {
+   "from": "binomial-normal",
+   "links": [
+    {
+     "from": "step5",
+     "to": "step0"
+    }
+   ]
+  },
+  {
+   "from": "counting-permutations",
+   "links": [
+    {
+     "from": "step5",
+     "to": "step0"
+    }
+   ]
+  },
+  {
+   "from": "numbers-lie",
+   "links": [
+    {
+     "from": null,
+     "to": "step2"
+    }
+   ]
+  },
+  {
+   "from": "markov-chains",
+   "links": [
+    {
+     "from": null,
+     "to": "step0"
+    }
+   ]
+  }
+ ],
+ "related": [],
+ "bindings": []
+}
