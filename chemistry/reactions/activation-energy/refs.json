@@ -1,0 +1,49 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "activation-energy",
+ "refs": [],
+ "backlinks": [
+  {
+   "from": "enzymes",
+   "links": [
+    {
+     "from": "step5",
+     "to": "step3"
+    }
+   ]
+  },
+  {
+   "from": "isomers",
+   "links": [
+    {
+     "from": "step5",
+     "to": "step1"
+    }
+   ]
+  },
+  {
+   "from": "electrochemistry",
+   "links": [
+    {
+     "from": null,
+     "to": "step4"
+    }
+   ]
+  },
+  {
+   "from": "how-soy-sauce-gets-its-flavor",
+   "links": [
+    {
+     "from": "ch5",
+     "to": null
+    },
+    {
+     "from": "ch10",
+     "to": null
+    }
+   ]
+  }
+ ],
+ "related": [],
+ "bindings": []
+}
