@@ -24,7 +24,7 @@ readers saw it correctly.
 The duplicates entered in the "Bridge …" commits of 2026-10-29 (none has a `Built-By` line): trigonometry d84d6bd7,
 parabola 491b9759, circle-angles 0c9f8e7d, lever-pulley b9a82fc7, pinhole-camera cd52d85a, reflection-refraction
 b1755342. The pages'
-own key-set tests caught it and have failed since: trigonometry `tests/tangent-core.cjs`, pinhole-camera
+own key-set tests caught it and failed before the fix: trigonometry `tests/tangent-core.cjs`, pinhole-camera
 `tests/geometry-core.cjs` and reflection-refraction `tests/snell-core.cjs`.
 
 **A key the table lacks (2 pages).** The runtime `t()` returns the key itself when neither table has it.
@@ -54,3 +54,13 @@ revised, edition and scope; `sourceRevision` moves to the fix commit, the replac
   `tests/snell-core.cjs`: fail before, pass after.
 - `tests/linguistics-phonology.cjs`, `tests/coordinate-distance.cjs`: pass before and after.
 - For all eight pages, the zh and en tables have the same key set and every key the markup names is defined.
+
+## Commits
+
+- This note: ffe4585a. Fixes (authored): trigonometry 3a6596f3, parabola 1ae8d66f, circle-angles dcca0529,
+  lever-pulley 1d15fdbe, pinhole-camera a2f3ce49, reflection-refraction cee87945, phonemes a253b912, coordinate-plane
+  106ef3e8.
+- Label repoint (the commit that adds this section; mechanical): trigonometry → 3a6596f3, pinhole-camera → a2f3ce49,
+  reflection-refraction → cee87945, each with `previousSourceRevision` 70d9f2e1 (the 2026-11-15 sweep commit) and this
+  note as `provenanceEvidence`. The labels in the three `index.html` files are edited by hand (they are not template
+  pages yet): `data-source-revision`, the commit link and the short SHA.
