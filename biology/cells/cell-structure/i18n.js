@@ -103,7 +103,7 @@ const STR = {
     "site.bl.title": "被这些页面引用",
     "site.bl.1": "<a href=\"../../body/blood-circulation/\">血液循环</a>：<a href=\"../../body/blood-circulation/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>",
     "site.bl.2": "<a href=\"../dna-replication/\">DNA 复制与翻译 · 拉链、抄写和流水线</a>：<a href=\"../dna-replication/#step5\">该课第 5 步</a> → <a href=\"#step1\">本页第 1 步</a>",
-    "site.bl.3": "<a href=\"../meiosis/\">减数分裂 · 洗牌、切半，造配子</a>：→ <a href=\"#step1\">本页第 1 步</a>",
+    "site.bl.3": "<a href=\"../meiosis/\">减数分裂 · 洗牌、切半，造配子</a>：<a href=\"../meiosis/#step5\">该课第 5 步</a> → <a href=\"#step1\">本页第 1 步</a>",
     "site.bl.4": "<a href=\"../photosynthesis/\">光合作用 · 用光开工的糖厂</a>：→ <a href=\"#step2\">本页第 2 步</a>、<a href=\"#step3\">本页第 3 步</a>"
   },
   en: {
@@ -209,7 +209,7 @@ const STR = {
     "site.bl.title": "Linked from",
     "site.bl.1": "<a href=\"../../body/blood-circulation/\">Blood Circulation</a>: <a href=\"../../body/blood-circulation/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>",
     "site.bl.2": "<a href=\"../dna-replication/\">DNA Replication and Translation · A Zipper, a Copy and an Assembly Line</a>: <a href=\"../dna-replication/#step5\">its step 5</a> → <a href=\"#step1\">this page step 1</a>",
-    "site.bl.3": "<a href=\"../meiosis/\">Meiosis · Shuffle, Halve, Make Gametes</a>: → <a href=\"#step1\">this page step 1</a>",
+    "site.bl.3": "<a href=\"../meiosis/\">Meiosis · Shuffle, Halve, Make Gametes</a>: <a href=\"../meiosis/#step5\">its step 5</a> → <a href=\"#step1\">this page step 1</a>",
     "site.bl.4": "<a href=\"../photosynthesis/\">Photosynthesis · A Sugar Factory Run by Light</a>: → <a href=\"#step2\">this page step 2</a>, <a href=\"#step3\">this page step 3</a>"
   }
 };
