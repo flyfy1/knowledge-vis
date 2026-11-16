@@ -20,5 +20,48 @@
   "stage": "junior",
   "status": "live",
   "path": "earth/geo/contour-lines/",
-  "order": 1430
+  "order": 1430,
+  "layout": "lesson",
+  "titleKey": "pageTitle",
+  "legacyLayout": {
+    "_note": "Whitespace and markup of the hand-written lesson this page was converted from, so the conversion could be checked byte for byte (specs/site-template.md §3c).",
+    "section": {
+      "open": "<section class=\"step\" id=\"{id}\" data-step=\"{n}\"><div class=\"step-inner\">",
+      "close": [
+        "\n</div></section>",
+        "\n</div></section>",
+        "\n</div></section>",
+        "\n</div></section>",
+        "\n</div></section>",
+        "</div></section>"
+      ]
+    },
+    "indent": "",
+    "leads": {
+      "s0k": "\n",
+      "step0-1": "\n",
+      "s1k": "\n",
+      "step1-1": "\n",
+      "s2k": "\n",
+      "step2-1": "\n",
+      "s3k": "\n",
+      "step3-1": "\n",
+      "s4k": "\n",
+      "step4-1": "\n"
+    },
+    "mainGaps": [
+      "\n",
+      "\n",
+      "\n",
+      "\n",
+      "\n",
+      "\n",
+      "\n"
+    ],
+    "stepNav": {
+      "item": "<a class=\"nav-step\" href=\"#{id}\" data-nav=\"{n}\" data-i18n=\"{key}\"></a>",
+      "end": ""
+    }
+  },
+  "version": "20261116a"
 }

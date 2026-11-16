@@ -681,11 +681,11 @@ anchor; a link to the page top has no anchor).
 
 ## 等高线 / Contour Lines → 梯度下降 · 摸黑下山 / Gradient Descent · Feeling Your Way Downhill
 
-- `contour-lines` → `gradient-descent#step0`: ? → gradient-descent
+- `contour-lines#step5` → `gradient-descent#step0`: ? → gradient-descent
 
 ## 等高线 / Contour Lines → 坐标系 · 点的地址 / The Coordinate Plane · Addresses for Points
 
-- `contour-lines` → `coordinate-plane#step0`
+- `contour-lines#step5` → `coordinate-plane#step0`
 
 ## 密度 / Density → 粒子与物态 · 热闹程度即温度 / Particles & States · Temperature Is How Wildly They Move
 
