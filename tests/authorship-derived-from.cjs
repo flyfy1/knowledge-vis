@@ -22,9 +22,14 @@ function commit(day, msg, ...files) {
   git('add', '--', ...files);
   git('commit', '-q', '-m', msg);
 }
+let stderr = '';
 function query(...files) {
-  return JSON.parse(execFileSync('node', [path.join(repoRoot, 'scripts', 'authorship.cjs'), '--json', ...files],
-    { encoding: 'utf8', env: { ...process.env, AUTHORSHIP_ROOT: dir } }));
+  const { spawnSync } = require('node:child_process');
+  const res = spawnSync('node', [path.join(repoRoot, 'scripts', 'authorship.cjs'), '--json', ...files],
+    { encoding: 'utf8', env: { ...process.env, AUTHORSHIP_ROOT: dir } });
+  assert.equal(res.status, 0, res.stderr);
+  stderr = res.stderr;
+  return JSON.parse(res.stdout);
 }
 
 git('init', '-q');
@@ -110,6 +115,9 @@ write('other/copy.zh.js', lines(31, 'codex'));
 commit(8, 'touch\n\nBuilt-By: Codex (gpt-6.1-sol)\nDerived-From: other/copy.zh.js -> other/never.md', 'other/copy.zh.js');
 r = query('other/never.md');
 assert.equal(r['other/never.md'], null);
+// Trailers that take no effect are reported on stderr (stdout stays the same), never silently dropped.
+assert.match(stderr, /Derived-From other\/copy\.zh\.js -> other\/never\.md ignored: other\/never\.md already existed or is not in this commit/);
+assert.match(stderr, /Derived-From page\/missing\.js -> page\/content\.en\.md ignored: page\/missing\.js is not in history/);
 
 // The scratch repo is removed on success (kept on failure, or with KEEP_SCRATCH=1, for inspection).
 if (!process.env.KEEP_SCRATCH) fs.rmSync(dir, { recursive: true, force: true });

@@ -66,7 +66,8 @@ On those pages, edit the Markdown and partials and rebuild (`node scripts/build-
 are written `[[slug#chN|text]]` and checked at build. The rules above (copy outside the markup, toggle, layout,
 tests) still hold, because the build produces the same kind of files. Unmigrated pages keep the layout above.
 New essays may be written in either form until Phase 1 ends. The first essay planned directly in Markdown is the
-CPU SIMD and floating-point one (HANDOFF.md).
+CPU SIMD and floating-point one (HANDOFF.md). The steps for a new template essay, including the draft build from
+`REGISTRY.json`, the `app.js` runtime and pre-fill versus CJK tests, are in specs/site-template.md §9a.
 
 `REGISTRY.json`: `slug`, `path`, `category`, `subtopic`, `stage`, `title`/`desc` `{zh,en}` equal to the
 page's `doc.title`/`doc.desc`, `tags`, and `concepts[]`. Each concept has `id`, `anchor` (must exist in the

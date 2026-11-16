@@ -371,11 +371,15 @@ function scanBacklinks(site, page) {
   for (const p of site.pages) {
     if (p === page) continue;
     const d = path.join(site.root, p.path);
-    for (const f of ['copy.zh.js', 'i18n.js', 'index.html']) {
+    // A migrated page's links are in its sources: the copy table and figures/*.html partials. Its index.html
+    // repeats them (pre-fill), and its site.* keys are generated backlinks / related links; neither may feed back.
+    const migrated = site.isMigrated(p);
+    const figs = migrated && fs.existsSync(path.join(d, 'figures')) ? fs.readdirSync(path.join(d, 'figures')).filter(f => f.endsWith('.html')).sort().map(f => 'figures/' + f) : [];
+    for (const f of migrated ? ['copy.zh.js', ...figs] : ['copy.zh.js', 'i18n.js', 'index.html']) {
       const file = path.join(d, f);
       if (!fs.existsSync(file)) continue;
       let entries;
-      if (f === 'copy.zh.js') { try { entries = Object.entries(loadCopy(file)); } catch (e) { continue; } }
+      if (f === 'copy.zh.js') { try { entries = Object.entries(loadCopy(file)).filter(([k]) => !(migrated && k.startsWith('site.'))); } catch (e) { continue; } }
       else entries = [[null, fs.readFileSync(file, 'utf8')]];
       for (const [k, v] of entries) for (const m of String(v).matchAll(/href=\\?["']([^"'\\]+)\\?["']/g)) {
         const r = resolveHref(site, p.path, m[1]);
@@ -413,8 +417,16 @@ function buildEssay(dir, opts = {}) {
   dir = path.resolve(dir);
   const sitePath = path.relative(site.root, dir).split(path.sep).join('/') + '/';
   const meta = readJson(path.join(dir, 'page.json'));
-  const page = site.bySlug.get(meta.slug);
-  if (!page) return { errors: [`page.json slug "${meta.slug}" is not a live page in pages.config.js`], warnings, outputs: {} };
+  let page = site.bySlug.get(meta.slug);
+  if (!page && site.byPath.has(sitePath)) return { errors: [`page.json slug "${meta.slug}" differs from the slug registered for ${sitePath}: "${site.byPath.get(sitePath).slug}"`], warnings, outputs: {} };
+  if (!page) {
+    // An unregistered draft (written natively in Markdown) builds from its REGISTRY.json, so it can be tested and
+    // reviewed before registration. It is never in --all, nothing links to it yet, and it has no label.
+    const regFile = path.join(dir, 'REGISTRY.json'), reg = fs.existsSync(regFile) ? readJson(regFile) : null;
+    if (!reg || reg.slug !== meta.slug || !reg.path) return { errors: [`page.json slug "${meta.slug}" is not a live page in pages.config.js, and there is no REGISTRY.json with that slug and a path to build it as a draft`], warnings, outputs: {} };
+    page = { slug: reg.slug, path: reg.path, category: reg.category, subtopic: reg.subtopic, stage: reg.stage, title: reg.title, status: 'draft' };
+    warnings.push(`draft: "${meta.slug}" is not registered in pages.config.js; built from REGISTRY.json (no backlinks, related pages or provenance label until registration)`);
+  }
   if (page.path.replace(/\/?$/, '/') !== sitePath) return { errors: [`page.json slug "${meta.slug}" is registered at ${page.path}, not ${sitePath}`], warnings, outputs: {} };
   const PREFILL = opts.prefill != null ? opts.prefill : meta.prefill !== false;
   const up = '../'.repeat(sitePath.split('/').filter(Boolean).length);
@@ -571,6 +583,8 @@ function buildEssay(dir, opts = {}) {
       scripts: (meta.scripts || []).map(s => `<script src="${s}${v}"${s === 'copy.en.js' ? ' onerror="void 0"' : ''}></script>\n`).join(''),
     });
   } catch (e) { errors.push(e.message); html = ''; }
+  // The layout and chrome name keys too (nav.back, nav.lang, toc.label, toc.title, hero.kicker, footer…): each must be defined.
+  for (const k of i18nKeysIn(html)) if (!(k in Z)) errors.push(`the page names key ${k} (layout or chrome), which no content block defines`);
   if (PREFILL) {
     // zh text inside every empty data-i18n* element and aria-label from data-i18n-aria, for readers without JS.
     // Values with runtime placeholders ({v}) are left for app.js.

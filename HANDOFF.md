@@ -133,7 +133,7 @@
 
      不要放宽别的断言。
 2. **S1–S5 补示意图**：沿用旧格式（内联 SVG，标签来自 copy 文件），走 构建 → 独立评审 → 登记。落地之前，转换器不碰这五篇。
-3. **CPU SIMD 与浮点一篇**：等 Phase 0 落地后，作为第一篇直接用 Markdown 写的长文。
+3. **CPU SIMD 与浮点一篇**：等 Phase 0 落地后，作为第一篇直接用 Markdown 写的长文。做法见 [specs/site-template.md](specs/site-template.md) §9a：未登记的草稿用 `REGISTRY.json` 直接构建，`app.js` 自带 i18n 运行时，预填与「index.html 不许有中文」的测试要二选一。
 
 图片生成只作后备：示意图一律用 SVG；确需插画时经 Pi 网关（`ssh -N -L 8111:127.0.0.1:8111 pi`，`/v1/images/generations`，别名 `default-image`），不在 Mac 上起网关。登记仍串行，`pages.config.js` 在 Phase 2 之前仍手改。别人正在写的 17 篇草稿不转换，等它们登记后再说。
 

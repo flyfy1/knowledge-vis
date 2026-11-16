@@ -114,7 +114,7 @@ function build() {
     const derived = new Map(); // new path -> { recs, from }
     for (const [from, to] of derivedPairs(body)) {
       const src = files.get(from);
-      if (!src) { (a.derivedMissing = a.derivedMissing || []).push(from); continue; }
+      if (!src) { console.error(`authorship: ${hash.slice(0, 8)} Derived-From ${from} -> ${to} ignored: ${from} is not in history before this commit`); continue; }
       const d = derived.get(to) || { recs: [], from: [] };
       d.recs.push(cloneRec(src)); d.from.push(from); derived.set(to, d);
     }
@@ -144,6 +144,7 @@ function build() {
       if (a.impact !== 'mechanical') rec.last = { agent: a.agent, commit: hash.slice(0, 8), date };
       files.set(file, rec);
     }
+    for (const [to, d] of derived) console.error(`authorship: ${hash.slice(0, 8)} Derived-From ${d.from.join(', ')} -> ${to} ignored: ${to} already existed or is not in this commit`);
   }
   // Staged-but-uncommitted renames keep their history (no attribution yet).
   const staged = git(['diff', '--cached', '-M', '--name-status', '-z']).split('\0');

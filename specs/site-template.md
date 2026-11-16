@@ -34,6 +34,10 @@ node tests/site-template.cjs                    # fixture build, failure modes, 
 
 - `--all` covers only live pages in `pages.config.js` whose directory has `page.json`. Untracked drafts and the
   fixture site are never included.
+- An unregistered draft is built by naming its directory. Its slug is not in `pages.config.js`, so the build reads
+  slug, path, category, subtopic, stage and title from the draft's `REGISTRY.json` and warns `draft: …`. The
+  draft has no backlinks, related pages or provenance label, and no other page can `[[link]]` to it until it is
+  registered. A `page.json` slug that differs from the slug registered for that directory is an error.
 - `--no-chrome --no-prefill` rebuild the pre-template page byte for byte. They exist for equivalence checks;
   never commit their output.
 - `--root <dir>` points every tool at another site root (the tests use `tests/fixtures/site-template/`).
@@ -114,6 +118,12 @@ Markdown paragraphs, separated by blank lines.
 :::
 ```
 
+**Page-wide keys.** The layout names these keys, so every page defines them, or the build fails:
+- front matter `title` and `desc`;
+- in the first `::: strings` block (before `# … {#hero}`): `nav.back`, `nav.lang`, `toc.label` and `toc.title`;
+- in the hero's `::: strings`: `kicker`;
+- one `::: footer`.
+
 **Keys.**
 - A paragraph without a class gets the next positional key, `<chapter>.p1`, `p2`… The counter runs through the
   whole chapter, labs included.
@@ -186,11 +196,19 @@ chapter by chapter when the prose is next edited, not during migration.
 - **Refs:** as in §5.
 - **Bindings:** every name known, every binding used.
 - **Partials:** each exists and names only defined keys.
+- **Layout keys:** every `data-i18n*` key in the built page, including those the layout and chrome name, is
+  defined (§4 「Page-wide keys」).
 - **Warnings (do not fail):** lint suggestions and raw links to missing pages or anchors.
 
 Backlinks are generated. When a page gains a link to a migrated page, the migrated page's `index.html` and
 `refs.json` drift, and `--all --check` fails until someone runs `node scripts/build-pages.cjs --all`. Run it
 after registering a page or adding cross-links.
+
+A backlink is a link written in another page's sources. For an unmigrated page those are `copy.zh.js`,
+`i18n.js` and `index.html`. For a migrated page they are `copy.zh.js` without its `site.*` keys, plus
+`figures/*.html`. Its `index.html` is not scanned, because pre-fill copies the copy table into it, and the
+`site.*` keys are themselves generated backlinks. Scanning either would make links echo between migrated pages,
+and one `--all` pass would no longer be final (review 2026-11-16).
 
 ## 8. Chrome (what the layout adds)
 
@@ -232,6 +250,40 @@ after registering a page or adding cross-links.
 
 Do not merge or split paragraphs or list items.
 
+## 9a. Writing a new essay directly in Markdown
+
+The next essays (first: CPU SIMD and floating point) start as template pages. Everything in specs/essays.md
+and STANDARD.md still applies; only the files differ.
+
+1. **Files.** Create these in the essay's directory:
+   - `REGISTRY.json` (essays.md「Files」), which the draft build reads;
+   - `page.json`: `{"slug", "kind": "essay", "layout": "essay", "scripts": ["models.js", "copy.zh.js",
+     "copy.en.js", "app.js"], "version": "<date>"}`;
+   - `content.zh.md` (§4, including the page-wide keys);
+   - `page.css`, `figures/`, `models.js`, `app.js` and `tests/`.
+2. **Runtime.** The template ships no i18n runtime. `app.js` must apply the copy itself:
+   - `document.title` and the `data-i18n` / `data-i18n-html` / `data-i18n-aria` fill, with `{v}` placeholders;
+   - the `#langToggle` buttons and the stored language.
+
+   Copy that head from a recent essay's `app.js` (for example `computing/systems/how-a-gpu-computes/app.js`,
+   the first 50 lines).
+3. **Styles.** No shared theme exists yet. Start `page.css` from a recent essay's `<style>` block and keep only
+   the classes the page uses. The layout's classes (`topbar`, `hero`, `kicker`, `toc`, `ch`, `num`, `wrap`,
+   `wide`, `law`, `take`, `lab`, `dia`) must be styled.
+4. **Diagrams.** Shape (b), an inline `<svg>` in `figures/<name>.html` with `data-i18n` labels, needs no `app.js`
+   code. Shape (a) needs drawing code in `app.js`.
+5. **Build and test.** Run `node scripts/build-pages.cjs <dir>`; the `draft:` warning is expected until
+   registration. Write `content.en.md` (§9 translation contract) and rebuild until parity passes. Then run the
+   page tests, the canvas sweep and the independent review on the built output.
+   - Pre-fill puts Chinese into `index.html`. A test that forbids CJK in `index.html` must skip the contents of
+     `data-i18n*` elements and `aria-label`s, or the page sets `"prefill": false` (§10 step 3).
+6. **Commit.** Commit sources and outputs together, never the outputs alone.
+7. **Registration.** Follow essays.md「Registering」:
+   - add the row to `pages.config.js`;
+   - add the `page-provenance.json` entry and rebuild the page (the label is rendered from it);
+   - run `node scripts/build-pages.cjs --all`, which picks the page up and refreshes backlinks;
+   - run `node scripts/build-site-nav.cjs` (it does not edit template pages) and `--all --check`.
+
 ## 10. Converting a page (Phase 1 procedure)
 
 Only convert a page no one else holds. Drafts written in the old pattern are converted after they are
@@ -241,8 +293,14 @@ registered.
    and requires `index.html` to be byte-identical and both copy tables key-for-key equal. If they are not, it
    exits 1 naming the first difference, and the sources stay for inspection. The old `index.html` and copy
    files are not touched.
-2. Run the page's `tests/models.cjs` and `tests/browser.cjs` on a `--no-chrome --no-prefill` build, whose output
-   is identical to the old page.
+   - The copy tables have the same keys and values, but key order may differ, so `copy.*.js` are not
+     byte-identical.
+   - A failed run leaves `page.json`. Delete the written sources (`page.json`, `content.*.md`, `page.css`,
+     `figures/`) before you retry or commit anything else, or `--all --check` fails.
+   - A page with more than one `<style>` block is refused. Merge them in `index.html` in a commit of its own,
+     then convert. Only how-a-gpu-computes has two today.
+2. Run the page's `tests/models.cjs` and `tests/browser.cjs` on a `--no-chrome --no-prefill` build. Its
+   `index.html` is identical to the old page, and its copy tables are equal key for key.
 3. **Decide on pre-fill before the full build.** how-memory-talks and how-a-computer-boots, and probably most of
    the 2026-11-15 computing essays, have a `tests/models.cjs` check that forbids CJK in `index.html`, so it fails
    on pre-filled text. Resolve it per page, either way:
@@ -289,6 +347,11 @@ exactly, keep it as `::: html`.
 All three were byte-identical with both copy tables equal, and their `models.cjs` and `browser.cjs` passed on
 the rebuilt outputs. The full builds passed too, the memory and boot essays with pre-fill off. Shape (b) is
 exercised only by the fixture: no live essay has inline SVG diagrams yet.
+
+The independent review (specs/reviews/site-template-phase0-review-20261116.md) ran the same round trip on
+how-a-gpu-computes after merging its two `<style>` blocks in a scratch copy. It had 447 keys, 10 labs, 11 diagrams and
+one `::: html` partial. `index.html` was byte-identical, both copy tables were equal key for key, and `tests/models.cjs`
+passed (4516 checks). The full build failed only the CJK-in-`index.html` check of step 3.
 
 ## 11. Authorship
 

@@ -70,6 +70,39 @@ const good = freshSite();
   ok(c.code === 0 && /OK demo\/basics\/fixture-essay/.test(c.out), '--check passes right after a build:\n' + c.out);
 }
 
+// 2b. Two migrated pages: generated backlinks (site.* keys, pre-filled index.html) never feed back as links,
+//     so one --all pass is final and --all --check passes right after it.
+{
+  const root = freshSite(), t = path.join(root, 'demo/basics/fixture-target');
+  for (const f of ['index.html', 'copy.zh.js']) fs.rmSync(path.join(t, f));
+  fs.writeFileSync(path.join(t, 'page.json'), JSON.stringify({ slug: 'fixture-target', kind: 'essay', layout: 'essay', scripts: ['copy.zh.js', 'copy.en.js'], version: '1' }));
+  for (const l of ['zh', 'en']) fs.writeFileSync(path.join(t, `content.${l}.md`), `---\nlang: ${l}\ntitle: T\ndesc: D\n---\n\n` +
+    `::: strings\nnav.back: b\nnav.lang: l\ntoc.label: t\ntoc.title: t\n:::\n\n# T {#hero}\n\n::: strings\nkicker: k\n:::\n\n` +
+    `## one {#ch1}\n\n::: strings\ntoc: one\n:::\n\nx ${l}.\n\n## two {#ch2}\n\n::: strings\ntoc: two\n:::\n\ny ${l}.\n\n::: footer\nf\n:::\n`);
+  const a = run('build-pages.cjs', '--all', '--root', root);
+  ok(a.code === 0, 'two migrated pages build:\n' + a.out);
+  const c = run('build-pages.cjs', '--all', '--check', '--root', root);
+  ok(c.code === 0, 'one --all pass is final (no drift from generated backlinks):\n' + c.out);
+  ok(!/site\.bl\./.test(fs.readFileSync(path.join(pageDir(root), 'copy.zh.js'), 'utf8')), 'a page is not "linked from" a page whose only link is its generated backlink block');
+  const tzh = fs.readFileSync(path.join(t, 'copy.zh.js'), 'utf8');
+  ok(/"site\.bl\.1": .*第 1 章/.test(tzh) && !/；→/.test(tzh), 'the cited page lists the link once, with its chapter (not again from the pre-filled index.html)');
+}
+
+// 2c. An unregistered draft written natively in Markdown builds from its REGISTRY.json (and stays out of --all).
+{
+  const root = freshSite(), d = path.join(root, 'demo/basics/fixture-draft');
+  fs.cpSync(pageDir(root), d, { recursive: true });
+  const pj = path.join(d, 'page.json');
+  fs.writeFileSync(pj, fs.readFileSync(pj, 'utf8').replace('"slug": "fixture-essay"', '"slug": "fixture-draft"'));
+  fs.writeFileSync(path.join(d, 'REGISTRY.json'), JSON.stringify({ slug: 'fixture-draft', path: 'demo/basics/fixture-draft/', category: 'demo', subtopic: 'basics', stage: 'university', title: { zh: '草稿', en: 'Draft' } }));
+  const r = run('build-pages.cjs', d, '--root', root);
+  ok(r.code === 0 && /WARN .*draft: "fixture-draft" is not registered/.test(r.out), 'an unregistered draft builds from REGISTRY.json, with a warning:\n' + r.out);
+  ok(fs.readFileSync(path.join(d, 'index.html'), 'utf8').includes('data-crumb="sub" data-i18n="site.crumb.sub">基础</a>'), 'the draft gets its breadcrumb from REGISTRY.json');
+  assert.equal(build(root).code, 0);
+  const all = run('build-pages.cjs', '--all', '--check', '--root', root);
+  ok(all.code === 0 && /PASS: 1 migrated page/.test(all.out) && !/fixture-draft/.test(all.out), '--all leaves drafts out:\n' + all.out);
+}
+
 // 3. Failure modes (proposal §8.3), each exits 1 with a message that names the problem.
 function failsWith(label, mutate, re, flags = []) {
   modes++;
@@ -95,6 +128,8 @@ failsWith('concept alias owned twice', r => { edit(r, 'content.zh.md', '[[concep
 failsWith('unknown concept', r => edit(r, 'content.zh.md', '[[concept:缓存行]]', '[[concept:没有这个词]]'), /unknown concept "没有这个词"/);
 failsWith('partial names a key no block defines', r => edit(r, 'figures/dg-stack.html', 'data-i18n="dg.stack.bottom"', 'data-i18n="dg.stack.middle"'), /figures\/dg-stack\.html names key dg\.stack\.middle/);
 failsWith('missing partial', r => edit(r, 'content.zh.md', '::: lab ch2-model', '::: lab ch2-modell'), [/missing partial figures\/ch2-modell\.html/, /parity: zh and en differ in structure/]);
+failsWith('page-wide string the layout needs is missing', r => edit(r, 'content.zh.md', 'toc.label: 目录\n', ''), /names key toc\.label \(layout or chrome\), which no content block defines/);
+failsWith('page.json slug differs from the registered one', r => edit(r, 'page.json', '"slug": "fixture-essay"', '"slug": "fixture-draft"'), /page\.json slug "fixture-draft" differs from the slug registered for demo\/basics\/fixture-essay\/: "fixture-essay"/);
 failsWith('paragraph that needs a key', r => edit(r, 'content.zh.md', '一句副标题。<br>第二行。 {.sub}', '一句副标题。<br>第二行。'), /paragraph needs \{#key\}/);
 
 // 4. The converter: a page built without chrome and pre-fill (the old hand-written form) converts back to

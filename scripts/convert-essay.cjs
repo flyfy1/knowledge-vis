@@ -55,6 +55,7 @@ function elementEnd(s, pos) {
   throw new Error(`unclosed <${tag}>`);
 }
 
+if ((html.match(/<style\b/g) || []).length > 1) fail('more than one <style> block (page.css holds one); merge them in index.html in a commit of their own, then convert');
 const style = (html.match(/<style>\n([\s\S]*?)<\/style>/) || fail('no <style> block'))[1];
 const scripts = [...html.matchAll(/<script src="([\w.-]+)(?:\?v=([\w-]+))?"/g)].map(m => m[1]);
 const version = (html.match(/<script src="[\w.-]+\?v=([\w-]+)"/) || [])[1] || null;
