@@ -1,0 +1,54 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "lens",
+ "refs": [],
+ "backlinks": [
+  {
+   "from": "gravitational-lensing",
+   "links": [
+    {
+     "from": "step5",
+     "to": "step2"
+    }
+   ]
+  },
+  {
+   "from": "photoelectric-effect",
+   "links": [
+    {
+     "from": "step5",
+     "to": "step0"
+    }
+   ]
+  },
+  {
+   "from": "eye-vision",
+   "links": [
+    {
+     "from": "step5",
+     "to": "step2"
+    }
+   ]
+  },
+  {
+   "from": "pinhole-camera",
+   "links": [
+    {
+     "from": null,
+     "to": "step1"
+    }
+   ]
+  },
+  {
+   "from": "reflection-refraction",
+   "links": [
+    {
+     "from": null,
+     "to": "step2"
+    }
+   ]
+  }
+ ],
+ "related": [],
+ "bindings": []
+}

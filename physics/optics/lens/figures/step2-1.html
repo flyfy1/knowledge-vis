@@ -1,0 +1,17 @@
+<div class="stage">
+      <canvas role="img" data-i18n-aria="canvasLabel" id="s2-canvas" height="360"></canvas>
+    </div>
+    <p class="ray-legend"><span style="color:#6ee7ff">●</span> <span data-i18n="cBandFar">u &gt; 2f · 远物段</span>　<span style="color:#ffb454">●</span> <span data-i18n="cBandMid">f &lt; u &lt; 2f · 中段</span>　<span style="color:#7ee2a8">●</span> <span data-i18n="cBandNear">u &lt; f · 近物段</span></p>
+    <div class="controls">
+      <label><span><span data-i18n="s2uLab"></span> <span class="val" id="s2-u-val">180</span></span>
+        <input type="range" id="s2-u" min="25" max="200" step="any" value="180">
+      </label>
+    </div>
+    <div class="btn-row">
+      <button class="btn big" id="s2-p-far" data-i18n="s2pFar"></button>
+      <button class="btn big" id="s2-p-2f" data-i18n="s2p2f"></button>
+      <button class="btn big" id="s2-p-mid" data-i18n="s2pMid"></button>
+      <button class="btn big" id="s2-p-f" data-i18n="s2pF"></button>
+      <button class="btn big" id="s2-p-near" data-i18n="s2pNear"></button>
+    </div>
+    <p class="readout" id="s2-readout"></p><p class="readout" id="s2-formula"></p><p class="hint" id="s2-view"></p>
