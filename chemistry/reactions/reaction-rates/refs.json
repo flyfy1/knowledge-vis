@@ -1,0 +1,98 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "reaction-rates",
+ "refs": [],
+ "backlinks": [
+  {
+   "from": "enzymes",
+   "links": [
+    {
+     "from": "step5",
+     "to": "step4"
+    }
+   ]
+  },
+  {
+   "from": "activation-energy",
+   "links": [
+    {
+     "from": "step5",
+     "to": "step4"
+    },
+    {
+     "from": "step5",
+     "to": "step2"
+    }
+   ]
+  },
+  {
+   "from": "chemical-equilibrium",
+   "links": [
+    {
+     "from": "step5",
+     "to": "step1"
+    }
+   ]
+  },
+  {
+   "from": "combustion-triangle",
+   "links": [
+    {
+     "from": "step5",
+     "to": "step3"
+    },
+    {
+     "from": "step5",
+     "to": "step2"
+    }
+   ]
+  },
+  {
+   "from": "mass-conservation",
+   "links": [
+    {
+     "from": "step5",
+     "to": "step0"
+    }
+   ]
+  },
+  {
+   "from": "acid-base-equilibrium",
+   "links": [
+    {
+     "from": null,
+     "to": "step0"
+    }
+   ]
+  },
+  {
+   "from": "dissolution-saturation",
+   "links": [
+    {
+     "from": null,
+     "to": "step0"
+    }
+   ]
+  },
+  {
+   "from": "how-soy-sauce-gets-its-flavor",
+   "links": [
+    {
+     "from": "ch10",
+     "to": null
+    }
+   ]
+  },
+  {
+   "from": "why-fermented-tofu-tastes-good",
+   "links": [
+    {
+     "from": "ch9",
+     "to": null
+    }
+   ]
+  }
+ ],
+ "related": [],
+ "bindings": []
+}
