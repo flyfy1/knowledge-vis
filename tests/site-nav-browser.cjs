@@ -166,6 +166,28 @@ async function pages(browser) {
     await lctx.close();
   }
 
+  // Template lessons without lesson-shell.js (Phase 3 batch B): site-nav.js lights the first step pill on a fresh
+  // load at the top, as the hand-written pages did through the breadcrumb race; a working scroll spy replaces it
+  // (cell-structure), and on a page whose spy never lights anything the default is withdrawn once step 0 has
+  // scrolled away (binary-search). A #fragment load is left to the spy.
+  for (const [path, after] of [['biology/cells/cell-structure/', '3'], ['computing/algorithms/binary-search/', '']]) {
+    const dctx = await browser.newContext({ viewport: { width: 1280, height: 950 }, reducedMotion: 'reduce' });
+    await dctx.addInitScript(() => { try { localStorage.setItem('knowledge-lang', 'zh'); } catch (e) {} });
+    const dp = await dctx.newPage();
+    const lit = () => dp.evaluate(() => [...document.querySelectorAll('.step-nav a')].map((a, i) => (a.classList.contains('active') ? i : null)).filter(x => x != null).join(','));
+    await dp.goto(BASE + path, { waitUntil: 'load' });
+    await dp.waitForTimeout(800);
+    eq(await lit(), '0', `batch B lesson ${path}: first step pill lit at load`);
+    await dp.evaluate(() => { const s = document.getElementById('step3'); window.scrollTo(0, s.getBoundingClientRect().top + scrollY - 60); });
+    await dp.waitForTimeout(700);
+    eq(await lit(), after, `batch B lesson ${path}: after scrolling to step 3`);
+    await dp.goto('about:blank');
+    await dp.goto(BASE + path + '#step3', { waitUntil: 'load' });
+    await dp.waitForTimeout(800);
+    ok(!(await lit()).split(',').includes('0'), `batch B lesson ${path}: a #step3 deep link does not light step 0`);
+    await dctx.close();
+  }
+
   // Hand-written essay: auto-links before and after switching language in place. No hand-written essay mentions
   // another live title in its own copy any more, so the test adds one keyed paragraph to both copy tables; the
   // page's own applyLang re-renders it on the switch, as it would a real paragraph.

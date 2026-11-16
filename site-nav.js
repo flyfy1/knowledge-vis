@@ -86,6 +86,37 @@
       nameCrumb();
       if (global.MutationObserver) new global.MutationObserver(nameCrumb).observe(doc.documentElement, { attributes: true, attributeFilter: ['lang'] });
     }
+    // A converted lesson that does not load lesson-shell.js (Phase 3 batch B): on the hand-written page the first
+    // step's nav pill was lit at load on most window sizes, because this file mounted the breadcrumb late and step 0
+    // sat inside the scroll spy's band for the first observation. The static breadcrumb puts step 0 at its final
+    // place from the start, so the spy lights nothing. As lesson-shell.js does for batch A: on a plain navigation at
+    // scroll 0 with no #fragment and nothing lit, light the first item; the spy's next match replaces it.
+    if (doc.documentElement.getAttribute('data-template') === 'lesson' && !doc.querySelector('script[src*="lesson-shell.js"]') && global.addEventListener) {
+      global.addEventListener('load', function () {
+        var raf = global.requestAnimationFrame || function (f) { return setTimeout(f, 16); };
+        raf(function () { raf(function () {
+          var perf = global.performance, e = perf && perf.getEntriesByType && perf.getEntriesByType('navigation')[0];
+          if (e && e.type && e.type !== 'navigate') return;
+          if (global.location.hash || global.scrollY > 0) return;
+          var stepNav = doc.querySelector('.step-nav');
+          if (!stepNav || stepNav.querySelector('.active')) return;
+          var first = stepNav.querySelector('a[href^="#"], .nav-step');
+          if (!first) return;
+          first.classList.add('active');
+          // Some of these pages have no working spy (nothing ever lights live). There the default would stay on
+          // step 0 for good, so it is taken back once step 0 has scrolled out of the upper part of the window while
+          // it is still the only lit item. As soon as anything else is lit, the spy owns the nav and this stops.
+          var step0 = doc.getElementById((first.getAttribute('href') || '').replace(/^#/, ''));
+          var onScroll = function () {
+            var lit = stepNav.querySelectorAll('.active');
+            if (lit.length !== 1 || lit[0] !== first) { global.removeEventListener('scroll', onScroll); return; }
+            var past = step0 ? step0.getBoundingClientRect().bottom < global.innerHeight * 0.4 : global.scrollY > global.innerHeight;
+            if (past) { first.classList.remove('active'); global.removeEventListener('scroll', onScroll); }
+          };
+          global.addEventListener('scroll', onScroll, { passive: true });
+        }); });
+      });
+    }
     return;
   }
   var me = doc.currentScript;

@@ -276,6 +276,15 @@ hand-written text is not their zh string (the runtime replaces it; readers witho
   They are not content: the build fails when content defines one, or when no other table in the shell defines it in
   both languages, and treats them as defined in the partial and frame checks. They are not pre-filled (the generated
   table does not hold them), as before conversion.
+- **Step-0 pill at load (D1 for batch B).** These lessons do not load `lesson-shell.js`, so its first-step default
+  (86e430f0) does not reach them. On the hand-written pages the deferred site-nav.js mounted the breadcrumb late, step 0
+  sat inside the scroll spy's band for the first observation, and pill 0 was lit at load on most window sizes (102 of
+  480 zh runs at 1280×800/950 and 390×844 lit it live-style and not in the build). `site-nav.js` now does the same as
+  lesson-shell.js on `html[data-template="lesson"]` without a `lesson-shell.js` script: on a plain navigation at
+  scroll 0 with no `#fragment` and nothing lit, it lights the first `.step-nav` link. Some of these pages have no
+  working spy (nothing is ever lit live); there it withdraws the default once step 0 is out of the upper 40 % of the
+  window while it is still the only lit item, and it stops as soon as anything else is lit
+  (tests/site-nav-browser.cjs: cell-structure, binary-search).
 - `page.json` `placeholderRepeats: ["s5roImp"]`: keys whose zh and en strings use the same placeholders a different
   number of times (fractions zh 「读作 {q} 又 {d} 分之 {r}」 has no English counterpart). Parity then compares the set of
   placeholders instead of the multiset; a different set still fails (chicken-rabbit, fractions, polygon-angles).
