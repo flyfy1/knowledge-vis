@@ -1,0 +1,120 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "interference",
+ "refs": [],
+ "backlinks": [
+  {
+   "from": "seismic-waves",
+   "links": [
+    {
+     "from": "step5",
+     "to": "step0"
+    }
+   ]
+  },
+  {
+   "from": "electric-fields",
+   "links": [
+    {
+     "from": "step5",
+     "to": "step1"
+    }
+   ]
+  },
+  {
+   "from": "double-slit",
+   "links": [
+    {
+     "from": "step5",
+     "to": "step0"
+    }
+   ]
+  },
+  {
+   "from": "photoelectric-effect",
+   "links": [
+    {
+     "from": "step5",
+     "to": "step1"
+    }
+   ]
+  },
+  {
+   "from": "quantum-tunneling",
+   "links": [
+    {
+     "from": "step5",
+     "to": "step0"
+    }
+   ]
+  },
+  {
+   "from": "why-the-sky-is-blue",
+   "links": [
+    {
+     "from": "ch7",
+     "to": null
+    },
+    {
+     "from": "ch10",
+     "to": null
+    }
+   ]
+  },
+  {
+   "from": "frozen-bubble",
+   "links": [
+    {
+     "from": "step2",
+     "to": "step1"
+    }
+   ]
+  },
+  {
+   "from": "doppler-effect",
+   "links": [
+    {
+     "from": "step5",
+     "to": "step0"
+    }
+   ]
+  },
+  {
+   "from": "resonance",
+   "links": [
+    {
+     "from": null,
+     "to": "step3"
+    }
+   ]
+  },
+  {
+   "from": "sound-vibration",
+   "links": [
+    {
+     "from": null,
+     "to": "step0"
+    }
+   ]
+  },
+  {
+   "from": "standing-wave",
+   "links": [
+    {
+     "from": null,
+     "to": "step3"
+    },
+    {
+     "from": null,
+     "to": "step1"
+    },
+    {
+     "from": null,
+     "to": "step2"
+    }
+   ]
+  }
+ ],
+ "related": [],
+ "bindings": []
+}

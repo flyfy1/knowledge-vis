@@ -65,7 +65,11 @@
    "from": "interference",
    "links": [
     {
-     "from": null,
+     "from": "step1",
+     "to": "step2"
+    },
+    {
+     "from": "step5",
      "to": "step2"
     }
    ]
