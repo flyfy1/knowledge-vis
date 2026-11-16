@@ -1018,11 +1018,11 @@ anchor; a link to the page top has no anchor).
 
 ## 位值与计数器 · 满十进一 / Place Value & the Counting Frame · Ten Makes One → 指数与对数 · 翻倍与逆问 / Exponentials & Logarithms · Doubling and the Reverse Question
 
-- `place-value` → `exponents-logarithms#step0`
+- `place-value#step5` → `exponents-logarithms#step0`
 
 ## 位值与计数器 · 满十进一 / Place Value & the Counting Frame · Ten Makes One → 除法与余数 · 分不完的那一点 / Division & Remainders · What Is Left Over
 
-- `place-value` → `division-remainder#step0`
+- `place-value#step5` → `division-remainder#step0`
 
 ## 多边形内角和 · 撕下来拼一拼 / Polygon Angle Sums · Tear and Rearrange → 勾股定理 · 一步一交互 / The Pythagorean Theorem · One Interaction at a Time
 
