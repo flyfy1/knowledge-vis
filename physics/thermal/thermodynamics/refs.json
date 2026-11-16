@@ -1,0 +1,36 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "thermodynamics",
+ "refs": [],
+ "backlinks": [
+  {
+   "from": "electric-fields",
+   "links": [
+    {
+     "from": null,
+     "to": "step1"
+    }
+   ]
+  },
+  {
+   "from": "carnot-cycle",
+   "links": [
+    {
+     "from": null,
+     "to": "step3"
+    }
+   ]
+  },
+  {
+   "from": "kinetic-theory",
+   "links": [
+    {
+     "from": null,
+     "to": "step0"
+    }
+   ]
+  }
+ ],
+ "related": [],
+ "bindings": []
+}
