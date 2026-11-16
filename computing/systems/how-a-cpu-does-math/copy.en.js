@@ -7,7 +7,6 @@ window.ESSAY_COPY.en = {
   "nav.lang": "Language",
   "toc.label": "Contents",
   "toc.title": "Contents",
-  "meta.en": "native",
   "u.pct": "{v}%",
   "u.cyc": "{v} cycles",
   "u.bits": "{v} bits",

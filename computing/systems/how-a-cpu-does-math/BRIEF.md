@@ -3,7 +3,9 @@
 Author: Claude Code (claude-opus-5-5), 2026-11-16. English (content.en.md) by Haiku. Status: registered 2026-11-16 (live);
 independently reviewed 2026-11-16 (specs/reviews/how-a-cpu-does-math-review-20261116.md).
 This is the first essay written natively in the site template (content.zh.md → build-pages.cjs). content.en.md is now
-a full translation (`meta.en: native`); the stub fallback in app.js stays for future pages.
+a full translation. Since the template follow-up (2026-11-16) English pending is declared in page.json (`"languages"`;
+the build marks a stub with `data-lang-en="stub"` on `<html>`, which app.js reads); the page-wide `meta.en` string it
+replaced is gone.
 
 ## What the page is
 
@@ -88,6 +90,12 @@ Agner table dates; the AVX10.2 revision (rev 7.0, April 2026) and which shipping
 7. Two labs in one chapter collide on `chN.model.title`, so `keys=chN.x` has to be used. That works, but nothing warns until a duplicate-key error.
 8. `{.sum}` on a paragraph fails with "needs {#key}"; only .law/.take are implicit.
 9. Very long numbers in prose (the 55-digit exact 0.1) overflow at 390 px unless the page sets overflow-wrap; this is a layout CSS concern.
+
+Status after the template follow-up (2026-11-16, d54606f9; specs/site-template.md §3a, §7, §9a): 1 is page.json
+`languages` (this page migrated); 3 is a build check of label room plus `--print-budgets` (the wide/narrow variants
+stay page code); 4 is page.json `dynamicKeys` (declared here); 6 is page.json `generators` (tools/diagrams.cjs writes a
+GENERATED header and `--check` reruns it). 2, 5, 7, 8 and 9 are written into §9a as guidance; the reviewer's
+`--print-bindings` and REGISTRY-vs-front-matter items are build features too.
 
 ## Registration (2026-11-16)
 

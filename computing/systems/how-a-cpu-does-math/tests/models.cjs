@@ -190,10 +190,14 @@ function ok(name, cond, info) { n++; if (!cond) { fails++; console.error(`FAIL $
   const ph = s => (String(s).match(/\{[a-zA-Z_]\w*\}/g) || []).sort().join();
   const bad = Object.keys(Z).filter(k => ph(Z[k]) !== ph(E[k]));
   check('runtime placeholders match in zh and en', bad.join(), '');
-  check('en is translated (meta.en native, no [EN pending] left)', E['meta.en'], 'native');
+  // English pending is declared in page.json ("languages": {"en": "stub"}, specs/site-template.md §3a), not in the copy
+  const PJ = JSON.parse(fs.readFileSync(path.join(DIR, 'page.json'), 'utf8'));
+  check('en is translated (page.json languages.en native, no stub mark on <html>)', [(PJ.languages || {}).en || 'native', /data-lang-en=/.test(html)].join(), 'native,false');
+  check('no page-wide meta.* string left over from the old stub flag', Object.keys(Z).filter(k => k.startsWith('meta.')).join(), '');
   check('no untranslated [EN pending] strings in en', Object.keys(E).filter(k => /EN pending/.test(E[k])).join(), '');
   check('no Chinese in any en string', Object.keys(E).filter(k => /[㐀-鿿]/.test(E[k])).join(), '');
-  check('zh is the native language', Z['meta.en'], 'native');
+  check('page.json dynamicKeys covers what this test expects app.js to build', Object.entries(PJ.dynamicKeys || {}).flatMap(([p, vs]) => vs.map(v => p + '.' + v)).sort().join(),
+    [...['ch4.cls.', 'ch4.say.'].flatMap(p => ['norm', 'sub', 'zero', 'flushed'].map(s => p + s)), ...M.SCHEMES.map(s => 'ch8.s.' + s), ...['latency', 'units', 'loads'].flatMap(s => ['ch11.fma.lim.' + s, 'ch11.fma.say.' + s])].sort().join());
   // no Chinese in index.html outside pre-filled copy: strip data-i18n* element contents, aria-labels, title and meta
   let h = html.replace(/<div[^>]*id="langToggle"[\s\S]*?<\/div>/, '').replace(/<title>[\s\S]*?<\/title>/, '').replace(/<meta[^>]*>/g, '').replace(/ aria-label="[^"]*"/g, '');
   for (let i = 0; i < 4; i++) h = h.replace(/(<(\w+)[^>]*data-i18n(?:-html)?="[^"]*"[^>]*>)[\s\S]*?(<\/\2>)/g, '$1$3');

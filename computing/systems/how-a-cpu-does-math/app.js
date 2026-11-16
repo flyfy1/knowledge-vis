@@ -12,15 +12,16 @@ const FONT = '12px -apple-system,"PingFang SC","Microsoft YaHei",system-ui,sans-
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 /* ───────── language ─────────
-   content.en.md may be a structural stub while the translation is pending. It then sets the page-wide string
-   meta.en to "stub", and the page treats English as absent (falls back to Chinese and says so in <html lang>). */
+   content.en.md may be a structural stub while the translation is pending. page.json then declares
+   "languages": {"en": "stub"}, the build writes data-lang-en="stub" on <html>, and the page treats English as absent
+   (falls back to Chinese and says so in <html lang>). specs/site-template.md §3a, §9a. */
 const LS = 'knowledge-lang';
 let memLang = null;
 function readLang() { try { return localStorage.getItem(LS); } catch (e) { return memLang; } }
 function writeLang(v) { memLang = v; try { localStorage.setItem(LS, v); } catch (e) { /* in-memory fallback */ } }
 let lang = readLang();
 if (lang !== 'zh' && lang !== 'en') lang = /^zh/i.test(navigator.language || '') ? 'zh' : 'en';
-const enStub = !COPY.en || COPY.en['meta.en'] === 'stub';
+const enStub = !COPY.en || document.documentElement.dataset.langEn === 'stub';
 const hasLang = l => !!COPY[l] && !(l === 'en' && enStub);
 const effLang = () => (hasLang(lang) ? lang : 'zh');
 function t(key, vars) {

@@ -4,14 +4,11 @@ title: CPU 是怎么算小数的，又怎么一次算一排 · 一篇可以动�
 desc: 一块 CPU 每秒做几千亿次小数运算，却连 0.1 都存不准。这篇从 32 个位讲起：浮点数的位怎么排，ulp，舍入，次正规数，抵消，FMA，AI 带进硬件的 FP16、BF16、FP8 和块缩放格式，再到 SIMD、AVX-512、SVE 和矩阵单元。十几个可以动手的模型，数都是逐位算出来的。
 ---
 
-<!-- meta.en: "native" in both files now that English is translated; a "stub" value in content.en.md would make app.js fall back to Chinese. -->
-
 ::: strings
 nav.back: ← 知识索引
 nav.lang: 语言
 toc.label: 目录
 toc.title: 目录
-meta.en: native
 u.pct: {v}%
 u.cyc: {v} 拍
 u.bits: {v} 位

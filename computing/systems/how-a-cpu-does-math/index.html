@@ -577,10 +577,10 @@
 
 <footer><div class="wrap" data-i18n-html="footer"><p><strong>来源。</strong>IEEE Std 754-2019，IEEE Standard for Floating-Point Arithmetic（格式参数、舍入、特殊值；第 1–4 章）。D. Goldberg，What Every Computer Scientist Should Know About Floating-Point Arithmetic，ACM Computing Surveys 23(1)，1991。N. J. Higham，Accuracy and Stability of Numerical Algorithms，第 2 版，SIAM 2002（求和误差、Kahan 求和）。W. Kahan，Further remarks on reducing truncation errors，CACM 8(1)，1965。B. P. Welford，Note on a method for calculating corrected sums of squares and products，Technometrics 4(3)，1962。</p><p>P. Micikevicius 等，FP8 Formats for Deep Learning，arXiv:2209.05433（2022）；OCP 8-bit Floating Point Specification（OFP8）1.0（2023 年 6 月）；OCP Microscaling Formats (MX) Specification 1.0（2023 年 9 月）；B. Darvish Rouhani 等，Microscaling Data Formats for Deep Learning，arXiv:2310.10537（2023）。NVIDIA，Introducing NVFP4 for Efficient and Accurate Low-Precision Inference（技术博客，2025）。</p><p>英特尔，Intel Advanced Vector Extensions 10.2 Architecture Specification，文档号 361050-007，第 7 版（2026 年 4 月）；英特尔 AMX（Intel 指令集扩展参考，clang amxintrin.h）。A. Fog，Instruction tables（2025-09-20 更新）。T. Downs，Gathering Intel on Intel AVX-512 Transitions（2020-01-17）；T. Downs，Ice Lake AVX-512 Downclocking（2020-08-19）。Chips and Cheese，Zen 5's AVX-512 Frequency Behavior（2025-02-28）。Arm，Scalable Matrix Extension 介绍（Arm 开发者博客）；Arm 新闻稿，Lumex CSS（2025-09-10）。S. Remke、A. Breuer，Hello SME!，arXiv:2409.18779（2024）。RISC-V International，RVA23 Profile 1.0（2024-10）。A. Fitzgibbon 等，Novel Aspects of IEEE SA P3109 Arithmetic Formats for Machine Learning，arXiv:2606.04028（2026）。</p><p><strong>模型。</strong>浮点格式和舍入：精确的有理数运算（BigInt）与按 IEEE 754 规则逐位舍入；模拟里用双精度加 TwoSum 求出精确余数再舍入，测试里与精确算法逐一核对。方差：一遍法、两遍法、Welford。求和：顺序、两两、Kahan。块缩放：按 OCP MX 1.0 第 6.3 节取比例，NVFP4 按 NVIDIA 的描述。乘加流水线：逐周期的发射模拟，参数取自 Agner Fog。频率许可：按 Downs 的测量逐微秒模拟。所有随机数用固定种子。这篇文章由 Claude（Anthropic 的 AI）写成，2026 年 11 月 16 日经另一个 Claude 实例独立评审和修改。</p></div></footer>
 
-<script src="models.js?v=20261116"></script>
-<script src="copy.zh.js?v=20261116"></script>
-<script src="copy.en.js?v=20261116" onerror="void 0"></script>
-<script src="app.js?v=20261116"></script>
+<script src="models.js?v=20261116b"></script>
+<script src="copy.zh.js?v=20261116b"></script>
+<script src="copy.en.js?v=20261116b" onerror="void 0"></script>
+<script src="app.js?v=20261116b"></script>
 <script defer src="../../../site-nav.js?v=sn-20261116"></script>
 </body>
 </html>

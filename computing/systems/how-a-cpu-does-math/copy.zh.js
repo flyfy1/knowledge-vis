@@ -7,7 +7,6 @@ window.ESSAY_COPY.zh = {
   "nav.lang": "语言",
   "toc.label": "目录",
   "toc.title": "目录",
-  "meta.en": "native",
   "u.pct": "{v}%",
   "u.cyc": "{v} 拍",
   "u.bits": "{v} 位",

@@ -4,7 +4,8 @@
 //   node computing/systems/how-a-cpu-does-math/tests/browser.cjs
 // Optional SHOT_DIR=/tmp/... writes a full-page screenshot and one per diagram and per model at each width (never into
 // the repo). Run browser tests one at a time.
-// Checks at 1280/390/320 (Chinese; English too once content.en.md is translated and meta.en is no longer "stub"): no
+// Checks at 1280/390/320 (Chinese; English too unless page.json declares "languages": {"en": "stub"}, which the build
+// marks as data-lang-en="stub" on <html>): no
 // console or page errors, no horizontal overflow, no clipped text, every control at least 48×48 px, no raw copy keys in
 // the DOM or on a canvas, every readout and live sentence filled; the thirteen static diagrams (STANDARD §4a): the
 // visible SVG variant for the width, role=img with an aria-label from the copy, every label non-empty, inside the
@@ -78,9 +79,9 @@ function diagramCheck() {
 
 (async () => {
   const browser = await chromium.launch();
-  const stub = await (async () => { const p = await open(browser, 1280); const s = await p.evaluate(() => !window.ESSAY_COPY.en || window.ESSAY_COPY.en['meta.en'] === 'stub'); await p.close(); return s; })();
+  const stub = await (async () => { const p = await open(browser, 1280); const s = await p.evaluate(() => !window.ESSAY_COPY.en || document.documentElement.dataset.langEn === 'stub'); await p.close(); return s; })();
   const langs = stub ? ['zh'] : ['zh', 'en'];
-  if (stub) console.log('NOTE: content.en.md is a structural stub (meta.en: stub); English width sweep skipped');
+  if (stub) console.log('NOTE: content.en.md is a structural stub (page.json languages.en: stub); English width sweep skipped');
   const CJK = /[　-〿㐀-鿿＀-￯]/;
 
   for (const lang of langs) for (const width of [1280, 390, 320]) {

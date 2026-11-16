@@ -4,14 +4,11 @@ title: How a CPU Does Math: Real Numbers, and Many at Once · A Hands-on Essay
 desc: A CPU does hundreds of billions of arithmetic operations on fractions every second, yet it cannot even store 0.1 exactly. This essay starts from 32 bits: how the bits of a floating-point number are laid out, ulps, rounding, subnormals, cancellation, FMA, the FP16, BF16, FP8 and block-scaled formats AI brought into hardware, and then SIMD, AVX-512, SVE and matrix units. A dozen hands-on models, every number computed bit by bit.
 ---
 
-<!-- meta.en: "native" in both files now that English is translated; a "stub" value in content.en.md would make app.js fall back to Chinese. -->
-
 ::: strings
 nav.back: ← Index
 nav.lang: Language
 toc.label: Contents
 toc.title: Contents
-meta.en: native
 u.pct: {v}%
 u.cyc: {v} cycles
 u.bits: {v} bits
