@@ -885,11 +885,11 @@ anchor; a link to the page top has no anchor).
 
 ## 平均数 · 移多补少 / Averages · Level by Pouring → 概率分布 · 随机性也有形状 / Probability Distributions · Randomness Has a Shape
 
-- `averaging-leveling` → `probability-distribution#step1`
+- `averaging-leveling#step5` → `probability-distribution#step1`
 
 ## 平均数 · 移多补少 / Averages · Level by Pouring → 方程天平 · 两边同做一件事 / Equations on a Balance · Do the Same to Both Sides
 
-- `averaging-leveling` → `equation-scale#step1`: ? → equation-balance
+- `averaging-leveling#step5` → `equation-scale#step1`: ? → equation-balance
 
 ## 反向传播 · 误差沿网络回流 / Backpropagation · Error Flows Back Through the Network → 注意力机制 · 每个词决定看谁 / Attention · Every Word Decides Where to Look
 
