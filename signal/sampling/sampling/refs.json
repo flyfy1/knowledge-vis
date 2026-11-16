@@ -1,0 +1,54 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "sampling",
+ "refs": [],
+ "backlinks": [
+  {
+   "from": "modulation",
+   "links": [
+    {
+     "from": null,
+     "to": "step4"
+    }
+   ]
+  },
+  {
+   "from": "fourier",
+   "links": [
+    {
+     "from": null,
+     "to": "step4"
+    }
+   ]
+  },
+  {
+   "from": "laplace",
+   "links": [
+    {
+     "from": null,
+     "to": "step4"
+    }
+   ]
+  },
+  {
+   "from": "wavelets",
+   "links": [
+    {
+     "from": null,
+     "to": "step3"
+    }
+   ]
+  },
+  {
+   "from": "z-transform",
+   "links": [
+    {
+     "from": null,
+     "to": "step4"
+    }
+   ]
+  }
+ ],
+ "related": [],
+ "bindings": []
+}

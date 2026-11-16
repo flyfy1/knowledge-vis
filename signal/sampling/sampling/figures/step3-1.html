@@ -1,0 +1,18 @@
+<div class="stage">
+      <canvas id="s3-canvas" height="320" style="height:320px"></canvas>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="labF"></span> <span class="val" id="s3-f-val">4</span></span>
+        <input type="range" id="s3-f" min="2" max="8" step="0.5" value="4">
+      </label>
+      <label><span><span data-i18n="labFs">采样率 f<sub>s</sub>（Hz）</span> <span class="val" id="s3-fs-val">10</span></span>
+        <input type="range" id="s3-fs" min="2" max="20" step="0.1" value="10">
+      </label>
+      <label><span><span data-i18n="s3phase"></span> <span class="val" id="s3-phase-val">90</span></span>
+        <input type="range" id="s3-phase" min="0" max="360" step="1" value="90" disabled>
+      </label>
+    </div>
+    <div class="btn-row">
+      <button class="btn" id="s3-snap" data-i18n="s3snap"></button>
+    </div>
+    <p class="readout" id="s3-readout"></p>
