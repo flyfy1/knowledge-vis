@@ -108,7 +108,7 @@ const STR = {
     "site.crumb.cat": "计算与智能",
     "site.crumb.sub": "机器学习",
     "site.bl.title": "被这些页面引用",
-    "site.bl.1": "<a href=\"../overfitting/\">过拟合</a>：→ <a href=\"#step3\">本页第 3 步</a>"
+    "site.bl.1": "<a href=\"../overfitting/\">过拟合</a>：<a href=\"../overfitting/#step5\">该课第 5 步</a> → <a href=\"#step3\">本页第 3 步</a>"
   },
   en: {
     docTitle: "Decision Trees and Information Gain · The Best Way to Play Twenty Questions",
@@ -218,7 +218,7 @@ const STR = {
     "site.crumb.cat": "Computing & AI",
     "site.crumb.sub": "Machine Learning",
     "site.bl.title": "Linked from",
-    "site.bl.1": "<a href=\"../overfitting/\">Overfitting</a>: → <a href=\"#step3\">this page step 3</a>"
+    "site.bl.1": "<a href=\"../overfitting/\">Overfitting</a>: <a href=\"../overfitting/#step5\">its step 5</a> → <a href=\"#step3\">this page step 3</a>"
   }
 };
 let currentLang = 'en';

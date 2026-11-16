@@ -999,11 +999,11 @@ anchor; a link to the page top has no anchor).
 
 ## 过拟合 / Overfitting → 梯度下降 · 摸黑下山 / Gradient Descent · Feeling Your Way Downhill
 
-- `overfitting` → `gradient-descent#step0`: ? → gradient-descent
+- `overfitting#step5` → `gradient-descent#step0`: ? → gradient-descent
 
 ## 过拟合 / Overfitting → 蒙特卡洛 · 撒豆子算 π / Monte Carlo · Counting π with Scattered Beans
 
-- `overfitting` → `monte-carlo#step2`
+- `overfitting#step5` → `monte-carlo#step2`
 
 ## PageRank · 随机冲浪者最后停在哪 / PageRank · Where the Random Surfer Ends Up → 图算法 · 让边带你走 / Graph Algorithms · Let Edges Lead
 
