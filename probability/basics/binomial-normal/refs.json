@@ -1,0 +1,58 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "binomial-normal",
+ "refs": [],
+ "backlinks": [
+  {
+   "from": "what-a-drive-is-made-of",
+   "links": [
+    {
+     "from": "ch4",
+     "to": null
+    },
+    {
+     "from": "ch10",
+     "to": null
+    }
+   ]
+  },
+  {
+   "from": "hypothesis-testing",
+   "links": [
+    {
+     "from": null,
+     "to": "step0"
+    }
+   ]
+  },
+  {
+   "from": "markov-chains",
+   "links": [
+    {
+     "from": null,
+     "to": "step0"
+    }
+   ]
+  },
+  {
+   "from": "signal-detection",
+   "links": [
+    {
+     "from": null,
+     "to": "step3"
+    }
+   ]
+  },
+  {
+   "from": "same-votes-different-winner",
+   "links": [
+    {
+     "from": "ch9",
+     "to": "step5"
+    }
+   ]
+  }
+ ],
+ "related": [],
+ "bindings": []
+}

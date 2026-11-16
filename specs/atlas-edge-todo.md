@@ -1127,11 +1127,11 @@ anchor; a link to the page top has no anchor).
 
 ## 二项分布到正态 · 钉板上长出的钟形 / Binomial to Normal · The Bell Curve Growing on a Pegboard → 概率分布 · 随机性也有形状 / Probability Distributions · Randomness Has a Shape
 
-- `binomial-normal` → `probability-distribution#step1`
+- `binomial-normal#step5` → `probability-distribution#step1`
 
 ## 二项分布到正态 · 钉板上长出的钟形 / Binomial to Normal · The Bell Curve Growing on a Pegboard → 概率与频率 · 转得越多，越贴近概率 / Probability & Frequency · The More Spins, the Closer to the Probability
 
-- `binomial-normal` → `probability-frequency#step0`
+- `binomial-normal#step5` → `probability-frequency#step0`
 
 ## 黑体辐射 · 热的物体为什么发光 / Blackbody Radiation · Why Hot Things Glow → 量子基础 · 可能性先于结果 / Quantum Basics · Possibility Before Outcome
 
