@@ -23,7 +23,7 @@
 | --- | --- |
 | `node tests/authorship-derived-from.cjs` | PASS (before and after the fix) |
 | `authorship.cjs` at HEAD vs `c94da8d5~1` on 11 files (root index.html, AUTHORSHIP.md, authorship.cjs, GPU index/copy, memory app.js, site-nav.js, pages.config.js, page-provenance-core, page-provenance.json, atlas/data.js), plus `--summary` and `--commits` | stdout byte-identical; no history commit has a `Derived-From:` line, so no stderr report |
-| `node tests/site-template.cjs` | 75 checks at HEAD; 82 after the fix. The new two-page check fails on the old `template.cjs` |
+| `node tests/site-template.cjs` | 71 checks at 08aef9ff (run from a `git archive` copy); 82 after the fix. The new two-page check fails on the old `template.cjs` |
 | Round trip of `computing/systems/how-a-gpu-computes/` in a `git archive HEAD` mirror | see D below |
 | Builder's three round trips repeated with the fixed library (memory, boot, drive) | all byte-identical, copy equal |
 | `node scripts/build-pages.cjs --all --check` | PASS, 0 pages |
