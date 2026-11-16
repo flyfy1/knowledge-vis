@@ -111,7 +111,7 @@ const STR = {
     "site.bl.6": "<a href=\"../circle-angles/\">圆周角 · 为什么恰好是一半</a>：<a href=\"../circle-angles/#step6\">该课第 6 步</a> → <a href=\"#step4\">本页第 4 步</a>",
     "site.bl.7": "<a href=\"../polygon-angles/\">多边形内角和 · 撕下来拼一拼</a>：→ <a href=\"#step0\">本页第 0 步</a>",
     "site.bl.8": "<a href=\"../solid-geometry/\">立体几何 · 转一转，再切一刀</a>：<a href=\"../solid-geometry/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>",
-    "site.bl.9": "<a href=\"../space-diagonal/\">空间对角线 · 3D 里的两次勾股</a>：→ <a href=\"#step2\">本页第 2 步</a>、<a href=\"#step4\">本页第 4 步</a>",
+    "site.bl.9": "<a href=\"../space-diagonal/\">空间对角线 · 3D 里的两次勾股</a>：<a href=\"../space-diagonal/#step0\">该课第 0 步</a> → <a href=\"#step2\">本页第 2 步</a>；<a href=\"../space-diagonal/#step2\">该课第 2 步</a> → <a href=\"#step4\">本页第 4 步</a>、<a href=\"#step2\">本页第 2 步</a>",
     "site.bl.10": "<a href=\"../../../physics/electromagnetism/magnets/\">磁铁 · 铁屑显出看不见的线</a>：→ <a href=\"#step0\">本页第 0 步</a>"
   },
   en: {
@@ -224,7 +224,7 @@ const STR = {
     "site.bl.6": "<a href=\"../circle-angles/\">Inscribed Angles · Why Exactly Half</a>: <a href=\"../circle-angles/#step6\">its step 6</a> → <a href=\"#step4\">this page step 4</a>",
     "site.bl.7": "<a href=\"../polygon-angles/\">Polygon Angle Sums · Tear and Rearrange</a>: → <a href=\"#step0\">this page step 0</a>",
     "site.bl.8": "<a href=\"../solid-geometry/\">Solid Geometry · Turn It, Then Cut It</a>: <a href=\"../solid-geometry/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>",
-    "site.bl.9": "<a href=\"../space-diagonal/\">The Space Diagonal · Pythagoras Twice, in 3D</a>: → <a href=\"#step2\">this page step 2</a>, <a href=\"#step4\">this page step 4</a>",
+    "site.bl.9": "<a href=\"../space-diagonal/\">The Space Diagonal · Pythagoras Twice, in 3D</a>: <a href=\"../space-diagonal/#step0\">its step 0</a> → <a href=\"#step2\">this page step 2</a>; <a href=\"../space-diagonal/#step2\">its step 2</a> → <a href=\"#step4\">this page step 4</a>, <a href=\"#step2\">this page step 2</a>",
     "site.bl.10": "<a href=\"../../../physics/electromagnetism/magnets/\">Magnets · Iron Filings Reveal Unseen Lines</a>: → <a href=\"#step0\">this page step 0</a>"
   }
 };
