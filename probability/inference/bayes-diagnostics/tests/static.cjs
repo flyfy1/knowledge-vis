@@ -9,6 +9,7 @@ for(const id of ['prior','sens','spec','positiveBtn','negativeBtn','tree','formu
 for(const token of ['TP / (TP + FP)','TN / (TN + FN)','P(+|H)','P(−|¬H)','quizCorrect','quizWrong']){
   if(!(html+js+i18n).includes(token)) throw new Error(`missing teaching token: ${token}`);
 }
-const keys=[...html.matchAll(/data-i18n="([^"]+)"/g)].map(m=>m[1]);
+// site.* keys are the template chrome's (breadcrumb, linked-from), generated into both tables as quoted keys
+const keys=[...html.matchAll(/data-i18n="([^"]+)"/g)].map(m=>m[1]).filter(k=>!k.startsWith('site.'));
 for(const key of keys){if(!new RegExp(`\\b${key}:`).test(i18n)) throw new Error(`missing bilingual key: ${key}`)}
 console.log(`bayes-diagnostics static contract: ${keys.length} keys, ${9} controls: ok`);
