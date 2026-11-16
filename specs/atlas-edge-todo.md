@@ -590,15 +590,17 @@ anchor; a link to the page top has no anchor).
 
 ## 方程天平 · 两边同做一件事 / Equations on a Balance · Do the Same to Both Sides → 负数 · 0 以下的世界 / Negative Numbers · The World Below Zero
 
-- `equation-scale` → `negative-numbers#step3`
+- `equation-scale#step4` → `negative-numbers#step3`
+- `equation-scale#step6` → `negative-numbers#step3`
 
 ## 方程天平 · 两边同做一件事 / Equations on a Balance · Do the Same to Both Sides → 分数 · 把整体切开来数 / Fractions · Cutting the Whole to Count
 
-- `equation-scale` → `fractions#step1`: ? → fractions
+- `equation-scale#step4` → `fractions#step1`: ? → fractions
+- `equation-scale#step6` → `fractions#step1`: ? → fractions
 
 ## 方程天平 · 两边同做一件事 / Equations on a Balance · Do the Same to Both Sides → 一次函数 · 斜率是陡缓，截距是起点 / Linear Functions · Slope Is Steepness, Intercept Is the Start
 
-- `equation-scale` → `linear-functions#step2`: ? → slope
+- `equation-scale#step6` → `linear-functions#step2`: ? → slope
 
 ## 质量守恒 · 原子一个都不丢 / Mass Conservation · Not a Single Atom Lost → 粒子与物态 · 热闹程度即温度 / Particles & States · Temperature Is How Wildly They Move
 
