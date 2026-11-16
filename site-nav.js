@@ -86,6 +86,21 @@
       nameCrumb();
       if (global.MutationObserver) new global.MutationObserver(nameCrumb).observe(doc.documentElement, { attributes: true, attributeFilter: ['lang'] });
     }
+    // A converted lesson that does not load lesson-shell.css (Phase 3 batch B): site-nav.css centres the linked-from
+    // block with the page's --gutter or 16px, but 55 of these pages narrow their .step side padding to 12px in their
+    // own media query, so at 390/320 the block sat 4px further in than the steps. Use a step's own side padding.
+    if (doc.documentElement.getAttribute('data-template') === 'lesson' && !doc.querySelector('link[href*="lesson-shell.css"]') && global.getComputedStyle) {
+      var xref = doc.querySelector('section.site-xref'), xstep = doc.getElementById('step1') || doc.querySelector('.step');
+      if (xref && xstep) {
+        var alignXref = function () {
+          var cs = global.getComputedStyle(xstep);
+          xref.style.paddingLeft = cs.paddingLeft;
+          xref.style.paddingRight = cs.paddingRight;
+        };
+        alignXref();
+        global.addEventListener('resize', alignXref);
+      }
+    }
     // A converted lesson that does not load lesson-shell.js (Phase 3 batch B): on the hand-written page the first
     // step's nav pill was lit at load on most window sizes, because this file mounted the breadcrumb late and step 0
     // sat inside the scroll spy's band for the first observation. The static breadcrumb puts step 0 at its final
@@ -104,13 +119,16 @@
           if (!first) return;
           first.classList.add('active');
           // Some of these pages have no working spy (nothing ever lights live). There the default would stay on
-          // step 0 for good, so it is taken back once step 0 has scrolled out of the upper part of the window while
-          // it is still the only lit item. As soon as anything else is lit, the spy owns the nav and this stops.
+          // step 0 for good, so it is taken back once step 0 has scrolled entirely out of the window while it is
+          // still the only lit item. As soon as anything else is lit, the spy owns the nav and this stops. Not
+          // earlier: the hand-written pages kept pill 0 lit until the spy lit step 1, and a spy's band lies inside
+          // the window, so step 1 has crossed it by the time step 0 is gone (taking it back at 40 % of the window
+          // left no pill lit for a stretch on pages whose spy lights step 1 later; Phase 3b review).
           var step0 = doc.getElementById((first.getAttribute('href') || '').replace(/^#/, ''));
           var onScroll = function () {
             var lit = stepNav.querySelectorAll('.active');
             if (lit.length !== 1 || lit[0] !== first) { global.removeEventListener('scroll', onScroll); return; }
-            var past = step0 ? step0.getBoundingClientRect().bottom < global.innerHeight * 0.4 : global.scrollY > global.innerHeight;
+            var past = step0 ? step0.getBoundingClientRect().bottom < 0 : global.scrollY > global.innerHeight;
             if (past) { first.classList.remove('active'); global.removeEventListener('scroll', onScroll); }
           };
           global.addEventListener('scroll', onScroll, { passive: true });

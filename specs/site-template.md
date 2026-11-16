@@ -283,9 +283,19 @@ hand-written text is not their zh string (the runtime replaces it; readers witho
   did not; 336 runs lit nothing on either, 201 lit it on both, 1 lit it only on the build). `site-nav.js` now does the same as
   lesson-shell.js on `html[data-template="lesson"]` without a `lesson-shell.js` script: on a plain navigation at
   scroll 0 with no `#fragment` and nothing lit, it lights the first `.step-nav` link. Some of these pages have no
-  working spy (nothing is ever lit live); there it withdraws the default once step 0 is out of the upper 40 % of the
-  window while it is still the only lit item, and it stops as soon as anything else is lit
-  (tests/site-nav-browser.cjs: cell-structure, binary-search).
+  working spy (nothing is ever lit live); there it withdraws the default once step 0 has left the window entirely
+  while it is still the only lit item, and it stops as soon as anything else is lit
+  (tests/site-nav-browser.cjs: cell-structure, binary-search). 67a0a991 withdrew it once step 0 was out of the upper
+  40 % of the window. 84 of these pages have a spy band that ends at 40 % (`rootMargin` `-30% 0px -60%` or
+  `-25% 0px -60%`), so the withdrawal ran in the scroll event just before the spy's IntersectionObserver callback lit
+  step 1, and a wheel scroll showed no lit pill for a frame between 0 and 1 where the hand-written page went from 0
+  straight to 1 (Phase 3b review: cell-structure and pid-control at 1280×800 and 390×844). Since every spy band lies
+  inside the window, step 1 has crossed it by the time step 0 is gone.
+- **Linked-from padding.** `site-nav.css` pads the block with the page's `--gutter` or 16px, but 55 of these pages
+  narrow `.step` to 12px side padding in their own media query (640–760px), so at 390/320 the block's heading sat 4px
+  further in than the steps' on 45 pages with a block. `site-nav.js` now copies the side padding of `#step1` (else the
+  first `.step`) onto the block on load and resize (lessons without lesson-shell.css only; without JavaScript the
+  4px stays). Measured on all 111 pages with a block at 1280/390/320: 0 off (was 0/45/45).
 - `page.json` `placeholderRepeats: ["s5roImp"]`: keys whose zh and en strings use the same placeholders a different
   number of times (fractions zh 「读作 {q} 又 {d} 分之 {r}」 has no English counterpart). Parity then compares the set of
   placeholders instead of the multiset; a different set still fails (chicken-rabbit, fractions, polygon-angles).
@@ -819,7 +829,7 @@ passed (4516 checks). The full build failed only the CJK-in-`index.html` check o
   widths); include key `sn-20261116c` on all 249 pages in its own mechanical commit d150036e. Step-0 pill (D1):
   67a0a991 (§3c). trigonometry's lesson-shell includes moved to `?v=20261116` in 009c48b3 (aeeae125 pattern).
 - **Conversions:** 160 pages, one mechanical commit each (`Built-By: script (deterministic, no model:
-  scripts/convert-essay.cjs)`, one `Derived-From:` per new file), from z-transform 57575cb0 to fractions e4ecbf56
+  scripts/convert-essay.cjs)`, one `Derived-From:` per new file), from blood-circulation 8ed4b909 to fractions e4ecbf56
   (`git log --grep 'Phase 3 batch B'`). Labelled authors: Codex 12, Claude Code 4, unlabelled 144. Each
   round-tripped at its parent (index.html byte-identical, both tables equal key for key, runtime identical), then
   `version` 20261116a and the full build; a commit also carries the regenerated registry files and the linked-from
@@ -838,11 +848,15 @@ passed (4516 checks). The full build failed only the CJK-in-`index.html` check o
   h1, page errors equal in all 640 runs; lit pills as above, and after the D1 change equal after scrolling to step 3,
   a reload there and a `#step2` deep link on 159 pages, never more than one lit. Canvas sweep not run: the
   conversion does not touch app.js or any canvas.
-- **Open:** at 390/320, 44 pages put their steps at a 12 px gutter and the linked-from block at 16 px (4 px off);
-  lever-pulley's `#step2`/`#step3` deep links land 100–700 px short on the build in repeated runs (fragment scroll races its three.js
-  module; the spy then lights step 2); pre-existing overflow unchanged (rsa-encryption at 390, fractions at 320);
-  16 `stale:` warnings (hand-written text in `figures/`, page owners' call); integral and frequency-response link to
-  `atlas/?trail=…` (reported as not a live page).
+- **Open at commit time, settled by the independent review** (specs/reviews/site-template-phase3b-review-20261116.md):
+  the 4 px linked-from offset at 390/320 (45 pages) is fixed in `site-nav.js` (§3c "Linked-from padding"); the
+  lever-pulley `#step2`/`#step3` "short landing" is not a defect: the page sets `html{scroll-behavior:smooth}` and the
+  build fires `load` about 0.9 s earlier than the hand-written copy, so a reading taken a fixed time after `load`
+  caught the smooth scroll still running (both land at 76 px after 4 s, and the hand-written copy also reads short when
+  sampled early); the pill gap between step 0 and step 1 is fixed in `site-nav.js` (§3c D1). Still open, all
+  pre-existing (same on the d150036e copy): overflow at 390/320 in rsa-encryption (27 px) and at 320 in fractions
+  (23 px zh, 35 px en) and coordinate-plane en (2 px); 16 `stale:` warnings (hand-written text in `figures/`, page
+  owners' call); integral and frequency-response link to `atlas/?trail=…` (reported as not a live page).
 
 ## 11. Authorship
 

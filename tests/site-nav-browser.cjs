@@ -187,6 +187,44 @@ async function pages(browser) {
     ok(!(await lit()).split(',').includes('0'), `batch B lesson ${path}: a #step3 deep link does not light step 0`);
     await dctx.close();
   }
+  // The default is taken back only once step 0 has left the window (Phase 3b review): the hand-written pages kept pill
+  // 0 lit until the spy lit step 1. Taking it back at 40 % of the window raced the spies whose band ends there
+  // (cell-structure: -30% 0 -60%), so a wheel scroll showed no lit pill for a frame between 0 and 1; and on a page
+  // with no working spy, step 0 still partly on screen keeps its pill (binary-search).
+  {
+    const wctx = await browser.newContext({ viewport: { width: 1280, height: 800 } });
+    await wctx.addInitScript(() => {
+      try { localStorage.setItem('knowledge-lang', 'zh'); } catch (e) {}
+      window.__rec = [];
+      const f = () => { const v = [...document.querySelectorAll('.step-nav a')].map((a, i) => (a.classList.contains('active') ? i : null)).filter(x => x != null).join(','); if (window.__rec[window.__rec.length - 1] !== v) window.__rec.push(v); requestAnimationFrame(f); };
+      requestAnimationFrame(f);
+    });
+    const wp = await wctx.newPage();
+    await wp.goto(BASE + 'biology/cells/cell-structure/', { waitUntil: 'load' });
+    await wp.waitForTimeout(700);
+    await wp.mouse.move(640, 400);
+    const end = await wp.evaluate(() => document.getElementById('step2').getBoundingClientRect().top + scrollY);
+    while (await wp.evaluate(() => scrollY) < end - 50) { await wp.mouse.wheel(0, 100); await wp.waitForTimeout(30); }
+    await wp.waitForTimeout(400);
+    const rec = (await wp.evaluate(() => window.__rec)).join('>');
+    ok(/0>1/.test(rec) && !/0>>1/.test(rec), `batch B lesson cell-structure: wheel scroll goes from pill 0 straight to pill 1 (${rec})`);
+    await wp.goto(BASE + 'computing/algorithms/binary-search/', { waitUntil: 'load' });
+    await wp.waitForTimeout(800);
+    await wp.evaluate(() => { const s = document.getElementById('step0'); window.scrollTo(0, s.getBoundingClientRect().bottom + scrollY - innerHeight * 0.2); });
+    await wp.waitForTimeout(400);
+    eq(await wp.evaluate(() => [...document.querySelectorAll('.step-nav a')].map((a, i) => (a.classList.contains('active') ? i : null)).filter(x => x != null).join(',')), '0', 'batch B lesson binary-search: pill 0 stays lit while step 0 is on screen');
+    await wctx.close();
+  }
+  // The linked-from block takes a step's own side padding (blood-circulation narrows .step to 12px at <= 640px; the
+  // block's site-nav.css fallback is 16px), so its heading lines up with the steps' at every width.
+  for (const w of WIDTHS) {
+    const actx = await browser.newContext({ viewport: { width: w, height: 800 }, reducedMotion: 'reduce' });
+    const ap = await actx.newPage();
+    await ap.goto(BASE + 'biology/body/blood-circulation/', { waitUntil: 'load' });
+    const lefts = await ap.evaluate(() => [document.querySelector('section.site-xref h2'), document.querySelector('#step1 h2')].map(e => Math.round(e.getBoundingClientRect().left)));
+    eq(lefts[0], lefts[1], `batch B lesson blood-circulation ${w}: linked-from heading aligned with the steps`);
+    await actx.close();
+  }
 
   // Hand-written essay: auto-links before and after switching language in place. No hand-written essay mentions
   // another live title in its own copy any more, so the test adds one keyed paragraph to both copy tables; the
