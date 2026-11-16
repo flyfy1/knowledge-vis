@@ -717,11 +717,11 @@ anchor; a link to the page top has no anchor).
 
 ## 多普勒效应 · 驶近变尖，驶远变沉 / The Doppler Effect · Higher as It Approaches, Lower as It Leaves → 驻波 · 原地起伏的波 / Standing Waves · The Wave That Stays in Place
 
-- `doppler-effect` → `standing-wave#step0`
+- `doppler-effect#step5` → `standing-wave#step0`
 
 ## 多普勒效应 · 驶近变尖，驶远变沉 / The Doppler Effect · Higher as It Approaches, Lower as It Leaves → 波的干涉 · 闹与静的图样 / Interference · A Pattern of Loud and Still
 
-- `doppler-effect` → `interference#step0`
+- `doppler-effect#step5` → `interference#step0`
 
 ## 电场 · 看不见的力画成图 / Electric Fields · Drawing an Invisible Force → 波的干涉 · 闹与静的图样 / Interference · A Pattern of Loud and Still
 
