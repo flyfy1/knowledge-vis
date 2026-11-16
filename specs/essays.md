@@ -661,7 +661,8 @@ c7795a74 + 1ef6c3b9 (the atlas fragment went in alone by a shell slip); labels a
 (the hidden zh half of the provenance label is skipped in the English sweep); label at 3d2b65c8 (previous 1ef6c3b9, original b6dcadc4);
 page.json version 20261116. Template follow-up (2026-11-16): English-pending state moved from the page-wide `meta.en`
 string to page.json `languages` (app.js reads `data-lang-en` on `<html>`), page.json declares `dynamicKeys` and the
-diagram generator (`generators`; partials carry a GENERATED header), version 20261116b. It owns, since 2026-11-16, 浮点数 / floating point / IEEE 754 (moved from switches-that-compute #ch10), 浮点,
+diagram generator (`generators`; partials carry a GENERATED header), version 20261116b. Label at 79d42caa (previous 3d2b65c8,
+original b6dcadc4). It owns, since 2026-11-16, 浮点数 / floating point / IEEE 754 (moved from switches-that-compute #ch10), 浮点,
 浮点数格式, 单精度 双精度, binary32 (#ch1), ulp, machine epsilon (#ch2), 舍入模式, 四舍五入, 随机舍入 (#ch3), 次正规数, NaN, FTZ (#ch4),
 Kahan 求和, catastrophic cancellation (#ch5), FMA, 融合乘加 (#ch6), BF16, FP16, 半精度, bare FP8 / E4M3 / E5M2 (#ch7), INT8 量化, MX 格式,
 NVFP4, bare FP4 (#ch8), SIMD, AVX-512, NEON, 掩码寄存器 (#ch9), 自动向量化 (#ch10), AVX-512 降频, CPU 算力, multiple accumulators
