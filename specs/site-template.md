@@ -272,7 +272,10 @@ pages (site-nav.js set 页面位置 / Breadcrumb at run time).
 
 **Backlinks.** A link in a lesson is credited to its step: the linked-from row on the target reads
 `《课名》：该课第 N 步 → 本页第 M 章` / `Title: its step N → this page chapter M`, and a lesson's own linked-from block
-names steps (`本页第 N 步` / `this page step N`).
+names steps (`本页第 N 步` / `this page step N`). A link inside a step's `::: html` partial (`figures/<name>.html`) is
+credited to the step that names the partial, like a keyed paragraph (`scanLinks`, template.cjs). Until the Phase 3a
+review it was not: about 37 links in the 17 converted lessons' partials (mostly the step-6 "where next" cards) gave
+source-less rows (`《课名》：→ 本页第 N 步`), next to a credited row for the same target in kalman ↔ eigenvectors.
 
 ## 4. Content format
 

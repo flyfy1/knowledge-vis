@@ -440,6 +440,8 @@ function scanLinks(site) {
     // related links; neither may feed back.
     const migrated = site.isMigrated(p);
     const figs = migrated && fs.existsSync(path.join(d, 'figures')) ? fs.readdirSync(path.join(d, 'figures')).filter(f => f.endsWith('.html')).sort().map(f => 'figures/' + f) : [];
+    // a lesson's ::: html partials sit inside a step: links in figures/<name>.html are credited to that step too
+    const partStep = new Map();
     for (const f of migrated ? ['content.zh.md', ...figs] : ['copy.zh.js', 'i18n.js', 'index.html']) {
       const file = path.join(d, f);
       if (!fs.existsSync(file)) continue;
@@ -452,6 +454,7 @@ function scanLinks(site) {
             // a lesson (Phase 3): flat keys, each credited to the step it sits in (stepN.<key>)
             const c = require('./lesson.cjs').compileLesson(d, 'zh', { site, page: p, errors: [] });
             entries = c.order.map(k => [c.stepOf[k] ? c.stepOf[k] + '.' + k : k, c.copy[k]]);
+            for (const st of c.skel.steps) for (const b of st.blocks) if (b.kind === 'part') partStep.set('figures/' + b.name + '.html', st.id);
           } else {
           const c = compileLang(d, 'zh', { site, page: p, bindings: loadBindings(d, []), errors: [] });
           let ch = null;
@@ -459,7 +462,7 @@ function scanLinks(site) {
           }
         } catch (e) { continue; }
       } else if (f === 'copy.zh.js') { try { entries = Object.entries(loadCopy(file)); } catch (e) { continue; } }
-      else entries = [[null, fs.readFileSync(file, 'utf8')]];
+      else entries = [[partStep.has(f) ? partStep.get(f) + '.' + f : null, fs.readFileSync(file, 'utf8')]];
       for (const [k, v] of entries) for (const m of String(v).matchAll(/href=\\?["']([^"'\\]+)\\?["']/g)) {
         const r = resolveHref(site, p.path, m[1]);
         if (!r || r[0] === p) continue;

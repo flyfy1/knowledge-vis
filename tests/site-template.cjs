@@ -454,6 +454,11 @@ function lessonSite() {
   const be = build(root);
   ok(be.code === 0 && fs.readFileSync(path.join(pageDir(root), 'index.html'), 'utf8').includes('<a href="../fixture-lesson/#step0">该课第 0 步</a> → <a href="#ch2">本页第 2 章</a>'), 'a link from a lesson step reads 该课第 N 步 in the linked-from block:\n' + be.out);
   ok(be.code === 0 && fs.readFileSync(path.join(pageDir(root), 'copy.en.js'), 'utf8').includes('its step 0'), 'and its step N in English');
+  // a link inside a step's ::: html partial (figures/step0-1.html) is credited to that step too, not left without a source
+  fs.appendFileSync(path.join(d, 'figures', 'step0-1.html'), '<p class="see"><a href="../fixture-essay/#ch1">x</a></p>\n');
+  const bp = build(root), essayOut = fs.readFileSync(path.join(pageDir(root), 'index.html'), 'utf8');
+  ok(bp.code === 0 && essayOut.includes('<a href="../fixture-lesson/#step0">该课第 0 步</a> → <a href="#ch2">本页第 2 章</a>、<a href="#ch1">本页第 1 章</a>') && !/fixture-lesson\/">[^<]*<\/a>：[^<]*<a href="\.\.\/fixture-lesson\/#step0">[^\n]*；→ /.test(essayOut),
+    'a link in a lesson step\'s partial is credited to that step (该课第 0 步 → 本页第 1 章), with no source-less group:\n' + bp.out);
 
   // failure modes of a lesson
   const fresh = () => { const s = lessonSite(); assert.equal(run('convert-essay.cjs', s.d, '--root', s.root).code, 0); return s; };
