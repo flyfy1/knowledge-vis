@@ -1,0 +1,16 @@
+<div class="stage">
+      <canvas id="s2-canvas" height="300" style="height:300px"></canvas>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="s2priorLab"></span> <span class="val" id="s2-prior-val"></span></span>
+        <input type="range" id="s2-prior" min="0" max="1000" step="1" value="371">
+      </label>
+      <label><span><span data-i18n="s2lrLab"></span> <span class="val" id="s2-lr-val"></span></span>
+        <input type="range" id="s2-lr" min="0" max="1000" step="1" value="750">
+      </label>
+    </div>
+    <div class="btn-row">
+      <button class="btn" id="s2-lrpos" data-i18n="s2lrPos"></button>
+      <button class="btn" id="s2-lrneg" data-i18n="s2lrNeg"></button>
+    </div>
+    <p class="readout" id="s2-readout"></p>
