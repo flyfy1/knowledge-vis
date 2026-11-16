@@ -110,6 +110,16 @@
 - 已上线：供电（电怎么到 CPU）、网卡（网卡怎么搬数据包）。体系结构任务书里排队的题目都写完了。
 - 候选（未写规格）：S1–S5 补静态示意图（STANDARD §4a）；B5 小总线（I²C、SPI、UART）；S6 手机存储；A6 作者建议的 CPU SIMD 与浮点格式一篇（IEEE 754、FP16 / BF16 / FP8、AVX-512 与 SVE）。
 
+### 模板迁移与示意图补齐（2026-11-16 起）
+
+三条线，按提案 [specs/proposals/site-template.md](specs/proposals/site-template.md) 第 7 节：
+
+1. **Phase 0 基础**（不碰任何页面目录）：先单独提交 D3（`scripts/authorship.cjs` 认 `Derived-From:`，AUTHORSHIP.md §9），再落 `scripts/build-pages.cjs`、布局、`--check`，提案转为 `specs/site-template.md`，修订 specs/essays.md 与 STANDARD §4a，`site-nav.js` 跳过 `data-template` 页面。转换任何页面前，先用一篇带 SVG 示意图的长文验证 round trip 逐字节一致（原型没做 `::: diagram`）。
+2. **S1–S5 补示意图**：沿用旧格式（内联 SVG，标签来自 copy 文件），走 构建 → 独立评审 → 登记。落地之前，转换器不碰这五篇。
+3. **CPU SIMD 与浮点一篇**：等 Phase 0 落地后，作为第一篇直接用 Markdown 写的长文。
+
+图片生成只作后备：示意图一律用 SVG；确需插画时经 Pi 网关（`ssh -N -L 8111:127.0.0.1:8111 pi`，`/v1/images/generations`，别名 `default-image`），不在 Mac 上起网关。登记仍串行，`pages.config.js` 在 Phase 2 之前仍手改。别人正在写的 17 篇草稿不转换，等它们登记后再说。
+
 ### 下一步，按顺序
 
 1. ~~搜索索引上限~~：已解决。搜索在 `4afe29f3` 改为按分区分片（`search/chunks/*.js`，单片上限 60,000 字节），不再有 200 KB 总上限；2026-11-14 登记存储三篇后共 232,237 字节。
@@ -148,4 +158,4 @@
 - 内容单薄或重复的页面、`780` 与 `780-claude`、`-codex` 跳转占位页。
 - LeetCode 登记表是 204 条还是 201 条（1159 / 1168 / 1192 是在 `38f476d7` 里单独登记的，可以回退）。
 - 在 GitHub 网页上启用 Pages。
-- 站点模板提案 [specs/proposals/site-template.md](specs/proposals/site-template.md)（及 `specs/proposals/site-template/`，未跟踪）等 Yangyu 决定；登记 Agent 没有动它。
+- ~~站点模板提案~~：**2026-11-16 Yangyu 批准**（原话：「OK，就按照你的方案来吧。补设计图的话，你可以先通过 SVG 生成的方式去；如果需要画图的话，你可以通过我的 LLM proxy 去调用其他的 API 做图片生成」）。按提案推荐取 D1–D10，含 D3（`Derived-From:` trailer，AUTHORSHIP.md §9 记录）。执行见下方「模板迁移与示意图补齐（2026-11-16 起）」。
