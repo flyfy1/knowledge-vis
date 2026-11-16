@@ -1066,15 +1066,15 @@ anchor; a link to the page top has no anchor).
 
 ## 声音从振动来 · 米粒会跳的鼓 / Sound from Vibration · A Drum with Jumping Rice → 音乐理论 · 从音程到终止 / Music Theory · From Intervals to Cadence
 
-- `sound-vibration` → `music-theory#step0`: ? → musical-intervals
+- `sound-vibration#step5` → `music-theory#step0`: ? → musical-intervals
 
 ## 声音从振动来 · 米粒会跳的鼓 / Sound from Vibration · A Drum with Jumping Rice → 驻波 · 原地起伏的波 / Standing Waves · The Wave That Stays in Place
 
-- `sound-vibration` → `standing-wave#step0`
+- `sound-vibration#step5` → `standing-wave#step0`
 
 ## 声音从振动来 · 米粒会跳的鼓 / Sound from Vibration · A Drum with Jumping Rice → 波的干涉 · 闹与静的图样 / Interference · A Pattern of Loud and Still
 
-- `sound-vibration` → `interference#step0`
+- `sound-vibration#step5` → `interference#step0`
 
 ## 三视图 · 三张影子拼回立体 / Three Views · Three Shadows Rebuild a Solid → 对称与旋转 · 对折与转圈 / Symmetry & Rotation · Folding and Turning
 

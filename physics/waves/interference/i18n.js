@@ -120,7 +120,7 @@ const STR = {
     "site.bl.7": "<a href=\"../../thermal/frozen-bubble/\">冰冻肥皂泡 · 水膜里的结晶</a>：<a href=\"../../thermal/frozen-bubble/#step2\">该课第 2 步</a> → <a href=\"#step1\">本页第 1 步</a>",
     "site.bl.8": "<a href=\"../doppler-effect/\">多普勒效应 · 驶近变尖，驶远变沉</a>：<a href=\"../doppler-effect/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>",
     "site.bl.9": "<a href=\"../resonance/\">共振 · 踩中节拍，小推也能荡高</a>：<a href=\"../resonance/#step5\">该课第 5 步</a> → <a href=\"#step3\">本页第 3 步</a>",
-    "site.bl.10": "<a href=\"../sound-vibration/\">声音从振动来 · 米粒会跳的鼓</a>：→ <a href=\"#step0\">本页第 0 步</a>",
+    "site.bl.10": "<a href=\"../sound-vibration/\">声音从振动来 · 米粒会跳的鼓</a>：<a href=\"../sound-vibration/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>",
     "site.bl.11": "<a href=\"../standing-wave/\">驻波 · 原地起伏的波</a>：→ <a href=\"#step3\">本页第 3 步</a>、<a href=\"#step1\">本页第 1 步</a>、<a href=\"#step2\">本页第 2 步</a>"
   },
   en: {
@@ -242,7 +242,7 @@ const STR = {
     "site.bl.7": "<a href=\"../../thermal/frozen-bubble/\">Frozen Soap Bubbles · Ice in a Thin Film</a>: <a href=\"../../thermal/frozen-bubble/#step2\">its step 2</a> → <a href=\"#step1\">this page step 1</a>",
     "site.bl.8": "<a href=\"../doppler-effect/\">The Doppler Effect · Higher as It Approaches, Lower as It Leaves</a>: <a href=\"../doppler-effect/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>",
     "site.bl.9": "<a href=\"../resonance/\">Resonance · Push in Time and a Small Force Goes a Long Way</a>: <a href=\"../resonance/#step5\">its step 5</a> → <a href=\"#step3\">this page step 3</a>",
-    "site.bl.10": "<a href=\"../sound-vibration/\">Sound from Vibration · A Drum with Jumping Rice</a>: → <a href=\"#step0\">this page step 0</a>",
+    "site.bl.10": "<a href=\"../sound-vibration/\">Sound from Vibration · A Drum with Jumping Rice</a>: <a href=\"../sound-vibration/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>",
     "site.bl.11": "<a href=\"../standing-wave/\">Standing Waves · The Wave That Stays in Place</a>: → <a href=\"#step3\">this page step 3</a>, <a href=\"#step1\">this page step 1</a>, <a href=\"#step2\">this page step 2</a>"
   }
 };
