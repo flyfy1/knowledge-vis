@@ -1,0 +1,16 @@
+<figure class="lab">
+    <h3 data-i18n="ch3.model.title"></h3>
+    <p class="how" data-i18n-html="ch3.model.how"></p>
+    <div class="ctl"><div class="seg wrapmany" role="radiogroup" data-i18n-aria="ch3.ctl.ver"><span class="lbl" data-i18n="ch3.ctl.ver"></span><label><input type="radio" name="inV" value="v1" checked><span data-i18n="ch3.ver.v1"></span></label><label><input type="radio" name="inV" value="v2"><span data-i18n="ch3.ver.v2"></span></label><label><input type="radio" name="inV" value="v3"><span data-i18n="ch3.ver.v3"></span></label></div></div>
+    <div class="ctl"><label class="rng"><span data-i18n="ch3.ctl.n"></span><input type="range" id="inN" min="2" max="8" step="2" value="4"><output id="inNo"></output></label></div>
+    <div class="ctl"><button type="button" class="b" id="inStep" data-i18n="ch3.btn.step"></button><button type="button" class="b" id="inAll" data-i18n="ch3.btn.all"></button><button type="button" class="b" id="inReset" data-i18n="ch3.btn.reset"></button></div>
+    <table class="lst" data-i18n-aria="ch3.list.aria"><thead><tr><th data-i18n="ch3.list.addr"></th><th data-i18n="ch3.list.hex"></th><th data-i18n="ch3.list.asm"></th><th data-i18n="ch3.list.cnt"></th></tr></thead><tbody id="inList"></tbody></table>
+    <div class="regs" id="inRegs" role="list" data-i18n-aria="ch3.regs.aria"></div>
+    <div class="read">
+      <div><b class="g" id="inDone"></b><span data-i18n-html="ch3.read.done"></span></div>
+      <div><b class="" id="inTotal"></b><span data-i18n-html="ch3.read.total"></span></div>
+      <div><b class="c" id="inPer"></b><span data-i18n-html="ch3.read.per"></span></div>
+      <div><b class="n" id="inSum"></b><span data-i18n-html="ch3.read.sum"></span></div>
+    </div>
+    <p class="say" id="inSay" aria-live="polite"></p>
+  </figure>
