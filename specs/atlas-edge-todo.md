@@ -837,11 +837,11 @@ anchor; a link to the page top has no anchor).
 
 ## 光电效应 · 光是一份一份的 / The Photoelectric Effect · Light Comes in Packets → 原子结构 · 质子数定它是谁 / Atomic Structure · The Proton Count Decides What It Is
 
-- `photoelectric-effect` → `atomic-structure#step2`
+- `photoelectric-effect#step5` → `atomic-structure#step2`
 
 ## 光电效应 · 光是一份一份的 / The Photoelectric Effect · Light Comes in Packets → 凸透镜成像 · 远近变像 / The Convex Lens · Near or Far, the Image Transforms
 
-- `photoelectric-effect` → `lens#step0`
+- `photoelectric-effect#step5` → `lens#step0`
 
 ## 压强 / Pressure → 密度 / Density
 
