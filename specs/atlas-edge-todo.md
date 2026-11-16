@@ -1134,7 +1134,7 @@ anchor; a link to the page top has no anchor).
 
 ## 黑体辐射 · 热的物体为什么发光 / Blackbody Radiation · Why Hot Things Glow → 量子基础 · 可能性先于结果 / Quantum Basics · Possibility Before Outcome
 
-- `blackbody-radiation` → `quantum-basics#step0`: ? → quantum-amplitude
+- `blackbody-radiation#step5` → `quantum-basics#step0`: blackbody-radiation → quantum-amplitude
 
 ## 碳循环 · 大气里的碳去了哪里 / The Carbon Cycle · Where the Atmosphere’s Carbon Goes → 能量金字塔 · 为什么顶级捕食者那么少 / The Energy Pyramid · Why Top Predators Are Rare
 
