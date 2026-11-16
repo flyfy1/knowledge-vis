@@ -1,0 +1,45 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "perimeter-area",
+ "refs": [],
+ "backlinks": [
+  {
+   "from": "similarity-scaling",
+   "links": [
+    {
+     "from": null,
+     "to": "step0"
+    }
+   ]
+  },
+  {
+   "from": "solid-geometry",
+   "links": [
+    {
+     "from": null,
+     "to": "step0"
+    }
+   ]
+  },
+  {
+   "from": "symmetry-rotation",
+   "links": [
+    {
+     "from": null,
+     "to": "step1"
+    }
+   ]
+  },
+  {
+   "from": "three-views",
+   "links": [
+    {
+     "from": null,
+     "to": "step0"
+    }
+   ]
+  }
+ ],
+ "related": [],
+ "bindings": []
+}

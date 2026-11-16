@@ -28,5 +28,62 @@
   "stage": "primary",
   "status": "live",
   "path": "math/geometry/perimeter-area/",
-  "order": 680
+  "order": 680,
+  "layout": "lesson",
+  "version": "20261116a",
+  "titleKey": "docTitle",
+  "legacyLayout": {
+    "_note": "Whitespace and markup of the hand-written lesson this page was converted from, so the conversion could be checked byte for byte (specs/site-template.md §3c).",
+    "mainGaps": [
+      "\n\n<!-- ============ 步骤 0：绳子围地（周长固定 24，拖角改长宽） ============ -->\n",
+      "\n\n<!-- ============ 步骤 1：面积账本（11 种围法） ============ -->\n",
+      "\n\n<!-- ============ 步骤 2：反过来（面积固定 24，周长各不同） ============ -->\n",
+      "\n\n<!-- ============ 步骤 3：自测 ============ -->\n",
+      "\n\n<!-- ============ 步骤 4：终章 ============ -->\n",
+      "\n\n"
+    ],
+    "stepNav": {
+      "item": "\n  <a href=\"#{id}\" class=\"nav-step\" data-nav=\"{n}\" data-i18n=\"{key}\"></a>",
+      "end": "\n"
+    },
+    "filled": [
+      "back",
+      "pageTitle",
+      "tagline",
+      "nav0",
+      "nav1",
+      "nav2",
+      "nav3",
+      "nav4",
+      "s0k",
+      "s0t",
+      "s0lenLab",
+      "start",
+      "s1k",
+      "s1t",
+      "thL",
+      "thW",
+      "thP",
+      "thA",
+      "s2k",
+      "s2t",
+      "s2lab",
+      "s3k",
+      "s3t",
+      "s3q1",
+      "s3q1a",
+      "s3q1b",
+      "s3counterShow",
+      "s3q2",
+      "s3q2o1",
+      "s3q2o2",
+      "s3q2o3",
+      "s3q2o4",
+      "s4k",
+      "s4t",
+      "c1h",
+      "c2h",
+      "c3h"
+    ]
+  }
 }
