@@ -1370,7 +1370,7 @@ anchor; a link to the page top has no anchor).
 
 ## 泰勒级数 · 把曲线一项项贴上去 / Taylor Series · Patch the Curve Term by Term → 指数与对数 · 翻倍与逆问 / Exponentials & Logarithms · Doubling and the Reverse Question
 
-- `taylor-series` → `exponents-logarithms#step1`
+- `taylor-series#step5` → `exponents-logarithms#step1`
 
 ## 向量 · 有方向的量 / Vectors · Quantities With a Direction → 牛顿运动定律 · F = ma 是调出来的 / Newton’s Laws of Motion · F = ma, Tuned by Hand
 

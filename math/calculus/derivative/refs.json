@@ -82,7 +82,11 @@
    "from": "taylor-series",
    "links": [
     {
-     "from": null,
+     "from": "step3",
+     "to": "step3"
+    },
+    {
+     "from": "step5",
      "to": "step3"
     }
    ]
