@@ -1,0 +1,53 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "negative-numbers",
+ "refs": [],
+ "backlinks": [
+  {
+   "from": "switches-that-compute",
+   "links": [
+    {
+     "from": "ch5",
+     "to": null
+    },
+    {
+     "from": "ch11",
+     "to": null
+    }
+   ]
+  },
+  {
+   "from": "equation-scale",
+   "links": [
+    {
+     "from": "step4",
+     "to": "step3"
+    },
+    {
+     "from": "step6",
+     "to": "step3"
+    }
+   ]
+  },
+  {
+   "from": "inequalities",
+   "links": [
+    {
+     "from": "step5",
+     "to": "step1"
+    }
+   ]
+  },
+  {
+   "from": "real-number-line",
+   "links": [
+    {
+     "from": null,
+     "to": "step0"
+    }
+   ]
+  }
+ ],
+ "related": [],
+ "bindings": []
+}

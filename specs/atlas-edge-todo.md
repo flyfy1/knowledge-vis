@@ -579,11 +579,11 @@ anchor; a link to the page top has no anchor).
 
 ## 负数 · 0 以下的世界 / Negative Numbers · The World Below Zero → 分数 · 把整体切开来数 / Fractions · Cutting the Whole to Count
 
-- `negative-numbers` → `fractions#step1`: ? → fractions
+- `negative-numbers#step5` → `fractions#step1`: ? → fractions
 
 ## 负数 · 0 以下的世界 / Negative Numbers · The World Below Zero → 除法与余数 · 分不完的那一点 / Division & Remainders · What Is Left Over
 
-- `negative-numbers` → `division-remainder#step1`: ? → division-remainder
+- `negative-numbers#step5` → `division-remainder#step1`: ? → division-remainder
 
 ## 小孔成像 · 一个孔的相机 / Pinhole Camera · A Camera With One Tiny Hole → 光的反射与折射 · 拐弯的规矩 / Reflection & Refraction · How Light Bends
 
