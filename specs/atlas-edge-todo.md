@@ -621,7 +621,7 @@ anchor; a link to the page top has no anchor).
 
 ## 化学平衡 · 人数不变，人还在跑 / Chemical Equilibrium · Still Moving at Balance → 质量守恒 · 原子一个都不丢 / Mass Conservation · Not a Single Atom Lost
 
-- `chemical-equilibrium` → `mass-conservation#step1`
+- `chemical-equilibrium#step5` → `mass-conservation#step1`
 
 ## 酸碱平衡 · 分子在两边来回走 / Acid–Base Equilibrium · Molecules Move Both Ways → 反应速率 · 数一数成功碰撞 / Reaction Rates · Counting Successful Collisions
 
