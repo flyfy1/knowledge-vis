@@ -1,0 +1,83 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "how-a-computer-boots",
+ "refs": [],
+ "backlinks": [
+  {
+   "from": "how-a-computer-is-wired",
+   "links": [
+    {
+     "from": "ch8",
+     "to": "ch3"
+    }
+   ]
+  },
+  {
+   "from": "how-memory-talks",
+   "links": [
+    {
+     "from": "ch7",
+     "to": "ch5"
+    }
+   ]
+  },
+  {
+   "from": "how-pcie-works",
+   "links": [
+    {
+     "from": "ch6",
+     "to": "ch6"
+    }
+   ]
+  },
+  {
+   "from": "how-power-reaches-the-cpu",
+   "links": [
+    {
+     "from": "ch3",
+     "to": "ch1"
+    },
+    {
+     "from": "ch8",
+     "to": "ch5"
+    },
+    {
+     "from": "ch12",
+     "to": "ch1"
+    }
+   ]
+  },
+  {
+   "from": "how-the-os-talks-to-hardware",
+   "links": [
+    {
+     "from": "ch1",
+     "to": "ch12"
+    },
+    {
+     "from": "ch2",
+     "to": "ch11"
+    },
+    {
+     "from": "ch9",
+     "to": "ch6"
+    },
+    {
+     "from": "ch14",
+     "to": "ch11"
+    }
+   ]
+  },
+  {
+   "from": "what-a-drive-is-made-of",
+   "links": [
+    {
+     "from": "ch1",
+     "to": "ch7"
+    }
+   ]
+  }
+ ],
+ "related": [],
+ "bindings": []
+}
