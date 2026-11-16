@@ -7,11 +7,15 @@
    "from": "veil-of-ignorance",
    "links": [
     {
-     "from": null,
+     "from": "step1",
      "to": "step0"
     },
     {
-     "from": null,
+     "from": "step3",
+     "to": "step4"
+    },
+    {
+     "from": "step5",
      "to": "step4"
     }
    ]

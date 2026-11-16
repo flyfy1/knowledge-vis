@@ -104,7 +104,7 @@ const STR = {
     "site.crumb.cat": "概率与统计",
     "site.crumb.sub": "概率基础",
     "site.bl.title": "被这些页面引用",
-    "site.bl.1": "<a href=\"../../../psychology/ethics/veil-of-ignorance/\">无知之幕 · 不知道自己会是谁时，你选哪种社会</a>：→ <a href=\"#step0\">本页第 0 步</a>、<a href=\"#step4\">本页第 4 步</a>"
+    "site.bl.1": "<a href=\"../../../psychology/ethics/veil-of-ignorance/\">无知之幕 · 不知道自己会是谁时，你选哪种社会</a>：<a href=\"../../../psychology/ethics/veil-of-ignorance/#step1\">该课第 1 步</a> → <a href=\"#step0\">本页第 0 步</a>；<a href=\"../../../psychology/ethics/veil-of-ignorance/#step3\">该课第 3 步</a> → <a href=\"#step4\">本页第 4 步</a>；<a href=\"../../../psychology/ethics/veil-of-ignorance/#step5\">该课第 5 步</a> → <a href=\"#step4\">本页第 4 步</a>"
   },
   en: {
     back: "← Knowledge Index",
@@ -209,7 +209,7 @@ const STR = {
     "site.crumb.cat": "Probability & Statistics",
     "site.crumb.sub": "Probability Basics",
     "site.bl.title": "Linked from",
-    "site.bl.1": "<a href=\"../../../psychology/ethics/veil-of-ignorance/\">The Veil of Ignorance · Choosing a Society Before You Know Who You Will Be</a>: → <a href=\"#step0\">this page step 0</a>, <a href=\"#step4\">this page step 4</a>"
+    "site.bl.1": "<a href=\"../../../psychology/ethics/veil-of-ignorance/\">The Veil of Ignorance · Choosing a Society Before You Know Who You Will Be</a>: <a href=\"../../../psychology/ethics/veil-of-ignorance/#step1\">its step 1</a> → <a href=\"#step0\">this page step 0</a>; <a href=\"../../../psychology/ethics/veil-of-ignorance/#step3\">its step 3</a> → <a href=\"#step4\">this page step 4</a>; <a href=\"../../../psychology/ethics/veil-of-ignorance/#step5\">its step 5</a> → <a href=\"#step4\">this page step 4</a>"
   }
 };
 let currentLang = 'en';

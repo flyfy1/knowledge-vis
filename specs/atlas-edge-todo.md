@@ -655,7 +655,7 @@ anchor; a link to the page top has no anchor).
 
 ## 无知之幕 · 不知道自己会是谁时，你选哪种社会 / The Veil of Ignorance · Choosing a Society Before You Know Who You Will Be → 风险池化与保险 · 一万人各摊一点 / Risk Pooling & Insurance · Ten Thousand People Each Chip In
 
-- `veil-of-ignorance` → `risk-pooling#step1`: ? → risk-pooling
+- `veil-of-ignorance#step5` → `risk-pooling#step1`: ? → risk-pooling
 
 ## 血液循环 / Blood Circulation → 压强 / Pressure
 

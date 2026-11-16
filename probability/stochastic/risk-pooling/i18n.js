@@ -107,7 +107,7 @@ const STR = {
     "site.bl.title": "被这些页面引用",
     "site.bl.1": "<a href=\"../../../investment/basics/diversification/\">分散投资 · 为什么不把鸡蛋放一个篮子里</a>：<a href=\"../../../investment/basics/diversification/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>",
     "site.bl.2": "<a href=\"../../../investment/basics/risk-return/\">风险与回报 · 为什么风险大承诺回报高</a>：<a href=\"../../../investment/basics/risk-return/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>",
-    "site.bl.3": "<a href=\"../../../psychology/ethics/veil-of-ignorance/\">无知之幕 · 不知道自己会是谁时，你选哪种社会</a>：→ <a href=\"#step1\">本页第 1 步</a>"
+    "site.bl.3": "<a href=\"../../../psychology/ethics/veil-of-ignorance/\">无知之幕 · 不知道自己会是谁时，你选哪种社会</a>：<a href=\"../../../psychology/ethics/veil-of-ignorance/#step5\">该课第 5 步</a> → <a href=\"#step1\">本页第 1 步</a>"
   },
   en: {
     back: "← Knowledge Index",
@@ -215,7 +215,7 @@ const STR = {
     "site.bl.title": "Linked from",
     "site.bl.1": "<a href=\"../../../investment/basics/diversification/\">Diversification · Why Not Put All Eggs in One Basket</a>: <a href=\"../../../investment/basics/diversification/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>",
     "site.bl.2": "<a href=\"../../../investment/basics/risk-return/\">Risk & Return · Why Do Riskier Things Usually Promise More</a>: <a href=\"../../../investment/basics/risk-return/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>",
-    "site.bl.3": "<a href=\"../../../psychology/ethics/veil-of-ignorance/\">The Veil of Ignorance · Choosing a Society Before You Know Who You Will Be</a>: → <a href=\"#step1\">this page step 1</a>"
+    "site.bl.3": "<a href=\"../../../psychology/ethics/veil-of-ignorance/\">The Veil of Ignorance · Choosing a Society Before You Know Who You Will Be</a>: <a href=\"../../../psychology/ethics/veil-of-ignorance/#step5\">its step 5</a> → <a href=\"#step1\">this page step 1</a>"
   }
 };
 let currentLang = 'en';
