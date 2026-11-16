@@ -1,0 +1,76 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "reflection-refraction",
+ "refs": [],
+ "backlinks": [
+  {
+   "from": "gravitational-lensing",
+   "links": [
+    {
+     "from": "step5",
+     "to": "step0"
+    }
+   ]
+  },
+  {
+   "from": "seismic-waves",
+   "links": [
+    {
+     "from": "step2",
+     "to": "step1"
+    },
+    {
+     "from": "step5",
+     "to": "step1"
+    }
+   ]
+  },
+  {
+   "from": "trigonometry",
+   "links": [
+    {
+     "from": "step1",
+     "to": "snell-bridge"
+    }
+   ]
+  },
+  {
+   "from": "eye-vision",
+   "links": [
+    {
+     "from": "step5",
+     "to": "step2"
+    }
+   ]
+  },
+  {
+   "from": "lens",
+   "links": [
+    {
+     "from": "step5",
+     "to": "step2"
+    }
+   ]
+  },
+  {
+   "from": "pinhole-camera",
+   "links": [
+    {
+     "from": "step5",
+     "to": "step0"
+    }
+   ]
+  },
+  {
+   "from": "frozen-bubble",
+   "links": [
+    {
+     "from": "step2",
+     "to": "step2"
+    }
+   ]
+  }
+ ],
+ "related": [],
+ "bindings": []
+}
