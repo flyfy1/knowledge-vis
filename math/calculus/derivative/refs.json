@@ -69,7 +69,11 @@
    "from": "ode-phase-portraits",
    "links": [
     {
-     "from": null,
+     "from": "step0",
+     "to": "step3"
+    },
+    {
+     "from": "step5",
      "to": "step3"
     }
    ]

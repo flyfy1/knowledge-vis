@@ -1257,7 +1257,7 @@ anchor; a link to the page top has no anchor).
 
 ## 微分方程相图 · 捕食者与猎物的回路 / ODE Phase Portraits · Predators and Prey in a Loop → 种群增长 · S 形曲线从哪来 / Population Growth · Where the S-Curve Comes From
 
-- `ode-phase-portraits` → `logistic-growth#step2`: ? → logistic-growth
+- `ode-phase-portraits#step5` → `logistic-growth#step2`: ? → logistic-growth
 
 ## 欧姆定律 · 电流是调出来的 / Ohm’s Law · Current You Tune by Hand → 电化学 · 电子沿导线跑，还是被电推着跑 / Electrochemistry · Electrons Running Down the Wire, or Pushed Along
 
