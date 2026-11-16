@@ -705,7 +705,7 @@ anchor; a link to the page top has no anchor).
 
 ## DNA 复制与翻译 · 拉链、抄写和流水线 / DNA Replication and Translation · A Zipper, a Copy and an Assembly Line → 遗传与概率 · 从配子到表型 / Genetics & Probability · From Gametes to Phenotypes
 
-- `dna-replication` → `genetics-probability#step0`
+- `dna-replication#step5` → `genetics-probability#step0`
 
 ## 多普勒效应 · 驶近变尖，驶远变沉 / The Doppler Effect · Higher as It Approaches, Lower as It Leaves → 驻波 · 原地起伏的波 / Standing Waves · The Wave That Stays in Place
 
