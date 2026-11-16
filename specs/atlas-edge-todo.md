@@ -1301,15 +1301,15 @@ anchor; a link to the page top has no anchor).
 
 ## 回归与相关 · 散点云里拉一条最贴的线 / Regression & Correlation · The Best Line Through a Cloud → 梯度下降 · 摸黑下山 / Gradient Descent · Feeling Your Way Downhill
 
-- `regression-correlation` → `gradient-descent#step6`
+- `regression-correlation#step5` → `gradient-descent#step6`
 
 ## 回归与相关 · 散点云里拉一条最贴的线 / Regression & Correlation · The Best Line Through a Cloud → 平均数、中位数、众数之争 · 三个“平均”三个故事 / Mean, Median, Mode · Three “Averages”, Three Stories
 
-- `regression-correlation` → `mean-median-mode#step0`
+- `regression-correlation#step5` → `mean-median-mode#step0`
 
 ## 回归与相关 · 散点云里拉一条最贴的线 / Regression & Correlation · The Best Line Through a Cloud → 统计推断 · 从样本到判断 / Statistical Inference · From Sample to Judgment
 
-- `regression-correlation` → `statistical-inference#step1`: ? → confidence-interval
+- `regression-correlation#step5` → `statistical-inference#step1`: ? → confidence-interval
 
 ## 狭义相对论 · 同时性的线倾斜了 / Special Relativity · The Lines of “Now” Tilt → 多普勒效应 · 驶近变尖，驶远变沉 / The Doppler Effect · Higher as It Approaches, Lower as It Leaves
 

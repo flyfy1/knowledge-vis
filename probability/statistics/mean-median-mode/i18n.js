@@ -106,7 +106,7 @@ const STR = {
     "site.bl.title": "被这些页面引用",
     "site.bl.1": "<a href=\"../../../economics/macro/how-an-economy-is-measured/\">经济是怎样被计量的</a>：<a href=\"../../../economics/macro/how-an-economy-is-measured/#ch5\">该文第 5 章</a>",
     "site.bl.2": "<a href=\"../../everyday/numbers-lie/\">数字没有说谎，结论却错了</a>：→ <a href=\"#step1\">本页第 1 步</a>",
-    "site.bl.3": "<a href=\"../regression-correlation/\">回归与相关 · 散点云里拉一条最贴的线</a>：→ <a href=\"#step0\">本页第 0 步</a>"
+    "site.bl.3": "<a href=\"../regression-correlation/\">回归与相关 · 散点云里拉一条最贴的线</a>：<a href=\"../regression-correlation/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>"
   },
   en: {
     back: "← Knowledge Index",
@@ -213,7 +213,7 @@ const STR = {
     "site.bl.title": "Linked from",
     "site.bl.1": "<a href=\"../../../economics/macro/how-an-economy-is-measured/\">How an Economy Is Measured</a>: <a href=\"../../../economics/macro/how-an-economy-is-measured/#ch5\">its chapter 5</a>",
     "site.bl.2": "<a href=\"../../everyday/numbers-lie/\">Every Number Was True, and the Conclusion Was Still Wrong</a>: → <a href=\"#step1\">this page step 1</a>",
-    "site.bl.3": "<a href=\"../regression-correlation/\">Regression & Correlation · The Best Line Through a Cloud</a>: → <a href=\"#step0\">this page step 0</a>"
+    "site.bl.3": "<a href=\"../regression-correlation/\">Regression & Correlation · The Best Line Through a Cloud</a>: <a href=\"../regression-correlation/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>"
   }
 };
 let currentLang = 'en';
