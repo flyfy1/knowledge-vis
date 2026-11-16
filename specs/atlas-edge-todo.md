@@ -949,11 +949,11 @@ anchor; a link to the page top has no anchor).
 
 ## 浮与沉 · 排开的水托住了谁 / Float & Sink · What the Displaced Water Holds Up → 杠杆与滑轮 · 支点挪一挪，省力见分晓 / Levers & Pulleys · Move the Fulcrum, Feel the Trade
 
-- `float-sink` → `lever-pulley#step0`
+- `float-sink#step5` → `lever-pulley#step0`
 
 ## 浮与沉 · 排开的水托住了谁 / Float & Sink · What the Displaced Water Holds Up → 方程天平 · 两边同做一件事 / Equations on a Balance · Do the Same to Both Sides
 
-- `float-sink` → `equation-scale#step1`: ? → equation-balance
+- `float-sink#step5` → `equation-scale#step1`: ? → equation-balance
 
 ## 间隔与植树 · 段数和点数差一 / Intervals & Fences · Gaps and Posts Differ by One → 除法与余数 · 分不完的那一点 / Division & Remainders · What Is Left Over
 

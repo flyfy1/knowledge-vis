@@ -154,7 +154,7 @@ const STR = {
     "site.bl.5": "<a href=\"../../arithmetic/intervals-fences/\">间隔与植树 · 段数和点数差一</a>：<a href=\"../../arithmetic/intervals-fences/#step5\">该课第 5 步</a> → <a href=\"#step3\">本页第 3 步</a>",
     "site.bl.6": "<a href=\"../../data/averaging-leveling/\">平均数 · 移多补少</a>：<a href=\"../../data/averaging-leveling/#step5\">该课第 5 步</a> → <a href=\"#step1\">本页第 1 步</a>",
     "site.bl.7": "<a href=\"../../../physics/circuits/simple-circuits/\">简单电路 · 电流要走一圈</a>：<a href=\"../../../physics/circuits/simple-circuits/#step5\">该课第 5 步</a> → <a href=\"#step1\">本页第 1 步</a>",
-    "site.bl.8": "<a href=\"../../../physics/matter/float-sink/\">浮与沉 · 排开的水托住了谁</a>：→ <a href=\"#step1\">本页第 1 步</a>"
+    "site.bl.8": "<a href=\"../../../physics/matter/float-sink/\">浮与沉 · 排开的水托住了谁</a>：<a href=\"../../../physics/matter/float-sink/#step5\">该课第 5 步</a> → <a href=\"#step1\">本页第 1 步</a>"
   },
   en: {
     docTitle: "Equations on a Balance · Do the Same to Both Sides — One Interaction at a Time",
@@ -302,7 +302,7 @@ const STR = {
     "site.bl.5": "<a href=\"../../arithmetic/intervals-fences/\">Intervals & Fences · Gaps and Posts Differ by One</a>: <a href=\"../../arithmetic/intervals-fences/#step5\">its step 5</a> → <a href=\"#step3\">this page step 3</a>",
     "site.bl.6": "<a href=\"../../data/averaging-leveling/\">Averages · Level by Pouring</a>: <a href=\"../../data/averaging-leveling/#step5\">its step 5</a> → <a href=\"#step1\">this page step 1</a>",
     "site.bl.7": "<a href=\"../../../physics/circuits/simple-circuits/\">Simple Circuits · Current Must Go Round</a>: <a href=\"../../../physics/circuits/simple-circuits/#step5\">its step 5</a> → <a href=\"#step1\">this page step 1</a>",
-    "site.bl.8": "<a href=\"../../../physics/matter/float-sink/\">Float & Sink · What the Displaced Water Holds Up</a>: → <a href=\"#step1\">this page step 1</a>"
+    "site.bl.8": "<a href=\"../../../physics/matter/float-sink/\">Float & Sink · What the Displaced Water Holds Up</a>: <a href=\"../../../physics/matter/float-sink/#step5\">its step 5</a> → <a href=\"#step1\">this page step 1</a>"
   }
 };
 
