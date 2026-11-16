@@ -29,7 +29,11 @@
    "from": "gradient-descent",
    "links": [
     {
-     "from": null,
+     "from": "step2",
+     "to": "step4"
+    },
+    {
+     "from": "step6",
      "to": "step4"
     }
    ]

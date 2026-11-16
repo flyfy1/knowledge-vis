@@ -433,11 +433,12 @@ anchor; a link to the page top has no anchor).
 
 ## 梯度下降 · 摸黑下山 / Gradient Descent · Feeling Your Way Downhill → 特征值与特征向量 · 矩阵不转的那些方向 / Eigenvalues & Eigenvectors · The Directions a Matrix Cannot Turn
 
-- `gradient-descent` → `eigenvectors#step4`
+- `gradient-descent#step2` → `eigenvectors#step4`
+- `gradient-descent#step6` → `eigenvectors#step4`
 
 ## 梯度下降 · 摸黑下山 / Gradient Descent · Feeling Your Way Downhill → 蒙特卡洛 · 撒豆子算 π / Monte Carlo · Counting π with Scattered Beans
 
-- `gradient-descent` → `monte-carlo#step2`
+- `gradient-descent#step4` → `monte-carlo#step2`
 
 ## 特征值与特征向量 · 矩阵不转的那些方向 / Eigenvalues & Eigenvectors · The Directions a Matrix Cannot Turn → 梯度下降 · 摸黑下山 / Gradient Descent · Feeling Your Way Downhill
 

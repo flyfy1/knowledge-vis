@@ -1,0 +1,23 @@
+<div class="dual">
+      <div class="half">
+        <p class="sub-lab" data-i18n="s3leftLab"></p>
+        <div class="stage"><canvas id="s3-left" height="360"></canvas></div>
+      </div>
+      <div class="half">
+        <p class="sub-lab" id="s3-right-lab">动量法</p>
+        <div class="stage"><canvas id="s3-right" height="360"></canvas></div>
+      </div>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="s3kapLab"></span> <span class="val" id="s3-kap-val">20</span></span>
+        <input type="range" id="s3-kap" min="1" max="50" step="1" value="20"></label>
+      <label><span><span data-i18n="s3betaLab"></span> <span class="val" id="s3-beta-val">0.50</span></span>
+        <input type="range" id="s3-beta" min="0" max="0.95" step="0.01" value="0.5"></label>
+    </div>
+    <div class="btn-row">
+      <button class="btn" id="s3-step" data-i18n="s3step"></button>
+      <button class="btn" id="s3-play" data-i18n="s3play"></button>
+      <button class="btn" id="s3-runall" data-i18n="s3runAll"></button>
+      <button class="btn" id="s3-reset" data-i18n="s3reset"></button>
+    </div>
+    <p class="readout" id="s3-readout"></p>

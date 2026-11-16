@@ -1,0 +1,20 @@
+<div class="btn-row" id="s5-presets">
+      <button class="btn" data-start="0" data-i18n="s5pLeft"></button>
+      <button class="btn" data-start="1" data-i18n="s5pRight"></button>
+      <button class="btn active" data-start="2" data-i18n="s5pSaddle">起点 C · 鞍点旁</button>
+    </div>
+    <div class="stage">
+      <canvas id="s5-canvas" class="drag" height="440" tabindex="0"></canvas>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="s5etaLab"></span> <span class="val" id="s5-eta-val">0.06</span></span>
+        <input type="range" id="s5-eta" min="0.02" max="0.12" step="0.005" value="0.06"></label>
+      <label class="chk"><input type="checkbox" id="s5-noise"> <span data-i18n="s5noiseLab"></span></label>
+    </div>
+    <div class="btn-row">
+      <button class="btn" id="s5-step" data-i18n="s5step"></button>
+      <button class="btn" id="s5-play" data-i18n="s5play"></button>
+      <button class="btn" id="s5-reset" data-i18n="s5reset"></button>
+    </div>
+    <p class="readout" id="s5-readout"></p>
+    <p class="readout" id="s5-esc"></p>

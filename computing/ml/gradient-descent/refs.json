@@ -1,0 +1,103 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "gradient-descent",
+ "refs": [],
+ "backlinks": [
+  {
+   "from": "sorting",
+   "links": [
+    {
+     "from": "step6",
+     "to": "step2"
+    }
+   ]
+  },
+  {
+   "from": "attention-mechanism",
+   "links": [
+    {
+     "from": "step5",
+     "to": "step0"
+    }
+   ]
+  },
+  {
+   "from": "backpropagation",
+   "links": [
+    {
+     "from": "step5",
+     "to": "step1"
+    }
+   ]
+  },
+  {
+   "from": "cnn-feature-maps",
+   "links": [
+    {
+     "from": "step5",
+     "to": "step0"
+    }
+   ]
+  },
+  {
+   "from": "overfitting",
+   "links": [
+    {
+     "from": null,
+     "to": "step0"
+    }
+   ]
+  },
+  {
+   "from": "contour-lines",
+   "links": [
+    {
+     "from": null,
+     "to": "step0"
+    }
+   ]
+  },
+  {
+   "from": "newton-method",
+   "links": [
+    {
+     "from": null,
+     "to": "step0"
+    }
+   ]
+  },
+  {
+   "from": "eigenvectors",
+   "links": [
+    {
+     "from": "step4",
+     "to": "step2"
+    },
+    {
+     "from": "step6",
+     "to": "step2"
+    }
+   ]
+  },
+  {
+   "from": "regression-correlation",
+   "links": [
+    {
+     "from": null,
+     "to": "step6"
+    }
+   ]
+  },
+  {
+   "from": "entropy",
+   "links": [
+    {
+     "from": null,
+     "to": "step6"
+    }
+   ]
+  }
+ ],
+ "related": [],
+ "bindings": []
+}
