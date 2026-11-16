@@ -1175,11 +1175,11 @@ anchor; a link to the page top has no anchor).
 
 ## 排列与组合 · 数清楚有多少种 / Permutations & Combinations · Counting How Many Ways → 数论与组合 · 把结构算出来 / Number Theory & Counting · Compute the Structure
 
-- `counting-permutations` → `number-combinatorics#step2`: ? → counting-permutations
+- `counting-permutations#step5` → `number-combinatorics#step2`: ? → counting-permutations
 
 ## 排列与组合 · 数清楚有多少种 / Permutations & Combinations · Counting How Many Ways → 概率与频率 · 转得越多，越贴近概率 / Probability & Frequency · The More Spins, the Closer to the Probability
 
-- `counting-permutations` → `probability-frequency#step0`
+- `counting-permutations#step5` → `probability-frequency#step0`
 
 ## 双缝实验 · 一颗一颗的粒子，也走出干涉条纹 / The Double-Slit Experiment · Single Particles Still Build Fringes → 光电效应 · 光是一份一份的 / The Photoelectric Effect · Light Comes in Packets
 
