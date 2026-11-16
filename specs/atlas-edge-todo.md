@@ -858,11 +858,11 @@ anchor; a link to the page top has no anchor).
 
 ## 滴定曲线 · 终点附近 pH 的“悬崖” / Titration Curves · The pH Cliff Near the End Point → 酸碱平衡 · 分子在两边来回走 / Acid–Base Equilibrium · Molecules Move Both Ways
 
-- `titration-curves` → `acid-base-equilibrium#step0`
+- `titration-curves#step5` → `acid-base-equilibrium#step0`
 
 ## 滴定曲线 · 终点附近 pH 的“悬崖” / Titration Curves · The pH Cliff Near the End Point → 化学平衡 · 人数不变，人还在跑 / Chemical Equilibrium · Still Moving at Balance
 
-- `titration-curves` → `chemical-equilibrium#step0`
+- `titration-curves#step5` → `chemical-equilibrium#step0`
 
 ## 注意力机制 · 每个词决定看谁 / Attention · Every Word Decides Where to Look → 熵 · 惊讶的平均值 / Entropy · The Average of Surprise
 
