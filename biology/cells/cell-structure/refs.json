@@ -1,0 +1,49 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "cell-structure",
+ "refs": [],
+ "backlinks": [
+  {
+   "from": "blood-circulation",
+   "links": [
+    {
+     "from": "step5",
+     "to": "step0"
+    }
+   ]
+  },
+  {
+   "from": "dna-replication",
+   "links": [
+    {
+     "from": null,
+     "to": "step1"
+    }
+   ]
+  },
+  {
+   "from": "meiosis",
+   "links": [
+    {
+     "from": null,
+     "to": "step1"
+    }
+   ]
+  },
+  {
+   "from": "photosynthesis",
+   "links": [
+    {
+     "from": null,
+     "to": "step2"
+    },
+    {
+     "from": null,
+     "to": "step3"
+    }
+   ]
+  }
+ ],
+ "related": [],
+ "bindings": []
+}
