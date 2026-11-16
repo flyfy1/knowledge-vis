@@ -748,9 +748,16 @@ passed (4516 checks). The full build failed only the CJK-in-`index.html` check o
   the pages, not to this batch.
 - **Visual check** against live (linear-transform, eigenvectors, frozen-bubble, convolution; 1280/390/320, zh/en,
   reduced motion): first-screen screenshots pixel-identical in 22 of 24. In the other two (convolution 1280, zh and
-  en) the live page has step 0's nav pill lit at load and the build does not. The HEAD copy served locally does not
-  light it either: live, site-nav.js inserts the breadcrumb after load, the steps move, and the scroll spy (which only
-  ever sets `active`) keeps a state from before the move. The static breadcrumb removes that move. The linked-from
+  en) the live page has step 0's nav pill lit at load and the build does not. Live, the pages' scroll spies light a
+  step inside a band of the viewport (convolution: 40–50 % of its height); before the deferred site-nav.js inserts the
+  breadcrumb, step 0 sits about 54 px higher, inside the band on some window heights, so the spy lights it, and it
+  never clears a pill when a step leaves the band. The static breadcrumb puts step 0 at its final place from the first
+  layout, below the band. The independent review measured it on all 17 (1280×800/950, 390×844): live lit step 0 at
+  load where the build did not in 11 pages at some height (the af7030c6 copy served locally behaves like live; the
+  final positions are identical). Since then `lesson-shell.js`, on a plain navigation at scroll 0 with no fragment,
+  lights the first `.nav-step` when the spy has lit none; the spy's next match replaces it (all 16 pages that load
+  it, plus reload and `#step3` deep links, checked). The three converted pages that do not load `lesson-shell.js`
+  (linear-transform, climate-energy, plate-tectonics) never lit at load live either. The linked-from
   block first rendered flush left (the pages centre steps through their own `.step` rule, which the block does not
   carry); `lesson-shell.css` now centres it (see §3c), checked on all 17 pages at 1280/390/320 (left edge equal to
   the steps', no horizontal overflow).
