@@ -21,6 +21,14 @@ a.site-autolink { overflow-wrap:anywhere; }
    add a generated "linked from / related" block before the footer. */
 .site-xref { padding:56px 0 24px; border-top:1px solid var(--line,#2b3242); }
 .site-xref h2 { font-size:22px; line-height:1.4; margin:0 0 .6em; }
+/* A converted lesson centres its steps through its own .step rule, which the generated block does not carry. Lessons
+   that load lesson-shell.css get the same centring there (Phase 3 batch A); the rest (batch B) get it here, with the
+   pages' own --gutter (most use clamp(16px,4vw,42px)) or 16px. */
+html[data-template="lesson"]:not(:has(link[href*="lesson-shell.css"])) section.site-xref { display:flex; justify-content:center; padding-inline:var(--gutter,16px); }
+html[data-template="lesson"]:not(:has(link[href*="lesson-shell.css"])) section.site-xref > .step-inner { width:100%; }
+/* 52 of those pages leave links to the browser default (dark blue on a dark page). Zero specificity: a page's own
+   a { … } rule still wins. */
+:where(html[data-template="lesson"] section.site-xref a) { color:var(--accent,var(--cyan,#67d7f9)); }
 .xref-list { list-style:none; padding:0; margin:0 0 2em; }
 .xref-list li { padding:10px 0; border-bottom:1px solid var(--line,#2b3242); color:var(--body,#d5d7de); font-size:15px; line-height:1.7; overflow-wrap:anywhere; }
 .xref-list a { display:inline-block; min-height:24px; }
