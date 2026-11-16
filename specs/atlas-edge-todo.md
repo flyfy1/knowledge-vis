@@ -1374,11 +1374,12 @@ anchor; a link to the page top has no anchor).
 
 ## 向量 · 有方向的量 / Vectors · Quantities With a Direction → 牛顿运动定律 · F = ma 是调出来的 / Newton’s Laws of Motion · F = ma, Tuned by Hand
 
-- `vectors` → `newton-laws#step2`: ? → newton-laws
+- `vectors#step1` → `newton-laws#step2`: vectors → newton-laws
+- `vectors#step5` → `newton-laws#step2`: ? → newton-laws
 
 ## 向量 · 有方向的量 / Vectors · Quantities With a Direction → 抛体与圆周 · 一直在掉，但总掉不到地上 / Projectiles & Circular Motion · Always Falling, Never Landing
 
-- `vectors` → `projectile-circular#step2`
+- `vectors#step5` → `projectile-circular#step2`
 
 ## 股票与债券 · 买到的到底是什么 / Stocks & Bonds · What Do You Actually Buy → 复利与贴现 · 时间是钱的形状 / Compound Interest & Discounting · Time Is the Shape of Money
 

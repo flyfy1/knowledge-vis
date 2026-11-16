@@ -20,5 +20,40 @@
   "stage": "senior",
   "status": "live",
   "path": "math/linear-algebra/vectors/",
-  "order": 2430
+  "order": 2430,
+  "layout": "lesson",
+  "enCjk": [
+    "foot"
+  ],
+  "legacyLayout": {
+    "_note": "Whitespace and markup of the hand-written lesson this page was converted from, so the conversion could be checked byte for byte (specs/site-template.md §3c).",
+    "section": {
+      "open": "<section class=\"step\" id=\"{id}\" data-step=\"{n}\"><div class=\"step-inner\">",
+      "close": "</div></section>"
+    },
+    "indent": "",
+    "leads": {
+      "step0-2": "\n",
+      "step1-2": "\n",
+      "step2-2": "\n",
+      "keepAB": "\n",
+      "step3-2": "\n",
+      "step4-2": "\n",
+      "step5-2": "\n"
+    },
+    "mainGaps": [
+      "\n",
+      "\n",
+      "\n",
+      "\n",
+      "\n",
+      "\n",
+      "\n"
+    ],
+    "stepNav": {
+      "item": "<a href=\"#{id}\" data-i18n=\"{key}\"></a>",
+      "end": ""
+    }
+  },
+  "version": "20261116a"
 }
