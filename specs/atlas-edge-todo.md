@@ -866,15 +866,15 @@ anchor; a link to the page top has no anchor).
 
 ## 注意力机制 · 每个词决定看谁 / Attention · Every Word Decides Where to Look → 熵 · 惊讶的平均值 / Entropy · The Average of Surprise
 
-- `attention-mechanism` → `entropy#step1`
+- `attention-mechanism#step5` → `entropy#step1`
 
 ## 注意力机制 · 每个词决定看谁 / Attention · Every Word Decides Where to Look → 二维线性变换 · 矩阵如何挪动平面 / 2D Linear Transformations · How Matrices Move the Plane
 
-- `attention-mechanism` → `linear-transform#step1`
+- `attention-mechanism#step5` → `linear-transform#step1`
 
 ## 注意力机制 · 每个词决定看谁 / Attention · Every Word Decides Where to Look → 梯度下降 · 摸黑下山 / Gradient Descent · Feeling Your Way Downhill
 
-- `attention-mechanism` → `gradient-descent#step0`: ? → gradient-descent
+- `attention-mechanism#step5` → `gradient-descent#step0`: ? → gradient-descent
 
 ## 平均数 · 移多补少 / Averages · Level by Pouring → 概率分布 · 随机性也有形状 / Probability Distributions · Randomness Has a Shape
 

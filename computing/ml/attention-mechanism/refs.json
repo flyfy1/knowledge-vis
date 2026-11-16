@@ -1,0 +1,45 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "attention-mechanism",
+ "refs": [],
+ "backlinks": [
+  {
+   "from": "backpropagation",
+   "links": [
+    {
+     "from": null,
+     "to": "step4"
+    }
+   ]
+  },
+  {
+   "from": "embeddings",
+   "links": [
+    {
+     "from": null,
+     "to": "step0"
+    }
+   ]
+  },
+  {
+   "from": "how-hybrid-attention-remembers",
+   "links": [
+    {
+     "from": null,
+     "to": "step1"
+    }
+   ]
+  },
+  {
+   "from": "llm-sampling",
+   "links": [
+    {
+     "from": null,
+     "to": "step1"
+    }
+   ]
+  }
+ ],
+ "related": [],
+ "bindings": []
+}

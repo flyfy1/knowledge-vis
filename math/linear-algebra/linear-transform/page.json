@@ -106,5 +106,5 @@
     ],
     "label": "<details class=\"page-provenance\" data-developer=\"{{developer}}\" data-edition=\"{{edition}}\" data-source-revision=\"{{sourceRevision}}\"><summary><span class=\"provenance-zh\" lang=\"zh-CN\">{{developer}} 开发 · {{kind.zh}}</span><span class=\"provenance-en\" lang=\"en\">Developed with {{developer}} · {{kind.en}}</span></summary><p><span class=\"provenance-zh\" lang=\"zh-CN\">范围：{{scope.zh}}。</span><span class=\"provenance-en\" lang=\"en\">Scope: {{scope.en}}.</span></p><p><span class=\"provenance-zh\" lang=\"zh-CN\">建页提交未写 Built-By；作者由 Yangyu 于 2026-11-09 确认，记在 authorship/overrides.json。</span><span class=\"provenance-en\" lang=\"en\">The creating commit has no Built-By; Yangyu confirmed the author on 2026-11-09 (recorded in authorship/overrides.json).</span></p><p>{{edition}} · <a href=\"https://github.com/flyfy1/knowledge-vis/commit/{{sourceRevision}}\"><span class=\"provenance-zh\" lang=\"zh-CN\">源码修订</span><span class=\"provenance-en\" lang=\"en\">Source revision</span> · {{short}}</a></p></details>"
   },
-  "version": "20261116a"
+  "version": "20261116b"
 }
