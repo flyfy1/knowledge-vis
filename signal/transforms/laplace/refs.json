@@ -1,0 +1,67 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "laplace",
+ "refs": [],
+ "backlinks": [
+  {
+   "from": "atlas",
+   "links": [
+    {
+     "from": null,
+     "to": "step4"
+    }
+   ]
+  },
+  {
+   "from": "pid-control",
+   "links": [
+    {
+     "from": null,
+     "to": "step4"
+    }
+   ]
+  },
+  {
+   "from": "step-response",
+   "links": [
+    {
+     "from": null,
+     "to": "step4"
+    }
+   ]
+  },
+  {
+   "from": "inverted-pendulum",
+   "links": [
+    {
+     "from": null,
+     "to": "step4"
+    }
+   ]
+  },
+  {
+   "from": "frequency-response",
+   "links": [
+    {
+     "from": null,
+     "to": "step4"
+    }
+   ]
+  },
+  {
+   "from": "z-transform",
+   "links": [
+    {
+     "from": null,
+     "to": "step3"
+    },
+    {
+     "from": null,
+     "to": "step6"
+    }
+   ]
+  }
+ ],
+ "related": [],
+ "bindings": []
+}
