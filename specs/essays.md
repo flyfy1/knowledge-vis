@@ -341,6 +341,7 @@ SSD-vs-HDD words (固态硬盘为什么比机械硬盘快, 机械硬盘和固态
 why-nvme-is-fast (#ch1, #ch6).
 Since the bus series (2026-11-15) ch7.p4 links the word PCIe to how-pcie-works; scripts at `?v=20261115c`.
 A6/boot registrar (2026-11-15): ch1.p3 links its words 分区表 / partition table to how-a-computer-boots #ch7 (GPT, protective MBR); label at 4e4585ca (previous 4353c314), scripts `?v=20261115d`.
+Diagram retrofit registrar (2026-11-16): eight static diagrams (STANDARD §4a) added in 9fcb9fac, review specs/reviews/storage-diagrams-s1-s3-review-20261116.md, fixes mirrored in specs/what-a-drive-is-made-of.md; label at 9fcb9fac (previous 70d9f2e1), scripts `?v=20261116a`.
 
 ### how-sata-works: SATA 为什么用了二十多年
 
@@ -356,6 +357,7 @@ limit paragraph). Atlas edges: 5 between chapters, 2 to S1 (#ch2, #ch7), 1 to wh
 Since 2026-11-15 ch10.q2 links how-usb-drives-talk #ch6 and ch10.links links that essay as well, and storage-over-a-network.
 Since the bus series (2026-11-15) ch2.limit has one more sentence linking how-a-computer-is-wired #ch2 (loading and
 reflections on the PCI bus); scripts at `?v=20261115c`.
+Diagram retrofit registrar (2026-11-16): eight static diagrams (STANDARD §4a) added in 9fcb9fac, review specs/reviews/storage-diagrams-s1-s3-review-20261116.md, fixes mirrored in specs/how-sata-works.md; label at 9fcb9fac (previous 70d9f2e1), scripts `?v=20261116a`.
 
 ### how-sas-works: 服务器硬盘为什么用 SAS
 
@@ -372,6 +374,7 @@ storage-over-a-network #ch4 (FCP) and #ch3 (iSCSI), and ch11.links that essay, #
 and multipath storage; plain 多路径 / multipath went to S5 #ch8. Tuned: the 0.5 µs connection open/close time (saturation at about 16 drives either way, halved or
 doubled). Atlas edges: 5 between chapters, 3 from S1 (#ch5, #ch7 twice), 4 from S2 (#ch1, #ch3, #ch4, #ch8),
 1 from poisson-process. At registration ch5.p2's "previous chapter" was corrected to chapter 3.
+Diagram retrofit registrar (2026-11-16): ten static diagrams (STANDARD §4a) added in 9fcb9fac, review specs/reviews/storage-diagrams-s1-s3-review-20261116.md, fixes mirrored in specs/how-sas-works.md; label at 9fcb9fac (previous 70d9f2e1), scripts `?v=20261116a`.
 
 ### how-usb-drives-talk: 移动硬盘为什么跑不满
 
@@ -394,6 +397,7 @@ Since the bus series (2026-11-15) ch8.p1 links how-thunderbolt-works #ch2 and ho
 how-thunderbolt-works #ch9; scripts at `?v=20261115c`.
 Not verified (BRIEF): the TB3/TB4 ~2,800 MB/s and TB5 enclosure figures (reviews and forums), the ISSCC 2023 paper body,
 SAT itself.
+Diagram retrofit registrar (2026-11-16): nine static diagrams (STANDARD §4a) added in 9fcb9fac, review specs/reviews/storage-diagrams-s4-s5-review-20261116.md, fixes mirrored in specs/how-usb-drives-talk.md; label at 9fcb9fac (previous 70d9f2e1), scripts `?v=20261116d`.
 
 ### storage-over-a-network: 隔着网线的硬盘
 
@@ -416,6 +420,7 @@ FC-FS frame layout, MS-SMB2, S3 PUT semantics, several textbooks cited from memo
 rather than the primary pages.
 OS/pixels registrar (2026-11-15): ch6.p1 links how-the-os-talks-to-hardware #ch12 (kernel bypass inside one machine); RDMA 是什么 / RDMA and "kernel bypass zero copy" stay on #ch6 here (pinned), plain "kernel bypass" / 内核旁路 open the OS essay #ch12. Label at e916a267 (previous 70d9f2e1), scripts `?v=20261115b`.
 Power/NIC registrar (2026-11-15): ch6.p1 links how-a-nic-moves-packets #ch11; #ch6 gains bare RDMA (it tied with the NIC essay's #ch11). Label at d0821bc1 (previous e916a267), scripts `?v=20261115c`.
+Diagram retrofit registrar (2026-11-16): ten static diagrams (STANDARD §4a) added in 9fcb9fac, review specs/reviews/storage-diagrams-s4-s5-review-20261116.md, fixes mirrored in specs/storage-over-a-network.md; label at 9fcb9fac (previous d0821bc1), scripts `?v=20261116d`.
 
 ### how-pcie-works: PCIe 为什么能一代一代翻倍
 
