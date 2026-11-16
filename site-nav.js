@@ -10,6 +10,8 @@
  * Text inside links, headings, buttons, form controls, svg/canvas, the provenance label and
  * anything under [data-no-autolink] is left alone, and a page never links to itself.
  * A debounced MutationObserver re-runs both after the page re-renders (language switch).
+ * Pages built from the site template (<html data-template>, specs/site-template.md) already carry a static
+ * breadcrumb and build-time links, so the script does nothing there.
  */
 (function (global) {
   'use strict';
@@ -70,6 +72,10 @@
 
   /* ---------- page part ---------- */
   var doc = global.document;
+  if (doc.documentElement && doc.documentElement.hasAttribute && doc.documentElement.hasAttribute('data-template')) {
+    global.SiteNav = { skipped: 'data-template', report: function () { return []; }, page: function () { return null; }, rescan: function () {} };
+    return;
+  }
   var me = doc.currentScript;
   if (!me || !me.src) return;
   var rootURL = new URL('.', me.src);

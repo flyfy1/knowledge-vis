@@ -5,8 +5,11 @@
  *                                              redirect stubs and the include lines in every live page
  *   node scripts/build-site-nav.cjs --check    fail if any of those three is out of date (no writes)
  *
- * Everything is derived from pages.config.js (KNOWLEDGE_CATEGORIES, KNOWLEDGE_SUBTOPICS, live
- * KNOWLEDGE_PAGES). Only live pages are touched, so untracked drafts are never edited.
+ * Everything is derived from the site registry (scripts/lib/template.cjs; today it reads pages.config.js:
+ * KNOWLEDGE_CATEGORIES, KNOWLEDGE_SUBTOPICS, live KNOWLEDGE_PAGES), so site-nav-data.js is a projection of
+ * the same registry the template build uses. Only live pages are touched, so untracked drafts are never edited.
+ * Pages built from the site template (a page.json next to index.html) are never written here: their include
+ * lines come from the layout, so a stale one is reported with the build-pages command that fixes it.
  *
  * NO_AUTOLINK lists mentions that match a page title exactly but must not become links
  * (for example a book that happens to share a page's title). Each entry is
@@ -15,7 +18,6 @@
 'use strict';
 const fs = require('fs');
 const path = require('path');
-const vm = require('vm');
 
 const root = path.resolve(__dirname, '..');
 // Bump when site-nav.js or site-nav.css change (Cloudflare caches JS/CSS for 4 h, HTML not at all).
@@ -24,9 +26,7 @@ const NO_AUTOLINK = [
 ];
 
 function loadRegistry() {
-  const sandbox = { window: {} };
-  vm.runInNewContext(fs.readFileSync(path.join(root, 'pages.config.js'), 'utf8'), sandbox);
-  return sandbox.window;
+  return require('./lib/template.cjs').loadPagesConfig(root);
 }
 const pick = (v, l) => (v == null ? '' : typeof v === 'string' ? v : (v[l] != null ? v[l] : (v.zh || v.en || '')));
 
@@ -121,7 +121,7 @@ function plan() {
     const abs = path.join(root, file);
     if (!fs.existsSync(abs)) throw new Error('live page has no index.html: ' + file);
     const html = fs.readFileSync(abs, 'utf8');
-    files.push({ file, content: withInclude(html, p[1], file), page: true });
+    files.push({ file, content: withInclude(html, p[1], file), page: true, template: fs.existsSync(path.join(root, p[1], 'page.json')) });
   }
   return { data, files };
 }
@@ -129,7 +129,7 @@ function plan() {
 function main() {
   const check = process.argv.includes('--check');
   const { data, files } = plan();
-  const stale = [];
+  const stale = [], templateStale = [];
   for (const f of files) {
     const abs = path.join(root, f.file);
     const cur = fs.existsSync(abs) ? fs.readFileSync(abs, 'utf8') : null;
@@ -137,6 +137,7 @@ function main() {
     if (f.stub && cur != null && !/<meta name="robots" content="noindex">/.test(cur)) {
       throw new Error(f.file + ' exists and is not a redirect stub; refusing to overwrite');
     }
+    if (f.template) { templateStale.push(f.file); continue; }
     stale.push(f.file);
     if (!check) { fs.mkdirSync(path.dirname(abs), { recursive: true }); fs.writeFileSync(abs, f.content); }
   }
@@ -144,6 +145,11 @@ function main() {
   const MAX = 60000; // same per-file cap as a search chunk (specs/atlas-search-index.md)
   if (bytes > MAX) { console.error(`site-nav-data.js is ${bytes} bytes, over the ${MAX} byte cap`); process.exit(1); }
   const nStubs = files.filter((f) => f.stub).length, nPages = files.filter((f) => f.page).length;
+  if (templateStale.length) {
+    console.error('template pages have stale site-nav includes; rebuild them (not edited here):\n' +
+      templateStale.map((f) => '  node scripts/build-pages.cjs ' + path.dirname(f)).join('\n'));
+    process.exit(1);
+  }
   if (check) {
     if (stale.length) {
       console.error('site navigation is out of date; run node scripts/build-site-nav.cjs. Stale:\n  ' + stale.join('\n  '));

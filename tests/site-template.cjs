@@ -121,6 +121,28 @@ failsWith('paragraph that needs a key', r => edit(r, 'content.zh.md', '一句副
   ok(twice.code === 1 && /already has page\.json/.test(twice.out), 'converter refuses an already migrated page');
 }
 
+// 5. site-nav.js leaves template pages alone (their breadcrumb and links are static), and still runs elsewhere.
+{
+  const vm = require('node:vm');
+  const src = fs.readFileSync(path.join(repo, 'site-nav.js'), 'utf8');
+  const fakeWindow = template => {
+    const touched = [];
+    const doc = {
+      currentScript: { src: 'http://127.0.0.1/site-nav.js?v=test' },
+      documentElement: { hasAttribute: a => template && a === 'data-template', getAttribute: () => 'zh-CN' },
+      createElement: t => { touched.push(t); return { setAttribute() {}, appendChild() {} }; },
+      head: { appendChild: () => touched.push('head') }, querySelector: () => null,
+    };
+    return { w: { document: doc, location: { pathname: '/demo/basics/fixture-essay/' }, Date, URL, setTimeout }, touched };
+  };
+  const t = fakeWindow(true);
+  vm.runInNewContext(src, { window: t.w, URL, Date });
+  ok(t.w.SiteNav && t.w.SiteNav.skipped === 'data-template' && t.touched.length === 0, 'site-nav.js skips <html data-template> pages without touching the DOM');
+  const u = fakeWindow(false);
+  vm.runInNewContext(src, { window: u.w, location: u.w.location, URL, Date });
+  ok(u.w.SiteNav && !u.w.SiteNav.skipped && u.touched.includes('script'), 'site-nav.js still loads its data on other pages');
+}
+
 // The scratch copies are removed on success (kept on failure, or with KEEP_SCRATCH=1).
 if (!process.env.KEEP_SCRATCH) fs.rmSync(scratch, { recursive: true, force: true });
 console.log(`PASS site template: ${n} checks (repo --all --check, fixture build, ${modes} failure modes, converter round trip)`);
