@@ -7,7 +7,11 @@
    "from": "pagerank",
    "links": [
     {
-     "from": null,
+     "from": "step2",
+     "to": "step3"
+    },
+    {
+     "from": "step5",
      "to": "step3"
     }
    ]

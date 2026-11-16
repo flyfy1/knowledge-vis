@@ -1006,11 +1006,11 @@ anchor; a link to the page top has no anchor).
 
 ## PageRank · 随机冲浪者最后停在哪 / PageRank · Where the Random Surfer Ends Up → 图算法 · 让边带你走 / Graph Algorithms · Let Edges Lead
 
-- `pagerank` → `graph-algorithms#step0`
+- `pagerank#step5` → `graph-algorithms#step0`
 
 ## PageRank · 随机冲浪者最后停在哪 / PageRank · Where the Random Surfer Ends Up → 蒙特卡洛 · 撒豆子算 π / Monte Carlo · Counting π with Scattered Beans
 
-- `pagerank` → `monte-carlo#step1`
+- `pagerank#step5` → `monte-carlo#step1`
 
 ## 位值与计数器 · 满十进一 / Place Value & the Counting Frame · Ten Makes One → 指数与对数 · 翻倍与逆问 / Exponentials & Logarithms · Doubling and the Reverse Question
 

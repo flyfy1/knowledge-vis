@@ -1,0 +1,33 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "pagerank",
+ "refs": [
+  {
+   "from": "s2e",
+   "to": "eigenvectors",
+   "anchor": "step3"
+  }
+ ],
+ "backlinks": [
+  {
+   "from": "shortest-path",
+   "links": [
+    {
+     "from": null,
+     "to": "step0"
+    }
+   ]
+  },
+  {
+   "from": "markov-chains",
+   "links": [
+    {
+     "from": null,
+     "to": "step0"
+    }
+   ]
+  }
+ ],
+ "related": [],
+ "bindings": []
+}
