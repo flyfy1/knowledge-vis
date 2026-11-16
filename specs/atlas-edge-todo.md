@@ -665,12 +665,12 @@ anchor; a link to the page top has no anchor).
 
 ## 浮力与阿基米德 / Buoyancy & Archimedes → 压强 / Pressure
 
-- `buoyancy-archimedes` → `pressure#step2`
+- `buoyancy-archimedes#step5` → `pressure#step2`
 
 ## 浮力与阿基米德 / Buoyancy & Archimedes → 密度 / Density
 
-- `buoyancy-archimedes` → `density#step3`
-- `buoyancy-archimedes` → `density#step4`
+- `buoyancy-archimedes#step5` → `density#step3`
+- `buoyancy-archimedes#step5` → `density#step4`
 
 ## 燃烧三要素 / The Fire Triangle → 反应速率 · 数一数成功碰撞 / Reaction Rates · Counting Successful Collisions
 
