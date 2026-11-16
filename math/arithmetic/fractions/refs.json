@@ -1,0 +1,67 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "fractions",
+ "refs": [],
+ "backlinks": [
+  {
+   "from": "equation-scale",
+   "links": [
+    {
+     "from": "step4",
+     "to": "step1"
+    },
+    {
+     "from": "step6",
+     "to": "step1"
+    }
+   ]
+  },
+  {
+   "from": "area-model",
+   "links": [
+    {
+     "from": "step4",
+     "to": "step1"
+    }
+   ]
+  },
+  {
+   "from": "division-remainder",
+   "links": [
+    {
+     "from": "step4",
+     "to": "step5"
+    }
+   ]
+  },
+  {
+   "from": "negative-numbers",
+   "links": [
+    {
+     "from": "step5",
+     "to": "step1"
+    }
+   ]
+  },
+  {
+   "from": "perimeter-area",
+   "links": [
+    {
+     "from": "step4",
+     "to": "step1"
+    }
+   ]
+  },
+  {
+   "from": "pythagoras",
+   "links": [
+    {
+     "from": "step6",
+     "to": "step6"
+    }
+   ]
+  }
+ ],
+ "related": [],
+ "bindings": []
+}

@@ -494,7 +494,7 @@ anchor; a link to the page top has no anchor).
 
 ## 分数 · 把整体切开来数 / Fractions · Cutting the Whole to Count → 蒙特卡洛 · 撒豆子算 π / Monte Carlo · Counting π with Scattered Beans
 
-- `fractions` → `monte-carlo#step1`
+- `fractions#step6` → `monte-carlo#step1`
 
 ## 勾股定理 · 一步一交互 / The Pythagorean Theorem · One Interaction at a Time → 分数 · 把整体切开来数 / Fractions · Cutting the Whole to Count
 
