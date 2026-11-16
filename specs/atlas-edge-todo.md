@@ -579,7 +579,8 @@ anchor; a link to the page top has no anchor).
 
 ## 驻波 · 原地起伏的波 / Standing Waves · The Wave That Stays in Place → 三角函数 · 单位圆 / Trigonometric Functions · The Unit Circle
 
-- `standing-wave` → `trigonometry#step2`
+- `standing-wave#step0` → `trigonometry#step2`
+- `standing-wave#step6` → `trigonometry#step2`
 
 ## 负数 · 0 以下的世界 / Negative Numbers · The World Below Zero → 分数 · 把整体切开来数 / Fractions · Cutting the Whole to Count
 

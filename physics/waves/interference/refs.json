@@ -101,15 +101,15 @@
    "from": "standing-wave",
    "links": [
     {
-     "from": null,
+     "from": "step2",
      "to": "step3"
     },
     {
-     "from": null,
+     "from": "step6",
      "to": "step1"
     },
     {
-     "from": null,
+     "from": "step6",
      "to": "step2"
     }
    ]

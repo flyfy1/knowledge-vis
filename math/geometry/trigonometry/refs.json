@@ -60,7 +60,11 @@
    "from": "standing-wave",
    "links": [
     {
-     "from": null,
+     "from": "step0",
+     "to": "step2"
+    },
+    {
+     "from": "step6",
      "to": "step2"
     }
    ]

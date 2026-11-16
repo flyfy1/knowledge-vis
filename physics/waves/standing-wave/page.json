@@ -28,5 +28,31 @@
   "stage": "senior",
   "status": "live",
   "path": "physics/waves/standing-wave/",
-  "order": 820
+  "order": 820,
+  "layout": "lesson",
+  "titleKey": "pageTitle",
+  "legacyLayout": {
+    "_note": "Whitespace and markup of the hand-written lesson this page was converted from, so the conversion could be checked byte for byte (specs/site-template.md §3c).",
+    "section": {
+      "open": "<section class=\"step\" id=\"{id}\" data-step=\"{n}\">\n<div class=\"step-inner\">",
+      "close": "\n</div>\n</section>"
+    },
+    "indent": "\n",
+    "leads": {
+      "step2-4": ""
+    },
+    "mainGaps": [
+      "\n",
+      "\n",
+      "\n",
+      "\n",
+      "\n",
+      "\n",
+      "\n",
+      "\n"
+    ],
+    "stepNav": false,
+    "label": "<details class=\"page-provenance\" data-developer=\"{{developer}}\" data-edition=\"{{edition}}\" data-source-revision=\"{{sourceRevision}}\"><summary><span class=\"provenance-zh\" lang=\"zh-CN\">{{developer}} 开发 · {{kind.zh}}</span><span class=\"provenance-en\" lang=\"en\">Developed with {{developer}} · {{kind.en}}</span></summary><p><span class=\"provenance-zh\" lang=\"zh-CN\">保留原课程与贡献；原版提交署名 Muse/Alberto。{{developer}} 修订第1步的{{scope.zh}}，并保留第2步固定端判定、精确吸附与阅读恢复。</span><span class=\"provenance-en\" lang=\"en\">Original course and contributors retained; its original commit credits Muse/Alberto. {{developer}} revised Step1 {{scope.en}}, retaining accepted Step2 fixed-end compatibility, snapping and paused recovery.</span></p><p>{{edition}} · <a href=\"https://github.com/flyfy1/knowledge-vis/commit/{{sourceRevision}}\"><span class=\"provenance-zh\" lang=\"zh-CN\">源码修订</span><span class=\"provenance-en\" lang=\"en\">Source revision</span> · {{short}}</a></p></details>"
+  },
+  "version": "20261116a"
 }

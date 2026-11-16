@@ -1,0 +1,49 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "standing-wave",
+ "refs": [],
+ "backlinks": [
+  {
+   "from": "doppler-effect",
+   "links": [
+    {
+     "from": "step5",
+     "to": "step0"
+    }
+   ]
+  },
+  {
+   "from": "resonance",
+   "links": [
+    {
+     "from": "step5",
+     "to": "step4"
+    }
+   ]
+  },
+  {
+   "from": "sound-vibration",
+   "links": [
+    {
+     "from": "step5",
+     "to": "step0"
+    }
+   ]
+  },
+  {
+   "from": "sound-waves",
+   "links": [
+    {
+     "from": "step2",
+     "to": "step0"
+    },
+    {
+     "from": "step5",
+     "to": "step0"
+    }
+   ]
+  }
+ ],
+ "related": [],
+ "bindings": []
+}
