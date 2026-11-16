@@ -1,0 +1,43 @@
+<div class="dual">
+      <div class="half">
+        <h3 class="sub-t2" data-i18n="pLab5"></h3>
+        <div class="controls col" id="s5-psliders">
+          <label><span><span class="sym-lab sl-a">A</span> <span class="val" id="s5-pw0-val"></span></span>
+            <input type="range" id="s5-pw0" min="0" max="100" step="1" value="50"></label>
+          <label><span><span class="sym-lab sl-b">B</span> <span class="val" id="s5-pw1-val"></span></span>
+            <input type="range" id="s5-pw1" min="0" max="100" step="1" value="25"></label>
+          <label><span><span class="sym-lab sl-c">C</span> <span class="val" id="s5-pw2-val"></span></span>
+            <input type="range" id="s5-pw2" min="0" max="100" step="1" value="15"></label>
+          <label><span><span class="sym-lab sl-d">D</span> <span class="val" id="s5-pw3-val"></span></span>
+            <input type="range" id="s5-pw3" min="0" max="100" step="1" value="10"></label>
+        </div>
+        <div class="btn-row">
+          <button class="btn pre5p" data-w="50,25,12.5,12.5" data-i18n="preDyadic2"></button>
+          <button class="btn pre5p" data-w="25,25,25,25" data-i18n="preUni">预设：均匀</button>
+          <button class="btn pre5p" data-w="70,10,10,10" data-i18n="preSharp"></button>
+        </div>
+      </div>
+      <div class="half">
+        <h3 class="sub-t2" data-i18n="qLab5"></h3>
+        <div class="controls col" id="s5-qsliders">
+          <label><span><span class="sym-lab sl-a">A</span> <span class="val" id="s5-qw0-val"></span></span>
+            <input type="range" id="s5-qw0" min="0" max="100" step="1" value="25"></label>
+          <label><span><span class="sym-lab sl-b">B</span> <span class="val" id="s5-qw1-val"></span></span>
+            <input type="range" id="s5-qw1" min="0" max="100" step="1" value="25"></label>
+          <label><span><span class="sym-lab sl-c">C</span> <span class="val" id="s5-qw2-val"></span></span>
+            <input type="range" id="s5-qw2" min="0" max="100" step="1" value="25"></label>
+          <label><span><span class="sym-lab sl-d">D</span> <span class="val" id="s5-qw3-val"></span></span>
+            <input type="range" id="s5-qw3" min="0" max="100" step="1" value="25"></label>
+        </div>
+        <div class="btn-row">
+          <button class="btn" id="s5-qcopy" data-i18n="qCopyBtn"></button>
+          <button class="btn" id="s5-swap" data-i18n="swapBtn"></button>
+        </div>
+        <label class="check-lab"><input type="checkbox" id="s5-smooth"> <span data-i18n="smoothLab"></span></label>
+      </div>
+    </div>
+    <div class="stage">
+      <canvas id="s5-canvas" height="300"></canvas>
+    </div>
+    <p class="readout" id="s5-readout"></p>
+    <div class="warn-box" id="s5-inf" style="display:none" data-i18n-html="s5inf"></div>

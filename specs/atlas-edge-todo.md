@@ -456,7 +456,7 @@ anchor; a link to the page top has no anchor).
 
 ## 熵 · 惊讶的平均值 / Entropy · The Average of Surprise → 中心极限定理 · 平均值总会变成钟形 / Central Limit Theorem · Averages Always Turn Bell-Shaped
 
-- `entropy` → `central-limit-theorem#step0`
+- `entropy#step6` → `central-limit-theorem#step0`
 
 ## 冲激与 LTI · 给系统一巴掌 / Impulse & LTI · Slap the System → Z 变换 · 把 s 平面卷成单位圆 / The Z-Transform · Rolling the s-Plane into the Unit Circle
 

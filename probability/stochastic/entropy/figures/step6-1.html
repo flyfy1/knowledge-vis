@@ -1,0 +1,36 @@
+<div class="app-grid three">
+      <div class="app-card">
+        <h3 data-i18n="pwT"></h3>
+        <p data-i18n="pwD"></p>
+        <div class="controls col" style="margin-top:12px">
+          <label><span><span data-i18n="lenLab"></span> <span class="val" id="s6-len-val"></span></span>
+            <input type="range" id="s6-len" min="4" max="64" step="1" value="12">
+          </label>
+        </div>
+        <div class="btn-row">
+          <button class="btn cs6" data-size="10" data-i18n="cs10"></button>
+          <button class="btn cs6" data-size="26" data-i18n="cs26"></button>
+          <button class="btn cs6 active" data-size="62" data-i18n="cs62"></button>
+          <button class="btn cs6" data-size="94" data-i18n="cs94"></button>
+        </div>
+        <div class="stage slim">
+          <canvas id="s6-canvas" height="120"></canvas>
+        </div>
+        <p class="readout" id="s6-readout"></p>
+        <p class="hint" data-i18n-html="rateNote"></p>
+      </div>
+      <div class="app-card">
+        <h3 data-i18n="physT"></h3>
+        <p data-i18n-html="physD"></p>
+      </div>
+      <div class="app-card">
+        <h3 data-i18n="compT"></h3>
+        <p data-i18n-html="compD"></p>
+      </div>
+    </div>
+    <div class="finale">
+      <p data-i18n-html="s6fin"></p>
+      <p style="margin-top:12px">
+        <a class="fourier-link" href="/" data-i18n="s6linkIdx"></a>
+      </p>
+    </div>

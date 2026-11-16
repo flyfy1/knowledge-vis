@@ -1,0 +1,33 @@
+<div class="formula-box">
+      <p class="formula big">H = −Σ p<sub>i</sub> · log<sub>2</sub> p<sub>i</sub></p>
+    </div>
+    <div class="controls" id="s2-sliders">
+      <label><span><span class="sym-lab sl-a">A</span> <span data-i18n="wLab"></span> <span class="val" id="s2-w0-val"></span></span>
+        <input type="range" id="s2-w0" min="0" max="100" step="1" value="50">
+      </label>
+      <label><span><span class="sym-lab sl-b">B</span> <span data-i18n="wLab"></span> <span class="val" id="s2-w1-val"></span></span>
+        <input type="range" id="s2-w1" min="0" max="100" step="1" value="25">
+      </label>
+      <label><span><span class="sym-lab sl-c">C</span> <span data-i18n="wLab"></span> <span class="val" id="s2-w2-val"></span></span>
+        <input type="range" id="s2-w2" min="0" max="100" step="1" value="15">
+      </label>
+      <label><span><span class="sym-lab sl-d">D</span> <span data-i18n="wLab"></span> <span class="val" id="s2-w3-val"></span></span>
+        <input type="range" id="s2-w3" min="0" max="100" step="1" value="10">
+      </label>
+    </div>
+    <div class="btn-row">
+      <button class="btn pre2" data-w="50,25,15,10" data-i18n="preSkew"></button>
+      <button class="btn pre2" data-w="25,25,25,25" data-i18n="preUni"></button>
+      <button class="btn pre2" data-w="97,1,1,1" data-i18n="preOne"></button>
+    </div>
+    <div class="stage">
+      <canvas id="s2-canvas" height="380"></canvas>
+    </div>
+    <div class="btn-row">
+      <button class="btn" id="s2-sample1" data-i18n="sample1"></button>
+      <button class="btn" id="s2-sample20" data-i18n="sample20"></button>
+      <button class="btn primary" id="s2-run" data-i18n="sampleRun"></button>
+      <button class="btn" id="s2-reset" data-i18n="resetSamples"></button>
+      <button class="btn" id="s2-seed" data-i18n="newSeed"></button>
+    </div>
+    <p class="readout" id="s2-readout"></p>

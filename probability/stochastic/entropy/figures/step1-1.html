@@ -1,0 +1,20 @@
+<div class="formula-box">
+      <p class="formula big">I(x) = −log<sub>2</sub> p(x)</p>
+    </div>
+    <div class="stage">
+      <canvas id="s1-canvas" height="240"></canvas>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="pLab"></span> <span class="val" id="s1-p-val"></span></span>
+        <input type="range" id="s1-p" min="0" max="1000" step="1" value="125">
+      </label>
+    </div>
+    <div class="btn-row">
+      <button class="btn pre1" data-u="0" data-i18n="pOne"></button>
+      <button class="btn pre1 active" data-u="0.125" data-i18n="pHalf"></button>
+      <button class="btn pre1" data-u="0.25">p = 1/4</button>
+      <button class="btn pre1" data-u="0.375">p = 1/8</button>
+      <button class="btn pre1" data-u="0.75">p = 1/64</button>
+      <button class="btn pre1" data-u="1">p = 1/256</button>
+    </div>
+    <p class="readout" id="s1-readout"></p>

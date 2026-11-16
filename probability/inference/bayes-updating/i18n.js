@@ -189,7 +189,7 @@ const STR = {
     "site.bl.3": "<a href=\"../../everyday/numbers-lie/\">数字没有说谎，结论却错了</a>：→ <a href=\"#step1\">本页第 1 步</a>",
     "site.bl.4": "<a href=\"../hypothesis-testing/\">假设检验与 p 值 · 法庭模型判硬币冤不冤</a>：<a href=\"../hypothesis-testing/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>",
     "site.bl.5": "<a href=\"../../stochastic/bandit-arms/\">多臂老虎机 · 探索还是利用</a>：<a href=\"../../stochastic/bandit-arms/#step5\">该课第 5 步</a> → <a href=\"#step4\">本页第 4 步</a>",
-    "site.bl.6": "<a href=\"../../stochastic/entropy/\">熵 · 惊讶的平均值</a>：→ <a href=\"#step2\">本页第 2 步</a>",
+    "site.bl.6": "<a href=\"../../stochastic/entropy/\">熵 · 惊讶的平均值</a>：<a href=\"../../stochastic/entropy/#step6\">该课第 6 步</a> → <a href=\"#step2\">本页第 2 步</a>",
     "site.bl.7": "<a href=\"../../stochastic/monte-carlo/\">蒙特卡洛 · 撒豆子算 π</a>：<a href=\"../../stochastic/monte-carlo/#step6\">该课第 6 步</a> → <a href=\"#step4\">本页第 4 步</a>",
     "site.bl.8": "<a href=\"../../../psychology/cognition/signal-detection/\">信号检测论 · 分得清，和愿意说“有”，是两回事</a>：→ <a href=\"#step2\">本页第 2 步</a>",
     "site.bl.9": "<a href=\"../../../signal/control/kalman/\">卡尔曼滤波 · 在预测与测量之间称重</a>：<a href=\"../../../signal/control/kalman/#step2\">该课第 2 步</a> → <a href=\"#step3\">本页第 3 步</a>；<a href=\"../../../signal/control/kalman/#step6\">该课第 6 步</a> → <a href=\"#step3\">本页第 3 步</a>"
@@ -373,7 +373,7 @@ const STR = {
     "site.bl.3": "<a href=\"../../everyday/numbers-lie/\">Every Number Was True, and the Conclusion Was Still Wrong</a>: → <a href=\"#step1\">this page step 1</a>",
     "site.bl.4": "<a href=\"../hypothesis-testing/\">Hypothesis Testing & p-Values · A Courtroom for a Coin</a>: <a href=\"../hypothesis-testing/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>",
     "site.bl.5": "<a href=\"../../stochastic/bandit-arms/\">Multi-Armed Bandits · Explore or Exploit</a>: <a href=\"../../stochastic/bandit-arms/#step5\">its step 5</a> → <a href=\"#step4\">this page step 4</a>",
-    "site.bl.6": "<a href=\"../../stochastic/entropy/\">Entropy · The Average of Surprise</a>: → <a href=\"#step2\">this page step 2</a>",
+    "site.bl.6": "<a href=\"../../stochastic/entropy/\">Entropy · The Average of Surprise</a>: <a href=\"../../stochastic/entropy/#step6\">its step 6</a> → <a href=\"#step2\">this page step 2</a>",
     "site.bl.7": "<a href=\"../../stochastic/monte-carlo/\">Monte Carlo · Counting π with Scattered Beans</a>: <a href=\"../../stochastic/monte-carlo/#step6\">its step 6</a> → <a href=\"#step4\">this page step 4</a>",
     "site.bl.8": "<a href=\"../../../psychology/cognition/signal-detection/\">Signal Detection Theory · Telling Apart vs. Willing to Say “Yes”</a>: → <a href=\"#step2\">this page step 2</a>",
     "site.bl.9": "<a href=\"../../../signal/control/kalman/\">Kalman Filter · Weighing Prediction Against Measurement</a>: <a href=\"../../../signal/control/kalman/#step2\">its step 2</a> → <a href=\"#step3\">this page step 3</a>; <a href=\"../../../signal/control/kalman/#step6\">its step 6</a> → <a href=\"#step3\">this page step 3</a>"

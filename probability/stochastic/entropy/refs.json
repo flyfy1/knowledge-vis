@@ -1,0 +1,89 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "entropy",
+ "refs": [],
+ "backlinks": [
+  {
+   "from": "hashing",
+   "links": [
+    {
+     "from": "step5",
+     "to": "step1"
+    }
+   ]
+  },
+  {
+   "from": "attention-mechanism",
+   "links": [
+    {
+     "from": "step5",
+     "to": "step1"
+    }
+   ]
+  },
+  {
+   "from": "decision-trees",
+   "links": [
+    {
+     "from": "step0",
+     "to": "step3"
+    },
+    {
+     "from": "step5",
+     "to": "step3"
+    }
+   ]
+  },
+  {
+   "from": "gradient-descent",
+   "links": [
+    {
+     "from": "step6",
+     "to": "step5"
+    }
+   ]
+  },
+  {
+   "from": "llm-sampling",
+   "links": [
+    {
+     "from": "step5",
+     "to": "step2"
+    }
+   ]
+  },
+  {
+   "from": "switches-that-compute",
+   "links": [
+    {
+     "from": "ch11",
+     "to": null
+    }
+   ]
+  },
+  {
+   "from": "carnot-cycle",
+   "links": [
+    {
+     "from": "step5",
+     "to": "step0"
+    }
+   ]
+  },
+  {
+   "from": "inside-a-phone",
+   "links": [
+    {
+     "from": null,
+     "to": "step2"
+    },
+    {
+     "from": null,
+     "to": "step4"
+    }
+   ]
+  }
+ ],
+ "related": [],
+ "bindings": []
+}
