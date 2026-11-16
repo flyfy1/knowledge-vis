@@ -112,7 +112,7 @@ const STR = {
     "site.crumb.cat": "计算与智能",
     "site.crumb.sub": "机器学习",
     "site.bl.title": "被这些页面引用",
-    "site.bl.1": "<a href=\"../cnn-feature-maps/\">卷积神经网络的特征图 · 小窗口怎样“看”图</a>：→ <a href=\"#step0\">本页第 0 步</a>"
+    "site.bl.1": "<a href=\"../cnn-feature-maps/\">卷积神经网络的特征图 · 小窗口怎样“看”图</a>：<a href=\"../cnn-feature-maps/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>"
   },
   en: {
     docTitle: "Backpropagation · Error Flows Back Through the Network",
@@ -226,7 +226,7 @@ const STR = {
     "site.crumb.cat": "Computing & AI",
     "site.crumb.sub": "Machine Learning",
     "site.bl.title": "Linked from",
-    "site.bl.1": "<a href=\"../cnn-feature-maps/\">CNN Feature Maps · How a Small Window “Sees” an Image</a>: → <a href=\"#step0\">this page step 0</a>"
+    "site.bl.1": "<a href=\"../cnn-feature-maps/\">CNN Feature Maps · How a Small Window “Sees” an Image</a>: <a href=\"../cnn-feature-maps/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>"
   }
 };
 let currentLang = 'en';

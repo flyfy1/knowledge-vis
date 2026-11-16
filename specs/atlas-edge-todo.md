@@ -1146,11 +1146,11 @@ anchor; a link to the page top has no anchor).
 
 ## 卷积神经网络的特征图 · 小窗口怎样“看”图 / CNN Feature Maps · How a Small Window “Sees” an Image → 梯度下降 · 摸黑下山 / Gradient Descent · Feeling Your Way Downhill
 
-- `cnn-feature-maps` → `gradient-descent#step0`: ? → gradient-descent
+- `cnn-feature-maps#step5` → `gradient-descent#step0`: ? → gradient-descent
 
 ## 卷积神经网络的特征图 · 小窗口怎样“看”图 / CNN Feature Maps · How a Small Window “Sees” an Image → 反向传播 · 误差沿网络回流 / Backpropagation · Error Flows Back Through the Network
 
-- `cnn-feature-maps` → `backpropagation#step0`
+- `cnn-feature-maps#step5` → `backpropagation#step0`
 
 ## 复利与贴现 · 时间是钱的形状 / Compound Interest & Discounting · Time Is the Shape of Money → 指数与对数 · 翻倍与逆问 / Exponentials & Logarithms · Doubling and the Reverse Question
 
