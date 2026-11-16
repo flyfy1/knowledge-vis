@@ -3249,7 +3249,7 @@
       "developer": "Claude Code",
       "edition": "claude-code-how-sas-works-20261114",
       "kind": "original",
-      "sourceRevision": "b44d5f065860dc58e35ecf99fc862747517c22e1",
+      "sourceRevision": "b5cdc9bd6b4ead74eea7e1a167f72259bfaaff61",
       "scope": {
         "zh": "整篇长文从零编写：SAS 的分层与 SCSI 命令、READ 命令块与 LUN、一次 SSP 读的帧和连接、双端口与多路径的可用度、扩展器扇出、宽端口、SAS 口为什么认 SATA 盘、T10 PI 端到端校验、24G SAS 的编码与纠错、SAS 前沿",
         "en": "Whole essay written from scratch: the SAS layers and SCSI commands, the READ command block and LUNs, the frames and connections of one SSP read, dual-port and multipath availability, expander fan-out, wide ports, why a SAS port accepts a SATA drive, T10 PI end-to-end protection, 24G SAS coding and error correction, the SAS frontier"
@@ -3257,7 +3257,7 @@
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5); English copy drafted by Claude Code (claude-haiku-5-5); independently reviewed 2026-11-14 by a separate Claude Code session (same model), see the page BRIEF.md; cross-model review pending",
       "path": "computing/systems/how-sas-works/index.html",
       "originalSourceRevision": "122add13f0ad4fae1a7fcf9275d66d686a0d2b91",
-      "previousSourceRevision": "9fcb9facbe7e6251b7e88154eec830a1f98f5ed1"
+      "previousSourceRevision": "b44d5f065860dc58e35ecf99fc862747517c22e1"
     },
     "how-usb-drives-talk": {
       "developer": "Claude Code",
