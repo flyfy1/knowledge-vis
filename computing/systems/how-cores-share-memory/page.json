@@ -1,0 +1,69 @@
+{
+  "slug": "how-cores-share-memory",
+  "kind": "essay",
+  "layout": "essay",
+  "scripts": [
+    "models.js",
+    "copy.zh.js",
+    "copy.en.js",
+    "app.js"
+  ],
+  "version": "20261116a",
+  "provenanceNote": {
+    "zh": "本文由 Claude Code（claude-opus-5-5）从零编写；英文稿由 Claude Code（claude-haiku-5-5）起草；2026-11-15 经另一个 Claude Code 会话独立评审并按评审修订（同一模型；跨模型评审待做）。",
+    "en": "This essay was written from scratch with Claude Code (claude-opus-5-5); the English copy was drafted with Claude Code (claude-haiku-5-5); independently reviewed on 2026-11-15 by a separate Claude Code session and revised accordingly (same model; cross-model review pending)."
+  },
+  "legacyLayout": {
+    "_note": "Whitespace of the hand-written HTML this page was converted from, so the conversion could be checked byte for byte. Safe to delete: only whitespace between block elements changes.",
+    "join": [
+      "ch1.p2",
+      "fig:dg-stale",
+      "ch2.p2",
+      "fig:dg-epochs",
+      "ch2.p3",
+      "ch2.p4",
+      "ch2.limit",
+      "fig:dg-snoop",
+      "ch3.p2",
+      "ch3.p3",
+      "fig:dg-mesi",
+      "ch4.p2",
+      "fig:dg-dir",
+      "ch4.p3",
+      "fig:dg-hops",
+      "ch4.p4",
+      "ch5.p2",
+      "fig:dg-race",
+      "ch6.p2",
+      "fig:dg-atomic",
+      "ch6.p3",
+      "ch7.p2",
+      "fig:dg-ping",
+      "ch8.p2",
+      "ch8.p3",
+      "fig:dg-sbuf",
+      "ch8.p4",
+      "fig:dg-litmus",
+      "ch9.p2",
+      "ch9.p3",
+      "ch10.p2",
+      "fig:dg-mcs",
+      "ch11.h.est",
+      "list:ch11.e1",
+      "ch11.h.demo",
+      "list:ch11.d1",
+      "ch11.h.claim",
+      "list:ch11.c1",
+      "ch11.p2",
+      "ch11.limit",
+      "ch12.sum",
+      "ch12.links"
+    ],
+    "compactLists": [
+      "ch11.e1",
+      "ch11.d1",
+      "ch11.c1",
+      "ch12.q1"
+    ]
+  }
+}
