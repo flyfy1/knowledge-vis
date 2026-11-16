@@ -1,0 +1,23 @@
+<div class="stage">
+      <canvas id="s2-canvas" height="320" data-i18n-aria="canvasLabel" role="img"></canvas>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="s2cutLab"></span> <span class="val" id="s2-cut-val">10</span></span>
+        <input type="range" id="s2-cut" min="1" max="12" step="1" value="10">
+      </label>
+    </div>
+    <div class="ledger">
+      <div class="value-card">
+        <h3 data-i18n="s2leftT"></h3>
+        <p id="s2-left"></p>
+      </div>
+      <div class="value-card">
+        <h3 data-i18n="s2rightT"></h3>
+        <p id="s2-right"></p>
+      </div>
+    </div>
+    <p class="readout" id="s2-total" aria-live="polite"></p>
+    <p class="readout" id="s2-note" aria-live="polite"></p>
+    <div class="btn-row">
+      <button type="button" class="btn big" id="s2-reset" data-i18n="reset"></button>
+    </div>

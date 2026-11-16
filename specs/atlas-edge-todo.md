@@ -506,11 +506,11 @@ anchor; a link to the page top has no anchor).
 
 ## 乘法是面积 · 点阵铺成一块地 / Multiplication Is Area · Arrays Become a Tiled Floor → 分数 · 把整体切开来数 / Fractions · Cutting the Whole to Count
 
-- `area-model` → `fractions#step1`: ? → fractions
+- `area-model#step4` → `fractions#step1`: ? → fractions
 
 ## 乘法是面积 · 点阵铺成一块地 / Multiplication Is Area · Arrays Become a Tiled Floor → 勾股定理 · 一步一交互 / The Pythagorean Theorem · One Interaction at a Time
 
-- `area-model` → `pythagoras#step2`
+- `area-model#step4` → `pythagoras#step2`
 
 ## 周长 vs 面积 · 一根绳子两种账 / Perimeter vs Area · One Rope, Two Ledgers → 分数 · 把整体切开来数 / Fractions · Cutting the Whole to Count
 
