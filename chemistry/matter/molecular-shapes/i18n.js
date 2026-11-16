@@ -84,7 +84,7 @@ const STR={
     "site.crumb.sub": "物质构成",
     "site.bl.title": "被这些页面引用",
     "site.bl.1": "<a href=\"../isomers/\">同分异构体 · 同一组原子，不同的拼法</a>：<a href=\"../isomers/#step5\">该课第 5 步</a> → <a href=\"#step2\">本页第 2 步</a>",
-    "site.bl.2": "<a href=\"../periodic-trends/\">元素周期律 · 周期表上的渐变</a>：→ <a href=\"#step4\">本页第 4 步</a>"
+    "site.bl.2": "<a href=\"../periodic-trends/\">元素周期律 · 周期表上的渐变</a>：<a href=\"../periodic-trends/#step5\">该课第 5 步</a> → <a href=\"#step4\">本页第 4 步</a>"
   },
   en: {
     pageTitle: "Molecular Shapes · Electron Pairs Keeping Out of Each Other's Way",
@@ -170,7 +170,7 @@ const STR={
     "site.crumb.sub": "Structure of Matter",
     "site.bl.title": "Linked from",
     "site.bl.1": "<a href=\"../isomers/\">Isomers · The Same Atoms, Put Together Differently</a>: <a href=\"../isomers/#step5\">its step 5</a> → <a href=\"#step2\">this page step 2</a>",
-    "site.bl.2": "<a href=\"../periodic-trends/\">Periodic Trends · Gradients Across the Periodic Table</a>: → <a href=\"#step4\">this page step 4</a>"
+    "site.bl.2": "<a href=\"../periodic-trends/\">Periodic Trends · Gradients Across the Periodic Table</a>: <a href=\"../periodic-trends/#step5\">its step 5</a> → <a href=\"#step4\">this page step 4</a>"
   }
 };
 
