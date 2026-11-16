@@ -151,7 +151,7 @@ const STR = {
     "site.bl.5": "<a href=\"../../sampling/sampling/\">采样与混叠 · 偷看得太懒，就会看错</a>：<a href=\"../../sampling/sampling/#step6\">该课第 6 步</a> → <a href=\"#step4\">本页第 4 步</a>",
     "site.bl.6": "<a href=\"../lti-systems/\">冲激与 LTI · 给系统一巴掌</a>：<a href=\"../lti-systems/#step2\">该课第 2 步</a> → <a href=\"#step2\">本页第 2 步</a>；<a href=\"../lti-systems/#step6\">该课第 6 步</a> → <a href=\"#step2\">本页第 2 步</a>",
     "site.bl.7": "<a href=\"../../transforms/fourier/\">傅里叶变换 · 一步一交互</a>：<a href=\"../../transforms/fourier/#step6\">该课第 6 步</a> → <a href=\"#step6\">本页第 6 步</a>",
-    "site.bl.8": "<a href=\"../../transforms/wavelets/\">小波 · 让窗口随频率伸缩</a>：→ <a href=\"#step1\">本页第 1 步</a>"
+    "site.bl.8": "<a href=\"../../transforms/wavelets/\">小波 · 让窗口随频率伸缩</a>：<a href=\"../../transforms/wavelets/#step5\">该课第 5 步</a> → <a href=\"#step1\">本页第 1 步</a>"
   },
   en: {
     docTitle: "Convolution · One Interaction at a Time",
@@ -296,7 +296,7 @@ const STR = {
     "site.bl.5": "<a href=\"../../sampling/sampling/\">Sampling & Aliasing · Peek Too Lazily and You'll See It Wrong</a>: <a href=\"../../sampling/sampling/#step6\">its step 6</a> → <a href=\"#step4\">this page step 4</a>",
     "site.bl.6": "<a href=\"../lti-systems/\">Impulse & LTI · Slap the System</a>: <a href=\"../lti-systems/#step2\">its step 2</a> → <a href=\"#step2\">this page step 2</a>; <a href=\"../lti-systems/#step6\">its step 6</a> → <a href=\"#step2\">this page step 2</a>",
     "site.bl.7": "<a href=\"../../transforms/fourier/\">The Fourier Transform · One Interaction at a Time</a>: <a href=\"../../transforms/fourier/#step6\">its step 6</a> → <a href=\"#step6\">this page step 6</a>",
-    "site.bl.8": "<a href=\"../../transforms/wavelets/\">Wavelets · Windows That Stretch With Frequency</a>: → <a href=\"#step1\">this page step 1</a>"
+    "site.bl.8": "<a href=\"../../transforms/wavelets/\">Wavelets · Windows That Stretch With Frequency</a>: <a href=\"../../transforms/wavelets/#step5\">its step 5</a> → <a href=\"#step1\">this page step 1</a>"
   }
 };
 

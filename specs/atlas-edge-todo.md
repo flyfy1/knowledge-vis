@@ -1100,11 +1100,11 @@ anchor; a link to the page top has no anchor).
 
 ## 小波 · 让窗口随频率伸缩 / Wavelets · Windows That Stretch With Frequency → 卷积 · 一步一交互 / Convolution · One Interaction at a Time
 
-- `wavelets` → `convolution#step1`
+- `wavelets#step5` → `convolution#step1`
 
 ## 小波 · 让窗口随频率伸缩 / Wavelets · Windows That Stretch With Frequency → 采样与混叠 · 偷看得太懒，就会看错 / Sampling & Aliasing · Peek Too Lazily and You'll See It Wrong
 
-- `wavelets` → `sampling#step3`: ? → sampling
+- `wavelets#step5` → `sampling#step3`: ? → sampling
 
 ## 哈希 · 把任意输入压成固定指纹 / Hashing · Squeezing Any Input Into a Fixed Fingerprint → 数论与组合 · 把结构算出来 / Number Theory & Counting · Compute the Structure
 
