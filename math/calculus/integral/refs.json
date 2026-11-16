@@ -1,0 +1,31 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "integral",
+ "refs": [],
+ "backlinks": [
+  {
+   "from": "atlas",
+   "links": [
+    {
+     "from": null,
+     "to": "step2"
+    },
+    {
+     "from": null,
+     "to": "step3"
+    }
+   ]
+  },
+  {
+   "from": "inside-a-phone",
+   "links": [
+    {
+     "from": null,
+     "to": "step2"
+    }
+   ]
+  }
+ ],
+ "related": [],
+ "bindings": []
+}

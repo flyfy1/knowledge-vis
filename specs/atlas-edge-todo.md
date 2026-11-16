@@ -546,11 +546,12 @@ anchor; a link to the page top has no anchor).
 
 ## 定积分 · 把小条加回整体 / The Definite Integral · Adding the Strips Back Up → 速度与 v-t 图 · 面积就是路 / Speed and the v–t Graph · Area Is Distance
 
-- `integral` → `velocity-vt#step2`
+- `integral#step2` → `velocity-vt#step2`: integral → ?
+- `integral#step5` → `velocity-vt#step2`
 
 ## 定积分 · 把小条加回整体 / The Definite Integral · Adding the Strips Back Up → 导数 · 把平均压成此刻 / The Derivative · Squeezing the Average into the Instant
 
-- `integral` → `derivative#step2`: ? → derivative
+- `integral#step5` → `derivative#step2`: ? → derivative
 
 ## 导数 · 把平均压成此刻 / The Derivative · Squeezing the Average into the Instant → 抛物线 · 投篮的弧线 / Parabolas · The Arc of a Shot
 
