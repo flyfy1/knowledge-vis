@@ -1,0 +1,70 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "compound-interest",
+ "refs": [],
+ "backlinks": [
+  {
+   "from": "where-a-mortgage-payment-goes",
+   "links": [
+    {
+     "from": "ch1",
+     "to": "step1"
+    },
+    {
+     "from": "ch3",
+     "to": "step5"
+    },
+    {
+     "from": "ch9",
+     "to": null
+    }
+   ]
+  },
+  {
+   "from": "where-money-comes-from",
+   "links": [
+    {
+     "from": null,
+     "to": "step3"
+    },
+    {
+     "from": null,
+     "to": "step5"
+    },
+    {
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  {
+   "from": "stocks-bonds",
+   "links": [
+    {
+     "from": "step5",
+     "to": "step0"
+    }
+   ]
+  },
+  {
+   "from": "fees-compounding",
+   "links": [
+    {
+     "from": null,
+     "to": "step0"
+    }
+   ]
+  },
+  {
+   "from": "interest-rates-bonds",
+   "links": [
+    {
+     "from": null,
+     "to": "step3"
+    }
+   ]
+  }
+ ],
+ "related": [],
+ "bindings": []
+}

@@ -1155,15 +1155,15 @@ anchor; a link to the page top has no anchor).
 
 ## 复利与贴现 · 时间是钱的形状 / Compound Interest & Discounting · Time Is the Shape of Money → 指数与对数 · 翻倍与逆问 / Exponentials & Logarithms · Doubling and the Reverse Question
 
-- `compound-interest` → `exponents-logarithms#step0`
+- `compound-interest#step5` → `exponents-logarithms#step0`
 
 ## 复利与贴现 · 时间是钱的形状 / Compound Interest & Discounting · Time Is the Shape of Money → 种群增长 · S 形曲线从哪来 / Population Growth · Where the S-Curve Comes From
 
-- `compound-interest` → `logistic-growth#step0`
+- `compound-interest#step5` → `logistic-growth#step0`
 
 ## 复利与贴现 · 时间是钱的形状 / Compound Interest & Discounting · Time Is the Shape of Money → 概率分布 · 随机性也有形状 / Probability Distributions · Randomness Has a Shape
 
-- `compound-interest` → `probability-distribution#step1`
+- `compound-interest#step5` → `probability-distribution#step1`
 
 ## 排列与组合 · 数清楚有多少种 / Permutations & Combinations · Counting How Many Ways → 数论与组合 · 把结构算出来 / Number Theory & Counting · Compute the Structure
 

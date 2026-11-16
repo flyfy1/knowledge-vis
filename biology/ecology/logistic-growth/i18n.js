@@ -77,7 +77,7 @@ const STR = {
     "site.bl.title": "被这些页面引用",
     "site.bl.1": "<a href=\"../food-web/\">食物网</a>：<a href=\"../food-web/#step5\">该课第 5 步</a> → <a href=\"#step3\">本页第 3 步</a>",
     "site.bl.2": "<a href=\"../../../food/flavor/how-soy-sauce-gets-its-flavor/\">酱油是怎么酿出来的</a>：<a href=\"../../../food/flavor/how-soy-sauce-gets-its-flavor/#ch10\">该文第 10 章</a>",
-    "site.bl.3": "<a href=\"../../../investment/rates/compound-interest/\">复利与贴现 · 时间是钱的形状</a>：→ <a href=\"#step0\">本页第 0 步</a>",
+    "site.bl.3": "<a href=\"../../../investment/rates/compound-interest/\">复利与贴现 · 时间是钱的形状</a>：<a href=\"../../../investment/rates/compound-interest/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>",
     "site.bl.4": "<a href=\"../../../math/applied/prisoners-dilemma/\">囚徒困境与演化博弈 · 合作怎样活下来</a>：→ <a href=\"#step2\">本页第 2 步</a>",
     "site.bl.5": "<a href=\"../../../math/calculus/ode-phase-portraits/\">微分方程相图 · 捕食者与猎物的回路</a>：→ <a href=\"#step2\">本页第 2 步</a>",
     "site.bl.6": "<a href=\"../../../physics/mechanics/chaos-threebody/\">混沌与三体 · 初始差一丝，结果天壤</a>：→ <a href=\"#step2\">本页第 2 步</a>"
@@ -155,7 +155,7 @@ const STR = {
     "site.bl.title": "Linked from",
     "site.bl.1": "<a href=\"../food-web/\">Food Webs</a>: <a href=\"../food-web/#step5\">its step 5</a> → <a href=\"#step3\">this page step 3</a>",
     "site.bl.2": "<a href=\"../../../food/flavor/how-soy-sauce-gets-its-flavor/\">How Soy Sauce Gets Its Flavor</a>: <a href=\"../../../food/flavor/how-soy-sauce-gets-its-flavor/#ch10\">its chapter 10</a>",
-    "site.bl.3": "<a href=\"../../../investment/rates/compound-interest/\">Compound Interest & Discounting · Time Is the Shape of Money</a>: → <a href=\"#step0\">this page step 0</a>",
+    "site.bl.3": "<a href=\"../../../investment/rates/compound-interest/\">Compound Interest & Discounting · Time Is the Shape of Money</a>: <a href=\"../../../investment/rates/compound-interest/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>",
     "site.bl.4": "<a href=\"../../../math/applied/prisoners-dilemma/\">The Prisoner’s Dilemma & Evolutionary Games · How Cooperation Survives</a>: → <a href=\"#step2\">this page step 2</a>",
     "site.bl.5": "<a href=\"../../../math/calculus/ode-phase-portraits/\">ODE Phase Portraits · Predators and Prey in a Loop</a>: → <a href=\"#step2\">this page step 2</a>",
     "site.bl.6": "<a href=\"../../../physics/mechanics/chaos-threebody/\">Chaos and the Three-Body Problem · Tiny Differences, Huge Outcomes</a>: → <a href=\"#step2\">this page step 2</a>"
