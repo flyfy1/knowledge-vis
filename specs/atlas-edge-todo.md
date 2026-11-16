@@ -412,7 +412,7 @@ anchor; a link to the page top has no anchor).
 
 ## 蒙特卡洛 · 撒豆子算 π / Monte Carlo · Counting π with Scattered Beans → 卷积 · 一步一交互 / Convolution · One Interaction at a Time
 
-- `monte-carlo` → `convolution#step3`
+- `monte-carlo#step3` → `convolution#step3`: montecarlo → ?
 
 ## 拉普拉斯与 ROC · 给频率配一个寿命 / Laplace Transform & ROC · Giving Frequencies a Lifespan → 反馈与控制 · 双轮车为什么倒不下去 / Feedback & Control · Why the Two-Wheeled Bot Never Falls
 
