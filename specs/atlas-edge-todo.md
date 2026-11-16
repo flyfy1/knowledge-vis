@@ -1292,11 +1292,11 @@ anchor; a link to the page top has no anchor).
 
 ## 量子隧穿 · 穿墙的是概率，不是子弹 / Quantum Tunnelling · What Passes Through the Wall Is a Probability → 量子基础 · 可能性先于结果 / Quantum Basics · Possibility Before Outcome
 
-- `quantum-tunneling` → `quantum-basics#step0`: ? → quantum-amplitude
+- `quantum-tunneling#step5` → `quantum-basics#step0`: ? → quantum-amplitude
 
 ## 量子隧穿 · 穿墙的是概率，不是子弹 / Quantum Tunnelling · What Passes Through the Wall Is a Probability → 光电效应 · 光是一份一份的 / The Photoelectric Effect · Light Comes in Packets
 
-- `quantum-tunneling` → `photoelectric-effect#step0`
+- `quantum-tunneling#step5` → `photoelectric-effect#step0`
 
 ## 回归与相关 · 散点云里拉一条最贴的线 / Regression & Correlation · The Best Line Through a Cloud → 梯度下降 · 摸黑下山 / Gradient Descent · Feeling Your Way Downhill
 
