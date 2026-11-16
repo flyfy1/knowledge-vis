@@ -94,8 +94,8 @@ names 《芯片为什么越来越难做》 and 《按下开关的那一刻，电
 25.31 Gb/s; 8K60 30-bit fits at ≤ 12.2 bpp on CVT-RB2 timing, `93d7b195`), B4's test requires its label (`888856c4`), and
 scripts/test_index_pagination.cjs derives the Long Reads membership instead of pinning a stale list (`dc85cae0`).
 
-**The queued list is complete.** Candidate follow-ups (not specced): retrofit static diagrams into S1–S5 (they predate STANDARD §4a);
-B5 `small-buses` (I²C, SPI, UART, SMBus; B2 ch8 still names it in plain text); S6 `how-phone-storage-works` (UFS, eMMC); a CPU SIMD /
+**The queued list is complete.** Candidate follow-ups (not specced): ~~retrofit static diagrams into S1–S5~~ done 2026-11-16 (45 diagrams in `9fcb9fac`,
+labels repointed in `b2d49a1c`, reviews specs/reviews/storage-diagrams-s1-s3-review-20261116.md and -s4-s5-; live); B5 `small-buses` (I²C, SPI, UART, SMBus; B2 ch8 still names it in plain text); S6 `how-phone-storage-works` (UFS, eMMC); a CPU SIMD /
 floating-point formats essay (IEEE 754, FP16 / BF16 / FP8 / FP4, AVX-512 and SVE), suggested by the A6 builder.
 
 ## The course, in reading order
