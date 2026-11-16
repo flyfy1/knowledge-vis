@@ -1,0 +1,25 @@
+{
+  "slug": "how-thunderbolt-works",
+  "kind": "essay",
+  "layout": "essay",
+  "scripts": [
+    "models.js",
+    "copy.zh.js",
+    "copy.en.js",
+    "app.js"
+  ],
+  "version": "20261116a",
+  "provenanceNote": {
+    "zh": "本文由 Claude Code（claude-opus-5-5）从零编写；英文稿由 Claude Code（claude-haiku-5-5）起草；2026-11-15 经另一个 Claude Code 会话独立评审并按评审修订（同一模型；跨模型评审待做）。",
+    "en": "This essay was written from scratch with Claude Code (claude-opus-5-5); the English copy was drafted with Claude Code (claude-haiku-5-5); independently reviewed on 2026-11-15 by a separate Claude Code session and revised accordingly (same model; cross-model review pending)."
+  },
+  "legacyLayout": {
+    "_note": "Whitespace of the hand-written HTML this page was converted from, so the conversion could be checked byte for byte. Safe to delete: only whitespace between block elements changes.",
+    "compactLists": [
+      "ch10.e1",
+      "ch10.d1",
+      "ch10.c1",
+      "ch11.q1"
+    ]
+  }
+}
