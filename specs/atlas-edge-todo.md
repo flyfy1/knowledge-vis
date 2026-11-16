@@ -1233,15 +1233,15 @@ anchor; a link to the page top has no anchor).
 
 ## 机械能守恒 · 过山车的能量账本 / Conservation of Mechanical Energy · The Roller Coaster’s Energy Ledger → 杠杆与滑轮 · 支点挪一挪，省力见分晓 / Levers & Pulleys · Move the Fulcrum, Feel the Trade
 
-- `mechanical-energy` → `lever-pulley#step3`
+- `mechanical-energy#step5` → `lever-pulley#step3`
 
 ## 机械能守恒 · 过山车的能量账本 / Conservation of Mechanical Energy · The Roller Coaster’s Energy Ledger → 动量与碰撞 · 速度不是全部 / Momentum & Collisions · Speed Is Not the Whole Story
 
-- `mechanical-energy` → `momentum-collision#step0`
+- `mechanical-energy#step5` → `momentum-collision#step0`
 
 ## 机械能守恒 · 过山车的能量账本 / Conservation of Mechanical Energy · The Roller Coaster’s Energy Ledger → 速度与 v-t 图 · 面积就是路 / Speed and the v–t Graph · Area Is Distance
 
-- `mechanical-energy` → `velocity-vt#step3`
+- `mechanical-energy#step5` → `velocity-vt#step3`
 
 ## 牛顿运动定律 · F = ma 是调出来的 / Newton’s Laws of Motion · F = ma, Tuned by Hand → 速度与 v-t 图 · 面积就是路 / Speed and the v–t Graph · Area Is Distance
 

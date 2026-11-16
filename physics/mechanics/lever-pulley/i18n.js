@@ -140,7 +140,7 @@ const STR = {
     "site.bl.title": "被这些页面引用",
     "site.bl.1": "<a href=\"../../matter/float-sink/\">浮与沉 · 排开的水托住了谁</a>：<a href=\"../../matter/float-sink/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>",
     "site.bl.2": "<a href=\"../../matter/pressure/\">压强</a>：<a href=\"../../matter/pressure/#step5\">该课第 5 步</a> → <a href=\"#step2\">本页第 2 步</a>",
-    "site.bl.3": "<a href=\"../mechanical-energy/\">机械能守恒 · 过山车的能量账本</a>：→ <a href=\"#step3\">本页第 3 步</a>"
+    "site.bl.3": "<a href=\"../mechanical-energy/\">机械能守恒 · 过山车的能量账本</a>：<a href=\"../mechanical-energy/#step5\">该课第 5 步</a> → <a href=\"#step3\">本页第 3 步</a>"
   },
   en: {
     docTitle: "Levers & Pulleys · Move the Fulcrum, Feel the Trade — One Interaction per Step",
@@ -273,7 +273,7 @@ const STR = {
     "site.bl.title": "Linked from",
     "site.bl.1": "<a href=\"../../matter/float-sink/\">Float & Sink · What the Displaced Water Holds Up</a>: <a href=\"../../matter/float-sink/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>",
     "site.bl.2": "<a href=\"../../matter/pressure/\">Pressure</a>: <a href=\"../../matter/pressure/#step5\">its step 5</a> → <a href=\"#step2\">this page step 2</a>",
-    "site.bl.3": "<a href=\"../mechanical-energy/\">Conservation of Mechanical Energy · The Roller Coaster’s Energy Ledger</a>: → <a href=\"#step3\">this page step 3</a>"
+    "site.bl.3": "<a href=\"../mechanical-energy/\">Conservation of Mechanical Energy · The Roller Coaster’s Energy Ledger</a>: <a href=\"../mechanical-energy/#step5\">its step 5</a> → <a href=\"#step3\">this page step 3</a>"
   }
 };
 
