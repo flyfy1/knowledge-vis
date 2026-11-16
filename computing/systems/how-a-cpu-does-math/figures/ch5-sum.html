@@ -1,0 +1,9 @@
+<figure class="lab" id="lab5b">
+    <h3 data-i18n="ch5.sum.model.title"></h3>
+    <p class="how" data-i18n="ch5.sum.model.how"></p>
+    <div class="ctl"><div class="seg" role="radiogroup" data-i18n-aria="ch5.sum.ctl.fmt"><span class="lbl" data-i18n="ch5.sum.ctl.fmt"></span><label><input type="radio" name="c5Fmt" value="bf16" checked>BF16</label><label><input type="radio" name="c5Fmt" value="fp16">FP16</label><label><input type="radio" name="c5Fmt" value="fp32">FP32</label></div><label class="rng"><span data-i18n="ch5.sum.ctl.n"></span><input type="range" id="c5N" min="0" max="6" step="1" value="2"><output id="c5No" for="c5N"></output></label></div>
+    <canvas class="cv" id="c5sCv" role="img" data-i18n-aria="ch5.sum.cv.aria"></canvas>
+    <div class="legend"><span><i style="background:var(--red)"></i><span data-i18n="ch5.sum.leg.naive"></span></span><span><i style="background:var(--cyan)"></i><span data-i18n="ch5.sum.leg.pair"></span></span><span><i style="background:var(--green)"></i><span data-i18n="ch5.sum.leg.kahan"></span></span></div>
+    <div class="read"><div><span data-i18n="ch5.sum.read.ex"></span><b id="c5sEx"></b></div><div><span data-i18n="ch5.sum.read.naive"></span><b id="c5sNa" class="r"></b></div><div><span data-i18n="ch5.sum.read.pair"></span><b id="c5sPa" class="c"></b></div><div><span data-i18n="ch5.sum.read.kahan"></span><b id="c5sKa" class="n"></b></div></div>
+    <p class="say" id="c5sSay" aria-live="polite"></p>
+  </figure>

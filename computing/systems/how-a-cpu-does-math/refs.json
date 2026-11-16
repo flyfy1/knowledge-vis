@@ -1,0 +1,211 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "how-a-cpu-does-math",
+ "refs": [
+  {
+   "from": "hero.note",
+   "to": "switches-that-compute",
+   "anchor": null
+  },
+  {
+   "from": "hero.note",
+   "to": "how-a-cpu-runs-a-program",
+   "anchor": null
+  },
+  {
+   "from": "ch1.p3",
+   "to": "switches-that-compute",
+   "anchor": "ch10"
+  },
+  {
+   "from": "ch4.p1",
+   "to": "switches-that-compute",
+   "anchor": "ch5"
+  },
+  {
+   "from": "ch7.p3",
+   "to": "how-a-gpu-computes",
+   "anchor": "ch8"
+  },
+  {
+   "from": "ch8.p5",
+   "to": "why-compute-waits-for-memory",
+   "anchor": "ch8"
+  },
+  {
+   "from": "ch9.p3",
+   "to": "how-a-cpu-guesses-ahead",
+   "anchor": "ch2"
+  },
+  {
+   "from": "ch10.p3",
+   "to": "how-cpu-caches-work",
+   "anchor": "ch2"
+  },
+  {
+   "from": "ch11.p4",
+   "to": "how-power-reaches-the-cpu",
+   "anchor": "ch2"
+  },
+  {
+   "from": "ch11.limit",
+   "to": "why-compute-waits-for-memory",
+   "anchor": "ch7"
+  },
+  {
+   "from": "ch12.p4",
+   "to": "how-a-gpu-computes",
+   "anchor": "ch8"
+  },
+  {
+   "from": "ch14.q2",
+   "to": "switches-that-compute",
+   "anchor": "ch10"
+  },
+  {
+   "from": "ch14.q3",
+   "to": "why-compute-waits-for-memory",
+   "anchor": "ch7"
+  },
+  {
+   "from": "ch14.links",
+   "to": "switches-that-compute",
+   "anchor": null
+  },
+  {
+   "from": "ch14.links",
+   "to": "how-a-cpu-runs-a-program",
+   "anchor": null
+  },
+  {
+   "from": "ch14.links",
+   "to": "how-a-cpu-guesses-ahead",
+   "anchor": null
+  },
+  {
+   "from": "ch14.links",
+   "to": "how-cpu-caches-work",
+   "anchor": null
+  },
+  {
+   "from": "ch14.links",
+   "to": "why-compute-waits-for-memory",
+   "anchor": null
+  },
+  {
+   "from": "ch14.links",
+   "to": "how-a-gpu-computes",
+   "anchor": null
+  }
+ ],
+ "backlinks": [],
+ "related": [],
+ "bindings": [
+  "ch1.hex01",
+  "ch1.E01",
+  "ch1.v01",
+  "ch1.err01",
+  "ch1.rel01",
+  "ch1.v01d",
+  "ch1.int",
+  "dg.f32.bs",
+  "dg.f32.be",
+  "dg.f32.bm",
+  "dg.f32.ev",
+  "dg.f32.mv",
+  "dg.f32.val",
+  "dg.f32.val1",
+  "dg.f32.val2",
+  "ch1.ratio",
+  "ch2.h17",
+  "ch2.ms17",
+  "ch2.h18",
+  "ch2.ms18",
+  "ch2.eps32",
+  "ch2.eps64",
+  "ch2.u32",
+  "ch2.u64",
+  "ch2.lost",
+  "ch2.lonUlp",
+  "ch2.lonM",
+  "ch3.stall",
+  "ch3.ru",
+  "ch3.ruX",
+  "ch3.sr",
+  "ch3.f32rne",
+  "ch3.f32rtz",
+  "ch3.f32ex",
+  "ch4.sig140",
+  "ch4.rel140",
+  "ch4.sig149",
+  "ch4.halv",
+  "ch4.halvFtz",
+  "ch5.off",
+  "ch5.ex",
+  "ch5.two",
+  "ch5.one",
+  "ch5.one4",
+  "ch5.N",
+  "ch5.sumEx",
+  "ch5.sumNaive",
+  "ch5.sumPair",
+  "ch6.x",
+  "ch6.fused",
+  "ch6.negN",
+  "ch6.negX",
+  "ch6.eSep",
+  "ch6.eFus",
+  "ch6.wins",
+  "ch7.fp16max",
+  "ch7.fp16min",
+  "ch7.e5max",
+  "ch7.e4max",
+  "ch7.fp16zero",
+  "ch7.fp16med",
+  "ch7.bf16med",
+  "ch7.e4over",
+  "ch7.e5med",
+  "ch8.A",
+  "ch8.int8tS",
+  "ch8.int8tZ",
+  "ch8.int8bS",
+  "ch8.mxfp8S",
+  "ch8.e4span",
+  "ch9.on",
+  "ch9.mask",
+  "ch9.vecs",
+  "ch9.tail",
+  "ch9.tm",
+  "ch10.split64",
+  "ch10.split32",
+  "ch10.lines2",
+  "ch10.lines16",
+  "ch10.l1",
+  "ch10.l8",
+  "ch10.l16",
+  "ch10.ex",
+  "ch10.f1",
+  "ch10.f16",
+  "ch11.lat",
+  "ch11.tp",
+  "ch11.k1",
+  "ch11.peak",
+  "ch11.m4",
+  "ch11.m4one",
+  "ch11.f0",
+  "ch11.f1",
+  "ch11.f2",
+  "ch11.halt",
+  "ch11.relax",
+  "ch11.sp20",
+  "ch11.z0",
+  "ch11.z1",
+  "ch12.trips",
+  "ch12.last",
+  "ch12.mo",
+  "ch12.mv",
+  "ch12.per",
+  "ch12.amx",
+  "ch13.m4"
+ ]
+}

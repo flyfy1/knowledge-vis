@@ -1,0 +1,465 @@
+{
+  "slug": "how-a-cpu-does-math",
+  "path": "computing/systems/how-a-cpu-does-math/",
+  "category": "computing",
+  "subtopic": "systems",
+  "stage": "university",
+  "title": {
+    "zh": "CPU 是怎么算小数的，又怎么一次算一排",
+    "en": "How a CPU Does Math: Real Numbers, and Many at Once"
+  },
+  "desc": {
+    "zh": "一块 CPU 每秒做几千亿次小数运算，却连 0.1 都存不准。这篇从 32 个位讲起：浮点数的位怎么排，ulp，舍入，次正规数，抵消，FMA，AI 带进硬件的 FP16、BF16、FP8 和块缩放格式，再到 SIMD、AVX-512、SVE 和矩阵单元。十几个可以动手的模型，数都是逐位算出来的。",
+    "en": "A CPU does hundreds of billions of arithmetic operations on fractions every second, yet it cannot even store 0.1 exactly. This essay starts from 32 bits: how the bits of a floating-point number are laid out, ulps, rounding, subnormals, cancellation, FMA, the FP16, BF16, FP8 and block-scaled formats AI brought into hardware, and then SIMD, AVX-512, SVE and matrix units. A dozen hands-on models, every number computed bit by bit."
+  },
+  "tags": [
+    {
+      "zh": "浮点数",
+      "en": "Floating Point"
+    },
+    {
+      "zh": "SIMD",
+      "en": "SIMD"
+    },
+    {
+      "zh": "计算机体系结构",
+      "en": "Computer Architecture"
+    },
+    {
+      "zh": "长文",
+      "en": "Long-form Essay"
+    }
+  ],
+  "concepts": [
+    {
+      "id": "ieee754-bit-layout",
+      "title": {
+        "zh": "浮点数的三段位：符号、指数、尾数",
+        "en": "The three fields of a float: sign, exponent, significand"
+      },
+      "desc": {
+        "zh": "浮点数是二进制的科学计数法：1 位符号，8 位带偏移的指数，23 位尾数加一个不存的隐藏位。输入任何数，看它被存成哪些位、差了多少。",
+        "en": "A float is binary scientific notation: one sign bit, a biased 8-bit exponent and a 23-bit significand with a hidden leading 1. Type any number and see its bits and its error."
+      },
+      "anchor": "#ch1",
+      "aliases": {
+        "zh": [
+          "浮点数怎么存",
+          "符号位 指数位 尾数位",
+          "指数偏移",
+          "隐藏位",
+          "单精度 双精度",
+          "单精度浮点数",
+          "双精度浮点数",
+          "0.1 在计算机里怎么存"
+        ],
+        "en": [
+          "how floating point is stored",
+          "sign exponent mantissa",
+          "exponent bias",
+          "hidden bit",
+          "single precision",
+          "double precision",
+          "binary32",
+          "how is 0.1 stored"
+        ]
+      }
+    },
+    {
+      "id": "ulp-spacing",
+      "title": {
+        "zh": "ulp：浮点数的格子越往外越稀",
+        "en": "ulp: floats get sparser as they grow"
+      },
+      "desc": {
+        "zh": "每过一个 2 的幂，相邻两个浮点数的间隔就宽一倍：绝对误差随大小增长，相对误差大致不变。float 能连续数到 16,777,216。",
+        "en": "Past every power of two the gap between neighbouring floats doubles: absolute error grows with size while relative error stays roughly fixed. A float counts integers only up to 16,777,216."
+      },
+      "anchor": "#ch2",
+      "aliases": {
+        "zh": [
+          "ulp",
+          "机器精度",
+          "机器 epsilon",
+          "float 能精确表示的最大整数",
+          "16777217",
+          "float 精度",
+          "浮点数精度",
+          "float 时间戳精度"
+        ],
+        "en": [
+          "ulp",
+          "unit in the last place",
+          "machine epsilon",
+          "largest integer in float",
+          "float precision",
+          "16777217",
+          "float timestamp precision"
+        ]
+      }
+    },
+    {
+      "id": "rounding-modes",
+      "title": {
+        "zh": "舍入模式：落在两格之间怎么选",
+        "en": "Rounding modes: choosing between two neighbours"
+      },
+      "desc": {
+        "zh": "就近取偶、向零、向正负无穷和随机舍入，五条线比较同一个数加很多次的结果；低精度累加为什么会停滞。",
+        "en": "Round to nearest even, toward zero, toward ±infinity and stochastic rounding, compared by adding the same number many times; why low-precision sums stall."
+      },
+      "anchor": "#ch3",
+      "aliases": {
+        "zh": [
+          "舍入模式",
+          "就近取偶",
+          "银行家舍入",
+          "向零舍入",
+          "随机舍入",
+          "正确舍入",
+          "保护位 舍入位 粘滞位",
+          "累加停滞"
+        ],
+        "en": [
+          "rounding mode",
+          "round half to even",
+          "banker's rounding",
+          "round toward zero",
+          "stochastic rounding",
+          "correct rounding",
+          "guard round sticky bits",
+          "stagnation in summation"
+        ]
+      }
+    },
+    {
+      "id": "subnormals-nan-inf",
+      "title": {
+        "zh": "次正规数、无穷大和 NaN",
+        "en": "Subnormals, infinity and NaN"
+      },
+      "desc": {
+        "zh": "指数全 0 是零和次正规数，让数一点点下溢到零；全 1 是无穷大和 NaN。拖一个数往零走，看它丢掉有效位，以及冲零模式怎么做。",
+        "en": "An all-zero exponent holds zero and subnormals, so numbers underflow gradually; all ones holds infinity and NaN. Walk a number toward zero and watch it lose bits, with and without flush-to-zero."
+      },
+      "anchor": "#ch4",
+      "aliases": {
+        "zh": [
+          "次正规数",
+          "非规格化数",
+          "NaN",
+          "浮点数无穷大",
+          "下溢",
+          "FTZ DAZ",
+          "冲零",
+          "负零",
+          "NaN 不等于自己"
+        ],
+        "en": [
+          "subnormal numbers",
+          "denormal numbers",
+          "NaN",
+          "floating point infinity",
+          "underflow",
+          "flush to zero",
+          "FTZ DAZ",
+          "negative zero",
+          "NaN not equal to itself"
+        ]
+      }
+    },
+    {
+      "id": "cancellation-summation",
+      "title": {
+        "zh": "灾难性抵消与求和算法",
+        "en": "Catastrophic cancellation and summation"
+      },
+      "desc": {
+        "zh": "两个相近的数相减，前面的位抵消，误差被推到最前面：一遍法算方差会得出负数。顺序求和、两两求和与 Kahan 补偿求和的误差比较。",
+        "en": "Subtracting two close numbers cancels the leading digits and promotes the error: a one-pass variance can come out negative. Naive, pairwise and Kahan compensated summation compared."
+      },
+      "anchor": "#ch5",
+      "aliases": {
+        "zh": [
+          "灾难性抵消",
+          "大数吃小数",
+          "Kahan 求和",
+          "补偿求和",
+          "两两求和",
+          "方差计算不准",
+          "Welford 算法",
+          "浮点数求和误差"
+        ],
+        "en": [
+          "catastrophic cancellation",
+          "Kahan summation",
+          "compensated summation",
+          "pairwise summation",
+          "numerically stable variance",
+          "Welford algorithm",
+          "floating point summation error"
+        ]
+      }
+    },
+    {
+      "id": "fused-multiply-add",
+      "title": {
+        "zh": "FMA：乘加只舍入一次",
+        "en": "FMA: multiply and add with one rounding"
+      },
+      "desc": {
+        "zh": "a × b + c 先算准确的积再加，只在最后舍入一次。它让 x*x − y*y 在 x = y 时可能得出负数，对点积的精度帮助却不大。",
+        "en": "a × b + c computed with the exact product and one final rounding. It can make x*x − y*y negative when x = y, yet barely changes the accuracy of a dot product."
+      },
+      "anchor": "#ch6",
+      "aliases": {
+        "zh": [
+          "FMA",
+          "融合乘加",
+          "乘加指令",
+          "一次舍入",
+          "FMA 精度",
+          "浮点缩并 contraction"
+        ],
+        "en": [
+          "FMA",
+          "fused multiply-add",
+          "multiply-add instruction",
+          "single rounding",
+          "FMA accuracy",
+          "floating point contraction"
+        ]
+      }
+    },
+    {
+      "id": "low-precision-formats",
+      "title": {
+        "zh": "FP16、BF16 和 8 位浮点：为 AI 砍掉的位",
+        "en": "FP16, BF16 and 8-bit floats: bits cut for AI"
+      },
+      "desc": {
+        "zh": "同样 16 位，FP16 多给尾数，BF16 保住 binary32 的范围。把一组数放进各种格式，看多少下溢、多少溢出；各格式的范围和精度表。",
+        "en": "With the same 16 bits, FP16 favours precision and BF16 keeps the range of binary32. Put a spread of values into each format and see how many underflow or overflow; a table of ranges and precisions."
+      },
+      "anchor": "#ch7",
+      "aliases": {
+        "zh": [
+          "BF16",
+          "bfloat16",
+          "FP16",
+          "半精度浮点",
+          "bfloat16 和 fp16 区别",
+          "混合精度训练",
+          "损失缩放",
+          "8 位浮点数",
+          "低精度格式"
+        ],
+        "en": [
+          "BF16",
+          "bfloat16",
+          "FP16",
+          "half precision",
+          "bf16 vs fp16",
+          "mixed precision training",
+          "loss scaling",
+          "8-bit floating point",
+          "low precision formats"
+        ]
+      }
+    },
+    {
+      "id": "block-scaled-formats",
+      "title": {
+        "zh": "INT8 与块缩放：MX、NVFP4",
+        "en": "INT8 and block scaling: MX and NVFP4"
+      },
+      "desc": {
+        "zh": "低位数的数配一个共同的比例。整个张量一个比例，离群值会把其余的数压没；OCP MX 每 32 个数一个 8 位比例。七种量化方式的信噪比比较。",
+        "en": "Few-bit values share a common scale. With one scale per tensor an outlier crushes everything else; OCP MX gives every 32 values an 8-bit scale. Seven quantisation schemes compared by signal-to-noise ratio."
+      },
+      "anchor": "#ch8",
+      "aliases": {
+        "zh": [
+          "INT8 量化",
+          "MX 格式",
+          "MXFP4",
+          "MXFP8",
+          "微缩放格式",
+          "块缩放",
+          "NVFP4",
+          "量化离群值",
+          "E8M0"
+        ],
+        "en": [
+          "INT8 quantization",
+          "MX formats",
+          "MXFP4",
+          "MXFP8",
+          "microscaling formats",
+          "block scaling",
+          "NVFP4",
+          "quantization outliers",
+          "E8M0"
+        ]
+      }
+    },
+    {
+      "id": "simd-masks",
+      "title": {
+        "zh": "SIMD：一条指令算一排，以及掩码",
+        "en": "SIMD: one instruction, many lanes, and masks"
+      },
+      "desc": {
+        "zh": "宽寄存器切成很多条车道，一条指令每条车道做同一件事；判断变成掩码。从 SSE 到 AVX-512，看车道数、掩码和循环尾部。",
+        "en": "A wide register split into lanes, one instruction doing the same thing in every lane; branches become masks. From SSE to AVX-512: lanes, mask bits and the loop tail."
+      },
+      "anchor": "#ch9",
+      "aliases": {
+        "zh": [
+          "SIMD",
+          "单指令多数据",
+          "向量指令",
+          "AVX-512",
+          "AVX2",
+          "SSE 指令",
+          "掩码寄存器",
+          "NEON"
+        ],
+        "en": [
+          "SIMD",
+          "single instruction multiple data",
+          "vector instructions",
+          "AVX-512",
+          "AVX2",
+          "SSE instructions",
+          "mask registers",
+          "NEON"
+        ]
+      }
+    },
+    {
+      "id": "auto-vectorization",
+      "title": {
+        "zh": "自动向量化与求和顺序",
+        "en": "Auto-vectorisation and summation order"
+      },
+      "desc": {
+        "zh": "编译器只在能证明结果不变时才向量化；浮点加法不满足结合律，所以求和默认不向量化。对齐、步长、gather，以及多车道求和为什么结果会变。",
+        "en": "A compiler vectorises only what it can prove unchanged; float addition is not associative, so sums are not vectorised by default. Alignment, strides, gather, and why a multi-lane sum changes the result."
+      },
+      "anchor": "#ch10",
+      "aliases": {
+        "zh": [
+          "自动向量化",
+          "-ffast-math",
+          "gather scatter",
+          "内存对齐",
+          "循环尾部",
+          "浮点加法结合律",
+          "结构体数组 数组结构体"
+        ],
+        "en": [
+          "auto-vectorization",
+          "-ffast-math",
+          "gather scatter",
+          "memory alignment",
+          "loop tail",
+          "floating point associativity",
+          "array of structs vs struct of arrays"
+        ]
+      }
+    },
+    {
+      "id": "latency-throughput-frequency",
+      "title": {
+        "zh": "乘加的延迟、吞吐和宽向量降频",
+        "en": "FMA latency, throughput and wide-vector clocks"
+      },
+      "desc": {
+        "zh": "延迟 4 拍、每拍两条，要 8 个累加器才喂得满；峰值算力怎么算。AVX-512 的频率许可让一小段向量代码拖慢后面将近一毫秒。",
+        "en": "Four cycles of latency and two per cycle need eight accumulators; how peak FLOPS is computed. AVX-512 frequency licences let a short vector burst slow the next millisecond of code."
+      },
+      "anchor": "#ch11",
+      "aliases": {
+        "zh": [
+          "指令延迟和吞吐",
+          "AVX-512 降频",
+          "多个累加器",
+          "CPU 算力怎么算",
+          "CPU 峰值浮点性能",
+          "频率许可"
+        ],
+        "en": [
+          "instruction latency and throughput",
+          "AVX-512 downclocking",
+          "multiple accumulators",
+          "CPU peak FLOPS",
+          "how to compute FLOPS",
+          "AVX-512 frequency license"
+        ]
+      }
+    },
+    {
+      "id": "sve-sme-amx",
+      "title": {
+        "zh": "SVE、SME 和 AMX：不定宽的向量与矩阵单元",
+        "en": "SVE, SME and AMX: length-agnostic vectors and matrix units"
+      },
+      "desc": {
+        "zh": "同一份 SVE 程序在 128 到 2048 位的硬件上都能跑；矩阵单元用外积一次做 n² 次乘加。苹果 M4 的 SME 和英特尔 AMX。",
+        "en": "One SVE binary runs on hardware from 128 to 2048 bits; matrix units do n² multiply-adds per outer product. SME on Apple M4 and Intel AMX."
+      },
+      "anchor": "#ch12",
+      "aliases": {
+        "zh": [
+          "SVE",
+          "SVE2",
+          "SME",
+          "AMX",
+          "可伸缩向量扩展",
+          "矩阵扩展",
+          "RISC-V 向量扩展",
+          "外积指令"
+        ],
+        "en": [
+          "SVE",
+          "SVE2",
+          "SME",
+          "Intel AMX",
+          "scalable vector extension",
+          "scalable matrix extension",
+          "RISC-V vector extension",
+          "outer product instruction"
+        ]
+      }
+    },
+    {
+      "id": "cpu-math-frontier-2026",
+      "title": {
+        "zh": "CPU 数值计算的前沿（2026 年 11 月）",
+        "en": "The frontier of CPU arithmetic (November 2026)"
+      },
+      "desc": {
+        "zh": "已经确立的标准、已经做出来的芯片、厂商的规范和说法：AVX10.2 的 FP8 与随机舍入、Arm SME2、IEEE P3109 草案。",
+        "en": "Established standards, shipped chips, and vendor specifications and claims: FP8 and stochastic rounding in AVX10.2, Arm SME2, the IEEE P3109 draft."
+      },
+      "anchor": "#ch13",
+      "aliases": {
+        "zh": [
+          "AVX10.2",
+          "P3109",
+          "IEEE P3109",
+          "SME2",
+          "CPU FP8 指令"
+        ],
+        "en": [
+          "AVX10.2",
+          "P3109",
+          "IEEE P3109",
+          "SME2",
+          "CPU FP8 instructions"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+<figure class="lab" id="lab1">
+    <h3 data-i18n="ch1.model.title"></h3>
+    <p class="how" data-i18n="ch1.model.how"></p>
+    <div class="ctl">
+      <label class="txt"><span data-i18n="ch1.ctl.num"></span><input id="eIn" type="text" inputmode="decimal" value="0.1" autocomplete="off" spellcheck="false"></label>
+      <div class="seg" role="radiogroup" data-i18n-aria="ch1.ctl.fmt"><span class="lbl" data-i18n="ch1.ctl.fmt"></span><label><input type="radio" name="eFmt" value="fp32" checked>FP32</label><label><input type="radio" name="eFmt" value="fp16">FP16</label><label><input type="radio" name="eFmt" value="bf16">BF16</label><label><input type="radio" name="eFmt" value="fp64">FP64</label></div>
+    </div>
+    <div class="bitrow" id="eBits" role="group" data-i18n-aria="ch1.bits.aria"></div>
+    <div class="read">
+      <div><span data-i18n="ch1.read.hex"></span><b id="eHex"></b></div>
+      <div><span data-i18n="ch1.read.exp"></span><b id="eExp" class="c"></b></div>
+      <div><span data-i18n="ch1.read.err"></span><b id="eErr" class="r"></b></div>
+      <div><span data-i18n="ch1.read.rel"></span><b id="eRel"></b></div>
+    </div>
+    <p class="exact"><span data-i18n="ch1.read.exact"></span> <span id="eExact"></span></p>
+    <p class="say" id="eSay" aria-live="polite"></p>
+  </figure>

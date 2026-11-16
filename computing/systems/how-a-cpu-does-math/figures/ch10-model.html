@@ -1,0 +1,8 @@
+<figure class="lab" id="lab10">
+    <h3 data-i18n="ch10.model.title"></h3>
+    <p class="how" data-i18n="ch10.model.how"></p>
+    <div class="ctl"><div class="seg" role="radiogroup" data-i18n-aria="ch10.ctl.fmt"><span class="lbl" data-i18n="ch10.ctl.fmt"></span><label><input type="radio" name="c10Fmt" value="bf16" checked>BF16</label><label><input type="radio" name="c10Fmt" value="fp32">FP32</label></div><label class="rng"><span data-i18n="ch10.ctl.n"></span><input type="range" id="c10N" min="0" max="3" step="1" value="1"><output id="c10No" for="c10N"></output></label></div><div class="ctl"><div class="seg" role="radiogroup" data-i18n-aria="ch10.ctl.l"><span class="lbl" data-i18n="ch10.ctl.l"></span><label><input type="radio" name="c10L" value="1">1</label><label><input type="radio" name="c10L" value="2">2</label><label><input type="radio" name="c10L" value="4">4</label><label><input type="radio" name="c10L" value="8" checked>8</label><label><input type="radio" name="c10L" value="16">16</label><label><input type="radio" name="c10L" value="32">32</label><label><input type="radio" name="c10L" value="64">64</label></div></div>
+    <canvas class="cv" id="c10Cv" role="img" data-i18n-aria="ch10.cv.aria"></canvas>
+    <div class="read"><div><span data-i18n="ch10.read.val"></span><b id="c10V" class="g"></b></div><div><span data-i18n="ch10.read.ex"></span><b id="c10Ex"></b></div><div><span data-i18n="ch10.read.err"></span><b id="c10E" class="r"></b></div></div>
+    <p class="say" id="c10Say" aria-live="polite"></p>
+  </figure>

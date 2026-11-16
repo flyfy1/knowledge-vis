@@ -1,0 +1,11 @@
+{
+  "slug": "how-a-cpu-does-math",
+  "kind": "essay",
+  "layout": "essay",
+  "scripts": ["models.js", "copy.zh.js", "copy.en.js", "app.js"],
+  "version": "20261116",
+  "provenanceNote": {
+    "zh": "本文由 Claude Code（claude-opus-5-5）从零编写，是第一篇直接用 Markdown 站点模板写的长文；英文稿由 Claude Code（claude-haiku-5-5）翻译；2026-11-16 经另一个 Claude Code 会话独立评审并按评审修订（同一模型；跨模型评审待做）。",
+    "en": "This essay was written from scratch with Claude Code (claude-opus-5-5), the first written directly in the Markdown site template; the English copy was translated with Claude Code (claude-haiku-5-5); independently reviewed on 2026-11-16 by a separate Claude Code session and revised accordingly (same model; cross-model review pending)."
+  }
+}
