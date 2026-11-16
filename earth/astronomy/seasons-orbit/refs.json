@@ -1,0 +1,54 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "seasons-orbit",
+ "refs": [],
+ "backlinks": [
+  {
+   "from": "gravity-orbits",
+   "links": [
+    {
+     "from": "step5",
+     "to": "step1"
+    }
+   ]
+  },
+  {
+   "from": "atmospheric-circulation",
+   "links": [
+    {
+     "from": null,
+     "to": "step2"
+    }
+   ]
+  },
+  {
+   "from": "why-the-planet-warms",
+   "links": [
+    {
+     "from": "ch1",
+     "to": "step0"
+    }
+   ]
+  },
+  {
+   "from": "latitude-longitude",
+   "links": [
+    {
+     "from": null,
+     "to": "step1"
+    }
+   ]
+  },
+  {
+   "from": "projectile-circular",
+   "links": [
+    {
+     "from": null,
+     "to": "step0"
+    }
+   ]
+  }
+ ],
+ "related": [],
+ "bindings": []
+}

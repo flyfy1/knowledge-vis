@@ -855,7 +855,7 @@ anchor; a link to the page top has no anchor).
 
 ## 地球公转与四季 / Earth’s Orbit & the Seasons → 气候能量账本 · 太阳光如何变成温度 / Climate Energy Ledger · How Sunlight Becomes Temperature
 
-- `seasons-orbit` → `climate-energy#step0`
+- `seasons-orbit#step5` → `climate-energy#step0`
 
 ## 滴定曲线 · 终点附近 pH 的“悬崖” / Titration Curves · The pH Cliff Near the End Point → 酸碱平衡 · 分子在两边来回走 / Acid–Base Equilibrium · Molecules Move Both Ways
 

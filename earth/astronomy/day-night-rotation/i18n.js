@@ -163,7 +163,7 @@ const STR = {
     "site.crumb.sub": "天文",
     "site.bl.title": "被这些页面引用",
     "site.bl.1": "<a href=\"../moon-phases/\">月相 · 从地球看被照亮的那一半</a>：<a href=\"../moon-phases/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>",
-    "site.bl.2": "<a href=\"../seasons-orbit/\">地球公转与四季</a>：→ <a href=\"#step4\">本页第 4 步</a>、<a href=\"#step2\">本页第 2 步</a>",
+    "site.bl.2": "<a href=\"../seasons-orbit/\">地球公转与四季</a>：<a href=\"../seasons-orbit/#step5\">该课第 5 步</a> → <a href=\"#step4\">本页第 4 步</a>、<a href=\"#step2\">本页第 2 步</a>",
     "site.bl.3": "<a href=\"../../geo/latitude-longitude/\">经纬网</a>：→ <a href=\"#step2\">本页第 2 步</a>"
   },
   en: {
@@ -328,7 +328,7 @@ const STR = {
     "site.crumb.sub": "Astronomy",
     "site.bl.title": "Linked from",
     "site.bl.1": "<a href=\"../moon-phases/\">Moon Phases · The Lit Half, Seen from Earth</a>: <a href=\"../moon-phases/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>",
-    "site.bl.2": "<a href=\"../seasons-orbit/\">Earth’s Orbit & the Seasons</a>: → <a href=\"#step4\">this page step 4</a>, <a href=\"#step2\">this page step 2</a>",
+    "site.bl.2": "<a href=\"../seasons-orbit/\">Earth’s Orbit & the Seasons</a>: <a href=\"../seasons-orbit/#step5\">its step 5</a> → <a href=\"#step4\">this page step 4</a>, <a href=\"#step2\">this page step 2</a>",
     "site.bl.3": "<a href=\"../../geo/latitude-longitude/\">Latitude & Longitude</a>: → <a href=\"#step2\">this page step 2</a>"
   }
 };
