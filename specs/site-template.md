@@ -125,6 +125,16 @@ a title or desc that differs from the content is refused. The same command, on t
 merged page.json files, the fenced block; pages.config.js window deep-equal to 356de782, regeneration byte-identical,
 site-nav-data.js and all 22 template pages unchanged); c51930a1 concept refs through the search table and the stricter
 language checks; 5de49541 the linked-from colon at 320 px (site-nav.css, include key sn-20261116b on all 249 pages).
+- **Authorship gap (cannot be repaired by a commit):** 71144070's `Built-By` reads `script (…; run by Claude Code
+  claude-opus-5-5)`, and the registry matches "Claude Code" in it, so `node scripts/authorship.cjs` shows the 227 new
+  page.json files as `created: claude-code`, `primary: unattributed` (mechanical). They should read `created: script`;
+  §10 warns about exactly this. Content is unaffected (no label credits a page.json). If Yangyu wants it corrected,
+  227 `authorship/overrides.json` entries would be needed; only he may confirm them. Name the operating agent in
+  the body or Verified-By next time.
+- **Not in the Pages workflow:** `.github/workflows/pages.yml` runs `build-pages --all --check` but not
+  `build-registry --check`; its sparse checkout leaves out `specs/` and `tests/`, so the check would see
+  `specs/atlas-edge-todo.md` as missing. Adding it needs the check to skip that report there, or the sparse list to
+  include it.
 
 **Mode switch.** A `pages.config.js` without the fence is read the old way (rows from KNOWLEDGE_PAGES). The test
 fixture site (`tests/fixtures/site-template/`) works like that; `tests/build-registry.cjs` covers both modes.
