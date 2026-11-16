@@ -110,6 +110,8 @@ try {
     const again = reg(root);
     ok(again.code === 0 && /^up to date/.test(again.out), 'regeneration from the page.json files is byte-identical:\n' + again.out);
     ok(reg(root, '--check').code === 0, '--check passes after --adopt');
+    { const b = run('build-pages.cjs', '--root', root, path.join(root, 'demo/basics/fixture-target'));
+      ok(b.code === 1 && /page\.json has no "layout": it is the registry row of a hand-written page/.test(b.out), 'build-pages names a metadata-only page.json instead of failing on a missing content.zh.md:\n' + b.out); }
   }
 
   // 2. The projections.
@@ -141,7 +143,22 @@ try {
     write(root, 'demo/basics/fixture-new/index.html', '<!doctype html><title>new</title>\n');
     const r = reg(root, '--check');
     ok(r.code === 1 && /"fixture-new" is in the KNOWLEDGE_PAGES block but no page\.json registers it/.test(r.out) && /run node scripts\/build-registry\.cjs --adopt/.test(r.out) && /specs\/essays\.md「Registering」/.test(r.out), 'a hand-added row fails --check with the way out:\n' + r.out);
+    ok(/Fix: node scripts\/build-registry\.cjs --adopt for the pasted row/.test(r.out), 'the Fix line points a pasted row at --adopt, not at the plain run:\n' + r.out);
+    // review 2026-11-16: the plain run used to drop the pasted row and print "wrote pages.config.js"
+    const before = read(root, 'pages.config.js'), p = reg(root);
+    ok(p.code === 1 && /nothing written: .*1 row\(s\) that no page\.json registers/.test(p.out) && /"fixture-new" \(demo\/basics\/fixture-new\/\): run node scripts\/build-registry\.cjs --adopt/.test(p.out), 'the plain run refuses to drop a pasted row:\n' + p.out);
+    ok(read(root, 'pages.config.js') === before && !fs.existsSync(path.join(root, 'demo/basics/fixture-new/page.json')), 'and writes nothing');
+    // --adopt checks every row before writing any page.json: a second pasted row with no directory stops it cold
+    const tgt = read(root, 'demo/basics/fixture-target/page.json');
+    write(root, 'demo/basics/fixture-target/page.json', JSON.stringify(Object.fromEntries(Object.entries(JSON.parse(tgt)).reverse()), null, 2) + '\n');
+    const reordered = read(root, 'demo/basics/fixture-target/page.json');
+    write(root, 'pages.config.js', before.replace('window.KNOWLEDGE_PAGES = [\n', 'window.KNOWLEDGE_PAGES = [\n' + pasted.replace(/fixture-new/g, 'fixture-gone')));
+    const g = reg(root, '--adopt');
+    ok(g.code === 1 && /adopt: nothing written:\nKNOWLEDGE_PAGES row "fixture-gone": demo\/basics\/fixture-gone\/ does not exist/.test(g.out) && !fs.existsSync(path.join(root, 'demo/basics/fixture-new/page.json')), '--adopt with one bad row writes no page.json at all:\n' + g.out);
+    write(root, 'pages.config.js', before);
     const a = reg(root, '--adopt');
+    ok(read(root, 'demo/basics/fixture-target/page.json') === reordered, '--adopt leaves a page.json alone when only its key order differs');
+    write(root, 'demo/basics/fixture-target/page.json', tgt);
     ok(a.code === 0, '--adopt takes the pasted row:\n' + a.out);
     const pj = json(root, 'demo/basics/fixture-new/page.json');
     ok(pj.order === 40 && pj.status === 'live', 'an adopted row is ordered after every registered page');

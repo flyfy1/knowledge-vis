@@ -625,7 +625,7 @@ function buildEssay(dir, opts = {}) {
   else if (enStub) warnings.push('en is a stub (page.json languages.en = "stub"): the page shows Chinese when English is chosen');
   else {
     const bad = C.en.order.filter(k => CJK.test(C.en.copy[k]) || /\[en pending\]/i.test(C.en.copy[k]));
-    if (bad.length) errors.push(`en: ${bad.length} string(s) still hold Chinese text or [EN pending] (${bad.slice(0, 6).join(', ')}${bad.length > 6 ? ', …' : ''}); translate them, or set page.json "languages": {"en": "stub"} while the translation is pending`);
+    if (bad.length) errors.push(`en: ${bad.length} string(s) still hold Chinese text or [EN pending] (${bad.slice(0, 6).join(', ')}${bad.length > 6 ? ', …' : ''}); translate them (an unregistered draft may set page.json "languages": {"en": "stub"} while the translation is pending; a registered page may not)`);
   }
 
   /* REGISTRY.json and pages.config.js repeat the title and description; they must equal the content (title = the

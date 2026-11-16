@@ -40,6 +40,8 @@ let failed = 0;
 for (const dir of dirs) {
   const rel = path.relative(root, dir) || '.';
   if (!fs.existsSync(path.join(dir, 'page.json'))) { console.error(`ERROR ${rel}: no page.json (not a migrated page)`); failed++; continue; }
+  // Phase 2: a page.json without "layout" only registers a hand-written page (specs/site-template.md §3b)
+  if (!T.isTemplateDir(dir) && (() => { try { JSON.parse(fs.readFileSync(path.join(dir, 'page.json'), 'utf8')); return true; } catch (e) { return false; } })()) { console.error(`ERROR ${rel}: page.json has no "layout": it is the registry row of a hand-written page, not a template page (nothing to build)`); failed++; continue; }
   let res;
   try { res = T.buildEssay(dir, opts); } catch (e) { console.error(`ERROR ${rel}: ${e.stack || e.message}`); failed++; continue; }
   if (PRINT === 'bindings') { printBindings(rel, res); if (res.errors.length) failed++; continue; }

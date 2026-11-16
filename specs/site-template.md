@@ -120,6 +120,24 @@ no page.json (pasted by hand: "write page.json, or run --adopt"), a field that d
 page.json not yet in the block, or `KNOWLEDGE_PAGES` changed outside the fence. `--adopt` moves rows that have no
 page.json into new ones (ordered last) and takes hand edits of existing rows into their page.json; on a template page
 a title or desc that differs from the content is refused. The same command, on the unfenced file, made the seed commit.
+- A plain run (no flag) refuses while the block holds a row that no page.json registers, and writes nothing: it used to
+  drop such a row with only "wrote pages.config.js", and the `--check` hint pointed at the plain run (review
+  2026-11-16). `--check` now says `--adopt` for that case. To unregister a page on purpose, delete its row from the block
+  too. A hand edit of an existing row is still overwritten by a plain run (page.json is the source; `--check` names it).
+- `--adopt` checks every row before it writes any page.json, and leaves a page.json alone when only its key order
+  differs. An adopted row gets `max order + 10`, so it sorts before pages registered without `order` (by design: the
+  seed order is kept; give it no special meaning).
+- `build-pages.cjs <dir>` on a metadata-only page.json says so ("no layout … hand-written page") instead of failing on
+  a missing `content.zh.md`.
+
+**Two registrations at once (merge).** Each branch's run rewrites the same generated files, so a merge conflicts in
+`pages.config.js`, `site-registry.json`, `site-nav-data.js` and `specs/atlas-edge-todo.md` (and `CONCEPT-MAP.md`,
+`atlas/`, `search/` when both imported concepts). Resolve the hand-edited part of `pages.config.js` (KNOWLEDGE_ESSAYS,
+subtopics) by hand, take either side of every generated block and file, then rerun `build-registry.cjs`,
+`build-site-nav.cjs`, `build-pages.cjs --all` (and the atlas and search builds if concepts were imported) and commit.
+Order needs no resolving: pages without `order` sort by path. A conflicted `pages.config.js` fails to parse, so the
+scripts cannot run before the conflict markers are gone (simulated in the review: two drafts on two branches merge to
+the same bytes as registering both on one branch).
 
 **Commits (2026-11-16).** 75228954 tooling (inert until the fence exists); 71144070 the seed (`--adopt`: 227 new and 22
 merged page.json files, the fenced block; pages.config.js window deep-equal to 356de782, regeneration byte-identical,

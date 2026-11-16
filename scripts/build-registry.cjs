@@ -38,6 +38,7 @@ const readJson = f => JSON.parse(fs.readFileSync(f, 'utf8'));
 const writeJson = (f, v) => fs.writeFileSync(f, JSON.stringify(v, null, 2) + '\n');
 
 /* ───────── --adopt: rows of the KNOWLEDGE_PAGES block → page.json ───────── */
+const canon = v => JSON.stringify(v, (k, x) => x && typeof x === 'object' && !Array.isArray(x) ? Object.fromEntries(Object.keys(x).sort().map(j => [j, x[j]])) : x);
 function adopt() {
   const cfg = REG.readConfig(root);
   if (cfg.problems.length) die(cfg.problems.join('\n'));
@@ -45,7 +46,7 @@ function adopt() {
   const known = cfg.fenced ? REG.pagesFromJson(root, cfg.window).rows : [];
   const bySlug = new Map(known.map(e => [e.row.slug, e]));
   let next = cfg.fenced ? Math.max(0, ...known.map(e => e.meta.order || 0)) + 10 : 10;
-  const problems = [], wrote = [];
+  const problems = [], wrote = [], pending = [];
   rows.forEach(row => {
     const at = `KNOWLEDGE_PAGES row "${row.slug}"`;
     if (!row.path) { problems.push(`${at}: no path; a registered page needs a directory for its page.json`); return; }
@@ -63,11 +64,15 @@ function adopt() {
     }
     const order = has ? has.meta.order : existing && existing.order != null ? existing.order : cfg.fenced ? (next += 10) - 10 : (rows.indexOf(row) + 1) * 10;
     const meta = REG.metaFromRow(root, row, existing, order);
-    if (existing && JSON.stringify(existing) === JSON.stringify(meta)) return;
-    writeJson(f, meta);
+    // same fields in another key order (a hand-written page.json) is not a change
+    if (existing && canon(existing) === canon(meta)) return;
+    pending.push([f, meta]);
     wrote.push(`${row.path}page.json (${existing ? (has ? 'updated from the hand-edited row' : 'registry fields added') : 'new'})`);
   });
-  if (problems.length) die('adopt: nothing more written:\n' + problems.join('\n'));
+  // Every row is checked before any page.json is written (review 2026-11-16: a failing row used to leave the rows
+  // before it rewritten).
+  if (problems.length) die('adopt: nothing written:\n' + problems.join('\n'));
+  for (const [f, meta] of pending) writeJson(f, meta);
   console.log(`adopt: ${wrote.length} page.json file(s) written` + (wrote.length <= 20 ? (wrote.length ? ':\n  ' + wrote.join('\n  ') : '') : ` (${wrote.filter(w => w.endsWith('(new)')).length} new)`));
   // From here on the block is generated: put the fence in (or regenerate it) from the page.json files.
   const reg0 = { ...cfg, block: cfg.block };
@@ -251,6 +256,17 @@ function edgeTodo(site, pages, edges) {
 if (ADOPT) adopt();
 const { outputs, errors, reg, stats } = build();
 if (errors.length) die(errors.map(e => 'ERROR ' + e).join('\n') + '\n' + REGISTER_HELP);
+// A row in the block that no page.json registers was pasted by hand (or its page.json lost its "status"). Writing would
+// drop it without a word, and the --check hint says to run this very command, so refuse and say what to do (review
+// 2026-11-16, specs/reviews/site-template-phase2-review-20261116.md). Hand edits of existing rows are still overwritten:
+// there page.json is the source, and --check names them first.
+if (!CHECK) {
+  const inJson = new Set(reg.entries.map(e => e.row.slug));
+  const orphans = (reg.cfg.window.KNOWLEDGE_PAGES || []).filter(r => !inJson.has(r.slug));
+  if (orphans.length) die(['nothing written: the KNOWLEDGE_PAGES block has ' + orphans.length + ' row(s) that no page.json registers, and regenerating would drop them:',
+    ...orphans.map(r => `  "${r.slug}" (${r.path || 'no path'}): run node scripts/build-registry.cjs --adopt to move the row into ${r.path || '<dir>/'}page.json, or write that page.json yourself.`),
+    '  If the page is being unregistered on purpose, delete its row from the block as well.', REGISTER_HELP].join('\n'));
+}
 const stale = [];
 for (const [f, s] of outputs) {
   const cur = fs.existsSync(f) ? fs.readFileSync(f, 'utf8') : null;
@@ -261,7 +277,10 @@ for (const [f, s] of outputs) {
 if (CHECK && stale.length) {
   const lines = ['site registry is out of date: ' + stale.map(rel).join(', ')];
   if (stale.includes(reg.cfg.file)) lines.push(...diagnose(reg));
-  lines.push('Fix: node scripts/build-registry.cjs (then commit what it writes). ' + REGISTER_HELP);
+  const inJson = new Set(reg.entries.map(e => e.row.slug));
+  const pasted = (reg.cfg.window.KNOWLEDGE_PAGES || []).some(r => !inJson.has(r.slug));
+  lines.push((pasted ? 'Fix: node scripts/build-registry.cjs --adopt for the pasted row(s) above (a plain run refuses while they are there), then commit what it writes. '
+    : 'Fix: node scripts/build-registry.cjs (then commit what it writes). ') + REGISTER_HELP);
   die(lines.join('\n'));
 }
 console.log(`${CHECK ? 'PASS' : stale.length ? 'wrote ' + stale.map(rel).join(', ') : 'up to date'}: ${stats.pages} registered pages (${stats.live} live), ${stats.concepts} concepts, ${stats.refs} ref and ${stats.seeAlso} seeAlso edges, ${stats.leetcode} LeetCode adapter rows`);
