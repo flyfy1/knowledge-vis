@@ -41,7 +41,7 @@
     "site.crumb.cat": "地球与太空",
     "site.crumb.sub": "地理与地质",
     "site.bl.title": "被这些页面引用",
-    "site.bl.1": "<a href=\"../seismic-waves/\">地震波探地心 · 地核是被波“照”出来的</a>：→ <a href=\"#step3\">本页第 3 步</a>"
+    "site.bl.1": "<a href=\"../seismic-waves/\">地震波探地心 · 地核是被波“照”出来的</a>：<a href=\"../seismic-waves/#step5\">该课第 5 步</a> → <a href=\"#step3\">本页第 3 步</a>"
   },
   en: {
     back: "← Knowledge index",
@@ -84,6 +84,6 @@
     "site.crumb.cat": "Earth & Space",
     "site.crumb.sub": "Geography & Geology",
     "site.bl.title": "Linked from",
-    "site.bl.1": "<a href=\"../seismic-waves/\">Seismic Waves · The Core Was “Lit Up” by Waves</a>: → <a href=\"#step3\">this page step 3</a>"
+    "site.bl.1": "<a href=\"../seismic-waves/\">Seismic Waves · The Core Was “Lit Up” by Waves</a>: <a href=\"../seismic-waves/#step5\">its step 5</a> → <a href=\"#step3\">this page step 3</a>"
   }
 };let lang=localStorage.getItem('knowledge-lang')||((navigator.language||'').startsWith('zh')?'zh':'en');window.t=k=>D[lang][k]||D.zh[k]||k;window.tr=window.t;window.setLang=l=>{lang=l;localStorage.setItem('knowledge-lang',l);document.documentElement.lang=l==='zh'?'zh-CN':'en';document.querySelectorAll('[data-i18n]').forEach(e=>e.textContent=t(e.dataset.i18n));document.querySelectorAll('[data-i18n-html]').forEach(e=>e.innerHTML=t(e.dataset.i18nHtml));document.querySelectorAll('[data-lang]').forEach(e=>e.classList.toggle('on',e.dataset.lang===lang));window.dispatchEvent(new Event('langchange'))};document.addEventListener('DOMContentLoaded',()=>{document.querySelectorAll('[data-lang]').forEach(b=>b.onclick=()=>setLang(b.dataset.lang));setLang(lang)});})();

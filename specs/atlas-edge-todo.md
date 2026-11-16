@@ -1327,7 +1327,7 @@ anchor; a link to the page top has no anchor).
 
 ## 地震波探地心 · 地核是被波“照”出来的 / Seismic Waves · The Core Was “Lit Up” by Waves → 波的干涉 · 闹与静的图样 / Interference · A Pattern of Loud and Still
 
-- `seismic-waves` → `interference#step0`
+- `seismic-waves#step5` → `interference#step0`
 
 ## 数列与求和 · 叠砖与棋盘麦粒 / Sequences & Series · Stacked Bricks and Chessboard Grains → 找规律 · 不画也能报出第 100 个 / Patterns · Name the 100th Without Drawing It
 
