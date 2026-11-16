@@ -1274,7 +1274,7 @@ anchor; a link to the page top has no anchor).
 
 ## 囚徒困境与演化博弈 · 合作怎样活下来 / The Prisoner’s Dilemma & Evolutionary Games · How Cooperation Survives → 种群增长 · S 形曲线从哪来 / Population Growth · Where the S-Curve Comes From
 
-- `prisoners-dilemma` → `logistic-growth#step2`: ? → logistic-growth
+- `prisoners-dilemma#step5` → `logistic-growth#step2`: ? → logistic-growth
 
 ## 抛体与圆周 · 一直在掉，但总掉不到地上 / Projectiles & Circular Motion · Always Falling, Never Landing → 牛顿运动定律 · F = ma 是调出来的 / Newton’s Laws of Motion · F = ma, Tuned by Hand
 

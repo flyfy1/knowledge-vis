@@ -1,0 +1,24 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "prisoners-dilemma",
+ "refs": [
+  {
+   "from": "s0e",
+   "to": "game-theory",
+   "anchor": "step2"
+  }
+ ],
+ "backlinks": [
+  {
+   "from": "same-votes-different-winner",
+   "links": [
+    {
+     "from": "ch10",
+     "to": null
+    }
+   ]
+  }
+ ],
+ "related": [],
+ "bindings": []
+}

@@ -61,7 +61,7 @@ const STR={
     "site.crumb.sub": "生态与进化",
     "site.bl.title": "被这些页面引用",
     "site.bl.1": "<a href=\"../../body/body-in-balance/\">身体是怎么稳住的</a>：<a href=\"../../body/body-in-balance/#ch8\">该文第 8 章</a> → <a href=\"#step1\">本页第 1 步</a>",
-    "site.bl.2": "<a href=\"../../../math/applied/prisoners-dilemma/\">囚徒困境与演化博弈 · 合作怎样活下来</a>：→ <a href=\"#step3\">本页第 3 步</a>"
+    "site.bl.2": "<a href=\"../../../math/applied/prisoners-dilemma/\">囚徒困境与演化博弈 · 合作怎样活下来</a>：<a href=\"../../../math/applied/prisoners-dilemma/#step5\">该课第 5 步</a> → <a href=\"#step3\">本页第 3 步</a>"
   },
   en: {
     pageTitle: "Natural Selection · Why the Peppered Moth Flipped Colour",
@@ -124,7 +124,7 @@ const STR={
     "site.crumb.sub": "Ecology & Evolution",
     "site.bl.title": "Linked from",
     "site.bl.1": "<a href=\"../../body/body-in-balance/\">How the Body Keeps Things Steady</a>: <a href=\"../../body/body-in-balance/#ch8\">its chapter 8</a> → <a href=\"#step1\">this page step 1</a>",
-    "site.bl.2": "<a href=\"../../../math/applied/prisoners-dilemma/\">The Prisoner’s Dilemma & Evolutionary Games · How Cooperation Survives</a>: → <a href=\"#step3\">this page step 3</a>"
+    "site.bl.2": "<a href=\"../../../math/applied/prisoners-dilemma/\">The Prisoner’s Dilemma & Evolutionary Games · How Cooperation Survives</a>: <a href=\"../../../math/applied/prisoners-dilemma/#step5\">its step 5</a> → <a href=\"#step3\">this page step 3</a>"
   }
 };
 
