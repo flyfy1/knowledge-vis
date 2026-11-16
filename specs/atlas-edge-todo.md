@@ -1187,11 +1187,11 @@ anchor; a link to the page top has no anchor).
 
 ## 期望 · 彩票、骰子、保险放在同一台秤上 / Expected Value · Lotteries, Dice and Insurance on One Scale → 概率分布 · 随机性也有形状 / Probability Distributions · Randomness Has a Shape
 
-- `expected-value` → `probability-distribution#step1`
+- `expected-value#step5` → `probability-distribution#step1`
 
 ## 期望 · 彩票、骰子、保险放在同一台秤上 / Expected Value · Lotteries, Dice and Insurance on One Scale → 多臂老虎机 · 探索还是利用 / Multi-Armed Bandits · Explore or Exploit
 
-- `expected-value` → `bandit-arms#step0`
+- `expected-value#step5` → `bandit-arms#step0`
 
 ## 外部性与公地悲剧 · 账记在谁头上 / Externalities & the Tragedy of the Commons · Who Pays the Bill → 气候反馈 · 一笔一笔对上能量账 / Climate Feedback · Balance the Energy Ledger
 
