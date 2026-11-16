@@ -20,5 +20,37 @@
   "stage": "university",
   "status": "live",
   "path": "computing/algorithms/recursion-divide/",
-  "order": 1950
+  "order": 1950,
+  "layout": "lesson",
+  "legacyLayout": {
+    "_note": "Whitespace and markup of the hand-written lesson this page was converted from, so the conversion could be checked byte for byte (specs/site-template.md §3c).",
+    "section": {
+      "open": "<section class=\"step\" id=\"{id}\" data-step=\"{n}\"><div class=\"step-inner\">",
+      "close": "</div></section>"
+    },
+    "indent": "",
+    "leads": {
+      "step0-1": "\n",
+      "step1-1": "\n",
+      "step2-1": "\n",
+      "step3-1": "\n",
+      "step4-1": "\n",
+      "step5-1": "\n",
+      "linksT": "\n"
+    },
+    "mainGaps": [
+      "\n",
+      "\n",
+      "\n",
+      "\n",
+      "\n",
+      "\n",
+      "\n"
+    ],
+    "stepNav": {
+      "item": "<a href=\"#{id}\" data-i18n=\"{key}\"></a>",
+      "end": ""
+    }
+  },
+  "version": "20261116a"
 }
