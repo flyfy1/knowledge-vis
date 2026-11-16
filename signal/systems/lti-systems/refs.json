@@ -1,0 +1,53 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "lti-systems",
+ "refs": [],
+ "backlinks": [
+  {
+   "from": "inverted-pendulum",
+   "links": [
+    {
+     "from": null,
+     "to": "step2"
+    },
+    {
+     "from": null,
+     "to": "step3"
+    }
+   ]
+  },
+  {
+   "from": "kalman",
+   "links": [
+    {
+     "from": null,
+     "to": "step3"
+    }
+   ]
+  },
+  {
+   "from": "convolution",
+   "links": [
+    {
+     "from": null,
+     "to": "step1"
+    },
+    {
+     "from": null,
+     "to": "step2"
+    }
+   ]
+  },
+  {
+   "from": "frequency-response",
+   "links": [
+    {
+     "from": null,
+     "to": "step2"
+    }
+   ]
+  }
+ ],
+ "related": [],
+ "bindings": []
+}

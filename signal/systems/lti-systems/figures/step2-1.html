@@ -1,0 +1,34 @@
+<div class="btn-row" id="s2-sys">
+      <button class="btn active" data-sys="ma3" data-i18n="s2sysMa"></button>
+      <button class="btn" data-sys="acc" data-i18n="s2sysAcc"></button>
+      <button class="btn" data-sys="diff" data-i18n="s2sysDiff"></button>
+    </div>
+    <div class="stage"><canvas id="s2-h" height="270" style="height:270px"></canvas></div>
+    <div class="controls">
+      <label><span><span data-i18n="s2aLab"></span> <span class="val" id="s2-a-val">0.70</span></span>
+        <input type="range" id="s2-a" min="0.3" max="0.95" step="0.01" value="0.7"></label>
+    </div>
+    <section class="sound-lab" aria-labelledby="sound-title">
+      <h3 id="sound-title" data-i18n="soundTitle"></h3>
+      <p data-i18n="soundIntro"></p>
+      <div class="btn-row sound-controls">
+        <button type="button" class="btn" id="s2-audio-input" aria-pressed="false" data-i18n="soundInput"></button>
+        <button type="button" class="btn" id="s2-audio-output" aria-pressed="false" data-i18n="soundOutput"></button>
+        <button type="button" class="btn" id="s2-audio-stop" disabled data-i18n="soundStop"></button>
+      </div>
+      <label class="sound-volume" for="s2-audio-volume"><span data-i18n="soundVolume"></span> <output id="s2-audio-volume-value">50%</output>
+        <input id="s2-audio-volume" type="range" min="0" max="100" step="5" value="50">
+      </label>
+      <p class="readout" id="s2-audio-status" role="status" aria-live="polite" data-i18n="soundIdle"></p>
+      <progress id="s2-audio-progress" value="0" max="1.8665"></progress><span id="s2-audio-time" aria-hidden="true">0 / 1.87 s</span>
+      <p class="hint" data-i18n="soundPlot"></p>
+      <div class="stage"><canvas id="s2-audio-wave" height="230" style="height:230px" role="img" data-i18n-aria="soundWave"></canvas></div>
+      <p class="hint" data-i18n="soundTry"></p>
+      <details><summary data-i18n="soundMappingTitle"></summary><p data-i18n="soundMapping"></p><p data-i18n="soundChanging"></p><p data-i18n="soundLevel"></p><p><a href="https://www.w3.org/TR/2021/REC-webaudio-20210617/" data-i18n="soundReference"></a></p></details>
+      <noscript><style>.sound-lab .sound-controls,.sound-lab .sound-volume,.sound-lab #s2-audio-progress,.sound-lab #s2-audio-time{display:none}</style><p class="hint sound-no-js">试听需要 JavaScript；启用后点击“播放输入”或“播放处理后”。其余正文仍可阅读。 / Sound requires JavaScript; enable it before clicking Play. The surrounding explanation remains readable.</p></noscript>
+    </section>
+    <div class="stage"><canvas id="s2-io" height="330" style="height:330px"></canvas></div>
+    <div class="btn-row">
+      <label class="chk"><input type="checkbox" id="s2-copies" checked> <span data-i18n="s2copies"></span></label>
+    </div>
+    <p class="readout" id="s2-readout"></p>
