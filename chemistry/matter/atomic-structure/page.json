@@ -28,5 +28,27 @@
   "stage": "junior",
   "status": "live",
   "path": "chemistry/matter/atomic-structure/",
-  "order": 880
+  "order": 880,
+  "layout": "lesson",
+  "titleKey": "pageTitle",
+  "legacyLayout": {
+    "_note": "Whitespace and markup of the hand-written lesson this page was converted from, so the conversion could be checked byte for byte (specs/site-template.md §3c).",
+    "section": {
+      "open": "<section class=\"step\" id=\"{id}\" data-step=\"{n}\">\n<div class=\"step-inner\">",
+      "close": "\n</div>\n</section>"
+    },
+    "indent": "\n",
+    "mainGaps": [
+      "\n",
+      "\n",
+      "\n",
+      "\n",
+      "\n",
+      "\n",
+      "\n",
+      "\n"
+    ],
+    "stepNav": false
+  },
+  "version": "20261116a"
 }

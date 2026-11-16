@@ -1,0 +1,67 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "atomic-structure",
+ "refs": [],
+ "backlinks": [
+  {
+   "from": "molecular-shapes",
+   "links": [
+    {
+     "from": null,
+     "to": "step3"
+    }
+   ]
+  },
+  {
+   "from": "molecules-atoms",
+   "links": [
+    {
+     "from": null,
+     "to": "step1"
+    }
+   ]
+  },
+  {
+   "from": "periodic-trends",
+   "links": [
+    {
+     "from": null,
+     "to": "step2"
+    },
+    {
+     "from": null,
+     "to": "step3"
+    }
+   ]
+  },
+  {
+   "from": "mass-conservation",
+   "links": [
+    {
+     "from": null,
+     "to": "step1"
+    }
+   ]
+  },
+  {
+   "from": "simple-circuits",
+   "links": [
+    {
+     "from": null,
+     "to": "step4"
+    }
+   ]
+  },
+  {
+   "from": "photoelectric-effect",
+   "links": [
+    {
+     "from": null,
+     "to": "step2"
+    }
+   ]
+  }
+ ],
+ "related": [],
+ "bindings": []
+}
