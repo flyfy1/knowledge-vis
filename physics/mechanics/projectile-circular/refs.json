@@ -1,0 +1,24 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "projectile-circular",
+ "refs": [
+  {
+   "from": "s0e",
+   "to": "velocity-vt",
+   "anchor": "step3"
+  }
+ ],
+ "backlinks": [
+  {
+   "from": "vectors",
+   "links": [
+    {
+     "from": "step5",
+     "to": "step2"
+    }
+   ]
+  }
+ ],
+ "related": [],
+ "bindings": []
+}

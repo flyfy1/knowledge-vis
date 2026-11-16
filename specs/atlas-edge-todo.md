@@ -1283,11 +1283,11 @@ anchor; a link to the page top has no anchor).
 
 ## 抛体与圆周 · 一直在掉，但总掉不到地上 / Projectiles & Circular Motion · Always Falling, Never Landing → 牛顿运动定律 · F = ma 是调出来的 / Newton’s Laws of Motion · F = ma, Tuned by Hand
 
-- `projectile-circular` → `newton-laws#step0`
+- `projectile-circular#step5` → `newton-laws#step0`
 
 ## 抛体与圆周 · 一直在掉，但总掉不到地上 / Projectiles & Circular Motion · Always Falling, Never Landing → 地球公转与四季 / Earth’s Orbit & the Seasons
 
-- `projectile-circular` → `seasons-orbit#step0`
+- `projectile-circular#step5` → `seasons-orbit#step0`
 
 ## 量子隧穿 · 穿墙的是概率，不是子弹 / Quantum Tunnelling · What Passes Through the Wall Is a Probability → 量子基础 · 可能性先于结果 / Quantum Basics · Possibility Before Outcome
 
