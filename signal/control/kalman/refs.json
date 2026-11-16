@@ -11,7 +11,7 @@
      "to": "step5"
     },
     {
-     "from": null,
+     "from": "step6",
      "to": "step5"
     }
    ]
@@ -20,7 +20,7 @@
    "from": "bayes-updating",
    "links": [
     {
-     "from": null,
+     "from": "step6",
      "to": "step2"
     }
    ]
@@ -29,7 +29,7 @@
    "from": "inverted-pendulum",
    "links": [
     {
-     "from": null,
+     "from": "step6",
      "to": "step6"
     }
    ]

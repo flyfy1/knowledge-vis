@@ -192,7 +192,7 @@ const STR = {
     "site.bl.6": "<a href=\"../../stochastic/entropy/\">熵 · 惊讶的平均值</a>：→ <a href=\"#step2\">本页第 2 步</a>",
     "site.bl.7": "<a href=\"../../stochastic/monte-carlo/\">蒙特卡洛 · 撒豆子算 π</a>：<a href=\"../../stochastic/monte-carlo/#step6\">该课第 6 步</a> → <a href=\"#step4\">本页第 4 步</a>",
     "site.bl.8": "<a href=\"../../../psychology/cognition/signal-detection/\">信号检测论 · 分得清，和愿意说“有”，是两回事</a>：→ <a href=\"#step2\">本页第 2 步</a>",
-    "site.bl.9": "<a href=\"../../../signal/control/kalman/\">卡尔曼滤波 · 在预测与测量之间称重</a>：<a href=\"../../../signal/control/kalman/#step2\">该课第 2 步</a> → <a href=\"#step3\">本页第 3 步</a>；→ <a href=\"#step3\">本页第 3 步</a>"
+    "site.bl.9": "<a href=\"../../../signal/control/kalman/\">卡尔曼滤波 · 在预测与测量之间称重</a>：<a href=\"../../../signal/control/kalman/#step2\">该课第 2 步</a> → <a href=\"#step3\">本页第 3 步</a>；<a href=\"../../../signal/control/kalman/#step6\">该课第 6 步</a> → <a href=\"#step3\">本页第 3 步</a>"
   },
   en: {
     back: "← Knowledge Index",
@@ -376,7 +376,7 @@ const STR = {
     "site.bl.6": "<a href=\"../../stochastic/entropy/\">Entropy · The Average of Surprise</a>: → <a href=\"#step2\">this page step 2</a>",
     "site.bl.7": "<a href=\"../../stochastic/monte-carlo/\">Monte Carlo · Counting π with Scattered Beans</a>: <a href=\"../../stochastic/monte-carlo/#step6\">its step 6</a> → <a href=\"#step4\">this page step 4</a>",
     "site.bl.8": "<a href=\"../../../psychology/cognition/signal-detection/\">Signal Detection Theory · Telling Apart vs. Willing to Say “Yes”</a>: → <a href=\"#step2\">this page step 2</a>",
-    "site.bl.9": "<a href=\"../../../signal/control/kalman/\">Kalman Filter · Weighing Prediction Against Measurement</a>: <a href=\"../../../signal/control/kalman/#step2\">its step 2</a> → <a href=\"#step3\">this page step 3</a>; → <a href=\"#step3\">this page step 3</a>"
+    "site.bl.9": "<a href=\"../../../signal/control/kalman/\">Kalman Filter · Weighing Prediction Against Measurement</a>: <a href=\"../../../signal/control/kalman/#step2\">its step 2</a> → <a href=\"#step3\">this page step 3</a>; <a href=\"../../../signal/control/kalman/#step6\">its step 6</a> → <a href=\"#step3\">this page step 3</a>"
   }
 };
 

@@ -34,7 +34,7 @@
    "from": "inverted-pendulum",
    "links": [
     {
-     "from": null,
+     "from": "step6",
      "to": "step4"
     }
    ]
@@ -43,7 +43,7 @@
    "from": "frequency-response",
    "links": [
     {
-     "from": null,
+     "from": "step6",
      "to": "step4"
     }
    ]

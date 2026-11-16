@@ -83,7 +83,7 @@
      "to": "step5"
     },
     {
-     "from": null,
+     "from": "step6",
      "to": "step5"
     }
    ]
@@ -92,7 +92,7 @@
    "from": "convolution",
    "links": [
     {
-     "from": null,
+     "from": "step6",
      "to": "step5"
     }
    ]
@@ -114,7 +114,7 @@
      "to": "step0"
     },
     {
-     "from": null,
+     "from": "step6",
      "to": "step5"
     }
    ]

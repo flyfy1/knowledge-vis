@@ -201,10 +201,10 @@ const STR = {
     "site.crumb.cat": "信号与系统",
     "site.crumb.sub": "系统",
     "site.bl.title": "被这些页面引用",
-    "site.bl.1": "<a href=\"../../control/inverted-pendulum/\">反馈与控制 · 双轮车为什么倒不下去</a>：<a href=\"../../control/inverted-pendulum/#step2\">该课第 2 步</a> → <a href=\"#step2\">本页第 2 步</a>；→ <a href=\"#step3\">本页第 3 步</a>",
-    "site.bl.2": "<a href=\"../../control/kalman/\">卡尔曼滤波 · 在预测与测量之间称重</a>：→ <a href=\"#step3\">本页第 3 步</a>",
-    "site.bl.3": "<a href=\"../convolution/\">卷积 · 一步一交互</a>：<a href=\"../convolution/#step5\">该课第 5 步</a> → <a href=\"#step1\">本页第 1 步</a>；→ <a href=\"#step2\">本页第 2 步</a>",
-    "site.bl.4": "<a href=\"../frequency-response/\">频率响应与滤波 · 按频率挑食的盒子</a>：→ <a href=\"#step2\">本页第 2 步</a>"
+    "site.bl.1": "<a href=\"../../control/inverted-pendulum/\">反馈与控制 · 双轮车为什么倒不下去</a>：<a href=\"../../control/inverted-pendulum/#step2\">该课第 2 步</a> → <a href=\"#step2\">本页第 2 步</a>；<a href=\"../../control/inverted-pendulum/#step6\">该课第 6 步</a> → <a href=\"#step3\">本页第 3 步</a>",
+    "site.bl.2": "<a href=\"../../control/kalman/\">卡尔曼滤波 · 在预测与测量之间称重</a>：<a href=\"../../control/kalman/#step6\">该课第 6 步</a> → <a href=\"#step3\">本页第 3 步</a>",
+    "site.bl.3": "<a href=\"../convolution/\">卷积 · 一步一交互</a>：<a href=\"../convolution/#step5\">该课第 5 步</a> → <a href=\"#step1\">本页第 1 步</a>；<a href=\"../convolution/#step6\">该课第 6 步</a> → <a href=\"#step2\">本页第 2 步</a>",
+    "site.bl.4": "<a href=\"../frequency-response/\">频率响应与滤波 · 按频率挑食的盒子</a>：<a href=\"../frequency-response/#step6\">该课第 6 步</a> → <a href=\"#step2\">本页第 2 步</a>"
   },
   en: {
     back: "← Knowledge Index",
@@ -399,10 +399,10 @@ const STR = {
     "site.crumb.cat": "Signals & Systems",
     "site.crumb.sub": "Systems",
     "site.bl.title": "Linked from",
-    "site.bl.1": "<a href=\"../../control/inverted-pendulum/\">Feedback & Control · Why the Two-Wheeled Bot Never Falls</a>: <a href=\"../../control/inverted-pendulum/#step2\">its step 2</a> → <a href=\"#step2\">this page step 2</a>; → <a href=\"#step3\">this page step 3</a>",
-    "site.bl.2": "<a href=\"../../control/kalman/\">Kalman Filter · Weighing Prediction Against Measurement</a>: → <a href=\"#step3\">this page step 3</a>",
-    "site.bl.3": "<a href=\"../convolution/\">Convolution · One Interaction at a Time</a>: <a href=\"../convolution/#step5\">its step 5</a> → <a href=\"#step1\">this page step 1</a>; → <a href=\"#step2\">this page step 2</a>",
-    "site.bl.4": "<a href=\"../frequency-response/\">Frequency Response & Filters · A Box That Eats by Frequency</a>: → <a href=\"#step2\">this page step 2</a>"
+    "site.bl.1": "<a href=\"../../control/inverted-pendulum/\">Feedback & Control · Why the Two-Wheeled Bot Never Falls</a>: <a href=\"../../control/inverted-pendulum/#step2\">its step 2</a> → <a href=\"#step2\">this page step 2</a>; <a href=\"../../control/inverted-pendulum/#step6\">its step 6</a> → <a href=\"#step3\">this page step 3</a>",
+    "site.bl.2": "<a href=\"../../control/kalman/\">Kalman Filter · Weighing Prediction Against Measurement</a>: <a href=\"../../control/kalman/#step6\">its step 6</a> → <a href=\"#step3\">this page step 3</a>",
+    "site.bl.3": "<a href=\"../convolution/\">Convolution · One Interaction at a Time</a>: <a href=\"../convolution/#step5\">its step 5</a> → <a href=\"#step1\">this page step 1</a>; <a href=\"../convolution/#step6\">its step 6</a> → <a href=\"#step2\">this page step 2</a>",
+    "site.bl.4": "<a href=\"../frequency-response/\">Frequency Response & Filters · A Box That Eats by Frequency</a>: <a href=\"../frequency-response/#step6\">its step 6</a> → <a href=\"#step2\">this page step 2</a>"
   }
 };
 

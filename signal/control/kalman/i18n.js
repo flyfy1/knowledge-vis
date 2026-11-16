@@ -141,9 +141,9 @@ const STR = {
     "site.crumb.cat": "信号与系统",
     "site.crumb.sub": "控制与估计",
     "site.bl.title": "被这些页面引用",
-    "site.bl.1": "<a href=\"../../../math/linear-algebra/eigenvectors/\">特征值与特征向量 · 矩阵不转的那些方向</a>：<a href=\"../../../math/linear-algebra/eigenvectors/#step5\">该课第 5 步</a> → <a href=\"#step5\">本页第 5 步</a>；→ <a href=\"#step5\">本页第 5 步</a>",
-    "site.bl.2": "<a href=\"../../../probability/inference/bayes-updating/\">贝叶斯 · 先查底子，再看证据</a>：→ <a href=\"#step2\">本页第 2 步</a>",
-    "site.bl.3": "<a href=\"../inverted-pendulum/\">反馈与控制 · 双轮车为什么倒不下去</a>：→ <a href=\"#step6\">本页第 6 步</a>",
+    "site.bl.1": "<a href=\"../../../math/linear-algebra/eigenvectors/\">特征值与特征向量 · 矩阵不转的那些方向</a>：<a href=\"../../../math/linear-algebra/eigenvectors/#step5\">该课第 5 步</a> → <a href=\"#step5\">本页第 5 步</a>；<a href=\"../../../math/linear-algebra/eigenvectors/#step6\">该课第 6 步</a> → <a href=\"#step5\">本页第 5 步</a>",
+    "site.bl.2": "<a href=\"../../../probability/inference/bayes-updating/\">贝叶斯 · 先查底子，再看证据</a>：<a href=\"../../../probability/inference/bayes-updating/#step6\">该课第 6 步</a> → <a href=\"#step2\">本页第 2 步</a>",
+    "site.bl.3": "<a href=\"../inverted-pendulum/\">反馈与控制 · 双轮车为什么倒不下去</a>：<a href=\"../inverted-pendulum/#step6\">该课第 6 步</a> → <a href=\"#step6\">本页第 6 步</a>",
     "site.bl.4": "<a href=\"../../../tech/devices/inside-a-phone/\">一部手机里的十个道理</a>：→ <a href=\"#step2\">本页第 2 步</a>"
   },
   en: {
@@ -279,9 +279,9 @@ const STR = {
     "site.crumb.cat": "Signals & Systems",
     "site.crumb.sub": "Control & Estimation",
     "site.bl.title": "Linked from",
-    "site.bl.1": "<a href=\"../../../math/linear-algebra/eigenvectors/\">Eigenvalues & Eigenvectors · The Directions a Matrix Cannot Turn</a>: <a href=\"../../../math/linear-algebra/eigenvectors/#step5\">its step 5</a> → <a href=\"#step5\">this page step 5</a>; → <a href=\"#step5\">this page step 5</a>",
-    "site.bl.2": "<a href=\"../../../probability/inference/bayes-updating/\">Bayes · Check the Base Rate Before the Evidence</a>: → <a href=\"#step2\">this page step 2</a>",
-    "site.bl.3": "<a href=\"../inverted-pendulum/\">Feedback & Control · Why the Two-Wheeled Bot Never Falls</a>: → <a href=\"#step6\">this page step 6</a>",
+    "site.bl.1": "<a href=\"../../../math/linear-algebra/eigenvectors/\">Eigenvalues & Eigenvectors · The Directions a Matrix Cannot Turn</a>: <a href=\"../../../math/linear-algebra/eigenvectors/#step5\">its step 5</a> → <a href=\"#step5\">this page step 5</a>; <a href=\"../../../math/linear-algebra/eigenvectors/#step6\">its step 6</a> → <a href=\"#step5\">this page step 5</a>",
+    "site.bl.2": "<a href=\"../../../probability/inference/bayes-updating/\">Bayes · Check the Base Rate Before the Evidence</a>: <a href=\"../../../probability/inference/bayes-updating/#step6\">its step 6</a> → <a href=\"#step2\">this page step 2</a>",
+    "site.bl.3": "<a href=\"../inverted-pendulum/\">Feedback & Control · Why the Two-Wheeled Bot Never Falls</a>: <a href=\"../inverted-pendulum/#step6\">its step 6</a> → <a href=\"#step6\">this page step 6</a>",
     "site.bl.4": "<a href=\"../../../tech/devices/inside-a-phone/\">Ten Ideas Inside One Phone</a>: → <a href=\"#step2\">this page step 2</a>"
   }
 };

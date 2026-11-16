@@ -16,7 +16,7 @@
    "from": "fourier",
    "links": [
     {
-     "from": null,
+     "from": "step6",
      "to": "step4"
     }
    ]
@@ -25,7 +25,7 @@
    "from": "laplace",
    "links": [
     {
-     "from": null,
+     "from": "step6",
      "to": "step4"
     }
    ]

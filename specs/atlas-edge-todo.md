@@ -16,7 +16,6 @@ anchor; a link to the page top has no anchor).
 ## 冰冻肥皂泡 · 水膜里的结晶 / Frozen Soap Bubbles · Ice in a Thin Film → 光的反射与折射 · 拐弯的规矩 / Reflection & Refraction · How Light Bends
 
 - `frozen-bubble#step2` → `reflection-refraction#step2`
-- `frozen-bubble` → `reflection-refraction#step2`
 
 ## 数字没有说谎，结论却错了 / Every Number Was True, and the Conclusion Was Still Wrong → 中心极限定理 · 平均值总会变成钟形 / Central Limit Theorem · Averages Always Turn Bell-Shaped
 
@@ -401,15 +400,15 @@ anchor; a link to the page top has no anchor).
 ## 反馈与控制 · 双轮车为什么倒不下去 / Feedback & Control · Why the Two-Wheeled Bot Never Falls → 冲激与 LTI · 给系统一巴掌 / Impulse & LTI · Slap the System
 
 - `inverted-pendulum#step2` → `lti-systems#step2`: feedback → impulse
-- `inverted-pendulum` → `lti-systems#step3`: ? → lti
+- `inverted-pendulum#step6` → `lti-systems#step3`: ? → lti
 
 ## 反馈与控制 · 双轮车为什么倒不下去 / Feedback & Control · Why the Two-Wheeled Bot Never Falls → 拉普拉斯与 ROC · 给频率配一个寿命 / Laplace Transform & ROC · Giving Frequencies a Lifespan
 
-- `inverted-pendulum` → `laplace#step4`: ? → poles
+- `inverted-pendulum#step6` → `laplace#step4`: ? → poles
 
 ## 采样与混叠 · 偷看得太懒，就会看错 / Sampling & Aliasing · Peek Too Lazily and You'll See It Wrong → 卷积 · 一步一交互 / Convolution · One Interaction at a Time
 
-- `sampling` → `convolution#step4`
+- `sampling#step6` → `convolution#step4`
 
 ## 蒙特卡洛 · 撒豆子算 π / Monte Carlo · Counting π with Scattered Beans → 卷积 · 一步一交互 / Convolution · One Interaction at a Time
 
@@ -417,12 +416,12 @@ anchor; a link to the page top has no anchor).
 
 ## 拉普拉斯与 ROC · 给频率配一个寿命 / Laplace Transform & ROC · Giving Frequencies a Lifespan → 反馈与控制 · 双轮车为什么倒不下去 / Feedback & Control · Why the Two-Wheeled Bot Never Falls
 
-- `laplace` → `inverted-pendulum#step2`: ? → feedback
-- `laplace` → `inverted-pendulum#step3`
+- `laplace#step4` → `inverted-pendulum#step2`: poles → feedback
+- `laplace#step6` → `inverted-pendulum#step3`
 
 ## 拉普拉斯与 ROC · 给频率配一个寿命 / Laplace Transform & ROC · Giving Frequencies a Lifespan → 采样与混叠 · 偷看得太懒，就会看错 / Sampling & Aliasing · Peek Too Lazily and You'll See It Wrong
 
-- `laplace` → `sampling#step4`
+- `laplace#step6` → `sampling#step4`
 
 ## Z 变换 · 把 s 平面卷成单位圆 / The Z-Transform · Rolling the s-Plane into the Unit Circle → 三角函数 · 单位圆 / Trigonometric Functions · The Unit Circle
 
@@ -443,12 +442,12 @@ anchor; a link to the page top has no anchor).
 ## 特征值与特征向量 · 矩阵不转的那些方向 / Eigenvalues & Eigenvectors · The Directions a Matrix Cannot Turn → 梯度下降 · 摸黑下山 / Gradient Descent · Feeling Your Way Downhill
 
 - `eigenvectors#step4` → `gradient-descent#step2`
-- `eigenvectors` → `gradient-descent#step2`
+- `eigenvectors#step6` → `gradient-descent#step2`
 
 ## 特征值与特征向量 · 矩阵不转的那些方向 / Eigenvalues & Eigenvectors · The Directions a Matrix Cannot Turn → 卡尔曼滤波 · 在预测与测量之间称重 / Kalman Filter · Weighing Prediction Against Measurement
 
 - `eigenvectors#step5` → `kalman#step5`
-- `eigenvectors` → `kalman#step5`
+- `eigenvectors#step6` → `kalman#step5`
 
 ## 特征值与特征向量 · 矩阵不转的那些方向 / Eigenvalues & Eigenvectors · The Directions a Matrix Cannot Turn → Z 变换 · 把 s 平面卷成单位圆 / The Z-Transform · Rolling the s-Plane into the Unit Circle
 
@@ -460,11 +459,11 @@ anchor; a link to the page top has no anchor).
 
 ## 冲激与 LTI · 给系统一巴掌 / Impulse & LTI · Slap the System → Z 变换 · 把 s 平面卷成单位圆 / The Z-Transform · Rolling the s-Plane into the Unit Circle
 
-- `lti-systems` → `z-transform#step2`
+- `lti-systems#step6` → `z-transform#step2`
 
 ## 冲激与 LTI · 给系统一巴掌 / Impulse & LTI · Slap the System → 反馈与控制 · 双轮车为什么倒不下去 / Feedback & Control · Why the Two-Wheeled Bot Never Falls
 
-- `lti-systems` → `inverted-pendulum#step2`: ? → feedback
+- `lti-systems#step6` → `inverted-pendulum#step2`: ? → feedback
 
 ## 频率响应与滤波 · 按频率挑食的盒子 / Frequency Response & Filters · A Box That Eats by Frequency → 傅里叶变换 · 一步一交互 / The Fourier Transform · One Interaction at a Time
 
@@ -472,7 +471,7 @@ anchor; a link to the page top has no anchor).
 
 ## 频率响应与滤波 · 按频率挑食的盒子 / Frequency Response & Filters · A Box That Eats by Frequency → Z 变换 · 把 s 平面卷成单位圆 / The Z-Transform · Rolling the s-Plane into the Unit Circle
 
-- `frequency-response` → `z-transform#step6`
+- `frequency-response#step6` → `z-transform#step6`
 
 ## 调制与频移 · 把信号搬上高频运走 / Modulation · Shipping Signals on a Carrier → 频率响应与滤波 · 按频率挑食的盒子 / Frequency Response & Filters · A Box That Eats by Frequency
 
@@ -482,11 +481,11 @@ anchor; a link to the page top has no anchor).
 ## 卡尔曼滤波 · 在预测与测量之间称重 / Kalman Filter · Weighing Prediction Against Measurement → 特征值与特征向量 · 矩阵不转的那些方向 / Eigenvalues & Eigenvectors · The Directions a Matrix Cannot Turn
 
 - `kalman#step5` → `eigenvectors#step5`
-- `kalman` → `eigenvectors#step5`
+- `kalman#step6` → `eigenvectors#step5`
 
 ## 卡尔曼滤波 · 在预测与测量之间称重 / Kalman Filter · Weighing Prediction Against Measurement → 冲激与 LTI · 给系统一巴掌 / Impulse & LTI · Slap the System
 
-- `kalman` → `lti-systems#step3`: ? → lti
+- `kalman#step6` → `lti-systems#step3`: ? → lti
 
 ## 排序与大 O · 增长的形状 / Sorting & Big O · The Shape of Growth → 梯度下降 · 摸黑下山 / Gradient Descent · Feeling Your Way Downhill
 

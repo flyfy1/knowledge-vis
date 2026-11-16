@@ -150,8 +150,8 @@ const STR = {
     "site.bl.1": "<a href=\"../../../atlas/\">知识地图 · 概念与联系</a>：→ <a href=\"#step4\">本页第 4 步</a>",
     "site.bl.2": "<a href=\"../../../engineering/control/pid-control/\">反馈控制 · 先看差多少，再决定推多少</a>：→ <a href=\"#step4\">本页第 4 步</a>",
     "site.bl.3": "<a href=\"../../../engineering/control/step-response/\">阶跃响应 · 阻尼比决定冲多远，固有频率决定多快</a>：→ <a href=\"#step4\">本页第 4 步</a>",
-    "site.bl.4": "<a href=\"../../control/inverted-pendulum/\">反馈与控制 · 双轮车为什么倒不下去</a>：→ <a href=\"#step4\">本页第 4 步</a>",
-    "site.bl.5": "<a href=\"../../systems/frequency-response/\">频率响应与滤波 · 按频率挑食的盒子</a>：→ <a href=\"#step4\">本页第 4 步</a>",
+    "site.bl.4": "<a href=\"../../control/inverted-pendulum/\">反馈与控制 · 双轮车为什么倒不下去</a>：<a href=\"../../control/inverted-pendulum/#step6\">该课第 6 步</a> → <a href=\"#step4\">本页第 4 步</a>",
+    "site.bl.5": "<a href=\"../../systems/frequency-response/\">频率响应与滤波 · 按频率挑食的盒子</a>：<a href=\"../../systems/frequency-response/#step6\">该课第 6 步</a> → <a href=\"#step4\">本页第 4 步</a>",
     "site.bl.6": "<a href=\"../z-transform/\">Z 变换 · 把 s 平面卷成单位圆</a>：→ <a href=\"#step3\">本页第 3 步</a>、<a href=\"#step6\">本页第 6 步</a>"
   },
   en: {
@@ -296,8 +296,8 @@ const STR = {
     "site.bl.1": "<a href=\"../../../atlas/\">Knowledge Atlas · Concepts & Connections</a>: → <a href=\"#step4\">this page step 4</a>",
     "site.bl.2": "<a href=\"../../../engineering/control/pid-control/\">Feedback Control · See the Error, Then Act</a>: → <a href=\"#step4\">this page step 4</a>",
     "site.bl.3": "<a href=\"../../../engineering/control/step-response/\">Step Response · Damping Sets the Overshoot, Natural Frequency Sets the Speed</a>: → <a href=\"#step4\">this page step 4</a>",
-    "site.bl.4": "<a href=\"../../control/inverted-pendulum/\">Feedback & Control · Why the Two-Wheeled Bot Never Falls</a>: → <a href=\"#step4\">this page step 4</a>",
-    "site.bl.5": "<a href=\"../../systems/frequency-response/\">Frequency Response & Filters · A Box That Eats by Frequency</a>: → <a href=\"#step4\">this page step 4</a>",
+    "site.bl.4": "<a href=\"../../control/inverted-pendulum/\">Feedback & Control · Why the Two-Wheeled Bot Never Falls</a>: <a href=\"../../control/inverted-pendulum/#step6\">its step 6</a> → <a href=\"#step4\">this page step 4</a>",
+    "site.bl.5": "<a href=\"../../systems/frequency-response/\">Frequency Response & Filters · A Box That Eats by Frequency</a>: <a href=\"../../systems/frequency-response/#step6\">its step 6</a> → <a href=\"#step4\">this page step 4</a>",
     "site.bl.6": "<a href=\"../z-transform/\">The Z-Transform · Rolling the s-Plane into the Unit Circle</a>: → <a href=\"#step3\">this page step 3</a>, <a href=\"#step6\">this page step 6</a>"
   }
 };

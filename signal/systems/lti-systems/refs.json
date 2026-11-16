@@ -11,7 +11,7 @@
      "to": "step2"
     },
     {
-     "from": null,
+     "from": "step6",
      "to": "step3"
     }
    ]
@@ -20,7 +20,7 @@
    "from": "kalman",
    "links": [
     {
-     "from": null,
+     "from": "step6",
      "to": "step3"
     }
    ]
@@ -33,7 +33,7 @@
      "to": "step1"
     },
     {
-     "from": null,
+     "from": "step6",
      "to": "step2"
     }
    ]
@@ -42,7 +42,7 @@
    "from": "frequency-response",
    "links": [
     {
-     "from": null,
+     "from": "step6",
      "to": "step2"
     }
    ]

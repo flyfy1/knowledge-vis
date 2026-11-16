@@ -148,9 +148,9 @@ const STR = {
     "site.bl.2": "<a href=\"../../../computing/ml/cnn-feature-maps/\">卷积神经网络的特征图 · 小窗口怎样“看”图</a>：→ <a href=\"#step0\">本页第 0 步</a>",
     "site.bl.3": "<a href=\"../../../probability/statistics/central-limit-theorem/\">中心极限定理 · 平均值总会变成钟形</a>：<a href=\"../../../probability/statistics/central-limit-theorem/#step5\">该课第 5 步</a> → <a href=\"#step3\">本页第 3 步</a>；<a href=\"../../../probability/statistics/central-limit-theorem/#step6\">该课第 6 步</a> → <a href=\"#step3\">本页第 3 步</a>",
     "site.bl.4": "<a href=\"../../../probability/stochastic/monte-carlo/\">蒙特卡洛 · 撒豆子算 π</a>：<a href=\"../../../probability/stochastic/monte-carlo/#step3\">该课第 3 步</a> → <a href=\"#step3\">本页第 3 步</a>",
-    "site.bl.5": "<a href=\"../../sampling/sampling/\">采样与混叠 · 偷看得太懒，就会看错</a>：→ <a href=\"#step4\">本页第 4 步</a>",
-    "site.bl.6": "<a href=\"../lti-systems/\">冲激与 LTI · 给系统一巴掌</a>：→ <a href=\"#step2\">本页第 2 步</a>",
-    "site.bl.7": "<a href=\"../../transforms/fourier/\">傅里叶变换 · 一步一交互</a>：→ <a href=\"#step6\">本页第 6 步</a>",
+    "site.bl.5": "<a href=\"../../sampling/sampling/\">采样与混叠 · 偷看得太懒，就会看错</a>：<a href=\"../../sampling/sampling/#step6\">该课第 6 步</a> → <a href=\"#step4\">本页第 4 步</a>",
+    "site.bl.6": "<a href=\"../lti-systems/\">冲激与 LTI · 给系统一巴掌</a>：<a href=\"../lti-systems/#step2\">该课第 2 步</a> → <a href=\"#step2\">本页第 2 步</a>；<a href=\"../lti-systems/#step6\">该课第 6 步</a> → <a href=\"#step2\">本页第 2 步</a>",
+    "site.bl.7": "<a href=\"../../transforms/fourier/\">傅里叶变换 · 一步一交互</a>：<a href=\"../../transforms/fourier/#step6\">该课第 6 步</a> → <a href=\"#step6\">本页第 6 步</a>",
     "site.bl.8": "<a href=\"../../transforms/wavelets/\">小波 · 让窗口随频率伸缩</a>：→ <a href=\"#step1\">本页第 1 步</a>"
   },
   en: {
@@ -293,9 +293,9 @@ const STR = {
     "site.bl.2": "<a href=\"../../../computing/ml/cnn-feature-maps/\">CNN Feature Maps · How a Small Window “Sees” an Image</a>: → <a href=\"#step0\">this page step 0</a>",
     "site.bl.3": "<a href=\"../../../probability/statistics/central-limit-theorem/\">Central Limit Theorem · Averages Always Turn Bell-Shaped</a>: <a href=\"../../../probability/statistics/central-limit-theorem/#step5\">its step 5</a> → <a href=\"#step3\">this page step 3</a>; <a href=\"../../../probability/statistics/central-limit-theorem/#step6\">its step 6</a> → <a href=\"#step3\">this page step 3</a>",
     "site.bl.4": "<a href=\"../../../probability/stochastic/monte-carlo/\">Monte Carlo · Counting π with Scattered Beans</a>: <a href=\"../../../probability/stochastic/monte-carlo/#step3\">its step 3</a> → <a href=\"#step3\">this page step 3</a>",
-    "site.bl.5": "<a href=\"../../sampling/sampling/\">Sampling & Aliasing · Peek Too Lazily and You'll See It Wrong</a>: → <a href=\"#step4\">this page step 4</a>",
-    "site.bl.6": "<a href=\"../lti-systems/\">Impulse & LTI · Slap the System</a>: → <a href=\"#step2\">this page step 2</a>",
-    "site.bl.7": "<a href=\"../../transforms/fourier/\">The Fourier Transform · One Interaction at a Time</a>: → <a href=\"#step6\">this page step 6</a>",
+    "site.bl.5": "<a href=\"../../sampling/sampling/\">Sampling & Aliasing · Peek Too Lazily and You'll See It Wrong</a>: <a href=\"../../sampling/sampling/#step6\">its step 6</a> → <a href=\"#step4\">this page step 4</a>",
+    "site.bl.6": "<a href=\"../lti-systems/\">Impulse & LTI · Slap the System</a>: <a href=\"../lti-systems/#step2\">its step 2</a> → <a href=\"#step2\">this page step 2</a>; <a href=\"../lti-systems/#step6\">its step 6</a> → <a href=\"#step2\">this page step 2</a>",
+    "site.bl.7": "<a href=\"../../transforms/fourier/\">The Fourier Transform · One Interaction at a Time</a>: <a href=\"../../transforms/fourier/#step6\">its step 6</a> → <a href=\"#step6\">this page step 6</a>",
     "site.bl.8": "<a href=\"../../transforms/wavelets/\">Wavelets · Windows That Stretch With Frequency</a>: → <a href=\"#step1\">this page step 1</a>"
   }
 };

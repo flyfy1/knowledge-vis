@@ -140,8 +140,8 @@ const STR = {
     "site.crumb.sub": "采样与调制",
     "site.bl.title": "被这些页面引用",
     "site.bl.1": "<a href=\"../modulation/\">调制与频移 · 把信号搬上高频运走</a>：→ <a href=\"#step4\">本页第 4 步</a>",
-    "site.bl.2": "<a href=\"../../transforms/fourier/\">傅里叶变换 · 一步一交互</a>：→ <a href=\"#step4\">本页第 4 步</a>",
-    "site.bl.3": "<a href=\"../../transforms/laplace/\">拉普拉斯与 ROC · 给频率配一个寿命</a>：→ <a href=\"#step4\">本页第 4 步</a>",
+    "site.bl.2": "<a href=\"../../transforms/fourier/\">傅里叶变换 · 一步一交互</a>：<a href=\"../../transforms/fourier/#step6\">该课第 6 步</a> → <a href=\"#step4\">本页第 4 步</a>",
+    "site.bl.3": "<a href=\"../../transforms/laplace/\">拉普拉斯与 ROC · 给频率配一个寿命</a>：<a href=\"../../transforms/laplace/#step6\">该课第 6 步</a> → <a href=\"#step4\">本页第 4 步</a>",
     "site.bl.4": "<a href=\"../../transforms/wavelets/\">小波 · 让窗口随频率伸缩</a>：→ <a href=\"#step3\">本页第 3 步</a>",
     "site.bl.5": "<a href=\"../../transforms/z-transform/\">Z 变换 · 把 s 平面卷成单位圆</a>：→ <a href=\"#step4\">本页第 4 步</a>"
   },
@@ -277,8 +277,8 @@ const STR = {
     "site.crumb.sub": "Sampling & Modulation",
     "site.bl.title": "Linked from",
     "site.bl.1": "<a href=\"../modulation/\">Modulation · Shipping Signals on a Carrier</a>: → <a href=\"#step4\">this page step 4</a>",
-    "site.bl.2": "<a href=\"../../transforms/fourier/\">The Fourier Transform · One Interaction at a Time</a>: → <a href=\"#step4\">this page step 4</a>",
-    "site.bl.3": "<a href=\"../../transforms/laplace/\">Laplace Transform & ROC · Giving Frequencies a Lifespan</a>: → <a href=\"#step4\">this page step 4</a>",
+    "site.bl.2": "<a href=\"../../transforms/fourier/\">The Fourier Transform · One Interaction at a Time</a>: <a href=\"../../transforms/fourier/#step6\">its step 6</a> → <a href=\"#step4\">this page step 4</a>",
+    "site.bl.3": "<a href=\"../../transforms/laplace/\">Laplace Transform & ROC · Giving Frequencies a Lifespan</a>: <a href=\"../../transforms/laplace/#step6\">its step 6</a> → <a href=\"#step4\">this page step 4</a>",
     "site.bl.4": "<a href=\"../../transforms/wavelets/\">Wavelets · Windows That Stretch With Frequency</a>: → <a href=\"#step3\">this page step 3</a>",
     "site.bl.5": "<a href=\"../../transforms/z-transform/\">The Z-Transform · Rolling the s-Plane into the Unit Circle</a>: → <a href=\"#step4\">this page step 4</a>"
   }

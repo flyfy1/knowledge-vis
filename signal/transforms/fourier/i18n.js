@@ -117,10 +117,10 @@ const STR = {
     "site.bl.6": "<a href=\"../../../physics/waves/doppler-effect/\">多普勒效应 · 驶近变尖，驶远变沉</a>：→ <a href=\"#step0\">本页第 0 步</a>",
     "site.bl.7": "<a href=\"../../../physics/waves/interference/\">波的干涉 · 闹与静的图样</a>：→ <a href=\"#step2\">本页第 2 步</a>",
     "site.bl.8": "<a href=\"../../sampling/modulation/\">调制与频移 · 把信号搬上高频运走</a>：→ <a href=\"#step5\">本页第 5 步</a>",
-    "site.bl.9": "<a href=\"../../sampling/sampling/\">采样与混叠 · 偷看得太懒，就会看错</a>：<a href=\"../../sampling/sampling/#step4\">该课第 4 步</a> → <a href=\"#step5\">本页第 5 步</a>；→ <a href=\"#step5\">本页第 5 步</a>",
-    "site.bl.10": "<a href=\"../../systems/convolution/\">卷积 · 一步一交互</a>：→ <a href=\"#step5\">本页第 5 步</a>",
+    "site.bl.9": "<a href=\"../../sampling/sampling/\">采样与混叠 · 偷看得太懒，就会看错</a>：<a href=\"../../sampling/sampling/#step4\">该课第 4 步</a> → <a href=\"#step5\">本页第 5 步</a>；<a href=\"../../sampling/sampling/#step6\">该课第 6 步</a> → <a href=\"#step5\">本页第 5 步</a>",
+    "site.bl.10": "<a href=\"../../systems/convolution/\">卷积 · 一步一交互</a>：<a href=\"../../systems/convolution/#step6\">该课第 6 步</a> → <a href=\"#step5\">本页第 5 步</a>",
     "site.bl.11": "<a href=\"../../systems/frequency-response/\">频率响应与滤波 · 按频率挑食的盒子</a>：<a href=\"../../systems/frequency-response/#step0\">该课第 0 步</a> → <a href=\"#step5\">本页第 5 步</a>",
-    "site.bl.12": "<a href=\"../laplace/\">拉普拉斯与 ROC · 给频率配一个寿命</a>：<a href=\"../laplace/#step0\">该课第 0 步</a> → <a href=\"#step0\">本页第 0 步</a>；→ <a href=\"#step5\">本页第 5 步</a>",
+    "site.bl.12": "<a href=\"../laplace/\">拉普拉斯与 ROC · 给频率配一个寿命</a>：<a href=\"../laplace/#step0\">该课第 0 步</a> → <a href=\"#step0\">本页第 0 步</a>；<a href=\"../laplace/#step6\">该课第 6 步</a> → <a href=\"#step5\">本页第 5 步</a>",
     "site.bl.13": "<a href=\"../wavelets/\">小波 · 让窗口随频率伸缩</a>：→ <a href=\"#step5\">本页第 5 步</a>",
     "site.bl.14": "<a href=\"../z-transform/\">Z 变换 · 把 s 平面卷成单位圆</a>：→ <a href=\"#step5\">本页第 5 步</a>"
   },
@@ -233,10 +233,10 @@ const STR = {
     "site.bl.6": "<a href=\"../../../physics/waves/doppler-effect/\">The Doppler Effect · Higher as It Approaches, Lower as It Leaves</a>: → <a href=\"#step0\">this page step 0</a>",
     "site.bl.7": "<a href=\"../../../physics/waves/interference/\">Interference · A Pattern of Loud and Still</a>: → <a href=\"#step2\">this page step 2</a>",
     "site.bl.8": "<a href=\"../../sampling/modulation/\">Modulation · Shipping Signals on a Carrier</a>: → <a href=\"#step5\">this page step 5</a>",
-    "site.bl.9": "<a href=\"../../sampling/sampling/\">Sampling & Aliasing · Peek Too Lazily and You'll See It Wrong</a>: <a href=\"../../sampling/sampling/#step4\">its step 4</a> → <a href=\"#step5\">this page step 5</a>; → <a href=\"#step5\">this page step 5</a>",
-    "site.bl.10": "<a href=\"../../systems/convolution/\">Convolution · One Interaction at a Time</a>: → <a href=\"#step5\">this page step 5</a>",
+    "site.bl.9": "<a href=\"../../sampling/sampling/\">Sampling & Aliasing · Peek Too Lazily and You'll See It Wrong</a>: <a href=\"../../sampling/sampling/#step4\">its step 4</a> → <a href=\"#step5\">this page step 5</a>; <a href=\"../../sampling/sampling/#step6\">its step 6</a> → <a href=\"#step5\">this page step 5</a>",
+    "site.bl.10": "<a href=\"../../systems/convolution/\">Convolution · One Interaction at a Time</a>: <a href=\"../../systems/convolution/#step6\">its step 6</a> → <a href=\"#step5\">this page step 5</a>",
     "site.bl.11": "<a href=\"../../systems/frequency-response/\">Frequency Response & Filters · A Box That Eats by Frequency</a>: <a href=\"../../systems/frequency-response/#step0\">its step 0</a> → <a href=\"#step5\">this page step 5</a>",
-    "site.bl.12": "<a href=\"../laplace/\">Laplace Transform & ROC · Giving Frequencies a Lifespan</a>: <a href=\"../laplace/#step0\">its step 0</a> → <a href=\"#step0\">this page step 0</a>; → <a href=\"#step5\">this page step 5</a>",
+    "site.bl.12": "<a href=\"../laplace/\">Laplace Transform & ROC · Giving Frequencies a Lifespan</a>: <a href=\"../laplace/#step0\">its step 0</a> → <a href=\"#step0\">this page step 0</a>; <a href=\"../laplace/#step6\">its step 6</a> → <a href=\"#step5\">this page step 5</a>",
     "site.bl.13": "<a href=\"../wavelets/\">Wavelets · Windows That Stretch With Frequency</a>: → <a href=\"#step5\">this page step 5</a>",
     "site.bl.14": "<a href=\"../z-transform/\">The Z-Transform · Rolling the s-Plane into the Unit Circle</a>: → <a href=\"#step5\">this page step 5</a>"
   }

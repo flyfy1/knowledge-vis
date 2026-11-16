@@ -193,7 +193,7 @@ const STR = {
     "site.bl.6": "<a href=\"../../geometry/conic-sections/\">圆锥曲线</a>：→ <a href=\"#step4\">本页第 4 步</a>",
     "site.bl.7": "<a href=\"../../geometry/pythagoras/\">勾股定理 · 一步一交互</a>：→ <a href=\"#step1\">本页第 1 步</a>",
     "site.bl.8": "<a href=\"../linear-transform/\">二维线性变换 · 矩阵如何挪动平面</a>：<a href=\"../linear-transform/#step4\">该课第 4 步</a> → <a href=\"#step1\">本页第 1 步</a>",
-    "site.bl.9": "<a href=\"../../../signal/control/kalman/\">卡尔曼滤波 · 在预测与测量之间称重</a>：<a href=\"../../../signal/control/kalman/#step5\">该课第 5 步</a> → <a href=\"#step5\">本页第 5 步</a>；→ <a href=\"#step5\">本页第 5 步</a>"
+    "site.bl.9": "<a href=\"../../../signal/control/kalman/\">卡尔曼滤波 · 在预测与测量之间称重</a>：<a href=\"../../../signal/control/kalman/#step5\">该课第 5 步</a> → <a href=\"#step5\">本页第 5 步</a>；<a href=\"../../../signal/control/kalman/#step6\">该课第 6 步</a> → <a href=\"#step5\">本页第 5 步</a>"
   },
   en: {
     docTitle: "Eigenvalues & Eigenvectors · The Directions a Matrix Won’t Turn · One Interaction per Step",
@@ -380,7 +380,7 @@ const STR = {
     "site.bl.6": "<a href=\"../../geometry/conic-sections/\">Conic Sections</a>: → <a href=\"#step4\">this page step 4</a>",
     "site.bl.7": "<a href=\"../../geometry/pythagoras/\">The Pythagorean Theorem · One Interaction at a Time</a>: → <a href=\"#step1\">this page step 1</a>",
     "site.bl.8": "<a href=\"../linear-transform/\">2D Linear Transformations · How Matrices Move the Plane</a>: <a href=\"../linear-transform/#step4\">its step 4</a> → <a href=\"#step1\">this page step 1</a>",
-    "site.bl.9": "<a href=\"../../../signal/control/kalman/\">Kalman Filter · Weighing Prediction Against Measurement</a>: <a href=\"../../../signal/control/kalman/#step5\">its step 5</a> → <a href=\"#step5\">this page step 5</a>; → <a href=\"#step5\">this page step 5</a>"
+    "site.bl.9": "<a href=\"../../../signal/control/kalman/\">Kalman Filter · Weighing Prediction Against Measurement</a>: <a href=\"../../../signal/control/kalman/#step5\">its step 5</a> → <a href=\"#step5\">this page step 5</a>; <a href=\"../../../signal/control/kalman/#step6\">its step 6</a> → <a href=\"#step5\">this page step 5</a>"
   }
 };
 

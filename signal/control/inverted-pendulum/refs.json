@@ -25,7 +25,7 @@
    "from": "kalman",
    "links": [
     {
-     "from": null,
+     "from": "step6",
      "to": "step2"
     }
    ]
@@ -34,7 +34,7 @@
    "from": "lti-systems",
    "links": [
     {
-     "from": null,
+     "from": "step6",
      "to": "step2"
     }
    ]
@@ -43,11 +43,11 @@
    "from": "laplace",
    "links": [
     {
-     "from": null,
+     "from": "step4",
      "to": "step2"
     },
     {
-     "from": null,
+     "from": "step6",
      "to": "step3"
     }
    ]
