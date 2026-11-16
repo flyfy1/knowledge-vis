@@ -916,11 +916,11 @@ anchor; a link to the page top has no anchor).
 
 ## 鸡兔同笼 · 先假设，差额会说话 / Chickens & Rabbits · Assume First, Let the Gap Speak → 方程天平 · 两边同做一件事 / Equations on a Balance · Do the Same to Both Sides
 
-- `chicken-rabbit` → `equation-scale#step3`
+- `chicken-rabbit#step5` → `equation-scale#step3`
 
 ## 鸡兔同笼 · 先假设，差额会说话 / Chickens & Rabbits · Assume First, Let the Gap Speak → 找规律 · 不画也能报出第 100 个 / Patterns · Name the 100th Without Drawing It
 
-- `chicken-rabbit` → `patterns-sequences#step1`
+- `chicken-rabbit#step5` → `patterns-sequences#step1`
 
 ## 圆的认识 · 圆规、半径与 π / The Circle · Compass, Radius and π → 对称与旋转 · 对折与转圈 / Symmetry & Rotation · Folding and Turning
 
