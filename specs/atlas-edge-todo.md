@@ -1191,11 +1191,11 @@ anchor; a link to the page top has no anchor).
 
 ## 引力透镜 · 宇宙里的凸透镜 / Gravitational Lensing · A Cosmic Convex Lens → 凸透镜成像 · 远近变像 / The Convex Lens · Near or Far, the Image Transforms
 
-- `gravitational-lensing` → `lens#step2`: ? → convex-lens
+- `gravitational-lensing#step5` → `lens#step2`: ? → convex-lens
 
 ## 引力透镜 · 宇宙里的凸透镜 / Gravitational Lensing · A Cosmic Convex Lens → 宇宙膨胀 · 空间本身在变大 / Cosmic Expansion · Space Itself Gets Larger
 
-- `gravitational-lensing` → `cosmology-expansion#step0`
+- `gravitational-lensing#step5` → `cosmology-expansion#step0`
 
 ## 万有引力与轨道 · 横着扔出去，会落下、绕圈还是飞走 / Gravity and Orbits · Throw It Sideways: Fall, Circle or Escape → 地球公转与四季 / Earth’s Orbit & the Seasons
 
