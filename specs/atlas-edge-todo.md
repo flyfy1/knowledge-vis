@@ -633,7 +633,7 @@ anchor; a link to the page top has no anchor).
 
 ## 缓冲溶液 · 把 pH 稳住 / Buffer Capacity · Holding pH Steady → 化学平衡 · 人数不变，人还在跑 / Chemical Equilibrium · Still Moving at Balance
 
-- `buffer-capacity` → `chemical-equilibrium#step2`
+- `buffer-capacity#step4` → `chemical-equilibrium#step2`
 
 ## 信号检测论 · 分得清，和愿意说“有”，是两回事 / Signal Detection Theory · Telling Apart vs. Willing to Say “Yes” → 二项分布到正态 · 钉板上长出的钟形 / Binomial to Normal · The Bell Curve Growing on a Pegboard
 

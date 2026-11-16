@@ -28,5 +28,35 @@
   "stage": "senior",
   "status": "live",
   "path": "chemistry/solutions/buffer-capacity/",
-  "order": 1200
+  "order": 1200,
+  "layout": "lesson",
+  "version": "20261116a",
+  "titleKey": "docTitle",
+  "legacyLayout": {
+    "_note": "Whitespace and markup of the hand-written lesson this page was converted from, so the conversion could be checked byte for byte (specs/site-template.md §3c).",
+    "section": {
+      "open": "<section class=\"step\" id=\"{id}\" data-step=\"{n}\">\n      <div class=\"step-inner\">",
+      "close": "\n      </div>\n    </section>"
+    },
+    "indent": "\n        ",
+    "leads": {
+      "h2:step0": "",
+      "h2:step1": "",
+      "h2:step2": "",
+      "h2:step3": "",
+      "h2:step4": ""
+    },
+    "mainGaps": [
+      "\n    ",
+      "\n    ",
+      "\n    ",
+      "\n    ",
+      "\n    ",
+      "\n  "
+    ],
+    "stepNav": {
+      "item": "\n    <a class=\"nav-step\" href=\"#{id}\" data-i18n=\"{key}\"></a>",
+      "end": "\n  "
+    }
+  }
 }
