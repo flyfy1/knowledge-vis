@@ -749,11 +749,11 @@ anchor; a link to the page top has no anchor).
 
 ## 酶 · 生物体内的催化剂 / Enzymes · Catalysts of the Living World → 反应速率 · 数一数成功碰撞 / Reaction Rates · Counting Successful Collisions
 
-- `enzymes` → `reaction-rates#step4`
+- `enzymes#step5` → `reaction-rates#step4`
 
 ## 酶 · 生物体内的催化剂 / Enzymes · Catalysts of the Living World → 酸碱平衡 · 分子在两边来回走 / Acid–Base Equilibrium · Molecules Move Both Ways
 
-- `enzymes` → `acid-base-equilibrium#step0`
+- `enzymes#step5` → `acid-base-equilibrium#step0`
 
 ## 化学方程式配平 / Balancing Chemical Equations → 分子与原子 / Molecules & Atoms
 

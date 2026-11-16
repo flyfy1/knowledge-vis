@@ -1,0 +1,44 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "enzymes",
+ "refs": [],
+ "backlinks": [
+  {
+   "from": "body-in-balance",
+   "links": [
+    {
+     "from": "ch3",
+     "to": "step1"
+    },
+    {
+     "from": "ch10",
+     "to": "step1"
+    }
+   ]
+  },
+  {
+   "from": "how-soy-sauce-gets-its-flavor",
+   "links": [
+    {
+     "from": "ch10",
+     "to": null
+    }
+   ]
+  },
+  {
+   "from": "why-fermented-tofu-tastes-good",
+   "links": [
+    {
+     "from": "ch2",
+     "to": null
+    },
+    {
+     "from": "ch9",
+     "to": null
+    }
+   ]
+  }
+ ],
+ "related": [],
+ "bindings": []
+}
