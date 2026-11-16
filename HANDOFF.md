@@ -1,6 +1,6 @@
 # HANDOFF.md — 开工前先读
 
-最后更新：2026-11-16，模板 Phase 3 批次 A 的独立评审 Agent（Claude Code）在第 1d 条加了评审结论、改了它的「遗留」；在此之前模板 Phase 3 批次 A 的提交 Agent（Claude Code）在「模板迁移与示意图补齐」加了第 1d 条；在此之前模板 Phase 2 的独立评审 Agent（Claude Code）在第 1c 条加了评审结论；在此之前模板 Phase 2 的提交 Agent（Claude Code）在「模板迁移与示意图补齐」加了第 1c 条、改了末尾「pages.config.js 仍手改」一句和第 2 部分「未上线：17 篇中文草稿」的登记说明；在此之前模板后续改进的提交 Agent（Claude Code）在「模板迁移与示意图补齐」加了第 1b 条、改了第 1a 条的「没转换」和第 3 条的遗留；在此之前 SIMD/浮点长文的登记 Agent（Claude Code）更新了「模板迁移与示意图补齐」第 1a、3 条（批次 A 已在线、SIMD 长文上线）；在此之前模板 Phase 1 批次 A 的提交 Agent（Claude Code）在「模板迁移与示意图补齐」加了第 1a 条；在此之前 SVG 视口检查的登记 Agent（Claude Code）更新了「模板迁移与示意图补齐」第 2 条的遗留项；在此之前存储 S1–S5 补图的登记 Agent（Claude Code）更新了「模板迁移与示意图补齐」第 2 条和存储系列的示意图状态；在此之前模板 Phase 0 的提交 Agent 更新了该节；第二部分其余内容仍是 2026-11-15 供电与网卡两篇上线后的状态。
+最后更新：2026-11-16，模板 Phase 3 批次 B 的独立评审 Agent（Claude Code）在第 1e 条加了评审结论；在此之前模板 Phase 3 批次 A 的独立评审 Agent（Claude Code）在第 1d 条加了评审结论、改了它的「遗留」；在此之前模板 Phase 3 批次 A 的提交 Agent（Claude Code）在「模板迁移与示意图补齐」加了第 1d 条；在此之前模板 Phase 2 的独立评审 Agent（Claude Code）在第 1c 条加了评审结论；在此之前模板 Phase 2 的提交 Agent（Claude Code）在「模板迁移与示意图补齐」加了第 1c 条、改了末尾「pages.config.js 仍手改」一句和第 2 部分「未上线：17 篇中文草稿」的登记说明；在此之前模板后续改进的提交 Agent（Claude Code）在「模板迁移与示意图补齐」加了第 1b 条、改了第 1a 条的「没转换」和第 3 条的遗留；在此之前 SIMD/浮点长文的登记 Agent（Claude Code）更新了「模板迁移与示意图补齐」第 1a、3 条（批次 A 已在线、SIMD 长文上线）；在此之前模板 Phase 1 批次 A 的提交 Agent（Claude Code）在「模板迁移与示意图补齐」加了第 1a 条；在此之前 SVG 视口检查的登记 Agent（Claude Code）更新了「模板迁移与示意图补齐」第 2 条的遗留项；在此之前存储 S1–S5 补图的登记 Agent（Claude Code）更新了「模板迁移与示意图补齐」第 2 条和存储系列的示意图状态；在此之前模板 Phase 0 的提交 Agent 更新了该节；第二部分其余内容仍是 2026-11-15 供电与网卡两篇上线后的状态。
 
 这份文件有两部分：
 
@@ -173,6 +173,7 @@
    - **转换：160 页**，各一个 mechanical 提交（Built-By: script），`git log --grep 'Phase 3 batch B'`；每页在父提交上逐字节往返、字符串表逐键相等，然后 version 20261116a。所有共享测试、页面 node 测试（除 HEAD 上就失败的两项）、8 个页面浏览器测试中的 7 个（pinhole-camera 的 atlas 测试在转换前就超时）通过；160 页全部做了 Playwright 对比。
    - **没转换：** photosynthesis（`<main>` 里有 `<noscript>`）、acid-base-equilibrium 和 kepler-orbits（没有 STR 表）、bayes-diagnostics（运行时不处理 `data-i18n-html`，被引用行对英文读者会是中文）、power-converters、`variants/`。
    - **遗留：** 390/320 宽下 44 页被引用块比步骤多缩进 4 px；lever-pulley 的 `#step2/#step3` 深链接在构建上落点偏短；c2905d2b 提交说明里的数字不准（见规范 §10）。
+   - **独立评审（2026-11-16，specs/reviews/site-template-phase3b-review-20261116.md）：结论是 `e92e2ac8` 之后可以部署（推送仍需授权）。** 160 个转换提交的 trailer、Derived-From、改动范围逐个脚本核对；160 页全部在 HEAD 上逐字节往返、两张表逐键相等；作者沿用原作者。修了两处（`e92e2ac8`，site-nav.js，include 键仍是未上线的 `sn-20261116c`）：第 0 步按钮在 40 % 处被撤掉，和 84 页滚动监听的判定线重合，滚轮滚动时 0 和 1 之间有一帧没有亮的按钮——改成第 0 步完全离开窗口才撤；被引用块在 390/320 宽下比步骤多缩进 4 px（实测 45 页）——改成照抄步骤的左右内边距。lever-pulley 深链接「偏短」不是缺陷：页面用平滑滚动，构建的 `load` 早约 0.9 秒，测量时滚动还没结束，4 秒后两边落点一样。溢出（rsa-encryption、fractions、coordinate-plane）、16 条 `stale:`、`atlas/?trail=` 链接都是转换前就有的。小问题留给页面作者：pinhole-camera 被引用行显示 `本页#geometry-bridge`；particles-states 英文「noted here in text only」现在包着链接。
 
 2. **S1–S5 补示意图：2026-11-16 完成并上线**（`9fcb9fac` 内容、`b2d49a1c` 标签重指）。沿用旧格式（内联 SVG，标签来自 copy 文件），走了 构建 → 独立评审 → 登记。现在转换器可以处理这五篇了。
    - 外溢视口检查的 `e.closest('svg')` 跳过：其余 16 篇也已改为只跳过 `<defs>`（`c3cef443`，标签重指见下一个提交），全部通过，没有页面需要改版式；switches-that-compute 没有逐元素的视口检查，探测过 320 宽下不溢出。
