@@ -381,7 +381,7 @@ brighten&lt;&lt;&lt;dim3((W+15)/16, (H+15)/16), dim3(16,16)&gt;&gt;&gt;(img, W, 
     <div class="ctl"><div class="seg" role="radiogroup" data-i18n-aria="ch8.ctl.gpu" aria-label="卡"><span class="lbl" data-i18n="ch8.ctl.gpu">卡</span><label><input type="radio" name="gG" value="h100" checked><span data-i18n="ch8.gpu.h100">H100</span></label><label><input type="radio" name="gG" value="b200"><span data-i18n="ch8.gpu.b200">B200</span></label></div></div><div class="ctl"><div class="seg" role="radiogroup" data-i18n-aria="ch8.ctl.fmt" aria-label="格式"><span class="lbl" data-i18n="ch8.ctl.fmt">格式</span><label><input type="radio" name="gF" value="fp32"><span data-i18n="ch8.fmt.fp32">FP32（不用张量核心）</span></label><label><input type="radio" name="gF" value="tf32"><span data-i18n="ch8.fmt.tf32">TF32</span></label><label><input type="radio" name="gF" value="fp16"><span data-i18n="ch8.fmt.fp16">FP16 / BF16</span></label><label><input type="radio" name="gF" value="fp8" checked><span data-i18n="ch8.fmt.fp8">FP8</span></label><label><input type="radio" name="gF" value="fp4"><span data-i18n="ch8.fmt.fp4">FP4</span></label></div></div><div class="ctl"><label class="rng"><span data-i18n="ch8.ctl.n">矩阵大小 N</span><input type="range" id="gN" min="0" max="7" step="1" value="1"><output id="gNo"></output></label></div><canvas class="cv " id="gCv" role="img" data-i18n-aria="ch8.model.aria" aria-label="条形图：每种数字格式的峰值和在当前矩阵大小下能达到的速度"></canvas><div class="read"><div><b class="c" id="gI"></b><span data-i18n-html="ch8.read.i">每字节运算</span></div><div><b class="g" id="gAtt"></b><span data-i18n-html="ch8.read.att">能达到</span></div><div><b class="" id="gShare"></b><span data-i18n-html="ch8.read.share">占峰值</span></div><div><b class="" id="gNf"></b><span data-i18n-html="ch8.read.nfull">N 至少多大才到峰值</span></div></div><p class="say" id="gSay" aria-live="polite"></p>
   </figure></div>
   <div class="wrap">
-    <p data-i18n-html="ch8.p4"></p><p class="take" data-i18n-html="ch8.limit">峰值是厂商在加速频率下的理论数，真实的矩阵乘法通常到不了。模型假设三个矩阵都是同一种格式、各读写一次；真实程序里累加常用更宽的格式，结果矩阵也常是 16 或 32 位。位数少了精度也少了，FP8、FP4 要配合缩放因子，能不能用、用在哪一层，是数值问题，不是这里能回答的。</p>
+    <p data-i18n-html="ch8.p4"></p><p class="take" data-i18n-html="ch8.limit">峰值是厂商在加速频率下的理论数，真实的矩阵乘法通常到不了。模型假设三个矩阵都是同一种格式、各读写一次；真实程序里累加常用更宽的格式，结果矩阵也常是 16 或 32 位。位数少了精度也少了，FP8、FP4 要配合缩放因子（这些格式的位怎么排、缩放因子怎么定，见<a href="../how-a-cpu-does-math/#ch7">《CPU 是怎么算小数的，又怎么一次算一排》第 7 章</a>和<a href="../how-a-cpu-does-math/#ch8">第 8 章</a>），能不能用、用在哪一层，是数值问题，不是这里能回答的。</p>
   </div>
 </section>
 <section class="ch" id="ch9">
@@ -428,11 +428,12 @@ brighten&lt;&lt;&lt;dim3((W+15)/16, (H+15)/16), dim3(16,16)&gt;&gt;&gt;(img, W, 
   <div class="wrap">
     <h2 data-i18n="site.bl.title">被这些页面引用</h2>
     <ul class="xref-list">
-      <li data-i18n-html="site.bl.1"><a href="../how-a-nic-moves-packets/">网卡是怎么搬运数据包的</a>：<a href="../how-a-nic-moves-packets/#ch14">该文第 14 章</a></li>
-      <li data-i18n-html="site.bl.2"><a href="../how-cores-share-memory/">多个核心怎么共用一块内存</a>：<a href="../how-cores-share-memory/#ch12">该文第 12 章</a> → <a href="#ch10">本页第 10 章</a></li>
-      <li data-i18n-html="site.bl.3"><a href="../how-pixels-reach-a-screen/">像素是怎么到屏幕上的</a>：<a href="../how-pixels-reach-a-screen/#ch1">该文第 1 章</a> → <a href="#ch9">本页第 9 章</a>；<a href="../how-pixels-reach-a-screen/#ch13">该文第 13 章</a> → <a href="#ch9">本页第 9 章</a></li>
-      <li data-i18n-html="site.bl.4"><a href="../how-power-reaches-the-cpu/">电是怎么送进 CPU 的</a>：<a href="../how-power-reaches-the-cpu/#ch10">该文第 10 章</a> → <a href="#ch11">本页第 11 章</a>；<a href="../how-power-reaches-the-cpu/#ch12">该文第 12 章</a></li>
-      <li data-i18n-html="site.bl.5"><a href="../why-compute-waits-for-memory/">为什么计算一直在等内存</a>：<a href="../why-compute-waits-for-memory/#ch6">该文第 6 章</a> → <a href="#ch3">本页第 3 章</a></li>
+      <li data-i18n-html="site.bl.1"><a href="../how-a-cpu-does-math/">CPU 是怎么算小数的，又怎么一次算一排</a>：<a href="../how-a-cpu-does-math/#ch7">该文第 7 章</a> → <a href="#ch8">本页第 8 章</a>；<a href="../how-a-cpu-does-math/#ch12">该文第 12 章</a> → <a href="#ch8">本页第 8 章</a>；<a href="../how-a-cpu-does-math/#ch14">该文第 14 章</a></li>
+      <li data-i18n-html="site.bl.2"><a href="../how-a-nic-moves-packets/">网卡是怎么搬运数据包的</a>：<a href="../how-a-nic-moves-packets/#ch14">该文第 14 章</a></li>
+      <li data-i18n-html="site.bl.3"><a href="../how-cores-share-memory/">多个核心怎么共用一块内存</a>：<a href="../how-cores-share-memory/#ch12">该文第 12 章</a> → <a href="#ch10">本页第 10 章</a></li>
+      <li data-i18n-html="site.bl.4"><a href="../how-pixels-reach-a-screen/">像素是怎么到屏幕上的</a>：<a href="../how-pixels-reach-a-screen/#ch1">该文第 1 章</a> → <a href="#ch9">本页第 9 章</a>；<a href="../how-pixels-reach-a-screen/#ch13">该文第 13 章</a> → <a href="#ch9">本页第 9 章</a></li>
+      <li data-i18n-html="site.bl.5"><a href="../how-power-reaches-the-cpu/">电是怎么送进 CPU 的</a>：<a href="../how-power-reaches-the-cpu/#ch10">该文第 10 章</a> → <a href="#ch11">本页第 11 章</a>；<a href="../how-power-reaches-the-cpu/#ch12">该文第 12 章</a></li>
+      <li data-i18n-html="site.bl.6"><a href="../why-compute-waits-for-memory/">为什么计算一直在等内存</a>：<a href="../why-compute-waits-for-memory/#ch6">该文第 6 章</a> → <a href="#ch3">本页第 3 章</a></li>
     </ul>
   </div>
 </section>
@@ -440,10 +441,10 @@ brighten&lt;&lt;&lt;dim3((W+15)/16, (H+15)/16), dim3(16,16)&gt;&gt;&gt;(img, W, 
 
 <footer><div class="wrap" data-i18n-html="footer">GPU 是怎么算的 · 一篇可以动手的长文。模型：平均访存时间与利特尔法则（Hennessy 与 Patterson；Volkov 2016），CUDA 的线程编号与线程束划分（CUDA 编程指南 13.5 版），逐拍模拟的线程束调度器（贪心与轮流两种策略），H100 的驻留上限（Hopper 调优指南），带活动掩码的分支发散，32 字节扇区与 32 个 bank（CUDA 最佳实践指南），两级屋顶线下的分块矩阵乘法（Williams、Waterman 与 Patterson 2009），按格式的张量核心峰值与屋顶线，边函数光栅化与 2×2 像素组（Pineda 1988；Fatahalian 等人 2010）。延迟取自 Luo 等人对 Hopper H800 的测量（arXiv 2402.13499）。厂商峰值取自 NVIDIA 产品页（带稀疏的数已减半）。由 AI 写成；来源和未核实的地方见同目录的 BRIEF.md。</div></footer>
 
-<script src="models.js?v=20261116a"></script>
-<script src="copy.zh.js?v=20261116a"></script>
-<script src="copy.en.js?v=20261116a" onerror="void 0"></script>
-<script src="app.js?v=20261116a"></script>
+<script src="models.js?v=20261116b"></script>
+<script src="copy.zh.js?v=20261116b"></script>
+<script src="copy.en.js?v=20261116b" onerror="void 0"></script>
+<script src="app.js?v=20261116b"></script>
 <script defer src="../../../site-nav.js?v=sn-20261116"></script>
 </body>
 </html>

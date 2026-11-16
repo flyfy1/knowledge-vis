@@ -171,6 +171,7 @@ window.KNOWLEDGE_ESSAYS = [
   "how-virtual-memory-works",
   "how-a-cpu-guesses-ahead",
   "how-cores-share-memory",
+  "how-a-cpu-does-math",
   "how-memory-talks",
   "coherent-interconnects",
   "how-a-gpu-computes",
@@ -539,6 +540,16 @@ window.KNOWLEDGE_PAGES = [
     },
     tags: [{ zh: "缓存一致性", en: "Cache Coherence" }, { zh: "内存模型", en: "Memory Models" }, { zh: "计算机体系结构", en: "Computer Architecture" }, { zh: "并发", en: "Concurrency" }, { zh: "长文", en: "Long-form Essay" }],
     category: "computing", subtopic: "systems", stage: "university", status: "live", path: "computing/systems/how-cores-share-memory/"
+  },
+  {
+    slug: "how-a-cpu-does-math",
+    title: { zh: "CPU 是怎么算小数的，又怎么一次算一排", en: "How a CPU Does Math: Real Numbers, and Many at Once" },
+    desc: {
+      zh: "一块 CPU 每秒做几千亿次小数运算，却连 0.1 都存不准。这篇从 32 个位讲起：浮点数的位怎么排，ulp，舍入，次正规数，抵消，FMA，AI 带进硬件的 FP16、BF16、FP8 和块缩放格式，再到 SIMD、AVX-512、SVE 和矩阵单元。十几个可以动手的模型，数都是逐位算出来的。",
+      en: "A CPU does hundreds of billions of arithmetic operations on fractions every second, yet it cannot even store 0.1 exactly. This essay starts from 32 bits: how the bits of a floating-point number are laid out, ulps, rounding, subnormals, cancellation, FMA, the FP16, BF16, FP8 and block-scaled formats AI brought into hardware, and then SIMD, AVX-512, SVE and matrix units. A dozen hands-on models, every number computed bit by bit."
+    },
+    tags: [{ zh: "浮点数", en: "Floating Point" }, { zh: "SIMD", en: "SIMD" }, { zh: "计算机体系结构", en: "Computer Architecture" }, { zh: "长文", en: "Long-form Essay" }],
+    category: "computing", subtopic: "systems", stage: "university", status: "live", path: "computing/systems/how-a-cpu-does-math/"
   },
   {
     slug: "how-memory-talks",

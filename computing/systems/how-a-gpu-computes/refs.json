@@ -1,8 +1,41 @@
 {
  "_generated": "by scripts/build-pages.cjs; do not edit",
  "page": "how-a-gpu-computes",
- "refs": [],
+ "refs": [
+  {
+   "from": "ch1.p2",
+   "to": "how-a-cpu-does-math",
+   "anchor": "ch9"
+  },
+  {
+   "from": "ch8.limit",
+   "to": "how-a-cpu-does-math",
+   "anchor": "ch7"
+  },
+  {
+   "from": "ch8.limit",
+   "to": "how-a-cpu-does-math",
+   "anchor": "ch8"
+  }
+ ],
  "backlinks": [
+  {
+   "from": "how-a-cpu-does-math",
+   "links": [
+    {
+     "from": "ch7",
+     "to": "ch8"
+    },
+    {
+     "from": "ch12",
+     "to": "ch8"
+    },
+    {
+     "from": "ch14",
+     "to": null
+    }
+   ]
+  },
   {
    "from": "how-a-nic-moves-packets",
    "links": [

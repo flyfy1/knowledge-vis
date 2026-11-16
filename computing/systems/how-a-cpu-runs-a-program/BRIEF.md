@@ -220,3 +220,7 @@ Unverified / left:
   page's aliases against A4 and A5.
 - 取指 译码 执行 no longer collides: it was removed from why-compute-waits-for-memory #ch1 and lands on switches-that-compute #ch9.
 - Scripts move to `?v=20261115b` (`?v=20261115` was deployed with the A1/A3 registration).
+- SIMD/float registrar (2026-11-16): ch11.e2 (vector and matrix instructions) links how-a-cpu-does-math #ch9 and ch12.links adds one
+  sentence linking its page top, zh and en, as [[refs]]. tests/models.cjs scans the double-quoted [[ref]] links outside the
+  generated site.* rows (allowed: the existing siblings plus that essay) and requires both links with the quoted title.
+  page.json version 20261116b.

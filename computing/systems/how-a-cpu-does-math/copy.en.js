@@ -532,5 +532,9 @@ window.ESSAY_COPY.en = {
   "site.crumb.aria": "Breadcrumb",
   "site.crumb.home": "Home",
   "site.crumb.cat": "Computing & AI",
-  "site.crumb.sub": "Systems & Security"
+  "site.crumb.sub": "Systems & Security",
+  "site.bl.title": "Linked from",
+  "site.bl.1": "<a href=\"../how-a-cpu-runs-a-program/\">How a CPU Runs a Program</a>: <a href=\"../how-a-cpu-runs-a-program/#ch11\">its chapter 11</a> → <a href=\"#ch9\">this page chapter 9</a>; <a href=\"../how-a-cpu-runs-a-program/#ch12\">its chapter 12</a>",
+  "site.bl.2": "<a href=\"../how-a-gpu-computes/\">How a GPU Computes</a>: <a href=\"../how-a-gpu-computes/#ch1\">its chapter 1</a> → <a href=\"#ch9\">this page chapter 9</a>; <a href=\"../how-a-gpu-computes/#ch8\">its chapter 8</a> → <a href=\"#ch7\">this page chapter 7</a>, <a href=\"#ch8\">this page chapter 8</a>",
+  "site.bl.3": "<a href=\"../switches-that-compute/\">How a Pile of Switches Learned to Do Arithmetic</a>: <a href=\"../switches-that-compute/#ch10\">its chapter 10</a> → <a href=\"#ch1\">this page chapter 1</a>"
 };

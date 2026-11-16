@@ -136,3 +136,9 @@ card (the pixels essay's page tag 显卡 / Graphics Cards would otherwise take b
 
 Power/NIC registrar (2026-11-15): ch11.p2 (zh, en) links "a card's power draw has reached over a kilowatt" to how-power-reaches-the-cpu
 #ch10 (one clause); the test allows and requires the link. Scripts `?v=20261115t`.
+
+SIMD/float registrar (2026-11-16): the prerequisite named above now exists as how-a-cpu-does-math. ch1 (zh, en; "one slot in a
+wide vector") links its #ch9 and the ch8 take (FP8 and FP4 need scaling factors) links its #ch7 and #ch8, as [[refs]] in
+content.*.md. tests/models.cjs now also scans the double-quoted [[ref]] links outside the generated site.* rows, allows only that
+essay there, and requires the three links, their anchors and the quoted title. #ch8 keeps "FP8 E4M3 E5M2", "FP4 格式" and "FP8
+formats"; bare FP8 and FP4 land on the new essay's #ch7 / #ch8. page.json version 20261116b.

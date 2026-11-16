@@ -88,3 +88,18 @@ Agner table dates; the AVX10.2 revision (rev 7.0, April 2026) and which shipping
 7. Two labs in one chapter collide on `chN.model.title`, so `keys=chN.x` has to be used. That works, but nothing warns until a duplicate-key error.
 8. `{.sum}` on a paragraph fails with "needs {#key}"; only .law/.take are implicit.
 9. Very long numbers in prose (the 55-digit exact 0.1) overflow at 390 px unless the page sets overflow-wrap; this is a layout CSS concern.
+
+## Registration (2026-11-16)
+
+- Essay commit b6dcadc4 (authored; English by Haiku). Registered in computing/systems after how-cores-share-memory in
+  KNOWLEDGE_ESSAYS. Atlas: 13 concepts in the computing region, 21 hand-written edges (12 between chapters, 9 to or from
+  the siblings the text links).
+- One word, one owner: bare 浮点数 / floating point / IEEE 754 moved here (#ch1) from switches-that-compute #ch10, which keeps
+  0.1 + 0.2, 浮点误差, rounding error and double vs float; #ch1 also takes 浮点, 浮点数格式 / floating point format; #ch3 四舍五入;
+  #ch7 bare FP8, E4M3, E5M2; #ch8 bare FP4. how-a-gpu-computes #ch8 keeps "FP8 E4M3 E5M2", "FP4 格式", "FP8 formats".
+  量化 still ties with where-money-comes-from #ch2 (量化宽松) and was left alone.
+- Siblings now link here: how-a-gpu-computes ch1 (#ch9) and its ch8 take (#ch7, #ch8), how-a-cpu-runs-a-program ch11.e2 (#ch9)
+  and ch12.links (page top), switches-that-compute ch10.see (#ch1).
+- tests/models.cjs: exactly one provenance label (it is bilingual, so only that block is exempt from the no-Chinese check);
+  #ch1 must own 浮点数 / IEEE 754 / floating point and switches must not.
+- The frontier essay what-a-frontier-model-takes is still a draft; ch14 names it in plain text until it is registered.

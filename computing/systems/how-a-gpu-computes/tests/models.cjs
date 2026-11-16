@@ -396,6 +396,13 @@ const P = M.prose();
   check('memory essay linked at #ch7 and #ch8 (roofline, inference)', hrefs.includes('../why-compute-waits-for-memory/#ch7') && hrefs.includes('../why-compute-waits-for-memory/#ch8'), true);
   check('power essay linked at #ch10 from ch11.p2 (a kilowatt a card)', Z['ch11.p2'].includes("href='../how-power-reaches-the-cpu/#ch10'"), true);
   check('pixels essay linked at #ch1 from ch9.p2 (framebuffer)', Z['ch9.p2'].includes("href='../how-pixels-reach-a-screen/#ch1'"), true);
+  // [[refs]] in content.*.md render with double quotes; scan them too, outside the generated site.* rows (SIMD registrar, 2026-11-16)
+  const allC = Object.entries(Z).filter(([k]) => !k.startsWith('site.')).map(([, v]) => v).join('');
+  for (const m of allC.matchAll(/href="([^"]+)"/g)) { n++; if (!/^\.\.\/how-a-cpu-does-math\/(#ch\d+)?$/.test(m[1])) { fails++; console.error('FAIL unexpected [[ref]] link ' + m[1]); } }
+  check('SIMD/float essay linked at #ch9 from ch1.p1 (one slot in a wide vector)', /href="\.\.\/how-a-cpu-does-math\/#ch9"/.test(Object.entries(Z).find(([k, v]) => /^ch1\.p\d+$/.test(k) && v.includes('宽向量里的一格'))[1]), true);
+  check('SIMD/float essay linked at #ch7 and #ch8 from the ch8 take (FP8, FP4 scaling)', Object.entries(Z).some(([k, v]) => /^ch8\./.test(k) && v.includes('href="../how-a-cpu-does-math/#ch7"') && v.includes('href="../how-a-cpu-does-math/#ch8"')), true);
+  { const sm = fs.readFileSync(path.join(DIR, '..', 'how-a-cpu-does-math', 'index.html'), 'utf8'); for (const a of ['ch7', 'ch8', 'ch9']) check(`SIMD/float essay anchor #${a}`, sm.includes(`id="${a}"`), true);
+    const cz = { window: {} }; vm.runInNewContext(fs.readFileSync(path.join(DIR, '..', 'how-a-cpu-does-math', 'copy.zh.js'), 'utf8'), cz); check('SIMD/float essay title quoted as in its copy', allC.includes('《' + cz.window.ESSAY_COPY.zh['hero.title'] + '》'), true); }
   check('A5 linked at #ch3 and #ch4 (snooping, directories)', hrefs.includes('../how-cores-share-memory/#ch3') && hrefs.includes('../how-cores-share-memory/#ch4'), true);
 
   const ectx = { window: {} }; vm.runInNewContext(fs.readFileSync(path.join(DIR, 'copy.en.js'), 'utf8'), ectx);

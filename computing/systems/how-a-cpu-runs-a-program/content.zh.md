@@ -599,7 +599,7 @@ toc: 前沿在哪
 ### 确定的：合同本身 {#h.est .sub3}
 
 - RISC-V 的非特权指令集手册当前版本标号是 v20260120（2026 年 1 月 20 日），其中 RV32I 基础整数指令集是 2.1 版。这一页的所有编码都取自这一版。基础指令集冻结之后不再改动，新功能都以扩展的形式加在外面。 {#e1}
-- x86、Arm、RISC-V 都在加大向量和矩阵运算：同一条指令一次处理一组数，直接减少铁律里的第一项。 {#e2}
+- x86、Arm、RISC-V 都在加大向量和矩阵运算：同一条指令一次处理一组数，直接减少铁律里的第一项（见[[how-a-cpu-does-math#ch9|《CPU 是怎么算小数的，又怎么一次算一排》第 9 至 12 章]]）。 {#e2}
 
 ### 已经做出来的 {#h.demo .sub3}
 
@@ -632,7 +632,7 @@ toc: 收尾：问三件事
 
 一行代码先被翻译成*合同*里的几条指令，每条是 {xlen} 个比特；硬件按这些比特接通*数据通路*，一拍一拍地做；把通路切成*五段*，五条指令同时在路上，靠*转发*和*冲掉*处理它们的互相等待。快慢是*指令数 × 每条几拍 × 每拍多长*，写法和芯片各管其中一部分。 {#sum .sum tag=div}
 
-前一步：<a href='../switches-that-compute/'>《一堆开关是怎么学会算数的》</a>，从开关搭到一台能执行程序的小机器。后一步：<a href='../why-compute-waits-for-memory/'>《为什么计算一直在等内存》</a>，取数等内存时流水线会发生什么；<a href='../how-cpu-caches-work/'>《CPU 的三级缓存是怎么工作的》</a>，那几十拍是怎样被缓存省下来的。分支预测和乱序执行见<a href='../how-a-cpu-guesses-ahead/'>《CPU 是怎么猜着往前跑的》</a>。 {#links style="margin-top:2em"}
+前一步：<a href='../switches-that-compute/'>《一堆开关是怎么学会算数的》</a>，从开关搭到一台能执行程序的小机器。后一步：<a href='../why-compute-waits-for-memory/'>《为什么计算一直在等内存》</a>，取数等内存时流水线会发生什么；<a href='../how-cpu-caches-work/'>《CPU 的三级缓存是怎么工作的》</a>，那几十拍是怎样被缓存省下来的。分支预测和乱序执行见<a href='../how-a-cpu-guesses-ahead/'>《CPU 是怎么猜着往前跑的》</a>。浮点数怎么算、一条指令怎么算一排数，见[[how-a-cpu-does-math|《CPU 是怎么算小数的，又怎么一次算一排》]]。 {#links style="margin-top:2em"}
 
 ::: footer
 **来源。**指令格式、操作码与编码：RISC-V International，《The RISC-V Instruction Set Manual, Volume I: Unprivileged Architecture》，docs.riscv.org，版本 v20260120（RV32I 2.1 版）；寄存器的 ABI 名字：RISC-V ELF psABI 的调用约定。编码用 Capstone 反汇编器逐条核对，x86-64 字节用 clang 汇编得到。数据通路、控制表、流水线、转发与冒险检测、性能铁律：Patterson 与 Hennessy，《Computer Organization and Design: The Hardware/Software Interface, RISC-V Edition》第 1、4 章。前沿事实的来源与打开日期见 BRIEF.md。

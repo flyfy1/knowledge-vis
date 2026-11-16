@@ -51,7 +51,11 @@
           "单精度 双精度",
           "单精度浮点数",
           "双精度浮点数",
-          "0.1 在计算机里怎么存"
+          "0.1 在计算机里怎么存",
+          "浮点数",
+          "浮点",
+          "IEEE 754",
+          "浮点数格式"
         ],
         "en": [
           "how floating point is stored",
@@ -61,7 +65,10 @@
           "single precision",
           "double precision",
           "binary32",
-          "how is 0.1 stored"
+          "how is 0.1 stored",
+          "floating point",
+          "IEEE 754",
+          "floating point format"
         ]
       }
     },
@@ -118,7 +125,8 @@
           "随机舍入",
           "正确舍入",
           "保护位 舍入位 粘滞位",
-          "累加停滞"
+          "累加停滞",
+          "四舍五入"
         ],
         "en": [
           "rounding mode",
@@ -252,7 +260,10 @@
           "混合精度训练",
           "损失缩放",
           "8 位浮点数",
-          "低精度格式"
+          "低精度格式",
+          "FP8",
+          "E4M3",
+          "E5M2"
         ],
         "en": [
           "BF16",
@@ -263,7 +274,10 @@
           "mixed precision training",
           "loss scaling",
           "8-bit floating point",
-          "low precision formats"
+          "low precision formats",
+          "FP8",
+          "E4M3",
+          "E5M2"
         ]
       }
     },
@@ -288,7 +302,8 @@
           "块缩放",
           "NVFP4",
           "量化离群值",
-          "E8M0"
+          "E8M0",
+          "FP4"
         ],
         "en": [
           "INT8 quantization",
@@ -299,7 +314,8 @@
           "block scaling",
           "NVFP4",
           "quantization outliers",
-          "E8M0"
+          "E8M0",
+          "FP4"
         ]
       }
     },

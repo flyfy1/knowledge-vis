@@ -439,6 +439,7 @@ window.ESSAY_COPY.zh = {
   "site.crumb.sub": "系统与安全",
   "site.bl.title": "被这些页面引用",
   "site.bl.1": "<a href=\"../how-a-computer-boots/\">电脑是怎么开机的</a>：<a href=\"../how-a-computer-boots/#ch1\">该文第 1 章</a> → <a href=\"#ch4\">本页第 4 章</a>",
-  "site.bl.2": "<a href=\"../how-a-gpu-computes/\">GPU 是怎么算的</a>：<a href=\"../how-a-gpu-computes/#ch11\">该文第 11 章</a> → <a href=\"#ch10\">本页第 10 章</a>",
-  "site.bl.3": "<a href=\"../why-compute-waits-for-memory/\">为什么计算一直在等内存</a>：<a href=\"../why-compute-waits-for-memory/#ch5\">该文第 5 章</a> → <a href=\"#ch2\">本页第 2 章</a>"
+  "site.bl.2": "<a href=\"../how-a-cpu-does-math/\">CPU 是怎么算小数的，又怎么一次算一排</a>：<a href=\"../how-a-cpu-does-math/#ch11\">该文第 11 章</a> → <a href=\"#ch2\">本页第 2 章</a>",
+  "site.bl.3": "<a href=\"../how-a-gpu-computes/\">GPU 是怎么算的</a>：<a href=\"../how-a-gpu-computes/#ch11\">该文第 11 章</a> → <a href=\"#ch10\">本页第 10 章</a>",
+  "site.bl.4": "<a href=\"../why-compute-waits-for-memory/\">为什么计算一直在等内存</a>：<a href=\"../why-compute-waits-for-memory/#ch5\">该文第 5 章</a> → <a href=\"#ch2\">本页第 2 章</a>"
 };

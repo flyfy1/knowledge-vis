@@ -314,6 +314,16 @@ const f = (x, d) => x.toFixed(d);
   { const vz = { window: {} }; vm.runInNewContext(fs.readFileSync(path.join(DIR, '..', 'how-a-cpu-guesses-ahead', 'copy.zh.js'), 'utf8'), vz); check('A4 title quoted as in its copy', all.includes('《' + vz.window.ESSAY_COPY.zh['hero.title'] + '》'), true); }
   const hrefs = [...all.matchAll(/href='([^']+)'/g)].map(m => m[1]);
   for (const h of hrefs) { n++; if (!/^\.\.\/(why-compute-waits-for-memory|switches-that-compute|how-cpu-caches-work|how-a-cpu-guesses-ahead)\/(#ch\d+)?$/.test(h)) { fails++; console.error('FAIL unexpected link ' + h); } }
+  // [[refs]] render with double quotes; scan them outside the generated site.* rows. The SIMD/float essay is linked since it
+  // went live (SIMD registrar, 2026-11-16): ch11.e2 -> #ch9 (vector and matrix instructions), ch12.links -> page top.
+  const allC = Object.entries(Z).filter(([k]) => !k.startsWith('site.')).map(([, v]) => v).join('');
+  for (const m of allC.matchAll(/href="([^"]+)"/g)) { n++; if (!/^\.\.\/(why-compute-waits-for-memory|switches-that-compute|how-cpu-caches-work|how-a-cpu-guesses-ahead|how-a-cpu-does-math)\/(#ch\d+)?$/.test(m[1])) { fails++; console.error('FAIL unexpected [[ref]] link ' + m[1]); } }
+  { const sm = fs.readFileSync(path.join(DIR, '..', 'how-a-cpu-does-math', 'index.html'), 'utf8'); check('SIMD/float essay anchor #ch9', sm.includes('id="ch9"'), true);
+    const cz = { window: {} }; vm.runInNewContext(fs.readFileSync(path.join(DIR, '..', 'how-a-cpu-does-math', 'copy.zh.js'), 'utf8'), cz); const ts = '《' + cz.window.ESSAY_COPY.zh['hero.title'] + '》';
+    check('ch11.e2 links the SIMD/float essay #ch9 and quotes its title', Z['ch11.e2'].includes('href="../how-a-cpu-does-math/#ch9"') && Z['ch11.e2'].includes(ts), true);
+    check('ch12.links links the SIMD/float essay page top and quotes its title', Z['ch12.links'].includes('href="../how-a-cpu-does-math/"') && Z['ch12.links'].includes(ts), true);
+    const ce = { window: {} }; vm.runInNewContext(fs.readFileSync(path.join(DIR, 'copy.en.js'), 'utf8'), ce); const E1 = ce.window.ESSAY_COPY.en;
+    check('en ch11.e2 and ch12.links link the SIMD/float essay', E1['ch11.e2'].includes('href="../how-a-cpu-does-math/#ch9"') && E1['ch12.links'].includes('href="../how-a-cpu-does-math/"') && E1['ch12.links'].includes(JSON.parse(fs.readFileSync(path.join(DIR, '..', 'how-a-cpu-does-math', 'REGISTRY.json'), 'utf8')).title.en), true); }
 
   const ectx = { window: {} }; vm.runInNewContext(fs.readFileSync(path.join(DIR, 'copy.en.js'), 'utf8'), ectx);
   const EN = ectx.window.ESSAY_COPY.en, stub = ectx.window.ESSAY_COPY.enStub === true, ph = s => [...s.matchAll(/\{(\w+)\}/g)].map(m => m[1]).sort().join(',');

@@ -198,6 +198,10 @@ function ok(name, cond, info) { n++; if (!cond) { fails++; console.error(`FAIL $
   let h = html.replace(/<div[^>]*id="langToggle"[\s\S]*?<\/div>/, '').replace(/<title>[\s\S]*?<\/title>/, '').replace(/<meta[^>]*>/g, '').replace(/ aria-label="[^"]*"/g, '');
   for (let i = 0; i < 4; i++) h = h.replace(/(<(\w+)[^>]*data-i18n(?:-html)?="[^"]*"[^>]*>)[\s\S]*?(<\/\2>)/g, '$1$3');
   h = h.replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/g, '');
+  // the provenance label is bilingual by design (rendered from page-provenance.json since registration, 2026-11-16):
+  // exactly one, and only that block is exempt
+  check('exactly one provenance label', (h.match(/<details class="page-provenance"/g) || []).length, 1);
+  h = h.replace(/<details class="page-provenance"[\s\S]*?<\/details>/, '');
   const cjk = h.match(/[^\n]{0,30}[㐀-鿿][^\n]{0,30}/g) || [];
   check('no Chinese in index.html outside pre-filled copy', cjk.slice(0, 3).join(' | '), '');
   // the partials are language-neutral
@@ -218,7 +222,11 @@ function ok(name, cond, info) { n++; if (!cond) { fails++; console.error(`FAIL $
   const all = R.concepts.flatMap(c => [...new Set([...c.aliases.zh, ...c.aliases.en].map(a => a.toLowerCase()))]);
   check('no alias owned by two concepts of this page', all.filter((a, i) => all.indexOf(a) !== i).join(), '');
   // words that sibling pages own (specs/atlas-search-index.md: one word, one owner)
-  const theirs = ['浮点数', '浮点误差', '精度丢失', 'ieee 754', 'rounding error', '0.1+0.2', 'double vs float', 'fp8 e4m3 e5m2', 'fp8 formats', 'tensor core', 'throughput vs latency', '吞吐量', 'throughput', '权重量化', 'avx10'];
+  // 浮点数 / IEEE 754 moved here from switches-that-compute #ch10 at registration (2026-11-16): #ch1 owns them, switches must not.
+  { const c1 = R.concepts.find(c => c.anchor === '#ch1'), mine = [...c1.aliases.zh, ...c1.aliases.en].map(a => a.toLowerCase());
+    const sw = JSON.parse(fs.readFileSync(path.join(DIR, '..', 'switches-that-compute', 'REGISTRY.json'), 'utf8')).concepts.flatMap(c => [...c.aliases.zh, ...c.aliases.en].map(a => a.toLowerCase()));
+    for (const w of ['浮点数', 'ieee 754', 'floating point']) { check('#ch1 owns ' + w, mine.includes(w), true); check('switches-that-compute no longer has ' + w, sw.includes(w), false); } }
+  const theirs = ['浮点误差', '精度丢失', 'rounding error', '0.1+0.2', 'double vs float', 'fp8 e4m3 e5m2', 'fp8 formats', 'tensor core', 'throughput vs latency', '吞吐量', 'throughput', '权重量化', 'avx10'];
   check('no alias that a sibling owns', all.filter(a => theirs.includes(a)).join(), '');
 }
 

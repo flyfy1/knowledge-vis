@@ -443,10 +443,11 @@ window.ESSAY_COPY.en = {
   "site.crumb.cat": "Computing & AI",
   "site.crumb.sub": "Systems & Security",
   "site.bl.title": "Linked from",
-  "site.bl.1": "<a href=\"../how-a-cpu-runs-a-program/\">How a CPU Runs a Program</a>: <a href=\"../how-a-cpu-runs-a-program/#ch6\">its chapter 6</a> → <a href=\"#ch6\">this page chapter 6</a>; <a href=\"../how-a-cpu-runs-a-program/#ch8\">its chapter 8</a> → <a href=\"#ch2\">this page chapter 2</a>; <a href=\"../how-a-cpu-runs-a-program/#ch12\">its chapter 12</a>",
-  "site.bl.2": "<a href=\"../how-a-gpu-computes/\">How a GPU Computes</a>: <a href=\"../how-a-gpu-computes/#ch1\">its chapter 1</a> → <a href=\"#ch9\">this page chapter 9</a>; <a href=\"../how-a-gpu-computes/#ch12\">its chapter 12</a>",
-  "site.bl.3": "<a href=\"../how-cores-share-memory/\">How Cores Share Memory</a>: <a href=\"../how-cores-share-memory/#ch11\">its chapter 11</a> → <a href=\"#ch8\">this page chapter 8</a>; <a href=\"../how-cores-share-memory/#ch12\">its chapter 12</a>",
-  "site.bl.4": "<a href=\"../how-power-reaches-the-cpu/\">How Power Reaches the CPU</a>: <a href=\"../how-power-reaches-the-cpu/#ch2\">its chapter 2</a>",
-  "site.bl.5": "<a href=\"../how-the-os-talks-to-hardware/\">How the OS Talks to Hardware</a>: <a href=\"../how-the-os-talks-to-hardware/#ch1\">its chapter 1</a> → <a href=\"#ch10\">this page chapter 10</a>",
-  "site.bl.6": "<a href=\"../how-virtual-memory-works/\">How Virtual Memory Works</a>: <a href=\"../how-virtual-memory-works/#ch10\">its chapter 10</a> → <a href=\"#ch10\">this page chapter 10</a>; <a href=\"../how-virtual-memory-works/#ch13\">its chapter 13</a>"
+  "site.bl.1": "<a href=\"../how-a-cpu-does-math/\">How a CPU Does Math: Real Numbers, and Many at Once</a>: <a href=\"../how-a-cpu-does-math/#ch9\">its chapter 9</a> → <a href=\"#ch2\">this page chapter 2</a>; <a href=\"../how-a-cpu-does-math/#ch14\">its chapter 14</a>",
+  "site.bl.2": "<a href=\"../how-a-cpu-runs-a-program/\">How a CPU Runs a Program</a>: <a href=\"../how-a-cpu-runs-a-program/#ch6\">its chapter 6</a> → <a href=\"#ch6\">this page chapter 6</a>; <a href=\"../how-a-cpu-runs-a-program/#ch8\">its chapter 8</a> → <a href=\"#ch2\">this page chapter 2</a>; <a href=\"../how-a-cpu-runs-a-program/#ch12\">its chapter 12</a>",
+  "site.bl.3": "<a href=\"../how-a-gpu-computes/\">How a GPU Computes</a>: <a href=\"../how-a-gpu-computes/#ch1\">its chapter 1</a> → <a href=\"#ch9\">this page chapter 9</a>; <a href=\"../how-a-gpu-computes/#ch12\">its chapter 12</a>",
+  "site.bl.4": "<a href=\"../how-cores-share-memory/\">How Cores Share Memory</a>: <a href=\"../how-cores-share-memory/#ch11\">its chapter 11</a> → <a href=\"#ch8\">this page chapter 8</a>; <a href=\"../how-cores-share-memory/#ch12\">its chapter 12</a>",
+  "site.bl.5": "<a href=\"../how-power-reaches-the-cpu/\">How Power Reaches the CPU</a>: <a href=\"../how-power-reaches-the-cpu/#ch2\">its chapter 2</a>",
+  "site.bl.6": "<a href=\"../how-the-os-talks-to-hardware/\">How the OS Talks to Hardware</a>: <a href=\"../how-the-os-talks-to-hardware/#ch1\">its chapter 1</a> → <a href=\"#ch10\">this page chapter 10</a>",
+  "site.bl.7": "<a href=\"../how-virtual-memory-works/\">How Virtual Memory Works</a>: <a href=\"../how-virtual-memory-works/#ch10\">its chapter 10</a> → <a href=\"#ch10\">this page chapter 10</a>; <a href=\"../how-virtual-memory-works/#ch13\">its chapter 13</a>"
 };

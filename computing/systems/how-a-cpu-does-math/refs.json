@@ -98,7 +98,47 @@
    "anchor": null
   }
  ],
- "backlinks": [],
+ "backlinks": [
+  {
+   "from": "how-a-cpu-runs-a-program",
+   "links": [
+    {
+     "from": "ch11",
+     "to": "ch9"
+    },
+    {
+     "from": "ch12",
+     "to": null
+    }
+   ]
+  },
+  {
+   "from": "how-a-gpu-computes",
+   "links": [
+    {
+     "from": "ch1",
+     "to": "ch9"
+    },
+    {
+     "from": "ch8",
+     "to": "ch7"
+    },
+    {
+     "from": "ch8",
+     "to": "ch8"
+    }
+   ]
+  },
+  {
+   "from": "switches-that-compute",
+   "links": [
+    {
+     "from": "ch10",
+     "to": "ch1"
+    }
+   ]
+  }
+ ],
  "related": [],
  "bindings": [
   "ch1.hex01",

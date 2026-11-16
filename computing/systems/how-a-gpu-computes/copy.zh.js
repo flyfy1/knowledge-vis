@@ -23,7 +23,7 @@ window.ESSAY_COPY.zh = {
   "toc.ch1": "两种花晶体管的办法",
   "ch1.law": "CPU 把面积花在让一个线程少等上：大缓存、分支预测、乱序执行；GPU 把面积花在同时养很多线程上：一个线程在等，就换另一个接着干。",
   "ch1.p1": "一个人洗一大盆碗，手再快，等热水的时候也只能站着；他能做的是把热水壶放近一点，或者提前把下一壶烧上。换成十个人一起洗，谁在等水都没关系，总有别人手上有碗。前一种是 CPU 的办法，后一种是 GPU 的办法。",
-  "ch1.p2": "一块 NVIDIA H100（SXM5 版）有 {h100sm} 个 <strong>SM</strong>（streaming multiprocessor，流式多处理器），每个 SM 有 {h100lanes} 条 32 位浮点运算通道，合起来 {h100cores} 条，厂商把它们叫「CUDA 核心」。这就是开头那「上万个核」。可它们不是 CPU 意义上的核：一条通道没有自己的取指和译码，没有分支预测，不会乱序，它只是一条宽向量里的一格。和 CPU 核心对得上的是 SM：它取指、译码、调度，里面的 {scheds} 个分区每拍各让 32 条通道做同一条指令。每个 SM 的寄存器堆有 {regKB} KB，和它的 L1 加共享内存（{l1KB} KB）一样大。这不是说 GPU 的每个线程寄存器更多，恰恰相反：一个 x86-64 程序能看到的寄存器约 {cpuRegKB} KB（{x86gpr} 个 64 位通用寄存器加 {x86vec} 个 {x86vecBits} 位向量寄存器），一个 CUDA 线程最多用 {maxRegs} 个 32 位寄存器，约 {gpuRegMaxB} 字节；SM 住满 {thrSm} 个线程时，每个只分到 {gpuRegFull} 个、{gpuRegFullB} 字节。（两边比的都是程序能看到的寄存器；CPU 核心为了乱序执行另有一批程序看不到的物理寄存器，这里不比。）GPU 的寄存器堆大，是因为它要同时养几千个线程，每个线程的寄存器都得一直留在片上。",
+  "ch1.p2": "一块 NVIDIA H100（SXM5 版）有 {h100sm} 个 <strong>SM</strong>（streaming multiprocessor，流式多处理器），每个 SM 有 {h100lanes} 条 32 位浮点运算通道，合起来 {h100cores} 条，厂商把它们叫「CUDA 核心」。这就是开头那「上万个核」。可它们不是 CPU 意义上的核：一条通道没有自己的取指和译码，没有分支预测，不会乱序，它只是一条宽向量里的一格（CPU 上的宽向量见<a href=\"../how-a-cpu-does-math/#ch9\">《CPU 是怎么算小数的，又怎么一次算一排》第 9 章</a>）。和 CPU 核心对得上的是 SM：它取指、译码、调度，里面的 {scheds} 个分区每拍各让 32 条通道做同一条指令。每个 SM 的寄存器堆有 {regKB} KB，和它的 L1 加共享内存（{l1KB} KB）一样大。这不是说 GPU 的每个线程寄存器更多，恰恰相反：一个 x86-64 程序能看到的寄存器约 {cpuRegKB} KB（{x86gpr} 个 64 位通用寄存器加 {x86vec} 个 {x86vecBits} 位向量寄存器），一个 CUDA 线程最多用 {maxRegs} 个 32 位寄存器，约 {gpuRegMaxB} 字节；SM 住满 {thrSm} 个线程时，每个只分到 {gpuRegFull} 个、{gpuRegFullB} 字节。（两边比的都是程序能看到的寄存器；CPU 核心为了乱序执行另有一批程序看不到的物理寄存器，这里不比。）GPU 的寄存器堆大，是因为它要同时养几千个线程，每个线程的寄存器都得一直留在片上。",
   "dg.die.cap": "面积花在哪里。左边一个 CPU 核心：大块的缓存、分支预测和乱序调度，几条很宽的运算单元。右边一个 GPU 的 SM：四份一样的分区，每份一个调度器、一大片寄存器和 32 条运算通道。示意，不按比例。",
   "dg.die.aria": "示意图：CPU 核心的面积大部分是缓存和控制逻辑，GPU 的一个 SM 大部分是运算通道和寄存器堆",
   "dg.die.cpu": "CPU 核心",
@@ -370,7 +370,7 @@ window.ESSAY_COPY.zh = {
   "ch8.say.compute": "N = {n}、{f}：每字节 {i} 次运算，够了，跑到 <em>峰值 {att}</em>。",
   "ch8.say.none": "这块卡的张量核心不支持这种格式（或者产品页没有给出这个数）。",
   "ch8.p4": "N 到 1024 以后，两块卡上每种格式都喂得饱。小一点就不一样：H100 上 N = 256 的 FP8 乘法每字节 {g256i} 次运算，只跑得到 {g256} TFLOPS，峰值的 {g256s}；FP16 在同样大小下也只有峰值的 {h16_256}，两者绝对速度差一倍，可都卡在显存上。B200 的 FP4 在 N = 512 时是峰值的 {b512s}，N = 1024 到 {b1024s}。位数越少，算力翻得比字节省得快，要喂饱它，矩阵就得越大。各家卡的屋脊拐点和大模型推理为什么只用得上一点点算力，见<a href='../why-compute-waits-for-memory/#ch7'>《为什么计算一直在等内存》第 7 章</a>和<a href='../why-compute-waits-for-memory/#ch8'>第 8 章</a>；张量核心和脉动阵列的关系见<a href='../why-compute-waits-for-memory/#ch6'>那篇第 6 章</a>。",
-  "ch8.limit": "峰值是厂商在加速频率下的理论数，真实的矩阵乘法通常到不了。模型假设三个矩阵都是同一种格式、各读写一次；真实程序里累加常用更宽的格式，结果矩阵也常是 16 或 32 位。位数少了精度也少了，FP8、FP4 要配合缩放因子，能不能用、用在哪一层，是数值问题，不是这里能回答的。",
+  "ch8.limit": "峰值是厂商在加速频率下的理论数，真实的矩阵乘法通常到不了。模型假设三个矩阵都是同一种格式、各读写一次；真实程序里累加常用更宽的格式，结果矩阵也常是 16 或 32 位。位数少了精度也少了，FP8、FP4 要配合缩放因子（这些格式的位怎么排、缩放因子怎么定，见<a href=\"../how-a-cpu-does-math/#ch7\">《CPU 是怎么算小数的，又怎么一次算一排》第 7 章</a>和<a href=\"../how-a-cpu-does-math/#ch8\">第 8 章</a>），能不能用、用在哪一层，是数值问题，不是这里能回答的。",
   "ch9.title": "画一帧画面也是这台机器",
   "toc.ch9": "画一帧画面也是这台机器",
   "ch9.law": "画一帧画面用的是同一台机器：顶点和像素都变成线程，每 32 个一组上 SM。像素按 2×2 一组着色，所以很小的三角形会让大半的线程白干。",
@@ -453,9 +453,10 @@ window.ESSAY_COPY.zh = {
   "site.crumb.cat": "计算与智能",
   "site.crumb.sub": "系统与安全",
   "site.bl.title": "被这些页面引用",
-  "site.bl.1": "<a href=\"../how-a-nic-moves-packets/\">网卡是怎么搬运数据包的</a>：<a href=\"../how-a-nic-moves-packets/#ch14\">该文第 14 章</a>",
-  "site.bl.2": "<a href=\"../how-cores-share-memory/\">多个核心怎么共用一块内存</a>：<a href=\"../how-cores-share-memory/#ch12\">该文第 12 章</a> → <a href=\"#ch10\">本页第 10 章</a>",
-  "site.bl.3": "<a href=\"../how-pixels-reach-a-screen/\">像素是怎么到屏幕上的</a>：<a href=\"../how-pixels-reach-a-screen/#ch1\">该文第 1 章</a> → <a href=\"#ch9\">本页第 9 章</a>；<a href=\"../how-pixels-reach-a-screen/#ch13\">该文第 13 章</a> → <a href=\"#ch9\">本页第 9 章</a>",
-  "site.bl.4": "<a href=\"../how-power-reaches-the-cpu/\">电是怎么送进 CPU 的</a>：<a href=\"../how-power-reaches-the-cpu/#ch10\">该文第 10 章</a> → <a href=\"#ch11\">本页第 11 章</a>；<a href=\"../how-power-reaches-the-cpu/#ch12\">该文第 12 章</a>",
-  "site.bl.5": "<a href=\"../why-compute-waits-for-memory/\">为什么计算一直在等内存</a>：<a href=\"../why-compute-waits-for-memory/#ch6\">该文第 6 章</a> → <a href=\"#ch3\">本页第 3 章</a>"
+  "site.bl.1": "<a href=\"../how-a-cpu-does-math/\">CPU 是怎么算小数的，又怎么一次算一排</a>：<a href=\"../how-a-cpu-does-math/#ch7\">该文第 7 章</a> → <a href=\"#ch8\">本页第 8 章</a>；<a href=\"../how-a-cpu-does-math/#ch12\">该文第 12 章</a> → <a href=\"#ch8\">本页第 8 章</a>；<a href=\"../how-a-cpu-does-math/#ch14\">该文第 14 章</a>",
+  "site.bl.2": "<a href=\"../how-a-nic-moves-packets/\">网卡是怎么搬运数据包的</a>：<a href=\"../how-a-nic-moves-packets/#ch14\">该文第 14 章</a>",
+  "site.bl.3": "<a href=\"../how-cores-share-memory/\">多个核心怎么共用一块内存</a>：<a href=\"../how-cores-share-memory/#ch12\">该文第 12 章</a> → <a href=\"#ch10\">本页第 10 章</a>",
+  "site.bl.4": "<a href=\"../how-pixels-reach-a-screen/\">像素是怎么到屏幕上的</a>：<a href=\"../how-pixels-reach-a-screen/#ch1\">该文第 1 章</a> → <a href=\"#ch9\">本页第 9 章</a>；<a href=\"../how-pixels-reach-a-screen/#ch13\">该文第 13 章</a> → <a href=\"#ch9\">本页第 9 章</a>",
+  "site.bl.5": "<a href=\"../how-power-reaches-the-cpu/\">电是怎么送进 CPU 的</a>：<a href=\"../how-power-reaches-the-cpu/#ch10\">该文第 10 章</a> → <a href=\"#ch11\">本页第 11 章</a>；<a href=\"../how-power-reaches-the-cpu/#ch12\">该文第 12 章</a>",
+  "site.bl.6": "<a href=\"../why-compute-waits-for-memory/\">为什么计算一直在等内存</a>：<a href=\"../why-compute-waits-for-memory/#ch6\">该文第 6 章</a> → <a href=\"#ch3\">本页第 3 章</a>"
 };

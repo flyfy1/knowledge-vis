@@ -690,6 +690,35 @@ chapters.push(
   ['网络', 'packet', 'computing/systems/tcp-congestion/'],
   ['TSO', 'TSO', 'computing/systems/how-cores-share-memory/#ch9'],
 );
+// SIMD / floating-point essay (2026-11-16, first native template page). Bare 浮点数 / floating point / IEEE 754 moved from
+// switches-that-compute #ch10 to #ch1 (switches keeps 0.1 + 0.2, 浮点误差, rounding error, double vs float); bare FP8 / E4M3 / FP4
+// land on #ch7 / #ch8, while how-a-gpu-computes #ch8 keeps "FP8 E4M3 E5M2", "FP4 格式" and "FP8 formats".
+const SIMD = 'computing/systems/how-a-cpu-does-math/';
+chapters.push(
+  ['浮点数', 'floating point', SIMD + '#ch1'],
+  ['IEEE 754', 'single precision', SIMD + '#ch1'],
+  ['0.1 在计算机里怎么存', 'how is 0.1 stored', SIMD + '#ch1'],
+  ['机器精度', 'machine epsilon', SIMD + '#ch2'],
+  ['四舍五入', 'round half to even', SIMD + '#ch3'],
+  ['随机舍入', 'stochastic rounding', SIMD + '#ch3'],
+  ['次正规数', 'subnormal numbers', SIMD + '#ch4'],
+  ['NaN 不等于自己', 'flush to zero', SIMD + '#ch4'],
+  ['Kahan 求和', 'catastrophic cancellation', SIMD + '#ch5'],
+  ['融合乘加', 'fused multiply-add', SIMD + '#ch6'],
+  ['BF16', 'bf16 vs fp16', SIMD + '#ch7'],
+  ['半精度', 'FP8', SIMD + '#ch7'],
+  ['MXFP4', 'NVFP4', SIMD + '#ch8'],
+  ['INT8 量化', 'FP4', SIMD + '#ch8'],
+  ['SIMD', 'single instruction multiple data', SIMD + '#ch9'],
+  ['AVX-512', 'mask registers', SIMD + '#ch9'],
+  ['自动向量化', 'auto-vectorization', SIMD + '#ch10'],
+  ['AVX-512 降频', 'multiple accumulators', SIMD + '#ch11'],
+  ['CPU 算力', 'CPU peak FLOPS', SIMD + '#ch11'],
+  ['SVE', 'Intel AMX', SIMD + '#ch12'],
+  ['AVX10.2', 'IEEE P3109', SIMD + '#ch13'],
+  ['0.1 + 0.2', 'rounding error', 'computing/systems/switches-that-compute/#ch10'],
+  ['FP8 E4M3 E5M2', 'FP8 formats', A6 + '#ch8'],
+);
 for (const [zh, en, href] of chapters) for (const q of [zh, en]) {
   const hit = first(q);
   ok(hit && (hit.href === href || (href.endsWith('/') && hit.href.startsWith(href))), `"${q}" opens ${href} (got ${hit && hit.href})`);

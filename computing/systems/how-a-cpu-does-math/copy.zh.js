@@ -532,5 +532,9 @@ window.ESSAY_COPY.zh = {
   "site.crumb.aria": "页面位置",
   "site.crumb.home": "首页",
   "site.crumb.cat": "计算与智能",
-  "site.crumb.sub": "系统与安全"
+  "site.crumb.sub": "系统与安全",
+  "site.bl.title": "被这些页面引用",
+  "site.bl.1": "<a href=\"../how-a-cpu-runs-a-program/\">CPU 是怎么运行一个程序的</a>：<a href=\"../how-a-cpu-runs-a-program/#ch11\">该文第 11 章</a> → <a href=\"#ch9\">本页第 9 章</a>；<a href=\"../how-a-cpu-runs-a-program/#ch12\">该文第 12 章</a>",
+  "site.bl.2": "<a href=\"../how-a-gpu-computes/\">GPU 是怎么算的</a>：<a href=\"../how-a-gpu-computes/#ch1\">该文第 1 章</a> → <a href=\"#ch9\">本页第 9 章</a>；<a href=\"../how-a-gpu-computes/#ch8\">该文第 8 章</a> → <a href=\"#ch7\">本页第 7 章</a>、<a href=\"#ch8\">本页第 8 章</a>",
+  "site.bl.3": "<a href=\"../switches-that-compute/\">一堆开关是怎么学会算数的</a>：<a href=\"../switches-that-compute/#ch10\">该文第 10 章</a> → <a href=\"#ch1\">本页第 1 章</a>"
 };

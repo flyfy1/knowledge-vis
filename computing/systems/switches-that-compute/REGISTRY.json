@@ -56,7 +56,7 @@
       "anchor": "#ch9", "relatedPages": [] },
     { "id": "floating-point-rounding", "title": { "zh": "浮点数为什么不精确", "en": "Why Floating Point Is Inexact" },
       "desc": { "zh": "0.1 在二进制里写不完，存进有限的尾数要取整，所以 0.1 + 0.2 得到 0.30000000000000004。", "en": "0.1 never ends in binary, so it is rounded into a finite mantissa and 0.1 + 0.2 becomes 0.30000000000000004." },
-      "aliases": { "zh": ["0.1+0.2", "0.1 + 0.2 不等于 0.3", "浮点数", "浮点误差", "精度丢失", "double float 区别"], "en": ["0.1 + 0.2", "floating point error", "why 0.1+0.2 != 0.3", "IEEE 754", "double vs float", "rounding error"] },
+      "aliases": { "zh": ["0.1+0.2", "0.1 + 0.2 不等于 0.3", "浮点误差", "精度丢失", "double float 区别"], "en": ["0.1 + 0.2", "floating point error", "why 0.1+0.2 != 0.3", "double vs float", "rounding error"] },
       "anchor": "#ch10", "relatedPages": [] },
     { "id": "real-processor-scale", "title": { "zh": "真实处理器：规模而非新原理", "en": "Real Processors: Scale, Not New Principles" },
       "desc": { "zh": "流水线、先行进位、缓存和多核都是同样零件的更多份；附 2038 年问题等可带走的结论。", "en": "Pipelining, carry-lookahead, caches and many cores are more of the same parts; with takeaways like the year-2038 problem." },
