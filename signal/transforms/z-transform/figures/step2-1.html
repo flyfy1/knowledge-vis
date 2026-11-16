@@ -1,0 +1,16 @@
+<p class="formula" data-i18n="s2formula">X(z) = Σₙ aⁿz⁻ⁿ = 1 / (1 − a·z⁻¹)，部分和 S_N = Σ_{n=0}^{N} (a/z)ⁿ</p>
+    <div class="dual">
+      <div class="half"><div class="stage"><canvas id="s2-plane" class="drag" height="400" tabindex="0"></canvas></div></div>
+      <div class="half"><div class="stage"><canvas id="s2-sums" height="400"></canvas></div></div>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="s2aLab"></span> <span class="val" id="s2-a-val">0.70</span></span>
+        <input type="range" id="s2-a" min="-0.95" max="0.95" step="0.05" value="0.7"></label>
+    </div>
+    <div class="btn-row">
+      <button class="btn" id="s2-add1" data-i18n="s2add1"></button>
+      <button class="btn" id="s2-add20" data-i18n="s2add20"></button>
+      <button class="btn" id="s2-run" data-i18n="s2run"></button>
+      <button class="btn" id="s2-reset" data-i18n="s2reset"></button>
+    </div>
+    <p class="readout" id="s2-readout"></p>

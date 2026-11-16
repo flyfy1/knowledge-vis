@@ -43,7 +43,11 @@
    "from": "z-transform",
    "links": [
     {
-     "from": null,
+     "from": "step5",
+     "to": "step4"
+    },
+    {
+     "from": "step6",
      "to": "step4"
     }
    ]

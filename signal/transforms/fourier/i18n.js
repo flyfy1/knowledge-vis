@@ -122,7 +122,7 @@ const STR = {
     "site.bl.11": "<a href=\"../../systems/frequency-response/\">频率响应与滤波 · 按频率挑食的盒子</a>：<a href=\"../../systems/frequency-response/#step0\">该课第 0 步</a> → <a href=\"#step5\">本页第 5 步</a>",
     "site.bl.12": "<a href=\"../laplace/\">拉普拉斯与 ROC · 给频率配一个寿命</a>：<a href=\"../laplace/#step0\">该课第 0 步</a> → <a href=\"#step0\">本页第 0 步</a>；<a href=\"../laplace/#step6\">该课第 6 步</a> → <a href=\"#step5\">本页第 5 步</a>",
     "site.bl.13": "<a href=\"../wavelets/\">小波 · 让窗口随频率伸缩</a>：<a href=\"../wavelets/#step5\">该课第 5 步</a> → <a href=\"#step5\">本页第 5 步</a>",
-    "site.bl.14": "<a href=\"../z-transform/\">Z 变换 · 把 s 平面卷成单位圆</a>：→ <a href=\"#step5\">本页第 5 步</a>"
+    "site.bl.14": "<a href=\"../z-transform/\">Z 变换 · 把 s 平面卷成单位圆</a>：<a href=\"../z-transform/#step6\">该课第 6 步</a> → <a href=\"#step5\">本页第 5 步</a>"
   },
   en: {
     docTitle: "The Fourier Transform · One Interaction at a Time",
@@ -238,7 +238,7 @@ const STR = {
     "site.bl.11": "<a href=\"../../systems/frequency-response/\">Frequency Response & Filters · A Box That Eats by Frequency</a>: <a href=\"../../systems/frequency-response/#step0\">its step 0</a> → <a href=\"#step5\">this page step 5</a>",
     "site.bl.12": "<a href=\"../laplace/\">Laplace Transform & ROC · Giving Frequencies a Lifespan</a>: <a href=\"../laplace/#step0\">its step 0</a> → <a href=\"#step0\">this page step 0</a>; <a href=\"../laplace/#step6\">its step 6</a> → <a href=\"#step5\">this page step 5</a>",
     "site.bl.13": "<a href=\"../wavelets/\">Wavelets · Windows That Stretch With Frequency</a>: <a href=\"../wavelets/#step5\">its step 5</a> → <a href=\"#step5\">this page step 5</a>",
-    "site.bl.14": "<a href=\"../z-transform/\">The Z-Transform · Rolling the s-Plane into the Unit Circle</a>: → <a href=\"#step5\">this page step 5</a>"
+    "site.bl.14": "<a href=\"../z-transform/\">The Z-Transform · Rolling the s-Plane into the Unit Circle</a>: <a href=\"../z-transform/#step6\">its step 6</a> → <a href=\"#step5\">this page step 5</a>"
   }
 };
 

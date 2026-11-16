@@ -136,7 +136,7 @@ const STR = {
     "site.bl.5": "<a href=\"../../../physics/waves/interference/\">波的干涉 · 闹与静的图样</a>：<a href=\"../../../physics/waves/interference/#step5\">该课第 5 步</a> → <a href=\"#step2\">本页第 2 步</a>",
     "site.bl.6": "<a href=\"../../../physics/waves/standing-wave/\">驻波 · 原地起伏的波</a>：<a href=\"../../../physics/waves/standing-wave/#step0\">该课第 0 步</a> → <a href=\"#step2\">本页第 2 步</a>；<a href=\"../../../physics/waves/standing-wave/#step6\">该课第 6 步</a> → <a href=\"#step2\">本页第 2 步</a>",
     "site.bl.7": "<a href=\"../../../signal/transforms/fourier/\">傅里叶变换 · 一步一交互</a>：<a href=\"../../../signal/transforms/fourier/#step3\">该课第 3 步</a> → <a href=\"#step1\">本页第 1 步</a>",
-    "site.bl.8": "<a href=\"../../../signal/transforms/z-transform/\">Z 变换 · 把 s 平面卷成单位圆</a>：→ <a href=\"#step0\">本页第 0 步</a>"
+    "site.bl.8": "<a href=\"../../../signal/transforms/z-transform/\">Z 变换 · 把 s 平面卷成单位圆</a>：<a href=\"../../../signal/transforms/z-transform/#step6\">该课第 6 步</a> → <a href=\"#step0\">本页第 0 步</a>"
   },
   en: {
     docTitle: "Trig Functions · The Unit Circle — One Interaction at a Time",
@@ -266,7 +266,7 @@ const STR = {
     "site.bl.5": "<a href=\"../../../physics/waves/interference/\">Interference · A Pattern of Loud and Still</a>: <a href=\"../../../physics/waves/interference/#step5\">its step 5</a> → <a href=\"#step2\">this page step 2</a>",
     "site.bl.6": "<a href=\"../../../physics/waves/standing-wave/\">Standing Waves · The Wave That Stays in Place</a>: <a href=\"../../../physics/waves/standing-wave/#step0\">its step 0</a> → <a href=\"#step2\">this page step 2</a>; <a href=\"../../../physics/waves/standing-wave/#step6\">its step 6</a> → <a href=\"#step2\">this page step 2</a>",
     "site.bl.7": "<a href=\"../../../signal/transforms/fourier/\">The Fourier Transform · One Interaction at a Time</a>: <a href=\"../../../signal/transforms/fourier/#step3\">its step 3</a> → <a href=\"#step1\">this page step 1</a>",
-    "site.bl.8": "<a href=\"../../../signal/transforms/z-transform/\">The Z-Transform · Rolling the s-Plane into the Unit Circle</a>: → <a href=\"#step0\">this page step 0</a>"
+    "site.bl.8": "<a href=\"../../../signal/transforms/z-transform/\">The Z-Transform · Rolling the s-Plane into the Unit Circle</a>: <a href=\"../../../signal/transforms/z-transform/#step6\">its step 6</a> → <a href=\"#step0\">this page step 0</a>"
   }
 };
 

@@ -425,11 +425,11 @@ anchor; a link to the page top has no anchor).
 
 ## Z 变换 · 把 s 平面卷成单位圆 / The Z-Transform · Rolling the s-Plane into the Unit Circle → 三角函数 · 单位圆 / Trigonometric Functions · The Unit Circle
 
-- `z-transform` → `trigonometry#step0`
+- `z-transform#step6` → `trigonometry#step0`
 
 ## Z 变换 · 把 s 平面卷成单位圆 / The Z-Transform · Rolling the s-Plane into the Unit Circle → 傅里叶变换 · 一步一交互 / The Fourier Transform · One Interaction at a Time
 
-- `z-transform` → `fourier#step5`: ? → fourier, spectrum
+- `z-transform#step6` → `fourier#step5`: ? → fourier, spectrum
 
 ## 梯度下降 · 摸黑下山 / Gradient Descent · Feeling Your Way Downhill → 特征值与特征向量 · 矩阵不转的那些方向 / Eigenvalues & Eigenvectors · The Directions a Matrix Cannot Turn
 

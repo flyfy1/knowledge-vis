@@ -1,0 +1,45 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "z-transform",
+ "refs": [],
+ "backlinks": [
+  {
+   "from": "eigenvectors",
+   "links": [
+    {
+     "from": "step6",
+     "to": "step3"
+    }
+   ]
+  },
+  {
+   "from": "sampling",
+   "links": [
+    {
+     "from": "step4",
+     "to": "step5"
+    }
+   ]
+  },
+  {
+   "from": "frequency-response",
+   "links": [
+    {
+     "from": "step6",
+     "to": "step6"
+    }
+   ]
+  },
+  {
+   "from": "lti-systems",
+   "links": [
+    {
+     "from": "step6",
+     "to": "step2"
+    }
+   ]
+  }
+ ],
+ "related": [],
+ "bindings": []
+}
