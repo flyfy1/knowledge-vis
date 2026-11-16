@@ -396,7 +396,7 @@ anchor; a link to the page top has no anchor).
 
 ## 傅里叶变换 · 一步一交互 / The Fourier Transform · One Interaction at a Time → 频率响应与滤波 · 按频率挑食的盒子 / Frequency Response & Filters · A Box That Eats by Frequency
 
-- `fourier` → `frequency-response#step0`: ? → freqresp
+- `fourier#step5` → `frequency-response#step0`: fourier, spectrum → freqresp
 
 ## 反馈与控制 · 双轮车为什么倒不下去 / Feedback & Control · Why the Two-Wheeled Bot Never Falls → 冲激与 LTI · 给系统一巴掌 / Impulse & LTI · Slap the System
 

@@ -1,0 +1,19 @@
+<p class="explain" data-i18n-html="s3explain">
+      一个点绕着圆匀速旋转。盯着它在<strong>竖直方向</strong>上的高度看（虚线是它的投影）：
+      把每个时刻的高度连起来，正好就是一条正弦波。
+      <strong>圆转一圈 = 波的一个周期；转速 = 频率；半径 = 振幅；起始角度 = 相位。</strong>
+      第 1 步的三个旋钮，在这里全变成了圆的属性。记住这个画面，后面全靠它。
+    </p>
+    <div class="stage">
+      <canvas id="s3-canvas" height="300" style="height:300px"></canvas>
+    </div>
+    <p class="readout"><span data-i18n="s3angle"></span> θ = <span id="s3-theta">0.00</span> <span data-i18n="s3radProj"></span> y = R·sin θ = <span id="s3-y">0.00</span></p>
+    <div class="controls">
+      <label><span data-i18n="s3speed"></span> <span class="val" id="s3-speed-val">1.0×</span>
+        <input type="range" id="s3-speed" min="0.2" max="2.5" step="0.1" value="1">
+      </label>
+      <label><span data-i18n="s3radius"></span> <span class="val" id="s3-r-val">1.00</span>
+        <input type="range" id="s3-r" min="0.4" max="1" step="0.05" value="1">
+      </label>
+    </div>
+    <button class="btn" id="s3-toggle" data-i18n="s3pause"></button>

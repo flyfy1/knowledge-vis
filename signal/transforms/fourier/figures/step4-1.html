@@ -1,0 +1,19 @@
+<p class="explain" data-i18n-html="s4explain">
+      把第 3 步的圆首尾相连：第二个圆骑在第一个圆的笔尖上，以 3 倍速旋转；第三个 5 倍速……
+      每个圆贡献一条正弦波（回扣第 2 步），最后一个笔尖的高度轨迹，就是所有波的和。
+      拖动滑杆增加圆的个数，看方波如何成形。
+    </p>
+    <div class="stage">
+      <canvas id="s4-canvas" height="320" style="height:320px"></canvas>
+    </div>
+    <div class="controls">
+      <label><span data-i18n="s4labelN"></span> <span class="val" id="s4-n-val">3</span>
+        <input type="range" id="s4-n" min="1" max="25" step="1" value="3">
+      </label>
+    </div>
+    <p class="readout"><span data-i18n="s4overLabel"></span><span id="s4-overshoot">—</span></p>
+    <p class="hint" data-i18n-html="s4hint">
+      注意方波拐角处那个小小的「尖」：无论加多少个圆，它都不会消失，只会变得更窄。
+      这叫<strong>吉布斯现象</strong>：过冲约为跳变高度的 <strong>9%</strong>（从 −1 跳到 +1，跳变是 2，尖会冲到约 1.18）。
+      这是数学写死的常数，不是画得不够精细。
+    </p>

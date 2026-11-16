@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{{generated}}<html lang="zh-CN"{{htmlAttrs}}>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{title}}</title>
+<link rel="stylesheet" href="style.css?v=w3a">
+<link rel="stylesheet" href="../../../lesson-shell.css?v=20261018">
+  <link rel="stylesheet" href="../../../edition-compare.css">
+{{siteNavCss}}
+</head>
+<body>
+
+<header class="site-head">
+  <div class="head-top">
+    <a class="back-link" href="/" data-i18n="backToIndex"></a>
+    <div class="lang-toggle" id="langToggle" role="group" aria-label="Language / 语言">
+      <button type="button" data-lang="zh">中</button><button type="button" data-lang="en">EN</button>
+    </div>
+  </div>
+  {{crumbs}}<h1 data-i18n="docH1"></h1>
+  <p class="tagline" data-i18n="tagline"></p>
+</header>
+<p class="edition-compare"><a href="../../../variants/claude-code/fourier/"><span class="ec-zh" lang="zh-CN">对照 Claude Code 版 →</span><span class="ec-en" lang="en">Compare with the Claude Code edition →</span></a></p>
+
+<nav class="step-nav" id="stepNav" data-i18n-attr="aria-label:navAria" aria-label="步骤导航">{{stepNav}}</nav>
+
+<main>{{steps}}</main>{{linkedFrom}}
+
+<footer class="site-foot">
+  <p data-i18n="footText"></p>
+</footer>
+
+<script src="../../../canvas-label-guard.js"></script>
+<script src="i18n.js{{v}}"></script>
+<script src="app.js?v=w3a"></script>
+<script src="../../../lesson-shell.js?v=20261018"></script>
+{{siteNavJs}}
+</body>
+</html>

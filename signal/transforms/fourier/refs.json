@@ -1,0 +1,143 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "fourier",
+ "refs": [],
+ "backlinks": [
+  {
+   "from": "atlas",
+   "links": [
+    {
+     "from": null,
+     "to": "step5"
+    }
+   ]
+  },
+  {
+   "from": "vowel-space",
+   "links": [
+    {
+     "from": null,
+     "to": "step5"
+    }
+   ]
+  },
+  {
+   "from": "complex-numbers",
+   "links": [
+    {
+     "from": null,
+     "to": "step1"
+    }
+   ]
+  },
+  {
+   "from": "taylor-series",
+   "links": [
+    {
+     "from": null,
+     "to": "step0"
+    }
+   ]
+  },
+  {
+   "from": "trigonometry",
+   "links": [
+    {
+     "from": null,
+     "to": "step4"
+    }
+   ]
+  },
+  {
+   "from": "doppler-effect",
+   "links": [
+    {
+     "from": null,
+     "to": "step0"
+    }
+   ]
+  },
+  {
+   "from": "interference",
+   "links": [
+    {
+     "from": null,
+     "to": "step2"
+    }
+   ]
+  },
+  {
+   "from": "modulation",
+   "links": [
+    {
+     "from": null,
+     "to": "step5"
+    }
+   ]
+  },
+  {
+   "from": "sampling",
+   "links": [
+    {
+     "from": "step4",
+     "to": "step5"
+    },
+    {
+     "from": null,
+     "to": "step5"
+    }
+   ]
+  },
+  {
+   "from": "convolution",
+   "links": [
+    {
+     "from": null,
+     "to": "step5"
+    }
+   ]
+  },
+  {
+   "from": "frequency-response",
+   "links": [
+    {
+     "from": null,
+     "to": "step5"
+    }
+   ]
+  },
+  {
+   "from": "laplace",
+   "links": [
+    {
+     "from": "step0",
+     "to": "step0"
+    },
+    {
+     "from": null,
+     "to": "step5"
+    }
+   ]
+  },
+  {
+   "from": "wavelets",
+   "links": [
+    {
+     "from": null,
+     "to": "step5"
+    }
+   ]
+  },
+  {
+   "from": "z-transform",
+   "links": [
+    {
+     "from": null,
+     "to": "step5"
+    }
+   ]
+  }
+ ],
+ "related": [],
+ "bindings": []
+}

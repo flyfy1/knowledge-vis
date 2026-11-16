@@ -1,0 +1,42 @@
+<p class="explain" data-i18n-html="s2explain">
+      把几条正弦波在每个时刻的高度直接相加，就得到一条新波形。
+      下面三条彩色波各自可调，最下方白色粗线是它们的和。
+      大图里分量与总和用的是<strong>同一把尺子</strong>：任选一个位置量一量，总和的高度恰好等于三条分量高度之和（为了让总和不画出画布，整张图会一起等比缩放，但比例从不撒谎）。
+      试试点「方波配方」：只用 1、3、5 倍频率、振幅按 1、1/3、1/5 递减，方波的雏形就出现了。
+    </p>
+    <div class="comp-rows">
+      <div class="comp-row">
+        <canvas id="s2-mini1" class="mini" height="70" style="height:70px"></canvas>
+        <div class="comp-ctl">
+          <label><span data-i18n="labelFreq"></span> <span class="val" id="s2-f1-val">1</span>
+            <input type="range" id="s2-f1" min="1" max="8" step="1" value="1"></label>
+          <label><span data-i18n="labelAmp"></span> <span class="val" id="s2-a1-val">1.00</span>
+            <input type="range" id="s2-a1" min="0" max="1" step="0.05" value="1"></label>
+        </div>
+      </div>
+      <div class="comp-row">
+        <canvas id="s2-mini2" class="mini" height="70" style="height:70px"></canvas>
+        <div class="comp-ctl">
+          <label><span data-i18n="labelFreq"></span> <span class="val" id="s2-f2-val">2</span>
+            <input type="range" id="s2-f2" min="1" max="8" step="1" value="2"></label>
+          <label><span data-i18n="labelAmp"></span> <span class="val" id="s2-a2-val">0.50</span>
+            <input type="range" id="s2-a2" min="0" max="1" step="0.05" value="0.5"></label>
+        </div>
+      </div>
+      <div class="comp-row">
+        <canvas id="s2-mini3" class="mini" height="70" style="height:70px"></canvas>
+        <div class="comp-ctl">
+          <label><span data-i18n="labelFreq"></span> <span class="val" id="s2-f3-val">3</span>
+            <input type="range" id="s2-f3" min="1" max="8" step="1" value="3"></label>
+          <label><span data-i18n="labelAmp"></span> <span class="val" id="s2-a3-val">0.33</span>
+            <input type="range" id="s2-a3" min="0" max="1" step="0.05" value="0.33"></label>
+        </div>
+      </div>
+    </div>
+    <div class="stage">
+      <canvas id="s2-canvas" height="240" style="height:240px"></canvas>
+    </div>
+    <div class="btn-row">
+      <button class="btn" id="s2-preset-square" data-i18n="s2presetSquare"></button>
+      <button class="btn" id="s2-preset-random" data-i18n="s2presetRandom"></button>
+    </div>

@@ -1,0 +1,15 @@
+<p class="explain" data-i18n-html="s6explain">
+      在下面画布里用鼠标或手指<strong>画一条闭合曲线</strong>（比如一颗心、一个星星、你的名字首字母），
+      或者点一个预设图形。页面会把轮廓点的<strong>横坐标和纵坐标分开</strong>，各做一次真正的离散傅里叶变换（DFT）：
+      上方一串圆负责横坐标，左方一串圆负责纵坐标，两条投影虚线的交点就是笔尖。
+      拖动 N 看误差读数不断下降——<strong>傅里叶变换，就是把一条曲线拆成横竖两个方向上的旋转之和。</strong>
+    </p>
+    <div class="stage">
+      <canvas id="s6-canvas" height="420" style="height:420px"></canvas>
+    </div>
+    <div class="controls">
+      <label><span data-i18n="labelN"></span> <span class="val" id="s6-n-val">25</span>
+        <input type="range" id="s6-n" min="1" max="60" step="1" value="25">
+      </label>
+    </div>
+    <p class="readout">N = <span id="s6-n-readout">25</span> · <span data-i18n="readoutError"></span> = <span id="s6-error">—</span></p>
