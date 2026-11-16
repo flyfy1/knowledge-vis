@@ -1182,7 +1182,7 @@ anchor; a link to the page top has no anchor).
 
 ## 双缝实验 · 一颗一颗的粒子，也走出干涉条纹 / The Double-Slit Experiment · Single Particles Still Build Fringes → 光电效应 · 光是一份一份的 / The Photoelectric Effect · Light Comes in Packets
 
-- `double-slit` → `photoelectric-effect#step0`
+- `double-slit#step5` → `photoelectric-effect#step0`
 
 ## 期望 · 彩票、骰子、保险放在同一台秤上 / Expected Value · Lotteries, Dice and Insurance on One Scale → 概率分布 · 随机性也有形状 / Probability Distributions · Randomness Has a Shape
 
