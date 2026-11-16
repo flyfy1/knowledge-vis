@@ -41,8 +41,10 @@ now quote every path.
   - the runtime around the table (the file minus the table literal and the GENERATED line) is identical.
 - **convolution, eigenvectors, kalman, bayes-updating**: the same check at their own conversion commits, also exact.
   climate-energy's table is `const D`, not `STR`; `splitI18n` finds it by shape.
-- **After the fixes**, the no-chrome round trip still holds for all 17 pages: aeeae125 touched only `layout.html`
-  include lines, which are outside the round trip. 11 pages now carry `version` 20261116b.
+- **After the fixes** (rerun at the HEAD that has this review): a no-chrome rebuild differs from each parent's
+  `index.html` only in the two lesson-shell include lines. Those lines are literal in `layout.html`, and aeeae125
+  changed their `?v=`. With `lesson-shell.(css|js)?v=…` normalised on both sides, all 17 are byte-identical again; the
+  tables and the runtime are unchanged. 11 pages now carry `version` 20261116b.
 - **Live vs build** (convolution, eigenvectors, kalman, frozen-bubble; zh and en; 1280×900; reduced motion). Same
   across all eight runs:
   - rendered body text (minus the breadcrumb, label and linked-from block), every link (href and text), `<title>` and
@@ -146,8 +148,8 @@ The cost is small, but it is strictly worse, so I fixed it in `lesson-shell.js` 
   - frozen-bubble `content.zh.md`: unattributed (from its `i18n.js` history; its `index.html` and partials read codex);
   - climate-energy `content.zh.md` and its partial: unattributed;
   - in each, `script (mechanical only): 1 commit`.
-- Primaries of the 51 pre-existing files (`index.html`, `i18n.js`, `page.json` × 17): HEAD against a clone at
-  af7030c6, 0 changed.
+- Primaries of the 51 pre-existing files (`index.html`, `i18n.js`, `page.json` × 17) at the HEAD with all fix commits,
+  against a clone at af7030c6: 0 changed.
 - My commits:
   - 86e430f0, 12bc4310 and 7d9e15fb touch only shared files, specs and tests (authored);
   - aeeae125 (include lines; Claude Code, mechanical) and afc4d75e (script, mechanical) are the only ones touching
@@ -192,7 +194,9 @@ no keys (no native lesson exists yet).
 
 Pre-existing failures:
 - sampling pair-core and convolution support-core `git show 198b3338:…`, which is not in this clone;
-- frozen-bubble `teaching.cjs` is a browser test that needs `NODE_PATH`.
+
+frozen-bubble `teaching.cjs` is not a failure. It is a browser test that I started by mistake without `NODE_PATH` (no
+playwright), and I did not run it properly.
 
 **Browser.** Run serially on 127.0.0.1:18976. All pass:
 - lesson-shell, twice (before and after the fixes)
