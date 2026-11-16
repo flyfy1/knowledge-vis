@@ -1,0 +1,42 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "risk-pooling",
+ "refs": [
+  {
+   "from": "s1e",
+   "to": "central-limit-theorem",
+   "anchor": "step3"
+  }
+ ],
+ "backlinks": [
+  {
+   "from": "diversification",
+   "links": [
+    {
+     "from": "step5",
+     "to": "step0"
+    }
+   ]
+  },
+  {
+   "from": "risk-return",
+   "links": [
+    {
+     "from": "step5",
+     "to": "step0"
+    }
+   ]
+  },
+  {
+   "from": "veil-of-ignorance",
+   "links": [
+    {
+     "from": null,
+     "to": "step1"
+    }
+   ]
+  }
+ ],
+ "related": [],
+ "bindings": []
+}

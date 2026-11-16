@@ -97,7 +97,11 @@
    "from": "risk-pooling",
    "links": [
     {
-     "from": null,
+     "from": "step1",
+     "to": "step3"
+    },
+    {
+     "from": "step5",
      "to": "step3"
     }
    ]

@@ -1326,11 +1326,11 @@ anchor; a link to the page top has no anchor).
 
 ## 风险池化与保险 · 一万人各摊一点 / Risk Pooling & Insurance · Ten Thousand People Each Chip In → 概率分布 · 随机性也有形状 / Probability Distributions · Randomness Has a Shape
 
-- `risk-pooling` → `probability-distribution#step2`
+- `risk-pooling#step5` → `probability-distribution#step2`
 
 ## 风险池化与保险 · 一万人各摊一点 / Risk Pooling & Insurance · Ten Thousand People Each Chip In → 蒙特卡洛 · 撒豆子算 π / Monte Carlo · Counting π with Scattered Beans
 
-- `risk-pooling` → `monte-carlo#step2`
+- `risk-pooling#step5` → `monte-carlo#step2`
 
 ## RSA 公钥加密 · 乘起来容易，拆开来难 / RSA Public-Key Encryption · Easy to Multiply, Hard to Split → 除法与余数 · 分不完的那一点 / Division & Remainders · What Is Left Over
 
