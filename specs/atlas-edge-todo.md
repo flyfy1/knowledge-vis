@@ -995,7 +995,7 @@ anchor; a link to the page top has no anchor).
 
 ## 月相 · 从地球看被照亮的那一半 / Moon Phases · The Lit Half, Seen from Earth → 小孔成像 · 一个孔的相机 / Pinhole Camera · A Camera With One Tiny Hole
 
-- `moon-phases` → `pinhole-camera#step0`
+- `moon-phases#step5` → `pinhole-camera#step0`
 
 ## 过拟合 / Overfitting → 梯度下降 · 摸黑下山 / Gradient Descent · Feeling Your Way Downhill
 
