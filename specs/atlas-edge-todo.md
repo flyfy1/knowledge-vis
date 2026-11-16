@@ -1388,7 +1388,7 @@ anchor; a link to the page top has no anchor).
 
 ## 分散投资 · 为什么不把鸡蛋放一个篮子里 / Diversification · Why Not Put All Eggs in One Basket → 概率分布 · 随机性也有形状 / Probability Distributions · Randomness Has a Shape
 
-- `diversification` → `probability-distribution#step1`
+- `diversification#step5` → `probability-distribution#step1`
 
 ## 费率与复利 · 1% 的费率怎么吃掉回报 / Fees & Compounding · How Does a 1% Fee Eat Returns → 利率与债券 · 利率升为什么债价跌 / Interest Rates & Bonds · Why Do Bond Prices Fall When Rates Rise
 
