@@ -1219,7 +1219,7 @@ anchor; a link to the page top has no anchor).
 
 ## 假设检验与 p 值 · 法庭模型判硬币冤不冤 / Hypothesis Testing & p-Values · A Courtroom for a Coin → 二项分布到正态 · 钉板上长出的钟形 / Binomial to Normal · The Bell Curve Growing on a Pegboard
 
-- `hypothesis-testing` → `binomial-normal#step0`
+- `hypothesis-testing#step5` → `binomial-normal#step0`
 
 ## 马尔可夫链 · 下一步只看现在 / Markov Chains · The Next Step Depends Only on Now → PageRank · 随机冲浪者最后停在哪 / PageRank · Where the Random Surfer Ends Up
 
