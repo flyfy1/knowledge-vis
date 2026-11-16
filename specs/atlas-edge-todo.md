@@ -1142,11 +1142,11 @@ anchor; a link to the page top has no anchor).
 
 ## 卡诺循环 · 热机的效率上限 / The Carnot Cycle · The Ceiling on Heat-Engine Efficiency → 熵 · 惊讶的平均值 / Entropy · The Average of Surprise
 
-- `carnot-cycle` → `entropy#step0`
+- `carnot-cycle#step5` → `entropy#step0`
 
 ## 卡诺循环 · 热机的效率上限 / The Carnot Cycle · The Ceiling on Heat-Engine Efficiency → 气体压强的微观图景 · 撞墙的账本 / The Microscopic Picture of Gas Pressure · A Ledger of Wall Hits
 
-- `carnot-cycle` → `kinetic-theory#step1`
+- `carnot-cycle#step5` → `kinetic-theory#step1`
 
 ## 混沌与三体 · 初始差一丝，结果天壤 / Chaos and the Three-Body Problem · Tiny Differences, Huge Outcomes → 指数与对数 · 翻倍与逆问 / Exponentials & Logarithms · Doubling and the Reverse Question
 
