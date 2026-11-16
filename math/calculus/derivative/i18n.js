@@ -128,7 +128,7 @@ var STR = {
     "site.bl.6": "<a href=\"../newton-method/\">牛顿法求根 · 沿切线一刀跳向零点</a>：<a href=\"../newton-method/#step0\">该课第 0 步</a> → <a href=\"#step1\">本页第 1 步</a>；<a href=\"../newton-method/#step5\">该课第 5 步</a> → <a href=\"#step1\">本页第 1 步</a>",
     "site.bl.7": "<a href=\"../ode-phase-portraits/\">微分方程相图 · 捕食者与猎物的回路</a>：<a href=\"../ode-phase-portraits/#step0\">该课第 0 步</a> → <a href=\"#step3\">本页第 3 步</a>；<a href=\"../ode-phase-portraits/#step5\">该课第 5 步</a> → <a href=\"#step3\">本页第 3 步</a>",
     "site.bl.8": "<a href=\"../taylor-series/\">泰勒级数 · 把曲线一项项贴上去</a>：<a href=\"../taylor-series/#step3\">该课第 3 步</a> → <a href=\"#step3\">本页第 3 步</a>；<a href=\"../taylor-series/#step5\">该课第 5 步</a> → <a href=\"#step3\">本页第 3 步</a>",
-    "site.bl.9": "<a href=\"../../../physics/electromagnetism/electromagnetic-induction/\">电磁感应 · 磁通量一变，电压就来</a>：→ <a href=\"#step2\">本页第 2 步</a>",
+    "site.bl.9": "<a href=\"../../../physics/electromagnetism/electromagnetic-induction/\">电磁感应 · 磁通量一变，电压就来</a>：<a href=\"../../../physics/electromagnetism/electromagnetic-induction/#step5\">该课第 5 步</a> → <a href=\"#step2\">本页第 2 步</a>",
     "site.bl.10": "<a href=\"../../../physics/mechanics/newton-laws/\">牛顿运动定律 · F = ma 是调出来的</a>：→ <a href=\"#step3\">本页第 3 步</a>"
   },
   en: {
@@ -249,7 +249,7 @@ var STR = {
     "site.bl.6": "<a href=\"../newton-method/\">Newton’s Method · Leap to the Root Along a Tangent</a>: <a href=\"../newton-method/#step0\">its step 0</a> → <a href=\"#step1\">this page step 1</a>; <a href=\"../newton-method/#step5\">its step 5</a> → <a href=\"#step1\">this page step 1</a>",
     "site.bl.7": "<a href=\"../ode-phase-portraits/\">ODE Phase Portraits · Predators and Prey in a Loop</a>: <a href=\"../ode-phase-portraits/#step0\">its step 0</a> → <a href=\"#step3\">this page step 3</a>; <a href=\"../ode-phase-portraits/#step5\">its step 5</a> → <a href=\"#step3\">this page step 3</a>",
     "site.bl.8": "<a href=\"../taylor-series/\">Taylor Series · Patch the Curve Term by Term</a>: <a href=\"../taylor-series/#step3\">its step 3</a> → <a href=\"#step3\">this page step 3</a>; <a href=\"../taylor-series/#step5\">its step 5</a> → <a href=\"#step3\">this page step 3</a>",
-    "site.bl.9": "<a href=\"../../../physics/electromagnetism/electromagnetic-induction/\">Electromagnetic Induction · Change the Flux, Get a Voltage</a>: → <a href=\"#step2\">this page step 2</a>",
+    "site.bl.9": "<a href=\"../../../physics/electromagnetism/electromagnetic-induction/\">Electromagnetic Induction · Change the Flux, Get a Voltage</a>: <a href=\"../../../physics/electromagnetism/electromagnetic-induction/#step5\">its step 5</a> → <a href=\"#step2\">this page step 2</a>",
     "site.bl.10": "<a href=\"../../../physics/mechanics/newton-laws/\">Newton’s Laws of Motion · F = ma, Tuned by Hand</a>: → <a href=\"#step3\">this page step 3</a>"
   }
 };

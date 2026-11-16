@@ -744,7 +744,7 @@ anchor; a link to the page top has no anchor).
 
 ## 电磁感应 · 磁通量一变，电压就来 / Electromagnetic Induction · Change the Flux, Get a Voltage → 磁场与洛伦兹力 · 力总是垂直于速度 / Magnetic Force · The Force Is Always Sideways to the Velocity
 
-- `electromagnetic-induction` → `magnetic-force#step0`
+- `electromagnetic-induction#step5` → `magnetic-force#step0`
 
 ## 能量金字塔 · 为什么顶级捕食者那么少 / The Energy Pyramid · Why Top Predators Are Rare → 光合作用 · 用光开工的糖厂 / Photosynthesis · A Sugar Factory Run by Light
 
