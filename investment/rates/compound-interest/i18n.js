@@ -94,7 +94,7 @@ const STR = {
     "site.bl.2": "<a href=\"../../../economics/money/where-money-comes-from/\">钱是从哪里来的</a>：→ <a href=\"#step3\">本页第 3 步</a>、<a href=\"#step5\">本页第 5 步</a>",
     "site.bl.3": "<a href=\"../../basics/stocks-bonds/\">股票与债券 · 买到的到底是什么</a>：<a href=\"../../basics/stocks-bonds/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>",
     "site.bl.4": "<a href=\"../fees-compounding/\">费率与复利 · 1% 的费率怎么吃掉回报</a>：<a href=\"../fees-compounding/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>",
-    "site.bl.5": "<a href=\"../interest-rates-bonds/\">利率与债券 · 利率升为什么债价跌</a>：→ <a href=\"#step3\">本页第 3 步</a>"
+    "site.bl.5": "<a href=\"../interest-rates-bonds/\">利率与债券 · 利率升为什么债价跌</a>：<a href=\"../interest-rates-bonds/#step5\">该课第 5 步</a> → <a href=\"#step3\">本页第 3 步</a>"
   },
   en: {
     back: "← Knowledge Index",
@@ -189,7 +189,7 @@ const STR = {
     "site.bl.2": "<a href=\"../../../economics/money/where-money-comes-from/\">Where Money Comes From</a>: → <a href=\"#step3\">this page step 3</a>, <a href=\"#step5\">this page step 5</a>",
     "site.bl.3": "<a href=\"../../basics/stocks-bonds/\">Stocks & Bonds · What Do You Actually Buy</a>: <a href=\"../../basics/stocks-bonds/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>",
     "site.bl.4": "<a href=\"../fees-compounding/\">Fees & Compounding · How Does a 1% Fee Eat Returns</a>: <a href=\"../fees-compounding/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>",
-    "site.bl.5": "<a href=\"../interest-rates-bonds/\">Interest Rates & Bonds · Why Do Bond Prices Fall When Rates Rise</a>: → <a href=\"#step3\">this page step 3</a>"
+    "site.bl.5": "<a href=\"../interest-rates-bonds/\">Interest Rates & Bonds · Why Do Bond Prices Fall When Rates Rise</a>: <a href=\"../interest-rates-bonds/#step5\">its step 5</a> → <a href=\"#step3\">this page step 3</a>"
   }
 };
 let currentLang = 'en';

@@ -1,0 +1,49 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "interest-rates-bonds",
+ "refs": [],
+ "backlinks": [
+  {
+   "from": "where-a-mortgage-payment-goes",
+   "links": [
+    {
+     "from": "ch9",
+     "to": null
+    }
+   ]
+  },
+  {
+   "from": "where-money-comes-from",
+   "links": [
+    {
+     "from": null,
+     "to": "step3"
+    },
+    {
+     "from": null,
+     "to": null
+    }
+   ]
+  },
+  {
+   "from": "atlas-investment",
+   "links": [
+    {
+     "from": null,
+     "to": "step5"
+    }
+   ]
+  },
+  {
+   "from": "fees-compounding",
+   "links": [
+    {
+     "from": "step5",
+     "to": "step1"
+    }
+   ]
+  }
+ ],
+ "related": [],
+ "bindings": []
+}
