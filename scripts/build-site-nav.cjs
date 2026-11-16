@@ -21,7 +21,7 @@ const path = require('path');
 
 const root = path.resolve(__dirname, '..');
 // Bump when site-nav.js or site-nav.css change (Cloudflare caches JS/CSS for 4 h, HTML not at all).
-const VERSION = 'sn-20261116b';
+const VERSION = 'sn-20261116c';
 const NO_AUTOLINK = [
 ];
 
