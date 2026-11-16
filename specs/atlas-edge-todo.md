@@ -797,7 +797,7 @@ anchor; a link to the page top has no anchor).
 
 ## 分子构型 · 电子对互相躲开 / Molecular Shapes · Electron Pairs Keeping Out of Each Other\ → 原子结构 · 质子数定它是谁 / Atomic Structure · The Proton Count Decides What It Is
 
-- `molecular-shapes` → `atomic-structure#step3`: ? → electron-shells
+- `molecular-shapes#step5` → `atomic-structure#step3`: ? → electron-shells
 
 ## 分子与原子 / Molecules & Atoms → 原子结构 · 质子数定它是谁 / Atomic Structure · The Proton Count Decides What It Is
 
