@@ -741,11 +741,11 @@ anchor; a link to the page top has no anchor).
 
 ## 能量金字塔 · 为什么顶级捕食者那么少 / The Energy Pyramid · Why Top Predators Are Rare → 光合作用 · 用光开工的糖厂 / Photosynthesis · A Sugar Factory Run by Light
 
-- `energy-pyramid` → `photosynthesis#step2`
+- `energy-pyramid#step5` → `photosynthesis#step2`
 
 ## 能量金字塔 · 为什么顶级捕食者那么少 / The Energy Pyramid · Why Top Predators Are Rare → 种群生态学 · 增长如何被反馈改变 / Population Ecology · Growth Reshaped by Feedback
 
-- `energy-pyramid` → `population-ecology#step3`
+- `energy-pyramid#step5` → `population-ecology#step3`
 
 ## 酶 · 生物体内的催化剂 / Enzymes · Catalysts of the Living World → 反应速率 · 数一数成功碰撞 / Reaction Rates · Counting Successful Collisions
 
