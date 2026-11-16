@@ -498,11 +498,11 @@ anchor; a link to the page top has no anchor).
 
 ## 勾股定理 · 一步一交互 / The Pythagorean Theorem · One Interaction at a Time → 分数 · 把整体切开来数 / Fractions · Cutting the Whole to Count
 
-- `pythagoras` → `fractions#step6`
+- `pythagoras#step6` → `fractions#step6`
 
 ## 勾股定理 · 一步一交互 / The Pythagorean Theorem · One Interaction at a Time → 特征值与特征向量 · 矩阵不转的那些方向 / Eigenvalues & Eigenvectors · The Directions a Matrix Cannot Turn
 
-- `pythagoras` → `eigenvectors#step1`: ? → eigen, vectors
+- `pythagoras#step6` → `eigenvectors#step1`: ? → eigen, vectors
 
 ## 乘法是面积 · 点阵铺成一块地 / Multiplication Is Area · Arrays Become a Tiled Floor → 分数 · 把整体切开来数 / Fractions · Cutting the Whole to Count
 
