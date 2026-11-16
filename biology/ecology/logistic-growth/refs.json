@@ -1,0 +1,63 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "logistic-growth",
+ "refs": [],
+ "backlinks": [
+  {
+   "from": "food-web",
+   "links": [
+    {
+     "from": "step5",
+     "to": "step3"
+    }
+   ]
+  },
+  {
+   "from": "how-soy-sauce-gets-its-flavor",
+   "links": [
+    {
+     "from": "ch10",
+     "to": null
+    }
+   ]
+  },
+  {
+   "from": "compound-interest",
+   "links": [
+    {
+     "from": null,
+     "to": "step0"
+    }
+   ]
+  },
+  {
+   "from": "prisoners-dilemma",
+   "links": [
+    {
+     "from": null,
+     "to": "step2"
+    }
+   ]
+  },
+  {
+   "from": "ode-phase-portraits",
+   "links": [
+    {
+     "from": null,
+     "to": "step2"
+    }
+   ]
+  },
+  {
+   "from": "chaos-threebody",
+   "links": [
+    {
+     "from": null,
+     "to": "step2"
+    }
+   ]
+  }
+ ],
+ "related": [],
+ "bindings": []
+}

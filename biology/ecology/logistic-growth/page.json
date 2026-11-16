@@ -28,5 +28,62 @@
   "stage": "senior",
   "status": "live",
   "path": "biology/ecology/logistic-growth/",
-  "order": 950
+  "order": 950,
+  "layout": "lesson",
+  "version": "20261116a",
+  "titleKey": "docTitle",
+  "legacyLayout": {
+    "_note": "Whitespace and markup of the hand-written lesson this page was converted from, so the conversion could be checked byte for byte (specs/site-template.md §3c).",
+    "mainGaps": [
+      "\n\n",
+      "\n\n",
+      "\n\n",
+      "\n\n",
+      "\n\n",
+      "\n\n",
+      "\n\n"
+    ],
+    "stepNav": {
+      "item": "\n  <a href=\"#{id}\" class=\"nav-step\" data-nav=\"{n}\" data-i18n=\"{key}\"></a>",
+      "end": "\n"
+    },
+    "filled": [
+      "back",
+      "pageTitle",
+      "tagline",
+      "nav0",
+      "nav1",
+      "nav2",
+      "nav3",
+      "nav4",
+      "nav5",
+      "s0k",
+      "s0t",
+      "s0next",
+      "s0reset",
+      "s1k",
+      "s1t",
+      "s1rLab",
+      "s2k",
+      "s2t",
+      "s2rLab",
+      "s2kLab",
+      "s0next#2",
+      "s0reset#2",
+      "s3k",
+      "s3t",
+      "s3n0Lab",
+      "s3kLab",
+      "s3next",
+      "s3reset",
+      "s4k",
+      "s4t",
+      "s4rLab",
+      "s5k",
+      "s5t",
+      "s5lkExp",
+      "s5lkEq",
+      "foot"
+    ]
+  }
 }

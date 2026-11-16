@@ -617,7 +617,7 @@ anchor; a link to the page top has no anchor).
 
 ## 种群增长 · S 形曲线从哪来 / Population Growth · Where the S-Curve Comes From → 化学平衡 · 人数不变，人还在跑 / Chemical Equilibrium · Still Moving at Balance
 
-- `logistic-growth` → `chemical-equilibrium#step2`
+- `logistic-growth#step5` → `chemical-equilibrium#step2`
 
 ## 化学平衡 · 人数不变，人还在跑 / Chemical Equilibrium · Still Moving at Balance → 质量守恒 · 原子一个都不丢 / Mass Conservation · Not a Single Atom Lost
 
