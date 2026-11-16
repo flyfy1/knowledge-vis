@@ -1,0 +1,13 @@
+<figure class="lab">
+    <h3 data-i18n="ch8.model.title"></h3>
+    <p class="how" data-i18n-html="ch8.model.how"></p>
+    <canvas class="cv" id="piCv" role="img" data-i18n-aria="ch8.model.aria"></canvas>
+    <div class="ctl"><div class="seg" role="radiogroup" data-i18n-aria="ch8.ctl.f"><span class="lbl" data-i18n="ch8.ctl.f"></span><label><input type="radio" name="piF" value="none"><span data-i18n="ch8.f.none"></span></label><label><input type="radio" name="piF" value="link"><span data-i18n="ch8.f.link"></span></label><label><input type="radio" name="piF" value="mem" checked><span data-i18n="ch8.f.mem"></span></label><label><input type="radio" name="piF" value="misdir"><span data-i18n="ch8.f.misdir"></span></label><label><input type="radio" name="piF" value="lost"><span data-i18n="ch8.f.lost"></span></label><label><input type="radio" name="piF" value="media"><span data-i18n="ch8.f.media"></span></label></div></div>
+    <div class="ctl"><label class="chk"><input type="checkbox" id="piOn" checked><span data-i18n="ch8.ctl.pi"></span></label><div class="seg" role="radiogroup" data-i18n-aria="ch8.ctl.n"><span class="lbl" data-i18n="ch8.ctl.n"></span><label><input type="radio" name="piN" value="1" checked><span data-i18n="ch8.n.1"></span></label><label><input type="radio" name="piN" value="2"><span data-i18n="ch8.n.2"></span></label><label><input type="radio" name="piN" value="3"><span data-i18n="ch8.n.3"></span></label><label><input type="radio" name="piN" value="tri"><span data-i18n="ch8.n.tri"></span></label></div></div>
+    <div class="ctl"><label class="rng"><span data-i18n="ch8.ctl.b"></span><input type="range" id="piB" min="0" max="4095" step="1" value="1000"><output id="piBo"></output></label></div>
+    <div class="chips" id="piChips"></div>
+<div class="read"><div><b class="g" id="piGuard"></b><span data-i18n-html="ch8.read.guard"></span></div><div><b class="c" id="piSeen"></b><span data-i18n-html="ch8.read.seen"></span></div><div><b class="" id="piRef"></b><span data-i18n-html="ch8.read.ref"></span></div><div><b class="r" id="piOut"></b><span data-i18n-html="ch8.read.out"></span></div></div>
+    <p class="say" id="piSay" aria-live="polite"></p>
+    <div class="ctl"><button type="button" class="b" id="piGb" data-i18n="ch8.btn.garbage"></button></div>
+    <p class="gbline" id="piGbOut" aria-live="polite"></p>
+  </figure>

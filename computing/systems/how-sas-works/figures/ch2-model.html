@@ -1,0 +1,11 @@
+<figure class="lab">
+    <h3 data-i18n="ch2.model.title"></h3>
+    <p class="how" data-i18n-html="ch2.model.how"></p>
+    <canvas class="cv short" id="cdCv" role="img" data-i18n-aria="ch2.model.aria"></canvas>
+    <div class="ctl"><label class="rng"><span data-i18n="ch2.ctl.x"></span><input type="range" id="cdX" min="0" max="80" step="1" value="65"><output id="cdXo"></output></label></div>
+    <div class="ctl"><div class="seg" role="radiogroup" data-i18n-aria="ch2.ctl.op"><span class="lbl" data-i18n="ch2.ctl.op"></span><label><input type="radio" name="cdOp" value="r6"><span data-i18n="ch2.op.r6"></span></label><label><input type="radio" name="cdOp" value="r10" checked><span data-i18n="ch2.op.r10"></span></label><label><input type="radio" name="cdOp" value="r16"><span data-i18n="ch2.op.r16"></span></label></div><div class="seg" role="radiogroup" data-i18n-aria="ch2.ctl.bs"><span class="lbl" data-i18n="ch2.ctl.bs"></span><label><input type="radio" name="cdBs" value="512" checked><span data-i18n="ch2.bs.512"></span></label><label><input type="radio" name="cdBs" value="4096"><span data-i18n="ch2.bs.4096"></span></label></div></div>
+    <div class="ctl"><div class="seg" role="radiogroup" data-i18n-aria="ch2.ctl.attr"><span class="lbl" data-i18n="ch2.ctl.attr"></span><label><input type="radio" name="cdA" value="simple" checked><span data-i18n="ch2.attr.simple"></span></label><label><input type="radio" name="cdA" value="ordered"><span data-i18n="ch2.attr.ordered"></span></label><label><input type="radio" name="cdA" value="hoq"><span data-i18n="ch2.attr.hoq"></span></label></div></div>
+<div class="read"><div><b class="g" id="cdLba"></b><span data-i18n-html="ch2.read.lba"></span></div><div><b class="c" id="cdReach"></b><span data-i18n-html="ch2.read.reach"></span></div><div><b class="n" id="cdNeed"></b><span data-i18n-html="ch2.read.need"></span></div><div><b class="" id="cdLen"></b><span data-i18n-html="ch2.read.len"></span></div></div>
+    <pre class="hex" id="cdHex" data-i18n-aria="ch2.hex.aria" tabindex="0"></pre>
+    <p class="say" id="cdSay" aria-live="polite"></p>
+  </figure>

@@ -1,0 +1,74 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "how-sas-works",
+ "refs": [],
+ "backlinks": [
+  {
+   "from": "how-pcie-works",
+   "links": [
+    {
+     "from": "ch10",
+     "to": "ch9"
+    }
+   ]
+  },
+  {
+   "from": "how-sata-works",
+   "links": [
+    {
+     "from": "ch1",
+     "to": "ch7"
+    },
+    {
+     "from": "ch10",
+     "to": null
+    }
+   ]
+  },
+  {
+   "from": "how-usb-drives-talk",
+   "links": [
+    {
+     "from": "ch6",
+     "to": "ch2"
+    },
+    {
+     "from": "ch11",
+     "to": "ch2"
+    }
+   ]
+  },
+  {
+   "from": "storage-over-a-network",
+   "links": [
+    {
+     "from": null,
+     "to": null
+    },
+    {
+     "from": "ch3",
+     "to": "ch2"
+    },
+    {
+     "from": "ch8",
+     "to": "ch4"
+    },
+    {
+     "from": "ch11",
+     "to": null
+    }
+   ]
+  },
+  {
+   "from": "what-a-drive-is-made-of",
+   "links": [
+    {
+     "from": "ch7",
+     "to": "ch7"
+    }
+   ]
+  }
+ ],
+ "related": [],
+ "bindings": []
+}
