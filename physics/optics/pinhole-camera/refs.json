@@ -1,0 +1,45 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "pinhole-camera",
+ "refs": [],
+ "backlinks": [
+  {
+   "from": "moon-phases",
+   "links": [
+    {
+     "from": "step5",
+     "to": "step0"
+    }
+   ]
+  },
+  {
+   "from": "linear-functions",
+   "links": [
+    {
+     "from": "step2",
+     "to": "geometry-bridge"
+    }
+   ]
+  },
+  {
+   "from": "similarity-scaling",
+   "links": [
+    {
+     "from": "step5",
+     "to": "step0"
+    }
+   ]
+  },
+  {
+   "from": "eye-vision",
+   "links": [
+    {
+     "from": "step5",
+     "to": "step0"
+    }
+   ]
+  }
+ ],
+ "related": [],
+ "bindings": []
+}

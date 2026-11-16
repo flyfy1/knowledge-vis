@@ -591,7 +591,7 @@ anchor; a link to the page top has no anchor).
 
 ## 小孔成像 · 一个孔的相机 / Pinhole Camera · A Camera With One Tiny Hole → 光的反射与折射 · 拐弯的规矩 / Reflection & Refraction · How Light Bends
 
-- `pinhole-camera` → `reflection-refraction#step0`
+- `pinhole-camera#step5` → `reflection-refraction#step0`
 
 ## 方程天平 · 两边同做一件事 / Equations on a Balance · Do the Same to Both Sides → 负数 · 0 以下的世界 / Negative Numbers · The World Below Zero
 
