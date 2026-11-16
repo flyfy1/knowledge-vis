@@ -886,7 +886,7 @@ anchor; a link to the page top has no anchor).
 
 ## 反向传播 · 误差沿网络回流 / Backpropagation · Error Flows Back Through the Network → 注意力机制 · 每个词决定看谁 / Attention · Every Word Decides Where to Look
 
-- `backpropagation` → `attention-mechanism#step4`
+- `backpropagation#step5` → `attention-mechanism#step4`
 
 ## 多臂老虎机 · 探索还是利用 / Multi-Armed Bandits · Explore or Exploit → 中心极限定理 · 平均值总会变成钟形 / Central Limit Theorem · Averages Always Turn Bell-Shaped
 
