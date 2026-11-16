@@ -1042,7 +1042,7 @@ anchor; a link to the page top has no anchor).
 
 ## 实数与数轴 · √2 落在哪一点 / Real Numbers & the Number Line · Where √2 Lands → 坐标系 · 点的地址 / The Coordinate Plane · Addresses for Points
 
-- `real-number-line` → `coordinate-plane#step0`
+- `real-number-line#step5` → `coordinate-plane#step0`
 
 ## 相似与缩放 · 长度、面积、体积各变几倍 / Similarity & Scaling · Lengths, Areas and Volumes Each Change Differently → 乘法是面积 · 点阵铺成一块地 / Multiplication Is Area · Arrays Become a Tiled Floor
 

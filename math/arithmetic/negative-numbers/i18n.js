@@ -142,7 +142,7 @@ const STR = {
     "site.bl.1": "<a href=\"../../../computing/systems/switches-that-compute/\">一堆开关是怎么学会算数的</a>：<a href=\"../../../computing/systems/switches-that-compute/#ch5\">该文第 5 章</a>；<a href=\"../../../computing/systems/switches-that-compute/#ch11\">该文第 11 章</a>",
     "site.bl.2": "<a href=\"../../algebra/equation-scale/\">方程天平 · 两边同做一件事</a>：<a href=\"../../algebra/equation-scale/#step4\">该课第 4 步</a> → <a href=\"#step3\">本页第 3 步</a>；<a href=\"../../algebra/equation-scale/#step6\">该课第 6 步</a> → <a href=\"#step3\">本页第 3 步</a>",
     "site.bl.3": "<a href=\"../../algebra/inequalities/\">不等式 · 天平倾斜，答案是一整段</a>：<a href=\"../../algebra/inequalities/#step5\">该课第 5 步</a> → <a href=\"#step1\">本页第 1 步</a>",
-    "site.bl.4": "<a href=\"../real-number-line/\">实数与数轴 · √2 落在哪一点</a>：→ <a href=\"#step0\">本页第 0 步</a>"
+    "site.bl.4": "<a href=\"../real-number-line/\">实数与数轴 · √2 落在哪一点</a>：<a href=\"../real-number-line/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>"
   },
   en: {
     docTitle: "Negative Numbers · The World Below Zero — One Interaction at a Time",
@@ -278,7 +278,7 @@ const STR = {
     "site.bl.1": "<a href=\"../../../computing/systems/switches-that-compute/\">How a Pile of Switches Learned to Do Arithmetic</a>: <a href=\"../../../computing/systems/switches-that-compute/#ch5\">its chapter 5</a>; <a href=\"../../../computing/systems/switches-that-compute/#ch11\">its chapter 11</a>",
     "site.bl.2": "<a href=\"../../algebra/equation-scale/\">Equations on a Balance · Do the Same to Both Sides</a>: <a href=\"../../algebra/equation-scale/#step4\">its step 4</a> → <a href=\"#step3\">this page step 3</a>; <a href=\"../../algebra/equation-scale/#step6\">its step 6</a> → <a href=\"#step3\">this page step 3</a>",
     "site.bl.3": "<a href=\"../../algebra/inequalities/\">Inequalities · A Tilted Scale Has a Whole Range of Answers</a>: <a href=\"../../algebra/inequalities/#step5\">its step 5</a> → <a href=\"#step1\">this page step 1</a>",
-    "site.bl.4": "<a href=\"../real-number-line/\">Real Numbers & the Number Line · Where √2 Lands</a>: → <a href=\"#step0\">this page step 0</a>"
+    "site.bl.4": "<a href=\"../real-number-line/\">Real Numbers & the Number Line · Where √2 Lands</a>: <a href=\"../real-number-line/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>"
   }
 };
 

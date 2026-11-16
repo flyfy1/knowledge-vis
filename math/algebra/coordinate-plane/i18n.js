@@ -143,7 +143,7 @@ const STR = {
     "site.bl.title": "被这些页面引用",
     "site.bl.1": "<a href=\"../../../earth/geo/contour-lines/\">等高线</a>：<a href=\"../../../earth/geo/contour-lines/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>",
     "site.bl.2": "<a href=\"../../../earth/geo/latitude-longitude/\">经纬网</a>：<a href=\"../../../earth/geo/latitude-longitude/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>",
-    "site.bl.3": "<a href=\"../../arithmetic/real-number-line/\">实数与数轴 · √2 落在哪一点</a>：→ <a href=\"#step0\">本页第 0 步</a>",
+    "site.bl.3": "<a href=\"../../arithmetic/real-number-line/\">实数与数轴 · √2 落在哪一点</a>：<a href=\"../../arithmetic/real-number-line/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>",
     "site.bl.4": "<a href=\"../../data/bar-charts/\">条形图 · 让数字站成一排比高矮</a>：→ <a href=\"#step1\">本页第 1 步</a>",
     "site.bl.5": "<a href=\"../../geometry/three-views/\">三视图 · 三张影子拼回立体</a>：→ <a href=\"#step1\">本页第 1 步</a>",
     "site.bl.6": "<a href=\"../../../physics/electromagnetism/magnets/\">磁铁 · 铁屑显出看不见的线</a>：→ <a href=\"#step2\">本页第 2 步</a>"
@@ -283,7 +283,7 @@ const STR = {
     "site.bl.title": "Linked from",
     "site.bl.1": "<a href=\"../../../earth/geo/contour-lines/\">Contour Lines</a>: <a href=\"../../../earth/geo/contour-lines/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>",
     "site.bl.2": "<a href=\"../../../earth/geo/latitude-longitude/\">Latitude & Longitude</a>: <a href=\"../../../earth/geo/latitude-longitude/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>",
-    "site.bl.3": "<a href=\"../../arithmetic/real-number-line/\">Real Numbers & the Number Line · Where √2 Lands</a>: → <a href=\"#step0\">this page step 0</a>",
+    "site.bl.3": "<a href=\"../../arithmetic/real-number-line/\">Real Numbers & the Number Line · Where √2 Lands</a>: <a href=\"../../arithmetic/real-number-line/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>",
     "site.bl.4": "<a href=\"../../data/bar-charts/\">Bar Charts · Numbers Standing in a Row</a>: → <a href=\"#step1\">this page step 1</a>",
     "site.bl.5": "<a href=\"../../geometry/three-views/\">Three Views · Three Shadows Rebuild a Solid</a>: → <a href=\"#step1\">this page step 1</a>",
     "site.bl.6": "<a href=\"../../../physics/electromagnetism/magnets/\">Magnets · Iron Filings Reveal Unseen Lines</a>: → <a href=\"#step2\">this page step 2</a>"
