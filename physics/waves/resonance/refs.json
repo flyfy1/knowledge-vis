@@ -1,0 +1,35 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "resonance",
+ "refs": [],
+ "backlinks": [
+  {
+   "from": "step-response",
+   "links": [
+    {
+     "from": "step1",
+     "to": "step1"
+    },
+    {
+     "from": "step6",
+     "to": "step1"
+    }
+   ]
+  },
+  {
+   "from": "vowel-space",
+   "links": [
+    {
+     "from": "step0",
+     "to": "step3"
+    },
+    {
+     "from": "step5",
+     "to": "step3"
+    }
+   ]
+  }
+ ],
+ "related": [],
+ "bindings": []
+}

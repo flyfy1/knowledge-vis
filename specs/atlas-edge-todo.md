@@ -858,7 +858,7 @@ anchor; a link to the page top has no anchor).
 
 ## 共振 · 踩中节拍，小推也能荡高 / Resonance · Push in Time and a Small Force Goes a Long Way → 波的干涉 · 闹与静的图样 / Interference · A Pattern of Loud and Still
 
-- `resonance` → `interference#step3`
+- `resonance#step5` → `interference#step3`
 
 ## 地球公转与四季 / Earth’s Orbit & the Seasons → 气候能量账本 · 太阳光如何变成温度 / Climate Energy Ledger · How Sunlight Becomes Temperature
 
