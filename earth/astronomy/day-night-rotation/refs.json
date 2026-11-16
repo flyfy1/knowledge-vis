@@ -1,0 +1,40 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "day-night-rotation",
+ "refs": [],
+ "backlinks": [
+  {
+   "from": "moon-phases",
+   "links": [
+    {
+     "from": null,
+     "to": "step0"
+    }
+   ]
+  },
+  {
+   "from": "seasons-orbit",
+   "links": [
+    {
+     "from": null,
+     "to": "step4"
+    },
+    {
+     "from": null,
+     "to": "step2"
+    }
+   ]
+  },
+  {
+   "from": "latitude-longitude",
+   "links": [
+    {
+     "from": null,
+     "to": "step2"
+    }
+   ]
+  }
+ ],
+ "related": [],
+ "bindings": []
+}
