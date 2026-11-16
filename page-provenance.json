@@ -3249,7 +3249,7 @@
       "developer": "Claude Code",
       "edition": "claude-code-how-sas-works-20261114",
       "kind": "original",
-      "sourceRevision": "9fcb9facbe7e6251b7e88154eec830a1f98f5ed1",
+      "sourceRevision": "b44d5f065860dc58e35ecf99fc862747517c22e1",
       "scope": {
         "zh": "整篇长文从零编写：SAS 的分层与 SCSI 命令、READ 命令块与 LUN、一次 SSP 读的帧和连接、双端口与多路径的可用度、扩展器扇出、宽端口、SAS 口为什么认 SATA 盘、T10 PI 端到端校验、24G SAS 的编码与纠错、SAS 前沿",
         "en": "Whole essay written from scratch: the SAS layers and SCSI commands, the READ command block and LUNs, the frames and connections of one SSP read, dual-port and multipath availability, expander fan-out, wide ports, why a SAS port accepts a SATA drive, T10 PI end-to-end protection, 24G SAS coding and error correction, the SAS frontier"
@@ -3257,7 +3257,7 @@
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5); English copy drafted by Claude Code (claude-haiku-5-5); independently reviewed 2026-11-14 by a separate Claude Code session (same model), see the page BRIEF.md; cross-model review pending",
       "path": "computing/systems/how-sas-works/index.html",
       "originalSourceRevision": "122add13f0ad4fae1a7fcf9275d66d686a0d2b91",
-      "previousSourceRevision": "70d9f2e1d9949f8e22c7c2bfbe329268ebf1d15b"
+      "previousSourceRevision": "9fcb9facbe7e6251b7e88154eec830a1f98f5ed1"
     },
     "how-usb-drives-talk": {
       "developer": "Claude Code",
@@ -3291,7 +3291,7 @@
       "developer": "Claude Code",
       "edition": "claude-code-how-pcie-works-20261115",
       "kind": "original",
-      "sourceRevision": "c3cef443bee88cb580a52b84e8efa8466f3d1f20",
+      "sourceRevision": "b44d5f065860dc58e35ecf99fc862747517c22e1",
       "scope": {
         "zh": "整篇长文从零编写：PCIe 的树形拓扑、通道与六次翻倍、TLP 的字节与效率、信用流控、ACK/NAK 重发、开机枚举与 BAR、DMA 与 MSI 中断、通道损耗与重定时器、NRZ 与 PAM4 眼图、FLIT 与前向纠错、PCIe 前沿",
         "en": "Whole essay written from scratch: the PCIe tree, lanes and six doublings, TLP bytes and efficiency, credit-based flow control, ACK/NAK replay, enumeration and BARs, DMA and MSI interrupts, channel loss and retimers, NRZ vs PAM4 eyes, FLIT and forward error correction, the PCIe frontier"
@@ -3299,7 +3299,7 @@
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5); English copy drafted by Claude Code (claude-haiku-5-5); independently reviewed 2026-11-15 by a separate Claude Code session (same model), see the page BRIEF.md; cross-model review pending",
       "path": "computing/systems/how-pcie-works/index.html",
       "originalSourceRevision": "7174f8e4f9aa585bae317b5edcd7fd2d16ae1db7",
-      "previousSourceRevision": "d0821bc17cfd51c2d63eb2b63cfb73d6782585f4"
+      "previousSourceRevision": "c3cef443bee88cb580a52b84e8efa8466f3d1f20"
     },
     "how-a-computer-is-wired": {
       "developer": "Claude Code",
