@@ -132,7 +132,9 @@ function diagramCheck() {
     ok(canvasCount > 20, `${tag}: canvases drew their labels (${canvasCount} strings)`);
     if (lang === 'en') {
       const left = await page.evaluate(re => { const rx = new RegExp(re), out = []; const w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
-        for (let n; (n = w.nextNode());) { if (!rx.test(n.textContent)) continue; if (n.parentElement.closest('#langToggle')) continue; out.push(n.textContent.trim().slice(0, 24)); }
+        for (let n; (n = w.nextNode());) { if (!rx.test(n.textContent)) continue; if (n.parentElement.closest('#langToggle')) continue;
+          const pz = n.parentElement.closest('.page-provenance .provenance-zh'); if (pz && getComputedStyle(pz).display === 'none') continue; // the label's zh half, hidden in English (page-provenance.css)
+          out.push(n.textContent.trim().slice(0, 24)); }
         for (const t of window.__ft) if (rx.test(t)) out.push('canvas ' + t); return out.slice(0, 6); }, CJK.source);
       ok(!left.length, `${tag}: Chinese left in English: ${left.join(' | ')}`);
       const leftAttr = await page.evaluate(re => { const rx = new RegExp(re); const out = [...document.querySelectorAll('[aria-label],[title],img[alt]')].filter(e => !e.closest('#langToggle')).map(e => (e.getAttribute('aria-label') || '') + (e.getAttribute('title') || '') + (e.getAttribute('alt') || '')).filter(s => rx.test(s)); if (rx.test(document.title)) out.push('title ' + document.title); const d = document.querySelector('meta[name=description]'); if (d && rx.test(d.content)) out.push('meta description'); return out.slice(0, 6); }, CJK.source);
