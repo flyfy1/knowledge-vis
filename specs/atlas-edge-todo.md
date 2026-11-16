@@ -441,15 +441,17 @@ anchor; a link to the page top has no anchor).
 
 ## 特征值与特征向量 · 矩阵不转的那些方向 / Eigenvalues & Eigenvectors · The Directions a Matrix Cannot Turn → 梯度下降 · 摸黑下山 / Gradient Descent · Feeling Your Way Downhill
 
+- `eigenvectors#step4` → `gradient-descent#step2`
 - `eigenvectors` → `gradient-descent#step2`
 
 ## 特征值与特征向量 · 矩阵不转的那些方向 / Eigenvalues & Eigenvectors · The Directions a Matrix Cannot Turn → 卡尔曼滤波 · 在预测与测量之间称重 / Kalman Filter · Weighing Prediction Against Measurement
 
+- `eigenvectors#step5` → `kalman#step5`
 - `eigenvectors` → `kalman#step5`
 
 ## 特征值与特征向量 · 矩阵不转的那些方向 / Eigenvalues & Eigenvectors · The Directions a Matrix Cannot Turn → Z 变换 · 把 s 平面卷成单位圆 / The Z-Transform · Rolling the s-Plane into the Unit Circle
 
-- `eigenvectors` → `z-transform#step3`
+- `eigenvectors#step6` → `z-transform#step3`
 
 ## 熵 · 惊讶的平均值 / Entropy · The Average of Surprise → 中心极限定理 · 平均值总会变成钟形 / Central Limit Theorem · Averages Always Turn Bell-Shaped
 

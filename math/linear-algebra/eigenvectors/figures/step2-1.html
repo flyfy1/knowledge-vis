@@ -1,0 +1,36 @@
+<p class="formula" data-i18n="s2formula">λ = (tr A ± √Δ) / 2</p>
+    <div class="stage">
+      <canvas id="s2-canvas" height="430" style="height:430px"></canvas>
+    </div>
+    <div class="board" id="s2-board"></div>
+    <p class="readout" id="s2-note"></p>
+    <div class="stage" id="s2-spiral-wrap" style="display:none">
+      <p class="stage-title" data-i18n="s2spiralLab">迭代螺旋</p>
+      <canvas id="s2-spiral" height="240" style="height:240px"></canvas>
+      <div class="btn-row">
+        <button class="btn" id="s2-spiral-step" data-i18n="s2spiralStep"></button>
+        <button class="btn" id="s2-spiral-play">播放</button>
+      </div>
+      <p class="readout" id="s2-spiral-ro"></p>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="s2aLab">a</span> <span class="val" id="s2-a-val">2.20</span></span>
+        <input type="range" id="s2-a" min="-2.5" max="2.5" step="0.05" value="2.2"></label>
+      <label><span><span data-i18n="s2bLab">b</span> <span class="val" id="s2-b-val">0.60</span></span>
+        <input type="range" id="s2-b" min="-2.5" max="2.5" step="0.05" value="0.6"></label>
+      <label><span><span data-i18n="s2cLab">c</span> <span class="val" id="s2-c-val">0.60</span></span>
+        <input type="range" id="s2-c" min="-2.5" max="2.5" step="0.05" value="0.6"></label>
+      <label><span><span data-i18n="s2dLab">d</span> <span class="val" id="s2-d-val">1.00</span></span>
+        <input type="range" id="s2-d" min="-2.5" max="2.5" step="0.05" value="1"></label>
+    </div>
+    <div class="btn-row" id="s2-presets">
+      <span style="color:var(--muted);font-size:14.5px;align-self:center" data-i18n="s2presetLab"></span>
+      <button class="btn" data-q="neg" data-i18n="s2qNeg">负 λ</button>
+      <button class="btn" data-q="shrink" data-i18n="s2qShrink">收缩</button>
+      <button class="btn" data-q="shear" data-i18n="s2qShear">剪切</button>
+      <button class="btn" data-q="rot" data-i18n="s2qRot">旋转缩放</button>
+      <button class="btn" data-q="free" data-i18n="s2qFree">默认</button>
+    </div>
+    <div class="btn-row">
+      <button class="btn" id="s2-spiral-btn" data-i18n="s2spiralBtn" style="display:none"></button>
+    </div>

@@ -1,0 +1,18 @@
+<p class="formula" data-i18n="s1formula">Av = λv</p>
+    <div class="btn-row" id="s1-presets">
+      <span style="color:var(--muted);font-size:14.5px;align-self:center" data-i18n="s1presetLab"></span>
+      <button class="btn active" data-preset="0" data-i18n="s1p1">A 对称经典</button>
+      <button class="btn" data-preset="1" data-i18n="s1p2">A 一般</button>
+      <button class="btn" data-preset="2" data-i18n="s1p3">A 带负 λ</button>
+    </div>
+    <div class="stage">
+      <canvas id="s1-canvas" class="drag" height="430" tabindex="0" role="img" data-responsive-height aria-describedby="s1-keyboard s1-legend"></canvas>
+    </div>
+    <div class="controls direction-controls"><label for="s1-angle"><span data-i18n="s1angleLabel"></span><output id="s1-angle-value" for="s1-angle"></output><input type="range" id="s1-angle" min="0" max="360" step="any" value="20" aria-describedby="s1-keyboard"></label><button type="button" id="s1-reset" class="btn" data-i18n="s1reset"></button></div>
+    <p class="hint" id="s1-legend" data-i18n="s1legend"></p>
+    <p class="hint" id="s1-keyboard" data-i18n="s1keyboard"></p>
+    <div class="stage">
+      <canvas id="s1-curve" height="150" style="height:150px"></canvas>
+    </div>
+    <p class="readout" id="s1-readout"></p>
+    <p class="readout" id="s1-found" style="display:none"></p>

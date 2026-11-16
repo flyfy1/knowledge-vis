@@ -1,0 +1,90 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "eigenvectors",
+ "refs": [],
+ "backlinks": [
+  {
+   "from": "pagerank",
+   "links": [
+    {
+     "from": null,
+     "to": "step3"
+    }
+   ]
+  },
+  {
+   "from": "embeddings",
+   "links": [
+    {
+     "from": null,
+     "to": "step5"
+    }
+   ]
+  },
+  {
+   "from": "gradient-descent",
+   "links": [
+    {
+     "from": null,
+     "to": "step4"
+    }
+   ]
+  },
+  {
+   "from": "complex-numbers",
+   "links": [
+    {
+     "from": null,
+     "to": "step2"
+    }
+   ]
+  },
+  {
+   "from": "ode-phase-portraits",
+   "links": [
+    {
+     "from": null,
+     "to": "step2"
+    }
+   ]
+  },
+  {
+   "from": "conic-sections",
+   "links": [
+    {
+     "from": null,
+     "to": "step4"
+    }
+   ]
+  },
+  {
+   "from": "pythagoras",
+   "links": [
+    {
+     "from": null,
+     "to": "step1"
+    }
+   ]
+  },
+  {
+   "from": "linear-transform",
+   "links": [
+    {
+     "from": "step4",
+     "to": "step1"
+    }
+   ]
+  },
+  {
+   "from": "kalman",
+   "links": [
+    {
+     "from": null,
+     "to": "step5"
+    }
+   ]
+  }
+ ],
+ "related": [],
+ "bindings": []
+}

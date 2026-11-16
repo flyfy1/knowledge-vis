@@ -1,0 +1,18 @@
+<p class="formula" data-i18n="s4formula">A = QΛQᵀ</p>
+    <div class="stage">
+      <canvas id="s4-canvas" height="430" style="height:430px"></canvas>
+    </div>
+    <div class="board" id="s4-board"></div>
+    <p class="readout" id="s4-mats"></p>
+    <p class="readout" id="s4-note"></p>
+    <div class="controls">
+      <label><span><span data-i18n="s4aLab"></span> <span class="val" id="s4-a-val">2.20</span></span>
+        <input type="range" id="s4-a" min="0.2" max="3" step="0.05" value="2.2"></label>
+      <label><span><span data-i18n="s4mLab">b = c</span> <span class="val" id="s4-m-val">1.00</span></span>
+        <input type="range" id="s4-m" min="-1.8" max="1.8" step="0.05" value="1"></label>
+      <label><span><span data-i18n="s4dLab"></span> <span class="val" id="s4-d-val">1.00</span></span>
+        <input type="range" id="s4-d" min="0.2" max="2.5" step="0.05" value="1"></label>
+    </div>
+    <div class="btn-row">
+      <button class="btn" id="s4-rot" data-i18n="s4rotBtn"></button>
+    </div>
