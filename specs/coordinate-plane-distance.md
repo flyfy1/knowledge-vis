@@ -34,3 +34,11 @@ The coordinate-plane page already establishes ordered pairs and quadrants. Step 
   asserts both readouts are filled (`dist` 8.60, midpoint (0.5, 0.5), `|AB|²` 74). It fails with a RangeError on
   the old code.
 
+
+## Fix 2026-11-16 — step 6 reset button read "reset"
+
+- `<button id="s6-reset" data-i18n="reset">` named a key neither table defined, and `t()` returns the key itself, so
+  the button read "reset" in both languages (its hand-written 重置本步 showed only without JavaScript).
+- Fix: `reset` in both tables (zh 重置本步, en "Reset this step").
+- Prevention: the site-template lesson converter refuses a page whose markup names a key its table lacks
+  (specs/reviews/lesson-string-table-fixes-20261116.md).
