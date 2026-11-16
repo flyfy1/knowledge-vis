@@ -1,7 +1,13 @@
 {
  "_generated": "by scripts/build-pages.cjs; do not edit",
  "page": "coherent-interconnects",
- "refs": [],
+ "refs": [
+  {
+   "from": "ch2.limit",
+   "to": "how-cores-share-memory",
+   "anchor": null
+  }
+ ],
  "backlinks": [
   {
    "from": "how-a-computer-is-wired",

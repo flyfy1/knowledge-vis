@@ -299,7 +299,7 @@ window.ESSAY_COPY.zh = {
   "dg.dpc.d2": "第二根",
   "ch7.p3": "那为什么不改成串行线？PCIe 那样一对线、时钟藏在数据里，确实不怕线和线之间有差（见<a href='../how-pcie-works/#ch2'>《PCIe 为什么能一代一代翻倍》第 2 章</a>）。代价是两头都要有串并转换、编码和解码，每次读多出一段延迟；内存最在乎的就是那几十纳秒。DDR 的办法是把线做短、把差别量出来补掉：每 8 根数据线配一对选通信号（DQS），数据跟着它走；开机时内存控制器对每根线做一遍<strong>训练</strong>，扫描延迟，找到每个比特的中间点，记下来。时钟和命令线在内存条上一颗接一颗地经过芯片（飞越式），每颗芯片收到时钟的时刻不同，这个差也要靠训练（写入校准）补。",
   "ch7.model.title": "飞越式布线：时钟到每颗芯片差多少",
-  "ch7.model.how": "{flyChips} 颗芯片沿着时钟线排开，相邻两颗隔几毫米（<strong>调出来的参数</strong>，默认 {pitch} 毫米），信号在板上每英寸走 {tpd} 皮秒（取《电脑里的零件是怎么连起来的》用的同一个值）。拖动传输速率和间距，看最后一颗芯片比第一颗晚多少，折成几个比特宽。超过半个比特宽，不训练就会读错位。",
+  "ch7.model.how": "{flyChips} 颗芯片沿着时钟线排开，相邻两颗隔几毫米（<strong>调出来的参数</strong>，默认 {pitch} 毫米），信号在板上每英寸走 {tpd} 皮秒（取<a href=\"../how-a-computer-is-wired/\">《电脑里的零件是怎么连起来的》</a>用的同一个值）。拖动传输速率和间距，看最后一颗芯片比第一颗晚多少，折成几个比特宽。超过半个比特宽，不训练就会读错位。",
   "ch7.model.aria": "示意图：每颗芯片收到时钟的时刻排在一条时间轴上，背景是一个个比特宽的格子",
   "ch7.ctl.mts": "传输速率",
   "ch7.ctl.pitch": "芯片间距",
@@ -465,10 +465,10 @@ window.ESSAY_COPY.zh = {
   "site.crumb.cat": "计算与智能",
   "site.crumb.sub": "系统与安全",
   "site.bl.title": "被这些页面引用",
-  "site.bl.1": "<a href=\"../coherent-interconnects/\">芯片之间怎么共用内存</a>：<a href=\"../coherent-interconnects/#ch3\">第 3 章</a> → <a href=\"#ch5\">本页第 5 章</a>；<a href=\"../coherent-interconnects/#ch13\">第 13 章</a>",
-  "site.bl.2": "<a href=\"../how-a-computer-boots/\">电脑是怎么开机的</a>：<a href=\"../how-a-computer-boots/#ch5\">第 5 章</a> → <a href=\"#ch7\">本页第 7 章</a>；<a href=\"../how-a-computer-boots/#ch14\">第 14 章</a> → <a href=\"#ch7\">本页第 7 章</a>",
-  "site.bl.3": "<a href=\"../how-a-gpu-computes/\">GPU 是怎么算的</a>：<a href=\"../how-a-gpu-computes/#ch10\">第 10 章</a> → <a href=\"#ch9\">本页第 9 章</a>；<a href=\"../how-a-gpu-computes/#ch12\">第 12 章</a>",
-  "site.bl.4": "<a href=\"../how-cpu-caches-work/\">CPU 的三级缓存是怎么工作的</a>：<a href=\"../how-cpu-caches-work/#ch12\">第 12 章</a>",
-  "site.bl.5": "<a href=\"../how-pixels-reach-a-screen/\">像素是怎么到屏幕上的</a>：<a href=\"../how-pixels-reach-a-screen/#ch1\">第 1 章</a> → <a href=\"#ch9\">本页第 9 章</a>；<a href=\"../how-pixels-reach-a-screen/#ch13\">第 13 章</a> → <a href=\"#ch9\">本页第 9 章</a>",
-  "site.bl.6": "<a href=\"../why-compute-waits-for-memory/\">为什么计算一直在等内存</a>：<a href=\"../why-compute-waits-for-memory/#ch5\">第 5 章</a> → <a href=\"#ch5\">本页第 5 章</a>"
+  "site.bl.1": "<a href=\"../coherent-interconnects/\">芯片之间怎么共用内存</a>：<a href=\"../coherent-interconnects/#ch3\">该文第 3 章</a> → <a href=\"#ch5\">本页第 5 章</a>；<a href=\"../coherent-interconnects/#ch13\">该文第 13 章</a>",
+  "site.bl.2": "<a href=\"../how-a-computer-boots/\">电脑是怎么开机的</a>：<a href=\"../how-a-computer-boots/#ch5\">该文第 5 章</a> → <a href=\"#ch7\">本页第 7 章</a>；<a href=\"../how-a-computer-boots/#ch14\">该文第 14 章</a> → <a href=\"#ch7\">本页第 7 章</a>",
+  "site.bl.3": "<a href=\"../how-a-gpu-computes/\">GPU 是怎么算的</a>：<a href=\"../how-a-gpu-computes/#ch10\">该文第 10 章</a> → <a href=\"#ch9\">本页第 9 章</a>；<a href=\"../how-a-gpu-computes/#ch12\">该文第 12 章</a>",
+  "site.bl.4": "<a href=\"../how-cpu-caches-work/\">CPU 的三级缓存是怎么工作的</a>：<a href=\"../how-cpu-caches-work/#ch12\">该文第 12 章</a>",
+  "site.bl.5": "<a href=\"../how-pixels-reach-a-screen/\">像素是怎么到屏幕上的</a>：<a href=\"../how-pixels-reach-a-screen/#ch1\">该文第 1 章</a> → <a href=\"#ch9\">本页第 9 章</a>；<a href=\"../how-pixels-reach-a-screen/#ch13\">该文第 13 章</a> → <a href=\"#ch9\">本页第 9 章</a>",
+  "site.bl.6": "<a href=\"../why-compute-waits-for-memory/\">为什么计算一直在等内存</a>：<a href=\"../why-compute-waits-for-memory/#ch5\">该文第 5 章</a> → <a href=\"#ch5\">本页第 5 章</a>"
 };

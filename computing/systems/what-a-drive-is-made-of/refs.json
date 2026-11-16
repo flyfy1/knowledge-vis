@@ -43,6 +43,11 @@
    "anchor": "ch6"
   },
   {
+   "from": "ch6.limit",
+   "to": "why-nvme-is-fast",
+   "anchor": "ch5"
+  },
+  {
    "from": "ch7.p4",
    "to": "how-sata-works",
    "anchor": null
@@ -251,6 +256,10 @@
     },
     {
      "from": "ch13",
+     "to": null
+    },
+    {
+     "from": null,
      "to": null
     }
    ]

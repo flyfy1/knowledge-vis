@@ -1,7 +1,13 @@
 {
  "_generated": "by scripts/build-pages.cjs; do not edit",
  "page": "how-memory-talks",
- "refs": [],
+ "refs": [
+  {
+   "from": "ch7.model.how",
+   "to": "how-a-computer-is-wired",
+   "anchor": null
+  }
+ ],
  "backlinks": [
   {
    "from": "coherent-interconnects",

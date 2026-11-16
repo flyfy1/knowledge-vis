@@ -453,9 +453,9 @@ window.ESSAY_COPY.en = {
   "site.crumb.cat": "Computing & AI",
   "site.crumb.sub": "Systems & Security",
   "site.bl.title": "Linked from",
-  "site.bl.1": "<a href=\"../how-a-nic-moves-packets/\">How a Network Card Moves Packets</a>: <a href=\"../how-a-nic-moves-packets/#ch14\">chapter 14</a>",
-  "site.bl.2": "<a href=\"../how-cores-share-memory/\">How Cores Share Memory</a>: <a href=\"../how-cores-share-memory/#ch12\">chapter 12</a> → <a href=\"#ch10\">this page chapter 10</a>",
-  "site.bl.3": "<a href=\"../how-pixels-reach-a-screen/\">How Pixels Reach a Screen</a>: <a href=\"../how-pixels-reach-a-screen/#ch1\">chapter 1</a> → <a href=\"#ch9\">this page chapter 9</a>; <a href=\"../how-pixels-reach-a-screen/#ch13\">chapter 13</a> → <a href=\"#ch9\">this page chapter 9</a>",
-  "site.bl.4": "<a href=\"../how-power-reaches-the-cpu/\">How Power Reaches the CPU</a>: <a href=\"../how-power-reaches-the-cpu/#ch10\">chapter 10</a> → <a href=\"#ch11\">this page chapter 11</a>; <a href=\"../how-power-reaches-the-cpu/#ch12\">chapter 12</a>",
-  "site.bl.5": "<a href=\"../why-compute-waits-for-memory/\">Why Compute Waits for Memory</a>: <a href=\"../why-compute-waits-for-memory/#ch6\">chapter 6</a> → <a href=\"#ch3\">this page chapter 3</a>"
+  "site.bl.1": "<a href=\"../how-a-nic-moves-packets/\">How a Network Card Moves Packets</a>: <a href=\"../how-a-nic-moves-packets/#ch14\">its chapter 14</a>",
+  "site.bl.2": "<a href=\"../how-cores-share-memory/\">How Cores Share Memory</a>: <a href=\"../how-cores-share-memory/#ch12\">its chapter 12</a> → <a href=\"#ch10\">this page chapter 10</a>",
+  "site.bl.3": "<a href=\"../how-pixels-reach-a-screen/\">How Pixels Reach a Screen</a>: <a href=\"../how-pixels-reach-a-screen/#ch1\">its chapter 1</a> → <a href=\"#ch9\">this page chapter 9</a>; <a href=\"../how-pixels-reach-a-screen/#ch13\">its chapter 13</a> → <a href=\"#ch9\">this page chapter 9</a>",
+  "site.bl.4": "<a href=\"../how-power-reaches-the-cpu/\">How Power Reaches the CPU</a>: <a href=\"../how-power-reaches-the-cpu/#ch10\">its chapter 10</a> → <a href=\"#ch11\">this page chapter 11</a>; <a href=\"../how-power-reaches-the-cpu/#ch12\">its chapter 12</a>",
+  "site.bl.5": "<a href=\"../why-compute-waits-for-memory/\">Why Compute Waits for Memory</a>: <a href=\"../why-compute-waits-for-memory/#ch6\">its chapter 6</a> → <a href=\"#ch3\">this page chapter 3</a>"
 };

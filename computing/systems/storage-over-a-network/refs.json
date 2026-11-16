@@ -1,7 +1,18 @@
 {
  "_generated": "by scripts/build-pages.cjs; do not edit",
  "page": "storage-over-a-network",
- "refs": [],
+ "refs": [
+  {
+   "from": "ch5.p3",
+   "to": "why-nvme-is-fast",
+   "anchor": "ch1"
+  },
+  {
+   "from": "ch5.limit",
+   "to": "why-nvme-is-fast",
+   "anchor": "ch2"
+  }
+ ],
  "backlinks": [
   {
    "from": "coherent-interconnects",

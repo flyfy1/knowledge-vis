@@ -326,7 +326,7 @@ for (int i = 0; i &lt; n; i++)
     <div class="num">04</div>
     <h2 data-i18n="ch4.title">单周期：一拍做完一条</h2>
     <p class="law" data-i18n-html="ch4.law">最简单的 CPU 让每条指令在一个时钟周期里走完全程：取指令、读寄存器、算、读写内存、写回。一组控制信号决定这一拍里哪些路接通。</p>
-    <p data-i18n-html="ch4.p1">想象一间只有一个厨师的厨房，每道菜都从头做到尾才开始下一道：看菜单、拿食材、切、炒、装盘。《一堆开关》第 9 章的小机器就是这样的厨房：一条指令做完，才取下一条。<strong>单周期</strong>的做法更极端：所有部件一字排开，从程序计数器（PC）出发的电信号在一拍之内流过整条通路，拍子一敲，结果同时写进寄存器、内存和新的 PC。</p>
+    <p data-i18n-html="ch4.p1">想象一间只有一个厨师的厨房，每道菜都从头做到尾才开始下一道：看菜单、拿食材、切、炒、装盘。<a href="../switches-that-compute/#ch9">《一堆开关》第 9 章</a>的小机器就是这样的厨房：一条指令做完，才取下一条。<strong>单周期</strong>的做法更极端：所有部件一字排开，从程序计数器（PC）出发的电信号在一拍之内流过整条通路，拍子一敲，结果同时写进寄存器、内存和新的 PC。</p>
     <p data-i18n-html="ch4.p2"></p>
   </div>
   <div class="wide"><figure class="dia" data-dg="single"><div class="svg"></div><figcaption data-i18n-html="dg.single.cap">单周期数据通路（按 Patterson 与 Hennessy 教材第 4 章的结构简化）。实线是数据；控制单元发出的七根控制线只用一段虚线示意，走线省略。一拍之内，信号从 PC 出发走完整条路，拍子一敲，结果写进寄存器堆、数据存储器和 PC。示意，不按比例。</figcaption></figure></div>
@@ -586,9 +586,9 @@ for (int i = 0; i &lt; n; i++)
   <div class="wrap">
     <h2 data-i18n="site.bl.title">被这些页面引用</h2>
     <ul class="xref-list">
-      <li data-i18n-html="site.bl.1"><a href="../how-a-computer-boots/">电脑是怎么开机的</a>：<a href="../how-a-computer-boots/#ch2">第 2 章</a>；<a href="../how-a-computer-boots/#ch14">第 14 章</a></li>
-      <li data-i18n-html="site.bl.2"><a href="../how-a-cpu-guesses-ahead/">CPU 是怎么猜着往前跑的</a>：<a href="../how-a-cpu-guesses-ahead/#ch1">第 1 章</a> → <a href="#ch8">本页第 8 章</a>、<a href="#ch9">本页第 9 章</a>；<a href="../how-a-cpu-guesses-ahead/#ch12">第 12 章</a></li>
-      <li data-i18n-html="site.bl.3"><a href="../how-the-os-talks-to-hardware/">操作系统是怎么和硬件说话的</a>：<a href="../how-the-os-talks-to-hardware/#ch14">第 14 章</a> → <a href="#ch8">本页第 8 章</a></li>
+      <li data-i18n-html="site.bl.1"><a href="../how-a-computer-boots/">电脑是怎么开机的</a>：<a href="../how-a-computer-boots/#ch2">该文第 2 章</a>；<a href="../how-a-computer-boots/#ch14">该文第 14 章</a></li>
+      <li data-i18n-html="site.bl.2"><a href="../how-a-cpu-guesses-ahead/">CPU 是怎么猜着往前跑的</a>：<a href="../how-a-cpu-guesses-ahead/#ch1">该文第 1 章</a> → <a href="#ch8">本页第 8 章</a>、<a href="#ch9">本页第 9 章</a>；<a href="../how-a-cpu-guesses-ahead/#ch12">该文第 12 章</a></li>
+      <li data-i18n-html="site.bl.3"><a href="../how-the-os-talks-to-hardware/">操作系统是怎么和硬件说话的</a>：<a href="../how-the-os-talks-to-hardware/#ch14">该文第 14 章</a> → <a href="#ch8">本页第 8 章</a></li>
     </ul>
     <h2 data-i18n="site.rel.title">相关页面</h2>
     <ul class="xref-list">

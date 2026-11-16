@@ -172,8 +172,11 @@ keys, and the build fails if it names a key no block defines.
   alias owned by two concepts is an error, never a guess), and a zh and en ref that point to different targets.
 - Prefer `[[…]]` to a hand-written `<a href="../…">`. Raw links still work. The build warns when one points
   at no live page or a missing anchor, and compares targets between languages, in either quote style.
-- The lint (D10) warns about an exact 《title》 / “Title” of another live page that is not a link. It never
-  rewrites prose; decide, then write `[[slug]]` or leave the quotation.
+- The lint (D10) warns about a mention of another live page's title that is not a link. It matches what the
+  runtime linker (`site-nav.js`) links on hand-written pages: zh 《title》, en “Title” with an optional `,` or `.`
+  inside the closing quote and `'` / `’` interchangeable, and `<cite>Title</cite>`. It never rewrites prose; decide,
+  then write `[[slug]]` or leave the quotation. When a hand-written page is converted, every lint line is a link
+  readers have today; the Phase 1 batch A review found the first version missed `“Title.”` (2026-11-16).
 - Concepts resolve through `atlas/data.js` node titles and aliases. The merged search alias table comes in
   Phase 2.
 
@@ -205,19 +208,26 @@ Backlinks are generated. When a page gains a link to a migrated page, the migrat
 after registering a page or adding cross-links.
 
 A backlink is a link written in another page's sources. For an unmigrated page those are `copy.zh.js`,
-`i18n.js` and `index.html`. For a migrated page they are `copy.zh.js` without its `site.*` keys, plus
-`figures/*.html`. Its `index.html` is not scanned, because pre-fill copies the copy table into it, and the
+`i18n.js` and `index.html`. For a migrated page they are `content.zh.md` (compiled, so it has no `site.*` keys),
+plus `figures/*.html`. Its `index.html` is not scanned, because pre-fill copies the copy table into it, and the
 `site.*` keys are themselves generated backlinks. Scanning either would make links echo between migrated pages,
-and one `--all` pass would no longer be final (review 2026-11-16).
+and one `--all` pass would no longer be final (review 2026-11-16). The generated `copy.zh.js` is not scanned
+either: `--all` builds pages in order, so a page built early would read a later page's copy table from before
+this pass and miss a link just added to its Markdown (Phase 1 batch A review, 2026-11-16). A link in a key outside `chN.*` (a diagram caption `dg.x.cap`, a lab
+string) is credited to the chapter the block sits in; before, it showed as a bare `→ 本页第 N 章` with no source
+chapter (how-a-nic-moves-packets ← storage-over-a-network ch6).
 
 ## 8. Chrome (what the layout adds)
 
 - `<html data-template="essay">` and a GENERATED comment.
 - A static breadcrumb with the site-nav markup and styles (`nav.site-nav`, `site-nav.css`).
 - A "被这些页面引用 / Linked from" block (backlinks with source and target chapters) and "相关页面" (REGISTRY
-  `relatedPages` minus backlinks), styled by `.site-xref` in `site-nav.css`.
+  `relatedPages` minus backlinks), styled by `.site-xref` in `site-nav.css`. A row reads
+  `《来源》：该文第 3 章 → 本页第 2 章` / `Source: its chapter 3 → this page chapter 2`: the first chapter is the
+  linking page's, the second this page's.
 - Their strings are `site.*` keys added to the page's own copy tables, so the page's i18n swaps them and the
-  English CJK sweep needs no exemption. Content may not define `site.*` keys.
+  English CJK sweep needs no exemption. Content may not define `site.*` keys; the build fails on one, because
+  page tests skip `site.*` in their link and number scans.
 - The site-nav include lines come from `scripts/build-site-nav.cjs` (`includeLines`), so its `sn-` cache key
   has one source. `build-site-nav.cjs` never writes into a template page. It reports a stale one with the
   build-pages command. `site-nav.js` does nothing on `html[data-template]`.
@@ -377,10 +387,15 @@ passed (4516 checks). The full build failed only the CJK-in-`index.html` check o
 - **Checked per page on the full build:** `tests/models.cjs`, `tests/browser.cjs` (zh+en 1280/390/320) and the
   canvas sweep all pass. Screenshots of hero, breadcrumb and linked-from block (memory, storage, wired; 1280 and
   320, zh and en) look right. One cosmetic point: at 320 px in English the breadcrumb wraps and its `›` separator
-  starts the second line (site-nav.css).
-- **Lint:** the runtime 《title》 linker no longer runs on these pages (D10). The build lists 19 such mentions
-  (for example 《NVMe 为什么这么快》 in storage-over-a-network ch5). They are left for the page owners to turn into
-  `[[slug]]` or keep as quotations.
+  starts the second line (site-nav.css). Fixed in the review: the separator now ends the first line (78c4ed90).
+- **Lint:** the runtime 《title》 linker no longer runs on these pages (D10). The build listed 19 such mentions
+  (for example 《NVMe 为什么这么快》 in storage-over-a-network ch5); the live pages had 20 runtime links (the lint
+  missed `“Drives Across a Wire.”` in how-a-nic-moves-packets). The independent review
+  (specs/reviews/site-template-phase1a-review-20261116.md) turned all of them into `[[slug#chN]]` refs in both
+  languages, fixed the lint, and confirmed against the live pages that no link is lost. Two mentions the
+  runtime never linked became links too, because parity needs the same targets in both languages: the zh
+  「NVMe 为什么这么快」第五章 in what-a-drive-is-made-of ch6 (「」 quotes) and the unquoted English title in the
+  how-virtual-memory-works footer.
 
 ## 11. Authorship
 

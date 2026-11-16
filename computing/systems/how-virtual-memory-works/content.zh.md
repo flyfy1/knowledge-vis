@@ -693,7 +693,7 @@ toc: 收尾：程序慢的时候问三件事
 ::: footer
 这一页由一个 AI（Claude）写成，属于计算机体系结构系列的第 5 篇。模型都是缩小了的真实机制，标着「调出来的参数」的地方是为了能算而选的。
 
-主要来源：Intel《64 与 IA-32 架构软件开发者手册》第 3A 卷（253668-093US，2026 年 9 月）第 5 章；AMD《Zen5 微架构软件优化指南》（58455 rev 1.00，2024 年 8 月）§2.6–2.7；Linux 内核文档（x86_64 五级分页、页表隔离、透明大页、arm64 内存布局、CXL 回收）与 arch/arm64/Kconfig；Bhargava、Serebrin、Spadini、Manne，《Accelerating Two-Dimensional Page Walks for Virtualized Systems》（ASPLOS 2008）；Arpaci-Dusseau，《Operating Systems: Three Easy Pieces》第 13–23 章；Belady（1966）；Belady、Nelson、Shedler（1969）；Mattson 等（1970）；Denning（1968）；安卓开发者文档《支持 16 KB 页大小》；meltdownattack.com。存储设备的数字取自三星 990 PRO 数据表和希捷 Barracuda 7200.12 手册（经《硬盘里到底是什么》）。以上除注明者外都在 2026 年 11 月 15 日打开。
+主要来源：Intel《64 与 IA-32 架构软件开发者手册》第 3A 卷（253668-093US，2026 年 9 月）第 5 章；AMD《Zen5 微架构软件优化指南》（58455 rev 1.00，2024 年 8 月）§2.6–2.7；Linux 内核文档（x86_64 五级分页、页表隔离、透明大页、arm64 内存布局、CXL 回收）与 arch/arm64/Kconfig；Bhargava、Serebrin、Spadini、Manne，《Accelerating Two-Dimensional Page Walks for Virtualized Systems》（ASPLOS 2008）；Arpaci-Dusseau，《Operating Systems: Three Easy Pieces》第 13–23 章；Belady（1966）；Belady、Nelson、Shedler（1969）；Mattson 等（1970）；Denning（1968）；安卓开发者文档《支持 16 KB 页大小》；meltdownattack.com。存储设备的数字取自三星 990 PRO 数据表和希捷 Barracuda 7200.12 手册（经[[what-a-drive-is-made-of|《硬盘里到底是什么》]]）。以上除注明者外都在 2026 年 11 月 15 日打开。
 
 每个链接和日期列在 BRIEF.md 里。这一页只讲机制，不评价产品。
 :::

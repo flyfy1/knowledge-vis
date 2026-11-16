@@ -538,11 +538,11 @@ window.ESSAY_COPY.zh = {
   "site.crumb.cat": "计算与智能",
   "site.crumb.sub": "系统与安全",
   "site.bl.title": "被这些页面引用",
-  "site.bl.1": "<a href=\"../how-a-computer-boots/\">电脑是怎么开机的</a>：<a href=\"../how-a-computer-boots/#ch11\">第 11 章</a> → <a href=\"#ch9\">本页第 9 章</a>",
-  "site.bl.2": "<a href=\"../how-a-nic-moves-packets/\">网卡是怎么搬运数据包的</a>：<a href=\"../how-a-nic-moves-packets/#ch1\">第 1 章</a>；<a href=\"../how-a-nic-moves-packets/#ch3\">第 3 章</a> → <a href=\"#ch7\">本页第 7 章</a>、<a href=\"#ch6\">本页第 6 章</a>；<a href=\"../how-a-nic-moves-packets/#ch10\">第 10 章</a> → <a href=\"#ch12\">本页第 12 章</a>；<a href=\"../how-a-nic-moves-packets/#ch11\">第 11 章</a> → <a href=\"#ch12\">本页第 12 章</a>；<a href=\"../how-a-nic-moves-packets/#ch14\">第 14 章</a>",
-  "site.bl.3": "<a href=\"../how-pcie-works/\">PCIe 为什么能一代一代翻倍</a>：<a href=\"../how-pcie-works/#ch6\">第 6 章</a> → <a href=\"#ch4\">本页第 4 章</a>；<a href=\"../how-pcie-works/#ch7\">第 7 章</a> → <a href=\"#ch5\">本页第 5 章</a>",
-  "site.bl.4": "<a href=\"../how-thunderbolt-works/\">雷电接口是怎么工作的</a>：<a href=\"../how-thunderbolt-works/#ch8\">第 8 章</a> → <a href=\"#ch8\">本页第 8 章</a>",
-  "site.bl.5": "<a href=\"../how-virtual-memory-works/\">虚拟内存是怎么工作的</a>：<a href=\"../how-virtual-memory-works/#ch10\">第 10 章</a> → <a href=\"#ch3\">本页第 3 章</a>；<a href=\"../how-virtual-memory-works/#ch11\">第 11 章</a> → <a href=\"#ch8\">本页第 8 章</a>",
-  "site.bl.6": "<a href=\"../storage-over-a-network/\">隔着网线的硬盘</a>：<a href=\"../storage-over-a-network/#ch6\">第 6 章</a> → <a href=\"#ch12\">本页第 12 章</a>",
-  "site.bl.7": "<a href=\"../why-nvme-is-fast/\">NVMe 为什么这么快</a>：<a href=\"../why-nvme-is-fast/#ch7\">第 7 章</a> → <a href=\"#ch11\">本页第 11 章</a>"
+  "site.bl.1": "<a href=\"../how-a-computer-boots/\">电脑是怎么开机的</a>：<a href=\"../how-a-computer-boots/#ch11\">该文第 11 章</a> → <a href=\"#ch9\">本页第 9 章</a>",
+  "site.bl.2": "<a href=\"../how-a-nic-moves-packets/\">网卡是怎么搬运数据包的</a>：<a href=\"../how-a-nic-moves-packets/#ch1\">该文第 1 章</a>；<a href=\"../how-a-nic-moves-packets/#ch3\">该文第 3 章</a> → <a href=\"#ch7\">本页第 7 章</a>、<a href=\"#ch6\">本页第 6 章</a>；<a href=\"../how-a-nic-moves-packets/#ch10\">该文第 10 章</a> → <a href=\"#ch12\">本页第 12 章</a>；<a href=\"../how-a-nic-moves-packets/#ch11\">该文第 11 章</a> → <a href=\"#ch12\">本页第 12 章</a>；<a href=\"../how-a-nic-moves-packets/#ch14\">该文第 14 章</a>",
+  "site.bl.3": "<a href=\"../how-pcie-works/\">PCIe 为什么能一代一代翻倍</a>：<a href=\"../how-pcie-works/#ch6\">该文第 6 章</a> → <a href=\"#ch4\">本页第 4 章</a>；<a href=\"../how-pcie-works/#ch7\">该文第 7 章</a> → <a href=\"#ch5\">本页第 5 章</a>",
+  "site.bl.4": "<a href=\"../how-thunderbolt-works/\">雷电接口是怎么工作的</a>：<a href=\"../how-thunderbolt-works/#ch8\">该文第 8 章</a> → <a href=\"#ch8\">本页第 8 章</a>",
+  "site.bl.5": "<a href=\"../how-virtual-memory-works/\">虚拟内存是怎么工作的</a>：<a href=\"../how-virtual-memory-works/#ch10\">该文第 10 章</a> → <a href=\"#ch3\">本页第 3 章</a>；<a href=\"../how-virtual-memory-works/#ch11\">该文第 11 章</a> → <a href=\"#ch8\">本页第 8 章</a>",
+  "site.bl.6": "<a href=\"../storage-over-a-network/\">隔着网线的硬盘</a>：<a href=\"../storage-over-a-network/#ch6\">该文第 6 章</a> → <a href=\"#ch12\">本页第 12 章</a>",
+  "site.bl.7": "<a href=\"../why-nvme-is-fast/\">NVMe 为什么这么快</a>：<a href=\"../why-nvme-is-fast/#ch7\">该文第 7 章</a> → <a href=\"#ch11\">本页第 11 章</a>"
 };

@@ -1,7 +1,18 @@
 {
  "_generated": "by scripts/build-pages.cjs; do not edit",
  "page": "how-a-cpu-runs-a-program",
- "refs": [],
+ "refs": [
+  {
+   "from": "ch3.p4",
+   "to": "switches-that-compute",
+   "anchor": "ch9"
+  },
+  {
+   "from": "ch4.p1",
+   "to": "switches-that-compute",
+   "anchor": "ch9"
+  }
+ ],
  "backlinks": [
   {
    "from": "how-a-computer-boots",

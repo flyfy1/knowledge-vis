@@ -1,7 +1,23 @@
 {
  "_generated": "by scripts/build-pages.cjs; do not edit",
  "page": "how-cores-share-memory",
- "refs": [],
+ "refs": [
+  {
+   "from": "ch1.p2",
+   "to": "how-cpu-caches-work",
+   "anchor": null
+  },
+  {
+   "from": "dg.mesi.cap",
+   "to": "how-cpu-caches-work",
+   "anchor": "ch9"
+  },
+  {
+   "from": "ch7.p2",
+   "to": "how-a-computer-is-wired",
+   "anchor": null
+  }
+ ],
  "backlinks": [
   {
    "from": "coherent-interconnects",
@@ -21,6 +37,10 @@
     {
      "from": "ch2",
      "to": "ch7"
+    },
+    {
+     "from": "ch2",
+     "to": null
     },
     {
      "from": "ch7",

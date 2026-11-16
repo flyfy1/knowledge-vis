@@ -417,7 +417,7 @@ window.ESSAY_COPY.zh = {
   "dg.qp.s4": "查 rkey 和范围，DMA 写入",
   "dg.qp.s5": "确认 ACK",
   "dg.qp.s6": "写完成记录 CQE",
-  "ch11.p3": "这要网卡记住很多状态：每个 QP 的序号和重传窗口，每块登记内存的地址翻译表和钥匙。NVIDIA 的 ConnectX-7 手册写的 RDMA 消息速率是每秒 {cxLo} 到 {cxHi} 百万条。QP 太多时，这些状态装不进网卡自己的缓存，就要通过 PCIe 去主机内存里取——这是大规模部署里常见的性能悬崖，也是第 3 章那个往返时间的又一次出场。RDMA 怕丢包：常见的网卡丢一个就要从那里开始全部重发，所以 RoCE 常配合 PFC 让以太网不丢包，再用 ECN 标记和 DCQCN 之类的拥塞控制让发送方提前减速；这些在《隔着网线的硬盘》第 6 章有模型。",
+  "ch11.p3": "这要网卡记住很多状态：每个 QP 的序号和重传窗口，每块登记内存的地址翻译表和钥匙。NVIDIA 的 ConnectX-7 手册写的 RDMA 消息速率是每秒 {cxLo} 到 {cxHi} 百万条。QP 太多时，这些状态装不进网卡自己的缓存，就要通过 PCIe 去主机内存里取——这是大规模部署里常见的性能悬崖，也是第 3 章那个往返时间的又一次出场。RDMA 怕丢包：常见的网卡丢一个就要从那里开始全部重发，所以 RoCE 常配合 PFC 让以太网不丢包，再用 ECN 标记和 DCQCN 之类的拥塞控制让发送方提前减速；这些在<a href=\"../storage-over-a-network/#ch6\">《隔着网线的硬盘》第 6 章</a>有模型。",
   "ch11.p4": "再往前一步，网卡上直接放一组通用核心，就成了 SmartNIC 或 DPU：虚拟交换、加密、存储协议、防火墙都在网卡上跑，主机的 CPU 只留给租户。云服务商用它把自己的管理软件从客户买的核心上挪走。在虚拟化里，网卡还能通过 SR-IOV 分出很多个虚拟功能，每个直接交给一台虚拟机（见<a href='../how-the-os-talks-to-hardware/#ch12'>《操作系统是怎么和硬件说话的》第 12 章</a>）。",
   "ch11.limit": "这一章没有模型。RDMA 还有双边的 SEND/RECV、RDMA READ、原子操作，以及 InfiniBand 自己的链路层；这里只画了最典型的单边写。",
   "ch12.title": "训练集群里的网卡",
@@ -476,7 +476,7 @@ window.ESSAY_COPY.zh = {
   "site.crumb.cat": "计算与智能",
   "site.crumb.sub": "系统与安全",
   "site.bl.title": "被这些页面引用",
-  "site.bl.1": "<a href=\"../coherent-interconnects/\">芯片之间怎么共用内存</a>：<a href=\"../coherent-interconnects/#ch10\">第 10 章</a> → <a href=\"#ch12\">本页第 12 章</a>",
-  "site.bl.2": "<a href=\"../how-the-os-talks-to-hardware/\">操作系统是怎么和硬件说话的</a>：<a href=\"../how-the-os-talks-to-hardware/#ch6\">第 6 章</a> → <a href=\"#ch5\">本页第 5 章</a>；<a href=\"../how-the-os-talks-to-hardware/#ch7\">第 7 章</a> → <a href=\"#ch3\">本页第 3 章</a>",
-  "site.bl.3": "<a href=\"../storage-over-a-network/\">隔着网线的硬盘</a>：<a href=\"../storage-over-a-network/#ch6\">第 6 章</a> → <a href=\"#ch11\">本页第 11 章</a>；→ <a href=\"#ch11\">本页第 11 章</a>"
+  "site.bl.1": "<a href=\"../coherent-interconnects/\">芯片之间怎么共用内存</a>：<a href=\"../coherent-interconnects/#ch10\">该文第 10 章</a> → <a href=\"#ch12\">本页第 12 章</a>",
+  "site.bl.2": "<a href=\"../how-the-os-talks-to-hardware/\">操作系统是怎么和硬件说话的</a>：<a href=\"../how-the-os-talks-to-hardware/#ch6\">该文第 6 章</a> → <a href=\"#ch5\">本页第 5 章</a>；<a href=\"../how-the-os-talks-to-hardware/#ch7\">该文第 7 章</a> → <a href=\"#ch3\">本页第 3 章</a>",
+  "site.bl.3": "<a href=\"../storage-over-a-network/\">隔着网线的硬盘</a>：<a href=\"../storage-over-a-network/#ch6\">该文第 6 章</a> → <a href=\"#ch11\">本页第 11 章</a>"
 };

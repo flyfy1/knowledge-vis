@@ -136,7 +136,7 @@ How much time does it take to cross a wire? The CXL designers measured on Intel 
 
 Why is CXL asymmetric? The links between CPUs (Intel's UPI and AMD's Infinity Fabric, <a href='../how-a-computer-is-wired/#ch4'>Chapter 4 of “How the Parts of a Computer Are Wired Together”</a>) are symmetric: each end holds a full home agent, and the protocols differ between vendors and do not interoperate. CXL aims to let any vendor's device plug into any vendor's CPU, so it keeps the complicated parts in the host: the device need not know the host's internal protocol, only how to answer a few standard requests. In CXL 3.0, one root port can carry up to {cacheIdN} devices with caches (the messages carry a {cacheIdBits}-bit identifier).
 
-This chapter has no model. The step-by-step working of the coherence protocol is in the interactive version in “How Cores Share Memory”, and chapter 4 walks through the same steps on CXL messages. The latency figures are measurements on a CXL 1.1 implementation and targets from the specification; they are not a guarantee for any product. {.take}
+This chapter has no model. The step-by-step working of the coherence protocol is in the interactive version in [[how-cores-share-memory|“How Cores Share Memory”]], and chapter 4 walks through the same steps on CXL messages. The latency figures are measurements on a CXL 1.1 implementation and targets from the specification; they are not a guarantee for any product. {.take}
 
 ## Three protocols on one PCIe wire {#ch3}
 

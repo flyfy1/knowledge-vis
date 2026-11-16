@@ -393,7 +393,7 @@ Starting from the default state and writing randomly, the ratio of flash writes 
 
 The address table has its own costs. A 1 TB drive with 4 KiB pages needs about 240 million entries. The controller usually has a DRAM chip dedicated to the table. Drives without DRAM borrow a small part of the computer's memory, or keep only the frequently used part inside the controller. The table serves another purpose too: the controller can quietly move frequently written data to blocks with few erase cycles, so that wear is spread evenly. This is called **wear levelling**.
 
-Limits of the model: real blocks and pages are much larger than the ones here. The controller writes several chips at once (“Why NVMe Is So Fast”, chapter 5). Garbage collection runs in the background, and choosing a block to reclaim also considers data hot or cold, and wear. Here there is only one open block and the simplest rule: pick the block with the fewest valid pages. {.take}
+Limits of the model: real blocks and pages are much larger than the ones here. The controller writes several chips at once ([[why-nvme-is-fast#ch5|“Why NVMe Is So Fast”, chapter 5]]). Garbage collection runs in the background, and choosing a block to reclaim also considers data hot or cold, and wear. Here there is only one open block and the simplest rule: pick the block with the fewest valid pages. {.take}
 
 ## A layered map: form factor, connector, link, protocol {#ch7}
 

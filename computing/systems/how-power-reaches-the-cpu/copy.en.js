@@ -438,7 +438,7 @@ window.ESSAY_COPY.en = {
   "site.crumb.cat": "Computing & AI",
   "site.crumb.sub": "Systems & Security",
   "site.bl.title": "Linked from",
-  "site.bl.1": "<a href=\"../how-a-computer-boots/\">How a Computer Boots</a>: <a href=\"../how-a-computer-boots/#ch1\">chapter 1</a> → <a href=\"#ch4\">this page chapter 4</a>",
-  "site.bl.2": "<a href=\"../how-a-gpu-computes/\">How a GPU Computes</a>: <a href=\"../how-a-gpu-computes/#ch11\">chapter 11</a> → <a href=\"#ch10\">this page chapter 10</a>",
-  "site.bl.3": "<a href=\"../why-compute-waits-for-memory/\">Why Compute Waits for Memory</a>: <a href=\"../why-compute-waits-for-memory/#ch5\">chapter 5</a> → <a href=\"#ch2\">this page chapter 2</a>"
+  "site.bl.1": "<a href=\"../how-a-computer-boots/\">How a Computer Boots</a>: <a href=\"../how-a-computer-boots/#ch1\">its chapter 1</a> → <a href=\"#ch4\">this page chapter 4</a>",
+  "site.bl.2": "<a href=\"../how-a-gpu-computes/\">How a GPU Computes</a>: <a href=\"../how-a-gpu-computes/#ch11\">its chapter 11</a> → <a href=\"#ch10\">this page chapter 10</a>",
+  "site.bl.3": "<a href=\"../why-compute-waits-for-memory/\">Why Compute Waits for Memory</a>: <a href=\"../why-compute-waits-for-memory/#ch5\">its chapter 5</a> → <a href=\"#ch2\">this page chapter 2</a>"
 };

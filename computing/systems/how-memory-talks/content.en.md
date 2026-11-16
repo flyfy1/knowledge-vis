@@ -421,7 +421,7 @@ Why not use serial wires instead? PCIe uses a pair of wires with the clock hidde
 
 ::: lab ch7-model
 model.title: Fly-by routing: how much later each chip sees the clock
-model.how: {flyChips} chips sit along the clock line, with neighbours a few millimetres apart (**tuned parameter**, default {pitch} mm). The signal travels {tpd} ps per inch on the board (the same value used in “How the Parts of a Computer Are Wired Together”). Drag the transfer rate and the spacing to see how much later the last chip is than the first, measured in bit times. Anything beyond half a bit time reads wrongly without training.
+model.how: {flyChips} chips sit along the clock line, with neighbours a few millimetres apart (**tuned parameter**, default {pitch} mm). The signal travels {tpd} ps per inch on the board (the same value used in [[how-a-computer-is-wired|“How the Parts of a Computer Are Wired Together”]]). Drag the transfer rate and the spacing to see how much later the last chip is than the first, measured in bit times. Anything beyond half a bit time reads wrongly without training.
 model.aria: Schematic: the moment each chip sees the clock, placed on a time axis, with a background of bit-time cells.
 ctl.mts: Transfer rate
 ctl.pitch: Chip spacing

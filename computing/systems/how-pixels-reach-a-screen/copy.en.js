@@ -593,6 +593,6 @@ window.ESSAY_COPY.en = {
   "site.crumb.cat": "Computing & AI",
   "site.crumb.sub": "Systems & Security",
   "site.bl.title": "Linked from",
-  "site.bl.1": "<a href=\"../how-a-gpu-computes/\">How a GPU Computes</a>: <a href=\"../how-a-gpu-computes/#ch9\">chapter 9</a> → <a href=\"#ch1\">this page chapter 1</a>",
-  "site.bl.2": "<a href=\"../how-thunderbolt-works/\">How Thunderbolt Works</a>: <a href=\"../how-thunderbolt-works/#ch6\">chapter 6</a> → <a href=\"#ch2\">this page chapter 2</a>, <a href=\"#ch7\">this page chapter 7</a>"
+  "site.bl.1": "<a href=\"../how-a-gpu-computes/\">How a GPU Computes</a>: <a href=\"../how-a-gpu-computes/#ch9\">its chapter 9</a> → <a href=\"#ch1\">this page chapter 1</a>",
+  "site.bl.2": "<a href=\"../how-thunderbolt-works/\">How Thunderbolt Works</a>: <a href=\"../how-thunderbolt-works/#ch6\">its chapter 6</a> → <a href=\"#ch2\">this page chapter 2</a>, <a href=\"#ch7\">this page chapter 7</a>"
 };

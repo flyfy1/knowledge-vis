@@ -271,8 +271,8 @@ function fillLayout(name, slots) {
  */
 const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const CHROME_TEXT = {
-  zh: { aria: '页面位置', home: '首页', bl: '被这些页面引用', rel: '相关页面', ch: n => `第 ${n} 章`, here: '本页' },
-  en: { aria: 'Breadcrumb', home: 'Home', bl: 'Linked from', rel: 'Related pages', ch: n => `chapter ${n}`, here: 'this page' },
+  zh: { aria: '页面位置', home: '首页', bl: '被这些页面引用', rel: '相关页面', ch: n => `第 ${n} 章`, src: n => `该文第 ${n} 章`, here: '本页' },
+  en: { aria: 'Breadcrumb', home: 'Home', bl: 'Linked from', rel: 'Related pages', ch: n => `chapter ${n}`, src: n => `its chapter ${n}`, here: 'this page' },
 };
 const RUNTIME = /\{[a-zA-Z_][\w]*\}/g, HAS_RUNTIME = /\{[a-zA-Z_][\w]*\}/;
 
@@ -288,6 +288,8 @@ function compileLang(dir, lang, env) {
   const sectionIds = new Set(ctx.ownAnchors);
   const put = (k, v, inline = true) => {
     if (k in copy) errors.push(`${lang}: duplicate key ${k}`);
+    // site.* is the chrome's namespace (§8): page tests skip it in link and number scans, so content may not use it
+    if (k.startsWith('site.')) errors.push(`${file}: key ${k} is reserved for the template chrome (site.*)`);
     ctx.key = k; src[k] = v;
     try { copy[k] = inline ? renderInline(v, ctx) : v; } catch (e) { errors.push(`${file}: ${k}: ${e.message}`); copy[k] = v; }
     order.push(k);
@@ -367,20 +369,39 @@ function compileLang(dir, lang, env) {
   return { copy, order, src, skel, refs: ctx.refs, used: ctx.used };
 }
 
+function loadBindings(dir, errors) {
+  if (!fs.existsSync(path.join(dir, 'bindings.cjs'))) return null;
+  try {
+    const bf = require.resolve(path.join(dir, 'bindings.cjs')), mf = require.resolve(path.join(dir, 'models.js'));
+    delete require.cache[bf]; delete require.cache[mf];
+    return require(bf)(require(mf));
+  } catch (e) { errors.push('bindings.cjs: ' + e.message); return {}; }
+}
+
 function scanBacklinks(site, page) {
   const out = new Map();
   for (const p of site.pages) {
     if (p === page) continue;
     const d = path.join(site.root, p.path);
-    // A migrated page's links are in its sources: the copy table and figures/*.html partials. Its index.html
-    // repeats them (pre-fill), and its site.* keys are generated backlinks / related links; neither may feed back.
+    // A migrated page's links are in its sources: content.zh.md (compiled here, not read from the generated
+    // copy.zh.js, so one --all pass is final even when an earlier page in the pass gained a link) and its
+    // figures/*.html partials. Its index.html repeats them (pre-fill), and its site.* keys are generated backlinks /
+    // related links; neither may feed back.
     const migrated = site.isMigrated(p);
     const figs = migrated && fs.existsSync(path.join(d, 'figures')) ? fs.readdirSync(path.join(d, 'figures')).filter(f => f.endsWith('.html')).sort().map(f => 'figures/' + f) : [];
-    for (const f of migrated ? ['copy.zh.js', ...figs] : ['copy.zh.js', 'i18n.js', 'index.html']) {
+    for (const f of migrated ? ['content.zh.md', ...figs] : ['copy.zh.js', 'i18n.js', 'index.html']) {
       const file = path.join(d, f);
       if (!fs.existsSync(file)) continue;
       let entries;
-      if (f === 'copy.zh.js') { try { entries = Object.entries(loadCopy(file)).filter(([k]) => !(migrated && k.startsWith('site.'))); } catch (e) { continue; } }
+      if (f === 'content.zh.md') {
+        // Keys come in document order, so a key outside the chN.* namespace (a diagram's dg.x.cap) is credited to the
+        // chapter it sits in: the last chN seen before it.
+        try {
+          const c = compileLang(d, 'zh', { site, page: p, bindings: loadBindings(d, []), errors: [] });
+          let ch = null;
+          entries = c.order.map(k => { const m = /^(ch\d+)\./.exec(k); if (m) ch = m[1]; return [m ? k : (ch && !/^(hero|nav|toc|doc|footer)\b/.test(k) ? ch + '.' + k : k), c.copy[k]]; });
+        } catch (e) { continue; }
+      } else if (f === 'copy.zh.js') { try { entries = Object.entries(loadCopy(file)); } catch (e) { continue; } }
       else entries = [[null, fs.readFileSync(file, 'utf8')]];
       for (const [k, v] of entries) for (const m of String(v).matchAll(/href=\\?["']([^"'\\]+)\\?["']/g)) {
         const r = resolveHref(site, p.path, m[1]);
@@ -434,14 +455,7 @@ function buildEssay(dir, opts = {}) {
   const legacy = meta.legacyLayout || {};
   const join = new Set(legacy.join || []), compact = new Set(legacy.compactLists || []), gaps = legacy.gaps || {};
 
-  let bindings = null;
-  if (fs.existsSync(path.join(dir, 'bindings.cjs'))) {
-    try {
-      const bf = require.resolve(path.join(dir, 'bindings.cjs')), mf = require.resolve(path.join(dir, 'models.js'));
-      delete require.cache[bf]; delete require.cache[mf];
-      bindings = require(bf)(require(mf));
-    } catch (e) { errors.push('bindings.cjs: ' + e.message); bindings = {}; }
-  }
+  const bindings = loadBindings(dir, errors);
   const env = { site, page, bindings, errors };
   const C = {};
   for (const l of LANGS) {
@@ -497,7 +511,7 @@ function buildEssay(dir, opts = {}) {
       BL.forEach((r, i) => {
         const href = relHref(page.path, r.p.path), groups = new Map();
         for (const x of r.links) { const g = groups.get(x.from || '') || []; if (x.to && !g.includes(x.to)) g.push(x.to); groups.set(x.from || '', g); }
-        const parts = [...groups].map(([from, tos]) => (from ? `<a href="${href}#${from}">${t.ch(from.slice(2))}</a>` : '') +
+        const parts = [...groups].map(([from, tos]) => (from ? `<a href="${href}#${from}">${t.src(from.slice(2))}</a>` : '') +
           (tos.length ? (from ? ' → ' : '→ ') + tos.map(to => `<a href="#${to}">${t.here}${l === 'zh' ? '' : ' '}${chapNo(to) ? t.ch(chapNo(to)) : '#' + to}</a>`).join(l === 'zh' ? '、' : ', ') : ''));
         add('site.bl.' + (i + 1), `<a href="${href}">${titleOf(r.p, l)}</a>` + (parts.some(Boolean) ? (l === 'zh' ? '：' : ': ') + parts.filter(Boolean).join(l === 'zh' ? '；' : '; ') : ''));
       });
@@ -512,14 +526,22 @@ function buildEssay(dir, opts = {}) {
     else if (r[1] && !site.anchors(r[0]).has(r[1])) warnings.push(`link: ${k} links to ${m[2]}, but that page has no #${r[1]}`);
   }
 
-  /* D10 lint: an exact 《title》 / “Title” of another live page that is not a link -> suggest [[slug]] */
+  /* D10 lint: a mention of another live page's title that is not a link -> suggest [[slug]]. It matches what the
+     runtime linker (site-nav.js buildMatcher / citeMatch) linked on hand-written pages: zh 《title》, en “Title” with
+     an optional , or . inside the closing quote and ' / ’ interchangeable, and <cite>Title</cite> in either language. */
+  const reEsc = s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const titleRe = s => reEsc(s).replace(/['’]/g, "['’]");
   for (const l of LANGS) for (const k of C[l].order) {
     if (k.startsWith('site.')) continue;
     const text = String(C[l].copy[k]).replace(/<a\b[\s\S]*?<\/a>/g, '');
     for (const p of site.pages) {
       if (p === page) continue;
       const t = titleOf(p, l);
-      if (t && text.includes(l === 'zh' ? '《' + t + '》' : '“' + t + '”')) warnings.push(`lint: ${l} ${k} mentions ${l === 'zh' ? '《' + t + '》' : '“' + t + '”'} without a link; consider [[${p.slug}]]`);
+      if (!t) continue;
+      const re = l === 'zh' ? new RegExp('《' + reEsc(t) + '》|<cite>\\s*' + reEsc(t) + '\\s*</cite>')
+        : new RegExp('“' + titleRe(t) + '[,.]?”|<cite>\\s*' + titleRe(t) + '\\s*</cite>');
+      const m = text.match(re);
+      if (m) warnings.push(`lint: ${l} ${k} mentions ${m[0]} without a link; consider [[${p.slug}]]`);
     }
   }
 

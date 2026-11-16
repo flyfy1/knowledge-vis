@@ -1,7 +1,13 @@
 {
  "_generated": "by scripts/build-pages.cjs; do not edit",
  "page": "how-a-nic-moves-packets",
- "refs": [],
+ "refs": [
+  {
+   "from": "ch11.p3",
+   "to": "storage-over-a-network",
+   "anchor": "ch6"
+  }
+ ],
  "backlinks": [
   {
    "from": "coherent-interconnects",
@@ -30,10 +36,6 @@
    "links": [
     {
      "from": "ch6",
-     "to": "ch11"
-    },
-    {
-     "from": null,
      "to": "ch11"
     }
    ]

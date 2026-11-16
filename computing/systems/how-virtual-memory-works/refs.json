@@ -1,7 +1,13 @@
 {
  "_generated": "by scripts/build-pages.cjs; do not edit",
  "page": "how-virtual-memory-works",
- "refs": [],
+ "refs": [
+  {
+   "from": "footer",
+   "to": "what-a-drive-is-made-of",
+   "anchor": null
+  }
+ ],
  "backlinks": [
   {
    "from": "coherent-interconnects",

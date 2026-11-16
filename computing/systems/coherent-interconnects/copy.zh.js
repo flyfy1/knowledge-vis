@@ -96,7 +96,7 @@ window.ESSAY_COPY.zh = {
   "dg.ha.snp": "作废通知",
   "ch2.p3": "跨过一根线要多花多少时间？CXL 的设计者在英特尔 Sapphire Rapids 上测过：数据从引脚进来、穿过 CXL 的各层再回到引脚，一个来回 {portLo} 到 {portHi} 纳秒，主机和设备两头各一次。规范给自己定的目标是：从主机引脚算起，一次访问设备内存不超过 {pinMem} 纳秒，回应一次窥探不超过 {pinSnoop} 纳秒。同一颗芯片里的核心之间交换一行，是几十纳秒的事（<a href='../how-cores-share-memory/#ch7'>《多个核心怎么共用一块内存》第 7 章</a>）。",
   "ch2.p4": "CXL 为什么做成不对称的？CPU 和 CPU 之间的链路（英特尔的 UPI、AMD 的 Infinity Fabric，<a href='../how-a-computer-is-wired/#ch4'>《电脑里的零件是怎么连起来的》第 4 章</a>）是对称的，两头都是完整的家代理，协议各家不同、互不相通。CXL 想让任何厂商的设备都能插到任何厂商的 CPU 上，于是把复杂的部分全留在主机：设备不需要懂主机内部用的是什么协议，只要会回答几种标准的请求。到 CXL 3.0，一个根端口下最多可以挂 {cacheIdN} 个带缓存的设备（消息里加了 {cacheIdBits} 位的编号）。",
-  "ch2.limit": "这一章没有模型：一致性协议怎样一步一步跑，《多个核心怎么共用一块内存》里有可以动手的版本，第 4 章会在 CXL 的消息上再走一遍。延迟数字是 CXL 1.1 实现上的测量和规范目标，不是某个产品的保证。",
+  "ch2.limit": "这一章没有模型：一致性协议怎样一步一步跑，<a href=\"../how-cores-share-memory/\">《多个核心怎么共用一块内存》</a>里有可以动手的版本，第 4 章会在 CXL 的消息上再走一遍。延迟数字是 CXL 1.1 实现上的测量和规范目标，不是某个产品的保证。",
   "ch3.title": "一根 PCIe 线上的三种协议",
   "toc.ch3": "一根 PCIe 线上的三种协议",
   "ch3.law": "CXL 没有另铺一根线。它借用 PCIe 的物理层，把三种协议装进固定大小的数据帧里轮流发送：一种就是 PCIe 本身，另外两种分别管缓存和内存。",
@@ -482,11 +482,11 @@ window.ESSAY_COPY.zh = {
   "site.crumb.cat": "计算与智能",
   "site.crumb.sub": "系统与安全",
   "site.bl.title": "被这些页面引用",
-  "site.bl.1": "<a href=\"../how-a-computer-is-wired/\">电脑里的零件是怎么连起来的</a>：<a href=\"../how-a-computer-is-wired/#ch9\">第 9 章</a> → <a href=\"#ch3\">本页第 3 章</a>",
-  "site.bl.2": "<a href=\"../how-a-gpu-computes/\">GPU 是怎么算的</a>：<a href=\"../how-a-gpu-computes/#ch10\">第 10 章</a> → <a href=\"#ch11\">本页第 11 章</a>；<a href=\"../how-a-gpu-computes/#ch11\">第 11 章</a> → <a href=\"#ch8\">本页第 8 章</a>；<a href=\"../how-a-gpu-computes/#ch12\">第 12 章</a>",
-  "site.bl.3": "<a href=\"../how-a-nic-moves-packets/\">网卡是怎么搬运数据包的</a>：<a href=\"../how-a-nic-moves-packets/#ch12\">第 12 章</a> → <a href=\"#ch9\">本页第 9 章</a>、<a href=\"#ch10\">本页第 10 章</a>；<a href=\"../how-a-nic-moves-packets/#ch14\">第 14 章</a>",
-  "site.bl.4": "<a href=\"../how-cores-share-memory/\">多个核心怎么共用一块内存</a>：<a href=\"../how-cores-share-memory/#ch11\">第 11 章</a>；<a href=\"../how-cores-share-memory/#ch12\">第 12 章</a>",
-  "site.bl.5": "<a href=\"../how-memory-talks/\">内存是怎么和 CPU 说话的</a>：<a href=\"../how-memory-talks/#ch11\">第 11 章</a> → <a href=\"#ch5\">本页第 5 章</a>；<a href=\"../how-memory-talks/#ch12\">第 12 章</a>",
-  "site.bl.6": "<a href=\"../how-pcie-works/\">PCIe 为什么能一代一代翻倍</a>：<a href=\"../how-pcie-works/#ch11\">第 11 章</a> → <a href=\"#ch3\">本页第 3 章</a>",
-  "site.bl.7": "<a href=\"../how-the-os-talks-to-hardware/\">操作系统是怎么和硬件说话的</a>：<a href=\"../how-the-os-talks-to-hardware/#ch14\">第 14 章</a> → <a href=\"#ch3\">本页第 3 章</a>"
+  "site.bl.1": "<a href=\"../how-a-computer-is-wired/\">电脑里的零件是怎么连起来的</a>：<a href=\"../how-a-computer-is-wired/#ch9\">该文第 9 章</a> → <a href=\"#ch3\">本页第 3 章</a>",
+  "site.bl.2": "<a href=\"../how-a-gpu-computes/\">GPU 是怎么算的</a>：<a href=\"../how-a-gpu-computes/#ch10\">该文第 10 章</a> → <a href=\"#ch11\">本页第 11 章</a>；<a href=\"../how-a-gpu-computes/#ch11\">该文第 11 章</a> → <a href=\"#ch8\">本页第 8 章</a>；<a href=\"../how-a-gpu-computes/#ch12\">该文第 12 章</a>",
+  "site.bl.3": "<a href=\"../how-a-nic-moves-packets/\">网卡是怎么搬运数据包的</a>：<a href=\"../how-a-nic-moves-packets/#ch12\">该文第 12 章</a> → <a href=\"#ch9\">本页第 9 章</a>、<a href=\"#ch10\">本页第 10 章</a>；<a href=\"../how-a-nic-moves-packets/#ch14\">该文第 14 章</a>",
+  "site.bl.4": "<a href=\"../how-cores-share-memory/\">多个核心怎么共用一块内存</a>：<a href=\"../how-cores-share-memory/#ch11\">该文第 11 章</a>；<a href=\"../how-cores-share-memory/#ch12\">该文第 12 章</a>",
+  "site.bl.5": "<a href=\"../how-memory-talks/\">内存是怎么和 CPU 说话的</a>：<a href=\"../how-memory-talks/#ch11\">该文第 11 章</a> → <a href=\"#ch5\">本页第 5 章</a>；<a href=\"../how-memory-talks/#ch12\">该文第 12 章</a>",
+  "site.bl.6": "<a href=\"../how-pcie-works/\">PCIe 为什么能一代一代翻倍</a>：<a href=\"../how-pcie-works/#ch11\">该文第 11 章</a> → <a href=\"#ch3\">本页第 3 章</a>",
+  "site.bl.7": "<a href=\"../how-the-os-talks-to-hardware/\">操作系统是怎么和硬件说话的</a>：<a href=\"../how-the-os-talks-to-hardware/#ch14\">该文第 14 章</a> → <a href=\"#ch3\">本页第 3 章</a>"
 };

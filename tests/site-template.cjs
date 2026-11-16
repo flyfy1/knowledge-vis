@@ -61,7 +61,7 @@ const good = freshSite();
   ok(/"dg\.flow\.step1": "Seek"/.test(en), 'diagram strings that only app.js uses reach the copy table');
   ok(html.includes('<nav class="site-nav" data-no-autolink data-i18n-aria="site.crumb.aria"'), 'static breadcrumb uses the site-nav markup');
   ok(html.includes('data-crumb="sub" data-i18n="site.crumb.sub">基础</a>'), 'breadcrumb names the subtopic');
-  ok(html.includes('<section class="site-xref" id="linked-from" data-no-autolink>') && html.includes('<a href="../fixture-target/#ch1">第 1 章</a> → <a href="#ch2">本页第 2 章</a>'), 'backlinks are generated with chapters');
+  ok(html.includes('<section class="site-xref" id="linked-from" data-no-autolink>') && html.includes('<a href="../fixture-target/#ch1">该文第 1 章</a> → <a href="#ch2">本页第 2 章</a>'), 'backlinks are generated with chapters, the source chapter named as the other page\'s');
   ok(/"site\.crumb\.home": "Home"/.test(en), 'chrome strings live in the page copy table');
   ok(html.includes('<link rel="stylesheet" href="../../../site-nav.css?v=') && html.includes('<script defer src="../../../site-nav.js?v='), 'site-nav include lines come from build-site-nav.cjs');
   ok(html.includes('<p class="say" id="fxSay" aria-live="polite"></p>'), 'elements without keys are left empty');
@@ -102,6 +102,21 @@ const good = freshSite();
   ok(!/site\.bl\./.test(fs.readFileSync(path.join(pageDir(root), 'copy.zh.js'), 'utf8')), 'a page is not "linked from" a page whose only link is its generated backlink block');
   const tzh = fs.readFileSync(path.join(t, 'copy.zh.js'), 'utf8');
   ok(/"site\.bl\.1": .*第 1 章/.test(tzh) && !/；→/.test(tzh), 'the cited page lists the link once, with its chapter (not again from the pre-filled index.html)');
+  // A link added to the sources of a page that --all builds later (fixture-target after fixture-essay) reaches the
+  // earlier page's backlinks in the same pass: backlinks are scanned from content.zh.md, not the generated copy.zh.js.
+  for (const l of ['zh', 'en']) { const f = path.join(t, `content.${l}.md`); fs.writeFileSync(f, fs.readFileSync(f, 'utf8').replace(`y ${l}.`, `y ${l} [[fixture-essay#ch2|e]].`)); }
+  const a2 = run('build-pages.cjs', '--all', '--root', root);
+  ok(a2.code === 0, 'rebuild after adding a link:\n' + a2.out);
+  const c2 = run('build-pages.cjs', '--all', '--check', '--root', root);
+  ok(c2.code === 0, 'one --all pass is final after a source gains a link to a page built earlier in the pass:\n' + c2.out);
+  ok(/"site\.bl\.1": .*fixture-target\/#ch2/.test(fs.readFileSync(path.join(pageDir(root), 'copy.zh.js'), 'utf8')), 'the earlier page lists the new backlink after one pass');
+  // A link in a diagram caption (dg.stack.cap, outside the chN.* keys) is credited to the chapter the diagram sits in,
+  // instead of a bare "→ 本页第 1 章" with no source chapter.
+  edit(root, 'content.zh.md', 'cap: 图 1　上下两层（示意，不按比例）。', 'cap: 图 1　上下两层（示意，不按比例；见[[fixture-target#ch1|此处]]）。');
+  edit(root, 'content.en.md', 'cap: Figure 1. Two layers (schematic, not to scale).', 'cap: Figure 1. Two layers (schematic, not to scale; see [[fixture-target#ch1|here]]).');
+  ok(run('build-pages.cjs', '--all', '--root', root).code === 0, 'rebuild after a caption link');
+  const tzh2 = fs.readFileSync(path.join(t, 'copy.zh.js'), 'utf8');
+  ok(tzh2.includes('该文第 1 章</a> → <a href=\\"#ch2\\">本页第 2 章</a>、<a href=\\"#ch1\\">本页第 1 章</a>"') && !/；→|：→/.test(tzh2), 'a caption link is listed under its chapter:\n' + tzh2);
 }
 
 // 2c. An unregistered draft written natively in Markdown builds from its REGISTRY.json (and stays out of --all).
@@ -146,7 +161,26 @@ failsWith('partial names a key no block defines', r => edit(r, 'figures/dg-stack
 failsWith('missing partial', r => edit(r, 'content.zh.md', '::: lab ch2-model', '::: lab ch2-modell'), [/missing partial figures\/ch2-modell\.html/, /parity: zh and en differ in structure/]);
 failsWith('page-wide string the layout needs is missing', r => edit(r, 'content.zh.md', 'toc.label: 目录\n', ''), /names key toc\.label \(layout or chrome\), which no content block defines/);
 failsWith('page.json slug differs from the registered one', r => edit(r, 'page.json', '"slug": "fixture-essay"', '"slug": "fixture-draft"'), /page\.json slug "fixture-draft" differs from the slug registered for demo\/basics\/fixture-essay\/: "fixture-essay"/);
+failsWith('content defines a site.* key (reserved for the chrome; page tests skip it)', r => { for (const l of ['zh', 'en']) edit(r, `content.${l}.md`, 'nav.back:', 'site.x: 1\nnav.back:'); }, /key site\.x is reserved for the template chrome/);
 failsWith('paragraph that needs a key', r => edit(r, 'content.zh.md', '一句副标题。<br>第二行。 {.sub}', '一句副标题。<br>第二行。'), /paragraph needs \{#key\}/);
+
+// 3a. The D10 lint names every mention the runtime linker would have linked on a hand-written page (site-nav.js):
+//     zh 《title》, en “Title” with , or . inside the closing quote and ’ for ', and <cite>Title</cite>.
+{
+  const root = freshSite();
+  edit(root, 'content.zh.md', '先看结构。 {.law}', '先看结构，见《被引用的页面》和<cite>被引用的页面</cite>。 {.law}');
+  edit(root, 'content.en.md', 'Structure first. {.law}', 'Structure first, as in “The Page Being Cited.” and “The Page Being Cited,” and “The Page Being Cited” and <cite>The Page Being Cited</cite>. {.law}');
+  const r = build(root);
+  ok(r.code === 0, 'a lint finding is a warning, not a failure:\n' + r.out);
+  ok(/lint: zh ch1\.law mentions 《被引用的页面》 without a link; consider \[\[fixture-target\]\]/.test(r.out), 'lint: zh 《title》\n' + r.out);
+  ok(/lint: en ch1\.law mentions “The Page Being Cited\.” without a link/.test(r.out), 'lint: en title with a period inside the closing quote\n' + r.out);
+  const only = (lang, text) => { const q = freshSite(); edit(q, 'content.' + lang + '.md', lang === 'zh' ? '先看结构。 {.law}' : 'Structure first. {.law}', text + ' {.law}'); return build(q).out; };
+  ok(/lint: en ch1\.law mentions “The Page Being Cited,” without a link/.test(only('en', 'See “The Page Being Cited,” first.')), 'lint: en title with a comma inside the closing quote');
+  ok(/lint: en ch1\.law mentions “The Page Being Cited” without a link/.test(only('en', 'See “The Page Being Cited” first.')), 'lint: en plain title');
+  ok(/lint: en ch1\.law mentions <cite>The Page Being Cited<\/cite>/.test(only('en', 'See <cite>The Page Being Cited</cite>.')), 'lint: en <cite>');
+  ok(/lint: zh ch1\.law mentions <cite>被引用的页面<\/cite>/.test(only('zh', '见<cite>被引用的页面</cite>。')), 'lint: zh <cite>');
+  ok(!/lint:/.test(only('en', 'See [[fixture-target|“The Page Being Cited.”]].')), 'lint: a linked mention is not reported');
+}
 
 // 4. The converter: a page built without chrome and pre-fill (the old hand-written form) converts back to
 //    sources that rebuild it byte for byte, including the inline-SVG diagram.

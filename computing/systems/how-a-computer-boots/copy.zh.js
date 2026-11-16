@@ -614,10 +614,10 @@ window.ESSAY_COPY.zh = {
   "site.crumb.cat": "计算与智能",
   "site.crumb.sub": "系统与安全",
   "site.bl.title": "被这些页面引用",
-  "site.bl.1": "<a href=\"../how-a-computer-is-wired/\">电脑里的零件是怎么连起来的</a>：<a href=\"../how-a-computer-is-wired/#ch8\">第 8 章</a> → <a href=\"#ch3\">本页第 3 章</a>",
-  "site.bl.2": "<a href=\"../how-memory-talks/\">内存是怎么和 CPU 说话的</a>：<a href=\"../how-memory-talks/#ch7\">第 7 章</a> → <a href=\"#ch5\">本页第 5 章</a>",
-  "site.bl.3": "<a href=\"../how-pcie-works/\">PCIe 为什么能一代一代翻倍</a>：<a href=\"../how-pcie-works/#ch6\">第 6 章</a> → <a href=\"#ch6\">本页第 6 章</a>",
-  "site.bl.4": "<a href=\"../how-power-reaches-the-cpu/\">电是怎么送进 CPU 的</a>：<a href=\"../how-power-reaches-the-cpu/#ch3\">第 3 章</a> → <a href=\"#ch1\">本页第 1 章</a>；<a href=\"../how-power-reaches-the-cpu/#ch8\">第 8 章</a> → <a href=\"#ch5\">本页第 5 章</a>；<a href=\"../how-power-reaches-the-cpu/#ch12\">第 12 章</a> → <a href=\"#ch1\">本页第 1 章</a>",
-  "site.bl.5": "<a href=\"../how-the-os-talks-to-hardware/\">操作系统是怎么和硬件说话的</a>：<a href=\"../how-the-os-talks-to-hardware/#ch1\">第 1 章</a> → <a href=\"#ch12\">本页第 12 章</a>；<a href=\"../how-the-os-talks-to-hardware/#ch2\">第 2 章</a> → <a href=\"#ch11\">本页第 11 章</a>；<a href=\"../how-the-os-talks-to-hardware/#ch9\">第 9 章</a> → <a href=\"#ch6\">本页第 6 章</a>；<a href=\"../how-the-os-talks-to-hardware/#ch14\">第 14 章</a> → <a href=\"#ch11\">本页第 11 章</a>",
-  "site.bl.6": "<a href=\"../what-a-drive-is-made-of/\">硬盘里到底是什么</a>：<a href=\"../what-a-drive-is-made-of/#ch1\">第 1 章</a> → <a href=\"#ch7\">本页第 7 章</a>"
+  "site.bl.1": "<a href=\"../how-a-computer-is-wired/\">电脑里的零件是怎么连起来的</a>：<a href=\"../how-a-computer-is-wired/#ch8\">该文第 8 章</a> → <a href=\"#ch3\">本页第 3 章</a>",
+  "site.bl.2": "<a href=\"../how-memory-talks/\">内存是怎么和 CPU 说话的</a>：<a href=\"../how-memory-talks/#ch7\">该文第 7 章</a> → <a href=\"#ch5\">本页第 5 章</a>",
+  "site.bl.3": "<a href=\"../how-pcie-works/\">PCIe 为什么能一代一代翻倍</a>：<a href=\"../how-pcie-works/#ch6\">该文第 6 章</a> → <a href=\"#ch6\">本页第 6 章</a>",
+  "site.bl.4": "<a href=\"../how-power-reaches-the-cpu/\">电是怎么送进 CPU 的</a>：<a href=\"../how-power-reaches-the-cpu/#ch3\">该文第 3 章</a> → <a href=\"#ch1\">本页第 1 章</a>；<a href=\"../how-power-reaches-the-cpu/#ch8\">该文第 8 章</a> → <a href=\"#ch5\">本页第 5 章</a>；<a href=\"../how-power-reaches-the-cpu/#ch12\">该文第 12 章</a> → <a href=\"#ch1\">本页第 1 章</a>",
+  "site.bl.5": "<a href=\"../how-the-os-talks-to-hardware/\">操作系统是怎么和硬件说话的</a>：<a href=\"../how-the-os-talks-to-hardware/#ch1\">该文第 1 章</a> → <a href=\"#ch12\">本页第 12 章</a>；<a href=\"../how-the-os-talks-to-hardware/#ch2\">该文第 2 章</a> → <a href=\"#ch11\">本页第 11 章</a>；<a href=\"../how-the-os-talks-to-hardware/#ch9\">该文第 9 章</a> → <a href=\"#ch6\">本页第 6 章</a>；<a href=\"../how-the-os-talks-to-hardware/#ch14\">该文第 14 章</a> → <a href=\"#ch11\">本页第 11 章</a>",
+  "site.bl.6": "<a href=\"../what-a-drive-is-made-of/\">硬盘里到底是什么</a>：<a href=\"../what-a-drive-is-made-of/#ch1\">该文第 1 章</a> → <a href=\"#ch7\">本页第 7 章</a>"
 };
