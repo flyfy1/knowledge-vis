@@ -667,12 +667,12 @@ anchor; a link to the page top has no anchor).
 
 ## 燃烧三要素 / The Fire Triangle → 反应速率 · 数一数成功碰撞 / Reaction Rates · Counting Successful Collisions
 
-- `combustion-triangle` → `reaction-rates#step3`
-- `combustion-triangle` → `reaction-rates#step2`
+- `combustion-triangle#step5` → `reaction-rates#step3`
+- `combustion-triangle#step5` → `reaction-rates#step2`
 
 ## 燃烧三要素 / The Fire Triangle → 质量守恒 · 原子一个都不丢 / Mass Conservation · Not a Single Atom Lost
 
-- `combustion-triangle` → `mass-conservation#step4`
+- `combustion-triangle#step5` → `mass-conservation#step4`
 
 ## 圆锥曲线 / Conic Sections → 圆周角 · 为什么恰好是一半 / Inscribed Angles · Why Exactly Half
 
