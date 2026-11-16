@@ -10,7 +10,7 @@
 <style>
 {{style}}</style>
 {{gap.afterStyle}}<link rel="stylesheet" href="{{up}}page-provenance.css">
-{{siteNavCss}}
+{{gap.afterProvenanceCss}}{{siteNavCss}}
 </head>
 <body>
 <div class="topbar">
@@ -26,13 +26,12 @@
 
 <nav class="wrap toc" data-i18n-aria="toc.label">
   <h2 data-i18n="toc.title"></h2>
-  <ol>
-{{toc}}  </ol>
+  <ol>{{toc}}</ol>
 </nav>
 
 <main>
 {{chapters}}</main>
-{{gap.afterMain}}<footer><div class="wrap" data-i18n-html="footer"></div></footer>
+{{gap.afterMain}}<footer><div class="wrap"{{footerAttr}}>{{footerBody}}</div></footer>
 {{gap.afterFooter}}{{scripts}}{{siteNavJs}}
 </body>
 </html>

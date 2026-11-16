@@ -62,8 +62,17 @@ const version = (html.match(/<script src="[\w.-]+\?v=([\w-]+)"/) || [])[1] || nu
 const legacy = { join: [], compactLists: [], gaps: {} };
 if (html.includes(`</style>\n\n<link rel="stylesheet" href="${up}page-provenance.css">`)) legacy.gaps.afterStyle = '\n';
 if (/<\/footer>\n<script/.test(html)) legacy.gaps.afterFooter = '';
+if (html.includes(`<link rel="stylesheet" href="${up}page-provenance.css">\n\n<link rel="stylesheet" href="${up}site-nav.css`)) legacy.gaps.afterProvenanceCss = '\n';
 if (/<\/section>\n\n<section/.test(html)) legacy.gaps.betweenSections = '\n';
 if (/<\/main>\n<footer>/.test(html)) legacy.gaps.afterMain = '';
+if (/<nav class="wrap toc"[^>]*>\n  <h2 data-i18n="toc.title"><\/h2>\n  <ol><li>/.test(html)) legacy.compactToc = true;
+// whole sections written on one line (how-pcie-works): no whitespace inside any <section class="ch">
+if (/<section class="ch" id="[\w-]+"><div/.test(html)) legacy.compactSections = true;
+// a footer of keyed paragraphs (how-sas-works: footer.sources, footer.models, footer.ai) instead of one footer key
+const footerKeys = (() => {
+  const m = html.match(/<footer><div class="wrap">((?:<p data-i18n-html="footer\.[\w-]+"><\/p>)+)<\/div><\/footer>/);
+  return m ? [...m[1].matchAll(/data-i18n-html="(footer\.[\w-]+)"/g)].map(x => x[1]) : null;
+})();
 
 const parts = new Map(); // name -> { type, html, sec, keys }
 const uniq = base => { let n = base, i = 2; while (parts.has(n)) n = base + '-' + i++; return n; };
@@ -96,7 +105,7 @@ function parseBlocks(s, pos, ind, stops, sec) {
   for (;;) {
     if (stops.some(t => s.startsWith(t, pos))) return { blocks, pos };
     const lead = /^\s*/.exec(s.slice(pos))[0];
-    if (lead !== '' && lead !== '\n' + ind) throw new Error(`${sec}: unexpected whitespace ${JSON.stringify(lead)} before ${JSON.stringify(s.slice(pos + lead.length, pos + lead.length + 50))}`);
+    if (lead !== '' && (ind === null || lead !== '\n' + ind)) throw new Error(`${sec}: unexpected whitespace ${JSON.stringify(lead)} before ${JSON.stringify(s.slice(pos + lead.length, pos + lead.length + 50))}`);
     const at = pos + lead.length, end = elementEnd(s, at);
     const b = classify(s.slice(at, end), sec, ind);
     b.joined = lead === '';
@@ -126,30 +135,40 @@ try {
   const mainEnd = html.indexOf('</main>', mainStart);
   const main = html.slice(0, mainEnd);
   let q = mainStart;
+  const C = !!legacy.compactSections, NL = C ? '' : '\n', I1 = C ? '' : '  ', I2 = C ? '' : '\n    ';
+  const WRAP = `${I1}<div class="wrap">`, WIDE = `${I1}<div class="wide">`, WRAP_END = `${NL}${I1}</div>${NL}`;
   while (q < mainEnd) {
     if (html.startsWith('\n', q) && legacy.gaps.betweenSections) q++;
-    const m = /^<section class="ch" id="([\w-]+)">\n/.exec(main.slice(q));
+    const m = (C ? /^<section class="ch" id="([\w-]+)">/ : /^<section class="ch" id="([\w-]+)">\n/).exec(main.slice(q));
     if (!m) throw new Error('expected <section class="ch"> at ' + JSON.stringify(main.slice(q, q + 60)));
     const sec = m[1], secEnd = elementEnd(main, q);
     const S = main.slice(0, secEnd - '</section>'.length);
     let r = q + m[0].length, first = true;
     const regions = [];
     while (r < S.length) {
-      if (S.startsWith('  <div class="wrap">', r)) {
-        r += '  <div class="wrap">'.length;
-        if (first) r = expect(S, r, `\n    <div class="num">${String(sections.length + 1).padStart(2, '0')}</div>\n    <h2 data-i18n="${sec}.title"></h2>`, sec);
-        const res = parseBlocks(S, r, '    ', ['\n  </div>\n'], sec);
+      if (S.startsWith(WRAP, r)) {
+        r += WRAP.length;
+        if (first) r = expect(S, r, `${I2}<div class="num">${String(sections.length + 1).padStart(2, '0')}</div>${I2}<h2 data-i18n="${sec}.title"></h2>`, sec);
+        const res = parseBlocks(S, r, C ? null : '    ', [WRAP_END], sec);
         regions.push({ kind: 'wrap', blocks: res.blocks });
-        r = res.pos + '\n  </div>\n'.length;
-      } else if (S.startsWith('  <div class="wide">', r)) {
+        r = res.pos + WRAP_END.length;
+      } else if (S.startsWith(WIDE, r)) {
         if (first) throw new Error(sec + ': chapter starts with a lab before its heading');
-        const at = r + 2, end = elementEnd(S, at);
+        const at = r + I1.length, end = elementEnd(S, at);
         const inner = S.slice(at + '<div class="wide">'.length, end - '</div>'.length);
-        const h3 = (inner.match(/<h3 data-i18n="([\w-]+)\.model\.title"/) || [])[1];
-        const name = uniq(h3 ? h3 + '-model' : sec + '-lab');
-        parts.set(name, { type: 'lab', html: inner, sec });
-        regions.push({ kind: 'lab', name });
-        r = expect(S, end, '\n', sec);
+        if (/^<figure class="diag?"/.test(inner)) {
+          // a static diagram in the wide column (how-pcie-works: figure.diag with .svgbox[data-diagram]): ::: diagram place=wide
+          const id = (inner.match(/\bdata-(?:diagram|dg)="([\w-]+)"/) || inner.match(/^<figure[^>]*\bid="(?:fig-)?([\w-]+)"/) || [])[1];
+          const name = uniq(id && /^dg/.test(id) ? id : 'dg-' + (id || sec + '-' + (parts.size + 1)));
+          parts.set(name, { type: 'diagram', html: inner, sec, wide: true });
+          regions.push({ kind: 'wide', name });
+        } else {
+          const h3 = (inner.match(/<h3 data-i18n="([\w-]+)\.model\.title"/) || [])[1];
+          const name = uniq(h3 ? h3 + '-model' : sec + '-lab');
+          parts.set(name, { type: 'lab', html: inner, sec });
+          regions.push({ kind: 'lab', name });
+        }
+        r = expect(S, end, NL, sec);
       } else throw new Error(`${sec}: unexpected content ${JSON.stringify(S.slice(r, r + 60))}`);
       first = false;
     }
@@ -162,7 +181,7 @@ try {
 const ALL = Object.keys(COPY.zh), owner = new Map(); // key -> owner tag
 const secIds = new Set(sections.map(s => s.id).concat(['hero']));
 const claim = (k, who) => { if (k in COPY.zh && !owner.has(k)) { owner.set(k, who); return true; } return false; };
-['doc.title', 'doc.desc', 'hero.title', 'hero.kicker', 'footer'].forEach(k => claim(k, 'fixed'));
+['doc.title', 'doc.desc', 'hero.title', 'hero.kicker', 'footer', ...(footerKeys || [])].forEach(k => claim(k, 'fixed'));
 const commonPrefix = keys => {
   const segs = keys.map(k => k.split('.').slice(0, -1));
   let n = 0;
@@ -245,7 +264,7 @@ function emit(lang) {
   }
   function partMd(name, sec) {
     const P = parts.get(name);
-    out.push(`::: ${P.type} ${name}${P.prefix ? ' keys=' + P.prefix : ''}`);
+    out.push(`::: ${P.type} ${name}${P.prefix ? ' keys=' + P.prefix : ''}${P.wide ? ' place=wide' : ''}`);
     for (const k of P.keys) out.push(entry(k, sec, P.prefix && k.startsWith(P.prefix + '.') ? P.prefix : null));
     out.push(':::', '');
   }
@@ -261,11 +280,22 @@ function emit(lang) {
     let prevWrap = false;
     for (const r of s.regions) {
       if (r.kind === 'wrap') {
-        if (prevWrap) throw new Error(`${s.id}: two prose regions without a lab between them`);
+        if (prevWrap) out.push('---', ''); // two prose columns in a row (how-sas-works ch7)
         r.blocks.forEach(b => blockMd(b, s.id, counter)); prevWrap = true;
       } else { partMd(r.name, s.id); prevWrap = false; }
     }
     if (s.leftover.length) { out.push('::: strings'); for (const k of s.leftover) out.push(entry(k, s.id)); out.push(':::', ''); }
+  }
+  if (footerKeys) {
+    out.push('::: footer');
+    footerKeys.forEach((k, i) => {
+      const t = V(k);
+      if (/\n/.test(t) || /^\s|\s$/.test(t)) throw new Error(`${k}: footer paragraph has line breaks or edge spaces`);
+      if (i) out.push('');
+      out.push(`${t} {#${k.slice('footer.'.length)}}`);
+    });
+    out.push(':::', '');
+    return out.join('\n');
   }
   const wrapped = /^(<p>[\s\S]*?<\/p>)+$/.test(Z.footer);
   const fps = wrapped ? Z.footer.split(/(?=<p>)/).map(p => p.replace(/^<p>|<\/p>$/g, '')) : [Z.footer];
@@ -281,7 +311,7 @@ const walk = blocks => blocks.forEach(b => {
   if (b.kind === 'list' && b.compact) legacy.compactLists.push(b.keys[0]);
 });
 walk(hero.blocks);
-sections.forEach(s => s.regions.forEach(r => r.kind === 'wrap' && walk(r.blocks)));
+if (!legacy.compactSections) sections.forEach(s => s.regions.forEach(r => r.kind === 'wrap' && walk(r.blocks)));
 
 let md;
 try { md = { zh: emit('zh'), en: emit('en') }; } catch (e) { fail(e.message); }
@@ -292,6 +322,8 @@ const L = {};
 if (legacy.join.length) L.join = legacy.join;
 if (legacy.compactLists.length) L.compactLists = legacy.compactLists;
 if (Object.keys(legacy.gaps).length) L.gaps = legacy.gaps;
+if (legacy.compactSections) L.compactSections = true;
+if (legacy.compactToc) L.compactToc = true;
 if (Object.keys(L).length) meta.legacyLayout = { _note: 'Whitespace of the hand-written HTML this page was converted from, so the conversion could be checked byte for byte. Safe to delete: only whitespace between block elements changes.', ...L };
 
 fs.mkdirSync(path.join(dir, 'figures'), { recursive: true });

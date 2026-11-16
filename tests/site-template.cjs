@@ -55,7 +55,7 @@ const good = freshSite();
   ok(html.includes('<a href="#ch2">下一章</a>'), '[[#anchor|text]] links within the page');
   ok(html.includes('平均寻道 8.5 毫秒，每秒约 79 次'), '{=name} is bound from models.js');
   ok(html.includes('星号本身写成 *。') && html.includes('<strong>加粗</strong>') && html.includes('<em>强调</em>'), 'inline Markdown and escapes');
-  ok(html.includes('<text x="100" y="27" text-anchor="middle" data-i18n="dg.stack.top">上层</text>'), 'inline-SVG diagram labels are pre-filled from the diagram block');
+  ok(html.includes('<text x="100" y="27" text-anchor="middle" font-size="12" data-i18n="dg.stack.top">上层</text>'), 'inline-SVG diagram labels are pre-filled from the diagram block');
   ok(html.includes('aria-label="结构图：上层和下层"'), 'diagram aria-label is pre-filled');
   ok(html.includes('<figure class="dia" data-dg="flow"><div class="svg"></div><figcaption data-i18n-html="dg.flow.cap">图 2'), 'app.js diagram shell keeps its partial');
   ok(/"dg\.flow\.step1": "Seek"/.test(en), 'diagram strings that only app.js uses reach the copy table');
@@ -93,7 +93,7 @@ const good = freshSite();
   for (const f of ['index.html', 'copy.zh.js']) fs.rmSync(path.join(t, f));
   fs.writeFileSync(path.join(t, 'page.json'), JSON.stringify({ slug: 'fixture-target', kind: 'essay', layout: 'essay', scripts: ['copy.zh.js', 'copy.en.js'], version: '1' }));
   for (const l of ['zh', 'en']) fs.writeFileSync(path.join(t, `content.${l}.md`), `---\nlang: ${l}\ntitle: T\ndesc: D\n---\n\n` +
-    `::: strings\nnav.back: b\nnav.lang: l\ntoc.label: t\ntoc.title: t\n:::\n\n# T {#hero}\n\n::: strings\nkicker: k\n:::\n\n` +
+    `::: strings\nnav.back: b\nnav.lang: l\ntoc.label: t\ntoc.title: t\n:::\n\n# ${l === 'zh' ? '被引用的页面' : 'The Page Being Cited'} {#hero}\n\n::: strings\nkicker: k\n:::\n\n` +
     `## one {#ch1}\n\n::: strings\ntoc: one\n:::\n\nx ${l}.\n\n## two {#ch2}\n\n::: strings\ntoc: two\n:::\n\ny ${l}.\n\n::: footer\nf\n:::\n`);
   const a = run('build-pages.cjs', '--all', '--root', root);
   ok(a.code === 0, 'two migrated pages build:\n' + a.out);
@@ -125,7 +125,7 @@ const good = freshSite();
   fs.cpSync(pageDir(root), d, { recursive: true });
   const pj = path.join(d, 'page.json');
   fs.writeFileSync(pj, fs.readFileSync(pj, 'utf8').replace('"slug": "fixture-essay"', '"slug": "fixture-draft"'));
-  fs.writeFileSync(path.join(d, 'REGISTRY.json'), JSON.stringify({ slug: 'fixture-draft', path: 'demo/basics/fixture-draft/', category: 'demo', subtopic: 'basics', stage: 'university', title: { zh: '草稿', en: 'Draft' } }));
+  fs.writeFileSync(path.join(d, 'REGISTRY.json'), JSON.stringify({ slug: 'fixture-draft', path: 'demo/basics/fixture-draft/', category: 'demo', subtopic: 'basics', stage: 'university', title: { zh: '样例长文', en: 'A Sample Essay' } }));
   const r = run('build-pages.cjs', d, '--root', root);
   ok(r.code === 0 && /WARN .*draft: "fixture-draft" is not registered/.test(r.out), 'an unregistered draft builds from REGISTRY.json, with a warning:\n' + r.out);
   ok(fs.readFileSync(path.join(d, 'index.html'), 'utf8').includes('data-crumb="sub" data-i18n="site.crumb.sub">基础</a>'), 'the draft gets its breadcrumb from REGISTRY.json');
@@ -182,6 +182,91 @@ failsWith('paragraph that needs a key', r => edit(r, 'content.zh.md', '一句副
   ok(!/lint:/.test(only('en', 'See [[fixture-target|“The Page Being Cited.”]].')), 'lint: a linked mention is not reported');
 }
 
+// 3b. Template follow-up (2026-11-16, specs/site-template.md §7, §9a): checks the first native essay
+//     (how-a-cpu-does-math) needed and only its page tests had. Each fails on the library before it.
+const json = (root, file, f) => { const p = path.join(pageDir(root), file), d = JSON.parse(fs.readFileSync(p, 'utf8')); f(d); fs.writeFileSync(p, JSON.stringify(d, null, 2)); };
+const enOnly = (from, to) => r => edit(r, 'content.en.md', from, to);
+// languages: a native English page holds no Chinese; "stub" is declared in page.json and marked on <html>
+failsWith('Chinese left in a native English page', enOnly('Where the model stops. {.take}', '模型的边界。 {.take}'), /en: 1 string\(s\) still hold Chinese text or \[EN pending\] \(ch2\.limit\)/);
+failsWith('[EN pending] left in a native English page', enOnly('Where the model stops. {.take}', '[EN pending] {.take}'), /still hold Chinese text or \[EN pending\] \(ch2\.limit\)/);
+failsWith('languages.en takes only native or stub', r => json(r, 'page.json', d => { d.languages = { en: 'draft' }; }), /page\.json languages\.en: "draft" is not allowed/);
+{
+  const root = freshSite();
+  enOnly('Where the model stops. {.take}', '模型的边界。 {.take}')(root);
+  json(root, 'page.json', d => { d.languages = { en: 'stub' }; });
+  const r = build(root);
+  ok(r.code === 0 && /WARN .*en is a stub \(page\.json languages\.en = "stub"\)/.test(r.out), 'languages.en "stub": Chinese allowed in English, with a warning:\n' + r.out);
+  ok(fs.readFileSync(path.join(pageDir(root), 'index.html'), 'utf8').includes('<html lang="zh-CN" data-template="essay" data-lang-en="stub">'), 'a stub page is marked data-lang-en="stub" on <html>, for app.js');
+  ok(!fs.readFileSync(path.join(pageDir(good), 'index.html'), 'utf8').includes('data-lang-en'), 'a native page carries no data-lang-en');
+}
+// diagram label room: estimated width against the viewBox and against labels on the same baseline, both languages
+failsWith('English diagram label wider than its viewBox', enOnly('top: Upper layer', 'top: The upper layer of the storage stack, drawn here'), /figures\/dg-stack\.html: en label dg\.stack\.top "The upper layer of the storage stack, drawn here" is about \d+ wide; the viewBox leaves 200 at x=100 \(middle, 12px\)/);
+failsWith('Chinese diagram label wider than its viewBox', r => edit(r, 'content.zh.md', 'top: 上层', 'top: 上层是整个存储系统里离应用程序最近的那一层'), /zh label dg\.stack\.top .* the viewBox leaves 200/);
+failsWith('two labels on one baseline overlap', r => edit(r, 'figures/dg-stack.html', '<text x="100" y="63" text-anchor="middle"', '<text x="120" y="27" text-anchor="start"'),
+  /en labels dg\.stack\.top "Upper layer" and dg\.stack\.bottom "Lower layer" share a baseline \(y≈27\) and overlap/);
+{
+  const r = run('build-pages.cjs', '--print-budgets', pageDir(good), '--root', good);
+  ok(r.code === 0 && /figures\/dg-stack\.html\n\s+dg\.stack\.top\s+svg 1 room  200  zh\s+\d+%  en\s+\d+%  ≈32 Latin \/ 16 CJK/.test(r.out), '--print-budgets lists each label with its room and the zh / en share:\n' + r.out);
+}
+// generated partials: header, declared generator, drift against a rerun of the generator under --check
+{
+  const html = fs.readFileSync(path.join(pageDir(good), 'index.html'), 'utf8');
+  ok(!html.includes('GENERATED by tools/gen.cjs') && html.includes('<figure class="dia" id="dg-stack"><svg'), 'the generated-partial header is stripped when the partial is inlined');
+}
+failsWith('hand edit of a generated partial', r => edit(r, 'figures/dg-stack.html', 'width="180" height="24"/>', 'width="170" height="24"/>'), /DRIFT figures\/dg-stack\.html differs from what tools\/gen\.cjs writes/, ['--check']);
+failsWith('generated partial without its header', r => edit(r, 'figures/dg-stack.html', '<!-- GENERATED by tools/gen.cjs', '<!-- by tools/gen.cjs'), /figures\/dg-stack\.html is written by tools\/gen\.cjs \(page\.json generators\) but does not start with <!-- GENERATED by tools\/gen\.cjs/);
+failsWith('partial claims a generator page.json does not declare', r => { const f = path.join(pageDir(r), 'figures', 'dg-flow.html'); fs.writeFileSync(f, '<!-- GENERATED by tools/other.cjs -->\n' + fs.readFileSync(f, 'utf8')); }, /figures\/dg-flow\.html says it is generated by tools\/other\.cjs, but page\.json generators does not declare it/);
+// --print-bindings
+{
+  const r = run('build-pages.cjs', '--print-bindings', pageDir(good), '--root', good);
+  ok(r.code === 0 && /\{=ch2\.seek\} = "8\.5"  <- ch2\.p1/.test(r.out) && /\{=ch2\.iops\} = "79"  <- ch2\.p1/.test(r.out), '--print-bindings shows each value and the keys that use it:\n' + r.out);
+}
+// REGISTRY.json / pages.config.js title and desc equal the content
+const registry = (title, desc) => r => fs.writeFileSync(path.join(pageDir(r), 'REGISTRY.json'), JSON.stringify({ slug: 'fixture-essay', title, desc }));
+failsWith('REGISTRY desc disagrees with the front matter', registry({ zh: '样例长文', en: 'A Sample Essay' }, { zh: '测试模板构建用的夹具。', en: 'A fixture, ten times larger.' }), /REGISTRY\.json desc\.en differs from the front-matter desc of content\.en\.md/);
+failsWith('REGISTRY title disagrees with the title heading', registry({ zh: '样例长文', en: 'A Sample' }, null), /REGISTRY\.json title\.en "A Sample" differs from the title heading of content\.en\.md "A Sample Essay"/);
+failsWith('pages.config.js title disagrees with the title heading', r => edit(r, 'content.zh.md', '# 样例长文 {#hero}', '# 样例长文二 {#hero}'), /pages\.config\.js title\.zh "样例长文" differs from the title heading of content\.zh\.md "样例长文二"/);
+{
+  const root = freshSite();
+  const zhDesc = (fs.readFileSync(path.join(pageDir(root), 'content.zh.md'), 'utf8').match(/\ndesc: (.*)\n/) || [])[1];
+  registry({ zh: '样例长文', en: 'A Sample Essay' }, { zh: zhDesc, en: 'A fixture for the template build.' })(root);
+  ok(build(root).code === 0, 'a REGISTRY.json that agrees with the content passes');
+}
+// dynamic keys: declared values must exist; once declared, every t('x.' + …) prefix in the scripts must be
+const appJs = src => r => fs.writeFileSync(path.join(pageDir(r), 'app.js'), src);
+failsWith('declared dynamic key missing', r => { appJs("t('ch2.say.' + v);")(r); json(r, 'page.json', d => { d.dynamicKeys = { 'ch2.say': ['full', 'short'] }; }); }, /page\.json dynamicKeys: ch2\.say\.short is not defined in content\.zh\.md/);
+failsWith('undeclared dynamic prefix once dynamicKeys is used', r => { appJs("t('ch2.say.' + v); t(`ch2.unit.${u}`);")(r); json(r, 'page.json', d => { d.dynamicKeys = { 'ch2.say': ['full'] }; }); }, /app\.js builds keys from 'ch2\.unit\.' \+ …; list the values in page\.json dynamicKeys\["ch2\.unit"\]/);
+{
+  const root = freshSite();
+  appJs("t('ch2.say.' + v);")(root);
+  ok(build(root).code === 0, 'without dynamicKeys the script scan stays off (pages converted before it)');
+  json(root, 'page.json', d => { d.dynamicKeys = { 'ch2.say': ['full'] }; });
+  ok(build(root).code === 0, 'declared dynamic keys that exist pass');
+}
+// Part B layout: keyed footer paragraphs, --- between two prose columns, a diagram in the wide column
+const KEYED_FOOTER = [['A Sample Essay · test fixture.\n\nSources: see BRIEF.', 'A Sample Essay · test fixture. {#about}\n\nSources: see BRIEF. {#src}'],
+  ['样例长文 · 测试夹具。\n\n来源见 BRIEF。', '样例长文 · 测试夹具。 {#about}\n\n来源见 BRIEF。 {#src}']];
+function partB(root) {
+  for (const [l, [from, to]] of [['en', KEYED_FOOTER[0]], ['zh', KEYED_FOOTER[1]]]) edit(root, `content.${l}.md`, from, to);
+  edit(root, 'content.zh.md', '\n先看结构。 {.law}\n', '\n先看结构。 {.law}\n\n---\n');
+  edit(root, 'content.en.md', '\nStructure first. {.law}\n', '\nStructure first. {.law}\n\n---\n');
+  for (const l of ['zh', 'en']) edit(root, `content.${l}.md`, '::: diagram dg-flow keys=dg.flow', '::: diagram dg-flow keys=dg.flow place=wide');
+}
+{
+  const root = freshSite();
+  assert.ok(fs.readFileSync(path.join(pageDir(root), 'content.zh.md'), 'utf8').includes(KEYED_FOOTER[1][0]), 'fixture zh footer');
+  partB(root);
+  const r = build(root);
+  ok(r.code === 0, 'keyed footer, --- and place=wide build:\n' + r.out);
+  const html = fs.readFileSync(path.join(pageDir(root), 'index.html'), 'utf8');
+  ok(html.includes('<footer><div class="wrap"><p data-i18n-html="footer.about">样例长文 · 测试夹具。</p><p data-i18n-html="footer.src">来源见 BRIEF。</p></div></footer>'), 'a keyed footer renders one <p> per key inside the footer column');
+  ok(/<p class="law" data-i18n-html="ch1\.law">[^<]*<\/p>\n  <\/div>\n  <div class="wrap">\n    <p data-i18n-html="ch1\.p1">/.test(html), '--- closes the prose column and opens a new one');
+  ok(html.includes('  <div class="wide"><figure class="dia" data-dg="flow">'), 'a place=wide diagram renders in its own wide column');
+}
+failsWith('footer with keyed and unkeyed paragraphs', r => edit(r, 'content.zh.md', '样例长文 · 测试夹具。\n', '样例长文 · 测试夹具。 {#about}\n'), /::: footer: either every paragraph carries \{#key\} or none does/);
+failsWith('place=wide on a lab', r => { for (const l of ['zh', 'en']) edit(r, `content.${l}.md`, '::: lab ch2-model', '::: lab ch2-model place=wide'); }, /place=wide: only ::: diagram takes place=wide/);
+failsWith('--- right after a lab', r => { for (const l of ['zh', 'en']) edit(r, `content.${l}.md`, ':::\n\n### ', ':::\n\n---\n\n### '); }, /--- must follow prose inside a chapter/);
+
 // 4. The converter: a page built without chrome and pre-fill (the old hand-written form) converts back to
 //    sources that rebuild it byte for byte, including the inline-SVG diagram.
 {
@@ -199,11 +284,31 @@ failsWith('paragraph that needs a key', r => edit(r, 'content.zh.md', '一句副
   const md = fs.readFileSync(path.join(d, 'content.zh.md'), 'utf8');
   ok(md.includes('::: diagram dg-stack keys=dg.stack') && md.includes('\ntop: 上层\n'), 'inline-SVG diagram strings land in a ::: diagram block');
   ok(md.includes('[[fixture-target#ch2|被引用页面第 2 章]]'), 'site links become [[refs]]');
-  ok(fs.readFileSync(path.join(d, 'figures', 'dg-stack.html'), 'utf8').includes('<text x="100" y="27" text-anchor="middle" data-i18n="dg.stack.top"></text>'), 'diagram partial is language-neutral');
+  ok(fs.readFileSync(path.join(d, 'figures', 'dg-stack.html'), 'utf8').includes('<text x="100" y="27" text-anchor="middle" font-size="12" data-i18n="dg.stack.top"></text>'), 'diagram partial is language-neutral');
   const again = build(root, '--no-chrome', '--no-prefill');
   ok(again.code === 0 && fs.readFileSync(path.join(d, 'index.html'), 'utf8') === html, 'converted sources rebuild the same page');
   const twice = run('convert-essay.cjs', d, '--root', root);
   ok(twice.code === 1 && /already has page\.json/.test(twice.out), 'converter refuses an already migrated page');
+}
+
+// 4b. The converter handles the Phase 1 leftovers' shapes (how-sas-works, how-pcie-works): a keyed footer, two
+//     prose columns in a row, a diagram in the wide column, whole sections and the TOC on one line, and a blank
+//     line before the site-nav stylesheet.
+{
+  const root = freshSite(), d = pageDir(root);
+  partB(root);
+  json(root, 'page.json', p => { p.legacyLayout = { gaps: { afterProvenanceCss: '\n' }, compactSections: true, compactToc: true }; });
+  { const b0 = build(root, '--no-chrome', '--no-prefill'); assert.equal(b0.code, 0, b0.out); }
+  const html = fs.readFileSync(path.join(d, 'index.html'), 'utf8');
+  ok(/<section class="ch" id="ch1"><div class="wrap"><div class="num">01<\/div><h2 data-i18n="ch1\.title"><\/h2><p class="law"/.test(html) && /<ol><li><a href="#ch1">/.test(html) && html.includes('page-provenance.css">\n\n<link rel="stylesheet" href="../../../site-nav.css'), 'compactSections, compactToc and gaps.afterProvenanceCss reproduce the one-line layout');
+  const keep = path.join(scratch, 'original-sources-b');
+  fs.mkdirSync(keep);
+  for (const f of ['content.zh.md', 'content.en.md', 'page.json', 'page.css', 'bindings.cjs', 'figures']) fs.renameSync(path.join(d, f), path.join(keep, f));
+  const c = run('convert-essay.cjs', d, '--root', root);
+  ok(c.code === 0 && /index\.html byte-identical, copy tables equal/.test(c.out), 'converter round trip with the SAS / PCIe shapes:\n' + c.out);
+  const md = fs.readFileSync(path.join(d, 'content.en.md'), 'utf8'), pj = JSON.parse(fs.readFileSync(path.join(d, 'page.json'), 'utf8'));
+  ok(md.includes('Structure first. {.law}\n\n---\n') && md.includes('::: diagram dg-flow keys=dg.flow place=wide') && md.includes('A Sample Essay · test fixture. {#about}\n\nSources: see BRIEF. {#src}\n:::'), 'the converter writes ---, place=wide and the keyed footer');
+  ok(pj.legacyLayout.compactSections === true && pj.legacyLayout.compactToc === true && pj.legacyLayout.gaps.afterProvenanceCss === '\n', 'the converter records the one-line layout in legacyLayout');
 }
 
 // 5. site-nav.js leaves template pages alone (their breadcrumb and links are static), and still runs elsewhere.

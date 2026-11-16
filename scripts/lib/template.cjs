@@ -9,6 +9,8 @@
 const fs = require('fs');
 const path = require('path');
 const vm = require('vm');
+const os = require('os');
+const { spawnSync } = require('child_process');
 const { prefill, unprefill } = require('./prefill.cjs');
 
 const REPO_ROOT = path.resolve(__dirname, '..', '..');
@@ -154,8 +156,8 @@ function unrenderInline(html, ctx) {
 }
 
 /* ───────── content file parser ─────────
- * Returns { front, blocks }. Block types: heading (level 1–3), para, list, and ::: directives
- * (strings, lab, diagram, html, footer) with { name, opts, entries | body }.
+ * Returns { front, blocks }. Block types: heading (level 1–3), para, list, break (a --- line: new prose column),
+ * and ::: directives (strings, lab, diagram, html, footer) with { name, opts, entries | body }.
  */
 function parseAttrs(s) {
   const a = { classes: [] };
@@ -170,8 +172,8 @@ function splitTrail(line) { const m = line.match(TRAIL); return m ? [line.slice(
 const isCjk = c => /[　-鿿＀-￯]/.test(c || '');
 const joinLines = ls => ls.reduce((acc, l) => !acc ? l : acc + (isCjk(acc.slice(-1)) && isCjk(l[0]) ? '' : ' ') + l, '');
 const parseValue = v => (/^"/.test(v) ? JSON.parse(v) : v);
-const BLOCK_START = /^(:::|#{1,3}\s|- |\d+\. |\{[#.])/;
-const PARA_ESCAPED = /^\\(:::|#{1,3}\s|- |\d+\. |\{[#.]|<!--)/;
+const BLOCK_START = /^(:::|#{1,3}\s|- |\d+\. |\{[#.]|---\s*$)/;
+const PARA_ESCAPED = /^\\(:::|#{1,3}\s|- |\d+\. |\{[#.]|<!--|---\s*$)/;
 
 function parseContent(text, file) {
   const lines = text.split('\n');
@@ -209,6 +211,8 @@ function parseContent(text, file) {
       continue;
     }
     if (L.trim() === ':::') err('stray :::');
+    // --- inside a chapter closes the prose column and opens a new one (two consecutive <div class="wrap">)
+    if (/^---\s*$/.test(L)) { blocks.push({ type: 'break', line: start + 1 }); i++; continue; }
     if ((m = L.match(/^\{([#.][^{}]*)\}$/))) { pending = parseAttrs(m[1]); i++; continue; }
     if ((m = L.match(/^(#{1,3})\s+(.*)$/))) {
       const [t, a] = splitTrail(m[2]);
@@ -237,7 +241,7 @@ function parseContent(text, file) {
   return { front, blocks };
 }
 // Does a paragraph text need the leading backslash to survive parseContent?
-const needsParaEscape = t => /^(:::|#{1,3}\s|- |\d+\. |\{[#.]|<!--)/.test(t);
+const needsParaEscape = t => /^(:::|#{1,3}\s|- |\d+\. |\{[#.]|<!--|---\s*$)/.test(t);
 
 /* ───────── keys ─────────
  * Paragraphs without a class get positional keys <sec>.p1, p2… (the counter runs through the whole chapter);
@@ -298,7 +302,7 @@ function compileLang(dir, lang, env) {
   if (front.title == null || front.desc == null) errors.push(`${file}: front matter needs title and desc`);
   put('doc.title', String(front.title), false);
   put('doc.desc', String(front.desc), false);
-  const skel = { hero: null, chapters: [] };
+  const skel = { hero: null, chapters: [], footer: null };
   let sec = null, chap = null, region = null;
   const counter = { n: 0 };
   const wrapBlocks = () => {
@@ -332,15 +336,31 @@ function compileLang(dir, lang, env) {
       if (!b.name) { errors.push(`${file}:${b.line}: ::: ${b.type} needs a name`); continue; }
       const prefix = b.opts.keys || null;
       for (const [k, v] of b.entries) put(prefix ? prefix + '.' + k : abs(sec, k), v);
-      if (b.type === 'lab') {
-        if (!chap || chap.blocks) { errors.push(`${file}:${b.line}: ::: lab must be inside a chapter`); continue; }
-        chap.regions.push({ kind: 'lab', name: b.name }); region = null;
+      if (b.opts.place != null && !(b.type === 'diagram' && b.opts.place === 'wide')) { errors.push(`${file}:${b.line}: place=${b.opts.place}: only ::: diagram takes place=wide`); continue; }
+      if (b.type === 'lab' || b.opts.place === 'wide') {
+        // a lab, or a diagram with place=wide, is a region of its own: <div class="wide"> between prose columns
+        if (!chap || chap.blocks) { errors.push(`${file}:${b.line}: ::: ${b.type}${b.opts.place ? ' place=wide' : ''} must be inside a chapter`); continue; }
+        chap.regions.push({ kind: b.type === 'lab' ? 'lab' : 'wide', name: b.name }); region = null;
       } else wrapBlocks().push({ kind: 'part', type: b.type, name: b.name });
+      continue;
+    }
+    if (b.type === 'break') {
+      if (!chap || chap.blocks || !region || region.kind !== 'wrap') { errors.push(`${file}:${b.line}: --- must follow prose inside a chapter (it starts a new prose column)`); continue; }
+      region = null;
       continue;
     }
     if (b.type === 'footer') {
       const ps = []; let cur = [];
       for (const l of b.body.concat([''])) { if (l.trim()) cur.push(l); else if (cur.length) { ps.push(joinLines(cur)); cur = []; } }
+      // Paragraphs that all end in {#key} are keyed: footer.<key> each, rendered as <p data-i18n-html="footer.<key>">
+      // inside the footer column (how-sas-works). Otherwise the whole footer is one key, footer.
+      const trails = ps.map(splitTrail);
+      if (trails.some(([, a]) => a.key)) {
+        if (!trails.every(([, a]) => a.key)) { errors.push(`${file}:${b.line}: ::: footer: either every paragraph carries {#key} or none does`); continue; }
+        if (b.opts.wrap === 'none') { errors.push(`${file}:${b.line}: ::: footer wrap=none cannot have keyed paragraphs`); continue; }
+        skel.footer = trails.map(([t, a]) => { put('footer.' + a.key, t); return 'footer.' + a.key; });
+        continue;
+      }
       ctx.key = 'footer'; src.footer = b.body.join('\n');
       // ::: footer wrap=none: one paragraph without <p> (older pages)
       try { copy.footer = b.opts.wrap === 'none' ? renderInline(ps.join(' '), ctx) : ps.map(p => '<p>' + renderInline(p, ctx) + '</p>').join(''); } catch (e) { errors.push(`${file}: footer: ${e.message}`); copy.footer = ''; }
@@ -433,6 +453,79 @@ function siteNavIncludes(pagePath) {
   return require(path.join(REPO_ROOT, 'scripts', 'build-site-nav.cjs')).includeLines(pagePath);
 }
 
+/* ───────── checks on the sources (specs/site-template.md §7) ───────── */
+const reEsc = s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+const CJK = /[\u2e80-\u9fff\u3000-\u303f\uff00-\uffef]/;
+const GEN_HEADER = /^<!-- GENERATED by (\S+)[^\n]*-->\n/;
+const globRe = g => new RegExp('^' + g.split('*').map(reEsc).join('[^/]*') + '$');
+
+/* Diagram label room (§7 「Label room」). For every <text x=… font-size=…> in an inline <svg viewBox>, estimate the
+   rendered width of its string in each language and compare it with the room the viewBox leaves for its
+   text-anchor, and with the other labels on the same baseline. The estimate uses rough per-character widths in em
+   (CJK 1, capitals .64, lower case .52, i/l/j .25, m/w .8, digits .56, space .28, other .38, monospace .6), so it
+   catches a label that is clearly too long before any browser run; text over a line still needs a screenshot. */
+const plainText = h => String(h).replace(/<[^>]*>/g, '').replace(/&(?:[a-z]+|#\d+|#x[\da-f]+);/gi, 'x');
+function emWidth(str, mono) {
+  let w = 0;
+  for (const c of str) {
+    if (CJK.test(c)) w += 1;
+    else if (mono) w += 0.6;
+    else if (/[A-Z]/.test(c)) w += 0.64;
+    else if (/[ilj]/.test(c)) w += 0.25;
+    else if (/[mw]/.test(c)) w += 0.8;
+    else if (/[a-z]/.test(c)) w += 0.52;
+    else if (/[0-9]/.test(c)) w += 0.56;
+    else if (c === ' ') w += 0.28;
+    else w += 0.38;
+  }
+  return w;
+}
+// -> [{ key|null, raw, x, y, fs, anchor, mono, vb: [minX, width], svgIndex }] for every measurable label in a partial
+function svgLabels(html) {
+  const out = [];
+  let n = 0;
+  for (const svg of html.matchAll(/<svg\b([^>]*)>([\s\S]*?)<\/svg>/g)) {
+    n++;
+    const vb = (svg[1].match(/\bviewBox="([-\d.\s]+)"/) || [])[1];
+    if (!vb || /\btransform=/.test(svg[2])) continue; // no viewBox, or coordinates moved by a transform: not measured
+    const [minX, , w] = vb.trim().split(/\s+/).map(Number);
+    for (const t of svg[2].matchAll(/<text\b([^>]*)>([^<]*)<\/text>/g)) {
+      const a = t[1], x = (a.match(/\bx="([-\d.]+)"/) || [])[1], y = (a.match(/\by="([-\d.]+)"/) || [])[1], fs = (a.match(/\bfont-size="([\d.]+)"/) || [])[1];
+      if (x == null || y == null || fs == null) continue; // the estimate needs x, y and font-size on the element
+      out.push({ key: (a.match(/\bdata-i18n(?:-html)?="([^"]+)"/) || [])[1] || null, raw: t[2], x: +x, y: +y, fs: +fs,
+        anchor: (a.match(/\btext-anchor="(\w+)"/) || [])[1] || 'start', mono: /\bclass="[^"]*\bmono\b/.test(a), vb: [minX, w], svg: n });
+    }
+  }
+  return out;
+}
+function labelRoom(L) {
+  const [minX, w] = L.vb, maxX = minX + w;
+  return L.anchor === 'middle' ? 2 * Math.min(L.x - minX, maxX - L.x) : L.anchor === 'end' ? L.x - minX : maxX - L.x;
+}
+// problems for one partial in one language: label too wide for the viewBox, or two labels on a baseline overlapping
+function labelProblems(name, html, copy, lang) {
+  const out = [];
+  const ext = svgLabels(html).map(L => {
+    const v = L.key ? copy[L.key] : L.raw;
+    if (v == null || HAS_RUNTIME.test(v)) return null;
+    const text = plainText(v), w = emWidth(text, L.mono) * L.fs;
+    const x0 = L.anchor === 'middle' ? L.x - w / 2 : L.anchor === 'end' ? L.x - w : L.x;
+    return { ...L, text, w, x0, x1: x0 + w };
+  }).filter(Boolean);
+  const label = L => (L.key || JSON.stringify(L.raw));
+  for (const L of ext) {
+    const room = labelRoom(L);
+    if (L.key && L.w > room) out.push(`figures/${name}.html: ${lang} label ${L.key} "${L.text}" is about ${Math.round(L.w)} wide; the viewBox leaves ${Math.round(Math.max(0, room))} at x=${L.x} (${L.anchor}, ${L.fs}px). Shorten it (node scripts/build-pages.cjs --print-budgets <dir>)`);
+  }
+  for (let i = 0; i < ext.length; i++) for (let j = i + 1; j < ext.length; j++) {
+    const A = ext[i], B = ext[j];
+    if (A.svg !== B.svg || (!A.key && !B.key) || Math.abs(A.y - B.y) >= 0.9 * Math.max(A.fs, B.fs)) continue;
+    const o = Math.min(A.x1, B.x1) - Math.max(A.x0, B.x0);
+    if (o > 0) out.push(`figures/${name}.html: ${lang} labels ${label(A)} "${A.text}" and ${label(B)} "${B.text}" share a baseline (y≈${A.y}) and overlap by about ${Math.round(o)}. Shorten one`);
+  }
+  return out;
+}
+
 function buildEssay(dir, opts = {}) {
   const site = createSite(opts.root || REPO_ROOT);
   const CHROME = opts.chrome !== false, errors = [], warnings = [];
@@ -478,14 +571,95 @@ function buildEssay(dir, opts = {}) {
     if (bindings) for (const b of Object.keys(bindings)) if (!z.used.has(b)) errors.push(`binding ${b} is never used`);
   }
 
+  /* languages: page.json "languages": {"en": "stub"} while the English is a structural stub, else "native" (default).
+     A native English page may hold no Chinese text and no [EN pending] marker; a stub page is marked on <html> so
+     app.js can fall back to Chinese (data-lang-en="stub"). */
+  const languages = Object.assign({ zh: 'native', en: 'native' }, meta.languages || {});
+  for (const [l, v] of Object.entries(languages)) {
+    if (!LANGS.includes(l) || !['native', 'stub'].includes(v) || (l === 'zh' && v !== 'native')) errors.push(`page.json languages.${l}: "${v}" is not allowed (zh is "native"; en is "native" or "stub")`);
+  }
+  const enStub = languages.en === 'stub';
+  if (enStub) warnings.push('en is a stub (page.json languages.en = "stub"): the page shows Chinese when English is chosen');
+  else {
+    const bad = C.en.order.filter(k => CJK.test(plainText(C.en.copy[k])) || /\[EN pending\]/.test(C.en.copy[k]));
+    if (bad.length) errors.push(`en: ${bad.length} string(s) still hold Chinese text or [EN pending] (${bad.slice(0, 6).join(', ')}${bad.length > 6 ? ', …' : ''}); translate them, or set page.json "languages": {"en": "stub"} while the translation is pending`);
+  }
+
+  /* REGISTRY.json and pages.config.js repeat the title and description; they must equal the content (title = the
+     # … {#hero} heading, desc = front matter desc), so a translation cannot disagree with the registry. */
+  {
+    const regFile = path.join(dir, 'REGISTRY.json'), reg = fs.existsSync(regFile) ? readJson(regFile) : null;
+    for (const l of LANGS) {
+      const C2 = C[l].copy, q = s => JSON.stringify(String(s));
+      if (reg && reg.title && reg.title[l] != null && reg.title[l] !== C2['hero.title']) errors.push(`REGISTRY.json title.${l} ${q(reg.title[l])} differs from the title heading of content.${l}.md ${q(C2['hero.title'])}`);
+      if (reg && reg.desc && reg.desc[l] != null && reg.desc[l] !== C2['doc.desc']) errors.push(`REGISTRY.json desc.${l} differs from the front-matter desc of content.${l}.md: ${q(reg.desc[l]).slice(0, 80)}… vs ${q(C2['doc.desc']).slice(0, 80)}…`);
+      if (page.status !== 'draft' && page.title && typeof page.title === 'object' && page.title[l] != null && page.title[l] !== C2['hero.title']) errors.push(`pages.config.js title.${l} ${q(page.title[l])} differs from the title heading of content.${l}.md ${q(C2['hero.title'])}`);
+    }
+  }
+
+  /* dynamic keys: page.json "dynamicKeys": {"ch4.say": ["norm", "sub"]} lists the keys app.js builds at run time
+     (t('ch4.say.' + cls)). Each must be defined. Once a page declares any, every such prefix in its scripts must be
+     declared, so a new branch cannot ship without its string. */
+  if (meta.dynamicKeys) {
+    for (const [pre, vals] of Object.entries(meta.dynamicKeys)) {
+      if (!Array.isArray(vals) || !vals.length) { errors.push(`page.json dynamicKeys.${pre}: list the values the script appends`); continue; }
+      for (const v of vals) for (const l of LANGS) if (!((pre + '.' + v) in C[l].copy)) errors.push(`page.json dynamicKeys: ${pre}.${v} is not defined in content.${l}.md`);
+    }
+    for (const sc of meta.scripts || []) {
+      if (/^copy\./.test(sc) || !fs.existsSync(path.join(dir, sc))) continue;
+      const js = fs.readFileSync(path.join(dir, sc), 'utf8');
+      for (const m of js.matchAll(/\bt\(\s*(?:(['"])([\w.]+)\.\1\s*\+|`([\w.]+)\.\$\{)/g)) {
+        const pre = m[2] || m[3];
+        if (!(pre in meta.dynamicKeys)) errors.push(`${sc} builds keys from '${pre}.' + …; list the values in page.json dynamicKeys["${pre}"]`);
+      }
+    }
+  }
+
+  /* generated partials: page.json "generators": [{"run": "tools/diagrams.cjs", "writes": ["figures/dg-*.html"]}].
+     Each file a generator writes starts with <!-- GENERATED by <run> … -->; the build strips that line when it inlines
+     the partial. With opts.generators (build-pages --check) each generator is rerun in a scratch copy of the page
+     directory and its output compared with the committed partials. */
+  const gens = meta.generators || [];
+  {
+    const figDir = path.join(dir, 'figures');
+    const figs = fs.existsSync(figDir) ? fs.readdirSync(figDir).filter(f => f.endsWith('.html')).sort().map(f => 'figures/' + f) : [];
+    for (const g of gens) {
+      if (!g.run || !fs.existsSync(path.join(dir, g.run))) errors.push(`page.json generators: ${g.run} does not exist`);
+      for (const w of g.writes || []) if (!figs.some(f => globRe(w).test(f))) errors.push(`page.json generators: ${g.run} writes ${w}, which matches no file`);
+    }
+    for (const f of figs) {
+      const head = (fs.readFileSync(path.join(dir, f), 'utf8').match(GEN_HEADER) || [])[1];
+      const g = gens.find(x => (x.writes || []).some(w => globRe(w).test(f)));
+      if (g && head !== g.run) errors.push(`${f} is written by ${g.run} (page.json generators) but does not start with <!-- GENERATED by ${g.run} … -->`);
+      if (!g && head) errors.push(`${f} says it is generated by ${head}, but page.json generators does not declare it`);
+    }
+    if (opts.generators && gens.length) {
+      const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'build-pages-gen-'));
+      try {
+        fs.cpSync(dir, tmp, { recursive: true });
+        for (const g of gens) {
+          const r = spawnSync(process.execPath, [path.join(tmp, g.run)], { cwd: tmp, encoding: 'utf8' });
+          if (r.status !== 0) { errors.push(`generator ${g.run} failed in a scratch copy: ${(r.stderr || '').trim().split('\n').slice(-3).join(' / ')}`); continue; }
+        }
+        for (const f of new Set([...figs, ...(fs.existsSync(path.join(tmp, 'figures')) ? fs.readdirSync(path.join(tmp, 'figures')).map(x => 'figures/' + x) : [])])) {
+          const g = gens.find(x => (x.writes || []).some(w => globRe(w).test(f)));
+          if (!g) continue;
+          const a = fs.existsSync(path.join(dir, f)) ? fs.readFileSync(path.join(dir, f), 'utf8') : null, b = fs.existsSync(path.join(tmp, f)) ? fs.readFileSync(path.join(tmp, f), 'utf8') : null;
+          if (a !== b) errors.push(`DRIFT ${f} differs from what ${g.run} writes; edit the generator, run node ${path.posix.join(path.relative(site.root, dir).split(path.sep).join('/'), g.run)}, then rebuild`);
+        }
+      } finally { fs.rmSync(tmp, { recursive: true, force: true }); }
+    }
+  }
+
   /* partials: figures/<name>.html, language-neutral; every key they name must exist */
   const partials = {};
   const usePartial = name => {
     if (name in partials) return partials[name];
     const f = path.join(dir, 'figures', name + '.html');
     if (!fs.existsSync(f)) { errors.push(`missing partial figures/${name}.html`); return (partials[name] = ''); }
-    const s = fs.readFileSync(f, 'utf8').replace(/\n$/, '');
+    const s = fs.readFileSync(f, 'utf8').replace(GEN_HEADER, '').replace(/\n$/, '');
     for (const k of i18nKeysIn(s)) if (!(k in C.zh.copy)) errors.push(`figures/${name}.html names key ${k}, which no content block defines`);
+    for (const l of LANGS) errors.push(...labelProblems(name, s, C[l].copy, l));
     return (partials[name] = s);
   };
 
@@ -529,7 +703,6 @@ function buildEssay(dir, opts = {}) {
   /* D10 lint: a mention of another live page's title that is not a link -> suggest [[slug]]. It matches what the
      runtime linker (site-nav.js buildMatcher / citeMatch) linked on hand-written pages: zh 《title》, en “Title” with
      an optional , or . inside the closing quote and ' / ’ interchangeable, and <cite>Title</cite> in either language. */
-  const reEsc = s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   const titleRe = s => reEsc(s).replace(/['’]/g, "['’]");
   for (const l of LANGS) for (const k of C[l].order) {
     if (k.startsWith('site.')) continue;
@@ -547,26 +720,30 @@ function buildEssay(dir, opts = {}) {
 
   /* render */
   const Z = C.zh.copy;
-  const lead = (id, base) => (join.has(id) ? '' : base);
+  // ind === null: a compact section (legacyLayout.compactSections), every block written on one line
+  const lead = (id, base, ind) => (ind === null || join.has(id) ? '' : base);
   const T1 = k => `data-i18n="${k}"></`, TH = k => `data-i18n-html="${k}"></`;
   function blockHtml(b, ind) {
-    if (b.kind === 'p') return lead(b.key, '\n' + ind) + `<${b.tag}${b.cls ? ` class="${b.cls}"` : ''}${b.style ? ` style="${b.style}"` : ''} ${TH(b.key)}${b.tag}>`;
-    if (b.kind === 'h3') return lead(b.key, '\n' + ind) + `<h3${b.cls ? ` class="${b.cls}"` : ''} ${T1(b.key)}h3>`;
+    if (b.kind === 'p') return lead(b.key, '\n' + ind, ind) + `<${b.tag}${b.cls ? ` class="${b.cls}"` : ''}${b.style ? ` style="${b.style}"` : ''} ${TH(b.key)}${b.tag}>`;
+    if (b.kind === 'h3') return lead(b.key, '\n' + ind, ind) + `<h3${b.cls ? ` class="${b.cls}"` : ''} ${T1(b.key)}h3>`;
     if (b.kind === 'list') {
-      const t = b.ordered ? 'ol' : 'ul', c = compact.has(b.keys[0]);
-      return lead('list:' + b.keys[0], '\n' + ind) + `<${t}${b.cls ? ` class="${b.cls}"` : ''}>` +
+      const t = b.ordered ? 'ol' : 'ul', c = ind === null || compact.has(b.keys[0]);
+      return lead('list:' + b.keys[0], '\n' + ind, ind) + `<${t}${b.cls ? ` class="${b.cls}"` : ''}>` +
         b.keys.map(k => (c ? '' : '\n' + ind + '  ') + `<li ${TH(k)}li>`).join('') + (c ? '' : '\n' + ind) + `</${t}>`;
     }
-    if (b.kind === 'part') return lead('fig:' + b.name, '\n' + ind) + usePartial(b.name);
+    if (b.kind === 'part') return lead('fig:' + b.name, '\n' + ind, ind) + usePartial(b.name);
     return '';
   }
+  const COMPACT = !!legacy.compactSections;
   function chapter(c, i) {
-    let h = `<section class="ch" id="${c.id}">\n`, first = true;
-    const head = `\n    <div class="num">${String(i + 1).padStart(2, '0')}</div>\n    <h2 ${T1(c.id + '.title')}h2>`;
+    const nl = COMPACT ? '' : '\n', i1 = COMPACT ? '' : '  ', i2 = COMPACT ? '' : '\n    ';
+    let h = `<section class="ch" id="${c.id}">${nl}`, first = true;
+    const head = `${i2}<div class="num">${String(i + 1).padStart(2, '0')}</div>${i2}<h2 ${T1(c.id + '.title')}h2>`;
     const regions = c.regions.length && c.regions[0].kind === 'wrap' ? c.regions : [{ kind: 'wrap', blocks: [] }, ...c.regions];
     for (const r of regions) {
-      if (r.kind === 'wrap') { h += '  <div class="wrap">' + (first ? head : '') + r.blocks.map(b => blockHtml(b, '    ')).join('') + '\n  </div>\n'; first = false; }
-      else h += `  <div class="wide">${usePartial(r.name)}</div>\n`;
+      // a lab, or a diagram with place=wide: its own <div class="wide">
+      if (r.kind === 'wrap') { h += `${i1}<div class="wrap">` + (first ? head : '') + r.blocks.map(b => blockHtml(b, COMPACT ? null : '    ')).join('') + `${nl}${i1}</div>${nl}`; first = false; }
+      else h += `${i1}<div class="wide">${usePartial(r.name)}</div>${nl}`;
     }
     return h + '</section>\n';
   }
@@ -590,18 +767,21 @@ function buildEssay(dir, opts = {}) {
   try {
     html = fillLayout(meta.layout || 'essay', {
       generated: CHROME ? `<!-- GENERATED by scripts/build-pages.cjs from content.zh.md, content.en.md, page.json and figures/. Edit those and rebuild; do not edit this file. -->\n` : '',
-      htmlAttrs: CHROME ? ` data-template="${meta.layout || 'essay'}"` : '',
+      htmlAttrs: (CHROME ? ` data-template="${meta.layout || 'essay'}"` : '') + (enStub ? ' data-lang-en="stub"' : ''),
       category: esc(page.category), stage: esc(page.stage || ''),
       title: esc(Z['doc.title']), desc: esc(Z['doc.desc']),
       style, up,
       'gap.afterStyle': gaps.afterStyle || '',
+      'gap.afterProvenanceCss': gaps.afterProvenanceCss || '',
       'gap.afterFooter': gaps.afterFooter != null ? gaps.afterFooter : '\n',
       'gap.afterMain': gaps.afterMain != null ? gaps.afterMain : '\n',
       siteNavCss: nav.link, siteNavJs: nav.script,
       crumbs,
       heroBlocks: hero.blocks.map(b => blockHtml(b, '    ')).join('') + '\n',
       provenance: provenanceLabel(site, page, meta),
-      toc: C.zh.skel.chapters.map((c, i) => `    <li><a href="#${c.id}"><span>${String(i + 1).padStart(2, '0')}</span><b ${T1('toc.' + c.id)}b></a></li>\n`).join(''),
+      toc: C.zh.skel.chapters.map((c, i) => `${legacy.compactToc ? '' : '\n    '}<li><a href="#${c.id}"><span>${String(i + 1).padStart(2, '0')}</span><b ${T1('toc.' + c.id)}b></a></li>`).join('') + (legacy.compactToc ? '' : '\n  '),
+      footerAttr: C.zh.skel.footer ? '' : ' data-i18n-html="footer"',
+      footerBody: (C.zh.skel.footer || []).map(k => `<p ${TH(k)}p>`).join(''),
       chapters: C.zh.skel.chapters.map(chapter).join(gaps.betweenSections || '') + (xrefs ? (gaps.betweenSections || '') + xrefs : ''),
       scripts: (meta.scripts || []).map(s => `<script src="${s}${v}"${s === 'copy.en.js' ? ' onerror="void 0"' : ''}></script>\n`).join(''),
     });
@@ -623,7 +803,7 @@ function buildEssay(dir, opts = {}) {
     related, bindings: bindings ? Object.keys(bindings) : [],
   }, null, 1) + '\n';
   return {
-    outputs, errors, warnings, copy: { zh: C.zh.copy, en: C.en.copy },
+    outputs, errors, warnings, copy: { zh: C.zh.copy, en: C.en.copy }, src: { zh: C.zh.src, en: C.en.src }, bindings: bindings || {},
     stats: { slug: page.slug, keys: C.zh.order.length, chapters: C.zh.skel.chapters.length, refs: refs.length, backlinks: BL.length, related: related.length, bindings: bindings ? Object.keys(bindings).length : 0 },
   };
 }
@@ -638,4 +818,5 @@ module.exports = {
   REPO_ROOT, LANGS, loadCopy, loadPagesConfig, createSite, pick, titleOf, resolveHref, relHref, resolveRef,
   renderInline, unrenderInline, escapeInline, parseContent, parseAttrs, needsParaEscape, autoKey, i18nKeysIn,
   fillLayout, buildEssay, migratedPages, TemplateError, esc, prefill, unprefill,
+  svgLabels, labelRoom, emWidth, plainText,
 };
