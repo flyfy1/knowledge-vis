@@ -1,0 +1,31 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "simple-circuits",
+ "refs": [],
+ "backlinks": [
+  {
+   "from": "ohms-law",
+   "links": [
+    {
+     "from": "step0",
+     "to": "step4"
+    },
+    {
+     "from": "step5",
+     "to": "step4"
+    }
+   ]
+  },
+  {
+   "from": "series-parallel",
+   "links": [
+    {
+     "from": "step5",
+     "to": "step0"
+    }
+   ]
+  }
+ ],
+ "related": [],
+ "bindings": []
+}

@@ -1053,15 +1053,15 @@ anchor; a link to the page top has no anchor).
 
 ## 简单电路 · 电流要走一圈 / Simple Circuits · Current Must Go Round → 原子结构 · 质子数定它是谁 / Atomic Structure · The Proton Count Decides What It Is
 
-- `simple-circuits` → `atomic-structure#step4`
+- `simple-circuits#step5` → `atomic-structure#step4`
 
 ## 简单电路 · 电流要走一圈 / Simple Circuits · Current Must Go Round → 粒子与物态 · 热闹程度即温度 / Particles & States · Temperature Is How Wildly They Move
 
-- `simple-circuits` → `particles-states#step0`
+- `simple-circuits#step5` → `particles-states#step0`
 
 ## 简单电路 · 电流要走一圈 / Simple Circuits · Current Must Go Round → 方程天平 · 两边同做一件事 / Equations on a Balance · Do the Same to Both Sides
 
-- `simple-circuits` → `equation-scale#step1`: ? → equation-balance
+- `simple-circuits#step5` → `equation-scale#step1`: ? → equation-balance
 
 ## 声音从振动来 · 米粒会跳的鼓 / Sound from Vibration · A Drum with Jumping Rice → 音乐理论 · 从音程到终止 / Music Theory · From Intervals to Cadence
 
