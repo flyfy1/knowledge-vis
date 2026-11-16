@@ -1338,7 +1338,7 @@ anchor; a link to the page top has no anchor).
 
 ## 最短路 · 从起点像洪水一样漫开 / Shortest Path · Flooding Out From the Start → 网络流 · 一封消息的旅程 / Network Flow · A Message’s Journey
 
-- `shortest-path` → `tcp-congestion#step0`
+- `shortest-path#step5` → `tcp-congestion#step0`
 
 ## 立体几何 · 转一转，再切一刀 / Solid Geometry · Turn It, Then Cut It → 勾股定理 · 一步一交互 / The Pythagorean Theorem · One Interaction at a Time
 

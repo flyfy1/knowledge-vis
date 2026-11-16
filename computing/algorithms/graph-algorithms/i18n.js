@@ -71,7 +71,7 @@ const STR={
     "site.crumb.sub": "算法",
     "site.bl.title": "被这些页面引用",
     "site.bl.1": "<a href=\"../pagerank/\">PageRank · 随机冲浪者最后停在哪</a>：<a href=\"../pagerank/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>",
-    "site.bl.2": "<a href=\"../shortest-path/\">最短路 · 从起点像洪水一样漫开</a>：→ <a href=\"#step3\">本页第 3 步</a>"
+    "site.bl.2": "<a href=\"../shortest-path/\">最短路 · 从起点像洪水一样漫开</a>：<a href=\"../shortest-path/#step5\">该课第 5 步</a> → <a href=\"#step3\">本页第 3 步</a>"
   },
   en: {
     back: "← Knowledge index",
@@ -143,7 +143,7 @@ const STR={
     "site.crumb.sub": "Algorithms",
     "site.bl.title": "Linked from",
     "site.bl.1": "<a href=\"../pagerank/\">PageRank · Where the Random Surfer Ends Up</a>: <a href=\"../pagerank/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>",
-    "site.bl.2": "<a href=\"../shortest-path/\">Shortest Path · Flooding Out From the Start</a>: → <a href=\"#step3\">this page step 3</a>"
+    "site.bl.2": "<a href=\"../shortest-path/\">Shortest Path · Flooding Out From the Start</a>: <a href=\"../shortest-path/#step5\">its step 5</a> → <a href=\"#step3\">this page step 3</a>"
   }
 };
 const STORE=typeof localStorage!=='undefined'?localStorage:null;
