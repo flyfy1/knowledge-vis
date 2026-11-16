@@ -765,15 +765,15 @@ anchor; a link to the page top has no anchor).
 
 ## 食物网 / Food Webs → 光合作用 · 用光开工的糖厂 / Photosynthesis · A Sugar Factory Run by Light
 
-- `food-web` → `photosynthesis#step1`: ? → photosynthesis
+- `food-web#step5` → `photosynthesis#step1`: ? → photosynthesis
 
 ## 食物网 / Food Webs → 种群增长 · S 形曲线从哪来 / Population Growth · Where the S-Curve Comes From
 
-- `food-web` → `logistic-growth#step3`
+- `food-web#step5` → `logistic-growth#step3`
 
 ## 食物网 / Food Webs → 种群生态学 · 增长如何被反馈改变 / Population Ecology · Growth Reshaped by Feedback
 
-- `food-web` → `population-ecology#step2`: ? → predator-prey
+- `food-web#step5` → `population-ecology#step2`: ? → predator-prey
 
 ## 同分异构体 · 同一组原子，不同的拼法 / Isomers · The Same Atoms, Put Together Differently → 粒子与物态 · 热闹程度即温度 / Particles & States · Temperature Is How Wildly They Move
 
