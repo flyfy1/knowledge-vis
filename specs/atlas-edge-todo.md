@@ -1077,15 +1077,15 @@ anchor; a link to the page top has no anchor).
 
 ## 三视图 · 三张影子拼回立体 / Three Views · Three Shadows Rebuild a Solid → 对称与旋转 · 对折与转圈 / Symmetry & Rotation · Folding and Turning
 
-- `three-views` → `symmetry-rotation#step0`: ? → symmetry
+- `three-views#step5` → `symmetry-rotation#step0`: ? → symmetry
 
 ## 三视图 · 三张影子拼回立体 / Three Views · Three Shadows Rebuild a Solid → 周长 vs 面积 · 一根绳子两种账 / Perimeter vs Area · One Rope, Two Ledgers
 
-- `three-views` → `perimeter-area#step0`
+- `three-views#step5` → `perimeter-area#step0`
 
 ## 三视图 · 三张影子拼回立体 / Three Views · Three Shadows Rebuild a Solid → 坐标系 · 点的地址 / The Coordinate Plane · Addresses for Points
 
-- `three-views` → `coordinate-plane#step1`
+- `three-views#step5` → `coordinate-plane#step1`
 
 ## 水的循环 · 一滴水的旅行 / The Water Cycle · One Drop’s Journey → 气候能量账本 · 太阳光如何变成温度 / Climate Energy Ledger · How Sunlight Becomes Temperature
 

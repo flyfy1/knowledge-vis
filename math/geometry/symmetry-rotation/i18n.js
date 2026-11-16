@@ -154,7 +154,7 @@ const STR = {
     "site.bl.2": "<a href=\"../circle-intro/\">圆的认识 · 圆规、半径与 π</a>：<a href=\"../circle-intro/#step5\">该课第 5 步</a> → <a href=\"#step2\">本页第 2 步</a>",
     "site.bl.3": "<a href=\"../clock-angles/\">时钟与角度 · 两根针的赛跑</a>：<a href=\"../clock-angles/#step5\">该课第 5 步</a> → <a href=\"#step2\">本页第 2 步</a>",
     "site.bl.4": "<a href=\"../polygon-angles/\">多边形内角和 · 撕下来拼一拼</a>：→ <a href=\"#step2\">本页第 2 步</a>",
-    "site.bl.5": "<a href=\"../three-views/\">三视图 · 三张影子拼回立体</a>：→ <a href=\"#step0\">本页第 0 步</a>"
+    "site.bl.5": "<a href=\"../three-views/\">三视图 · 三张影子拼回立体</a>：<a href=\"../three-views/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>"
   },
   en: {
     docTitle: "Symmetry & Rotation · Flip It, Spin It — One Interaction at a Time",
@@ -302,7 +302,7 @@ const STR = {
     "site.bl.2": "<a href=\"../circle-intro/\">The Circle · Compass, Radius and π</a>: <a href=\"../circle-intro/#step5\">its step 5</a> → <a href=\"#step2\">this page step 2</a>",
     "site.bl.3": "<a href=\"../clock-angles/\">Clocks & Angles · A Race Between Two Hands</a>: <a href=\"../clock-angles/#step5\">its step 5</a> → <a href=\"#step2\">this page step 2</a>",
     "site.bl.4": "<a href=\"../polygon-angles/\">Polygon Angle Sums · Tear and Rearrange</a>: → <a href=\"#step2\">this page step 2</a>",
-    "site.bl.5": "<a href=\"../three-views/\">Three Views · Three Shadows Rebuild a Solid</a>: → <a href=\"#step0\">this page step 0</a>"
+    "site.bl.5": "<a href=\"../three-views/\">Three Views · Three Shadows Rebuild a Solid</a>: <a href=\"../three-views/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>"
   }
 };
 
