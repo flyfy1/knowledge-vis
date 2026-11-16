@@ -1,0 +1,27 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "bar-charts",
+ "refs": [],
+ "backlinks": [
+  {
+   "from": "averaging-leveling",
+   "links": [
+    {
+     "from": "step5",
+     "to": "step3"
+    }
+   ]
+  },
+  {
+   "from": "mean-median-mode",
+   "links": [
+    {
+     "from": null,
+     "to": "step3"
+    }
+   ]
+  }
+ ],
+ "related": [],
+ "bindings": []
+}

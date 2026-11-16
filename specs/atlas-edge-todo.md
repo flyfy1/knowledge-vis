@@ -901,15 +901,15 @@ anchor; a link to the page top has no anchor).
 
 ## 条形图 · 让数字站成一排比高矮 / Bar Charts · Numbers Standing in a Row → 概率分布 · 随机性也有形状 / Probability Distributions · Randomness Has a Shape
 
-- `bar-charts` → `probability-distribution#step1`
+- `bar-charts#step5` → `probability-distribution#step1`
 
 ## 条形图 · 让数字站成一排比高矮 / Bar Charts · Numbers Standing in a Row → 中心极限定理 · 平均值总会变成钟形 / Central Limit Theorem · Averages Always Turn Bell-Shaped
 
-- `bar-charts` → `central-limit-theorem#step0`
+- `bar-charts#step5` → `central-limit-theorem#step0`
 
 ## 条形图 · 让数字站成一排比高矮 / Bar Charts · Numbers Standing in a Row → 坐标系 · 点的地址 / The Coordinate Plane · Addresses for Points
 
-- `bar-charts` → `coordinate-plane#step1`
+- `bar-charts#step5` → `coordinate-plane#step1`
 
 ## 鸡兔同笼 · 先假设，差额会说话 / Chickens & Rabbits · Assume First, Let the Gap Speak → 方程天平 · 两边同做一件事 / Equations on a Balance · Do the Same to Both Sides
 
