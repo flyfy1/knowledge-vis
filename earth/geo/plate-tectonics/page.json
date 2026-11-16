@@ -28,5 +28,69 @@
   "stage": "senior",
   "status": "live",
   "path": "earth/geo/plate-tectonics/",
-  "order": 1100
+  "order": 1100,
+  "layout": "lesson",
+  "titleKey": "title",
+  "enCjk": [
+    "divergent",
+    "convergent",
+    "transform"
+  ],
+  "legacyLayout": {
+    "_note": "Whitespace and markup of the hand-written lesson this page was converted from, so the conversion could be checked byte for byte (specs/site-template.md §3c).",
+    "section": {
+      "open": "<section class=\"step\" id=\"{id}\" data-step=\"{n}\"><div class=\"step-inner\">",
+      "close": "</div></section>"
+    },
+    "indent": "",
+    "mainGaps": [
+      "\n",
+      "\n",
+      "\n",
+      "\n",
+      "\n"
+    ],
+    "stepNav": {
+      "item": "<a href=\"#{id}\" data-nav=\"{n}\" data-i18n=\"{key}\"></a>",
+      "end": ""
+    },
+    "filled": [
+      "back",
+      "title",
+      "tagline",
+      "nav0",
+      "nav1",
+      "nav2",
+      "nav3",
+      "s0k",
+      "s0t",
+      "s0e",
+      "time",
+      "start",
+      "s1k",
+      "s1t",
+      "s1e",
+      "divergent",
+      "convergent",
+      "transform",
+      "s1h",
+      "s2k",
+      "s2t",
+      "s2e",
+      "speed",
+      "heat",
+      "spread",
+      "stress",
+      "volcano",
+      "s2h",
+      "s3k",
+      "s3t",
+      "s3e",
+      "shuffle",
+      "check",
+      "finale",
+      "foot"
+    ]
+  },
+  "version": "20261116a"
 }
