@@ -1,0 +1,27 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "graph-algorithms",
+ "refs": [],
+ "backlinks": [
+  {
+   "from": "pagerank",
+   "links": [
+    {
+     "from": null,
+     "to": "step0"
+    }
+   ]
+  },
+  {
+   "from": "shortest-path",
+   "links": [
+    {
+     "from": null,
+     "to": "step3"
+    }
+   ]
+  }
+ ],
+ "related": [],
+ "bindings": []
+}

@@ -1,0 +1,15 @@
+<div class="btn-row" role="group" aria-label="algorithm">
+          <div class="seg-toggle" id="algoToggle">
+            <button type="button" data-algo="bfs" class="active" data-i18n="bfs"></button>
+            <button type="button" data-algo="dfs" data-i18n="dfs"></button>
+          </div>
+          <button class="btn primary" id="stepOnce" data-i18n="stepOnce"></button>
+          <button class="btn" id="play" data-i18n="play"></button>
+          <button class="btn" id="resetRun" data-i18n="resetRun"></button>
+        </div>
+        <div class="stage graph-stage"><canvas id="run-canvas" height="420" aria-label="graph traversal"></canvas></div>
+        <div class="state-grid">
+          <div class="state-box"><h3 data-i18n="containerTitle"></h3><div id="containerState" class="chips"></div></div>
+          <div class="state-box"><h3 data-i18n="visitedTitle"></h3><div id="visitedState" class="chips"></div></div>
+        </div>
+        <p class="readout" id="runReadout"></p>
