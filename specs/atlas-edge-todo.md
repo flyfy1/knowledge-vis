@@ -821,11 +821,11 @@ anchor; a link to the page top has no anchor).
 
 ## 找规律 · 不画也能报出第 100 个 / Patterns · Name the 100th Without Drawing It → 乘法是面积 · 点阵铺成一块地 / Multiplication Is Area · Arrays Become a Tiled Floor
 
-- `patterns-sequences` → `area-model#step2`
+- `patterns-sequences#step5` → `area-model#step2`
 
 ## 找规律 · 不画也能报出第 100 个 / Patterns · Name the 100th Without Drawing It → 方程天平 · 两边同做一件事 / Equations on a Balance · Do the Same to Both Sides
 
-- `patterns-sequences` → `equation-scale#step3`
+- `patterns-sequences#step5` → `equation-scale#step3`
 
 ## pH 标度 / The pH Scale → 缓冲溶液 · 把 pH 稳住 / Buffer Capacity · Holding pH Steady
 

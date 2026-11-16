@@ -1,0 +1,36 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "patterns-sequences",
+ "refs": [],
+ "backlinks": [
+  {
+   "from": "sequences-series",
+   "links": [
+    {
+     "from": null,
+     "to": "step0"
+    }
+   ]
+  },
+  {
+   "from": "chicken-rabbit",
+   "links": [
+    {
+     "from": null,
+     "to": "step1"
+    }
+   ]
+  },
+  {
+   "from": "intervals-fences",
+   "links": [
+    {
+     "from": null,
+     "to": "step1"
+    }
+   ]
+  }
+ ],
+ "related": [],
+ "bindings": []
+}
