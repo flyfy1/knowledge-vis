@@ -74,7 +74,7 @@ Derived-From: <旧路径> -> <新路径>
 - 一个提交可以写多行；同一个新文件可以有多个来源（例如 `figures/ch2-model.html` 来自 `index.html`）。路径都相对仓库根目录。
 - `scripts/authorship.cjs` 把它当作**继承**：新文件从旧文件在该提交之前的完整记录开始（`created`、各 Agent 的提交数与行数、`lastAuthored`），记在 `derivedFrom` 里，与 `renamedFrom` 分开；多个来源时计数相加，`created` 取最早的一个。旧文件**保留**自己的记录，不像重命名那样被移走。
 - 派生提交本身照常归属：转换器的提交写 `Authorship-Impact: mechanical`，只进新文件的 `mechanical`，不会让执行者成为作者。此后对新文件的写作提交照常累加。
-- 只在新文件于该提交首次出现时生效；新文件已经存在、或旧路径在历史里找不到时，这一行不起作用（不猜）。
+- 只在 `Authorship-Impact: mechanical` 的提交里生效，旧路径必须存在于该提交的父提交中，新文件必须在该提交首次出现。任一条件不满足，这一行不起作用（不猜），`scripts/authorship.cjs` 在 stderr 报出来。
 - 只能用于内容确实由旧文件机械转写而来的情况，转换要有逐字节或逐键的等价检查（见 specs/site-template.md）。不能用它把一个 Agent 的作品挂到另一个文件上。
 
 ## 5. 未归属文件与更正
@@ -125,3 +125,4 @@ node scripts/authorship.cjs --write                                 # 生成完�
 | 2026-11-08 | 初版 | Claude Code（claude-opus-5-5） | Yangyu（口头要求起草） |
 | 2026-11-13 | §2 注册 `antigravity` Agent | Antigravity | Yangyu（对话同意） |
 | 2026-11-16 | §4 增加派生规则：`Derived-From: <旧路径> -> <新路径>` trailer，`scripts/authorship.cjs` 据此让新文件继承旧文件的归属，旧文件保留自己的记录（站点模板提案 specs/proposals/site-template.md 的决定 D3） | Claude Code（claude-opus-5-5） | Yangyu（对话同意，2026-11-16 批准站点模板提案并按推荐取 D1–D10，原话：「OK，就按照你的方案来吧。补设计图的话，你可以先通过 SVG 生成的方式去；如果需要画图的话，你可以通过我的 LLM proxy 去调用其他的 API 做图片生成」） |
+| 2026-11-16 | §4 派生规则收紧：只认 `Authorship-Impact: mechanical` 提交，且旧路径须在父提交中存在，防止手写改写借用旧文件作者（Phase 0 独立评审 specs/reviews/site-template-phase0-review-20261116.md 的建议；是对同日 D3 的收窄，不扩大其适用范围） | Claude Code（claude-opus-5-5） | Yangyu（同上一行的 D3 同意；本条只收窄，待其确认） |

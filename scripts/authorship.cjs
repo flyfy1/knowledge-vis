@@ -68,6 +68,10 @@ function attribute(hash, body) {
 
 // Derived-From: <old> -> <new>, one pair per line; paths are repo-relative.
 const normPath = p => p.trim().replace(/^\.\//, '').replace(/^\/+/, '');
+function inTree(commit, file) {
+  try { execFileSync('git', ['cat-file', '-e', `${commit}:${file}`], { cwd: root, stdio: 'ignore' }); return true; } catch { return false; }
+}
+
 function derivedPairs(body) {
   const out = [];
   for (const m of body.matchAll(/^Derived-From:\s*(.+?)\s*->\s*(.+?)\s*$/gim)) out.push([normPath(m[1]), normPath(m[2])]);
@@ -112,8 +116,15 @@ function build() {
     const tok = stat.replace(/^\n/, '').split('\0');
     // Derived-From: snapshot the sources before this commit's own changes touch them.
     const derived = new Map(); // new path -> { recs, from }
-    for (const [from, to] of derivedPairs(body)) {
+    const pairs = derivedPairs(body);
+    if (pairs.length && a.impact !== 'mechanical') {
+      console.error(`authorship: ${hash.slice(0, 8)} Derived-From ignored: only an Authorship-Impact: mechanical commit may declare it`);
+      pairs.length = 0;
+    }
+    const parent = parents.trim().split(' ')[0];
+    for (const [from, to] of pairs) {
       const src = files.get(from);
+      if (src && !(parent && inTree(parent, from))) { console.error(`authorship: ${hash.slice(0, 8)} Derived-From ${from} -> ${to} ignored: ${from} is not in the parent commit`); continue; }
       if (!src) { console.error(`authorship: ${hash.slice(0, 8)} Derived-From ${from} -> ${to} ignored: ${from} is not in history before this commit`); continue; }
       const d = derived.get(to) || { recs: [], from: [] };
       d.recs.push(cloneRec(src)); d.from.push(from); derived.set(to, d);

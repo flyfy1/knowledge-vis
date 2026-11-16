@@ -112,13 +112,34 @@ assert.equal(r['other/content.zh.md'].primary, 'unattributed', 'without Derived-
 
 // 5. A trailer naming a file the commit does not touch inherits nothing and creates nothing.
 write('other/copy.zh.js', lines(31, 'codex'));
-commit(8, 'touch\n\nBuilt-By: Codex (gpt-6.1-sol)\nDerived-From: other/copy.zh.js -> other/never.md', 'other/copy.zh.js');
+commit(8, 'touch\n\nBuilt-By: Codex (gpt-6.1-sol)\nAuthorship-Impact: mechanical\nDerived-From: other/copy.zh.js -> other/never.md', 'other/copy.zh.js');
 r = query('other/never.md');
 assert.equal(r['other/never.md'], null);
 // Trailers that take no effect are reported on stderr (stdout stays the same), never silently dropped.
 assert.match(stderr, /Derived-From other\/copy\.zh\.js -> other\/never\.md ignored: other\/never\.md already existed or is not in this commit/);
 assert.match(stderr, /Derived-From page\/missing\.js -> page\/content\.en\.md ignored: page\/missing\.js is not in history/);
 
+// 6. Only a mechanical commit may declare Derived-From: a hand rewrite cannot borrow another file's authors.
+write('other/claimed.md', lines(20, 'hand'));
+commit(9, 'rewrite\n\nBuilt-By: Claude Code (claude-opus-5-5)\nAuthorship-Impact: authored\nDerived-From: other/copy.zh.js -> other/claimed.md', 'other/claimed.md');
+r = query('other/claimed.md');
+assert.equal(r['other/claimed.md'].primary, 'claude-code', 'an authored commit keeps its own authorship');
+assert.ok(!r['other/claimed.md'].derivedFrom);
+assert.match(stderr, /Derived-From ignored: only an Authorship-Impact: mechanical commit may declare it/);
+
+// 7. The source must exist in the parent commit: a file deleted earlier cannot be named.
+write('gone/copy.zh.js', lines(25, 'codex'));
+commit(10, 'gone\n\nBuilt-By: Codex (gpt-6.1-sol)\nAuthorship-Impact: authored', 'gone/copy.zh.js');
+git('rm', '-q', 'gone/copy.zh.js');
+date = '2026-11-11T10:00:00';
+git('commit', '-q', '-m', 'drop\n\nBuilt-By: Codex (gpt-6.1-sol)\nAuthorship-Impact: mechanical');
+write('gone/content.zh.md', lines(25, 'md'));
+commit(12, 'convert gone\n\nBuilt-By: script (deterministic, no model: scripts/convert-essay.cjs)\nAuthorship-Impact: mechanical\nDerived-From: gone/copy.zh.js -> gone/content.zh.md', 'gone/content.zh.md');
+r = query('gone/content.zh.md');
+assert.equal(r['gone/content.zh.md'].primary, 'unattributed');
+assert.ok(!r['gone/content.zh.md'].derivedFrom);
+assert.match(stderr, /Derived-From gone\/copy\.zh\.js -> gone\/content\.zh\.md ignored: gone\/copy\.zh\.js is not in the parent commit/);
+
 // The scratch repo is removed on success (kept on failure, or with KEEP_SCRATCH=1, for inspection).
 if (!process.env.KEEP_SCRATCH) fs.rmSync(dir, { recursive: true, force: true });
-console.log('PASS authorship Derived-From: inheritance, merge of two sources, later edits, no-trailer and no-touch cases');
+console.log('PASS authorship Derived-From: inheritance, merge of two sources, later edits, no-trailer and no-touch cases, authored and deleted-source refusals');
