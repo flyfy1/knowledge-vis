@@ -1223,15 +1223,15 @@ anchor; a link to the page top has no anchor).
 
 ## 马尔可夫链 · 下一步只看现在 / Markov Chains · The Next Step Depends Only on Now → PageRank · 随机冲浪者最后停在哪 / PageRank · Where the Random Surfer Ends Up
 
-- `markov-chains` → `pagerank#step0`
+- `markov-chains#step5` → `pagerank#step0`
 
 ## 马尔可夫链 · 下一步只看现在 / Markov Chains · The Next Step Depends Only on Now → 二项分布到正态 · 钉板上长出的钟形 / Binomial to Normal · The Bell Curve Growing on a Pegboard
 
-- `markov-chains` → `binomial-normal#step0`
+- `markov-chains#step5` → `binomial-normal#step0`
 
 ## 马尔可夫链 · 下一步只看现在 / Markov Chains · The Next Step Depends Only on Now → 概率与频率 · 转得越多，越贴近概率 / Probability & Frequency · The More Spins, the Closer to the Probability
 
-- `markov-chains` → `probability-frequency#step0`
+- `markov-chains#step5` → `probability-frequency#step0`
 
 ## 机械能守恒 · 过山车的能量账本 / Conservation of Mechanical Energy · The Roller Coaster’s Energy Ledger → 杠杆与滑轮 · 支点挪一挪，省力见分晓 / Levers & Pulleys · Move the Fulcrum, Feel the Trade
 

@@ -108,7 +108,7 @@ const STR = {
     "site.crumb.sub": "算法",
     "site.bl.title": "被这些页面引用",
     "site.bl.1": "<a href=\"../shortest-path/\">最短路 · 从起点像洪水一样漫开</a>：<a href=\"../shortest-path/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>",
-    "site.bl.2": "<a href=\"../../../probability/stochastic/markov-chains/\">马尔可夫链 · 下一步只看现在</a>：→ <a href=\"#step0\">本页第 0 步</a>"
+    "site.bl.2": "<a href=\"../../../probability/stochastic/markov-chains/\">马尔可夫链 · 下一步只看现在</a>：<a href=\"../../../probability/stochastic/markov-chains/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>"
   },
   en: {
     docTitle: "PageRank · Where the Random Surfer Ends Up",
@@ -218,7 +218,7 @@ const STR = {
     "site.crumb.sub": "Algorithms",
     "site.bl.title": "Linked from",
     "site.bl.1": "<a href=\"../shortest-path/\">Shortest Path · Flooding Out From the Start</a>: <a href=\"../shortest-path/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>",
-    "site.bl.2": "<a href=\"../../../probability/stochastic/markov-chains/\">Markov Chains · The Next Step Depends Only on Now</a>: → <a href=\"#step0\">this page step 0</a>"
+    "site.bl.2": "<a href=\"../../../probability/stochastic/markov-chains/\">Markov Chains · The Next Step Depends Only on Now</a>: <a href=\"../../../probability/stochastic/markov-chains/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>"
   }
 };
 let currentLang = 'en';
