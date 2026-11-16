@@ -1,0 +1,14 @@
+<figure class="lab">
+    <h3 data-i18n="ch4.model.title"></h3>
+    <p class="how" data-i18n-html="ch4.model.how"></p>
+    <canvas class="cv" id="vtCv" role="img" data-i18n-aria="ch4.model.aria"></canvas>
+    <div class="ctl"><div class="seg" role="radiogroup" data-i18n-aria="ch4.ctl.bits"><span class="lbl" data-i18n="ch4.ctl.bits"></span><label><input type="radio" name="vtN" value="1"><span data-i18n="cell.short.slc"></span></label><label><input type="radio" name="vtN" value="2"><span data-i18n="cell.short.mlc"></span></label><label><input type="radio" name="vtN" value="3" checked><span data-i18n="cell.short.tlc"></span></label><label><input type="radio" name="vtN" value="4"><span data-i18n="cell.short.qlc"></span></label><label><input type="radio" name="vtN" value="5"><span data-i18n="cell.short.plc"></span></label></div></div>
+    <div class="ctl"><label class="rng"><span data-i18n="ch4.ctl.N"></span><input type="range" id="vtW" min="0" max="5000" step="50" value="800"><output id="vtWo"></output></label></div>
+    <div class="read">
+      <div><b class="g" id="vtL"></b><span data-i18n-html="ch4.read.L"></span></div>
+      <div><b class="c" id="vtD"></b><span data-i18n-html="ch4.read.d"></span></div>
+      <div><b class="v" id="vtS"></b><span data-i18n-html="ch4.read.s"></span></div>
+      <div><b class="r" id="vtR"></b><span data-i18n-html="ch4.read.r"></span></div>
+    </div>
+    <p class="say" id="vtSay" aria-live="polite"></p>
+  </figure>

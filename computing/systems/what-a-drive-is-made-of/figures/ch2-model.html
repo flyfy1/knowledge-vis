@@ -1,0 +1,17 @@
+<figure class="lab">
+    <h3 data-i18n="ch2.model.title"></h3>
+    <p class="how" data-i18n-html="ch2.model.how"></p>
+    <canvas class="cv" id="skCv" role="img" data-i18n-aria="ch2.model.aria"></canvas>
+    <canvas class="cv short" id="sqCv" role="img" data-i18n-aria="ch2.model.aria2"></canvas>
+    <div class="ctl"><div class="seg" role="radiogroup" data-i18n-aria="ch2.ctl.rpm"><span class="lbl" data-i18n="ch2.ctl.rpm"></span><label><input type="radio" name="skR" value="5400"><span data-i18n="ch2.rpm.5400"></span></label><label><input type="radio" name="skR" value="7200" checked><span data-i18n="ch2.rpm.7200"></span></label><label><input type="radio" name="skR" value="10000"><span data-i18n="ch2.rpm.10000"></span></label><label><input type="radio" name="skR" value="15000"><span data-i18n="ch2.rpm.15000"></span></label></div></div>
+    <div class="ctl"><label class="rng"><span data-i18n="ch2.ctl.span"></span><input type="range" id="skS" min="2" max="100" step="1" value="100"><output id="skSo"></output></label></div>
+    <div class="read">
+      <div><b class="g" id="skSeek"></b><span data-i18n-html="ch2.read.seek"></span></div>
+      <div><b class="c" id="skRot"></b><span data-i18n-html="ch2.read.rot"></span></div>
+      <div><b class="" id="skT"></b><span data-i18n-html="ch2.read.t"></span></div>
+      <div><b class="r" id="skI"></b><span data-i18n-html="ch2.read.iops"></span></div>
+      <div><b class="n" id="skOd"></b><span data-i18n-html="ch2.read.od"></span></div>
+      <div><b class="v" id="skId"></b><span data-i18n-html="ch2.read.id"></span></div>
+    </div>
+    <p class="say" id="skSay" aria-live="polite"></p>
+  </figure>
