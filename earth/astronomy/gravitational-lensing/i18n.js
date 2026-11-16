@@ -107,7 +107,7 @@ const STR = {
     "site.crumb.cat": "地球与太空",
     "site.crumb.sub": "天文",
     "site.bl.title": "被这些页面引用",
-    "site.bl.1": "<a href=\"../gravity-orbits/\">万有引力与轨道 · 横着扔出去，会落下、绕圈还是飞走</a>：→ <a href=\"#step0\">本页第 0 步</a>",
+    "site.bl.1": "<a href=\"../gravity-orbits/\">万有引力与轨道 · 横着扔出去，会落下、绕圈还是飞走</a>：<a href=\"../gravity-orbits/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>",
     "site.bl.2": "<a href=\"../what-is-a-black-hole/\">黑洞到底是什么</a>：<a href=\"../what-is-a-black-hole/#ch7\">该文第 7 章</a> → <a href=\"#step0\">本页第 0 步</a>；<a href=\"../what-is-a-black-hole/#ch10\">该文第 10 章</a>"
   },
   en: {
@@ -216,7 +216,7 @@ const STR = {
     "site.crumb.cat": "Earth & Space",
     "site.crumb.sub": "Astronomy",
     "site.bl.title": "Linked from",
-    "site.bl.1": "<a href=\"../gravity-orbits/\">Gravity and Orbits · Throw It Sideways: Fall, Circle or Escape</a>: → <a href=\"#step0\">this page step 0</a>",
+    "site.bl.1": "<a href=\"../gravity-orbits/\">Gravity and Orbits · Throw It Sideways: Fall, Circle or Escape</a>: <a href=\"../gravity-orbits/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>",
     "site.bl.2": "<a href=\"../what-is-a-black-hole/\">What Is a Black Hole, Really?</a>: <a href=\"../what-is-a-black-hole/#ch7\">its chapter 7</a> → <a href=\"#step0\">this page step 0</a>; <a href=\"../what-is-a-black-hole/#ch10\">its chapter 10</a>"
   }
 };

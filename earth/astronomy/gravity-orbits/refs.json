@@ -1,0 +1,31 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "gravity-orbits",
+ "refs": [],
+ "backlinks": [
+  {
+   "from": "what-is-a-black-hole",
+   "links": [
+    {
+     "from": "ch3",
+     "to": "step1"
+    },
+    {
+     "from": "ch10",
+     "to": null
+    }
+   ]
+  },
+  {
+   "from": "inside-a-phone",
+   "links": [
+    {
+     "from": null,
+     "to": "step4"
+    }
+   ]
+  }
+ ],
+ "related": [],
+ "bindings": []
+}

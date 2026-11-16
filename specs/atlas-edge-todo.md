@@ -1199,15 +1199,15 @@ anchor; a link to the page top has no anchor).
 
 ## 万有引力与轨道 · 横着扔出去，会落下、绕圈还是飞走 / Gravity and Orbits · Throw It Sideways: Fall, Circle or Escape → 地球公转与四季 / Earth’s Orbit & the Seasons
 
-- `gravity-orbits` → `seasons-orbit#step1`
+- `gravity-orbits#step5` → `seasons-orbit#step1`
 
 ## 万有引力与轨道 · 横着扔出去，会落下、绕圈还是飞走 / Gravity and Orbits · Throw It Sideways: Fall, Circle or Escape → 引力透镜 · 宇宙里的凸透镜 / Gravitational Lensing · A Cosmic Convex Lens
 
-- `gravity-orbits` → `gravitational-lensing#step0`
+- `gravity-orbits#step5` → `gravitational-lensing#step0`
 
 ## 万有引力与轨道 · 横着扔出去，会落下、绕圈还是飞走 / Gravity and Orbits · Throw It Sideways: Fall, Circle or Escape → 宇宙膨胀 · 空间本身在变大 / Cosmic Expansion · Space Itself Gets Larger
 
-- `gravity-orbits` → `cosmology-expansion#step0`
+- `gravity-orbits#step5` → `cosmology-expansion#step0`
 
 ## 假设检验与 p 值 · 法庭模型判硬币冤不冤 / Hypothesis Testing & p-Values · A Courtroom for a Coin → 二项分布到正态 · 钉板上长出的钟形 / Binomial to Normal · The Bell Curve Growing on a Pegboard
 
