@@ -538,11 +538,12 @@ anchor; a link to the page top has no anchor).
 
 ## 速度与 v-t 图 · 面积就是路 / Speed and the v–t Graph · Area Is Distance → 一次函数 · 斜率是陡缓，截距是起点 / Linear Functions · Slope Is Steepness, Intercept Is the Start
 
-- `velocity-vt` → `linear-functions#step0`
+- `velocity-vt#step0` → `linear-functions#step0`
+- `velocity-vt#step5` → `linear-functions#step0`
 
 ## 速度与 v-t 图 · 面积就是路 / Speed and the v–t Graph · Area Is Distance → 乘法是面积 · 点阵铺成一块地 / Multiplication Is Area · Arrays Become a Tiled Floor
 
-- `velocity-vt` → `area-model#step1`: ? → area-model-multiplication
+- `velocity-vt#step5` → `area-model#step1`: ? → area-model-multiplication
 
 ## 定积分 · 把小条加回整体 / The Definite Integral · Adding the Strips Back Up → 速度与 v-t 图 · 面积就是路 / Speed and the v–t Graph · Area Is Distance
 

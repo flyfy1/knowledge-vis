@@ -105,7 +105,11 @@
    "from": "velocity-vt",
    "links": [
     {
-     "from": null,
+     "from": "step0",
+     "to": "step0"
+    },
+    {
+     "from": "step5",
      "to": "step0"
     }
    ]

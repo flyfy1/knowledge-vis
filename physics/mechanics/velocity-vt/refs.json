@@ -1,0 +1,79 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "velocity-vt",
+ "refs": [],
+ "backlinks": [
+  {
+   "from": "atlas",
+   "links": [
+    {
+     "from": null,
+     "to": "step1"
+    }
+   ]
+  },
+  {
+   "from": "derivative",
+   "links": [
+    {
+     "from": "step3",
+     "to": "step1"
+    },
+    {
+     "from": "step5",
+     "to": "step1"
+    }
+   ]
+  },
+  {
+   "from": "integral",
+   "links": [
+    {
+     "from": "step2",
+     "to": "step2"
+    },
+    {
+     "from": "step5",
+     "to": "step2"
+    }
+   ]
+  },
+  {
+   "from": "mechanical-energy",
+   "links": [
+    {
+     "from": "step5",
+     "to": "step3"
+    }
+   ]
+  },
+  {
+   "from": "newton-laws",
+   "links": [
+    {
+     "from": "step0",
+     "to": "step1"
+    },
+    {
+     "from": "step5",
+     "to": "step1"
+    }
+   ]
+  },
+  {
+   "from": "projectile-circular",
+   "links": [
+    {
+     "from": "step0",
+     "to": "step3"
+    },
+    {
+     "from": "step5",
+     "to": "step3"
+    }
+   ]
+  }
+ ],
+ "related": [],
+ "bindings": []
+}

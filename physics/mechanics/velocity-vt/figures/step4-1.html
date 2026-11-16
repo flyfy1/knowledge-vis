@@ -1,0 +1,37 @@
+<div class="stage">
+      <canvas id="s4-canvas" height="320"></canvas>
+    </div>
+
+    <div class="quiz-block">
+      <p class="quiz-q-title" data-i18n-html="s4q1"></p>
+      <div class="controls">
+        <label><span><span data-i18n="s4probeLab"></span> <span class="val" id="s4-t-val">t = 0 s</span></span>
+          <input type="range" id="s4-probe" min="0" max="8" step="0.5" value="0">
+        </label>
+      </div>
+      <div class="btn-row">
+        <button class="btn big primary" id="s4-q1-btn" data-i18n="s4q1Btn"></button>
+      </div>
+      <p class="readout" id="s4-q1-ro"></p>
+    </div>
+
+    <div class="quiz-block">
+      <p class="quiz-q-title" data-i18n="s4q2"></p>
+      <div class="btn-row">
+        <button class="btn big" data-q2="27">27 m</button>
+        <button class="btn big" data-q2="33">33 m</button>
+        <button class="btn big" data-q2="39">39 m</button>
+      </div>
+      <p class="readout" id="s4-q2-ro"></p>
+    </div>
+
+    <div class="quiz-block">
+      <p class="quiz-q-title" data-i18n="s4q3"></p>
+      <div class="btn-row">
+        <button class="btn big" data-q3="true" data-i18n="judgeT"></button>
+        <button class="btn big" data-q3="false" data-i18n="judgeF"></button>
+      </div>
+      <p class="readout" id="s4-q3-ro"></p>
+    </div>
+
+    <p class="score-line" id="s4-score"></p>

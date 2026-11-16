@@ -1,0 +1,41 @@
+<div class="stage">
+      <canvas id="s3-canvas" height="320"></canvas>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="s3probeLab"></span> <span class="val" id="s3-t-val">t = 0 s</span></span>
+        <input type="range" id="s3-probe" min="0" max="7" step="0.25" value="0">
+      </label>
+    </div>
+    <p class="readout" id="s3-readout"></p>
+    <div class="btn-row">
+      <span class="row-label" data-i18n="s3segLab"></span>
+      <button class="btn big" id="s3-seg1" data-i18n="s3seg1"></button>
+      <button class="btn big" id="s3-seg2" data-i18n="s3seg2"></button>
+      <button class="btn big" id="s3-seg3" data-i18n="s3seg3"></button>
+    </div>
+    <p class="readout" id="s3-area1"></p>
+    <p class="readout" id="s3-area2"></p>
+    <div class="quiz-block">
+      <p class="quiz-q-title" data-i18n="s3qLab"></p>
+      <div class="seg-q-row">
+        <span class="seg-q-name" data-i18n="s3qSeg1"></span>
+        <button class="btn" data-q="0" data-v="acc" data-i18n="optAcc"></button>
+        <button class="btn" data-q="0" data-v="uni" data-i18n="optUni"></button>
+        <button class="btn" data-q="0" data-v="dec" data-i18n="optDec"></button>
+        <span class="seg-q-fb" id="s3q-fb-0"></span>
+      </div>
+      <div class="seg-q-row">
+        <span class="seg-q-name" data-i18n="s3qSeg2"></span>
+        <button class="btn" data-q="1" data-v="acc" data-i18n="optAcc"></button>
+        <button class="btn" data-q="1" data-v="uni" data-i18n="optUni"></button>
+        <button class="btn" data-q="1" data-v="dec" data-i18n="optDec"></button>
+        <span class="seg-q-fb" id="s3q-fb-1"></span>
+      </div>
+      <div class="seg-q-row">
+        <span class="seg-q-name" data-i18n="s3qSeg3"></span>
+        <button class="btn" data-q="2" data-v="acc" data-i18n="optAcc"></button>
+        <button class="btn" data-q="2" data-v="uni" data-i18n="optUni"></button>
+        <button class="btn" data-q="2" data-v="dec" data-i18n="optDec"></button>
+        <span class="seg-q-fb" id="s3q-fb-2"></span>
+      </div>
+    </div>
