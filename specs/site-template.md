@@ -278,8 +278,9 @@ hand-written text is not their zh string (the runtime replaces it; readers witho
   table does not hold them), as before conversion.
 - **Step-0 pill at load (D1 for batch B).** These lessons do not load `lesson-shell.js`, so its first-step default
   (86e430f0) does not reach them. On the hand-written pages the deferred site-nav.js mounted the breadcrumb late, step 0
-  sat inside the scroll spy's band for the first observation, and pill 0 was lit at load on most window sizes (102 of
-  480 zh runs at 1280×800/950 and 390×844 lit it live-style and not in the build). `site-nav.js` now does the same as
+  sat inside the scroll spy's band for the first observation, and pill 0 was lit at load on some window sizes (in 102
+  of 640 runs, 160 pages × zh 1280×800, 1280×950, 390×844 and en 1280×800, the hand-written copy lit it and the build
+  did not; 336 runs lit nothing on either, 201 lit it on both, 1 lit it only on the build). `site-nav.js` now does the same as
   lesson-shell.js on `html[data-template="lesson"]` without a `lesson-shell.js` script: on a plain navigation at
   scroll 0 with no `#fragment` and nothing lit, it lights the first `.step-nav` link. Some of these pages have no
   working spy (nothing is ever lit live); there it withdraws the default once step 0 is out of the upper 40 % of the
@@ -797,6 +798,52 @@ passed (4516 checks). The full build failed only the CJK-in-`index.html` check o
   a rendered change for no-JS readers, so it is a separate commit by the page owner. frequency-response links to
   `../../../atlas/?trail=…`, which the raw-link check reports as not a live page (resolveHref ignores query strings).
 
+**Phase 3 batch B: lessons without lesson-shell (2026-11-16, committed, not pushed or deployed until reviewed).**
+- **Reader fixes first** (authored, one commit per page; evidence note
+  `specs/reviews/lesson-string-table-fixes-20261116.md` ffe4585a/df2524f1 for the Codex pages): the six tables that
+  defined a `sNbridge` key twice, the second time in English, so zh readers saw English and en lacked the key
+  (trigonometry 3a6596f3, parabola 1ae8d66f, circle-angles dcca0529, lever-pulley 1d15fdbe, pinhole-camera a2f3ce49,
+  reflection-refraction cee87945); phonemes `next4` a253b912 and coordinate-plane `reset` 106ef3e8 (buttons read
+  the raw key). Labels of the three labelled pages repointed in df2524f1 (old value to `previousSourceRevision`).
+  particles-states 2a57bec4 turns its one live runtime auto-link (en step 4 “Molecules & Atoms”) into a real link
+  in both languages (registry rebuilt in d9bebc9f; it was left out of 2a57bec4, so `build-registry --check` fails
+  at that one commit).
+- **Converter** 6f70a65a (authored; tests/site-template.cjs 216 -> 234 checks, the four new variant fixtures fail
+  on the old converter): `<html lang="…">` kept literally in `layout.html`; a keyed `<h2>` wrapped inside a step's
+  partial (`h2part=1`); `page.json` `runtimeKeys` for markup keys a shell table supplies (`stepWord` from a shared
+  `COMMON` table); `placeholderRepeats` (format in §3c). bayes-diagnostics' `tests/static.cjs` skips `site.*` keys
+  (c6dc52dc).
+- **Chrome:** these pages centre steps with their own rules, so the generated linked-from block rendered flush left.
+  `site-nav.css` c2905d2b centres and colours it on lessons that do not load `lesson-shell.css` (the commit message's
+  “128 of 160 pages” is loose: the first measurement found 272 of 336 measurements off, 112 pages with a block × 3
+  widths); include key `sn-20261116c` on all 249 pages in its own mechanical commit d150036e. Step-0 pill (D1):
+  67a0a991 (§3c). trigonometry's lesson-shell includes moved to `?v=20261116` in 009c48b3 (aeeae125 pattern).
+- **Conversions:** 160 pages, one mechanical commit each (`Built-By: script (deterministic, no model:
+  scripts/convert-essay.cjs)`, one `Derived-From:` per new file), from z-transform 57575cb0 to fractions e4ecbf56
+  (`git log --grep 'Phase 3 batch B'`). Labelled authors: Codex 12, Claude Code 4, unlabelled 144. Each
+  round-tripped at its parent (index.html byte-identical, both tables equal key for key, runtime identical), then
+  `version` 20261116a and the full build; a commit also carries the regenerated registry files and the linked-from
+  rows of other template pages it links to (their `version` gets one letter only when it still equals origin/main's).
+  Before the real run, the whole sequence was rehearsed in a clone (all 160 ALL DONE). `content.zh.md` inherits the
+  original author (checked with `scripts/authorship.cjs` on dna-replication, attention-mechanism, complex-numbers,
+  particles-states).
+- **Links:** live `SiteNav.report()` on the 161 candidates, zh and en: one runtime link (particles-states, fixed
+  above), so no other `[[ref]]` was needed; `--all --check` reports 0 lint lines (199 pages).
+- **Checked:** the 15 converted pages with node tests pass on the full build except interference phase-core and
+  standing-wave boundary-core, which fail on HEAD too (they `git show` pre-move paths). Browser tests on the repo:
+  complex-numbers keyboard, trigonometry tangent, lens focus, reflection snell, interference phase, standing-wave
+  boundary and phase pass; pinhole-camera geometry-browser times out on the atlas page's hidden `pinhole-ratio`
+  button on the pre-conversion copy too. tests/lesson-shell.cjs, site-nav-browser (384), page-provenance-browser
+  (272), home-concept-search (31). Playwright on all 160 (HEAD copy vs build): breadcrumb count, aria-label, `lang`,
+  h1, page errors equal in all 640 runs; lit pills as above, and after the D1 change equal after scrolling to step 3,
+  a reload there and a `#step2` deep link on 159 pages, never more than one lit. Canvas sweep not run: the
+  conversion does not touch app.js or any canvas.
+- **Open:** at 390/320, 44 pages put their steps at a 12 px gutter and the linked-from block at 16 px (4 px off);
+  lever-pulley's `#step2`/`#step3` deep links land 100–700 px short on the build in repeated runs (fragment scroll races its three.js
+  module; the spy then lights step 2); pre-existing overflow unchanged (rsa-encryption at 390, fractions at 320);
+  16 `stale:` warnings (hand-written text in `figures/`, page owners' call); integral and frequency-response link to
+  `atlas/?trail=…` (reported as not a live page).
+
 ## 11. Authorship
 
 - Conversion commits use `Derived-From:` (AUTHORSHIP.md §4) so `content.<lang>.md` inherits the history of
@@ -814,18 +861,15 @@ passed (4516 checks). The full build failed only the CJK-in-`index.html` check o
     hand-written page would need site-nav.js to show them;
   - the 335 pairs in `specs/atlas-edge-todo.md` need a human (or an agent with sources) to write edges where a
     reason holds.
-- **Phase 3:** batch A (the lesson-shell lessons) is done (§10). Left: trigonometry after its table fix,
-  power-converters (no table), and the other lessons, which use `i18n.js` without lesson-shell and differ more in
-  header and step markup; each new shape is a converter extension proved on its own page before a batch.
-  Dry run of `convert-essay.cjs` at 8a781839 over the 164 unconverted lessons with an `i18n.js` (HEAD copy, nothing
-  committed): 38 round-trip byte for byte as they are. Of the rest:
-  - 79 stop at `<html lang="en">` (the page's no-JS language): one `legacyLayout` field;
-  - 16 have a step whose heading is not a keyed `<h2>`;
-  - 21 name a key the table lacks (`stepWord` in 19: written by a shared runtime, so it needs a declared
-    runtime-key list; phonemes `next4` and coordinate-plane `reset` are real gaps);
-  - 6 have zh-only `sNbridge` keys like trigonometry (parabola, circle-angles, lever-pulley, pinhole-camera,
-    reflection-refraction, trigonometry): table fixes by the owners first;
-  - 2 have no `STR` table, 1 has `<noscript>` in `<main>`, 1 has a placeholder mismatch (fractions `s5roImp`).
+- **Phase 3:** batch A and batch B are done (§10): 177 lessons are template pages. Left, each needing its own
+  change first:
+  - biology/cells/photosynthesis (`<noscript>` inside `<main>`; its tests also rewrite `tests/evidence`);
+  - chemistry/solutions/acid-base-equilibrium and earth/astronomy/kepler-orbits (no `STR` table: strings live in
+    the runtime);
+  - probability/inference/bayes-diagnostics (converts, but its runtime does not apply `data-i18n-html`, so the
+    generated linked-from rows would stay Chinese for English readers; its step ids are not `stepN` and its links
+    are unstyled);
+  - power-converters (no `i18n.js`) and everything under `variants/`.
 - **Later:**
   - the unbound-digit lint;
   - static `/en/` twins;

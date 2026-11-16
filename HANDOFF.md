@@ -166,6 +166,14 @@
    - **遗留：** 页面上已有的手写旧文字（eigenvectors 23 处等）留着，清掉会改变无 JS 时的显示，应单独提交；大多数课程的运行时不翻译 `data-i18n-aria`，静态面包屑的 HTML 因此不带 aria-label（评审后由 site-nav.js 按语言补上，见下）；frequency-response 指向 atlas 带查询串的链接被报为「不是线上页面」（只是警告）。其余约 164 个课程页还没转换（试转结果和估算见规范 §12）。
    - **独立评审（2026-11-16，specs/reviews/site-template-phase3a-review-20261116.md）：结论是修完可以部署。** 17 页在 HEAD 上逐字节往返、字符串表逐键相等。修了三处读者会觉得变差的地方：载入时第 0 步按钮不再亮（原因是线上 site-nav.js 晚挂面包屑造成的竞态，`86e430f0` 在 lesson-shell.js 里补了默认值）；步骤里 `figures/` 片段中的链接没有算到该步（`12bc4310`，重建 `afc4d75e`，11 页 version 升到 20261116b）；14 页面包屑没有无障碍名称（`7d9e15fb`，site-nav.js 补上）。lesson-shell.css/js 的缓存键改为 `?v=20261116`（`aeeae125`）。评审中曾误删四个课程目录的工作区文件，已从 HEAD 恢复，没有进任何提交（见评审文件）。页面作者要处理的旧问题列在评审文件第 8 节。
 
+1e. **Phase 3 批次 B（不带 lesson-shell 的课程页）：2026-11-16 提交，未推送、未部署，等独立评审**（规范 specs/site-template.md §3c「Batch B shapes」、§10「Phase 3 batch B」）。
+   - **先修读者看得到的错（authored，每页一个提交）：** 六页 zh 表把 `sNbridge` 写了两次、后一行是英文（trigonometry、parabola、circle-angles、lever-pulley、pinhole-camera、reflection-refraction）；phonemes 缺 `next4`、coordinate-plane 缺 `reset`（按钮显示键名）。Codex 页面的证据记录在 specs/reviews/lesson-string-table-fixes-20261116.md，三个有标签的页面在 `df2524f1` 重指。particles-states 英文第 4 步唯一一处运行时自动链接改成真链接（`2a57bec4`，登记表重建 `d9bebc9f`）。
+   - **转换器 `6f70a65a`（authored）：** 保留 `<html lang>`、包在 partial 里的步骤标题、`page.json` `runtimeKeys`、`placeholderRepeats`；tests/site-template.cjs 216 → 234 项，新夹具在旧代码上失败。
+   - **外框：** `site-nav.css` 给不加载 lesson-shell.css 的课程页居中被引用块（`c2905d2b`，include 键 `sn-20261116c` 单独在 `d150036e`）；`site-nav.js` 在这些页面上载入时点亮第 0 步（`67a0a991`，没有滚动监听的页面滚走后撤掉）；trigonometry 的 lesson-shell 缓存键 `009c48b3`。
+   - **转换：160 页**，各一个 mechanical 提交（Built-By: script），`git log --grep 'Phase 3 batch B'`；每页在父提交上逐字节往返、字符串表逐键相等，然后 version 20261116a。所有共享测试、页面 node 测试（除 HEAD 上就失败的两项）、8 个页面浏览器测试中的 7 个（pinhole-camera 的 atlas 测试在转换前就超时）通过；160 页全部做了 Playwright 对比。
+   - **没转换：** photosynthesis（`<main>` 里有 `<noscript>`）、acid-base-equilibrium 和 kepler-orbits（没有 STR 表）、bayes-diagnostics（运行时不处理 `data-i18n-html`，被引用行对英文读者会是中文）、power-converters、`variants/`。
+   - **遗留：** 390/320 宽下 44 页被引用块比步骤多缩进 4 px；lever-pulley 的 `#step2/#step3` 深链接在构建上落点偏短；c2905d2b 提交说明里的数字不准（见规范 §10）。
+
 2. **S1–S5 补示意图：2026-11-16 完成并上线**（`9fcb9fac` 内容、`b2d49a1c` 标签重指）。沿用旧格式（内联 SVG，标签来自 copy 文件），走了 构建 → 独立评审 → 登记。现在转换器可以处理这五篇了。
    - 外溢视口检查的 `e.closest('svg')` 跳过：其余 16 篇也已改为只跳过 `<defs>`（`c3cef443`，标签重指见下一个提交），全部通过，没有页面需要改版式；switches-that-compute 没有逐元素的视口检查，探测过 320 宽下不溢出。
 3. **CPU SIMD 与浮点一篇：2026-11-16 上线**。`computing/systems/how-a-cpu-does-math/`（CPU 是怎么算小数的，又怎么一次算一排），第一篇直接用 Markdown 模板写的长文，14 章、14 个模型、13 张静态示意图，中英双语（英文 Haiku 翻译），经另一个 Claude Code 会话独立评审（specs/reviews/how-a-cpu-does-math-review-20261116.md）。
