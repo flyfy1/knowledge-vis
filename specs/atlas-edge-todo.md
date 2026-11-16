@@ -1334,11 +1334,11 @@ anchor; a link to the page top has no anchor).
 
 ## 数列与求和 · 叠砖与棋盘麦粒 / Sequences & Series · Stacked Bricks and Chessboard Grains → 找规律 · 不画也能报出第 100 个 / Patterns · Name the 100th Without Drawing It
 
-- `sequences-series` → `patterns-sequences#step0`
+- `sequences-series#step5` → `patterns-sequences#step0`
 
 ## 数列与求和 · 叠砖与棋盘麦粒 / Sequences & Series · Stacked Bricks and Chessboard Grains → 指数与对数 · 翻倍与逆问 / Exponentials & Logarithms · Doubling and the Reverse Question
 
-- `sequences-series` → `exponents-logarithms#step0`
+- `sequences-series#step5` → `exponents-logarithms#step0`
 
 ## 最短路 · 从起点像洪水一样漫开 / Shortest Path · Flooding Out From the Start → 网络流 · 一封消息的旅程 / Network Flow · A Message’s Journey
 

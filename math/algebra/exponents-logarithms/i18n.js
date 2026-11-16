@@ -120,7 +120,7 @@ const STR = {
     "site.bl.6": "<a href=\"../../../economics/money/where-a-mortgage-payment-goes/\">每个月的房贷，钱到底还到哪儿去了</a>：<a href=\"../../../economics/money/where-a-mortgage-payment-goes/#ch9\">该文第 9 章</a>",
     "site.bl.7": "<a href=\"../../../investment/rates/compound-interest/\">复利与贴现 · 时间是钱的形状</a>：<a href=\"../../../investment/rates/compound-interest/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>",
     "site.bl.8": "<a href=\"../../../language/phonology/vowel-space/\">元音空间 · 用两个共振峰给元音定位</a>：<a href=\"../../../language/phonology/vowel-space/#step1\">该课第 1 步</a> → <a href=\"#step3\">本页第 3 步</a>",
-    "site.bl.9": "<a href=\"../sequences-series/\">数列与求和 · 叠砖与棋盘麦粒</a>：→ <a href=\"#step0\">本页第 0 步</a>",
+    "site.bl.9": "<a href=\"../sequences-series/\">数列与求和 · 叠砖与棋盘麦粒</a>：<a href=\"../sequences-series/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>",
     "site.bl.10": "<a href=\"../../arithmetic/place-value/\">位值与计数器 · 满十进一</a>：→ <a href=\"#step0\">本页第 0 步</a>",
     "site.bl.11": "<a href=\"../../calculus/taylor-series/\">泰勒级数 · 把曲线一项项贴上去</a>：→ <a href=\"#step1\">本页第 1 步</a>",
     "site.bl.12": "<a href=\"../../../physics/mechanics/chaos-threebody/\">混沌与三体 · 初始差一丝，结果天壤</a>：→ <a href=\"#step0\">本页第 0 步</a>"
@@ -237,7 +237,7 @@ const STR = {
     "site.bl.6": "<a href=\"../../../economics/money/where-a-mortgage-payment-goes/\">Where Does Your Mortgage Payment Actually Go?</a>: <a href=\"../../../economics/money/where-a-mortgage-payment-goes/#ch9\">its chapter 9</a>",
     "site.bl.7": "<a href=\"../../../investment/rates/compound-interest/\">Compound Interest & Discounting · Time Is the Shape of Money</a>: <a href=\"../../../investment/rates/compound-interest/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>",
     "site.bl.8": "<a href=\"../../../language/phonology/vowel-space/\">Vowel Space · Placing Vowels by Two Formants</a>: <a href=\"../../../language/phonology/vowel-space/#step1\">its step 1</a> → <a href=\"#step3\">this page step 3</a>",
-    "site.bl.9": "<a href=\"../sequences-series/\">Sequences & Series · Stacked Bricks and Chessboard Grains</a>: → <a href=\"#step0\">this page step 0</a>",
+    "site.bl.9": "<a href=\"../sequences-series/\">Sequences & Series · Stacked Bricks and Chessboard Grains</a>: <a href=\"../sequences-series/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>",
     "site.bl.10": "<a href=\"../../arithmetic/place-value/\">Place Value & the Counting Frame · Ten Makes One</a>: → <a href=\"#step0\">this page step 0</a>",
     "site.bl.11": "<a href=\"../../calculus/taylor-series/\">Taylor Series · Patch the Curve Term by Term</a>: → <a href=\"#step1\">this page step 1</a>",
     "site.bl.12": "<a href=\"../../../physics/mechanics/chaos-threebody/\">Chaos and the Three-Body Problem · Tiny Differences, Huge Outcomes</a>: → <a href=\"#step0\">this page step 0</a>"

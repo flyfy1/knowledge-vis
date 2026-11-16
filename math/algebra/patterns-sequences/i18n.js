@@ -86,7 +86,7 @@ const STR = {
     "site.crumb.cat": "数学基础",
     "site.crumb.sub": "代数与函数",
     "site.bl.title": "被这些页面引用",
-    "site.bl.1": "<a href=\"../sequences-series/\">数列与求和 · 叠砖与棋盘麦粒</a>：→ <a href=\"#step0\">本页第 0 步</a>",
+    "site.bl.1": "<a href=\"../sequences-series/\">数列与求和 · 叠砖与棋盘麦粒</a>：<a href=\"../sequences-series/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>",
     "site.bl.2": "<a href=\"../../arithmetic/chicken-rabbit/\">鸡兔同笼 · 先假设，差额会说话</a>：→ <a href=\"#step1\">本页第 1 步</a>",
     "site.bl.3": "<a href=\"../../arithmetic/intervals-fences/\">间隔与植树 · 段数和点数差一</a>：→ <a href=\"#step1\">本页第 1 步</a>"
   },
@@ -175,7 +175,7 @@ const STR = {
     "site.crumb.cat": "Mathematical Foundations",
     "site.crumb.sub": "Algebra & Functions",
     "site.bl.title": "Linked from",
-    "site.bl.1": "<a href=\"../sequences-series/\">Sequences & Series · Stacked Bricks and Chessboard Grains</a>: → <a href=\"#step0\">this page step 0</a>",
+    "site.bl.1": "<a href=\"../sequences-series/\">Sequences & Series · Stacked Bricks and Chessboard Grains</a>: <a href=\"../sequences-series/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>",
     "site.bl.2": "<a href=\"../../arithmetic/chicken-rabbit/\">Chickens & Rabbits · Assume First, Let the Gap Speak</a>: → <a href=\"#step1\">this page step 1</a>",
     "site.bl.3": "<a href=\"../../arithmetic/intervals-fences/\">Intervals & Fences · Gaps and Posts Differ by One</a>: → <a href=\"#step1\">this page step 1</a>"
   }
