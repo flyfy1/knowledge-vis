@@ -1,0 +1,21 @@
+<div class="stage">
+      <canvas id="s1-canvas" height="440"></canvas>
+    </div>
+    <div class="btn-row">
+      <span class="row-label" data-i18n="s1preLab"></span>
+      <button class="btn mode dxp" type="button" data-dx="1">Δx = 1</button>
+      <button class="btn mode dxp" type="button" data-dx="0.5">Δx = 0.5</button>
+      <button class="btn mode dxp" type="button" data-dx="0.1">Δx = 0.1</button>
+      <button class="btn mode dxp" type="button" data-dx="0.01">Δx = 0.01</button>
+      <button class="btn mode dxp" type="button" data-dx="-0.01">Δx = −0.01</button>
+      <button class="btn mode dxp" type="button" data-dx="-0.1">Δx = −0.1</button>
+      <button class="btn mode dxp" type="button" data-dx="-0.5">Δx = −0.5</button>
+      <button class="btn mode dxp" type="button" data-dx="-1">Δx = −1</button>
+    </div>
+    <div class="controls">
+      <label><span><span data-i18n="s1dxLab"></span> <span class="val" id="s1-dx-val">Δx = 1</span></span>
+        <input type="range" id="s1-dx" min="-150" max="150" step="1" value="100">
+      </label>
+    </div>
+    <p class="readout" id="s1-ro"></p>
+    <p class="readout" id="s1-ro2"></p>

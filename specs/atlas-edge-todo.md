@@ -554,11 +554,13 @@ anchor; a link to the page top has no anchor).
 
 ## 导数 · 把平均压成此刻 / The Derivative · Squeezing the Average into the Instant → 抛物线 · 投篮的弧线 / Parabolas · The Arc of a Shot
 
-- `derivative` → `parabola#step2`: ? → parabola
+- `derivative#step3` → `parabola#step2`: ? → parabola
+- `derivative#step5` → `parabola#step2`: ? → parabola
 
 ## 导数 · 把平均压成此刻 / The Derivative · Squeezing the Average into the Instant → 速度与 v-t 图 · 面积就是路 / Speed and the v–t Graph · Area Is Distance
 
-- `derivative` → `velocity-vt#step1`: ? → velocity-vt
+- `derivative#step3` → `velocity-vt#step1`: ? → velocity-vt
+- `derivative#step5` → `velocity-vt#step1`: ? → velocity-vt
 
 ## 指数与对数 · 翻倍与逆问 / Exponentials & Logarithms · Doubling and the Reverse Question → 一次函数 · 斜率是陡缓，截距是起点 / Linear Functions · Slope Is Steepness, Intercept Is the Start
 

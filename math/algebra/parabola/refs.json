@@ -16,7 +16,11 @@
    "from": "derivative",
    "links": [
     {
-     "from": null,
+     "from": "step3",
+     "to": "step2"
+    },
+    {
+     "from": "step5",
      "to": "step2"
     }
    ]

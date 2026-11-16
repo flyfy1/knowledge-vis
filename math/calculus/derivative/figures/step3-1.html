@@ -1,0 +1,19 @@
+<div class="stage">
+      <canvas id="s3-canvas" height="420"></canvas>
+    </div>
+    <div class="btn-row">
+      <button class="btn big mode active" id="s3-m1" type="button" data-i18n="s3m1"></button>
+      <button class="btn big mode" id="s3-m2" type="button" data-i18n="s3m2"></button>
+      <button class="btn big mode" id="s3-m3" type="button" data-i18n="s3m3"></button>
+    </div>
+    <div class="controls" id="s3-ctl-x">
+      <label><span><span data-i18n="s3xLab"></span> <span class="val" id="s3-x-val">x = 1.0</span></span>
+        <input type="range" id="s3-x" min="-25" max="25" step="1" value="10">
+      </label>
+    </div>
+    <div class="controls" id="s3-ctl-t" style="display:none">
+      <label><span><span data-i18n="s3tLab"></span> <span class="val" id="s3-t-val">t = 2.0 s</span></span>
+        <input type="range" id="s3-t" min="0" max="30" step="1" value="20">
+      </label>
+    </div>
+    <p class="readout" id="s3-ro"></p>
