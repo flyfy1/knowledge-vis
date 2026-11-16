@@ -844,16 +844,16 @@ anchor; a link to the page top has no anchor).
 
 ## 压强 / Pressure → 密度 / Density
 
-- `pressure` → `density#step0`
-- `pressure` → `density#step3`
+- `pressure#step2` → `density#step0`
+- `pressure#step5` → `density#step3`
 
 ## 压强 / Pressure → 杠杆与滑轮 · 支点挪一挪，省力见分晓 / Levers & Pulleys · Move the Fulcrum, Feel the Trade
 
-- `pressure` → `lever-pulley#step2`
+- `pressure#step5` → `lever-pulley#step2`
 
 ## 压强 / Pressure → 粒子与物态 · 热闹程度即温度 / Particles & States · Temperature Is How Wildly They Move
 
-- `pressure` → `particles-states#step1`: ? → particles-states
+- `pressure#step5` → `particles-states#step1`: ? → particles-states
 
 ## 共振 · 踩中节拍，小推也能荡高 / Resonance · Push in Time and a Small Force Goes a Long Way → 波的干涉 · 闹与静的图样 / Interference · A Pattern of Loud and Still
 

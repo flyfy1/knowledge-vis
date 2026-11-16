@@ -117,7 +117,7 @@ const STR = {
     "site.crumb.sub": "物质与流体",
     "site.bl.title": "被这些页面引用",
     "site.bl.1": "<a href=\"../buoyancy-archimedes/\">浮力与阿基米德</a>：<a href=\"../buoyancy-archimedes/#step5\">该课第 5 步</a> → <a href=\"#step3\">本页第 3 步</a>、<a href=\"#step4\">本页第 4 步</a>",
-    "site.bl.2": "<a href=\"../pressure/\">压强</a>：→ <a href=\"#step0\">本页第 0 步</a>、<a href=\"#step3\">本页第 3 步</a>"
+    "site.bl.2": "<a href=\"../pressure/\">压强</a>：<a href=\"../pressure/#step2\">该课第 2 步</a> → <a href=\"#step0\">本页第 0 步</a>；<a href=\"../pressure/#step5\">该课第 5 步</a> → <a href=\"#step3\">本页第 3 步</a>"
   },
   en: {
     docTitle: "Density · Same Size, Different Stuff",
@@ -235,7 +235,7 @@ const STR = {
     "site.crumb.sub": "Matter & Fluids",
     "site.bl.title": "Linked from",
     "site.bl.1": "<a href=\"../buoyancy-archimedes/\">Buoyancy & Archimedes</a>: <a href=\"../buoyancy-archimedes/#step5\">its step 5</a> → <a href=\"#step3\">this page step 3</a>, <a href=\"#step4\">this page step 4</a>",
-    "site.bl.2": "<a href=\"../pressure/\">Pressure</a>: → <a href=\"#step0\">this page step 0</a>, <a href=\"#step3\">this page step 3</a>"
+    "site.bl.2": "<a href=\"../pressure/\">Pressure</a>: <a href=\"../pressure/#step2\">its step 2</a> → <a href=\"#step0\">this page step 0</a>; <a href=\"../pressure/#step5\">its step 5</a> → <a href=\"#step3\">this page step 3</a>"
   }
 };
 let currentLang = null;

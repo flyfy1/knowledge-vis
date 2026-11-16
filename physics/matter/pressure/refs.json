@@ -1,0 +1,37 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "pressure",
+ "refs": [
+  {
+   "from": "s2e",
+   "to": "density",
+   "anchor": "step0"
+  }
+ ],
+ "backlinks": [
+  {
+   "from": "blood-circulation",
+   "links": [
+    {
+     "from": "step5",
+     "to": "step0"
+    },
+    {
+     "from": "step5",
+     "to": "step2"
+    }
+   ]
+  },
+  {
+   "from": "buoyancy-archimedes",
+   "links": [
+    {
+     "from": "step5",
+     "to": "step2"
+    }
+   ]
+  }
+ ],
+ "related": [],
+ "bindings": []
+}
