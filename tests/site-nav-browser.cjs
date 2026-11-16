@@ -152,6 +152,20 @@ async function pages(browser) {
     await tctx.close();
   }
 
+  // Template lesson whose runtime does not translate data-i18n-aria: its static breadcrumb has no aria-label in the
+  // HTML; site-nav.js names it and follows the language switch (Phase 3a review 2026-11-16).
+  for (const lang of ['zh', 'en']) {
+    const lctx = await ctxFor(browser, lang, 1280);
+    const lp = await lctx.newPage();
+    await lp.goto(BASE + 'signal/systems/convolution/');
+    await lp.waitForFunction(() => window.SiteNav && document.querySelector('nav.site-nav').hasAttribute('aria-label'));
+    eq(await lp.evaluate(() => document.querySelector('nav.site-nav').getAttribute('aria-label')), lang === 'zh' ? '页面位置' : 'Breadcrumb', `template lesson ${lang}: breadcrumb named`);
+    await lp.locator('#langToggle button[data-lang="' + (lang === 'zh' ? 'en' : 'zh') + '"]').click();
+    await lp.waitForTimeout(150);
+    eq(await lp.evaluate(() => document.querySelector('nav.site-nav').getAttribute('aria-label')), lang === 'zh' ? 'Breadcrumb' : '页面位置', `template lesson ${lang}: breadcrumb name follows the switch`);
+    await lctx.close();
+  }
+
   // Hand-written essay: auto-links before and after switching language in place. No hand-written essay mentions
   // another live title in its own copy any more, so the test adds one keyed paragraph to both copy tables; the
   // page's own applyLang re-renders it on the switch, as it would a real paragraph.

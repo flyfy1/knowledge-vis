@@ -267,8 +267,12 @@ hand-written text is not their zh string (the runtime replaces it; readers witho
 
 **Pre-fill and aria.** Every empty keyed element is pre-filled as for essays. `aria-label` is pre-filled only when the
 page's runtime (`i18n.shell.js` or `app.js`) translates `data-i18n-aria`; most lesson runtimes do not, and a Chinese
-`aria-label` would then stay Chinese in English. The static breadcrumb's `aria-label` is therefore missing on those
-pages (site-nav.js set 页面位置 / Breadcrumb at run time).
+`aria-label` would then stay Chinese in English. The static breadcrumb's `aria-label` is therefore missing from those
+pages' HTML. On the hand-written pages site-nav.js named the breadcrumb it mounted, but it skips `html[data-template]`,
+so the converted lessons first shipped with an unnamed breadcrumb landmark (14 of 17; the Phase 3a review). Since
+then site-nav.js, on a template page whose `nav.site-nav` has no `aria-label`, sets 页面位置 / Breadcrumb from
+`<html lang>` and follows it on a language switch (tests/site-nav-browser.cjs, convolution zh and en). A pre-filled
+label (runtime translates `data-i18n-aria`) is left alone.
 
 **Backlinks.** A link in a lesson is credited to its step: the linked-from row on the target reads
 `《课名》：该课第 N 步 → 本页第 M 章` / `Title: its step N → this page chapter M`, and a lesson's own linked-from block

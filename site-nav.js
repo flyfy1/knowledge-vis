@@ -74,6 +74,18 @@
   var doc = global.document;
   if (doc.documentElement && doc.documentElement.hasAttribute && doc.documentElement.hasAttribute('data-template')) {
     global.SiteNav = { skipped: 'data-template', report: function () { return []; }, page: function () { return null; }, rescan: function () {} };
+    // A lesson whose runtime does not translate data-i18n-aria gets its static breadcrumb without an aria-label
+    // (specs/site-template.md §3c). Name it here, as this file does on hand-written pages, and follow <html lang>.
+    var crumb = doc.querySelector('nav.site-nav');
+    if (crumb && !crumb.hasAttribute('aria-label')) {
+      var nameCrumb = function () {
+        var l = (doc.documentElement.getAttribute('lang') || '').toLowerCase().indexOf('en') === 0 ? 'en' : 'zh';
+        var v = l === 'en' ? 'Breadcrumb' : '页面位置';
+        if (crumb.getAttribute('aria-label') !== v) crumb.setAttribute('aria-label', v);
+      };
+      nameCrumb();
+      if (global.MutationObserver) new global.MutationObserver(nameCrumb).observe(doc.documentElement, { attributes: true, attributeFilter: ['lang'] });
+    }
     return;
   }
   var me = doc.currentScript;
