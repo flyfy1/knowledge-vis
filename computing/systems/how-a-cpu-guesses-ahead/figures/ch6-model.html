@@ -1,0 +1,14 @@
+<figure class="lab">
+    <h3 data-i18n="ch6.model.title"></h3>
+    <p class="how" data-i18n-html="ch6.model.how"></p>
+    <canvas class="cv tall" id="ilCv" role="img" data-i18n-aria="ch6.model.aria"></canvas>
+    <div class="legend"><span><i style="background:var(--cyan)"></i><span data-i18n="ch6.k.load"></span></span><span><i style="background:var(--red)"></i><span data-i18n="ch6.k.mul"></span></span><span><i style="background:var(--gold)"></i><span data-i18n="ch6.k.alu"></span></span><span><i style="background:var(--violet)"></i><span data-i18n="ch6.k.br"></span></span></div>
+    <div class="ctl"><label class="rng"><span data-i18n="ch6.ctl.w"></span><input type="range" id="ilW" min="0" max="5" step="1" value="3"><output id="ilWo"></output></label></div>
+    <div class="ctl"><div class="seg" role="radiogroup" data-i18n-aria="ch6.ctl.mode"><span class="lbl" data-i18n="ch6.ctl.mode"></span><label><input type="radio" name="ilM" value="inorder" checked><span data-i18n="ch6.mode.inorder"></span></label><label><input type="radio" name="ilM" value="ooo"><span data-i18n="ch6.mode.ooo"></span></label></div></div>
+    <div class="read">
+      <div><b class="r" id="ilIn"></b><span data-i18n-html="ch6.read.in"></span></div>
+      <div><b class="g" id="ilOo"></b><span data-i18n-html="ch6.read.oo"></span></div>
+      <div><b class="" id="ilCap"></b><span data-i18n-html="ch6.read.cap"></span></div>
+    </div>
+    <p class="say" id="ilSay" aria-live="polite"></p>
+  </figure>

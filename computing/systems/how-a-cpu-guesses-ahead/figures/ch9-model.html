@@ -1,0 +1,15 @@
+<figure class="lab">
+    <h3 data-i18n="ch9.model.title"></h3>
+    <p class="how" data-i18n-html="ch9.model.how"></p>
+    <canvas class="cv tall" id="wnCv" role="img" data-i18n-aria="ch9.model.aria"></canvas>
+    <div class="legend"><span><i style="background:var(--gold)"></i><span data-i18n="ch9.acc.1"></span></span><span><i style="background:var(--green)"></i><span>99%</span></span><span><i style="background:var(--cyan)"></i><span>95%</span></span><span><i style="background:var(--red)"></i><span>90%</span></span></div>
+    <div class="ctl"><label class="rng"><span data-i18n="ch9.ctl.rob"></span><input type="range" id="wnR" min="0" max="5" step="1" value="5"><output id="wnRo"></output></label></div>
+    <div class="ctl"><div class="seg wrapmany" role="radiogroup" data-i18n-aria="ch9.ctl.acc"><span class="lbl" data-i18n="ch9.ctl.acc"></span><label><input type="radio" name="wnA" value="1" checked><span data-i18n="ch9.acc.1"></span></label><label><input type="radio" name="wnA" value="0.99"><span>99%</span></label><label><input type="radio" name="wnA" value="0.95"><span>95%</span></label><label><input type="radio" name="wnA" value="0.9"><span>90%</span></label></div></div>
+    <div class="ctl"><div class="seg wrapmany" role="radiogroup" data-i18n-aria="ch9.ctl.miss"><span class="lbl" data-i18n="ch9.ctl.miss"></span><label><input type="radio" name="wnL" value="l3" checked><span data-i18n-html="ch7.miss.l3"></span></label><label><input type="radio" name="wnL" value="mem"><span data-i18n-html="ch7.miss.mem"></span></label></div></div>
+    <div class="read">
+      <div><b class="g" id="wnI"></b><span data-i18n-html="ch9.read.ipc"></span></div>
+      <div><b class="c" id="wnM"></b><span data-i18n-html="ch9.read.mlp"></span></div>
+      <div><b class="r" id="wnB"></b><span data-i18n-html="ch9.read.btw"></span></div>
+    </div>
+    <p class="say" id="wnSay" aria-live="polite"></p>
+  </figure>

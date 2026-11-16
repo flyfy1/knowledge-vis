@@ -1,0 +1,18 @@
+<figure class="lab">
+    <h3 data-i18n="ch7.model.title"></h3>
+    <p class="how" data-i18n-html="ch7.model.how"></p>
+    <div class="ctl"><div class="seg wrapmany" role="radiogroup" data-i18n-aria="ch7.ctl.mode"><span class="lbl" data-i18n="ch7.ctl.mode"></span><label><input type="radio" name="c7M" value="inorder"><span data-i18n="ch7.mode.inorder"></span></label><label><input type="radio" name="c7M" value="scoreboard"><span data-i18n="ch7.mode.scoreboard"></span></label><label><input type="radio" name="c7M" value="ooo" checked><span data-i18n="ch7.mode.ooo"></span></label></div></div>
+    <div class="ctl"><div class="seg" role="radiogroup" data-i18n-aria="ch7.ctl.rob"><span class="lbl" data-i18n="ch7.ctl.rob"></span><label><input type="radio" name="c7R" value="8"><span>8</span></label><label><input type="radio" name="c7R" value="16"><span>16</span></label><label><input type="radio" name="c7R" value="32" checked><span>32</span></label></div></div>
+    <div class="ctl"><div class="seg wrapmany" role="radiogroup" data-i18n-aria="ch7.ctl.miss"><span class="lbl" data-i18n="ch7.ctl.miss"></span><label><input type="radio" name="c7L" value="l2"><span data-i18n-html="ch7.miss.l2"></span></label><label><input type="radio" name="c7L" value="l3" checked><span data-i18n-html="ch7.miss.l3"></span></label><label><input type="radio" name="c7L" value="mem"><span data-i18n-html="ch7.miss.mem"></span></label></div></div>
+    <div class="ctl"><button type="button" class="b" id="c7Step" data-i18n="ch7.btn.step"></button><button type="button" class="b" id="c7Ten" data-i18n="ch7.btn.ten"></button><button type="button" class="b" id="c7Run" data-i18n="ch7.btn.run"></button><button type="button" class="b" id="c7Reset" data-i18n="ch7.btn.reset"></button></div>
+    <div class="ratv" id="c7Rat" role="list" data-i18n-aria="ch7.rat.aria"></div>
+    <div class="robv" id="c7Rob" role="list" data-i18n-aria="ch7.rob.aria"></div>
+    <div class="read">
+      <div><b class="g" id="c7C"></b><span data-i18n-html="ch7.read.cyc"></span></div>
+      <div><b class="n" id="c7Com"></b><span data-i18n-html="ch7.read.com"></span></div>
+      <div><b class="c" id="c7Fly"></b><span data-i18n-html="ch7.read.fly"></span></div>
+      <div><b class="" id="c7Tot"></b><span data-i18n-html="ch7.read.total"></span></div>
+    </div>
+    <p class="step" id="c7Totals"></p>
+    <p class="say" id="c7Say" aria-live="polite"></p>
+  </figure>

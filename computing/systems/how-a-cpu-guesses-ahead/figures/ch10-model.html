@@ -1,0 +1,16 @@
+<figure class="lab">
+    <h3 data-i18n="ch10.model.title"></h3>
+    <p class="how" data-i18n-html="ch10.model.how"></p>
+    <canvas class="cv" id="spCv" role="img" data-i18n-aria="ch10.model.aria"></canvas>
+    <div class="ctl"><div class="seg wrapmany" role="radiogroup" data-i18n-aria="ch10.ctl.mit"><span class="lbl" data-i18n="ch10.ctl.mit"></span><label><input type="radio" name="spM" value="none" checked><span data-i18n="ch10.mit.none"></span></label><label><input type="radio" name="spM" value="lfence"><span data-i18n="ch10.mit.lfence"></span></label><label><input type="radio" name="spM" value="mask"><span data-i18n="ch10.mit.mask"></span></label></div></div>
+    <div class="ctl"><label class="rng"><span data-i18n="ch10.ctl.train"></span><input type="range" id="spT" min="0" max="8" step="1" value="6"><output id="spTo"></output></label></div>
+    <div class="ctl"><label class="rng"><span data-i18n="ch10.ctl.noise"></span><input type="range" id="spN" min="0" max="6" step="1" value="2"><output id="spNo"></output></label></div>
+    <div class="ctl"><button type="button" class="b" id="spOne" data-i18n="ch10.btn.one"></button><button type="button" class="b" id="spAll" data-i18n="ch10.btn.all"></button><button type="button" class="b" id="spReset" data-i18n="ch10.btn.reset"></button></div>
+    <div class="read">
+      <div><b class="g" id="spGot"></b><span data-i18n-html="ch10.read.got"></span></div>
+      <div><b class="r" id="spStr"></b><span data-i18n-html="ch10.read.str"></span></div>
+      <div><b class="c" id="spWin"></b><span data-i18n-html="ch10.read.win"></span></div>
+      <div><b class="" id="spCost"></b><span data-i18n-html="ch10.read.cost"></span></div>
+    </div>
+    <p class="say" id="spSay" aria-live="polite"></p>
+  </figure>

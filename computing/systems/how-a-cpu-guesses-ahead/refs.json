@@ -1,0 +1,83 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "how-a-cpu-guesses-ahead",
+ "refs": [],
+ "backlinks": [
+  {
+   "from": "how-a-cpu-runs-a-program",
+   "links": [
+    {
+     "from": "ch6",
+     "to": "ch6"
+    },
+    {
+     "from": "ch8",
+     "to": "ch2"
+    },
+    {
+     "from": "ch12",
+     "to": null
+    }
+   ]
+  },
+  {
+   "from": "how-a-gpu-computes",
+   "links": [
+    {
+     "from": "ch1",
+     "to": "ch9"
+    },
+    {
+     "from": "ch12",
+     "to": null
+    }
+   ]
+  },
+  {
+   "from": "how-cores-share-memory",
+   "links": [
+    {
+     "from": "ch11",
+     "to": "ch8"
+    },
+    {
+     "from": "ch12",
+     "to": null
+    }
+   ]
+  },
+  {
+   "from": "how-power-reaches-the-cpu",
+   "links": [
+    {
+     "from": "ch2",
+     "to": null
+    }
+   ]
+  },
+  {
+   "from": "how-the-os-talks-to-hardware",
+   "links": [
+    {
+     "from": "ch1",
+     "to": "ch10"
+    }
+   ]
+  },
+  {
+   "from": "how-virtual-memory-works",
+   "links": [
+    {
+     "from": "ch10",
+     "to": "ch10"
+    },
+    {
+     "from": "ch13",
+     "to": null
+    }
+   ]
+  }
+ ],
+ "related": [],
+ "bindings": []
+}

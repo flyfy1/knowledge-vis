@@ -1,0 +1,640 @@
+---
+lang: en
+title: How a CPU Guesses Ahead · an essay you can play with
+desc: A branch takes a dozen cycles to resolve, and a CPU does not wait: it guesses, gains when right and starts over when wrong. How does it guess so well? Why can one CPU have hundreds of instructions in flight? And why does the guessing leak secrets? Ten models: 1-bit and 2-bit counters, the sorted array, gshare, TAGE, the return stack, superscalar issue, renaming and the reorder buffer, window size, and a toy machine for Spectre.
+---
+
+::: strings
+nav.back: ← Knowledge Index
+nav.lang: Language
+toc.label: Contents
+toc.title: Contents
+u.pct: {v}%
+u.cyc: {v} cycles
+u.x: {v}×
+u.none: —
+u.kbit: {v} Kbit
+:::
+
+# How a CPU Guesses Ahead {#hero}
+
+::: strings
+kicker: Computer science · Systems · an essay you can play with
+:::
+
+A branch takes a dozen cycles to say where it goes, and the CPU does not wait:<br>it guesses, gains when right, and starts over when wrong. {.sub}
+
+So there are three questions. How does it guess so well? Why can one CPU keep hundreds of instructions “in flight”? And why does this guessing leak secrets? We start with what a wrong guess costs, then build the predictors (remember the last outcome, look at the neighbours, look at histories of several lengths), the target buffer and the return stack. Then the core issues several instructions a cycle, runs them out of order, and commits them in order. Last, we see how large the window can grow, and how traces left on a wrong path can be read back. **Every predictor is an algorithm from the literature, run branch by branch on a sequence the page generates; the core is a small simulator that runs cycle by cycle, so you can step through it.** {.lead}
+
+An AI wrote this page. Figures for real processors come from vendor documentation (AMD’s Zen 5 optimisation guide) and public measurements (Chips and Cheese), each dated where it appears. **Where a value is marked “tuned parameter”, it was chosen so the model can compute, and the text says how the conclusions change if you alter it.** The chapter on Spectre uses only a toy machine on the page. **It contains no attack code that runs on a real computer.** This page explains mechanisms only, and does not rate which chip is worth buying. {.note}
+
+## Why a wrong guess costs more {#ch1}
+
+::: strings
+toc: Why a wrong guess costs more
+:::
+
+The deeper the pipeline and the more the core issues per cycle, the more work a wrong guess throws away. Misprediction cost = how often branches occur × how often they are wrong × cycles lost each time. That term adds directly to the average cycles each instruction takes. {.law}
+
+You reach a fork in the road, and the satnav is still calculating. You do not stop in the middle of the road to wait for it; you pick a lane and keep driving. If you pick right, you lose nothing. If you pick wrong, you have to turn back. <a href='../how-a-cpu-runs-a-program/#ch8'>Chapter 8 of “How a CPU Runs a Program”</a> covered this on a five-stage pipeline: a branch only learns whether it is taken in the third stage. Guessing “not taken” and being wrong flushes the two instructions already fetched behind it, and costs {a1Pen} cycles. This essay picks up from there.
+
+Today’s core is not five stages, and it does not issue one instruction per cycle. AMD’s Zen 5 optimisation guide says that a cycle sends at most {zW} instructions (macro-ops) to execution, and that the branch misprediction penalty is between {zPenMin} and {zPenMax} cycles, most often {zPen}. So one wrong guess wastes at most {zPen} × {zW} = {zSlots} instruction slots. Put that into the performance equation from <a href='../how-a-cpu-runs-a-program/#ch9'>chapter 9 of that essay</a>: cycles per instruction CPI = 1/width + branch fraction × misprediction rate × penalty. The branch fraction here is one branch per {fbrN} instructions. This is a **tuned parameter**, chosen only to show the right order of magnitude.
+
+::: lab ch1-model
+model.title: Cost of one wrong guess: the same accuracy on different cores
+model.how: Drag width, penalty and accuracy to see how much of the time goes on wrong guesses. The two buttons set the core to the five-stage pipeline from that essay (width 1, penalty {a1Pen} cycles) or to the Zen 5 range (width {zW}, penalty {zPen} cycles). On the chart, the horizontal axis is accuracy. The gold curve is the core you set, and the grey curve is the five-stage pipeline.
+model.aria: Line chart: the horizontal axis is prediction accuracy and the vertical axis is the share of time lost to wrong guesses; two curves, one for the current core and one for the five-stage pipeline
+cv.you: Current core
+cv.a1: Five-stage pipeline
+ctl.w: Instructions issued per cycle
+ctl.p: Misprediction penalty
+ctl.a: Accuracy
+btn.a1: Five-stage pipeline
+btn.zen: Zen 5 range
+read.cpi: Average cycles per instruction (CPI)
+read.ipc: Instructions completed per cycle (IPC)
+read.lost: Time spent on wrong guesses
+read.slots: Instruction slots wasted by one wrong guess
+cv.x: Accuracy
+cv.y: Time lost to wrong guesses
+say.cheap: At accuracy {acc}, wrong guesses take only {lost} of the time. This core is narrow and the penalty is small, so a wrong guess does not hurt much.
+say.mid: At accuracy {acc}, {lost} of the time goes on wrong guesses, and the core completes only {ipc} instructions a cycle, short of the ideal {w}.
+say.dear: At accuracy {acc}, *more than half the time ({lost}) goes on wrong guesses*: the core completes only {ipc} instructions a cycle. A wide, deep core needs accuracy above 99% before it pays.
+:::
+
+At the same 95% accuracy, the five-stage pipeline loses only {a1Lost} of its time. On a core in the Zen 5 range, the loss is {z95Lost}, and the core completes only {z95Ipc} instructions a cycle instead of {zW}. At 90% accuracy the loss is {z90Lost}; at 99% it is still {z99Lost}, at {z99Ipc} instructions a cycle. Put another way, 99% means one wrong guess per {per99} instructions on average, and 95% means one per {per95}. **The wider and deeper the core, the more accurate the predictor must be.** That is why modern processors spend so many transistors on prediction.
+
+The branch fraction in the model is a tuned parameter. At one branch per {fbr10} instructions, the loss at 95% accuracy is {zf1Lost}; at one per {fbr3} it is {zf3Lost}. The direction of the conclusion does not change. “1/width” is the ideal value, and real programs do not reach it, because of data dependences and cache misses (chapters 6 and 9). For what the pipeline does while memory stalls, see <a href='../why-compute-waits-for-memory/#ch1'>chapter 1 of “Why Compute Waits for Memory”</a>. {.take}
+
+## Remember the last time: 1-bit and 2-bit counters {#ch2}
+
+::: strings
+toc: Remember the last time: 1-bit and 2-bit counters
+:::
+
+Most branches have their own habits. A loop’s closing branch, which jumps back, almost always jumps; a check for an error almost never does. Store two bits for each branch, remembering its recent habit, and you guess right most of the time. {.law}
+
+The simplest way to choose a route to work is “whatever I took yesterday, I take today”. The earliest dynamic branch predictors did exactly that. They used a few low bits of the branch’s address to index a table, and the table recorded whether that branch was taken last time (a **1-bit predictor**). There are also **static** rules that consult no table: always guess not taken (chapter 8 of that essay), or “backward branches are taken, forward branches are not”, because a backward branch is usually the bottom of a loop.
+
+The 1-bit predictor has a flaw at loop exits. On the last pass the branch is not taken, and that is recorded as “not taken”. The next time the loop starts, its first pass is mispredicted, so each exit is wrong twice. In 1981 James Smith proposed the change to a **2-bit saturating counter**: four states, 0 to 3. States 2 and 3 predict taken. A taken outcome adds one, a not-taken outcome subtracts one, and the counter stops at the ends. It takes two wrong outcomes in a row to change its mind, so an occasional exception does not lead it astray.
+
+::: diagram dg-fsm keys=dg.fsm
+cap: A 2-bit saturating counter. Each branch has one of these in the table. Arrows marked T are taken outcomes and move one step towards state 3; arrows marked NT are not-taken outcomes and move one step towards state 0; the counter stops at the ends. States 3 and 2 predict “taken”, states 1 and 0 predict “not taken”. Schematic.
+aria: State diagram of a 2-bit saturating counter: four states; a taken outcome (T) moves towards state 3, a not-taken outcome (NT) towards state 0; states 2 and 3 predict taken
+s0: Strongly not taken
+s1: Weakly not taken
+s2: Weakly taken
+s3: Strongly taken
+t: T
+n: NT
+pn: Predict: not taken
+pt: Predict: taken
+:::
+
+::: lab ch2-model
+model.title: Four ways to guess, one loop
+model.how: A two-level loop: the inner loop runs K times, and inside it an if skips a block of code with probability p. Drag K and p to see how many each of the four guessing methods gets right. Choose one method and the grid below draws its guesses for the first {strip} branches (green is right, red is wrong; the number in each cell is the 2-bit counter’s state before the guess).
+ctl.k: Inner loop count K
+ctl.p: Probability p that the if is taken
+ctl.kind: Which method to draw
+kind.nt: Always not taken
+kind.btfn: Backward taken
+kind.1bit: 1-bit
+kind.2bit: 2-bit
+model.aria: Grid: a predictor’s guesses for the first few dozen branches, green for right and red for wrong
+strip.fwd: if branch
+strip.inner: inner backward
+strip.outer: outer backward
+read.nt: Always not taken
+read.btfn: Backward taken
+read.1bit: 1-bit
+read.2bit: 2-bit
+:::
+
+With the default K = 4 and p = 0.9: always not taken is right {snacc}, backward taken {sbacc}, 1-bit {s1acc}, 2-bit {s2acc}. Look at the inner backward branch: the 1-bit predictor is wrong {s1in} times and the 2-bit predictor {s2in}, which matches “two misses per exit” and “one miss per exit”. Now the if: backward taken is wrong {sbfw} times, because it is a forward branch that is often taken. The 1-bit predictor is wrong {s1fw} times and the 2-bit {s2fw}; the 2-bit counter is not thrown off by one occasional not-taken outcome.
+
+Guessing from habit has a famous weak spot: data with no pattern. On 27 June 2012 someone asked on Stack Overflow why the same loop ran so much faster when its array was sorted first. The code summed the {soN} random numbers between 0 and 255 that passed an <code>if (data[c] >= 128) sum += data[c];</code> test. Unsorted, it took {soSlow} seconds; sorted, {soFast}; roughly {soMeas} times faster.
+
+::: lab ch2-lab
+model2.title: Why a sorted array is faster
+model2.how: {soN} random numbers between 0 and 255 (fixed seed), sorted, and then some of the positions are shuffled. Drag “how much is shuffled” to see how often the 2-bit counter gets the if branch wrong, and how many cycles each element takes by the algorithm from chapter 1 (width {soW}, penalty {zPen} cycles). Tick “no branch” to use a conditional-select form instead ({blN} instructions, with no branch to get wrong).
+model2.aria: Line chart: the horizontal axis is the share of the array that is shuffled, the vertical axis is the if branch’s misprediction rate; the current share is marked with a dot
+ctl.dis: How much is shuffled
+ctl.bl: No branch (conditional select)
+read.miss: If branch misprediction rate
+read.cyc: Cycles per element
+read.vs: Slower than sorted
+strip.none: ·
+say.nt: “Always not taken” is right only {acc} of the time. The loop’s backward branches are almost always taken, so it gets all of them wrong.
+say.btfn: “Backward taken” is right {acc} of the time. The loop is perfect, but the if is a forward branch that is often taken (p = {p}), so it is wrong almost every time.
+say.btfnok: “Backward taken” is right {acc} of the time. When the if is mostly not taken, guessing not taken for a forward branch is exactly right.
+say.1bit: The 1-bit predictor is right {acc} of the time. It gets the inner backward branch wrong {inner} times: each loop exit is wrong twice, once at the exit and once on the first pass of the next run.
+say.2bit: The 2-bit predictor is right {acc} of the time. The inner backward branch is wrong only {inner} times (once per exit), and the if is wrong {fwd} times, close to its own randomness.
+cv.x: Share shuffled
+cv.y: Misprediction rate
+say.sorted: When sorted, the first half is all taken and the second half all not taken. The 2-bit counter is wrong only {miss} times, at the start and where the outcome switches.
+say.some: With {dis} shuffled, the misprediction rate is {rate} and each element takes {cyc}: each shuffled value costs the counter one or two wrong guesses.
+say.random: With {dis} shuffled, the misprediction rate is {rate}, close to one half: *random data has no pattern to learn*, and each element takes {cyc} on average.
+say.bl: With no branch, each element takes a fixed {cyc}, whatever the order of the data. It executes a few more instructions, and in return there is no branch left to get wrong.
+:::
+
+In the model, the misprediction rate is {suRate} unsorted, and once sorted the {soN} elements produce only {soMiss} wrong guesses in total. By the chapter 1 algorithm, each element drops from {suCyc} cycles to {soCyc}, about {soX} times faster, the same order as the factor the questioner measured. If only 5% of the positions are shuffled, the misprediction rate is back down to {s5Rate}. The conditional-select form takes {blCyc} cycles per element: a little slower than sorted data, but it does not care about order. Today’s compilers often rewrite this loop into a branch-free or vectorised form themselves, so both arrays run at the same speed; later discussions of the question pointed this out.
+
+The “cycles” here come from the chapter 1 formula, not from measurement; the four-instruction loop and the width of 4 are simplifications. Real predictors are much stronger than a 2-bit counter (chapters 3 and 4), but with random data nobody can guess well. Chapter 4 gives the strongest one a try too. {.take}
+
+## Look at other branches: global history and gshare {#ch3}
+
+::: strings
+toc: Look at other branches: global history and gshare
+:::
+
+Which way a branch goes often depends on the outcomes of the branches just before it. String the results of the last few branches into a sequence, combine it with the address, and use that to index a table. The predictor can then learn “if it went like that before, it goes like this here”. {.law}
+
+Weather works the same way. Knowing only whether it rained today tells you little about tomorrow; add whether it rained yesterday and the day before, and you do much better. Hennessy and Patterson’s textbook has a fragment from the SPEC benchmark eqntott that makes the point:
+
+::: html ch3-html
+code.aria: Example code with three correlated branches
+code: "if (aa == 2) aa = 0;     // branch 1\nif (bb == 2) bb = 0;     // branch 2\nif (aa != bb) { ... }    // branch 3"
+:::
+
+If aa and bb are each 1 or 2, then when the first two branches go the same way, the third is certainly taken (it skips the block), and when they differ, it is certainly not taken. Seen alone, the third branch is a coin toss, and a 2-bit counter cannot predict it. Yet it is entirely determined by the first two. The fix is a **global history register** that records whether each of the last h branches was taken (one bit per branch), and uses that history when indexing the table. Yeh and Patt proposed this two-level scheme in 1991. In 1993 Scott McFarling gave a cheaper version, **gshare**: XOR the history with the branch address to get the table index.
+
+::: diagram dg-gs keys=dg.gs
+cap: gshare: the low n bits of the branch address are XORed with the last h branch outcomes (1 = taken), and the result indexes a table of 2-bit counters. The same branch lands on different counters under different histories. Bit widths are illustrative.
+aria: gshare schematic: the low bits of the branch address are XORed with the global history to give an index into the counter table
+pc: Branch address (low bits)
+ghr: Global history (last few outcomes, 1 = taken)
+xor: XOR
+idx: Index
+table: 2-bit counters
+pred: Predict: taken
+upd: After the outcome: count up or down, shift the history left and add this outcome
+:::
+
+::: lab ch3-model
+model.title: How much history: gshare against the branch alone
+model.how: Choose a branch sequence and a table size, then drag the history length h. The grey line is the 2-bit counter that looks only at its own branch. The gold line is gshare’s accuracy at each h, and the dot marks the current h. At h = 0, gshare is just a 2-bit counter.
+model.aria: Line chart: the horizontal axis is history length and the vertical axis is accuracy; gold line for gshare, grey line for the 2-bit counter that looks only at its own branch
+ctl.trace: Branch sequence
+tr.corr: The three branches above
+tr.loop4: A loop of 4 passes
+tr.mix: A mixed “program”
+ctl.size: Table size
+size.6: 64 entries
+size.10: 1024 entries
+ctl.h: History length h
+read.g: gshare accuracy
+read.b: Branch alone
+read.d: Difference
+cv.x: History length h
+cv.y: Accuracy
+say.h0: At h = 0, gshare falls back to the 2-bit counter that looks only at its own branch: {g}.
+say.better: At h = {h}, gshare is right {g} of the time, higher than the branch alone ({b}): it can see how the branches before it went.
+say.same: At h = {h}, gshare is right {g}, about the same as the branch alone ({b}): this stretch of history holds no new clues.
+say.worse: At h = {h}, gshare is right only {g}, *worse than the branch alone ({b})*: the same branch is spread across many table entries, each of which must learn from scratch, or it collides with another branch on one entry.
+:::
+
+On the three-branch sequence, the branch alone scores {gcBi}, and gshare reaches {gc2} with h = 2. With the loop’s backward branch there are four branches per pass. Two of them (1 and 2) are themselves random and can only be guessed half the time, while the other two can be guessed every time, so 75% is the ceiling. On the loop of 4 passes, the branch alone scores {gl0} and gshare {gl8} at h = 8, because an eight-bit history is just long enough to see how many passes have gone by in this round. Longer is not always better, though. On the mixed program with a 64-entry table, h = 6 gives {gm6}, only a little above the branch alone at {gm6b}; with 1024 entries and h = 10 it gives {gm10}. Drag h and the curve rises and falls. A longer history splits each branch’s situations into many pieces, each of which must learn from scratch, and in a small table different branches collide. This is called **aliasing**.
+
+These sequences contain only a dozen or so distinct branches. Real programs have thousands, and collisions are far more severe. gshare uses one history length: too short and it cannot see distant clues, too long and it learns slowly and collides more. The next chapter’s answer is to use several lengths at once. {.take}
+
+## TAGE: histories of several lengths {#ch4}
+
+::: strings
+toc: TAGE: histories of several lengths
+:::
+
+Some branches need only the last two outcomes; others need the last few dozen. TAGE uses several tables, each with a history of a different length, and the lengths grow geometrically. At lookup, the table whose tag matches and whose history is longest decides the prediction. {.law}
+
+Asking for directions, you first ask the person who knows this neighbourhood best. If they do not know, you ask someone who knows the general direction. If nobody knows, you go by common sense. André Seznec and Pierre Michaud published **TAGE** (TAgged GEometric history length) in 2006, and that is this structure: a base table T0 of 2-bit counters indexed by address alone, plus several **tagged** tables. Table i computes its index and tag from the last L(i) branch outcomes and the address, and L(i) grows geometrically. The small TAGE on this page has {tM} tagged tables, with history lengths from {tL1} to {tL4}.
+
+::: diagram dg-tage keys=dg.tage
+cap: The structure of TAGE. Each tagged table computes an index and a tag from the address and a stretch of history (lengths {tL1}, {tL2}, {tL3}, {tL4}). Each entry holds a 3-bit counter, a tag and a “useful” counter. Among the tables whose tag matches, the one with the longest history gives the prediction (here T3), and the next-longest match gives the alternate prediction (here T1). The lengths are those of this page’s model; table sizes are not to scale.
+aria: TAGE schematic: one base table and four tagged tables with history lengths increasing; the longest matching table gives the prediction
+t0: T0: 2-bit counter indexed by address
+ti: T{i}: history {L}
+hit: Tag matches
+miss: No match
+pick: Longest matching table wins
+entry: Entry: 3-bit counter · tag · 2-bit useful
+pc: Address + history
+:::
+
+How it learns: after a wrong guess, it looks in a table with a longer history than the one that gave the prediction, for an entry whose “useful” counter is 0, and assigns that entry to the branch. Later, if the entry guesses right where the alternative would have guessed wrong, its “useful” counter goes up, showing it is worth keeping. So simple branches stay in short-history tables, and only the branches that really need distant clues take up the long-history tables. Seznec later added a statistical corrector and a loop predictor on top (TAGE-SC-L). The winner of the fifth Branch Prediction Championship, in 2016, was a 64 KB TAGE-SC-L.
+
+::: lab ch4-model
+model.title: Three predictors with the same storage
+model.how: Choose a storage budget. The 2-bit counter and gshare use exactly that many bits; the TAGE configuration uses one-sixteenth more. On each sequence, gshare uses whichever history length suits it best. Then see how many each gets right on five branch sequences: the loop from chapter 2, the three branches from chapter 3, a long loop of 16 passes with a second branch inside, the unsorted array, and the mixed “program”. The readings below are for the mixed program.
+model.aria: Grouped bar chart: accuracy of the 2-bit counter, gshare and TAGE on five branch sequences
+p.bimodal: 2-bit counter
+p.gshare: gshare
+p.tage: TAGE
+ctl.b: Storage budget
+read.b: 2-bit counter (mixed)
+read.g: gshare (mixed)
+read.t: TAGE (mixed)
+read.bits: Storage TAGE actually uses
+tr.loop: Loop from chapter 2
+tr.corr: Three correlated branches
+tr.long: Long loop of 16 passes
+tr.unsorted: Unsorted array
+tr.mix: Mixed program
+say.tage: At budget {b}, on “{tr}” TAGE is right {t}, gshare {g}, and the 2-bit counter {bi}.
+say.other: At budget {b}, on “{tr}” TAGE is right {t}, gshare {g}, and the 2-bit counter {bi}: TAGE has no advantage here.
+say.random: On the unsorted array all three sit around {t}: the if branch is a coin toss over random numbers, *so nobody can get more than half of it right*; the rest is the loop’s backward branch.
+:::
+
+At a budget of 16 Kbit (2 KB), on the mixed program the 2-bit counter scores {cmB} and TAGE {cmT}. For gshare it depends on the history length. With the usual choice, a history as long as the index ({gsN} bits here), it gets only {cmGf}: the three correlated branches and the short loops need only the last few outcomes, and a long history spreads them thin (chapter 3). With the length that suits this program best, h = {cmGh}, it reaches {cmG}, still below TAGE. The whole remaining gap is in the loops: a history that short cannot tell which pass of a loop it is on. Run the long loop on its own (its body holds another branch, so you need to see more than thirty outcomes to know whether this round has finished) and gshare manages only {clG} even at its best h; TAGE has a table that looks back {tL4} outcomes, and it is right {clT}. **TAGE does not have to pick one length for the whole program**: each branch settles in the table whose history is long enough for it. On the three correlated branches both reach the ceiling ({ccG} and {ccT}). On the unsorted array the 2-bit counter gets {cuB} and TAGE {cuT}; neither can do better. Cutting the budget from 32 Kbit to 4 Kbit takes TAGE from {c32T} to only {c4T}, still slightly above gshare at 32 Kbit with its best history length ({c32G}). The extra sixteenth of storage TAGE uses is not the reason: doubling gshare’s budget does not improve it.
+
+This is a reduced, simplified TAGE: four tables, 8-bit tags, and no statistical corrector or loop predictor. The sequences are generated by the page and contain only a few dozen distinct branches. Vendors usually do not publish the details of real predictors. AMD’s documentation says only that it uses “global history”, so this page does not claim which chip uses TAGE. {.take}
+
+## Where to jump: the target buffer and the return stack {#ch5}
+
+::: strings
+toc: Where to jump: the target buffer and the return stack
+:::
+
+Knowing a branch is taken is not enough; the CPU must also know where it goes in the fetch cycle itself. The branch target buffer records where each taken jump went last time. Function returns rely on a small stack instead: a call pushes the return address, and a return pops it. {.law}
+
+Every cycle, the fetch unit must decide which address to fetch from next, yet at that point it does not know whether what it fetched is a branch at all, because nothing has been decoded. So it uses the current fetch address to search the **branch target buffer** (BTB): is there a branch here, and where does it go? It then asks the direction predictor whether the branch is taken. AMD’s guide says the first-level BTB has {zBtb1}K entries and the second level {zBtb2}K. There is also an indirect-target table with {zInd} entries, for jumps whose targets change (such as virtual function calls); it picks a target using the global history.
+
+::: diagram dg-btb keys=dg.btb
+cap: In the fetch cycle: the current address is looked up in the BTB (is there a branch here, and where does it go) and in the direction predictor (taken or not). If the instruction is a return, the address at the top of the return stack is used. Together they choose the next address without waiting for decode. Schematic.
+aria: Front-end schematic: the fetch address is looked up in the branch target buffer, the direction predictor and the return address stack together, and the next fetch address is chosen
+pc: Fetch address
+btb: BTB: is there a branch, and where to
+dir: Direction predictor: taken or not
+ras: Return address stack
+seq: Next sequential block
+mux: Choose next fetch address
+next: Next fetch
+push: Call: push return address
+pop: Return: pop
+:::
+
+Function returns are a special case. The same return instruction may go back to site A one time and to site B the next, depending on who called it, so the BTB’s “last destination” is often wrong. But calls and returns always pair up, last in, first out, so the processor keeps a **return address stack** (RAS). Each call pushes the address of the next instruction, and each return pops the top. When the stack is full, a new push overwrites the oldest entry, and a return that goes that deep is mispredicted.
+
+::: lab ch5-model
+model.title: How deep the return stack must be
+model.how: A chain of functions, each calling the next, nested D levels deep. At each level one of two call sites is picked at random to make the next call, and sometimes two calls are made (this call pattern is a **tuned parameter**). Drag D, choose the size of the return stack, and see the share of returns mispredicted. Compare it with a BTB that only remembers the last destination.
+model.aria: Bar chart: misprediction rate of return instructions for different return stack sizes and for the target buffer alone
+ctl.d: Maximum depth D
+ctl.s: Return stack size
+read.ras: Return stack mispredictions
+read.btb: BTB only
+read.n: Number of returns
+bar.ras: Return stack, {n} entries
+bar.btb: BTB only
+say.fits: At depth {d} with a return stack of {s} entries, *not one return is mispredicted*; a BTB that remembers only the last target gets {btb} wrong.
+say.over: At depth {d} with a return stack of only {s} entries: once calls go more than {s} levels deep, the oldest addresses are overwritten, and returns to them are wrong. In total {rate} are wrong. The BTB alone gets {btb} wrong.
+:::
+
+At a maximum depth of 24, a BTB that remembers the last target gets {rBtb} of returns wrong. A 16-entry return stack gets {r16} wrong, and 24 and 52 entries both give {r24}. At depth 32 with 24 entries it gets {r32} wrong. Real cores: Zen 5 has {zRas} return-stack entries per thread, Intel’s Lion Cove {lcRas}, and Arm’s Cortex-X925 {xRas}. Return-stack errors concentrate in the deepest part of the call tree: recursion and deep framework code hit them most.
+
+The call pattern is a tuned parameter. A real return stack also has to cope with calls and returns on a wrong path: AMD’s documentation says the processor can repair the stack in most cases, and rebuilds it when it cannot. Indirect jumps whose targets change pick their target from the history. Chapter 10 shows that this can be exploited too (Spectre variant 2). {.take}
+
+## Several per cycle: superscalar issue {#ch6}
+
+::: strings
+toc: Several per cycle: superscalar issue
+:::
+
+Issuing several instructions in a cycle only helps if they do not wait on one another. Issuing in program order, a stalled instruction holds up everything behind it. How wide a core can go depends on how many instructions that sit side by side are independent. {.law}
+
+A supermarket that opens several checkouts is much faster, but if everyone must pay in strict queue order, the checkout beside a customer searching for change sits idle. A processor that issues several instructions per cycle is called **superscalar**, and its IPC (instructions per cycle) can exceed 1. The loop below has {wBody} instructions per pass and computes the dot product of two arrays. The later chapters use it throughout:
+
+::: html ch6-html
+code.aria: RISC-V assembly of the dot-product loop, eight instructions per pass
+code: "loop: lw   t0, 0(a0)      # a[i]\n      lw   t1, 0(a1)      # b[i]\n      mul  t2, t0, t1\n      add  s0, s0, t2     # sum += a[i]\\*b[i]\n      addi a0, a0, 4\n      addi a1, a1, 4\n      addi t3, t3, -1\n      bnez t3, loop"
+:::
+
+::: lab ch6-model
+model.title: Issue slots: in order, or whichever is ready first
+model.how: Each row is one cycle and each cell is an issue slot; the colour shows the kind of instruction that slot issued (an empty cell is wasted). Drag the width and switch between “in order” and “out of order” (with a window large enough) to see the first {rows} cycles. The reading is the IPC after 64 passes. Loads ({lat} cycles) and multiplies (3 cycles) both hit in L1.
+model.aria: Issue-slot chart: one row per cycle, one cell per slot; colour shows the kind of instruction
+k.load: Load
+k.mul: Multiply
+k.alu: Add/subtract
+k.br: Branch
+ctl.w: Instructions issued per cycle
+ctl.mode: How to issue
+mode.inorder: In order
+mode.ooo: Out of order
+read.in: IPC in order
+read.oo: IPC out of order
+read.cap: Width limit
+cv.x: Issue slot
+cv.y: Cycle
+say.one: Issuing one instruction a cycle, the in-order IPC is {in}: the multiply that follows the load must wait {lat} cycles, and nothing can issue in the meantime.
+say.wide: At width {w}, in order gives only {in} and out of order {oo}: *the independent work is in the later passes*, and an in-order core cannot reach it.
+:::
+
+Issuing in order, the IPC is {i1in} with one instruction a cycle, {i4in} at width 4, and still {i8in} at width 8. Each pass’s multiply waits for its load, and the add waits for the multiply; everything behind a stall must wait, even when it is independent. Yet the program is full of work that could run at the same time: the two loads of the next pass, and the address increments, have nothing to do with this pass’s multiply. Allowing out-of-order issue (the next chapter explains how) gives an IPC of {i4oo} for the same loop at width 4, and {i8oo} at width 8. **The limit on width is the in-order rule.** Only a few of the instructions that sit side by side can run in parallel. This is often called the instruction-level parallelism (ILP) wall.
+
+The model has no limit on execution ports, all branches are guessed right, and all loads hit. The out-of-order line depends on the renaming and window covered in the next chapter. It levels off near 8 because this loop has only three chains that feed back into themselves (the sum, the address increments and the count decrement), and each advances once per pass. {.take}
+
+## Out-of-order execution: renaming, queuing, whoever is ready goes first {#ch7}
+
+::: strings
+toc: Out of order: renaming, queues, whoever is ready goes first
+:::
+
+Let instructions run when their inputs are ready, not when they come up in the list. First give each result a fresh name, which removes waits caused only by a name clash. Then place the instructions in a window, and whichever has its inputs ready goes first. {.law}
+
+A restaurant kitchen does not cook strictly in the order orders came in: whichever dish has its ingredients and a free burner goes first. Waits between instructions come in three kinds. **Read after write** (RAW) is real: the mul needs the value loaded by lw. **Write after read** (WAR) and **write after write** (WAW) are false: the next pass’s <code>lw t0</code> must wait until this pass has finished using t0 and written it, only because the two passes happen to use the same register name.
+
+::: diagram dg-ren keys=dg.ren
+cap: Before renaming, the second pass’s lw must write t0, so it waits for the first pass’s mul to read t0 (WAR) and for the first pass’s lw to write t0 (WAW). After renaming, the two writes to t0 go to two physical registers, p40 and p48, and only the real data dependences remain (solid lines). Register numbers are illustrative.
+aria: Register renaming schematic: before renaming, two passes of the loop wait on each other for t0 (WAR and WAW); after renaming, each uses its own physical register
+before: Before renaming
+after: After renaming
+it1: Pass 1
+it2: Pass 2
+raw: Read after write (true)
+war: Write after read (false)
+waw: Write after write (false)
+:::
+
+In 1967 the floating-point unit of the IBM 360/91 went out of order with a scheme designed by Robert Tomasulo. Each instruction entered a **reservation station** to wait for its operands. When a result was computed it was broadcast on a common bus, and any waiting instruction whose tag matched took it. Today’s cores mostly use another approach (the MIPS R10000 used it in the 1990s). A **rename table** maps each register the program names (t0, s0 and so on) to one of a large pool of **physical registers**, and each write gets a fresh one. Instructions wait in an **issue queue** and execute once their inputs are ready. At the same time, each takes a place in program order in the **reorder buffer** (ROB); the next chapter explains what that is for. Zen 5 has {zPrf} integer physical registers.
+
+::: diagram dg-ooo keys=dg.ooo
+cap: The main parts of an out-of-order core. In program order (gold): fetch, prediction, decode, rename, the ROB, commit. Out of order (cyan): in the issue queue, whichever instruction is ready executes. Loads and stores have their own queue (chapter 8). Schematic; parts are not to scale.
+aria: Out-of-order core block diagram: front end with prediction, then decode, rename, the reorder buffer and issue queue, execution units, write-back, and in-order commit
+fe: Fetch + branch prediction
+dec: Decode
+ren: Rename (rename table, free registers)
+rob: Reorder buffer ROB (program order)
+iq: Issue queue
+alu: Add/sub
+mul: Multiply
+ld: Load/store
+br: Branch
+prf: Physical registers
+com: Commit in order
+lsq: Load/store queue
+inord: In order
+ooo: Out of order
+redirect: Wrong guess: clear, restore, refetch
+:::
+
+::: lab ch7-model
+model.title: Step through it: the same loop on three cores
+model.how: The loop runs {stIt} passes ({stN} instructions) at width 4. Every {stEvery} passes, a[i] is in neither L1 nor L2, so there is a miss that must wait (fetched from L3 by default, {stL3} cycles, which you can change). The interval between misses is a **tuned parameter**. “Step one cycle” shows the state of every instruction in the ROB and of the rename table; “run to end” runs the whole thing. The readings below give the cycles each of the three cores needs to finish.
+ctl.mode: Core
+mode.inorder: In order
+mode.scoreboard: Out of order, no renaming
+mode.ooo: Out of order + renaming
+ctl.rob: ROB size
+ctl.miss: Where misses are fetched from
+miss.l2: L2 ({l2} cycles)
+miss.l3: L3 ({l3} cycles)
+miss.mem: Memory ({mem} cycles)
+btn.step: Step one cycle
+btn.ten: Step 10 cycles
+btn.run: Run to end
+btn.reset: Reset
+rat.aria: Rename table
+rob.aria: Reorder buffer, from head to tail
+read.cyc: Cycle
+read.com: Committed
+read.fly: In the ROB
+read.total: Cycles to finish
+model.aria: Contents of the reorder buffer: one cell per instruction; colour shows waiting, executing, complete, or on a wrong path
+rob.head: head
+rob.empty: The ROB is empty
+rat.title: Rename table
+rat.none: This core does not rename: a register is just itself
+st.wait: Waiting for inputs
+st.run: Executing
+st.done: Complete
+st.ghost: On a wrong path
+st.miss: Miss
+totals: Finished: in order {a} cycles · out of order, no renaming {b} cycles · out of order + renaming {c} cycles
+say.start: Press “Step one cycle” to begin. Each cycle, at most 4 instructions enter the ROB, at most 4 issue, and at most 4 commit from the head.
+say.stall: Cycle {c}: the <code>{head}</code> at the head of the ROB is not done, so commit stops. {n} instructions in the ROB are waiting or executing.
+say.flow: Cycle {c}: {com} instructions committed, {n} in the ROB, and {run} of them executing.
+say.full: Cycle {c}: *the ROB is full ({n})*. The <code>{head}</code> at its head is waiting for a miss, so no new instruction can enter.
+say.done: Finished: {com} instructions committed in {c} cycles, IPC {ipc}.
+say.fault: Cycle {c}: the <code>lw</code> of pass {it} has reached the head of the ROB and faults. The {com} instructions ahead of it have all committed; it and everything behind it are discarded. *The architectural state stops exactly before the fault, with no more and no less*.
+:::
+
+At the default settings, the in-order core finishes in {stIn} cycles. The out-of-order core that does not rename (the scoreboard of the 1964 CDC 6600) takes {stSb} cycles, because the next pass’s <code>lw t0</code> must wait for the previous pass to finish writing t0, and it still cannot get past the miss. Out of order with renaming and a 32-entry ROB takes {stOo} cycles, {stX} times faster: while a miss is pending, the loads of later passes have already issued, and the next miss overlaps with this one. With a 16-entry ROB it takes {st16} cycles, because the window cannot hold the instructions between two misses. Over the whole run, the ROB holds at most {stMax} instructions at once.
+
+The model gives the issue queue the same size as the ROB, has no limit on execution ports, and has no address conflicts between loads. Real cores have much smaller issue queues, split into groups by execution unit, and these often fill before the ROB does. {.take}
+
+## In-order commit: precise exceptions and squashing {#ch8}
+
+::: strings
+toc: In-order commit: precise exceptions and squashing
+:::
+
+Execute out of order, commit in order. The ROB is a queue in program order: entries join at the tail and leave at the head. Only an instruction that has reached the head and finished may write its result into the architectural state. So when a guess is wrong, everything after that branch is squashed, as though it never happened. {.law}
+
+When you do homework, you can work the later questions on scrap paper, but the answers must be copied into the exercise book one question at a time. If question 3 turns out to be wrong, you cross out question 3 and everything after it on the scrap paper. The ROB is that exercise book. Each instruction takes a place at the tail when it enters the ROB, and is marked “complete” when it finishes. Only when everything before it has committed and it reaches the head does it take effect: the old mapping in the rename table is released, and a store is actually written into the cache.
+
+::: diagram dg-rob keys=dg.rob
+cap: The ROB is a ring: new instructions join at the tail and commit from the head. Entries in the middle may complete out of order (green), but the one at the head is not finished (here a miss), so completed entries behind it must wait. When the mispredicted branch (6) resolves, the entries after it (7–9, red frame) are squashed, and the tail pointer moves back from 10 to 7. Schematic.
+aria: Reorder buffer schematic: a ring of entries; commit at the head, new instructions added at the tail, and in between some entries are complete and some waiting
+head: Head: next to commit
+tail: Tail: next goes here
+done: Complete
+wait: Waiting
+miss: Miss
+br: Wrong branch
+squash: Squashed
+:::
+
+This brings two benefits. The first is **precise exceptions**, which James Smith and Andrew Pleszkun discussed systematically in 1985. An instruction that faults (for example, it reads an unmapped page) is handled only when it reaches the head. By then everything before it has committed, and nothing after it has taken effect, so the operating system sees exactly the state that in-order execution would have produced. The second is that **squashing** is cheap. When a branch resolves as mispredicted, the ROB entries after it are discarded, the rename table is restored from the record, and fetch restarts from the right address. Below is the simulator from the previous chapter again, with a 16-entry ROB and all loads hitting. You can make one pass’s branch guess wrong, or make one pass’s load fault.
+
+::: lab ch8-model
+model.title: Wrong guesses and faults: the simulator from the last chapter
+model.how: Choose an event and press “Step one cycle”. After a mispredicted branch, a batch of wrong-path instructions enters behind it (dashed). In the cycle the branch resolves, all of them vanish. A faulting load that reaches the head of the ROB, together with everything behind it, is discarded.
+ctl.ev: Event
+ev.none: Nothing happens
+ev.mp: Branch in pass 3 mispredicts
+ev.fault: Load in pass 4 faults
+read.sq: Instructions squashed
+say.squash: Cycle {c}: the mispredicted branch resolves. The {n} wrong-path instructions behind it are squashed, and fetch restarts from the right address {fe} cycles later.
+:::
+
+Make the branch in pass 3 mispredict: the run takes {mpCyc} cycles, against {mp0Cyc} with no misprediction, an extra {mpLoss} cycles. Of these, {feN} cycles are refetching and the trip to the ROB (a **tuned parameter**, chosen so that one misprediction costs about the Zen 5 figure of {zPen} cycles); the rest is waiting for the branch itself to resolve. The {mpSq} wrong-path instructions that entered during this time are all squashed. Make the load in pass 4 fault: exactly {flCom} instructions have committed, which is all of passes 1 to 3, and none of pass 4 has taken effect, even though the instructions after it had already finished.
+
+Loads and stores add a further layer of guessing. A load may come after a store whose address is not yet known: should the load wait, or go ahead? Modern cores usually go ahead, betting that they do not conflict, and keep each store in a **store queue**. When the store’s address is known, it is checked. If there is a real conflict, the load and everything after it are squashed, just like a mispredicted branch. If the load’s address matches an earlier store that has not yet committed, the data is taken directly from the store queue without waiting for the store to reach the cache. This is called **store-to-load forwarding**. This layer of guessing can also be exploited: Spectre variant 4, covered in chapter 10, targets exactly this.
+
+In the model, the instructions on a wrong path are copies of the same loop; a real wrong path can be any code. The handling after a fault (jumping into the operating system) is not shown. For how a missing page is handled, see <a href='../how-virtual-memory-works/#ch7'>chapter 7 of “How Virtual Memory Works”</a>. {.take}
+
+## How large a window: hundreds in flight {#ch9}
+
+::: strings
+toc: How large a window: hundreds in flight
+:::
+
+The larger the window, the more work it can find beyond a cache miss, and several misses can overlap while they wait. But the window fills with guessed instructions. Each misprediction squashes everything after it, so a useful window is at most as long as the stretch between two mispredictions. {.law}
+
+When you queue for a long time at an office, a sensible person fills in the forms for the next few tasks while waiting. If the first task then fails, all those forms are wasted. The size of the ROB is how many forms the core can fill in ahead. The table below gives figures for several cores:
+
+::: html ch9-html
+th.core: Core
+th.rob: ROB size (instructions in flight)
+th.w: Instructions per cycle (stage)
+th.src: Source
+r.hsw: Intel Haswell (2013)
+r.hsw.rob: {hwRob} micro-ops
+r.hsw.w: —
+r.hsw.src: Quoted in the Spectre paper (Kocher et al., 2019), §II-B
+r.zen: AMD Zen 5 (2024)
+r.zen.rob: {zRob} macro-ops ({zRobT} per thread when two threads run)
+r.zen.w: {zW} (dispatch)
+r.zen.src: AMD optimisation guide 58455, August 2024
+r.lc: Intel Lion Cove (2024)
+r.lc.rob: {lcRob} (previous generation Redwood Cove {lcPrev})
+r.lc.w: {lcW} (rename)
+r.lc.src: Chips and Cheese, 27 September 2024
+r.x925: Arm Cortex-X925 (2024)
+r.x925.rob: measured about {xRob} instructions
+r.x925.w: front end {xW} per cycle
+r.x925.src: Chips and Cheese, 3 March 2026
+:::
+
+Over ten years it has grown from over a hundred to five or six hundred. But for a window to be useful, two more things must hold: the thing that is stuck must be stuck long enough to be worth getting past, and most instructions in the window must be correct. The model below combines both: the same loop at width {zW}, with a[i] missing once per 64-byte line (every {wLine} passes), and each branch wrong with probability “1 − accuracy” (fixed seed).
+
+::: lab ch9-model
+model.title: How large a window is worth having
+model.how: The horizontal axis is the ROB size; each line is one branch accuracy, and the gold dot is the current choice. Drag the ROB size, change the accuracy, then switch the misses from L3 to memory and see what happens.
+model.aria: Line chart: the horizontal axis is ROB size and the vertical axis is instructions completed per cycle; four lines for different branch accuracies
+acc.1: Perfect
+ctl.rob: ROB size
+ctl.acc: Branch accuracy
+ctl.miss: Where misses are fetched from
+read.ipc: Completed per cycle (IPC)
+read.mlp: Average misses waiting at once
+read.btw: Average instructions between wrong guesses
+cv.x: ROB size
+cv.y: IPC
+say.perfect: With every branch right and a ROB of {r} entries, IPC is {ipc}, and on average {mlp} misses are waiting at once. The larger the window, the more misses overlap.
+say.guess: At accuracy {acc} and a ROB of {r} entries, IPC is {ipc}. On average one wrong guess comes every {btw} instructions, *so only the instructions between two wrong guesses are useful, and a window larger than that cannot be filled*.
+:::
+
+With every branch right and misses going to L3: a 64-entry ROB gives IPC {w64}, 128 entries {w128}, 512 entries {w512}, with {wMlp} misses waiting at once on average. The in-order core manages only {wIn}. At 99% accuracy, 512 entries give {w512c}; at 95%, only {w512b}. This loop has one branch per {wBody} instructions. At 95%, one wrong guess comes every {btw95} instructions on average, and at 99% every {btw99}. The former cannot fill a window of hundreds of entries; the latter can. **This is the answer to the second question from the opening**: for hundreds of instructions to be in flight at once you need a ROB of hundreds of entries and a predictor accurate to 99% or better. You need both. If the miss is replaced by a trip to memory (about {memC} cycles), even 512 entries give only {wMem} (64 entries give {wMem64}). Getting past a memory miss needs a window of thousands of entries, so caches and prefetching are still needed (see <a href='../how-cpu-caches-work/#ch8'>chapter 8 of “How a CPU’s Three Levels of Cache Work”</a> and <a href='../why-compute-waits-for-memory/#ch4'>chapter 4 of “Why Compute Waits for Memory”</a>).
+
+Mispredictions occur at random with a fixed probability; in real cores they concentrate on a few hard-to-predict branches. The model has no physical-register limit and no load/store or issue-queue limit that fills first. In real cores those often become the limit before the ROB does. Chips and Cheese, testing the X925, noted that how far out of order a core can go depends on which structure fills first. {.take}
+
+## The price of guessing: Spectre {#ch10}
+
+::: strings
+toc: The price of guessing: Spectre
+:::
+
+A wrongly guessed instruction has its result thrown away, but the cache lines it touched are not restored. If the wrong path reads a secret and then uses that secret to touch the cache, a later timing measurement can read the secret back out. {.law}
+
+Someone uses your desk while you are out, and tidies it so it looks exactly as before, but the chair is still warm. The paper “Spectre Attacks: Exploiting Speculative Execution” (Paul Kocher et al.), made public in 2018 and published in 2019, shows that the mechanisms of the earlier chapters, put together, are such a warm chair. The paper’s first example is just two lines:
+
+::: html ch10-html
+code.aria: Bounds-check example from the Spectre paper, two lines
+code: "if (x < array1_size)\n    y = array2[array1[x] \\* 4096];"
+:::
+
+The code itself is correct: if x is out of range, nothing happens. But: (1) the attacker first calls it many times with a legal x, training this branch’s predictor to “go in” (the counters of chapter 2); (2) makes array1_size fall out of the cache, so the comparison must wait for a miss before it has a result, and during that time the core runs ahead on its prediction (the window of chapters 7 and 9); (3) now passes an out-of-range x. The core guesses it is legal, reads array1[x], which is the secret byte beyond the array, and uses it to read one line of array2, which brings that line into the cache; (4) the comparison resolves, the guess is wrong, everything is squashed, and no register keeps anything, but one line of the cache is now filled. The attacker reads array2 line by line, timing each, and the number of the fast line is the secret.
+
+::: diagram dg-sp keys=dg.sp
+cap: The four steps of Spectre variant 1 (bypassing the bounds check). The two loads in step 3 finish before the comparison has a result. Their results are squashed, but the line of array2 at the “secret” index stays in the cache. In step 4, only that line is fast. Schematic; times are not to scale.
+aria: Four steps of Spectre variant 1: train the predictor, clear the cache, call with an out-of-range index and read the secret on the wrong path, then time the lines to find the one brought into the cache
+s1: 1 Train: legal x, always taken
+s2: 2 Clear array2 and array1_size
+s3: 3 Bad x: read secret, then array2[secret]
+s4: 4 Time each row of array2
+win: Comparison still waiting
+squash: Result: wrong, squashed
+cache: One line now cached
+fast: Only this line is fast
+t: Time →
+:::
+
+::: lab ch10-model
+model.title: Spectre on a toy machine
+model.how: This machine exists only on this page: a 2-bit counter predicts the bounds check, a cache can be emptied ({hit} cycles on a hit, {miss} cycles on a miss), and the timing reading has random noise added. array1 holds {a1n} public numbers, followed by a secret string. Press “Read one byte” to run the four steps and see the read times for 256 lines. Choose a defence, or change the number of training passes and the noise, to see whether the byte still leaks.
+model.aria: Bar chart: read times for 256 lines; below the threshold line is a hit; the line that was read out is highlighted
+ctl.mit: Defence
+mit.none: None
+mit.lfence: lfence after the comparison
+mit.mask: Index masking
+ctl.train: Training passes
+ctl.noise: Timing noise
+btn.one: Read one byte
+btn.all: Read the whole secret
+btn.reset: Reset
+read.got: Byte read
+read.str: Read so far
+read.win: Speculation window
+read.cost: Cost of one normal call
+cv.x: Row of array2 (0–255)
+cv.y: Read time (cycles)
+cv.thr: Hit threshold
+say.start: Press “Read one byte”: first train {train} times, clear the cache, call once with an out-of-range index, then time reads of all 256 rows.
+say.leak: Byte {k}: row {v} was fast ({t}) and the rest were slow, *so “{ch}” has been read out*. The speculation window was {win}, enough to complete both loads.
+say.noisy: Byte {k}: the noise is too large. {h} rows look fast (or none do), so this byte cannot be read this time. A real attack would try several times and take the majority.
+say.untrained: Byte {k}: the predictor was not trained to “go in”, so the out-of-range call is not speculatively executed, and no row is brought into the cache.
+say.fence: Byte {k}: lfence makes the later loads wait for the comparison’s result before they run. The wrong path does nothing, and all 256 rows are slow. The cost is {cost} per normal call.
+say.mask: Byte {k}: the index is first ANDed with {mask}. On the wrong path, the load reads a public number from array1 (row {v} is fast), and the secret does not leak.
+:::
+
+With the default {spTrain} training passes and 20 cycles of noise, {spOk} of the {spSec} bytes are read out correctly. Without training: {spOk0}. With lfence: {spOkF}. With index masking: {spOkM}. When the noise rises to {spNoise} cycles, only {spOkN} remain: many rows look fast, so a real attacker would need several tries and a majority vote. The cost of the defences also shows on this machine: one normal call (legal index, data in cache) takes {cNone} cycles unprotected, {cMask} with index masking, and {cFence} with lfence, because the loads must wait for the comparison’s result.
+
+In the real world, the paper’s demonstration program read about {spRate} KB a second on an i7-4650U, with an error rate under 0.01%, and the researchers confirmed the problem on processors from Intel, AMD and Arm. The defence against variant 1 is the barrier Intel recommends after the bounds check, such as lfence, or, as WebKit did, limiting the index mask to the vicinity of the array. Against variant 2 (injecting targets into the BTB and the indirect-jump predictor), the countermeasures are retpoline (which replaces the indirect jump with a return, so that it is predicted into a harmless infinite loop) and the new control bits IBRS, STIBP and IBPB. Intel now recommends enhanced IBRS with CET on platforms that support it. The paper says the performance cost of the defences runs “from a few per cent to more than {spMit} times”, depending on which are used and how heavily. The Retbleed researchers found in 2022 that the patch against it costs {rbA}% on AMD and {rbI}% on Intel. Meltdown, from the same period, is a different matter: it crosses the page table’s permission check. Its patch, KPTI, is covered in <a href='../how-virtual-memory-works/#ch10'>chapter 10 of “How Virtual Memory Works”</a>.
+
+The toy machine has no prefetcher, no other processes and no cache replacement, which makes reading out much easier. Real attacks have to deal with all of these. There are deliberately no real instructions that empty the cache or read a clock here, and nothing on how to find exploitable code on a real processor. {.take}
+
+## Where the frontier is (as of November 2026) {#ch11}
+
+::: strings
+toc: Where the frontier is
+:::
+
+Windows keep growing and predictors keep getting more accurate. With every processor generation, someone also finds a new seam in speculative execution. {.law}
+
+Three categories, by strength of evidence. Each entry gives its date.
+
+### Stated in documentation {#h.est .sub3}
+
+- <span class='tag h'>Docs</span>AMD Zen 5 optimisation guide (August 2024): ROB of {zRob} macro-ops, {zW} instructions each delivered and committed per cycle, branch misprediction penalty {zPenMin} to {zPenMax} cycles, usually {zPen}, first-level BTB of {zBtb1}K entries, return stack of {zRas} entries per thread. {#e1}
+- <span class='tag h'>Docs</span>The sixth Branch Prediction Championship (CBP2025, 21 June 2025, ISCA 2025, Tokyo): the baseline given to entrants is the 2016 champion, a {cbpBase} KB TAGE-SC-L, with a budget ceiling of {cbpB} KB. Twenty years on, the TAGE family is still the yardstick (championship website). {#e2}
+- <span class='tag h'>Docs</span>Intel’s note on speculative-execution side channels (first published January 2018, updated 25 May 2021): lfence after the bounds check; on platforms that support CET, enhanced IBRS with CET is recommended in place of retpoline. {#e3}
+
+### Built and measured by others {#h.demo .sub3}
+
+- <span class='tag m'>Measured</span>Intel Lion Cove, as compiled by Chips and Cheese (27 September 2024): ROB of {lcRob}, renaming {lcW} micro-ops per cycle, return stack of {lcRas} entries. {#d1}
+- <span class='tag m'>Measured</span>Chips and Cheese on the Arm Cortex-X925 (3 March 2026): about {xRob} instructions actually in flight at once, front end {xW} per cycle, return stack of {xRas} entries. {#d2}
+- <span class='tag m'>Measured</span>Branch Privilege Injection from ETH Zürich (USENIX Security 2025, CVE-2024-45332): processors from Intel’s 9th generation onwards. A race in predictor updates let user-level code influence the kernel’s indirect-jump prediction. On Ubuntu 24.04 with the default protection, about {bpiRate} KiB a second was read out. The microcode fix costs up to {bpiU}% on Alder Lake; software alternatives cost {bpiSw1}% to {bpiSw2}% (research group’s website). {#d3}
+- <span class='tag m'>Measured</span>Branch Target Reuse from VUSec at Vrije Universiteit Amsterdam and others (ACM CCS 2026; reported by The Register on 30 September 2026): after a just-in-time compiler frees and reuses a code region, old targets remain in the indirect-jump predictor, so speculation can jump into the new code at the old target addresses. The full demonstration against Linux cBPF reads about {btrRate} bytes a second. It was assigned CVE-2026-64507 and CVE-2026-64508 (project website). {#d4}
+
+### A claim by one party that I could not verify {#h.claim .sub3}
+
+- <span class='tag l'>Claim</span>Arm says the Cortex-X925’s maximum instruction window is twice that of its predecessor, the X4 (Arm newsroom blog, 23 September 2024), without giving a number; WikiChip puts it at {xClaim} instructions. The measured figure of about {xRob} does not match, and Chips and Cheese believes the real limit is another structure that fills first. {#c1}
+- <span class='tag l'>Claim</span>On Branch Target Reuse, the processor vendors’ response is that barriers such as IBPB already exist, and that the fix belongs in software (as reported on the VUSec project website). {#c2}
+
+Putting these together: the window has grown from Haswell’s {hwRob} to five or six hundred, and the predictor yardstick is still the TAGE family. The chapter 9 lesson stands: for a window to be useful, it must guess well. Every structure that makes guessing more accurate or lets it reach further (the BTB, the indirect-jump predictor, the return stack) is state that can be trained and reused. The new problems of 2025 and 2026 all come from predictor state that was not updated when the code or privilege context changed.
+
+The numbers and names in this chapter go out of date fastest. What a ROB “entry” means differs between vendors (macro-ops, micro-ops, instructions, and sometimes one entry holds two). The tables keep the original wording; compare orders of magnitude only. {.take}
+
+## Wrap-up: three questions to ask of any code {#ch12}
+
+::: strings
+toc: Wrap-up: three questions to ask of any code
+:::
+
+The CPU can run hundreds of instructions ahead because of two things: it guesses well, and when it guesses wrong it can back out cleanly. The person writing the code can help by making branches easy to guess, and by leaving other work to do while waiting. {.law}
+
+{.plain .qs}
+1. **Is this branch easy to guess?** Loops, error checks and conditions that lean heavily one way cost almost nothing. An if on random data is a coin toss, and costs a dozen or more cycles half the time (chapters 1 and 2). On Linux, <code>perf stat -e branches,branch-misses</code> counts how many guesses were wrong. {#q1}
+2. **If it is hard to guess, can you avoid guessing?** Sort or group the data so that outcomes in the same direction sit together. Or write it as a conditional select and let the compiler vectorise it, trading a few more instructions for one wrong guess (chapter 2). After changing the code, look at the compiled output, because the compiler may already have done this for you. {#q2}
+3. **While waiting, is there any unrelated work?** No window, however large, helps a single long chain that feeds back into itself (chasing a pointer, or accumulating into one variable). Several independent chains interleaved let an out-of-order core overlap the misses (chapters 7 and 9, and <a href='../how-cpu-caches-work/#ch10'>the pointer chasing in chapter 10 of the cache essay</a>). {#q3}
+
+Back to the three opening questions. *Guessing well* works because most branches have habits (2-bit counters), some need their neighbours (gshare), some need a long view (TAGE), and targets and return addresses each have a dedicated table. *Hundreds in flight* works because renaming removes the false waits, the ROB makes out-of-order results commit in program order, and the predictor is accurate enough that a wrong guess comes only once every few hundred instructions. *Leaking secrets* happens because commit undoes only the registers and memory, not the traces left in the cache. {#sum .sum tag=div}
+
+Further reading: <a href='../how-a-cpu-runs-a-program/'>How a CPU Runs a Program</a> covers the five-stage pipeline and static guessing, the starting point for this essay. <a href='../how-cpu-caches-work/'>How a CPU’s Three Levels of Cache Work</a> explains where those misses come from. <a href='../how-virtual-memory-works/#ch10'>Chapter 10 of How Virtual Memory Works</a> covers Meltdown and page-table isolation. <a href='../why-compute-waits-for-memory/#ch4'>Chapter 4 of Why Compute Waits for Memory</a> explains why many requests need to be in flight at once. <a href='../how-cores-share-memory/#ch8'>Chapters 8 and 9 of How Cores Share Memory</a> cover how several cores agree on the order of their reads and writes. {#links style="margin-top:2em"}
+
+::: footer
+**Sources.** AMD, “Software Optimization Guide for the AMD Zen5 Microarchitecture”, publication 58455 revision 1.00 (August 2024), §2.8–2.10. Chips and Cheese: “Lion Cove: Intel’s P-core roars” (2024-09-27) and “Arm’s Cortex X925: Reaching Desktop Performance” (2026-03-03). Kocher et al., “Spectre Attacks: Exploiting Speculative Execution” (IEEE S&amp;P 2019, PDF at spectreattack.com). Seznec, “TAGE-SC-L Branch Predictors Again” (CBP-5, 2016); Seznec and Michaud, “A case for (partially) TAgged GEometric history length branch prediction” (JILP, 2006). CBP2025 championship website (NCSU). Intel, “Analysis of Speculative Execution Side Channels” (first published January 2018, updated 2021-05-25). ETH Zürich COMSEC: Branch Privilege Injection and Retbleed project pages. VUSec: Branch Target Reuse project page. The Register (2026-09-30). Arm newsroom blog on the Cortex-X925 (2024-09-23). Stack Overflow question 11227809 (2012-06-27). All of the above were opened on 15 November 2026. Classic results: Smith (1981, two-bit counters); Yeh and Patt (1991, two-level prediction); McFarling (1993, gshare); Tomasulo (1967); Smith and Pleszkun (1985, precise exceptions); Yeager (1996, MIPS R10000); Hennessy and Patterson, “Computer Architecture: A Quantitative Approach”, chapter 3.
+
+Links and URLs are in BRIEF.md in this page’s folder. This page explains mechanisms only and does not rate products; the Spectre chapter uses only the toy machine simulated on the page.
+:::
