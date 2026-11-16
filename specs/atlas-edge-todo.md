@@ -522,11 +522,11 @@ anchor; a link to the page top has no anchor).
 
 ## 对称与旋转 · 对折与转圈 / Symmetry & Rotation · Folding and Turning → 周长 vs 面积 · 一根绳子两种账 / Perimeter vs Area · One Rope, Two Ledgers
 
-- `symmetry-rotation` → `perimeter-area#step1`: ? → perimeter-vs-area
+- `symmetry-rotation#step4` → `perimeter-area#step1`: ? → perimeter-vs-area
 
 ## 对称与旋转 · 对折与转圈 / Symmetry & Rotation · Folding and Turning → 乘法是面积 · 点阵铺成一块地 / Multiplication Is Area · Arrays Become a Tiled Floor
 
-- `symmetry-rotation` → `area-model#step1`: ? → area-model-multiplication
+- `symmetry-rotation#step4` → `area-model#step1`: ? → area-model-multiplication
 
 ## 抛物线 · 投篮的弧线 / Parabolas · The Arc of a Shot → 一次函数 · 斜率是陡缓，截距是起点 / Linear Functions · Slope Is Steepness, Intercept Is the Start
 

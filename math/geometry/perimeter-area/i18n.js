@@ -98,7 +98,7 @@ const STR = {
     "site.bl.title": "被这些页面引用",
     "site.bl.1": "<a href=\"../similarity-scaling/\">相似与缩放 · 长度、面积、体积各变几倍</a>：<a href=\"../similarity-scaling/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>",
     "site.bl.2": "<a href=\"../solid-geometry/\">立体几何 · 转一转，再切一刀</a>：<a href=\"../solid-geometry/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>",
-    "site.bl.3": "<a href=\"../symmetry-rotation/\">对称与旋转 · 对折与转圈</a>：→ <a href=\"#step1\">本页第 1 步</a>",
+    "site.bl.3": "<a href=\"../symmetry-rotation/\">对称与旋转 · 对折与转圈</a>：<a href=\"../symmetry-rotation/#step4\">该课第 4 步</a> → <a href=\"#step1\">本页第 1 步</a>",
     "site.bl.4": "<a href=\"../three-views/\">三视图 · 三张影子拼回立体</a>：→ <a href=\"#step0\">本页第 0 步</a>"
   },
   en: {
@@ -191,7 +191,7 @@ const STR = {
     "site.bl.title": "Linked from",
     "site.bl.1": "<a href=\"../similarity-scaling/\">Similarity & Scaling · Lengths, Areas and Volumes Each Change Differently</a>: <a href=\"../similarity-scaling/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>",
     "site.bl.2": "<a href=\"../solid-geometry/\">Solid Geometry · Turn It, Then Cut It</a>: <a href=\"../solid-geometry/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>",
-    "site.bl.3": "<a href=\"../symmetry-rotation/\">Symmetry & Rotation · Folding and Turning</a>: → <a href=\"#step1\">this page step 1</a>",
+    "site.bl.3": "<a href=\"../symmetry-rotation/\">Symmetry & Rotation · Folding and Turning</a>: <a href=\"../symmetry-rotation/#step4\">its step 4</a> → <a href=\"#step1\">this page step 1</a>",
     "site.bl.4": "<a href=\"../three-views/\">Three Views · Three Shadows Rebuild a Solid</a>: → <a href=\"#step0\">this page step 0</a>"
   }
 };

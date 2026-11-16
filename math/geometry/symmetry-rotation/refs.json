@@ -1,0 +1,54 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "symmetry-rotation",
+ "refs": [],
+ "backlinks": [
+  {
+   "from": "circle-angles",
+   "links": [
+    {
+     "from": "step6",
+     "to": "step2"
+    }
+   ]
+  },
+  {
+   "from": "circle-intro",
+   "links": [
+    {
+     "from": "step5",
+     "to": "step2"
+    }
+   ]
+  },
+  {
+   "from": "clock-angles",
+   "links": [
+    {
+     "from": "step5",
+     "to": "step2"
+    }
+   ]
+  },
+  {
+   "from": "polygon-angles",
+   "links": [
+    {
+     "from": null,
+     "to": "step2"
+    }
+   ]
+  },
+  {
+   "from": "three-views",
+   "links": [
+    {
+     "from": null,
+     "to": "step0"
+    }
+   ]
+  }
+ ],
+ "related": [],
+ "bindings": []
+}
