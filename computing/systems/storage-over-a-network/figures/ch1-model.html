@@ -1,0 +1,10 @@
+<figure class="lab">
+    <h3 data-i18n="ch1.model.title"></h3>
+    <p class="how" data-i18n-html="ch1.model.how"></p>
+    <canvas class="cv short" id="lvCv" role="img" data-i18n-aria="ch1.model.aria"></canvas>
+    <div class="legend"><span><i style="background:var(--cyan)"></i><span data-i18n="ch1.lv.block"></span></span><span><i style="background:var(--green)"></i><span data-i18n="ch1.lv.file"></span></span><span><i style="background:var(--gold)"></i><span data-i18n="ch1.lv.object"></span></span></div>
+    <div class="ctl"><label class="rng"><span data-i18n="ch1.ctl.k"></span><input type="range" id="lvK" min="0" max="20" step="1" value="0"><output id="lvKo"></output></label></div>
+    <div class="ctl"><div class="seg" role="radiogroup" data-i18n-aria="ch1.ctl.size"><span class="lbl" data-i18n="ch1.ctl.size"></span><label><input type="radio" name="lvS" value="65536"><span data-i18n="ch1.size.64k"></span></label><label><input type="radio" name="lvS" value="8388608" checked><span data-i18n="ch1.size.8m"></span></label><label><input type="radio" name="lvS" value="1073741824"><span data-i18n="ch1.size.1g"></span></label></div><label class="chk"><input type="checkbox" id="lvC"><span data-i18n="ch1.ctl.cached"></span></label></div>
+    <div class="read"><div><b class="c" id="lvB"></b><span data-i18n-html="ch1.read.block"></span></div><div><b class="n" id="lvF"></b><span data-i18n-html="ch1.read.file"></span></div><div><b class="g" id="lvO"></b><span data-i18n-html="ch1.read.object"></span></div></div>
+    <p class="say" id="lvSay" aria-live="polite"></p>
+  </figure>
