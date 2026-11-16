@@ -1380,11 +1380,11 @@ anchor; a link to the page top has no anchor).
 
 ## 风险与回报 · 为什么风险大承诺回报高 / Risk & Return · Why Do Riskier Things Usually Promise More → 概率分布 · 随机性也有形状 / Probability Distributions · Randomness Has a Shape
 
-- `risk-return` → `probability-distribution#step1`
+- `risk-return#step5` → `probability-distribution#step1`
 
 ## 风险与回报 · 为什么风险大承诺回报高 / Risk & Return · Why Do Riskier Things Usually Promise More → 风险池化与保险 · 一万人各摊一点 / Risk Pooling & Insurance · Ten Thousand People Each Chip In
 
-- `risk-return` → `risk-pooling#step0`
+- `risk-return#step5` → `risk-pooling#step0`
 
 ## 分散投资 · 为什么不把鸡蛋放一个篮子里 / Diversification · Why Not Put All Eggs in One Basket → 概率分布 · 随机性也有形状 / Probability Distributions · Randomness Has a Shape
 
