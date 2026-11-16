@@ -1349,11 +1349,11 @@ anchor; a link to the page top has no anchor).
 
 ## 立体几何 · 转一转，再切一刀 / Solid Geometry · Turn It, Then Cut It → 勾股定理 · 一步一交互 / The Pythagorean Theorem · One Interaction at a Time
 
-- `solid-geometry` → `pythagoras#step0`
+- `solid-geometry#step5` → `pythagoras#step0`
 
 ## 立体几何 · 转一转，再切一刀 / Solid Geometry · Turn It, Then Cut It → 周长 vs 面积 · 一根绳子两种账 / Perimeter vs Area · One Rope, Two Ledgers
 
-- `solid-geometry` → `perimeter-area#step0`
+- `solid-geometry#step5` → `perimeter-area#step0`
 
 ## 声音是波 · 看见自己的声音 / Sound Is a Wave · Seeing Your Own Voice → 声音从振动来 · 米粒会跳的鼓 / Sound from Vibration · A Drum with Jumping Rice
 
