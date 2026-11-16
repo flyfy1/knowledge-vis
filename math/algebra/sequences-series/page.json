@@ -1,0 +1,24 @@
+{
+  "slug": "sequences-series",
+  "kind": "lesson",
+  "title": {
+    "zh": "数列与求和 · 叠砖与棋盘麦粒",
+    "en": "Sequences & Series · Stacked Bricks and Chessboard Grains"
+  },
+  "desc": {
+    "zh": "叠砖每层多一块是等差，棋盘麦粒每格翻倍是等比；倒序相加当场拼出求和公式，等比求和则告诉你“无限多项”能不能有尽头。",
+    "en": "Bricks with one more per layer are arithmetic, grains that double per square are geometric; add a row backwards to build the sum formula on the spot, and see whether infinitely many terms can add up."
+  },
+  "tags": [
+    {
+      "zh": "数学基础",
+      "en": "Mathematical Foundations"
+    }
+  ],
+  "category": "math",
+  "subtopic": "algebra",
+  "stage": "senior",
+  "status": "live",
+  "path": "math/algebra/sequences-series/",
+  "order": 2370
+}

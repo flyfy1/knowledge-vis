@@ -1,0 +1,24 @@
+{
+  "slug": "newton-laws",
+  "kind": "lesson",
+  "title": {
+    "zh": "牛顿运动定律 · F = ma 是调出来的",
+    "en": "Newton’s Laws of Motion · F = ma, Tuned by Hand"
+  },
+  "desc": {
+    "zh": "在斜面和平地上推箱子：受力箭头与加速度实时对账，F=ma 不是背出来的，是调出来的。",
+    "en": "Push a box on ice, on a rough floor and on a ramp: the force arrows and the acceleration stay in step, so F = ma is something you tune, not memorise."
+  },
+  "tags": [
+    {
+      "zh": "物理与电路",
+      "en": "Physics & Circuits"
+    }
+  ],
+  "category": "physics",
+  "subtopic": "mechanics",
+  "stage": "senior",
+  "status": "live",
+  "path": "physics/mechanics/newton-laws/",
+  "order": 2240
+}

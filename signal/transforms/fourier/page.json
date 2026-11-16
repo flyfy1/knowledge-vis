@@ -1,0 +1,32 @@
+{
+  "slug": "fourier",
+  "kind": "lesson",
+  "title": {
+    "zh": "傅里叶变换 · 一步一交互",
+    "en": "The Fourier Transform · One Interaction at a Time"
+  },
+  "desc": {
+    "zh": "任何波形、任何图形，都能拆成一堆旋转的圆。从一条正弦波开始，七步亲手拼出傅里叶变换，最后画任意图形让圆圈重画出来。",
+    "en": "Any waveform — any picture — can be taken apart into rotating circles. Start from a single sine wave, build the Fourier transform with your own hands in seven steps, then draw any shape and watch the circles redraw it."
+  },
+  "tags": [
+    {
+      "zh": "频域",
+      "en": "Frequency Domain"
+    },
+    {
+      "zh": "变换",
+      "en": "Transform"
+    },
+    {
+      "zh": "旋转与圆",
+      "en": "Rotation & Circles"
+    }
+  ],
+  "category": "signal",
+  "subtopic": "transforms",
+  "stage": "university",
+  "status": "live",
+  "path": "signal/transforms/fourier/",
+  "order": 460
+}

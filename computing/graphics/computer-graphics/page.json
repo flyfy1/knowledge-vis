@@ -1,0 +1,32 @@
+{
+  "slug": "computer-graphics",
+  "kind": "lesson",
+  "title": {
+    "zh": "计算机图形学 · 从坐标到画面",
+    "en": "Computer Graphics · From Coordinates to Pixels"
+  },
+  "desc": {
+    "zh": "拖动坐标变换、光栅化和漫反射，走完一条简化的 2D 渲染管线。",
+    "en": "Tune coordinate transforms, rasterization and diffuse shading through a compact 2D rendering pipeline."
+  },
+  "tags": [
+    {
+      "zh": "坐标变换",
+      "en": "Coordinate Transforms"
+    },
+    {
+      "zh": "光栅化",
+      "en": "Rasterization"
+    },
+    {
+      "zh": "漫反射",
+      "en": "Diffuse Shading"
+    }
+  ],
+  "category": "computing",
+  "subtopic": "graphics",
+  "stage": "university",
+  "status": "live",
+  "path": "computing/graphics/computer-graphics/",
+  "order": 1360
+}

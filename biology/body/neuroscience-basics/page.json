@@ -1,0 +1,32 @@
+{
+  "slug": "neuroscience-basics",
+  "kind": "lesson",
+  "title": {
+    "zh": "神经科学基础 · 从静息到脉冲",
+    "en": "Neuroscience Basics · From Rest to Spike"
+  },
+  "desc": {
+    "zh": "从 K⁺/Na⁺ 漏通道和静息电位走到阈值、全或无尖峰与不应期频率上限。",
+    "en": "Trace K⁺/Na⁺ leak balance into resting potential, threshold, all-or-none spikes and the refractory firing ceiling."
+  },
+  "tags": [
+    {
+      "zh": "静息电位",
+      "en": "Resting Potential"
+    },
+    {
+      "zh": "阈值",
+      "en": "Threshold"
+    },
+    {
+      "zh": "不应期",
+      "en": "Refractory Period"
+    }
+  ],
+  "category": "biology",
+  "subtopic": "body",
+  "stage": "senior",
+  "status": "live",
+  "path": "biology/body/neuroscience-basics/",
+  "order": 1250
+}

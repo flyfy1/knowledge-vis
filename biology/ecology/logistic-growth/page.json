@@ -1,0 +1,32 @@
+{
+  "slug": "logistic-growth",
+  "kind": "lesson",
+  "title": {
+    "zh": "种群增长 · S 形曲线从哪来",
+    "en": "Population Growth · Where the S-Curve Comes From"
+  },
+  "desc": {
+    "zh": "没有天花板时种群按倍数狂奔，有了容纳量 K 就被压成 S 形：每一代的实际增长率由 r(1−N/K) 当场实算；把 r 推过安全区，还能亲眼看到离散模型振荡失效。",
+    "en": "With no ceiling a population multiplies wildly; with carrying capacity K it bends into an S. The effective rate r(1−N/K) is computed generation by generation — and if you push r past the safe zone, you can watch the discrete model oscillate and break."
+  },
+  "tags": [
+    {
+      "zh": "指数增长",
+      "en": "Exponential Growth"
+    },
+    {
+      "zh": "逻辑斯蒂",
+      "en": "Logistic"
+    },
+    {
+      "zh": "容纳量 K",
+      "en": "Carrying Capacity"
+    }
+  ],
+  "category": "biology",
+  "subtopic": "ecology",
+  "stage": "senior",
+  "status": "live",
+  "path": "biology/ecology/logistic-growth/",
+  "order": 950
+}

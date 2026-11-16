@@ -1,0 +1,24 @@
+{
+  "slug": "limits-epsilon",
+  "kind": "lesson",
+  "title": {
+    "zh": "极限与 ε–δ · 你说多近，我就能多近",
+    "en": "Limits and ε–δ · Name How Close, and I Can Get That Close"
+  },
+  "desc": {
+    "zh": "把“无限接近”变成一场有规则的博弈：对方先给出 ε（允许的误差），你要找出 δ（x 离 a 多近就够了）。",
+    "en": "Turn \"gets arbitrarily close\" into a game with rules: the opponent gives ε (the allowed error) and you must find δ (how close x must be to a)."
+  },
+  "tags": [
+    {
+      "zh": "数学基础",
+      "en": "Mathematical Foundations"
+    }
+  ],
+  "category": "math",
+  "subtopic": "calculus",
+  "stage": "university",
+  "status": "live",
+  "path": "math/calculus/limits-epsilon/",
+  "order": 2040
+}

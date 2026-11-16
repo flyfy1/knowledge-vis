@@ -1,0 +1,24 @@
+{
+  "slug": "regression-correlation",
+  "kind": "lesson",
+  "title": {
+    "zh": "回归与相关 · 散点云里拉一条最贴的线",
+    "en": "Regression & Correlation · The Best Line Through a Cloud"
+  },
+  "desc": {
+    "zh": "一堆点，一条线，一个数：相关系数 r 说“多贴”，最小二乘线说“怎么贴最好”，还有几个让人上当的陷阱。",
+    "en": "A cloud of points, a line and a number: the correlation r says how tightly they follow, the least-squares line says how best to fit them, and a few traps that fool people."
+  },
+  "tags": [
+    {
+      "zh": "概率与统计",
+      "en": "Probability & Statistics"
+    }
+  ],
+  "category": "probability",
+  "subtopic": "statistics",
+  "stage": "senior",
+  "status": "live",
+  "path": "probability/statistics/regression-correlation/",
+  "order": 2320
+}

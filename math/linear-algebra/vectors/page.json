@@ -1,0 +1,24 @@
+{
+  "slug": "vectors",
+  "kind": "lesson",
+  "title": {
+    "zh": "向量 · 有方向的量",
+    "en": "Vectors · Quantities With a Direction"
+  },
+  "desc": {
+    "zh": "力的合成是箭头首尾相接，坐标里加法就是分量各自相加；点积让两个箭头“投影”出一个数。",
+    "en": "Combining forces is joining arrows head to tail; in coordinates, addition just adds the components; the dot product turns two arrows’ “projection” into a number."
+  },
+  "tags": [
+    {
+      "zh": "数学基础",
+      "en": "Mathematical Foundations"
+    }
+  ],
+  "category": "math",
+  "subtopic": "linear-algebra",
+  "stage": "senior",
+  "status": "live",
+  "path": "math/linear-algebra/vectors/",
+  "order": 2430
+}

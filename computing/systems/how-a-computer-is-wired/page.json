@@ -1,6 +1,30 @@
 {
   "slug": "how-a-computer-is-wired",
   "kind": "essay",
+  "tags": [
+    {
+      "zh": "计算机体系结构",
+      "en": "Computer Architecture"
+    },
+    {
+      "zh": "总线与互连",
+      "en": "Buses and Interconnects"
+    },
+    {
+      "zh": "主板",
+      "en": "Motherboards"
+    },
+    {
+      "zh": "长文",
+      "en": "Long-form Essay"
+    }
+  ],
+  "category": "computing",
+  "subtopic": "systems",
+  "stage": "university",
+  "status": "live",
+  "path": "computing/systems/how-a-computer-is-wired/",
+  "order": 290,
   "layout": "essay",
   "scripts": [
     "models.js",

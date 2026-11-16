@@ -1,0 +1,32 @@
+{
+  "slug": "distributed-systems",
+  "kind": "lesson",
+  "title": {
+    "zh": "分布式系统 · 多个副本如何像一个值",
+    "en": "Distributed Systems · How Replicas Behave Like One Value"
+  },
+  "desc": {
+    "zh": "拖动副本数、读写 quorum 和网络分区，观察复制、一致性与可用性如何互相牵制。",
+    "en": "Tune replica count, read/write quorums and partitions to see replication, consistency and availability trade-offs."
+  },
+  "tags": [
+    {
+      "zh": "副本",
+      "en": "Replication"
+    },
+    {
+      "zh": "一致性",
+      "en": "Consistency"
+    },
+    {
+      "zh": "Quorum",
+      "en": "Quorum"
+    }
+  ],
+  "category": "computing",
+  "subtopic": "systems",
+  "stage": "university",
+  "status": "live",
+  "path": "computing/systems/distributed-systems/",
+  "order": 1270
+}

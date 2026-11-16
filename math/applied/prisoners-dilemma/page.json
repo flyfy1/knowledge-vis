@@ -1,0 +1,24 @@
+{
+  "slug": "prisoners-dilemma",
+  "kind": "lesson",
+  "title": {
+    "zh": "囚徒困境与演化博弈 · 合作怎样活下来",
+    "en": "The Prisoner’s Dilemma & Evolutionary Games · How Cooperation Survives"
+  },
+  "desc": {
+    "zh": "一次博弈里背叛划算；重复博弈、种群演化里，“以牙还牙”式的合作可以活下来——条件是什么，页面里一格一格调出来。",
+    "en": "In a one-shot game, defecting pays; in repeated games and evolving populations tit-for-tat style cooperation can survive — and the page lets you tune the conditions."
+  },
+  "tags": [
+    {
+      "zh": "数学基础",
+      "en": "Mathematical Foundations"
+    }
+  ],
+  "category": "math",
+  "subtopic": "applied",
+  "stage": "university",
+  "status": "live",
+  "path": "math/applied/prisoners-dilemma/",
+  "order": 2290
+}

@@ -1,0 +1,32 @@
+{
+  "slug": "backpropagation",
+  "kind": "lesson",
+  "title": {
+    "zh": "反向传播 · 误差沿网络回流",
+    "en": "Backpropagation · Error Flows Back Through the Network"
+  },
+  "desc": {
+    "zh": "输出错了，每个权重该负多少责任？用最小的网络，从「推一下看变化」走到链式法则、梯度下降，再看深层网络里梯度为什么会消失。",
+    "en": "When the output is wrong, how much blame does each weight carry? Use the smallest network to go from “nudge and see” to the chain rule and gradient descent, then see why gradients vanish in deep networks."
+  },
+  "tags": [
+    {
+      "zh": "计算与智能",
+      "en": "Computing & AI"
+    },
+    {
+      "zh": "神经网络",
+      "en": "Neural Network"
+    },
+    {
+      "zh": "损失函数",
+      "en": "Loss Function"
+    }
+  ],
+  "category": "computing",
+  "subtopic": "ml",
+  "stage": "university",
+  "status": "live",
+  "path": "computing/ml/backpropagation/",
+  "order": 1730
+}

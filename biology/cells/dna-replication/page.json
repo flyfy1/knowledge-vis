@@ -1,0 +1,24 @@
+{
+  "slug": "dna-replication",
+  "kind": "lesson",
+  "title": {
+    "zh": "DNA 复制与翻译 · 拉链、抄写和流水线",
+    "en": "DNA Replication and Translation · A Zipper, a Copy and an Assembly Line"
+  },
+  "desc": {
+    "zh": "碱基像拉链两两配对；复制时每条链都当模板，抄写出 mRNA，核糖体再按密码子一格一格造出蛋白质。",
+    "en": "Bases pair up like a zipper; in replication each strand is a template, transcription copies a gene into mRNA, and the ribosome builds a protein codon by codon."
+  },
+  "tags": [
+    {
+      "zh": "生物",
+      "en": "Biology"
+    }
+  ],
+  "category": "biology",
+  "subtopic": "cells",
+  "stage": "senior",
+  "status": "live",
+  "path": "biology/cells/dna-replication/",
+  "order": 1460
+}

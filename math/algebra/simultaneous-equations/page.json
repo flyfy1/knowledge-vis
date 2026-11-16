@@ -1,0 +1,24 @@
+{
+  "slug": "simultaneous-equations",
+  "kind": "lesson",
+  "title": {
+    "zh": "二元一次方程组 · 两条直线的交点",
+    "en": "Simultaneous Equations · Where Two Lines Meet"
+  },
+  "desc": {
+    "zh": "一个方程有无数个解，再加一个方程就把解“钉”在两条直线的交点上；代入和加减是把它算出来的两种办法。",
+    "en": "One equation has endless solutions; a second equation pins the answer to where two lines cross. Substitution and elimination are two ways to calculate it."
+  },
+  "tags": [
+    {
+      "zh": "数学基础",
+      "en": "Mathematical Foundations"
+    }
+  ],
+  "category": "math",
+  "subtopic": "algebra",
+  "stage": "junior",
+  "status": "live",
+  "path": "math/algebra/simultaneous-equations/",
+  "order": 1980
+}

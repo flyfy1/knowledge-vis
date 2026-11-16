@@ -1,0 +1,24 @@
+{
+  "slug": "similarity-scaling",
+  "kind": "lesson",
+  "title": {
+    "zh": "相似与缩放 · 长度、面积、体积各变几倍",
+    "en": "Similarity & Scaling · Lengths, Areas and Volumes Each Change Differently"
+  },
+  "desc": {
+    "zh": "投影仪把图像放大 k 倍：边长变 k 倍，面积变 k² 倍，体积变 k³ 倍，而形状和角度不变。",
+    "en": "A projector enlarges a picture k times: lengths grow k times, areas k² times, volumes k³ times, while shape and angles stay the same."
+  },
+  "tags": [
+    {
+      "zh": "数学基础",
+      "en": "Mathematical Foundations"
+    }
+  ],
+  "category": "math",
+  "subtopic": "geometry",
+  "stage": "junior",
+  "status": "live",
+  "path": "math/geometry/similarity-scaling/",
+  "order": 1960
+}

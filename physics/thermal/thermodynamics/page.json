@@ -1,0 +1,32 @@
+{
+  "slug": "thermodynamics",
+  "kind": "lesson",
+  "title": {
+    "zh": "热力学 · 一口气追踪能量",
+    "en": "Thermodynamics · Track Energy Through a Gas"
+  },
+  "desc": {
+    "zh": "拖动活塞、切换等温与绝热过程，从 P–V 曲线面积走到第一定律和卡诺效率上限。",
+    "en": "Move the piston, compare isothermal and adiabatic paths, then connect P–V area to the first law and Carnot's efficiency ceiling."
+  },
+  "tags": [
+    {
+      "zh": "第一定律",
+      "en": "First Law"
+    },
+    {
+      "zh": "P–V 图",
+      "en": "P–V Diagram"
+    },
+    {
+      "zh": "热机",
+      "en": "Heat Engines"
+    }
+  ],
+  "category": "physics",
+  "subtopic": "thermal",
+  "stage": "university",
+  "status": "live",
+  "path": "physics/thermal/thermodynamics/",
+  "order": 1190
+}

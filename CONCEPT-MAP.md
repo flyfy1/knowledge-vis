@@ -3432,6 +3432,2379 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 
 <!-- /GENERATED:atlas-nodes -->
 
+<!-- GENERATED:registry-concepts -->
+## 页面 → 概念 → 锚点（生成，勿手改）
+
+243 个页面拥有 665 个图谱概念 · 由 scripts/build-registry.cjs 从 site-registry.json 生成（概念 = atlas/data.js 里 primary 课程是该页的节点；顺序同首页登记顺序）。登记或改动页面后重跑 `node scripts/build-registry.cjs`；不要再在本文件里手写逐页概念表（2026-11-16 起，上面的手写表保留为历史记录）。
+
+### 冰冻肥皂泡 · 水膜里的结晶 / Frozen Soap Bubbles · Ice in a Thin Film
+
+`physics/thermal/frozen-bubble/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 冰冻肥皂泡 · 薄膜里的结晶 / Frozen soap bubbles · ice in a thin film | `physics/thermal/frozen-bubble/#step0` |
+
+### 升压与降压 · 能量去哪了？ / Buck & Boost · Follow the Energy
+
+`physics/circuits/power-converters/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| Boost 升压电路 / Boost converter | `physics/circuits/power-converters/` |
+| Buck 降压电路 / Buck converter | `physics/circuits/power-converters/` |
+| 电容与电场储能 / Capacitor & electric energy | `physics/circuits/power-converters/` |
+| 电感与磁场储能 / Inductor & magnetic energy | `physics/circuits/power-converters/` |
+| 电压、电流与功率 / Voltage, current & power | `physics/circuits/power-converters/` |
+| 脉宽调制 PWM / Pulse-width modulation | `physics/circuits/power-converters/` |
+| 开关与二极管 / Switches & diodes | `physics/circuits/power-converters/` |
+
+### 稀缺会搬家 / Scarcity Moves
+
+`demos/scarcity-moves/` · essay
+
+| 概念 | 深链 |
+| --- | --- |
+| 稀缺与机会成本 / Scarcity and opportunity cost | `demos/scarcity-moves/#c1` |
+| 边际：再多一点值不值 / The margin: is one more step worth it? | `demos/scarcity-moves/#c2` |
+| 沉没成本 / Sunk cost | `demos/scarcity-moves/#c2` |
+| 交换与比较优势 / Trade and comparative advantage | `demos/scarcity-moves/#c3` |
+| 价格是一条信息 / Price is a piece of information | `demos/scarcity-moves/#c4` |
+| 激励 / Incentives | `demos/scarcity-moves/#c5` |
+| 市场会失灵 / Markets can fail | `demos/scarcity-moves/#c6` |
+| 增长来自思想 / Growth comes from ideas | `demos/scarcity-moves/#c7` |
+| 你的支出是别人的收入 / Your spending is someone else's income | `demos/scarcity-moves/#c8` |
+| 收入流向稀缺的一方 / Income flows to the scarce | `demos/scarcity-moves/#c9` |
+| 制度与信任 / Institutions and trust | `demos/scarcity-moves/#c10` |
+| AI：思考的价格崩塌 / AI: the price of thinking collapses | `demos/scarcity-moves/#c11` |
+| 工作与工资：AI 替代的是任务 / Work and wages: AI replaces tasks | `demos/scarcity-moves/#c12` |
+| 什么变便宜，什么变贵 / What gets cheaper, what gets dearer | `demos/scarcity-moves/#c13` |
+| AI 之后的整体预言 / A forecast for after AI | `demos/scarcity-moves/#c14` |
+
+### 数字没有说谎，结论却错了 / Every Number Was True, and the Conclusion Was Still Wrong
+
+`probability/everyday/numbers-lie/` · essay
+
+| 概念 | 深链 |
+| --- | --- |
+| 均值回归 / Regression to the mean | `probability/everyday/numbers-lie/#c1` |
+| 小样本波动更大 / Small samples swing more | `probability/everyday/numbers-lie/#c2` |
+| 幸存者偏差 / Survivorship bias | `probability/everyday/numbers-lie/#c3` |
+| 多重比较 / Many comparisons | `probability/everyday/numbers-lie/#c4` |
+| 辛普森悖论与混杂因素 / Simpson's paradox and confounding | `probability/everyday/numbers-lie/#c5` |
+| 忽视基础比率 / Base-rate neglect | `probability/everyday/numbers-lie/#c6` |
+| 相对风险与绝对风险 / Relative versus absolute risk | `probability/everyday/numbers-lie/#c7` |
+| 长尾里的平均数与中位数 / Mean versus median in a long tail | `probability/everyday/numbers-lie/#c8` |
+| 古德哈特定律 / Goodhart's law | `probability/everyday/numbers-lie/#c9` |
+| 拿到一个结论问的六个问题 / Six questions to ask of a conclusion | `probability/everyday/numbers-lie/#c10` |
+
+### 身体是怎么稳住的 / How the Body Keeps Things Steady
+
+`biology/body/body-in-balance/` · essay
+
+| 概念 | 深链 |
+| --- | --- |
+| 进出平衡与设定点 / Inflow, outflow and the set point | `biology/body/body-in-balance/#ch1` |
+| 半衰期与给药平台 / Half-life and the dosing plateau | `biology/body/body-in-balance/#ch2` |
+| 酒精的零级消除 / Zero-order elimination of alcohol | `biology/body/body-in-balance/#ch3` |
+| 血糖的负反馈 / Blood glucose as negative feedback | `biology/body/body-in-balance/#ch4` |
+| 发烧是设定点上调 / Fever as a raised set point | `biology/body/body-in-balance/#ch5` |
+| 剂量—反应与治疗窗 / Dose–response and the therapeutic window | `biology/body/body-in-balance/#ch6` |
+| 心输出量 = 心率 × 每搏量 / Cardiac output = heart rate × stroke volume | `biology/body/body-in-balance/#ch7` |
+| 抗生素与耐药的筛选 / Antibiotics and selection for resistance | `biology/body/body-in-balance/#ch8` |
+| 群体免疫阈值 / Herd immunity threshold | `biology/body/body-in-balance/#ch9` |
+
+### 一部手机里的十个道理 / Ten Ideas Inside One Phone
+
+`tech/devices/inside-a-phone/` · essay
+
+| 概念 | 深链 |
+| --- | --- |
+| GPS 怎样定位：伪距与钟差 / How GPS finds you: pseudoranges and clock bias | `tech/devices/inside-a-phone/#gps` |
+| 加速度计：弹簧上的检测质量 / Accelerometer: a proof mass on a spring | `tech/devices/inside-a-phone/#accel` |
+| 惯性导航为什么会漂 / Why dead reckoning drifts | `tech/devices/inside-a-phone/#accel` |
+| 电容触摸屏与插值定位 / Capacitive touch and interpolation | `tech/devices/inside-a-phone/#touch` |
+| 散粒噪声与多帧叠加 / Shot noise and frame stacking | `tech/devices/inside-a-phone/#camera` |
+| 同色异谱：屏幕怎样骗过眼睛 / Metamerism: how a screen fools the eye | `tech/devices/inside-a-phone/#screen` |
+| 压缩：只存猜不中的部分 / Compression: store only the surprise | `tech/devices/inside-a-phone/#compress` |
+| 路径损耗与香农容量 / Path loss and Shannon capacity | `tech/devices/inside-a-phone/#radio` |
+| 汉明码：多发三个比特改正一个错 / Hamming code: three extra bits fix one error | `tech/devices/inside-a-phone/#ecc` |
+| 基站切换与迟滞 / Cell handover and hysteresis | `tech/devices/inside-a-phone/#handover` |
+| 电池内阻：电量为什么会跳 / Battery internal resistance: why the percentage jumps | `tech/devices/inside-a-phone/#battery` |
+| 看懂任何设备的三个问题 / Three questions for any device | `tech/devices/inside-a-phone/#method` |
+
+### 钱是从哪里来的 / Where Money Comes From
+
+`economics/money/where-money-comes-from/` · essay
+
+| 概念 | 深链 |
+| --- | --- |
+| 钱是一张人人都收的欠条 / Money as an IOU everyone accepts | `economics/money/where-money-comes-from/#ch1` |
+| 贷款创造存款 / Loans create deposits | `economics/money/where-money-comes-from/#ch2` |
+| 银行挤兑与存款保险 / Bank runs and deposit insurance | `economics/money/where-money-comes-from/#ch3` |
+| 货币数量与通胀 / Money growth and inflation | `economics/money/where-money-comes-from/#ch4` |
+| 通胀的赢家和输家 / Who wins and loses from inflation | `economics/money/where-money-comes-from/#ch5` |
+| 利息是时间的价格 / Interest as the price of time | `economics/money/where-money-comes-from/#ch6` |
+| 等额本息与提前还款 / Loan amortisation and extra payments | `economics/money/where-money-comes-from/#ch7` |
+| 利率传导与时滞 / Monetary transmission and its lags | `economics/money/where-money-comes-from/#ch8` |
+| 购买力平价与汇率 / Purchasing power parity and exchange rates | `economics/money/where-money-comes-from/#ch9` |
+
+### 同一批选票，不同的赢家 · 投票规则与公平 / Same Ballots, Different Winner · Voting Rules and Fairness
+
+`society/civics/same-votes-different-winner/` · essay
+
+| 概念 | 深链 |
+| --- | --- |
+| 五种计票规则 / Five counting rules | `society/civics/same-votes-different-winner/#ch1` |
+| 搅局者与无关选项独立 / The spoiler effect and independence of irrelevant alternatives | `society/civics/same-votes-different-winner/#ch2` |
+| 迪韦尔热倾向 / Duverger's tendency | `society/civics/same-votes-different-winner/#ch2` |
+| 中位选民定理 / The median voter theorem | `society/civics/same-votes-different-winner/#ch3` |
+| 孔多塞悖论（多数循环） / The Condorcet paradox (majority cycles) | `society/civics/same-votes-different-winner/#ch4` |
+| 策略投票与吉巴德–萨特斯韦特定理 / Strategic voting and the Gibbard–Satterthwaite theorem | `society/civics/same-votes-different-winner/#ch5` |
+| 阿罗不可能定理 / Arrow's impossibility theorem | `society/civics/same-votes-different-winner/#ch6` |
+| 席位分配与阿拉巴马悖论 / Apportionment and the Alabama paradox | `society/civics/same-votes-different-winner/#ch7` |
+| 选区划分与效率差距 / Gerrymandering and the efficiency gap | `society/civics/same-votes-different-winner/#ch8` |
+| 孔多塞陪审团定理 / Condorcet's jury theorem | `society/civics/same-votes-different-winner/#ch9` |
+| 怎样读“这个制度很公平” / How to read a claim that a system is fair | `society/civics/same-votes-different-winner/#ch10` |
+
+### 一堆开关是怎么学会算数的 / How a Pile of Switches Learned to Do Arithmetic
+
+`computing/systems/switches-that-compute/` · essay
+
+| 概念 | 深链 |
+| --- | --- |
+| 开关组成逻辑门 / Switches Make Logic Gates | `computing/systems/switches-that-compute/#ch1` |
+| 与非门的通用性 / NAND Is Universal | `computing/systems/switches-that-compute/#ch2` |
+| 二进制计数 / Counting in Binary | `computing/systems/switches-that-compute/#ch3` |
+| 加法器与进位链 / Adders and the Carry Chain | `computing/systems/switches-that-compute/#ch4` |
+| 补码与溢出 / Two's Complement and Overflow | `computing/systems/switches-that-compute/#ch5` |
+| 锁存器与亚稳态 / Latches and Metastability | `computing/systems/switches-that-compute/#ch6` |
+| 时钟、触发器与计数器 / Clocks, Flip-Flops and Counters | `computing/systems/switches-that-compute/#ch7` |
+| 多路选择器与 ALU / Multiplexers and the ALU | `computing/systems/switches-that-compute/#ch8` |
+| 存储程序与取指执行 / Stored Programs and Fetch–Execute | `computing/systems/switches-that-compute/#ch9` |
+| 浮点数为什么不精确 / Why Floating Point Is Inexact | `computing/systems/switches-that-compute/#ch10` |
+| 真实处理器：规模而非新原理 / Real Processors: Scale, Not New Principles | `computing/systems/switches-that-compute/#ch11` |
+
+### 黑洞到底是什么 / What Is a Black Hole, Really?
+
+`earth/astronomy/what-is-a-black-hole/` · essay
+
+| 概念 | 深链 |
+| --- | --- |
+| 逃逸速度与史瓦西半径 / Escape speed and the Schwarzschild radius | `earth/astronomy/what-is-a-black-hole/#ch1` |
+| 黑洞的大小与“密度” / Black hole size and 'density' | `earth/astronomy/what-is-a-black-hole/#ch2` |
+| 黑洞不会“吸” / Black holes don't suck | `earth/astronomy/what-is-a-black-hole/#ch3` |
+| 最内稳定圆轨道与光子球 / Innermost stable orbit and the photon sphere | `earth/astronomy/what-is-a-black-hole/#ch4` |
+| 潮汐力与面条化 / Tides and spaghettification | `earth/astronomy/what-is-a-black-hole/#ch5` |
+| 引力时间膨胀与引力红移 / Gravitational time dilation and redshift | `earth/astronomy/what-is-a-black-hole/#ch6` |
+| 黑洞的影子 / The black hole shadow | `earth/astronomy/what-is-a-black-hole/#ch7` |
+| 恒星 S2 称出人马座 A* / Weighing Sgr A* with the star S2 | `earth/astronomy/what-is-a-black-hole/#ch8` |
+| 引力波与黑洞合并 / Gravitational waves from merging black holes | `earth/astronomy/what-is-a-black-hole/#ch9` |
+| 黑洞到底是什么：霍金辐射与本页的边界 / What a black hole is: Hawking radiation and the limits | `earth/astronomy/what-is-a-black-hole/#ch10` |
+
+### 疫苗是怎么保护人的 / How Vaccines Protect You and the People Around You
+
+`biology/body/how-vaccines-work/` · essay
+
+| 概念 | 深链 |
+| --- | --- |
+| 初次免疫应答：和病毒赛跑 / Primary immune response: the race against the virus | `biology/body/how-vaccines-work/#ch1` |
+| 二次免疫应答与记忆细胞 / Secondary response and memory cells | `biology/body/how-vaccines-work/#ch2` |
+| 防感染与防重症 / Protection against infection vs severe disease | `biology/body/how-vaccines-work/#ch3` |
+| 疫苗效力：相对风险降低 / Vaccine efficacy as relative risk reduction | `biology/body/how-vaccines-work/#ch4` |
+| 病例里打过疫苗的比例 / The vaccinated share of cases | `biology/body/how-vaccines-work/#ch5` |
+| 需要的接种率：阈值 ÷ 效力 / Coverage needed: threshold ÷ efficacy | `biology/body/how-vaccines-work/#ch6` |
+| 保护消退与加强针 / Waning protection and boosters | `biology/body/how-vaccines-work/#ch7` |
+| 读懂疫苗数字的三个问题 / Three questions for any vaccine number | `biology/body/how-vaccines-work/#ch8` |
+
+### 一点点二氧化碳 · 地球为什么会变暖 / A Little CO₂ · Why the Planet Warms
+
+`earth/climate/why-the-planet-warms/` · essay
+
+| 概念 | 深链 |
+| --- | --- |
+| 行星能量平衡与有效温度 / Planetary energy balance and effective temperature | `earth/climate/why-the-planet-warms/#ch1` |
+| 温室效应：一层只挡红外的大气 / Greenhouse effect: one infrared-absorbing layer | `earth/climate/why-the-planet-warms/#ch2` |
+| 排放高度：越高越冷，从高处散热 / Emission height: cooler air higher up radiates to space | `earth/climate/why-the-planet-warms/#ch3` |
+| “已经饱和”与对数强迫 / "Already saturated" and logarithmic forcing | `earth/climate/why-the-planet-warms/#ch4` |
+| 气候反馈：一度变三度 / Climate feedbacks: one degree becomes three | `earth/climate/why-the-planet-warms/#ch5` |
+| 为什么敏感度的区间这么宽 / Why the climate sensitivity range is so wide | `earth/climate/why-the-planet-warms/#ch6` |
+| 海洋的拖延与时间常数 / Ocean lag and the time constant | `earth/climate/why-the-planet-warms/#ch7` |
+
+### 天为什么是蓝的 / Why Is the Sky Blue?
+
+`physics/optics/why-the-sky-is-blue/` · essay
+
+| 概念 | 深链 |
+| --- | --- |
+| 天空光是被空气拐弯的阳光 / Skylight is sunlight scattered by air | `physics/optics/why-the-sky-is-blue/#ch1` |
+| 瑞利散射的 1/λ⁴ 定律 / Rayleigh's 1/λ⁴ law | `physics/optics/why-the-sky-is-blue/#ch2` |
+| 天空光的光谱峰在紫外 / The skylight spectrum peaks in the ultraviolet | `physics/optics/why-the-sky-is-blue/#ch3` |
+| 为什么天不是紫的：眼睛的三种视锥 / Why the sky isn't violet: the eye's three cones | `physics/optics/why-the-sky-is-blue/#ch4` |
+| 落日为什么是红的：大气质量 / Why sunsets are red: air mass | `physics/optics/why-the-sky-is-blue/#ch5` |
+| 头顶最蓝、地平线发白 / Deepest blue overhead, white at the horizon | `physics/optics/why-the-sky-is-blue/#ch6` |
+| 米氏散射：云为什么是白的 / Mie scattering: why clouds are white | `physics/optics/why-the-sky-is-blue/#ch7` |
+| 火星的天空：黄褐的白天、蓝色的日落 / The Martian sky: butterscotch by day, blue at sunset | `physics/optics/why-the-sky-is-blue/#ch8` |
+| 多次散射与臭氧：简单模型漏掉的 / Multiple scattering and ozone: what the simple model misses | `physics/optics/why-the-sky-is-blue/#ch9` |
+
+### 每个月的房贷，钱到底还到哪儿去了 / Where Does Your Mortgage Payment Actually Go?
+
+`economics/money/where-a-mortgage-payment-goes/` · essay
+
+| 概念 | 深链 |
+| --- | --- |
+| 名义年利率、月利率与实际年利率 / Nominal rate, periodic rate and effective annual rate | `economics/money/where-a-mortgage-payment-goes/#ch1` |
+| 月供公式（等额本息） / The level-payment (annuity) formula | `economics/money/where-a-mortgage-payment-goes/#ch2` |
+| 还款表：为什么前几年主要还利息 / The amortisation schedule: why early payments are mostly interest | `economics/money/where-a-mortgage-payment-goes/#ch3` |
+| 等额本金与等额本息 / Equal-principal versus equal-payment repayment | `economics/money/where-a-mortgage-payment-goes/#ch4` |
+| 提前还款：缩短年限还是减少月供 / Prepaying: shorten the term or lower the payment | `economics/money/where-a-mortgage-payment-goes/#ch5` |
+| 浮动利率：利率变了月供怎么变 / Floating rates: what a rate change does to the payment | `economics/money/where-a-mortgage-payment-goes/#ch6` |
+| 真实年利率：内部收益率与分期手续费 / The true annual rate: IRR and flat-fee instalments | `economics/money/where-a-mortgage-payment-goes/#ch7` |
+| 通胀、实际利率与提前还贷的机会成本 / Inflation, the real rate and the opportunity cost of prepaying | `economics/money/where-a-mortgage-payment-goes/#ch8` |
+| 拿到贷款合同时能自己算的事 / What you can work out from a loan contract | `economics/money/where-a-mortgage-payment-goes/#ch9` |
+
+### 酱豆腐为什么好吃 / Why Fermented Tofu Tastes Good
+
+`food/flavor/why-fermented-tofu-tastes-good/` · essay
+
+| 概念 | 深链 |
+| --- | --- |
+| 蛋白质切成氨基酸才有味道 / Protein has to be cut into amino acids before you taste it | `food/flavor/why-fermented-tofu-tastes-good/#ch1` |
+| 内切酶和外切酶的配合 / Endopeptidases and exopeptidases working together | `food/flavor/why-fermented-tofu-tastes-good/#ch2` |
+| 鲜味与鲜味相乘 / Umami and umami synergy | `food/flavor/why-fermented-tofu-tastes-good/#ch3` |
+| 盐、水分活度和谁能活 / Salt, water activity and what can grow | `food/flavor/why-fermented-tofu-tastes-good/#ch4` |
+| 气味活度值：闻到的不是最多的 / Odour activity value: what you smell is not what is most abundant | `food/flavor/why-fermented-tofu-tastes-good/#ch5` |
+| 松花蛋：碱渗进蛋里 / Century egg: alkali soaking into an egg | `food/flavor/why-fermented-tofu-tastes-good/#ch6` |
+| 发酵食物是同一个原理吗 / Do fermented foods work by the same principle? | `food/flavor/why-fermented-tofu-tastes-good/#ch7` |
+| 为什么有人觉得臭 / Why some people find it stinky | `food/flavor/why-fermented-tofu-tastes-good/#ch8` |
+| 钠、生物胺和铅：机制与标准 / Sodium, biogenic amines and lead: mechanisms and standards | `food/flavor/why-fermented-tofu-tastes-good/#ch9` |
+
+### 酱油是怎么酿出来的 / How Soy Sauce Gets Its Flavor
+
+`food/flavor/how-soy-sauce-gets-its-flavor/` · essay
+
+| 概念 | 深链 |
+| --- | --- |
+| 酱油的三段：制曲、酱醪、加热 / Soy sauce in three stages: koji, moromi, heating | `food/flavor/how-soy-sauce-gets-its-flavor/#ch1` |
+| 制曲：先养一批酶 / Koji: growing a batch of enzymes | `food/flavor/how-soy-sauce-gets-its-flavor/#ch2` |
+| 为什么酱油要加小麦 / Why soy sauce uses wheat | `food/flavor/how-soy-sauce-gets-its-flavor/#ch3` |
+| 盐水里的接力：乳酸菌和酵母 / The relay in brine: lactic bacteria then yeast | `food/flavor/how-soy-sauce-gets-its-flavor/#ch4` |
+| 酱油为什么是黑的 / Why soy sauce is brown | `food/flavor/how-soy-sauce-gets-its-flavor/#ch5` |
+| 酱油的香从哪来 / Where soy sauce aroma comes from | `food/flavor/how-soy-sauce-gets-its-flavor/#ch6` |
+| 氨基酸态氮：瓶子上的数字 / Amino-acid nitrogen: the number on the bottle | `food/flavor/how-soy-sauce-gets-its-flavor/#ch7` |
+| 酿半年和做几天：酿造酱油、低盐固态和酸水解 / Six months or a few days: brewed, low-salt solid-state and acid-hydrolysed | `food/flavor/how-soy-sauce-gets-its-flavor/#ch8` |
+| 酱油为什么那么咸 / Why soy sauce is so salty | `food/flavor/how-soy-sauce-gets-its-flavor/#ch9` |
+
+### 混合注意力是怎么“记住”长文的 / How Hybrid Attention Models Remember
+
+`computing/ml/how-hybrid-attention-remembers/` · essay
+
+| 概念 | 深链 |
+| --- | --- |
+| KV Cache 与固定大小状态 / KV Cache vs Fixed-Size Recurrent State | `computing/ml/how-hybrid-attention-remembers/#ch1` |
+| 线性注意力的矩阵结合律 / Linear Attention via Matrix Associativity | `computing/ml/how-hybrid-attention-remembers/#ch2` |
+| 快权重联想记忆与容量上限 / Fast-Weight Memory & Rank Capacity | `computing/ml/how-hybrid-attention-remembers/#ch3` |
+| Delta 规则：先擦后写的投影更新 / The Delta Rule: Erase Before Writing | `computing/ml/how-hybrid-attention-remembers/#ch4` |
+| Gated DeltaNet 与选择性遗忘门 / Gated DeltaNet & Selective Decay | `computing/ml/how-hybrid-attention-remembers/#ch5` |
+| 分块并行训练与结构化状态空间对偶 / Chunkwise Training & State Space Duality | `computing/ml/how-hybrid-attention-remembers/#ch6` |
+| 3:1 混合注意力与大海捞针精确回忆 / 3:1 Hybrid Ratio & Exact Recall Bookmarks | `computing/ml/how-hybrid-attention-remembers/#ch7` |
+| 屋顶线下的长上下文吐字加速 / Roofline Decode Speedup at Long Context | `computing/ml/how-hybrid-attention-remembers/#ch8` |
+| 混合注意力前沿谱系（2026 年 11 月） / Hybrid Attention Landscape (Nov 2026) | `computing/ml/how-hybrid-attention-remembers/#ch9` |
+
+### 为什么计算一直在等内存 / Why Compute Waits for Memory
+
+`computing/systems/why-compute-waits-for-memory/` · essay
+
+| 概念 | 深链 |
+| --- | --- |
+| 流水线与访存停顿 / Pipeline Stalls from Memory Latency | `computing/systems/why-compute-waits-for-memory/#ch1` |
+| 存储层级与缓存命中 / Memory Latency Hierarchy and Cache Locality | `computing/systems/why-compute-waits-for-memory/#ch2` |
+| 矩阵分块与时间局部性 / Loop Tiling and Temporal Locality | `computing/systems/why-compute-waits-for-memory/#ch3` |
+| 内存墙与利特尔法则 / The Memory Wall and Little's Law | `computing/systems/why-compute-waits-for-memory/#ch4` |
+| 多核扩展、阿姆达尔与总线瓶颈 / Multicore Scaling, Amdahl, and Bus Contention | `computing/systems/why-compute-waits-for-memory/#ch5` |
+| GPU 并发与脉动阵列 / GPU Throughput and Systolic Arrays | `computing/systems/why-compute-waits-for-memory/#ch6` |
+| 屋顶线模型与算术强度 / The Roofline Model and Arithmetic Intensity | `computing/systems/why-compute-waits-for-memory/#ch7` |
+| 大模型推理的内存瓶颈 / Why LLM Inference Is Memory-Bound | `computing/systems/why-compute-waits-for-memory/#ch8` |
+| 数据搬运能耗与 HBM 封装 / Data Movement Energy and HBM Packaging | `computing/systems/why-compute-waits-for-memory/#ch9` |
+| HBM4、共封装光学与算力前沿 / HBM4, Co-Packaged Optics, and the 2026 Frontier | `computing/systems/why-compute-waits-for-memory/#ch10` |
+| 诊断芯片与程序的四个问题 / Four Questions for Any Chip or Slow Program | `computing/systems/why-compute-waits-for-memory/#ch11` |
+
+### NVMe 为什么这么快 / Why NVMe Is So Fast
+
+`computing/systems/why-nvme-is-fast/` · essay
+
+| 概念 | 深链 |
+| --- | --- |
+| NVMe 与存储协议开销转移 / NVMe and Shifting Storage Bottlenecks | `computing/systems/why-nvme-is-fast/#ch1` |
+| PCIe 多车道与队列深度 / PCIe Lanes and Little's Law in Storage | `computing/systems/why-nvme-is-fast/#ch2` |
+| 64K 并行队列与无锁扩展 / 64K Parallel Queues and Lock-Free Scaling | `computing/systems/why-nvme-is-fast/#ch3` |
+| 环形队列、门铃寄存器与 DMA / SQ/CQ Ring Buffers, Doorbells & DMA | `computing/systems/why-nvme-is-fast/#ch4` |
+| SSD 多通道 NAND 并行 / Multi-Channel NAND Die Parallelism | `computing/systems/why-nvme-is-fast/#ch5` |
+| 写放大、垃圾回收与 Trim / Write Amplification, Garbage Collection & Trim | `computing/systems/why-nvme-is-fast/#ch6` |
+| 轮询 vs 中断（io_uring / SPDK） / Polling vs. Interrupts (io_uring / SPDK) | `computing/systems/why-nvme-is-fast/#ch7` |
+| PCIe 6.0、ZNS 与 GPUDirect Storage / PCIe 6.0, ZNS & GPUDirect Storage | `computing/systems/why-nvme-is-fast/#ch8` |
+
+### 硬盘里到底是什么 / What a Drive Is Made Of
+
+`computing/systems/what-a-drive-is-made-of/` · essay
+
+| 概念 | 深链 |
+| --- | --- |
+| 块设备、扇区与 LBA（512e / 4Kn） / Block devices, sectors and LBA (512e / 4Kn) | `computing/systems/what-a-drive-is-made-of/#ch1` |
+| 机械硬盘：寻道、转动等待与外圈更快 / Hard disks: seek, rotational latency and faster outer tracks | `computing/systems/what-a-drive-is-made-of/#ch2` |
+| 叠瓦式记录（SMR）与热辅助记录（HAMR） / Shingled (SMR) and heat-assisted (HAMR) recording | `computing/systems/what-a-drive-is-made-of/#ch3` |
+| 闪存单元：SLC、MLC、TLC、QLC、PLC 与读裕量 / Flash cells: SLC to PLC and the read margin | `computing/systems/what-a-drive-is-made-of/#ch4` |
+| 闪存为什么会坏：擦写次数、纠错码、TBW 与 DWPD / Why flash wears out: P/E cycles, ECC, TBW and DWPD | `computing/systems/what-a-drive-is-made-of/#ch5` |
+| 闪存翻译层（FTL）：不能原地改写与垃圾回收 / The flash translation layer: no in-place updates, garbage collection | `computing/systems/what-a-drive-is-made-of/#ch6` |
+| 存储接口分层地图：外形、连接器、链路、传输、命令集 / Storage interface map: form factor, connector, link, transport, command set | `computing/systems/what-a-drive-is-made-of/#ch7` |
+| 固态硬盘为什么比机械硬盘快：延迟与带宽 / Why SSDs are faster than hard disks: latency and bandwidth | `computing/systems/what-a-drive-is-made-of/#ch8` |
+| 存储前沿（2026 年 11 月）：HAMR 出货、闪存层数、QLC 与 PLC / Storage frontier (Nov 2026): HAMR shipping, NAND layers, QLC and PLC | `computing/systems/what-a-drive-is-made-of/#ch9` |
+
+### SATA 为什么用了二十多年 / Why SATA Has Lasted Over Twenty Years
+
+`computing/systems/how-sata-works/` · essay
+
+| 概念 | 深链 |
+| --- | --- |
+| SATA、ATA 命令集与 AHCI 的分层 / SATA Layers: Wire, ATA Commands and AHCI | `computing/systems/how-sata-works/#ch1` |
+| 并行 ATA 为什么跑不快：时序预算与线间偏斜 / Why Parallel ATA Topped Out: Timing Budget and Skew | `computing/systems/how-sata-works/#ch2` |
+| 8b/10b 编码与逗号码 / 8b/10b Encoding and the Comma | `computing/systems/how-sata-works/#ch3` |
+| FIS 帧：一条读命令在线上的样子 / FIS Frames: One Read Command on the Wire | `computing/systems/how-sata-works/#ch4` |
+| NCQ：机械盘自己排队 / NCQ: Letting a Hard Disk Reorder Its Queue | `computing/systems/how-sata-works/#ch5` |
+| 热插拔与链路省电：Partial、Slumber、DevSleep / Hot Plug and Link Power: Partial, Slumber, DevSleep | `computing/systems/how-sata-works/#ch6` |
+| 端口倍增器、eSATA、mSATA 与 M.2 SATA / Port Multipliers, eSATA, mSATA and M.2 SATA | `computing/systems/how-sata-works/#ch7` |
+| 为什么 SATA 停在 6 Gb/s / Why SATA Stopped at 6 Gb/s | `computing/systems/how-sata-works/#ch8` |
+| SATA 的前沿（截至 2026 年 11 月） / Where SATA Stands (as of November 2026) | `computing/systems/how-sata-works/#ch9` |
+| 读硬盘规格表时问三件事 / Three Questions for a Drive Spec Sheet | `computing/systems/how-sata-works/#ch10` |
+
+### 服务器硬盘为什么用 SAS / Why Server Drives Use SAS
+
+`computing/systems/how-sas-works/` · essay
+
+| 概念 | 深链 |
+| --- | --- |
+| SAS 的分层：SCSI 命令、SSP/STP/SMP 与物理层 / SAS Layers: SCSI Commands, SSP/STP/SMP and the Phy | `computing/systems/how-sas-works/#ch1` |
+| SCSI 命令块 CDB、LUN 与标签队列 / The SCSI CDB, LUNs and Tagged Queuing | `computing/systems/how-sas-works/#ch2` |
+| SSP 的一次读：帧和两次连接 / One SSP Read: Frames and Two Connections | `computing/systems/how-sas-works/#ch3` |
+| 双端口与多路径的可用度算术 / Availability Arithmetic of Dual Port and Multipath | `computing/systems/how-sas-works/#ch4` |
+| SAS 扩展器、地址与分区 / SAS Expanders, Addresses and Zoning | `computing/systems/how-sas-works/#ch5` |
+| 宽端口：四条道不能合成一条 / Wide Ports: Four Lanes Are Not One Fast Lane | `computing/systems/how-sas-works/#ch6` |
+| STP：SAS 口为什么认 SATA 盘 / STP: Why a SAS Port Accepts a SATA Drive | `computing/systems/how-sas-works/#ch7` |
+| T10 PI：每个块多 8 字节 / T10 PI: Eight More Bytes per Block | `computing/systems/how-sas-works/#ch8` |
+| 24G SAS 的 128b/150b 编码与纠错 / 24G SAS: 128b/150b Coding and FEC | `computing/systems/how-sas-works/#ch9` |
+| SAS 的前沿（截至 2026 年 11 月） / The SAS Frontier (as of November 2026) | `computing/systems/how-sas-works/#ch10` |
+| 看到 SAS 时问三件事 / Three Questions When You See SAS | `computing/systems/how-sas-works/#ch11` |
+
+### 移动硬盘为什么跑不满 / Why a USB Drive Never Hits Its Label
+
+`computing/systems/how-usb-drives-talk/` · essay
+
+| 概念 | 深链 |
+| --- | --- |
+| USB 存储在协议地图上的位置：两段协议和一颗桥接芯片 / Where USB Storage Sits: Two Stacks and a Bridge Chip | `computing/systems/how-usb-drives-talk/#ch1` |
+| USB 由主机调度：微帧与批量传输上限 / USB Is Host-Scheduled: Microframes and the Bulk Ceiling | `computing/systems/how-usb-drives-talk/#ch2` |
+| USB 命名与线速：Gen 1、Gen 2、×2 和编码 / USB Names and Line Rates: Gen 1, Gen 2, ×2 and Encoding | `computing/systems/how-usb-drives-talk/#ch3` |
+| Bulk-Only 传输：CBW、数据、CSW，一次一条 / Bulk-Only Transport: CBW, Data, CSW, One at a Time | `computing/systems/how-usb-drives-talk/#ch4` |
+| UASP：四条管道、标签和 USB 3 的流 / UASP: Four Pipes, Tags and USB 3 Streams | `computing/systems/how-usb-drives-talk/#ch5` |
+| 桥接芯片：SCSI 翻译与链条上的瓶颈 / The Bridge Chip: SCSI Translation and the Bottleneck | `computing/systems/how-usb-drives-talk/#ch6` |
+| 移动固态的发热降速：集总热容模型 / External SSD Thermal Throttling: A Lumped Thermal Model | `computing/systems/how-usb-drives-talk/#ch7` |
+| 雷电与 USB4 的 PCIe 隧道：不翻译的路 / PCIe Tunnelling in Thunderbolt and USB4 | `computing/systems/how-usb-drives-talk/#ch8` |
+| U 盘和存储卡：几颗闪存与总线 / Flash Drives and Memory Cards: A Few Dies and a Bus | `computing/systems/how-usb-drives-talk/#ch9` |
+| USB 与雷电存储的前沿（2026 年 11 月） / The USB and Thunderbolt Storage Frontier (November 2026) | `computing/systems/how-usb-drives-talk/#ch10` |
+| 看包装时问三件事 / Three Questions for a USB Speed Label | `computing/systems/how-usb-drives-talk/#ch11` |
+
+### 隔着网线的硬盘 / Drives Across a Wire
+
+`computing/systems/storage-over-a-network/` · essay
+
+| 概念 | 深链 |
+| --- | --- |
+| 块、文件与对象存储：NAS 和 SAN 的分别 / Block, file and object storage: how NAS and SAN differ | `computing/systems/storage-over-a-network/#ch1` |
+| NAS 的文件协议：NFS、SMB 与小文件的往返 / NAS file protocols: NFS, SMB and small-file round trips | `computing/systems/storage-over-a-network/#ch2` |
+| iSCSI：SCSI 命令走 TCP，写要等 R2T / iSCSI: SCSI commands over TCP, writes wait for R2T | `computing/systems/storage-over-a-network/#ch3` |
+| 光纤通道的缓冲区信用与距离 / Fibre Channel buffer-to-buffer credits and distance | `computing/systems/storage-over-a-network/#ch4` |
+| 网络存储的延迟账：介质、协议栈、光纤与交换机 / The latency budget of network storage | `computing/systems/storage-over-a-network/#ch5` |
+| RDMA、RoCE v2 与无损以太网 / RDMA, RoCE v2 and lossless Ethernet | `computing/systems/storage-over-a-network/#ch6` |
+| NVMe-oF：胶囊、NVMe/TCP 与 NVMe/RDMA / NVMe-oF: capsules, NVMe/TCP and NVMe/RDMA | `computing/systems/storage-over-a-network/#ch7` |
+| 多路径的分流与切换：ALUA 与 ANA / Splitting and failing over across paths: ALUA and ANA | `computing/systems/storage-over-a-network/#ch8` |
+| 三副本与纠删码：空间、持久性与修理代价 / Replication vs erasure coding: space, durability and repair | `computing/systems/storage-over-a-network/#ch9` |
+| 网络存储的前沿（截至 2026 年 11 月） / The network storage frontier (as of November 2026) | `computing/systems/storage-over-a-network/#ch10` |
+| 看到网络存储时问的三件事 / Three questions to ask about network storage | `computing/systems/storage-over-a-network/#ch11` |
+
+### PCIe 为什么能一代一代翻倍 / Why PCIe Keeps Doubling
+
+`computing/systems/how-pcie-works/` · essay
+
+| 概念 | 深链 |
+| --- | --- |
+| PCIe 的拓扑：根复合体、交换芯片和端点组成的树 / PCIe Topology: a Tree of Root Complex, Switches and Endpoints | `computing/systems/how-pcie-works/#ch1` |
+| PCIe 通道与代：x16、x4 和每代的速率 / PCIe Lanes and Generations: x16, x4 and the Rate of Each Generation | `computing/systems/how-pcie-works/#ch2` |
+| TLP：PCIe 上的包和包头 / TLPs: the Packets and Headers of PCIe | `computing/systems/how-pcie-works/#ch3` |
+| PCIe 的信用流控 / Credit-Based Flow Control in PCIe | `computing/systems/how-pcie-works/#ch4` |
+| ACK/NAK 与重发缓冲 / ACK/NAK and the Replay Buffer | `computing/systems/how-pcie-works/#ch5` |
+| 开机枚举、配置空间与 BAR / Enumeration, Configuration Space and BARs | `computing/systems/how-pcie-works/#ch6` |
+| DMA 与 MSI：中断也是一次写内存 / DMA and MSI: an Interrupt Is a Memory Write | `computing/systems/how-pcie-works/#ch7` |
+| 通道损耗预算与重定时器 / Channel Loss Budgets and Retimers | `computing/systems/how-pcie-works/#ch8` |
+| PAM4 与眼图 / PAM4 and Eye Diagrams | `computing/systems/how-pcie-works/#ch9` |
+| FLIT 模式与前向纠错 / FLIT Mode and Forward Error Correction | `computing/systems/how-pcie-works/#ch10` |
+| PCIe 7.0、8.0 与合规测试的进展 / Where PCIe 7.0, 8.0 and Compliance Stand | `computing/systems/how-pcie-works/#ch11` |
+| PCIe 翻倍的三种办法 / Three Ways PCIe Doubled | `computing/systems/how-pcie-works/#ch12` |
+
+### 电脑里的零件是怎么连起来的 / How the Parts of a Computer Are Wired Together
+
+`computing/systems/how-a-computer-is-wired/` · essay
+
+| 概念 | 深链 |
+| --- | --- |
+| 共享总线：PCI 的仲裁、复用和时间账 / The Shared Bus: PCI Arbitration, Multiplexing and Its Time Budget | `computing/systems/how-a-computer-is-wired/#ch1` |
+| 为什么并行总线跑不快：负载、反射波和时钟 / Why a Parallel Bus Can't Go Fast: Loading, Reflected Waves and the Clock | `computing/systems/how-a-computer-is-wired/#ch2` |
+| 北桥与南桥：前端总线、AGP 和汇合点 / Northbridge and Southbridge: the Front-Side Bus, AGP and the Meeting Point | `computing/systems/how-a-computer-is-wired/#ch3` |
+| 内存控制器进了 CPU：NUMA 和远近内存 / The Memory Controller Moves into the CPU: NUMA and Near and Far Memory | `computing/systems/how-a-computer-is-wired/#ch4` |
+| 今天的主板：CPU 直连和芯片组的上行链路 / Today's Motherboard: CPU Lanes and the Chipset Uplink | `computing/systems/how-a-computer-is-wired/#ch5` |
+| 芯片里面的路：环形总线和网格 / Roads Inside the Chip: Ring Bus and Mesh | `computing/systems/how-a-computer-is-wired/#ch6` |
+| 芯粒之间的连线：UCIe 和每比特的能耗 / Links Between Chiplets: UCIe and Energy per Bit | `computing/systems/how-a-computer-is-wired/#ch7` |
+| 到今天还共用的小总线：I²C 和上拉电阻 / The Small Buses Still Shared Today: I²C and Pull-up Resistors | `computing/systems/how-a-computer-is-wired/#ch8` |
+| 互连的前沿（截至 2026 年 11 月）：UCIe 3.0 与 4.0、3D 堆叠、CXL 4.0 / The Interconnect Frontier (as of November 2026): UCIe 3.0 and 4.0, 3D Stacking, CXL 4.0 | `computing/systems/how-a-computer-is-wired/#ch9` |
+| 看一台机器的三个问题 / Three Questions for Reading a Machine | `computing/systems/how-a-computer-is-wired/#ch10` |
+
+### 雷电接口是怎么工作的 / How Thunderbolt Works
+
+`computing/systems/how-thunderbolt-works/` · essay
+
+| 概念 | 深链 |
+| --- | --- |
+| USB-C 的 24 根针和 CC 线 / The 24 Pins of USB-C and the CC Line | `computing/systems/how-thunderbolt-works/#ch1` |
+| USB4 路由器与隧道：4 字节包头 / USB4 Routers and Tunnels: the 4-Byte Header | `computing/systems/how-thunderbolt-works/#ch2` |
+| 一条 USB4 链路怎么分带宽 / How One USB4 Link Is Shared | `computing/systems/how-thunderbolt-works/#ch3` |
+| 雷电菊花链：一台接一台 / Daisy-Chaining Thunderbolt Devices | `computing/systems/how-thunderbolt-works/#ch4` |
+| 80 Gb/s 怎么来：PAM3 与 3+1 非对称 / Where 80 Gb/s Comes From: PAM3 and 3+1 | `computing/systems/how-thunderbolt-works/#ch5` |
+| USB-C 接显示器要多少带宽 / How Much a Monitor Needs over USB-C | `computing/systems/how-thunderbolt-works/#ch6` |
+| USB PD：谈出来的瓦数与 EPR / USB Power Delivery: Negotiated Watts and EPR | `computing/systems/how-thunderbolt-works/#ch7` |
+| 雷电 DMA 攻击与 IOMMU / Thunderbolt DMA Attacks and the IOMMU | `computing/systems/how-thunderbolt-works/#ch8` |
+| 雷电 4/5 与 USB4 的必选清单 / Thunderbolt 4/5 vs USB4: the Mandatory List | `computing/systems/how-thunderbolt-works/#ch9` |
+| 雷电与 USB4 的前沿（2026） / Thunderbolt and USB4 Frontier (2026) | `computing/systems/how-thunderbolt-works/#ch10` |
+| 雷电接口是怎么工作的 / How Thunderbolt Works | `computing/systems/how-thunderbolt-works/#ch11` |
+
+### CPU 的三级缓存是怎么工作的 / How a CPU's Three Levels of Cache Work
+
+`computing/systems/how-cpu-caches-work/` · essay
+
+| 概念 | 深链 |
+| --- | --- |
+| 为什么要缓存，为什么不止一级 / Why caches, and why more than one level | `computing/systems/how-cpu-caches-work/#ch1` |
+| 一个地址怎么被拆开 / How an address is split | `computing/systems/how-cpu-caches-work/#ch2` |
+| 相联度与三种缺失 / Associativity and the three kinds of miss | `computing/systems/how-cpu-caches-work/#ch3` |
+| 满了换谁：LRU、伪 LRU 与 RRIP / Replacement: LRU, pseudo-LRU and RRIP | `computing/systems/how-cpu-caches-work/#ch4` |
+| 写回、写直达与写缓冲 / Write-back, write-through and the write buffer | `computing/systems/how-cpu-caches-work/#ch5` |
+| 三级各管什么：包含、排他与共享 L3 / What each level does: inclusive, exclusive and the shared L3 | `computing/systems/how-cpu-caches-work/#ch6` |
+| 为什么 L1 这么小 / Why L1 is small | `computing/systems/how-cpu-caches-work/#ch7` |
+| 预取：下一行与步长 / Prefetching: next-line and stride | `computing/systems/how-cpu-caches-work/#ch8` |
+| MESI 入门与伪共享 / A first look at MESI, and false sharing | `computing/systems/how-cpu-caches-work/#ch9` |
+| 追指针：看得见的缓存台阶 / Pointer chasing: the cache staircase you can measure | `computing/systems/how-cpu-caches-work/#ch10` |
+| 缓存的前沿（2026 年 11 月） / The cache frontier (November 2026) | `computing/systems/how-cpu-caches-work/#ch11` |
+| 看一颗芯片的缓存时问三件事 / Three questions about a chip's caches | `computing/systems/how-cpu-caches-work/#ch12` |
+
+### CPU 是怎么运行一个程序的 / How a CPU Runs a Program
+
+`computing/systems/how-a-cpu-runs-a-program/` · essay
+
+| 概念 | 深链 |
+| --- | --- |
+| 指令集架构：软件和硬件之间的合同 / The ISA: a contract between software and hardware | `computing/systems/how-a-cpu-runs-a-program/#ch1` |
+| RISC-V 的寄存器和六种指令格式 / RISC-V registers and the six instruction formats | `computing/systems/how-a-cpu-runs-a-program/#ch2` |
+| 把一个循环翻译成机器码 / Hand-compiling a loop to machine code | `computing/systems/how-a-cpu-runs-a-program/#ch3` |
+| 单周期数据通路和控制信号 / The single-cycle datapath and its control signals | `computing/systems/how-a-cpu-runs-a-program/#ch4` |
+| 最慢的那条指令定了时钟 / The slowest instruction sets the clock | `computing/systems/how-a-cpu-runs-a-program/#ch5` |
+| 五级流水线 / The five-stage pipeline | `computing/systems/how-a-cpu-runs-a-program/#ch6` |
+| 数据冒险与转发路径 / Data hazards and the forwarding paths | `computing/systems/how-a-cpu-runs-a-program/#ch7` |
+| 控制冒险：分支的代价 / Control hazards: the cost of a branch | `computing/systems/how-a-cpu-runs-a-program/#ch8` |
+| 性能的铁律 / The iron law of performance | `computing/systems/how-a-cpu-runs-a-program/#ch9` |
+| CISC 与 RISC，x86 的微操作 / CISC vs RISC and x86 micro-ops | `computing/systems/how-a-cpu-runs-a-program/#ch10` |
+| 指令集的前沿（2026 年 11 月） / The ISA frontier (November 2026) | `computing/systems/how-a-cpu-runs-a-program/#ch11` |
+| 看代码、比 CPU 时问的三件事 / Three questions for code and for CPUs | `computing/systems/how-a-cpu-runs-a-program/#ch12` |
+
+### 虚拟内存是怎么工作的 / How Virtual Memory Works
+
+`computing/systems/how-virtual-memory-works/` · essay
+
+| 概念 | 深链 |
+| --- | --- |
+| 为什么要虚拟地址 / Why virtual addresses | `computing/systems/how-virtual-memory-works/#ch1` |
+| 页、偏移和多级页表 / Pages, offsets and multi-level page tables | `computing/systems/how-virtual-memory-works/#ch2` |
+| x86-64 四级页表逐位走一遍 / An x86-64 four-level page walk, bit by bit | `computing/systems/how-virtual-memory-works/#ch3` |
+| TLB 和它的覆盖范围 / The TLB and its reach | `computing/systems/how-virtual-memory-works/#ch4` |
+| 一次 TLB 缺失要付多少 / What a TLB miss costs | `computing/systems/how-virtual-memory-works/#ch5` |
+| 大页：2 MiB 和 1 GiB / Huge pages: 2 MiB and 1 GiB | `computing/systems/how-virtual-memory-works/#ch6` |
+| 缺页与按需调页 / Page faults and demand paging | `computing/systems/how-virtual-memory-works/#ch7` |
+| 内存不够时换出谁 / Which page to evict | `computing/systems/how-virtual-memory-works/#ch8` |
+| fork 与写时复制 / fork and copy-on-write | `computing/systems/how-virtual-memory-works/#ch9` |
+| 进程切换、PCID 和 KPTI / Context switches, PCID and KPTI | `computing/systems/how-virtual-memory-works/#ch10` |
+| 虚拟机里的二维页表 / Two-dimensional page walks in virtual machines | `computing/systems/how-virtual-memory-works/#ch11` |
+| 虚拟内存的前沿（2026 年 11 月） / The frontier of virtual memory (November 2026) | `computing/systems/how-virtual-memory-works/#ch12` |
+| 程序慢的时候问三件事 / Three questions when a program is slow | `computing/systems/how-virtual-memory-works/#ch13` |
+
+### CPU 是怎么猜着往前跑的 / How a CPU Guesses Ahead
+
+`computing/systems/how-a-cpu-guesses-ahead/` · essay
+
+| 概念 | 深链 |
+| --- | --- |
+| 为什么猜错越来越贵 / Why a wrong guess costs more on a wide core | `computing/systems/how-a-cpu-guesses-ahead/#ch1` |
+| 1 位与 2 位饱和计数器、排序数组为什么快 / 1-bit and 2-bit counters; why the sorted array is faster | `computing/systems/how-a-cpu-guesses-ahead/#ch2` |
+| 全局历史与 gshare / Global history and gshare | `computing/systems/how-a-cpu-guesses-ahead/#ch3` |
+| TAGE 预测器 / The TAGE predictor | `computing/systems/how-a-cpu-guesses-ahead/#ch4` |
+| 分支目标缓冲与返回地址栈 / Branch target buffer and return address stack | `computing/systems/how-a-cpu-guesses-ahead/#ch5` |
+| 超标量与指令级并行 / Superscalar issue and instruction-level parallelism | `computing/systems/how-a-cpu-guesses-ahead/#ch6` |
+| 乱序执行与寄存器重命名 / Out-of-order execution and register renaming | `computing/systems/how-a-cpu-guesses-ahead/#ch7` |
+| 重排序缓冲与精确异常 / The reorder buffer and precise exceptions | `computing/systems/how-a-cpu-guesses-ahead/#ch8` |
+| 乱序窗口有多大 / How big the out-of-order window is | `computing/systems/how-a-cpu-guesses-ahead/#ch9` |
+| Spectre：猜测为什么会泄露秘密 / Spectre: why guessing leaks secrets | `computing/systems/how-a-cpu-guesses-ahead/#ch10` |
+| 分支预测与推测执行的前沿（截至 2026 年 11 月） / The frontier of prediction and speculation (as of November 2026) | `computing/systems/how-a-cpu-guesses-ahead/#ch11` |
+| 看一段代码时问三件事 / Three questions about a piece of code | `computing/systems/how-a-cpu-guesses-ahead/#ch12` |
+
+### 多个核心怎么共用一块内存 / How Cores Share Memory
+
+`computing/systems/how-cores-share-memory/` · essay
+
+| 概念 | 深链 |
+| --- | --- |
+| 缓存一致性问题：两份缓存，一份旧了 / The coherence problem: two caches, one stale copy | `computing/systems/how-cores-share-memory/#ch1` |
+| 一致性的两条规矩：单写多读与数据值 / Two invariants: single writer, multiple readers, and data value | `computing/systems/how-cores-share-memory/#ch2` |
+| 总线窥探：MSI、MESI 与 MOESI / Snooping: MSI, MESI and MOESI | `computing/systems/how-cores-share-memory/#ch3` |
+| 目录协议：核心多了怎么办 / Directory coherence for many cores | `computing/systems/how-cores-share-memory/#ch4` |
+| 丢失的更新：两个线程各加一百万次 / The lost update: two threads each add a million | `computing/systems/how-cores-share-memory/#ch5` |
+| 原子指令：LOCK、CAS、LL/SC 与 LSE / Atomic instructions: LOCK, CAS, LL/SC and LSE | `computing/systems/how-cores-share-memory/#ch6` |
+| 核心之间搬一行要多久 / How long a line takes to move between cores | `computing/systems/how-cores-share-memory/#ch7` |
+| 顺序一致性与存储缓冲 / Sequential consistency and the store buffer | `computing/systems/how-cores-share-memory/#ch8` |
+| x86-TSO 与 Arm、RISC-V 的弱模型：栅栏、获取与释放 / x86-TSO versus Arm and RISC-V weak ordering: fences, acquire and release | `computing/systems/how-cores-share-memory/#ch9` |
+| 锁的扩展性：TAS、TTAS、排号锁与 MCS / Lock scaling: TAS, TTAS, ticket and MCS | `computing/systems/how-cores-share-memory/#ch10` |
+| 前沿（2026 年 11 月）：几百个核心的一致性域 / Frontier (November 2026): coherence domains of hundreds of cores | `computing/systems/how-cores-share-memory/#ch11` |
+| 写共享数据前问三件事 / Three questions before writing shared data | `computing/systems/how-cores-share-memory/#ch12` |
+
+### CPU 是怎么算小数的，又怎么一次算一排 / How a CPU Does Math: Real Numbers, and Many at Once
+
+`computing/systems/how-a-cpu-does-math/` · essay
+
+| 概念 | 深链 |
+| --- | --- |
+| 浮点数的三段位：符号、指数、尾数 / The three fields of a float: sign, exponent, significand | `computing/systems/how-a-cpu-does-math/#ch1` |
+| ulp：浮点数的格子越往外越稀 / ulp: floats get sparser as they grow | `computing/systems/how-a-cpu-does-math/#ch2` |
+| 舍入模式：落在两格之间怎么选 / Rounding modes: choosing between two neighbours | `computing/systems/how-a-cpu-does-math/#ch3` |
+| 次正规数、无穷大和 NaN / Subnormals, infinity and NaN | `computing/systems/how-a-cpu-does-math/#ch4` |
+| 灾难性抵消与求和算法 / Catastrophic cancellation and summation | `computing/systems/how-a-cpu-does-math/#ch5` |
+| FMA：乘加只舍入一次 / FMA: multiply and add with one rounding | `computing/systems/how-a-cpu-does-math/#ch6` |
+| FP16、BF16 和 8 位浮点：为 AI 砍掉的位 / FP16, BF16 and 8-bit floats: bits cut for AI | `computing/systems/how-a-cpu-does-math/#ch7` |
+| INT8 与块缩放：MX、NVFP4 / INT8 and block scaling: MX and NVFP4 | `computing/systems/how-a-cpu-does-math/#ch8` |
+| SIMD：一条指令算一排，以及掩码 / SIMD: one instruction, many lanes, and masks | `computing/systems/how-a-cpu-does-math/#ch9` |
+| 自动向量化与求和顺序 / Auto-vectorisation and summation order | `computing/systems/how-a-cpu-does-math/#ch10` |
+| 乘加的延迟、吞吐和宽向量降频 / FMA latency, throughput and wide-vector clocks | `computing/systems/how-a-cpu-does-math/#ch11` |
+| SVE、SME 和 AMX：不定宽的向量与矩阵单元 / SVE, SME and AMX: length-agnostic vectors and matrix units | `computing/systems/how-a-cpu-does-math/#ch12` |
+| CPU 数值计算的前沿（2026 年 11 月） / The frontier of CPU arithmetic (November 2026) | `computing/systems/how-a-cpu-does-math/#ch13` |
+
+### 内存是怎么和 CPU 说话的 / How Memory Talks to the CPU
+
+`computing/systems/how-memory-talks/` · essay
+
+| 概念 | 深链 |
+| --- | --- |
+| 一个比特是一只会漏的电容：DRAM 刷新 / A bit is a leaking capacitor: DRAM refresh | `computing/systems/how-memory-talks/#ch1` |
+| bank、行、列与地址切分 / Banks, rows, columns and address mapping | `computing/systems/how-memory-talks/#ch2` |
+| 五个命令和时序：行命中、未命中、冲突 / Five commands and their timings: row hit, miss and conflict | `computing/systems/how-memory-talks/#ch3` |
+| CL 折成纳秒 / CAS latency in nanoseconds | `computing/systems/how-memory-talks/#ch4` |
+| 64 字节一次突发与 DDR5 子通道 / 64-byte bursts and DDR5 subchannels | `computing/systems/how-memory-talks/#ch5` |
+| bank 组与 tCCD_L / Bank groups and tCCD_L | `computing/systems/how-memory-talks/#ch6` |
+| 插几根：飞越式布线与训练 / DIMMs per channel: fly-by routing and training | `computing/systems/how-memory-talks/#ch7` |
+| 片上 ECC 和旁路 ECC / On-die ECC and side-band ECC | `computing/systems/how-memory-talks/#ch8` |
+| LPDDR、GDDR7、CAMM2 与 MRDIMM / LPDDR, GDDR7, CAMM2 and MRDIMM | `computing/systems/how-memory-talks/#ch9` |
+| 行锤与防护：TRR、RFM、PRAC / Row hammer and its defences: TRR, RFM, PRAC | `computing/systems/how-memory-talks/#ch10` |
+| 内存的前沿（截至 2026 年 11 月） / The memory frontier (as of November 2026) | `computing/systems/how-memory-talks/#ch11` |
+| 看一根内存条时问三件事 / Three questions to ask of a memory module | `computing/systems/how-memory-talks/#ch12` |
+
+### 芯片之间怎么共用内存 / How Chips Share Memory
+
+`computing/systems/coherent-interconnects/` · essay
+
+| 概念 | 深链 |
+| --- | --- |
+| 复制还是共享：零拷贝的吸引力 / Copy or share: why zero-copy appeals | `computing/systems/coherent-interconnects/#ch1` |
+| 一致性跨过一根线：家代理 / Coherence across a link: the home agent | `computing/systems/coherent-interconnects/#ch2` |
+| CXL 的三种协议和数据帧 / CXL's three protocols and flits | `computing/systems/coherent-interconnects/#ch3` |
+| CXL 的三类设备 / The three CXL device types | `computing/systems/coherent-interconnects/#ch4` |
+| 内存扩展卡与冷热分层 / Memory expansion and hot/cold tiering | `computing/systems/coherent-interconnects/#ch5` |
+| 内存池与 CXL 交换机 / Memory pools and CXL switches | `computing/systems/coherent-interconnects/#ch6` |
+| 背向作废：几台主机共用一行 / Back-invalidate: several hosts sharing one line | `computing/systems/coherent-interconnects/#ch7` |
+| NVLink 与 NVSwitch / NVLink and NVSwitch | `computing/systems/coherent-interconnects/#ch8` |
+| 环形全归约 / Ring all-reduce | `computing/systems/coherent-interconnects/#ch9` |
+| 纵向扩展、横向扩展与 UALink / Scale-up, scale-out and UALink | `computing/systems/coherent-interconnects/#ch10` |
+| 封装里的一致性：MI300A 与 Grace Hopper / Coherence in one package: MI300A and Grace Hopper | `computing/systems/coherent-interconnects/#ch11` |
+| 互连的前沿（2026 年 11 月） / Interconnect frontier (November 2026) | `computing/systems/coherent-interconnects/#ch12` |
+| 看一套互连的三个问题 / Three questions to ask of an interconnect | `computing/systems/coherent-interconnects/#ch13` |
+
+### GPU 是怎么算的 / How a GPU Computes
+
+`computing/systems/how-a-gpu-computes/` · essay
+
+| 概念 | 深链 |
+| --- | --- |
+| 两种花晶体管的办法：缓存，还是更多线程 / Two ways to spend transistors: caches or more threads | `computing/systems/how-a-gpu-computes/#ch1` |
+| 网格、线程块、线程束：一张图怎么拆给两百万个线程 / Grid, block, warp: splitting an image across two million threads | `computing/systems/how-a-gpu-computes/#ch2` |
+| 线程束调度与占用率 / Warp scheduling and occupancy | `computing/systems/how-a-gpu-computes/#ch3` |
+| 分支发散：一个线程束走了两条路 / Warp divergence: one warp, two paths | `computing/systems/how-a-gpu-computes/#ch4` |
+| 合并访存：32 个地址，几次读 / Memory coalescing: 32 addresses, how many reads | `computing/systems/how-a-gpu-computes/#ch5` |
+| 共享内存的 bank 冲突 / Shared-memory bank conflicts | `computing/systems/how-a-gpu-computes/#ch6` |
+| 分块矩阵乘法的两级屋顶 / Tiled matrix multiply: two levels of roofs | `computing/systems/how-a-gpu-computes/#ch7` |
+| 矩阵乘加指令与数字格式 / Matrix multiply-accumulate instructions and number formats | `computing/systems/how-a-gpu-computes/#ch8` |
+| 像素按 2×2 着色：小三角形为什么费 / Shading in 2×2 quads: why small triangles cost | `computing/systems/how-a-gpu-computes/#ch9` |
+| GPU 的存储层次，和不做的一致性 / The GPU memory hierarchy, and the coherence it skips | `computing/systems/how-a-gpu-computes/#ch10` |
+| 前沿在哪（2026 年 11 月） / Where the frontier is (November 2026) | `computing/systems/how-a-gpu-computes/#ch11` |
+| 写 GPU 代码前问三件事 / Three questions before writing GPU code | `computing/systems/how-a-gpu-computes/#ch12` |
+
+### 电脑是怎么开机的 / How a Computer Boots
+
+`computing/systems/how-a-computer-boots/` · essay
+
+| 概念 | 深链 |
+| --- | --- |
+| 上电时序：PWR_OK 之前 CPU 一直在复位里 / Power sequencing: the CPU stays in reset until PWR_OK | `computing/systems/how-a-computer-boots/#ch1` |
+| 复位向量：第一条指令在 0xFFFFFFF0 / The reset vector: the first instruction at 0xFFFFFFF0 | `computing/systems/how-a-computer-boots/#ch2` |
+| SPI 闪存：固件放在哪，读一行要多久 / SPI flash: where firmware lives and how long a read takes | `computing/systems/how-a-computer-boots/#ch3` |
+| 硬件信任根：CPU 之前先醒的安全芯片 / Hardware root of trust: the security processor that wakes first | `computing/systems/how-a-computer-boots/#ch4` |
+| 用缓存当内存，以及开机时间花在哪 / Cache as RAM, and where boot time goes | `computing/systems/how-a-computer-boots/#ch5` |
+| UEFI 的阶段与 ACPI 表 / UEFI phases and the ACPI tables | `computing/systems/how-a-computer-boots/#ch6` |
+| GUID 分区表：表头、CRC32 与备份 / The GUID partition table: header, CRC32 and the backup | `computing/systems/how-a-computer-boots/#ch7` |
+| 安全启动：一级验一级的签名链 / Secure Boot: a chain of signature checks | `computing/systems/how-a-computer-boots/#ch8` |
+| 撤销签过名的引导程序：dbx、SBAT 与整张证书 / Revoking signed boot loaders: dbx, SBAT and whole certificates | `computing/systems/how-a-computer-boots/#ch9` |
+| 度量启动：TPM 的 PCR 扩展 / Measured boot: TPM PCR extends | `computing/systems/how-a-computer-boots/#ch10` |
+| 交给内核，INIT-SIPI-SIPI 叫醒其余核心 / Kernel handoff and waking the other cores with INIT-SIPI-SIPI | `computing/systems/how-a-computer-boots/#ch11` |
+| Arm 与苹果的开机链 / How Arm and Apple machines boot | `computing/systems/how-a-computer-boots/#ch12` |
+| 开机的前沿：证书到期、开源固件与 Pluton / The frontier: certificate expiry, open firmware and Pluton | `computing/systems/how-a-computer-boots/#ch13` |
+| 开不了机时问的三件事 / Three questions when a computer will not boot | `computing/systems/how-a-computer-boots/#ch14` |
+
+### 操作系统是怎么和硬件说话的 / How the OS Talks to Hardware
+
+`computing/systems/how-the-os-talks-to-hardware/` · essay
+
+| 概念 | 深链 |
+| --- | --- |
+| 特权级：CPU 每条指令都查「你现在是谁」 / Privilege levels: the CPU checks who you are on every instruction | `computing/systems/how-the-os-talks-to-hardware/#ch1` |
+| 系统调用：程序故意触发的一次异常 / The system call: an exception the program raises on purpose | `computing/systems/how-the-os-talks-to-hardware/#ch2` |
+| 一次进出内核要多少周期 / What one kernel crossing costs | `computing/systems/how-the-os-talks-to-hardware/#ch3` |
+| 设备寄存器：物理地址上的一段「假内存」 / Device registers: a stretch of pretend memory | `computing/systems/how-the-os-talks-to-hardware/#ch4` |
+| 中断走过的路：向量、上半部、下半部 / The path of an interrupt: vector, top half, bottom half | `computing/systems/how-the-os-talks-to-hardware/#ch5` |
+| NAPI：先中断，再一批批轮询 / NAPI: interrupt first, then poll in batches | `computing/systems/how-the-os-talks-to-hardware/#ch6` |
+| DMA 与描述符环 / DMA and the descriptor ring | `computing/systems/how-the-os-talks-to-hardware/#ch7` |
+| 给设备装一张页表 / A page table for devices | `computing/systems/how-the-os-talks-to-hardware/#ch8` |
+| 驱动模型：比对、probe、绑定 / The driver model: match, probe, bind | `computing/systems/how-the-os-talks-to-hardware/#ch9` |
+| 一次 read() 穿过的每一层 / Every layer one read() crosses | `computing/systems/how-the-os-talks-to-hardware/#ch10` |
+| 少走几次门：epoll 与 io_uring / Fewer crossings: epoll and io_uring | `computing/systems/how-the-os-talks-to-hardware/#ch11` |
+| 绕开内核，以及虚拟机里的设备 / Kernel bypass and devices in virtual machines | `computing/systems/how-the-os-talks-to-hardware/#ch12` |
+| 前沿：io_uring 的安全代价、Rust 驱动、用户态 / The frontier: io_uring security, Rust drivers, user space | `computing/systems/how-the-os-talks-to-hardware/#ch13` |
+| 程序卡在 I/O 上时问的三件事 / Three questions when a program is stuck on I/O | `computing/systems/how-the-os-talks-to-hardware/#ch14` |
+
+### 像素是怎么到屏幕上的 / How Pixels Reach a Screen
+
+`computing/systems/how-pixels-reach-a-screen/` · essay
+
+| 概念 | 深链 |
+| --- | --- |
+| 帧缓冲：一帧就是一块内存 / The framebuffer: a frame is a block of memory | `computing/systems/how-pixels-reach-a-screen/#ch1` |
+| 像素时钟与消隐：按真实时序表算 / Pixel clock and blanking, from real timing tables | `computing/systems/how-pixels-reach-a-screen/#ch2` |
+| 撕裂、垂直同步与卡顿 / Tearing, vsync and stutter | `computing/systems/how-pixels-reach-a-screen/#ch3` |
+| 可变刷新率与低帧率补偿 / Variable refresh rate and low framerate compensation | `computing/systems/how-pixels-reach-a-screen/#ch4` |
+| 显示引擎、合成器与颜色管线 / Display engine, compositor and colour pipeline | `computing/systems/how-pixels-reach-a-screen/#ch5` |
+| DisplayPort 与 HDMI：一根线放得下什么 / DisplayPort and HDMI: what fits in one cable | `computing/systems/how-pixels-reach-a-screen/#ch6` |
+| DSC 与 4:2:0：压一压画面 / DSC and 4:2:0: squeezing the picture | `computing/systems/how-pixels-reach-a-screen/#ch7` |
+| 屏里面：时序控制器和一行的充电时间 / Inside the panel: the TCON and the time a row gets | `computing/systems/how-pixels-reach-a-screen/#ch8` |
+| 液晶、OLED 与运动模糊 / LCD, OLED and motion blur | `computing/systems/how-pixels-reach-a-screen/#ch9` |
+| HDR 与 PQ 曲线 / HDR and the PQ curve | `computing/systems/how-pixels-reach-a-screen/#ch10` |
+| 从点鼠标到屏幕变亮 / From mouse click to photons | `computing/systems/how-pixels-reach-a-screen/#ch11` |
+| 显示的前沿（2026 年 11 月） / The display frontier (November 2026) | `computing/systems/how-pixels-reach-a-screen/#ch12` |
+| 屏幕不对劲时问的三件事 / Three questions when a screen misbehaves | `computing/systems/how-pixels-reach-a-screen/#ch13` |
+
+### 电是怎么送进 CPU 的 / How Power Reaches the CPU
+
+`computing/systems/how-power-reaches-the-cpu/` · essay
+
+| 概念 | 深链 |
+| --- | --- |
+| 供电链：从插座到晶粒一路降压 / The power-delivery chain: stepping down from the wall to the die | `computing/systems/how-power-reaches-the-cpu/#ch1` |
+| 动态功耗：功率随电压平方走 / Dynamic power: power goes with voltage squared | `computing/systems/how-power-reaches-the-cpu/#ch2` |
+| 电源效率与 80 PLUS / PSU efficiency and 80 PLUS | `computing/systems/how-power-reaches-the-cpu/#ch3` |
+| 多相稳压（VRM） / Multiphase voltage regulators (VRM) | `computing/systems/how-power-reaches-the-cpu/#ch4` |
+| 负载线与去耦电容 / Load line and decoupling | `computing/systems/how-power-reaches-the-cpu/#ch5` |
+| 几百安怎么进到晶粒里 / How hundreds of amps get into the die | `computing/systems/how-power-reaches-the-cpu/#ch6` |
+| 调频调压与冲刺再睡 / DVFS and race to idle | `computing/systems/how-power-reaches-the-cpu/#ch7` |
+| C-state：空闲时睡多深 / C-states: how deep to sleep when idle | `computing/systems/how-power-reaches-the-cpu/#ch8` |
+| 功率墙与温度墙：PL1、PL2、Tau / Power and thermal limits: PL1, PL2, Tau | `computing/systems/how-power-reaches-the-cpu/#ch9` |
+| 数据中心供电：48 伏与 800 伏直流 / Data-center power: 48 V and 800 V DC | `computing/systems/how-power-reaches-the-cpu/#ch10` |
+| 供电前沿（2026 年 11 月） / Power-delivery frontier (November 2026) | `computing/systems/how-power-reaches-the-cpu/#ch11` |
+| 电脑降频时先查哪一段 / Which stage limits first when a PC throttles | `computing/systems/how-power-reaches-the-cpu/#ch12` |
+
+### 网卡是怎么搬运数据包的 / How a Network Card Moves Packets
+
+`computing/systems/how-a-nic-moves-packets/` · essay
+
+| 概念 | 深链 |
+| --- | --- |
+| 网卡里有什么：物理层、MAC、队列和 DMA / Inside a network card: PHY, MAC, queues and DMA | `computing/systems/how-a-nic-moves-packets/#ch1` |
+| 一帧以太网，和线速下每个包的时间 / One Ethernet frame, and the time per packet at line rate | `computing/systems/how-a-nic-moves-packets/#ch2` |
+| 收一个包要走的路：描述符要提前取 / The receive path: descriptors fetched ahead | `computing/systems/how-a-nic-moves-packets/#ch3` |
+| 每个包的 PCIe 开销：400G 小包装不下 / PCIe bytes per packet: small packets at 400G do not fit | `computing/systems/how-a-nic-moves-packets/#ch4` |
+| RSS：托普利茨哈希把连接分给队列 / RSS: a Toeplitz hash spreads connections over queues | `computing/systems/how-a-nic-moves-packets/#ch5` |
+| 把包送到对的核心：RFS、aRFS 和亲和性 / Steering packets to the right core: RFS, aRFS and affinity | `computing/systems/how-a-nic-moves-packets/#ch6` |
+| 交给网卡做：校验、TSO 分段、GRO 和 LRO / Offloads: checksums, TSO, GRO and LRO | `computing/systems/how-a-nic-moves-packets/#ch7` |
+| DDIO：包写进缓存，和漏掉的那部分 / DDIO: packets written into the cache, and the leak | `computing/systems/how-a-nic-moves-packets/#ch8` |
+| 发包的路和 BQL：发送环里排多少字节 / The transmit path and BQL: how many bytes to queue | `computing/systems/how-a-nic-moves-packets/#ch9` |
+| XDP 与 AF_XDP：在驱动里处理包 / XDP and AF_XDP: handling packets in the driver | `computing/systems/how-a-nic-moves-packets/#ch10` |
+| 网卡里的 RDMA：队列对和单边写 / RDMA inside the NIC: queue pairs and one-sided writes | `computing/systems/how-a-nic-moves-packets/#ch11` |
+| 训练集群里的网卡：ECMP 和包喷洒 / NICs in training clusters: ECMP and packet spraying | `computing/systems/how-a-nic-moves-packets/#ch12` |
+| 网卡的前沿（2026 年 11 月） / The network-card frontier (November 2026) | `computing/systems/how-a-nic-moves-packets/#ch13` |
+| 看一张网卡时问的三件事 / Three questions to ask of a network card | `computing/systems/how-a-nic-moves-packets/#ch14` |
+
+### 经济是怎样被计量的 / How an Economy Is Measured
+
+`economics/macro/how-an-economy-is-measured/` · essay
+
+| 概念 | 深链 |
+| --- | --- |
+| GDP 三面等价与增加值 / GDP Three Ways & Value Added | `economics/macro/how-an-economy-is-measured/#ch1` |
+| 名义与实际、链式费雪指数与替代偏差 / Nominal vs Real, Chained Fisher & Substitution Bias | `economics/macro/how-an-economy-is-measured/#ch2` |
+| CPI 权重、等价租金 OER 与质量调整 / CPI Weights, Owners' Equivalent Rent & Hedonic Adjustment | `economics/macro/how-an-economy-is-measured/#ch3` |
+| 折年率、基数效应、季节调整与数据修订 / Annualised Rates, Base Effects, Seasonal Adjustment & Revisions | `economics/macro/how-an-economy-is-measured/#ch4` |
+| 购买力平价 PPP、均值与中位数及基尼系数 / Purchasing Power Parity, Mean vs Median & Gini Coefficient | `economics/macro/how-an-economy-is-measured/#ch5` |
+| U-3 与 U-6 失业率、贝弗里奇曲线与奥肯定律 / U-3 vs U-6 Unemployment, Beveridge Curve & Okun's Law | `economics/macro/how-an-economy-is-measured/#ch6` |
+| 经济周期、潜在产出与萨姆规则 / Business Cycles, Potential Output & the Sahm Rule | `economics/macro/how-an-economy-is-measured/#ch7` |
+| 索洛增长核算与全要素生产率（TFP） / Solow Growth Accounting & Total Factor Productivity | `economics/macro/how-an-economy-is-measured/#ch8` |
+| GDP 之外：家务、折旧、灾难悖论与卫星账户 / Beyond GDP: Home Production, Depreciation & Disaster Paradox | `economics/macro/how-an-economy-is-measured/#ch9` |
+| 前沿测量：免费数字品、GDP-B、2025 SNA 与实时预测 / Measurement Frontier: Free Digital Goods, GDP-B, 2025 SNA & Nowcasting | `economics/macro/how-an-economy-is-measured/#ch10` |
+
+### 傅里叶变换 · 一步一交互 / The Fourier Transform · One Interaction at a Time
+
+`signal/transforms/fourier/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 傅里叶分析 / Fourier analysis | `signal/transforms/fourier/#step5` |
+| 频谱 / Spectrum | `signal/transforms/fourier/#step5` |
+| 波的叠加 / Superposition | `signal/transforms/fourier/#step2` |
+
+### 卷积 · 一步一交互 / Convolution · One Interaction at a Time
+
+`signal/systems/convolution/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 卷积 / Convolution | `signal/systems/convolution/#step2` |
+
+### Mandelbrot 分形 · 无限放大 / The Mandelbrot Set · Zoom Without End
+
+`math/calculus/mandelbrot/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| Mandelbrot 集 · 迭代出来的分形 / The Mandelbrot set · a fractal grown by iteration | `math/calculus/mandelbrot/#step1` |
+
+### 反馈与控制 · 双轮车为什么倒不下去 / Feedback & Control · Why the Two-Wheeled Bot Never Falls
+
+`signal/control/inverted-pendulum/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 反馈控制 / Feedback control | `signal/control/inverted-pendulum/#step2` |
+
+### 采样与混叠 · 偷看得太懒，就会看错 / Sampling & Aliasing · Peek Too Lazily and You'll See It Wrong
+
+`signal/sampling/sampling/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 采样与混叠 / Sampling & aliasing | `signal/sampling/sampling/#step3` |
+
+### 三角函数 · 单位圆 / Trigonometric Functions · The Unit Circle
+
+`math/geometry/trigonometry/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 正弦与余弦 / Sine & cosine | `math/geometry/trigonometry/#step3` |
+| 单位圆 / Unit circle | `math/geometry/trigonometry/#step1` |
+
+### 蒙特卡洛 · 撒豆子算 π / Monte Carlo · Counting π with Scattered Beans
+
+`probability/stochastic/monte-carlo/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 蒙特卡洛估计 / Monte Carlo estimation | `probability/stochastic/monte-carlo/#step3` |
+
+### 拉普拉斯与 ROC · 给频率配一个寿命 / Laplace Transform & ROC · Giving Frequencies a Lifespan
+
+`signal/transforms/laplace/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 拉普拉斯变换 / Laplace transform | `signal/transforms/laplace/#step1` |
+| 极点与稳定性 / Poles & stability | `signal/transforms/laplace/#step4` |
+
+### 贝叶斯 · 先查底子，再看证据 / Bayes · Check the Base Rate Before the Evidence
+
+`probability/inference/bayes-updating/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 贝叶斯更新 / Bayesian updating | `probability/inference/bayes-updating/#step1` |
+| 概率模型 / Probability models | `probability/inference/bayes-updating/#step0` |
+
+### 中心极限定理 · 平均值总会变成钟形 / Central Limit Theorem · Averages Always Turn Bell-Shaped
+
+`probability/statistics/central-limit-theorem/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 正态分布与中心极限定理 / Normal distributions & CLT | `probability/statistics/central-limit-theorem/#step2` |
+| 方差 / Variance | `probability/statistics/central-limit-theorem/#step3` |
+
+### Z 变换 · 把 s 平面卷成单位圆 / The Z-Transform · Rolling the s-Plane into the Unit Circle
+
+`signal/transforms/z-transform/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| Z 变换 · 把 s 平面卷成单位圆 / The z-transform · rolling the s-plane into the unit circle | `signal/transforms/z-transform/#step0` |
+
+### 梯度下降 · 摸黑下山 / Gradient Descent · Feeling Your Way Downhill
+
+`computing/ml/gradient-descent/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 梯度下降 / Gradient descent | `computing/ml/gradient-descent/#step0` |
+
+### 特征值与特征向量 · 矩阵不转的那些方向 / Eigenvalues & Eigenvectors · The Directions a Matrix Cannot Turn
+
+`math/linear-algebra/eigenvectors/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 特征向量 / Eigenvectors | `math/linear-algebra/eigenvectors/#step1` |
+| 向量与线性变换 / Vectors & linear maps | `math/linear-algebra/eigenvectors/#step1` |
+
+### 熵 · 惊讶的平均值 / Entropy · The Average of Surprise
+
+`probability/stochastic/entropy/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 交叉熵与 KL 散度 / Cross-entropy & KL divergence | `probability/stochastic/entropy/#step5` |
+| 信息熵 · 惊讶的平均值 / Information entropy · the average surprise | `probability/stochastic/entropy/#step2` |
+
+### 冲激与 LTI · 给系统一巴掌 / Impulse & LTI · Slap the System
+
+`signal/systems/lti-systems/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 冲激响应 / Impulse response | `signal/systems/lti-systems/#step2` |
+| 线性时不变系统 / LTI systems | `signal/systems/lti-systems/#step3` |
+
+### 频率响应与滤波 · 按频率挑食的盒子 / Frequency Response & Filters · A Box That Eats by Frequency
+
+`signal/systems/frequency-response/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 共振 / Resonance | `signal/systems/frequency-response/#step5` |
+| 频率响应 / Frequency response | `signal/systems/frequency-response/#step0` |
+
+### 调制与频移 · 把信号搬上高频运走 / Modulation · Shipping Signals on a Carrier
+
+`signal/sampling/modulation/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 调制 · 把信号搬上载波 / Modulation · carrying a signal on a carrier | `signal/sampling/modulation/#step1` |
+
+### 卡尔曼滤波 · 在预测与测量之间称重 / Kalman Filter · Weighing Prediction Against Measurement
+
+`signal/control/kalman/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 卡尔曼滤波 / Kalman filtering | `signal/control/kalman/#step2` |
+
+### 排序与大 O · 增长的形状 / Sorting & Big O · The Shape of Growth
+
+`computing/algorithms/sorting/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 大 O 记号 · 增长的形状 / Big O notation · the shape of growth | `computing/algorithms/sorting/#step4` |
+| 排序算法 · 冒泡、归并与快排 / Sorting algorithms · bubble, merge and quicksort | `computing/algorithms/sorting/#step2` |
+
+### 分数 · 把整体切开来数 / Fractions · Cutting the Whole to Count
+
+`math/arithmetic/fractions/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 分数 · 把整体平均切开来数 / Fractions · cutting the whole into equal parts | `math/arithmetic/fractions/#step1` |
+
+### 勾股定理 · 一步一交互 / The Pythagorean Theorem · One Interaction at a Time
+
+`math/geometry/pythagoras/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 勾股定理 / The Pythagorean theorem | `math/geometry/pythagoras/#step1` |
+
+### 乘法是面积 · 点阵铺成一块地 / Multiplication Is Area · Arrays Become a Tiled Floor
+
+`math/arithmetic/area-model/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 乘法的面积模型 · 交换律与分配律 / Multiplication as area · commutative and distributive laws | `math/arithmetic/area-model/#step1` |
+
+### 周长 vs 面积 · 一根绳子两种账 / Perimeter vs Area · One Rope, Two Ledgers
+
+`math/geometry/perimeter-area/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 周长与面积 · 一圈和里面 / Perimeter vs area · around and inside | `math/geometry/perimeter-area/#step1` |
+
+### 除法与余数 · 分不完的那一点 / Division & Remainders · What Is Left Over
+
+`math/arithmetic/division-remainder/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 除法与余数 / Division with remainders | `math/arithmetic/division-remainder/#step1` |
+
+### 一次函数 · 斜率是陡缓，截距是起点 / Linear Functions · Slope Is Steepness, Intercept Is the Start
+
+`math/algebra/linear-functions/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 直线斜率 / Straight-line slope | `math/algebra/linear-functions/#step2` |
+
+### 对称与旋转 · 对折与转圈 / Symmetry & Rotation · Folding and Turning
+
+`math/geometry/symmetry-rotation/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 轴对称与旋转对称 / Line symmetry & rotational symmetry | `math/geometry/symmetry-rotation/#step0` |
+
+### 抛物线 · 投篮的弧线 / Parabolas · The Arc of a Shot
+
+`math/algebra/parabola/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 二次函数与抛物线 / Quadratic functions & parabolas | `math/algebra/parabola/#step2` |
+
+### 速度与 v-t 图 · 面积就是路 / Speed and the v–t Graph · Area Is Distance
+
+`physics/mechanics/velocity-vt/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 速度–时间图 / Velocity–time graphs | `physics/mechanics/velocity-vt/#step1` |
+
+### 定积分 · 把小条加回整体 / The Definite Integral · Adding the Strips Back Up
+
+`math/calculus/integral/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 定积分与有符号累加 / Definite integral & signed accumulation | `math/calculus/integral/#step2` |
+
+### 光的反射与折射 · 拐弯的规矩 / Reflection & Refraction · How Light Bends
+
+`physics/optics/reflection-refraction/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| Snell关系与全反射 / Snell relation & total internal reflection | `physics/optics/reflection-refraction/` |
+
+### 导数 · 把平均压成此刻 / The Derivative · Squeezing the Average into the Instant
+
+`math/calculus/derivative/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 导数与瞬时变化率 / Derivatives & instantaneous rates | `math/calculus/derivative/#step2` |
+
+### 凸透镜成像 · 远近变像 / The Convex Lens · Near or Far, the Image Transforms
+
+`physics/optics/lens/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 凸透镜成像规律 / Convex-lens images | `physics/optics/lens/#step2` |
+
+### 波的干涉 · 闹与静的图样 / Interference · A Pattern of Loud and Still
+
+`physics/waves/interference/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 叠加与干涉 / Superposition & interference | `physics/waves/interference/#step1` |
+
+### 指数与对数 · 翻倍与逆问 / Exponentials & Logarithms · Doubling and the Reverse Question
+
+`math/algebra/exponents-logarithms/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 指数与对数 / Exponents & logarithms | `math/algebra/exponents-logarithms/#step2` |
+
+### 圆周角 · 为什么恰好是一半 / Inscribed Angles · Why Exactly Half
+
+`math/geometry/circle-angles/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 圆周角定理 · 恰好一半 / The inscribed angle theorem · exactly half | `math/geometry/circle-angles/#step1` |
+
+### 复数 · 平面上的旋转 / Complex Numbers · Rotation on the Plane
+
+`math/algebra/complex-numbers/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 复数与旋转 / Complex rotation | `math/algebra/complex-numbers/#step4` |
+
+### 驻波 · 原地起伏的波 / Standing Waves · The Wave That Stays in Place
+
+`physics/waves/standing-wave/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 驻波 · 波节与波腹 / Standing waves · nodes and antinodes | `physics/waves/standing-wave/#step1` |
+
+### 负数 · 0 以下的世界 / Negative Numbers · The World Below Zero
+
+`math/arithmetic/negative-numbers/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 负数 · 0 的另一边 / Negative numbers · the other side of zero | `math/arithmetic/negative-numbers/#step0` |
+
+### 小孔成像 · 一个孔的相机 / Pinhole Camera · A Camera With One Tiny Hole
+
+`physics/optics/pinhole-camera/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 相似三角形与小孔倒像 / Similar triangles & pinhole inversion | `physics/optics/pinhole-camera/` |
+
+### 空间对角线 · 3D 里的两次勾股 / The Space Diagonal · Pythagoras Twice, in 3D
+
+`math/geometry/space-diagonal/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 长方体的空间对角线 / The space diagonal of a box | `math/geometry/space-diagonal/#step1` |
+
+### 坐标系 · 点的地址 / The Coordinate Plane · Addresses for Points
+
+`math/algebra/coordinate-plane/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 平面直角坐标系 · 点的地址 / The coordinate plane · addresses for points | `math/algebra/coordinate-plane/#step2` |
+
+### 粒子与物态 · 热闹程度即温度 / Particles & States · Temperature Is How Wildly They Move
+
+`chemistry/matter/particles-states/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 粒子与物态 · 热闹程度即温度 / Particles & States · Temperature Is How Wildly They Move | `chemistry/matter/particles-states/#step1` |
+
+### 原子结构 · 质子数定它是谁 / Atomic Structure · The Proton Count Decides What It Is
+
+`chemistry/matter/atomic-structure/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 原子结构 · 质子数决定元素 / Atomic structure · the proton count names the element | `chemistry/matter/atomic-structure/#step1` |
+| 电子层与最外层电子 / Electron shells & outer electrons | `chemistry/matter/atomic-structure/#step3` |
+
+### 杠杆与滑轮 · 支点挪一挪，省力见分晓 / Levers & Pulleys · Move the Fulcrum, Feel the Trade
+
+`physics/mechanics/lever-pulley/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 杠杆与滑轮 · 力矩与省力 / Levers & pulleys · torque and mechanical advantage | `physics/mechanics/lever-pulley/#step1` |
+
+### 方程天平 · 两边同做一件事 / Equations on a Balance · Do the Same to Both Sides
+
+`math/algebra/equation-scale/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 方程与天平 · 两边同做一件事 / Equations as a balance · do the same to both sides | `math/algebra/equation-scale/#step1` |
+
+### 昼夜交替 · 地球自己在转 / Day and Night · The Earth Itself Is Turning
+
+`earth/astronomy/day-night-rotation/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 昼夜交替 · 地球自转 / Day and night · the Earth’s rotation | `earth/astronomy/day-night-rotation/#step2` |
+
+### 质量守恒 · 原子一个都不丢 / Mass Conservation · Not a Single Atom Lost
+
+`chemistry/reactions/mass-conservation/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 质量守恒 · 原子一个都不丢 / Conservation of mass · not a single atom lost | `chemistry/reactions/mass-conservation/#step2` |
+
+### 细胞 · 生命的最小单位间 / The Cell · Life's Smallest Workshop
+
+`biology/cells/cell-structure/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 细胞 · 生命的最小单位间 / The Cell · Life's Smallest Workshop | `biology/cells/cell-structure/#step1` |
+
+### 光合作用 · 用光开工的糖厂 / Photosynthesis · A Sugar Factory Run by Light
+
+`biology/cells/photosynthesis/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 光合作用 / Photosynthesis | `biology/cells/photosynthesis/#step1` |
+
+### 种群增长 · S 形曲线从哪来 / Population Growth · Where the S-Curve Comes From
+
+`biology/ecology/logistic-growth/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 逻辑斯蒂增长 · S 形曲线 / Logistic growth · the S-shaped curve | `biology/ecology/logistic-growth/#step2` |
+
+### 化学平衡 · 人数不变，人还在跑 / Chemical Equilibrium · Still Moving at Balance
+
+`chemistry/reactions/chemical-equilibrium/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 化学平衡 · 动态平衡与勒夏特列原理 / Chemical equilibrium · dynamic balance and Le Chatelier | `chemistry/reactions/chemical-equilibrium/#step1` |
+
+### 酸碱平衡 · 分子在两边来回走 / Acid–Base Equilibrium · Molecules Move Both Ways
+
+`chemistry/solutions/acid-base-equilibrium/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 弱酸电离平衡 · Ka / Weak-acid equilibrium · Ka | `chemistry/solutions/acid-base-equilibrium/#step1` |
+
+### 反应速率 · 数一数成功碰撞 / Reaction Rates · Counting Successful Collisions
+
+`chemistry/reactions/reaction-rates/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 反应速率与碰撞理论 / Reaction rates & collision theory | `chemistry/reactions/reaction-rates/#step0` |
+
+### 贝叶斯诊断 · 阳性结果说明什么？ / Bayes Diagnostics · What Does a Positive Mean?
+
+`probability/inference/bayes-diagnostics/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 阳性预测值 · 检测阳性说明什么 / Positive predictive value · what a positive test means | `probability/inference/bayes-diagnostics/` |
+
+### 种群生态学 · 增长如何被反馈改变 / Population Ecology · Growth Reshaped by Feedback
+
+`biology/ecology/population-ecology/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 捕食者与猎物 · 延迟带来的起伏 / Predators & prey · oscillations from delay | `biology/ecology/population-ecology/#step2` |
+
+### 反馈控制 · 先看差多少，再决定推多少 / Feedback Control · See the Error, Then Act
+
+`engineering/control/pid-control/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| PID 控制 · 现在、过去与趋势 / PID control · present, past and trend | `engineering/control/pid-control/#step1` |
+
+### 阶跃响应 · 阻尼比决定冲多远，固有频率决定多快 / Step Response · Damping Sets the Overshoot, Natural Frequency Sets the Speed
+
+`engineering/control/step-response/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 二阶阶跃响应 · 阻尼比与固有频率 / Second-order step response · damping ratio and natural frequency | `engineering/control/step-response/#step2` |
+
+### 遗传与概率 · 从配子到表型 / Genetics & Probability · From Gametes to Phenotypes
+
+`probability/basics/genetics-probability/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 孟德尔遗传的概率 · Punnett 方格 / Mendelian inheritance as probability · the Punnett square | `probability/basics/genetics-probability/#step1` |
+
+### 供需与市场均衡 · 价格线如何相交 / Supply & Demand · Where the Market Clears
+
+`math/applied/supply-demand/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 供需均衡 / Supply & demand equilibrium | `math/applied/supply-demand/#step0` |
+
+### 二分查找 · 每次砍掉一半 / Binary Search · Halve the Candidates
+
+`computing/algorithms/binary-search/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 二分查找 / Binary search | `computing/algorithms/binary-search/#step0` |
+
+### 图算法 · 让边带你走 / Graph Algorithms · Let Edges Lead
+
+`computing/algorithms/graph-algorithms/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 图算法 / Graph algorithms | `computing/algorithms/graph-algorithms/#step1` |
+
+### 膜运输 · 梯度如何变成通量 / Membrane Transport · From Gradient to Flux
+
+`biology/cells/membrane-transport/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 膜运输 · 扩散、渗透与泵 / Membrane transport · diffusion, osmosis and pumps | `biology/cells/membrane-transport/` |
+
+### 神经动作电位 · 一次脉冲如何跑过神经元 / Action Potentials · How One Pulse Travels
+
+`biology/body/action-potential/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 动作电位 · 全或无的神经脉冲 / The action potential · an all-or-none nerve pulse | `biology/body/action-potential/#step1` |
+
+### 轨道运动 · 椭圆、速度与凌日 / Orbital Motion · Ellipses, Speed & Transits
+
+`earth/astronomy/kepler-orbits/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 开普勒轨道 · 椭圆、速度与凌日 / Kepler orbits · ellipses, speed and transits | `earth/astronomy/kepler-orbits/` |
+
+### 板块构造 · 边界如何留下证据 / Plate Tectonics · How Boundaries Leave Evidence
+
+`earth/geo/plate-tectonics/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 板块构造 · 三种边界 / Plate tectonics · three kinds of boundary | `earth/geo/plate-tectonics/#step1` |
+
+### 气候能量账本 · 太阳光如何变成温度 / Climate Energy Ledger · How Sunlight Becomes Temperature
+
+`earth/climate/climate-energy/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 气候能量账本 / Climate energy budget | `earth/climate/climate-energy/#step2` |
+
+### 动量与碰撞 · 速度不是全部 / Momentum & Collisions · Speed Is Not the Whole Story
+
+`physics/mechanics/momentum-collision/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 动量与碰撞 · 速度不是全部 / Momentum & Collisions · Speed Is Not the Whole Story | `physics/mechanics/momentum-collision/#step2` |
+
+### 网络流 · 一封消息的旅程 / Network Flow · A Message’s Journey
+
+`computing/systems/tcp-congestion/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 延迟与带宽 / Latency & bandwidth | `computing/systems/tcp-congestion/#step1` |
+| TCP 拥塞控制 · 试探与退让 / TCP congestion control · probe and back off | `computing/systems/tcp-congestion/#step4` |
+
+### 语音与音位 · 从口腔到对立 / Speech Sounds & Phonemes · From Mouth to Contrast
+
+`language/phonology/phonemes/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 音位与最小对立 / Phonemes & minimal pairs | `language/phonology/phonemes/#step1` |
+
+### 元音空间 · 用两个共振峰给元音定位 / Vowel Space · Placing Vowels by Two Formants
+
+`language/phonology/vowel-space/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 元音空间 · 共振峰 F1 与 F2 / Vowel space · formants F1 and F2 | `language/phonology/vowel-space/#step1` |
+
+### 气候反馈 · 一笔一笔对上能量账 / Climate Feedback · Balance the Energy Ledger
+
+`earth/climate/climate-feedback/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 气候反馈 · 放大或削弱初始升温 / Climate feedbacks · amplifying or damping the first warming | `earth/climate/climate-feedback/#step2` |
+
+### 二维线性变换 · 矩阵如何挪动平面 / 2D Linear Transformations · How Matrices Move the Plane
+
+`math/linear-algebra/linear-transform/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 行列式 · 有符号的面积倍率 / The determinant · a signed area scale factor | `math/linear-algebra/linear-transform/#step2` |
+| 矩阵 · 把整个平面搬走 / Matrices · moving the whole plane | `math/linear-algebra/linear-transform/#step0` |
+
+### 概率分布 · 随机性也有形状 / Probability Distributions · Randomness Has a Shape
+
+`probability/basics/probability-distribution/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 概率分布 · 随机性也有形状 / Probability Distributions · Randomness Has a Shape | `probability/basics/probability-distribution/#step0` |
+
+### 热力学 · 一口气追踪能量 / Thermodynamics · Track Energy Through a Gas
+
+`physics/thermal/thermodynamics/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 热力学第一定律 · 状态与路径 / First law of thermodynamics · state and path | `physics/thermal/thermodynamics/#step1` |
+
+### 缓冲溶液 · 把 pH 稳住 / Buffer Capacity · Holding pH Steady
+
+`chemistry/solutions/buffer-capacity/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 缓冲溶液与缓冲容量 / Buffer solutions & buffer capacity | `chemistry/solutions/buffer-capacity/#step1` |
+
+### 量子基础 · 可能性先于结果 / Quantum Basics · Possibility Before Outcome
+
+`physics/modern/quantum-basics/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 量子态 · 振幅、测量与干涉 / Quantum states · amplitude, measurement and interference | `physics/modern/quantum-basics/#step0` |
+
+### 数论与组合 · 把结构算出来 / Number Theory & Counting · Compute the Structure
+
+`math/arithmetic/number-combinatorics/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 最大公因数与辗转相除法 / Greatest common divisor & Euclid’s algorithm | `math/arithmetic/number-combinatorics/#step1` |
+| 质因数分解 / Prime factorisation | `math/arithmetic/number-combinatorics/#step0` |
+
+### 材料科学 · 应力如何变成断裂 / Materials Science · When Stress Becomes Fracture
+
+`physics/matter/materials-science/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 应力–应变曲线 · 屈服、韧性与断裂 / Stress–strain curves · yield, toughness and fracture | `physics/matter/materials-science/#step1` |
+
+### 博弈论 · 先看对手会怎么选 / Game Theory · Look at the Other Choice First
+
+`math/applied/game-theory/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 博弈论 / Game theory | `math/applied/game-theory/#step0` |
+
+### 神经科学基础 · 从静息到脉冲 / Neuroscience Basics · From Rest to Spike
+
+`biology/body/neuroscience-basics/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 静息电位 · 离子梯度的账本 / The resting potential · an ion-gradient ledger | `biology/body/neuroscience-basics/#step0` |
+
+### 宇宙膨胀 · 空间本身在变大 / Cosmic Expansion · Space Itself Gets Larger
+
+`earth/astronomy/cosmology-expansion/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 宇宙膨胀 · 哈勃定律 / Cosmic expansion · Hubble’s law | `earth/astronomy/cosmology-expansion/#step1` |
+
+### 分布式系统 · 多个副本如何像一个值 / Distributed Systems · How Replicas Behave Like One Value
+
+`computing/systems/distributed-systems/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 副本与 quorum · 一致性和可用性的取舍 / Replicas & quorums · consistency vs availability | `computing/systems/distributed-systems/#step0` |
+
+### 心理与认知 · 注意、记忆与干扰 / Psychology & Cognition · Attention, Memory & Interference
+
+`psychology/cognition/memory-attention/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 工作记忆与注意 / Working memory & attention | `psychology/cognition/memory-attention/#step0` |
+
+### 信号检测论 · 分得清，和愿意说“有”，是两回事 / Signal Detection Theory · Telling Apart vs. Willing to Say “Yes”
+
+`psychology/cognition/signal-detection/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 信号检测论 · 敏感度 d′ 与判据 / Signal detection theory · sensitivity d′ and criterion | `psychology/cognition/signal-detection/#step3` |
+
+### 音乐理论 · 从音程到终止 / Music Theory · From Intervals to Cadence
+
+`math/applied/music-theory/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 和弦功能与终止式 / Chord function & cadences | `math/applied/music-theory/#step2` |
+| 音程与频率比 / Musical intervals & frequency ratios | `math/applied/music-theory/#step0` |
+
+### 伦理决策 · 把取舍说清楚 / Ethical Decisions · Make the Trade-off Visible
+
+`psychology/ethics/ethics-decisions/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 伦理框架 · 后果、权利、公平与同意 / Ethical frameworks · consequences, rights, fairness and consent | `psychology/ethics/ethics-decisions/#step0` |
+
+### 无知之幕 · 不知道自己会是谁时，你选哪种社会 / The Veil of Ignorance · Choosing a Society Before You Know Who You Will Be
+
+`psychology/ethics/veil-of-ignorance/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 无知之幕 · 平均原则与最大最小原则 / The veil of ignorance · average rule vs maximin | `psychology/ethics/veil-of-ignorance/#step0` |
+
+### 统计推断 · 从样本到判断 / Statistical Inference · From Sample to Judgment
+
+`probability/inference/statistical-inference/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 置信区间与标准误 / Confidence intervals & standard error | `probability/inference/statistical-inference/#step1` |
+
+### 高阶机器人学 · 从角度到末端 / Advanced Robotics · From Angles to the End Effector
+
+`computing/graphics/robot-kinematics/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 机械臂运动学 · 从关节角到末端 / Robot-arm kinematics · from joint angles to the hand | `computing/graphics/robot-kinematics/#step0` |
+
+### 公共卫生 · 从曲线到干预 / Public Health · From Curves to Interventions
+
+`biology/body/public-health/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 基本再生数 R₀ · 传播曲线 / The basic reproduction number R₀ · epidemic curves | `biology/body/public-health/#step0` |
+
+### 计算机图形学 · 从坐标到画面 / Computer Graphics · From Coordinates to Pixels
+
+`computing/graphics/computer-graphics/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 图形渲染管线 · 从坐标到像素 / The graphics pipeline · from coordinates to pixels | `computing/graphics/computer-graphics/#step0` |
+
+### 机制设计与拍卖 · 报价如何改变结果 / Mechanism Design & Auctions · How Bids Change Outcomes
+
+`math/applied/mechanism-design/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 机制设计与拍卖 · 报价如何改变结果 / Mechanism Design & Auctions · How Bids Change Outcomes | `math/applied/mechanism-design/` |
+
+### 活化能 · 反应要翻过的那座山 / Activation Energy · The Hill a Reaction Has to Climb
+
+`chemistry/reactions/activation-energy/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 活化能与阿伦尼乌斯 / Activation energy and the Arrhenius law | `chemistry/reactions/activation-energy/#step2` |
+
+### 血液循环 / Blood Circulation
+
+`biology/body/blood-circulation/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 血液循环 / Blood circulation | `biology/body/blood-circulation/#step1` |
+
+### 浮力与阿基米德 / Buoyancy & Archimedes
+
+`physics/matter/buoyancy-archimedes/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 浮力与阿基米德原理 / Buoyancy & Archimedes' principle | `physics/matter/buoyancy-archimedes/#step1` |
+
+### 燃烧三要素 / The Fire Triangle
+
+`chemistry/reactions/combustion-triangle/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 燃烧三要素 / The fire triangle | `chemistry/reactions/combustion-triangle/#step3` |
+
+### 圆锥曲线 / Conic Sections
+
+`math/geometry/conic-sections/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 圆锥曲线 / Conic sections | `math/geometry/conic-sections/#step1` |
+
+### 等高线 / Contour Lines
+
+`earth/geo/contour-lines/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 等高线 / Contour lines | `earth/geo/contour-lines/#step1` |
+
+### 密度 / Density
+
+`physics/matter/density/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 密度 / Density | `physics/matter/density/#step2` |
+
+### 溶解与饱和 / Dissolution & Saturation
+
+`chemistry/solutions/dissolution-saturation/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 溶解与饱和 / Dissolution & saturation | `chemistry/solutions/dissolution-saturation/#step2` |
+
+### DNA 复制与翻译 · 拉链、抄写和流水线 / DNA Replication and Translation · A Zipper, a Copy and an Assembly Line
+
+`biology/cells/dna-replication/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| DNA 复制、转录与翻译 / DNA replication, transcription and translation | `biology/cells/dna-replication/#step3` |
+
+### 多普勒效应 · 驶近变尖，驶远变沉 / The Doppler Effect · Higher as It Approaches, Lower as It Leaves
+
+`physics/waves/doppler-effect/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 多普勒效应 / The Doppler effect | `physics/waves/doppler-effect/#step2` |
+
+### 电场 · 看不见的力画成图 / Electric Fields · Drawing an Invisible Force
+
+`physics/electromagnetism/electric-fields/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 电场与电势 / Electric fields and potential | `physics/electromagnetism/electric-fields/#step2` |
+
+### 电化学 · 电子沿导线跑，还是被电推着跑 / Electrochemistry · Electrons Running Down the Wire, or Pushed Along
+
+`chemistry/reactions/electrochemistry/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 电化学：原电池与电解池 / Electrochemistry: galvanic and electrolytic cells | `chemistry/reactions/electrochemistry/#step2` |
+
+### 电磁感应 · 磁通量一变，电压就来 / Electromagnetic Induction · Change the Flux, Get a Voltage
+
+`physics/electromagnetism/electromagnetic-induction/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 电磁感应与发电 / Electromagnetic induction and generators | `physics/electromagnetism/electromagnetic-induction/#step1` |
+
+### 能量金字塔 · 为什么顶级捕食者那么少 / The Energy Pyramid · Why Top Predators Are Rare
+
+`biology/ecology/energy-pyramid/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 能量金字塔与营养级 / The energy pyramid and trophic levels | `biology/ecology/energy-pyramid/#step1` |
+
+### 酶 · 生物体内的催化剂 / Enzymes · Catalysts of the Living World
+
+`biology/cells/enzymes/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 酶：生物催化剂 / Enzymes: biological catalysts | `biology/cells/enzymes/#step1` |
+
+### 化学方程式配平 / Balancing Chemical Equations
+
+`chemistry/reactions/equation-balancing/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 化学方程式配平 / Balancing chemical equations | `chemistry/reactions/equation-balancing/#step0` |
+
+### 食物网 / Food Webs
+
+`biology/ecology/food-web/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 食物网 / Food webs | `biology/ecology/food-web/#step1` |
+
+### 同分异构体 · 同一组原子，不同的拼法 / Isomers · The Same Atoms, Put Together Differently
+
+`chemistry/matter/isomers/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 同分异构体 / Isomers | `chemistry/matter/isomers/#step1` |
+
+### 气体压强的微观图景 · 撞墙的账本 / The Microscopic Picture of Gas Pressure · A Ledger of Wall Hits
+
+`physics/thermal/kinetic-theory/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 气体动理论 / Kinetic theory of gases | `physics/thermal/kinetic-theory/#step0` |
+
+### 经纬网 / Latitude & Longitude
+
+`earth/geo/latitude-longitude/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 经纬网 / Latitude & longitude | `earth/geo/latitude-longitude/#step1` |
+
+### 磁场与洛伦兹力 · 力总是垂直于速度 / Magnetic Force · The Force Is Always Sideways to the Velocity
+
+`physics/electromagnetism/magnetic-force/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 磁场与洛伦兹力 / Magnetic force on moving charges | `physics/electromagnetism/magnetic-force/#step1` |
+
+### 减数分裂 · 洗牌、切半，造配子 / Meiosis · Shuffle, Halve, Make Gametes
+
+`biology/cells/meiosis/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 减数分裂与配子多样性 / Meiosis and gamete diversity | `biology/cells/meiosis/#step2` |
+
+### 分子构型 · 电子对互相躲开 / Molecular Shapes · Electron Pairs Keeping Out of Each Other\
+
+`chemistry/matter/molecular-shapes/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 分子构型与极性 / Molecular shapes and polarity | `chemistry/matter/molecular-shapes/#step0` |
+
+### 分子与原子 / Molecules & Atoms
+
+`chemistry/matter/molecules-atoms/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 分子与原子 / Molecules & atoms | `chemistry/matter/molecules-atoms/#step2` |
+
+### 自然选择 · 胡椒蛾的颜色为什么翻转 / Natural Selection · Why the Peppered Moth Flipped Colour
+
+`biology/ecology/natural-selection/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 自然选择与遗传漂变 / Natural selection and genetic drift | `biology/ecology/natural-selection/#step2` |
+
+### 找规律 · 不画也能报出第 100 个 / Patterns · Name the 100th Without Drawing It
+
+`math/algebra/patterns-sequences/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 找规律 · 不画也能报出第 100 个 / Patterns · Name the 100th Without Drawing It | `math/algebra/patterns-sequences/#step2` |
+
+### 元素周期律 · 周期表上的渐变 / Periodic Trends · Gradients Across the Periodic Table
+
+`chemistry/matter/periodic-trends/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 元素周期律 / Periodic trends | `chemistry/matter/periodic-trends/#step2` |
+
+### pH 标度 / The pH Scale
+
+`chemistry/solutions/ph-scale/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| pH 标度 / The pH scale | `chemistry/solutions/ph-scale/#step1` |
+
+### 光电效应 · 光是一份一份的 / The Photoelectric Effect · Light Comes in Packets
+
+`physics/modern/photoelectric-effect/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 光电效应 / The photoelectric effect | `physics/modern/photoelectric-effect/#step1` |
+
+### 压强 / Pressure
+
+`physics/matter/pressure/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 压强 / Pressure | `physics/matter/pressure/#step0` |
+
+### 地球公转与四季 / Earth’s Orbit & the Seasons
+
+`earth/astronomy/seasons-orbit/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 地球公转与四季 / Earth's orbit & the seasons | `earth/astronomy/seasons-orbit/#step2` |
+
+### 滴定曲线 · 终点附近 pH 的“悬崖” / Titration Curves · The pH Cliff Near the End Point
+
+`chemistry/solutions/titration-curves/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 估计与不确定度 / Estimation & uncertainty | `chemistry/solutions/titration-curves/#step4` |
+| 滴定曲线与指示剂 / Titration curves and indicators | `chemistry/solutions/titration-curves/#step2` |
+
+### 注意力机制 · 每个词决定看谁 / Attention · Every Word Decides Where to Look
+
+`computing/ml/attention-mechanism/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 注意力机制 / Attention mechanism | `computing/ml/attention-mechanism/#step2` |
+
+### 平均数 · 移多补少 / Averages · Level by Pouring
+
+`math/data/averaging-leveling/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 平均数 · 移多补少 / Averages · Level by Pouring | `math/data/averaging-leveling/#step2` |
+
+### 反向传播 · 误差沿网络回流 / Backpropagation · Error Flows Back Through the Network
+
+`computing/ml/backpropagation/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 反向传播 / Backpropagation | `computing/ml/backpropagation/#step2` |
+
+### 多臂老虎机 · 探索还是利用 / Multi-Armed Bandits · Explore or Exploit
+
+`probability/stochastic/bandit-arms/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 多臂老虎机与探索-利用 / Multi-armed bandits & explore-exploit | `probability/stochastic/bandit-arms/#step2` |
+
+### 条形图 · 让数字站成一排比高矮 / Bar Charts · Numbers Standing in a Row
+
+`math/data/bar-charts/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 条形图 · 让数字站成一排比高矮 / Bar Charts · Numbers Standing in a Row | `math/data/bar-charts/#step3` |
+
+### 鸡兔同笼 · 先假设，差额会说话 / Chickens & Rabbits · Assume First, Let the Gap Speak
+
+`math/arithmetic/chicken-rabbit/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 鸡兔同笼 · 先假设，差额会说话 / Chickens & Rabbits · Assume First, Let the Gap Speak | `math/arithmetic/chicken-rabbit/#step2` |
+
+### 圆的认识 · 圆规、半径与 π / The Circle · Compass, Radius and π
+
+`math/geometry/circle-intro/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 圆的认识 · 圆规、半径与 π / The Circle · Compass, Radius and π | `math/geometry/circle-intro/#step3` |
+
+### 时钟与角度 · 两根针的赛跑 / Clocks & Angles · A Race Between Two Hands
+
+`math/geometry/clock-angles/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 时钟与角度 · 两根针的赛跑 / Clocks & Angles · A Race Between Two Hands | `math/geometry/clock-angles/#step1` |
+
+### 决策树与信息增益 / Decision Trees and Information Gain
+
+`computing/ml/decision-trees/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 决策树与信息增益 / Decision trees & information gain | `computing/ml/decision-trees/#step1` |
+
+### 词向量 · 把词摆成地图 / Word Embeddings · Words as a Map
+
+`computing/ml/embeddings/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 词向量 / Word embeddings | `computing/ml/embeddings/#step1` |
+
+### 浮与沉 · 排开的水托住了谁 / Float & Sink · What the Displaced Water Holds Up
+
+`physics/matter/float-sink/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 浮与沉 · 排开的水托住了谁 / Float & Sink · What the Displaced Water Holds Up | `physics/matter/float-sink/#step1` |
+
+### 不等式 · 天平倾斜，答案是一整段 / Inequalities · A Tilted Scale Has a Whole Range of Answers
+
+`math/algebra/inequalities/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 不等式 · 天平倾斜，答案是一整段 / Inequalities · A Tilted Scale Has a Whole Range of Answers | `math/algebra/inequalities/#step3` |
+
+### 间隔与植树 · 段数和点数差一 / Intervals & Fences · Gaps and Posts Differ by One
+
+`math/arithmetic/intervals-fences/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 间隔与植树 · 段数和点数差一 / Intervals & Fences · Gaps and Posts Differ by One | `math/arithmetic/intervals-fences/#step2` |
+
+### 反比例函数 · 此消彼长 / Inverse Proportion · One Up, One Down
+
+`math/algebra/inverse-proportion/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 反比例函数 · 此消彼长 / Inverse Proportion · One Up, One Down | `math/algebra/inverse-proportion/#step2` |
+
+### 大语言模型如何逐词生成 / How an LLM Writes Word by Word
+
+`computing/ml/llm-sampling/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 大语言模型的逐词采样 / LLM next-word sampling | `computing/ml/llm-sampling/#step1` |
+
+### 磁铁 · 铁屑显出看不见的线 / Magnets · Iron Filings Reveal Unseen Lines
+
+`physics/electromagnetism/magnets/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 磁铁 · 铁屑显出看不见的线 / Magnets · Iron Filings Reveal Unseen Lines | `physics/electromagnetism/magnets/#step2` |
+
+### 平均数、中位数、众数之争 · 三个“平均”三个故事 / Mean, Median, Mode · Three “Averages”, Three Stories
+
+`probability/statistics/mean-median-mode/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 平均数、中位数、众数之争 · 三个“平均”三个故事 / Mean, Median, Mode · Three “Averages”, Three Stories | `probability/statistics/mean-median-mode/#step1` |
+
+### 月相 · 从地球看被照亮的那一半 / Moon Phases · The Lit Half, Seen from Earth
+
+`earth/astronomy/moon-phases/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 月相 · 从地球看被照亮的那一半 / Moon Phases · The Lit Half, Seen from Earth | `earth/astronomy/moon-phases/#step1` |
+
+### 过拟合 / Overfitting
+
+`computing/ml/overfitting/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 过拟合与偏差-方差 / Overfitting & bias-variance | `computing/ml/overfitting/#step1` |
+
+### PageRank · 随机冲浪者最后停在哪 / PageRank · Where the Random Surfer Ends Up
+
+`computing/algorithms/pagerank/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| PageRank / PageRank | `computing/algorithms/pagerank/#step2` |
+
+### 位值与计数器 · 满十进一 / Place Value & the Counting Frame · Ten Makes One
+
+`math/arithmetic/place-value/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 位值与计数器 · 满十进一 / Place Value & the Counting Frame · Ten Makes One | `math/arithmetic/place-value/#step2` |
+
+### 多边形内角和 · 撕下来拼一拼 / Polygon Angle Sums · Tear and Rearrange
+
+`math/geometry/polygon-angles/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 多边形内角和 · 撕下来拼一拼 / Polygon Angle Sums · Tear and Rearrange | `math/geometry/polygon-angles/#step2` |
+
+### 概率与频率 · 转得越多，越贴近概率 / Probability & Frequency · The More Spins, the Closer to the Probability
+
+`probability/basics/probability-frequency/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 概率与频率 · 大数定律 / Probability & frequency · the law of large numbers | `probability/basics/probability-frequency/#step1` |
+
+### 实数与数轴 · √2 落在哪一点 / Real Numbers & the Number Line · Where √2 Lands
+
+`math/arithmetic/real-number-line/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 实数与数轴 · √2 落在哪一点 / Real Numbers & the Number Line · Where √2 Lands | `math/arithmetic/real-number-line/#step2` |
+
+### 递归与分治 · 把大问题劈成小问题 / Recursion and Divide-and-Conquer · Splitting a Big Problem Into Small Ones
+
+`computing/algorithms/recursion-divide/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 递归与分治 / Recursion & divide-and-conquer | `computing/algorithms/recursion-divide/#step2` |
+
+### 相似与缩放 · 长度、面积、体积各变几倍 / Similarity & Scaling · Lengths, Areas and Volumes Each Change Differently
+
+`math/geometry/similarity-scaling/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 相似与缩放 · 长度、面积、体积各变几倍 / Similarity & Scaling · Lengths, Areas and Volumes Each Change Differently | `math/geometry/similarity-scaling/#step2` |
+
+### 简单电路 · 电流要走一圈 / Simple Circuits · Current Must Go Round
+
+`physics/circuits/simple-circuits/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 简单电路 · 电流要走一圈 / Simple Circuits · Current Must Go Round | `physics/circuits/simple-circuits/#step3` |
+
+### 二元一次方程组 · 两条直线的交点 / Simultaneous Equations · Where Two Lines Meet
+
+`math/algebra/simultaneous-equations/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 二元一次方程组 · 两条直线的交点 / Simultaneous Equations · Where Two Lines Meet | `math/algebra/simultaneous-equations/#step4` |
+
+### 声音从振动来 · 米粒会跳的鼓 / Sound from Vibration · A Drum with Jumping Rice
+
+`physics/waves/sound-vibration/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 声音从振动来 · 米粒会跳的鼓 / Sound from Vibration · A Drum with Jumping Rice | `physics/waves/sound-vibration/#step2` |
+
+### 三视图 · 三张影子拼回立体 / Three Views · Three Shadows Rebuild a Solid
+
+`math/geometry/three-views/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 三视图 · 三张影子拼回立体 / Three Views · Three Shadows Rebuild a Solid | `math/geometry/three-views/#step3` |
+
+### 水的循环 · 一滴水的旅行 / The Water Cycle · One Drop’s Journey
+
+`earth/climate/water-cycle/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 水的循环 · 一滴水的旅行 / The Water Cycle · One Drop's Journey | `earth/climate/water-cycle/#step4` |
+
+### 小波 · 让窗口随频率伸缩 / Wavelets · Windows That Stretch With Frequency
+
+`signal/transforms/wavelets/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 小波与时频分析 / Wavelets & time-frequency analysis | `signal/transforms/wavelets/#step2` |
+
+### 哈希 · 把任意输入压成固定指纹 / Hashing · Squeezing Any Input Into a Fixed Fingerprint
+
+`computing/algorithms/hashing/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 哈希 / Hashing | `computing/algorithms/hashing/#step0` |
+
+### 极限与 ε–δ · 你说多近，我就能多近 / Limits and ε–δ · Name How Close, and I Can Get That Close
+
+`math/calculus/limits-epsilon/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 极限与 ε–δ 定义 / Limits & the ε–δ definition | `math/calculus/limits-epsilon/#step1` |
+
+### 大气环流与季风 · 风从哪里来 / Atmospheric Circulation & Monsoons · Where Winds Come From
+
+`earth/climate/atmospheric-circulation/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 大气环流与季风 / Atmospheric circulation & monsoons | `earth/climate/atmospheric-circulation/#step2` |
+
+### 拍卖 · 报价与真话 / Auctions · Bidding and Telling the Truth
+
+`math/applied/auction-basics/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 拍卖：报价与真话 / Auctions: bidding and telling the truth | `math/applied/auction-basics/#step2` |
+
+### 二项分布到正态 · 钉板上长出的钟形 / Binomial to Normal · The Bell Curve Growing on a Pegboard
+
+`probability/basics/binomial-normal/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 二项分布到正态 / Binomial to normal | `probability/basics/binomial-normal/#step3` |
+
+### 黑体辐射 · 热的物体为什么发光 / Blackbody Radiation · Why Hot Things Glow
+
+`physics/modern/blackbody-radiation/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 黑体辐射 / Blackbody radiation | `physics/modern/blackbody-radiation/#step5` |
+
+### 碳循环 · 大气里的碳去了哪里 / The Carbon Cycle · Where the Atmosphere’s Carbon Goes
+
+`earth/climate/carbon-cycle/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 碳循环 / The carbon cycle | `earth/climate/carbon-cycle/#step2` |
+
+### 卡诺循环 · 热机的效率上限 / The Carnot Cycle · The Ceiling on Heat-Engine Efficiency
+
+`physics/thermal/carnot-cycle/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 卡诺循环 / The Carnot cycle | `physics/thermal/carnot-cycle/#step4` |
+
+### 混沌与三体 · 初始差一丝，结果天壤 / Chaos and the Three-Body Problem · Tiny Differences, Huge Outcomes
+
+`physics/mechanics/chaos-threebody/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 混沌与三体 / Chaos and the three-body problem | `physics/mechanics/chaos-threebody/#step3` |
+
+### 卷积神经网络的特征图 · 小窗口怎样“看”图 / CNN Feature Maps · How a Small Window “Sees” an Image
+
+`computing/ml/cnn-feature-maps/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| CNN 特征图 / CNN feature maps | `computing/ml/cnn-feature-maps/#step0` |
+
+### 复利与贴现 · 时间是钱的形状 / Compound Interest & Discounting · Time Is the Shape of Money
+
+`investment/rates/compound-interest/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 复利与贴现 / Compound interest & discounting | `investment/rates/compound-interest/#step1` |
+
+### 排列与组合 · 数清楚有多少种 / Permutations & Combinations · Counting How Many Ways
+
+`probability/basics/counting-permutations/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 排列与组合 / Permutations & combinations | `probability/basics/counting-permutations/#step3` |
+
+### 双缝实验 · 一颗一颗的粒子，也走出干涉条纹 / The Double-Slit Experiment · Single Particles Still Build Fringes
+
+`physics/modern/double-slit/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 双缝实验 / The double-slit experiment | `physics/modern/double-slit/#step2` |
+
+### 期望 · 彩票、骰子、保险放在同一台秤上 / Expected Value · Lotteries, Dice and Insurance on One Scale
+
+`probability/basics/expected-value/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 期望 / Expected value | `probability/basics/expected-value/#step1` |
+
+### 外部性与公地悲剧 · 账记在谁头上 / Externalities & the Tragedy of the Commons · Who Pays the Bill
+
+`math/applied/externalities/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 外部性与公地悲剧 / Externalities & the tragedy of the commons | `math/applied/externalities/#step3` |
+
+### 眼睛与眼镜 · 为什么近视要戴凹透镜 / The Eye and Glasses · Why Short-Sightedness Needs a Concave Lens
+
+`physics/optics/eye-vision/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 眼睛与眼镜 / The eye and glasses | `physics/optics/eye-vision/#step2` |
+
+### 引力透镜 · 宇宙里的凸透镜 / Gravitational Lensing · A Cosmic Convex Lens
+
+`earth/astronomy/gravitational-lensing/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 引力透镜 / Gravitational lensing | `earth/astronomy/gravitational-lensing/#step2` |
+
+### 万有引力与轨道 · 横着扔出去，会落下、绕圈还是飞走 / Gravity and Orbits · Throw It Sideways: Fall, Circle or Escape
+
+`earth/astronomy/gravity-orbits/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 万有引力与轨道 / Gravity and orbits | `earth/astronomy/gravity-orbits/#step4` |
+
+### 假设检验与 p 值 · 法庭模型判硬币冤不冤 / Hypothesis Testing & p-Values · A Courtroom for a Coin
+
+`probability/inference/hypothesis-testing/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 假设检验与 p 值 / Hypothesis testing & p-values | `probability/inference/hypothesis-testing/#step0` |
+
+### 马尔可夫链 · 下一步只看现在 / Markov Chains · The Next Step Depends Only on Now
+
+`probability/stochastic/markov-chains/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 马尔可夫链 / Markov chains | `probability/stochastic/markov-chains/#step3` |
+
+### 机械能守恒 · 过山车的能量账本 / Conservation of Mechanical Energy · The Roller Coaster’s Energy Ledger
+
+`physics/mechanics/mechanical-energy/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 机械能守恒 / Conservation of mechanical energy | `physics/mechanics/mechanical-energy/#step1` |
+
+### 牛顿运动定律 · F = ma 是调出来的 / Newton’s Laws of Motion · F = ma, Tuned by Hand
+
+`physics/mechanics/newton-laws/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 牛顿运动定律 / Newton’s Laws of Motion | `physics/mechanics/newton-laws/#step2` |
+
+### 牛顿法求根 · 沿切线一刀跳向零点 / Newton’s Method · Leap to the Root Along a Tangent
+
+`math/calculus/newton-method/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 牛顿法求根 / Newton’s Method for Roots | `math/calculus/newton-method/#step2` |
+
+### 微分方程相图 · 捕食者与猎物的回路 / ODE Phase Portraits · Predators and Prey in a Loop
+
+`math/calculus/ode-phase-portraits/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 微分方程相图 / ODE Phase Portraits | `math/calculus/ode-phase-portraits/#step2` |
+
+### 欧姆定律 · 电流是调出来的 / Ohm’s Law · Current You Tune by Hand
+
+`physics/circuits/ohms-law/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 欧姆定律 / Ohm’s Law | `physics/circuits/ohms-law/#step0` |
+
+### 泊松过程 · 随机到达的规律 / The Poisson Process · The Pattern in Random Arrivals
+
+`probability/stochastic/poisson-process/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 泊松过程 / The Poisson Process | `probability/stochastic/poisson-process/#step2` |
+
+### 囚徒困境与演化博弈 · 合作怎样活下来 / The Prisoner’s Dilemma & Evolutionary Games · How Cooperation Survives
+
+`math/applied/prisoners-dilemma/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 囚徒困境与演化博弈 / The Prisoner’s Dilemma & Evolutionary Games | `math/applied/prisoners-dilemma/#step3` |
+
+### 抛体与圆周 · 一直在掉，但总掉不到地上 / Projectiles & Circular Motion · Always Falling, Never Landing
+
+`physics/mechanics/projectile-circular/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 抛体与圆周 / Projectiles & Circular Motion | `physics/mechanics/projectile-circular/#step4` |
+
+### 量子隧穿 · 穿墙的是概率，不是子弹 / Quantum Tunnelling · What Passes Through the Wall Is a Probability
+
+`physics/modern/quantum-tunneling/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 量子隧穿 / Quantum Tunnelling | `physics/modern/quantum-tunneling/#step1` |
+
+### 回归与相关 · 散点云里拉一条最贴的线 / Regression & Correlation · The Best Line Through a Cloud
+
+`probability/statistics/regression-correlation/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 回归与相关 / Regression & Correlation | `probability/statistics/regression-correlation/#step1` |
+
+### 狭义相对论 · 同时性的线倾斜了 / Special Relativity · The Lines of “Now” Tilt
+
+`physics/modern/relativity/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 狭义相对论 / Special Relativity | `physics/modern/relativity/#step1` |
+
+### 风险池化与保险 · 一万人各摊一点 / Risk Pooling & Insurance · Ten Thousand People Each Chip In
+
+`probability/stochastic/risk-pooling/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 风险池化与保险 / Risk Pooling & Insurance | `probability/stochastic/risk-pooling/#step1` |
+
+### RSA 公钥加密 · 乘起来容易，拆开来难 / RSA Public-Key Encryption · Easy to Multiply, Hard to Split
+
+`computing/systems/rsa-encryption/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| RSA 公钥加密 / RSA Public-Key Encryption | `computing/systems/rsa-encryption/#step3` |
+
+### 地震波探地心 · 地核是被波“照”出来的 / Seismic Waves · The Core Was “Lit Up” by Waves
+
+`earth/geo/seismic-waves/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 地震波探地心 / Seismic Waves Probing the Earth’s Core | `earth/geo/seismic-waves/#step3` |
+
+### 数列与求和 · 叠砖与棋盘麦粒 / Sequences & Series · Stacked Bricks and Chessboard Grains
+
+`math/algebra/sequences-series/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 数列与求和 / Sequences & Series | `math/algebra/sequences-series/#step1` |
+
+### 串联与并联 · 电流的分与合 / Series & Parallel · Splitting and Merging Current
+
+`physics/circuits/series-parallel/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 串联与并联 / Series & Parallel Circuits | `physics/circuits/series-parallel/#step2` |
+
+### 最短路 · 从起点像洪水一样漫开 / Shortest Path · Flooding Out From the Start
+
+`computing/algorithms/shortest-path/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 最短路（迪杰斯特拉） / Shortest Path (Dijkstra) | `computing/algorithms/shortest-path/#step1` |
+
+### 立体几何 · 转一转，再切一刀 / Solid Geometry · Turn It, Then Cut It
+
+`math/geometry/solid-geometry/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 立体几何 / Solid Geometry | `math/geometry/solid-geometry/#step2` |
+
+### 声音是波 · 看见自己的声音 / Sound Is a Wave · Seeing Your Own Voice
+
+`physics/waves/sound-waves/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 声音是波 / Sound Is a Wave | `physics/waves/sound-waves/#step1` |
+
+### 泰勒级数 · 把曲线一项项贴上去 / Taylor Series · Patch the Curve Term by Term
+
+`math/calculus/taylor-series/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 泰勒级数 / Taylor Series | `math/calculus/taylor-series/#step2` |
+
+### 股票与债券 · 买到的到底是什么 / Stocks & Bonds · What Do You Actually Buy
+
+`investment/basics/stocks-bonds/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 股票与债券 · 所有权与债权 / Stocks & bonds · ownership vs lending | `investment/basics/stocks-bonds/#step5` |
+
+### 风险与回报 · 为什么风险大承诺回报高 / Risk & Return · Why Do Riskier Things Usually Promise More
+
+`investment/basics/risk-return/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 风险与回报 · 风险溢价 / Risk & return · the risk premium | `investment/basics/risk-return/#step3` |
+
+### 分散投资 · 为什么不把鸡蛋放一个篮子里 / Diversification · Why Not Put All Eggs in One Basket
+
+`investment/basics/diversification/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 分散投资 · 相关性决定波动 / Diversification · correlation sets the wobble | `investment/basics/diversification/#step1` |
+
+### 费率与复利 · 1% 的费率怎么吃掉回报 / Fees & Compounding · How Does a 1% Fee Eat Returns
+
+`investment/rates/fees-compounding/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 费率与复利 · 1% 吃掉多少 / Fees & compounding · what 1% really costs | `investment/rates/fees-compounding/#step1` |
+
+### 利率与债券 · 利率升为什么债价跌 / Interest Rates & Bonds · Why Do Bond Prices Fall When Rates Rise
+
+`investment/rates/interest-rates-bonds/` · lesson
+
+| 概念 | 深链 |
+| --- | --- |
+| 利率与债券价格 · 利率升，债价跌 / Interest rates & bond prices · rates up, prices down | `investment/rates/interest-rates-bonds/#step3` |
+
+<!-- /GENERATED:registry-concepts -->
+
 
 <!-- leetcode-727-campaign -->
 

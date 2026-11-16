@@ -1,0 +1,24 @@
+{
+  "slug": "taylor-series",
+  "kind": "lesson",
+  "title": {
+    "zh": "泰勒级数 · 把曲线一项项贴上去",
+    "en": "Taylor Series · Patch the Curve Term by Term"
+  },
+  "desc": {
+    "zh": "多项式一项项加上去，曲线在一点附近被逐段贴合到重合；这是“局部”的逼近，与傅里叶“整体”的逼近恰成对照。",
+    "en": "Add a polynomial term by term and the curve gets matched ever farther around one point; this is a “local” approximation, the counterpart of Fourier’s “global” one."
+  },
+  "tags": [
+    {
+      "zh": "数学基础",
+      "en": "Mathematical Foundations"
+    }
+  ],
+  "category": "math",
+  "subtopic": "calculus",
+  "stage": "university",
+  "status": "live",
+  "path": "math/calculus/taylor-series/",
+  "order": 2420
+}

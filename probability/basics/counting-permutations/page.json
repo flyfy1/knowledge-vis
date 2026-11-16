@@ -1,0 +1,24 @@
+{
+  "slug": "counting-permutations",
+  "kind": "lesson",
+  "title": {
+    "zh": "排列与组合 · 数清楚有多少种",
+    "en": "Permutations & Combinations · Counting How Many Ways"
+  },
+  "desc": {
+    "zh": "分步计数画成树，排列与组合只差一句话：顺序算不算数。",
+    "en": "Count in steps and draw the tree; permutations and combinations differ by one sentence: does the order matter?"
+  },
+  "tags": [
+    {
+      "zh": "概率与统计",
+      "en": "Probability & Statistics"
+    }
+  ],
+  "category": "probability",
+  "subtopic": "basics",
+  "stage": "senior",
+  "status": "live",
+  "path": "probability/basics/counting-permutations/",
+  "order": 2140
+}

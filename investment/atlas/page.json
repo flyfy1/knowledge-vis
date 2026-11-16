@@ -1,0 +1,27 @@
+{
+  "slug": "atlas-investment",
+  "kind": "tool",
+  "title": {
+    "zh": "投资知识地图",
+    "en": "Investment Atlas"
+  },
+  "desc": {
+    "zh": "投资的 12 个概念、22 条联系、5 条问题路线：从基础概念、市场与工具、风险、估值到行为，沿问题链走进对应的交互讲解。",
+    "en": "12 investment concepts, 22 connections, 5 question routes across foundations, markets, risk, valuation, and behavior — follow a question into its interactive lesson."
+  },
+  "tags": [
+    {
+      "zh": "概念关系",
+      "en": "Concept Connections"
+    },
+    {
+      "zh": "探索路线",
+      "en": "Exploration Routes"
+    }
+  ],
+  "category": "investment",
+  "stage": "university",
+  "status": "live",
+  "path": "investment/atlas/",
+  "order": 2490
+}

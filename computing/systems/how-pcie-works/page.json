@@ -1,6 +1,30 @@
 {
   "slug": "how-pcie-works",
   "kind": "essay",
+  "tags": [
+    {
+      "zh": "PCIe",
+      "en": "PCIe"
+    },
+    {
+      "zh": "计算机总线",
+      "en": "Computer Buses"
+    },
+    {
+      "zh": "信号完整性",
+      "en": "Signal Integrity"
+    },
+    {
+      "zh": "长文",
+      "en": "Long-form Essay"
+    }
+  ],
+  "category": "computing",
+  "subtopic": "systems",
+  "stage": "university",
+  "status": "live",
+  "path": "computing/systems/how-pcie-works/",
+  "order": 280,
   "layout": "essay",
   "scripts": [
     "models.js",

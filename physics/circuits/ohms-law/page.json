@@ -1,0 +1,24 @@
+{
+  "slug": "ohms-law",
+  "kind": "lesson",
+  "title": {
+    "zh": "欧姆定律 · 电流是调出来的",
+    "en": "Ohm’s Law · Current You Tune by Hand"
+  },
+  "desc": {
+    "zh": "电压推、电阻挡：I = U/R 不是背的，是在滑杆上一格一格调出来的。",
+    "en": "Voltage pushes, resistance holds back: I = V/R isn’t something to memorise but something you tune on a slider."
+  },
+  "tags": [
+    {
+      "zh": "物理与电路",
+      "en": "Physics & Circuits"
+    }
+  ],
+  "category": "physics",
+  "subtopic": "circuits",
+  "stage": "junior",
+  "status": "live",
+  "path": "physics/circuits/ohms-law/",
+  "order": 2270
+}

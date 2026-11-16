@@ -1,0 +1,32 @@
+{
+  "slug": "membrane-transport",
+  "kind": "lesson",
+  "title": {
+    "zh": "膜运输 · 梯度如何变成通量",
+    "en": "Membrane Transport · From Gradient to Flux"
+  },
+  "desc": {
+    "zh": "拖动内外浓度、通透性和 ATP 泵，追踪梯度如何变成净通量、渗透压和细胞体积变化。",
+    "en": "Tune inside/outside concentration, permeability and ATP pumping to trace gradients into net flux, osmosis and cell-volume change."
+  },
+  "tags": [
+    {
+      "zh": "扩散",
+      "en": "Diffusion"
+    },
+    {
+      "zh": "渗透",
+      "en": "Osmosis"
+    },
+    {
+      "zh": "主动运输",
+      "en": "Active Transport"
+    }
+  ],
+  "category": "biology",
+  "subtopic": "cells",
+  "stage": "senior",
+  "status": "live",
+  "path": "biology/cells/membrane-transport/",
+  "order": 1070
+}

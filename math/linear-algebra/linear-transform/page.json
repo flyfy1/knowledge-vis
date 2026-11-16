@@ -1,0 +1,32 @@
+{
+  "slug": "linear-transform",
+  "kind": "lesson",
+  "title": {
+    "zh": "二维线性变换 · 矩阵如何挪动平面",
+    "en": "2D Linear Transformations · How Matrices Move the Plane"
+  },
+  "desc": {
+    "zh": "拖动矩阵四个参数，观察网格、基向量、行列式面积和特征方向如何一起变化。",
+    "en": "Tune four matrix entries and watch the grid, basis vectors, determinant area and eigen-directions move together."
+  },
+  "tags": [
+    {
+      "zh": "矩阵",
+      "en": "Matrices"
+    },
+    {
+      "zh": "行列式",
+      "en": "Determinants"
+    },
+    {
+      "zh": "基向量",
+      "en": "Basis Vectors"
+    }
+  ],
+  "category": "math",
+  "subtopic": "linear-algebra",
+  "stage": "university",
+  "status": "live",
+  "path": "math/linear-algebra/linear-transform/",
+  "order": 1170
+}

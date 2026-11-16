@@ -1,0 +1,24 @@
+{
+  "slug": "ode-phase-portraits",
+  "kind": "lesson",
+  "title": {
+    "zh": "微分方程相图 · 捕食者与猎物的回路",
+    "en": "ODE Phase Portraits · Predators and Prey in a Loop"
+  },
+  "desc": {
+    "zh": "兔子与狐狸此消彼长：时间曲线看过程，相平面看全貌，每条轨线是一种命运。",
+    "en": "Rabbits and foxes rise and fall together: time curves show the story, the phase plane shows the whole picture, and each trajectory is a fate."
+  },
+  "tags": [
+    {
+      "zh": "数学基础",
+      "en": "Mathematical Foundations"
+    }
+  ],
+  "category": "math",
+  "subtopic": "calculus",
+  "stage": "university",
+  "status": "live",
+  "path": "math/calculus/ode-phase-portraits/",
+  "order": 2260
+}

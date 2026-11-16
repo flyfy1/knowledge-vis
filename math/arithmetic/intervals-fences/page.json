@@ -1,0 +1,24 @@
+{
+  "slug": "intervals-fences",
+  "kind": "lesson",
+  "title": {
+    "zh": "间隔与植树 · 段数和点数差一",
+    "en": "Intervals & Fences · Gaps and Posts Differ by One"
+  },
+  "desc": {
+    "zh": "路边种树、锯木头、爬楼梯：数“点”和数“段”总是差一个，看清两头种不种就不会数错。",
+    "en": "Planting trees, sawing logs, climbing stairs: counting “points” and counting “gaps” differ by one, and checking the ends tells you which way."
+  },
+  "tags": [
+    {
+      "zh": "数学基础",
+      "en": "Mathematical Foundations"
+    }
+  ],
+  "category": "math",
+  "subtopic": "arithmetic",
+  "stage": "primary",
+  "status": "live",
+  "path": "math/arithmetic/intervals-fences/",
+  "order": 1830
+}

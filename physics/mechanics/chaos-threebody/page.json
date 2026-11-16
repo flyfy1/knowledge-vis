@@ -1,0 +1,24 @@
+{
+  "slug": "chaos-threebody",
+  "kind": "lesson",
+  "title": {
+    "zh": "混沌与三体 · 初始差一丝，结果天壤",
+    "en": "Chaos and the Three-Body Problem · Tiny Differences, Huge Outcomes"
+  },
+  "desc": {
+    "zh": "规则完全确定，结果却无法长期预测：从一个迭代公式，到洛伦兹的蝴蝶，再到三颗星的追逐。",
+    "en": "The rules are fully deterministic, yet long-term prediction fails: from a one-line map to Lorenz’s butterfly to three stars chasing each other."
+  },
+  "tags": [
+    {
+      "zh": "物理与电路",
+      "en": "Physics & Circuits"
+    }
+  ],
+  "category": "physics",
+  "subtopic": "mechanics",
+  "stage": "university",
+  "status": "live",
+  "path": "physics/mechanics/chaos-threebody/",
+  "order": 2110
+}

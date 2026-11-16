@@ -1,0 +1,24 @@
+{
+  "slug": "rsa-encryption",
+  "kind": "lesson",
+  "title": {
+    "zh": "RSA 公钥加密 · 乘起来容易，拆开来难",
+    "en": "RSA Public-Key Encryption · Easy to Multiply, Hard to Split"
+  },
+  "desc": {
+    "zh": "把两个大质数相乘只要一步，从乘积倒推两个质数却要天文数字的步数——这种不对称，让“公开的锁、私藏的钥匙”成为可能。",
+    "en": "Multiplying two big primes takes one step; recovering them from the product takes an astronomical number — and that asymmetry makes a public lock and a private key possible."
+  },
+  "tags": [
+    {
+      "zh": "计算与智能",
+      "en": "Computing & AI"
+    }
+  ],
+  "category": "computing",
+  "subtopic": "systems",
+  "stage": "university",
+  "status": "live",
+  "path": "computing/systems/rsa-encryption/",
+  "order": 2350
+}

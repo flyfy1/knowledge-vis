@@ -1,0 +1,24 @@
+{
+  "slug": "probability-frequency",
+  "kind": "lesson",
+  "title": {
+    "zh": "概率与频率 · 转得越多，越贴近概率",
+    "en": "Probability & Frequency · The More Spins, the Closer to the Probability"
+  },
+  "desc": {
+    "zh": "一次转盘结果说不准，但转的次数越多，红色出现的频率就越稳定地围着它的概率打转。",
+    "en": "One spin cannot be predicted, but with more spins the frequency of red settles ever more steadily around its probability."
+  },
+  "tags": [
+    {
+      "zh": "概率与统计",
+      "en": "Probability & Statistics"
+    }
+  ],
+  "category": "probability",
+  "subtopic": "basics",
+  "stage": "junior",
+  "status": "live",
+  "path": "probability/basics/probability-frequency/",
+  "order": 1930
+}

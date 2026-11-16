@@ -1,0 +1,24 @@
+{
+  "slug": "mechanical-energy",
+  "kind": "lesson",
+  "title": {
+    "zh": "机械能守恒 · 过山车的能量账本",
+    "en": "Conservation of Mechanical Energy · The Roller Coaster’s Energy Ledger"
+  },
+  "desc": {
+    "zh": "动能和重力势能此消彼长、总数不变；一旦有摩擦，少掉的机械能变成热，账本照样是平的。",
+    "en": "Kinetic and gravitational potential energy trade off while the total stays fixed; add friction and the missing mechanical energy shows up as heat, so the ledger still balances."
+  },
+  "tags": [
+    {
+      "zh": "物理与电路",
+      "en": "Physics & Circuits"
+    }
+  ],
+  "category": "physics",
+  "subtopic": "mechanics",
+  "stage": "junior",
+  "status": "live",
+  "path": "physics/mechanics/mechanical-energy/",
+  "order": 2230
+}

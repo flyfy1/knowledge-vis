@@ -1,0 +1,32 @@
+{
+  "slug": "robot-kinematics",
+  "kind": "lesson",
+  "title": {
+    "zh": "高阶机器人学 · 从角度到末端",
+    "en": "Advanced Robotics · From Angles to the End Effector"
+  },
+  "desc": {
+    "zh": "拖动平面二连杆的关节角，追踪正/逆运动学、Jacobian 速度映射与奇异位形。",
+    "en": "Tune a planar two-link arm and trace forward/inverse kinematics, Jacobian velocity mapping and singular configurations."
+  },
+  "tags": [
+    {
+      "zh": "正运动学",
+      "en": "Forward Kinematics"
+    },
+    {
+      "zh": "逆运动学",
+      "en": "Inverse Kinematics"
+    },
+    {
+      "zh": "Jacobian",
+      "en": "Jacobian"
+    }
+  ],
+  "category": "computing",
+  "subtopic": "graphics",
+  "stage": "university",
+  "status": "live",
+  "path": "computing/graphics/robot-kinematics/",
+  "order": 1340
+}

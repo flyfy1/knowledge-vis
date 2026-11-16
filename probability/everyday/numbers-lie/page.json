@@ -1,0 +1,40 @@
+{
+  "slug": "numbers-lie",
+  "kind": "essay",
+  "title": {
+    "zh": "数字没有说谎，结论却错了",
+    "en": "Every Number Was True, and the Conclusion Was Still Wrong"
+  },
+  "desc": {
+    "zh": "九种让真数字推出假结论的方式：均值回归、小样本、幸存者、多重比较、辛普森悖论、基础比率、相对风险、长尾平均和古德哈特定律。每一种都配一个小模型，先亲手造出错觉，再亲手关掉它。",
+    "en": "Nine ways true numbers lead to false conclusions: regression to the mean, small samples, survivorship, many comparisons, Simpson's paradox, base rates, relative risk, long-tailed averages and Goodhart's law. Each comes with a small model: produce the illusion yourself, then switch it off."
+  },
+  "tags": [
+    {
+      "zh": "统计陷阱",
+      "en": "Statistical Fallacies"
+    },
+    {
+      "zh": "均值回归",
+      "en": "Regression to the Mean"
+    },
+    {
+      "zh": "辛普森悖论",
+      "en": "Simpson's Paradox"
+    },
+    {
+      "zh": "幸存者偏差",
+      "en": "Survivorship Bias"
+    },
+    {
+      "zh": "长文",
+      "en": "Long-form Essay"
+    }
+  ],
+  "category": "probability",
+  "subtopic": "everyday",
+  "stage": "senior",
+  "status": "live",
+  "path": "probability/everyday/numbers-lie/",
+  "order": 70
+}

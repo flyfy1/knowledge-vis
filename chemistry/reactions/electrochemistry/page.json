@@ -1,0 +1,24 @@
+{
+  "slug": "electrochemistry",
+  "kind": "lesson",
+  "title": {
+    "zh": "电化学 · 电子沿导线跑，还是被电推着跑",
+    "en": "Electrochemistry · Electrons Running Down the Wire, or Pushed Along"
+  },
+  "desc": {
+    "zh": "氧化还原反应被拆成两个半电池：自发时电子沿导线流出电流（原电池），外加电压反推时就是电解池。",
+    "en": "A redox reaction is split into two half-cells: spontaneously it drives a current through the wire (a galvanic cell), and an applied opposing voltage turns it into an electrolytic cell."
+  },
+  "tags": [
+    {
+      "zh": "化学",
+      "en": "Chemistry"
+    }
+  ],
+  "category": "chemistry",
+  "subtopic": "reactions",
+  "stage": "senior",
+  "status": "live",
+  "path": "chemistry/reactions/electrochemistry/",
+  "order": 1490
+}

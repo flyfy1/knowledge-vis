@@ -1,6 +1,30 @@
 {
   "slug": "how-cpu-caches-work",
   "kind": "essay",
+  "tags": [
+    {
+      "zh": "CPU 缓存",
+      "en": "CPU Caches"
+    },
+    {
+      "zh": "计算机体系结构",
+      "en": "Computer Architecture"
+    },
+    {
+      "zh": "内存层级",
+      "en": "Memory Hierarchy"
+    },
+    {
+      "zh": "长文",
+      "en": "Long-form Essay"
+    }
+  ],
+  "category": "computing",
+  "subtopic": "systems",
+  "stage": "university",
+  "status": "live",
+  "path": "computing/systems/how-cpu-caches-work/",
+  "order": 310,
   "layout": "essay",
   "scripts": [
     "models.js",

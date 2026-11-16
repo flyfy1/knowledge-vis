@@ -1,6 +1,34 @@
 {
   "slug": "how-a-computer-boots",
   "kind": "essay",
+  "tags": [
+    {
+      "zh": "开机",
+      "en": "Booting"
+    },
+    {
+      "zh": "固件",
+      "en": "Firmware"
+    },
+    {
+      "zh": "安全启动",
+      "en": "Secure Boot"
+    },
+    {
+      "zh": "计算机体系结构",
+      "en": "Computer Architecture"
+    },
+    {
+      "zh": "长文",
+      "en": "Long-form Essay"
+    }
+  ],
+  "category": "computing",
+  "subtopic": "systems",
+  "stage": "university",
+  "status": "live",
+  "path": "computing/systems/how-a-computer-boots/",
+  "order": 400,
   "layout": "essay",
   "scripts": [
     "models.js",

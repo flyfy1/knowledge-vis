@@ -1,0 +1,24 @@
+{
+  "slug": "markov-chains",
+  "kind": "lesson",
+  "title": {
+    "zh": "马尔可夫链 · 下一步只看现在",
+    "en": "Markov Chains · The Next Step Depends Only on Now"
+  },
+  "desc": {
+    "zh": "天气、网页浏览、赌徒的本金：只要“明天只取决于今天”，转移矩阵的幂次里就会浮现一个稳态。",
+    "en": "Weather, web browsing, a gambler’s fortune: whenever “tomorrow depends only on today”, a steady state emerges from the powers of the transition matrix."
+  },
+  "tags": [
+    {
+      "zh": "概率与统计",
+      "en": "Probability & Statistics"
+    }
+  ],
+  "category": "probability",
+  "subtopic": "stochastic",
+  "stage": "university",
+  "status": "live",
+  "path": "probability/stochastic/markov-chains/",
+  "order": 2220
+}

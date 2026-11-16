@@ -1,0 +1,24 @@
+{
+  "slug": "embeddings",
+  "kind": "lesson",
+  "title": {
+    "zh": "词向量 · 把词摆成地图",
+    "en": "Word Embeddings · Words as a Map"
+  },
+  "desc": {
+    "zh": "一个词怎样变成一串数字？数字怎样衡量相似、做类比，机器又怎样不靠手工特征，从「常和谁在一起」里学出它们。",
+    "en": "How does a word become a list of numbers? How do the numbers measure similarity and solve analogies, and how can a machine learn them from “who a word keeps company with” instead of hand-made features?"
+  },
+  "tags": [
+    {
+      "zh": "计算与智能",
+      "en": "Computing & AI"
+    }
+  ],
+  "category": "computing",
+  "subtopic": "ml",
+  "stage": "university",
+  "status": "live",
+  "path": "computing/ml/embeddings/",
+  "order": 1800
+}

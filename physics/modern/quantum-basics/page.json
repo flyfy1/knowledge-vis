@@ -1,0 +1,32 @@
+{
+  "slug": "quantum-basics",
+  "kind": "lesson",
+  "title": {
+    "zh": "量子基础 · 可能性先于结果",
+    "en": "Quantum Basics · Possibility Before Outcome"
+  },
+  "desc": {
+    "zh": "从振幅、测量、相位到干涉，拖动一个量子比特的状态，观察概率如何先于结果出现。",
+    "en": "From amplitudes and measurement to phase and interference, tune one qubit and watch probability appear before the outcome."
+  },
+  "tags": [
+    {
+      "zh": "振幅",
+      "en": "Amplitudes"
+    },
+    {
+      "zh": "测量",
+      "en": "Measurement"
+    },
+    {
+      "zh": "干涉",
+      "en": "Interference"
+    }
+  ],
+  "category": "physics",
+  "subtopic": "modern",
+  "stage": "university",
+  "status": "live",
+  "path": "physics/modern/quantum-basics/",
+  "order": 1210
+}

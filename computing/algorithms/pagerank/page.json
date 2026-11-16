@@ -1,0 +1,24 @@
+{
+  "slug": "pagerank",
+  "kind": "lesson",
+  "title": {
+    "zh": "PageRank · 随机冲浪者最后停在哪",
+    "en": "PageRank · Where the Random Surfer Ends Up"
+  },
+  "desc": {
+    "zh": "被链接得最多的网页就最重要吗？用一个随机冲浪者把「重要」变成概率，再用迭代算出来，看阻尼系数和一条新链接怎样改变排名。",
+    "en": "Is the most linked-to page the most important? Turn “important” into a probability with a random surfer, compute it by iteration, and see how the damping factor and one new link change the ranking."
+  },
+  "tags": [
+    {
+      "zh": "计算与智能",
+      "en": "Computing & AI"
+    }
+  ],
+  "category": "computing",
+  "subtopic": "algorithms",
+  "stage": "university",
+  "status": "live",
+  "path": "computing/algorithms/pagerank/",
+  "order": 1900
+}

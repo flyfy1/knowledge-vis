@@ -1,0 +1,24 @@
+{
+  "slug": "series-parallel",
+  "kind": "lesson",
+  "title": {
+    "zh": "串联与并联 · 电流的分与合",
+    "en": "Series & Parallel · Splitting and Merging Current"
+  },
+  "desc": {
+    "zh": "一条河上两个水闸首尾相接是串联，河水分成两条支流再汇合是并联——电流和电压分别怎样分？粒子流速画出来。",
+    "en": "Two sluice gates on one river end to end are in series; a river that splits into two branches and rejoins is in parallel — how do current and voltage divide? The flowing dots show it."
+  },
+  "tags": [
+    {
+      "zh": "物理与电路",
+      "en": "Physics & Circuits"
+    }
+  ],
+  "category": "physics",
+  "subtopic": "circuits",
+  "stage": "junior",
+  "status": "live",
+  "path": "physics/circuits/series-parallel/",
+  "order": 2380
+}

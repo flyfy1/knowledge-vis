@@ -1,0 +1,24 @@
+{
+  "slug": "carnot-cycle",
+  "kind": "lesson",
+  "title": {
+    "zh": "卡诺循环 · 热机的效率上限",
+    "en": "The Carnot Cycle · The Ceiling on Heat-Engine Efficiency"
+  },
+  "desc": {
+    "zh": "在 p–V 图上走完四步一圈，净功就是围出的面积；效率只由热源和冷源两个温度决定。",
+    "en": "Four steps around a p–V loop: the net work is the enclosed area, and the efficiency depends only on the hot and cold temperatures."
+  },
+  "tags": [
+    {
+      "zh": "物理与电路",
+      "en": "Physics & Circuits"
+    }
+  ],
+  "category": "physics",
+  "subtopic": "thermal",
+  "stage": "university",
+  "status": "live",
+  "path": "physics/thermal/carnot-cycle/",
+  "order": 2100
+}

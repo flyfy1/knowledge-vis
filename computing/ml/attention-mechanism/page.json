@@ -1,0 +1,24 @@
+{
+  "slug": "attention-mechanism",
+  "kind": "lesson",
+  "title": {
+    "zh": "注意力机制 · 每个词决定看谁",
+    "en": "Attention · Every Word Decides Where to Look"
+  },
+  "desc": {
+    "zh": "从「查询与键的点积」到 softmax 权重、加权求和，再到整句的注意力矩阵：每个词怎样决定「看谁多一点」。",
+    "en": "From the dot product of query and key, through softmax weights and a weighted sum, to a whole-sentence attention matrix: how each word decides whom to look at."
+  },
+  "tags": [
+    {
+      "zh": "计算与智能",
+      "en": "Computing & AI"
+    }
+  ],
+  "category": "computing",
+  "subtopic": "ml",
+  "stage": "university",
+  "status": "live",
+  "path": "computing/ml/attention-mechanism/",
+  "order": 1710
+}

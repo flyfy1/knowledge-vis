@@ -1,0 +1,24 @@
+{
+  "slug": "bandit-arms",
+  "kind": "lesson",
+  "title": {
+    "zh": "多臂老虎机 · 探索还是利用",
+    "en": "Multi-Armed Bandits · Explore or Exploit"
+  },
+  "desc": {
+    "zh": "五台看不出差别的机器，每台的中奖率你看不见：先亲手拉几次，再看贪心、ε-贪心、UCB 和汤普森采样怎样在「多试试」与「拉最好的」之间取舍。",
+    "en": "Five machines that look alike, each with a payout rate you cannot see: pull a few by hand, then watch greedy, ε-greedy, UCB and Thompson sampling trade off “try more” against “pull the best”."
+  },
+  "tags": [
+    {
+      "zh": "概率与统计",
+      "en": "Probability & Statistics"
+    }
+  ],
+  "category": "probability",
+  "subtopic": "stochastic",
+  "stage": "university",
+  "status": "live",
+  "path": "probability/stochastic/bandit-arms/",
+  "order": 1740
+}

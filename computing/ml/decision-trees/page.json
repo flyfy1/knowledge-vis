@@ -1,0 +1,24 @@
+{
+  "slug": "decision-trees",
+  "kind": "lesson",
+  "title": {
+    "zh": "决策树与信息增益",
+    "en": "Decision Trees and Information Gain"
+  },
+  "desc": {
+    "zh": "每一刀都问一个是非题：怎样挑最能降低混乱度的那一刀，一刀接一刀长成一棵树，又为什么不能长得太深。",
+    "en": "Each cut asks a yes/no question: how to pick the cut that reduces disorder the most, grow a tree one cut at a time, and why it should not grow too deep."
+  },
+  "tags": [
+    {
+      "zh": "计算与智能",
+      "en": "Computing & AI"
+    }
+  ],
+  "category": "computing",
+  "subtopic": "ml",
+  "stage": "university",
+  "status": "live",
+  "path": "computing/ml/decision-trees/",
+  "order": 1790
+}

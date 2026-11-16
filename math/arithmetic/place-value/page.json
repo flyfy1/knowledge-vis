@@ -1,0 +1,24 @@
+{
+  "slug": "place-value",
+  "kind": "lesson",
+  "title": {
+    "zh": "位值与计数器 · 满十进一",
+    "en": "Place Value & the Counting Frame · Ten Makes One"
+  },
+  "desc": {
+    "zh": "同一个数字站在不同的位置，代表的大小差十倍、百倍：计数器上每一列的珠子满十就换成下一列的一颗。",
+    "en": "The same digit stands for ten or a hundred times more one place to the left: on a counting frame, ten beads in a column trade for one bead in the next."
+  },
+  "tags": [
+    {
+      "zh": "数学基础",
+      "en": "Mathematical Foundations"
+    }
+  ],
+  "category": "math",
+  "subtopic": "arithmetic",
+  "stage": "primary",
+  "status": "live",
+  "path": "math/arithmetic/place-value/",
+  "order": 1910
+}

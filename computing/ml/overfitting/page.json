@@ -1,0 +1,24 @@
+{
+  "slug": "overfitting",
+  "kind": "lesson",
+  "title": {
+    "zh": "过拟合",
+    "en": "Overfitting"
+  },
+  "desc": {
+    "zh": "用多项式去拟合带噪声的点：曲线越灵活，训练误差越小，可没见过的数据上的误差却会先降后升。看清拐点，再看数据量、换批数据和正则化怎样改变它。",
+    "en": "Fit noisy points with a polynomial: the more flexible the curve, the smaller the training error, yet the error on unseen data first falls and then rises. Find the turning point, then see how data size, resampling and regularisation change it."
+  },
+  "tags": [
+    {
+      "zh": "计算与智能",
+      "en": "Computing & AI"
+    }
+  ],
+  "category": "computing",
+  "subtopic": "ml",
+  "stage": "university",
+  "status": "live",
+  "path": "computing/ml/overfitting/",
+  "order": 1890
+}

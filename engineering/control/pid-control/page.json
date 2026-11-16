@@ -1,0 +1,32 @@
+{
+  "slug": "pid-control",
+  "kind": "lesson",
+  "title": {
+    "zh": "反馈控制 · 先看差多少，再决定推多少",
+    "en": "Feedback Control · See the Error, Then Act"
+  },
+  "desc": {
+    "zh": "从设定值与误差走到 P、I、D：调参时同时看响应、超调、稳态误差和噪声代价。",
+    "en": "Trace setpoint and error into P, I and D, then tune while watching response, overshoot, steady-state error and noise cost."
+  },
+  "tags": [
+    {
+      "zh": "P/I/D",
+      "en": "P/I/D"
+    },
+    {
+      "zh": "动态系统",
+      "en": "Dynamic Systems"
+    },
+    {
+      "zh": "稳定性",
+      "en": "Stability"
+    }
+  ],
+  "category": "engineering",
+  "subtopic": "control",
+  "stage": "senior",
+  "status": "live",
+  "path": "engineering/control/pid-control/",
+  "order": 1010
+}

@@ -1,0 +1,24 @@
+{
+  "slug": "hashing",
+  "kind": "lesson",
+  "title": {
+    "zh": "哈希 · 把任意输入压成固定指纹",
+    "en": "Hashing · Squeezing Any Input Into a Fixed Fingerprint"
+  },
+  "desc": {
+    "zh": "任意长度的输入变成固定长度的指纹：雪崩效应、哈希表里的冲突、生日悖论，以及指纹到底要多少位才够。",
+    "en": "Any-length input becomes a fixed-length fingerprint: the avalanche effect, collisions in hash tables, the birthday paradox, and how many bits a fingerprint really needs."
+  },
+  "tags": [
+    {
+      "zh": "计算与智能",
+      "en": "Computing & AI"
+    }
+  ],
+  "category": "computing",
+  "subtopic": "algorithms",
+  "stage": "university",
+  "status": "live",
+  "path": "computing/algorithms/hashing/",
+  "order": 2030
+}

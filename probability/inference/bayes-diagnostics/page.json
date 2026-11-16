@@ -1,0 +1,32 @@
+{
+  "slug": "bayes-diagnostics",
+  "kind": "lesson",
+  "title": {
+    "zh": "贝叶斯诊断 · 阳性结果说明什么？",
+    "en": "Bayes Diagnostics · What Does a Positive Mean?"
+  },
+  "desc": {
+    "zh": "把先验、灵敏度、特异度和后验放进 1,000 人频数树，亲眼看见阳性结果的分母如何改变。",
+    "en": "Tune prevalence, sensitivity and specificity in a 1,000-person frequency tree and see how a positive result changes the denominator."
+  },
+  "tags": [
+    {
+      "zh": "贝叶斯推断",
+      "en": "Bayesian Inference"
+    },
+    {
+      "zh": "诊断测试",
+      "en": "Diagnostic Testing"
+    },
+    {
+      "zh": "条件概率",
+      "en": "Conditional Probability"
+    }
+  ],
+  "category": "probability",
+  "subtopic": "inference",
+  "stage": "senior",
+  "status": "live",
+  "path": "probability/inference/bayes-diagnostics/",
+  "order": 990
+}

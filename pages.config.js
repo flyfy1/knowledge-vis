@@ -184,6 +184,11 @@ window.KNOWLEDGE_ESSAYS = [
   "scarcity-moves"
 ];
 
+/* ===== GENERATED: KNOWLEDGE_PAGES ===== written by scripts/build-registry.cjs from every page.json that has a "status".
+ * Do not edit between this banner and the END marker: node scripts/build-registry.cjs --check fails on any hand edit.
+ * To register a page, write <category>/<subtopic>/<slug>/page.json (AGENTS.md, specs/essays.md「Registering」),
+ * then run node scripts/build-registry.cjs. A row already pasted here by hand: node scripts/build-registry.cjs --adopt
+ * moves it into a page.json. Categories, subtopics, FEATURED and ESSAYS above stay hand-edited. */
 window.KNOWLEDGE_PAGES = [
   {
     slug: "frozen-bubble",
@@ -202,1346 +207,674 @@ window.KNOWLEDGE_PAGES = [
   {
     slug: "atlas",
     title: { zh: "知识地图 · 概念与联系", en: "Knowledge Atlas · Concepts & Connections" },
-    desc: {
-      zh: "搜一个不懂的词，直接打开课程里讲它的那一步；或从一个问题出发，沿着概念之间的联系走。覆盖数学、物理、化学、生命、地球与太空、计算与社会，每条关系都写明为什么相连。",
-      en: "Look up something you don’t understand and open the step of a lesson that shows it, or start from a question and follow the connections between ideas — across mathematics, physics, chemistry, life, the Earth and space, computing and society, each link with the reason it holds."
-    },
+    desc: { zh: "搜一个不懂的词，直接打开课程里讲它的那一步；或从一个问题出发，沿着概念之间的联系走。覆盖数学、物理、化学、生命、地球与太空、计算与社会，每条关系都写明为什么相连。", en: "Look up something you don’t understand and open the step of a lesson that shows it, or start from a question and follow the connections between ideas — across mathematics, physics, chemistry, life, the Earth and space, computing and society, each link with the reason it holds." },
     tags: [{ zh: "概念搜索", en: "Concept Search" }, { zh: "概念关系", en: "Concept Connections" }, { zh: "探索路线", en: "Exploration Routes" }],
-    category: "math",
-    stage: "university",
-    status: "live",
-    path: "atlas/"
+    category: "math", stage: "university", status: "live", path: "atlas/"
   },
   {
     slug: "leetcode",
     title: { zh: "LeetCode · 一步一步想出来", en: "LeetCode · Reason Your Way to the Solution" },
-    desc: {
-      zh: "从手算、猜测与反例出发，逐步推导算法，再用 Python 实现。首篇 2916：从子数组到区间更新、平方和与懒标记。",
-      en: "Derive algorithms through small examples, predictions and counterexamples, then implement them in Python. First lesson: 2916, from subarrays to interval updates and lazy propagation."
-    },
+    desc: { zh: "从手算、猜测与反例出发，逐步推导算法，再用 Python 实现。首篇 2916：从子数组到区间更新、平方和与懒标记。", en: "Derive algorithms through small examples, predictions and counterexamples, then implement them in Python. First lesson: 2916, from subarrays to interval updates and lazy propagation." },
     tags: [{ zh: "算法推导", en: "Algorithm Derivation" }, { zh: "交互题解", en: "Interactive Lessons" }, { zh: "Python", en: "Python" }],
-    category: "leetcode",
-    stage: "university",
-    status: "live",
-    path: "leetcode/"
+    category: "leetcode", stage: "university", status: "live", path: "leetcode/"
   },
   {
     slug: "fable-flight",
     title: { zh: "寓言乘风，梦在舞动", en: "Let Fable take Flight" },
-    desc: {
-      zh: "深夜的图书馆，两万四千页寓言乘风飞舞。Three.js 实时短片：建筑、纹理、钢琴与纸声全部由代码生成。",
-      en: "A midnight library where 24,000 pages of fable take to the air. A real-time Three.js short film; architecture, textures, piano and paper sounds are all generated in code."
-    },
+    desc: { zh: "深夜的图书馆，两万四千页寓言乘风飞舞。Three.js 实时短片：建筑、纹理、钢琴与纸声全部由代码生成。", en: "A midnight library where 24,000 pages of fable take to the air. A real-time Three.js short film; architecture, textures, piano and paper sounds are all generated in code." },
     tags: [{ zh: "Three.js", en: "Three.js" }, { zh: "实时短片", en: "Real-time Film" }, { zh: "程序化生成", en: "Procedural" }],
-    category: "demos",
-    stage: "university",
-    status: "live",
-    path: "demos/fable-flight/"
+    category: "demos", stage: "university", status: "live", path: "demos/fable-flight/"
   },
   {
     slug: "scarcity-moves",
     title: { zh: "稀缺会搬家", en: "Scarcity Moves" },
-    desc: {
-      zh: "十个经济学的基本道理，每个配一个可以动手的小模型；再用它们推演 AI 普及之后，工作、收入和稀缺会怎样变化。",
-      en: "Ten core ideas of economics, each with a hands-on model, then applied to what happens to work, income and scarcity once AI is everywhere."
-    },
+    desc: { zh: "十个经济学的基本道理，每个配一个可以动手的小模型；再用它们推演 AI 普及之后，工作、收入和稀缺会怎样变化。", en: "Ten core ideas of economics, each with a hands-on model, then applied to what happens to work, income and scarcity once AI is everywhere." },
     tags: [{ zh: "经济学", en: "Economics" }, { zh: "AI 与社会", en: "AI & Society" }, { zh: "交互长文", en: "Interactive Essay" }],
-    category: "demos",
-    stage: "university",
-    status: "live",
-    path: "demos/scarcity-moves/"
+    category: "demos", stage: "university", status: "live", path: "demos/scarcity-moves/"
   },
   {
     slug: "numbers-lie",
     title: { zh: "数字没有说谎，结论却错了", en: "Every Number Was True, and the Conclusion Was Still Wrong" },
-    desc: {
-      zh: "九种让真数字推出假结论的方式：均值回归、小样本、幸存者、多重比较、辛普森悖论、基础比率、相对风险、长尾平均和古德哈特定律。每一种都配一个小模型，先亲手造出错觉，再亲手关掉它。",
-      en: "Nine ways true numbers lead to false conclusions: regression to the mean, small samples, survivorship, many comparisons, Simpson's paradox, base rates, relative risk, long-tailed averages and Goodhart's law. Each comes with a small model: produce the illusion yourself, then switch it off."
-    },
+    desc: { zh: "九种让真数字推出假结论的方式：均值回归、小样本、幸存者、多重比较、辛普森悖论、基础比率、相对风险、长尾平均和古德哈特定律。每一种都配一个小模型，先亲手造出错觉，再亲手关掉它。", en: "Nine ways true numbers lead to false conclusions: regression to the mean, small samples, survivorship, many comparisons, Simpson's paradox, base rates, relative risk, long-tailed averages and Goodhart's law. Each comes with a small model: produce the illusion yourself, then switch it off." },
     tags: [{ zh: "统计陷阱", en: "Statistical Fallacies" }, { zh: "均值回归", en: "Regression to the Mean" }, { zh: "辛普森悖论", en: "Simpson's Paradox" }, { zh: "幸存者偏差", en: "Survivorship Bias" }, { zh: "长文", en: "Long-form Essay" }],
     category: "probability", subtopic: "everyday", stage: "senior", status: "live", path: "probability/everyday/numbers-lie/"
   },
   {
     slug: "body-in-balance",
     title: { zh: "身体是怎么稳住的", en: "How the Body Keeps Things Steady" },
-    desc: {
-      zh: "进和出一直在变，身体却把血糖、体温、药量守在很窄的范围里。九个可以拖动的模型：半衰期与平台、酒精、血糖反馈、发烧、治疗窗、心脏、抗生素和群体免疫。",
-      en: "Inputs and outputs never stop changing, yet the body keeps glucose, temperature and drug levels in narrow ranges. Nine models you can push: half-life and plateau, alcohol, glucose feedback, fever, the therapeutic window, the heart, antibiotics and herd immunity."
-    },
+    desc: { zh: "进和出一直在变，身体却把血糖、体温、药量守在很窄的范围里。九个可以拖动的模型：半衰期与平台、酒精、血糖反馈、发烧、治疗窗、心脏、抗生素和群体免疫。", en: "Inputs and outputs never stop changing, yet the body keeps glucose, temperature and drug levels in narrow ranges. Nine models you can push: half-life and plateau, alcohol, glucose feedback, fever, the therapeutic window, the heart, antibiotics and herd immunity." },
     tags: [{ zh: "稳态", en: "Homeostasis" }, { zh: "药代动力学", en: "Pharmacokinetics" }, { zh: "负反馈", en: "Negative Feedback" }, { zh: "长文", en: "Long-form Essay" }],
     category: "biology", subtopic: "body", stage: "senior", status: "live", path: "biology/body/body-in-balance/"
   },
   {
     slug: "inside-a-phone",
     title: { zh: "一部手机里的十个道理", en: "Ten Ideas Inside One Phone" },
-    desc: {
-      zh: "定位、朝向、触摸、拍照、显示、压缩、上网、纠错、切换、电量：每个功能都是一次对极小量的测量，加上一个把信号从噪声里分出来的办法。十章，十个可以动手的模型。",
-      en: "Location, orientation, touch, camera, screen, compression, radio, error correction, handover and battery: each feature measures something tiny and uses one trick to pull signal out of noise. Ten chapters, each with a model you can push around."
-    },
+    desc: { zh: "定位、朝向、触摸、拍照、显示、压缩、上网、纠错、切换、电量：每个功能都是一次对极小量的测量，加上一个把信号从噪声里分出来的办法。十章，十个可以动手的模型。", en: "Location, orientation, touch, camera, screen, compression, radio, error correction, handover and battery: each feature measures something tiny and uses one trick to pull signal out of noise. Ten chapters, each with a model you can push around." },
     tags: [{ zh: "GPS", en: "GPS" }, { zh: "传感器", en: "Sensors" }, { zh: "噪声", en: "Noise" }, { zh: "无线通信", en: "Wireless" }, { zh: "颜色视觉", en: "Colour vision" }, { zh: "电池", en: "Batteries" }, { zh: "手机", en: "Cell Phones" }, { zh: "手机是怎么工作的", en: "How Do Cell Phones Work" }],
     category: "tech", subtopic: "devices", stage: "senior", status: "live", path: "tech/devices/inside-a-phone/"
   },
   {
     slug: "where-money-comes-from",
     title: { zh: "钱是从哪里来的", en: "Where Money Comes From" },
-    desc: {
-      zh: "你账户里的数字不是金库里的钞票。它是谁的欠条、怎样被贷款造出来、为什么银行会被挤兑、为什么每年能买的东西少一点。八个可以拖动的模型。",
-      en: "The number in your bank account is not a pile of notes in a vault. Whose IOU it is, how loans create it, why banks can be run, and why it buys a little less each year, in eight models you can push around."
-    },
+    desc: { zh: "你账户里的数字不是金库里的钞票。它是谁的欠条、怎样被贷款造出来、为什么银行会被挤兑、为什么每年能买的东西少一点。八个可以拖动的模型。", en: "The number in your bank account is not a pile of notes in a vault. Whose IOU it is, how loans create it, why banks can be run, and why it buys a little less each year, in eight models you can push around." },
     tags: [{ zh: "货币", en: "Money" }, { zh: "银行", en: "Banking" }, { zh: "通货膨胀", en: "Inflation" }, { zh: "利率", en: "Interest rates" }, { zh: "汇率", en: "Exchange rates" }, { zh: "长文", en: "Long-form essay" }],
     category: "economics", subtopic: "money", stage: "senior", status: "live", path: "economics/money/where-money-comes-from/"
   },
   {
     slug: "same-votes-different-winner",
     title: { zh: "同一批选票，不同的赢家 · 投票规则与公平", en: "Same Ballots, Different Winner · Voting Rules and Fairness" },
-    desc: {
-      zh: "同一批选民的偏好，换一种数票的方法就换一个赢家。十一个可以动手的模型：搅局者、中位选民、多数循环、策略投票、阿罗定理、阿拉巴马悖论、画选区、陪审团定理。",
-      en: "The same voters' preferences, counted another way, crown another winner. Eleven hands-on models: spoilers, the median voter, majority cycles, strategic voting, Arrow's theorem, the Alabama paradox, district lines and the jury theorem."
-    },
+    desc: { zh: "同一批选民的偏好，换一种数票的方法就换一个赢家。十一个可以动手的模型：搅局者、中位选民、多数循环、策略投票、阿罗定理、阿拉巴马悖论、画选区、陪审团定理。", en: "The same voters' preferences, counted another way, crown another winner. Eleven hands-on models: spoilers, the median voter, majority cycles, strategic voting, Arrow's theorem, the Alabama paradox, district lines and the jury theorem." },
     tags: [{ zh: "投票规则", en: "Voting Rules" }, { zh: "社会选择", en: "Social Choice" }, { zh: "阿罗定理", en: "Arrow's Theorem" }, { zh: "孔多塞悖论", en: "Condorcet Paradox" }, { zh: "选区划分", en: "Redistricting" }, { zh: "席位分配", en: "Apportionment" }],
     category: "society", subtopic: "civics", stage: "senior", status: "live", path: "society/civics/same-votes-different-winner/"
   },
   {
     slug: "switches-that-compute",
     title: { zh: "一堆开关是怎么学会算数的", en: "How a Pile of Switches Learned to Do Arithmetic" },
-    desc: {
-      zh: "只用一种开或关的开关，逐门搭出逻辑门、加法器、记忆、时钟，直到一台能照程序做乘法的 16 字节小机器；每个电路都在页面里逐门模拟。",
-      en: "From one on/off switch, build gates, an adder, memory, a clock and finally a 16-byte machine that multiplies by following a program; every circuit is simulated gate by gate on the page."
-    },
+    desc: { zh: "只用一种开或关的开关，逐门搭出逻辑门、加法器、记忆、时钟，直到一台能照程序做乘法的 16 字节小机器；每个电路都在页面里逐门模拟。", en: "From one on/off switch, build gates, an adder, memory, a clock and finally a 16-byte machine that multiplies by following a program; every circuit is simulated gate by gate on the page." },
     tags: [{ zh: "逻辑门", en: "Logic Gates" }, { zh: "二进制", en: "Binary" }, { zh: "加法器", en: "Adder" }, { zh: "触发器与时钟", en: "Flip-Flops & Clocks" }, { zh: "计算机组成", en: "Computer Architecture" }, { zh: "浮点数", en: "Floating Point" }],
     category: "computing", subtopic: "systems", stage: "senior", status: "live", path: "computing/systems/switches-that-compute/"
   },
   {
     slug: "what-is-a-black-hole",
     title: { zh: "黑洞到底是什么", en: "What Is a Black Hole, Really?" },
-    desc: {
-      zh: "把一团质量压进 2GM/c² 以内会怎样？九个可以拖动的模型：逃逸速度追上光速、黑洞不会“吸”（除非你进到 3 r_s 以内）、相对论轨道、潮汐撕裂、时间变慢、比视界大的影子，以及恒星轨道和引力波这些证据。",
-      en: "What happens when a mass is squeezed inside 2GM/c²? Nine models you can push: escape speed reaching light speed, why black holes don't suck (until you are within 3 r_s), relativistic orbits, tidal stretching, slowed clocks, a shadow bigger than the horizon, and the evidence from stellar orbits and gravitational waves."
-    },
+    desc: { zh: "把一团质量压进 2GM/c² 以内会怎样？九个可以拖动的模型：逃逸速度追上光速、黑洞不会“吸”（除非你进到 3 r_s 以内）、相对论轨道、潮汐撕裂、时间变慢、比视界大的影子，以及恒星轨道和引力波这些证据。", en: "What happens when a mass is squeezed inside 2GM/c²? Nine models you can push: escape speed reaching light speed, why black holes don't suck (until you are within 3 r_s), relativistic orbits, tidal stretching, slowed clocks, a shadow bigger than the horizon, and the evidence from stellar orbits and gravitational waves." },
     tags: [{ zh: "黑洞", en: "Black Holes" }, { zh: "广义相对论", en: "General Relativity" }, { zh: "引力", en: "Gravity" }, { zh: "长文", en: "Long-form Essay" }],
     category: "earth", subtopic: "astronomy", stage: "senior", status: "live", path: "earth/astronomy/what-is-a-black-hole/"
   },
   {
     slug: "how-vaccines-work",
     title: { zh: "疫苗是怎么保护人的", en: "How Vaccines Protect You and the People Around You" },
-    desc: {
-      zh: "疫苗里没有杀病毒的药，它凭什么让你少生病，又凭什么护住打不了针的婴儿？七个可以拖动的模型：和病毒赛跑、第二针为什么又快又多、防感染与防重症、“95% 有效”的算法、病例里为什么多数打过疫苗、需要多少人接种、保护消退。",
-      en: "A vaccine contains no drug that kills the virus, so how does it keep you from getting ill, and how does it protect a baby too young for the jab? Seven models you can push: the race against the virus, why the second dose is faster and bigger, infection versus severe disease, what \"95% effective\" means, why most cases can be vaccinated people, the coverage needed, and waning."
-    },
+    desc: { zh: "疫苗里没有杀病毒的药，它凭什么让你少生病，又凭什么护住打不了针的婴儿？七个可以拖动的模型：和病毒赛跑、第二针为什么又快又多、防感染与防重症、“95% 有效”的算法、病例里为什么多数打过疫苗、需要多少人接种、保护消退。", en: "A vaccine contains no drug that kills the virus, so how does it keep you from getting ill, and how does it protect a baby too young for the jab? Seven models you can push: the race against the virus, why the second dose is faster and bigger, infection versus severe disease, what \"95% effective\" means, why most cases can be vaccinated people, the coverage needed, and waning." },
     tags: [{ zh: "疫苗", en: "Vaccines" }, { zh: "免疫应答", en: "Immune Response" }, { zh: "群体免疫", en: "Herd Immunity" }, { zh: "长文", en: "Long-form Essay" }],
     category: "biology", subtopic: "body", stage: "senior", status: "live", path: "biology/body/how-vaccines-work/"
   },
   {
     slug: "why-the-planet-warms",
     title: { zh: "一点点二氧化碳 · 地球为什么会变暖", en: "A Little CO₂ · Why the Planet Warms" },
-    desc: {
-      zh: "空气里每一万个分子只有四个多是二氧化碳，它怎么能让整个地球变暖？七个可以拖动的模型：能量收支、一层毯子、越高越冷、“已经饱和”、反馈、敏感度区间和海洋的拖延。只讲物理，不做预测。",
-      en: "Only about four in every ten thousand air molecules are CO₂, so how can it warm a whole planet? Seven models you can push: the energy budget, one blanket layer, emitting from higher up, \"already saturated\", feedbacks, the sensitivity range and the ocean's lag. Physics only, no projections."
-    },
+    desc: { zh: "空气里每一万个分子只有四个多是二氧化碳，它怎么能让整个地球变暖？七个可以拖动的模型：能量收支、一层毯子、越高越冷、“已经饱和”、反馈、敏感度区间和海洋的拖延。只讲物理，不做预测。", en: "Only about four in every ten thousand air molecules are CO₂, so how can it warm a whole planet? Seven models you can push: the energy budget, one blanket layer, emitting from higher up, \"already saturated\", feedbacks, the sensitivity range and the ocean's lag. Physics only, no projections." },
     tags: [{ zh: "温室效应", en: "Greenhouse Effect" }, { zh: "能量平衡", en: "Energy Balance" }, { zh: "气候敏感度", en: "Climate Sensitivity" }, { zh: "长文", en: "Long-form Essay" }],
     category: "earth", subtopic: "climate", stage: "senior", status: "live", path: "earth/climate/why-the-planet-warms/"
   },
   {
     slug: "why-the-sky-is-blue",
     title: { zh: "天为什么是蓝的", en: "Why Is the Sky Blue?" },
-    desc: {
-      zh: "天是蓝的，落日是红的，云是白的，火星的天是黄褐的。九个可以拖动的模型：光子穿过空气、1/λ⁴、天空光的光谱、眼睛为什么不认紫、落日、整片天空、从分子到云滴的颗粒、火星的天空，以及多次散射和臭氧。",
-      en: "The sky is blue, sunsets are red, clouds are white and the Martian sky is butterscotch. Nine models you can push: photons crossing the air, 1/λ⁴, the skylight spectrum, why the eye doesn't see violet, sunset, the whole sky, particles from molecules to cloud drops, the sky of Mars, and multiple scattering and ozone."
-    },
+    desc: { zh: "天是蓝的，落日是红的，云是白的，火星的天是黄褐的。九个可以拖动的模型：光子穿过空气、1/λ⁴、天空光的光谱、眼睛为什么不认紫、落日、整片天空、从分子到云滴的颗粒、火星的天空，以及多次散射和臭氧。", en: "The sky is blue, sunsets are red, clouds are white and the Martian sky is butterscotch. Nine models you can push: photons crossing the air, 1/λ⁴, the skylight spectrum, why the eye doesn't see violet, sunset, the whole sky, particles from molecules to cloud drops, the sky of Mars, and multiple scattering and ozone." },
     tags: [{ zh: "瑞利散射", en: "Rayleigh Scattering" }, { zh: "米氏散射", en: "Mie Scattering" }, { zh: "色度学", en: "Colorimetry" }, { zh: "大气光学", en: "Atmospheric Optics" }, { zh: "长文", en: "Long-form Essay" }],
     category: "physics", subtopic: "optics", stage: "senior", status: "live", path: "physics/optics/why-the-sky-is-blue/"
   },
   {
     slug: "where-a-mortgage-payment-goes",
     title: { zh: "每个月的房贷，钱到底还到哪儿去了", en: "Where Does Your Mortgage Payment Actually Go?" },
-    desc: {
-      zh: "一笔房贷每个月的钱，一部分付利息，一部分减本金。八个可以拖动的模型：名义利率与实际利率、月供公式、还款表、等额本金与等额本息、提前还款、利率变动、分期手续费的真实年利率、通胀与机会成本。",
-      en: "Each month's mortgage payment splits into interest and principal. Eight models you can push: nominal and effective rates, the payment formula, the amortisation schedule, equal-principal versus equal-payment, prepaying, a rate change, the true annual rate of a flat-fee instalment plan, and inflation and opportunity cost."
-    },
+    desc: { zh: "一笔房贷每个月的钱，一部分付利息，一部分减本金。八个可以拖动的模型：名义利率与实际利率、月供公式、还款表、等额本金与等额本息、提前还款、利率变动、分期手续费的真实年利率、通胀与机会成本。", en: "Each month's mortgage payment splits into interest and principal. Eight models you can push: nominal and effective rates, the payment formula, the amortisation schedule, equal-principal versus equal-payment, prepaying, a rate change, the true annual rate of a flat-fee instalment plan, and inflation and opportunity cost." },
     tags: [{ zh: "房贷", en: "Mortgage" }, { zh: "利率", en: "Interest rates" }, { zh: "复利", en: "Compound interest" }, { zh: "年化利率", en: "APR" }, { zh: "长文", en: "Long-form essay" }],
     category: "economics", subtopic: "money", stage: "senior", status: "live", path: "economics/money/where-a-mortgage-payment-goes/"
   },
   {
     slug: "why-fermented-tofu-tastes-good",
     title: { zh: "酱豆腐为什么好吃", en: "Why Fermented Tofu Tastes Good" },
-    desc: {
-      zh: "豆腐几乎没有味道，长霉、加盐、放几个月却变得很鲜。松花蛋里没有微生物，为什么也走到了差不多的地方？七个可以拖动的模型：切链、两种酶、鲜味相乘、盐和水分活度、气味活度值、碱渗进蛋里、稀释后还剩什么味。",
-      en: "Tofu has almost no taste, yet mould, salt and a few months make it rich and savoury. A century egg gets somewhere similar with no microbes at all. Seven models you can push: cutting protein chains, two kinds of enzyme, umami synergy, salt and water activity, odour activity values, alkali soaking into an egg, and what you still smell after dilution."
-    },
+    desc: { zh: "豆腐几乎没有味道，长霉、加盐、放几个月却变得很鲜。松花蛋里没有微生物，为什么也走到了差不多的地方？七个可以拖动的模型：切链、两种酶、鲜味相乘、盐和水分活度、气味活度值、碱渗进蛋里、稀释后还剩什么味。", en: "Tofu has almost no taste, yet mould, salt and a few months make it rich and savoury. A century egg gets somewhere similar with no microbes at all. Seven models you can push: cutting protein chains, two kinds of enzyme, umami synergy, salt and water activity, odour activity values, alkali soaking into an egg, and what you still smell after dilution." },
     tags: [{ zh: "发酵", en: "Fermentation" }, { zh: "鲜味", en: "Umami" }, { zh: "食品化学", en: "Food Chemistry" }, { zh: "长文", en: "Long-form Essay" }],
     category: "food", subtopic: "flavor", stage: "senior", status: "live", path: "food/flavor/why-fermented-tofu-tastes-good/"
   },
   {
     slug: "how-soy-sauce-gets-its-flavor",
     title: { zh: "酱油是怎么酿出来的", en: "How Soy Sauce Gets Its Flavor" },
-    desc: {
-      zh: "黄豆、小麦、盐和水，单独都不鲜、不香、不黑，放在一起半年却成了酱油；也有的酱油几天就做出来。六个可以拖动的模型：曲床发热、小麦带来的糖、盐水里乳酸菌和酵母的接力、颜色和温度、瓶子上的氨基酸态氮、一勺里的钠。",
-      en: "Soybeans, wheat, salt and water are each bland, pale and odourless, yet half a year together turns them into soy sauce; some soy sauce is made in days. Six models you can push: a heating koji bed, the sugar wheat brings, the hand-over from lactic bacteria to yeast in brine, colour and temperature, the amino-nitrogen number on the label, and the sodium in a spoonful."
-    },
+    desc: { zh: "黄豆、小麦、盐和水，单独都不鲜、不香、不黑，放在一起半年却成了酱油；也有的酱油几天就做出来。六个可以拖动的模型：曲床发热、小麦带来的糖、盐水里乳酸菌和酵母的接力、颜色和温度、瓶子上的氨基酸态氮、一勺里的钠。", en: "Soybeans, wheat, salt and water are each bland, pale and odourless, yet half a year together turns them into soy sauce; some soy sauce is made in days. Six models you can push: a heating koji bed, the sugar wheat brings, the hand-over from lactic bacteria to yeast in brine, colour and temperature, the amino-nitrogen number on the label, and the sodium in a spoonful." },
     tags: [{ zh: "发酵", en: "Fermentation" }, { zh: "酱油", en: "Soy Sauce" }, { zh: "食品化学", en: "Food Chemistry" }, { zh: "长文", en: "Long-form Essay" }],
     category: "food", subtopic: "flavor", stage: "senior", status: "live", path: "food/flavor/how-soy-sauce-gets-its-flavor/"
   },
   {
     slug: "how-hybrid-attention-remembers",
     title: { zh: "混合注意力是怎么“记住”长文的", en: "How Hybrid Attention Models Remember" },
-    desc: {
-      zh: "为什么标准大模型读得越长，内存账单就按长度线性变厚？从 KV Cache、矩阵结合律、快权重容量上限、Delta 擦写规则、Gated DeltaNet 遗忘门到 3:1 混合注意力与屋顶线吞吐，用九个可动手模型一路讲透。",
-      en: "Why does a standard LLM memory bill grow linearly with context length? Walk through KV cache accounting, matrix associativity, fast-weight capacity limits, the delta rule, Gated DeltaNet, 3:1 hybrids, and roofline decode speed in nine live models."
-    },
+    desc: { zh: "为什么标准大模型读得越长，内存账单就按长度线性变厚？从 KV Cache、矩阵结合律、快权重容量上限、Delta 擦写规则、Gated DeltaNet 遗忘门到 3:1 混合注意力与屋顶线吞吐，用九个可动手模型一路讲透。", en: "Why does a standard LLM memory bill grow linearly with context length? Walk through KV cache accounting, matrix associativity, fast-weight capacity limits, the delta rule, Gated DeltaNet, 3:1 hybrids, and roofline decode speed in nine live models." },
     tags: [{ zh: "混合注意力", en: "Hybrid Attention" }, { zh: "线性注意力", en: "Linear Attention" }, { zh: "KV Cache", en: "KV Cache" }, { zh: "Gated DeltaNet", en: "Gated DeltaNet" }, { zh: "长文", en: "Long-form Essay" }],
     category: "computing", subtopic: "ml", stage: "university", status: "live", path: "computing/ml/how-hybrid-attention-remembers/"
   },
   {
     slug: "why-compute-waits-for-memory",
     title: { zh: "为什么计算一直在等内存", en: "Why Compute Waits for Memory" },
-    desc: {
-      zh: "处理器每秒能算上千万亿次，为什么运行起来却常常大部分时间都在等内存？十个交互模型带你从五级流水线、缓存模拟器、矩阵分块、内存墙与利特尔法则，一路走到屋顶线模型、大模型推理和 HBM4 前沿。",
-      en: "Processors can execute quadrillions of operations per second, yet spend most of their time waiting for memory. Ten interactive models trace the bottleneck from a 5-stage pipeline and set-associative cache to tiled matmul, Little's Law, the Roofline model, LLM inference, and HBM4."
-    },
+    desc: { zh: "处理器每秒能算上千万亿次，为什么运行起来却常常大部分时间都在等内存？十个交互模型带你从五级流水线、缓存模拟器、矩阵分块、内存墙与利特尔法则，一路走到屋顶线模型、大模型推理和 HBM4 前沿。", en: "Processors can execute quadrillions of operations per second, yet spend most of their time waiting for memory. Ten interactive models trace the bottleneck from a 5-stage pipeline and set-associative cache to tiled matmul, Little's Law, the Roofline model, LLM inference, and HBM4." },
     tags: [{ zh: "计算机体系结构", en: "Computer Architecture" }, { zh: "内存墙", en: "Memory Wall" }, { zh: "缓存与局部性", en: "Cache & Locality" }, { zh: "屋顶线模型", en: "Roofline Model" }, { zh: "HBM 与 AI 芯片", en: "HBM & AI Chips" }, { zh: "长文", en: "Long-form Essay" }],
     category: "computing", subtopic: "systems", stage: "university", status: "live", path: "computing/systems/why-compute-waits-for-memory/"
   },
   {
     slug: "why-nvme-is-fast",
     title: { zh: "NVMe 为什么这么快", en: "Why NVMe Is So Fast" },
-    desc: {
-      zh: "同样是闪存颗粒，为什么换上 NVMe 协议和 PCIe 通道就能快出好几倍？八个交互模型带你从延迟拆解、总线宽度、64K 并行队列、环形门铃、NAND 多通道、写放大与 Trim、轮询与中断，一路走到 PCIe 6.0 与 GPUDirect 前沿。",
-      en: "Why does switching from SATA/AHCI to NVMe over PCIe multiply storage speed? Eight interactive models trace the shift from latency breakdown, bus lanes, and 64K parallel queues to ring buffers, NAND channels, write amplification, polling, and PCIe 6.0 GPUDirect."
-    },
+    desc: { zh: "同样是闪存颗粒，为什么换上 NVMe 协议和 PCIe 通道就能快出好几倍？八个交互模型带你从延迟拆解、总线宽度、64K 并行队列、环形门铃、NAND 多通道、写放大与 Trim、轮询与中断，一路走到 PCIe 6.0 与 GPUDirect 前沿。", en: "Why does switching from SATA/AHCI to NVMe over PCIe multiply storage speed? Eight interactive models trace the shift from latency breakdown, bus lanes, and 64K parallel queues to ring buffers, NAND channels, write amplification, polling, and PCIe 6.0 GPUDirect." },
     tags: [{ zh: "NVMe", en: "NVMe" }, { zh: "存储系统", en: "Storage Systems" }, { zh: "PCIe", en: "PCIe" }, { zh: "SSD 原理", en: "SSD Architecture" }, { zh: "长文", en: "Long-form Essay" }],
     category: "computing", subtopic: "systems", stage: "university", status: "live", path: "computing/systems/why-nvme-is-fast/"
   },
   {
     slug: "what-a-drive-is-made-of",
     title: { zh: "硬盘里到底是什么", en: "What a Drive Is Made Of" },
-    desc: {
-      zh: "机械硬盘和固态硬盘里装的东西完全不同，电脑却用同一套方式读它们。八个可以拖动的模型：编了号的扇区、寻道和转动、叠瓦磁道、闪存单元里的电压层、纠错码和寿命、闪存翻译层、接口与协议的分层地图、一次读取的时间花在哪。",
-      en: "A hard disk and a solid-state drive contain completely different things, yet the computer reads both the same way. Eight models you can push: numbered sectors, seek and rotation, shingled tracks, voltage levels in a flash cell, error correction and lifetime, the flash translation layer, a layered map of connectors and protocols, and where the time of one read goes."
-    },
+    desc: { zh: "机械硬盘和固态硬盘里装的东西完全不同，电脑却用同一套方式读它们。八个可以拖动的模型：编了号的扇区、寻道和转动、叠瓦磁道、闪存单元里的电压层、纠错码和寿命、闪存翻译层、接口与协议的分层地图、一次读取的时间花在哪。", en: "A hard disk and a solid-state drive contain completely different things, yet the computer reads both the same way. Eight models you can push: numbered sectors, seek and rotation, shingled tracks, voltage levels in a flash cell, error correction and lifetime, the flash translation layer, a layered map of connectors and protocols, and where the time of one read goes." },
     tags: [{ zh: "存储系统", en: "Storage Systems" }, { zh: "机械硬盘", en: "Hard Disk Drives" }, { zh: "固态硬盘", en: "Solid-State Drives" }, { zh: "闪存", en: "NAND Flash" }, { zh: "长文", en: "Long-form Essay" }],
     category: "computing", subtopic: "systems", stage: "university", status: "live", path: "computing/systems/what-a-drive-is-made-of/"
   },
   {
     slug: "how-sata-works",
     title: { zh: "SATA 为什么用了二十多年", en: "Why SATA Has Lasted Over Twenty Years" },
-    desc: {
-      zh: "一根七针的数据线、一套 2004 年定下的主机接口，为什么到 2026 年还接在最大的机械硬盘上？七个可以拖动的模型：并行总线的时序预算、8b/10b 编码器、一条读命令的帧、旋转盘片上的 NCQ、链路省电、端口倍增器、机械硬盘和 6 Gb/s 的距离。",
-      en: "Why is a seven-pin data cable, with a host interface fixed in 2004, still what the largest hard drives plug into in 2026? Seven models you can drag: the timing budget of a parallel bus, an 8b/10b encoder, the frames of one read command, NCQ on a spinning platter, link power states, a port multiplier, and how far a hard disk is from 6 Gb/s."
-    },
+    desc: { zh: "一根七针的数据线、一套 2004 年定下的主机接口，为什么到 2026 年还接在最大的机械硬盘上？七个可以拖动的模型：并行总线的时序预算、8b/10b 编码器、一条读命令的帧、旋转盘片上的 NCQ、链路省电、端口倍增器、机械硬盘和 6 Gb/s 的距离。", en: "Why is a seven-pin data cable, with a host interface fixed in 2004, still what the largest hard drives plug into in 2026? Seven models you can drag: the timing budget of a parallel bus, an 8b/10b encoder, the frames of one read command, NCQ on a spinning platter, link power states, a port multiplier, and how far a hard disk is from 6 Gb/s." },
     tags: [{ zh: "SATA", en: "SATA" }, { zh: "存储系统", en: "Storage Systems" }, { zh: "机械硬盘", en: "Hard Disk Drives" }, { zh: "串行链路", en: "Serial Links" }, { zh: "长文", en: "Long-form Essay" }],
     category: "computing", subtopic: "systems", stage: "university", status: "live", path: "computing/systems/how-sata-works/"
   },
   {
     slug: "how-sas-works",
     title: { zh: "服务器硬盘为什么用 SAS", en: "Why Server Drives Use SAS" },
-    desc: {
-      zh: "同样的盘片，SATA 版和 SAS 版装进机房，为什么服务器偏偏要 SAS？七个可以拖动的模型：一条 SCSI 命令的字节、一次读要开几次连接、两条路径的可用度、扩展器后面的扇出、宽端口的四条道、T10 PI 的 8 字节校验、24G 的纠错码。",
-      en: "The same platters ship as SATA and as SAS drives; why do servers insist on SAS? Seven models you can drag: the bytes of one SCSI command, how many connections one read opens, the availability of two paths, fan-out behind an expander, the four lanes of a wide port, the 8-byte T10 PI check, and the error-correcting code of 24G."
-    },
+    desc: { zh: "同样的盘片，SATA 版和 SAS 版装进机房，为什么服务器偏偏要 SAS？七个可以拖动的模型：一条 SCSI 命令的字节、一次读要开几次连接、两条路径的可用度、扩展器后面的扇出、宽端口的四条道、T10 PI 的 8 字节校验、24G 的纠错码。", en: "The same platters ship as SATA and as SAS drives; why do servers insist on SAS? Seven models you can drag: the bytes of one SCSI command, how many connections one read opens, the availability of two paths, fan-out behind an expander, the four lanes of a wide port, the 8-byte T10 PI check, and the error-correcting code of 24G." },
     tags: [{ zh: "SAS", en: "SAS" }, { zh: "SCSI", en: "SCSI" }, { zh: "存储系统", en: "Storage Systems" }, { zh: "串行链路", en: "Serial Links" }, { zh: "长文", en: "Long-form Essay" }],
     category: "computing", subtopic: "systems", stage: "university", status: "live", path: "computing/systems/how-sas-works/"
   },
   {
     slug: "how-usb-drives-talk",
     title: { zh: "移动硬盘为什么跑不满", en: "Why a USB Drive Never Hits Its Label" },
-    desc: {
-      zh: "一块能跑 7 GB/s 的 NVMe 固态装进 USB 硬盘盒，为什么只剩几百 MB/s 到两三 GB/s？包装上的 Gen 2×2、40Gbps 说的是什么？九个可以拖动的模型：USB 2.0 的微帧、从名字到线速、Bulk-Only 的一问一答、UASP 的队列、桥接链条上的瓶颈、发热降速、雷电与 USB4 的 PCIe 隧道、U 盘里的几颗闪存。",
-      en: "Why does a 7 GB/s NVMe SSD in a USB enclosure measure a few hundred MB/s to two or three GB/s, and what do “Gen 2×2” and “40Gbps” on the box mean? Nine models you can drag: the USB 2.0 microframe, from a name to the line rate, Bulk-Only’s one-at-a-time exchange, UASP’s queue, the bottleneck along the bridge chain, thermal throttling, the PCIe tunnel of Thunderbolt and USB4, and the few dies inside a flash drive."
-    },
+    desc: { zh: "一块能跑 7 GB/s 的 NVMe 固态装进 USB 硬盘盒，为什么只剩几百 MB/s 到两三 GB/s？包装上的 Gen 2×2、40Gbps 说的是什么？九个可以拖动的模型：USB 2.0 的微帧、从名字到线速、Bulk-Only 的一问一答、UASP 的队列、桥接链条上的瓶颈、发热降速、雷电与 USB4 的 PCIe 隧道、U 盘里的几颗闪存。", en: "Why does a 7 GB/s NVMe SSD in a USB enclosure measure a few hundred MB/s to two or three GB/s, and what do “Gen 2×2” and “40Gbps” on the box mean? Nine models you can drag: the USB 2.0 microframe, from a name to the line rate, Bulk-Only’s one-at-a-time exchange, UASP’s queue, the bottleneck along the bridge chain, thermal throttling, the PCIe tunnel of Thunderbolt and USB4, and the few dies inside a flash drive." },
     tags: [{ zh: "USB", en: "USB" }, { zh: "存储系统", en: "Storage Systems" }, { zh: "移动硬盘", en: "External Drives" }, { zh: "雷电与 USB4", en: "Thunderbolt and USB4" }, { zh: "长文", en: "Long-form Essay" }],
     category: "computing", subtopic: "systems", stage: "university", status: "live", path: "computing/systems/how-usb-drives-talk/"
   },
   {
     slug: "storage-over-a-network",
     title: { zh: "隔着网线的硬盘", en: "Drives Across a Wire" },
-    desc: {
-      zh: "硬盘插在别的机器里，你的电脑为什么能把它当成自己的盘？NAS 和 SAN 差在哪，数据中心为什么把 NVMe 搬到网线上？九个可以拖动的模型：改一个字节的三种代价、小文件和往返时间、iSCSI 的 R2T、光纤通道的信用、每一跳的延迟账、丢包的代价、NVMe-oF 的消息、两条路径的排队、三副本和纠删码。",
-      en: "Why can your computer use a disk that sits in another machine as if it were its own? How do NAS and SAN differ, and why do data centres put NVMe on the network? Nine models you can drag: what changing one byte costs at three levels, small files and round trips, iSCSI's R2T, Fibre Channel credits, the latency of each hop, the cost of a lost packet, NVMe-oF's messages, queueing on two paths, and replication versus erasure coding."
-    },
+    desc: { zh: "硬盘插在别的机器里，你的电脑为什么能把它当成自己的盘？NAS 和 SAN 差在哪，数据中心为什么把 NVMe 搬到网线上？九个可以拖动的模型：改一个字节的三种代价、小文件和往返时间、iSCSI 的 R2T、光纤通道的信用、每一跳的延迟账、丢包的代价、NVMe-oF 的消息、两条路径的排队、三副本和纠删码。", en: "Why can your computer use a disk that sits in another machine as if it were its own? How do NAS and SAN differ, and why do data centres put NVMe on the network? Nine models you can drag: what changing one byte costs at three levels, small files and round trips, iSCSI's R2T, Fibre Channel credits, the latency of each hop, the cost of a lost packet, NVMe-oF's messages, queueing on two paths, and replication versus erasure coding." },
     tags: [{ zh: "网络存储", en: "Network Storage" }, { zh: "iSCSI", en: "iSCSI" }, { zh: "NVMe-oF", en: "NVMe-oF" }, { zh: "存储系统", en: "Storage Systems" }, { zh: "长文", en: "Long-form Essay" }],
     category: "computing", subtopic: "systems", stage: "university", status: "live", path: "computing/systems/storage-over-a-network/"
   },
   {
     slug: "how-pcie-works",
     title: { zh: "PCIe 为什么能一代一代翻倍", en: "Why PCIe Keeps Doubling" },
-    desc: {
-      zh: "显卡、固态、网卡都插在 PCIe 上。这条总线二十多年里速度翻了六次，靠的是什么？一次读写在线上到底发生了什么？十个可以拖动的模型：链路协商、TLP 包头、信用流控、ACK/NAK 重发、开机枚举、MSI 中断、走线损耗、PAM4 眼图、FEC 和 FLIT。",
-      en: "Graphics cards, SSDs and network cards all plug into PCIe. Its speed has doubled six times in over twenty years: how, and what actually happens on the wire during one read or write? Ten models you can drag: link negotiation, TLP headers, credit flow control, ACK/NAK replay, enumeration, MSI interrupts, trace loss, PAM4 eyes, FEC and FLITs."
-    },
+    desc: { zh: "显卡、固态、网卡都插在 PCIe 上。这条总线二十多年里速度翻了六次，靠的是什么？一次读写在线上到底发生了什么？十个可以拖动的模型：链路协商、TLP 包头、信用流控、ACK/NAK 重发、开机枚举、MSI 中断、走线损耗、PAM4 眼图、FEC 和 FLIT。", en: "Graphics cards, SSDs and network cards all plug into PCIe. Its speed has doubled six times in over twenty years: how, and what actually happens on the wire during one read or write? Ten models you can drag: link negotiation, TLP headers, credit flow control, ACK/NAK replay, enumeration, MSI interrupts, trace loss, PAM4 eyes, FEC and FLITs." },
     tags: [{ zh: "PCIe", en: "PCIe" }, { zh: "计算机总线", en: "Computer Buses" }, { zh: "信号完整性", en: "Signal Integrity" }, { zh: "长文", en: "Long-form Essay" }],
     category: "computing", subtopic: "systems", stage: "university", status: "live", path: "computing/systems/how-pcie-works/"
   },
   {
     slug: "how-a-computer-is-wired",
     title: { zh: "电脑里的零件是怎么连起来的", en: "How the Parts of a Computer Are Wired Together" },
-    desc: {
-      zh: "CPU、内存、显卡、硬盘、USB 口，各自走的是哪条路？为什么早年的电脑是一根大家共用的总线，今天却变成一张点对点的网？八个可以拖动的模型和八张结构图：PCI 总线的时间账、反射波与负载、北桥的汇合点、两路服务器的远近内存、芯片组上行链路、片上环形与网格、芯粒之间的能耗、I²C 上拉电阻。",
-      en: "Which path do the CPU, memory, graphics card, drives and USB ports each take? Why were early computers built around one bus everyone shared, and why is today's machine a web of point-to-point links? Eight models you can drag and eight structure diagrams: the PCI bus's time budget, reflected waves and loading, the northbridge as a meeting point, near and far memory in a two-socket server, the chipset uplink, rings and meshes on a die, energy between chiplets, and I²C pull-up resistors."
-    },
+    desc: { zh: "CPU、内存、显卡、硬盘、USB 口，各自走的是哪条路？为什么早年的电脑是一根大家共用的总线，今天却变成一张点对点的网？八个可以拖动的模型和八张结构图：PCI 总线的时间账、反射波与负载、北桥的汇合点、两路服务器的远近内存、芯片组上行链路、片上环形与网格、芯粒之间的能耗、I²C 上拉电阻。", en: "Which path do the CPU, memory, graphics card, drives and USB ports each take? Why were early computers built around one bus everyone shared, and why is today's machine a web of point-to-point links? Eight models you can drag and eight structure diagrams: the PCI bus's time budget, reflected waves and loading, the northbridge as a meeting point, near and far memory in a two-socket server, the chipset uplink, rings and meshes on a die, energy between chiplets, and I²C pull-up resistors." },
     tags: [{ zh: "计算机体系结构", en: "Computer Architecture" }, { zh: "总线与互连", en: "Buses and Interconnects" }, { zh: "主板", en: "Motherboards" }, { zh: "长文", en: "Long-form Essay" }],
     category: "computing", subtopic: "systems", stage: "university", status: "live", path: "computing/systems/how-a-computer-is-wired/"
   },
   {
     slug: "how-thunderbolt-works",
     title: { zh: "雷电接口是怎么工作的", en: "How Thunderbolt Works" },
-    desc: {
-      zh: "一根 USB-C 线，为什么能同时带显示器、网卡、硬盘和充电，还能一台接一台串下去？雷电和 USB4 到底是什么关系？八个可以拖动的模型：CC 线上的分压、带校验的 4 字节包头、一条链路怎么分给几条隧道、菊花链、PAM3 与 3+1 非对称、显示器要多少带宽、PD 怎么谈出 140 瓦、IOMMU 按页开门。",
-      en: "Why can one USB-C cable carry a monitor, a network adapter, a drive and charging at once, and chain one device after another? How do Thunderbolt and USB4 relate? Eight models you can drag: the CC divider, the 4-byte header with its check, how one link is shared among tunnels, the daisy chain, PAM3 and the 3+1 split, what a monitor needs, how PD negotiates 140 W, and the IOMMU's page-sized doors."
-    },
+    desc: { zh: "一根 USB-C 线，为什么能同时带显示器、网卡、硬盘和充电，还能一台接一台串下去？雷电和 USB4 到底是什么关系？八个可以拖动的模型：CC 线上的分压、带校验的 4 字节包头、一条链路怎么分给几条隧道、菊花链、PAM3 与 3+1 非对称、显示器要多少带宽、PD 怎么谈出 140 瓦、IOMMU 按页开门。", en: "Why can one USB-C cable carry a monitor, a network adapter, a drive and charging at once, and chain one device after another? How do Thunderbolt and USB4 relate? Eight models you can drag: the CC divider, the 4-byte header with its check, how one link is shared among tunnels, the daisy chain, PAM3 and the 3+1 split, what a monitor needs, how PD negotiates 140 W, and the IOMMU's page-sized doors." },
     tags: [{ zh: "USB-C", en: "USB-C" }, { zh: "雷电与 USB4", en: "Thunderbolt and USB4" }, { zh: "接口与总线", en: "Interfaces and Buses" }, { zh: "USB PD 充电", en: "USB Power Delivery" }, { zh: "长文", en: "Long-form Essay" }],
     category: "computing", subtopic: "systems", stage: "university", status: "live", path: "computing/systems/how-thunderbolt-works/"
   },
   {
     slug: "how-cpu-caches-work",
     title: { zh: "CPU 的三级缓存是怎么工作的", en: "How a CPU's Three Levels of Cache Work" },
-    desc: {
-      zh: "内存要等几十纳秒，CPU 一纳秒能做好几件事。几十 KB 到几十 MB 的缓存怎样让它大部分时候不用等？为什么分三级、每级为什么是现在这个大小？十个在真实地址序列上跑的缓存模型：地址怎么拆、相联度与三种缺失、LRU 与 RRIP、写回与写缓冲、包含与排他、L1 的容量上限、预取、MESI 与伪共享、追指针的延迟台阶。",
-      en: "Memory takes tens of nanoseconds and a CPU does several things every nanosecond. How do caches of tens of kilobytes to tens of megabytes keep it from waiting most of the time? Why three levels, and why is each the size it is? Ten cache models run on real address traces: splitting an address, associativity and the three kinds of miss, LRU and RRIP, write-back and write buffers, inclusive and exclusive levels, the limit on L1 size, prefetching, MESI and false sharing, and the latency staircase of a pointer chase."
-    },
+    desc: { zh: "内存要等几十纳秒，CPU 一纳秒能做好几件事。几十 KB 到几十 MB 的缓存怎样让它大部分时候不用等？为什么分三级、每级为什么是现在这个大小？十个在真实地址序列上跑的缓存模型：地址怎么拆、相联度与三种缺失、LRU 与 RRIP、写回与写缓冲、包含与排他、L1 的容量上限、预取、MESI 与伪共享、追指针的延迟台阶。", en: "Memory takes tens of nanoseconds and a CPU does several things every nanosecond. How do caches of tens of kilobytes to tens of megabytes keep it from waiting most of the time? Why three levels, and why is each the size it is? Ten cache models run on real address traces: splitting an address, associativity and the three kinds of miss, LRU and RRIP, write-back and write buffers, inclusive and exclusive levels, the limit on L1 size, prefetching, MESI and false sharing, and the latency staircase of a pointer chase." },
     tags: [{ zh: "CPU 缓存", en: "CPU Caches" }, { zh: "计算机体系结构", en: "Computer Architecture" }, { zh: "内存层级", en: "Memory Hierarchy" }, { zh: "长文", en: "Long-form Essay" }],
     category: "computing", subtopic: "systems", stage: "university", status: "live", path: "computing/systems/how-cpu-caches-work/"
   },
   {
     slug: "how-a-cpu-runs-a-program",
     title: { zh: "CPU 是怎么运行一个程序的", en: "How a CPU Runs a Program" },
-    desc: {
-      zh: "你写的一行代码，最后怎么变成 CPU 里一拍一拍的动作？同一个程序，为什么换一种写法、换一颗 CPU，速度能差好几倍？从指令集这份合同讲起：RISC-V 的寄存器和六种指令格式、把一个循环手工翻译成机器码、单周期数据通路和它的关键路径、五级流水线、数据冒险与转发、分支的代价、性能铁律、x86 怎么在内部拆成小操作，以及 RVA23、Armv9.8、APX 这些 2026 年的前沿。每个模型都是真的：汇编器、指令解释器、逐拍的流水线模拟器。",
-      en: "How does a line of code become clock-by-clock work inside a CPU, and why can the same program run several times faster with different code or a different CPU? Starting from the instruction set as a contract: RISC-V registers and its six instruction formats, hand-compiling a loop to machine code, the single-cycle datapath and its longest path, the five-stage pipeline, data hazards and forwarding, the cost of branches, the iron law of performance, how x86 splits instructions into micro-ops, and the 2026 frontier (RVA23, Armv9.8, APX). Every model is real: an assembler, an instruction interpreter and a cycle-by-cycle pipeline simulator."
-    },
+    desc: { zh: "你写的一行代码，最后怎么变成 CPU 里一拍一拍的动作？同一个程序，为什么换一种写法、换一颗 CPU，速度能差好几倍？从指令集这份合同讲起：RISC-V 的寄存器和六种指令格式、把一个循环手工翻译成机器码、单周期数据通路和它的关键路径、五级流水线、数据冒险与转发、分支的代价、性能铁律、x86 怎么在内部拆成小操作，以及 RVA23、Armv9.8、APX 这些 2026 年的前沿。每个模型都是真的：汇编器、指令解释器、逐拍的流水线模拟器。", en: "How does a line of code become clock-by-clock work inside a CPU, and why can the same program run several times faster with different code or a different CPU? Starting from the instruction set as a contract: RISC-V registers and its six instruction formats, hand-compiling a loop to machine code, the single-cycle datapath and its longest path, the five-stage pipeline, data hazards and forwarding, the cost of branches, the iron law of performance, how x86 splits instructions into micro-ops, and the 2026 frontier (RVA23, Armv9.8, APX). Every model is real: an assembler, an instruction interpreter and a cycle-by-cycle pipeline simulator." },
     tags: [{ zh: "指令集", en: "Instruction Sets" }, { zh: "RISC-V", en: "RISC-V" }, { zh: "流水线", en: "Pipelining" }, { zh: "计算机体系结构", en: "Computer Architecture" }, { zh: "长文", en: "Long-form Essay" }],
     category: "computing", subtopic: "systems", stage: "university", status: "live", path: "computing/systems/how-a-cpu-runs-a-program/"
   },
   {
     slug: "how-virtual-memory-works",
     title: { zh: "虚拟内存是怎么工作的", en: "How Virtual Memory Works" },
-    desc: {
-      zh: "每个程序都以为自己独占一整块从 0 开始的内存，几十个程序却挤在同一条内存里。CPU 每读一个字节都要先翻译地址，为什么还不慢？十一个可以动手的模型：连续分配与外部碎片、页表的大小、x86-64 四级页表逐位走一遍、TLB 与它的覆盖范围、页表遍历缓存、大页、缺页的代价、FIFO 与 LRU 与时钟算法、写时复制、PCID 与 KPTI、虚拟机的二维页表。",
-      en: "Every program believes it has a whole memory to itself, starting at address 0, while dozens of programs share the same physical memory. The CPU translates an address before every byte it reads; why is that not slow? Eleven hands-on models: contiguous allocation and external fragmentation, the size of a page table, an x86-64 four-level walk bit by bit, the TLB and its reach, the page-walk cache, huge pages, the cost of a page fault, FIFO, LRU and the clock algorithm, copy-on-write, PCID and KPTI, and the two-dimensional walk inside a virtual machine."
-    },
+    desc: { zh: "每个程序都以为自己独占一整块从 0 开始的内存，几十个程序却挤在同一条内存里。CPU 每读一个字节都要先翻译地址，为什么还不慢？十一个可以动手的模型：连续分配与外部碎片、页表的大小、x86-64 四级页表逐位走一遍、TLB 与它的覆盖范围、页表遍历缓存、大页、缺页的代价、FIFO 与 LRU 与时钟算法、写时复制、PCID 与 KPTI、虚拟机的二维页表。", en: "Every program believes it has a whole memory to itself, starting at address 0, while dozens of programs share the same physical memory. The CPU translates an address before every byte it reads; why is that not slow? Eleven hands-on models: contiguous allocation and external fragmentation, the size of a page table, an x86-64 four-level walk bit by bit, the TLB and its reach, the page-walk cache, huge pages, the cost of a page fault, FIFO, LRU and the clock algorithm, copy-on-write, PCID and KPTI, and the two-dimensional walk inside a virtual machine." },
     tags: [{ zh: "虚拟内存", en: "Virtual Memory" }, { zh: "操作系统", en: "Operating Systems" }, { zh: "计算机体系结构", en: "Computer Architecture" }, { zh: "长文", en: "Long-form Essay" }],
     category: "computing", subtopic: "systems", stage: "university", status: "live", path: "computing/systems/how-virtual-memory-works/"
   },
   {
     slug: "how-a-cpu-guesses-ahead",
     title: { zh: "CPU 是怎么猜着往前跑的", en: "How a CPU Guesses Ahead" },
-    desc: {
-      zh: "一条分支要等十几拍才知道往哪走，CPU 却不等：它先猜，猜对了白赚，猜错了推倒重来。它怎么猜得这么准？为什么一颗 CPU 能同时有几百条指令在路上？这种猜测又为什么会泄露秘密？十个模型：1 位与 2 位计数器、排序数组、gshare、TAGE、返回栈、超标量、寄存器重命名与重排序缓冲、窗口大小、Spectre 的玩具机器。",
-      en: "A branch takes a dozen cycles to resolve, and a CPU does not wait: it guesses, gains when right and starts over when wrong. How does it guess so well? Why can one CPU have hundreds of instructions in flight? And why does the guessing leak secrets? Ten models: 1-bit and 2-bit counters, the sorted array, gshare, TAGE, the return stack, superscalar issue, renaming and the reorder buffer, window size, and a toy machine for Spectre."
-    },
+    desc: { zh: "一条分支要等十几拍才知道往哪走，CPU 却不等：它先猜，猜对了白赚，猜错了推倒重来。它怎么猜得这么准？为什么一颗 CPU 能同时有几百条指令在路上？这种猜测又为什么会泄露秘密？十个模型：1 位与 2 位计数器、排序数组、gshare、TAGE、返回栈、超标量、寄存器重命名与重排序缓冲、窗口大小、Spectre 的玩具机器。", en: "A branch takes a dozen cycles to resolve, and a CPU does not wait: it guesses, gains when right and starts over when wrong. How does it guess so well? Why can one CPU have hundreds of instructions in flight? And why does the guessing leak secrets? Ten models: 1-bit and 2-bit counters, the sorted array, gshare, TAGE, the return stack, superscalar issue, renaming and the reorder buffer, window size, and a toy machine for Spectre." },
     tags: [{ zh: "分支预测", en: "Branch Prediction" }, { zh: "乱序执行", en: "Out-of-order Execution" }, { zh: "计算机体系结构", en: "Computer Architecture" }, { zh: "长文", en: "Long-form Essay" }],
     category: "computing", subtopic: "systems", stage: "university", status: "live", path: "computing/systems/how-a-cpu-guesses-ahead/"
   },
   {
     slug: "how-cores-share-memory",
     title: { zh: "多个核心怎么共用一块内存", en: "How Cores Share Memory" },
-    desc: {
-      zh: "八个核心各有自己的缓存，却要看到同一块内存。一个核心改了一个数，别的核心怎么知道？为什么两个线程各加一百万次，结果却不是两百万？为什么有的 CPU 上程序对，换一种 CPU 就错？九个可以动手的模型：缓存一致性的两条规矩，MSI、MESI 与 MOESI 的窥探模拟器，目录协议，丢失的更新，CAS 与原子加法，核心之间搬一行要多久，顺序一致性、x86-TSO 与弱内存模型的石蕊测试，以及四种自旋锁的扩展性。",
-      en: "Eight cores each have their own caches, yet must see one memory. When one core changes a number, how do the others find out? Why do two threads that each add one a million times not end at two million? Why does a program that runs correctly on one CPU fail on another? Nine hands-on models: the two rules of cache coherence, a snooping simulator for MSI, MESI and MOESI, directory protocols, the lost update, CAS and fetch-and-add, how long a line takes to move between cores, litmus tests under sequential consistency, x86-TSO and a weak memory model, and how four spinlocks scale."
-    },
+    desc: { zh: "八个核心各有自己的缓存，却要看到同一块内存。一个核心改了一个数，别的核心怎么知道？为什么两个线程各加一百万次，结果却不是两百万？为什么有的 CPU 上程序对，换一种 CPU 就错？九个可以动手的模型：缓存一致性的两条规矩，MSI、MESI 与 MOESI 的窥探模拟器，目录协议，丢失的更新，CAS 与原子加法，核心之间搬一行要多久，顺序一致性、x86-TSO 与弱内存模型的石蕊测试，以及四种自旋锁的扩展性。", en: "Eight cores each have their own caches, yet must see one memory. When one core changes a number, how do the others find out? Why do two threads that each add one a million times not end at two million? Why does a program that runs correctly on one CPU fail on another? Nine hands-on models: the two rules of cache coherence, a snooping simulator for MSI, MESI and MOESI, directory protocols, the lost update, CAS and fetch-and-add, how long a line takes to move between cores, litmus tests under sequential consistency, x86-TSO and a weak memory model, and how four spinlocks scale." },
     tags: [{ zh: "缓存一致性", en: "Cache Coherence" }, { zh: "内存模型", en: "Memory Models" }, { zh: "计算机体系结构", en: "Computer Architecture" }, { zh: "并发", en: "Concurrency" }, { zh: "长文", en: "Long-form Essay" }],
     category: "computing", subtopic: "systems", stage: "university", status: "live", path: "computing/systems/how-cores-share-memory/"
   },
   {
     slug: "how-a-cpu-does-math",
     title: { zh: "CPU 是怎么算小数的，又怎么一次算一排", en: "How a CPU Does Math: Real Numbers, and Many at Once" },
-    desc: {
-      zh: "一块 CPU 每秒做几千亿次小数运算，却连 0.1 都存不准。这篇从 32 个位讲起：浮点数的位怎么排，ulp，舍入，次正规数，抵消，FMA，AI 带进硬件的 FP16、BF16、FP8 和块缩放格式，再到 SIMD、AVX-512、SVE 和矩阵单元。十几个可以动手的模型，数都是逐位算出来的。",
-      en: "A CPU does hundreds of billions of arithmetic operations on fractions every second, yet it cannot even store 0.1 exactly. This essay starts from 32 bits: how the bits of a floating-point number are laid out, ulps, rounding, subnormals, cancellation, FMA, the FP16, BF16, FP8 and block-scaled formats AI brought into hardware, and then SIMD, AVX-512, SVE and matrix units. A dozen hands-on models, every number computed bit by bit."
-    },
+    desc: { zh: "一块 CPU 每秒做几千亿次小数运算，却连 0.1 都存不准。这篇从 32 个位讲起：浮点数的位怎么排，ulp，舍入，次正规数，抵消，FMA，AI 带进硬件的 FP16、BF16、FP8 和块缩放格式，再到 SIMD、AVX-512、SVE 和矩阵单元。十几个可以动手的模型，数都是逐位算出来的。", en: "A CPU does hundreds of billions of arithmetic operations on fractions every second, yet it cannot even store 0.1 exactly. This essay starts from 32 bits: how the bits of a floating-point number are laid out, ulps, rounding, subnormals, cancellation, FMA, the FP16, BF16, FP8 and block-scaled formats AI brought into hardware, and then SIMD, AVX-512, SVE and matrix units. A dozen hands-on models, every number computed bit by bit." },
     tags: [{ zh: "浮点数", en: "Floating Point" }, { zh: "SIMD", en: "SIMD" }, { zh: "计算机体系结构", en: "Computer Architecture" }, { zh: "长文", en: "Long-form Essay" }],
     category: "computing", subtopic: "systems", stage: "university", status: "live", path: "computing/systems/how-a-cpu-does-math/"
   },
   {
     slug: "how-memory-talks",
     title: { zh: "内存是怎么和 CPU 说话的", en: "How Memory Talks to the CPU" },
-    desc: {
-      zh: "内存条上写着 DDR5-6400、CL32，频率越高延迟数字反而越大，它到底快了没有？CPU 要一个字节，内存条里发生了哪些事？为什么内存条这么多年还在用一大排并行的线？十个模型：刷新占掉多少时间、一个地址落进哪一行、一个按周期走的 DRAM 命令模拟器、CL 的周期与纳秒、带宽与行命中、bank 组、飞越式布线与训练、片上 ECC 与旁路 ECC、PAM3、行锤与防护。",
-      en: "A DDR5-6400 CL32 module has a bigger latency number than DDR4: is it faster? What happens inside the module when the CPU asks for one byte? Why does memory still use a wide set of parallel wires? Ten models: how much time refresh takes, which row an address lands in, a cycle-by-cycle DRAM command simulator, CL in cycles and nanoseconds, bandwidth against row hits, bank groups, fly-by routing and training, on-die and side-band ECC, PAM3, and row hammer with its defences."
-    },
+    desc: { zh: "内存条上写着 DDR5-6400、CL32，频率越高延迟数字反而越大，它到底快了没有？CPU 要一个字节，内存条里发生了哪些事？为什么内存条这么多年还在用一大排并行的线？十个模型：刷新占掉多少时间、一个地址落进哪一行、一个按周期走的 DRAM 命令模拟器、CL 的周期与纳秒、带宽与行命中、bank 组、飞越式布线与训练、片上 ECC 与旁路 ECC、PAM3、行锤与防护。", en: "A DDR5-6400 CL32 module has a bigger latency number than DDR4: is it faster? What happens inside the module when the CPU asks for one byte? Why does memory still use a wide set of parallel wires? Ten models: how much time refresh takes, which row an address lands in, a cycle-by-cycle DRAM command simulator, CL in cycles and nanoseconds, bandwidth against row hits, bank groups, fly-by routing and training, on-die and side-band ECC, PAM3, and row hammer with its defences." },
     tags: [{ zh: "内存", en: "Memory" }, { zh: "内存条", en: "Memory Modules" }, { zh: "DRAM", en: "DRAM" }, { zh: "计算机体系结构", en: "Computer Architecture" }, { zh: "长文", en: "Long-form Essay" }],
     category: "computing", subtopic: "systems", stage: "university", status: "live", path: "computing/systems/how-memory-talks/"
   },
   {
     slug: "coherent-interconnects",
     title: { zh: "芯片之间怎么共用内存", en: "How Chips Share Memory" },
-    desc: {
-      zh: "一台服务器里的 CPU、GPU、加速卡和内存扩展卡各有各的内存，为什么现在都想共用一块？靠一根 PCIe 线怎么做到缓存一致？几十上百块 GPU 又怎么连成一台机器？九个可以动手的模型：复制还是共享、CXL 数据帧的槽位账、三类设备的消息、内存扩展与冷热分层、内存池、背向作废、一步步走的环形全归约、全归约要多久、纵向与横向扩展；另有 NVLink 对照表和封装里的一致性。",
-      en: "A server's CPU, GPUs, accelerators and memory-expansion cards each have their own memory. Why do they all want to share one, how is a cache kept coherent across a PCIe wire, and how are dozens of GPUs joined into one machine? Nine hands-on models: copy or share, the slot accounting of CXL flits, the messages of the three device types, memory expansion and hot/cold tiering, memory pooling, back-invalidate, ring all-reduce step by step, how long an all-reduce takes, and scale-up versus scale-out; plus an NVLink table and coherence inside one package."
-    },
+    desc: { zh: "一台服务器里的 CPU、GPU、加速卡和内存扩展卡各有各的内存，为什么现在都想共用一块？靠一根 PCIe 线怎么做到缓存一致？几十上百块 GPU 又怎么连成一台机器？九个可以动手的模型：复制还是共享、CXL 数据帧的槽位账、三类设备的消息、内存扩展与冷热分层、内存池、背向作废、一步步走的环形全归约、全归约要多久、纵向与横向扩展；另有 NVLink 对照表和封装里的一致性。", en: "A server's CPU, GPUs, accelerators and memory-expansion cards each have their own memory. Why do they all want to share one, how is a cache kept coherent across a PCIe wire, and how are dozens of GPUs joined into one machine? Nine hands-on models: copy or share, the slot accounting of CXL flits, the messages of the three device types, memory expansion and hot/cold tiering, memory pooling, back-invalidate, ring all-reduce step by step, how long an all-reduce takes, and scale-up versus scale-out; plus an NVLink table and coherence inside one package." },
     tags: [{ zh: "CXL", en: "CXL" }, { zh: "NVLink", en: "NVLink" }, { zh: "计算机体系结构", en: "Computer Architecture" }, { zh: "互连", en: "Interconnects" }, { zh: "长文", en: "Long-form Essay" }],
     category: "computing", subtopic: "systems", stage: "university", status: "live", path: "computing/systems/coherent-interconnects/"
   },
   {
     slug: "how-a-gpu-computes",
     title: { zh: "GPU 是怎么算的", en: "How a GPU Computes" },
-    desc: {
-      zh: "一块 GPU 有上万个「核」，每个都比 CPU 的核笨得多。它是怎么把一张图、一次矩阵乘法拆给这么多笨核同时做的？为什么同一段代码，写法稍微一变，GPU 上能慢好几倍？十个可以动手的模型：缓存和多线程两种藏延迟的办法，把一张图映射到网格、线程块和线程束，线程束调度器逐拍模拟，H100 一个 SM 能养多少线程束，分支发散，合并访存，共享内存的 bank 冲突，分块矩阵乘法的两级屋顶，各种数字格式下张量核心的峰值，以及把三角形光栅化成 2×2 像素组。",
-      en: "A GPU has tens of thousands of \"cores\", each far simpler than a CPU core. How does it split an image or a matrix multiply across so many of them at once? Why can the same code run several times slower on a GPU after a small change in how it is written? Ten hands-on models: caches versus more threads as two ways to hide latency, mapping an image onto a grid of blocks and warps, a cycle-by-cycle warp scheduler, how many warps one H100 SM can hold, branch divergence, memory coalescing, shared-memory bank conflicts, two roofs for a tiled matrix multiply, tensor-core peaks across number formats, and rasterising a triangle into 2×2 pixel quads."
-    },
+    desc: { zh: "一块 GPU 有上万个「核」，每个都比 CPU 的核笨得多。它是怎么把一张图、一次矩阵乘法拆给这么多笨核同时做的？为什么同一段代码，写法稍微一变，GPU 上能慢好几倍？十个可以动手的模型：缓存和多线程两种藏延迟的办法，把一张图映射到网格、线程块和线程束，线程束调度器逐拍模拟，H100 一个 SM 能养多少线程束，分支发散，合并访存，共享内存的 bank 冲突，分块矩阵乘法的两级屋顶，各种数字格式下张量核心的峰值，以及把三角形光栅化成 2×2 像素组。", en: "A GPU has tens of thousands of \"cores\", each far simpler than a CPU core. How does it split an image or a matrix multiply across so many of them at once? Why can the same code run several times slower on a GPU after a small change in how it is written? Ten hands-on models: caches versus more threads as two ways to hide latency, mapping an image onto a grid of blocks and warps, a cycle-by-cycle warp scheduler, how many warps one H100 SM can hold, branch divergence, memory coalescing, shared-memory bank conflicts, two roofs for a tiled matrix multiply, tensor-core peaks across number formats, and rasterising a triangle into 2×2 pixel quads." },
     tags: [{ zh: "GPU", en: "GPU" }, { zh: "CUDA", en: "CUDA" }, { zh: "并行计算", en: "Parallel Computing" }, { zh: "计算机体系结构", en: "Computer Architecture" }, { zh: "长文", en: "Long-form Essay" }],
     category: "computing", subtopic: "systems", stage: "university", status: "live", path: "computing/systems/how-a-gpu-computes/"
   },
   {
     slug: "how-a-computer-boots",
     title: { zh: "电脑是怎么开机的", en: "How a Computer Boots" },
-    desc: {
-      zh: "按下电源键到看到登录界面，大约十几秒。一颗刚上电、什么都不知道的 CPU，是怎么找到第一条指令、找到内存、找到硬盘、把操作系统请进来的？它又怎么确认请进来的不是恶意代码？十个可以动手的模型：ATX 电源的上电时序，复位向量的地址，SPI 闪存读一行要多久，开机每一段花多少时间，ACPI 表的校验和，GUID 分区表与 CRC32，安全启动的签名链，撤销一个签过名的引导程序要付什么代价，TPM 的 PCR 扩展，以及叫醒其余核心的时间。",
-      en: "About a dozen seconds pass between pressing the power button and the login screen. How does a CPU that knows nothing find its first instruction, its memory, its disk and the operating system, and how does it make sure what it loads is not malicious? Ten hands-on models: ATX power-on timing, the reset-vector address, how long an SPI flash read takes, where boot time goes, an ACPI table checksum, the GUID partition table with CRC32, the Secure Boot signature chain, the cost of revoking a signed boot loader, TPM PCR extends, and how long it takes to wake the other cores."
-    },
+    desc: { zh: "按下电源键到看到登录界面，大约十几秒。一颗刚上电、什么都不知道的 CPU，是怎么找到第一条指令、找到内存、找到硬盘、把操作系统请进来的？它又怎么确认请进来的不是恶意代码？十个可以动手的模型：ATX 电源的上电时序，复位向量的地址，SPI 闪存读一行要多久，开机每一段花多少时间，ACPI 表的校验和，GUID 分区表与 CRC32，安全启动的签名链，撤销一个签过名的引导程序要付什么代价，TPM 的 PCR 扩展，以及叫醒其余核心的时间。", en: "About a dozen seconds pass between pressing the power button and the login screen. How does a CPU that knows nothing find its first instruction, its memory, its disk and the operating system, and how does it make sure what it loads is not malicious? Ten hands-on models: ATX power-on timing, the reset-vector address, how long an SPI flash read takes, where boot time goes, an ACPI table checksum, the GUID partition table with CRC32, the Secure Boot signature chain, the cost of revoking a signed boot loader, TPM PCR extends, and how long it takes to wake the other cores." },
     tags: [{ zh: "开机", en: "Booting" }, { zh: "固件", en: "Firmware" }, { zh: "安全启动", en: "Secure Boot" }, { zh: "计算机体系结构", en: "Computer Architecture" }, { zh: "长文", en: "Long-form Essay" }],
     category: "computing", subtopic: "systems", stage: "university", status: "live", path: "computing/systems/how-a-computer-boots/"
   },
   {
     slug: "how-the-os-talks-to-hardware",
     title: { zh: "操作系统是怎么和硬件说话的", en: "How the OS Talks to Hardware" },
-    desc: {
-      zh: "程序里写一句 read()，几微秒后数据就从硬盘或网卡那里来了，可用户程序碰不到任何硬件。这句话怎么穿过那堵墙，找到对的驱动和设备，再把结果送回来？九个可以动手的模型：一条指令在哪个特权级会被拦下，系统调用的寄存器约定，一次进出内核要多少周期，读设备寄存器为什么贵，中断、轮询和 NAPI 各花多少 CPU，描述符环多大才不丢包，驱动怎么和设备配对，一次 read() 在每一层花多久，以及 epoll 和 io_uring 每次 I/O 要几次系统调用。",
-      en: "A read() in your program brings data back from a disk or a network card within microseconds, yet a user program cannot touch any hardware. How does that one line cross the wall, find the right driver and device, and bring the result back? Nine hands-on models: which instruction traps at which privilege level, the system-call register convention, the cycles of one kernel crossing, why reading a device register is expensive, the CPU cost of interrupts, polling and NAPI, how large a descriptor ring must be not to drop packets, how drivers bind to devices, where one read() spends its time layer by layer, and how many system calls epoll and io_uring make per I/O."
-    },
+    desc: { zh: "程序里写一句 read()，几微秒后数据就从硬盘或网卡那里来了，可用户程序碰不到任何硬件。这句话怎么穿过那堵墙，找到对的驱动和设备，再把结果送回来？九个可以动手的模型：一条指令在哪个特权级会被拦下，系统调用的寄存器约定，一次进出内核要多少周期，读设备寄存器为什么贵，中断、轮询和 NAPI 各花多少 CPU，描述符环多大才不丢包，驱动怎么和设备配对，一次 read() 在每一层花多久，以及 epoll 和 io_uring 每次 I/O 要几次系统调用。", en: "A read() in your program brings data back from a disk or a network card within microseconds, yet a user program cannot touch any hardware. How does that one line cross the wall, find the right driver and device, and bring the result back? Nine hands-on models: which instruction traps at which privilege level, the system-call register convention, the cycles of one kernel crossing, why reading a device register is expensive, the CPU cost of interrupts, polling and NAPI, how large a descriptor ring must be not to drop packets, how drivers bind to devices, where one read() spends its time layer by layer, and how many system calls epoll and io_uring make per I/O." },
     tags: [{ zh: "操作系统", en: "Operating Systems" }, { zh: "驱动", en: "Device Drivers" }, { zh: "系统调用", en: "System Calls" }, { zh: "计算机体系结构", en: "Computer Architecture" }, { zh: "长文", en: "Long-form Essay" }],
     category: "computing", subtopic: "systems", stage: "university", status: "live", path: "computing/systems/how-the-os-talks-to-hardware/"
   },
   {
     slug: "how-pixels-reach-a-screen",
     title: { zh: "像素是怎么到屏幕上的", en: "How Pixels Reach a Screen" },
-    desc: {
-      zh: "一块 4K 屏每秒刷新 120 次，就是每秒要送出近十亿个像素，每个都得在对的时刻亮成对的颜色。它们怎么从显卡的一块内存，经过一根线，变成眼前的光？画面为什么会撕裂、卡顿？十一个可以动手的模型：一帧有多少字节，按真实时序表算像素时钟，撕裂与垂直同步的时间线，可变刷新率与低帧率补偿，颜色管线与查找表，一根线放不放得下一种画面，4:2:0 抽掉了什么，一行像素有多少时间充电，眼睛跟着看时的运动模糊，HDR 的 PQ 曲线，以及从点鼠标到屏幕变亮的延迟。",
-      en: "A 4K screen refreshing 120 times a second has to deliver nearly a billion pixels a second, each lit the right colour at the right moment. How do they get from a block of GPU memory, through one cable, to light in front of your eyes, and why does the picture tear or stutter? Eleven hands-on models: how many bytes a frame takes, the pixel clock from real timing tables, a tearing and vsync timeline, variable refresh with low framerate compensation, the colour pipeline and its lookup tables, whether a cable fits a given mode, what 4:2:0 throws away, how long a row of pixels has to charge, motion blur when the eye tracks, the HDR PQ curve, and the latency from mouse click to light."
-    },
+    desc: { zh: "一块 4K 屏每秒刷新 120 次，就是每秒要送出近十亿个像素，每个都得在对的时刻亮成对的颜色。它们怎么从显卡的一块内存，经过一根线，变成眼前的光？画面为什么会撕裂、卡顿？十一个可以动手的模型：一帧有多少字节，按真实时序表算像素时钟，撕裂与垂直同步的时间线，可变刷新率与低帧率补偿，颜色管线与查找表，一根线放不放得下一种画面，4:2:0 抽掉了什么，一行像素有多少时间充电，眼睛跟着看时的运动模糊，HDR 的 PQ 曲线，以及从点鼠标到屏幕变亮的延迟。", en: "A 4K screen refreshing 120 times a second has to deliver nearly a billion pixels a second, each lit the right colour at the right moment. How do they get from a block of GPU memory, through one cable, to light in front of your eyes, and why does the picture tear or stutter? Eleven hands-on models: how many bytes a frame takes, the pixel clock from real timing tables, a tearing and vsync timeline, variable refresh with low framerate compensation, the colour pipeline and its lookup tables, whether a cable fits a given mode, what 4:2:0 throws away, how long a row of pixels has to charge, motion blur when the eye tracks, the HDR PQ curve, and the latency from mouse click to light." },
     tags: [{ zh: "显示器", en: "Displays" }, { zh: "显卡", en: "Graphics Cards" }, { zh: "DisplayPort", en: "DisplayPort" }, { zh: "HDR", en: "HDR" }, { zh: "计算机体系结构", en: "Computer Architecture" }, { zh: "长文", en: "Long-form Essay" }],
     category: "computing", subtopic: "systems", stage: "university", status: "live", path: "computing/systems/how-pixels-reach-a-screen/"
   },
   {
     slug: "how-power-reaches-the-cpu",
     title: { zh: "电是怎么送进 CPU 的", en: "How Power Reaches the CPU" },
-    desc: {
-      zh: "一颗 CPU 只用一伏左右的电压，却能吃下两三百瓦，也就是两百安上下的电流，负载还会在十来纳秒里猛跳上百安。电是怎么从墙上的插座一路送进芯片的？芯片为什么会自己降频？八个可以动手的模型：从插座到晶粒每一段丢掉多少电，功率怎么随电压和频率涨，电源在什么负载下最省，多相稳压怎么把纹波抵掉，负载一跳电压往下掉多少，跑完一件事用多快的频率最省电，空闲时睡多深，以及功率墙和散热器怎么一起决定频率。",
-      en: "A CPU runs on about one volt, yet it can draw 200 to 300 watts, roughly 200 amps, and its load can jump by a hundred amps in about ten nanoseconds. How does power get from the wall socket into the chip, and why does the chip slow itself down? Eight hands-on models: how much each stage from the wall to the die loses, how power grows with voltage and frequency, at what load a power supply is most efficient, how a multiphase regulator cancels its ripple, how far the voltage sags when the load jumps, which clock finishes a job on the least energy, how deep to sleep when idle, and how power limits and the cooler together set the clock."
-    },
+    desc: { zh: "一颗 CPU 只用一伏左右的电压，却能吃下两三百瓦，也就是两百安上下的电流，负载还会在十来纳秒里猛跳上百安。电是怎么从墙上的插座一路送进芯片的？芯片为什么会自己降频？八个可以动手的模型：从插座到晶粒每一段丢掉多少电，功率怎么随电压和频率涨，电源在什么负载下最省，多相稳压怎么把纹波抵掉，负载一跳电压往下掉多少，跑完一件事用多快的频率最省电，空闲时睡多深，以及功率墙和散热器怎么一起决定频率。", en: "A CPU runs on about one volt, yet it can draw 200 to 300 watts, roughly 200 amps, and its load can jump by a hundred amps in about ten nanoseconds. How does power get from the wall socket into the chip, and why does the chip slow itself down? Eight hands-on models: how much each stage from the wall to the die loses, how power grows with voltage and frequency, at what load a power supply is most efficient, how a multiphase regulator cancels its ripple, how far the voltage sags when the load jumps, which clock finishes a job on the least energy, how deep to sleep when idle, and how power limits and the cooler together set the clock." },
     tags: [{ zh: "供电", en: "Power Delivery" }, { zh: "电源管理", en: "Power Management" }, { zh: "计算机体系结构", en: "Computer Architecture" }, { zh: "长文", en: "Long-form Essay" }],
     category: "computing", subtopic: "systems", stage: "university", status: "live", path: "computing/systems/how-power-reaches-the-cpu/"
   },
   {
     slug: "how-a-nic-moves-packets",
     title: { zh: "网卡是怎么搬运数据包的", en: "How a Network Card Moves Packets" },
-    desc: {
-      zh: "一张 400G 网卡，每秒要收三千多万个包，平均每个包只有三十纳秒，比一次内存访问还短。它怎么在 CPU 几乎不插手的情况下，把包从光纤里搬进正确的那个程序的内存？十个可以动手的模型：一帧以太网和它的校验码，线速下每个包的时间，描述符为什么要提前取，PCIe 装不装得下 400G，RSS 的托普利茨哈希，几条大流怎么把队列压歪，分段和接收卸载省多少 CPU，DDIO 的缓存为什么会漏，发送环里排多少字节才合适，内核协议栈、XDP 和 DPDK 各要几个核，以及训练集群里 ECMP 和包喷洒的差别。",
-      en: "A 400G network card receives more than thirty million packets a second, about thirty nanoseconds each, less than one memory access. How does it move them from the fibre into the memory of the right program with the CPU hardly involved? Ten hands-on models: one Ethernet frame and its check sequence, the time per packet at line rate, why descriptors are fetched ahead, whether PCIe can carry 400G, the Toeplitz hash behind RSS, how a few big flows skew the queues, how much CPU segmentation and receive offloads save, why DDIO leaks, how many bytes belong in the transmit ring, how many cores the kernel stack, XDP and DPDK need, and ECMP versus packet spraying in a training cluster."
-    },
+    desc: { zh: "一张 400G 网卡，每秒要收三千多万个包，平均每个包只有三十纳秒，比一次内存访问还短。它怎么在 CPU 几乎不插手的情况下，把包从光纤里搬进正确的那个程序的内存？十个可以动手的模型：一帧以太网和它的校验码，线速下每个包的时间，描述符为什么要提前取，PCIe 装不装得下 400G，RSS 的托普利茨哈希，几条大流怎么把队列压歪，分段和接收卸载省多少 CPU，DDIO 的缓存为什么会漏，发送环里排多少字节才合适，内核协议栈、XDP 和 DPDK 各要几个核，以及训练集群里 ECMP 和包喷洒的差别。", en: "A 400G network card receives more than thirty million packets a second, about thirty nanoseconds each, less than one memory access. How does it move them from the fibre into the memory of the right program with the CPU hardly involved? Ten hands-on models: one Ethernet frame and its check sequence, the time per packet at line rate, why descriptors are fetched ahead, whether PCIe can carry 400G, the Toeplitz hash behind RSS, how a few big flows skew the queues, how much CPU segmentation and receive offloads save, why DDIO leaks, how many bytes belong in the transmit ring, how many cores the kernel stack, XDP and DPDK need, and ECMP versus packet spraying in a training cluster." },
     tags: [{ zh: "网卡", en: "Network Cards" }, { zh: "网络硬件", en: "Network Hardware" }, { zh: "计算机体系结构", en: "Computer Architecture" }, { zh: "长文", en: "Long-form Essay" }],
     category: "computing", subtopic: "systems", stage: "university", status: "live", path: "computing/systems/how-a-nic-moves-packets/"
   },
   {
     slug: "how-an-economy-is-measured",
     title: { zh: "经济是怎样被计量的", en: "How an Economy Is Measured" },
-    desc: {
-      zh: "一个经济体“好不好”，到底是怎么量出来的？从 GDP 三面等价、物价指数与 CPI、增长率陷阱、PPP 与基尼系数、劳动力市场、周期与萨姆规则、索洛分解，到 GDP 边界与 2025 SNA 前沿。",
-      en: "How do we measure how well an economy is doing? From the three-sided GDP identity, price indexes and CPI, growth-rate traps, PPP and Gini, labour markets, business cycles and the Sahm rule, and Solow growth accounting to GDP boundaries and the 2025 SNA frontier."
-    },
+    desc: { zh: "一个经济体“好不好”，到底是怎么量出来的？从 GDP 三面等价、物价指数与 CPI、增长率陷阱、PPP 与基尼系数、劳动力市场、周期与萨姆规则、索洛分解，到 GDP 边界与 2025 SNA 前沿。", en: "How do we measure how well an economy is doing? From the three-sided GDP identity, price indexes and CPI, growth-rate traps, PPP and Gini, labour markets, business cycles and the Sahm rule, and Solow growth accounting to GDP boundaries and the 2025 SNA frontier." },
     tags: [{ zh: "宏观经济", en: "Macroeconomics" }, { zh: "GDP", en: "GDP" }, { zh: "通胀与CPI", en: "Inflation & CPI" }, { zh: "国民核算", en: "National Accounts" }, { zh: "长文", en: "Long-form Essay" }],
     category: "economics", subtopic: "macro", stage: "university", status: "live", path: "economics/macro/how-an-economy-is-measured/"
   },
   {
     slug: "fourier",
     title: { zh: "傅里叶变换 · 一步一交互", en: "The Fourier Transform · One Interaction at a Time" },
-    desc: {
-      zh: "任何波形、任何图形，都能拆成一堆旋转的圆。从一条正弦波开始，七步亲手拼出傅里叶变换，最后画任意图形让圆圈重画出来。",
-      en: "Any waveform — any picture — can be taken apart into rotating circles. Start from a single sine wave, build the Fourier transform with your own hands in seven steps, then draw any shape and watch the circles redraw it."
-    },
-    tags: [
-      { zh: "频域", en: "Frequency Domain" },
-      { zh: "变换", en: "Transform" },
-      { zh: "旋转与圆", en: "Rotation & Circles" }
-    ],
-    category: "signal", subtopic: "transforms",
-    stage: "university",
-    status: "live",
-    path: "signal/transforms/fourier/"
+    desc: { zh: "任何波形、任何图形，都能拆成一堆旋转的圆。从一条正弦波开始，七步亲手拼出傅里叶变换，最后画任意图形让圆圈重画出来。", en: "Any waveform — any picture — can be taken apart into rotating circles. Start from a single sine wave, build the Fourier transform with your own hands in seven steps, then draw any shape and watch the circles redraw it." },
+    tags: [{ zh: "频域", en: "Frequency Domain" }, { zh: "变换", en: "Transform" }, { zh: "旋转与圆", en: "Rotation & Circles" }],
+    category: "signal", subtopic: "transforms", stage: "university", status: "live", path: "signal/transforms/fourier/"
   },
   {
     slug: "convolution",
     title: { zh: "卷积 · 一步一交互", en: "Convolution · One Interaction at a Time" },
-    desc: {
-      zh: "把一张照片变糊、把声音加上回声、把抖动的数据变平滑，背后是同一台机器：卷积。七步亲手滑动、翻卷、相乘、求和，最后看它在频域里和傅里叶相遇。",
-      en: "Blurring a photo, adding echo to a sound, smoothing jittery data — behind all of them sits the same machine: convolution. Slide, flip, multiply and sum your way through seven steps, then watch it meet the Fourier transform in the frequency domain."
-    },
-    tags: [
-      { zh: "滑动平均", en: "Moving Average" },
-      { zh: "图像处理", en: "Image Processing" },
-      { zh: "时域与频域", en: "Time & Frequency" }
-    ],
-    category: "signal", subtopic: "systems",
-    stage: "university",
-    status: "live",
-    path: "signal/systems/convolution/"
+    desc: { zh: "把一张照片变糊、把声音加上回声、把抖动的数据变平滑，背后是同一台机器：卷积。七步亲手滑动、翻卷、相乘、求和，最后看它在频域里和傅里叶相遇。", en: "Blurring a photo, adding echo to a sound, smoothing jittery data — behind all of them sits the same machine: convolution. Slide, flip, multiply and sum your way through seven steps, then watch it meet the Fourier transform in the frequency domain." },
+    tags: [{ zh: "滑动平均", en: "Moving Average" }, { zh: "图像处理", en: "Image Processing" }, { zh: "时域与频域", en: "Time & Frequency" }],
+    category: "signal", subtopic: "systems", stage: "university", status: "live", path: "signal/systems/convolution/"
   },
   {
     slug: "mandelbrot",
     title: { zh: "Mandelbrot 分形 · 无限放大", en: "The Mandelbrot Set · Zoom Without End" },
-    desc: {
-      zh: "一行幼儿园算术 z→z²+c，反复按下去，能长出无限复杂的图形。拖动放大一千亿倍细节还在生长，每个点背后还藏着一整张朱利亚集。",
-      en: "One line of schoolchild arithmetic, z → z² + c, pressed over and over, grows a picture of endless complexity. Drag to zoom a hundred billion times and the detail is still growing — and behind every point hides an entire Julia set."
-    },
-    tags: [
-      { zh: "分形", en: "Fractals" },
-      { zh: "复数迭代", en: "Complex Iteration" },
-      { zh: "朱利亚集", en: "Julia Sets" }
-    ],
-    category: "math", subtopic: "calculus",
-    stage: "university",
-    status: "live",
-    path: "math/calculus/mandelbrot/"
+    desc: { zh: "一行幼儿园算术 z→z²+c，反复按下去，能长出无限复杂的图形。拖动放大一千亿倍细节还在生长，每个点背后还藏着一整张朱利亚集。", en: "One line of schoolchild arithmetic, z → z² + c, pressed over and over, grows a picture of endless complexity. Drag to zoom a hundred billion times and the detail is still growing — and behind every point hides an entire Julia set." },
+    tags: [{ zh: "分形", en: "Fractals" }, { zh: "复数迭代", en: "Complex Iteration" }, { zh: "朱利亚集", en: "Julia Sets" }],
+    category: "math", subtopic: "calculus", stage: "university", status: "live", path: "math/calculus/mandelbrot/"
   },
   {
     slug: "inverted-pendulum",
     title: { zh: "反馈与控制 · 双轮车为什么倒不下去", en: "Feedback & Control · Why the Two-Wheeled Bot Never Falls" },
-    desc: {
-      zh: "一辆双轮车天生站不住，让它站住的不是更强的电机，而是一个转得够快的圈。亲手当一回控制器、亲手调坏再调好一套 PID，再让延迟、噪声和饱和逐个来拆台。",
-      en: "A two-wheeled balancing bot is born unable to stand. What keeps it up is not a stronger motor but a loop that spins fast enough. Take the controller's seat yourself, tune a PID badly then well, and let delay, noise and saturation each try to wreck it."
-    },
-    tags: [
-      { zh: "反馈控制", en: "Feedback Control" },
-      { zh: "PID", en: "PID" },
-      { zh: "倒立摆", en: "Inverted Pendulum" }
-    ],
-    category: "signal", subtopic: "control",
-    stage: "university",
-    status: "live",
-    path: "signal/control/inverted-pendulum/"
+    desc: { zh: "一辆双轮车天生站不住，让它站住的不是更强的电机，而是一个转得够快的圈。亲手当一回控制器、亲手调坏再调好一套 PID，再让延迟、噪声和饱和逐个来拆台。", en: "A two-wheeled balancing bot is born unable to stand. What keeps it up is not a stronger motor but a loop that spins fast enough. Take the controller's seat yourself, tune a PID badly then well, and let delay, noise and saturation each try to wreck it." },
+    tags: [{ zh: "反馈控制", en: "Feedback Control" }, { zh: "PID", en: "PID" }, { zh: "倒立摆", en: "Inverted Pendulum" }],
+    category: "signal", subtopic: "control", stage: "university", status: "live", path: "signal/control/inverted-pendulum/"
   },
   {
     slug: "sampling",
     title: { zh: "采样与混叠 · 偷看得太懒，就会看错", en: "Sampling & Aliasing · Peek Too Lazily and You'll See It Wrong" },
-    desc: {
-      zh: "车轮在视频里为什么会倒转？采样就是每隔一会儿偷看世界一眼——看得太懒，眼睛会连出一波根本不存在的假信号。奈奎斯特的那条线、44.1 kHz 的由来，都在这里亲手玩明白。",
-      en: "Why do wheels spin backwards on video? Sampling is peeking at the world every so often — peek too lazily and your eyes will invent a signal that was never there. Play with the Nyquist line and the origin of 44.1 kHz until they click."
-    },
-    tags: [
-      { zh: "采样", en: "Sampling" },
-      { zh: "混叠", en: "Aliasing" },
-      { zh: "奈奎斯特", en: "Nyquist" }
-    ],
-    category: "signal", subtopic: "sampling",
-    stage: "university",
-    status: "live",
-    path: "signal/sampling/sampling/"
+    desc: { zh: "车轮在视频里为什么会倒转？采样就是每隔一会儿偷看世界一眼——看得太懒，眼睛会连出一波根本不存在的假信号。奈奎斯特的那条线、44.1 kHz 的由来，都在这里亲手玩明白。", en: "Why do wheels spin backwards on video? Sampling is peeking at the world every so often — peek too lazily and your eyes will invent a signal that was never there. Play with the Nyquist line and the origin of 44.1 kHz until they click." },
+    tags: [{ zh: "采样", en: "Sampling" }, { zh: "混叠", en: "Aliasing" }, { zh: "奈奎斯特", en: "Nyquist" }],
+    category: "signal", subtopic: "sampling", stage: "university", status: "live", path: "signal/sampling/sampling/"
   },
   {
     slug: "trigonometry",
     title: { zh: "三角函数 · 单位圆", en: "Trigonometric Functions · The Unit Circle" },
-    desc: {
-      zh: "sin 是身高、cos 是站位、tan 是斜率——三个函数是同一个圆的三个投影。拖着点绕一圈，看正弦波从圆的侧影里长出来；这一页是傅里叶变换的前传。",
-      en: "Sine is a height, cosine a position, tangent a slope — three functions that are three projections of one circle. Drag the point around and watch the sine wave grow out of the circle's silhouette; this page is the prequel to the Fourier transform."
-    },
-    tags: [
-      { zh: "单位圆", en: "Unit Circle" },
-      { zh: "正弦与余弦", en: "Sine & Cosine" },
-      { zh: "弧度", en: "Radians" }
-    ],
-    category: "math", subtopic: "geometry",
-    stage: "university",
-    status: "live",
-    path: "math/geometry/trigonometry/"
+    desc: { zh: "sin 是身高、cos 是站位、tan 是斜率——三个函数是同一个圆的三个投影。拖着点绕一圈，看正弦波从圆的侧影里长出来；这一页是傅里叶变换的前传。", en: "Sine is a height, cosine a position, tangent a slope — three functions that are three projections of one circle. Drag the point around and watch the sine wave grow out of the circle's silhouette; this page is the prequel to the Fourier transform." },
+    tags: [{ zh: "单位圆", en: "Unit Circle" }, { zh: "正弦与余弦", en: "Sine & Cosine" }, { zh: "弧度", en: "Radians" }],
+    category: "math", subtopic: "geometry", stage: "university", status: "live", path: "math/geometry/trigonometry/"
   },
   {
     slug: "monte-carlo",
     title: { zh: "蒙特卡洛 · 撒豆子算 π", en: "Monte Carlo · Counting π with Scattered Beans" },
-    desc: {
-      zh: "算不出来的问题，可以撒豆子撒出来：随机撒点落在圆内的比例就是面积比，π 自己浮出来。误差按 1/√N 收缩——想多准一位，点要多撒一百倍。",
-      en: "Some problems you can't solve, you can scatter your way to: the fraction of random points landing in a circle is an area ratio, and π surfaces on its own. Error shrinks like 1/√N — one more digit costs a hundred times the points."
-    },
-    tags: [
-      { zh: "蒙特卡洛", en: "Monte Carlo" },
-      { zh: "随机模拟", en: "Simulation" },
-      { zh: "大数定律", en: "Law of Large Numbers" }
-    ],
-    category: "probability", subtopic: "stochastic",
-    stage: "university",
-    status: "live",
-    path: "probability/stochastic/monte-carlo/"
+    desc: { zh: "算不出来的问题，可以撒豆子撒出来：随机撒点落在圆内的比例就是面积比，π 自己浮出来。误差按 1/√N 收缩——想多准一位，点要多撒一百倍。", en: "Some problems you can't solve, you can scatter your way to: the fraction of random points landing in a circle is an area ratio, and π surfaces on its own. Error shrinks like 1/√N — one more digit costs a hundred times the points." },
+    tags: [{ zh: "蒙特卡洛", en: "Monte Carlo" }, { zh: "随机模拟", en: "Simulation" }, { zh: "大数定律", en: "Law of Large Numbers" }],
+    category: "probability", subtopic: "stochastic", stage: "university", status: "live", path: "probability/stochastic/monte-carlo/"
   },
   {
     slug: "laplace",
     title: { zh: "拉普拉斯与 ROC · 给频率配一个寿命", en: "Laplace Transform & ROC · Giving Frequencies a Lifespan" },
-    desc: {
-      zh: "傅里叶假设每个音永远在响；拉普拉斯多问一句：它在衰减还是在增长？s 平面上的地形、极点与收敛域——同一页里装下傅里叶的切片和控制的战场。",
-      en: "Fourier assumes every tone rings forever; Laplace also asks whether it is dying or exploding. Terrain, poles and regions of convergence on the s-plane — one map holding both the Fourier slice and the control battlefield."
-    },
-    tags: [
-      { zh: "拉普拉斯变换", en: "Laplace Transform" },
-      { zh: "收敛域", en: "Region of Convergence" },
-      { zh: "极点", en: "Poles" }
-    ],
-    category: "signal", subtopic: "transforms",
-    stage: "university",
-    status: "live",
-    path: "signal/transforms/laplace/"
+    desc: { zh: "傅里叶假设每个音永远在响；拉普拉斯多问一句：它在衰减还是在增长？s 平面上的地形、极点与收敛域——同一页里装下傅里叶的切片和控制的战场。", en: "Fourier assumes every tone rings forever; Laplace also asks whether it is dying or exploding. Terrain, poles and regions of convergence on the s-plane — one map holding both the Fourier slice and the control battlefield." },
+    tags: [{ zh: "拉普拉斯变换", en: "Laplace Transform" }, { zh: "收敛域", en: "Region of Convergence" }, { zh: "极点", en: "Poles" }],
+    category: "signal", subtopic: "transforms", stage: "university", status: "live", path: "signal/transforms/laplace/"
   },
   {
     slug: "bayes-updating",
     title: { zh: "贝叶斯 · 先查底子，再看证据", en: "Bayes · Check the Base Rate Before the Evidence" },
-    desc: {
-      zh: "检测说你阳性，你真中招的概率只有 9%——检测没骗你，是底子太薄。先验、似然比、证据连乘：信念更新其实是一本流水账。",
-      en: "The test says positive, yet your chance of actually having it is 9% — the test didn't lie; the base rate is thin. Priors, likelihood ratios and chained evidence: belief updating as a running ledger."
-    },
-    tags: [
-      { zh: "贝叶斯更新", en: "Bayesian Updating" },
-      { zh: "先验与后验", en: "Prior & Posterior" },
-      { zh: "基础率", en: "Base Rate" }
-    ],
-    category: "probability", subtopic: "inference",
-    stage: "university",
-    status: "live",
-    path: "probability/inference/bayes-updating/"
+    desc: { zh: "检测说你阳性，你真中招的概率只有 9%——检测没骗你，是底子太薄。先验、似然比、证据连乘：信念更新其实是一本流水账。", en: "The test says positive, yet your chance of actually having it is 9% — the test didn't lie; the base rate is thin. Priors, likelihood ratios and chained evidence: belief updating as a running ledger." },
+    tags: [{ zh: "贝叶斯更新", en: "Bayesian Updating" }, { zh: "先验与后验", en: "Prior & Posterior" }, { zh: "基础率", en: "Base Rate" }],
+    category: "probability", subtopic: "inference", stage: "university", status: "live", path: "probability/inference/bayes-updating/"
   },
   {
     slug: "central-limit-theorem",
     title: { zh: "中心极限定理 · 平均值总会变成钟形", en: "Central Limit Theorem · Averages Always Turn Bell-Shaped" },
-    desc: {
-      zh: "单颗骰子毫无钟形可言，平均起来钟形却拔地而起。不管原料长什么样，均值的分布总是正态——只要方差有限：精度按 σ/√n 定价，民调的 ±3% 也从这里来。",
-      en: "A single die has nothing bell-shaped about it, yet average enough dice and the bell rises. Whatever the raw material looks like, means turn normal — as long as the variance is finite. Precision is priced at σ/√n, and polling's ±3% is born here too."
-    },
-    tags: [
-      { zh: "中心极限定理", en: "Central Limit Theorem" },
-      { zh: "抽样分布", en: "Sampling Distribution" },
-      { zh: "正态逼近", en: "Normal Approximation" }
-    ],
-    category: "probability", subtopic: "statistics",
-    stage: "university",
-    status: "live",
-    path: "probability/statistics/central-limit-theorem/"
+    desc: { zh: "单颗骰子毫无钟形可言，平均起来钟形却拔地而起。不管原料长什么样，均值的分布总是正态——只要方差有限：精度按 σ/√n 定价，民调的 ±3% 也从这里来。", en: "A single die has nothing bell-shaped about it, yet average enough dice and the bell rises. Whatever the raw material looks like, means turn normal — as long as the variance is finite. Precision is priced at σ/√n, and polling's ±3% is born here too." },
+    tags: [{ zh: "中心极限定理", en: "Central Limit Theorem" }, { zh: "抽样分布", en: "Sampling Distribution" }, { zh: "正态逼近", en: "Normal Approximation" }],
+    category: "probability", subtopic: "statistics", stage: "university", status: "live", path: "probability/statistics/central-limit-theorem/"
   },
   {
     slug: "z-transform",
     title: { zh: "Z 变换 · 把 s 平面卷成单位圆", en: "The Z-Transform · Rolling the s-Plane into the Unit Circle" },
-    desc: {
-      zh: "离散世界没有连续时间，它的拉普拉斯住在一个圆里：z = e^{sT} 把左半平面卷进单位圆内、虚轴卷成圆周。极点在圆内活、圆上鸣、圆外炸。",
-      en: "The discrete world has no continuous time; its Laplace lives on a circle. z = e^{sT} rolls the left half-plane inside the unit circle and the axis onto its rim — poles live inside, sing on it, and explode outside."
-    },
-    tags: [
-      { zh: "Z 变换", en: "Z-Transform" },
-      { zh: "单位圆", en: "Unit Circle" },
-      { zh: "收敛域", en: "ROC" }
-    ],
-    category: "signal", subtopic: "transforms",
-    stage: "university",
-    status: "live",
-    path: "signal/transforms/z-transform/"
+    desc: { zh: "离散世界没有连续时间，它的拉普拉斯住在一个圆里：z = e^{sT} 把左半平面卷进单位圆内、虚轴卷成圆周。极点在圆内活、圆上鸣、圆外炸。", en: "The discrete world has no continuous time; its Laplace lives on a circle. z = e^{sT} rolls the left half-plane inside the unit circle and the axis onto its rim — poles live inside, sing on it, and explode outside." },
+    tags: [{ zh: "Z 变换", en: "Z-Transform" }, { zh: "单位圆", en: "Unit Circle" }, { zh: "收敛域", en: "ROC" }],
+    category: "signal", subtopic: "transforms", stage: "university", status: "live", path: "signal/transforms/z-transform/"
   },
   {
     slug: "gradient-descent",
     title: { zh: "梯度下降 · 摸黑下山", en: "Gradient Descent · Feeling Your Way Downhill" },
-    desc: {
-      zh: "训练模型，就是在看不见的地形上摸黑下山：坡度是唯一的信息，步子迈多大决定你走到谷底、原地打转还是飞出去。所有神经网络的训练，剥到底就是这一页的循环。",
-      en: "Training a model is feeling your way down a landscape you cannot see: the slope is your only information, and your step size decides whether you reach the bottom, spin in place, or fly off. All of neural-network training, stripped down, is this page's loop."
-    },
-    tags: [
-      { zh: "梯度下降", en: "Gradient Descent" },
-      { zh: "学习率", en: "Learning Rate" },
-      { zh: "优化", en: "Optimization" }
-    ],
-    category: "computing", subtopic: "ml",
-    stage: "university",
-    status: "live",
-    path: "computing/ml/gradient-descent/"
+    desc: { zh: "训练模型，就是在看不见的地形上摸黑下山：坡度是唯一的信息，步子迈多大决定你走到谷底、原地打转还是飞出去。所有神经网络的训练，剥到底就是这一页的循环。", en: "Training a model is feeling your way down a landscape you cannot see: the slope is your only information, and your step size decides whether you reach the bottom, spin in place, or fly off. All of neural-network training, stripped down, is this page's loop." },
+    tags: [{ zh: "梯度下降", en: "Gradient Descent" }, { zh: "学习率", en: "Learning Rate" }, { zh: "优化", en: "Optimization" }],
+    category: "computing", subtopic: "ml", stage: "university", status: "live", path: "computing/ml/gradient-descent/"
   },
   {
     slug: "eigenvectors",
     title: { zh: "特征值与特征向量 · 矩阵不转的那些方向", en: "Eigenvalues & Eigenvectors · The Directions a Matrix Cannot Turn" },
-    desc: {
-      zh: "矩阵把空间里的箭头普遍转走，只有少数方向例外：只被拉长、缩短或翻转。从捏圆的机器一路到 PCA 与谷歌的 PageRank，中间只隔一个问题：哪个方向不会被转走？",
-      en: "A matrix turns almost every arrow in space — except a few directions it can only stretch, shrink, or flip. From a circle squeezed into an ellipse to PCA and Google's PageRank, it all comes down to one question: which directions refuse to turn?"
-    },
-    tags: [
-      { zh: "特征值", en: "Eigenvalues" },
-      { zh: "特征向量", en: "Eigenvectors" },
-      { zh: "主成分分析", en: "PCA" }
-    ],
-    category: "math", subtopic: "linear-algebra",
-    stage: "university",
-    status: "live",
-    path: "math/linear-algebra/eigenvectors/"
+    desc: { zh: "矩阵把空间里的箭头普遍转走，只有少数方向例外：只被拉长、缩短或翻转。从捏圆的机器一路到 PCA 与谷歌的 PageRank，中间只隔一个问题：哪个方向不会被转走？", en: "A matrix turns almost every arrow in space — except a few directions it can only stretch, shrink, or flip. From a circle squeezed into an ellipse to PCA and Google's PageRank, it all comes down to one question: which directions refuse to turn?" },
+    tags: [{ zh: "特征值", en: "Eigenvalues" }, { zh: "特征向量", en: "Eigenvectors" }, { zh: "主成分分析", en: "PCA" }],
+    category: "math", subtopic: "linear-algebra", stage: "university", status: "live", path: "math/linear-algebra/eigenvectors/"
   },
   {
     slug: "entropy",
     title: { zh: "熵 · 惊讶的平均值", en: "Entropy · The Average of Surprise" },
-    desc: {
-      zh: "越意外的事，信息量越大；熵把一个随机源的整体不确定性压成一个数。它既是压缩的绝对极限，也是机器学习损失函数的老祖宗，还与热力学的熵同源同式。",
-      en: "The more surprising an event, the more information it carries; entropy compresses a source's total uncertainty into a single number. It is the absolute limit of compression, the ancestor of ML loss functions, and kin to the entropy of thermodynamics."
-    },
-    tags: [
-      { zh: "熵", en: "Entropy" },
-      { zh: "信息量", en: "Information" },
-      { zh: "哈夫曼编码", en: "Huffman Coding" }
-    ],
-    category: "probability", subtopic: "stochastic",
-    stage: "university",
-    status: "live",
-    path: "probability/stochastic/entropy/"
+    desc: { zh: "越意外的事，信息量越大；熵把一个随机源的整体不确定性压成一个数。它既是压缩的绝对极限，也是机器学习损失函数的老祖宗，还与热力学的熵同源同式。", en: "The more surprising an event, the more information it carries; entropy compresses a source's total uncertainty into a single number. It is the absolute limit of compression, the ancestor of ML loss functions, and kin to the entropy of thermodynamics." },
+    tags: [{ zh: "熵", en: "Entropy" }, { zh: "信息量", en: "Information" }, { zh: "哈夫曼编码", en: "Huffman Coding" }],
+    category: "probability", subtopic: "stochastic", stage: "university", status: "live", path: "probability/stochastic/entropy/"
   },
   {
     slug: "lti-systems",
     title: { zh: "冲激与 LTI · 给系统一巴掌", en: "Impulse & LTI · Slap the System" },
-    desc: {
-      zh: "想认识一个系统，别逐个试输入——扇它一巴掌，把它对冲激的全部回答 h 录下来。只要它是线性时不变的，这份指纹就决定了它对一切输入的回答；公理垮掉的地方，魔法当场失效给你看。",
-      en: "To know a system, don't test input after input — slap it once and record its full answer to an impulse. If it is linear and time-invariant, that fingerprint h decides its answer to everything; where the axioms break, watch the magic fail on the spot."
-    },
-    tags: [
-      { zh: "冲激响应", en: "Impulse Response" },
-      { zh: "LTI 系统", en: "LTI Systems" },
-      { zh: "线性时不变", en: "Linear Time-Invariant" }
-    ],
-    category: "signal", subtopic: "systems",
-    stage: "university",
-    status: "live",
-    path: "signal/systems/lti-systems/"
+    desc: { zh: "想认识一个系统，别逐个试输入——扇它一巴掌，把它对冲激的全部回答 h 录下来。只要它是线性时不变的，这份指纹就决定了它对一切输入的回答；公理垮掉的地方，魔法当场失效给你看。", en: "To know a system, don't test input after input — slap it once and record its full answer to an impulse. If it is linear and time-invariant, that fingerprint h decides its answer to everything; where the axioms break, watch the magic fail on the spot." },
+    tags: [{ zh: "冲激响应", en: "Impulse Response" }, { zh: "LTI 系统", en: "LTI Systems" }, { zh: "线性时不变", en: "Linear Time-Invariant" }],
+    category: "signal", subtopic: "systems", stage: "university", status: "live", path: "signal/systems/lti-systems/"
   },
   {
     slug: "frequency-response",
     title: { zh: "频率响应与滤波 · 按频率挑食的盒子", en: "Frequency Response & Filters · A Box That Eats by Frequency" },
-    desc: {
-      zh: "LTI 系统对正弦只做两件事：按 |H(ω)| 缩放、按 φ(ω) 迟到。把这两条曲线量出来，你就既会读波特图，也会按指标亲手设计一个滤波器——零点、相位、带通、验收，全是真算。",
-      en: "An LTI system does only two things to a sine: scale it by |H(ω)| and delay it by φ(ω). Measure those two curves and you can both read a Bode plot and design a filter to spec — zeros, phase, bandpass, and a bench verdict, all computed for real."
-    },
-    tags: [
-      { zh: "频率响应", en: "Frequency Response" },
-      { zh: "滤波器", en: "Filters" },
-      { zh: "波特图", en: "Bode Plot" }
-    ],
-    category: "signal", subtopic: "systems",
-    stage: "university",
-    status: "live",
-    path: "signal/systems/frequency-response/"
+    desc: { zh: "LTI 系统对正弦只做两件事：按 |H(ω)| 缩放、按 φ(ω) 迟到。把这两条曲线量出来，你就既会读波特图，也会按指标亲手设计一个滤波器——零点、相位、带通、验收，全是真算。", en: "An LTI system does only two things to a sine: scale it by |H(ω)| and delay it by φ(ω). Measure those two curves and you can both read a Bode plot and design a filter to spec — zeros, phase, bandpass, and a bench verdict, all computed for real." },
+    tags: [{ zh: "频率响应", en: "Frequency Response" }, { zh: "滤波器", en: "Filters" }, { zh: "波特图", en: "Bode Plot" }],
+    category: "signal", subtopic: "systems", stage: "university", status: "live", path: "signal/systems/frequency-response/"
   },
   {
     slug: "modulation",
     title: { zh: "调制与频移 · 把信号搬上高频运走", en: "Modulation · Shipping Signals on a Carrier" },
-    desc: {
-      zh: "声音跑不远也挤不下——乘一个载波，频谱整体搬家。AM 搬幅度的形状、FM 搬频率的摆动；解调要对准频率与相位，串扰、过调制、抗噪差距，全由真采样与 FFT 现算给你看。",
-      en: "Voices can't travel far or share one band — multiply by a carrier and the whole spectrum moves house. AM ships the shape of the amplitude, FM the wobble of frequency; demodulation, crosstalk, overmodulation, and the noise gap, all computed live from real samples and FFTs."
-    },
-    tags: [
-      { zh: "调制", en: "Modulation" },
-      { zh: "载波", en: "Carrier" },
-      { zh: "频谱搬移", en: "Spectrum Shifting" }
-    ],
-    category: "signal", subtopic: "sampling",
-    stage: "university",
-    status: "live",
-    path: "signal/sampling/modulation/"
+    desc: { zh: "声音跑不远也挤不下——乘一个载波，频谱整体搬家。AM 搬幅度的形状、FM 搬频率的摆动；解调要对准频率与相位，串扰、过调制、抗噪差距，全由真采样与 FFT 现算给你看。", en: "Voices can't travel far or share one band — multiply by a carrier and the whole spectrum moves house. AM ships the shape of the amplitude, FM the wobble of frequency; demodulation, crosstalk, overmodulation, and the noise gap, all computed live from real samples and FFTs." },
+    tags: [{ zh: "调制", en: "Modulation" }, { zh: "载波", en: "Carrier" }, { zh: "频谱搬移", en: "Spectrum Shifting" }],
+    category: "signal", subtopic: "sampling", stage: "university", status: "live", path: "signal/sampling/modulation/"
   },
   {
     slug: "kalman",
     title: { zh: "卡尔曼滤波 · 在预测与测量之间称重", en: "Kalman Filter · Weighing Prediction Against Measurement" },
-    desc: {
-      zh: "真实状态永远看不见：模型预测一份、带噪测量一份，卡尔曼按各自的不确定度当场算出该信谁几成。增益 K 如何自己定下来、如何从位置估出没测过的速度——全是递推真算。",
-      en: "The true state is never visible: a model predicts, a noisy sensor measures, and the Kalman filter weighs the two by their uncertainties, live. How gain K settles itself, and how velocity gets estimated from position alone — every step from the real recursion."
-    },
-    tags: [
-      { zh: "卡尔曼滤波", en: "Kalman Filter" },
-      { zh: "状态估计", en: "State Estimation" },
-      { zh: "预测与更新", en: "Predict–Update" }
-    ],
-    category: "signal", subtopic: "control",
-    stage: "university",
-    status: "live",
-    path: "signal/control/kalman/"
+    desc: { zh: "真实状态永远看不见：模型预测一份、带噪测量一份，卡尔曼按各自的不确定度当场算出该信谁几成。增益 K 如何自己定下来、如何从位置估出没测过的速度——全是递推真算。", en: "The true state is never visible: a model predicts, a noisy sensor measures, and the Kalman filter weighs the two by their uncertainties, live. How gain K settles itself, and how velocity gets estimated from position alone — every step from the real recursion." },
+    tags: [{ zh: "卡尔曼滤波", en: "Kalman Filter" }, { zh: "状态估计", en: "State Estimation" }, { zh: "预测与更新", en: "Predict–Update" }],
+    category: "signal", subtopic: "control", stage: "university", status: "live", path: "signal/control/kalman/"
   },
   {
     slug: "sorting",
     title: { zh: "排序与大 O · 增长的形状", en: "Sorting & Big O · The Shape of Growth" },
-    desc: {
-      zh: "算法之间的差别不在能不能排，在比较次数如何随数据量增长。冒泡、选择、归并、快排、计数排序的每个计数都由真实代码当场数出——连大 O 的形状，都是从实测表里拟合出来的。",
-      en: "Algorithms differ not in whether they sort, but in how their comparison counts grow with n. Bubble, selection, merge, quick and counting sort — every count produced live by real code, and the Big O shapes fitted from the measured table itself."
-    },
-    tags: [
-      { zh: "排序算法", en: "Sorting" },
-      { zh: "大 O", en: "Big O" },
-      { zh: "分而治之", en: "Divide & Conquer" },
-      { zh: "算法", en: "Algorithm" }
-    ],
-    category: "computing", subtopic: "algorithms",
-    stage: "university",
-    status: "live",
-    path: "computing/algorithms/sorting/"
+    desc: { zh: "算法之间的差别不在能不能排，在比较次数如何随数据量增长。冒泡、选择、归并、快排、计数排序的每个计数都由真实代码当场数出——连大 O 的形状，都是从实测表里拟合出来的。", en: "Algorithms differ not in whether they sort, but in how their comparison counts grow with n. Bubble, selection, merge, quick and counting sort — every count produced live by real code, and the Big O shapes fitted from the measured table itself." },
+    tags: [{ zh: "排序算法", en: "Sorting" }, { zh: "大 O", en: "Big O" }, { zh: "分而治之", en: "Divide & Conquer" }, { zh: "算法", en: "Algorithm" }],
+    category: "computing", subtopic: "algorithms", stage: "university", status: "live", path: "computing/algorithms/sorting/"
   },
   {
     slug: "fractions",
     title: { zh: "分数 · 把整体切开来数", en: "Fractions · Cutting the Whole to Count" },
-    desc: {
-      zh: "分数不是两个数上下摆，是一个数：先看 1/2 与 2/4 叠合得严丝合缝，再到等值、比大小、加法先通分、假分数长过一条——运算全部用精确有理数，循环小数老老实实写 ≈。本站第一个小学学段页面。",
-      en: "A fraction is one number, not two stacked: watch 1/2 and 2/4 overlap pixel-perfectly, then equivalence, comparison, common denominators, and improper fractions longer than one bar — all arithmetic exact, repeating decimals honestly marked ≈. The site's first primary-school page."
-    },
-    tags: [
-      { zh: "等值分数", en: "Equivalent Fractions" },
-      { zh: "通分", en: "Common Denominators" },
-      { zh: "数轴", en: "Number Line" }
-    ],
-    category: "math", subtopic: "arithmetic",
-    stage: "primary",
-    status: "live",
-    path: "math/arithmetic/fractions/"
+    desc: { zh: "分数不是两个数上下摆，是一个数：先看 1/2 与 2/4 叠合得严丝合缝，再到等值、比大小、加法先通分、假分数长过一条——运算全部用精确有理数，循环小数老老实实写 ≈。本站第一个小学学段页面。", en: "A fraction is one number, not two stacked: watch 1/2 and 2/4 overlap pixel-perfectly, then equivalence, comparison, common denominators, and improper fractions longer than one bar — all arithmetic exact, repeating decimals honestly marked ≈. The site's first primary-school page." },
+    tags: [{ zh: "等值分数", en: "Equivalent Fractions" }, { zh: "通分", en: "Common Denominators" }, { zh: "数轴", en: "Number Line" }],
+    category: "math", subtopic: "arithmetic", stage: "primary", status: "live", path: "math/arithmetic/fractions/"
   },
   {
     slug: "pythagoras",
     title: { zh: "勾股定理 · 一步一交互", en: "The Pythagorean Theorem · One Interaction at a Time" },
-    desc: {
-      zh: "a²+b²=c² 不是背出来的：3-4-5 先露馅，再用面积灌注和拼图把等式拼出来，拖着顶点怎么拖都等，最后反过来判角、算梯子，并撞见怎么也写不尽的 √2。",
-      en: "a²+b²=c², earned rather than memorised: the 3-4-5 coincidence first, then area pouring and a jigsaw proof, dragging the vertex without breaking equality, classifying angles in reverse, a ladder problem, and finally √2 — the length no fraction can write."
-    },
-    tags: [
-      { zh: "拼图证明", en: "Jigsaw Proof" },
-      { zh: "直角三角形", en: "Right Triangles" },
-      { zh: "勾股数与 √2", en: "Triples & √2" }
-    ],
-    category: "math", subtopic: "geometry",
-    stage: "junior",
-    status: "live",
-    path: "math/geometry/pythagoras/"
+    desc: { zh: "a²+b²=c² 不是背出来的：3-4-5 先露馅，再用面积灌注和拼图把等式拼出来，拖着顶点怎么拖都等，最后反过来判角、算梯子，并撞见怎么也写不尽的 √2。", en: "a²+b²=c², earned rather than memorised: the 3-4-5 coincidence first, then area pouring and a jigsaw proof, dragging the vertex without breaking equality, classifying angles in reverse, a ladder problem, and finally √2 — the length no fraction can write." },
+    tags: [{ zh: "拼图证明", en: "Jigsaw Proof" }, { zh: "直角三角形", en: "Right Triangles" }, { zh: "勾股数与 √2", en: "Triples & √2" }],
+    category: "math", subtopic: "geometry", stage: "junior", status: "live", path: "math/geometry/pythagoras/"
   },
   {
     slug: "area-model",
     title: { zh: "乘法是面积 · 点阵铺成一块地", en: "Multiplication Is Area · Arrays Become a Tiled Floor" },
-    desc: {
-      zh: "先不背口诀，把乘法看成面积：点阵铺成地砖、转个方向读出交换律；一块地切一刀，13×17 自己拆成四块相加——这就是分配律和竖式的来历；最后拿 24 块砖反着拼，反找因数对。",
-      en: "Multiplication as area before memorised tables: dot arrays become tiled floors, a quarter-turn shows commutativity, and one cut through a plot splits 13×17 into four blocks that add back up — where the distributive law and the written algorithm come from; ends by factoring 24 tiles in reverse."
-    },
-    tags: [
-      { zh: "面积模型", en: "Area Model" },
-      { zh: "分配律", en: "Distributive Law" },
-      { zh: "因数对", en: "Factor Pairs" }
-    ],
-    category: "math", subtopic: "arithmetic",
-    stage: "primary",
-    status: "live",
-    path: "math/arithmetic/area-model/"
+    desc: { zh: "先不背口诀，把乘法看成面积：点阵铺成地砖、转个方向读出交换律；一块地切一刀，13×17 自己拆成四块相加——这就是分配律和竖式的来历；最后拿 24 块砖反着拼，反找因数对。", en: "Multiplication as area before memorised tables: dot arrays become tiled floors, a quarter-turn shows commutativity, and one cut through a plot splits 13×17 into four blocks that add back up — where the distributive law and the written algorithm come from; ends by factoring 24 tiles in reverse." },
+    tags: [{ zh: "面积模型", en: "Area Model" }, { zh: "分配律", en: "Distributive Law" }, { zh: "因数对", en: "Factor Pairs" }],
+    category: "math", subtopic: "arithmetic", stage: "primary", status: "live", path: "math/arithmetic/area-model/"
   },
   {
     slug: "perimeter-area",
     title: { zh: "周长 vs 面积 · 一根绳子两种账", en: "Perimeter vs Area · One Rope, Two Ledgers" },
-    desc: {
-      zh: "一根 24 米的绳子围地：绳子账（周长）怎么围都不变，地砖账（面积）却从 11 一路变到 36——越接近正方形越大；再反过来，面积固定时细长形状最费绳子。两个最容易混的量，这次分得清清楚楚。",
-      en: "Fence a plot with one 24-metre rope: the rope ledger (perimeter) never changes, but the tile ledger (area) runs from 11 all the way to 36 — the closer to a square, the bigger; then in reverse, fixed area costs the most rope when long and thin. Two quantities everyone mixes up, finally kept apart."
-    },
-    tags: [
-      { zh: "周长", en: "Perimeter" },
-      { zh: "面积比较", en: "Comparing Areas" },
-      { zh: "正方形最优", en: "The Square Wins" }
-    ],
-    category: "math", subtopic: "geometry",
-    stage: "primary",
-    status: "live",
-    path: "math/geometry/perimeter-area/"
+    desc: { zh: "一根 24 米的绳子围地：绳子账（周长）怎么围都不变，地砖账（面积）却从 11 一路变到 36——越接近正方形越大；再反过来，面积固定时细长形状最费绳子。两个最容易混的量，这次分得清清楚楚。", en: "Fence a plot with one 24-metre rope: the rope ledger (perimeter) never changes, but the tile ledger (area) runs from 11 all the way to 36 — the closer to a square, the bigger; then in reverse, fixed area costs the most rope when long and thin. Two quantities everyone mixes up, finally kept apart." },
+    tags: [{ zh: "周长", en: "Perimeter" }, { zh: "面积比较", en: "Comparing Areas" }, { zh: "正方形最优", en: "The Square Wins" }],
+    category: "math", subtopic: "geometry", stage: "primary", status: "live", path: "math/geometry/perimeter-area/"
   },
   {
     slug: "division-remainder",
     title: { zh: "除法与余数 · 分不完的那一点", en: "Division & Remainders · What Is Left Over" },
-    desc: {
-      zh: "分糖果分到最后总剩几颗：先动手一份一份发，再到数轴上一格一格跳——余数为什么必须比除数小，跳着跳着就明白了；然后是验算恒等式和星期几的循环，最后两道自测题收口。",
-      en: "Sharing sweets until a few are left over: deal them out one share at a time, then hop along the number line — and see for yourself why the remainder must stay smaller than the divisor; then the check identity, weekday cycles, and a two-question self-test."
-    },
-    tags: [
-      { zh: "余数", en: "Remainders" },
-      { zh: "验算恒等式", en: "The Check Identity" },
-      { zh: "周期循环", en: "Cycles" }
-    ],
-    category: "math", subtopic: "arithmetic",
-    stage: "primary",
-    status: "live",
-    path: "math/arithmetic/division-remainder/"
+    desc: { zh: "分糖果分到最后总剩几颗：先动手一份一份发，再到数轴上一格一格跳——余数为什么必须比除数小，跳着跳着就明白了；然后是验算恒等式和星期几的循环，最后两道自测题收口。", en: "Sharing sweets until a few are left over: deal them out one share at a time, then hop along the number line — and see for yourself why the remainder must stay smaller than the divisor; then the check identity, weekday cycles, and a two-question self-test." },
+    tags: [{ zh: "余数", en: "Remainders" }, { zh: "验算恒等式", en: "The Check Identity" }, { zh: "周期循环", en: "Cycles" }],
+    category: "math", subtopic: "arithmetic", stage: "primary", status: "live", path: "math/arithmetic/division-remainder/"
   },
   {
     slug: "linear-functions",
     title: { zh: "一次函数 · 斜率是陡缓，截距是起点", en: "Linear Functions · Slope Is Steepness, Intercept Is the Start" },
-    desc: {
-      zh: "y=kx+b 不背公式，先拖出来：落点一格一格等高抬升、连成直线，k 就是坡的陡缓；整条线上下平移，b 就是还没出发就站的高度；最后两条线相遇，交点同时满足两个方程——平行和重合两种特例也亲手摆得出来。",
-      en: "y = kx + b, earned by dragging instead of rote: points rising by equal steps line up straight — k is the steepness; slide the whole line up or down and b is the height you start from before moving; and when two lines meet, their crossing point satisfies both equations at once, with parallel and coincident cases reachable by hand."
-    },
-    tags: [
-      { zh: "斜率", en: "Slope" },
-      { zh: "截距", en: "Intercept" },
-      { zh: "交点", en: "Intersection" }
-    ],
-    category: "math", subtopic: "algebra",
-    stage: "junior",
-    status: "live",
-    path: "math/algebra/linear-functions/"
+    desc: { zh: "y=kx+b 不背公式，先拖出来：落点一格一格等高抬升、连成直线，k 就是坡的陡缓；整条线上下平移，b 就是还没出发就站的高度；最后两条线相遇，交点同时满足两个方程——平行和重合两种特例也亲手摆得出来。", en: "y = kx + b, earned by dragging instead of rote: points rising by equal steps line up straight — k is the steepness; slide the whole line up or down and b is the height you start from before moving; and when two lines meet, their crossing point satisfies both equations at once, with parallel and coincident cases reachable by hand." },
+    tags: [{ zh: "斜率", en: "Slope" }, { zh: "截距", en: "Intercept" }, { zh: "交点", en: "Intersection" }],
+    category: "math", subtopic: "algebra", stage: "junior", status: "live", path: "math/algebra/linear-functions/"
   },
   {
     slug: "symmetry-rotation",
     title: { zh: "对称与旋转 · 对折与转圈", en: "Symmetry & Rotation · Folding and Turning" },
-    desc: {
-      zh: "沿一条线对折、两边严丝合缝，那条线就是对称轴；转过一个角度又变回自己，那是旋转对称。正方形有 4 条轴，平行四边形一条都没有、却转半圈就重合——最后开一台万花筒，只画一小块，图案自己长满。",
-      en: "Fold along a line and the two halves match exactly — that line is an axis of symmetry; turn through the right angle and the shape is itself again — rotational symmetry. A square has 4 axes; a parallelogram has none, yet matches itself after half a turn. At the end, a kaleidoscope grows a full pattern from one small wedge you draw."
-    },
-    tags: [
-      { zh: "对称轴", en: "Axes of Symmetry" },
-      { zh: "旋转对称", en: "Rotational Symmetry" },
-      { zh: "万花筒", en: "Kaleidoscope" }
-    ],
-    category: "math", subtopic: "geometry",
-    stage: "primary",
-    status: "live",
-    path: "math/geometry/symmetry-rotation/"
+    desc: { zh: "沿一条线对折、两边严丝合缝，那条线就是对称轴；转过一个角度又变回自己，那是旋转对称。正方形有 4 条轴，平行四边形一条都没有、却转半圈就重合——最后开一台万花筒，只画一小块，图案自己长满。", en: "Fold along a line and the two halves match exactly — that line is an axis of symmetry; turn through the right angle and the shape is itself again — rotational symmetry. A square has 4 axes; a parallelogram has none, yet matches itself after half a turn. At the end, a kaleidoscope grows a full pattern from one small wedge you draw." },
+    tags: [{ zh: "对称轴", en: "Axes of Symmetry" }, { zh: "旋转对称", en: "Rotational Symmetry" }, { zh: "万花筒", en: "Kaleidoscope" }],
+    category: "math", subtopic: "geometry", stage: "primary", status: "live", path: "math/geometry/symmetry-rotation/"
   },
   {
     slug: "parabola",
     title: { zh: "抛物线 · 投篮的弧线", en: "Parabolas · The Arc of a Shot" },
-    desc: {
-      zh: "投篮的弧线就是抛物线：a 管开口方向与胖瘦；写成顶点式，顶点和对称轴直接写在式子的脸上，随着滑杆搬家；球最后落在哪里，就是图与 x 轴的交点——两个、一个，还是一个都没有，拖一拖全摆得出来。",
-      en: "A basketball's arc is a parabola: a sets the opening direction and width; written in vertex form, the curve wears its vertex and axis of symmetry on its face and moves house as you drag; and where the ball lands is exactly where the curve meets the x-axis — two crossings, one touch, or none at all, every case reachable by hand."
-    },
-    tags: [
-      { zh: "顶点式", en: "Vertex Form" },
-      { zh: "对称轴", en: "Axis of Symmetry" },
-      { zh: "与 x 轴交点", en: "X-Intercepts" }
-    ],
-    category: "math", subtopic: "algebra",
-    stage: "junior",
-    status: "live",
-    path: "math/algebra/parabola/"
+    desc: { zh: "投篮的弧线就是抛物线：a 管开口方向与胖瘦；写成顶点式，顶点和对称轴直接写在式子的脸上，随着滑杆搬家；球最后落在哪里，就是图与 x 轴的交点——两个、一个，还是一个都没有，拖一拖全摆得出来。", en: "A basketball's arc is a parabola: a sets the opening direction and width; written in vertex form, the curve wears its vertex and axis of symmetry on its face and moves house as you drag; and where the ball lands is exactly where the curve meets the x-axis — two crossings, one touch, or none at all, every case reachable by hand." },
+    tags: [{ zh: "顶点式", en: "Vertex Form" }, { zh: "对称轴", en: "Axis of Symmetry" }, { zh: "与 x 轴交点", en: "X-Intercepts" }],
+    category: "math", subtopic: "algebra", stage: "junior", status: "live", path: "math/algebra/parabola/"
   },
   {
     slug: "velocity-vt",
     title: { zh: "速度与 v-t 图 · 面积就是路", en: "Speed and the v–t Graph · Area Is Distance" },
-    desc: {
-      zh: "先看一场赛跑：位置—时间图像的陡缓就是快慢；换上速度—时间图像，看的是高低、不是陡缓；图像下方的面积，数出来正是走过的路——把加速段切成 4 条、8 条、16 条窄条，台阶和会一步步贴近真路程。",
-      en: "Start with a race: on a position–time graph, steepness is speed. Switch to a velocity–time graph and you read height, not steepness — and the area under the graph counts out exactly the distance travelled. Slice the speeding-up stretch into 4, 8, 16 thin strips and watch the step sums close in on the true distance."
-    },
-    tags: [
-      { zh: "位置—时间图", en: "Position–Time Graph" },
-      { zh: "速度—时间图", en: "Velocity–Time Graph" },
-      { zh: "图像下面积", en: "Area Under Graph" }
-    ],
-    category: "physics", subtopic: "mechanics",
-    stage: "junior",
-    status: "live",
-    path: "physics/mechanics/velocity-vt/"
+    desc: { zh: "先看一场赛跑：位置—时间图像的陡缓就是快慢；换上速度—时间图像，看的是高低、不是陡缓；图像下方的面积，数出来正是走过的路——把加速段切成 4 条、8 条、16 条窄条，台阶和会一步步贴近真路程。", en: "Start with a race: on a position–time graph, steepness is speed. Switch to a velocity–time graph and you read height, not steepness — and the area under the graph counts out exactly the distance travelled. Slice the speeding-up stretch into 4, 8, 16 thin strips and watch the step sums close in on the true distance." },
+    tags: [{ zh: "位置—时间图", en: "Position–Time Graph" }, { zh: "速度—时间图", en: "Velocity–Time Graph" }, { zh: "图像下面积", en: "Area Under Graph" }],
+    category: "physics", subtopic: "mechanics", stage: "junior", status: "live", path: "physics/mechanics/velocity-vt/"
   },
   {
     slug: "integral",
     title: { zh: "定积分 · 把小条加回整体", en: "The Definite Integral · Adding the Strips Back Up" },
-    desc: {
-      zh: "曲边围成的面积没有公式可套——那就切：把曲线下切成 1、2、4…32 条长方形，左和与右和从两边夹住真值，缝越切越窄；条无限细时两边贴到的那个数就是定积分。而求它有捷径：找到导数是它自己的那个函数，积分与导数就此接头。",
-      en: "No formula fits an area under a curve — so slice it: cut the region into 1, 2, 4 … 32 rectangles, let the left and right sums squeeze the true value from both sides, and watch the gap narrow. The number both sides close in on is the definite integral — and there is a shortcut: find the function whose derivative it is, and integration shakes hands with differentiation."
-    },
-    tags: [
-      { zh: "黎曼和", en: "Riemann Sums" },
-      { zh: "左右夹逼", en: "Squeezing Sums" },
-      { zh: "原函数", en: "Antiderivative" }
-    ],
-    category: "math", subtopic: "calculus",
-    stage: "senior",
-    status: "live",
-    path: "math/calculus/integral/"
+    desc: { zh: "曲边围成的面积没有公式可套——那就切：把曲线下切成 1、2、4…32 条长方形，左和与右和从两边夹住真值，缝越切越窄；条无限细时两边贴到的那个数就是定积分。而求它有捷径：找到导数是它自己的那个函数，积分与导数就此接头。", en: "No formula fits an area under a curve — so slice it: cut the region into 1, 2, 4 … 32 rectangles, let the left and right sums squeeze the true value from both sides, and watch the gap narrow. The number both sides close in on is the definite integral — and there is a shortcut: find the function whose derivative it is, and integration shakes hands with differentiation." },
+    tags: [{ zh: "黎曼和", en: "Riemann Sums" }, { zh: "左右夹逼", en: "Squeezing Sums" }, { zh: "原函数", en: "Antiderivative" }],
+    category: "math", subtopic: "calculus", stage: "senior", status: "live", path: "math/calculus/integral/"
   },
   {
     slug: "reflection-refraction",
     title: { zh: "光的反射与折射 · 拐弯的规矩", en: "Reflection & Refraction · How Light Bends" },
-    desc: {
-      zh: "光撞上界面会拐弯，拐多少有规矩：反射角等于入射角、而且都从法线量起；进了水会偏向法线；从水里往外射、角度太陡还会全部反射回去；连鱼在水里的位置都是假的——眼睛看到的虚像比真身浅。",
-      en: "Light bends at a boundary, and the bending follows rules: the angle of reflection equals the angle of incidence, and both are measured from the normal; entering water it bends toward the normal; leaving water too steeply, it reflects entirely back. Even a fish is not where it looks — the virtual image your eye sees sits shallower than the fish itself."
-    },
-    tags: [
-      { zh: "反射定律", en: "Law of Reflection" },
-      { zh: "折射与斯涅尔定律", en: "Snell's Law" },
-      { zh: "全反射", en: "Total Internal Reflection" }
-    ],
-    category: "physics", subtopic: "optics",
-    stage: "junior",
-    status: "live",
-    path: "physics/optics/reflection-refraction/"
+    desc: { zh: "光撞上界面会拐弯，拐多少有规矩：反射角等于入射角、而且都从法线量起；进了水会偏向法线；从水里往外射、角度太陡还会全部反射回去；连鱼在水里的位置都是假的——眼睛看到的虚像比真身浅。", en: "Light bends at a boundary, and the bending follows rules: the angle of reflection equals the angle of incidence, and both are measured from the normal; entering water it bends toward the normal; leaving water too steeply, it reflects entirely back. Even a fish is not where it looks — the virtual image your eye sees sits shallower than the fish itself." },
+    tags: [{ zh: "反射定律", en: "Law of Reflection" }, { zh: "折射与斯涅尔定律", en: "Snell's Law" }, { zh: "全反射", en: "Total Internal Reflection" }],
+    category: "physics", subtopic: "optics", stage: "junior", status: "live", path: "physics/optics/reflection-refraction/"
   },
   {
     slug: "derivative",
     title: { zh: "导数 · 把平均压成此刻", en: "The Derivative · Squeezing the Average into the Instant" },
-    desc: {
-      zh: "平均速度谁都会算，可「这一刻」有多快？把区间一点点缩向那一刻：割线从左右两侧靠拢成切线，斜率收敛到的那个数，就是导数。沿着曲线每一点都量一遍，导数们自己又排成一条新曲线——导函数出场。",
-      en: "Anyone can compute an average speed — but how fast is it right now? Shrink the interval toward the instant: the secant line closes in from both sides into the tangent, and the number its slope settles on is the derivative. Measure it at every point along the curve and the derivatives line up into a new curve of their own — the derivative function."
-    },
-    tags: [
-      { zh: "割线逼近切线", en: "Secant to Tangent" },
-      { zh: "瞬时变化率", en: "Instantaneous Rate" },
-      { zh: "导函数", en: "Derivative Function" }
-    ],
-    category: "math", subtopic: "calculus",
-    stage: "senior",
-    status: "live",
-    path: "math/calculus/derivative/"
+    desc: { zh: "平均速度谁都会算，可「这一刻」有多快？把区间一点点缩向那一刻：割线从左右两侧靠拢成切线，斜率收敛到的那个数，就是导数。沿着曲线每一点都量一遍，导数们自己又排成一条新曲线——导函数出场。", en: "Anyone can compute an average speed — but how fast is it right now? Shrink the interval toward the instant: the secant line closes in from both sides into the tangent, and the number its slope settles on is the derivative. Measure it at every point along the curve and the derivatives line up into a new curve of their own — the derivative function." },
+    tags: [{ zh: "割线逼近切线", en: "Secant to Tangent" }, { zh: "瞬时变化率", en: "Instantaneous Rate" }, { zh: "导函数", en: "Derivative Function" }],
+    category: "math", subtopic: "calculus", stage: "senior", status: "live", path: "math/calculus/derivative/"
   },
   {
     slug: "lens",
     title: { zh: "凸透镜成像 · 远近变像", en: "The Convex Lens · Near or Far, the Image Transforms" },
-    desc: {
-      zh: "蜡烛离凸透镜的远近一变，像的大小、正倒、实虚全跟着变：越过二倍焦距，像由大变小；越过一倍焦距，像从光屏上跳进眼睛里——实像能被屏接住，虚像接不住、只能看。三条特殊光线，就能把像画出来。",
-      en: "Slide a candle toward a convex lens and everything about its image changes — size, orientation, real or virtual. Cross twice the focal length and the image starts shrinking; cross one focal length and it leaps off the screen into your eye: a real image can be caught on a screen, a virtual one can only be seen. Three special rays are all it takes to draw exactly where the image lands."
-    },
-    tags: [
-      { zh: "焦距", en: "Focal Length" },
-      { zh: "实像与虚像", en: "Real & Virtual Images" },
-      { zh: "放大镜", en: "The Magnifier" }
-    ],
-    category: "physics", subtopic: "optics",
-    stage: "junior",
-    status: "live",
-    path: "physics/optics/lens/"
+    desc: { zh: "蜡烛离凸透镜的远近一变，像的大小、正倒、实虚全跟着变：越过二倍焦距，像由大变小；越过一倍焦距，像从光屏上跳进眼睛里——实像能被屏接住，虚像接不住、只能看。三条特殊光线，就能把像画出来。", en: "Slide a candle toward a convex lens and everything about its image changes — size, orientation, real or virtual. Cross twice the focal length and the image starts shrinking; cross one focal length and it leaps off the screen into your eye: a real image can be caught on a screen, a virtual one can only be seen. Three special rays are all it takes to draw exactly where the image lands." },
+    tags: [{ zh: "焦距", en: "Focal Length" }, { zh: "实像与虚像", en: "Real & Virtual Images" }, { zh: "放大镜", en: "The Magnifier" }],
+    category: "physics", subtopic: "optics", stage: "junior", status: "live", path: "physics/optics/lens/"
   },
   {
     slug: "interference",
     title: { zh: "波的干涉 · 闹与静的图样", en: "Interference · A Pattern of Loud and Still" },
-    desc: {
-      zh: "两列波相遇，每一点的振动就是两者相加：步调一致的地方更闹，步调相反的地方反而安静——而且静点永远静、响点永远响。决定加强还是抵消的，是到两个波源的路程差：整数倍波长加强，半整数倍抵消，图样由几何定死。",
-      en: "When two waves meet, every point's motion is the sum of both: where they arrive in step, the motion doubles; where they arrive out of step, it cancels — and the still points stay still forever. The decider is the path difference to the two sources: whole wavelengths reinforce, half wavelengths cancel, and the pattern is fixed by geometry."
-    },
-    tags: [
-      { zh: "叠加原理", en: "Superposition" },
-      { zh: "路程差", en: "Path Difference" },
-      { zh: "干涉图样", en: "Interference Pattern" }
-    ],
-    category: "physics", subtopic: "waves",
-    stage: "senior",
-    status: "live",
-    path: "physics/waves/interference/"
+    desc: { zh: "两列波相遇，每一点的振动就是两者相加：步调一致的地方更闹，步调相反的地方反而安静——而且静点永远静、响点永远响。决定加强还是抵消的，是到两个波源的路程差：整数倍波长加强，半整数倍抵消，图样由几何定死。", en: "When two waves meet, every point's motion is the sum of both: where they arrive in step, the motion doubles; where they arrive out of step, it cancels — and the still points stay still forever. The decider is the path difference to the two sources: whole wavelengths reinforce, half wavelengths cancel, and the pattern is fixed by geometry." },
+    tags: [{ zh: "叠加原理", en: "Superposition" }, { zh: "路程差", en: "Path Difference" }, { zh: "干涉图样", en: "Interference Pattern" }],
+    category: "physics", subtopic: "waves", stage: "senior", status: "live", path: "physics/waves/interference/"
   },
   {
     slug: "exponents-logarithms",
     title: { zh: "指数与对数 · 翻倍与逆问", en: "Exponentials & Logarithms · Doubling and the Reverse Question" },
-    desc: {
-      zh: "每小时翻一倍，24 小时就是一千六百多万——指数增长为什么这么猛？反过来问「2 的几次方等于 6」，那个答案就是对数：它不是没算完的小数，而是一个准确的名字。在对数尺上，乘法会变成加法——这就是对数尺的本事。",
-      en: "Doubling every hour gives over sixteen million in a day — why is exponential growth so fierce? Ask the question backwards — 2 to what power makes 6? — and the answer is a logarithm: not an unfinished decimal, but an exact name for the exponent. And on a log scale, multiplication turns into addition."
-    },
-    tags: [
-      { zh: "指数增长", en: "Exponential Growth" },
-      { zh: "对数", en: "Logarithms" },
-      { zh: "对数尺", en: "Log Scale" }
-    ],
-    category: "math", subtopic: "algebra",
-    stage: "senior",
-    status: "live",
-    path: "math/algebra/exponents-logarithms/"
+    desc: { zh: "每小时翻一倍，24 小时就是一千六百多万——指数增长为什么这么猛？反过来问「2 的几次方等于 6」，那个答案就是对数：它不是没算完的小数，而是一个准确的名字。在对数尺上，乘法会变成加法——这就是对数尺的本事。", en: "Doubling every hour gives over sixteen million in a day — why is exponential growth so fierce? Ask the question backwards — 2 to what power makes 6? — and the answer is a logarithm: not an unfinished decimal, but an exact name for the exponent. And on a log scale, multiplication turns into addition." },
+    tags: [{ zh: "指数增长", en: "Exponential Growth" }, { zh: "对数", en: "Logarithms" }, { zh: "对数尺", en: "Log Scale" }],
+    category: "math", subtopic: "algebra", stage: "senior", status: "live", path: "math/algebra/exponents-logarithms/"
   },
   {
     slug: "circle-angles",
     title: { zh: "圆周角 · 为什么恰好是一半", en: "Inscribed Angles · Why Exactly Half" },
-    desc: {
-      zh: "圆上一点看一条弧，张角永远是圆心看它的恰好一半——拖着点满圆跑都变不了。连一条半径，两个等腰三角形把这一半算得明明白白；弧过半圈，张角正好是直角。",
-      en: "From any point on the circle, an arc subtends exactly half the angle it subtends at the centre — drag the point all the way round and it never changes. One extra radius splits the proof into two isosceles triangles; and once the arc passes a semicircle, the angle is exactly a right angle."
-    },
-    tags: [
-      { zh: "圆周角", en: "Inscribed Angle" },
-      { zh: "圆心角", en: "Central Angle" },
-      { zh: "等腰三角形证明", en: "Isosceles Proof" }
-    ],
-    category: "math", subtopic: "geometry",
-    stage: "junior",
-    status: "live",
-    path: "math/geometry/circle-angles/"
+    desc: { zh: "圆上一点看一条弧，张角永远是圆心看它的恰好一半——拖着点满圆跑都变不了。连一条半径，两个等腰三角形把这一半算得明明白白；弧过半圈，张角正好是直角。", en: "From any point on the circle, an arc subtends exactly half the angle it subtends at the centre — drag the point all the way round and it never changes. One extra radius splits the proof into two isosceles triangles; and once the arc passes a semicircle, the angle is exactly a right angle." },
+    tags: [{ zh: "圆周角", en: "Inscribed Angle" }, { zh: "圆心角", en: "Central Angle" }, { zh: "等腰三角形证明", en: "Isosceles Proof" }],
+    category: "math", subtopic: "geometry", stage: "junior", status: "live", path: "math/geometry/circle-angles/"
   },
   {
     slug: "complex-numbers",
     title: { zh: "复数 · 平面上的旋转", en: "Complex Numbers · Rotation on the Plane" },
-    desc: {
-      zh: "复数不是硬凑出来的数：a+bi 就是平面上的一个点。乘以 i，是把这个点逆时针转 90°；一般的乘法是模相乘、角相加。代数算一遍、几何看一遍，两条路永远同一个答案。",
-      en: "A complex number is not an invented patch: a+bi is a point on the plane. Multiplying by i rotates that point 90° counterclockwise; multiplication in general multiplies the moduli and adds the angles. Compute it algebraically, watch it geometrically — both roads always land on the same answer."
-    },
-    tags: [
-      { zh: "复数平面", en: "Complex Plane" },
-      { zh: "乘 i 是旋转", en: "Multiplying by i" },
-      { zh: "模与辐角", en: "Modulus & Argument" }
-    ],
-    category: "math", subtopic: "algebra",
-    stage: "senior",
-    status: "live",
-    path: "math/algebra/complex-numbers/"
+    desc: { zh: "复数不是硬凑出来的数：a+bi 就是平面上的一个点。乘以 i，是把这个点逆时针转 90°；一般的乘法是模相乘、角相加。代数算一遍、几何看一遍，两条路永远同一个答案。", en: "A complex number is not an invented patch: a+bi is a point on the plane. Multiplying by i rotates that point 90° counterclockwise; multiplication in general multiplies the moduli and adds the angles. Compute it algebraically, watch it geometrically — both roads always land on the same answer." },
+    tags: [{ zh: "复数平面", en: "Complex Plane" }, { zh: "乘 i 是旋转", en: "Multiplying by i" }, { zh: "模与辐角", en: "Modulus & Argument" }],
+    category: "math", subtopic: "algebra", stage: "senior", status: "live", path: "math/algebra/complex-numbers/"
   },
   {
     slug: "standing-wave",
     title: { zh: "驻波 · 原地起伏的波", en: "Standing Waves · The Wave That Stays in Place" },
-    desc: {
-      zh: "两列相同的波迎面相遇，波形不再前进，只在原地起伏：有些点永远不动（波节），有些点振幅翻倍（波腹）。两端固定的弦只放行 L=nλ/2 的台阶，驱动频率踩中台阶，就会共振。",
-      en: "Two identical waves travelling towards each other lock into a pattern that no longer travels — it only rises and falls in place: some points never move (nodes), others swing with double amplitude (antinodes). A string fixed at both ends admits only L = nλ/2, and driving it on one of those steps is resonance."
-    },
-    tags: [
-      { zh: "驻波", en: "Standing Wave" },
-      { zh: "波节与波腹", en: "Nodes & Antinodes" },
-      { zh: "共振", en: "Resonance" }
-    ],
-    category: "physics", subtopic: "waves",
-    stage: "senior",
-    status: "live",
-    path: "physics/waves/standing-wave/"
+    desc: { zh: "两列相同的波迎面相遇，波形不再前进，只在原地起伏：有些点永远不动（波节），有些点振幅翻倍（波腹）。两端固定的弦只放行 L=nλ/2 的台阶，驱动频率踩中台阶，就会共振。", en: "Two identical waves travelling towards each other lock into a pattern that no longer travels — it only rises and falls in place: some points never move (nodes), others swing with double amplitude (antinodes). A string fixed at both ends admits only L = nλ/2, and driving it on one of those steps is resonance." },
+    tags: [{ zh: "驻波", en: "Standing Wave" }, { zh: "波节与波腹", en: "Nodes & Antinodes" }, { zh: "共振", en: "Resonance" }],
+    category: "physics", subtopic: "waves", stage: "senior", status: "live", path: "physics/waves/standing-wave/"
   },
   {
     slug: "negative-numbers",
     title: { zh: "负数 · 0 以下的世界", en: "Negative Numbers · The World Below Zero" },
-    desc: {
-      zh: "温度计掉到 0 以下、电梯下到 B1——负数记的是「在基准的另一边、还差多少」。放上数轴一比就懂：越往左越小，所以 −3 比 −7 暖和。这一页只讲现象和比较，不背法则。",
-      en: "Thermometers drop below zero and lifts go down to B1 — negative numbers record 'on the other side of the reference point, and by how much'. Put them on a number line and it clicks: further left means smaller, so −3 is warmer than −7. This page is phenomena and comparison only — no rules to memorise."
-    },
-    tags: [
-      { zh: "数轴", en: "Number Line" },
-      { zh: "温度与楼层", en: "Temperature & Floors" },
-      { zh: "比大小", en: "Comparing" }
-    ],
-    category: "math", subtopic: "arithmetic",
-    stage: "primary",
-    status: "live",
-    path: "math/arithmetic/negative-numbers/"
+    desc: { zh: "温度计掉到 0 以下、电梯下到 B1——负数记的是「在基准的另一边、还差多少」。放上数轴一比就懂：越往左越小，所以 −3 比 −7 暖和。这一页只讲现象和比较，不背法则。", en: "Thermometers drop below zero and lifts go down to B1 — negative numbers record 'on the other side of the reference point, and by how much'. Put them on a number line and it clicks: further left means smaller, so −3 is warmer than −7. This page is phenomena and comparison only — no rules to memorise." },
+    tags: [{ zh: "数轴", en: "Number Line" }, { zh: "温度与楼层", en: "Temperature & Floors" }, { zh: "比大小", en: "Comparing" }],
+    category: "math", subtopic: "arithmetic", stage: "primary", status: "live", path: "math/arithmetic/negative-numbers/"
   },
   {
     slug: "pinhole-camera",
     title: { zh: "小孔成像 · 一个孔的相机", en: "Pinhole Camera · A Camera With One Tiny Hole" },
-    desc: {
-      zh: "没有镜头，只有一个小孔，屏幕上却出现一幅倒过来的画：光沿直线走，物上每一点的光只能穿过小孔落到屏上一个地方。像高由物距、像距的比定死，孔大了画会糊成一片光斑。",
-      en: "No lens, just a tiny hole — yet an upside-down picture appears on the screen: light travels straight, so light from each point of the object can pass the hole and land in exactly one place. Image height is fixed by the ratio of the two distances, and a bigger hole blurs the picture into a patch of light."
-    },
-    tags: [
-      { zh: "光的直线传播", en: "Straight-Line Light" },
-      { zh: "倒立的像", en: "Inverted Image" },
-      { zh: "相似三角形", en: "Similar Triangles" }
-    ],
-    category: "physics", subtopic: "optics",
-    stage: "primary",
-    status: "live",
-    path: "physics/optics/pinhole-camera/"
+    desc: { zh: "没有镜头，只有一个小孔，屏幕上却出现一幅倒过来的画：光沿直线走，物上每一点的光只能穿过小孔落到屏上一个地方。像高由物距、像距的比定死，孔大了画会糊成一片光斑。", en: "No lens, just a tiny hole — yet an upside-down picture appears on the screen: light travels straight, so light from each point of the object can pass the hole and land in exactly one place. Image height is fixed by the ratio of the two distances, and a bigger hole blurs the picture into a patch of light." },
+    tags: [{ zh: "光的直线传播", en: "Straight-Line Light" }, { zh: "倒立的像", en: "Inverted Image" }, { zh: "相似三角形", en: "Similar Triangles" }],
+    category: "physics", subtopic: "optics", stage: "primary", status: "live", path: "physics/optics/pinhole-camera/"
   },
   {
     slug: "space-diagonal",
     title: { zh: "空间对角线 · 3D 里的两次勾股", en: "The Space Diagonal · Pythagoras Twice, in 3D" },
-    desc: {
-      zh: "长方体里最长的那条斜线有多长？把立体压回平面算两次：先在底面用勾股算出对角线，再拿它当一条直角边、竖起高来第二次勾股。拖动 3D 长方体转着看，两次勾股都写在真实的棱上。",
-      en: "How long is the longest line inside a box? Flatten the solid back into planes and apply Pythagoras twice: first across the base, then using that diagonal as one leg of a vertical right triangle. Orbit the 3D cuboid and watch both applications drawn on the real edges."
-    },
-    tags: [
-      { zh: "3D 互动", en: "Interactive 3D" },
-      { zh: "勾股定理", en: "Pythagoras" },
-      { zh: "长方体", en: "Cuboid" }
-    ],
-    category: "math", subtopic: "geometry",
-    stage: "junior",
-    status: "live",
-    path: "math/geometry/space-diagonal/"
+    desc: { zh: "长方体里最长的那条斜线有多长？把立体压回平面算两次：先在底面用勾股算出对角线，再拿它当一条直角边、竖起高来第二次勾股。拖动 3D 长方体转着看，两次勾股都写在真实的棱上。", en: "How long is the longest line inside a box? Flatten the solid back into planes and apply Pythagoras twice: first across the base, then using that diagonal as one leg of a vertical right triangle. Orbit the 3D cuboid and watch both applications drawn on the real edges." },
+    tags: [{ zh: "3D 互动", en: "Interactive 3D" }, { zh: "勾股定理", en: "Pythagoras" }, { zh: "长方体", en: "Cuboid" }],
+    category: "math", subtopic: "geometry", stage: "junior", status: "live", path: "math/geometry/space-diagonal/"
   },
   {
     slug: "coordinate-plane",
     title: { zh: "坐标系 · 点的地址", en: "The Coordinate Plane · Addresses for Points" },
-    desc: {
-      zh: "给平面定一个原点、两条轴，每个点就有了一个地址 (x, y)。换原点，点没动、地址全变；横纵一换位，点沿对角线翻到对面。这套地址系统，是所有函数图像的地基。",
-      en: "Fix an origin and two axes, and every point on the plane gets an address (x, y). Move the origin and the points stay exactly where they are while every address shifts; swap the two coordinates and the point flips across the diagonal. This address system is the groundwork under every function graph."
-    },
-    tags: [
-      { zh: "原点与坐标轴", en: "Origin & Axes" },
-      { zh: "象限", en: "Quadrants" },
-      { zh: "坐标换位", en: "Swapping Coordinates" }
-    ],
-    category: "math", subtopic: "algebra",
-    stage: "junior",
-    status: "live",
-    path: "math/algebra/coordinate-plane/"
+    desc: { zh: "给平面定一个原点、两条轴，每个点就有了一个地址 (x, y)。换原点，点没动、地址全变；横纵一换位，点沿对角线翻到对面。这套地址系统，是所有函数图像的地基。", en: "Fix an origin and two axes, and every point on the plane gets an address (x, y). Move the origin and the points stay exactly where they are while every address shifts; swap the two coordinates and the point flips across the diagonal. This address system is the groundwork under every function graph." },
+    tags: [{ zh: "原点与坐标轴", en: "Origin & Axes" }, { zh: "象限", en: "Quadrants" }, { zh: "坐标换位", en: "Swapping Coordinates" }],
+    category: "math", subtopic: "algebra", stage: "junior", status: "live", path: "math/algebra/coordinate-plane/"
   },
   {
     slug: "particles-states",
     title: { zh: "粒子与物态 · 热闹程度即温度", en: "Particles & States · Temperature Is How Wildly They Move" },
-    desc: {
-      zh: "把物质放大到一颗颗粒子：挤在一起原地抖的是固体，松开能流动的是液体，满屋乱飞的是气体。加热就是让粒子动得更野——温度不是另一样东西，它就是粒子平均动得有多快。升温到熔点、沸点还会各卡一段平台。",
-      en: "Zoom into matter as individual particles: packed and jiggling in place is a solid, loosened and flowing is a liquid, flying everywhere is a gas. Heating just makes the particles move more wildly — temperature is not a separate thing, it is how fast they move on average. And at the melting and boiling points, the temperature stalls on a plateau."
-    },
-    tags: [
-      { zh: "粒子模型", en: "Particle Model" },
-      { zh: "固液气", en: "Solid, Liquid, Gas" },
-      { zh: "熔化与沸腾平台", en: "Melting & Boiling Plateaus" }
-    ],
-    category: "chemistry", subtopic: "matter",
-    stage: "junior",
-    status: "live",
-    path: "chemistry/matter/particles-states/"
+    desc: { zh: "把物质放大到一颗颗粒子：挤在一起原地抖的是固体，松开能流动的是液体，满屋乱飞的是气体。加热就是让粒子动得更野——温度不是另一样东西，它就是粒子平均动得有多快。升温到熔点、沸点还会各卡一段平台。", en: "Zoom into matter as individual particles: packed and jiggling in place is a solid, loosened and flowing is a liquid, flying everywhere is a gas. Heating just makes the particles move more wildly — temperature is not a separate thing, it is how fast they move on average. And at the melting and boiling points, the temperature stalls on a plateau." },
+    tags: [{ zh: "粒子模型", en: "Particle Model" }, { zh: "固液气", en: "Solid, Liquid, Gas" }, { zh: "熔化与沸腾平台", en: "Melting & Boiling Plateaus" }],
+    category: "chemistry", subtopic: "matter", stage: "junior", status: "live", path: "chemistry/matter/particles-states/"
   },
   {
     slug: "atomic-structure",
     title: { zh: "原子结构 · 质子数定它是谁", en: "Atomic Structure · The Proton Count Decides What It Is" },
-    desc: {
-      zh: "原子不是实心球：中间一个极小的核几乎占了全部质量，电子在外面按层排布。质子数定它是谁，最外层电子数定它活泼不活泼——改数字、当场算，全部账都摆在明处。",
-      en: "An atom is not a solid ball: a tiny nucleus at the centre holds almost all the mass, and electrons arrange themselves in layers outside it. The proton count decides what it is; the outermost electron count decides how reactive it is — change the numbers and watch everything recompute."
-    },
-    tags: [
-      { zh: "质子数与元素", en: "Protons & Elements" },
-      { zh: "电子层排布", en: "Electron Layers" },
-      { zh: "离子与电荷", en: "Ions & Charge" }
-    ],
-    category: "chemistry", subtopic: "matter",
-    stage: "junior",
-    status: "live",
-    path: "chemistry/matter/atomic-structure/"
+    desc: { zh: "原子不是实心球：中间一个极小的核几乎占了全部质量，电子在外面按层排布。质子数定它是谁，最外层电子数定它活泼不活泼——改数字、当场算，全部账都摆在明处。", en: "An atom is not a solid ball: a tiny nucleus at the centre holds almost all the mass, and electrons arrange themselves in layers outside it. The proton count decides what it is; the outermost electron count decides how reactive it is — change the numbers and watch everything recompute." },
+    tags: [{ zh: "质子数与元素", en: "Protons & Elements" }, { zh: "电子层排布", en: "Electron Layers" }, { zh: "离子与电荷", en: "Ions & Charge" }],
+    category: "chemistry", subtopic: "matter", stage: "junior", status: "live", path: "chemistry/matter/atomic-structure/"
   },
   {
     slug: "lever-pulley",
     title: { zh: "杠杆与滑轮 · 支点挪一挪，省力见分晓", en: "Levers & Pulleys · Move the Fulcrum, Feel the Trade" },
-    desc: {
-      zh: "小力凭什么撬动大物？这一页算两本账。转动的账看力矩：力 × 力臂，两边相等就平衡——支点挪一挪，同样的重物要用的力立刻变。可省力从不是白省：功的账本两边永远相等，省几倍力就费几倍距离。到了滑轮组更干脆，不用算，数一数吊着重物的绳子段数，就知道省几倍力。全页 g 取 10 N/kg，力一律用牛顿（N）。",
-      en: "How can a small force lift a huge weight? This page keeps two ledgers. The turning ledger is torque: force × lever arm — when both sides match, the lever balances, and sliding the fulcrum changes the force you need at once. But saved force is never free: the work ledger always balances, so every multiple of force saved costs the same multiple of distance. For pulley systems it is even simpler — do not compute, just count the rope segments holding the load. Throughout, g = 10 N/kg and forces are in newtons (N)."
-    },
-    tags: [
-      { zh: "力矩平衡", en: "Torque Balance" },
-      { zh: "功不省", en: "Work Is Never Saved" },
-      { zh: "数段数定倍数", en: "Count the Rope Segments" }
-    ],
-    category: "physics", subtopic: "mechanics",
-    stage: "junior",
-    status: "live",
-    path: "physics/mechanics/lever-pulley/"
+    desc: { zh: "小力凭什么撬动大物？这一页算两本账。转动的账看力矩：力 × 力臂，两边相等就平衡——支点挪一挪，同样的重物要用的力立刻变。可省力从不是白省：功的账本两边永远相等，省几倍力就费几倍距离。到了滑轮组更干脆，不用算，数一数吊着重物的绳子段数，就知道省几倍力。全页 g 取 10 N/kg，力一律用牛顿（N）。", en: "How can a small force lift a huge weight? This page keeps two ledgers. The turning ledger is torque: force × lever arm — when both sides match, the lever balances, and sliding the fulcrum changes the force you need at once. But saved force is never free: the work ledger always balances, so every multiple of force saved costs the same multiple of distance. For pulley systems it is even simpler — do not compute, just count the rope segments holding the load. Throughout, g = 10 N/kg and forces are in newtons (N)." },
+    tags: [{ zh: "力矩平衡", en: "Torque Balance" }, { zh: "功不省", en: "Work Is Never Saved" }, { zh: "数段数定倍数", en: "Count the Rope Segments" }],
+    category: "physics", subtopic: "mechanics", stage: "junior", status: "live", path: "physics/mechanics/lever-pulley/"
   },
   {
     slug: "equation-scale",
     title: { zh: "方程天平 · 两边同做一件事", en: "Equations on a Balance · Do the Same to Both Sides" },
-    desc: {
-      zh: "等号不是「算出答案」的信号，是一架天平的指针：指针归零，两边一样重。这一页我们只学一招——不管做什么，对两边同时做相同的事——用这一招把 x 一个人留在天平左边。",
-      en: "The equals sign is not a “compute the answer” button; it is the needle of a balance — at zero, both sides weigh the same. This page teaches one move only: whatever you do, do the same to both sides — and use it to leave x alone on the left."
-    },
-    tags: [
-      { zh: "等式性质", en: "Equality Properties" },
-      { zh: "解方程", en: "Solving Equations" },
-      { zh: "两步方程", en: "Two-Step Equations" }
-    ],
-    category: "math", subtopic: "algebra",
-    stage: "primary",
-    status: "live",
-    path: "math/algebra/equation-scale/"
+    desc: { zh: "等号不是「算出答案」的信号，是一架天平的指针：指针归零，两边一样重。这一页我们只学一招——不管做什么，对两边同时做相同的事——用这一招把 x 一个人留在天平左边。", en: "The equals sign is not a “compute the answer” button; it is the needle of a balance — at zero, both sides weigh the same. This page teaches one move only: whatever you do, do the same to both sides — and use it to leave x alone on the left." },
+    tags: [{ zh: "等式性质", en: "Equality Properties" }, { zh: "解方程", en: "Solving Equations" }, { zh: "两步方程", en: "Two-Step Equations" }],
+    category: "math", subtopic: "algebra", stage: "primary", status: "live", path: "math/algebra/equation-scale/"
   },
   {
     slug: "day-night-rotation",
     title: { zh: "昼夜交替 · 地球自己在转", en: "Day and Night · The Earth Itself Is Turning" },
-    desc: {
-      zh: "不是太阳绕着我们跑：地球绕着自己的轴转，每个地方轮流朝向太阳，于是有了昼夜。转满一圈是一天；站在转动的地面上看，太阳就成了东升西落。",
-      en: "The Sun does not circle us: the Earth spins on its own axis and every place takes its turn facing the Sun — that is day and night. One full turn makes a day, and standing on the turning ground, the Sun appears to rise in the east and set in the west."
-    },
-    tags: [
-      { zh: "地球自转", en: "Earth's Rotation" },
-      { zh: "晨昏线", en: "The Terminator" },
-      { zh: "太阳东升西落", en: "Sunrise in the East" }
-    ],
-    category: "earth", subtopic: "astronomy",
-    stage: "primary",
-    status: "live",
-    path: "earth/astronomy/day-night-rotation/"
+    desc: { zh: "不是太阳绕着我们跑：地球绕着自己的轴转，每个地方轮流朝向太阳，于是有了昼夜。转满一圈是一天；站在转动的地面上看，太阳就成了东升西落。", en: "The Sun does not circle us: the Earth spins on its own axis and every place takes its turn facing the Sun — that is day and night. One full turn makes a day, and standing on the turning ground, the Sun appears to rise in the east and set in the west." },
+    tags: [{ zh: "地球自转", en: "Earth's Rotation" }, { zh: "晨昏线", en: "The Terminator" }, { zh: "太阳东升西落", en: "Sunrise in the East" }],
+    category: "earth", subtopic: "astronomy", stage: "primary", status: "live", path: "earth/astronomy/day-night-rotation/"
   },
   {
     slug: "mass-conservation",
     title: { zh: "质量守恒 · 原子一个都不丢", en: "Mass Conservation · Not a Single Atom Lost" },
-    desc: {
-      zh: "化学反应看起来变重变轻，原子却一个不多、一个不少，只是重新排队。这一页把反应拆开逐个原子数，再用天平对账：敞口跑掉的气体、从空气里加入的氧，都逃不过这本账。",
-      en: "Reactions seem to gain or lose weight, yet not a single atom is created or destroyed — they only reshuffle. Take reactions apart and count atoms one by one, then settle it on a balance: escaping gas and oxygen joining from the air both show up in the ledger."
-    },
-    tags: [
-      { zh: "原子重排", en: "Atom Rearrangement" },
-      { zh: "配平", en: "Balancing" },
-      { zh: "气体逸出", en: "Escaping Gas" }
-    ],
-    category: "chemistry", subtopic: "reactions",
-    stage: "junior",
-    status: "live",
-    path: "chemistry/reactions/mass-conservation/"
+    desc: { zh: "化学反应看起来变重变轻，原子却一个不多、一个不少，只是重新排队。这一页把反应拆开逐个原子数，再用天平对账：敞口跑掉的气体、从空气里加入的氧，都逃不过这本账。", en: "Reactions seem to gain or lose weight, yet not a single atom is created or destroyed — they only reshuffle. Take reactions apart and count atoms one by one, then settle it on a balance: escaping gas and oxygen joining from the air both show up in the ledger." },
+    tags: [{ zh: "原子重排", en: "Atom Rearrangement" }, { zh: "配平", en: "Balancing" }, { zh: "气体逸出", en: "Escaping Gas" }],
+    category: "chemistry", subtopic: "reactions", stage: "junior", status: "live", path: "chemistry/reactions/mass-conservation/"
   },
   {
     slug: "cell-structure",
     title: { zh: "细胞 · 生命的最小单位间", en: "The Cell · Life's Smallest Workshop" },
-    desc: {
-      zh: "把一片叶子放大到单个细胞：膜划出边界，核是总控，线粒体供能，叶绿体造糖。点一点每个工位是干什么的，再把动物细胞和植物细胞并排，找齐三处不同。",
-      en: "Zoom into a single cell: the membrane draws the boundary, the nucleus runs the place, mitochondria supply energy, chloroplasts make sugar. Tap each workstation to see its job, then put animal and plant cells side by side and find all three differences."
-    },
-    tags: [
-      { zh: "细胞器", en: "Organelles" },
-      { zh: "动植物对照", en: "Plant vs Animal" },
-      { zh: "结构与功能", en: "Structure & Function" }
-    ],
-    category: "biology", subtopic: "cells",
-    stage: "junior",
-    status: "live",
-    path: "biology/cells/cell-structure/"
+    desc: { zh: "把一片叶子放大到单个细胞：膜划出边界，核是总控，线粒体供能，叶绿体造糖。点一点每个工位是干什么的，再把动物细胞和植物细胞并排，找齐三处不同。", en: "Zoom into a single cell: the membrane draws the boundary, the nucleus runs the place, mitochondria supply energy, chloroplasts make sugar. Tap each workstation to see its job, then put animal and plant cells side by side and find all three differences." },
+    tags: [{ zh: "细胞器", en: "Organelles" }, { zh: "动植物对照", en: "Plant vs Animal" }, { zh: "结构与功能", en: "Structure & Function" }],
+    category: "biology", subtopic: "cells", stage: "junior", status: "live", path: "biology/cells/cell-structure/"
   },
   {
     slug: "photosynthesis",
     title: { zh: "光合作用 · 用光开工的糖厂", en: "Photosynthesis · A Sugar Factory Run by Light" },
-    desc: {
-      zh: "叶子用光把水和二氧化碳重排成糖和氧气：方程式逐项点开对原子账；速率随光强和二氧化碳先升后封顶，因为谁最缺谁说了算（限制因素）。",
-      en: "A leaf uses light to rearrange water and carbon dioxide into sugar and oxygen: click through the equation and balance the atom ledger; then watch the rate rise with light and CO₂ — and cap out, because the scarcest input rules (the limiting factor)."
-    },
-    tags: [
-      { zh: "原子对账", en: "Atom Ledger" },
-      { zh: "光饱和", en: "Light Saturation" },
-      { zh: "限制因素", en: "Limiting Factor" }
-    ],
-    category: "biology", subtopic: "cells",
-    stage: "junior",
-    status: "live",
-    path: "biology/cells/photosynthesis/"
+    desc: { zh: "叶子用光把水和二氧化碳重排成糖和氧气：方程式逐项点开对原子账；速率随光强和二氧化碳先升后封顶，因为谁最缺谁说了算（限制因素）。", en: "A leaf uses light to rearrange water and carbon dioxide into sugar and oxygen: click through the equation and balance the atom ledger; then watch the rate rise with light and CO₂ — and cap out, because the scarcest input rules (the limiting factor)." },
+    tags: [{ zh: "原子对账", en: "Atom Ledger" }, { zh: "光饱和", en: "Light Saturation" }, { zh: "限制因素", en: "Limiting Factor" }],
+    category: "biology", subtopic: "cells", stage: "junior", status: "live", path: "biology/cells/photosynthesis/"
   },
   {
     slug: "logistic-growth",
     title: { zh: "种群增长 · S 形曲线从哪来", en: "Population Growth · Where the S-Curve Comes From" },
-    desc: {
-      zh: "没有天花板时种群按倍数狂奔，有了容纳量 K 就被压成 S 形：每一代的实际增长率由 r(1−N/K) 当场实算；把 r 推过安全区，还能亲眼看到离散模型振荡失效。",
-      en: "With no ceiling a population multiplies wildly; with carrying capacity K it bends into an S. The effective rate r(1−N/K) is computed generation by generation — and if you push r past the safe zone, you can watch the discrete model oscillate and break."
-    },
-    tags: [
-      { zh: "指数增长", en: "Exponential Growth" },
-      { zh: "逻辑斯蒂", en: "Logistic" },
-      { zh: "容纳量 K", en: "Carrying Capacity" }
-    ],
-    category: "biology", subtopic: "ecology",
-    stage: "senior",
-    status: "live",
-    path: "biology/ecology/logistic-growth/"
+    desc: { zh: "没有天花板时种群按倍数狂奔，有了容纳量 K 就被压成 S 形：每一代的实际增长率由 r(1−N/K) 当场实算；把 r 推过安全区，还能亲眼看到离散模型振荡失效。", en: "With no ceiling a population multiplies wildly; with carrying capacity K it bends into an S. The effective rate r(1−N/K) is computed generation by generation — and if you push r past the safe zone, you can watch the discrete model oscillate and break." },
+    tags: [{ zh: "指数增长", en: "Exponential Growth" }, { zh: "逻辑斯蒂", en: "Logistic" }, { zh: "容纳量 K", en: "Carrying Capacity" }],
+    category: "biology", subtopic: "ecology", stage: "senior", status: "live", path: "biology/ecology/logistic-growth/"
   },
   {
     slug: "chemical-equilibrium",
     title: { zh: "化学平衡 · 人数不变，人还在跑", en: "Chemical Equilibrium · Still Moving at Balance" },
-    desc: {
-      zh: "平衡不是反应停了，而是正、逆两个方向跑得一样快：计数走平，粒子还在互变。加一把料、升一次温，看平衡点如何移动；再验证催化剂只改快慢、不改终点。",
-      en: "Equilibrium is not the reaction stopping — it is both directions running equally fast: counts level off while particles keep swapping. Add material, raise the temperature and watch the balance point shift; then check that a catalyst changes only the speed, never the endpoint."
-    },
-    tags: [
-      { zh: "动态平衡", en: "Dynamic Equilibrium" },
-      { zh: "勒夏特列", en: "Le Chatelier" },
-      { zh: "速率相等", en: "Equal Rates" }
-    ],
-    category: "chemistry", subtopic: "reactions",
-    stage: "senior",
-    status: "live",
-    path: "chemistry/reactions/chemical-equilibrium/"
+    desc: { zh: "平衡不是反应停了，而是正、逆两个方向跑得一样快：计数走平，粒子还在互变。加一把料、升一次温，看平衡点如何移动；再验证催化剂只改快慢、不改终点。", en: "Equilibrium is not the reaction stopping — it is both directions running equally fast: counts level off while particles keep swapping. Add material, raise the temperature and watch the balance point shift; then check that a catalyst changes only the speed, never the endpoint." },
+    tags: [{ zh: "动态平衡", en: "Dynamic Equilibrium" }, { zh: "勒夏特列", en: "Le Chatelier" }, { zh: "速率相等", en: "Equal Rates" }],
+    category: "chemistry", subtopic: "reactions", stage: "senior", status: "live", path: "chemistry/reactions/chemical-equilibrium/"
   },
   {
     slug: "acid-base-equilibrium",
     title: { zh: "酸碱平衡 · 分子在两边来回走", en: "Acid–Base Equilibrium · Molecules Move Both Ways" },
-    desc: {
-      zh: "从 HA ⇌ H⁺ + A⁻ 的粒子往返出发，拖动 Ka、稀释和共同离子，亲眼看解离比例与 pH 如何一起改写。",
-      en: "Start with particles moving through HA ⇌ H⁺ + A⁻, then drag Ka, dilution and a common ion to see dissociation and pH change together."
-    },
-    tags: [
-      { zh: "酸碱平衡", en: "Acid–Base Equilibrium" },
-      { zh: "Ka", en: "Ka" },
-      { zh: "共同离子效应", en: "Common-Ion Effect" }
-    ],
-    category: "chemistry", subtopic: "solutions",
-    stage: "senior",
-    status: "live",
-    path: "chemistry/solutions/acid-base-equilibrium/"
+    desc: { zh: "从 HA ⇌ H⁺ + A⁻ 的粒子往返出发，拖动 Ka、稀释和共同离子，亲眼看解离比例与 pH 如何一起改写。", en: "Start with particles moving through HA ⇌ H⁺ + A⁻, then drag Ka, dilution and a common ion to see dissociation and pH change together." },
+    tags: [{ zh: "酸碱平衡", en: "Acid–Base Equilibrium" }, { zh: "Ka", en: "Ka" }, { zh: "共同离子效应", en: "Common-Ion Effect" }],
+    category: "chemistry", subtopic: "solutions", stage: "senior", status: "live", path: "chemistry/solutions/acid-base-equilibrium/"
   },
   {
     slug: "reaction-rates",
     title: { zh: "反应速率 · 数一数成功碰撞", en: "Reaction Rates · Counting Successful Collisions" },
-    desc: {
-      zh: "反应快慢取决于成功碰撞的次数：碰得越勤、能量达标的比例越大，反应越快。温度、浓度、表面积、催化剂四种提速办法，全在模拟里数给你看。",
-      en: "How fast a reaction runs comes down to successful collisions: collide more often, and get more collisions over the energy bar. Temperature, concentration, surface area and catalysts — all four speed-ups, counted live in the simulation."
-    },
-    tags: [
-      { zh: "有效碰撞", en: "Effective Collisions" },
-      { zh: "活化能", en: "Activation Energy" },
-      { zh: "催化剂", en: "Catalysts" }
-    ],
-    category: "chemistry", subtopic: "reactions",
-    stage: "senior",
-    status: "live",
-    path: "chemistry/reactions/reaction-rates/"
+    desc: { zh: "反应快慢取决于成功碰撞的次数：碰得越勤、能量达标的比例越大，反应越快。温度、浓度、表面积、催化剂四种提速办法，全在模拟里数给你看。", en: "How fast a reaction runs comes down to successful collisions: collide more often, and get more collisions over the energy bar. Temperature, concentration, surface area and catalysts — all four speed-ups, counted live in the simulation." },
+    tags: [{ zh: "有效碰撞", en: "Effective Collisions" }, { zh: "活化能", en: "Activation Energy" }, { zh: "催化剂", en: "Catalysts" }],
+    category: "chemistry", subtopic: "reactions", stage: "senior", status: "live", path: "chemistry/reactions/reaction-rates/"
   },
   {
     slug: "bayes-diagnostics",
@@ -1634,8 +967,6 @@ window.KNOWLEDGE_PAGES = [
     tags: [{ zh: "能量平衡", en: "Energy Balance" }, { zh: "反照率", en: "Albedo" }, { zh: "温室效应", en: "Greenhouse Effect" }],
     category: "earth", subtopic: "climate", stage: "senior", status: "live", path: "earth/climate/climate-energy/"
   },
-
-
   {
     slug: "momentum-collision",
     title: { zh: "动量与碰撞 · 速度不是全部", en: "Momentum & Collisions · Speed Is Not the Whole Story" },
@@ -1643,8 +974,6 @@ window.KNOWLEDGE_PAGES = [
     tags: [{ zh: "动量", en: "Momentum" }, { zh: "冲量", en: "Impulse" }, { zh: "碰撞", en: "Collisions" }],
     category: "physics", subtopic: "mechanics", stage: "junior", status: "live", path: "physics/mechanics/momentum-collision/"
   },
-
-
   {
     slug: "tcp-congestion",
     title: { zh: "网络流 · 一封消息的旅程", en: "Network Flow · A Message’s Journey" },
@@ -1652,19 +981,11 @@ window.KNOWLEDGE_PAGES = [
     tags: [{ zh: "计算机网络", en: "Computer Networks" }, { zh: "TCP", en: "TCP" }, { zh: "拥塞控制", en: "Congestion Control" }],
     category: "computing", subtopic: "systems", stage: "university", status: "live", path: "computing/systems/tcp-congestion/"
   },
-
   {
     slug: "phonemes",
     title: { zh: "语音与音位 · 从口腔到对立", en: "Speech Sounds & Phonemes · From Mouth to Contrast" },
-    desc: {
-      zh: "从发音动作、最小对立到音节槽位和复数同化，点击一个特征，追踪它怎样改变结构与意义。",
-      en: "From articulation and minimal pairs to syllable slots and plural assimilation, change one feature and trace how structure and meaning move."
-    },
-    tags: [
-      { zh: "语音学", en: "Phonetics" },
-      { zh: "音位", en: "Phonemes" },
-      { zh: "音节结构", en: "Syllable Structure" }
-    ],
+    desc: { zh: "从发音动作、最小对立到音节槽位和复数同化，点击一个特征，追踪它怎样改变结构与意义。", en: "From articulation and minimal pairs to syllable slots and plural assimilation, change one feature and trace how structure and meaning move." },
+    tags: [{ zh: "语音学", en: "Phonetics" }, { zh: "音位", en: "Phonemes" }, { zh: "音节结构", en: "Syllable Structure" }],
     category: "language", subtopic: "phonology", stage: "senior", status: "live", path: "language/phonology/phonemes/"
   },
   {
@@ -1674,7 +995,6 @@ window.KNOWLEDGE_PAGES = [
     tags: [{ zh: "共振峰", en: "Formants" }, { zh: "元音", en: "Vowels" }, { zh: "说话人归一化", en: "Speaker Normalisation" }],
     category: "language", subtopic: "phonology", stage: "senior", status: "live", path: "language/phonology/vowel-space/"
   },
-
   {
     slug: "climate-feedback",
     title: { zh: "气候反馈 · 一笔一笔对上能量账", en: "Climate Feedback · Balance the Energy Ledger" },
@@ -1682,7 +1002,6 @@ window.KNOWLEDGE_PAGES = [
     tags: [{ zh: "辐射强迫", en: "Radiative Forcing" }, { zh: "气候反馈", en: "Climate Feedback" }, { zh: "碳循环", en: "Carbon Cycle" }],
     category: "earth", subtopic: "climate", stage: "senior", status: "live", path: "earth/climate/climate-feedback/"
   },
-
   {
     slug: "linear-transform",
     title: { zh: "二维线性变换 · 矩阵如何挪动平面", en: "2D Linear Transformations · How Matrices Move the Plane" },
@@ -1690,7 +1009,6 @@ window.KNOWLEDGE_PAGES = [
     tags: [{ zh: "矩阵", en: "Matrices" }, { zh: "行列式", en: "Determinants" }, { zh: "基向量", en: "Basis Vectors" }],
     category: "math", subtopic: "linear-algebra", stage: "university", status: "live", path: "math/linear-algebra/linear-transform/"
   },
-
   {
     slug: "probability-distribution",
     title: { zh: "概率分布 · 随机性也有形状", en: "Probability Distributions · Randomness Has a Shape" },
@@ -1698,7 +1016,6 @@ window.KNOWLEDGE_PAGES = [
     tags: [{ zh: "概率分布", en: "Probability Distributions" }, { zh: "均值与方差", en: "Mean & Variance" }, { zh: "随机变量", en: "Random Variables" }],
     category: "probability", subtopic: "basics", stage: "senior", status: "live", path: "probability/basics/probability-distribution/"
   },
-
   {
     slug: "thermodynamics",
     title: { zh: "热力学 · 一口气追踪能量", en: "Thermodynamics · Track Energy Through a Gas" },
@@ -1706,7 +1023,6 @@ window.KNOWLEDGE_PAGES = [
     tags: [{ zh: "第一定律", en: "First Law" }, { zh: "P–V 图", en: "P–V Diagram" }, { zh: "热机", en: "Heat Engines" }],
     category: "physics", subtopic: "thermal", stage: "university", status: "live", path: "physics/thermal/thermodynamics/"
   },
-
   {
     slug: "buffer-capacity",
     title: { zh: "缓冲溶液 · 把 pH 稳住", en: "Buffer Capacity · Holding pH Steady" },
@@ -1714,8 +1030,6 @@ window.KNOWLEDGE_PAGES = [
     tags: [{ zh: "缓冲溶液", en: "Buffer Solutions" }, { zh: "pH", en: "pH" }, { zh: "共轭酸碱对", en: "Conjugate Pairs" }],
     category: "chemistry", subtopic: "solutions", stage: "senior", status: "live", path: "chemistry/solutions/buffer-capacity/"
   },
-
-
   {
     slug: "quantum-basics",
     title: { zh: "量子基础 · 可能性先于结果", en: "Quantum Basics · Possibility Before Outcome" },
@@ -1737,8 +1051,6 @@ window.KNOWLEDGE_PAGES = [
     tags: [{ zh: "应力–应变", en: "Stress–Strain" }, { zh: "屈服", en: "Yield" }, { zh: "韧性", en: "Toughness" }],
     category: "physics", subtopic: "matter", stage: "university", status: "live", path: "physics/matter/materials-science/"
   },
-
-
   {
     slug: "game-theory",
     title: { zh: "博弈论 · 先看对手会怎么选", en: "Game Theory · Look at the Other Choice First" },
@@ -1760,8 +1072,6 @@ window.KNOWLEDGE_PAGES = [
     tags: [{ zh: "尺度因子", en: "Scale Factor" }, { zh: "哈勃定律", en: "Hubble Law" }, { zh: "红移", en: "Redshift" }],
     category: "earth", subtopic: "astronomy", stage: "university", status: "live", path: "earth/astronomy/cosmology-expansion/"
   },
-
-
   {
     slug: "distributed-systems",
     title: { zh: "分布式系统 · 多个副本如何像一个值", en: "Distributed Systems · How Replicas Behave Like One Value" },
@@ -1790,8 +1100,6 @@ window.KNOWLEDGE_PAGES = [
     tags: [{ zh: "音程", en: "Intervals" }, { zh: "和弦功能", en: "Chord Function" }, { zh: "终止", en: "Cadence" }],
     category: "math", subtopic: "applied", stage: "senior", status: "live", path: "math/applied/music-theory/"
   },
-
-
   {
     slug: "ethics-decisions",
     title: { zh: "伦理决策 · 把取舍说清楚", en: "Ethical Decisions · Make the Trade-off Visible" },
@@ -2625,5 +1933,5 @@ window.KNOWLEDGE_PAGES = [
     tags: [{ zh: "概念关系", en: "Concept Connections" }, { zh: "探索路线", en: "Exploration Routes" }],
     category: "investment", stage: "university", status: "live", path: "investment/atlas/"
   }
-
 ];
+/* ===== END GENERATED: KNOWLEDGE_PAGES ===== */

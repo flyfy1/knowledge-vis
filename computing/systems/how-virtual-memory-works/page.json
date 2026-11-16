@@ -1,6 +1,30 @@
 {
   "slug": "how-virtual-memory-works",
   "kind": "essay",
+  "tags": [
+    {
+      "zh": "虚拟内存",
+      "en": "Virtual Memory"
+    },
+    {
+      "zh": "操作系统",
+      "en": "Operating Systems"
+    },
+    {
+      "zh": "计算机体系结构",
+      "en": "Computer Architecture"
+    },
+    {
+      "zh": "长文",
+      "en": "Long-form Essay"
+    }
+  ],
+  "category": "computing",
+  "subtopic": "systems",
+  "stage": "university",
+  "status": "live",
+  "path": "computing/systems/how-virtual-memory-works/",
+  "order": 330,
   "layout": "essay",
   "scripts": [
     "models.js",

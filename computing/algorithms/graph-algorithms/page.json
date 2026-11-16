@@ -1,0 +1,32 @@
+{
+  "slug": "graph-algorithms",
+  "kind": "lesson",
+  "title": {
+    "zh": "图算法 · 让边带你走",
+    "en": "Graph Algorithms · Let Edges Lead"
+  },
+  "desc": {
+    "zh": "在一张可编辑的小图上对比 BFS 队列与 DFS 栈，切换一条边，观察 frontier 和 O(V+E) 如何同步改变。",
+    "en": "Compare BFS queues and DFS stacks on an editable graph; toggle one edge and watch the frontier and O(V+E) accounting update together."
+  },
+  "tags": [
+    {
+      "zh": "BFS",
+      "en": "BFS"
+    },
+    {
+      "zh": "DFS",
+      "en": "DFS"
+    },
+    {
+      "zh": "复杂度",
+      "en": "Complexity"
+    }
+  ],
+  "category": "computing",
+  "subtopic": "algorithms",
+  "stage": "university",
+  "status": "live",
+  "path": "computing/algorithms/graph-algorithms/",
+  "order": 1060
+}

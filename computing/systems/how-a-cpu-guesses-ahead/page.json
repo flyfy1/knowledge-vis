@@ -1,6 +1,30 @@
 {
   "slug": "how-a-cpu-guesses-ahead",
   "kind": "essay",
+  "tags": [
+    {
+      "zh": "分支预测",
+      "en": "Branch Prediction"
+    },
+    {
+      "zh": "乱序执行",
+      "en": "Out-of-order Execution"
+    },
+    {
+      "zh": "计算机体系结构",
+      "en": "Computer Architecture"
+    },
+    {
+      "zh": "长文",
+      "en": "Long-form Essay"
+    }
+  ],
+  "category": "computing",
+  "subtopic": "systems",
+  "stage": "university",
+  "status": "live",
+  "path": "computing/systems/how-a-cpu-guesses-ahead/",
+  "order": 340,
   "layout": "essay",
   "scripts": [
     "models.js",

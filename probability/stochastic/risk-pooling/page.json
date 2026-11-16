@@ -1,0 +1,24 @@
+{
+  "slug": "risk-pooling",
+  "kind": "lesson",
+  "title": {
+    "zh": "风险池化与保险 · 一万人各摊一点",
+    "en": "Risk Pooling & Insurance · Ten Thousand People Each Chip In"
+  },
+  "desc": {
+    "zh": "个人遇到的是 0 或 10000 元的赌局；一万人合在一起，却变成一笔几乎可以预先算好的账——大数定律的商业形态，以及它失灵的地方。",
+    "en": "One person faces a gamble of $0 or $10,000; ten thousand together face an account that can be worked out ahead of time — the law of large numbers as a business, and where it fails."
+  },
+  "tags": [
+    {
+      "zh": "概率与统计",
+      "en": "Probability & Statistics"
+    }
+  ],
+  "category": "probability",
+  "subtopic": "stochastic",
+  "stage": "university",
+  "status": "live",
+  "path": "probability/stochastic/risk-pooling/",
+  "order": 2340
+}

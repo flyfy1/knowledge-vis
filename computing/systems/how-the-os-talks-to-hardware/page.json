@@ -1,6 +1,34 @@
 {
   "slug": "how-the-os-talks-to-hardware",
   "kind": "essay",
+  "tags": [
+    {
+      "zh": "操作系统",
+      "en": "Operating Systems"
+    },
+    {
+      "zh": "驱动",
+      "en": "Device Drivers"
+    },
+    {
+      "zh": "系统调用",
+      "en": "System Calls"
+    },
+    {
+      "zh": "计算机体系结构",
+      "en": "Computer Architecture"
+    },
+    {
+      "zh": "长文",
+      "en": "Long-form Essay"
+    }
+  ],
+  "category": "computing",
+  "subtopic": "systems",
+  "stage": "university",
+  "status": "live",
+  "path": "computing/systems/how-the-os-talks-to-hardware/",
+  "order": 410,
   "layout": "essay",
   "scripts": [
     "models.js",

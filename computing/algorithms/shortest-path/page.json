@@ -1,0 +1,24 @@
+{
+  "slug": "shortest-path",
+  "kind": "lesson",
+  "title": {
+    "zh": "最短路 · 从起点像洪水一样漫开",
+    "en": "Shortest Path · Flooding Out From the Start"
+  },
+  "desc": {
+    "zh": "迪杰斯特拉算法每次“确认”离起点最近的那个点：最短路径是被“漫到”的顺序逼出来的；也看它怎样在带权地图上绕开泥地，以及什么时候会出错。",
+    "en": "Dijkstra’s algorithm “settles” the nearest node at a time: the shortest paths are forced out by the order in which the flood reaches things; see how it detours around mud on a weighted map and when it breaks."
+  },
+  "tags": [
+    {
+      "zh": "计算与智能",
+      "en": "Computing & AI"
+    }
+  ],
+  "category": "computing",
+  "subtopic": "algorithms",
+  "stage": "university",
+  "status": "live",
+  "path": "computing/algorithms/shortest-path/",
+  "order": 2390
+}

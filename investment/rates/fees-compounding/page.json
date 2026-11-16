@@ -1,0 +1,24 @@
+{
+  "slug": "fees-compounding",
+  "kind": "lesson",
+  "title": {
+    "zh": "费率与复利 · 1% 的费率怎么吃掉回报",
+    "en": "Fees & Compounding · How Does a 1% Fee Eat Returns"
+  },
+  "desc": {
+    "zh": "费率从收益率里扣，1% 乘上 30 年复利，能吃掉约四分之一终值。",
+    "en": "A fee comes out of the return every year; 1% compounded over 30 years eats roughly a quarter of the final value."
+  },
+  "tags": [
+    {
+      "zh": "投资",
+      "en": "Investment"
+    }
+  ],
+  "category": "investment",
+  "subtopic": "rates",
+  "stage": "senior",
+  "status": "live",
+  "path": "investment/rates/fees-compounding/",
+  "order": 2470
+}

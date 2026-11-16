@@ -1,0 +1,32 @@
+{
+  "slug": "mechanism-design",
+  "kind": "lesson",
+  "title": {
+    "zh": "机制设计与拍卖 · 报价如何改变结果",
+    "en": "Mechanism Design & Auctions · How Bids Change Outcomes"
+  },
+  "desc": {
+    "zh": "比较第一价与第二价拍卖，追踪赢家、付款和收益，理解规则如何塑造激励。",
+    "en": "Compare first- and second-price auctions, then trace winners, payments and utilities to see how rules shape incentives."
+  },
+  "tags": [
+    {
+      "zh": "第一价拍卖",
+      "en": "First-Price Auction"
+    },
+    {
+      "zh": "第二价拍卖",
+      "en": "Second-Price Auction"
+    },
+    {
+      "zh": "激励",
+      "en": "Incentives"
+    }
+  ],
+  "category": "math",
+  "subtopic": "applied",
+  "stage": "university",
+  "status": "live",
+  "path": "math/applied/mechanism-design/",
+  "order": 1370
+}

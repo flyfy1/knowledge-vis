@@ -1,0 +1,32 @@
+{
+  "slug": "mass-conservation",
+  "kind": "lesson",
+  "title": {
+    "zh": "质量守恒 · 原子一个都不丢",
+    "en": "Mass Conservation · Not a Single Atom Lost"
+  },
+  "desc": {
+    "zh": "化学反应看起来变重变轻，原子却一个不多、一个不少，只是重新排队。这一页把反应拆开逐个原子数，再用天平对账：敞口跑掉的气体、从空气里加入的氧，都逃不过这本账。",
+    "en": "Reactions seem to gain or lose weight, yet not a single atom is created or destroyed — they only reshuffle. Take reactions apart and count atoms one by one, then settle it on a balance: escaping gas and oxygen joining from the air both show up in the ledger."
+  },
+  "tags": [
+    {
+      "zh": "原子重排",
+      "en": "Atom Rearrangement"
+    },
+    {
+      "zh": "配平",
+      "en": "Balancing"
+    },
+    {
+      "zh": "气体逸出",
+      "en": "Escaping Gas"
+    }
+  ],
+  "category": "chemistry",
+  "subtopic": "reactions",
+  "stage": "junior",
+  "status": "live",
+  "path": "chemistry/reactions/mass-conservation/",
+  "order": 920
+}

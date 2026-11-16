@@ -1,0 +1,24 @@
+{
+  "slug": "three-views",
+  "kind": "lesson",
+  "title": {
+    "zh": "三视图 · 三张影子拼回立体",
+    "en": "Three Views · Three Shadows Rebuild a Solid"
+  },
+  "desc": {
+    "zh": "把积木从正面、侧面、上面各看一眼，得到三张平面图；三张图对齐起来，就能还原出立体的样子。",
+    "en": "Look at a stack of blocks from the front, the left and above to get three flat pictures; line them up and you can rebuild the solid."
+  },
+  "tags": [
+    {
+      "zh": "数学基础",
+      "en": "Mathematical Foundations"
+    }
+  ],
+  "category": "math",
+  "subtopic": "geometry",
+  "stage": "junior",
+  "status": "live",
+  "path": "math/geometry/three-views/",
+  "order": 2000
+}

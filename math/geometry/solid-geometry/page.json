@@ -1,0 +1,24 @@
+{
+  "slug": "solid-geometry",
+  "kind": "lesson",
+  "title": {
+    "zh": "立体几何 · 转一转，再切一刀",
+    "en": "Solid Geometry · Turn It, Then Cut It"
+  },
+  "desc": {
+    "zh": "把立方体转到不同角度看，用平面一刀切下去，截面从三角形变成六边形；体积与表面积怎样随尺寸变化，展开图又能不能折回立方体。",
+    "en": "View a cube from different angles, then slice it with a plane and watch the cross-section go from triangle to hexagon; see how surface area and volume scale and whether a net folds back into a cube."
+  },
+  "tags": [
+    {
+      "zh": "数学基础",
+      "en": "Mathematical Foundations"
+    }
+  ],
+  "category": "math",
+  "subtopic": "geometry",
+  "stage": "junior",
+  "status": "live",
+  "path": "math/geometry/solid-geometry/",
+  "order": 2400
+}

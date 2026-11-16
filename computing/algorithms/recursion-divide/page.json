@@ -1,0 +1,24 @@
+{
+  "slug": "recursion-divide",
+  "kind": "lesson",
+  "title": {
+    "zh": "递归与分治 · 把大问题劈成小问题",
+    "en": "Recursion and Divide-and-Conquer · Splitting a Big Problem Into Small Ones"
+  },
+  "desc": {
+    "zh": "从函数调用自己，到汉诺塔、递归树和归并排序：为什么有的递归瞬间完成，有的一辈子也算不完。",
+    "en": "From a function calling itself to Towers of Hanoi, recursion trees and merge sort: why some recursions finish instantly and others could not finish in a lifetime."
+  },
+  "tags": [
+    {
+      "zh": "计算与智能",
+      "en": "Computing & AI"
+    }
+  ],
+  "category": "computing",
+  "subtopic": "algorithms",
+  "stage": "university",
+  "status": "live",
+  "path": "computing/algorithms/recursion-divide/",
+  "order": 1950
+}

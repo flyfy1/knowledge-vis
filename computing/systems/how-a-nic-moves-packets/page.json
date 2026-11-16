@@ -1,6 +1,30 @@
 {
   "slug": "how-a-nic-moves-packets",
   "kind": "essay",
+  "tags": [
+    {
+      "zh": "网卡",
+      "en": "Network Cards"
+    },
+    {
+      "zh": "网络硬件",
+      "en": "Network Hardware"
+    },
+    {
+      "zh": "计算机体系结构",
+      "en": "Computer Architecture"
+    },
+    {
+      "zh": "长文",
+      "en": "Long-form Essay"
+    }
+  ],
+  "category": "computing",
+  "subtopic": "systems",
+  "stage": "university",
+  "status": "live",
+  "path": "computing/systems/how-a-nic-moves-packets/",
+  "order": 440,
   "layout": "essay",
   "scripts": [
     "models.js",

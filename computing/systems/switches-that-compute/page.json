@@ -1,0 +1,44 @@
+{
+  "slug": "switches-that-compute",
+  "kind": "essay",
+  "title": {
+    "zh": "一堆开关是怎么学会算数的",
+    "en": "How a Pile of Switches Learned to Do Arithmetic"
+  },
+  "desc": {
+    "zh": "只用一种开或关的开关，逐门搭出逻辑门、加法器、记忆、时钟，直到一台能照程序做乘法的 16 字节小机器；每个电路都在页面里逐门模拟。",
+    "en": "From one on/off switch, build gates, an adder, memory, a clock and finally a 16-byte machine that multiplies by following a program; every circuit is simulated gate by gate on the page."
+  },
+  "tags": [
+    {
+      "zh": "逻辑门",
+      "en": "Logic Gates"
+    },
+    {
+      "zh": "二进制",
+      "en": "Binary"
+    },
+    {
+      "zh": "加法器",
+      "en": "Adder"
+    },
+    {
+      "zh": "触发器与时钟",
+      "en": "Flip-Flops & Clocks"
+    },
+    {
+      "zh": "计算机组成",
+      "en": "Computer Architecture"
+    },
+    {
+      "zh": "浮点数",
+      "en": "Floating Point"
+    }
+  ],
+  "category": "computing",
+  "subtopic": "systems",
+  "stage": "senior",
+  "status": "live",
+  "path": "computing/systems/switches-that-compute/",
+  "order": 120
+}

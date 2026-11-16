@@ -1,0 +1,32 @@
+{
+  "slug": "action-potential",
+  "kind": "lesson",
+  "title": {
+    "zh": "神经动作电位 · 一次脉冲如何跑过神经元",
+    "en": "Action Potentials · How One Pulse Travels"
+  },
+  "desc": {
+    "zh": "从静息电位推过阈值，跟着 Na⁺ 内流、K⁺ 外流和不应期走完一次尖峰，再数一秒最多能发几次。",
+    "en": "Push resting voltage past threshold, follow Na⁺ in, K⁺ out and refractoriness through one spike, then count the maximum spikes per second."
+  },
+  "tags": [
+    {
+      "zh": "膜电位",
+      "en": "Membrane Voltage"
+    },
+    {
+      "zh": "离子通道",
+      "en": "Ion Channels"
+    },
+    {
+      "zh": "不应期",
+      "en": "Refractoriness"
+    }
+  ],
+  "category": "biology",
+  "subtopic": "body",
+  "stage": "senior",
+  "status": "live",
+  "path": "biology/body/action-potential/",
+  "order": 1080
+}

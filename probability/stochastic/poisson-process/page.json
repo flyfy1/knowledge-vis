@@ -1,0 +1,24 @@
+{
+  "slug": "poisson-process",
+  "kind": "lesson",
+  "title": {
+    "zh": "泊松过程 · 随机到达的规律",
+    "en": "The Poisson Process · The Pattern in Random Arrivals"
+  },
+  "desc": {
+    "zh": "放射性计数、排队来人：事件随机到达，却有精确的统计规律——间隔是指数分布，窗口里的个数是泊松分布。",
+    "en": "Radioactive counts, people joining a queue: arrivals are random yet follow exact statistics — gaps are exponential, counts per window are Poisson."
+  },
+  "tags": [
+    {
+      "zh": "概率与统计",
+      "en": "Probability & Statistics"
+    }
+  ],
+  "category": "probability",
+  "subtopic": "stochastic",
+  "stage": "university",
+  "status": "live",
+  "path": "probability/stochastic/poisson-process/",
+  "order": 2280
+}

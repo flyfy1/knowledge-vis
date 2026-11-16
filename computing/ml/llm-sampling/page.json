@@ -1,0 +1,24 @@
+{
+  "slug": "llm-sampling",
+  "kind": "lesson",
+  "title": {
+    "zh": "大语言模型如何逐词生成",
+    "en": "How an LLM Writes Word by Word"
+  },
+  "desc": {
+    "zh": "每一步都是一张概率条：温度把它捏尖或摊平，top-k / top-p 砍掉长尾，再随机抽一个词，一个接一个写下去。",
+    "en": "Every step is a probability bar chart: temperature sharpens or flattens it, top-k and top-p trim the tail, then one word is drawn at random and appended, again and again."
+  },
+  "tags": [
+    {
+      "zh": "计算与智能",
+      "en": "Computing & AI"
+    }
+  ],
+  "category": "computing",
+  "subtopic": "ml",
+  "stage": "university",
+  "status": "live",
+  "path": "computing/ml/llm-sampling/",
+  "order": 1850
+}

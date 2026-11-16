@@ -1,0 +1,32 @@
+{
+  "slug": "kepler-orbits",
+  "kind": "lesson",
+  "title": {
+    "zh": "轨道运动 · 椭圆、速度与凌日",
+    "en": "Orbital Motion · Ellipses, Speed & Transits"
+  },
+  "desc": {
+    "zh": "把偏心率、轨道相位、速度变化和凌日对齐放在同一张可拖动因果图中。",
+    "en": "Put eccentricity, orbital phase, speed variation and transit alignment on one draggable causal map."
+  },
+  "tags": [
+    {
+      "zh": "开普勒定律",
+      "en": "Kepler's Laws"
+    },
+    {
+      "zh": "轨道速度",
+      "en": "Orbital Speed"
+    },
+    {
+      "zh": "凌日",
+      "en": "Transits"
+    }
+  ],
+  "category": "earth",
+  "subtopic": "astronomy",
+  "stage": "university",
+  "status": "live",
+  "path": "earth/astronomy/kepler-orbits/",
+  "order": 1090
+}

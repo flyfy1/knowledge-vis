@@ -1,6 +1,34 @@
 {
   "slug": "how-sata-works",
   "kind": "essay",
+  "tags": [
+    {
+      "zh": "SATA",
+      "en": "SATA"
+    },
+    {
+      "zh": "存储系统",
+      "en": "Storage Systems"
+    },
+    {
+      "zh": "机械硬盘",
+      "en": "Hard Disk Drives"
+    },
+    {
+      "zh": "串行链路",
+      "en": "Serial Links"
+    },
+    {
+      "zh": "长文",
+      "en": "Long-form Essay"
+    }
+  ],
+  "category": "computing",
+  "subtopic": "systems",
+  "stage": "university",
+  "status": "live",
+  "path": "computing/systems/how-sata-works/",
+  "order": 240,
   "layout": "essay",
   "scripts": [
     "models.js",

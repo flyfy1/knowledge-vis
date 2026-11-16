@@ -1,0 +1,24 @@
+{
+  "slug": "patterns-sequences",
+  "kind": "lesson",
+  "title": {
+    "zh": "找规律 · 不画也能报出第 100 个",
+    "en": "Patterns · Name the 100th Without Drawing It"
+  },
+  "desc": {
+    "zh": "用火柴棒摆图形：数出前几个，找到“每次多几根”，就能直接算出任意第 n 个。",
+    "en": "Build shapes from matchsticks: count the first few, find how many are added each time, then compute any figure n directly."
+  },
+  "tags": [
+    {
+      "zh": "数学基础",
+      "en": "Mathematical Foundations"
+    }
+  ],
+  "category": "math",
+  "subtopic": "algebra",
+  "stage": "primary",
+  "status": "live",
+  "path": "math/algebra/patterns-sequences/",
+  "order": 1630
+}

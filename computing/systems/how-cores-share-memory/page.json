@@ -1,6 +1,34 @@
 {
   "slug": "how-cores-share-memory",
   "kind": "essay",
+  "tags": [
+    {
+      "zh": "缓存一致性",
+      "en": "Cache Coherence"
+    },
+    {
+      "zh": "内存模型",
+      "en": "Memory Models"
+    },
+    {
+      "zh": "计算机体系结构",
+      "en": "Computer Architecture"
+    },
+    {
+      "zh": "并发",
+      "en": "Concurrency"
+    },
+    {
+      "zh": "长文",
+      "en": "Long-form Essay"
+    }
+  ],
+  "category": "computing",
+  "subtopic": "systems",
+  "stage": "university",
+  "status": "live",
+  "path": "computing/systems/how-cores-share-memory/",
+  "order": 350,
   "layout": "essay",
   "scripts": [
     "models.js",

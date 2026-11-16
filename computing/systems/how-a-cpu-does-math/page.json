@@ -1,8 +1,37 @@
 {
   "slug": "how-a-cpu-does-math",
   "kind": "essay",
+  "tags": [
+    {
+      "zh": "浮点数",
+      "en": "Floating Point"
+    },
+    {
+      "zh": "SIMD",
+      "en": "SIMD"
+    },
+    {
+      "zh": "计算机体系结构",
+      "en": "Computer Architecture"
+    },
+    {
+      "zh": "长文",
+      "en": "Long-form Essay"
+    }
+  ],
+  "category": "computing",
+  "subtopic": "systems",
+  "stage": "university",
+  "status": "live",
+  "path": "computing/systems/how-a-cpu-does-math/",
+  "order": 360,
   "layout": "essay",
-  "scripts": ["models.js", "copy.zh.js", "copy.en.js", "app.js"],
+  "scripts": [
+    "models.js",
+    "copy.zh.js",
+    "copy.en.js",
+    "app.js"
+  ],
   "version": "20261116b",
   "provenanceNote": {
     "zh": "本文由 Claude Code（claude-opus-5-5）从零编写，是第一篇直接用 Markdown 站点模板写的长文；英文稿由 Claude Code（claude-haiku-5-5）翻译；2026-11-16 经另一个 Claude Code 会话独立评审并按评审修订（同一模型；跨模型评审待做）。",
@@ -12,16 +41,45 @@
     "en": "native"
   },
   "dynamicKeys": {
-    "ch4.cls": ["norm", "sub", "zero", "flushed"],
-    "ch4.say": ["norm", "sub", "zero", "flushed"],
-    "ch8.s": ["int8t", "int8b", "mxint8", "mxfp8", "mxfp6", "mxfp4", "nvfp4"],
-    "ch11.fma.lim": ["latency", "units", "loads"],
-    "ch11.fma.say": ["latency", "units", "loads"]
+    "ch4.cls": [
+      "norm",
+      "sub",
+      "zero",
+      "flushed"
+    ],
+    "ch4.say": [
+      "norm",
+      "sub",
+      "zero",
+      "flushed"
+    ],
+    "ch8.s": [
+      "int8t",
+      "int8b",
+      "mxint8",
+      "mxfp8",
+      "mxfp6",
+      "mxfp4",
+      "nvfp4"
+    ],
+    "ch11.fma.lim": [
+      "latency",
+      "units",
+      "loads"
+    ],
+    "ch11.fma.say": [
+      "latency",
+      "units",
+      "loads"
+    ]
   },
   "generators": [
     {
       "run": "tools/diagrams.cjs",
-      "writes": ["figures/dg-*.html", "figures/fmt-table.html"]
+      "writes": [
+        "figures/dg-*.html",
+        "figures/fmt-table.html"
+      ]
     }
   ]
 }

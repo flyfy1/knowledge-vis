@@ -1,0 +1,24 @@
+{
+  "slug": "clock-angles",
+  "kind": "lesson",
+  "title": {
+    "zh": "时钟与角度 · 两根针的赛跑",
+    "en": "Clocks & Angles · A Race Between Two Hands"
+  },
+  "desc": {
+    "zh": "时针慢、分针快：知道它们各转多快，就能算出任意时刻两针的夹角，也能找到它们重合的时刻。",
+    "en": "The hour hand is slow and the minute hand is fast: know how fast each turns and you can find the angle between them at any time, and when they overlap."
+  },
+  "tags": [
+    {
+      "zh": "数学基础",
+      "en": "Mathematical Foundations"
+    }
+  ],
+  "category": "math",
+  "subtopic": "geometry",
+  "stage": "primary",
+  "status": "live",
+  "path": "math/geometry/clock-angles/",
+  "order": 1780
+}

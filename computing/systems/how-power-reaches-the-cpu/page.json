@@ -1,6 +1,30 @@
 {
   "slug": "how-power-reaches-the-cpu",
   "kind": "essay",
+  "tags": [
+    {
+      "zh": "供电",
+      "en": "Power Delivery"
+    },
+    {
+      "zh": "电源管理",
+      "en": "Power Management"
+    },
+    {
+      "zh": "计算机体系结构",
+      "en": "Computer Architecture"
+    },
+    {
+      "zh": "长文",
+      "en": "Long-form Essay"
+    }
+  ],
+  "category": "computing",
+  "subtopic": "systems",
+  "stage": "university",
+  "status": "live",
+  "path": "computing/systems/how-power-reaches-the-cpu/",
+  "order": 430,
   "layout": "essay",
   "scripts": [
     "models.js",

@@ -1,0 +1,24 @@
+{
+  "slug": "conic-sections",
+  "kind": "lesson",
+  "title": {
+    "zh": "圆锥曲线",
+    "en": "Conic Sections"
+  },
+  "desc": {
+    "zh": "圆、椭圆、抛物线、双曲线看起来毫不相干，其实是同一个圆锥被不同角度的平面切出来的一家人，一个离心率 e 就能把它们连成一条线。",
+    "en": "Circle, ellipse, parabola and hyperbola look unrelated, yet they are one family cut from the same cone by planes at different angles — and a single number, the eccentricity e, strings them on one line."
+  },
+  "tags": [
+    {
+      "zh": "数学基础",
+      "en": "Mathematical Foundations"
+    }
+  ],
+  "category": "math",
+  "subtopic": "geometry",
+  "stage": "senior",
+  "status": "live",
+  "path": "math/geometry/conic-sections/",
+  "order": 1420
+}

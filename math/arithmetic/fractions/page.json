@@ -1,0 +1,32 @@
+{
+  "slug": "fractions",
+  "kind": "lesson",
+  "title": {
+    "zh": "分数 · 把整体切开来数",
+    "en": "Fractions · Cutting the Whole to Count"
+  },
+  "desc": {
+    "zh": "分数不是两个数上下摆，是一个数：先看 1/2 与 2/4 叠合得严丝合缝，再到等值、比大小、加法先通分、假分数长过一条——运算全部用精确有理数，循环小数老老实实写 ≈。本站第一个小学学段页面。",
+    "en": "A fraction is one number, not two stacked: watch 1/2 and 2/4 overlap pixel-perfectly, then equivalence, comparison, common denominators, and improper fractions longer than one bar — all arithmetic exact, repeating decimals honestly marked ≈. The site's first primary-school page."
+  },
+  "tags": [
+    {
+      "zh": "等值分数",
+      "en": "Equivalent Fractions"
+    },
+    {
+      "zh": "通分",
+      "en": "Common Denominators"
+    },
+    {
+      "zh": "数轴",
+      "en": "Number Line"
+    }
+  ],
+  "category": "math",
+  "subtopic": "arithmetic",
+  "stage": "primary",
+  "status": "live",
+  "path": "math/arithmetic/fractions/",
+  "order": 650
+}

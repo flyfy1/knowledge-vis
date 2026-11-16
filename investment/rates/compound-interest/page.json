@@ -1,0 +1,24 @@
+{
+  "slug": "compound-interest",
+  "kind": "lesson",
+  "title": {
+    "zh": "复利与贴现 · 时间是钱的形状",
+    "en": "Compound Interest & Discounting · Time Is the Shape of Money"
+  },
+  "desc": {
+    "zh": "利息也生利息，钱就按倍数生长；反过来，未来的钱折成今天的价值，就是贴现。",
+    "en": "When interest earns interest, money grows by multiples; run it backwards and a future amount is worth less today, which is discounting."
+  },
+  "tags": [
+    {
+      "zh": "数学基础",
+      "en": "Mathematical Foundations"
+    }
+  ],
+  "category": "investment",
+  "subtopic": "rates",
+  "stage": "senior",
+  "status": "live",
+  "path": "investment/rates/compound-interest/",
+  "order": 2130
+}

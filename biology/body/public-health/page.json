@@ -1,0 +1,32 @@
+{
+  "slug": "public-health",
+  "kind": "lesson",
+  "title": {
+    "zh": "公共卫生 · 从曲线到干预",
+    "en": "Public Health · From Curves to Interventions"
+  },
+  "desc": {
+    "zh": "用传播曲线、R₀、检测指标与干预取舍，建立流行病学的教学模型直觉。",
+    "en": "Build an epidemiology intuition with epidemic curves, R₀, test metrics and intervention trade-offs."
+  },
+  "tags": [
+    {
+      "zh": "传播曲线",
+      "en": "Epidemic Curves"
+    },
+    {
+      "zh": "R₀ 与 Rₑ",
+      "en": "R₀ & Rₑ"
+    },
+    {
+      "zh": "敏感度与特异度",
+      "en": "Sensitivity & Specificity"
+    }
+  ],
+  "category": "biology",
+  "subtopic": "body",
+  "stage": "senior",
+  "status": "live",
+  "path": "biology/body/public-health/",
+  "order": 1350
+}

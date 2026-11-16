@@ -1,0 +1,24 @@
+{
+  "slug": "averaging-leveling",
+  "kind": "lesson",
+  "title": {
+    "zh": "平均数 · 移多补少",
+    "en": "Averages · Level by Pouring"
+  },
+  "desc": {
+    "zh": "高低不齐的水杯互相倒一倒，水位齐平的那个高度就是平均数。",
+    "en": "Pour water between uneven cups until they are level: the common level is the mean."
+  },
+  "tags": [
+    {
+      "zh": "数学基础",
+      "en": "Mathematical Foundations"
+    }
+  ],
+  "category": "math",
+  "subtopic": "data",
+  "stage": "primary",
+  "status": "live",
+  "path": "math/data/averaging-leveling/",
+  "order": 1720
+}

@@ -1,0 +1,24 @@
+{
+  "slug": "polygon-angles",
+  "kind": "lesson",
+  "title": {
+    "zh": "多边形内角和 · 撕下来拼一拼",
+    "en": "Polygon Angle Sums · Tear and Rearrange"
+  },
+  "desc": {
+    "zh": "三角形的三个角拼在一起是平角 180°；任何多边形都能剖成三角形，内角和就是 (n − 2) × 180°。",
+    "en": "A triangle’s three angles fit together into a straight angle of 180°; any polygon can be cut into triangles, so its interior angles add up to (n − 2) × 180°."
+  },
+  "tags": [
+    {
+      "zh": "数学基础",
+      "en": "Mathematical Foundations"
+    }
+  ],
+  "category": "math",
+  "subtopic": "geometry",
+  "stage": "junior",
+  "status": "live",
+  "path": "math/geometry/polygon-angles/",
+  "order": 1920
+}

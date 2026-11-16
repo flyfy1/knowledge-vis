@@ -1,0 +1,24 @@
+{
+  "slug": "resonance",
+  "kind": "lesson",
+  "title": {
+    "zh": "共振 · 踩中节拍，小推也能荡高",
+    "en": "Resonance · Push in Time and a Small Force Goes a Long Way"
+  },
+  "desc": {
+    "zh": "从弹簧的固有节拍出发，看阻尼怎样让振动衰减，再看周期性的推力在什么频率下把振幅推到最高。",
+    "en": "Start from a spring’s natural beat, see how damping makes oscillations die away, then find the driving frequency at which periodic pushes build the largest swing."
+  },
+  "tags": [
+    {
+      "zh": "物理与电路",
+      "en": "Physics & Circuits"
+    }
+  ],
+  "category": "physics",
+  "subtopic": "waves",
+  "stage": "senior",
+  "status": "live",
+  "path": "physics/waves/resonance/",
+  "order": 1680
+}

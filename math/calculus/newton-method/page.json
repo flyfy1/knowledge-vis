@@ -1,0 +1,24 @@
+{
+  "slug": "newton-method",
+  "kind": "lesson",
+  "title": {
+    "zh": "牛顿法求根 · 沿切线一刀跳向零点",
+    "en": "Newton’s Method · Leap to the Root Along a Tangent"
+  },
+  "desc": {
+    "zh": "用切线代替曲线，每一刀都把误差的位数翻倍；失败的几种情形也画给你看。",
+    "en": "Replace the curve by its tangent and jump to where the tangent hits zero; each jump roughly doubles the correct digits. The ways it fails are drawn too."
+  },
+  "tags": [
+    {
+      "zh": "数学基础",
+      "en": "Mathematical Foundations"
+    }
+  ],
+  "category": "math",
+  "subtopic": "calculus",
+  "stage": "university",
+  "status": "live",
+  "path": "math/calculus/newton-method/",
+  "order": 2250
+}

@@ -1,0 +1,24 @@
+{
+  "slug": "simple-circuits",
+  "kind": "lesson",
+  "title": {
+    "zh": "简单电路 · 电流要走一圈",
+    "en": "Simple Circuits · Current Must Go Round"
+  },
+  "desc": {
+    "zh": "电池、开关和灯泡连成一个完整的圈，灯才会亮；断开一处，整圈的电流同时停下。",
+    "en": "A battery, a switch and a bulb joined into one complete loop make the bulb light; break it anywhere and the current stops all round at once."
+  },
+  "tags": [
+    {
+      "zh": "物理与电路",
+      "en": "Physics & Circuits"
+    }
+  ],
+  "category": "physics",
+  "subtopic": "circuits",
+  "stage": "primary",
+  "status": "live",
+  "path": "physics/circuits/simple-circuits/",
+  "order": 1970
+}

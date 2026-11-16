@@ -1,0 +1,32 @@
+{
+  "slug": "population-ecology",
+  "kind": "lesson",
+  "title": {
+    "zh": "种群生态学 · 增长如何被反馈改变",
+    "en": "Population Ecology · Growth Reshaped by Feedback"
+  },
+  "desc": {
+    "zh": "从内禀增长率 r 和承载力 K 走到捕食者—猎物耦合，拖动参数，追踪资源反馈如何把增长改写成波动。",
+    "en": "Move from intrinsic rate r and carrying capacity K to predator–prey coupling, then trace how resource feedback reshapes growth into waves."
+  },
+  "tags": [
+    {
+      "zh": "逻辑斯蒂增长",
+      "en": "Logistic Growth"
+    },
+    {
+      "zh": "承载力",
+      "en": "Carrying Capacity"
+    },
+    {
+      "zh": "捕食者—猎物",
+      "en": "Predator–Prey"
+    }
+  ],
+  "category": "biology",
+  "subtopic": "ecology",
+  "stage": "senior",
+  "status": "live",
+  "path": "biology/ecology/population-ecology/",
+  "order": 1000
+}

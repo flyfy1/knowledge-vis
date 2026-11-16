@@ -1,0 +1,24 @@
+{
+  "slug": "gravity-orbits",
+  "kind": "lesson",
+  "title": {
+    "zh": "万有引力与轨道 · 横着扔出去，会落下、绕圈还是飞走",
+    "en": "Gravity and Orbits · Throw It Sideways: Fall, Circle or Escape"
+  },
+  "desc": {
+    "zh": "平方反比的引力加上一点横向速度：轨道从坠落变成椭圆、圆，再到逃逸；开普勒三定律从模拟里自己浮现。",
+    "en": "An inverse-square pull plus some sideways speed: the path turns from a crash into an ellipse, a circle, then an escape; Kepler’s three laws emerge from the simulation."
+  },
+  "tags": [
+    {
+      "zh": "地球与太空",
+      "en": "Earth & Space"
+    }
+  ],
+  "category": "earth",
+  "subtopic": "astronomy",
+  "stage": "senior",
+  "status": "live",
+  "path": "earth/astronomy/gravity-orbits/",
+  "order": 2200
+}

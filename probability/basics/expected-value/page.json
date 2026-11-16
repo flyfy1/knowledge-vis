@@ -1,0 +1,24 @@
+{
+  "slug": "expected-value",
+  "kind": "lesson",
+  "title": {
+    "zh": "期望 · 彩票、骰子、保险放在同一台秤上",
+    "en": "Expected Value · Lotteries, Dice and Insurance on One Scale"
+  },
+  "desc": {
+    "zh": "期望是长期平均的公平价：用它判断一次下注值不值，也看清为什么买保险明知吃亏还值得。",
+    "en": "Expected value is the fair price of a long-run average: use it to judge a bet, and to see why insurance can be worth buying even at a loss on average."
+  },
+  "tags": [
+    {
+      "zh": "概率与统计",
+      "en": "Probability & Statistics"
+    }
+  ],
+  "category": "probability",
+  "subtopic": "basics",
+  "stage": "senior",
+  "status": "live",
+  "path": "probability/basics/expected-value/",
+  "order": 2160
+}

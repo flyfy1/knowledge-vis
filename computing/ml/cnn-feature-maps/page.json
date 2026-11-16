@@ -1,0 +1,24 @@
+{
+  "slug": "cnn-feature-maps",
+  "kind": "lesson",
+  "title": {
+    "zh": "卷积神经网络的特征图 · 小窗口怎样“看”图",
+    "en": "CNN Feature Maps · How a Small Window “Sees” an Image"
+  },
+  "desc": {
+    "zh": "一个 3×3 的小窗口在图上滑动，边缘、模糊、锐化各是一组数字；把它们堆起来，再让机器自己学出这组数字。",
+    "en": "A 3×3 window slides across an image; edges, blur and sharpening are just different sets of nine numbers. Stack them, then let the machine learn the numbers itself."
+  },
+  "tags": [
+    {
+      "zh": "计算与智能",
+      "en": "Computing & AI"
+    }
+  ],
+  "category": "computing",
+  "subtopic": "ml",
+  "stage": "university",
+  "status": "live",
+  "path": "computing/ml/cnn-feature-maps/",
+  "order": 2120
+}

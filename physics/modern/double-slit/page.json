@@ -1,0 +1,24 @@
+{
+  "slug": "double-slit",
+  "kind": "lesson",
+  "title": {
+    "zh": "双缝实验 · 一颗一颗的粒子，也走出干涉条纹",
+    "en": "The Double-Slit Experiment · Single Particles Still Build Fringes"
+  },
+  "desc": {
+    "zh": "一颗一颗发射电子，条纹自己长出来；一旦知道它走了哪条缝，条纹就消失。",
+    "en": "Fire particles one at a time and fringes grow by themselves; the moment you know which slit one took, the fringes vanish."
+  },
+  "tags": [
+    {
+      "zh": "物理与电路",
+      "en": "Physics & Circuits"
+    }
+  ],
+  "category": "physics",
+  "subtopic": "modern",
+  "stage": "university",
+  "status": "live",
+  "path": "physics/modern/double-slit/",
+  "order": 2150
+}

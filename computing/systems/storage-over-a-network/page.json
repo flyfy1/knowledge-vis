@@ -1,6 +1,34 @@
 {
   "slug": "storage-over-a-network",
   "kind": "essay",
+  "tags": [
+    {
+      "zh": "网络存储",
+      "en": "Network Storage"
+    },
+    {
+      "zh": "iSCSI",
+      "en": "iSCSI"
+    },
+    {
+      "zh": "NVMe-oF",
+      "en": "NVMe-oF"
+    },
+    {
+      "zh": "存储系统",
+      "en": "Storage Systems"
+    },
+    {
+      "zh": "长文",
+      "en": "Long-form Essay"
+    }
+  ],
+  "category": "computing",
+  "subtopic": "systems",
+  "stage": "university",
+  "status": "live",
+  "path": "computing/systems/storage-over-a-network/",
+  "order": 270,
   "layout": "essay",
   "scripts": [
     "models.js",

@@ -1,0 +1,24 @@
+{
+  "slug": "titration-curves",
+  "kind": "lesson",
+  "title": {
+    "zh": "滴定曲线 · 终点附近 pH 的“悬崖”",
+    "en": "Titration Curves · The pH Cliff Near the End Point"
+  },
+  "desc": {
+    "zh": "往酸里一滴滴加碱：pH 先缓慢爬升，在等当点附近陡然跳升；指示剂变色要对准这个跳升。",
+    "en": "Add base to acid drop by drop: pH creeps up, then leaps near the equivalence point; the indicator must change colour right on that leap."
+  },
+  "tags": [
+    {
+      "zh": "化学",
+      "en": "Chemistry"
+    }
+  ],
+  "category": "chemistry",
+  "subtopic": "solutions",
+  "stage": "senior",
+  "status": "live",
+  "path": "chemistry/solutions/titration-curves/",
+  "order": 1700
+}

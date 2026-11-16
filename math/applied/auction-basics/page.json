@@ -1,0 +1,24 @@
+{
+  "slug": "auction-basics",
+  "kind": "lesson",
+  "title": {
+    "zh": "拍卖 · 报价与真话",
+    "en": "Auctions · Bidding and Telling the Truth"
+  },
+  "desc": {
+    "zh": "同一件东西，四种拍法：为什么第二价格拍卖里说真话最划算，而第一价格拍卖里要“压价”？",
+    "en": "One item, four auction rules: why is telling the truth best in a second-price auction, while a first-price auction makes you shade your bid?"
+  },
+  "tags": [
+    {
+      "zh": "数学基础",
+      "en": "Mathematical Foundations"
+    }
+  ],
+  "category": "math",
+  "subtopic": "applied",
+  "stage": "senior",
+  "status": "live",
+  "path": "math/applied/auction-basics/",
+  "order": 2060
+}

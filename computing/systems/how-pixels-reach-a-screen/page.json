@@ -1,6 +1,38 @@
 {
   "slug": "how-pixels-reach-a-screen",
   "kind": "essay",
+  "tags": [
+    {
+      "zh": "显示器",
+      "en": "Displays"
+    },
+    {
+      "zh": "显卡",
+      "en": "Graphics Cards"
+    },
+    {
+      "zh": "DisplayPort",
+      "en": "DisplayPort"
+    },
+    {
+      "zh": "HDR",
+      "en": "HDR"
+    },
+    {
+      "zh": "计算机体系结构",
+      "en": "Computer Architecture"
+    },
+    {
+      "zh": "长文",
+      "en": "Long-form Essay"
+    }
+  ],
+  "category": "computing",
+  "subtopic": "systems",
+  "stage": "university",
+  "status": "live",
+  "path": "computing/systems/how-pixels-reach-a-screen/",
+  "order": 420,
   "layout": "essay",
   "scripts": [
     "models.js",

@@ -1,0 +1,32 @@
+{
+  "slug": "probability-distribution",
+  "kind": "lesson",
+  "title": {
+    "zh": "概率分布 · 随机性也有形状",
+    "en": "Probability Distributions · Randomness Has a Shape"
+  },
+  "desc": {
+    "zh": "在离散与连续分布之间切换，拖动参数，看概率质量、密度、均值与方差如何重排。",
+    "en": "Switch between discrete and continuous distributions, then tune parameters to see mass, density, mean and variance reorganize."
+  },
+  "tags": [
+    {
+      "zh": "概率分布",
+      "en": "Probability Distributions"
+    },
+    {
+      "zh": "均值与方差",
+      "en": "Mean & Variance"
+    },
+    {
+      "zh": "随机变量",
+      "en": "Random Variables"
+    }
+  ],
+  "category": "probability",
+  "subtopic": "basics",
+  "stage": "senior",
+  "status": "live",
+  "path": "probability/basics/probability-distribution/",
+  "order": 1180
+}

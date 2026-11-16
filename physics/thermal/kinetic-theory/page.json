@@ -1,0 +1,24 @@
+{
+  "slug": "kinetic-theory",
+  "kind": "lesson",
+  "title": {
+    "zh": "气体压强的微观图景 · 撞墙的账本",
+    "en": "The Microscopic Picture of Gas Pressure · A Ledger of Wall Hits"
+  },
+  "desc": {
+    "zh": "盒子里的粒子乱撞：压强是撞墙的冲量账，温度是平均动能，速率分布自己从碰撞里长出来。",
+    "en": "Particles in a box bounce around: pressure is a ledger of wall impulses, temperature is mean kinetic energy, and the speed distribution grows out of collisions."
+  },
+  "tags": [
+    {
+      "zh": "物理与电路",
+      "en": "Physics & Circuits"
+    }
+  ],
+  "category": "physics",
+  "subtopic": "thermal",
+  "stage": "university",
+  "status": "live",
+  "path": "physics/thermal/kinetic-theory/",
+  "order": 1560
+}

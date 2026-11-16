@@ -1,0 +1,32 @@
+{
+  "slug": "signal-detection",
+  "kind": "lesson",
+  "title": {
+    "zh": "信号检测论 · 分得清，和愿意说“有”，是两回事",
+    "en": "Signal Detection Theory · Telling Apart vs. Willing to Say “Yes”"
+  },
+  "desc": {
+    "zh": "两位检测者都对了 80%，谁更会分辨？用命中率和虚报率把敏感度 d' 与判据 c 拆开，在 ROC 曲线上比较，再按错误代价选判据。",
+    "en": "Two detectors are both 80% correct — who discriminates better? Separate sensitivity d' from criterion c with hit and false-alarm rates, compare on the ROC curve, then pick a criterion by the cost of errors."
+  },
+  "tags": [
+    {
+      "zh": "敏感度 d'",
+      "en": "Sensitivity d'"
+    },
+    {
+      "zh": "ROC 曲线",
+      "en": "ROC Curve"
+    },
+    {
+      "zh": "决策判据",
+      "en": "Decision Criterion"
+    }
+  ],
+  "category": "psychology",
+  "subtopic": "cognition",
+  "stage": "university",
+  "status": "live",
+  "path": "psychology/cognition/signal-detection/",
+  "order": 1290
+}

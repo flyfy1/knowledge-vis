@@ -1,0 +1,24 @@
+{
+  "slug": "binomial-normal",
+  "kind": "lesson",
+  "title": {
+    "zh": "二项分布到正态 · 钉板上长出的钟形",
+    "en": "Binomial to Normal · The Bell Curve Growing on a Pegboard"
+  },
+  "desc": {
+    "zh": "小球在钉板上一层层向左或向右，落点的柱状图随层数增加，越来越像那口钟。",
+    "en": "A ball goes left or right at every peg; as the rows increase, the histogram of landing bins looks more and more like the bell."
+  },
+  "tags": [
+    {
+      "zh": "概率与统计",
+      "en": "Probability & Statistics"
+    }
+  ],
+  "category": "probability",
+  "subtopic": "basics",
+  "stage": "senior",
+  "status": "live",
+  "path": "probability/basics/binomial-normal/",
+  "order": 2070
+}

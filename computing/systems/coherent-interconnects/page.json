@@ -1,6 +1,34 @@
 {
   "slug": "coherent-interconnects",
   "kind": "essay",
+  "tags": [
+    {
+      "zh": "CXL",
+      "en": "CXL"
+    },
+    {
+      "zh": "NVLink",
+      "en": "NVLink"
+    },
+    {
+      "zh": "计算机体系结构",
+      "en": "Computer Architecture"
+    },
+    {
+      "zh": "互连",
+      "en": "Interconnects"
+    },
+    {
+      "zh": "长文",
+      "en": "Long-form Essay"
+    }
+  ],
+  "category": "computing",
+  "subtopic": "systems",
+  "stage": "university",
+  "status": "live",
+  "path": "computing/systems/coherent-interconnects/",
+  "order": 380,
   "layout": "essay",
   "scripts": [
     "models.js",

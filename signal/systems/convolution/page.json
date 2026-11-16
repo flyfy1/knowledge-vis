@@ -1,0 +1,32 @@
+{
+  "slug": "convolution",
+  "kind": "lesson",
+  "title": {
+    "zh": "卷积 · 一步一交互",
+    "en": "Convolution · One Interaction at a Time"
+  },
+  "desc": {
+    "zh": "把一张照片变糊、把声音加上回声、把抖动的数据变平滑，背后是同一台机器：卷积。七步亲手滑动、翻卷、相乘、求和，最后看它在频域里和傅里叶相遇。",
+    "en": "Blurring a photo, adding echo to a sound, smoothing jittery data — behind all of them sits the same machine: convolution. Slide, flip, multiply and sum your way through seven steps, then watch it meet the Fourier transform in the frequency domain."
+  },
+  "tags": [
+    {
+      "zh": "滑动平均",
+      "en": "Moving Average"
+    },
+    {
+      "zh": "图像处理",
+      "en": "Image Processing"
+    },
+    {
+      "zh": "时域与频域",
+      "en": "Time & Frequency"
+    }
+  ],
+  "category": "signal",
+  "subtopic": "systems",
+  "stage": "university",
+  "status": "live",
+  "path": "signal/systems/convolution/",
+  "order": 470
+}

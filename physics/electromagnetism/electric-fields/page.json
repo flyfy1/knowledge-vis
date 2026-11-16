@@ -1,0 +1,24 @@
+{
+  "slug": "electric-fields",
+  "kind": "lesson",
+  "title": {
+    "zh": "电场 · 看不见的力画成图",
+    "en": "Electric Fields · Drawing an Invisible Force"
+  },
+  "desc": {
+    "zh": "从一个点电荷的场出发，叠加、画场线、画等势面，最后放一个电荷看它怎么动。",
+    "en": "Start with one point charge, then add fields, draw field lines and equipotentials, and finally release a charge to watch it move."
+  },
+  "tags": [
+    {
+      "zh": "物理与电路",
+      "en": "Physics & Circuits"
+    }
+  ],
+  "category": "physics",
+  "subtopic": "electromagnetism",
+  "stage": "senior",
+  "status": "live",
+  "path": "physics/electromagnetism/electric-fields/",
+  "order": 1480
+}

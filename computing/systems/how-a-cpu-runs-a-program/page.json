@@ -1,6 +1,34 @@
 {
   "slug": "how-a-cpu-runs-a-program",
   "kind": "essay",
+  "tags": [
+    {
+      "zh": "指令集",
+      "en": "Instruction Sets"
+    },
+    {
+      "zh": "RISC-V",
+      "en": "RISC-V"
+    },
+    {
+      "zh": "流水线",
+      "en": "Pipelining"
+    },
+    {
+      "zh": "计算机体系结构",
+      "en": "Computer Architecture"
+    },
+    {
+      "zh": "长文",
+      "en": "Long-form Essay"
+    }
+  ],
+  "category": "computing",
+  "subtopic": "systems",
+  "stage": "university",
+  "status": "live",
+  "path": "computing/systems/how-a-cpu-runs-a-program/",
+  "order": 320,
   "layout": "essay",
   "scripts": [
     "models.js",

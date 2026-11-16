@@ -1,6 +1,34 @@
 {
   "slug": "how-thunderbolt-works",
   "kind": "essay",
+  "tags": [
+    {
+      "zh": "USB-C",
+      "en": "USB-C"
+    },
+    {
+      "zh": "雷电与 USB4",
+      "en": "Thunderbolt and USB4"
+    },
+    {
+      "zh": "接口与总线",
+      "en": "Interfaces and Buses"
+    },
+    {
+      "zh": "USB PD 充电",
+      "en": "USB Power Delivery"
+    },
+    {
+      "zh": "长文",
+      "en": "Long-form Essay"
+    }
+  ],
+  "category": "computing",
+  "subtopic": "systems",
+  "stage": "university",
+  "status": "live",
+  "path": "computing/systems/how-thunderbolt-works/",
+  "order": 300,
   "layout": "essay",
   "scripts": [
     "models.js",

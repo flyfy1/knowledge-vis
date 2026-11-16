@@ -1,0 +1,24 @@
+{
+  "slug": "wavelets",
+  "kind": "lesson",
+  "title": {
+    "zh": "小波 · 让窗口随频率伸缩",
+    "en": "Wavelets · Windows That Stretch With Frequency"
+  },
+  "desc": {
+    "zh": "傅里叶谱说得出「有哪些频率」，说不出「何时」。从加窗口、到让窗口随频率伸缩，再到用最少的数描述突变。",
+    "en": "A Fourier spectrum says which frequencies are present, but not when. Add a window, let the window stretch with frequency, then describe sharp changes with very few numbers."
+  },
+  "tags": [
+    {
+      "zh": "信号与系统",
+      "en": "Signals & Systems"
+    }
+  ],
+  "category": "signal",
+  "subtopic": "transforms",
+  "stage": "university",
+  "status": "live",
+  "path": "signal/transforms/wavelets/",
+  "order": 2020
+}

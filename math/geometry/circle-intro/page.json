@@ -1,0 +1,24 @@
+{
+  "slug": "circle-intro",
+  "kind": "lesson",
+  "title": {
+    "zh": "圆的认识 · 圆规、半径与 π",
+    "en": "The Circle · Compass, Radius and π"
+  },
+  "desc": {
+    "zh": "圆规一转画出圆；把圆周拉直量一量，周长总是直径的 3 倍多一点——这个倍数就是 π。",
+    "en": "A compass sweeps out a circle; unroll its edge and it is always a little over 3 diameters long: that multiple is π."
+  },
+  "tags": [
+    {
+      "zh": "数学基础",
+      "en": "Mathematical Foundations"
+    }
+  ],
+  "category": "math",
+  "subtopic": "geometry",
+  "stage": "primary",
+  "status": "live",
+  "path": "math/geometry/circle-intro/",
+  "order": 1770
+}

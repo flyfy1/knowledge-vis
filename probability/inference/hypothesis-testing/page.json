@@ -1,0 +1,24 @@
+{
+  "slug": "hypothesis-testing",
+  "kind": "lesson",
+  "title": {
+    "zh": "假设检验与 p 值 · 法庭模型判硬币冤不冤",
+    "en": "Hypothesis Testing & p-Values · A Courtroom for a Coin"
+  },
+  "desc": {
+    "zh": "先假定硬币公平（无罪推定），再问“如果公平，出现这么极端的结果有多罕见”；显著性水平是愿意冤枉好人的预算。",
+    "en": "Presume the coin is fair (innocent until proven guilty), then ask how rare a result this extreme would be if it were; the significance level is the budget for convicting an innocent coin."
+  },
+  "tags": [
+    {
+      "zh": "概率与统计",
+      "en": "Probability & Statistics"
+    }
+  ],
+  "category": "probability",
+  "subtopic": "inference",
+  "stage": "university",
+  "status": "live",
+  "path": "probability/inference/hypothesis-testing/",
+  "order": 2210
+}

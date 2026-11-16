@@ -1,0 +1,24 @@
+{
+  "slug": "latitude-longitude",
+  "kind": "lesson",
+  "title": {
+    "zh": "经纬网",
+    "en": "Latitude & Longitude"
+  },
+  "desc": {
+    "zh": "地球是个球，没有「上下左右」的格子——但只要说「北纬多少度、东经多少度」，就能在地球表面上定位任意一点。",
+    "en": "Earth is a sphere with no built-in grid — yet “so many degrees north, so many east” pins down any point on its surface."
+  },
+  "tags": [
+    {
+      "zh": "地球与太空",
+      "en": "Earth & Space"
+    }
+  ],
+  "category": "earth",
+  "subtopic": "geo",
+  "stage": "junior",
+  "status": "live",
+  "path": "earth/geo/latitude-longitude/",
+  "order": 1570
+}

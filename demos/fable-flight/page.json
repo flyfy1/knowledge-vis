@@ -1,0 +1,31 @@
+{
+  "slug": "fable-flight",
+  "kind": "demo",
+  "title": {
+    "zh": "寓言乘风，梦在舞动",
+    "en": "Let Fable take Flight"
+  },
+  "desc": {
+    "zh": "深夜的图书馆，两万四千页寓言乘风飞舞。Three.js 实时短片：建筑、纹理、钢琴与纸声全部由代码生成。",
+    "en": "A midnight library where 24,000 pages of fable take to the air. A real-time Three.js short film; architecture, textures, piano and paper sounds are all generated in code."
+  },
+  "tags": [
+    {
+      "zh": "Three.js",
+      "en": "Three.js"
+    },
+    {
+      "zh": "实时短片",
+      "en": "Real-time Film"
+    },
+    {
+      "zh": "程序化生成",
+      "en": "Procedural"
+    }
+  ],
+  "category": "demos",
+  "stage": "university",
+  "status": "live",
+  "path": "demos/fable-flight/",
+  "order": 50
+}

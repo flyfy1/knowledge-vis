@@ -1,0 +1,24 @@
+{
+  "slug": "buoyancy-archimedes",
+  "kind": "lesson",
+  "title": {
+    "zh": "浮力与阿基米德",
+    "en": "Buoyancy & Archimedes"
+  },
+  "desc": {
+    "zh": "把物体慢慢浸入水里，弹簧秤读数一路掉下去——掉的那部分恰好等于被它排开的水的重量。",
+    "en": "Lower an object into water and the spring scale reading keeps dropping — by exactly the weight of the water it pushes aside."
+  },
+  "tags": [
+    {
+      "zh": "物理与电路",
+      "en": "Physics & Circuits"
+    }
+  ],
+  "category": "physics",
+  "subtopic": "matter",
+  "stage": "junior",
+  "status": "live",
+  "path": "physics/matter/buoyancy-archimedes/",
+  "order": 1400
+}

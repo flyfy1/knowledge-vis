@@ -1,0 +1,32 @@
+{
+  "slug": "materials-science",
+  "kind": "lesson",
+  "title": {
+    "zh": "材料科学 · 应力如何变成断裂",
+    "en": "Materials Science · When Stress Becomes Fracture"
+  },
+  "desc": {
+    "zh": "比较钢、铝和工程塑料的应力–应变响应，追踪屈服、塑性、韧性和断裂的工程取舍。",
+    "en": "Compare steel, aluminium and polymer stress–strain responses, then trace the engineering trade-offs among yield, plasticity, toughness and fracture."
+  },
+  "tags": [
+    {
+      "zh": "应力–应变",
+      "en": "Stress–Strain"
+    },
+    {
+      "zh": "屈服",
+      "en": "Yield"
+    },
+    {
+      "zh": "韧性",
+      "en": "Toughness"
+    }
+  ],
+  "category": "physics",
+  "subtopic": "matter",
+  "stage": "university",
+  "status": "live",
+  "path": "physics/matter/materials-science/",
+  "order": 1230
+}

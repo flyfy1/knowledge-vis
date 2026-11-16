@@ -1,6 +1,34 @@
 {
   "slug": "how-usb-drives-talk",
   "kind": "essay",
+  "tags": [
+    {
+      "zh": "USB",
+      "en": "USB"
+    },
+    {
+      "zh": "存储系统",
+      "en": "Storage Systems"
+    },
+    {
+      "zh": "移动硬盘",
+      "en": "External Drives"
+    },
+    {
+      "zh": "雷电与 USB4",
+      "en": "Thunderbolt and USB4"
+    },
+    {
+      "zh": "长文",
+      "en": "Long-form Essay"
+    }
+  ],
+  "category": "computing",
+  "subtopic": "systems",
+  "stage": "university",
+  "status": "live",
+  "path": "computing/systems/how-usb-drives-talk/",
+  "order": 260,
   "layout": "essay",
   "scripts": [
     "models.js",

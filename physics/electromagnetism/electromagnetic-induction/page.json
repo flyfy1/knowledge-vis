@@ -1,0 +1,24 @@
+{
+  "slug": "electromagnetic-induction",
+  "kind": "lesson",
+  "title": {
+    "zh": "电磁感应 · 磁通量一变，电压就来",
+    "en": "Electromagnetic Induction · Change the Flux, Get a Voltage"
+  },
+  "desc": {
+    "zh": "让磁铁穿过线圈，看磁通量的变化率怎样变成电压，再看楞次定律如何定方向、转动线圈如何发电。",
+    "en": "Pass a magnet through a coil, see how the rate of change of flux becomes a voltage, then how Lenz\\"
+  },
+  "tags": [
+    {
+      "zh": "物理与电路",
+      "en": "Physics & Circuits"
+    }
+  ],
+  "category": "physics",
+  "subtopic": "electromagnetism",
+  "stage": "senior",
+  "status": "live",
+  "path": "physics/electromagnetism/electromagnetic-induction/",
+  "order": 1500
+}

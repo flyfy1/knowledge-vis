@@ -1,6 +1,34 @@
 {
   "slug": "how-sas-works",
   "kind": "essay",
+  "tags": [
+    {
+      "zh": "SAS",
+      "en": "SAS"
+    },
+    {
+      "zh": "SCSI",
+      "en": "SCSI"
+    },
+    {
+      "zh": "存储系统",
+      "en": "Storage Systems"
+    },
+    {
+      "zh": "串行链路",
+      "en": "Serial Links"
+    },
+    {
+      "zh": "长文",
+      "en": "Long-form Essay"
+    }
+  ],
+  "category": "computing",
+  "subtopic": "systems",
+  "stage": "university",
+  "status": "live",
+  "path": "computing/systems/how-sas-works/",
+  "order": 250,
   "layout": "essay",
   "scripts": [
     "models.js",

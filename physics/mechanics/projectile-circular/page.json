@@ -1,0 +1,24 @@
+{
+  "slug": "projectile-circular",
+  "kind": "lesson",
+  "title": {
+    "zh": "抛体与圆周 · 一直在掉，但总掉不到地上",
+    "en": "Projectiles & Circular Motion · Always Falling, Never Landing"
+  },
+  "desc": {
+    "zh": "把速度劈成水平、竖直两份，各走各的；圆周运动需要不停“拽向圆心”；卫星就是水平速度大到掉下去的曲线总绕着地球转的炮弹。",
+    "en": "Split velocity into a horizontal and a vertical part that do not disturb each other; circular motion needs a steady pull toward the centre; a satellite is a cannonball whose fall keeps curving round the Earth."
+  },
+  "tags": [
+    {
+      "zh": "物理与电路",
+      "en": "Physics & Circuits"
+    }
+  ],
+  "category": "physics",
+  "subtopic": "mechanics",
+  "stage": "senior",
+  "status": "live",
+  "path": "physics/mechanics/projectile-circular/",
+  "order": 2300
+}
