@@ -899,7 +899,7 @@ anchor; a link to the page top has no anchor).
 
 ## 多臂老虎机 · 探索还是利用 / Multi-Armed Bandits · Explore or Exploit → 中心极限定理 · 平均值总会变成钟形 / Central Limit Theorem · Averages Always Turn Bell-Shaped
 
-- `bandit-arms` → `central-limit-theorem#step2`: ? → gaussian
+- `bandit-arms#step5` → `central-limit-theorem#step2`: ? → gaussian
 
 ## 条形图 · 让数字站成一排比高矮 / Bar Charts · Numbers Standing in a Row → 概率分布 · 随机性也有形状 / Probability Distributions · Randomness Has a Shape
 
