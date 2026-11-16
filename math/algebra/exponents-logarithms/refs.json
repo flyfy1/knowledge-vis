@@ -1,0 +1,121 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "exponents-logarithms",
+ "refs": [],
+ "backlinks": [
+  {
+   "from": "logistic-growth",
+   "links": [
+    {
+     "from": "step1",
+     "to": "step0"
+    },
+    {
+     "from": "step5",
+     "to": "step0"
+    }
+   ]
+  },
+  {
+   "from": "ph-scale",
+   "links": [
+    {
+     "from": "step5",
+     "to": "step2"
+    }
+   ]
+  },
+  {
+   "from": "recursion-divide",
+   "links": [
+    {
+     "from": "step5",
+     "to": "step0"
+    }
+   ]
+  },
+  {
+   "from": "rsa-encryption",
+   "links": [
+    {
+     "from": "step5",
+     "to": "step3"
+    }
+   ]
+  },
+  {
+   "from": "why-the-planet-warms",
+   "links": [
+    {
+     "from": "ch4",
+     "to": "step0"
+    }
+   ]
+  },
+  {
+   "from": "where-a-mortgage-payment-goes",
+   "links": [
+    {
+     "from": "ch9",
+     "to": null
+    }
+   ]
+  },
+  {
+   "from": "compound-interest",
+   "links": [
+    {
+     "from": "step5",
+     "to": "step0"
+    }
+   ]
+  },
+  {
+   "from": "vowel-space",
+   "links": [
+    {
+     "from": "step1",
+     "to": "step3"
+    }
+   ]
+  },
+  {
+   "from": "sequences-series",
+   "links": [
+    {
+     "from": null,
+     "to": "step0"
+    }
+   ]
+  },
+  {
+   "from": "place-value",
+   "links": [
+    {
+     "from": null,
+     "to": "step0"
+    }
+   ]
+  },
+  {
+   "from": "taylor-series",
+   "links": [
+    {
+     "from": null,
+     "to": "step1"
+    }
+   ]
+  },
+  {
+   "from": "chaos-threebody",
+   "links": [
+    {
+     "from": null,
+     "to": "step0"
+    }
+   ]
+  }
+ ],
+ "related": [],
+ "bindings": []
+}

@@ -562,7 +562,8 @@ anchor; a link to the page top has no anchor).
 
 ## 指数与对数 · 翻倍与逆问 / Exponentials & Logarithms · Doubling and the Reverse Question → 一次函数 · 斜率是陡缓，截距是起点 / Linear Functions · Slope Is Steepness, Intercept Is the Start
 
-- `exponents-logarithms` → `linear-functions#step0`
+- `exponents-logarithms#step0` → `linear-functions#step0`
+- `exponents-logarithms#step5` → `linear-functions#step0`
 
 ## 圆周角 · 为什么恰好是一半 / Inscribed Angles · Why Exactly Half → 对称与旋转 · 对折与转圈 / Symmetry & Rotation · Folding and Turning
 

@@ -28,5 +28,71 @@
   "stage": "senior",
   "status": "live",
   "path": "math/algebra/exponents-logarithms/",
-  "order": 790
+  "order": 790,
+  "layout": "lesson",
+  "version": "20261116a",
+  "titleKey": "docTitle",
+  "legacyLayout": {
+    "_note": "Whitespace and markup of the hand-written lesson this page was converted from, so the conversion could be checked byte for byte (specs/site-template.md §3c).",
+    "leads": {
+      "q1t": "\n\n    ",
+      "q2t": "\n\n    ",
+      "q3t": "\n\n    "
+    },
+    "mainGaps": [
+      "\n\n<!-- ============ 第 0 步：翻倍的世界 ============ -->\n",
+      "\n\n<!-- ============ 第 1 步：指数函数与底数 ============ -->\n",
+      "\n\n<!-- ============ 第 2 步：对数登场 ============ -->\n",
+      "\n\n<!-- ============ 第 3 步：三把尺子 ============ -->\n",
+      "\n\n<!-- ============ 第 4 步：自测 ============ -->\n",
+      "\n\n<!-- ============ 第 5 步：终章 ============ -->\n",
+      "\n\n"
+    ],
+    "stepNav": {
+      "item": "\n  <a href=\"#{id}\" class=\"nav-step\" data-nav=\"{n}\" data-i18n=\"{key}\"></a>",
+      "end": "\n"
+    },
+    "filled": [
+      "back",
+      "pageTitle",
+      "tagline",
+      "nav0",
+      "nav1",
+      "nav2",
+      "nav3",
+      "nav4",
+      "nav5",
+      "s0k",
+      "s0t",
+      "s0play",
+      "s0tLab",
+      "start",
+      "s1k",
+      "s1t",
+      "s1aLab",
+      "s1xLab",
+      "s2k",
+      "s2t",
+      "s2baseLab",
+      "s2tgtLab",
+      "s2qaT",
+      "s3k",
+      "s3t",
+      "s3r1",
+      "s3r2",
+      "s3r3",
+      "s4k",
+      "s4t",
+      "q1t",
+      "q2t",
+      "q3t",
+      "q3true",
+      "q3false",
+      "s5k",
+      "s5t",
+      "c1h",
+      "c2h",
+      "c3h"
+    ]
+  }
 }
