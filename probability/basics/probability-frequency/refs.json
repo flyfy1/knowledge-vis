@@ -34,7 +34,11 @@
    "from": "bayes-diagnostics",
    "links": [
     {
-     "from": null,
+     "from": "step1",
+     "to": "step2"
+    },
+    {
+     "from": "step6",
      "to": "step2"
     }
    ]

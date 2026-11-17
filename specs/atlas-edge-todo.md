@@ -650,11 +650,12 @@ anchor; a link to the page top has no anchor).
 
 ## 贝叶斯诊断 · 阳性结果说明什么？ / Bayes Diagnostics · What Does a Positive Mean? → 概率与频率 · 转得越多，越贴近概率 / Probability & Frequency · The More Spins, the Closer to the Probability
 
-- `bayes-diagnostics` → `probability-frequency#step2`
+- `bayes-diagnostics#step1` → `probability-frequency#step2`
+- `bayes-diagnostics#step6` → `probability-frequency#step2`
 
 ## 贝叶斯诊断 · 阳性结果说明什么？ / Bayes Diagnostics · What Does a Positive Mean? → 假设检验与 p 值 · 法庭模型判硬币冤不冤 / Hypothesis Testing & p-Values · A Courtroom for a Coin
 
-- `bayes-diagnostics` → `hypothesis-testing#step3`
+- `bayes-diagnostics#step6` → `hypothesis-testing#step3`
 
 ## 反馈控制 · 先看差多少，再决定推多少 / Feedback Control · See the Error, Then Act → 拉普拉斯与 ROC · 给频率配一个寿命 / Laplace Transform & ROC · Giving Frequencies a Lifespan
 
