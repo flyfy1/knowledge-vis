@@ -1,6 +1,6 @@
 # HANDOFF.md — 开工前先读
 
-最后更新：2026-11-17，模板 Phase 3 批次 C 的独立评审 Agent（Claude Code）在第 1f 条加了评审结论；在此之前同日批次 C 的提交 Agent（Claude Code）在「模板迁移与示意图补齐」加了第 1f 条、改了第 1c 条 kepler-orbits 那一句；在此之前 2026-11-16，模板 Phase 3 批次 B 的独立评审 Agent（Claude Code）在第 1e 条加了评审结论；在此之前模板 Phase 3 批次 A 的独立评审 Agent（Claude Code）在第 1d 条加了评审结论、改了它的「遗留」；在此之前模板 Phase 3 批次 A 的提交 Agent（Claude Code）在「模板迁移与示意图补齐」加了第 1d 条；在此之前模板 Phase 2 的独立评审 Agent（Claude Code）在第 1c 条加了评审结论；在此之前模板 Phase 2 的提交 Agent（Claude Code）在「模板迁移与示意图补齐」加了第 1c 条、改了末尾「pages.config.js 仍手改」一句和第 2 部分「未上线：17 篇中文草稿」的登记说明；在此之前模板后续改进的提交 Agent（Claude Code）在「模板迁移与示意图补齐」加了第 1b 条、改了第 1a 条的「没转换」和第 3 条的遗留；在此之前 SIMD/浮点长文的登记 Agent（Claude Code）更新了「模板迁移与示意图补齐」第 1a、3 条（批次 A 已在线、SIMD 长文上线）；在此之前模板 Phase 1 批次 A 的提交 Agent（Claude Code）在「模板迁移与示意图补齐」加了第 1a 条；在此之前 SVG 视口检查的登记 Agent（Claude Code）更新了「模板迁移与示意图补齐」第 2 条的遗留项；在此之前存储 S1–S5 补图的登记 Agent（Claude Code）更新了「模板迁移与示意图补齐」第 2 条和存储系列的示意图状态；在此之前模板 Phase 0 的提交 Agent 更新了该节；第二部分其余内容仍是 2026-11-15 供电与网卡两篇上线后的状态。
+最后更新：2026-11-18，team lead（Claude Code 主会话）在第二部分开头加了「总览」一节，并更新了「等 Yangyu 决定」。之前的逐条更新记录见 git log HANDOFF.md。
 
 这份文件有两部分：
 
@@ -63,7 +63,37 @@
 
 ---
 
-## 第二部分：现状（2026-11-15）
+## 第二部分：现状
+
+### 总览：现在到哪了（2026-11-18，接手先读这一节）
+
+本节是摘要，细节在下面各节；有冲突以本节为准。线上与 `origin/main` 一致，到 `5df928f9` 为止（https://visual.integ.life，部署方式见第 2 条）。工作区干净，只有别人的未跟踪草稿目录（见下面「未上线：17 篇中文草稿」），不要碰。
+
+**已完成**
+- **站点模板（Yangyu 2026-11-16 批准，D1–D10）**：Phase 0–3 全部完成并上线。规格 [specs/site-template.md](specs/site-template.md)，记录见下面「模板迁移与示意图补齐」第 1–1g 条。
+  - 已迁移 204 页（`page.json` 带 `"layout"`）：计算机等长文、全部可转换的讲义课。登记表由 `page.json` 生成（`scripts/build-registry.cjs`），不手改 `pages.config.js` 的 KNOWLEDGE_PAGES。
+  - 2026-11-17 Yangyu：「请你把他们分别手工处理一下 而且多agent写同一篇的话 默认用更好的那个版本。做完直接部署上线」。批次 B 跳过的五课逐页比较了原版与 `variants/claude-code/` 平行版（[specs/reviews/lesson-version-choice-20261117.md](specs/reviews/lesson-version-choice-20261117.md)）：kepler-orbits、acid-base-equilibrium、bayes-diagnostics、photosynthesis 换成 Claude Code 版；power-converters 保留 Codex 版（图谱有 22 处深链指向它的具体步骤），文字抽成 `i18n.js` 后转换，读者所见不变。两批都经独立评审后上线（第 1f、1g 条）。
+  - 「用更好的版本」这次只用在这五课上；其余约 196 个平行版仍按 D5 冻结，没比较过。
+- **存储 S1–S5 补示意图**、**CPU SIMD 与浮点长文**：已上线（第 2、3 条）。
+
+**没做的事（按建议顺序）**
+1. **17 篇草稿走完流水线**（翻译 → 独立评审 → 登记 → 部署）。最快能变成读者看得到的内容。新写和新登记的页面直接用模板（`content.*.md` + `page.json`）。
+2. **排队的深度长文 6 篇**：[specs/essay-briefs/QUEUE-DEEP2.md](specs/essay-briefs/QUEUE-DEEP2.md)。
+3. **缺失的前置页面**：模运算与有限域、吉布斯自由能、弹性与边际收益、麦克斯韦–玻尔兹曼分布、通胀怎么测量、Fick 扩散、互信息与 KL 散度（[GAP-AUDIT-NOTES](specs/essay-briefs/GAP-AUDIT-NOTES.md)）。
+4. **可选的计算机课程篇目**：B5 小总线（I²C/SPI/UART）、S6 手机存储。
+5. **模板扫尾（不急）**：
+   - 三篇旧写法长文未转换：why-nvme-is-fast、why-compute-waits-for-memory、switches-that-compute；
+   - 约 196 个平行版是否也逐个比较、换成更好的版本（要 Yangyu 点头才做）；
+   - 图谱边待办 [specs/atlas-edge-todo.md](specs/atlas-edge-todo.md)：335 对有链接没图谱边的页面，逐对人工判断，脚本不写边；
+   - 迁移前就有的小毛病：rsa-encryption、fractions、coordinate-plane 窄屏横向溢出；interference、standing-wave、sampling、convolution 等测试读旧路径或不存在的提交；多节课画布文字重叠；lti-systems 音频测试超时；16 处 `figures/` 里的旧手写文字（`stale:` 警告）。
+6. **有日期的**：2026-12-01 之后改酱油那篇（见「已知问题」第 1 条）。
+
+**怎么接着干**
+- 先读第一部分「约定」和 [AGENTS.md](AGENTS.md)。流水线：Opus 写 → Haiku 翻译 → 另一个 Opus 独立评审（改在原处，写 `specs/reviews/*-review-<日期>.md`）→ 指定的登记者提交、重指标签 → team lead 推送部署。批次结束后清理 `/tmp/agent-tasks/<任务>/`。
+- 子 Agent 不许删文件（`rm` 一律不用；仓库里要删用 `git rm` 显式路径）。2026-11-16 有评审 Agent 用写错引号的 `rm -rf` 误删过四个课目录，靠 `git checkout HEAD --` 恢复。
+- 部署前在干净的 HEAD 上至少跑：`node scripts/build-pages.cjs --all --check`、`node scripts/build-registry.cjs --check`、`node tests/page-provenance-core.cjs`，以及 AGENTS.md「测试」一节里与改动相关的检查；浏览器测试串行。
+
+### 2026-11-15 时的状态（以下各节保留原样，细节以各条为准）
 
 ### 已上线
 
@@ -244,6 +274,17 @@
 - 工作区里有未提交的杂项：`leetcode/1063/tests/evidence/*`、`leetcode/765/tests/evidence/zoom-profile/`、`leetcode/920/__pycache__`。
 
 ### 等 Yangyu 决定
+
+2026-11-17/18 新增（都不影响线上）：
+- `variants/claude-code/` 对照页：换成 Claude Code 版的四课，两栏现在指向同一版本，要不要改。
+- power-converters 的两个图谱 core 测试（`atlas/tests/capacitor-rate-core.cjs`、`volt-second-core.cjs`）钉的提交 `1707df17` 不在本仓库，一直失败；是否改钉 `b5a9d242`。
+- power-converters 英文里 Codex 原文的两处标点（句号前多空格、`Vµs,negative` 等逗号后缺空格），要不要改。
+- AUTHORSHIP.md §9 2026-11-16 对 D3 的收紧（`Derived-From` 只认 mechanical 提交、来源须在父提交里）待确认。
+- 三处署名缺口是否写进 `authorship/overrides.json`（PCIe 的 page.json、227 个种子 page.json；kepler-orbits 一例已不需要，见第 1c 条）。
+- 部署时是否排除 `site-registry.json`；Pages 工作流是否加 `build-registry --check`。
+- `languages.en: "stub"` 在线上页面报错、在草稿只警告，这条规则是否认可。
+
+更早的：
 
 - `wip/mini-20261030` 分支怎么处理。
 - 内容单薄或重复的页面、`780` 与 `780-claude`、`-codex` 跳转占位页。
