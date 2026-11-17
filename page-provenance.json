@@ -3540,13 +3540,14 @@
       "developer": "Claude Code",
       "edition": "claude-code-acid-base-equilibrium-20261117",
       "kind": "original",
-      "sourceRevision": "b383c6dc1122210c5530cd128b23f92a00240389",
+      "sourceRevision": "5ac069a228cf14dd7dfb54ad8575d7ea85056f61",
       "scope": {
         "zh": "整课由 claude-opus-5-5 从零编写（2026-11-09 写在 variants/claude-code/acid-base-equilibrium/），2026-11-17 起取代本地址上的原版",
         "en": "Whole lesson written from scratch by claude-opus-5-5 (in variants/claude-code/acid-base-equilibrium/ on 2026-11-09); since 2026-11-17 it replaces the earlier lesson at this address"
       },
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition in 1cb86a75716c542eb10ddd05ce0d29c4721808a3 (variants/claude-code/acid-base-equilibrium/); promoted to this address in b383c6dc1122210c5530cd128b23f92a00240389 after the comparison in specs/reviews/lesson-version-choice-20261117.md; self-checked, independent review pending",
-      "path": "chemistry/solutions/acid-base-equilibrium/index.html"
+      "path": "chemistry/solutions/acid-base-equilibrium/index.html",
+      "previousSourceRevision": "b383c6dc1122210c5530cd128b23f92a00240389"
     },
     "bayes-diagnostics": {
       "developer": "Claude Code",
