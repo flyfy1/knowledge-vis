@@ -191,6 +191,15 @@
    - **检查（完整构建）：** 页面七个测试 model 3660、browser、flow-browser 240、flow-lifecycle、review-accessibility、review-matrix 1160、review-responsive（输出到 /tmp）全过；画布扫描通过；build-pages --all --check（204）、build-registry --check、site-template 234、build-registry 测试 60、page-provenance-core 275、build-site-nav --check、site-nav 2275、atlas / 搜索 --check、data-quality、concept-search 1752、registry-import 22、authorship-derived-from 全过；浏览器串行：site-nav-browser 389、page-provenance-browser 275、lesson-shell 8/8、home-concept-search 31、atlas capacitor-rate-browser 和 volt-second-browser 通过。leetcode 证据未变。
    - **测试修正：** 两个图谱桥接浏览器测试每种语言各打开一次 `power-converters/#stepN`，第二次网址和片段相同，Chrome 只做页内跳转，第一轮写上的 200% 字号还在；旧页面切语言会重建步骤把它冲掉，新页面保留元素，于是字号又翻一倍，320 宽溢出检查失败。现在每轮先去 `about:blank`，检查本身不变；改后在重构前后的页面上都通过。规格 specs/atlas-volt-second.md、atlas-capacitor-rate.md 各记一笔。
    - **遗留：** `atlas/tests/capacitor-rate-core.cjs`、`volt-second-core.cjs` 在本批之前就失败：它们 `git show 1707df17:power-converters/model.js`，而页面搬到 `physics/circuits/` 后测试里的路径没改，与本批无关，没动。图谱缓存键没升（同批次 C 先例）。语言切换不再重置电流虚线的偏移（看不出来）。只有作者自查，部署前要独立评审。
+   - **独立评审（2026-11-17，specs/reviews/site-template-phase3d-review-20261117.md）：结论是修完即可部署（推送仍需授权）。**
+     - `7b8811c4` 记作 mechanical 是诚实的：180 键我用自己的脚本重新核过，145 对逐字、32 个确定性拼接、3 个模板串；新增的只有键名、占位符名和 3 行注释，读者看不到。
+     - 新旧对比：453f0c4a 对 HEAD，中英 × 1280/390/320，减弱动态，18 个状态，84,420 项比较 0 差异。截图差异与旧页面自己对自己的抖动同量级。
+     - 七个图谱锚点中英 14 次都落在同一标题、同一滚动位置。
+     - `1ffbcfa5` 没放宽任何检查。转换后不重指同意（D4）。缓存键不升不阻塞：分片是内容哈希键，已经变了。
+   - **评审的修复：**
+     - `352e8f3a`：英文 `s0power` 的两个 U+3000 是中文排版漏进英文，改成两个 em space（U+2003），去掉 `enCjk`，version 20261117b。英文的间隔窄了些，三种宽度下换行位置不变。
+     - `3c20ff01`：标签重指，仍是 Codex · 改进版，previous 6df26b96。
+   - **更正：** 两个图谱 core 测试在本批之前就失败，但原因不是路径：测试已经去掉了 `physics/circuits/` 前缀，真正的问题是钉住的提交 `1707df17…` 根本不在本仓库里（自 b9e73ff0 起就是这样）。修它等于给字节校验换基准，留给 team lead 决定。候选是 b5a9d242，此后 model.js、flow.js 内容没变过。
 
 2. **S1–S5 补示意图：2026-11-16 完成并上线**（`9fcb9fac` 内容、`b2d49a1c` 标签重指）。沿用旧格式（内联 SVG，标签来自 copy 文件），走了 构建 → 独立评审 → 登记。现在转换器可以处理这五篇了。
    - 外溢视口检查的 `e.closest('svg')` 跳过：其余 16 篇也已改为只跳过 `<defs>`（`c3cef443`，标签重指见下一个提交），全部通过，没有页面需要改版式；switches-that-compute 没有逐元素的视口检查，探测过 320 宽下不溢出。

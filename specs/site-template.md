@@ -922,6 +922,14 @@ first needed a rewrite into the standard lesson shape; then it converted like th
 - **Test fix** (1ffbcfa5): atlas `capacitor-rate-browser` / `volt-second-browser` reopened the page with the same
   URL and fragment, a same-document navigation that kept the first pass's inline 200 % font sizes; the old page
   dropped them by rebuilding on a language switch. Each pass now starts from `about:blank`; the check is unchanged.
+- **Independent review** (specs/reviews/site-template-phase3d-review-20261117.md): ready to deploy after
+  352e8f3a and 3c20ff01.
+  - 7b8811c4 as a mechanical commit is accepted: 145 + 32 + 3 values re-derived independently.
+  - Old-against-new comparison: 84,420 comparisons with 0 differences; screenshot noise equals an old-against-old run.
+  - The 14 deep-link landings match.
+  - 352e8f3a: the English `s0power` uses two em spaces (U+2003) instead of the leaked U+3000, so `enCjk` is gone
+    (version 20261117b). The sentence above about `enCjk` is superseded.
+  - 3c20ff01: label repointed (Codex / revised, previous 6df26b96).
 
 ## 11. Authorship
 
