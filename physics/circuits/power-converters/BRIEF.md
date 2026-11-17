@@ -65,3 +65,38 @@ The Buck/Boost path readout now begins with a localized ON/OFF phase sentence. I
 switch state before the causal loop description, so a paused learner can connect the visible
 switch position to the conducting path and energy direction. The model, sampled time, playback,
 and diagram geometry remain unchanged.
+
+## Change 2026-11-17: text in a key table (Claude Code, site template Phase 3 batch D)
+
+The lesson's text moved out of `app.js` into the standard lesson shape, so `scripts/convert-essay.cjs` can
+convert the page (specs/site-template.md §3c, §10 "Phase 3 batch D"). Reader-visible behaviour is unchanged;
+this is not a content revision, and the edition stays the Codex revised edition.
+
+- `i18n.js` holds `STR = { zh, en }` (180 keys, the same in both languages) and the runtime `t(key, vars)` /
+  `applyLang(lang)`. Every value is a former `tr(zh, en)` pair or what the old template composed from those
+  pairs; nothing was reworded (the en ` . This lesson` and the U+3000 spaces in the step-0 formula stay).
+- `index.html` now carries the seven steps, the step nav and the footer as static markup with
+  `data-i18n` / `data-i18n-html` / `data-i18n-aria`; `<main>` lost its `id="lesson"`. Every element id, the
+  `#step0`…`#step6` anchors the atlas links to, `.step` / `.nav-step` / `data-nav`, and the initial control
+  values are as the old `render()` wrote them. Range-label text and the three answer labels sit in a
+  `<span>` because their text shares a parent with an `<output>` / `<input>`.
+- `app.js` keeps the model wiring, playback, readouts, plots, path text and the language choice (stored
+  choice, else the browser's; storage is written only on a click, as before). Strings come from `t()`.
+  A language switch re-renders text only: the elements stay, so sliders, radios, `<details>` and the
+  playback position need no rebuild. As before, it pauses playback, clears the lit step-nav item for
+  the scroll spy to relight, keeps the top step in place and returns focus to the language button.
+- `app.js` and `i18n.js` load with `?v=20261117` (same URL, new code; scripts are cached for four hours).
+- Equivalence with the old page, zh and en at 1280/390/320 with reduced motion, over 35 control states
+  (pulses up to the 16-pulse limit, capacitor rate, diode, PWM, Buck/Boost stepping, duty/Vin/seek
+  changes, area presets, two-cycle completion, prediction, efficiency, language switch and back, resets,
+  playback): page title, `<html lang>`, header, nav, footer, every step's text, every control's
+  text/value/state/aria-label and every SVG plot and circuit diagram are equal string for string, and
+  full-page screenshots are pixel-identical apart from one anti-aliasing flake the old page shows between
+  its own runs. The only DOM difference: after a language switch the old page had rebuilt its inputs, so
+  their `value` / `checked` *attributes* carried the state; now only the properties do (same rendering).
+  Record: specs/reviews/power-converters-i18n-refactor-20261117.md.
+- The page's seven tests pass unchanged (model 3660, browser, flow-browser 240, flow-lifecycle,
+  review-accessibility, review-matrix 1160, review-responsive with its output in a scratch directory).
+- The atlas generator now finds `id="stepN"` in the static page, so the seven atlas concepts it had
+  recorded as unverified "legacy step anchors" keep their claimed steps (power 0, inductor 1, capacitor 2,
+  switch-diode and PWM 3, buck 4, boost 5).
