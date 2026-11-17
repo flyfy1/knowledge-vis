@@ -100,3 +100,13 @@ this is not a content revision, and the edition stays the Codex revised edition.
 - The atlas generator now finds `id="stepN"` in the static page, so the seven atlas concepts it had
   recorded as unverified "legacy step anchors" keep their claimed steps (power 0, inductor 1, capacitor 2,
   switch-diode and PWM 3, buck 4, boost 5).
+
+## Change 2026-11-17: English step-0 formula spacing (Claude Code, Phase 3 batch D review)
+
+The English step-0 formula `P = V · I　　Ideal steady state: Pin = Pout` carried two ideographic spaces
+(U+3000). They came from the old template's fixed text around one translated word, so the Chinese
+typography leaked into English, and the page needed `enCjk: ["s0power"]` to pass the builder's
+"no Chinese in English strings" check. `content.en.md` now uses two em spaces (U+2003): a gap that does not
+collapse and is not CJK. `enCjk` is gone from `page.json` (version 20261117b). The Chinese formula keeps its
+U+3000. Visible effect: in English the gap is narrower (about two monospace cells instead of four), and the
+line wraps at the same point at 390 and 320 px. Record: specs/reviews/site-template-phase3d-review-20261117.md.

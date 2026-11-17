@@ -64,3 +64,11 @@ listed under `legacyStepAnchors` (power #step0, inductor #step1, capacitor #step
 #step4, boost #step5) now carry those steps in the atlas data, the registry and CONCEPT-MAP. The two in-page links that
 were only built at run time (fourier #step5, inverted-pendulum #step2) are now seen by the registry, so those two
 template pages gain a generated linked-from row. Both are regenerated in a separate mechanical commit.
+
+## Follow-up in the batch D review (2026-11-17): Codex edition, English formula spacing
+
+The independent review (specs/reviews/site-template-phase3d-review-20261117.md) replaced the two U+3000 spaces in
+the **English** step-0 formula (`s0power`) with two em spaces (U+2003) in `content.en.md`, removed `enCjk` from
+`page.json` and rebuilt the page (version 20261117b). That is the only change. The edition stays the Codex revised
+edition, and the label keeps `developer: Codex` and `kind: revised`. Only `sourceRevision` moves, to the fix commit,
+with 6df26b96 going to `previousSourceRevision`. This note, which names Codex, stays the `provenanceEvidence`.

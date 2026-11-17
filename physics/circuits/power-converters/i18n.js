@@ -210,7 +210,7 @@ const STR = {
     s0k: "STEP 0 / 6 · Voltage & power",
     s0q: "At the same power, what happens to current when voltage rises?",
     s0lede: "Voltage is energy per charge (1 V = 1 J/C). Current is charge per second (1 A = 1 C/s). Their product is energy transferred each second: power.",
-    s0power: "P = V · I　　Ideal steady state: Pin = Pout",
+    s0power: "P = V · I  Ideal steady state: Pin = Pout",
     s0budget: "With a fixed 12 W power budget, move the output from 6 V to 24 V and watch output current:",
     outV: "Output voltage",
     s0scope: "This is a power budget, not yet a circuit simulation. A converter uses storage components and switches to redirect energy at different times.",

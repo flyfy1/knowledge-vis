@@ -32,7 +32,7 @@ s0q: At the same power, what happens to current when voltage rises?
 
 Voltage is energy per charge (1 V = 1 J/C). Current is charge per second (1 A = 1 C/s). Their product is energy transferred each second: power. {#s0lede .lede}
 
-P = V · I　　Ideal steady state: Pin = Pout {#s0power .formula i18n=text}
+P = V · I  Ideal steady state: Pin = Pout {#s0power .formula i18n=text}
 
 With a fixed 12 W power budget, move the output from 6 V to 24 V and watch output current: {#s0budget}
 
