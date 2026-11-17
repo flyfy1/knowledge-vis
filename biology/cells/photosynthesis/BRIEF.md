@@ -76,4 +76,5 @@
 - **原因**：两版对比与决定写在 [specs/reviews/lesson-version-choice-20261117.md](../../../specs/reviews/lesson-version-choice-20261117.md)。
 - **被替换的原版**：Codex 改进版本（Codex 建页 `825d102c`，Alberto 补完，Codex 与 Claude Code 先后修过；页头标签 Codex · 改进版本）；最后一个版本是 `5173122d`，源码只留在 git 历史里（`git show 5173122d:biology/cells/photosynthesis/index.html` 等）。
 - **搬过来时改了什么**：页头去掉指向本页自己的「对照另一版本」链接和 `compare` 键；页脚不再写「是《…》的平行版本」；`index.html` 加上站点导航（`site-nav.css` / `site-nav.js`）；`tests/core.cjs` 的对照链接检查改为检查本页没有指向自己的对照链接。教学内容、模型、数值结论没有改。
+- **缓存键**：同一个地址上的 `app.js`、`model.js`、`style.css` 换成了另一份代码，而 Cloudflare 会把 JS 缓存 4 小时；没有缓存键的话，拿到新 `index.html` 的读者可能配上旧的 `app.js`。所以这三个文件从 2026-11-17 起带 `?v=20261117`（`i18n.js` 的键由转换后的 `page.json` `version` 生成）。以后改这三个文件要同时改键。
 - **以后改这一页**：改本目录，不改 `variants/claude-code/photosynthesis/`。
