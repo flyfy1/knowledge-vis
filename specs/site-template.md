@@ -887,6 +887,42 @@ passed (4516 checks). The full build failed only the CJK-in-`index.html` check o
   photosynthesis 2006 states, all pass); Playwright text/overflow at 1280/390/320 zh/en; the shared checks and browser
   tests listed in HANDOFF 1f.
 
+**Phase 3 batch D: power-converters (2026-11-17, committed, not pushed or deployed until reviewed).** The Codex
+edition kept in batch C (the atlas links into its steps) built every step from 162 inline `tr(zh, en)` pairs, so it
+first needed a rewrite into the standard lesson shape; then it converted like the rest.
+- **Table first, as a mechanical move** (7b8811c4, `Derived-From: app.js -> i18n.js`): the 180 strings as
+  `STR = { zh, en }`, checked by script against the parent's `app.js` (145 literal pairs, 32 compositions of them,
+  3 template literals turned into `{placeholders}`). Doing this in a mechanical commit keeps `i18n.js`, and later
+  `content.*.md`, credited to Codex (`scripts/authorship.cjs` gives primary codex); an authored commit creating it
+  would have made Claude Code the author of Codex's wording.
+- **Refactor** (6df26b96, authored, Claude Code): static steps, nav and footer with `data-i18n*` keys; `t()` /
+  `applyLang()` in `i18n.js`; `app.js` keeps behaviour and takes strings from `t()`. Every id, `#step0`…`#step6`,
+  class and initial value as before; `?v=20261117`. Equivalence against the parent: Playwright, zh/en × 1280/390/320,
+  35 control states each: text, controls, SVGs, details and widths equal in 30,840 comparisons; body DOM equal except
+  input value/checked attributes after a language switch; 52 of 54 full-page screenshots pixel-identical, 2 with an
+  anti-aliasing flake the parent shows between its own runs. The step-0 formula is one key (`s0power`) because
+  splitting its text run changed anti-aliasing; its English keeps U+3000, so it is in `enCjk`. The seven page tests
+  pass unchanged. Record: specs/reviews/power-converters-i18n-refactor-20261117.md; BRIEF.md "Change 2026-11-17".
+  7b8811c4 only adds the file (the page loads it from 6df26b96 on); at 6df26b96 the generator `--check`s report
+  drift until 83ace1bd.
+- **Generated files** (83ace1bd): static `id="stepN"` lets the atlas verify its seven power-converters concept
+  anchors (no longer `legacyStepAnchors`); the registry now sees the two links that were built at run time
+  (fourier #step5, inverted-pendulum #step2), so those two template pages gain a linked-from row (version
+  20261117a, labels not repointed). Label repoint (8a08139f): Codex / revised unchanged, `sourceRevision` 6df26b96,
+  `previousSourceRevision` 70d9f2e1, evidence the review note above (cross-developer repoint).
+- **Conversion** (6e08c693, mechanical, `Built-By: script`, 24 `Derived-From:` lines): 7 steps, 180 keys, 35
+  paragraphs, 20 partials. Round trip at the parent with no converter change: index.html byte-identical, 360 key
+  pairs equal, runtime identical. Then `version` 20261117a and the full build; the two linked-from rows now name
+  power-converters step 3 and step 6.
+- **Checked on the full build:** against 8a08139f with the breadcrumb and linked-from block left out, body DOM equal
+  in all 210 states, breadcrumb text and aria-label equal; 143 of 144 per-step viewport screenshots (zh/en ×
+  1280/390/320, initial, after interaction, after a language switch) pixel-identical, 1 with an anti-aliasing speck
+  on the 8a08139f side. The seven page tests, canvas sweep, atlas deep links (all seven anchors, zh and en, land on
+  the same heading), shared checks and browser tests listed in HANDOFF 1g.
+- **Test fix** (1ffbcfa5): atlas `capacitor-rate-browser` / `volt-second-browser` reopened the page with the same
+  URL and fragment, a same-document navigation that kept the first pass's inline 200 % font sizes; the old page
+  dropped them by rebuilding on a language switch. Each pass now starts from `about:blank`; the check is unchanged.
+
 ## 11. Authorship
 
 - Conversion commits use `Derived-From:` (AUTHORSHIP.md §4) so `content.<lang>.md` inherits the history of
@@ -904,11 +940,7 @@ passed (4516 checks). The full build failed only the CJK-in-`index.html` check o
     hand-written page would need site-nav.js to show them;
   - the 335 pairs in `specs/atlas-edge-todo.md` need a human (or an agent with sources) to write edges where a
     reason holds.
-- **Phase 3:** batches A, B and C are done (§10): 181 lessons are template pages. Left:
-  - physics/circuits/power-converters (kept as the Codex edition in batch C): no string table; `app.js`, `flow.js`
-    and `voltage-area.js` build every step from 162 inline `tr(zh, en)` pairs and re-render on a language switch, so
-    it needs a rewrite to static markup plus a key table (authored, with its seven browser/review tests), not a
-    conversion;
+- **Phase 3:** batches A–D are done (§10): 182 lessons are template pages. Left:
   - everything under `variants/` (frozen; the four promoted editions live at their canonical URLs now).
 - **Later:**
   - the unbound-digit lint;
