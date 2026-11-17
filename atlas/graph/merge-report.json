@@ -53,43 +53,6 @@
       "switchSource": false
     }
   ],
-  "legacyStepAnchors": [
-    {
-      "node": "power",
-      "slug": "power-converters",
-      "claimedStep": 0
-    },
-    {
-      "node": "inductor",
-      "slug": "power-converters",
-      "claimedStep": 1
-    },
-    {
-      "node": "capacitor",
-      "slug": "power-converters",
-      "claimedStep": 2
-    },
-    {
-      "node": "switch-diode",
-      "slug": "power-converters",
-      "claimedStep": 3
-    },
-    {
-      "node": "pwm",
-      "slug": "power-converters",
-      "claimedStep": 3
-    },
-    {
-      "node": "buck",
-      "slug": "power-converters",
-      "claimedStep": 4
-    },
-    {
-      "node": "boost",
-      "slug": "power-converters",
-      "claimedStep": 5
-    }
-  ],
   "edgeCandidates": [
     {
       "concept": "steady-state-set-point",
@@ -2613,9 +2576,9 @@
     }
   ],
   "unknownAliasIds": [],
-  "sizeBytes": 1207030,
+  "sizeBytes": 1207009,
   "questionsBytes": 173006,
-  "combinedBytes": 1380036,
+  "combinedBytes": 1380015,
   "indexBytes": 137937,
   "chunkBytes": {
     "math.nodes": 51664,
@@ -2624,7 +2587,7 @@
     "waves.nodes": 45855,
     "waves.edges": 63594,
     "waves.questions": 24627,
-    "circuits.nodes": 15409,
+    "circuits.nodes": 15388,
     "circuits.edges": 23342,
     "circuits.questions": 12351,
     "systems.nodes": 21522,

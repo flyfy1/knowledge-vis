@@ -11,11 +11,15 @@ taught on B (any `lessons[]` entry). Pairs where either page teaches no atlas co
 counted. Under each pair: every link, with the concepts anchored at its two ends where there are any (`?` = none at that
 anchor; a link to the page top has no anchor).
 
-761 linked page pairs · 406 covered by an atlas edge · 13 with no concept on one side · **342 to do**.
+763 linked page pairs · 407 covered by an atlas edge · 13 with no concept on one side · **343 to do**.
 
 ## 冰冻肥皂泡 · 水膜里的结晶 / Frozen Soap Bubbles · Ice in a Thin Film → 光的反射与折射 · 拐弯的规矩 / Reflection & Refraction · How Light Bends
 
 - `frozen-bubble#step2` → `reflection-refraction#step2`
+
+## 升压与降压 · 能量去哪了？ / Buck & Boost · Follow the Energy → 傅里叶变换 · 一步一交互 / The Fourier Transform · One Interaction at a Time
+
+- `power-converters` → `fourier#step5`: ? → fourier, spectrum
 
 ## 数字没有说谎，结论却错了 / Every Number Was True, and the Conclusion Was Still Wrong → 中心极限定理 · 平均值总会变成钟形 / Central Limit Theorem · Averages Always Turn Bell-Shaped
 

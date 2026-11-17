@@ -2832,15 +2832,15 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 电化学：原电池与电解池 / Electrochemistry: galvanic and electrolytic cells | ../chemistry/reactions/electrochemistry/#step2 | electrochemistry#step2 |
 | 电磁感应与发电 / Electromagnetic induction and generators | ../physics/electromagnetism/electromagnetic-induction/#step1 | electromagnetic-induction#step1 |
 | 磁场与洛伦兹力 / Magnetic force on moving charges | ../physics/electromagnetism/magnetic-force/#step1 | magnetic-force#step1 |
-| Boost 升压电路 / Boost converter | ../physics/circuits/power-converters/#step5 | power-converters |
-| Buck 降压电路 / Buck converter | ../physics/circuits/power-converters/#step4 | power-converters |
-| 电容与电场储能 / Capacitor & electric energy | ../physics/circuits/power-converters/#step2 | power-converters |
+| Boost 升压电路 / Boost converter | ../physics/circuits/power-converters/#step5 | power-converters#step5 |
+| Buck 降压电路 / Buck converter | ../physics/circuits/power-converters/#step4 | power-converters#step4 |
+| 电容与电场储能 / Capacitor & electric energy | ../physics/circuits/power-converters/#step2 | power-converters#step2 |
 | 卡诺循环 / The Carnot cycle | ../physics/thermal/carnot-cycle/#step4 | carnot-cycle#step4 |
 | 热力学第一定律 · 状态与路径 / First law of thermodynamics · state and path | ../physics/thermal/thermodynamics/#step1 | thermodynamics#step1 |
-| 电感与磁场储能 / Inductor & magnetic energy | ../physics/circuits/power-converters/#step1 | power-converters |
-| 电压、电流与功率 / Voltage, current & power | ../physics/circuits/power-converters/#step0 | power-converters |
-| 脉宽调制 PWM / Pulse-width modulation | ../physics/circuits/power-converters/#step3 | power-converters |
-| 开关与二极管 / Switches & diodes | ../physics/circuits/power-converters/#step3 | power-converters |
+| 电感与磁场储能 / Inductor & magnetic energy | ../physics/circuits/power-converters/#step1 | power-converters#step1 |
+| 电压、电流与功率 / Voltage, current & power | ../physics/circuits/power-converters/#step0 | power-converters#step0 |
+| 脉宽调制 PWM / Pulse-width modulation | ../physics/circuits/power-converters/#step3 | power-converters#step3 |
+| 开关与二极管 / Switches & diodes | ../physics/circuits/power-converters/#step3 | power-converters#step3 |
 
 ### 04 系统与响应 / Systems & response
 
@@ -3451,13 +3451,13 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 
 | 概念 | 深链 |
 | --- | --- |
-| Boost 升压电路 / Boost converter | `physics/circuits/power-converters/` |
-| Buck 降压电路 / Buck converter | `physics/circuits/power-converters/` |
-| 电容与电场储能 / Capacitor & electric energy | `physics/circuits/power-converters/` |
-| 电感与磁场储能 / Inductor & magnetic energy | `physics/circuits/power-converters/` |
-| 电压、电流与功率 / Voltage, current & power | `physics/circuits/power-converters/` |
-| 脉宽调制 PWM / Pulse-width modulation | `physics/circuits/power-converters/` |
-| 开关与二极管 / Switches & diodes | `physics/circuits/power-converters/` |
+| Boost 升压电路 / Boost converter | `physics/circuits/power-converters/#step5` |
+| Buck 降压电路 / Buck converter | `physics/circuits/power-converters/#step4` |
+| 电容与电场储能 / Capacitor & electric energy | `physics/circuits/power-converters/#step2` |
+| 电感与磁场储能 / Inductor & magnetic energy | `physics/circuits/power-converters/#step1` |
+| 电压、电流与功率 / Voltage, current & power | `physics/circuits/power-converters/#step0` |
+| 脉宽调制 PWM / Pulse-width modulation | `physics/circuits/power-converters/#step3` |
+| 开关与二极管 / Switches & diodes | `physics/circuits/power-converters/#step3` |
 
 ### 稀缺会搬家 / Scarcity Moves
 

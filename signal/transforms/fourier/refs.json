@@ -53,6 +53,15 @@
    ]
   },
   {
+   "from": "power-converters",
+   "links": [
+    {
+     "from": null,
+     "to": "step5"
+    }
+   ]
+  },
+  {
    "from": "doppler-effect",
    "links": [
     {
