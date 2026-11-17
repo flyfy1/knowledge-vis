@@ -85,3 +85,9 @@
 - **原因**：站点模板的转换器（`scripts/convert-essay.cjs`）只认值全是字符串字面量的 `{ zh: {…}, en: {…} }` 表；本页的 12 条跨页链接写成 `' + a('eq0', '…') + '`，要先跑辅助函数 `a()` 才能得到字符串，转换器读不出这张表。
 - **改动**：把 12 处 `a(k, text)` 展开成它原来生成的 `<a class="xlink" href="…">text</a>`，删掉不再使用的 `a`；`LINK` 表保留并照旧导出。展开前后 `STRINGS` 用 `assert.deepStrictEqual` 比过，完全相同，页面显示不变。
 - **复查**：`node tests/core.cjs`（深链检查读的就是这些 `href`）。
+
+## Change 2026-11-17：英文第 1 步 pH 图标题去掉中文（独立评审）
+
+- **问题**：`c1ph`（第 1 步 pH 曲线画布标题）在英文表里也是「pH · 横轴：pKa」，英文页的画布上显示中文。变体时就有，转换器把它当成已有的例外记进了 `page.json` 的 `enCjk`；DOM 的「英文页无中文」检查看不到画布文字。
+- **改动**：`content.en.md` 的 `c1ph` 改为「pH · x-axis: pKa」，`page.json` 删掉 `enCjk`，`version` 升到 `20261117b`；`tests/core.cjs` 的 `NEUTRAL` 只留 `c2ph`（两种语言都是「pH」），并新增「英文字符串里没有中文」检查（改之前这一项失败）。
+- **复查**：`node tests/core.cjs`；`node scripts/build-pages.cjs --all --check`。评审记录 specs/reviews/site-template-phase3c-review-20261117.md。

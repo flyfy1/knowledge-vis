@@ -134,7 +134,8 @@ const zk = Object.keys(STRINGS.zh).sort(), ek = Object.keys(STRINGS.en).sort();
 assert.deepEqual(zk, ek, 'zh/en key sets match'); checks++;
 const ph = s => (s.match(/\{[a-zA-Z0-9]+\}/g) || []).sort().join();
 for (const k of zk) { assert.equal(ph(STRINGS.zh[k]), ph(STRINGS.en[k]), 'placeholders for ' + k); checks++; }
-const NEUTRAL = new Set(['c1ph', 'c2ph']);
+const NEUTRAL = new Set(['c2ph']);
+for (const k of ek) ok(!/[\u3400-\u9fff\u3000-\u303f\uff00-\uffef]/.test(STRINGS.en[k]), 'no Chinese in the English string ' + k);
 for (const k of zk) ok(NEUTRAL.has(k) || STRINGS.zh[k] !== STRINGS.en[k], 'zh text differs from en for ' + k);
 for (const l of ['zh', 'en']) ok(STRINGS[l].foot.includes('claude-opus-5-5'), 'footer names the model');
 for (const l of ['zh', 'en']) for (const k of zk) ok(!/左图|右图|left chart|right chart|left panel|right panel/i.test(STRINGS[l][k]), 'no left/right chart references: ' + k);

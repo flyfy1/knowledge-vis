@@ -70,7 +70,7 @@ What to watch: keep the concentration at 0.10 mol/L and move only the Ka slider 
 
 ::: strings
 c1alpha: Split share α (log scale) · x-axis: pKa · c = 0.10 mol/L
-c1ph: pH · 横轴：pKa
+c1ph: pH · x-axis: pKa
 s1readout: Ka = {ka} (pKa = {pka}): x = {x} mol per litre splits, α = {alpha}, about {per} in every 1000 molecules. pH = {ph}; a strong acid at the same concentration gives pH {phs}, a gap of {dph}.
 :::
 

@@ -185,7 +185,7 @@ const STRINGS = {
     acidHCN: "HCN hydrocyanic acid",
     s1hint: "What to watch: keep the concentration at 0.10 mol/L and move only the Ka slider or tap an acid. Follow the dot on both curves. Below pKa 0, α is above 90% and the acid behaves almost like a strong one; beyond pKa 3 the split-share curve turns into a straight line: each +2 in pKa drops α by one gridline (to about a tenth) and raises pH by about 1. Ka sets the share, not the speed (step 4).",
     c1alpha: "Split share α (log scale) · x-axis: pKa · c = 0.10 mol/L",
-    c1ph: "pH · 横轴：pKa",
+    c1ph: "pH · x-axis: pKa",
     s1readout: "Ka = {ka} (pKa = {pka}): x = {x} mol per litre splits, α = {alpha}, about {per} in every 1000 molecules. pH = {ph}; a strong acid at the same concentration gives pH {phs}, a gap of {dph}.",
     s2t: "Dilute acetic acid 100-fold. Does its pH rise by 2, as a strong acid’s would?",
     s2k: "Step 2 · Dilution",
