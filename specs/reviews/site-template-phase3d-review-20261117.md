@@ -89,7 +89,8 @@ was authored, but it was Claude Code's own text, so no credit moved.
 **Method:**
 
 - My own script (`equiv.cjs`), not the builder's.
-- 453f0c4a full archive on 127.0.0.1:18872 and HEAD on 127.0.0.1:18871.
+- 453f0c4a full archive on 127.0.0.1:18872 and the builder's tip b12d8f5f on 127.0.0.1:18871. The comparison
+  predates 352e8f3a, which changes the English `s0power` on purpose.
 - Chrome, reduced motion, device scale 1, zh and en at 1280/390/320. The language was set through `localStorage`
   before load.
 - 18 states each:
