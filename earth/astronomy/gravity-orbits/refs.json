@@ -7,15 +7,15 @@
    "from": "kepler-orbits",
    "links": [
     {
-     "from": null,
+     "from": "step2",
      "to": "step3"
     },
     {
-     "from": null,
+     "from": "step3",
      "to": "step4"
     },
     {
-     "from": null,
+     "from": "step6",
      "to": "step2"
     }
    ]

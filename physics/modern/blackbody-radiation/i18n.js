@@ -94,7 +94,7 @@ const STR = {
     "site.crumb.cat": "物理与电路",
     "site.crumb.sub": "近代物理",
     "site.bl.title": "被这些页面引用",
-    "site.bl.1": "<a href=\"../../../earth/astronomy/kepler-orbits/\">轨道运动 · 椭圆、速度与凌日</a>：→ <a href=\"#step2\">本页第 2 步</a>",
+    "site.bl.1": "<a href=\"../../../earth/astronomy/kepler-orbits/\">轨道运动 · 椭圆、速度与凌日</a>：<a href=\"../../../earth/astronomy/kepler-orbits/#step6\">该课第 6 步</a> → <a href=\"#step2\">本页第 2 步</a>",
     "site.bl.2": "<a href=\"../../../earth/climate/why-the-planet-warms/\">一点点二氧化碳 · 地球为什么会变暖</a>：<a href=\"../../../earth/climate/why-the-planet-warms/#ch1\">该文第 1 章</a> → <a href=\"#step3\">本页第 3 步</a>；<a href=\"../../../earth/climate/why-the-planet-warms/#ch8\">该文第 8 章</a> → <a href=\"#step0\">本页第 0 步</a>",
     "site.bl.3": "<a href=\"../../optics/why-the-sky-is-blue/\">天为什么是蓝的</a>：<a href=\"../../optics/why-the-sky-is-blue/#ch3\">该文第 3 章</a>；<a href=\"../../optics/why-the-sky-is-blue/#ch10\">该文第 10 章</a>"
   },
@@ -191,7 +191,7 @@ const STR = {
     "site.crumb.cat": "Physics & Circuits",
     "site.crumb.sub": "Modern Physics",
     "site.bl.title": "Linked from",
-    "site.bl.1": "<a href=\"../../../earth/astronomy/kepler-orbits/\">Orbital Motion · Ellipses, Speed & Transits</a>: → <a href=\"#step2\">this page step 2</a>",
+    "site.bl.1": "<a href=\"../../../earth/astronomy/kepler-orbits/\">Orbital Motion · Ellipses, Speed & Transits</a>: <a href=\"../../../earth/astronomy/kepler-orbits/#step6\">its step 6</a> → <a href=\"#step2\">this page step 2</a>",
     "site.bl.2": "<a href=\"../../../earth/climate/why-the-planet-warms/\">A Little CO₂ · Why the Planet Warms</a>: <a href=\"../../../earth/climate/why-the-planet-warms/#ch1\">its chapter 1</a> → <a href=\"#step3\">this page step 3</a>; <a href=\"../../../earth/climate/why-the-planet-warms/#ch8\">its chapter 8</a> → <a href=\"#step0\">this page step 0</a>",
     "site.bl.3": "<a href=\"../../optics/why-the-sky-is-blue/\">Why Is the Sky Blue?</a>: <a href=\"../../optics/why-the-sky-is-blue/#ch3\">its chapter 3</a>; <a href=\"../../optics/why-the-sky-is-blue/#ch10\">its chapter 10</a>"
   }

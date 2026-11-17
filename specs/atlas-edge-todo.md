@@ -662,11 +662,12 @@ anchor; a link to the page top has no anchor).
 
 ## 轨道运动 · 椭圆、速度与凌日 / Orbital Motion · Ellipses, Speed & Transits → 地球公转与四季 / Earth’s Orbit & the Seasons
 
-- `kepler-orbits` → `seasons-orbit#step0`
+- `kepler-orbits#step0` → `seasons-orbit#step0`
+- `kepler-orbits#step6` → `seasons-orbit#step0`
 
 ## 轨道运动 · 椭圆、速度与凌日 / Orbital Motion · Ellipses, Speed & Transits → 黑体辐射 · 热的物体为什么发光 / Blackbody Radiation · Why Hot Things Glow
 
-- `kepler-orbits` → `blackbody-radiation#step2`
+- `kepler-orbits#step6` → `blackbody-radiation#step2`
 
 ## 缓冲溶液 · 把 pH 稳住 / Buffer Capacity · Holding pH Steady → 化学平衡 · 人数不变，人还在跑 / Chemical Equilibrium · Still Moving at Balance
 

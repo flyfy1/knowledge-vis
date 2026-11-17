@@ -16,7 +16,11 @@
    "from": "kepler-orbits",
    "links": [
     {
-     "from": null,
+     "from": "step0",
+     "to": "step0"
+    },
+    {
+     "from": "step6",
      "to": "step0"
     }
    ]
