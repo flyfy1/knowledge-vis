@@ -67,7 +67,8 @@ const STR={
     "site.crumb.cat": "生物",
     "site.crumb.sub": "生态与进化",
     "site.bl.title": "被这些页面引用",
-    "site.bl.1": "<a href=\"../../../earth/climate/carbon-cycle/\">碳循环 · 大气里的碳去了哪里</a>：<a href=\"../../../earth/climate/carbon-cycle/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>"
+    "site.bl.1": "<a href=\"../../cells/photosynthesis/\">光合作用 · 用光开工的糖厂</a>：→ <a href=\"#step0\">本页第 0 步</a>",
+    "site.bl.2": "<a href=\"../../../earth/climate/carbon-cycle/\">碳循环 · 大气里的碳去了哪里</a>：<a href=\"../../../earth/climate/carbon-cycle/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>"
   },
   en: {
     pageTitle: "The Energy Pyramid · Why Top Predators Are Rare",
@@ -136,7 +137,8 @@ const STR={
     "site.crumb.cat": "Biology",
     "site.crumb.sub": "Ecology & Evolution",
     "site.bl.title": "Linked from",
-    "site.bl.1": "<a href=\"../../../earth/climate/carbon-cycle/\">The Carbon Cycle · Where the Atmosphere’s Carbon Goes</a>: <a href=\"../../../earth/climate/carbon-cycle/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>"
+    "site.bl.1": "<a href=\"../../cells/photosynthesis/\">Photosynthesis · A Sugar Factory Run by Light</a>: → <a href=\"#step0\">this page step 0</a>",
+    "site.bl.2": "<a href=\"../../../earth/climate/carbon-cycle/\">The Carbon Cycle · Where the Atmosphere’s Carbon Goes</a>: <a href=\"../../../earth/climate/carbon-cycle/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>"
   }
 };
 

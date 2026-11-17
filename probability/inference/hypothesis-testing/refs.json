@@ -17,6 +17,15 @@
    ]
   },
   {
+   "from": "bayes-diagnostics",
+   "links": [
+    {
+     "from": null,
+     "to": "step3"
+    }
+   ]
+  },
+  {
    "from": "signal-detection",
    "links": [
     {

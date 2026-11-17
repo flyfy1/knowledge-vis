@@ -101,7 +101,9 @@ const STR = {
     "site.crumb.aria": "页面位置",
     "site.crumb.home": "首页",
     "site.crumb.cat": "数学基础",
-    "site.crumb.sub": "几何"
+    "site.crumb.sub": "几何",
+    "site.bl.title": "被这些页面引用",
+    "site.bl.1": "<a href=\"../../../earth/astronomy/kepler-orbits/\">轨道运动 · 椭圆、速度与凌日</a>：→ <a href=\"#step2\">本页第 2 步</a>、<a href=\"#step1\">本页第 1 步</a>"
   },
   en: {
     languageLabel: "Language",
@@ -203,7 +205,9 @@ const STR = {
     "site.crumb.aria": "Breadcrumb",
     "site.crumb.home": "Home",
     "site.crumb.cat": "Mathematical Foundations",
-    "site.crumb.sub": "Geometry"
+    "site.crumb.sub": "Geometry",
+    "site.bl.title": "Linked from",
+    "site.bl.1": "<a href=\"../../../earth/astronomy/kepler-orbits/\">Orbital Motion · Ellipses, Speed & Transits</a>: → <a href=\"#step2\">this page step 2</a>, <a href=\"#step1\">this page step 1</a>"
   }
 };
 let currentLang = null;

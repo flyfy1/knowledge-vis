@@ -11,7 +11,7 @@ taught on B (any `lessons[]` entry). Pairs where either page teaches no atlas co
 counted. Under each pair: every link, with the concepts anchored at its two ends where there are any (`?` = none at that
 anchor; a link to the page top has no anchor).
 
-748 linked page pairs · 400 covered by an atlas edge · 13 with no concept on one side · **335 to do**.
+759 linked page pairs · 406 covered by an atlas edge · 13 with no concept on one side · **340 to do**.
 
 ## 冰冻肥皂泡 · 水膜里的结晶 / Frozen Soap Bubbles · Ice in a Thin Film → 光的反射与折射 · 拐弯的规矩 / Reflection & Refraction · How Light Bends
 
@@ -624,6 +624,10 @@ anchor; a link to the page top has no anchor).
 
 - `photosynthesis` → `mass-conservation#step1`
 
+## 光合作用 · 用光开工的糖厂 / Photosynthesis · A Sugar Factory Run by Light → 能量金字塔 · 为什么顶级捕食者那么少 / The Energy Pyramid · Why Top Predators Are Rare
+
+- `photosynthesis` → `energy-pyramid#step0`
+
 ## 种群增长 · S 形曲线从哪来 / Population Growth · Where the S-Curve Comes From → 化学平衡 · 人数不变，人还在跑 / Chemical Equilibrium · Still Moving at Balance
 
 - `logistic-growth#step5` → `chemical-equilibrium#step2`
@@ -632,13 +636,29 @@ anchor; a link to the page top has no anchor).
 
 - `chemical-equilibrium#step5` → `mass-conservation#step1`
 
-## 酸碱平衡 · 分子在两边来回走 / Acid–Base Equilibrium · Molecules Move Both Ways → 反应速率 · 数一数成功碰撞 / Reaction Rates · Counting Successful Collisions
+## 酸碱平衡 · 分子在两边来回走 / Acid–Base Equilibrium · Molecules Move Both Ways → 滴定曲线 · 终点附近 pH 的“悬崖” / Titration Curves · The pH Cliff Near the End Point
 
-- `acid-base-equilibrium` → `reaction-rates#step0`: ? → collision-theory
+- `acid-base-equilibrium` → `titration-curves#step2`: ? → titration-curves
+
+## 贝叶斯诊断 · 阳性结果说明什么？ / Bayes Diagnostics · What Does a Positive Mean? → 概率与频率 · 转得越多，越贴近概率 / Probability & Frequency · The More Spins, the Closer to the Probability
+
+- `bayes-diagnostics` → `probability-frequency#step2`
+
+## 贝叶斯诊断 · 阳性结果说明什么？ / Bayes Diagnostics · What Does a Positive Mean? → 假设检验与 p 值 · 法庭模型判硬币冤不冤 / Hypothesis Testing & p-Values · A Courtroom for a Coin
+
+- `bayes-diagnostics` → `hypothesis-testing#step3`
 
 ## 反馈控制 · 先看差多少，再决定推多少 / Feedback Control · See the Error, Then Act → 拉普拉斯与 ROC · 给频率配一个寿命 / Laplace Transform & ROC · Giving Frequencies a Lifespan
 
 - `pid-control#step5` → `laplace#step4`: ? → poles
+
+## 轨道运动 · 椭圆、速度与凌日 / Orbital Motion · Ellipses, Speed & Transits → 地球公转与四季 / Earth’s Orbit & the Seasons
+
+- `kepler-orbits` → `seasons-orbit#step0`
+
+## 轨道运动 · 椭圆、速度与凌日 / Orbital Motion · Ellipses, Speed & Transits → 黑体辐射 · 热的物体为什么发光 / Blackbody Radiation · Why Hot Things Glow
+
+- `kepler-orbits` → `blackbody-radiation#step2`
 
 ## 缓冲溶液 · 把 pH 稳住 / Buffer Capacity · Holding pH Steady → 化学平衡 · 人数不变，人还在跑 / Chemical Equilibrium · Still Moving at Balance
 

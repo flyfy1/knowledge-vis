@@ -59,9 +59,10 @@ const STR={
     "site.crumb.cat": "化学",
     "site.crumb.sub": "溶液与酸碱",
     "site.bl.title": "被这些页面引用",
-    "site.bl.1": "<a href=\"../ph-scale/\">pH 标度</a>：<a href=\"../ph-scale/#step5\">该课第 5 步</a> → <a href=\"#step2\">本页第 2 步</a>",
-    "site.bl.2": "<a href=\"../titration-curves/\">滴定曲线 · 终点附近 pH 的“悬崖”</a>：<a href=\"../titration-curves/#step5\">该课第 5 步</a> → <a href=\"#step2\">本页第 2 步</a>",
-    "site.bl.3": "<a href=\"../../../food/flavor/how-soy-sauce-gets-its-flavor/\">酱油是怎么酿出来的</a>：<a href=\"../../../food/flavor/how-soy-sauce-gets-its-flavor/#ch10\">该文第 10 章</a>"
+    "site.bl.1": "<a href=\"../acid-base-equilibrium/\">酸碱平衡 · 分子在两边来回走</a>：→ <a href=\"#step1\">本页第 1 步</a>",
+    "site.bl.2": "<a href=\"../ph-scale/\">pH 标度</a>：<a href=\"../ph-scale/#step5\">该课第 5 步</a> → <a href=\"#step2\">本页第 2 步</a>",
+    "site.bl.3": "<a href=\"../titration-curves/\">滴定曲线 · 终点附近 pH 的“悬崖”</a>：<a href=\"../titration-curves/#step5\">该课第 5 步</a> → <a href=\"#step2\">本页第 2 步</a>",
+    "site.bl.4": "<a href=\"../../../food/flavor/how-soy-sauce-gets-its-flavor/\">酱油是怎么酿出来的</a>：<a href=\"../../../food/flavor/how-soy-sauce-gets-its-flavor/#ch10\">该文第 10 章</a>"
   },
   en: {
     docTitle: "Buffer Solutions · Resist Acid–Base Pushes",
@@ -121,9 +122,10 @@ const STR={
     "site.crumb.cat": "Chemistry",
     "site.crumb.sub": "Solutions, Acids & Bases",
     "site.bl.title": "Linked from",
-    "site.bl.1": "<a href=\"../ph-scale/\">The pH Scale</a>: <a href=\"../ph-scale/#step5\">its step 5</a> → <a href=\"#step2\">this page step 2</a>",
-    "site.bl.2": "<a href=\"../titration-curves/\">Titration Curves · The pH Cliff Near the End Point</a>: <a href=\"../titration-curves/#step5\">its step 5</a> → <a href=\"#step2\">this page step 2</a>",
-    "site.bl.3": "<a href=\"../../../food/flavor/how-soy-sauce-gets-its-flavor/\">How Soy Sauce Gets Its Flavor</a>: <a href=\"../../../food/flavor/how-soy-sauce-gets-its-flavor/#ch10\">its chapter 10</a>"
+    "site.bl.1": "<a href=\"../acid-base-equilibrium/\">Acid–Base Equilibrium · Molecules Move Both Ways</a>: → <a href=\"#step1\">this page step 1</a>",
+    "site.bl.2": "<a href=\"../ph-scale/\">The pH Scale</a>: <a href=\"../ph-scale/#step5\">its step 5</a> → <a href=\"#step2\">this page step 2</a>",
+    "site.bl.3": "<a href=\"../titration-curves/\">Titration Curves · The pH Cliff Near the End Point</a>: <a href=\"../titration-curves/#step5\">its step 5</a> → <a href=\"#step2\">this page step 2</a>",
+    "site.bl.4": "<a href=\"../../../food/flavor/how-soy-sauce-gets-its-flavor/\">How Soy Sauce Gets Its Flavor</a>: <a href=\"../../../food/flavor/how-soy-sauce-gets-its-flavor/#ch10\">its chapter 10</a>"
   }
 };
 let current='zh';

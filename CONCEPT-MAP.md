@@ -2887,7 +2887,7 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 减数分裂与配子多样性 / Meiosis and gamete diversity | ../biology/cells/meiosis/#step2 | meiosis#step2 |
 | 孟德尔遗传的概率 · Punnett 方格 / Mendelian inheritance as probability · the Punnett square | ../probability/basics/genetics-probability/#step1 | genetics-probability#step1 |
 | 自然选择与遗传漂变 / Natural selection and genetic drift | ../biology/ecology/natural-selection/#step2 | natural-selection#step2 |
-| 阳性预测值 · 检测阳性说明什么 / Positive predictive value · what a positive test means | ../probability/inference/bayes-diagnostics/#step-posterior | bayes-diagnostics, public-health#step1 |
+| 阳性预测值 · 检测阳性说明什么 / Positive predictive value · what a positive test means | ../probability/inference/bayes-diagnostics/#step3 | bayes-diagnostics#step3, public-health#step1 |
 | 概率分布 · 随机性也有形状 / Probability Distributions · Randomness Has a Shape | ../probability/basics/probability-distribution/#step0 | probability-distribution#step0 |
 | 回归与相关 / Regression & Correlation | ../probability/statistics/regression-correlation/#step1 | regression-correlation#step1 |
 | 均值回归 / Regression to the mean | ../probability/everyday/numbers-lie/#c1 | numbers-lie |
@@ -4620,7 +4620,7 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 
 | 概念 | 深链 |
 | --- | --- |
-| 阳性预测值 · 检测阳性说明什么 / Positive predictive value · what a positive test means | `probability/inference/bayes-diagnostics/` |
+| 阳性预测值 · 检测阳性说明什么 / Positive predictive value · what a positive test means | `probability/inference/bayes-diagnostics/#step3` |
 
 ### 种群生态学 · 增长如何被反馈改变 / Population Ecology · Growth Reshaped by Feedback
 

@@ -103,7 +103,8 @@ const STR = {
     "site.crumb.sub": "统计推断",
     "site.bl.title": "被这些页面引用",
     "site.bl.1": "<a href=\"../../everyday/numbers-lie/\">数字没有说谎，结论却错了</a>：→ <a href=\"#step2\">本页第 2 步</a>、<a href=\"#step1\">本页第 1 步</a>",
-    "site.bl.2": "<a href=\"../../../psychology/cognition/signal-detection/\">信号检测论 · 分得清，和愿意说“有”，是两回事</a>：<a href=\"../../../psychology/cognition/signal-detection/#step6\">该课第 6 步</a> → <a href=\"#step2\">本页第 2 步</a>、<a href=\"#step3\">本页第 3 步</a>"
+    "site.bl.2": "<a href=\"../bayes-diagnostics/\">贝叶斯诊断 · 阳性结果说明什么？</a>：→ <a href=\"#step3\">本页第 3 步</a>",
+    "site.bl.3": "<a href=\"../../../psychology/cognition/signal-detection/\">信号检测论 · 分得清，和愿意说“有”，是两回事</a>：<a href=\"../../../psychology/cognition/signal-detection/#step6\">该课第 6 步</a> → <a href=\"#step2\">本页第 2 步</a>、<a href=\"#step3\">本页第 3 步</a>"
   },
   en: {
     back: "← Knowledge Index",
@@ -207,7 +208,8 @@ const STR = {
     "site.crumb.sub": "Inference",
     "site.bl.title": "Linked from",
     "site.bl.1": "<a href=\"../../everyday/numbers-lie/\">Every Number Was True, and the Conclusion Was Still Wrong</a>: → <a href=\"#step2\">this page step 2</a>, <a href=\"#step1\">this page step 1</a>",
-    "site.bl.2": "<a href=\"../../../psychology/cognition/signal-detection/\">Signal Detection Theory · Telling Apart vs. Willing to Say “Yes”</a>: <a href=\"../../../psychology/cognition/signal-detection/#step6\">its step 6</a> → <a href=\"#step2\">this page step 2</a>, <a href=\"#step3\">this page step 3</a>"
+    "site.bl.2": "<a href=\"../bayes-diagnostics/\">Bayes Diagnostics · What Does a Positive Mean?</a>: → <a href=\"#step3\">this page step 3</a>",
+    "site.bl.3": "<a href=\"../../../psychology/cognition/signal-detection/\">Signal Detection Theory · Telling Apart vs. Willing to Say “Yes”</a>: <a href=\"../../../psychology/cognition/signal-detection/#step6\">its step 6</a> → <a href=\"#step2\">this page step 2</a>, <a href=\"#step3\">this page step 3</a>"
   }
 };
 let currentLang = 'en';

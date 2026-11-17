@@ -107,8 +107,9 @@ const STR = {
     "site.crumb.cat": "地球与太空",
     "site.crumb.sub": "天文",
     "site.bl.title": "被这些页面引用",
-    "site.bl.1": "<a href=\"../what-is-a-black-hole/\">黑洞到底是什么</a>：<a href=\"../what-is-a-black-hole/#ch3\">该文第 3 章</a> → <a href=\"#step1\">本页第 1 步</a>；<a href=\"../what-is-a-black-hole/#ch10\">该文第 10 章</a>",
-    "site.bl.2": "<a href=\"../../../tech/devices/inside-a-phone/\">一部手机里的十个道理</a>：→ <a href=\"#step4\">本页第 4 步</a>"
+    "site.bl.1": "<a href=\"../kepler-orbits/\">轨道运动 · 椭圆、速度与凌日</a>：→ <a href=\"#step3\">本页第 3 步</a>、<a href=\"#step4\">本页第 4 步</a>、<a href=\"#step2\">本页第 2 步</a>",
+    "site.bl.2": "<a href=\"../what-is-a-black-hole/\">黑洞到底是什么</a>：<a href=\"../what-is-a-black-hole/#ch3\">该文第 3 章</a> → <a href=\"#step1\">本页第 1 步</a>；<a href=\"../what-is-a-black-hole/#ch10\">该文第 10 章</a>",
+    "site.bl.3": "<a href=\"../../../tech/devices/inside-a-phone/\">一部手机里的十个道理</a>：→ <a href=\"#step4\">本页第 4 步</a>"
   },
   en: {
     back: "← Knowledge Index",
@@ -216,8 +217,9 @@ const STR = {
     "site.crumb.cat": "Earth & Space",
     "site.crumb.sub": "Astronomy",
     "site.bl.title": "Linked from",
-    "site.bl.1": "<a href=\"../what-is-a-black-hole/\">What Is a Black Hole, Really?</a>: <a href=\"../what-is-a-black-hole/#ch3\">its chapter 3</a> → <a href=\"#step1\">this page step 1</a>; <a href=\"../what-is-a-black-hole/#ch10\">its chapter 10</a>",
-    "site.bl.2": "<a href=\"../../../tech/devices/inside-a-phone/\">Ten Ideas Inside One Phone</a>: → <a href=\"#step4\">this page step 4</a>"
+    "site.bl.1": "<a href=\"../kepler-orbits/\">Orbital Motion · Ellipses, Speed & Transits</a>: → <a href=\"#step3\">this page step 3</a>, <a href=\"#step4\">this page step 4</a>, <a href=\"#step2\">this page step 2</a>",
+    "site.bl.2": "<a href=\"../what-is-a-black-hole/\">What Is a Black Hole, Really?</a>: <a href=\"../what-is-a-black-hole/#ch3\">its chapter 3</a> → <a href=\"#step1\">this page step 1</a>; <a href=\"../what-is-a-black-hole/#ch10\">its chapter 10</a>",
+    "site.bl.3": "<a href=\"../../../tech/devices/inside-a-phone/\">Ten Ideas Inside One Phone</a>: → <a href=\"#step4\">this page step 4</a>"
   }
 };
 let currentLang = 'en';
