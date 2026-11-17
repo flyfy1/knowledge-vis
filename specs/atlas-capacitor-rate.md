@@ -28,3 +28,15 @@ The route first revisits derivative#step2 x² (x=−1/0/+1 yields slopes−2/0/+
 - Both languages, mobile390,320actual200%text, keyboard≥48px/3pxfocus/forced colors, refresh reset and Back selection recovery; no JS errors. Source controls and quantitative model unchanged.
 - Scoped existing Atlas/Galaxy and power flow lifecycle regressions. Independent cold task walk and scientific/code review; no claim of physical-device accessibility or learning gains.
 - Actual main/push/origin installation and public verification are separate. Existing Cloudflare403/1010 blocks public reads: do not repeat/bypass; disclose server-only acceptance when publishing.
+
+## Change 2026-11-17: each language pass starts from a fresh document
+
+`atlas/tests/capacitor-rate-browser.cjs` runs its power-converters checks once in en and once in zh, each opening
+`physics/circuits/power-converters/#step2`. The second `p.goto` has the same URL and fragment as the page already open, so
+Chrome treats it as a same-document fragment navigation and keeps the first pass's DOM, including the inline
+`font-size: … !important` the 200 % text check wrote. The old page hid this: its language switch rebuilt every step,
+dropping those styles. Since power-converters keeps its elements across a language switch (site template Phase 3
+batch D, BRIEF.md "Change 2026-11-17"), the second pass doubled already doubled text (64 px labels) and the 320 px
+overflow check failed. Each pass now goes to `about:blank` first, so it loads the page fresh, as the test meant. The
+check itself is unchanged (single 200 % text, `scrollWidth <= innerWidth` at 320 px); with the fix it passes on both
+the pre-refactor page and the refactored one.

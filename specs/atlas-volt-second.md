@@ -38,3 +38,15 @@ Floating-point display guard: signed sum can have a tiny residual (e.g.Vin5,D35%
 Disclosure sizing guard: initialrender occurs with Buckderivation closed (host.clientWidth0). Derive the initial plotting width from the existing visible Bucktrace container when the area host is hidden; opening the fold must not create a180px-based enlargedSVG until the first preset. No newtoggleclock/state. Compare first-open andafterseek viewBox dimensions.
 
 Decimal-display guard: equivalent±46.875Vµs atVin5/D75 can straddle a binary tie and print46.88/−46.87. Round absolute magnitude symmetrically with a1e−9scaled-unit tie tolerance, restore the sign and suppress signedzero; rawarea remains unchanged. All readouts are approximate and net uses unrounded values. Test this alongsideVin5/D35 nearzero; do not change the physical solver or force all partialareas tobalance.
+
+## Change 2026-11-17: each language pass starts from a fresh document
+
+`atlas/tests/volt-second-browser.cjs` runs its power-converters checks once in en and once in zh, each opening
+`physics/circuits/power-converters/#step4`. The second `p.goto` has the same URL and fragment as the page already open, so
+Chrome treats it as a same-document fragment navigation and keeps the first pass's DOM, including the inline
+`font-size: … !important` the 200 % text check wrote. The old page hid this: its language switch rebuilt every step,
+dropping those styles. Since power-converters keeps its elements across a language switch (site template Phase 3
+batch D, BRIEF.md "Change 2026-11-17"), the second pass doubled already doubled text (64 px labels) and the 320 px
+overflow check failed. Each pass now goes to `about:blank` first, so it loads the page fresh, as the test meant. The
+check itself is unchanged (single 200 % text, `scrollWidth <= innerWidth` at 320 px); with the fix it passes on both
+the pre-refactor page and the refactored one.
