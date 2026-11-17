@@ -91,7 +91,7 @@ ok(!/canvas-label-guard/.test(html), 'no label guard');
 // ---- links ----
 const hrefs = [...html.matchAll(/href="(\.\.\/[^"]+)"/g)].map(m => m[1]).filter(h => !/\.css(\?|$)/.test(h)); // stylesheets, including site-nav.css?v=…
 for (const h of new Set(hrefs)) {
-  const [rel, anchor] = h.split('#'), target = path.join(dir, rel, 'index.html');
+  const [relq, anchor] = h.split('#'), rel = relq.split('?')[0], target = path.join(dir, rel, 'index.html'); // the static breadcrumb links ../../../?category=…
   ok(fs.existsSync(target), 'link target ' + h);
   if (anchor) ok(fs.readFileSync(target, 'utf8').includes(`id="${anchor}"`), 'anchor ' + h);
 }
