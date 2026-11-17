@@ -117,7 +117,7 @@ const STR = {
     "site.crumb.cat": "化学",
     "site.crumb.sub": "溶液与酸碱",
     "site.bl.title": "被这些页面引用",
-    "site.bl.1": "<a href=\"../acid-base-equilibrium/\">酸碱平衡 · 分子在两边来回走</a>：→ <a href=\"#step1\">本页第 1 步</a>、<a href=\"#step4\">本页第 4 步</a>",
+    "site.bl.1": "<a href=\"../acid-base-equilibrium/\">酸碱平衡 · 分子在两边来回走</a>：<a href=\"../acid-base-equilibrium/#step1\">该课第 1 步</a> → <a href=\"#step1\">本页第 1 步</a>；<a href=\"../acid-base-equilibrium/#step5\">该课第 5 步</a> → <a href=\"#step4\">本页第 4 步</a>",
     "site.bl.2": "<a href=\"../../../food/flavor/how-soy-sauce-gets-its-flavor/\">酱油是怎么酿出来的</a>：<a href=\"../../../food/flavor/how-soy-sauce-gets-its-flavor/#ch10\">该文第 10 章</a>",
     "site.bl.3": "<a href=\"../../../food/flavor/why-fermented-tofu-tastes-good/\">酱豆腐为什么好吃</a>：<a href=\"../../../food/flavor/why-fermented-tofu-tastes-good/#ch6\">该文第 6 章</a>；<a href=\"../../../food/flavor/why-fermented-tofu-tastes-good/#ch9\">该文第 9 章</a>"
   },
@@ -237,7 +237,7 @@ const STR = {
     "site.crumb.cat": "Chemistry",
     "site.crumb.sub": "Solutions, Acids & Bases",
     "site.bl.title": "Linked from",
-    "site.bl.1": "<a href=\"../acid-base-equilibrium/\">Acid–Base Equilibrium · Molecules Move Both Ways</a>: → <a href=\"#step1\">this page step 1</a>, <a href=\"#step4\">this page step 4</a>",
+    "site.bl.1": "<a href=\"../acid-base-equilibrium/\">Acid–Base Equilibrium · Molecules Move Both Ways</a>: <a href=\"../acid-base-equilibrium/#step1\">its step 1</a> → <a href=\"#step1\">this page step 1</a>; <a href=\"../acid-base-equilibrium/#step5\">its step 5</a> → <a href=\"#step4\">this page step 4</a>",
     "site.bl.2": "<a href=\"../../../food/flavor/how-soy-sauce-gets-its-flavor/\">How Soy Sauce Gets Its Flavor</a>: <a href=\"../../../food/flavor/how-soy-sauce-gets-its-flavor/#ch10\">its chapter 10</a>",
     "site.bl.3": "<a href=\"../../../food/flavor/why-fermented-tofu-tastes-good/\">Why Fermented Tofu Tastes Good</a>: <a href=\"../../../food/flavor/why-fermented-tofu-tastes-good/#ch6\">its chapter 6</a>; <a href=\"../../../food/flavor/why-fermented-tofu-tastes-good/#ch9\">its chapter 9</a>"
   }

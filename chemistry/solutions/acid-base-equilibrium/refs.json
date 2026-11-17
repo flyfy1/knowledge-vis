@@ -1,0 +1,63 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "acid-base-equilibrium",
+ "refs": [],
+ "backlinks": [
+  {
+   "from": "enzymes",
+   "links": [
+    {
+     "from": "step5",
+     "to": "step0"
+    }
+   ]
+  },
+  {
+   "from": "buffer-capacity",
+   "links": [
+    {
+     "from": "step4",
+     "to": "step1"
+    }
+   ]
+  },
+  {
+   "from": "ph-scale",
+   "links": [
+    {
+     "from": "step5",
+     "to": "step0"
+    }
+   ]
+  },
+  {
+   "from": "titration-curves",
+   "links": [
+    {
+     "from": "step5",
+     "to": "step0"
+    }
+   ]
+  },
+  {
+   "from": "how-soy-sauce-gets-its-flavor",
+   "links": [
+    {
+     "from": "ch10",
+     "to": null
+    }
+   ]
+  },
+  {
+   "from": "why-fermented-tofu-tastes-good",
+   "links": [
+    {
+     "from": "ch9",
+     "to": null
+    }
+   ]
+  }
+ ],
+ "related": [],
+ "bindings": []
+}
