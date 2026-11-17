@@ -78,3 +78,9 @@
 - **被替换的原版**：五步粒子版本（2026-10-29 `95552271` 建页，提交没有 `Built-By`，作者未归属；2026-10-29 Codex 加了共同离子组成图）；最后一个版本是 `5173122d`，源码只留在 git 历史里（`git show 5173122d:chemistry/solutions/acid-base-equilibrium/index.html` 等）。
 - **搬过来时改了什么**：页头去掉指向本页自己的「对照另一版本」链接和 `compare` 键；页脚不再写「是《…》的平行版本」；`index.html` 加上站点导航（`site-nav.css` / `site-nav.js`）；`tests/core.cjs` 的对照链接检查改为检查本页没有指向自己的对照链接。教学内容、模型、数值结论没有改。
 - **以后改这一页**：改本目录，不改 `variants/claude-code/acid-base-equilibrium/`。
+
+## Change 2026-11-17：字符串表改成纯字符串
+
+- **原因**：站点模板的转换器（`scripts/convert-essay.cjs`）只认值全是字符串字面量的 `{ zh: {…}, en: {…} }` 表；本页的 12 条跨页链接写成 `' + a('eq0', '…') + '`，要先跑辅助函数 `a()` 才能得到字符串，转换器读不出这张表。
+- **改动**：把 12 处 `a(k, text)` 展开成它原来生成的 `<a class="xlink" href="…">text</a>`，删掉不再使用的 `a`；`LINK` 表保留并照旧导出。展开前后 `STRINGS` 用 `assert.deepStrictEqual` 比过，完全相同，页面显示不变。
+- **复查**：`node tests/core.cjs`（深链检查读的就是这些 `href`）。
