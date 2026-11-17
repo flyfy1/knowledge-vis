@@ -1,0 +1,45 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "photosynthesis",
+ "refs": [],
+ "backlinks": [
+  {
+   "from": "cell-structure",
+   "links": [
+    {
+     "from": "step5",
+     "to": "step2"
+    }
+   ]
+  },
+  {
+   "from": "energy-pyramid",
+   "links": [
+    {
+     "from": "step5",
+     "to": "step2"
+    }
+   ]
+  },
+  {
+   "from": "food-web",
+   "links": [
+    {
+     "from": "step5",
+     "to": "step1"
+    }
+   ]
+  },
+  {
+   "from": "carbon-cycle",
+   "links": [
+    {
+     "from": "step5",
+     "to": "step2"
+    }
+   ]
+  }
+ ],
+ "related": [],
+ "bindings": []
+}

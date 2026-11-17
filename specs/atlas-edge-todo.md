@@ -622,11 +622,11 @@ anchor; a link to the page top has no anchor).
 
 ## 光合作用 · 用光开工的糖厂 / Photosynthesis · A Sugar Factory Run by Light → 质量守恒 · 原子一个都不丢 / Mass Conservation · Not a Single Atom Lost
 
-- `photosynthesis` → `mass-conservation#step1`
+- `photosynthesis#step6` → `mass-conservation#step1`
 
 ## 光合作用 · 用光开工的糖厂 / Photosynthesis · A Sugar Factory Run by Light → 能量金字塔 · 为什么顶级捕食者那么少 / The Energy Pyramid · Why Top Predators Are Rare
 
-- `photosynthesis` → `energy-pyramid#step0`
+- `photosynthesis#step6` → `energy-pyramid#step0`
 
 ## 种群增长 · S 形曲线从哪来 / Population Growth · Where the S-Curve Comes From → 化学平衡 · 人数不变，人还在跑 / Chemical Equilibrium · Still Moving at Balance
 

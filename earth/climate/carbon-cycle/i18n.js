@@ -103,7 +103,7 @@ const STR = {
     "site.crumb.cat": "地球与太空",
     "site.crumb.sub": "大气与气候",
     "site.bl.title": "被这些页面引用",
-    "site.bl.1": "<a href=\"../../../biology/cells/photosynthesis/\">光合作用 · 用光开工的糖厂</a>：→ <a href=\"#step0\">本页第 0 步</a>",
+    "site.bl.1": "<a href=\"../../../biology/cells/photosynthesis/\">光合作用 · 用光开工的糖厂</a>：<a href=\"../../../biology/cells/photosynthesis/#step6\">该课第 6 步</a> → <a href=\"#step0\">本页第 0 步</a>",
     "site.bl.2": "<a href=\"../why-the-planet-warms/\">一点点二氧化碳 · 地球为什么会变暖</a>：<a href=\"../why-the-planet-warms/#ch7\">该文第 7 章</a> → <a href=\"#step4\">本页第 4 步</a>；<a href=\"../why-the-planet-warms/#ch8\">该文第 8 章</a> → <a href=\"#step0\">本页第 0 步</a>"
   },
   en: {
@@ -208,7 +208,7 @@ const STR = {
     "site.crumb.cat": "Earth & Space",
     "site.crumb.sub": "Atmosphere & Climate",
     "site.bl.title": "Linked from",
-    "site.bl.1": "<a href=\"../../../biology/cells/photosynthesis/\">Photosynthesis · A Sugar Factory Run by Light</a>: → <a href=\"#step0\">this page step 0</a>",
+    "site.bl.1": "<a href=\"../../../biology/cells/photosynthesis/\">Photosynthesis · A Sugar Factory Run by Light</a>: <a href=\"../../../biology/cells/photosynthesis/#step6\">its step 6</a> → <a href=\"#step0\">this page step 0</a>",
     "site.bl.2": "<a href=\"../why-the-planet-warms/\">A Little CO₂ · Why the Planet Warms</a>: <a href=\"../why-the-planet-warms/#ch7\">its chapter 7</a> → <a href=\"#step4\">this page step 4</a>; <a href=\"../why-the-planet-warms/#ch8\">its chapter 8</a> → <a href=\"#step0\">this page step 0</a>"
   }
 };
