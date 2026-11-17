@@ -858,6 +858,35 @@ passed (4516 checks). The full build failed only the CJK-in-`index.html` check o
   (23 px zh, 35 px en) and coordinate-plane en (2 px); 16 `stale:` warnings (hand-written text in `figures/`, page
   owners' call); integral and frequency-response link to `atlas/?trail=…` (reported as not a live page).
 
+**Phase 3 batch C: the five lessons batch B skipped (2026-11-17, committed, not pushed or deployed until reviewed).**
+- **Which version first.** Each of the five has a Claude Code twin in `variants/claude-code/<slug>/`. Per Yangyu
+  (2026-11-17, "where more than one agent wrote the same lesson, use the better version") both were compared as a reader
+  is served (science, depth, interaction, bilingual text, own tests, canvas sweep, screenshots, incoming links);
+  comparison and reasons in specs/reviews/lesson-version-choice-20261117.md. The Claude Code edition replaced
+  kepler-orbits (408201ac), acid-base-equilibrium (b383c6dc), bayes-diagnostics (a3a44e7d) and photosynthesis
+  (5f94f8bc); power-converters stays the Codex edition (comparable quality, and the atlas circuits region is built on
+  its steps). Promotion commits are authored by Claude Code (claude-opus-5-5), the variants' own author (Derived-From
+  cannot apply to paths that already exist); labels in 1eec3614; lineage rules in specs/visual-page-provenance.md
+  "Promoting a parallel edition". The skip reasons of batch B went with the replaced pages (`<noscript>` in `<main>`,
+  no string table, a runtime without `data-i18n-html`, `step-*` ids).
+- **Before converting:** bayes-diagnostics' old anchors moved in the promotion commit (atlas `#step-posterior` ->
+  `#step3`, `#step-likelihood` -> `#step2`, numbers-lie `#step-prior` -> `#step1`); generated files in 81f8ff07;
+  acid-base's 12 links built by a helper `a()` written into its table as plain strings (5ac069a2, tables deep-equal);
+  `?v=20261117` on the promoted pages' app.js, model.js and style.css (2afe5d0c; same URLs, different code, and JS is
+  cached 4 h); photosynthesis' link test drops query strings (2d6f3d5a, for the static breadcrumb); labels repointed
+  each time (4a4db6ea, 167973f2, 58df5b17); registry rows after 5ac069a2 in d011a06c.
+- **Conversions** (mechanical, `Built-By: script`, one `Derived-From:` per new file): kepler-orbits c95ef919 (7 steps,
+  130 keys), acid-base-equilibrium 5ac22d79 (6 steps, 109 keys), bayes-diagnostics 0e474801 (7 steps, 119 keys),
+  photosynthesis c95ff8f9 (7 steps, 139 keys). Each round-tripped at its parent with no converter change (index.html
+  byte-identical, both tables equal key for key, runtime identical), then `version` 20261117a and the full build;
+  photosynthesis was re-converted in a copy of its parent after the label repoint, with identical sources. Each commit
+  carries the regenerated registry and the linked-from rows of the template pages it links to (versions 20261117a).
+  The variants' runtimes translate `data-i18n-html` and `data-i18n-aria`, so the linked-from rows and the breadcrumb's
+  aria-label switch language (English pages have no CJK outside the language button).
+- **Checked on the full build:** each page's `tests/core.cjs`; canvas sweep (kepler 7776, acid-base 450, bayes 3276,
+  photosynthesis 2006 states, all pass); Playwright text/overflow at 1280/390/320 zh/en; the shared checks and browser
+  tests listed in HANDOFF 1f.
+
 ## 11. Authorship
 
 - Conversion commits use `Derived-From:` (AUTHORSHIP.md §4) so `content.<lang>.md` inherits the history of
@@ -875,15 +904,12 @@ passed (4516 checks). The full build failed only the CJK-in-`index.html` check o
     hand-written page would need site-nav.js to show them;
   - the 335 pairs in `specs/atlas-edge-todo.md` need a human (or an agent with sources) to write edges where a
     reason holds.
-- **Phase 3:** batch A and batch B are done (§10): 177 lessons are template pages. Left, each needing its own
-  change first:
-  - biology/cells/photosynthesis (`<noscript>` inside `<main>`; its tests also rewrite `tests/evidence`);
-  - chemistry/solutions/acid-base-equilibrium and earth/astronomy/kepler-orbits (no `STR` table: strings live in
-    the runtime);
-  - probability/inference/bayes-diagnostics (converts, but its runtime does not apply `data-i18n-html`, so the
-    generated linked-from rows would stay Chinese for English readers; its step ids are not `stepN` and its links
-    are unstyled);
-  - power-converters (no `i18n.js`) and everything under `variants/`.
+- **Phase 3:** batches A, B and C are done (§10): 181 lessons are template pages. Left:
+  - physics/circuits/power-converters (kept as the Codex edition in batch C): no string table; `app.js`, `flow.js`
+    and `voltage-area.js` build every step from 162 inline `tr(zh, en)` pairs and re-render on a language switch, so
+    it needs a rewrite to static markup plus a key table (authored, with its seven browser/review tests), not a
+    conversion;
+  - everything under `variants/` (frozen; the four promoted editions live at their canonical URLs now).
 - **Later:**
   - the unbound-digit lint;
   - static `/en/` twins;

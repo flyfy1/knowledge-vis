@@ -17,3 +17,12 @@ A learner should predict which control changes radius, speed, or alignment befor
 
 ## Scope boundary
 This is a teaching model, not an ephemeris: fixed star mass, semi-major axis 1 AU, no multi-body perturbations, finite-star ingress/egress, or measurement noise.
+
+## Change 2026-11-17: this spec describes a replaced page
+
+The one-step lesson this spec describes was replaced at `earth/astronomy/kepler-orbits/` by the seven-step Claude Code
+edition (commit 408201ac; comparison and reasons in [reviews/lesson-version-choice-20261117.md](reviews/lesson-version-choice-20261117.md):
+the old page clipped its orbit, showed English phase names on the zh page and failed the canvas sweep at 320 px). The
+current page's contract, model and numeric claims are in `earth/astronomy/kepler-orbits/BRIEF.md` and its `tests/core.cjs`;
+it is a site-template page since c95ef919 (edit `content.*.md`, `figures/`, then `node scripts/build-pages.cjs`). This file
+is kept as the record of the old page; `git show 5173122d:earth/astronomy/kepler-orbits/app.js` has its code.

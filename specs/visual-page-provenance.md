@@ -141,3 +141,28 @@ had to be repointed, but the new source revision carries `Built-By: Claude Code`
 heading names Antigravity and which states that the commit's own work is a mechanical alias move. This is the first
 repoint where the repointing commit's builder differs from the edition's developer; later ones should do the same
 (evidence note in the repointing commit) rather than relabel the edition or add a false `Built-By`.
+
+## Promoting a parallel edition to the canonical URL — 2026-11-17 Claude Code
+
+Yangyu (2026-11-17): where several agents wrote the same lesson, the canonical page is the better version. Four
+Claude Code editions were promoted from `variants/claude-code/<slug>/` (kepler-orbits, acid-base-equilibrium,
+bayes-diagnostics, photosynthesis; reasons in [reviews/lesson-version-choice-20261117.md](reviews/lesson-version-choice-20261117.md)).
+How the lineage is recorded, so later promotions do the same:
+
+- The variant directory and its `cc-<slug>` entry stay as they are (frozen audit trail).
+- The canonical entry is keyed by the short slug and describes the promoted edition: `developer` and `kind` of the
+  edition's author (here Claude Code · original), a new `edition` id, `sourceRevision` = the promotion commit, which
+  carries that developer's `Built-By`. If the URL had a label (photosynthesis: Codex · revised), its `sourceRevision`
+  becomes `previousSourceRevision` and the replaced edition is named in `originalAuthorship`; nothing else of it is
+  kept in the record (the old page lives in git history).
+- `originalSourceRevision` is not set: the edition's creation commit touched only `variants/`, and the core check
+  requires a commit that touched the page and differs from `sourceRevision`. The creation commit goes into
+  `originalAuthorship` instead. It is never overwritten once set, so a later agent should not fill it with a guess.
+- The promotion commit is `authored` by the same agent and model as the variant's `Built-By`, because the paths already
+  exist (AUTHORSHIP.md §4 allows `Derived-From` only for a file that first appears in the commit); a mechanical commit
+  would keep the replaced page's authors as primary. If the variant's author is a different agent from the one doing
+  the promotion, this does not work (a `Built-By` naming someone who did not make the commit is false): stop and ask
+  Yangyu, as AUTHORSHIP.md §5 requires.
+- The canonical page drops its "对照 Claude Code 版 →" link (it would compare the page with itself) and the label is
+  written into the page in a separate mechanical commit once the promotion commit exists.
+- power-converters was compared and kept as the Codex edition; its label and compare link are unchanged.

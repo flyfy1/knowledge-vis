@@ -43,7 +43,7 @@ workflow. Acceptance evidence and current deployment are separate statuses.
 - [Frozen-bubble teaching contract](../frozen-bubble/BRIEF.md#teaching-continuity-revision--2026-10-26-codex): observation-first narrative, defined terms and research context, matched diagram moments and qualitative-model boundaries.
 
 
-- [Photosynthesis mobile scrolling](../photosynthesis/SCROLL-SPEC.md): CSS/bitmap size separation, lifecycle, readable fallback, actual mobile scroll and source attribution acceptance.
+- [Photosynthesis mobile scrolling](https://github.com/flyfy1/knowledge-vis/blob/5173122d/biology/cells/photosynthesis/SCROLL-SPEC.md): CSS/bitmap size separation, lifecycle, readable fallback, actual mobile scroll and source attribution acceptance. Superseded 2026-11-17: the Codex edition it covers was replaced by the Claude Code edition (5f94f8bc) and SCROLL-SPEC.md was removed with it; the current contract is [biology/cells/photosynthesis/BRIEF.md](../biology/cells/photosynthesis/BRIEF.md), the reasons are in [reviews/lesson-version-choice-20261117.md](reviews/lesson-version-choice-20261117.md).
 
 
 - [Visible page edition provenance](visual-page-provenance.md): visible Codex revised-edition labels, truthful source records, parallel-version preservation, repair/spec maintenance and integration acceptance.

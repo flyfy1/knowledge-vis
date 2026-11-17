@@ -90,3 +90,14 @@ lead 在原版 `</header>` 之后加一行静态链接「对照 Claude Code 版 
 ## 新增主题登记
 
 （暂无）
+
+## 2026-11-17：四个平行版本成为正式版本
+
+按 Yangyu 2026-11-17「多 agent 写同一篇的话 默认用更好的那个版本」，对比后把 kepler-orbits、acid-base-equilibrium、
+bayes-diagnostics、photosynthesis 的 Claude Code 版本搬到了原版地址（408201ac、b383c6dc、a3a44e7d、5f94f8bc），
+power-converters 保留 Codex 原版。理由见 [reviews/lesson-version-choice-20261117.md](reviews/lesson-version-choice-20261117.md)。
+
+- 这四页的 `variants/claude-code/<slug>/` 原样保留，不再改：以后改原版地址的目录。它们的对照链接和
+  `variants/claude-code/` 汇总页仍指向原版地址，那里现在是同一课。
+- 原版地址上去掉了「对照 Claude Code 版 →」。
+- 署名怎么记见 [visual-page-provenance](visual-page-provenance.md)「Promoting a parallel edition」。
