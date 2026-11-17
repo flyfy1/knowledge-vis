@@ -149,8 +149,8 @@ const STRINGS = {
     "site.crumb.cat": "生物",
     "site.crumb.sub": "细胞与分子",
     "site.bl.title": "被这些页面引用",
-    "site.bl.1": "<a href=\"../cell-structure/\">细胞 · 生命的最小单位间</a>：<a href=\"../cell-structure/#step5\">该课第 5 步</a> → <a href=\"#step2\">本页第 2 步</a>",
-    "site.bl.2": "<a href=\"../../ecology/energy-pyramid/\">能量金字塔 · 为什么顶级捕食者那么少</a>：<a href=\"../../ecology/energy-pyramid/#step5\">该课第 5 步</a> → <a href=\"#step2\">本页第 2 步</a>",
+    "site.bl.1": "<a href=\"../cell-structure/\">细胞 · 生命的最小单位间</a>：<a href=\"../cell-structure/#step5\">该课第 5 步</a> → <a href=\"#step1\">本页第 1 步</a>",
+    "site.bl.2": "<a href=\"../../ecology/energy-pyramid/\">能量金字塔 · 为什么顶级捕食者那么少</a>：<a href=\"../../ecology/energy-pyramid/#step5\">该课第 5 步</a> → <a href=\"#step1\">本页第 1 步</a>",
     "site.bl.3": "<a href=\"../../ecology/food-web/\">食物网</a>：<a href=\"../../ecology/food-web/#step5\">该课第 5 步</a> → <a href=\"#step1\">本页第 1 步</a>",
     "site.bl.4": "<a href=\"../../../earth/climate/carbon-cycle/\">碳循环 · 大气里的碳去了哪里</a>：<a href=\"../../../earth/climate/carbon-cycle/#step5\">该课第 5 步</a> → <a href=\"#step2\">本页第 2 步</a>"
   },
@@ -299,8 +299,8 @@ const STRINGS = {
     "site.crumb.cat": "Biology",
     "site.crumb.sub": "Cells & Molecules",
     "site.bl.title": "Linked from",
-    "site.bl.1": "<a href=\"../cell-structure/\">The Cell · Life's Smallest Workshop</a>: <a href=\"../cell-structure/#step5\">its step 5</a> → <a href=\"#step2\">this page step 2</a>",
-    "site.bl.2": "<a href=\"../../ecology/energy-pyramid/\">The Energy Pyramid · Why Top Predators Are Rare</a>: <a href=\"../../ecology/energy-pyramid/#step5\">its step 5</a> → <a href=\"#step2\">this page step 2</a>",
+    "site.bl.1": "<a href=\"../cell-structure/\">The Cell · Life's Smallest Workshop</a>: <a href=\"../cell-structure/#step5\">its step 5</a> → <a href=\"#step1\">this page step 1</a>",
+    "site.bl.2": "<a href=\"../../ecology/energy-pyramid/\">The Energy Pyramid · Why Top Predators Are Rare</a>: <a href=\"../../ecology/energy-pyramid/#step5\">its step 5</a> → <a href=\"#step1\">this page step 1</a>",
     "site.bl.3": "<a href=\"../../ecology/food-web/\">Food Webs</a>: <a href=\"../../ecology/food-web/#step5\">its step 5</a> → <a href=\"#step1\">this page step 1</a>",
     "site.bl.4": "<a href=\"../../../earth/climate/carbon-cycle/\">The Carbon Cycle · Where the Atmosphere’s Carbon Goes</a>: <a href=\"../../../earth/climate/carbon-cycle/#step5\">its step 5</a> → <a href=\"#step2\">this page step 2</a>"
   }

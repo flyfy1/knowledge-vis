@@ -781,7 +781,7 @@ anchor; a link to the page top has no anchor).
 
 ## 能量金字塔 · 为什么顶级捕食者那么少 / The Energy Pyramid · Why Top Predators Are Rare → 光合作用 · 用光开工的糖厂 / Photosynthesis · A Sugar Factory Run by Light
 
-- `energy-pyramid#step5` → `photosynthesis#step2`
+- `energy-pyramid#step5` → `photosynthesis#step1`: ? → photosynthesis
 
 ## 能量金字塔 · 为什么顶级捕食者那么少 / The Energy Pyramid · Why Top Predators Are Rare → 种群生态学 · 增长如何被反馈改变 / Population Ecology · Growth Reshaped by Feedback
 

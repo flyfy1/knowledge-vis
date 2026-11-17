@@ -28,3 +28,5 @@
 ## 注册建议（Alberto 执行）
 - title zh「细胞 · 生命的最小单位间」/ en "The Cell · Life's Smallest Workshop"；tags：细胞器 / Organelles、动植物对照 / Plant vs Animal、结构与功能 / Structure & Function；category biology，stage junior。
 - CONCEPT-MAP 拟行：#step2 细胞器分工、#step3 动植物细胞差异。
+
+- 2026-11-17 终章到光合作用页的链接从 `#step2` 改为 `#step1`（Claude Code，独立评审）：光合作用页换成 Claude Code 版后 `#step2` 是「糖的重量从哪来」，不讲叶绿体和光；`#step1` 讲原料、产物、光和叶绿体，与链接文字对得上。改的是 `figures/` 里的源文件，再跑 `node scripts/build-pages.cjs`。评审记录 specs/reviews/site-template-phase3c-review-20261117.md。

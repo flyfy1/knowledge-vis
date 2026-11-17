@@ -17,3 +17,5 @@ Producer, consumer, trophic level (0–1); transfer efficiency (1); respiration,
 All magnitudes illustrative; efficiency varies 1–20%; no land-quality or nutrition constraints; ecosystem data are example numbers.
 
 - 2026-11-09 canvas 文字修复（Claude Code，self-check）：页面加载 [`canvas-label-guard.js`](../../../canvas-label-guard.js)（说明见 specs/canvas-label-guard.md），重叠的画布标注会错开、文字不伸出画布。修后 `tests/canvas-text-overlap.cjs --sweep` 结果见 specs/reviews/canvas-text-survey-20261109.md。
+
+- 2026-11-17 终章到光合作用页的链接从 `#step2` 改为 `#step1`（Claude Code，独立评审）：光合作用页换成 Claude Code 版后 `#step2` 是「糖的重量从哪来」，不讲叶绿体和光；`#step1` 讲原料、产物、光和叶绿体，与链接文字对得上。改的是 `figures/` 里的源文件，再跑 `node scripts/build-pages.cjs`。评审记录 specs/reviews/site-template-phase3c-review-20261117.md。
