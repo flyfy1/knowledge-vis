@@ -19,7 +19,7 @@ anchor; a link to the page top has no anchor).
 
 ## 升压与降压 · 能量去哪了？ / Buck & Boost · Follow the Energy → 傅里叶变换 · 一步一交互 / The Fourier Transform · One Interaction at a Time
 
-- `power-converters` → `fourier#step5`: ? → fourier, spectrum
+- `power-converters#step3` → `fourier#step5`: pwm, switch-diode → fourier, spectrum
 
 ## 数字没有说谎，结论却错了 / Every Number Was True, and the Conclusion Was Still Wrong → 中心极限定理 · 平均值总会变成钟形 / Central Limit Theorem · Averages Always Turn Bell-Shaped
 

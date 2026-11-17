@@ -24,5 +24,23 @@
   "stage": "university",
   "status": "live",
   "path": "physics/circuits/power-converters/",
-  "order": 20
+  "order": 20,
+  "layout": "lesson",
+  "version": "20261117a",
+  "enCjk": [
+    "s0power"
+  ],
+  "legacyLayout": {
+    "_note": "Whitespace and markup of the hand-written lesson this page was converted from, so the conversion could be checked byte for byte (specs/site-template.md §3c).",
+    "section": {
+      "open": "<section class=\"step\" id=\"{id}\" data-step=\"{n}\">",
+      "close": "</section>"
+    },
+    "indent": "",
+    "stepNav": {
+      "item": "<a class=\"nav-step\" data-nav=\"{n}\" href=\"#{id}\" data-i18n=\"{key}\"></a>",
+      "end": ""
+    },
+    "label": "<details class=\"page-provenance\" data-developer=\"{{developer}}\" data-edition=\"{{edition}}\" data-source-revision=\"{{sourceRevision}}\">\n      <summary><span class=\"provenance-zh\" lang=\"zh-CN\">{{developer}} 开发 · {{kind.zh}}</span><span class=\"provenance-en\" lang=\"en\">Developed with {{developer}} · {{kind.en}}</span></summary>\n      <p><span class=\"provenance-zh\" lang=\"zh-CN\">原页面的贡献保留；本版本的改进由 {{developer}} 完成。</span><span class=\"provenance-en\" lang=\"en\">This edition includes {{developer}} improvements and retains the original contributors’ work.</span></p>\n      <p><span class=\"provenance-zh\" lang=\"zh-CN\">改进范围：{{scope.zh}}。</span><span class=\"provenance-en\" lang=\"en\">Scope: {{scope.en}}.</span></p>\n      <p><span class=\"provenance-zh\" lang=\"zh-CN\">版本：</span><span class=\"provenance-en\" lang=\"en\">Edition: </span><code>{{edition}}</code> · <a href=\"https://github.com/flyfy1/knowledge-vis/commit/{{sourceRevision}}\"><span class=\"provenance-zh\" lang=\"zh-CN\">源码修订</span><span class=\"provenance-en\" lang=\"en\">Source revision</span>&nbsp;{{short}}</a></p>\n      <p><a href=\"https://github.com/flyfy1/knowledge-vis/commit/24a3d727246b05697d6b2cb65125cd9fc771a0a0\"><span class=\"provenance-zh\">原导通回路改进</span><span class=\"provenance-en\">Original current-flow revision</span> · 24a3d727</a></p>\n    </details>"
+  }
 }
