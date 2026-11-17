@@ -104,7 +104,7 @@
 
 ## 站内深链
 
-`../../statistics/regression-correlation/#step5`（回归）、`#step3`（混杂），`../../basics/probability-frequency/#step2`（次数越多越稳），`../../inference/hypothesis-testing/#step2`、`#step1`，`../../inference/bayes-diagnostics/#step-prior`，`../../inference/bayes-updating/#step1`，`../../statistics/mean-median-mode/#step1`，`../../statistics/central-limit-theorem/`。
+`../../statistics/regression-correlation/#step5`（回归）、`#step3`（混杂），`../../basics/probability-frequency/#step2`（次数越多越稳），`../../inference/hypothesis-testing/#step2`、`#step1`，`../../inference/bayes-diagnostics/#step1`，`../../inference/bayes-updating/#step1`，`../../statistics/mean-median-mode/#step1`，`../../statistics/central-limit-theorem/`。
 
 ## 真实世界数字的出处（均已查过）
 
@@ -139,3 +139,9 @@
 - **评审改动**：第 7 章回答了它自己提出的「两倍之前是多少」；第 9 章读数去噪；第 1 章对照组解读句不再在两半差 3 分时说「差不多」；第 6 章人数显示为整数（不再出现 508.5 人）；第 3 章第 11–14 年不再提前说「又过了五年」；第 4 章 n = 1 时英文句式；英文版约 50 处修正（量词残留、复数、标题、站内页面英文标题、`c3.ctl.bar` 意思说反、软糖 → jelly beans、训话/coach 不一致等）；英文模式下改用拉丁字体优先、缩小标题。
 - **未改、留给作者/负责人判断**：第 7 章模型仍是精确算术（一万格点阵 + 两个滑杆），属于「精确解」一类，但比较薄；第 8 章同时给公式值 1.65 与抽样值 1.61，已明确区分，保留。
 - **未检查**：屏幕阅读器实际朗读；颜色对比逐像素测量；卡尼曼原书与 Casselman 原文。
+
+## Fix 2026-11-17：贝叶斯诊断的链接锚点
+
+- **原因**：`probability/inference/bayes-diagnostics/` 换成了 Claude Code 版本（七步，锚点 `#step0`–`#step6`），旧锚点 `#step-prior` 不再存在，第 6 章 `c6.a3` 的链接会落到页首；旧页的「一千人频数树」也换成了一千个圆点。
+- **改动**：`c6.a3` 两种语言的链接改为 `#step1`（「还没看结果时，该给患病多大的概率」，即先验一步），文字改为「用一千个圆点代表一千个人」；`copy.zh.js` / `copy.en.js` 第一次加缓存键 `?v=20261117`，让线上读者拿到新链接。
+- **复查**：`node tests/models.cjs`；`git grep 'bayes-diagnostics/#step-'` 应为空。

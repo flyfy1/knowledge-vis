@@ -1,7 +1,7 @@
 {
  "schema": 2,
  "slug": "bayes-diagnostics",
- "note": "The page uses #step-prior / #step-likelihood / #step-posterior anchors instead of #stepN, so lessons[].step is null.",
+ "note": "Since 2026-11-17 the page is the Claude Code edition with #step0 to #step6; the old anchors #step-likelihood and #step-posterior became #step2 and #step3 (specs/reviews/lesson-version-choice-20261117.md).",
  "nodes": [
   {
    "id": "positive-predictive-value",
@@ -17,11 +17,11 @@
     "en": "The share of people testing positive who really have the disease depends not only on how accurate the test is but on how common the disease is to begin with: when it is rare, the few false positives among many healthy people can outnumber the true positives."
    },
    "formula": "PPV = TP / (TP + FP)",
-   "source": "../probability/inference/bayes-diagnostics/#step-posterior",
+   "source": "../probability/inference/bayes-diagnostics/#step3",
    "lessons": [
     {
      "slug": "bayes-diagnostics",
-     "step": null,
+     "step": 3,
      "category": "probability",
      "stage": "senior",
      "primary": true
@@ -62,7 +62,7 @@
     "zh": "患病率是先验，灵敏度与特异度给出似然；看到阳性后用贝叶斯更新得到的后验，正是“阳性者里真患病的比例”。",
     "en": "Prevalence is the prior and sensitivity and specificity supply the likelihoods; the posterior after seeing a positive result is exactly the share of positives who are truly ill."
    },
-   "source": "../probability/inference/bayes-diagnostics/#step-posterior"
+   "source": "../probability/inference/bayes-diagnostics/#step3"
   },
   {
    "from": "positive-predictive-value",
@@ -76,7 +76,7 @@
     "zh": "诊断的真阳性、假阴性、假阳性、真阴性，就是信号检测论里的命中、漏报、虚报、正确拒绝：灵敏度是命中率，1 − 特异度是虚报率。",
     "en": "A test’s true positives, false negatives, false positives and true negatives are signal detection’s hits, misses, false alarms and correct rejections: sensitivity is the hit rate and 1 − specificity the false-alarm rate."
    },
-   "source": "../probability/inference/bayes-diagnostics/#step-likelihood"
+   "source": "../probability/inference/bayes-diagnostics/#step2"
   }
  ],
  "questions": [
@@ -92,7 +92,7 @@
    ],
    "target": {
     "node": "positive-predictive-value",
-    "href": "../probability/inference/bayes-diagnostics/#step-posterior"
+    "href": "../probability/inference/bayes-diagnostics/#step3"
    },
    "prompts": [
     {
@@ -114,7 +114,7 @@
     "zh": "阳性结果把你放进“所有阳性者”这一组，里面既有真病人也有假阳性的健康人。病越罕见，健康人越多，假阳性占比越大，所以即使检测很准，阳性预测值也可能远低于直觉。",
     "en": "A positive result puts you in the group of everyone who tested positive, which holds both true patients and healthy false positives. The rarer the disease, the more healthy people there are and the larger the false-positive share, so even an accurate test can have a far lower positive predictive value than intuition suggests."
    },
-   "source": "../probability/inference/bayes-diagnostics/#step-posterior"
+   "source": "../probability/inference/bayes-diagnostics/#step3"
   }
  ]
 }
