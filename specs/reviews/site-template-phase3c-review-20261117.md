@@ -9,12 +9,12 @@
     2afe5d0c; photosynthesis test 2d6f3d5a;
   - conversions c95ef919, 5ac22d79, 0e474801, c95ff8f9; docs 373479cb.
 - Baselines: a `git archive 5173122d` copy for the replaced pages; `variants/claude-code/<slug>/` for the editions.
-- Fix commits: 06000bd8, 67bc6af9 (authored), b8b27b51 (label, mechanical); this note, the HANDOFF line and three doc
-  corrections in the next commit.
+- Fix commits: 06000bd8, 67bc6af9 (authored), b8b27b51 and db93b57e (labels, mechanical); this note, the HANDOFF line and
+  three doc corrections in aa33f8de, the label SHA added to both in the commit after db93b57e.
 
 ## Verdict
 
-**Ready to deploy after 06000bd8, 67bc6af9 and b8b27b51.** The version choice is right in all five cases, the science
+**Ready to deploy after 06000bd8, 67bc6af9, b8b27b51 and db93b57e.** The version choice is right in all five cases, the science
 of the four promoted pages checks out, the promotions are faithful to the variants apart from the declared changes, the
 authorship handling is honest and consistent with AUTHORSHIP.md §4, and the four conversions are exact. I found one
 reader-visible defect (Chinese on an English canvas), two incoming links that land on the wrong step, and three stale
@@ -122,7 +122,9 @@ Compared independently against `5173122d` (old page text read from the archive c
     and chloroplasts. carbon-cycle's link ("how plants turn CO₂ into sugar") fits the mass step (93 % from CO₂), so it
     stays.
   - The edits were made in the `figures/` sources, then build-pages (photosynthesis linked-from rows, version
-    20261117b, label not repointed) and build-registry.
+    20261117b) and build-registry; the photosynthesis label is repointed to 67bc6af9 in db93b57e, because that commit also
+    added a section to its BRIEF.md. That BRIEF section still says "标签不重指"; this note supersedes it, and the
+    BRIEF was left as is so that correcting it would not need yet another repoint.
 - **Cache keys right.** `app.js`, `model.js` and `style.css` on the four pages carry `?v=20261117`. `i18n.js` uses
   `page.json` version 20261117a, now 20261117b on acid-base and photosynthesis after the fixes. site-nav uses
   `sn-20261116c`. numbers-lie's `copy.*.js` carry `?v=20261117` (its `app.js` and `models.js` did not change).
