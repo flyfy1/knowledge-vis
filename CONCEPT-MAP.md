@@ -2503,7 +2503,7 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 古德哈特定律 / Goodhart's law | probability/everyday/numbers-lie#c9 | 一个度量变成奖惩的依据后，人们会改善这个数字，不一定改善它原本代表的东西。 |
 | 拿到一个结论问的六个问题 / Six questions to ask of a conclusion | probability/everyday/numbers-lie#c10 | 先问数字是怎么来到你面前的，再问它说明了什么。 |
 
-图谱关系：章与章之间 3 条（多为后一章复用前一章的模型或结论）；跨页关系连到站内 regression-correlation、probability-frequency#step1、hypothesis-testing、bayes-diagnostics#step-posterior、bayes-updating#step1、mean-median-mode。概念清单与别名见 `probability/everyday/numbers-lie/REGISTRY.json`。
+图谱关系：章与章之间 3 条（多为后一章复用前一章的模型或结论）；跨页关系连到站内 regression-correlation、probability-frequency#step1、hypothesis-testing、bayes-diagnostics#step3、bayes-updating#step1、mean-median-mode。概念清单与别名见 `probability/everyday/numbers-lie/REGISTRY.json`。
 
 ## 身体是怎么稳住的（长文，2026-11-11，Claude Code 新增；独立评审：另一个 Claude Code 会话）
 

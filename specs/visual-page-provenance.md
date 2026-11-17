@@ -32,7 +32,7 @@ Keep current canonical routes unchanged. Before creating a Claude Code alternati
 
 Initial evidence is1d90150cf9c1db194769dff92dc4178ce7779fb0 (`Built-By: Codex`, scope in commit). Its14 non-worker revised courses are enumerated in `page-provenance.json`. Atlas's initial ed48a98d has no tool attribution, so this edition is also labelled revised.
 
-- photosynthesis: integrated worker source3e1c2f43, revised-edition header and explicit mixed Codex/Alberto/Claude history. [Page spec](../photosynthesis/SCROLL-SPEC.md). The initial14-page preparation remains historical; inventory now includes this accepted handover.
+- photosynthesis (until 2026-11-17; since then the Claude Code edition, see "Promoting a parallel edition" below): integrated worker source3e1c2f43, revised-edition header and explicit mixed Codex/Alberto/Claude history. [Page spec](../photosynthesis/SCROLL-SPEC.md). The initial14-page preparation remains historical; inventory now includes this accepted handover.
 - frozen-bubble: sourcee4b8772c teaching handover integrated with a single shared revised-edition disclosure. Its [teaching contract](../frozen-bubble/BRIEF.md#teaching-continuity-revision--2026-10-26-codex) and original quantitative-model limits remain authoritative.
 - power-converters: source24a3d727 flow handover integrated; revised-edition disclosure preserves earlier contributors and the unchanged quantitative model. Original generator is not asserted.
 - Other Visual pages/homepage: origin not verified by this batch. Do not stamp them. Future Codex modifications must adopt the contract with their exact evidence.

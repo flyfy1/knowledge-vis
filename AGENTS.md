@@ -87,7 +87,7 @@ SITE_NAV_BASE_URL=http://127.0.0.1:18871/ node tests/site-nav-browser.cjs   # �
 
 - Playwright 不在本仓库，运行时加上 `NODE_PATH=~/fast/integ-life/integ-games/node_modules`。
 - **浏览器测试串行跑**，不要并行。
-- 大批测试会改写 `leetcode/*/tests/evidence` 和 `biology/cells/photosynthesis/tests/evidence`。每跑完一次就 `git checkout` 这两处，除非这次就是要更新证据。
+- 大批测试会改写 `leetcode/*/tests/evidence`。每跑完一次就 `git checkout` 这一处，除非这次就是要更新证据。（`biology/cells/photosynthesis/tests/evidence` 随 2026-11-17 换版删掉的 `tests/browser.cjs` 一起没了。）
 - 数值结论（如「误差在 ±X% 以内」）要用细扫测试钉住。**不要为了让测试通过而放宽容差或加粗网格**：先查结论本身对不对。
 - 视觉检查至少要覆盖 1280 / 390 / 320 宽、中英文、减弱动态。DOM 溢出检查看不到 canvas 上的文字，改了 canvas 的页面要跑：
   ```sh
