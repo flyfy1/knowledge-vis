@@ -65,7 +65,8 @@ const STR={
     "site.bl.1": "<a href=\"../../../biology/cells/enzymes/\">酶 · 生物体内的催化剂</a>：<a href=\"../../../biology/cells/enzymes/#step5\">该课第 5 步</a> → <a href=\"#step3\">本页第 3 步</a>",
     "site.bl.2": "<a href=\"../../matter/isomers/\">同分异构体 · 同一组原子，不同的拼法</a>：<a href=\"../../matter/isomers/#step5\">该课第 5 步</a> → <a href=\"#step1\">本页第 1 步</a>",
     "site.bl.3": "<a href=\"../electrochemistry/\">电化学 · 电子沿导线跑，还是被电推着跑</a>：<a href=\"../electrochemistry/#step5\">该课第 5 步</a> → <a href=\"#step4\">本页第 4 步</a>",
-    "site.bl.4": "<a href=\"../../../food/flavor/how-soy-sauce-gets-its-flavor/\">酱油是怎么酿出来的</a>：<a href=\"../../../food/flavor/how-soy-sauce-gets-its-flavor/#ch5\">该文第 5 章</a>；<a href=\"../../../food/flavor/how-soy-sauce-gets-its-flavor/#ch10\">该文第 10 章</a>"
+    "site.bl.4": "<a href=\"../../solutions/acid-base-equilibrium/\">酸碱平衡 · 分子在两边来回走</a>：→ <a href=\"#step3\">本页第 3 步</a>",
+    "site.bl.5": "<a href=\"../../../food/flavor/how-soy-sauce-gets-its-flavor/\">酱油是怎么酿出来的</a>：<a href=\"../../../food/flavor/how-soy-sauce-gets-its-flavor/#ch5\">该文第 5 章</a>；<a href=\"../../../food/flavor/how-soy-sauce-gets-its-flavor/#ch10\">该文第 10 章</a>"
   },
   en: {
     pageTitle: "Activation Energy · The Hill a Reaction Has to Climb",
@@ -132,7 +133,8 @@ const STR={
     "site.bl.1": "<a href=\"../../../biology/cells/enzymes/\">Enzymes · Catalysts of the Living World</a>: <a href=\"../../../biology/cells/enzymes/#step5\">its step 5</a> → <a href=\"#step3\">this page step 3</a>",
     "site.bl.2": "<a href=\"../../matter/isomers/\">Isomers · The Same Atoms, Put Together Differently</a>: <a href=\"../../matter/isomers/#step5\">its step 5</a> → <a href=\"#step1\">this page step 1</a>",
     "site.bl.3": "<a href=\"../electrochemistry/\">Electrochemistry · Electrons Running Down the Wire, or Pushed Along</a>: <a href=\"../electrochemistry/#step5\">its step 5</a> → <a href=\"#step4\">this page step 4</a>",
-    "site.bl.4": "<a href=\"../../../food/flavor/how-soy-sauce-gets-its-flavor/\">How Soy Sauce Gets Its Flavor</a>: <a href=\"../../../food/flavor/how-soy-sauce-gets-its-flavor/#ch5\">its chapter 5</a>; <a href=\"../../../food/flavor/how-soy-sauce-gets-its-flavor/#ch10\">its chapter 10</a>"
+    "site.bl.4": "<a href=\"../../solutions/acid-base-equilibrium/\">Acid–Base Equilibrium · Molecules Move Both Ways</a>: → <a href=\"#step3\">this page step 3</a>",
+    "site.bl.5": "<a href=\"../../../food/flavor/how-soy-sauce-gets-its-flavor/\">How Soy Sauce Gets Its Flavor</a>: <a href=\"../../../food/flavor/how-soy-sauce-gets-its-flavor/#ch5\">its chapter 5</a>; <a href=\"../../../food/flavor/how-soy-sauce-gets-its-flavor/#ch10\">its chapter 10</a>"
   }
 };
 

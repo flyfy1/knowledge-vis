@@ -11,7 +11,7 @@ taught on B (any `lessons[]` entry). Pairs where either page teaches no atlas co
 counted. Under each pair: every link, with the concepts anchored at its two ends where there are any (`?` = none at that
 anchor; a link to the page top has no anchor).
 
-759 linked page pairs · 406 covered by an atlas edge · 13 with no concept on one side · **340 to do**.
+761 linked page pairs · 406 covered by an atlas edge · 13 with no concept on one side · **342 to do**.
 
 ## 冰冻肥皂泡 · 水膜里的结晶 / Frozen Soap Bubbles · Ice in a Thin Film → 光的反射与折射 · 拐弯的规矩 / Reflection & Refraction · How Light Bends
 
@@ -635,6 +635,14 @@ anchor; a link to the page top has no anchor).
 ## 化学平衡 · 人数不变，人还在跑 / Chemical Equilibrium · Still Moving at Balance → 质量守恒 · 原子一个都不丢 / Mass Conservation · Not a Single Atom Lost
 
 - `chemical-equilibrium#step5` → `mass-conservation#step1`
+
+## 酸碱平衡 · 分子在两边来回走 / Acid–Base Equilibrium · Molecules Move Both Ways → 反应速率 · 数一数成功碰撞 / Reaction Rates · Counting Successful Collisions
+
+- `acid-base-equilibrium` → `reaction-rates#step0`: ? → collision-theory
+
+## 酸碱平衡 · 分子在两边来回走 / Acid–Base Equilibrium · Molecules Move Both Ways → 活化能 · 反应要翻过的那座山 / Activation Energy · The Hill a Reaction Has to Climb
+
+- `acid-base-equilibrium` → `activation-energy#step3`
 
 ## 酸碱平衡 · 分子在两边来回走 / Acid–Base Equilibrium · Molecules Move Both Ways → 滴定曲线 · 终点附近 pH 的“悬崖” / Titration Curves · The pH Cliff Near the End Point
 
