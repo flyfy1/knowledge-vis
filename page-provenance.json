@@ -198,18 +198,17 @@
       "provenanceEvidence": "specs/reviews/site-navigation-sweep-20261115.md"
     },
     "photosynthesis": {
-      "developer": "Codex",
-      "edition": "codex-scroll-20261026",
-      "kind": "revised",
-      "sourceRevision": "70d9f2e1d9949f8e22c7c2bfbe329268ebf1d15b",
+      "developer": "Claude Code",
+      "edition": "claude-code-photosynthesis-20261117",
+      "kind": "original",
+      "sourceRevision": "5f94f8bcb61e0fa873d1e1899de188cdc86ffe5b",
       "scope": {
-        "zh": "高 DPR 画布尺寸、移动滚动与无脚本阅读兼容性",
-        "en": "High-DPR canvas sizing, mobile scrolling and script-free reading fallbacks"
+        "zh": "整课由 claude-opus-5-5 从零编写（2026-11-09 写在 variants/claude-code/photosynthesis/），2026-11-17 起取代本地址上的原版",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 (in variants/claude-code/photosynthesis/ on 2026-11-09); since 2026-11-17 it replaces the earlier lesson at this address"
       },
-      "originalAuthorship": "Codex HTML/CSS, Alberto completion and historical Claude Code fixes retained; not Codex-exclusive origin",
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition in 95a55055eef9d8e068707f4bf168f877296f74e6 (variants/claude-code/photosynthesis/); promoted to this address in 5f94f8bcb61e0fa873d1e1899de188cdc86ffe5b after the comparison in specs/reviews/lesson-version-choice-20261117.md; self-checked, independent review pending; replaces the Codex revised edition codex-scroll-20261026",
       "path": "biology/cells/photosynthesis/index.html",
-      "previousSourceRevision": "e1341f8c493b7fb957d67449d8e7bd167781c67e",
-      "provenanceEvidence": "specs/reviews/site-navigation-sweep-20261115.md"
+      "previousSourceRevision": "70d9f2e1d9949f8e22c7c2bfbe329268ebf1d15b"
     },
     "frozen-bubble": {
       "developer": "Codex",
@@ -2979,7 +2978,7 @@
       "developer": "Claude Code",
       "edition": "claude-code-numbers-lie-20261111",
       "kind": "original",
-      "sourceRevision": "70d9f2e1d9949f8e22c7c2bfbe329268ebf1d15b",
+      "sourceRevision": "a3a44e7d38c4b3e85f5c32fafe19d1f96d640eea",
       "scope": {
         "zh": "整篇长文从零编写：辛普森悖论、平均数与中位数、幸存者偏差、均值回归、基础比率、多重比较、相对风险与古德哈特定律",
         "en": "Whole essay written from scratch: Simpson’s paradox, mean versus median, survivorship bias, regression to the mean, base rates, multiple comparisons, relative risk and Goodhart’s law"
@@ -2987,7 +2986,7 @@
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5); English copy drafted by Claude Code (claude-haiku-5-5); independently reviewed 2026-11-11 by a separate Claude Code session (same model), see the page BRIEF.md; cross-model review pending",
       "path": "probability/everyday/numbers-lie/index.html",
       "originalSourceRevision": "3176f906c779ccf19f8f3d987a7ac77387f3b44c",
-      "previousSourceRevision": "3176f906c779ccf19f8f3d987a7ac77387f3b44c"
+      "previousSourceRevision": "70d9f2e1d9949f8e22c7c2bfbe329268ebf1d15b"
     },
     "body-in-balance": {
       "developer": "Claude Code",
@@ -3524,6 +3523,42 @@
       "path": "computing/systems/how-a-cpu-does-math/index.html",
       "originalSourceRevision": "b6dcadc4caafebb54d52f0f70e5ffe1fe6c9677a",
       "previousSourceRevision": "3d2b65c86d84f72fae1cff8d36c1f5cfbc801946"
+    },
+    "kepler-orbits": {
+      "developer": "Claude Code",
+      "edition": "claude-code-kepler-orbits-20261117",
+      "kind": "original",
+      "sourceRevision": "408201ac6ddbe3007df7b669cbeaf4cbb4a3601c",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写（2026-11-09 写在 variants/claude-code/kepler-orbits/），2026-11-17 起取代本地址上的原版",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 (in variants/claude-code/kepler-orbits/ on 2026-11-09); since 2026-11-17 it replaces the earlier lesson at this address"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition in 51e9f8bf8f92b58cc94540bfc552913d3b6d9192 (variants/claude-code/kepler-orbits/); promoted to this address in 408201ac6ddbe3007df7b669cbeaf4cbb4a3601c after the comparison in specs/reviews/lesson-version-choice-20261117.md; self-checked, independent review pending",
+      "path": "earth/astronomy/kepler-orbits/index.html"
+    },
+    "acid-base-equilibrium": {
+      "developer": "Claude Code",
+      "edition": "claude-code-acid-base-equilibrium-20261117",
+      "kind": "original",
+      "sourceRevision": "b383c6dc1122210c5530cd128b23f92a00240389",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写（2026-11-09 写在 variants/claude-code/acid-base-equilibrium/），2026-11-17 起取代本地址上的原版",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 (in variants/claude-code/acid-base-equilibrium/ on 2026-11-09); since 2026-11-17 it replaces the earlier lesson at this address"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition in 1cb86a75716c542eb10ddd05ce0d29c4721808a3 (variants/claude-code/acid-base-equilibrium/); promoted to this address in b383c6dc1122210c5530cd128b23f92a00240389 after the comparison in specs/reviews/lesson-version-choice-20261117.md; self-checked, independent review pending",
+      "path": "chemistry/solutions/acid-base-equilibrium/index.html"
+    },
+    "bayes-diagnostics": {
+      "developer": "Claude Code",
+      "edition": "claude-code-bayes-diagnostics-20261117",
+      "kind": "original",
+      "sourceRevision": "a3a44e7d38c4b3e85f5c32fafe19d1f96d640eea",
+      "scope": {
+        "zh": "整课由 claude-opus-5-5 从零编写（2026-11-09 写在 variants/claude-code/bayes-diagnostics/），2026-11-17 起取代本地址上的原版",
+        "en": "Whole lesson written from scratch by claude-opus-5-5 (in variants/claude-code/bayes-diagnostics/ on 2026-11-09); since 2026-11-17 it replaces the earlier lesson at this address"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition in 185f4c6a52e867c5f0cc3231501f4e24a6b861cc (variants/claude-code/bayes-diagnostics/); promoted to this address in a3a44e7d38c4b3e85f5c32fafe19d1f96d640eea after the comparison in specs/reviews/lesson-version-choice-20261117.md; self-checked, independent review pending",
+      "path": "probability/inference/bayes-diagnostics/index.html"
     }
   },
   "exceptions": {
