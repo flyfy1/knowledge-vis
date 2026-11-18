@@ -1,0 +1,85 @@
+{
+  "slug": "what-magnitude-means",
+  "path": "earth/geo/what-magnitude-means/",
+  "category": "earth",
+  "subtopic": "geo",
+  "subtopicName": { "zh": "地理与地质", "en": "Geography & Geology" },
+  "stage": "senior",
+  "title": { "zh": "“7 级”到底是什么意思", "en": "What “Magnitude 7” Really Means" },
+  "desc": {
+    "zh": "新闻里的“7 级”量的是断层滑了多大一块、滑了多远；你家晃得多厉害要看距离、深度和地基；地震可以算概率，却报不出日子。八个可以拖动的模型：弹簧木块、矩震级、烈度衰减、预警秒数、木块网格、古登堡—里克特定律、余震概率和一场预测游戏。",
+    "en": "The “7” in the news measures how much fault slipped and how far; how hard your home shakes depends on distance, depth and ground; earthquakes have probabilities but no dates. Eight models you can push: a spring and block, moment magnitude, intensity fall-off, warning seconds, a sheet of blocks, the Gutenberg–Richter law, aftershock odds and a prediction game."
+  },
+  "tags": [
+    { "zh": "地震", "en": "Earthquakes" },
+    { "zh": "对数", "en": "Logarithms" },
+    { "zh": "概率", "en": "Probability" },
+    { "zh": "长文", "en": "Long-form Essay" }
+  ],
+  "concepts": [
+    {
+      "id": "stick-slip-elastic-rebound",
+      "title": { "zh": "粘滑与弹性回跳", "en": "Stick–slip and elastic rebound" },
+      "desc": { "zh": "断层被摩擦咬住，几十年攒下弹性变形，再在几秒里一下子滑过去；间隔 = 每次滑多远 ÷ 板块速度。", "en": "Friction locks a fault while strain builds for decades, then it slips in seconds; the interval is slip divided by plate speed." },
+      "aliases": { "zh": ["弹性回跳", "粘滑", "地震是怎么发生的", "断层为什么会突然滑动", "地震的成因"], "en": ["elastic rebound", "stick-slip", "what causes earthquakes", "why do faults slip suddenly", "how do earthquakes happen"] },
+      "anchor": "#ch1",
+      "relatedPages": ["plate-tectonics"]
+    },
+    {
+      "id": "moment-magnitude",
+      "title": { "zh": "矩震级", "en": "Moment magnitude" },
+      "desc": { "zh": "地震矩 = 岩石刚度 × 滑动面积 × 平均滑动量；Mw = ⅔(log₁₀M₀ − 9.1)。震级每加 1，能量约乘 32；加 2，约 1000 倍。", "en": "Seismic moment = rigidity × slipped area × average slip; Mw = ⅔(log₁₀M₀ − 9.1). Each unit is about 32 times the energy; two units about 1000 times." },
+      "aliases": { "zh": ["震级", "7 级地震是什么意思", "里氏震级", "地震矩", "震级差一级能量差多少", "地震能量相当于几颗原子弹"], "en": ["magnitude", "what does magnitude 7 mean", "Richter scale", "seismic moment", "how much stronger is one magnitude", "earthquake energy in atomic bombs"] },
+      "anchor": "#ch2",
+      "relatedPages": ["exponents-logarithms"]
+    },
+    {
+      "id": "intensity-attenuation",
+      "title": { "zh": "烈度与衰减", "en": "Intensity and attenuation" },
+      "desc": { "zh": "震级只有一个，烈度每处不同：离得近、震源浅、地基软都会晃得更厉害。", "en": "One magnitude, many intensities: closer, shallower and softer ground all mean stronger shaking." },
+      "aliases": { "zh": ["烈度", "震级和烈度的区别", "麦加利烈度", "为什么浅源地震更危险", "软地基放大", "震感"], "en": ["intensity", "magnitude vs intensity", "Modified Mercalli", "why shallow earthquakes are worse", "site amplification", "how strong will the shaking be"] },
+      "anchor": "#ch3",
+      "relatedPages": []
+    },
+    {
+      "id": "sp-location-early-warning",
+      "title": { "zh": "S−P 定位与地震预警", "en": "S−P location and earthquake early warning" },
+      "desc": { "zh": "S 波比 P 波每晚到 1 秒，距离约多 8 千米；三个台站定出震中。预警抢的是 S 波到达前的几秒，震中附近是盲区。", "en": "Each second of S−P lag is about 8 km; three stations fix the epicentre. Early warning wins the seconds before the S wave, except in a blind zone near the epicentre." },
+      "aliases": { "zh": ["地震预警", "震中怎么定", "P 波 S 波", "预警盲区", "地震预警能提前几秒", "三台站定位"], "en": ["earthquake early warning", "how is the epicentre located", "P wave S wave", "blind zone", "how many seconds of warning", "triangulating an earthquake"] },
+      "anchor": "#ch4",
+      "relatedPages": ["seismic-waves"]
+    },
+    {
+      "id": "burridge-knopoff-ofc",
+      "title": { "zh": "弹簧木块网格（Burridge–Knopoff / OFC）", "en": "Spring-block sheet (Burridge–Knopoff / OFC)" },
+      "desc": { "zh": "一整片互相牵连的木块匀速加载，规则里没有随机数，却冒出大大小小的地震。", "en": "A sheet of coupled blocks under uniform loading, with no randomness in the rules, produces quakes of every size." },
+      "aliases": { "zh": ["自组织临界", "弹簧木块模型", "为什么地震有大有小", "Burridge–Knopoff 模型", "OFC 模型"], "en": ["self-organized criticality", "spring-block model", "why earthquakes come in all sizes", "Burridge-Knopoff model", "Olami-Feder-Christensen model"] },
+      "anchor": "#ch5",
+      "relatedPages": []
+    },
+    {
+      "id": "gutenberg-richter",
+      "title": { "zh": "古登堡—里克特定律", "en": "Gutenberg–Richter law" },
+      "desc": { "zh": "log₁₀N = a − bM，b 约为 1：震级每大 1 级，次数约少到十分之一。", "en": "log₁₀N = a − bM with b near 1: each unit up, about a tenth as many quakes." },
+      "aliases": { "zh": ["b 值", "每年有多少次地震", "全球每年几次 7 级地震", "大地震多久一次", "震级频度关系"], "en": ["b-value", "how many earthquakes per year", "magnitude 7 earthquakes per year", "how often big earthquakes happen", "frequency-magnitude distribution"] },
+      "anchor": "#ch6",
+      "relatedPages": []
+    },
+    {
+      "id": "omori-aftershocks",
+      "title": { "zh": "大森定律与余震概率", "en": "Omori's law and aftershock probability" },
+      "desc": { "zh": "余震率约按 1/(t + c)^p 下降；一段时间内至少来一次的概率是 1 − e^(−N)。", "en": "Aftershock rate falls as 1/(t + c)^p; the chance of at least one in a window is 1 − e^(−N)." },
+      "aliases": { "zh": ["余震", "大森定律", "余震还会有多大", "余震概率", "前震和主震"], "en": ["aftershocks", "Omori law", "will there be a bigger aftershock", "aftershock forecast", "foreshock and mainshock"] },
+      "anchor": "#ch7",
+      "relatedPages": []
+    },
+    {
+      "id": "earthquake-prediction",
+      "title": { "zh": "为什么地震报不准", "en": "Why earthquakes can't be predicted" },
+      "desc": { "zh": "长期发生率是稳的，具体日子猜不中：在木块网格上，按“上一次 + 平均间隔”放窗口并不比随手放更准。", "en": "Long-run rates are stable but dates are not: on the block sheet, a window at “last event + mean interval” does no better than one placed at random." },
+      "aliases": { "zh": ["地震能预测吗", "地震预报", "地震为什么报不准", "帕克菲尔德", "未来 30 年地震概率", "地震周期"], "en": ["can earthquakes be predicted", "earthquake prediction", "why can't we predict earthquakes", "Parkfield", "30-year earthquake probability", "earthquake cycle"] },
+      "anchor": "#ch8",
+      "relatedPages": []
+    }
+  ]
+}
