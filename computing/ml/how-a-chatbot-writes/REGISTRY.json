@@ -180,10 +180,7 @@
     },
     {
       "id": "attention-head",
-      "title": {
-        "zh": "注意力：一个头怎么算",
-        "en": "Attention: how one head computes"
-      },
+      "title": {"zh": "一个注意力头怎么算", "en": "How one attention head computes"},
       "desc": {
         "zh": "每个位置拿查询去和前面各位置的键算点积，softmax 成权重，再按权重混合它们的值；“它”就是这样找到“苹果”的。",
         "en": "Each position scores earlier positions by query·key, softmaxes the scores into weights and mixes their values; that is how 'it' finds 'apples'."
@@ -212,10 +209,7 @@
     },
     {
       "id": "temperature-top-p",
-      "title": {
-        "zh": "温度、top-k 与 top-p",
-        "en": "Temperature, top-k and top-p"
-      },
+      "title": {"zh": "采样温度、top-k 与 top-p", "en": "Sampling temperature, top-k and top-p"},
       "desc": {
         "zh": "同一张概率表，温度把它压尖或摊平，top-k、top-p 砍掉尾巴；所以同一个问题每次的回答可以不一样。",
         "en": "Temperature sharpens or flattens the same probability table, top-k and top-p cut its tail; that is why the same question can get different answers."
@@ -223,7 +217,6 @@
       "aliases": {
         "zh": [
           "温度参数",
-          "temperature",
           "top-p",
           "top-k",
           "核采样",
@@ -231,10 +224,8 @@
           "AI的随机性",
           "温度设多少合适",
           "为什么ChatGPT每次回答不一样",
-          "同一个问题AI回答不一样"
-        ],
+          "同一个问题AI回答不一样", "采样温度"],
         "en": [
-          "temperature",
           "sampling temperature",
           "top-p",
           "nucleus sampling",
@@ -315,8 +306,7 @@
           "Gemini",
           "豆包",
           "DeepSeek",
-          "AI思考是什么",
-          "推理模型是什么"
+          "AI思考是什么"
         ],
         "en": [
           "autoregressive generation",
@@ -334,8 +324,7 @@
           "Claude",
           "Gemini",
           "DeepSeek",
-          "what is AI thinking",
-          "what is a reasoning model"
+          "what is AI thinking"
         ]
       },
       "anchor": "#ch8",

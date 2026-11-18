@@ -371,7 +371,8 @@ const P = M.prose();
     ['../switches-that-compute/#ch7', 'clock and critical path'], ['../why-compute-waits-for-memory/#ch5', 'Dennard'], ['../how-a-cpu-guesses-ahead/', 'out-of-order'], ['../how-cpu-caches-work/', 'caches'],
     ['../../../physics/circuits/power-converters/', 'buck derivation'], ['../../../physics/circuits/ohms-law/', 'Ohm']]) check(`links ${h} (${why})`, hrefs.includes(h), true);
   // drafts that are not live are named in plain text only
-  check('why-chips-are-hard named in plain text, not linked', [all.includes('《芯片为什么越来越难做》'), /why-chips-are-hard/.test(all)].join(), 'true,false');
+  // why-chips-are-hard is live since 2026-11-18 (essay registrar): ch2.p1 links its chapter 3 (leakage), ch12.links the page
+  check('why-chips-are-hard named and linked', [all.includes('《芯片为什么越来越难做》'), Z['ch2.p1'].includes('why-chips-are-hard/#ch3'), /why-chips-are-hard\//.test(Z['ch12.links'])].join(), 'true,true,true');
   check('how-electricity-reaches-you named in plain text, not linked', [all.includes('《按下开关的那一刻，电是从哪儿来的》'), /how-electricity-reaches-you/.test(all)].join(), 'true,false');
 
   const ectx = { window: {} }; vm.runInNewContext(fs.readFileSync(path.join(DIR, 'copy.en.js'), 'utf8'), ectx);

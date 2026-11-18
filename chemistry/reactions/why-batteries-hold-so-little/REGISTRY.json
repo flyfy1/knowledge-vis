@@ -21,7 +21,7 @@
       "id": "cell-voltage-half-reactions",
       "title": { "zh": "电池电压与半反应", "en": "Cell voltage from two half-reactions" },
       "desc": { "zh": "电池电压是两个电极电势之差，每摩尔电子做的最大功是 ΔG = −nFE；锂电池的电压高到水扛不住，只能用有机电解液。", "en": "A cell's voltage is the difference of two electrode potentials and the maximum work per mole of electrons is ΔG = −nFE; lithium cells exceed water's window, so they need organic electrolytes." },
-      "aliases": { "zh": ["电极电势", "标准电极电势", "ΔG=-nFE", "电池电压是怎么来的", "为什么锂电池电压高", "水的电化学窗口"], "en": ["electrode potential", "standard reduction potential", "why is a lithium battery 3.7 volts", "where does battery voltage come from", "electrochemical stability window"] },
+      "aliases": { "zh": [ "标准电极电势", "ΔG=-nFE", "电池电压是怎么来的", "为什么锂电池电压高", "水的电化学窗口"], "en": [ "standard reduction potential", "why is a lithium battery 3.7 volts", "where does battery voltage come from", "electrochemical stability window", "how does a battery work"] },
       "anchor": "#ch1",
       "relatedPages": ["electrochemistry", "chemical-equilibrium"]
     },
@@ -35,7 +35,7 @@
     },
     {
       "id": "open-circuit-voltage-curve",
-      "title": { "zh": "开路电压曲线：固溶体与两相", "en": "Open-circuit voltage: solid solution versus two phases" },
+      "title": {"zh": "电压曲线：固溶体与两相", "en": "Voltage curves: solid solution versus two phases"},
       "desc": { "zh": "格子气（正规溶液）模型给出能斯特方程的推广；相互作用够强时两相共存，电压成平台，磷酸铁锂因此难以靠电压估电量。", "en": "The lattice-gas (regular solution) model generalises the Nernst equation; strong attraction splits the host into two phases with a flat plateau, which is why LFP state of charge is hard to read from voltage." },
       "aliases": { "zh": ["能斯特方程", "电压平台", "磷酸铁锂电量不准", "电量显示为什么跳", "SOC估算", "荷电状态"], "en": ["Nernst equation", "voltage plateau", "LFP state of charge", "why does my battery percentage jump", "SOC estimation", "lattice gas model"] },
       "anchor": "#ch3",
@@ -53,7 +53,7 @@
       "id": "cc-cv-fast-charging",
       "title": { "zh": "恒流-恒压充电与快充极限", "en": "CC-CV charging and the limits of fast charging" },
       "desc": { "zh": "过电位、内阻和扩散让端电压提前碰到上限，恒压阶段电流衰减，所以最后 20% 很慢；低温快充会析锂。", "en": "Overpotential, resistance and diffusion push the terminal voltage to its limit early, so the constant-voltage tail is slow; fast charging in the cold risks lithium plating." },
-      "aliases": { "zh": ["快充", "为什么充到80%以后变慢", "恒流恒压", "析锂", "冬天充电慢", "内阻", "单颗粒模型", "Butler-Volmer"], "en": ["fast charging", "why does charging slow down after 80%", "CC-CV", "lithium plating", "charging in cold weather", "internal resistance", "single particle model"] },
+      "aliases": { "zh": ["快充", "为什么充到80%以后变慢", "恒流恒压", "析锂", "冬天充电慢", "单颗粒模型", "Butler-Volmer"], "en": ["fast charging", "why does charging slow down after 80%", "CC-CV", "lithium plating", "charging in cold weather", "single particle model"] },
       "anchor": "#ch5",
       "relatedPages": ["ohms-law", "inside-a-phone"]
     },

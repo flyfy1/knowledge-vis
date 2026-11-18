@@ -398,7 +398,7 @@
     <div class="num">07</div>
     <h2 data-i18n="ch7.title">芯粒之间</h2>
     <p class="law" data-i18n-html="ch7.law">一块芯片做不了那么大，就拆成几块封在一起；拆开的地方要用线连回来，线越短越密，每个比特花的能量越少。</p>
-    <p data-i18n-html="ch7.p1">芯片面积越大，碰上制造缺陷的概率越高，好芯片的成本涨得比面积还快（这笔账在《芯片为什么越来越难做》第 10 章）。所以今天的大芯片常常是几块小芯片封在一个封装里，这些小芯片叫<strong>芯粒</strong>。2017 年的 EPYC 就是这样（上一章的 4 块芯片），后来的锐龙把 CPU 核心和 I/O 分成不同的芯片。</p>
+    <p data-i18n-html="ch7.p1">芯片面积越大，碰上制造缺陷的概率越高，好芯片的成本涨得比面积还快（这笔账在<a href="../../../tech/semiconductors/why-chips-are-hard/#ch10">《芯片为什么越来越难做》第 10 章</a>）。所以今天的大芯片常常是几块小芯片封在一个封装里，这些小芯片叫<strong>芯粒</strong>。2017 年的 EPYC 就是这样（上一章的 4 块芯片），后来的锐龙把 CPU 核心和 I/O 分成不同的芯片。</p>
     <p data-i18n-html="ch7.p2"></p>
     <figure class="dia" id="dg7"><div class="svgbox"></div><figcaption data-i18n-html="dg7.cap">芯粒的两种封装方式。能耗和最长距离来自 UCIe 的关键指标（UCIe 联盟 2025 年的报告）；尺寸是示意。</figcaption></figure>
     <p data-i18n-html="ch7.p3">芯粒之间的链路看两个数：<strong>每比特能耗</strong>（pJ/bit，乘上带宽就是功耗），和<strong>每毫米芯片边长能走多少带宽</strong>（GB/s/mm，叫岸线密度：芯片只有四条边，边长用完了就再也接不出线）。下面的模型拿几种连接比一比。</p>
@@ -512,10 +512,10 @@
 
 <footer><div class="wrap" data-i18n-html="footer"><p>这篇长文由 AI（Claude）编写，模型是真实规则的缩小版，不是测量。主要来源：PCI Local Bus Specification 3.0（PCI-SIG，2004）表 3-5、表 7-7 与第 4 章；Intel 875P 芯片组数据手册（252525-002，2004）；AMD「Zeppelin」ISSCC 2018 报告；Intel 产品页（Z890、酷睿 Ultra 7 265F、Xeon 6767P）与 800 系列芯片组简介；AMD 锐龙 9 9950X 与 AM5 芯片组产品页；UCIe 联盟 2025 年报告与新闻稿；NXP UM10204 第 7 版（2021）；Dally 与 Towles《Principles and Practices of Interconnection Networks》；Bertsekas 与 Gallager《Data Networks》的 max-min 公平分配。完整清单与查阅日期见本页目录下的 BRIEF.md。</p></div></footer>
 
-<script src="models.js?v=20261116a"></script>
-<script src="copy.zh.js?v=20261116a"></script>
-<script src="copy.en.js?v=20261116a" onerror="void 0"></script>
-<script src="app.js?v=20261116a"></script>
+<script src="models.js?v=20261118a"></script>
+<script src="copy.zh.js?v=20261118a"></script>
+<script src="copy.en.js?v=20261118a" onerror="void 0"></script>
+<script src="app.js?v=20261118a"></script>
 <script defer src="../../../site-nav.js?v=sn-20261116c"></script>
 </body>
 </html>

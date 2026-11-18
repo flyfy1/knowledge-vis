@@ -279,7 +279,7 @@ window.ESSAY_COPY.zh = {
   "ch9.c3": "为什么把温度调高，回答更有花样，也更容易跑题（第六章）。",
   "ch9.c4": "为什么训练要用那么多文本：可能的前文组合多到数不过来，只有把相似的词放到相近的位置（第四章），再在海量文本上训练（第七章），模型才能给没见过的句子一个像样的概率。",
   "ch9.sum": "合起来是一句话：<em>切成 token</em>，<em>看前文</em>，<em>算出概率</em>，<em>抽一个</em>，<em>接上去</em>；概率表里的每一个数，都是用<em>梯度下降</em>在文本上一点一点推出来的。",
-  "ch9.links": "站内相关的页面：<a href=\"../llm-sampling/#step0\">大语言模型如何逐词生成</a>、<a href=\"../embeddings/#step0\">词向量 · 把词摆成地图</a>、<a href=\"../attention-mechanism/#step0\">注意力机制 · 每个词决定看谁</a>、<a href=\"../gradient-descent/#step0\">梯度下降 · 摸黑下山</a>、<a href=\"../../../probability/stochastic/entropy/#step0\">熵 · 惊讶的平均值</a>（第六、七章的熵和交叉熵）、<a href=\"../../../probability/stochastic/markov-chains/#step0\">马尔可夫链 · 下一步只看现在</a>（第二章的二元模型就是一条马尔可夫链）。想知道真正的大模型在结构、算力和成本上是什么样子，可以接着读《造出并运行一个最前沿的大语言模型，需要什么》。",
+  "ch9.links": "站内相关的页面：<a href=\"../llm-sampling/#step0\">大语言模型如何逐词生成</a>、<a href=\"../embeddings/#step0\">词向量 · 把词摆成地图</a>、<a href=\"../attention-mechanism/#step0\">注意力机制 · 每个词决定看谁</a>、<a href=\"../gradient-descent/#step0\">梯度下降 · 摸黑下山</a>、<a href=\"../../../probability/stochastic/entropy/#step0\">熵 · 惊讶的平均值</a>（第六、七章的熵和交叉熵）、<a href=\"../../../probability/stochastic/markov-chains/#step0\">马尔可夫链 · 下一步只看现在</a>（第二章的二元模型就是一条马尔可夫链）。想知道真正的大模型在结构、算力和成本上是什么样子，可以接着读<a href=\"../what-a-frontier-model-takes/\">《造出并运行一个最前沿的大语言模型，需要什么》</a>。",
 
 
   "dg.bpe.aria": "示意图：本页的分词器怎样一次次合并，造出两个 token",

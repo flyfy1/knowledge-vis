@@ -20,9 +20,9 @@
   "concepts": [
     {
       "id": "present-value-discounting",
-      "title": { "zh": "现值与折现", "en": "Present value and discounting" },
+      "title": {"zh": "明天的钱今天值多少：折现", "en": "What tomorrow's money is worth today"},
       "desc": { "zh": "未来的一串钱今天值多少；钱离得越远，现值对利率越敏感。", "en": "What a stream of future money is worth today; the further away the money, the more its value reacts to the rate." },
-      "aliases": { "zh": ["现值", "折现", "贴现率", "未来的钱今天值多少", "为什么利率越高资产越便宜", "折现率"], "en": ["present value", "discounting", "discount rate", "what is future money worth today", "why do higher rates lower prices", "time value of money"] },
+      "aliases": { "zh": ["现值", "折现", "贴现率", "未来的钱今天值多少", "为什么利率越高资产越便宜", "折现率"], "en": ["present value", "discount rate", "what is future money worth today", "why do higher rates lower prices", "time value of money"] },
       "anchor": "#ch1",
       "relatedPages": ["compound-interest"]
     },
@@ -30,7 +30,7 @@
       "id": "bond-duration-convexity",
       "title": { "zh": "债券久期与凸性", "en": "Bond duration and convexity" },
       "desc": { "zh": "收益率升 1 个点，债券约跌“修正久期”个百分点；凸性修正弯曲。2022 年的长债下跌和硅谷银行。", "en": "A one-point rise in yield cuts a bond's price by about its modified duration; convexity corrects the curve. The 2022 bond rout and SVB." },
-      "aliases": { "zh": ["久期", "修正久期", "麦考利久期", "凸性", "利率上升债券为什么跌", "为什么长期国债跌得多", "硅谷银行为什么倒闭", "到期收益率"], "en": ["duration", "modified duration", "macaulay duration", "convexity", "why do bond prices fall when rates rise", "why did silicon valley bank fail", "yield to maturity", "interest rate risk"] },
+      "aliases": { "zh": [ "修正久期", "麦考利久期", "凸性", "为什么长期国债跌得多", "硅谷银行为什么倒闭"], "en": [ "modified duration", "macaulay duration", "convexity", "why do bond prices fall when rates rise", "why did silicon valley bank fail", "interest rate risk"] },
       "anchor": "#ch2",
       "relatedPages": ["interest-rates-bonds"]
     },

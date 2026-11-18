@@ -2705,7 +2705,7 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 <!-- GENERATED:atlas-nodes -->
 ## 三、图谱节点索引（生成，勿手改）
 
-668 个概念 · 912 条关系 · 11 个分区 · 由 scripts/build-atlas-data.cjs --concept-map 生成。节点排序与 data.js 一致（分区序、学段序、order、id）。
+775 个概念 · 921 条关系 · 11 个分区 · 由 scripts/build-atlas-data.cjs --concept-map 生成。节点排序与 data.js 一致（分区序、学段序、order、id）。
 
 ### 01 数学基础 / Mathematical tools
 
@@ -2832,6 +2832,7 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 电化学：原电池与电解池 / Electrochemistry: galvanic and electrolytic cells | ../chemistry/reactions/electrochemistry/#step2 | electrochemistry#step2 |
 | 电磁感应与发电 / Electromagnetic induction and generators | ../physics/electromagnetism/electromagnetic-induction/#step1 | electromagnetic-induction#step1 |
 | 磁场与洛伦兹力 / Magnetic force on moving charges | ../physics/electromagnetism/magnetic-force/#step1 | magnetic-force#step1 |
+| 结合能与聚变放能 / Binding energy and fusion yield | ../physics/modern/why-fusion-is-hard/#ch1 | why-fusion-is-hard |
 | Boost 升压电路 / Boost converter | ../physics/circuits/power-converters/#step5 | power-converters#step5 |
 | Buck 降压电路 / Buck converter | ../physics/circuits/power-converters/#step4 | power-converters#step4 |
 | 电容与电场储能 / Capacitor & electric energy | ../physics/circuits/power-converters/#step2 | power-converters#step2 |
@@ -2841,6 +2842,16 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 电压、电流与功率 / Voltage, current & power | ../physics/circuits/power-converters/#step0 | power-converters#step0 |
 | 脉宽调制 PWM / Pulse-width modulation | ../physics/circuits/power-converters/#step3 | power-converters#step3 |
 | 开关与二极管 / Switches & diodes | ../physics/circuits/power-converters/#step3 | power-converters#step3 |
+| 库仑势垒与热运动 / The Coulomb barrier and thermal motion | ../physics/modern/why-fusion-is-hard/#ch2 | why-fusion-is-hard |
+| 隧穿、伽莫夫峰与反应率 / Tunnelling, the Gamow peak and reactivity | ../physics/modern/why-fusion-is-hard/#ch3 | why-fusion-is-hard |
+| 劳森判据与三重积 / Lawson criterion and the triple product | ../physics/modern/why-fusion-is-hard/#ch4 | why-fusion-is-hard |
+| 磁约束：漂移与扭转磁场 / Magnetic confinement: drifts and twisted fields | ../physics/modern/why-fusion-is-hard/#ch5 | why-fusion-is-hard |
+| 约束定标律与高温超导 / Confinement scaling and high-temperature superconductors | ../physics/modern/why-fusion-is-hard/#ch6 | why-fusion-is-hard |
+| 惯性约束与靶增益 / Inertial confinement and target gain | ../physics/modern/why-fusion-is-hard/#ch7 | why-fusion-is-hard |
+| Q_sci、靶增益与 Q_eng / Q_sci, target gain and Q_eng | ../physics/modern/why-fusion-is-hard/#ch8 | why-fusion-is-hard |
+| 氚增殖、中子损伤与偏滤器 / Tritium breeding, neutron damage and the divertor | ../physics/modern/why-fusion-is-hard/#ch9 | why-fusion-is-hard |
+| 聚变前沿：纪录与开放问题 / The fusion frontier: records and open problems | ../physics/modern/why-fusion-is-hard/#ch10 | why-fusion-is-hard |
+| “还要三十年”从哪来 / Where “thirty years away” comes from | ../physics/modern/why-fusion-is-hard/#ch11 | why-fusion-is-hard |
 
 ### 04 系统与响应 / Systems & response
 
@@ -2955,6 +2966,30 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 为什么有人觉得臭 / Why some people find it stinky | ../food/flavor/why-fermented-tofu-tastes-good/#ch8 | why-fermented-tofu-tastes-good |
 | 钠、生物胺和铅：机制与标准 / Sodium, biogenic amines and lead: mechanisms and standards | ../food/flavor/why-fermented-tofu-tastes-good/#ch9 | why-fermented-tofu-tastes-good |
 | 酱油为什么那么咸 / Why soy sauce is so salty | ../food/flavor/how-soy-sauce-gets-its-flavor/#ch9 | how-soy-sauce-gets-its-flavor |
+| 电池电压与半反应 / Cell voltage from two half-reactions | ../chemistry/reactions/why-batteries-hold-so-little/#ch1 | why-batteries-hold-so-little |
+| 关得越紧动能越高：盒子里的电子 / Confinement costs kinetic energy: the particle in a box | ../chemistry/matter/why-atoms-stick-together/#ch1 | why-atoms-stick-together |
+| H₂⁺ 与原子轨道线性组合 / H₂⁺ and the linear combination of atomic orbitals | ../chemistry/matter/why-atoms-stick-together/#ch2 | why-atoms-stick-together |
+| 比容量与电芯能量密度 / Specific capacity and cell energy density | ../chemistry/reactions/why-batteries-hold-so-little/#ch2 | why-batteries-hold-so-little |
+| 分子轨道填充与键级 / Filling molecular orbitals and bond order | ../chemistry/matter/why-atoms-stick-together/#ch3 | why-atoms-stick-together |
+| 电压曲线：固溶体与两相 / Voltage curves: solid solution versus two phases | ../chemistry/reactions/why-batteries-hold-so-little/#ch3 | why-batteries-hold-so-little |
+| Hückel 模型、离域能与芳香性 / The Hückel model, delocalisation energy and aromaticity | ../chemistry/matter/why-atoms-stick-together/#ch3 | why-atoms-stick-together |
+| 颗粒里的固相扩散 / Solid-state diffusion in an electrode particle | ../chemistry/reactions/why-batteries-hold-so-little/#ch4 | why-batteries-hold-so-little |
+| 恒流-恒压充电与快充极限 / CC-CV charging and the limits of fast charging | ../chemistry/reactions/why-batteries-hold-so-little/#ch5 | why-batteries-hold-so-little |
+| 从共价键到离子键：电负性与极性 / From covalent to ionic: electronegativity and polarity | ../chemistry/matter/why-atoms-stick-together/#ch4 | why-atoms-stick-together |
+| 马德隆常数、晶格能与玻恩–哈伯循环 / Madelung constant, lattice energy and the Born–Haber cycle | ../chemistry/matter/why-atoms-stick-together/#ch4 | why-atoms-stick-together |
+| 热失控 / Thermal runaway | ../chemistry/reactions/why-batteries-hold-so-little/#ch6 | why-batteries-hold-so-little |
+| 电池衰老：SEI 与循环 / Battery ageing: SEI growth and cycling | ../chemistry/reactions/why-batteries-hold-so-little/#ch7 | why-batteries-hold-so-little |
+| 能带与带隙：导体、半导体、绝缘体 / Energy bands and the band gap: conductors, semiconductors, insulators | ../chemistry/matter/why-atoms-stick-together/#ch5 | why-atoms-stick-together |
+| 电池价格的学习曲线 / The learning curve of battery prices | ../chemistry/reactions/why-batteries-hold-so-little/#ch8 | why-batteries-hold-so-little |
+| 电子对互斥与杂化轨道 / Electron-pair repulsion and hybrid orbitals | ../chemistry/matter/why-atoms-stick-together/#ch6 | why-atoms-stick-together |
+| 电池前沿（2026）：固态、硅负极、钠离子、快充 / The battery frontier (2026): solid-state, silicon, sodium-ion, fast charging | ../chemistry/reactions/why-batteries-hold-so-little/#ch9 | why-batteries-hold-so-little |
+| 分子间作用力：色散力、偶极力、氢键 / Intermolecular forces: dispersion, dipole and hydrogen bonds | ../chemistry/matter/why-atoms-stick-together/#ch7 | why-atoms-stick-together |
+| Lennard-Jones 势与分子动力学 / The Lennard-Jones potential and molecular dynamics | ../chemistry/matter/why-atoms-stick-together/#ch7 | why-atoms-stick-together |
+| 结构决定性质：金刚石、石墨、金属、陶瓷 / Structure decides properties: diamond, graphite, metals, ceramics | ../chemistry/matter/why-atoms-stick-together/#ch8 | why-atoms-stick-together |
+| 高分子链与熵弹性 / Polymer chains and entropic elasticity | ../chemistry/matter/why-atoms-stick-together/#ch8 | why-atoms-stick-together |
+| 蛋白质折叠、Levinthal 佯谬与 HP 模型 / Protein folding, Levinthal's paradox and the HP model | ../chemistry/matter/why-atoms-stick-together/#ch9 | why-atoms-stick-together |
+| 电子结构计算的前沿：DFT、机器学习势、AlphaFold、材料生成 / The frontier of electronic-structure calculation: DFT, ML potentials, AlphaFold, generative materials | ../chemistry/matter/why-atoms-stick-together/#ch10 | why-atoms-stick-together |
+| 看一样材料先问四件事 / Four questions to ask of any material | ../chemistry/matter/why-atoms-stick-together/#ch11 | why-atoms-stick-together |
 
 ### 07 生命与生态 / Life & ecology
 
@@ -3028,14 +3063,23 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 概念 | 来源 | 课程 |
 | --- | --- | --- |
 | 开关组成逻辑门 / Switches Make Logic Gates | ../computing/systems/switches-that-compute/#ch1 | switches-that-compute |
+| token 与 BPE 分词 / Tokens and BPE tokenization | ../computing/ml/how-a-chatbot-writes/#ch1 | how-a-chatbot-writes |
 | 与非门的通用性 / NAND Is Universal | ../computing/systems/switches-that-compute/#ch2 | switches-that-compute |
+| 预测下一个 token（二元模型） / Predicting the next token (bigram model) | ../computing/ml/how-a-chatbot-writes/#ch2 | how-a-chatbot-writes |
 | 二进制计数 / Counting in Binary | ../computing/systems/switches-that-compute/#ch3 | switches-that-compute |
+| n 元模型与数据稀疏 / n-gram models and data sparsity | ../computing/ml/how-a-chatbot-writes/#ch3 | how-a-chatbot-writes |
 | 加法器与进位链 / Adders and the Carry Chain | ../computing/systems/switches-that-compute/#ch4 | switches-that-compute |
+| 词向量：把词变成一串数 / Word vectors: words as lists of numbers | ../computing/ml/how-a-chatbot-writes/#ch4 | how-a-chatbot-writes |
+| 一个注意力头怎么算 / How one attention head computes | ../computing/ml/how-a-chatbot-writes/#ch5 | how-a-chatbot-writes |
 | 补码与溢出 / Two's Complement and Overflow | ../computing/systems/switches-that-compute/#ch5 | switches-that-compute |
 | 锁存器与亚稳态 / Latches and Metastability | ../computing/systems/switches-that-compute/#ch6 | switches-that-compute |
+| 采样温度、top-k 与 top-p / Sampling temperature, top-k and top-p | ../computing/ml/how-a-chatbot-writes/#ch6 | how-a-chatbot-writes |
 | 时钟、触发器与计数器 / Clocks, Flip-Flops and Counters | ../computing/systems/switches-that-compute/#ch7 | switches-that-compute |
+| 训练：用梯度下降压低交叉熵 / Training: gradient descent on cross-entropy | ../computing/ml/how-a-chatbot-writes/#ch7 | how-a-chatbot-writes |
+| 一次一个 token 的生成循环与规模 / The token-by-token loop, and scale | ../computing/ml/how-a-chatbot-writes/#ch8 | how-a-chatbot-writes |
 | 多路选择器与 ALU / Multiplexers and the ALU | ../computing/systems/switches-that-compute/#ch8 | switches-that-compute |
 | 存储程序与取指执行 / Stored Programs and Fetch–Execute | ../computing/systems/switches-that-compute/#ch9 | switches-that-compute |
+| 带着三个问题用聊天 AI / Three questions to bring to a chatbot | ../computing/ml/how-a-chatbot-writes/#ch9 | how-a-chatbot-writes |
 | 浮点数为什么不精确 / Why Floating Point Is Inexact | ../computing/systems/switches-that-compute/#ch10 | switches-that-compute |
 | 真实处理器：规模而非新原理 / Real Processors: Scale, Not New Principles | ../computing/systems/switches-that-compute/#ch11 | switches-that-compute |
 | 大 O 记号 · 增长的形状 / Big O notation · the shape of growth | ../computing/algorithms/sorting/#step4 | sorting#step4 |
@@ -3054,6 +3098,7 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 哈希 / Hashing | ../computing/algorithms/hashing/#step0 | hashing#step0 |
 | 浮点数的三段位：符号、指数、尾数 / The three fields of a float: sign, exponent, significand | ../computing/systems/how-a-cpu-does-math/#ch1 | how-a-cpu-does-math |
 | 指令集架构：软件和硬件之间的合同 / The ISA: a contract between software and hardware | ../computing/systems/how-a-cpu-runs-a-program/#ch1 | how-a-cpu-runs-a-program |
+| 密钥分发问题 / The key-distribution problem | ../computing/systems/a-secret-in-public/#ch1 | a-secret-in-public |
 | KV Cache 与固定大小状态 / KV Cache vs Fixed-Size Recurrent State | ../computing/ml/how-hybrid-attention-remembers/#ch1 | how-hybrid-attention-remembers |
 | 延迟与带宽 / Latency & bandwidth | ../computing/systems/tcp-congestion/#step1 | tcp-congestion#step1 |
 | 为什么猜错越来越贵 / Why a wrong guess costs more on a wide core | ../computing/systems/how-a-cpu-guesses-ahead/#ch1 | how-a-cpu-guesses-ahead |
@@ -3064,6 +3109,7 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 供电链：从插座到晶粒一路降压 / The power-delivery chain: stepping down from the wall to the die | ../computing/systems/how-power-reaches-the-cpu/#ch1 | how-power-reaches-the-cpu |
 | 上电时序：PWR_OK 之前 CPU 一直在复位里 / Power sequencing: the CPU stays in reset until PWR_OK | ../computing/systems/how-a-computer-boots/#ch1 | how-a-computer-boots |
 | 特权级：CPU 每条指令都查「你现在是谁」 / Privilege levels: the CPU checks who you are on every instruction | ../computing/systems/how-the-os-talks-to-hardware/#ch1 | how-the-os-talks-to-hardware |
+| 一个量子比特：两个复数 / One qubit: two complex numbers | ../computing/quantum/what-quantum-computers-do/#ch1 | what-quantum-computers-do |
 | 副本与 quorum · 一致性和可用性的取舍 / Replicas & quorums · consistency vs availability | ../computing/systems/distributed-systems/#step0 | distributed-systems#step0 |
 | 机械臂运动学 · 从关节角到末端 / Robot-arm kinematics · from joint angles to the hand | ../computing/graphics/robot-kinematics/#step0 | robot-kinematics#step0 |
 | SAS 的分层：SCSI 命令、SSP/STP/SMP 与物理层 / SAS Layers: SCSI Commands, SSP/STP/SMP and the Phy | ../computing/systems/how-sas-works/#ch1 | how-sas-works |
@@ -3071,6 +3117,7 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 共享总线：PCI 的仲裁、复用和时间账 / The Shared Bus: PCI Arbitration, Multiplexing and Its Time Budget | ../computing/systems/how-a-computer-is-wired/#ch1 | how-a-computer-is-wired |
 | 排序算法 · 冒泡、归并与快排 / Sorting algorithms · bubble, merge and quicksort | ../computing/algorithms/sorting/#step2 | sorting#step2 |
 | TCP 拥塞控制 · 试探与退让 / TCP congestion control · probe and back off | ../computing/systems/tcp-congestion/#step4 | tcp-congestion#step4 |
+| Transformer 的一层 / The transformer block | ../computing/ml/what-a-frontier-model-takes/#ch1 | what-a-frontier-model-takes |
 | USB-C 的 24 根针和 CC 线 / The 24 Pins of USB-C and the CC Line | ../computing/systems/how-thunderbolt-works/#ch1 | how-thunderbolt-works |
 | USB 存储在协议地图上的位置：两段协议和一颗桥接芯片 / Where USB Storage Sits: Two Stacks and a Bridge Chip | ../computing/systems/how-usb-drives-talk/#ch1 | how-usb-drives-talk |
 | 为什么要虚拟地址 / Why virtual addresses | ../computing/systems/how-virtual-memory-works/#ch1 | how-virtual-memory-works |
@@ -3083,8 +3130,11 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 动态功耗：功率随电压平方走 / Dynamic power: power goes with voltage squared | ../computing/systems/how-power-reaches-the-cpu/#ch2 | how-power-reaches-the-cpu |
 | 一帧以太网，和线速下每个包的时间 / One Ethernet frame, and the time per packet at line rate | ../computing/systems/how-a-nic-moves-packets/#ch2 | how-a-nic-moves-packets |
 | 机械硬盘：寻道、转动等待与外圈更快 / Hard disks: seek, rotational latency and faster outer tracks | ../computing/systems/what-a-drive-is-made-of/#ch2 | what-a-drive-is-made-of |
+| 归纳头 / Induction heads | ../computing/ml/what-a-frontier-model-takes/#ch1 | what-a-frontier-model-takes |
 | 线性注意力的矩阵结合律 / Linear Attention via Matrix Associativity | ../computing/ml/how-hybrid-attention-remembers/#ch2 | how-hybrid-attention-remembers |
+| 振幅相互抵消：马赫–曾德尔干涉仪 / Amplitudes cancel: the Mach–Zehnder interferometer | ../computing/quantum/what-quantum-computers-do/#ch2 | what-quantum-computers-do |
 | 存储层级与缓存命中 / Memory Latency Hierarchy and Cache Locality | ../computing/systems/why-compute-waits-for-memory/#ch2 | why-compute-waits-for-memory |
+| 模运算与有限域 / Modular arithmetic and finite fields | ../computing/systems/a-secret-in-public/#mod | a-secret-in-public |
 | NAS 的文件协议：NFS、SMB 与小文件的往返 / NAS file protocols: NFS, SMB and small-file round trips | ../computing/systems/storage-over-a-network/#ch2 | storage-over-a-network |
 | PCIe 多车道与队列深度 / PCIe Lanes and Little's Law in Storage | ../computing/systems/why-nvme-is-fast/#ch2 | why-nvme-is-fast |
 | 页、偏移和多级页表 / Pages, offsets and multi-level page tables | ../computing/systems/how-virtual-memory-works/#ch2 | how-virtual-memory-works |
@@ -3105,13 +3155,16 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 把一个循环翻译成机器码 / Hand-compiling a loop to machine code | ../computing/systems/how-a-cpu-runs-a-program/#ch3 | how-a-cpu-runs-a-program |
 | CXL 的三种协议和数据帧 / CXL's three protocols and flits | ../computing/systems/coherent-interconnects/#ch3 | coherent-interconnects |
 | 五个命令和时序：行命中、未命中、冲突 / Five commands and their timings: row hit, miss and conflict | ../computing/systems/how-memory-talks/#ch3 | how-memory-talks |
+| 纠缠与 CHSH 游戏 / Entanglement and the CHSH game | ../computing/quantum/what-quantum-computers-do/#ch3 | what-quantum-computers-do |
 | 快权重联想记忆与容量上限 / Fast-Weight Memory & Rank Capacity | ../computing/ml/how-hybrid-attention-remembers/#ch3 | how-hybrid-attention-remembers |
 | 全局历史与 gshare / Global history and gshare | ../computing/systems/how-a-cpu-guesses-ahead/#ch3 | how-a-cpu-guesses-ahead |
 | iSCSI：SCSI 命令走 TCP，写要等 R2T / iSCSI: SCSI commands over TCP, writes wait for R2T | ../computing/systems/storage-over-a-network/#ch3 | storage-over-a-network |
 | 北桥与南桥：前端总线、AGP 和汇合点 / Northbridge and Southbridge: the Front-Side Bus, AGP and the Meeting Point | ../computing/systems/how-a-computer-is-wired/#ch3 | how-a-computer-is-wired |
 | 64K 并行队列与无锁扩展 / 64K Parallel Queues and Lock-Free Scaling | ../computing/systems/why-nvme-is-fast/#ch3 | why-nvme-is-fast |
+| 单向函数与离散对数 / One-way functions and the discrete logarithm | ../computing/systems/a-secret-in-public/#ch2 | a-secret-in-public |
 | TLP：PCIe 上的包和包头 / TLPs: the Packets and Headers of PCIe | ../computing/systems/how-pcie-works/#ch3 | how-pcie-works |
 | 电源效率与 80 PLUS / PSU efficiency and 80 PLUS | ../computing/systems/how-power-reaches-the-cpu/#ch3 | how-power-reaches-the-cpu |
+| 残差连接与层归一化 / Residual connections and layer normalisation | ../computing/ml/what-a-frontier-model-takes/#ch2 | what-a-frontier-model-takes |
 | 舍入模式：落在两格之间怎么选 / Rounding modes: choosing between two neighbours | ../computing/systems/how-a-cpu-does-math/#ch3 | how-a-cpu-does-math |
 | 收一个包要走的路：描述符要提前取 / The receive path: descriptors fetched ahead | ../computing/systems/how-a-nic-moves-packets/#ch3 | how-a-nic-moves-packets |
 | 叠瓦式记录（SMR）与热辅助记录（HAMR） / Shingled (SMR) and heat-assisted (HAMR) recording | ../computing/systems/what-a-drive-is-made-of/#ch3 | what-a-drive-is-made-of |
@@ -3128,8 +3181,10 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | CL 折成纳秒 / CAS latency in nanoseconds | ../computing/systems/how-memory-talks/#ch4 | how-memory-talks |
 | CXL 的三类设备 / The three CXL device types | ../computing/systems/coherent-interconnects/#ch4 | coherent-interconnects |
 | Delta 规则：先擦后写的投影更新 / The Delta Rule: Erase Before Writing | ../computing/ml/how-hybrid-attention-remembers/#ch4 | how-hybrid-attention-remembers |
+| Diffie–Hellman 密钥交换与中间人攻击 / Diffie–Hellman key exchange and the man in the middle | ../computing/systems/a-secret-in-public/#ch3 | a-secret-in-public |
 | 目录协议：核心多了怎么办 / Directory coherence for many cores | ../computing/systems/how-cores-share-memory/#ch4 | how-cores-share-memory |
 | 双端口与多路径的可用度算术 / Availability Arithmetic of Dual Port and Multipath | ../computing/systems/how-sas-works/#ch4 | how-sas-works |
+| 2ⁿ 个振幅与霍列沃界 / 2ⁿ amplitudes and the Holevo bound | ../computing/quantum/what-quantum-computers-do/#ch4 | what-quantum-computers-do |
 | 光纤通道的缓冲区信用与距离 / Fibre Channel buffer-to-buffer credits and distance | ../computing/systems/storage-over-a-network/#ch4 | storage-over-a-network |
 | 硬件信任根：CPU 之前先醒的安全芯片 / Hardware root of trust: the security processor that wakes first | ../computing/systems/how-a-computer-boots/#ch4 | how-a-computer-boots |
 | 内存墙与利特尔法则 / The Memory Wall and Little's Law | ../computing/systems/why-compute-waits-for-memory/#ch4 | why-compute-waits-for-memory |
@@ -3138,6 +3193,7 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 闪存单元：SLC、MLC、TLC、QLC、PLC 与读裕量 / Flash cells: SLC to PLC and the read margin | ../computing/systems/what-a-drive-is-made-of/#ch4 | what-a-drive-is-made-of |
 | 内存控制器进了 CPU：NUMA 和远近内存 / The Memory Controller Moves into the CPU: NUMA and Near and Far Memory | ../computing/systems/how-a-computer-is-wired/#ch4 | how-a-computer-is-wired |
 | 环形队列、门铃寄存器与 DMA / SQ/CQ Ring Buffers, Doorbells & DMA | ../computing/systems/why-nvme-is-fast/#ch4 | why-nvme-is-fast |
+| 参数量与每个 token 的运算量 / Parameter count and FLOPs per token | ../computing/ml/what-a-frontier-model-takes/#ch3 | what-a-frontier-model-takes |
 | PCIe 的信用流控 / Credit-Based Flow Control in PCIe | ../computing/systems/how-pcie-works/#ch4 | how-pcie-works |
 | 每个包的 PCIe 开销：400G 小包装不下 / PCIe bytes per packet: small packets at 400G do not fit | ../computing/systems/how-a-nic-moves-packets/#ch4 | how-a-nic-moves-packets |
 | FIS 帧：一条读命令在线上的样子 / FIS Frames: One Read Command on the Wire | ../computing/systems/how-sata-works/#ch4 | how-sata-works |
@@ -3158,6 +3214,7 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 最慢的那条指令定了时钟 / The slowest instruction sets the clock | ../computing/systems/how-a-cpu-runs-a-program/#ch5 | how-a-cpu-runs-a-program |
 | 内存扩展卡与冷热分层 / Memory expansion and hot/cold tiering | ../computing/systems/coherent-interconnects/#ch5 | coherent-interconnects |
 | 64 字节一次突发与 DDR5 子通道 / 64-byte bursts and DDR5 subchannels | ../computing/systems/how-memory-talks/#ch5 | how-memory-talks |
+| 德意志–约萨算法 / The Deutsch–Jozsa algorithm | ../computing/quantum/what-quantum-computers-do/#ch5 | what-quantum-computers-do |
 | 显示引擎、合成器与颜色管线 / Display engine, compositor and colour pipeline | ../computing/systems/how-pixels-reach-a-screen/#ch5 | how-pixels-reach-a-screen |
 | 闪存为什么会坏：擦写次数、纠错码、TBW 与 DWPD / Why flash wears out: P/E cycles, ECC, TBW and DWPD | ../computing/systems/what-a-drive-is-made-of/#ch5 | what-a-drive-is-made-of |
 | Gated DeltaNet 与选择性遗忘门 / Gated DeltaNet & Selective Decay | ../computing/ml/how-hybrid-attention-remembers/#ch5 | how-hybrid-attention-remembers |
@@ -3169,9 +3226,11 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 网络存储的延迟账：介质、协议栈、光纤与交换机 / The latency budget of network storage | ../computing/systems/storage-over-a-network/#ch5 | storage-over-a-network |
 | 一次 TLB 缺失要付多少 / What a TLB miss costs | ../computing/systems/how-virtual-memory-works/#ch5 | how-virtual-memory-works |
 | ACK/NAK 与重发缓冲 / ACK/NAK and the Replay Buffer | ../computing/systems/how-pcie-works/#ch5 | how-pcie-works |
+| RSA 签名、可塑性与填充 / RSA signatures, malleability and padding | ../computing/systems/a-secret-in-public/#ch4 | a-secret-in-public |
 | RSS：托普利茨哈希把连接分给队列 / RSS: a Toeplitz hash spreads connections over queues | ../computing/systems/how-a-nic-moves-packets/#ch5 | how-a-nic-moves-packets |
 | SAS 扩展器、地址与分区 / SAS Expanders, Addresses and Zoning | ../computing/systems/how-sas-works/#ch5 | how-sas-works |
 | SSD 多通道 NAND 并行 / Multi-Channel NAND Die Parallelism | ../computing/systems/why-nvme-is-fast/#ch5 | why-nvme-is-fast |
+| 训练曲线与能力突然出现 / The training curve and sudden abilities | ../computing/ml/what-a-frontier-model-takes/#ch4 | what-a-frontier-model-takes |
 | UASP：四条管道、标签和 USB 3 的流 / UASP: Four Pipes, Tags and USB 3 Streams | ../computing/systems/how-usb-drives-talk/#ch5 | how-usb-drives-talk |
 | 80 Gb/s 怎么来：PAM3 与 3+1 非对称 / Where 80 Gb/s Comes From: PAM3 and 3+1 | ../computing/systems/how-thunderbolt-works/#ch5 | how-thunderbolt-works |
 | 原子指令：LOCK、CAS、LL/SC 与 LSE / Atomic instructions: LOCK, CAS, LL/SC and LSE | ../computing/systems/how-cores-share-memory/#ch6 | how-cores-share-memory |
@@ -3181,11 +3240,13 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 几百安怎么进到晶粒里 / How hundreds of amps get into the die | ../computing/systems/how-power-reaches-the-cpu/#ch6 | how-power-reaches-the-cpu |
 | DisplayPort 与 HDMI：一根线放得下什么 / DisplayPort and HDMI: what fits in one cable | ../computing/systems/how-pixels-reach-a-screen/#ch6 | how-pixels-reach-a-screen |
 | USB-C 接显示器要多少带宽 / How Much a Monitor Needs over USB-C | ../computing/systems/how-thunderbolt-works/#ch6 | how-thunderbolt-works |
+| 椭圆曲线密码 / Elliptic-curve cryptography | ../computing/systems/a-secret-in-public/#ch5 | a-secret-in-public |
 | 五级流水线 / The five-stage pipeline | ../computing/systems/how-a-cpu-runs-a-program/#ch6 | how-a-cpu-runs-a-program |
 | 闪存翻译层（FTL）：不能原地改写与垃圾回收 / The flash translation layer: no in-place updates, garbage collection | ../computing/systems/what-a-drive-is-made-of/#ch6 | what-a-drive-is-made-of |
 | 把包送到对的核心：RFS、aRFS 和亲和性 / Steering packets to the right core: RFS, aRFS and affinity | ../computing/systems/how-a-nic-moves-packets/#ch6 | how-a-nic-moves-packets |
 | FMA：乘加只舍入一次 / FMA: multiply and add with one rounding | ../computing/systems/how-a-cpu-does-math/#ch6 | how-a-cpu-does-math |
 | GPU 并发与脉动阵列 / GPU Throughput and Systolic Arrays | ../computing/systems/why-compute-waits-for-memory/#ch6 | why-compute-waits-for-memory |
+| 格罗弗搜索 / Grover search | ../computing/quantum/what-quantum-computers-do/#ch6 | what-quantum-computers-do |
 | 大页：2 MiB 和 1 GiB / Huge pages: 2 MiB and 1 GiB | ../computing/systems/how-virtual-memory-works/#ch6 | how-virtual-memory-works |
 | 内存池与 CXL 交换机 / Memory pools and CXL switches | ../computing/systems/coherent-interconnects/#ch6 | coherent-interconnects |
 | NAPI：先中断，再一批批轮询 / NAPI: interrupt first, then poll in batches | ../computing/systems/how-the-os-talks-to-hardware/#ch6 | how-the-os-talks-to-hardware |
@@ -3194,12 +3255,14 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | RDMA、RoCE v2 与无损以太网 / RDMA, RoCE v2 and lossless Ethernet | ../computing/systems/storage-over-a-network/#ch6 | storage-over-a-network |
 | 宽端口：四条道不能合成一条 / Wide Ports: Four Lanes Are Not One Fast Lane | ../computing/systems/how-sas-works/#ch6 | how-sas-works |
 | 热插拔与链路省电：Partial、Slumber、DevSleep / Hot Plug and Link Power: Partial, Slumber, DevSleep | ../computing/systems/how-sata-works/#ch6 | how-sata-works |
+| 规模定律与 Chinchilla 最优 / Scaling laws and Chinchilla-optimal training | ../computing/ml/what-a-frontier-model-takes/#ch5 | what-a-frontier-model-takes |
 | 共享内存的 bank 冲突 / Shared-memory bank conflicts | ../computing/systems/how-a-gpu-computes/#ch6 | how-a-gpu-computes |
 | 写放大、垃圾回收与 Trim / Write Amplification, Garbage Collection & Trim | ../computing/systems/why-nvme-is-fast/#ch6 | why-nvme-is-fast |
 | 超标量与指令级并行 / Superscalar issue and instruction-level parallelism | ../computing/systems/how-a-cpu-guesses-ahead/#ch6 | how-a-cpu-guesses-ahead |
 | UEFI 的阶段与 ACPI 表 / UEFI phases and the ACPI tables | ../computing/systems/how-a-computer-boots/#ch6 | how-a-computer-boots |
 | 桥接芯片：SCSI 翻译与链条上的瓶颈 / The Bridge Chip: SCSI Translation and the Bottleneck | ../computing/systems/how-usb-drives-talk/#ch6 | how-usb-drives-talk |
 | 背向作废：几台主机共用一行 / Back-invalidate: several hosts sharing one line | ../computing/systems/coherent-interconnects/#ch7 | coherent-interconnects |
+| 签名、证书链与 TLS 握手 / Signatures, certificate chains and the TLS handshake | ../computing/systems/a-secret-in-public/#ch6 | a-secret-in-public |
 | 核心之间搬一行要多久 / How long a line takes to move between cores | ../computing/systems/how-cores-share-memory/#ch7 | how-cores-share-memory |
 | 数据冒险与转发路径 / Data hazards and the forwarding paths | ../computing/systems/how-a-cpu-runs-a-program/#ch7 | how-a-cpu-runs-a-program |
 | DMA 与描述符环 / DMA and the descriptor ring | ../computing/systems/how-the-os-talks-to-hardware/#ch7 | how-the-os-talks-to-hardware |
@@ -3221,9 +3284,12 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 端口倍增器、eSATA、mSATA 与 M.2 SATA / Port Multipliers, eSATA, mSATA and M.2 SATA | ../computing/systems/how-sata-works/#ch7 | how-sata-works |
 | 屋顶线模型与算术强度 / The Roofline Model and Arithmetic Intensity | ../computing/systems/why-compute-waits-for-memory/#ch7 | why-compute-waits-for-memory |
 | STP：SAS 口为什么认 SATA 盘 / STP: Why a SAS Port Accepts a SATA Drive | ../computing/systems/how-sas-works/#ch7 | how-sas-works |
+| 肖尔算法与 RSA / Shor's algorithm and RSA | ../computing/quantum/what-quantum-computers-do/#ch7 | what-quantum-computers-do |
 | 存储接口分层地图：外形、连接器、链路、传输、命令集 / Storage interface map: form factor, connector, link, transport, command set | ../computing/systems/what-a-drive-is-made-of/#ch7 | what-a-drive-is-made-of |
 | 分块矩阵乘法的两级屋顶 / Tiled matrix multiply: two levels of roofs | ../computing/systems/how-a-gpu-computes/#ch7 | how-a-gpu-computes |
+| 训练一个大模型要多少钱 / What training a large model costs | ../computing/ml/what-a-frontier-model-takes/#ch6 | what-a-frontier-model-takes |
 | USB PD：谈出来的瓦数与 EPR / USB Power Delivery: Negotiated Watts and EPR | ../computing/systems/how-thunderbolt-works/#ch7 | how-thunderbolt-works |
+| 安全位数与数域筛 / Bits of security and the number field sieve | ../computing/systems/a-secret-in-public/#ch7 | a-secret-in-public |
 | INT8 与块缩放：MX、NVFP4 / INT8 and block scaling: MX and NVFP4 | ../computing/systems/how-a-cpu-does-math/#ch8 | how-a-cpu-does-math |
 | C-state：空闲时睡多深 / C-states: how deep to sleep when idle | ../computing/systems/how-power-reaches-the-cpu/#ch8 | how-power-reaches-the-cpu |
 | 预取：下一行与步长 / Prefetching: next-line and stride | ../computing/systems/how-cpu-caches-work/#ch8 | how-cpu-caches-work |
@@ -3234,6 +3300,7 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 屋顶线下的长上下文吐字加速 / Roofline Decode Speedup at Long Context | ../computing/ml/how-hybrid-attention-remembers/#ch8 | how-hybrid-attention-remembers |
 | 到今天还共用的小总线：I²C 和上拉电阻 / The Small Buses Still Shared Today: I²C and Pull-up Resistors | ../computing/systems/how-a-computer-is-wired/#ch8 | how-a-computer-is-wired |
 | 大模型推理的内存瓶颈 / Why LLM Inference Is Memory-Bound | ../computing/systems/why-compute-waits-for-memory/#ch8 | why-compute-waits-for-memory |
+| 微调、RLHF 与 LoRA / Fine-tuning, RLHF and LoRA | ../computing/ml/what-a-frontier-model-takes/#ch7 | what-a-frontier-model-takes |
 | 矩阵乘加指令与数字格式 / Matrix multiply-accumulate instructions and number formats | ../computing/systems/how-a-gpu-computes/#ch8 | how-a-gpu-computes |
 | 多路径的分流与切换：ALUA 与 ANA / Splitting and failing over across paths: ALUA and ANA | ../computing/systems/storage-over-a-network/#ch8 | storage-over-a-network |
 | NVLink 与 NVSwitch / NVLink and NVSwitch | ../computing/systems/coherent-interconnects/#ch8 | coherent-interconnects |
@@ -3241,6 +3308,7 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 内存不够时换出谁 / Which page to evict | ../computing/systems/how-virtual-memory-works/#ch8 | how-virtual-memory-works |
 | 屏里面：时序控制器和一行的充电时间 / Inside the panel: the TCON and the time a row gets | ../computing/systems/how-pixels-reach-a-screen/#ch8 | how-pixels-reach-a-screen |
 | 通道损耗预算与重定时器 / Channel Loss Budgets and Retimers | ../computing/systems/how-pcie-works/#ch8 | how-pcie-works |
+| 哪些问题有加速：BQP 与平方加速的打平点 / Which problems speed up: BQP and the quadratic crossover | ../computing/quantum/what-quantum-computers-do/#ch8 | what-quantum-computers-do |
 | 重排序缓冲与精确异常 / The reorder buffer and precise exceptions | ../computing/systems/how-a-cpu-guesses-ahead/#ch8 | how-a-cpu-guesses-ahead |
 | 安全启动：一级验一级的签名链 / Secure Boot: a chain of signature checks | ../computing/systems/how-a-computer-boots/#ch8 | how-a-computer-boots |
 | 顺序一致性与存储缓冲 / Sequential consistency and the store buffer | ../computing/systems/how-cores-share-memory/#ch8 | how-cores-share-memory |
@@ -3249,8 +3317,10 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 雷电 DMA 攻击与 IOMMU / Thunderbolt DMA Attacks and the IOMMU | ../computing/systems/how-thunderbolt-works/#ch8 | how-thunderbolt-works |
 | 雷电与 USB4 的 PCIe 隧道：不翻译的路 / PCIe Tunnelling in Thunderbolt and USB4 | ../computing/systems/how-usb-drives-talk/#ch8 | how-usb-drives-talk |
 | 为什么 SATA 停在 6 Gb/s / Why SATA Stopped at 6 Gb/s | ../computing/systems/how-sata-works/#ch8 | how-sata-works |
+| 基准测试的误差、饱和与污染 / Benchmark noise, saturation and contamination | ../computing/ml/what-a-frontier-model-takes/#ch7 | what-a-frontier-model-takes |
 | 发包的路和 BQL：发送环里排多少字节 / The transmit path and BQL: how many bytes to queue | ../computing/systems/how-a-nic-moves-packets/#ch9 | how-a-nic-moves-packets |
 | 数据搬运能耗与 HBM 封装 / Data Movement Energy and HBM Packaging | ../computing/systems/why-compute-waits-for-memory/#ch9 | why-compute-waits-for-memory |
+| 噪声与退相干 / Noise and decoherence | ../computing/quantum/what-quantum-computers-do/#ch9 | what-quantum-computers-do |
 | 驱动模型：比对、probe、绑定 / The driver model: match, probe, bind | ../computing/systems/how-the-os-talks-to-hardware/#ch9 | how-the-os-talks-to-hardware |
 | MESI 入门与伪共享 / A first look at MESI, and false sharing | ../computing/systems/how-cpu-caches-work/#ch9 | how-cpu-caches-work |
 | U 盘和存储卡：几颗闪存与总线 / Flash Drives and Memory Cards: A Few Dies and a Bus | ../computing/systems/how-usb-drives-talk/#ch9 | how-usb-drives-talk |
@@ -3263,6 +3333,7 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | PAM4 与眼图 / PAM4 and Eye Diagrams | ../computing/systems/how-pcie-works/#ch9 | how-pcie-works |
 | 像素按 2×2 着色：小三角形为什么费 / Shading in 2×2 quads: why small triangles cost | ../computing/systems/how-a-gpu-computes/#ch9 | how-a-gpu-computes |
 | 功率墙与温度墙：PL1、PL2、Tau / Power and thermal limits: PL1, PL2, Tau | ../computing/systems/how-power-reaches-the-cpu/#ch9 | how-power-reaches-the-cpu |
+| 量子威胁：Shor、Grover 与先存后解 / The quantum threat: Shor, Grover, harvest now decrypt later | ../computing/systems/a-secret-in-public/#ch8 | a-secret-in-public |
 | 三副本与纠删码：空间、持久性与修理代价 / Replication vs erasure coding: space, durability and repair | ../computing/systems/storage-over-a-network/#ch9 | storage-over-a-network |
 | 环形全归约 / Ring all-reduce | ../computing/systems/coherent-interconnects/#ch9 | coherent-interconnects |
 | 24G SAS 的 128b/150b 编码与纠错 / 24G SAS: 128b/150b Coding and FEC | ../computing/systems/how-sas-works/#ch9 | how-sas-works |
@@ -3281,10 +3352,13 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | GPU 的存储层次，和不做的一致性 / The GPU memory hierarchy, and the coherence it skips | ../computing/systems/how-a-gpu-computes/#ch10 | how-a-gpu-computes |
 | HDR 与 PQ 曲线 / HDR and the PQ curve | ../computing/systems/how-pixels-reach-a-screen/#ch10 | how-pixels-reach-a-screen |
 | 一次 read() 穿过的每一层 / Every layer one read() crosses | ../computing/systems/how-the-os-talks-to-hardware/#ch10 | how-the-os-talks-to-hardware |
+| 推理时缓存键和值：以内存换运算 / Caching keys and values at inference: memory for compute | ../computing/ml/what-a-frontier-model-takes/#ch8 | what-a-frontier-model-takes |
+| 格、LWE 与 ML-KEM / Lattices, learning with errors and ML-KEM | ../computing/systems/a-secret-in-public/#ch9 | a-secret-in-public |
 | 度量启动：TPM 的 PCR 扩展 / Measured boot: TPM PCR extends | ../computing/systems/how-a-computer-boots/#ch10 | how-a-computer-boots |
 | HBM4、共封装光学与算力前沿 / HBM4, Co-Packaged Optics, and the 2026 Frontier | ../computing/systems/why-compute-waits-for-memory/#ch10 | why-compute-waits-for-memory |
 | 网络存储的前沿（截至 2026 年 11 月） / The network storage frontier (as of November 2026) | ../computing/systems/storage-over-a-network/#ch10 | storage-over-a-network |
 | FLIT 模式与前向纠错 / FLIT Mode and Forward Error Correction | ../computing/systems/how-pcie-works/#ch10 | how-pcie-works |
+| 量子纠错：重复码与表面码 / Quantum error correction: repetition and surface codes | ../computing/quantum/what-quantum-computers-do/#ch10 | what-quantum-computers-do |
 | 读硬盘规格表时问三件事 / Three Questions for a Drive Spec Sheet | ../computing/systems/how-sata-works/#ch10 | how-sata-works |
 | 看一台机器的三个问题 / Three Questions for Reading a Machine | ../computing/systems/how-a-computer-is-wired/#ch10 | how-a-computer-is-wired |
 | 行锤与防护：TRR、RFM、PRAC / Row hammer and its defences: TRR, RFM, PRAC | ../computing/systems/how-memory-talks/#ch10 | how-memory-talks |
@@ -3302,6 +3376,7 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 分支预测与推测执行的前沿（截至 2026 年 11 月） / The frontier of prediction and speculation (as of November 2026) | ../computing/systems/how-a-cpu-guesses-ahead/#ch11 | how-a-cpu-guesses-ahead |
 | 前沿在哪（2026 年 11 月） / Where the frontier is (November 2026) | ../computing/systems/how-a-gpu-computes/#ch11 | how-a-gpu-computes |
 | 封装里的一致性：MI300A 与 Grace Hopper / Coherence in one package: MI300A and Grace Hopper | ../computing/systems/coherent-interconnects/#ch11 | coherent-interconnects |
+| 推理的屋顶线：为什么受内存带宽限制 / The inference roofline: why decoding is memory-bound | ../computing/ml/what-a-frontier-model-takes/#ch9 | what-a-frontier-model-takes |
 | 指令集的前沿（2026 年 11 月） / The ISA frontier (November 2026) | ../computing/systems/how-a-cpu-runs-a-program/#ch11 | how-a-cpu-runs-a-program |
 | 交给内核，INIT-SIPI-SIPI 叫醒其余核心 / Kernel handoff and waking the other cores with INIT-SIPI-SIPI | ../computing/systems/how-a-computer-boots/#ch11 | how-a-computer-boots |
 | 乘加的延迟、吞吐和宽向量降频 / FMA latency, throughput and wide-vector clocks | ../computing/systems/how-a-cpu-does-math/#ch11 | how-a-cpu-does-math |
@@ -3310,7 +3385,9 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 虚拟机里的二维页表 / Two-dimensional page walks in virtual machines | ../computing/systems/how-virtual-memory-works/#ch11 | how-virtual-memory-works |
 | 看到网络存储时问的三件事 / Three questions to ask about network storage | ../computing/systems/storage-over-a-network/#ch11 | storage-over-a-network |
 | PCIe 7.0、8.0 与合规测试的进展 / Where PCIe 7.0, 8.0 and Compliance Stand | ../computing/systems/how-pcie-works/#ch11 | how-pcie-works |
+| 后量子迁移的前沿（2026 年） / The post-quantum frontier (2026) | ../computing/systems/a-secret-in-public/#ch10 | a-secret-in-public |
 | 供电前沿（2026 年 11 月） / Power-delivery frontier (November 2026) | ../computing/systems/how-power-reaches-the-cpu/#ch11 | how-power-reaches-the-cpu |
+| 2026 年的前沿：硬件、量子优势与资源估计 / The 2026 frontier: hardware, advantage claims and resource estimates | ../computing/quantum/what-quantum-computers-do/#ch11 | what-quantum-computers-do |
 | 网卡里的 RDMA：队列对和单边写 / RDMA inside the NIC: queue pairs and one-sided writes | ../computing/systems/how-a-nic-moves-packets/#ch11 | how-a-nic-moves-packets |
 | 看到 SAS 时问三件事 / Three Questions When You See SAS | ../computing/systems/how-sas-works/#ch11 | how-sas-works |
 | 看包装时问三件事 / Three Questions for a USB Speed Label | ../computing/systems/how-usb-drives-talk/#ch11 | how-usb-drives-talk |
@@ -3322,10 +3399,12 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 互连的前沿（2026 年 11 月） / Interconnect frontier (November 2026) | ../computing/systems/coherent-interconnects/#ch12 | coherent-interconnects |
 | 绕开内核，以及虚拟机里的设备 / Kernel bypass and devices in virtual machines | ../computing/systems/how-the-os-talks-to-hardware/#ch12 | how-the-os-talks-to-hardware |
 | PCIe 翻倍的三种办法 / Three Ways PCIe Doubled | ../computing/systems/how-pcie-works/#ch12 | how-pcie-works |
+| 量化：把权重压成更少的位 / Quantisation: fewer bits per weight | ../computing/ml/what-a-frontier-model-takes/#ch9 | what-a-frontier-model-takes |
 | 看一根内存条时问三件事 / Three questions to ask of a memory module | ../computing/systems/how-memory-talks/#ch12 | how-memory-talks |
 | 看一段代码时问三件事 / Three questions about a piece of code | ../computing/systems/how-a-cpu-guesses-ahead/#ch12 | how-a-cpu-guesses-ahead |
 | 看一颗芯片的缓存时问三件事 / Three questions about a chip's caches | ../computing/systems/how-cpu-caches-work/#ch12 | how-cpu-caches-work |
 | 看代码、比 CPU 时问的三件事 / Three questions for code and for CPUs | ../computing/systems/how-a-cpu-runs-a-program/#ch12 | how-a-cpu-runs-a-program |
+| 读量子新闻的五个问题 / Five questions for reading quantum news | ../computing/quantum/what-quantum-computers-do/#ch12 | what-quantum-computers-do |
 | 写共享数据前问三件事 / Three questions before writing shared data | ../computing/systems/how-cores-share-memory/#ch12 | how-cores-share-memory |
 | SVE、SME 和 AMX：不定宽的向量与矩阵单元 / SVE, SME and AMX: length-agnostic vectors and matrix units | ../computing/systems/how-a-cpu-does-math/#ch12 | how-a-cpu-does-math |
 | 电脑降频时先查哪一段 / Which stage limits first when a PC throttles | ../computing/systems/how-power-reaches-the-cpu/#ch12 | how-power-reaches-the-cpu |
@@ -3334,12 +3413,17 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | CPU 数值计算的前沿（2026 年 11 月） / The frontier of CPU arithmetic (November 2026) | ../computing/systems/how-a-cpu-does-math/#ch13 | how-a-cpu-does-math |
 | 屏幕不对劲时问的三件事 / Three questions when a screen misbehaves | ../computing/systems/how-pixels-reach-a-screen/#ch13 | how-pixels-reach-a-screen |
 | 看一套互连的三个问题 / Three questions to ask of an interconnect | ../computing/systems/coherent-interconnects/#ch13 | coherent-interconnects |
+| 专家混合（MoE） / Mixture of experts (MoE) | ../computing/ml/what-a-frontier-model-takes/#ch10 | what-a-frontier-model-takes |
 | 网卡的前沿（2026 年 11 月） / The network-card frontier (November 2026) | ../computing/systems/how-a-nic-moves-packets/#ch13 | how-a-nic-moves-packets |
 | 前沿：io_uring 的安全代价、Rust 驱动、用户态 / The frontier: io_uring security, Rust drivers, user space | ../computing/systems/how-the-os-talks-to-hardware/#ch13 | how-the-os-talks-to-hardware |
 | 程序慢的时候问三件事 / Three questions when a program is slow | ../computing/systems/how-virtual-memory-works/#ch13 | how-virtual-memory-works |
 | 开不了机时问的三件事 / Three questions when a computer will not boot | ../computing/systems/how-a-computer-boots/#ch14 | how-a-computer-boots |
 | 程序卡在 I/O 上时问的三件事 / Three questions when a program is stuck on I/O | ../computing/systems/how-the-os-talks-to-hardware/#ch14 | how-the-os-talks-to-hardware |
 | 看一张网卡时问的三件事 / Three questions to ask of a network card | ../computing/systems/how-a-nic-moves-packets/#ch14 | how-a-nic-moves-packets |
+| 投机解码、蒸馏与推理 token / Speculative decoding, distillation and reasoning tokens | ../computing/ml/what-a-frontier-model-takes/#ch10 | what-a-frontier-model-takes |
+| 可解释性：消融、叠加与稀疏自编码器 / Interpretability: ablation, superposition and sparse autoencoders | ../computing/ml/what-a-frontier-model-takes/#ch11 | what-a-frontier-model-takes |
+| 2026 年的前沿：算力、价格、考卷与法规 / The frontier in 2026: compute, prices, tests and law | ../computing/ml/what-a-frontier-model-takes/#ch12 | what-a-frontier-model-takes |
+| 读大模型新闻时问的五个问题 / Five questions for the next AI headline | ../computing/ml/what-a-frontier-model-takes/#ch13 | what-a-frontier-model-takes |
 
 ### 10 经济与社会 / Economy & society
 
@@ -3388,27 +3472,39 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | GDP 三面等价与增加值 / GDP Three Ways & Value Added | ../economics/macro/how-an-economy-is-measured/#ch1 | how-an-economy-is-measured |
 | 机制设计与拍卖 · 报价如何改变结果 / Mechanism Design & Auctions · How Bids Change Outcomes | ../math/applied/mechanism-design/#s1 | mechanism-design |
 | 稀缺与机会成本 / Scarcity and opportunity cost | ../demos/scarcity-moves/#c1 | scarcity-moves |
+| 明天的钱今天值多少：折现 / What tomorrow's money is worth today | ../economics/money/why-one-rate-moves-everything/#ch1 | why-one-rate-moves-everything |
 | 供需均衡 / Supply & demand equilibrium | ../math/applied/supply-demand/#step0 | supply-demand#step0 |
+| 债券久期与凸性 / Bond duration and convexity | ../economics/money/why-one-rate-moves-everything/#ch2 | why-one-rate-moves-everything |
 | 边际：再多一点值不值 / The margin: is one more step worth it? | ../demos/scarcity-moves/#c2 | scarcity-moves |
 | 名义与实际、链式费雪指数与替代偏差 / Nominal vs Real, Chained Fisher & Substitution Bias | ../economics/macro/how-an-economy-is-measured/#ch2 | how-an-economy-is-measured |
 | CPI 权重、等价租金 OER 与质量调整 / CPI Weights, Owners' Equivalent Rent & Hedonic Adjustment | ../economics/macro/how-an-economy-is-measured/#ch3 | how-an-economy-is-measured |
 | 沉没成本 / Sunk cost | ../demos/scarcity-moves/#c2 | scarcity-moves |
+| 收益率曲线、即期利率与远期利率 / Yield curve, spot and forward rates | ../economics/money/why-one-rate-moves-everything/#ch3 | why-one-rate-moves-everything |
 | 交换与比较优势 / Trade and comparative advantage | ../demos/scarcity-moves/#c3 | scarcity-moves |
 | 折年率、基数效应、季节调整与数据修订 / Annualised Rates, Base Effects, Seasonal Adjustment & Revisions | ../economics/macro/how-an-economy-is-measured/#ch4 | how-an-economy-is-measured |
+| 预期假说、期限溢价与收益率曲线倒挂 / Expectations, term premium and yield-curve inversion | ../economics/money/why-one-rate-moves-everything/#ch4 | why-one-rate-moves-everything |
 | 购买力平价 PPP、均值与中位数及基尼系数 / Purchasing Power Parity, Mean vs Median & Gini Coefficient | ../economics/macro/how-an-economy-is-measured/#ch5 | how-an-economy-is-measured |
 | 价格是一条信息 / Price is a piece of information | ../demos/scarcity-moves/#c4 | scarcity-moves |
+| 准备金、利率走廊与地板体系 / Reserves, the corridor and the floor system | ../economics/money/why-one-rate-moves-everything/#ch5 | why-one-rate-moves-everything |
 | 激励 / Incentives | ../demos/scarcity-moves/#c5 | scarcity-moves |
 | U-3 与 U-6 失业率、贝弗里奇曲线与奥肯定律 / U-3 vs U-6 Unemployment, Beveridge Curve & Okun's Law | ../economics/macro/how-an-economy-is-measured/#ch6 | how-an-economy-is-measured |
+| 泰勒规则与自然利率 r* / The Taylor rule and the neutral rate r* | ../economics/money/why-one-rate-moves-everything/#ch6 | why-one-rate-moves-everything |
 | 经济周期、潜在产出与萨姆规则 / Business Cycles, Potential Output & the Sahm Rule | ../economics/macro/how-an-economy-is-measured/#ch7 | how-an-economy-is-measured |
 | 市场会失灵 / Markets can fail | ../demos/scarcity-moves/#c6 | scarcity-moves |
+| 新凯恩斯模型与菲利普斯曲线 / The New Keynesian model and the Phillips curve | ../economics/money/why-one-rate-moves-everything/#ch7 | why-one-rate-moves-everything |
+| 股票久期与房贷可负担性 / Equity duration and mortgage affordability | ../economics/money/why-one-rate-moves-everything/#ch8 | why-one-rate-moves-everything |
 | 增长来自思想 / Growth comes from ideas | ../demos/scarcity-moves/#c7 | scarcity-moves |
 | 索洛增长核算与全要素生产率（TFP） / Solow Growth Accounting & Total Factor Productivity | ../economics/macro/how-an-economy-is-measured/#ch8 | how-an-economy-is-measured |
 | GDP 之外：家务、折旧、灾难悖论与卫星账户 / Beyond GDP: Home Production, Depreciation & Disaster Paradox | ../economics/macro/how-an-economy-is-measured/#ch9 | how-an-economy-is-measured |
+| 利率平价与套利交易 / Interest parity and the carry trade | ../economics/money/why-one-rate-moves-everything/#ch9 | why-one-rate-moves-everything |
 | 你的支出是别人的收入 / Your spending is someone else's income | ../demos/scarcity-moves/#c8 | scarcity-moves |
 | 前沿测量：免费数字品、GDP-B、2025 SNA 与实时预测 / Measurement Frontier: Free Digital Goods, GDP-B, 2025 SNA & Nowcasting | ../economics/macro/how-an-economy-is-measured/#ch10 | how-an-economy-is-measured |
 | 收入流向稀缺的一方 / Income flows to the scarce | ../demos/scarcity-moves/#c9 | scarcity-moves |
+| 零利率下限、前瞻指引与量化宽松 / Zero lower bound, forward guidance and QE | ../economics/money/why-one-rate-moves-everything/#ch10 | why-one-rate-moves-everything |
+| 政府债务动态与 r − g / Government debt dynamics and r − g | ../economics/money/why-one-rate-moves-everything/#ch11 | why-one-rate-moves-everything |
 | 制度与信任 / Institutions and trust | ../demos/scarcity-moves/#c10 | scarcity-moves |
 | AI：思考的价格崩塌 / AI: the price of thinking collapses | ../demos/scarcity-moves/#c11 | scarcity-moves |
+| 2026 年底的主要央行与仍在争论的问题 / Major central banks in late 2026 and the open debates | ../economics/money/why-one-rate-moves-everything/#ch12 | why-one-rate-moves-everything |
 | 工作与工资：AI 替代的是任务 / Work and wages: AI replaces tasks | ../demos/scarcity-moves/#c12 | scarcity-moves |
 | 什么变便宜，什么变贵 / What gets cheaper, what gets dearer | ../demos/scarcity-moves/#c13 | scarcity-moves |
 | AI 之后的整体预言 / A forecast for after AI | ../demos/scarcity-moves/#c14 | scarcity-moves |
@@ -3429,13 +3525,24 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 基站切换与迟滞 / Cell handover and hysteresis | ../tech/devices/inside-a-phone/#handover | inside-a-phone |
 | 电池内阻：电量为什么会跳 / Battery internal resistance: why the percentage jumps | ../tech/devices/inside-a-phone/#battery | inside-a-phone |
 | 看懂任何设备的三个问题 / Three questions for any device | ../tech/devices/inside-a-phone/#method | inside-a-phone |
+| 掺杂与载流子 / Doping and carriers | ../tech/semiconductors/why-chips-are-hard/#ch1 | why-chips-are-hard |
+| pn 结与二极管 / The pn junction and diode | ../tech/semiconductors/why-chips-are-hard/#ch2 | why-chips-are-hard |
+| MOSFET 与亚阈值摆幅 / MOSFET and subthreshold swing | ../tech/semiconductors/why-chips-are-hard/#ch3 | why-chips-are-hard |
+| 登纳德缩放的终结 / The end of Dennard scaling | ../tech/semiconductors/why-chips-are-hard/#ch4 | why-chips-are-hard |
+| 光刻分辨率 / Lithographic resolution | ../tech/semiconductors/why-chips-are-hard/#ch5 | why-chips-are-hard |
+| EUV 光刻 / EUV lithography | ../tech/semiconductors/why-chips-are-hard/#ch6 | why-chips-are-hard |
+| 工艺节点与晶体管密度 / Process nodes and transistor density | ../tech/semiconductors/why-chips-are-hard/#ch7 | why-chips-are-hard |
+| FinFET、全环绕栅极与 CFET / FinFET, gate-all-around and CFET | ../tech/semiconductors/why-chips-are-hard/#ch8 | why-chips-are-hard |
+| 导线电阻与 RC 延迟 / Wire resistance and RC delay | ../tech/semiconductors/why-chips-are-hard/#ch9 | why-chips-are-hard |
+| 良率与晶圆成本 / Yield and wafer cost | ../tech/semiconductors/why-chips-are-hard/#ch10 | why-chips-are-hard |
+| 半导体前沿（2026） / Semiconductor frontier (2026) | ../tech/semiconductors/why-chips-are-hard/#ch11 | why-chips-are-hard |
 
 <!-- /GENERATED:atlas-nodes -->
 
 <!-- GENERATED:registry-concepts -->
 ## 页面 → 概念 → 锚点（生成，勿手改）
 
-243 个页面拥有 665 个图谱概念 · 由 scripts/build-registry.cjs 从 site-registry.json 生成（概念 = atlas/data.js 里 primary 课程是该页的节点；顺序同首页登记顺序）。登记或改动页面后重跑 `node scripts/build-registry.cjs`；不要再在本文件里手写逐页概念表（2026-11-16 起，上面的手写表保留为历史记录）。
+252 个页面拥有 772 个图谱概念 · 由 scripts/build-registry.cjs 从 site-registry.json 生成（概念 = atlas/data.js 里 primary 课程是该页的节点；顺序同首页登记顺序）。登记或改动页面后重跑 `node scripts/build-registry.cjs`；不要再在本文件里手写逐页概念表（2026-11-16 起，上面的手写表保留为历史记录）。
 
 ### 冰冻肥皂泡 · 水膜里的结晶 / Frozen Soap Bubbles · Ice in a Thin Film
 
@@ -5802,6 +5909,176 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 概念 | 深链 |
 | --- | --- |
 | 利率与债券价格 · 利率升，债价跌 / Interest rates & bond prices · rates up, prices down | `investment/rates/interest-rates-bonds/#step3` |
+
+### 原子为什么会粘在一起 / Why Atoms Stick Together
+
+`chemistry/matter/why-atoms-stick-together/` · essay
+
+| 概念 | 深链 |
+| --- | --- |
+| 关得越紧动能越高：盒子里的电子 / Confinement costs kinetic energy: the particle in a box | `chemistry/matter/why-atoms-stick-together/#ch1` |
+| H₂⁺ 与原子轨道线性组合 / H₂⁺ and the linear combination of atomic orbitals | `chemistry/matter/why-atoms-stick-together/#ch2` |
+| 分子轨道填充与键级 / Filling molecular orbitals and bond order | `chemistry/matter/why-atoms-stick-together/#ch3` |
+| Hückel 模型、离域能与芳香性 / The Hückel model, delocalisation energy and aromaticity | `chemistry/matter/why-atoms-stick-together/#ch3` |
+| 从共价键到离子键：电负性与极性 / From covalent to ionic: electronegativity and polarity | `chemistry/matter/why-atoms-stick-together/#ch4` |
+| 马德隆常数、晶格能与玻恩–哈伯循环 / Madelung constant, lattice energy and the Born–Haber cycle | `chemistry/matter/why-atoms-stick-together/#ch4` |
+| 能带与带隙：导体、半导体、绝缘体 / Energy bands and the band gap: conductors, semiconductors, insulators | `chemistry/matter/why-atoms-stick-together/#ch5` |
+| 电子对互斥与杂化轨道 / Electron-pair repulsion and hybrid orbitals | `chemistry/matter/why-atoms-stick-together/#ch6` |
+| 分子间作用力：色散力、偶极力、氢键 / Intermolecular forces: dispersion, dipole and hydrogen bonds | `chemistry/matter/why-atoms-stick-together/#ch7` |
+| Lennard-Jones 势与分子动力学 / The Lennard-Jones potential and molecular dynamics | `chemistry/matter/why-atoms-stick-together/#ch7` |
+| 结构决定性质：金刚石、石墨、金属、陶瓷 / Structure decides properties: diamond, graphite, metals, ceramics | `chemistry/matter/why-atoms-stick-together/#ch8` |
+| 高分子链与熵弹性 / Polymer chains and entropic elasticity | `chemistry/matter/why-atoms-stick-together/#ch8` |
+| 蛋白质折叠、Levinthal 佯谬与 HP 模型 / Protein folding, Levinthal's paradox and the HP model | `chemistry/matter/why-atoms-stick-together/#ch9` |
+| 电子结构计算的前沿：DFT、机器学习势、AlphaFold、材料生成 / The frontier of electronic-structure calculation: DFT, ML potentials, AlphaFold, generative materials | `chemistry/matter/why-atoms-stick-together/#ch10` |
+| 看一样材料先问四件事 / Four questions to ask of any material | `chemistry/matter/why-atoms-stick-together/#ch11` |
+
+### 电池为什么就是装不下更多电 / Why Batteries Just Can't Hold More Charge
+
+`chemistry/reactions/why-batteries-hold-so-little/` · essay
+
+| 概念 | 深链 |
+| --- | --- |
+| 电池电压与半反应 / Cell voltage from two half-reactions | `chemistry/reactions/why-batteries-hold-so-little/#ch1` |
+| 比容量与电芯能量密度 / Specific capacity and cell energy density | `chemistry/reactions/why-batteries-hold-so-little/#ch2` |
+| 电压曲线：固溶体与两相 / Voltage curves: solid solution versus two phases | `chemistry/reactions/why-batteries-hold-so-little/#ch3` |
+| 颗粒里的固相扩散 / Solid-state diffusion in an electrode particle | `chemistry/reactions/why-batteries-hold-so-little/#ch4` |
+| 恒流-恒压充电与快充极限 / CC-CV charging and the limits of fast charging | `chemistry/reactions/why-batteries-hold-so-little/#ch5` |
+| 热失控 / Thermal runaway | `chemistry/reactions/why-batteries-hold-so-little/#ch6` |
+| 电池衰老：SEI 与循环 / Battery ageing: SEI growth and cycling | `chemistry/reactions/why-batteries-hold-so-little/#ch7` |
+| 电池价格的学习曲线 / The learning curve of battery prices | `chemistry/reactions/why-batteries-hold-so-little/#ch8` |
+| 电池前沿（2026）：固态、硅负极、钠离子、快充 / The battery frontier (2026): solid-state, silicon, sodium-ion, fast charging | `chemistry/reactions/why-batteries-hold-so-little/#ch9` |
+
+### 聊天 AI 是怎么“写”出一句话的 / How a Chatbot Writes a Sentence
+
+`computing/ml/how-a-chatbot-writes/` · essay
+
+| 概念 | 深链 |
+| --- | --- |
+| token 与 BPE 分词 / Tokens and BPE tokenization | `computing/ml/how-a-chatbot-writes/#ch1` |
+| 预测下一个 token（二元模型） / Predicting the next token (bigram model) | `computing/ml/how-a-chatbot-writes/#ch2` |
+| n 元模型与数据稀疏 / n-gram models and data sparsity | `computing/ml/how-a-chatbot-writes/#ch3` |
+| 词向量：把词变成一串数 / Word vectors: words as lists of numbers | `computing/ml/how-a-chatbot-writes/#ch4` |
+| 一个注意力头怎么算 / How one attention head computes | `computing/ml/how-a-chatbot-writes/#ch5` |
+| 采样温度、top-k 与 top-p / Sampling temperature, top-k and top-p | `computing/ml/how-a-chatbot-writes/#ch6` |
+| 训练：用梯度下降压低交叉熵 / Training: gradient descent on cross-entropy | `computing/ml/how-a-chatbot-writes/#ch7` |
+| 一次一个 token 的生成循环与规模 / The token-by-token loop, and scale | `computing/ml/how-a-chatbot-writes/#ch8` |
+| 带着三个问题用聊天 AI / Three questions to bring to a chatbot | `computing/ml/how-a-chatbot-writes/#ch9` |
+
+### 造出并运行一个最前沿的大语言模型，需要什么 / What It Takes to Build and Run a Frontier Large Language Model
+
+`computing/ml/what-a-frontier-model-takes/` · essay
+
+| 概念 | 深链 |
+| --- | --- |
+| Transformer 的一层 / The transformer block | `computing/ml/what-a-frontier-model-takes/#ch1` |
+| 归纳头 / Induction heads | `computing/ml/what-a-frontier-model-takes/#ch1` |
+| 残差连接与层归一化 / Residual connections and layer normalisation | `computing/ml/what-a-frontier-model-takes/#ch2` |
+| 参数量与每个 token 的运算量 / Parameter count and FLOPs per token | `computing/ml/what-a-frontier-model-takes/#ch3` |
+| 训练曲线与能力突然出现 / The training curve and sudden abilities | `computing/ml/what-a-frontier-model-takes/#ch4` |
+| 规模定律与 Chinchilla 最优 / Scaling laws and Chinchilla-optimal training | `computing/ml/what-a-frontier-model-takes/#ch5` |
+| 训练一个大模型要多少钱 / What training a large model costs | `computing/ml/what-a-frontier-model-takes/#ch6` |
+| 微调、RLHF 与 LoRA / Fine-tuning, RLHF and LoRA | `computing/ml/what-a-frontier-model-takes/#ch7` |
+| 基准测试的误差、饱和与污染 / Benchmark noise, saturation and contamination | `computing/ml/what-a-frontier-model-takes/#ch7` |
+| 推理时缓存键和值：以内存换运算 / Caching keys and values at inference: memory for compute | `computing/ml/what-a-frontier-model-takes/#ch8` |
+| 推理的屋顶线：为什么受内存带宽限制 / The inference roofline: why decoding is memory-bound | `computing/ml/what-a-frontier-model-takes/#ch9` |
+| 量化：把权重压成更少的位 / Quantisation: fewer bits per weight | `computing/ml/what-a-frontier-model-takes/#ch9` |
+| 专家混合（MoE） / Mixture of experts (MoE) | `computing/ml/what-a-frontier-model-takes/#ch10` |
+| 投机解码、蒸馏与推理 token / Speculative decoding, distillation and reasoning tokens | `computing/ml/what-a-frontier-model-takes/#ch10` |
+| 可解释性：消融、叠加与稀疏自编码器 / Interpretability: ablation, superposition and sparse autoencoders | `computing/ml/what-a-frontier-model-takes/#ch11` |
+| 2026 年的前沿：算力、价格、考卷与法规 / The frontier in 2026: compute, prices, tests and law | `computing/ml/what-a-frontier-model-takes/#ch12` |
+| 读大模型新闻时问的五个问题 / Five questions for the next AI headline | `computing/ml/what-a-frontier-model-takes/#ch13` |
+
+### 量子计算机到底能做什么 / What Quantum Computers Can Actually Do
+
+`computing/quantum/what-quantum-computers-do/` · essay
+
+| 概念 | 深链 |
+| --- | --- |
+| 一个量子比特：两个复数 / One qubit: two complex numbers | `computing/quantum/what-quantum-computers-do/#ch1` |
+| 振幅相互抵消：马赫–曾德尔干涉仪 / Amplitudes cancel: the Mach–Zehnder interferometer | `computing/quantum/what-quantum-computers-do/#ch2` |
+| 纠缠与 CHSH 游戏 / Entanglement and the CHSH game | `computing/quantum/what-quantum-computers-do/#ch3` |
+| 2ⁿ 个振幅与霍列沃界 / 2ⁿ amplitudes and the Holevo bound | `computing/quantum/what-quantum-computers-do/#ch4` |
+| 德意志–约萨算法 / The Deutsch–Jozsa algorithm | `computing/quantum/what-quantum-computers-do/#ch5` |
+| 格罗弗搜索 / Grover search | `computing/quantum/what-quantum-computers-do/#ch6` |
+| 肖尔算法与 RSA / Shor's algorithm and RSA | `computing/quantum/what-quantum-computers-do/#ch7` |
+| 哪些问题有加速：BQP 与平方加速的打平点 / Which problems speed up: BQP and the quadratic crossover | `computing/quantum/what-quantum-computers-do/#ch8` |
+| 噪声与退相干 / Noise and decoherence | `computing/quantum/what-quantum-computers-do/#ch9` |
+| 量子纠错：重复码与表面码 / Quantum error correction: repetition and surface codes | `computing/quantum/what-quantum-computers-do/#ch10` |
+| 2026 年的前沿：硬件、量子优势与资源估计 / The 2026 frontier: hardware, advantage claims and resource estimates | `computing/quantum/what-quantum-computers-do/#ch11` |
+| 读量子新闻的五个问题 / Five questions for reading quantum news | `computing/quantum/what-quantum-computers-do/#ch12` |
+
+### 当着所有人的面约定一个秘密 / Agreeing on a Secret in Plain Sight
+
+`computing/systems/a-secret-in-public/` · essay
+
+| 概念 | 深链 |
+| --- | --- |
+| 密钥分发问题 / The key-distribution problem | `computing/systems/a-secret-in-public/#ch1` |
+| 模运算与有限域 / Modular arithmetic and finite fields | `computing/systems/a-secret-in-public/#mod` |
+| 单向函数与离散对数 / One-way functions and the discrete logarithm | `computing/systems/a-secret-in-public/#ch2` |
+| Diffie–Hellman 密钥交换与中间人攻击 / Diffie–Hellman key exchange and the man in the middle | `computing/systems/a-secret-in-public/#ch3` |
+| RSA 签名、可塑性与填充 / RSA signatures, malleability and padding | `computing/systems/a-secret-in-public/#ch4` |
+| 椭圆曲线密码 / Elliptic-curve cryptography | `computing/systems/a-secret-in-public/#ch5` |
+| 签名、证书链与 TLS 握手 / Signatures, certificate chains and the TLS handshake | `computing/systems/a-secret-in-public/#ch6` |
+| 安全位数与数域筛 / Bits of security and the number field sieve | `computing/systems/a-secret-in-public/#ch7` |
+| 量子威胁：Shor、Grover 与先存后解 / The quantum threat: Shor, Grover, harvest now decrypt later | `computing/systems/a-secret-in-public/#ch8` |
+| 格、LWE 与 ML-KEM / Lattices, learning with errors and ML-KEM | `computing/systems/a-secret-in-public/#ch9` |
+| 后量子迁移的前沿（2026 年） / The post-quantum frontier (2026) | `computing/systems/a-secret-in-public/#ch10` |
+
+### 央行调一个利率，为什么所有东西的价格都跟着动 / Why One Central-Bank Rate Moves the Price of Everything
+
+`economics/money/why-one-rate-moves-everything/` · essay
+
+| 概念 | 深链 |
+| --- | --- |
+| 明天的钱今天值多少：折现 / What tomorrow's money is worth today | `economics/money/why-one-rate-moves-everything/#ch1` |
+| 债券久期与凸性 / Bond duration and convexity | `economics/money/why-one-rate-moves-everything/#ch2` |
+| 收益率曲线、即期利率与远期利率 / Yield curve, spot and forward rates | `economics/money/why-one-rate-moves-everything/#ch3` |
+| 预期假说、期限溢价与收益率曲线倒挂 / Expectations, term premium and yield-curve inversion | `economics/money/why-one-rate-moves-everything/#ch4` |
+| 准备金、利率走廊与地板体系 / Reserves, the corridor and the floor system | `economics/money/why-one-rate-moves-everything/#ch5` |
+| 泰勒规则与自然利率 r* / The Taylor rule and the neutral rate r* | `economics/money/why-one-rate-moves-everything/#ch6` |
+| 新凯恩斯模型与菲利普斯曲线 / The New Keynesian model and the Phillips curve | `economics/money/why-one-rate-moves-everything/#ch7` |
+| 股票久期与房贷可负担性 / Equity duration and mortgage affordability | `economics/money/why-one-rate-moves-everything/#ch8` |
+| 利率平价与套利交易 / Interest parity and the carry trade | `economics/money/why-one-rate-moves-everything/#ch9` |
+| 零利率下限、前瞻指引与量化宽松 / Zero lower bound, forward guidance and QE | `economics/money/why-one-rate-moves-everything/#ch10` |
+| 政府债务动态与 r − g / Government debt dynamics and r − g | `economics/money/why-one-rate-moves-everything/#ch11` |
+| 2026 年底的主要央行与仍在争论的问题 / Major central banks in late 2026 and the open debates | `economics/money/why-one-rate-moves-everything/#ch12` |
+
+### 核聚变为什么总是“还要三十年” / Why Fusion Is Always “Thirty Years Away”
+
+`physics/modern/why-fusion-is-hard/` · essay
+
+| 概念 | 深链 |
+| --- | --- |
+| 结合能与聚变放能 / Binding energy and fusion yield | `physics/modern/why-fusion-is-hard/#ch1` |
+| 库仑势垒与热运动 / The Coulomb barrier and thermal motion | `physics/modern/why-fusion-is-hard/#ch2` |
+| 隧穿、伽莫夫峰与反应率 / Tunnelling, the Gamow peak and reactivity | `physics/modern/why-fusion-is-hard/#ch3` |
+| 劳森判据与三重积 / Lawson criterion and the triple product | `physics/modern/why-fusion-is-hard/#ch4` |
+| 磁约束：漂移与扭转磁场 / Magnetic confinement: drifts and twisted fields | `physics/modern/why-fusion-is-hard/#ch5` |
+| 约束定标律与高温超导 / Confinement scaling and high-temperature superconductors | `physics/modern/why-fusion-is-hard/#ch6` |
+| 惯性约束与靶增益 / Inertial confinement and target gain | `physics/modern/why-fusion-is-hard/#ch7` |
+| Q_sci、靶增益与 Q_eng / Q_sci, target gain and Q_eng | `physics/modern/why-fusion-is-hard/#ch8` |
+| 氚增殖、中子损伤与偏滤器 / Tritium breeding, neutron damage and the divertor | `physics/modern/why-fusion-is-hard/#ch9` |
+| 聚变前沿：纪录与开放问题 / The fusion frontier: records and open problems | `physics/modern/why-fusion-is-hard/#ch10` |
+| “还要三十年”从哪来 / Where “thirty years away” comes from | `physics/modern/why-fusion-is-hard/#ch11` |
+
+### 芯片为什么越来越难做 / Why Chips Are Getting Harder to Make
+
+`tech/semiconductors/why-chips-are-hard/` · essay
+
+| 概念 | 深链 |
+| --- | --- |
+| 掺杂与载流子 / Doping and carriers | `tech/semiconductors/why-chips-are-hard/#ch1` |
+| pn 结与二极管 / The pn junction and diode | `tech/semiconductors/why-chips-are-hard/#ch2` |
+| MOSFET 与亚阈值摆幅 / MOSFET and subthreshold swing | `tech/semiconductors/why-chips-are-hard/#ch3` |
+| 登纳德缩放的终结 / The end of Dennard scaling | `tech/semiconductors/why-chips-are-hard/#ch4` |
+| 光刻分辨率 / Lithographic resolution | `tech/semiconductors/why-chips-are-hard/#ch5` |
+| EUV 光刻 / EUV lithography | `tech/semiconductors/why-chips-are-hard/#ch6` |
+| 工艺节点与晶体管密度 / Process nodes and transistor density | `tech/semiconductors/why-chips-are-hard/#ch7` |
+| FinFET、全环绕栅极与 CFET / FinFET, gate-all-around and CFET | `tech/semiconductors/why-chips-are-hard/#ch8` |
+| 导线电阻与 RC 延迟 / Wire resistance and RC delay | `tech/semiconductors/why-chips-are-hard/#ch9` |
+| 良率与晶圆成本 / Yield and wafer cost | `tech/semiconductors/why-chips-are-hard/#ch10` |
+| 半导体前沿（2026） / Semiconductor frontier (2026) | `tech/semiconductors/why-chips-are-hard/#ch11` |
 
 <!-- /GENERATED:registry-concepts -->
 

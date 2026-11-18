@@ -444,6 +444,24 @@ anchor and aliases. It is a schema-2 fragment `atlas/graph/lessons/<slug>.json`:
   where-money-comes-from #ch2 and was left. A before/after sweep of the 6,898 existing aliases and tags changed exactly 浮点数, IEEE 754
   and the tag "Floating Point" (all to #ch1). `tests/concept-search.cjs` pins 23 zh/en pairs (21 on the new page, 2 on owners that keep
   their words). The search chunks total 365,637 bytes; no new chunk.
+- Nine essays (2026-11-18, specs/essays-status-20261119.md): how-a-chatbot-writes (9 concepts), what-a-frontier-model-takes (17),
+  a-secret-in-public (11) and what-quantum-computers-do (12) → computing; why-chips-are-hard (11) → tech; why-fusion-is-hard (11) →
+  circuits (an energy balance; thermodynamics sits there, and the physics default, waves, does not fit); why-batteries-hold-so-little (9)
+  and why-atoms-stick-together (15) → matter; why-one-rate-moves-everything (12) → society. 107 concepts, 775 in all; the up-front index
+  is 153,348 bytes, over the old 150,000 limit, which the team lead raised to 160,000 as a stop-gap (see "Limits"). 9 hand-written edges,
+  only where a chapter links another page: why-atoms-stick-together #ch5 → why-chips-are-hard #ch1; why-chips-are-hard #ch3 →
+  how-power-reaches-the-cpu #ch2, #ch4 → why-compute-waits-for-memory #ch5, #ch10 → how-a-computer-is-wired #ch7 and
+  why-compute-waits-for-memory #ch10; how-a-chatbot-writes #ch5 → what-a-frontier-model-takes #ch1; why-compute-waits-for-memory #ch8 →
+  what-a-frontier-model-takes #ch8; what-quantum-computers-do #ch7 → a-secret-in-public #ch8; a-secret-in-public #ch4 →
+  how-a-computer-boots #ch8. Alias decisions: a before/after sweep of the 7,078 existing aliases and tags first found 32 that the new
+  pages took; each was given back by removing the new page's alias or renaming its concept (details in each specs/<slug>.md), and the
+  final sweep changes none. Owners named by HANDOFF keep their words: chiplet words (how-a-computer-is-wired #ch7), ECC
+  (how-memory-talks #ch8), chain of trust (how-a-computer-boots #ch8), DMA, 模运算 / 欧拉定理 / 费马小定理 (rsa-encryption #step3).
+  ChatGPT-type queries land on how-a-chatbot-writes #ch8; 推理模型是什么 / reasoning model on what-a-frontier-model-takes #ch7.
+  Words that no page had as an alias but that previously reached an existing page by title or description and now reach a new essay
+  (left, listed in the status file): 晶体管 / transistor, 隧穿, 纠错, 签名, 量化, MoE, 算力, 漏电, 背面供电, Transformer是什么.
+  `tests/concept-search.cjs` pins 43 zh/en pairs (28 on the new pages, 15 on owners that keep their words). Search is 775 concepts in
+  16 chunks (434,915 bytes); new chunks computing-5.js, society-1.js and society-2.js (society.js split).
 
 ### Commands for the integrator
 

@@ -1,7 +1,18 @@
 {
  "_generated": "by scripts/build-pages.cjs; do not edit",
  "page": "how-power-reaches-the-cpu",
- "refs": [],
+ "refs": [
+  {
+   "from": "ch2.p1",
+   "to": "why-chips-are-hard",
+   "anchor": "ch3"
+  },
+  {
+   "from": "ch12.links",
+   "to": "why-chips-are-hard",
+   "anchor": null
+  }
+ ],
  "backlinks": [
   {
    "from": "how-a-computer-boots",

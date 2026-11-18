@@ -775,7 +775,7 @@ toc: 收尾：写数值代码前问三件事
 
 一句话：浮点数是一把刻度不均匀的尺子，每量一次都要就近对一格；SIMD 和矩阵单元是一次量一排、一块的尺子。写数值代码，就是按你的问题，在"多准""多大""多快"之间挑一把尺子。 {#sum .sum}
 
-相关的文章：[[switches-that-compute]]（门电路、加法器、第一次见到浮点数），[[how-a-cpu-runs-a-program]]（指令和流水线），[[how-a-cpu-guesses-ahead]]（分支预测和乱序执行：硬件自己找出互不依赖的指令），[[how-cpu-caches-work]]（缓存行和对齐），[[why-compute-waits-for-memory]]（屋顶线和大模型推理），[[how-a-gpu-computes]]（张量核心和 GPU 上的数字格式）。另一篇讲大模型训练和推理开销的长文（《造出并运行一个最前沿的大语言模型，需要什么》）还在写，登记后这里会加上链接。 {#links}
+相关的文章：[[switches-that-compute]]（门电路、加法器、第一次见到浮点数），[[how-a-cpu-runs-a-program]]（指令和流水线），[[how-a-cpu-guesses-ahead]]（分支预测和乱序执行：硬件自己找出互不依赖的指令），[[how-cpu-caches-work]]（缓存行和对齐），[[why-compute-waits-for-memory]]（屋顶线和大模型推理），[[how-a-gpu-computes]]（张量核心和 GPU 上的数字格式）。另一篇长文[[what-a-frontier-model-takes|《造出并运行一个最前沿的大语言模型，需要什么》]]讲大模型训练和推理的开销。 {#links}
 
 ::: footer
 **来源。**IEEE Std 754-2019，IEEE Standard for Floating-Point Arithmetic（格式参数、舍入、特殊值；第 1–4 章）。D. Goldberg，What Every Computer Scientist Should Know About Floating-Point Arithmetic，ACM Computing Surveys 23(1)，1991。N. J. Higham，Accuracy and Stability of Numerical Algorithms，第 2 版，SIAM 2002（求和误差、Kahan 求和）。W. Kahan，Further remarks on reducing truncation errors，CACM 8(1)，1965。B. P. Welford，Note on a method for calculating corrected sums of squares and products，Technometrics 4(3)，1962。

@@ -198,6 +198,15 @@ types ("为什么要打疫苗", "how does my phone know where I am"), not only t
 | how-pixels-reach-a-screen | computing/systems/how-pixels-reach-a-screen/ | 13 (`#ch1…#ch13`) | computing | `ESSAY_BASE_URL` |
 | how-power-reaches-the-cpu | computing/systems/how-power-reaches-the-cpu/ | 12 (`#ch1…#ch12`) | computing | `ESSAY_BASE_URL` |
 | how-a-nic-moves-packets | computing/systems/how-a-nic-moves-packets/ | 14 (`#ch1…#ch14`) | computing | `ESSAY_BASE_URL` |
+| how-a-chatbot-writes | computing/ml/how-a-chatbot-writes/ | 9 (`#ch1…#ch9`) | computing | `ESSAY_BASE_URL` |
+| what-a-frontier-model-takes | computing/ml/what-a-frontier-model-takes/ | 17 concepts in 13 chapters (`#ch1…#ch13`) | computing | `ESSAY_BASE_URL` |
+| a-secret-in-public | computing/systems/a-secret-in-public/ | 11 concepts (`#ch1…#ch10`, `#mod`) | computing | `ESSAY_BASE_URL` |
+| what-quantum-computers-do | computing/quantum/what-quantum-computers-do/ | 12 (`#ch1…#ch12`) | computing | `QC_BASE_URL` |
+| why-chips-are-hard | tech/semiconductors/why-chips-are-hard/ | 11 concepts in 12 chapters (`#ch1…#ch11`) | tech | `ESSAY_BASE_URL` |
+| why-fusion-is-hard | physics/modern/why-fusion-is-hard/ | 11 (`#ch1…#ch11`) | circuits | `ESSAY_BASE_URL` |
+| why-batteries-hold-so-little | chemistry/reactions/why-batteries-hold-so-little/ | 9 concepts in 10 chapters (`#ch1…#ch9`) | matter | `ESSAY_BASE_URL` |
+| why-atoms-stick-together | chemistry/matter/why-atoms-stick-together/ | 15 concepts in 11 chapters (`#ch1…#ch11`) | matter | `ESSAY_BASE_URL` |
+| why-one-rate-moves-everything | economics/money/why-one-rate-moves-everything/ | 12 concepts in 13 chapters (`#ch1…#ch12`) | society | `ESSAY_BASE_URL` |
 
 The eleven from 2026-11-11, the two food essays of 2026-11-12 and the five storage essays of 2026-11-14/15
 (what-a-drive-is-made-of, how-sata-works, how-sas-works, how-usb-drives-talk, storage-over-a-network) and the three bus essays of
@@ -516,6 +525,7 @@ said the series might cover CXL later; ch8.p5 (B5, small buses) stays plain text
 A6/boot registrar (2026-11-15): ch8.p5 links its words BIOS 闪存 / the BIOS flash to how-a-computer-boots #ch3; plain SPI / SPI bus stay on #ch8 here (pinned) while the boot essay takes SPI 闪存 / SPI flash / quad SPI read. Label at 4e4585ca (previous 52df5521), scripts `?v=20261115c`.
 SVG-check registrar (2026-11-16): browser.cjs outside-viewport check skips only <defs> again (not the <svg>), clipped-text SVG skip removed in c3cef443 (test only, page passes at 1280/390/320 zh+en); label at c3cef443 (previous 70d9f2e1), no script change.
 Template Phase 1 batch A (2026-11-16): tests/models.cjs reads index.html through unprefill() and skips generated site.* keys in link/number scans (9a470caf, test only, no-op before conversion). Index markup normalised in bb10f897 (prose-column </div> on its own line and the missing </head>; no rendered change). Label at 9a470caf (previous c3cef443), no script change.
+Nine-essay registrar (2026-11-18): ch7.p1 links why-chips-are-hard #ch10 (the yield arithmetic behind chiplets); tests/models.cjs requires it. Chiplet words (芯粒, chiplet, chiplets) stay on #ch7 (pinned). page.json version 20261118a; label repointed to the cross-link commit.
 
 ### how-thunderbolt-works: 雷电接口是怎么工作的
 
@@ -701,6 +711,7 @@ what-a-frontier-model-takes is named in plain text in ch14 (link it when that dr
 (#ch9) and its ch8 take (#ch7, #ch8), how-a-cpu-runs-a-program ch11.e2 (#ch9) and ch12.links, switches-that-compute ch10.see (#ch1).
 Not verified (BRIEF, review): the AVX10.2 rev 7.0 text, P3109 arXiv 2606.04028, Zen 5's 2 × 512-bit loads per cycle (one source),
 Intel's AMX ops per cycle (via Wikipedia).
+Nine-essay registrar (2026-11-18): ch14.links names what-a-frontier-model-takes as a [[ref]] (it registered). page.json version 20261118a; label repointed to the cross-link commit.
 
 ### how-memory-talks: 内存是怎么和 CPU 说话的
 
@@ -838,6 +849,7 @@ OS/pixels registrar (2026-11-15): ch11.p6 links how-the-os-talks-to-hardware #ch
 Power/NIC registrar (2026-11-15): ch1.p3 links how-power-reaches-the-cpu #ch4 (the regulator that makes the core voltage); power sequencing and PWR_OK stay here. Label at d0821bc1 (previous e916a267), scripts `?v=20261115t`.
 SVG-check registrar (2026-11-16): browser.cjs outside-viewport check skips only <defs> again (not the <svg>), clipped-text SVG skip removed in c3cef443 (test only, page passes at 1280/390/320 zh+en); label at c3cef443 (previous d0821bc1), no script change.
 Template Phase 1 batch A (2026-11-16): tests/models.cjs reads index.html through unprefill() and skips generated site.* keys in link/number scans (9a470caf, test only, no-op before conversion). Label at 9a470caf (previous c3cef443), no script change.
+Nine-essay registrar (2026-11-18): ch8.p2 and ch14.links now link a-secret-in-public as [[refs]] (it registered); tests/models.cjs requires both links instead of forbidding them. Bare "chain of trust" stays here (#ch8, pinned in concept-search; the new essay dropped that alias). page.json version 20261118a; label repointed to the cross-link commit.
 
 ### how-the-os-talks-to-hardware: 操作系统是怎么和硬件说话的
 
@@ -935,6 +947,7 @@ Not verified (BRIEF): the 230 W PPT, Smith 1999, the 14900K's Tau, A16 in produc
 SVG-check registrar (2026-11-16): browser.cjs outside-viewport check skips only <defs> again (not the <svg>), clipped-text SVG skip removed in c3cef443 (test only, page passes at 1280/390/320 zh+en); label at c3cef443 (previous d0821bc1), no script change.
 Template Phase 1 batch A (2026-11-16): tests/models.cjs reads index.html through unprefill() and skips generated site.* keys in link/number scans (9a470caf, test only, no-op before conversion). Label at 9a470caf (previous c3cef443), no script change.
 SIMD/float registrar (2026-11-16): only the generated linked-from rows changed (how-a-cpu-does-math ch11 links #ch2); page.json version 20261116b, label not repointed (generated backlinks are mechanical, D4).
+Nine-essay registrar (2026-11-18): ch2.p1 links why-chips-are-hard #ch3 (why a switched-off transistor leaks) and ch12.links links why-chips-are-hard (it registered; the English list was re-punctuated); tests/models.cjs requires all three. page.json version 20261118a; label repointed to the cross-link commit.
 
 ### how-a-nic-moves-packets: 网卡是怎么搬运数据包的
 
@@ -967,6 +980,20 @@ why-compute-waits-for-memory #ch10, tcp-congestion, distributed-systems and how-
 sizes, DDIO's replacement policy, the ConnectX-7 message rate.
 SVG-check registrar (2026-11-16): browser.cjs outside-viewport check skips only <defs> again (not the <svg>), clipped-text SVG skip removed in c3cef443 (test only, page passes at 1280/390/320 zh+en); label at c3cef443 (previous d0821bc1), no script change.
 Template Phase 1 batch A (2026-11-16): tests/models.cjs reads index.html through unprefill() and skips generated site.* keys in link/number scans (9a470caf, test only, no-op before conversion). Label at 9a470caf (previous c3cef443), no script change.
+
+### The nine essays registered on 2026-11-18
+
+how-a-chatbot-writes, what-a-frontier-model-takes, a-secret-in-public, what-quantum-computers-do, why-chips-are-hard,
+why-fusion-is-hard, why-batteries-hold-so-little, why-atoms-stick-together (a site-template page) and
+why-one-rate-moves-everything. Built by Claude Code (claude-opus-5-5, drafted 2026-11-11; atoms by claude-fable-5-2), finished
+and independently reviewed 2026-11-18/19 by Claude Code sessions (claude-fable-5-2 and claude-opus-5-5); English drafted by
+claude-haiku-5-5 and corrected by the reviewers. Each commit's trailers name builder and reviewers exactly. Essay commits 5f65e9f3,
+4a16e24b, 1bfc5702, b9d1df78, 9a934eae, 25ab7a91, b60bb4cd, 351003c0, f7e8b240; registration and first labels 046b13df. New subtopics
+computing/quantum and tech/semiconductors (with redirect stubs). Regions: the four computing essays → computing, chips → tech, fusion →
+circuits (an energy balance; thermodynamics sits there), batteries and atoms → matter, money → society. Per-page alias decisions, links
+and cache keys are in specs/<slug>.md; open items from each review record and the remaining unreviewed drafts are in
+specs/essays-status-20261119.md. The atlas up-front index was raised to 160,000 bytes as a stop-gap for this import
+(specs/atlas-search-index.md "Limits").
 
 ### scarcity-moves: 稀缺会搬家
 

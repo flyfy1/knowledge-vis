@@ -719,6 +719,61 @@ chapters.push(
   ['0.1 + 0.2', 'rounding error', 'computing/systems/switches-that-compute/#ch10'],
   ['FP8 E4M3 E5M2', 'FP8 formats', A6 + '#ch8'],
 );
+// Nine essays registered 2026-11-18 (specs/essays-status-20261119.md). ChatGPT-type questions open the chatbot essay;
+// "reasoning model" opens the frontier essay's post-training chapter. Existing owners keep their words: chiplet words stay
+// on how-a-computer-is-wired #ch7; ECC on how-memory-talks; chain of trust on how-a-computer-boots; DMA on the OS essay;
+// 模运算 / 费马小定理 on rsa-encryption; Dennard scaling on why-compute-waits-for-memory; qubit on quantum-basics;
+// KV cache, duration, electrode potential, threshold voltage, CoWoS and internal resistance where they were.
+const BOT = 'computing/ml/how-a-chatbot-writes/', FM = 'computing/ml/what-a-frontier-model-takes/';
+const SEC = 'computing/systems/a-secret-in-public/', QC = 'computing/quantum/what-quantum-computers-do/';
+const CHIP = 'tech/semiconductors/why-chips-are-hard/', FUS = 'physics/modern/why-fusion-is-hard/';
+const BAT = 'chemistry/reactions/why-batteries-hold-so-little/', RATE = 'economics/money/why-one-rate-moves-everything/';
+const BOND = 'chemistry/matter/why-atoms-stick-together/';
+chapters.push(
+  ['ChatGPT', 'ChatGPT', BOT + '#ch8'],
+  ['ChatGPT是怎么工作的', 'how does ChatGPT work', BOT + '#ch8'],
+  ['什么是token', 'what is a token', BOT + '#ch1'],
+  ['为什么AI回答每次不一样', 'why does AI give different answers', BOT + '#ch6'],
+  ['AI 幻觉', 'hallucination', BOT + '#ch9'],
+  ['推理模型是什么', 'what is a reasoning model', FM + '#ch7'],
+  ['RLHF是什么', 'what is RLHF', FM + '#ch7'],
+  ['困惑度', 'perplexity', FM + '#ch4'],
+  ['缩放定律', 'scaling laws', FM + '#ch5'],
+  ['混合专家', 'mixture of experts', FM + '#ch10'],
+  ['Diffie-Hellman', 'Diffie-Hellman key exchange', SEC + '#ch3'],
+  ['椭圆曲线', 'elliptic curve cryptography', SEC + '#ch5'],
+  ['HTTPS', 'TLS handshake', SEC + '#ch6'],
+  ['量子计算', 'quantum computer', QC],
+  ['Shor 算法', "Shor's algorithm", QC + '#ch7'],
+  ['表面码', 'surface code', QC + '#ch10'],
+  ['核聚变', 'nuclear fusion', FUS],
+  ['劳森判据', 'Lawson criterion', FUS + '#ch4'],
+  ['托卡马克', 'tokamak', FUS + '#ch5'],
+  ['热失控', 'thermal runaway', BAT + '#ch6'],
+  ['能量密度', 'energy density', BAT + '#ch2'],
+  ['固态电池', 'solid-state battery', BAT + '#ch9'],
+  ['收益率曲线', 'yield curve', RATE + '#ch3'],
+  ['泰勒规则', 'Taylor rule', RATE + '#ch6'],
+  ['VSEPR', 'VSEPR', BOND + '#ch6'],
+  ['光刻机', 'EUV lithography', CHIP + '#ch6'],
+  ['暗硅', 'dark silicon', CHIP + '#ch4'],
+  ['pn 结', 'pn junction', CHIP + '#ch2'],
+  ['芯粒', 'chiplets', 'computing/systems/how-a-computer-is-wired/#ch7'],
+  ['ECC 内存', 'ECC', 'computing/systems/how-memory-talks/#ch8'],
+  ['信任链', 'chain of trust', BOOT + '#ch8'],
+  ['DMA', 'DMA', 'computing/systems/how-the-os-talks-to-hardware/#ch7'],
+  ['模运算', 'modular arithmetic', 'computing/systems/rsa-encryption/#step3'],
+  ['费马小定理', "Fermat's little theorem", 'computing/systems/rsa-encryption/#step3'],
+  ['量子比特', 'qubit', 'physics/modern/quantum-basics/#step0'],
+  ['KV 缓存', 'prefill vs decode', 'computing/systems/why-compute-waits-for-memory/#ch8'],
+  ['KV Cache', 'KV cache', 'computing/ml/how-hybrid-attention-remembers/#ch1'],
+  ['久期', 'duration', 'investment/rates/interest-rates-bonds/#step3'],
+  ['电极电势', 'electrode potential', 'chemistry/reactions/electrochemistry/#step2'],
+  ['阈值电压', 'threshold voltage', 'computing/systems/what-a-drive-is-made-of/#ch4'],
+  ['CoWoS', 'CoWoS', 'computing/systems/why-compute-waits-for-memory/#ch9'],
+  ['登纳德缩放', 'Dennard scaling', 'computing/systems/why-compute-waits-for-memory/#ch5'],
+  ['内阻', 'internal resistance', 'tech/devices/inside-a-phone/#battery'],
+);
 for (const [zh, en, href] of chapters) for (const q of [zh, en]) {
   const hit = first(q);
   ok(hit && (hit.href === href || (href.endsWith('/') && hit.href.startsWith(href))), `"${q}" opens ${href} (got ${hit && hit.href})`);

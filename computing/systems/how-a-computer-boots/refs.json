@@ -1,7 +1,18 @@
 {
  "_generated": "by scripts/build-pages.cjs; do not edit",
  "page": "how-a-computer-boots",
- "refs": [],
+ "refs": [
+  {
+   "from": "ch8.p2",
+   "to": "a-secret-in-public",
+   "anchor": null
+  },
+  {
+   "from": "ch14.links",
+   "to": "a-secret-in-public",
+   "anchor": null
+  }
+ ],
  "backlinks": [
   {
    "from": "how-a-computer-is-wired",

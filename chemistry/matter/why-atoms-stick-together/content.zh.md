@@ -345,7 +345,7 @@ say.ins: 原子的能量差很大，N = {N}：带隙宽到 <em>{g} |β|</em>，�
 
 带隙也决定颜色和光电转换：能量小于带隙的光子不被吸收，直接穿过去。金刚石和食盐的带隙比可见光的光子大，所以透明；硅的带隙小于可见光，所以不透明，也所以能做太阳能电池。
 
-这一章是两篇文章的地基：《芯片为什么越来越难做》从带隙讲到掺杂和晶体管，将来讲光伏的那篇从带隙讲到一个光子能换多少电。那两篇目前还没有上线。
+这一章是两篇文章的地基：[[why-chips-are-hard#ch1|《芯片为什么越来越难做》]]从带隙讲到掺杂和晶体管；将来讲光伏的那篇从带隙讲到一个光子能换多少电，那一篇目前还没有上线。
 
 这是一维的一排原子，每个原子只有一条轨道。真实晶体是三维的，每个原子有好几条轨道，会出好几条带，带与带可能交叠（所以镁这样"轨道填满"的元素仍是金属）。|β| = {=ch5.b} eV 是为了折算成 eV 取的示意值，不是哪种材料的参数；电子之间的排斥没有算。 {.take}
 
@@ -700,7 +700,7 @@ toc: 收尾：看到一样东西，问四件事
 
 一句话：原子粘在一起，是因为电子摊在几个核之间比守着一个核能量更低；摊成什么样、摊得多不均匀、连成多大一片，就决定了这样东西是什么脾气。 {#sum .sum}
 
-相关的页面：[[atomic-structure]]、[[periodic-trends]]、[[molecular-shapes]]、[[isomers]]、[[particles-states]]、[[eigenvectors]]、[[quantum-basics]]。几篇还没上线的长文和这篇相接：讲热力学的那篇（一个反应会不会发生、能走多远）接着第 7、9 章讲熵和自由能；《芯片为什么越来越难做》接着第 5 章讲带隙和晶体管；《电池为什么就是装不下更多电》用到第 4 章的离子和晶格。它们登记后这里会加上链接。 {#links}
+相关的页面：[[atomic-structure]]、[[periodic-trends]]、[[molecular-shapes]]、[[isomers]]、[[particles-states]]、[[eigenvectors]]、[[quantum-basics]]。几篇长文和这篇相接：[[why-chips-are-hard|《芯片为什么越来越难做》]]接着第 5 章讲带隙和晶体管；[[why-batteries-hold-so-little|《电池为什么就是装不下更多电》]]用到第 4 章的离子和晶格；讲热力学的那篇（一个反应会不会发生、能走多远）接着第 7、9 章讲熵和自由能，它还没有上线。 {#links}
 
 ::: footer
 **来源。**势阱、H₂⁺ 的 LCAO 积分、Hückel 模型、位力定理：P. Atkins、J. de Paula、J. Keeler，Physical Chemistry，第 11 版（Oxford，2018），第 7、9 章；I. N. Levine，Quantum Chemistry，第 7 版（Pearson，2014），第 13、17 章；ζ 优化见 B. N. Finkelstein、G. E. Horowitz，Z. Phys. 48, 118 (1928)；H₂⁺ 精确解见 L. J. Schaad、W. V. Hicks，J. Chem. Phys. 53, 851 (1970)。成键的动能解释：K. Ruedenberg，Rev. Mod. Phys. 34, 326 (1962)。E. Hückel，Z. Phys. 70, 204 (1931)。电负性与离子性：L. Pauling，The Nature of the Chemical Bond，第 3 版（Cornell，1960）。马德隆常数：H. M. Evjen，Phys. Rev. 39, 675 (1932)；D. Borwein、J. M. Borwein、K. F. Taylor，J. Math. Phys. 26, 2999 (1985)；晶格能与能带：C. Kittel，Introduction to Solid State Physics，第 8 版（Wiley，2005），第 3、7 章。杂化夹角：C. A. Coulson，Valence（Oxford，1952）。Lennard-Jones 势与分子动力学：M. P. Allen、D. J. Tildesley，Computer Simulation of Liquids，第 2 版（Oxford，2017）；氩的参数（ε/k = 119.8 K，σ = 3.405 Å）用的是 L. Verlet，Phys. Rev. 159, 98 (1967) 的取值；速度 Verlet 见 W. C. Swope 等，J. Chem. Phys. 76, 637 (1982)。HP 模型：K. F. Lau、K. A. Dill，Macromolecules 22, 3986 (1989)。Levinthal：C. Levinthal，1969 年会议报告。热化学、沸点、键长、偶极矩、密度：CRC Handbook of Chemistry and Physics 与 NIST 的数据，各教科书通用的数值。 {#sources}

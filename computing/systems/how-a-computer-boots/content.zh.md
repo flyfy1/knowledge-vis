@@ -480,7 +480,7 @@ toc: 每一级先验下一级：安全启动
 
 快递柜不认识你，它只认取件码；码对了，门就开。签名像一个只有寄件方能生成、而谁都能核对的取件码：核对的人不需要知道怎么生成它，只要手里有寄件方公开的那半把钥匙。
 
-具体分两步。先算文件的**哈希**：SHA-256 把任意长的文件压成 32 字节，改动一个比特，结果就面目全非，而且没人能造出另一个哈希相同的文件。再验**签名**：签名的一方用只有自己知道的私钥 d，把哈希 h 算成 s = h<sup>d</sup> mod n；验证的一方用公开的 (n, e) 算 s<sup>e</sup> mod n，看是不是等于 h。没有 d 算不出能通过验证的 s，所以通过了就说明文件是持私钥的人签的、而且一个字节都没变。这就是 RSA 签名；为什么倒推很难，见<a href='../rsa-encryption/'>《RSA 公钥加密》</a>，本系列还在写的《当着所有人的面约定一个秘密》会把公钥的来龙去脉讲全。
+具体分两步。先算文件的**哈希**：SHA-256 把任意长的文件压成 32 字节，改动一个比特，结果就面目全非，而且没人能造出另一个哈希相同的文件。再验**签名**：签名的一方用只有自己知道的私钥 d，把哈希 h 算成 s = h<sup>d</sup> mod n；验证的一方用公开的 (n, e) 算 s<sup>e</sup> mod n，看是不是等于 h。没有 d 算不出能通过验证的 s，所以通过了就说明文件是持私钥的人签的、而且一个字节都没变。这就是 RSA 签名；为什么倒推很难，见<a href='../rsa-encryption/'>《RSA 公钥加密》</a>，[[a-secret-in-public|《当着所有人的面约定一个秘密》]]把公钥的来龙去脉讲全。
 
 固件里存着四组钥匙，都在 NVRAM 变量里。**PK**（平台密钥，通常属于主板厂）决定谁能改 KEK；**KEK** 决定谁能更新 db 和 dbx；**db** 是允许的签名者和哈希；**dbx** 是禁止的——微软的说明写明，验一个文件时必须先查 dbx，只要匹配就不许运行。微软放进 db 的有两类：给 Windows 自己的（Windows Production PCA 2011，现在换成 Windows UEFI CA 2023），和给第三方的（Microsoft UEFI CA 2011，现在拆成 Microsoft UEFI CA 2023 和 Option ROM UEFI CA 2023）。Linux 发行版的做法是：请微软用第三方证书签一个很小的 shim，shim 里带着发行版自己的证书，再由它去验 GRUB 和内核；机器的主人还可以用 MOK（机器所有者密钥）加进自己的钥匙。
 
@@ -837,7 +837,7 @@ toc: 开不了机时问的三件事
 
 回到开头的问题。一颗什么都不知道的 CPU，只靠一个写死的地址找到*第一条指令*；固件先把*内存训练*好，再给设备点名、把*硬件地图*交出去，按 *GPT* 找到硬盘上的引导文件。它确认请进来的不是恶意代码，靠的是三件事：一段改不了的 ROM 和熔丝里的钥匙，一级验一级的*签名*加上会更新的*黑名单*，和 TPM 里只能往前记的*账*。 {#sum .sum tag=div}
 
-相关的文章：<a href='../how-pcie-works/#ch6'>《PCIe 为什么能一代一代翻倍》第 6 章</a>（开机时给设备点名），<a href='../how-a-computer-is-wired/'>《电脑里的零件是怎么连起来的》</a>（芯片组、SPI 和小总线），<a href='../how-virtual-memory-works/'>《虚拟内存是怎么工作的》</a>（内核打开分页以后），<a href='../what-a-drive-is-made-of/'>《硬盘里到底是什么》</a>（扇区和 LBA），<a href='../how-a-cpu-runs-a-program/'>《CPU 是怎么运行一个程序的》</a>（程序计数器和指令）。<a href='../how-memory-talks/#ch7'>《内存是怎么和 CPU 说话的》第 7 章</a>（为什么内存要训练），<a href='../rsa-encryption/'>《RSA 公钥加密》</a>（签名背后的数学）。本系列还在写的《当着所有人的面约定一个秘密》会讲公钥怎么来。 {#links style="margin-top:2em"}
+相关的文章：<a href='../how-pcie-works/#ch6'>《PCIe 为什么能一代一代翻倍》第 6 章</a>（开机时给设备点名），<a href='../how-a-computer-is-wired/'>《电脑里的零件是怎么连起来的》</a>（芯片组、SPI 和小总线），<a href='../how-virtual-memory-works/'>《虚拟内存是怎么工作的》</a>（内核打开分页以后），<a href='../what-a-drive-is-made-of/'>《硬盘里到底是什么》</a>（扇区和 LBA），<a href='../how-a-cpu-runs-a-program/'>《CPU 是怎么运行一个程序的》</a>（程序计数器和指令）。<a href='../how-memory-talks/#ch7'>《内存是怎么和 CPU 说话的》第 7 章</a>（为什么内存要训练），<a href='../rsa-encryption/'>《RSA 公钥加密》</a>（签名背后的数学），[[a-secret-in-public|《当着所有人的面约定一个秘密》]]（公钥是怎么来的）。 {#links style="margin-top:2em"}
 
 ::: footer wrap=none
 电脑是怎么开机的 · 一篇可以动手的长文。模型：ATX 电源上电时序（Intel《ATX 第 3 版多路台式机电源设计指南》修订 2.1a，2023，表 4-2 与 4-10），x86 复位向量与多处理器初始化（Intel《64 与 IA-32 架构软件开发者手册》第 3 卷，订单号 325384-093US，2026 年 9 月，12.1.4 节、11.4 节、12.8.5 节），SPI 闪存读命令（Winbond W25Q256JV 数据手册修订 I，2018），ACPI 表头与 MADT（ACPI 规范，按 edk2 的 Acpi10.h 与 Acpi65.h），GUID 分区表与 CRC32（UEFI 规范第 5 章，按 edk2 的 UefiGpt.h、UefiMultiPhase.h、Mbr.h），SHA-256（FIPS 180-4）与教科书 RSA 签名，签名数据库条目大小（edk2 ImageAuthentication.h），SBAT（rhboot/shim 的 SBAT.md），PCR 扩展（TPM 2.0 库规范第 1 部分修订 1.59，17.2 节），核心叫醒时间（Thomas Gleixner，Linux 补丁说明，2023 年 5 月 4 日）。来源、日期和没有核实的地方见本目录的 BRIEF.md。

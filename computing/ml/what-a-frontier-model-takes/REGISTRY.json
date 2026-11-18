@@ -126,8 +126,8 @@
         "en": "Instruction tuning, reinforcement learning from human feedback and its successors after pretraining; LoRA freezes each matrix and trains a small low-rank one, about ten thousand times fewer parameters on GPT-3."
       },
       "aliases": {
-        "zh": ["RLHF是什么", "微调是什么", "LoRA", "低秩适配", "指令微调", "DPO", "推理模型怎么训练的"],
-        "en": ["what is RLHF", "fine-tuning", "LoRA", "low-rank adaptation", "instruction tuning", "DPO", "how are reasoning models trained"]
+        "zh": ["RLHF是什么", "微调是什么", "LoRA", "低秩适配", "指令微调", "DPO", "推理模型怎么训练的", "推理模型是什么", "推理模型"],
+        "en": ["what is RLHF", "fine-tuning", "LoRA", "low-rank adaptation", "instruction tuning", "DPO", "how are reasoning models trained", "what is a reasoning model", "reasoning model"]
       },
       "anchor": "#ch7",
       "relatedPages": ["overfitting"]
@@ -148,14 +148,14 @@
     },
     {
       "id": "kv-cache",
-      "title": { "zh": "KV 缓存", "en": "The KV cache" },
+      "title": {"zh": "推理时缓存键和值：以内存换运算", "en": "Caching keys and values at inference: memory for compute"},
       "desc": {
         "zh": "生成时把每个位置的键和值算一次就存起来，总运算从随长度平方增长变成线性；代价是缓存随上下文变大，Llama 3 70B 每个 token 327,680 字节。",
         "en": "During generation each position's keys and values are computed once and kept, turning quadratic work into linear; the price is a cache that grows with context, 327,680 bytes per token for Llama 3 70B."
       },
       "aliases": {
-        "zh": ["KV缓存", "KV cache是什么", "为什么长上下文贵", "预填充和解码", "prefill", "缓存命中为什么便宜", "上下文窗口"],
-        "en": ["KV cache", "what is a KV cache", "why is long context expensive", "prefill vs decode", "prompt caching", "context window memory"]
+        "zh": [ "KV cache是什么", "为什么长上下文贵", "预填充和解码", "prefill", "缓存命中为什么便宜", "上下文窗口"],
+        "en": [ "what is a KV cache", "why is long context expensive", "prompt caching", "context window memory"]
       },
       "anchor": "#ch8",
       "relatedPages": ["attention-mechanism"]
@@ -224,7 +224,7 @@
         "en": "Remove the tiny model's heads one at a time: without the induction head second-pass accuracy falls from 100% to 0.6%. Superposition and sparse autoencoders in large models remain a contested research frontier."
       },
       "aliases": {
-        "zh": ["可解释性", "大模型里面在想什么", "消融实验", "叠加", "稀疏自编码器", "SAE", "机械可解释性", "AI是黑箱吗"],
+        "zh": ["可解释性", "大模型里面在想什么", "消融实验", "稀疏自编码器", "SAE", "机械可解释性", "AI是黑箱吗"],
         "en": ["interpretability", "what happens inside an LLM", "ablation", "superposition", "sparse autoencoder", "mechanistic interpretability", "is AI a black box"]
       },
       "anchor": "#ch11",

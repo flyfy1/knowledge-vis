@@ -19,17 +19,17 @@
   "concepts": [
     {
       "id": "qubit-born-rule",
-      "title": { "zh": "量子比特与玻恩规则", "en": "The qubit and the Born rule" },
+      "title": {"zh": "一个量子比特：两个复数", "en": "One qubit: two complex numbers"},
       "desc": { "zh": "一个量子比特是布洛赫球面上的一点；测量只给 0 或 1，概率是振幅模的平方，换个测量方向结果就不同。", "en": "A qubit is a point on the Bloch sphere; a measurement gives only 0 or 1, with probability the squared amplitude, and a different measurement axis gives different odds." },
-      "aliases": { "zh": ["量子比特", "布洛赫球", "玻恩规则", "量子叠加", "叠加态是什么", "同时是0和1吗", "量子测量"], "en": ["qubit", "Bloch sphere", "Born rule", "superposition", "is a qubit 0 and 1 at once", "quantum measurement"] },
+      "aliases": { "zh": [ "布洛赫球", "叠加态是什么", "同时是0和1吗", "量子测量"], "en": [ "Bloch sphere", "superposition", "is a qubit 0 and 1 at once", "quantum measurement"] },
       "anchor": "#ch1",
       "relatedPages": ["quantum-basics", "complex-numbers"]
     },
     {
       "id": "mach-zehnder-interference",
-      "title": { "zh": "干涉：振幅会相互抵消", "en": "Interference: amplitudes cancel" },
+      "title": {"zh": "振幅相互抵消：马赫–曾德尔干涉仪", "en": "Amplitudes cancel: the Mach–Zehnder interferometer"},
       "desc": { "zh": "马赫–曾德尔干涉仪里，两条路的振幅一正一负就抵消；偷看走了哪条路，条纹就消失。", "en": "In a Mach–Zehnder interferometer two paths with opposite amplitudes cancel; look at which path was taken and the fringes vanish." },
-      "aliases": { "zh": ["量子干涉", "马赫曾德尔干涉仪", "振幅抵消", "观测会改变结果吗", "哪条路信息"], "en": ["quantum interference", "Mach-Zehnder interferometer", "amplitudes cancel", "which-path information", "does observing change the result"] },
+      "aliases": { "zh": [ "马赫曾德尔干涉仪", "振幅抵消", "观测会改变结果吗", "哪条路信息"], "en": [ "Mach-Zehnder interferometer", "amplitudes cancel", "which-path information", "does observing change the result"] },
       "anchor": "#ch2",
       "relatedPages": ["interference", "double-slit"]
     },
@@ -69,7 +69,7 @@
       "id": "shor-factoring",
       "title": { "zh": "肖尔算法与 RSA", "en": "Shor's algorithm and RSA" },
       "desc": { "zh": "用量子傅里叶变换找 aˣ mod N 的周期，再用连分数和最大公约数拆出因数；破 RSA-2048 需要的机器规模如何一路下降。", "en": "The quantum Fourier transform finds the period of aˣ mod N, continued fractions and a gcd turn it into factors, and estimates of the machine needed for RSA-2048 keep falling." },
-      "aliases": { "zh": ["肖尔算法", "量子傅里叶变换", "量子计算机能破解密码吗", "量子破解RSA", "周期查找", "量子计算对比特币的威胁"], "en": ["Shor's algorithm", "quantum Fourier transform", "can quantum computers break encryption", "break RSA", "period finding", "quantum threat to bitcoin"] },
+      "aliases": { "zh": ["肖尔算法", "量子傅里叶变换", "量子计算机能破解密码吗", "量子破解RSA", "周期查找", "量子计算对比特币的威胁", "Shor 算法"], "en": ["Shor's algorithm", "quantum Fourier transform", "can quantum computers break encryption", "break RSA", "period finding", "quantum threat to bitcoin"] },
       "anchor": "#ch7",
       "relatedPages": ["rsa-encryption", "fourier"]
     },

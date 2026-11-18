@@ -392,9 +392,9 @@ const sha = b => crypto.createHash('sha256').update(Buffer.from(b)).digest('hex'
   for (const [h, why] of [['../how-pcie-works/#ch6', 'enumeration'], ['../how-memory-talks/#ch7', 'training'], ['../how-a-computer-is-wired/#ch8', 'SPI'], ['../how-thunderbolt-works/#ch8', 'IOMMU'], ['../how-virtual-memory-works/#ch3', 'paging'], ['../what-a-drive-is-made-of/#ch1', 'LBA'], ['../how-the-os-talks-to-hardware/#ch9', 'driver probe, ch11.p6']]) check(`links ${h} (${why})`, hrefs.includes(h), true);
   // the power essay is live since 2026-11-15 (power/NIC registrar): ch1.p3 links its #ch4 (the VRM that makes the core voltage)
   check('ch1.p3 links the power essay #ch4', Z['ch1.p3'].includes("href='../how-power-reaches-the-cpu/#ch4'"), true);
-  // the unregistered sibling is named in plain text, ready for the registrar to link
-  check('a-secret-in-public named in plain text', (all.match(/《当着所有人的面约定一个秘密》/g) || []).length, 2);
-  check('a-secret-in-public not linked yet', /a-secret-in-public/.test(all), false);
+  // the sibling a-secret-in-public is live since 2026-11-18 (essay registrar): both mentions (ch8.p2, ch14.links) are links
+  check('a-secret-in-public named by its title', (all.match(/《当着所有人的面约定一个秘密》/g) || []).length, 2);
+  check('a-secret-in-public linked from ch8.p2 and ch14.links', [/a-secret-in-public\//.test(Z['ch8.p2']), /a-secret-in-public\//.test(Z['ch14.links'])].join(), 'true,true');
   { const cz = { window: {} }; vm.runInNewContext(fs.readFileSync(path.join(DIR, '..', 'a-secret-in-public', 'copy.zh.js'), 'utf8'), cz); check('its title as in its copy', cz.window.ESSAY_COPY.zh['hero.title'], '当着所有人的面约定一个秘密'); }
   // safety: the two incidents stay at advisory level
   for (const k of ['ch9.p2', 'ch9.p3']) { n++; if (/shellcode|payload|绕过步骤|利用步骤|exploit/i.test(Z[k])) { fails++; console.error('FAIL exploit wording in ' + k); } }

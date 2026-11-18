@@ -16,7 +16,7 @@ window.ESSAY_COPY.zh = {
   "hero.kicker": "长文 · 计算机 · 机器学习",
   "hero.title": "造出并运行一个最前沿的大语言模型，需要什么",
   "hero.sub": "一个能在你浏览器里拆开的小模型，加上一路算到几千万美元的账单。",
-  "hero.lead": "《聊天 AI 是怎么“写”出一句话的》讲了 token、注意力、按概率抽签和训练的基本动作。这一篇接着往下走：一个真实的 Transformer 里每一层到底在算什么；它有多少参数、每个 token 要多少次运算；给定一笔算力，模型该做多大、该读多少文本；训练一次要多少芯片、多少天、多少电和钱；上线以后为什么慢、为什么贵，工程师又靠哪些办法把它变快变便宜；最后，2026 年 11 月前沿到了哪里。读完以后，你应该能看懂一份模型技术报告或一场财报电话会里谈算力的那几段，知道哪几个数最要紧，它们又被什么卡住。",
+  "hero.lead": "<a href=\"../how-a-chatbot-writes/\">《聊天 AI 是怎么“写”出一句话的》</a>讲了 token、注意力、按概率抽签和训练的基本动作。这一篇接着往下走：一个真实的 Transformer 里每一层到底在算什么；它有多少参数、每个 token 要多少次运算；给定一笔算力，模型该做多大、该读多少文本；训练一次要多少芯片、多少天、多少电和钱；上线以后为什么慢、为什么贵，工程师又靠哪些办法把它变快变便宜；最后，2026 年 11 月前沿到了哪里。读完以后，你应该能看懂一份模型技术报告或一场财报电话会里谈算力的那几段，知道哪几个数最要紧，它们又被什么卡住。",
   "hero.note": "<strong>写在前面：</strong>这篇文章由 AI（Claude）写成，谈的就是和我同类的东西。页面上的小模型是真的：一个 27,930 个参数的 Transformer，用本目录里的脚本训练，权重随页面一起下载，每次你拖动滑块，它都在你的浏览器里真算一遍。大模型的部分用的是公开论文里的公式和公开的硬件参数；哪些数是模型算出来的，哪些是公司公布的，哪些是第三方的估计，文中都会标明。这里没有投资建议，也没有我自己的预测。",
 
   /* shared names */
@@ -545,7 +545,7 @@ window.ESSAY_COPY.zh = {
   "ch13.q4": "<strong>价格是输入还是输出，上下文多长时的价格？</strong>解码受内存带宽限制，长上下文吃缓存（第 8、9 章）；推理模型的思考 token 也要付钱（第 10 章）。",
   "ch13.q5": "<strong>“能力突然出现”是怎么测的？</strong>第 4 章的小模型真的有一次跳变，但只看对错的指标也会把平滑的进步画成跳变；第 11 章的方法能告诉你，能力是不是来自一个可以指认的机制。",
   "ch13.sum": "一个最前沿的语言模型，是把第 1 章那个只会加和乘的块叠上一百多层，宽到上万；用<em>6 × 参数 × token</em>次运算去训练它，这个数在 2026 年估计已接近 10²⁷；运行时每写一个 token 都要把全部权重从显存读一遍，所以真正的瓶颈常常是<em>内存带宽</em>而不是算力；而降低成本的每一个办法，缓存、批量、量化、专家混合、投机解码，都是在这两个账本之间腾挪。",
-  "ch13.links": "继续读：上一篇《聊天 AI 是怎么“写”出一句话的》讲 token 和抽签；站内的 <a href=\"../attention-mechanism/#step0\">注意力机制</a>、<a href=\"../backpropagation/#step0\">反向传播</a>、<a href=\"../gradient-descent/#step0\">梯度下降</a>、<a href=\"../embeddings/#step0\">词向量</a>、<a href=\"../llm-sampling/#step0\">大模型采样</a>和<a href=\"../overfitting/#step0\">过拟合</a>各自讲一块；硬件那一半在长文<a href=\"../../systems/why-compute-waits-for-memory/\">《为什么计算一直在等内存》</a>和<a href=\"../../systems/switches-that-compute/\">《一堆开关是怎么学会算数的》</a>。",
+  "ch13.links": "继续读：上一篇<a href=\"../how-a-chatbot-writes/\">《聊天 AI 是怎么“写”出一句话的》</a>讲 token 和抽签；站内的 <a href=\"../attention-mechanism/#step0\">注意力机制</a>、<a href=\"../backpropagation/#step0\">反向传播</a>、<a href=\"../gradient-descent/#step0\">梯度下降</a>、<a href=\"../embeddings/#step0\">词向量</a>、<a href=\"../llm-sampling/#step0\">大模型采样</a>和<a href=\"../overfitting/#step0\">过拟合</a>各自讲一块；硬件那一半在长文<a href=\"../../systems/why-compute-waits-for-memory/\">《为什么计算一直在等内存》</a>和<a href=\"../../systems/switches-that-compute/\">《一堆开关是怎么学会算数的》</a>。",
 
   /* ───────── static diagrams (labels, captions, aria) ───────── */
   "dg.block.aria": "示意图：小模型的一层。残差流自上而下贯穿，注意力和 MLP 两个分支各自先归一化、再计算、再把结果加回流里；另一半画的是一个注意力头内部的六步。",

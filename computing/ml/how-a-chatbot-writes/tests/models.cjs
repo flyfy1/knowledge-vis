@@ -177,13 +177,13 @@ for (const L of ['zh', 'en']) {
     ['ch8.tablenote2', '671 billion'], ['ch8.tablenote2', '37 billion'], ['ch8.tablenote2', '14.8 trillion'], ['ch8.tablenote2', '1 trillion parameters'], ['ch8.tablenote2', '32 billion'], ['ch8.tablenote2', '15.5 trillion'], ['ch8.tablenote2', '36 trillion'], ['ch8.tablenote2', '1 million tokens'],
     ['ch6.p4', 'November 2026'], ['ch6.p4', '“bland and strangely repetitive”'], ['ch6.p4', '“unreliable tail”'], ['ch8.p4b', 'Nature'], ['ch9.q3', '1 million tokens']]) saysEn(k, s);
   says('ch6.p4', '“不可靠的尾巴”'); // Holtzman et al.: "the unreliable tail"
-  // ch9.links: the sequel is not registered yet, so it is named in plain text, with its own Chinese title
+  // ch9.links: the sequel is named with its own title and, since it registered (2026-11-18), linked
   { const seqDir = path.join(dir, '..', 'what-a-frontier-model-takes'), seq = { window: {} };
     let title = '造出并运行一个最前沿的大语言模型，需要什么';
     if (fs.existsSync(path.join(seqDir, 'copy.zh.js'))) { vm.runInNewContext(fs.readFileSync(path.join(seqDir, 'copy.zh.js'), 'utf8'), seq); title = seq.window.ESSAY_COPY.zh['hero.title']; }
     says('ch9.links', '《' + title + '》');
     saysEn('ch9.links', '“What It Takes to Build and Run a Frontier Large Language Model”');
-    for (const L of [Z, E]) ok(!/what-a-frontier-model-takes/.test(L['ch9.links']), 'ch9.links does not link the unregistered sequel'); }
+    for (const L of [Z, E]) ok(L['ch9.links'].includes('href=\"../what-a-frontier-model-takes/\"'), 'ch9.links links the sequel'); }
   // English wording: no "(s)" plurals left
   ok(!Object.values(E).some(v => /\(s\)/.test(v)), 'en copy has no "(s)" plurals');
 }

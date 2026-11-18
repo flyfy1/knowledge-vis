@@ -118,7 +118,6 @@
         "zh": [
           "晶体管",
           "场效应管",
-          "阈值电压",
           "亚阈值摆幅",
           "漏电",
           "开关比"
@@ -126,7 +125,6 @@
         "en": [
           "MOSFET",
           "transistor",
-          "threshold voltage",
           "subthreshold swing",
           "60 mV per decade",
           "leakage current"
@@ -149,14 +147,12 @@
       },
       "aliases": {
         "zh": [
-          "登纳德缩放",
           "摩尔定律",
           "功率密度",
           "主频为什么不涨了",
           "暗硅"
         ],
         "en": [
-          "Dennard scaling",
           "Moore's law",
           "power density",
           "why clock speeds stopped rising",
@@ -301,17 +297,13 @@
     },
     {
       "id": "interconnect-rc-delay",
-      "title": {
-        "zh": "导线电阻与 RC 延迟",
-        "en": "Interconnect resistance and RC delay"
-      },
+      "title": {"zh": "导线电阻与 RC 延迟", "en": "Wire resistance and RC delay"},
       "desc": {
         "zh": "细导线的电阻率因表面和晶界散射上升，阻挡层占掉截面；钌等新金属在极小间距下胜过铜。",
         "en": "Narrow wires get more resistive through surface and grain-boundary scattering and lose area to barriers; metals like ruthenium beat copper at the tightest pitches."
       },
       "aliases": {
         "zh": [
-          "互连",
           "导线延迟",
           "RC延迟",
           "铜互连",
@@ -319,7 +311,6 @@
           "背面供电"
         ],
         "en": [
-          "interconnect",
           "RC delay",
           "copper resistivity size effect",
           "ruthenium interconnect",
@@ -333,10 +324,7 @@
     },
     {
       "id": "die-yield-cost",
-      "title": {
-        "zh": "良率、晶圆成本与芯粒",
-        "en": "Yield, wafer cost and chiplets"
-      },
+      "title": {"zh": "良率与晶圆成本", "en": "Yield and wafer cost"},
       "desc": {
         "zh": "泊松与 Murphy 良率模型、每片芯片数和每颗好芯片的成本；为什么大芯片要拆成芯粒。",
         "en": "Poisson and Murphy yield, dies per wafer and cost per good die; why large designs are split into chiplets."
@@ -345,15 +333,12 @@
         "zh": [
           "良率",
           "晶圆成本",
-          "芯粒",
-          "小芯片",
           "先进封装",
           "光罩极限"
         ],
         "en": [
           "die yield",
           "wafer cost",
-          "chiplets",
           "advanced packaging",
           "reticle limit",
           "cost per good die"
@@ -380,7 +365,6 @@
           "台积电",
           "英特尔18A",
           "高NA EUV",
-          "CoWoS",
           "芯片前沿"
         ],
         "en": [
@@ -388,7 +372,6 @@
           "TSMC N2",
           "Intel 18A",
           "High-NA EUV",
-          "CoWoS",
           "semiconductor roadmap"
         ]
       },

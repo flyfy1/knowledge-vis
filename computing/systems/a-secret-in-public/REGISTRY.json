@@ -29,7 +29,7 @@
       "id": "modular-arithmetic-finite-fields",
       "title": { "zh": "模运算与有限域", "en": "Modular arithmetic and finite fields" },
       "desc": { "zh": "只留余数的钟表算术：同余、逆元（当且仅当互质）、质数模数构成的有限域 F_p、费马小定理与欧拉定理、阶和生成元，配一个可以拖动 n 和 a 的乘法表。", "en": "Clock arithmetic that keeps only remainders: congruence, inverses (exactly when coprime), the finite field F_p for a prime modulus, Fermat's little theorem and Euler's theorem, order and generators, with a multiplication table you can drive." },
-      "aliases": { "zh": ["模运算", "同余", "取模", "取余数", "钟表算术", "模逆元", "乘法逆元", "有限域", "伽罗瓦域", "费马小定理", "欧拉定理", "原根", "生成元", "mod 是什么意思", "模运算是什么"], "en": ["modular arithmetic", "mod", "modulo", "congruence", "clock arithmetic", "modular inverse", "finite field", "Galois field", "GF(p)", "Fermat's little theorem", "Euler's theorem", "primitive root", "what does mod mean"] },
+      "aliases": { "zh": [ "同余", "取模", "取余数", "模逆元", "乘法逆元", "有限域", "伽罗瓦域", "原根", "生成元", "mod 是什么意思", "模运算是什么"], "en": [ "mod", "modulo", "congruence", "modular inverse", "finite field", "Galois field", "GF(p)", "primitive root", "what does mod mean"] },
       "anchor": "#mod",
       "relatedPages": ["rsa-encryption", "number-combinatorics"]
     },
@@ -61,7 +61,7 @@
       "id": "elliptic-curve-cryptography",
       "title": { "zh": "椭圆曲线密码", "en": "Elliptic-curve cryptography" },
       "desc": { "zh": "曲线上的点加法构成群，倍点再加正着快、倒着只有 √n 的 ρ 方法，所以 256 位曲线抵得上 3072 位 RSA。", "en": "Points on a curve form a group; double-and-add is fast and the best inverse is Pollard rho at √n, so a 256-bit curve matches 3072-bit RSA." },
-      "aliases": { "zh": ["椭圆曲线", "ECC", "ECDH", "ECDHE", "点加法", "Curve25519", "为什么椭圆曲线钥匙更短"], "en": ["elliptic curve", "ECC", "ECDH", "point addition", "Curve25519", "X25519", "why are elliptic curve keys shorter"] },
+      "aliases": { "zh": ["椭圆曲线", "ECDH", "ECDHE", "点加法", "Curve25519", "为什么椭圆曲线钥匙更短"], "en": ["elliptic curve", "ECDH", "point addition", "Curve25519", "X25519", "why are elliptic curve keys shorter"] },
       "anchor": "#ch5",
       "relatedPages": []
     },
@@ -69,7 +69,7 @@
       "id": "certificates-chain-of-trust",
       "title": { "zh": "签名、证书链与 TLS 握手", "en": "Signatures, certificate chains and the TLS handshake" },
       "desc": { "zh": "先哈希再签名；证书把公钥和名字绑在一起，由一条签名链连到浏览器预装的根证书。", "en": "Hash, then sign; a certificate binds a key to a name, chained by signatures to a root the browser already trusts." },
-      "aliases": { "zh": ["数字证书", "证书链", "根证书", "CA", "HTTPS 锁头", "TLS 握手", "浏览器怎么知道网站是真的"], "en": ["digital certificate", "certificate chain", "root certificate", "certificate authority", "TLS handshake", "HTTPS padlock", "chain of trust"] },
+      "aliases": { "zh": ["数字证书", "证书链", "根证书", "CA", "HTTPS 锁头", "TLS 握手", "浏览器怎么知道网站是真的"], "en": ["digital certificate", "certificate chain", "root certificate", "certificate authority", "TLS handshake", "HTTPS padlock"] },
       "anchor": "#ch6",
       "relatedPages": ["hashing"]
     },
@@ -85,7 +85,7 @@
       "id": "quantum-threat-shor-grover",
       "title": { "zh": "量子威胁：Shor、Grover 与先存后解", "en": "The quantum threat: Shor, Grover, harvest now decrypt later" },
       "desc": { "zh": "Shor 用找周期分解整数，打掉 RSA 和椭圆曲线；Grover 只把对称密码的位数减半；Mosca 不等式说明为什么现在就要迁移。", "en": "Shor factors by period finding and breaks RSA and elliptic curves; Grover only halves symmetric bits; Mosca's inequality says why migration starts now." },
-      "aliases": { "zh": ["Shor 算法", "Grover 算法", "量子计算机能破解 RSA 吗", "先存后解", "Mosca 不等式", "量子计算机破解密码"], "en": ["Shor's algorithm", "Grover's algorithm", "can quantum computers break RSA", "harvest now decrypt later", "Mosca's inequality", "quantum threat to cryptography"] },
+      "aliases": { "zh": [ "Grover 算法", "量子计算机能破解 RSA 吗", "先存后解", "Mosca 不等式", "量子计算机破解密码"], "en": [ "Grover's algorithm", "can quantum computers break RSA", "harvest now decrypt later", "Mosca's inequality", "quantum threat to cryptography"] },
       "anchor": "#ch8",
       "relatedPages": ["quantum-basics"]
     },

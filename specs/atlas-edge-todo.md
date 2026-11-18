@@ -11,7 +11,7 @@ taught on B (any `lessons[]` entry). Pairs where either page teaches no atlas co
 counted. Under each pair: every link, with the concepts anchored at its two ends where there are any (`?` = none at that
 anchor; a link to the page top has no anchor).
 
-839 linked page pairs · 407 covered by an atlas edge · 89 with no concept on one side · **343 to do**.
+849 linked page pairs · 418 covered by an atlas edge · 13 with no concept on one side · **418 to do**.
 
 ## 冰冻肥皂泡 · 水膜里的结晶 / Frozen Soap Bubbles · Ice in a Thin Film → 光的反射与折射 · 拐弯的规矩 / Reflection & Refraction · How Light Bends
 
@@ -176,6 +176,10 @@ anchor; a link to the page top has no anchor).
 
 - `how-hybrid-attention-remembers` → `switches-that-compute#ch9`: ? → stored-program-machine
 
+## 为什么计算一直在等内存 / Why Compute Waits for Memory → 聊天 AI 是怎么“写”出一句话的 / How a Chatbot Writes a Sentence
+
+- `why-compute-waits-for-memory#ch11` → `how-a-chatbot-writes`: memory-diagnostic-checklist → ?
+
 ## NVMe 为什么这么快 / Why NVMe Is So Fast → 为什么计算一直在等内存 / Why Compute Waits for Memory
 
 - `why-nvme-is-fast#ch2` → `why-compute-waits-for-memory#ch4`: nvme-pcie-lanes-littles-law → memory-wall-littles-law
@@ -318,6 +322,10 @@ anchor; a link to the page top has no anchor).
 - `how-a-cpu-does-math` → `how-a-cpu-runs-a-program`
 - `how-a-cpu-does-math#ch14` → `how-a-cpu-runs-a-program`
 
+## CPU 是怎么算小数的，又怎么一次算一排 / How a CPU Does Math: Real Numbers, and Many at Once → 造出并运行一个最前沿的大语言模型，需要什么 / What It Takes to Build and Run a Frontier Large Language Model
+
+- `how-a-cpu-does-math#ch14` → `what-a-frontier-model-takes`
+
 ## 内存是怎么和 CPU 说话的 / How Memory Talks to the CPU → 一堆开关是怎么学会算数的 / How a Pile of Switches Learned to Do Arithmetic
 
 - `how-memory-talks#ch1` → `switches-that-compute#ch6`: dram-refresh → latch-metastability
@@ -396,6 +404,11 @@ anchor; a link to the page top has no anchor).
 ## 网卡是怎么搬运数据包的 / How a Network Card Moves Packets → GPU 是怎么算的 / How a GPU Computes
 
 - `how-a-nic-moves-packets#ch14` → `how-a-gpu-computes`: nic-checklist → ?
+
+## 经济是怎样被计量的 / How an Economy Is Measured → 央行调一个利率，为什么所有东西的价格都跟着动 / Why One Central-Bank Rate Moves the Price of Everything
+
+- `how-an-economy-is-measured#ch7` → `why-one-rate-moves-everything#ch6`: business-cycle-sahm-potential → taylor-rule-neutral-rate
+- `how-an-economy-is-measured#ch11` → `why-one-rate-moves-everything`
 
 ## 傅里叶变换 · 一步一交互 / The Fourier Transform · One Interaction at a Time → 频率响应与滤波 · 按频率挑食的盒子 / Frequency Response & Filters · A Box That Eats by Frequency
 
@@ -1445,3 +1458,338 @@ anchor; a link to the page top has no anchor).
 ## 利率与债券 · 利率升为什么债价跌 / Interest Rates & Bonds · Why Do Bond Prices Fall When Rates Rise → 供需与市场均衡 · 价格线如何相交 / Supply & Demand · Where the Market Clears
 
 - `interest-rates-bonds#step5` → `supply-demand#step0`: ? → supply-demand
+
+## 原子为什么会粘在一起 / Why Atoms Stick Together → 原子结构 · 质子数定它是谁 / Atomic Structure · The Proton Count Decides What It Is
+
+- `why-atoms-stick-together` → `atomic-structure`
+- `why-atoms-stick-together#ch11` → `atomic-structure`: four-questions-for-a-material → ?
+
+## 原子为什么会粘在一起 / Why Atoms Stick Together → 元素周期律 · 周期表上的渐变 / Periodic Trends · Gradients Across the Periodic Table
+
+- `why-atoms-stick-together` → `periodic-trends`
+- `why-atoms-stick-together#ch4` → `periodic-trends`: polar-to-ionic-bond, madelung-lattice-energy → ?
+- `why-atoms-stick-together#ch11` → `periodic-trends`: four-questions-for-a-material → ?
+
+## 原子为什么会粘在一起 / Why Atoms Stick Together → 量子基础 · 可能性先于结果 / Quantum Basics · Possibility Before Outcome
+
+- `why-atoms-stick-together` → `quantum-basics`
+- `why-atoms-stick-together#ch1` → `quantum-basics`: confinement-kinetic-energy → ?
+- `why-atoms-stick-together#ch11` → `quantum-basics`: four-questions-for-a-material → ?
+
+## 原子为什么会粘在一起 / Why Atoms Stick Together → 特征值与特征向量 · 矩阵不转的那些方向 / Eigenvalues & Eigenvectors · The Directions a Matrix Cannot Turn
+
+- `why-atoms-stick-together#ch3` → `eigenvectors`: bond-order-mo-filling, huckel-aromaticity → ?
+- `why-atoms-stick-together#ch11` → `eigenvectors`: four-questions-for-a-material → ?
+
+## 原子为什么会粘在一起 / Why Atoms Stick Together → 分子构型 · 电子对互相躲开 / Molecular Shapes · Electron Pairs Keeping Out of Each Other\
+
+- `why-atoms-stick-together#ch6` → `molecular-shapes`: vsepr-hybridisation → ?
+- `why-atoms-stick-together#ch11` → `molecular-shapes`: four-questions-for-a-material → ?
+
+## 原子为什么会粘在一起 / Why Atoms Stick Together → 粒子与物态 · 热闹程度即温度 / Particles & States · Temperature Is How Wildly They Move
+
+- `why-atoms-stick-together#ch7` → `particles-states`: intermolecular-forces, lennard-jones-md → ?
+- `why-atoms-stick-together#ch11` → `particles-states`: four-questions-for-a-material → ?
+
+## 原子为什么会粘在一起 / Why Atoms Stick Together → 同分异构体 · 同一组原子，不同的拼法 / Isomers · The Same Atoms, Put Together Differently
+
+- `why-atoms-stick-together#ch8` → `isomers`: structure-determines-properties, polymer-entropic-spring → ?
+- `why-atoms-stick-together#ch11` → `isomers`: four-questions-for-a-material → ?
+
+## 原子为什么会粘在一起 / Why Atoms Stick Together → 电池为什么就是装不下更多电 / Why Batteries Just Can't Hold More Charge
+
+- `why-atoms-stick-together#ch11` → `why-batteries-hold-so-little`: four-questions-for-a-material → ?
+
+## 电池为什么就是装不下更多电 / Why Batteries Just Can't Hold More Charge → 电化学 · 电子沿导线跑，还是被电推着跑 / Electrochemistry · Electrons Running Down the Wire, or Pushed Along
+
+- `why-batteries-hold-so-little#ch1` → `electrochemistry#step0`: cell-voltage-half-reactions → ?
+- `why-batteries-hold-so-little#ch3` → `electrochemistry#step2`: open-circuit-voltage-curve → electrochemistry
+- `why-batteries-hold-so-little#ch10` → `electrochemistry`
+
+## 电池为什么就是装不下更多电 / Why Batteries Just Can't Hold More Charge → 膜运输 · 梯度如何变成通量 / Membrane Transport · From Gradient to Flux
+
+- `why-batteries-hold-so-little#ch4` → `membrane-transport`: solid-state-diffusion-particle → ?
+
+## 电池为什么就是装不下更多电 / Why Batteries Just Can't Hold More Charge → 欧姆定律 · 电流是调出来的 / Ohm’s Law · Current You Tune by Hand
+
+- `why-batteries-hold-so-little#ch5` → `ohms-law#step4`: cc-cv-fast-charging → ?
+- `why-batteries-hold-so-little#ch10` → `ohms-law`
+
+## 电池为什么就是装不下更多电 / Why Batteries Just Can't Hold More Charge → 一部手机里的十个道理 / Ten Ideas Inside One Phone
+
+- `why-batteries-hold-so-little#ch5` → `inside-a-phone#battery`: cc-cv-fast-charging → battery-internal-resistance
+- `why-batteries-hold-so-little#ch10` → `inside-a-phone#battery`: ? → battery-internal-resistance
+
+## 电池为什么就是装不下更多电 / Why Batteries Just Can't Hold More Charge → 活化能 · 反应要翻过的那座山 / Activation Energy · The Hill a Reaction Has to Climb
+
+- `why-batteries-hold-so-little#ch6` → `activation-energy#step2`: thermal-runaway → activation-energy
+- `why-batteries-hold-so-little#ch10` → `activation-energy`
+
+## 电池为什么就是装不下更多电 / Why Batteries Just Can't Hold More Charge → 反应速率 · 数一数成功碰撞 / Reaction Rates · Counting Successful Collisions
+
+- `why-batteries-hold-so-little#ch10` → `reaction-rates`
+
+## 电池为什么就是装不下更多电 / Why Batteries Just Can't Hold More Charge → 化学平衡 · 人数不变，人还在跑 / Chemical Equilibrium · Still Moving at Balance
+
+- `why-batteries-hold-so-little#ch10` → `chemical-equilibrium`
+
+## 电池为什么就是装不下更多电 / Why Batteries Just Can't Hold More Charge → 热力学 · 一口气追踪能量 / Thermodynamics · Track Energy Through a Gas
+
+- `why-batteries-hold-so-little#ch10` → `thermodynamics`
+
+## 电池为什么就是装不下更多电 / Why Batteries Just Can't Hold More Charge → 指数与对数 · 翻倍与逆问 / Exponentials & Logarithms · Doubling and the Reverse Question
+
+- `why-batteries-hold-so-little#ch10` → `exponents-logarithms`
+
+## 聊天 AI 是怎么“写”出一句话的 / How a Chatbot Writes a Sentence → 词向量 · 把词摆成地图 / Word Embeddings · Words as a Map
+
+- `how-a-chatbot-writes#ch4` → `embeddings#step1`: word-vectors → embeddings
+- `how-a-chatbot-writes#ch9` → `embeddings#step0`: using-chatbots-wisely → ?
+
+## 聊天 AI 是怎么“写”出一句话的 / How a Chatbot Writes a Sentence → 注意力机制 · 每个词决定看谁 / Attention · Every Word Decides Where to Look
+
+- `how-a-chatbot-writes#ch5` → `attention-mechanism#step0`: attention-head → ?
+- `how-a-chatbot-writes#ch9` → `attention-mechanism#step0`: using-chatbots-wisely → ?
+
+## 聊天 AI 是怎么“写”出一句话的 / How a Chatbot Writes a Sentence → 大语言模型如何逐词生成 / How an LLM Writes Word by Word
+
+- `how-a-chatbot-writes#ch6` → `llm-sampling#step1`: temperature-top-p → llm-sampling
+- `how-a-chatbot-writes#ch9` → `llm-sampling#step0`: using-chatbots-wisely → ?
+
+## 聊天 AI 是怎么“写”出一句话的 / How a Chatbot Writes a Sentence → 梯度下降 · 摸黑下山 / Gradient Descent · Feeling Your Way Downhill
+
+- `how-a-chatbot-writes#ch7` → `gradient-descent#step0`: training-cross-entropy → gradient-descent
+- `how-a-chatbot-writes#ch9` → `gradient-descent#step0`: using-chatbots-wisely → gradient-descent
+
+## 聊天 AI 是怎么“写”出一句话的 / How a Chatbot Writes a Sentence → 反向传播 · 误差沿网络回流 / Backpropagation · Error Flows Back Through the Network
+
+- `how-a-chatbot-writes#ch7` → `backpropagation#step0`: training-cross-entropy → ?
+
+## 聊天 AI 是怎么“写”出一句话的 / How a Chatbot Writes a Sentence → 过拟合 / Overfitting
+
+- `how-a-chatbot-writes#ch7` → `overfitting#step0`: training-cross-entropy → ?
+
+## 聊天 AI 是怎么“写”出一句话的 / How a Chatbot Writes a Sentence → 熵 · 惊讶的平均值 / Entropy · The Average of Surprise
+
+- `how-a-chatbot-writes#ch9` → `entropy#step0`: using-chatbots-wisely → ?
+
+## 聊天 AI 是怎么“写”出一句话的 / How a Chatbot Writes a Sentence → 马尔可夫链 · 下一步只看现在 / Markov Chains · The Next Step Depends Only on Now
+
+- `how-a-chatbot-writes#ch9` → `markov-chains#step0`: using-chatbots-wisely → ?
+
+## 造出并运行一个最前沿的大语言模型，需要什么 / What It Takes to Build and Run a Frontier Large Language Model → 反向传播 · 误差沿网络回流 / Backpropagation · Error Flows Back Through the Network
+
+- `what-a-frontier-model-takes#ch2` → `backpropagation#step0`: residual-layernorm → ?
+- `what-a-frontier-model-takes#ch13` → `backpropagation#step0`: reading-ai-news → ?
+
+## 造出并运行一个最前沿的大语言模型，需要什么 / What It Takes to Build and Run a Frontier Large Language Model → 一堆开关是怎么学会算数的 / How a Pile of Switches Learned to Do Arithmetic
+
+- `what-a-frontier-model-takes#ch9` → `switches-that-compute`: inference-roofline, quantization → ?
+- `what-a-frontier-model-takes#ch13` → `switches-that-compute`: reading-ai-news → ?
+
+## 造出并运行一个最前沿的大语言模型，需要什么 / What It Takes to Build and Run a Frontier Large Language Model → 注意力机制 · 每个词决定看谁 / Attention · Every Word Decides Where to Look
+
+- `what-a-frontier-model-takes#ch13` → `attention-mechanism#step0`: reading-ai-news → ?
+
+## 造出并运行一个最前沿的大语言模型，需要什么 / What It Takes to Build and Run a Frontier Large Language Model → 梯度下降 · 摸黑下山 / Gradient Descent · Feeling Your Way Downhill
+
+- `what-a-frontier-model-takes#ch13` → `gradient-descent#step0`: reading-ai-news → gradient-descent
+
+## 造出并运行一个最前沿的大语言模型，需要什么 / What It Takes to Build and Run a Frontier Large Language Model → 词向量 · 把词摆成地图 / Word Embeddings · Words as a Map
+
+- `what-a-frontier-model-takes#ch13` → `embeddings#step0`: reading-ai-news → ?
+
+## 造出并运行一个最前沿的大语言模型，需要什么 / What It Takes to Build and Run a Frontier Large Language Model → 大语言模型如何逐词生成 / How an LLM Writes Word by Word
+
+- `what-a-frontier-model-takes#ch13` → `llm-sampling#step0`: reading-ai-news → ?
+
+## 造出并运行一个最前沿的大语言模型，需要什么 / What It Takes to Build and Run a Frontier Large Language Model → 过拟合 / Overfitting
+
+- `what-a-frontier-model-takes#ch13` → `overfitting#step0`: reading-ai-news → ?
+
+## 量子计算机到底能做什么 / What Quantum Computers Can Actually Do → 复数 · 平面上的旋转 / Complex Numbers · Rotation on the Plane
+
+- `what-quantum-computers-do#ch1` → `complex-numbers`: qubit-born-rule → ?
+- `what-quantum-computers-do#ch12` → `complex-numbers`: reading-quantum-news → ?
+
+## 量子计算机到底能做什么 / What Quantum Computers Can Actually Do → 概率与频率 · 转得越多，越贴近概率 / Probability & Frequency · The More Spins, the Closer to the Probability
+
+- `what-quantum-computers-do#ch1` → `probability-frequency`: qubit-born-rule → ?
+
+## 量子计算机到底能做什么 / What Quantum Computers Can Actually Do → 量子基础 · 可能性先于结果 / Quantum Basics · Possibility Before Outcome
+
+- `what-quantum-computers-do#ch1` → `quantum-basics`: qubit-born-rule → ?
+- `what-quantum-computers-do#ch12` → `quantum-basics`: reading-quantum-news → ?
+
+## 量子计算机到底能做什么 / What Quantum Computers Can Actually Do → 二维线性变换 · 矩阵如何挪动平面 / 2D Linear Transformations · How Matrices Move the Plane
+
+- `what-quantum-computers-do#ch2` → `linear-transform`: mach-zehnder-interference → ?
+- `what-quantum-computers-do#ch12` → `linear-transform`: reading-quantum-news → ?
+
+## 量子计算机到底能做什么 / What Quantum Computers Can Actually Do → 波的干涉 · 闹与静的图样 / Interference · A Pattern of Loud and Still
+
+- `what-quantum-computers-do#ch2` → `interference`: mach-zehnder-interference → ?
+
+## 量子计算机到底能做什么 / What Quantum Computers Can Actually Do → 双缝实验 · 一颗一颗的粒子，也走出干涉条纹 / The Double-Slit Experiment · Single Particles Still Build Fringes
+
+- `what-quantum-computers-do#ch2` → `double-slit`: mach-zehnder-interference → ?
+- `what-quantum-computers-do#ch12` → `double-slit`: reading-quantum-news → ?
+
+## 量子计算机到底能做什么 / What Quantum Computers Can Actually Do → 二分查找 · 每次砍掉一半 / Binary Search · Halve the Candidates
+
+- `what-quantum-computers-do#ch6` → `binary-search`: grover-search → ?
+
+## 量子计算机到底能做什么 / What Quantum Computers Can Actually Do → RSA 公钥加密 · 乘起来容易，拆开来难 / RSA Public-Key Encryption · Easy to Multiply, Hard to Split
+
+- `what-quantum-computers-do#ch7` → `rsa-encryption`: shor-factoring → ?
+- `what-quantum-computers-do#ch12` → `rsa-encryption`: reading-quantum-news → ?
+
+## 量子计算机到底能做什么 / What Quantum Computers Can Actually Do → 傅里叶变换 · 一步一交互 / The Fourier Transform · One Interaction at a Time
+
+- `what-quantum-computers-do#ch7` → `fourier`: shor-factoring → ?
+- `what-quantum-computers-do#ch12` → `fourier`: reading-quantum-news → ?
+
+## 量子计算机到底能做什么 / What Quantum Computers Can Actually Do → 特征值与特征向量 · 矩阵不转的那些方向 / Eigenvalues & Eigenvectors · The Directions a Matrix Cannot Turn
+
+- `what-quantum-computers-do#ch12` → `eigenvectors`: reading-quantum-news → ?
+
+## 当着所有人的面约定一个秘密 / Agreeing on a Secret in Plain Sight → RSA 公钥加密 · 乘起来容易，拆开来难 / RSA Public-Key Encryption · Easy to Multiply, Hard to Split
+
+- `a-secret-in-public#ch2` → `rsa-encryption`: one-way-function-discrete-log → ?
+- `a-secret-in-public#ch4` → `rsa-encryption`: rsa-signatures-padding → ?
+- `a-secret-in-public#ch11` → `rsa-encryption`
+
+## 当着所有人的面约定一个秘密 / Agreeing on a Secret in Plain Sight → 哈希 · 把任意输入压成固定指纹 / Hashing · Squeezing Any Input Into a Fixed Fingerprint
+
+- `a-secret-in-public#ch6` → `hashing`: certificates-chain-of-trust → ?
+- `a-secret-in-public#ch11` → `hashing`
+
+## 当着所有人的面约定一个秘密 / Agreeing on a Secret in Plain Sight → 数论与组合 · 把结构算出来 / Number Theory & Counting · Compute the Structure
+
+- `a-secret-in-public#ch11` → `number-combinatorics`
+
+## 当着所有人的面约定一个秘密 / Agreeing on a Secret in Plain Sight → 量子基础 · 可能性先于结果 / Quantum Basics · Possibility Before Outcome
+
+- `a-secret-in-public#ch11` → `quantum-basics`
+
+## 央行调一个利率，为什么所有东西的价格都跟着动 / Why One Central-Bank Rate Moves the Price of Everything → 复利与贴现 · 时间是钱的形状 / Compound Interest & Discounting · Time Is the Shape of Money
+
+- `why-one-rate-moves-everything#ch1` → `compound-interest#step3`: present-value-discounting → ?
+- `why-one-rate-moves-everything#ch13` → `compound-interest`
+
+## 央行调一个利率，为什么所有东西的价格都跟着动 / Why One Central-Bank Rate Moves the Price of Everything → 钱是从哪里来的 / Where Money Comes From
+
+- `why-one-rate-moves-everything#ch2` → `where-money-comes-from#ch3`: bond-duration-convexity → bank-run
+- `why-one-rate-moves-everything#ch5` → `where-money-comes-from#ch2`: reserves-floor-system → loans-create-deposits
+- `why-one-rate-moves-everything#ch7` → `where-money-comes-from#ch8`: new-keynesian-model → monetary-transmission
+- `why-one-rate-moves-everything#ch8` → `where-money-comes-from#ch7`: equity-duration-house-affordability → loan-amortisation
+- `why-one-rate-moves-everything#ch9` → `where-money-comes-from#ch9`: interest-parity-carry-trade → purchasing-power-parity
+- `why-one-rate-moves-everything#ch10` → `where-money-comes-from#ch2`: zero-lower-bound-qe → loans-create-deposits
+- `why-one-rate-moves-everything#ch13` → `where-money-comes-from`
+
+## 央行调一个利率，为什么所有东西的价格都跟着动 / Why One Central-Bank Rate Moves the Price of Everything → 利率与债券 · 利率升为什么债价跌 / Interest Rates & Bonds · Why Do Bond Prices Fall When Rates Rise
+
+- `why-one-rate-moves-everything#ch2` → `interest-rates-bonds#step4`: bond-duration-convexity → ?
+- `why-one-rate-moves-everything#ch13` → `interest-rates-bonds`
+
+## 央行调一个利率，为什么所有东西的价格都跟着动 / Why One Central-Bank Rate Moves the Price of Everything → 每个月的房贷，钱到底还到哪儿去了 / Where Does Your Mortgage Payment Actually Go?
+
+- `why-one-rate-moves-everything#ch8` → `where-a-mortgage-payment-goes`: equity-duration-house-affordability → ?
+
+## 央行调一个利率，为什么所有东西的价格都跟着动 / Why One Central-Bank Rate Moves the Price of Everything → 股票与债券 · 买到的到底是什么 / Stocks & Bonds · What Do You Actually Buy
+
+- `why-one-rate-moves-everything#ch13` → `stocks-bonds`
+
+## 央行调一个利率，为什么所有东西的价格都跟着动 / Why One Central-Bank Rate Moves the Price of Everything → 风险与回报 · 为什么风险大承诺回报高 / Risk & Return · Why Do Riskier Things Usually Promise More
+
+- `why-one-rate-moves-everything#ch13` → `risk-return`
+
+## 核聚变为什么总是“还要三十年” / Why Fusion Is Always “Thirty Years Away” → 狭义相对论 · 同时性的线倾斜了 / Special Relativity · The Lines of “Now” Tilt
+
+- `why-fusion-is-hard#ch1` → `relativity`: binding-energy-fusion-yield → ?
+- `why-fusion-is-hard#ch11` → `relativity`: fusion-thirty-years → ?
+
+## 核聚变为什么总是“还要三十年” / Why Fusion Is Always “Thirty Years Away” → 电场 · 看不见的力画成图 / Electric Fields · Drawing an Invisible Force
+
+- `why-fusion-is-hard#ch2` → `electric-fields`: coulomb-barrier → ?
+- `why-fusion-is-hard#ch11` → `electric-fields`: fusion-thirty-years → ?
+
+## 核聚变为什么总是“还要三十年” / Why Fusion Is Always “Thirty Years Away” → 气体压强的微观图景 · 撞墙的账本 / The Microscopic Picture of Gas Pressure · A Ledger of Wall Hits
+
+- `why-fusion-is-hard#ch2` → `kinetic-theory#step3`: coulomb-barrier → ?
+- `why-fusion-is-hard#ch11` → `kinetic-theory`: fusion-thirty-years → ?
+
+## 核聚变为什么总是“还要三十年” / Why Fusion Is Always “Thirty Years Away” → 量子隧穿 · 穿墙的是概率，不是子弹 / Quantum Tunnelling · What Passes Through the Wall Is a Probability
+
+- `why-fusion-is-hard#ch3` → `quantum-tunneling#step1`: gamow-peak-reactivity → quantum-tunneling
+- `why-fusion-is-hard#ch11` → `quantum-tunneling`: fusion-thirty-years → ?
+
+## 核聚变为什么总是“还要三十年” / Why Fusion Is Always “Thirty Years Away” → 磁场与洛伦兹力 · 力总是垂直于速度 / Magnetic Force · The Force Is Always Sideways to the Velocity
+
+- `why-fusion-is-hard#ch5` → `magnetic-force#step1`: magnetic-confinement-drift → magnetic-force
+- `why-fusion-is-hard#ch11` → `magnetic-force`: fusion-thirty-years → ?
+
+## 核聚变为什么总是“还要三十年” / Why Fusion Is Always “Thirty Years Away” → 卡诺循环 · 热机的效率上限 / The Carnot Cycle · The Ceiling on Heat-Engine Efficiency
+
+- `why-fusion-is-hard#ch8` → `carnot-cycle`: fusion-gain-definitions → ?
+- `why-fusion-is-hard#ch11` → `carnot-cycle`: fusion-thirty-years → ?
+
+## 核聚变为什么总是“还要三十年” / Why Fusion Is Always “Thirty Years Away” → 活化能 · 反应要翻过的那座山 / Activation Energy · The Hill a Reaction Has to Climb
+
+- `why-fusion-is-hard#ch11` → `activation-energy`: fusion-thirty-years → ?
+
+## 核聚变为什么总是“还要三十年” / Why Fusion Is Always “Thirty Years Away” → 原子结构 · 质子数定它是谁 / Atomic Structure · The Proton Count Decides What It Is
+
+- `why-fusion-is-hard#ch11` → `atomic-structure`: fusion-thirty-years → ?
+
+## 芯片为什么越来越难做 / Why Chips Are Getting Harder to Make → 气体压强的微观图景 · 撞墙的账本 / The Microscopic Picture of Gas Pressure · A Ledger of Wall Hits
+
+- `why-chips-are-hard#ch1` → `kinetic-theory`: semiconductor-doping → ?
+
+## 芯片为什么越来越难做 / Why Chips Are Getting Harder to Make → 量子基础 · 可能性先于结果 / Quantum Basics · Possibility Before Outcome
+
+- `why-chips-are-hard#ch1` → `quantum-basics`: semiconductor-doping → ?
+
+## 芯片为什么越来越难做 / Why Chips Are Getting Harder to Make → 电场 · 看不见的力画成图 / Electric Fields · Drawing an Invisible Force
+
+- `why-chips-are-hard#ch2` → `electric-fields`: pn-junction → ?
+
+## 芯片为什么越来越难做 / Why Chips Are Getting Harder to Make → 一堆开关是怎么学会算数的 / How a Pile of Switches Learned to Do Arithmetic
+
+- `why-chips-are-hard#ch3` → `switches-that-compute#ch1`: mosfet-subthreshold-swing → relay-logic-gates
+- `why-chips-are-hard#ch7` → `switches-that-compute#ch2`: process-node-density → nand-universality
+- `why-chips-are-hard#ch12` → `switches-that-compute`
+
+## 芯片为什么越来越难做 / Why Chips Are Getting Harder to Make → 波的干涉 · 闹与静的图样 / Interference · A Pattern of Loud and Still
+
+- `why-chips-are-hard#ch5` → `interference`: optical-lithography-resolution → ?
+
+## 芯片为什么越来越难做 / Why Chips Are Getting Harder to Make → 双缝实验 · 一颗一颗的粒子，也走出干涉条纹 / The Double-Slit Experiment · Single Particles Still Build Fringes
+
+- `why-chips-are-hard#ch5` → `double-slit`: optical-lithography-resolution → ?
+
+## 芯片为什么越来越难做 / Why Chips Are Getting Harder to Make → 光电效应 · 光是一份一份的 / The Photoelectric Effect · Light Comes in Packets
+
+- `why-chips-are-hard#ch6` → `photoelectric-effect`: euv-lithography → ?
+
+## 芯片为什么越来越难做 / Why Chips Are Getting Harder to Make → 泊松过程 · 随机到达的规律 / The Poisson Process · The Pattern in Random Arrivals
+
+- `why-chips-are-hard#ch6` → `poisson-process`: euv-lithography → ?
+- `why-chips-are-hard#ch10` → `poisson-process`: die-yield-cost → ?
+
+## 芯片为什么越来越难做 / Why Chips Are Getting Harder to Make → 量子隧穿 · 穿墙的是概率，不是子弹 / Quantum Tunnelling · What Passes Through the Wall Is a Probability
+
+- `why-chips-are-hard#ch8` → `quantum-tunneling`: finfet-gaa → ?
+- `why-chips-are-hard#ch12` → `quantum-tunneling`
+
+## 芯片为什么越来越难做 / Why Chips Are Getting Harder to Make → 欧姆定律 · 电流是调出来的 / Ohm’s Law · Current You Tune by Hand
+
+- `why-chips-are-hard#ch9` → `ohms-law`: interconnect-rc-delay → ?
+
+## 芯片为什么越来越难做 / Why Chips Are Getting Harder to Make → 一部手机里的十个道理 / Ten Ideas Inside One Phone
+
+- `why-chips-are-hard#ch12` → `inside-a-phone`
+
+## 芯片为什么越来越难做 / Why Chips Are Getting Harder to Make → 凸透镜成像 · 远近变像 / The Convex Lens · Near or Far, the Image Transforms
+
+- `why-chips-are-hard#ch12` → `lens`

@@ -455,7 +455,8 @@ const f = (x, d) => x.toFixed(d);
   // the boot essay is live since 2026-11-15 (A6/boot registrar): ch8.p5 links its words "BIOS 闪存" to its #ch3 (SPI flash)
   says('ch8.p5', 'how-a-computer-boots/#ch3');
   says('ch5.p5', '《PCIe 为什么能一代一代翻倍》'); says('ch10.links', '《雷电接口是怎么工作的》');
-  check('why-chips-are-hard named as plain text, not linked', /why-chips-are-hard/.test(all), false); says('ch7.p1', '《芯片为什么越来越难做》');
+  // why-chips-are-hard is live since 2026-11-18 (essay registrar): ch7.p1 links its chapter 10
+  says('ch7.p1', 'why-chips-are-hard/#ch10'); says('ch7.p1', '《芯片为什么越来越难做》');
   const sata = JSON.parse(fs.readFileSync(path.join(DIR, '..', 'how-sata-works', 'REGISTRY.json'), 'utf8'));
   says('ch2.p2', '《' + sata.title.zh + '》');
   const mem = JSON.parse(fs.readFileSync(path.join(DIR, '..', 'why-compute-waits-for-memory', 'REGISTRY.json'), 'utf8'));

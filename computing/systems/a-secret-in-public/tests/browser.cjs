@@ -129,11 +129,13 @@ const show = async (page, sel, ms = 0) => { await page.$eval(sel, e => e.scrollI
       ok(await page.evaluate(() => window.__canvasText.size) > 20, `${tag}: canvases drew their labels`);
       ok((await text(page, '#fxStd li .when')) === 'August 2024', `${tag}: frontier dates read "August 2024", got ` + await text(page, '#fxStd li .when'));
       ok(await page.evaluate(() => getComputedStyle(document.querySelector('cite')).fontStyle) === 'italic', `${tag}: titles of works are italic`);
-      // drafts that are not registered yet are named in plain text, not linked
-      ok(!(await page.$$eval('a[href]', a => a.some(e => /how-a-web-page-arrives|what-quantum-computers-do/.test(e.getAttribute('href'))))), `${tag}: unregistered drafts are not linked`);
+      // the unregistered web-page draft is named in plain text, not linked; the quantum essay is live since 2026-11-18 and linked (ch8.p1, ch11.links)
+      ok(!(await page.$$eval('a[href]', a => a.some(e => /how-a-web-page-arrives/.test(e.getAttribute('href'))))), `${tag}: unregistered draft is not linked`);
+      ok((await page.$$eval('a[href*="what-quantum-computers-do"]', a => a.length)) >= 2, `${tag}: the quantum essay is linked`);
     } else {
       ok(await page.evaluate(() => getComputedStyle(document.querySelector('cite')).fontStyle) === 'normal', `${tag}: Chinese titles stay upright`);
-      ok(!(await page.$$eval('a[href]', a => a.some(e => /how-a-web-page-arrives|what-quantum-computers-do/.test(e.getAttribute('href'))))), `${tag}: unregistered drafts are not linked`);
+      ok(!(await page.$$eval('a[href]', a => a.some(e => /how-a-web-page-arrives/.test(e.getAttribute('href'))))), `${tag}: unregistered draft is not linked`);
+      ok((await page.$$eval('a[href*="what-quantum-computers-do"]', a => a.length)) >= 2, `${tag}: the quantum essay is linked`);
     }
     ok(!page.__errors().length, `${tag}: errors: ${page.__errors().join(' | ')}`);
     await page.close();

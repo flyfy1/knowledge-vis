@@ -1,11 +1,11 @@
 {
   "counts": {
     "groups": 11,
-    "nodes": 668,
-    "edges": 912,
+    "nodes": 775,
+    "edges": 921,
     "trails": 14,
     "questions": 124,
-    "fragments": 214
+    "fragments": 223
   },
   "conflicts": [],
   "suspendedEdges": [],
@@ -54,6 +54,66 @@
     }
   ],
   "edgeCandidates": [
+    {
+      "concept": "key-distribution-problem",
+      "page": "number-combinatorics",
+      "taughtBy": [
+        "euclidean-algorithm",
+        "prime-factorization",
+        "counting-permutations"
+      ]
+    },
+    {
+      "concept": "modular-arithmetic-finite-fields",
+      "page": "rsa-encryption",
+      "taughtBy": [
+        "rsa-encryption"
+      ]
+    },
+    {
+      "concept": "modular-arithmetic-finite-fields",
+      "page": "number-combinatorics",
+      "taughtBy": [
+        "euclidean-algorithm",
+        "prime-factorization",
+        "counting-permutations"
+      ]
+    },
+    {
+      "concept": "one-way-function-discrete-log",
+      "page": "rsa-encryption",
+      "taughtBy": [
+        "rsa-encryption"
+      ]
+    },
+    {
+      "concept": "diffie-hellman-key-exchange",
+      "page": "rsa-encryption",
+      "taughtBy": [
+        "rsa-encryption"
+      ]
+    },
+    {
+      "concept": "rsa-signatures-padding",
+      "page": "rsa-encryption",
+      "taughtBy": [
+        "rsa-encryption"
+      ]
+    },
+    {
+      "concept": "certificates-chain-of-trust",
+      "page": "hashing",
+      "taughtBy": [
+        "hashing"
+      ]
+    },
+    {
+      "concept": "quantum-threat-shor-grover",
+      "page": "quantum-basics",
+      "taughtBy": [
+        "quantum-amplitude"
+      ]
+    },
     {
       "concept": "steady-state-set-point",
       "page": "logistic-growth",
@@ -109,6 +169,114 @@
       "taughtBy": [
         "positive-predictive-value",
         "epidemic-r0"
+      ]
+    },
+    {
+      "concept": "tokens-bpe",
+      "page": "entropy",
+      "taughtBy": [
+        "cross-entropy",
+        "information-entropy"
+      ]
+    },
+    {
+      "concept": "next-token-bigram",
+      "page": "markov-chains",
+      "taughtBy": [
+        "markov-chains"
+      ]
+    },
+    {
+      "concept": "next-token-bigram",
+      "page": "llm-sampling",
+      "taughtBy": [
+        "llm-sampling"
+      ]
+    },
+    {
+      "concept": "ngram-sparsity",
+      "page": "markov-chains",
+      "taughtBy": [
+        "markov-chains"
+      ]
+    },
+    {
+      "concept": "ngram-sparsity",
+      "page": "overfitting",
+      "taughtBy": [
+        "overfitting"
+      ]
+    },
+    {
+      "concept": "word-vectors",
+      "page": "embeddings",
+      "taughtBy": [
+        "embeddings"
+      ]
+    },
+    {
+      "concept": "attention-head",
+      "page": "attention-mechanism",
+      "taughtBy": [
+        "attention-mechanism"
+      ]
+    },
+    {
+      "concept": "temperature-top-p",
+      "page": "llm-sampling",
+      "taughtBy": [
+        "llm-sampling"
+      ]
+    },
+    {
+      "concept": "temperature-top-p",
+      "page": "entropy",
+      "taughtBy": [
+        "cross-entropy",
+        "information-entropy"
+      ]
+    },
+    {
+      "concept": "training-cross-entropy",
+      "page": "gradient-descent",
+      "taughtBy": [
+        "gradient-descent"
+      ]
+    },
+    {
+      "concept": "training-cross-entropy",
+      "page": "backpropagation",
+      "taughtBy": [
+        "backpropagation"
+      ]
+    },
+    {
+      "concept": "training-cross-entropy",
+      "page": "entropy",
+      "taughtBy": [
+        "cross-entropy",
+        "information-entropy"
+      ]
+    },
+    {
+      "concept": "generation-loop-scale",
+      "page": "llm-sampling",
+      "taughtBy": [
+        "llm-sampling"
+      ]
+    },
+    {
+      "concept": "generation-loop-scale",
+      "page": "attention-mechanism",
+      "taughtBy": [
+        "attention-mechanism"
+      ]
+    },
+    {
+      "concept": "using-chatbots-wisely",
+      "page": "llm-sampling",
+      "taughtBy": [
+        "llm-sampling"
       ]
     },
     {
@@ -2097,6 +2265,137 @@
       ]
     },
     {
+      "concept": "transformer-block",
+      "page": "attention-mechanism",
+      "taughtBy": [
+        "attention-mechanism"
+      ]
+    },
+    {
+      "concept": "transformer-block",
+      "page": "embeddings",
+      "taughtBy": [
+        "embeddings"
+      ]
+    },
+    {
+      "concept": "induction-head",
+      "page": "attention-mechanism",
+      "taughtBy": [
+        "attention-mechanism"
+      ]
+    },
+    {
+      "concept": "residual-layernorm",
+      "page": "backpropagation",
+      "taughtBy": [
+        "backpropagation"
+      ]
+    },
+    {
+      "concept": "parameters-flops",
+      "page": "exponents-logarithms",
+      "taughtBy": [
+        "exp-log"
+      ]
+    },
+    {
+      "concept": "training-loss-curve",
+      "page": "gradient-descent",
+      "taughtBy": [
+        "gradient-descent"
+      ]
+    },
+    {
+      "concept": "training-loss-curve",
+      "page": "backpropagation",
+      "taughtBy": [
+        "backpropagation"
+      ]
+    },
+    {
+      "concept": "training-loss-curve",
+      "page": "entropy",
+      "taughtBy": [
+        "cross-entropy",
+        "information-entropy"
+      ]
+    },
+    {
+      "concept": "scaling-laws-chinchilla",
+      "page": "exponents-logarithms",
+      "taughtBy": [
+        "exp-log"
+      ]
+    },
+    {
+      "concept": "scaling-laws-chinchilla",
+      "page": "overfitting",
+      "taughtBy": [
+        "overfitting"
+      ]
+    },
+    {
+      "concept": "lora-finetuning",
+      "page": "overfitting",
+      "taughtBy": [
+        "overfitting"
+      ]
+    },
+    {
+      "concept": "benchmark-noise",
+      "page": "binomial-normal",
+      "taughtBy": [
+        "binomial-normal"
+      ]
+    },
+    {
+      "concept": "benchmark-noise",
+      "page": "central-limit-theorem",
+      "taughtBy": [
+        "gaussian",
+        "variance"
+      ]
+    },
+    {
+      "concept": "benchmark-noise",
+      "page": "sampling",
+      "taughtBy": [
+        "sampling"
+      ]
+    },
+    {
+      "concept": "kv-cache",
+      "page": "attention-mechanism",
+      "taughtBy": [
+        "attention-mechanism"
+      ]
+    },
+    {
+      "concept": "inference-roofline",
+      "page": "switches-that-compute",
+      "taughtBy": [
+        "relay-logic-gates",
+        "nand-universality",
+        "binary-numbers",
+        "ripple-carry-adder",
+        "twos-complement-overflow",
+        "latch-metastability",
+        "clock-counter",
+        "mux-alu",
+        "stored-program-machine",
+        "floating-point-rounding",
+        "real-processor-scale"
+      ]
+    },
+    {
+      "concept": "speculative-decoding",
+      "page": "llm-sampling",
+      "taughtBy": [
+        "llm-sampling"
+      ]
+    },
+    {
       "concept": "schwarzschild-radius",
       "page": "gravity-orbits",
       "taughtBy": [
@@ -2150,6 +2449,94 @@
       "page": "gravity-orbits",
       "taughtBy": [
         "gravity-orbits"
+      ]
+    },
+    {
+      "concept": "qubit-born-rule",
+      "page": "quantum-basics",
+      "taughtBy": [
+        "quantum-amplitude"
+      ]
+    },
+    {
+      "concept": "qubit-born-rule",
+      "page": "complex-numbers",
+      "taughtBy": [
+        "complex"
+      ]
+    },
+    {
+      "concept": "mach-zehnder-interference",
+      "page": "interference",
+      "taughtBy": [
+        "interference"
+      ]
+    },
+    {
+      "concept": "mach-zehnder-interference",
+      "page": "double-slit",
+      "taughtBy": [
+        "double-slit"
+      ]
+    },
+    {
+      "concept": "entanglement-chsh",
+      "page": "probability-frequency",
+      "taughtBy": [
+        "probability-vs-frequency"
+      ]
+    },
+    {
+      "concept": "exponential-amplitudes-holevo",
+      "page": "linear-transform",
+      "taughtBy": [
+        "determinant",
+        "matrix-transform"
+      ]
+    },
+    {
+      "concept": "grover-search",
+      "page": "binary-search",
+      "taughtBy": [
+        "binary-search"
+      ]
+    },
+    {
+      "concept": "grover-search",
+      "page": "eigenvectors",
+      "taughtBy": [
+        "eigen",
+        "vectors"
+      ]
+    },
+    {
+      "concept": "shor-factoring",
+      "page": "rsa-encryption",
+      "taughtBy": [
+        "rsa-encryption"
+      ]
+    },
+    {
+      "concept": "shor-factoring",
+      "page": "fourier",
+      "taughtBy": [
+        "fourier",
+        "spectrum",
+        "superposition"
+      ]
+    },
+    {
+      "concept": "quantum-frontier-2026",
+      "page": "rsa-encryption",
+      "taughtBy": [
+        "rsa-encryption"
+      ]
+    },
+    {
+      "concept": "reading-quantum-news",
+      "page": "quantum-basics",
+      "taughtBy": [
+        "quantum-amplitude"
       ]
     },
     {
@@ -2366,6 +2753,402 @@
       ]
     },
     {
+      "concept": "confinement-kinetic-energy",
+      "page": "quantum-basics",
+      "taughtBy": [
+        "quantum-amplitude"
+      ]
+    },
+    {
+      "concept": "confinement-kinetic-energy",
+      "page": "atomic-structure",
+      "taughtBy": [
+        "atomic-structure",
+        "electron-shells"
+      ]
+    },
+    {
+      "concept": "h2-plus-lcao",
+      "page": "quantum-basics",
+      "taughtBy": [
+        "quantum-amplitude"
+      ]
+    },
+    {
+      "concept": "h2-plus-lcao",
+      "page": "atomic-structure",
+      "taughtBy": [
+        "atomic-structure",
+        "electron-shells"
+      ]
+    },
+    {
+      "concept": "bond-order-mo-filling",
+      "page": "atomic-structure",
+      "taughtBy": [
+        "atomic-structure",
+        "electron-shells"
+      ]
+    },
+    {
+      "concept": "huckel-aromaticity",
+      "page": "eigenvectors",
+      "taughtBy": [
+        "eigen",
+        "vectors"
+      ]
+    },
+    {
+      "concept": "huckel-aromaticity",
+      "page": "isomers",
+      "taughtBy": [
+        "isomers"
+      ]
+    },
+    {
+      "concept": "polar-to-ionic-bond",
+      "page": "periodic-trends",
+      "taughtBy": [
+        "periodic-trends"
+      ]
+    },
+    {
+      "concept": "polar-to-ionic-bond",
+      "page": "molecules-atoms",
+      "taughtBy": [
+        "molecules-atoms"
+      ]
+    },
+    {
+      "concept": "madelung-lattice-energy",
+      "page": "dissolution-saturation",
+      "taughtBy": [
+        "dissolution-saturation"
+      ]
+    },
+    {
+      "concept": "madelung-lattice-energy",
+      "page": "electrochemistry",
+      "taughtBy": [
+        "electrochemistry"
+      ]
+    },
+    {
+      "concept": "energy-bands-band-gap",
+      "page": "eigenvectors",
+      "taughtBy": [
+        "eigen",
+        "vectors"
+      ]
+    },
+    {
+      "concept": "energy-bands-band-gap",
+      "page": "photoelectric-effect",
+      "taughtBy": [
+        "photoelectric-effect"
+      ]
+    },
+    {
+      "concept": "vsepr-hybridisation",
+      "page": "molecular-shapes",
+      "taughtBy": [
+        "molecular-shapes"
+      ]
+    },
+    {
+      "concept": "intermolecular-forces",
+      "page": "particles-states",
+      "taughtBy": [
+        "particles-states"
+      ]
+    },
+    {
+      "concept": "intermolecular-forces",
+      "page": "kinetic-theory",
+      "taughtBy": [
+        "kinetic-theory"
+      ]
+    },
+    {
+      "concept": "intermolecular-forces",
+      "page": "dissolution-saturation",
+      "taughtBy": [
+        "dissolution-saturation"
+      ]
+    },
+    {
+      "concept": "lennard-jones-md",
+      "page": "particles-states",
+      "taughtBy": [
+        "particles-states"
+      ]
+    },
+    {
+      "concept": "lennard-jones-md",
+      "page": "kinetic-theory",
+      "taughtBy": [
+        "kinetic-theory"
+      ]
+    },
+    {
+      "concept": "structure-determines-properties",
+      "page": "isomers",
+      "taughtBy": [
+        "isomers"
+      ]
+    },
+    {
+      "concept": "structure-determines-properties",
+      "page": "molecules-atoms",
+      "taughtBy": [
+        "molecules-atoms"
+      ]
+    },
+    {
+      "concept": "polymer-entropic-spring",
+      "page": "entropy",
+      "taughtBy": [
+        "cross-entropy",
+        "information-entropy"
+      ]
+    },
+    {
+      "concept": "protein-folding-hp",
+      "page": "entropy",
+      "taughtBy": [
+        "cross-entropy",
+        "information-entropy"
+      ]
+    },
+    {
+      "concept": "electronic-structure-frontier",
+      "page": "quantum-basics",
+      "taughtBy": [
+        "quantum-amplitude"
+      ]
+    },
+    {
+      "concept": "four-questions-for-a-material",
+      "page": "periodic-trends",
+      "taughtBy": [
+        "periodic-trends"
+      ]
+    },
+    {
+      "concept": "cell-voltage-half-reactions",
+      "page": "electrochemistry",
+      "taughtBy": [
+        "electrochemistry"
+      ]
+    },
+    {
+      "concept": "cell-voltage-half-reactions",
+      "page": "chemical-equilibrium",
+      "taughtBy": [
+        "dynamic-equilibrium"
+      ]
+    },
+    {
+      "concept": "specific-capacity-energy-density",
+      "page": "electrochemistry",
+      "taughtBy": [
+        "electrochemistry"
+      ]
+    },
+    {
+      "concept": "open-circuit-voltage-curve",
+      "page": "electrochemistry",
+      "taughtBy": [
+        "electrochemistry"
+      ]
+    },
+    {
+      "concept": "open-circuit-voltage-curve",
+      "page": "chemical-equilibrium",
+      "taughtBy": [
+        "dynamic-equilibrium"
+      ]
+    },
+    {
+      "concept": "solid-state-diffusion-particle",
+      "page": "membrane-transport",
+      "taughtBy": [
+        "membrane-transport"
+      ]
+    },
+    {
+      "concept": "cc-cv-fast-charging",
+      "page": "ohms-law",
+      "taughtBy": [
+        "ohms-law"
+      ]
+    },
+    {
+      "concept": "cc-cv-fast-charging",
+      "page": "inside-a-phone",
+      "taughtBy": [
+        "gps-pseudorange-clock-bias",
+        "accelerometer-proof-mass",
+        "dead-reckoning-drift",
+        "capacitive-touch-interpolation",
+        "shot-noise-frame-stacking",
+        "metamerism-rgb-subpixels",
+        "predictive-compression-entropy",
+        "path-loss-shannon-capacity",
+        "hamming-code",
+        "handover-hysteresis",
+        "battery-internal-resistance",
+        "measurement-signal-noise-method"
+      ]
+    },
+    {
+      "concept": "thermal-runaway",
+      "page": "activation-energy",
+      "taughtBy": [
+        "activation-energy"
+      ]
+    },
+    {
+      "concept": "thermal-runaway",
+      "page": "reaction-rates",
+      "taughtBy": [
+        "collision-theory"
+      ]
+    },
+    {
+      "concept": "battery-ageing-sei",
+      "page": "reaction-rates",
+      "taughtBy": [
+        "collision-theory"
+      ]
+    },
+    {
+      "concept": "battery-learning-curve",
+      "page": "exponents-logarithms",
+      "taughtBy": [
+        "exp-log"
+      ]
+    },
+    {
+      "concept": "battery-frontier-2026",
+      "page": "electrochemistry",
+      "taughtBy": [
+        "electrochemistry"
+      ]
+    },
+    {
+      "concept": "semiconductor-doping",
+      "page": "quantum-basics",
+      "taughtBy": [
+        "quantum-amplitude"
+      ]
+    },
+    {
+      "concept": "semiconductor-doping",
+      "page": "kinetic-theory",
+      "taughtBy": [
+        "kinetic-theory"
+      ]
+    },
+    {
+      "concept": "pn-junction",
+      "page": "electric-fields",
+      "taughtBy": [
+        "electric-fields"
+      ]
+    },
+    {
+      "concept": "mosfet-subthreshold-swing",
+      "page": "switches-that-compute",
+      "taughtBy": [
+        "relay-logic-gates",
+        "nand-universality",
+        "binary-numbers",
+        "ripple-carry-adder",
+        "twos-complement-overflow",
+        "latch-metastability",
+        "clock-counter",
+        "mux-alu",
+        "stored-program-machine",
+        "floating-point-rounding",
+        "real-processor-scale"
+      ]
+    },
+    {
+      "concept": "optical-lithography-resolution",
+      "page": "interference",
+      "taughtBy": [
+        "interference"
+      ]
+    },
+    {
+      "concept": "optical-lithography-resolution",
+      "page": "double-slit",
+      "taughtBy": [
+        "double-slit"
+      ]
+    },
+    {
+      "concept": "optical-lithography-resolution",
+      "page": "lens",
+      "taughtBy": [
+        "convex-lens"
+      ]
+    },
+    {
+      "concept": "euv-lithography",
+      "page": "photoelectric-effect",
+      "taughtBy": [
+        "photoelectric-effect"
+      ]
+    },
+    {
+      "concept": "euv-lithography",
+      "page": "poisson-process",
+      "taughtBy": [
+        "poisson-process"
+      ]
+    },
+    {
+      "concept": "finfet-gaa",
+      "page": "quantum-tunneling",
+      "taughtBy": [
+        "quantum-tunneling"
+      ]
+    },
+    {
+      "concept": "interconnect-rc-delay",
+      "page": "ohms-law",
+      "taughtBy": [
+        "ohms-law"
+      ]
+    },
+    {
+      "concept": "die-yield-cost",
+      "page": "poisson-process",
+      "taughtBy": [
+        "poisson-process"
+      ]
+    },
+    {
+      "concept": "semiconductor-frontier",
+      "page": "inside-a-phone",
+      "taughtBy": [
+        "gps-pseudorange-clock-bias",
+        "accelerometer-proof-mass",
+        "dead-reckoning-drift",
+        "capacitive-touch-interpolation",
+        "shot-noise-frame-stacking",
+        "metamerism-rgb-subpixels",
+        "predictive-compression-entropy",
+        "path-loss-shannon-capacity",
+        "hamming-code",
+        "handover-hysteresis",
+        "battery-internal-resistance",
+        "measurement-signal-noise-method"
+      ]
+    },
+    {
       "concept": "pipeline-memory-stall",
       "page": "switches-that-compute",
       "taughtBy": [
@@ -2439,6 +3222,56 @@
       ]
     },
     {
+      "concept": "binding-energy-fusion-yield",
+      "page": "relativity",
+      "taughtBy": [
+        "relativity"
+      ]
+    },
+    {
+      "concept": "binding-energy-fusion-yield",
+      "page": "atomic-structure",
+      "taughtBy": [
+        "atomic-structure",
+        "electron-shells"
+      ]
+    },
+    {
+      "concept": "coulomb-barrier",
+      "page": "electric-fields",
+      "taughtBy": [
+        "electric-fields"
+      ]
+    },
+    {
+      "concept": "coulomb-barrier",
+      "page": "kinetic-theory",
+      "taughtBy": [
+        "kinetic-theory"
+      ]
+    },
+    {
+      "concept": "gamow-peak-reactivity",
+      "page": "quantum-tunneling",
+      "taughtBy": [
+        "quantum-tunneling"
+      ]
+    },
+    {
+      "concept": "magnetic-confinement-drift",
+      "page": "magnetic-force",
+      "taughtBy": [
+        "magnetic-force"
+      ]
+    },
+    {
+      "concept": "fusion-gain-definitions",
+      "page": "carnot-cycle",
+      "taughtBy": [
+        "carnot-cycle"
+      ]
+    },
+    {
       "concept": "nvme-pcie-lanes-littles-law",
       "page": "why-compute-waits-for-memory",
       "taughtBy": [
@@ -2453,6 +3286,72 @@
         "data-movement-energy-hbm",
         "memory-wall-frontier-2026",
         "memory-diagnostic-checklist"
+      ]
+    },
+    {
+      "concept": "present-value-discounting",
+      "page": "compound-interest",
+      "taughtBy": [
+        "compound-interest"
+      ]
+    },
+    {
+      "concept": "bond-duration-convexity",
+      "page": "interest-rates-bonds",
+      "taughtBy": [
+        "interest-rates-bonds"
+      ]
+    },
+    {
+      "concept": "reserves-floor-system",
+      "page": "where-money-comes-from",
+      "taughtBy": [
+        "money-as-iou",
+        "loans-create-deposits",
+        "bank-run",
+        "quantity-theory-inflation",
+        "inflation-winners-losers",
+        "interest-price-of-time",
+        "loan-amortisation",
+        "monetary-transmission",
+        "purchasing-power-parity"
+      ]
+    },
+    {
+      "concept": "equity-duration-house-affordability",
+      "page": "where-a-mortgage-payment-goes",
+      "taughtBy": [
+        "nominal-vs-effective-rate",
+        "annuity-payment-formula",
+        "amortisation-schedule",
+        "equal-principal-vs-equal-payment",
+        "mortgage-prepayment",
+        "floating-rate-reset",
+        "apr-irr-flat-fee",
+        "inflation-opportunity-cost-loan",
+        "reading-a-loan-contract"
+      ]
+    },
+    {
+      "concept": "equity-duration-house-affordability",
+      "page": "stocks-bonds",
+      "taughtBy": [
+        "stocks-bonds"
+      ]
+    },
+    {
+      "concept": "interest-parity-carry-trade",
+      "page": "where-money-comes-from",
+      "taughtBy": [
+        "money-as-iou",
+        "loans-create-deposits",
+        "bank-run",
+        "quantity-theory-inflation",
+        "inflation-winners-losers",
+        "interest-price-of-time",
+        "loan-amortisation",
+        "monetary-transmission",
+        "purchasing-power-parity"
       ]
     },
     {
@@ -2576,10 +3475,10 @@
     }
   ],
   "unknownAliasIds": [],
-  "sizeBytes": 1207009,
+  "sizeBytes": 1321301,
   "questionsBytes": 173006,
-  "combinedBytes": 1380015,
-  "indexBytes": 137937,
+  "combinedBytes": 1494307,
+  "indexBytes": 153348,
   "chunkBytes": {
     "math.nodes": 51664,
     "math.edges": 90019,
@@ -2587,7 +3486,7 @@
     "waves.nodes": 45855,
     "waves.edges": 63594,
     "waves.questions": 24627,
-    "circuits.nodes": 15388,
+    "circuits.nodes": 24103,
     "circuits.edges": 23342,
     "circuits.questions": 12351,
     "systems.nodes": 21522,
@@ -2596,8 +3495,8 @@
     "measurement.nodes": 35675,
     "measurement.edges": 63643,
     "measurement.questions": 30126,
-    "matter.nodes": 29536,
-    "matter.edges": 18917,
+    "matter.nodes": 52717,
+    "matter.edges": 19493,
     "matter.questions": 7898,
     "life.nodes": 26735,
     "life.edges": 23263,
@@ -2605,13 +3504,13 @@
     "earth.nodes": 25871,
     "earth.edges": 19025,
     "earth.questions": 6822,
-    "computing.nodes": 247660,
-    "computing.edges": 182957,
+    "computing.nodes": 289902,
+    "computing.edges": 187479,
     "computing.questions": 2766,
-    "society.nodes": 58077,
+    "society.nodes": 67881,
     "society.edges": 41022,
     "society.questions": 3743,
-    "tech.nodes": 9437,
-    "tech.edges": 9686
+    "tech.nodes": 16930,
+    "tech.edges": 12509
   }
 }

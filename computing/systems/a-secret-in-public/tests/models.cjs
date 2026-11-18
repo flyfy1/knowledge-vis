@@ -411,7 +411,9 @@ const attr = (sel, a) => { const m = html(sel).match(new RegExp(a + '="([^"]*)"'
   // REGISTRY anchors exist in the page
   const REG = JSON.parse(fs.readFileSync(path.join(DIR, 'REGISTRY.json'), 'utf8'));
   for (const c of REG.concepts) ok('REGISTRY anchor ' + c.anchor + ' exists', HTML.includes('id="' + c.anchor.slice(1) + '"'));
-  ok('REGISTRY has the modular-arithmetic rung', REG.concepts.some(c => c.anchor === '#mod' && c.aliases.zh.includes('模运算') && c.aliases.en.includes('modular arithmetic')));
+  // Registration 2026-11-18: the bare words 模运算 / modular arithmetic / 费马小定理 stay with rsa-encryption (pinned in
+  // tests/concept-search.cjs); the rung keeps its title and the words only it answers (同余, congruence, finite field).
+  ok('REGISTRY has the modular-arithmetic rung', REG.concepts.some(c => c.anchor === '#mod' && c.title.zh.startsWith('模运算') && /^Modular arithmetic/.test(c.title.en) && c.aliases.zh.includes('同余') && c.aliases.en.includes('congruence') && c.aliases.en.includes('finite field')));
   // links point at real pages
   for (const k in Z) for (const m of Z[k].matchAll(/href="([^"#]+)"/g)) { const p = path.join(DIR, m[1]); ok(`link ${m[1]} in ${k} exists`, m[1].startsWith('http') || fs.existsSync(path.join(p, 'index.html')) || m[1] === '../../../'); }
 }
