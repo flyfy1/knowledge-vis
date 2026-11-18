@@ -19,6 +19,7 @@
 const fs = require('fs');
 const path = require('path');
 const vm = require('vm');
+const ED = require('./editions.cjs');
 
 const LANGS = ['zh', 'en'];
 const STAGES = ['primary', 'junior', 'senior', 'university'];
@@ -143,6 +144,7 @@ function pagesFromJson(root, config) {
     if (!Array.isArray(meta.tags) || meta.tags.some(t => !bilingual(t))) p.push('tags: a list of {"zh": …, "en": …}');
     if (meta.languages != null && !template && !(Array.isArray(meta.languages) && meta.languages.length && meta.languages.every(l => LANGS.includes(l)))) p.push('languages: a list such as ["zh"] (a page in one language only)');
     if (meta.order != null && !(Number.isInteger(meta.order) && meta.order > 0)) p.push('order: a positive integer (or leave it out: the page goes after every ordered page)');
+    if (meta.defaultEdition != null && meta.defaultEdition !== 'original') p.push(`defaultEdition: "${meta.defaultEdition}" (the only value is "original": keep this page on its canonical edition whatever KNOWLEDGE_DEFAULT_EDITION says; leave it out to follow the switch)`);
     let title = meta.title, desc = meta.desc;
     if (titleInContent(meta)) {
       if (meta.title != null || meta.desc != null) p.push('title/desc: a template page takes them from content.<lang>.md (the # … {#hero} heading and the front-matter desc); remove them from page.json');
@@ -160,7 +162,12 @@ function pagesFromJson(root, config) {
       if (f === 'subtopic' && v == null) continue;
       row[f] = v;
     }
-    rows.push({ row, meta, dir: rel, template, order: meta.order });
+    // Parallel editions (scripts/lib/editions.cjs): detected, never hand-written. The pin only matters with an edition.
+    const editions = nonempty(meta.slug) ? ED.detect(root, meta.slug) : null;
+    const pin = ED.pinOf(root, meta, rel, editions);
+    if (editions) row.editions = editions;
+    if (pin) row.defaultEdition = 'original';
+    rows.push({ row, meta, dir: rel, template, order: meta.order, pin });
   }
   // Display order: page.json "order", then the pages without one, by path (a new registration goes last).
   rows.sort((a, b) => (a.order != null ? 0 : 1) - (b.order != null ? 0 : 1) || (a.order || 0) - (b.order || 0) || a.dir.localeCompare(b.dir));
@@ -192,7 +199,7 @@ function loadRegistry(root) {
   }
   const r = pagesFromJson(root, w);
   const config = Object.assign({}, w, { KNOWLEDGE_PAGES: r.rows.map(e => e.row) });
-  return { mode: 'pages', root, cfg, config, entries: r.rows, problems: cfg.problems.concat(r.problems), unregistered: r.unregistered };
+  return { mode: 'pages', root, cfg, config, entries: r.rows, problems: cfg.problems.concat(ED.switchProblems(w), r.problems), unregistered: r.unregistered };
 }
 
 /* ───────── the generated KNOWLEDGE_PAGES block ───────── */
@@ -202,6 +209,7 @@ function renderRow(row) {
   const lines = [`    slug: ${q(row.slug)}`, `    title: ${pair(row.title)}`, `    desc: ${pair(row.desc)}`, `    tags: [${row.tags.map(pair).join(', ')}]`];
   if (row.languages) lines.push(`    languages: [${row.languages.map(q).join(', ')}]`);
   lines.push('    ' + ['category', 'subtopic', 'stage', 'status', 'path'].filter(f => row[f] != null).map(f => `${f}: ${q(row[f])}`).join(', '));
+  if (row.editions) lines.push('    editions: { ' + Object.entries(row.editions).map(([k, v]) => `${q(k)}: ${q(v)}`).join(', ') + ' }' + (row.defaultEdition ? `, defaultEdition: ${q(row.defaultEdition)}` : ''));
   return '  {\n' + lines.join(',\n') + '\n  }';
 }
 function renderBlock(rows) {

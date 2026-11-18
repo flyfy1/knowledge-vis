@@ -110,3 +110,12 @@ typography leaked into English, and the page needed `enCjk: ["s0power"]` to pass
 collapse and is not CJK. `enCjk` is gone from `page.json` (version 20261117b). The Chinese formula keeps its
 U+3000. Visible effect: in English the gap is narrower (about two monospace cells instead of four), and the
 line wraps at the same point at 390 and 320 px. Record: specs/reviews/site-template-phase3d-review-20261117.md.
+
+## 2026-11-19: pinned to this edition (`"defaultEdition": "original"`)
+
+Since 2026-11-19 the site's page-level links open the Claude Code edition of a lesson when one exists
+(`KNOWLEDGE_DEFAULT_EDITION` in pages.config.js; specs/claude-code-editions.md「默认版本」). This lesson is pinned
+to its Codex edition at this address: the 2026-11-17 comparison kept it on purpose because 22 atlas deep links point
+at this edition's specific steps (specs/reviews/lesson-version-choice-20261117.md, HANDOFF.md 1f/1g), and the
+Claude Code edition at `variants/claude-code/power-converters/` has different steps. The pin is a registry field
+only; the lesson itself is unchanged.

@@ -26,7 +26,9 @@ let checks = 0; const ok = (v, m) => { assert.ok(v, m); checks++; };
       // inherits the alias score and comes first.
       await page.locator('#siteSearch').fill(lang === 'zh' ? '利息' : 'interest');
       const firstCard = page.locator('#grid > .card').first();
-      ok(await firstCard.getAttribute('href') === 'investment/rates/compound-interest/', `${lang}: alias puts its page first`);
+      // A page card links where the default-edition resolver says (pages.config.js; specs/claude-code-editions.md「默认版本」).
+      const pageHref = slug => page.evaluate(s => window.knowledgeEditionPath(window.KNOWLEDGE_PAGES.find(p => p.slug === s), window.KNOWLEDGE_DEFAULT_EDITION), slug);
+      ok(await firstCard.getAttribute('href') === await pageHref('compound-interest'), `${lang}: alias puts its page first`);
       ok(await page.locator('#grid > .card[data-concept="compound-interest"]').count() === 0, `${lang}: same-named concept folded into its page`);
       ok(/\d/.test(await page.locator('#siteSearchCount').innerText()), `${lang}: count shown`);
 
@@ -41,11 +43,14 @@ let checks = 0; const ok = (v, m) => { assert.ok(v, m); checks++; };
       // A concept that is just its page's own topic is not shown twice.
       await page.locator('#siteSearch').fill(lang === 'zh' ? '光合作用' : 'photosynthesis');
       const hrefs = await page.locator('#grid > .card').evaluateAll(els => els.map(e => [e.dataset.concept || '', e.getAttribute('href')]));
-      ok(hrefs.filter(([, h]) => h && h.startsWith('biology/cells/photosynthesis/')).length === 1, `${lang}: page and its same-named concept deduplicated`);
+      const photoHref = await pageHref('photosynthesis');
+      ok(hrefs.filter(([, h]) => h && (h.startsWith('biology/cells/photosynthesis/') || h === photoHref)).length === 1, `${lang}: page and its same-named concept deduplicated`);
       // A concept that names a step inside a differently titled page stays next to the page.
       await page.locator('#siteSearch').fill(lang === 'zh' ? '傅里叶' : 'Fourier');
       const fourier = await page.locator('#grid > .card').evaluateAll(els => els.map(e => [e.dataset.concept || '', e.getAttribute('href')]));
-      ok(fourier.some(([c]) => c === 'fourier') && fourier.some(([c, h]) => !c && h === 'signal/transforms/fourier/'), `${lang}: concept and page both listed`);
+      const fourierHref = await pageHref('fourier');
+      ok(fourier.some(([c]) => c === 'fourier') && fourier.some(([c, h]) => !c && h === fourierHref), `${lang}: concept and page both listed`);
+      ok(fourier.find(([c]) => c === 'fourier')[1] === 'signal/transforms/fourier/#step5', `${lang}: the anchored concept keeps the canonical edition`);
       ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), `${lang}: no horizontal overflow at 390`);
       const small = await page.locator('#grid > .card').evaluateAll(els => els.filter(e => e.getBoundingClientRect().height < 48).length);
       ok(small === 0, `${lang}: result cards are at least 48px tall`);

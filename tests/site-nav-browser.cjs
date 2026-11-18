@@ -38,6 +38,9 @@ async function home(browser) {
     const sub = await page.evaluate(() => ({
       crumbs: Array.from(document.querySelectorAll('#crumbs li:not([hidden]) a')).map((a) => [a.textContent, new URL(a.href).search, a.getAttribute('aria-current')]),
       cards: Array.from(document.querySelectorAll('#grid a.card')).map((a) => a.getAttribute('href')),
+      // where each systems page's card should link: the default-edition resolver (specs/claude-code-editions.md「默认版本」)
+      want: window.KNOWLEDGE_PAGES.filter((p) => p.category === 'computing' && p.subtopic === 'systems' && p.status === 'live')
+        .map((p) => window.knowledgeEditionPath(p, window.KNOWLEDGE_DEFAULT_EDITION)),
       heads: document.querySelectorAll('#grid .group-head').length,
       pressed: document.querySelector('#catChips .chip.on').dataset.cat,
     }));
@@ -45,7 +48,7 @@ async function home(browser) {
     eq(sub.crumbs.map((c) => c[0]), names, tag + ' subtopic crumbs');
     eq(sub.crumbs.map((c) => c[1]), ['', '?category=computing', '?category=computing&subtopic=systems'], tag + ' crumb hrefs');
     eq(sub.crumbs.map((c) => c[2]), [null, null, 'page'], tag + ' aria-current on the subtopic');
-    ok(sub.cards.length >= 20 && sub.cards.every((h) => h.startsWith('computing/systems/')), tag + ' only systems pages: ' + sub.cards.length);
+    ok(sub.cards.length >= 20 && sub.cards.every((h) => sub.want.includes(h)) && sub.cards.length === sub.want.length, tag + ' only systems pages, each at its default edition: ' + sub.cards.length);
     eq(sub.heads, 0, tag + ' no group heads in a subtopic view');
     eq(sub.pressed, 'computing', tag + ' category chip stays pressed');
     ok(await minBox(page, '#crumbs a') >= 48, tag + ' crumbs are 48 px targets');

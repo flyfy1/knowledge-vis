@@ -26,6 +26,7 @@ const fs = require('fs');
 const path = require('path');
 const vm = require('vm');
 const REG = require('./lib/registry.cjs');
+const ED = require('./lib/editions.cjs');
 
 const args = process.argv.slice(2);
 const CHECK = args.includes('--check'), ADOPT = args.includes('--adopt');
@@ -104,6 +105,12 @@ function build() {
     const p = { path: r.path, kind: e.meta.kind, category: r.category };
     if (r.subtopic) p.subtopic = r.subtopic;
     Object.assign(p, { stage: r.stage, status: r.status, template: e.template, title: r.title, desc: r.desc });
+    // parallel editions and the pin (specs/claude-code-editions.md「默认版本」); href = where a page-level link goes now
+    if (r.editions) {
+      p.editions = r.editions;
+      if (e.pin) Object.assign(p, { defaultEdition: 'original', pinnedBy: e.pin });
+      p.href = ED.defaultPath(reg.config, r);
+    }
     if (r.status === 'live' && site.bySlug.get(r.slug) === r) p.anchors = [...site.anchors(r)];
     p.concepts = [];
     pages[r.slug] = p;

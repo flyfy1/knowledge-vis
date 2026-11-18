@@ -163,6 +163,16 @@ converted. The 204 LeetCode lessons stay on their pipeline: `site-registry.json`
 `leetcode/problems.config.js`, and they are not site pages for refs or backlinks. `variants/` is frozen and not in the
 registry. The home page reads the generated block as before.
 
+**Default edition (2026-11-19).** Each generated row carries `editions: {"claude-code": "variants/claude-code/<slug>/"}`
+when that directory has an `index.html` (detected by `scripts/lib/editions.cjs`, never hand-written), and
+`defaultEdition: "original"` when the page is pinned: an optional `page.json` field `"defaultEdition": "original"`
+(the only allowed value), or automatically when `page-provenance.json` says the canonical page is itself by Claude Code.
+`site-registry.json` adds `editions`, `pinnedBy` and `href` (where a page-level link goes now). The switch
+`window.KNOWLEDGE_DEFAULT_EDITION` and the resolver `window.knowledgeEditionPath` are in the hand-edited part of
+`pages.config.js`; page-level `[[slug]]` refs and related links in template pages follow it, anchored refs and backlinks
+do not. Adding or removing a variant directory makes `--check` fail until the registry is regenerated. Rules, counts and
+how to flip back: [claude-code-editions.md](claude-code-editions.md)「默认版本」.
+
 **REGISTRY.json is not replaced yet (deferred).** The plan was "page.json replaces REGISTRY.json". It is not clean
 now: REGISTRY.json carries the concepts (atlas import), essay tests read it, `scripts/test_index_pagination.cjs`
 defines an essay as a live page with a REGISTRY.json, its `tags` differ from the card tags on 9 pages, and deleting

@@ -316,7 +316,7 @@ function buildLesson(dir, opts = {}) {
         add('site.bl.' + (i + 1), `<a href="${href}">${t.titleOf(r.p, l)}</a>` + (parts.some(Boolean) ? (l === 'zh' ? '：' : ': ') + parts.filter(Boolean).join(l === 'zh' ? '；' : '; ') : ''));
       });
     }
-    if (related.length) { add('site.rel.title', tx.rel); related.forEach((s, i) => add('site.rel.' + (i + 1), `<a href="${t.relHref(page.path, site.bySlug.get(s).path)}">${t.titleOf(site.bySlug.get(s), l)}</a>`)); }
+    if (related.length) { add('site.rel.title', tx.rel); related.forEach((s, i) => add('site.rel.' + (i + 1), `<a href="${t.relHref(page.path, site.pageHref(site.bySlug.get(s)))}">${t.titleOf(site.bySlug.get(s), l)}</a>`)); }
   }
 
   /* raw links: warn when they point at no live page or a missing anchor */

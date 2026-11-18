@@ -35,6 +35,7 @@
   2. 跑 `node scripts/build-registry.cjs`，把它改写的 `pages.config.js`、`site-registry.json`、`CONCEPT-MAP.md`、`specs/atlas-edge-todo.md` 和 `page.json` 一起提交。
 - 新分类、新子主题、`KNOWLEDGE_FEATURED`、`KNOWLEDGE_ESSAYS` 的顺序仍在 `pages.config.js` 上半部分手改。
 - 已经手贴了一行？跑 `node scripts/build-registry.cjs --adopt`，它会把这一行搬进对应目录的 `page.json`。
+- 默认版本（2026-11-19）：`pages.config.js` 上半部分的 `KNOWLEDGE_DEFAULT_EDITION = "claude-code"` 让有 `variants/claude-code/<slug>/` 平行版的课，页面级链接默认指向平行版。生成的行里的 `editions` 是脚本检测的，不手写。某页要留在原版地址：在它的 `page.json` 加 `"defaultEdition": "original"`（唯一合法值），再跑 `build-registry`。细则见 [specs/claude-code-editions.md](specs/claude-code-editions.md)「默认版本」。
 - 细则：[specs/site-template.md](specs/site-template.md) §3b。
 
 ## 页面署名标注（page-provenance）
@@ -72,6 +73,8 @@ node tests/site-template.cjs                      # 夹具构建、失败模式�
 # 站点登记表（page.json → pages.config.js KNOWLEDGE_PAGES、site-registry.json、CONCEPT-MAP 页面概念表、specs/atlas-edge-todo.md）
 node scripts/build-registry.cjs --check
 node tests/build-registry.cjs
+node tests/default-edition.cjs                    # 默认版本开关、解析器、editions / defaultEdition
+EDITION_BASE_URL=http://127.0.0.1:18871/ node tests/default-edition-browser.cjs   # 浏览器
 # 站内导航（面包屑、子主题视图、自动链接；登记新页面后先跑 node scripts/build-site-nav.cjs）
 node scripts/build-site-nav.cjs --check
 node tests/site-nav.cjs

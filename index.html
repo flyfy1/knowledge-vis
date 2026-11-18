@@ -182,7 +182,7 @@
   <footer id="footer"></footer>
 </div>
 
-<script src="pages.config.js?v=20261118-nine"></script>
+<script src="pages.config.js?v=20261119-edition"></script>
 <script>
 (function(){
   'use strict';
@@ -388,6 +388,10 @@
   var conceptState = 'idle', conceptItems = [], pageRecords = null;
   var byPath = {};
   pages.forEach(function(pg){ if (pg.path && !byPath[pg.path]) byPath[pg.path] = pg; });
+  // 页面级链接去哪：默认版本开关与解析器都在 pages.config.js（specs/claude-code-editions.md「默认版本」）
+  function pageHref(pg) {
+    return typeof window.knowledgeEditionPath === 'function' ? window.knowledgeEditionPath(pg, window.KNOWLEDGE_DEFAULT_EDITION) : pg.path;
+  }
   function loadConcepts() {
     if (conceptState !== 'idle') return;
     conceptState = 'loading';
@@ -397,7 +401,8 @@
       if (failed || !CS || !K || !Array.isArray(K.concepts)) { conceptState = 'error'; return; }
       conceptItems = K.concepts.map(function(r){
         var href = r[2], path = href.split('#')[0], pg = byPath[path] || null;
-        return { id: r[0], href: href, page: pg, atlas: !pg && href.indexOf(K.atlas) === 0,
+        // a concept without an anchor is a page-level link: it follows the default edition; anchored ones stay canonical
+        return { id: r[0], href: pg && href.indexOf('#') === -1 ? pageHref(pg) : href, page: pg, atlas: !pg && href.indexOf(K.atlas) === 0,
           title: { zh: r[3], en: r[4] }, summary: { zh: r[7] || r[8], en: r[8] || r[7] },
           anchored: href.indexOf('#') !== -1,
           record: CS.prepare({ titles: [r[3], r[4]], aliases: r[5].concat(r[6]), texts: [r[7], r[8]] }) };
@@ -554,7 +559,7 @@
     el.className = 'card' + (live ? '' : ' planned');
     if (live) {
       if (pg.category === 'leetcode') inlineCategoryLink(el, 'leetcode');
-      else el.href = pg.path;
+      else el.href = pageHref(pg);
     }
     if (!live) el.appendChild(node('span', 'badge planned', t('badgePlanned')));
     var badges = node('div', 'card-badges');

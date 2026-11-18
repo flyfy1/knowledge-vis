@@ -20,6 +20,12 @@ Everything is generated from the site registry (page.json files and the hand-edi
 - `site-nav.css` also styles the generated "linked from / related" block (`.site-xref`). The `sn-` version was
   not bumped for that, because no unmigrated page uses those classes.
 
+**Default edition (2026-11-19, `sn-20261119a`).** Auto-links go to a page's default edition, not always its canonical
+path: `site-nav-data.js` carries the switch (`edition`), each page's edition ids and pin (row elements 6 and 7), and the
+resolver `editionPath` copied verbatim from `pages.config.js`. A `window.KNOWLEDGE_DEFAULT_EDITION` already set on the
+page wins (tests). Self-links and `noAutolink` still compare canonical paths. The subtopic directory pages are redirects
+to the home views, whose cards follow the same switch. Rules: [claude-code-editions.md](claude-code-editions.md)「默认版本」.
+
 ## Files
 
 | File | What |

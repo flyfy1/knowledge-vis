@@ -1,6 +1,6 @@
 # HANDOFF.md — 开工前先读
 
-最后更新：2026-11-18，登记者（Claude Code，claude-opus-5-5）登记了 9 篇已评审长文（未推送、未部署），更新了「总览」「2026-11-18 这一轮」「未上线」和「等 Yangyu 决定」；未解决的问题汇总在 [specs/essays-status-20261119.md](specs/essays-status-20261119.md)。之前 team lead 加了「2026-11-18 这一轮」和「总览」两节。之前的逐条更新记录见 git log HANDOFF.md。
+最后更新：2026-11-19，默认版本开关（Claude Code 平行版作为默认版本，未推送、未部署；总览「已完成」里一条）。之前 2026-11-18 登记者（Claude Code，claude-opus-5-5）登记了 9 篇已评审长文（未推送、未部署），更新了「总览」「2026-11-18 这一轮」「未上线」和「等 Yangyu 决定」；未解决的问题汇总在 [specs/essays-status-20261119.md](specs/essays-status-20261119.md)。之前 team lead 加了「2026-11-18 这一轮」和「总览」两节。之前的逐条更新记录见 git log HANDOFF.md。
 
 这份文件有两部分：
 
@@ -73,7 +73,8 @@
 - **站点模板（Yangyu 2026-11-16 批准，D1–D10）**：Phase 0–3 全部完成并上线。规格 [specs/site-template.md](specs/site-template.md)，记录见下面「模板迁移与示意图补齐」第 1–1g 条。
   - 已迁移 204 页（`page.json` 带 `"layout"`）：计算机等长文、全部可转换的讲义课。登记表由 `page.json` 生成（`scripts/build-registry.cjs`），不手改 `pages.config.js` 的 KNOWLEDGE_PAGES。
   - 2026-11-17 Yangyu：「请你把他们分别手工处理一下 而且多agent写同一篇的话 默认用更好的那个版本。做完直接部署上线」。批次 B 跳过的五课逐页比较了原版与 `variants/claude-code/` 平行版（[specs/reviews/lesson-version-choice-20261117.md](specs/reviews/lesson-version-choice-20261117.md)）：kepler-orbits、acid-base-equilibrium、bayes-diagnostics、photosynthesis 换成 Claude Code 版；power-converters 保留 Codex 版（图谱有 22 处深链指向它的具体步骤），文字抽成 `i18n.js` 后转换，读者所见不变。两批都经独立评审后上线（第 1f、1g 条）。
-  - 「用更好的版本」这次只用在这五课上；其余约 196 个平行版仍按 D5 冻结，没比较过。
+  - 「用更好的版本」这次只用在这五课上；其余 196 个平行版没逐个比较过，2026-11-19 起改为由默认版本开关整体指向（下一条）。
+- **默认版本（2026-11-19，Yangyu：「请你做一个配置，让 Claude Code 开发的版本都作为默认版本吧」）**：`pages.config.js` 的 `KNOWLEDGE_DEFAULT_EDITION = "claude-code"`。196 课的页面级链接（首页卡片与搜索的页面结果、子主题目录、《标题》自动链接、模板页里不带锚点的 `[[slug]]` 和相关页面）默认打开 `variants/claude-code/<slug>/`；power-converters 和已搬过的四课钉在原版（`page.json` 的 `"defaultEdition": "original"`）。带锚点的链接（图谱、概念搜索、`[[slug#anchor]]`）和原版地址不变。平行版只做过自查。改回原版、数字和后续（把 214 处概念深链和 614 条带锚点的链接映射到平行版步骤）见 [specs/claude-code-editions.md](specs/claude-code-editions.md)「默认版本」。
 - **存储 S1–S5 补示意图**、**CPU SIMD 与浮点长文**：已上线（第 2、3 条）。
 - **9 篇长文已评审、已在 `main` 上登记，等 team lead 推送部署**（2026-11-18/19）：how-a-chatbot-writes、what-a-frontier-model-takes、a-secret-in-public、what-quantum-computers-do、why-chips-are-hard、why-fusion-is-hard、why-batteries-hold-so-little、why-atoms-stick-together、why-one-rate-moves-everything。新子主题 `computing/quantum`、`tech/semiconductors`。提交、各篇未解决的问题和剩下的草稿见 [specs/essays-status-20261119.md](specs/essays-status-20261119.md)。图谱首屏索引上限临时从 150,000 提到 160,000 字节，下一批导入前要先压缩索引（见「等 Yangyu 决定」）。
 
@@ -84,7 +85,7 @@
 4. **可选的计算机课程篇目**：B5 小总线（I²C/SPI/UART）、S6 手机存储。
 5. **模板扫尾（不急）**：
    - 三篇旧写法长文未转换：why-nvme-is-fast、why-compute-waits-for-memory、switches-that-compute；
-   - 约 196 个平行版是否也逐个比较、换成更好的版本（要 Yangyu 点头才做）；
+   - 默认版本的后续：带锚点的链接仍指向原版步骤，逐课映射到平行版步骤；91 处写死的页面级链接不跟开关（见 specs/claude-code-editions.md「默认版本」）；
    - 图谱边待办 [specs/atlas-edge-todo.md](specs/atlas-edge-todo.md)：335 对有链接没图谱边的页面，逐对人工判断，脚本不写边；
    - 迁移前就有的小毛病：rsa-encryption、fractions、coordinate-plane 窄屏横向溢出；interference、standing-wave、sampling、convolution 等测试读旧路径或不存在的提交；多节课画布文字重叠；lti-systems 音频测试超时；16 处 `figures/` 里的旧手写文字（`stale:` 警告）。
 6. **有日期的**：2026-12-01 之后改酱油那篇（见「已知问题」第 1 条）。

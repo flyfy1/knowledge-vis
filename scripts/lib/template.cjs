@@ -34,6 +34,7 @@ function loadCopy(file) {
  * the essay fragments by build-atlas-data).
  */
 const REG = require('./registry.cjs');
+const ED = require('./editions.cjs');
 function loadPagesConfig(root = REPO_ROOT) {
   return REG.loadRegistry(root).config;
 }
@@ -50,10 +51,12 @@ function createSite(root = REPO_ROOT) {
   const registry = REG.loadRegistry(root);
   const w = registry.config;
   const pages = (w.KNOWLEDGE_PAGES || []).filter(p => p.status === 'live' && p.path);
-  const bySlug = new Map(), byPath = new Map();
+  const bySlug = new Map(), byPath = new Map(), byEditionPath = new Map();
   for (const p of pages) {
     if (!bySlug.has(p.slug)) bySlug.set(p.slug, p);
     byPath.set(p.path.replace(/\/?$/, '/'), p);
+    // a link to a parallel edition (variants/claude-code/<slug>/) is a link to the page (scanLinks, backlinks, converter)
+    for (const e of Object.values(p.editions || {})) byEditionPath.set(e.replace(/\/?$/, '/'), p);
   }
   const ax = { window: {} };
   const atlasFile = path.join(root, 'atlas', 'data.js');
@@ -63,7 +66,9 @@ function createSite(root = REPO_ROOT) {
   for (const n of (atlas.nodes || [])) nodes.set(n.id, n);
   const anchorCache = new Map();
   const site = {
-    root, config: w, registry, pages, bySlug, byPath, nodes, atlas,
+    root, config: w, registry, pages, bySlug, byPath, byEditionPath, nodes, atlas,
+    // where a page-level link (no anchor) to p goes under the default-edition switch (scripts/lib/editions.cjs)
+    pageHref: p => ED.defaultPath(w, p),
     cats: w.KNOWLEDGE_CATEGORIES || [], subs: w.KNOWLEDGE_SUBTOPICS || {},
     dirOf: p => path.join(root, p.path),
     isMigrated: p => isTemplateDir(path.join(root, p.path)),
@@ -90,7 +95,7 @@ function resolveHref(site, fromPath, href) {
   const m = href.match(/^([^#?]*)(?:#([\w-]+))?$/);
   if (!m || /^[a-z]+:/i.test(href) || !m[1]) return null;
   const abs = path.posix.normalize(path.posix.join(fromPath, m[1])).replace(/\/?$/, '/');
-  const p = site.byPath.get(abs);
+  const p = site.byPath.get(abs) || site.byEditionPath.get(abs);
   return p ? [p, m[2] || null] : null;
 }
 const relHref = (fromPath, toPath) => { const r = path.posix.relative(fromPath, toPath); return r ? r + '/' : './'; };
@@ -156,7 +161,8 @@ function renderInline(md, ctx) {
   s = s.replace(/\[\[([^\]|]+)(?:\|([^\]]+))?\]\]/g, (m, target, text) => {
     const r = resolveRef(target.trim(), ctx);
     if (ctx.refs) ctx.refs.push({ key: ctx.key, to: r.p.slug, anchor: r.anchor });
-    const href = (r.p === ctx.page ? '' : relHref(ctx.page.path, r.p.path)) + (r.anchor ? '#' + r.anchor : '');
+    // page-level refs follow the default-edition switch; anchored refs keep the canonical edition (its steps)
+    const href = (r.p === ctx.page ? '' : relHref(ctx.page.path, r.anchor || !ctx.site.pageHref ? r.p.path : ctx.site.pageHref(r.p))) + (r.anchor ? '#' + r.anchor : '');
     return `<a href="${href}">${text != null ? text : r.text}</a>`;
   });
   s = s.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>').replace(/(^|[^*])\*([^*\s][^*]*)\*(?!\*)/g, '$1<em>$2</em>');
@@ -753,7 +759,7 @@ function buildEssay(dir, opts = {}) {
         add('site.bl.' + (i + 1), `<a href="${href}">${titleOf(r.p, l)}</a>` + (parts.some(Boolean) ? (l === 'zh' ? '：' : ': ') + parts.filter(Boolean).join(l === 'zh' ? '；' : '; ') : ''));
       });
     }
-    if (related.length) { add('site.rel.title', t.rel); related.forEach((s, i) => add('site.rel.' + (i + 1), `<a href="${relHref(page.path, site.bySlug.get(s).path)}">${titleOf(site.bySlug.get(s), l)}</a>`)); }
+    if (related.length) { add('site.rel.title', t.rel); related.forEach((s, i) => add('site.rel.' + (i + 1), `<a href="${relHref(page.path, site.pageHref(site.bySlug.get(s)))}">${titleOf(site.bySlug.get(s), l)}</a>`)); }
   }
 
   /* links written as raw HTML (not [[refs]]): warn when they point at no live page or a missing anchor */

@@ -198,6 +198,27 @@ window.KNOWLEDGE_ESSAYS = [
   "scarcity-moves"
 ];
 
+/* 默认版本开关（2026-11-19 增设，Yangyu：「让 Claude Code 开发的版本都作为默认版本」；细则 specs/claude-code-editions.md「默认版本」）。
+ *   "claude-code"  有 Claude Code 平行版（variants/claude-code/<slug>/）的课，页面级链接都指向平行版：
+ *                  首页卡片、精选、分类/子主题视图（含 /<分类>/<子主题>/ 目录页）、首页搜索的页面结果和不带锚点的概念结果、
+ *                  手写页上的《标题》自动链接、模板页里不带锚点的 [[slug]] 和「相关页面」。
+ *   "original"     恢复原来的行为：所有链接都指向原版地址 <分类>/<子主题>/<slug>/。
+ * 带锚点的链接（图谱概念与边、带锚点的搜索结果、[[slug#anchor]]、长文里的深链）和「被这些页面引用」始终指向原版，
+ * 原版地址不重定向。某页不跟开关走：在它的 page.json 写 "defaultEdition": "original"（原版本身就是 Claude Code 写的页面，
+ * 由 page-provenance.json 自动识别，也不跟）。哪些页有平行版由 scripts/build-registry.cjs 检测，写进下面生成的
+ * KNOWLEDGE_PAGES（editions、defaultEdition 两个字段），不手写。
+ * 改了这一行之后跑：node scripts/build-registry.cjs && node scripts/build-site-nav.cjs && node scripts/build-pages.cjs --all，
+ * 并把首页 index.html 里 pages.config.js 的 ?v= 缓存键改新。 */
+window.KNOWLEDGE_DEFAULT_EDITION = "claude-code";
+
+/* 解析器：一个已登记页面的页面级链接该去哪（站点根目录下的相对路径）。page 是 KNOWLEDGE_PAGES 的一行，
+ * edition 是开关的值。首页直接调用；scripts/lib/editions.cjs 在构建时调用同一个函数，
+ * scripts/build-site-nav.cjs 把它原样写进 site-nav-data.js 给手写页的自动链接用。只在这里改。 */
+window.knowledgeEditionPath = function (page, edition) {
+  var alt = page && page.editions && edition && edition !== "original" ? page.editions[edition] : null;
+  return alt && page.defaultEdition !== "original" ? alt : page.path;
+};
+
 /* ===== GENERATED: KNOWLEDGE_PAGES ===== written by scripts/build-registry.cjs from every page.json that has a "status".
  * Do not edit between this banner and the END marker: node scripts/build-registry.cjs --check fails on any hand edit.
  * To register a page, write <category>/<subtopic>/<slug>/page.json (AGENTS.md, specs/essays.md「Registering」),

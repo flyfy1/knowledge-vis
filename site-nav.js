@@ -7,6 +7,7 @@
  *      above the page title (or inside an element marked data-site-nav), in the page's language;
  *   2. turns exact mentions of other live pages' titles into links:
  *      zh 《exact title》, en “Exact Title” (curly quotes), or <cite>Exact Title</cite>.
+ *      A link goes to the page's default edition (pages.config.js KNOWLEDGE_DEFAULT_EDITION, carried by site-nav-data.js).
  * Text inside links, headings, buttons, form controls, svg/canvas, the provenance label and
  * anything under [data-no-autolink] is left alone, and a page never links to itself.
  * A debounced MutationObserver re-runs both after the page re-renders (language switch).
@@ -23,11 +24,22 @@
   function normTitle(s) { return s.replace(/’/g, "'"); }
   function slugOf(p) { return p[0] || p[1].split('/').filter(Boolean).pop(); }
 
-  // data: SITE_NAV_DATA. Returns { re, zh: {title: page}, en: {normTitle: page} }.
-  function buildMatcher(data) {
+  // Where a page-level link to data row p goes: the resolver from pages.config.js (copied into SITE_NAV_DATA as
+  // editionPath by scripts/build-site-nav.cjs) applied to the row's editions and pin under the given switch value.
+  function pageTarget(p, data, edition) {
+    if (typeof data.editionPath !== 'function' || !p[6]) return p[1];
+    var slug = slugOf(p), editions = {};
+    p[6].forEach(function (id) { editions[id] = data.editionDirs[id] + slug + '/'; });
+    return data.editionPath({ path: p[1], editions: editions, defaultEdition: p[7] ? 'original' : undefined }, edition);
+  }
+
+  // data: SITE_NAV_DATA; edition: the default-edition switch (data.edition when left out).
+  // Returns { re, zh: {title: page}, en: {normTitle: page} }; page.target is where its links go.
+  function buildMatcher(data, edition) {
     var zh = {}, en = {}, zhList = [], enList = [];
+    if (edition == null) edition = data.edition;
     data.pages.forEach(function (p) {
-      var page = { slug: slugOf(p), path: p[1], zh: p[2], en: p[3], cat: p[4], sub: p[5] };
+      var page = { slug: slugOf(p), path: p[1], target: pageTarget(p, data, edition), zh: p[2], en: p[3], cat: p[4], sub: p[5] };
       if (p[2] && !zh[p[2]]) { zh[p[2]] = page; zhList.push(p[2]); }
       if (p[3] && !en[normTitle(p[3])]) { en[normTitle(p[3])] = page; enList.push(p[3]); }
     });
@@ -66,7 +78,7 @@
     return page;
   }
 
-  var core = { buildMatcher: buildMatcher, findMatches: findMatches, citeMatch: citeMatch };
+  var core = { buildMatcher: buildMatcher, findMatches: findMatches, citeMatch: citeMatch, pageTarget: pageTarget };
   if (typeof module === 'object' && module.exports) { module.exports = core; return; }
   if (!global.document || global.SiteNav) return;
 
@@ -206,7 +218,8 @@
   }
 
   /* Auto-links */
-  function relHref(p) { return homeHref(p.path); }
+  // page-level link: the default edition (specs/claude-code-editions.md「默认版本」)
+  function relHref(p) { return homeHref(p.target || p.path); }
   function linkFor(match) {
     var a = doc.createElement('a');
     a.className = 'site-autolink';
@@ -288,7 +301,8 @@
   function start() {
     data = global.SITE_NAV_DATA;
     if (!data || !data.pages) return;
-    matcher = buildMatcher(data);
+    // A KNOWLEDGE_DEFAULT_EDITION set on the page before this script runs (tests) wins over the generated value.
+    matcher = buildMatcher(data, typeof global.KNOWLEDGE_DEFAULT_EDITION === 'string' ? global.KNOWLEDGE_DEFAULT_EDITION : data.edition);
     for (var i = 0; i < data.pages.length; i++) {
       if (data.pages[i][1] === pageDir) { var p = data.pages[i]; page = { slug: slugOf(p), path: p[1], cat: p[4], sub: p[5] }; break; }
     }
