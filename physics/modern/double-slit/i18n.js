@@ -99,7 +99,10 @@ const STR = {
     "site.crumb.aria": "页面位置",
     "site.crumb.home": "首页",
     "site.crumb.cat": "物理与电路",
-    "site.crumb.sub": "近代物理"
+    "site.crumb.sub": "近代物理",
+    "site.bl.title": "被这些页面引用",
+    "site.bl.1": "<a href=\"../../../computing/quantum/what-quantum-computers-do/\">量子计算机到底能做什么</a>：<a href=\"../../../computing/quantum/what-quantum-computers-do/#ch2\">该文第 2 章</a>；<a href=\"../../../computing/quantum/what-quantum-computers-do/#ch12\">该文第 12 章</a>",
+    "site.bl.2": "<a href=\"../../../tech/semiconductors/why-chips-are-hard/\">芯片为什么越来越难做</a>：<a href=\"../../../tech/semiconductors/why-chips-are-hard/#ch5\">该文第 5 章</a>"
   },
   en: {
     back: "← Knowledge Index",
@@ -199,7 +202,10 @@ const STR = {
     "site.crumb.aria": "Breadcrumb",
     "site.crumb.home": "Home",
     "site.crumb.cat": "Physics & Circuits",
-    "site.crumb.sub": "Modern Physics"
+    "site.crumb.sub": "Modern Physics",
+    "site.bl.title": "Linked from",
+    "site.bl.1": "<a href=\"../../../computing/quantum/what-quantum-computers-do/\">What Quantum Computers Can Actually Do</a>: <a href=\"../../../computing/quantum/what-quantum-computers-do/#ch2\">its chapter 2</a>; <a href=\"../../../computing/quantum/what-quantum-computers-do/#ch12\">its chapter 12</a>",
+    "site.bl.2": "<a href=\"../../../tech/semiconductors/why-chips-are-hard/\">Why Chips Are Getting Harder to Make</a>: <a href=\"../../../tech/semiconductors/why-chips-are-hard/#ch5\">its chapter 5</a>"
   }
 };
 let currentLang = 'en';

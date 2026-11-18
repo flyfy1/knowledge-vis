@@ -107,8 +107,9 @@ const STR = {
     "site.crumb.cat": "计算与智能",
     "site.crumb.sub": "算法",
     "site.bl.title": "被这些页面引用",
-    "site.bl.1": "<a href=\"../../systems/rsa-encryption/\">RSA 公钥加密 · 乘起来容易，拆开来难</a>：<a href=\"../../systems/rsa-encryption/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>",
-    "site.bl.2": "<a href=\"../../systems/switches-that-compute/\">一堆开关是怎么学会算数的</a>：<a href=\"../../systems/switches-that-compute/#ch11\">该文第 11 章</a>"
+    "site.bl.1": "<a href=\"../../systems/a-secret-in-public/\">当着所有人的面约定一个秘密</a>：<a href=\"../../systems/a-secret-in-public/#ch6\">该文第 6 章</a>；<a href=\"../../systems/a-secret-in-public/#ch11\">该文第 11 章</a>",
+    "site.bl.2": "<a href=\"../../systems/rsa-encryption/\">RSA 公钥加密 · 乘起来容易，拆开来难</a>：<a href=\"../../systems/rsa-encryption/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>",
+    "site.bl.3": "<a href=\"../../systems/switches-that-compute/\">一堆开关是怎么学会算数的</a>：<a href=\"../../systems/switches-that-compute/#ch11\">该文第 11 章</a>"
   },
   en: {
     docTitle: "Hashing · Squeezing Any Input Into a Fixed Fingerprint",
@@ -217,8 +218,9 @@ const STR = {
     "site.crumb.cat": "Computing & AI",
     "site.crumb.sub": "Algorithms",
     "site.bl.title": "Linked from",
-    "site.bl.1": "<a href=\"../../systems/rsa-encryption/\">RSA Public-Key Encryption · Easy to Multiply, Hard to Split</a>: <a href=\"../../systems/rsa-encryption/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>",
-    "site.bl.2": "<a href=\"../../systems/switches-that-compute/\">How a Pile of Switches Learned to Do Arithmetic</a>: <a href=\"../../systems/switches-that-compute/#ch11\">its chapter 11</a>"
+    "site.bl.1": "<a href=\"../../systems/a-secret-in-public/\">Agreeing on a Secret in Plain Sight</a>: <a href=\"../../systems/a-secret-in-public/#ch6\">its chapter 6</a>; <a href=\"../../systems/a-secret-in-public/#ch11\">its chapter 11</a>",
+    "site.bl.2": "<a href=\"../../systems/rsa-encryption/\">RSA Public-Key Encryption · Easy to Multiply, Hard to Split</a>: <a href=\"../../systems/rsa-encryption/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>",
+    "site.bl.3": "<a href=\"../../systems/switches-that-compute/\">How a Pile of Switches Learned to Do Arithmetic</a>: <a href=\"../../systems/switches-that-compute/#ch11\">its chapter 11</a>"
   }
 };
 let currentLang = 'en';

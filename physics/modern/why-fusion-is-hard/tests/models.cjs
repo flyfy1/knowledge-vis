@@ -249,7 +249,9 @@ for (const k of ['doc.title', 'doc.desc', 'footer']) ok(`copy has ${k}`, Z[k] !=
 const CJK = /[㐀-鿿]/;
 ok('no Chinese in models.js', !CJK.test(fs.readFileSync(path.join(dir, 'models.js'), 'utf8')));
 ok('no Chinese in app.js', !CJK.test(fs.readFileSync(path.join(dir, 'app.js'), 'utf8')));
-ok('index.html: Chinese only in <title>, meta description and the 中 toggle', !CJK.test(html.replace(/<title>[^<]*<\/title>/, '').replace(/<meta name="description"[^>]*>/, '').replace('>中<', '><')));
+// the page-provenance label (added at registration, 2026-11-18) is bilingual by contract: exactly one, stripped before the check
+ok('one page-provenance label', (html.match(/<details class="page-provenance"/g) || []).length === 1);
+ok('index.html: Chinese only in <title>, meta description, the 中 toggle and the provenance label', !CJK.test(html.replace(/<details class="page-provenance"[\s\S]*?<\/details>/, '').replace(/<title>[^<]*<\/title>/, '').replace(/<meta name="description"[^>]*>/, '').replace('>中<', '><')));
 ok('no "left/right figure" wording', !Object.values(Z).some(v => typeof v === 'string' && /左图|右图|左边的图|右边的图|右边的|左边的/.test(v)));
 
 if (fails) { console.error(`${fails} of ${n} checks failed`); process.exit(1); }

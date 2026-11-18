@@ -2,7 +2,30 @@
  "_generated": "by scripts/build-pages.cjs; do not edit",
  "page": "double-slit",
  "refs": [],
- "backlinks": [],
+ "backlinks": [
+  {
+   "from": "what-quantum-computers-do",
+   "links": [
+    {
+     "from": "ch2",
+     "to": null
+    },
+    {
+     "from": "ch12",
+     "to": null
+    }
+   ]
+  },
+  {
+   "from": "why-chips-are-hard",
+   "links": [
+    {
+     "from": "ch5",
+     "to": null
+    }
+   ]
+  }
+ ],
  "related": [],
  "bindings": []
 }

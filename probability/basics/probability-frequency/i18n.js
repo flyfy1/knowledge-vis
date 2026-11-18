@@ -98,11 +98,12 @@ const STR = {
     "site.crumb.cat": "概率与统计",
     "site.crumb.sub": "概率基础",
     "site.bl.title": "被这些页面引用",
-    "site.bl.1": "<a href=\"../binomial-normal/\">二项分布到正态 · 钉板上长出的钟形</a>：<a href=\"../binomial-normal/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>",
-    "site.bl.2": "<a href=\"../counting-permutations/\">排列与组合 · 数清楚有多少种</a>：<a href=\"../counting-permutations/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>",
-    "site.bl.3": "<a href=\"../../everyday/numbers-lie/\">数字没有说谎，结论却错了</a>：→ <a href=\"#step2\">本页第 2 步</a>",
-    "site.bl.4": "<a href=\"../../inference/bayes-diagnostics/\">贝叶斯诊断 · 阳性结果说明什么？</a>：<a href=\"../../inference/bayes-diagnostics/#step1\">该课第 1 步</a> → <a href=\"#step2\">本页第 2 步</a>；<a href=\"../../inference/bayes-diagnostics/#step6\">该课第 6 步</a> → <a href=\"#step2\">本页第 2 步</a>",
-    "site.bl.5": "<a href=\"../../stochastic/markov-chains/\">马尔可夫链 · 下一步只看现在</a>：<a href=\"../../stochastic/markov-chains/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>"
+    "site.bl.1": "<a href=\"../../../computing/quantum/what-quantum-computers-do/\">量子计算机到底能做什么</a>：<a href=\"../../../computing/quantum/what-quantum-computers-do/#ch1\">该文第 1 章</a>",
+    "site.bl.2": "<a href=\"../binomial-normal/\">二项分布到正态 · 钉板上长出的钟形</a>：<a href=\"../binomial-normal/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>",
+    "site.bl.3": "<a href=\"../counting-permutations/\">排列与组合 · 数清楚有多少种</a>：<a href=\"../counting-permutations/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>",
+    "site.bl.4": "<a href=\"../../everyday/numbers-lie/\">数字没有说谎，结论却错了</a>：→ <a href=\"#step2\">本页第 2 步</a>",
+    "site.bl.5": "<a href=\"../../inference/bayes-diagnostics/\">贝叶斯诊断 · 阳性结果说明什么？</a>：<a href=\"../../inference/bayes-diagnostics/#step1\">该课第 1 步</a> → <a href=\"#step2\">本页第 2 步</a>；<a href=\"../../inference/bayes-diagnostics/#step6\">该课第 6 步</a> → <a href=\"#step2\">本页第 2 步</a>",
+    "site.bl.6": "<a href=\"../../stochastic/markov-chains/\">马尔可夫链 · 下一步只看现在</a>：<a href=\"../../stochastic/markov-chains/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>"
   },
   en: {
     back: "← Knowledge Index",
@@ -201,11 +202,12 @@ const STR = {
     "site.crumb.cat": "Probability & Statistics",
     "site.crumb.sub": "Probability Basics",
     "site.bl.title": "Linked from",
-    "site.bl.1": "<a href=\"../binomial-normal/\">Binomial to Normal · The Bell Curve Growing on a Pegboard</a>: <a href=\"../binomial-normal/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>",
-    "site.bl.2": "<a href=\"../counting-permutations/\">Permutations & Combinations · Counting How Many Ways</a>: <a href=\"../counting-permutations/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>",
-    "site.bl.3": "<a href=\"../../everyday/numbers-lie/\">Every Number Was True, and the Conclusion Was Still Wrong</a>: → <a href=\"#step2\">this page step 2</a>",
-    "site.bl.4": "<a href=\"../../inference/bayes-diagnostics/\">Bayes Diagnostics · What Does a Positive Mean?</a>: <a href=\"../../inference/bayes-diagnostics/#step1\">its step 1</a> → <a href=\"#step2\">this page step 2</a>; <a href=\"../../inference/bayes-diagnostics/#step6\">its step 6</a> → <a href=\"#step2\">this page step 2</a>",
-    "site.bl.5": "<a href=\"../../stochastic/markov-chains/\">Markov Chains · The Next Step Depends Only on Now</a>: <a href=\"../../stochastic/markov-chains/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>"
+    "site.bl.1": "<a href=\"../../../computing/quantum/what-quantum-computers-do/\">What Quantum Computers Can Actually Do</a>: <a href=\"../../../computing/quantum/what-quantum-computers-do/#ch1\">its chapter 1</a>",
+    "site.bl.2": "<a href=\"../binomial-normal/\">Binomial to Normal · The Bell Curve Growing on a Pegboard</a>: <a href=\"../binomial-normal/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>",
+    "site.bl.3": "<a href=\"../counting-permutations/\">Permutations & Combinations · Counting How Many Ways</a>: <a href=\"../counting-permutations/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>",
+    "site.bl.4": "<a href=\"../../everyday/numbers-lie/\">Every Number Was True, and the Conclusion Was Still Wrong</a>: → <a href=\"#step2\">this page step 2</a>",
+    "site.bl.5": "<a href=\"../../inference/bayes-diagnostics/\">Bayes Diagnostics · What Does a Positive Mean?</a>: <a href=\"../../inference/bayes-diagnostics/#step1\">its step 1</a> → <a href=\"#step2\">this page step 2</a>; <a href=\"../../inference/bayes-diagnostics/#step6\">its step 6</a> → <a href=\"#step2\">this page step 2</a>",
+    "site.bl.6": "<a href=\"../../stochastic/markov-chains/\">Markov Chains · The Next Step Depends Only on Now</a>: <a href=\"../../stochastic/markov-chains/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>"
   }
 };
 let currentLang = 'en';

@@ -131,10 +131,11 @@ const STR = {
     "site.bl.3": "<a href=\"../electrochemistry/\">电化学 · 电子沿导线跑，还是被电推着跑</a>：<a href=\"../electrochemistry/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>",
     "site.bl.4": "<a href=\"../equation-balancing/\">化学方程式配平</a>：<a href=\"../equation-balancing/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>",
     "site.bl.5": "<a href=\"../reaction-rates/\">反应速率 · 数一数成功碰撞</a>：<a href=\"../reaction-rates/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>",
-    "site.bl.6": "<a href=\"../../solutions/acid-base-equilibrium/\">酸碱平衡 · 分子在两边来回走</a>：<a href=\"../../solutions/acid-base-equilibrium/#step0\">该课第 0 步</a> → <a href=\"#step0\">本页第 0 步</a>；<a href=\"../../solutions/acid-base-equilibrium/#step3\">该课第 3 步</a> → <a href=\"#step2\">本页第 2 步</a>；<a href=\"../../solutions/acid-base-equilibrium/#step5\">该课第 5 步</a> → <a href=\"#step2\">本页第 2 步</a>",
-    "site.bl.7": "<a href=\"../../solutions/buffer-capacity/\">缓冲溶液 · 把 pH 稳住</a>：<a href=\"../../solutions/buffer-capacity/#step4\">该课第 4 步</a> → <a href=\"#step2\">本页第 2 步</a>",
-    "site.bl.8": "<a href=\"../../solutions/dissolution-saturation/\">溶解与饱和</a>：<a href=\"../../solutions/dissolution-saturation/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>",
-    "site.bl.9": "<a href=\"../../solutions/titration-curves/\">滴定曲线 · 终点附近 pH 的“悬崖”</a>：<a href=\"../../solutions/titration-curves/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>"
+    "site.bl.6": "<a href=\"../why-batteries-hold-so-little/\">电池为什么就是装不下更多电</a>：<a href=\"../why-batteries-hold-so-little/#ch10\">该文第 10 章</a>",
+    "site.bl.7": "<a href=\"../../solutions/acid-base-equilibrium/\">酸碱平衡 · 分子在两边来回走</a>：<a href=\"../../solutions/acid-base-equilibrium/#step0\">该课第 0 步</a> → <a href=\"#step0\">本页第 0 步</a>；<a href=\"../../solutions/acid-base-equilibrium/#step3\">该课第 3 步</a> → <a href=\"#step2\">本页第 2 步</a>；<a href=\"../../solutions/acid-base-equilibrium/#step5\">该课第 5 步</a> → <a href=\"#step2\">本页第 2 步</a>",
+    "site.bl.8": "<a href=\"../../solutions/buffer-capacity/\">缓冲溶液 · 把 pH 稳住</a>：<a href=\"../../solutions/buffer-capacity/#step4\">该课第 4 步</a> → <a href=\"#step2\">本页第 2 步</a>",
+    "site.bl.9": "<a href=\"../../solutions/dissolution-saturation/\">溶解与饱和</a>：<a href=\"../../solutions/dissolution-saturation/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>",
+    "site.bl.10": "<a href=\"../../solutions/titration-curves/\">滴定曲线 · 终点附近 pH 的“悬崖”</a>：<a href=\"../../solutions/titration-curves/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>"
   },
   en: {
     docTitle: "Chemical Equilibrium · Still Moving at Balance",
@@ -267,10 +268,11 @@ const STR = {
     "site.bl.3": "<a href=\"../electrochemistry/\">Electrochemistry · Electrons Running Down the Wire, or Pushed Along</a>: <a href=\"../electrochemistry/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>",
     "site.bl.4": "<a href=\"../equation-balancing/\">Balancing Chemical Equations</a>: <a href=\"../equation-balancing/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>",
     "site.bl.5": "<a href=\"../reaction-rates/\">Reaction Rates · Counting Successful Collisions</a>: <a href=\"../reaction-rates/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>",
-    "site.bl.6": "<a href=\"../../solutions/acid-base-equilibrium/\">Acid–Base Equilibrium · Molecules Move Both Ways</a>: <a href=\"../../solutions/acid-base-equilibrium/#step0\">its step 0</a> → <a href=\"#step0\">this page step 0</a>; <a href=\"../../solutions/acid-base-equilibrium/#step3\">its step 3</a> → <a href=\"#step2\">this page step 2</a>; <a href=\"../../solutions/acid-base-equilibrium/#step5\">its step 5</a> → <a href=\"#step2\">this page step 2</a>",
-    "site.bl.7": "<a href=\"../../solutions/buffer-capacity/\">Buffer Capacity · Holding pH Steady</a>: <a href=\"../../solutions/buffer-capacity/#step4\">its step 4</a> → <a href=\"#step2\">this page step 2</a>",
-    "site.bl.8": "<a href=\"../../solutions/dissolution-saturation/\">Dissolution & Saturation</a>: <a href=\"../../solutions/dissolution-saturation/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>",
-    "site.bl.9": "<a href=\"../../solutions/titration-curves/\">Titration Curves · The pH Cliff Near the End Point</a>: <a href=\"../../solutions/titration-curves/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>"
+    "site.bl.6": "<a href=\"../why-batteries-hold-so-little/\">Why Batteries Just Can't Hold More Charge</a>: <a href=\"../why-batteries-hold-so-little/#ch10\">its chapter 10</a>",
+    "site.bl.7": "<a href=\"../../solutions/acid-base-equilibrium/\">Acid–Base Equilibrium · Molecules Move Both Ways</a>: <a href=\"../../solutions/acid-base-equilibrium/#step0\">its step 0</a> → <a href=\"#step0\">this page step 0</a>; <a href=\"../../solutions/acid-base-equilibrium/#step3\">its step 3</a> → <a href=\"#step2\">this page step 2</a>; <a href=\"../../solutions/acid-base-equilibrium/#step5\">its step 5</a> → <a href=\"#step2\">this page step 2</a>",
+    "site.bl.8": "<a href=\"../../solutions/buffer-capacity/\">Buffer Capacity · Holding pH Steady</a>: <a href=\"../../solutions/buffer-capacity/#step4\">its step 4</a> → <a href=\"#step2\">this page step 2</a>",
+    "site.bl.9": "<a href=\"../../solutions/dissolution-saturation/\">Dissolution & Saturation</a>: <a href=\"../../solutions/dissolution-saturation/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>",
+    "site.bl.10": "<a href=\"../../solutions/titration-curves/\">Titration Curves · The pH Cliff Near the End Point</a>: <a href=\"../../solutions/titration-curves/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>"
   }
 };
 let _lang = null;

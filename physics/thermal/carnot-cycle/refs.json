@@ -2,7 +2,21 @@
  "_generated": "by scripts/build-pages.cjs; do not edit",
  "page": "carnot-cycle",
  "refs": [],
- "backlinks": [],
+ "backlinks": [
+  {
+   "from": "why-fusion-is-hard",
+   "links": [
+    {
+     "from": "ch8",
+     "to": null
+    },
+    {
+     "from": "ch11",
+     "to": null
+    }
+   ]
+  }
+ ],
  "related": [],
  "bindings": []
 }

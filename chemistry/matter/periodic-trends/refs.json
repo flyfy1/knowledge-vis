@@ -2,7 +2,25 @@
  "_generated": "by scripts/build-pages.cjs; do not edit",
  "page": "periodic-trends",
  "refs": [],
- "backlinks": [],
+ "backlinks": [
+  {
+   "from": "why-atoms-stick-together",
+   "links": [
+    {
+     "from": null,
+     "to": null
+    },
+    {
+     "from": "ch4",
+     "to": null
+    },
+    {
+     "from": "ch11",
+     "to": null
+    }
+   ]
+  }
+ ],
  "related": [],
  "bindings": []
 }

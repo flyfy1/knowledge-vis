@@ -109,7 +109,8 @@ const STR = {
     "site.crumb.sub": "近代物理",
     "site.bl.title": "被这些页面引用",
     "site.bl.1": "<a href=\"../../../earth/astronomy/what-is-a-black-hole/\">黑洞到底是什么</a>：<a href=\"../../../earth/astronomy/what-is-a-black-hole/#ch6\">该文第 6 章</a> → <a href=\"#step0\">本页第 0 步</a>；<a href=\"../../../earth/astronomy/what-is-a-black-hole/#ch10\">该文第 10 章</a>",
-    "site.bl.2": "<a href=\"../../../tech/devices/inside-a-phone/\">一部手机里的十个道理</a>：→ <a href=\"#step0\">本页第 0 步</a>"
+    "site.bl.2": "<a href=\"../why-fusion-is-hard/\">核聚变为什么总是“还要三十年”</a>：<a href=\"../why-fusion-is-hard/#ch1\">该文第 1 章</a>；<a href=\"../why-fusion-is-hard/#ch11\">该文第 11 章</a>",
+    "site.bl.3": "<a href=\"../../../tech/devices/inside-a-phone/\">一部手机里的十个道理</a>：→ <a href=\"#step0\">本页第 0 步</a>"
   },
   en: {
     back: "← Knowledge Index",
@@ -219,7 +220,8 @@ const STR = {
     "site.crumb.sub": "Modern Physics",
     "site.bl.title": "Linked from",
     "site.bl.1": "<a href=\"../../../earth/astronomy/what-is-a-black-hole/\">What Is a Black Hole, Really?</a>: <a href=\"../../../earth/astronomy/what-is-a-black-hole/#ch6\">its chapter 6</a> → <a href=\"#step0\">this page step 0</a>; <a href=\"../../../earth/astronomy/what-is-a-black-hole/#ch10\">its chapter 10</a>",
-    "site.bl.2": "<a href=\"../../../tech/devices/inside-a-phone/\">Ten Ideas Inside One Phone</a>: → <a href=\"#step0\">this page step 0</a>"
+    "site.bl.2": "<a href=\"../why-fusion-is-hard/\">Why Fusion Is Always “Thirty Years Away”</a>: <a href=\"../why-fusion-is-hard/#ch1\">its chapter 1</a>; <a href=\"../why-fusion-is-hard/#ch11\">its chapter 11</a>",
+    "site.bl.3": "<a href=\"../../../tech/devices/inside-a-phone/\">Ten Ideas Inside One Phone</a>: → <a href=\"#step0\">this page step 0</a>"
   }
 };
 let currentLang = 'en';

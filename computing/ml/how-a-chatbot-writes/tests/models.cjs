@@ -216,7 +216,11 @@ for (const L of ['zh', 'en']) {
   for (const f of figs) for (const k of Object.keys(Z).filter(k => k.startsWith('dg.' + f + '.'))) ok(k.endsWith('.aria') || k.endsWith('.cap') || app.includes("'" + k + "'") || app.includes("'dg." + f + ".' + "), 'diagram key is used: ' + k);
   for (const k of keys) ok(Z[k] != null, 'zh key exists: ' + k);
   for (const file of ['index.html', 'app.js', 'models.js']) {
-    let src = fs.readFileSync(path.join(dir, file), 'utf8').replace(/\/\*[\s\S]*?\*\//g, '').replace(/\/\/.*$/gm, '').replace(/<!--[\s\S]*?-->/g, '');
+    let src = fs.readFileSync(path.join(dir, file), 'utf8');
+    // the page-provenance label (added at registration, 2026-11-18) is bilingual by contract: exactly one, stripped before the
+    // check (and before comment stripping, which would cut its https:// link)
+    if (file === 'index.html') { ok((src.match(/<details class="page-provenance"/g) || []).length === 1, 'one page-provenance label'); src = src.replace(/<details class="page-provenance"[\s\S]*?<\/details>/, ''); }
+    src = src.replace(/\/\*[\s\S]*?\*\//g, '').replace(/\/\/.*$/gm, '').replace(/<!--[\s\S]*?-->/g, '');
     // the static <title> and meta description stay Chinese for crawlers and link previews (replaced at load)
     if (file === 'index.html') src = src.replace(/<title>[^<]*<\/title>/, '').replace(/<meta name="description"[^>]*>/, '');
     const others = (src.match(/[一-鿿]+/g) || []).filter(x => !(file === 'index.html' && x === '中'));

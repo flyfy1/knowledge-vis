@@ -142,7 +142,8 @@ const STR = {
     "site.bl.2": "<a href=\"../../modern/photoelectric-effect/\">光电效应 · 光是一份一份的</a>：<a href=\"../../modern/photoelectric-effect/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>",
     "site.bl.3": "<a href=\"../eye-vision/\">眼睛与眼镜 · 为什么近视要戴凹透镜</a>：<a href=\"../eye-vision/#step5\">该课第 5 步</a> → <a href=\"#step2\">本页第 2 步</a>",
     "site.bl.4": "<a href=\"../pinhole-camera/\">小孔成像 · 一个孔的相机</a>：<a href=\"../pinhole-camera/#step5\">该课第 5 步</a> → <a href=\"#step1\">本页第 1 步</a>",
-    "site.bl.5": "<a href=\"../reflection-refraction/\">光的反射与折射 · 拐弯的规矩</a>：<a href=\"../reflection-refraction/#step4\">该课第 4 步</a> → <a href=\"#step2\">本页第 2 步</a>"
+    "site.bl.5": "<a href=\"../reflection-refraction/\">光的反射与折射 · 拐弯的规矩</a>：<a href=\"../reflection-refraction/#step4\">该课第 4 步</a> → <a href=\"#step2\">本页第 2 步</a>",
+    "site.bl.6": "<a href=\"../../../tech/semiconductors/why-chips-are-hard/\">芯片为什么越来越难做</a>：<a href=\"../../../tech/semiconductors/why-chips-are-hard/#ch12\">该文第 12 章</a>"
   },
   en: {
     docTitle: "Convex Lens Imaging · Move the Candle, Change the Image — One Interaction per Step",
@@ -278,7 +279,8 @@ const STR = {
     "site.bl.2": "<a href=\"../../modern/photoelectric-effect/\">The Photoelectric Effect · Light Comes in Packets</a>: <a href=\"../../modern/photoelectric-effect/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>",
     "site.bl.3": "<a href=\"../eye-vision/\">The Eye and Glasses · Why Short-Sightedness Needs a Concave Lens</a>: <a href=\"../eye-vision/#step5\">its step 5</a> → <a href=\"#step2\">this page step 2</a>",
     "site.bl.4": "<a href=\"../pinhole-camera/\">Pinhole Camera · A Camera With One Tiny Hole</a>: <a href=\"../pinhole-camera/#step5\">its step 5</a> → <a href=\"#step1\">this page step 1</a>",
-    "site.bl.5": "<a href=\"../reflection-refraction/\">Reflection & Refraction · How Light Bends</a>: <a href=\"../reflection-refraction/#step4\">its step 4</a> → <a href=\"#step2\">this page step 2</a>"
+    "site.bl.5": "<a href=\"../reflection-refraction/\">Reflection & Refraction · How Light Bends</a>: <a href=\"../reflection-refraction/#step4\">its step 4</a> → <a href=\"#step2\">this page step 2</a>",
+    "site.bl.6": "<a href=\"../../../tech/semiconductors/why-chips-are-hard/\">Why Chips Are Getting Harder to Make</a>: <a href=\"../../../tech/semiconductors/why-chips-are-hard/#ch12\">its chapter 12</a>"
   }
 };
 

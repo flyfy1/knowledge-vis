@@ -108,7 +108,9 @@ const STR = {
     "site.crumb.cat": "物理与电路",
     "site.crumb.sub": "近代物理",
     "site.bl.title": "被这些页面引用",
-    "site.bl.1": "<a href=\"../../../computing/systems/what-a-drive-is-made-of/\">硬盘里到底是什么</a>：<a href=\"../../../computing/systems/what-a-drive-is-made-of/#ch4\">该文第 4 章</a>；<a href=\"../../../computing/systems/what-a-drive-is-made-of/#ch10\">该文第 10 章</a>"
+    "site.bl.1": "<a href=\"../../../computing/systems/what-a-drive-is-made-of/\">硬盘里到底是什么</a>：<a href=\"../../../computing/systems/what-a-drive-is-made-of/#ch4\">该文第 4 章</a>；<a href=\"../../../computing/systems/what-a-drive-is-made-of/#ch10\">该文第 10 章</a>",
+    "site.bl.2": "<a href=\"../why-fusion-is-hard/\">核聚变为什么总是“还要三十年”</a>：<a href=\"../why-fusion-is-hard/#ch3\">该文第 3 章</a> → <a href=\"#step1\">本页第 1 步</a>；<a href=\"../why-fusion-is-hard/#ch11\">该文第 11 章</a>",
+    "site.bl.3": "<a href=\"../../../tech/semiconductors/why-chips-are-hard/\">芯片为什么越来越难做</a>：<a href=\"../../../tech/semiconductors/why-chips-are-hard/#ch8\">该文第 8 章</a>；<a href=\"../../../tech/semiconductors/why-chips-are-hard/#ch12\">该文第 12 章</a>"
   },
   en: {
     back: "← Knowledge Index",
@@ -217,7 +219,9 @@ const STR = {
     "site.crumb.cat": "Physics & Circuits",
     "site.crumb.sub": "Modern Physics",
     "site.bl.title": "Linked from",
-    "site.bl.1": "<a href=\"../../../computing/systems/what-a-drive-is-made-of/\">What a Drive Is Made Of</a>: <a href=\"../../../computing/systems/what-a-drive-is-made-of/#ch4\">its chapter 4</a>; <a href=\"../../../computing/systems/what-a-drive-is-made-of/#ch10\">its chapter 10</a>"
+    "site.bl.1": "<a href=\"../../../computing/systems/what-a-drive-is-made-of/\">What a Drive Is Made Of</a>: <a href=\"../../../computing/systems/what-a-drive-is-made-of/#ch4\">its chapter 4</a>; <a href=\"../../../computing/systems/what-a-drive-is-made-of/#ch10\">its chapter 10</a>",
+    "site.bl.2": "<a href=\"../why-fusion-is-hard/\">Why Fusion Is Always “Thirty Years Away”</a>: <a href=\"../why-fusion-is-hard/#ch3\">its chapter 3</a> → <a href=\"#step1\">this page step 1</a>; <a href=\"../why-fusion-is-hard/#ch11\">its chapter 11</a>",
+    "site.bl.3": "<a href=\"../../../tech/semiconductors/why-chips-are-hard/\">Why Chips Are Getting Harder to Make</a>: <a href=\"../../../tech/semiconductors/why-chips-are-hard/#ch8\">its chapter 8</a>; <a href=\"../../../tech/semiconductors/why-chips-are-hard/#ch12\">its chapter 12</a>"
   }
 };
 let currentLang = 'en';

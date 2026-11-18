@@ -58,7 +58,8 @@ const STR={
     "site.crumb.cat": "物理与电路",
     "site.crumb.sub": "电磁",
     "site.bl.title": "被这些页面引用",
-    "site.bl.1": "<a href=\"../electromagnetic-induction/\">电磁感应 · 磁通量一变，电压就来</a>：<a href=\"../electromagnetic-induction/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>"
+    "site.bl.1": "<a href=\"../electromagnetic-induction/\">电磁感应 · 磁通量一变，电压就来</a>：<a href=\"../electromagnetic-induction/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>",
+    "site.bl.2": "<a href=\"../../modern/why-fusion-is-hard/\">核聚变为什么总是“还要三十年”</a>：<a href=\"../../modern/why-fusion-is-hard/#ch5\">该文第 5 章</a> → <a href=\"#step1\">本页第 1 步</a>；<a href=\"../../modern/why-fusion-is-hard/#ch11\">该文第 11 章</a>"
   },
   en: {
     pageTitle: "Magnetic Force · The Force Is Always Sideways to the Velocity",
@@ -118,7 +119,8 @@ const STR={
     "site.crumb.cat": "Physics & Circuits",
     "site.crumb.sub": "Electromagnetism",
     "site.bl.title": "Linked from",
-    "site.bl.1": "<a href=\"../electromagnetic-induction/\">Electromagnetic Induction · Change the Flux, Get a Voltage</a>: <a href=\"../electromagnetic-induction/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>"
+    "site.bl.1": "<a href=\"../electromagnetic-induction/\">Electromagnetic Induction · Change the Flux, Get a Voltage</a>: <a href=\"../electromagnetic-induction/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>",
+    "site.bl.2": "<a href=\"../../modern/why-fusion-is-hard/\">Why Fusion Is Always “Thirty Years Away”</a>: <a href=\"../../modern/why-fusion-is-hard/#ch5\">its chapter 5</a> → <a href=\"#step1\">this page step 1</a>; <a href=\"../../modern/why-fusion-is-hard/#ch11\">its chapter 11</a>"
   }
 };
 

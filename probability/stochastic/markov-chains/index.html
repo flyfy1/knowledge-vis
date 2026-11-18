@@ -31,5 +31,13 @@
 <div class="stage"><canvas class="cv" id="cv5" data-ratio="0.6" data-wide="0.4" role="img" data-i18n-aria="s5cv" aria-label="n 局以后本金 0 到 10 的分布，两端是吸收态"></canvas></div>
 <div class="ctl"><label for="p5" data-i18n="lblWinP">每局赢的概率 p</label><input type="range" id="p5" data-step="5" min="30" max="70" step="1" value="45"><output id="p5v">45</output></div><div class="ctl"><label for="i5" data-i18n="lblStart">起始本金</label><input type="range" id="i5" data-step="5" min="1" max="9" step="1" value="5"><output id="i5v">5</output></div><div class="ctl"><label for="n5" data-i18n="lblRounds">局数 n</label><input type="range" id="n5" data-step="5" min="0" max="100" step="1" value="20"><output id="n5v">20</output></div>
 <p class="readout" id="ro5" aria-live="polite"></p><div class="recap"><h3 data-i18n="recapTitle">回顾</h3><ul><li data-i18n="recap1">马尔可夫链：下一步只取决于当前状态，转移矩阵 P 的每一行是一个概率分布。</li><li data-i18n="recap2">n 步转移是 Pⁿ；正常的链会收敛到稳态 π（πP = π），速度由第二特征值 |λ₂| 决定。</li><li data-i18n="recap3">有吸收态（赌徒）的链最后归于吸收态，不存在“中间”稳态；搜索引擎的网页排名则是在网页链接图上的稳态。</li></ul></div><div class="recap"><h3 data-i18n="modelTitle">模型范围与局限</h3><p data-i18n="modelText">模型：状态有限、转移概率不随时间变化、无记忆（一阶）；稳态收敛要求链“不可约且非周期”，a = b = 1 的天气会每天来回换而永不收敛。真实天气显然不是这么简单的马尔可夫链，这里只是说明概念；赌徒例子设 N = 10。</p></div><div class="link-row"><a href="../../../computing/algorithms/pagerank/#step0" data-i18n="link0">→ 网页排名：网页链接图上的随机浏览者与稳态</a><a href="../../basics/binomial-normal/#step0" data-i18n="link1">→ 二项分布到正态：把多步随机游走数清楚</a><a href="../../basics/probability-frequency/#step0" data-i18n="link2">→ 概率与频率：长期频率逼近概率</a></div><p class="readout success" data-i18n="done">本页完成。</p></div></section>
-</main><footer class="site-foot" data-i18n="foot">由 Claude Sonnet（Mini Claude Code）构建 · Built with Claude Sonnet via Mini Claude Code</footer><script src="app.js"></script><script defer src="../../../site-nav.js?v=sn-20261116c"></script>
+</main>
+<section class="site-xref" id="linked-from" data-no-autolink>
+  <div class="step-inner">
+    <h2 data-i18n="site.bl.title">被这些页面引用</h2>
+    <ul class="xref-list">
+      <li data-i18n-html="site.bl.1"><a href="../../../computing/ml/how-a-chatbot-writes/">聊天 AI 是怎么“写”出一句话的</a>：<a href="../../../computing/ml/how-a-chatbot-writes/#ch9">该文第 9 章</a> → <a href="#step0">本页第 0 步</a></li>
+    </ul>
+  </div>
+</section><footer class="site-foot" data-i18n="foot">由 Claude Sonnet（Mini Claude Code）构建 · Built with Claude Sonnet via Mini Claude Code</footer><script src="app.js"></script><script defer src="../../../site-nav.js?v=sn-20261116c"></script>
 </body></html>

@@ -436,5 +436,6 @@ window.ESSAY_COPY.zh = {
   "site.rel.title": "相关页面",
   "site.rel.1": "<a href=\"../why-compute-waits-for-memory/\">为什么计算一直在等内存</a>",
   "site.rel.2": "<a href=\"../why-nvme-is-fast/\">NVMe 为什么这么快</a>",
-  "site.rel.3": "<a href=\"../how-usb-drives-talk/\">移动硬盘为什么跑不满</a>"
+  "site.rel.3": "<a href=\"../how-usb-drives-talk/\">移动硬盘为什么跑不满</a>",
+  "site.rel.4": "<a href=\"../../../tech/semiconductors/why-chips-are-hard/\">芯片为什么越来越难做</a>"
 };

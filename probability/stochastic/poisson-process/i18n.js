@@ -106,7 +106,8 @@ const STR = {
     "site.crumb.sub": "随机过程与信息",
     "site.bl.title": "被这些页面引用",
     "site.bl.1": "<a href=\"../../../computing/systems/how-sas-works/\">服务器硬盘为什么用 SAS</a>：<a href=\"../../../computing/systems/how-sas-works/#ch5\">该文第 5 章</a>",
-    "site.bl.2": "<a href=\"../../../tech/devices/inside-a-phone/\">一部手机里的十个道理</a>：→ <a href=\"#step2\">本页第 2 步</a>"
+    "site.bl.2": "<a href=\"../../../tech/devices/inside-a-phone/\">一部手机里的十个道理</a>：→ <a href=\"#step2\">本页第 2 步</a>",
+    "site.bl.3": "<a href=\"../../../tech/semiconductors/why-chips-are-hard/\">芯片为什么越来越难做</a>：<a href=\"../../../tech/semiconductors/why-chips-are-hard/#ch6\">该文第 6 章</a>；<a href=\"../../../tech/semiconductors/why-chips-are-hard/#ch10\">该文第 10 章</a>"
   },
   en: {
     back: "← Knowledge Index",
@@ -213,7 +214,8 @@ const STR = {
     "site.crumb.sub": "Stochastic Processes & Information",
     "site.bl.title": "Linked from",
     "site.bl.1": "<a href=\"../../../computing/systems/how-sas-works/\">Why Server Drives Use SAS</a>: <a href=\"../../../computing/systems/how-sas-works/#ch5\">its chapter 5</a>",
-    "site.bl.2": "<a href=\"../../../tech/devices/inside-a-phone/\">Ten Ideas Inside One Phone</a>: → <a href=\"#step2\">this page step 2</a>"
+    "site.bl.2": "<a href=\"../../../tech/devices/inside-a-phone/\">Ten Ideas Inside One Phone</a>: → <a href=\"#step2\">this page step 2</a>",
+    "site.bl.3": "<a href=\"../../../tech/semiconductors/why-chips-are-hard/\">Why Chips Are Getting Harder to Make</a>: <a href=\"../../../tech/semiconductors/why-chips-are-hard/#ch6\">its chapter 6</a>; <a href=\"../../../tech/semiconductors/why-chips-are-hard/#ch10\">its chapter 10</a>"
   }
 };
 let currentLang = 'en';

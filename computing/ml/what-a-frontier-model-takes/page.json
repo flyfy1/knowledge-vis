@@ -1,0 +1,35 @@
+{
+  "slug": "what-a-frontier-model-takes",
+  "kind": "essay",
+  "title": {
+    "zh": "造出并运行一个最前沿的大语言模型，需要什么",
+    "en": "What It Takes to Build and Run a Frontier Large Language Model"
+  },
+  "desc": {
+    "zh": "从一个当场能拆开的小 Transformer 出发：参数和算力怎么数、规模定律怎么分配算力、训练和推理的账单怎么算、KV 缓存、量化、专家混合，以及 2026 年前沿的真实数字。",
+    "en": "Starting from a small Transformer you can take apart on the spot: how to count parameters and compute, how scaling laws divide up compute, how to work out the bills for training and inference, the KV cache, quantisation, mixture of experts, and the real numbers at the 2026 frontier."
+  },
+  "tags": [
+    {
+      "zh": "大语言模型",
+      "en": "Large Language Models"
+    },
+    {
+      "zh": "Transformer",
+      "en": "Transformers"
+    },
+    {
+      "zh": "AI 算力",
+      "en": "AI Compute"
+    },
+    {
+      "zh": "长文",
+      "en": "Long-form Essay"
+    }
+  ],
+  "category": "computing",
+  "subtopic": "ml",
+  "stage": "university",
+  "status": "live",
+  "path": "computing/ml/what-a-frontier-model-takes/"
+}

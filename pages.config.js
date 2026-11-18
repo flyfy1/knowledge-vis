@@ -96,7 +96,8 @@ window.KNOWLEDGE_SUBTOPICS = {
     { id: "algorithms", name: { zh: "算法", en: "Algorithms" } },
     { id: "ml", name: { zh: "机器学习", en: "Machine Learning" } },
     { id: "systems", name: { zh: "系统与安全", en: "Systems & Security" } },
-    { id: "graphics", name: { zh: "图形与机器人", en: "Graphics & Robotics" } }
+    { id: "graphics", name: { zh: "图形与机器人", en: "Graphics & Robotics" } },
+    { id: "quantum", name: { zh: "量子计算", en: "Quantum Computing" } }
   ],
   "chemistry": [
     { id: "matter", name: { zh: "物质构成", en: "Structure of Matter" } },
@@ -109,7 +110,8 @@ window.KNOWLEDGE_SUBTOPICS = {
     { id: "ecology", name: { zh: "生态与进化", en: "Ecology & Evolution" } }
   ],
   "tech": [
-    { id: "devices", name: { zh: "身边的设备", en: "Everyday Devices" } }
+    { id: "devices", name: { zh: "身边的设备", en: "Everyday Devices" } },
+    { id: "semiconductors", name: { zh: "半导体", en: "Semiconductors" } }
   ],
   "economics": [
     { id: "money", name: { zh: "货币与银行", en: "Money & Banking" } },
@@ -184,6 +186,15 @@ window.KNOWLEDGE_ESSAYS = [
   "how-power-reaches-the-cpu",
   "how-a-nic-moves-packets",
   "how-an-economy-is-measured",
+  "how-a-chatbot-writes",
+  "what-a-frontier-model-takes",
+  "a-secret-in-public",
+  "what-quantum-computers-do",
+  "why-chips-are-hard",
+  "why-fusion-is-hard",
+  "why-batteries-hold-so-little",
+  "why-atoms-stick-together",
+  "why-one-rate-moves-everything",
   "scarcity-moves"
 ];
 
@@ -1935,6 +1946,69 @@ window.KNOWLEDGE_PAGES = [
     desc: { zh: "投资的 12 个概念、22 条联系、5 条问题路线：从基础概念、市场与工具、风险、估值到行为，沿问题链走进对应的交互讲解。", en: "12 investment concepts, 22 connections, 5 question routes across foundations, markets, risk, valuation, and behavior — follow a question into its interactive lesson." },
     tags: [{ zh: "概念关系", en: "Concept Connections" }, { zh: "探索路线", en: "Exploration Routes" }],
     category: "investment", stage: "university", status: "live", path: "investment/atlas/"
+  },
+  {
+    slug: "why-atoms-stick-together",
+    title: { zh: "原子为什么会粘在一起", en: "Why Atoms Stick Together" },
+    desc: { zh: "钻石硬、石墨滑、盐一敲就碎、铜能拉成丝、水到 100 °C 才开，原因都在同一件事里：电子在几个原子核之间怎么待着。这篇从盒子里的一个电子讲起，用真实的方程算出 H₂⁺ 的键、苯的能级、食盐的晶格能、能带和带隙、分子间力和一个会熔化会沸腾的小模拟，再到蛋白质折叠和 2026 年的前沿。", en: "Diamond is hard, graphite is slippery, salt shatters, copper draws into wire and water boils only at 100 °C, all for one reason: how electrons sit between atomic nuclei. This essay starts from one electron in a box and uses the real equations to compute the bond in H₂⁺, the levels of benzene, the lattice energy of table salt, bands and band gaps, the forces between molecules and a small simulation that melts and boils, then goes on to protein folding and the frontier as of 2026." },
+    tags: [{ zh: "化学键", en: "Chemical Bonding" }, { zh: "材料", en: "Materials" }, { zh: "量子化学", en: "Quantum Chemistry" }, { zh: "长文", en: "Long-form Essay" }],
+    category: "chemistry", subtopic: "matter", stage: "university", status: "live", path: "chemistry/matter/why-atoms-stick-together/"
+  },
+  {
+    slug: "why-batteries-hold-so-little",
+    title: { zh: "电池为什么就是装不下更多电", en: "Why Batteries Just Can't Hold More Charge" },
+    desc: { zh: "从半反应、法拉第常数和能斯特方程出发，一路算到电芯的能量密度、快充、热失控、衰老和成本，最后看 2026 年的前沿：每一步都有可以推动的模型。", en: "Starting from half-reactions, the Faraday constant and the Nernst equation, we work all the way through a cell's energy density, fast charging, thermal runaway, aging and cost, and end with the 2026 frontier: every step has a model you can push around." },
+    tags: [{ zh: "锂离子电池", en: "Lithium-ion Battery" }, { zh: "电化学", en: "Electrochemistry" }, { zh: "能量密度", en: "Energy Density" }, { zh: "长文", en: "Long-form Essay" }],
+    category: "chemistry", subtopic: "reactions", stage: "university", status: "live", path: "chemistry/reactions/why-batteries-hold-so-little/"
+  },
+  {
+    slug: "how-a-chatbot-writes",
+    title: { zh: "聊天 AI 是怎么“写”出一句话的", en: "How a Chatbot Writes a Sentence" },
+    desc: { zh: "一次只写一个 token：切字、数次数、把词变成数、注意力、温度采样和训练。八个在页面里真正运行的小模型，从零训练，不联网。", en: "One token at a time: cutting text, counting pairs, turning words into numbers, attention, temperature sampling, and training. Eight small models run for real on this page, trained from scratch in your browser with no network access." },
+    tags: [{ zh: "大语言模型", en: "Large Language Models" }, { zh: "自然语言处理", en: "Natural Language Processing" }, { zh: "生成式 AI", en: "Generative AI" }, { zh: "长文", en: "Long-form Essay" }],
+    category: "computing", subtopic: "ml", stage: "senior", status: "live", path: "computing/ml/how-a-chatbot-writes/"
+  },
+  {
+    slug: "what-a-frontier-model-takes",
+    title: { zh: "造出并运行一个最前沿的大语言模型，需要什么", en: "What It Takes to Build and Run a Frontier Large Language Model" },
+    desc: { zh: "从一个当场能拆开的小 Transformer 出发：参数和算力怎么数、规模定律怎么分配算力、训练和推理的账单怎么算、KV 缓存、量化、专家混合，以及 2026 年前沿的真实数字。", en: "Starting from a small Transformer you can take apart on the spot: how to count parameters and compute, how scaling laws divide up compute, how to work out the bills for training and inference, the KV cache, quantisation, mixture of experts, and the real numbers at the 2026 frontier." },
+    tags: [{ zh: "大语言模型", en: "Large Language Models" }, { zh: "Transformer", en: "Transformers" }, { zh: "AI 算力", en: "AI Compute" }, { zh: "长文", en: "Long-form Essay" }],
+    category: "computing", subtopic: "ml", stage: "university", status: "live", path: "computing/ml/what-a-frontier-model-takes/"
+  },
+  {
+    slug: "what-quantum-computers-do",
+    title: { zh: "量子计算机到底能做什么", en: "What Quantum Computers Can Actually Do" },
+    desc: { zh: "量子计算机到底能做什么普通计算机做不了的事？页面里有一台真的量子态模拟器：从一个量子比特、干涉、纠缠，到格罗弗搜索、肖尔分解、噪声和纠错，最后是标了日期和出处的 2026 年前沿。", en: "What can a quantum computer do that an ordinary computer cannot? The page includes a real quantum-state simulator: from one qubit, interference and entanglement, through Grover's search, Shor's factoring, noise and error correction, to the 2026 frontier with every date and source marked." },
+    tags: [{ zh: "量子计算", en: "Quantum Computing" }, { zh: "量子算法", en: "Quantum Algorithms" }, { zh: "量子纠错", en: "Quantum Error Correction" }, { zh: "长文", en: "Long-form Essay" }],
+    category: "computing", subtopic: "quantum", stage: "university", status: "live", path: "computing/quantum/what-quantum-computers-do/"
+  },
+  {
+    slug: "a-secret-in-public",
+    title: { zh: "当着所有人的面约定一个秘密", en: "Agreeing on a Secret in Plain Sight" },
+    desc: { zh: "两个陌生人在所有人都能偷听的线路上，怎么约定一个只有他俩知道的秘密？单向函数、Diffie–Hellman、RSA、椭圆曲线、证书链、量子威胁和格密码，每一步都在页面里用真实的算术跑一遍。", en: "How can two strangers agree on a secret over a line that everyone can listen to? One-way functions, Diffie–Hellman, RSA, elliptic curves, certificate chains, the quantum threat and lattice cryptography: each step runs real arithmetic on this page." },
+    tags: [{ zh: "公钥密码", en: "Public-key Cryptography" }, { zh: "后量子密码", en: "Post-quantum Cryptography" }, { zh: "数论", en: "Number Theory" }, { zh: "长文", en: "Long-form Essay" }],
+    category: "computing", subtopic: "systems", stage: "university", status: "live", path: "computing/systems/a-secret-in-public/"
+  },
+  {
+    slug: "why-one-rate-moves-everything",
+    title: { zh: "央行调一个利率，为什么所有东西的价格都跟着动", en: "Why One Central-Bank Rate Moves the Price of Everything" },
+    desc: { zh: "从“明天的钱今天值多少”出发，一步步走到债券、收益率曲线、央行的准备金、泰勒规则、新凯恩斯模型、股票房价汇率、量化宽松和政府债务，最后是 2026 年底各大央行所处的位置与争论。十三个可以拖动的模型，八张示意图。", en: "Starting from “what tomorrow's money is worth today,” the essay walks through bonds, the yield curve, central-bank reserves, the Taylor rule, the New Keynesian model, stocks, houses, exchange rates, quantitative easing and government debt, and ends with where the major central banks stand at the end of 2026 and the debates still going on. Thirteen models you can drag, eight static diagrams." },
+    tags: [{ zh: "货币政策", en: "Monetary Policy" }, { zh: "利率", en: "Interest Rates" }, { zh: "债券", en: "Bonds" }, { zh: "宏观经济", en: "Macroeconomics" }, { zh: "长文", en: "Long-form Essay" }],
+    category: "economics", subtopic: "money", stage: "university", status: "live", path: "economics/money/why-one-rate-moves-everything/"
+  },
+  {
+    slug: "why-fusion-is-hard",
+    title: { zh: "核聚变为什么总是“还要三十年”", en: "Why Fusion Is Always “Thirty Years Away”" },
+    desc: { zh: "从原子质量、库仑势垒、隧穿和劳森判据，一路走到托卡马克、惯性约束、氚与中子，再到截至 2026 年的实验记录和 1976 年的经费规划：聚变为什么这么难，又为什么总是“还要三十年”。", en: "From atomic masses, the Coulomb barrier, tunnelling and the Lawson criterion, through tokamaks, inertial confinement, tritium and neutrons, to the experimental record as of 2026 and the 1976 funding plans: why fusion is so hard, and why it is always “thirty years away”." },
+    tags: [{ zh: "核聚变", en: "Nuclear Fusion" }, { zh: "等离子体", en: "Plasma" }, { zh: "劳森判据", en: "Lawson Criterion" }, { zh: "长文", en: "Long-form Essay" }],
+    category: "physics", subtopic: "modern", stage: "university", status: "live", path: "physics/modern/why-fusion-is-hard/"
+  },
+  {
+    slug: "why-chips-are-hard",
+    title: { zh: "芯片为什么越来越难做", en: "Why Chips Are Getting Harder to Make" },
+    desc: { zh: "从硅里的电子讲到 2nm、高数值孔径 EUV 和背面供电：十个可以拖动的模型，看清晶体管密度、每瓦性能、每颗良品的成本和光刻分辨率分别被什么卡住。", en: "From electrons in silicon to 2 nm, high-NA EUV and backside power: ten draggable models that show what holds back transistor density, performance per watt, cost per good die and lithographic resolution." },
+    tags: [{ zh: "半导体", en: "Semiconductors" }, { zh: "晶体管", en: "Transistors" }, { zh: "光刻", en: "Lithography" }, { zh: "前沿", en: "Frontier" }, { zh: "长文", en: "Long-form Essay" }],
+    category: "tech", subtopic: "semiconductors", stage: "university", status: "live", path: "tech/semiconductors/why-chips-are-hard/"
   }
 ];
 /* ===== END GENERATED: KNOWLEDGE_PAGES ===== */

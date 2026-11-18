@@ -185,15 +185,17 @@ const STR = {
     "site.crumb.cat": "数学基础",
     "site.crumb.sub": "线性代数",
     "site.bl.title": "被这些页面引用",
-    "site.bl.1": "<a href=\"../../../computing/algorithms/pagerank/\">PageRank · 随机冲浪者最后停在哪</a>：<a href=\"../../../computing/algorithms/pagerank/#step2\">该课第 2 步</a> → <a href=\"#step3\">本页第 3 步</a>；<a href=\"../../../computing/algorithms/pagerank/#step5\">该课第 5 步</a> → <a href=\"#step3\">本页第 3 步</a>",
-    "site.bl.2": "<a href=\"../../../computing/ml/embeddings/\">词向量 · 把词摆成地图</a>：<a href=\"../../../computing/ml/embeddings/#step5\">该课第 5 步</a> → <a href=\"#step5\">本页第 5 步</a>",
-    "site.bl.3": "<a href=\"../../../computing/ml/gradient-descent/\">梯度下降 · 摸黑下山</a>：<a href=\"../../../computing/ml/gradient-descent/#step2\">该课第 2 步</a> → <a href=\"#step4\">本页第 4 步</a>；<a href=\"../../../computing/ml/gradient-descent/#step6\">该课第 6 步</a> → <a href=\"#step4\">本页第 4 步</a>",
-    "site.bl.4": "<a href=\"../../algebra/complex-numbers/\">复数 · 平面上的旋转</a>：<a href=\"../../algebra/complex-numbers/#step6\">该课第 6 步</a> → <a href=\"#step2\">本页第 2 步</a>",
-    "site.bl.5": "<a href=\"../../calculus/ode-phase-portraits/\">微分方程相图 · 捕食者与猎物的回路</a>：<a href=\"../../calculus/ode-phase-portraits/#step5\">该课第 5 步</a> → <a href=\"#step2\">本页第 2 步</a>",
-    "site.bl.6": "<a href=\"../../geometry/conic-sections/\">圆锥曲线</a>：<a href=\"../../geometry/conic-sections/#step5\">该课第 5 步</a> → <a href=\"#step4\">本页第 4 步</a>",
-    "site.bl.7": "<a href=\"../../geometry/pythagoras/\">勾股定理 · 一步一交互</a>：<a href=\"../../geometry/pythagoras/#step6\">该课第 6 步</a> → <a href=\"#step1\">本页第 1 步</a>",
-    "site.bl.8": "<a href=\"../linear-transform/\">二维线性变换 · 矩阵如何挪动平面</a>：<a href=\"../linear-transform/#step4\">该课第 4 步</a> → <a href=\"#step1\">本页第 1 步</a>",
-    "site.bl.9": "<a href=\"../../../signal/control/kalman/\">卡尔曼滤波 · 在预测与测量之间称重</a>：<a href=\"../../../signal/control/kalman/#step5\">该课第 5 步</a> → <a href=\"#step5\">本页第 5 步</a>；<a href=\"../../../signal/control/kalman/#step6\">该课第 6 步</a> → <a href=\"#step5\">本页第 5 步</a>"
+    "site.bl.1": "<a href=\"../../../chemistry/matter/why-atoms-stick-together/\">原子为什么会粘在一起</a>：<a href=\"../../../chemistry/matter/why-atoms-stick-together/#ch3\">该文第 3 章</a>；<a href=\"../../../chemistry/matter/why-atoms-stick-together/#ch11\">该文第 11 章</a>",
+    "site.bl.2": "<a href=\"../../../computing/algorithms/pagerank/\">PageRank · 随机冲浪者最后停在哪</a>：<a href=\"../../../computing/algorithms/pagerank/#step2\">该课第 2 步</a> → <a href=\"#step3\">本页第 3 步</a>；<a href=\"../../../computing/algorithms/pagerank/#step5\">该课第 5 步</a> → <a href=\"#step3\">本页第 3 步</a>",
+    "site.bl.3": "<a href=\"../../../computing/ml/embeddings/\">词向量 · 把词摆成地图</a>：<a href=\"../../../computing/ml/embeddings/#step5\">该课第 5 步</a> → <a href=\"#step5\">本页第 5 步</a>",
+    "site.bl.4": "<a href=\"../../../computing/ml/gradient-descent/\">梯度下降 · 摸黑下山</a>：<a href=\"../../../computing/ml/gradient-descent/#step2\">该课第 2 步</a> → <a href=\"#step4\">本页第 4 步</a>；<a href=\"../../../computing/ml/gradient-descent/#step6\">该课第 6 步</a> → <a href=\"#step4\">本页第 4 步</a>",
+    "site.bl.5": "<a href=\"../../../computing/quantum/what-quantum-computers-do/\">量子计算机到底能做什么</a>：<a href=\"../../../computing/quantum/what-quantum-computers-do/#ch12\">该文第 12 章</a>",
+    "site.bl.6": "<a href=\"../../algebra/complex-numbers/\">复数 · 平面上的旋转</a>：<a href=\"../../algebra/complex-numbers/#step6\">该课第 6 步</a> → <a href=\"#step2\">本页第 2 步</a>",
+    "site.bl.7": "<a href=\"../../calculus/ode-phase-portraits/\">微分方程相图 · 捕食者与猎物的回路</a>：<a href=\"../../calculus/ode-phase-portraits/#step5\">该课第 5 步</a> → <a href=\"#step2\">本页第 2 步</a>",
+    "site.bl.8": "<a href=\"../../geometry/conic-sections/\">圆锥曲线</a>：<a href=\"../../geometry/conic-sections/#step5\">该课第 5 步</a> → <a href=\"#step4\">本页第 4 步</a>",
+    "site.bl.9": "<a href=\"../../geometry/pythagoras/\">勾股定理 · 一步一交互</a>：<a href=\"../../geometry/pythagoras/#step6\">该课第 6 步</a> → <a href=\"#step1\">本页第 1 步</a>",
+    "site.bl.10": "<a href=\"../linear-transform/\">二维线性变换 · 矩阵如何挪动平面</a>：<a href=\"../linear-transform/#step4\">该课第 4 步</a> → <a href=\"#step1\">本页第 1 步</a>",
+    "site.bl.11": "<a href=\"../../../signal/control/kalman/\">卡尔曼滤波 · 在预测与测量之间称重</a>：<a href=\"../../../signal/control/kalman/#step5\">该课第 5 步</a> → <a href=\"#step5\">本页第 5 步</a>；<a href=\"../../../signal/control/kalman/#step6\">该课第 6 步</a> → <a href=\"#step5\">本页第 5 步</a>"
   },
   en: {
     docTitle: "Eigenvalues & Eigenvectors · The Directions a Matrix Won’t Turn · One Interaction per Step",
@@ -372,15 +374,17 @@ const STR = {
     "site.crumb.cat": "Mathematical Foundations",
     "site.crumb.sub": "Linear Algebra",
     "site.bl.title": "Linked from",
-    "site.bl.1": "<a href=\"../../../computing/algorithms/pagerank/\">PageRank · Where the Random Surfer Ends Up</a>: <a href=\"../../../computing/algorithms/pagerank/#step2\">its step 2</a> → <a href=\"#step3\">this page step 3</a>; <a href=\"../../../computing/algorithms/pagerank/#step5\">its step 5</a> → <a href=\"#step3\">this page step 3</a>",
-    "site.bl.2": "<a href=\"../../../computing/ml/embeddings/\">Word Embeddings · Words as a Map</a>: <a href=\"../../../computing/ml/embeddings/#step5\">its step 5</a> → <a href=\"#step5\">this page step 5</a>",
-    "site.bl.3": "<a href=\"../../../computing/ml/gradient-descent/\">Gradient Descent · Feeling Your Way Downhill</a>: <a href=\"../../../computing/ml/gradient-descent/#step2\">its step 2</a> → <a href=\"#step4\">this page step 4</a>; <a href=\"../../../computing/ml/gradient-descent/#step6\">its step 6</a> → <a href=\"#step4\">this page step 4</a>",
-    "site.bl.4": "<a href=\"../../algebra/complex-numbers/\">Complex Numbers · Rotation on the Plane</a>: <a href=\"../../algebra/complex-numbers/#step6\">its step 6</a> → <a href=\"#step2\">this page step 2</a>",
-    "site.bl.5": "<a href=\"../../calculus/ode-phase-portraits/\">ODE Phase Portraits · Predators and Prey in a Loop</a>: <a href=\"../../calculus/ode-phase-portraits/#step5\">its step 5</a> → <a href=\"#step2\">this page step 2</a>",
-    "site.bl.6": "<a href=\"../../geometry/conic-sections/\">Conic Sections</a>: <a href=\"../../geometry/conic-sections/#step5\">its step 5</a> → <a href=\"#step4\">this page step 4</a>",
-    "site.bl.7": "<a href=\"../../geometry/pythagoras/\">The Pythagorean Theorem · One Interaction at a Time</a>: <a href=\"../../geometry/pythagoras/#step6\">its step 6</a> → <a href=\"#step1\">this page step 1</a>",
-    "site.bl.8": "<a href=\"../linear-transform/\">2D Linear Transformations · How Matrices Move the Plane</a>: <a href=\"../linear-transform/#step4\">its step 4</a> → <a href=\"#step1\">this page step 1</a>",
-    "site.bl.9": "<a href=\"../../../signal/control/kalman/\">Kalman Filter · Weighing Prediction Against Measurement</a>: <a href=\"../../../signal/control/kalman/#step5\">its step 5</a> → <a href=\"#step5\">this page step 5</a>; <a href=\"../../../signal/control/kalman/#step6\">its step 6</a> → <a href=\"#step5\">this page step 5</a>"
+    "site.bl.1": "<a href=\"../../../chemistry/matter/why-atoms-stick-together/\">Why Atoms Stick Together</a>: <a href=\"../../../chemistry/matter/why-atoms-stick-together/#ch3\">its chapter 3</a>; <a href=\"../../../chemistry/matter/why-atoms-stick-together/#ch11\">its chapter 11</a>",
+    "site.bl.2": "<a href=\"../../../computing/algorithms/pagerank/\">PageRank · Where the Random Surfer Ends Up</a>: <a href=\"../../../computing/algorithms/pagerank/#step2\">its step 2</a> → <a href=\"#step3\">this page step 3</a>; <a href=\"../../../computing/algorithms/pagerank/#step5\">its step 5</a> → <a href=\"#step3\">this page step 3</a>",
+    "site.bl.3": "<a href=\"../../../computing/ml/embeddings/\">Word Embeddings · Words as a Map</a>: <a href=\"../../../computing/ml/embeddings/#step5\">its step 5</a> → <a href=\"#step5\">this page step 5</a>",
+    "site.bl.4": "<a href=\"../../../computing/ml/gradient-descent/\">Gradient Descent · Feeling Your Way Downhill</a>: <a href=\"../../../computing/ml/gradient-descent/#step2\">its step 2</a> → <a href=\"#step4\">this page step 4</a>; <a href=\"../../../computing/ml/gradient-descent/#step6\">its step 6</a> → <a href=\"#step4\">this page step 4</a>",
+    "site.bl.5": "<a href=\"../../../computing/quantum/what-quantum-computers-do/\">What Quantum Computers Can Actually Do</a>: <a href=\"../../../computing/quantum/what-quantum-computers-do/#ch12\">its chapter 12</a>",
+    "site.bl.6": "<a href=\"../../algebra/complex-numbers/\">Complex Numbers · Rotation on the Plane</a>: <a href=\"../../algebra/complex-numbers/#step6\">its step 6</a> → <a href=\"#step2\">this page step 2</a>",
+    "site.bl.7": "<a href=\"../../calculus/ode-phase-portraits/\">ODE Phase Portraits · Predators and Prey in a Loop</a>: <a href=\"../../calculus/ode-phase-portraits/#step5\">its step 5</a> → <a href=\"#step2\">this page step 2</a>",
+    "site.bl.8": "<a href=\"../../geometry/conic-sections/\">Conic Sections</a>: <a href=\"../../geometry/conic-sections/#step5\">its step 5</a> → <a href=\"#step4\">this page step 4</a>",
+    "site.bl.9": "<a href=\"../../geometry/pythagoras/\">The Pythagorean Theorem · One Interaction at a Time</a>: <a href=\"../../geometry/pythagoras/#step6\">its step 6</a> → <a href=\"#step1\">this page step 1</a>",
+    "site.bl.10": "<a href=\"../linear-transform/\">2D Linear Transformations · How Matrices Move the Plane</a>: <a href=\"../linear-transform/#step4\">its step 4</a> → <a href=\"#step1\">this page step 1</a>",
+    "site.bl.11": "<a href=\"../../../signal/control/kalman/\">Kalman Filter · Weighing Prediction Against Measurement</a>: <a href=\"../../../signal/control/kalman/#step5\">its step 5</a> → <a href=\"#step5\">this page step 5</a>; <a href=\"../../../signal/control/kalman/#step6\">its step 6</a> → <a href=\"#step5\">this page step 5</a>"
   }
 };
 

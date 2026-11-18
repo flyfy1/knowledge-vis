@@ -4,6 +4,15 @@
  "refs": [],
  "backlinks": [
   {
+   "from": "what-quantum-computers-do",
+   "links": [
+    {
+     "from": "ch2",
+     "to": null
+    }
+   ]
+  },
+  {
    "from": "seismic-waves",
    "links": [
     {
@@ -111,6 +120,15 @@
     {
      "from": "step6",
      "to": "step2"
+    }
+   ]
+  },
+  {
+   "from": "why-chips-are-hard",
+   "links": [
+    {
+     "from": "ch5",
+     "to": null
     }
    ]
   }

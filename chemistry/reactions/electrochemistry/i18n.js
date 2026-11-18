@@ -68,8 +68,9 @@ const STR={
     "site.crumb.cat": "化学",
     "site.crumb.sub": "化学反应",
     "site.bl.title": "被这些页面引用",
-    "site.bl.1": "<a href=\"../../../physics/circuits/ohms-law/\">欧姆定律 · 电流是调出来的</a>：<a href=\"../../../physics/circuits/ohms-law/#step5\">该课第 5 步</a> → <a href=\"#step1\">本页第 1 步</a>",
-    "site.bl.2": "<a href=\"../../../tech/devices/inside-a-phone/\">一部手机里的十个道理</a>：→ <a href=\"#step1\">本页第 1 步</a>"
+    "site.bl.1": "<a href=\"../why-batteries-hold-so-little/\">电池为什么就是装不下更多电</a>：<a href=\"../why-batteries-hold-so-little/#ch1\">该文第 1 章</a> → <a href=\"#step0\">本页第 0 步</a>；<a href=\"../why-batteries-hold-so-little/#ch3\">该文第 3 章</a> → <a href=\"#step2\">本页第 2 步</a>；<a href=\"../why-batteries-hold-so-little/#ch10\">该文第 10 章</a>",
+    "site.bl.2": "<a href=\"../../../physics/circuits/ohms-law/\">欧姆定律 · 电流是调出来的</a>：<a href=\"../../../physics/circuits/ohms-law/#step5\">该课第 5 步</a> → <a href=\"#step1\">本页第 1 步</a>",
+    "site.bl.3": "<a href=\"../../../tech/devices/inside-a-phone/\">一部手机里的十个道理</a>：→ <a href=\"#step1\">本页第 1 步</a>"
   },
   en: {
     pageTitle: "Electrochemistry · Electrons Running Down the Wire, or Pushed Along",
@@ -139,8 +140,9 @@ const STR={
     "site.crumb.cat": "Chemistry",
     "site.crumb.sub": "Reactions",
     "site.bl.title": "Linked from",
-    "site.bl.1": "<a href=\"../../../physics/circuits/ohms-law/\">Ohm’s Law · Current You Tune by Hand</a>: <a href=\"../../../physics/circuits/ohms-law/#step5\">its step 5</a> → <a href=\"#step1\">this page step 1</a>",
-    "site.bl.2": "<a href=\"../../../tech/devices/inside-a-phone/\">Ten Ideas Inside One Phone</a>: → <a href=\"#step1\">this page step 1</a>"
+    "site.bl.1": "<a href=\"../why-batteries-hold-so-little/\">Why Batteries Just Can't Hold More Charge</a>: <a href=\"../why-batteries-hold-so-little/#ch1\">its chapter 1</a> → <a href=\"#step0\">this page step 0</a>; <a href=\"../why-batteries-hold-so-little/#ch3\">its chapter 3</a> → <a href=\"#step2\">this page step 2</a>; <a href=\"../why-batteries-hold-so-little/#ch10\">its chapter 10</a>",
+    "site.bl.2": "<a href=\"../../../physics/circuits/ohms-law/\">Ohm’s Law · Current You Tune by Hand</a>: <a href=\"../../../physics/circuits/ohms-law/#step5\">its step 5</a> → <a href=\"#step1\">this page step 1</a>",
+    "site.bl.3": "<a href=\"../../../tech/devices/inside-a-phone/\">Ten Ideas Inside One Phone</a>: → <a href=\"#step1\">this page step 1</a>"
   }
 };
 

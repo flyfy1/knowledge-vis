@@ -102,7 +102,9 @@ const STR = {
     "site.crumb.cat": "计算与智能",
     "site.crumb.sub": "机器学习",
     "site.bl.title": "被这些页面引用",
-    "site.bl.1": "<a href=\"../decision-trees/\">决策树与信息增益</a>：<a href=\"../decision-trees/#step3\">该课第 3 步</a> → <a href=\"#step1\">本页第 1 步</a>"
+    "site.bl.1": "<a href=\"../decision-trees/\">决策树与信息增益</a>：<a href=\"../decision-trees/#step3\">该课第 3 步</a> → <a href=\"#step1\">本页第 1 步</a>",
+    "site.bl.2": "<a href=\"../how-a-chatbot-writes/\">聊天 AI 是怎么“写”出一句话的</a>：<a href=\"../how-a-chatbot-writes/#ch7\">该文第 7 章</a> → <a href=\"#step0\">本页第 0 步</a>",
+    "site.bl.3": "<a href=\"../what-a-frontier-model-takes/\">造出并运行一个最前沿的大语言模型，需要什么</a>：<a href=\"../what-a-frontier-model-takes/#ch13\">该文第 13 章</a> → <a href=\"#step0\">本页第 0 步</a>"
   },
   en: {
     docTitle: "Overfitting · Training Error Keeps Falling, Test Error Turns Back",
@@ -206,7 +208,9 @@ const STR = {
     "site.crumb.cat": "Computing & AI",
     "site.crumb.sub": "Machine Learning",
     "site.bl.title": "Linked from",
-    "site.bl.1": "<a href=\"../decision-trees/\">Decision Trees and Information Gain</a>: <a href=\"../decision-trees/#step3\">its step 3</a> → <a href=\"#step1\">this page step 1</a>"
+    "site.bl.1": "<a href=\"../decision-trees/\">Decision Trees and Information Gain</a>: <a href=\"../decision-trees/#step3\">its step 3</a> → <a href=\"#step1\">this page step 1</a>",
+    "site.bl.2": "<a href=\"../how-a-chatbot-writes/\">How a Chatbot Writes a Sentence</a>: <a href=\"../how-a-chatbot-writes/#ch7\">its chapter 7</a> → <a href=\"#step0\">this page step 0</a>",
+    "site.bl.3": "<a href=\"../what-a-frontier-model-takes/\">What It Takes to Build and Run a Frontier Large Language Model</a>: <a href=\"../what-a-frontier-model-takes/#ch13\">its chapter 13</a> → <a href=\"#step0\">this page step 0</a>"
   }
 };
 let currentLang = 'en';

@@ -4,11 +4,33 @@
  "refs": [],
  "backlinks": [
   {
+   "from": "how-a-chatbot-writes",
+   "links": [
+    {
+     "from": "ch6",
+     "to": "step1"
+    },
+    {
+     "from": "ch9",
+     "to": "step0"
+    }
+   ]
+  },
+  {
    "from": "how-hybrid-attention-remembers",
    "links": [
     {
      "from": null,
      "to": "step1"
+    }
+   ]
+  },
+  {
+   "from": "what-a-frontier-model-takes",
+   "links": [
+    {
+     "from": "ch13",
+     "to": "step0"
     }
    ]
   }

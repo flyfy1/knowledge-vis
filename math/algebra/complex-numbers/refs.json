@@ -8,7 +8,21 @@
    "anchor": "step1"
   }
  ],
- "backlinks": [],
+ "backlinks": [
+  {
+   "from": "what-quantum-computers-do",
+   "links": [
+    {
+     "from": "ch1",
+     "to": null
+    },
+    {
+     "from": "ch12",
+     "to": null
+    }
+   ]
+  }
+ ],
  "related": [],
  "bindings": []
 }

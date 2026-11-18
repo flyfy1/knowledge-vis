@@ -10,6 +10,19 @@
  ],
  "backlinks": [
   {
+   "from": "why-batteries-hold-so-little",
+   "links": [
+    {
+     "from": "ch5",
+     "to": "step4"
+    },
+    {
+     "from": "ch10",
+     "to": null
+    }
+   ]
+  },
+  {
    "from": "how-power-reaches-the-cpu",
    "links": [
     {
@@ -41,6 +54,15 @@
     {
      "from": null,
      "to": "step4"
+    }
+   ]
+  },
+  {
+   "from": "why-chips-are-hard",
+   "links": [
+    {
+     "from": "ch9",
+     "to": null
     }
    ]
   }

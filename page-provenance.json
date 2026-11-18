@@ -3562,6 +3562,114 @@
       "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) as a parallel edition in 185f4c6a52e867c5f0cc3231501f4e24a6b861cc (variants/claude-code/bayes-diagnostics/); promoted to this address in a3a44e7d38c4b3e85f5c32fafe19d1f96d640eea after the comparison in specs/reviews/lesson-version-choice-20261117.md; self-checked, then independently reviewed 2026-11-17 by a separate Claude Code session (same model), specs/reviews/site-template-phase3c-review-20261117.md; no human or cross-model review yet",
       "path": "probability/inference/bayes-diagnostics/index.html",
       "previousSourceRevision": "a3a44e7d38c4b3e85f5c32fafe19d1f96d640eea"
+    },
+    "how-a-chatbot-writes": {
+      "developer": "Claude Code",
+      "edition": "claude-code-how-a-chatbot-writes-20261118",
+      "kind": "original",
+      "sourceRevision": "5f65e9f30759267d9ea380bf8d4beb56fdee3d6a",
+      "scope": {
+        "zh": "整篇长文从零编写：把字切成 token、只看前一个 token 的计数、多看几个 token、词向量、注意力、温度与截断采样、用梯度下降训练、把各部分串成生成循环并对比真实模型的规模、用聊天 AI 时的三个问题",
+        "en": "Whole essay written from scratch: cutting text into tokens, counting with one previous token, looking at more tokens, word vectors, attention, temperature and truncated sampling, training by gradient descent, the generation loop and the scale of real models, three questions for using a chat AI"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) and finished on 2026-11-18; the English copy was translated by Claude Code (claude-haiku-5-5); independently reviewed on 2026-11-18 by a separate Claude Code session (claude-opus-5-5) and revised accordingly, with the review completed by a third session (same model; cross-model review pending). See the page BRIEF.md and specs/reviews/how-a-chatbot-writes-review-20261118.md.",
+      "path": "computing/ml/how-a-chatbot-writes/index.html"
+    },
+    "what-a-frontier-model-takes": {
+      "developer": "Claude Code",
+      "edition": "claude-code-what-a-frontier-model-takes-20261118",
+      "kind": "original",
+      "sourceRevision": "4a16e24b5fcdad1839535b24eadc7ff119c51673",
+      "scope": {
+        "zh": "整篇长文从零编写：一个字母穿过整台小模型、深层网络为什么不散架、数参数与算力、训练中长出的注意力头、规模定律、训练账单、微调对齐与评测、KV 缓存、带宽批量与量化、专家混合与投机解码、拆掉一个头、2026 年 11 月的前沿、读大模型新闻的五个问题",
+        "en": "Whole essay written from scratch: one letter through a small whole model, why deep stacks hold together, counting parameters and compute, attention heads that grow in training, scaling laws, the training bill, fine-tuning, alignment and evaluation, the KV cache, bandwidth, batching and quantisation, mixture of experts and speculative decoding, removing one head, the frontier in November 2026, five questions for large-model news"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) and finished by Claude Code (claude-fable-5-2); the English copy was translated by Claude Code (claude-haiku-5-5); independently reviewed on 2026-11-18 by a separate Claude Code session (claude-fable-5-2), with the review completed and its fixes applied by a third session. See the page BRIEF.md and specs/reviews/what-a-frontier-model-takes-review-20261118.md.",
+      "path": "computing/ml/what-a-frontier-model-takes/index.html"
+    },
+    "a-secret-in-public": {
+      "developer": "Claude Code",
+      "edition": "claude-code-a-secret-in-public-20261118",
+      "kind": "original",
+      "sourceRevision": "1bfc57027e17d2690f9bbb111cde7c05b75429e0",
+      "scope": {
+        "zh": "整篇长文从零编写：钥匙送不出去、单向函数与模运算、Diffie–Hellman 与中间人、RSA、椭圆曲线、签名与证书链、安全强度与分解纪录、量子计算机会改变什么、格与 LWE、截至 2026 年 11 月的后量子迁移、读密码新闻的四个问题",
+        "en": "Whole essay written from scratch: why a key cannot be sent, one-way functions and modular arithmetic, Diffie–Hellman and the man in the middle, RSA, elliptic curves, signatures and certificate chains, security levels and factoring records, what a quantum computer would change, lattices and LWE, the post-quantum migration as of November 2026, four questions for crypto news"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) and finished by Claude Code (claude-fable-5-2); the English copy was translated by Claude Code (claude-haiku-5-5); independently reviewed on 2026-11-18 by a separate Claude Code session (claude-fable-5-2) and revised accordingly, with the review completed by a third session. See the page BRIEF.md and specs/reviews/a-secret-in-public-review-20261118.md.",
+      "path": "computing/systems/a-secret-in-public/index.html"
+    },
+    "why-chips-are-hard": {
+      "developer": "Claude Code",
+      "edition": "claude-code-why-chips-are-hard-20261118",
+      "kind": "original",
+      "sourceRevision": "9a934eaefcb1f9d5227b2ce2847a8137916854d5",
+      "scope": {
+        "zh": "整篇长文从零编写：硅什么时候导电、pn 结、晶体管与亚阈值摆幅、登纳德缩放的终结、光刻分辨率、EUV、“3 纳米”的含义、FinFET 与全环绕栅、导线与 RC 延迟、良率与成本、截至 2026 年 11 月的前沿、怎么读芯片新闻",
+        "en": "Whole essay written from scratch: when silicon conducts, the pn junction, the transistor and subthreshold swing, the end of Dennard scaling, lithographic resolution, EUV, what “3 nm” means, FinFET and gate-all-around, wires and RC delay, yield and cost, the frontier as of November 2026, how to read chip news"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) and finished by Claude Code (claude-fable-5-2); the English copy was translated by Claude Code (claude-haiku-5-5); independently reviewed on 2026-11-18 by a separate Claude Code session (claude-fable-5-2), with the review completed and its fixes applied by a third session on 2026-11-19. See the page BRIEF.md and specs/reviews/why-chips-are-hard-review-20261118.md.",
+      "path": "tech/semiconductors/why-chips-are-hard/index.html"
+    },
+    "why-fusion-is-hard": {
+      "developer": "Claude Code",
+      "edition": "claude-code-why-fusion-is-hard-20261118",
+      "kind": "original",
+      "sourceRevision": "25ab7a91e9bdd23db7f4c82f29881c41fd9b7f34",
+      "scope": {
+        "zh": "整篇长文从零编写：质量亏损、库仑势垒、隧穿与反应率、劳森判据、磁约束、装置尺寸与 SPARC / ITER 的零维估算、惯性约束、几种 Q、氚与中子等工程难关、截至 2026 年的前沿、为什么总是“还要三十年”",
+        "en": "Whole essay written from scratch: the mass defect, the Coulomb barrier, tunnelling and reaction rates, the Lawson criterion, magnetic confinement, machine size and a 0-D estimate of SPARC and ITER, inertial confinement, the several kinds of Q, tritium, neutrons and other engineering hurdles, the frontier as of 2026, why it is always “thirty years away”"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) and finished by Claude Code (claude-fable-5-2); the English copy was translated by Claude Code (claude-haiku-5-5); independently reviewed on 2026-11-18 by a separate Claude Code session (claude-fable-5-2) and revised accordingly, with the review completed by a third session. See the page BRIEF.md and specs/reviews/why-fusion-is-hard-review-20261118.md.",
+      "path": "physics/modern/why-fusion-is-hard/index.html"
+    },
+    "why-batteries-hold-so-little": {
+      "developer": "Claude Code",
+      "edition": "claude-code-why-batteries-hold-so-little-20261118",
+      "kind": "original",
+      "sourceRevision": "b60bb4cd9adf165d65fff2e0fc616b4a2d0a2b59",
+      "scope": {
+        "zh": "整篇长文从零编写：半反应与电池电压、为什么是锂与电芯里不干活的质量、电压曲线、固相扩散、快充为什么最后 20% 慢、热失控、衰老、成本学习曲线、截至 2026 年 11 月的前沿、读电池新闻的问题",
+        "en": "Whole essay written from scratch: half-reactions and cell voltage, why lithium and the mass in a cell that does no work, voltage curves, solid-state diffusion, why the last 20% of a fast charge is slow, thermal runaway, ageing, the cost learning curve, the frontier as of November 2026, questions for battery news"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) and finished on 2026-11-18 by a Claude Code sub-agent (model not recorded); the English copy was translated by Claude Code (claude-haiku-5-5); independently reviewed on 2026-11-18 by a separate Claude Code session (claude-fable-5-2), with the review completed and its fixes applied by a third session. See the page BRIEF.md and specs/reviews/why-batteries-hold-so-little-review-20261118.md.",
+      "path": "chemistry/reactions/why-batteries-hold-so-little/index.html"
+    },
+    "why-one-rate-moves-everything": {
+      "developer": "Claude Code",
+      "edition": "claude-code-why-one-rate-moves-everything-20261118",
+      "kind": "original",
+      "sourceRevision": "f7e8b240e41e4319340231222d597c9284b8795a",
+      "scope": {
+        "zh": "整篇长文从零编写：折现、债券与久期、收益率曲线与倒挂记录、预期与期限溢价、央行怎样钉住隔夜利率、泰勒规则与 r*、新凯恩斯三方程模型、股票与房价、汇率与套利交易、零利率之后、r − g、2026 年底各大央行的位置、读加息新闻的五个问题",
+        "en": "Whole essay written from scratch: discounting, bonds and duration, the yield curve and its inversion record, expectations and the term premium, how a central bank pins the overnight rate, the Taylor rule and r*, the three-equation New Keynesian model, stocks and house prices, exchange rates and the carry trade, after rates reach zero, r − g, where the major central banks stand at the end of 2026, five questions for rate-hike news"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) and finished by Claude Code (claude-fable-5-2); the English copy was translated by Claude Code (claude-haiku-5-5); independently reviewed on 2026-11-18 by a separate Claude Code session (claude-fable-5-2), with the review completed and its fixes applied by a third session. See the page BRIEF.md and specs/reviews/why-one-rate-moves-everything-review-20261118.md.",
+      "path": "economics/money/why-one-rate-moves-everything/index.html"
+    },
+    "why-atoms-stick-together": {
+      "developer": "Claude Code",
+      "edition": "claude-code-why-atoms-stick-together-20261118",
+      "kind": "original",
+      "sourceRevision": "351003c0230ce2ca5f99d400317319bc1c8ca8af",
+      "scope": {
+        "zh": "整篇长文从零编写：箱中粒子与动能、H₂⁺ 化学键、往轨道里填电子与休克尔方法、从共价到离子与马德隆常数、能带、分子形状、分子间的弱力与分子动力学、结构决定性质、蛋白质折叠、2026 年 11 月的前沿、看到一样东西时问的四件事",
+        "en": "Whole essay written from scratch: a particle in a box and kinetic energy, the H₂⁺ bond, filling orbitals and the Hückel method, from covalent to ionic and the Madelung constant, energy bands, molecular shape, weak forces between molecules and molecular dynamics, structure deciding properties, protein folding, the frontier in November 2026, four questions to ask of a material"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-fable-5-2) directly in the Markdown site template; the English text was translated by claude-haiku-5-5; reviewed independently on 2026-11-18 by a second Claude Code instance (claude-fable-5-2). See the page BRIEF.md and specs/reviews/why-atoms-stick-together-review-20261119.md.",
+      "path": "chemistry/matter/why-atoms-stick-together/index.html"
+    },
+    "what-quantum-computers-do": {
+      "developer": "Claude Code",
+      "edition": "claude-code-what-quantum-computers-do-20261118",
+      "kind": "original",
+      "sourceRevision": "b9d1df7825f875358aaeee911285509a339fb216",
+      "scope": {
+        "zh": "整篇长文从零编写：一个量子比特、干涉、纠缠与 CHSH、n 个比特的状态空间、最小的量子算法、格罗弗搜索、周期与肖尔算法、哪些问题会变快、噪声、纠错与表面码、截至 2026 年的前沿、读量子新闻的五个问题",
+        "en": "Whole essay written from scratch: one qubit, interference, entanglement and CHSH, the state space of n qubits, the smallest quantum algorithm, Grover's search, period finding and Shor's algorithm, which problems speed up, noise, error correction and the surface code, the frontier as of 2026, five questions for quantum news"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) and finished by Claude Code (claude-fable-5-2); the English copy was translated by Claude Code (claude-haiku-5-5); independently reviewed on 2026-11-18 by a separate Claude Code session (claude-fable-5-2) and revised accordingly, with the review completed by a third session. See the page BRIEF.md and specs/reviews/what-quantum-computers-do-review-20261118.md.",
+      "path": "computing/quantum/what-quantum-computers-do/index.html"
     }
   },
   "exceptions": {

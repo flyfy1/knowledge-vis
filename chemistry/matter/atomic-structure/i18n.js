@@ -123,9 +123,11 @@ const STR = {
     "site.bl.1": "<a href=\"../molecular-shapes/\">分子构型 · 电子对互相躲开</a>：<a href=\"../molecular-shapes/#step5\">该课第 5 步</a> → <a href=\"#step3\">本页第 3 步</a>",
     "site.bl.2": "<a href=\"../molecules-atoms/\">分子与原子</a>：<a href=\"../molecules-atoms/#step5\">该课第 5 步</a> → <a href=\"#step1\">本页第 1 步</a>",
     "site.bl.3": "<a href=\"../periodic-trends/\">元素周期律 · 周期表上的渐变</a>：<a href=\"../periodic-trends/#step5\">该课第 5 步</a> → <a href=\"#step2\">本页第 2 步</a>、<a href=\"#step3\">本页第 3 步</a>",
-    "site.bl.4": "<a href=\"../../reactions/mass-conservation/\">质量守恒 · 原子一个都不丢</a>：<a href=\"../../reactions/mass-conservation/#step5\">该课第 5 步</a> → <a href=\"#step1\">本页第 1 步</a>",
-    "site.bl.5": "<a href=\"../../../physics/circuits/simple-circuits/\">简单电路 · 电流要走一圈</a>：<a href=\"../../../physics/circuits/simple-circuits/#step5\">该课第 5 步</a> → <a href=\"#step4\">本页第 4 步</a>",
-    "site.bl.6": "<a href=\"../../../physics/modern/photoelectric-effect/\">光电效应 · 光是一份一份的</a>：<a href=\"../../../physics/modern/photoelectric-effect/#step5\">该课第 5 步</a> → <a href=\"#step2\">本页第 2 步</a>"
+    "site.bl.4": "<a href=\"../why-atoms-stick-together/\">原子为什么会粘在一起</a>：<a href=\"../why-atoms-stick-together/#ch11\">该文第 11 章</a>",
+    "site.bl.5": "<a href=\"../../reactions/mass-conservation/\">质量守恒 · 原子一个都不丢</a>：<a href=\"../../reactions/mass-conservation/#step5\">该课第 5 步</a> → <a href=\"#step1\">本页第 1 步</a>",
+    "site.bl.6": "<a href=\"../../../physics/circuits/simple-circuits/\">简单电路 · 电流要走一圈</a>：<a href=\"../../../physics/circuits/simple-circuits/#step5\">该课第 5 步</a> → <a href=\"#step4\">本页第 4 步</a>",
+    "site.bl.7": "<a href=\"../../../physics/modern/photoelectric-effect/\">光电效应 · 光是一份一份的</a>：<a href=\"../../../physics/modern/photoelectric-effect/#step5\">该课第 5 步</a> → <a href=\"#step2\">本页第 2 步</a>",
+    "site.bl.8": "<a href=\"../../../physics/modern/why-fusion-is-hard/\">核聚变为什么总是“还要三十年”</a>：<a href=\"../../../physics/modern/why-fusion-is-hard/#ch11\">该文第 11 章</a>"
   },
   en: {
     docTitle: "Atomic Structure · One Interaction at a Time",
@@ -249,9 +251,11 @@ const STR = {
     "site.bl.1": "<a href=\"../molecular-shapes/\">Molecular Shapes · Electron Pairs Keeping Out of Each Other\\</a>: <a href=\"../molecular-shapes/#step5\">its step 5</a> → <a href=\"#step3\">this page step 3</a>",
     "site.bl.2": "<a href=\"../molecules-atoms/\">Molecules & Atoms</a>: <a href=\"../molecules-atoms/#step5\">its step 5</a> → <a href=\"#step1\">this page step 1</a>",
     "site.bl.3": "<a href=\"../periodic-trends/\">Periodic Trends · Gradients Across the Periodic Table</a>: <a href=\"../periodic-trends/#step5\">its step 5</a> → <a href=\"#step2\">this page step 2</a>, <a href=\"#step3\">this page step 3</a>",
-    "site.bl.4": "<a href=\"../../reactions/mass-conservation/\">Mass Conservation · Not a Single Atom Lost</a>: <a href=\"../../reactions/mass-conservation/#step5\">its step 5</a> → <a href=\"#step1\">this page step 1</a>",
-    "site.bl.5": "<a href=\"../../../physics/circuits/simple-circuits/\">Simple Circuits · Current Must Go Round</a>: <a href=\"../../../physics/circuits/simple-circuits/#step5\">its step 5</a> → <a href=\"#step4\">this page step 4</a>",
-    "site.bl.6": "<a href=\"../../../physics/modern/photoelectric-effect/\">The Photoelectric Effect · Light Comes in Packets</a>: <a href=\"../../../physics/modern/photoelectric-effect/#step5\">its step 5</a> → <a href=\"#step2\">this page step 2</a>"
+    "site.bl.4": "<a href=\"../why-atoms-stick-together/\">Why Atoms Stick Together</a>: <a href=\"../why-atoms-stick-together/#ch11\">its chapter 11</a>",
+    "site.bl.5": "<a href=\"../../reactions/mass-conservation/\">Mass Conservation · Not a Single Atom Lost</a>: <a href=\"../../reactions/mass-conservation/#step5\">its step 5</a> → <a href=\"#step1\">this page step 1</a>",
+    "site.bl.6": "<a href=\"../../../physics/circuits/simple-circuits/\">Simple Circuits · Current Must Go Round</a>: <a href=\"../../../physics/circuits/simple-circuits/#step5\">its step 5</a> → <a href=\"#step4\">this page step 4</a>",
+    "site.bl.7": "<a href=\"../../../physics/modern/photoelectric-effect/\">The Photoelectric Effect · Light Comes in Packets</a>: <a href=\"../../../physics/modern/photoelectric-effect/#step5\">its step 5</a> → <a href=\"#step2\">this page step 2</a>",
+    "site.bl.8": "<a href=\"../../../physics/modern/why-fusion-is-hard/\">Why Fusion Is Always “Thirty Years Away”</a>: <a href=\"../../../physics/modern/why-fusion-is-hard/#ch11\">its chapter 11</a>"
   }
 };
 let _lang = null;

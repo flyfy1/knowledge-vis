@@ -1,0 +1,35 @@
+{
+  "slug": "a-secret-in-public",
+  "kind": "essay",
+  "title": {
+    "zh": "当着所有人的面约定一个秘密",
+    "en": "Agreeing on a Secret in Plain Sight"
+  },
+  "desc": {
+    "zh": "两个陌生人在所有人都能偷听的线路上，怎么约定一个只有他俩知道的秘密？单向函数、Diffie–Hellman、RSA、椭圆曲线、证书链、量子威胁和格密码，每一步都在页面里用真实的算术跑一遍。",
+    "en": "How can two strangers agree on a secret over a line that everyone can listen to? One-way functions, Diffie–Hellman, RSA, elliptic curves, certificate chains, the quantum threat and lattice cryptography: each step runs real arithmetic on this page."
+  },
+  "tags": [
+    {
+      "zh": "公钥密码",
+      "en": "Public-key Cryptography"
+    },
+    {
+      "zh": "后量子密码",
+      "en": "Post-quantum Cryptography"
+    },
+    {
+      "zh": "数论",
+      "en": "Number Theory"
+    },
+    {
+      "zh": "长文",
+      "en": "Long-form Essay"
+    }
+  ],
+  "category": "computing",
+  "subtopic": "systems",
+  "stage": "university",
+  "status": "live",
+  "path": "computing/systems/a-secret-in-public/"
+}

@@ -113,7 +113,9 @@ const STR = {
     "site.crumb.cat": "计算与智能",
     "site.crumb.sub": "系统与安全",
     "site.bl.title": "被这些页面引用",
-    "site.bl.1": "<a href=\"../how-a-computer-boots/\">电脑是怎么开机的</a>：<a href=\"../how-a-computer-boots/#ch8\">该文第 8 章</a>；<a href=\"../how-a-computer-boots/#ch14\">该文第 14 章</a>"
+    "site.bl.1": "<a href=\"../../quantum/what-quantum-computers-do/\">量子计算机到底能做什么</a>：<a href=\"../../quantum/what-quantum-computers-do/#ch7\">该文第 7 章</a>；<a href=\"../../quantum/what-quantum-computers-do/#ch12\">该文第 12 章</a>",
+    "site.bl.2": "<a href=\"../a-secret-in-public/\">当着所有人的面约定一个秘密</a>：<a href=\"../a-secret-in-public/#ch2\">该文第 2 章</a>；<a href=\"../a-secret-in-public/#ch4\">该文第 4 章</a>；<a href=\"../a-secret-in-public/#ch11\">该文第 11 章</a>",
+    "site.bl.3": "<a href=\"../how-a-computer-boots/\">电脑是怎么开机的</a>：<a href=\"../how-a-computer-boots/#ch8\">该文第 8 章</a>；<a href=\"../how-a-computer-boots/#ch14\">该文第 14 章</a>"
   },
   en: {
     back: "← Knowledge Index",
@@ -227,7 +229,9 @@ const STR = {
     "site.crumb.cat": "Computing & AI",
     "site.crumb.sub": "Systems & Security",
     "site.bl.title": "Linked from",
-    "site.bl.1": "<a href=\"../how-a-computer-boots/\">How a Computer Boots</a>: <a href=\"../how-a-computer-boots/#ch8\">its chapter 8</a>; <a href=\"../how-a-computer-boots/#ch14\">its chapter 14</a>"
+    "site.bl.1": "<a href=\"../../quantum/what-quantum-computers-do/\">What Quantum Computers Can Actually Do</a>: <a href=\"../../quantum/what-quantum-computers-do/#ch7\">its chapter 7</a>; <a href=\"../../quantum/what-quantum-computers-do/#ch12\">its chapter 12</a>",
+    "site.bl.2": "<a href=\"../a-secret-in-public/\">Agreeing on a Secret in Plain Sight</a>: <a href=\"../a-secret-in-public/#ch2\">its chapter 2</a>; <a href=\"../a-secret-in-public/#ch4\">its chapter 4</a>; <a href=\"../a-secret-in-public/#ch11\">its chapter 11</a>",
+    "site.bl.3": "<a href=\"../how-a-computer-boots/\">How a Computer Boots</a>: <a href=\"../how-a-computer-boots/#ch8\">its chapter 8</a>; <a href=\"../how-a-computer-boots/#ch14\">its chapter 14</a>"
   }
 };
 let currentLang = 'en';

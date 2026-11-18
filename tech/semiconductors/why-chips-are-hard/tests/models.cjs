@@ -297,7 +297,9 @@ const sci = (x, d) => { const e = Math.floor(Math.log10(x)); return (x / 10 ** e
   check('diagram keys exist (a key, or the stem of keys built in code)', asked.filter(k => !(k in Z) && !all.some(z => z.startsWith(k))).join(','), '');
   check('no CJK in app.js', /[\u3400-\u9fff]/.test(app), false);
   check('no CJK in models.js', /[\u3400-\u9fff]/.test(fs.readFileSync(path.join(__dirname, '..', 'models.js'), 'utf8')), false);
-  check('no CJK in the page body', /[\u3400-\u9fff]/.test(html.slice(html.indexOf('<body>')).replace('>中<', '><')), false);
+  // the page-provenance label (added at registration, 2026-11-18) is bilingual by contract: exactly one, stripped before the check
+  check('one page-provenance label', (html.match(/<details class="page-provenance"/g) || []).length, 1);
+  check('no CJK in the page body', /[\u3400-\u9fff]/.test(html.slice(html.indexOf('<body>')).replace(/<details class="page-provenance"[\s\S]*?<\/details>/, '').replace('>中<', '><')), false);
 }
 
 console.log(fails ? `${fails} of ${n} checks FAILED` : `PASS: ${n} model and prose checks`);

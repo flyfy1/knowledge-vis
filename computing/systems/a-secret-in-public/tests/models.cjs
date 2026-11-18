@@ -400,10 +400,11 @@ const attr = (sel, a) => { const m = html(sel).match(new RegExp(a + '="([^"]*)"'
   const han = /[㐀-鿿＀-￯　-〿]/;
   check('no Chinese in models.js', han.test(fs.readFileSync(path.join(DIR, 'models.js'), 'utf8')), false);
   check('no Chinese in app.js', han.test(APP), false);
-  const stripped = HTML.replace(/<title>[^<]*<\/title>/, '').replace(/<meta name="description" content="[^"]*">/, '').replace(/>中</g, '><');
+  // the page-provenance label (added at registration) is bilingual by contract; strip it before the CJK check
+  const stripped = HTML.replace(/<details class="page-provenance"[\s\S]*?<\/details>/, '').replace(/<title>[^<]*<\/title>/, '').replace(/<meta name="description" content="[^"]*">/, '').replace(/>中</g, '><');
   check('no other Chinese in index.html', han.test(stripped), false);
   ok('no lesson-shell.js', !HTML.includes('lesson-shell')); ok('copy.en.js loaded optionally', /copy\.en\.js(?:\?v=\d{8}[a-z]?)?"[^>]*onerror/.test(HTML));
-  ok('no provenance label', !HTML.includes('data-source-revision'));
+  check('one page-provenance label (added at registration)', (HTML.match(/<details class="page-provenance"/g) || []).length, 1);
   ok('safety warning shown', Z['hero.warn'].includes('绝不能用来保护任何东西') && Z['ch11.warn'].includes('不要用它保护任何东西'));
   // no "left/right figure" phrasing
   for (const k in Z) { if (/左图|右图|左边的图|右边的图/.test(Z[k])) check('no left/right figure in ' + k, true, false); }

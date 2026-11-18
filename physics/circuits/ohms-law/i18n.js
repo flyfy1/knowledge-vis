@@ -90,9 +90,11 @@ const STR = {
     "site.crumb.cat": "物理与电路",
     "site.crumb.sub": "电路",
     "site.bl.title": "被这些页面引用",
-    "site.bl.1": "<a href=\"../../../computing/systems/how-power-reaches-the-cpu/\">电是怎么送进 CPU 的</a>：<a href=\"../../../computing/systems/how-power-reaches-the-cpu/#ch1\">该文第 1 章</a>",
-    "site.bl.2": "<a href=\"../series-parallel/\">串联与并联 · 电流的分与合</a>：<a href=\"../series-parallel/#step0\">该课第 0 步</a> → <a href=\"#step1\">本页第 1 步</a>；<a href=\"../series-parallel/#step5\">该课第 5 步</a> → <a href=\"#step1\">本页第 1 步</a>、<a href=\"#step3\">本页第 3 步</a>",
-    "site.bl.3": "<a href=\"../../../tech/devices/inside-a-phone/\">一部手机里的十个道理</a>：→ <a href=\"#step4\">本页第 4 步</a>"
+    "site.bl.1": "<a href=\"../../../chemistry/reactions/why-batteries-hold-so-little/\">电池为什么就是装不下更多电</a>：<a href=\"../../../chemistry/reactions/why-batteries-hold-so-little/#ch5\">该文第 5 章</a> → <a href=\"#step4\">本页第 4 步</a>；<a href=\"../../../chemistry/reactions/why-batteries-hold-so-little/#ch10\">该文第 10 章</a>",
+    "site.bl.2": "<a href=\"../../../computing/systems/how-power-reaches-the-cpu/\">电是怎么送进 CPU 的</a>：<a href=\"../../../computing/systems/how-power-reaches-the-cpu/#ch1\">该文第 1 章</a>",
+    "site.bl.3": "<a href=\"../series-parallel/\">串联与并联 · 电流的分与合</a>：<a href=\"../series-parallel/#step0\">该课第 0 步</a> → <a href=\"#step1\">本页第 1 步</a>；<a href=\"../series-parallel/#step5\">该课第 5 步</a> → <a href=\"#step1\">本页第 1 步</a>、<a href=\"#step3\">本页第 3 步</a>",
+    "site.bl.4": "<a href=\"../../../tech/devices/inside-a-phone/\">一部手机里的十个道理</a>：→ <a href=\"#step4\">本页第 4 步</a>",
+    "site.bl.5": "<a href=\"../../../tech/semiconductors/why-chips-are-hard/\">芯片为什么越来越难做</a>：<a href=\"../../../tech/semiconductors/why-chips-are-hard/#ch9\">该文第 9 章</a>"
   },
   en: {
     back: "← Knowledge Index",
@@ -183,9 +185,11 @@ const STR = {
     "site.crumb.cat": "Physics & Circuits",
     "site.crumb.sub": "Circuits",
     "site.bl.title": "Linked from",
-    "site.bl.1": "<a href=\"../../../computing/systems/how-power-reaches-the-cpu/\">How Power Reaches the CPU</a>: <a href=\"../../../computing/systems/how-power-reaches-the-cpu/#ch1\">its chapter 1</a>",
-    "site.bl.2": "<a href=\"../series-parallel/\">Series & Parallel · Splitting and Merging Current</a>: <a href=\"../series-parallel/#step0\">its step 0</a> → <a href=\"#step1\">this page step 1</a>; <a href=\"../series-parallel/#step5\">its step 5</a> → <a href=\"#step1\">this page step 1</a>, <a href=\"#step3\">this page step 3</a>",
-    "site.bl.3": "<a href=\"../../../tech/devices/inside-a-phone/\">Ten Ideas Inside One Phone</a>: → <a href=\"#step4\">this page step 4</a>"
+    "site.bl.1": "<a href=\"../../../chemistry/reactions/why-batteries-hold-so-little/\">Why Batteries Just Can't Hold More Charge</a>: <a href=\"../../../chemistry/reactions/why-batteries-hold-so-little/#ch5\">its chapter 5</a> → <a href=\"#step4\">this page step 4</a>; <a href=\"../../../chemistry/reactions/why-batteries-hold-so-little/#ch10\">its chapter 10</a>",
+    "site.bl.2": "<a href=\"../../../computing/systems/how-power-reaches-the-cpu/\">How Power Reaches the CPU</a>: <a href=\"../../../computing/systems/how-power-reaches-the-cpu/#ch1\">its chapter 1</a>",
+    "site.bl.3": "<a href=\"../series-parallel/\">Series & Parallel · Splitting and Merging Current</a>: <a href=\"../series-parallel/#step0\">its step 0</a> → <a href=\"#step1\">this page step 1</a>; <a href=\"../series-parallel/#step5\">its step 5</a> → <a href=\"#step1\">this page step 1</a>, <a href=\"#step3\">this page step 3</a>",
+    "site.bl.4": "<a href=\"../../../tech/devices/inside-a-phone/\">Ten Ideas Inside One Phone</a>: → <a href=\"#step4\">this page step 4</a>",
+    "site.bl.5": "<a href=\"../../../tech/semiconductors/why-chips-are-hard/\">Why Chips Are Getting Harder to Make</a>: <a href=\"../../../tech/semiconductors/why-chips-are-hard/#ch9\">its chapter 9</a>"
   }
 };
 let currentLang = 'en';

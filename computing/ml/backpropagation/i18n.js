@@ -112,7 +112,9 @@ const STR = {
     "site.crumb.cat": "计算与智能",
     "site.crumb.sub": "机器学习",
     "site.bl.title": "被这些页面引用",
-    "site.bl.1": "<a href=\"../cnn-feature-maps/\">卷积神经网络的特征图 · 小窗口怎样“看”图</a>：<a href=\"../cnn-feature-maps/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>"
+    "site.bl.1": "<a href=\"../cnn-feature-maps/\">卷积神经网络的特征图 · 小窗口怎样“看”图</a>：<a href=\"../cnn-feature-maps/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>",
+    "site.bl.2": "<a href=\"../how-a-chatbot-writes/\">聊天 AI 是怎么“写”出一句话的</a>：<a href=\"../how-a-chatbot-writes/#ch7\">该文第 7 章</a> → <a href=\"#step0\">本页第 0 步</a>",
+    "site.bl.3": "<a href=\"../what-a-frontier-model-takes/\">造出并运行一个最前沿的大语言模型，需要什么</a>：<a href=\"../what-a-frontier-model-takes/#ch2\">该文第 2 章</a> → <a href=\"#step0\">本页第 0 步</a>；<a href=\"../what-a-frontier-model-takes/#ch13\">该文第 13 章</a> → <a href=\"#step0\">本页第 0 步</a>"
   },
   en: {
     docTitle: "Backpropagation · Error Flows Back Through the Network",
@@ -226,7 +228,9 @@ const STR = {
     "site.crumb.cat": "Computing & AI",
     "site.crumb.sub": "Machine Learning",
     "site.bl.title": "Linked from",
-    "site.bl.1": "<a href=\"../cnn-feature-maps/\">CNN Feature Maps · How a Small Window “Sees” an Image</a>: <a href=\"../cnn-feature-maps/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>"
+    "site.bl.1": "<a href=\"../cnn-feature-maps/\">CNN Feature Maps · How a Small Window “Sees” an Image</a>: <a href=\"../cnn-feature-maps/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>",
+    "site.bl.2": "<a href=\"../how-a-chatbot-writes/\">How a Chatbot Writes a Sentence</a>: <a href=\"../how-a-chatbot-writes/#ch7\">its chapter 7</a> → <a href=\"#step0\">this page step 0</a>",
+    "site.bl.3": "<a href=\"../what-a-frontier-model-takes/\">What It Takes to Build and Run a Frontier Large Language Model</a>: <a href=\"../what-a-frontier-model-takes/#ch2\">its chapter 2</a> → <a href=\"#step0\">this page step 0</a>; <a href=\"../what-a-frontier-model-takes/#ch13\">its chapter 13</a> → <a href=\"#step0\">this page step 0</a>"
   }
 };
 let currentLang = 'en';

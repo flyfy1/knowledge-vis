@@ -146,7 +146,9 @@ const STR = {
     "site.crumb.aria": "页面位置",
     "site.crumb.home": "首页",
     "site.crumb.cat": "数学基础",
-    "site.crumb.sub": "代数与函数"
+    "site.crumb.sub": "代数与函数",
+    "site.bl.title": "被这些页面引用",
+    "site.bl.1": "<a href=\"../../../computing/quantum/what-quantum-computers-do/\">量子计算机到底能做什么</a>：<a href=\"../../../computing/quantum/what-quantum-computers-do/#ch1\">该文第 1 章</a>；<a href=\"../../../computing/quantum/what-quantum-computers-do/#ch12\">该文第 12 章</a>"
   },
   en: {
     docTitle: "Complex Numbers · Multiplying by i Is a 90° Turn — One Interaction at a Time",
@@ -286,7 +288,9 @@ const STR = {
     "site.crumb.aria": "Breadcrumb",
     "site.crumb.home": "Home",
     "site.crumb.cat": "Mathematical Foundations",
-    "site.crumb.sub": "Algebra & Functions"
+    "site.crumb.sub": "Algebra & Functions",
+    "site.bl.title": "Linked from",
+    "site.bl.1": "<a href=\"../../../computing/quantum/what-quantum-computers-do/\">What Quantum Computers Can Actually Do</a>: <a href=\"../../../computing/quantum/what-quantum-computers-do/#ch1\">its chapter 1</a>; <a href=\"../../../computing/quantum/what-quantum-computers-do/#ch12\">its chapter 12</a>"
   }
 };
 

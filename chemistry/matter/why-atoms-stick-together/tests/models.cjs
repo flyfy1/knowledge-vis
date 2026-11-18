@@ -317,7 +317,7 @@ const SI = { h: 6.62607015e-34, e: 1.602176634e-19, me: 9.1093837015e-31, kB: 1.
     check(`${f}: a wide and a narrow drawing`, (src.match(/<svg class="[wn]"/g) || []).join(''), '<svg class="w"<svg class="n"');
     for (const m of src.matchAll(/font-size="([\d.]+)"/g)) ok(`${f}: font size ${m[1]} ≥ 12`, +m[1] >= 12);
   }
-  const bare = unprefill(html, Z).replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>|<!--[\s\S]*?-->/g, '');
+  const bare = unprefill(html, Z).replace(/<details class="page-provenance"[\s\S]*?<\/details>/, '').replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>|<!--[\s\S]*?-->/g, '');
   const stray = bare.replace(/<title>[^<]*<\/title>|<meta name="description"[^>]*>|aria-label="[^"]*"/g, '').replace(/>中</g, '><').match(new RegExp(CJK.source + '.{0,12}', 'g')) || [];
   const strayOwn = stray.filter(s => !/site-nav|首页|化学|物质/.test(s));
   ok('index.html holds no hand-written Chinese outside the generated chrome', strayOwn.length <= 6, strayOwn.slice(0, 6).join(' | '));
@@ -325,7 +325,8 @@ const SI = { h: 6.62607015e-34, e: 1.602176634e-19, me: 9.1093837015e-31, kB: 1.
   check('models in the page', (html.match(/<figure class="lab"/g) || []).length, 11);
   check('chapters', (html.match(/<section[^>]*id="ch\d+"/g) || []).length, 11);
   ok('each live sentence is an aria-live region', (html.match(/class="say"[^>]*aria-live="polite"/g) || []).length === 12);
-  ok('no provenance label yet (unregistered draft)', !/class="page-provenance"/.test(html));
+  // the page-provenance label is rendered from page-provenance.json since registration (2026-11-18)
+  check('one page-provenance label', (html.match(/<details class="page-provenance"/g) || []).length, 1);
   // English is native since the 2026-11-18 review: no stub declaration, the same keys as the Chinese copy, no Chinese left in any string
   ok('English is native (page.json declares no stub)', !(pageJson.languages && pageJson.languages.en === 'stub'));
   const E = load('en'), CJKRE = /[\u3000-\u303f\u3400-\u9fff\uff00-\uffef]/;

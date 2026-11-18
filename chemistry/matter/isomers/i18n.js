@@ -85,7 +85,9 @@ const STR={
     "site.crumb.aria": "页面位置",
     "site.crumb.home": "首页",
     "site.crumb.cat": "化学",
-    "site.crumb.sub": "物质构成"
+    "site.crumb.sub": "物质构成",
+    "site.bl.title": "被这些页面引用",
+    "site.bl.1": "<a href=\"../why-atoms-stick-together/\">原子为什么会粘在一起</a>：<a href=\"../why-atoms-stick-together/#ch8\">该文第 8 章</a>；<a href=\"../why-atoms-stick-together/#ch11\">该文第 11 章</a>"
   },
   en: {
     pageTitle: "Isomers · The Same Atoms, Put Together Differently",
@@ -172,7 +174,9 @@ const STR={
     "site.crumb.aria": "Breadcrumb",
     "site.crumb.home": "Home",
     "site.crumb.cat": "Chemistry",
-    "site.crumb.sub": "Structure of Matter"
+    "site.crumb.sub": "Structure of Matter",
+    "site.bl.title": "Linked from",
+    "site.bl.1": "<a href=\"../why-atoms-stick-together/\">Why Atoms Stick Together</a>: <a href=\"../why-atoms-stick-together/#ch8\">its chapter 8</a>; <a href=\"../why-atoms-stick-together/#ch11\">its chapter 11</a>"
   }
 };
 

@@ -13,11 +13,33 @@
    ]
   },
   {
+   "from": "why-fusion-is-hard",
+   "links": [
+    {
+     "from": "ch2",
+     "to": "step3"
+    },
+    {
+     "from": "ch11",
+     "to": null
+    }
+   ]
+  },
+  {
    "from": "carnot-cycle",
    "links": [
     {
      "from": "step5",
      "to": "step1"
+    }
+   ]
+  },
+  {
+   "from": "why-chips-are-hard",
+   "links": [
+    {
+     "from": "ch1",
+     "to": null
     }
    ]
   }

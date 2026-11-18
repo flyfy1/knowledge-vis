@@ -22,6 +22,19 @@
    ]
   },
   {
+   "from": "how-a-chatbot-writes",
+   "links": [
+    {
+     "from": "ch5",
+     "to": "step0"
+    },
+    {
+     "from": "ch9",
+     "to": "step0"
+    }
+   ]
+  },
+  {
    "from": "how-hybrid-attention-remembers",
    "links": [
     {
@@ -36,6 +49,15 @@
     {
      "from": "step5",
      "to": "step1"
+    }
+   ]
+  },
+  {
+   "from": "what-a-frontier-model-takes",
+   "links": [
+    {
+     "from": "ch13",
+     "to": "step0"
     }
    ]
   }

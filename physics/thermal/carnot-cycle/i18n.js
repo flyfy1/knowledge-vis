@@ -94,7 +94,9 @@ const STR = {
     "site.crumb.aria": "页面位置",
     "site.crumb.home": "首页",
     "site.crumb.cat": "物理与电路",
-    "site.crumb.sub": "热学"
+    "site.crumb.sub": "热学",
+    "site.bl.title": "被这些页面引用",
+    "site.bl.1": "<a href=\"../../modern/why-fusion-is-hard/\">核聚变为什么总是“还要三十年”</a>：<a href=\"../../modern/why-fusion-is-hard/#ch8\">该文第 8 章</a>；<a href=\"../../modern/why-fusion-is-hard/#ch11\">该文第 11 章</a>"
   },
   en: {
     back: "← Knowledge Index",
@@ -189,7 +191,9 @@ const STR = {
     "site.crumb.aria": "Breadcrumb",
     "site.crumb.home": "Home",
     "site.crumb.cat": "Physics & Circuits",
-    "site.crumb.sub": "Heat"
+    "site.crumb.sub": "Heat",
+    "site.bl.title": "Linked from",
+    "site.bl.1": "<a href=\"../../modern/why-fusion-is-hard/\">Why Fusion Is Always “Thirty Years Away”</a>: <a href=\"../../modern/why-fusion-is-hard/#ch8\">its chapter 8</a>; <a href=\"../../modern/why-fusion-is-hard/#ch11\">its chapter 11</a>"
   }
 };
 let currentLang = 'en';

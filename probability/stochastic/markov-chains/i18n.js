@@ -97,7 +97,9 @@ const STR = {
     "site.crumb.aria": "页面位置",
     "site.crumb.home": "首页",
     "site.crumb.cat": "概率与统计",
-    "site.crumb.sub": "随机过程与信息"
+    "site.crumb.sub": "随机过程与信息",
+    "site.bl.title": "被这些页面引用",
+    "site.bl.1": "<a href=\"../../../computing/ml/how-a-chatbot-writes/\">聊天 AI 是怎么“写”出一句话的</a>：<a href=\"../../../computing/ml/how-a-chatbot-writes/#ch9\">该文第 9 章</a> → <a href=\"#step0\">本页第 0 步</a>"
   },
   en: {
     back: "← Knowledge Index",
@@ -195,7 +197,9 @@ const STR = {
     "site.crumb.aria": "Breadcrumb",
     "site.crumb.home": "Home",
     "site.crumb.cat": "Probability & Statistics",
-    "site.crumb.sub": "Stochastic Processes & Information"
+    "site.crumb.sub": "Stochastic Processes & Information",
+    "site.bl.title": "Linked from",
+    "site.bl.1": "<a href=\"../../../computing/ml/how-a-chatbot-writes/\">How a Chatbot Writes a Sentence</a>: <a href=\"../../../computing/ml/how-a-chatbot-writes/#ch9\">its chapter 9</a> → <a href=\"#step0\">this page step 0</a>"
   }
 };
 let currentLang = 'en';

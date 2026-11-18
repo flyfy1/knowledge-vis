@@ -57,7 +57,9 @@ const STR={
     "site.crumb.sub": "热学",
     "site.bl.title": "被这些页面引用",
     "site.bl.1": "<a href=\"../../modern/blackbody-radiation/\">黑体辐射 · 热的物体为什么发光</a>：<a href=\"../../modern/blackbody-radiation/#step5\">该课第 5 步</a> → <a href=\"#step1\">本页第 1 步</a>",
-    "site.bl.2": "<a href=\"../carnot-cycle/\">卡诺循环 · 热机的效率上限</a>：<a href=\"../carnot-cycle/#step5\">该课第 5 步</a> → <a href=\"#step1\">本页第 1 步</a>"
+    "site.bl.2": "<a href=\"../../modern/why-fusion-is-hard/\">核聚变为什么总是“还要三十年”</a>：<a href=\"../../modern/why-fusion-is-hard/#ch2\">该文第 2 章</a> → <a href=\"#step3\">本页第 3 步</a>；<a href=\"../../modern/why-fusion-is-hard/#ch11\">该文第 11 章</a>",
+    "site.bl.3": "<a href=\"../carnot-cycle/\">卡诺循环 · 热机的效率上限</a>：<a href=\"../carnot-cycle/#step5\">该课第 5 步</a> → <a href=\"#step1\">本页第 1 步</a>",
+    "site.bl.4": "<a href=\"../../../tech/semiconductors/why-chips-are-hard/\">芯片为什么越来越难做</a>：<a href=\"../../../tech/semiconductors/why-chips-are-hard/#ch1\">该文第 1 章</a>"
   },
   en: {
     pageTitle: "The Microscopic Picture of Gas Pressure · A Ledger of Wall Hits",
@@ -116,7 +118,9 @@ const STR={
     "site.crumb.sub": "Heat",
     "site.bl.title": "Linked from",
     "site.bl.1": "<a href=\"../../modern/blackbody-radiation/\">Blackbody Radiation · Why Hot Things Glow</a>: <a href=\"../../modern/blackbody-radiation/#step5\">its step 5</a> → <a href=\"#step1\">this page step 1</a>",
-    "site.bl.2": "<a href=\"../carnot-cycle/\">The Carnot Cycle · The Ceiling on Heat-Engine Efficiency</a>: <a href=\"../carnot-cycle/#step5\">its step 5</a> → <a href=\"#step1\">this page step 1</a>"
+    "site.bl.2": "<a href=\"../../modern/why-fusion-is-hard/\">Why Fusion Is Always “Thirty Years Away”</a>: <a href=\"../../modern/why-fusion-is-hard/#ch2\">its chapter 2</a> → <a href=\"#step3\">this page step 3</a>; <a href=\"../../modern/why-fusion-is-hard/#ch11\">its chapter 11</a>",
+    "site.bl.3": "<a href=\"../carnot-cycle/\">The Carnot Cycle · The Ceiling on Heat-Engine Efficiency</a>: <a href=\"../carnot-cycle/#step5\">its step 5</a> → <a href=\"#step1\">this page step 1</a>",
+    "site.bl.4": "<a href=\"../../../tech/semiconductors/why-chips-are-hard/\">Why Chips Are Getting Harder to Make</a>: <a href=\"../../../tech/semiconductors/why-chips-are-hard/#ch1\">its chapter 1</a>"
   }
 };
 

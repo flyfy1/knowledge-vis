@@ -77,9 +77,10 @@ const STR = {
     "site.crumb.cat": "物理与电路",
     "site.crumb.sub": "热学",
     "site.bl.title": "被这些页面引用",
-    "site.bl.1": "<a href=\"../../electromagnetism/electric-fields/\">电场 · 看不见的力画成图</a>：<a href=\"../../electromagnetism/electric-fields/#step5\">该课第 5 步</a> → <a href=\"#step1\">本页第 1 步</a>",
-    "site.bl.2": "<a href=\"../carnot-cycle/\">卡诺循环 · 热机的效率上限</a>：<a href=\"../carnot-cycle/#step5\">该课第 5 步</a> → <a href=\"#step3\">本页第 3 步</a>",
-    "site.bl.3": "<a href=\"../kinetic-theory/\">气体压强的微观图景 · 撞墙的账本</a>：<a href=\"../kinetic-theory/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>"
+    "site.bl.1": "<a href=\"../../../chemistry/reactions/why-batteries-hold-so-little/\">电池为什么就是装不下更多电</a>：<a href=\"../../../chemistry/reactions/why-batteries-hold-so-little/#ch10\">该文第 10 章</a>",
+    "site.bl.2": "<a href=\"../../electromagnetism/electric-fields/\">电场 · 看不见的力画成图</a>：<a href=\"../../electromagnetism/electric-fields/#step5\">该课第 5 步</a> → <a href=\"#step1\">本页第 1 步</a>",
+    "site.bl.3": "<a href=\"../carnot-cycle/\">卡诺循环 · 热机的效率上限</a>：<a href=\"../carnot-cycle/#step5\">该课第 5 步</a> → <a href=\"#step3\">本页第 3 步</a>",
+    "site.bl.4": "<a href=\"../kinetic-theory/\">气体压强的微观图景 · 撞墙的账本</a>：<a href=\"../kinetic-theory/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>"
   },
   en: {
     back: "← Knowledge index",
@@ -157,9 +158,10 @@ const STR = {
     "site.crumb.cat": "Physics & Circuits",
     "site.crumb.sub": "Heat",
     "site.bl.title": "Linked from",
-    "site.bl.1": "<a href=\"../../electromagnetism/electric-fields/\">Electric Fields · Drawing an Invisible Force</a>: <a href=\"../../electromagnetism/electric-fields/#step5\">its step 5</a> → <a href=\"#step1\">this page step 1</a>",
-    "site.bl.2": "<a href=\"../carnot-cycle/\">The Carnot Cycle · The Ceiling on Heat-Engine Efficiency</a>: <a href=\"../carnot-cycle/#step5\">its step 5</a> → <a href=\"#step3\">this page step 3</a>",
-    "site.bl.3": "<a href=\"../kinetic-theory/\">The Microscopic Picture of Gas Pressure · A Ledger of Wall Hits</a>: <a href=\"../kinetic-theory/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>"
+    "site.bl.1": "<a href=\"../../../chemistry/reactions/why-batteries-hold-so-little/\">Why Batteries Just Can't Hold More Charge</a>: <a href=\"../../../chemistry/reactions/why-batteries-hold-so-little/#ch10\">its chapter 10</a>",
+    "site.bl.2": "<a href=\"../../electromagnetism/electric-fields/\">Electric Fields · Drawing an Invisible Force</a>: <a href=\"../../electromagnetism/electric-fields/#step5\">its step 5</a> → <a href=\"#step1\">this page step 1</a>",
+    "site.bl.3": "<a href=\"../carnot-cycle/\">The Carnot Cycle · The Ceiling on Heat-Engine Efficiency</a>: <a href=\"../carnot-cycle/#step5\">its step 5</a> → <a href=\"#step3\">this page step 3</a>",
+    "site.bl.4": "<a href=\"../kinetic-theory/\">The Microscopic Picture of Gas Pressure · A Ledger of Wall Hits</a>: <a href=\"../kinetic-theory/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>"
   }
 };
 function getLang() { try { const x = localStorage.getItem('knowledge-lang'); if (x && STR[x]) return x; } catch (_) {} return navigator.language.toLowerCase().startsWith('zh') ? 'zh' : 'en'; }

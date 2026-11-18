@@ -1,0 +1,35 @@
+{
+  "slug": "how-a-chatbot-writes",
+  "kind": "essay",
+  "title": {
+    "zh": "聊天 AI 是怎么“写”出一句话的",
+    "en": "How a Chatbot Writes a Sentence"
+  },
+  "desc": {
+    "zh": "一次只写一个 token：切字、数次数、把词变成数、注意力、温度采样和训练。八个在页面里真正运行的小模型，从零训练，不联网。",
+    "en": "One token at a time: cutting text, counting pairs, turning words into numbers, attention, temperature sampling, and training. Eight small models run for real on this page, trained from scratch in your browser with no network access."
+  },
+  "tags": [
+    {
+      "zh": "大语言模型",
+      "en": "Large Language Models"
+    },
+    {
+      "zh": "自然语言处理",
+      "en": "Natural Language Processing"
+    },
+    {
+      "zh": "生成式 AI",
+      "en": "Generative AI"
+    },
+    {
+      "zh": "长文",
+      "en": "Long-form Essay"
+    }
+  ],
+  "category": "computing",
+  "subtopic": "ml",
+  "stage": "senior",
+  "status": "live",
+  "path": "computing/ml/how-a-chatbot-writes/"
+}

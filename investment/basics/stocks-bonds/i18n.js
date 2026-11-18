@@ -115,7 +115,8 @@ const STR = {
     "site.crumb.sub": "入门",
     "site.bl.title": "被这些页面引用",
     "site.bl.1": "<a href=\"../../../economics/money/where-money-comes-from/\">钱是从哪里来的</a>",
-    "site.bl.2": "<a href=\"../../atlas/\">投资知识地图</a>：→ <a href=\"#step5\">本页第 5 步</a>"
+    "site.bl.2": "<a href=\"../../../economics/money/why-one-rate-moves-everything/\">央行调一个利率，为什么所有东西的价格都跟着动</a>：<a href=\"../../../economics/money/why-one-rate-moves-everything/#ch13\">该文第 13 章</a>",
+    "site.bl.3": "<a href=\"../../atlas/\">投资知识地图</a>：→ <a href=\"#step5\">本页第 5 步</a>"
   },
   en: {
     back: "← Knowledge Index",
@@ -231,7 +232,8 @@ const STR = {
     "site.crumb.sub": "Basics",
     "site.bl.title": "Linked from",
     "site.bl.1": "<a href=\"../../../economics/money/where-money-comes-from/\">Where Money Comes From</a>",
-    "site.bl.2": "<a href=\"../../atlas/\">Investment Atlas</a>: → <a href=\"#step5\">this page step 5</a>"
+    "site.bl.2": "<a href=\"../../../economics/money/why-one-rate-moves-everything/\">Why One Central-Bank Rate Moves the Price of Everything</a>: <a href=\"../../../economics/money/why-one-rate-moves-everything/#ch13\">its chapter 13</a>",
+    "site.bl.3": "<a href=\"../../atlas/\">Investment Atlas</a>: → <a href=\"#step5\">this page step 5</a>"
   }
 };
 

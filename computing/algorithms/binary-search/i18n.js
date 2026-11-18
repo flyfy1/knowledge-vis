@@ -77,8 +77,9 @@ const STR={
     "site.bl.title": "被这些页面引用",
     "site.bl.1": "<a href=\"../recursion-divide/\">递归与分治 · 把大问题劈成小问题</a>：<a href=\"../recursion-divide/#step5\">该课第 5 步</a> → <a href=\"#step1\">本页第 1 步</a>",
     "site.bl.2": "<a href=\"../../ml/decision-trees/\">决策树与信息增益</a>：<a href=\"../../ml/decision-trees/#step5\">该课第 5 步</a> → <a href=\"#step1\">本页第 1 步</a>",
-    "site.bl.3": "<a href=\"../../systems/switches-that-compute/\">一堆开关是怎么学会算数的</a>：<a href=\"../../systems/switches-that-compute/#ch3\">该文第 3 章</a>",
-    "site.bl.4": "<a href=\"../../../math/calculus/newton-method/\">牛顿法求根 · 沿切线一刀跳向零点</a>：<a href=\"../../../math/calculus/newton-method/#step5\">该课第 5 步</a> → <a href=\"#step1\">本页第 1 步</a>"
+    "site.bl.3": "<a href=\"../../quantum/what-quantum-computers-do/\">量子计算机到底能做什么</a>：<a href=\"../../quantum/what-quantum-computers-do/#ch6\">该文第 6 章</a>",
+    "site.bl.4": "<a href=\"../../systems/switches-that-compute/\">一堆开关是怎么学会算数的</a>：<a href=\"../../systems/switches-that-compute/#ch3\">该文第 3 章</a>",
+    "site.bl.5": "<a href=\"../../../math/calculus/newton-method/\">牛顿法求根 · 沿切线一刀跳向零点</a>：<a href=\"../../../math/calculus/newton-method/#step5\">该课第 5 步</a> → <a href=\"#step1\">本页第 1 步</a>"
   },
   en: {
     docTitle: "Binary Search · Halve the Candidates",
@@ -156,8 +157,9 @@ const STR={
     "site.bl.title": "Linked from",
     "site.bl.1": "<a href=\"../recursion-divide/\">Recursion and Divide-and-Conquer · Splitting a Big Problem Into Small Ones</a>: <a href=\"../recursion-divide/#step5\">its step 5</a> → <a href=\"#step1\">this page step 1</a>",
     "site.bl.2": "<a href=\"../../ml/decision-trees/\">Decision Trees and Information Gain</a>: <a href=\"../../ml/decision-trees/#step5\">its step 5</a> → <a href=\"#step1\">this page step 1</a>",
-    "site.bl.3": "<a href=\"../../systems/switches-that-compute/\">How a Pile of Switches Learned to Do Arithmetic</a>: <a href=\"../../systems/switches-that-compute/#ch3\">its chapter 3</a>",
-    "site.bl.4": "<a href=\"../../../math/calculus/newton-method/\">Newton’s Method · Leap to the Root Along a Tangent</a>: <a href=\"../../../math/calculus/newton-method/#step5\">its step 5</a> → <a href=\"#step1\">this page step 1</a>"
+    "site.bl.3": "<a href=\"../../quantum/what-quantum-computers-do/\">What Quantum Computers Can Actually Do</a>: <a href=\"../../quantum/what-quantum-computers-do/#ch6\">its chapter 6</a>",
+    "site.bl.4": "<a href=\"../../systems/switches-that-compute/\">How a Pile of Switches Learned to Do Arithmetic</a>: <a href=\"../../systems/switches-that-compute/#ch3\">its chapter 3</a>",
+    "site.bl.5": "<a href=\"../../../math/calculus/newton-method/\">Newton’s Method · Leap to the Root Along a Tangent</a>: <a href=\"../../../math/calculus/newton-method/#step5\">its step 5</a> → <a href=\"#step1\">this page step 1</a>"
   }
 };
 let LANG='zh';

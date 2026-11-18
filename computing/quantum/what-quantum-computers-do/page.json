@@ -1,0 +1,35 @@
+{
+  "slug": "what-quantum-computers-do",
+  "kind": "essay",
+  "title": {
+    "zh": "量子计算机到底能做什么",
+    "en": "What Quantum Computers Can Actually Do"
+  },
+  "desc": {
+    "zh": "量子计算机到底能做什么普通计算机做不了的事？页面里有一台真的量子态模拟器：从一个量子比特、干涉、纠缠，到格罗弗搜索、肖尔分解、噪声和纠错，最后是标了日期和出处的 2026 年前沿。",
+    "en": "What can a quantum computer do that an ordinary computer cannot? The page includes a real quantum-state simulator: from one qubit, interference and entanglement, through Grover's search, Shor's factoring, noise and error correction, to the 2026 frontier with every date and source marked."
+  },
+  "tags": [
+    {
+      "zh": "量子计算",
+      "en": "Quantum Computing"
+    },
+    {
+      "zh": "量子算法",
+      "en": "Quantum Algorithms"
+    },
+    {
+      "zh": "量子纠错",
+      "en": "Quantum Error Correction"
+    },
+    {
+      "zh": "长文",
+      "en": "Long-form Essay"
+    }
+  ],
+  "category": "computing",
+  "subtopic": "quantum",
+  "stage": "university",
+  "status": "live",
+  "path": "computing/quantum/what-quantum-computers-do/"
+}

@@ -436,5 +436,6 @@ window.ESSAY_COPY.en = {
   "site.rel.title": "Related pages",
   "site.rel.1": "<a href=\"../why-compute-waits-for-memory/\">Why Compute Waits for Memory</a>",
   "site.rel.2": "<a href=\"../why-nvme-is-fast/\">Why NVMe Is So Fast</a>",
-  "site.rel.3": "<a href=\"../how-usb-drives-talk/\">Why a USB Drive Never Hits Its Label</a>"
+  "site.rel.3": "<a href=\"../how-usb-drives-talk/\">Why a USB Drive Never Hits Its Label</a>",
+  "site.rel.4": "<a href=\"../../../tech/semiconductors/why-chips-are-hard/\">Why Chips Are Getting Harder to Make</a>"
 };
