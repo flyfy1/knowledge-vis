@@ -1,0 +1,93 @@
+{
+  "slug": "why-we-get-sleepy",
+  "path": "biology/body/why-we-get-sleepy/",
+  "category": "biology",
+  "subtopic": "body",
+  "subtopicName": { "zh": "身体与药", "en": "Body & Medicine" },
+  "stage": "senior",
+  "title": { "zh": "人为什么到点就困", "en": "Why You Get Sleepy When You Do" },
+  "desc": {
+    "zh": "困意来自醒着越久越高的睡眠压力，和一只每天被光拨准的体内钟。九个可以拖动的模型：熬夜和通宵、暗室里的钟、光的相位响应曲线、时型、时差、周末和夜班、咖啡因。",
+    "en": "Sleepiness comes from a sleep pressure that builds while you are awake and a body clock that light resets every day. Nine models you can drag: late nights and all-nighters, the clock in a dark room, the light phase-response curve, chronotype, jet lag, weekends and night shifts, caffeine."
+  },
+  "tags": [
+    { "zh": "睡眠", "en": "Sleep" },
+    { "zh": "昼夜节律", "en": "Circadian Rhythm" },
+    { "zh": "两过程模型", "en": "Two-Process Model" },
+    { "zh": "长文", "en": "Long-form Essay" }
+  ],
+  "concepts": [
+    {
+      "id": "sleep-pressure-process-s",
+      "title": { "zh": "睡眠压力（过程 S）", "en": "Sleep pressure (Process S)" },
+      "desc": { "zh": "醒着时睡眠压力按指数朝上限爬升，睡着时按指数回落；长期少睡时它停在一个更高的位置。", "en": "Sleep pressure climbs exponentially toward a ceiling while awake and decays while asleep; with chronic short sleep it settles at a higher level." },
+      "aliases": { "zh": ["睡眠压力", "睡眠债", "过程S", "为什么醒久了会困", "睡眠不足会累积吗", "腺苷"], "en": ["sleep pressure", "sleep debt", "process S", "homeostatic sleep drive", "why do I get tired the longer I'm awake", "adenosine"] },
+      "anchor": "#ch1",
+      "relatedPages": ["body-in-balance", "exponents-logarithms"]
+    },
+    {
+      "id": "two-process-model",
+      "title": { "zh": "睡眠的两过程模型", "en": "The two-process model of sleep" },
+      "desc": { "zh": "睡眠压力碰到随昼夜节律起伏的入睡线就睡着，降到醒来线就醒；节律把睡眠锁在 24 小时。", "en": "Sleep starts when pressure hits an upper threshold that rises and falls with the circadian rhythm and ends at a lower one; the rhythm locks sleep to 24 hours." },
+      "aliases": { "zh": ["两过程模型", "Borbély模型", "人为什么到点就困", "为什么每天同一时间犯困", "昼夜节律和睡眠"], "en": ["two-process model", "Borbely model", "why do I get sleepy at the same time every day", "process C", "sleep timing"] },
+      "anchor": "#ch2",
+      "relatedPages": []
+    },
+    {
+      "id": "all-nighter-recovery-sleep",
+      "title": { "zh": "熬夜、小睡和补觉", "en": "Late nights, naps and recovery sleep" },
+      "desc": { "zh": "晚睡的人不一定多睡；通宵后的补觉只比平常多一点；熬夜最难受的时刻在清晨。", "en": "Going to bed late does not mean sleeping longer; recovery sleep after an all-nighter is only a little longer; the worst moment of a late night is the early morning." },
+      "aliases": { "zh": ["熬夜", "通宵", "补觉", "午睡", "为什么熬夜后睡不长", "通宵后要睡多久", "为什么熬到天亮反而不困"], "en": ["all-nighter", "staying up late", "recovery sleep", "nap", "catch up on sleep", "why can't I sleep in after a late night", "second wind"] },
+      "anchor": "#ch3",
+      "relatedPages": []
+    },
+    {
+      "id": "circadian-period-free-run",
+      "title": { "zh": "体内钟的周期与自由运行", "en": "Body-clock period and free running" },
+      "desc": { "zh": "人的体内钟平均约 24.2 小时；在暗室里没有光去拨它，它每天晚一点。", "en": "The human clock averages about 24.2 hours; in the dark it runs a little later every day." },
+      "aliases": { "zh": ["生物钟", "昼夜节律", "体内钟", "生物钟周期是多少", "自由运行节律", "视交叉上核", "体温最低点"], "en": ["circadian rhythm", "body clock", "biological clock", "free-running period", "circadian period", "suprachiasmatic nucleus", "core body temperature minimum"] },
+      "anchor": "#ch4",
+      "relatedPages": ["day-night-rotation", "ode-phase-portraits"]
+    },
+    {
+      "id": "light-phase-response-curve",
+      "title": { "zh": "光的相位响应曲线", "en": "The light phase-response curve" },
+      "desc": { "zh": "体温最低点之前的光把钟推后，之后的光把钟提前，模型曲线与人体测量对照。", "en": "Light before the temperature minimum delays the clock and light after it advances it; the model curve is compared with human measurements." },
+      "aliases": { "zh": ["相位响应曲线", "PRC", "晚上的光会推迟生物钟吗", "早上晒太阳调生物钟", "光照怎么调生物钟", "蓝光影响睡眠吗"], "en": ["phase response curve", "PRC", "does evening light delay the body clock", "morning light advance", "how light resets the circadian clock"] },
+      "anchor": "#ch5",
+      "relatedPages": []
+    },
+    {
+      "id": "chronotype-entrainment",
+      "title": { "zh": "同步与时型：早鸟和夜猫子", "en": "Entrainment and chronotype" },
+      "desc": { "zh": "钟停在哪里取决于它的周期和白天、晚上的光：周期长、晚上亮、白天暗，人就成了夜猫子。", "en": "Where the clock settles depends on its period and on daytime and evening light: a longer period, bright evenings and dim days make a night owl." },
+      "aliases": { "zh": ["时型", "早鸟", "夜猫子", "为什么有人天生晚睡", "生物钟同步", "怎么变成早睡的人"], "en": ["chronotype", "night owl", "early bird", "morning person", "entrainment", "why am I a night owl"] },
+      "anchor": "#ch6",
+      "relatedPages": ["seasons-orbit"]
+    },
+    {
+      "id": "jet-lag-reentrainment",
+      "title": { "zh": "时差与重新同步", "en": "Jet lag and re-entrainment" },
+      "desc": { "zh": "飞越时区后体内钟每天只追上一截；实测向西每天约 92 分钟、向东约 57 分钟，模型中东西快慢取决于周期。", "en": "After crossing time zones the clock catches up a little each day; measured about 92 min/day westward and 57 min/day eastward, while in the model which way is faster depends on the period." },
+      "aliases": { "zh": ["时差", "倒时差", "时差要倒几天", "为什么往东飞时差更难倒", "飞美国时差", "飞欧洲时差"], "en": ["jet lag", "how long does jet lag last", "why is flying east worse", "time zone change", "re-entrainment"] },
+      "anchor": "#ch7",
+      "relatedPages": []
+    },
+    {
+      "id": "social-jetlag-shift-work",
+      "title": { "zh": "社会时差与夜班", "en": "Social jet lag and night shifts" },
+      "desc": { "zh": "闹钟截短工作日的觉，周末补回来；夜班工人的钟翻不翻过来，取决于上班和下班路上的光。", "en": "Alarms cut workday sleep short and weekends make it up; whether a night worker's clock flips depends on light at work and on the way home." },
+      "aliases": { "zh": ["社会时差", "周一综合症", "周末补觉", "倒班", "夜班", "上夜班生物钟", "为什么周一早上特别难起"], "en": ["social jetlag", "shift work", "night shift", "weekend lie-in", "why are Monday mornings hard", "shift work sleep"] },
+      "anchor": "#ch8",
+      "relatedPages": []
+    },
+    {
+      "id": "caffeine-half-life",
+      "title": { "zh": "咖啡因的半衰期", "en": "Caffeine half-life" },
+      "desc": { "zh": "咖啡因挡住腺苷信号而不清掉睡眠压力；下午一杯到睡前还剩多少，取决于因人而异的半衰期。", "en": "Caffeine blocks the adenosine signal rather than clearing sleep pressure; how much of an afternoon cup is left at bedtime depends on a half-life that varies widely." },
+      "aliases": { "zh": ["咖啡因", "咖啡因半衰期", "下午喝咖啡影响睡眠吗", "几点以后不能喝咖啡", "咖啡为什么提神", "喝咖啡睡不着"], "en": ["caffeine", "caffeine half-life", "coffee and sleep", "when to stop drinking coffee", "why does coffee keep me awake"] },
+      "anchor": "#ch9",
+      "relatedPages": ["body-in-balance"]
+    }
+  ]
+}
