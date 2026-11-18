@@ -118,7 +118,7 @@ const show = async (page, sel, ms = 0) => { await page.$eval(sel, e => e.scrollI
       const cjk = await page.evaluate(() => {
         const han = /[\u3000-\u303f\u3400-\u9fff\uff00-\uffef]/, out = [];
         const w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
-        for (let n; (n = w.nextNode());) { const p = n.parentElement; if (!p || p.closest('script,style') || p.closest('#langToggle')) continue; if (han.test(n.textContent)) out.push('text "' + n.textContent.trim().slice(0, 24) + '"'); }
+        for (let n; (n = w.nextNode());) { const p = n.parentElement; if (!p || p.closest('script,style') || p.closest('#langToggle')) continue; const pz = p.closest('.page-provenance .provenance-zh'); if (pz && getComputedStyle(pz).display === 'none') continue; if (han.test(n.textContent)) out.push('text "' + n.textContent.trim().slice(0, 24) + '"'); }
         for (const e of document.querySelectorAll('[aria-label],[title],[alt],[placeholder]')) { if (e.closest('#langToggle')) continue; for (const a of ['aria-label', 'title', 'alt', 'placeholder']) if (han.test(e.getAttribute(a) || '')) out.push(a + ' "' + e.getAttribute(a).slice(0, 24) + '"'); }
         if (han.test(document.title)) out.push('document.title');
         const md = document.querySelector('meta[name=description]'); if (md && han.test(md.content)) out.push('meta description');

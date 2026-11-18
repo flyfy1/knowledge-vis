@@ -164,3 +164,27 @@ computing); its open items are in section 1.
 5. Small follow-ups on live pages: the why-compute-waits-for-memory English link titles (with an evidence note); the search words in
    section 1 that moved by title/description, if any should go back; `git rm` money's two scratch tools.
 6. Yangyu: the RSA-896 wording in a-secret-in-public.
+
+## 5. Deployed 2026-11-19, and what was not checked (team lead)
+
+Deployed from `61993267` to https://visual.integ.life (pushed to `origin/main`). All nine registered essays and
+the twelve unreviewed drafts in section 2 answer HTTP 200; the drafts are reachable by URL only (so section 2's
+"not live" means "not registered": they are on the server). Section 3's placeholder is superseded: the quantum
+essay is registered (section 1).
+
+The owner asked to stop here. **Not checked** — pick up from this list:
+
+- After registration (provenance label added to each page), the canvas sweep
+  (`tests/canvas-text-overlap.cjs --sweep`) was not rerun on any of the nine essays. Each passed before
+  registration, per its review record.
+- `tests/browser.cjs` of `a-secret-in-public` and `why-fusion-is-hard` FAILED after registration: the "no CJK in
+  English" check counted the Chinese half of the provenance label, which CSS hides in English mode (the registrar's
+  diagnosis: a test bug, pages fine). A one-line fix to both tests (skip `.page-provenance .provenance-zh` only
+  when its computed display is none) is committed but **has not been run**.
+- The other seven essays' browser.cjs, the three site-wide browser tests and every node check passed on
+  `61993267` (list in the registration report; summarised in HANDOFF).
+- Nobody has looked at the live pages in a browser after deployment; only HTTP status codes were checked.
+- Everything listed under each essay's "still open / unverified" above is still open.
+- The atlas up-front index limit was raised from 150,000 to 160,000 bytes as a stop-gap (index 153,348 bytes);
+  compacting the index is pending and should precede the next import.
+- The RSA-896 sentence in `a-secret-in-public` (wording in its review record) awaits the owner's confirmation.

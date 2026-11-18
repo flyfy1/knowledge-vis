@@ -101,7 +101,7 @@ const pick = (page, name, v) => page.click(`input[name=${name}][value="${v}"]`, 
       const cjk = await page.evaluate(() => {
         const re = /[\u3000-\u303f\u3400-\u9fff\uff00-\uffef]/, out = [];
         const w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
-        for (let n = w.nextNode(); n; n = w.nextNode()) { const el = n.parentElement; if (!el || el.closest('script,style,#langToggle')) continue; if (re.test(n.textContent)) out.push((el.id || el.dataset.i18n || el.dataset.i18nHtml || el.tagName) + ': ' + n.textContent.trim().slice(0, 30)); }
+        for (let n = w.nextNode(); n; n = w.nextNode()) { const el = n.parentElement; if (!el || el.closest('script,style,#langToggle')) continue; const pz = el.closest('.page-provenance .provenance-zh'); if (pz && getComputedStyle(pz).display === 'none') continue; if (re.test(n.textContent)) out.push((el.id || el.dataset.i18n || el.dataset.i18nHtml || el.tagName) + ': ' + n.textContent.trim().slice(0, 30)); }
         for (const el of document.querySelectorAll('[aria-label],[title],[alt],[placeholder]')) for (const a of ['aria-label', 'title', 'alt', 'placeholder']) { const v = el.getAttribute(a); if (v && re.test(v) && !el.closest('#langToggle')) out.push(a + ': ' + v.slice(0, 30)); }
         if (re.test(document.title)) out.push('title: ' + document.title);
         const md = document.querySelector('meta[name=description]'); if (md && re.test(md.content)) out.push('description');
