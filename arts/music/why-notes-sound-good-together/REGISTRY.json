@@ -1,0 +1,122 @@
+{
+  "slug": "why-notes-sound-good-together",
+  "path": "arts/music/why-notes-sound-good-together/",
+  "category": "arts",
+  "categoryName": { "zh": "艺术", "en": "Arts" },
+  "subtopic": "music",
+  "subtopicName": { "zh": "音乐", "en": "Music" },
+  "stage": "senior",
+  "title": { "zh": "为什么有些音放在一起好听", "en": "Why Some Notes Sound Good Together" },
+  "desc": {
+    "zh": "一个音其实是一叠泛音；两个音的泛音撞在一起会拍、会发糙。把粗糙加起来，简单的频率比自己冒出来；再把五度一个个叠上去，就明白钢琴为什么一个八度是十二个键。八个可以听、可以拖动的模型。",
+    "en": "A note is really a stack of harmonics, and when two notes' harmonics collide they beat and turn rough. Add up the roughness and the simple frequency ratios appear on their own; stack fifths one by one and you see why a piano has twelve keys to the octave. Eight models you can hear and drag."
+  },
+  "tags": [
+    { "zh": "泛音", "en": "Harmonics" },
+    { "zh": "协和与不协和", "en": "Consonance & Dissonance" },
+    { "zh": "律制", "en": "Tuning Systems" },
+    { "zh": "十二平均律", "en": "Equal Temperament" },
+    { "zh": "长文", "en": "Long-form Essay" }
+  ],
+  "concepts": [
+    {
+      "id": "harmonics-and-timbre",
+      "title": { "zh": "泛音与音色", "en": "Harmonics and timbre" },
+      "desc": { "zh": "一个乐音是基音加整数倍的泛音；音高跟着重复周期走，音色由各泛音的多少决定，去掉基音音高也不变。", "en": "A musical note is a fundamental plus whole-number harmonics; pitch follows the repetition period, timbre the harmonics' sizes, and removing the fundamental leaves the pitch." },
+      "aliases": {
+        "zh": ["泛音", "谐波", "音色", "基音", "缺失的基音", "为什么同一个音钢琴和小提琴听起来不一样", "音色是什么", "什么是泛音", "拨弦位置"],
+        "en": ["harmonics", "overtones", "timbre", "fundamental frequency", "missing fundamental", "why does the same note sound different on piano and violin", "what is timbre", "overtone series"]
+      },
+      "anchor": "#ch1",
+      "relatedPages": ["standing-wave", "fourier", "sound-waves"]
+    },
+    {
+      "id": "simple-ratios-shared-harmonics",
+      "title": { "zh": "简单整数比与重合的泛音", "en": "Simple ratios share harmonics" },
+      "desc": { "zh": "八度 2:1、五度 3:2：频率比越简单，两个音重合的泛音越多。", "en": "Octave 2:1, fifth 3:2: the simpler the frequency ratio, the more harmonics two notes share." },
+      "aliases": {
+        "zh": ["频率比", "八度为什么是两倍", "五度 3:2", "协和音程", "为什么八度听起来像同一个音", "音程和频率", "音分"],
+        "en": ["frequency ratio", "why is an octave double the frequency", "perfect fifth 3:2", "consonant intervals", "why do octaves sound the same", "intervals and frequency", "cents"]
+      },
+      "anchor": "#ch2",
+      "relatedPages": ["music-theory"]
+    },
+    {
+      "id": "beats-and-roughness",
+      "title": { "zh": "拍与粗糙度", "en": "Beats and roughness" },
+      "desc": { "zh": "两个靠近的频率以差频起伏；差再大变成粗糙感，Plomp–Levelt 曲线，峰值位置随音区变。", "en": "Two close frequencies swell at their difference; further apart they turn rough. The Plomp–Levelt curve, whose peak moves with register." },
+      "aliases": {
+        "zh": ["拍", "拍频", "差拍", "调音时的哇哇声", "粗糙度", "临界带", "为什么两个音差一点会抖", "为什么低音和弦发浑", "不协和"],
+        "en": ["beats", "beat frequency", "beating when tuning", "roughness", "critical band", "Plomp Levelt", "why do two close notes wobble", "why are low chords muddy", "dissonance"]
+      },
+      "anchor": "#ch3",
+      "relatedPages": ["interference", "fourier"]
+    },
+    {
+      "id": "dissonance-curve",
+      "title": { "zh": "不协和曲线", "en": "The dissonance curve" },
+      "desc": { "zh": "把两个乐音所有泛音对的粗糙度加起来，低谷自己落在 6/5、5/4、4/3、3/2、5/3、2/1 上。", "en": "Sum the roughness of every pair of partials of two notes and the dips fall on 6/5, 5/4, 4/3, 3/2, 5/3 and 2/1 by themselves." },
+      "aliases": {
+        "zh": ["不协和曲线", "协和度", "为什么有些音放在一起好听", "为什么有些和弦好听", "和声为什么好听", "Sethares", "协和与不协和"],
+        "en": ["dissonance curve", "consonance", "why do some notes sound good together", "why do some chords sound good", "why does harmony sound good", "Sethares", "consonance and dissonance"]
+      },
+      "anchor": "#ch4",
+      "relatedPages": []
+    },
+    {
+      "id": "timbre-moves-consonance",
+      "title": { "zh": "音色决定哪些音程平滑", "en": "Timbre decides which intervals are smooth" },
+      "desc": { "zh": "换成拉伸的或金属棒的泛音，不协和曲线的低谷就搬家：协和依赖频谱。", "en": "Switch to stretched or metal-bar partials and the dips move: consonance depends on the spectrum." },
+      "aliases": {
+        "zh": ["非谐泛音", "钟的音色", "拉伸的泛音", "甘美兰", "为什么钟声和弦听着怪", "音色和音阶的关系"],
+        "en": ["inharmonic partials", "bell timbre", "stretched spectrum", "gamelan", "why do bells sound odd in chords", "timbre and scale"]
+      },
+      "anchor": "#ch5",
+      "relatedPages": ["resonance"]
+    },
+    {
+      "id": "pythagorean-tuning-comma",
+      "title": { "zh": "五度相生律与毕达哥拉斯音差", "en": "Pythagorean tuning and the comma" },
+      "desc": { "zh": "一个个叠纯五度得到五声、七声、十二声音阶；十二个五度比七个八度多 23.46 音分。", "en": "Stacking pure fifths gives five-, seven- and twelve-note scales; twelve fifths overshoot seven octaves by 23.46 cents." },
+      "aliases": {
+        "zh": ["五度相生律", "三分损益法", "毕达哥拉斯音律", "毕达哥拉斯音差", "五声音阶怎么来的", "七声音阶怎么来的", "五度圈", "三间距定理"],
+        "en": ["Pythagorean tuning", "Pythagorean comma", "circle of fifths", "where does the pentatonic scale come from", "where does the major scale come from", "stacking fifths", "three gap theorem"]
+      },
+      "anchor": "#ch6",
+      "relatedPages": []
+    },
+    {
+      "id": "why-twelve-notes",
+      "title": { "zh": "为什么一个八度是十二个音", "en": "Why twelve notes to the octave" },
+      "desc": { "zh": "log₂(3/2) 的连分数近似 7/12：在键数不多的切法里，12 等分的五度最准；5、7、12、29、41、53 依次刷新纪录。", "en": "The continued-fraction approximation 7/12 of log₂(3/2): among small divisions, 12 gets the fifth nearly right; 5, 7, 12, 29, 41, 53 set the records." },
+      "aliases": {
+        "zh": ["为什么钢琴一个八度十二个键", "为什么是十二个半音", "为什么八度分十二份", "连分数", "53 平均律", "19 平均律", "等分律"],
+        "en": ["why does a piano have twelve keys per octave", "why twelve semitones", "why 12 notes in an octave", "continued fraction", "53 equal temperament", "19 equal temperament", "equal division of the octave"]
+      },
+      "anchor": "#ch7",
+      "relatedPages": ["exponents-logarithms"]
+    },
+    {
+      "id": "equal-temperament",
+      "title": { "zh": "十二平均律与纯律", "en": "Equal temperament and just intonation" },
+      "desc": { "zh": "平均律让每个调都一样，代价是大三度偏高 13.69 音分，在中音区每秒拍约 10 次；纯律一换调就出狼五度。", "en": "Equal temperament makes every key alike at the cost of thirds 13.69 cents wide, beating about ten times a second in the middle register; just intonation hits wolf fifths when you change key." },
+      "aliases": {
+        "zh": ["十二平均律", "平均律", "纯律", "狼五度", "朱载堉", "为什么钢琴不是完全准的", "调音为什么有误差", "转调"],
+        "en": ["equal temperament", "12-TET", "just intonation", "wolf fifth", "Zhu Zaiyu", "why is a piano slightly out of tune", "tuning compromise", "changing key"]
+      },
+      "anchor": "#ch8",
+      "relatedPages": ["music-theory"]
+    },
+    {
+      "id": "consonance-culture",
+      "title": { "zh": "协和偏好与文化", "en": "Consonance preference and culture" },
+      "desc": { "zh": "粗糙和融合在不同文化里相近，喜不喜欢协和却不普遍（Tsimane' 研究）；世界上还有许多别的律制。", "en": "Roughness and fusion look similar across cultures, but liking consonance is not universal (the Tsimane' studies); many other tuning systems exist." },
+      "aliases": {
+        "zh": ["协和是天生的吗", "音乐审美是学来的吗", "Tsimane", "非西方音乐", "木卡姆", "斯连德罗", "为什么别的国家的音乐听起来不一样"],
+        "en": ["is consonance innate", "is musical taste learned", "Tsimane", "non-western music", "maqam", "slendro", "why does music from other cultures sound different"]
+      },
+      "anchor": "#ch9",
+      "relatedPages": []
+    }
+  ]
+}
