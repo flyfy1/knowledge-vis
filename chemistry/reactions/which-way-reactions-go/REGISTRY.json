@@ -1,0 +1,426 @@
+{
+  "slug": "which-way-reactions-go",
+  "path": "chemistry/reactions/which-way-reactions-go/",
+  "category": "chemistry",
+  "subtopic": "reactions",
+  "stage": "university",
+  "title": {
+    "zh": "一个反应往哪边走，能走多远",
+    "en": "Which Way a Reaction Goes, and How Far"
+  },
+  "desc": {
+    "zh": "冰会自己化，铁会自己锈，氮气和氢气却要高温高压才肯变成氨。一个反应会不会发生、能走多远，由谁决定？这篇从数排法讲起：熵，玻尔兹曼因子，吉布斯自由能，化学势，平衡常数，催化剂为什么不改变终点，碳为什么炼得出铁却炼不出铝，合成氨的塔为什么又热又压，再到绿氨、电解水和从空气里捕集二氧化碳离热力学下限还有多远。十二个可以动手的模型，数据来自 NIST 的热化学表。",
+    "en": "Ice melts by itself and iron rusts by itself, yet nitrogen and hydrogen need heat and pressure to become ammonia. What decides whether a reaction goes, and how far? This essay starts from counting arrangements: entropy, the Boltzmann factor, Gibbs free energy, chemical potential, the equilibrium constant, why a catalyst does not move the end point, why carbon smelts iron but not aluminium, why an ammonia converter is hot and pressurised, and how far green ammonia, water electrolysis and direct air capture are from their thermodynamic minimum. Twelve hands-on models, with data from the NIST thermochemical tables."
+  },
+  "tags": [
+    {
+      "zh": "化学热力学",
+      "en": "Chemical Thermodynamics"
+    },
+    {
+      "zh": "吉布斯自由能",
+      "en": "Gibbs Free Energy"
+    },
+    {
+      "zh": "化学平衡",
+      "en": "Chemical Equilibrium"
+    },
+    {
+      "zh": "长文",
+      "en": "Long-form Essay"
+    }
+  ],
+  "concepts": [
+    {
+      "id": "spontaneity-total-entropy",
+      "title": {
+        "zh": "自发性：看总熵，不看放热吸热",
+        "en": "Spontaneity: total entropy, not heat released"
+      },
+      "desc": {
+        "zh": "一个过程会不会自己发生，取决于系统和周围的熵之和是否增加；吸热过程也可以自发。",
+        "en": "A process goes by itself when the entropy of system plus surroundings rises; endothermic processes can be spontaneous."
+      },
+      "anchor": "#ch1",
+      "aliases": {
+        "zh": [
+          "吸热反应为什么能自发",
+          "为什么冰会自己融化",
+          "反应为什么会自己发生",
+          "自发反应",
+          "热力学第二定律 化学"
+        ],
+        "en": [
+          "why do endothermic reactions happen",
+          "spontaneous process",
+          "why does ice melt by itself",
+          "second law chemistry"
+        ]
+      },
+      "relatedPages": [
+        "thermodynamics",
+        "carnot-cycle"
+      ]
+    },
+    {
+      "id": "entropy-counting-microstates",
+      "title": {
+        "zh": "熵是排法数的对数：S = k ln W",
+        "en": "Entropy counts arrangements: S = k ln W"
+      },
+      "desc": {
+        "zh": "熵是微观排法数的对数；系统走向排法最多的宏观状态。用爱因斯坦固体数出来。",
+        "en": "Entropy is the log of the number of microstates; systems move to the macrostate with the most. Counted on Einstein solids."
+      },
+      "anchor": "#ch2",
+      "aliases": {
+        "zh": [
+          "熵到底是什么",
+          "玻尔兹曼熵公式",
+          "微观状态数",
+          "混合熵",
+          "爱因斯坦固体",
+          "热为什么从热的流向冷的"
+        ],
+        "en": [
+          "what is entropy really",
+          "Boltzmann entropy formula",
+          "microstates",
+          "entropy of mixing",
+          "Einstein solid",
+          "why heat flows hot to cold"
+        ]
+      },
+      "relatedPages": [
+        "entropy",
+        "thermodynamics",
+        "kinetic-theory"
+      ]
+    },
+    {
+      "id": "boltzmann-factor",
+      "title": {
+        "zh": "玻尔兹曼因子 e^(−ε/kT)",
+        "en": "The Boltzmann factor e^(−ε/kT)"
+      },
+      "desc": {
+        "zh": "小系统从热库借能量 ε，热库的排法数乘以 e^(−ε/kT)，这就是高能态的相对概率。",
+        "en": "A small system taking energy ε from a bath multiplies the bath’s microstates by e^(−ε/kT): the relative probability of the higher state."
+      },
+      "anchor": "#ch3",
+      "aliases": {
+        "zh": [
+          "玻尔兹曼分布",
+          "玻尔兹曼因子怎么来的",
+          "kT 是多少",
+          "能级上有多少粒子",
+          "室温 kT 25 meV"
+        ],
+        "en": [
+          "Boltzmann distribution",
+          "where does the Boltzmann factor come from",
+          "what is kT",
+          "population of energy levels",
+          "kT at room temperature"
+        ]
+      },
+      "relatedPages": [
+        "kinetic-theory",
+        "activation-energy"
+      ]
+    },
+    {
+      "id": "gibbs-free-energy",
+      "title": {
+        "zh": "吉布斯自由能 ΔG = ΔH − TΔS",
+        "en": "Gibbs free energy ΔG = ΔH − TΔS"
+      },
+      "desc": {
+        "zh": "恒温恒压下 ΔG < 0 等价于总熵增加；ΔH 和 ΔS 的四种符号组合决定反应在什么温度下自发。",
+        "en": "At constant T and p, ΔG < 0 is the same as total entropy rising; the four sign combinations of ΔH and ΔS decide at which temperatures a reaction goes."
+      },
+      "anchor": "#ch4",
+      "aliases": {
+        "zh": [
+          "吉布斯自由能",
+          "自由能",
+          "ΔG 是什么",
+          "吉布斯自由能是什么意思",
+          "焓变 熵变 判断自发",
+          "为什么高温才分解",
+          "ΔG=ΔH-TΔS"
+        ],
+        "en": [
+          "Gibbs free energy",
+          "Gibbs energy",
+          "free energy",
+          "what is delta G",
+          "enthalpy entropy spontaneity",
+          "dG = dH - TdS"
+        ]
+      },
+      "relatedPages": [
+        "thermodynamics",
+        "chemical-equilibrium"
+      ]
+    },
+    {
+      "id": "chemical-potential",
+      "title": {
+        "zh": "化学势与反应进度",
+        "en": "Chemical potential and extent of reaction"
+      },
+      "desc": {
+        "zh": "化学势是每多一摩尔物质自由能增加多少；G 随反应进度有一个由混合熵造成的最低点，那就是平衡。",
+        "en": "Chemical potential is the free energy added per mole of a substance; G against extent of reaction has a minimum made by mixing entropy, and that is equilibrium."
+      },
+      "anchor": "#ch5",
+      "aliases": {
+        "zh": [
+          "化学势",
+          "化学势是什么",
+          "μ = μ° + RT ln p",
+          "反应进度",
+          "反应为什么不走到底",
+          "自由能最低"
+        ],
+        "en": [
+          "chemical potential",
+          "what is chemical potential",
+          "extent of reaction",
+          "why reactions do not go to completion",
+          "minimum of Gibbs energy"
+        ]
+      },
+      "relatedPages": [
+        "chemical-equilibrium"
+      ]
+    },
+    {
+      "id": "reaction-quotient-equilibrium-constant",
+      "title": {
+        "zh": "反应商 Q、平衡常数 K 与范特霍夫方程",
+        "en": "Reaction quotient Q, equilibrium constant K and the van ’t Hoff equation"
+      },
+      "desc": {
+        "zh": "ΔrG = ΔG° + RT ln Q；K = e^(−ΔG°/RT)；勒夏特列原理是 Q 与 K 比较的推论；ln K 对 1/T 是直线。",
+        "en": "ΔrG = ΔG° + RT ln Q; K = e^(−ΔG°/RT); Le Chatelier follows from comparing Q with K; ln K against 1/T is a line."
+      },
+      "anchor": "#ch6",
+      "aliases": {
+        "zh": [
+          "平衡常数怎么来的",
+          "反应商",
+          "Q 和 K",
+          "勒夏特列原理为什么成立",
+          "范特霍夫方程",
+          "温度怎么影响平衡常数",
+          "ΔG° = −RT ln K"
+        ],
+        "en": [
+          "equilibrium constant from Gibbs energy",
+          "reaction quotient",
+          "Q vs K",
+          "why Le Chatelier works",
+          "van t Hoff equation",
+          "dG = -RT ln K"
+        ]
+      },
+      "relatedPages": [
+        "chemical-equilibrium",
+        "acid-base-equilibrium",
+        "dissolution-saturation"
+      ]
+    },
+    {
+      "id": "kinetics-vs-thermodynamics",
+      "title": {
+        "zh": "热力学与动力学：催化剂不改变平衡",
+        "en": "Thermodynamics versus kinetics: a catalyst does not move equilibrium"
+      },
+      "desc": {
+        "zh": "ΔG 决定终点，能垒决定速率（艾林方程）；催化剂同时加快正逆反应，K 不变。",
+        "en": "ΔG sets the end point, the barrier sets the rate (Eyring); a catalyst speeds both directions and leaves K unchanged."
+      },
+      "anchor": "#ch7",
+      "aliases": {
+        "zh": [
+          "催化剂为什么不改变平衡",
+          "钻石为什么不变成石墨",
+          "艾林方程",
+          "过渡态",
+          "热力学可行 动力学不可行",
+          "活化自由能"
+        ],
+        "en": [
+          "why a catalyst does not change equilibrium",
+          "why diamond does not turn into graphite",
+          "Eyring equation",
+          "transition state",
+          "kinetic vs thermodynamic control"
+        ]
+      },
+      "relatedPages": [
+        "activation-energy",
+        "reaction-rates",
+        "enzymes"
+      ]
+    },
+    {
+      "id": "coupled-reactions-ellingham",
+      "title": {
+        "zh": "反应耦合：ATP、ΔG = −nFE 与埃林厄姆图",
+        "en": "Coupled reactions: ATP, ΔG = −nFE and the Ellingham diagram"
+      },
+      "desc": {
+        "zh": "上坡的反应绑上更陡的下坡反应就能发生：细胞用 ATP，电池用电子，高炉用碳；铝要电解。",
+        "en": "An uphill reaction goes when tied to a steeper downhill one: cells use ATP, cells of a battery use electrons, a furnace uses carbon; aluminium needs electrolysis."
+      },
+      "anchor": "#ch8",
+      "aliases": {
+        "zh": [
+          "ATP 为什么能供能",
+          "耦合反应",
+          "埃林厄姆图",
+          "为什么碳能炼铁不能炼铝",
+          "铝为什么要电解",
+          "电压和自由能的关系",
+          "ΔG=-nFE"
+        ],
+        "en": [
+          "why ATP provides energy",
+          "coupled reactions",
+          "Ellingham diagram",
+          "why carbon reduces iron but not aluminium",
+          "why aluminium needs electrolysis",
+          "cell voltage and Gibbs energy"
+        ]
+      },
+      "relatedPages": [
+        "electrochemistry",
+        "enzymes"
+      ]
+    },
+    {
+      "id": "haber-bosch",
+      "title": {
+        "zh": "合成氨：平衡与速率的折中",
+        "en": "Ammonia synthesis: the compromise between equilibrium and rate"
+      },
+      "desc": {
+        "zh": "合成氨放热且减少气体分子：低温高压利于平衡，但低温太慢；模型用 NIST 数据和焦姆金–佩热夫速率方程。",
+        "en": "Ammonia synthesis is exothermic and makes fewer gas molecules: cold and pressure favour equilibrium, but cold is too slow. Modelled with NIST data and the Temkin–Pyzhev rate law."
+      },
+      "anchor": "#ch9",
+      "aliases": {
+        "zh": [
+          "合成氨为什么要高温高压",
+          "哈伯法",
+          "哈伯-博施",
+          "合成氨为什么要循环",
+          "化肥是怎么造出来的"
+        ],
+        "en": [
+          "why Haber process uses high temperature and pressure",
+          "Haber-Bosch",
+          "ammonia synthesis loop",
+          "Temkin-Pyzhev",
+          "how fertiliser is made"
+        ]
+      },
+      "relatedPages": [
+        "chemical-equilibrium",
+        "reaction-rates"
+      ]
+    },
+    {
+      "id": "phase-separation-regular-solution",
+      "title": {
+        "zh": "相分离：正规溶液与公切线",
+        "en": "Phase separation: regular solution and the common tangent"
+      },
+      "desc": {
+        "zh": "混合熵与相互作用能竞争；χ > 2 时自由能曲线出现双谷，混合物沿公切线分成两相。",
+        "en": "Mixing entropy competes with interaction energy; above χ = 2 the free-energy curve has two wells and the mixture splits along the common tangent."
+      },
+      "anchor": "#ch10",
+      "aliases": {
+        "zh": [
+          "油和水为什么不相溶",
+          "相分离",
+          "公切线",
+          "混溶间隙",
+          "旋节线分解",
+          "电池电压平台为什么是平的"
+        ],
+        "en": [
+          "why oil and water do not mix",
+          "phase separation",
+          "common tangent",
+          "miscibility gap",
+          "spinodal decomposition",
+          "flat voltage plateau"
+        ]
+      },
+      "relatedPages": [
+        "dissolution-saturation"
+      ]
+    },
+    {
+      "id": "thermodynamic-minimum-frontier",
+      "title": {
+        "zh": "离热力学下限多远：绿氨、电解水、空气捕碳",
+        "en": "Distance from the thermodynamic minimum: green ammonia, electrolysis, direct air capture"
+      },
+      "desc": {
+        "zh": "电解水最低 1.23 V，空气捕碳最小功约 19 kJ/mol；2026 年 11 月的现状按已确立、已做出、说法三类列出。",
+        "en": "Water electrolysis needs at least 1.23 V and direct air capture about 19 kJ/mol; the state as of November 2026, split into established, demonstrated and claimed."
+      },
+      "anchor": "#ch11",
+      "aliases": {
+        "zh": [
+          "电解水制氢要多少电",
+          "绿氨",
+          "电化学合成氨",
+          "直接空气捕集要多少能量",
+          "二氧化碳电还原",
+          "电解槽效率"
+        ],
+        "en": [
+          "how much electricity to make hydrogen",
+          "green ammonia",
+          "electrochemical nitrogen reduction",
+          "direct air capture minimum work",
+          "CO2 electroreduction",
+          "electrolyser efficiency"
+        ]
+      },
+      "relatedPages": [
+        "electrochemistry"
+      ]
+    },
+    {
+      "id": "four-questions-for-a-reaction",
+      "title": {
+        "zh": "看一个反应先问四件事",
+        "en": "Four questions to ask of any reaction"
+      },
+      "desc": {
+        "zh": "方向看 ΔG，限度看 Q 与 K，速度看能垒，代价看离 ΔG 多远。",
+        "en": "Direction from ΔG, extent from Q against K, speed from the barrier, cost from the distance to ΔG."
+      },
+      "anchor": "#ch12",
+      "aliases": {
+        "zh": [
+          "怎么判断一个反应能不能发生",
+          "反应方向 限度 速率"
+        ],
+        "en": [
+          "how to tell if a reaction will happen",
+          "direction extent rate of a reaction"
+        ]
+      },
+      "relatedPages": []
+    }
+  ]
+}
