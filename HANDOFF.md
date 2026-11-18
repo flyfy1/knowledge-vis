@@ -1,6 +1,6 @@
 # HANDOFF.md — 开工前先读
 
-最后更新：2026-11-18，team lead（Claude Code 主会话）在第二部分开头加了「总览」一节，并更新了「等 Yangyu 决定」。之前的逐条更新记录见 git log HANDOFF.md。
+最后更新：2026-11-18，team lead（Claude Code 主会话）在第二部分加了「2026-11-18 这一轮」一节（8 篇草稿和 4 篇新长文各停在哪一步）；同日早些时候加了「总览」一节，并更新了「等 Yangyu 决定」。之前的逐条更新记录见 git log HANDOFF.md。
 
 这份文件有两部分：
 
@@ -92,6 +92,36 @@
 - 先读第一部分「约定」和 [AGENTS.md](AGENTS.md)。流水线：Opus 写 → Haiku 翻译 → 另一个 Opus 独立评审（改在原处，写 `specs/reviews/*-review-<日期>.md`）→ 指定的登记者提交、重指标签 → team lead 推送部署。批次结束后清理 `/tmp/agent-tasks/<任务>/`。
 - 子 Agent 不许删文件（`rm` 一律不用；仓库里要删用 `git rm` 显式路径）。2026-11-16 有评审 Agent 用写错引号的 `rm -rf` 误删过四个课目录，靠 `git checkout HEAD --` 恢复。
 - 部署前在干净的 HEAD 上至少跑：`node scripts/build-pages.cjs --all --check`、`node scripts/build-registry.cjs --check`、`node tests/page-provenance-core.cjs`，以及 AGENTS.md「测试」一节里与改动相关的检查；浏览器测试串行。
+
+### 2026-11-18 这一轮：做到一半按 Yangyu 的要求收敛（token 用得太快）
+
+都没登记、没部署。工作区文件已提交到草稿分支 `drafts/essays-20261118`（已推送，基于 `main` 的 `2aa71ba4`），在 `main` 的工作区里仍是未跟踪文件，内容相同。这次 Yangyu 的模型安排：逻辑深的用 Fable，其余用 Opus，翻译用 Haiku。
+
+**8 篇旧草稿：中文已收尾（核来源、重推模型、补示意图），Haiku 已译英文，独立评审被中途叫停。** 每篇的评审记录在 `specs/reviews/<slug>-review-20261118.md`，里面有「已核 / 已改 / 没核」，接手的评审从那里继续，不用重来。
+
+| 目录 | 评审停在哪 | 登记前必须做 |
+|---|---|---|
+| `computing/ml/how-a-chatbot-writes/` | 基本可登记 | 最后几处英文版式修改后复跑 browser.cjs，看截图 |
+| `physics/modern/why-fusion-is-hard/` | 已改，没看截图 | 中英 1280/390/320 截图、画布扫描、browser.cjs 复跑。SPARC：辐射项改对后 152 MW、Q 6.8（论文约 11），页面已解释 |
+| `computing/systems/a-secret-in-public/` | 已改，英文版式没过 | 英文示意图 clock、rsa、ladder、chain、shor 在 390/320 伸出画面，shor 在 1280 重叠；画布扫描。RSA-896 一句只写作者帖子里说的内容（措辞在评审文件），等 Yangyu 看一眼 |
+| `computing/quantum/what-quantum-computers-do/` | 已改，英文版式没过 | 英文示意图 mz、chsh、shor、noise、gap 标签重叠；复跑 browser.cjs、画布扫描。表面码改为 d = 21 / 881 |
+| `computing/ml/what-a-frontier-model-takes/` | 只找出问题，页面没改 | 九处事实或措辞、第 2 章「17 倍」是离群种子、六处对各公司不对等的地方（自利检查）、英文；然后全部版式检查 |
+| `tech/semiconductors/why-chips-are-hard/` | 只找出问题，页面没改 | 评审文件里有 13 处写好的修改方案：前沿表四行说得比来源多、Nc/Nv（Sze & Lee 第三版是 2.86 / 2.66×10¹⁹）、第 5 章「正入射」、七处英文；别名与线上页面的重叠也列在里面 |
+| `chemistry/reactions/why-batteries-hold-so-little/` | 只找出问题，页面没改 | 固态电池国标编号和生效日期两种说法冲突（要找原文）、QuantumScape 降为「声称」、第 8 章英文「10.5 times」应为翻 10.5 番、第 6 章例子改 126 °C、英文格式；然后全部版式检查 |
+| `economics/money/why-one-rate-moves-everything/` | 只做了通读和事实核对，页面没改 | 第 4 章倒挂记录：把「按起点判定 7 次误报」与现在的「3 次」并列，2022–25 写「到目前为止」，注明 2020 年是疫情；`tools/` 里只有收尾时的草稿脚本，还要一份能复现 data.js 的生成脚本；英文、截图、browser.cjs 偶发点击失败都没查 |
+
+**4 篇新长文（QUEUE-DEEP2 第 3–6 节，都用模板写）：**
+
+| 目录 | 状态 |
+|---|---|
+| `chemistry/matter/why-atoms-stick-together/` | 中文完成，Haiku 已译，未评审。tests/models.cjs 有一项断言「英文是占位稿」要跟着改；第 5 章写「五种方法」只列了四种 |
+| `physics/electromagnetism/what-travels-through-empty-space/` | 中文完成、测试通过，未翻译、未评审；没在浏览器里通读 |
+| `investment/derivatives/a-fair-price-for-a-bet/` | 中文完成、测试通过，未翻译、未评审；新子主题 `derivatives`（衍生品 / Derivatives） |
+| `chemistry/reactions/which-way-reactions-go/` | **没写完**：正文、模型、9 张示意图、models.cjs（296 项）有了，但 12 个交互实验都没接线（app.js 只有语言切换），没有 browser.cjs，从没在浏览器里跑过。见它 BRIEF.md 的「Unfinished / not verified」 |
+
+**没动的 9 篇旧草稿**（仍是 `drafts/essays-20261111` 上的样子）：noise-into-pictures、how-much-a-wire-can-carry、how-a-web-page-arrives、how-electricity-reaches-you、why-a-few-firms-win、why-notes-sound-good-together、why-we-forget、what-magnitude-means、why-we-get-sleepy。它们同样缺示意图，各自的问题见下面「未上线：17 篇中文草稿」。
+
+**派活时可照用的做法**：旧草稿先派一个「收尾」Agent（核 BRIEF 里没核实的事实、独立重推模型、读每个控件状态下的实时解说句、补 ≥6 张示意图），再 Haiku 翻译（做键、占位符、标签、链接、无中文五项机械检查），再独立评审。这一轮收尾 Agent 在 8 篇里都抓到了真错（数字、模型或过时事实），评审又在其中 3 篇抓到模型错误，两步都不能省。翻译常见的遗留：日期格式（`2026-9-16`）、单复数（`1 times`）、示意图英文标签超宽，都要评审在代码里修。`/tmp/agent-tasks/essays/` 里有这一轮的截图和脚本（约 580 MB），重启会丢；流水线走完后由主会话清理。
 
 ### 2026-11-15 时的状态（以下各节保留原样，细节以各条为准）
 
