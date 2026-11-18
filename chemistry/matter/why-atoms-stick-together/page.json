@@ -1,0 +1,28 @@
+{
+  "slug": "why-atoms-stick-together",
+  "kind": "essay",
+  "tags": [
+    { "zh": "化学键", "en": "Chemical Bonding" },
+    { "zh": "材料", "en": "Materials" },
+    { "zh": "量子化学", "en": "Quantum Chemistry" },
+    { "zh": "长文", "en": "Long-form Essay" }
+  ],
+  "category": "chemistry",
+  "subtopic": "matter",
+  "stage": "university",
+  "path": "chemistry/matter/why-atoms-stick-together/",
+  "layout": "essay",
+  "scripts": ["models.js", "copy.zh.js", "copy.en.js", "app.js"],
+  "version": "20261118b",
+  "provenanceNote": {
+    "zh": "本文由 Claude Code（claude-fable-5-2）从零编写，直接用 Markdown 站点模板写成；英文稿由 claude-haiku-5-5 翻译；另一个 Claude Code 实例（claude-fable-5-2）于 2026-11-18 做了独立评审并修订了中英文。",
+    "en": "This essay was written from scratch with Claude Code (claude-fable-5-2), directly in the Markdown site template; the English text was translated by claude-haiku-5-5; a second Claude Code instance (claude-fable-5-2) reviewed it independently on 2026-11-18 and revised both languages."
+  },
+  "dynamicKeys": {
+    "ch6.shape": ["n2", "n3", "n4", "n5", "n6"],
+    "ch7.say": ["solid", "liquid", "gas"]
+  },
+  "generators": [
+    { "run": "tools/diagrams.cjs", "writes": ["figures/dg-*.html"] }
+  ]
+}
