@@ -403,7 +403,7 @@ if (!graphArg) {
 // atlas page itself loads only atlas-index.js up front (titles, aliases and
 // structure) and fetches details/<region>.js when a concept, route, question
 // or search needs that region's text. See specs/atlas-search-index.md.
-const UPFRONT_LIMIT = 150000;  // atlas-index.js, enforced (exit 1) on build and --check
+const UPFRONT_LIMIT = 160000;  // atlas-index.js, enforced (exit 1) on build and --check; raised from 150000 on 2026-11-18 (team lead stop-gap, specs/atlas-search-index.md "Limits")
 const crypto = require('node:crypto');
 let indexJS = null, chunkJS = null;
 if (!graphArg) {
