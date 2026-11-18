@@ -1,0 +1,93 @@
+{
+  "slug": "why-we-forget",
+  "path": "psychology/cognition/why-we-forget/",
+  "category": "psychology",
+  "subtopic": "cognition",
+  "subtopicName": { "zh": "认知", "en": "Cognition" },
+  "stage": "senior",
+  "title": { "zh": "背过的东西为什么会忘，怎样才记得住", "en": "Why We Forget What We Studied, and What Makes It Stick" },
+  "desc": {
+    "zh": "遗忘曲线、间隔效应、复习的工作量、考自己和重读的差别、为什么“觉得会了”靠不住。每一章都用已发表的模型或实验数据，标明哪些是模型算的、哪些是实验测的，以及每条结论有多可靠。",
+    "en": "The forgetting curve, the spacing effect, the cost of a review schedule, testing versus rereading, and why feeling you know it misleads. Every chapter uses a published model or published data, marks what is modelled and what was measured, and says how well each finding holds up."
+  },
+  "tags": [
+    { "zh": "记忆", "en": "Memory" },
+    { "zh": "学习方法", "en": "Learning" },
+    { "zh": "间隔重复", "en": "Spaced Repetition" },
+    { "zh": "长文", "en": "Long-form Essay" }
+  ],
+  "concepts": [
+    {
+      "id": "forgetting-curve",
+      "title": { "zh": "遗忘曲线", "en": "The forgetting curve" },
+      "desc": { "zh": "艾宾浩斯 1885 年的节省率数据和 2015 年的复现：先快后慢，幂函数比单一指数贴得好得多。", "en": "Ebbinghaus's 1885 savings data and its 2015 replication: fast then slow, fitted far better by a power function than by a single exponential." },
+      "aliases": { "zh": ["遗忘曲线", "艾宾浩斯", "艾宾浩斯遗忘曲线", "为什么背了就忘", "背过的东西为什么会忘", "节省率", "遗忘是指数还是幂函数"], "en": ["forgetting curve", "Ebbinghaus", "Ebbinghaus forgetting curve", "why do I forget what I studied", "savings method", "power law of forgetting"] },
+      "anchor": "#ch1",
+      "relatedPages": ["memory-attention", "exponents-logarithms", "overfitting"]
+    },
+    {
+      "id": "mixture-of-exponentials",
+      "title": { "zh": "很多条指数的平均是幂函数", "en": "Averaging exponentials gives a power law" },
+      "desc": { "zh": "每个记忆按指数衰减、快慢各不同时，平均曲线恰好是 (1 + t/β)^−α，尾巴随差异变平。", "en": "If each memory decays exponentially at its own rate, the average is exactly (1 + t/β)^−α, with a tail that flattens as the rates spread." },
+      "aliases": { "zh": ["指数衰减的平均", "伽马分布", "为什么遗忘曲线尾巴很长", "半衰期"], "en": ["mixture of exponentials", "gamma mixture", "why the forgetting curve has a long tail", "half-life"] },
+      "anchor": "#ch2",
+      "relatedPages": ["body-in-balance", "exponents-logarithms"]
+    },
+    {
+      "id": "spacing-effect",
+      "title": { "zh": "间隔效应", "en": "The spacing effect" },
+      "desc": { "zh": "同样练四次，分开练比挤在一起好；用 Pavlik 与 Anderson 的 ACT-R 模型和它发表的参数演示。", "en": "Four practices spread out beat four crammed together, shown with Pavlik and Anderson's ACT-R model and its published parameters." },
+      "aliases": { "zh": ["间隔效应", "分散练习", "临时抱佛脚有没有用", "突击复习", "集中复习和分散复习", "ACT-R"], "en": ["spacing effect", "distributed practice", "does cramming work", "massed vs spaced practice", "ACT-R"] },
+      "anchor": "#ch3",
+      "relatedPages": ["memory-attention"]
+    },
+    {
+      "id": "optimal-review-gap",
+      "title": { "zh": "最优复习间隔", "en": "The optimal gap between study sessions" },
+      "desc": { "zh": "Cepeda 等人 2008 年 1,354 人的实验：要记得越久，最优间隔越长，但占记忆期的比例从约四成降到约一成以内。", "en": "Cepeda et al. 2008, 1,354 people: the longer you need to remember, the longer the best gap, but its share of the retention interval falls from about 40% to under 10%." },
+      "aliases": { "zh": ["复习间隔", "隔多久复习", "复习要隔几天", "最佳复习时间", "考前多久开始复习"], "en": ["optimal spacing", "how long between reviews", "when to review", "retention interval", "temporal ridgeline"] },
+      "anchor": "#ch4",
+      "relatedPages": ["memory-attention"]
+    },
+    {
+      "id": "spaced-repetition-schedule",
+      "title": { "zh": "间隔重复与扩展间隔", "en": "Spaced repetition and expanding intervals" },
+      "desc": { "zh": "开源调度器 FSRS-6 在记忆快掉到目标保持率时安排复习，间隔因此越拉越长。", "en": "The open-source FSRS-6 scheduler reviews a card just as it would drop to the target retention, so the gaps keep growing." },
+      "aliases": { "zh": ["间隔重复", "复习计划", "Anki", "FSRS", "记忆卡片", "扩展间隔", "背单词软件怎么安排复习"], "en": ["spaced repetition", "review schedule", "Anki", "FSRS", "flashcards", "expanding intervals", "SRS"] },
+      "anchor": "#ch5",
+      "relatedPages": []
+    },
+    {
+      "id": "review-workload",
+      "title": { "zh": "复习工作量与目标保持率", "en": "Review workload and target retention" },
+      "desc": { "zh": "每天 20 张新卡片、目标 90%，模型给出第一年末每天约 150 次复习；目标提到 97%，复习量约翻一倍，记住的只多几个百分点。", "en": "With 20 new cards a day at 90% target, the model gives about 150 reviews a day after a year; at 97% the load roughly doubles for a few more points remembered." },
+      "aliases": { "zh": ["复习量", "每天要复习多少", "Anki 复习太多", "目标保持率", "保持率设多少"], "en": ["review load", "how many reviews per day", "too many Anki reviews", "desired retention", "target retention"] },
+      "anchor": "#ch6",
+      "relatedPages": []
+    },
+    {
+      "id": "testing-effect",
+      "title": { "zh": "测试效应（提取练习）", "en": "The testing effect (retrieval practice)" },
+      "desc": { "zh": "Roediger 与 Karpicke 2006：5 分钟后再读更好，一周后考过的更好；元分析平均 g 约 0.50。", "en": "Roediger and Karpicke 2006: rereading wins at 5 minutes, testing wins at a week; meta-analytic mean g about 0.50." },
+      "aliases": { "zh": ["测试效应", "提取练习", "考自己", "自测", "重读有没有用", "合上书回想", "做题比看书好吗"], "en": ["testing effect", "retrieval practice", "self-testing", "is rereading useful", "test-enhanced learning", "recall practice"] },
+      "anchor": "#ch7",
+      "relatedPages": ["memory-attention"]
+    },
+    {
+      "id": "illusion-of-learning",
+      "title": { "zh": "学习错觉：觉得会了不等于记住了", "en": "Feeling of knowing versus what you remember" },
+      "desc": { "zh": "读四遍的组最有信心、一周后记得最少；多数人认为集中学和间隔学一样好，实际间隔更好。", "en": "The group that reread four times was most confident and remembered least; most people judge massed study as good as spaced, though spacing did better." },
+      "aliases": { "zh": ["学习错觉", "流畅性错觉", "元记忆", "为什么看懂了却不会做", "觉得会了", "学习判断"], "en": ["illusion of competence", "fluency illusion", "judgments of learning", "metamemory", "why I feel I know it but can't recall it"] },
+      "anchor": "#ch8",
+      "relatedPages": []
+    },
+    {
+      "id": "learning-research-robustness",
+      "title": { "zh": "学习研究结论的可靠程度", "en": "How robust the learning findings are" },
+      "desc": { "zh": "逐条列出各结论的证据、效应量范围和把握程度，区分实测和模型输出。", "en": "Each finding with its evidence, effect-size range and confidence, separating measurements from model output." },
+      "aliases": { "zh": ["效应量", "复现危机", "学习方法有没有科学依据", "哪种学习方法最有效"], "en": ["effect size", "replication crisis", "evidence-based study techniques", "which study method works best"] },
+      "anchor": "#ch9",
+      "relatedPages": []
+    }
+  ]
+}
