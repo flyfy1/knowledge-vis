@@ -1,6 +1,6 @@
 # HANDOFF.md — 开工前先读
 
-最后更新：2026-11-18，team lead（Claude Code 主会话）在第二部分加了「2026-11-18 这一轮」一节（8 篇草稿和 4 篇新长文各停在哪一步）；同日早些时候加了「总览」一节，并更新了「等 Yangyu 决定」。之前的逐条更新记录见 git log HANDOFF.md。
+最后更新：2026-11-18，登记者（Claude Code，claude-opus-5-5）登记了 9 篇已评审长文（未推送、未部署），更新了「总览」「2026-11-18 这一轮」「未上线」和「等 Yangyu 决定」；未解决的问题汇总在 [specs/essays-status-20261119.md](specs/essays-status-20261119.md)。之前 team lead 加了「2026-11-18 这一轮」和「总览」两节。之前的逐条更新记录见 git log HANDOFF.md。
 
 这份文件有两部分：
 
@@ -75,9 +75,10 @@
   - 2026-11-17 Yangyu：「请你把他们分别手工处理一下 而且多agent写同一篇的话 默认用更好的那个版本。做完直接部署上线」。批次 B 跳过的五课逐页比较了原版与 `variants/claude-code/` 平行版（[specs/reviews/lesson-version-choice-20261117.md](specs/reviews/lesson-version-choice-20261117.md)）：kepler-orbits、acid-base-equilibrium、bayes-diagnostics、photosynthesis 换成 Claude Code 版；power-converters 保留 Codex 版（图谱有 22 处深链指向它的具体步骤），文字抽成 `i18n.js` 后转换，读者所见不变。两批都经独立评审后上线（第 1f、1g 条）。
   - 「用更好的版本」这次只用在这五课上；其余约 196 个平行版仍按 D5 冻结，没比较过。
 - **存储 S1–S5 补示意图**、**CPU SIMD 与浮点长文**：已上线（第 2、3 条）。
+- **9 篇长文已评审、已在 `main` 上登记，等 team lead 推送部署**（2026-11-18/19）：how-a-chatbot-writes、what-a-frontier-model-takes、a-secret-in-public、what-quantum-computers-do、why-chips-are-hard、why-fusion-is-hard、why-batteries-hold-so-little、why-atoms-stick-together、why-one-rate-moves-everything。新子主题 `computing/quantum`、`tech/semiconductors`。提交、各篇未解决的问题和剩下的草稿见 [specs/essays-status-20261119.md](specs/essays-status-20261119.md)。图谱首屏索引上限临时从 150,000 提到 160,000 字节，下一批导入前要先压缩索引（见「等 Yangyu 决定」）。
 
 **没做的事（按建议顺序）**
-1. **17 篇草稿走完流水线**（翻译 → 独立评审 → 登记 → 部署）。最快能变成读者看得到的内容。新写和新登记的页面直接用模板（`content.*.md` + `page.json`）。
+1. **剩下的草稿走完流水线**（翻译 → 独立评审 → 登记 → 部署）：9 篇 2026-11-11 的中文草稿和 3 篇新长文，清单见 [specs/essays-status-20261119.md](specs/essays-status-20261119.md) 第 2 节。最快能变成读者看得到的内容。新写和新登记的页面直接用模板（`content.*.md` + `page.json`）。
 2. **排队的深度长文 6 篇**：[specs/essay-briefs/QUEUE-DEEP2.md](specs/essay-briefs/QUEUE-DEEP2.md)。
 3. **缺失的前置页面**：模运算与有限域、吉布斯自由能、弹性与边际收益、麦克斯韦–玻尔兹曼分布、通胀怎么测量、Fick 扩散、互信息与 KL 散度（[GAP-AUDIT-NOTES](specs/essay-briefs/GAP-AUDIT-NOTES.md)）。
 4. **可选的计算机课程篇目**：B5 小总线（I²C/SPI/UART）、S6 手机存储。
@@ -95,7 +96,9 @@
 
 ### 2026-11-18 这一轮：做到一半按 Yangyu 的要求收敛（token 用得太快）
 
-都没登记、没部署。工作区文件已提交到草稿分支 `drafts/essays-20261118`（已推送，基于 `main` 的 `2aa71ba4`），在 `main` 的工作区里仍是未跟踪文件，内容相同。这次 Yangyu 的模型安排：逻辑深的用 Fable，其余用 Opus，翻译用 Haiku。
+**更新（2026-11-18/19）：** 下表 8 篇旧草稿和 why-atoms-stick-together 已评审完、已在 `main` 上登记（what-quantum-computers-do 也在其中），等推送部署；各篇剩下的问题、其余 3 篇新长文和 9 篇旧草稿的状态以 [specs/essays-status-20261119.md](specs/essays-status-20261119.md) 为准。下面是当时的记录，保留原样。
+
+当时都没登记、没部署。工作区文件已提交到草稿分支 `drafts/essays-20261118`（已推送，基于 `main` 的 `2aa71ba4`），在 `main` 的工作区里仍是未跟踪文件，内容相同。这次 Yangyu 的模型安排：逻辑深的用 Fable，其余用 Opus，翻译用 Haiku。
 
 **8 篇旧草稿：中文已收尾（核来源、重推模型、补示意图），Haiku 已译英文，独立评审被中途叫停。** 每篇的评审记录在 `specs/reviews/<slug>-review-20261118.md`，里面有「已核 / 已改 / 没核」，接手的评审从那里继续，不用重来。
 
@@ -138,7 +141,9 @@
 - **LeetCode**：登记表 204 条。2026-11-11 新增 12 课、修订 28 课，评审记录在 [specs/leetcode-review-2026-11-11.md](specs/leetcode-review-2026-11-11.md)。
 - **搜索**：疑问句、比较式查询、一批别名（`9f4751c6`）。
 
-### 未上线：17 篇中文草稿
+### 未上线：17 篇中文草稿（其中 8 篇已于 2026-11-18 登记，剩 9 篇）
+
+**2026-11-18 起：** 表里的 how-a-chatbot-writes、what-a-frontier-model-takes、a-secret-in-public、what-quantum-computers-do、why-fusion-is-hard、why-batteries-hold-so-little、why-chips-are-hard、why-one-rate-moves-everything 已评审并登记，这几行只作历史记录；剩下 9 篇的状态见 [specs/essays-status-20261119.md](specs/essays-status-20261119.md) 第 2 节。下面是原来的说明。
 
 已提交到草稿分支 `drafts/essays-20261111`（`4b192930`，已推送，基于 `main` 的 `ffd13a5a`）；在 `main` 的工作区里它们仍是未跟踪文件，内容相同。无英文，未评审。翻译和评审可以直接在工作区的文件上做，通过后提交到 `main`；也可以切到草稿分支做完再合并。每篇目录里有 `BRIEF.md`（来源、会过期的事实、调出来的参数）和 `REGISTRY.json`（登记信息）。
 
@@ -306,6 +311,8 @@
 ### 等 Yangyu 决定
 
 2026-11-17/18 新增（都不影响线上）：
+- **图谱首屏索引上限**：登记 9 篇长文后 `atlas/atlas-index.js` 约 153 KB，超过 150,000 字节的上限；team lead 临时提到 160,000（`5a55828e`，已报告 Yangyu）。正式的办法是压缩索引（方案 B，例如长文概念不再每行重复 lesson slug），要在下一批长文导入前做完并独立评审；见 specs/atlas-search-index.md「Limits」。
+- a-secret-in-public 里 RSA-896 那一句的措辞（评审记录 §4），等 Yangyu 看一眼。
 - `variants/claude-code/` 对照页：换成 Claude Code 版的四课，两栏现在指向同一版本，要不要改。
 - power-converters 的两个图谱 core 测试（`atlas/tests/capacitor-rate-core.cjs`、`volt-second-core.cjs`）钉的提交 `1707df17` 不在本仓库，一直失败；是否改钉 `b5a9d242`。
 - power-converters 英文里 Codex 原文的两处标点（句号前多空格、`Vµs,negative` 等逗号后缺空格），要不要改。
