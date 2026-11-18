@@ -1,0 +1,165 @@
+{
+  "slug": "noise-into-pictures",
+  "path": "computing/ml/noise-into-pictures/",
+  "category": "computing",
+  "subtopic": "ml",
+  "subtopicName": { "zh": "机器学习", "en": "Machine Learning" },
+  "stage": "university",
+  "title": {
+    "zh": "AI 是怎么把一团噪声变成一张图的",
+    "en": "How a Machine Turns Noise into a Picture"
+  },
+  "desc": {
+    "zh": "从“生成就是抽样”讲到扩散模型和流匹配：加噪、分数、去噪、DDPM 与 DDIM、概率流、流匹配与再拉直、无分类器引导、潜空间，以及截至 2026 年 11 月的前沿。每个模型都在页面里真的运行。",
+    "en": "From \"generating is sampling\" to diffusion and flow models: noising, the score, denoising, DDPM and DDIM, the probability-flow ODE, flow matching and reflow, classifier-free guidance, latent space, and the frontier as of November 2026. Every model really runs in the page."
+  },
+  "tags": [
+    { "zh": "扩散模型", "en": "Diffusion Models" },
+    { "zh": "生成模型", "en": "Generative Models" },
+    { "zh": "流匹配", "en": "Flow Matching" },
+    { "zh": "AI 绘图", "en": "AI Image Generation" },
+    { "zh": "长文", "en": "Long-form Essay" }
+  ],
+  "concepts": [
+    {
+      "id": "generation-as-sampling",
+      "title": { "zh": "生成就是抽样：维数灾难", "en": "Generation is sampling: the curse of dimension" },
+      "desc": {
+        "zh": "生成一张图就是从图像的概率分布里抽一个样；直接拒绝抽样在二维还能留下 3.4%，到 784 维只剩约 10⁻³⁹⁵。",
+        "en": "Making an image means drawing from the distribution of images; plain rejection sampling keeps 3.4% in two dimensions and about 10⁻³⁹⁵ in 784."
+      },
+      "aliases": {
+        "zh": ["生成模型", "生成就是抽样", "拒绝抽样", "维数灾难", "AI 画图的原理", "生成式 AI 是什么", "为什么不能随机生成图片"],
+        "en": ["generative model", "generation as sampling", "rejection sampling", "curse of dimensionality", "how does AI image generation work", "what is generative AI", "why can't you just generate random pixels"]
+      },
+      "anchor": "#ch1",
+      "relatedPages": ["probability-distribution", "monte-carlo"]
+    },
+    {
+      "id": "forward-diffusion-process",
+      "title": { "zh": "前向加噪过程", "en": "The forward (noising) process" },
+      "desc": {
+        "zh": "一步步往数据里加一点高斯噪声，1000 步后任何图都变成同一团标准正态噪声，而且任意一步都有一步到位的公式。",
+        "en": "Add a little Gaussian noise step by step; after 1,000 steps any image becomes the same standard normal noise, and every step has a closed form."
+      },
+      "aliases": {
+        "zh": ["前向过程", "加噪", "扩散过程", "噪声表", "alpha bar", "扩散模型怎么加噪声", "DDPM 加噪公式"],
+        "en": ["forward process", "noising", "diffusion process", "noise schedule", "alpha bar", "how does a diffusion model add noise", "q(x_t|x_0)"]
+      },
+      "anchor": "#ch2",
+      "relatedPages": ["binomial-normal", "markov-chains"]
+    },
+    {
+      "id": "score-and-langevin",
+      "title": { "zh": "分数与朗之万动力学", "en": "The score and Langevin dynamics" },
+      "desc": {
+        "zh": "分数是对数密度的梯度，像指向数据的箭头；顺着它走再加点噪声就能抽样，但只在先模糊后变清楚（退火）时比例才对。",
+        "en": "The score is the gradient of log-density, an arrow towards the data; following it with added noise samples the distribution, but the proportions come out right only when annealed from blurry to sharp."
+      },
+      "aliases": {
+        "zh": ["分数", "分数函数", "得分函数", "朗之万动力学", "退火朗之万", "score matching", "分数匹配是什么"],
+        "en": ["score function", "score", "Langevin dynamics", "annealed Langevin", "score matching", "NCSN", "what is the score in diffusion models"]
+      },
+      "anchor": "#ch3",
+      "relatedPages": ["gradient-descent", "derivative"]
+    },
+    {
+      "id": "denoising-objective-tweedie",
+      "title": { "zh": "去噪目标、后验均值与 Tweedie 公式", "en": "The denoising objective, the posterior mean and Tweedie's formula" },
+      "desc": {
+        "zh": "训练网络猜加进去的噪声；最优的猜测是一个条件平均，它等于分数乘以一个常数，所以学去噪就是学分数。",
+        "en": "Train a network to guess the added noise; the best guess is a conditional average equal to the score times a constant, so learning to denoise is learning the score."
+      },
+      "aliases": {
+        "zh": ["去噪", "预测噪声", "ε 预测", "Tweedie 公式", "后验均值", "扩散模型怎么训练", "扩散模型的损失函数"],
+        "en": ["denoising", "noise prediction", "epsilon prediction", "Tweedie's formula", "posterior mean", "how are diffusion models trained", "diffusion loss function"]
+      },
+      "anchor": "#ch4",
+      "relatedPages": ["backpropagation", "gradient-descent"]
+    },
+    {
+      "id": "ddpm-vs-ddim",
+      "title": { "zh": "DDPM 与 DDIM：步数和质量", "en": "DDPM vs DDIM: steps against quality" },
+      "desc": {
+        "zh": "从噪声倒着走回数据；每步加新噪声的 DDPM 在这个问题上要 100 步，不加噪声的 DDIM 50 步，步数补不了网络本身的误差。",
+        "en": "Walk back from noise to data; DDPM, which adds fresh noise each step, needs 100 steps here and the deterministic DDIM 50, and more steps cannot fix the network's own error."
+      },
+      "aliases": {
+        "zh": ["DDPM", "DDIM", "采样步数", "扩散模型为什么慢", "去噪步数", "祖先采样", "扩散模型怎么生成图片"],
+        "en": ["DDPM", "DDIM", "sampling steps", "why are diffusion models slow", "denoising steps", "ancestral sampling", "number of function evaluations"]
+      },
+      "anchor": "#ch5",
+      "relatedPages": ["markov-chains"]
+    },
+    {
+      "id": "probability-flow-and-flow-matching",
+      "title": { "zh": "概率流、流匹配与再拉直", "en": "Probability flow, flow matching and rectified flow" },
+      "desc": {
+        "zh": "去噪可以写成一条确定的流；流匹配直接学直线路径上的速度，再拉直一次后一步就够。",
+        "en": "Denoising can be written as a deterministic flow; flow matching learns velocities along straight paths, and after one reflow a single step is enough."
+      },
+      "aliases": {
+        "zh": ["流匹配", "整流", "再拉直", "reflow", "概率流 ODE", "一步生成", "为什么新模型步数更少"],
+        "en": ["flow matching", "rectified flow", "reflow", "probability flow ODE", "one-step generation", "score SDE", "why do newer models need fewer steps"]
+      },
+      "anchor": "#ch6",
+      "relatedPages": ["ode-phase-portraits"]
+    },
+    {
+      "id": "classifier-free-guidance",
+      "title": { "zh": "无分类器引导", "en": "Classifier-free guidance" },
+      "desc": {
+        "zh": "把“有条件”和“无条件”的方向之差放大，样本更像所要的类别，却更挤、更不全；引导强度是像不像与多不多样的取舍。",
+        "en": "Amplifying the difference between conditional and unconditional directions makes samples look more like the requested class but less varied; guidance trades fidelity for diversity."
+      },
+      "aliases": {
+        "zh": ["无分类器引导", "CFG", "引导强度", "guidance scale", "提示词相关性", "CFG scale 是什么", "为什么 CFG 调高图会变怪"],
+        "en": ["classifier-free guidance", "CFG", "guidance scale", "CFG scale", "prompt adherence", "what does CFG scale do", "why high guidance looks oversaturated"]
+      },
+      "anchor": "#ch7",
+      "relatedPages": ["llm-sampling"]
+    },
+    {
+      "id": "diffusion-memorisation",
+      "title": { "zh": "完美的去噪器只会抄：记忆与泛化", "en": "A perfect denoiser only copies: memorisation and generalisation" },
+      "desc": {
+        "zh": "在有限训练集上，去噪目标的精确最优解只会复制训练点；网络没学到这个最优解，才生成新东西。",
+        "en": "On a finite training set the exact optimum of the denoising objective reproduces training points; networks generate new samples because they do not reach that optimum."
+      },
+      "aliases": {
+        "zh": ["记忆", "扩散模型会抄袭吗", "训练数据复制", "过拟合", "AI 画图会复制原图吗", "泛化"],
+        "en": ["memorization", "memorisation", "do diffusion models copy training data", "training data extraction", "overfitting", "generalization"]
+      },
+      "anchor": "#ch8",
+      "relatedPages": ["overfitting"]
+    },
+    {
+      "id": "latent-diffusion-cross-attention",
+      "title": { "zh": "潜扩散与交叉注意力", "en": "Latent diffusion and cross-attention" },
+      "desc": {
+        "zh": "先用自编码器把 512×512 的图压成 64×64×4 的潜表示（少 48 倍），再在潜空间里去噪，文字通过交叉注意力指挥每个位置。",
+        "en": "An autoencoder squeezes a 512×512 image into a 64×64×4 latent (48× smaller); denoising happens there, and text steers every position through cross-attention."
+      },
+      "aliases": {
+        "zh": ["潜扩散", "潜空间", "Stable Diffusion 原理", "交叉注意力", "VAE", "文生图怎么理解文字", "扩散 Transformer"],
+        "en": ["latent diffusion", "latent space", "how does Stable Diffusion work", "cross-attention", "VAE", "how text-to-image models read the prompt", "diffusion transformer"]
+      },
+      "anchor": "#ch9",
+      "relatedPages": ["attention-mechanism"]
+    },
+    {
+      "id": "generative-model-frontier-2026",
+      "title": { "zh": "图像与视频生成的前沿（2026 年 11 月）", "en": "The image and video generation frontier (November 2026)" },
+      "desc": {
+        "zh": "扩散 Transformer 与流匹配成为主流结构，少步生成快速进展；评估、可控性、记忆和版权仍是没解决的问题。",
+        "en": "Diffusion transformers and flow matching dominate, few-step generation is advancing fast, and evaluation, control, memorisation and copyright remain open."
+      },
+      "aliases": {
+        "zh": ["Sora 原理", "视频生成模型", "DiT", "FID 是什么", "AI 绘画版权", "Getty 诉 Stability", "AI 视频怎么生成"],
+        "en": ["how does Sora work", "video generation model", "DiT", "what is FID", "AI art copyright", "Getty v Stability AI", "how are AI videos generated"]
+      },
+      "anchor": "#ch10",
+      "relatedPages": ["attention-mechanism", "llm-sampling"]
+    }
+  ]
+}
