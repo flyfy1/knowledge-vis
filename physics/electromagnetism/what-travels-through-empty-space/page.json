@@ -1,0 +1,43 @@
+{
+  "slug": "what-travels-through-empty-space",
+  "kind": "essay",
+  "tags": [
+    { "zh": "电磁波", "en": "Electromagnetic Waves" },
+    { "zh": "麦克斯韦方程组", "en": "Maxwell's Equations" },
+    { "zh": "电磁波谱", "en": "Electromagnetic Spectrum" },
+    { "zh": "无线通信", "en": "Wireless Communication" },
+    { "zh": "长文", "en": "Long-form Essay" }
+  ],
+  "category": "physics",
+  "subtopic": "electromagnetism",
+  "stage": "university",
+  "path": "physics/electromagnetism/what-travels-through-empty-space/",
+  "layout": "essay",
+  "scripts": [
+    "models.js",
+    "copy.zh.js",
+    "copy.en.js",
+    "app.js"
+  ],
+  "version": "20261118a",
+  "provenanceNote": {
+    "zh": "本文由 Claude Code 从零编写，直接用 Markdown 站点模板写成；英文稿待译，尚未经过独立评审。",
+    "en": "This essay was written from scratch with Claude Code, directly in the Markdown site template; the English translation and an independent review are pending."
+  },
+  "dynamicKeys": {
+    "ch7.say": ["radio", "micro", "ir", "vis", "uv", "uvIon", "xray", "gamma"],
+    "ch7.size": ["mountain", "building", "person", "hand", "fingernail", "grain", "hair", "cell", "virus", "molecule", "atom", "nucleus"],
+    "ch7.cv": ["radio", "micro", "ir", "vis", "uv", "xray", "gamma"],
+    "ch8.say": ["clearG", "clearZ", "o2G", "o2Z", "h2oG", "h2oZ"],
+    "ch9.link.say": ["wifi", "cell", "gps", "voyager"],
+    "ch11.note": ["eye", "hubble", "jwst", "dsn", "eht"]
+  },
+  "generators": [
+    {
+      "run": "tools/diagrams.cjs",
+      "writes": [
+        "figures/dg-*.html"
+      ]
+    }
+  ]
+}
