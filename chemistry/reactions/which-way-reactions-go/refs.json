@@ -1,0 +1,198 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "which-way-reactions-go",
+ "refs": [
+  {
+   "from": "hero.note",
+   "to": "chemical-equilibrium",
+   "anchor": null
+  },
+  {
+   "from": "hero.note",
+   "to": "activation-energy",
+   "anchor": null
+  },
+  {
+   "from": "hero.note",
+   "to": "reaction-rates",
+   "anchor": null
+  },
+  {
+   "from": "hero.note",
+   "to": "electrochemistry",
+   "anchor": null
+  },
+  {
+   "from": "hero.note",
+   "to": "thermodynamics",
+   "anchor": null
+  },
+  {
+   "from": "ch2.p6",
+   "to": "entropy",
+   "anchor": null
+  },
+  {
+   "from": "ch2.p6",
+   "to": "thermodynamics",
+   "anchor": null
+  },
+  {
+   "from": "ch2.p6",
+   "to": "carnot-cycle",
+   "anchor": null
+  },
+  {
+   "from": "ch5.p1",
+   "to": "chemical-equilibrium",
+   "anchor": null
+  },
+  {
+   "from": "ch6.p9",
+   "to": "acid-base-equilibrium",
+   "anchor": null
+  },
+  {
+   "from": "ch6.p9",
+   "to": "dissolution-saturation",
+   "anchor": null
+  },
+  {
+   "from": "ch7.p4",
+   "to": "activation-energy",
+   "anchor": null
+  },
+  {
+   "from": "ch7.p4",
+   "to": "reaction-rates",
+   "anchor": null
+  },
+  {
+   "from": "ch7.p7",
+   "to": "enzymes",
+   "anchor": null
+  },
+  {
+   "from": "ch8.p4",
+   "to": "electrochemistry",
+   "anchor": null
+  }
+ ],
+ "backlinks": [],
+ "related": [
+  "thermodynamics",
+  "carnot-cycle",
+  "entropy",
+  "kinetic-theory",
+  "activation-energy",
+  "chemical-equilibrium",
+  "acid-base-equilibrium",
+  "dissolution-saturation",
+  "reaction-rates",
+  "enzymes",
+  "electrochemistry"
+ ],
+ "bindings": [
+  "ch1.iceH",
+  "ch1.iceS",
+  "ch1.iceSurrCold",
+  "ch1.iceTotCold",
+  "ch1.iceSurrWarm",
+  "ch1.iceTotWarm",
+  "ch1.limeT",
+  "ch1.limeC",
+  "ch1.vapT",
+  "ch2.w4",
+  "ch2.p100",
+  "ch2.rln2",
+  "ch2.w33",
+  "ch2.pAll",
+  "ch3.kT300",
+  "ch3.RT300",
+  "ch3.half",
+  "ch3.r300",
+  "ch3.r600",
+  "ch3.rX",
+  "ch4.lime300",
+  "ch4.nh3T",
+  "ch4.nh3C",
+  "ch5.dG",
+  "ch5.xi",
+  "ch5.xiPct",
+  "ch5.yPct",
+  "ch5.gmin",
+  "ch5.xi10",
+  "ch5.xi01",
+  "ch5.xi350",
+  "ch6.decade",
+  "ch6.nh3K298",
+  "ch6.nh3K700",
+  "ch6.nh3K700line",
+  "ch6.nh3off",
+  "ch6.nh3H700",
+  "ch6.nh3H298",
+  "ch7.h2o",
+  "ch7.pref",
+  "ch7.half",
+  "ch7.cat10",
+  "ch7.half100",
+  "ch8.glu",
+  "ch8.atp0",
+  "ch8.atp",
+  "ch8.net",
+  "ch8.F",
+  "ch8.h2g",
+  "ch8.erev",
+  "ch8.feT",
+  "ch8.feC",
+  "ch8.siT",
+  "ch8.alT",
+  "ch8.alV",
+  "ch8.alVc",
+  "ch9.dG298",
+  "ch9.y298",
+  "ch9.K723",
+  "ch9.y723p1",
+  "ch9.y723p200",
+  "ch9.best",
+  "ch9.bestOut",
+  "ch9.bestEq",
+  "ch9.best10",
+  "ch9.bestOut10",
+  "ch9.lhv",
+  "ch9.avg",
+  "ch9.bat",
+  "ch9.ej",
+  "ch9.share",
+  "ch9.co2",
+  "ch9.ea",
+  "ch10.chi",
+  "ch10.b1",
+  "ch10.b2",
+  "ch11.doeStack",
+  "ch11.doeSys",
+  "ch11.doeTarget",
+  "ch11.doeUlt",
+  "ch11.etn",
+  "ch11.ereal",
+  "ch11.minKwh",
+  "ch11.hhvKwh",
+  "ch11.doeX",
+  "ch11.ppm",
+  "ch11.w",
+  "ch11.wt",
+  "ch11.wFlue",
+  "ch11.gw",
+  "ch11.envision",
+  "ch11.neom",
+  "ch11.mammoth",
+  "ch11.stratos",
+  "ch11.ocSamples",
+  "ch11.ocTested",
+  "ch11.ocRelax",
+  "ch11.liJ",
+  "ch11.liFE",
+  "ch11.liEE",
+  "ch11.liH"
+ ]
+}

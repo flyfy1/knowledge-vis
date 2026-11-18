@@ -1,0 +1,195 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "why-atoms-stick-together",
+ "refs": [
+  {
+   "from": "hero.note",
+   "to": "atomic-structure",
+   "anchor": null
+  },
+  {
+   "from": "hero.note",
+   "to": "periodic-trends",
+   "anchor": null
+  },
+  {
+   "from": "hero.note",
+   "to": "quantum-basics",
+   "anchor": null
+  },
+  {
+   "from": "ch1.p1",
+   "to": "quantum-basics",
+   "anchor": null
+  },
+  {
+   "from": "ch3.p4",
+   "to": "eigenvectors",
+   "anchor": null
+  },
+  {
+   "from": "ch4.p1",
+   "to": "periodic-trends",
+   "anchor": null
+  },
+  {
+   "from": "ch6.p1",
+   "to": "molecular-shapes",
+   "anchor": null
+  },
+  {
+   "from": "ch7.p10",
+   "to": "particles-states",
+   "anchor": null
+  },
+  {
+   "from": "ch8.p1",
+   "to": "isomers",
+   "anchor": null
+  },
+  {
+   "from": "ch11.links",
+   "to": "atomic-structure",
+   "anchor": null
+  },
+  {
+   "from": "ch11.links",
+   "to": "periodic-trends",
+   "anchor": null
+  },
+  {
+   "from": "ch11.links",
+   "to": "molecular-shapes",
+   "anchor": null
+  },
+  {
+   "from": "ch11.links",
+   "to": "isomers",
+   "anchor": null
+  },
+  {
+   "from": "ch11.links",
+   "to": "particles-states",
+   "anchor": null
+  },
+  {
+   "from": "ch11.links",
+   "to": "eigenvectors",
+   "anchor": null
+  },
+  {
+   "from": "ch11.links",
+   "to": "quantum-basics",
+   "anchor": null
+  }
+ ],
+ "backlinks": [],
+ "related": [
+  "quantum-basics",
+  "atomic-structure",
+  "eigenvectors",
+  "isomers",
+  "periodic-trends",
+  "molecules-atoms",
+  "dissolution-saturation",
+  "electrochemistry",
+  "photoelectric-effect",
+  "molecular-shapes",
+  "particles-states",
+  "kinetic-theory",
+  "entropy"
+ ],
+ "bindings": [
+  "ch1.L",
+  "ch1.e1",
+  "ch1.e2",
+  "ch1.drop",
+  "ch1.kj",
+  "ch2.z1R",
+  "ch2.z1pm",
+  "ch2.z1De",
+  "ch2.exR",
+  "ch2.expm",
+  "ch2.exDe",
+  "ch2.z1dT",
+  "ch2.z1dV",
+  "ch2.optR",
+  "ch2.optZ",
+  "ch2.optDe",
+  "ch2.optGap",
+  "ch2.optdT",
+  "ch2.optdV",
+  "ch3.h2ev",
+  "ch3.h2kj",
+  "ch3.butDel",
+  "ch3.benDel",
+  "ch3.benBo",
+  "ch3.beta",
+  "ch3.l2exp",
+  "ch3.l4exp",
+  "ch3.l6exp",
+  "ch3.l22exp",
+  "ch3.l2",
+  "ch3.l6",
+  "ch3.l22",
+  "ch4.hcl",
+  "ch4.hf",
+  "ch4.nacl",
+  "ch4.chain",
+  "ch4.sph1",
+  "ch4.sph2",
+  "ch4.sph3",
+  "ch4.sph4",
+  "ch4.ev3",
+  "ch4.r0",
+  "ch4.bn",
+  "ch4.bl",
+  "ch4.bh",
+  "ch4.blErr",
+  "ch4.ie",
+  "ch4.ea",
+  "ch5.kt",
+  "ch5.b",
+  "ch5.si",
+  "ch5.dia",
+  "ch5.siF",
+  "ch5.diaF",
+  "ch6.tet",
+  "ch6.h2o",
+  "ch6.h2oN",
+  "ch6.h2s",
+  "ch6.h2sN",
+  "ch6.h2sS",
+  "ch6.ph3",
+  "ch7.kt",
+  "ch7.arEps",
+  "ch7.arSig",
+  "ch7.rmin",
+  "ch7.extK",
+  "ch7.extC",
+  "ch7.extGap",
+  "ch7.ice",
+  "ch8.dB",
+  "ch8.gB",
+  "ch8.gL",
+  "ch8.cc",
+  "ch8.layer",
+  "ch8.ratio",
+  "ch8.N1",
+  "ch8.N2",
+  "ch8.r1",
+  "ch8.r2",
+  "ch9.n",
+  "ch9.s",
+  "ch9.conf",
+  "ch9.years",
+  "ch9.age",
+  "ch9.c12",
+  "ch9.e12",
+  "ch9.c14",
+  "ch10.dft2",
+  "ch10.cc2",
+  "ch10.g",
+  "ch11.hb"
+ ]
+}

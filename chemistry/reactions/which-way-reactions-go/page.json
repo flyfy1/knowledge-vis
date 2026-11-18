@@ -1,0 +1,9 @@
+{
+  "slug": "which-way-reactions-go",
+  "kind": "essay",
+  "layout": "essay",
+  "scripts": ["models.js", "copy.zh.js", "copy.en.js", "app.js"],
+  "version": "20261118a",
+  "languages": { "en": "stub" },
+  "generators": [{ "run": "tools/diagrams.cjs", "writes": ["figures/dg-*.html"] }]
+}

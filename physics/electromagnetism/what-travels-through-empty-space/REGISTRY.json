@@ -1,0 +1,745 @@
+{
+  "slug": "what-travels-through-empty-space",
+  "path": "physics/electromagnetism/what-travels-through-empty-space/",
+  "category": "physics",
+  "subtopic": "electromagnetism",
+  "stage": "university",
+  "title": {
+    "zh": "信号穿过真空的时候，到底是什么在传",
+    "en": "What Is Actually Travelling When a Signal Crosses Empty Space"
+  },
+  "desc": {
+    "zh": "旅行者 1 号离我们一光日，中间什么都没有，信号还是到了。这篇从电场和磁场讲起：麦克斯韦的四条定律怎么让波自己跑起来，光速从哪两个常数里算出来，波怎么被甩出来、带着什么、遇到物质和大气会怎样，再到调制、链路预算、光纤、衍射极限和相控阵，最后是 2026 年的前沿。十四个可以动手的模型，每个都是真方程的缩小版。",
+    "en": "Voyager 1 is one light-day away with nothing in between, and its signal still arrives. This essay starts from electric and magnetic fields: how Maxwell's four laws make a wave that carries itself, how the speed of light falls out of two bench-top constants, how waves are radiated, what they carry, and what matter and the atmosphere do to them; then modulation, link budgets, optical fibre, the diffraction limit and phased arrays, and the frontier as of 2026. Fourteen hands-on models, each the real equation at small scale."
+  },
+  "tags": [
+    {
+      "zh": "电磁波",
+      "en": "Electromagnetic Waves"
+    },
+    {
+      "zh": "麦克斯韦方程组",
+      "en": "Maxwell's Equations"
+    },
+    {
+      "zh": "电磁波谱",
+      "en": "Electromagnetic Spectrum"
+    },
+    {
+      "zh": "无线通信",
+      "en": "Wireless Communication"
+    },
+    {
+      "zh": "长文",
+      "en": "Long-form Essay"
+    }
+  ],
+  "concepts": [
+    {
+      "id": "em-field-as-real-thing",
+      "title": {
+        "zh": "场是真实的东西：ε₀ 与 μ₀",
+        "en": "Fields are real: ε₀ and μ₀"
+      },
+      "desc": {
+        "zh": "电荷先改变周围的空间，另一个电荷感受到的是所在位置的场；真空的两个常数 ε₀ 和 μ₀ 决定场有多容易建立。",
+        "en": "A charge changes the space around it and another charge feels the field where it sits; the vacuum constants ε₀ and μ₀ set how easily fields are made."
+      },
+      "aliases": {
+        "zh": [
+          "场是什么",
+          "电场和磁场是真的吗",
+          "真空介电常数",
+          "真空磁导率",
+          "真空里有什么"
+        ],
+        "en": [
+          "what is a field",
+          "are fields real",
+          "vacuum permittivity",
+          "vacuum permeability",
+          "epsilon zero mu zero"
+        ]
+      },
+      "anchor": "#ch1",
+      "relatedPages": [
+        "electric-fields",
+        "magnets",
+        "magnetic-force"
+      ]
+    },
+    {
+      "id": "maxwell-equations-integral",
+      "title": {
+        "zh": "麦克斯韦方程组（积分形式）",
+        "en": "Maxwell's equations in integral form"
+      },
+      "desc": {
+        "zh": "四条定律：电场的高斯定律、磁场的高斯定律、法拉第定律、安培–麦克斯韦定律，每一项用话说清楚。",
+        "en": "The four laws (Gauss for E, Gauss for B, Faraday, Ampère–Maxwell) with every term said in words."
+      },
+      "aliases": {
+        "zh": [
+          "麦克斯韦方程组",
+          "麦克斯韦方程是什么意思",
+          "高斯定律",
+          "安培定律",
+          "四个方程怎么理解"
+        ],
+        "en": [
+          "Maxwell's equations",
+          "Maxwell equations explained",
+          "Gauss's law",
+          "Ampere's law",
+          "what do Maxwell's equations mean"
+        ]
+      },
+      "anchor": "#ch2",
+      "relatedPages": [
+        "electromagnetic-induction",
+        "electric-fields"
+      ]
+    },
+    {
+      "id": "displacement-current",
+      "title": {
+        "zh": "位移电流",
+        "en": "Displacement current"
+      },
+      "desc": {
+        "zh": "变化的电场也产生磁场：充电的电容器极板之间没有电荷流过，却有 ε₀·dΦE/dt 这一项接着“电流”。",
+        "en": "A changing electric field also makes a magnetic field: between the plates of a charging capacitor no charge flows, yet ε₀·dΦE/dt carries the current on."
+      },
+      "aliases": {
+        "zh": [
+          "位移电流",
+          "位移电流是什么",
+          "电容器中间有电流吗",
+          "麦克斯韦加了什么",
+          "变化的电场产生磁场"
+        ],
+        "en": [
+          "displacement current",
+          "what is displacement current",
+          "is there current between capacitor plates",
+          "Maxwell's correction",
+          "changing electric field makes magnetic field"
+        ]
+      },
+      "anchor": "#ch2",
+      "relatedPages": [
+        "electromagnetic-induction"
+      ]
+    },
+    {
+      "id": "em-wave-equation",
+      "title": {
+        "zh": "电磁波的波动方程与光速",
+        "en": "The electromagnetic wave equation and the speed of light"
+      },
+      "desc": {
+        "zh": "法拉第定律和安培–麦克斯韦定律合起来是波动方程，波速 1/√(μ₀ε₀) 正好是光速。",
+        "en": "Faraday's law and the Ampère–Maxwell law combine into a wave equation whose speed, 1/√(μ₀ε₀), is the speed of light."
+      },
+      "aliases": {
+        "zh": [
+          "电磁波是什么",
+          "光为什么能在真空里传播",
+          "光速是怎么算出来的",
+          "电磁波需要介质吗",
+          "光是电磁波吗",
+          "以太"
+        ],
+        "en": [
+          "what is an electromagnetic wave",
+          "how does light travel through a vacuum",
+          "why is the speed of light c",
+          "does light need a medium",
+          "is light an electromagnetic wave",
+          "luminiferous ether"
+        ]
+      },
+      "anchor": "#ch3",
+      "relatedPages": [
+        "relativity",
+        "sound-waves"
+      ]
+    },
+    {
+      "id": "fdtd-yee-grid",
+      "title": {
+        "zh": "时域有限差分法（FDTD）与库朗条件",
+        "en": "FDTD on a Yee grid and the Courant condition"
+      },
+      "desc": {
+        "zh": "把 E 和 B 错开半格、半步轮流更新来模拟电磁波；每步不能走超过一格，否则数值发散。",
+        "en": "Simulating electromagnetic waves by leapfrogging E and B staggered by half a cell and half a step; a wave may not cross more than one cell per step or the numbers blow up."
+      },
+      "aliases": {
+        "zh": [
+          "FDTD",
+          "时域有限差分",
+          "Yee 网格",
+          "库朗条件",
+          "CFL 条件",
+          "电磁仿真怎么做",
+          "数值色散"
+        ],
+        "en": [
+          "FDTD",
+          "finite-difference time-domain",
+          "Yee grid",
+          "Courant condition",
+          "CFL condition",
+          "how electromagnetic simulation works",
+          "numerical dispersion"
+        ]
+      },
+      "anchor": "#ch3",
+      "relatedPages": []
+    },
+    {
+      "id": "refractive-index-fresnel",
+      "title": {
+        "zh": "折射率与菲涅耳反射",
+        "en": "Refractive index and Fresnel reflection"
+      },
+      "desc": {
+        "zh": "材料里波速是 c/n；垂直入射时界面反射的能量比例是 ((n₁−n₂)/(n₁+n₂))²，玻璃约 4%。",
+        "en": "In a material the wave travels at c/n; at normal incidence an interface reflects ((n₁−n₂)/(n₁+n₂))² of the energy, about 4% for glass."
+      },
+      "aliases": {
+        "zh": [
+          "折射率是什么",
+          "光在玻璃里为什么变慢",
+          "玻璃为什么会反光",
+          "菲涅耳公式",
+          "半波损失",
+          "增透膜"
+        ],
+        "en": [
+          "what is refractive index",
+          "why does light slow down in glass",
+          "why does glass reflect",
+          "Fresnel equations",
+          "reflection phase flip",
+          "anti-reflection coating"
+        ]
+      },
+      "anchor": "#ch4",
+      "relatedPages": [
+        "reflection-refraction",
+        "interference"
+      ]
+    },
+    {
+      "id": "radiation-accelerating-charge",
+      "title": {
+        "zh": "加速电荷的辐射：拉莫尔公式与 sin²θ",
+        "en": "Radiation from an accelerating charge: Larmor's formula and sin²θ"
+      },
+      "desc": {
+        "zh": "只有加速的电荷才辐射，功率正比于加速度的平方，沿加速方向没有辐射。",
+        "en": "Only an accelerating charge radiates; the power goes as acceleration squared and there is none along the direction of acceleration."
+      },
+      "aliases": {
+        "zh": [
+          "电磁波是怎么产生的",
+          "拉莫尔公式",
+          "为什么加速电荷会辐射",
+          "原子为什么不塌缩",
+          "偶极辐射"
+        ],
+        "en": [
+          "how are electromagnetic waves produced",
+          "Larmor formula",
+          "why do accelerating charges radiate",
+          "why don't atoms collapse",
+          "dipole radiation"
+        ]
+      },
+      "anchor": "#ch5",
+      "relatedPages": [
+        "why-the-sky-is-blue",
+        "quantum-basics"
+      ]
+    },
+    {
+      "id": "half-wave-dipole",
+      "title": {
+        "zh": "半波偶极子天线：方向图、方向性与辐射电阻",
+        "en": "The half-wave dipole: pattern, directivity and radiation resistance"
+      },
+      "desc": {
+        "zh": "长度为半个波长的直天线，方向性 1.64（2.15 dBi），辐射电阻约 73 欧；天线尺寸跟着波长走。",
+        "en": "A straight antenna half a wavelength long has directivity 1.64 (2.15 dBi) and a radiation resistance of about 73 Ω; antenna size follows wavelength."
+      },
+      "aliases": {
+        "zh": [
+          "天线是怎么工作的",
+          "半波偶极子",
+          "天线为什么要这么长",
+          "dBi 是什么",
+          "辐射电阻",
+          "天线方向图"
+        ],
+        "en": [
+          "how does an antenna work",
+          "half-wave dipole",
+          "why are antennas that length",
+          "what is dBi",
+          "radiation resistance",
+          "antenna pattern"
+        ]
+      },
+      "anchor": "#ch5",
+      "relatedPages": [
+        "standing-wave"
+      ]
+    },
+    {
+      "id": "poynting-inverse-square-pressure",
+      "title": {
+        "zh": "坡印廷矢量、平方反比律与辐射压",
+        "en": "Poynting vector, inverse-square law and radiation pressure"
+      },
+      "desc": {
+        "zh": "电磁波每平方米每秒带走 E×B/μ₀ 的能量，强度按距离平方变弱，照到表面上有 I/c 的压强。",
+        "en": "An electromagnetic wave carries E×B/μ₀ per square metre per second, weakens as distance squared, and presses on a surface with I/c."
+      },
+      "aliases": {
+        "zh": [
+          "坡印廷矢量",
+          "太阳常数",
+          "平方反比定律",
+          "光有压力吗",
+          "光压",
+          "太阳帆",
+          "阳光的电场有多大"
+        ],
+        "en": [
+          "Poynting vector",
+          "solar constant",
+          "inverse-square law",
+          "does light push",
+          "radiation pressure",
+          "solar sail",
+          "electric field of sunlight"
+        ]
+      },
+      "anchor": "#ch6",
+      "relatedPages": [
+        "blackbody-radiation"
+      ]
+    },
+    {
+      "id": "polarisation-malus",
+      "title": {
+        "zh": "偏振与马吕斯定律",
+        "en": "Polarisation and Malus's law"
+      },
+      "desc": {
+        "zh": "偏振片把电场投影到自己的方向上，强度按 cos²θ 变化；在两片垂直的偏振片中间插一片，光反而能通过。",
+        "en": "A polariser projects the electric field onto its axis and intensity goes as cos²θ; a third sheet between two crossed ones lets light through."
+      },
+      "aliases": {
+        "zh": [
+          "偏振是什么",
+          "偏振片原理",
+          "马吕斯定律",
+          "三片偏振片悖论",
+          "偏光镜为什么能挡反光",
+          "液晶屏原理"
+        ],
+        "en": [
+          "what is polarization",
+          "how polarizers work",
+          "Malus's law",
+          "three polarizer paradox",
+          "polarized sunglasses",
+          "how LCD works"
+        ]
+      },
+      "anchor": "#ch6",
+      "relatedPages": []
+    },
+    {
+      "id": "em-spectrum-photon-energy",
+      "title": {
+        "zh": "电磁波谱与光子能量",
+        "en": "The electromagnetic spectrum and photon energy"
+      },
+      "desc": {
+        "zh": "从无线电到伽马射线是同一种波，只差频率；λ = c/f，E = hf；约 10 电子伏以上才是电离辐射。",
+        "en": "Radio to gamma rays are one kind of wave differing only in frequency; λ = c/f, E = hf; above about 10 eV the radiation is ionising."
+      },
+      "aliases": {
+        "zh": [
+          "电磁波谱",
+          "无线电和光有什么区别",
+          "什么是电离辐射",
+          "非电离辐射",
+          "X 光和微波有什么不同",
+          "太赫兹间隙",
+          "光子能量"
+        ],
+        "en": [
+          "electromagnetic spectrum",
+          "difference between radio waves and light",
+          "what is ionizing radiation",
+          "non-ionizing radiation",
+          "x-rays vs microwaves",
+          "terahertz gap",
+          "photon energy"
+        ]
+      },
+      "anchor": "#ch7",
+      "relatedPages": [
+        "photoelectric-effect",
+        "blackbody-radiation",
+        "why-the-planet-warms"
+      ]
+    },
+    {
+      "id": "microwave-water-debye",
+      "title": {
+        "zh": "微波炉与水的介电弛豫",
+        "en": "Microwave ovens and the dielectric relaxation of water"
+      },
+      "desc": {
+        "zh": "2.45 吉赫不是水的共振频率；水的吸收是一个很宽的德拜弛豫带，峰值在约 19 吉赫，选 2.45 是为了穿透深度。",
+        "en": "2.45 GHz is not a resonance of water; water absorbs over a broad Debye relaxation band peaking near 19 GHz, and 2.45 GHz is chosen for penetration depth."
+      },
+      "aliases": {
+        "zh": [
+          "微波炉原理",
+          "微波炉为什么是 2.45GHz",
+          "微波炉是水分子共振吗",
+          "微波炉加热的食物有辐射吗",
+          "德拜弛豫",
+          "穿透深度"
+        ],
+        "en": [
+          "how does a microwave oven work",
+          "why 2.45 GHz",
+          "do microwaves resonate with water",
+          "is microwaved food radioactive",
+          "Debye relaxation",
+          "penetration depth"
+        ]
+      },
+      "anchor": "#ch7",
+      "relatedPages": [
+        "resonance"
+      ]
+    },
+    {
+      "id": "rf-exposure-limits",
+      "title": {
+        "zh": "手机辐射：限值和各机构的结论",
+        "en": "Phone radiation: the limits and what the agencies conclude"
+      },
+      "desc": {
+        "zh": "射频电磁波是非电离辐射，已确认的作用是加热；ICNIRP 与 FCC 的 SAR 限值，以及 IARC、WHO 委托综述的原话。",
+        "en": "Radio-frequency waves are non-ionising and their established effect is heating; the ICNIRP and FCC SAR limits, and what IARC and the WHO-commissioned review say."
+      },
+      "aliases": {
+        "zh": [
+          "手机辐射有害吗",
+          "基站辐射",
+          "5G 辐射致癌吗",
+          "SAR 值是什么",
+          "Wi-Fi 辐射",
+          "手机会致癌吗"
+        ],
+        "en": [
+          "is phone radiation harmful",
+          "cell tower radiation",
+          "does 5G cause cancer",
+          "what is SAR",
+          "Wi-Fi radiation",
+          "do phones cause cancer"
+        ]
+      },
+      "anchor": "#ch7",
+      "relatedPages": []
+    },
+    {
+      "id": "atmospheric-windows",
+      "title": {
+        "zh": "大气窗口与毫米波吸收",
+        "en": "Atmospheric windows and millimetre-wave absorption"
+      },
+      "desc": {
+        "zh": "氧气在 60 吉赫、水汽在 22 和 183 吉赫等处强烈吸收，中间留下几扇窗；按 ITU-R P.676 逐线计算。",
+        "en": "Oxygen near 60 GHz and water vapour at 22 and 183 GHz absorb strongly, leaving windows between; computed line by line from ITU-R P.676."
+      },
+      "aliases": {
+        "zh": [
+          "大气窗口",
+          "60GHz 为什么传不远",
+          "毫米波为什么怕下雨",
+          "卫星通信为什么用这些频段",
+          "射电窗口",
+          "氧气吸收峰",
+          "信号穿墙为什么变弱"
+        ],
+        "en": [
+          "atmospheric window",
+          "why 60 GHz does not travel far",
+          "millimeter wave absorption",
+          "why satellites use those bands",
+          "radio window",
+          "oxygen absorption 60 GHz",
+          "ITU-R P.676"
+        ]
+      },
+      "anchor": "#ch8",
+      "relatedPages": [
+        "why-the-planet-warms"
+      ]
+    },
+    {
+      "id": "modulation-am-fm-qam",
+      "title": {
+        "zh": "调制：AM、FM、QAM 与带宽",
+        "en": "Modulation: AM, FM, QAM and bandwidth"
+      },
+      "desc": {
+        "zh": "把信息放到载波上就要占频带：调幅占两倍信息频率，调频按卡森公式；QAM 同时改幅度和相位。",
+        "en": "Putting information on a carrier takes bandwidth: AM takes twice the message frequency, FM follows Carson's rule; QAM changes amplitude and phase together."
+      },
+      "aliases": {
+        "zh": [
+          "调制是什么",
+          "调幅和调频的区别",
+          "AM 和 FM",
+          "QAM 是什么",
+          "边带",
+          "带宽是什么意思",
+          "卡森公式",
+          "为什么频率越高网速越快"
+        ],
+        "en": [
+          "what is modulation",
+          "AM vs FM",
+          "QAM explained",
+          "sidebands",
+          "what is bandwidth",
+          "Carson's rule",
+          "why higher frequency means faster data"
+        ]
+      },
+      "anchor": "#ch9",
+      "relatedPages": [
+        "fourier"
+      ]
+    },
+    {
+      "id": "friis-link-budget",
+      "title": {
+        "zh": "弗里斯公式与链路预算",
+        "en": "The Friis equation and link budgets"
+      },
+      "desc": {
+        "zh": "接收功率 = 发射功率 × 两端天线增益 × (λ/4πd)²；用分贝逐项加减，Wi-Fi、手机、GPS 和旅行者 1 号各算一遍。",
+        "en": "Received power = transmitted power × both antenna gains × (λ/4πd)²; added up in decibels for Wi-Fi, a phone, GPS and Voyager 1."
+      },
+      "aliases": {
+        "zh": [
+          "链路预算",
+          "弗里斯公式",
+          "自由空间路径损耗",
+          "信号为什么越远越弱",
+          "dBm 是什么",
+          "旅行者号的信号怎么收到的",
+          "GPS 信号有多弱"
+        ],
+        "en": [
+          "link budget",
+          "Friis equation",
+          "free-space path loss",
+          "why signals get weaker with distance",
+          "what is dBm",
+          "how do we hear Voyager",
+          "how weak is the GPS signal"
+        ]
+      },
+      "anchor": "#ch9",
+      "relatedPages": [
+        "inside-a-phone",
+        "exponents-logarithms"
+      ]
+    },
+    {
+      "id": "optical-fibre-loss-1550",
+      "title": {
+        "zh": "光纤：全反射、损耗与 1550 纳米",
+        "en": "Optical fibre: total internal reflection, loss and 1550 nm"
+      },
+      "desc": {
+        "zh": "光纤靠全反射把光关在纤芯里；瑞利散射随波长下降、红外吸收随波长上升，最低点在 1550 纳米附近，约 0.18 dB/km。",
+        "en": "A fibre traps light by total internal reflection; Rayleigh scattering falls and infrared absorption rises with wavelength, leaving a minimum near 1550 nm of about 0.18 dB/km."
+      },
+      "aliases": {
+        "zh": [
+          "光纤原理",
+          "光纤为什么用 1550nm",
+          "全反射",
+          "光纤损耗",
+          "数值孔径",
+          "光纤为什么这么快",
+          "波分复用",
+          "掺铒光纤放大器"
+        ],
+        "en": [
+          "how does optical fiber work",
+          "why 1550 nm",
+          "total internal reflection",
+          "fiber attenuation",
+          "numerical aperture",
+          "wavelength-division multiplexing",
+          "EDFA"
+        ]
+      },
+      "anchor": "#ch10",
+      "relatedPages": [
+        "reflection-refraction",
+        "why-the-sky-is-blue"
+      ]
+    },
+    {
+      "id": "diffraction-limit-rayleigh",
+      "title": {
+        "zh": "衍射极限与瑞利判据 1.22 λ/D",
+        "en": "The diffraction limit and the Rayleigh criterion 1.22 λ/D"
+      },
+      "desc": {
+        "zh": "有限口径出来的波一定散开 λ/D 左右，所以望远镜、天线和光刻能分辨的最小角度是 1.22 λ/D。",
+        "en": "A wave leaving a finite aperture spreads by about λ/D, so a telescope, dish or lithography lens resolves no finer than 1.22 λ/D."
+      },
+      "aliases": {
+        "zh": [
+          "衍射极限",
+          "瑞利判据",
+          "艾里斑",
+          "望远镜为什么越大越好",
+          "分辨率极限",
+          "哈勃能看到登月舱吗",
+          "光刻分辨率"
+        ],
+        "en": [
+          "diffraction limit",
+          "Rayleigh criterion",
+          "Airy disk",
+          "why bigger telescopes see more",
+          "angular resolution",
+          "can Hubble see the lunar lander",
+          "lithography resolution"
+        ]
+      },
+      "anchor": "#ch11",
+      "relatedPages": [
+        "interference",
+        "double-slit",
+        "what-is-a-black-hole",
+        "lens"
+      ]
+    },
+    {
+      "id": "phased-array-beam-steering",
+      "title": {
+        "zh": "相控阵与波束赋形",
+        "en": "Phased arrays and beam steering"
+      },
+      "desc": {
+        "zh": "给一排天线依次加相位差，波束就转向；间距超过半个波长会出现栅瓣。",
+        "en": "Stepping the phase along a row of antennas steers the beam; spacing wider than half a wavelength produces grating lobes."
+      },
+      "aliases": {
+        "zh": [
+          "相控阵是什么",
+          "波束赋形",
+          "大规模天线 Massive MIMO 原理",
+          "栅瓣",
+          "相控阵雷达原理",
+          "星链天线怎么对准卫星"
+        ],
+        "en": [
+          "what is a phased array",
+          "beamforming",
+          "how massive MIMO steers beams",
+          "grating lobes",
+          "phased array radar",
+          "how Starlink dish tracks satellites"
+        ]
+      },
+      "anchor": "#ch11",
+      "relatedPages": [
+        "interference"
+      ]
+    },
+    {
+      "id": "em-frontier-2026",
+      "title": {
+        "zh": "电磁波技术的前沿（2026 年 11 月）",
+        "en": "The frontier of electromagnetic-wave technology (November 2026)"
+      },
+      "desc": {
+        "zh": "6G 频段与时间表、Wi-Fi 7、手机直连卫星、光纤与深空激光通信纪录、空芯光纤、太赫兹间隙、高数值孔径 EUV，按日期和来源列出。",
+        "en": "6G bands and timeline, Wi-Fi 7, direct-to-cell satellites, fibre and deep-space laser records, hollow-core fibre, the terahertz gap and high-NA EUV, dated and sourced."
+      },
+      "aliases": {
+        "zh": [
+          "6G 用什么频段",
+          "6G 什么时候商用",
+          "Wi-Fi 7 是什么",
+          "手机直连卫星",
+          "光纤传输纪录",
+          "空芯光纤",
+          "太赫兹通信",
+          "高数值孔径 EUV"
+        ],
+        "en": [
+          "6G bands",
+          "when is 6G",
+          "what is Wi-Fi 7",
+          "direct to cell satellite",
+          "optical fiber capacity record",
+          "hollow-core fiber",
+          "terahertz communication",
+          "high-NA EUV"
+        ]
+      },
+      "anchor": "#ch12",
+      "relatedPages": []
+    },
+    {
+      "id": "four-questions-for-a-link",
+      "title": {
+        "zh": "看一条无线或光链路时问的四件事",
+        "en": "Four questions to ask of any wireless or optical link"
+      },
+      "desc": {
+        "zh": "频率是多少、带宽是多少、链路预算平不平、口径是波长的多少倍。",
+        "en": "What frequency, what bandwidth, does the link budget close, and how many wavelengths across is the aperture."
+      },
+      "aliases": {
+        "zh": [
+          "怎么看懂 5G 新闻",
+          "怎么看无线通信的参数",
+          "频段和带宽怎么理解"
+        ],
+        "en": [
+          "how to read a wireless spec",
+          "how to judge a radio link",
+          "frequency vs bandwidth"
+        ]
+      },
+      "anchor": "#ch13",
+      "relatedPages": [
+        "inside-a-phone"
+      ]
+    }
+  ]
+}

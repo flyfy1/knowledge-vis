@@ -1,0 +1,59 @@
+{
+  "slug": "a-fair-price-for-a-bet",
+  "kind": "essay",
+  "category": "investment",
+  "subtopic": "derivatives",
+  "stage": "university",
+  "path": "investment/derivatives/a-fair-price-for-a-bet/",
+  "layout": "essay",
+  "scripts": [
+    "data.js",
+    "models.js",
+    "copy.zh.js",
+    "copy.en.js",
+    "app.js"
+  ],
+  "version": "20261118a",
+  "provenanceNote": {
+    "zh": "本文由 Claude Code 从零编写，直接用 Markdown 站点模板写成；英文稿待翻译；尚未经过独立评审。",
+    "en": "This essay was written from scratch with Claude Code, directly in the Markdown site template; the English copy is pending; not yet independently reviewed."
+  },
+  "languages": {
+    "en": "stub"
+  },
+  "dynamicKeys": {
+    "ch2.say": [
+      "call",
+      "put",
+      "protect",
+      "fiduciary",
+      "covered",
+      "straddle",
+      "synth"
+    ],
+    "ch7.say": [
+      "delta",
+      "gamma",
+      "vega",
+      "theta"
+    ],
+    "ch7.cv.y": [
+      "delta",
+      "gamma",
+      "vega",
+      "theta"
+    ],
+    "opt": [
+      "put",
+      "call"
+    ]
+  },
+  "generators": [
+    {
+      "run": "tools/diagrams.cjs",
+      "writes": [
+        "figures/dg-*.html"
+      ]
+    }
+  ]
+}

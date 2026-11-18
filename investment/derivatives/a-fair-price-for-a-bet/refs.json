@@ -1,0 +1,212 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "a-fair-price-for-a-bet",
+ "refs": [
+  {
+   "from": "hero.note",
+   "to": "compound-interest",
+   "anchor": null
+  },
+  {
+   "from": "hero.note",
+   "to": "expected-value",
+   "anchor": null
+  },
+  {
+   "from": "hero.note",
+   "to": "central-limit-theorem",
+   "anchor": null
+  },
+  {
+   "from": "ch1.p4",
+   "to": "exponents-logarithms",
+   "anchor": null
+  },
+  {
+   "from": "ch5.p2",
+   "to": "binomial-normal",
+   "anchor": null
+  },
+  {
+   "from": "ch5.p2",
+   "to": "central-limit-theorem",
+   "anchor": null
+  },
+  {
+   "from": "ch5.limit",
+   "to": "monte-carlo",
+   "anchor": null
+  },
+  {
+   "from": "ch6.p5",
+   "to": "derivative",
+   "anchor": null
+  },
+  {
+   "from": "ch8.p1",
+   "to": "interest-rates-bonds",
+   "anchor": null
+  },
+  {
+   "from": "ch8.p8",
+   "to": "diversification",
+   "anchor": null
+  },
+  {
+   "from": "ch12.links",
+   "to": "compound-interest",
+   "anchor": null
+  },
+  {
+   "from": "ch12.links",
+   "to": "expected-value",
+   "anchor": null
+  },
+  {
+   "from": "ch12.links",
+   "to": "binomial-normal",
+   "anchor": null
+  },
+  {
+   "from": "ch12.links",
+   "to": "central-limit-theorem",
+   "anchor": null
+  },
+  {
+   "from": "ch12.links",
+   "to": "monte-carlo",
+   "anchor": null
+  },
+  {
+   "from": "ch12.links",
+   "to": "risk-return",
+   "anchor": null
+  },
+  {
+   "from": "ch12.links",
+   "to": "diversification",
+   "anchor": null
+  },
+  {
+   "from": "ch12.links",
+   "to": "interest-rates-bonds",
+   "anchor": null
+  },
+  {
+   "from": "ch12.links",
+   "to": "where-a-mortgage-payment-goes",
+   "anchor": null
+  }
+ ],
+ "backlinks": [],
+ "related": [
+  "compound-interest",
+  "expected-value",
+  "binomial-normal",
+  "central-limit-theorem",
+  "monte-carlo",
+  "derivative",
+  "diversification",
+  "risk-return",
+  "interest-rates-bonds"
+ ],
+ "bindings": [
+  "ch1.F",
+  "ch1.gap",
+  "ch1.spot",
+  "ch1.fDec",
+  "ch1.fMar",
+  "ch2.C",
+  "ch2.P",
+  "ch2.cp",
+  "ch2.kf",
+  "ch3.delta",
+  "ch3.B",
+  "ch3.cost",
+  "ch3.price",
+  "ch3.naive80",
+  "ch3.naive30",
+  "ch3.q",
+  "ch4.n3",
+  "ch4.n50",
+  "ch4.n500",
+  "ch4.euPut",
+  "ch4.amPut",
+  "ch4.early",
+  "ch5.day",
+  "ch5.month",
+  "ch5.y4",
+  "ch6.Nd1",
+  "ch6.shares",
+  "ch6.loan",
+  "ch6.C",
+  "ch6.need60",
+  "ch6.need240",
+  "ch6.cnErr",
+  "ch7.delta",
+  "ch7.gamma",
+  "ch7.vega1",
+  "ch7.thetaDay",
+  "ch7.paths",
+  "ch7.sd4",
+  "ch7.sd52",
+  "ch7.sd252",
+  "ch7.rel252",
+  "ch7.loss30",
+  "ch7.gain10",
+  "ch8.atm",
+  "ch8.p90",
+  "ch8.ratio",
+  "ch8.n",
+  "ch8.from",
+  "ch8.to",
+  "ch8.sd",
+  "ch8.exp5",
+  "ch8.obs5",
+  "ch8.kurt",
+  "ch8.oct19",
+  "ch8.z87",
+  "ch8.log87",
+  "ch8.worstPct",
+  "ch8.acfRaw1",
+  "ch8.acfAbs1",
+  "ch8.acfAbs20",
+  "ch9.rho0",
+  "ch9.xi0",
+  "ch9.iv80",
+  "ch9.iv100",
+  "ch9.iv120",
+  "ch9.closed",
+  "ch9.won",
+  "ch9.gross",
+  "ch9.bil",
+  "ch9.ccp",
+  "ch10.cut90",
+  "ch10.cut70",
+  "f.bisNotional",
+  "f.bisGmv",
+  "f.gmvPct",
+  "f.bisYoy",
+  "f.irdShare",
+  "f.bisDecNotional",
+  "f.bisDecGmv",
+  "f.triIrd",
+  "f.fiaChg",
+  "f.fiaOptChg",
+  "f.fiaFutChg",
+  "f.zeroShare",
+  "f.mmGamma",
+  "f.retailLo",
+  "f.retailHi",
+  "f.sebiLoss",
+  "f.sebiLoss3",
+  "f.sebiWin5",
+  "f.sebiLose5",
+  "f.sebiBuyers",
+  "f.sofr",
+  "f.djia87",
+  "f.ltcmLev",
+  "f.ltcmAug",
+  "f.ltcmFirms"
+ ]
+}

@@ -1,0 +1,352 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "what-travels-through-empty-space",
+ "refs": [
+  {
+   "from": "hero.note",
+   "to": "electric-fields",
+   "anchor": null
+  },
+  {
+   "from": "hero.note",
+   "to": "magnets",
+   "anchor": null
+  },
+  {
+   "from": "hero.note",
+   "to": "magnetic-force",
+   "anchor": null
+  },
+  {
+   "from": "hero.note",
+   "to": "electromagnetic-induction",
+   "anchor": null
+  },
+  {
+   "from": "ch1.p1",
+   "to": "electric-fields",
+   "anchor": null
+  },
+  {
+   "from": "ch1.p1",
+   "to": "magnets",
+   "anchor": null
+  },
+  {
+   "from": "ch1.f2",
+   "to": "magnetic-force",
+   "anchor": null
+  },
+  {
+   "from": "ch2.l3",
+   "to": "electromagnetic-induction",
+   "anchor": null
+  },
+  {
+   "from": "ch3.p8",
+   "to": "relativity",
+   "anchor": null
+  },
+  {
+   "from": "ch4.p4",
+   "to": "interference",
+   "anchor": null
+  },
+  {
+   "from": "ch4.p5",
+   "to": "reflection-refraction",
+   "anchor": null
+  },
+  {
+   "from": "ch5.p4",
+   "to": "quantum-basics",
+   "anchor": null
+  },
+  {
+   "from": "ch5.p5",
+   "to": "standing-wave",
+   "anchor": null
+  },
+  {
+   "from": "ch5.p7",
+   "to": "why-the-sky-is-blue",
+   "anchor": "ch2"
+  },
+  {
+   "from": "ch7.p2",
+   "to": "photoelectric-effect",
+   "anchor": null
+  },
+  {
+   "from": "ch7.p7",
+   "to": "blackbody-radiation",
+   "anchor": null
+  },
+  {
+   "from": "ch7.p7",
+   "to": "why-the-planet-warms",
+   "anchor": "ch2"
+  },
+  {
+   "from": "ch9.p5",
+   "to": "fourier",
+   "anchor": null
+  },
+  {
+   "from": "ch9.p8",
+   "to": "exponents-logarithms",
+   "anchor": null
+  },
+  {
+   "from": "ch9.p9",
+   "to": "inside-a-phone",
+   "anchor": "gps"
+  },
+  {
+   "from": "ch9.p9",
+   "to": "inside-a-phone",
+   "anchor": "radio"
+  },
+  {
+   "from": "ch11.p2",
+   "to": "interference",
+   "anchor": null
+  },
+  {
+   "from": "ch11.p2",
+   "to": "double-slit",
+   "anchor": null
+  },
+  {
+   "from": "ch11.p4",
+   "to": "what-is-a-black-hole",
+   "anchor": null
+  },
+  {
+   "from": "ch13.links",
+   "to": "electric-fields",
+   "anchor": null
+  },
+  {
+   "from": "ch13.links",
+   "to": "magnets",
+   "anchor": null
+  },
+  {
+   "from": "ch13.links",
+   "to": "magnetic-force",
+   "anchor": null
+  },
+  {
+   "from": "ch13.links",
+   "to": "electromagnetic-induction",
+   "anchor": null
+  },
+  {
+   "from": "ch13.links",
+   "to": "reflection-refraction",
+   "anchor": null
+  },
+  {
+   "from": "ch13.links",
+   "to": "interference",
+   "anchor": null
+  },
+  {
+   "from": "ch13.links",
+   "to": "photoelectric-effect",
+   "anchor": null
+  },
+  {
+   "from": "ch13.links",
+   "to": "blackbody-radiation",
+   "anchor": null
+  },
+  {
+   "from": "ch13.links",
+   "to": "why-the-sky-is-blue",
+   "anchor": null
+  },
+  {
+   "from": "ch13.links",
+   "to": "why-the-planet-warms",
+   "anchor": null
+  },
+  {
+   "from": "ch13.links",
+   "to": "inside-a-phone",
+   "anchor": null
+  },
+  {
+   "from": "ch13.links",
+   "to": "relativity",
+   "anchor": null
+  }
+ ],
+ "backlinks": [],
+ "related": [
+  "electric-fields",
+  "magnets",
+  "magnetic-force",
+  "electromagnetic-induction",
+  "relativity",
+  "sound-waves",
+  "reflection-refraction",
+  "interference",
+  "why-the-sky-is-blue",
+  "quantum-basics",
+  "standing-wave",
+  "blackbody-radiation",
+  "photoelectric-effect",
+  "why-the-planet-warms",
+  "resonance",
+  "fourier",
+  "inside-a-phone",
+  "exponents-logarithms",
+  "double-slit",
+  "what-is-a-black-hole",
+  "lens"
+ ],
+ "bindings": [
+  "ch1.eps0",
+  "ch1.mu0",
+  "ch2.V",
+  "ch2.R",
+  "ch2.C",
+  "ch2.tau",
+  "ch2.I0",
+  "ch2.B0",
+  "ch3.c",
+  "ch3.cCalc",
+  "ch3.v05",
+  "ch3.err05",
+  "ch3.blow",
+  "ch3.cells",
+  "ch3.width",
+  "ch4.Rglass",
+  "ch4.RglassSim",
+  "ch4.Rwater",
+  "ch4.Rdiamond",
+  "dg.if.r",
+  "dg.if.rabs",
+  "dg.if.t",
+  "dg.if.R",
+  "dg.if.T",
+  "ch5.atom",
+  "ch5.Dhalf",
+  "ch5.dBi",
+  "ch5.R",
+  "ch5.fmHalf",
+  "ch5.wifiHalf",
+  "ch6.I",
+  "ch6.Erms",
+  "ch6.Bpk",
+  "ch6.p",
+  "ch6.sail",
+  "ch6.mars",
+  "ch6.jup",
+  "ch6.voy",
+  "ch6.p3",
+  "ch6.p9",
+  "dg.pol.i0",
+  "dg.pol.i1",
+  "dg.pol.i2",
+  "dg.pol.i3",
+  "ch7.ionLam",
+  "ch7.ovenEv",
+  "ch7.ionRatio",
+  "ch7.body",
+  "ch7.fPeak",
+  "ch7.depth",
+  "ch7.depthPeak",
+  "ch7.e2oven",
+  "ch7.e2peak",
+  "ch7.sarW",
+  "ch7.sarI",
+  "ch7.sarF",
+  "ch8.g2",
+  "ch8.g28",
+  "ch8.g60",
+  "ch8.t60",
+  "ch8.g94",
+  "ch8.g140",
+  "ch8.g300",
+  "ch8.z60",
+  "ch8.z10",
+  "ch8.z10pct",
+  "ch9.bits4096",
+  "ch9.fmBw",
+  "ch9.dbl",
+  "ch9.wifiFs",
+  "ch9.gpsFs",
+  "ch9.voyFs",
+  "ch9.voyMinusWifi",
+  "ch9.voyGt",
+  "ch9.voyGr",
+  "ch9.voyGain",
+  "ch9.voyPr",
+  "ch9.voyPt",
+  "dg.fib.n1",
+  "dg.fib.n2",
+  "dg.fib.crit",
+  "dg.fib.acc",
+  "ch10.crit",
+  "ch10.acc",
+  "ch10.vfrac",
+  "ch10.us",
+  "ch10.minLam",
+  "ch10.a850",
+  "ch10.a1310",
+  "ch10.a1550",
+  "ch10.half",
+  "ch10.fr80",
+  "ch10.db80",
+  "ch10.hollow",
+  "ch11.k",
+  "ch11.eye",
+  "ch11.hubble",
+  "ch11.eht",
+  "ch11.euvR",
+  "ch11.k1",
+  "ch11.w0",
+  "ch11.w30",
+  "ch11.half28",
+  "fr.fr1",
+  "fr.fr2",
+  "fr.wrc1",
+  "fr.wrc2",
+  "fr.wrc3",
+  "fr.wifi7Bw",
+  "fr.wifi7Qam",
+  "fr.wifi8Year",
+  "fr.smfYear",
+  "fr.smfKm",
+  "fr.smfTb",
+  "fr.smfThz",
+  "fr.mcfYear",
+  "fr.mcfClad",
+  "fr.mcfCores",
+  "fr.mcfPb",
+  "fr.mcfKm",
+  "fr.hollowYear",
+  "fr.hollowDb",
+  "fr.hollowThz",
+  "fr.thzYear",
+  "fr.thzBand1",
+  "fr.thzBand2",
+  "fr.thzM",
+  "fr.thzGb",
+  "fr.dsocPeakKm",
+  "fr.dsocMbps",
+  "fr.dsocFarKm",
+  "fr.dsocPasses",
+  "fr.dsocTb",
+  "fr.d2cSats",
+  "fr.euvLam",
+  "fr.euvNa",
+  "fr.euvNaLow",
+  "fr.euvRes",
+  "fr.lclsGeV",
+  "fr.voyAu"
+ ]
+}
