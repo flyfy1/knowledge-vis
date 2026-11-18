@@ -532,8 +532,8 @@ window.ESSAY_COPY.zh = {
   "site.bl.6": "<a href=\"../how-usb-drives-talk/\">移动硬盘为什么跑不满</a>：<a href=\"../how-usb-drives-talk/#ch6\">该文第 6 章</a> → <a href=\"#ch3\">本页第 3 章</a>；<a href=\"../how-usb-drives-talk/#ch11\">该文第 11 章</a> → <a href=\"#ch3\">本页第 3 章</a>",
   "site.bl.7": "<a href=\"../what-a-drive-is-made-of/\">硬盘里到底是什么</a>：<a href=\"../what-a-drive-is-made-of/#ch7\">该文第 7 章</a>",
   "site.rel.title": "相关页面",
-  "site.rel.1": "<a href=\"../tcp-congestion/\">网络流 · 一封消息的旅程</a>",
+  "site.rel.1": "<a href=\"../../../variants/claude-code/tcp-congestion/\">网络流 · 一封消息的旅程</a>",
   "site.rel.2": "<a href=\"../why-nvme-is-fast/\">NVMe 为什么这么快</a>",
-  "site.rel.3": "<a href=\"../distributed-systems/\">分布式系统 · 多个副本如何像一个值</a>",
+  "site.rel.3": "<a href=\"../../../variants/claude-code/distributed-systems/\">分布式系统 · 多个副本如何像一个值</a>",
   "site.rel.4": "<a href=\"../why-compute-waits-for-memory/\">为什么计算一直在等内存</a>"
 };

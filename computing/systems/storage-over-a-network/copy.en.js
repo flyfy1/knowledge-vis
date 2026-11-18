@@ -532,8 +532,8 @@ window.ESSAY_COPY.en = {
   "site.bl.6": "<a href=\"../how-usb-drives-talk/\">Why a USB Drive Never Hits Its Label</a>: <a href=\"../how-usb-drives-talk/#ch6\">its chapter 6</a> → <a href=\"#ch3\">this page chapter 3</a>; <a href=\"../how-usb-drives-talk/#ch11\">its chapter 11</a> → <a href=\"#ch3\">this page chapter 3</a>",
   "site.bl.7": "<a href=\"../what-a-drive-is-made-of/\">What a Drive Is Made Of</a>: <a href=\"../what-a-drive-is-made-of/#ch7\">its chapter 7</a>",
   "site.rel.title": "Related pages",
-  "site.rel.1": "<a href=\"../tcp-congestion/\">Network Flow · A Message’s Journey</a>",
+  "site.rel.1": "<a href=\"../../../variants/claude-code/tcp-congestion/\">Network Flow · A Message’s Journey</a>",
   "site.rel.2": "<a href=\"../why-nvme-is-fast/\">Why NVMe Is So Fast</a>",
-  "site.rel.3": "<a href=\"../distributed-systems/\">Distributed Systems · How Replicas Behave Like One Value</a>",
+  "site.rel.3": "<a href=\"../../../variants/claude-code/distributed-systems/\">Distributed Systems · How Replicas Behave Like One Value</a>",
   "site.rel.4": "<a href=\"../why-compute-waits-for-memory/\">Why Compute Waits for Memory</a>"
 };

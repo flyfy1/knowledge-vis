@@ -174,7 +174,7 @@
 </style>
 
 <link rel="stylesheet" href="../../../page-provenance.css">
-<link rel="stylesheet" href="../../../site-nav.css?v=sn-20261116c">
+<link rel="stylesheet" href="../../../site-nav.css?v=sn-20261119a">
 </head>
 <body>
 <div class="topbar">
@@ -309,8 +309,8 @@
     <div class="num">04</div>
     <h2 data-i18n="ch4.title">闪存单元：一个电压窗口分成几层</h2>
     <p class="law" data-i18n-html="ch4.law">闪存的一个格子只存一样东西：关在里面的电子多少。每格存 n 位，就要把同一个电压窗口分成 2ⁿ 层；层越多，层与层之间的空隙越窄，读错的机会越大。</p>
-    <p data-i18n-html="ch4.p1">一个闪存单元是一个晶体管，在控制它开关的栅极下面多了一层能关住电子的材料（早期是浮栅，现在多是电荷俘获层）。写入时用高电压让电子<a href="../../../physics/modern/quantum-tunneling/">隧穿</a>进去；关进去的电子越多，要让这个晶体管导通所需的电压就越高。这个电压叫<strong>阈值电压</strong>。读的时候，主控给栅极加一个参考电压，看它通不通，就知道阈值电压在参考电压的哪一边。</p>
-    <p data-i18n-html="ch4.p2">只分“多”和“少”两层，一格存 1 位，叫 SLC。分 4 层存 2 位（MLC），8 层存 3 位（TLC），16 层存 4 位（QLC），32 层存 5 位（PLC）。问题在于写不准：同一层的成千上万个单元，阈值电压不会完全一样，而是散成一个钟形分布（<a href="../../../probability/basics/binomial-normal/">正态分布</a>）。两层的钟形一旦重叠，落在重叠区的单元就会被读成邻居。</p>
+    <p data-i18n-html="ch4.p1">一个闪存单元是一个晶体管，在控制它开关的栅极下面多了一层能关住电子的材料（早期是浮栅，现在多是电荷俘获层）。写入时用高电压让电子<a href="../../../variants/claude-code/quantum-tunneling/">隧穿</a>进去；关进去的电子越多，要让这个晶体管导通所需的电压就越高。这个电压叫<strong>阈值电压</strong>。读的时候，主控给栅极加一个参考电压，看它通不通，就知道阈值电压在参考电压的哪一边。</p>
+    <p data-i18n-html="ch4.p2">只分“多”和“少”两层，一格存 1 位，叫 SLC。分 4 层存 2 位（MLC），8 层存 3 位（TLC），16 层存 4 位（QLC），32 层存 5 位（PLC）。问题在于写不准：同一层的成千上万个单元，阈值电压不会完全一样，而是散成一个钟形分布（<a href="../../../variants/claude-code/binomial-normal/">正态分布</a>）。两层的钟形一旦重叠，落在重叠区的单元就会被读成邻居。</p>
     <figure class="dia" data-dg="cell"><div class="svg"></div><figcaption data-i18n-html="dg.cell.cap">图 5　一个闪存单元的剖面（示意，不按比例）。它就是一个晶体管，只是栅极下面多了一层能关住电子的材料。关进去的电子越多，要让沟道导通所需的栅极电压（阈值电压）越高；读的时候就是看这个电压落在哪一层。</figcaption></figure>
   </div>
   <div class="wide"><figure class="lab">
@@ -497,7 +497,7 @@
       <li data-i18n-html="ch10.q3"><strong>你的读写是小而散，还是大而连续？</strong>小而散看延迟（机械盘输上百倍），大而连续看带宽（差距只有几倍到几十倍）；分界线大约是延迟乘以带宽（第八章）。写得多，再看 TBW 或 DWPD，它们来自擦写次数 ×（1 + 预留空间）÷ 写放大（第五、六章）。</li>
     </ol>
     <div class="sum" data-i18n-html="ch10.sum">电脑把硬盘看成<em>一排编了号的格子</em>，所以它能用同一套办法读两种完全不同的东西。机械盘的<em>慢</em>在等磁头移动和盘片转动；它的密度靠把磁道叠起来、靠激光加热往前推，代价是改写变难。固态盘的<em>快</em>在没有机械运动；它的<em>坏</em>在每格里越来越窄的电压层和每次擦写留下的损伤，靠纠错码撑着；它的<em>不能原地改写</em>由一张地址表藏起来。接口的名字只是把这些东西接到电脑上的五层约定。</div>
-    <p style="margin-top:2em" data-i18n-html="ch10.links">相关页面：<a href="../why-nvme-is-fast/">NVMe 为什么这么快</a> · <a href="../why-compute-waits-for-memory/">为什么计算一直在等内存</a> · <a href="../switches-that-compute/">一堆开关是怎么学会算数的</a> · <a href="../../../physics/modern/quantum-tunneling/">量子隧穿</a> · <a href="../../../probability/basics/binomial-normal/">二项分布到正态</a> · <a href="../../../tech/devices/inside-a-phone/">一部手机里的十个道理</a></p>
+    <p style="margin-top:2em" data-i18n-html="ch10.links">相关页面：<a href="../why-nvme-is-fast/">NVMe 为什么这么快</a> · <a href="../why-compute-waits-for-memory/">为什么计算一直在等内存</a> · <a href="../switches-that-compute/">一堆开关是怎么学会算数的</a> · <a href="../../../variants/claude-code/quantum-tunneling/">量子隧穿</a> · <a href="../../../variants/claude-code/binomial-normal/">二项分布到正态</a> · <a href="../../../tech/devices/inside-a-phone/">一部手机里的十个道理</a></p>
   </div>
 </section>
 
@@ -519,8 +519,8 @@
     <h2 data-i18n="site.rel.title">相关页面</h2>
     <ul class="xref-list">
       <li data-i18n-html="site.rel.1"><a href="../why-nvme-is-fast/">NVMe 为什么这么快</a></li>
-      <li data-i18n-html="site.rel.2"><a href="../../../physics/modern/quantum-tunneling/">量子隧穿 · 穿墙的是概率，不是子弹</a></li>
-      <li data-i18n-html="site.rel.3"><a href="../../../probability/basics/binomial-normal/">二项分布到正态 · 钉板上长出的钟形</a></li>
+      <li data-i18n-html="site.rel.2"><a href="../../../variants/claude-code/quantum-tunneling/">量子隧穿 · 穿墙的是概率，不是子弹</a></li>
+      <li data-i18n-html="site.rel.3"><a href="../../../variants/claude-code/binomial-normal/">二项分布到正态 · 钉板上长出的钟形</a></li>
       <li data-i18n-html="site.rel.4"><a href="../../../tech/devices/inside-a-phone/">一部手机里的十个道理</a></li>
       <li data-i18n-html="site.rel.5"><a href="../why-compute-waits-for-memory/">为什么计算一直在等内存</a></li>
     </ul>
@@ -534,6 +534,6 @@
 <script src="copy.zh.js?v=20261116c"></script>
 <script src="copy.en.js?v=20261116c" onerror="void 0"></script>
 <script src="app.js?v=20261116c"></script>
-<script defer src="../../../site-nav.js?v=sn-20261116c"></script>
+<script defer src="../../../site-nav.js?v=sn-20261119a"></script>
 </body>
 </html>
