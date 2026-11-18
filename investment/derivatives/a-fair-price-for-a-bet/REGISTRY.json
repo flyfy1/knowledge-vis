@@ -1,0 +1,528 @@
+{
+  "slug": "a-fair-price-for-a-bet",
+  "path": "investment/derivatives/a-fair-price-for-a-bet/",
+  "category": "investment",
+  "subtopic": "derivatives",
+  "stage": "university",
+  "title": {
+    "zh": "对未来的一个赌注，怎么可能有“公道价”",
+    "en": "How Can a Bet on the Future Have a Fair Price?"
+  },
+  "desc": {
+    "zh": "没人知道一年后的股价，期权却每天有成千上万笔按差不多的价格成交。这篇从“远期价不是预测”讲起，一步步走到二叉树、几何布朗运动、布莱克–斯科尔斯公式和它的偏微分方程、希腊字母与对冲，再看它在哪里失灵：波动率微笑、肥尾、保证金与清算，最后是 2026 年 11 月的市场现状。十三个可以动手的模型，只讲数学和市场结构，不是投资建议。",
+    "en": "Nobody knows next year's share price, yet options on it trade thousands of times a day at nearly the same price. This essay starts from \"a forward price is not a forecast\" and climbs through the binomial tree, geometric Brownian motion, the Black–Scholes formula and its partial differential equation, the Greeks and hedging, then shows where it fails: the volatility smile, fat tails, margin and clearing, and the state of the market in November 2026. Thirteen hands-on models. Mathematics and market structure only; not investment advice."
+  },
+  "tags": [
+    {
+      "zh": "期权定价",
+      "en": "Option Pricing"
+    },
+    {
+      "zh": "布莱克–斯科尔斯",
+      "en": "Black–Scholes"
+    },
+    {
+      "zh": "衍生品",
+      "en": "Derivatives"
+    },
+    {
+      "zh": "长文",
+      "en": "Long-form Essay"
+    }
+  ],
+  "relatedPages": [
+    "compound-interest",
+    "expected-value",
+    "binomial-normal",
+    "central-limit-theorem",
+    "monte-carlo",
+    "risk-return",
+    "diversification",
+    "interest-rates-bonds",
+    "where-a-mortgage-payment-goes"
+  ],
+  "concepts": [
+    {
+      "id": "forward-price-cost-of-carry",
+      "title": {
+        "zh": "远期价格与持有成本",
+        "en": "Forward price and cost of carry"
+      },
+      "desc": {
+        "zh": "远期价格等于现货价加上持有到期的净成本 F = S·e^((r−q)T)，与任何人对未来的预测无关；偏离它就有无风险套利。",
+        "en": "A forward price is the spot price plus the net cost of carrying the asset, F = S·e^((r−q)T), whatever anyone forecasts; any other price allows a riskless arbitrage."
+      },
+      "anchor": "#ch1",
+      "aliases": {
+        "zh": [
+          "远期合约",
+          "期货价格怎么定",
+          "远期价格",
+          "持有成本",
+          "期现套利",
+          "无风险套利",
+          "套利是什么",
+          "期货和远期的区别",
+          "期货价格是不是对未来的预测",
+          "升水 贴水",
+          "衍生品是什么"
+        ],
+        "en": [
+          "forward contract",
+          "forward price",
+          "futures price",
+          "cost of carry",
+          "cash and carry arbitrage",
+          "arbitrage",
+          "what is arbitrage",
+          "is the futures price a forecast",
+          "contango backwardation",
+          "what is a derivative"
+        ]
+      },
+      "relatedPages": [
+        "compound-interest"
+      ]
+    },
+    {
+      "id": "option-payoffs-put-call-parity",
+      "title": {
+        "zh": "期权收益与看涨–看跌平价",
+        "en": "Option payoffs and put–call parity"
+      },
+      "desc": {
+        "zh": "看涨和看跌期权的到期收益是折线，可以相加；股票加看跌等于看涨加存款，所以 C − P = S − K·e^(−rT)。",
+        "en": "Call and put payoffs are kinked lines that add up; a share plus a put equals a call plus a deposit, so C − P = S − K·e^(−rT)."
+      },
+      "anchor": "#ch2",
+      "aliases": {
+        "zh": [
+          "期权是什么",
+          "看涨期权",
+          "看跌期权",
+          "行权价",
+          "权利金",
+          "认购 认沽",
+          "期权收益图",
+          "看涨看跌平价",
+          "平价公式",
+          "保护性看跌",
+          "备兑开仓",
+          "跨式组合",
+          "买期权最多亏多少"
+        ],
+        "en": [
+          "what is an option",
+          "call option",
+          "put option",
+          "strike price",
+          "option premium",
+          "payoff diagram",
+          "put-call parity",
+          "protective put",
+          "covered call",
+          "straddle",
+          "synthetic forward"
+        ]
+      }
+    },
+    {
+      "id": "binomial-replication-risk-neutral",
+      "title": {
+        "zh": "一步二叉树：复制与风险中性概率",
+        "en": "One-step binomial: replication and risk-neutral probability"
+      },
+      "desc": {
+        "zh": "股价只有涨跌两种结果时，若干股股票加一笔借款能复制期权，期权价格等于复制成本，与真实的上涨概率无关。",
+        "en": "When the share can only go up or down, some shares plus a loan replicate the option; its price is the cost of that portfolio and does not depend on the real probability of a rise."
+      },
+      "anchor": "#ch3",
+      "aliases": {
+        "zh": [
+          "期权怎么定价",
+          "复制组合",
+          "对冲比率",
+          "风险中性概率",
+          "风险中性定价",
+          "为什么期权价格和涨跌概率无关",
+          "无套利定价",
+          "一步二叉树"
+        ],
+        "en": [
+          "how are options priced",
+          "replicating portfolio",
+          "hedge ratio",
+          "risk-neutral probability",
+          "risk-neutral pricing",
+          "why option price does not depend on probability",
+          "no-arbitrage pricing",
+          "one-step binomial model"
+        ]
+      },
+      "relatedPages": [
+        "expected-value"
+      ]
+    },
+    {
+      "id": "crr-binomial-tree",
+      "title": {
+        "zh": "CRR 二叉树与美式期权",
+        "en": "The CRR binomial tree and American options"
+      },
+      "desc": {
+        "zh": "把时间切成很多步，从到期收益逐层往回算；每个结点比较继续持有和立即行权，就能给美式期权定价；步数增加时收敛到布莱克–斯科尔斯。",
+        "en": "Cut time into many steps and work back from the payoff; comparing holding with exercising at each node prices American options; the price converges to Black–Scholes as steps increase."
+      },
+      "anchor": "#ch4",
+      "aliases": {
+        "zh": [
+          "二叉树定价",
+          "二叉树模型",
+          "CRR 模型",
+          "逆向归纳",
+          "美式期权",
+          "欧式期权",
+          "美式和欧式期权的区别",
+          "提前行权",
+          "美式期权怎么定价",
+          "二叉树为什么收敛到布莱克斯科尔斯"
+        ],
+        "en": [
+          "binomial tree",
+          "binomial option pricing",
+          "Cox Ross Rubinstein",
+          "CRR model",
+          "backward induction",
+          "American option",
+          "European option",
+          "early exercise",
+          "how to price an American option"
+        ]
+      }
+    },
+    {
+      "id": "geometric-brownian-motion",
+      "title": {
+        "zh": "几何布朗运动与波动率",
+        "en": "Geometric Brownian motion and volatility"
+      },
+      "desc": {
+        "zh": "股价的对数回报近似正态，标准差随时间的平方根增长；波动率 σ 是一年对数回报的标准差。",
+        "en": "Log returns are roughly normal with a standard deviation growing as the square root of time; volatility σ is the standard deviation of a year's log return."
+      },
+      "anchor": "#ch5",
+      "aliases": {
+        "zh": [
+          "几何布朗运动",
+          "布朗运动",
+          "随机游走",
+          "股价随机游走",
+          "波动率是什么",
+          "年化波动率",
+          "对数正态分布",
+          "根号时间法则",
+          "股价怎么模拟"
+        ],
+        "en": [
+          "geometric Brownian motion",
+          "Brownian motion",
+          "random walk",
+          "what is volatility",
+          "annualised volatility",
+          "lognormal distribution",
+          "square root of time rule",
+          "GBM"
+        ]
+      },
+      "relatedPages": [
+        "binomial-normal",
+        "central-limit-theorem",
+        "monte-carlo"
+      ]
+    },
+    {
+      "id": "black-scholes-formula-pde",
+      "title": {
+        "zh": "布莱克–斯科尔斯公式与方程",
+        "en": "The Black–Scholes formula and equation"
+      },
+      "desc": {
+        "zh": "C = S·N(d₁) − K·e^(−rT)·N(d₂)：持有 N(d₁) 股股票、借一笔钱的成本；它也是一个与热传导方程同类的偏微分方程的解，可以用有限差分求解。",
+        "en": "C = S·N(d₁) − K·e^(−rT)·N(d₂): the cost of holding N(d₁) shares against a loan; it also solves a partial differential equation of the heat-equation family, which finite differences can solve."
+      },
+      "anchor": "#ch6",
+      "aliases": {
+        "zh": [
+          "布莱克斯科尔斯公式",
+          "BS 公式",
+          "BSM 模型",
+          "期权定价公式",
+          "布莱克斯科尔斯方程",
+          "有限差分法",
+          "克兰克尼科尔森",
+          "d1 d2 是什么意思",
+          "期权定价为什么不用预期收益率"
+        ],
+        "en": [
+          "Black-Scholes formula",
+          "Black Scholes",
+          "BSM model",
+          "option pricing formula",
+          "Black-Scholes equation",
+          "Black-Scholes PDE",
+          "finite difference method",
+          "Crank-Nicolson",
+          "what are d1 and d2"
+        ]
+      },
+      "relatedPages": [
+        "derivative"
+      ]
+    },
+    {
+      "id": "greeks-delta-hedging",
+      "title": {
+        "zh": "希腊字母与 Delta 对冲",
+        "en": "The Greeks and delta hedging"
+      },
+      "desc": {
+        "zh": "Delta、Gamma、Vega、Theta 是期权价值对股价、波动率和时间的敏感度；卖方按 Delta 持股并不断调整，盈亏只取决于真实波动率与定价波动率之差。",
+        "en": "Delta, gamma, vega and theta are the option's sensitivities to price, volatility and time; a seller who holds delta shares and rebalances ends with a P&L that depends only on realised against priced volatility."
+      },
+      "anchor": "#ch7",
+      "aliases": {
+        "zh": [
+          "希腊字母",
+          "Delta 是什么",
+          "Gamma 是什么",
+          "Vega 是什么",
+          "Theta 是什么",
+          "时间价值衰减",
+          "Delta 对冲",
+          "动态对冲",
+          "对冲是什么意思",
+          "期权交易的是波动率",
+          "做市商怎么对冲"
+        ],
+        "en": [
+          "the Greeks",
+          "option Greeks",
+          "what is delta",
+          "what is gamma",
+          "what is vega",
+          "what is theta",
+          "time decay",
+          "delta hedging",
+          "dynamic hedging",
+          "trading volatility",
+          "how do market makers hedge"
+        ]
+      }
+    },
+    {
+      "id": "implied-volatility-smile-fat-tails",
+      "title": {
+        "zh": "隐含波动率、微笑与肥尾",
+        "en": "Implied volatility, the smile and fat tails"
+      },
+      "desc": {
+        "zh": "把市场价代回公式倒推出的波动率随行权价变化（微笑、偏斜），因为真实回报的大跌远比正态分布多，且波动会聚集。",
+        "en": "The volatility implied by market prices varies with strike (the smile, the skew), because large falls are far more common than the normal curve allows and volatility clusters."
+      },
+      "anchor": "#ch8",
+      "aliases": {
+        "zh": [
+          "隐含波动率",
+          "波动率微笑",
+          "波动率偏斜",
+          "VIX 是什么",
+          "恐慌指数",
+          "肥尾",
+          "厚尾",
+          "黑天鹅",
+          "波动率聚集",
+          "1987 年股灾",
+          "长期资本管理公司",
+          "LTCM",
+          "布莱克斯科尔斯模型的缺陷"
+        ],
+        "en": [
+          "implied volatility",
+          "volatility smile",
+          "volatility skew",
+          "what is the VIX",
+          "fat tails",
+          "black swan",
+          "volatility clustering",
+          "1987 crash",
+          "Black Monday",
+          "Long-Term Capital Management",
+          "limits of Black-Scholes"
+        ]
+      },
+      "relatedPages": [
+        "diversification"
+      ]
+    },
+    {
+      "id": "heston-stochastic-volatility",
+      "title": {
+        "zh": "赫斯顿随机波动率模型",
+        "en": "The Heston stochastic volatility model"
+      },
+      "desc": {
+        "zh": "让方差自己随机变动并与股价负相关，蒙特卡洛算出的期权价格就带有偏斜。",
+        "en": "Let the variance move randomly and correlate negatively with the share price, and Monte Carlo prices show a skew."
+      },
+      "anchor": "#ch9",
+      "aliases": {
+        "zh": [
+          "赫斯顿模型",
+          "随机波动率",
+          "波动率的波动率",
+          "局部波动率",
+          "模型校准",
+          "蒙特卡洛定价",
+          "波动率偏斜是怎么来的",
+          "为什么低行权价的期权更贵"
+        ],
+        "en": [
+          "Heston model",
+          "stochastic volatility",
+          "vol of vol",
+          "local volatility",
+          "model calibration",
+          "Monte Carlo option pricing",
+          "why is there a volatility skew"
+        ]
+      },
+      "relatedPages": [
+        "monte-carlo"
+      ]
+    },
+    {
+      "id": "margin-leverage-central-clearing",
+      "title": {
+        "zh": "保证金、杠杆与中央清算",
+        "en": "Margin, leverage and central clearing"
+      },
+      "desc": {
+        "zh": "期货每天按市价结清盈亏，保证金不足就被强平；清算所插在所有交易中间，把欠款多边轧差，也把风险集中到自己身上。",
+        "en": "Futures settle gains and losses daily and close out an account short of margin; a clearing house stands between all trades, nets what is owed and concentrates the risk in itself."
+      },
+      "anchor": "#ch9",
+      "aliases": {
+        "zh": [
+          "保证金",
+          "追加保证金",
+          "爆仓",
+          "强行平仓",
+          "杠杆是什么",
+          "逐日盯市",
+          "中央对手方",
+          "清算所",
+          "对手方风险",
+          "多边净额结算",
+          "为什么看对了方向还会亏"
+        ],
+        "en": [
+          "margin",
+          "margin call",
+          "liquidation",
+          "what is leverage",
+          "mark to market",
+          "central counterparty",
+          "CCP",
+          "clearing house",
+          "counterparty risk",
+          "multilateral netting",
+          "initial margin",
+          "variation margin"
+        ]
+      }
+    },
+    {
+      "id": "hedging-basis-risk-notional",
+      "title": {
+        "zh": "套期保值、基差风险与名义本金",
+        "en": "Hedging, basis risk and notional amounts"
+      },
+      "desc": {
+        "zh": "对冲能去掉多少风险取决于期货与现货的相关性，最优比例 h* = ρσs/σf；名义本金远大于真正换手的总市值；监管数据显示绝大多数个人衍生品交易者是亏的。",
+        "en": "How much risk a hedge removes depends on the correlation between futures and spot, with best ratio h* = ρσs/σf; notional amounts dwarf the gross market value that changes hands; regulator data show most individual derivatives traders lose."
+      },
+      "anchor": "#ch10",
+      "aliases": {
+        "zh": [
+          "套期保值",
+          "套保",
+          "基差风险",
+          "最优对冲比例",
+          "最小方差对冲",
+          "对冲和投机的区别",
+          "名义本金",
+          "衍生品市场有多大",
+          "散户做期权赚钱吗",
+          "利率互换"
+        ],
+        "en": [
+          "hedging",
+          "basis risk",
+          "optimal hedge ratio",
+          "minimum variance hedge",
+          "hedging vs speculation",
+          "notional amount",
+          "gross market value",
+          "how big is the derivatives market",
+          "do retail option traders make money",
+          "interest rate swap"
+        ]
+      },
+      "relatedPages": [
+        "risk-return",
+        "diversification"
+      ]
+    },
+    {
+      "id": "derivatives-frontier-2026",
+      "title": {
+        "zh": "衍生品市场的前沿（2026 年 11 月）",
+        "en": "The frontier of derivatives markets (November 2026)"
+      },
+      "desc": {
+        "zh": "当日到期期权、永续合约的资金费率、国债集中清算、LIBOR 换成 SOFR、深度对冲：每条事实带日期，分成已确立、已测量或演示、仍在争论。",
+        "en": "Zero-day options, perpetual futures and funding rates, Treasury clearing, LIBOR to SOFR, deep hedging: each fact dated and sorted into established, measured or demonstrated, and contested."
+      },
+      "anchor": "#ch11",
+      "aliases": {
+        "zh": [
+          "末日期权",
+          "0DTE",
+          "当日到期期权",
+          "永续合约",
+          "资金费率",
+          "SOFR",
+          "LIBOR 退出",
+          "国债清算",
+          "深度对冲",
+          "场外衍生品规模",
+          "末日期权是什么",
+          "永续合约为什么没有到期日"
+        ],
+        "en": [
+          "zero-day options",
+          "perpetual futures",
+          "funding rate",
+          "LIBOR transition",
+          "Treasury clearing",
+          "deep hedging",
+          "OTC derivatives statistics",
+          "what is a perpetual future"
+        ]
+      },
+      "relatedPages": [
+        "interest-rates-bonds"
+      ]
+    }
+  ]
+}
