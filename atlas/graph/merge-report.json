@@ -1,11 +1,11 @@
 {
   "counts": {
     "groups": 11,
-    "nodes": 775,
+    "nodes": 783,
     "edges": 921,
     "trails": 14,
     "questions": 124,
-    "fragments": 223
+    "fragments": 224
   },
   "conflicts": [],
   "suspendedEdges": [],
@@ -1493,6 +1493,166 @@
         "flash-drive-sd-card-speed",
         "usb-storage-frontier-2026",
         "reading-usb-speed-labels"
+      ]
+    },
+    {
+      "concept": "hybrid-encrypted-container",
+      "page": "a-secret-in-public",
+      "taughtBy": [
+        "key-distribution-problem",
+        "modular-arithmetic-finite-fields",
+        "one-way-function-discrete-log",
+        "diffie-hellman-key-exchange",
+        "rsa-signatures-padding",
+        "elliptic-curve-cryptography",
+        "certificates-chain-of-trust",
+        "bits-of-security",
+        "quantum-threat-shor-grover",
+        "lattices-lwe-ml-kem",
+        "post-quantum-frontier-2026"
+      ]
+    },
+    {
+      "concept": "xor-involution",
+      "page": "switches-that-compute",
+      "taughtBy": [
+        "relay-logic-gates",
+        "nand-universality",
+        "binary-numbers",
+        "ripple-carry-adder",
+        "twos-complement-overflow",
+        "latch-metastability",
+        "clock-counter",
+        "mux-alu",
+        "stored-program-machine",
+        "floating-point-rounding",
+        "real-processor-scale"
+      ]
+    },
+    {
+      "concept": "ecb-vs-cbc-fingerprint",
+      "page": "a-secret-in-public",
+      "taughtBy": [
+        "key-distribution-problem",
+        "modular-arithmetic-finite-fields",
+        "one-way-function-discrete-log",
+        "diffie-hellman-key-exchange",
+        "rsa-signatures-padding",
+        "elliptic-curve-cryptography",
+        "certificates-chain-of-trust",
+        "bits-of-security",
+        "quantum-threat-shor-grover",
+        "lattices-lwe-ml-kem",
+        "post-quantum-frontier-2026"
+      ]
+    },
+    {
+      "concept": "known-plaintext-oracle",
+      "page": "a-secret-in-public",
+      "taughtBy": [
+        "key-distribution-problem",
+        "modular-arithmetic-finite-fields",
+        "one-way-function-discrete-log",
+        "diffie-hellman-key-exchange",
+        "rsa-signatures-padding",
+        "elliptic-curve-cryptography",
+        "certificates-chain-of-trust",
+        "bits-of-security",
+        "quantum-threat-shor-grover",
+        "lattices-lwe-ml-kem",
+        "post-quantum-frontier-2026"
+      ]
+    },
+    {
+      "concept": "ephemeral-memory-window",
+      "page": "how-virtual-memory-works",
+      "taughtBy": [
+        "why-virtual-addresses",
+        "pages-and-flat-tables",
+        "x86-64-page-walk",
+        "tlb-and-reach",
+        "page-walk-cost",
+        "huge-pages",
+        "page-faults",
+        "page-replacement",
+        "fork-copy-on-write",
+        "context-switch-tlb",
+        "nested-paging",
+        "vm-frontier",
+        "vm-checklist"
+      ]
+    },
+    {
+      "concept": "arm64-calling-convention",
+      "page": "how-a-cpu-runs-a-program",
+      "taughtBy": [
+        "isa-contract",
+        "riscv-instruction-formats",
+        "compile-a-loop",
+        "single-cycle-datapath",
+        "clock-set-by-slowest",
+        "five-stage-pipeline",
+        "data-hazard-forwarding",
+        "control-hazard",
+        "iron-law-of-performance",
+        "cisc-risc-micro-ops",
+        "isa-frontier-2026",
+        "reading-code-speed"
+      ]
+    },
+    {
+      "concept": "arm64-adrp-aslr",
+      "page": "how-virtual-memory-works",
+      "taughtBy": [
+        "why-virtual-addresses",
+        "pages-and-flat-tables",
+        "x86-64-page-walk",
+        "tlb-and-reach",
+        "page-walk-cost",
+        "huge-pages",
+        "page-faults",
+        "page-replacement",
+        "fork-copy-on-write",
+        "context-switch-tlb",
+        "nested-paging",
+        "vm-frontier",
+        "vm-checklist"
+      ]
+    },
+    {
+      "concept": "arm64-adrp-aslr",
+      "page": "how-a-cpu-runs-a-program",
+      "taughtBy": [
+        "isa-contract",
+        "riscv-instruction-formats",
+        "compile-a-loop",
+        "single-cycle-datapath",
+        "clock-set-by-slowest",
+        "five-stage-pipeline",
+        "data-hazard-forwarding",
+        "control-hazard",
+        "iron-law-of-performance",
+        "cisc-risc-micro-ops",
+        "isa-frontier-2026",
+        "reading-code-speed"
+      ]
+    },
+    {
+      "concept": "libcpp-std-string-sret",
+      "page": "how-memory-talks",
+      "taughtBy": [
+        "dram-refresh",
+        "dram-address-mapping",
+        "dram-commands-timing",
+        "cas-latency-ns",
+        "ddr5-burst-subchannel",
+        "bank-groups",
+        "dimms-per-channel-training",
+        "ddr5-ecc",
+        "lpddr-gddr-mrdimm",
+        "rowhammer",
+        "memory-frontier-2026",
+        "reading-a-memory-module"
       ]
     },
     {
@@ -3475,10 +3635,10 @@
     }
   ],
   "unknownAliasIds": [],
-  "sizeBytes": 1321301,
+  "sizeBytes": 1327140,
   "questionsBytes": 173006,
-  "combinedBytes": 1494307,
-  "indexBytes": 153348,
+  "combinedBytes": 1500146,
+  "indexBytes": 154580,
   "chunkBytes": {
     "math.nodes": 51664,
     "math.edges": 90019,
@@ -3504,7 +3664,7 @@
     "earth.nodes": 25871,
     "earth.edges": 19025,
     "earth.questions": 6822,
-    "computing.nodes": 289902,
+    "computing.nodes": 294421,
     "computing.edges": 187479,
     "computing.questions": 2766,
     "society.nodes": 67881,

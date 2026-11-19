@@ -1,0 +1,69 @@
+{
+  "slug": "how-to-crack-an-encrypted-image",
+  "kind": "essay",
+  "tags": [
+    {
+      "zh": "逆向工程",
+      "en": "Reverse Engineering"
+    },
+    {
+      "zh": "密码学",
+      "en": "Cryptography"
+    },
+    {
+      "zh": "ARM64",
+      "en": "ARM64"
+    },
+    {
+      "zh": "系统与安全",
+      "en": "Systems & Security"
+    },
+    {
+      "zh": "长文",
+      "en": "Long-form Essay"
+    }
+  ],
+  "category": "computing",
+  "subtopic": "systems",
+  "stage": "university",
+  "status": "live",
+  "path": "computing/systems/how-to-crack-an-encrypted-image/",
+  "layout": "essay",
+  "scripts": [
+    "models.js",
+    "copy.zh.js",
+    "copy.en.js",
+    "app.js"
+  ],
+  "version": "20261119",
+  "provenanceNote": {
+    "zh": "本文由 Antigravity 根据一次真实的 macOS ARM64 本地加密图片排障与逆向实战脱敏整理而成，使用站点 Markdown 模板构建，所有数据模型均经脚本验证。",
+    "en": "This essay was written by Antigravity from a real macOS ARM64 local encrypted-image debugging and reverse-engineering session (fully redacted), built with the site Markdown template, with all models verified by script."
+  },
+  "languages": {
+    "en": "native"
+  },
+  "dynamicKeys": {
+    "ch3.say": [
+      "ecb",
+      "cbc"
+    ],
+    "ch4.say": [
+      "magic3",
+      "magicPad",
+      "exact16"
+    ],
+    "ch6.say": [
+      "db",
+      "img"
+    ],
+    "ch8.mode": [
+      "sso",
+      "heap"
+    ],
+    "ch8.say": [
+      "sso",
+      "heap"
+    ]
+  }
+}

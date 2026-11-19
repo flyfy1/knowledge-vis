@@ -189,6 +189,7 @@ window.KNOWLEDGE_ESSAYS = [
   "how-a-chatbot-writes",
   "what-a-frontier-model-takes",
   "a-secret-in-public",
+  "how-to-crack-an-encrypted-image",
   "what-quantum-computers-do",
   "why-chips-are-hard",
   "why-fusion-is-hard",
@@ -2210,6 +2211,13 @@ window.KNOWLEDGE_PAGES = [
     desc: { zh: "两个陌生人在所有人都能偷听的线路上，怎么约定一个只有他俩知道的秘密？单向函数、Diffie–Hellman、RSA、椭圆曲线、证书链、量子威胁和格密码，每一步都在页面里用真实的算术跑一遍。", en: "How can two strangers agree on a secret over a line that everyone can listen to? One-way functions, Diffie–Hellman, RSA, elliptic curves, certificate chains, the quantum threat and lattice cryptography: each step runs real arithmetic on this page." },
     tags: [{ zh: "公钥密码", en: "Public-key Cryptography" }, { zh: "后量子密码", en: "Post-quantum Cryptography" }, { zh: "数论", en: "Number Theory" }, { zh: "长文", en: "Long-form Essay" }],
     category: "computing", subtopic: "systems", stage: "university", status: "live", path: "computing/systems/a-secret-in-public/"
+  },
+  {
+    slug: "how-to-crack-an-encrypted-image",
+    title: { zh: "一张加密图片是怎么被解开的", en: "How an Encrypted Local Image Gets Decoded" },
+    desc: { zh: "从磁盘上一份打不开的 .dat 字节流出发，一步步拆解混合加密容器、XOR 自反性、AES-ECB 与 CBC 破绽、已知明文校验、内存扫描时间窗、ARM64 调用约定、ADRP 寻址与 libc++ std::string 布局。八个可动手模型，全部基于真实排障过程脱敏整理。", en: "Starting from an unreadable .dat file on disk, trace hybrid encryption containers, XOR involution, AES-ECB vs CBC fingerprints, known-plaintext verification, ephemeral memory windows, ARM64 calling conventions, ADRP addressing, and libc++ std::string layout. Eight interactive models from a redacted real-world debugging session." },
+    tags: [{ zh: "逆向工程", en: "Reverse Engineering" }, { zh: "密码学", en: "Cryptography" }, { zh: "ARM64", en: "ARM64" }, { zh: "系统与安全", en: "Systems & Security" }, { zh: "长文", en: "Long-form Essay" }],
+    category: "computing", subtopic: "systems", stage: "university", status: "live", path: "computing/systems/how-to-crack-an-encrypted-image/"
   },
   {
     slug: "why-one-rate-moves-everything",

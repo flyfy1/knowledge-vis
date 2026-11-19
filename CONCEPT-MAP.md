@@ -2705,7 +2705,7 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 <!-- GENERATED:atlas-nodes -->
 ## 三、图谱节点索引（生成，勿手改）
 
-775 个概念 · 921 条关系 · 11 个分区 · 由 scripts/build-atlas-data.cjs --concept-map 生成。节点排序与 data.js 一致（分区序、学段序、order、id）。
+783 个概念 · 921 条关系 · 11 个分区 · 由 scripts/build-atlas-data.cjs --concept-map 生成。节点排序与 data.js 一致（分区序、学段序、order、id）。
 
 ### 01 数学基础 / Mathematical tools
 
@@ -3096,6 +3096,7 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 图算法 / Graph algorithms | ../computing/algorithms/graph-algorithms/#step1 | graph-algorithms#step1 |
 | 图形渲染管线 · 从坐标到像素 / The graphics pipeline · from coordinates to pixels | ../computing/graphics/computer-graphics/#step0 | computer-graphics#step0 |
 | 哈希 / Hashing | ../computing/algorithms/hashing/#step0 | hashing#step0 |
+| 混合加密容器与 PKCS#7 填充 / Hybrid Encrypted Container & PKCS#7 Padding | ../computing/systems/how-to-crack-an-encrypted-image/#ch1 | how-to-crack-an-encrypted-image |
 | 浮点数的三段位：符号、指数、尾数 / The three fields of a float: sign, exponent, significand | ../computing/systems/how-a-cpu-does-math/#ch1 | how-a-cpu-does-math |
 | 指令集架构：软件和硬件之间的合同 / The ISA: a contract between software and hardware | ../computing/systems/how-a-cpu-runs-a-program/#ch1 | how-a-cpu-runs-a-program |
 | 密钥分发问题 / The key-distribution problem | ../computing/systems/a-secret-in-public/#ch1 | a-secret-in-public |
@@ -3149,12 +3150,14 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | ulp：浮点数的格子越往外越稀 / ulp: floats get sparser as they grow | ../computing/systems/how-a-cpu-does-math/#ch2 | how-a-cpu-does-math |
 | USB 由主机调度：微帧与批量传输上限 / USB Is Host-Scheduled: Microframes and the Bulk Ceiling | ../computing/systems/how-usb-drives-talk/#ch2 | how-usb-drives-talk |
 | USB4 路由器与隧道：4 字节包头 / USB4 Routers and Tunnels: the 4-Byte Header | ../computing/systems/how-thunderbolt-works/#ch2 | how-thunderbolt-works |
+| 异或自反性与魔数反推 / XOR Involution & Trailer Key Recovery | ../computing/systems/how-to-crack-an-encrypted-image/#ch2 | how-to-crack-an-encrypted-image |
 | 8b/10b 编码与逗号码 / 8b/10b Encoding and the Comma | ../computing/systems/how-sata-works/#ch3 | how-sata-works |
 | 相联度与三种缺失 / Associativity and the three kinds of miss | ../computing/systems/how-cpu-caches-work/#ch3 | how-cpu-caches-work |
 | 矩阵分块与时间局部性 / Loop Tiling and Temporal Locality | ../computing/systems/why-compute-waits-for-memory/#ch3 | why-compute-waits-for-memory |
 | 把一个循环翻译成机器码 / Hand-compiling a loop to machine code | ../computing/systems/how-a-cpu-runs-a-program/#ch3 | how-a-cpu-runs-a-program |
 | CXL 的三种协议和数据帧 / CXL's three protocols and flits | ../computing/systems/coherent-interconnects/#ch3 | coherent-interconnects |
 | 五个命令和时序：行命中、未命中、冲突 / Five commands and their timings: row hit, miss and conflict | ../computing/systems/how-memory-talks/#ch3 | how-memory-talks |
+| AES-ECB 与 CBC 的密文指纹 / AES-ECB vs CBC Ciphertext Fingerprints | ../computing/systems/how-to-crack-an-encrypted-image/#ch3 | how-to-crack-an-encrypted-image |
 | 纠缠与 CHSH 游戏 / Entanglement and the CHSH game | ../computing/quantum/what-quantum-computers-do/#ch3 | what-quantum-computers-do |
 | 快权重联想记忆与容量上限 / Fast-Weight Memory & Rank Capacity | ../computing/ml/how-hybrid-attention-remembers/#ch3 | how-hybrid-attention-remembers |
 | 全局历史与 gshare / Global history and gshare | ../computing/systems/how-a-cpu-guesses-ahead/#ch3 | how-a-cpu-guesses-ahead |
@@ -3187,6 +3190,7 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 2ⁿ 个振幅与霍列沃界 / 2ⁿ amplitudes and the Holevo bound | ../computing/quantum/what-quantum-computers-do/#ch4 | what-quantum-computers-do |
 | 光纤通道的缓冲区信用与距离 / Fibre Channel buffer-to-buffer credits and distance | ../computing/systems/storage-over-a-network/#ch4 | storage-over-a-network |
 | 硬件信任根：CPU 之前先醒的安全芯片 / Hardware root of trust: the security processor that wakes first | ../computing/systems/how-a-computer-boots/#ch4 | how-a-computer-boots |
+| 已知明文校验与碰撞概率 / Known-Plaintext Oracle & Collision Probability | ../computing/systems/how-to-crack-an-encrypted-image/#ch4 | how-to-crack-an-encrypted-image |
 | 内存墙与利特尔法则 / The Memory Wall and Little's Law | ../computing/systems/why-compute-waits-for-memory/#ch4 | why-compute-waits-for-memory |
 | 设备寄存器：物理地址上的一段「假内存」 / Device registers: a stretch of pretend memory | ../computing/systems/how-the-os-talks-to-hardware/#ch4 | how-the-os-talks-to-hardware |
 | 多相稳压（VRM） / Multiphase voltage regulators (VRM) | ../computing/systems/how-power-reaches-the-cpu/#ch4 | how-power-reaches-the-cpu |
@@ -3216,6 +3220,7 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 64 字节一次突发与 DDR5 子通道 / 64-byte bursts and DDR5 subchannels | ../computing/systems/how-memory-talks/#ch5 | how-memory-talks |
 | 德意志–约萨算法 / The Deutsch–Jozsa algorithm | ../computing/quantum/what-quantum-computers-do/#ch5 | what-quantum-computers-do |
 | 显示引擎、合成器与颜色管线 / Display engine, compositor and colour pipeline | ../computing/systems/how-pixels-reach-a-screen/#ch5 | how-pixels-reach-a-screen |
+| 进程内存扫描与瞬时密钥窗口 / Process Memory Scanning & Ephemeral Key Windows | ../computing/systems/how-to-crack-an-encrypted-image/#ch5 | how-to-crack-an-encrypted-image |
 | 闪存为什么会坏：擦写次数、纠错码、TBW 与 DWPD / Why flash wears out: P/E cycles, ECC, TBW and DWPD | ../computing/systems/what-a-drive-is-made-of/#ch5 | what-a-drive-is-made-of |
 | Gated DeltaNet 与选择性遗忘门 / Gated DeltaNet & Selective Decay | ../computing/ml/how-hybrid-attention-remembers/#ch5 | how-hybrid-attention-remembers |
 | 中断走过的路：向量、上半部、下半部 / The path of an interrupt: vector, top half, bottom half | ../computing/systems/how-the-os-talks-to-hardware/#ch5 | how-the-os-talks-to-hardware |
@@ -3233,6 +3238,7 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 训练曲线与能力突然出现 / The training curve and sudden abilities | ../computing/ml/what-a-frontier-model-takes/#ch4 | what-a-frontier-model-takes |
 | UASP：四条管道、标签和 USB 3 的流 / UASP: Four Pipes, Tags and USB 3 Streams | ../computing/systems/how-usb-drives-talk/#ch5 | how-usb-drives-talk |
 | 80 Gb/s 怎么来：PAM3 与 3+1 非对称 / Where 80 Gb/s Comes From: PAM3 and 3+1 | ../computing/systems/how-thunderbolt-works/#ch5 | how-thunderbolt-works |
+| ARM64 调用约定与断点排查 / ARM64 Calling Convention & Breakpoint Triage | ../computing/systems/how-to-crack-an-encrypted-image/#ch6 | how-to-crack-an-encrypted-image |
 | 原子指令：LOCK、CAS、LL/SC 与 LSE / Atomic instructions: LOCK, CAS, LL/SC and LSE | ../computing/systems/how-cores-share-memory/#ch6 | how-cores-share-memory |
 | bank 组与 tCCD_L / Bank groups and tCCD_L | ../computing/systems/how-memory-talks/#ch6 | how-memory-talks |
 | 三级各管什么：包含、排他与共享 L3 / What each level does: inclusive, exclusive and the shared L3 | ../computing/systems/how-cpu-caches-work/#ch6 | how-cpu-caches-work |
@@ -3261,6 +3267,7 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 超标量与指令级并行 / Superscalar issue and instruction-level parallelism | ../computing/systems/how-a-cpu-guesses-ahead/#ch6 | how-a-cpu-guesses-ahead |
 | UEFI 的阶段与 ACPI 表 / UEFI phases and the ACPI tables | ../computing/systems/how-a-computer-boots/#ch6 | how-a-computer-boots |
 | 桥接芯片：SCSI 翻译与链条上的瓶颈 / The Bridge Chip: SCSI Translation and the Bottleneck | ../computing/systems/how-usb-drives-talk/#ch6 | how-usb-drives-talk |
+| ARM64 ADRP 相对寻址与 ASLR / ARM64 ADRP Addressing & ASLR | ../computing/systems/how-to-crack-an-encrypted-image/#ch7 | how-to-crack-an-encrypted-image |
 | 背向作废：几台主机共用一行 / Back-invalidate: several hosts sharing one line | ../computing/systems/coherent-interconnects/#ch7 | coherent-interconnects |
 | 签名、证书链与 TLS 握手 / Signatures, certificate chains and the TLS handshake | ../computing/systems/a-secret-in-public/#ch6 | a-secret-in-public |
 | 核心之间搬一行要多久 / How long a line takes to move between cores | ../computing/systems/how-cores-share-memory/#ch7 | how-cores-share-memory |
@@ -3299,6 +3306,7 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 给设备装一张页表 / A page table for devices | ../computing/systems/how-the-os-talks-to-hardware/#ch8 | how-the-os-talks-to-hardware |
 | 屋顶线下的长上下文吐字加速 / Roofline Decode Speedup at Long Context | ../computing/ml/how-hybrid-attention-remembers/#ch8 | how-hybrid-attention-remembers |
 | 到今天还共用的小总线：I²C 和上拉电阻 / The Small Buses Still Shared Today: I²C and Pull-up Resistors | ../computing/systems/how-a-computer-is-wired/#ch8 | how-a-computer-is-wired |
+| sret 返回指针与 libc++ std::string 布局 / sret Return Pointer & libc++ std::string Layout | ../computing/systems/how-to-crack-an-encrypted-image/#ch8 | how-to-crack-an-encrypted-image |
 | 大模型推理的内存瓶颈 / Why LLM Inference Is Memory-Bound | ../computing/systems/why-compute-waits-for-memory/#ch8 | why-compute-waits-for-memory |
 | 微调、RLHF 与 LoRA / Fine-tuning, RLHF and LoRA | ../computing/ml/what-a-frontier-model-takes/#ch7 | what-a-frontier-model-takes |
 | 矩阵乘加指令与数字格式 / Matrix multiply-accumulate instructions and number formats | ../computing/systems/how-a-gpu-computes/#ch8 | how-a-gpu-computes |
@@ -3542,7 +3550,7 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 <!-- GENERATED:registry-concepts -->
 ## 页面 → 概念 → 锚点（生成，勿手改）
 
-252 个页面拥有 772 个图谱概念 · 由 scripts/build-registry.cjs 从 site-registry.json 生成（概念 = atlas/data.js 里 primary 课程是该页的节点；顺序同首页登记顺序）。登记或改动页面后重跑 `node scripts/build-registry.cjs`；不要再在本文件里手写逐页概念表（2026-11-16 起，上面的手写表保留为历史记录）。
+253 个页面拥有 780 个图谱概念 · 由 scripts/build-registry.cjs 从 site-registry.json 生成（概念 = atlas/data.js 里 primary 课程是该页的节点；顺序同首页登记顺序）。登记或改动页面后重跑 `node scripts/build-registry.cjs`；不要再在本文件里手写逐页概念表（2026-11-16 起，上面的手写表保留为历史记录）。
 
 ### 冰冻肥皂泡 · 水膜里的结晶 / Frozen Soap Bubbles · Ice in a Thin Film
 
@@ -6024,6 +6032,21 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 量子威胁：Shor、Grover 与先存后解 / The quantum threat: Shor, Grover, harvest now decrypt later | `computing/systems/a-secret-in-public/#ch8` |
 | 格、LWE 与 ML-KEM / Lattices, learning with errors and ML-KEM | `computing/systems/a-secret-in-public/#ch9` |
 | 后量子迁移的前沿（2026 年） / The post-quantum frontier (2026) | `computing/systems/a-secret-in-public/#ch10` |
+
+### 一张加密图片是怎么被解开的 / How an Encrypted Local Image Gets Decoded
+
+`computing/systems/how-to-crack-an-encrypted-image/` · essay
+
+| 概念 | 深链 |
+| --- | --- |
+| 混合加密容器与 PKCS#7 填充 / Hybrid Encrypted Container & PKCS#7 Padding | `computing/systems/how-to-crack-an-encrypted-image/#ch1` |
+| 异或自反性与魔数反推 / XOR Involution & Trailer Key Recovery | `computing/systems/how-to-crack-an-encrypted-image/#ch2` |
+| AES-ECB 与 CBC 的密文指纹 / AES-ECB vs CBC Ciphertext Fingerprints | `computing/systems/how-to-crack-an-encrypted-image/#ch3` |
+| 已知明文校验与碰撞概率 / Known-Plaintext Oracle & Collision Probability | `computing/systems/how-to-crack-an-encrypted-image/#ch4` |
+| 进程内存扫描与瞬时密钥窗口 / Process Memory Scanning & Ephemeral Key Windows | `computing/systems/how-to-crack-an-encrypted-image/#ch5` |
+| ARM64 调用约定与断点排查 / ARM64 Calling Convention & Breakpoint Triage | `computing/systems/how-to-crack-an-encrypted-image/#ch6` |
+| ARM64 ADRP 相对寻址与 ASLR / ARM64 ADRP Addressing & ASLR | `computing/systems/how-to-crack-an-encrypted-image/#ch7` |
+| sret 返回指针与 libc++ std::string 布局 / sret Return Pointer & libc++ std::string Layout | `computing/systems/how-to-crack-an-encrypted-image/#ch8` |
 
 ### 央行调一个利率，为什么所有东西的价格都跟着动 / Why One Central-Bank Rate Moves the Price of Everything
 
