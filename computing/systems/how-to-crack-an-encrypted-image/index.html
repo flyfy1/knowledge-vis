@@ -160,7 +160,7 @@
     <h1 data-i18n="hero.title">一张加密图片是怎么被解开的</h1>
     <p class="sub" data-i18n-html="hero.sub">硬盘里明明躺着完整的图片文件，把后缀改成 `.jpg` 却打不开。<br>从一串陌生字节出发，怎么一步步推导出它的加密结构并定位到真正的密钥？</p>
     <p class="lead" data-i18n-html="hero.lead">很多桌面客户端会把聊天图片加密后存成 `.dat` 文件。没有源码、没有文档，只有硬盘上的加密文件和运行中的客户端，怎么把它安全、准确地还原成浏览器能看的标准图片？这篇文章记录了一条真实走通的工程排障路径：<strong>先从字节本身反推格式与分组模式，再排查跨进程内存扫描为什么撞不到 1 毫秒的生命周期，最后通过 ARM64 机器码的相对寻址和 C++ 对象内存布局，在取钥函数返回瞬间精准拿到密钥。</strong></p>
-    <p class="note" data-i18n-html="hero.note">全文完全脱敏，不含任何个人密钥、账号或私有路径；每一章聚焦一个通用的计算机系统或密码学底层原理，并配一个可动手推演的模型。这篇文章由 AI 基于真实排障记录整理，所有数值均由页面模型脚本算出。</p>
+    <p class="note" data-i18n-html="hero.note">全文完全脱敏，不含任何个人密钥、账号或私有路径；每一章聚焦一个通用的计算机系统或密码学底层原理，并配一个可动手推演的模型。这篇文章由 Antigravity（Gemini 4 Neon）基于真实排障记录整理，所有数值均由页面模型脚本算出。</p>
   </div>
 </header>
 
@@ -616,10 +616,10 @@
 
 <footer><div class="wrap" data-i18n-html="footer"><p><strong>说明。</strong>本文记录一次脱敏后的 macOS ARM64 本地加密图片排障全过程，不含任何个人密钥、账号或私有路径。所有数值模型均在浏览器本地运行，相关验证脚本与来源见页面 BRIEF。</p></div></footer>
 
-<script src="models.js?v=20261119"></script>
-<script src="copy.zh.js?v=20261119"></script>
-<script src="copy.en.js?v=20261119" onerror="void 0"></script>
-<script src="app.js?v=20261119"></script>
+<script src="models.js?v=20261119b"></script>
+<script src="copy.zh.js?v=20261119b"></script>
+<script src="copy.en.js?v=20261119b" onerror="void 0"></script>
+<script src="app.js?v=20261119b"></script>
 <script defer src="../../../site-nav.js?v=sn-20261119a"></script>
 </body>
 </html>

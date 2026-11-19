@@ -20,6 +20,7 @@
     { "id": "muse-wonder", "match": "muse wonder" },
     { "id": "muse-spark", "match": "muse spark" },
     { "id": "gemini-4-hydrogen", "match": "gemini[- ]?4[- ]?hydrogen" },
+    { "id": "gemini-4-neon", "match": "gemini[- ]?4[- ]?neon" },
     { "id": "gemini-pro", "match": "gemini[- ]?pro" },
     { "id": "gemini-flash-lite", "match": "gemini[- ]?flash[- ]?lite" },
     { "id": "gemini-flash", "match": "gemini[- ]?flash" },

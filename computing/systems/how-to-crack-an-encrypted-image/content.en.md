@@ -28,7 +28,7 @@ The full image sits right there on disk, yet renaming it to `.jpg` refuses to op
 
 Many desktop clients encrypt cached chat images into local `.dat` files. Without source code or documentation—only the encrypted files on disk and a running client—how can you reliably restore them into standard images? This essay walks through a real-world debugging path: **deducing container layout and block modes directly from ciphertext bytes, understanding why process memory scanning misses a 1-millisecond key lifetime, and finally using ARM64 PC-relative addressing and C++ runtime memory layout to capture the key cleanly at a single function return.** {.lead}
 
-Everything here is fully redacted with no personal keys, accounts, or private paths. Each chapter focuses on a general systems or cryptography principle with a hands-on model. Written by AI from a real debugging session; every number in the prose is computed by the page's model scripts. {.note}
+Everything here is fully redacted with no personal keys, accounts, or private paths. Each chapter focuses on a general systems or cryptography principle with a hands-on model. Written by Antigravity (Gemini 4 Neon) from a real debugging session; every number in the prose is computed by the page's model scripts. {.note}
 
 ## Why Renaming Fails: Hybrid Encrypted Containers {#ch1}
 
