@@ -3686,6 +3686,18 @@
       "path": "computing/quantum/what-quantum-computers-do/index.html",
       "originalSourceRevision": "b9d1df7825f875358aaeee911285509a339fb216",
       "previousSourceRevision": "b9d1df7825f875358aaeee911285509a339fb216"
+    },
+    "how-to-crack-an-encrypted-image": {
+      "developer": "Antigravity",
+      "edition": "antigravity-how-to-crack-an-encrypted-image-20261119",
+      "kind": "original",
+      "sourceRevision": "7b1431f5b9b12da9a18986ae7712de861891f06b",
+      "scope": {
+        "zh": "整篇长文由 Antigravity（Gemini 4 Neon）从零编写：V2 混合加密容器、XOR 自反性、AES-ECB 与 CBC 指纹、已知明文校验、内存扫描时间窗、ARM64 调用约定、ADRP 寻址与 ASLR、sret 与 libc++ std::string 布局",
+        "en": "Whole essay written from scratch by Antigravity (Gemini 4 Neon): V2 hybrid encrypted container, XOR involution, AES-ECB vs CBC fingerprints, known-plaintext oracle, ephemeral memory scan windows, ARM64 calling conventions, ADRP addressing & ASLR, and sret + libc++ std::string layout"
+      },
+      "originalAuthorship": "written from scratch in zh and en by Antigravity (gemini-4-neon), 2026-11-19; self-checked with models.cjs, build-pages, build-registry, build-site-nav, build-atlas-data, and build-search-index; independent cross-model review pending",
+      "path": "computing/systems/how-to-crack-an-encrypted-image/index.html"
     }
   },
   "exceptions": {
