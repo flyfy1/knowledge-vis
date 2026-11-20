@@ -463,6 +463,21 @@ anchor and aliases. It is a schema-2 fragment `atlas/graph/lessons/<slug>.json`:
   `tests/concept-search.cjs` pins 43 zh/en pairs (28 on the new pages, 15 on owners that keep their words). Search is 775 concepts in
   16 chunks (434,915 bytes); new chunks computing-5.js, society-1.js and society-2.js (society.js split).
 
+- Software series W1 (2026-11-20): how-threejs-draws-a-scene → computing (`--region computing`; its category computing, new
+  subtopic software), 14 concepts. 12 hand-written edges in its fragment: 10 between chapters (ch2 → ch4; ch4 → ch5, ch8, ch10,
+  ch12; ch5 → ch8, ch11; ch6 → ch11, ch13; ch8 → ch12) and 2 for the links in its ch8 take (how-a-gpu-computes `pixel-quads` → ch8,
+  ch8 → how-pixels-reach-a-screen `framebuffer`). The page-level links (fable-flight, computer-graphics, linear-transform,
+  robot-kinematics) stay seeAlso. The up-front index went from 153,348 to 155,399 of 160,000 bytes (aliases are in details/ and cost
+  nothing there); this single essay was imported on the team lead's instruction ahead of the compaction the Limits section asks
+  for, so the compaction is still owed before the next import. One word, one owner: the essay took no alias another page had;
+  bare "three.js" stays with demos/fable-flight's tag on the homepage (the atlas, with no fable-flight concept, opens ch1);
+  光栅化 / rasterization stay with computer-graphics, sRGB with how-pixels-reach-a-screen #ch1, batching with
+  what-a-frontier-model-takes #ch9. "material to shader" became "three.js material shader" so plural "Materials" no longer reaches
+  ch6 by alias; it still reaches ch7 in the atlas through the title MeshStandardMaterial (60, the shorter title wins the tie with
+  why-atoms-stick-together #ch10; homepage unchanged). A before/after sweep of all 10,032 existing aliases, titles and tags moved
+  no homepage landing. `tests/concept-search.cjs` pins 15 zh/en pairs and the three kept words. Search: 789 concepts in 16 chunks
+  (443,788 bytes), no new chunk.
+
 ### Commands for the integrator
 
 ```sh

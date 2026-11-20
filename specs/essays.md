@@ -207,6 +207,7 @@ types ("为什么要打疫苗", "how does my phone know where I am"), not only t
 | why-batteries-hold-so-little | chemistry/reactions/why-batteries-hold-so-little/ | 9 concepts in 10 chapters (`#ch1…#ch9`) | matter | `ESSAY_BASE_URL` |
 | why-atoms-stick-together | chemistry/matter/why-atoms-stick-together/ | 15 concepts in 11 chapters (`#ch1…#ch11`) | matter | `ESSAY_BASE_URL` |
 | why-one-rate-moves-everything | economics/money/why-one-rate-moves-everything/ | 12 concepts in 13 chapters (`#ch1…#ch12`) | society | `ESSAY_BASE_URL` |
+| how-threejs-draws-a-scene | computing/software/how-threejs-draws-a-scene/ | 14 concepts in 14 chapters (`#ch1…#ch13`; two at `#ch12`) | computing | `ESSAY_BASE_URL` |
 
 The eleven from 2026-11-11, the two food essays of 2026-11-12 and the five storage essays of 2026-11-14/15
 (what-a-drive-is-made-of, how-sata-works, how-sas-works, how-usb-drives-talk, storage-over-a-network) and the three bus essays of
@@ -994,6 +995,37 @@ circuits (an energy balance; thermodynamics sits there), batteries and atoms →
 and cache keys are in specs/<slug>.md; open items from each review record and the remaining unreviewed drafts are in
 specs/essays-status-20261119.md. The atlas up-front index was raised to 160,000 bytes as a stop-gap for this import
 (specs/atlas-search-index.md "Limits").
+
+### how-threejs-draws-a-scene: Three.js 是怎么把一个场景画出来的
+
+Software series W1 (specs/essay-briefs/TASK-software-series.md; new subtopic computing/software, 软件原理 / How Software Works,
+with its redirect stub), a native site-template page. Fourteen chapters following the three.js r187 source (npm three@0.187.0):
+the layers under `renderer.render()`, scene graph and world matrices, BufferGeometry bytes, projection and depth precision,
+culling and sorting, material → shader program, the BRDF, rasterisation and the depth test, textures and mipmaps, shadow maps,
+draw calls / instancing / batching (with demos/fable-flight), picking and slerp, the WebGPU / TSL frontier, closing questions.
+13 labs (no library on the page), 11 SVG diagrams from tools/diagrams.cjs, 40 bound numbers; tools/crosscheck.cjs compares the
+models with an installed three@0.187.0. Built by Claude Code (claude-opus-5-5), English drafted by Claude Code (claude-haiku-5-5),
+independently reviewed 2026-11-20 by a separate Claude Code session (claude-opus-5-5;
+specs/reviews/how-threejs-draws-a-scene-review-20261120.md); no cross-model review yet. Essay commit f75ec123; registration,
+first label and backlinks f118add3; atlas fragment and aliases 168d2ce0; label repointed to 168d2ce0 (previous and original
+f75ec123) with the atlas / search / pages.config.js cache keys in the commit after it. page.json version 20261120b (never deployed
+before registration). Atlas: region computing, 12 hand-written edges (10 between chapters; pixel-quads of how-a-gpu-computes #ch9
+→ #ch8; #ch8 → framebuffer of how-pixels-reach-a-screen #ch1); the up-front index went from 153,348 to 155,399 of 160,000 bytes.
+It owns, since 2026-11-20, three.js 是什么 / what is three.js (#ch1; bare "three.js" also opens #ch1 in the atlas, while on the
+homepage demos/fable-flight's tag keeps it), 场景图 / scene graph, matrixAutoUpdate (#ch2), BufferGeometry, index buffer (#ch3),
+z-fighting, 模型为什么闪, depth precision (#ch4), 视锥体剔除 / frustum culling (#ch5), 着色器编译卡顿, shader recompile, 顶点着色器 /
+片元着色器 (#ch6), PBR, BRDF, GGX (#ch7), 透明物体显示不对, 深度测试 / depth test (#ch8), mipmap, 贴图模糊, color space (#ch9), 阴影有条纹,
+shadow acne, 阴影贴图 / shadow map (#ch10), draw call, three.js 为什么卡, three.js 性能优化, instancing, 合批 (#ch11), 射线拾取 /
+raycaster, 四元数 / quaternion, gimbal lock (#ch12), WebGPU, TSL (#ch13). Left with their owners: 光栅化 / rasterization
+(computer-graphics), sRGB (how-pixels-reach-a-screen #ch1), batching (what-a-frontier-model-takes #ch9), 卡顿 / stutter
+(how-pixels-reach-a-screen #ch3). tests/concept-search.cjs pins 15 zh/en pairs and the three kept words. The registration's
+before/after sweep moved no homepage landing; in the atlas "Materials" now opens #ch7 instead of why-atoms-stick-together #ch10
+(a title-substring tie at 60 that the shorter title wins). It links computer-graphics, linear-transform, robot-kinematics,
+how-a-gpu-computes (#ch9), how-pixels-reach-a-screen (#ch1) and demos/fable-flight; linked from none yet (sibling links back are
+open: how-pixels-reach-a-screen, how-a-gpu-computes, computer-graphics, demos/fable-flight). how-a-gpu-computes,
+how-pixels-reach-a-screen and linear-transform got the generated backlink row and page.json version 20261120a; labels not
+repointed (D4). Not verified: see the review's "Not checked" (timings on other machines, Reed's article date, ch9 lab numbers
+beyond the formula, real devices).
 
 ### scarcity-moves: 稀缺会搬家
 

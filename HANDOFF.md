@@ -1,6 +1,6 @@
 # HANDOFF.md — 开工前先读
 
-最后更新：2026-11-19，默认版本开关（Claude Code 平行版作为默认版本，未推送、未部署；总览「已完成」里一条）。之前 2026-11-18 登记者（Claude Code，claude-opus-5-5）登记了 9 篇已评审长文（未推送、未部署），更新了「总览」「2026-11-18 这一轮」「未上线」和「等 Yangyu 决定」；未解决的问题汇总在 [specs/essays-status-20261119.md](specs/essays-status-20261119.md)。之前 team lead 加了「2026-11-18 这一轮」和「总览」两节。之前的逐条更新记录见 git log HANDOFF.md。
+最后更新：2026-11-20，软件原理系列 W1（Three.js 长文）由登记者（Claude Code，claude-opus-5-5）在 `main` 上登记，未推送、未部署（总览「已完成」里一条）。之前 2026-11-19，默认版本开关（Claude Code 平行版作为默认版本，未推送、未部署；总览「已完成」里一条）。之前 2026-11-18 登记者（Claude Code，claude-opus-5-5）登记了 9 篇已评审长文（未推送、未部署），更新了「总览」「2026-11-18 这一轮」「未上线」和「等 Yangyu 决定」；未解决的问题汇总在 [specs/essays-status-20261119.md](specs/essays-status-20261119.md)。之前 team lead 加了「2026-11-18 这一轮」和「总览」两节。之前的逐条更新记录见 git log HANDOFF.md。
 
 这份文件有两部分：
 
@@ -77,6 +77,7 @@
 - **默认版本（2026-11-19，Yangyu：「请你做一个配置，让 Claude Code 开发的版本都作为默认版本吧」）**：`pages.config.js` 的 `KNOWLEDGE_DEFAULT_EDITION = "claude-code"`。196 课的页面级链接（首页卡片与搜索的页面结果、子主题目录、《标题》自动链接、模板页里不带锚点的 `[[slug]]` 和相关页面）默认打开 `variants/claude-code/<slug>/`；power-converters 和已搬过的四课钉在原版（`page.json` 的 `"defaultEdition": "original"`）。带锚点的链接（图谱、概念搜索、`[[slug#anchor]]`）和原版地址不变。平行版只做过自查。改回原版、数字和后续（把 214 处概念深链和 614 条带锚点的链接映射到平行版步骤）见 [specs/claude-code-editions.md](specs/claude-code-editions.md)「默认版本」。
 - **存储 S1–S5 补示意图**、**CPU SIMD 与浮点长文**：已上线（第 2、3 条）。
 - **9 篇长文已评审、已在 `main` 上登记，等 team lead 推送部署**（2026-11-18/19）：how-a-chatbot-writes、what-a-frontier-model-takes、a-secret-in-public、what-quantum-computers-do、why-chips-are-hard、why-fusion-is-hard、why-batteries-hold-so-little、why-atoms-stick-together、why-one-rate-moves-everything。新子主题 `computing/quantum`、`tech/semiconductors`。提交、各篇未解决的问题和剩下的草稿见 [specs/essays-status-20261119.md](specs/essays-status-20261119.md)。图谱首屏索引上限临时从 150,000 提到 160,000 字节，下一批导入前要先压缩索引（见「等 Yangyu 决定」）。
+- **软件原理系列 W1 已在 `main` 上登记，等 team lead 推送部署**（2026-11-20）：《Three.js 是怎么把一个场景画出来的》`computing/software/how-threejs-draws-a-scene/`（Opus 写、Haiku 译、另一个 Opus 会话独立评审，[评审记录](specs/reviews/how-threejs-draws-a-scene-review-20261120.md)）。新子主题 `computing/software`（软件原理）。提交 f75ec123（正文）、f118add3（登记、标签、反向链接）、168d2ce0（图谱 14 个概念 12 条边、搜索别名），之后一条重指标签并更新缓存键。图谱首屏索引 155,399 / 160,000 字节。系列计划与状态见 [specs/essay-briefs/TASK-software-series.md](specs/essay-briefs/TASK-software-series.md)，登记细节见 [specs/essays.md](specs/essays.md) 该篇一节；兄弟页回链（how-pixels-reach-a-screen、how-a-gpu-computes、computer-graphics、fable-flight）未做。
 
 **没做的事（按建议顺序）**
 1. **剩下的草稿走完流水线**（翻译 → 独立评审 → 登记 → 部署）：9 篇 2026-11-11 的中文草稿和 3 篇新长文，清单见 [specs/essays-status-20261119.md](specs/essays-status-20261119.md) 第 2 节。最快能变成读者看得到的内容。新写和新登记的页面直接用模板（`content.*.md` + `page.json`）。

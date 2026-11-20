@@ -6,11 +6,11 @@ Each essay takes one widely used piece of software and explains the handful of i
 of its real data structures and algorithms. The reader has used the software (or something built on it) and wants to
 know what happens inside one call. It is not a tutorial and not an API tour.
 
-## Status (2026-11-20)
+## Status (2026-11-20, updated at W1 registration)
 
 | | Page | State |
 |---|---|---|
-| W1 | `how-threejs-draws-a-scene` Three.js 是怎么把一个场景画出来的 | brief written, builder dispatched |
+| W1 | `how-threejs-draws-a-scene` Three.js 是怎么把一个场景画出来的 | built, reviewed (specs/reviews/how-threejs-draws-a-scene-review-20261120.md) and registered on `main` 2026-11-20 (f75ec123 essay, f118add3 registration, 168d2ce0 atlas and aliases); awaiting push and deploy |
 | W2… | see "Candidates" | not started |
 
 ## Where it lives
