@@ -4,6 +4,19 @@
  "refs": [],
  "backlinks": [
   {
+   "from": "how-threejs-draws-a-scene",
+   "links": [
+    {
+     "from": "ch8",
+     "to": "ch1"
+    },
+    {
+     "from": "ch14",
+     "to": null
+    }
+   ]
+  },
+  {
    "from": "how-a-gpu-computes",
    "links": [
     {

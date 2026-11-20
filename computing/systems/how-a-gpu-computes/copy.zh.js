@@ -453,10 +453,11 @@ window.ESSAY_COPY.zh = {
   "site.crumb.cat": "计算与智能",
   "site.crumb.sub": "系统与安全",
   "site.bl.title": "被这些页面引用",
-  "site.bl.1": "<a href=\"../how-a-cpu-does-math/\">CPU 是怎么算小数的，又怎么一次算一排</a>：<a href=\"../how-a-cpu-does-math/#ch7\">该文第 7 章</a> → <a href=\"#ch8\">本页第 8 章</a>；<a href=\"../how-a-cpu-does-math/#ch12\">该文第 12 章</a> → <a href=\"#ch8\">本页第 8 章</a>；<a href=\"../how-a-cpu-does-math/#ch14\">该文第 14 章</a>",
-  "site.bl.2": "<a href=\"../how-a-nic-moves-packets/\">网卡是怎么搬运数据包的</a>：<a href=\"../how-a-nic-moves-packets/#ch14\">该文第 14 章</a>",
-  "site.bl.3": "<a href=\"../how-cores-share-memory/\">多个核心怎么共用一块内存</a>：<a href=\"../how-cores-share-memory/#ch12\">该文第 12 章</a> → <a href=\"#ch10\">本页第 10 章</a>",
-  "site.bl.4": "<a href=\"../how-pixels-reach-a-screen/\">像素是怎么到屏幕上的</a>：<a href=\"../how-pixels-reach-a-screen/#ch1\">该文第 1 章</a> → <a href=\"#ch9\">本页第 9 章</a>；<a href=\"../how-pixels-reach-a-screen/#ch13\">该文第 13 章</a> → <a href=\"#ch9\">本页第 9 章</a>",
-  "site.bl.5": "<a href=\"../how-power-reaches-the-cpu/\">电是怎么送进 CPU 的</a>：<a href=\"../how-power-reaches-the-cpu/#ch10\">该文第 10 章</a> → <a href=\"#ch11\">本页第 11 章</a>；<a href=\"../how-power-reaches-the-cpu/#ch12\">该文第 12 章</a>",
-  "site.bl.6": "<a href=\"../why-compute-waits-for-memory/\">为什么计算一直在等内存</a>：<a href=\"../why-compute-waits-for-memory/#ch6\">该文第 6 章</a> → <a href=\"#ch3\">本页第 3 章</a>"
+  "site.bl.1": "<a href=\"../../software/how-threejs-draws-a-scene/\">Three.js 是怎么把一个场景画出来的</a>：<a href=\"../../software/how-threejs-draws-a-scene/#ch8\">该文第 8 章</a> → <a href=\"#ch9\">本页第 9 章</a>；<a href=\"../../software/how-threejs-draws-a-scene/#ch14\">该文第 14 章</a>",
+  "site.bl.2": "<a href=\"../how-a-cpu-does-math/\">CPU 是怎么算小数的，又怎么一次算一排</a>：<a href=\"../how-a-cpu-does-math/#ch7\">该文第 7 章</a> → <a href=\"#ch8\">本页第 8 章</a>；<a href=\"../how-a-cpu-does-math/#ch12\">该文第 12 章</a> → <a href=\"#ch8\">本页第 8 章</a>；<a href=\"../how-a-cpu-does-math/#ch14\">该文第 14 章</a>",
+  "site.bl.3": "<a href=\"../how-a-nic-moves-packets/\">网卡是怎么搬运数据包的</a>：<a href=\"../how-a-nic-moves-packets/#ch14\">该文第 14 章</a>",
+  "site.bl.4": "<a href=\"../how-cores-share-memory/\">多个核心怎么共用一块内存</a>：<a href=\"../how-cores-share-memory/#ch12\">该文第 12 章</a> → <a href=\"#ch10\">本页第 10 章</a>",
+  "site.bl.5": "<a href=\"../how-pixels-reach-a-screen/\">像素是怎么到屏幕上的</a>：<a href=\"../how-pixels-reach-a-screen/#ch1\">该文第 1 章</a> → <a href=\"#ch9\">本页第 9 章</a>；<a href=\"../how-pixels-reach-a-screen/#ch13\">该文第 13 章</a> → <a href=\"#ch9\">本页第 9 章</a>",
+  "site.bl.6": "<a href=\"../how-power-reaches-the-cpu/\">电是怎么送进 CPU 的</a>：<a href=\"../how-power-reaches-the-cpu/#ch10\">该文第 10 章</a> → <a href=\"#ch11\">本页第 11 章</a>；<a href=\"../how-power-reaches-the-cpu/#ch12\">该文第 12 章</a>",
+  "site.bl.7": "<a href=\"../why-compute-waits-for-memory/\">为什么计算一直在等内存</a>：<a href=\"../why-compute-waits-for-memory/#ch6\">该文第 6 章</a> → <a href=\"#ch3\">本页第 3 章</a>"
 };

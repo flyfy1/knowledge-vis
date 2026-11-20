@@ -501,6 +501,7 @@ window.ESSAY_COPY.zh = {
   "site.crumb.aria": "页面位置",
   "site.crumb.home": "首页",
   "site.crumb.cat": "计算与智能",
+  "site.crumb.sub": "软件原理",
   "site.rel.title": "相关页面",
   "site.rel.1": "<a href=\"../../../variants/claude-code/computer-graphics/\">计算机图形学 · 从坐标到画面</a>",
   "site.rel.2": "<a href=\"../../../variants/claude-code/robot-kinematics/\">高阶机器人学 · 从角度到末端</a>",

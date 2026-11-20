@@ -3686,6 +3686,18 @@
       "path": "computing/quantum/what-quantum-computers-do/index.html",
       "originalSourceRevision": "b9d1df7825f875358aaeee911285509a339fb216",
       "previousSourceRevision": "b9d1df7825f875358aaeee911285509a339fb216"
+    },
+    "how-threejs-draws-a-scene": {
+      "developer": "Claude Code",
+      "edition": "claude-code-how-threejs-draws-a-scene-20261120",
+      "kind": "original",
+      "sourceRevision": "f75ec1237f8d07ed5d32322825608431f8beeccc",
+      "scope": {
+        "zh": "整篇长文从零编写：renderer.render() 下面的各层、场景树与世界矩阵、BufferGeometry 的字节、相机投影与深度精度、剔除与排序、材质怎么变成着色器程序、一个像素的颜色与 BRDF、光栅化与深度测试、纹理与 mipmap、阴影贴图、draw call 与实例化和合批、拾取与四元数、WebGPU 与 TSL 前沿、收尾时问的问题",
+        "en": "Whole essay written from scratch: the layers under renderer.render(), the scene graph and world matrices, the bytes of a BufferGeometry, camera, projection and depth precision, culling and sorting, how a material becomes a shader program, the colour of one pixel and the BRDF, rasterisation and the depth test, textures and mipmaps, shadow maps, draw calls, instancing and batching, picking and quaternions, the WebGPU and TSL frontier, closing questions"
+      },
+      "originalAuthorship": "written from scratch by Claude Code (claude-opus-5-5) directly in the Markdown site template, against the three.js r187 source; English copy translated by Claude Code (claude-haiku-5-5); independently reviewed 2026-11-20 by a separate Claude Code session (same model), see the page BRIEF.md and specs/reviews/how-threejs-draws-a-scene-review-20261120.md; cross-model review pending",
+      "path": "computing/software/how-threejs-draws-a-scene/index.html"
     }
   },
   "exceptions": {

@@ -1,6 +1,33 @@
 {
   "slug": "how-threejs-draws-a-scene",
   "kind": "essay",
+  "tags": [
+    {
+      "zh": "Three.js",
+      "en": "Three.js"
+    },
+    {
+      "zh": "WebGL",
+      "en": "WebGL"
+    },
+    {
+      "zh": "计算机图形学",
+      "en": "Computer Graphics"
+    },
+    {
+      "zh": "软件原理",
+      "en": "How Software Works"
+    },
+    {
+      "zh": "长文",
+      "en": "Long-form Essay"
+    }
+  ],
+  "category": "computing",
+  "subtopic": "software",
+  "stage": "university",
+  "status": "live",
+  "path": "computing/software/how-threejs-draws-a-scene/",
   "layout": "essay",
   "scripts": [
     "models.js",
@@ -9,11 +36,37 @@
     "app.js"
   ],
   "version": "20261120b",
+  "provenanceNote": {
+    "zh": "本文由 Claude Code（claude-opus-5-5）从零编写，对照 three.js r187 的源码；英文稿由 Claude Code（claude-haiku-5-5）翻译；2026-11-20 经另一个 Claude Code 会话独立评审并按评审修订（同一模型；跨模型评审待做）。",
+    "en": "This essay was written from scratch with Claude Code (claude-opus-5-5), against the three.js r187 source; the English copy was translated with Claude Code (claude-haiku-5-5); independently reviewed on 2026-11-20 by a separate Claude Code session and revised accordingly (same model; cross-model review pending)."
+  },
   "dynamicKeys": {
-    "ch6.mat": ["floor", "wood", "brass", "glass", "sky", "leaves"],
-    "ch9.f": ["nearest", "linear", "trilinear", "aniso"],
-    "ch9.why": ["nearest", "linear", "trilinear", "aniso"],
-    "ch11.s": ["separate", "merged", "instanced", "batched"]
+    "ch6.mat": [
+      "floor",
+      "wood",
+      "brass",
+      "glass",
+      "sky",
+      "leaves"
+    ],
+    "ch9.f": [
+      "nearest",
+      "linear",
+      "trilinear",
+      "aniso"
+    ],
+    "ch9.why": [
+      "nearest",
+      "linear",
+      "trilinear",
+      "aniso"
+    ],
+    "ch11.s": [
+      "separate",
+      "merged",
+      "instanced",
+      "batched"
+    ]
   },
   "generators": [
     {

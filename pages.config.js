@@ -97,7 +97,8 @@ window.KNOWLEDGE_SUBTOPICS = {
     { id: "ml", name: { zh: "机器学习", en: "Machine Learning" } },
     { id: "systems", name: { zh: "系统与安全", en: "Systems & Security" } },
     { id: "graphics", name: { zh: "图形与机器人", en: "Graphics & Robotics" } },
-    { id: "quantum", name: { zh: "量子计算", en: "Quantum Computing" } }
+    { id: "quantum", name: { zh: "量子计算", en: "Quantum Computing" } },
+    { id: "software", name: { zh: "软件原理", en: "How Software Works" } }
   ],
   "chemistry": [
     { id: "matter", name: { zh: "物质构成", en: "Structure of Matter" } },
@@ -195,6 +196,7 @@ window.KNOWLEDGE_ESSAYS = [
   "why-batteries-hold-so-little",
   "why-atoms-stick-together",
   "why-one-rate-moves-everything",
+  "how-threejs-draws-a-scene",
   "scarcity-moves"
 ];
 
@@ -2203,6 +2205,13 @@ window.KNOWLEDGE_PAGES = [
     desc: { zh: "量子计算机到底能做什么普通计算机做不了的事？页面里有一台真的量子态模拟器：从一个量子比特、干涉、纠缠，到格罗弗搜索、肖尔分解、噪声和纠错，最后是标了日期和出处的 2026 年前沿。", en: "What can a quantum computer do that an ordinary computer cannot? The page includes a real quantum-state simulator: from one qubit, interference and entanglement, through Grover's search, Shor's factoring, noise and error correction, to the 2026 frontier with every date and source marked." },
     tags: [{ zh: "量子计算", en: "Quantum Computing" }, { zh: "量子算法", en: "Quantum Algorithms" }, { zh: "量子纠错", en: "Quantum Error Correction" }, { zh: "长文", en: "Long-form Essay" }],
     category: "computing", subtopic: "quantum", stage: "university", status: "live", path: "computing/quantum/what-quantum-computers-do/"
+  },
+  {
+    slug: "how-threejs-draws-a-scene",
+    title: { zh: "Three.js 是怎么把一个场景画出来的", en: "How Three.js Draws a Scene" },
+    desc: { zh: "二十行代码就能让一个立方体在网页里转起来，最后那一行 renderer.render(scene, camera) 每秒跑六十次。这篇按 three.js r187 的源码，把这一行拆开：场景树和矩阵，几何体的字节，相机和深度，剔除和排序，材质怎么变成着色器，一个像素的颜色，光栅化，纹理，阴影，draw call 的开销，拾取和四元数，以及 WebGPU。十几个可以动手的模型，都用页面里重写的同一套算法，并和 three.js 本身逐项对过数。", en: "A spinning cube in a web page takes twenty lines, and the last one, renderer.render(scene, camera), runs sixty times a second. Following the three.js r187 source, this essay takes that line apart: the scene tree and its matrices, the bytes of a geometry, the camera and depth, culling and sorting, how a material becomes a shader, the colour of one pixel, rasterisation, textures, shadows, what a draw call costs, picking and quaternions, and WebGPU. A dozen hands-on models run the same algorithms, rewritten in the page and checked number by number against three.js itself." },
+    tags: [{ zh: "Three.js", en: "Three.js" }, { zh: "WebGL", en: "WebGL" }, { zh: "计算机图形学", en: "Computer Graphics" }, { zh: "软件原理", en: "How Software Works" }, { zh: "长文", en: "Long-form Essay" }],
+    category: "computing", subtopic: "software", stage: "university", status: "live", path: "computing/software/how-threejs-draws-a-scene/"
   },
   {
     slug: "a-secret-in-public",

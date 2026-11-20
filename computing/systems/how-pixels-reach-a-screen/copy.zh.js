@@ -593,6 +593,7 @@ window.ESSAY_COPY.zh = {
   "site.crumb.cat": "计算与智能",
   "site.crumb.sub": "系统与安全",
   "site.bl.title": "被这些页面引用",
-  "site.bl.1": "<a href=\"../how-a-gpu-computes/\">GPU 是怎么算的</a>：<a href=\"../how-a-gpu-computes/#ch9\">该文第 9 章</a> → <a href=\"#ch1\">本页第 1 章</a>",
-  "site.bl.2": "<a href=\"../how-thunderbolt-works/\">雷电接口是怎么工作的</a>：<a href=\"../how-thunderbolt-works/#ch6\">该文第 6 章</a> → <a href=\"#ch2\">本页第 2 章</a>、<a href=\"#ch7\">本页第 7 章</a>"
+  "site.bl.1": "<a href=\"../../software/how-threejs-draws-a-scene/\">Three.js 是怎么把一个场景画出来的</a>：<a href=\"../../software/how-threejs-draws-a-scene/#ch8\">该文第 8 章</a> → <a href=\"#ch1\">本页第 1 章</a>；<a href=\"../../software/how-threejs-draws-a-scene/#ch14\">该文第 14 章</a>",
+  "site.bl.2": "<a href=\"../how-a-gpu-computes/\">GPU 是怎么算的</a>：<a href=\"../how-a-gpu-computes/#ch9\">该文第 9 章</a> → <a href=\"#ch1\">本页第 1 章</a>",
+  "site.bl.3": "<a href=\"../how-thunderbolt-works/\">雷电接口是怎么工作的</a>：<a href=\"../how-thunderbolt-works/#ch6\">该文第 6 章</a> → <a href=\"#ch2\">本页第 2 章</a>、<a href=\"#ch7\">本页第 7 章</a>"
 };

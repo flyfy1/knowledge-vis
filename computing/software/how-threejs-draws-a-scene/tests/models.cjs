@@ -234,8 +234,11 @@ const arrNear = (a, b, tol) => a.length === b.length && a.every((v, i) => Math.a
   // English was translated and reviewed (2026-11-20): no stub flag in page.json or on <html>, and no Chinese in the English copy
   check('English is complete, not a stub (page.json and <html>)', [String((PJ.languages || {}).en), /data-lang-en="stub"/.test(html)].join(), 'undefined,false');
   check('no Chinese in the English copy', Object.keys(E).filter(k => /[㐀-鿿]/.test(E[k])).join(), '');
-  check('page.json has no registry fields (unregistered draft)', ['status', 'category', 'subtopic', 'path', 'order'].filter(k => k in PJ).join(), '');
-  let h = unprefill(html, Z).replace(/<div[^>]*id="langToggle"[\s\S]*?<\/div>/, '').replace(/<title>[\s\S]*?<\/title>/, '').replace(/<meta[^>]*>/g, '').replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/g, '');
+  // registered 2026-11-20 (page.json carries the registry fields; no "order", so it sorts after every registered page)
+  check('page.json registry fields', ['category', 'subtopic', 'stage', 'status', 'path', 'order'].map(k => PJ[k]).join(), 'computing,software,university,live,computing/software/how-threejs-draws-a-scene/,');
+  // the provenance label is bilingual by design (rendered from page-provenance.json since registration, 2026-11-20)
+  check('exactly one provenance label', (html.match(/<details class="page-provenance"/g) || []).length, 1);
+  let h = unprefill(html, Z).replace(/<details class="page-provenance"[\s\S]*?<\/details>/, '').replace(/<div[^>]*id="langToggle"[\s\S]*?<\/div>/, '').replace(/<title>[\s\S]*?<\/title>/, '').replace(/<meta[^>]*>/g, '').replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/g, '');
   const cjk = h.match(/[^\n]{0,30}[㐀-鿿][^\n]{0,30}/g) || [];
   check('no Chinese in index.html outside pre-filled copy', cjk.slice(0, 3).join(' | '), '');
   for (const f of fs.readdirSync(path.join(DIR, 'figures'))) { const s = fs.readFileSync(path.join(DIR, 'figures', f), 'utf8'); ok(`figures/${f} has no Chinese`, !/[㐀-鿿]/.test(s)); }

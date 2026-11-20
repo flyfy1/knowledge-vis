@@ -77,8 +77,9 @@ const STR={
     "site.bl.1": "<a href=\"../../../computing/ml/attention-mechanism/\">注意力机制 · 每个词决定看谁</a>：<a href=\"../../../computing/ml/attention-mechanism/#step5\">该课第 5 步</a> → <a href=\"#step1\">本页第 1 步</a>",
     "site.bl.2": "<a href=\"../../../computing/ml/embeddings/\">词向量 · 把词摆成地图</a>：<a href=\"../../../computing/ml/embeddings/#step5\">该课第 5 步</a> → <a href=\"#step1\">本页第 1 步</a>",
     "site.bl.3": "<a href=\"../../../computing/quantum/what-quantum-computers-do/\">量子计算机到底能做什么</a>：<a href=\"../../../computing/quantum/what-quantum-computers-do/#ch2\">该文第 2 章</a>；<a href=\"../../../computing/quantum/what-quantum-computers-do/#ch12\">该文第 12 章</a>",
-    "site.bl.4": "<a href=\"../../algebra/simultaneous-equations/\">二元一次方程组 · 两条直线的交点</a>：<a href=\"../../algebra/simultaneous-equations/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>",
-    "site.bl.5": "<a href=\"../vectors/\">向量 · 有方向的量</a>：<a href=\"../vectors/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>"
+    "site.bl.4": "<a href=\"../../../computing/software/how-threejs-draws-a-scene/\">Three.js 是怎么把一个场景画出来的</a>：<a href=\"../../../computing/software/how-threejs-draws-a-scene/#ch14\">该文第 14 章</a>",
+    "site.bl.5": "<a href=\"../../algebra/simultaneous-equations/\">二元一次方程组 · 两条直线的交点</a>：<a href=\"../../algebra/simultaneous-equations/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>",
+    "site.bl.6": "<a href=\"../vectors/\">向量 · 有方向的量</a>：<a href=\"../vectors/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>"
   },
   en: {
     docTitle: "2D Linear Maps · One Interaction at a Time",
@@ -156,8 +157,9 @@ const STR={
     "site.bl.1": "<a href=\"../../../computing/ml/attention-mechanism/\">Attention · Every Word Decides Where to Look</a>: <a href=\"../../../computing/ml/attention-mechanism/#step5\">its step 5</a> → <a href=\"#step1\">this page step 1</a>",
     "site.bl.2": "<a href=\"../../../computing/ml/embeddings/\">Word Embeddings · Words as a Map</a>: <a href=\"../../../computing/ml/embeddings/#step5\">its step 5</a> → <a href=\"#step1\">this page step 1</a>",
     "site.bl.3": "<a href=\"../../../computing/quantum/what-quantum-computers-do/\">What Quantum Computers Can Actually Do</a>: <a href=\"../../../computing/quantum/what-quantum-computers-do/#ch2\">its chapter 2</a>; <a href=\"../../../computing/quantum/what-quantum-computers-do/#ch12\">its chapter 12</a>",
-    "site.bl.4": "<a href=\"../../algebra/simultaneous-equations/\">Simultaneous Equations · Where Two Lines Meet</a>: <a href=\"../../algebra/simultaneous-equations/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>",
-    "site.bl.5": "<a href=\"../vectors/\">Vectors · Quantities With a Direction</a>: <a href=\"../vectors/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>"
+    "site.bl.4": "<a href=\"../../../computing/software/how-threejs-draws-a-scene/\">How Three.js Draws a Scene</a>: <a href=\"../../../computing/software/how-threejs-draws-a-scene/#ch14\">its chapter 14</a>",
+    "site.bl.5": "<a href=\"../../algebra/simultaneous-equations/\">Simultaneous Equations · Where Two Lines Meet</a>: <a href=\"../../algebra/simultaneous-equations/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>",
+    "site.bl.6": "<a href=\"../vectors/\">Vectors · Quantities With a Direction</a>: <a href=\"../vectors/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>"
   }
 };
 let lang=(typeof localStorage!=='undefined'&&localStorage.getItem('knowledge-lang'))||((navigator.language||'zh').toLowerCase().startsWith('zh')?'zh':'en');

@@ -501,6 +501,7 @@ window.ESSAY_COPY.en = {
   "site.crumb.aria": "Breadcrumb",
   "site.crumb.home": "Home",
   "site.crumb.cat": "Computing & AI",
+  "site.crumb.sub": "How Software Works",
   "site.rel.title": "Related pages",
   "site.rel.1": "<a href=\"../../../variants/claude-code/computer-graphics/\">Computer Graphics · From Coordinates to Pixels</a>",
   "site.rel.2": "<a href=\"../../../variants/claude-code/robot-kinematics/\">Advanced Robotics · From Angles to the End Effector</a>",
