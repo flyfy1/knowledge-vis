@@ -1,11 +1,11 @@
 {
   "counts": {
     "groups": 11,
-    "nodes": 775,
-    "edges": 921,
+    "nodes": 789,
+    "edges": 933,
     "trails": 14,
     "questions": 124,
-    "fragments": 223
+    "fragments": 224
   },
   "conflicts": [],
   "suspendedEdges": [],
@@ -1446,6 +1446,70 @@
       "taughtBy": [
         "weak-acid-equilibrium"
       ]
+    },
+    {
+      "concept": "threejs-render-call",
+      "page": "computer-graphics",
+      "taughtBy": [
+        "graphics-pipeline"
+      ]
+    },
+    {
+      "concept": "scene-graph-world-matrix",
+      "page": "robot-kinematics",
+      "taughtBy": [
+        "robot-kinematics"
+      ]
+    },
+    {
+      "concept": "scene-graph-world-matrix",
+      "page": "linear-transform",
+      "taughtBy": [
+        "determinant",
+        "matrix-transform"
+      ]
+    },
+    {
+      "concept": "projection-depth-precision",
+      "page": "how-pixels-reach-a-screen",
+      "taughtBy": [
+        "framebuffer",
+        "pixel-clock",
+        "tearing-vsync",
+        "variable-refresh",
+        "display-engine",
+        "display-link",
+        "dsc-chroma",
+        "panel-rows",
+        "motion-blur",
+        "hdr-pq",
+        "display-latency",
+        "display-frontier",
+        "display-troubleshoot"
+      ]
+    },
+    {
+      "concept": "rasterization-depth-test",
+      "page": "how-a-gpu-computes",
+      "taughtBy": [
+        "gpu-latency-hiding",
+        "cuda-grid-block-warp",
+        "warp-scheduling-occupancy",
+        "warp-divergence",
+        "memory-coalescing",
+        "shared-memory-bank-conflicts",
+        "tiled-matmul-gpu",
+        "mma-number-formats",
+        "pixel-quads",
+        "gpu-memory-hierarchy",
+        "gpu-frontier-2026",
+        "gpu-code-checklist"
+      ]
+    },
+    {
+      "concept": "draw-call-cost",
+      "page": "fable-flight",
+      "taughtBy": []
     },
     {
       "concept": "usb4-bandwidth-allocation",
@@ -3475,10 +3539,10 @@
     }
   ],
   "unknownAliasIds": [],
-  "sizeBytes": 1321301,
+  "sizeBytes": 1343921,
   "questionsBytes": 173006,
-  "combinedBytes": 1494307,
-  "indexBytes": 153348,
+  "combinedBytes": 1516927,
+  "indexBytes": 155399,
   "chunkBytes": {
     "math.nodes": 51664,
     "math.edges": 90019,
@@ -3504,8 +3568,8 @@
     "earth.nodes": 25871,
     "earth.edges": 19025,
     "earth.questions": 6822,
-    "computing.nodes": 289902,
-    "computing.edges": 187479,
+    "computing.nodes": 303385,
+    "computing.edges": 193572,
     "computing.questions": 2766,
     "society.nodes": 67881,
     "society.edges": 41022,

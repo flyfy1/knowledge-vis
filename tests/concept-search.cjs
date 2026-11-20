@@ -774,6 +774,30 @@ chapters.push(
   ['登纳德缩放', 'Dennard scaling', 'computing/systems/why-compute-waits-for-memory/#ch5'],
   ['内阻', 'internal resistance', 'tech/devices/inside-a-phone/#battery'],
 );
+// how-threejs-draws-a-scene (2026-11-20, software series W1). Bare "three.js" stays with demos/fable-flight (its page tag
+// wins the tie on the homepage); "光栅化" / "rasterization" stay with computer-graphics, "sRGB" with how-pixels-reach-a-screen.
+const TJS = 'computing/software/how-threejs-draws-a-scene/';
+chapters.push(
+  ['three.js 是什么', 'what is three.js', TJS + '#ch1'],
+  ['场景图', 'scene graph', TJS + '#ch2'],
+  ['BufferGeometry', 'index buffer', TJS + '#ch3'],
+  ['模型为什么闪', 'z-fighting', TJS + '#ch4'],
+  ['视锥体剔除', 'frustum culling', TJS + '#ch5'],
+  ['着色器编译卡顿', 'shader recompile', TJS + '#ch6'],
+  ['PBR', 'BRDF', TJS + '#ch7'],
+  ['透明物体显示不对', 'depth test', TJS + '#ch8'],
+  ['贴图模糊', 'mipmap', TJS + '#ch9'],
+  ['阴影有条纹', 'shadow acne', TJS + '#ch10'],
+  ['three.js 为什么卡', 'what is a draw call', TJS + '#ch11'],
+  ['draw call 是什么', 'three.js instancing', TJS + '#ch11'],
+  ['射线拾取', 'raycaster', TJS + '#ch12'],
+  ['四元数', 'gimbal lock', TJS + '#ch12'],
+  ['WebGPU', 'TSL', TJS + '#ch13'],
+);
+for (const [q, href] of [['three.js', 'demos/fable-flight/'], ['光栅化', 'computing/graphics/computer-graphics/'], ['sRGB', 'computing/systems/how-pixels-reach-a-screen/#ch1']]) {
+  const hit = first(q);
+  ok(hit && hit.href.startsWith(href), `"${q}" stays with ${href} (got ${hit && hit.href})`);
+}
 for (const [zh, en, href] of chapters) for (const q of [zh, en]) {
   const hit = first(q);
   ok(hit && (hit.href === href || (href.endsWith('/') && hit.href.startsWith(href))), `"${q}" opens ${href} (got ${hit && hit.href})`);

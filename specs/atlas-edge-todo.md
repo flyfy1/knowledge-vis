@@ -11,7 +11,7 @@ taught on B (any `lessons[]` entry). Pairs where either page teaches no atlas co
 counted. Under each pair: every link, with the concepts anchored at its two ends where there are any (`?` = none at that
 anchor; a link to the page top has no anchor).
 
-855 linked page pairs · 418 covered by an atlas edge · 19 with no concept on one side · **418 to do**.
+855 linked page pairs · 420 covered by an atlas edge · 14 with no concept on one side · **421 to do**.
 
 ## 冰冻肥皂泡 · 水膜里的结晶 / Frozen Soap Bubbles · Ice in a Thin Film → 光的反射与折射 · 拐弯的规矩 / Reflection & Refraction · How Light Bends
 
@@ -1652,6 +1652,20 @@ anchor; a link to the page top has no anchor).
 ## 量子计算机到底能做什么 / What Quantum Computers Can Actually Do → 特征值与特征向量 · 矩阵不转的那些方向 / Eigenvalues & Eigenvectors · The Directions a Matrix Cannot Turn
 
 - `what-quantum-computers-do#ch12` → `eigenvectors`: reading-quantum-news → ?
+
+## Three.js 是怎么把一个场景画出来的 / How Three.js Draws a Scene → 计算机图形学 · 从坐标到画面 / Computer Graphics · From Coordinates to Pixels
+
+- `how-threejs-draws-a-scene` → `computer-graphics`
+- `how-threejs-draws-a-scene#ch14` → `computer-graphics`
+
+## Three.js 是怎么把一个场景画出来的 / How Three.js Draws a Scene → 二维线性变换 · 矩阵如何挪动平面 / 2D Linear Transformations · How Matrices Move the Plane
+
+- `how-threejs-draws-a-scene` → `linear-transform`
+- `how-threejs-draws-a-scene#ch14` → `linear-transform`
+
+## Three.js 是怎么把一个场景画出来的 / How Three.js Draws a Scene → 高阶机器人学 · 从角度到末端 / Advanced Robotics · From Angles to the End Effector
+
+- `how-threejs-draws-a-scene#ch14` → `robot-kinematics`
 
 ## 当着所有人的面约定一个秘密 / Agreeing on a Secret in Plain Sight → RSA 公钥加密 · 乘起来容易，拆开来难 / RSA Public-Key Encryption · Easy to Multiply, Hard to Split
 

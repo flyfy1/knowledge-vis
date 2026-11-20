@@ -2705,7 +2705,7 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 <!-- GENERATED:atlas-nodes -->
 ## 三、图谱节点索引（生成，勿手改）
 
-775 个概念 · 921 条关系 · 11 个分区 · 由 scripts/build-atlas-data.cjs --concept-map 生成。节点排序与 data.js 一致（分区序、学段序、order、id）。
+789 个概念 · 933 条关系 · 11 个分区 · 由 scripts/build-atlas-data.cjs --concept-map 生成。节点排序与 data.js 一致（分区序、学段序、order、id）。
 
 ### 01 数学基础 / Mathematical tools
 
@@ -3117,6 +3117,7 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 共享总线：PCI 的仲裁、复用和时间账 / The Shared Bus: PCI Arbitration, Multiplexing and Its Time Budget | ../computing/systems/how-a-computer-is-wired/#ch1 | how-a-computer-is-wired |
 | 排序算法 · 冒泡、归并与快排 / Sorting algorithms · bubble, merge and quicksort | ../computing/algorithms/sorting/#step2 | sorting#step2 |
 | TCP 拥塞控制 · 试探与退让 / TCP congestion control · probe and back off | ../computing/systems/tcp-congestion/#step4 | tcp-congestion#step4 |
+| renderer.render() 每一帧做什么 / What renderer.render() does each frame | ../computing/software/how-threejs-draws-a-scene/#ch1 | how-threejs-draws-a-scene |
 | Transformer 的一层 / The transformer block | ../computing/ml/what-a-frontier-model-takes/#ch1 | what-a-frontier-model-takes |
 | USB-C 的 24 根针和 CC 线 / The 24 Pins of USB-C and the CC Line | ../computing/systems/how-thunderbolt-works/#ch1 | how-thunderbolt-works |
 | USB 存储在协议地图上的位置：两段协议和一颗桥接芯片 / Where USB Storage Sits: Two Stacks and a Bridge Chip | ../computing/systems/how-usb-drives-talk/#ch1 | how-usb-drives-talk |
@@ -3143,6 +3144,7 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 像素时钟与消隐：按真实时序表算 / Pixel clock and blanking, from real timing tables | ../computing/systems/how-pixels-reach-a-screen/#ch2 | how-pixels-reach-a-screen |
 | 复位向量：第一条指令在 0xFFFFFFF0 / The reset vector: the first instruction at 0xFFFFFFF0 | ../computing/systems/how-a-computer-boots/#ch2 | how-a-computer-boots |
 | RISC-V 的寄存器和六种指令格式 / RISC-V registers and the six instruction formats | ../computing/systems/how-a-cpu-runs-a-program/#ch2 | how-a-cpu-runs-a-program |
+| 场景图与世界矩阵 / The scene graph and world matrices | ../computing/software/how-threejs-draws-a-scene/#ch2 | how-threejs-draws-a-scene |
 | SCSI 命令块 CDB、LUN 与标签队列 / The SCSI CDB, LUNs and Tagged Queuing | ../computing/systems/how-sas-works/#ch2 | how-sas-works |
 | 系统调用：程序故意触发的一次异常 / The system call: an exception the program raises on purpose | ../computing/systems/how-the-os-talks-to-hardware/#ch2 | how-the-os-talks-to-hardware |
 | 1 位与 2 位饱和计数器、排序数组为什么快 / 1-bit and 2-bit counters; why the sorted array is faster | ../computing/systems/how-a-cpu-guesses-ahead/#ch2 | how-a-cpu-guesses-ahead |
@@ -3150,6 +3152,7 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | USB 由主机调度：微帧与批量传输上限 / USB Is Host-Scheduled: Microframes and the Bulk Ceiling | ../computing/systems/how-usb-drives-talk/#ch2 | how-usb-drives-talk |
 | USB4 路由器与隧道：4 字节包头 / USB4 Routers and Tunnels: the 4-Byte Header | ../computing/systems/how-thunderbolt-works/#ch2 | how-thunderbolt-works |
 | 8b/10b 编码与逗号码 / 8b/10b Encoding and the Comma | ../computing/systems/how-sata-works/#ch3 | how-sata-works |
+| 几何体：顶点、索引和字节 / Geometry: vertices, indices and bytes | ../computing/software/how-threejs-draws-a-scene/#ch3 | how-threejs-draws-a-scene |
 | 相联度与三种缺失 / Associativity and the three kinds of miss | ../computing/systems/how-cpu-caches-work/#ch3 | how-cpu-caches-work |
 | 矩阵分块与时间局部性 / Loop Tiling and Temporal Locality | ../computing/systems/why-compute-waits-for-memory/#ch3 | why-compute-waits-for-memory |
 | 把一个循环翻译成机器码 / Hand-compiling a loop to machine code | ../computing/systems/how-a-cpu-runs-a-program/#ch3 | how-a-cpu-runs-a-program |
@@ -3196,6 +3199,7 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 参数量与每个 token 的运算量 / Parameter count and FLOPs per token | ../computing/ml/what-a-frontier-model-takes/#ch3 | what-a-frontier-model-takes |
 | PCIe 的信用流控 / Credit-Based Flow Control in PCIe | ../computing/systems/how-pcie-works/#ch4 | how-pcie-works |
 | 每个包的 PCIe 开销：400G 小包装不下 / PCIe bytes per packet: small packets at 400G do not fit | ../computing/systems/how-a-nic-moves-packets/#ch4 | how-a-nic-moves-packets |
+| 投影、裁剪空间和深度精度 / Projection, clip space and depth precision | ../computing/software/how-threejs-draws-a-scene/#ch4 | how-threejs-draws-a-scene |
 | FIS 帧：一条读命令在线上的样子 / FIS Frames: One Read Command on the Wire | ../computing/systems/how-sata-works/#ch4 | how-sata-works |
 | 单周期数据通路和控制信号 / The single-cycle datapath and its control signals | ../computing/systems/how-a-cpu-runs-a-program/#ch4 | how-a-cpu-runs-a-program |
 | 次正规数、无穷大和 NaN / Subnormals, infinity and NaN | ../computing/systems/how-a-cpu-does-math/#ch4 | how-a-cpu-does-math |
@@ -3217,6 +3221,7 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 德意志–约萨算法 / The Deutsch–Jozsa algorithm | ../computing/quantum/what-quantum-computers-do/#ch5 | what-quantum-computers-do |
 | 显示引擎、合成器与颜色管线 / Display engine, compositor and colour pipeline | ../computing/systems/how-pixels-reach-a-screen/#ch5 | how-pixels-reach-a-screen |
 | 闪存为什么会坏：擦写次数、纠错码、TBW 与 DWPD / Why flash wears out: P/E cycles, ECC, TBW and DWPD | ../computing/systems/what-a-drive-is-made-of/#ch5 | what-a-drive-is-made-of |
+| 视锥体剔除和渲染顺序 / Frustum culling and render order | ../computing/software/how-threejs-draws-a-scene/#ch5 | how-threejs-draws-a-scene |
 | Gated DeltaNet 与选择性遗忘门 / Gated DeltaNet & Selective Decay | ../computing/ml/how-hybrid-attention-remembers/#ch5 | how-hybrid-attention-remembers |
 | 中断走过的路：向量、上半部、下半部 / The path of an interrupt: vector, top half, bottom half | ../computing/systems/how-the-os-talks-to-hardware/#ch5 | how-the-os-talks-to-hardware |
 | 负载线与去耦电容 / Load line and decoupling | ../computing/systems/how-power-reaches-the-cpu/#ch5 | how-power-reaches-the-cpu |
@@ -3256,6 +3261,7 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 宽端口：四条道不能合成一条 / Wide Ports: Four Lanes Are Not One Fast Lane | ../computing/systems/how-sas-works/#ch6 | how-sas-works |
 | 热插拔与链路省电：Partial、Slumber、DevSleep / Hot Plug and Link Power: Partial, Slumber, DevSleep | ../computing/systems/how-sata-works/#ch6 | how-sata-works |
 | 规模定律与 Chinchilla 最优 / Scaling laws and Chinchilla-optimal training | ../computing/ml/what-a-frontier-model-takes/#ch5 | what-a-frontier-model-takes |
+| 材质怎么变成着色器程序 / How a material becomes a shader program | ../computing/software/how-threejs-draws-a-scene/#ch6 | how-threejs-draws-a-scene |
 | 共享内存的 bank 冲突 / Shared-memory bank conflicts | ../computing/systems/how-a-gpu-computes/#ch6 | how-a-gpu-computes |
 | 写放大、垃圾回收与 Trim / Write Amplification, Garbage Collection & Trim | ../computing/systems/why-nvme-is-fast/#ch6 | why-nvme-is-fast |
 | 超标量与指令级并行 / Superscalar issue and instruction-level parallelism | ../computing/systems/how-a-cpu-guesses-ahead/#ch6 | how-a-cpu-guesses-ahead |
@@ -3285,6 +3291,7 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 屋顶线模型与算术强度 / The Roofline Model and Arithmetic Intensity | ../computing/systems/why-compute-waits-for-memory/#ch7 | why-compute-waits-for-memory |
 | STP：SAS 口为什么认 SATA 盘 / STP: Why a SAS Port Accepts a SATA Drive | ../computing/systems/how-sas-works/#ch7 | how-sas-works |
 | 肖尔算法与 RSA / Shor's algorithm and RSA | ../computing/quantum/what-quantum-computers-do/#ch7 | what-quantum-computers-do |
+| MeshStandardMaterial 的光照公式 / The lighting formula of MeshStandardMaterial | ../computing/software/how-threejs-draws-a-scene/#ch7 | how-threejs-draws-a-scene |
 | 存储接口分层地图：外形、连接器、链路、传输、命令集 / Storage interface map: form factor, connector, link, transport, command set | ../computing/systems/what-a-drive-is-made-of/#ch7 | what-a-drive-is-made-of |
 | 分块矩阵乘法的两级屋顶 / Tiled matrix multiply: two levels of roofs | ../computing/systems/how-a-gpu-computes/#ch7 | how-a-gpu-computes |
 | 训练一个大模型要多少钱 / What training a large model costs | ../computing/ml/what-a-frontier-model-takes/#ch6 | what-a-frontier-model-takes |
@@ -3309,6 +3316,7 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 屏里面：时序控制器和一行的充电时间 / Inside the panel: the TCON and the time a row gets | ../computing/systems/how-pixels-reach-a-screen/#ch8 | how-pixels-reach-a-screen |
 | 通道损耗预算与重定时器 / Channel Loss Budgets and Retimers | ../computing/systems/how-pcie-works/#ch8 | how-pcie-works |
 | 哪些问题有加速：BQP 与平方加速的打平点 / Which problems speed up: BQP and the quadratic crossover | ../computing/quantum/what-quantum-computers-do/#ch8 | what-quantum-computers-do |
+| 光栅化、深度测试和透明排序 / Rasterisation, the depth test and transparency | ../computing/software/how-threejs-draws-a-scene/#ch8 | how-threejs-draws-a-scene |
 | 重排序缓冲与精确异常 / The reorder buffer and precise exceptions | ../computing/systems/how-a-cpu-guesses-ahead/#ch8 | how-a-cpu-guesses-ahead |
 | 安全启动：一级验一级的签名链 / Secure Boot: a chain of signature checks | ../computing/systems/how-a-computer-boots/#ch8 | how-a-computer-boots |
 | 顺序一致性与存储缓冲 / Sequential consistency and the store buffer | ../computing/systems/how-cores-share-memory/#ch8 | how-cores-share-memory |
@@ -3329,6 +3337,7 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 互连的前沿（截至 2026 年 11 月）：UCIe 3.0 与 4.0、3D 堆叠、CXL 4.0 / The Interconnect Frontier (as of November 2026): UCIe 3.0 and 4.0, 3D Stacking, CXL 4.0 | ../computing/systems/how-a-computer-is-wired/#ch9 | how-a-computer-is-wired |
 | 性能的铁律 / The iron law of performance | ../computing/systems/how-a-cpu-runs-a-program/#ch9 | how-a-cpu-runs-a-program |
 | LPDDR、GDDR7、CAMM2 与 MRDIMM / LPDDR, GDDR7, CAMM2 and MRDIMM | ../computing/systems/how-memory-talks/#ch9 | how-memory-talks |
+| 纹理过滤、mipmap 和颜色空间 / Texture filtering, mipmaps and colour space | ../computing/software/how-threejs-draws-a-scene/#ch9 | how-threejs-draws-a-scene |
 | 液晶、OLED 与运动模糊 / LCD, OLED and motion blur | ../computing/systems/how-pixels-reach-a-screen/#ch9 | how-pixels-reach-a-screen |
 | PAM4 与眼图 / PAM4 and Eye Diagrams | ../computing/systems/how-pcie-works/#ch9 | how-pcie-works |
 | 像素按 2×2 着色：小三角形为什么费 / Shading in 2×2 quads: why small triangles cost | ../computing/systems/how-a-gpu-computes/#ch9 | how-a-gpu-computes |
@@ -3364,6 +3373,7 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 行锤与防护：TRR、RFM、PRAC / Row hammer and its defences: TRR, RFM, PRAC | ../computing/systems/how-memory-talks/#ch10 | how-memory-talks |
 | SAS 的前沿（截至 2026 年 11 月） / The SAS Frontier (as of November 2026) | ../computing/systems/how-sas-works/#ch10 | how-sas-works |
 | 纵向扩展、横向扩展与 UALink / Scale-up, scale-out and UALink | ../computing/systems/coherent-interconnects/#ch10 | coherent-interconnects |
+| 阴影贴图、条纹和偏移 / Shadow maps, acne and bias | ../computing/software/how-threejs-draws-a-scene/#ch10 | how-threejs-draws-a-scene |
 | Spectre：猜测为什么会泄露秘密 / Spectre: why guessing leaks secrets | ../computing/systems/how-a-cpu-guesses-ahead/#ch10 | how-a-cpu-guesses-ahead |
 | 锁的扩展性：TAS、TTAS、排号锁与 MCS / Lock scaling: TAS, TTAS, ticket and MCS | ../computing/systems/how-cores-share-memory/#ch10 | how-cores-share-memory |
 | 雷电与 USB4 的前沿（2026） / Thunderbolt and USB4 Frontier (2026) | ../computing/systems/how-thunderbolt-works/#ch10 | how-thunderbolt-works |
@@ -3372,6 +3382,7 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 缓存的前沿（2026 年 11 月） / The cache frontier (November 2026) | ../computing/systems/how-cpu-caches-work/#ch11 | how-cpu-caches-work |
 | 前沿（2026 年 11 月）：几百个核心的一致性域 / Frontier (November 2026): coherence domains of hundreds of cores | ../computing/systems/how-cores-share-memory/#ch11 | how-cores-share-memory |
 | 从点鼠标到屏幕变亮 / From mouse click to photons | ../computing/systems/how-pixels-reach-a-screen/#ch11 | how-pixels-reach-a-screen |
+| draw call 的开销和实例化 / What a draw call costs, and instancing | ../computing/software/how-threejs-draws-a-scene/#ch11 | how-threejs-draws-a-scene |
 | 少走几次门：epoll 与 io_uring / Fewer crossings: epoll and io_uring | ../computing/systems/how-the-os-talks-to-hardware/#ch11 | how-the-os-talks-to-hardware |
 | 分支预测与推测执行的前沿（截至 2026 年 11 月） / The frontier of prediction and speculation (as of November 2026) | ../computing/systems/how-a-cpu-guesses-ahead/#ch11 | how-a-cpu-guesses-ahead |
 | 前沿在哪（2026 年 11 月） / Where the frontier is (November 2026) | ../computing/systems/how-a-gpu-computes/#ch11 | how-a-gpu-computes |
@@ -3400,6 +3411,7 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 绕开内核，以及虚拟机里的设备 / Kernel bypass and devices in virtual machines | ../computing/systems/how-the-os-talks-to-hardware/#ch12 | how-the-os-talks-to-hardware |
 | PCIe 翻倍的三种办法 / Three Ways PCIe Doubled | ../computing/systems/how-pcie-works/#ch12 | how-pcie-works |
 | 量化：把权重压成更少的位 / Quantisation: fewer bits per weight | ../computing/ml/what-a-frontier-model-takes/#ch9 | what-a-frontier-model-takes |
+| 射线拾取 / Picking with a raycaster | ../computing/software/how-threejs-draws-a-scene/#ch12 | how-threejs-draws-a-scene |
 | 看一根内存条时问三件事 / Three questions to ask of a memory module | ../computing/systems/how-memory-talks/#ch12 | how-memory-talks |
 | 看一段代码时问三件事 / Three questions about a piece of code | ../computing/systems/how-a-cpu-guesses-ahead/#ch12 | how-a-cpu-guesses-ahead |
 | 看一颗芯片的缓存时问三件事 / Three questions about a chip's caches | ../computing/systems/how-cpu-caches-work/#ch12 | how-cpu-caches-work |
@@ -3416,11 +3428,13 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 专家混合（MoE） / Mixture of experts (MoE) | ../computing/ml/what-a-frontier-model-takes/#ch10 | what-a-frontier-model-takes |
 | 网卡的前沿（2026 年 11 月） / The network-card frontier (November 2026) | ../computing/systems/how-a-nic-moves-packets/#ch13 | how-a-nic-moves-packets |
 | 前沿：io_uring 的安全代价、Rust 驱动、用户态 / The frontier: io_uring security, Rust drivers, user space | ../computing/systems/how-the-os-talks-to-hardware/#ch13 | how-the-os-talks-to-hardware |
+| 四元数和球面插值 / Quaternions and slerp | ../computing/software/how-threejs-draws-a-scene/#ch12 | how-threejs-draws-a-scene |
 | 程序慢的时候问三件事 / Three questions when a program is slow | ../computing/systems/how-virtual-memory-works/#ch13 | how-virtual-memory-works |
 | 开不了机时问的三件事 / Three questions when a computer will not boot | ../computing/systems/how-a-computer-boots/#ch14 | how-a-computer-boots |
 | 程序卡在 I/O 上时问的三件事 / Three questions when a program is stuck on I/O | ../computing/systems/how-the-os-talks-to-hardware/#ch14 | how-the-os-talks-to-hardware |
 | 看一张网卡时问的三件事 / Three questions to ask of a network card | ../computing/systems/how-a-nic-moves-packets/#ch14 | how-a-nic-moves-packets |
 | 投机解码、蒸馏与推理 token / Speculative decoding, distillation and reasoning tokens | ../computing/ml/what-a-frontier-model-takes/#ch10 | what-a-frontier-model-takes |
+| WebGPU 和 three.js 的新渲染器 / WebGPU and the new three.js renderer | ../computing/software/how-threejs-draws-a-scene/#ch13 | how-threejs-draws-a-scene |
 | 可解释性：消融、叠加与稀疏自编码器 / Interpretability: ablation, superposition and sparse autoencoders | ../computing/ml/what-a-frontier-model-takes/#ch11 | what-a-frontier-model-takes |
 | 2026 年的前沿：算力、价格、考卷与法规 / The frontier in 2026: compute, prices, tests and law | ../computing/ml/what-a-frontier-model-takes/#ch12 | what-a-frontier-model-takes |
 | 读大模型新闻时问的五个问题 / Five questions for the next AI headline | ../computing/ml/what-a-frontier-model-takes/#ch13 | what-a-frontier-model-takes |
@@ -3542,7 +3556,7 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 <!-- GENERATED:registry-concepts -->
 ## 页面 → 概念 → 锚点（生成，勿手改）
 
-252 个页面拥有 772 个图谱概念 · 由 scripts/build-registry.cjs 从 site-registry.json 生成（概念 = atlas/data.js 里 primary 课程是该页的节点；顺序同首页登记顺序）。登记或改动页面后重跑 `node scripts/build-registry.cjs`；不要再在本文件里手写逐页概念表（2026-11-16 起，上面的手写表保留为历史记录）。
+253 个页面拥有 786 个图谱概念 · 由 scripts/build-registry.cjs 从 site-registry.json 生成（概念 = atlas/data.js 里 primary 课程是该页的节点；顺序同首页登记顺序）。登记或改动页面后重跑 `node scripts/build-registry.cjs`；不要再在本文件里手写逐页概念表（2026-11-16 起，上面的手写表保留为历史记录）。
 
 ### 冰冻肥皂泡 · 水膜里的结晶 / Frozen Soap Bubbles · Ice in a Thin Film
 
@@ -6006,6 +6020,27 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 量子纠错：重复码与表面码 / Quantum error correction: repetition and surface codes | `computing/quantum/what-quantum-computers-do/#ch10` |
 | 2026 年的前沿：硬件、量子优势与资源估计 / The 2026 frontier: hardware, advantage claims and resource estimates | `computing/quantum/what-quantum-computers-do/#ch11` |
 | 读量子新闻的五个问题 / Five questions for reading quantum news | `computing/quantum/what-quantum-computers-do/#ch12` |
+
+### Three.js 是怎么把一个场景画出来的 / How Three.js Draws a Scene
+
+`computing/software/how-threejs-draws-a-scene/` · essay
+
+| 概念 | 深链 |
+| --- | --- |
+| renderer.render() 每一帧做什么 / What renderer.render() does each frame | `computing/software/how-threejs-draws-a-scene/#ch1` |
+| 场景图与世界矩阵 / The scene graph and world matrices | `computing/software/how-threejs-draws-a-scene/#ch2` |
+| 几何体：顶点、索引和字节 / Geometry: vertices, indices and bytes | `computing/software/how-threejs-draws-a-scene/#ch3` |
+| 投影、裁剪空间和深度精度 / Projection, clip space and depth precision | `computing/software/how-threejs-draws-a-scene/#ch4` |
+| 视锥体剔除和渲染顺序 / Frustum culling and render order | `computing/software/how-threejs-draws-a-scene/#ch5` |
+| 材质怎么变成着色器程序 / How a material becomes a shader program | `computing/software/how-threejs-draws-a-scene/#ch6` |
+| MeshStandardMaterial 的光照公式 / The lighting formula of MeshStandardMaterial | `computing/software/how-threejs-draws-a-scene/#ch7` |
+| 光栅化、深度测试和透明排序 / Rasterisation, the depth test and transparency | `computing/software/how-threejs-draws-a-scene/#ch8` |
+| 纹理过滤、mipmap 和颜色空间 / Texture filtering, mipmaps and colour space | `computing/software/how-threejs-draws-a-scene/#ch9` |
+| 阴影贴图、条纹和偏移 / Shadow maps, acne and bias | `computing/software/how-threejs-draws-a-scene/#ch10` |
+| draw call 的开销和实例化 / What a draw call costs, and instancing | `computing/software/how-threejs-draws-a-scene/#ch11` |
+| 射线拾取 / Picking with a raycaster | `computing/software/how-threejs-draws-a-scene/#ch12` |
+| 四元数和球面插值 / Quaternions and slerp | `computing/software/how-threejs-draws-a-scene/#ch12` |
+| WebGPU 和 three.js 的新渲染器 / WebGPU and the new three.js renderer | `computing/software/how-threejs-draws-a-scene/#ch13` |
 
 ### 当着所有人的面约定一个秘密 / Agreeing on a Secret in Plain Sight
 

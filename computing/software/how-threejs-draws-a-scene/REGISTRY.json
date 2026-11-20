@@ -53,7 +53,8 @@
           "three.js 怎么工作",
           "three.js 原理",
           "renderer.render 做了什么",
-          "WebGLRenderer"
+          "WebGLRenderer",
+          "three.js"
         ],
         "en": [
           "what is three.js",
@@ -61,7 +62,8 @@
           "three.js internals",
           "renderer.render",
           "WebGLRenderer",
-          "three.js render loop"
+          "three.js render loop",
+          "three.js"
         ]
       },
       "relatedPages": [
@@ -87,7 +89,8 @@
           "matrixWorld",
           "updateMatrixWorld",
           "子物体跟着父物体动",
-          "Object3D"
+          "Object3D",
+          "matrixAutoUpdate"
         ],
         "en": [
           "scene graph",
@@ -95,7 +98,8 @@
           "matrixWorld",
           "updateMatrixWorld",
           "Object3D",
-          "parent child transform"
+          "parent child transform",
+          "matrixAutoUpdate"
         ]
       },
       "relatedPages": [
@@ -222,7 +226,11 @@
           "着色器编译卡顿",
           "加灯以后卡一下",
           "ShaderChunk",
-          "材质和着色器"
+          "材质和着色器",
+          "重新编译着色器",
+          "第一帧卡顿",
+          "顶点着色器",
+          "片元着色器"
         ],
         "en": [
           "what is a shader",
@@ -230,7 +238,10 @@
           "shader compilation hitch",
           "program cache key",
           "ShaderChunk",
-          "material to shader"
+          "three.js material shader",
+          "shader recompile",
+          "vertex shader",
+          "fragment shader"
         ]
       },
       "relatedPages": []
@@ -291,7 +302,9 @@
           "z-buffer",
           "透视校正插值",
           "边函数",
-          "重心坐标"
+          "重心坐标",
+          "three.js 透明",
+          "透明物体叠错"
         ],
         "en": [
           "transparent objects render wrong",
@@ -301,7 +314,8 @@
           "z-buffer",
           "perspective-correct interpolation",
           "edge function",
-          "barycentric coordinates"
+          "barycentric coordinates",
+          "three.js transparency"
         ]
       },
       "relatedPages": [
@@ -326,7 +340,9 @@
           "各向异性过滤",
           "贴图远处闪烁",
           "贴图颜色发白",
-          "纹理显存"
+          "纹理显存",
+          "贴图模糊",
+          "three.js 纹理"
         ],
         "en": [
           "mipmap",
@@ -334,7 +350,10 @@
           "anisotropic filtering",
           "texture shimmering in the distance",
           "texture looks washed out",
-          "texture memory"
+          "texture memory",
+          "blurry texture",
+          "color space",
+          "three.js textures"
         ]
       },
       "relatedPages": []
@@ -358,7 +377,11 @@
           "shadow acne",
           "彼得潘现象",
           "阴影偏移 bias",
-          "阴影和物体分开了"
+          "阴影和物体分开了",
+          "阴影条纹",
+          "three.js 阴影",
+          "阴影锯齿",
+          "PCF 阴影"
         ],
         "en": [
           "shadow map",
@@ -367,7 +390,11 @@
           "striped shadows",
           "peter panning",
           "shadow bias",
-          "normal bias"
+          "normal bias",
+          "three.js shadows",
+          "jagged shadows",
+          "PCF shadows",
+          "shadow map resolution"
         ]
       },
       "relatedPages": []
@@ -393,7 +420,11 @@
           "InstancedMesh",
           "实例化渲染",
           "BatchedMesh",
-          "合并几何体"
+          "合并几何体",
+          "three.js 性能优化",
+          "three.js 掉帧",
+          "draw call 太多",
+          "合批"
         ],
         "en": [
           "what is a draw call",
@@ -404,7 +435,11 @@
           "instanced rendering",
           "instancing",
           "BatchedMesh",
-          "merge geometries"
+          "merge geometries",
+          "three.js performance",
+          "three.js fps",
+          "too many draw calls",
+          "GPU instancing"
         ]
       },
       "relatedPages": [
@@ -428,14 +463,16 @@
           "鼠标点中 3D 物体",
           "Raycaster",
           "射线和三角形相交",
-          "点击选中模型"
+          "点击选中模型",
+          "点击选中物体"
         ],
         "en": [
           "raycasting",
           "picking",
           "Raycaster",
           "ray triangle intersection",
-          "click to select a 3D object"
+          "click to select a 3D object",
+          "mouse picking"
         ]
       },
       "relatedPages": []
@@ -458,7 +495,8 @@
           "slerp",
           "球面线性插值",
           "万向节锁",
-          "欧拉角"
+          "欧拉角",
+          "万向节死锁"
         ],
         "en": [
           "what are quaternions for",
