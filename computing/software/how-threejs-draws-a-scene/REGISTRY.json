@@ -1,0 +1,505 @@
+{
+  "slug": "how-threejs-draws-a-scene",
+  "path": "computing/software/how-threejs-draws-a-scene/",
+  "category": "computing",
+  "subtopic": "software",
+  "stage": "university",
+  "title": {
+    "zh": "Three.js 是怎么把一个场景画出来的",
+    "en": "How Three.js Draws a Scene"
+  },
+  "desc": {
+    "zh": "二十行代码就能让一个立方体在网页里转起来，最后那一行 renderer.render(scene, camera) 每秒跑六十次。这篇按 three.js r187 的源码，把这一行拆开：场景树和矩阵，几何体的字节，相机和深度，剔除和排序，材质怎么变成着色器，一个像素的颜色，光栅化，纹理，阴影，draw call 的开销，拾取和四元数，以及 WebGPU。十几个可以动手的模型，都用页面里重写的同一套算法，并和 three.js 本身逐项对过数。",
+    "en": "A spinning cube in a web page takes twenty lines, and the last one, renderer.render(scene, camera), runs sixty times a second. Following the three.js r187 source, this essay takes that line apart: the scene tree and its matrices, the bytes of a geometry, the camera and depth, culling and sorting, how a material becomes a shader, the colour of one pixel, rasterisation, textures, shadows, what a draw call costs, picking and quaternions, and WebGPU. A dozen hands-on models run the same algorithms, rewritten in the page and checked number by number against three.js itself."
+  },
+  "tags": [
+    {
+      "zh": "Three.js",
+      "en": "Three.js"
+    },
+    {
+      "zh": "WebGL",
+      "en": "WebGL"
+    },
+    {
+      "zh": "计算机图形学",
+      "en": "Computer Graphics"
+    },
+    {
+      "zh": "软件原理",
+      "en": "How Software Works"
+    },
+    {
+      "zh": "长文",
+      "en": "Long-form Essay"
+    }
+  ],
+  "concepts": [
+    {
+      "id": "threejs-render-call",
+      "title": {
+        "zh": "renderer.render() 每一帧做什么",
+        "en": "What renderer.render() does each frame"
+      },
+      "desc": {
+        "zh": "Three.js 自己不画像素：它决定发哪些绘制命令、按什么顺序、带什么状态，再经 WebGL 或 WebGPU、浏览器和驱动交给 GPU。",
+        "en": "Three.js draws no pixels itself: it decides which draw calls to issue, in what order and with what state, and hands them through WebGL or WebGPU, the browser and the driver to the GPU."
+      },
+      "anchor": "#ch1",
+      "aliases": {
+        "zh": [
+          "three.js 是什么",
+          "threejs 是什么",
+          "three.js 怎么工作",
+          "three.js 原理",
+          "renderer.render 做了什么",
+          "WebGLRenderer"
+        ],
+        "en": [
+          "what is three.js",
+          "how does three.js work",
+          "three.js internals",
+          "renderer.render",
+          "WebGLRenderer",
+          "three.js render loop"
+        ]
+      },
+      "relatedPages": [
+        "computer-graphics"
+      ]
+    },
+    {
+      "id": "scene-graph-world-matrix",
+      "title": {
+        "zh": "场景图与世界矩阵",
+        "en": "The scene graph and world matrices"
+      },
+      "desc": {
+        "zh": "每个 Object3D 存相对父节点的位置、四元数和缩放；世界矩阵是从根一路乘下来的。默认每一帧每个节点都重算一遍，render 之前读到的是上一帧的值。",
+        "en": "Each Object3D stores position, quaternion and scale relative to its parent; its world matrix is the product down from the root. By default every node is recomputed every frame, and reading it before render gives last frame's value."
+      },
+      "anchor": "#ch2",
+      "aliases": {
+        "zh": [
+          "场景图",
+          "场景树",
+          "世界矩阵",
+          "matrixWorld",
+          "updateMatrixWorld",
+          "子物体跟着父物体动",
+          "Object3D"
+        ],
+        "en": [
+          "scene graph",
+          "world matrix",
+          "matrixWorld",
+          "updateMatrixWorld",
+          "Object3D",
+          "parent child transform"
+        ]
+      },
+      "relatedPages": [
+        "robot-kinematics",
+        "linear-transform"
+      ]
+    },
+    {
+      "id": "buffer-geometry",
+      "title": {
+        "zh": "几何体：顶点、索引和字节",
+        "en": "Geometry: vertices, indices and bytes"
+      },
+      "desc": {
+        "zh": "BufferGeometry 是一组类型化数组：位置、法线、uv 和索引。一个立方体有 24 个顶点，因为每个角在三个面上法线不同；每个顶点 32 字节。",
+        "en": "A BufferGeometry is a set of typed arrays: position, normal, uv and an index. A cube has 24 vertices because each corner has a different normal on each of its three faces; each vertex is 32 bytes."
+      },
+      "anchor": "#ch3",
+      "aliases": {
+        "zh": [
+          "BufferGeometry",
+          "顶点缓冲区",
+          "索引缓冲区",
+          "立方体为什么有 24 个顶点",
+          "顶点和三角形"
+        ],
+        "en": [
+          "BufferGeometry",
+          "vertex buffer",
+          "index buffer",
+          "why does a cube have 24 vertices",
+          "vertices and triangles"
+        ]
+      },
+      "relatedPages": []
+    },
+    {
+      "id": "projection-depth-precision",
+      "title": {
+        "zh": "投影、裁剪空间和深度精度",
+        "en": "Projection, clip space and depth precision"
+      },
+      "desc": {
+        "zh": "一个点经视图矩阵、投影矩阵、除以 w 和视口变换变成像素和深度。深度不均匀：近平面附近用掉了大部分格子，远处的两个面会抢同一个深度，这就是 z-fighting。",
+        "en": "A point becomes a pixel and a depth through the view matrix, the projection matrix, the divide by w and the viewport. Depth is not uniform: most values go near the near plane, so far-away surfaces share a depth and z-fight."
+      },
+      "anchor": "#ch4",
+      "aliases": {
+        "zh": [
+          "z-fighting",
+          "模型为什么闪",
+          "模型闪烁",
+          "深度冲突",
+          "透视投影矩阵",
+          "裁剪空间",
+          "标准设备坐标",
+          "对数深度缓冲",
+          "反向深度",
+          "近平面 远平面"
+        ],
+        "en": [
+          "z-fighting",
+          "why does my model flicker",
+          "depth precision",
+          "perspective projection matrix",
+          "clip space",
+          "normalized device coordinates",
+          "logarithmic depth buffer",
+          "reversed depth",
+          "near and far plane"
+        ]
+      },
+      "relatedPages": [
+        "how-pixels-reach-a-screen"
+      ]
+    },
+    {
+      "id": "frustum-culling-render-order",
+      "title": {
+        "zh": "视锥体剔除和渲染顺序",
+        "en": "Frustum culling and render order"
+      },
+      "desc": {
+        "zh": "render() 用包围球和视锥体的六个面剔除看不见的物体，再把不透明的按材质、由近到远排，透明的由远到近排。",
+        "en": "render() culls objects with bounding spheres against the six frustum planes, then sorts opaque objects by material and near to far, and transparent ones far to near."
+      },
+      "anchor": "#ch5",
+      "aliases": {
+        "zh": [
+          "视锥体剔除",
+          "视锥剔除",
+          "包围球",
+          "渲染顺序",
+          "绘制顺序",
+          "renderOrder"
+        ],
+        "en": [
+          "frustum culling",
+          "bounding sphere",
+          "render order",
+          "draw order",
+          "renderOrder",
+          "painter sort"
+        ]
+      },
+      "relatedPages": []
+    },
+    {
+      "id": "shader-program-cache",
+      "title": {
+        "zh": "材质怎么变成着色器程序",
+        "en": "How a material becomes a shader program"
+      },
+      "desc": {
+        "zh": "材质是参数；three.js 把着色器片段和 #define 拼成程序，用一长串参数当钥匙缓存。灯的数量在每个钥匙里，加一盏灯所有材质都要重新编译。",
+        "en": "A material is parameters; three.js assembles a program from shader chunks and #defines and caches it under a long key. Light counts are in every key, so adding a light recompiles every material."
+      },
+      "anchor": "#ch6",
+      "aliases": {
+        "zh": [
+          "什么是着色器",
+          "着色器是什么",
+          "shader 是什么",
+          "着色器编译卡顿",
+          "加灯以后卡一下",
+          "ShaderChunk",
+          "材质和着色器"
+        ],
+        "en": [
+          "what is a shader",
+          "shader compile stutter",
+          "shader compilation hitch",
+          "program cache key",
+          "ShaderChunk",
+          "material to shader"
+        ]
+      },
+      "relatedPages": []
+    },
+    {
+      "id": "standard-material-brdf",
+      "title": {
+        "zh": "MeshStandardMaterial 的光照公式",
+        "en": "The lighting formula of MeshStandardMaterial"
+      },
+      "desc": {
+        "zh": "高光是 GGX 分布、相关形式的 Smith 遮挡和 Schlick 菲涅尔的乘积，漫反射是剩下的光；粗糙的表面单次散射会丢能量，three.js 查表补回来。",
+        "en": "Specular is the product of the GGX distribution, correlated Smith visibility and Schlick Fresnel; diffuse is what remains. Rough surfaces lose energy to single scattering, and three.js adds it back from a table."
+      },
+      "anchor": "#ch7",
+      "aliases": {
+        "zh": [
+          "PBR",
+          "基于物理的渲染",
+          "GGX",
+          "粗糙度和金属度",
+          "金属度",
+          "菲涅尔",
+          "MeshStandardMaterial",
+          "BRDF"
+        ],
+        "en": [
+          "PBR",
+          "physically based rendering",
+          "GGX",
+          "roughness and metalness",
+          "metalness",
+          "Fresnel",
+          "MeshStandardMaterial",
+          "BRDF",
+          "microfacet"
+        ]
+      },
+      "relatedPages": []
+    },
+    {
+      "id": "rasterization-depth-test",
+      "title": {
+        "zh": "光栅化、深度测试和透明排序",
+        "en": "Rasterisation, the depth test and transparency"
+      },
+      "desc": {
+        "zh": "GPU 用边函数判断像素中心在不在三角形里，用重心坐标做透视校正插值，用深度缓冲区决定谁在前面。透明靠混合，和顺序有关，互相穿过的透明物体怎么排都不对。",
+        "en": "The GPU tests pixel centres with edge functions, interpolates with perspective-correct barycentrics and keeps the nearest surface with a depth buffer. Transparency blends in order, so intersecting transparent objects cannot be sorted right."
+      },
+      "anchor": "#ch8",
+      "aliases": {
+        "zh": [
+          "透明物体显示不对",
+          "透明物体排序",
+          "深度缓冲区",
+          "深度测试",
+          "z-buffer",
+          "透视校正插值",
+          "边函数",
+          "重心坐标"
+        ],
+        "en": [
+          "transparent objects render wrong",
+          "transparency sorting",
+          "depth buffer",
+          "depth test",
+          "z-buffer",
+          "perspective-correct interpolation",
+          "edge function",
+          "barycentric coordinates"
+        ]
+      },
+      "relatedPages": [
+        "how-a-gpu-computes"
+      ]
+    },
+    {
+      "id": "mipmap-texture-filtering",
+      "title": {
+        "zh": "纹理过滤、mipmap 和颜色空间",
+        "en": "Texture filtering, mipmaps and colour space"
+      },
+      "desc": {
+        "zh": "远处一个像素盖住很多纹理像素，所以 GPU 按 λ = log₂ρ 选 mipmap 的级别；各向异性过滤沿长的方向多采几次。mipmap 多占三分之一显存；颜色贴图要设成 sRGB。",
+        "en": "Far away, a pixel covers many texels, so the GPU picks a mip level λ = log₂ρ; anisotropic filtering takes more samples along the long axis. Mipmaps add a third to memory; colour maps must be marked sRGB."
+      },
+      "anchor": "#ch9",
+      "aliases": {
+        "zh": [
+          "mipmap",
+          "纹理过滤",
+          "各向异性过滤",
+          "贴图远处闪烁",
+          "贴图颜色发白",
+          "纹理显存"
+        ],
+        "en": [
+          "mipmap",
+          "texture filtering",
+          "anisotropic filtering",
+          "texture shimmering in the distance",
+          "texture looks washed out",
+          "texture memory"
+        ]
+      },
+      "relatedPages": []
+    },
+    {
+      "id": "shadow-mapping",
+      "title": {
+        "zh": "阴影贴图、条纹和偏移",
+        "en": "Shadow maps, acne and bias"
+      },
+      "desc": {
+        "zh": "阴影贴图是从灯的位置画的一张深度图。它一格一格的，所以受光面会自己挡自己出现条纹，bias 太大阴影又会和物体分开。",
+        "en": "A shadow map is a depth image rendered from the light. It is made of texels, so lit surfaces shadow themselves in stripes, and too much bias detaches the shadow from the object."
+      },
+      "anchor": "#ch10",
+      "aliases": {
+        "zh": [
+          "阴影贴图",
+          "阴影有条纹",
+          "阴影粉刺",
+          "shadow acne",
+          "彼得潘现象",
+          "阴影偏移 bias",
+          "阴影和物体分开了"
+        ],
+        "en": [
+          "shadow map",
+          "shadow mapping",
+          "shadow acne",
+          "striped shadows",
+          "peter panning",
+          "shadow bias",
+          "normal bias"
+        ]
+      },
+      "relatedPages": []
+    },
+    {
+      "id": "draw-call-cost",
+      "title": {
+        "zh": "draw call 的开销和实例化",
+        "en": "What a draw call costs, and instancing"
+      },
+      "desc": {
+        "zh": "每个网格至少一次 draw call，每次都要在 CPU 上切换状态、上传参数、经过浏览器检查。物体一多 CPU 先撑不住；合并、InstancedMesh 和 BatchedMesh 把 N 次变成 1 次。",
+        "en": "Each mesh is at least one draw call, and each costs CPU time for state, uniforms and the browser's checks. With many objects the CPU gives out first; merging, InstancedMesh and BatchedMesh turn N calls into one."
+      },
+      "anchor": "#ch11",
+      "aliases": {
+        "zh": [
+          "draw call 是什么",
+          "draw call",
+          "绘制调用",
+          "three.js 为什么卡",
+          "物体多了就卡",
+          "InstancedMesh",
+          "实例化渲染",
+          "BatchedMesh",
+          "合并几何体"
+        ],
+        "en": [
+          "what is a draw call",
+          "draw call",
+          "why is three.js slow",
+          "too many objects slow",
+          "InstancedMesh",
+          "instanced rendering",
+          "instancing",
+          "BatchedMesh",
+          "merge geometries"
+        ]
+      },
+      "relatedPages": [
+        "fable-flight"
+      ]
+    },
+    {
+      "id": "raycaster-picking",
+      "title": {
+        "zh": "射线拾取",
+        "en": "Picking with a raycaster"
+      },
+      "desc": {
+        "zh": "Raycaster 从相机穿过鼠标发一条射线，先和包围球比，再逐个三角形测试（r187 用水密的边函数测试），命中按距离排序。",
+        "en": "The Raycaster shoots a ray from the camera through the mouse, tests the bounding sphere first and then every triangle (r187 uses a watertight edge-function test), and sorts hits by distance."
+      },
+      "anchor": "#ch12",
+      "aliases": {
+        "zh": [
+          "射线拾取",
+          "鼠标点中 3D 物体",
+          "Raycaster",
+          "射线和三角形相交",
+          "点击选中模型"
+        ],
+        "en": [
+          "raycasting",
+          "picking",
+          "Raycaster",
+          "ray triangle intersection",
+          "click to select a 3D object"
+        ]
+      },
+      "relatedPages": []
+    },
+    {
+      "id": "quaternion-slerp",
+      "title": {
+        "zh": "四元数和球面插值",
+        "en": "Quaternions and slerp"
+      },
+      "desc": {
+        "zh": "旋转用四元数存：两个朝向之间的 slerp 走最短的弧、匀速；把欧拉角分别插值会绕远路，还有万向节锁。",
+        "en": "Rotations are stored as quaternions: slerp between two orientations follows the shortest arc at constant speed; interpolating Euler angles takes a longer path and suffers gimbal lock."
+      },
+      "anchor": "#ch12",
+      "aliases": {
+        "zh": [
+          "四元数是干什么的",
+          "四元数",
+          "slerp",
+          "球面线性插值",
+          "万向节锁",
+          "欧拉角"
+        ],
+        "en": [
+          "what are quaternions for",
+          "quaternion",
+          "slerp",
+          "spherical linear interpolation",
+          "gimbal lock",
+          "Euler angles"
+        ]
+      },
+      "relatedPages": []
+    },
+    {
+      "id": "webgpu-frontier",
+      "title": {
+        "zh": "WebGPU 和 three.js 的新渲染器",
+        "en": "WebGPU and the new three.js renderer"
+      },
+      "desc": {
+        "zh": "WebGPU 是更接近 Metal、Vulkan、Direct3D 12 的网页图形接口，能做通用计算；three.js 的 WebGPURenderer 和 TSL 节点材质正在接手。截至 2026 年 11 月各浏览器的支持情况。",
+        "en": "WebGPU is a web graphics API closer to Metal, Vulkan and Direct3D 12, with general compute; three.js's WebGPURenderer and TSL node materials are taking over. Browser support as of November 2026."
+      },
+      "anchor": "#ch13",
+      "aliases": {
+        "zh": [
+          "WebGL 和 WebGPU 区别",
+          "WebGPU",
+          "WebGPU 支持哪些浏览器",
+          "TSL",
+          "WebGPURenderer"
+        ],
+        "en": [
+          "WebGL vs WebGPU",
+          "WebGPU",
+          "WebGPU browser support",
+          "TSL",
+          "WebGPURenderer",
+          "three shading language"
+        ]
+      },
+      "relatedPages": []
+    }
+  ]
+}

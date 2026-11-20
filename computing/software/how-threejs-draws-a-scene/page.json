@@ -1,0 +1,26 @@
+{
+  "slug": "how-threejs-draws-a-scene",
+  "kind": "essay",
+  "layout": "essay",
+  "scripts": [
+    "models.js",
+    "copy.zh.js",
+    "copy.en.js",
+    "app.js"
+  ],
+  "version": "20261120b",
+  "dynamicKeys": {
+    "ch6.mat": ["floor", "wood", "brass", "glass", "sky", "leaves"],
+    "ch9.f": ["nearest", "linear", "trilinear", "aniso"],
+    "ch9.why": ["nearest", "linear", "trilinear", "aniso"],
+    "ch11.s": ["separate", "merged", "instanced", "batched"]
+  },
+  "generators": [
+    {
+      "run": "tools/diagrams.cjs",
+      "writes": [
+        "figures/dg-*.html"
+      ]
+    }
+  ]
+}

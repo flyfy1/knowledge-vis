@@ -1,0 +1,749 @@
+---
+lang: zh
+title: Three.js 是怎么把一个场景画出来的 · 一篇可以动手的长文
+desc: 二十行代码就能让一个立方体在网页里转起来，最后那一行 renderer.render(scene, camera) 每秒跑六十次。这篇按 three.js r187 的源码，把这一行拆开：场景树和矩阵，几何体的字节，相机和深度，剔除和排序，材质怎么变成着色器，一个像素的颜色，光栅化，纹理，阴影，draw call 的开销，拾取和四元数，以及 WebGPU。十几个可以动手的模型，都用页面里重写的同一套算法，并和 three.js 本身逐项对过数。
+---
+
+::: strings
+nav.back: ← 知识索引
+nav.lang: 语言
+toc.label: 目录
+toc.title: 目录
+u.pct: {v}%
+u.ms: {v} 毫秒
+u.us: {v} 微秒
+u.px: {v} 像素
+u.deg: {v}°
+u.x: {v} 倍
+u.calls: {v} 次
+u.none: 无
+u.sep: 、
+:::
+
+# Three.js 是怎么把一个场景画出来的 {#hero}
+
+::: strings
+kicker: 计算机 · 软件原理 · 一篇可以动手的长文
+:::
+
+二十行代码就能让一个立方体在网页里转起来。<br>最后那一行 renderer.render(scene, camera) 每秒跑六十次，它每一次到底做了什么？ {.sub}
+
+Three.js 是网页上最常用的 3D 库：产品展示、数据可视化、小游戏、这个网站上的[[fable-flight|三维短片]]，很多都是用它画的。写一个转动的立方体只要二十来行，其中真正"画"的只有最后一行。这篇文章只问一个问题：**`renderer.render(scene, camera)` 这一行，每一帧到底做了什么？**我们按它干活的顺序往下走：先把每个物体的位置算成矩阵，再把看不见的扔掉、把剩下的排好队，把材质翻译成 GPU 能执行的程序，最后交给 GPU 把三角形变成像素。中间会停下来看几个常见的"怪事"：模型为什么闪，透明物体为什么叠错，阴影为什么有条纹，物体一多为什么卡。 {.lead}
+
+这里讲的内部结构全部来自 three.js 的 r187 版（npm 包 three@0.187.0，2026 年 10 月 30 日发布）的源码，类名、函数名和常数都是那一版里的；以后的版本可能会改。页面不加载 three.js：每个模型都把对应的算法用几十到几百行重写了一遍，再拿一个脚本把这些模型和真正的 three.js 在同样的输入上逐项对数（矩阵、剔除结果、排序、着色器缓存键、射线命中等），都对得上。前置知识可以看[[computer-graphics]]（二维变换、光栅化、漫反射）和[[linear-transform]]（矩阵怎么挪动平面）。这篇文章是 AI 写的；每章最后一段说明模型省掉了什么。 {.note}
+
+## 在地图上的位置 {#ch1}
+
+::: strings
+toc: 在地图上的位置
+:::
+
+Three.js 自己不画一个像素。它做的是决定：这一帧要发哪些绘制命令（draw call），按什么顺序，每条命令前要把 GPU 设成什么状态。真正画像素的是 GPU。 {.law}
+
+下面是一个最小的 three.js 程序。前面十几行搭场景：一个场景（Scene），一台相机（PerspectiveCamera），一个立方体网格（Mesh，由几何体 BoxGeometry 和材质 MeshStandardMaterial 组成），一盏灯。最后交给 `setAnimationLoop` 的那个函数每帧跑一次：把立方体转一点，然后调用 `renderer.render(scene, camera)`。
+
+::: html ch1-code
+code.aria: 一个最小的 three.js 程序
+code: "import * as THREE from 'three';\n\nconst scene = new THREE.Scene();\nconst camera = new THREE.PerspectiveCamera(50, innerWidth / innerHeight, 0.1, 2000);\ncamera.position.z = 4;\n\nconst cube = new THREE.Mesh(\n  new THREE.BoxGeometry(1, 1, 1),\n  new THREE.MeshStandardMaterial()\n);\nscene.add(cube);\nscene.add(new THREE.DirectionalLight(0xffffff, 3));\n\nconst renderer = new THREE.WebGLRenderer();\nrenderer.setSize(innerWidth, innerHeight);\ndocument.body.appendChild(renderer.domElement);\n\nrenderer.setAnimationLoop(() => {\n  cube.rotation.y += 0.01;\n  renderer.render(scene, camera);\n});"
+:::
+
+这一行下面有好几层。你的代码只和 three.js 打交道；three.js 把场景翻译成 WebGL 2 的调用（或者用新的 WebGPURenderer 翻译成 WebGPU 的调用，第 13 章）；浏览器把这些调用检查一遍，转给操作系统的图形接口（Mac 上是 Metal，Windows 上通常是 Direct3D）；驱动再把它们编成 GPU 的命令。每往下一层，东西就变得更"笨"、更快：WebGL 不知道什么是"立方体"或"灯"，它只认识缓冲区、纹理、着色器程序和"用这个程序、这些缓冲区画 36 个顶点"这样的命令。
+
+::: diagram dg-stack keys=dg.stack
+cap: 图 1　一帧穿过的几层。每条横线写着跨过它的东西：从上到下，"物体"和"材质"变成了缓冲区、着色器和绘制命令。
+aria: 示意图：你的代码、three.js、WebGL 或 WebGPU、浏览器和驱动、GPU 五层，以及每层之间传递的东西
+l1: 你的代码
+l1s: 场景、相机、网格、材质、灯
+l2: three.js
+l2s: 矩阵、剔除、排序、着色器拼装
+l3: WebGL 2 / WebGPU
+l3s: 浏览器检查每个调用
+l4: 驱动
+l4s: Metal、Direct3D、Vulkan、OpenGL
+l5: GPU
+l5s: 顶点着色、光栅化、片元着色
+x1: render(scene, camera)
+x2: 缓冲区、uniform、drawElements
+x3: Metal、Direct3D 等的调用
+x4: 命令缓冲区
+:::
+
+所以"three.js 很慢"或"three.js 很快"这样的话，要先分清是哪一层慢。three.js 自己的工作都在 CPU 上，用 JavaScript 做：算矩阵、判断可见、排序、比较状态。GPU 的工作是另一笔账：顶点多少、像素多少、每个像素的着色器多重。下面十章基本按 `render()` 内部的顺序走：先是 CPU 上 three.js 的部分（第 2–6 章），再是 GPU 上发生的事（第 7–10 章），然后回到两者之间的接缝，draw call（第 11 章）。
+
+这一章只是地图。几层之间到底花多少时间，取决于浏览器、驱动和显卡，这里没有一个通用的数。 {.take}
+
+## 场景图：每个物体的位置是一串矩阵 {#ch2}
+
+::: strings
+toc: 场景图：一串矩阵
+:::
+
+场景是一棵树。每个节点记着自己相对父节点的位置、旋转和缩放；它在世界里的位置，是从根一路乘下来的矩阵：matrixWorld = 父节点的 matrixWorld × 自己的 matrix。 {.law}
+
+three.js 里所有能放进场景的东西（网格、相机、灯、分组）都是 `Object3D`。每个 `Object3D` 有三个你常改的属性：`position`（一个三维向量）、`quaternion`（旋转，用四元数存，第 12 章讲为什么；你改 `rotation` 这个欧拉角时，它会同步改掉 `quaternion`）和 `scale`。它还有两个你通常不直接碰的 4×4 矩阵：`matrix` 是相对父节点的变换，`matrixWorld` 是相对整个世界的变换。
+
+`matrix` 由 `Matrix4.compose(position, quaternion, scale)` 一次拼出来：先缩放，再旋转，再平移，写成矩阵就是 T × R × S。`matrixWorld` 则是父节点的 `matrixWorld` 乘上自己的 `matrix`。所以一个挂在地球上的月亮，它的世界位置里叠着太阳的、地球公转的、地球自己的、月亮公转的每一层变换。
+
+::: diagram dg-tree keys=dg.tree
+cap: 图 2　一棵小场景树：太阳、地球的公转轨道、地球、月亮的公转轨道、月亮。每个节点只存相对父节点的变换（matrix），世界矩阵（matrixWorld）要从根一路乘下来。
+aria: 示意图：场景树，从 Scene 到太阳、地球轨道、地球、月亮轨道、月亮，每个节点旁边标着 matrix 和 matrixWorld 的关系
+n0: Scene
+n1: 太阳
+n2: 地球轨道（只转）
+n3: 地球（平移 5，缩放 0.5）
+n4: 月亮轨道（只转）
+n5: 月亮（平移 2，缩放 0.5）
+m: matrix = T·R·S
+w: matrixWorld = 父.matrixWorld · matrix
+:::
+
+**谁来算这些矩阵？**`renderer.render()` 做的第一件事就是 `scene.updateMatrixWorld()`。它从根开始递归：每个节点如果 `matrixAutoUpdate` 为真（默认就是真），先调用 `updateMatrix()` 用 `compose` 重新拼出 `matrix`，并把自己标记为"世界矩阵需要更新"；然后把父节点的世界矩阵乘上来；子节点因为父节点更新了，也被强制更新。
+
+这里有一个容易误解的地方。源码里有 `matrixWorldNeedsUpdate` 这样的"脏标记"，看起来像是"没动的物体就不用算"。但在默认设置下，`updateMatrix()` 每一帧都会无条件重拼一次，并把标记设上；一个节点的标记一旦设上，它的所有子孙都被强制重算世界矩阵。场景（Scene）本身就是根节点，它的 `matrixAutoUpdate` 也是真，所以**每一帧、每个节点的两个矩阵都重算一遍**，不管它动没动。把一个不动的物体的 `matrixAutoUpdate` 设成 `false`（它变了以后自己调用 `updateMatrix()`），省下的只是它自己那次 compose；它的世界矩阵照样每帧乘一次，除非从场景开始的每一个祖先也都关掉了。下面这棵 {=ch2.nodes} 个节点的树，每帧要做 {=ch2.compose} 次 compose、{=ch2.world} 次矩阵乘法（根节点只是复制）。一个有一万个静止物体的场景，每帧也要做两万次这样的运算。
+
+::: lab ch2-model
+model.title: 一棵会转的场景树
+model.how: 拖动"时间"让地球绕太阳转、月亮绕地球转；改地球的缩放，看月亮的轨道怎么跟着缩。勾上"在 render 之前读位置"，看这一帧还没更新时读到的月亮位置（空心圆）比真正画出来的位置落后多少。
+ctl.day: 时间
+ctl.scale: 地球的缩放
+ctl.stale: 在 render 之前读月亮位置
+cv.aria: 俯视的太阳、地球和月亮，以及它们的轨道
+cv.sun: 太阳
+cv.earth: 地球
+cv.moon: 月亮
+read.pos: 月亮的世界坐标
+read.orbit: 月亮轨道在世界里的半径
+read.work: 每帧的 compose / 矩阵乘法
+read.lag: 读早了差多少
+say.fresh: 月亮在世界里的位置是 ({x}, {z})。它的轨道半径在月亮轨道节点里写的是 2，但地球缩放了 {s} 倍，所以世界里是 <em>{r}</em>：子节点继承了父节点的缩放。
+say.stale: 这一帧你在 render 之前读 <code>moon.matrixWorld</code>，读到的是上一帧的位置 ({x0}, {z0})，比这一帧真正画出来的位置差了 <em>{d}</em> 个单位。要在 render 之前用世界坐标，先调用 <code>moon.updateWorldMatrix(true, false)</code>。
+:::
+
+勾上"在 render 之前读位置"时看到的落后，是一个真实的坑。你在每帧的循环函数里改了地球的角度，紧接着读月亮的 `matrixWorld`（比如让相机跟着月亮），读到的是上一帧 `render()` 算好的值，因为这一帧的 `updateMatrixWorld()` 还没跑。三个常见的症状：相机跟随时抖一下，物理引擎和画面差一帧，射线拾取打偏。解决办法是在读之前自己调用 `updateWorldMatrix(true, false)`（先更新所有祖先，再更新自己）。
+
+另一个在模型里能看到的现象是缩放的继承：地球缩放 0.5，月亮轨道那一层只写了"往外 2 个单位"，但在世界里它离地球只有 {=ch2.orbit} 个单位，月亮本身也跟着变小。这就是为什么在 three.js 里最好把"要缩放的模型"和"用来挂子物体的节点"分开：给模型单独套一层，缩放只加在那一层上。
+
+模型省掉了：相机自己的世界矩阵（它的逆就是视图矩阵，第 4 章）、`matrixWorldAutoUpdate`、r187 新加的 `pivot` 属性，以及骨骼动画。树的大小、距离和 12:1 的公转比是为了画面挑的，不是天文数据。 {.take}
+
+## 几何体：一个立方体为什么有 24 个顶点 {#ch3}
+
+::: strings
+toc: 几何体：24 个顶点
+:::
+
+GPU 不认识"立方体"，只认识一排排数：每个顶点的位置、法线、纹理坐标，以及把顶点三个一组连成三角形的索引。这些数组一次上传到显存，之后每帧只用不传。 {.law}
+
+`BufferGeometry` 就是这样一组数组。它的每个"属性"（`BufferAttribute`）是一个类型化数组，比如 `position` 是一个 `Float32Array`，每三个数是一个顶点的 x、y、z；`normal` 是每个顶点的法线方向（用来算光照）；`uv` 是每个顶点在贴图上的坐标（第 9 章）。另有一个 `index` 数组，三个一组，说明哪三个顶点组成一个三角形。
+
+::: diagram dg-quad keys=dg.quad
+cap: 图 3　一个正方形面在 BufferGeometry 里的样子：4 个顶点，每个顶点在 position、normal、uv 三个数组里各占一段；index 用 6 个数把它们连成两个三角形。
+aria: 示意图：四个顶点编号 0 到 3，下面是 position、normal、uv 三个数组和 index 数组的格子
+pos: position（Float32，每个顶点 3 个数）
+nor: normal（Float32，每个顶点 3 个数）
+uv: uv（Float32，每个顶点 2 个数）
+idx: index（Uint16，每个三角形 3 个数）
+t1: 三角形 0
+t2: 三角形 1
+b: 每个顶点 32 字节
+:::
+
+一个立方体只有 8 个角，`BoxGeometry(1, 1, 1)` 却有 {=ch3.boxV} 个顶点。原因是一个"顶点"不只是位置：同一个角在三个面上要用三个不同的法线（朝向三个方向，光照才是一块块平的），和三个不同的 uv。位置相同、其余属性不同，就是不同的顶点。three.js 的 `BoxGeometry` 是用 6 个平面拼出来的，每个面 4 个顶点、2 个三角形，一共 {=ch3.boxV} 个顶点、{=ch3.boxT} 个三角形。球就不一样：相邻的面法线是连续变化的，顶点可以共用。默认的 `SphereGeometry(1, 32, 16)` 有 {=ch3.sphV} 个顶点、{=ch3.sphT} 个三角形。
+
+每个顶点有位置 3 个数、法线 3 个数、uv 2 个数，都是 4 字节的浮点数，一共 32 字节。索引默认用 2 字节的整数（Uint16）；只要有一个顶点编号达到 65,535，three.js 就自动换成 4 字节（Uint32）。65,535 本身也不用，因为 WebGL 2 把它留作"图元重启"的记号。所以一个默认的球占 {=ch3.sphBytes}。
+
+::: lab ch3-model
+model.title: 几何体的顶点、三角形和字节
+model.how: 选立方体或球，拖动"细分"，看顶点数、三角形数和占的显存怎么涨。页面里的线框就是 three.js 那两个构建函数生成的同一份数组。
+ctl.kind: 形状
+kind.box: 立方体
+kind.sphere: 球
+ctl.seg: 细分
+cv.aria: 几何体的线框和顶点
+read.v: 顶点
+read.t: 三角形
+read.vb: 顶点数据
+read.ib: 索引
+say.box: 每条边分成 {s} 段：每个面 {fv} 个顶点，6 个面共 <em>{v}</em> 个；棱上的点，相邻的面各存一份。{t} 个三角形，索引用 {it}。
+say.sphere: 经度分 {ws} 段、纬度分 {hs} 段：<em>{v}</em> 个顶点、{t} 个三角形。两极的那一圈三角形各只算一半，所以三角形数是 2 × {ws} × ({hs} − 1)。索引用 {it}。
+:::
+
+这些数组什么时候到 GPU？第一次画这个网格时，`WebGLAttributes` 为每个属性建一个 WebGL 缓冲区，把整个数组上传一次。之后每一帧，只要你不改数组，就不再上传，GPU 直接从显存里读。你改了顶点（比如做水面波动），要把属性的 `needsUpdate` 设为真，three.js 下一帧整段重传。所以"每帧动的东西"要尽量放在矩阵里（每个物体 16 个数），或者放进着色器里算（第 11 章的[[fable-flight|三维短片]]就是这样），而不是每帧改几万个顶点。
+
+模型省掉了：切线、顶点颜色、骨骼权重这些属性，交错存储（InterleavedBuffer），以及 `drawRange`。 {.take}
+
+## 相机：从三维的点到屏幕上的像素 {#ch4}
+
+::: strings
+toc: 相机：从点到像素
+:::
+
+一个点要过四关才变成屏幕上的像素：视图矩阵把它挪到相机的坐标里，投影矩阵把它变成四个数（裁剪坐标），除以第四个数 w 得到 −1 到 1 的标准坐标，最后按画布大小换成像素和深度。 {.law}
+
+**视图矩阵**是相机世界矩阵的逆。相机也是一个 `Object3D`，它的 `matrixWorld` 说的是"相机在世界里的哪里、朝哪"；把这个矩阵求逆，就得到"世界在相机眼里的哪里"。`Camera.updateMatrixWorld` 每次更新都顺手把逆存进 `matrixWorldInverse`。从相机看出去，正前方是 −z。
+
+**投影矩阵**由 `PerspectiveCamera.updateProjectionMatrix` 算出：视野的上沿是 near × tan(fov/2)，左右按宽高比展开，再交给 `Matrix4.makePerspective`。它把一个视图坐标里的点 (x, y, z) 变成四个数 (x′, y′, z′, w)，其中 w 就是这个点到相机的距离 −z。
+
+::: diagram dg-frustum keys=dg.frustum
+cap: 图 4　左边是相机前面的视锥体（从 near 到 far 的一个截头的金字塔），右边是除以 w 以后的标准立方体，每边从 −1 到 1。远处的大片区域被压进了立方体后面薄薄的一层。
+aria: 示意图：从侧面看的视锥体，近平面和远平面，变换以后成为一个正方形
+cam: 相机
+near: 近平面 near
+far: 远平面 far
+fov: 视角 fov
+cube: 除以 w 以后
+ndc: 标准坐标 −1…1
+p: 点
+:::
+
+接下来是 GPU 做的两步（OpenGL ES 3.0 规范第 2.13 节；WebGL 2 照搬）。先**除以 w**：三个坐标都除以 w，得到 −1 到 1 之间的标准设备坐标（NDC）；超出这个范围的部分在除法之前就被裁掉了（规范第 2.18 节：−w ≤ x、y、z ≤ w）。离得越远 w 越大，除完越靠近中心，这就是"近大远小"。再**视口变换**：x、y 按画布的像素大小展开，z 从 −1…1 映射到 0…1，写进深度缓冲区。
+
+拿一个具体的点走一遍。默认相机（视角 50°，近平面 0.1，远平面 2000），画布 1280 × 720，相机前方 10 个单位、偏右 1、偏上 0.5 的一个点：视图坐标是 (1, 0.5, −10)。乘上投影矩阵得到裁剪坐标 ({=ch4.clip})；除以 w = 10 得到 NDC ({=ch4.ndc})；视口变换后落在从左下角数起的 {=ch4.px} 像素处，深度 {=ch4.win}。深度缓冲区通常是 24 位整数，存下来的是 {=ch4.int}（满格是 16,777,215）。
+
+::: lab ch4-model
+model.title: 一个点走完整条链
+model.how: 拖动这个点到相机的距离和相机的视角，下面的读数是它在每一步的数。图的下沿是到相机的距离（对数刻度，金色是近平面 0.1，紫色是远平面 2000），上沿是写进深度缓冲区的 0 到 1；每条线把一个距离连到它的深度。注意线都挤到了右边：点离开近平面没多远，深度就已经接近 1。
+ctl.d: 点到相机的距离
+ctl.fov: 视角 fov
+cv.aria: 侧面看的视锥体和点，以及深度在 0 到 1 上的位置
+cv.dist: 到相机的距离（对数刻度）
+cv.depth: 写进深度缓冲区的值
+read.clip: 裁剪坐标 (x, y, z, w)
+read.ndc: 除以 w 以后
+read.win: 像素坐标
+read.depth: 深度（24 位整数）
+say.in: 这个点在视锥体里。深度 <em>{z}</em>：从近平面到它，已经用掉了深度范围的 {p}。
+say.out: 这个点在视锥体外面（{why}），GPU 会把它裁掉，不会有像素。
+why.near: 比近平面还近
+why.far: 比远平面还远
+why.side: 在视角外面
+:::
+
+图上沿那条深度条说明了一件重要的事：**深度不是均匀分布的**。按上面的公式，深度值大约是 1 − near/距离。默认的近平面 0.1，相机前 1 个单位以内就用掉了深度范围的 {=ch4.first1}；剩下 1 到 2000 的整个世界，挤在最后的一成里。24 位整数只有 1,677 万个格子，挤到远处，相邻两个格子之间的距离就很大了。
+
+两个面靠得太近、又离相机太远时，它们的深度会落进同一个格子，谁赢就看浮点误差，于是随着相机移动一闪一闪：这就是 **z-fighting**，"模型为什么闪"的常见原因。下面的模型算出：两个面隔开 1 厘米（0.01 个单位），近平面 0.1、远平面 2000，从 {=ch4.zf} 个单位开始闪；把近平面改成 1，能推到 {=ch4.zf1}；改成 0.01，在 {=ch4.zf001} 就开始了。**近平面比远平面重要得多。**
+
+::: lab ch4-depth keys=ch4.d
+model.title: 深度精度：从多远开始闪
+model.how: 曲线是不同距离上，两个面至少要隔多远，深度才能分得开（越低越好）。横线是你那两个面的实际间隔：曲线穿过横线的地方，就是开始闪的距离。三种方案分别是 three.js 的默认深度、对数深度（logarithmicDepthBuffer）和反向深度（reversedDepthBuffer，配 32 位浮点深度）。
+ctl.near: 近平面 near
+ctl.far: 远平面 far
+ctl.sep: 两个面的间隔
+cv.aria: 三条曲线：标准、对数、反向深度在不同距离上能分开的最小间隔，以及一条表示实际间隔的横线
+leg.std: 默认（24 位整数）
+leg.log: 对数深度（24 位）
+leg.rev: 反向深度（32 位浮点）
+cv.x: 到相机的距离
+cv.y: 能分开的最小间隔
+read.std: 默认：从这里开始闪
+read.log: 对数深度
+read.rev: 反向深度
+never: 远平面以内不闪
+from: 从 {d} 开始闪
+nofl: 在远平面以内不闪
+say: 间隔 {sep}、近平面 {n}、远平面 {f}：默认深度{a}，对数深度{b}，反向深度{c}。
+:::
+
+three.js 给了两个办法。**对数深度**（`new WebGLRenderer({ logarithmicDepthBuffer: true })`）在片元着色器里把深度改写成 log₂(1 + w) 除以 log₂(far + 1)，让每个数量级分到差不多同样多的格子；代价是每个片元都要写 `gl_FragDepth`，GPU 的提前深度测试就失效了，填充多的场景会变慢。**反向深度**（`reversedDepthBuffer: true`，需要 EXT_clip_control 扩展）把近处映射到 1、远处映射到 0，再配上 32 位浮点的深度缓冲区：浮点数在 0 附近格子最密，正好抵消投影把远处挤扁的效应。N. Reed 2015 年那篇常被引用的文章算过：这招只对浮点深度有用，深度还是 24 位整数时，反向和不反向一样。画布自带的深度缓冲区一般是 24 位整数；要用到 32 位浮点，得渲染到一个深度纹理类型为 FloatType 的渲染目标里。
+
+模型省掉了：浮点运算本身在算投影时引入的误差（它在远处也会让结果变差一点），正交相机，以及相机的 zoom、filmOffset 和 view 偏移。 {.take}
+
+## 一次 render 的内部：剔除和排队 {#ch5}
+
+::: strings
+toc: render 的内部：剔除和排队
+:::
+
+render() 先把整棵树走一遍，用每个物体的包围球和相机的六个面比一比，看不见的直接跳过；剩下的分进不透明、透射、透明三张单子，按各自的规则排好，然后才开始画。 {.law}
+
+r187 的 `WebGLRenderer.render` 大致按这个顺序做事（源码 1641–1871 行）：
+
+::: diagram dg-render keys=dg.render
+cap: 图 5　WebGLRenderer.render() 一帧里的顺序（r187）。阴影贴图在主画面之前画，因为主画面要读它（第 10 章）。
+aria: 示意图：render 的步骤从上到下排成一列：更新矩阵、算视锥体、遍历场景并剔除、排序、画阴影、设置灯光、画背景、画不透明、画透射、画透明
+s1: scene.updateMatrixWorld()
+s1n: 所有矩阵（第 2 章）
+s2: 投影 × 视图 → 视锥体的 6 个面
+s3: projectObject：遍历、剔除、入队
+s4: 排序：不透明、透射、透明三队
+s5: shadowMap.render：从灯看一遍
+s5n: 第 10 章
+s6: 设置灯光、画背景
+s7: 画不透明的
+s8: 画透射的（玻璃之类）
+s9: 画透明的
+:::
+
+**视锥体剔除。**相机能看见的空间是一个截头的金字塔，由 6 个平面围成：左、右、上、下、近、远。`Frustum.setFromProjectionMatrix` 直接从"投影 × 视图"矩阵的行里读出这 6 个平面。然后 `projectObject` 递归走整棵树：不可见的（`visible` 为假）连同子树一起跳过；网格、线、点这类要画的东西，如果 `frustumCulled` 为真（默认），就拿它的**包围球**去测：把几何体的包围球按物体的世界矩阵挪过去、半径乘上最大的那个缩放，再看球心是不是在某个平面后面超过半径那么远。只要有一个平面是这样，这个物体就整个被扔掉。
+
+这个测试很便宜，但不精确：它只会多留，不会多扔。一个球在视锥体的一个角外面，可能每个平面单看都"没超过半径"，于是被留下来，送去 GPU，最后一个像素也没画出来。模型里红色的那个就是。
+
+**排队。**通过的物体按材质分进三张单子（`WebGLRenderLists.js`）：不透明的、透射的（`transmission > 0` 的物理材质）、透明的（`transparent: true`）。每一项记下一个 z：包围球的球心乘上"投影 × 视图"以后的第三个数（裁剪空间的 z，不除 w），越大越远。然后：
+
+- 不透明的单子用 `painterSortStable` 排：先比 `groupOrder` 和 `renderOrder`（你手动设的），然后比**材质的 id**，然后才是 z 从小到大（从近到远）。 {#l1}
+- 透明的单子用 `reversePainterSortStable` 排：比完 `groupOrder` 和 `renderOrder`，直接按 z 从大到小（从远到近），不看材质。 {#l2}
+
+::: lab ch5-model
+model.title: 俯视一帧：哪些被剔除，按什么顺序画
+model.how: 相机在下方中间，扇形是它的视锥体（从上面看）。转动相机、改视角和远平面，看哪些物体通过了包围球测试（实心）、哪些被扔掉（空心）、哪些通过了却其实看不见（红圈）。数字是画的顺序；颜色是材质，青色的是透明的玻璃。关掉排序，看材质要切换多少次。
+ctl.yaw: 相机朝向
+ctl.fov: 视角
+ctl.far: 远平面
+ctl.sort: 排序（three.js 的默认）
+cv.aria: 从上往下看的场景：相机、视锥体和十几个圆形物体，标着画的顺序
+read.vis: 送去画的
+read.cull: 被剔除的
+read.fp: 通过了却看不见
+read.sw: 材质切换
+say.sorted: 送去画 {n} 个物体，剔除了 {c} 个。不透明的先按材质分组、组内从近到远，所以材质只切换 <em>{sw}</em> 次；透明物体（{t} 个）最后从远到近画。{fp}
+say.unsorted: 不排序时按场景里的顺序画：材质切换 <em>{sw}</em> 次，透明的玻璃也夹在中间，后画的不透明物体会挡住前面已经混合好的玻璃，颜色就错了。{fp}
+say.fp: 红圈的那个（第 {ids} 个画）通过了包围球测试，但其实在视锥体外面：它会被送去画，一个像素也不出。
+say.nofp: 
+:::
+
+为什么不透明的要先按材质分组？因为每换一种材质，就可能要换一个着色器程序、重新上传一批参数，这些"状态切换"是 draw call 开销的大头（第 11 章）。组内再从近到远，是为了让 GPU 的深度测试多挡掉一些：近处的先画，远处被挡住的像素在跑片元着色器之前就会被扔掉。两个目标打架时，r187 的 WebGL 渲染器选了材质优先。有意思的是，同一版里新的 WebGPU 渲染器的通用排序（`renderers/common/RenderList.js`）不比材质，直接从近到远。
+
+透明的为什么要从远到近？因为透明是靠"混合"实现的：新的颜色按不透明度和缓冲区里已有的颜色加权平均。要得到正确的结果，后面的必须先画。第 8 章会看到，这个按物体排的顺序有时候也救不了。
+
+模型省掉了：分组（Group）的 `groupOrder`、`renderOrder`、`layers`、实例化和蒙皮网格的 `materialVariant`、第二层"物体被分成多个组"的情况，以及透射的单子。场景是平的：所有物体和相机一样高，所以可以只在地面这个平面上画；页面把包围球测试和精确的圆与多边形相交测试都算了一遍，来找出"通过了却看不见"的那些。 {.take}
+
+## 材质变成着色器 {#ch6}
+
+::: strings
+toc: 材质变成着色器
+:::
+
+材质只是一堆参数。真正在 GPU 上跑的是着色器程序：three.js 根据材质和场景拼出一段源码，编译一次，用一个很长的字符串当钥匙缓存起来。钥匙变了，就要再编译一次。 {.law}
+
+GPU 上跑的每个程序由两段着色器组成：顶点着色器（每个顶点跑一次，算它在屏幕上的位置）和片元着色器（每个像素跑一次，算它的颜色）。three.js 的每种材质对应一对写好的模板，比如 `MeshStandardMaterial` 对应 `meshphysical.glsl.js`。模板里到处是 `#include <lights_fragment_begin>` 这样的行，`WebGLProgram` 会把它们替换成 `ShaderChunk` 里同名的片段；再在最前面加上一串 `#define`，说明这个材质有没有贴图、场景里有几盏平行光、开没开雾、要不要阴影。同一个模板，配不同的 `#define`，编出来是不同的程序。
+
+::: diagram dg-program keys=dg.program
+cap: 图 6　一个程序是怎么拼出来的：材质和场景决定一串参数，参数拼成缓存钥匙；钥匙没见过，就把模板里的 #include 展开、加上 #define，交给 WebGL 编译和链接。
+aria: 示意图：材质参数和场景状态汇成参数表，参数表变成缓存钥匙，钥匙查缓存，没有命中时展开着色器片段并编译
+mat: 材质：类型、贴图、透明…
+scn: 场景：几盏灯、阴影、雾、色调映射
+par: getParameters → 参数表
+key: getProgramCacheKey → 钥匙
+hit: 缓存里有：直接用
+miss: 没有：拼源码、编译、链接
+chunks: ShaderChunk：#include 展开
+defs: 一串 #define
+:::
+
+缓存钥匙由 `WebGLPrograms.getProgramCacheKey` 生成：着色器的名字、所有 `#define`、五十多个参数按固定的顺序、两个把几十个开关压成位的整数、输出颜色空间，用逗号连起来。两个材质只要这些都一样，就共用一个程序，哪怕颜色、粗糙度这些数值不同（数值是 uniform，每次画之前再传，不进源码）。
+
+**灯的数量在每一个材质的钥匙里**，连不受光照影响的 `MeshBasicMaterial` 也一样。但渲染器并不是每帧都给每个材质重新算钥匙：只有几种变化会让它给一个材质重新取程序，其中一种是"这个材质受光照影响，而灯的状态变了"。所以场景里加一盏点光源，下一帧每个受光照的材质都换一把新钥匙、编译一个新程序（参数相同的材质共用一个）；`MeshBasicMaterial` 不受光照影响，继续用原来的程序。这就是"加一盏灯卡一下"的原因。反过来也有一个坑：第一帧画完以后才打开 `renderer.shadowMap.enabled`，已经编好的材质不会自己重编，要把它们的 `needsUpdate` 设为真。
+
+::: lab ch6-model
+model.title: 六个材质，几个程序
+model.how: 场景里有六个材质，已经按下面开关全关的状态画过一帧。打开或关掉开关，看每个材质正在用的缓存钥匙（只显示会变的那几段）、一共要几个程序，以及下一帧要新编译几个。钥匙由页面里照抄的 getProgramCacheKey 生成，和 three.js 生成的逐字相同；哪些材质会重新取程序，按 r187 的 WebGLRenderer 的规则判断，并在浏览器里用真正的 three.js 核对过。
+ctl.point: 加一盏点光源
+ctl.shadow: 打开阴影
+ctl.fog: 场景加雾
+ctl.tone: 色调映射（ACES）
+cv.aria: 六个材质分别连到它们用的程序；红色是要新编译的
+u.chars: {v} 个字符
+col.mat: 材质
+col.prog: 程序
+col.key: 钥匙里会变的部分
+mat.floor: 地板（Standard，有贴图）
+mat.wood: 木头（Standard，有贴图）
+mat.brass: 黄铜（Standard）
+mat.glass: 玻璃（Physical，透明）
+mat.sky: 天空（Basic，不受雾影响）
+mat.leaves: 树叶（Standard，实例化）
+read.n: 不同的程序
+read.new: 要新编译的
+read.len: 一把钥匙的长度
+say.base: 六个材质只要 <em>{n}</em> 个程序：地板和木头的参数完全一样（颜色不同不要紧），共用一个。
+say.changed: 和一开始比，<em>{k}</em> 个程序要新编译（现在共用 {n} 个）。{why}
+why.light: 灯的数量写在每一把钥匙里，但 three.js 只给受光照影响的材质重新取程序：天空的 Basic 材质继续用原来的。
+why.fog: 只有开了雾的材质会重新取程序；天空设了 fog: false，不受影响。
+why.tone: 色调映射一变，每个做色调映射的材质都要换程序，连天空的 Basic 材质也不例外。
+:::
+
+编译有多慢？这取决于浏览器、驱动和显卡，差得很远。我在一台机器上量过（苹果 M6 芯片，Chromium 151 无头模式，WebGL 走 ANGLE 到 Metal，three.js r187，2026 年 11 月 20 日）：一个新的 `MeshStandardMaterial` 程序，第一次出现的那一帧花了 {=ch6.first} 毫秒；接着一次加 10 个不同的程序，那一帧花了 {=ch6.ten} 毫秒，平均每个 {=ch6.each} 毫秒。一帧只有 16.7 毫秒，所以第一次看到某种材质时卡一下几乎是必然的。three.js 给了两个办法：`renderer.compile(scene, camera)` 或 `compileAsync` 在开场前把程序都编好（后者在浏览器支持 KHR_parallel_shader_compile 时不阻塞主线程）；以及少用不同的"种类"：同样的材质参数，不同的颜色，是不花钱的。
+
+模型省掉了：`getParameters` 里的大部分逻辑（这里只模拟了实验里能开关的那些参数），`onBeforeCompile` 和 `customProgramCacheKey`，以及程序的引用计数和释放。 {.take}
+
+## 一个像素的颜色 {#ch7}
+
+::: strings
+toc: 一个像素的颜色
+:::
+
+MeshStandardMaterial 的颜色是一个物理公式算的：表面被看成无数个朝向不同的小镜面，粗糙度决定这些小镜面有多乱；高光是 GGX 分布 D、遮挡项 V 和菲涅尔项 F 的乘积，漫反射是剩下的光。 {.law}
+
+最早的光照模型很简单。**Lambert**（`MeshLambertMaterial`）：表面越正对着光越亮，亮度和法线 N 与光线方向 L 的夹角余弦成正比，从哪个方向看都一样。**Phong**（`MeshPhongMaterial`）再加一个高光：看的方向越接近镜面反射的方向越亮，用一个指数控制高光的大小。它们便宜，但不守能量：调大高光，物体可以比照在它上面的光还亮。
+
+`MeshStandardMaterial` 用的是"基于物理"的模型。r187 的着色器片段（`bsdfs.glsl.js`、`lights_physical_pars_fragment.glsl.js`）里，一盏平行光照到一个点上，高光是：
+
+::: diagram dg-brdf keys=dg.brdf
+cap: 图 7　一个点上的四个方向：法线 N、指向光的 L、指向眼睛的 V，以及它们的中间方向 H。只有法线恰好朝着 H 的那些小镜面，才把光反射进眼睛。
+aria: 示意图：表面上一点，向上的法线 N，指向光源的 L，指向相机的 V，以及 L 和 V 中间的半程向量 H
+N: N 法线
+L: L 光
+V: V 眼睛
+H: H 半程
+s: 表面
+f1: 高光 = F · V · D
+f2: 漫反射 = 颜色 × (1 − 金属度) / π × (1 − F)
+:::
+
+- **D（GGX 分布，Walter 等 2007）**：法线正好朝着 H 的小镜面有多少。`D_GGX` 写作 (1/π)·α² / ((N·H)²(α² − 1) + 1)²，其中 α = 粗糙度²。粗糙度低，D 是一个又高又尖的峰（小而亮的高光）；粗糙度高，D 摊平。 {#d}
+- **V（Smith 遮挡，相关形式；three.js 的注释引的是 Lagarde 与 de Rousiers 2014 年的 Frostbite 课程笔记）**：小镜面之间互相挡住的部分，`V_GGX_SmithCorrelated` = 0.5 / (g_v + g_l)，分母里两项各和 N·L、N·V 有关。它已经把教科书公式里的分母 4(N·L)(N·V) 算进去了。 {#v}
+- **F（Schlick 菲涅尔，1994）**：斜着看时反射变强。three.js 不直接算 (1 − V·H)⁵，而用 Epic 的 Karis 2013 年给的近似：2 的 (−5.55473·V·H − 6.98316)·V·H 次方。F₀ 是正对着看时的反射率：非金属固定是 0.04，金属就用它自己的颜色，中间按金属度插值。 {#f}
+
+漫反射是基础颜色 × (1 − 金属度) / π，再乘 (1 − F)：被高光反射掉的那部分光，不再参与漫反射（这里的 F 按非金属的 F₀ = 0.04 算）。金属没有漫反射，颜色全在高光里。
+
+::: lab ch7-model
+model.title: 一个球，每个像素按 three.js 的公式算
+model.how: 球上每个像素都用页面里照抄的 D、V、F 算出来，再按 sRGB 输出。拖动粗糙度和金属度，看高光怎么变；关掉"多次散射补偿"，看粗糙的金属怎么变暗。读数是高光最亮的那一点的三项，以及用 three.js 生成 DFG 表的同一个积分算出的、单次散射在正对着看时丢掉多少能量。
+ctl.r: 粗糙度
+ctl.m: 金属度
+ctl.ms: 多次散射补偿（three.js 默认开）
+cv.aria: 一个被平行光照亮的球，以及单次散射丢掉的能量随粗糙度的变化
+cv.x: 粗糙度
+cv.y: 单次散射丢掉的能量
+read.d: D（分布）
+read.v: V（遮挡）
+read.f: F（菲涅尔）
+read.lost: 单次散射丢掉的能量
+say: 粗糙度 {r}、金属度 {m}：高光峰值处 D = {d}。只算一次反射时，正对着看会丢掉 <em>{lost}</em> 的能量（光在小镜面之间多弹几次才出来的那部分）；{ms}
+say.on: three.js 按它那张 16 × 16 的表乘上了 {c} 倍补回来。
+say.off: 补偿关掉了，球会比它该有的暗。
+:::
+
+上面那个"丢掉的能量"是 GGX 模型的一个已知缺点：公式只算光在表面上反射一次，而真实的粗糙表面上，光会在小镜面之间多弹几次再出来。粗糙度越高丢得越多：用 three.js 生成 DFG 表的那个积分，在正对着看的方向上算，粗糙度 0.5 丢掉 {=ch7.lost05}，粗糙度 1 丢掉 {=ch7.lost10}（那张表只有 16 × 16 格，最后一格的中心在粗糙度约 0.97 处，所以着色器在粗糙度 1 查到的是约 65%）。r187 在 `lights_fragment_begin` 里做了补偿（Turquin 2019 的方法）：先查一张 16 × 16 的表（`DFGLUTData.js`，由 `utils/generateDFGLUT.js` 用 4,096 个采样点积分出来）得到单次散射能留下的比例 E，再把高光乘上 1 + F₀(1/E − 1)。对 F₀ = 1 的白色金属，这正好补回 100%。页面里的表是自己积分出来的，四舍五入成半精度浮点数后，512 个数和 three.js 发布的那张逐位相同。
+
+两处 three.js 和论文不一样的地方：粗糙度有一个下限 0.045（防止高光变成无限尖），而且着色器会根据法线在屏幕上变化得多快，再给粗糙度加一点（`geometryRoughness`），减少细小高光的闪烁。还有一个常被问到的事：灯的颜色乘强度直接就是辐照度，没有乘 π，漫反射又除了 π，所以强度为 1 的平行光照在白色漫反射表面上，只有大约 1/π 那么亮。这就是很多例子里光的强度写 3 而不是 1 的原因。
+
+模型省掉了：环境光、环境贴图、清漆、光泽、虹彩、各向异性，以及 r187 物理材质里的 EON 漫反射。球用一盏平行光照亮，没有色调映射。 {.take}
+
+## 三角形变成像素 {#ch8}
+
+::: strings
+toc: 三角形变成像素
+:::
+
+GPU 拿到三个顶点的屏幕坐标，问每个像素的中心：你在这个三角形里面吗？在里面的，按重心坐标插值出深度和其他属性，和深度缓冲区里已有的比一比，更近才写。 {.law}
+
+three.js 发出 draw call 以后的事，就是 GPU 的了。它先对每个顶点跑顶点着色器，得到第 4 章那样的裁剪坐标；再除以 w、做视口变换，得到屏幕上的三个点。然后是**光栅化**（OpenGL ES 3.0 规范第 3.6.1 节）：对三角形覆盖范围里的每个像素，看它的**中心**在不在三角形里。
+
+判断用的是**边函数**：对三角形的每条边，算像素中心在这条边的哪一侧（一个 2×2 行列式，也就是叉积）。三个都同号，就在里面。三个边函数的值除以三角形面积，正好就是这个点的**重心坐标**：它离三个顶点各有多"近"，插值全靠它。
+
+::: diagram dg-edge keys=dg.edge
+cap: 图 8　一个三角形盖住了哪些像素：只看像素中心（圆点）。中心在三条边内侧的像素（实心）会生成片元。两个三角形共用一条边时，正好压在边上的中心只算给其中一个。
+aria: 示意图：一个三角形叠在像素网格上，网格里每个像素中心的点，三角形内的填实
+e0: 边 0
+e1: 边 1
+e2: 边 2
+in: 中心在里面：生成片元
+out: 中心在外面
+b: 重心坐标 = 三个边函数 ÷ 面积
+:::
+
+规范要求两个共用一条边的三角形，压在边上的像素只能算给其中一个，不重复、不漏（页面的模型用的是常见的"左上规则"，一个正方形拆成两个三角形，{=ch8.sq} 个像素每个正好被画一次）。
+
+插值有一个细节：在屏幕上直接按重心坐标插值，对深度是对的（规范的公式 3.8），对纹理坐标却是错的，因为透视把远处压扁了。规范的公式 3.7 是先把每个属性除以 w，插值，再除回来，这叫**透视校正插值**。下面实验的棋盘地板，关掉这一项，格子就弯了。
+
+**深度测试**接在后面：每个像素在深度缓冲区里存着目前最近的深度。新片元更近（three.js 默认的比较是"小于或等于"，`LessEqualDepth`）才通过，写颜色，再把自己的深度写进去。这样不管物体按什么顺序画，不透明的结果都对。两个互相穿过的三角形，交线是逐像素算出来的。
+
+::: lab ch8-model
+model.title: 一个 64 × 40 的软件光栅化器
+model.how: 左边是颜色缓冲区，右边是深度缓冲区（越亮越近）。"穿插"是两个互相穿过的三角形；"棋盘"是一块斜着看的地板，可以关掉透视校正；"玻璃"是两块半透明的板，可以换画的顺序、关掉深度写入，或者让它们不交叉。
+ctl.scene: 场景
+scene.pair: 穿插
+scene.checker: 棋盘
+scene.glass: 玻璃
+ctl.tilt: 倾斜
+ctl.persp: 透视校正
+ctl.order: 先画金色的
+ctl.dw: 透明物体也写深度（three.js 默认）
+ctl.cross: 两块板交叉
+cv.aria: 左边是低分辨率的颜色缓冲区，右边是对应的深度缓冲区
+cv.color: 颜色缓冲区
+cv.depth: 深度缓冲区
+read.frag: 片元
+read.pass: 通过深度测试
+read.fail: 被挡住
+read.wrong: 和正确结果不同的像素
+say.pair: 两个三角形一共生成 {f} 个片元，{x} 个被深度测试挡掉。换画的顺序，结果 <em>一个像素都不变</em>：不透明物体靠深度缓冲区就够了，不需要排序。
+say.checker.on: 透视校正打开：棋盘格往远处变小，边是直的。
+say.checker.off: 透视校正关掉：纹理坐标在屏幕上直接插值，两个三角形各自是"平的"，格子在对角线上 <em>折了</em>，{d} 个像素和正确的不同。
+say.glass: 和"每个像素把所有片元从远到近排好再混合"的正确结果相比，有 <em>{w}</em> 个像素不对。{why}
+why.cross: 两块板互相穿过，不管哪块先画，总有一半是错的：按物体排序救不了。
+why.front: 后面的板后画，前面那块已经写了深度，后面的被整块挡掉；或者混合的顺序反了。
+why.ok: 远的先画、近的后画，这正是 three.js 按距离排序要做到的。
+:::
+
+现在可以回答第 5 章留下的问题了。透明物体靠混合，混合的结果和顺序有关，而且透明物体默认**也写深度**（`depthWrite` 默认为真，就算 `transparent` 为真）。three.js 按物体的中心从远到近排序，对互不相交、前后分明的物体是对的。可是两块互相穿过的玻璃、一个凹进去的透明碗、一大片和别的透明物体交错的水面，"哪个在前"在不同的像素上答案不同，按物体排序怎么排都不对。这就是"透明物体显示不对"最常见的原因。常见的补救：把相交的物体切开；对粒子、草这类东西关掉 `depthWrite`，接受一点混合顺序上的错；用 `alphaTest` 或 `alphaHash` 把"半透明"变成"有洞的不透明"；真要正确，就得用与顺序无关的透明算法，那要多几个渲染通道。
+
+模型省掉了：裁剪（实验里的顶点都在近平面前面），多重采样抗锯齿，提前深度测试，以及 GPU 实际上以 2×2 个像素为一组跑片元着色器这件事（[[how-a-gpu-computes#ch9|《GPU 是怎么算的》第 9 章]]讲了为什么小三角形因此很贵）。颜色写进缓冲区以后怎么上屏，见[[how-pixels-reach-a-screen#ch1|《像素是怎么到屏幕上的》]]。 {.take}
+
+## 纹理：一张图怎么贴到斜着的地板上 {#ch9}
+
+::: strings
+toc: 纹理：图怎么贴上去
+:::
+
+每个片元用插值出来的 uv 去纹理里取颜色。远处一个像素盖住了很多纹理像素，只取一个就会闪；所以提前准备一串逐级缩小一半的图（mipmap），按一个像素盖住多少纹理像素来挑用哪一级。 {.law}
+
+纹理坐标 uv 从 0 到 1 覆盖整张图。片元着色器拿插值出来的 uv 取颜色，叫**采样**。最简单的是取最近的一个纹理像素（`NearestFilter`）；好一点的是取周围四个按距离加权（`LinearFilter`，双线性）。这两种在近处都没问题。问题在远处：斜着看的地板上，一个屏幕像素可能盖住几十个纹理像素，只从中取一个，换一点角度就取到另一个，画面就"沸腾"了。
+
+**mipmap** 是这个问题的标准答案：上传纹理时，再生成一串每级缩小一半的版本（1024、512、256……一直到 1 × 1），每一级是上一级四个像素的平均。three.js 默认 `generateMipmaps: true`，过滤方式默认 `LinearMipmapLinearFilter`（三线性）。
+
+::: diagram dg-mip keys=dg.mip
+cap: 图 9　一串 mipmap：每一级是上一级四个像素的平均。所有级加起来，正好是原图的 4/3 倍。
+aria: 示意图：一个棋盘纹理逐级缩小一半，从 64 乘 64 到 1 乘 1，下面标着每级的大小
+l0: 第 0 级
+lk: 每级边长减半
+sum: 1 + 1/4 + 1/16 + … = 4/3
+:::
+
+用哪一级由 GPU 决定（规范第 3.8.10.1 节）：它看相邻像素之间 uv 变了多少，换算成纹理像素，取 x 和 y 两个方向里大的那个 ρ，级别 λ = log₂ ρ。一个像素盖住 8 个纹理像素，就用第 3 级。GPU 能知道"相邻像素"，是因为它总是 2 × 2 个像素一起跑片元着色器，彼此可以做差。
+
+斜着看的地板上，一个像素在一个方向上盖住很多纹理像素，另一个方向上很少。按大的那个挑级别，近处还清楚，远处就太糊。**各向异性过滤**（`texture.anisotropy`，EXT_texture_filter_anisotropic 扩展）沿着长的方向多采几次：采 N = 长 ÷ 短次（不超过上限），每次用的级别按长 ÷ N 算，所以细节保留得多。three.js 的默认值是 1，也就是不开；`renderer.capabilities.getMaxAnisotropy()` 告诉你最多能开多少。
+
+::: lab ch9-model
+model.title: 一块斜着看的地板
+model.how: 相机看着一块铺满棋盘格的地板，页面逐像素算出 λ 并按选的方式采样。远处的格子比一个像素还小，正确的颜色应该是均匀的灰；中间的格子还看得清，应该保持黑白分明。看哪种方式两头都做得好。
+ctl.filter: 过滤
+f.nearest: 最近点
+f.linear: 双线性
+f.trilinear: 三线性（默认）
+f.aniso: 各向异性 8×
+ctl.pitch: 俯视角
+ctl.lvl: 显示 mip 级别
+cv.aria: 一块透视的棋盘地板，按选择的过滤方式采样
+read.far: 远处的误差
+read.mid: 中间的清晰度
+read.lmax: 最远处的级别 λ
+say: {f}：远处平均偏离灰色 <em>{e}</em>，中间区域保留了 {c} 的对比度。{why}
+why.nearest: 不用 mipmap，远处每个像素随机取到黑或白，就是闪烁的"摩尔纹"。
+why.linear: 双线性也只看第 0 级的四个点，远处一样闪。
+why.trilinear: mipmap 让远处变成均匀的灰，代价是中间也糊了一些：级别是按长的那个方向挑的。
+why.aniso: 沿长的方向多采几次，中间比三线性清楚得多；最远处一个像素的长宽比超过了上限 8，又开始有一点闪。
+:::
+
+**显存。**一张 1024 × 1024 的 RGBA 纹理，每个像素 4 字节，是 {=ch9.base}；加上 mipmap 是 {=ch9.mip}，多三分之一。显存里的纹理是不压缩的（除非用 KTX2 这类 GPU 压缩格式），网页上 200 KB 的 JPG，到了显存里一样是这么大。
+
+**颜色空间。**图片文件里的颜色是 sRGB 编码的，不是线性的：sRGB 的 0.5 其实只代表线性的 {=ch9.lin}。光照必须在线性空间里算。three.js 的规则是：颜色贴图要设 `texture.colorSpace = SRGBColorSpace`（纹理默认是 `NoColorSpace`，加载器会帮你设），这样 GPU 以 SRGB8_ALPHA8 格式存它，采样时自动转成线性；法线贴图、粗糙度贴图这些数据不要设。渲染器的 `outputColorSpace` 默认是 sRGB，最后一步把线性的结果再编码回去：线性的 0.5 输出成 {=ch9.srgb}（8 位里的 {=ch9.srgb8}）。忘了设，颜色就会发白或发暗。
+
+模型省掉了：纹理的环绕方式（这里是重复）、非 2 的幂尺寸、压缩格式、GPU 实际的各向异性实现（规范只规定了要求，每家的做法不同），以及立方体贴图。 {.take}
+
+## 阴影：从灯那里再看一遍 {#ch10}
+
+::: strings
+toc: 阴影：从灯那里再看一遍
+:::
+
+阴影贴图是一次从灯的位置画的深度图。画主画面时，每个点都去问：从灯看过来，我前面有没有更近的东西？有，我就在阴影里。条纹和漂浮都来自这张图有限的分辨率。 {.law}
+
+这是 Williams 1978 年的办法，three.js 至今用的还是它。`WebGLShadowMap.render` 在主画面之前，对每一盏投影的灯，把场景从灯的视角画一遍，只写深度。平行光（`DirectionalLight`）用一台正交相机，默认看的范围是 10 × 10 个单位，贴图 512 × 512（`shadow.mapSize`）。画主画面时，片元着色器把这个点换算到灯的坐标里，拿自己的深度和贴图里存的深度比：自己更远，就在阴影里。
+
+::: diagram dg-shadow keys=dg.shadow
+cap: 图 10　平行光斜着照在地面上。阴影贴图的一个格子（texel）只记下它中心那条光线碰到的深度（金点）。这个格子盖住的地面上，另一个点（红点）离灯稍远一点，拿自己的深度去比，就以为前面有东西挡着：这就是条纹的来源。
+aria: 示意图：平行光照在一段斜的地面上，一个阴影贴图格子盖住的一段地面，格子中心的深度和格子里另一点的深度
+lv: 平行光
+cv: 红点比金点离灯远
+tx: 一个 texel
+near: 格子存的深度
+me: 我的深度
+sh: 比较输了：算成在阴影里
+:::
+
+麻烦在于贴图是一格一格的。一个格子存的是格子中心那条光线碰到的深度，但这个格子盖住的地面上，各点到灯的距离不一样：一半比存的值远一点，于是自己把自己挡住了，地面上出现一条条明暗相间的纹，叫**阴影粉刺**（shadow acne），"阴影有条纹"多半就是它。补救是**偏移**（`shadow.bias`）：比较前把自己的深度往灯的方向挪一点（three.js 里是 `shadowCoord.z += shadowBias`，所以要写负数）。挪多了，贴着地面的那一截阴影也被"挪"没了，物体看起来浮在地上，叫**彼得潘现象**（peter-panning）。另一个参数 `shadow.normalBias` 是沿着表面法线把采样点挪出去，对斜面效果更好。
+
+::: lab ch10-model
+model.title: 从侧面看一张阴影贴图
+model.how: 一个二维的场景：地面、一根细柱子、一个箱子和一个斜坡，灯从左上方照过来。下面一行小格子就是阴影贴图（越亮越远）。拖动分辨率、偏移和法线偏移，看地面上的条纹（红点：本该亮却算成了暗）和缺掉的阴影（青点：本该暗却算成了亮）。
+ctl.th: 光的角度
+ctl.res: 贴图分辨率
+ctl.bias: bias
+ctl.nb: normalBias
+ctl.pcf: PCF 柔化
+cv.aria: 侧面看的场景，光线、阴影贴图的格子，以及每个表面点亮或暗的判断
+cv.map: 阴影贴图（越亮越远）
+read.acne: 条纹（误判为暗）
+read.leak: 漏光（误判为亮）
+read.tex: 一个格子的宽度
+read.gap: 柱子脚下的空隙
+say: 一个格子盖住 {tx} 个单位。{acne}{leak}
+say.acne: 本该亮的表面有 <em>{a}</em> 被自己挡住了，这就是条纹。
+say.noacne: 条纹消失了。
+say.leak: 本该在阴影里的地方有 {l} 被算成亮；柱子的影子离它的脚 {g} 才开始。
+say.noleak: 
+:::
+
+从这个模型可以看出几件事。一，bias 为 0 时，大约一半的受光面会被判成阴影：这正是条纹那种一明一暗的样子。二，提高分辨率，需要的 bias 就小一些，两种错误都会减少，但显存和画阴影的时间按格子数涨。三，bias 太大，柱子的影子就和它的脚分开了。真实场景里，灯的相机看的范围越大，每个格子盖住的地面越宽，所以把 `shadow.camera` 的范围收紧到刚好包住要投影的物体，比单纯加大贴图更有效。
+
+这个网站上的[[fable-flight|三维短片]]（three.js r170）就是这样调的：月光的阴影贴图 4,096 × 4,096，`bias` 为 −0.0006，`normalBias` 为 0.06；而且因为建筑不动，它把 `shadowMap.autoUpdate` 关掉，只在开场时画一次阴影贴图，之后每帧省掉一整遍从灯的绘制。它用的 `PCFSoftShadowMap` 从 r186 起已经被移除：在 r187 里设了会打一条警告，退回到 `PCFShadowMap`（默认值），后者用硬件做比较，在一个旋转的小圆盘上采 5 个点再平均，让阴影的边缘柔和一些。
+
+模型省掉了：第三个维度、点光源（要画 6 个方向）和聚光灯、级联阴影、硬件的比较采样，以及 VSM 阴影。PCF 用 5 个点排成一条线来代替圆盘。场景是为了画面挑的。 {.take}
+
+## draw call 为什么贵 {#ch11}
+
+::: strings
+toc: draw call 为什么贵
+:::
+
+一个网格就是至少一次 draw call。每次调用前，three.js 要在 CPU 上切换程序、上传这个物体的矩阵和材质参数、绑定缓冲区；浏览器还要检查每一个调用。物体一多，CPU 先撑不住，GPU 反而闲着。 {.law}
+
+`renderScene` 画每一个物体时，`renderBufferDirect` 都要做一套事：拿到它的程序（第 6 章）；`WebGLState` 比较一下要不要换混合、深度、面剔除这些开关（它缓存了当前状态，没变就不调 WebGL）；上传这个物体自己的 uniform，至少有它的模型视图矩阵和法线矩阵；绑定顶点数组；最后一个 `drawElements`。每一步都很小，但都在 JavaScript 里，都要穿过浏览器的检查。
+
+我在同一台机器上量过（苹果 M6，Chromium 151，ANGLE 到 Metal，three.js r187，2026 年 11 月 20 日，脚本在本页目录的 tools/measure-calls.cjs）：一千个共用同一几何体和材质的立方体，`render()` 每帧在主线程上要 {=ch11.k1} 毫秒，平均每个网格 {=ch11.per} 微秒；每个立方体各自有一份几何体和材质时，每个要 {=ch11.perOwn} 微秒。换成一个一千个实例的 `InstancedMesh`，同样的画面只有 1 次 draw call，主线程时间几乎量不出来。按每次调用 1 微秒算，一帧 16.7 毫秒，光 CPU 这一头就只够 {=ch11.cap} 次；而一帧里的 CPU 时间还要留给你自己的逻辑、物理和浏览器的其他工作。
+
+::: diagram dg-calls keys=dg.calls
+cap: 图 11　同样的 N 个物体，三种画法。分开的网格：N 次 draw call，每个物体单独剔除。实例化：一次 draw call，每个实例的矩阵放进一个缓冲区，整组一起剔除。BatchedMesh：一次多重绘制，CPU 上逐个物体剔除和排序。
+aria: 示意图：左边 N 个物体各自一条调用，中间一个实例化调用和一排实例矩阵，右边一个批量调用和每个物体的范围
+sep: N 个 Mesh
+sepc: N 次调用
+ins: InstancedMesh
+insc: 1 次调用
+insm: 每个实例 16 个数
+bat: BatchedMesh
+batc: 1 次多重绘制
+batm: 每个物体一段范围
+:::
+
+three.js 有三个办法把 N 次调用变成 1 次：
+
+- **合并**：把所有几何体用 `BufferGeometryUtils.mergeGeometries` 拼成一个大几何体。一次调用，但它们从此是一个物体：不能单独动，也只能整体剔除。适合不动的布景。 {#m1}
+- **InstancedMesh**：同一个几何体和材质画 N 份，每份的矩阵放在一个 `instanceMatrix` 缓冲区里（每个实例 16 个浮点数，64 字节），由 `drawElementsInstanced` 一次画完。实例可以各自动，但动了就要把整个缓冲区重传；剔除用的是整组的包围球，而这个包围球第一次算出来以后就不会自己更新，实例移出了原来的范围，就可能被错误地整组剔除，要自己调 `computeBoundingSphere()`。 {#m2}
+- **BatchedMesh**：几何体可以不同，材质相同。一次 `multiDrawElements` 画完，而且它在 CPU 上逐个物体做剔除和排序（每帧多一点 JavaScript 的工作），所以看不见的部分不画。 {#m3}
+
+::: lab ch11-model
+model.title: N 个物体，四种画法
+model.how: 拖动物体的数量，看四种画法每帧要多少次 draw call、在 CPU 上花多少时间（相对一帧 16.7 毫秒）。每次调用的开销是一个参数：默认 1 微秒，是上面那次测量的上沿取整；在别的机器上可能差好几倍，你可以自己改。勾上"每个都在动"，看哪些画法还能用。
+ctl.n: 物体的数量
+ctl.us: 每次调用的 CPU 开销
+ctl.mov: 每个都在动
+cv.aria: 四种画法每帧 CPU 时间的横条，以及一帧 16.7 毫秒的预算线
+cv.x: 每帧 CPU 时间（毫秒，对数刻度）
+s.separate: 分开的 Mesh
+s.merged: 合并成一个
+s.instanced: InstancedMesh
+s.batched: BatchedMesh
+cv.budget: 一帧 16.7 毫秒
+cv.na: 动不了
+read.calls: 分开画的调用次数
+read.sep: 分开画的 CPU 时间
+read.inst: 实例化的 CPU 时间
+read.up: 实例化每帧重传
+say.fit: {n} 个物体分开画，CPU 这一头要 {ms}，占一帧的 <em>{share}</em>。{mv}
+say.over: {n} 个物体分开画，CPU 这一头要 {ms}，<em>超过了一整帧</em>：还没算 GPU，帧率最多也只有每秒 {fps} 帧。{mv}
+mv.static: 不动的东西，合并成一个是最省的。
+mv.moving: 都在动时合并就不行了；实例化每帧要重传 {up}，BatchedMesh 还要在 CPU 上逐个剔除。
+:::
+
+[[fable-flight|这个网站上的三维短片]]是一个把这件事做到头的例子。画面里有 24,000 页纸在空中飞，每一页是一块 `PlaneGeometry(1, 1, 3, 5)`：{=ch11.fv} 个顶点、{=ch11.ft} 个三角形。如果每页是一个网格，就是 {=ch11.fpages} 次 draw call；按上面那台机器测的每次 {=ch11.per} 微秒算，光 CPU 就要 {=ch11.flo} 毫秒，按模型默认的 1 微秒算是 {=ch11.fhi} 毫秒，从将近一帧（16.7 毫秒）的一半到超过一整帧。它的做法是一个 `InstancedBufferGeometry`：所有页共用这一块板，每页只带 9 个浮点数的实例属性（4 个随机数、它在最后拼成的那只"鸟"身上的位置、编号），一共 {=ch11.fb}，开场时上传一次。每一页怎么飞、怎么翻、怎么卷，全在顶点着色器里按时间 `uTime` 和几个控制量算；它还把 `frustumCulled` 关掉了，因为纸会飞出原来的包围球。结果是 {=ch11.ftot} 个三角形，纸页每帧只要 1 次 draw call，每帧从 CPU 传给它的只有十来个 uniform（时间、鸟的位置这类量）。
+
+模型省掉了：GPU 那一头（顶点和像素多了，GPU 一样会成为瓶颈）、状态切换的不同代价、浏览器把 WebGL 调用转到另一个进程的开销，以及合并几何体本身的内存代价。每次调用的开销是在一台机器上量的，只当默认值用。 {.take}
+
+## 拾取与动画 {#ch12}
+
+::: strings
+toc: 拾取与动画
+:::
+
+点一下鼠标就知道点中了哪个物体，靠的是反过来走第 4 章那条链：从相机穿过鼠标发一条射线，先和包围球比，再和每一个三角形比。让物体平滑地转，靠的是四元数：它在两个朝向之间走的是最短的那条弧。 {.law}
+
+**拾取。**`Raycaster.setFromCamera(鼠标, 相机)` 把鼠标的屏幕位置换成 −1 到 1 的坐标，放在深度 0.5 处，用投影矩阵的逆和相机的世界矩阵把它变回世界里的一个点；射线从相机出发，指向这个点。然后 `intersectObject` 对每个网格调用 `Mesh.raycast`：
+
+- 先拿世界空间里的包围球测，射线碰不到球，这个网格就跳过； {#r1}
+- 碰到了，把射线用世界矩阵的逆变回物体自己的坐标（这样不用变换几千个顶点，只变换一条射线）；如果几何体已经算过包围盒，再用包围盒筛一次； {#r2}
+- 然后**逐个三角形**地测，没有任何加速结构。r187 的 `Ray.intersectTriangle` 用的是 Woop、Benthin 和 Wald 2013 年的"水密"测试：把射线方向换到主轴上，三个边函数（就是第 8 章那个）同号才算命中，保证射线正好打在两个三角形的公共边上时不会从缝里漏过去。这个测试是 2026 年 6 月才换上的（r186 起）；之前的版本，以及很多教程讲的，是 Möller–Trumbore 1997 年的另一种写法。 {#r3}
+- 最后把所有命中按距离排序。 {#r4}
+
+::: lab ch12-model
+model.title: 点一下，测了多少个三角形
+model.how: 在球上点一下，或用两个滑杆移动"鼠标"。射线先和包围球（虚线圆）比；碰到了，就要和全部三角形逐个比，命中的那个高亮。
+ctl.x: 鼠标横向
+ctl.y: 鼠标纵向
+cv.aria: 一个线框球、它的包围球和鼠标位置；命中的三角形高亮
+read.sphere: 包围球
+read.tested: 测了的三角形
+read.hit: 命中的三角形
+read.dist: 距离
+hit.yes: 碰到
+hit.no: 没碰到
+say.hit: 射线碰到了包围球，于是 <em>{n} 个三角形全测了一遍</em>，打中第 {f} 号，距离 {d}。
+say.miss: 射线没碰到包围球，一个三角形也不用测。
+say.near: 射线碰到了包围球，{n} 个三角形全测了一遍，<em>一个也没打中</em>：包围球比球体本身大一圈的地方，白测了。
+:::
+
+所以一个有几十万个三角形的模型，鼠标在它上面移动时每一下都要测几十万次。常见的做法是另外准备一个低模专门用来拾取，或者用第三方的 BVH（包围盒层次）库给几何体建一棵树。
+
+**为什么旋转用四元数存。**`object.rotation` 是欧拉角：绕 x、y、z 依次转多少度，直观，但有两个毛病。一是**万向节锁**：中间那个轴转到 90° 时，第一和第三个轴重合，少了一个自由度。二是插值：从一个朝向到另一个朝向，把三个角度各自线性插值，走的不是最短的路，速度也不均匀。四元数用四个数表示一个旋转，两个四元数之间的**球面线性插值**（slerp）走的正是最短的那条弧，角速度恒定。
+
+`Quaternion.slerp` 还处理两个细节：q 和 −q 表示同一个旋转，所以点积为负时先把一个取反，保证走短的那边；两个朝向几乎相同时（点积 ≥ 0.9995），改用普通的线性插值再归一化，避免除以一个接近 0 的数。动画系统里，`AnimationMixer` 播放旋转关键帧（`QuaternionKeyframeTrack`）时，就用 `QuaternionLinearInterpolant` 在两个关键帧之间调用 `slerpFlat`。
+
+::: lab ch12-slerp keys=ch12.s
+model.title: 欧拉角插值和 slerp，走的路不一样
+model.how: 一个箭头从一个朝向转到另一个。拖动 t，金色是 slerp 的箭头尖走过的路，青色是把三个欧拉角分别插值走过的路。右边是转过的角度随 t 的变化。
+ctl.t: t
+cv.aria: 左边是单位球上两条箭头尖的轨迹，右边是转过的角度随 t 变化的两条曲线
+leg.slerp: slerp
+leg.euler: 欧拉角插值
+cv.x: t
+cv.y: 离起点转过的角度
+read.total: 两个朝向之间的角度
+read.slerp: slerp 走过的
+read.euler: 欧拉角插值走过的
+say: 两个朝向之间只差 {a}。slerp 在 t = {t} 时转过 {s}，一路匀速，总共走 {a}；三个欧拉角分别插值，一路上一共转了 <em>{e}</em>，绕了远路，速度也忽快忽慢。
+:::
+
+模型省掉了：`Raycaster` 的 `near`、`far`、`layers` 和对线、点、精灵的拾取；双面和背面材质（页面只测正面）；`AnimationMixer` 的混合、权重和时间缩放。 {.take}
+
+## 前沿在哪（2026 年 11 月） {#ch13}
+
+::: strings
+toc: 前沿在哪
+:::
+
+WebGL 2 是 2017 年的接口，背后是更老的 OpenGL ES 3.0。WebGPU 换了一套更接近 Metal、Vulkan、Direct3D 12 的模型：提前建好的管线、绑定组、命令缓冲区，还能直接在 GPU 上做通用计算。three.js 正把渲染器搬到它上面。 {.law}
+
+### 已确立 {#h.est .sub3}
+
+- WebGL 2 的语义就是 OpenGL ES 3.0：裁剪、除以 w、视口、光栅化的像素中心规则、透视校正插值、mipmap 的级别选择，都来自那份规范。WebGL 1.0 规范只要求深度缓冲区"至少 16 位"。 {#e1}
+- 本文用到的光照公式：GGX 分布（Walter 等，2007），Smith 遮挡的相关形式（Heitz，2014；实现照 Lagarde 与 de Rousiers，2014），Schlick 菲涅尔（1994）及其指数近似（Karis，2013），多次散射补偿（Turquin，2019）。阴影贴图：Williams，1978。水密的射线三角形测试：Woop、Benthin、Wald，2013。 {#e2}
+
+### 已经做出来的 {#h.demo .sub3}
+
+- three.js r187（2026 年 10 月 30 日）同时有两套渲染器：本文讲的 `WebGLRenderer`，和 `WebGPURenderer`。后者在浏览器不支持 WebGPU 时会退回 WebGL 2 后端（也可以用 `forceWebGL` 强制）。它的材质用 TSL（three.js 着色语言）写：在 JavaScript 里搭一个节点图，由它生成 WGSL 或 GLSL，不再靠第 6 章那样的字符串拼接和 `#define`。它还有 `renderer.compute()`，可以把粒子模拟之类的工作放到 GPU 上做。 {#d1}
+- 按 W3C GPU for the Web 工作组维护的实现状态页（2026 年 10 月 2 日更新，2026 年 11 月 20 日查看）：Chrome 从 113 版起在 Windows、macOS、ChromeOS 上默认开启 WebGPU，Android 从 121 版起（Android 12 以上）；Linux 上从 144 版起支持英特尔第 12 代以后的显卡，147 版起支持 Wayland 下的 NVIDIA，其余仍要开开关。Firefox 141 在 Windows 上开启（2025 年 7 月），145 版起在 macOS 26 以上、147 版起在所有 macOS 上开启。Safari 26 在 macOS、iOS、iPadOS 和 visionOS 26 上开启。 {#d2}
+- WebGPU 规范在 W3C 是"候选推荐标准草案"，最新一版日期是 2026 年 11 月 16 日。 {#d3}
+
+### 规范、计划和说法 {#h.claim .sub3}
+
+- 实现状态页写着：Firefox 在 Linux 上仍只在 Nightly 里有，Mozilla"预计在 2026 年"在 Linux 上正式推出；Android 版 Firefox 仍在开关后面。这是计划，不是现状。 {#c1}
+- r187 发布前一天（2026 年 10 月 29 日）合并进 three.js 的一组新功能（PR #35191，收在 r187 里），给 WebGPU 渲染器加了可替换的"绘制管线"：标准的（在核心里），以及放在 examples 里的 meshlet 和可见性缓冲区（visibility buffer）两种。代码里标着实验性；它要解决的正是第 11 章那类"物体太多"的问题，把剔除和分批更多地搬到 GPU 上。效果如何，我没有找到公开的测量。 {#c2}
+
+还没解决的：WebGPU 在所有平台上都能用之前，three.js 的大部分用户还在 WebGL 上，两套渲染器要并存一段时间；TSL 写的材质和老的 `ShaderMaterial`、`onBeforeCompile` 不通用，迁移要改代码；透明物体的排序问题（第 8 章）在 WebGPU 上一样存在。
+
+浏览器版本、日期和功能会过时：这一章的每条事实都只代表 2026 年 11 月时的情况，读的时候请先看它的日期。 {.take}
+
+## 收尾：场景卡了或画错了，先问三件事 {#ch14}
+
+::: strings
+toc: 收尾：先问三件事
+:::
+
+不必记住所有细节。场景慢了或画错了，问三个问题：慢在 CPU 还是 GPU？哪些东西让它每帧重做了本可以只做一次的事？哪里的数在精度或顺序上不够用？ {.law}
+
+{.qs}
+- **慢在 CPU 还是 GPU？**看 `renderer.info.render.calls`：几千次 draw call，多半是 CPU 在 JavaScript 和浏览器检查上撑不住（第 11 章），用实例化、合并或 BatchedMesh。调用不多却还慢，就是 GPU：顶点太多（第 3 章）、像素太多或着色器太重（第 7 章）、阴影贴图太大（第 10 章）。把画布缩小一半，变快了就是像素的问题。 {#q1}
+- **哪些事每帧都在重做？**每个物体的两个矩阵每帧都重算（第 2 章；不动的可以关掉 `matrixAutoUpdate`，省下它那次 compose）；加一盏灯、换一种材质组合会重新编译（第 6 章，开场前 `compile`）；不动的阴影每帧都在重画（第 10 章，`shadowMap.autoUpdate = false`）；改了顶点就整段重传（第 3 章）。 {#q2}
+- **哪里的数不够用？**一闪一闪：深度格子不够，先把近平面往外推（第 4 章）。透明的叠错：按物体排序不够，切开或关掉深度写入（第 8 章）。阴影有条纹或飘起来：阴影贴图的格子太粗，收紧阴影相机、调 bias（第 10 章）。远处的贴图闪：没有 mipmap 或角度太斜，开各向异性（第 9 章）。 {#q3}
+
+一句话：`renderer.render(scene, camera)` 是一个翻译者，它把你的场景树翻译成一串 GPU 命令。它每帧做的事很多，但每一件都可以数出来：多少个矩阵、多少次调用、多少个程序、多少个像素。卡和错，都能落到其中某一个数上。 {#sum .sum}
+
+相关的文章：[[computer-graphics]]（二维变换、光栅化和漫反射，入门版），[[linear-transform]]（矩阵怎么挪动平面），[[robot-kinematics]]（一串关节就是一串矩阵，和场景树是同一件事），[[how-a-gpu-computes]]（GPU 怎么组织几千个线程，以及 2×2 的片元组），[[how-pixels-reach-a-screen]]（颜色缓冲区以后的事：合成、垂直同步），以及用 three.js 做的[[fable-flight]]。 {#links}
+
+::: footer
+**来源。**three.js r187 源码（GitHub 上 mrdoob/three.js 的 r187 标签，提交 7e89746a，2026 年 10 月 30 日；与 npm 包 three@0.187.0 的 src/ 目录相同）：core/Object3D.js、BufferGeometry.js、BufferAttribute.js、Raycaster.js；math/Matrix4.js、Quaternion.js、Frustum.js、Sphere.js、Ray.js；cameras/PerspectiveCamera.js；renderers/WebGLRenderer.js 及 webgl/ 下的 WebGLRenderLists.js、WebGLPrograms.js、WebGLProgram.js、WebGLState.js、WebGLShadowMap.js、WebGLTextures.js；renderers/shaders/ShaderChunk/ 的 bsdfs、lights_physical_pars_fragment、lights_fragment_begin、shadowmap_pars_fragment、logdepthbuf_fragment；objects/Mesh.js、InstancedMesh.js、BatchedMesh.js；animation/；renderers/common/。逐项的文件和行号见本页目录里的 BRIEF.md。
+
+Khronos，OpenGL ES 3.0.6 规范（第 2.13、2.18、3.6.1、3.8.10 节）；WebGL 1.0 与 WebGL 2.0 规范；EXT_texture_filter_anisotropic、EXT_clip_control 扩展。W3C，WebGPU（候选推荐标准草案，2026-11-16）；gpuweb 工作组，Implementation Status（2026-10-02 更新）。B. Walter 等，Microfacet Models for Refraction through Rough Surfaces，EGSR 2007。E. Heitz，Understanding the Masking-Shadowing Function in Microfacet-Based BRDFs，JCGT 3(2)，2014。S. Lagarde、C. de Rousiers，Moving Frostbite to Physically Based Rendering 3.0，SIGGRAPH 2014 课程笔记。C. Schlick，An Inexpensive BRDF Model for Physically-based Rendering，Computer Graphics Forum 13(3)，1994。B. Karis，Real Shading in Unreal Engine 4，SIGGRAPH 2013 课程。E. Turquin，Practical multiple scattering compensation for microfacet models，2019。L. Williams，Casting Curved Shadows on Curved Surfaces，SIGGRAPH 1978。S. Woop、C. Benthin、I. Wald，Watertight Ray/Triangle Intersection，JCGT 2(1)，2013。T. Möller、B. Trumbore，Fast, Minimum Storage Ray/Triangle Intersection，Journal of Graphics Tools 2(1)，1997。N. Reed，Depth Precision Visualized（NVIDIA 开发者博客，2015-07-03）。K. Shoemake，Animating Rotation with Quaternion Curves，SIGGRAPH 1985。
+
+**模型。**页面不加载 three.js。矩阵、四元数、场景树更新、几何体构建、投影、视锥体平面和包围球测试、两个排序函数、着色器缓存钥匙、BRDF 各项、DFG 表的积分和水密射线测试，都按 r187 的源码重写；本页目录里的 tools/crosscheck.cjs 把它们和 three@0.187.0 在同样的输入上逐项比较（54 项，全部一致，结果记在 BRIEF.md）。光栅化按 OpenGL ES 3.0 的规则在 64 × 40 的缓冲区上逐像素做；纹理采样按规范的级别公式；阴影是二维的。draw call 和着色器编译的耗时在一台机器上测得，机器和日期写在正文里，模型里只当可改的参数。这篇文章由 Claude（Anthropic 的 AI）写成。
+:::

@@ -1,0 +1,127 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "how-threejs-draws-a-scene",
+ "refs": [
+  {
+   "from": "hero.lead",
+   "to": "fable-flight",
+   "anchor": null
+  },
+  {
+   "from": "hero.note",
+   "to": "computer-graphics",
+   "anchor": null
+  },
+  {
+   "from": "hero.note",
+   "to": "linear-transform",
+   "anchor": null
+  },
+  {
+   "from": "ch3.p4",
+   "to": "fable-flight",
+   "anchor": null
+  },
+  {
+   "from": "ch8.limit",
+   "to": "how-a-gpu-computes",
+   "anchor": "ch9"
+  },
+  {
+   "from": "ch8.limit",
+   "to": "how-pixels-reach-a-screen",
+   "anchor": "ch1"
+  },
+  {
+   "from": "ch10.p4",
+   "to": "fable-flight",
+   "anchor": null
+  },
+  {
+   "from": "ch11.p4",
+   "to": "fable-flight",
+   "anchor": null
+  },
+  {
+   "from": "ch14.links",
+   "to": "computer-graphics",
+   "anchor": null
+  },
+  {
+   "from": "ch14.links",
+   "to": "linear-transform",
+   "anchor": null
+  },
+  {
+   "from": "ch14.links",
+   "to": "robot-kinematics",
+   "anchor": null
+  },
+  {
+   "from": "ch14.links",
+   "to": "how-a-gpu-computes",
+   "anchor": null
+  },
+  {
+   "from": "ch14.links",
+   "to": "how-pixels-reach-a-screen",
+   "anchor": null
+  },
+  {
+   "from": "ch14.links",
+   "to": "fable-flight",
+   "anchor": null
+  }
+ ],
+ "backlinks": [],
+ "related": [
+  "computer-graphics",
+  "robot-kinematics",
+  "linear-transform",
+  "how-pixels-reach-a-screen",
+  "how-a-gpu-computes",
+  "fable-flight"
+ ],
+ "bindings": [
+  "ch2.nodes",
+  "ch2.compose",
+  "ch2.world",
+  "ch2.orbit",
+  "ch3.boxV",
+  "ch3.boxT",
+  "ch3.sphV",
+  "ch3.sphT",
+  "ch3.sphBytes",
+  "ch4.clip",
+  "ch4.ndc",
+  "ch4.px",
+  "ch4.win",
+  "ch4.int",
+  "ch4.first1",
+  "ch4.zf",
+  "ch4.zf1",
+  "ch4.zf001",
+  "ch6.first",
+  "ch6.ten",
+  "ch6.each",
+  "ch7.lost05",
+  "ch7.lost10",
+  "ch8.sq",
+  "ch9.base",
+  "ch9.mip",
+  "ch9.lin",
+  "ch9.srgb",
+  "ch9.srgb8",
+  "ch11.k1",
+  "ch11.per",
+  "ch11.perOwn",
+  "ch11.cap",
+  "ch11.fv",
+  "ch11.ft",
+  "ch11.fb",
+  "ch11.ftot",
+  "ch11.fpages",
+  "ch11.flo",
+  "ch11.fhi"
+ ]
+}
