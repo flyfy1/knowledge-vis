@@ -11,10 +11,19 @@
   var page = {page_location: 'https://visual.integ.life' + path, page_title: 'Integ Visual', page_referrer: ''};
   window.dataLayer = window.dataLayer || [];
   function gtag() { window.dataLayer.push(arguments); }
+  gtag('consent', 'default', {
+    ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied',
+    analytics_storage: 'granted'
+  });
+  var settings = Object.assign({}, page, {
+    send_page_view: false, allow_google_signals: false,
+    allow_ad_personalization_signals: false, allow_enhanced_conversions: false
+  });
+  // Remote Google tag configuration can initialize its destination on gtm.js.
+  // Seed global defaults first so that initialization cannot use the raw document.
+  gtag('set', settings);
   gtag('js', new Date());
-  gtag('config', id, Object.assign({}, page, {
-    send_page_view: false, allow_google_signals: false, allow_ad_personalization_signals: false
-  }));
+  gtag('config', id, settings);
   gtag('event', 'page_view', Object.assign({}, page, {send_to: id}));
   var script = document.createElement('script');
   script.async = true;

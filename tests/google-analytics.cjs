@@ -16,6 +16,27 @@ function browser(host = 'visual.integ.life', route = '/computing/systems/example
 }
 const production = browser();
 assert.equal(production.scripts.length, 1);
+assert.deepEqual(production.commands.map(c => c[0]), ['consent', 'set', 'js', 'config', 'event']);
+assert.equal(production.commands[0][1], 'default');
+for (const key of ['ad_storage', 'ad_user_data', 'ad_personalization']) assert.equal(production.commands[0][2][key], 'denied');
+assert.equal(production.commands[0][2].analytics_storage, 'granted');
+const defaults = production.commands[1][1];
+for (const key of ['send_page_view', 'allow_google_signals', 'allow_ad_personalization_signals', 'allow_enhanced_conversions']) assert.equal(defaults[key], false);
+assert.equal(defaults.page_title, 'Integ Visual');
+assert.equal(defaults.page_referrer, '');
+assert.deepEqual(defaults, production.commands.find(c => c[0] === 'config')[2]);
+// Simulate remote destination initialization at the js command, before local config.
+// It must already see the safe global page fields and must not emit an automatic view.
+let globalSettings = {}, autoViews = 0;
+for (const command of production.commands) {
+  if (command[0] === 'set') Object.assign(globalSettings, command[1]);
+  if (command[0] === 'js') {
+    if (globalSettings.send_page_view !== false) autoViews++;
+    assert.equal(globalSettings.page_location, 'https://visual.integ.life/computing/systems/example/');
+    assert.equal(globalSettings.allow_enhanced_conversions, false);
+  }
+}
+assert.equal(autoViews, 0);
 assert.equal(production.commands.filter(c => c[1] === 'page_view').length, 1);
 assert.equal(production.commands.find(c => c[0] === 'config')[2].send_page_view, false);
 assert.equal(production.commands.find(c => c[0] === 'config')[2].allow_google_signals, false);
