@@ -146,10 +146,30 @@ evidence, as on why-nvme-is-fast (specs/visual-page-provenance.md, 2026-11-14). 
 specs/claude-code-editions.md did **not** repoint Codex labels for the navigation-only compare link; this
 sweep follows AGENTS.md instead.
 
+## Floating chapter rail
+
+Added 2026-11-21 in `site-nav.js` and `site-nav.css` so every chaptered page (template or hand-written) gets a persistent, scroll-synchronised left chapter rail without per-page markup edits.
+
+- **Discovery (`extractChapterSpecs(doc)`)**: looks for `nav.toc a[href^="#"]` first, else `nav.step-nav a[href^="#"]`, keeping links whose `#id` target exists in the document. Pages with fewer than 2 valid targets (entrance pages, demos, single-stage widgets) get no rail and no `body.site-has-rail` class.
+  - `.toc a`: reads `span` for `num` and `b` (or adjacent sibling / trimmed text without `num`) for `text`.
+  - `.step-nav a`: splits leading `^(\d+)\s+(.+)$` into `{ num, text }`, falling back to a 1-based index label if no leading digits are present.
+- **Runs on both template and hand-written pages**: `initChapterRail()` runs before the `html[data-template]` early return and independently of `site-nav-data.js`.
+- **Injected DOM (appended at end of `<body>`, marked `data-no-autolink`)**:
+  - `.site-chapter-backdrop` (`hidden` when closed).
+  - `<aside class="site-chapter-rail">` with header (title `目录` / `Chapters`, live `01 / NN` counter, and `>= 48 × 48` collapse/close `.site-chapter-toggle`), reading-progress bar driven by `--rail-progress`, and scrollable `<ol class="site-chapter-list">` of `<a href="#id">` chapter links (`.is-active`, `aria-current="location"`).
+  - `<button type="button" class="site-chapter-fab">` (`>= 48 × 48`, displaying `formatRailLabel(item, lang)` such as `03 · ...`) acting as the drawer trigger below `1180 px` and the desktop expand button when `body.site-rail-collapsed` is active.
+- **Scroll spy (`pickActiveChapter(tops, scrollY, innerHeight, docHeight)`)**: `0` at the top of the page (`scrollY <= 2`), `n - 1` within `24 px` of the bottom, otherwise the last section with `top <= Math.min(240, Math.max(96, innerHeight * 0.28))`. Passive `scroll` / `resize` / `hashchange` listeners throttled via `requestAnimationFrame` update `.is-active`, `aria-current="location"`, `--rail-progress`, the FAB label, and `ol.scrollTop` inside the rail list only (never scrolling the outer page).
+- **Language & copy sync**: a `MutationObserver` on `html[lang]` and the source `<nav>` keeps UI strings, `aria-label`s, FAB text, and chapter labels synchronised immediately on language switches so zero CJK remains in `en` mode.
+- **Responsive & accessibility contract**:
+  - `>= 1180 px`: `body.site-has-rail { padding-left: 240px }` (`0` when `body.site-rail-collapsed`); `body.site-has-rail .step-nav { padding-inline: max(12px, calc((100% - 920px)/2)); }`; fixed rail at `top: 68px; left: 14px; width: 214px; max-height: calc(100vh - 82px)` inheriting `--card`/`--panel`/`--surface`, `--line`/`--border`, `--ink`/`--text`, `--mute`/`--muted`, `--gold`/`--accent`/`--cyan`.
+  - `< 1180 px`: zero body left padding; fixed bottom-left `.site-chapter-fab`; `.site-chapter-rail.is-open` slides out as a drawer (`width: min(280px, 86vw)`) with `inert` + `aria-hidden="true"` when closed, `Escape` / backdrop / link click close, and focus restoration to `.site-chapter-fab` on dismiss.
+  - All visible buttons and rail links meet `>= 48 × 48 px` tap-target sizing; `prefers-reduced-motion`, `forced-colors`, and `print` media queries are supported.
+
 ## Tests
 
 ```sh
 node scripts/build-site-nav.cjs --check
 node tests/site-nav.cjs
-SITE_NAV_BASE_URL=http://127.0.0.1:18871/ node tests/site-nav-browser.cjs   # Playwright, serial
+SITE_NAV_BASE_URL=http://127.0.0.1:18871/ node tests/site-nav-browser.cjs      # Playwright, serial
+CHAPTER_RAIL_BASE_URL=http://127.0.0.1:18871/ node tests/chapter-rail-browser.cjs  # Playwright, serial
 ```

@@ -35,3 +35,339 @@ html[data-template="lesson"]:not(:has(link[href*="lesson-shell.css"])) section.s
 /* The page title that starts a row runs inline, so its ：/: stays on the title's last line at 320 px (an inline-block
    title filled the line and pushed the colon onto a line of its own). The padding keeps its tap box at 24 px or more. */
 .xref-list li > a:first-child { display:inline; padding:4px 0; }
+
+/* Floating left chapter rail + mobile drawer (specs/site-navigation.md). */
+.site-chapter-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 180;
+  background: rgba(5, 8, 13, 0.62);
+  backdrop-filter: blur(3px);
+}
+.site-chapter-backdrop[hidden] {
+  display: none;
+}
+
+.site-chapter-rail {
+  position: fixed;
+  top: 68px;
+  left: 14px;
+  z-index: 190;
+  width: 214px;
+  max-height: calc(100vh - 82px);
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--line, var(--border, #2b3242));
+  border-radius: 14px;
+  background: var(--card, var(--panel, var(--surface, #121822)));
+  color: var(--ink, var(--text, #ebe8e0));
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.38);
+  font-family: var(--sans, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif);
+  letter-spacing: normal;
+  text-transform: none;
+  text-align: left;
+  overflow: hidden;
+}
+
+.site-chapter-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 6px 6px 6px 14px;
+  border-bottom: 1px solid var(--line, var(--border, #2b3242));
+  flex: 0 0 auto;
+}
+
+.site-chapter-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.site-chapter-title {
+  font-size: 11.5px;
+  line-height: 1.25;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mute, var(--muted, #a3aab8));
+}
+
+.site-chapter-count {
+  font-family: var(--mono, ui-monospace, Menlo, Consolas, monospace);
+  font-size: 12px;
+  line-height: 1.25;
+  font-variant-numeric: tabular-nums;
+  color: var(--mute, var(--muted, #a3aab8));
+}
+
+.site-chapter-toggle {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  min-height: 48px;
+  margin: 0;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--ink, var(--text, #ebe8e0));
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: background .15s ease, border-color .15s ease, color .15s ease;
+}
+.site-chapter-toggle:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: var(--line, var(--border, #2b3242));
+}
+.site-chapter-toggle:focus-visible {
+  outline: 3px solid var(--gold, var(--accent, var(--cyan, #e9b949)));
+  outline-offset: -3px;
+}
+
+.site-chapter-progress {
+  position: relative;
+  height: 2px;
+  width: 100%;
+  flex: 0 0 auto;
+  background: var(--line, var(--border, #2b3242));
+  overflow: hidden;
+}
+.site-chapter-progress > span {
+  display: block;
+  height: 100%;
+  width: var(--rail-progress, 0%);
+  background: var(--gold, var(--accent, var(--cyan, #e9b949)));
+  transition: width .12s linear;
+}
+
+.site-chapter-list {
+  list-style: none;
+  margin: 0;
+  padding: 6px 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  flex: 1 1 auto;
+  min-height: 0;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+}
+.site-chapter-list li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.site-chapter-list a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 48px;
+  min-width: 48px;
+  margin: 0;
+  padding: 8px 12px 8px 10px;
+  border: 0;
+  border-left: 3px solid transparent;
+  border-radius: 0 8px 8px 0;
+  background: transparent;
+  color: var(--ink, var(--text, #ebe8e0));
+  text-decoration: none;
+  font-size: 13.5px;
+  font-weight: 400;
+  line-height: 1.35;
+  box-sizing: border-box;
+  overflow-wrap: anywhere;
+  transition: background .15s ease, color .15s ease, border-color .15s ease;
+}
+.site-chapter-list a:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+.site-chapter-list a:focus-visible {
+  outline: 3px solid var(--gold, var(--accent, var(--cyan, #e9b949)));
+  outline-offset: -3px;
+}
+.site-chapter-list a.is-active {
+  background: rgba(255, 255, 255, 0.08);
+  border-left-color: var(--gold, var(--accent, var(--cyan, #e9b949)));
+  color: var(--ink, var(--text, #ebe8e0));
+  font-weight: 600;
+}
+
+.site-chapter-num {
+  flex: 0 0 auto;
+  min-width: 1.8em;
+  font-family: var(--mono, ui-monospace, Menlo, Consolas, monospace);
+  font-size: 11.5px;
+  line-height: 1.3;
+  font-variant-numeric: tabular-nums;
+  color: var(--mute, var(--muted, #a3aab8));
+}
+.site-chapter-list a.is-active .site-chapter-num {
+  color: var(--gold, var(--accent, var(--cyan, #e9b949)));
+}
+.site-chapter-text {
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.site-chapter-fab {
+  appearance: none;
+  position: fixed;
+  left: 14px;
+  bottom: 16px;
+  z-index: 185;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 48px;
+  min-height: 48px;
+  max-width: min(260px, calc(100vw - 24px));
+  margin: 0;
+  padding: 0 14px;
+  border: 1px solid var(--line, var(--border, #2b3242));
+  border-radius: 999px;
+  background: var(--card, var(--panel, var(--surface, #121822)));
+  color: var(--ink, var(--text, #ebe8e0));
+  font-family: var(--sans, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif);
+  font-size: 13.5px;
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: normal;
+  text-transform: none;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.42);
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: border-color .15s ease, background .15s ease, transform .15s ease;
+}
+.site-chapter-fab:hover {
+  border-color: var(--gold, var(--accent, var(--cyan, #e9b949)));
+}
+.site-chapter-fab:focus-visible {
+  outline: 3px solid var(--gold, var(--accent, var(--cyan, #e9b949)));
+  outline-offset: 2px;
+}
+.site-chapter-fab-icon {
+  flex: 0 0 auto;
+  color: var(--gold, var(--accent, var(--cyan, #e9b949)));
+}
+.site-chapter-fab-label {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (min-width: 1180px) {
+  body.site-has-rail {
+    padding-left: 240px;
+    box-sizing: border-box;
+  }
+  body.site-has-rail.site-rail-collapsed {
+    padding-left: 0;
+  }
+  body.site-has-rail .step-nav {
+    padding-inline: max(12px, calc((100% - 920px)/2));
+  }
+  .site-chapter-icon-close {
+    display: none;
+  }
+  body.site-has-rail:not(.site-rail-collapsed) .site-chapter-fab {
+    display: none;
+  }
+  body.site-has-rail.site-rail-collapsed .site-chapter-rail {
+    display: none;
+  }
+  .site-chapter-backdrop {
+    display: none !important;
+  }
+}
+
+@media (max-width: 1179.98px) {
+  .site-chapter-icon-collapse {
+    display: none;
+  }
+  .site-chapter-fab {
+    left: 12px;
+    bottom: 14px;
+  }
+  .site-chapter-rail {
+    top: 12px;
+    bottom: 12px;
+    left: 12px;
+    width: min(280px, 86vw);
+    max-height: none;
+    transform: translateX(calc(-100% - 28px));
+    visibility: hidden;
+    pointer-events: none;
+    transition: transform .22s ease, visibility 0s linear .22s;
+  }
+  .site-chapter-rail.is-open {
+    transform: translateX(0);
+    visibility: visible;
+    pointer-events: auto;
+    transition: transform .22s ease, visibility 0s linear 0s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-chapter-rail,
+  .site-chapter-fab,
+  .site-chapter-backdrop,
+  .site-chapter-progress > span,
+  .site-chapter-toggle,
+  .site-chapter-list a {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+@media (forced-colors: active) {
+  .site-chapter-rail,
+  .site-chapter-fab,
+  .site-chapter-toggle {
+    border: 1px solid CanvasText;
+    background: Canvas;
+    color: CanvasText;
+  }
+  .site-chapter-list a {
+    color: LinkText;
+  }
+  .site-chapter-list a.is-active {
+    outline: 2px solid Highlight;
+    outline-offset: -2px;
+    border-left-color: Highlight;
+    background: Highlight;
+    color: HighlightText;
+  }
+  .site-chapter-list a.is-active .site-chapter-num {
+    color: HighlightText;
+  }
+  .site-chapter-list a:focus-visible,
+  .site-chapter-toggle:focus-visible,
+  .site-chapter-fab:focus-visible {
+    outline: 3px solid Highlight;
+  }
+  .site-chapter-progress > span {
+    background: Highlight;
+  }
+}
+
+@media print {
+  body.site-has-rail {
+    padding-left: 0 !important;
+  }
+  .site-chapter-rail,
+  .site-chapter-fab,
+  .site-chapter-backdrop {
+    display: none !important;
+  }
+}

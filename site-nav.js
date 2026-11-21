@@ -78,12 +78,418 @@
     return page;
   }
 
-  var core = { buildMatcher: buildMatcher, findMatches: findMatches, citeMatch: citeMatch, pageTarget: pageTarget };
+  function normWs(s) { return String(s == null ? '' : s).replace(/\s+/g, ' ').trim(); }
+
+  // Extracts chapter specs [{ id, num, text }] from nav.toc (preferentially) or nav.step-nav.
+  // Filters to links whose #id target exists in doc; returns [] if fewer than 2 valid targets exist.
+  function extractChapterSpecs(doc) {
+    if (!doc || typeof doc.querySelectorAll !== 'function' || typeof doc.getElementById !== 'function') return [];
+    var tocLinks = doc.querySelectorAll('nav.toc a[href^="#"]');
+    var isToc = !!(tocLinks && tocLinks.length);
+    var links = isToc ? tocLinks : doc.querySelectorAll('nav.step-nav a[href^="#"]');
+    if (!links || !links.length) return [];
+    var out = [], seen = {};
+    for (var i = 0; i < links.length; i++) {
+      var a = links[i];
+      var href = a.getAttribute ? a.getAttribute('href') : a.href;
+      if (!href || href.charAt(0) !== '#' || href.length < 2) continue;
+      var id = href.slice(1);
+      var target = doc.getElementById(id);
+      if (!target) {
+        try {
+          var decoded = decodeURIComponent(id);
+          if (decoded !== id) { id = decoded; target = doc.getElementById(id); }
+        } catch (e) {}
+      }
+      if (!target || seen[id]) continue;
+      seen[id] = true;
+      var num = '', text = '';
+      if (isToc) {
+        var span = a.querySelector ? a.querySelector('span') : null;
+        num = span ? normWs(span.textContent) : '';
+        var b = a.querySelector ? a.querySelector('b') : null;
+        if (b) {
+          text = normWs(b.textContent);
+        } else if (span && span.nextElementSibling) {
+          text = normWs(span.nextElementSibling.textContent);
+        } else {
+          text = normWs(a.textContent);
+          if (num && text.indexOf(num) === 0) text = normWs(text.slice(num.length));
+        }
+      } else {
+        var raw = normWs(a.textContent);
+        var m = raw.match(/^(\d+)\s+(.+)$/);
+        if (m) {
+          num = m[1];
+          text = m[2];
+        } else {
+          num = String(out.length + 1);
+          text = raw;
+        }
+      }
+      out.push({ id: id, num: num, text: text });
+    }
+    return out.length < 2 ? [] : out;
+  }
+
+  // Chooses the active chapter index from section viewport top offsets and scroll metrics.
+  function pickActiveChapter(tops, scrollY, innerHeight, docHeight) {
+    if (!tops || !tops.length) return -1;
+    var n = tops.length;
+    if (n === 1) return 0;
+    var sy = Number(scrollY) || 0;
+    var ih = Number(innerHeight) || 0;
+    var dh = Number(docHeight) || 0;
+    if (sy <= 2) return 0;
+    if (dh > 0 && ih > 0 && sy + ih >= dh - 24) return n - 1;
+    var line = Math.min(240, Math.max(96, ih * 0.28));
+    var idx = 0;
+    for (var i = 0; i < n; i++) {
+      if (tops[i] <= line) idx = i;
+    }
+    return idx;
+  }
+
+  // Formats the compact badge label for the mobile / collapsed floating action button.
+  function formatRailLabel(item, lang) {
+    var fallback = lang === 'en' ? 'Chapters' : '目录';
+    if (!item) return fallback;
+    var num = normWs(item.num);
+    var text = normWs(item.text);
+    if (!num && !text) return fallback;
+    if (!num) return text;
+    if (!text) return num;
+    return num + ' · ' + text;
+  }
+
+  var core = {
+    buildMatcher: buildMatcher,
+    findMatches: findMatches,
+    citeMatch: citeMatch,
+    pageTarget: pageTarget,
+    extractChapterSpecs: extractChapterSpecs,
+    pickActiveChapter: pickActiveChapter,
+    formatRailLabel: formatRailLabel
+  };
   if (typeof module === 'object' && module.exports) { module.exports = core; return; }
   if (!global.document || global.SiteNav) return;
 
   /* ---------- page part ---------- */
   var doc = global.document;
+
+  function lang() {
+    var l = (doc.documentElement.getAttribute('lang') || '').toLowerCase();
+    if (l.indexOf('zh') === 0) return 'zh';
+    if (l.indexOf('en') === 0) return 'en';
+    try { var s = localStorage.getItem('knowledge-lang'); if (s === 'zh' || s === 'en') return s; } catch (e) {}
+    return 'zh';
+  }
+
+  var railBooted = false;
+  function initChapterRail() {
+    if (railBooted || !doc.body) return;
+    var specs = extractChapterSpecs(doc);
+    if (!specs.length) return;
+    railBooted = true;
+
+    var sourceNav = doc.querySelector('nav.toc') || doc.querySelector('nav.step-nav');
+    var RAIL_UI = {
+      zh: { title: '目录', aria: '章节目录', hide: '收起目录', show: '展开章节导航', close: '关闭目录', open: '打开章节目录' },
+      en: { title: 'Chapters', aria: 'Chapter navigation', hide: 'Hide chapters', show: 'Show chapters', close: 'Close chapters', open: 'Open chapters' }
+    };
+
+    var backdrop = doc.createElement('div');
+    backdrop.className = 'site-chapter-backdrop';
+    backdrop.setAttribute('data-no-autolink', '');
+    backdrop.hidden = true;
+
+    var rail = doc.createElement('aside');
+    rail.className = 'site-chapter-rail';
+    rail.setAttribute('data-no-autolink', '');
+
+    var head = doc.createElement('div');
+    head.className = 'site-chapter-head';
+    var meta = doc.createElement('div');
+    meta.className = 'site-chapter-meta';
+    var titleEl = doc.createElement('span');
+    titleEl.className = 'site-chapter-title';
+    var countEl = doc.createElement('span');
+    countEl.className = 'site-chapter-count';
+    meta.appendChild(titleEl);
+    meta.appendChild(countEl);
+
+    var toggleBtn = doc.createElement('button');
+    toggleBtn.type = 'button';
+    toggleBtn.className = 'site-chapter-toggle';
+    toggleBtn.innerHTML = '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+      '<path class="site-chapter-icon-collapse" d="M15 18l-6-6 6-6M19 18l-6-6 6-6"/>' +
+      '<path class="site-chapter-icon-close" d="M18 6L6 18M6 6l12 12"/>' +
+      '</svg>';
+    head.appendChild(meta);
+    head.appendChild(toggleBtn);
+
+    var prog = doc.createElement('div');
+    prog.className = 'site-chapter-progress';
+    prog.setAttribute('aria-hidden', 'true');
+    prog.appendChild(doc.createElement('span'));
+
+    var ol = doc.createElement('ol');
+    ol.className = 'site-chapter-list';
+    var entries = specs.map(function (sp) {
+      var li = doc.createElement('li');
+      var a = doc.createElement('a');
+      a.href = '#' + sp.id;
+      var numEl = doc.createElement('span');
+      numEl.className = 'site-chapter-num';
+      numEl.textContent = sp.num;
+      var textEl = doc.createElement('span');
+      textEl.className = 'site-chapter-text';
+      textEl.textContent = sp.text;
+      a.appendChild(numEl);
+      a.appendChild(textEl);
+      li.appendChild(a);
+      ol.appendChild(li);
+      return { id: sp.id, num: sp.num, text: sp.text, a: a, numEl: numEl, textEl: textEl };
+    });
+
+    rail.appendChild(head);
+    rail.appendChild(prog);
+    rail.appendChild(ol);
+
+    var fab = doc.createElement('button');
+    fab.type = 'button';
+    fab.className = 'site-chapter-fab';
+    fab.setAttribute('data-no-autolink', '');
+    fab.innerHTML = '<svg class="site-chapter-fab-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+      '<path d="M4 6h16M4 12h16M4 18h10"/></svg>';
+    var fabLabel = doc.createElement('span');
+    fabLabel.className = 'site-chapter-fab-label';
+    fab.appendChild(fabLabel);
+
+    doc.body.appendChild(backdrop);
+    doc.body.appendChild(rail);
+    doc.body.appendChild(fab);
+    doc.body.classList.add('site-has-rail');
+
+    var desktopMQ = global.matchMedia ? global.matchMedia('(min-width: 1180px)') : null;
+    function isDesktop() { return desktopMQ ? desktopMQ.matches : (global.innerWidth || 1280) >= 1180; }
+    function safeFocus(el) {
+      if (!el || typeof el.focus !== 'function') return;
+      try { el.focus({ preventScroll: true }); } catch (e) { el.focus(); }
+    }
+
+    var activeIdx = 0, collapsed = false, drawerOpen = false, rafId = 0;
+
+    function scrollActiveIntoOl() {
+      var active = entries[activeIdx] && entries[activeIdx].a;
+      if (!active || ol.scrollHeight <= ol.clientHeight + 1) return;
+      var ar = active.getBoundingClientRect();
+      var lr = ol.getBoundingClientRect();
+      var pad = 8;
+      if (ar.top < lr.top + pad) ol.scrollTop += ar.top - lr.top - pad;
+      else if (ar.bottom > lr.bottom - pad) ol.scrollTop += ar.bottom - lr.bottom + pad;
+    }
+
+    function syncTexts() {
+      var l = lang();
+      var ui = RAIL_UI[l] || RAIL_UI.zh;
+      var latest = extractChapterSpecs(doc);
+      if (latest.length) {
+        var byId = {};
+        latest.forEach(function (it) { byId[it.id] = it; });
+        entries.forEach(function (en, idx) {
+          var fresh = byId[en.id] || latest[idx];
+          if (!fresh) return;
+          en.num = fresh.num;
+          en.text = fresh.text;
+          if (en.numEl.textContent !== fresh.num) en.numEl.textContent = fresh.num;
+          if (en.textEl.textContent !== fresh.text) en.textEl.textContent = fresh.text;
+        });
+      }
+      var langAttr = l === 'zh' ? 'zh-CN' : 'en';
+      if (rail.getAttribute('lang') !== langAttr) rail.setAttribute('lang', langAttr);
+      if (fab.getAttribute('lang') !== langAttr) fab.setAttribute('lang', langAttr);
+      if (rail.getAttribute('aria-label') !== ui.aria) rail.setAttribute('aria-label', ui.aria);
+      if (titleEl.textContent !== ui.title) titleEl.textContent = ui.title;
+
+      var idx = activeIdx >= 0 && activeIdx < entries.length ? activeIdx : 0;
+      var countStr = String(idx + 1).padStart(2, '0') + ' / ' + String(entries.length).padStart(2, '0');
+      if (countEl.textContent !== countStr) countEl.textContent = countStr;
+
+      var label = formatRailLabel(entries[idx], l);
+      if (fabLabel.textContent !== label) fabLabel.textContent = label;
+
+      if (isDesktop()) {
+        toggleBtn.setAttribute('aria-label', ui.hide);
+        toggleBtn.setAttribute('aria-expanded', collapsed ? 'false' : 'true');
+        fab.setAttribute('aria-label', ui.show + (label ? ': ' + label : ''));
+        fab.setAttribute('aria-expanded', collapsed ? 'false' : 'true');
+      } else {
+        toggleBtn.setAttribute('aria-label', ui.close);
+        toggleBtn.setAttribute('aria-expanded', drawerOpen ? 'true' : 'false');
+        fab.setAttribute('aria-label', (drawerOpen ? ui.close : ui.open) + (label ? ': ' + label : ''));
+        fab.setAttribute('aria-expanded', drawerOpen ? 'true' : 'false');
+      }
+    }
+
+    function syncLayoutState() {
+      if (isDesktop()) {
+        drawerOpen = false;
+        rail.classList.remove('is-open');
+        backdrop.hidden = true;
+        if (collapsed) {
+          doc.body.classList.add('site-rail-collapsed');
+          rail.setAttribute('aria-hidden', 'true');
+          if ('inert' in rail) rail.inert = true;
+        } else {
+          doc.body.classList.remove('site-rail-collapsed');
+          rail.removeAttribute('aria-hidden');
+          if ('inert' in rail) rail.inert = false;
+        }
+      } else {
+        doc.body.classList.remove('site-rail-collapsed');
+        if (drawerOpen) {
+          rail.classList.add('is-open');
+          rail.removeAttribute('aria-hidden');
+          if ('inert' in rail) rail.inert = false;
+          backdrop.hidden = false;
+        } else {
+          rail.classList.remove('is-open');
+          rail.setAttribute('aria-hidden', 'true');
+          if ('inert' in rail) rail.inert = true;
+          backdrop.hidden = true;
+        }
+      }
+      syncTexts();
+    }
+
+    function applyActive(nextIdx) {
+      if (nextIdx < 0 || nextIdx >= entries.length) return;
+      var changed = nextIdx !== activeIdx || !entries[nextIdx].a.classList.contains('is-active');
+      activeIdx = nextIdx;
+      entries.forEach(function (en, i) {
+        var on = i === activeIdx;
+        en.a.classList.toggle('is-active', on);
+        if (on) en.a.setAttribute('aria-current', 'location');
+        else en.a.removeAttribute('aria-current');
+      });
+      if (changed) {
+        syncTexts();
+        scrollActiveIntoOl();
+      }
+    }
+
+    function updateScrollSpy() {
+      rafId = 0;
+      var tops = entries.map(function (en) {
+        var el = doc.getElementById(en.id);
+        return el ? el.getBoundingClientRect().top : 1e9;
+      });
+      var sy = global.scrollY != null ? global.scrollY : (doc.documentElement ? doc.documentElement.scrollTop : 0);
+      var ih = global.innerHeight || (doc.documentElement ? doc.documentElement.clientHeight : 800);
+      var dh = Math.max(doc.body ? doc.body.scrollHeight : 0, doc.documentElement ? doc.documentElement.scrollHeight : 0);
+      var maxScroll = Math.max(0, dh - ih);
+      var pct = maxScroll > 0 ? (sy + ih >= dh - 2 ? 100 : Math.min(100, Math.max(0, (sy / maxScroll) * 100))) : 100;
+      rail.style.setProperty('--rail-progress', pct.toFixed(1) + '%');
+      var nextIdx = pickActiveChapter(tops, sy, ih, dh);
+      if (nextIdx >= 0) applyActive(nextIdx);
+    }
+
+    function scheduleUpdate() {
+      if (rafId) return;
+      var raf = global.requestAnimationFrame || function (f) { return setTimeout(f, 16); };
+      rafId = raf(updateScrollSpy);
+    }
+
+    toggleBtn.addEventListener('click', function () {
+      if (isDesktop()) {
+        collapsed = !collapsed;
+        syncLayoutState();
+        scheduleUpdate();
+        if (collapsed) safeFocus(fab);
+      } else {
+        drawerOpen = false;
+        syncLayoutState();
+        safeFocus(fab);
+      }
+    });
+
+    fab.addEventListener('click', function () {
+      if (isDesktop()) {
+        collapsed = false;
+        syncLayoutState();
+        scheduleUpdate();
+        safeFocus(toggleBtn);
+      } else {
+        drawerOpen = !drawerOpen;
+        syncLayoutState();
+        if (drawerOpen) {
+          scrollActiveIntoOl();
+          safeFocus(toggleBtn);
+        } else {
+          safeFocus(fab);
+        }
+      }
+    });
+
+    backdrop.addEventListener('click', function () {
+      if (!isDesktop() && drawerOpen) {
+        drawerOpen = false;
+        syncLayoutState();
+        safeFocus(fab);
+      }
+    });
+
+    doc.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && !isDesktop() && drawerOpen) {
+        e.preventDefault();
+        drawerOpen = false;
+        syncLayoutState();
+        safeFocus(fab);
+      }
+    });
+
+    ol.addEventListener('click', function (e) {
+      var link = e.target && e.target.closest ? e.target.closest('a[href^="#"]') : null;
+      if (!link) return;
+      if (!isDesktop() && drawerOpen) {
+        drawerOpen = false;
+        syncLayoutState();
+      }
+      scheduleUpdate();
+    });
+
+    global.addEventListener('scroll', scheduleUpdate, { passive: true });
+    global.addEventListener('resize', function () { syncLayoutState(); scheduleUpdate(); }, { passive: true });
+    global.addEventListener('hashchange', scheduleUpdate, { passive: true });
+    global.addEventListener('load', function () { syncTexts(); scheduleUpdate(); });
+    if (desktopMQ && desktopMQ.addEventListener) {
+      desktopMQ.addEventListener('change', function () { syncLayoutState(); scheduleUpdate(); });
+    }
+    if (global.MutationObserver) {
+      var railObserver = new global.MutationObserver(function () {
+        syncTexts();
+        scheduleUpdate();
+      });
+      railObserver.observe(doc.documentElement, { attributes: true, attributeFilter: ['lang'] });
+      if (sourceNav) {
+        railObserver.observe(sourceNav, { childList: true, subtree: true, characterData: true });
+      }
+    }
+
+    syncLayoutState();
+    updateScrollSpy();
+  }
+
+  function bootChapterRail() {
+    if (doc.readyState === 'loading') {
+      doc.addEventListener('DOMContentLoaded', initChapterRail, { once: true });
+    } else {
+      initChapterRail();
+    }
+  }
+  bootChapterRail();
+
   if (doc.documentElement && doc.documentElement.hasAttribute && doc.documentElement.hasAttribute('data-template')) {
     global.SiteNav = { skipped: 'data-template', report: function () { return []; }, page: function () { return null; }, rescan: function () {} };
     // A lesson whose runtime does not translate data-i18n-aria gets its static breadcrumb without an aria-label
@@ -169,13 +575,6 @@
 
   var data, matcher, page, excluded = [], nav, created = [], observer, timer = 0, pending = [];
 
-  function lang() {
-    var l = (doc.documentElement.getAttribute('lang') || '').toLowerCase();
-    if (l.indexOf('zh') === 0) return 'zh';
-    if (l.indexOf('en') === 0) return 'en';
-    try { var s = localStorage.getItem('knowledge-lang'); if (s === 'zh' || s === 'en') return s; } catch (e) {}
-    return 'zh';
-  }
   function name(v) { var l = lang(); return v ? (v[l] || v.zh || v.en || '') : ''; }
   function homeHref(q) { return (up === './' && q ? '' : up) + (q || ''); }
 

@@ -125,4 +125,100 @@ for (const needle of [
 ]) ok(home.includes(needle), 'home: ' + needle);
 ok(!home.includes('page-provenance'), 'home has no provenance label');
 
+// 9. Floating chapter rail pure helpers and CSS/markup contract.
+const mkAnchor = (href, text, spanText, bText, siblingText) => ({
+  getAttribute: (k) => (k === 'href' ? href : null),
+  textContent: text,
+  querySelector: (sel) => {
+    if (sel === 'span') return spanText != null ? { textContent: spanText, nextElementSibling: siblingText != null ? { textContent: siblingText } : null } : null;
+    if (sel === 'b') return bText != null ? { textContent: bText } : null;
+    return null;
+  },
+});
+const mkDoc = ({ toc = [], step = [], ids = [] }) => {
+  const idSet = new Set(ids);
+  return {
+    querySelectorAll: (sel) => (sel === 'nav.toc a[href^="#"]' ? toc : sel === 'nav.step-nav a[href^="#"]' ? step : []),
+    getElementById: (id) => (idSet.has(id) ? { id } : null),
+  };
+};
+
+assert.deepEqual(core.extractChapterSpecs(null), []); n++;
+assert.deepEqual(core.extractChapterSpecs(mkDoc({ toc: [mkAnchor('#ch1', '01 One', '01', 'One')], ids: ['ch1'] })), [], '< 2 valid targets returns []'); n++;
+assert.deepEqual(
+  core.extractChapterSpecs(mkDoc({
+    toc: [
+      mkAnchor('#ch1', '01 场景图', '01', '场景图'),
+      mkAnchor('#missing', '02 Missing', '02', 'Missing'),
+      mkAnchor('#ch2', '02GPS', '02', null, 'GPS'),
+      mkAnchor('#ch3', '03 Plain Text', '03', null, null),
+      mkAnchor('#ch3', '03 Dup', '03', 'Dup'),
+      mkAnchor('#', 'Empty', '', ''),
+    ],
+    step: [mkAnchor('#step0', '0 Hook')],
+    ids: ['ch1', 'ch2', 'ch3', 'step0'],
+  })),
+  [
+    { id: 'ch1', num: '01', text: '场景图' },
+    { id: 'ch2', num: '02', text: 'GPS' },
+    { id: 'ch3', num: '03', text: 'Plain Text' },
+  ],
+  'extractChapterSpecs prefers nav.toc, supports b / sibling span / text stripping, deduplicates, filters missing'
+); n++;
+assert.deepEqual(
+  core.extractChapterSpecs(mkDoc({
+    step: [
+      mkAnchor('#step0', '0 钩子'),
+      mkAnchor('#step1', '01  What Is a Wave? '),
+      mkAnchor('#step2', 'Summary'),
+    ],
+    ids: ['step0', 'step1', 'step2'],
+  })),
+  [
+    { id: 'step0', num: '0', text: '钩子' },
+    { id: 'step1', num: '01', text: 'What Is a Wave?' },
+    { id: 'step2', num: '3', text: 'Summary' },
+  ],
+  'extractChapterSpecs parses nav.step-nav digits and falls back cleanly'
+); n++;
+
+assert.equal(core.pickActiveChapter([], 0, 800, 3000), -1); n++;
+assert.equal(core.pickActiveChapter([500], 0, 800, 3000), 0); n++;
+assert.equal(core.pickActiveChapter([600, 1200, 1900], 0, 900, 3000), 0, 'top of page selects 0'); n++;
+assert.equal(core.pickActiveChapter([100, 300, 500], 0, 900, 850), 0, 'short page at scrollY=0 still selects 0'); n++;
+assert.equal(core.pickActiveChapter([-2000, -1000, 400], 2180, 800, 3000), 2, 'within 24px of bottom selects last'); n++;
+assert.equal(core.pickActiveChapter([-600, 180, 900], 500, 900, 3000), 1, 'threshold clamps to 240 on 900px viewport'); n++;
+assert.equal(core.pickActiveChapter([-600, 230, 900], 500, 900, 3000), 1, '230 <= 240 selects index 1'); n++;
+assert.equal(core.pickActiveChapter([-600, 250, 900], 500, 900, 3000), 0, '250 > 240 keeps index 0'); n++;
+assert.equal(core.pickActiveChapter([-400, 110, 500], 500, 320, 2000), 0, 'on 320px height viewport min threshold is 96 (110 > 96)'); n++;
+
+assert.equal(core.formatRailLabel({ num: '03', text: '相机与投影' }, 'zh'), '03 · 相机与投影'); n++;
+assert.equal(core.formatRailLabel({ num: '', text: 'Overview' }, 'en'), 'Overview'); n++;
+assert.equal(core.formatRailLabel({ num: '01', text: '' }, 'zh'), '01'); n++;
+assert.equal(core.formatRailLabel(null, 'en'), 'Chapters'); n++;
+assert.equal(core.formatRailLabel(null, 'zh'), '目录'); n++;
+
+const navCss = fs.readFileSync(path.join(root, 'site-nav.css'), 'utf8');
+for (const needle of [
+  'body.site-has-rail',
+  'padding-left: 240px;',
+  'body.site-has-rail.site-rail-collapsed',
+  'body.site-has-rail .step-nav',
+  'calc((100% - 920px)/2)',
+  '.site-chapter-rail',
+  '.site-chapter-fab',
+  '.site-chapter-backdrop',
+  '--rail-progress',
+  'min-width: 48px;',
+  'min-height: 48px;',
+  '@media (min-width: 1180px)',
+  '@media (max-width: 1179.98px)',
+  '@media (prefers-reduced-motion: reduce)',
+  '@media (forced-colors: active)',
+  '@media print',
+]) ok(navCss.includes(needle), 'site-nav.css has ' + needle);
+ok(!navCss.includes('color-mix('), 'site-nav.css avoids color-mix for contrast check compatibility');
+ok(src.indexOf('bootChapterRail();') < src.indexOf("hasAttribute('data-template')"), 'chapter rail boots before data-template early return');
+ok(src.includes('aria-current') && src.includes('location') && src.includes('data-no-autolink'), 'rail sets aria-current="location" and data-no-autolink');
+
 console.log(`PASS: site navigation (${n} checks; ${data.pages.length} pages, ${Object.keys(data.subs).length} subtopic stubs, ${data.noAutolink.length} auto-link exclusions)`);
