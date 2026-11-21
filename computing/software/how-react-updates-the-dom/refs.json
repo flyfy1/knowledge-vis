@@ -1,0 +1,80 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "how-react-updates-the-dom",
+ "refs": [
+  {
+   "from": "hero.note",
+   "to": "how-pixels-reach-a-screen",
+   "anchor": "ch3"
+  },
+  {
+   "from": "hero.note",
+   "to": "how-threejs-draws-a-scene",
+   "anchor": "ch1"
+  },
+  {
+   "from": "ch7.s5",
+   "to": "how-pixels-reach-a-screen",
+   "anchor": "ch3"
+  },
+  {
+   "from": "ch9.p5",
+   "to": "how-pixels-reach-a-screen",
+   "anchor": "ch11"
+  },
+  {
+   "from": "ch11.links",
+   "to": "how-pixels-reach-a-screen",
+   "anchor": "ch3"
+  },
+  {
+   "from": "ch11.links",
+   "to": "how-threejs-draws-a-scene",
+   "anchor": "ch1"
+  }
+ ],
+ "backlinks": [],
+ "related": [
+  "how-pixels-reach-a-screen",
+  "how-threejs-draws-a-scene"
+ ],
+ "bindings": [
+  "react.ver",
+  "sch.ver",
+  "sch.slice",
+  "frame.ms",
+  "ch2.elemKeys",
+  "ch2.jsxDom",
+  "ch2.jsxCalls",
+  "ch2.fibers",
+  "ch2.doms",
+  "ch3.nodes",
+  "ch3.yields",
+  "ch3.slices",
+  "ch4.idReused",
+  "ch4.idMoves",
+  "ch4.idMounts",
+  "ch4.idxReused",
+  "ch4.idxMismatch",
+  "ch5.prev",
+  "ch5.next",
+  "ch6.total",
+  "ch6.commitVis",
+  "ch6.commitSkip",
+  "ch6.skipPct",
+  "ch7.paintLayout",
+  "ch7.paintPassive",
+  "ch8.listeners",
+  "ch8.calls",
+  "ch8.commits",
+  "ch8.syncCommits",
+  "ch9.transLat",
+  "ch9.syncLat",
+  "ch9.totalLanes",
+  "ch9.syncLane",
+  "ch9.transLane",
+  "ch10.slots",
+  "ch10.hits",
+  "ch10.offRuns"
+ ]
+}

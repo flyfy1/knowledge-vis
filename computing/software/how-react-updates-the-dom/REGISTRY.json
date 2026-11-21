@@ -1,0 +1,337 @@
+{
+  "slug": "how-react-updates-the-dom",
+  "path": "computing/software/how-react-updates-the-dom/",
+  "category": "computing",
+  "subtopic": "software",
+  "stage": "university",
+  "title": {
+    "zh": "React 如何更新网页",
+    "en": "How React Updates the DOM"
+  },
+  "desc": {
+    "zh": "点一下按钮调用 setCount(c => c + 1)，React 并不是立刻去改网页上的 DOM 节点。这篇按 React 19.3.1 的源码，把这一行拆开：JSX 返回的不可变对象、Fiber 单链表和双缓冲、两轮 O(n) 列表 Diff 与 key、按调用顺序排队的 Hook 链表、子树脏标记冒泡、Commit 三阶段与 Effect 时机、根容器事件委托与微任务批处理、31 位 Lanes 优先级调度，以及 2026 年 11 月的 React Compiler、Server Components 与 Activity/ViewTransition 前沿。九个可以动手的模型，全部按同一套算法重写并和真正的 React 19.3.1 对过数。",
+    "en": "Clicking a button and calling setCount(c => c + 1) does not edit a single DOM node right away. Following the React 19.3.1 source, this essay unpacks that line: immutable JSX element objects, the Fiber linked list and double buffering, two-pass O(n) list diffing and keys, hooks as a call-ordered linked list, subtreeFlags bubbling, the three commit phases and effect timing, root event delegation and microtask batching, 31-bit Lane scheduling, and the November 2026 frontier across React Compiler, Server Components, Activity, and View Transitions. Nine hands-on models implement the same algorithms and check them against React 19.3.1 itself."
+  },
+  "tags": [
+    {
+      "zh": "React",
+      "en": "React"
+    },
+    {
+      "zh": "Fiber 架构",
+      "en": "Fiber Architecture"
+    },
+    {
+      "zh": "前端原理",
+      "en": "Frontend Internals"
+    },
+    {
+      "zh": "软件原理",
+      "en": "How Software Works"
+    },
+    {
+      "zh": "长文",
+      "en": "Long-form Essay"
+    }
+  ],
+  "concepts": [
+    {
+      "id": "react-two-phase-render-commit",
+      "title": {
+        "zh": "Render 与 Commit 两阶段更新",
+        "en": "Two-phase Render and Commit"
+      },
+      "desc": {
+        "zh": "调用 setState 不会立刻改 DOM：React 先在内存草稿树 workInProgress 上可中断地计算差异，再在同步的 Commit 阶段一次性改写 DOM 并切换 root.current。",
+        "en": "Calling setState does not mutate the DOM right away: React computes diffs interruptibly on an off-screen workInProgress tree, then mutates the DOM and flips root.current synchronously in Commit."
+      },
+      "anchor": "#ch1",
+      "aliases": {
+        "zh": [
+          "React 怎么更新页面",
+          "React 更新原理",
+          "setState 发生了什么",
+          "Render 和 Commit 阶段",
+          "React 为什么不直接改 DOM",
+          "React 原理"
+        ],
+        "en": [
+          "how react updates the dom",
+          "what happens when setState runs",
+          "react render and commit phase",
+          "react internals",
+          "why react uses two trees"
+        ]
+      },
+      "relatedPages": [
+        "how-pixels-reach-a-screen",
+        "how-threejs-draws-a-scene"
+      ]
+    },
+    {
+      "id": "react-jsx-element-object",
+      "title": {
+        "zh": "JSX 与 React Element 对象",
+        "en": "JSX and React Element objects"
+      },
+      "desc": {
+        "zh": "JSX 只是 jsx() 函数调用的语法糖，只返回包含 $$typeof、type、key 和 props 的轻量描述对象；组件函数并不拥有 DOM 节点。",
+        "en": "JSX compiles into jsx() calls returning lightweight read-only objects with $$typeof, type, key, and props; components never own DOM nodes directly."
+      },
+      "anchor": "#ch2",
+      "aliases": {
+        "zh": [
+          "JSX 是什么",
+          "JSX 和 HTML 区别",
+          "React Element 是什么",
+          "虚拟 DOM 是什么",
+          "$$typeof"
+        ],
+        "en": [
+          "what is JSX",
+          "JSX vs HTML",
+          "React Element object",
+          "virtual DOM element",
+          "react.transitional.element"
+        ]
+      },
+      "relatedPages": []
+    },
+    {
+      "id": "react-fiber-double-buffer",
+      "title": {
+        "zh": "Fiber 链表与双缓冲架构",
+        "en": "Fiber linked list and double buffering"
+      },
+      "desc": {
+        "zh": "React 用 child、sibling 和 return 指针把树扁平化为可中断遍历的链表，并用 alternate 连接 current 与 workInProgress 两棵树实现 5 ms 时间切片。",
+        "en": "React flattens the tree with child, sibling, and return pointers so traversal can yield every 5 ms, and pairs current with workInProgress via alternate for double buffering."
+      },
+      "anchor": "#ch3",
+      "aliases": {
+        "zh": [
+          "React Fiber",
+          "Fiber 架构",
+          "Fiber 链表",
+          "Fiber 双缓冲",
+          "workInProgress 树",
+          "React 5ms 时间切片"
+        ],
+        "en": [
+          "React Fiber",
+          "Fiber architecture",
+          "Fiber linked list",
+          "Fiber double buffering",
+          "workInProgress alternate",
+          "React time slicing"
+        ]
+      },
+      "relatedPages": []
+    },
+    {
+      "id": "react-key-reconciliation",
+      "title": {
+        "zh": "O(n) 列表协调与 key 身份识别",
+        "en": "O(n) list reconciliation and keys"
+      },
+      "desc": {
+        "zh": "React 通过同层两轮遍历（先按位置匹配，再建 existingChildren Map 查表）将树 Diff 降至 O(n)；使用数组下标作 key 会在插入或排序时导致组件本地状态错位。",
+        "en": "React reduces tree diffing to O(n) via a two-pass sibling scan and an existingChildren Map; using array index as key mispairs local state across prepends and reorders."
+      },
+      "anchor": "#ch4",
+      "aliases": {
+        "zh": [
+          "React Diff 算法",
+          "React 列表为什么要加 key",
+          "不能用 index 当 key 的原因",
+          "React 协调算法",
+          "lastPlacedIndex"
+        ],
+        "en": [
+          "React diff algorithm",
+          "why React needs keys",
+          "why not use index as key",
+          "React reconciliation",
+          "reconcileChildrenArray"
+        ]
+      },
+      "relatedPages": []
+    },
+    {
+      "id": "react-hooks-linked-list",
+      "title": {
+        "zh": "Hook 链表与环形更新队列",
+        "en": "Hooks linked list and circular queue"
+      },
+      "desc": {
+        "zh": "函数组件没有实例状态，React 将所有 Hook 按调用序号串在 fiber.memoizedState 单链表上，并把 setState 更新挂入 queue.pending 单向循环链表。",
+        "en": "With no component instance, React chains Hooks sequentially on fiber.memoizedState and queues state updates into a circular singly-linked queue.pending ring."
+      },
+      "anchor": "#ch5",
+      "aliases": {
+        "zh": [
+          "Hook 原理",
+          "useState 为什么不能写在 if 里",
+          "React Hooks 链表",
+          "memoizedState 链表",
+          "函数式更新原理"
+        ],
+        "en": [
+          "how React Hooks work",
+          "why Hooks cannot be conditional",
+          "Rules of Hooks internals",
+          "memoizedState linked list",
+          "queue.pending circular list"
+        ]
+      },
+      "relatedPages": []
+    },
+    {
+      "id": "react-subtree-flags",
+      "title": {
+        "zh": "beginWork / completeWork 与子树脏标记",
+        "en": "beginWork, completeWork, and subtreeFlags"
+      },
+      "desc": {
+        "zh": "Render 阶段向下走进 beginWork、向上收尾 completeWork 时把子节点 flags 按位 OR 进 subtreeFlags，使 Commit 能跳过干净子树。",
+        "en": "During render, completeWork bubbles child flags upward via bitwise OR into subtreeFlags so the commit phase skips untouched subtrees outright."
+      },
+      "anchor": "#ch6",
+      "aliases": {
+        "zh": [
+          "beginWork 和 completeWork",
+          "subtreeFlags 冒泡",
+          "React bailout 跳过渲染",
+          "React 脏标记位掩码"
+        ],
+        "en": [
+          "beginWork and completeWork",
+          "subtreeFlags bubbling",
+          "React bailout optimization",
+          "Fiber flags bitmask"
+        ]
+      },
+      "relatedPages": []
+    },
+    {
+      "id": "react-layout-vs-passive-effect",
+      "title": {
+        "zh": "Commit 三阶段与 useLayoutEffect vs useEffect",
+        "en": "Commit phases: useLayoutEffect vs. useEffect"
+      },
+      "desc": {
+        "zh": "Commit 同步走完 beforeMutation、mutation 和 layout 后才交还给浏览器绘制：useLayoutEffect 在绘制前同步运行可防闪烁但阻塞出画，useEffect 在绘制后异步运行。",
+        "en": "Commit runs beforeMutation, mutation, and layout synchronously before browser paint: useLayoutEffect runs pre-paint to prevent flicker at the cost of blocking paint, while useEffect runs post-paint."
+      },
+      "anchor": "#ch7",
+      "aliases": {
+        "zh": [
+          "useLayoutEffect 和 useEffect 区别",
+          "Commit 阶段",
+          "为什么 useEffect 会闪烁",
+          "React 生命周期执行顺序"
+        ],
+        "en": [
+          "useLayoutEffect vs useEffect",
+          "React commit phase",
+          "why useEffect flickers",
+          "flushPassiveEffects"
+        ]
+      },
+      "relatedPages": [
+        "how-pixels-reach-a-screen"
+      ]
+    },
+    {
+      "id": "react-event-delegation-batching",
+      "title": {
+        "zh": "根容器事件委托与微任务自动合批",
+        "en": "Root event delegation and automatic batching"
+      },
+      "desc": {
+        "zh": "React 在根容器注册统一监听并通过 __reactFiber$ 沿 return 链模拟捕获与冒泡，同时通过微任务把同一轮里的多次 setState 合并为一次提交。",
+        "en": "React attaches delegated listeners at the root container, walks return pointers via __reactFiber$ for synthetic capture/bubble, and batches setState calls inside one microtask."
+      },
+      "anchor": "#ch8",
+      "aliases": {
+        "zh": [
+          "React 事件委托",
+          "React 合成事件原理",
+          "React 自动批处理",
+          "flushSync 作用",
+          "stopPropagation 在 React 里失效"
+        ],
+        "en": [
+          "React event delegation",
+          "React synthetic events",
+          "React automatic batching",
+          "React flushSync",
+          "React state batching"
+        ]
+      },
+      "relatedPages": []
+    },
+    {
+      "id": "react-lanes-scheduler",
+      "title": {
+        "zh": "31 位 Lanes 优先级与并发抢占",
+        "en": "31-bit Lanes and concurrent scheduling"
+      },
+      "desc": {
+        "zh": "React 用 31 位比特掩码追踪不同紧迫度的更新，借 lanes & -lanes 提取最高优车道，使 SyncLane 按键能抢占 startTransition 慢渲染。",
+        "en": "React tracks mixed-urgency updates with a 31-bit Lane bitmask and lanes & -lanes, letting SyncLane keystrokes preempt time-sliced startTransition renders."
+      },
+      "anchor": "#ch9",
+      "aliases": {
+        "zh": [
+          "React Lanes 优先级",
+          "startTransition 原理",
+          "React 并发渲染原理",
+          "useDeferredValue 原理",
+          "React 状态撕裂 tearing"
+        ],
+        "en": [
+          "React Lanes",
+          "how startTransition works",
+          "React concurrent rendering",
+          "useDeferredValue internals",
+          "React tearing useSyncExternalStore"
+        ]
+      },
+      "relatedPages": [
+        "how-pixels-reach-a-screen"
+      ]
+    },
+    {
+      "id": "react-compiler-rsc-frontier",
+      "title": {
+        "zh": "React Compiler、RSC、Activity 与 ViewTransition",
+        "en": "React Compiler, RSC, Activity, and ViewTransition"
+      },
+      "desc": {
+        "zh": "截至 2026 年 11 月的 React 19 前沿：Compiler 1.0 通过 useMemoCache(size) 自动记忆化，RSC 通过 Flight 线协议流式传树，19.2–19.3 带来 Activity 与 ViewTransition。",
+        "en": "React 19 frontier as of November 2026: React Compiler 1.0 emits useMemoCache(size) slot caches, RSC streams trees over Flight chunks, and 19.2–19.3 stabilize Activity and ViewTransition."
+      },
+      "anchor": "#ch10",
+      "aliases": {
+        "zh": [
+          "React Compiler 原理",
+          "useMemoCache",
+          "React Server Components",
+          "RSC Flight 协议",
+          "React Activity 组件",
+          "React ViewTransition"
+        ],
+        "en": [
+          "how React Compiler works",
+          "useMemoCache",
+          "React Server Components",
+          "RSC Flight protocol",
+          "React Activity component",
+          "React ViewTransition"
+        ]
+      },
+      "relatedPages": []
+    }
+  ]
+}

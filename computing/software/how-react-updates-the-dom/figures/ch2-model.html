@@ -1,0 +1,31 @@
+<figure class="lab" id="lab-ch2-model">
+  <h3 data-i18n="ch2.model.title"></h3>
+  <p class="how" data-i18n="ch2.model.how"></p>
+  <div class="ctl">
+    <div class="seg" role="radiogroup" data-i18n-aria="ch2.ctl.preset">
+      <span class="lbl" data-i18n="ch2.ctl.preset"></span>
+      <label><input type="radio" name="c2Preset" value="counter" checked><span data-i18n="ch2.pre.counter"></span></label>
+      <label><input type="radio" name="c2Preset" value="card"><span data-i18n="ch2.pre.card"></span></label>
+      <label><input type="radio" name="c2Preset" value="native"><span data-i18n="ch2.pre.native"></span></label>
+    </div>
+    <div class="seg" role="radiogroup" data-i18n-aria="ch2.ctl.stage">
+      <span class="lbl" data-i18n="ch2.ctl.stage"></span>
+      <label><input type="radio" name="c2Stage" value="jsx" checked><span data-i18n="ch2.st.jsx"></span></label>
+      <label><input type="radio" name="c2Stage" value="reconciled"><span data-i18n="ch2.st.rec"></span></label>
+    </div>
+  </div>
+  <canvas class="cv short" id="c2Cv" role="img" data-i18n-aria="ch2.cv.aria"></canvas>
+  <div class="tblwrap" tabindex="0" role="region" data-i18n-aria="ch2.model.title">
+    <table class="fmt keys" id="c2Tbl">
+      <thead><tr><th data-i18n="ch2.col.node"></th><th data-i18n="ch2.col.tag"></th><th data-i18n="ch2.col.state"></th><th data-i18n="ch2.col.props"></th></tr></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+  <div class="read">
+    <div><span data-i18n="ch2.read.el"></span><b id="c2El" class="g"></b></div>
+    <div><span data-i18n="ch2.read.fib"></span><b id="c2Fib" class="c"></b></div>
+    <div><span data-i18n="ch2.read.dom"></span><b id="c2Dom" class="n"></b></div>
+    <div><span data-i18n="ch2.read.fn"></span><b id="c2Fn" class="v"></b></div>
+  </div>
+  <p class="say" id="c2Say" aria-live="polite"></p>
+</figure>

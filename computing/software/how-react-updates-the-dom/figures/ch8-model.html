@@ -1,0 +1,22 @@
+<figure class="lab" id="lab-ch8-model">
+  <h3 data-i18n="ch8.model.title"></h3>
+  <p class="how" data-i18n="ch8.model.how"></p>
+  <div class="ctl">
+    <div class="seg" role="radiogroup" data-i18n-aria="ch8.ctl.trig">
+      <span class="lbl" data-i18n="ch8.ctl.trig"></span>
+      <label><input type="radio" name="c8Trig" value="click" checked><span data-i18n="ch8.tr.click"></span></label>
+      <label><input type="radio" name="c8Trig" value="setTimeout"><span data-i18n="ch8.tr.async"></span></label>
+      <label><input type="radio" name="c8Trig" value="flushSync"><span data-i18n="ch8.tr.flush"></span></label>
+    </div>
+    <label class="rng"><span data-i18n="ch8.ctl.calls"></span><input type="range" id="c8Calls" min="1" max="5" step="1" value="3"><output id="c8Callso" for="c8Calls"></output></label>
+    <label class="chk"><input type="checkbox" id="c8Stop"><span data-i18n="ch8.ctl.stop"></span></label>
+  </div>
+  <canvas class="cv" id="c8Cv" role="img" data-i18n-aria="ch8.cv.aria"></canvas>
+  <div class="read">
+    <div><span data-i18n="ch8.read.native"></span><b id="c8Nat" class="c"></b></div>
+    <div><span data-i18n="ch8.read.handlers"></span><b id="c8Hnd" class="v"></b></div>
+    <div><span data-i18n="ch8.read.lane"></span><b id="c8Lane" class="g"></b></div>
+    <div><span data-i18n="ch8.read.commits"></span><b id="c8Com" class="r"></b></div>
+  </div>
+  <p class="say" id="c8Say" aria-live="polite"></p>
+</figure>
