@@ -277,6 +277,10 @@ html[data-template="lesson"]:not(:has(link[href*="lesson-shell.css"])) section.s
   body.site-has-rail .step-nav {
     padding-inline: max(12px, calc((100% - 920px)/2));
   }
+  body.site-has-rail .ctl label.rng {
+    min-width: auto;
+    max-width: 100%;
+  }
   .site-chapter-icon-close {
     display: none;
   }
