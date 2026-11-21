@@ -1,0 +1,113 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "how-redis-answers-in-microseconds",
+ "refs": [
+  {
+   "from": "hero.note",
+   "to": "how-the-os-talks-to-hardware",
+   "anchor": null
+  },
+  {
+   "from": "hero.note",
+   "to": "how-a-nic-moves-packets",
+   "anchor": null
+  },
+  {
+   "from": "hero.note",
+   "to": "how-virtual-memory-works",
+   "anchor": null
+  },
+  {
+   "from": "hero.note",
+   "to": "why-compute-waits-for-memory",
+   "anchor": null
+  },
+  {
+   "from": "ch1.p1",
+   "to": "how-the-os-talks-to-hardware",
+   "anchor": "ch11"
+  },
+  {
+   "from": "ch1.p1",
+   "to": "why-compute-waits-for-memory",
+   "anchor": "ch1"
+  },
+  {
+   "from": "ch2.p1",
+   "to": "how-a-nic-moves-packets",
+   "anchor": "ch3"
+  },
+  {
+   "from": "ch7.p1",
+   "to": "how-virtual-memory-works",
+   "anchor": "ch9"
+  },
+  {
+   "from": "ch11.links",
+   "to": "how-the-os-talks-to-hardware",
+   "anchor": null
+  },
+  {
+   "from": "ch11.links",
+   "to": "how-a-nic-moves-packets",
+   "anchor": null
+  },
+  {
+   "from": "ch11.links",
+   "to": "how-virtual-memory-works",
+   "anchor": null
+  },
+  {
+   "from": "ch11.links",
+   "to": "why-compute-waits-for-memory",
+   "anchor": null
+  }
+ ],
+ "backlinks": [],
+ "related": [
+  "how-the-os-talks-to-hardware",
+  "why-compute-waits-for-memory",
+  "how-a-nic-moves-packets",
+  "how-virtual-memory-works"
+ ],
+ "bindings": [
+  "ch1.loopKops",
+  "ch1.lock4Kops",
+  "ch1.slowP99",
+  "ch1.blocked",
+  "ch2.reqBytes",
+  "ch2.seqMs",
+  "ch2.pipeUs",
+  "ch2.speedup",
+  "ch3.robjB",
+  "ch3.sds8B",
+  "ch3.embLimit",
+  "ch3.emb44Alloc",
+  "ch3.raw45Alloc",
+  "ch3.lp64Bytes",
+  "ch3.ht64Bytes",
+  "ch3.lpMaxEntries",
+  "ch4.htInit",
+  "ch4.forceRatio",
+  "ch5.maxLvl",
+  "ch5.zslP",
+  "ch5.seed3Hops",
+  "ch6.kops1",
+  "ch6.kops4",
+  "ch7.pageKiB",
+  "ch7.cowUnif",
+  "ch7.cowSkew",
+  "ch8.expKeys",
+  "ch8.expStale",
+  "ch8.lruSamp",
+  "ch8.lruPool",
+  "ch8.lru5Err",
+  "ch8.lfuInit",
+  "ch8.lfuFactor",
+  "ch8.lfu1k",
+  "ch8.lfu100k",
+  "ch9.slots",
+  "ch9.crcTestSlot",
+  "ch9.tagSlot"
+ ]
+}
