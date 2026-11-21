@@ -16,13 +16,13 @@
 ## 硬规则
 
 - **分支**：在自己的分支上提交，不在 main 上直接改；不碰别人的分支。例外：Claude Code 主会话这条线按 [HANDOFF.md](HANDOFF.md) 第 2 条在 main 上工作并可直接推送部署。
-- **每个提交的 trailer**（格式见 AUTHORSHIP.md）：
+- **每个提交的 trailer**（格式见 AUTHORSHIP.md §3；2026-11-21 起必须同时带精确模型 id 与思考深度）：
   ```
-  Built-By: <Agent> (<精确模型 id，或 model unavailable>)
+  Built-By: <Agent> (<精确模型 id，或 model unavailable>, thinking: <思考深度，或 thinking unavailable>)[; 角色说明]
   Verified-By: <实际检查者 + 检查范围；自查写 self-check，未评审写 pending>
   Authorship-Impact: authored | mechanical
   ```
-  不要替别人预填背书。
+  不要替别人预填背书；多模型 / 子 Agent 协作时，把写文件的主模型放第一位，规划/翻译/辅助角色写在 `;` 后并写明各自模型与思考深度。
 - **不猜作者**。没有 `Built-By`，也没有 `authorship/overrides.json` 里的人工确认，就当作 unattributed。`overrides.json` 只记 Yangyu（或经他确认的人）确认过的事实，并写明 `source`。
 - **每次修复都要同步更新对应的 spec**（缺了就新建）。只在 worklog 里记一笔不算完成。
 - **AUTHORSHIP.md 的修改需要 Yangyu 同意**，并在它的 §9 记一笔。
@@ -49,7 +49,8 @@
   - `provenanceEvidence` 指向 `specs/reviews/*.md`；
   - `provenanceEvidence: "authorship/overrides.json"`，且该提交在里面有匹配的 `authored` 条目。
 - 来源没核实的页面不贴标。
-- 新的 Agent 先在 `authorship/agents.json` 登记，再在 `tests/page-provenance-core.cjs` 的 `DEVELOPERS` / `AGENT_IDS` 里加上它的显示名。
+- 自 2026-11-21 起，新增或更新的 `page-provenance.json` 条目须填 `model` 与 `thinking`（拿不到明写 `model unavailable` / `thinking unavailable`），供页头 `<details class="page-provenance">` 与 `tests/page-provenance-core.cjs` 核对；历史条目缺省不变。
+- 新的 Agent 或新模型 id 先在 `authorship/agents.json` 登记，再在 `tests/page-provenance-core.cjs` 的 `DEVELOPERS` / `AGENT_IDS` 里加上新 Agent 的显示名。
 
 ## 测试
 

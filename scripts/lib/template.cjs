@@ -499,7 +499,13 @@ function provenanceLabel(site, page, meta) {
   const span = (zh, en) => `<span class="provenance-zh" lang="zh-CN">${zh}</span><span class="provenance-en" lang="en">${en}</span>`;
   const kind = p.kind === 'original' ? ['原创版本', 'Original edition'] : ['改进版本', 'Revised edition'];
   const note = meta.provenanceNote ? `<p>${span(meta.provenanceNote.zh, meta.provenanceNote.en)}</p>` : '';
-  return `    <details class="page-provenance" data-developer="${p.developer}" data-edition="${p.edition}" data-source-revision="${p.sourceRevision}"><summary>${span(p.developer + ' 开发 · ' + kind[0], 'Developed with ' + p.developer + ' · ' + kind[1])}</summary>${note}<p>${span('范围：' + p.scope.zh + '。', 'Scope: ' + p.scope.en + '.')}</p><p>${p.edition} · <a href="https://github.com/flyfy1/knowledge-vis/commit/${p.sourceRevision}">${span('源码修订', 'Source revision')} · ${p.sourceRevision.slice(0, 8)}</a></p></details>\n`;
+  const modelAttr = p.model ? ` data-model="${esc(p.model)}"` : '';
+  const thinkingAttr = p.thinking ? ` data-thinking="${esc(p.thinking)}"` : '';
+  const partsZh = [], partsEn = [];
+  if (p.model) { partsZh.push('模型：' + esc(p.model)); partsEn.push('Model: ' + esc(p.model)); }
+  if (p.thinking) { partsZh.push('思考深度：' + esc(p.thinking)); partsEn.push('Thinking: ' + esc(p.thinking)); }
+  const modelLine = partsZh.length ? `<p>${span(partsZh.join(' · '), partsEn.join(' · '))}</p>` : '';
+  return `    <details class="page-provenance" data-developer="${p.developer}" data-edition="${p.edition}" data-source-revision="${p.sourceRevision}"${modelAttr}${thinkingAttr}><summary>${span(p.developer + ' 开发 · ' + kind[0], 'Developed with ' + p.developer + ' · ' + kind[1])}</summary>${note}${modelLine}<p>${span('范围：' + p.scope.zh + '。', 'Scope: ' + p.scope.en + '.')}</p><p>${p.edition} · <a href="https://github.com/flyfy1/knowledge-vis/commit/${p.sourceRevision}">${span('源码修订', 'Source revision')} · ${p.sourceRevision.slice(0, 8)}</a></p></details>\n`;
 }
 
 function siteNavIncludes(pagePath) {

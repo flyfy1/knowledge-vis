@@ -1,6 +1,6 @@
 # BRIEF — how-nginx-handles-ten-thousand-connections
 
-Author: Antigravity, 2026-11-21. Task: W7 in Software Core Principles (`computing/software/how-nginx-handles-ten-thousand-connections/`).
+Author: Antigravity (gemini-flash-worker-agy, thinking: on, effort unavailable; planner: gemini-pro-orchestrator-neon, thinking: effort=1.00), 2026-11-21. Task: W7 in Software Core Principles (`computing/software/how-nginx-handles-ten-thousand-connections/`).
 Status: unregistered draft (`page.json` omits `"status"`). Both Chinese (`content.zh.md`) and English (`content.en.md`) are complete native prose (no stub flag).
 
 ## Pinned release & honest build-host note

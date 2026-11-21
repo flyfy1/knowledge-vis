@@ -1,6 +1,6 @@
 # BRIEF — how-redis-answers-in-microseconds
 
-Author: Antigravity, 2026-11-21. Task: Software Principles series W4 (`computing/software/how-redis-answers-in-microseconds/`).
+Author: Antigravity (gemini-flash-worker-agy, thinking: on, effort unavailable; planner: gemini-pro-orchestrator-neon, thinking: effort=1.00), 2026-11-21. Task: Software Principles series W4 (`computing/software/how-redis-answers-in-microseconds/`).
 Status: unregistered draft (`page.json` omits `"status"`). Full bilingual essay (`content.zh.md` + `content.en.md`, no stub).
 
 ## Pinned release

@@ -1,6 +1,6 @@
 # BRIEF — how-llvm-compiles-your-code
 
-Author: Antigravity, 2026-11-21. Task: W10 of the Software Core Principles series (`computing/software/how-llvm-compiles-your-code/`).
+Author: Antigravity (gemini-flash-worker-agy, thinking: on, effort unavailable; planner: gemini-pro-orchestrator-neon, thinking: effort=1.00), 2026-11-21. Task: W10 of the Software Core Principles series (`computing/software/how-llvm-compiles-your-code/`).
 Status: unregistered draft (`page.json` has no `"status": "live"`; the build's draft warning is expected). Both Chinese (`content.zh.md`) and English (`content.en.md`) are complete native prose (no `"en": "stub"`).
 
 ## Pinned Host Compiler Release & Constraint

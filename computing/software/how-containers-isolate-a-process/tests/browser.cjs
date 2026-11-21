@@ -144,6 +144,8 @@ function diagramCheck() {
         for (let n; (n = w.nextNode());) {
           if (!rx.test(n.textContent)) continue;
           if (n.parentElement.closest('#langToggle')) continue;
+          const pz = n.parentElement.closest('.page-provenance .provenance-zh');
+          if (pz && getComputedStyle(pz).display === 'none') continue;
           out.push(n.textContent.trim().slice(0, 24));
         }
         for (const t of window.__ft) if (rx.test(t)) out.push('canvas ' + t);

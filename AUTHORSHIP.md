@@ -23,23 +23,25 @@ Agent 是「执行者」，模型是它当时用的具体模型。两者分开�
 | `claude-code` | Claude Code（Anthropic），包括 Mini Claude Code 等派生运行 | `claude-opus-5-5`、`claude-sonnet-5-5`、`claude-fable-5-1` |
 | `codex` | Codex（OpenAI），包括 Pi 上的 campaign author/reviewer/dispatcher | `gpt-6.1-sol` |
 | `alberto` | Alberto（Muse）编排者及其派出的子 Agent | `muse-wonder`、`muse-spark` |
-| `antigravity` | Antigravity（Google DeepMind）及其派出的子 Agent | `gemini-4-hydrogen`、`gemini-pro`、`gemini-flash` |
+| `antigravity` | Antigravity（Google DeepMind）及其派出的子 Agent | `gemini-pro-orchestrator-neon`、`gemini-flash-worker-agy`、`gemini-4-neon`、`gemini-4-hydrogen`、`gemini-pro`、`gemini-flash` |
 | `script` | 确定性脚本，没有模型参与 | `none` |
 | `human` | Yangyu 亲手写的 | — |
 | `unattributed` | 历史里没有可用声明（保留值，不得用于新提交） | — |
 
 ## 3. 提交声明格式
 
-每个提交的说明末尾必须带以下 trailer：
+每个提交的说明末尾必须带以下 trailer（自 2026-11-21 起，除 `script` 外**必须同时写明精确模型 id 与思考深度**）：
 
 ```
-Built-By: <agent-id 或可被注册表识别的名字> (<精确模型 id，或 "model unavailable">)[; 角色说明]
+Built-By: <agent-id 或可被注册表识别的名字> (<精确模型 id，或 "model unavailable">, thinking: <思考深度，或 "thinking unavailable">)[; 角色说明]
 Verified-By: <实际检查者 + 检查范围>，未经独立评审写 "self-check"，评审待做写 "independent review pending"
 Authorship-Impact: authored | mechanical
 ```
 
+- **模型与思考深度必填（2026-11-21 起）**：括号内写**实际生成这段改动的主模型 id 与思考/推理深度**，例如 `thinking: high`、`thinking: medium`、`thinking: low`、`thinking: off`、`thinking: adaptive`、`thinking: budget:8192`、`thinking: effort=1.00`、`thinking: on, effort unavailable`（运行时确认开启了思考但未暴露具体档位时），不确定性脚本（`script`）写 `none` 或沿用 `deterministic, no model`。
+- **拿不到就明说，绝不猜测**：精确模型 id 拿不到写 `model unavailable`，具体思考深度拿不到写 `thinking unavailable`（或已确认有思考但无具体档位时写 `on, effort unavailable`），不能留空，也不能写「大概/应该是」的猜测值。2026-11-21 之前的历史提交未带 `thinking:` 字段仍然有效，解析脚本按 `unavailable` 记录，不用 rebase/amend 改写历史。
+- **多模型 / 规划–执行双模型 / 子 Agent 协作**：把**实际写出文件改动的主模型及其思考深度**放在首个 `(<精确模型 id>, thinking: <思考深度>)` 槽位；其余参与角色（如规划者/编排者、执行者、译者、并行子 Agent）写在 `;` 之后并同样标出各自的模型与思考深度，例如 `Built-By: Antigravity (gemini-flash-worker-agy, thinking: on, effort unavailable); planner: gemini-pro-orchestrator-neon (thinking: effort=1.00)`。
 - `Built-By` 写**实际动手的那一个**；多个 Agent 合写时，主要作者写在最前面，其余写进角色说明。
-- 精确模型拿不到时，要明说 `model unavailable`，不能空着，也不能填「应该是」的模型。
 - `Authorship-Impact` 不写时默认为 `authored`；合并提交（merge）默认为 `mechanical`（集成），除非它自己另外声明。
 - Claude Code 的提交另外保留 `Co-Authored-By: Claude …` 行；仅有 `Co-Authored-By`、没有 `Built-By` 的提交也能被识别，但不合规。
 - 署名他人（如 Alberto）只能在他实际审核后写，不得预填背书（沿用 WORKFLOW.md 的规定）。
@@ -50,7 +52,7 @@ Authorship-Impact: authored | mechanical
 
 | 字段 | 含义 |
 | --- | --- |
-| `created` | 第一次把这个文件加进仓库的提交、Agent 与模型 |
+| `created` | 第一次把这个文件加进仓库的提交、Agent、模型与思考深度 |
 | `agents` | 每个 Agent 以「写作」身份改过它多少次、加了多少行 |
 | `primary` | **主要作者**：`agents` 里新增行数最多的那个；若没有任何「写作」提交：首次加入就是写作则取 `created` 的 Agent，首次加入也是机械变更则记 `unattributed`（机械执行者永远不算作者） |
 | `mechanical` | 只做过机械变更的 Agent（不算作者） |
@@ -107,15 +109,16 @@ node scripts/authorship.cjs --write                                 # 生成完�
 
 知识页页头的「开发版本」标注（`page-provenance.json` + `page-provenance.css`）是本宪法在页面上的投影：
 
-- 适用于所有 Agent，不只 Codex。`developer` 填注册表里的显示名（如 `Codex`、`Claude Code`）。
+- 适用于所有 Agent，不只 Codex。`developer` 填注册表里的显示名（如 `Codex`、`Claude Code`、`Antigravity`）。
+- 自 2026-11-21 起，新建或更新 `page-provenance.json` 条目须同时填写 `model`（精确模型 id 或角色分工）与 `thinking`（思考深度，不可得时明写 `thinking unavailable`）；模板在 `<details class="page-provenance">` 的 `data-model` / `data-thinking` 与双语正文行中展示它们。历史条目的缺省保留原样。
 - `kind: "revised"` 表示在已有页面上改进，`kind: "original"` 表示该 Agent 从零写的新页。
 - `sourceRevision` 必须是真实存在、且确实改动了该页的提交。
 - 未核实来源的页面不贴标（沿用 specs/visual-page-provenance.md）。
 
 ## 8. 新文件与新页面的义务
 
-- Agent 新建的每个文件，都必须在带合规 `Built-By` 的提交里首次出现。
-- 新知识页还要：在 `BRIEF.md` 开头写明作者 Agent 与模型；页面贴上 §7 的可见标注；在 `page-provenance.json` 登记。
+- Agent 新建的每个文件，都必须在带合规 `Built-By`（含精确模型 id 与思考深度）的提交里首次出现。
+- 新知识页还要：在 `BRIEF.md` 开头写明作者 Agent、精确模型 id 与思考深度；页面贴上 §7 的可见标注；在 `page-provenance.json` 登记 `model` 与 `thinking`。
 - 用确定性脚本批量生成的文件，`Built-By` 写 `script`，并在角色说明里注明脚本路径。
 
 ## 9. 修订记录
@@ -126,3 +129,4 @@ node scripts/authorship.cjs --write                                 # 生成完�
 | 2026-11-13 | §2 注册 `antigravity` Agent | Antigravity | Yangyu（对话同意） |
 | 2026-11-16 | §4 增加派生规则：`Derived-From: <旧路径> -> <新路径>` trailer，`scripts/authorship.cjs` 据此让新文件继承旧文件的归属，旧文件保留自己的记录（站点模板提案 specs/proposals/site-template.md 的决定 D3） | Claude Code（claude-opus-5-5） | Yangyu（对话同意，2026-11-16 批准站点模板提案并按推荐取 D1–D10，原话：「OK，就按照你的方案来吧。补设计图的话，你可以先通过 SVG 生成的方式去；如果需要画图的话，你可以通过我的 LLM proxy 去调用其他的 API 做图片生成」） |
 | 2026-11-16 | §4 派生规则收紧：只认 `Authorship-Impact: mechanical` 提交，且旧路径须在父提交中存在，防止手写改写借用旧文件作者（Phase 0 独立评审 specs/reviews/site-template-phase0-review-20261116.md 的建议；是对同日 D3 的收窄，不扩大其适用范围） | Claude Code（claude-opus-5-5） | Yangyu（同上一行的 D3 同意；本条只收窄，待其确认） |
+| 2026-11-21 | §2、§3、§4、§7、§8 增加思考深度（`thinking`）要求与 Antigravity 双模型 id（`gemini-pro-orchestrator-neon` / `gemini-flash-worker-agy` / `gemini-4-neon`）；`scripts/authorship.cjs` 解析 `thinking`；`page-provenance.json` 与页头标签支持 `model` / `thinking` 字段；通过 `authorship/overrides.json` 追溯补录 2026-11-21 16 笔已推送 Antigravity 提交的模型与思考深度 | Antigravity（`gemini-pro-orchestrator-neon`, thinking: `effort=1.00`; executor: `gemini-flash-worker-agy`） | Yangyu（2026-11-21 对话要求：「我希望你在署名自己模型的时候，也把具体是什么模型、什么思考深度的信息加上去。然后对应的，我需要你把它写到公约里边 -这样子其他模型也可以遵守」） |

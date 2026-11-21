@@ -1,6 +1,6 @@
 # BRIEF — how-git-stores-history
 
-Author: Antigravity, 2026-11-21. Task: W2 of the Software Core Principles series (`specs/essay-briefs/TASK-software-series.md`).
+Author: Antigravity (gemini-flash-worker-agy, thinking: on, effort unavailable; planner: gemini-pro-orchestrator-neon, thinking: effort=1.00), 2026-11-21. Task: W2 of the Software Core Principles series (`specs/essay-briefs/TASK-software-series.md`).
 Status: unregistered draft (`page.json` omits `"status"` so the expected draft warning from `build-pages.cjs` applies). Both Chinese (`content.zh.md`) and English (`content.en.md`) were authored together cleanly (no `"languages": {"en": "stub"}` flag).
 
 ## Pinned release

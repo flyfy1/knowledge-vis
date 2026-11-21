@@ -1,6 +1,6 @@
 # BRIEF — how-postgresql-runs-a-query
 
-Author: Antigravity (2026-11-21). Task: W6 of the Software Core Principles (`computing/software`) series — 《PostgreSQL 如何执行一条查询》 / "How PostgreSQL Runs a Query".
+Author: Antigravity (gemini-flash-worker-agy, thinking: on, effort unavailable; planner: gemini-pro-orchestrator-neon, thinking: effort=1.00), 2026-11-21. Task: W6 of the Software Core Principles (`computing/software`) series — 《PostgreSQL 如何执行一条查询》 / "How PostgreSQL Runs a Query".
 Status: unregistered draft (`page.json` has no `"status"` field; both `content.zh.md` and `content.en.md` are complete native essays with zero CJK in English).
 
 ## One question
