@@ -59,6 +59,9 @@ jobs:
             --exclude='.DS_Store' --exclude='._*' \
             ./ _site/
 
+          # Tag every published HTML page, including generated and parallel editions.
+          node scripts/inject-google-analytics.cjs _site
+
           # 必备入口文件缺一不可。
           for f in index.html pages.config.js leetcode/problems.config.js lesson-shell.js lesson-shell.css; do
             test -s "_site/$f" || { echo "::error::missing _site/$f"; exit 1; }

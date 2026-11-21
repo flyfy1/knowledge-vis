@@ -6,6 +6,8 @@ workflow. Acceptance evidence and current deployment are separate statuses.
 
 ## Current requirements
 
+- [Production GA4 coverage](google-analytics.md): publication-time coverage, safe public paths, single page views and deployment checks.
+
 - [Strict fixed-end standing-wave modes](standing-boundary.md): incompatible near-mode trials, whole-cycle endpoint envelope, exact snap/control agreement and original S2 model.
 
 - [Same-point interference phase comparison](interference-phase.md): signed arrival phase, strict nonzero/cancellation distinction, existing-curve comparison and sourced graph entry.

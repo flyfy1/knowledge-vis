@@ -53,10 +53,13 @@
 Codex 改进版本在页头显示“Codex 开发”，展开可见改进范围和源码修订。详见 [版本归因规范](specs/visual-page-provenance.md) 与 [来源清单](page-provenance.json)。每次修复必须同步维护对应 spec；尚未核实来源的页面不会自动贴标，未来 Claude Code 独立版本保留双方源码及路径。
 
 ## 部署
+
+2026-11-21 起，先提交并推送 main，再用 `python3 scripts/deploy-pi.py` 发布。脚本只导出已提交版本，运行检查，为所有发布 HTML 注入 GA4（`G-LPRZ9XLGWX`）后同步 Pi；不要直接 rsync 原始源码，否则会覆盖埋点。GitHub Pages 工作流也使用同一注入器。统计边界与验证见 [GA4 规范](specs/google-analytics.md)。
+
 Pi：`~/projects/visual-site/`，systemd `visual-site.service`（python http.server :18513），
 CF Tunnel ingress visual.integ.life → localhost:18513（隧道脚本在 `deploy/cf_tunnel_visual.py`）。
 
-2026-11 起链接格式改为 `/<分类>/<子主题>/<页面>/`，旧 URL 不再保留跳转（已确认可以失效）。部署时用会删除多余文件的同步方式（如 `rsync --delete`），以免 Pi 上残留旧目录。
+2026-11 起链接格式改为 `/<分类>/<子主题>/<页面>/`，旧 URL 不再保留跳转（已确认可以失效）。删除旧 URL 时需专门核对并清理生产残留；当前 GA 接入发布为增量同步，不删除其他发布管理的文件。
 
 ## LeetCode authoring and checks
 

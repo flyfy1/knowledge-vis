@@ -31,6 +31,7 @@
   - 简报、排队规格、审计结论这类工作文件放进 `specs/`。
 - 提交 trailer 按 AUTHORSHIP.md，末尾加 `Co-Authored-By: Claude <noreply@anthropic.com>`。
 - **部署方式**：从已提交的 HEAD 部署到 Pi，不从工作区部署，这样未提交的草稿不会被发布。
+  **2026-11-21 更新：以下原始 archive/rsync 命令由 `python3 scripts/deploy-pi.py` 取代**，以保留全站 GA4 注入；仍从已提交且已推送的 main 发布，不发布草稿。原命令仅留作历史。
   ```sh
   git push origin main
   git archive HEAD | tar -x -C <临时目录>
