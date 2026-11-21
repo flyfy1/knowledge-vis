@@ -1,0 +1,103 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "how-llvm-compiles-your-code",
+ "refs": [
+  {
+   "from": "hero.note",
+   "to": "how-a-cpu-runs-a-program",
+   "anchor": "ch1"
+  },
+  {
+   "from": "hero.note",
+   "to": "switches-that-compute",
+   "anchor": "ch1"
+  },
+  {
+   "from": "ch5.p3",
+   "to": "how-a-cpu-does-math",
+   "anchor": "ch9"
+  },
+  {
+   "from": "ch5.p3",
+   "to": "how-a-cpu-does-math",
+   "anchor": "ch10"
+  },
+  {
+   "from": "ch7.p4",
+   "to": "how-a-cpu-runs-a-program",
+   "anchor": "ch3"
+  },
+  {
+   "from": "ch7.p4",
+   "to": "how-a-cpu-guesses-ahead",
+   "anchor": "ch6"
+  },
+  {
+   "from": "ch8.p4",
+   "to": "how-a-cpu-guesses-ahead",
+   "anchor": "ch7"
+  },
+  {
+   "from": "ch11.links",
+   "to": "how-a-cpu-runs-a-program",
+   "anchor": null
+  },
+  {
+   "from": "ch11.links",
+   "to": "how-a-cpu-guesses-ahead",
+   "anchor": null
+  },
+  {
+   "from": "ch11.links",
+   "to": "how-a-cpu-does-math",
+   "anchor": null
+  },
+  {
+   "from": "ch11.links",
+   "to": "switches-that-compute",
+   "anchor": null
+  }
+ ],
+ "backlinks": [],
+ "related": [
+  "how-a-cpu-runs-a-program",
+  "switches-that-compute",
+  "how-a-cpu-does-math",
+  "how-a-cpu-guesses-ahead"
+ ],
+ "bindings": [
+  "ch1.frontends",
+  "ch1.backends",
+  "ch1.monoPairs",
+  "ch1.llvmEdges",
+  "ch1.monoPasses",
+  "ch1.llvmPasses",
+  "ch2.allocas",
+  "ch2.stackBytes",
+  "ch2.o0Mem",
+  "ch2.o2Mem",
+  "ch2.savedMem",
+  "ch3.beforeMem",
+  "ch3.afterMem",
+  "ch3.phiCount",
+  "ch4.startOps",
+  "ch4.endOps",
+  "ch4.rounds",
+  "ch5.unoptOps",
+  "ch5.vecOps",
+  "ch5.vecIters",
+  "ch6.intMax",
+  "ch6.intMin",
+  "ch7.armFma",
+  "ch7.x86Fma",
+  "ch8.maxLive",
+  "ch8.spillsK3",
+  "ch8.spillsK4",
+  "ch8.spillInsnsK3",
+  "ch9.noLtoCalls",
+  "ch9.thinMem",
+  "ch9.fullMem",
+  "ch9.noLtoMain",
+  "ch9.thinLtoMain"
+ ]
+}

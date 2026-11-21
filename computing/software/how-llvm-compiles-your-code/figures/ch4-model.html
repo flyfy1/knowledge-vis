@@ -1,0 +1,23 @@
+<figure class="lab" id="lab-ch4-model">
+    <h3 data-i18n="ch4.model.title"></h3>
+    <p class="how" data-i18n="ch4.model.how"></p>
+    <div class="ctl">
+      <div class="seg" role="radiogroup" data-i18n-aria="ch4.ctl.pre">
+        <span class="lbl" data-i18n="ch4.ctl.pre"></span>
+        <label><input type="radio" name="c4Pre" value="dead_branch" checked><span data-i18n="ch4.pre.dead_branch"></span></label>
+        <label><input type="radio" name="c4Pre" value="inline_fold"><span data-i18n="ch4.pre.inline_fold"></span></label>
+        <label><input type="radio" name="c4Pre" value="cse_chain"><span data-i18n="ch4.pre.cse_chain"></span></label>
+      </div>
+      <button type="button" class="btn pri" id="c4Step" data-i18n="ch4.ctl.step"></button>
+      <button type="button" class="btn" id="c4Fix" data-i18n="ch4.ctl.fix"></button>
+      <button type="button" class="btn" id="c4Reset" data-i18n="ch4.ctl.reset"></button>
+    </div>
+    <canvas class="cv tall" id="c4Cv" role="img" data-i18n-aria="ch4.cv.aria"></canvas>
+    <div class="read">
+      <div><span data-i18n="ch4.read.round"></span><b id="c4Rnd" class="g"></b></div>
+      <div><span data-i18n="ch4.read.ops"></span><b id="c4Ops" class="c"></b></div>
+      <div><span data-i18n="ch4.read.mem"></span><b id="c4Mem" class="r"></b></div>
+      <div><span data-i18n="ch4.read.state"></span><b id="c4St" class="n"></b></div>
+    </div>
+    <p class="say" id="c4Say" aria-live="polite"></p>
+  </figure>

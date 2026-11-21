@@ -1,0 +1,25 @@
+<figure class="lab" id="lab-ch2-model">
+    <h3 data-i18n="ch2.model.title"></h3>
+    <p class="how" data-i18n="ch2.model.how"></p>
+    <div class="ctl">
+      <div class="seg" role="radiogroup" data-i18n-aria="ch2.ctl.snip">
+        <span class="lbl" data-i18n="ch2.ctl.snip"></span>
+        <label><input type="radio" name="c2Snip" value="sum_array" checked><span data-i18n="ch2.snip.sum_array"></span></label>
+        <label><input type="radio" name="c2Snip" value="pick_phi"><span data-i18n="ch2.snip.pick_phi"></span></label>
+      </div>
+      <label class="rng"><span data-i18n="ch2.ctl.iter"></span><input type="range" id="c2Iter" min="1" max="32" step="1" value="8"><output id="c2Itero" for="c2Iter"></output></label>
+      <label class="chk"><input type="checkbox" id="c2Promo"><span data-i18n="ch2.ctl.promo"></span></label>
+    </div>
+    <canvas class="cv" id="c2Cv" role="img" data-i18n-aria="ch2.cv.aria"></canvas>
+    <div class="codepair">
+      <div class="codebox"><div class="ctitle" data-i18n="ch2.code.o0"></div><pre id="c2IrO0"></pre></div>
+      <div class="codebox"><div class="ctitle" data-i18n="ch2.code.o2"></div><pre id="c2IrO2"></pre></div>
+    </div>
+    <div class="read">
+      <div><span data-i18n="ch2.read.alloc"></span><b id="c2Al" class="r"></b></div>
+      <div><span data-i18n="ch2.read.stack"></span><b id="c2St" class="g"></b></div>
+      <div><span data-i18n="ch2.read.mem"></span><b id="c2Mem" class="c"></b></div>
+      <div><span data-i18n="ch2.read.insn"></span><b id="c2In" class="n"></b></div>
+    </div>
+    <p class="say" id="c2Say" aria-live="polite"></p>
+  </figure>

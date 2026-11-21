@@ -1,0 +1,26 @@
+<figure class="lab" id="lab-ch8-model">
+    <h3 data-i18n="ch8.model.title"></h3>
+    <p class="how" data-i18n="ch8.model.how"></p>
+    <div class="ctl">
+      <label class="rng"><span data-i18n="ch8.ctl.k"></span><input type="range" id="c8K" min="2" max="6" step="1" value="3"><output id="c8Ko" for="c8K"></output></label>
+      <div class="seg" role="radiogroup" data-i18n-aria="ch8.ctl.algo">
+        <span class="lbl" data-i18n="ch8.ctl.algo"></span>
+        <label><input type="radio" name="c8Algo" value="graph" checked><span data-i18n="ch8.algo.graph"></span></label>
+        <label><input type="radio" name="c8Algo" value="linear"><span data-i18n="ch8.algo.linear"></span></label>
+      </div>
+      <div class="seg" role="radiogroup" data-i18n-aria="ch8.ctl.scen">
+        <span class="lbl" data-i18n="ch8.ctl.scen"></span>
+        <label><input type="radio" name="c8Scen" value="diamond"><span data-i18n="ch8.scen.diamond"></span></label>
+        <label><input type="radio" name="c8Scen" value="chain" checked><span data-i18n="ch8.scen.chain"></span></label>
+        <label><input type="radio" name="c8Scen" value="pressure"><span data-i18n="ch8.scen.pressure"></span></label>
+      </div>
+    </div>
+    <canvas class="cv tall" id="c8Cv" role="img" data-i18n-aria="ch8.cv.aria"></canvas>
+    <div class="read">
+      <div><span data-i18n="ch8.read.live"></span><b id="c8Live" class="c"></b></div>
+      <div><span data-i18n="ch8.read.used"></span><b id="c8Used" class="n"></b></div>
+      <div><span data-i18n="ch8.read.spills"></span><b id="c8Sp" class="r"></b></div>
+      <div><span data-i18n="ch8.read.mem"></span><b id="c8Mem" class="g"></b></div>
+    </div>
+    <p class="say" id="c8Say" aria-live="polite"></p>
+  </figure>
