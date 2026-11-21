@@ -1,0 +1,125 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "how-nginx-handles-ten-thousand-connections",
+ "refs": [
+  {
+   "from": "hero.note",
+   "to": "how-the-os-talks-to-hardware",
+   "anchor": null
+  },
+  {
+   "from": "hero.note",
+   "to": "how-virtual-memory-works",
+   "anchor": null
+  },
+  {
+   "from": "hero.note",
+   "to": "how-a-nic-moves-packets",
+   "anchor": null
+  },
+  {
+   "from": "hero.note",
+   "to": "tcp-congestion",
+   "anchor": null
+  },
+  {
+   "from": "ch1.p4",
+   "to": "how-virtual-memory-works",
+   "anchor": "ch1"
+  },
+  {
+   "from": "ch2.p3",
+   "to": "how-virtual-memory-works",
+   "anchor": "ch9"
+  },
+  {
+   "from": "ch3.p4",
+   "to": "how-the-os-talks-to-hardware",
+   "anchor": "ch11"
+  },
+  {
+   "from": "ch3.p4",
+   "to": "how-a-nic-moves-packets",
+   "anchor": "ch5"
+  },
+  {
+   "from": "ch9.p4",
+   "to": "how-the-os-talks-to-hardware",
+   "anchor": "ch7"
+  },
+  {
+   "from": "ch9.p4",
+   "to": "tcp-congestion",
+   "anchor": "step1"
+  },
+  {
+   "from": "ch11.links",
+   "to": "how-the-os-talks-to-hardware",
+   "anchor": null
+  },
+  {
+   "from": "ch11.links",
+   "to": "how-virtual-memory-works",
+   "anchor": null
+  },
+  {
+   "from": "ch11.links",
+   "to": "how-a-nic-moves-packets",
+   "anchor": null
+  },
+  {
+   "from": "ch11.links",
+   "to": "tcp-congestion",
+   "anchor": null
+  }
+ ],
+ "backlinks": [],
+ "related": [
+  "how-virtual-memory-works",
+  "how-the-os-talks-to-hardware",
+  "how-a-nic-moves-packets",
+  "tcp-congestion"
+ ],
+ "bindings": [
+  "ch1.connB",
+  "ch1.evtB",
+  "ch1.slotB",
+  "ch1.stackMiB",
+  "ch1.virtGiB",
+  "ch1.threadRss",
+  "ch1.nginxMiB",
+  "ch1.ramRatio",
+  "ch1.ctxPct",
+  "ch2.oldAlive",
+  "ch2.newAlive",
+  "ch2.hardDrop",
+  "ch3.selectUs",
+  "ch3.epollUs",
+  "ch3.scanRatio",
+  "ch4.phases",
+  "ch5.hdrB",
+  "ch5.maxSmall",
+  "ch5.defPool",
+  "ch5.blocks",
+  "ch5.frees",
+  "ch6.seq",
+  "ch6.swrrMax",
+  "ch6.naiveMax",
+  "ch7.scale",
+  "ch7.qDelay",
+  "ch7.qDrop",
+  "ch7.qMaxMs",
+  "ch7.nImm",
+  "ch8.lazyMs",
+  "ch8.lazySkip",
+  "ch8.c10kDepth",
+  "ch8.timeout",
+  "ch9.rwSys",
+  "ch9.rwCtx",
+  "ch9.rwCopy",
+  "ch9.sfSys",
+  "ch9.upMs",
+  "ch9.cliSec",
+  "ch9.speedup"
+ ]
+}

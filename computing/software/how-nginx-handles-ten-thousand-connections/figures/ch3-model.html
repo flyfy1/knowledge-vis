@@ -1,0 +1,26 @@
+<figure class="lab" id="lab-ch3-model">
+  <h3 data-i18n="ch3.model.title"></h3>
+  <p class="how" data-i18n-html="ch3.model.how"></p>
+  <div class="ctl">
+    <label class="rng"><span data-i18n="ch3.ctl.conns"></span><input type="range" id="c3Conns" min="1000" max="20000" step="500" value="10000"><output id="c3Connso" for="c3Conns"></output></label>
+    <label class="rng"><span data-i18n="ch3.ctl.active"></span><input type="range" id="c3Active" min="5" max="400" step="5" value="40"><output id="c3Activeo" for="c3Active"></output></label>
+    <div class="seg" role="radiogroup" data-i18n-aria="ch3.ctl.dispatch">
+      <span class="lbl" data-i18n="ch3.ctl.dispatch"></span>
+      <label><input type="radio" name="c3Disp" value="shared"><span data-i18n="ch3.disp.shared"></span></label>
+      <label><input type="radio" name="c3Disp" value="mutex"><span data-i18n="ch3.disp.mutex"></span></label>
+      <label><input type="radio" name="c3Disp" value="reuseport" checked><span data-i18n="ch3.disp.reuseport"></span></label>
+    </div>
+  </div>
+  <canvas class="cv" id="c3Cv" role="img" data-i18n-aria="ch3.cv.aria"></canvas>
+  <div class="legend">
+    <span><i style="background:var(--red)"></i><span data-i18n="ch3.leg.select"></span></span>
+    <span><i style="background:var(--cyan)"></i><span data-i18n="ch3.leg.epoll"></span></span>
+  </div>
+  <div class="read">
+    <div><span data-i18n="ch3.read.sel"></span><b id="c3Sel" class="r"></b></div>
+    <div><span data-i18n="ch3.read.ep"></span><b id="c3Ep" class="c"></b></div>
+    <div><span data-i18n="ch3.read.ratio"></span><b id="c3Ratio" class="g"></b></div>
+    <div><span data-i18n="ch3.read.wake"></span><b id="c3Wake" class="v"></b></div>
+  </div>
+  <p class="say" id="c3Say" aria-live="polite"></p>
+</figure>

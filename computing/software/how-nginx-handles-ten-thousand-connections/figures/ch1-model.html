@@ -1,0 +1,26 @@
+<figure class="lab" id="lab-ch1-model">
+  <h3 data-i18n="ch1.model.title"></h3>
+  <p class="how" data-i18n-html="ch1.model.how"></p>
+  <div class="ctl">
+    <label class="rng"><span data-i18n="ch1.ctl.conns"></span><input type="range" id="c1Conns" min="500" max="20000" step="500" value="10000"><output id="c1Connso" for="c1Conns"></output></label>
+    <label class="rng"><span data-i18n="ch1.ctl.active"></span><input type="range" id="c1Active" min="1" max="50" step="1" value="5"><output id="c1Activeo" for="c1Active"></output></label>
+    <div class="seg" role="radiogroup" data-i18n-aria="ch1.ctl.stack">
+      <span class="lbl" data-i18n="ch1.ctl.stack"></span>
+      <label><input type="radio" name="c1Stack" value="8" checked><span>8 MiB</span></label>
+      <label><input type="radio" name="c1Stack" value="2"><span>2 MiB</span></label>
+      <label><input type="radio" name="c1Stack" value="0.5"><span>512 KiB</span></label>
+    </div>
+  </div>
+  <canvas class="cv" id="c1Cv" role="img" data-i18n-aria="ch1.cv.aria"></canvas>
+  <div class="legend">
+    <span><i style="background:var(--red)"></i><span data-i18n="ch1.leg.thread"></span></span>
+    <span><i style="background:var(--cyan)"></i><span data-i18n="ch1.leg.nginx"></span></span>
+  </div>
+  <div class="read">
+    <div><span data-i18n="ch1.read.virt"></span><b id="c1Virt" class="r"></b></div>
+    <div><span data-i18n="ch1.read.trss"></span><b id="c1Trss" class="r"></b></div>
+    <div><span data-i18n="ch1.read.nrss"></span><b id="c1Nrss" class="c"></b></div>
+    <div><span data-i18n="ch1.read.ctx"></span><b id="c1Ctx" class="g"></b></div>
+  </div>
+  <p class="say" id="c1Say" aria-live="polite"></p>
+</figure>
