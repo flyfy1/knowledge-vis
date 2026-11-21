@@ -1,0 +1,28 @@
+<figure class="lab" id="lab-ch2-model">
+  <h3 data-i18n="ch2.model.title"></h3>
+  <p class="how" data-i18n="ch2.model.how"></p>
+  <div class="ctl">
+    <div class="seg" role="radiogroup" data-i18n-aria="ch2.ctl.mut">
+      <span class="lbl" data-i18n="ch2.ctl.mut"></span>
+      <label><input type="radio" name="c2Mut" value="none" checked><span data-i18n="ch2.mut.none"></span></label>
+      <label><input type="radio" name="c2Mut" value="L3"><span data-i18n="ch2.mut.L3"></span></label>
+      <label><input type="radio" name="c2Mut" value="L2"><span data-i18n="ch2.mut.L2"></span></label>
+      <label><input type="radio" name="c2Mut" value="L1"><span data-i18n="ch2.mut.L1"></span></label>
+    </div>
+    <label class="rng"><span data-i18n="ch2.ctl.rep"></span><input type="range" id="c2Rep" min="2" max="10" step="1" value="2"><output id="c2Repo" for="c2Rep"></output></label>
+  </div>
+  <canvas class="cv short" id="c2Cv" role="img" data-i18n-aria="ch2.cv.aria"></canvas>
+  <div class="tblwrap" tabindex="0" role="region" data-i18n-aria="ch2.model.title">
+    <table class="fmt keys" id="c2Tbl">
+      <thead><tr><th data-i18n="ch2.col.layer"></th><th data-i18n="ch2.col.status"></th><th data-i18n="ch2.col.chain"></th></tr></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+  <div class="read">
+    <div><span data-i18n="ch2.read.shared"></span><b id="c2Shared" class="n"></b></div>
+    <div><span data-i18n="ch2.read.stored"></span><b id="c2Stored" class="g"></b></div>
+    <div><span data-i18n="ch2.read.naive"></span><b id="c2Naive" class="r"></b></div>
+    <div><span data-i18n="ch2.read.hits"></span><b id="c2Hits" class="c"></b></div>
+  </div>
+  <p class="say" id="c2Say" aria-live="polite"></p>
+</figure>

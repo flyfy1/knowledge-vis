@@ -1,0 +1,23 @@
+<figure class="lab" id="lab-ch3-model">
+  <h3 data-i18n="ch3.model.title"></h3>
+  <p class="how" data-i18n="ch3.model.how"></p>
+  <div class="ctl">
+    <div class="seg" role="radiogroup" data-i18n-aria="ch3.ctl.op">
+      <span class="lbl" data-i18n="ch3.ctl.op"></span>
+      <label><input type="radio" name="c3Op" value="read" checked><span data-i18n="ch3.op.read"></span></label>
+      <label><input type="radio" name="c3Op" value="append"><span data-i18n="ch3.op.append"></span></label>
+      <label><input type="radio" name="c3Op" value="chmod"><span data-i18n="ch3.op.chmod"></span></label>
+      <label><input type="radio" name="c3Op" value="rm-split"><span data-i18n="ch3.op.rm-split"></span></label>
+      <label><input type="radio" name="c3Op" value="rm-same"><span data-i18n="ch3.op.rm-same"></span></label>
+      <label><input type="radio" name="c3Op" value="opaque"><span data-i18n="ch3.op.opaque"></span></label>
+    </div>
+  </div>
+  <canvas class="cv" id="c3Cv" role="img" data-i18n-aria="ch3.cv.aria"></canvas>
+  <div class="read">
+    <div><span data-i18n="ch3.read.copy"></span><b id="c3Copy" class="g"></b></div>
+    <div><span data-i18n="ch3.read.upper"></span><b id="c3Up" class="c"></b></div>
+    <div><span data-i18n="ch3.read.total"></span><b id="c3Tot"></b></div>
+    <div><span data-i18n="ch3.read.waste"></span><b id="c3Waste" class="r"></b></div>
+  </div>
+  <p class="say" id="c3Say" aria-live="polite"></p>
+</figure>

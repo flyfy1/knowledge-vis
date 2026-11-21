@@ -1,0 +1,27 @@
+<figure class="lab" id="lab-ch8-model">
+  <h3 data-i18n="ch8.model.title"></h3>
+  <p class="how" data-i18n="ch8.model.how"></p>
+  <div class="ctl">
+    <div class="seg" role="radiogroup" data-i18n-aria="ch8.ctl.probe">
+      <span class="lbl" data-i18n="ch8.ctl.probe"></span>
+      <label><input type="radio" name="c8Probe" value="read_write"><span data-i18n="ch8.pr.read_write"></span></label>
+      <label><input type="radio" name="c8Probe" value="raw_ping"><span data-i18n="ch8.pr.raw_ping"></span></label>
+      <label><input type="radio" name="c8Probe" value="mount_fs" checked><span data-i18n="ch8.pr.mount_fs"></span></label>
+      <label><input type="radio" name="c8Probe" value="ptrace"><span data-i18n="ch8.pr.ptrace"></span></label>
+      <label><input type="radio" name="c8Probe" value="bpf"><span data-i18n="ch8.pr.bpf"></span></label>
+      <label><input type="radio" name="c8Probe" value="kexec"><span data-i18n="ch8.pr.kexec"></span></label>
+    </div>
+    <label class="chk"><input type="checkbox" id="c8Sec" checked><span data-i18n="ch8.ctl.sec"></span></label>
+    <label class="chk"><input type="checkbox" id="c8NetRaw" checked><span data-i18n="ch8.ctl.netraw"></span></label>
+    <label class="chk"><input type="checkbox" id="c8SysAdm"><span data-i18n="ch8.ctl.sysadm"></span></label>
+    <label class="chk"><input type="checkbox" id="c8Lsm" checked><span data-i18n="ch8.ctl.lsm"></span></label>
+  </div>
+  <canvas class="cv short" id="c8Cv" role="img" data-i18n-aria="ch8.cv.aria"></canvas>
+  <div class="read">
+    <div><span data-i18n="ch8.read.verdict"></span><b id="c8Verd" class="r"></b></div>
+    <div><span data-i18n="ch8.read.gate"></span><b id="c8Gate" class="g"></b></div>
+    <div><span data-i18n="ch8.read.allowed"></span><b id="c8Allow" class="c"></b></div>
+    <div><span data-i18n="ch8.read.req"></span><b id="c8Req"></b></div>
+  </div>
+  <p class="say" id="c8Say" aria-live="polite"></p>
+</figure>

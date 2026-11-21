@@ -1,0 +1,24 @@
+<figure class="lab" id="lab-ch5-model">
+  <h3 data-i18n="ch5.model.title"></h3>
+  <p class="how" data-i18n="ch5.model.how"></p>
+  <div class="ctl">
+    <div class="seg" role="radiogroup" data-i18n-aria="ch5.ctl.mode">
+      <span class="lbl" data-i18n="ch5.ctl.mode"></span>
+      <label><input type="radio" name="c5Mode" value="bridge-nat" checked><span data-i18n="ch5.mode.bridge-nat"></span></label>
+      <label><input type="radio" name="c5Mode" value="same-bridge"><span data-i18n="ch5.mode.same-bridge"></span></label>
+      <label><input type="radio" name="c5Mode" value="ebpf-host"><span data-i18n="ch5.mode.ebpf-host"></span></label>
+      <label><input type="radio" name="c5Mode" value="host-net"><span data-i18n="ch5.mode.host-net"></span></label>
+    </div>
+    <label class="rng"><span data-i18n="ch5.ctl.pkt"></span><input type="range" id="c5Pkt" min="60" max="1500" step="10" value="1460"><output id="c5Pkto" for="c5Pkt"></output></label>
+    <label class="rng"><span data-i18n="ch5.ctl.kpps"></span><input type="range" id="c5Kpps" min="10" max="200" step="10" value="50"><output id="c5Kppso" for="c5Kpps"></output></label>
+    <label class="chk"><input type="checkbox" id="c5Vx"><span data-i18n="ch5.ctl.vx"></span></label>
+  </div>
+  <canvas class="cv" id="c5Cv" role="img" data-i18n-aria="ch5.cv.aria"></canvas>
+  <div class="read">
+    <div><span data-i18n="ch5.read.hops"></span><b id="c5Hops" class="c"></b></div>
+    <div><span data-i18n="ch5.read.cpu"></span><b id="c5Cpu" class="g"></b></div>
+    <div><span data-i18n="ch5.read.mtu"></span><b id="c5Mtu"></b></div>
+    <div><span data-i18n="ch5.read.frag"></span><b id="c5Frag" class="r"></b></div>
+  </div>
+  <p class="say" id="c5Say" aria-live="polite"></p>
+</figure>

@@ -1,0 +1,18 @@
+<figure class="lab" id="lab-ch7-model">
+  <h3 data-i18n="ch7.model.title"></h3>
+  <p class="how" data-i18n="ch7.model.how"></p>
+  <div class="ctl">
+    <label class="rng"><span data-i18n="ch7.ctl.anon"></span><input type="range" id="c7Anon" min="64" max="640" step="16" value="240"><output id="c7Anono" for="c7Anon"></output></label>
+    <label class="rng"><span data-i18n="ch7.ctl.cache"></span><input type="range" id="c7Cache" min="0" max="512" step="16" value="220"><output id="c7Cacheo" for="c7Cache"></output></label>
+    <label class="rng"><span data-i18n="ch7.ctl.tmpfs"></span><input type="range" id="c7Tmp" min="0" max="384" step="16" value="0"><output id="c7Tmpo" for="c7Tmp"></output></label>
+    <label class="rng"><span data-i18n="ch7.ctl.max"></span><input type="range" id="c7Max" min="256" max="1024" step="64" value="512"><output id="c7Maxo" for="c7Max"></output></label>
+  </div>
+  <canvas class="cv" id="c7Cv" role="img" data-i18n-aria="ch7.cv.aria"></canvas>
+  <div class="read">
+    <div><span data-i18n="ch7.read.cur"></span><b id="c7Cur" class="g"></b></div>
+    <div><span data-i18n="ch7.read.rec"></span><b id="c7Rec" class="c"></b></div>
+    <div><span data-i18n="ch7.read.psi"></span><b id="c7Psi" class="v"></b></div>
+    <div><span data-i18n="ch7.read.state"></span><b id="c7State" class="r"></b></div>
+  </div>
+  <p class="say" id="c7Say" aria-live="polite"></p>
+</figure>
