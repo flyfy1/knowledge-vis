@@ -1,0 +1,21 @@
+<figure class="lab" id="lab-ch5-model">
+  <h3 data-i18n="ch5.model.title"></h3>
+  <p class="how" data-i18n="ch5.model.how"></p>
+  <div class="ctl">
+    <div class="seg" role="radiogroup" data-i18n-aria="ch5.ctl.vac">
+      <span class="lbl" data-i18n="ch5.ctl.vac"></span>
+      <label><input type="radio" name="c5Vac" value="off" checked><span data-i18n="ch5.vac.off"></span></label>
+      <label><input type="radio" name="c5Vac" value="normal"><span data-i18n="ch5.vac.normal"></span></label>
+      <label><input type="radio" name="c5Vac" value="freeze"><span data-i18n="ch5.vac.freeze"></span></label>
+    </div>
+    <label class="rng"><span data-i18n="ch5.ctl.ep"></span><input type="range" id="c5Ep" min="0" max="2200" step="5" value="250"><output id="c5Epo" for="c5Ep"></output></label>
+  </div>
+  <canvas class="cv" id="c5Cv" role="img" data-i18n-aria="ch5.cv.aria"></canvas>
+  <div class="read">
+    <div><span data-i18n="ch5.read.age"></span><b id="c5Age" class="g"></b></div>
+    <div><span data-i18n="ch5.read.dead"></span><b id="c5Dead" class="r"></b></div>
+    <div><span data-i18n="ch5.read.vm"></span><b id="c5Vm" class="c"></b></div>
+    <div><span data-i18n="ch5.read.st"></span><b id="c5St"></b></div>
+  </div>
+  <p class="say" id="c5Say" aria-live="polite"></p>
+</figure>

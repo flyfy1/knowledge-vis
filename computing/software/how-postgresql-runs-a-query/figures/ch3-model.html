@@ -1,0 +1,25 @@
+<figure class="lab" id="lab-ch3-model">
+  <h3 data-i18n="ch3.model.title"></h3>
+  <p class="how" data-i18n="ch3.model.how"></p>
+  <div class="ctl">
+    <button type="button" class="btn pri" id="c3Ins" data-i18n="ch3.ctl.ins"></button>
+    <button type="button" class="btn pri" id="c3Upd" data-i18n="ch3.ctl.upd"></button>
+    <button type="button" class="btn" id="c3Rst" data-i18n="ch3.ctl.rst"></button>
+    <label class="rng"><span data-i18n="ch3.ctl.ff"></span><input type="range" id="c3Ff" min="50" max="100" step="5" value="80"><output id="c3Ffo" for="c3Ff"></output></label>
+    <label class="rng"><span data-i18n="ch3.ctl.pay"></span><input type="range" id="c3Pay" min="32" max="512" step="32" value="64"><output id="c3Payo" for="c3Pay"></output></label>
+    <label class="chk"><input type="checkbox" id="c3Idx"><span data-i18n="ch3.ctl.idx"></span></label>
+  </div>
+  <canvas class="cv" id="c3Cv" role="img" data-i18n-aria="ch3.cv.aria"></canvas>
+  <div class="legend">
+    <span><i style="background:var(--gold)"></i><span data-i18n="ch3.leg.hdr"></span></span>
+    <span><i style="background:var(--cyan)"></i><span data-i18n="ch3.leg.live"></span></span>
+    <span><i style="background:var(--red)"></i><span data-i18n="ch3.leg.dead"></span></span>
+  </div>
+  <div class="read">
+    <div><span data-i18n="ch3.read.ptr"></span><b id="c3Ptr" class="c"></b></div>
+    <div><span data-i18n="ch3.read.free"></span><b id="c3Free"></b></div>
+    <div><span data-i18n="ch3.read.hot"></span><b id="c3Hot" class="n"></b></div>
+    <div><span data-i18n="ch3.read.idx"></span><b id="c3IdxW" class="r"></b></div>
+  </div>
+  <p class="say" id="c3Say" aria-live="polite"></p>
+</figure>

@@ -1,0 +1,367 @@
+{
+  "slug": "how-postgresql-runs-a-query",
+  "path": "computing/software/how-postgresql-runs-a-query/",
+  "category": "computing",
+  "subtopic": "software",
+  "stage": "university",
+  "title": {
+    "zh": "PostgreSQL 如何执行一条查询",
+    "en": "How PostgreSQL Runs a Query"
+  },
+  "desc": {
+    "zh": "一条普通的 SELECT ... WHERE 或 UPDATE ... WHERE 发给 PostgreSQL，经过解析器、基于统计信息的代价优化器、8 KiB 分槽页与 HOT 链、MVCC 快照、VACUUM 与 32 位 XID 回卷时钟、shared_buffers 时钟扫描、Lehman & Yao B-Tree 分裂、work_mem 哈希连接溢出，到 WAL 预写日志与全页写落盘。按 PostgreSQL 17.6 / 18.0 源码数据结构与算法重写八个可动手模型，逐项拆解每一步。",
+    "en": "Send one ordinary SELECT ... WHERE or UPDATE ... WHERE to PostgreSQL, and trace it through the parser, cost-based planner, 8 KiB slotted pages and HOT chains, MVCC snapshots, VACUUM and the 32-bit XID wraparound clock, shared_buffers clock sweep, Lehman & Yao B-tree splits, work_mem hash-join spills, and WAL full-page writes to disk. Eight hands-on models reimplement the PostgreSQL 17.6 / 18.0 structures and algorithms step by step."
+  },
+  "tags": [
+    {
+      "zh": "PostgreSQL",
+      "en": "PostgreSQL"
+    },
+    {
+      "zh": "数据库内核",
+      "en": "Database Internals"
+    },
+    {
+      "zh": "MVCC 与 WAL",
+      "en": "MVCC & WAL"
+    },
+    {
+      "zh": "软件原理",
+      "en": "How Software Works"
+    },
+    {
+      "zh": "长文",
+      "en": "Long-form Essay"
+    }
+  ],
+  "concepts": [
+    {
+      "id": "pg-query-pipeline",
+      "title": {
+        "zh": "PostgreSQL 查询流水线与火山执行器",
+        "en": "PostgreSQL Query Pipeline & Volcano Executor"
+      },
+      "desc": {
+        "zh": "一条 SQL 依次经过 Parser、Analyzer、Rewriter、Planner 和自顶向下拉取元组的 ExecProcNode 火山执行器树。",
+        "en": "A SQL statement passes through Parser, Analyzer, Rewriter, Planner, and the pull-based ExecProcNode Volcano iterator tree."
+      },
+      "anchor": "#ch1",
+      "aliases": {
+        "zh": [
+          "PostgreSQL 怎么执行 SQL",
+          "SQL 执行流程",
+          "PostgreSQL 原理",
+          "火山模型 ExecProcNode",
+          "EXPLAIN 执行计划"
+        ],
+        "en": [
+          "how postgresql executes a query",
+          "postgresql query pipeline",
+          "volcano iterator ExecProcNode",
+          "postgres execution tree"
+        ]
+      },
+      "relatedPages": []
+    },
+    {
+      "id": "pg-cost-planner",
+      "title": {
+        "zh": "PostgreSQL 代价优化器与扫描路径选择",
+        "en": "PostgreSQL Cost-Based Planner & Scan Crossover"
+      },
+      "desc": {
+        "zh": "规划器用 pg_statistic 直方图与 seq_page_cost / random_page_cost 对比 Seq Scan、Index Scan、Bitmap Heap Scan 与 Index-Only Scan 的总代价。",
+        "en": "The planner weighs pg_statistic histograms with seq_page_cost and random_page_cost to pick among Seq Scan, Index Scan, Bitmap Heap Scan, and Index-Only Scan."
+      },
+      "anchor": "#ch2",
+      "aliases": {
+        "zh": [
+          "为什么有索引还走全表扫描",
+          "PostgreSQL 不走索引",
+          "Bitmap Heap Scan",
+          "random_page_cost",
+          "CREATE STATISTICS 相关列",
+          "Index-Only Scan"
+        ],
+        "en": [
+          "why postgres ignores index",
+          "postgres seq scan vs index scan",
+          "bitmap heap scan",
+          "random_page_cost ssd",
+          "index-only scan"
+        ]
+      },
+      "relatedPages": []
+    },
+    {
+      "id": "pg-slotted-page-hot",
+      "title": {
+        "zh": "8 KiB 分槽页与 HOT 同页更新",
+        "en": "8 KiB Slotted Pages & HOT Updates"
+      },
+      "desc": {
+        "zh": "PostgreSQL 每页 8,192 字节，行指针与元组相向生长；UPDATE 追加新版本不原地覆盖，仅当同页可放且未改索引列时走 HOT 免写索引。",
+        "en": "PostgreSQL packs 8,192-byte slotted pages with downward line pointers and upward tuples; UPDATE appends new versions and only avoids index writes via same-page HOT."
+      },
+      "anchor": "#ch3",
+      "aliases": {
+        "zh": [
+          "PostgreSQL 8K 页面结构",
+          "HOT 更新原理",
+          "Heap-Only Tuple",
+          "fillfactor 填充因子",
+          "pd_lower pd_upper",
+          "PostgreSQL 为什么不原地更新"
+        ],
+        "en": [
+          "postgres 8kb page layout",
+          "postgresql slotted page",
+          "heap-only tuple hot update",
+          "postgres fillfactor",
+          "pd_lower pd_upper"
+        ]
+      },
+      "relatedPages": []
+    },
+    {
+      "id": "pg-mvcc-snapshot",
+      "title": {
+        "zh": "PostgreSQL MVCC 与快照隔离",
+        "en": "PostgreSQL MVCC & Snapshot Visibility"
+      },
+      "desc": {
+        "zh": "行头携带 xmin 与 xmax，查询按轻量快照 {xmin, xmax, xip[]} 做可见性比较，区分 READ COMMITTED 与 REPEATABLE READ。",
+        "en": "Tuple headers carry xmin and xmax so snapshots {xmin, xmax, xip[]} decide row visibility lock-free under READ COMMITTED and REPEATABLE READ."
+      },
+      "anchor": "#ch4",
+      "aliases": {
+        "zh": [
+          "PostgreSQL MVCC 原理",
+          "为什么读不阻塞写",
+          "xmin xmax 可见性",
+          "SnapshotData 快照",
+          "READ COMMITTED 和 REPEATABLE READ 区别"
+        ],
+        "en": [
+          "postgresql mvcc",
+          "why readers never block writers postgres",
+          "xmin xmax visibility",
+          "SnapshotData",
+          "read committed vs repeatable read postgres"
+        ]
+      },
+      "relatedPages": []
+    },
+    {
+      "id": "pg-vacuum-xid-wraparound",
+      "title": {
+        "zh": "AUTOVACUUM、可见性映射与 32 位 XID 回卷",
+        "en": "VACUUM, Visibility Map & 32-Bit XID Wraparound"
+      },
+      "desc": {
+        "zh": "VACUUM 清理死元组并维护支持 Index-Only Scan 的 Visibility Map，同时在 XID 跨越 2³¹ 半圈边界前将其冻结防停库。",
+        "en": "VACUUM reclaims dead tuples, updates the Visibility Map for Index-Only Scans, and freezes ancient rows before 32-bit modular XID wraparound."
+      },
+      "anchor": "#ch5",
+      "aliases": {
+        "zh": [
+          "AUTOVACUUM 是干什么的",
+          "PostgreSQL XID 回卷",
+          "事务 ID 回卷停库",
+          "VACUUM FREEZE",
+          "Visibility Map 可见性映射",
+          "PostgreSQL 表膨胀"
+        ],
+        "en": [
+          "what does autovacuum do",
+          "postgres xid wraparound",
+          "vacuum freeze",
+          "postgresql visibility map",
+          "postgres table bloat"
+        ]
+      },
+      "relatedPages": []
+    },
+    {
+      "id": "pg-shared-buffers-clock",
+      "title": {
+        "zh": "shared_buffers 时钟扫描与双缓冲",
+        "en": "shared_buffers Clock Sweep & Double Buffering"
+      },
+      "desc": {
+        "zh": "shared_buffers 用 usage_count 0..5 的无全局锁时钟扫描管理热页，并用 256 KiB 环形缓冲区防止全表扫描洗掉缓存。",
+        "en": "shared_buffers uses lock-light clock-sweep eviction (usage_count 0..5) plus a 256 KiB ring buffer so bulk scans do not wipe out hot pages."
+      },
+      "anchor": "#ch6",
+      "aliases": {
+        "zh": [
+          "PostgreSQL shared_buffers",
+          "PostgreSQL 时钟扫描淘汰",
+          "PostgreSQL 双缓冲",
+          "BAS_BULKREAD 环形缓冲区",
+          "为什么 shared_buffers 设 25%"
+        ],
+        "en": [
+          "postgres shared_buffers",
+          "postgres clock sweep eviction",
+          "postgresql double buffering",
+          "postgres bulkread ring buffer",
+          "why shared_buffers 25 percent ram"
+        ]
+      },
+      "relatedPages": [
+        "how-the-os-talks-to-hardware",
+        "how-cores-share-memory"
+      ]
+    },
+    {
+      "id": "pg-nbtree-lehman-yao",
+      "title": {
+        "zh": "nbtree High Key 并发分裂与右链遍历",
+        "en": "nbtree Lehman & Yao Splits & Right-Links"
+      },
+      "desc": {
+        "zh": "PostgreSQL B-Tree 通过页上界 High Key 与 btpo_next 右指针让读者并发下探免锁，并揭示 UUIDv4 随机写引起的页分裂膨胀。",
+        "en": "PostgreSQL B-trees store High Keys and btpo_next right links for lock-free concurrent descent, showing why random UUIDv4 inserts bloat leaf pages."
+      },
+      "anchor": "#ch7",
+      "aliases": {
+        "zh": [
+          "PostgreSQL B-Tree 原理",
+          "Lehman Yao B-link 树",
+          "PostgreSQL 索引页分裂",
+          "UUIDv4 索引膨胀 vs UUIDv7",
+          "P_HIKEY btpo_next"
+        ],
+        "en": [
+          "postgres nbtree lehman yao",
+          "postgres btree high key right link",
+          "uuidv4 vs uuidv7 postgres index bloat",
+          "postgres btree page split"
+        ]
+      },
+      "relatedPages": []
+    },
+    {
+      "id": "pg-hash-join-work-mem",
+      "title": {
+        "zh": "PostgreSQL 连接策略与 work_mem 磁盘溢出",
+        "en": "Join Algorithms & work_mem Disk Spills"
+      },
+      "desc": {
+        "zh": "当 Hash Join 建表内存超出每算子 work_mem 上限时，PostgreSQL 自动切换多批 Grace Hash 并把分区写入 pgsql_tmp 临时文件。",
+        "en": "When a hash build table exceeds per-operator work_mem, PostgreSQL partitions into multi-batch Grace Hash spills inside pgsql_tmp."
+      },
+      "anchor": "#ch8",
+      "aliases": {
+        "zh": [
+          "PostgreSQL Hash Join 原理",
+          "work_mem 临时文件溢出",
+          "Grace Hash Join 分批",
+          "Nested Loop vs Merge Join vs Hash Join",
+          "pgsql_tmp 磁盘溢出"
+        ],
+        "en": [
+          "postgres hash join work_mem",
+          "grace hash join temp spill",
+          "pgsql_tmp batches",
+          "nested loop vs hash join vs merge join"
+        ]
+      },
+      "relatedPages": []
+    },
+    {
+      "id": "pg-wal-full-page-writes",
+      "title": {
+        "zh": "PostgreSQL WAL、CRC-32C 与全页写防撕裂",
+        "en": "WAL, CRC-32C & Full-Page Writes"
+      },
+      "desc": {
+        "zh": "提交先顺序刷 WAL 并靠全页写（FPW）记录检查点后的首次整页 8 KiB 镜像，防止断电导致 4 KiB 扇区撕裂半页损坏。",
+        "en": "Commits flush sequential WAL protected by Castagnoli CRC-32C and log full 8 KiB page images after checkpoints to survive 4 KiB torn writes on crash."
+      },
+      "anchor": "#ch9",
+      "aliases": {
+        "zh": [
+          "PostgreSQL WAL 原理",
+          "full_page_writes 全页写",
+          "8K 页撕裂 torn page",
+          "checkpoint_timeout 权衡",
+          "PostgreSQL LSN CRC32C"
+        ],
+        "en": [
+          "postgresql wal full_page_writes",
+          "postgres torn page crash recovery",
+          "checkpoint_timeout wal amplification",
+          "postgresql lsn crc32c"
+        ]
+      },
+      "relatedPages": [
+        "what-a-drive-is-made-of"
+      ]
+    },
+    {
+      "id": "pg-aio-skipscan-pgvector-frontier",
+      "title": {
+        "zh": "PostgreSQL 18 异步 I/O、19 在线重构与 pgvector HNSW",
+        "en": "PostgreSQL 18 AIO, 19 REPACK & pgvector HNSW Frontier"
+      },
+      "desc": {
+        "zh": "PostgreSQL 18 引入 io_method 异步 I/O 与 B-Tree 跳跃扫描，19 新增在线 REPACK (CONCURRENTLY)，pgvector 将 HNSW 向量图直接集成进共享缓冲区与 WAL。",
+        "en": "PostgreSQL 18 brings io_method AIO and B-tree skip scans, PostgreSQL 19 adds online REPACK (CONCURRENTLY), and pgvector integrates HNSW graphs inside Postgres pages."
+      },
+      "anchor": "#ch10",
+      "aliases": {
+        "zh": [
+          "PostgreSQL 18 新特性",
+          "PostgreSQL 19 REPACK",
+          "PostgreSQL 异步 I/O io_method",
+          "B-Tree Skip Scan 跳跃扫描",
+          "pgvector HNSW 原理",
+          "Citus Patroni 分布式 Postgres"
+        ],
+        "en": [
+          "postgresql 18 asynchronous io",
+          "postgresql 19 repack concurrently",
+          "postgres btree skip scan",
+          "pgvector hnsw shared_buffers",
+          "citus patroni postgres"
+        ]
+      },
+      "relatedPages": [
+        "how-the-os-talks-to-hardware",
+        "distributed-systems"
+      ]
+    },
+    {
+      "id": "pg-diagnostic-checklist",
+      "title": {
+        "zh": "PostgreSQL 慢查询与膨胀诊断三问",
+        "en": "Three Questions for Slow or Bloated PostgreSQL Queries"
+      },
+      "desc": {
+        "zh": "排查 PostgreSQL 慢查询、死行膨胀与写入抖动的三步查表法：EXPLAIN ANALYZE BUFFERS、xmin 卡点与分页/WAL 检查点。",
+        "en": "Three diagnostic checks for slow or bloated PostgreSQL queries: EXPLAIN (ANALYZE, BUFFERS), pinned xmin/dead tuples, and splits/FPW spikes."
+      },
+      "anchor": "#ch11",
+      "aliases": {
+        "zh": [
+          "PostgreSQL 慢查询排查",
+          "EXPLAIN ANALYZE BUFFERS 怎么看",
+          "PostgreSQL 性能调优清单"
+        ],
+        "en": [
+          "postgres slow query checklist",
+          "explain analyze buffers guide",
+          "postgresql query troubleshooting"
+        ]
+      },
+      "relatedPages": [
+        "what-a-drive-is-made-of",
+        "how-the-os-talks-to-hardware",
+        "how-cores-share-memory",
+        "distributed-systems"
+      ]
+    }
+  ]
+}

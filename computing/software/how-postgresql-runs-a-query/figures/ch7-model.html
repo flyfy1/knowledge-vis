@@ -1,0 +1,21 @@
+<figure class="lab" id="lab-ch7-model">
+  <h3 data-i18n="ch7.model.title"></h3>
+  <p class="how" data-i18n="ch7.model.how"></p>
+  <div class="ctl">
+    <div class="seg" role="radiogroup" data-i18n-aria="ch7.ctl.ord">
+      <span class="lbl" data-i18n="ch7.ctl.ord"></span>
+      <label><input type="radio" name="c7Ord" value="seq"><span data-i18n="ch7.ord.seq"></span></label>
+      <label><input type="radio" name="c7Ord" value="rand" checked><span data-i18n="ch7.ord.rand"></span></label>
+    </div>
+    <label class="rng"><span data-i18n="ch7.ctl.cnt"></span><input type="range" id="c7Cnt" min="8" max="24" step="2" value="24"><output id="c7Cnto" for="c7Cnt"></output></label>
+    <label class="chk"><input type="checkbox" id="c7Split"><span data-i18n="ch7.ctl.split"></span></label>
+  </div>
+  <canvas class="cv" id="c7Cv" role="img" data-i18n-aria="ch7.cv.aria"></canvas>
+  <div class="read">
+    <div><span data-i18n="ch7.read.leaves"></span><b id="c7Leaves" class="c"></b></div>
+    <div><span data-i18n="ch7.read.splits"></span><b id="c7Splits" class="r"></b></div>
+    <div><span data-i18n="ch7.read.fill"></span><b id="c7Fill" class="n"></b></div>
+    <div><span data-i18n="ch7.read.hops"></span><b id="c7Hops" class="g"></b></div>
+  </div>
+  <p class="say" id="c7Say" aria-live="polite"></p>
+</figure>

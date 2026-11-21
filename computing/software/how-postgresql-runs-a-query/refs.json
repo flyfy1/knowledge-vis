@@ -1,0 +1,98 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "how-postgresql-runs-a-query",
+ "refs": [
+  {
+   "from": "ch6.limit",
+   "to": "how-the-os-talks-to-hardware",
+   "anchor": null
+  },
+  {
+   "from": "ch9.p1",
+   "to": "what-a-drive-is-made-of",
+   "anchor": null
+  },
+  {
+   "from": "ch9.p2",
+   "to": "what-a-drive-is-made-of",
+   "anchor": null
+  },
+  {
+   "from": "ch10.d1",
+   "to": "how-the-os-talks-to-hardware",
+   "anchor": "ch11"
+  },
+  {
+   "from": "ch10.d4",
+   "to": "distributed-systems",
+   "anchor": null
+  },
+  {
+   "from": "ch11.links",
+   "to": "what-a-drive-is-made-of",
+   "anchor": null
+  },
+  {
+   "from": "ch11.links",
+   "to": "how-the-os-talks-to-hardware",
+   "anchor": null
+  },
+  {
+   "from": "ch11.links",
+   "to": "how-cores-share-memory",
+   "anchor": null
+  },
+  {
+   "from": "ch11.links",
+   "to": "distributed-systems",
+   "anchor": null
+  }
+ ],
+ "backlinks": [],
+ "related": [
+  "how-the-os-talks-to-hardware",
+  "how-cores-share-memory",
+  "what-a-drive-is-made-of",
+  "distributed-systems"
+ ],
+ "bindings": [
+  "ch2.seqCost",
+  "ch2.idxLowCost",
+  "ch2.bmpMidCost",
+  "ch2.crossPct",
+  "ch2.crossSsdPct",
+  "ch2.corrEst",
+  "ch2.corrAct",
+  "ch2.corrRatio",
+  "ch3.blcksz",
+  "ch3.pageHdr",
+  "ch3.itemSz",
+  "ch3.tupFixed",
+  "ch3.tupAlign",
+  "ch3.defFree",
+  "ch3.defIdxWrites",
+  "ch3.idxChangedWrites",
+  "ch4.rcVal",
+  "ch4.rrVal",
+  "ch5.freezeAgeM",
+  "ch5.halfLimitM",
+  "ch5.stopAgeM",
+  "ch6.ringFrames",
+  "ch6.ringKiB",
+  "ch6.unprotPost",
+  "ch6.ringPost",
+  "ch7.btOpaque",
+  "ch7.seqLeaves",
+  "ch7.seqFill",
+  "ch7.randLeaves",
+  "ch7.randFill",
+  "ch8.hashSizeMiB",
+  "ch8.hash4Batch",
+  "ch8.hash4Spill",
+  "ch8.hash16Batch",
+  "ch9.crcTest",
+  "ch9.randFpwPct",
+  "ch9.seqFpwPct",
+  "ch9.walSegMiB"
+ ]
+}
