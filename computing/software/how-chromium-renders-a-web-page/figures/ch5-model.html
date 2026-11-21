@@ -1,0 +1,25 @@
+<figure class="lab" id="lab-ch5-model">
+    <h3 data-i18n="ch5.model.title"></h3>
+    <p class="how" data-i18n-html="ch5.model.how"></p>
+    <div class="ctl">
+      <div class="seg" role="radiogroup" data-i18n-aria="ch5.ctl.prop">
+        <span class="lbl" data-i18n="ch5.ctl.prop"></span>
+        <label><input type="radio" name="c5Prop" value="transform" checked><span data-i18n="ch5.prop.transform"></span></label>
+        <label><input type="radio" name="c5Prop" value="scroll"><span data-i18n="ch5.prop.scroll"></span></label>
+        <label><input type="radio" name="c5Prop" value="opacity"><span data-i18n="ch5.prop.opacity"></span></label>
+        <label><input type="radio" name="c5Prop" value="left"><span data-i18n="ch5.prop.left"></span></label>
+      </div>
+      <label class="rng"><span data-i18n="ch5.ctl.tx"></span><input type="range" id="c5Tx" min="-120" max="160" step="10" value="60"><output id="c5Txo" for="c5Tx"></output></label>
+      <label class="rng"><span data-i18n="ch5.ctl.sy"></span><input type="range" id="c5Sy" min="0" max="200" step="10" value="40"><output id="c5Syo" for="c5Sy"></output></label>
+      <label class="rng"><span data-i18n="ch5.ctl.op"></span><input type="range" id="c5Op" min="0" max="1" step="0.05" value="0.85"><output id="c5Opo" for="c5Op"></output></label>
+      <label class="chk"><input type="checkbox" id="c5Clip" checked><span data-i18n="ch5.ctl.clip"></span></label>
+    </div>
+    <canvas class="cv" id="c5Cv" role="img" data-i18n-aria="ch5.cv.aria"></canvas>
+    <div class="read">
+      <div><span data-i18n="ch5.read.pos"></span><b id="c5Pos" class="c"></b></div>
+      <div><span data-i18n="ch5.read.alpha"></span><b id="c5Alpha" class="v"></b></div>
+      <div><span data-i18n="ch5.read.vis"></span><b id="c5Vis" class="n"></b></div>
+      <div><span data-i18n="ch5.read.stg"></span><b id="c5Stg" class="g"></b></div>
+    </div>
+    <p class="say" id="c5Say" aria-live="polite"></p>
+  </figure>

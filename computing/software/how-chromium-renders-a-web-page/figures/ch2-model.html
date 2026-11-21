@@ -1,0 +1,30 @@
+<figure class="lab" id="lab-ch2-model">
+    <h3 data-i18n="ch2.model.title"></h3>
+    <p class="how" data-i18n-html="ch2.model.how"></p>
+    <div class="ctl">
+      <div class="seg" role="radiogroup" data-i18n-aria="ch2.ctl.mode">
+        <span class="lbl" data-i18n="ch2.ctl.mode"></span>
+        <label><input type="radio" name="c2Mode" value="blocking" checked><span data-i18n="ch2.mode.blocking"></span></label>
+        <label><input type="radio" name="c2Mode" value="defer"><span data-i18n="ch2.mode.defer"></span></label>
+        <label><input type="radio" name="c2Mode" value="async"><span data-i18n="ch2.mode.async"></span></label>
+        <label><input type="radio" name="c2Mode" value="module"><span data-i18n="ch2.mode.module"></span></label>
+      </div>
+      <label class="rng"><span data-i18n="ch2.ctl.css"></span><input type="range" id="c2Css" min="10" max="140" step="5" value="30"><output id="c2Csso" for="c2Css"></output></label>
+      <label class="rng"><span data-i18n="ch2.ctl.js"></span><input type="range" id="c2Js" min="10" max="140" step="5" value="70"><output id="c2Jso" for="c2Js"></output></label>
+      <label class="chk"><input type="checkbox" id="c2Preload" checked><span data-i18n="ch2.ctl.preload"></span></label>
+    </div>
+    <canvas class="cv" id="c2Cv" role="img" data-i18n-aria="ch2.cv.aria"></canvas>
+    <div class="legend">
+      <span><i style="background:var(--cyan)"></i><span data-i18n="ch2.leg.parse"></span></span>
+      <span><i style="background:var(--violet)"></i><span data-i18n="ch2.leg.css"></span></span>
+      <span><i style="background:var(--gold)"></i><span data-i18n="ch2.leg.js"></span></span>
+      <span><i style="background:var(--red)"></i><span data-i18n="ch2.leg.block"></span></span>
+    </div>
+    <div class="read">
+      <div><span data-i18n="ch2.read.fp"></span><b id="c2Fp" class="n"></b></div>
+      <div><span data-i18n="ch2.read.dcl"></span><b id="c2Dcl" class="c"></b></div>
+      <div><span data-i18n="ch2.read.blk"></span><b id="c2Blk" class="r"></b></div>
+      <div><span data-i18n="ch2.read.pre"></span><b id="c2Pre" class="g"></b></div>
+    </div>
+    <p class="say" id="c2Say" aria-live="polite"></p>
+  </figure>

@@ -1,0 +1,347 @@
+{
+  "slug": "how-chromium-renders-a-web-page",
+  "path": "computing/software/how-chromium-renders-a-web-page/",
+  "category": "computing",
+  "subtopic": "software",
+  "stage": "university",
+  "title": {
+    "zh": "Chromium 如何把一个网页画上屏幕",
+    "en": "How Chromium Renders a Web Page"
+  },
+  "desc": {
+    "zh": "在网页里执行一行 el.style.transform = 'translateX(120px)'，为什么主线程被 JavaScript 堵住两百毫秒它依然丝滑，而把同一个动画换成 left 或者给卡片底下塞一个阴影就会掉帧甚至吃爆显存？这篇对照 Chromium RenderingNG（Blink + cc + Viz，2026 年架构）的源码结构与规格，顺着字节流一路拆到底：多进程渲染地图、HTML 词法与预加载扫描、从右向左选择器与失效集、LayoutNG 不可变片段与强制同步回流、Pre-Paint 四棵属性树、PaintRecord 与层爆炸、TileManager 分块与棋盘格、Viz SurfaceAggregator 跨源聚合、120 Hz 帧隔离，以及 Skia Graphite 与投机预渲染前沿。九个交互模型，全部在页面里重现真实的算法账本。",
+    "en": "Run one line of code—el.style.transform = 'translateX(120px)'—and it glides cleanly at 120 Hz even when main-thread JavaScript stalls for 200 ms. Animate el.style.left instead, or tuck a moving badge behind overlapping cards, and frames drop or VRAM spikes. Tracing Chromium's RenderingNG pipeline (Blink + cc + Viz, 2026 architecture), this essay follows a byte stream all the way to display swap: multi-process isolation, HTML tokenization and preload scanning, right-to-left selector matching and InvalidationSets, LayoutNG immutable fragments and forced synchronous layout, the four Property Trees, PaintRecords and layer explosion, TileManager tiling and checkerboarding, Viz SurfaceAggregator across OOPIFs, compositor animation isolation, and the November 2026 frontier across Skia Graphite and Speculation Rules."
+  },
+  "tags": [
+    {
+      "zh": "Chromium",
+      "en": "Chromium"
+    },
+    {
+      "zh": "Blink 引擎",
+      "en": "Blink Engine"
+    },
+    {
+      "zh": "渲染与合成",
+      "en": "Rendering & Compositing"
+    },
+    {
+      "zh": "软件原理",
+      "en": "How Software Works"
+    },
+    {
+      "zh": "长文",
+      "en": "Long-form Essay"
+    }
+  ],
+  "concepts": [
+    {
+      "id": "chromium-renderingng-pipeline",
+      "title": {
+        "zh": "Chromium 多进程渲染地图与 RenderingNG 管线",
+        "en": "Chromium multi-process map & RenderingNG pipeline"
+      },
+      "desc": {
+        "zh": "Chromium 将浏览器界面、Blink 渲染主线程（Parse→Style→LayoutNG→Pre-Paint→Paint）、合成器线程 cc 与 GPU 进程 Viz 彻底隔离，让合成滚动与动画无需等待主线程。",
+        "en": "Chromium separates browser chrome, Blink's main thread (Parse→Style→LayoutNG→Pre-Paint→Paint), the cc compositor thread, and the Viz GPU process so scrolling and transforms stay responsive."
+      },
+      "anchor": "#ch1",
+      "aliases": {
+        "zh": [
+          "Chromium RenderingNG 管线",
+          "Blink 渲染流程",
+          "Chromium 多进程渲染",
+          "浏览器是怎么把网页画出来的"
+        ],
+        "en": [
+          "Chromium rendering pipeline",
+          "how Chromium renders a web page",
+          "RenderingNG architecture",
+          "Blink cc Viz"
+        ]
+      },
+      "relatedPages": [
+        "how-threejs-draws-a-scene",
+        "how-pixels-reach-a-screen"
+      ]
+    },
+    {
+      "id": "chromium-html-parser-blocking",
+      "title": {
+        "zh": "HTML 字节流解析、CSSOM 阻塞与预加载扫描",
+        "en": "HTML byte stream parsing, CSSOM blocking & preload scanner"
+      },
+      "desc": {
+        "zh": "同步 script 会暂停 HTML 词法解析并等待前置 CSSOM 就绪，HTMLPreloadScanner 则在旁路提前扫描字节并并行拉取下游资源。",
+        "en": "Synchronous script tags stall HTML tokenization until download, preceding CSSOM, and execution finish, while HTMLPreloadScanner scans ahead to fetch downstream assets early."
+      },
+      "anchor": "#ch2",
+      "aliases": {
+        "zh": [
+          "HTML 解析与渲染阻塞",
+          "CSSOM 阻塞渲染",
+          "预加载扫描器",
+          "script async 和 defer 区别"
+        ],
+        "en": [
+          "render-blocking CSS",
+          "HTML preload scanner",
+          "parser-blocking script",
+          "async vs defer"
+        ]
+      },
+      "relatedPages": []
+    },
+    {
+      "id": "chromium-style-invalidation",
+      "title": {
+        "zh": "从右向左选择器匹配、SelectorFilter 与失效集",
+        "en": "Right-to-left selector matching, SelectorFilter & InvalidationSet"
+      },
+      "desc": {
+        "zh": "Blink 从右向左验证关键选择器并靠祖先布隆过滤器在 O(1) 剪枝；修改类名时靠预编译失效集只把局部子树标脏重算。",
+        "en": "Blink evaluates selectors right-to-left, prunes impossible ancestors in O(1) via SelectorFilter Bloom masks, and narrows class-toggle recalculation via InvalidationSets."
+      },
+      "anchor": "#ch3",
+      "aliases": {
+        "zh": [
+          "CSS 选择器从右向左匹配",
+          "SelectorFilter 布隆过滤器",
+          "样式失效集",
+          "CSS 样式重算为什么慢"
+        ],
+        "en": [
+          "right-to-left selector matching",
+          "Blink SelectorFilter Bloom filter",
+          "CSS InvalidationSet",
+          "style recalculation"
+        ]
+      },
+      "relatedPages": []
+    },
+    {
+      "id": "chromium-layoutng-thrashing",
+      "title": {
+        "zh": "LayoutNG 不可变片段与强制同步布局抖动",
+        "en": "LayoutNG immutable fragments & forced synchronous layout thrashing"
+      },
+      "desc": {
+        "zh": "LayoutNG 将约束空间转成不可变 PhysicalBoxFragment 供缓存复用，但在循环中先改尺寸再读 offsetHeight 会触发 N 次强制同步重排。",
+        "en": "LayoutNG maps immutable ConstraintSpace inputs to cacheable PhysicalBoxFragments, whereas interleaving width writes with offsetHeight reads forces N synchronous reflows."
+      },
+      "anchor": "#ch4",
+      "aliases": {
+        "zh": [
+          "LayoutNG 片段树",
+          "强制同步布局",
+          "布局抖动",
+          "读写 DOM 交替为什么卡"
+        ],
+        "en": [
+          "LayoutNG fragment tree",
+          "forced synchronous layout",
+          "layout thrashing",
+          "ConstraintSpace"
+        ]
+      },
+      "relatedPages": []
+    },
+    {
+      "id": "chromium-property-trees",
+      "title": {
+        "zh": "Pre-Paint 与四棵属性树（Transform / Clip / Effect / Scroll）",
+        "en": "Pre-Paint & the four Property Trees"
+      },
+      "desc": {
+        "zh": "Pre-Paint 将变换、裁剪、效果和滚动拆进四棵独立属性树，让 transform 与滚动只需在合成器改写单个节点而跳过排版与重绘。",
+        "en": "Pre-Paint extracts Transform, Clip, Effect, and Scroll state into orthogonal property trees so cc handles transforms and scrolls by editing a single node."
+      },
+      "anchor": "#ch5",
+      "aliases": {
+        "zh": [
+          "RenderingNG 属性树",
+          "transform 为什么不触发重排",
+          "合成器属性树",
+          "Pre-Paint 阶段"
+        ],
+        "en": [
+          "RenderingNG property trees",
+          "Transform Clip Effect Scroll tree",
+          "why CSS transform skips layout",
+          "Blink Pre-Paint"
+        ]
+      },
+      "relatedPages": []
+    },
+    {
+      "id": "chromium-paint-layer-explosion",
+      "title": {
+        "zh": "PaintRecord 绘制清单与层爆炸陷阱",
+        "en": "PaintRecord display lists & the layer explosion trap"
+      },
+      "desc": {
+        "zh": "Blink 在 Paint 阶段只记录矢量指令块，由 PaintArtifactCompositor 压缩合并图层；若底层动画元素与后续卡片重叠，则会迫使卡片各自拆出纹理引发层爆炸。",
+        "en": "Blink records vector PaintChunks squashed by PaintArtifactCompositor into shared backing layers, unless an overlapping promoted layer underneath forces every card above into separate GPU textures."
+      },
+      "anchor": "#ch6",
+      "aliases": {
+        "zh": [
+          "PaintRecord 绘制列表",
+          "层爆炸",
+          "will-change 内存暴涨",
+          "合成层压缩"
+        ],
+        "en": [
+          "PaintArtifactCompositor",
+          "layer explosion",
+          "compositing overlap test",
+          "implicit compositing"
+        ]
+      },
+      "relatedPages": []
+    },
+    {
+      "id": "chromium-tiling-checkerboarding",
+      "title": {
+        "zh": "TileManager 分块光栅化、双缓冲树与棋盘格",
+        "en": "TileManager tiling, OOP-R raster & checkerboarding"
+      },
+      "desc": {
+        "zh": "cc::TileManager 把大图层切成 256×256 或 512×512 瓦片并在 PendingTree 光栅化后切换至 ActiveTree；滚动快过光栅吞吐时视口会暴露空白棋盘格。",
+        "en": "cc::TileManager slices tall layers into 256×256 or 512×512 tiles rasterized onto PendingTree before activating to ActiveTree, exposing checkerboards when fast scrolls exceed throughput."
+      },
+      "anchor": "#ch7",
+      "aliases": {
+        "zh": [
+          "Chromium 图层分块",
+          "棋盘格现象",
+          "PendingTree 和 ActiveTree",
+          "OOP-R 光栅化"
+        ],
+        "en": [
+          "cc TileManager",
+          "checkerboarding scroll",
+          "PendingTree vs ActiveTree",
+          "OOP-R GPU rasterization"
+        ]
+      },
+      "relatedPages": [
+        "how-a-gpu-computes"
+      ]
+    },
+    {
+      "id": "chromium-viz-surface-aggregation",
+      "title": {
+        "zh": "Viz CompositorFrame、SurfaceAggregator 与跨源聚合",
+        "en": "Viz CompositorFrame & cross-process SurfaceAggregator"
+      },
+      "desc": {
+        "zh": "浏览器界面、主页面和跨域 iframe 分别提交只含 DrawQuad 的 CompositorFrame，由 GPU 进程里的 Viz SurfaceAggregator 缝合后送显。",
+        "en": "Browser chrome, main frames, and isolated OOPIF subframes each submit CompositorFrames of DrawQuads that Viz's SurfaceAggregator flattens into one unified display frame."
+      },
+      "anchor": "#ch8",
+      "aliases": {
+        "zh": [
+          "Viz 合成帧",
+          "SurfaceAggregator 聚合",
+          "OOPIF 跨源合成",
+          "BeginMainFrame 和 BeginImplFrame"
+        ],
+        "en": [
+          "viz CompositorFrame",
+          "Viz SurfaceAggregator",
+          "OOPIF surface embedding",
+          "BeginMainFrame vs BeginImplFrame"
+        ]
+      },
+      "relatedPages": [
+        "how-pixels-reach-a-screen"
+      ]
+    },
+    {
+      "id": "chromium-compositor-isolation",
+      "title": {
+        "zh": "主线程卡顿隔离：top/left 对决 transform/opacity",
+        "en": "Main-thread jank isolation: left vs. transform"
+      },
+      "desc": {
+        "zh": "修改 top/left 必须每帧重跑主线程五阶段且受阻于 JS 长任务；由 CSS/WAAPI 托管给合成器线程的 transform/opacity 动画在 120 Hz 下可做到零丢帧。",
+        "en": "Mutating left/top reruns five main-thread stages vulnerable to JS long tasks, whereas compositor-driven transform/opacity animations hold 120 fps uninterrupted."
+      },
+      "anchor": "#ch9",
+      "aliases": {
+        "zh": [
+          "为什么 transform 动画不卡",
+          "主线程卡顿与合成器隔离",
+          "top left 和 transform 性能区别",
+          "120Hz 网页掉帧"
+        ],
+        "en": [
+          "compositor thread animation",
+          "left vs transform performance",
+          "main thread jank isolation",
+          "CSS opacity compositor"
+        ]
+      },
+      "relatedPages": [
+        "how-pixels-reach-a-screen"
+      ]
+    },
+    {
+      "id": "chromium-graphite-frontier",
+      "title": {
+        "zh": "Skia Graphite、滚动驱动动画与 Speculation Rules 前沿",
+        "en": "Skia Graphite, scroll-driven animations & Speculation Rules"
+      },
+      "desc": {
+        "zh": "截至 2026 年 11 月的 Chromium 渲染前沿：基于 Dawn/WebGPU 的 Skia Graphite 多线程光栅、线程化滚动驱动动画、跨文档 View Transitions 与投机预渲染。",
+        "en": "Chromium's November 2026 rendering frontier: Dawn-backed multi-threaded Skia Graphite, compositor scroll-driven animations, cross-document View Transitions, and Speculation Rules prerendering."
+      },
+      "anchor": "#ch10",
+      "aliases": {
+        "zh": [
+          "Skia Graphite 与 Dawn",
+          "CSS 滚动驱动动画",
+          "跨文档 View Transitions",
+          "Speculation Rules 预渲染"
+        ],
+        "en": [
+          "Skia Graphite Dawn WebGPU",
+          "scroll-driven animations compositor",
+          "cross-document View Transitions",
+          "Speculation Rules prerendering"
+        ]
+      },
+      "relatedPages": []
+    },
+    {
+      "id": "chromium-jank-troubleshooting",
+      "title": {
+        "zh": "网页卡顿或掉帧时先问的三件事",
+        "en": "Three diagnostic questions for web page jank"
+      },
+      "desc": {
+        "zh": "对照 Performance 与 Layers 面板逐级定位：卡在主线程还是合成器 GPU、是否触发强制同步布局或非合成属性重排、以及是否发生层爆炸或瓦片棋盘格。",
+        "en": "A practical DevTools triage checklist separating main-thread long tasks, forced synchronous layout, non-composited animations, layer explosion, and tile checkerboarding."
+      },
+      "anchor": "#ch11",
+      "aliases": {
+        "zh": [
+          "网页掉帧排查清单",
+          "Chrome 性能卡顿怎么查",
+          "如何减少网页重排重绘"
+        ],
+        "en": [
+          "how to debug web page jank",
+          "Chrome rendering performance checklist",
+          "diagnose browser stutter"
+        ]
+      },
+      "relatedPages": [
+        "how-threejs-draws-a-scene",
+        "how-pixels-reach-a-screen",
+        "how-a-gpu-computes"
+      ]
+    }
+  ]
+}

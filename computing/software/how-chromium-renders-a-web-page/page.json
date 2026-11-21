@@ -1,0 +1,109 @@
+{
+  "slug": "how-chromium-renders-a-web-page",
+  "kind": "essay",
+  "tags": [
+    {
+      "zh": "Chromium",
+      "en": "Chromium"
+    },
+    {
+      "zh": "Blink 引擎",
+      "en": "Blink Engine"
+    },
+    {
+      "zh": "渲染与合成",
+      "en": "Rendering & Compositing"
+    },
+    {
+      "zh": "软件原理",
+      "en": "How Software Works"
+    },
+    {
+      "zh": "长文",
+      "en": "Long-form Essay"
+    }
+  ],
+  "category": "computing",
+  "subtopic": "software",
+  "stage": "university",
+  "path": "computing/software/how-chromium-renders-a-web-page/",
+  "created": "2026-11-21",
+  "layout": "essay",
+  "scripts": [
+    "models.js",
+    "copy.zh.js",
+    "copy.en.js",
+    "app.js"
+  ],
+  "version": "20261121",
+  "provenanceNote": {
+    "zh": "本文由 Antigravity 从零编写，对照 Chromium RenderingNG（Blink + cc + Viz，2026 年架构）源码设计与公开规格；中英文同步完成并已运行模型、版式与构建检查（浏览器实测与独立评审待做）。",
+    "en": "This essay was written from scratch with Antigravity against Chromium RenderingNG (Blink + cc + Viz, 2026 architecture) internals and public specifications; both Chinese and English were authored together and checked with model and template build tests (serial Playwright check and independent review pending)."
+  },
+  "dynamicKeys": {
+    "ch2.say": [
+      "blockingCssWait",
+      "blockingJsWait",
+      "deferReady",
+      "asyncEarly",
+      "asyncAfter"
+    ],
+    "ch3.say": [
+      "smartSimple",
+      "smartDeep",
+      "smartUniversal",
+      "naiveFull"
+    ],
+    "ch4.say": [
+      "thrashOver60",
+      "thrashOver120",
+      "thrashFits",
+      "batchedClean",
+      "containedFast"
+    ],
+    "ch5.say": [
+      "clippedOut",
+      "leftSlow",
+      "scrollFast",
+      "effectFast",
+      "transformFast"
+    ],
+    "ch6.say": [
+      "exploded",
+      "aboveSafe",
+      "noOverlapSafe",
+      "allMerged"
+    ],
+    "ch7.say": [
+      "idleClean",
+      "skewportClean",
+      "ooprClean",
+      "checkerboard"
+    ],
+    "ch8.say": [
+      "allLocked",
+      "mainBehindImplLocked",
+      "implOverload"
+    ],
+    "ch9.say": [
+      "compositorImmune",
+      "paintStalled",
+      "layoutStalled",
+      "cleanMain"
+    ],
+    "ch10.say": [
+      "graphitePrerender",
+      "graphiteCold",
+      "ganeshPrerender",
+      "ganeshCold"
+    ]
+  },
+  "generators": [
+    {
+      "run": "tools/diagrams.cjs",
+      "writes": [
+        "figures/dg-*.html"
+      ]
+    }
+  ]
+}

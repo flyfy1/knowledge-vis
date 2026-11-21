@@ -1,0 +1,22 @@
+<figure class="lab" id="lab-ch10-model">
+    <h3 data-i18n="ch10.model.title"></h3>
+    <p class="how" data-i18n-html="ch10.model.how"></p>
+    <div class="ctl">
+      <div class="seg" role="radiogroup" data-i18n-aria="ch10.ctl.be">
+        <span class="lbl" data-i18n="ch10.ctl.be"></span>
+        <label><input type="radio" name="c10Be" value="ganesh"><span data-i18n="ch10.be.ganesh"></span></label>
+        <label><input type="radio" name="c10Be" value="graphite" checked><span data-i18n="ch10.be.graphite"></span></label>
+      </div>
+      <label class="rng"><span data-i18n="ch10.ctl.cmds"></span><input type="range" id="c10Cmds" min="100" max="1200" step="100" value="600"><output id="c10Cmdso" for="c10Cmds"></output></label>
+      <label class="rng"><span data-i18n="ch10.ctl.wrk"></span><input type="range" id="c10Wrk" min="1" max="4" step="1" value="3"><output id="c10Wrko" for="c10Wrk"></output></label>
+      <label class="chk"><input type="checkbox" id="c10Pre" checked><span data-i18n="ch10.ctl.pre"></span></label>
+    </div>
+    <canvas class="cv short" id="c10Cv" role="img" data-i18n-aria="ch10.cv.aria"></canvas>
+    <div class="read">
+      <div><span data-i18n="ch10.read.rec"></span><b id="c10Rec" class="c"></b></div>
+      <div><span data-i18n="ch10.read.ovr"></span><b id="c10Ovr" class="n"></b></div>
+      <div><span data-i18n="ch10.read.nav"></span><b id="c10Nav" class="g"></b></div>
+      <div><span data-i18n="ch10.read.thr"></span><b id="c10Thr" class="v"></b></div>
+    </div>
+    <p class="say" id="c10Say" aria-live="polite"></p>
+  </figure>

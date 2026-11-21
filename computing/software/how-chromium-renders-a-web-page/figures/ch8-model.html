@@ -1,0 +1,22 @@
+<figure class="lab" id="lab-ch8-model">
+    <h3 data-i18n="ch8.model.title"></h3>
+    <p class="how" data-i18n-html="ch8.model.how"></p>
+    <div class="ctl">
+      <div class="seg" role="radiogroup" data-i18n-aria="ch8.ctl.hz">
+        <span class="lbl" data-i18n="ch8.ctl.hz"></span>
+        <label><input type="radio" name="c8Hz" value="60"><span data-i18n="ch8.hz.60"></span></label>
+        <label><input type="radio" name="c8Hz" value="120" checked><span data-i18n="ch8.hz.120"></span></label>
+      </div>
+      <label class="rng"><span data-i18n="ch8.ctl.main"></span><input type="range" id="c8Main" min="2" max="30" step="2" value="14"><output id="c8Maino" for="c8Main"></output></label>
+      <label class="rng"><span data-i18n="ch8.ctl.ras"></span><input type="range" id="c8Ras" min="1" max="12" step="1" value="3"><output id="c8Raso" for="c8Ras"></output></label>
+      <label class="rng"><span data-i18n="ch8.ctl.oop"></span><input type="range" id="c8Oop" min="0" max="6" step="1" value="2"><output id="c8Oopo" for="c8Oop"></output></label>
+    </div>
+    <canvas class="cv" id="c8Cv" role="img" data-i18n-aria="ch8.cv.aria"></canvas>
+    <div class="read">
+      <div><span data-i18n="ch8.read.bud"></span><b id="c8Bud" class="c"></b></div>
+      <div><span data-i18n="ch8.read.impl"></span><b id="c8Impl" class="n"></b></div>
+      <div><span data-i18n="ch8.read.main"></span><b id="c8Mfps" class="r"></b></div>
+      <div><span data-i18n="ch8.read.quads"></span><b id="c8Quads" class="g"></b></div>
+    </div>
+    <p class="say" id="c8Say" aria-live="polite"></p>
+  </figure>
