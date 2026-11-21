@@ -1,0 +1,22 @@
+<figure class="lab" id="lab-ch3-model">
+    <h3 data-i18n="ch3.model.title"></h3>
+    <p class="how" data-i18n-html="ch3.model.how"></p>
+    <div class="ctl">
+      <div class="seg" role="radiogroup" data-i18n-aria="ch3.ctl.edit">
+        <span class="lbl" data-i18n="ch3.ctl.edit"></span>
+        <label><input type="radio" name="c3Edit" value="README.md"><span>README.md</span></label>
+        <label><input type="radio" name="c3Edit" value="src/index.js"><span>src/index.js</span></label>
+        <label><input type="radio" name="c3Edit" value="src/core/hash.js" checked><span>src/core/hash.js</span></label>
+      </div>
+      <label class="rng"><span data-i18n="ch3.ctl.n"></span><input type="range" id="c3N" min="100" max="5000" step="100" value="1000"><output id="c3No" for="c3N"></output></label>
+      <label class="rng"><span data-i18n="ch3.ctl.c"></span><input type="range" id="c3C" min="10" max="200" step="10" value="50"><output id="c3Co" for="c3C"></output></label>
+    </div>
+    <canvas class="cv tall" id="c3Cv" role="img" data-i18n-aria="ch3.cv.aria"></canvas>
+    <div class="read">
+      <div><span data-i18n="ch3.read.new"></span><b id="c3New" class="g"></b></div>
+      <div><span data-i18n="ch3.read.shr"></span><b id="c3Shr" class="n"></b></div>
+      <div><span data-i18n="ch3.read.naive"></span><b id="c3Naive" class="r"></b></div>
+      <div><span data-i18n="ch3.read.git"></span><b id="c3Git" class="c"></b></div>
+    </div>
+    <p class="say" id="c3Say" aria-live="polite"></p>
+  </figure>

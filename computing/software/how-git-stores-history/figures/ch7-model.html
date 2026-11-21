@@ -1,0 +1,23 @@
+<figure class="lab" id="lab-ch7-model">
+    <h3 data-i18n="ch7.model.title"></h3>
+    <p class="how" data-i18n-html="ch7.model.how"></p>
+    <div class="ctl">
+      <div class="seg" role="radiogroup" data-i18n-aria="ch7.ctl.case">
+        <span class="lbl" data-i18n="ch7.ctl.case"></span>
+        <label><input type="radio" name="c7Case" value="clean" checked><span data-i18n="ch7.case.clean"></span></label>
+        <label><input type="radio" name="c7Case" value="same"><span data-i18n="ch7.case.same"></span></label>
+        <label><input type="radio" name="c7Case" value="conflict"><span data-i18n="ch7.case.conflict"></span></label>
+        <label><input type="radio" name="c7Case" value="delmod"><span data-i18n="ch7.case.delmod"></span></label>
+      </div>
+      <label class="rng"><span data-i18n="ch7.ctl.step"></span><input type="range" id="c7Step" min="0" max="6" step="1" value="6"><output id="c7Stepo" for="c7Step"></output></label>
+    </div>
+    <canvas class="cv tall" id="c7Cv" role="img" data-i18n-aria="ch7.cv.aria"></canvas>
+    <div class="read">
+      <div><span data-i18n="ch7.read.do"></span><b id="c7Do" class="g"></b></div>
+      <div><span data-i18n="ch7.read.dt"></span><b id="c7Dt" class="c"></b></div>
+      <div><span data-i18n="ch7.read.hunks"></span><b id="c7Hunks"></b></div>
+      <div><span data-i18n="ch7.read.conf"></span><b id="c7Conf" class="r"></b></div>
+    </div>
+    <pre class="code labbox" id="c7Out" tabindex="0" data-i18n-aria="ch7.out.aria"></pre>
+    <p class="say" id="c7Say" aria-live="polite"></p>
+  </figure>

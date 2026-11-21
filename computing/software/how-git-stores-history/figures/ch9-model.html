@@ -1,0 +1,23 @@
+<figure class="lab" id="lab-ch9-model">
+    <h3 data-i18n="ch9.model.title"></h3>
+    <p class="how" data-i18n-html="ch9.model.how"></p>
+    <div class="ctl">
+      <div class="seg" role="radiogroup" data-i18n-aria="ch9.ctl.mode">
+        <span class="lbl" data-i18n="ch9.ctl.mode"></span>
+        <label><input type="radio" name="c9Mode" value="full"><span>Full</span></label>
+        <label><input type="radio" name="c9Mode" value="shallow"><span>--depth</span></label>
+        <label><input type="radio" name="c9Mode" value="blobless" checked><span>blob:none</span></label>
+        <label><input type="radio" name="c9Mode" value="treeless"><span>tree:0</span></label>
+      </div>
+      <label class="rng"><span data-i18n="ch9.ctl.depth"></span><input type="range" id="c9Depth" min="1" max="50" step="1" value="1"><output id="c9Deptho" for="c9Depth"></output></label>
+      <label class="rng"><span data-i18n="ch9.ctl.bin"></span><input type="range" id="c9Bin" min="1" max="25" step="1" value="12"><output id="c9Bino" for="c9Bin"></output></label>
+    </div>
+    <canvas class="cv" id="c9Cv" role="img" data-i18n-aria="ch9.cv.aria"></canvas>
+    <div class="read">
+      <div><span data-i18n="ch9.read.wire"></span><b id="c9Wire" class="g"></b></div>
+      <div><span data-i18n="ch9.read.ratio"></span><b id="c9Pct" class="c"></b></div>
+      <div><span data-i18n="ch9.read.objs"></span><b id="c9Objs"></b></div>
+      <div><span data-i18n="ch9.read.trips"></span><b id="c9Trips" class="v"></b></div>
+    </div>
+    <p class="say" id="c9Say" aria-live="polite"></p>
+  </figure>

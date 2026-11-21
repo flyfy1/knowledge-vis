@@ -1,0 +1,22 @@
+<figure class="lab" id="lab-ch2-model">
+    <h3 data-i18n="ch2.model.title"></h3>
+    <p class="how" data-i18n-html="ch2.model.how"></p>
+    <div class="ctl">
+      <label class="txt"><span data-i18n="ch2.ctl.text"></span><input type="text" id="c2Text" value="hello git" maxlength="64"></label>
+      <div class="seg" role="radiogroup" data-i18n-aria="ch2.ctl.algo">
+        <span class="lbl" data-i18n="ch2.ctl.algo"></span>
+        <label><input type="radio" name="c2Algo" value="sha1" checked><span>SHA-1</span></label>
+        <label><input type="radio" name="c2Algo" value="sha256"><span>SHA-256</span></label>
+      </div>
+      <label class="chk"><input type="checkbox" id="c2Nl" checked><span data-i18n="ch2.ctl.nl"></span></label>
+      <label class="chk"><input type="checkbox" id="c2Flip"><span data-i18n="ch2.ctl.flip"></span></label>
+    </div>
+    <canvas class="cv" id="c2Cv" role="img" data-i18n-aria="ch2.cv.aria"></canvas>
+    <div class="read">
+      <div><span data-i18n="ch2.read.oid"></span><b id="c2Oid" class="g"></b></div>
+      <div><span data-i18n="ch2.read.path"></span><b id="c2Path" class="c"></b></div>
+      <div><span data-i18n="ch2.read.raw"></span><b id="c2Raw"></b></div>
+      <div><span data-i18n="ch2.read.zlib"></span><b id="c2Zlib" class="n"></b></div>
+    </div>
+    <p class="say" id="c2Say" aria-live="polite"></p>
+  </figure>

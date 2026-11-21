@@ -1,0 +1,601 @@
+---
+lang: zh
+title: Git 如何存下全部历史 · 一篇可以动手的长文
+desc: 每次敲下 git add 和 git commit，Git 并没有在 .git/ 里存一叠补丁，而是把整棵目录树写成了不可变的内容寻址对象。这篇按 Git 2.56.0 的真实字节格式与源码文档，从一条 git commit 往下追：.git 目录地图，blob 头与 SHA-1/SHA-256，tree 的二进制排布与子树共享，commit 有向无环图，index 的 stat 缓存与 Racy Git，分支、HEAD 与 reflog 的垃圾回收边界，Myers diff 与三方合并，packfile 的 COPY/INSERT 增量字节码与扇出索引，协议 v2 与部分克隆，以及 reftable、SHA-256 过渡和稀疏索引。九个可动手模型都在页面里重写算法，并与本机真实的 git 2.56.0 逐项对过数。
+---
+
+::: strings
+nav.back: ← 知识索引
+nav.lang: 语言
+toc.label: 目录
+toc.title: 目录
+u.pct: {v}%
+u.us: {v} µs
+u.days: {v} 天
+u.files: {v} 个文件
+u.revs: {v} 个版本
+:::
+
+# Git 如何存下全部历史 {#hero}
+
+::: strings
+kicker: 计算机 · 软件原理 · 一篇可以动手的长文
+:::
+
+你每次敲下 `git commit`，它都存下整个项目的完整快照。<br>既然每次都是完整快照，为什么仓库体积不会随着提交次数爆炸，修改和撤销历史又到底改了什么？ {.sub}
+
+大多数人用 Git 时，直觉里把它想成一串按时间排好的"代码补丁"——每次提交只记这一次改了哪几行。但只要打开 `.git/` 看一眼就会发现恰恰相反：**Git 从底层来说不是一套增量补丁系统，而是一个以内容哈希为地址的不可变对象数据库，加上几个可以随时改写的指针文件**。本文只追问一个问题：**当你运行 `git add` 和 `git commit` 时，`.git/` 里面到底写入了哪些字节，这些字节为什么既能秒级对比、不撑爆硬盘，又能在 `reset --hard` 之后把删掉的提交捞回来？** {.lead}
+
+文中的所有字节格式、算法规则和前沿状态都对照 **Git 2.56.0**（`/opt/homebrew/bin/git`，2026 年 9 月 28 日发布）及其随附的一手格式文档（`gitformat-loose`、`gitformat-index`、`gitformat-pack`、`reftable`、`racy-git`、`BreakingChanges`）。页面不调用任何外部库：九个交互模型都在 `models.js` 里从头重写了真实的 SHA-1、SHA-256、zlib DEFLATE 压缩、二进制树编码、Myers 差分、三方合并和 packfile 增量指令，并由 `tools/crosscheck.cjs` 在本机直接对照真实的 `git 2.56.0` 运行 58 项字节与哈希核对，全部一致。前置知识可参看[[a-secret-in-public#ch6|《当着所有人的面约定一个秘密》第 6 章]]（单向哈希与雪崩效应）与[[graph-algorithms#step0|《图算法》]]（图与遍历）。这篇文章由 AI 编写；每章末尾写明模型省掉了什么。 {.note}
+
+## 一张地图：`.git/` 里的四个区 {#ch1}
+
+::: strings
+toc: .git/ 里的四个区
+:::
+
+执行 `git add` 和 `git commit` 时，数据依次穿过工作区、暂存区（`.git/index`）和对象库（`.git/objects/`），最后真正移动的只是几十字节的引用指针（`HEAD` 与 `refs/heads/`）。 {.law}
+
+假设你新建了一个空目录，在里面写好 `hello.txt`，然后敲下下面这四行命令。你看到的只是终端回显了几行摘要，但在磁盘上，Git 把整个仓库严密地分成了四个职责截然不同的区域。
+
+::: html ch1-code
+code.aria: 一个最小 Git 仓库的建库与提交流程
+code: "$ git init -b main\n$ printf 'hello git\\n' > hello.txt\n$ git add hello.txt\n$ git commit -m \"init\""
+:::
+
+第一个区是你看得见摸得着的**工作区（Working Tree）**——普通的文件与目录，唯独没有历史。第二个区是二进制文件 `.git/index`（**暂存区 / 索引**），记录下一次准备打包提交的目录快照清单以及每个文件的操作系统 `stat` 指纹。第三个区是 `.git/objects/`（**对象数据库**），所有曾经提交过的文件内容、目录快照、提交记录和附注标签一旦写进去就永远不改写，只按自身内容的哈希值编址存放。第四个区是 `HEAD` 和 `.git/refs/`，里面存的不是数据，而是指向某次提交的**可变便签纸**。
+
+::: diagram dg-gitmap keys=dg.gitmap
+cap: 图 1　Git 仓库的四个区。自上而下，工作区的文件经 `git add` 写入对象并登记进暂存区，`git commit` 再生成树与提交对象，最后推动分支指针前进。
+aria: 示意图：工作区、暂存区 .git/index、对象库 .git/objects、以及 HEAD 和分支指针四层及命令流向
+l1: 工作区（Working Tree）
+l1s: 磁盘上的普通文件与文件夹
+l2: 暂存区（.git/index）
+l2s: 待提交的清单与 stat 元数据缓存
+l3: 对象库（.git/objects/）
+l3s: 不可变的 blob、tree、commit、tag
+l4: 引用指针（HEAD 与 refs/）
+l4s: 可随时改写的 41 字节分支文件
+x1: git add：写 blob 并更新 index
+x2: git commit：写 tree 与 commit
+x3: 移动当前分支指向新 commit
+:::
+
+把这四个区拆开以后，Git 里很多看起来反直觉的行为就立刻通了：为什么 `git add` 之后还没 `commit`，修改过的文件就已经在 `.git/objects/` 里留下一份实体？因为 `git add` 就已经把内容写进对象库了；为什么切换分支（`git checkout` / `git switch`）在几千个文件的仓库里只要零点几秒？因为它只需要把工作区里真正变化的文件换成目标树的对象，而不用拷贝整段历史。后面九章就顺着这张图逐层往下拆。
+
+这一章只画出边界。同一份对象在硬盘上既可以是单个松散文件，也可以被压进合并的包文件（第 8 章），引用也可以改用二进制块表来存（第 10 章）。 {.take}
+
+## Blob 与内容寻址：一个对象从字节到路径 {#ch2}
+
+::: strings
+toc: Blob 与内容寻址
+:::
+
+Git 不按文件名存文件，而是在文件内容前拼上 `&lt;类型&gt; &lt;字节数&gt;\0`，对整段字节求 SHA-1 或 SHA-256 哈希，再用前两个十六进制字符作分片目录把压缩后的对象存进 `.git/objects/`。 {.law}
+
+如果你把两份名字完全不同、却一字不差的文件放进同一个 Git 仓库，`.git/objects/` 里只会多出一个文件内容对象——Git 叫它 **blob**（binary large object）。原因在于：blob 里根本不存文件名、修改时间和权限，只存纯粹的字节流。
+
+具体来说，当你对内容为 `hello git\n`（共 10 字节）的 `hello.txt` 执行 `git add` 时，Git 先在内存里拼出一个精确的 ASCII 头部：`blob 10\0`，再紧接上那 10 个字节，得到一共 {=ch2.helloRaw} 字节的原始对象。接着对这 {=ch2.helloRaw} 字节算哈希：在默认 SHA-1 仓库下，前 8 位总是 `{=ch2.helloOid}`（完整 40 位十六进制，即 20 字节）；若初始化时指定 `--object-format=sha256`，前 12 位则是 `{=ch2.hello256}`（完整 64 位十六进制，即 32 字节）。与此同时，Git 用 **zlib**（RFC 1950/1951 DEFLATE 算法）把这 {=ch2.helloRaw} 字节压缩，再把压缩后的字节写进 `.git/objects/{=ch2.helloShard}/...`。为什么要拿前两个十六进制字符拆成最多 256 个子目录？因为早期文件系统（如 ext3/HFS+）在单个目录下塞进几十万个文件时目录查找会明显变慢。
+
+::: diagram dg-blob keys=dg.blob
+cap: 图 2　一个松散 blob 对象的诞生：`hello git\n` 拼上头部得到 {=ch2.helloRaw} 字节，一路算哈希命名、一路经 zlib 压缩落盘。
+aria: 示意图：原始内容拼上 blob 头部后，一侧经哈希得到对象 ID，一侧经 zlib 压缩，合起来写入 .git/objects/ 前两位分片路径
+in: 原始文件字节
+inv: "hello git\\n (10 B)"
+prep: 拼上对象头
+hdr: 未压缩对象（18 B）
+hdrv: "blob 10\\0hello git\\n"
+hash: 算 SHA-1 / 256
+oid: 8d0e4123...
+zlib: zlib 压缩
+zsz: 26 B 密文流
+path: 落盘路径（前 2 位分片）
+pathv: .git/objects/8d/0e4123...
+:::
+
+把自己的文件输入下面这个实验室。注意即使只改 1 个字节里的 1 个比特，整个哈希指纹和分片目录也会彻底面目全非（[[a-secret-in-public#ch6|雪崩效应]]）：这正是 Git 能够只凭 40 个十六进制字符就能保证内容绝无静默损坏的根基。
+
+::: lab ch2-model
+model.title: 亲手拼出一个 Git Blob 对象
+model.how: 在输入框里改几个字，切换 SHA-1 与 SHA-256，或勾上"翻转 1 个比特"。上方长条展示真实的 <code>blob &lt;size&gt;\0&lt;content&gt;</code> 字节头，下方对比原哈希与翻转 1 比特后哈希每一位的变化。
+ctl.text: 文件内容
+ctl.algo: 哈希算法
+ctl.nl: 末尾加 \n
+ctl.flip: 翻转第 1 字节的 1 个比特
+cv.aria: 上半部显示 blob 字节头和载荷字节，下半部显示 160 位或 256 位哈希指纹及 1 比特翻转对比网格
+cv.hdr: 头
+cv.pay: 载荷
+cv.orig: 原哈希指纹
+cv.flip: 翻转后 (青=同 / 金=变)
+cv.bits: "{diff}/{bits} 位反转"
+read.oid: 对象 ID（前 16 位）
+read.path: .git/objects/ 分片路径
+read.raw: 头部 + 内容字节数
+read.zlib: zlib 压缩后字节数
+say.base: 拼上对象头后共 {raw} 字节，经纯 JS DEFLATE/zlib 压缩为 {zlib} 字节；{algo} 指纹前两位 <code>{shard}</code> 决定了它必须落在 <code>{path}</code>。
+say.flip: 只翻转第 0 字节的最低 1 比特，{bits} 位哈希里有 <em>{diff} 位（{pct}）</em>同时反转，分片目录也从 <code>{s0}</code> 跳到了 <code>{s1}</code>——哪怕两个文件只差 1 比特，也绝不会写进同一个对象路径。
+:::
+
+实验里 `zlib` 的字节数用的是页面内按 RFC 1951 固定霍夫曼编码重写的纯 JS 压缩器，因此比本机 C 版 zlib 的默认动态霍夫曼多几个字节；但两边解压回来的原始字节和 SHA-1 / SHA-256 哈希在 `tools/crosscheck.cjs` 里逐字节完全一致。另外注意：如果文件空空如也（`0` 字节），Git 仍然先拼上 `blob 0\0`，所以空树（`tree 0\0`）在 SHA-256 下也有固定的指纹 `{=ch2.emptyTree256}...`。
+
+模型省掉了：Git 读取 `core.compression` 配置、符号链接（`120000`）与可执行文件权限的区分（blob 本身不存权限，权限留在下一章的 tree 里）。 {.take}
+
+## Tree 与目录快照：为什么每次全量快照不爆盘 {#ch3}
+
+::: strings
+toc: Tree 与目录快照
+:::
+
+Git 用 `tree` 对象表示目录：每条目录项按 `&lt;权限模式&gt; &lt;文件名&gt;\0&lt;20或32字节二进制哈希&gt;` 排序拼接；改一个文件时，只有从那个文件到根目录一路上的 tree 需要新建，其余未改动的文件与子目录按哈希直接复用。 {.law}
+
+既然 blob 里连文件名都没有，Git 怎么知道哪个文件叫 `hello.txt`、在不在 `src/core/` 下面、有没有可执行权限？答案是 **tree 对象**。每个目录对应一个 tree 对象，里面按二进制格式一排排紧凑地列出当前目录的直接子项：文件的权限模式（普通文件固定为 `100644`，可执行文件为 `100755`，子目录为 `40000`——注意源码写进原始树对象时**不带前导零**，虽然 `git ls-tree` 会补零显示为 `040000`）、一个空格、文件名、一个 `\0` 结束符，紧接着不是四十个十六进制字符，而是**原始的 20 字节（或 SHA-256 下 32 字节）二进制哈希**。
+
+更微妙的是 tree 内部条目排序的规则。Git 在排序目录项时，会**假装子目录名末尾多了一个斜杠 `'/'`（ASCII 0x2F）**去和普通文件名比较。于是如果根目录同时有一个文件叫 `foo-bar.txt` 和一个子目录叫 `foo`，在二进制 tree 对象里排在前面的反而是 `foo-bar.txt`——因为 `'-'`（ASCII 45）小于 `'/'`（ASCII 47）！我们在 `tools/crosscheck.cjs` 里专门用 `git write-tree` 验证过这条经典边界。
+
+::: diagram dg-tree keys=dg.tree
+cap: 图 3　上方是二进制 tree 条目的真实字段布局；下方展示只改 README 时，新旧两版根 tree 如何通过哈希指针直接共享未改动的 `src/` 整棵子树。
+aria: 示意图：tree 二进制条目的 mode、name、二进制 OID 三段布局，以及两次提交共享未变化子树的关系
+fmt: tree 内部一条记录（二进制）
+mode: "100644"
+name: "hello.txt\\0"
+oid: "20 B 原始哈希"
+t1: 提交 1 根 tree
+t2: 提交 2 根 tree
+b1: README v1
+b2: README v2（新建）
+shared: src/ 子树（哈希相同，直接复用）
+:::
+
+这就是为什么 Git 可以理直气壮地声称"每次提交都保存完整快照"却不会把硬盘撑爆。以一个树深为 $d$、共有 $N$ 个文件的仓库为例：只改动 1 个文件并提交，Git 真正新写的对象只有 **1 个新 blob 加上从它所在目录一路往上到根目录的 $d+1$ 个新 tree**；哪怕仓库有 1,000 个文件、连提交 50 次（每次改 1 个文件），朴素全量拷贝要存下 {=ch3.naive50} 个文件副本，而 Git 的 Merkle 树只多出 49 个文件对象，总共只需 {=ch3.git50} 个 blob。
+
+::: lab ch3-model
+model.title: 一次修改只重写几条树枝：Merkle 目录树与对象复用
+model.how: 选一个要修改的文件（根目录的 <code>README.md</code>、一层的 <code>src/index.js</code> 或两层的 <code>src/core/hash.js</code>），再拖仓库文件数与提交次数。左图是真实的 10 文件示例仓库，金色是新建对象，绿色是被哈希原封不动复用的旧对象；右图对比朴素拷贝与 Git 快照的累计 blob 数。
+ctl.edit: 修改哪个文件
+ctl.n: 仓库规模 N
+ctl.c: 提交次数 C
+cv.aria: 左半部显示示例仓库的多级 tree 与 blob 共享关系，右半部对比朴素拷贝与 Git 共享树的对象数量曲线
+cv.tree: 示例仓库共享树
+cv.new: 新建
+cv.shr: 复用
+cv.x: 提交次数 C
+cv.y: 累计 blob 数
+cv.naive: 朴素拷贝
+cv.git: Git 快照
+read.new: 本次提交新建对象
+read.shr: 直接复用的旧对象
+read.naive: 朴素全量拷贝 blob 总数
+read.git: Git 实际 blob 总数
+say: 修改 <code>{path}</code>（目录深度 {depth}）后，示例仓库 {total} 个对象里只新建了 <em>{new}</em> 个（1 个 blob + {trees} 个沿途 tree），其余 {shr} 个旧对象全部通过哈希指针复用。在 {n} 个文件、连续改 {c} 次的规模下，Git 共写 <em>{git}</em> 个 blob，而朴素拷贝需要 {naive} 个（节省 {save}）。
+:::
+
+把要改的文件从两层深的 `src/core/hash.js` 切到根目录的 `README.md` 看看：新建对象立刻从 {=ch3.treeNew} 个缩减到 2 个（1 个新 blob + 1 个新根 tree），`docs/`、`src/`、`tests/` 三棵子树连同它们里面的全部文件都纹丝不动，在 `{=ch3.treeTotal}` 个对象里复用了 {=ch3.treeShared} 个。注意一个直观却重要的推论：**同一棵 `tree` 的哈希完全决定于它底下每一个子对象的哈希和名字**。只要任意深处改了 1 比特，沿途所有父 tree 的哈希都会链式重算；反过来，只要根 tree 哈希一致，Git 不用逐个文件对比就能在一微秒内断言整棵目录树一模一样。
+
+模型省掉了：同名但跨目录移动时的重命名启发式检测（Git 不在对象里记录"重命名"，只在 `diff` 时按内容相似度临时推断）以及压缩打包（第 8 章）。 {.take}
+
+## Commit 与有向无环图：为什么历史只能新写、不能原地改 {#ch4}
+
+::: strings
+toc: Commit 与有向无环图
+:::
+
+每个 `commit` 对象只是一段几十到几百字节的纯文本，写着根 `tree` 哈希、零个或多个 `parent` 哈希、作者/提交者时间戳和提交说明；正因为哈希锁定了 `parent`，`amend` 和 `rebase` 从来不是修改旧提交，而是生成一套全新的提交节点再把分支指针挪过去。 {.law}
+
+Tree 把某一个瞬间的整套目录定格了，但它还不知道"这一瞬间是在哪一次快照之后发生的"。把瞬间串成历史的，是第 3 种对象：**commit**。如果你用 `git cat-file -p HEAD` 看一个真实的 commit，里面只有寥寥数行极朴素的文本：
+- `tree &lt;oid&gt;`：指向这一次提交的根目录快照； {#f1}
+- `parent &lt;oid&gt;`：指向它的上一任提交（初始提交没有 `parent`，合并提交有两个或多个 `parent`）； {#f2}
+- `author` 与 `committer`：姓名、邮箱、Unix 秒数与时区； {#f3}
+- 空一行，然后是提交说明。 {#f4}
+
+就这么简单。把所有 commit 按 `parent` 指针画出来，就得到一张**有向无环图（DAG）**（关于图和有向边遍历，见[[graph-algorithms#step0|《图算法》]]）。而之所以它是"不可变"的，道理来自第 2 章：如果有人试图偷偷改掉早年某个 commit 里的一个字母、甚至只把它的时间戳提前 1 秒，那个 commit 自身的哈希就会彻底改变；于是它的所有子 commit 里的 `parent` 字段也跟着对不上了，除非把后面每一代全盘重写一遍。
+
+::: diagram dg-dag keys=dg.dag
+cap: 图 4　上方是 commit 对象的明文结构；下方展示执行 `git commit --amend` 时，旧提交 `C2` 纹丝不动，只是长出了指向同一父节点 `C1` 的新节点 `C2'`。
+aria: 示意图：commit 对象含 tree、parent、author、committer、message，以及 amend 生成新节点 C2' 而旧节点 C2 变成孤立节点的 DAG 结构
+ct: "tree 07ed5a7..."
+cp: "parent d60f514..."
+ca: "author Ada ... 1700000000"
+cm: 提交说明（空一行后正文）
+old: 原提交留存
+ptr: main
+:::
+
+所以下次再听到"改写历史"（`git commit --amend`、`git rebase`），一定要记住它**并没有真的改掉任何一个旧对象**。在默认示例图里，初始提交 `C0` 的短哈希是 `{=ch4.c0Oid}`，`C2` 的短哈希是 `{=ch4.c2Oid}`；当你运行一次 `amend`，Git 只是照着 `C2` 的父节点新算出一颗短哈希为 `{=ch4.c2pOid}` 的新 commit，再把 `main` 分支贴到新节点上，原来的 `{=ch4.c2Oid}` 依然完好无损地躺在 `.git/objects/` 里。按下下面的动作按钮试试看。
+
+::: lab ch4-model
+model.title: 在不可变 DAG 上"改写"历史
+model.how: 依次点击 <code>commit</code>、<code>amend</code>、<code>rebase</code>、<code>merge</code>，观察图形和下方真实的 <code>HEAD</code> commit 原始字节载荷。注意每次 <code>amend</code> 或 <code>rebase</code> 都会 mint 出全新哈希的节点，而红色虚线圆圈代表依然留在对象库里的"孤立"旧提交。
+ctl.hint: 操作
+btn.commit: commit (main)
+btn.amend: amend HEAD
+btn.rebase: rebase feat → main
+btn.merge: merge feat → main
+btn.reset: 重置图
+cv.aria: 提交有向无环图，展示分支可达节点与 amend/rebase 后孤立但仍存在于对象库的旧提交
+cv.reach: 可达提交
+cv.orph: 孤立旧提交
+read.head: 当前 HEAD 提交
+read.total: 对象库总提交数
+read.orph: 已被分支甩开的旧提交
+read.sz: 当前 commit 对象大小
+pay.aria: 当前 HEAD commit 的真实对象字节内容
+ev.init: 初始状态：两条分支分叉自 C1，当前没有任何孤立提交。
+ev.commit-main: 在 main 上新建提交：只是在原来的链条末端挂上了一个指向旧 tip 的新节点。
+ev.amend-main: 执行 amend：旧节点依然完整躺在对象库里，只是分支指针跳到了继承同一 parent 的新提交上。
+ev.rebase-feat: 执行 rebase：feat 上的提交被原样重放成以 main 最新节点为 parent 的新节点，旧 feat 节点变孤立。
+ev.merge-feat: 执行 merge：生成一个同时写着两个 parent 的合并提交，两条历史合流，零节点报废。
+say: {ev} 当前对象库里共有 {total} 个 commit，其中 <em>{orph}</em> 个已经不在任何分支链上（第 6 章看 reflog 如何暂时保住它们）。
+:::
+
+记住这个画面：`amend` 和 `rebase` 之所以在多人协作时不能随便推到已经共享的远程分支，不是因为 Git 抹掉了旧历史，恰恰是因为旧提交还在别人电脑里，而你造出了一串**哈希完全不同、却有共同祖先的平行分支**。
+
+模型省掉了：GPG/SSH 签名字段（`gpgsig` header，同样算进 commit 哈希里）、作者与提交者时间错开（`rebase` 会保留 `author` 日期而更新 `committer` 日期）以及多个 `merge` 时的冲突解决细节。 {.take}
+
+## Index（暂存区）：`git status` 为什么不用全盘重算哈希 {#ch5}
+
+::: strings
+toc: Index（暂存区）
+:::
+
+`.git/index` 把已追踪路径的二进制清单和每个文件的操作系统 `lstat(2)` 元数据缓存存在一起；`git status` 只要比对时间戳、inode 和大小未变，就能直接跳过读盘和哈希，但同一秒内原地改写还会触发"Racy Git"保护机制。 {.law}
+
+一个有一两万个文件的中大型仓库，你改了其中 3 个文件再敲 `git status`，不到 50 毫秒它就能准确报出哪 3 个改了。如果 `git status` 真的去把两万个文件全部读进内存再算一遍 SHA-1，磁盘 I/O 早就慢得没法用了。秘密就藏在 `.git/index` 里。
+
+打开 Git 2.56.0 的 `gitformat-index` 文档就会看到：`.git/index` 开头是一个 12 字节的文件头（魔数 `DIRC`，代表 Directory Cache；版本号 2、3 或 4；条目总数），中间是一串按路径字节序排好的索引条目，尾部是一个可选的 `TREE` 缓存树扩展和全文件校验和。最关键的设计在于：**每一条索引记录里除了模式、对象 ID 和路径之外，还存了上一次 `git add` 或检出时从文件系统 `lstat(2)` 系统调用拿到的全套元数据**——包括 `ctime`、`mtime`、`dev`、`ino`、`uid`、`gid` 和截断到 32 位的 `size`。
+
+::: diagram dg-index keys=dg.index
+cap: 图 5　`.git/index` v2 的二进制排布与 `ce_match_stat()` 的快速路径：先比对 `stat` 字段，只有对不上或落在同一时间刻度内时才读盘重算哈希。
+aria: 示意图：index 文件的 DIRC 头部、含 stat 元数据与 OID 的条目区、TREE 扩展，以及 lstat 命中跳过与未命中重算两路分支
+sig: "DIRC (4 B)"
+ver: "v2 (4 B)"
+cnt: "条目数 (4 B)"
+ent: 有序索引记录（按路径字节序）
+stat: "ctime mtime ino size"
+oid: "mode OID flags path"
+ext: "TREE 扩展 + 尾部校验和"
+chk: "lstat(2) 核对"
+hit: 一致：跳过读盘
+miss: 不符：读盘重算
+:::
+
+在下面默认 2,000 个追踪文件、3 个被真正修改、5 个被 `touch` 过修改时间的例子里，`.git/index` 大约占 {=ch5.idxBytes}；`git status` 能靠 `stat` 缓存直接跳过其中 {=ch5.idxSkip} 个文件，连内容字节都不读。但这个优化藏着一个著名的并发陷阱——文档 `technical/racy-git.adoc` 里管它叫 **Racy Git（竞态 Git）**。想象你在 1 秒之内先运行 `git add foo`，紧接着在同一时间戳刻度内原地修改了 `foo` 里的两个字母（文件大小完全没变！）。此时硬盘上 `foo` 的 `mtime` 和 `size` 与 `.git/index` 里记的竟然完全一模一样！为了堵住这个漏洞，Git 在 `ce_match_stat()` 里加了一条硬规则：**凡是文件 `mtime &gt;= .git/index` 自身的时间戳，一律视作"可疑干净（racily clean）"，绝不轻信缓存，必须老老实实读文件重算哈希；并且下次写回 `.git/index` 时，Git 会故意把这类条目的缓存 `st_size` 截成 `0`**，迫使之后再运行 `git status` 也永远能抓出改动（这一行为我们在 `tools/crosscheck.cjs` 里实测 Git 2.56.0 已确认）。
+
+::: lab ch5-model
+model.title: Index 的 stat 缓存与 Racy Git 陷阱
+model.how: 调节追踪文件总数、真改过内容的文件数和仅碰过时间戳（<code>touch</code>）的文件数；再勾选"在同一时间刻度内原地改写（Racy Git）"，看缓存拦截率、重算哈希数以及 <code>src/racy.cfg</code> 的索引记录发生了什么变化。
+ctl.n: 追踪文件总数
+ctl.mod: 内容与大小已改
+ctl.touch: 仅改 mtime（内容未变）
+ctl.racy: 触发 Racy Git（同刻度原地改写，大小不变）
+cv.aria: 上方显示六个样本文件的 stat 缓存检查结果与 racy 清零现象，下方柱状图对比跳过读取与重算哈希的文件数
+cv.col1: 样本路径
+cv.col2: 索引大小
+cv.col3: 检查动作
+cv.skip: 跳过读盘
+cv.stat: stat 不符: 重算
+cv.racy: racy=0: 强制重算
+cv.barS: stat 跳过
+cv.barH: 重算哈希
+read.skip: 靠 stat 直接跳过
+read.hash: 必须读盘重算哈希
+read.racy: 触发 Racy Git 复核
+read.idx: .git/index 估算体积
+say.norm: 在 {n} 个文件里，<code>lstat(2)</code> 缓存放行了 <em>{skip}</em> 个干净文件（{pct} 零内容读取），只对 {mod} 个真修改和 {touch} 个时间戳变化的文件重算了哈希。
+say.racy: 勾上 Racy Git 后，<code>src/racy.cfg</code> 的工作区时间戳不早于 <code>.git/index</code> 本身且大小相同：Git 拒绝信任缓存，把索引里的 <code>st_size</code> 清成了 <em>0</em> 并强制多复核了 {racy} 项，确保修改绝不会漏掉。
+:::
+
+`git update-index --refresh` 干的正是件事：当一个文件只是被构建脚本 `touch` 了一下导致 `mtime` 变了、内容却没变时，重新对过哈希之后，它把新的 `mtime` 刷回 `.git/index`，让下一次 `git status` 重新回到高速缓存路径。此外 `.git/index` 里的 `TREE` 缓存扩展还记录了未失效子目录对应的现成 `tree` 哈希——第 3 章里那些没动过的子目录，在 `git commit` 时连 `tree` 对象都不用重新遍历索引就能直接复用。
+
+模型省掉了：`fsmonitor` 守护进程（用系统文件监控事件连 `lstat` 都省掉大半）、索引 v4 的路径前缀压缩，以及合并冲突时同一路径在索引里占用的 stage `1/2/3` 槽位。 {.take}
+
+## 分支、标签、`HEAD` 与 `reflog`：为什么 `reset --hard` 还能救回来 {#ch6}
+
+::: strings
+toc: 分支、HEAD 与 reflog
+:::
+
+分支不是一个装着一串提交的容器，它只是 `.git/refs/heads/` 下一个 {=ch6.branchBytes} 字节的文件；`git reset --hard` 改写的只是这几十字节，旧提交在 `.git/logs/HEAD` 的保护下能活几十天，直到 `reflog` 过期且触发 `git gc` 才真正被删掉。 {.law}
+
+在传统的 `files` 引用后端里，建一个分支廉价到令人发指：`git branch feat` 做的几乎全部分配工作，就是在 `.git/refs/heads/feat` 写入 40 个十六进制字符加一个换行符——刚好 **{=ch6.branchBytes} 字节**（SHA-256 仓库下是 65 字节）。所谓的"当前在哪条分支上"，则是 `.git/HEAD` 里的 **{=ch6.headBytes} 字节**文本：`ref: refs/heads/main\n`。一旦你运行 `git checkout &lt;某个旧提交哈希&gt;` 进入"分离头指针（Detached HEAD）"状态，`.git/HEAD` 只是把内容从那行 `ref:` 换成了 40 位提交哈希本身，其他任何对象都没有动。
+
+标签（Tag）也在这个区：轻量标签（`git tag v1.0-light`）和分支完全一样，只是 `.git/refs/tags/` 下一个只存 41 字节哈希、平时不跟着新提交往前跑的文件；而附注标签（`git tag -a v1.0 -m ...`）会真正往 `.git/objects/` 里写第 4 种对象（`tag` 对象），把被指对象、类型、标签名、打标签者和附注消息全部哈希锁死，再让 `.git/refs/tags/v1.0` 指向这个标签对象。
+
+::: diagram dg-refs keys=dg.refs
+cap: 图 6　分支与标签都只是指向 `.git/objects/` 某颗节点的便签。`git reset --hard` 把 `main` 往回挪到 `C3` 后，`C4` 不再被分支引用，却仍被本地的 `logs/HEAD` 钉住免于被垃圾回收。
+aria: 示意图：HEAD 指向 refs/heads/main 再指向 C3，tags/v1.0 指向 C2，而已被 reset 甩开的 C4 仍受 logs/HEAD 保护
+head: HEAD
+branch: refs/heads/main
+tag: tags/v1.0 → C2
+log: .git/logs/HEAD (reflog)
+logs: 过期前仍保住孤立提交 C4
+:::
+
+于是就解开了每位开发者都会遇到的救命之谜：不小心敲了 `git reset --hard HEAD~2`，最近两个提交瞬间从 `git log` 里消失，代码也退回去了，为什么用 `git reflog` 还能原封不动找回来？因为**每次 `HEAD` 或分支指针移动时，Git 都在本地的 `.git/logs/HEAD` 和 `.git/logs/refs/heads/...` 追加一行日志**，记下"刚才从哪个 OID 挪到了哪个 OID、什么时候挪的"。而在运行垃圾回收（`git gc`）时，可达性扫描会把**所有当前分支、标签、`HEAD` 以及未过期的 `reflog` 条目**一并算作根节点（GC roots）。
+
+::: lab ch6-model
+model.title: 可达性、Reflog 过期窗与 GC 清理边界
+model.how: 保持或取消勾选 <code>git reset --hard HEAD~2</code>，拖动"时间流逝"滑杆推进天数，再调整过期策略 <code>gc.reflogExpireUnreachable</code>（Git 默认 30 天），最后勾选运行 <code>git gc --prune=now</code>，看哪些提交被绿色保住、金色暂存、紫色悬空、红色彻底回收。
+ctl.reset: 执行 git reset --hard HEAD~2 (main 回退到 C3)
+ctl.days: 时间流逝
+ctl.exp: 不可达 reflog 保留上限
+ctl.gc: 运行 git gc --prune=now
+cv.aria: 提交链 C1 到 C5 及游离提交 D1 与标签 v1.0 的可达性状态图
+cv.reach: 可达
+cv.reflog: reflog 保活
+cv.dang: 悬空
+cv.pruned: 已回收
+cv.exp: 过期线
+read.reach: 分支/标签直接可达
+read.reflog: 仅靠 reflog 保活
+read.dang: 已悬空等待清理
+read.pruned: 已被 gc 删除
+say.safe: 分支与标签直接到达 {reach} 个提交；没有被甩开的孤立提交。
+say.saved: <code>main</code> 已回退（或曾游离），但过去 {days} 天仍小于 <em>{exp} 天</em>上限：<code>logs/HEAD</code> 保住了 {reflog} 个历史提交，一条 <code>git reset</code> 就能瞬间捞回。
+say.dangling: 已过 {days} 天，超过 <code>reflog</code> 上限 {exp} 天：{dang} 个节点已经变成悬空对象（dangling），但未运行 <code>git gc</code> 前仍留在硬盘上。
+say.pruned: <code>git gc --prune=now</code> 执行完毕：已过 reflog 保护期的 {pruned} 个不可达提交连同它们独有的树和文件内容已从对象库永久清除。
+:::
+
+顺带注意：默认情况下，能从当前分支直接祖先连上的提交叫"可达 reflog"，保留期限默认 **90 天**（`gc.reflogExpire`）；像 `reset --hard` 甩开或分离头指针留下来的"不可达 reflog"，默认保留期限只有 **30 天**（`gc.reflogExpireUnreachable`）。还有一点千万别搞混：`reflog` 永远是**纯本地**的日志，从不随 `git push` 或 `git fetch` 跨网络同步。
+
+模型省掉了：`git gc` 默认还有两周的松散对象宽限期（`gc.pruneExpire = 2.weeks.ago`）以免误删并发进程正在写入的新对象，实验里勾选 `gc` 直接模拟 `--prune=now` 的即时清理效果。 {.take}
+
+## Diff 与三方合并：存快照的 Git 怎么算出改了哪几行 {#ch7}
+
+::: strings
+toc: Diff 与三方合并
+:::
+
+正因为 Git 提交时保存的是各自独立的完整快照，`git diff` 才必须在读取时用 Eugene Myers 的最短编辑脚本算法现算行级差异；而 `git merge` 先在提交图上找到最近共同祖先 `B`，再用两组 diff 合成自动合并或冲突标记。 {.law}
+
+初学 Git 的人常问一个看似矛盾的问题：既然第 3 章和第 4 章说 Git 每次存的是完整快照而不是补丁，为什么 `git show` 和 `git diff` 又能精确标出 `+` 和 `-` 的行变动？答案很简单——**保存时存快照，查看时现算差值**。当你想看两次提交的差异时，Git 顺着两边根 tree 一路往下对比；只要遇到哈希完全相同的子树或文件，整枝直接跳过；只有哈希不同的 blob，才读出来逐行跑差分。
+
+Git 默认使用的行级差分算法源自 Eugene Myers 1986 年的经典论文：把旧文件 $N$ 行铺在横轴，新文件 $M$ 行铺在纵轴，寻找从左上角 $(0,0)$ 走到右下角 $(N,M)$ 的**最短编辑路径**——向右走一格代表删掉旧行，向下走一格代表插入新行，两行内容相同时可以免费沿对角线斜走一步（保留相同行）。按编辑步数 $d = 0, 1, 2 \dots$ 一层层往外扩，所需时间复杂度为 $O((N+M)D)$，其中 $D$ 是实际变动行数而不是文件总长。
+
+::: diagram dg-merge keys=dg.merge
+cap: 图 7　三方合并（3-way merge）：不能只比对当前分支 `O` 和待合分支 `T`，必须回溯到它们在 DAG 上的最近共同祖先 `B`（merge base），才能分辨出"谁改了什么"。
+aria: 示意图：共同祖先 B 分别连向 Ours O 和 Theirs T，最后合成为合并结果 M；以及冲突块标记
+base: 共同祖先 B (LCA)
+ours: 当前分支 (Ours)
+theirs: 目标分支 (Theirs)
+out: 合并结果 (Merge)
+rule: 同一行在 B→O 与 B→T 改动不同：
+cfl: "<<<<<<< / ======= / >>>>>>> 冲突块"
+:::
+
+到了合并分支（`git merge`）时，只拿 `Ours` 和 `Theirs` 两份文件直接对比是算不出谁对谁错的——比如 `Ours` 的第 2 行写着 `port = 8080`，`Theirs` 的第 2 行写着 `port = 3000`，如果不知道这行原本是什么，机器怎么知道是 `Ours` 改了、还是 `Theirs` 改了？所以 Git 的合并引擎（从 Git 2.34 起默认是 `ort` 后端，Ostensibly Recursive's Twin）第一步必须在第 4 章那张提交 DAG 上用图搜索找出**最近共同祖先（Lowest Common Ancestor / merge base）`B`**，然后同时算 `diff(B, Ours)` 和 `diff(B, Theirs)`：
+- 只有一边改动的区域：直接采纳那一边； {#m1}
+- 两边改得一模一样的区域（收敛修改）：干净地合并，不报冲突； {#m2}
+- 两边对同一段基线做了**不同修改**（哪怕只是一边删行、另一边改行）：Git 停下来，插进著名的三段式冲突标记 `&lt;&lt;&lt;&lt;&lt;&lt;&lt;`、`=======`、`&gt;&gt;&gt;&gt;&gt;&gt;&gt;` 交给人类拍板。在最新的 Git 2.56.0 里，`git add` 还专门新增了 `--resolved` 选项，只暂存已解决冲突的路径并在里面自动扫描残留的冲突标记，防止开发者手滑把 `&lt;&lt;&lt;&lt;&lt;&lt;&lt;` 提交进历史。 {#m3}
+
+::: lab ch7-model
+model.title: Myers 编辑图与三方行合并模拟器
+model.how: 切换四种合并情形（不重叠修改、两边改得相同、同行冲突、一边删另一边改），再拖动 Myers 步数滑杆 <code>d</code> 观察左边编辑图前沿怎么一圈圈找到最短路径，右边是实时跑出来的三方合并文本输出。
+ctl.case: 合并情形
+case.clean: 互不重叠的修改
+case.same: 两边改得相同
+case.conflict: 同一行冲突
+case.delmod: 一边删行 / 一边修改
+ctl.step: Myers 扩散步数 d
+cv.aria: 左半部显示 Base 到 Ours 的 Myers 编辑网格与最短路径，右半部展示 Base、Ours、Theirs 的三方行对齐
+cv.grid: Myers 编辑图 (Base → Ours)
+cv.merge: 三方行对照
+cv.step: "步 d = {d}"
+read.do: Base → Ours 编辑距 D
+read.dt: Base → Theirs 编辑距 D
+read.hunks: 差异区块数
+read.conf: 冲突区块数
+out.aria: 三方合并后的真实文本输出
+say.clean: <code>Ours</code> 与 <code>Theirs</code> 修改了基线的不同行，两个区域互不重叠：Git 无需人工介入，干净地自动合并出了完整结果。
+say.same: 两边都修改了同一行，但改后的内容完全一致（收敛修改）：在确认基线 <code>Base</code> 后，Git 认定两方达成一致，冲突数为 <em>0</em>。
+say.conflict: 同一段基线在 <code>Ours</code>（D={do}）和 <code>Theirs</code>（D={dt}）中被改成了不同文本：三方合并在重叠区间插进标准冲突标记等待解决。
+say.delmod: 一边删掉了整行、另一边却编辑了同一行：这两个更改区域在基线上有重叠，因此也会触发 <em>{conf}</em> 处冲突。
+:::
+
+顺便一提：现实仓库在发生"十字交叉合并（criss-cross merge）"时，两分支可能存在**不止一个**互不为祖先的共同祖先；Git 的 `ort` 策略会先把这几个共同祖先递归地合出一个虚拟基线，再拿去做最终的三方合并。
+
+模型省掉了：块内精细词级对比（`patience` / `histogram` diff 选项）、文件重命名探测（`ort` 会按内容相似度和目录重命名启发式追踪移动的文件），以及合并多个共同祖先时的递归虚拟基线构造。 {.take}
+
+## Packfile 与增量压缩：松散对象如何被压成 `.pack` 和 `.idx` {#ch8}
+
+::: strings
+toc: Packfile 与增量压缩
+:::
+
+Git 的"增量压缩"不在写提交时发生，而是在打包阶段把所有对象按 `(类型, 路径哈希, 体积从大到小)` 排好队，在滑动窗口里把相似旧版变成向新版指回的 `COPY`/`INSERT` 字节流，连同 256 桶扇出索引 `.idx` 一起封装进 `.git/objects/pack/`。 {.law}
+
+读到第 3 章和第 4 章时，细心的读者一定还有半个疑问没解开：虽说每次提交可以复用没改过的旧文件，但如果我有一份 100 KB 的源码每天改两行、连提交 200 次，200 个略有不同的 blob 就算各自 zlib 压缩，加起来也有好几兆。Git 难道真的永远把这 200 份全量塞在硬盘上吗？
+
+不是。当你执行 `git gc`、`git repack -ad` 或向远端推送时，Git 会把成千上万个零散的松散对象统统收进一对打包文件里：`pack-*.pack`（数据流）和 `pack-*.idx`（索引表），Git 2.40 起默认还会伴随一个逆向索引 `pack-*.rev`。**直到这一刻，增量（delta）压缩才真正登场**，而且它的压缩顺序完全反直觉——按 Git 文档 `technical/pack-heuristics.adoc` 里的经典记录，Git 选谁和谁做增量并不是按时间从旧到新，而是把待打包对象按照一个精心挑过的键排序：
+1. **对象类型**（`commit`、`tree`、`blob`、`tag` 绝不跨类型做 delta）； {#h1}
+2. **文件名字与目录路径哈希**（把同路径、同文件名的历史版本紧挨着排到一块儿）； {#h2}
+3. **体积从大到小**（让**最新、往往最大的版本**以完整基线形态排在前面，而让历史老版本写成向它回指的 delta——这样最常用的最新版本读取时完全不用链式回放！）。 {#h3}
+
+::: diagram dg-pack keys=dg.pack
+cap: 图 8　`.pack`（v2）把对象头部压成类型+变长字节流，用 `COPY` / `INSERT` 指令从基线拼出目标版本；`.idx`（v2）用 256 个首字节扇出槽把二分查找立刻缩小 256 倍。
+aria: 示意图：.pack 文件头与变长对象条目、delta 的 COPY 和 INSERT 指令流、以及 .idx v2 的 256 扇出表、排序 OID 表和偏移表
+phdr: ".pack (v2) 对象头与条目"
+pmag: PACK v2
+pobj: 类型+变长
+pofs: OFS_DELTA
+dtitle: "Delta 字节码指令（从 base 重建 target）"
+copy: COPY off,len
+ins: INSERT 字节
+idx: ".idx (v2) 快速查表"
+fan: 256 扇出
+oids: 有序 OID
+off: 偏移量
+:::
+
+在滑动窗口里找到最省字节的基线后，Git 的增量编码器（`diff-delta.c`）只用两种极简机器指令来描述如何从 `base` 还原出 `target`：最高位为 `1` 的 **`COPY` 指令**（后跟 7 位存在掩码指示哪些小端偏移字节和长度字节跟在后面，直接从 `base` 的指定位置拷出一大块原字节）以及最高位为 `0` 的 **`INSERT` 指令**（把新出现的 1–127 字节原样塞在流里）。如果 `base` 和 `target` 在同一个 `.pack` 里，Git 用 `OBJ_OFS_DELTA`（类型号 6）和一段极紧凑的**负相对偏移变长整数**直接跳回前面基线的起始位置。至于怎么从几百万个对象的 `.pack` 里一毫秒找到任意一个哈希？`.idx` v2 文件开头有一张只有 **256 项的扇出表（fanout table）**，第 `b` 项记录首字节 `&lt;= b` 的对象累计总数。要查 `8d0e41...`，Git 先读 `fanout[0x8c]` 和 `fanout[0x8d]`，一瞬间就把查找范围从全库缩进约 1/256 的一段连续区，再做几次二分查找就直达 packfile 偏移量与 CRC32 校验码。
+
+::: lab ch8-model
+model.title: Packfile 滑动窗口、Delta 指令与 .idx 扇出查表
+model.how: 调整滑动窗口大小 <code>W</code>、开关按"类型/文件名/大小"的启发式排序（关掉则按无规律的哈希序排），再拖动 <code>.idx</code> 查询槽位。上方左图对比松散与打包体积，右图展示选定 <code>OFS_DELTA</code> 的真实 <code>COPY</code> / <code>INSERT</code> 指令字节切分，下方高亮 256 桶扇出表怎样定位该对象。
+ctl.win: 滑动窗口 W
+ctl.sort: 启用类型+路径+体积启发式排序
+ctl.slot: 要在 .idx 里查找的对象序号
+cv.aria: 松散体积与打包体积对比、OFS_DELTA 的 COPY 与 INSERT 指令分解、以及 256 桶扇出表索引定位
+cv.loose: 松散
+cv.pack: 打包
+cv.copy: COPY
+cv.ins: INSERT
+cv.fan: ".idx 256 桶扇出 (0x{fb})"
+sort.on: 启用启发式排序
+sort.off: 随机哈希顺序
+read.loose: 10 个松散对象总计
+read.pack: .pack 打包后总字节
+read.save: 相对松散节省比例
+read.probe: 扇出桶跨度 / 二分步数
+say: 在窗口 <code>W={win}</code> 且{sortMode}下，10 个版本从 {loose} 压到了 <em>{pack}</em>（节省 {save}，共 {deltas} 个 <code>OFS_DELTA</code>）；其中示范增量流靠 <em>{copyB} B</em> 的 <code>COPY</code> 和 {insB} B 的 <code>INSERT</code> 拼回目标文件。<code>.idx</code> 按首字节 <code>0x{fb}</code> 直接把二分范围从 10 项缩到 {span} 项，{steps} 步命中偏移 {off} B。
+:::
+
+把"启用类型+路径+体积启发式排序"的勾去掉看看吧：哪怕窗口大小 `W=4` 没变，一旦对象按几乎随机的 SHA-1 顺序排进窗口，相同文件的不同版本就再也碰不到一块儿，delta 数量会瞬间暴跌，打包体积立刻反弹回去！在默认 `W=4` 且启用启发式排序时，10 个版本从 {=ch8.looseTot} 压到了 {=ch8.packTot}（节省 {=ch8.packSave}）。这套早在 2006 年写进邮件列表的排序启发式，正是 Git 既不用在提交时维护复杂差分链、又能在打包后做到比原始仓库小得多的原因。
+
+模型省掉了：大于 2 GiB packfile 的 8 字节大偏移扩展表、delta 链深度上限（默认 `--depth=50` 以防读取最老版本时连跳太多层）、以及跨多个 packfile 的 `multi-pack-index`（MIDX）。 {.take}
+
+## 网络同步、部分克隆与 `git fsck` 校验 {#ch9}
+
+::: strings
+toc: 网络同步与部分克隆
+:::
+
+`git fetch` 用 Wire Protocol v2 的 `ls-refs` 与 `have`/`want` 协商出两台机器共享的最近提交边界，再只发缺失对象的 "thin pack"；而浅克隆（`--depth`）截断历史，部分克隆（`--filter=blob:none`）则在保留完整历史拓扑的同时推迟下载大文件。 {.law}
+
+把本地仓推到远程（`git push`）或者拉回来（`git fetch` / `git clone`）时，Git 并不需要把两边的 `.git/objects/` 一一列出来对账。借着前面那张不可变提交图（第 4 章）和树哈希（第 3 章），双方只用几个来回的文本包（pkt-line）就能把缺失集合算得一清二楚：
+1. 在 **Wire Protocol v2**（`gitprotocol-v2`）下，客户端先发 `command=ls-refs` 询问远端各分支头指针（不再像 v1 那样哪怕只要一条分支，服务器也一上来把几十万个分支和标签全倒出来）； {#w1}
+2. 客户端发 `command=fetch`，报出自己**想要**的 `want &lt;oid&gt;` 以及自己本地**已经拥有**的 `have &lt;oid&gt;`； {#w2}
+3. 服务端顺着自己的 DAG 往回走，一旦撞见两边共同拥有的提交节点，它不用再往下翻一百万次历史——因为**一个 commit 可达意味着它的整套祖先树和文件都已在客户端手上了**（配合可达性 `.bitmap` 位图索引，服务器甚至能在几毫秒内用位运算直接算出两方集合差）； {#w3}
+4. 服务端即时打出一个可以引用客户机已知旧对象作为 delta 基线的 **"thin pack"**（瘦包）发过网络；客户端收到后如果直接落盘，会先把缺的基线补全让包自洽，写进 `.git/objects/pack/`。 {#w4}
+
+::: diagram dg-wire keys=dg.wire
+cap: 图 9　Git Wire Protocol v2 的一次拉取协商：先按需问询引用，再用 `have`/`want` 敲定最小差集，最后回传打包好的瘦增量包；底部列出两种按需裁剪模式。
+aria: 示意图：客户端与服务端之间 ls-refs、引用列表、want/have、thin pack 四步交互及浅克隆和部分克隆过滤器
+cli: 客户端
+srv: 服务端
+m1: ls-refs
+m2: 分支与标签 OID
+m3: want + have 协商
+m4: 缺失对象 thin pack
+flt: 面对超大仓库的两种瘦身参数
+flts: "--depth=k | --filter=blob:none"
+:::
+
+面对动辄上百 GiB、夹杂着大体积二进制资产的历史仓库，现代 Git 提供两种完全不同的减重方式：**浅克隆（`git clone --depth=k`）**在本地 `.git/shallow` 里写下一圈"假装这批提交没有父节点"的边界标记，直接砍掉更早的历史；而**部分克隆（`git clone --filter=blob:none`）**则把整张提交 DAG 和全部目录 `tree` 一条不少地拉到本地，唯独把历史上用不到的 `blob` 留在被称为 **promisor remote** 的服务器上，等你真的 `git checkout` 或 `git blame` 到那一步才按需批量补拉。Git 2.56.0 还给 `git repack` 新增了 `--drop-filtered`，能把本地超出 `blob:limit=` 阈值且不再被索引引用的大 promisor 文件重新清理释放回远端。
+
+::: lab ch9-model
+model.title: 全量克隆、浅克隆与部分克隆的网络代价账本
+model.how: 在模拟的 200 次提交、含大体积二进制资源的仓库上，切换四种克隆模式（Full、<code>--depth</code>、<code>blob:none</code>、<code>tree:0</code>），拖动历史深度或单版二进制资产大小，对比第一次克隆下载的字节数、网络往返轮次和离线能力差异。
+ctl.mode: 克隆模式
+ctl.depth: 浅克隆深度 --depth
+ctl.bin: 每版大二进制资源 (MiB)
+cv.aria: 上方显示四种模式下 commit、tree、blob 的拉取范围，下方对比首次克隆网络传输总字节
+cv.commits: 提交图
+cv.trees: 目录树
+cv.blobs: 历史文件
+cv.head: HEAD 文件
+cv.wire: 首次克隆流量
+mode.name.full: 全量
+mode.name.shallow: 浅克隆
+mode.name.blobless: blob:none
+mode.name.treeless: tree:0
+read.wire: 首次克隆下载量
+read.ratio: 占全量克隆比例
+read.objs: 下载对象总数
+read.trips: 最少协商往返轮次
+say.full: <strong>全量克隆</strong>拉取全部 {objs} 个对象（{wire}）：离线能跑每一条 <code>git log</code>、<code>blame</code> 和跨年 <code>diff</code>，但历史大文件全部落盘。
+say.shallow: <strong>浅克隆</strong>只抓最近 {depth} 层提交，下载降到 {wire}（{pct}）；代价是更早的提交图在本地根本不存在，无法离线回溯完整历史。
+say.blobless: <strong>无文件部分克隆（<code>--filter=blob:none</code>）</strong>拉下全部提交图和全部 tree，但只抓当前检出所需的最新文件：首包只需 <em>{wire}</em>（{pct}），<code>git log --stat</code> 之外的拓扑全在本地，按需再向 promisor 补拉旧 blob。
+say.treeless: <strong>无树部分克隆（<code>--filter=tree:0</code>）</strong>首轮只拉 {objs} 个提交壳子，等 <code>checkout</code> 时才分批拉取需要的那几棵 tree 与 blob（最少 {trips} 轮往返）；主要适合只检出一次就销毁的 CI 机器。
+:::
+
+在这个 200 次提交、每次二进制更新 12 MiB 的示例仓里，全量克隆要传 {=ch9.fullMB}，而 `--filter=blob:none` 只传 {=ch9.bloblessMB}（占全量的 {=ch9.bloblessPct}），同时依然保留了完整的提交图。至于本地仓库到底有没有在磁盘坏块或意外断电里写坏任何一个字节？运行 **`git fsck`** 时，它做的是整套体系最硬核的双向审计：一面把 `.git/objects/` 与所有 `.pack` 的每一个对象重新解压、重新算一次 SHA-1/SHA-256，校验内容字节和自身哈希名严丝合缝；另一面顺着所有分支、标签、`HEAD` 和索引一路遍历，核查有没有任何 `tree` 或 `commit` 指向了本地找不到的缺口对象（关于底层磁盘的纠错码层，参阅[[what-a-drive-is-made-of#ch5|《硬盘里到底是什么》第 5 章]]）。
+
+模型省掉了：服务端 `packfile-uri` / `bundle-uri` 把静态大包甩给 CDN 分发的机制、`multi_ack_detailed` 在极多分叉仓库里的 `have` 探测退避策略，以及文件系统的静默比特翻转。 {.take}
+
+## 前沿在哪（2026 年 11 月）：Reftable、SHA-256 过渡与超大仓 {#ch10}
+
+::: strings
+toc: 前沿在哪（2026 年 11 月）
+:::
+
+传统基于散列小文件的引用与 40 位 SHA-1 地址正在逼近极限：截至 Git 2.56.0，基于前缀压缩块的 `reftable` 后端已成熟定型，面向 Git 3.0 的默认切换清单已经落纸，而 SHA-256 与旧 SHA-1 仓库之间的本地双向互通仍标明为"实验开发中"。 {.law}
+
+走到这一步，你已经看懂了支撑全球绝大多数软件工程的经典 `.git/` 引擎。但二十年前为 Linux 内核（几万次提交、寥寥数条分支）设计的底层结构，面对今天的超大型企业单体仓库（monorepo：几百万次提交、上百万条自动化分支与标签、上十万个追踪文件）以及老旧密码学算法老化，正在经历自 Git 诞生以来最大的一次底层换代。把已经写进标准、已经合入代码、和仍处于计划表上的三件事严格分开来看：
+
+### 已确立 {#h.est .sub3}
+
+- **SHA-1 的实际碰撞与防护边界**：NIST 早在 2011 年正式弃用 SHA-1；密码学界陆续演示了 SHAppening（2015 年，约 $2^{57}$ 次运算）、SHAttered（2017 年 2 月公开两个哈希相同的合法 PDF，$2^{63}$ 次运算）以及 Shambles（2020 年，选定前缀碰撞 $2^{63}$ 次运算）。Git 从 **v2.13.0**（2017 年）起默认启用了能检测已知碰撞攻击痕迹的硬化版 SHA-1 实现，但 `hash-function-transition.adoc` 明确指出这不能阻挡未来更强攻击；Git 项目于 **2018 年 8 月**正式选定 **SHA-256** 作为下一代对象哈希算法（以上年份与运算量引自 Git 2.56.0 随附文档 `BreakingChanges.adoc` 与 `technical/hash-function-transition.adoc`）。 {#e1}
+- **松散引用与 `packed-refs` 的系统瓶颈**：在传统 `files` 后端下，几十万条分支意味着几十万个 41 字节小文件，在许多文件系统上占满成倍的 inode 与 4 KiB 磁盘块（且在 macOS/Windows 等大小写不敏感或会做 Unicode 规范化的文件系统上，根本存不下只差大小写的两个分支名）；打包成单一 `packed-refs` 文本文件后，删除或改写仅仅 1 条引用也必须整份重写。按 `technical/reftable.adoc` 记录的 Android 866k 引用基准，`packed-refs` 占 **62.2 MiB**、冷启动按名查 1 条引用耗 **409,660.1 µs**，而 `reftable` 前缀压缩块仅占 **36.1 MiB**、冷查降至 **33.9 µs**。 {#e2}
+
+### 已经做出来的 {#h.demo .sub3}
+
+- **`reftable` 引用后端（Git 2.45–2.56.0）**：Git **2.45**（2024 年 4 月）合入 `reftable` 后端（`git init --ref-format=reftable`）；**2.46+** 引入 `git refs migrate` 在本地仓库做格式迁移；**2.51** 发布说明宣布 `reftable` 已足够成熟，Git 3.0 将把它作为新仓库默认格式；到本机验证的 **Git 2.56.0**（2026 年 9 月 28 日发布，见 `RelNotes/2.56.0.adoc`），`git refs` 工具箱已经补齐 `create/delete/update/rename` 底层命令，且优化了存在大量删除墓碑记录时的 `reftable` 迭代性能。 {#d1}
+- **原生 SHA-256 对象库与可插拔对象后端准备**：`git init --object-format=sha256`（自 Git 2.29 起）和 `.git/objects/object-map/*.map` 映射格式（`gitformat-loose`）已写进 Git 2.56.0（本机 `crosscheck.cjs` 已实测 SHA-256 的 blob 与多层嵌套 tree）。`RelNotes/2.56.0.adoc` 还完成了 `odb_source` 对象数据库结构体的可插拔重构，并把松散对象映射表的加载推迟到真正需要时。 {#d2}
+- **超大单体仓库工具链（`scalar` 与 Cone 模式稀疏索引）**：Git 2.56.0 自带独立的 `scalar` 可执行文件，把部分克隆、`commit-graph`、`multi-pack-index`（MIDX）、锥形稀疏检出（`core.sparseCheckoutCone`）与**稀疏索引（`extensions.sparseIndex`）**一条龙配好：不在当前关注目录里的整块子树在 `.git/index` 里折叠成一条 `040000` + `SKIP_WORKTREE` 目录项，让十万级文件仓的 `git status` 不必展开全树。 {#d3}
+
+::: diagram dg-reftable keys=dg.reftable
+cap: 图 10　传统 `files` + `packed-refs` 与 `reftable` 对比：`reftable` 把引用名按前缀压缩进 4 KiB 有序块里，删改时只追加极小的墓碑/增量表再做几何压缩，不必重写整个大文件。
+aria: 示意图：上方展示 files 与 packed-refs 全量重写的放大代价，下方展示 reftable 前缀压缩块、索引与墓碑小表的几何压缩架构
+f1: "传统 files + packed-refs"
+f2: "散列小文件 (4K) + packed-refs"
+f3: "删改 1 条必须整份重写"
+r1: "reftable (Git 2.45–2.56+)"
+rb1: "块 0 (4K)"
+rb2: "块 1 (4K)"
+rb3: "墓碑增量表"
+r2: "前缀压缩 + 块内二分查找"
+r3: "几何级压缩（写入 O(变更)）"
+:::
+
+### 规范、计划和说法 {#h.claim .sub3}
+
+- **Git 3.0 的默认切换计划（`BreakingChanges.adoc`，截至 2026 年 11 月仍无发布日期）**：文档明确列出了面向 Git 3.0 的四项默认变更——新库默认用 `sha256`、引用默认用 `reftable`、默认分支名改为 `main`、把 Rust 作为强制构建依赖（继 Git 2.55 默认开启 Rust 构建之后）。但文档同时明文写出了前提：**绝不抢在生态就绪之前强推**，必须等到主流托管平台（GitHub/GitLab 等）和替代实现（libgit2、JGit、Gitoxide）普遍兼容之后才定发布日；且文档声明目前**没有**废弃 `sha1` 读取支持的计划。 {#c1}
+- **SHA-1 ↔ SHA-256 双向互通仍未完成（Git 2.52–2.56.0）**：虽然代码和文档里有 `extensions.compatObjectFormat`，但 `RelNotes/2.52.0.adoc` 明文警告："目前 `compatObjectFormat` 扩展隐藏的是一个尚未完成的特性，除了继续开发该特性本身之外尚不可用于任何生产用途，特意写进文档以劝阻普通用户使用。"截至 Git 2.56.0，要把一个活跃的 SHA-1 仓库转成 SHA-256，仍不能原地切换，只能走 `git fast-export` / `git fast-import` 重新导出（会改写所有历史提交哈希）。 {#c2}
+
+::: lab ch10-model
+model.title: 引用后端写放大与稀疏索引规模对比
+model.how: 拖动引用数量 N（从 1 千到 86.6 万对标 Android 仓规模）与稀疏检出活跃顶层目录数（共 20 个顶层目录、10 万个文件），勾选是否测量单条引用删除/更新的写入量。观察 <code>packed-refs</code> 整文件重写的写放大与 <code>reftable</code> 增量小表的差距。
+ctl.refs: 引用总数 N (10^k)
+ctl.act: 活跃顶层目录数 (共 20 个)
+ctl.del: 测量单条引用原子更新的写入放大
+cv.aria: 左半部对比 loose、packed-refs 与 reftable 的体积和冷查找延迟，右半部对比全量索引与稀疏索引的条目数量
+cv.refsz: 引用体积
+cv.lat: 冷查找延迟
+cv.idx: 索引条目数
+cv.full: 全量索引
+cv.sparse: 稀疏索引
+op.del: "删改 1 条时 packed-refs 整文件重写 {packW}，reftable 只写 {reftW}（写放大 {amp}）"
+op.idle: 勾选上方复选框可测单条引用的更新写放大
+read.packed: packed-refs 体积
+read.reft: reftable 体积
+read.amp: 单条更新写入倍数
+read.sparse: 稀疏索引条目数
+say: 当仓库有 {n} 条引用时，<code>packed-refs</code> 体积为 {packSz}，<code>reftable</code> 前缀压缩后只有 <em>{reftSz}</em>；{opDesc}。在 10 万文件（20 个顶层目录）的仓里只展开 {act} 个活跃目录时，稀疏索引把索引条目压到了 <em>{spEnt}</em> 条（减少 {spSave}）。
+:::
+
+在这个模型里按 10 万条引用试一试：`packed-refs` 约占 {=ch10.packed100k}，`reftable` 压缩到 {=ch10.reftable100k}；更致命的不是那几十兆硬盘，而是每删掉一条 CI 临时标签就要把整份 {=ch10.packed100k} 重写一遍的写放大。而在 10 万文件仓库里启用锥形稀疏检出且只关注 2 个目录时，`.git/index` 条目直接掉到 {=ch10.sparseEntries} 条。**这一章的每一条版本号和计划状态都标着 2026 年 11 月的日期**——如果你在未来几年读到这里，请先对照最新的 Git `BreakingChanges` 和托管平台支持列表。
+
+模型省掉了：`reftable` 几何压缩在连续高频写入下的平均平摊系数，以及各文件系统（APFS、ext4、NTFS）真实的 inode/块对齐策略与目录缓存行为。 {.take}
+
+## 收尾：仓库变胖、变慢或丢了东西时，先问三件事 {#ch11}
+
+::: strings
+toc: 收尾：先问三件事
+:::
+
+不必背下全部二进制字段。遇到 `.git/` 体积失控、`git status` 变慢或误操作救不回来时，先问三个问题：哪些对象还是可达的？哪一步绕开了缓存、做了全量重算？这一步该去哪一层找指针或增量？ {.law}
+
+{.qs}
+- **仓库为什么越用越大、怎么安全瘦身？** 先区分"工作历史真的有巨型二进制文件"还是"还有大量悬空/旧 pack"：看 `git count-objects -vH` 里的 `size-pack` 与 `garbage`（第 8 章）。如果是以前误提交的大文件，必须改写历史重新生成分支树（第 3–4 章），再清理 `reflog`（第 6 章）并 `git gc --prune=now` 才会真减体积；如果只是不想要全部历史大文件，拉新仓改用 `--filter=blob:none`（第 9 章）。 {#q1}
+- **`git status` 或切换分支为什么忽然卡顿？** 查 `.git/index` 的 `stat` 缓存有没有大量失效（比如容器挂载卷改了 `uid`/`mtime`、或刚切换了时间戳颗粒度），以及未拆分稀疏目录时索引条数是不是突破十万（第 5、10 章）。分支数量上万时，卡顿往往出在 `files` 引用目录遍历或 `packed-refs` 重写，可以测试迁移到 `reftable`（第 10 章）。 {#q2}
+- **刚误操作丢掉的代码或历史，还能找回来吗？** 只要你做过 **`git add` 或 `git commit`**，对象就已经写进了 `.git/objects/`（第 1–2 章）：`git reset --hard`、错误 `rebase` 或强删未合分支甩开的旧 commit，在本地默认 30 天内都还钉在 `.git/logs/HEAD` 里，用 `git reflog` 找到短哈希立刻能切回来（第 4、6 章）；唯一没写进对象库因而救不回来的，是**连 `git add` 都没执行过**的工作区本地改写。 {#q3}
+
+一句话总结：`git add` 和 `git commit` 做的不是"记一笔改动"，而是把工作区编成不可变的**内容寻址树（blob → tree → commit）**，再悄悄往前拨动那张 41 字节的分支便签。正因为数据不可变、指针轻如纸、存储按需切块打包、差异在阅读时现算，这台看似笨重的时间机器才能在几毫秒里切换整座代码库。 {#sum .sum}
+
+相关的站内页面：[[a-secret-in-public#ch6|《当着所有人的面约定一个秘密》第 6 章]]（单向哈希函数与 SHA-256 的雪崩特性）、[[graph-algorithms#step0|《图算法》]]（图数据结构与祖先遍历）、[[what-a-drive-is-made-of#ch6|《硬盘里到底是什么》第 6 章]]（为什么闪存和对象库都爱"追加新副本、更新地址映射"而不是原地改写），以及本系列第一篇[[how-threejs-draws-a-scene]]。 {#links}
+
+::: footer
+**来源。** 本文全部底层格式与版本说明均对照本机实测的 **Git 2.56.0**（`/opt/homebrew/bin/git`，2026 年 9 月 28 日发布）及其随附官方文档：`gitformat-loose(5)`、`gitformat-index(5)`、`gitformat-pack(5)`、`gitformat-signature(5)`、`gitprotocol-v2(5)`、`gitrepository-layout(5)`、`git-refs(1)`、`BreakingChanges.adoc`、`RelNotes/2.45.0.adoc`–`2.56.0.adoc`，以及 `technical/` 目录下的 `racy-git.adoc`、`pack-heuristics.adoc`、`reftable.adoc`、`hash-function-transition.adoc`、`partial-clone.adoc`、`sparse-checkout.adoc`、`sparse-index.adoc` 与 `scalar.adoc`。差分与基础引用：Eugene W. Myers, *An O(ND) Difference Algorithm and Its Variations*, Algorithmica 1(2), 1986；RFC 1950 (zlib) 与 RFC 1951 (DEFLATE)；RFC 3174 (SHA-1) 与 NIST FIPS 180-4 (SHA-256)。所有文件行号和实测输出记录在本页目录的 `BRIEF.md`。
+
+**模型。** 页面不依赖外部库，也不在浏览器里运行原生二进制。`models.js` 从零实现了纯 JS 版 SHA-1、SHA-256、CRC32、Adler-32 + DEFLATE/zlib 压缩、松散对象封装、树排序与结构共享、commit/tag 编码、`DIRC` v2 索引与 `stat` 缓存检查、Myers 差分与三方合并、`PACK` v2 变长整数与 `OFS_DELTA` / `COPY` / `INSERT` 编解码、`.idx` v2 扇出二分查找以及克隆/引用/稀疏索引规模模型。`tools/crosscheck.cjs` 直接在临时目录里调用本机 `/opt/homebrew/bin/git`（2.56.0）对比了 58 项真实输出（BLOB、嵌套树、提交、标签、索引校验、Racy Git 行为、五组三方合并、真实 `.pack` 解压与 delta 重建、`reftable` 文件头），58/58 全部一致。本文由 Antigravity 协助撰写。
+:::
