@@ -87,6 +87,19 @@
   .essay-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:18px;margin-top:12px}
   .lang-badge{display:inline-block;font-size:11.5px;color:var(--text);border:1px solid var(--line);
     background:rgba(255,255,255,.04);border-radius:999px;padding:1px 10px}
+  .date-badge{display:inline-block;font-size:11.5px;color:var(--dim);border:1px solid var(--line);
+    background:rgba(255,255,255,.03);border-radius:999px;padding:1px 10px;font-variant-numeric:tabular-nums}
+  .essays-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:10px 16px}
+  .essays-head-text{min-width:0;flex:1 1 260px}
+  .sort-toggle{display:inline-flex;border:1px solid var(--line);border-radius:999px;
+    overflow:hidden;background:var(--panel2);flex:0 0 auto}
+  .sort-toggle button{appearance:none;border:0;background:transparent;color:var(--dim);
+    font:inherit;font-size:13px;line-height:1.4;padding:5px 14px;cursor:pointer;
+    min-width:48px;min-height:48px}
+  .sort-toggle button + button{border-left:1px solid var(--line)}
+  .sort-toggle button.on{background:var(--cyan);color:#08131a;font-weight:700}
+  .sort-toggle button:focus-visible{outline-offset:-3px}
+  .sort-toggle button.on:focus-visible{outline-color:var(--on-cyan)}
   .entrance-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,220px),1fr));gap:14px;margin-top:12px}
   a.card.entrance{padding:18px 20px}
   a.card.entrance h3{font-size:17px;line-height:1.35;margin:0 0 6px;color:var(--cyan)}
@@ -121,7 +134,7 @@
   .lesson-actions{display:flex;flex-wrap:wrap;gap:8px 16px;margin-top:16px}
   .lesson-actions a{display:inline-flex;align-items:center;min-height:48px;color:var(--cyan);font-size:.875rem}
   @media(prefers-reduced-motion:reduce){a.card{transition:none}a.card:hover{transform:none}}
-  @media(forced-colors:active){:focus-visible,.lang-toggle button.on:focus-visible{outline-color:Highlight}}
+  @media(forced-colors:active){:focus-visible,.lang-toggle button.on:focus-visible,.sort-toggle button.on:focus-visible{outline-color:Highlight}}
   @media (max-width:560px){
     .wrap{padding:28px 16px 52px}
     h1{font-size:31px}
@@ -182,7 +195,7 @@
   <footer id="footer"></footer>
 </div>
 
-<script src="pages.config.js?v=20261120-threejs"></script>
+<script src="pages.config.js?v=20261121-dates"></script>
 <script>
 (function(){
   'use strict';
@@ -194,6 +207,7 @@
       featuredChip: '精选', allStage: '全部学段', badgePlanned: '筹备中',
       featuredTitle: '精选 · 从这里开始', featuredSub: '从 {total} 个页面里挑出的 {n} 个，小学到大学各有入口。',
       essaysTitle: '长文 · 一篇讲透一个领域', essaysSub: '每篇取一门学问里最要紧的十来个道理，每个都配一个可以亲手推动的模型。',
+      essaySortLabel: '长文排序', essaySortDefault: '默认顺序', essaySortNewest: '最新优先',
       onlyZh: '只有中文',
       entrancesTitle: '更多入口',
       entranceAtlasTitle: '知识图谱', entranceAtlasDesc: '沿着概念之间的关系逛，从一个问题走到一串知识点。',
@@ -218,6 +232,7 @@
       featuredChip: 'Featured', allStage: 'All Stages', badgePlanned: 'Planned',
       featuredTitle: 'Featured · Start Here', featuredSub: '{n} picks from {total} pages, with entry points from primary school through university.',
       essaysTitle: 'Long Reads · One Essay, One Field', essaysSub: 'Each takes the ten or so core ideas of a subject and gives every one a model you can push around.',
+      essaySortLabel: 'Sort long reads', essaySortDefault: 'Default order', essaySortNewest: 'Newest first',
       onlyZh: 'Chinese only',
       entrancesTitle: 'More Ways In',
       entranceAtlasTitle: 'Knowledge Atlas', entranceAtlasDesc: 'Wander along the links between concepts, from one question to a chain of ideas.',
@@ -289,6 +304,7 @@
   var activeCat = 'all';
   var activeSub = 'all';   // 子主题（?subtopic=），只在某个分类下有效
   var activeStage = 'all';
+  var activeEssaySort = 'default';
   var siteComposing = false, siteCompositionQuery = '';
 
   function catName(id) {
@@ -567,10 +583,21 @@
     if (opts.stage) badges.appendChild(node('span', 'stage-badge', stageName(pageStage(pg))));
     // 只有中文的页面（languages: ["zh"]）在英文模式下注明，例如长文 scarcity-moves
     if (lang === 'en' && pg.languages && pg.languages.indexOf('en') === -1) badges.appendChild(node('span', 'lang-badge', t('onlyZh')));
+    if (pg.created) {
+      var dt = node('time', 'date-badge', pg.created);
+      dt.setAttribute('datetime', pg.created);
+      badges.appendChild(dt);
+    }
     if (badges.children.length) el.appendChild(badges);
     el.appendChild(node('h2', '', pick(pg.title)));
     el.appendChild(node('p', '', pick(pg.desc)));
     return el;
+  }
+  function orderedEssays() {
+    if (activeEssaySort !== 'newest') return essays;
+    return essays.map(function(pg, i){ return { pg: pg, i: i }; })
+      .sort(function(a, b){ return (b.pg.created || '').localeCompare(a.pg.created || '') || a.i - b.i; })
+      .map(function(x){ return x.pg; });
   }
   function groupHead(name, n, sub) {
     var head = node('div', 'group-head');
@@ -592,10 +619,37 @@
     if (essays.length) {
       var reads = node('section', 'essays');
       reads.setAttribute('aria-labelledby', 'essaysTitle');
+      var readsHead = node('div', 'essays-head');
+      var readsText = node('div', 'essays-head-text');
       var readsTitle = node('h2', 'section-title', t('essaysTitle')); readsTitle.id = 'essaysTitle';
+      readsText.appendChild(readsTitle); readsText.appendChild(node('p', 'section-sub', t('essaysSub')));
+      var sortBox = node('div', 'sort-toggle'); sortBox.id = 'essaySort';
+      sortBox.setAttribute('role', 'group'); sortBox.setAttribute('aria-label', t('essaySortLabel'));
       var readsList = node('div', 'essay-grid');
-      essays.forEach(function(pg){ readsList.appendChild(makeCard(pg, { cat: true, stage: true })); });
-      reads.appendChild(readsTitle); reads.appendChild(node('p', 'section-sub', t('essaysSub'))); reads.appendChild(readsList);
+      function drawEssays() {
+        readsList.innerHTML = '';
+        orderedEssays().forEach(function(pg){ readsList.appendChild(makeCard(pg, { cat: true, stage: true })); });
+      }
+      [{ id: 'default', key: 'essaySortDefault' }, { id: 'newest', key: 'essaySortNewest' }].forEach(function(d){
+        var b = document.createElement('button');
+        b.type = 'button'; b.dataset.sort = d.id; b.textContent = t(d.key);
+        b.classList.toggle('on', activeEssaySort === d.id);
+        b.setAttribute('aria-pressed', String(activeEssaySort === d.id));
+        b.addEventListener('click', function(){
+          if (activeEssaySort === d.id) return;
+          activeEssaySort = d.id;
+          sortBox.querySelectorAll('button').forEach(function(btn){
+            var on = btn.dataset.sort === activeEssaySort;
+            btn.classList.toggle('on', on);
+            btn.setAttribute('aria-pressed', String(on));
+          });
+          drawEssays();
+        });
+        sortBox.appendChild(b);
+      });
+      readsHead.appendChild(readsText); readsHead.appendChild(sortBox);
+      drawEssays();
+      reads.appendChild(readsHead); reads.appendChild(readsList);
       frag.appendChild(reads);
     }
     var box = node('section', 'entrances');

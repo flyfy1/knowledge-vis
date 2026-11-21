@@ -39,12 +39,18 @@ const FENCE_BANNER = [
 const SKIP_DIRS = new Set(['.git', 'node_modules', '.claude', '.agent', '.runs', '.github', '__pycache__']);
 const SKIP_PATHS = ['tests/fixtures/', 'specs/', 'variants/', 'templates/'];
 // Fields of a metadata page.json that become a KNOWLEDGE_PAGES row, in row order.
-const ROW_FIELDS = ['slug', 'title', 'desc', 'tags', 'languages', 'category', 'subtopic', 'stage', 'status', 'path'];
+const ROW_FIELDS = ['slug', 'title', 'desc', 'tags', 'languages', 'category', 'subtopic', 'stage', 'status', 'path', 'created'];
 
 const readJson = f => JSON.parse(fs.readFileSync(f, 'utf8'));
 const isObj = v => v && typeof v === 'object' && !Array.isArray(v);
 const nonempty = s => typeof s === 'string' && s.trim() !== '';
 const bilingual = v => isObj(v) && nonempty(v.zh) && nonempty(v.en);
+function validDate(s) {
+  if (typeof s !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(s)) return false;
+  const [y, m, d] = s.split('-').map(Number);
+  const dt = new Date(Date.UTC(y, m - 1, d));
+  return dt.getUTCFullYear() === y && dt.getUTCMonth() === m - 1 && dt.getUTCDate() === d;
+}
 
 /* ───────── pages.config.js ───────── */
 function readConfig(root) {
@@ -145,6 +151,7 @@ function pagesFromJson(root, config) {
     if (meta.languages != null && !template && !(Array.isArray(meta.languages) && meta.languages.length && meta.languages.every(l => LANGS.includes(l)))) p.push('languages: a list such as ["zh"] (a page in one language only)');
     if (meta.order != null && !(Number.isInteger(meta.order) && meta.order > 0)) p.push('order: a positive integer (or leave it out: the page goes after every ordered page)');
     if (meta.defaultEdition != null && meta.defaultEdition !== 'original') p.push(`defaultEdition: "${meta.defaultEdition}" (the only value is "original": keep this page on its canonical edition whatever KNOWLEDGE_DEFAULT_EDITION says; leave it out to follow the switch)`);
+    if (meta.created != null && !validDate(meta.created)) p.push(`created: "${meta.created}" (use YYYY-MM-DD)`);
     let title = meta.title, desc = meta.desc;
     if (titleInContent(meta)) {
       if (meta.title != null || meta.desc != null) p.push('title/desc: a template page takes them from content.<lang>.md (the # … {#hero} heading and the front-matter desc); remove them from page.json');
@@ -159,7 +166,7 @@ function pagesFromJson(root, config) {
     for (const f of ROW_FIELDS) {
       const v = f === 'title' ? title : f === 'desc' ? desc : meta[f];
       if (f === 'languages' && (template || v == null)) continue;
-      if (f === 'subtopic' && v == null) continue;
+      if ((f === 'subtopic' || f === 'created') && v == null) continue;
       row[f] = v;
     }
     // Parallel editions (scripts/lib/editions.cjs): detected, never hand-written. The pin only matters with an edition.
@@ -208,7 +215,7 @@ const pair = v => `{ zh: ${q(v.zh)}, en: ${q(v.en)} }`;
 function renderRow(row) {
   const lines = [`    slug: ${q(row.slug)}`, `    title: ${pair(row.title)}`, `    desc: ${pair(row.desc)}`, `    tags: [${row.tags.map(pair).join(', ')}]`];
   if (row.languages) lines.push(`    languages: [${row.languages.map(q).join(', ')}]`);
-  lines.push('    ' + ['category', 'subtopic', 'stage', 'status', 'path'].filter(f => row[f] != null).map(f => `${f}: ${q(row[f])}`).join(', '));
+  lines.push('    ' + ['category', 'subtopic', 'stage', 'status', 'path', 'created'].filter(f => row[f] != null).map(f => `${f}: ${q(row[f])}`).join(', '));
   if (row.editions) lines.push('    editions: { ' + Object.entries(row.editions).map(([k, v]) => `${q(k)}: ${q(v)}`).join(', ') + ' }' + (row.defaultEdition ? `, defaultEdition: ${q(row.defaultEdition)}` : ''));
   return '  {\n' + lines.join(',\n') + '\n  }';
 }
@@ -246,7 +253,10 @@ function metaFromRow(root, row, existing, order) {
   if (row.languages && !template) m.languages = row.languages;
   m.category = row.category;
   if (row.subtopic != null) m.subtopic = row.subtopic;
-  m.stage = row.stage; m.status = row.status; m.path = row.path; m.order = order;
+  m.stage = row.stage; m.status = row.status; m.path = row.path;
+  const created = row.created || (existing && existing.created);
+  if (created != null) m.created = created;
+  m.order = order;
   for (const [k, v] of Object.entries(existing || {})) if (!(k in m) && !(template && ['title', 'desc'].includes(k))) m[k] = v;
   return m;
 }
@@ -254,5 +264,5 @@ function metaFromRow(root, row, existing, order) {
 module.exports = {
   LANGS, STAGES, STATUSES, KINDS, FENCE_START, FENCE_END, FENCE_BANNER, ROW_FIELDS,
   readConfig, loadRegistry, scanPageJson, pagesFromJson, contentText, frontMatter,
-  renderRow, renderBlock, withBlock, guessKind, metaFromRow, titleInContent,
+  renderRow, renderBlock, withBlock, guessKind, metaFromRow, titleInContent, validDate,
 };

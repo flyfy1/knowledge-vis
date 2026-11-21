@@ -185,11 +185,12 @@ try {
     const meta = { slug: 'fixture-late', kind: 'lesson', title: { zh: '后来的页', en: 'A Later Page' }, desc: { zh: '后来。', en: 'Later.' }, tags: [], category: 'demo', subtopic: 'basics', stage: 'university', path: 'demo/basics/fixture-late/' };
     write(root, 'demo/basics/fixture-late/page.json', JSON.stringify(meta));
     ok(reg(root, '--check').code === 0, 'a page.json without status is a draft: not registered, nothing stale');
-    write(root, 'demo/basics/fixture-late/page.json', JSON.stringify({ ...meta, status: 'live' }));
+    write(root, 'demo/basics/fixture-late/page.json', JSON.stringify({ ...meta, status: 'live', created: '2026-11-20' }));
     const c = reg(root, '--check');
     ok(c.code === 1 && /"fixture-late" is registered by demo\/basics\/fixture-late\/page\.json but not in the block yet/.test(c.out), 'a new page.json makes the block stale until the script runs:\n' + c.out);
     ok(reg(root).code === 0 && pagesOf(root).KNOWLEDGE_PAGES.slice(-1)[0].slug === 'fixture-late', 'a page without "order" goes last');
-    ok(json(root, 'site-registry.json').pages['fixture-late'].status === 'live', 'and is in site-registry.json');
+    ok(pagesOf(root).KNOWLEDGE_PAGES.slice(-1)[0].created === '2026-11-20', 'created date is projected into KNOWLEDGE_PAGES');
+    ok(json(root, 'site-registry.json').pages['fixture-late'].status === 'live' && json(root, 'site-registry.json').pages['fixture-late'].created === '2026-11-20', 'and created is in site-registry.json');
     const bp = run('build-pages.cjs', '--all', '--check', '--root', root);
     ok(bp.code === 1 && /DRIFT demo\/basics\/fixture-essay/.test(bp.out), 'build-pages reads the same registry (the template page is stale: it was last built before the fence)');
     ok(run('build-pages.cjs', '--all', '--root', root).code === 0 && run('build-pages.cjs', '--all', '--check', '--root', root).code === 0, 'and builds from it');
@@ -210,6 +211,8 @@ try {
   bad('duplicate slug', edit('tool/', d => { d.slug = 'fixture-target'; }), /slug "fixture-target" is also registered by/);
   bad('duplicate order', edit('tool/', d => { d.order = 10; }), /order 10 is also used by/);
   bad('bad status', edit('tool/', d => { d.status = 'draft'; }), /status: "draft" \(use live or planned; leave it out while the page is a draft\)/);
+  bad('bad created format', edit('tool/', d => { d.created = '2026/11/20'; }), /created: "2026\/11\/20" \(use YYYY-MM-DD\)/);
+  bad('bad created calendar date', edit('tool/', d => { d.created = '2026-02-30'; }), /created: "2026-02-30" \(use YYYY-MM-DD\)/);
   bad('template page with a title', edit('demo/basics/fixture-essay/', d => { d.title = { zh: 'x', en: 'x' }; }), /a template page takes them from content\.<lang>\.md/);
   bad('metadata page without desc', edit('demo/basics/fixture-target/', d => { delete d.desc; }), /desc: \{"zh": …, "en": …\}/);
   bad('markup in a template title', r => { const f = path.join(r, 'demo/basics/fixture-essay/content.en.md'); fs.writeFileSync(f, fs.readFileSync(f, 'utf8').replace('# A Sample Essay {#hero}', '# A *Sample* Essay {#hero}')); }, /the title heading of content\.en\.md holds markup/);
