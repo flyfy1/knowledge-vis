@@ -74,8 +74,12 @@
   .cat-badge,.stage-badge{display:inline-block;font-size:11.5px;color:var(--amber);
     border:1px solid #713f12;background:rgba(245,176,76,.08);border-radius:999px;padding:1px 10px}
   .stage-badge{color:var(--cyan);border-color:var(--cyan-d);background:rgba(103,215,249,.08)}
-  .concept-badge{color:var(--cyan);border-color:var(--cyan-d);background:rgba(103,215,249,.08)}
+  .concept-badge,.fulltext-badge{display:inline-block;font-size:11.5px;color:var(--cyan);
+    border:1px solid var(--cyan-d);background:rgba(103,215,249,.08);border-radius:999px;padding:1px 10px}
+  .fulltext-badge{color:var(--green);border-color:#166534;background:rgba(74,222,128,.08)}
   .card p.concept-in{margin-top:8px;font-size:13px}
+  .card p.fulltext-excerpt{color:var(--dim);font-size:14px;line-height:1.6}
+  .card p.fulltext-excerpt mark{background:rgba(103,215,249,.2);color:var(--text);border-radius:4px;padding:0 3px}
   .card h2{font-size:20px;margin:0 0 8px 0;line-height:1.35}
   .card p{color:var(--dim);font-size:14.5px;margin:0}
   .badge{position:absolute;top:18px;right:18px;font-size:12px;border-radius:999px;padding:2px 10px}
@@ -217,6 +221,8 @@
       siteSearchLabel: '搜索全部页面和概念', siteSearchPlaceholder: '搜一个不懂的词，例如：傅里叶、利息、光合作用',
       siteSearchCount: '找到 {n} 个页面', siteSearchEmpty: '没有匹配的页面或概念，换个词试试。', siteSearchClear: '清空',
       siteSearchBoth: '找到 {c} 个概念、{n} 个页面', conceptBadge: '概念 · 直达讲解处', conceptIn: '在「{page}」里', conceptInAtlas: '在知识地图里',
+      fulltextBadge: '全文检索 · Pagefind', fulltextSectionTitle: '全文检索匹配（正文段落）',
+      siteSearchWithFulltext: '找到 {n} 个页面/概念、{f} 处正文匹配', siteSearchFulltextOnly: '找到 {f} 处正文全文匹配',
       otherSubtopic: '其他', groupCount: '{n} 个页面',
       crumbAll: '全部', crumbsLabel: '当前位置',
       emptyText: '还没有登记任何知识页。', emptyFilter: '这个组合下还没有页面。',
@@ -242,6 +248,8 @@
       siteSearchLabel: 'Search all pages and concepts', siteSearchPlaceholder: 'Look up anything, e.g. Fourier, interest, photosynthesis',
       siteSearchCount: '{n} pages found', siteSearchCountOne: '1 page found', siteSearchEmpty: 'No matching pages or concepts. Try different words.', siteSearchClear: 'Clear',
       siteSearchBoth: '{c} concepts and {n} pages found', siteSearchBothOne: '{c} concept and {n} pages found', conceptBadge: 'Concept · jumps to the explanation', conceptIn: 'In: {page}', conceptInAtlas: 'In the Knowledge Atlas',
+      fulltextBadge: 'Full-text · Pagefind', fulltextSectionTitle: 'Full-text matches (inside page body)',
+      siteSearchWithFulltext: '{n} pages/concepts and {f} full-text matches found', siteSearchFulltextOnly: '{f} full-text matches found',
       otherSubtopic: 'Other', groupCount: '{n} pages', groupCountOne: '1 page',
       crumbAll: 'All', crumbsLabel: 'Breadcrumb',
       emptyText: 'No knowledge pages have been registered yet.', emptyFilter: 'No pages yet for this combination.',
@@ -511,6 +519,87 @@
     return el;
   }
 
+  /* ---------- Pagefind 全文搜索：与概念索引同样懒加载，补齐章节/段落全文检索 ---------- */
+  var pfInstance = null, pfState = 'idle', pfQuery = '', pfItems = [], pfToken = 0, pfTimer = 0;
+  function loadPagefind() {
+    if (pfState !== 'idle' || location.protocol === 'file:') return;
+    pfState = 'loading';
+    var pfUrl = new URL('pagefind/pagefind.js', location.href).href;
+    import(pfUrl).then(function(pf){
+      var base = new URL('pagefind/', location.href).pathname;
+      return pf.options({ basePath: base }).then(function(){
+        return pf.mergeIndex(base.replace(/\/pagefind\/$/, '/./pagefind/'), { language: 'en' }).catch(function(){});
+      }).then(function(){
+        pfInstance = pf;
+        pfState = 'ready';
+        if (siteQuery()) schedulePagefind(siteQuery());
+      });
+    }).catch(function(){ pfState = 'error'; });
+  }
+  function normalizePfUrl(rawUrl) {
+    if (!rawUrl) return '';
+    return String(rawUrl).replace(/^\/(\.\/)?/, '').replace(/^en\//, '');
+  }
+  function schedulePagefind(q) {
+    clearTimeout(pfTimer);
+    if (!q) { pfQuery = ''; pfItems = []; return; }
+    if (pfState === 'idle') { loadPagefind(); return; }
+    if (pfState !== 'ready' || !pfInstance) return;
+    var token = ++pfToken;
+    pfTimer = setTimeout(function(){
+      pfInstance.search(q).then(function(res){
+        if (token !== pfToken || siteQuery() !== q) return;
+        var top = (res && res.results || []).slice(0, 10);
+        return Promise.all(top.map(function(r){ return r.data(); })).then(function(dataList){
+          if (token !== pfToken || siteQuery() !== q) return;
+          var list = [], seenHref = {};
+          dataList.forEach(function(d){
+            if (!d) return;
+            var baseRel = normalizePfUrl(d.url || d.raw_url).split('#')[0];
+            var pg = byPath[baseRel] || (d.meta && d.meta.slug && bySlug[d.meta.slug]) || null;
+            if (pg && !inView(pg)) return;
+            var subs = Array.isArray(d.sub_results) && d.sub_results.length ? d.sub_results.slice(0, 2) : [{ title: d.meta && d.meta.title || (pg ? pick(pg.title) : baseRel), url: baseRel, excerpt: d.excerpt }];
+            subs.forEach(function(sub){
+              var subUrl = normalizePfUrl(sub.url || baseRel);
+              var hash = subUrl.indexOf('#') !== -1 ? '#' + subUrl.split('#')[1] : '';
+              var targetHref = pg ? (hash ? pg.path + hash : pageHref(pg)) : subUrl;
+              if (seenHref[targetHref]) return;
+              seenHref[targetHref] = true;
+              list.push({
+                href: targetHref,
+                page: pg,
+                title: sub.title || (pg ? pick(pg.title) : targetHref),
+                excerpt: sub.excerpt || d.excerpt || ''
+              });
+            });
+          });
+          pfQuery = q;
+          pfItems = list.slice(0, 12);
+          if (activeCat !== 'leetcode' && siteQuery() === q) renderCards();
+        });
+      }).catch(function(){});
+    }, 90);
+  }
+  function makeFulltextCard(item) {
+    var el = node('a', 'card fulltext-card');
+    el.href = item.href;
+    el.dataset.fulltext = item.page ? item.page.slug : item.href;
+    var badges = node('div', 'card-badges');
+    badges.appendChild(node('span', 'fulltext-badge', t('fulltextBadge')));
+    if (activeCat === 'all' && item.page && item.page.category) badges.appendChild(node('span', 'cat-badge', catName(item.page.category)));
+    el.appendChild(badges);
+    el.appendChild(node('h2', '', item.title));
+    if (item.excerpt) {
+      var ex = node('p', 'fulltext-excerpt');
+      ex.innerHTML = item.excerpt;
+      el.appendChild(ex);
+    }
+    if (item.page) {
+      el.appendChild(node('p', 'concept-in', fill(t('conceptIn'), { page: pick(item.page.title) })));
+    }
+    return el;
+  }
+
   function viewHref(cat, sub) {
     var url = new URL(location.href);
     if (cat === 'all') url.searchParams.delete('category'); else url.searchParams.set('category', cat);
@@ -731,14 +820,35 @@
     if (query) {
       // 搜索时替换精选/分组内容；分类与学段仍作为范围（AND）
       var hits = siteResults(scoped, query);
+      var shownHrefs = {};
+      hits.forEach(function(h){
+        var href = h.page ? pageHref(h.page) : h.concept.href;
+        shownHrefs[href] = true;
+        if (h.page) shownHrefs[h.page.path] = true;
+      });
+      if (pfQuery !== query) schedulePagefind(query);
+      var ftHits = (pfQuery === query ? pfItems : []).filter(function(item){
+        return (!item.page || inView(item.page)) && !shownHrefs[item.href];
+      });
       var nPages = hits.filter(function(h){ return h.page; }).length, nConcepts = hits.length - nPages;
       siteCount.textContent = nConcepts
         ? fill(t(nConcepts === 1 && STR[lang].siteSearchBothOne ? 'siteSearchBothOne' : 'siteSearchBoth'), { c: nConcepts, n: nPages })
-        : fill(t(nPages === 1 && STR[lang].siteSearchCountOne ? 'siteSearchCountOne' : 'siteSearchCount'), { n: nPages });
-      if (!hits.length) frag.appendChild(emptyNote('siteSearchEmpty'));
+        : (hits.length || !ftHits.length)
+          ? fill(t(nPages === 1 && STR[lang].siteSearchCountOne ? 'siteSearchCountOne' : 'siteSearchCount'), { n: nPages })
+          : fill(t('siteSearchFulltextOnly'), { f: ftHits.length });
+      if (!hits.length && !ftHits.length) frag.appendChild(emptyNote('siteSearchEmpty'));
       hits.forEach(function(h){
         frag.appendChild(h.page ? makeCard(h.page, { cat: activeCat === 'all', stage: activeStage === 'all' }) : makeConceptCard(h.concept));
       });
+      if (ftHits.length) {
+        if (hits.length) {
+          var ftHead = node('div', 'group-head');
+          ftHead.appendChild(node('h2', '', t('fulltextSectionTitle')));
+          ftHead.appendChild(node('span', 'group-count', String(ftHits.length)));
+          frag.appendChild(ftHead);
+        }
+        ftHits.forEach(function(item){ frag.appendChild(makeFulltextCard(item)); });
+      }
     } else if (activeCat === 'all' && activeStage === 'all') {
       renderHome(frag);
     } else if (!scoped.length) {
@@ -905,15 +1015,17 @@
   });
   // 全站搜索：输入法组字期间不过滤、不改 URL（与 LeetCode 搜索同一规则）
   siteInput.addEventListener('compositionstart',function() { siteCompositionQuery = siteInput.value; siteComposing = true; });
-  siteInput.addEventListener('compositionend',function() { siteComposing = false; saveView(false); renderCards(); });
-  siteInput.addEventListener('input',function(event) { loadConcepts(); if (!siteComposing && !event.isComposing) { saveView(false); renderCards(); } });
+  siteInput.addEventListener('compositionend',function() { siteComposing = false; saveView(false); schedulePagefind(siteQuery()); renderCards(); });
+  siteInput.addEventListener('input',function(event) { loadConcepts(); loadPagefind(); if (!siteComposing && !event.isComposing) { saveView(false); schedulePagefind(siteQuery()); renderCards(); } });
   siteInput.addEventListener('focus', loadConcepts);
+  siteInput.addEventListener('focus', loadPagefind);
   siteClear.addEventListener('click',function() {
-    siteInput.value = ''; siteComposing = false; saveView(false); renderCards(); siteInput.focus();
+    siteInput.value = ''; siteComposing = false; pfQuery = ''; pfItems = []; saveView(false); renderCards(); siteInput.focus();
   });
   window.addEventListener('popstate',function() { composing = false; siteComposing = false; readView(); renderChips(); renderStageChips(); renderCards(); revealPressed(chipsBox); revealPressed(stageBox); });
   readView();
   if (siteInput.value) loadConcepts();
+  if (siteInput.value) loadPagefind();
 
   function applyLang() {
     document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';

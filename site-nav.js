@@ -481,11 +481,271 @@
     updateScrollSpy();
   }
 
+  var me = doc.currentScript;
+  var meSrc = me && me.src ? me.src : (function () {
+    var sc = doc.querySelector && doc.querySelector('script[src*="site-nav.js"]');
+    return sc && sc.src ? sc.src : '';
+  })();
+  var navRootURL = meSrc ? new URL('.', meSrc) : (global.location ? new URL('./', global.location.href) : null);
+
+  /* ---------- Global Pagefind Search Modal (Cmd+K / button) ---------- */
+  var searchBooted = false;
+  function initGlobalSearch() {
+    if (searchBooted || !doc.body || !navRootURL) return;
+    if (doc.getElementById('siteSearch')) return; // root homepage already has inline search
+    searchBooted = true;
+
+    var SEARCH_UI = {
+      zh: {
+        btn: '搜索',
+        btnAria: '全站全文搜索 (⌘K)',
+        dialogAria: '全站全文搜索',
+        placeholder: '搜索全站章节与正文（例如：Ruemmler、门铃寄存器、KV Cache）…',
+        closeAria: '关闭搜索',
+        hint: '输入关键词检索全站 260+ 篇交互页与长文正文 · 按 Esc 关闭',
+        loading: '正在加载全文索引…',
+        empty: '没有找到匹配的正文段落，换个词试试。',
+        count: '找到 {n} 处正文匹配',
+      },
+      en: {
+        btn: 'Search',
+        btnAria: 'Full-text site search (⌘K)',
+        dialogAria: 'Full-text site search',
+        placeholder: 'Search full text across all pages (e.g. Ruemmler, Doorbell, KV Cache)…',
+        closeAria: 'Close search',
+        hint: 'Type to search across 260+ interactive lessons and essays · Esc to close',
+        loading: 'Loading full-text index…',
+        empty: 'No matching sections found. Try another keyword.',
+        count: '{n} full-text matches found',
+      }
+    };
+
+    var trigger = doc.createElement('button');
+    trigger.type = 'button';
+    trigger.className = 'site-search-fab';
+    trigger.setAttribute('data-no-autolink', '');
+    trigger.innerHTML = '<svg class="site-search-fab-icon" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>' +
+      '<span class="site-search-fab-label"></span><kbd class="site-search-fab-kbd" aria-hidden="true">⌘K</kbd>';
+    var triggerLabel = trigger.querySelector('.site-search-fab-label');
+
+    var modal = doc.createElement('div');
+    modal.className = 'site-search-modal';
+    modal.setAttribute('role', 'dialog');
+    modal.setAttribute('aria-modal', 'true');
+    modal.setAttribute('data-no-autolink', '');
+    modal.hidden = true;
+
+    var dialog = doc.createElement('div');
+    dialog.className = 'site-search-dialog';
+
+    var bar = doc.createElement('div');
+    bar.className = 'site-search-bar';
+    bar.innerHTML = '<svg class="site-search-bar-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>';
+    var input = doc.createElement('input');
+    input.type = 'search';
+    input.className = 'site-search-input';
+    input.autocomplete = 'off';
+    input.spellcheck = false;
+    var closeBtn = doc.createElement('button');
+    closeBtn.type = 'button';
+    closeBtn.className = 'site-search-close';
+    closeBtn.innerHTML = '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg>';
+    bar.appendChild(input);
+    bar.appendChild(closeBtn);
+
+    var statusEl = doc.createElement('p');
+    statusEl.className = 'site-search-status';
+    statusEl.setAttribute('role', 'status');
+    statusEl.setAttribute('aria-live', 'polite');
+
+    var listEl = doc.createElement('div');
+    listEl.className = 'site-search-results';
+
+    dialog.appendChild(bar);
+    dialog.appendChild(statusEl);
+    dialog.appendChild(listEl);
+    modal.appendChild(dialog);
+
+    doc.body.appendChild(trigger);
+    doc.body.appendChild(modal);
+
+    var pfMod = null, pfStatus = 'idle', pfSeq = 0, pfDebounce = 0, isOpen = false, composing = false;
+
+    function syncSearchTexts() {
+      var l = lang();
+      var ui = SEARCH_UI[l] || SEARCH_UI.zh;
+      var langAttr = l === 'zh' ? 'zh-CN' : 'en';
+      trigger.setAttribute('lang', langAttr);
+      trigger.setAttribute('aria-label', ui.btnAria);
+      if (triggerLabel.textContent !== ui.btn) triggerLabel.textContent = ui.btn;
+      modal.setAttribute('lang', langAttr);
+      modal.setAttribute('aria-label', ui.dialogAria);
+      input.placeholder = ui.placeholder;
+      input.setAttribute('aria-label', ui.dialogAria);
+      closeBtn.setAttribute('aria-label', ui.closeAria);
+      if (!input.value.trim() && pfStatus !== 'loading') {
+        statusEl.textContent = ui.hint;
+      }
+    }
+
+    function ensurePagefind() {
+      if (pfStatus !== 'idle') return;
+      if (global.location && global.location.protocol === 'file:') { pfStatus = 'error'; return; }
+      pfStatus = 'loading';
+      var ui = SEARCH_UI[lang()] || SEARCH_UI.zh;
+      if (input.value.trim()) statusEl.textContent = ui.loading;
+      var pfJsUrl = new URL('pagefind/pagefind.js', navRootURL).href;
+      var pfBase = new URL('pagefind/', navRootURL).pathname;
+      import(pfJsUrl).then(function (pf) {
+        return pf.options({ basePath: pfBase }).then(function () {
+          return pf.mergeIndex(pfBase.replace(/\/pagefind\/$/, '/./pagefind/'), { language: 'en' }).catch(function () {});
+        }).then(function () {
+          pfMod = pf;
+          pfStatus = 'ready';
+          if (isOpen && input.value.trim()) runModalSearch();
+        });
+      }).catch(function () {
+        pfStatus = 'error';
+      });
+    }
+
+    function normUrl(u) {
+      return String(u || '').replace(/^\/(\.\/)?/, '').replace(/^en\//, '');
+    }
+
+    function resolveTarget(relUrl) {
+      var parts = normUrl(relUrl).split('#');
+      var base = parts[0], hash = parts[1] ? '#' + parts[1] : '';
+      var navData = global.SITE_NAV_DATA;
+      if (!hash && navData && Array.isArray(navData.pages)) {
+        for (var i = 0; i < navData.pages.length; i++) {
+          if (navData.pages[i][1] === base) {
+            base = pageTarget(navData.pages[i], navData, typeof global.KNOWLEDGE_DEFAULT_EDITION === 'string' ? global.KNOWLEDGE_DEFAULT_EDITION : navData.edition);
+            break;
+          }
+        }
+      }
+      return new URL(base + hash, navRootURL).href;
+    }
+
+    function runModalSearch() {
+      clearTimeout(pfDebounce);
+      var q = input.value.trim();
+      var ui = SEARCH_UI[lang()] || SEARCH_UI.zh;
+      if (!q) {
+        listEl.innerHTML = '';
+        statusEl.textContent = ui.hint;
+        return;
+      }
+      if (pfStatus === 'idle') { ensurePagefind(); return; }
+      if (pfStatus === 'loading') { statusEl.textContent = ui.loading; return; }
+      if (pfStatus !== 'ready' || !pfMod) return;
+      var seq = ++pfSeq;
+      pfDebounce = setTimeout(function () {
+        pfMod.search(q).then(function (res) {
+          if (seq !== pfSeq || input.value.trim() !== q) return;
+          var top = (res && res.results || []).slice(0, 10);
+          return Promise.all(top.map(function (r) { return r.data(); })).then(function (items) {
+            if (seq !== pfSeq || input.value.trim() !== q) return;
+            listEl.innerHTML = '';
+            var rows = [], seen = {};
+            items.forEach(function (d) {
+              if (!d) return;
+              var pageTitle = (d.meta && d.meta.title) || normUrl(d.url);
+              var subs = Array.isArray(d.sub_results) && d.sub_results.length ? d.sub_results.slice(0, 2) : [{ title: pageTitle, url: d.url, excerpt: d.excerpt }];
+              subs.forEach(function (sub) {
+                var href = resolveTarget(sub.url || d.url);
+                if (seen[href]) return;
+                seen[href] = true;
+                rows.push({
+                  href: href,
+                  title: sub.title || pageTitle,
+                  pageTitle: pageTitle,
+                  excerpt: sub.excerpt || d.excerpt || ''
+                });
+              });
+            });
+            if (!rows.length) {
+              statusEl.textContent = ui.empty;
+              return;
+            }
+            statusEl.textContent = ui.count.replace('{n}', String(rows.length));
+            rows.slice(0, 12).forEach(function (r) {
+              var a = doc.createElement('a');
+              a.className = 'site-search-item';
+              a.href = r.href;
+              var h = doc.createElement('div');
+              h.className = 'site-search-item-title';
+              h.textContent = r.title;
+              a.appendChild(h);
+              if (r.pageTitle && r.pageTitle !== r.title) {
+                var p = doc.createElement('div');
+                p.className = 'site-search-item-page';
+                p.textContent = r.pageTitle;
+                a.appendChild(p);
+              }
+              if (r.excerpt) {
+                var ex = doc.createElement('div');
+                ex.className = 'site-search-item-excerpt';
+                ex.innerHTML = r.excerpt;
+                a.appendChild(ex);
+              }
+              a.addEventListener('click', function () { closeModal(); });
+              listEl.appendChild(a);
+            });
+          });
+        }).catch(function () {});
+      }, 80);
+    }
+
+    function openModal() {
+      if (isOpen) return;
+      isOpen = true;
+      syncSearchTexts();
+      modal.hidden = false;
+      ensurePagefind();
+      try { input.focus({ preventScroll: true }); } catch (e) { input.focus(); }
+      if (input.value.trim()) runModalSearch();
+    }
+
+    function closeModal() {
+      if (!isOpen) return;
+      isOpen = false;
+      modal.hidden = true;
+      try { trigger.focus({ preventScroll: true }); } catch (e) { trigger.focus(); }
+    }
+
+    trigger.addEventListener('click', openModal);
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', function (e) {
+      if (e.target === modal) closeModal();
+    });
+    input.addEventListener('compositionstart', function () { composing = true; });
+    input.addEventListener('compositionend', function () { composing = false; runModalSearch(); });
+    input.addEventListener('input', function (e) { if (!composing && !e.isComposing) runModalSearch(); });
+
+    doc.addEventListener('keydown', function (e) {
+      if ((e.metaKey || e.ctrlKey) && (e.key === 'k' || e.key === 'K')) {
+        e.preventDefault();
+        if (isOpen) closeModal(); else openModal();
+      } else if (e.key === 'Escape' && isOpen) {
+        e.preventDefault();
+        closeModal();
+      }
+    });
+
+    if (global.MutationObserver) {
+      new global.MutationObserver(syncSearchTexts).observe(doc.documentElement, { attributes: true, attributeFilter: ['lang'] });
+    }
+    syncSearchTexts();
+  }
+
   function bootChapterRail() {
     if (doc.readyState === 'loading') {
-      doc.addEventListener('DOMContentLoaded', initChapterRail, { once: true });
+      doc.addEventListener('DOMContentLoaded', function () { initChapterRail(); initGlobalSearch(); }, { once: true });
     } else {
       initChapterRail();
+      initGlobalSearch();
     }
   }
   bootChapterRail();

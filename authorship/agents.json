@@ -21,6 +21,7 @@
     { "id": "muse-spark", "match": "muse spark" },
     { "id": "gemini-4-hydrogen", "match": "gemini[- ]?4[- ]?hydrogen" },
     { "id": "gemini-4-neon", "match": "gemini[- ]?4[- ]?neon" },
+    { "id": "gemini-4-argon", "match": "gemini[- ]?4[- ]?argon" },
     { "id": "gemini-pro-orchestrator-neon", "match": "gemini[- ]?pro[- ]?orchestrator[- ]?neon" },
     { "id": "gemini-flash-worker-agy", "match": "gemini[- ]?flash[- ]?worker[- ]?agy" },
     { "id": "gemini-pro", "match": "gemini[- ]?pro" },

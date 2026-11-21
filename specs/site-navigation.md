@@ -37,6 +37,7 @@ to the home views, whose cards follow the same switch. Rules: [claude-code-editi
 | `<category>/<subtopic>/index.html` | **Generated** redirect stubs, one per registered subtopic that has live pages (48 on 2026-11-15). |
 | `tests/site-nav.cjs` | Node: `--check`, data vs registry, stubs, includes, matcher. |
 | `tests/site-nav-browser.cjs` | Playwright: home views, breadcrumb on sample page types, auto-links, skip rules, language switch, overflow. Auto-links run on a hand-written essay (`why-compute-waits-for-memory`) with one test paragraph added to both copy tables, since no hand-written essay mentions another live title any more; `how-sas-works`, its host until its template conversion, is now checked for the linker being off and its static links (review 2026-11-16). |
+| `pagefind/` + `scripts/build-pagefind-index.cjs` | **Generated** Pagefind full-text index (`zh-CN` + `en`). `site-nav.js` mounts a floating `.site-search-fab` button and `⌘K` / `Ctrl+K` full-text search modal (`.site-search-modal`) on every content page (2026-11-21; details in `specs/atlas-search-index.md` § Pagefind full-text search). |
 
 ## URL scheme
 

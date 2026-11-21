@@ -22,6 +22,7 @@ def main():
         raise SystemExit('Publish only the current pushed origin/main revision.')
     for args in [('scripts/build-pages.cjs', '--all', '--check'),
                  ('scripts/build-registry.cjs', '--check'),
+                 ('scripts/build-pagefind-index.cjs', '--check'),
                  ('tests/page-provenance-core.cjs',), ('tests/google-analytics.cjs',)]:
         run('node', *args)
     tasks = pathlib.Path('/tmp/agent-tasks')
