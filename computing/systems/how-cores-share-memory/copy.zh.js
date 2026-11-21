@@ -482,11 +482,12 @@ window.ESSAY_COPY.zh = {
   "site.crumb.cat": "计算与智能",
   "site.crumb.sub": "系统与安全",
   "site.bl.title": "被这些页面引用",
-  "site.bl.1": "<a href=\"../coherent-interconnects/\">芯片之间怎么共用内存</a>：<a href=\"../coherent-interconnects/#ch2\">该文第 2 章</a> → <a href=\"#ch1\">本页第 1 章</a>、<a href=\"#ch3\">本页第 3 章</a>、<a href=\"#ch4\">本页第 4 章</a>、<a href=\"#ch7\">本页第 7 章</a>；<a href=\"../coherent-interconnects/#ch7\">该文第 7 章</a> → <a href=\"#ch4\">本页第 4 章</a>；<a href=\"../coherent-interconnects/#ch13\">该文第 13 章</a>",
-  "site.bl.2": "<a href=\"../how-a-computer-boots/\">电脑是怎么开机的</a>：<a href=\"../how-a-computer-boots/#ch11\">该文第 11 章</a>",
-  "site.bl.3": "<a href=\"../how-a-cpu-guesses-ahead/\">CPU 是怎么猜着往前跑的</a>：<a href=\"../how-a-cpu-guesses-ahead/#ch12\">该文第 12 章</a> → <a href=\"#ch8\">本页第 8 章</a>",
-  "site.bl.4": "<a href=\"../how-a-gpu-computes/\">GPU 是怎么算的</a>：<a href=\"../how-a-gpu-computes/#ch10\">该文第 10 章</a> → <a href=\"#ch3\">本页第 3 章</a>、<a href=\"#ch4\">本页第 4 章</a>；<a href=\"../how-a-gpu-computes/#ch12\">该文第 12 章</a>",
-  "site.bl.5": "<a href=\"../how-cpu-caches-work/\">CPU 的三级缓存是怎么工作的</a>：<a href=\"../how-cpu-caches-work/#ch9\">该文第 9 章</a> → <a href=\"#ch3\">本页第 3 章</a>；<a href=\"../how-cpu-caches-work/#ch12\">该文第 12 章</a>",
-  "site.bl.6": "<a href=\"../how-the-os-talks-to-hardware/\">操作系统是怎么和硬件说话的</a>：<a href=\"../how-the-os-talks-to-hardware/#ch7\">该文第 7 章</a> → <a href=\"#ch9\">本页第 9 章</a>；<a href=\"../how-the-os-talks-to-hardware/#ch14\">该文第 14 章</a> → <a href=\"#ch9\">本页第 9 章</a>",
-  "site.bl.7": "<a href=\"../how-virtual-memory-works/\">虚拟内存是怎么工作的</a>：<a href=\"../how-virtual-memory-works/#ch13\">该文第 13 章</a>"
+  "site.bl.1": "<a href=\"../../software/how-postgresql-runs-a-query/\">PostgreSQL 如何执行一条查询</a>：<a href=\"../../software/how-postgresql-runs-a-query/#ch11\">该文第 11 章</a>",
+  "site.bl.2": "<a href=\"../coherent-interconnects/\">芯片之间怎么共用内存</a>：<a href=\"../coherent-interconnects/#ch2\">该文第 2 章</a> → <a href=\"#ch1\">本页第 1 章</a>、<a href=\"#ch3\">本页第 3 章</a>、<a href=\"#ch4\">本页第 4 章</a>、<a href=\"#ch7\">本页第 7 章</a>；<a href=\"../coherent-interconnects/#ch7\">该文第 7 章</a> → <a href=\"#ch4\">本页第 4 章</a>；<a href=\"../coherent-interconnects/#ch13\">该文第 13 章</a>",
+  "site.bl.3": "<a href=\"../how-a-computer-boots/\">电脑是怎么开机的</a>：<a href=\"../how-a-computer-boots/#ch11\">该文第 11 章</a>",
+  "site.bl.4": "<a href=\"../how-a-cpu-guesses-ahead/\">CPU 是怎么猜着往前跑的</a>：<a href=\"../how-a-cpu-guesses-ahead/#ch12\">该文第 12 章</a> → <a href=\"#ch8\">本页第 8 章</a>",
+  "site.bl.5": "<a href=\"../how-a-gpu-computes/\">GPU 是怎么算的</a>：<a href=\"../how-a-gpu-computes/#ch10\">该文第 10 章</a> → <a href=\"#ch3\">本页第 3 章</a>、<a href=\"#ch4\">本页第 4 章</a>；<a href=\"../how-a-gpu-computes/#ch12\">该文第 12 章</a>",
+  "site.bl.6": "<a href=\"../how-cpu-caches-work/\">CPU 的三级缓存是怎么工作的</a>：<a href=\"../how-cpu-caches-work/#ch9\">该文第 9 章</a> → <a href=\"#ch3\">本页第 3 章</a>；<a href=\"../how-cpu-caches-work/#ch12\">该文第 12 章</a>",
+  "site.bl.7": "<a href=\"../how-the-os-talks-to-hardware/\">操作系统是怎么和硬件说话的</a>：<a href=\"../how-the-os-talks-to-hardware/#ch7\">该文第 7 章</a> → <a href=\"#ch9\">本页第 9 章</a>；<a href=\"../how-the-os-talks-to-hardware/#ch14\">该文第 14 章</a> → <a href=\"#ch9\">本页第 9 章</a>",
+  "site.bl.8": "<a href=\"../how-virtual-memory-works/\">虚拟内存是怎么工作的</a>：<a href=\"../how-virtual-memory-works/#ch13\">该文第 13 章</a>"
 };

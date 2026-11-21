@@ -131,8 +131,8 @@
     {
       "id": "nginx-http-phases-location",
       "title": {
-        "zh": "HTTP 11 阶段状态机与 location 优先级",
-        "en": "11-phase HTTP pipeline & location precedence"
+        "zh": "Nginx 请求 11 阶段状态机与 location 优先级",
+        "en": "Nginx 11-phase request pipeline & location precedence"
       },
       "desc": {
         "zh": "HTTP 请求沿 ngx_http_phases 定义的 11 个固定阶段流转；location 匹配按 = 精确 > 最长前缀带 ^~ 阻断正则 > 配置文件顺序的首条 ~ / ~* 正则 > 最长前缀兜底裁决。",
@@ -303,8 +303,8 @@
     {
       "id": "nginx-http3-pingora-frontier",
       "title": {
-        "zh": "HTTP/3 QUIC 热重载、Pingora 与 Envoy 架构演进",
-        "en": "HTTP/3 QUIC reloads, Pingora & Envoy architectures"
+        "zh": "QUIC 热重载、Pingora 与 Envoy 架构演进",
+        "en": "QUIC reloads, Pingora & Envoy architectures"
       },
       "desc": {
         "zh": "Nginx 1.28/1.30/1.31 持续打磨 HTTP/3 QUIC 与不丢连接的 quic_bpf 热重载，而 Cloudflare Pingora 和 Envoy 则分别转向多线程全局共享连接池与线程本地架构。",

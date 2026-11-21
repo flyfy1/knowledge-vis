@@ -143,7 +143,7 @@
   }
 </style>
 <link rel="stylesheet" href="../../../page-provenance.css">
-<link rel="stylesheet" href="../../../site-nav.css?v=sn-20261119a">
+<link rel="stylesheet" href="../../../site-nav.css?v=sn-20261121a">
 </head>
 <body>
 <div class="topbar">
@@ -159,6 +159,7 @@
     <p class="sub" data-i18n-html="hero.sub">点一下按钮，代码里写着一行 `setCount(c =&gt; c + 1)`。<br>从调用这行函数，到屏幕上数字真正变化，React 内部到底做了什么？</p>
     <p class="lead" data-i18n-html="hero.lead">用 React 写界面的人几乎每天都在调用 `setState` 或 `useState` 返回的更新函数。页面很快变了，但很少有人停下来问：为什么写 `&lt;Counter /&gt;` 时组件函数还没有执行？为什么 React 要自己维护一套链表节点而不是直接改 DOM？为什么 `useState` 不能放进 `if` 里？为什么列表漏写 `key` 会让输入框里的字串到下一行？这篇文章只追踪一件事：<strong>从调用 `setCount(c =&gt; c + 1)` 到浏览器把新画面画到屏幕上，中间走过的每一步数据结构和算法。</strong></p>
     <p class="note" data-i18n-html="hero.note">这里拆解的内部结构全部对照 <strong>React 19.3.1</strong>（npm 包 `react@19.3.1`、`react-dom@19.3.1`、`scheduler@0.28.0`，2026 年 10 月 14 日发布）的源码；位掩码、字段名和时间切片阈值都来自这一版，后续版本可能会调整。页面不加载 React 库：九个交互模型把对应的算法用几十到两百行重写了一遍，并用脚本把它们与真正的 `react@19.3.1` 在同样输入上逐项对数。硬件到像素之间的显示合成可以看<a href="../../systems/how-pixels-reach-a-screen/#ch3">《像素是怎么到达屏幕的》第 3 章</a>；同系列另一个在浏览器里自己调度帧预算的软件可以看<a href="../how-threejs-draws-a-scene/#ch1">《Three.js 是怎么把一个场景画出来的》</a>。这篇文章是 AI 写的；每章最后一段说明模型省掉了什么。</p>
+    <details class="page-provenance" data-developer="Antigravity" data-edition="antigravity-how-react-updates-the-dom-20261121" data-source-revision="b26a5444d615dd594e5e9a2ff6d87ac83653e3ed"><summary><span class="provenance-zh" lang="zh-CN">Antigravity 开发 · 原创版本</span><span class="provenance-en" lang="en">Developed with Antigravity · Original edition</span></summary><p><span class="provenance-zh" lang="zh-CN">本文由 Antigravity 从零编写，对照 React 19.3.1（react@19.3.1、react-dom@19.3.1、scheduler@0.28.0）的源码与规格；中英文同步完成并已运行模型、交叉验证、版式与画布扫描检查（独立评审待做）。</span><span class="provenance-en" lang="en">This essay was written from scratch with Antigravity against React 19.3.1 (react@19.3.1, react-dom@19.3.1, scheduler@0.28.0) specifications and internals; both Chinese and English were authored together and checked with model, crosscheck, layout, and canvas-sweep tests (independent review pending).</span></p><p><span class="provenance-zh" lang="zh-CN">范围：整篇长文从零编写：Render/Commit 双阶段、JSX 元素对象、Fiber 双缓冲与可中断工作循环、key 协调 diff、Hook 链表与 baseQueue、subtreeFlags 冒泡、Layout 与 Passive 副作用时序、事件委托与批处理、31 位 Lanes 并发调度、React 19.3 Compiler 与 RSC 前沿、排障提问。</span><span class="provenance-en" lang="en">Scope: Whole essay written from scratch: render/commit phases, JSX element objects, Fiber double buffering and interruptible work loop, keyed list reconciliation, hook linked lists and baseQueue, subtreeFlags bubbling, layout vs passive effect timing, delegated event batching, 31-bit Lanes scheduler, React 19.3 Compiler/RSC frontier, closing diagnostics.</span></p><p>antigravity-how-react-updates-the-dom-20261121 · <a href="https://github.com/flyfy1/knowledge-vis/commit/b26a5444d615dd594e5e9a2ff6d87ac83653e3ed"><span class="provenance-zh" lang="zh-CN">源码修订</span><span class="provenance-en" lang="en">Source revision</span> · b26a5444</a></p></details>
   </div>
 </header>
 
@@ -591,6 +592,6 @@
 <script src="copy.zh.js?v=20261121"></script>
 <script src="copy.en.js?v=20261121" onerror="void 0"></script>
 <script src="app.js?v=20261121"></script>
-<script defer src="../../../site-nav.js?v=sn-20261119a"></script>
+<script defer src="../../../site-nav.js?v=sn-20261121a"></script>
 </body>
 </html>

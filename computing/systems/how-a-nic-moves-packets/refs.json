@@ -10,6 +10,57 @@
  ],
  "backlinks": [
   {
+   "from": "how-containers-isolate-a-process",
+   "links": [
+    {
+     "from": "ch5",
+     "to": "ch3"
+    },
+    {
+     "from": "ch5",
+     "to": "ch10"
+    },
+    {
+     "from": "ch11",
+     "to": null
+    }
+   ]
+  },
+  {
+   "from": "how-nginx-handles-ten-thousand-connections",
+   "links": [
+    {
+     "from": null,
+     "to": null
+    },
+    {
+     "from": "ch3",
+     "to": "ch5"
+    },
+    {
+     "from": "ch11",
+     "to": null
+    }
+   ]
+  },
+  {
+   "from": "how-redis-answers-in-microseconds",
+   "links": [
+    {
+     "from": null,
+     "to": null
+    },
+    {
+     "from": "ch2",
+     "to": "ch3"
+    },
+    {
+     "from": "ch11",
+     "to": null
+    }
+   ]
+  },
+  {
    "from": "coherent-interconnects",
    "links": [
     {

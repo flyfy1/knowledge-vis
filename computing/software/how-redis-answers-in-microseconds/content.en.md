@@ -163,7 +163,7 @@ lpd: element data
 
 ::: lab ch3-model
 model.title: 44-Byte embstr Cliff & listpack Memory Calculator
-model.how: Start at "String / value length = 44" to see one tight 64-byte block, step to 45 to watch it split into two `raw` allocations, tick "Store as integer 42" for zero-alloc sharing, and push "Hash entries" past 512 (or length past 64) to trigger `listpack -&gt; hashtable`.
+model.how: Start at "String / value length = 44" to see one tight 64-byte block, step to 45 to watch it split into two `raw` allocations, tick "Store as integer 42" for zero-alloc sharing, and push "Hash entries" past 512 (or length past 64) to trigger `listpack -> hashtable`.
 ctl.len: String / value length
 ctl.entries: Hash entries
 ctl.int: Store as integer "42"

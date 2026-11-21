@@ -109,7 +109,7 @@ window.ESSAY_COPY.en = {
   "dg.robj.lp": "listpack entry (self backlen, no cascade)",
   "dg.robj.lpd": "element data",
   "ch3.model.title": "44-Byte embstr Cliff & listpack Memory Calculator",
-  "ch3.model.how": "Start at \"String / value length = 44\" to see one tight 64-byte block, step to 45 to watch it split into two `raw` allocations, tick \"Store as integer 42\" for zero-alloc sharing, and push \"Hash entries\" past 512 (or length past 64) to trigger `listpack -&gt; hashtable`.",
+  "ch3.model.how": "Start at \"String / value length = 44\" to see one tight 64-byte block, step to 45 to watch it split into two `raw` allocations, tick \"Store as integer 42\" for zero-alloc sharing, and push \"Hash entries\" past 512 (or length past 64) to trigger `listpack -> hashtable`.",
   "ch3.ctl.len": "String / value length",
   "ch3.ctl.entries": "Hash entries",
   "ch3.ctl.int": "Store as integer \"42\"",

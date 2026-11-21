@@ -144,7 +144,7 @@
   }
 </style>
 <link rel="stylesheet" href="../../../page-provenance.css">
-<link rel="stylesheet" href="../../../site-nav.css?v=sn-20261119a">
+<link rel="stylesheet" href="../../../site-nav.css?v=sn-20261121a">
 </head>
 <body>
 <div class="topbar">
@@ -160,6 +160,7 @@
     <p class="sub" data-i18n-html="hero.sub">你敲下一行 <code>clang -O2 sum.c -o sum</code>，几百毫秒后就多了一个能直接跑的可执行文件。<br>在这中间，LLVM 到底把你的源码揉碎又重组了多少次？</p>
     <p class="lead" data-i18n-html="hero.lead">写 C、C++、Rust 或 Swift 的时候，我们通常把编译器当成黑盒：左边吃进文本，右边吐出机器指令。可一旦遇到"开了 <code>-O2</code> 怎么把我的检查删了""加了 <code>restrict</code> 怎么突然快了四倍""为什么局部变量多到一定程度性能突然掉崖"，黑盒就不再够用。这篇文章只追一个问题：<strong>执行 <code>clang -O2 foo.c</code> 时，LLVM 从中端中间表示（IR）到硬件指令之间到底干了什么？</strong>我们按它真正运行 Pass 的顺序往下走：先看怎么把栈变量变成每个名字只赋值一次的 SSA，再看几个小 Pass 怎么一遍遍把代码消到不动点，接着看循环、别名分析、未定义行为如何解锁激进优化，最后看后端怎么把 IR 贴成特定 CPU 的指令、塞进有限的物理寄存器，并在链接时跨文件打通。</p>
     <p class="note" data-i18n-html="hero.note">本文所有中间表示、Pass 流水线和汇编验证，全部对照本机实测的 <strong>Apple Clang 21.0.0</strong>（<code>clang-2100.4.1.1</code>，目标平台 <code>arm64-apple-darwin27.2.0</code>，基于 <strong>LLVM 21</strong>）。需要诚实说明：macOS 命令行工具只安装 <code>/usr/bin/clang</code> 驱动，不含独立的 <code>opt</code> 或 <code>llc</code> 命令行工具，因此文中的全部 IR、Pass 结构与汇编验证都直接通过 <code>/usr/bin/clang -S -emit-llvm</code>、<code>-mllvm</code> 与 <code>-flto=thin</code> 实测采集。页面不加载真实编译器；文中的九个交互模型直接用纯 JavaScript 重写核心算法（包括支配边界、图着色、线性扫描和指令平铺），并与宿主机 Clang 输出逐项核对。前置硬件知识可先看<a href="../../systems/how-a-cpu-runs-a-program/#ch1">指令集与机器码</a>和<a href="../../systems/switches-that-compute/#ch1">逻辑开关与计算</a>。</p>
+    <details class="page-provenance" data-developer="Antigravity" data-edition="antigravity-how-llvm-compiles-your-code-20261121" data-source-revision="31631e36a124f85f019d06b75466899bd1ec54ba"><summary><span class="provenance-zh" lang="zh-CN">Antigravity 开发 · 原创版本</span><span class="provenance-en" lang="en">Developed with Antigravity · Original edition</span></summary><p><span class="provenance-zh" lang="zh-CN">本文由 Antigravity 从零编写，对照宿主机 Apple Clang 21.0.0（基于 LLVM 21，arm64-apple-darwin27.2.0）实测 IR、Pass 结构与汇编输出；中英文同步完成并已运行模型、交叉验证与版式检查（独立评审待做）。</span><span class="provenance-en" lang="en">This essay was written from scratch with Antigravity against host Apple Clang 21.0.0 (LLVM 21, arm64-apple-darwin27.2.0) live IR, pass-structure, and assembly outputs; both Chinese and English were authored together and checked with model, crosscheck, and layout tests (independent review pending).</span></p><p><span class="provenance-zh" lang="zh-CN">范围：整篇长文从零编写：三段式编译器与不透明指针 IR、-O0 为什么满屏 alloca、Cytron SSA 支配边界与 mem2reg、新 Pass 管理器迭代与不动点、循环不变量外提 LICM 与 SIMD 向量化、nsw/poison 未定义行为消除、SelectionDAG 与 GlobalISel 指令选择、图着色与线性扫描寄存器分配、ThinLTO 与 PGO、MLIR/BOLT 前沿、编译优化诊断提问。</span><span class="provenance-en" lang="en">Scope: Whole essay written from scratch: 3-phase decoupled compiler and opaque ptr IR, why -O0 emits alloca stacks, Cytron SSA dominance frontiers and mem2reg, New Pass Manager fixed-point pipeline, LICM aliasing and SIMD vectorization, nsw/poison UB folding, SelectionDAG vs GlobalISel, graph coloring vs linear-scan register allocation, ThinLTO and PGO, MLIR/BOLT frontier, closing diagnostics.</span></p><p>antigravity-how-llvm-compiles-your-code-20261121 · <a href="https://github.com/flyfy1/knowledge-vis/commit/31631e36a124f85f019d06b75466899bd1ec54ba"><span class="provenance-zh" lang="zh-CN">源码修订</span><span class="provenance-en" lang="en">Source revision</span> · 31631e36</a></p></details>
   </div>
 </header>
 
@@ -607,6 +608,6 @@
 <script src="copy.zh.js?v=20261121"></script>
 <script src="copy.en.js?v=20261121" onerror="void 0"></script>
 <script src="app.js?v=20261121"></script>
-<script defer src="../../../site-nav.js?v=sn-20261119a"></script>
+<script defer src="../../../site-nav.js?v=sn-20261121a"></script>
 </body>
 </html>

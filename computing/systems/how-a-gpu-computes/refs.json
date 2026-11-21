@@ -20,6 +20,19 @@
  ],
  "backlinks": [
   {
+   "from": "how-chromium-renders-a-web-page",
+   "links": [
+    {
+     "from": "ch7",
+     "to": "ch9"
+    },
+    {
+     "from": "ch11",
+     "to": "ch9"
+    }
+   ]
+  },
+  {
    "from": "how-threejs-draws-a-scene",
    "links": [
     {

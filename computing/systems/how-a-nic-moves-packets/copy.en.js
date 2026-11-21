@@ -476,7 +476,10 @@ window.ESSAY_COPY.en = {
   "site.crumb.cat": "Computing & AI",
   "site.crumb.sub": "Systems & Security",
   "site.bl.title": "Linked from",
-  "site.bl.1": "<a href=\"../coherent-interconnects/\">How Chips Share Memory</a>: <a href=\"../coherent-interconnects/#ch10\">its chapter 10</a> → <a href=\"#ch12\">this page chapter 12</a>",
-  "site.bl.2": "<a href=\"../how-the-os-talks-to-hardware/\">How the OS Talks to Hardware</a>: <a href=\"../how-the-os-talks-to-hardware/#ch6\">its chapter 6</a> → <a href=\"#ch5\">this page chapter 5</a>; <a href=\"../how-the-os-talks-to-hardware/#ch7\">its chapter 7</a> → <a href=\"#ch3\">this page chapter 3</a>",
-  "site.bl.3": "<a href=\"../storage-over-a-network/\">Drives Across a Wire</a>: <a href=\"../storage-over-a-network/#ch6\">its chapter 6</a> → <a href=\"#ch11\">this page chapter 11</a>"
+  "site.bl.1": "<a href=\"../../software/how-containers-isolate-a-process/\">How Containers Isolate a Process</a>: <a href=\"../../software/how-containers-isolate-a-process/#ch5\">its chapter 5</a> → <a href=\"#ch3\">this page chapter 3</a>, <a href=\"#ch10\">this page chapter 10</a>; <a href=\"../../software/how-containers-isolate-a-process/#ch11\">its chapter 11</a>",
+  "site.bl.2": "<a href=\"../../software/how-nginx-handles-ten-thousand-connections/\">How Nginx Handles Ten Thousand Connections</a>: <a href=\"../../software/how-nginx-handles-ten-thousand-connections/#ch3\">its chapter 3</a> → <a href=\"#ch5\">this page chapter 5</a>; <a href=\"../../software/how-nginx-handles-ten-thousand-connections/#ch11\">its chapter 11</a>",
+  "site.bl.3": "<a href=\"../../software/how-redis-answers-in-microseconds/\">How Redis Answers in Microseconds</a>: <a href=\"../../software/how-redis-answers-in-microseconds/#ch2\">its chapter 2</a> → <a href=\"#ch3\">this page chapter 3</a>; <a href=\"../../software/how-redis-answers-in-microseconds/#ch11\">its chapter 11</a>",
+  "site.bl.4": "<a href=\"../coherent-interconnects/\">How Chips Share Memory</a>: <a href=\"../coherent-interconnects/#ch10\">its chapter 10</a> → <a href=\"#ch12\">this page chapter 12</a>",
+  "site.bl.5": "<a href=\"../how-the-os-talks-to-hardware/\">How the OS Talks to Hardware</a>: <a href=\"../how-the-os-talks-to-hardware/#ch6\">its chapter 6</a> → <a href=\"#ch5\">this page chapter 5</a>; <a href=\"../how-the-os-talks-to-hardware/#ch7\">its chapter 7</a> → <a href=\"#ch3\">this page chapter 3</a>",
+  "site.bl.6": "<a href=\"../storage-over-a-network/\">Drives Across a Wire</a>: <a href=\"../storage-over-a-network/#ch6\">its chapter 6</a> → <a href=\"#ch11\">this page chapter 11</a>"
 };

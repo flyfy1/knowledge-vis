@@ -143,7 +143,7 @@ function near(name, got, want, tol) { n++; if (!(Math.abs(got - want) <= tol)) {
   check('runtime placeholders match in zh and en', Object.keys(Z).filter(k => ph(Z[k]) !== ph(E[k])).join(), '');
   check('English is native (no stub flag)', [String((PJ.languages || {}).en), /data-lang-en="stub"/.test(html)].join(), 'undefined,false');
   check('zero CJK in English copy', Object.keys(E).filter(k => /[\u3400-\u9fff]/.test(E[k])).join(), '');
-  check('draft page.json has no status/title/desc', [PJ.status, PJ.title, PJ.desc].map(String).join(), 'undefined,undefined,undefined');
+  check('live page.json has status=live and omits title/desc', [PJ.status, PJ.title, PJ.desc].map(String).join(), 'live,undefined,undefined');
 
   let h = unprefill(html, Z)
     .replace(/<details class="page-provenance"[\s\S]*?<\/details>/, '')

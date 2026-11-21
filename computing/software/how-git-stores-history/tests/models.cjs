@@ -193,10 +193,11 @@ function near(name, got, want, tol) {
   check('runtime placeholders match in zh and en', Object.keys(Z).filter(k => ph(Z[k]) !== ph(E[k])).join(), '');
   check('English is complete (no stub)', [String((PJ.languages || {}).en), /data-lang-en="stub"/.test(html)].join(), 'undefined,false');
   check('zero CJK in English copy', Object.keys(E).filter(k => /[㐀-鿿]/.test(E[k])).join(), '');
-  check('draft page.json has no status field yet', String(PJ.status), 'undefined');
+  check('page.json status is live', String(PJ.status), 'live');
   check('page.json layout/category/subtopic/stage', [PJ.layout, PJ.category, PJ.subtopic, PJ.stage].join(), 'essay,computing,software,university');
 
   let h = unprefill(html, Z)
+    .replace(/<details class="page-provenance"[\s\S]*?<\/details>/, '')
     .replace(/<div[^>]*id="langToggle"[\s\S]*?<\/div>/, '')
     .replace(/<title>[\s\S]*?<\/title>/, '')
     .replace(/<meta[^>]*>/g, '')

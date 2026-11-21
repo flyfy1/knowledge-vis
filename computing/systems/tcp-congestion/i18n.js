@@ -66,8 +66,9 @@ const STR={
     "site.crumb.sub": "系统与安全",
     "site.bl.title": "被这些页面引用",
     "site.bl.1": "<a href=\"../../algorithms/shortest-path/\">最短路 · 从起点像洪水一样漫开</a>：<a href=\"../../algorithms/shortest-path/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>",
-    "site.bl.2": "<a href=\"../how-a-nic-moves-packets/\">网卡是怎么搬运数据包的</a>：<a href=\"../how-a-nic-moves-packets/#ch9\">该文第 9 章</a>；<a href=\"../how-a-nic-moves-packets/#ch14\">该文第 14 章</a>",
-    "site.bl.3": "<a href=\"../storage-over-a-network/\">隔着网线的硬盘</a>：<a href=\"../storage-over-a-network/#ch2\">该文第 2 章</a> → <a href=\"#step1\">本页第 1 步</a>；<a href=\"../storage-over-a-network/#ch3\">该文第 3 章</a> → <a href=\"#step4\">本页第 4 步</a>；<a href=\"../storage-over-a-network/#ch11\">该文第 11 章</a>"
+    "site.bl.2": "<a href=\"../../software/how-nginx-handles-ten-thousand-connections/\">Nginx 如何扛住上万并发</a>：<a href=\"../../software/how-nginx-handles-ten-thousand-connections/#ch9\">该文第 9 章</a> → <a href=\"#step1\">本页第 1 步</a>；<a href=\"../../software/how-nginx-handles-ten-thousand-connections/#ch11\">该文第 11 章</a>",
+    "site.bl.3": "<a href=\"../how-a-nic-moves-packets/\">网卡是怎么搬运数据包的</a>：<a href=\"../how-a-nic-moves-packets/#ch9\">该文第 9 章</a>；<a href=\"../how-a-nic-moves-packets/#ch14\">该文第 14 章</a>",
+    "site.bl.4": "<a href=\"../storage-over-a-network/\">隔着网线的硬盘</a>：<a href=\"../storage-over-a-network/#ch2\">该文第 2 章</a> → <a href=\"#step1\">本页第 1 步</a>；<a href=\"../storage-over-a-network/#ch3\">该文第 3 章</a> → <a href=\"#step4\">本页第 4 步</a>；<a href=\"../storage-over-a-network/#ch11\">该文第 11 章</a>"
   },
   en: {
     docTitle: "Network Flow · A Message’s Journey",
@@ -134,8 +135,9 @@ const STR={
     "site.crumb.sub": "Systems & Security",
     "site.bl.title": "Linked from",
     "site.bl.1": "<a href=\"../../algorithms/shortest-path/\">Shortest Path · Flooding Out From the Start</a>: <a href=\"../../algorithms/shortest-path/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>",
-    "site.bl.2": "<a href=\"../how-a-nic-moves-packets/\">How a Network Card Moves Packets</a>: <a href=\"../how-a-nic-moves-packets/#ch9\">its chapter 9</a>; <a href=\"../how-a-nic-moves-packets/#ch14\">its chapter 14</a>",
-    "site.bl.3": "<a href=\"../storage-over-a-network/\">Drives Across a Wire</a>: <a href=\"../storage-over-a-network/#ch2\">its chapter 2</a> → <a href=\"#step1\">this page step 1</a>; <a href=\"../storage-over-a-network/#ch3\">its chapter 3</a> → <a href=\"#step4\">this page step 4</a>; <a href=\"../storage-over-a-network/#ch11\">its chapter 11</a>"
+    "site.bl.2": "<a href=\"../../software/how-nginx-handles-ten-thousand-connections/\">How Nginx Handles Ten Thousand Connections</a>: <a href=\"../../software/how-nginx-handles-ten-thousand-connections/#ch9\">its chapter 9</a> → <a href=\"#step1\">this page step 1</a>; <a href=\"../../software/how-nginx-handles-ten-thousand-connections/#ch11\">its chapter 11</a>",
+    "site.bl.3": "<a href=\"../how-a-nic-moves-packets/\">How a Network Card Moves Packets</a>: <a href=\"../how-a-nic-moves-packets/#ch9\">its chapter 9</a>; <a href=\"../how-a-nic-moves-packets/#ch14\">its chapter 14</a>",
+    "site.bl.4": "<a href=\"../storage-over-a-network/\">Drives Across a Wire</a>: <a href=\"../storage-over-a-network/#ch2\">its chapter 2</a> → <a href=\"#step1\">this page step 1</a>; <a href=\"../storage-over-a-network/#ch3\">its chapter 3</a> → <a href=\"#step4\">this page step 4</a>; <a href=\"../storage-over-a-network/#ch11\">its chapter 11</a>"
   }
 };
 let lang='zh';function t(k,p={}){let s=(STR[lang]||STR.zh)[k]||k;for(const x in p)s=s.replaceAll('{'+x+'}',String(p[x]));return s;}function applyLang(l){lang=l;document.documentElement.lang=l==='zh'?'zh-CN':'en';document.title=t('docTitle');document.querySelectorAll('[data-i18n]').forEach(e=>e.textContent=t(e.dataset.i18n));document.querySelectorAll('[data-i18n-html]').forEach(e=>e.innerHTML=t(e.dataset.i18nHtml));document.querySelectorAll('#langToggle button').forEach(b=>b.classList.toggle('active',b.dataset.lang===l));window.dispatchEvent(new Event('langchange'));}window.t=t;window.STR=STR;window.getLang=()=>lang;window.addEventListener('DOMContentLoaded',()=>{document.querySelectorAll('#langToggle button').forEach(b=>b.onclick=()=>{lang=b.dataset.lang;try{localStorage.setItem('knowledge-lang',lang)}catch{};applyLang(lang);});try{const s=localStorage.getItem('knowledge-lang');if(s==='en'||s==='zh')lang=s}catch{};applyLang(lang);});

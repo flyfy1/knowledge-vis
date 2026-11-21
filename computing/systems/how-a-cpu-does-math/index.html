@@ -159,7 +159,7 @@
   }
 </style>
 <link rel="stylesheet" href="../../../page-provenance.css">
-<link rel="stylesheet" href="../../../site-nav.css?v=sn-20261119a">
+<link rel="stylesheet" href="../../../site-nav.css?v=sn-20261121a">
 </head>
 <body>
 <div class="topbar">
@@ -567,9 +567,11 @@
   <div class="wrap">
     <h2 data-i18n="site.bl.title">被这些页面引用</h2>
     <ul class="xref-list">
-      <li data-i18n-html="site.bl.1"><a href="../how-a-cpu-runs-a-program/">CPU 是怎么运行一个程序的</a>：<a href="../how-a-cpu-runs-a-program/#ch11">该文第 11 章</a> → <a href="#ch9">本页第 9 章</a>；<a href="../how-a-cpu-runs-a-program/#ch12">该文第 12 章</a></li>
-      <li data-i18n-html="site.bl.2"><a href="../how-a-gpu-computes/">GPU 是怎么算的</a>：<a href="../how-a-gpu-computes/#ch1">该文第 1 章</a> → <a href="#ch9">本页第 9 章</a>；<a href="../how-a-gpu-computes/#ch8">该文第 8 章</a> → <a href="#ch7">本页第 7 章</a>、<a href="#ch8">本页第 8 章</a></li>
-      <li data-i18n-html="site.bl.3"><a href="../switches-that-compute/">一堆开关是怎么学会算数的</a>：<a href="../switches-that-compute/#ch10">该文第 10 章</a> → <a href="#ch1">本页第 1 章</a></li>
+      <li data-i18n-html="site.bl.1"><a href="../../software/how-llvm-compiles-your-code/">LLVM 如何把源码编译成机器码</a>：<a href="../../software/how-llvm-compiles-your-code/#ch5">该文第 5 章</a> → <a href="#ch9">本页第 9 章</a>、<a href="#ch10">本页第 10 章</a>；<a href="../../software/how-llvm-compiles-your-code/#ch11">该文第 11 章</a></li>
+      <li data-i18n-html="site.bl.2"><a href="../../software/how-v8-runs-javascript/">V8 是怎么跑起一段 JavaScript 的</a>：<a href="../../software/how-v8-runs-javascript/#ch2">该文第 2 章</a> → <a href="#ch1">本页第 1 章</a>；<a href="../../software/how-v8-runs-javascript/#ch11">该文第 11 章</a></li>
+      <li data-i18n-html="site.bl.3"><a href="../how-a-cpu-runs-a-program/">CPU 是怎么运行一个程序的</a>：<a href="../how-a-cpu-runs-a-program/#ch11">该文第 11 章</a> → <a href="#ch9">本页第 9 章</a>；<a href="../how-a-cpu-runs-a-program/#ch12">该文第 12 章</a></li>
+      <li data-i18n-html="site.bl.4"><a href="../how-a-gpu-computes/">GPU 是怎么算的</a>：<a href="../how-a-gpu-computes/#ch1">该文第 1 章</a> → <a href="#ch9">本页第 9 章</a>；<a href="../how-a-gpu-computes/#ch8">该文第 8 章</a> → <a href="#ch7">本页第 7 章</a>、<a href="#ch8">本页第 8 章</a></li>
+      <li data-i18n-html="site.bl.5"><a href="../switches-that-compute/">一堆开关是怎么学会算数的</a>：<a href="../switches-that-compute/#ch10">该文第 10 章</a> → <a href="#ch1">本页第 1 章</a></li>
     </ul>
   </div>
 </section>
@@ -577,10 +579,10 @@
 
 <footer><div class="wrap" data-i18n-html="footer"><p><strong>来源。</strong>IEEE Std 754-2019，IEEE Standard for Floating-Point Arithmetic（格式参数、舍入、特殊值；第 1–4 章）。D. Goldberg，What Every Computer Scientist Should Know About Floating-Point Arithmetic，ACM Computing Surveys 23(1)，1991。N. J. Higham，Accuracy and Stability of Numerical Algorithms，第 2 版，SIAM 2002（求和误差、Kahan 求和）。W. Kahan，Further remarks on reducing truncation errors，CACM 8(1)，1965。B. P. Welford，Note on a method for calculating corrected sums of squares and products，Technometrics 4(3)，1962。</p><p>P. Micikevicius 等，FP8 Formats for Deep Learning，arXiv:2209.05433（2022）；OCP 8-bit Floating Point Specification（OFP8）1.0（2023 年 6 月）；OCP Microscaling Formats (MX) Specification 1.0（2023 年 9 月）；B. Darvish Rouhani 等，Microscaling Data Formats for Deep Learning，arXiv:2310.10537（2023）。NVIDIA，Introducing NVFP4 for Efficient and Accurate Low-Precision Inference（技术博客，2025）。</p><p>英特尔，Intel Advanced Vector Extensions 10.2 Architecture Specification，文档号 361050-007，第 7 版（2026 年 4 月）；英特尔 AMX（Intel 指令集扩展参考，clang amxintrin.h）。A. Fog，Instruction tables（2025-09-20 更新）。T. Downs，Gathering Intel on Intel AVX-512 Transitions（2020-01-17）；T. Downs，Ice Lake AVX-512 Downclocking（2020-08-19）。Chips and Cheese，Zen 5's AVX-512 Frequency Behavior（2025-02-28）。Arm，Scalable Matrix Extension 介绍（Arm 开发者博客）；Arm 新闻稿，Lumex CSS（2025-09-10）。S. Remke、A. Breuer，Hello SME!，arXiv:2409.18779（2024）。RISC-V International，RVA23 Profile 1.0（2024-10）。A. Fitzgibbon 等，Novel Aspects of IEEE SA P3109 Arithmetic Formats for Machine Learning，arXiv:2606.04028（2026）。</p><p><strong>模型。</strong>浮点格式和舍入：精确的有理数运算（BigInt）与按 IEEE 754 规则逐位舍入；模拟里用双精度加 TwoSum 求出精确余数再舍入，测试里与精确算法逐一核对。方差：一遍法、两遍法、Welford。求和：顺序、两两、Kahan。块缩放：按 OCP MX 1.0 第 6.3 节取比例，NVFP4 按 NVIDIA 的描述。乘加流水线：逐周期的发射模拟，参数取自 Agner Fog。频率许可：按 Downs 的测量逐微秒模拟。所有随机数用固定种子。这篇文章由 Claude（Anthropic 的 AI）写成，2026 年 11 月 16 日经另一个 Claude 实例独立评审和修改。</p></div></footer>
 
-<script src="models.js?v=20261118a"></script>
-<script src="copy.zh.js?v=20261118a"></script>
-<script src="copy.en.js?v=20261118a" onerror="void 0"></script>
-<script src="app.js?v=20261118a"></script>
-<script defer src="../../../site-nav.js?v=sn-20261119a"></script>
+<script src="models.js?v=20261121a"></script>
+<script src="copy.zh.js?v=20261121a"></script>
+<script src="copy.en.js?v=20261121a" onerror="void 0"></script>
+<script src="app.js?v=20261121a"></script>
+<script defer src="../../../site-nav.js?v=sn-20261121a"></script>
 </body>
 </html>

@@ -144,9 +144,10 @@ function ok(name, cond, info) {
   check('runtime placeholders match in zh and en', Object.keys(Z).filter(k => ph(Z[k]) !== ph(E[k])).join(), '');
   check('English is complete (no stub flag)', [String((PJ.languages || {}).en), /data-lang-en="stub"/.test(html)].join(), 'undefined,false');
   check('no CJK in copy.en.js', Object.keys(E).filter(k => /[㐀-鿿]/.test(E[k])).join(), '');
-  check('page.json draft has no status field yet', String(PJ.status), 'undefined');
+  check('page.json status is live', String(PJ.status), 'live');
 
   const h = unprefill(html, Z)
+    .replace(/<details class="page-provenance"[\s\S]*?<\/details>/, '')
     .replace(/<div[^>]*id="langToggle"[\s\S]*?<\/div>/, '')
     .replace(/<title>[\s\S]*?<\/title>/, '')
     .replace(/<meta[^>]*>/g, '')

@@ -25,6 +25,36 @@
  ],
  "backlinks": [
   {
+   "from": "how-llvm-compiles-your-code",
+   "links": [
+    {
+     "from": null,
+     "to": "ch1"
+    },
+    {
+     "from": "ch7",
+     "to": "ch3"
+    },
+    {
+     "from": "ch11",
+     "to": null
+    }
+   ]
+  },
+  {
+   "from": "how-v8-runs-javascript",
+   "links": [
+    {
+     "from": null,
+     "to": null
+    },
+    {
+     "from": "ch11",
+     "to": null
+    }
+   ]
+  },
+  {
    "from": "how-a-computer-boots",
    "links": [
     {

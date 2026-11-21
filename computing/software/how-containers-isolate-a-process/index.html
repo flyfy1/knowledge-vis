@@ -141,7 +141,7 @@
   }
 </style>
 <link rel="stylesheet" href="../../../page-provenance.css">
-<link rel="stylesheet" href="../../../site-nav.css?v=sn-20261119a">
+<link rel="stylesheet" href="../../../site-nav.css?v=sn-20261121a">
 </head>
 <body>
 <div class="topbar">
@@ -157,6 +157,7 @@
     <p class="sub" data-i18n-html="hero.sub">一行 `docker run` 就能变出一台「干净的 Linux」。<br>但 Linux 内核里其实根本没有「容器」这个对象——它到底把什么关进了沙盒？</p>
     <p class="lead" data-i18n-html="hero.lead">敲下 `docker run --rm -m 512m --cpus=0.5 python:3.12-slim python app.py`，几毫秒后一个看似独占根目录、独立网卡、自带 `PID 1` 的程序就跑起来了。可翻遍 Linux 内核源码，你找不到任何叫 `struct container` 的数据结构。这篇文章只追一个问题：<strong>这行命令到底让内核拼出了哪几样东西？为什么十份 200 MiB 的镜像在磁盘上能共用 199 MiB？又有哪些东西，还是能穿过这层沙盒？</strong>我们顺着容器启动到退出的真实链路往下走：先看工具链怎么拆包和向内核发号施令，再看只读镜像层如何用哈希去重、OverlayFS 如何叠出可写文件系统，然后看八副 Namespaces 怎么篡改进程的视野、虚拟网线怎么接出网关、`cgroups v2` 怎么在毫秒级冻结或杀掉进程，最后看 `seccomp-bpf` 和 PID 1 守着哪几道门。</p>
     <p class="note" data-i18n-html="hero.note">文中的结构依据 <strong>OCI Image Spec v1.1.0</strong>（2024 年 2 月 15 日发布）、<strong>OCI Runtime Spec v1.2.0</strong>（2024 年 2 月 13 日发布）以及 <strong>Linux 6.x 内核原语</strong>（`namespaces(7)`、`cgroups(7)` v2、`overlayfs`、`seccomp(2)`、`capabilities(7)`）。页面不连 Docker 守护进程（本文在 macOS Darwin 宿主机上编写，该主机没有 Linux 内核与 `dockerd`）：九个模型在页面里重写了对应的核心算法，SHA-256 内容寻址与规范算式由 `tools/crosscheck.cjs` 对照 Node `node:crypto` 与协议规格逐项核对。前置基础可以看<a href="../../systems/how-the-os-talks-to-hardware/">「操作系统是怎么和硬件说话的」</a>与<a href="../../systems/how-virtual-memory-works/">「虚拟内存是怎么工作的」</a>。每章末段说明模型省掉了什么。</p>
+    <details class="page-provenance" data-developer="Antigravity" data-edition="antigravity-how-containers-isolate-a-process-20261121" data-source-revision="1fcc12c7348fe6cbd699a212deb1c67da833e09d"><summary><span class="provenance-zh" lang="zh-CN">Antigravity 开发 · 原创版本</span><span class="provenance-en" lang="en">Developed with Antigravity · Original edition</span></summary><p><span class="provenance-zh" lang="zh-CN">本文由 Antigravity 从零编写，对照 OCI Image v1.1.0 / Runtime v1.2.0 规范与 Linux 内核 6.x 原语编写；中英文同步完成并已运行模型、交叉验证、版式与画布扫描检查（独立评审待做）。</span><span class="provenance-en" lang="en">This essay was written from scratch with Antigravity against OCI Image v1.1.0 / Runtime v1.2.0 specifications and Linux kernel 6.x primitives; both Chinese and English were authored together and checked with model, crosscheck, layout, and canvas-sweep tests (independent review pending).</span></p><p><span class="provenance-zh" lang="zh-CN">范围：整篇长文从零编写：docker CLI 到 runc 系统调用地图、OCI 镜像与 SHA-256 ChainID 去重、OverlayFS Copy-Up 与 .wh. 白化文件、八副 Namespaces 与 Rootless UserNS 映射、veth/bridge/NAT 与 VXLAN MTU、cgroups v2 CPU 带宽节流、统一内存与 OOM、seccomp-bpf 与 Capabilities 边界、PID 1 信号与僵尸回收、MicroVM/EROFS/WASI 前沿、排障提问。</span><span class="provenance-en" lang="en">Scope: Whole essay written from scratch: docker CLI to runc syscall stack, OCI Image v1.1 SHA-256 ChainID sharing, OverlayFS Copy-Up and .wh. whiteouts, eight Linux namespaces and Rootless uid_map, veth/bridge/NAT and VXLAN MTU, cgroups v2 CPU throttling, unified memory and OOM, seccomp-bpf and Capabilities, PID 1 signals and zombies, MicroVM/EROFS/WASI 0.3 frontier, closing diagnostics.</span></p><p>antigravity-how-containers-isolate-a-process-20261121 · <a href="https://github.com/flyfy1/knowledge-vis/commit/1fcc12c7348fe6cbd699a212deb1c67da833e09d"><span class="provenance-zh" lang="zh-CN">源码修订</span><span class="provenance-en" lang="en">Source revision</span> · 1fcc12c7</a></p></details>
   </div>
 </header>
 
@@ -578,6 +579,6 @@
 <script src="copy.zh.js?v=20261121"></script>
 <script src="copy.en.js?v=20261121" onerror="void 0"></script>
 <script src="app.js?v=20261121"></script>
-<script defer src="../../../site-nav.js?v=sn-20261119a"></script>
+<script defer src="../../../site-nav.js?v=sn-20261121a"></script>
 </body>
 </html>

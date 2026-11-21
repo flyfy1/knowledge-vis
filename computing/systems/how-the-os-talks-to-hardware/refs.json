@@ -4,6 +4,86 @@
  "refs": [],
  "backlinks": [
   {
+   "from": "how-containers-isolate-a-process",
+   "links": [
+    {
+     "from": null,
+     "to": null
+    },
+    {
+     "from": "ch1",
+     "to": "ch1"
+    },
+    {
+     "from": "ch7",
+     "to": "ch10"
+    },
+    {
+     "from": "ch8",
+     "to": "ch2"
+    },
+    {
+     "from": "ch11",
+     "to": null
+    }
+   ]
+  },
+  {
+   "from": "how-nginx-handles-ten-thousand-connections",
+   "links": [
+    {
+     "from": null,
+     "to": null
+    },
+    {
+     "from": "ch3",
+     "to": "ch11"
+    },
+    {
+     "from": "ch9",
+     "to": "ch7"
+    },
+    {
+     "from": "ch11",
+     "to": null
+    }
+   ]
+  },
+  {
+   "from": "how-postgresql-runs-a-query",
+   "links": [
+    {
+     "from": "ch6",
+     "to": null
+    },
+    {
+     "from": "ch10",
+     "to": "ch11"
+    },
+    {
+     "from": "ch11",
+     "to": null
+    }
+   ]
+  },
+  {
+   "from": "how-redis-answers-in-microseconds",
+   "links": [
+    {
+     "from": null,
+     "to": null
+    },
+    {
+     "from": "ch1",
+     "to": "ch11"
+    },
+    {
+     "from": "ch11",
+     "to": null
+    }
+   ]
+  },
+  {
    "from": "how-a-computer-boots",
    "links": [
     {

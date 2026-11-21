@@ -137,7 +137,7 @@
   }
 </style>
 <link rel="stylesheet" href="../../../page-provenance.css">
-<link rel="stylesheet" href="../../../site-nav.css?v=sn-20261119a">
+<link rel="stylesheet" href="../../../site-nav.css?v=sn-20261121a">
 </head>
 <body>
 <div class="topbar">
@@ -153,6 +153,7 @@
     <p class="sub" data-i18n-html="hero.sub">一条 `SET user:42 "alice"` 或 `ZRANGEBYSCORE` 发进套接字，<br>一条不加锁的主循环怎么做到每秒十万次以上的微秒级响应——又会在哪里卡住？</p>
     <p class="lead" data-i18n-html="hero.lead">在数据库都忙着开几十个工作线程、加锁、写磁盘的年代，Redis 把所有数据结构装进内存，用<strong>一条主线程</strong>处理命令，却能把单次服务端执行压到微秒以内、吞吐拉到每秒几十万次。这篇文章只拆一个问题：<strong>当你敲下 `SET user:42 "alice"` 或 `ZRANGEBYSCORE` 的那一瞬间，从套接字字节流到内存结构再到磁盘快照，Redis 8.0 内部究竟发生了什么——以及哪些动作会让微秒瞬间拖成毫秒？</strong></p>
     <p class="note" data-i18n-html="hero.note">文中的所有结构体字节数、配置默认值与常量，均对照 <strong>Redis 8.0</strong>（2025 年 5 月 1 日 GA 发布，tag `8.0.0`）源码与官方规范；文末前沿一章标注了截至 2026 年 11 月的后续演进（8.2–8.10、Valkey 9 与无共享引擎）。本机未安装可执行的 `redis-server`，所有模型均以纯脚本在页面里按同一算法重写，并由 `tools/crosscheck.cjs` 对照标准 RESP2/RESP3 二进制封包、SipHash-2-4 测试向量、CRC16-XMODEM 测试向量、逆二进制 `SCAN` 游标数学与 Morris 计数器期望表逐项验证。前置硬件与系统知识可参考<a href="../../systems/how-the-os-talks-to-hardware/">操作系统是怎么和硬件说话的</a>、<a href="../../systems/how-a-nic-moves-packets/">网卡是怎么搬运数据包的</a>、<a href="../../systems/how-virtual-memory-works/">虚拟内存是怎么工作的</a>和<a href="../../systems/why-compute-waits-for-memory/">为什么计算一直在等内存</a>。</p>
+    <details class="page-provenance" data-developer="Antigravity" data-edition="antigravity-how-redis-answers-in-microseconds-20261121" data-source-revision="19f8386b0656584774b5b86a234c4b50ae40d028"><summary><span class="provenance-zh" lang="zh-CN">Antigravity 开发 · 原创版本</span><span class="provenance-en" lang="en">Developed with Antigravity · Original edition</span></summary><p><span class="provenance-zh" lang="zh-CN">本文由 Antigravity 从零编写，对照 Redis 8.0 原理与实测规格；中英文同步完成并已运行模型、交叉验证、版式与画布扫描检查（独立评审待做）。</span><span class="provenance-en" lang="en">This essay was written from scratch with Antigravity against Redis 8.0 specifications and internals; both Chinese and English were authored together and checked with model, crosscheck, layout, and canvas-sweep tests (independent review pending).</span></p><p><span class="provenance-zh" lang="zh-CN">范围：整篇长文从零编写：单线程 ae 事件循环、RESP2/RESP3 与流水线、redisObject/44B embstr 与 listpack、dict 渐进式 rehash 与 SipHash-1-2、span 跳表与 ZSET、Redis 8 io-threads、fork() 写时复制与 Multi-Part AOF、主动过期与近似 LRU/Morris LFU、16384 槽与逆二进制 SCAN、Vector Sets 与 Valkey 前沿、排障提问。</span><span class="provenance-en" lang="en">Scope: Whole essay written from scratch: single-threaded ae event loop, RESP2/RESP3 pipelining, redisObject/44B embstr and listpack, incremental rehashing with SipHash-1-2, span-indexed ZSET skiplists, Redis 8 io-threads, fork() CoW and Multi-Part AOF, active expiration and LRU/Morris LFU, 16384 cluster slots and reverse-binary SCAN, Vector Sets/Valkey frontier, closing diagnostics.</span></p><p>antigravity-how-redis-answers-in-microseconds-20261121 · <a href="https://github.com/flyfy1/knowledge-vis/commit/19f8386b0656584774b5b86a234c4b50ae40d028"><span class="provenance-zh" lang="zh-CN">源码修订</span><span class="provenance-en" lang="en">Source revision</span> · 19f8386b</a></p></details>
   </div>
 </header>
 
@@ -474,10 +475,10 @@ ZRANGEBYSCORE rank 90 150 WITHSCORES
 
 <footer><div class="wrap" data-i18n-html="footer"><p><strong>来源。</strong>数据结构布局、常量与算法对照 <strong>Redis 8.0</strong>（2025 年 5 月 1 日 GA 发布，tag `8.0.0`）源码与官方规范：`src/ae.c`（事件循环）、`src/networking.c`（`readQueryFromClient`、RESP2/RESP3 解析与 `io-threads` 异步 I/O）、`src/object.c` 与 `src/sds.h`（`redisObject` 16 B、`sdshdr8` 3 B、`OBJ_ENCODING_EMBSTR_SIZE_LIMIT = 44`）、`src/listpack.c`（紧凑变长编码与 `backlen`）、`src/dict.c` 与 `src/siphash.c`（渐进式 `dictRehash`、`dictScan` 逆二进制游标、SipHash-1-2）、`src/t_zset.c`（`ZSKIPLIST_MAXLEVEL = 32`、`ZSKIPLIST_P = 0.25` 与 `span`）、`src/rdb.c` 与 `src/aof.c`（`BGSAVE` `fork()` 与 Multi-Part AOF）、`src/expire.c` 与 `src/evict.c`（`activeExpireCycle` 20 键采样与 10% 容忍率、`EVPOOL_SIZE = 16` 近似 LRU、`LFU_INIT_VAL = 5` Morris 计数器）、`src/cluster.c`（CRC16-CCITT/XMODEM 与 `{hash-tag}` 16,384 槽）。前沿一章另对照 Redis 官方发布日志（Redis 8.0 / 8.2 / 8.8 / 8.10）、antirez 关于 Vector Sets 的设计文章、Valkey 官方博客（Valkey 9.0 / 9.2）及 DragonflyDB 架构说明（均于 2026 年 11 月核对）。详细出处与未验证项见本页目录中的 `BRIEF.md`。</p><p><strong>模型与交叉验证。</strong>页面不连接后台 `redis-server`（本构建环境未安装本地 `redis-server` 二进制），全部 11 个模型由 `models.js` 以零依赖脚本重现，并由 `tools/crosscheck.cjs` 核对了 RESP2/RESP3 编解码往返、SipHash-2-4 官方测试向量、CRC16 `"123456789" -&gt; 0x31C3` 规范向量、扩缩容下的逆二进制 `SCAN` 零漏键数学性质、跳表 `p=1/4` 与跨度名次恒等式、以及 `LFULogIncr` 期望对数表。本文由 Antigravity（AI）从零编写。</p></div></footer>
 
-<script src="models.js?v=20261121"></script>
-<script src="copy.zh.js?v=20261121"></script>
-<script src="copy.en.js?v=20261121" onerror="void 0"></script>
-<script src="app.js?v=20261121"></script>
-<script defer src="../../../site-nav.js?v=sn-20261119a"></script>
+<script src="models.js?v=20261121a"></script>
+<script src="copy.zh.js?v=20261121a"></script>
+<script src="copy.en.js?v=20261121a" onerror="void 0"></script>
+<script src="app.js?v=20261121a"></script>
+<script defer src="../../../site-nav.js?v=sn-20261121a"></script>
 </body>
 </html>

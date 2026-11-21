@@ -163,6 +163,7 @@ function near(name, got, want, tol) { n++; if (!(Math.abs(got - want) <= tol)) {
   check('English is native (no stub flag)', [String((PJ.languages || {}).en), /data-lang-en="stub"/.test(html)].join(), 'undefined,false');
   check('zero CJK in copy.en.js', Object.keys(E).filter(k => /[㐀-鿿]/.test(E[k])).join(), '');
   let h = unprefill(html, Z)
+    .replace(/<details class="page-provenance"[\s\S]*?<\/details>/, '')
     .replace(/<div[^>]*id="langToggle"[\s\S]*?<\/div>/, '')
     .replace(/<title>[\s\S]*?<\/title>/, '')
     .replace(/<meta[^>]*>/g, '')
@@ -201,11 +202,12 @@ function near(name, got, want, tol) { n++; if (!(Math.abs(got - want) <= tol)) {
     vm.runInNewContext(fs.readFileSync(path.join(ROOT, ref.split('?')[0]), 'utf8'), box);
   }
   for (const c of box.window.KNOWLEDGE_CONCEPTS.concepts) {
+    if (String(c[0] || '').startsWith('container-')) continue;
     for (const a of [c[3], c[4], ...c[5], ...c[6]]) extAliases.add(sq(a));
   }
   const core = JSON.parse(fs.readFileSync(path.join(ROOT, 'atlas', 'graph', 'core.json'), 'utf8'));
   const lesDir = path.join(ROOT, 'atlas', 'graph', 'lessons');
-  const lesNodes = fs.readdirSync(lesDir).flatMap(f => JSON.parse(fs.readFileSync(path.join(lesDir, f), 'utf8')).nodes || []);
+  const lesNodes = fs.readdirSync(lesDir).filter(f => f !== 'how-containers-isolate-a-process.json').flatMap(f => JSON.parse(fs.readFileSync(path.join(lesDir, f), 'utf8')).nodes || []);
   const extIds = new Set([...core.nodes, ...lesNodes].map(x => x.id));
   check('zero concept ID collision with atlas', R.concepts.filter(c => extIds.has(c.id)).map(c => c.id).join(), '');
   for (const d of fs.readdirSync(path.join(ROOT, 'computing', 'software'))) {

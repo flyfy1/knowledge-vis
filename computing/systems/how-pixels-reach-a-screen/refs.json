@@ -4,6 +4,52 @@
  "refs": [],
  "backlinks": [
   {
+   "from": "how-chromium-renders-a-web-page",
+   "links": [
+    {
+     "from": null,
+     "to": "ch1"
+    },
+    {
+     "from": null,
+     "to": "ch3"
+    },
+    {
+     "from": "ch8",
+     "to": "ch3"
+    },
+    {
+     "from": "ch11",
+     "to": "ch1"
+    },
+    {
+     "from": "ch11",
+     "to": "ch3"
+    }
+   ]
+  },
+  {
+   "from": "how-react-updates-the-dom",
+   "links": [
+    {
+     "from": null,
+     "to": "ch3"
+    },
+    {
+     "from": "ch7",
+     "to": "ch3"
+    },
+    {
+     "from": "ch9",
+     "to": "ch11"
+    },
+    {
+     "from": "ch11",
+     "to": "ch3"
+    }
+   ]
+  },
+  {
    "from": "how-threejs-draws-a-scene",
    "links": [
     {

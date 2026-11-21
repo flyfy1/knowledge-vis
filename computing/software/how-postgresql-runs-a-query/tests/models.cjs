@@ -228,6 +228,7 @@ function near(name, got, want, tol) {
 
   // Unprefill check for zero CJK in index.html outside pre-filled copy
   let h = unprefill(html, Z)
+    .replace(/<details class="page-provenance"[\s\S]*?<\/details>/, '')
     .replace(/<div[^>]*id="langToggle"[\s\S]*?<\/div>/, '')
     .replace(/<title>[\s\S]*?<\/title>/, '')
     .replace(/<meta[^>]*>/g, '')
@@ -235,8 +236,8 @@ function near(name, got, want, tol) {
   const cjk = h.match(/[^\n]{0,30}[㐀-鿿][^\n]{0,30}/g) || [];
   check('zero CJK in index.html outside pre-filled copy', cjk.slice(0, 3).join(' | '), '');
 
-  // Draft page.json checks (no status, no title/desc)
-  check('page.json omits status, title, desc', [PJ.status, PJ.title, PJ.desc].map(String).join(), 'undefined,undefined,undefined');
+  // Live page.json checks (status=live, omits title/desc)
+  check('page.json status=live and omits title, desc', [PJ.status, PJ.title, PJ.desc].map(String).join(), 'live,undefined,undefined');
 
   // Partials & SVG diagrams
   const figs = fs.readdirSync(path.join(DIR, 'figures'));
@@ -275,6 +276,7 @@ function near(name, got, want, tol) {
   vm.runInNewContext(fs.readFileSync(path.join(ROOT, 'atlas', 'data.js'), 'utf8'), actx);
   const existing = new Set();
   for (const nd of (actx.window.ATLAS.nodes || [])) {
+    if ((nd.lessons || []).some(l => l.slug === 'how-postgresql-runs-a-query')) continue;
     if (nd.title) { existing.add(sq(nd.title.zh || '')); existing.add(sq(nd.title.en || '')); }
     if (Array.isArray(nd.aliases)) nd.aliases.forEach(a => existing.add(sq(a)));
     else if (nd.aliases) {

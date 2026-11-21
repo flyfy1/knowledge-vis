@@ -217,7 +217,7 @@ function noUndef(name, obj) {
   check('runtime placeholders match in zh and en', Object.keys(Z).filter(k => ph(Z[k]) !== ph(E[k])).join(), '');
   check('no en stub flag', [String((PJ.languages || {}).en), /data-lang-en="stub"/.test(html)].join(), 'undefined,false');
   check('no CJK in copy.en.js', Object.keys(E).filter(k => /[㐀-鿿]/.test(E[k])).join(), '');
-  check('no status field in draft page.json', String(PJ.status), 'undefined');
+  check('status is live in page.json', String(PJ.status), 'live');
 
   // Guardrail 1: no raw <script>, <link>, <iframe>, <div> tags inside copy HTML strings
   const rawHtmlTag = /<(?:script|link|iframe|div|span)\b/i;
@@ -234,6 +234,7 @@ function noUndef(name, obj) {
   }
 
   const h = unprefill(html, Z)
+    .replace(/<details class="page-provenance"[\s\S]*?<\/details>/, '')
     .replace(/<div[^>]*id="langToggle"[\s\S]*?<\/div>/, '')
     .replace(/<title>[\s\S]*?<\/title>/, '')
     .replace(/<meta[^>]*>/g, '')
@@ -289,6 +290,7 @@ function noUndef(name, obj) {
     vm.runInNewContext(fs.readFileSync(path.join(ROOT, ref.split('?')[0]), 'utf8'), mCtx);
   }
   for (const r of mCtx.window.KNOWLEDGE_CONCEPTS.concepts) {
+    if (String(r[0] || '').startsWith('chromium-')) continue;
     for (const a of [...r[5], ...r[6]]) taken.add(sq(a));
   }
   for (const d of fs.readdirSync(path.join(ROOT, 'computing/software'))) {

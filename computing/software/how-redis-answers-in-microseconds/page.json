@@ -35,7 +35,7 @@
     "copy.en.js",
     "app.js"
   ],
-  "version": "20261121",
+  "version": "20261121a",
   "provenanceNote": {
     "zh": "本文由 Antigravity 从零编写，对照 Redis 8.0 原理与实测规格；中英文同步完成并已运行模型、交叉验证、版式与画布扫描检查（独立评审待做）。",
     "en": "This essay was written from scratch with Antigravity against Redis 8.0 specifications and internals; both Chinese and English were authored together and checked with model, crosscheck, layout, and canvas-sweep tests (independent review pending)."
@@ -87,5 +87,6 @@
         "figures/dg-*.html"
       ]
     }
-  ]
+  ],
+  "status": "live"
 }

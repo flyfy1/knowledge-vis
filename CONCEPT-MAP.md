@@ -2705,7 +2705,7 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 <!-- GENERATED:atlas-nodes -->
 ## 三、图谱节点索引（生成，勿手改）
 
-789 个概念 · 933 条关系 · 11 个分区 · 由 scripts/build-atlas-data.cjs --concept-map 生成。节点排序与 data.js 一致（分区序、学段序、order、id）。
+883 个概念 · 1029 条关系 · 11 个分区 · 由 scripts/build-atlas-data.cjs --concept-map 生成。节点排序与 data.js 一致（分区序、学段序、order、id）。
 
 ### 01 数学基础 / Mathematical tools
 
@@ -3088,10 +3088,13 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 块、文件与对象存储：NAS 和 SAN 的分别 / Block, file and object storage: how NAS and SAN differ | ../computing/systems/storage-over-a-network/#ch1 | storage-over-a-network |
 | 缓存一致性问题：两份缓存，一份旧了 / The coherence problem: two caches, one stale copy | ../computing/systems/how-cores-share-memory/#ch1 | how-cores-share-memory |
 | 为什么要缓存，为什么不止一级 / Why caches, and why more than one level | ../computing/systems/how-cpu-caches-work/#ch1 | how-cpu-caches-work |
+| Chromium 多进程渲染地图与 RenderingNG 管线 / Chromium multi-process map & RenderingNG pipeline | ../computing/software/how-chromium-renders-a-web-page/#ch1 | how-chromium-renders-a-web-page |
 | CNN 特征图 / CNN feature maps | ../computing/ml/cnn-feature-maps/#step0 | cnn-feature-maps#step0 |
+| 容器不是虚拟机：共享内核的受限进程 / Containers are constrained host processes, not VMs | ../computing/software/how-containers-isolate-a-process/#ch1 | how-containers-isolate-a-process |
 | 复制还是共享：零拷贝的吸引力 / Copy or share: why zero-copy appeals | ../computing/systems/coherent-interconnects/#ch1 | coherent-interconnects |
 | 一个比特是一只会漏的电容：DRAM 刷新 / A bit is a leaking capacitor: DRAM refresh | ../computing/systems/how-memory-talks/#ch1 | how-memory-talks |
 | 帧缓冲：一帧就是一块内存 / The framebuffer: a frame is a block of memory | ../computing/systems/how-pixels-reach-a-screen/#ch1 | how-pixels-reach-a-screen |
+| .git 目录的四个区与 Git 工作流程 / The four regions of a Git repository | ../computing/software/how-git-stores-history/#ch1 | how-git-stores-history |
 | 两种花晶体管的办法：缓存，还是更多线程 / Two ways to spend transistors: caches or more threads | ../computing/systems/how-a-gpu-computes/#ch1 | how-a-gpu-computes |
 | 图算法 / Graph algorithms | ../computing/algorithms/graph-algorithms/#step1 | graph-algorithms#step1 |
 | 图形渲染管线 · 从坐标到像素 / The graphics pipeline · from coordinates to pixels | ../computing/graphics/computer-graphics/#step0 | computer-graphics#step0 |
@@ -3101,16 +3104,21 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 密钥分发问题 / The key-distribution problem | ../computing/systems/a-secret-in-public/#ch1 | a-secret-in-public |
 | KV Cache 与固定大小状态 / KV Cache vs Fixed-Size Recurrent State | ../computing/ml/how-hybrid-attention-remembers/#ch1 | how-hybrid-attention-remembers |
 | 延迟与带宽 / Latency & bandwidth | ../computing/systems/tcp-congestion/#step1 | tcp-congestion#step1 |
+| LLVM 三段式架构与不透明指针 IR / LLVM 3-phase architecture & opaque-pointer IR | ../computing/software/how-llvm-compiles-your-code/#ch1 | how-llvm-compiles-your-code |
 | 为什么猜错越来越贵 / Why a wrong guess costs more on a wide core | ../computing/systems/how-a-cpu-guesses-ahead/#ch1 | how-a-cpu-guesses-ahead |
+| C10K 问题与 Nginx 440 字节连接槽 / C10K problem & Nginx 440-byte connection slots | ../computing/software/how-nginx-handles-ten-thousand-connections/#ch1 | how-nginx-handles-ten-thousand-connections |
 | 网卡里有什么：物理层、MAC、队列和 DMA / Inside a network card: PHY, MAC, queues and DMA | ../computing/systems/how-a-nic-moves-packets/#ch1 | how-a-nic-moves-packets |
 | NVMe 与存储协议开销转移 / NVMe and Shifting Storage Bottlenecks | ../computing/systems/why-nvme-is-fast/#ch1 | why-nvme-is-fast |
 | PCIe 的拓扑：根复合体、交换芯片和端点组成的树 / PCIe Topology: a Tree of Root Complex, Switches and Endpoints | ../computing/systems/how-pcie-works/#ch1 | how-pcie-works |
+| PostgreSQL 查询流水线与火山执行器 / PostgreSQL Query Pipeline & Volcano Executor | ../computing/software/how-postgresql-runs-a-query/#ch1 | how-postgresql-runs-a-query |
 | 流水线与访存停顿 / Pipeline Stalls from Memory Latency | ../computing/systems/why-compute-waits-for-memory/#ch1 | why-compute-waits-for-memory |
 | 供电链：从插座到晶粒一路降压 / The power-delivery chain: stepping down from the wall to the die | ../computing/systems/how-power-reaches-the-cpu/#ch1 | how-power-reaches-the-cpu |
 | 上电时序：PWR_OK 之前 CPU 一直在复位里 / Power sequencing: the CPU stays in reset until PWR_OK | ../computing/systems/how-a-computer-boots/#ch1 | how-a-computer-boots |
 | 特权级：CPU 每条指令都查「你现在是谁」 / Privilege levels: the CPU checks who you are on every instruction | ../computing/systems/how-the-os-talks-to-hardware/#ch1 | how-the-os-talks-to-hardware |
 | 一个量子比特：两个复数 / One qubit: two complex numbers | ../computing/quantum/what-quantum-computers-do/#ch1 | what-quantum-computers-do |
 | 副本与 quorum · 一致性和可用性的取舍 / Replicas & quorums · consistency vs availability | ../computing/systems/distributed-systems/#step0 | distributed-systems#step0 |
+| Render 与 Commit 两阶段更新 / Two-phase Render and Commit | ../computing/software/how-react-updates-the-dom/#ch1 | how-react-updates-the-dom |
+| Redis 单线程事件循环与锁竞争 / Redis single-threaded event loop & lock avoidance | ../computing/software/how-redis-answers-in-microseconds/#ch1 | how-redis-answers-in-microseconds |
 | 机械臂运动学 · 从关节角到末端 / Robot-arm kinematics · from joint angles to the hand | ../computing/graphics/robot-kinematics/#step0 | robot-kinematics#step0 |
 | SAS 的分层：SCSI 命令、SSP/STP/SMP 与物理层 / SAS Layers: SCSI Commands, SSP/STP/SMP and the Phy | ../computing/systems/how-sas-works/#ch1 | how-sas-works |
 | SATA、ATA 命令集与 AHCI 的分层 / SATA Layers: Wire, ATA Commands and AHCI | ../computing/systems/how-sata-works/#ch1 | how-sata-works |
@@ -3121,27 +3129,36 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | Transformer 的一层 / The transformer block | ../computing/ml/what-a-frontier-model-takes/#ch1 | what-a-frontier-model-takes |
 | USB-C 的 24 根针和 CC 线 / The 24 Pins of USB-C and the CC Line | ../computing/systems/how-thunderbolt-works/#ch1 | how-thunderbolt-works |
 | USB 存储在协议地图上的位置：两段协议和一颗桥接芯片 / Where USB Storage Sits: Two Stacks and a Bridge Chip | ../computing/systems/how-usb-drives-talk/#ch1 | how-usb-drives-talk |
+| V8 四级执行管线与懒解析 / V8 4-tier execution pipeline & lazy parsing | ../computing/software/how-v8-runs-javascript/#ch1 | how-v8-runs-javascript |
 | 为什么要虚拟地址 / Why virtual addresses | ../computing/systems/how-virtual-memory-works/#ch1 | how-virtual-memory-works |
 | 为什么并行总线跑不快：负载、反射波和时钟 / Why a Parallel Bus Can't Go Fast: Loading, Reflected Waves and the Clock | ../computing/systems/how-a-computer-is-wired/#ch2 | how-a-computer-is-wired |
 | 一个地址怎么被拆开 / How an address is split | ../computing/systems/how-cpu-caches-work/#ch2 | how-cpu-caches-work |
+| HTML 字节流解析、CSSOM 阻塞与预加载扫描 / HTML byte stream parsing, CSSOM blocking & preload scanner | ../computing/software/how-chromium-renders-a-web-page/#ch2 | how-chromium-renders-a-web-page |
 | 一致性的两条规矩：单写多读与数据值 / Two invariants: single writer, multiple readers, and data value | ../computing/systems/how-cores-share-memory/#ch2 | how-cores-share-memory |
 | 一致性跨过一根线：家代理 / Coherence across a link: the home agent | ../computing/systems/coherent-interconnects/#ch2 | coherent-interconnects |
+| OCI 镜像层与 ChainID 去重 / OCI image layers and ChainID deduplication | ../computing/software/how-containers-isolate-a-process/#ch2 | how-containers-isolate-a-process |
 | 网格、线程块、线程束：一张图怎么拆给两百万个线程 / Grid, block, warp: splitting an image across two million threads | ../computing/systems/how-a-gpu-computes/#ch2 | how-a-gpu-computes |
 | bank、行、列与地址切分 / Banks, rows, columns and address mapping | ../computing/systems/how-memory-talks/#ch2 | how-memory-talks |
 | 动态功耗：功率随电压平方走 / Dynamic power: power goes with voltage squared | ../computing/systems/how-power-reaches-the-cpu/#ch2 | how-power-reaches-the-cpu |
 | 一帧以太网，和线速下每个包的时间 / One Ethernet frame, and the time per packet at line rate | ../computing/systems/how-a-nic-moves-packets/#ch2 | how-a-nic-moves-packets |
+| Git Blob 对象与内容寻址哈希 / Git blob objects and content addressing | ../computing/software/how-git-stores-history/#ch2 | how-git-stores-history |
 | 机械硬盘：寻道、转动等待与外圈更快 / Hard disks: seek, rotational latency and faster outer tracks | ../computing/systems/what-a-drive-is-made-of/#ch2 | what-a-drive-is-made-of |
 | 归纳头 / Induction heads | ../computing/ml/what-a-frontier-model-takes/#ch1 | what-a-frontier-model-takes |
 | 线性注意力的矩阵结合律 / Linear Attention via Matrix Associativity | ../computing/ml/how-hybrid-attention-remembers/#ch2 | how-hybrid-attention-remembers |
+| -O0 为什么把变量先放栈上（alloca） / Why -O0 puts local variables on the stack (alloca) | ../computing/software/how-llvm-compiles-your-code/#ch2 | how-llvm-compiles-your-code |
 | 振幅相互抵消：马赫–曾德尔干涉仪 / Amplitudes cancel: the Mach–Zehnder interferometer | ../computing/quantum/what-quantum-computers-do/#ch2 | what-quantum-computers-do |
 | 存储层级与缓存命中 / Memory Latency Hierarchy and Cache Locality | ../computing/systems/why-compute-waits-for-memory/#ch2 | why-compute-waits-for-memory |
 | 模运算与有限域 / Modular arithmetic and finite fields | ../computing/systems/a-secret-in-public/#mod | a-secret-in-public |
 | NAS 的文件协议：NFS、SMB 与小文件的往返 / NAS file protocols: NFS, SMB and small-file round trips | ../computing/systems/storage-over-a-network/#ch2 | storage-over-a-network |
+| Master–Worker 与零停机热重载 / Master–Worker architecture & zero-downtime reload | ../computing/software/how-nginx-handles-ten-thousand-connections/#ch2 | how-nginx-handles-ten-thousand-connections |
 | PCIe 多车道与队列深度 / PCIe Lanes and Little's Law in Storage | ../computing/systems/why-nvme-is-fast/#ch2 | why-nvme-is-fast |
 | 页、偏移和多级页表 / Pages, offsets and multi-level page tables | ../computing/systems/how-virtual-memory-works/#ch2 | how-virtual-memory-works |
 | 并行 ATA 为什么跑不快：时序预算与线间偏斜 / Why Parallel ATA Topped Out: Timing Budget and Skew | ../computing/systems/how-sata-works/#ch2 | how-sata-works |
 | PCIe 通道与代：x16、x4 和每代的速率 / PCIe Lanes and Generations: x16, x4 and the Rate of Each Generation | ../computing/systems/how-pcie-works/#ch2 | how-pcie-works |
+| PostgreSQL 代价优化器与扫描路径选择 / PostgreSQL Cost-Based Planner & Scan Crossover | ../computing/software/how-postgresql-runs-a-query/#ch2 | how-postgresql-runs-a-query |
 | 像素时钟与消隐：按真实时序表算 / Pixel clock and blanking, from real timing tables | ../computing/systems/how-pixels-reach-a-screen/#ch2 | how-pixels-reach-a-screen |
+| JSX 与 React Element 对象 / JSX and React Element objects | ../computing/software/how-react-updates-the-dom/#ch2 | how-react-updates-the-dom |
+| RESP 协议与管道（Pipelining） / RESP wire framing & pipelining | ../computing/software/how-redis-answers-in-microseconds/#ch2 | how-redis-answers-in-microseconds |
 | 复位向量：第一条指令在 0xFFFFFFF0 / The reset vector: the first instruction at 0xFFFFFFF0 | ../computing/systems/how-a-computer-boots/#ch2 | how-a-computer-boots |
 | RISC-V 的寄存器和六种指令格式 / RISC-V registers and the six instruction formats | ../computing/systems/how-a-cpu-runs-a-program/#ch2 | how-a-cpu-runs-a-program |
 | 场景图与世界矩阵 / The scene graph and world matrices | ../computing/software/how-threejs-draws-a-scene/#ch2 | how-threejs-draws-a-scene |
@@ -3151,22 +3168,31 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | ulp：浮点数的格子越往外越稀 / ulp: floats get sparser as they grow | ../computing/systems/how-a-cpu-does-math/#ch2 | how-a-cpu-does-math |
 | USB 由主机调度：微帧与批量传输上限 / USB Is Host-Scheduled: Microframes and the Bulk Ceiling | ../computing/systems/how-usb-drives-talk/#ch2 | how-usb-drives-talk |
 | USB4 路由器与隧道：4 字节包头 / USB4 Routers and Tunnels: the 4-Byte Header | ../computing/systems/how-thunderbolt-works/#ch2 | how-thunderbolt-works |
+| 指针标签、Smi 与指针压缩 / Pointer tagging, Smi & pointer compression | ../computing/software/how-v8-runs-javascript/#ch2 | how-v8-runs-javascript |
 | 8b/10b 编码与逗号码 / 8b/10b Encoding and the Comma | ../computing/systems/how-sata-works/#ch3 | how-sata-works |
 | 几何体：顶点、索引和字节 / Geometry: vertices, indices and bytes | ../computing/software/how-threejs-draws-a-scene/#ch3 | how-threejs-draws-a-scene |
 | 相联度与三种缺失 / Associativity and the three kinds of miss | ../computing/systems/how-cpu-caches-work/#ch3 | how-cpu-caches-work |
 | 矩阵分块与时间局部性 / Loop Tiling and Temporal Locality | ../computing/systems/why-compute-waits-for-memory/#ch3 | why-compute-waits-for-memory |
+| 从右向左选择器匹配、SelectorFilter 与失效集 / Right-to-left selector matching, SelectorFilter & InvalidationSet | ../computing/software/how-chromium-renders-a-web-page/#ch3 | how-chromium-renders-a-web-page |
 | 把一个循环翻译成机器码 / Hand-compiling a loop to machine code | ../computing/systems/how-a-cpu-runs-a-program/#ch3 | how-a-cpu-runs-a-program |
+| OverlayFS 的 Copy-Up 与白化删除 / OverlayFS copy-up and whiteout deletion | ../computing/software/how-containers-isolate-a-process/#ch3 | how-containers-isolate-a-process |
 | CXL 的三种协议和数据帧 / CXL's three protocols and flits | ../computing/systems/coherent-interconnects/#ch3 | coherent-interconnects |
 | 五个命令和时序：行命中、未命中、冲突 / Five commands and their timings: row hit, miss and conflict | ../computing/systems/how-memory-talks/#ch3 | how-memory-talks |
 | 纠缠与 CHSH 游戏 / Entanglement and the CHSH game | ../computing/quantum/what-quantum-computers-do/#ch3 | what-quantum-computers-do |
 | 快权重联想记忆与容量上限 / Fast-Weight Memory & Rank Capacity | ../computing/ml/how-hybrid-attention-remembers/#ch3 | how-hybrid-attention-remembers |
+| Git Tree 快照与 Merkle 子树共享 / Git tree snapshots and Merkle subtree sharing | ../computing/software/how-git-stores-history/#ch3 | how-git-stores-history |
 | 全局历史与 gshare / Global history and gshare | ../computing/systems/how-a-cpu-guesses-ahead/#ch3 | how-a-cpu-guesses-ahead |
 | iSCSI：SCSI 命令走 TCP，写要等 R2T / iSCSI: SCSI commands over TCP, writes wait for R2T | ../computing/systems/storage-over-a-network/#ch3 | storage-over-a-network |
+| 静态单赋值（SSA）与 mem2reg 的 phi 节点 / Static Single Assignment (SSA) & mem2reg phi nodes | ../computing/software/how-llvm-compiles-your-code/#ch3 | how-llvm-compiles-your-code |
+| Nginx epoll 事件循环、惊群与 SO_REUSEPORT / Nginx epoll loop, thundering herd & SO_REUSEPORT | ../computing/software/how-nginx-handles-ten-thousand-connections/#ch3 | how-nginx-handles-ten-thousand-connections |
 | 北桥与南桥：前端总线、AGP 和汇合点 / Northbridge and Southbridge: the Front-Side Bus, AGP and the Meeting Point | ../computing/systems/how-a-computer-is-wired/#ch3 | how-a-computer-is-wired |
 | 64K 并行队列与无锁扩展 / 64K Parallel Queues and Lock-Free Scaling | ../computing/systems/why-nvme-is-fast/#ch3 | why-nvme-is-fast |
 | 单向函数与离散对数 / One-way functions and the discrete logarithm | ../computing/systems/a-secret-in-public/#ch2 | a-secret-in-public |
 | TLP：PCIe 上的包和包头 / TLPs: the Packets and Headers of PCIe | ../computing/systems/how-pcie-works/#ch3 | how-pcie-works |
+| 8 KiB 分槽页与 HOT 同页更新 / 8 KiB Slotted Pages & HOT Updates | ../computing/software/how-postgresql-runs-a-query/#ch3 | how-postgresql-runs-a-query |
 | 电源效率与 80 PLUS / PSU efficiency and 80 PLUS | ../computing/systems/how-power-reaches-the-cpu/#ch3 | how-power-reaches-the-cpu |
+| Fiber 链表与双缓冲架构 / Fiber linked list and double buffering | ../computing/software/how-react-updates-the-dom/#ch3 | how-react-updates-the-dom |
+| redisObject、44 字节 embstr 与 listpack / redisObject, 44-byte embstr & listpack | ../computing/software/how-redis-answers-in-microseconds/#ch3 | how-redis-answers-in-microseconds |
 | 残差连接与层归一化 / Residual connections and layer normalisation | ../computing/ml/what-a-frontier-model-takes/#ch2 | what-a-frontier-model-takes |
 | 舍入模式：落在两格之间怎么选 / Rounding modes: choosing between two neighbours | ../computing/systems/how-a-cpu-does-math/#ch3 | how-a-cpu-does-math |
 | 收一个包要走的路：描述符要提前取 / The receive path: descriptors fetched ahead | ../computing/systems/how-a-nic-moves-packets/#ch3 | how-a-nic-moves-packets |
@@ -3178,10 +3204,13 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 撕裂、垂直同步与卡顿 / Tearing, vsync and stutter | ../computing/systems/how-pixels-reach-a-screen/#ch3 | how-pixels-reach-a-screen |
 | USB 命名与线速：Gen 1、Gen 2、×2 和编码 / USB Names and Line Rates: Gen 1, Gen 2, ×2 and Encoding | ../computing/systems/how-usb-drives-talk/#ch3 | how-usb-drives-talk |
 | 一条 USB4 链路怎么分带宽 / How One USB4 Link Is Shared | ../computing/systems/how-thunderbolt-works/#ch3 | how-thunderbolt-works |
+| 隐藏类（Map）、Slack 追踪与字典模式 / Hidden classes (Maps), slack tracking & dictionary mode | ../computing/software/how-v8-runs-javascript/#ch3 | how-v8-runs-javascript |
 | 线程束调度与占用率 / Warp scheduling and occupancy | ../computing/systems/how-a-gpu-computes/#ch3 | how-a-gpu-computes |
 | x86-64 四级页表逐位走一遍 / An x86-64 four-level page walk, bit by bit | ../computing/systems/how-virtual-memory-works/#ch3 | how-virtual-memory-works |
 | 满了换谁：LRU、伪 LRU 与 RRIP / Replacement: LRU, pseudo-LRU and RRIP | ../computing/systems/how-cpu-caches-work/#ch4 | how-cpu-caches-work |
 | CL 折成纳秒 / CAS latency in nanoseconds | ../computing/systems/how-memory-talks/#ch4 | how-memory-talks |
+| LayoutNG 不可变片段与强制同步布局抖动 / LayoutNG immutable fragments & forced synchronous layout thrashing | ../computing/software/how-chromium-renders-a-web-page/#ch4 | how-chromium-renders-a-web-page |
+| Linux Namespaces 与 Rootless UID 映射 / Linux Namespaces and Rootless UID mapping | ../computing/software/how-containers-isolate-a-process/#ch4 | how-containers-isolate-a-process |
 | CXL 的三类设备 / The three CXL device types | ../computing/systems/coherent-interconnects/#ch4 | coherent-interconnects |
 | Delta 规则：先擦后写的投影更新 / The Delta Rule: Erase Before Writing | ../computing/ml/how-hybrid-attention-remembers/#ch4 | how-hybrid-attention-remembers |
 | Diffie–Hellman 密钥交换与中间人攻击 / Diffie–Hellman key exchange and the man in the middle | ../computing/systems/a-secret-in-public/#ch3 | a-secret-in-public |
@@ -3189,17 +3218,23 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 双端口与多路径的可用度算术 / Availability Arithmetic of Dual Port and Multipath | ../computing/systems/how-sas-works/#ch4 | how-sas-works |
 | 2ⁿ 个振幅与霍列沃界 / 2ⁿ amplitudes and the Holevo bound | ../computing/quantum/what-quantum-computers-do/#ch4 | what-quantum-computers-do |
 | 光纤通道的缓冲区信用与距离 / Fibre Channel buffer-to-buffer credits and distance | ../computing/systems/storage-over-a-network/#ch4 | storage-over-a-network |
+| Commit 对象与不可变提交有向无环图 / Commit objects and the immutable DAG | ../computing/software/how-git-stores-history/#ch4 | how-git-stores-history |
 | 硬件信任根：CPU 之前先醒的安全芯片 / Hardware root of trust: the security processor that wakes first | ../computing/systems/how-a-computer-boots/#ch4 | how-a-computer-boots |
+| Pass 管线与不动点迭代化简 / Optimization pass pipeline & fixed-point iteration | ../computing/software/how-llvm-compiles-your-code/#ch4 | how-llvm-compiles-your-code |
 | 内存墙与利特尔法则 / The Memory Wall and Little's Law | ../computing/systems/why-compute-waits-for-memory/#ch4 | why-compute-waits-for-memory |
 | 设备寄存器：物理地址上的一段「假内存」 / Device registers: a stretch of pretend memory | ../computing/systems/how-the-os-talks-to-hardware/#ch4 | how-the-os-talks-to-hardware |
 | 多相稳压（VRM） / Multiphase voltage regulators (VRM) | ../computing/systems/how-power-reaches-the-cpu/#ch4 | how-power-reaches-the-cpu |
 | 闪存单元：SLC、MLC、TLC、QLC、PLC 与读裕量 / Flash cells: SLC to PLC and the read margin | ../computing/systems/what-a-drive-is-made-of/#ch4 | what-a-drive-is-made-of |
+| Nginx 请求 11 阶段状态机与 location 优先级 / Nginx 11-phase request pipeline & location precedence | ../computing/software/how-nginx-handles-ten-thousand-connections/#ch4 | how-nginx-handles-ten-thousand-connections |
 | 内存控制器进了 CPU：NUMA 和远近内存 / The Memory Controller Moves into the CPU: NUMA and Near and Far Memory | ../computing/systems/how-a-computer-is-wired/#ch4 | how-a-computer-is-wired |
 | 环形队列、门铃寄存器与 DMA / SQ/CQ Ring Buffers, Doorbells & DMA | ../computing/systems/why-nvme-is-fast/#ch4 | why-nvme-is-fast |
 | 参数量与每个 token 的运算量 / Parameter count and FLOPs per token | ../computing/ml/what-a-frontier-model-takes/#ch3 | what-a-frontier-model-takes |
 | PCIe 的信用流控 / Credit-Based Flow Control in PCIe | ../computing/systems/how-pcie-works/#ch4 | how-pcie-works |
 | 每个包的 PCIe 开销：400G 小包装不下 / PCIe bytes per packet: small packets at 400G do not fit | ../computing/systems/how-a-nic-moves-packets/#ch4 | how-a-nic-moves-packets |
+| PostgreSQL MVCC 与快照隔离 / PostgreSQL MVCC & Snapshot Visibility | ../computing/software/how-postgresql-runs-a-query/#ch4 | how-postgresql-runs-a-query |
 | 投影、裁剪空间和深度精度 / Projection, clip space and depth precision | ../computing/software/how-threejs-draws-a-scene/#ch4 | how-threejs-draws-a-scene |
+| O(n) 列表协调与 key 身份识别 / O(n) list reconciliation and keys | ../computing/software/how-react-updates-the-dom/#ch4 | how-react-updates-the-dom |
+| Redis 字典与渐进式 Rehash / Redis dict & progressive rehashing | ../computing/software/how-redis-answers-in-microseconds/#ch4 | how-redis-answers-in-microseconds |
 | FIS 帧：一条读命令在线上的样子 / FIS Frames: One Read Command on the Wire | ../computing/systems/how-sata-works/#ch4 | how-sata-works |
 | 单周期数据通路和控制信号 / The single-cycle datapath and its control signals | ../computing/systems/how-a-cpu-runs-a-program/#ch4 | how-a-cpu-runs-a-program |
 | 次正规数、无穷大和 NaN / Subnormals, infinity and NaN | ../computing/systems/how-a-cpu-does-math/#ch4 | how-a-cpu-does-math |
@@ -3207,6 +3242,7 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 雷电菊花链：一台接一台 / Daisy-Chaining Thunderbolt Devices | ../computing/systems/how-thunderbolt-works/#ch4 | how-thunderbolt-works |
 | TLB 和它的覆盖范围 / The TLB and its reach | ../computing/systems/how-virtual-memory-works/#ch4 | how-virtual-memory-works |
 | Bulk-Only 传输：CBW、数据、CSW，一次一条 / Bulk-Only Transport: CBW, Data, CSW, One at a Time | ../computing/systems/how-usb-drives-talk/#ch4 | how-usb-drives-talk |
+| 内联缓存（LoadIC）：单态、多态与超态 / Inline caches (LoadIC): monomorphic, polymorphic & megamorphic | ../computing/software/how-v8-runs-javascript/#ch4 | how-v8-runs-javascript |
 | 可变刷新率与低帧率补偿 / Variable refresh rate and low framerate compensation | ../computing/systems/how-pixels-reach-a-screen/#ch4 | how-pixels-reach-a-screen |
 | 分支发散：一个线程束走了两条路 / Warp divergence: one warp, two paths | ../computing/systems/how-a-gpu-computes/#ch4 | how-a-gpu-computes |
 | 多核扩展、阿姆达尔与总线瓶颈 / Multicore Scaling, Amdahl, and Bus Contention | ../computing/systems/why-compute-waits-for-memory/#ch5 | why-compute-waits-for-memory |
@@ -3215,7 +3251,9 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 写回、写直达与写缓冲 / Write-back, write-through and the write buffer | ../computing/systems/how-cpu-caches-work/#ch5 | how-cpu-caches-work |
 | 灾难性抵消与求和算法 / Catastrophic cancellation and summation | ../computing/systems/how-a-cpu-does-math/#ch5 | how-a-cpu-does-math |
 | 今天的主板：CPU 直连和芯片组的上行链路 / Today's Motherboard: CPU Lanes and the Chipset Uplink | ../computing/systems/how-a-computer-is-wired/#ch5 | how-a-computer-is-wired |
+| Pre-Paint 与四棵属性树（Transform / Clip / Effect / Scroll） / Pre-Paint & the four Property Trees | ../computing/software/how-chromium-renders-a-web-page/#ch5 | how-chromium-renders-a-web-page |
 | 最慢的那条指令定了时钟 / The slowest instruction sets the clock | ../computing/systems/how-a-cpu-runs-a-program/#ch5 | how-a-cpu-runs-a-program |
+| 容器网络：veth pair、网桥与 VXLAN MTU / Container networking: veth, bridge, NAT, and MTU | ../computing/software/how-containers-isolate-a-process/#ch5 | how-containers-isolate-a-process |
 | 内存扩展卡与冷热分层 / Memory expansion and hot/cold tiering | ../computing/systems/coherent-interconnects/#ch5 | coherent-interconnects |
 | 64 字节一次突发与 DDR5 子通道 / 64-byte bursts and DDR5 subchannels | ../computing/systems/how-memory-talks/#ch5 | how-memory-talks |
 | 德意志–约萨算法 / The Deutsch–Jozsa algorithm | ../computing/quantum/what-quantum-computers-do/#ch5 | what-quantum-computers-do |
@@ -3223,14 +3261,20 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 闪存为什么会坏：擦写次数、纠错码、TBW 与 DWPD / Why flash wears out: P/E cycles, ECC, TBW and DWPD | ../computing/systems/what-a-drive-is-made-of/#ch5 | what-a-drive-is-made-of |
 | 视锥体剔除和渲染顺序 / Frustum culling and render order | ../computing/software/how-threejs-draws-a-scene/#ch5 | how-threejs-draws-a-scene |
 | Gated DeltaNet 与选择性遗忘门 / Gated DeltaNet & Selective Decay | ../computing/ml/how-hybrid-attention-remembers/#ch5 | how-hybrid-attention-remembers |
+| Git 暂存区 stat 缓存与 Racy Git / Git index stat cache and Racy Git | ../computing/software/how-git-stores-history/#ch5 | how-git-stores-history |
 | 中断走过的路：向量、上半部、下半部 / The path of an interrupt: vector, top half, bottom half | ../computing/systems/how-the-os-talks-to-hardware/#ch5 | how-the-os-talks-to-hardware |
+| 循环不变量外提（LICM）、别名分析与 SIMD / Loop-invariant code motion (LICM), aliasing & SIMD | ../computing/software/how-llvm-compiles-your-code/#ch5 | how-llvm-compiles-your-code |
 | 负载线与去耦电容 / Load line and decoupling | ../computing/systems/how-power-reaches-the-cpu/#ch5 | how-power-reaches-the-cpu |
 | 丢失的更新：两个线程各加一百万次 / The lost update: two threads each add a million | ../computing/systems/how-cores-share-memory/#ch5 | how-cores-share-memory |
 | 合并访存：32 个地址，几次读 / Memory coalescing: 32 addresses, how many reads | ../computing/systems/how-a-gpu-computes/#ch5 | how-a-gpu-computes |
 | NCQ：机械盘自己排队 / NCQ: Letting a Hard Disk Reorder Its Queue | ../computing/systems/how-sata-works/#ch5 | how-sata-works |
 | 网络存储的延迟账：介质、协议栈、光纤与交换机 / The latency budget of network storage | ../computing/systems/storage-over-a-network/#ch5 | storage-over-a-network |
+| ngx_pool_t 按请求内存池与缓冲区链 / Per-request ngx_pool_t memory pool & buffer chains | ../computing/software/how-nginx-handles-ten-thousand-connections/#ch5 | how-nginx-handles-ten-thousand-connections |
 | 一次 TLB 缺失要付多少 / What a TLB miss costs | ../computing/systems/how-virtual-memory-works/#ch5 | how-virtual-memory-works |
 | ACK/NAK 与重发缓冲 / ACK/NAK and the Replay Buffer | ../computing/systems/how-pcie-works/#ch5 | how-pcie-works |
+| AUTOVACUUM、可见性映射与 32 位 XID 回卷 / VACUUM, Visibility Map & 32-Bit XID Wraparound | ../computing/software/how-postgresql-runs-a-query/#ch5 | how-postgresql-runs-a-query |
+| Hook 链表与环形更新队列 / Hooks linked list and circular queue | ../computing/software/how-react-updates-the-dom/#ch5 | how-react-updates-the-dom |
+| ZSET 有序集合与跳跃表（zskiplist） / Sorted sets (ZSET) & the skiplist | ../computing/software/how-redis-answers-in-microseconds/#ch5 | how-redis-answers-in-microseconds |
 | RSA 签名、可塑性与填充 / RSA signatures, malleability and padding | ../computing/systems/a-secret-in-public/#ch4 | a-secret-in-public |
 | RSS：托普利茨哈希把连接分给队列 / RSS: a Toeplitz hash spreads connections over queues | ../computing/systems/how-a-nic-moves-packets/#ch5 | how-a-nic-moves-packets |
 | SAS 扩展器、地址与分区 / SAS Expanders, Addresses and Zoning | ../computing/systems/how-sas-works/#ch5 | how-sas-works |
@@ -3238,10 +3282,13 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 训练曲线与能力突然出现 / The training curve and sudden abilities | ../computing/ml/what-a-frontier-model-takes/#ch4 | what-a-frontier-model-takes |
 | UASP：四条管道、标签和 USB 3 的流 / UASP: Four Pipes, Tags and USB 3 Streams | ../computing/systems/how-usb-drives-talk/#ch5 | how-usb-drives-talk |
 | 80 Gb/s 怎么来：PAM3 与 3+1 非对称 / Where 80 Gb/s Comes From: PAM3 and 3+1 | ../computing/systems/how-thunderbolt-works/#ch5 | how-thunderbolt-works |
+| Ignition 累加器字节码与 FeedbackVector / Ignition accumulator bytecode & FeedbackVector | ../computing/software/how-v8-runs-javascript/#ch5 | how-v8-runs-javascript |
 | 原子指令：LOCK、CAS、LL/SC 与 LSE / Atomic instructions: LOCK, CAS, LL/SC and LSE | ../computing/systems/how-cores-share-memory/#ch6 | how-cores-share-memory |
 | bank 组与 tCCD_L / Bank groups and tCCD_L | ../computing/systems/how-memory-talks/#ch6 | how-memory-talks |
 | 三级各管什么：包含、排他与共享 L3 / What each level does: inclusive, exclusive and the shared L3 | ../computing/systems/how-cpu-caches-work/#ch6 | how-cpu-caches-work |
+| PaintRecord 绘制清单与层爆炸陷阱 / PaintRecord display lists & the layer explosion trap | ../computing/software/how-chromium-renders-a-web-page/#ch6 | how-chromium-renders-a-web-page |
 | 分块并行训练与结构化状态空间对偶 / Chunkwise Training & State Space Duality | ../computing/ml/how-hybrid-attention-remembers/#ch6 | how-hybrid-attention-remembers |
+| cgroups v2 CPU 带宽节流与毛刺 / cgroups v2 CPU throttling and tail stalls | ../computing/software/how-containers-isolate-a-process/#ch6 | how-containers-isolate-a-process |
 | 几百安怎么进到晶粒里 / How hundreds of amps get into the die | ../computing/systems/how-power-reaches-the-cpu/#ch6 | how-power-reaches-the-cpu |
 | DisplayPort 与 HDMI：一根线放得下什么 / DisplayPort and HDMI: what fits in one cable | ../computing/systems/how-pixels-reach-a-screen/#ch6 | how-pixels-reach-a-screen |
 | USB-C 接显示器要多少带宽 / How Much a Monitor Needs over USB-C | ../computing/systems/how-thunderbolt-works/#ch6 | how-thunderbolt-works |
@@ -3250,14 +3297,20 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 闪存翻译层（FTL）：不能原地改写与垃圾回收 / The flash translation layer: no in-place updates, garbage collection | ../computing/systems/what-a-drive-is-made-of/#ch6 | what-a-drive-is-made-of |
 | 把包送到对的核心：RFS、aRFS 和亲和性 / Steering packets to the right core: RFS, aRFS and affinity | ../computing/systems/how-a-nic-moves-packets/#ch6 | how-a-nic-moves-packets |
 | FMA：乘加只舍入一次 / FMA: multiply and add with one rounding | ../computing/systems/how-a-cpu-does-math/#ch6 | how-a-cpu-does-math |
+| 分支、HEAD、标签与 reflog 垃圾回收 / Branches, HEAD, tags and reflog GC | ../computing/software/how-git-stores-history/#ch6 | how-git-stores-history |
 | GPU 并发与脉动阵列 / GPU Throughput and Systolic Arrays | ../computing/systems/why-compute-waits-for-memory/#ch6 | why-compute-waits-for-memory |
 | 格罗弗搜索 / Grover search | ../computing/quantum/what-quantum-computers-do/#ch6 | what-quantum-computers-do |
 | 大页：2 MiB 和 1 GiB / Huge pages: 2 MiB and 1 GiB | ../computing/systems/how-virtual-memory-works/#ch6 | how-virtual-memory-works |
+| 未定义行为（nsw / poison）与检查消除 / Undefined behavior (nsw / poison) & deleted checks | ../computing/software/how-llvm-compiles-your-code/#ch6 | how-llvm-compiles-your-code |
 | 内存池与 CXL 交换机 / Memory pools and CXL switches | ../computing/systems/coherent-interconnects/#ch6 | coherent-interconnects |
 | NAPI：先中断，再一批批轮询 / NAPI: interrupt first, then poll in batches | ../computing/systems/how-the-os-talks-to-hardware/#ch6 | how-the-os-talks-to-hardware |
 | 芯片里面的路：环形总线和网格 / Roads Inside the Chip: Ring Bus and Mesh | ../computing/systems/how-a-computer-is-wired/#ch6 | how-a-computer-is-wired |
+| 平滑加权轮询（SWRR）均衡算法 / Smooth Weighted Round-Robin (SWRR) | ../computing/software/how-nginx-handles-ten-thousand-connections/#ch6 | how-nginx-handles-ten-thousand-connections |
 | 开机枚举、配置空间与 BAR / Enumeration, Configuration Space and BARs | ../computing/systems/how-pcie-works/#ch6 | how-pcie-works |
+| shared_buffers 时钟扫描与双缓冲 / shared_buffers Clock Sweep & Double Buffering | ../computing/software/how-postgresql-runs-a-query/#ch6 | how-postgresql-runs-a-query |
 | RDMA、RoCE v2 与无损以太网 / RDMA, RoCE v2 and lossless Ethernet | ../computing/systems/storage-over-a-network/#ch6 | storage-over-a-network |
+| beginWork / completeWork 与子树脏标记 / beginWork, completeWork, and subtreeFlags | ../computing/software/how-react-updates-the-dom/#ch6 | how-react-updates-the-dom |
+| Redis 8 多线程网络 I/O（io-threads） / Redis 8 threaded network I/O (io-threads) | ../computing/software/how-redis-answers-in-microseconds/#ch6 | how-redis-answers-in-microseconds |
 | 宽端口：四条道不能合成一条 / Wide Ports: Four Lanes Are Not One Fast Lane | ../computing/systems/how-sas-works/#ch6 | how-sas-works |
 | 热插拔与链路省电：Partial、Slumber、DevSleep / Hot Plug and Link Power: Partial, Slumber, DevSleep | ../computing/systems/how-sata-works/#ch6 | how-sata-works |
 | 规模定律与 Chinchilla 最优 / Scaling laws and Chinchilla-optimal training | ../computing/ml/what-a-frontier-model-takes/#ch5 | what-a-frontier-model-takes |
@@ -3267,8 +3320,11 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 超标量与指令级并行 / Superscalar issue and instruction-level parallelism | ../computing/systems/how-a-cpu-guesses-ahead/#ch6 | how-a-cpu-guesses-ahead |
 | UEFI 的阶段与 ACPI 表 / UEFI phases and the ACPI tables | ../computing/systems/how-a-computer-boots/#ch6 | how-a-computer-boots |
 | 桥接芯片：SCSI 翻译与链条上的瓶颈 / The Bridge Chip: SCSI Translation and the Bottleneck | ../computing/systems/how-usb-drives-talk/#ch6 | how-usb-drives-talk |
+| 投机优化、OSR 与去优化退回 / Speculative optimization, OSR & deoptimization bailout | ../computing/software/how-v8-runs-javascript/#ch6 | how-v8-runs-javascript |
 | 背向作废：几台主机共用一行 / Back-invalidate: several hosts sharing one line | ../computing/systems/coherent-interconnects/#ch7 | coherent-interconnects |
 | 签名、证书链与 TLS 握手 / Signatures, certificate chains and the TLS handshake | ../computing/systems/a-secret-in-public/#ch6 | a-secret-in-public |
+| TileManager 分块光栅化、双缓冲树与棋盘格 / TileManager tiling, OOP-R raster & checkerboarding | ../computing/software/how-chromium-renders-a-web-page/#ch7 | how-chromium-renders-a-web-page |
+| cgroups v2 统一内存、页缓存与 OOM Kill / cgroups v2 unified memory, PSI, and OOM kill | ../computing/software/how-containers-isolate-a-process/#ch7 | how-containers-isolate-a-process |
 | 核心之间搬一行要多久 / How long a line takes to move between cores | ../computing/systems/how-cores-share-memory/#ch7 | how-cores-share-memory |
 | 数据冒险与转发路径 / Data hazards and the forwarding paths | ../computing/systems/how-a-cpu-runs-a-program/#ch7 | how-a-cpu-runs-a-program |
 | DMA 与描述符环 / DMA and the descriptor ring | ../computing/systems/how-the-os-talks-to-hardware/#ch7 | how-the-os-talks-to-hardware |
@@ -3277,17 +3333,23 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | DSC 与 4:2:0：压一压画面 / DSC and 4:2:0: squeezing the picture | ../computing/systems/how-pixels-reach-a-screen/#ch7 | how-pixels-reach-a-screen |
 | 调频调压与冲刺再睡 / DVFS and race to idle | ../computing/systems/how-power-reaches-the-cpu/#ch7 | how-power-reaches-the-cpu |
 | 移动固态的发热降速：集总热容模型 / External SSD Thermal Throttling: A Lumped Thermal Model | ../computing/systems/how-usb-drives-talk/#ch7 | how-usb-drives-talk |
+| Myers 差分与三方合并冲突 / Myers diff and three-way merge | ../computing/software/how-git-stores-history/#ch7 | how-git-stores-history |
 | GUID 分区表：表头、CRC32 与备份 / The GUID partition table: header, CRC32 and the backup | ../computing/systems/how-a-computer-boots/#ch7 | how-a-computer-boots |
 | 3:1 混合注意力与大海捞针精确回忆 / 3:1 Hybrid Ratio & Exact Recall Bookmarks | ../computing/ml/how-hybrid-attention-remembers/#ch7 | how-hybrid-attention-remembers |
 | 为什么 L1 这么小 / Why L1 is small | ../computing/systems/how-cpu-caches-work/#ch7 | how-cpu-caches-work |
+| 指令选择：SelectionDAG 与 GlobalISel / Instruction selection: SelectionDAG & GlobalISel | ../computing/software/how-llvm-compiles-your-code/#ch7 | how-llvm-compiles-your-code |
 | FP16、BF16 和 8 位浮点：为 AI 砍掉的位 / FP16, BF16 and 8-bit floats: bits cut for AI | ../computing/systems/how-a-cpu-does-math/#ch7 | how-a-cpu-does-math |
+| limit_req 共享内存漏桶限流 / limit_req shared-memory leaky-bucket rate limiting | ../computing/software/how-nginx-handles-ten-thousand-connections/#ch7 | how-nginx-handles-ten-thousand-connections |
 | NVMe-oF：胶囊、NVMe/TCP 与 NVMe/RDMA / NVMe-oF: capsules, NVMe/TCP and NVMe/RDMA | ../computing/systems/storage-over-a-network/#ch7 | storage-over-a-network |
 | 轮询 vs 中断（io_uring / SPDK） / Polling vs. Interrupts (io_uring / SPDK) | ../computing/systems/why-nvme-is-fast/#ch7 | why-nvme-is-fast |
 | 交给网卡做：校验、TSO 分段、GRO 和 LRO / Offloads: checksums, TSO, GRO and LRO | ../computing/systems/how-a-nic-moves-packets/#ch7 | how-a-nic-moves-packets |
 | 乱序执行与寄存器重命名 / Out-of-order execution and register renaming | ../computing/systems/how-a-cpu-guesses-ahead/#ch7 | how-a-cpu-guesses-ahead |
 | 缺页与按需调页 / Page faults and demand paging | ../computing/systems/how-virtual-memory-works/#ch7 | how-virtual-memory-works |
 | DMA 与 MSI：中断也是一次写内存 / DMA and MSI: an Interrupt Is a Memory Write | ../computing/systems/how-pcie-works/#ch7 | how-pcie-works |
+| nbtree High Key 并发分裂与右链遍历 / nbtree Lehman & Yao Splits & Right-Links | ../computing/software/how-postgresql-runs-a-query/#ch7 | how-postgresql-runs-a-query |
 | 端口倍增器、eSATA、mSATA 与 M.2 SATA / Port Multipliers, eSATA, mSATA and M.2 SATA | ../computing/systems/how-sata-works/#ch7 | how-sata-works |
+| Commit 三阶段与 useLayoutEffect vs useEffect / Commit phases: useLayoutEffect vs. useEffect | ../computing/software/how-react-updates-the-dom/#ch7 | how-react-updates-the-dom |
+| BGSAVE 写时复制与多部分 AOF 持久化 / BGSAVE fork Copy-on-Write & multi-part AOF | ../computing/software/how-redis-answers-in-microseconds/#ch7 | how-redis-answers-in-microseconds |
 | 屋顶线模型与算术强度 / The Roofline Model and Arithmetic Intensity | ../computing/systems/why-compute-waits-for-memory/#ch7 | why-compute-waits-for-memory |
 | STP：SAS 口为什么认 SATA 盘 / STP: Why a SAS Port Accepts a SATA Drive | ../computing/systems/how-sas-works/#ch7 | how-sas-works |
 | 肖尔算法与 RSA / Shor's algorithm and RSA | ../computing/quantum/what-quantum-computers-do/#ch7 | what-quantum-computers-do |
@@ -3296,27 +3358,36 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 分块矩阵乘法的两级屋顶 / Tiled matrix multiply: two levels of roofs | ../computing/systems/how-a-gpu-computes/#ch7 | how-a-gpu-computes |
 | 训练一个大模型要多少钱 / What training a large model costs | ../computing/ml/what-a-frontier-model-takes/#ch6 | what-a-frontier-model-takes |
 | USB PD：谈出来的瓦数与 EPR / USB Power Delivery: Negotiated Watts and EPR | ../computing/systems/how-thunderbolt-works/#ch7 | how-thunderbolt-works |
+| 数组 ElementsKind 单向转换格 / Array ElementsKind one-way lattice | ../computing/software/how-v8-runs-javascript/#ch7 | how-v8-runs-javascript |
 | 安全位数与数域筛 / Bits of security and the number field sieve | ../computing/systems/a-secret-in-public/#ch7 | a-secret-in-public |
 | INT8 与块缩放：MX、NVFP4 / INT8 and block scaling: MX and NVFP4 | ../computing/systems/how-a-cpu-does-math/#ch8 | how-a-cpu-does-math |
 | C-state：空闲时睡多深 / C-states: how deep to sleep when idle | ../computing/systems/how-power-reaches-the-cpu/#ch8 | how-power-reaches-the-cpu |
 | 预取：下一行与步长 / Prefetching: next-line and stride | ../computing/systems/how-cpu-caches-work/#ch8 | how-cpu-caches-work |
+| Viz CompositorFrame、SurfaceAggregator 与跨源聚合 / Viz CompositorFrame & cross-process SurfaceAggregator | ../computing/software/how-chromium-renders-a-web-page/#ch8 | how-chromium-renders-a-web-page |
+| Capabilities 与 seccomp-bpf 安全边界 / Capabilities and seccomp-bpf security perimeter | ../computing/software/how-containers-isolate-a-process/#ch8 | how-containers-isolate-a-process |
 | 控制冒险：分支的代价 / Control hazards: the cost of a branch | ../computing/systems/how-a-cpu-runs-a-program/#ch8 | how-a-cpu-runs-a-program |
 | DDIO：包写进缓存，和漏掉的那部分 / DDIO: packets written into the cache, and the leak | ../computing/systems/how-a-nic-moves-packets/#ch8 | how-a-nic-moves-packets |
 | 片上 ECC 和旁路 ECC / On-die ECC and side-band ECC | ../computing/systems/how-memory-talks/#ch8 | how-memory-talks |
 | 给设备装一张页表 / A page table for devices | ../computing/systems/how-the-os-talks-to-hardware/#ch8 | how-the-os-talks-to-hardware |
+| Packfile 增量压缩与 .idx 扇出索引 / Packfile delta compression and .idx fanout | ../computing/software/how-git-stores-history/#ch8 | how-git-stores-history |
 | 屋顶线下的长上下文吐字加速 / Roofline Decode Speedup at Long Context | ../computing/ml/how-hybrid-attention-remembers/#ch8 | how-hybrid-attention-remembers |
 | 到今天还共用的小总线：I²C 和上拉电阻 / The Small Buses Still Shared Today: I²C and Pull-up Resistors | ../computing/systems/how-a-computer-is-wired/#ch8 | how-a-computer-is-wired |
 | 大模型推理的内存瓶颈 / Why LLM Inference Is Memory-Bound | ../computing/systems/why-compute-waits-for-memory/#ch8 | why-compute-waits-for-memory |
+| 活跃度分析、干涉图着色与寄存器溢出 / Liveness analysis, graph coloring & register spilling | ../computing/software/how-llvm-compiles-your-code/#ch8 | how-llvm-compiles-your-code |
 | 微调、RLHF 与 LoRA / Fine-tuning, RLHF and LoRA | ../computing/ml/what-a-frontier-model-takes/#ch7 | what-a-frontier-model-takes |
 | 矩阵乘加指令与数字格式 / Matrix multiply-accumulate instructions and number formats | ../computing/systems/how-a-gpu-computes/#ch8 | how-a-gpu-computes |
 | 多路径的分流与切换：ALUA 与 ANA / Splitting and failing over across paths: ALUA and ANA | ../computing/systems/storage-over-a-network/#ch8 | storage-over-a-network |
+| 红黑树定时器与 300 毫秒懒更新 / Red-black timer tree & 300 ms lazy updates | ../computing/software/how-nginx-handles-ten-thousand-connections/#ch8 | how-nginx-handles-ten-thousand-connections |
 | NVLink 与 NVSwitch / NVLink and NVSwitch | ../computing/systems/coherent-interconnects/#ch8 | coherent-interconnects |
 | PCIe 6.0、ZNS 与 GPUDirect Storage / PCIe 6.0, ZNS & GPUDirect Storage | ../computing/systems/why-nvme-is-fast/#ch8 | why-nvme-is-fast |
 | 内存不够时换出谁 / Which page to evict | ../computing/systems/how-virtual-memory-works/#ch8 | how-virtual-memory-works |
 | 屏里面：时序控制器和一行的充电时间 / Inside the panel: the TCON and the time a row gets | ../computing/systems/how-pixels-reach-a-screen/#ch8 | how-pixels-reach-a-screen |
 | 通道损耗预算与重定时器 / Channel Loss Budgets and Retimers | ../computing/systems/how-pcie-works/#ch8 | how-pcie-works |
+| PostgreSQL 连接策略与 work_mem 磁盘溢出 / Join Algorithms & work_mem Disk Spills | ../computing/software/how-postgresql-runs-a-query/#ch8 | how-postgresql-runs-a-query |
 | 哪些问题有加速：BQP 与平方加速的打平点 / Which problems speed up: BQP and the quadratic crossover | ../computing/quantum/what-quantum-computers-do/#ch8 | what-quantum-computers-do |
 | 光栅化、深度测试和透明排序 / Rasterisation, the depth test and transparency | ../computing/software/how-threejs-draws-a-scene/#ch8 | how-threejs-draws-a-scene |
+| 根容器事件委托与微任务自动合批 / Root event delegation and automatic batching | ../computing/software/how-react-updates-the-dom/#ch8 | how-react-updates-the-dom |
+| Redis 惰性删除与定期采样过期（activeExpireCycle） / Lazy deletion & bounded activeExpireCycle | ../computing/software/how-redis-answers-in-microseconds/#ch8 | how-redis-answers-in-microseconds |
 | 重排序缓冲与精确异常 / The reorder buffer and precise exceptions | ../computing/systems/how-a-cpu-guesses-ahead/#ch8 | how-a-cpu-guesses-ahead |
 | 安全启动：一级验一级的签名链 / Secure Boot: a chain of signature checks | ../computing/systems/how-a-computer-boots/#ch8 | how-a-computer-boots |
 | 顺序一致性与存储缓冲 / Sequential consistency and the store buffer | ../computing/systems/how-cores-share-memory/#ch8 | how-cores-share-memory |
@@ -3324,25 +3395,34 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | T10 PI：每个块多 8 字节 / T10 PI: Eight More Bytes per Block | ../computing/systems/how-sas-works/#ch8 | how-sas-works |
 | 雷电 DMA 攻击与 IOMMU / Thunderbolt DMA Attacks and the IOMMU | ../computing/systems/how-thunderbolt-works/#ch8 | how-thunderbolt-works |
 | 雷电与 USB4 的 PCIe 隧道：不翻译的路 / PCIe Tunnelling in Thunderbolt and USB4 | ../computing/systems/how-usb-drives-talk/#ch8 | how-usb-drives-talk |
+| Orinoco 分代与并发垃圾回收 / Orinoco generational & concurrent garbage collection | ../computing/software/how-v8-runs-javascript/#ch8 | how-v8-runs-javascript |
 | 为什么 SATA 停在 6 Gb/s / Why SATA Stopped at 6 Gb/s | ../computing/systems/how-sata-works/#ch8 | how-sata-works |
 | 基准测试的误差、饱和与污染 / Benchmark noise, saturation and contamination | ../computing/ml/what-a-frontier-model-takes/#ch7 | what-a-frontier-model-takes |
 | 发包的路和 BQL：发送环里排多少字节 / The transmit path and BQL: how many bytes to queue | ../computing/systems/how-a-nic-moves-packets/#ch9 | how-a-nic-moves-packets |
+| 主线程卡顿隔离：top/left 对决 transform/opacity / Main-thread jank isolation: left vs. transform | ../computing/software/how-chromium-renders-a-web-page/#ch9 | how-chromium-renders-a-web-page |
+| 容器里的 PID 1：信号忽略与僵尸回收 / Container PID 1: ignored signals and zombie reaping | ../computing/software/how-containers-isolate-a-process/#ch9 | how-containers-isolate-a-process |
 | 数据搬运能耗与 HBM 封装 / Data Movement Energy and HBM Packaging | ../computing/systems/why-compute-waits-for-memory/#ch9 | why-compute-waits-for-memory |
 | 噪声与退相干 / Noise and decoherence | ../computing/quantum/what-quantum-computers-do/#ch9 | what-quantum-computers-do |
 | 驱动模型：比对、probe、绑定 / The driver model: match, probe, bind | ../computing/systems/how-the-os-talks-to-hardware/#ch9 | how-the-os-talks-to-hardware |
 | MESI 入门与伪共享 / A first look at MESI, and false sharing | ../computing/systems/how-cpu-caches-work/#ch9 | how-cpu-caches-work |
 | U 盘和存储卡：几颗闪存与总线 / Flash Drives and Memory Cards: A Few Dies and a Bus | ../computing/systems/how-usb-drives-talk/#ch9 | how-usb-drives-talk |
 | fork 与写时复制 / fork and copy-on-write | ../computing/systems/how-virtual-memory-works/#ch9 | how-virtual-memory-works |
+| 协议 v2、浅克隆与部分克隆 / Wire protocol v2, shallow & partial clones | ../computing/software/how-git-stores-history/#ch9 | how-git-stores-history |
 | 混合注意力前沿谱系（2026 年 11 月） / Hybrid Attention Landscape (Nov 2026) | ../computing/ml/how-hybrid-attention-remembers/#ch9 | how-hybrid-attention-remembers |
 | 互连的前沿（截至 2026 年 11 月）：UCIe 3.0 与 4.0、3D 堆叠、CXL 4.0 / The Interconnect Frontier (as of November 2026): UCIe 3.0 and 4.0, 3D Stacking, CXL 4.0 | ../computing/systems/how-a-computer-is-wired/#ch9 | how-a-computer-is-wired |
 | 性能的铁律 / The iron law of performance | ../computing/systems/how-a-cpu-runs-a-program/#ch9 | how-a-cpu-runs-a-program |
+| PGO 与 ThinLTO 链接时跨文件优化 / PGO & ThinLTO cross-translation-unit optimization | ../computing/software/how-llvm-compiles-your-code/#ch9 | how-llvm-compiles-your-code |
 | LPDDR、GDDR7、CAMM2 与 MRDIMM / LPDDR, GDDR7, CAMM2 and MRDIMM | ../computing/systems/how-memory-talks/#ch9 | how-memory-talks |
 | 纹理过滤、mipmap 和颜色空间 / Texture filtering, mipmaps and colour space | ../computing/software/how-threejs-draws-a-scene/#ch9 | how-threejs-draws-a-scene |
 | 液晶、OLED 与运动模糊 / LCD, OLED and motion blur | ../computing/systems/how-pixels-reach-a-screen/#ch9 | how-pixels-reach-a-screen |
+| sendfile 零拷贝与 proxy_buffering 解耦 / sendfile zero-copy & proxy_buffering decoupling | ../computing/software/how-nginx-handles-ten-thousand-connections/#ch9 | how-nginx-handles-ten-thousand-connections |
 | PAM4 与眼图 / PAM4 and Eye Diagrams | ../computing/systems/how-pcie-works/#ch9 | how-pcie-works |
+| PostgreSQL WAL、CRC-32C 与全页写防撕裂 / WAL, CRC-32C & Full-Page Writes | ../computing/software/how-postgresql-runs-a-query/#ch9 | how-postgresql-runs-a-query |
 | 像素按 2×2 着色：小三角形为什么费 / Shading in 2×2 quads: why small triangles cost | ../computing/systems/how-a-gpu-computes/#ch9 | how-a-gpu-computes |
 | 功率墙与温度墙：PL1、PL2、Tau / Power and thermal limits: PL1, PL2, Tau | ../computing/systems/how-power-reaches-the-cpu/#ch9 | how-power-reaches-the-cpu |
 | 量子威胁：Shor、Grover 与先存后解 / The quantum threat: Shor, Grover, harvest now decrypt later | ../computing/systems/a-secret-in-public/#ch8 | a-secret-in-public |
+| 31 位 Lanes 优先级与并发抢占 / 31-bit Lanes and concurrent scheduling | ../computing/software/how-react-updates-the-dom/#ch9 | how-react-updates-the-dom |
+| 近似 LRU 采样池与 8 位 Morris 计数器 LFU / Approximate LRU pool & 8-bit Morris LFU | ../computing/software/how-redis-answers-in-microseconds/#ch8 | how-redis-answers-in-microseconds |
 | 三副本与纠删码：空间、持久性与修理代价 / Replication vs erasure coding: space, durability and repair | ../computing/systems/storage-over-a-network/#ch9 | storage-over-a-network |
 | 环形全归约 / Ring all-reduce | ../computing/systems/coherent-interconnects/#ch9 | coherent-interconnects |
 | 24G SAS 的 128b/150b 编码与纠错 / 24G SAS: 128b/150b Coding and FEC | ../computing/systems/how-sas-works/#ch9 | how-sas-works |
@@ -3352,24 +3432,33 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 存储前沿（2026 年 11 月）：HAMR 出货、闪存层数、QLC 与 PLC / Storage frontier (Nov 2026): HAMR shipping, NAND layers, QLC and PLC | ../computing/systems/what-a-drive-is-made-of/#ch9 | what-a-drive-is-made-of |
 | 雷电 4/5 与 USB4 的必选清单 / Thunderbolt 4/5 vs USB4: the Mandatory List | ../computing/systems/how-thunderbolt-works/#ch9 | how-thunderbolt-works |
 | x86-TSO 与 Arm、RISC-V 的弱模型：栅栏、获取与释放 / x86-TSO versus Arm and RISC-V weak ordering: fences, acquire and release | ../computing/systems/how-cores-share-memory/#ch9 | how-cores-share-memory |
+| 事件循环与微任务检查点接缝 / Event loop & microtask checkpoint seam | ../computing/software/how-v8-runs-javascript/#ch9 | how-v8-runs-javascript |
 | 乱序窗口有多大 / How big the out-of-order window is | ../computing/systems/how-a-cpu-guesses-ahead/#ch9 | how-a-cpu-guesses-ahead |
 | 自动向量化与求和顺序 / Auto-vectorisation and summation order | ../computing/systems/how-a-cpu-does-math/#ch10 | how-a-cpu-does-math |
 | 追指针：看得见的缓存台阶 / Pointer chasing: the cache staircase you can measure | ../computing/systems/how-cpu-caches-work/#ch10 | how-cpu-caches-work |
+| Skia Graphite、滚动驱动动画与 Speculation Rules 前沿 / Skia Graphite, scroll-driven animations & Speculation Rules | ../computing/software/how-chromium-renders-a-web-page/#ch10 | how-chromium-renders-a-web-page |
 | CISC 与 RISC，x86 的微操作 / CISC vs RISC and x86 micro-ops | ../computing/systems/how-a-cpu-runs-a-program/#ch10 | how-a-cpu-runs-a-program |
+| 前沿沙盒与镜像演化：ID-map、MicroVM、EROFS 与 WASI 0.3 / Container frontiers: idmapped mounts, MicroVMs, EROFS, and WASI 0.3 | ../computing/software/how-containers-isolate-a-process/#ch10 | how-containers-isolate-a-process |
 | 进程切换、PCID 和 KPTI / Context switches, PCID and KPTI | ../computing/systems/how-virtual-memory-works/#ch10 | how-virtual-memory-works |
 | 数据中心供电：48 伏与 800 伏直流 / Data-center power: 48 V and 800 V DC | ../computing/systems/how-power-reaches-the-cpu/#ch10 | how-power-reaches-the-cpu |
+| Reftable 引用后端、SHA-256 与稀疏索引前沿 / Reftable backend, SHA-256 transition & sparse index | ../computing/software/how-git-stores-history/#ch10 | how-git-stores-history |
 | GPU 的存储层次，和不做的一致性 / The GPU memory hierarchy, and the coherence it skips | ../computing/systems/how-a-gpu-computes/#ch10 | how-a-gpu-computes |
 | HDR 与 PQ 曲线 / HDR and the PQ curve | ../computing/systems/how-pixels-reach-a-screen/#ch10 | how-pixels-reach-a-screen |
 | 一次 read() 穿过的每一层 / Every layer one read() crosses | ../computing/systems/how-the-os-talks-to-hardware/#ch10 | how-the-os-talks-to-hardware |
 | 推理时缓存键和值：以内存换运算 / Caching keys and values at inference: memory for compute | ../computing/ml/what-a-frontier-model-takes/#ch8 | what-a-frontier-model-takes |
 | 格、LWE 与 ML-KEM / Lattices, learning with errors and ML-KEM | ../computing/systems/a-secret-in-public/#ch9 | a-secret-in-public |
+| LLVM 前沿：MLIR、BOLT 与 CSSPGO（2026 年 11 月） / LLVM frontier: MLIR, BOLT & CSSPGO (November 2026) | ../computing/software/how-llvm-compiles-your-code/#ch10 | how-llvm-compiles-your-code |
 | 度量启动：TPM 的 PCR 扩展 / Measured boot: TPM PCR extends | ../computing/systems/how-a-computer-boots/#ch10 | how-a-computer-boots |
 | HBM4、共封装光学与算力前沿 / HBM4, Co-Packaged Optics, and the 2026 Frontier | ../computing/systems/why-compute-waits-for-memory/#ch10 | why-compute-waits-for-memory |
 | 网络存储的前沿（截至 2026 年 11 月） / The network storage frontier (as of November 2026) | ../computing/systems/storage-over-a-network/#ch10 | storage-over-a-network |
+| QUIC 热重载、Pingora 与 Envoy 架构演进 / QUIC reloads, Pingora & Envoy architectures | ../computing/software/how-nginx-handles-ten-thousand-connections/#ch10 | how-nginx-handles-ten-thousand-connections |
 | FLIT 模式与前向纠错 / FLIT Mode and Forward Error Correction | ../computing/systems/how-pcie-works/#ch10 | how-pcie-works |
+| PostgreSQL 18 异步 I/O、19 在线重构与 pgvector HNSW / PostgreSQL 18 AIO, 19 REPACK & pgvector HNSW Frontier | ../computing/software/how-postgresql-runs-a-query/#ch10 | how-postgresql-runs-a-query |
 | 量子纠错：重复码与表面码 / Quantum error correction: repetition and surface codes | ../computing/quantum/what-quantum-computers-do/#ch10 | what-quantum-computers-do |
+| React Compiler、RSC、Activity 与 ViewTransition / React Compiler, RSC, Activity, and ViewTransition | ../computing/software/how-react-updates-the-dom/#ch10 | how-react-updates-the-dom |
 | 读硬盘规格表时问三件事 / Three Questions for a Drive Spec Sheet | ../computing/systems/how-sata-works/#ch10 | how-sata-works |
 | 看一台机器的三个问题 / Three Questions for Reading a Machine | ../computing/systems/how-a-computer-is-wired/#ch10 | how-a-computer-is-wired |
+| Redis Cluster 16,384 哈希槽与 {hash-tag} / Redis Cluster 16,384 hash slots & {hash-tag} | ../computing/software/how-redis-answers-in-microseconds/#ch9 | how-redis-answers-in-microseconds |
 | 行锤与防护：TRR、RFM、PRAC / Row hammer and its defences: TRR, RFM, PRAC | ../computing/systems/how-memory-talks/#ch10 | how-memory-talks |
 | SAS 的前沿（截至 2026 年 11 月） / The SAS Frontier (as of November 2026) | ../computing/systems/how-sas-works/#ch10 | how-sas-works |
 | 纵向扩展、横向扩展与 UALink / Scale-up, scale-out and UALink | ../computing/systems/coherent-interconnects/#ch10 | coherent-interconnects |
@@ -3378,8 +3467,10 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 锁的扩展性：TAS、TTAS、排号锁与 MCS / Lock scaling: TAS, TTAS, ticket and MCS | ../computing/systems/how-cores-share-memory/#ch10 | how-cores-share-memory |
 | 雷电与 USB4 的前沿（2026） / Thunderbolt and USB4 Frontier (2026) | ../computing/systems/how-thunderbolt-works/#ch10 | how-thunderbolt-works |
 | USB 与雷电存储的前沿（2026 年 11 月） / The USB and Thunderbolt Storage Frontier (November 2026) | ../computing/systems/how-usb-drives-talk/#ch10 | how-usb-drives-talk |
+| Turboshaft、V8 堆沙箱与 WebAssembly JSPI 前沿 / Turboshaft, V8 Heap Sandbox & WebAssembly JSPI frontier | ../computing/software/how-v8-runs-javascript/#ch10 | how-v8-runs-javascript |
 | XDP 与 AF_XDP：在驱动里处理包 / XDP and AF_XDP: handling packets in the driver | ../computing/systems/how-a-nic-moves-packets/#ch10 | how-a-nic-moves-packets |
 | 缓存的前沿（2026 年 11 月） / The cache frontier (November 2026) | ../computing/systems/how-cpu-caches-work/#ch11 | how-cpu-caches-work |
+| 网页卡顿或掉帧时先问的三件事 / Three diagnostic questions for web page jank | ../computing/software/how-chromium-renders-a-web-page/#ch11 | how-chromium-renders-a-web-page |
 | 前沿（2026 年 11 月）：几百个核心的一致性域 / Frontier (November 2026): coherence domains of hundreds of cores | ../computing/systems/how-cores-share-memory/#ch11 | how-cores-share-memory |
 | 从点鼠标到屏幕变亮 / From mouse click to photons | ../computing/systems/how-pixels-reach-a-screen/#ch11 | how-pixels-reach-a-screen |
 | draw call 的开销和实例化 / What a draw call costs, and instancing | ../computing/software/how-threejs-draws-a-scene/#ch11 | how-threejs-draws-a-scene |
@@ -3396,12 +3487,14 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 虚拟机里的二维页表 / Two-dimensional page walks in virtual machines | ../computing/systems/how-virtual-memory-works/#ch11 | how-virtual-memory-works |
 | 看到网络存储时问的三件事 / Three questions to ask about network storage | ../computing/systems/storage-over-a-network/#ch11 | storage-over-a-network |
 | PCIe 7.0、8.0 与合规测试的进展 / Where PCIe 7.0, 8.0 and Compliance Stand | ../computing/systems/how-pcie-works/#ch11 | how-pcie-works |
+| PostgreSQL 慢查询与膨胀诊断三问 / Three Questions for Slow or Bloated PostgreSQL Queries | ../computing/software/how-postgresql-runs-a-query/#ch11 | how-postgresql-runs-a-query |
 | 后量子迁移的前沿（2026 年） / The post-quantum frontier (2026) | ../computing/systems/a-secret-in-public/#ch10 | a-secret-in-public |
 | 供电前沿（2026 年 11 月） / Power-delivery frontier (November 2026) | ../computing/systems/how-power-reaches-the-cpu/#ch11 | how-power-reaches-the-cpu |
 | 2026 年的前沿：硬件、量子优势与资源估计 / The 2026 frontier: hardware, advantage claims and resource estimates | ../computing/quantum/what-quantum-computers-do/#ch11 | what-quantum-computers-do |
 | 网卡里的 RDMA：队列对和单边写 / RDMA inside the NIC: queue pairs and one-sided writes | ../computing/systems/how-a-nic-moves-packets/#ch11 | how-a-nic-moves-packets |
 | 看到 SAS 时问三件事 / Three Questions When You See SAS | ../computing/systems/how-sas-works/#ch11 | how-sas-works |
 | 看包装时问三件事 / Three Questions for a USB Speed Label | ../computing/systems/how-usb-drives-talk/#ch11 | how-usb-drives-talk |
+| SCAN 逆二进制游标与扩缩容遍历 / Reverse-binary SCAN cursor across resizes | ../computing/software/how-redis-answers-in-microseconds/#ch9 | how-redis-answers-in-microseconds |
 | 雷电接口是怎么工作的 / How Thunderbolt Works | ../computing/systems/how-thunderbolt-works/#ch11 | how-thunderbolt-works |
 | 训练集群里的网卡：ECMP 和包喷洒 / NICs in training clusters: ECMP and packet spraying | ../computing/systems/how-a-nic-moves-packets/#ch12 | how-a-nic-moves-packets |
 | Arm 与苹果的开机链 / How Arm and Apple machines boot | ../computing/systems/how-a-computer-boots/#ch12 | how-a-computer-boots |
@@ -3417,6 +3510,7 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 看一颗芯片的缓存时问三件事 / Three questions about a chip's caches | ../computing/systems/how-cpu-caches-work/#ch12 | how-cpu-caches-work |
 | 看代码、比 CPU 时问的三件事 / Three questions for code and for CPUs | ../computing/systems/how-a-cpu-runs-a-program/#ch12 | how-a-cpu-runs-a-program |
 | 读量子新闻的五个问题 / Five questions for reading quantum news | ../computing/quantum/what-quantum-computers-do/#ch12 | what-quantum-computers-do |
+| Redis 8 Vector Sets、kvobj 与无共享架构 / Redis 8 Vector Sets, kvobj & shared-nothing engines | ../computing/software/how-redis-answers-in-microseconds/#ch10 | how-redis-answers-in-microseconds |
 | 写共享数据前问三件事 / Three questions before writing shared data | ../computing/systems/how-cores-share-memory/#ch12 | how-cores-share-memory |
 | SVE、SME 和 AMX：不定宽的向量与矩阵单元 / SVE, SME and AMX: length-agnostic vectors and matrix units | ../computing/systems/how-a-cpu-does-math/#ch12 | how-a-cpu-does-math |
 | 电脑降频时先查哪一段 / Which stage limits first when a PC throttles | ../computing/systems/how-power-reaches-the-cpu/#ch12 | how-power-reaches-the-cpu |
@@ -3556,7 +3650,7 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 <!-- GENERATED:registry-concepts -->
 ## 页面 → 概念 → 锚点（生成，勿手改）
 
-253 个页面拥有 786 个图谱概念 · 由 scripts/build-registry.cjs 从 site-registry.json 生成（概念 = atlas/data.js 里 primary 课程是该页的节点；顺序同首页登记顺序）。登记或改动页面后重跑 `node scripts/build-registry.cjs`；不要再在本文件里手写逐页概念表（2026-11-16 起，上面的手写表保留为历史记录）。
+262 个页面拥有 880 个图谱概念 · 由 scripts/build-registry.cjs 从 site-registry.json 生成（概念 = atlas/data.js 里 primary 课程是该页的节点；顺序同首页登记顺序）。登记或改动页面后重跑 `node scripts/build-registry.cjs`；不要再在本文件里手写逐页概念表（2026-11-16 起，上面的手写表保留为历史记录）。
 
 ### 冰冻肥皂泡 · 水膜里的结晶 / Frozen Soap Bubbles · Ice in a Thin Film
 
@@ -6021,6 +6115,146 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 2026 年的前沿：硬件、量子优势与资源估计 / The 2026 frontier: hardware, advantage claims and resource estimates | `computing/quantum/what-quantum-computers-do/#ch11` |
 | 读量子新闻的五个问题 / Five questions for reading quantum news | `computing/quantum/what-quantum-computers-do/#ch12` |
 
+### Chromium 如何把一个网页画上屏幕 / How Chromium Renders a Web Page
+
+`computing/software/how-chromium-renders-a-web-page/` · essay
+
+| 概念 | 深链 |
+| --- | --- |
+| Chromium 多进程渲染地图与 RenderingNG 管线 / Chromium multi-process map & RenderingNG pipeline | `computing/software/how-chromium-renders-a-web-page/#ch1` |
+| HTML 字节流解析、CSSOM 阻塞与预加载扫描 / HTML byte stream parsing, CSSOM blocking & preload scanner | `computing/software/how-chromium-renders-a-web-page/#ch2` |
+| 从右向左选择器匹配、SelectorFilter 与失效集 / Right-to-left selector matching, SelectorFilter & InvalidationSet | `computing/software/how-chromium-renders-a-web-page/#ch3` |
+| LayoutNG 不可变片段与强制同步布局抖动 / LayoutNG immutable fragments & forced synchronous layout thrashing | `computing/software/how-chromium-renders-a-web-page/#ch4` |
+| Pre-Paint 与四棵属性树（Transform / Clip / Effect / Scroll） / Pre-Paint & the four Property Trees | `computing/software/how-chromium-renders-a-web-page/#ch5` |
+| PaintRecord 绘制清单与层爆炸陷阱 / PaintRecord display lists & the layer explosion trap | `computing/software/how-chromium-renders-a-web-page/#ch6` |
+| TileManager 分块光栅化、双缓冲树与棋盘格 / TileManager tiling, OOP-R raster & checkerboarding | `computing/software/how-chromium-renders-a-web-page/#ch7` |
+| Viz CompositorFrame、SurfaceAggregator 与跨源聚合 / Viz CompositorFrame & cross-process SurfaceAggregator | `computing/software/how-chromium-renders-a-web-page/#ch8` |
+| 主线程卡顿隔离：top/left 对决 transform/opacity / Main-thread jank isolation: left vs. transform | `computing/software/how-chromium-renders-a-web-page/#ch9` |
+| Skia Graphite、滚动驱动动画与 Speculation Rules 前沿 / Skia Graphite, scroll-driven animations & Speculation Rules | `computing/software/how-chromium-renders-a-web-page/#ch10` |
+| 网页卡顿或掉帧时先问的三件事 / Three diagnostic questions for web page jank | `computing/software/how-chromium-renders-a-web-page/#ch11` |
+
+### 容器是如何把一个进程关进沙盒的 / How Containers Isolate a Process
+
+`computing/software/how-containers-isolate-a-process/` · essay
+
+| 概念 | 深链 |
+| --- | --- |
+| 容器不是虚拟机：共享内核的受限进程 / Containers are constrained host processes, not VMs | `computing/software/how-containers-isolate-a-process/#ch1` |
+| OCI 镜像层与 ChainID 去重 / OCI image layers and ChainID deduplication | `computing/software/how-containers-isolate-a-process/#ch2` |
+| OverlayFS 的 Copy-Up 与白化删除 / OverlayFS copy-up and whiteout deletion | `computing/software/how-containers-isolate-a-process/#ch3` |
+| Linux Namespaces 与 Rootless UID 映射 / Linux Namespaces and Rootless UID mapping | `computing/software/how-containers-isolate-a-process/#ch4` |
+| 容器网络：veth pair、网桥与 VXLAN MTU / Container networking: veth, bridge, NAT, and MTU | `computing/software/how-containers-isolate-a-process/#ch5` |
+| cgroups v2 CPU 带宽节流与毛刺 / cgroups v2 CPU throttling and tail stalls | `computing/software/how-containers-isolate-a-process/#ch6` |
+| cgroups v2 统一内存、页缓存与 OOM Kill / cgroups v2 unified memory, PSI, and OOM kill | `computing/software/how-containers-isolate-a-process/#ch7` |
+| Capabilities 与 seccomp-bpf 安全边界 / Capabilities and seccomp-bpf security perimeter | `computing/software/how-containers-isolate-a-process/#ch8` |
+| 容器里的 PID 1：信号忽略与僵尸回收 / Container PID 1: ignored signals and zombie reaping | `computing/software/how-containers-isolate-a-process/#ch9` |
+| 前沿沙盒与镜像演化：ID-map、MicroVM、EROFS 与 WASI 0.3 / Container frontiers: idmapped mounts, MicroVMs, EROFS, and WASI 0.3 | `computing/software/how-containers-isolate-a-process/#ch10` |
+
+### Git 如何存下全部历史 / How Git Stores All History
+
+`computing/software/how-git-stores-history/` · essay
+
+| 概念 | 深链 |
+| --- | --- |
+| .git 目录的四个区与 Git 工作流程 / The four regions of a Git repository | `computing/software/how-git-stores-history/#ch1` |
+| Git Blob 对象与内容寻址哈希 / Git blob objects and content addressing | `computing/software/how-git-stores-history/#ch2` |
+| Git Tree 快照与 Merkle 子树共享 / Git tree snapshots and Merkle subtree sharing | `computing/software/how-git-stores-history/#ch3` |
+| Commit 对象与不可变提交有向无环图 / Commit objects and the immutable DAG | `computing/software/how-git-stores-history/#ch4` |
+| Git 暂存区 stat 缓存与 Racy Git / Git index stat cache and Racy Git | `computing/software/how-git-stores-history/#ch5` |
+| 分支、HEAD、标签与 reflog 垃圾回收 / Branches, HEAD, tags and reflog GC | `computing/software/how-git-stores-history/#ch6` |
+| Myers 差分与三方合并冲突 / Myers diff and three-way merge | `computing/software/how-git-stores-history/#ch7` |
+| Packfile 增量压缩与 .idx 扇出索引 / Packfile delta compression and .idx fanout | `computing/software/how-git-stores-history/#ch8` |
+| 协议 v2、浅克隆与部分克隆 / Wire protocol v2, shallow & partial clones | `computing/software/how-git-stores-history/#ch9` |
+| Reftable 引用后端、SHA-256 与稀疏索引前沿 / Reftable backend, SHA-256 transition & sparse index | `computing/software/how-git-stores-history/#ch10` |
+
+### LLVM 如何把源码编译成机器码 / How LLVM Compiles Your Code
+
+`computing/software/how-llvm-compiles-your-code/` · essay
+
+| 概念 | 深链 |
+| --- | --- |
+| LLVM 三段式架构与不透明指针 IR / LLVM 3-phase architecture & opaque-pointer IR | `computing/software/how-llvm-compiles-your-code/#ch1` |
+| -O0 为什么把变量先放栈上（alloca） / Why -O0 puts local variables on the stack (alloca) | `computing/software/how-llvm-compiles-your-code/#ch2` |
+| 静态单赋值（SSA）与 mem2reg 的 phi 节点 / Static Single Assignment (SSA) & mem2reg phi nodes | `computing/software/how-llvm-compiles-your-code/#ch3` |
+| Pass 管线与不动点迭代化简 / Optimization pass pipeline & fixed-point iteration | `computing/software/how-llvm-compiles-your-code/#ch4` |
+| 循环不变量外提（LICM）、别名分析与 SIMD / Loop-invariant code motion (LICM), aliasing & SIMD | `computing/software/how-llvm-compiles-your-code/#ch5` |
+| 未定义行为（nsw / poison）与检查消除 / Undefined behavior (nsw / poison) & deleted checks | `computing/software/how-llvm-compiles-your-code/#ch6` |
+| 指令选择：SelectionDAG 与 GlobalISel / Instruction selection: SelectionDAG & GlobalISel | `computing/software/how-llvm-compiles-your-code/#ch7` |
+| 活跃度分析、干涉图着色与寄存器溢出 / Liveness analysis, graph coloring & register spilling | `computing/software/how-llvm-compiles-your-code/#ch8` |
+| PGO 与 ThinLTO 链接时跨文件优化 / PGO & ThinLTO cross-translation-unit optimization | `computing/software/how-llvm-compiles-your-code/#ch9` |
+| LLVM 前沿：MLIR、BOLT 与 CSSPGO（2026 年 11 月） / LLVM frontier: MLIR, BOLT & CSSPGO (November 2026) | `computing/software/how-llvm-compiles-your-code/#ch10` |
+
+### Nginx 如何扛住上万并发 / How Nginx Handles Ten Thousand Connections
+
+`computing/software/how-nginx-handles-ten-thousand-connections/` · essay
+
+| 概念 | 深链 |
+| --- | --- |
+| C10K 问题与 Nginx 440 字节连接槽 / C10K problem & Nginx 440-byte connection slots | `computing/software/how-nginx-handles-ten-thousand-connections/#ch1` |
+| Master–Worker 与零停机热重载 / Master–Worker architecture & zero-downtime reload | `computing/software/how-nginx-handles-ten-thousand-connections/#ch2` |
+| Nginx epoll 事件循环、惊群与 SO_REUSEPORT / Nginx epoll loop, thundering herd & SO_REUSEPORT | `computing/software/how-nginx-handles-ten-thousand-connections/#ch3` |
+| Nginx 请求 11 阶段状态机与 location 优先级 / Nginx 11-phase request pipeline & location precedence | `computing/software/how-nginx-handles-ten-thousand-connections/#ch4` |
+| ngx_pool_t 按请求内存池与缓冲区链 / Per-request ngx_pool_t memory pool & buffer chains | `computing/software/how-nginx-handles-ten-thousand-connections/#ch5` |
+| 平滑加权轮询（SWRR）均衡算法 / Smooth Weighted Round-Robin (SWRR) | `computing/software/how-nginx-handles-ten-thousand-connections/#ch6` |
+| limit_req 共享内存漏桶限流 / limit_req shared-memory leaky-bucket rate limiting | `computing/software/how-nginx-handles-ten-thousand-connections/#ch7` |
+| 红黑树定时器与 300 毫秒懒更新 / Red-black timer tree & 300 ms lazy updates | `computing/software/how-nginx-handles-ten-thousand-connections/#ch8` |
+| sendfile 零拷贝与 proxy_buffering 解耦 / sendfile zero-copy & proxy_buffering decoupling | `computing/software/how-nginx-handles-ten-thousand-connections/#ch9` |
+| QUIC 热重载、Pingora 与 Envoy 架构演进 / QUIC reloads, Pingora & Envoy architectures | `computing/software/how-nginx-handles-ten-thousand-connections/#ch10` |
+
+### PostgreSQL 如何执行一条查询 / How PostgreSQL Runs a Query
+
+`computing/software/how-postgresql-runs-a-query/` · essay
+
+| 概念 | 深链 |
+| --- | --- |
+| PostgreSQL 查询流水线与火山执行器 / PostgreSQL Query Pipeline & Volcano Executor | `computing/software/how-postgresql-runs-a-query/#ch1` |
+| PostgreSQL 代价优化器与扫描路径选择 / PostgreSQL Cost-Based Planner & Scan Crossover | `computing/software/how-postgresql-runs-a-query/#ch2` |
+| 8 KiB 分槽页与 HOT 同页更新 / 8 KiB Slotted Pages & HOT Updates | `computing/software/how-postgresql-runs-a-query/#ch3` |
+| PostgreSQL MVCC 与快照隔离 / PostgreSQL MVCC & Snapshot Visibility | `computing/software/how-postgresql-runs-a-query/#ch4` |
+| AUTOVACUUM、可见性映射与 32 位 XID 回卷 / VACUUM, Visibility Map & 32-Bit XID Wraparound | `computing/software/how-postgresql-runs-a-query/#ch5` |
+| shared_buffers 时钟扫描与双缓冲 / shared_buffers Clock Sweep & Double Buffering | `computing/software/how-postgresql-runs-a-query/#ch6` |
+| nbtree High Key 并发分裂与右链遍历 / nbtree Lehman & Yao Splits & Right-Links | `computing/software/how-postgresql-runs-a-query/#ch7` |
+| PostgreSQL 连接策略与 work_mem 磁盘溢出 / Join Algorithms & work_mem Disk Spills | `computing/software/how-postgresql-runs-a-query/#ch8` |
+| PostgreSQL WAL、CRC-32C 与全页写防撕裂 / WAL, CRC-32C & Full-Page Writes | `computing/software/how-postgresql-runs-a-query/#ch9` |
+| PostgreSQL 18 异步 I/O、19 在线重构与 pgvector HNSW / PostgreSQL 18 AIO, 19 REPACK & pgvector HNSW Frontier | `computing/software/how-postgresql-runs-a-query/#ch10` |
+| PostgreSQL 慢查询与膨胀诊断三问 / Three Questions for Slow or Bloated PostgreSQL Queries | `computing/software/how-postgresql-runs-a-query/#ch11` |
+
+### React 如何更新网页 / How React Updates the DOM
+
+`computing/software/how-react-updates-the-dom/` · essay
+
+| 概念 | 深链 |
+| --- | --- |
+| Render 与 Commit 两阶段更新 / Two-phase Render and Commit | `computing/software/how-react-updates-the-dom/#ch1` |
+| JSX 与 React Element 对象 / JSX and React Element objects | `computing/software/how-react-updates-the-dom/#ch2` |
+| Fiber 链表与双缓冲架构 / Fiber linked list and double buffering | `computing/software/how-react-updates-the-dom/#ch3` |
+| O(n) 列表协调与 key 身份识别 / O(n) list reconciliation and keys | `computing/software/how-react-updates-the-dom/#ch4` |
+| Hook 链表与环形更新队列 / Hooks linked list and circular queue | `computing/software/how-react-updates-the-dom/#ch5` |
+| beginWork / completeWork 与子树脏标记 / beginWork, completeWork, and subtreeFlags | `computing/software/how-react-updates-the-dom/#ch6` |
+| Commit 三阶段与 useLayoutEffect vs useEffect / Commit phases: useLayoutEffect vs. useEffect | `computing/software/how-react-updates-the-dom/#ch7` |
+| 根容器事件委托与微任务自动合批 / Root event delegation and automatic batching | `computing/software/how-react-updates-the-dom/#ch8` |
+| 31 位 Lanes 优先级与并发抢占 / 31-bit Lanes and concurrent scheduling | `computing/software/how-react-updates-the-dom/#ch9` |
+| React Compiler、RSC、Activity 与 ViewTransition / React Compiler, RSC, Activity, and ViewTransition | `computing/software/how-react-updates-the-dom/#ch10` |
+
+### Redis 如何在微秒级响应 / How Redis Answers in Microseconds
+
+`computing/software/how-redis-answers-in-microseconds/` · essay
+
+| 概念 | 深链 |
+| --- | --- |
+| Redis 单线程事件循环与锁竞争 / Redis single-threaded event loop & lock avoidance | `computing/software/how-redis-answers-in-microseconds/#ch1` |
+| RESP 协议与管道（Pipelining） / RESP wire framing & pipelining | `computing/software/how-redis-answers-in-microseconds/#ch2` |
+| redisObject、44 字节 embstr 与 listpack / redisObject, 44-byte embstr & listpack | `computing/software/how-redis-answers-in-microseconds/#ch3` |
+| Redis 字典与渐进式 Rehash / Redis dict & progressive rehashing | `computing/software/how-redis-answers-in-microseconds/#ch4` |
+| ZSET 有序集合与跳跃表（zskiplist） / Sorted sets (ZSET) & the skiplist | `computing/software/how-redis-answers-in-microseconds/#ch5` |
+| Redis 8 多线程网络 I/O（io-threads） / Redis 8 threaded network I/O (io-threads) | `computing/software/how-redis-answers-in-microseconds/#ch6` |
+| BGSAVE 写时复制与多部分 AOF 持久化 / BGSAVE fork Copy-on-Write & multi-part AOF | `computing/software/how-redis-answers-in-microseconds/#ch7` |
+| Redis 惰性删除与定期采样过期（activeExpireCycle） / Lazy deletion & bounded activeExpireCycle | `computing/software/how-redis-answers-in-microseconds/#ch8` |
+| 近似 LRU 采样池与 8 位 Morris 计数器 LFU / Approximate LRU pool & 8-bit Morris LFU | `computing/software/how-redis-answers-in-microseconds/#ch8` |
+| Redis Cluster 16,384 哈希槽与 {hash-tag} / Redis Cluster 16,384 hash slots & {hash-tag} | `computing/software/how-redis-answers-in-microseconds/#ch9` |
+| SCAN 逆二进制游标与扩缩容遍历 / Reverse-binary SCAN cursor across resizes | `computing/software/how-redis-answers-in-microseconds/#ch9` |
+| Redis 8 Vector Sets、kvobj 与无共享架构 / Redis 8 Vector Sets, kvobj & shared-nothing engines | `computing/software/how-redis-answers-in-microseconds/#ch10` |
+
 ### Three.js 是怎么把一个场景画出来的 / How Three.js Draws a Scene
 
 `computing/software/how-threejs-draws-a-scene/` · essay
@@ -6041,6 +6275,23 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 射线拾取 / Picking with a raycaster | `computing/software/how-threejs-draws-a-scene/#ch12` |
 | 四元数和球面插值 / Quaternions and slerp | `computing/software/how-threejs-draws-a-scene/#ch12` |
 | WebGPU 和 three.js 的新渲染器 / WebGPU and the new three.js renderer | `computing/software/how-threejs-draws-a-scene/#ch13` |
+
+### V8 是怎么跑起一段 JavaScript 的 / How V8 Runs JavaScript
+
+`computing/software/how-v8-runs-javascript/` · essay
+
+| 概念 | 深链 |
+| --- | --- |
+| V8 四级执行管线与懒解析 / V8 4-tier execution pipeline & lazy parsing | `computing/software/how-v8-runs-javascript/#ch1` |
+| 指针标签、Smi 与指针压缩 / Pointer tagging, Smi & pointer compression | `computing/software/how-v8-runs-javascript/#ch2` |
+| 隐藏类（Map）、Slack 追踪与字典模式 / Hidden classes (Maps), slack tracking & dictionary mode | `computing/software/how-v8-runs-javascript/#ch3` |
+| 内联缓存（LoadIC）：单态、多态与超态 / Inline caches (LoadIC): monomorphic, polymorphic & megamorphic | `computing/software/how-v8-runs-javascript/#ch4` |
+| Ignition 累加器字节码与 FeedbackVector / Ignition accumulator bytecode & FeedbackVector | `computing/software/how-v8-runs-javascript/#ch5` |
+| 投机优化、OSR 与去优化退回 / Speculative optimization, OSR & deoptimization bailout | `computing/software/how-v8-runs-javascript/#ch6` |
+| 数组 ElementsKind 单向转换格 / Array ElementsKind one-way lattice | `computing/software/how-v8-runs-javascript/#ch7` |
+| Orinoco 分代与并发垃圾回收 / Orinoco generational & concurrent garbage collection | `computing/software/how-v8-runs-javascript/#ch8` |
+| 事件循环与微任务检查点接缝 / Event loop & microtask checkpoint seam | `computing/software/how-v8-runs-javascript/#ch9` |
+| Turboshaft、V8 堆沙箱与 WebAssembly JSPI 前沿 / Turboshaft, V8 Heap Sandbox & WebAssembly JSPI frontier | `computing/software/how-v8-runs-javascript/#ch10` |
 
 ### 当着所有人的面约定一个秘密 / Agreeing on a Secret in Plain Sight
 

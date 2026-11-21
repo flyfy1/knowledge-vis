@@ -197,6 +197,15 @@ window.KNOWLEDGE_ESSAYS = [
   "why-atoms-stick-together",
   "why-one-rate-moves-everything",
   "how-threejs-draws-a-scene",
+  "how-git-stores-history",
+  "how-react-updates-the-dom",
+  "how-redis-answers-in-microseconds",
+  "how-v8-runs-javascript",
+  "how-postgresql-runs-a-query",
+  "how-nginx-handles-ten-thousand-connections",
+  "how-chromium-renders-a-web-page",
+  "how-containers-isolate-a-process",
+  "how-llvm-compiles-your-code",
   "scarcity-moves"
 ];
 
@@ -2207,11 +2216,74 @@ window.KNOWLEDGE_PAGES = [
     category: "computing", subtopic: "quantum", stage: "university", status: "live", path: "computing/quantum/what-quantum-computers-do/", created: "2026-11-18"
   },
   {
+    slug: "how-chromium-renders-a-web-page",
+    title: { zh: "Chromium 如何把一个网页画上屏幕", en: "How Chromium Renders a Web Page" },
+    desc: { zh: "在网页里执行一行 el.style.transform = 'translateX(120px)'，为什么主线程被 JavaScript 堵住两百毫秒它依然丝滑，而把同一个动画换成 left 或者给卡片底下塞一个阴影就会掉帧甚至吃爆显存？这篇对照 Chromium RenderingNG（Blink + cc + Viz，2026 年架构）的源码结构与规格，顺着字节流一路拆到底：多进程渲染地图、HTML 词法与预加载扫描、从右向左选择器与失效集、LayoutNG 不可变片段与强制同步回流、Pre-Paint 四棵属性树、PaintRecord 与层爆炸、TileManager 分块与棋盘格、Viz SurfaceAggregator 跨源聚合、120 Hz 帧隔离，以及 Skia Graphite 与投机预渲染前沿。九个交互模型，全部在页面里重现真实的算法账本。", en: "Run one line of code—el.style.transform = 'translateX(120px)'—and it glides cleanly at 120 Hz even when main-thread JavaScript stalls for 200 ms. Animate el.style.left instead, or tuck a moving badge behind overlapping cards, and frames drop or VRAM spikes. Tracing Chromium's RenderingNG pipeline (Blink + cc + Viz, 2026 architecture), this essay follows a byte stream all the way to display swap: multi-process isolation, HTML tokenization and preload scanning, right-to-left selector matching and InvalidationSets, LayoutNG immutable fragments and forced synchronous layout, the four Property Trees, PaintRecords and layer explosion, TileManager tiling and checkerboarding, Viz SurfaceAggregator across OOPIFs, compositor animation isolation, and the November 2026 frontier across Skia Graphite and Speculation Rules." },
+    tags: [{ zh: "Chromium", en: "Chromium" }, { zh: "Blink 引擎", en: "Blink Engine" }, { zh: "渲染与合成", en: "Rendering & Compositing" }, { zh: "软件原理", en: "How Software Works" }, { zh: "长文", en: "Long-form Essay" }],
+    category: "computing", subtopic: "software", stage: "university", status: "live", path: "computing/software/how-chromium-renders-a-web-page/", created: "2026-11-21"
+  },
+  {
+    slug: "how-containers-isolate-a-process",
+    title: { zh: "容器是如何把一个进程关进沙盒的", en: "How Containers Isolate a Process" },
+    desc: { zh: "一行 docker run 就能起一个看似独立的 Linux 系统，但 Linux 内核源码里根本没有「容器」这个结构体。这篇按 OCI Image 1.1 / Runtime 1.2 规范与 Linux 6.x 内核原语，把这一行命令拆开：OCI 镜像层与 SHA-256 ChainID 去重，OverlayFS 的写时复制与 .wh. 白化文件，八副 Namespaces 与 Rootless UserNS 映射，veth、bridge 与 NAT，cgroups v2 的 CPU 节流与统一内存 OOM，seccomp-bpf 与 Capabilities 边界，PID 1 信号与僵尸进程回收，以及截至 2026 年 11 月的 MicroVM、EROFS 与 WASI 0.3 前沿。九个可动手模型全部对照规范与 Node SHA-256 逐项验证。", en: "One docker run line spawns what looks like a fresh Linux box, yet there is no \"container\" struct anywhere in the Linux kernel. Following OCI Image 1.1 / Runtime 1.2 specs and Linux 6.x primitives, this essay takes that command apart: OCI layer SHA-256 ChainID deduplication, OverlayFS copy-up and .wh. whiteouts, eight Linux namespaces and Rootless UserNS UID mapping, veth bridges and NAT, cgroups v2 CPU throttling and unified memory OOM, seccomp-bpf and capabilities, PID 1 signals and zombie reaping, plus November 2026 frontiers in MicroVMs, EROFS, and WASI 0.3. Nine hands-on models cross-checked against Node crypto and exact spec arithmetic." },
+    tags: [{ zh: "容器原理", en: "Container Internals" }, { zh: "Docker 与 OCI", en: "Docker & OCI" }, { zh: "Linux 隔离机制", en: "Linux Isolation" }, { zh: "软件原理", en: "How Software Works" }, { zh: "长文", en: "Long-form Essay" }],
+    category: "computing", subtopic: "software", stage: "university", status: "live", path: "computing/software/how-containers-isolate-a-process/", created: "2026-11-21"
+  },
+  {
+    slug: "how-git-stores-history",
+    title: { zh: "Git 如何存下全部历史", en: "How Git Stores All History" },
+    desc: { zh: "每次敲下 git add 和 git commit，Git 并没有在 .git/ 里存一叠补丁，而是把整棵目录树写成了不可变的内容寻址对象。这篇按 Git 2.56.0 的真实字节格式与源码文档，从一条 git commit 往下追：.git 目录地图，blob 头与 SHA-1/SHA-256，tree 的二进制排布与子树共享，commit 有向无环图，index 的 stat 缓存与 Racy Git，分支、HEAD 与 reflog 的垃圾回收边界，Myers diff 与三方合并，packfile 的 COPY/INSERT 增量字节码与扇出索引，协议 v2 与部分克隆，以及 reftable、SHA-256 过渡和稀疏索引。九个可动手模型都在页面里重写算法，并与本机真实的 git 2.56.0 逐项对过数。", en: "Every time you run git add and git commit, Git does not store a stack of patches inside .git/—it writes an entire directory snapshot as immutable, content-addressed objects. Following Git 2.56.0 byte formats and primary documentation, this essay traces one commit all the way down: the .git/ map, blob headers and SHA-1/SHA-256, binary tree sorting and subtree sharing, the commit DAG, the index stat cache and Racy Git, refs, HEAD and reflog reachability, Myers diff and 3-way merge, packfile COPY/INSERT delta opcodes and fanout indices, wire protocol v2 and partial clones, and the reftable/SHA-256/sparse-index frontier. Nine hands-on models run the real algorithms rewritten in the page and crosschecked item by item against git 2.56.0." },
+    tags: [{ zh: "Git", en: "Git" }, { zh: "版本控制原理", en: "Version Control Internals" }, { zh: "内容寻址", en: "Content Addressing" }, { zh: "软件原理", en: "How Software Works" }, { zh: "长文", en: "Long-form Essay" }],
+    category: "computing", subtopic: "software", stage: "university", status: "live", path: "computing/software/how-git-stores-history/", created: "2026-11-21"
+  },
+  {
+    slug: "how-llvm-compiles-your-code",
+    title: { zh: "LLVM 如何把源码编译成机器码", en: "How LLVM Compiles Your Code" },
+    desc: { zh: "一行 clang -O2 sum.c 的背后，编译器到底做了什么？本文按宿主机 Apple Clang 21.0.0（LLVM 21）的实测中间表示、Pass 结构与 ARM64 / x86_64 汇编，把从源码到机器码的整条链拆开：三段式架构、-O0 的栈槽、SSA 与 mem2reg 的 phi 节点、Pass 不动点迭代、循环外提与 SIMD 向量化、未定义行为 nsw、指令选择、寄存器分配、ThinLTO 与 2026 年 11 月前沿。", en: "What actually happens inside clang -O2 sum.c between C syntax and AArch64 or x86_64 instructions? Verified directly against host Apple Clang 21.0.0 (LLVM 21), this essay traces the entire chain: the N+1+M decoupled pipeline, -O0 stack allocas, SSA phi insertion via dominance frontiers, fixed-point pass iteration, loop hoisting and SIMD vectorization, Undefined Behavior (nsw / poison), instruction selection, register allocation, ThinLTO, and the November 2026 frontier." },
+    tags: [{ zh: "LLVM", en: "LLVM" }, { zh: "Clang", en: "Clang" }, { zh: "编译器优化", en: "Compiler Optimization" }, { zh: "软件原理", en: "How Software Works" }, { zh: "长文", en: "Long-form Essay" }],
+    category: "computing", subtopic: "software", stage: "university", status: "live", path: "computing/software/how-llvm-compiles-your-code/", created: "2026-11-21"
+  },
+  {
+    slug: "how-nginx-handles-ten-thousand-connections",
+    title: { zh: "Nginx 如何扛住上万并发", en: "How Nginx Handles Ten Thousand Connections" },
+    desc: { zh: "十来行 nginx.conf 配置起一台服务器，紧接着上万个浏览器同时打开长连接。这篇对照 Nginx 1.28.0 稳定版的源码结构与核心算法，从 C10K 内存悬崖、Master-Worker 零停机热重载、epoll 事件循环、11 阶段 HTTP 状态机与 location 优先级、ngx_pool_t 内存池、平滑加权轮询 SWRR、limit_req 漏桶限流、红黑树定时器，一直讲到 sendfile 零拷贝与 proxy_buffering，并附上 2026 年 11 月的 HTTP/3 QUIC 与 Pingora / Envoy 前沿对照。九个可动手模型与九张结构示意图全部按同一套源码规则在页面里运行。", en: "A dozen lines of nginx.conf launch a web server, and moments later ten thousand browsers hold open keep-alive sockets against it. Following Nginx 1.28.0 stable internals and algorithms, this essay walks through the C10K memory cliff, Master-Worker zero-downtime hot reloads, the epoll event loop, the 11-phase HTTP state machine and location precedence, ngx_pool_t bump allocation, Smooth Weighted Round-Robin (SWRR), limit_req leaky-bucket pacing, red-black timer trees, sendfile zero-copy vs proxy_buffering, and November 2026 frontiers in HTTP/3 QUIC, io_uring, and Pingora / Envoy. Nine interactive models and nine schematic diagrams run the same underlying rules directly in the page." },
+    tags: [{ zh: "Nginx", en: "Nginx" }, { zh: "反向代理", en: "Reverse Proxy" }, { zh: "事件驱动架构", en: "Event-Driven Architecture" }, { zh: "软件原理", en: "How Software Works" }, { zh: "长文", en: "Long-form Essay" }],
+    category: "computing", subtopic: "software", stage: "university", status: "live", path: "computing/software/how-nginx-handles-ten-thousand-connections/", created: "2026-11-21"
+  },
+  {
+    slug: "how-postgresql-runs-a-query",
+    title: { zh: "PostgreSQL 如何执行一条查询", en: "How PostgreSQL Runs a Query" },
+    desc: { zh: "一条普通的 SELECT ... WHERE 或 UPDATE ... WHERE 发给 PostgreSQL，经过解析器、基于统计信息的代价优化器、8 KiB 分槽页与 HOT 链、MVCC 快照、VACUUM 与 32 位 XID 回卷时钟、shared_buffers 时钟扫描、Lehman & Yao B-Tree 分裂、work_mem 哈希连接溢出，到 WAL 预写日志与全页写落盘。按 PostgreSQL 17.6 / 18.0 源码数据结构与算法重写八个可动手模型，逐项拆解每一步。", en: "Send one ordinary SELECT ... WHERE or UPDATE ... WHERE to PostgreSQL, and trace it through the parser, cost-based planner, 8 KiB slotted pages and HOT chains, MVCC snapshots, VACUUM and the 32-bit XID wraparound clock, shared_buffers clock sweep, Lehman & Yao B-tree splits, work_mem hash-join spills, and WAL full-page writes to disk. Eight hands-on models reimplement the PostgreSQL 17.6 / 18.0 structures and algorithms step by step." },
+    tags: [{ zh: "PostgreSQL", en: "PostgreSQL" }, { zh: "数据库内核", en: "Database Internals" }, { zh: "MVCC 与 WAL", en: "MVCC & WAL" }, { zh: "软件原理", en: "How Software Works" }, { zh: "长文", en: "Long-form Essay" }],
+    category: "computing", subtopic: "software", stage: "university", status: "live", path: "computing/software/how-postgresql-runs-a-query/", created: "2026-11-21"
+  },
+  {
+    slug: "how-react-updates-the-dom",
+    title: { zh: "React 如何更新网页", en: "How React Updates the DOM" },
+    desc: { zh: "点一下按钮调用 setCount(c => c + 1)，React 并不是立刻去改网页上的 DOM 节点。这篇按 React 19.3.1 的源码，把这一行拆开：JSX 返回的不可变对象、Fiber 单链表和双缓冲、两轮 O(n) 列表 Diff 与 key、按调用顺序排队的 Hook 链表、子树脏标记冒泡、Commit 三阶段与 Effect 时机、根容器事件委托与微任务批处理、31 位 Lanes 优先级调度，以及 2026 年 11 月的 React Compiler、Server Components 与 Activity/ViewTransition 前沿。九个可以动手的模型，全部按同一套算法重写并和真正的 React 19.3.1 对过数。", en: "Clicking a button and calling setCount(c => c + 1) does not edit a single DOM node right away. Following the React 19.3.1 source, this essay unpacks that line: immutable JSX element objects, the Fiber linked list and double buffering, two-pass O(n) list diffing and keys, hooks as a call-ordered linked list, subtreeFlags bubbling, the three commit phases and effect timing, root event delegation and microtask batching, 31-bit Lane scheduling, and the November 2026 frontier across React Compiler, Server Components, Activity, and View Transitions. Nine hands-on models implement the same algorithms and check them against React 19.3.1 itself." },
+    tags: [{ zh: "React", en: "React" }, { zh: "Fiber 架构", en: "Fiber Architecture" }, { zh: "前端原理", en: "Frontend Internals" }, { zh: "软件原理", en: "How Software Works" }, { zh: "长文", en: "Long-form Essay" }],
+    category: "computing", subtopic: "software", stage: "university", status: "live", path: "computing/software/how-react-updates-the-dom/", created: "2026-11-21"
+  },
+  {
+    slug: "how-redis-answers-in-microseconds",
+    title: { zh: "Redis 如何在微秒级响应", en: "How Redis Answers in Microseconds" },
+    desc: { zh: "一条 SET user:42 \"alice\" 或 ZRANGEBYSCORE 请求发出去，Redis 的主事件循环几乎在微秒级把结果写回套接字。这篇按 Redis 8.0 的设计与源码规格，把这一趟往返拆开：单线程事件循环与锁竞争、RESP2/RESP3 与管道、redisObject 的 44 字节 embstr 与 listpack、渐进式双表 rehash、带跨度的 ZSET 跳表、Redis 8 多线程网络 I/O、BGSAVE 写时复制与多部分 AOF、采样过期与近似 LRU / Morris 计数器 LFU、16,384 集群槽位与逆二进制 SCAN 游标，以及 Vector Sets 与无共享前沿架构。十一个可动手模型都用页面里重写的同一套算法运行。", en: "Send one SET user:42 \"alice\" or ZRANGEBYSCORE request and Redis's main event loop writes the reply back to the socket in microseconds. Following Redis 8.0 internals and specs, this essay unpacks that round-trip: the lock-free event loop, RESP2/RESP3 and pipelining, redisObject's 44-byte embstr cliff and listpack, progressive two-table rehashing, span-indexed ZSET skiplists, Redis 8 threaded network I/O, BGSAVE fork copy-on-write and multi-part AOF, active expiration and approximate LRU / Morris-counter LFU, 16,384 cluster hash slots and reverse-binary SCAN cursors, plus Vector Sets and shared-nothing frontiers. Eleven hands-on models run the exact underlying algorithms in the page." },
+    tags: [{ zh: "Redis", en: "Redis" }, { zh: "内存存储", en: "In-Memory Store" }, { zh: "事件循环", en: "Event Loop" }, { zh: "软件原理", en: "How Software Works" }, { zh: "长文", en: "Long-form Essay" }],
+    category: "computing", subtopic: "software", stage: "university", status: "live", path: "computing/software/how-redis-answers-in-microseconds/", created: "2026-11-21"
+  },
+  {
     slug: "how-threejs-draws-a-scene",
     title: { zh: "Three.js 是怎么把一个场景画出来的", en: "How Three.js Draws a Scene" },
     desc: { zh: "二十行代码就能让一个立方体在网页里转起来，最后那一行 renderer.render(scene, camera) 每秒跑六十次。这篇按 three.js r187 的源码，把这一行拆开：场景树和矩阵，几何体的字节，相机和深度，剔除和排序，材质怎么变成着色器，一个像素的颜色，光栅化，纹理，阴影，draw call 的开销，拾取和四元数，以及 WebGPU。十几个可以动手的模型，都用页面里重写的同一套算法，并和 three.js 本身逐项对过数。", en: "A spinning cube in a web page takes twenty lines, and the last one, renderer.render(scene, camera), runs sixty times a second. Following the three.js r187 source, this essay takes that line apart: the scene tree and its matrices, the bytes of a geometry, the camera and depth, culling and sorting, how a material becomes a shader, the colour of one pixel, rasterisation, textures, shadows, what a draw call costs, picking and quaternions, and WebGPU. A dozen hands-on models run the same algorithms, rewritten in the page and checked number by number against three.js itself." },
     tags: [{ zh: "Three.js", en: "Three.js" }, { zh: "WebGL", en: "WebGL" }, { zh: "计算机图形学", en: "Computer Graphics" }, { zh: "软件原理", en: "How Software Works" }, { zh: "长文", en: "Long-form Essay" }],
     category: "computing", subtopic: "software", stage: "university", status: "live", path: "computing/software/how-threejs-draws-a-scene/", created: "2026-11-20"
+  },
+  {
+    slug: "how-v8-runs-javascript",
+    title: { zh: "V8 是怎么跑起一段 JavaScript 的", en: "How V8 Runs JavaScript" },
+    desc: { zh: "在终端敲下 node bench.js，动态类型的 JavaScript 没有提前编译成机器码，却能在热循环里跑出接近 C 的速度。这篇对照宿主机 V8 14.6.202.34-node.40（Node.js v26.12.1）的真实字节码、调试输出与参数阈值，从头拆解这条流水线：四级 JIT 与懒解析、指针标签与压缩、隐藏类与内联缓存、Ignition 累加器字节码、投机去优化、ElementsKind 单向格、Orinoco 分代垃圾回收、微任务接缝，以及 2026 年 11 月的前沿。", en: "Run node bench.js in a terminal and dynamically typed JavaScript, compiled with no ahead-of-time type annotations, hits near-C speed inside hot loops. Checked against the host V8 14.6.202.34-node.40 (Node.js v26.12.1) bytecode, native debug prints, and CLI thresholds, this essay traces the whole pipeline: the four JIT tiers and lazy parsing, pointer tagging and compression, hidden classes and inline caches, Ignition's accumulator bytecode, speculative deoptimization, the one-way ElementsKind lattice, Orinoco generational GC, the microtask seam, and the November 2026 frontier." },
+    tags: [{ zh: "V8 引擎", en: "V8 Engine" }, { zh: "JavaScript", en: "JavaScript" }, { zh: "即时编译 JIT", en: "JIT Compilation" }, { zh: "垃圾回收 GC", en: "Garbage Collection" }, { zh: "软件原理", en: "How Software Works" }, { zh: "长文", en: "Long-form Essay" }],
+    category: "computing", subtopic: "software", stage: "university", status: "live", path: "computing/software/how-v8-runs-javascript/", created: "2026-11-21"
   },
   {
     slug: "a-secret-in-public",

@@ -161,6 +161,7 @@ function ok(name, cond, info) {
   check('no CJK in copy.en.js', Object.keys(E).filter(k => /[㐀-鿿]/.test(E[k])).join(), '');
 
   const h = unprefill(html, Z)
+    .replace(/<details class="page-provenance"[\s\S]*?<\/details>/, '')
     .replace(/<div[^>]*id="langToggle"[\s\S]*?<\/div>/, '')
     .replace(/<title>[\s\S]*?<\/title>/, '')
     .replace(/<meta[^>]*>/g, '')
@@ -203,6 +204,7 @@ function ok(name, cond, info) {
   vm.runInNewContext(fs.readFileSync(path.join(ROOT, 'atlas/data.js'), 'utf8'), box);
   const taken = new Set();
   for (const node of (box.window.ATLAS.nodes || [])) {
+    if ((node.lessons || []).some(l => l.slug === 'how-react-updates-the-dom')) continue;
     [node.title && node.title.zh, node.title && node.title.en, ...(node.aliases && node.aliases.zh || []), ...(node.aliases && node.aliases.en || [])]
       .filter(Boolean).forEach(x => taken.add(sq(x)));
   }
