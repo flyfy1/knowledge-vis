@@ -3705,109 +3705,127 @@
       "developer": "Antigravity",
       "edition": "antigravity-how-git-stores-history-20261121",
       "kind": "original",
-      "sourceRevision": "9c0e8c99cbc0a61cf6f93e6e2baaf78606c3db0f",
+      "sourceRevision": "dae92263dc53cce21e4c3c8ec753705d446ccc83",
       "scope": {
         "zh": "整篇长文从零编写：.git/ 对象区与工作流、内容寻址 Blob 与 zlib DEFLATE、Tree 树与 Merkle 共享、Commit DAG 与历史重写、Index 缓存与 Racy Git、分支/HEAD/reflog、Myers diff 与三方合并、Packfile 与增量压缩、Wire v2 与部分克隆、Reftable 与 SHA-256 前沿、排障提问",
         "en": "Whole essay written from scratch: .git/ zones, content-addressed blobs and zlib DEFLATE, trees and Merkle sharing, commit DAG and history rewrites, index cache and Racy Git, refs/HEAD/reflog, Myers diff and 3-way merge, packfiles and OFS_DELTA, Wire v2 and partial clone, reftable/SHA-256 frontier, closing diagnostics"
       },
       "originalAuthorship": "written from scratch by Antigravity (model unavailable) in the Markdown site template against Git 2.56.0 documentation and verified 58/58 against host git 2.56.0; independent cross-model review pending",
-      "path": "computing/software/how-git-stores-history/index.html"
+      "path": "computing/software/how-git-stores-history/index.html",
+      "originalSourceRevision": "9c0e8c99cbc0a61cf6f93e6e2baaf78606c3db0f",
+      "previousSourceRevision": "9c0e8c99cbc0a61cf6f93e6e2baaf78606c3db0f"
     },
     "how-react-updates-the-dom": {
       "developer": "Antigravity",
       "edition": "antigravity-how-react-updates-the-dom-20261121",
       "kind": "original",
-      "sourceRevision": "b26a5444d615dd594e5e9a2ff6d87ac83653e3ed",
+      "sourceRevision": "dae92263dc53cce21e4c3c8ec753705d446ccc83",
       "scope": {
         "zh": "整篇长文从零编写：Render/Commit 双阶段、JSX 元素对象、Fiber 双缓冲与可中断工作循环、key 协调 diff、Hook 链表与 baseQueue、subtreeFlags 冒泡、Layout 与 Passive 副作用时序、事件委托与批处理、31 位 Lanes 并发调度、React 19.3 Compiler 与 RSC 前沿、排障提问",
         "en": "Whole essay written from scratch: render/commit phases, JSX element objects, Fiber double buffering and interruptible work loop, keyed list reconciliation, hook linked lists and baseQueue, subtreeFlags bubbling, layout vs passive effect timing, delegated event batching, 31-bit Lanes scheduler, React 19.3 Compiler/RSC frontier, closing diagnostics"
       },
       "originalAuthorship": "written from scratch by Antigravity (model unavailable) in the Markdown site template and verified 40/40 against installed react@19.3.1, react-dom@19.3.1, and scheduler@0.28.0; independent cross-model review pending",
-      "path": "computing/software/how-react-updates-the-dom/index.html"
+      "path": "computing/software/how-react-updates-the-dom/index.html",
+      "originalSourceRevision": "b26a5444d615dd594e5e9a2ff6d87ac83653e3ed",
+      "previousSourceRevision": "b26a5444d615dd594e5e9a2ff6d87ac83653e3ed"
     },
     "how-redis-answers-in-microseconds": {
       "developer": "Antigravity",
       "edition": "antigravity-how-redis-answers-in-microseconds-20261121",
       "kind": "original",
-      "sourceRevision": "19f8386b0656584774b5b86a234c4b50ae40d028",
+      "sourceRevision": "dae92263dc53cce21e4c3c8ec753705d446ccc83",
       "scope": {
         "zh": "整篇长文从零编写：单线程 ae 事件循环、RESP2/RESP3 与流水线、redisObject/44B embstr 与 listpack、dict 渐进式 rehash 与 SipHash-1-2、span 跳表与 ZSET、Redis 8 io-threads、fork() 写时复制与 Multi-Part AOF、主动过期与近似 LRU/Morris LFU、16384 槽与逆二进制 SCAN、Vector Sets 与 Valkey 前沿、排障提问",
         "en": "Whole essay written from scratch: single-threaded ae event loop, RESP2/RESP3 pipelining, redisObject/44B embstr and listpack, incremental rehashing with SipHash-1-2, span-indexed ZSET skiplists, Redis 8 io-threads, fork() CoW and Multi-Part AOF, active expiration and LRU/Morris LFU, 16384 cluster slots and reverse-binary SCAN, Vector Sets/Valkey frontier, closing diagnostics"
       },
       "originalAuthorship": "written from scratch by Antigravity (model unavailable) in the Markdown site template against Redis 8.0 source specs and verified 395/395 against protocol/hash/math reference vectors (no local redis-server binary); independent cross-model review pending",
-      "path": "computing/software/how-redis-answers-in-microseconds/index.html"
+      "path": "computing/software/how-redis-answers-in-microseconds/index.html",
+      "originalSourceRevision": "19f8386b0656584774b5b86a234c4b50ae40d028",
+      "previousSourceRevision": "19f8386b0656584774b5b86a234c4b50ae40d028"
     },
     "how-v8-runs-javascript": {
       "developer": "Antigravity",
       "edition": "antigravity-how-v8-runs-javascript-20261121",
       "kind": "original",
-      "sourceRevision": "28e950b9ece04e9901f5836eb3495059db31ff86",
+      "sourceRevision": "dae92263dc53cce21e4c3c8ec753705d446ccc83",
       "scope": {
         "zh": "整篇长文从零编写：Ignition/Sparkplug/Maglev/TurboFan 四级流水线、Smi 标签与指针压缩、Map 隐藏类迁移树、内联缓存 IC 状态机、字节码累加器与 FeedbackVector、OSR 与退优化守卫、ElementsKind 数组格栅、Orinoco 分代并发 GC、微任务检查点、Turboshaft/Sandbox/JSPI 前沿、排障提问",
         "en": "Whole essay written from scratch: Ignition/Sparkplug/Maglev/TurboFan 4-tier pipeline, Smi tagging and pointer compression, Map hidden-class transitions, inline caches, bytecode accumulator and FeedbackVector, OSR and eager deopt guards, ElementsKind lattice, Orinoco generational/concurrent GC, microtask checkpoints, Turboshaft/Sandbox/JSPI frontier, closing diagnostics"
       },
       "originalAuthorship": "written from scratch by Antigravity (model unavailable) in the Markdown site template and verified 47/47 against host Node v26.12.1 (V8 14.6.202.34-node.40); independent cross-model review pending",
-      "path": "computing/software/how-v8-runs-javascript/index.html"
+      "path": "computing/software/how-v8-runs-javascript/index.html",
+      "originalSourceRevision": "28e950b9ece04e9901f5836eb3495059db31ff86",
+      "previousSourceRevision": "28e950b9ece04e9901f5836eb3495059db31ff86"
     },
     "how-postgresql-runs-a-query": {
       "developer": "Antigravity",
       "edition": "antigravity-how-postgresql-runs-a-query-20261121",
       "kind": "original",
-      "sourceRevision": "62203e84497c5b9680e1aa52f8d6a6eeb18ce27a",
+      "sourceRevision": "dae92263dc53cce21e4c3c8ec753705d446ccc83",
       "scope": {
         "zh": "整篇长文从零编写：Volcano 查询执行管道、代价估算优化器与相关性、8 KiB 页布局与 HOT 更新、MVCC 快照可见性、VACUUM 与 32 位 XID 回卷、shared_buffers 时钟扫描与环形缓冲、Lehman-Yao nbtree 分裂、Hash Join 与 work_mem 落盘、WAL Castagnoli CRC-32C 与 FPW、PG 18/19 AIO 与跳扫前沿、排障提问",
         "en": "Whole essay written from scratch: Volcano pull pipeline, cost-based planner and correlation, 8 KiB slotted pages and HOT updates, MVCC snapshot visibility, VACUUM and 32-bit XID wraparound, shared_buffers clock sweep and ring buffer, Lehman-Yao nbtree splits, Hash Join work_mem spills, WAL Castagnoli CRC-32C and full-page writes, PG 18/19 AIO/skip-scan frontier, closing diagnostics"
       },
       "originalAuthorship": "written from scratch by Antigravity (model unavailable) in the Markdown site template against PostgreSQL 17.6/18.0 internals and verified 285/285 against reference vectors (no local postgres/psql binary); independent cross-model review pending",
-      "path": "computing/software/how-postgresql-runs-a-query/index.html"
+      "path": "computing/software/how-postgresql-runs-a-query/index.html",
+      "originalSourceRevision": "62203e84497c5b9680e1aa52f8d6a6eeb18ce27a",
+      "previousSourceRevision": "62203e84497c5b9680e1aa52f8d6a6eeb18ce27a"
     },
     "how-nginx-handles-ten-thousand-connections": {
       "developer": "Antigravity",
       "edition": "antigravity-how-nginx-handles-ten-thousand-connections-20261121",
       "kind": "original",
-      "sourceRevision": "4c1b86f14b37ab7d7741c9ce7263de2f93066bd8",
+      "sourceRevision": "dae92263dc53cce21e4c3c8ec753705d446ccc83",
       "scope": {
         "zh": "整篇长文从零编写：C10K 连接槽与线程内存悬崖、Master-Worker 零停机热重载、epoll 与 SO_REUSEPORT、11 阶段 HTTP 状态机与 location 优先级、请求级 ngx_pool_t 内存池、平滑加权轮询 SWRR、limit_req 漏桶限流、红黑树定时器与懒删除、sendfile 零拷贝与 proxy_buffering、HTTP/3 与 Pingora 前沿、排障提问",
         "en": "Whole essay written from scratch: C10K connection slots vs thread stacks, Master-Worker zero-downtime hot reload, epoll and SO_REUSEPORT, 11-phase HTTP state machine and location precedence, per-request ngx_pool_t memory pool, Smooth Weighted Round-Robin, limit_req leaky bucket, rbtree timers with lazy delay, sendfile zero-copy and proxy_buffering, HTTP/3 and Pingora frontier, closing diagnostics"
       },
       "originalAuthorship": "written from scratch by Antigravity (model unavailable) in the Markdown site template against Nginx 1.28.0 sources and verified 118/118 against mathematical/routing/rbtree invariants (no local nginx binary); independent cross-model review pending",
-      "path": "computing/software/how-nginx-handles-ten-thousand-connections/index.html"
+      "path": "computing/software/how-nginx-handles-ten-thousand-connections/index.html",
+      "originalSourceRevision": "4c1b86f14b37ab7d7741c9ce7263de2f93066bd8",
+      "previousSourceRevision": "4c1b86f14b37ab7d7741c9ce7263de2f93066bd8"
     },
     "how-chromium-renders-a-web-page": {
       "developer": "Antigravity",
       "edition": "antigravity-how-chromium-renders-a-web-page-20261121",
       "kind": "original",
-      "sourceRevision": "d889d9c956bf213574bd4cc98ee431e458142cf0",
+      "sourceRevision": "dae92263dc53cce21e4c3c8ec753705d446ccc83",
       "scope": {
         "zh": "整篇长文从零编写：RenderingNG 多进程架构、字节流解析与预扫描阻塞、从右向左样式匹配与 InvalidationSet、LayoutNG 不可变片段与强制同步布局、四棵属性树、PaintArtifactCompositor 与图层爆炸、瓦片光栅化与 Pending/Active 双树、Viz 曲面聚合、WAAPI 合成线程隔离、Skia Graphite 前沿、卡顿排查提问",
         "en": "Whole essay written from scratch: multi-process RenderingNG pipeline, HTML/CSS parser blocking and preload scanner, right-to-left style matching and InvalidationSet, LayoutNG immutable fragments and forced reflow thrashing, four Property Trees, PaintArtifactCompositor and layer explosion, tiling and Pending/Active swap, Viz SurfaceAggregator, WAAPI compositor isolation, Skia Graphite frontier, jank triage"
       },
       "originalAuthorship": "written from scratch by Antigravity (model unavailable) in the Markdown site template and verified 11/11 against Playwright Chromium 151.0.7922.34; independent cross-model review pending",
-      "path": "computing/software/how-chromium-renders-a-web-page/index.html"
+      "path": "computing/software/how-chromium-renders-a-web-page/index.html",
+      "originalSourceRevision": "d889d9c956bf213574bd4cc98ee431e458142cf0",
+      "previousSourceRevision": "d889d9c956bf213574bd4cc98ee431e458142cf0"
     },
     "how-containers-isolate-a-process": {
       "developer": "Antigravity",
       "edition": "antigravity-how-containers-isolate-a-process-20261121",
       "kind": "original",
-      "sourceRevision": "1fcc12c7348fe6cbd699a212deb1c67da833e09d",
+      "sourceRevision": "dae92263dc53cce21e4c3c8ec753705d446ccc83",
       "scope": {
         "zh": "整篇长文从零编写：docker CLI 到 runc 系统调用地图、OCI 镜像与 SHA-256 ChainID 去重、OverlayFS Copy-Up 与 .wh. 白化文件、八副 Namespaces 与 Rootless UserNS 映射、veth/bridge/NAT 与 VXLAN MTU、cgroups v2 CPU 带宽节流、统一内存与 OOM、seccomp-bpf 与 Capabilities 边界、PID 1 信号与僵尸回收、MicroVM/EROFS/WASI 前沿、排障提问",
         "en": "Whole essay written from scratch: docker CLI to runc syscall stack, OCI Image v1.1 SHA-256 ChainID sharing, OverlayFS Copy-Up and .wh. whiteouts, eight Linux namespaces and Rootless uid_map, veth/bridge/NAT and VXLAN MTU, cgroups v2 CPU throttling, unified memory and OOM, seccomp-bpf and Capabilities, PID 1 signals and zombies, MicroVM/EROFS/WASI 0.3 frontier, closing diagnostics"
       },
       "originalAuthorship": "written from scratch by Antigravity (model unavailable) in the Markdown site template against OCI v1.1/v1.2 specs and Linux 6.x primitives, verified 80/80 against node:crypto and spec invariants (no Linux kernel/docker binary on macOS host); independent cross-model review pending",
-      "path": "computing/software/how-containers-isolate-a-process/index.html"
+      "path": "computing/software/how-containers-isolate-a-process/index.html",
+      "originalSourceRevision": "1fcc12c7348fe6cbd699a212deb1c67da833e09d",
+      "previousSourceRevision": "1fcc12c7348fe6cbd699a212deb1c67da833e09d"
     },
     "how-llvm-compiles-your-code": {
       "developer": "Antigravity",
       "edition": "antigravity-how-llvm-compiles-your-code-20261121",
       "kind": "original",
-      "sourceRevision": "31631e36a124f85f019d06b75466899bd1ec54ba",
+      "sourceRevision": "dae92263dc53cce21e4c3c8ec753705d446ccc83",
       "scope": {
         "zh": "整篇长文从零编写：三段式编译器与不透明指针 IR、-O0 为什么满屏 alloca、Cytron SSA 支配边界与 mem2reg、新 Pass 管理器迭代与不动点、循环不变量外提 LICM 与 SIMD 向量化、nsw/poison 未定义行为消除、SelectionDAG 与 GlobalISel 指令选择、图着色与线性扫描寄存器分配、ThinLTO 与 PGO、MLIR/BOLT 前沿、编译优化诊断提问",
         "en": "Whole essay written from scratch: 3-phase decoupled compiler and opaque ptr IR, why -O0 emits alloca stacks, Cytron SSA dominance frontiers and mem2reg, New Pass Manager fixed-point pipeline, LICM aliasing and SIMD vectorization, nsw/poison UB folding, SelectionDAG vs GlobalISel, graph coloring vs linear-scan register allocation, ThinLTO and PGO, MLIR/BOLT frontier, closing diagnostics"
       },
       "originalAuthorship": "written from scratch by Antigravity (model unavailable) in the Markdown site template and verified 29/29 against host /usr/bin/clang (Apple clang version 21.0.0 arm64-apple-darwin27.2.0; no standalone opt/llc binary); independent cross-model review pending",
-      "path": "computing/software/how-llvm-compiles-your-code/index.html"
+      "path": "computing/software/how-llvm-compiles-your-code/index.html",
+      "originalSourceRevision": "31631e36a124f85f019d06b75466899bd1ec54ba",
+      "previousSourceRevision": "31631e36a124f85f019d06b75466899bd1ec54ba"
     }
   },
   "exceptions": {
