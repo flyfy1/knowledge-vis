@@ -1,0 +1,591 @@
+---
+lang: zh
+title: 容器是如何把一个进程关进沙盒的 · 一篇可以动手的长文
+desc: 一行 docker run 就能起一个看似独立的 Linux 系统，但 Linux 内核源码里根本没有「容器」这个结构体。这篇按 OCI Image 1.1 / Runtime 1.2 规范与 Linux 6.x 内核原语，把这一行命令拆开：OCI 镜像层与 SHA-256 ChainID 去重，OverlayFS 的写时复制与 .wh. 白化文件，八副 Namespaces 与 Rootless UserNS 映射，veth、bridge 与 NAT，cgroups v2 的 CPU 节流与统一内存 OOM，seccomp-bpf 与 Capabilities 边界，PID 1 信号与僵尸进程回收，以及截至 2026 年 11 月的 MicroVM、EROFS 与 WASI 0.3 前沿。九个可动手模型全部对照规范与 Node SHA-256 逐项验证。
+---
+
+::: strings
+nav.back: ← 知识索引
+nav.lang: 语言
+toc.label: 目录
+toc.title: 目录
+u.pct: {v}%
+u.ms: {v} 毫秒
+u.s: {v} 秒
+u.mib: {v} MiB
+u.bytes: {v} B
+u.kpps: {v} kpps
+u.cpus: {v} 核
+u.thr: {v} 线程
+u.count: {v} 个
+:::
+
+# 容器是如何把一个进程关进沙盒的 {#hero}
+
+::: strings
+kicker: 计算机 · 软件原理 · 一篇可以动手的长文
+:::
+
+一行 `docker run` 就能变出一台「干净的 Linux」。<br>但 Linux 内核里其实根本没有「容器」这个对象——它到底把什么关进了沙盒？ {.sub}
+
+敲下 `docker run --rm -m 512m --cpus=0.5 python:3.12-slim python app.py`，几毫秒后一个看似独占根目录、独立网卡、自带 `PID 1` 的程序就跑起来了。可翻遍 Linux 内核源码，你找不到任何叫 `struct container` 的数据结构。这篇文章只追一个问题：**这行命令到底让内核拼出了哪几样东西？为什么十份 {=ch2.img} MiB 的镜像在磁盘上能共用 {=ch2.tenShared} MiB？又有哪些东西，还是能穿过这层沙盒？**我们顺着容器启动到退出的真实链路往下走：先看工具链怎么拆包和向内核发号施令，再看只读镜像层如何用哈希去重、OverlayFS 如何叠出可写文件系统，然后看八副 Namespaces 怎么篡改进程的视野、虚拟网线怎么接出网关、`cgroups v2` 怎么在毫秒级冻结或杀掉进程，最后看 `seccomp-bpf` 和 PID 1 守着哪几道门。 {.lead}
+
+文中的结构依据 **OCI Image Spec v1.1.0**（2024 年 2 月 15 日发布）、**OCI Runtime Spec v1.2.0**（2024 年 2 月 13 日发布）以及 **Linux 6.x 内核原语**（`namespaces(7)`、`cgroups(7)` v2、`overlayfs`、`seccomp(2)`、`capabilities(7)`）。页面不连 Docker 守护进程（本文在 macOS Darwin 宿主机上编写，该主机没有 Linux 内核与 `dockerd`）：九个模型在页面里重写了对应的核心算法，SHA-256 内容寻址与规范算式由 `tools/crosscheck.cjs` 对照 Node `node:crypto` 与协议规格逐项核对。前置基础可以看[[how-the-os-talks-to-hardware|「操作系统是怎么和硬件说话的」]]与[[how-virtual-memory-works|「虚拟内存是怎么工作的」]]。每章末段说明模型省掉了什么。 {.note}
+
+## 内核里没有「容器」 {#ch1}
+
+::: strings
+toc: 内核里没有「容器」
+:::
+
+容器不是一台缩小的虚拟机。在宿主机内核眼里，它只是一个加了三套约束的普通进程：Namespaces 限制它能看见什么，cgroups v2 限制它能用多少硬件，OverlayFS 与 seccomp 限制它能碰哪些文件和系统调用。 {.law}
+
+下面就是那行日常命令，以及真正穿过系统调用边界交给 Linux 内核的四步清单。当你敲下 `docker run`，`docker` CLI 只是把参数发给 `containerd`，`containerd` 派生轻量的 `containerd-shim` 守护进程（避免 Docker 守护进程重启时拖死所有容器），再由符合 OCI 标准的运行时 `runc` 读取一份 `config.json`，通过 `clone3`、`pivot_root`、写 `cgroup.procs` 和 `prctl(PR_SET_SECCOMP)` 把进程装进隔离环境，最后 `execve` 变成你的 `python app.py`。
+
+::: html ch1-code
+code.aria: 一条 docker run 命令与背后的 OCI 运行时动作
+code: "docker run --rm -m 512m --cpus=0.5 python:3.12-slim python app.py\n\n# containerd-shim -> runc 根据 OCI config.json 向内核发出：\n# 1. clone3(CLONE_NEWPID | CLONE_NEWNS | CLONE_NEWNET | CLONE_NEWUTS | CLONE_NEWIPC | CLONE_NEWCGROUP)\n# 2. mount(\"overlay\", merged, \"overlay\", \"lowerdir=...,upperdir=...,workdir=...\") + pivot_root()\n# 3. write(\"/sys/fs/cgroup/docker/<id>/cpu.max\", \"50000 100000\") + memory.max = 536870912\n# 4. prctl(PR_SET_NO_NEW_PRIVS, 1) + seccomp(SECCOMP_SET_MODE_FILTER, &prog) + execve(\"python\")"
+:::
+
+每往下一层，抽象就脱掉一层外衣。CLI 认识「镜像名」和 `--cpus=0.5`；`containerd` 只管按内容哈希管理只读层和调用垫片；`runc` 把 `config.json` 翻译成系统调用和内核虚拟文件写入；到了 Linux 内核这一层，再也没有「镜像」或「容器」的概念，只有**线程组、命名空间指针、cgroup 控制文件、VFS 挂载树和 BPF 过滤程序**。
+
+::: diagram dg-stack keys=dg.stack
+cap: 图 1　一条 docker run 命令穿过的四层。虚线之下，宿主机只运行着同一份 Linux 内核，所有容器共用同一个内核代码段与系统调用入口（[[how-the-os-talks-to-hardware#ch1|「操作系统是怎么和硬件说话的」第 1 章]]讲特权级边界）。
+aria: 示意图：docker CLI、containerd 与 runc、系统调用边界、共享 Linux 内核四层结构
+l1: docker CLI
+l1s: 解析参数与环境变量
+l2: containerd + shim + runc
+l2s: 解包层文件、生成 OCI config.json
+l3: 系统调用边界
+l3s: clone3、mount/pivot_root、seccomp
+l4: 共享 Linux 内核
+l4s: Namespaces · cgroups v2 · OverlayFS
+x1: gRPC / CRI 请求
+x2: OCI config.json + rootfs
+x3: 隔离属性挂到 task_struct 上
+:::
+
+这就是容器和传统硬件虚拟机的分水岭。虚拟机（比如 QEMU/KVM）靠 CPU 的硬件虚拟化扩展（[[how-virtual-memory-works#ch11|「虚拟内存是怎么工作的」第 11 章]]）为每个实例各跑一份独立的访客内核、独立的页表和虚拟网卡，隔离最硬，但启动往往按秒算、内存先被内核本身吃掉一块；容器把「第二份内核」整块砍掉，所以几十毫秒就能拉起进程，代价是所有容器依然共同站在同一份宿主机内核之上。
+
+::: lab ch1-model
+model.title: 四种隔离边界的内存与启动账本
+model.how: 切换隔离形态并拖动实例数量滑杆，对比「宿主机共享内核」与「每个实例自带内核」在内存占用、启动延迟和共享内核子系统上的差异。
+ctl.mode: 隔离形态
+mode.process: 普通进程
+mode.container: OCI 容器
+mode.microvm: MicroVM
+mode.vm: 完整虚拟机
+ctl.rep: 实例数
+cv.aria: 四种隔离形态随实例数变化的内存构成柱状图，拆成宿主机内核、访客内核/VMM 与应用本身三段
+leg.host: 宿主机内核（共享）
+leg.guest: 访客内核 / VMM
+leg.app: 应用内存
+kern.shared: 共享宿主机
+kern.iso: 独立访客内核
+read.mem: 总内存占用
+read.boot: 单实例启动参考值
+read.kern: 内核边界
+read.sub: 暴露的宿主机子系统
+say.process: {n} 个普通进程共用同一份内核，共占 <em>{mem} MiB</em>，约 {boot} 毫秒启动；但全部 {sub}/10 项内核全局状态完全互通。
+say.container: {n} 个 OCI 容器同样共用宿主机内核（每实例仅约 {over} MiB 垫片开销），共占 <em>{mem} MiB</em>，约 {boot} 毫秒即可拉起；但仍有 {sub}/10 类内核全局接口或系统调用面是共享的。
+say.microvm: {n} 个 MicroVM（参考 Firecracker 指标）为每个实例配了精简访客内核与微虚拟化层，共占 <em>{mem} MiB</em>，约 {boot} 毫秒启动；宿主机只暴露 {sub}/10 类最小化超调用界面。
+say.vm: {n} 台完整虚拟机为每份负载都塞进完整的通用内核和固件（共占 <em>{mem} MiB</em>，启动约 {boot} 毫秒），几乎切光内核共享面，但内存扩展代价最高。
+:::
+
+观察 8 个实例时的数：8 个 OCI 容器只需 {=ch1.cTotal8} MiB，单实例约 {=ch1.cBoot} 毫秒起跑；同样 8 台完整虚拟机却吃掉 {=ch1.vmTotal8} MiB、单台启动约 {=ch1.vmBoot} 毫秒（MicroVM 压到约 {=ch1.mBoot} 毫秒）。把每个实例的内核和设备模拟删掉，换来的就是密度和速度；剩下要解决的，是如何在「同一个内核」里把文件、进程号、网络、CPU、内存和系统调用一一锁死。
+
+模型省掉了：页缓存跨容器共享带来的额外节省（下一章与第 7 章会补上）、内核模块按需加载的动态波动，以及动态内存气球（virtio-balloon）回收；启动延迟与单实例基础内存是依据公开基准数量级设定的模型参数，不是在单一硬件上的实测。 {.take}
+
+## 镜像层与内容寻址 {#ch2}
+
+::: strings
+toc: 镜像层与内容寻址
+:::
+
+容器镜像不是整块磁盘镜像，而是一条按内容哈希（SHA-256）串起来的只读压缩包链表。只要两条服务共用了相同的前几层，不管它们在本地开多少个容器，底层数据在磁盘上只存一份。 {.law}
+
+拉取 `python:3.12-slim` 时，`containerd` 拿到的并不是一个 200 MiB 的单一大文件，而是一棵由 **SHA-256 摘要**串起来的 JSON 树（OCI Image Spec v1.1.0）：先从 **Image Index** 按 CPU 架构（如 `linux/amd64` 或 `linux/arm64`）选出对应的 **Image Manifest**，Manifest 再指向一份 **Image Config**（写着启动命令、环境变量和每一层解包后的 `diff_ids`）和一组按顺序排列的只读 tar 层压缩包。
+
+::: diagram dg-oci keys=dg.oci
+cap: 图 2　OCI Image Spec v1.1.0 的三层指针与 ChainID 递推链。哪怕第 3 层的业务代码改了一个字节，L0 到 L2 的 ChainID 依然完全不变。
+aria: 示意图：OCI Image Index 指向 Manifest，Manifest 指向 Config 和多层 tar，下方展示 L0 到 L3 通过 ChainID 串联
+idx: Image Index（多架构索引）
+idxs: linux/amd64 · linux/arm64
+mref: sha256 指向 Manifest
+man: Image Manifest（镜像清单）
+mans: config + layers[] digests
+cref: sha256 指向 Config
+cfg: Image Config（镜像配置）
+cfgs: rootfs.diff_ids[L0..L3]
+chain: ChainID = sha256(prev + DiffID)
+l0: debian:12-slim（124 MiB）
+l1: python:3.12（48 MiB）
+l2: pip-deps（27 MiB）
+l3: app.py（1 MiB）
+:::
+
+这里藏着容器世界能「秒级复用磁盘」的核心算式。只看单个压缩包的未压缩校验值 `DiffID` 还不够，因为「同一组依赖」装在不同底座操作系统上，合成出来的文件系统完全不同。所以 OCI 规范定义了 **ChainID**：第 0 层的 `ChainID(L0) = DiffID(L0)`，之后每一层都是 `ChainID(Lk) = sha256(ChainID(Lk-1) + " " + DiffID(Lk))`。这说明，**越靠底层的镜像变动，会让它上面所有层的 ChainID 连环失效**；相反，只改最顶层的应用代码，底座的每一环摘要纹丝不动。
+
+::: lab ch2-model
+model.title: 真实 SHA-256 驱动的 OCI 镜像层去重
+model.how: 选择「修改哪一层」以及共运行多少个不同版本或微服务，观察每一层的真实 SHA-256 ChainID 是命中缓存还是连环失效，以及磁盘总占用如何变化。
+ctl.mut: 变动位置
+mut.none: 仅改最顶层 (app)
+mut.L3: app.py 改 1 字节
+mut.L2: 重装 pip 依赖
+mut.L1: 升级 Python 底座
+ctl.rep: 服务实例数
+cv.aria: 朴素整份复制与 OCI 按层内容寻址去重的磁盘占用对比柱状图，以及 L0 到 L3 层的共享状态条
+col.layer: 镜像层
+col.status: 缓存状态
+col.chain: 本层真实 ChainID（前 22 位）
+st.shared: 命中复用
+st.rebuilt: 摘要重建
+bar.naive: 朴素整份复制（{n} 份）
+bar.stored: OCI 内容寻址实占磁盘
+bar.layers: L0 – L3 层串联结构（绿=复用，红=重建）
+read.shared: 可共享底层
+read.stored: 实际占用磁盘
+read.naive: 朴素复制总计
+read.hits: 命中层数
+say.none: 当 {n} 个不同的 Python 服务仅在最顶层 L3（1 MiB）不同时，底下的 L0–L2 共 <em>{shared} MiB</em> 全数复用，磁盘实占仅 {stored} MiB（若全部拷贝需 {naive} MiB，省下 {saved} MiB）。
+say.l3: 把 L3 业务代码改了 1 个字节：L3 的 SHA-256 立刻改变，但底下 {shared} MiB 的 L0–L2 <em>ChainID 纹丝不动</em>；{n} 个版本共存只多占各自 1 MiB 顶层。
+say.l2: 改动落到 L2 依赖层时，不仅 L2 摘要失效，由于 ChainID 递推依赖前一层，<em>L3 也被迫重建</em>，共享份额缩到 {shared} MiB（实占 {stored} MiB）。
+say.l1: 一旦升级了靠底部的 L1（Python 运行时），从 L1 到 L3 的整条 ChainID 链表全部断裂重建，{n} 个服务只能共享 L0（124 MiB），磁盘占用跳到 <em>{stored} MiB</em>。
+:::
+
+现在就能回答开头那半个问题：一份由 124 + 48 + 27 + 1 = {=ch2.img} MiB 组成的镜像，哪怕派生出 2 个只有顶层 1 MiB 不同的服务，朴素拷贝要 {=ch2.naive2} MiB，内容寻址去重后在磁盘上只需 {=ch2.stored2} MiB（有 {=ch2.shared} MiB 完全共享）；把 10 个变体铺在同一台机器上，朴素做法要吃掉 {=ch2.tenNaive} MiB，内容寻址实际只写 {=ch2.tenStored} MiB，共用着那 {=ch2.tenShared} MiB 只读底座（如果 10 个容器跑的是同一份镜像，只读层 200 MiB 更是零复制）。表里的 64 位 SHA-256 指纹就是你写 Dockerfile 时「把变动最频繁的 `COPY .` 放在最后一行」的数学原因。
+
+模型省掉了：镜像层 tar 包的 gzip / zstd 压缩比差异（`Digest` 指压缩包，本文用统一的 `DiffID` 代表已解包内容寻址层大小）、空层占位，以及运行期每个容器自己的薄可写层（第 3 章紧接着算）。 {.take}
+
+## OverlayFS：文件系统里的叠影戏 {#ch3}
+
+::: strings
+toc: OverlayFS 与写时复制
+:::
+
+容器里看到的 `/` 根目录并不是复制出来的目录，而是内核用 OverlayFS 把几层只读目录（lowerdir）和一层空的可写目录（upperdir）叠成的一张联合视图：读文件往下穿透，改文件先整份拷进可写层，删文件则写下一张「白化」遮罩。 {.law}
+
+第 2 章里那一串 SHA-256 层解包到磁盘上后，全是**只读的**。十个容器绝不能各自改乱同一份 `/usr/bin/python`。Linux 内核的 OverlayFS 用四个目录路径把这出戏搭起来：底部是一摞只读层 `lowerdir=L1:L0`（可以多达上百层）；最上面是一块属于这一个容器的空白可写层 `upperdir`；外加一个同盘的空临时目录 `workdir`，供内核做原子重命名；三者合并挂载到 `merged`，再用 `pivot_root` 把进程的根目录 `/` 切到 `merged` 里面（[[how-virtual-memory-works#ch9|「虚拟内存是怎么工作的」第 9 章]]讲进程页级别的写时复制，而这里是**文件级**的）。
+
+::: diagram dg-overlay keys=dg.overlay
+cap: 图 3　OverlayFS 的目录叠法：读取时从下层穿透，写入或改权限触发整文件 Copy-Up，删除下层文件不会动 lowerdir，只在 upperdir 里记下一笔白化标记。
+aria: 示意图：lowerdir 只读层、upperdir 可写层与 workdir 合并成 merged 根视图，标出 Copy-Up 与白化标记
+low: lowerdir (L0+L1，只读)
+lows: python · model.bin 100M · pkg.tar
+up: upperdir (可写层)
+ups: copy-up model.bin + .wh.pkg.tar
+wk: workdir（原子重命名暂存）
+mount: mount -t overlay -> pivot_root
+mg: merged（容器看到的 /）
+mg1: model.bin -> 读 upperdir 副本
+mg2: pkg.tar -> 被白化标记遮住而不可见
+:::
+
+OverlayFS 最容易让人踩坑的两个机制都直接来自这套结构。第一叫 **Copy-Up（写时向上复制）**：如果下层有一个 {=ch3.modelSize} MiB 的模型权重或日志文件，哪怕容器在运行时只是往末尾追加 4 KiB，甚至只是执行一次 `chmod +x` 改一个权限位，内核都必须**先把这整整 {=ch3.modelSize} MiB 从 lowerdir 拷进 upperdir**，再在副本上修改。第二叫 **Whiteout（白化标记）**：只读层不允许删除文件，所以当你写了一条新的 `RUN rm /var/cache/pkg.tar`，OverlayFS 只能在可写层创建一个 0 字节的遮罩标记 `.wh.pkg.tar`（在运行时挂载里是一个 `0/0` 字符设备，打包成 OCI tar 层时叫 `.wh.&lt;name&gt;`；整删一个目录则写成 `.wh..wh..opq` 不透明标记）。结果就是：容器里 `ls` 确实看不见了，可下层镜像依然背着那 {=ch3.pkgSize} MiB 随身携带！
+
+::: lab ch3-model
+model.title: OverlayFS 操作账本：Copy-Up 与白化标记
+model.how: 点选容器或 Dockerfile 里的六种操作，对比 lowerdir、upperdir 和容器里实际看到的 merged 视图，看什么时候悄悄复制了 100 MiB，什么时候删除了文件却没省下 1 字节。
+ctl.op: 文件操作
+op.read: 只读 python
+op.append: 追加 4 KiB 到 100M 文件
+op.chmod: chmod +x 100M 文件
+op.rm-split: 下一层 RUN rm 80M 包
+op.rm-same: 同一 RUN 里 rm 80M 包
+op.opaque: 重建 /var/cache 目录
+cv.aria: 三层视图：lowerdir 底层文件、upperdir 可写层变更、merged 合并根目录
+tier.lower: lowerdir (L0 + L1 只读镜像层)
+tier.upper: upperdir (容器可写层 / 新层)
+tier.merged: merged (容器内可见 /)
+empty: （空 — 未发生任何写入）
+read.copy: 触发 Copy-Up
+read.upper: upperdir 占用
+read.total: 镜像/磁盘实占
+read.waste: 藏在下层的死字节
+say.read: 只读下层文件直接从 L0/L1 页缓存读取，upperdir 占 <em>{upper} MiB</em>，Copy-Up 为 {copy} MiB，十个容器只读同一份物理页面。
+say.append: 往 100 MiB 的下层文件里只追加了 4 KiB，却先触发整文件 <em>Copy-Up（{copy} MiB）</em>；现在上下层各存一份，实占总计 {total} MiB。
+say.chmod: 只是改了一个权限位 <code>chmod +x</code>！因为 inode 元数据必须在可写层重写，内核依然先把整整 <em>{copy} MiB</em> 拷贝到 upperdir。
+say.rm-split: 在后一条 <code>RUN</code> 指令里 <code>rm pkg.tar</code>：upperdir 写下 0 字节白化文件 <code>.wh.pkg.tar</code>，容器里只能看见 {vis} MiB，但 L1 里的 <em>{waste} MiB</em> 依然原封不动留在镜像里（实占 {total} MiB）。
+say.rm-same: 把下载和删除放进同一条 <code>RUN curl ... &amp;&amp; rm pkg.tar</code>：在提交 L1 快照前就已完成 unlink，不用写白化文件，镜像实占立刻降到 <em>{total} MiB</em>，死字节清零。
+say.opaque: 在 upperdir 重建同名目录会生成 <code>.wh..wh..opq</code> 不透明标记，一口气遮住下层 <code>/var/cache</code> 里的全部文件（隐藏了 <em>{waste} MiB</em>），但下层依然占着 {total} MiB 磁盘。
+:::
+
+图里的数一眼能看穿两种常见事故：为什么单独写一行 `RUN rm pkg.tar` 做出来的镜像还有 {=ch3.splitTotal} MiB，而合并进同一行 `RUN` 里删掉立刻降成 {=ch3.sameTotal} MiB（省出整整 {=ch3.pkgSize} MiB）；以及为什么生产环境绝不把需要频繁写的数据库文件或大模型放进容器可写层——除了 Copy-Up 一瞬卡住 I/O，写进 `upperdir` 的每一份副本还丢掉了宿主机页缓存的跨容器共享。生产里绕开 Copy-Up 的标准做法是挂一块 **Volume / Bind Mount**，直接绕开 OverlayFS 走宿主机目录。
+
+模型省掉了：内核目录重定向（`redirect_dir`）、多下层合并时的 inode 编号映射（`xino`），以及 OverlayFS 挂载配额限制；文件大小选取的是便于心算的演示体积。 {.take}
+
+## 八副 Namespaces：镜片两边的 PID 与 UID {#ch4}
+
+::: strings
+toc: Linux Namespaces
+:::
+
+Linux Namespace 不复制内核，它只给进程戴上一副过滤镜——同一个宿主机进程表里的编号和权限，在镜片里外长成完全不同的两张脸。 {.law}
+
+磁盘目录隔离好了，接下来看进程在内核眼里「能看见什么」。Linux 内核一共提供了 {=ch4.nsTotal} 种 Namespace（`PID`、`MNT`、`NET`、`UTS`、`IPC`、`CGROUP`、`USER`、`TIME`），可以在 `/proc/&lt;hostPID&gt;/ns/` 下看到每副镜片的 inode 编号。默认起一个容器时，`runc` 会新建前 6 个：进程以为自己是 `PID 1`，有一张独立网卡、独立主机名和信号量表，但**一旦没启用 `USER` Namespace，容器里的 `UID 0`（root）和宿主机的 `UID 0` 在内核眼里其实是一个人**。
+
+::: diagram dg-ns keys=dg.ns
+cap: 图 4　八个 Linux Namespace 与双面映射：同一个内核 task_struct 在宿主机是 PID 4821，在容器内是 PID 1；若开启 Rootless UserNS，容器里的 root（UID 0）在宿主机上其实只是毫无特权的 UID 100000。
+aria: 示意图：上方八个 Namespace 标签，下方左右对比容器内视角的 PID 1、UID 0 与宿主机视角的 PID 4821、UID 100000 及 uid_map 映射
+in: 容器视角
+inp: PID 1 · UID 0
+out: 宿主机视角
+outp: PID 4821 · UID 100000
+umap: /proc/4821/uid_map 映射
+umaps: "0 100000 65536"
+:::
+
+这解释了两条经常被人搞混的边界。第一，**Namespace 只是视角过滤，不是加了一层虚拟表**：我们在宿主机跑 `ps aux` 照样能看见容器里的进程（比如它的真实宿主机号是 `PID {=ch4.hostPid}`），宿主机管理员随时可以直接 `kill` 掉它；反过来，容器里跑 `ps` 要想只看到自家的 `{=ch4.ctProcs}` 个进程而不是宿主机的 {=ch4.hostProcs} 个进程，不仅得开 `PID` Namespace，**还必须配合 `MNT` Namespace 重新挂载一份新的 `/proc`**。第二，**UID 映射**：没有 `USER` Namespace 时，容器内的 `UID 0` 等于宿主机 `UID 0`；开启 `USER` Namespace 后，内核读 `/proc/&lt;pid&gt;/uid_map` 把容器里的 `0..65535` 映射到宿主机的 `{=ch4.uidBase}..165535`，哪怕容器里以 root 运行的进程攻破了路径限制摸到宿主机文件，内核权限检查看到的依然只是个普通用户 `{=ch4.uidBase}`。
+
+::: lab ch4-model
+model.title: Namespaces 过滤镜与 Rootless UID 映射检查器
+model.how: 勾选或取消不同的 Namespace 与 /proc 重挂载开关，观察容器内视角（PID、UID、可见进程数）与宿主机内核真实视图之间的对应，以及漏掉哪一副镜片会带来什么泄露。
+ctl.pid: PID Namespace
+ctl.proc: 独立重挂载 /proc
+ctl.mnt: MNT Namespace
+ctl.net: NET Namespace
+ctl.user: USER Namespace (Rootless)
+cv.aria: 八个 Namespace 开关状态格，以及容器内视角与宿主机真实内核映射的两张卡片
+cv.inside: 容器内部看到的自己
+cv.outside: 宿主机内核眼里的真实进程
+read.pid: 容器内 PID / 宿主机 PID
+read.uid: 内 UID → 宿主机 UID
+read.procs: 容器内 ps 可见进程数
+read.ns: 已启用隔离数
+say.rootful-ok: 容器以为自己是 PID {inPid}（宿主机实际是 {hostPid}），只能看到容器内的 {procs} 个进程；但没有 USER Namespace 时，容器内的 <em>UID 0 在宿主机上依然是 UID {uidOut}</em>——一旦文件系统逃逸，就是宿主机最高权限。
+say.rootless: 开启了 USER Namespace（Rootless）：容器内程序依然自认为 root（UID 0）且是 PID {inPid}，但在宿主机内核权限判定里它只是无特权的 <em>UID {uidOut}</em>，大大压低了逃逸破坏力。
+say.proc-leak: 虽然开启了 PID Namespace，但忘了在 MNT 里重新挂载 <code>/proc</code>：容器内的 <code>ps</code> 依然能直接列出宿主机的全部 <em>{procs} 个进程</em>！
+say.host-pid: 关掉了 PID Namespace（类似 <code>--pid=host</code>）：容器进程直接以宿主机真实编号 <em>PID {hostPid}</em> 暴露运行，能看见并向宿主机上的其他 {procs} 个进程发信号。
+say.no-mnt: 关掉了 MNT Namespace：进程直接共享宿主机的整棵文件系统挂载树，所有隔离下的文件边界瞬间失效，宿主机真实 UID 为 {uidOut}。
+:::
+
+注意实验里故意露出的一条坑：单独加一个 `PID Namespace` 但不重挂载 `/proc` 时，进程虽然叫 `PID 1`，一查 `/proc` 照样能翻出宿主机的 {=ch4.hostProcs} 个进程；只有 `PID` 加独立 `MNT` 加重挂载 `/proc` 一起生效，容器里的 `ps` 才真正只剩 {=ch4.ctProcs} 个自家进程。
+
+模型省掉了：`setns` 动态加入已存在容器命名空间（`docker exec` 的原理）、`/etc/subuid` 多段区间映射，以及 `TIME`（仅支持 `CLOCK_MONOTONIC` 与 `CLOCK_BOOTTIME` 偏移）和嵌套 UserNS 的层数限制。 {.take}
+
+## 容器网络：虚拟网线、网桥与 NAT {#ch5}
+
+::: strings
+toc: 容器网络：veth 与 NAT
+:::
+
+装进 `NET` Namespace 的容器，出厂时只有一张 `lo` 环回网卡。它能连上外网，全靠内核在命名空间墙上钻过一对虚拟网线（`veth` pair），一头插进容器当 `eth0`，另一头插到宿主机的软件交换机（`bridge`）并经 NAT 改写地址发走。 {.law}
+
+当你开了 `NET` Namespace，容器里只有 `127.0.0.1`，外面的数据包根本进不来。`containerd` 或 CNI 网络插件紧接着执行四步接线：在内核里用 `ip link add type veth` 创建一对成双成对的虚拟网卡——**发进一端的每个网络帧，几乎立刻从另一端吐出来**；把一端塞进容器的 `NET` Namespace 改名叫 `eth0`（分配如 `172.17.0.2`），另一端留在宿主机上挂进软件网桥 `docker0`（网关 `172.17.0.1`）；最后由 `nftables` / `iptables` 在宿主机路由出口做一次 **SNAT / MASQUERADE**，把源地址 `172.17.0.2` 改写成宿主机网卡自己的 IP，写进连接跟踪表（conntrack），再交给物理网卡发送（物理网卡和驱动收发流程见[[how-a-nic-moves-packets#ch3|「网卡是怎么搬运数据包的」第 3 章]]）。
+
+::: diagram dg-net keys=dg.net
+cap: 图 5　典型 Bridge + NAT 模式下一帧网络数据包在同一个 Linux 内核里穿过的逻辑跳数与边界。
+aria: 示意图：容器 eth0 通过 veth 虚拟网线穿过 NET Namespace 到达宿主机 docker0 网桥，再经 nftables NAT 到达物理网卡
+ct: 容器 NET Namespace
+cts: eth0 (172.17.0.2)
+veth: 虚拟网线 veth pair 跨过边界
+br: 宿主机软件网桥 docker0
+brs: L2 转发 (172.17.0.1)
+nat: nftables MASQUERADE NAT
+nic: 宿主机物理网卡 ens5
+nics: 源地址已改写为宿主机 IP
+:::
+
+包确实能通了，但每多一道逻辑边界，CPU 就要在同一个内核里多兜一圈：至少 1 到 2 次 `netns` 切换、网桥二层查表、conntrack 连接跟踪哈希查找与 NAT 改写；如果跨主机还套了 **VXLAN** 隧道封装，外层又多包了 **{=ch5.vxlan} 字节**头（14 B 外层以太网 + 20 B 外层 IP + 8 B UDP + 8 B VXLAN），原本能贴着 `1500 B` MTU 发的大包如果不把容器 `eth0` MTU 缩到 `{=ch5.mtu} B`，就会在宿主机上被切分成两个分片甚至直接丢包。为了省掉网桥和 `iptables` 这截开销，云原生环境如今广泛改用 eBPF 直接在 socket / `veth` 钩子上短路重定向（如 Cilium 的 host-routing，[[how-a-nic-moves-packets#ch10|「网卡是怎么搬运数据包的」第 10 章]]），或者干脆用 `--network=host` 放弃网络隔离。
+
+::: lab ch5-model
+model.title: 容器网络路径跳数、CPU 路径开销与 MTU 分片检查
+model.how: 切换四种容器网络模式，拖动单包负载大小、发包速率并尝试开启跨节点 VXLAN 封装，看每条路径要过几关、何时会撞破 1500 B MTU 引发分片。
+ctl.mode: 网络模式
+mode.bridge-nat: Bridge + NAT
+mode.same-bridge: 同网桥容器互通
+mode.ebpf-host: eBPF 短路直转
+mode.host-net: --network=host
+ctl.pkt: TCP 负载大小
+ctl.kpps: 发包速率
+ctl.vx: 叠加 VXLAN 跨机封装 (+50 B)
+cv.aria: 数据包经过的内核阶段流程图，与包含 VXLAN 头部的帧长对照 1500 B MTU 上限的进度条
+cv.path: 数据包经过的内核阶段
+cv.mtu: 总帧长 / 有效 MTU 上限
+frag.yes: 发生分片
+frag.no: 正常直发
+read.hops: 逻辑经过阶段数
+read.cpu: 路径软件 CPU 参考占用
+read.mtu: IP 包长 / 上限
+read.frag: MTU 状态
+say.bridge-nat: 默认 Bridge + NAT 穿过 {ns} 次 netns 边界、经 <code>docker0</code> 网桥和 {hooks} 处 conntrack/NAT 钩子，在 {cpu}% 参考单核软中断成本下换来完整网络隔离。
+say.same-bridge: 同宿主机的两个容器经 <code>docker0</code> 二层直连：数据包穿过 {ns} 次 netns，但不需要离开机器，也不受跨节点 VXLAN 隧道头影响。
+say.ebpf-host: eBPF host-routing 在 <code>veth</code> 入口直接用 <code>bpf_redirect_peer</code> 旁路掉网桥与 iptables 链（0 次网桥、0 次 conntrack），软件路径耗时比传统 Bridge 砍掉一半以上。
+say.host-net: <code>--network=host</code> 直接把进程放进宿主机网络命名空间（0 次隔离、0 次 NAT 开销），吞吐贴近裸机，但容器可以直接监听或篡改宿主机任意端口。
+say.frag: 警告：加上 40 B TCP/IP 头与 VXLAN 50 B 隧道头后，IP 包与外层负载已撑过 <em>{mtu} B</em> 有效上限（{ip} B &gt; {mtu} B），会触发内核分片或黑洞丢包！需将容器 MTU 调低到 1450 B。
+:::
+
+看模型里这组直观对比：在设定的每包软件路径模型下（Bridge + NAT 约 {=ch5.bridgeNs} 纳秒/包，eBPF 直转约 {=ch5.ebpfNs} 纳秒/包），隔离换来的是确定的内核钩子开销；而一旦忘了把 VXLAN 网络下容器网卡的 MTU 从 1500 降到 `{=ch5.mtu} B`（扣除 {=ch5.vxlan} B 隧道封装头），大包立刻撞墙。
+
+模型省掉了：TCP 分段卸载（TSO/GRO，大包在软件层合成 64 KiB 再交网卡切分）、`iptables` 规则数随 ClusterIP 暴增时的 $O(N)$ 扫描劣化（相对于 IPVS/eBPF 的 $O(1)$ 哈希），以及虚拟交换机的锁争用；每包纳秒成本是反映不同路径复杂度的参数，不是通用硬件实测常数。 {.take}
+
+## cgroups v2 CPU 节流：四核上跑「0.5 核」为什么会卡死 {#ch6}
+
+::: strings
+toc: cgroups v2 CPU 节流
+:::
+
+`cgroups` 里的 `--cpus=0.5` 不是给你一颗主频降半的慢速核心，而是每 100 毫秒发一张总计 50 毫秒的额度券。多线程程序可以在 12.5 毫秒内把额度全部花完，剩下的 87.5 毫秒全员冻结。 {.law}
+
+这是容器线上最常见、也最反直觉的性能悬案：一个 Go、JVM 或 Node 服务明明监控显示 **CPU 平均利用率只有 30%**，接口 P99 延迟却时不时突然飙出将近 100 毫秒的毛刺。答案藏在 Linux `cgroups v2` 的控制文件 `/sys/fs/cgroup/.../cpu.max` 里。当你传给 Docker `--cpus=0.5`，`runc` 往那个文件里写的是两个以微秒为单位的数字：`50000 100000`，意思是**每 {=ch6.period} 毫秒周期（`period`），这个组里的所有线程加起来最多只能运行 {=ch6.quota} 毫秒 CPU 时间（`quota`）**。
+
+::: diagram dg-cfs keys=dg.cfs
+cap: 图 6　cpu.max = 50000 100000（0.5 核）在 1 线程与 4 线程并发下的完全不同表现：总工作量一样多，4 线程并发把 87.5% 的墙钟时间变成了全员冻结等待。
+aria: 示意图：上方单线程连续运行 50 毫秒后冻结 50 毫秒；下方四线程同时跑 12.5 毫秒花光 50 毫秒配额后集体冻结 87.5 毫秒
+hdr: "cpu.max = 50000 100000 (0.5 核)"
+r1: 1 个工作线程
+frz1: 冻结 50 ms
+r4: 4 个并行线程（在 8 核宿主机上）
+burn4: 4 × 12.5 = 50 ms 耗尽额度
+frz4: 剩余 87.5 ms 全核冻结
+:::
+
+原因在于：在默认配置下，容器里的 JVM 垃圾回收器、Go 调度器（`GOMAXPROCS`）读取的依然是 `/proc/cpuinfo` 暴露出的**宿主机核数**（比如 8 核），而不是 cgroup 配额！于是垃圾回收或并发请求一来，{=ch6.quota} 毫秒的额度同时被 4 个核分摊着烧，只需 `50 / 4 = {=ch6.burn4}` 毫秒的真实时间就把这一轮预算清零，接下来整整 `{=ch6.freeze4}` 毫秒周期里，这个容器里的哪怕只有一个单线程请求被内核强行挂起（`cpu.stat` 里的 `nr_throttled` 飞涨）。
+
+::: lab ch6-model
+model.title: cgroups v2 CPU 带宽节流（CFS Bandwidth Control）时间轴
+model.how: 在保持 --cpus=0.5 不变的前提下，把工作线程数从 1 拉到 4 或 8，看红色冻结带如何迅速吞没整个周期；再试着把统计周期（period）从 100 ms 调短到 10 ms，观察单次卡顿上限如何骤降。
+ctl.cpus: CPU 配额 (--cpus)
+ctl.thr: 并发活跃线程数
+ctl.per: 统计周期 (period)
+per.100: 100 ms (默认)
+per.20: 20 ms
+per.10: 10 ms
+cv.aria: 200 毫秒墙钟时间窗内各线程的 CPU 运行块（金/青）与配额耗尽后的冻结带（红）
+cv.x: 墙钟时间 (ms)
+read.burn: 额度耗尽用时
+read.freeze: 每周期冻结时长
+read.rpc: 20 ms RPC 最坏耗时
+read.stat: 200 ms 内节流次数
+say.throttled: 分配了 {cpus} 核（每 {period} ms 给 {quota} ms 额度），但 {thr} 个线程在多核上并发只用 <em>{burn} ms</em> 就烧光了额度，剩余 <em>{freeze} ms</em> 全部线程冻结——原本只需 20 ms CPU 的请求最坏会拖到 {rpc} ms！
+say.smooth: 并发线程数（{thr}）未超过配额核数（{cpus} 核）：在整个 {period} ms 周期内额度都用不完，<em>0 ms 冻结</em>，请求以 20.0 ms 稳定完成。
+:::
+
+对照默认点算一下：配额 0.5 核（{=ch6.quota} ms / {=ch6.period} ms）、4 线程并发时，耗尽只用 {=ch6.burn4} 毫秒，全组干等 {=ch6.freeze4} 毫秒，一个本来只需要 20 毫秒 CPU 的普通请求最坏能卡出 {=ch6.rpc4} 毫秒的尾延迟！把周期从 100 ms 缩成 10 ms（`5000 10000`），冻结停顿立刻压低十倍到 {=ch6.freeze10} 毫秒；更治本的办法是让容器里的运行时读懂 `/sys/fs/cgroup/cpu.max`（现代 JVM、Go 1.25+ 自动感知或配合 `automaxprocs`），把并发线程压回与配额匹配的 1 根，再也不抢着烧券。
+
+模型省掉了：多周期跨期未用完的突发储蓄桶（`cpu.max.burst`，Linux 5.14 引入，允许短时借用前几个空闲周期存下的额度）、CPU 权重竞争（`cpu.weight` 在宿主机满载时生效，而 `cpu.max` 就算宿主机 99% 空闲照样卡死你），以及单核内部调度器 tick 的 1–4 毫秒抖动。 {.take}
+
+## cgroups v2 内存：页缓存、PSI 与 OOM Kill {#ch7}
+
+::: strings
+toc: cgroups v2 内存记账
+:::
+
+cgroups v2 把进程自己的匿名堆内存、内核 Slab、tmpfs 与文件页缓存全都记在同一本 memory.current 账上。撞上 memory.high 时内核先回收缓存并把进程勒慢；一旦不可回收的内存挤爆 memory.max，OOM Killer 直接出刀杀进程。 {.law}
+
+用过老版 Linux（`cgroups v1`）的人常遇到一种诡异状况：容器里只跑了个占 150 MiB 内存的小程序，读了一遍 500 MiB 的日志文件后，整个容器被 OOM 杀掉了，或者重启也归不回账。原因在 `cgroups v1` 把匿名内存、页缓存（Page Cache，详情见[[how-the-os-talks-to-hardware#ch10|「操作系统是怎么和硬件说话的」第 10 章]]）和内核对象（`kmem`）拆在几棵互不相干的控制器树里记账；**`cgroups v2` 把所有控制器并进一棵统一层级树**，一个进程的堆内存（Anon RSS）、文件系统页缓存（Page Cache）、内存盘 `tmpfs` 与内核对象全部合算进同一个 `memory.current`，并由四条水线分层管住：`memory.min`（硬保底）→ `memory.low`（尽量保底）→ `memory.high`（高压节流线）→ `memory.max`（硬封顶杀线）。
+
+::: diagram dg-mem keys=dg.mem
+cap: 图 7　cgroups v2 的统一内存记账模型：干净的文件页缓存可以丢弃腾地方，但匿名堆内存与 tmpfs 挤过 memory.max 时会立刻触发 OOM-kill。
+aria: 示意图：匿名堆内存、tmpfs 与文件页缓存组成一根长条，右侧依次标出 memory.high 回收线和 memory.max 杀进程线
+anon: 匿名堆内存 + tmpfs
+cache: 文件页缓存
+hi: memory.high
+max: memory.max
+hdesc: 越过 memory.high：先回收干净页缓存
+hsubs: 同步写入/直接回收引入 PSI 内存等待卡顿
+mdesc: 不可回收越过 memory.max：OOM-kill
+msubs: 内核按 oom_score 选出内存占用最大进程强杀
+:::
+
+这两条线分工完全不同。当总占用冲过 `memory.high`（比如 {=ch7.high} MiB，设定为硬上限 {=ch7.max} MiB 的 80%），内核**不会杀进程**，而是触发直接内存回收（Direct Reclaim）：把干净的 Page Cache 丢掉来腾地方，进程每次申请内存（[[how-virtual-memory-works#ch7|「虚拟内存是怎么工作的」第 7 章]]）都要顺便干一会儿回收的苦活，延迟从 **PSI（Pressure Stall Information，`memory.pressure`）** 里直接体现出来；而**往 `/dev/shm` 或容器 `tmpfs` 里塞文件（如日志/临时缓存）是绝对不能丢弃的**，它像匿名内存一样硬算进 `memory.current`，只要匿名堆 + `tmpfs` 加起来越过 `memory.max`，内核没有缓存可丢，直接写入 `memory.events oom_kill` 并发出无法拦截的 `SIGKILL`。
+
+::: lab ch7-model
+model.title: cgroups v2 内存压力、页缓存回收与 OOM 边界
+model.how: 拖动匿名堆、文件页缓存与 tmpfs 滑杆，观察内核如何优先靠淘汰干净页缓存救下进程；再试着把内存盘 tmpfs 往上拉，看为什么「明明没有开大数组，只是写了点共享内存文件」也会瞬间击穿 memory.max。
+ctl.anon: 匿名堆内存 (Anon RSS)
+ctl.cache: 读文件产生的页缓存
+ctl.tmpfs: tmpfs / /dev/shm 占用
+ctl.max: memory.max 硬上限
+cv.aria: 请求内存需求量与 cgroups v2 实际记账 memory.current 对比条，标出 memory.high 与 memory.max 水线
+leg.anon: 匿名堆 (不可弃)
+leg.cache: 干净页缓存 (可弃)
+leg.rec: 已回收缓存
+bar.req: 业务需求总内存（堆 + tmpfs + 缓存）
+bar.cur: cgroups v2 实际 memory.current（high=80%）
+st.healthy: 平稳运行
+st.reclaim: 页缓存回收中
+st.thrash: 高压节流抖动
+st.oom: 触发 OOM-kill
+read.cur: 实际记账 memory.current
+read.rec: 已自动释放页缓存
+read.psi: 内存压力 PSI 停顿率
+read.state: 容器内存状态
+say.healthy: 需求低于 <code>memory.high</code>（{high} MiB）：匿名堆、tmpfs 与全部文件页缓存稳稳留在内存里，<em>0% 回收卡顿</em>。
+say.reclaim: 越过了 <code>memory.high</code>（{high} MiB）但还不到硬上限：内核主动丢弃了 <em>{rec} MiB</em> 干净页缓存，把 <code>memory.current</code> 压回 {cur} MiB，代价是伴随 {psi}% 的直接回收 PSI 停顿。
+say.thrash: 危险：光不可回收的堆 + tmpfs 就已有 <em>{unrec} MiB</em>，硬撑在 <code>high</code>（{high} MiB）和 <code>max</code>（{max} MiB）之间！页缓存被洗空（丢了 {rec} MiB），进程反复重新读盘并陷入 {psi}% 重度卡顿。
+say.oom: <strong>OOM-kill！</strong>不可回收内存（匿名堆 + tmpfs = <em>{unrec} MiB</em>）已经撞破 <code>memory.max</code>（{max} MiB），所有页缓存都救不回来，内核立刻强杀容器主进程（退出码 137）。
+:::
+
+看默认状态：240 MiB 堆 + 220 MiB 文件页缓存总需求 460 MiB，跨过了 {=ch7.high} MiB 的高压线但远低于 {=ch7.max} MiB 的杀线；内核悄无声息淘汰掉 {=ch7.reclaimed} MiB 干净页缓存（带来 {=ch7.psi} 压力停顿），容器安然无恙。可一旦有人把日志写进 `/dev/shm`（把 `tmpfs` 拉到 300 MiB），240 + 300 冲过 {=ch7.max} MiB，任何页缓存都救不回来。
+
+模型省掉了：有 Swap 时的匿名页换出（多数容器集群默认关闭 Swap，即 `memory.swap.max = 0`）、脏页回写节流（writeback throttling）的时间延迟，以及多进程容器里按 `oom_score` 挑选牺牲者而非直接全杀的细节。 {.take}
+
+## 权限边界：Capabilities、seccomp-bpf 与共享内核 {#ch8}
+
+::: strings
+toc: 权限与系统调用边界
+:::
+
+容器和宿主机共用同一个系统调用总入口。容器里的 root 能做什么，不取决于它叫不叫 root，而取决于它手里还剩哪几颗 Linux Capabilities、哪几百个系统调用被 seccomp-bpf 放行，以及强制访问控制挡住了什么。 {.law}
+
+只要前面没有开 `USER` Namespace，一个容器里跑的进程自认为 `UID 0`。如果什么额外限制都不加，它只需调一次 `mount`、`bpf`、`ptrace` 或 `kexec_load`，就能往宿主机内核里塞进一段 eBPF 程序、修改内核参数甚至直接重启整台物理机（系统调用如何进入内核环见[[how-the-os-talks-to-hardware#ch2|「操作系统是怎么和硬件说话的」第 2 章]]）。为了堵住这张共有内核的入口，OCI 运行时在 `execve` 变成业务程序前会连立四道闸门。
+
+::: diagram dg-sec keys=dg.sec
+cap: 图 8　容器里每一次系统调用进内核要过的四道闸门：NoNewPrivs 锁死提权，seccomp-bpf 在真正进内核函数前直接截停高危编号，随后才是 Capabilities 与 LSM（AppArmor/SELinux）。
+aria: 示意图：系统调用依次经过 NoNewPrivs、seccomp-bpf、Capabilities 和 AppArmor/SELinux 四道安检才能到达内核功能代码
+g1: 1. NoNewPrivs 位锁死
+g1s: 禁止通过 setuid 程序重新提权
+g2: 2. seccomp-bpf 过滤器
+g2s: 默认放行约 330 / 拦截 44 个调用
+g3: 3. Capabilities 位图掩码
+g3s: 砍掉 CAP_SYS_ADMIN 等高危特权
+g4: 4. LSM MAC 强制访问控制
+g4s: AppArmor / SELinux 挡住 /proc 与设备
+kern: 进入宿主机内核函数
+:::
+
+仔细看第二道门 **seccomp-bpf**：在 x86_64/arm64 上，Linux 内核暴露了约 {=ch8.totalSys} 个系统调用，Docker/containerd 的默认 `seccomp` 配置文件采用白名单策略，放行其中 {=ch8.allowedSys} 个日常调用，在函数执行前就把剩下的 **{=ch8.blockedSys} 个**高危调用（例如 `kexec_load`、`init_module`、`bpf`、`mount`、`reboot` 等）直接以 `EPERM` 退回。第三道门把原本归 root 一人独占的「超级权限」拆成 41 颗细粒度 **Capabilities**：哪怕进程叫 root，默认也会被剥掉 `CAP_SYS_ADMIN`（这颗权限能干太多事，几乎等价于宿主机半个管理员）、`CAP_SYS_PTRACE` 等；只有少量像 `CAP_NET_RAW`（发原始 ICMP 包做 `ping`）默认保留，更严格的场景会用 `--cap-drop=ALL` 全数清零。
+
+::: lab ch8-model
+model.title: 四道权限闸门与系统调用拦截测试台
+model.how: 挑选容器内进程尝试调用的六种系统调用，配合下方的 seccomp 与权限开关，查看请求会在哪一道安检被拦截、返回 EPERM 还是 EACCES，以及暴露的系统调用攻击面有多大。
+ctl.probe: 试探系统调用
+pr.read_write: read / write (常规 I/O)
+pr.raw_ping: socket(SOCK_RAW) (ping)
+pr.mount_fs: mount() (挂载文件系统)
+pr.ptrace: ptrace() (调试追踪进程)
+pr.bpf: bpf() (加载内核 eBPF)
+pr.kexec: kexec_load() (替换宿主机内核)
+ctl.sec: seccomp-bpf 默认策略
+ctl.netraw: CAP_NET_RAW
+ctl.sysadm: CAP_SYS_ADMIN
+ctl.lsm: AppArmor / SELinux MAC
+cv.aria: 四道安全安检门的状态绿/红卡片
+gate.none: 全部放行
+gate.nnp: NoNewPrivs
+gate.seccomp: seccomp-bpf
+gate.caps: Capabilities
+gate.lsm: AppArmor / LSM
+read.verdict: 内核返回结果
+read.gate: 截停在哪一道门
+read.allowed: 放行系统调用面
+read.req: 所需 Capability
+say.allow: 「{probe}」连过四道门，返回 <em>{verdict}</em>（当前开放了 {allowed} 个系统调用入口）。若非网络排障必须，建议把多余的 Capability 逐个砍掉。
+say.seccomp: 「{probe}」甚至没机会走进内核处理函数——在入口第 2 道门就被 <em>seccomp-bpf</em> 以 <code>{verdict}</code> 截停（默认屏蔽了 {blocked} 个高危系统调用）。
+say.caps: seccomp 放行了，但进程在第 3 道门因为缺少 <em>{cap}</em> 被内核 Capability 掩码以 <code>{verdict}</code> 拒绝。这也是为什么 <code>--cap-drop=ALL</code> 极其有效。
+say.lsm: 哪怕放开了 seccomp 与 {cap}，第 4 道强制访问控制门（AppArmor / SELinux）依然依据安全标签用 <code>{verdict}</code> 挡住了越权访问。
+:::
+
+试着把实验里的 `seccomp-bpf` 勾掉、再勾选 `CAP_SYS_ADMIN`：原本被三重保险锁死的 `mount()` 和 `bpf()` 瞬间变成全绿的 `ALLOW`（这也是为什么生产上加上 `--privileged` 等价于几乎裸奔：它一次把所有 Capabilities 补齐，同时关掉了 seccomp、AppArmor 和设备白名单）。
+
+模型省掉了：按系统调用参数值做细粒度校验的 seccomp 规则（例如只允许 `clone` 传普通标志而不准新建 `CLONE_NEWUSER`）、SELinux 多级安全类别（MCS）标签隔离，以及 Landlock 等较新的非特权 LSM 沙盒。 {.take}
+
+## 容器里的 PID 1：吞掉信号与僵尸进程 {#ch9}
+
+::: strings
+toc: 容器里的 PID 1
+:::
+
+在 Linux 内核里，每个 PID Namespace 的 1 号进程都有两件谁都不替它干的苦差：内核不给未注册信号处理器的 PID 1 执行默认杀死动作，而所有失去父进程的孤儿也会全部过继给它等着调用 wait() 回收。 {.law}
+
+最后来到容器生命周期的终点：`docker stop`。为什么很多人写了一个看似正常的 Python 或 Node 服务，每次发版重启容器都要**硬生生卡足 {=ch9.grace} 秒钟**才退出，日志里还经常留下没来得及提交的半截请求？答案全在 Dockerfile 里两种写法的一字之差：Shell 写法 `CMD "python app.py"` 会在容器里把 `/bin/sh -c` 启动成 `PID 1`，真正的 Python 进程只是它的子节点；而 Exec 写法 `CMD ["python", "app.py"]` 或加上 `--init` 参数，才改变了谁当这台「小系统」里的 `PID 1`。
+
+::: diagram dg-pid1 keys=dg.pid1
+cap: 图 9　Shell 写法与 --init (tini) 作为 PID 1 的信号和子进程回收路径差异。/bin/sh 既不把 SIGTERM 转给子进程，也不替业务回收孤儿僵尸。
+aria: 示意图：上方 sh 作为 PID 1 吞掉 SIGTERM 并在 10 秒后被 SIGKILL 强杀；下方 tini 作为 PID 1 转发 SIGTERM 并回收 SIGCHLD 僵尸进程
+sh1: CMD "python app.py" -> sh 是 PID 1
+sh2: 忽略默认 SIGTERM · 不回收孙进程僵尸
+sh3: "等满 10s -> SIGKILL (137)"
+in1: --init -> tini 是 PID 1
+in2: 转发 SIGTERM 给业务 · 循环 waitpid 回收
+in3: 1s 优雅退出 (Exit 0 · 0 僵尸)
+:::
+
+背后是两条写死在 Linux 内核信号投递与进程退出逻辑里的规则：
+
+- **为什么信号会吞掉？** 内核为了防止正常系统上 1 号进程（如 `systemd`）被管理员误发一个信号给打挂，特意规定：**如果发给 PID 1 的信号没有显式注册处理函数，内核就直接丢弃默认动作（`SIG_DFL` 不会杀死 PID 1）**。`/bin/sh` 没注册 `SIGTERM` 处理器，也不往子进程转发，于是 `docker stop` 发过去的 `SIGTERM` 石沉大海，Docker 只能干等满 {=ch9.grace} 秒宽限期，再发一记任何进程都挡不住的 `SIGKILL`，强行以退出码 `{=ch9.exitKill}`（`128 + 9`）撕断进程。 {#s1}
+- **为什么僵尸进程越积越多？** 业务程序如果派生了子进程（比如调一次外部命令、跑子任务），父进程先退出后，子进程就会变成孤儿被过继给 `PID 1`；子进程自己跑完后并不会自己消失，必须在内核进程表里留一条只剩退出码的 **`&lt;defunct&gt;` 僵尸（Zombie）** 记录，直到 `PID 1` 响应 `SIGCHLD` 调用 `waitpid()` 替它收尸。如果 `PID 1` 只管收业务请求却不收尸，几天就能把有限的进程号池占满。 {#s2}
+
+::: lab ch9-model
+model.title: PID 1 信号超时与僵尸进程累积模拟
+model.how: 切换三种 Dockerfile 启动方式，拖动时间轴滑杆观察第 5 秒收到 docker stop（SIGTERM）后发生了什么，并调高孤儿短进程派生率看进程表如何被僵尸填满。
+ctl.mode: 入口写法
+mode.shell: Shell: sh -c app
+mode.exec: Exec: app 直接作 PID 1
+mode.init: --init (tini 作 PID 1)
+ctl.t: 运行时间 (5s 时发 SIGTERM)
+ctl.rate: 孤儿派生速率
+ctl.stop: 5s 时执行 docker stop
+cv.aria: 0 到 20 秒内僵尸进程数量累积曲线，以及第 5 秒 SIGTERM 与最终退出的竖直时间线标记
+cv.x: 容器运行时间 (s)
+cv.y: 累积僵尸进程数
+st.running: 运行中
+st.ignoring-sigterm: 吞掉 SIGTERM 死等中
+st.killed-sigkill: 被 SIGKILL 强杀
+st.draining: 优雅收尾中
+st.exited-clean: 优雅退出
+read.state: 当前状态
+read.zomb: 累积僵尸峰值
+read.wait: stop 后卡住等待
+read.exit: 退出码
+say.run: 容器正常运行中（t = {t} s）；期间已累积 <em>{z}</em> 个未回收的僵尸进程槽位。试着把时间拉过第 5 秒看停机过程。
+say.hang: 第 5 秒发出的 SIGTERM 被作为 PID 1 的 <code>/bin/sh</code> 直接忽略！容器正在死等 {grace} 秒超时（已卡 <em>{wait} s</em>），进程表里还攒着 {z} 个僵尸。
+say.sigkill: 整整 {grace} 秒宽限期耗尽，内核发来不可拦截的 <code>SIGKILL</code> 强杀容器，退出码 <em>{code}</em>（128 + 9）——所有在途请求当场断裂。
+say.exec: Exec 写法下应用自己当 PID 1 并注册了信号处理器，收到 SIGTERM 后在 1 秒内优雅收尾退出（退出码 {code}）；但在它存活期间，没有替孙进程调 <code>waitpid()</code> 依然积累了 <em>{z}</em> 个僵尸。
+say.init: 加了 <code>--init</code>（<code>tini</code> 当 PID 1）：<code>tini</code> 全程实时响应 <code>SIGCHLD</code> 把僵尸压在 <em>{z}</em> 个，收到 SIGTERM 后立刻转给业务进程并在 1 秒内以退出码 {code} 干净退出。
+:::
+
+把默认配置拖回 5 秒和 15 秒对比一下：第 5 秒就已经攒出 {=ch9.zombies5} 个僵尸，如果不改入口写法，每次发版还要再硬吃整整 {=ch9.grace} 秒等待，最后留下一记粗暴的 `{=ch9.exitKill}`。加上 `--init`（或在 Dockerfile 里直接引 tini / dumb-init）只需要几十 KiB 的静态二进制文件，同时解决信号转发和收尸两件事。
+
+模型省掉了：应用进程虽然是 Exec 写法但自己写了完整的 `SIGCHLD` 回收循环（例如部分多进程服务器自己兼任 reaper）、Docker 可配置的 `--stop-signal`（如 Nginx 用 `SIGQUIT` 优雅停机），以及达到 `pids.max` 上限后触发 `fork()` 报 `EAGAIN` 的拒绝行为。 {.take}
+
+## 前沿在哪（2026 年 11 月） {#ch10}
+
+::: strings
+toc: 前沿在哪
+:::
+
+容器的轻量来自共享内核，脆弱也来自共享内核。截至 2026 年 11 月，演进集中在两条路上：用 ID 映射挂载和按需懒加载消掉不必要的磁盘复制，以及在不把不信任代码放进同一份内核的前提下保住容器的秒级启动。 {.law}
+
+### 已确立 {#h.est .sub3}
+
+- 容器隔离所依赖的三块底座已成标准并固化进规范：Linux `namespaces(7)`（包括 `USER` Namespace）、统一层级 `cgroups v2`（自 Linux 4.5 起并入主线，已成为主流 Linux 发行版与 Kubernetes 1.25+ 默认层级）、**OCI Image Spec v1.1.0**（2024 年 2 月 15 日发布，v1.1.1 维护版于 2025 年 3 月 3 日发布）、**OCI Runtime Spec v1.2.0**（2024 年 2 月 13 日发布）以及 `seccomp-bpf` 系统调用过滤。 {#e1}
+- 对容器镜像冷启动瓶颈的经典测量来自 Slacker 论文（Harter 等，USENIX FAST '16）：拉取并解包整个镜像层通常吃掉约 **76%** 的容器启动总耗时，但在启动阶段真正被进程读取的数据平均只占下载总量的 **6.4%**。 {#e2}
+
+### 已经做出来的 {#h.demo .sub3}
+
+- **ID-mapped Mounts 免复制换主（Linux 5.12+ / 5.19+，containerd 2.x 与 runc 1.2/1.3）**：过去用 Rootless UserNS 跑容器时，如果宿主机想把一个共享镜像挂给不同范围的映射 UID（例如 `100000` 和 `200000`），往往被迫先跑一遍 `chown -R`，触发第 3 章的整盘 Copy-Up；Linux 5.12 引入 `mount_setattr(AT_RECURSIVE)`、Linux 5.19 将 ID 映射带进 OverlayFS 只读下层后，内核只需在 VFS 挂载视图层按偏移改写用户编号，彻底免去了磁盘拷贝（截至 2026 年 11 月，`containerd 2.0` 已于 2024 年 11 月 5 日发布、`2.1` 于 2025 年 5 月 7 日发布、`2.2` 于 2025 年 11 月 6 日发布，`runc 1.3.0` 于 2025 年中按半年周期稳定发布）。 {#d1}
+- **MicroVM 隔离多租户（Firecracker / Kata Containers）**：对于运行陌生人提交代码、AI Agent 沙盒或 Serverless 函数这类高风险多租户场景，共享宿主机内核依然难以让人放心。AWS Firecracker（Agache 等，NSDI 2020）裁剪掉通用 BIOS、PCI 和冗余驱动，把每个轻量虚拟机（MicroVM）的附加内存压在 **&lt; {=ch10.fcMem} MiB**、启动时间压在 **&lt; {=ch10.fcBoot} 毫秒**、单机支持每秒拉起多达 150 个实例；Kata Containers 把它包成标准 OCI 运行时，让 Kubernetes 可以按 Pod 直接调度自带独立访客内核的 MicroVM。 {#d2}
+- **按需懒加载与内核原生只读镜像（EROFS / Nydus / composefs）**：为了消掉「先下载解包整包、哪怕启动只读 6.4%」的等待，CNCF Nydus（RAFS v6）和 containerd 的 EROFS snapshotter（**containerd 2.2** 于 2025 年 11 月大幅增强，加入了并行解包、可写层配额与面向虚拟机容器的块文件可写层）直接把只读层做成 Linux 内核原生 `EROFS` 只读文件系统或按需通过 HTTP Range 拉取数据块；`composefs` 则进一步结合 OverlayFS 与 `fs-verity`，让镜像按单个文件去重并在读取时做内核级哈希防篡改校验。 {#d3}
+- **WebAssembly 组件沙盒（WASI 0.2 与 WASI 0.3）**：Bytecode Alliance 于 **2024 年 1 月 25 日**正式发布 WASI 0.2（Preview 2），引入 Component Model 与强类型 WIT 接口；**2026 年 6 月 11 日**正式定稿发布的 **WASI 0.3.0** 将原生异步原语（`async func`、`stream&lt;T&gt;`、`future&lt;T&gt;`）直接写进规范核心 ABI（`Wasmtime` 46 起默认启用）。通过 `containerd` wasm shim，这类沙盒不用打包整套 Linux rootfs，也不暴露 300 多个 POSIX 系统调用。 {#d4}
+
+### 规范、路线与厂商说法 {#h.claim .sub3}
+
+- **懒加载与微虚机的边界仍在权衡（截至 2026 年 11 月）**：各路加速快照方案（Nydus、eStargz、EROFS-over-block）在实际集群里的冷启动收益高度依赖镜像大小、网络 RTT 与启动读盘模式（例如大型 AI 推理镜像拉取几十 GiB 权重与传统几十 MiB 微服务差异巨大），厂商给出的「几倍到数十倍提速」属于特定负载下的演示与宣称，并非所有工作负载都能复现；同样，WASI 0.3 的异步生态工具链（各语言标准库从 0.2 迁移至 `wasip3`）在 2026 年下旬仍在陆续对齐中，还不能直接无缝替代需要完整 POSIX 环境、动态库或 GPU 驱动的传统容器。 {#c1}
+
+版本、日期与功能支持会随时间变化；这一章的每条事实都只代表截至 2026 年 11 月查看的公开记录，选型或排查时请先核对自己的内核与运行时版本。 {.take}
+
+## 收尾：容器出事时，先问这三件事 {#ch11}
+
+::: strings
+toc: 收尾：先问三件事
+:::
+
+不必背下几十个内核文件名。生产上的容器一旦变慢、被杀或越权，先问三个可以直接数出数来的问题：CPU 和内存是被哪条配额线掐断的？磁盘膨胀卡在哪一层文件系统？程序到底看见并共用了宿主机的多少东西？ {.law}
+
+{.qs}
+- **卡住了还是被杀掉了？** 看 `cpu.stat` 里的 `nr_throttled`（第 6 章：是不是多线程把 100 ms 的 `cpu.max` 额度券在十几毫秒里烧光了？）；看 `memory.events` 里的 `high` 与 `oom_kill`（第 7 章：是不是匿名堆加 `/dev/shm` tmpfs 撞破了 `memory.max`？）；重启等满 10 秒才退出码 137，就查 `PID 1` 是不是 `/bin/sh` 吞掉了 `SIGTERM`（第 9 章）。 {#q1}
+- **镜像和磁盘怎么突然鼓起来了？** 查三笔账：Dockerfile 里是不是把频繁变动放进靠前层导致 `ChainID` 链表全部失效（第 2 章）？是不是在下一条 `RUN` 才删大文件留下了 `.wh.` 白化遮罩（第 3 章）？还是容器运行期往只读下层的大文件做了一次追加写或 `chmod`，触发了整文件 Copy-Up？ {#q2}
+- **它到底被关住多少，又露出了什么？** 核对四道关：`/proc` 是否重挂且配了 `USER` Namespace 映射出无特权宿主机 UID（第 4 章）；跨节点 VXLAN 有没有把容器 MTU 调到 1450 B（第 5 章）；`seccomp-bpf` 是否被 `--privileged` 关掉、`CAP_SYS_ADMIN` 是否还留在位图里（第 8 章）？如果运行的是不可信代码，切记所有传统容器都还站在同一份宿主机内核上，必要时改用第 10 章的 MicroVM。 {#q3}
+
+一句话：`docker run` 变出的不是一台新电脑，而是一组贴在普通 Linux 进程上的过滤镜、限额表与叠影目录——看懂每一层在宿主机内核里对应哪个数，容器里发生的每一件「怪事」都能落回地面。 {#sum .sum}
+
+延伸阅读：[[how-the-os-talks-to-hardware|「操作系统是怎么和硬件说话的」]]（特权级、系统调用入口与内核页缓存），[[how-virtual-memory-works|「虚拟内存是怎么工作的」]]（内存写时复制、缺页回收与虚拟机二维页表），以及[[how-a-nic-moves-packets|「网卡是怎么搬运数据包的」]]（驱动收发队列、XDP 与 eBPF 内核旁路）。 {#links}
+
+::: footer
+**来源与规范。**Open Container Initiative, Image Format Specification v1.1.0 (2024-02-15) 与 v1.1.1 (2025-03-03)、Runtime Specification v1.2.0 (2024-02-13)；Linux Kernel 6.x 文档与手册页：`namespaces(7)`、`pid_namespaces(7)`、`user_namespaces(7)`、`mount_namespaces(7)`、`cgroups(7)` 与 `Documentation/admin-guide/cgroup-v2.rst`、`Documentation/filesystems/overlayfs.rst`、`seccomp(2)`、`capabilities(7)`、`veth(4)`、`pivot_root(2)`。前沿文献：T. Harter 等，*Slacker: Fast Distribution with Lazy Docker Containers*，USENIX FAST '16；A. Agache 等，*Firecracker: Lightweight Virtualization for Serverless Applications*，USENIX NSDI '20；containerd 2.0 / 2.1 / 2.2（2024-11 / 2025-05 / 2025-11 发布说明）与 runc 1.2 / 1.3 发布说明；Bytecode Alliance WASI 0.2 (2024-01-25) 与 WASI 0.3.0 (2026-06-11) 规范记录。逐项来源、URL 与查看日期记在本页目录里的 BRIEF.md。
+
+**模型与平台诚实声明。**本页面不运行真正的容器或加载外部库。由于本页编写与检验的宿主机为 macOS（Darwin arm64，未安装 Linux 内核或 `docker` / `containerd` / `runc` 守护进程），第 1–9 章的模型在 `models.js` 里按 OCI 规范与 Linux 6.x 内核算式重写实现；`tools/crosscheck.cjs` 在本地用 Node.js `node:crypto` 对照验证了纯 JS 实现的 FIPS 180-4 SHA-256 与 OCI Image Index / Manifest / Config / ChainID 摘要字节完全一致，并逐项校验了 OverlayFS 白化与 Copy-Up 字节账本、Namespace PID/UID 映射、VXLAN MTU 算式、CFS `cpu.max` 节流曲线、cgroups v2 内存回收与 OOM 阈值、seccomp 闸门顺序及 PID 1 信号状态机；实体 Linux 内核中的 `unshare` 与 cgroups 实机测量无法在这台 macOS 主机上执行，已在 BRIEF.md 如实记录。文中实例启动延迟与单包路径纳秒开销均明确标为可调参数而非跨机器物理常数。本文由 Antigravity AI 撰写。
+:::

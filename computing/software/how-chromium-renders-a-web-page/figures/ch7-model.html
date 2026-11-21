@@ -1,0 +1,27 @@
+<figure class="lab" id="lab-ch7-model">
+    <h3 data-i18n="ch7.model.title"></h3>
+    <p class="how" data-i18n-html="ch7.model.how"></p>
+    <div class="ctl">
+      <div class="seg" role="radiogroup" data-i18n-aria="ch7.ctl.tile">
+        <span class="lbl" data-i18n="ch7.ctl.tile"></span>
+        <label><input type="radio" name="c7Tile" value="256" checked><span data-i18n="ch7.tile.t256"></span></label>
+        <label><input type="radio" name="c7Tile" value="512"><span data-i18n="ch7.tile.t512"></span></label>
+      </div>
+      <label class="rng"><span data-i18n="ch7.ctl.spd"></span><input type="range" id="c7Spd" min="0" max="4800" step="400" value="3600"><output id="c7Spdo" for="c7Spd"></output></label>
+      <label class="rng"><span data-i18n="ch7.ctl.skew"></span><input type="range" id="c7Skew" min="0" max="3" step="1" value="0"><output id="c7Skewo" for="c7Skew"></output></label>
+      <label class="chk"><input type="checkbox" id="c7Oop"><span data-i18n="ch7.ctl.oop"></span></label>
+    </div>
+    <canvas class="cv" id="c7Cv" role="img" data-i18n-aria="ch7.cv.aria"></canvas>
+    <div class="legend">
+      <span><i style="background:var(--green)"></i><span data-i18n="ch7.leg.ready"></span></span>
+      <span><i style="background:var(--gold)"></i><span data-i18n="ch7.leg.pend"></span></span>
+      <span><i style="background:var(--red)"></i><span data-i18n="ch7.leg.chk"></span></span>
+    </div>
+    <div class="read">
+      <div><span data-i18n="ch7.read.vis"></span><b id="c7Vis" class="c"></b></div>
+      <div><span data-i18n="ch7.read.cap"></span><b id="c7Cap" class="g"></b></div>
+      <div><span data-i18n="ch7.read.cb"></span><b id="c7Cb" class="r"></b></div>
+      <div><span data-i18n="ch7.read.pk"></span><b id="c7Pk" class="v"></b></div>
+    </div>
+    <p class="say" id="c7Say" aria-live="polite"></p>
+  </figure>

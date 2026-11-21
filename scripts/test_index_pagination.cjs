@@ -63,6 +63,11 @@ for (const s of w.KNOWLEDGE_ESSAYS) {
   if (!pg) fail(`essay slug not registered: ${s}`);
   if (pg.status !== 'live') fail(`essay is not live: ${s}`);
 }
+for (const pg of w.KNOWLEDGE_PAGES) {
+  if (pg.status === 'live' && !/^\d{4}-\d{2}-\d{2}$/.test(pg.created || '')) {
+    fail(`live page missing valid YYYY-MM-DD created date: ${pg.slug} (${pg.created})`);
+  }
+}
 // scarcity-moves has had an English edition since 8c6cff39, so no essay is single-language now.
 if (!fs.existsSync(path.join(__dirname, '..', 'demos/scarcity-moves/copy.en.js'))) fail('scarcity-moves has no copy.en.js');
 if (w.KNOWLEDGE_PAGES.find((p) => p.slug === 'scarcity-moves').languages) {
@@ -91,6 +96,8 @@ const required = [
   ['essay section', "var reads = node('section', 'essays');"],
   ['essay section is labelled', "reads.setAttribute('aria-labelledby', 'essaysTitle');"],
   ['essay cards use the page card', "readsList.appendChild(makeCard(pg, { cat: true, stage: true }));"],
+  ['card creation date pill', "node('time', 'date-badge', pg.created)"],
+  ['essay sort toggle', "sortBox.id = 'essaySort'"],
   ['Chinese-only badge in English mode', "if (lang === 'en' && pg.languages && pg.languages.indexOf('en') === -1)"],
   ['home chip keeps data-cat=all', "var defs = [{ id: 'all' }];"],
   ['site search input', 'id="siteSearch"'],
@@ -144,7 +151,7 @@ const at = (needle) => { const i = home.indexOf(needle); if (i < 0) fail(`render
 if (!(at('featured.forEach') < at("node('section', 'essays')") && at("node('section', 'essays')") < at("node('section', 'entrances')"))) {
   fail('long reads must sit between the featured grid and the entrances');
 }
-for (const key of ['siteSearchBoth', 'conceptBadge', 'conceptIn', 'conceptInAtlas', 'essaysTitle', 'essaysSub', 'onlyZh']) {
+for (const key of ['siteSearchBoth', 'conceptBadge', 'conceptIn', 'conceptInAtlas', 'essaysTitle', 'essaysSub', 'essaySortLabel', 'essaySortDefault', 'essaySortNewest', 'onlyZh']) {
   if ((html.match(new RegExp(key + ':', 'g')) || []).length < 2) fail(`string ${key} must exist in zh and en`);
 }
 console.log('index homepage contract: ok');

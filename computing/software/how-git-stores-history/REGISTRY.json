@@ -1,0 +1,359 @@
+{
+  "slug": "how-git-stores-history",
+  "path": "computing/software/how-git-stores-history/",
+  "category": "computing",
+  "subtopic": "software",
+  "stage": "university",
+  "title": {
+    "zh": "Git 如何存下全部历史",
+    "en": "How Git Stores All History"
+  },
+  "desc": {
+    "zh": "每次敲下 git add 和 git commit，Git 并没有在 .git/ 里存一叠补丁，而是把整棵目录树写成了不可变的内容寻址对象。这篇按 Git 2.56.0 的真实字节格式与源码文档，从一条 git commit 往下追：.git 目录地图，blob 头与 SHA-1/SHA-256，tree 的二进制排布与子树共享，commit 有向无环图，index 的 stat 缓存与 Racy Git，分支、HEAD 与 reflog 的垃圾回收边界，Myers diff 与三方合并，packfile 的 COPY/INSERT 增量字节码与扇出索引，协议 v2 与部分克隆，以及 reftable、SHA-256 过渡和稀疏索引。九个可动手模型都在页面里重写算法，并与本机真实的 git 2.56.0 逐项对过数。",
+    "en": "Every time you run git add and git commit, Git does not store a stack of patches inside .git/—it writes an entire directory snapshot as immutable, content-addressed objects. Following Git 2.56.0 byte formats and primary documentation, this essay traces one commit all the way down: the .git/ map, blob headers and SHA-1/SHA-256, binary tree sorting and subtree sharing, the commit DAG, the index stat cache and Racy Git, refs, HEAD and reflog reachability, Myers diff and 3-way merge, packfile COPY/INSERT delta opcodes and fanout indices, wire protocol v2 and partial clones, and the reftable/SHA-256/sparse-index frontier. Nine hands-on models run the real algorithms rewritten in the page and crosschecked item by item against git 2.56.0."
+  },
+  "tags": [
+    {
+      "zh": "Git",
+      "en": "Git"
+    },
+    {
+      "zh": "版本控制原理",
+      "en": "Version Control Internals"
+    },
+    {
+      "zh": "内容寻址",
+      "en": "Content Addressing"
+    },
+    {
+      "zh": "软件原理",
+      "en": "How Software Works"
+    },
+    {
+      "zh": "长文",
+      "en": "Long-form Essay"
+    }
+  ],
+  "concepts": [
+    {
+      "id": "git-repository-regions",
+      "title": {
+        "zh": ".git 目录的四个区与 Git 工作流程",
+        "en": "The four regions of a Git repository"
+      },
+      "desc": {
+        "zh": "Git 把仓库分成工作区、暂存区（.git/index）、不可变对象库（.git/objects/）与可变引用（HEAD 与 refs/）；git add 写对象并记入索引，git commit 只向前推动分支指针。",
+        "en": "Git separates the working tree, staging index (.git/index), immutable object store (.git/objects/), and mutable pointers (HEAD and refs/); git add writes blobs and index entries while git commit advances the branch pointer."
+      },
+      "anchor": "#ch1",
+      "aliases": {
+        "zh": [
+          "git 原理",
+          "git 底层原理",
+          "git 是怎么工作的",
+          ".git 目录里有什么",
+          "git add 和 git commit 做了什么",
+          "git 对象数据库"
+        ],
+        "en": [
+          "how git works",
+          "git internals",
+          "what is inside .git",
+          "what happens on git commit",
+          "git object database",
+          "git working tree vs index"
+        ]
+      },
+      "relatedPages": [
+        "how-threejs-draws-a-scene"
+      ]
+    },
+    {
+      "id": "git-blob-content-addressing",
+      "title": {
+        "zh": "Git Blob 对象与内容寻址哈希",
+        "en": "Git blob objects and content addressing"
+      },
+      "desc": {
+        "zh": "Git 在文件内容前拼上 blob <size>\\0，经 SHA-1 或 SHA-256 算出对象 ID，再经 zlib 压缩写入 .git/objects/ 前两位十六进制分片目录。",
+        "en": "Git prepends blob <size>\\0 to file bytes, hashes the buffer with SHA-1 or SHA-256 to obtain its object ID, and stores the zlib-compressed result under a two-hex-char shard directory."
+      },
+      "anchor": "#ch2",
+      "aliases": {
+        "zh": [
+          "git blob",
+          "git 内容寻址",
+          "git 为什么按哈希存文件",
+          ".git/objects 文件夹",
+          "git hash-object",
+          "git sha1 和 sha256"
+        ],
+        "en": [
+          "git blob",
+          "git content addressing",
+          "git object header",
+          "git objects directory",
+          "git hash-object",
+          "git sha1 vs sha256"
+        ]
+      },
+      "relatedPages": [
+        "a-secret-in-public"
+      ]
+    },
+    {
+      "id": "git-tree-snapshots",
+      "title": {
+        "zh": "Git Tree 快照与 Merkle 子树共享",
+        "en": "Git tree snapshots and Merkle subtree sharing"
+      },
+      "desc": {
+        "zh": "tree 对象按排序的二进制条目指代文件名、权限模式与子对象哈希；只改一个文件时，未改动的目录和文件按哈希指针原封不动复用，无需全量拷贝。",
+        "en": "A tree object encodes sorted binary entries mapping modes and filenames to raw 20- or 32-byte object hashes; editing one file mints new trees only along its ancestor path while reusing all unchanged subtrees."
+      },
+      "anchor": "#ch3",
+      "aliases": {
+        "zh": [
+          "git tree 对象",
+          "为什么 git 每次存全量快照却不占空间",
+          "git 快照不是增量",
+          "git 子树共享",
+          "git 默克尔树",
+          "git write-tree"
+        ],
+        "en": [
+          "git tree object",
+          "why git snapshots do not blow up disk space",
+          "git snapshots vs diffs",
+          "git subtree sharing",
+          "git merkle tree",
+          "git write-tree"
+        ]
+      },
+      "relatedPages": [
+        "graph-algorithms"
+      ]
+    },
+    {
+      "id": "git-commit-dag",
+      "title": {
+        "zh": "Commit 对象与不可变提交有向无环图",
+        "en": "Commit objects and the immutable DAG"
+      },
+      "desc": {
+        "zh": "commit 记录根 tree 与 parent 哈希形成不可变 DAG；amend 与 rebase 从不原地改写旧提交，而是生成全新哈希的节点再移动分支引用。",
+        "en": "Commits link root trees and parent hashes into an immutable DAG; amend and rebase never mutate existing commits—they mint newly hashed commits and move branch references."
+      },
+      "anchor": "#ch4",
+      "aliases": {
+        "zh": [
+          "git commit 对象格式",
+          "git 有向无环图",
+          "git rebase 为什么会改变哈希",
+          "git amend 改写历史原理",
+          "git 提交链",
+          "git commit dag"
+        ],
+        "en": [
+          "git commit format",
+          "git commit dag",
+          "why git rebase changes commit hashes",
+          "how git amend rewrites history",
+          "git immutable commits"
+        ]
+      },
+      "relatedPages": [
+        "graph-algorithms"
+      ]
+    },
+    {
+      "id": "git-index-stat-cache",
+      "title": {
+        "zh": "Git 暂存区 stat 缓存与 Racy Git",
+        "en": "Git index stat cache and Racy Git"
+      },
+      "desc": {
+        "zh": ".git/index 把暂存清单与 lstat 元数据缓存存在一起，让 git status 跳过干净文件的磁盘读取；面对同秒原地改写的 Racy Git 竞态则会把缓存大小截零强制重算。",
+        "en": ".git/index pairs staged object IDs with lstat metadata so git status skips reading unchanged files; for same-tick edits (Racy Git), Git zeroes cached size to force content re-hashing."
+      },
+      "anchor": "#ch5",
+      "aliases": {
+        "zh": [
+          "git status 为什么这么快",
+          "git 暂存区原理",
+          ".git/index 文件结构",
+          "racy git",
+          "git stat 缓存",
+          "git 索引文件"
+        ],
+        "en": [
+          "why is git status so fast",
+          "how git index works",
+          "git staging area internals",
+          "racy git",
+          "git stat cache",
+          "git dircache"
+        ]
+      },
+      "relatedPages": []
+    },
+    {
+      "id": "git-refs-head-reflog",
+      "title": {
+        "zh": "分支、HEAD、标签与 reflog 垃圾回收",
+        "en": "Branches, HEAD, tags and reflog GC"
+      },
+      "desc": {
+        "zh": "分支只是 41 字节文件，HEAD 通常是指向分支的符号引用；git reset --hard 移走指针后，本地 logs/HEAD 仍保住旧提交默认 30 天直至 reflog 过期并运行 git gc。",
+        "en": "A branch is a 41-byte file and HEAD is a symbolic ref; after git reset --hard, local .git/logs/HEAD keeps dropped commits alive for 30 days by default until reflog expiry and git gc."
+      },
+      "anchor": "#ch6",
+      "aliases": {
+        "zh": [
+          "git 分支本质是什么",
+          "游离 HEAD",
+          "detached head 是什么",
+          "git reset --hard 怎么恢复",
+          "git reflog 原理",
+          "git gc 垃圾回收"
+        ],
+        "en": [
+          "what is a git branch internally",
+          "detached head",
+          "recover after git reset hard",
+          "how git reflog works",
+          "git garbage collection"
+        ]
+      },
+      "relatedPages": []
+    },
+    {
+      "id": "git-three-way-merge",
+      "title": {
+        "zh": "Myers 差分与三方合并冲突",
+        "en": "Myers diff and three-way merge"
+      },
+      "desc": {
+        "zh": "git diff 按 Eugene Myers 最短编辑脚本现算行差异；git merge 先在提交图找共同祖先 B，对比 B→Ours 与 B→Theirs，在重叠修改处产出冲突标记。",
+        "en": "git diff computes Eugene Myers's shortest edit script lazily from snapshots; git merge finds the merge base B on the commit DAG, diffs B→Ours and B→Theirs, and marks overlapping changes."
+      },
+      "anchor": "#ch7",
+      "aliases": {
+        "zh": [
+          "git diff 算法",
+          "myers diff",
+          "git 三方合并",
+          "git 合并冲突怎么来的",
+          "merge base 共同祖先",
+          "git ort 合并策略"
+        ],
+        "en": [
+          "git diff algorithm",
+          "myers diff",
+          "git three way merge",
+          "how git merge conflicts work",
+          "git merge base",
+          "git ort merge"
+        ]
+      },
+      "relatedPages": []
+    },
+    {
+      "id": "git-packfile-delta",
+      "title": {
+        "zh": "Packfile 增量压缩与 .idx 扇出索引",
+        "en": "Packfile delta compression and .idx fanout"
+      },
+      "desc": {
+        "zh": "打包时 Git 按类型、路径与体积降序排列对象，在滑动窗口里将旧版编码为回指新版的 COPY/INSERT 增量流，并以 256 桶扇出表 .idx 快速定位。",
+        "en": "During packing, Git sorts objects by type, path hash, and descending size, encodes older revisions as COPY/INSERT deltas against newer bases via a sliding window, and indexes them with a 256-bucket fanout .idx."
+      },
+      "anchor": "#ch8",
+      "aliases": {
+        "zh": [
+          "git packfile",
+          "git 增量压缩",
+          "git 打包原理",
+          ".pack 和 .idx 文件",
+          "git delta 压缩",
+          "git verify-pack"
+        ],
+        "en": [
+          "git packfile",
+          "git delta compression",
+          "git pack and idx format",
+          "git ofs delta",
+          "git sliding window pack",
+          "git idx fanout table"
+        ]
+      },
+      "relatedPages": [
+        "what-a-drive-is-made-of"
+      ]
+    },
+    {
+      "id": "git-protocol-partial-clone",
+      "title": {
+        "zh": "协议 v2、浅克隆与部分克隆",
+        "en": "Wire protocol v2, shallow & partial clones"
+      },
+      "desc": {
+        "zh": "git fetch 通过协议 v2 的 ls-refs 与 have/want 协商传输缺失瘦包；--depth 截断历史，而 --filter=blob:none 保留全图拓扑并按需从 promisor 远端拉取大文件。",
+        "en": "git fetch uses wire protocol v2 ls-refs and have/want negotiation to stream thin packs; --depth truncates history while --filter=blob:none preserves full graph topology and fetches blobs lazily from promisor remotes."
+      },
+      "anchor": "#ch9",
+      "aliases": {
+        "zh": [
+          "git clone 底层过程",
+          "git 浅克隆原理",
+          "git 部分克隆",
+          "filter=blob:none",
+          "git 协议 v2",
+          "git fsck 检查什么"
+        ],
+        "en": [
+          "how git clone works over the network",
+          "git shallow clone",
+          "git partial clone",
+          "filter blob none",
+          "git wire protocol v2",
+          "what does git fsck check"
+        ]
+      },
+      "relatedPages": []
+    },
+    {
+      "id": "git-reftable-sha256-frontier",
+      "title": {
+        "zh": "Reftable 引用后端、SHA-256 与稀疏索引前沿",
+        "en": "Reftable backend, SHA-256 transition & sparse index"
+      },
+      "desc": {
+        "zh": "截至 Git 2.56.0（2026 年 11 月），prefix 压缩的 reftable 引用后端已成熟并列入 Git 3.0 默认清单，scalar 与锥形稀疏索引支撑超大仓，而 SHA-1/SHA-256 互通仍处于实验阶段。",
+        "en": "As of Git 2.56.0 (November 2026), the prefix-compressed reftable backend is mature and slated for Git 3.0 defaults alongside scalar sparse indexing, while SHA-1/SHA-256 repo interoperability remains incomplete."
+      },
+      "anchor": "#ch10",
+      "aliases": {
+        "zh": [
+          "git reftable",
+          "git 什么时候换 sha256",
+          "git 3.0 计划",
+          "git 稀疏检出",
+          "git scalar 大仓",
+          "compatObjectFormat"
+        ],
+        "en": [
+          "git reftable",
+          "git sha256 migration",
+          "git 3.0 breaking changes",
+          "git sparse checkout cone mode",
+          "git scalar monorepo",
+          "compatObjectFormat"
+        ]
+      },
+      "relatedPages": [
+        "what-a-drive-is-made-of"
+      ]
+    }
+  ]
+}

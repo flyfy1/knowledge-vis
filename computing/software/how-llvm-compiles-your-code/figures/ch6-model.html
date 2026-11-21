@@ -1,0 +1,32 @@
+<figure class="lab" id="lab-ch6-model">
+    <h3 data-i18n="ch6.model.title"></h3>
+    <p class="how" data-i18n="ch6.model.how"></p>
+    <div class="ctl">
+      <div class="seg" role="radiogroup" data-i18n-aria="ch6.ctl.scen">
+        <span class="lbl" data-i18n="ch6.ctl.scen"></span>
+        <label><input type="radio" name="c6Scen" value="overflow" checked><span data-i18n="ch6.scen.overflow"></span></label>
+        <label><input type="radio" name="c6Scen" value="null"><span data-i18n="ch6.scen.null"></span></label>
+      </div>
+      <div class="seg" role="radiogroup" data-i18n-aria="ch6.ctl.mode">
+        <span class="lbl" data-i18n="ch6.ctl.mode"></span>
+        <label><input type="radio" name="c6Mode" value="nsw" checked><span data-i18n="ch6.mode.nsw"></span></label>
+        <label><input type="radio" name="c6Mode" value="wrapv"><span data-i18n="ch6.mode.wrapv"></span></label>
+      </div>
+      <div class="seg" role="radiogroup" data-i18n-aria="ch6.ctl.opt">
+        <span class="lbl" data-i18n="ch6.ctl.opt"></span>
+        <label><input type="radio" name="c6Opt" value="O0"><span data-i18n="ch6.opt.O0"></span></label>
+        <label><input type="radio" name="c6Opt" value="O2" checked><span data-i18n="ch6.opt.O2"></span></label>
+      </div>
+      <label class="rng"><span data-i18n="ch6.ctl.x"></span><input type="range" id="c6X" min="2147483640" max="2147483647" step="1" value="2147483647"><output id="c6Xo" for="c6X"></output></label>
+      <label class="chk"><input type="checkbox" id="c6Null" checked><span data-i18n="ch6.ctl.pnull"></span></label>
+    </div>
+    <canvas class="cv short" id="c6Cv" role="img" data-i18n-aria="ch6.cv.aria"></canvas>
+    <div class="codebox"><div class="ctitle" data-i18n="ch6.code.title"></div><pre id="c6Ir"></pre></div>
+    <div class="read">
+      <div><span data-i18n="ch6.read.hw"></span><b id="c6Hw" class="c"></b></div>
+      <div><span data-i18n="ch6.read.opt"></span><b id="c6Res" class="g"></b></div>
+      <div><span data-i18n="ch6.read.poison"></span><b id="c6Poi" class="r"></b></div>
+      <div><span data-i18n="ch6.read.div"></span><b id="c6Div" class="v"></b></div>
+    </div>
+    <p class="say" id="c6Say" aria-live="polite"></p>
+  </figure>

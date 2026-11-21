@@ -1,0 +1,361 @@
+{
+  "slug": "how-v8-runs-javascript",
+  "path": "computing/software/how-v8-runs-javascript/",
+  "category": "computing",
+  "subtopic": "software",
+  "stage": "university",
+  "title": {
+    "zh": "V8 是怎么跑起一段 JavaScript 的",
+    "en": "How V8 Runs JavaScript"
+  },
+  "desc": {
+    "zh": "在终端敲下 node bench.js，动态类型的 JavaScript 没有提前编译成机器码，却能在热循环里跑出接近 C 的速度。这篇对照宿主机 V8 14.6.202.34-node.40（Node.js v26.12.1）的真实字节码、调试输出与参数阈值，从头拆解这条流水线：四级 JIT 与懒解析、指针标签与压缩、隐藏类与内联缓存、Ignition 累加器字节码、投机去优化、ElementsKind 单向格、Orinoco 分代垃圾回收、微任务接缝，以及 2026 年 11 月的前沿。",
+    "en": "Run node bench.js in a terminal and dynamically typed JavaScript, compiled with no ahead-of-time type annotations, hits near-C speed inside hot loops. Checked against the host V8 14.6.202.34-node.40 (Node.js v26.12.1) bytecode, native debug prints, and CLI thresholds, this essay traces the whole pipeline: the four JIT tiers and lazy parsing, pointer tagging and compression, hidden classes and inline caches, Ignition's accumulator bytecode, speculative deoptimization, the one-way ElementsKind lattice, Orinoco generational GC, the microtask seam, and the November 2026 frontier."
+  },
+  "tags": [
+    {
+      "zh": "V8 引擎",
+      "en": "V8 Engine"
+    },
+    {
+      "zh": "JavaScript",
+      "en": "JavaScript"
+    },
+    {
+      "zh": "即时编译 JIT",
+      "en": "JIT Compilation"
+    },
+    {
+      "zh": "垃圾回收 GC",
+      "en": "Garbage Collection"
+    },
+    {
+      "zh": "软件原理",
+      "en": "How Software Works"
+    },
+    {
+      "zh": "长文",
+      "en": "Long-form Essay"
+    }
+  ],
+  "concepts": [
+    {
+      "id": "v8-tiered-pipeline",
+      "title": {
+        "zh": "V8 四级执行管线与懒解析",
+        "en": "V8 4-tier execution pipeline & lazy parsing"
+      },
+      "desc": {
+        "zh": "V8 从解析器和 Ignition 字节码起步，只在函数变热后才依次升入 Sparkplug、Maglev 与 TurboFan/Turboshaft，冷函数靠预解析跳过建树。",
+        "en": "V8 begins with PreParser and Ignition bytecode, stepping up through Sparkplug, Maglev, and TurboFan/Turboshaft only after functions prove hot."
+      },
+      "anchor": "#ch1",
+      "aliases": {
+        "zh": [
+          "V8 是怎么工作的",
+          "V8 引擎",
+          "Ignition",
+          "Sparkplug",
+          "Maglev",
+          "TurboFan",
+          "懒解析",
+          "即时编译"
+        ],
+        "en": [
+          "how V8 works",
+          "how V8 runs JavaScript",
+          "V8 tiered compilation",
+          "lazy parsing preparser",
+          "Sparkplug baseline JIT",
+          "Maglev JIT"
+        ]
+      },
+      "relatedPages": [
+        "how-a-cpu-runs-a-program"
+      ]
+    },
+    {
+      "id": "v8-pointer-tagging-compression",
+      "title": {
+        "zh": "指针标签、Smi 与指针压缩",
+        "en": "Pointer tagging, Smi & pointer compression"
+      },
+      "desc": {
+        "zh": "V8 用字最低比特区分直接整数 Smi 与堆指针，Chrome 借 4 GiB 笼做 32 位压缩将对象减半，浮点数则装箱为 HeapNumber。",
+        "en": "V8 marks every tagged word's low bit to separate inline Smis from heap pointers, shrinking words to 32-bit offsets inside Chrome's 4 GiB cage while boxing floats as HeapNumber."
+      },
+      "anchor": "#ch2",
+      "aliases": {
+        "zh": [
+          "指针标签",
+          "指针压缩",
+          "Smi 小整数",
+          "HeapNumber 装箱",
+          "JS 数值在内存里怎么存",
+          "4 GiB 堆上限"
+        ],
+        "en": [
+          "pointer tagging",
+          "pointer compression",
+          "V8 Smi",
+          "HeapNumber boxing",
+          "V8 4GB cage",
+          "tagged pointer JavaScript"
+        ]
+      },
+      "relatedPages": [
+        "how-a-cpu-does-math",
+        "how-cpu-caches-work"
+      ]
+    },
+    {
+      "id": "v8-hidden-classes-map",
+      "title": {
+        "zh": "隐藏类（Map）、Slack 追踪与字典模式",
+        "en": "Hidden classes (Maps), slack tracking & dictionary mode"
+      },
+      "desc": {
+        "zh": "同键序对象共享同一张 Map 把属性名换成固定字节偏移；乱序会令转换树分叉，第 7 次构造完成 Slack 缩容，delete 则跌入字典模式。",
+        "en": "Objects sharing property order share one Map of fixed byte offsets; reordering forks the transition tree, constructor slack trims on call 7, and delete falls back to dictionary mode."
+      },
+      "anchor": "#ch3",
+      "aliases": {
+        "zh": [
+          "隐藏类",
+          "V8 隐藏类",
+          "V8 Map",
+          "属性顺序影响性能",
+          "delete 属性为什么慢",
+          "slack tracking",
+          "字典模式"
+        ],
+        "en": [
+          "hidden class",
+          "V8 Map transition tree",
+          "in-object slack tracking",
+          "why delete property is slow in JS",
+          "dictionary mode V8",
+          "JavaScript object shapes"
+        ]
+      },
+      "relatedPages": [
+        "how-cpu-caches-work"
+      ]
+    },
+    {
+      "id": "v8-inline-caches",
+      "title": {
+        "zh": "内联缓存（LoadIC）：单态、多态与超态",
+        "en": "Inline caches (LoadIC): monomorphic, polymorphic & megamorphic"
+      },
+      "desc": {
+        "zh": "每个属性读取点在 FeedbackVector 槽里缓存最多 4 张 Map 的偏移；超出 4 种形状就落入全局哈希桩进入慢速超态。",
+        "en": "Each property site caches up to 4 Map offsets inside its FeedbackVector slot; seeing a 5th shape spills into the global megamorphic stub cache."
+      },
+      "anchor": "#ch4",
+      "aliases": {
+        "zh": [
+          "内联缓存",
+          "单态 多态 超态",
+          "LoadIC",
+          "monomorphic polymorphic megamorphic",
+          "为什么超过 4 种对象形状变慢"
+        ],
+        "en": [
+          "inline cache",
+          "V8 LoadIC",
+          "monomorphic vs polymorphic vs megamorphic",
+          "megamorphic stub cache",
+          "FeedbackVector IC slot"
+        ]
+      },
+      "relatedPages": [
+        "how-a-cpu-guesses-ahead"
+      ]
+    },
+    {
+      "id": "v8-ignition-bytecode",
+      "title": {
+        "zh": "Ignition 累加器字节码与 FeedbackVector",
+        "en": "Ignition accumulator bytecode & FeedbackVector"
+      },
+      "desc": {
+        "zh": "Ignition 以隐式累加器 acc 缩减字节码体积，同时把运行时观测到的 Map 与算术类型写入并行的 FeedbackVector 供给后续 JIT。",
+        "en": "Ignition keeps bytecode compact with an implicit accumulator register while streaming live Map and arithmetic types into FeedbackVector slots."
+      },
+      "anchor": "#ch5",
+      "aliases": {
+        "zh": [
+          "V8 字节码",
+          "Ignition 解释器",
+          "累加器虚拟机",
+          "FeedbackVector",
+          "反馈向量"
+        ],
+        "en": [
+          "V8 bytecode",
+          "Ignition bytecode interpreter",
+          "accumulator register VM",
+          "FeedbackVector slots",
+          "GetNamedProperty bytecode"
+        ]
+      },
+      "relatedPages": [
+        "how-a-cpu-runs-a-program"
+      ]
+    },
+    {
+      "id": "v8-deoptimization-osr",
+      "title": {
+        "zh": "投机优化、OSR 与去优化退回",
+        "en": "Speculative optimization, OSR & deoptimization bailout"
+      },
+      "desc": {
+        "zh": "Maglev 与 TurboFan 靠 CheckMaps 与 CheckSmi 守卫裸奔；一旦条件打破就触发 Eager Deopt，在栈上重建 Ignition 帧安全退回。",
+        "en": "Maglev and TurboFan emit CheckMaps and CheckSmi guards around fast machine code, reconstructing exact Ignition stack frames on any bailout."
+      },
+      "anchor": "#ch6",
+      "aliases": {
+        "zh": [
+          "去优化",
+          "V8 去优化",
+          "OSR 栈上替换",
+          "CheckMaps",
+          "deopt bailout",
+          "去优化风暴"
+        ],
+        "en": [
+          "V8 deoptimization",
+          "eager deopt bailout",
+          "on-stack replacement OSR",
+          "CheckMaps CheckSmi guard",
+          "deopt loop thrashing"
+        ]
+      },
+      "relatedPages": [
+        "how-a-cpu-guesses-ahead"
+      ]
+    },
+    {
+      "id": "v8-elements-kind",
+      "title": {
+        "zh": "数组 ElementsKind 单向转换格",
+        "en": "Array ElementsKind one-way lattice"
+      },
+      "desc": {
+        "zh": "JS 数组底层按 PACKED_SMI 到 HOLEY_ELEMENTS 与字典单向退化；产生空洞或混入异类后，缩回 length 也无法回升。",
+        "en": "V8 tracks array backing layouts from PACKED_SMI to HOLEY_ELEMENTS and dictionaries along a strictly one-way lattice that never upgrades back."
+      },
+      "anchor": "#ch7",
+      "aliases": {
+        "zh": [
+          "ElementsKind",
+          "PACKED_SMI_ELEMENTS",
+          "HOLEY_ELEMENTS",
+          "JS 数组空洞为什么慢",
+          "稀疏数组退化"
+        ],
+        "en": [
+          "ElementsKind",
+          "PACKED_SMI_ELEMENTS",
+          "HOLEY_ELEMENTS",
+          "why holey arrays are slow",
+          "V8 array lattice"
+        ]
+      },
+      "relatedPages": [
+        "how-cpu-caches-work"
+      ]
+    },
+    {
+      "id": "v8-orinoco-gc",
+      "title": {
+        "zh": "Orinoco 分代与并发垃圾回收",
+        "en": "Orinoco generational & concurrent garbage collection"
+      },
+      "desc": {
+        "zh": "新生代靠半区复制 Scavenger（或 MinorMS）实现亚毫秒回收；老生代靠三色并发标记与写屏障清理，逼到上限才全停顿整理。",
+        "en": "NewSpace runs sub-millisecond Scavenger copies (or MinorMS), while OldSpace uses concurrent tri-color marking with write barriers unless promotion forces a Major Mark-Compact."
+      },
+      "anchor": "#ch8",
+      "aliases": {
+        "zh": [
+          "V8 垃圾回收",
+          "Orinoco GC",
+          "Scavenger",
+          "MinorMS",
+          "三色标记",
+          "写屏障",
+          "JS 为什么突然卡顿 GC"
+        ],
+        "en": [
+          "V8 garbage collection",
+          "Orinoco GC",
+          "V8 Scavenger",
+          "MinorMS",
+          "tri-color marking write barrier",
+          "Major Mark-Compact pause"
+        ]
+      },
+      "relatedPages": []
+    },
+    {
+      "id": "v8-eventloop-microtasks",
+      "title": {
+        "zh": "事件循环与微任务检查点接缝",
+        "en": "Event loop & microtask checkpoint seam"
+      },
+      "desc": {
+        "zh": "V8 只拥有调用栈和微任务队列；每轮同步结束必须彻底排空 nextTick 与 Promise 微任务才把控制权交还宿主宏任务。",
+        "en": "V8 owns only the call stack and MicrotaskQueue, draining every nextTick and Promise job at MicrotaskCheckpoint before yielding back to host macrotasks."
+      },
+      "anchor": "#ch9",
+      "aliases": {
+        "zh": [
+          "JS 事件循环",
+          "微任务和宏任务执行顺序",
+          "MicrotaskCheckpoint",
+          "Promise 饥饿",
+          "nextTick 和 setImmediate 顺序"
+        ],
+        "en": [
+          "JavaScript event loop",
+          "microtask vs macrotask order",
+          "MicrotaskCheckpoint",
+          "microtask starvation",
+          "nextTick vs Promise vs setImmediate"
+        ]
+      },
+      "relatedPages": []
+    },
+    {
+      "id": "v8-turboshaft-sandbox-jspi-frontier",
+      "title": {
+        "zh": "Turboshaft、V8 堆沙箱与 WebAssembly JSPI 前沿",
+        "en": "Turboshaft, V8 Heap Sandbox & WebAssembly JSPI frontier"
+      },
+      "desc": {
+        "zh": "截至 2026 年 11 月的 V8 前沿演进：Turboshaft 替代 Sea of Nodes、V8 堆沙箱、WebAssembly JSPI 交付及 Turbolev/MinorMS 实验路标。",
+        "en": "V8's November 2026 frontier: Turboshaft replacing Sea of Nodes, the V8 Heap Sandbox, WebAssembly JSPI shipping, and experimental Turbolev and MinorMS flags."
+      },
+      "anchor": "#ch10",
+      "aliases": {
+        "zh": [
+          "Turboshaft",
+          "Turbolev",
+          "V8 堆沙箱",
+          "WebAssembly JSPI",
+          "Sea of Nodes"
+        ],
+        "en": [
+          "Turboshaft IR",
+          "Turbolev",
+          "V8 Heap Sandbox",
+          "WebAssembly JSPI",
+          "leaving the Sea of Nodes"
+        ]
+      },
+      "relatedPages": []
+    }
+  ]
+}

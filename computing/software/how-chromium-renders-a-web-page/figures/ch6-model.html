@@ -1,0 +1,23 @@
+<figure class="lab" id="lab-ch6-model">
+    <h3 data-i18n="ch6.model.title"></h3>
+    <p class="how" data-i18n-html="ch6.model.how"></p>
+    <div class="ctl">
+      <div class="seg" role="radiogroup" data-i18n-aria="ch6.ctl.badge">
+        <span class="lbl" data-i18n="ch6.ctl.badge"></span>
+        <label><input type="radio" name="c6Badge" value="static"><span data-i18n="ch6.badge.static"></span></label>
+        <label><input type="radio" name="c6Badge" value="promotedBelow" checked><span data-i18n="ch6.badge.below"></span></label>
+        <label><input type="radio" name="c6Badge" value="promotedAbove"><span data-i18n="ch6.badge.above"></span></label>
+      </div>
+      <label class="rng"><span data-i18n="ch6.ctl.cards"></span><input type="range" id="c6Cards" min="4" max="36" step="2" value="20"><output id="c6Cardso" for="c6Cards"></output></label>
+      <label class="rng"><span data-i18n="ch6.ctl.size"></span><input type="range" id="c6Size" min="160" max="480" step="40" value="280"><output id="c6Sizeo" for="c6Size"></output></label>
+      <label class="chk"><input type="checkbox" id="c6Overlap" checked><span data-i18n="ch6.ctl.overlap"></span></label>
+    </div>
+    <canvas class="cv" id="c6Cv" role="img" data-i18n-aria="ch6.cv.aria"></canvas>
+    <div class="read">
+      <div><span data-i18n="ch6.read.chk"></span><b id="c6Chk" class="c"></b></div>
+      <div><span data-i18n="ch6.read.lay"></span><b id="c6Lay" class="r"></b></div>
+      <div><span data-i18n="ch6.read.vram"></span><b id="c6Vram" class="g"></b></div>
+      <div><span data-i18n="ch6.read.sav"></span><b id="c6Sav" class="n"></b></div>
+    </div>
+    <p class="say" id="c6Say" aria-live="polite"></p>
+  </figure>

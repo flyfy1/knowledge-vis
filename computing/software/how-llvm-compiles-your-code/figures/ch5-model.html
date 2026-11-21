@@ -1,0 +1,29 @@
+<figure class="lab" id="lab-ch5-model">
+    <h3 data-i18n="ch5.model.title"></h3>
+    <p class="how" data-i18n="ch5.model.how"></p>
+    <div class="ctl">
+      <label class="rng"><span data-i18n="ch5.ctl.n"></span><input type="range" id="c5N" min="4" max="256" step="1" value="20"><output id="c5No" for="c5N"></output></label>
+      <div class="seg" role="radiogroup" data-i18n-aria="ch5.ctl.alias">
+        <span class="lbl" data-i18n="ch5.ctl.alias"></span>
+        <label><input type="radio" name="c5Alias" value="unknown" checked><span data-i18n="ch5.alias.unknown"></span></label>
+        <label><input type="radio" name="c5Alias" value="restrict"><span data-i18n="ch5.alias.restrict"></span></label>
+        <label><input type="radio" name="c5Alias" value="tbaa"><span data-i18n="ch5.alias.tbaa"></span></label>
+      </div>
+      <div class="seg" role="radiogroup" data-i18n-aria="ch5.ctl.vf">
+        <span class="lbl" data-i18n="ch5.ctl.vf"></span>
+        <label><input type="radio" name="c5Vf" value="1"><span data-i18n="ch5.vf.1"></span></label>
+        <label><input type="radio" name="c5Vf" value="4" checked><span data-i18n="ch5.vf.4"></span></label>
+        <label><input type="radio" name="c5Vf" value="8"><span data-i18n="ch5.vf.8"></span></label>
+      </div>
+      <label class="chk"><input type="checkbox" id="c5Licm" checked><span data-i18n="ch5.ctl.licm"></span></label>
+      <label class="chk"><input type="checkbox" id="c5Ov"><span data-i18n="ch5.ctl.ov"></span></label>
+    </div>
+    <canvas class="cv" id="c5Cv" role="img" data-i18n-aria="ch5.cv.aria"></canvas>
+    <div class="read">
+      <div><span data-i18n="ch5.read.reloads"></span><b id="c5Rel" class="r"></b></div>
+      <div><span data-i18n="ch5.read.vec"></span><b id="c5Vec" class="c"></b></div>
+      <div><span data-i18n="ch5.read.tail"></span><b id="c5Tail" class="g"></b></div>
+      <div><span data-i18n="ch5.read.ops"></span><b id="c5Ops" class="n"></b></div>
+    </div>
+    <p class="say" id="c5Say" aria-live="polite"></p>
+  </figure>

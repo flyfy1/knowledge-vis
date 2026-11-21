@@ -1,0 +1,23 @@
+<figure class="lab" id="lab-ch7-model">
+  <h3 data-i18n="ch7.model.title"></h3>
+  <p class="how" data-i18n-html="ch7.model.how"></p>
+  <div class="ctl">
+    <label class="rng"><span data-i18n="ch7.ctl.rate"></span><input type="range" id="c7Rate" min="1" max="20" step="1" value="5"><output id="c7Rateo" for="c7Rate"></output></label>
+    <label class="rng"><span data-i18n="ch7.ctl.burst"></span><input type="range" id="c7Burst" min="0" max="12" step="1" value="4"><output id="c7Bursto" for="c7Burst"></output></label>
+    <label class="rng"><span data-i18n="ch7.ctl.spike"></span><input type="range" id="c7Spike" min="1" max="15" step="1" value="8"><output id="c7Spikeo" for="c7Spike"></output></label>
+    <label class="chk"><input type="checkbox" id="c7Nodelay"><span data-i18n="ch7.ctl.nodelay"></span></label>
+  </div>
+  <canvas class="cv" id="c7Cv" role="img" data-i18n-aria="ch7.cv.aria"></canvas>
+  <div class="legend">
+    <span><i style="background:var(--green)"></i><span data-i18n="ch7.leg.imm"></span></span>
+    <span><i style="background:var(--gold)"></i><span data-i18n="ch7.leg.del"></span></span>
+    <span><i style="background:var(--red)"></i><span data-i18n="ch7.leg.rej"></span></span>
+  </div>
+  <div class="read">
+    <div><span data-i18n="ch7.read.imm"></span><b id="c7Imm" class="n"></b></div>
+    <div><span data-i18n="ch7.read.del"></span><b id="c7Del" class="g"></b></div>
+    <div><span data-i18n="ch7.read.rej"></span><b id="c7Rej" class="r"></b></div>
+    <div><span data-i18n="ch7.read.wait"></span><b id="c7Wait" class="c"></b></div>
+  </div>
+  <p class="say" id="c7Say" aria-live="polite"></p>
+</figure>

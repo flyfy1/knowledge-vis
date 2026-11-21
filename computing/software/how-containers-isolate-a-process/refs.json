@@ -1,0 +1,122 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "how-containers-isolate-a-process",
+ "refs": [
+  {
+   "from": "hero.note",
+   "to": "how-the-os-talks-to-hardware",
+   "anchor": null
+  },
+  {
+   "from": "hero.note",
+   "to": "how-virtual-memory-works",
+   "anchor": null
+  },
+  {
+   "from": "dg.stack.cap",
+   "to": "how-the-os-talks-to-hardware",
+   "anchor": "ch1"
+  },
+  {
+   "from": "ch1.p3",
+   "to": "how-virtual-memory-works",
+   "anchor": "ch11"
+  },
+  {
+   "from": "ch3.p1",
+   "to": "how-virtual-memory-works",
+   "anchor": "ch9"
+  },
+  {
+   "from": "ch5.p1",
+   "to": "how-a-nic-moves-packets",
+   "anchor": "ch3"
+  },
+  {
+   "from": "ch5.p2",
+   "to": "how-a-nic-moves-packets",
+   "anchor": "ch10"
+  },
+  {
+   "from": "ch7.p1",
+   "to": "how-the-os-talks-to-hardware",
+   "anchor": "ch10"
+  },
+  {
+   "from": "ch7.p2",
+   "to": "how-virtual-memory-works",
+   "anchor": "ch7"
+  },
+  {
+   "from": "ch8.p1",
+   "to": "how-the-os-talks-to-hardware",
+   "anchor": "ch2"
+  },
+  {
+   "from": "ch11.links",
+   "to": "how-the-os-talks-to-hardware",
+   "anchor": null
+  },
+  {
+   "from": "ch11.links",
+   "to": "how-virtual-memory-works",
+   "anchor": null
+  },
+  {
+   "from": "ch11.links",
+   "to": "how-a-nic-moves-packets",
+   "anchor": null
+  }
+ ],
+ "backlinks": [],
+ "related": [
+  "how-the-os-talks-to-hardware",
+  "how-virtual-memory-works",
+  "how-a-nic-moves-packets"
+ ],
+ "bindings": [
+  "ch1.cBoot",
+  "ch1.mBoot",
+  "ch1.vmBoot",
+  "ch1.cTotal8",
+  "ch1.vmTotal8",
+  "ch2.img",
+  "ch2.shared",
+  "ch2.stored2",
+  "ch2.naive2",
+  "ch2.tenShared",
+  "ch2.tenStored",
+  "ch2.tenNaive",
+  "ch3.modelSize",
+  "ch3.pkgSize",
+  "ch3.splitTotal",
+  "ch3.sameTotal",
+  "ch4.nsTotal",
+  "ch4.hostPid",
+  "ch4.uidBase",
+  "ch4.hostProcs",
+  "ch4.ctProcs",
+  "ch5.vxlan",
+  "ch5.mtu",
+  "ch5.bridgeNs",
+  "ch5.ebpfNs",
+  "ch6.quota",
+  "ch6.period",
+  "ch6.burn4",
+  "ch6.freeze4",
+  "ch6.rpc4",
+  "ch6.freeze10",
+  "ch7.max",
+  "ch7.high",
+  "ch7.reclaimed",
+  "ch7.psi",
+  "ch8.totalSys",
+  "ch8.allowedSys",
+  "ch8.blockedSys",
+  "ch9.grace",
+  "ch9.exitKill",
+  "ch9.zombies5",
+  "ch10.fcMem",
+  "ch10.fcBoot"
+ ]
+}

@@ -1,0 +1,86 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "how-git-stores-history",
+ "refs": [
+  {
+   "from": "hero.note",
+   "to": "a-secret-in-public",
+   "anchor": "ch6"
+  },
+  {
+   "from": "hero.note",
+   "to": "graph-algorithms",
+   "anchor": "step0"
+  },
+  {
+   "from": "ch2.p3",
+   "to": "a-secret-in-public",
+   "anchor": "ch6"
+  },
+  {
+   "from": "ch4.p2",
+   "to": "graph-algorithms",
+   "anchor": "step0"
+  },
+  {
+   "from": "ch9.p3",
+   "to": "what-a-drive-is-made-of",
+   "anchor": "ch5"
+  },
+  {
+   "from": "ch11.links",
+   "to": "a-secret-in-public",
+   "anchor": "ch6"
+  },
+  {
+   "from": "ch11.links",
+   "to": "graph-algorithms",
+   "anchor": "step0"
+  },
+  {
+   "from": "ch11.links",
+   "to": "what-a-drive-is-made-of",
+   "anchor": "ch6"
+  },
+  {
+   "from": "ch11.links",
+   "to": "how-threejs-draws-a-scene",
+   "anchor": null
+  }
+ ],
+ "backlinks": [],
+ "related": [
+  "how-threejs-draws-a-scene",
+  "a-secret-in-public",
+  "graph-algorithms",
+  "what-a-drive-is-made-of"
+ ],
+ "bindings": [
+  "ch2.helloRaw",
+  "ch2.helloOid",
+  "ch2.helloShard",
+  "ch2.hello256",
+  "ch2.emptyTree256",
+  "ch3.treeTotal",
+  "ch3.treeNew",
+  "ch3.treeShared",
+  "ch3.naive50",
+  "ch3.git50",
+  "ch4.c0Oid",
+  "ch4.c2Oid",
+  "ch4.c2pOid",
+  "ch5.idxSkip",
+  "ch5.idxBytes",
+  "ch6.branchBytes",
+  "ch6.headBytes",
+  "ch8.looseTot",
+  "ch8.packTot",
+  "ch8.packSave",
+  "ch9.fullMB",
+  "ch9.bloblessMB",
+  "ch9.bloblessPct",
+  "ch10.packed100k",
+  "ch10.reftable100k",
+  "ch10.sparseEntries"
+ ]
+}

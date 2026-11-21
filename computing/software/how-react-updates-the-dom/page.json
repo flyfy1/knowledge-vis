@@ -1,0 +1,92 @@
+{
+  "slug": "how-react-updates-the-dom",
+  "kind": "essay",
+  "tags": [
+    {
+      "zh": "React",
+      "en": "React"
+    },
+    {
+      "zh": "Fiber 架构",
+      "en": "Fiber Architecture"
+    },
+    {
+      "zh": "前端原理",
+      "en": "Frontend Internals"
+    },
+    {
+      "zh": "软件原理",
+      "en": "How Software Works"
+    },
+    {
+      "zh": "长文",
+      "en": "Long-form Essay"
+    }
+  ],
+  "category": "computing",
+  "subtopic": "software",
+  "stage": "university",
+  "path": "computing/software/how-react-updates-the-dom/",
+  "created": "2026-11-21",
+  "layout": "essay",
+  "scripts": [
+    "models.js",
+    "copy.zh.js",
+    "copy.en.js",
+    "app.js"
+  ],
+  "version": "20261121",
+  "provenanceNote": {
+    "zh": "本文由 Antigravity 从零编写，对照 React 19.3.1（react@19.3.1、react-dom@19.3.1、scheduler@0.28.0）的源码与规格；中英文同步完成并已运行模型、交叉验证、版式与画布扫描检查（独立评审待做）。",
+    "en": "This essay was written from scratch with Antigravity against React 19.3.1 (react@19.3.1, react-dom@19.3.1, scheduler@0.28.0) specifications and internals; both Chinese and English were authored together and checked with model, crosscheck, layout, and canvas-sweep tests (independent review pending)."
+  },
+  "dynamicKeys": {
+    "ch2.say": [
+      "jsx",
+      "reconciled"
+    ],
+    "ch3.say": [
+      "start",
+      "running",
+      "done",
+      "preempt"
+    ],
+    "ch4.say": [
+      "clean",
+      "moves",
+      "mismatch"
+    ],
+    "ch5.say": [
+      "normal",
+      "skipped",
+      "error"
+    ],
+    "ch7.say": [
+      "layoutOk",
+      "layoutSlow",
+      "passiveFlash"
+    ],
+    "ch8.say": [
+      "batched",
+      "flush"
+    ],
+    "ch9.say": [
+      "concurrent",
+      "blocked"
+    ],
+    "ch10.say": [
+      "hit",
+      "recompute",
+      "uncompiled"
+    ]
+  },
+  "generators": [
+    {
+      "run": "tools/diagrams.cjs",
+      "writes": [
+        "figures/dg-*.html"
+      ]
+    }
+  ],
+  "status": "live"
+}

@@ -1,0 +1,83 @@
+{
+  "slug": "how-llvm-compiles-your-code",
+  "kind": "essay",
+  "tags": [
+    {
+      "zh": "LLVM",
+      "en": "LLVM"
+    },
+    {
+      "zh": "Clang",
+      "en": "Clang"
+    },
+    {
+      "zh": "编译器优化",
+      "en": "Compiler Optimization"
+    },
+    {
+      "zh": "软件原理",
+      "en": "How Software Works"
+    },
+    {
+      "zh": "长文",
+      "en": "Long-form Essay"
+    }
+  ],
+  "category": "computing",
+  "subtopic": "software",
+  "stage": "university",
+  "path": "computing/software/how-llvm-compiles-your-code/",
+  "created": "2026-11-21",
+  "layout": "essay",
+  "scripts": [
+    "models.js",
+    "copy.zh.js",
+    "copy.en.js",
+    "app.js"
+  ],
+  "version": "20261121",
+  "provenanceNote": {
+    "zh": "本文由 Antigravity 从零编写，对照宿主机 Apple Clang 21.0.0（基于 LLVM 21，arm64-apple-darwin27.2.0）实测 IR、Pass 结构与汇编输出；中英文同步完成并已运行模型、交叉验证与版式检查（独立评审待做）。",
+    "en": "This essay was written from scratch with Antigravity against host Apple Clang 21.0.0 (LLVM 21, arm64-apple-darwin27.2.0) live IR, pass-structure, and assembly outputs; both Chinese and English were authored together and checked with model, crosscheck, and layout tests (independent review pending)."
+  },
+  "dynamicKeys": {
+    "ch4.detail": [
+      "raw",
+      "sroa",
+      "instcombine",
+      "simplifycfg",
+      "inline",
+      "fold",
+      "gvn",
+      "instcombine_cse"
+    ],
+    "ch5.why": [
+      "static",
+      "guarded",
+      "fallback",
+      "unopt"
+    ],
+    "ch7.arch": [
+      "arm64",
+      "x86_64"
+    ],
+    "ch8.algo": [
+      "graph",
+      "linear"
+    ],
+    "ch9.say": [
+      "none",
+      "thin",
+      "full"
+    ]
+  },
+  "generators": [
+    {
+      "run": "tools/diagrams.cjs",
+      "writes": [
+        "figures/dg-*.html"
+      ]
+    }
+  ],
+  "status": "live"
+}

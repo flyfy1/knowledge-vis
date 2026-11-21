@@ -1,0 +1,85 @@
+{
+  "slug": "how-git-stores-history",
+  "kind": "essay",
+  "tags": [
+    {
+      "zh": "Git",
+      "en": "Git"
+    },
+    {
+      "zh": "版本控制原理",
+      "en": "Version Control Internals"
+    },
+    {
+      "zh": "内容寻址",
+      "en": "Content Addressing"
+    },
+    {
+      "zh": "软件原理",
+      "en": "How Software Works"
+    },
+    {
+      "zh": "长文",
+      "en": "Long-form Essay"
+    }
+  ],
+  "category": "computing",
+  "subtopic": "software",
+  "stage": "university",
+  "path": "computing/software/how-git-stores-history/",
+  "created": "2026-11-21",
+  "layout": "essay",
+  "scripts": [
+    "models.js",
+    "copy.zh.js",
+    "copy.en.js",
+    "app.js"
+  ],
+  "version": "20261121",
+  "provenanceNote": {
+    "zh": "本文由 Antigravity 从零编写，对照 Git 2.56.0 原理、格式规范与实测结果；中英文同步完成并已运行模型、交叉验证、版式与画布扫描检查（独立评审待做）。",
+    "en": "This essay was written from scratch with Antigravity against Git 2.56.0 specifications and measured internals; both Chinese and English were authored together and checked with model, crosscheck, layout, and canvas-sweep tests (independent review pending)."
+  },
+  "dynamicKeys": {
+    "ch4.ev": [
+      "init",
+      "commit-main",
+      "amend-main",
+      "rebase-feat",
+      "merge-feat"
+    ],
+    "ch7.case": [
+      "clean",
+      "same",
+      "conflict",
+      "delmod"
+    ],
+    "ch7.say": [
+      "clean",
+      "same",
+      "conflict",
+      "delmod"
+    ],
+    "ch9.mode.name": [
+      "full",
+      "shallow",
+      "blobless",
+      "treeless"
+    ],
+    "ch9.say": [
+      "full",
+      "shallow",
+      "blobless",
+      "treeless"
+    ]
+  },
+  "generators": [
+    {
+      "run": "tools/diagrams.cjs",
+      "writes": [
+        "figures/dg-*.html"
+      ]
+    }
+  ],
+  "status": "live"
+}

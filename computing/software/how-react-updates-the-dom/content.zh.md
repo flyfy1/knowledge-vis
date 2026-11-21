@@ -1,0 +1,575 @@
+---
+lang: zh
+title: React 如何更新网页 · 一篇可以动手的长文
+desc: 点一下按钮调用 setCount(c => c + 1)，React 并不是立刻去改网页上的 DOM 节点。这篇按 React 19.3.1 的源码，把这一行拆开：JSX 返回的不可变对象、Fiber 单链表和双缓冲、两轮 O(n) 列表 Diff 与 key、按调用顺序排队的 Hook 链表、子树脏标记冒泡、Commit 三阶段与 Effect 时机、根容器事件委托与微任务批处理、31 位 Lanes 优先级调度，以及 2026 年 11 月的 React Compiler、Server Components 与 Activity/ViewTransition 前沿。九个可以动手的模型，全部按同一套算法重写并和真正的 React 19.3.1 对过数。
+---
+
+::: strings
+nav.back: ← 知识索引
+nav.lang: 语言
+toc.label: 目录
+toc.title: 目录
+u.ms: {v} 毫秒
+u.none: 无
+u.calls: {v} 次
+u.nodes: {v} 个节点
+ch2.col.node: 节点
+ch2.col.tag: Fiber tag
+ch2.col.state: stateNode
+ch2.col.props: 属性摘要
+ch2.tag.0: Function (0)
+ch2.tag.3: HostRoot (3)
+ch2.tag.5: Host (5)
+ch2.tag.6: Text (6)
+:::
+
+# React 如何更新网页 {#hero}
+
+::: strings
+kicker: 计算机 · 软件原理 · 一篇可以动手的长文
+:::
+
+点一下按钮，代码里写着一行 `setCount(c =&gt; c + 1)`。<br>从调用这行函数，到屏幕上数字真正变化，React 内部到底做了什么？ {.sub}
+
+用 React 写界面的人几乎每天都在调用 `setState` 或 `useState` 返回的更新函数。页面很快变了，但很少有人停下来问：为什么写 `&lt;Counter /&gt;` 时组件函数还没有执行？为什么 React 要自己维护一套链表节点而不是直接改 DOM？为什么 `useState` 不能放进 `if` 里？为什么列表漏写 `key` 会让输入框里的字串到下一行？这篇文章只追踪一件事：**从调用 `setCount(c =&gt; c + 1)` 到浏览器把新画面画到屏幕上，中间走过的每一步数据结构和算法。** {.lead}
+
+这里拆解的内部结构全部对照 **React {=react.ver}**（npm 包 `react@{=react.ver}`、`react-dom@{=react.ver}`、`scheduler@{=sch.ver}`，2026 年 10 月 14 日发布）的源码；位掩码、字段名和时间切片阈值都来自这一版，后续版本可能会调整。页面不加载 React 库：九个交互模型把对应的算法用几十到两百行重写了一遍，并用脚本把它们与真正的 `react@{=react.ver}` 在同样输入上逐项对数。硬件到像素之间的显示合成可以看[[how-pixels-reach-a-screen#ch3|《像素是怎么到达屏幕的》第 3 章]]；同系列另一个在浏览器里自己调度帧预算的软件可以看[[how-threejs-draws-a-scene#ch1|《Three.js 是怎么把一个场景画出来的》]]。这篇文章是 AI 写的；每章最后一段说明模型省掉了什么。 {.note}
+
+## 两棵树，两个阶段 {#ch1}
+
+::: strings
+toc: 两棵树，两个阶段
+:::
+
+调用 `setState` 的那一刻，网页上的 DOM 节点一个都没动。React 把每一次界面更新劈成两半：前一半只算不改、随时能停；后一半一口气改完真实 DOM。 {.law}
+
+看下面这个最小程序。你点下按钮时，`onClick` 里调用了 `setCount(c =&gt; c + 1)`。如果你的直觉以为它当场把 `&lt;span&gt;` 里的文字改成了 `2`，那只要组件树再多两千个节点、用户同时在旁边输入文字，浏览器就会卡死——因为改到一半的 DOM 不能退回，也不能停在半路。
+
+::: html ch1-code
+code.aria: 一个最小的 React 19 计数器程序
+code: "import { useState } from 'react';\nimport { createRoot } from 'react-dom/client';\n\nfunction Counter() {\n  const [count, setCount] = useState(0);\n  return <button onClick={() => setCount(c => c + 1)}>{count}</button>;\n}\n\ncreateRoot(document.getElementById('root')).render(<Counter />);"
+:::
+
+React 的办法是把整个更新拆成**两棵树**和**两个阶段**。正在屏幕上的那棵树叫 `current`；每次有更新进来，React 在内存里另起一棵草稿树 `workInProgress`（简称 wip）。**渲染阶段（Render）**只在这棵草稿树上跑组件函数、算差异、打上标记，绝不碰真实 DOM；正因为不碰屏幕，它可以每跑 {=sch.slice} 毫秒就停下来把主线程让给浏览器。等整棵草稿树都算完，才进入**提交阶段（Commit）**：不能暂停、同步执行，把改动一次性写进真实 DOM，然后把根指针 `root.current` 指向这棵新树。
+
+::: diagram dg-phases keys=dg.phases
+cap: 图 1　一次 setCount(c => c + 1) 穿过的五个环节。只有 Commit 阶段真正修改 DOM，Passive Effect 等浏览器画完才运行。
+aria: 示意图：setCount 触发微任务调度，经可中断的 Render 阶段、不可中断的 Commit 阶段、浏览器绘制，最后执行 useEffect
+s1: 1. 触发与入队
+s1s: setCount 入队更新并预约微任务
+s2: 2. Render 阶段（可暂停）
+s2s: 遍历 wip 草稿树，算 Diff 并标脏位
+s3: 3. Commit 阶段（同步）
+s3s: 改 DOM、切 root.current、跑 layout
+s4: 4. 浏览器排版与绘制
+s4s: 浏览器计算布局并把新像素画到屏幕
+s5: 5. Passive Effect
+s5s: 异步调度执行 useEffect 清理与挂载
+:::
+
+把"算草稿"和"改 DOM"彻底分开，是后面所有设计的总前提。只有草稿树在内存里独立存在，React 才能暂停、重算、抛弃半成品，也才谈得上给按钮和列表排优先级。下面八章按一次更新真正走过的顺序往下拆：先看 JSX 究竟返回了什么（第 2 章），再看草稿树为什么做成链表（第 3 章）、列表怎么比对（第 4 章）、Hook 存在哪儿（第 5 章）、标记怎么冒泡（第 6 章），然后进入同步提交与事件调度（第 7–9 章）。
+
+这一章只是总地图。具体每一步花多少微秒，取决于组件树有多深、每个组件函数做了多少计算，这里没有通用耗时。 {.take}
+
+## JSX 不是 HTML，而是对象 {#ch2}
+
+::: strings
+toc: JSX 不是 HTML，而是对象
+:::
+
+写下 `&lt;Counter initial={1} /&gt;` 时，`Counter` 函数还没有运行，浏览器里也没有任何标签被创建。JSX 只是一次函数调用的语法糖，它当场返回一张轻量的只读描述单。 {.law}
+
+编译器会把 JSX 改写成对 `react/jsx-runtime` 里 `jsx(type, props, maybeKey)` 的调用。返回值是一个只有 {=ch2.elemKeys} 个核心字段的普通对象（React Element）：`$$typeof`、`type`、`key` 和 `props`。在 React {=react.ver} 中，`$$typeof` 固定是 `Symbol.for('react.transitional.element')`，用来防止服务端拼出来的假 JSON 混进元素树。如果你的标签是 `'div'`，它的 `type` 是字符串 `'div'`；如果你写的是 `&lt;Counter /&gt;`，`type` 就是 `Counter` 函数本身的引用。
+
+这解释了一个常见误解：组件函数**从来不"拥有"DOM 节点**。你从 `Counter` 里 `return` 出来的只是一个嵌套的元素树，里面一个真实 DOM 节点都没有（{=ch2.jsxDom} 个），子组件的函数也一次都没调用（{=ch2.jsxCalls} 次）。直到后面的协调器（Reconciler）拿着这份元素描述，在 Render 阶段走过这一层时，才会替它建起对应的 Fiber 节点，并在 `completeWork` 里把原生标签的真实 DOM 节点挂到 `fiber.stateNode` 上。
+
+::: diagram dg-element keys=dg.element
+cap: 图 2　左边是 JSX 返回的 Element 描述对象，右边是协调器为其配对的 Fiber 节点。只有协调之后，Host 节点才在 stateNode 上挂出真实 DOM。
+aria: 示意图：React Element 的四个字段与 Fiber 节点的 tag、stateNode、memoizedState、链表指针的对照
+el: React Element
+e1: $$typeof: Symbol
+e2: type: Counter
+e3: key: null
+e4: props: {...}
+e5: 只读描述单
+fib: Fiber 节点
+f1: tag: 0 / 5 / 6
+f2: stateNode: DOM
+f3: memoizedState
+f4: child / sibling
+f5: 可变工作单元
+:::
+
+在开发模式下，React 甚至会冻结元素对象的属性（或拒绝改写 `props`）。因为 Element 是一帧草稿的静态描述，协调完这一帧就扔了；真正跨多次渲染活下来、存着 Hook 状态和 DOM 引用的，是右边那列 **Fiber 节点**。对于 `&lt;Counter /&gt;` 这样一个小组件树，调用 JSX 时只有 1 个根 Element、{=ch2.jsxDom} 个 DOM 节点；协调完成后，它对应 {=ch2.fibers} 个 Fiber 节点和 {=ch2.doms} 个真实 DOM 节点。
+
+::: lab ch2-model
+model.title: Element 描述单与 Fiber 节点对照
+model.how: 选择一段 JSX 片段，在"刚调用 jsx()"和"协调成 Fiber 之后"之间切换，观察创建了多少对象、调用了几次组件函数、哪一类 Fiber 才真正持有 DOM 节点。
+ctl.preset: JSX 片段
+pre.counter: <Counter initial={1} />
+pre.card: <Card><Badge /></Card>
+pre.native: <section><p>Hello</p></section>
+ctl.stage: 观察时刻
+st.jsx: 刚调用 jsx()
+st.rec: 协调建出 Fiber 后
+cv.aria: Element 描述层、Fiber 工作节点与真实 DOM 节点的对应关系图
+cv.colEl: Element 描述
+cv.colFib: Fiber 节点
+cv.colDom: 真实 DOM
+cv.nodom: 尚无 DOM
+cv.nofib: 尚未建 Fiber
+read.el: 顶层 JSX 对象
+read.fib: Fiber 节点数
+read.dom: 已分配 DOM 节点
+read.fn: 已调用组件函数
+say.jsx: 此时刚刚运行 <code>jsx()</code>：手里只有 <em>{el}</em> 个轻量描述对象，组件函数调用了 <em>{fn}</em> 次，浏览器里创建了 <em>0</em> 个 DOM 节点。
+say.reconciled: 协调器遍历之后，树上站着 <em>{fib}</em> 个 Fiber 节点（其中组件函数被调用了 {fn} 次）；只有 Host 类型的 Fiber 在 <code>stateNode</code> 上挂出了 {dom} 个真实 DOM 节点。
+:::
+
+实验里把预设切到 `&lt;Card&gt;&lt;Badge /&gt;&lt;/Card&gt;` 时可以注意看表格里的 `stateNode` 一列：`Card` 和 `Badge`（`tag = 0`，`FunctionComponent`）的 `stateNode` 都是 `null`，函数组件自己在 DOM 树里没有对应容器；真正占住 DOM 位置的是 `'article'` 和 `'strong'`（`tag = 5`，`HostComponent`）。
+
+模型省掉了：`ref` 字段、`key` 在 React 19 中不再混入 `props` 的细节、`_owner` / `_debugStack` 开发调试字段，以及服务端组件传来的 Lazy / Promise 元素。 {.take}
+
+## Fiber 链表与双缓冲 {#ch3}
+
+::: strings
+toc: Fiber 链表与双缓冲
+:::
+
+如果渲染只是一场普通的递归调用，函数压进 JavaScript 调用栈里就出不来——跑完一千个组件前你停不下来。React 把树拆成显式的三根指针链表，并准备一正一反两棵树，才换来了每 5 毫秒停一次手的能力。 {.law}
+
+React 15 以前用的确实是递归：从根节点一层层调下去，一气跑完，大树卡住主线程也只能等它返回。React 16 以后重写成 **Fiber 架构**：每个节点保存三个手写指针——`child` 指向第一个子节点、`sibling` 指向下一个兄弟、`return` 指回父节点。遍历整棵树不再靠语言调用栈，而是靠一个全局指针 `workInProgress` 在 `while (workInProgress !== null && !shouldYield())` 里一步步挪动：有孩子就往下走 `child`（`beginWork`）；没孩子就收尾当前节点（`completeWork`），再看有没有 `sibling`，没有就沿着 `return` 往回退。
+
+每次挪动之前，调度器（`scheduler@{=sch.ver}`）只要看看从这一片时间开始到现在有没有超过 **{=sch.slice} 毫秒**（源码里的 `frameInterval = 5`）。时间一到就立刻跳出循环，用浏览器的 `MessageChannel` 排一个宏任务，把主线程交出去处理用户的点击、滚动或页面绘制；下一次轮到自己时，只要顺着还捏在手里的 `workInProgress` 指针继续走就行。
+
+::: diagram dg-fiber keys=dg.fiber
+cap: 图 3　Fiber 用 child（青）、sibling（金）、return（紫虚线）把树穿成可随时暂停的链表；底部的 current 与 wip 互为 alternate，实现双缓冲。
+aria: 示意图：五个 Fiber 节点用 child、sibling、return 指针相连，底部显示 current 和 workInProgress 双缓冲树通过 alternate 互指
+n0: HostRoot
+n1: App
+n2: Header
+n3: Footer
+n4: Logo
+cur: current (A)
+wip: wip (B)
+lc: child
+ls: sibling
+lr: return
+:::
+
+光能暂停还不够：如果算到一半用户又按了键盘，半成品的草稿怎么办？答案是**双缓冲（Double Buffering）**，和显卡里的前后台缓冲区一模一样。每个节点都有一个 `alternate` 指针指向另一棵树里的自己。屏幕正在用的 `current` 树一动不动；你在新树 `workInProgress` 上改到一半时，`createWorkInProgress` 直接复用旧的 `current.alternate` 节点对象，连新内存都不用频繁申请。万一更高优先级的任务插队，或者半路决定放弃，只要把 `workInProgress` 指针扔掉，屏幕上原来的 `current` 树仍然完好无损。
+
+::: lab ch3-model
+model.title: Fiber 工作循环与 5 毫秒时间切片
+model.how: 点击"单步前进"或"跑完一个切片"，也可以直接拖动进度滑杆和切片预算（默认 5 毫秒）。打开"第 4 步插队"，看草稿树做到一半被打断时，屏幕上正在用的 current 树有没有受影响。
+ctl.units: 已执行工作单元
+ctl.budget: 单片时间预算
+ctl.preempt: 第 4 步被高优任务打断
+btn.step: 单步前进
+btn.slice: 跑完一个切片
+btn.reset: 重置
+cv.aria: 左边是正在屏幕上的 current 树，右边是正在构建的 workInProgress 草稿树和切片时间条
+cv.left: current 树（屏幕上）
+cv.right: workInProgress 树（草稿）
+cv.slice: 切片
+read.cursor: 当前工作指针
+read.yields: 让出主线程次数
+read.alt: 复用 alternate 节点
+read.dom: 屏幕上的 DOM
+say.start: 渲染尚未开始。屏幕上显示着完整的 <code>current</code> 树（A），共有 {total} 个节点等待检查。
+say.running: 正在第 {slice} 个切片上遍历草稿树，刚对 <code>{cursor}</code> 执行完 <code>{phase}</code>（已让出 {yields} 次，复用 {alt} 个 alternate）。屏幕仍显示旧树 A，安全无残缺。
+say.done: 全部 {total} 个工作单元完成！总共让出了 <em>{yields}</em> 次主线程、分 {slice} 个切片算完；<code>root.current</code> 翻指向新树 B，真实 DOM 同步更新。
+say.preempt: 第 4 步时有紧急更新插队！React 直接丢弃这棵半成品草稿树，屏幕上 <code>current</code> 树（A）<em>毫发无损</em>，连半个错位节点都不会闪出来。
+:::
+
+以默认每节点 1.6 毫秒、每片 {=sch.slice} 毫秒的预算跑完这 {=ch3.nodes} 个节点，总共要分 {=ch3.slices} 个切片、让出 {=ch3.yields} 次主线程。注意看只有当进度拉到最后一个节点完成、`finished` 变成真时，`root.current` 才切向 B 树。在此之前的每一次暂停里，屏幕上的真实 DOM 始终保持完整一致。
+
+模型省掉了：首次挂载时 `alternate === null` 需要新创建 Fiber 对象的路径（后续更新才复用）、`bailout` 跳过干净子树的捷径（留到第 6 章），以及真正在浏览器里通过 `MessageChannel` 触发回调的队列调度。 {.take}
+
+## Diff 算法与 key 为什么重要 {#ch4}
+
+::: strings
+toc: Diff 算法与 key 为什么重要
+:::
+
+比较两棵任意树的最优差异在经典算法里是 O(n³)，一千个节点就要十亿次操作。React 把它砍成一条同层 O(n) 的两轮扫描，代价比对依赖每个元素身上的 type 和 key。 {.law}
+
+React 能把复杂度压到 O(n)，靠三条假设：不同 `type` 的元素直接整棵换掉而不跨类型对比；只在同一父节点下按层对比，不追踪跨层级移动；同一层的一排子元素，用开发人写的 `key` 认出"谁是谁"。
+
+看一眼 React {=react.ver} 源码里的 `reconcileChildrenArray` 怎么扫描数组。当旧 Fiber 列表和新的 React Element 数组碰面时，它精确地走**两轮**：
+- **第一轮（按位置对）**：从下标 `newIdx = 0` 开始，旧 Fiber 和新元素一个对一个。只要 `key` 相等（且 `type` 一致）就当场复用并推进到下一对；一旦遇到第一个 `key` 不一致的，**立刻跳出第一轮**！ {#r1}
+- **第二轮（建 Map 查表）**：如果跳出时两头都还有剩下的，React 把剩下的旧 Fiber 放进一张哈希表 `existingChildren`（`Map`，优先用 `oldFiber.key` 当键，没写 `key` 才用 `oldFiber.index`）。接着遍历剩下的新元素，去 Map 里按 `key` 找回旧节点。找到就复用，并拿旧位置 `oldIndex` 和一个游标 `lastPlacedIndex` 比较：只要 `oldIndex &lt; lastPlacedIndex`，说明这个节点在新列表里往后跑了，打上 `Placement` 标记（提交时移动 DOM）；否则留在原地不动并把 `lastPlacedIndex` 推前到 `oldIndex`。 {#r2}
+
+::: diagram dg-reconcile keys=dg.reconcile
+cap: 图 4　在 [A, B, C] 前面插入 X。用 key=item.id 时第一轮立刻停下进 Map，A/B/C 全部安全复用；用数组下标作 key 时第一轮按位置硬配对，把 A 的状态错挂到了 X 身上。
+aria: 示意图：对比用 id 作 key 与用数组下标作 key 在列表头部插入元素时的节点配对去向
+old: 更新前
+byId: key = item.id
+idRes: X 新建；A/B/C 复用且不移动 DOM
+byIdx: key = index
+idxRes: 下标 0..2 原地复用：A 状态粘给 X
+:::
+
+这就是为什么用**数组下标作 `key`**（`key = index`）会在头部插入或排序时悄悄闯祸：在 `[A, B, C, D]` 前面插一个 `X` 变成 `[X, A, B, C, D]` 时，如果拿下标当 `key`，新旧列表下标 0 到 3 的 `key` 全都是 `"0", "1", "2", "3"`！React 的第一轮扫描自始至终不会中断，把旧位置 0 的 Fiber（里面可能藏着用户刚在 A 行输入框里打的一半草稿 `note-A`）原封不动配给了新元素 `X`！
+
+::: lab ch4-model
+model.title: 两轮列表 Diff 与 key 错位追踪
+model.how: 挑一个列表变化场景（比如"在头部插一个 X"），在 key=item.id 和 key=index 之间切换。注意看旧行 A 和 C 里存着的组件本地状态（草稿标签），在下标作 key 时怎样粘到了错误的行上。
+ctl.sc: 列表变动
+sc.prepend: 头部插入 X
+sc.reverse: 整列反转
+sc.swap: 交换 B 和 C
+sc.deleteB: 删掉中间 B
+ctl.key: key 写法
+key.id: key = item.id
+key.index: key = index
+cv.aria: 旧列表四个 Fiber 节点与新列表元素之间的配对连线、移动标记及内部状态归属
+cv.old: 旧 Fiber
+cv.new: 新 Element
+read.reused: 复用的 Fiber
+read.moves: 需要移动 DOM
+read.mounts: 新建挂载
+read.bug: 状态错配数
+say.clean: 第一轮或第二轮精确按身份找回了 {reused} 个旧节点（新建 {mounts} 个、移动 0 个），每行组件的本地状态 <em>0</em> 错位。
+say.moves: 按 <code>id</code> 找回了 {reused} 个旧节点；根据 <code>lastPlacedIndex</code> 规则，其中有 <em>{moves}</em> 个旧节点落在了游标后面，需要移动 DOM，本地状态依然准确无误。
+say.mismatch: 注意看！用数组下标当 <code>key</code> 时，React 硬把 {reused} 个旧 Fiber 按下标配给了新数据，导致 <em>{bug} 份属于别的行的本地状态</em>错粘在了新行上——组件本身没有任何报错，界面却悄无声息地错了。
+:::
+
+把场景固定在"头部插入 X"亲自点一下：用 `item.id` 当 key 时，第一轮第 0 项（`'X'` vs `'A'`）就中断，进 Map 查表后复用了全部 {=ch4.idReused} 个旧节点、新建 {=ch4.idMounts} 个 `X`，而且因为 `X` 新建不推高 `lastPlacedIndex`，老四位 `A/B/C/D` 移动 DOM 的次数竟然是 **{=ch4.idMoves}** 次（浏览器只需往最前面 `insertBefore` 一个 `X`）；而换成下标作 key 后，四个旧槽位全被按位置错配（复用 {=ch4.idxReused} 个），直接造成 **{=ch4.idxMismatch}** 份原本属于 `A` 和 `C` 的本地状态张冠李戴。
+
+模型省掉了：节点 `type` 本身改变时的整棵销毁重建（例如 `&lt;div&gt;` 变成 `&lt;span&gt;`）、单个子节点直接走 `reconcileSingleElement` 的路径，以及字符串/数字直接当文本节点的处理。 {.take}
+
+## Hook 是一条单向链表 {#ch5}
+
+::: strings
+toc: Hook 是一条单向链表
+:::
+
+函数组件每次更新都要重头执行一遍，函数里的局部变量转眼就销毁。React 既没给 `useState` 分配名字，也不靠变量名找值——它把一个组件里的所有 Hook 按调用顺序串成单向链表，挂在 Fiber 的 `memoizedState` 上。 {.law}
+
+打开 React {=react.ver} 的 `mountWorkInProgressHook`，每个 Hook 节点就是一个只有五个字段的对象：`memoizedState`（当前状态值）、`baseState`、`baseQueue`、`queue` 和指向下一个 Hook 的 `next`。组件第一次渲染时，第 1 次调 `useState` 建出节点 0，第 2 次调 `useState` 接在节点 0 的 `.next` 上，第 3 次调 `useEffect` 接在节点 1 的 `.next` 上——链表里**没有任何地方写着字符串 `"count"` 或 `"name"`**。
+
+更新时，`updateWorkInProgressHook` 只是捏着两个游标 `currentHook` 和 `workInProgressHook`，每调用一个 Hook 就同时往后挪一格 `.next`。正因为全靠"第几次调用"对号入座，如果你把第 0 个 `useState` 写进一个 `if` 分支里，下次条件不成立跳过了它，排在后面的 `useState(name)` 就会成为这一轮的第 0 次调用，直接把节点 0 里存着的整数 `10` 读成自己的初始状态；而后面的 `useEffect` 会去读字符串 `'Ada'`。React 发现这次调完链表还没走到头，直接抛出 `"Rendered fewer hooks than during the previous render"` 报错。
+
+那你在事件里连调三次 `setCount(c =&gt; c + 1)` 时，新状态又存在哪儿？每个状态 Hook 的 `queue` 里有一个 `pending` 指针，串着一条**单向循环链表**：`queue.pending` 永远指向**最后**进来的那个更新，而最后一个节点的 `.next` 恰好指回**最先**进来的那个更新（这样入队 O(1) 不用遍历整条链）。下一次渲染时，`updateReducer` 剪开圆环（`first = last.next; last.next = null`），从旧的 `baseState`（默认起点为 {=ch5.prev}）开始顺着链把更新函数一个个叠上去。如果有低优先级的更新在这一轮被跳过了，它以及它后面排着的所有更新还会被复制进 `baseQueue`，保证下次补算时状态不漂移。
+
+::: diagram dg-hooks keys=dg.hooks
+cap: 图 5　Fiber.memoizedState 串起按调用顺序排列的 Hook 链表；Hook 0 下面挂着首尾相连的 queue.pending 循环更新队列。
+aria: 示意图：Fiber 节点的 memoizedState 指向 Hook 0、Hook 1、Hook 2 单向链表，Hook 0 下方挂着由 u1 和 u2 组成的循环队列
+fib: Fiber
+h0: Hook 0
+h1: Hook 1
+h2: Hook 2
+q: pending
+u1: u1
+u2: u2
+ring: last.next 指回 first，入队 O(1)
+:::
+
+::: lab ch5-model
+model.title: Hook 游标链表与循环队列归约
+model.how: 选一组待执行的更新队列，观察循环链表怎么从 tail.next 拆开并算出新状态。试着勾上"在 if 里跳过 Hook 0"，看看游标对不上号时读错了什么；再勾"跳过低优先级更新"，观察 baseQueue 怎么保住未执行的更新。
+ctl.q: 队列里的更新
+q.incDouble: +1 后 ×2
+q.doubleInc: ×2 后 +1
+q.setInc: 设为 5 后 +1
+ctl.skip: 在 if 中跳过 Hook 0
+ctl.low: 第 1 个更新为低优 Transition
+cv.aria: Fiber.memoizedState 链表游标配对图和下方 queue.pending 循环链表图
+cv.list: memoizedState 单向链表
+cv.ring: queue.pending 循环队列
+read.prev: 归约前 baseState
+read.next: 算出的新状态
+read.base: baseQueue 留存数
+read.cursor: 游标对齐情况
+st.ok: 3/3 对齐
+st.err: 错位崩溃
+say.normal: 游标按调用顺序 0→1→2 准确对齐。环形队列从首节点拆开，从 {prev} 依次叠算出 <em>{next}</em>，无遗留更新。
+say.skipped: 第 1 个更新（TransitionLane）优先级不够被跳过，于是它和后面排队的更新一起留进了 <em>baseQueue</em>（共 {base} 个），<code>baseState</code> 停在 {bstate}，避免下次补算时丢掉顺序。
+say.error: 游标错位！<code>if</code> 跳过了 Hook 0，导致本该读 slot 1 的 <code>useState('Ada')</code> 读走了 slot 0 的 <em>{next}</em>，末尾还会少一个 Hook，触发 React 规则报错。
+:::
+
+以默认的 "+1 后 ×2" 为例，最初的 `baseState` 是 {=ch5.prev}，先加 1 变成 11 再乘 2 算出 **{=ch5.next}**；如果你把顺序换成 "×2 后 +1"，同样两个操作因为函数式更新按环形队列先后回放，结果会变成 21——这正是为什么传给 `setCount` 的回调能每次拿到前一次刚算完的值，而不是死盯着渲染开始时的快照。
+
+模型省掉了：`useState` 的"急切求值"优化（`eagerState`：若当前 Fiber 没有挂着别的更新且新旧值 `Object.is` 相等，React 甚至不调度渲染）、开发模式下 React 19 对 reducer/组件的严格双调用检查，以及 `useEffect` 单独挂在 `fiber.updateQueue` 上的环形链。 {.take}
+
+## 遍历树与子树脏标记 {#ch6}
+
+::: strings
+toc: 遍历树与子树脏标记
+:::
+
+一万个节点里只改了一个叶子的文字，如果提交阶段还要把整棵树再巡逻一遍就太冤了。React 在 Render 向上收尾时把每个儿子的脏位按位 OR 进父节点的 `subtreeFlags`，让 Commit 只钻有改动的那几条分支。 {.law}
+
+Render 阶段的每个节点其实走两趟：向下走进 `beginWork`，调组件函数、对子元素做 Diff（如果 `oldProps === newProps` 且自身与子树 `lanes` 都为 0，直接调 `attemptEarlyBailoutIfNoScheduledUpdate` 跳过这棵子树）；到叶子无子可进时，就进入向上爬的 `completeWork`。
+
+在原生标签上，`completeWork` 会替首次挂载的节点 `createInstance` 造好真实 DOM 并把子 DOM `appendAllChildren` 挂上去（都在内存里完成，还没插进页面），或在更新时算好属性差异包；随后无论哪种节点，都会调用 `bubbleProperties(completedWork)`，把所有直接子节点的 `child.flags | child.subtreeFlags` 用按位或（`|`）合并进自己的 `subtreeFlags`，同时把 `child.lanes | child.childLanes` 合并进 `childLanes`。
+
+::: diagram dg-flags keys=dg.flags
+cap: 图 6　completeWork 沿途用按位或把 flags 向上冒泡到根节点的 subtreeFlags。Commit 阶段只要看到某个分支的 subtreeFlags 掩码为 0，直接跳过整棵子树。
+aria: 示意图：一棵树的左枝叶子标有 flags 0x04，向上冒泡进父节点和根节点的 subtreeFlags；右枝 subtreeFlags 为 0 被 Commit 跳过
+root: Root sub:0x04
+left: Main sub:0x04
+clean: Nav sub:0x00
+leaf: Item flag:0x04
+bub: completeWork 向上冒泡：flags | subtreeFlags
+skip: 掩码为 0：整枝跳过
+:::
+
+这么一来，当 Commit 阶段启动时，它从根节点往下看：只要 `subtreeFlags & CommitMask === 0`，**连这个子节点的门都不进**，整枝整枝地跳过。在下面这棵 {=ch6.total} 个节点的树里，如果只有最深层的一个叶子 `Post2` 发生了 `Update`（`0x0004`），Render 靠 `childLanes` 跳过无关兄弟分支，向上冒泡完，Commit 真正走过的只有沿途的 {=ch6.commitVis} 个节点，直接跳过了 {=ch6.commitSkip} 个节点（跳过比例 **{=ch6.skipPct}**）。
+
+::: lab ch6-model
+model.title: beginWork/completeWork 冒泡与子树跳过统计
+model.how: 选择一种脏节点分布，或者直接在画布上点击树里的任意节点设它为脏节点，观察 flags 和 subtreeFlags 怎样一路向上 OR 到根节点，以及 Commit 阶段跳过了多少节点。
+ctl.preset: 更新场景
+pre.leaf: 单个深层叶子更新
+pre.two: 两处叶子 (Update + Placement)
+pre.del: Nav 删除子节点 (ChildDeletion)
+pre.shell: Shell 自身及多枝更新
+cv.aria: 15 个节点的组件树，高亮 Render 访问路径、冒泡后的十六进制 subtreeFlags，以及被 Commit 跳过的干净子树
+cv.legVis: Render 访问
+cv.legCom: Commit 进入
+cv.legSkip: 干净跳过
+read.render: Render 访问节点
+read.commit: Commit 进入节点
+read.skip: Commit 跳过节点
+read.mask: 根节点 subtreeFlags
+say: 本次更新使根节点收集到 <code>subtreeFlags = {mask}</code>。在 {total} 个节点中，Render 只深入了 {render} 个节点（其余被 bailout）；到了同步的 Commit 阶段，更只顺着脏掩码走了 <em>{commit}</em> 个节点，直接跳过了 <em>{skip}</em> 个干净节点（跳过 {pct}）。
+:::
+
+实验里可以对比两种场景：单点深层叶子更新时，整根左半边的 `Nav` 家族和 `Sidebar`、`Footer` 在 Commit 时纹丝不动；而当你把更新放到高层节点 `Shell` 且没有跳过机制时，整棵树的 `Render` 就会展开。React 19 的 `StaticMask`（`0x47f00000`，即 `1206910976`）还把部分跨次不变的静态标记保留在 `alternate` 上，不随单次 Commit 清零。
+
+模型省掉了：Suspense 抛错后触发 `unwindUnitOfWork` 清理栈帧的路径、`didReceiveUpdate` 对旧 `Context` 消费端的检查，以及 `MutationMask`（`13878`）、`LayoutMask`（`8772`）与 `PassiveMask`（`10256`）在三个子阶段各自略有不同的掩码位过滤。 {.take}
+
+## Commit 阶段与 Effect 的执行时机 {#ch7}
+
+::: strings
+toc: Commit 阶段与 Effect 的执行时机
+:::
+
+Render 可以随时停下重来，Commit 却一刻也不能停——如果把一半新节点插进网页、另一半留到下一帧，用户看到的就是支离破碎的画面。React 在主线程一口气跑完 Commit 的前三个小步，让浏览器把画面画出来，然后才在另一趟异步任务里跑 `useEffect`。 {.law}
+
+打开 React {=react.ver} 的 `commitRootImpl`，一旦草稿树完工，主线程进入同步的 Commit 流程，顺序严格锁死：
+1. **BeforeMutation（变更前）**：DOM 还没改，执行旧版类组件的 `getSnapshotBeforeUpdate`，读一眼改之前的滚动位置之类的值。 {#s1}
+2. **Mutation（变更 DOM）**：遍历带 `MutationMask` 的子树，真正调用 `appendChild`、`insertBefore`、`removeChild` 和更新属性文本；顺手执行 `useInsertionEffect` 与上一轮 `useLayoutEffect` 的清理函数。 {#s2}
+3. **切换指针（`root.current = finishedWork`）**：就这一行赋值，新算出的草稿树正式晋升为屏幕上当前树。 {#s3}
+4. **Layout（布局阶段，仍在绘制前！）**：立刻同步遍历带 `LayoutMask` 的子树，挂上 `ref`，并同步执行 **`useLayoutEffect`** 的主体函数。此时 DOM 已经是最新的了，但浏览器**还没把这帧画到屏幕上**——所以你在里面读 `getBoundingClientRect()` 拿到的是新尺寸，再同步调 `setState` 修改悬浮提示框位置，React 会当场再来一次同步重算并改好 DOM，用户完全看不见位置跳闪；代价是它占用的每 1 毫秒都在**直接推迟屏幕绘制**。 {#s4}
+5. **浏览器排版与绘制（Paint）**：React 交回主线程，浏览器算好 CSS 布局、光栅化并把这帧提交给显示流水线（参考[[how-pixels-reach-a-screen#ch3|《像素是怎么到达屏幕的》第 3 章]]里的 {=frame.ms} 毫秒帧预算）。 {#s5}
+6. **Passive（被动阶段，绘制之后）**：Commit 阶段开始前早已通过 Scheduler 的 `NormalPriority`（经由 `MessageChannel`）预约好了 `flushPassiveEffects`。等浏览器画完这一帧、用户眼睛已经看到新界面之后，主线程下一轮空档才跑 `useEffect` 的清理和挂载。 {#s6}
+
+::: diagram dg-commit keys=dg.commit
+cap: 图 7　从 Render 到 useEffect 的主线程时间轴。只有金、红两段同步阻塞浏览器绘制（Paint）；紫色的 useEffect 被排进下一轮任务，不会卡住首帧出画。
+aria: 示意图：主线程上 Render、Mutation、LayoutEffect（useLayoutEffect）、Browser Paint 和异步 Task 中的 PassiveEffect（useEffect）的先后顺序
+sync: 同步 Commit（不让出主线程）
+b1: Render
+b2: Mutate
+b3: Layout
+b4: Paint
+b5: Effect
+p1: root.current = wip 在 Mutate 后切换
+p2: useLayoutEffect 在 Paint 前运行
+p3: useEffect 在 Paint 后异步执行
+:::
+
+::: lab ch7-model
+model.title: 主线程时间轴：useLayoutEffect 与 useEffect
+model.how: 拖动 Render、useLayoutEffect 和 useEffect 的耗时滑杆，并切换"用哪种 Effect 测宽高并重定位提示框"。盯住那根 16.67 毫秒的 60 Hz 掉帧红线，看首帧出画时间和有没有闪烁。
+ctl.render: Render 耗时
+ctl.layout: useLayoutEffect 耗时
+ctl.passive: useEffect 耗时
+ctl.hook: 提示框重定位放在
+hk.layout: useLayoutEffect（画前）
+hk.passive: useEffect（画后）
+cv.aria: 主线程各阶段横条时间轴，标出 16.67 毫秒帧预算线与浏览器绘制时刻
+cv.x: 主线程时间（毫秒）
+cv.budget: 16.67 ms 预算
+cv.paintAt: 出画时刻
+read.paint: 首帧出画耗时
+read.total: 含 Effect 总耗时
+read.drop: 错过 60 Hz 帧数
+read.flash: 首帧位置闪烁
+val.yes: 会闪一帧
+val.no: 无闪烁
+say.layoutOk: <code>useLayoutEffect</code> 在绘制前同步测完并重排了位置（首帧在 <em>{paint} ms</em> 画出），赶在了 {budget} ms 帧预算内，用户<em>完全看不见位置闪烁</em>。
+say.layoutSlow: 虽然靠 <code>useLayoutEffect</code> 避免了位置闪烁，但它在绘制前独占主线程太久，首帧出画被拖到了 <em>{paint} ms</em>——浏览器错过了 <em>{drop} 帧</em>，页面明显卡顿。
+say.passiveFlash: 首帧在 <em>{paint} ms</em> 就清爽画出来了（不卡绘制）；但 <code>useEffect</code> 在画完之后才去测宽高并调 <code>setState</code>，所以用户眼睁睁看见提示框先在错位上<em>闪了 1 帧</em>，下一帧才跳对。
+:::
+
+把 `useLayoutEffect` 保持在默认的 6 毫秒时，算上 Render（4 毫秒）、Mutation（1.5 毫秒）和同步二次调整，首帧在 **{=ch7.paintLayout} 毫秒**完成绘制，落在一帧以内；如果把同样的重定位放到 `useEffect` 里，首帧只要 **{=ch7.paintPassive} 毫秒**就画出来了，却必然闪一帧旧位置。这解释了一条很实在的工程权衡：**能异步放 `useEffect` 的测量绝不挡住绘制，只有不改就会闪一帧的布局读-写才值得用 `useLayoutEffect`。**
+
+模型省掉了：浏览器自身样式重算与 GPU 合成在不同页面复杂度下的剧烈波动（模型按固定的 2.0 毫秒参数化绘制开销）、`useInsertionEffect` 给 CSS-in-JS 在 Mutation 阶段插 `&lt;style&gt;` 的步骤，以及 `flushSync` 把 `useEffect` 也提前冲刷掉的特例。 {.take}
+
+## 事件委托与自动批处理 {#ch8}
+
+::: strings
+toc: 事件委托与自动批处理
+:::
+
+就算页面上挂了一万个 `&lt;button onClick={...}&gt;`，React 也没有真去那一万个按钮上调一万次 `addEventListener`。它只在最外层的根容器上挂一套监听，借浏览器自己的冒泡把事件统一收上来，顺着 Fiber 的 return 指针模拟捕获和冒泡，并把同一轮代码里的几次 setState 打包成一次渲染。 {.law}
+
+调用 `createRoot(container)` 时，React 会执行 `listenToAllSupportedEvents(container)`：在根容器上按事件类型注册**{=ch8.listeners} 个**委托监听器（捕获和冒泡各一对）。同时，React 悄悄在每个由它管理的真实 DOM 节点上写一个隐藏属性 `__reactFiber$&lt;随机串&gt;`，直指那个 DOM 对应的 Fiber 节点。
+
+当你点击嵌套最深处的 `&lt;button&gt;` 时，浏览器原生事件先一层层冒泡到根容器；React 的统一入口 `dispatchEvent` 拿到 `nativeEvent.target`，通过那个隐藏属性瞬间找回 `&lt;button&gt;` 的 Fiber，然后**顺着 `fiber.return` 指针一路往上爬到根节点**，沿途收集路径上所有组件写的 `onClickCapture`（倒序回放模拟捕获）和 `onClick`（正序回放模拟冒泡）。这就解释了一个经常让人困惑的坑：如果你在 React 的 `onClick` 里调 `e.stopPropagation()`，阻止的是 React 自己沿 `return` 链继续往上派发合成事件；此时原生事件其实早就冒泡到根容器了（如果是注册在 `document` 甚至 `window` 上的原生监听，依然有可能比它或晚于它收到事件）。
+
+更关键的是事件里连续修改状态时发生了什么。在 React 19 的 `ensureRootIsScheduled` 里，不管是 React 的点击事件，还是包在 `setTimeout`、原生 `Promise.then` 里的回调，每一次 `setState` 都会排队挂进 Fiber 的更新队列，并预约一次**微任务（Microtask）**调度函数 `processRootScheduleInMicrotask`。等当前同步代码块全部跑完、微任务检查点一到，刚才连续调用的 **{=ch8.calls} 次** `setState` 只会触发 **{=ch8.commits} 次** Render 与 Commit；唯有当你显式用 `ReactDOM.flushSync(() =&gt; setState(...))` 包住每一次更新时，才会强迫 React 当场同步刷新、跑足 **{=ch8.syncCommits} 次**完整渲染。
+
+::: diagram dg-events keys=dg.events
+cap: 图 8　真实 DOM 点击先冒泡到根容器上的唯一监听；React 通过 __reactFiber$ 找到按钮对应的 Fiber，沿 return 链模拟捕获（青）与冒泡（紫），并在微任务末把多次 setState 合并为一次提交。
+aria: 示意图：原生事件从 btn 冒泡到 div#root，React 沿 Fiber return 链收集 Capture 与 Bubble 回调，最后合并批处理提交
+root: div#root（1 个原生监听）
+card: section.card
+btn: button.btn（被点击目标）
+nat: 原生冒泡到 #root
+syn: 沿 Fiber 模拟捕获 → 冒泡
+bat: 微任务末合并提交 1 次
+:::
+
+::: lab ch8-model
+model.title: 事件委托路径与自动批处理
+model.how: 选择在 React 点击事件、setTimeout 异步回调或 flushSync 里连续调用几次 setState，也可以在中间层 card 上拦截冒泡，看实际跑了几个回调、分配到哪条 Lane、最终提交了几次渲染。
+ctl.trig: 触发位置
+tr.click: React onClick
+tr.async: setTimeout / Promise
+tr.flush: 逐次 flushSync
+ctl.calls: 连续调用 setState 次数
+ctl.stop: card 上调用 stopPropagation
+cv.aria: 4 层组件树上的原生冒泡路径、React 合成捕获与冒泡序列，以及微任务合批结果
+cv.nat: 原生冒泡
+cv.cap: 合成捕获
+cv.bub: 合成冒泡
+read.native: 根容器原生监听数
+read.handlers: 运行的合成回调数
+read.lane: 分配的优先级车道
+read.commits: 实际 Commit 次数
+say.batched: 仅凭挂在根容器上的 {native} 套监听，合成事件共触发 {handlers} 个回调。连续 {calls} 次 <code>setState</code> 在微任务边界合并，只引发了 <em>1 次</em> Render 与 Commit（使用 {lane}）。
+say.flush: 因为每次更新都套了 <code>flushSync</code>，React 失去了批处理机会——{calls} 次 <code>setState</code> 强行触发了 <em>{commits} 次</em>同步 Commit，每一次都重走渲染和 DOM 提交。
+:::
+
+除了合批，事件系统还顺手决定优先级：来自 `click`、`keydown`、`input` 的更新会拿到高优的 `SyncLane`（值 `2`）；来自 `mousemove`、`scroll` 的拿到 `InputContinuousLane`（值 `8`）；而 `setTimeout` 或网络回调里的普通更新则拿到 `DefaultLane`（值 `32`）。优先级怎样控制谁先谁后，就是下一章的主角。
+
+模型省掉了：`scroll` / `focus` 等少数不冒泡事件在 React 内部直接挂在目标节点上的例外处理、事件插件系统提取跨浏览器统一字段的过程，以及 React 17 之前事件挂在 `document` 而非容器节点上的历史差异。 {.take}
+
+## Lanes 优先级车道与并发调度 {#ch9}
+
+::: strings
+toc: Lanes 优先级车道与并发调度
+:::
+
+React 没用一个数字表示"当前优先级有多高"，而是用一个 31 位的整数掩码（Lanes）让不同紧迫度的更新同时标在一个根节点上：只要掩码里混进了高优的按键车道，慢吞吞的列表筛选渲染就会被立刻叫停让路，算完按键再把没做完的工作接回来。 {.law}
+
+为什么用位掩码而不用单个枚举数？因为一个 Fiber 上同时可能躺着"用户刚敲的键盘"和"后台刚回来的过渡筛选"。在 React {=react.ver} 里，一个根节点有 **{=ch9.totalLanes} 位**车道（比特位 0 到 30）：第 1 位是 **`SyncLane = {=ch9.syncLane}`**（点击、输入等离散交互），第 3 位是 **`InputContinuousLane = 8`**（滚动、拖拽），第 5 位是 **`DefaultLane = 32`**（定时器、普通异步），第 8 到 21 位是一排 **`TransitionLane1 = {=ch9.transLane}`** 起的过渡车道（`startTransition` 和 `useDeferredValue`）。
+
+当两件更新同时挂在根节点 `root.pendingLanes` 上——比如 `256 | 2 = 258`（二进制 `0b0100000010`）——调度器怎么挑出最急的那一条？靠一行位运算老技巧：`lanes & -lanes`（取最低位的 1）。在二进制里，`2` 的位置比 `256` 更靠右，于是瞬间算出先跑 `SyncLane (2)`！
+
+更关键的一行代码藏在 React 19.3.1 的 `performWorkOnRoot` 里：`shouldTimeSlice = (!forceSync && 0 === (lanes & 127) && 0 === (lanes & root.expiredLanes))`。注意那个 **`127`**（二进制 `0b01111111`，包住了 Sync、Continuous 和 Default 车道）！这意味着**普通点击和 `setTimeout` 里的 `setState` 一旦开工并不会时间切片**，而是同步跑到完以免界面撕裂；只有用 **`startTransition`** 或 **`useDeferredValue`** 标到第 8 位以后的更新（`lanes & 127 === 0`），才会打开 `renderRootConcurrent`，每 {=sch.slice} 毫秒检查 `shouldYield()` 让出主线程！
+
+::: diagram dg-lanes keys=dg.lanes
+cap: 图 9　React 19.3.1 的 31 位 Lanes 掩码（越靠左数值越高、优先级越低）。lanes & -lanes 一条位运算挑出最右边的最低位，决定谁先上场。
+aria: 示意图：31 位整数中 SyncLane、InputContinuousLane、DefaultLane、TransitionLanes、IdleLane 的位置及 lanes & -lanes 提取最高优先级位
+hdr: 31 位优先级车道（bit 0..30）
+l0: Sync
+l1: Input
+l2: Default
+l3: Transition
+l4: Idle
+pick: lanes & -lanes → 选最低位（最急）
+slice: 仅 bit ≥ 8（如 Transition）可切片
+:::
+
+如果正画着一个耗时 21 毫秒的 `startTransition` 列表筛选，第 7 毫秒时用户在输入框里按了一个键（`SyncLane`），会发生什么？React 在当前 5 毫秒切片末发现有更急的 `SyncLane`，**立刻暂停甚至抛弃过渡草稿树**，先把输入框的新字符在几毫秒内渲染并提交到 DOM 上，让手指感觉不到丝毫延迟；随后回到之前记在 `baseQueue` 里的过渡更新，基于刚刚提交的新状态重新变基（rebase）跑完剩下切片。而万一这个列表用到了浏览器里不受 React 管理的外部可变对象（External Store），切片期间外部值如果变了会导致页面一部分读到旧值、一部分读到新值（**撕裂 / Tearing**），React 19 在提交前检测 `isRenderConsistentWithExternalStores`，或者靠 `useSyncExternalStore` 强制退回同步渲染来兜底。
+
+::: lab ch9-model
+model.title: 31 位 Lanes 调度与抢占追踪
+model.how: 保持"使用 startTransition"勾选，看一个慢列表（默认 14 个节点）怎么每 5 毫秒让出主线程，并在第 7 毫秒按键进来时立刻让高优 SyncLane 插队；去掉勾选，对比同步阻塞下按键要等多少毫秒。
+ctl.trans: 使用 startTransition 标记列表筛选
+ctl.nodes: 慢列表节点数
+ctl.keyat: 按键到达时刻
+cv.aria: 毫秒时间轴上列表切片、让出间隙以及高优 SyncLane 按键任务的先后与等待延迟
+cv.x: 时间（毫秒）
+cv.wait: 等待延迟
+read.bits: 冲突时 pendingLanes
+read.yields: 切片让出次数
+read.lat: 按键响应延迟
+read.list: 列表最终完成时刻
+say.concurrent: 列表跑在 <code>TransitionLane1 (256)</code> 上（<code>lanes & 127 === 0</code>），允许 5 ms 时间切片。按键在第 {at} ms 到达时，<code>lanes & -lanes</code> 立刻选出 <em>SyncLane (2)</em> 抢占！按键仅延迟 <em>{lat} ms</em> 就完成提交，随后列表无丢帧接续算完。
+say.blocked: 没有包进 <code>startTransition</code>，列表占着 <code>DefaultLane (32)</code>（<code>lanes & 127 !== 0</code>）不可切片！第 {at} ms 按下的键被迫等到整张列表全部算完提交后才能处理，输入延迟飙到 <em>{lat} ms</em>（错过 16.7 ms 帧预算）。
+:::
+
+看默认 14 个节点（共 21 毫秒计算）时的数据：开了 `startTransition`，第 7 毫秒按下的键延迟只有 **{=ch9.transLat} 毫秒**就能反馈到屏幕上；不加 `startTransition` 直接调普通 `setState` 时，按键被堵到 **{=ch9.syncLat} 毫秒**以后，整整掉出 16.67 毫秒的 60 Hz 帧线之外（如果对鼠标按键到显示屏亮起的全链路延迟感兴趣，可以继续看[[how-pixels-reach-a-screen#ch11|《像素是怎么到达屏幕的》第 11 章]]）。
+
+模型省掉了：多条 Transition 车道轮转分配（`256..2097152`）、超时防饿死机制（`expirationTimes` 过期后把低优任务强制升级为同步）、以及并发遇上 `Suspense` 挂起时的重试车道（`RetryLanes`）。 {.take}
+
+## 前沿在哪（2026 年 11 月） {#ch10}
+
+::: strings
+toc: 前沿在哪
+:::
+
+过去几年里，React 的核心引擎正在同时往两个方向推：一边用编译期静态分析替你自动塞入缓存（不再手写 `useMemo`），另一边把不常碰的组件直接放到服务端运行、只流式传回序列化的树与组件块。 {.law}
+
+### 已确立 {#h.est .sub3}
+
+- Fiber 双缓冲架构、两轮 O(n) 同层 `key` 协调、按调用序号排列的 `memoizedState` Hook 链表与环形 `queue.pending`、31 位 Lanes 优先级掩码，以及根容器事件委托与微任务自动合批，均已在 React 18–19 长期定型。 {#e1}
+- 浏览器本身的任务切片底线（主线程 60 Hz 约 16.67 毫秒一帧、任务超过 50 毫秒成为长任务、用 `MessageChannel` 让出渲染管线以便 Browser Layout/Paint 介入）由 Web 平台与调度规则确立。 {#e2}
+
+### 已经做出来的 {#h.demo .sub3}
+
+- **React 19.0**（2024 年 12 月 5 日发布）：把 `$$typeof` 升级为 `Symbol.for('react.transitional.element')`，稳定推出 Actions（`useActionState`、`useOptimistic`）、渲染中读取 Promise/Context 的 `use()`，以及 **React Server Components（RSC）** 与流式传树的 **Flight 线协议**（按行编号的流式块协议，如 `0:"text"` 与 `["$","div",null,{...}]`）。 {#d1}
+- **React 19.2**（2025 年 10 月 1 日发布）：正式推出 **`&lt;Activity mode="visible" | "hidden"&gt;`**（源码标记为 `Symbol.for('react.activity')`）与 `useEffectEvent`。隐藏状态的 `&lt;Activity&gt;` 用 `display: none` 隐藏 DOM、卸载其中的 Effect 并把内部更新降到空闲优先级，同时**保留组件和输入框状态**。 {#d2}
+- **React Compiler 1.0**（2025 年 10 月 7 日稳定发布）：在构建时用 Babel 静态分析数据流和响应式作用域，自动把组件改写成调用 `react/compiler-runtime` 里的 `c(size)`（底层对应 Fiber 上 `updateQueue.memoCache` 数组，见 `useMemoCache`），直接按槽位缓存计算结果与 JSX 元素引用，省去手写 `useMemo`、`useCallback` 和 `React.memo`。 {#d3}
+- **React 19.3 与 19.3.1**（分别于 2026 年 9 月 9 日和 10 月 14 日发布，即本文对照版本）：把接入浏览器原生视图过渡动画的 **`&lt;ViewTransition&gt;`**（在 `startTransition`、`&lt;Suspense&gt;` 或 `useDeferredValue` 触发的更新里自动派生 enter/exit/share 动画）、Fragment Refs、`addTransitionType` 与 `react-dom.browser` 推向稳定，并在 2025 年底 CVE-2025-55182（"React2Shell"）及 2026 年多项反序列化/DoS 补丁后持续加固了 Flight 协议解码边界。 {#d4}
+
+::: lab ch10-model
+model.title: React Compiler 的 useMemoCache 槽位模型
+model.how: 对比打开和关闭 React Compiler 时连续多次渲染的开销。试着只改无关的父组件计数（parentOnly），观察编译出的 c(4) 缓存槽位怎样在没有 React.memo 的情况下保住计算结果和子组件 bailout。
+ctl.comp: 启用 React Compiler (c(4))
+ctl.what: 每次更新改动什么
+w.parent: 只改父组件无关状态
+w.theme: 交替切换 theme
+w.items: 每次都换新 items 数组
+ctl.renders: 连续渲染次数
+cv.aria: useMemoCache 四个槽位的命中与重算对比，以及各次渲染是否复用子组件
+cv.slot: 缓存槽位
+read.slots: Fiber 缓存槽位数
+read.hits: 槽位命中次数
+read.calc: 昂贵过滤计算次数
+read.bail: 子树跳过 (bailout) 次数
+say.hit: 编译器分配了 {slots} 个 <code>memoCache</code> 槽位。虽然父组件重跑了 {renders} 次，但两个作用域的依赖都命中缓存（累计命中 <em>{hits} 次</em>），昂贵过滤只算了 {calc} 次，连子组件都在没有手写 <code>React.memo</code> 时跳过了 {bail} 次。
+say.recompute: 在依赖（<code>{what}</code>）每次都变的情况下，Compiler 每次检查 <code>$[k] !== dep</code> 都未命中，还是实打实重算了 {calc} 次（但另一个未变的依赖槽位依然省下了重算，累计命中 {hits} 次）。
+say.uncompiled: 关闭 Compiler 后，没有手写缓存的组件在 {renders} 次渲染里无条件重算了 <em>{calc} 次</em>过滤、新建了 {calc} 个新 JSX 对象，子组件每次都被迫重新协调。
+:::
+
+上面这个模型里只有 {=ch10.slots} 个槽位（两段依赖各占 `[依赖, 缓存值]` 两个格子）：当父组件只改无关状态时，4 次渲染里只算了 1 次过滤、缓存命中 **{=ch10.hits} 次**；而没经过 Compiler 也没写 `useMemo` 的原组件白白算足了 **{=ch10.offRuns} 次**。
+
+### 边界、计划与未解问题 {#h.claim .sub3}
+
+- **编译边界**：React Compiler 只对遵守"React 规则"（纯渲染、不随意在渲染期突变外部对象或已传入的 JSX props）的组件安全生效；违反规则的代码会被编译器主动跳过回退到普通渲染，因此团队通常需要同时配合 `eslint-plugin-react-hooks` 的编译器规则检查。 {#c1}
+- **RSC 与安全边界**：Flight 协议（`"use client"` / `"use server"` 边界）把服务端渲染树和服务端函数序列化送到客户端或反向 POST 回服务端，协议解析本身构成了应用安全信任边界（2025 年 12 月 CVE-2025-55182 暴露了服务端解码对象原型链的严重漏洞，2026 年后续各版本持续加严了格式校验）；另外目前主流开箱即用的 RSC 实践仍高度绑定在框架与打包器集成中，具体工程采纳度随生态工具链演进而变。 {#c2}
+- **跨浏览器动画协调**：`&lt;ViewTransition&gt;` 底层依赖浏览器原生的 View Transition API 捕获新旧快照，在并发过渡、多 `&lt;Suspense&gt;` 边界与跨浏览器渲染表现上仍需结合具体浏览器版本（截至 2026 年 11 月）测试。 {#c3}
+
+版本日期与安全公告会继续更新：这一章的每条前沿事实都只代表 2026 年 11 月时的状态，阅读时请核对日期与当前版本发布说明。 {.take}
+
+## 收尾：界面卡了或状态不对，先问三件事 {#ch11}
+
+::: strings
+toc: 收尾：先问三件事
+:::
+
+不必背下 31 个位掩码或所有函数名。下次 React 页面掉帧、输入框卡顿或者列表状态串行时，先问下面三个问题： {.law}
+
+{.qs}
+- **是渲染次数太多，还是单次渲染太重？**先分清是无关父组件状态变化拖着整棵树重跑了无数遍（第 6 章，用 React Compiler 或结构拆分让 `oldProps === newProps` 触发 bailout），还是单次列表渲染确实太重、又误占了同步车道（第 9 章，把非紧急视图更新包进 `startTransition` 或 `useDeferredValue`，别让 `DefaultLane` 堵死按键）。 {#q1}
+- **Fiber 节点的身份和顺序有没有搞混？**列表数据一插一排就发现输入框草稿粘在上一行，多半是拿数组下标作 `key`（`key = index`）或每次渲染现造随机 key（第 4 章，用稳定的业务 `id` 当 key，让两轮 Diff 找回对的 Fiber）；Hook 报错或莫名串值，多半是在条件/循环里调了 Hook 打乱了 `memoizedState` 链表游标（第 5 章）。 {#q2}
+- **读写 DOM 的时机是不是放错了阶段？**先闪一帧旧位置再跳过去，是因为在浏览器绘制完之后才在 `useEffect` 里测尺寸改状态（第 7 章，改放 `useLayoutEffect`）；相反如果首帧黑屏或掉帧严重，检查是不是把重逻辑塞进了阻塞绘制的 `useLayoutEffect` 或滥用了 `flushSync` 打断批处理（第 7–8 章）。 {#q3}
+
+一句话：调用 `setState` 并不是去改网页，而是往 Fiber 节点里塞进一条带优先级车道的更新；React 先在内存的草稿树上分片算完、用位掩码标好真正要动的子树，再一口气同步翻转根指针并修改 DOM，最后把善后交回给浏览器画完之后的异步周期。 {#sum .sum}
+
+相关的文章：[[how-pixels-reach-a-screen#ch3|《像素是怎么到达屏幕的》]]（浏览器交出画面后，显示引擎、刷新率和掉帧是怎么回事），以及[[how-threejs-draws-a-scene#ch1|《Three.js 是怎么把一个场景画出来的》]]（同样在浏览器 16.67 毫秒帧预算里把对象树翻成底层命令的另一套渲染管线）。 {#links}
+
+::: footer
+**来源。**React 19.3.1 源码与包（npm `react@19.3.1`、`react-dom@19.3.1`、`scheduler@0.28.0`，2026 年 10 月 14 日发布）：`react/cjs/react.development.js`、`react/cjs/react-jsx-runtime.development.js`、`react/cjs/react-compiler-runtime.development.js`、`react-dom/cjs/react-dom-client.development.js`（`FiberNode`、`createWorkInProgress`、`reconcileChildrenArray`、`mountWorkInProgressHook`、`updateWorkInProgressHook`、`useMemoCache`、`beginWork`、`completeWork`、`bubbleProperties`、`workLoopConcurrentByScheduler`、`commitRootImpl`、`flushLayoutEffects`、`flushPassiveEffects`、`dispatchEvent`、`processRootScheduleInMicrotask`、`getHighestPriorityLanes`、`getNextLanes`、`performWorkOnRoot`）以及 `scheduler/cjs/scheduler.development.js`（`frameInterval = 5`、`MessageChannel`）。逐项文件与行号记录在本页目录的 BRIEF.md 里。
+
+React 官方发布说明与文档（react.dev，2026 年 11 月查证）：React v19（2024-12-05）、React v19.2（2025-10-01，`&lt;Activity&gt;` 与 `useEffectEvent`）、React Compiler v1.0（2025-10-07）、React v19.3（2026-09-09，`&lt;ViewTransition&gt;` 与 Fragment Refs）以及 CVE-2025-55182（2025 年 12 月公开披露）及后续 Flight 协议解码加固说明。
+
+**模型。**页面不加载 React 库。Element 构造、WorkLoop 迭代指针、两轮 `key` 协调与 `lastPlacedIndex`、Hook 游标与环形 `queue.pending`、位掩码冒泡、Commit/Paint 时序、根容器事件委托与微任务批处理、31 位 Lanes 抢占，以及 `useMemoCache` 槽位命中全部按 React 19.3.1 源码重写；本页目录里的 `tools/crosscheck.cjs` 把它们与真正安装的 `react@19.3.1`、`react-dom@19.3.1` 和 `scheduler@0.28.0` 在同样场景下逐项对账（结果记在 BRIEF.md）。浏览器绘制耗时按可比对的参数化模型估算，与硬件和样式复杂度相关。这篇文章由 Antigravity AI 编写。
+:::

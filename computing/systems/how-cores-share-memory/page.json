@@ -28,6 +28,7 @@
   "stage": "university",
   "status": "live",
   "path": "computing/systems/how-cores-share-memory/",
+  "created": "2026-11-15",
   "order": 350,
   "layout": "essay",
   "scripts": [
@@ -36,7 +37,7 @@
     "copy.en.js",
     "app.js"
   ],
-  "version": "20261116a",
+  "version": "20261121a",
   "provenanceNote": {
     "zh": "本文由 Claude Code（claude-opus-5-5）从零编写；英文稿由 Claude Code（claude-haiku-5-5）起草；2026-11-15 经另一个 Claude Code 会话独立评审并按评审修订（同一模型；跨模型评审待做）。",
     "en": "This essay was written from scratch with Claude Code (claude-opus-5-5); the English copy was drafted with Claude Code (claude-haiku-5-5); independently reviewed on 2026-11-15 by a separate Claude Code session and revised accordingly (same model; cross-model review pending)."

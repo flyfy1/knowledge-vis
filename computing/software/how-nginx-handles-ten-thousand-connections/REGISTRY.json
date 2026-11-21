@@ -1,0 +1,333 @@
+{
+  "slug": "how-nginx-handles-ten-thousand-connections",
+  "path": "computing/software/how-nginx-handles-ten-thousand-connections/",
+  "category": "computing",
+  "subtopic": "software",
+  "stage": "university",
+  "title": {
+    "zh": "Nginx 如何扛住上万并发",
+    "en": "How Nginx Handles Ten Thousand Connections"
+  },
+  "desc": {
+    "zh": "十来行 nginx.conf 配置起一台服务器，紧接着上万个浏览器同时打开长连接。这篇对照 Nginx 1.28.0 稳定版的源码结构与核心算法，从 C10K 内存悬崖、Master-Worker 零停机热重载、epoll 事件循环、11 阶段 HTTP 状态机与 location 优先级、ngx_pool_t 内存池、平滑加权轮询 SWRR、limit_req 漏桶限流、红黑树定时器，一直讲到 sendfile 零拷贝与 proxy_buffering，并附上 2026 年 11 月的 HTTP/3 QUIC 与 Pingora / Envoy 前沿对照。九个可动手模型与九张结构示意图全部按同一套源码规则在页面里运行。",
+    "en": "A dozen lines of nginx.conf launch a web server, and moments later ten thousand browsers hold open keep-alive sockets against it. Following Nginx 1.28.0 stable internals and algorithms, this essay walks through the C10K memory cliff, Master-Worker zero-downtime hot reloads, the epoll event loop, the 11-phase HTTP state machine and location precedence, ngx_pool_t bump allocation, Smooth Weighted Round-Robin (SWRR), limit_req leaky-bucket pacing, red-black timer trees, sendfile zero-copy vs proxy_buffering, and November 2026 frontiers in HTTP/3 QUIC, io_uring, and Pingora / Envoy. Nine interactive models and nine schematic diagrams run the same underlying rules directly in the page."
+  },
+  "tags": [
+    {
+      "zh": "Nginx",
+      "en": "Nginx"
+    },
+    {
+      "zh": "反向代理",
+      "en": "Reverse Proxy"
+    },
+    {
+      "zh": "事件驱动架构",
+      "en": "Event-Driven Architecture"
+    },
+    {
+      "zh": "软件原理",
+      "en": "How Software Works"
+    },
+    {
+      "zh": "长文",
+      "en": "Long-form Essay"
+    }
+  ],
+  "concepts": [
+    {
+      "id": "nginx-c10k-architecture",
+      "title": {
+        "zh": "C10K 问题与 Nginx 440 字节连接槽",
+        "en": "C10K problem & Nginx 440-byte connection slots"
+      },
+      "desc": {
+        "zh": "一连接一线程在万级并发时先被 8 MiB 默认虚拟栈和上下文切换抖动压垮；Nginx 每核只起一个单线程 Worker，把每条空闲长连接压缩进 440 字节的预分配结构槽位。",
+        "en": "One thread per socket hits the C10K cliff through 8 MiB virtual stack reserves and L1/TLB switch thrashing; Nginx runs one single-threaded worker per core with preallocated 440-byte connection/event slots."
+      },
+      "anchor": "#ch1",
+      "aliases": {
+        "zh": [
+          "nginx 为什么能抗上万并发",
+          "C10K 问题",
+          "一连接一线程为什么慢",
+          "ngx_connection_t",
+          "worker_connections"
+        ],
+        "en": [
+          "why nginx handles c10k",
+          "c10k problem",
+          "thread per connection vs nginx",
+          "ngx_connection_t",
+          "worker_connections"
+        ]
+      },
+      "relatedPages": [
+        "how-virtual-memory-works"
+      ]
+    },
+    {
+      "id": "nginx-master-worker-reload",
+      "title": {
+        "zh": "Master–Worker 与零停机热重载",
+        "en": "Master–Worker architecture & zero-downtime reload"
+      },
+      "desc": {
+        "zh": "Master 进程只管配置、监听套接字与信号分发，SIGHUP 重载时新代 Worker 继承同一监听 FD 接新握手，旧代停止 accept 并将存量请求发完再退出，实现零断连切换。",
+        "en": "The Master owns configuration and listening sockets; on SIGHUP reload, newly forked workers inherit the shared listening FD for new handshakes while old workers stop accepting and drain in-flight responses cleanly."
+      },
+      "anchor": "#ch2",
+      "aliases": {
+        "zh": [
+          "nginx 热重载",
+          "nginx -s reload 原理",
+          "零停机重载",
+          "Master Worker 进程模型",
+          "USR2 WINCH QUIT"
+        ],
+        "en": [
+          "nginx hot reload",
+          "nginx zero downtime reload",
+          "nginx -s reload internals",
+          "master worker architecture"
+        ]
+      },
+      "relatedPages": [
+        "how-virtual-memory-works"
+      ]
+    },
+    {
+      "id": "nginx-epoll-reuseport",
+      "title": {
+        "zh": "Nginx epoll 事件循环、惊群与 SO_REUSEPORT",
+        "en": "Nginx epoll loop, thundering herd & SO_REUSEPORT"
+      },
+      "desc": {
+        "zh": "select/poll 每轮 O(N) 扫全表，而 epoll 只弹出 O(活跃) 的就绪链表 rdllist；EPOLLEXCLUSIVE 与 SO_REUSEPORT 则进一步消除了多 Worker 抢 accept 的惊群与锁竞争。",
+        "en": "select/poll scans all O(N) descriptors every tick while epoll pops only O(active) ready events; EPOLLEXCLUSIVE and SO_REUSEPORT remove multi-worker thundering-herd wakeups and shared queue locks."
+      },
+      "anchor": "#ch3",
+      "aliases": {
+        "zh": [
+          "nginx epoll 原理",
+          "select poll epoll 区别",
+          "nginx 惊群效应",
+          "accept_mutex",
+          "SO_REUSEPORT"
+        ],
+        "en": [
+          "nginx epoll event loop",
+          "select poll vs epoll",
+          "nginx thundering herd",
+          "accept_mutex",
+          "SO_REUSEPORT"
+        ]
+      },
+      "relatedPages": [
+        "how-the-os-talks-to-hardware",
+        "how-a-nic-moves-packets"
+      ]
+    },
+    {
+      "id": "nginx-http-phases-location",
+      "title": {
+        "zh": "Nginx 请求 11 阶段状态机与 location 优先级",
+        "en": "Nginx 11-phase request pipeline & location precedence"
+      },
+      "desc": {
+        "zh": "HTTP 请求沿 ngx_http_phases 定义的 11 个固定阶段流转；location 匹配按 = 精确 > 最长前缀带 ^~ 阻断正则 > 配置文件顺序的首条 ~ / ~* 正则 > 最长前缀兜底裁决。",
+        "en": "Requests flow through 11 fixed ngx_http_phases; location matching resolves by = exact > longest prefix carrying ^~ > first matching ~ / ~* regex in file order > longest prefix fallback."
+      },
+      "anchor": "#ch4",
+      "aliases": {
+        "zh": [
+          "nginx location 匹配顺序",
+          "location 优先级",
+          "nginx 11 个阶段",
+          "前缀匹配和正则区别",
+          "ngx_http_phases"
+        ],
+        "en": [
+          "nginx location precedence",
+          "nginx location matching order",
+          "nginx 11 phases",
+          "ngx_http_core_find_location"
+        ]
+      },
+      "relatedPages": []
+    },
+    {
+      "id": "nginx-memory-pool",
+      "title": {
+        "zh": "ngx_pool_t 按请求内存池与缓冲区链",
+        "en": "Per-request ngx_pool_t memory pool & buffer chains"
+      },
+      "desc": {
+        "zh": "Nginx 为每个请求建 4 KiB 内存池，小块通过对齐推进 d.last 指针 O(1) 分配、超限才落 pool->large，请求结束时一次 ngx_destroy_pool() 整块回收以杜绝堆碎片。",
+        "en": "Nginx gives each request a 4 KiB ngx_pool_t arena for O(1) bump allocation via d.last, offloading oversized chunks to pool->large and freeing everything in one ngx_destroy_pool() call."
+      },
+      "anchor": "#ch5",
+      "aliases": {
+        "zh": [
+          "nginx 内存池",
+          "ngx_pool_t",
+          "ngx_chain_t",
+          "指针推进分配",
+          "nginx 为什么不用 free"
+        ],
+        "en": [
+          "nginx memory pool",
+          "ngx_pool_t",
+          "ngx_chain_t",
+          "nginx bump allocator"
+        ]
+      },
+      "relatedPages": []
+    },
+    {
+      "id": "nginx-smooth-weighted-round-robin",
+      "title": {
+        "zh": "平滑加权轮询（SWRR）均衡算法",
+        "en": "Smooth Weighted Round-Robin (SWRR)"
+      },
+      "desc": {
+        "zh": "ngx_http_upstream_get_peer 每轮加有效权重并从赢家减去总权重，保持 sum(current_weight) 恒为零，把 {5,1,1} 的突发连打抹平为 [A, A, B, A, C, A, A]。",
+        "en": "ngx_http_upstream_get_peer adds effective_weight each turn and subtracts total weight from the selected peer, keeping sum(current_weight)=0 and smoothing {5,1,1} into [A, A, B, A, C, A, A]."
+      },
+      "anchor": "#ch6",
+      "aliases": {
+        "zh": [
+          "平滑加权轮询",
+          "nginx 负载均衡算法",
+          "SWRR",
+          "current_weight",
+          "加权轮询为什么不连发"
+        ],
+        "en": [
+          "smooth weighted round robin",
+          "nginx load balancing algorithm",
+          "SWRR",
+          "ngx_http_upstream_get_peer"
+        ]
+      },
+      "relatedPages": []
+    },
+    {
+      "id": "nginx-limit-req-leaky-bucket",
+      "title": {
+        "zh": "limit_req 共享内存漏桶限流",
+        "en": "limit_req shared-memory leaky-bucket rate limiting"
+      },
+      "desc": {
+        "zh": "ngx_http_limit_req_lookup 在跨进程共享内存红黑树里按毫秒匀速漏水，以 burst 控制队列或 nodelay 直通上限，超限返 503 且不抬高桶水位。",
+        "en": "ngx_http_limit_req_lookup tracks millisecond leaky-bucket excess in a shared-memory rbtree, pacing requests up to burst or forwarding immediately with nodelay while returning 503 on overflow."
+      },
+      "anchor": "#ch7",
+      "aliases": {
+        "zh": [
+          "nginx 限流原理",
+          "limit_req",
+          "漏桶限流算法",
+          "burst 和 nodelay 区别",
+          "nginx 503 限流"
+        ],
+        "en": [
+          "nginx rate limiting",
+          "limit_req",
+          "nginx burst vs nodelay",
+          "ngx_http_limit_req_lookup"
+        ]
+      },
+      "relatedPages": []
+    },
+    {
+      "id": "nginx-rbtree-timers",
+      "title": {
+        "zh": "红黑树定时器与 300 毫秒懒更新",
+        "en": "Red-black timer tree & 300 ms lazy updates"
+      },
+      "desc": {
+        "zh": "所有连接超时按键值放入 ngx_event_timer_rbtree，最左节点直接决定 epoll_wait 睡眠时长，300 ms 懒更新阈值则免去高频小包下的大量红黑树旋转。",
+        "en": "All socket deadlines live in ngx_event_timer_rbtree where the leftmost node sets epoll_wait's timeout and NGX_TIMER_LAZY_DELAY (300 ms) skips redundant tree updates."
+      },
+      "anchor": "#ch8",
+      "aliases": {
+        "zh": [
+          "nginx 红黑树定时器",
+          "ngx_event_timer_rbtree",
+          "NGX_TIMER_LAZY_DELAY",
+          "epoll_wait 超时怎么算",
+          "keepalive 超时管理"
+        ],
+        "en": [
+          "nginx red-black tree timer",
+          "ngx_event_timer_rbtree",
+          "NGX_TIMER_LAZY_DELAY",
+          "nginx timer management"
+        ]
+      },
+      "relatedPages": []
+    },
+    {
+      "id": "nginx-sendfile-proxy-buffering",
+      "title": {
+        "zh": "sendfile 零拷贝与 proxy_buffering 解耦",
+        "en": "sendfile zero-copy & proxy_buffering decoupling"
+      },
+      "desc": {
+        "zh": "静态资源靠 sendfile() + TCP_CORK 从内核页缓存直达网卡跳过用户态（无 kTLS 时 HTTPS 会回退）；反向代理则反过来用 proxy_buffering 接住响应以防慢客户端拖死后端。",
+        "en": "Static serving uses sendfile() + TCP_CORK to DMA straight from the kernel page cache (falling back under non-kTLS HTTPS), while proxy_buffering absorbs responses so slow clients never pin backend workers."
+      },
+      "anchor": "#ch9",
+      "aliases": {
+        "zh": [
+          "sendfile 零拷贝",
+          "nginx 为什么用 sendfile",
+          "TCP_CORK",
+          "proxy_buffering 作用",
+          "kTLS 和 sendfile"
+        ],
+        "en": [
+          "nginx sendfile",
+          "TCP_CORK",
+          "proxy_buffering",
+          "kTLS sendfile fallback",
+          "nginx reverse proxy buffering"
+        ]
+      },
+      "relatedPages": [
+        "how-the-os-talks-to-hardware",
+        "tcp-congestion"
+      ]
+    },
+    {
+      "id": "nginx-http3-pingora-frontier",
+      "title": {
+        "zh": "QUIC 热重载、Pingora 与 Envoy 架构演进",
+        "en": "QUIC reloads, Pingora & Envoy architectures"
+      },
+      "desc": {
+        "zh": "Nginx 1.28/1.30/1.31 持续打磨 HTTP/3 QUIC 与不丢连接的 quic_bpf 热重载，而 Cloudflare Pingora 和 Envoy 则分别转向多线程全局共享连接池与线程本地架构。",
+        "en": "Nginx 1.28/1.30/1.31 mature HTTP/3 QUIC and seamless quic_bpf reloads, while Cloudflare Pingora and Envoy adopt multi-threaded globally shared pools and thread-local data planes."
+      },
+      "anchor": "#ch10",
+      "aliases": {
+        "zh": [
+          "nginx HTTP/3 QUIC",
+          "quic_bpf 热重载",
+          "Cloudflare Pingora 和 Nginx 区别",
+          "Nginx 和 Envoy 架构对比",
+          "nginx io_uring"
+        ],
+        "en": [
+          "nginx HTTP/3 QUIC",
+          "quic_bpf reload",
+          "Pingora vs Nginx",
+          "Nginx vs Envoy architecture",
+          "nginx io_uring status"
+        ]
+      },
+      "relatedPages": []
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+<figure class="lab" id="lab-ch7-model">
+    <h3 data-i18n="ch7.model.title"></h3>
+    <p class="how" data-i18n="ch7.model.how"></p>
+    <div class="ctl">
+      <div class="seg" role="radiogroup" data-i18n-aria="ch7.ctl.pre">
+        <span class="lbl" data-i18n="ch7.ctl.pre"></span>
+        <label><input type="radio" name="c7Pre" value="fma" checked><span data-i18n="ch7.pre.fma"></span></label>
+        <label><input type="radio" name="c7Pre" value="shiftAdd"><span data-i18n="ch7.pre.shiftAdd"></span></label>
+        <label><input type="radio" name="c7Pre" value="arrayLoad"><span data-i18n="ch7.pre.arrayLoad"></span></label>
+        <label><input type="radio" name="c7Pre" value="scaleConst"><span data-i18n="ch7.pre.scaleConst"></span></label>
+      </div>
+      <div class="seg" role="radiogroup" data-i18n-aria="ch7.ctl.arch">
+        <span class="lbl" data-i18n="ch7.ctl.arch"></span>
+        <label><input type="radio" name="c7Arch" value="arm64" checked><span data-i18n="ch7.arch.arm64"></span></label>
+        <label><input type="radio" name="c7Arch" value="x86_64"><span data-i18n="ch7.arch.x86_64"></span></label>
+      </div>
+      <label class="chk"><input type="checkbox" id="c7Fuse" checked><span data-i18n="ch7.ctl.fuse"></span></label>
+    </div>
+    <canvas class="cv" id="c7Cv" role="img" data-i18n-aria="ch7.cv.aria"></canvas>
+    <div class="codebox"><div class="ctitle" data-i18n="ch7.code.title"></div><pre id="c7Asm"></pre></div>
+    <div class="read">
+      <div><span data-i18n="ch7.read.ir"></span><b id="c7Ir" class="c"></b></div>
+      <div><span data-i18n="ch7.read.mach"></span><b id="c7Ma" class="n"></b></div>
+      <div><span data-i18n="ch7.read.saved"></span><b id="c7Sv" class="g"></b></div>
+    </div>
+    <p class="say" id="c7Say" aria-live="polite"></p>
+  </figure>

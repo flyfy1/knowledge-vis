@@ -6,12 +6,20 @@ Each essay takes one widely used piece of software and explains the handful of i
 of its real data structures and algorithms. The reader has used the software (or something built on it) and wants to
 know what happens inside one call. It is not a tutorial and not an API tour.
 
-## Status (2026-11-20, updated at W1 registration)
+## Status (2026-11-21, updated at W2–W10 registration on `antigravity/dates-and-software-series`)
 
 | | Page | State |
 |---|---|---|
 | W1 | `how-threejs-draws-a-scene` Three.js 是怎么把一个场景画出来的 | built, reviewed (specs/reviews/how-threejs-draws-a-scene-review-20261120.md) and registered on `main` 2026-11-20 (f75ec123 essay, f118add3 registration, 168d2ce0 atlas and aliases); pushed and deployed at `f38ea31b` |
-| W2… | see "Candidates" | not started |
+| W2 | `how-git-stores-history` Git 如何存下全部历史 | built by Antigravity (`9c0e8c99`), self-checked (`git 2.56.0`, Playwright sweep), registered live on `antigravity/dates-and-software-series` (not pushed/deployed; independent review pending) |
+| W3 | `how-react-updates-the-dom` React 如何更新网页 | built by Antigravity (`b26a5444`), self-checked (`react@19.3.1`, Playwright sweep), registered live on `antigravity/dates-and-software-series` (not pushed/deployed; independent review pending) |
+| W4 | `how-redis-answers-in-microseconds` Redis 如何在微秒级响应 | built by Antigravity (`19f8386b`), self-checked (reference vectors — no local `redis-server`, Playwright sweep), registered live on `antigravity/dates-and-software-series` (not pushed/deployed; independent review pending) |
+| W5 | `how-v8-runs-javascript` V8 是怎么跑起一段 JavaScript 的 | built by Antigravity (`28e950b9`), self-checked (Node `v26.12.1` / V8 `14.6.202.34-node.40`, Playwright sweep), registered live on `antigravity/dates-and-software-series` (not pushed/deployed; independent review pending) |
+| W6 | `how-postgresql-runs-a-query` PostgreSQL 如何执行一条查询 | built by Antigravity (`62203e84`), self-checked (reference vectors — no local `postgres`, Playwright sweep), registered live on `antigravity/dates-and-software-series` (not pushed/deployed; independent review pending) |
+| W7 | `how-nginx-handles-ten-thousand-connections` Nginx 如何扛住上万并发 | built by Antigravity (`4c1b86f1`), self-checked (invariants — no local `nginx`, Playwright sweep), registered live on `antigravity/dates-and-software-series` (not pushed/deployed; independent review pending) |
+| W8 | `how-chromium-renders-a-web-page` Chromium 如何把一个网页画上屏幕 | built by Antigravity (`d889d9c9`), self-checked (Playwright Chromium `151.0.7922.34`, Playwright sweep), registered live on `antigravity/dates-and-software-series` (not pushed/deployed; independent review pending) |
+| W9 | `how-containers-isolate-a-process` 容器是如何把一个进程关进沙盒的 | built by Antigravity (`1fcc12c7`), self-checked (`node:crypto` + OCI/Linux invariants — no Linux kernel/`docker` on macOS host, Playwright sweep), registered live on `antigravity/dates-and-software-series` (not pushed/deployed; independent review pending) |
+| W10 | `how-llvm-compiles-your-code` LLVM 如何把源码编译成机器码 | built by Antigravity (`31631e36`), self-checked (`/usr/bin/clang` `Apple clang 21.0.0` — no standalone `opt`/`llc`, Playwright sweep), registered live on `antigravity/dates-and-software-series` (not pushed/deployed; independent review pending) |
 
 ## Where it lives
 

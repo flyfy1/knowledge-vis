@@ -11,7 +11,7 @@ taught on B (any `lessons[]` entry). Pairs where either page teaches no atlas co
 counted. Under each pair: every link, with the concepts anchored at its two ends where there are any (`?` = none at that
 anchor; a link to the page top has no anchor).
 
-855 linked page pairs · 420 covered by an atlas edge · 14 with no concept on one side · **421 to do**.
+887 linked page pairs · 432 covered by an atlas edge · 14 with no concept on one side · **441 to do**.
 
 ## 冰冻肥皂泡 · 水膜里的结晶 / Frozen Soap Bubbles · Ice in a Thin Film → 光的反射与折射 · 拐弯的规矩 / Reflection & Refraction · How Light Bends
 
@@ -1653,6 +1653,103 @@ anchor; a link to the page top has no anchor).
 
 - `what-quantum-computers-do#ch12` → `eigenvectors`: reading-quantum-news → ?
 
+## Chromium 如何把一个网页画上屏幕 / How Chromium Renders a Web Page → GPU 是怎么算的 / How a GPU Computes
+
+- `how-chromium-renders-a-web-page#ch7` → `how-a-gpu-computes#ch9`: chromium-tiling-checkerboarding → pixel-quads
+- `how-chromium-renders-a-web-page#ch11` → `how-a-gpu-computes#ch9`: chromium-jank-troubleshooting → pixel-quads
+
+## 容器是如何把一个进程关进沙盒的 / How Containers Isolate a Process → 虚拟内存是怎么工作的 / How Virtual Memory Works
+
+- `how-containers-isolate-a-process` → `how-virtual-memory-works`
+- `how-containers-isolate-a-process#ch1` → `how-virtual-memory-works#ch11`: container-process-not-vm → nested-paging
+- `how-containers-isolate-a-process#ch3` → `how-virtual-memory-works#ch9`: container-overlayfs-copyup → fork-copy-on-write
+- `how-containers-isolate-a-process#ch7` → `how-virtual-memory-works#ch7`: container-cgroups-memory-oom → page-faults
+- `how-containers-isolate-a-process#ch11` → `how-virtual-memory-works`
+
+## 容器是如何把一个进程关进沙盒的 / How Containers Isolate a Process → 网卡是怎么搬运数据包的 / How a Network Card Moves Packets
+
+- `how-containers-isolate-a-process#ch5` → `how-a-nic-moves-packets#ch3`: container-veth-bridge-nat → rx-path
+- `how-containers-isolate-a-process#ch5` → `how-a-nic-moves-packets#ch10`: container-veth-bridge-nat → xdp
+- `how-containers-isolate-a-process#ch11` → `how-a-nic-moves-packets`
+
+## Git 如何存下全部历史 / How Git Stores All History → 图算法 · 让边带你走 / Graph Algorithms · Let Edges Lead
+
+- `how-git-stores-history` → `graph-algorithms#step0`
+- `how-git-stores-history#ch4` → `graph-algorithms#step0`: git-commit-dag → ?
+- `how-git-stores-history#ch11` → `graph-algorithms#step0`
+
+## Git 如何存下全部历史 / How Git Stores All History → 硬盘里到底是什么 / What a Drive Is Made Of
+
+- `how-git-stores-history#ch9` → `what-a-drive-is-made-of#ch5`: git-protocol-partial-clone → flash-endurance-ecc-tbw
+- `how-git-stores-history#ch11` → `what-a-drive-is-made-of#ch6`: ? → flash-translation-layer-gc
+
+## Git 如何存下全部历史 / How Git Stores All History → Three.js 是怎么把一个场景画出来的 / How Three.js Draws a Scene
+
+- `how-git-stores-history#ch11` → `how-threejs-draws-a-scene`
+
+## LLVM 如何把源码编译成机器码 / How LLVM Compiles Your Code → 一堆开关是怎么学会算数的 / How a Pile of Switches Learned to Do Arithmetic
+
+- `how-llvm-compiles-your-code` → `switches-that-compute#ch1`: ? → relay-logic-gates
+- `how-llvm-compiles-your-code#ch11` → `switches-that-compute`
+
+## LLVM 如何把源码编译成机器码 / How LLVM Compiles Your Code → CPU 是怎么猜着往前跑的 / How a CPU Guesses Ahead
+
+- `how-llvm-compiles-your-code#ch7` → `how-a-cpu-guesses-ahead#ch6`: llvm-instruction-selection → superscalar-ilp
+- `how-llvm-compiles-your-code#ch8` → `how-a-cpu-guesses-ahead#ch7`: llvm-register-allocation-spill → ooo-renaming
+- `how-llvm-compiles-your-code#ch11` → `how-a-cpu-guesses-ahead`
+
+## Nginx 如何扛住上万并发 / How Nginx Handles Ten Thousand Connections → 操作系统是怎么和硬件说话的 / How the OS Talks to Hardware
+
+- `how-nginx-handles-ten-thousand-connections` → `how-the-os-talks-to-hardware`
+- `how-nginx-handles-ten-thousand-connections#ch3` → `how-the-os-talks-to-hardware#ch11`: nginx-epoll-reuseport → epoll-io-uring
+- `how-nginx-handles-ten-thousand-connections#ch9` → `how-the-os-talks-to-hardware#ch7`: nginx-sendfile-proxy-buffering → descriptor-ring
+- `how-nginx-handles-ten-thousand-connections#ch11` → `how-the-os-talks-to-hardware`
+
+## Nginx 如何扛住上万并发 / How Nginx Handles Ten Thousand Connections → 虚拟内存是怎么工作的 / How Virtual Memory Works
+
+- `how-nginx-handles-ten-thousand-connections` → `how-virtual-memory-works`
+- `how-nginx-handles-ten-thousand-connections#ch1` → `how-virtual-memory-works#ch1`: nginx-c10k-architecture → why-virtual-addresses
+- `how-nginx-handles-ten-thousand-connections#ch2` → `how-virtual-memory-works#ch9`: nginx-master-worker-reload → fork-copy-on-write
+- `how-nginx-handles-ten-thousand-connections#ch11` → `how-virtual-memory-works`
+
+## Nginx 如何扛住上万并发 / How Nginx Handles Ten Thousand Connections → 网卡是怎么搬运数据包的 / How a Network Card Moves Packets
+
+- `how-nginx-handles-ten-thousand-connections` → `how-a-nic-moves-packets`
+- `how-nginx-handles-ten-thousand-connections#ch3` → `how-a-nic-moves-packets#ch5`: nginx-epoll-reuseport → rss
+- `how-nginx-handles-ten-thousand-connections#ch11` → `how-a-nic-moves-packets`
+
+## PostgreSQL 如何执行一条查询 / How PostgreSQL Runs a Query → 操作系统是怎么和硬件说话的 / How the OS Talks to Hardware
+
+- `how-postgresql-runs-a-query#ch6` → `how-the-os-talks-to-hardware`: pg-shared-buffers-clock → ?
+- `how-postgresql-runs-a-query#ch10` → `how-the-os-talks-to-hardware#ch11`: pg-aio-skipscan-pgvector-frontier → epoll-io-uring
+- `how-postgresql-runs-a-query#ch11` → `how-the-os-talks-to-hardware`: pg-diagnostic-checklist → ?
+
+## PostgreSQL 如何执行一条查询 / How PostgreSQL Runs a Query → 分布式系统 · 多个副本如何像一个值 / Distributed Systems · How Replicas Behave Like One Value
+
+- `how-postgresql-runs-a-query#ch10` → `distributed-systems`: pg-aio-skipscan-pgvector-frontier → ?
+- `how-postgresql-runs-a-query#ch11` → `distributed-systems`: pg-diagnostic-checklist → ?
+
+## PostgreSQL 如何执行一条查询 / How PostgreSQL Runs a Query → 多个核心怎么共用一块内存 / How Cores Share Memory
+
+- `how-postgresql-runs-a-query#ch11` → `how-cores-share-memory`: pg-diagnostic-checklist → ?
+
+## React 如何更新网页 / How React Updates the DOM → Three.js 是怎么把一个场景画出来的 / How Three.js Draws a Scene
+
+- `how-react-updates-the-dom` → `how-threejs-draws-a-scene#ch1`: ? → threejs-render-call
+- `how-react-updates-the-dom#ch11` → `how-threejs-draws-a-scene#ch1`: ? → threejs-render-call
+
+## Redis 如何在微秒级响应 / How Redis Answers in Microseconds → 网卡是怎么搬运数据包的 / How a Network Card Moves Packets
+
+- `how-redis-answers-in-microseconds` → `how-a-nic-moves-packets`
+- `how-redis-answers-in-microseconds#ch2` → `how-a-nic-moves-packets#ch3`: redis-resp-pipelining → rx-path
+- `how-redis-answers-in-microseconds#ch11` → `how-a-nic-moves-packets`
+
+## Redis 如何在微秒级响应 / How Redis Answers in Microseconds → 为什么计算一直在等内存 / Why Compute Waits for Memory
+
+- `how-redis-answers-in-microseconds` → `why-compute-waits-for-memory`
+- `how-redis-answers-in-microseconds#ch1` → `why-compute-waits-for-memory#ch1`: redis-event-loop → pipeline-memory-stall
+- `how-redis-answers-in-microseconds#ch11` → `why-compute-waits-for-memory`
+
 ## Three.js 是怎么把一个场景画出来的 / How Three.js Draws a Scene → 计算机图形学 · 从坐标到画面 / Computer Graphics · From Coordinates to Pixels
 
 - `how-threejs-draws-a-scene` → `computer-graphics`
@@ -1666,6 +1763,23 @@ anchor; a link to the page top has no anchor).
 ## Three.js 是怎么把一个场景画出来的 / How Three.js Draws a Scene → 高阶机器人学 · 从角度到末端 / Advanced Robotics · From Angles to the End Effector
 
 - `how-threejs-draws-a-scene#ch14` → `robot-kinematics`
+
+## V8 是怎么跑起一段 JavaScript 的 / How V8 Runs JavaScript → CPU 是怎么运行一个程序的 / How a CPU Runs a Program
+
+- `how-v8-runs-javascript` → `how-a-cpu-runs-a-program`
+- `how-v8-runs-javascript#ch11` → `how-a-cpu-runs-a-program`
+
+## V8 是怎么跑起一段 JavaScript 的 / How V8 Runs JavaScript → CPU 是怎么猜着往前跑的 / How a CPU Guesses Ahead
+
+- `how-v8-runs-javascript` → `how-a-cpu-guesses-ahead`
+- `how-v8-runs-javascript#ch4` → `how-a-cpu-guesses-ahead#ch1`: v8-inline-caches → mispredict-cost-wide-core
+- `how-v8-runs-javascript#ch11` → `how-a-cpu-guesses-ahead`
+
+## V8 是怎么跑起一段 JavaScript 的 / How V8 Runs JavaScript → CPU 是怎么算小数的，又怎么一次算一排 / How a CPU Does Math: Real Numbers, and Many at Once
+
+- `how-v8-runs-javascript` → `how-a-cpu-does-math`
+- `how-v8-runs-javascript#ch2` → `how-a-cpu-does-math#ch1`: v8-pointer-tagging-compression → ieee754-bit-layout
+- `how-v8-runs-javascript#ch11` → `how-a-cpu-does-math`
 
 ## 当着所有人的面约定一个秘密 / Agreeing on a Secret in Plain Sight → RSA 公钥加密 · 乘起来容易，拆开来难 / RSA Public-Key Encryption · Easy to Multiply, Hard to Split
 

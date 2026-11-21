@@ -1,0 +1,145 @@
+{
+  "slug": "how-containers-isolate-a-process",
+  "kind": "essay",
+  "tags": [
+    {
+      "zh": "容器原理",
+      "en": "Container Internals"
+    },
+    {
+      "zh": "Docker 与 OCI",
+      "en": "Docker & OCI"
+    },
+    {
+      "zh": "Linux 隔离机制",
+      "en": "Linux Isolation"
+    },
+    {
+      "zh": "软件原理",
+      "en": "How Software Works"
+    },
+    {
+      "zh": "长文",
+      "en": "Long-form Essay"
+    }
+  ],
+  "category": "computing",
+  "subtopic": "software",
+  "stage": "university",
+  "path": "computing/software/how-containers-isolate-a-process/",
+  "created": "2026-11-21",
+  "layout": "essay",
+  "scripts": [
+    "models.js",
+    "copy.zh.js",
+    "copy.en.js",
+    "app.js"
+  ],
+  "version": "20261121",
+  "provenanceNote": {
+    "zh": "本文由 Antigravity 从零编写，对照 OCI Image v1.1.0 / Runtime v1.2.0 规范与 Linux 内核 6.x 原语编写；中英文同步完成并已运行模型、交叉验证、版式与画布扫描检查（独立评审待做）。",
+    "en": "This essay was written from scratch with Antigravity against OCI Image v1.1.0 / Runtime v1.2.0 specifications and Linux kernel 6.x primitives; both Chinese and English were authored together and checked with model, crosscheck, layout, and canvas-sweep tests (independent review pending)."
+  },
+  "dynamicKeys": {
+    "ch1.mode": [
+      "process",
+      "container",
+      "microvm",
+      "vm"
+    ],
+    "ch1.say": [
+      "process",
+      "container",
+      "microvm",
+      "vm"
+    ],
+    "ch2.say": [
+      "none",
+      "l1",
+      "l2",
+      "l3"
+    ],
+    "ch3.say": [
+      "read",
+      "append",
+      "chmod",
+      "rm-split",
+      "rm-same",
+      "opaque"
+    ],
+    "ch4.say": [
+      "rootful-ok",
+      "no-mnt",
+      "host-pid",
+      "proc-leak",
+      "rootless"
+    ],
+    "ch5.say": [
+      "bridge-nat",
+      "same-bridge",
+      "ebpf-host",
+      "host-net",
+      "frag"
+    ],
+    "ch6.say": [
+      "throttled",
+      "smooth"
+    ],
+    "ch7.st": [
+      "healthy",
+      "reclaim",
+      "thrash",
+      "oom"
+    ],
+    "ch7.say": [
+      "healthy",
+      "reclaim",
+      "thrash",
+      "oom"
+    ],
+    "ch8.gate": [
+      "none",
+      "nnp",
+      "seccomp",
+      "caps",
+      "lsm"
+    ],
+    "ch8.pr": [
+      "read_write",
+      "raw_ping",
+      "mount_fs",
+      "ptrace",
+      "bpf",
+      "kexec"
+    ],
+    "ch8.say": [
+      "allow",
+      "seccomp",
+      "caps",
+      "lsm"
+    ],
+    "ch9.st": [
+      "running",
+      "ignoring-sigterm",
+      "killed-sigkill",
+      "draining",
+      "exited-clean"
+    ],
+    "ch9.say": [
+      "run",
+      "hang",
+      "sigkill",
+      "exec",
+      "init"
+    ]
+  },
+  "generators": [
+    {
+      "run": "tools/diagrams.cjs",
+      "writes": [
+        "figures/dg-*.html"
+      ]
+    }
+  ],
+  "status": "live"
+}

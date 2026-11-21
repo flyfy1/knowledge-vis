@@ -1,0 +1,24 @@
+<figure class="lab" id="lab-ch7-model">
+  <h3 data-i18n="ch7.model.title"></h3>
+  <p class="how" data-i18n="ch7.model.how"></p>
+  <div class="ctl">
+    <label class="rng"><span data-i18n="ch7.ctl.render"></span><input type="range" id="c7Ren" min="1" max="10" step="0.5" value="4"><output id="c7Reno" for="c7Ren"></output></label>
+    <label class="rng"><span data-i18n="ch7.ctl.layout"></span><input type="range" id="c7Lay" min="0" max="14" step="0.5" value="6"><output id="c7Layo" for="c7Lay"></output></label>
+    <label class="rng"><span data-i18n="ch7.ctl.passive"></span><input type="range" id="c7Pas" min="0" max="14" step="0.5" value="5"><output id="c7Paso" for="c7Pas"></output></label>
+  </div>
+  <div class="ctl">
+    <div class="seg" role="radiogroup" data-i18n-aria="ch7.ctl.hook">
+      <span class="lbl" data-i18n="ch7.ctl.hook"></span>
+      <label><input type="radio" name="c7Hook" value="layout" checked><span data-i18n="ch7.hk.layout"></span></label>
+      <label><input type="radio" name="c7Hook" value="passive"><span data-i18n="ch7.hk.passive"></span></label>
+    </div>
+  </div>
+  <canvas class="cv short" id="c7Cv" role="img" data-i18n-aria="ch7.cv.aria"></canvas>
+  <div class="read">
+    <div><span data-i18n="ch7.read.paint"></span><b id="c7Paint" class="g"></b></div>
+    <div><span data-i18n="ch7.read.total"></span><b id="c7Tot" class="c"></b></div>
+    <div><span data-i18n="ch7.read.drop"></span><b id="c7Drop" class="r"></b></div>
+    <div><span data-i18n="ch7.read.flash"></span><b id="c7Flash" class="v"></b></div>
+  </div>
+  <p class="say" id="c7Say" aria-live="polite"></p>
+</figure>

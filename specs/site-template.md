@@ -100,14 +100,16 @@ site-nav-data.js (build-site-nav.cjs) and the template build (build-pages.cjs) r
 **page.json kinds.**
 - **Metadata-only** (no `"layout"`): a hand-written page. Fields: `slug`, `kind` (essay | lesson | demo | tool),
   `title` and `desc` `{zh, en}`, `tags`, optional `languages: ["zh"]`, `category`, `subtopic` (optional only for
-  entrance pages such as `atlas/`), `stage`, `status`, `path`, `order`. The seed commit wrote one for all 227
-  hand-written pages from their pages.config.js rows.
+  entrance pages such as `atlas/`), `stage`, `status`, `path`, optional `created` (`YYYY-MM-DD`, initial git creation
+  date derived via `scripts/authorship.cjs` and projected into `pages.config.js` and `site-registry.json`), `order`.
+  The seed commit wrote one for all 227 hand-written pages from their pages.config.js rows.
 - **Template page** (`"layout"`): the fields of §3/§3a plus `category`, `subtopic`, `stage`, `status`, `path`, `tags`,
-  `order`. No `title` / `desc` (an error): they are the `# … {#hero}` heading (plain text; markup there is an error)
-  and the front-matter `desc` of each `content.<lang>.md`.
+  optional `created` (`YYYY-MM-DD`), `order`. No `title` / `desc` (an error): they are the `# … {#hero}` heading
+  (plain text; markup there is an error) and the front-matter `desc` of each `content.<lang>.md`.
 
 **Checks** (each names the page.json): `path` equals its directory, and is `<category>/<subtopic>/<slug>/` when a
 subtopic is given; category and subtopic exist in the hand-edited tables; stage, status and kind are known values;
+`created` (when present) is a valid calendar date `YYYY-MM-DD`;
 slugs and orders are unique; title, desc, tags are bilingual. Not scanned: `.git`, `node_modules`, `.claude`,
 `.agent`, `.runs`, `tests/fixtures/`, `specs/`, `variants/`, `templates/`.
 

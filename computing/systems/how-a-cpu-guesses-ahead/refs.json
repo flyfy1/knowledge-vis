@@ -4,6 +4,40 @@
  "refs": [],
  "backlinks": [
   {
+   "from": "how-llvm-compiles-your-code",
+   "links": [
+    {
+     "from": "ch7",
+     "to": "ch6"
+    },
+    {
+     "from": "ch8",
+     "to": "ch7"
+    },
+    {
+     "from": "ch11",
+     "to": null
+    }
+   ]
+  },
+  {
+   "from": "how-v8-runs-javascript",
+   "links": [
+    {
+     "from": null,
+     "to": null
+    },
+    {
+     "from": "ch4",
+     "to": "ch1"
+    },
+    {
+     "from": "ch11",
+     "to": null
+    }
+   ]
+  },
+  {
    "from": "how-a-cpu-does-math",
    "links": [
     {

@@ -1,0 +1,355 @@
+{
+  "slug": "how-llvm-compiles-your-code",
+  "path": "computing/software/how-llvm-compiles-your-code/",
+  "category": "computing",
+  "subtopic": "software",
+  "stage": "university",
+  "title": {
+    "zh": "LLVM 如何把源码编译成机器码",
+    "en": "How LLVM Compiles Your Code"
+  },
+  "desc": {
+    "zh": "一行 clang -O2 sum.c 的背后，编译器到底做了什么？本文按宿主机 Apple Clang 21.0.0（LLVM 21）的实测中间表示、Pass 结构与 ARM64 / x86_64 汇编，把从源码到机器码的整条链拆开：三段式架构、-O0 的栈槽、SSA 与 mem2reg 的 phi 节点、Pass 不动点迭代、循环外提与 SIMD 向量化、未定义行为 nsw、指令选择、寄存器分配、ThinLTO 与 2026 年 11 月前沿。",
+    "en": "What actually happens inside clang -O2 sum.c between C syntax and AArch64 or x86_64 instructions? Verified directly against host Apple Clang 21.0.0 (LLVM 21), this essay traces the entire chain: the N+1+M decoupled pipeline, -O0 stack allocas, SSA phi insertion via dominance frontiers, fixed-point pass iteration, loop hoisting and SIMD vectorization, Undefined Behavior (nsw / poison), instruction selection, register allocation, ThinLTO, and the November 2026 frontier."
+  },
+  "tags": [
+    {
+      "zh": "LLVM",
+      "en": "LLVM"
+    },
+    {
+      "zh": "Clang",
+      "en": "Clang"
+    },
+    {
+      "zh": "编译器优化",
+      "en": "Compiler Optimization"
+    },
+    {
+      "zh": "软件原理",
+      "en": "How Software Works"
+    },
+    {
+      "zh": "长文",
+      "en": "Long-form Essay"
+    }
+  ],
+  "concepts": [
+    {
+      "id": "llvm-three-phase-ir",
+      "title": {
+        "zh": "LLVM 三段式架构与不透明指针 IR",
+        "en": "LLVM 3-phase architecture & opaque-pointer IR"
+      },
+      "desc": {
+        "zh": "N 种语言前端降成同一份强类型 LLVM IR，共享中端优化器后再生成 M 种 CPU 指令；现代 LLVM IR 统一用不透明指针 ptr 取代带类型指针。",
+        "en": "N language frontends lower to one typed LLVM IR, share one middle-end optimizer, and target M CPUs; modern LLVM IR replaces typed pointers with opaque ptr."
+      },
+      "anchor": "#ch1",
+      "aliases": {
+        "zh": [
+          "LLVM 是什么",
+          "LLVM IR 是什么",
+          "LLVM 三段式架构",
+          "Clang 和 LLVM 关系",
+          "不透明指针 ptr",
+          "clang -O2 做了什么"
+        ],
+        "en": [
+          "what is LLVM",
+          "what is LLVM IR",
+          "LLVM three-phase architecture",
+          "Clang vs LLVM",
+          "opaque pointers ptr",
+          "what does clang -O2 do"
+        ]
+      },
+      "relatedPages": [
+        "how-a-cpu-runs-a-program",
+        "switches-that-compute"
+      ]
+    },
+    {
+      "id": "llvm-o0-alloca-stack",
+      "title": {
+        "zh": "-O0 为什么把变量先放栈上（alloca）",
+        "en": "Why -O0 puts local variables on the stack (alloca)"
+      },
+      "desc": {
+        "zh": "前端不自行做复杂数据流分析，而是把局部变量用 alloca 放进栈槽并配满 load/store，保证控制流与作用域语义最简单可靠。",
+        "en": "Frontends avoid complex dataflow analysis by placing every mutable local in an alloca stack slot with loads and stores, keeping lowering trivially sound."
+      },
+      "anchor": "#ch2",
+      "aliases": {
+        "zh": [
+          "-O0 为什么这么慢",
+          "alloca 指令",
+          "LLVM alloca",
+          "局部变量为什么在栈上"
+        ],
+        "en": [
+          "why is -O0 slow",
+          "LLVM alloca",
+          "why frontends emit stack slots",
+          "alloca load store"
+        ]
+      },
+      "relatedPages": []
+    },
+    {
+      "id": "llvm-ssa-mem2reg-phi",
+      "title": {
+        "zh": "静态单赋值（SSA）与 mem2reg 的 phi 节点",
+        "en": "Static Single Assignment (SSA) & mem2reg phi nodes"
+      },
+      "desc": {
+        "zh": "SSA 规定每个虚拟寄存器只能赋值一次，mem2reg/SROA 在支配边界插入 phi 指令合并分支值，彻底消除局部栈访存。",
+        "en": "SSA assigns each virtual register once; mem2reg and SROA insert phi nodes at dominance frontiers to merge paths and eliminate local stack memory traffic."
+      },
+      "anchor": "#ch3",
+      "aliases": {
+        "zh": [
+          "静态单赋值",
+          "SSA 形式",
+          "mem2reg",
+          "phi 节点",
+          "支配边界",
+          "LLVM phi 指令"
+        ],
+        "en": [
+          "static single assignment",
+          "SSA form",
+          "mem2reg",
+          "phi node",
+          "dominance frontier",
+          "LLVM phi instruction"
+        ]
+      },
+      "relatedPages": []
+    },
+    {
+      "id": "llvm-pass-pipeline-fixed-point",
+      "title": {
+        "zh": "Pass 管线与不动点迭代化简",
+        "en": "Optimization pass pipeline & fixed-point iteration"
+      },
+      "desc": {
+        "zh": "SROA、InstCombine、SimplifyCFG、GVN 与 ADCE 等小 Pass 轮流触发，前一步代数化简暴露死分支给下一步裁剪，直到整轮无变化。",
+        "en": "Small focused passes—SROA, InstCombine, SimplifyCFG, GVN, and ADCE—run repeatedly in cycles until a sweep makes zero changes at a fixed point."
+      },
+      "anchor": "#ch4",
+      "aliases": {
+        "zh": [
+          "LLVM Pass 管线",
+          "InstCombine",
+          "SimplifyCFG",
+          "SROA",
+          "GVN 全局值编号",
+          "不动点优化",
+          "死代码消除 ADCE"
+        ],
+        "en": [
+          "LLVM pass pipeline",
+          "InstCombine",
+          "SimplifyCFG",
+          "SROA pass",
+          "GVN pass",
+          "fixed-point compiler optimization",
+          "dead code elimination"
+        ]
+      },
+      "relatedPages": []
+    },
+    {
+      "id": "llvm-licm-aliasing-vectorize",
+      "title": {
+        "zh": "循环不变量外提（LICM）、别名分析与 SIMD",
+        "en": "Loop-invariant code motion (LICM), aliasing & SIMD"
+      },
+      "desc": {
+        "zh": "指针若可能重叠，LLVM 不敢直接把不变量提至 Preheader 也不敢直接向量化，必须插入运行期边界检查；restrict 与 TBAA 能打通静态证明。",
+        "en": "Without proving pointers disjoint, LLVM cannot safely hoist loop invariants or vectorize without runtime overlap checks; restrict and TBAA unlock static guarantees."
+      },
+      "anchor": "#ch5",
+      "aliases": {
+        "zh": [
+          "循环不变量外提",
+          "LICM",
+          "restrict 关键字",
+          "指针别名分析",
+          "TBAA 基于类型的别名分析",
+          "LLVM 循环向量化"
+        ],
+        "en": [
+          "loop invariant code motion",
+          "LICM",
+          "C restrict keyword",
+          "pointer aliasing optimization",
+          "type-based alias analysis TBAA",
+          "LLVM loop vectorize"
+        ]
+      },
+      "relatedPages": [
+        "how-a-cpu-does-math"
+      ]
+    },
+    {
+      "id": "llvm-ub-nsw-poison",
+      "title": {
+        "zh": "未定义行为（nsw / poison）与检查消除",
+        "en": "Undefined behavior (nsw / poison) & deleted checks"
+      },
+      "desc": {
+        "zh": "C 有符号溢出在 IR 里标作 add nsw 并在越界时产生 poison；优化器可假设合法程序不触发 poison，从而把 x + 1 > x 或先解引用后的判空整段删掉。",
+        "en": "Signed overflow becomes add nsw yielding poison; assuming valid code never hits poison lets -O2 fold x + 1 > x to true or delete null checks after dereferences."
+      },
+      "anchor": "#ch6",
+      "aliases": {
+        "zh": [
+          "未定义行为优化",
+          "LLVM poison",
+          "add nsw",
+          "为什么 -O2 删掉溢出检查",
+          "有符号溢出未定义行为",
+          "先解引用后判空",
+          "-fwrapv"
+        ],
+        "en": [
+          "undefined behavior optimization",
+          "LLVM poison value",
+          "add nsw",
+          "why -O2 deleted overflow check",
+          "signed integer overflow UB",
+          "null check eliminated after dereference",
+          "-fwrapv"
+        ]
+      },
+      "relatedPages": []
+    },
+    {
+      "id": "llvm-instruction-selection",
+      "title": {
+        "zh": "指令选择：SelectionDAG 与 GlobalISel",
+        "en": "Instruction selection: SelectionDAG & GlobalISel"
+      },
+      "desc": {
+        "zh": "后端用图覆盖将多条 IR 算子吞并成单条芯片指令（如 ARM64 的 madd 或 x86_64 的 leal）；ARM64 在 -O0 跑 GlobalISel，在 -O2 仍用 SelectionDAG。",
+        "en": "Backends tile IR expression DAGs into single target instructions like ARM64 madd or x86_64 leal; AArch64 runs GlobalISel at -O0 and SelectionDAG at -O2."
+      },
+      "anchor": "#ch7",
+      "aliases": {
+        "zh": [
+          "指令选择",
+          "SelectionDAG",
+          "GlobalISel",
+          "DAG 模式匹配",
+          "LLVM 后端降级"
+        ],
+        "en": [
+          "instruction selection",
+          "SelectionDAG",
+          "GlobalISel",
+          "DAG pattern matching",
+          "LLVM backend lowering"
+        ]
+      },
+      "relatedPages": [
+        "how-a-cpu-runs-a-program",
+        "how-a-cpu-guesses-ahead"
+      ]
+    },
+    {
+      "id": "llvm-register-allocation-spill",
+      "title": {
+        "zh": "活跃度分析、干涉图着色与寄存器溢出",
+        "en": "Liveness analysis, graph coloring & register spilling"
+      },
+      "desc": {
+        "zh": "寄存器分配器依据虚拟寄存器活跃区间的重叠关系建干涉图并尝试 K 涂色；并发活跃变量一旦超过物理寄存器数量 K，就必须溢出到栈上。",
+        "en": "Register allocators build interference graphs from overlapping live ranges and K-color them; when live pressure exceeds K physical registers, values spill to the stack."
+      },
+      "anchor": "#ch8",
+      "aliases": {
+        "zh": [
+          "寄存器分配",
+          "图着色寄存器分配",
+          "线性扫描寄存器分配",
+          "寄存器溢出 spill",
+          "活跃度分析",
+          "RegAllocGreedy"
+        ],
+        "en": [
+          "register allocation",
+          "graph coloring register allocation",
+          "linear scan register allocation",
+          "register spilling",
+          "liveness analysis",
+          "RegAllocGreedy"
+        ]
+      },
+      "relatedPages": [
+        "how-a-cpu-guesses-ahead"
+      ]
+    },
+    {
+      "id": "llvm-thinlto-pgo",
+      "title": {
+        "zh": "PGO 与 ThinLTO 链接时跨文件优化",
+        "en": "PGO & ThinLTO cross-translation-unit optimization"
+      },
+      "desc": {
+        "zh": "-flto=thin 在 .o 里保留 LLVM bitcode 和轻量化模块摘要，使链接器能够并行导入跨文件热函数并完成常量折叠与内联。",
+        "en": "-flto=thin writes LLVM bitcode plus compact module summaries into .o files so the linker can import and inline hot cross-file functions in parallel."
+      },
+      "anchor": "#ch9",
+      "aliases": {
+        "zh": [
+          "ThinLTO",
+          "LTO 链接时优化",
+          "跨文件内联",
+          "PGO 剖面引导优化",
+          "LLVM bitcode"
+        ],
+        "en": [
+          "ThinLTO",
+          "link time optimization",
+          "cross-file inlining",
+          "profile-guided optimization",
+          "LLVM bitcode"
+        ]
+      },
+      "relatedPages": []
+    },
+    {
+      "id": "llvm-mlir-bolt-frontier-2026",
+      "title": {
+        "zh": "LLVM 前沿：MLIR、BOLT 与 CSSPGO（2026 年 11 月）",
+        "en": "LLVM frontier: MLIR, BOLT & CSSPGO (November 2026)"
+      },
+      "desc": {
+        "zh": "向上用 MLIR 方言连接 PyTorch/Triton 张量计算，向下用采样 PGO（CSSPGO）与 BOLT 重排大型二进制热代码，以及 LLVM 21–23 的最新演进。",
+        "en": "MLIR bridges PyTorch and Triton dialects down to LLVM IR, while CSSPGO and post-link BOLT reorder hot binary layout alongside LLVM 21–23 updates."
+      },
+      "anchor": "#ch10",
+      "aliases": {
+        "zh": [
+          "MLIR",
+          "BOLT 二进制优化",
+          "CSSPGO",
+          "AutoFDO",
+          "ClangIR",
+          "LLVM 21 22 23"
+        ],
+        "en": [
+          "MLIR",
+          "LLVM BOLT",
+          "CSSPGO",
+          "AutoFDO",
+          "ClangIR",
+          "LLVM 23"
+        ]
+      },
+      "relatedPages": []
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+<figure class="lab" id="lab-ch4-model">
+  <h3 data-i18n="ch4.model.title"></h3>
+  <p class="how" data-i18n-html="ch4.model.how"></p>
+  <div class="ctl">
+    <div class="seg" role="radiogroup" data-i18n-aria="ch4.ctl.uri">
+      <span class="lbl" data-i18n="ch4.ctl.uri"></span>
+      <label><input type="radio" name="c4Uri" value="/"><span>/</span></label>
+      <label><input type="radio" name="c4Uri" value="/static/logo.png" checked><span>/static/logo.png</span></label>
+      <label><input type="radio" name="c4Uri" value="/static/app.PNG"><span>/static/app.PNG</span></label>
+      <label><input type="radio" name="c4Uri" value="/static/readme.txt"><span>/static/readme.txt</span></label>
+      <label><input type="radio" name="c4Uri" value="/static/images/pic.jpg"><span>/static/images/pic.jpg</span></label>
+      <label><input type="radio" name="c4Uri" value="/api/v1/users"><span>/api/v1/users</span></label>
+    </div>
+    <label class="chk"><input type="checkbox" id="c4Hat" checked><span data-i18n="ch4.ctl.hat"></span></label>
+    <div class="seg" role="radiogroup" data-i18n-aria="ch4.ctl.order">
+      <span class="lbl" data-i18n="ch4.ctl.order"></span>
+      <label><input type="radio" name="c4Order" value="cs_first" checked><span data-i18n="ch4.ord.cs"></span></label>
+      <label><input type="radio" name="c4Order" value="ci_first"><span data-i18n="ch4.ord.ci"></span></label>
+    </div>
+  </div>
+  <canvas class="cv tall" id="c4Cv" role="img" data-i18n-aria="ch4.cv.aria"></canvas>
+  <div class="read">
+    <div><span data-i18n="ch4.read.winner"></span><b id="c4Win" class="g"></b></div>
+    <div><span data-i18n="ch4.read.kind"></span><b id="c4Kind" class="c"></b></div>
+    <div><span data-i18n="ch4.read.checked"></span><b id="c4Chk"></b></div>
+  </div>
+  <p class="say" id="c4Say" aria-live="polite"></p>
+</figure>

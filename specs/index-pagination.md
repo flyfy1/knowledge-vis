@@ -41,8 +41,12 @@ Views come from URL state; nothing is stored besides the language.
    how many live pages. To change the selection, edit only that array.
 2. **Long Reads** (长文 · 一篇讲透一个领域 / Long Reads · One Essay, One Field;
    added 2026-11-11): the long-form essays listed in `window.KNOWLEDGE_ESSAYS`, in
-   that order, with a one-line subtitle and the same card component as Featured
-   (category and stage badges). Unregistered slugs are skipped silently. An essay
+   that order by default, with a one-line subtitle, a bilingual sort toggle
+   (`#essaySort`: 默认顺序 / 最新优先 · Default order / Newest first, added
+   2026-11-21) that sorts by `created` descending while preserving registration
+   order on same-date ties and keeping keyboard focus on the pressed button, and
+   the same card component as Featured (category, stage, and date badges).
+   Unregistered slugs are skipped silently. An essay
    whose entry has `languages: ["zh"]` (none today: `scarcity-moves` lost the
    flag on 2026-11-11 when its English edition landed in 8c6cff39) shows a
    "Chinese only" badge in English mode; there is no badge in Chinese mode. The
@@ -89,12 +93,17 @@ specs/site-navigation.md, `tests/site-nav.cjs`, `tests/site-nav-browser.cjs`.
 
 ### Cards
 
-A card shows a category badge, a stage badge, the title and the description.
+A card shows a category badge, a stage badge, a creation-date pill
+(`<time class="date-badge" datetime="YYYY-MM-DD">` from `pg.created`, added
+2026-11-21), the title and the description.
 A badge is left out when the current view already says it: no category badge in a
 category view or under a category heading, no stage badge when a stage is
 selected. A `status: "planned"` entry renders as a dimmed non-link card with the
 "筹备中 / Planned" badge. Cards of the `leetcode` category link to the LeetCode
 view and switch in place like the entrance tile.
+
+Tests for dates and sorting: `scripts/test_index_pagination.cjs` and
+`tests/home-dates-browser.cjs`.
 
 ### Search
 

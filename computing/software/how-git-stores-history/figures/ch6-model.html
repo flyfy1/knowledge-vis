@@ -1,0 +1,18 @@
+<figure class="lab" id="lab-ch6-model">
+    <h3 data-i18n="ch6.model.title"></h3>
+    <p class="how" data-i18n-html="ch6.model.how"></p>
+    <div class="ctl">
+      <label class="chk"><input type="checkbox" id="c6Reset" checked><span data-i18n="ch6.ctl.reset"></span></label>
+      <label class="rng"><span data-i18n="ch6.ctl.days"></span><input type="range" id="c6Days" min="0" max="60" step="1" value="10"><output id="c6Dayso" for="c6Days"></output></label>
+      <label class="rng"><span data-i18n="ch6.ctl.exp"></span><input type="range" id="c6Exp" min="5" max="90" step="5" value="30"><output id="c6Expo" for="c6Exp"></output></label>
+      <label class="chk"><input type="checkbox" id="c6GC"><span data-i18n="ch6.ctl.gc"></span></label>
+    </div>
+    <canvas class="cv" id="c6Cv" role="img" data-i18n-aria="ch6.cv.aria"></canvas>
+    <div class="read">
+      <div><span data-i18n="ch6.read.reach"></span><b id="c6Reach" class="n"></b></div>
+      <div><span data-i18n="ch6.read.reflog"></span><b id="c6Reflog" class="g"></b></div>
+      <div><span data-i18n="ch6.read.dang"></span><b id="c6Dang" class="v"></b></div>
+      <div><span data-i18n="ch6.read.pruned"></span><b id="c6Pruned" class="r"></b></div>
+    </div>
+    <p class="say" id="c6Say" aria-live="polite"></p>
+  </figure>

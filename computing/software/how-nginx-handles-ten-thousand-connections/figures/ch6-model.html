@@ -1,0 +1,28 @@
+<figure class="lab" id="lab-ch6-model">
+  <h3 data-i18n="ch6.model.title"></h3>
+  <p class="how" data-i18n-html="ch6.model.how"></p>
+  <div class="ctl">
+    <label class="rng"><span data-i18n="ch6.ctl.wa"></span><input type="range" id="c6Wa" min="1" max="10" step="1" value="5"><output id="c6Wao" for="c6Wa"></output></label>
+    <label class="rng"><span data-i18n="ch6.ctl.wb"></span><input type="range" id="c6Wb" min="1" max="10" step="1" value="1"><output id="c6Wbo" for="c6Wb"></output></label>
+    <label class="rng"><span data-i18n="ch6.ctl.wc"></span><input type="range" id="c6Wc" min="1" max="10" step="1" value="1"><output id="c6Wco" for="c6Wc"></output></label>
+    <div class="seg" role="radiogroup" data-i18n-aria="ch6.ctl.algo">
+      <span class="lbl" data-i18n="ch6.ctl.algo"></span>
+      <label><input type="radio" name="c6Algo" value="swrr" checked><span data-i18n="ch6.algo.swrr"></span></label>
+      <label><input type="radio" name="c6Algo" value="naive"><span data-i18n="ch6.algo.naive"></span></label>
+    </div>
+    <label class="chk"><input type="checkbox" id="c6FailA"><span data-i18n="ch6.ctl.fail"></span></label>
+  </div>
+  <canvas class="cv tall" id="c6Cv" role="img" data-i18n-aria="ch6.cv.aria"></canvas>
+  <div class="legend">
+    <span><i style="background:var(--gold)"></i><span data-i18n="ch6.leg.a"></span></span>
+    <span><i style="background:var(--cyan)"></i><span data-i18n="ch6.leg.b"></span></span>
+    <span><i style="background:var(--violet)"></i><span data-i18n="ch6.leg.c"></span></span>
+  </div>
+  <div class="read">
+    <div><span data-i18n="ch6.read.seq"></span><b id="c6Seq" class="g"></b></div>
+    <div><span data-i18n="ch6.read.streak"></span><b id="c6Str" class="c"></b></div>
+    <div><span data-i18n="ch6.read.period"></span><b id="c6Per"></b></div>
+    <div><span data-i18n="ch6.read.sum"></span><b id="c6Sum" class="n"></b></div>
+  </div>
+  <p class="say" id="c6Say" aria-live="polite"></p>
+</figure>

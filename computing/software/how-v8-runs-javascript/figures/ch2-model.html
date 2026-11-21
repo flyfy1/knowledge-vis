@@ -1,0 +1,28 @@
+<figure class="lab" id="lab-ch2-model">
+  <h3 data-i18n="ch2.model.title"></h3>
+  <p class="how" data-i18n="ch2.model.how"></p>
+  <div class="ctl">
+    <div class="seg" role="radiogroup" data-i18n-aria="ch2.ctl.preset">
+      <span class="lbl" data-i18n="ch2.ctl.preset"></span>
+      <label><input type="radio" name="c2Val" value="42" checked><span>42</span></label>
+      <label><input type="radio" name="c2Val" value="1073741823"><span>2³⁰−1</span></label>
+      <label><input type="radio" name="c2Val" value="1073741824"><span>2³⁰</span></label>
+      <label><input type="radio" name="c2Val" value="2147483647"><span>2³¹−1</span></label>
+      <label><input type="radio" name="c2Val" value="2147483648"><span>2³¹</span></label>
+      <label><input type="radio" name="c2Val" value="0.5"><span>0.5</span></label>
+    </div>
+    <div class="seg" role="radiogroup" data-i18n-aria="ch2.ctl.mode">
+      <span class="lbl" data-i18n="ch2.ctl.mode"></span>
+      <label><input type="radio" name="c2Mode" value="compressed" checked><span data-i18n="ch2.mode.compressed"></span></label>
+      <label><input type="radio" name="c2Mode" value="full64"><span data-i18n="ch2.mode.full64"></span></label>
+    </div>
+  </div>
+  <canvas class="cv short" id="c2Cv" role="img" data-i18n-aria="ch2.cv.aria"></canvas>
+  <div class="read">
+    <div><span data-i18n="ch2.read.kind"></span><b id="c2Kind" class="g"></b></div>
+    <div><span data-i18n="ch2.read.word"></span><b id="c2Word" class="c"></b></div>
+    <div><span data-i18n="ch2.read.heap"></span><b id="c2Heap" class="r"></b></div>
+    <div><span data-i18n="ch2.read.obj"></span><b id="c2Obj" class="n"></b></div>
+  </div>
+  <p class="say" id="c2Say" aria-live="polite"></p>
+</figure>

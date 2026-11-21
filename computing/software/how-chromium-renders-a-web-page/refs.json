@@ -1,0 +1,105 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "how-chromium-renders-a-web-page",
+ "refs": [
+  {
+   "from": "hero.note",
+   "to": "how-threejs-draws-a-scene",
+   "anchor": null
+  },
+  {
+   "from": "hero.note",
+   "to": "how-pixels-reach-a-screen",
+   "anchor": "ch1"
+  },
+  {
+   "from": "hero.note",
+   "to": "how-pixels-reach-a-screen",
+   "anchor": "ch3"
+  },
+  {
+   "from": "ch7.p2",
+   "to": "how-a-gpu-computes",
+   "anchor": "ch9"
+  },
+  {
+   "from": "ch8.p3",
+   "to": "how-pixels-reach-a-screen",
+   "anchor": "ch3"
+  },
+  {
+   "from": "ch11.links",
+   "to": "how-threejs-draws-a-scene",
+   "anchor": null
+  },
+  {
+   "from": "ch11.links",
+   "to": "how-a-gpu-computes",
+   "anchor": "ch9"
+  },
+  {
+   "from": "ch11.links",
+   "to": "how-pixels-reach-a-screen",
+   "anchor": "ch1"
+  },
+  {
+   "from": "ch11.links",
+   "to": "how-pixels-reach-a-screen",
+   "anchor": "ch3"
+  }
+ ],
+ "backlinks": [],
+ "related": [
+  "how-threejs-draws-a-scene",
+  "how-pixels-reach-a-screen",
+  "how-a-gpu-computes"
+ ],
+ "bindings": [
+  "budget.60",
+  "budget.120",
+  "ch2.blockDcl",
+  "ch2.noPreDcl",
+  "ch2.saved",
+  "ch2.deferFp",
+  "ch2.deferDcl",
+  "ch3.inv",
+  "ch3.deepChecks",
+  "ch3.bloomRej",
+  "ch3.univChecks",
+  "ch3.univWalks",
+  "ch3.naiveNodes",
+  "ch3.naiveChecks",
+  "ch4.thrashMs",
+  "ch4.thrash60",
+  "ch4.batchMs",
+  "ch4.contMs",
+  "ch4.ratio",
+  "ch5.sx",
+  "ch5.sy",
+  "ch5.visPct",
+  "ch6.expLayers",
+  "ch6.expVram",
+  "ch6.safeLayers",
+  "ch6.safeVram",
+  "ch6.bigVram",
+  "ch7.tile256KiB",
+  "ch7.tile512MiB",
+  "ch7.cpuCb",
+  "ch7.skewCb",
+  "ch7.gpuCb",
+  "ch8.mainFps",
+  "ch8.implFps",
+  "ch8.quads",
+  "ch8.implMs",
+  "ch9.tfDrop",
+  "ch9.bsDrop",
+  "ch9.lfDrop",
+  "ch9.lfMax",
+  "ch9.lfFps",
+  "ch10.grCpu",
+  "ch10.gnCpu",
+  "ch10.grNav",
+  "ch10.gnNav",
+  "ch10.overRej"
+ ]
+}

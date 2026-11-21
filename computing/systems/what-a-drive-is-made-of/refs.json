@@ -120,6 +120,32 @@
  ],
  "backlinks": [
   {
+   "from": "how-git-stores-history",
+   "links": [
+    {
+     "from": "ch9",
+     "to": "ch5"
+    },
+    {
+     "from": "ch11",
+     "to": "ch6"
+    }
+   ]
+  },
+  {
+   "from": "how-postgresql-runs-a-query",
+   "links": [
+    {
+     "from": "ch9",
+     "to": null
+    },
+    {
+     "from": "ch11",
+     "to": null
+    }
+   ]
+  },
+  {
    "from": "how-a-computer-boots",
    "links": [
     {

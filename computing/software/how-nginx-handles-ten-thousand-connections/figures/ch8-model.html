@@ -1,0 +1,22 @@
+<figure class="lab" id="lab-ch8-model">
+  <h3 data-i18n="ch8.model.title"></h3>
+  <p class="how" data-i18n-html="ch8.model.how"></p>
+  <div class="ctl">
+    <label class="rng"><span data-i18n="ch8.ctl.count"></span><input type="range" id="c8Count" min="7" max="31" step="2" value="15"><output id="c8Counto" for="c8Count"></output></label>
+    <label class="rng"><span data-i18n="ch8.ctl.now"></span><input type="range" id="c8Now" min="0" max="1200" step="25" value="400"><output id="c8Nowo" for="c8Now"></output></label>
+    <label class="chk"><input type="checkbox" id="c8Lazy" checked><span data-i18n="ch8.ctl.lazy"></span></label>
+  </div>
+  <canvas class="cv tall" id="c8Cv" role="img" data-i18n-aria="ch8.cv.aria"></canvas>
+  <div class="legend">
+    <span><i style="background:var(--red)"></i><span data-i18n="ch8.leg.red"></span></span>
+    <span><i style="background:var(--mute)"></i><span data-i18n="ch8.leg.blk"></span></span>
+    <span><i style="background:var(--gold)"></i><span data-i18n="ch8.leg.min"></span></span>
+  </div>
+  <div class="read">
+    <div><span data-i18n="ch8.read.act"></span><b id="c8Act" class="c"></b></div>
+    <div><span data-i18n="ch8.read.exp"></span><b id="c8Exp" class="r"></b></div>
+    <div><span data-i18n="ch8.read.wait"></span><b id="c8Wait" class="g"></b></div>
+    <div><span data-i18n="ch8.read.depth"></span><b id="c8Depth" class="v"></b></div>
+  </div>
+  <p class="say" id="c8Say" aria-live="polite"></p>
+</figure>

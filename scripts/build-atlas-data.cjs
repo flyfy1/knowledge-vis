@@ -410,16 +410,26 @@ if (!graphArg) {
   const regionOf = new Map(nodes.map(n => [n.id, n.group]));
   const chunkData = new Map(groups.map(g => [g.id, { nodes: [], edges: [], questions: [] }]));
   // Compact rows, expanded to the usual objects when atlas-index.js runs:
-  // node [id, stage index|-1, title zh, title en, lesson slugs ('*' = primary)]
-  // grouped by region; edges [from index, to index]; questions
+  // L: unique lesson slugs; node [id, stage index|-1, title zh, title en, lesson ref(s)]
+  // where lesson ref is slug index (>=0 = primary, ~index <0 = non-primary), scalar when 1,
+  // array when >=2, omitted when 0; edges [from index, to index]; questions
   // [id, stage index, question zh, question en, chain indices, region index].
   const nodeIndex = new Map(nodes.map((n, i) => [n.id, i]));
   const idxNodes = new Map(groups.map(g => [g.id, []]));
+  const slugList = [], slugIdx = new Map();
+  const slugId = s => {
+    let idx = slugIdx.get(s);
+    if (idx === undefined) { idx = slugList.length; slugList.push(s); slugIdx.set(s, idx); }
+    return idx;
+  };
   for (const n of nodes) {
     const { id, group, stage, title, order, ...rest } = n;
     if (!idxNodes.has(group)) { console.error(`ERROR: node ${id} has unknown region ${group}; add it to groups.json.`); process.exit(1); }
-    idxNodes.get(group).push([id, STAGES.indexOf(stage), title.zh, title.en,
-      (n.lessons || []).map(l => (l.primary ? '*' : '') + l.slug)]);
+    const ls = (n.lessons || []).map(l => { const idx = slugId(l.slug); return l.primary ? idx : ~idx; });
+    const row = [id, STAGES.indexOf(stage), title.zh, title.en];
+    if (ls.length === 1) row.push(ls[0]);
+    else if (ls.length > 1) row.push(ls);
+    idxNodes.get(group).push(row);
     chunkData.get(group).nodes.push([id, rest]);
   }
   for (const e of edges) {
@@ -462,18 +472,20 @@ if (!graphArg) {
   ix.push("  'use strict';");
   ix.push(`  const STAGES = ${emit(STAGES)};`);
   ix.push(`  const groups = [${groups.map(g => emit({ id: g.id, label: g.label, mark: g.mark })).join(',\n    ')}];`);
+  ix.push(`  const L = ${emit(slugList)};`);
   ix.push('  const N = {');
-  ix.push([...idxNodes].map(([gid, rows]) => `    ${emit(gid)}: [\n${rows.map(r => '      ' + emit(r)).join(',\n')}\n    ]`).join(',\n'));
+  ix.push([...idxNodes].map(([gid, rows]) => `    ${emit(gid)}: [\n${rows.map(r => emit(r)).join(',\n')}\n    ]`).join(',\n'));
   ix.push('  };');
   ix.push(`  const E = ${emit(edges.map(e => [nodeIndex.get(e.from), nodeIndex.get(e.to)]))};`);
   ix.push('  const Q = [');
   ix.push(idxQuestions.map(q => '    ' + emit(q)).join(',\n'));
   ix.push('  ];');
+  ix.push('  const toL = x => x < 0 ? { slug: L[~x], primary: false } : { slug: L[x], primary: true };');
   ix.push('  const nodes = [];');
   ix.push('  for (const g of groups) for (const [id, s, zh, en, ls] of (N[g.id] || [])) {');
   ix.push('    const n = { id, group: g.id, title: { zh, en } };');
   ix.push('    if (s >= 0) n.stage = STAGES[s];');
-  ix.push("    if (ls.length) n.lessons = ls.map(x => ({ slug: x.replace(/^\\*/, ''), primary: x[0] === '*' }));");
+  ix.push('    if (ls !== undefined) n.lessons = (Array.isArray(ls) ? ls : [ls]).map(toL);');
   ix.push('    nodes.push(n);');
   ix.push('  }');
   ix.push('  window.ATLAS = {');

@@ -1,0 +1,26 @@
+<figure class="lab" id="lab-ch5-model">
+  <h3 data-i18n="ch5.model.title"></h3>
+  <p class="how" data-i18n-html="ch5.model.how"></p>
+  <div class="ctl">
+    <label class="rng"><span data-i18n="ch5.ctl.size"></span><input type="range" id="c5Size" min="64" max="5120" step="64" value="512"><output id="c5Sizeo" for="c5Size"></output></label>
+    <label class="rng"><span data-i18n="ch5.ctl.count"></span><input type="range" id="c5Count" min="4" max="24" step="1" value="12"><output id="c5Counto" for="c5Count"></output></label>
+    <div class="seg" role="radiogroup" data-i18n-aria="ch5.ctl.pool">
+      <span class="lbl" data-i18n="ch5.ctl.pool"></span>
+      <label><input type="radio" name="c5Pool" value="4096" checked><span>4 KiB</span></label>
+      <label><input type="radio" name="c5Pool" value="16384"><span>16 KiB</span></label>
+    </div>
+  </div>
+  <canvas class="cv" id="c5Cv" role="img" data-i18n-aria="ch5.cv.aria"></canvas>
+  <div class="legend">
+    <span><i style="background:var(--violet)"></i><span data-i18n="ch5.leg.hdr"></span></span>
+    <span><i style="background:var(--gold)"></i><span data-i18n="ch5.leg.small"></span></span>
+    <span><i style="background:var(--red)"></i><span data-i18n="ch5.leg.large"></span></span>
+  </div>
+  <div class="read">
+    <div><span data-i18n="ch5.read.blocks"></span><b id="c5Blk" class="c"></b></div>
+    <div><span data-i18n="ch5.read.large"></span><b id="c5Lrg" class="r"></b></div>
+    <div><span data-i18n="ch5.read.waste"></span><b id="c5Wst" class="g"></b></div>
+    <div><span data-i18n="ch5.read.frees"></span><b id="c5Free" class="n"></b></div>
+  </div>
+  <p class="say" id="c5Say" aria-live="polite"></p>
+</figure>

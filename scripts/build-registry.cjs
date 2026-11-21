@@ -105,6 +105,7 @@ function build() {
     const p = { path: r.path, kind: e.meta.kind, category: r.category };
     if (r.subtopic) p.subtopic = r.subtopic;
     Object.assign(p, { stage: r.stage, status: r.status, template: e.template, title: r.title, desc: r.desc });
+    if (r.created) p.created = r.created;
     // parallel editions and the pin (specs/claude-code-editions.md「默认版本」); href = where a page-level link goes now
     if (r.editions) {
       p.editions = r.editions;

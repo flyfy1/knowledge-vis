@@ -1,0 +1,27 @@
+<figure class="lab" id="lab-ch9-model">
+    <h3 data-i18n="ch9.model.title"></h3>
+    <p class="how" data-i18n-html="ch9.model.how"></p>
+    <div class="ctl">
+      <div class="seg" role="radiogroup" data-i18n-aria="ch9.ctl.prop">
+        <span class="lbl" data-i18n="ch9.ctl.prop"></span>
+        <label><input type="radio" name="c9Prop" value="transform" checked><span data-i18n="ch9.prop.transform"></span></label>
+        <label><input type="radio" name="c9Prop" value="boxShadow"><span data-i18n="ch9.prop.shadow"></span></label>
+        <label><input type="radio" name="c9Prop" value="left"><span data-i18n="ch9.prop.left"></span></label>
+      </div>
+      <div class="seg" role="radiogroup" data-i18n-aria="ch9.ctl.hz">
+        <span class="lbl" data-i18n="ch9.ctl.hz"></span>
+        <label><input type="radio" name="c9Hz" value="60"><span data-i18n="ch9.hz.60"></span></label>
+        <label><input type="radio" name="c9Hz" value="120" checked><span data-i18n="ch9.hz.120"></span></label>
+      </div>
+      <label class="rng"><span data-i18n="ch9.ctl.js"></span><input type="range" id="c9Js" min="0" max="120" step="10" value="50"><output id="c9Jso" for="c9Js"></output></label>
+      <label class="rng"><span data-i18n="ch9.ctl.dom"></span><input type="range" id="c9Dom" min="50" max="500" step="50" value="250"><output id="c9Domo" for="c9Dom"></output></label>
+    </div>
+    <canvas class="cv" id="c9Cv" role="img" data-i18n-aria="ch9.cv.aria"></canvas>
+    <div class="read">
+      <div><span data-i18n="ch9.read.cost"></span><b id="c9Cost" class="c"></b></div>
+      <div><span data-i18n="ch9.read.drop"></span><b id="c9Drop" class="r"></b></div>
+      <div><span data-i18n="ch9.read.max"></span><b id="c9Max" class="g"></b></div>
+      <div><span data-i18n="ch9.read.fps"></span><b id="c9Fps" class="n"></b></div>
+    </div>
+    <p class="say" id="c9Say" aria-live="polite"></p>
+  </figure>

@@ -1,0 +1,22 @@
+<figure class="lab" id="lab-ch1-model">
+  <h3 data-i18n="ch1.model.title"></h3>
+  <p class="how" data-i18n="ch1.model.how"></p>
+  <div class="ctl">
+    <div class="seg" role="radiogroup" data-i18n-aria="ch1.ctl.mode">
+      <span class="lbl" data-i18n="ch1.ctl.mode"></span>
+      <label><input type="radio" name="c1Mode" value="process"><span data-i18n="ch1.mode.process"></span></label>
+      <label><input type="radio" name="c1Mode" value="container" checked><span data-i18n="ch1.mode.container"></span></label>
+      <label><input type="radio" name="c1Mode" value="microvm"><span data-i18n="ch1.mode.microvm"></span></label>
+      <label><input type="radio" name="c1Mode" value="vm"><span data-i18n="ch1.mode.vm"></span></label>
+    </div>
+    <label class="rng"><span data-i18n="ch1.ctl.rep"></span><input type="range" id="c1Rep" min="1" max="32" step="1" value="8"><output id="c1Repo" for="c1Rep"></output></label>
+  </div>
+  <canvas class="cv" id="c1Cv" role="img" data-i18n-aria="ch1.cv.aria"></canvas>
+  <div class="read">
+    <div><span data-i18n="ch1.read.mem"></span><b id="c1Mem" class="g"></b></div>
+    <div><span data-i18n="ch1.read.boot"></span><b id="c1Boot" class="c"></b></div>
+    <div><span data-i18n="ch1.read.kern"></span><b id="c1Kern"></b></div>
+    <div><span data-i18n="ch1.read.sub"></span><b id="c1Sub" class="r"></b></div>
+  </div>
+  <p class="say" id="c1Say" aria-live="polite"></p>
+</figure>

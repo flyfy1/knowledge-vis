@@ -794,6 +794,18 @@ chapters.push(
   ['四元数', 'gimbal lock', TJS + '#ch12'],
   ['WebGPU', 'TSL', TJS + '#ch13'],
 );
+// Software core principles series W2–W10 (2026-11-21)
+chapters.push(
+  ['git blob 对象', 'git blob object', 'computing/software/how-git-stores-history/#ch2'],
+  ['React Fiber', 'Fiber double buffering', 'computing/software/how-react-updates-the-dom/#ch3'],
+  ['Redis 跳表', 'Redis skiplist', 'computing/software/how-redis-answers-in-microseconds/#ch5'],
+  ['V8 隐藏类', 'V8 hidden class', 'computing/software/how-v8-runs-javascript/#ch3'],
+  ['PostgreSQL MVCC', 'PostgreSQL MVCC', 'computing/software/how-postgresql-runs-a-query/#ch4'],
+  ['nginx epoll 原理', 'nginx epoll event loop', 'computing/software/how-nginx-handles-ten-thousand-connections/#ch3'],
+  ['强制同步布局', 'forced synchronous layout', 'computing/software/how-chromium-renders-a-web-page/#ch4'],
+  ['OverlayFS Copy-Up', 'OverlayFS copy-up', 'computing/software/how-containers-isolate-a-process/#ch3'],
+  ['SSA mem2reg', 'LLVM mem2reg', 'computing/software/how-llvm-compiles-your-code/#ch3'],
+);
 for (const [q, href] of [['three.js', 'demos/fable-flight/'], ['光栅化', 'computing/graphics/computer-graphics/'], ['sRGB', 'computing/systems/how-pixels-reach-a-screen/#ch1']]) {
   const hit = first(q);
   ok(hit && hit.href.startsWith(href), `"${q}" stays with ${href} (got ${hit && hit.href})`);

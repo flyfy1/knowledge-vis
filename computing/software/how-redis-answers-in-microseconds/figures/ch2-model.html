@@ -1,0 +1,9 @@
+<figure class="lab" id="lab-ch2-model">
+    <h3 data-i18n="ch2.model.title"></h3>
+    <p class="how" data-i18n="ch2.model.how"></p>
+    <div class="ctl"><label class="rng"><span data-i18n="ch2.ctl.n"></span><input type="range" id="c2N" min="1" max="100" step="1" value="20"><output id="c2No" for="c2N"></output></label><label class="rng"><span data-i18n="ch2.ctl.rtt"></span><input type="range" id="c2Rtt" min="20" max="1000" step="20" value="200"><output id="c2Rtto" for="c2Rtt"></output></label><span class="seg"><span class="lbl" data-i18n="ch2.ctl.proto"></span><label><input type="radio" name="c2Proto" value="resp2" checked><span data-i18n="ch2.proto.resp2"></span></label><label><input type="radio" name="c2Proto" value="resp3"><span data-i18n="ch2.proto.resp3"></span></label></span><span class="seg"><span class="lbl" data-i18n="ch2.ctl.mode"></span><label><input type="radio" name="c2Mode" value="seq" checked><span data-i18n="ch2.mode.seq"></span></label><label><input type="radio" name="c2Mode" value="pipe"><span data-i18n="ch2.mode.pipe"></span></label></span></div>
+    <pre class="code" id="c2Wire" tabindex="0" data-i18n-aria="ch2.wire.aria"></pre>
+    <canvas class="cv short" id="c2Cv" role="img" data-i18n-aria="ch2.cv.aria"></canvas>
+    <div class="read"><div><span data-i18n="ch2.read.bytes"></span><b id="c2Bytes"></b></div><div><span data-i18n="ch2.read.lat"></span><b id="c2Lat" class="r"></b></div><div><span data-i18n="ch2.read.qps"></span><b id="c2Qps" class="g"></b></div><div><span data-i18n="ch2.read.gain"></span><b id="c2Gain" class="c"></b></div></div>
+    <p class="say" id="c2Say" aria-live="polite"></p>
+  </figure>

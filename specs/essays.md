@@ -208,6 +208,15 @@ types ("为什么要打疫苗", "how does my phone know where I am"), not only t
 | why-atoms-stick-together | chemistry/matter/why-atoms-stick-together/ | 15 concepts in 11 chapters (`#ch1…#ch11`) | matter | `ESSAY_BASE_URL` |
 | why-one-rate-moves-everything | economics/money/why-one-rate-moves-everything/ | 12 concepts in 13 chapters (`#ch1…#ch12`) | society | `ESSAY_BASE_URL` |
 | how-threejs-draws-a-scene | computing/software/how-threejs-draws-a-scene/ | 14 concepts in 14 chapters (`#ch1…#ch13`; two at `#ch12`) | computing | `ESSAY_BASE_URL` |
+| how-git-stores-history | computing/software/how-git-stores-history/ | 10 concepts in 11 chapters (`#ch1…#ch10`) | computing | `ESSAY_BASE_URL` |
+| how-react-updates-the-dom | computing/software/how-react-updates-the-dom/ | 10 concepts in 11 chapters (`#ch1…#ch10`) | computing | `ESSAY_BASE_URL` |
+| how-redis-answers-in-microseconds | computing/software/how-redis-answers-in-microseconds/ | 12 concepts in 11 chapters (`#ch1…#ch10`) | computing | `ESSAY_BASE_URL` |
+| how-v8-runs-javascript | computing/software/how-v8-runs-javascript/ | 10 concepts in 11 chapters (`#ch1…#ch10`) | computing | `ESSAY_BASE_URL` |
+| how-postgresql-runs-a-query | computing/software/how-postgresql-runs-a-query/ | 11 (`#ch1…#ch11`) | computing | `ESSAY_BASE_URL` |
+| how-nginx-handles-ten-thousand-connections | computing/software/how-nginx-handles-ten-thousand-connections/ | 10 concepts in 11 chapters (`#ch1…#ch10`) | computing | `ESSAY_BASE_URL` |
+| how-chromium-renders-a-web-page | computing/software/how-chromium-renders-a-web-page/ | 11 (`#ch1…#ch11`) | computing | `ESSAY_BASE_URL` |
+| how-containers-isolate-a-process | computing/software/how-containers-isolate-a-process/ | 10 concepts in 11 chapters (`#ch1…#ch10`) | computing | `ESSAY_BASE_URL` |
+| how-llvm-compiles-your-code | computing/software/how-llvm-compiles-your-code/ | 10 concepts in 11 chapters (`#ch1…#ch10`) | computing | `ESSAY_BASE_URL` |
 
 The eleven from 2026-11-11, the two food essays of 2026-11-12 and the five storage essays of 2026-11-14/15
 (what-a-drive-is-made-of, how-sata-works, how-sas-works, how-usb-drives-talk, storage-over-a-network) and the three bus essays of
@@ -1026,6 +1035,20 @@ open: how-pixels-reach-a-screen, how-a-gpu-computes, computer-graphics, demos/fa
 how-pixels-reach-a-screen and linear-transform got the generated backlink row and page.json version 20261120a; labels not
 repointed (D4). Not verified: see the review's "Not checked" (timings on other machines, Reed's article date, ch9 lab numbers
 beyond the formula, real devices).
+
+### Software core principles series (W2–W10, 2026-11-21)
+
+Nine bilingual native Markdown-template essays under `computing/software/`, authored from scratch by Antigravity (model unavailable in runtime metadata) in both Chinese and English, registered live on branch `antigravity/dates-and-software-series` (independent cross-model review pending):
+
+- **W2 `how-git-stores-history`** (`9c0e8c99`): `.git/` layout, SHA-1/SHA-256 blobs + zlib DEFLATE, Merkle trees, commit DAG, `DIRC` v2 + Racy Git, refs/reflog, Myers/3-way merge, packfiles + `OFS_DELTA`, Wire v2/partial clone, reftable/Git 3.0 frontier. 10 SVGs, 9 labs, `crosscheck.cjs` 58/58 vs host `/opt/homebrew/bin/git` `2.56.0`.
+- **W3 `how-react-updates-the-dom`** (`b26a5444`): two-phase render/commit, JSX objects, Fiber double-buffering & 5 ms yielding, keyed O(n) reconciliation, hook linked lists, `subtreeFlags`, synchronous layout vs passive effects, delegated event batching, 31-bit Lanes, React 19.3 Compiler/RSC frontier. 9 SVGs, 9 labs, `crosscheck.cjs` 40/40 vs `react@19.3.1` / `react-dom@19.3.1` / `scheduler@0.28.0`.
+- **W4 `how-redis-answers-in-microseconds`** (`19f8386b`): Redis 8.0 single-threaded `ae` loop, RESP2/3 pipelining, `redisObject`/44 B `embstr`/`listpack`, progressive rehashing + SipHash-1-2, span skiplist ZSET, async I/O threads, `fork()` CoW + multi-part AOF, `activeExpireCycle` + LRU/Morris LFU, CRC16 cluster slots + reverse-binary `SCAN`, Vector Sets/Valkey frontier. 9 SVGs, 11 labs, `crosscheck.cjs` 395/395 reference vectors (no local `redis-server`).
+- **W5 `how-v8-runs-javascript`** (`28e950b9`): Ignition/Sparkplug/Maglev/TurboFan-Turboshaft pipeline, Smi tagging vs pointer compression, `Map` hidden-class transitions, inline caches, bytecode/FeedbackVector, OSR & eager deopt, `ElementsKind` lattice, Orinoco generational GC, microtask checkpoints. 9 SVGs, 9 labs, `crosscheck.cjs` 47/47 vs Node `v26.12.1` (`V8 14.6.202.34-node.40`).
+- **W6 `how-postgresql-runs-a-query`** (`62203e84`): Volcano pull pipeline, cost-based planner (`pg_statistic` correlation), 8 KiB slotted pages + HOT updates, MVCC snapshots, VACUUM/VM + 32-bit XID wraparound, `shared_buffers` clock sweep + ring buffer, Lehman-Yao `nbtree`, Grace Hash Join spills, WAL Castagnoli CRC-32C + FPW, PG 18/19 AIO/skip-scan frontier. 9 SVGs, 8 labs, `crosscheck.cjs` 285/285 reference vectors (no local `postgres`/`psql`).
+- **W7 `how-nginx-handles-ten-thousand-connections`** (`4c1b86f1`): C10K memory math (`ngx_connection_t`), zero-downtime `USR2`/`QUIT` worker reload, `epoll` + `SO_REUSEPORT`, 11 HTTP phases + `location` precedence, per-request `ngx_pool_t`, Smooth Weighted Round-Robin, `limit_req` leaky bucket, `rbtree` lazy timers, `sendfile()`/`proxy_buffering`, Nginx 1.30/HTTP/3/Pingora frontier. 9 SVGs, 9 labs, `crosscheck.cjs` 118/118 invariants (no local `nginx`).
+- **W8 `how-chromium-renders-a-web-page`** (`d889d9c9`): Blink/cc/`Viz` RenderingNG pipeline, streaming HTML/CSS parser + preload scanner, right-to-left style matching + `InvalidationSet`, LayoutNG immutable fragments + reflow thrashing, 4 property trees, `PaintArtifactCompositor` overlap explosion, tiling + OOP-R + Pending/Active trees, `SurfaceAggregator`, WAAPI isolation, Skia Graphite frontier. 8 SVGs, 9 labs, `crosscheck.cjs` 11/11 vs Playwright Chromium `151.0.7922.34`.
+- **W9 `how-containers-isolate-a-process`** (`1fcc12c7`): `containerd-shim`/`runc` syscalls, OCI Image v1.1 SHA-256 `ChainID`, OverlayFS Copy-Up & `.wh.` whiteouts, 8 Linux Namespaces + Rootless `uid_map`, `veth`/`docker0`/NAT + VXLAN MTU, `cgroups v2` CPU `cpu.max` multi-thread freeze & memory OOM, `seccomp-bpf` + Capabilities, PID 1 signal/zombie reaping, MicroVM/EROFS/WASI 0.3 frontier. 9 SVGs, 9 labs, `crosscheck.cjs` 80/80 vs `node:crypto` & OCI/Linux invariants (macOS host lacks Linux kernel/`docker`).
+- **W10 `how-llvm-compiles-your-code`** (`31631e36`): decoupled N+1+M opaque-pointer IR, `-O0` `alloca` lowering, Cytron SSA/`mem2reg` phi nodes, fixed-point New Pass Manager pipeline, `LICM`/aliasing/`LoopVectorize`, `nsw`/`poison` UB folding, `SelectionDAG` vs `GlobalISel`, Chaitin-Briggs graph coloring vs Linear Scan, ThinLTO + AutoFDO, MLIR/BOLT frontier. 9 SVGs, 9 labs, `crosscheck.cjs` 29/29 vs `/usr/bin/clang` (`Apple clang version 21.0.0`, no standalone `opt`/`llc`).
 
 ### scarcity-moves: 稀缺会搬家
 

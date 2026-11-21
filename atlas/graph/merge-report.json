@@ -1,11 +1,11 @@
 {
   "counts": {
     "groups": 11,
-    "nodes": 789,
-    "edges": 933,
+    "nodes": 883,
+    "edges": 1029,
     "trails": 14,
     "questions": 124,
-    "fragments": 224
+    "fragments": 233
   },
   "conflicts": [],
   "suspendedEdges": [],
@@ -1232,6 +1232,376 @@
       ]
     },
     {
+      "concept": "chromium-renderingng-pipeline",
+      "page": "how-threejs-draws-a-scene",
+      "taughtBy": [
+        "threejs-render-call",
+        "scene-graph-world-matrix",
+        "buffer-geometry",
+        "projection-depth-precision",
+        "frustum-culling-render-order",
+        "shader-program-cache",
+        "standard-material-brdf",
+        "rasterization-depth-test",
+        "mipmap-texture-filtering",
+        "shadow-mapping",
+        "draw-call-cost",
+        "raycaster-picking",
+        "quaternion-slerp",
+        "webgpu-frontier"
+      ]
+    },
+    {
+      "concept": "chromium-renderingng-pipeline",
+      "page": "how-pixels-reach-a-screen",
+      "taughtBy": [
+        "framebuffer",
+        "pixel-clock",
+        "tearing-vsync",
+        "variable-refresh",
+        "display-engine",
+        "display-link",
+        "dsc-chroma",
+        "panel-rows",
+        "motion-blur",
+        "hdr-pq",
+        "display-latency",
+        "display-frontier",
+        "display-troubleshoot"
+      ]
+    },
+    {
+      "concept": "chromium-tiling-checkerboarding",
+      "page": "how-a-gpu-computes",
+      "taughtBy": [
+        "gpu-latency-hiding",
+        "cuda-grid-block-warp",
+        "warp-scheduling-occupancy",
+        "warp-divergence",
+        "memory-coalescing",
+        "shared-memory-bank-conflicts",
+        "tiled-matmul-gpu",
+        "mma-number-formats",
+        "pixel-quads",
+        "gpu-memory-hierarchy",
+        "gpu-frontier-2026",
+        "gpu-code-checklist"
+      ]
+    },
+    {
+      "concept": "chromium-viz-surface-aggregation",
+      "page": "how-pixels-reach-a-screen",
+      "taughtBy": [
+        "framebuffer",
+        "pixel-clock",
+        "tearing-vsync",
+        "variable-refresh",
+        "display-engine",
+        "display-link",
+        "dsc-chroma",
+        "panel-rows",
+        "motion-blur",
+        "hdr-pq",
+        "display-latency",
+        "display-frontier",
+        "display-troubleshoot"
+      ]
+    },
+    {
+      "concept": "chromium-compositor-isolation",
+      "page": "how-pixels-reach-a-screen",
+      "taughtBy": [
+        "framebuffer",
+        "pixel-clock",
+        "tearing-vsync",
+        "variable-refresh",
+        "display-engine",
+        "display-link",
+        "dsc-chroma",
+        "panel-rows",
+        "motion-blur",
+        "hdr-pq",
+        "display-latency",
+        "display-frontier",
+        "display-troubleshoot"
+      ]
+    },
+    {
+      "concept": "chromium-jank-troubleshooting",
+      "page": "how-threejs-draws-a-scene",
+      "taughtBy": [
+        "threejs-render-call",
+        "scene-graph-world-matrix",
+        "buffer-geometry",
+        "projection-depth-precision",
+        "frustum-culling-render-order",
+        "shader-program-cache",
+        "standard-material-brdf",
+        "rasterization-depth-test",
+        "mipmap-texture-filtering",
+        "shadow-mapping",
+        "draw-call-cost",
+        "raycaster-picking",
+        "quaternion-slerp",
+        "webgpu-frontier"
+      ]
+    },
+    {
+      "concept": "chromium-jank-troubleshooting",
+      "page": "how-pixels-reach-a-screen",
+      "taughtBy": [
+        "framebuffer",
+        "pixel-clock",
+        "tearing-vsync",
+        "variable-refresh",
+        "display-engine",
+        "display-link",
+        "dsc-chroma",
+        "panel-rows",
+        "motion-blur",
+        "hdr-pq",
+        "display-latency",
+        "display-frontier",
+        "display-troubleshoot"
+      ]
+    },
+    {
+      "concept": "chromium-jank-troubleshooting",
+      "page": "how-a-gpu-computes",
+      "taughtBy": [
+        "gpu-latency-hiding",
+        "cuda-grid-block-warp",
+        "warp-scheduling-occupancy",
+        "warp-divergence",
+        "memory-coalescing",
+        "shared-memory-bank-conflicts",
+        "tiled-matmul-gpu",
+        "mma-number-formats",
+        "pixel-quads",
+        "gpu-memory-hierarchy",
+        "gpu-frontier-2026",
+        "gpu-code-checklist"
+      ]
+    },
+    {
+      "concept": "container-process-not-vm",
+      "page": "how-the-os-talks-to-hardware",
+      "taughtBy": [
+        "privilege-levels",
+        "system-call",
+        "syscall-cost",
+        "mmio",
+        "interrupt-handling",
+        "napi",
+        "descriptor-ring",
+        "dma-remapping",
+        "driver-model",
+        "io-stack",
+        "epoll-io-uring",
+        "kernel-bypass",
+        "os-hardware-frontier",
+        "io-troubleshooting"
+      ]
+    },
+    {
+      "concept": "container-process-not-vm",
+      "page": "how-virtual-memory-works",
+      "taughtBy": [
+        "why-virtual-addresses",
+        "pages-and-flat-tables",
+        "x86-64-page-walk",
+        "tlb-and-reach",
+        "page-walk-cost",
+        "huge-pages",
+        "page-faults",
+        "page-replacement",
+        "fork-copy-on-write",
+        "context-switch-tlb",
+        "nested-paging",
+        "vm-frontier",
+        "vm-checklist"
+      ]
+    },
+    {
+      "concept": "container-overlayfs-copyup",
+      "page": "how-virtual-memory-works",
+      "taughtBy": [
+        "why-virtual-addresses",
+        "pages-and-flat-tables",
+        "x86-64-page-walk",
+        "tlb-and-reach",
+        "page-walk-cost",
+        "huge-pages",
+        "page-faults",
+        "page-replacement",
+        "fork-copy-on-write",
+        "context-switch-tlb",
+        "nested-paging",
+        "vm-frontier",
+        "vm-checklist"
+      ]
+    },
+    {
+      "concept": "container-veth-bridge-nat",
+      "page": "how-a-nic-moves-packets",
+      "taughtBy": [
+        "nic-anatomy",
+        "ethernet-frame",
+        "rx-path",
+        "pcie-per-packet",
+        "rss",
+        "flow-steering",
+        "offloads",
+        "ddio",
+        "bql",
+        "xdp",
+        "rdma-nic",
+        "ai-nic",
+        "nic-frontier",
+        "nic-checklist"
+      ]
+    },
+    {
+      "concept": "container-cgroups-memory-oom",
+      "page": "how-the-os-talks-to-hardware",
+      "taughtBy": [
+        "privilege-levels",
+        "system-call",
+        "syscall-cost",
+        "mmio",
+        "interrupt-handling",
+        "napi",
+        "descriptor-ring",
+        "dma-remapping",
+        "driver-model",
+        "io-stack",
+        "epoll-io-uring",
+        "kernel-bypass",
+        "os-hardware-frontier",
+        "io-troubleshooting"
+      ]
+    },
+    {
+      "concept": "container-cgroups-memory-oom",
+      "page": "how-virtual-memory-works",
+      "taughtBy": [
+        "why-virtual-addresses",
+        "pages-and-flat-tables",
+        "x86-64-page-walk",
+        "tlb-and-reach",
+        "page-walk-cost",
+        "huge-pages",
+        "page-faults",
+        "page-replacement",
+        "fork-copy-on-write",
+        "context-switch-tlb",
+        "nested-paging",
+        "vm-frontier",
+        "vm-checklist"
+      ]
+    },
+    {
+      "concept": "container-seccomp-capabilities",
+      "page": "how-the-os-talks-to-hardware",
+      "taughtBy": [
+        "privilege-levels",
+        "system-call",
+        "syscall-cost",
+        "mmio",
+        "interrupt-handling",
+        "napi",
+        "descriptor-ring",
+        "dma-remapping",
+        "driver-model",
+        "io-stack",
+        "epoll-io-uring",
+        "kernel-bypass",
+        "os-hardware-frontier",
+        "io-troubleshooting"
+      ]
+    },
+    {
+      "concept": "git-repository-regions",
+      "page": "how-threejs-draws-a-scene",
+      "taughtBy": [
+        "threejs-render-call",
+        "scene-graph-world-matrix",
+        "buffer-geometry",
+        "projection-depth-precision",
+        "frustum-culling-render-order",
+        "shader-program-cache",
+        "standard-material-brdf",
+        "rasterization-depth-test",
+        "mipmap-texture-filtering",
+        "shadow-mapping",
+        "draw-call-cost",
+        "raycaster-picking",
+        "quaternion-slerp",
+        "webgpu-frontier"
+      ]
+    },
+    {
+      "concept": "git-blob-content-addressing",
+      "page": "a-secret-in-public",
+      "taughtBy": [
+        "key-distribution-problem",
+        "modular-arithmetic-finite-fields",
+        "one-way-function-discrete-log",
+        "diffie-hellman-key-exchange",
+        "rsa-signatures-padding",
+        "elliptic-curve-cryptography",
+        "certificates-chain-of-trust",
+        "bits-of-security",
+        "quantum-threat-shor-grover",
+        "lattices-lwe-ml-kem",
+        "post-quantum-frontier-2026"
+      ]
+    },
+    {
+      "concept": "git-tree-snapshots",
+      "page": "graph-algorithms",
+      "taughtBy": [
+        "graph-algorithms"
+      ]
+    },
+    {
+      "concept": "git-commit-dag",
+      "page": "graph-algorithms",
+      "taughtBy": [
+        "graph-algorithms"
+      ]
+    },
+    {
+      "concept": "git-packfile-delta",
+      "page": "what-a-drive-is-made-of",
+      "taughtBy": [
+        "block-device-lba-sectors",
+        "hdd-seek-rotation-latency",
+        "smr-shingled-recording-hamr",
+        "nand-cell-levels-slc-qlc",
+        "flash-endurance-ecc-tbw",
+        "flash-translation-layer-gc",
+        "storage-interface-layer-map",
+        "ssd-vs-hdd-latency-bandwidth",
+        "storage-frontier-2026"
+      ]
+    },
+    {
+      "concept": "git-reftable-sha256-frontier",
+      "page": "what-a-drive-is-made-of",
+      "taughtBy": [
+        "block-device-lba-sectors",
+        "hdd-seek-rotation-latency",
+        "smr-shingled-recording-hamr",
+        "nand-cell-levels-slc-qlc",
+        "flash-endurance-ecc-tbw",
+        "flash-translation-layer-gc",
+        "storage-interface-layer-map",
+        "ssd-vs-hdd-latency-bandwidth",
+        "storage-frontier-2026"
+      ]
+    },
+    {
       "concept": "kv-cache-vs-fixed-state",
       "page": "attention-mechanism",
       "taughtBy": [
@@ -1264,6 +1634,220 @@
       "page": "llm-sampling",
       "taughtBy": [
         "llm-sampling"
+      ]
+    },
+    {
+      "concept": "llvm-three-phase-ir",
+      "page": "how-a-cpu-runs-a-program",
+      "taughtBy": [
+        "isa-contract",
+        "riscv-instruction-formats",
+        "compile-a-loop",
+        "single-cycle-datapath",
+        "clock-set-by-slowest",
+        "five-stage-pipeline",
+        "data-hazard-forwarding",
+        "control-hazard",
+        "iron-law-of-performance",
+        "cisc-risc-micro-ops",
+        "isa-frontier-2026",
+        "reading-code-speed"
+      ]
+    },
+    {
+      "concept": "llvm-three-phase-ir",
+      "page": "switches-that-compute",
+      "taughtBy": [
+        "relay-logic-gates",
+        "nand-universality",
+        "binary-numbers",
+        "ripple-carry-adder",
+        "twos-complement-overflow",
+        "latch-metastability",
+        "clock-counter",
+        "mux-alu",
+        "stored-program-machine",
+        "floating-point-rounding",
+        "real-processor-scale"
+      ]
+    },
+    {
+      "concept": "llvm-licm-aliasing-vectorize",
+      "page": "how-a-cpu-does-math",
+      "taughtBy": [
+        "ieee754-bit-layout",
+        "ulp-spacing",
+        "rounding-modes",
+        "subnormals-nan-inf",
+        "cancellation-summation",
+        "fused-multiply-add",
+        "low-precision-formats",
+        "block-scaled-formats",
+        "simd-masks",
+        "auto-vectorization",
+        "latency-throughput-frequency",
+        "sve-sme-amx",
+        "cpu-math-frontier-2026"
+      ]
+    },
+    {
+      "concept": "llvm-instruction-selection",
+      "page": "how-a-cpu-runs-a-program",
+      "taughtBy": [
+        "isa-contract",
+        "riscv-instruction-formats",
+        "compile-a-loop",
+        "single-cycle-datapath",
+        "clock-set-by-slowest",
+        "five-stage-pipeline",
+        "data-hazard-forwarding",
+        "control-hazard",
+        "iron-law-of-performance",
+        "cisc-risc-micro-ops",
+        "isa-frontier-2026",
+        "reading-code-speed"
+      ]
+    },
+    {
+      "concept": "llvm-instruction-selection",
+      "page": "how-a-cpu-guesses-ahead",
+      "taughtBy": [
+        "mispredict-cost-wide-core",
+        "two-bit-counter",
+        "gshare",
+        "tage",
+        "btb-ras",
+        "superscalar-ilp",
+        "ooo-renaming",
+        "rob-precise",
+        "window-size",
+        "spectre",
+        "frontier",
+        "reading-branchy-code"
+      ]
+    },
+    {
+      "concept": "llvm-register-allocation-spill",
+      "page": "how-a-cpu-guesses-ahead",
+      "taughtBy": [
+        "mispredict-cost-wide-core",
+        "two-bit-counter",
+        "gshare",
+        "tage",
+        "btb-ras",
+        "superscalar-ilp",
+        "ooo-renaming",
+        "rob-precise",
+        "window-size",
+        "spectre",
+        "frontier",
+        "reading-branchy-code"
+      ]
+    },
+    {
+      "concept": "nginx-c10k-architecture",
+      "page": "how-virtual-memory-works",
+      "taughtBy": [
+        "why-virtual-addresses",
+        "pages-and-flat-tables",
+        "x86-64-page-walk",
+        "tlb-and-reach",
+        "page-walk-cost",
+        "huge-pages",
+        "page-faults",
+        "page-replacement",
+        "fork-copy-on-write",
+        "context-switch-tlb",
+        "nested-paging",
+        "vm-frontier",
+        "vm-checklist"
+      ]
+    },
+    {
+      "concept": "nginx-master-worker-reload",
+      "page": "how-virtual-memory-works",
+      "taughtBy": [
+        "why-virtual-addresses",
+        "pages-and-flat-tables",
+        "x86-64-page-walk",
+        "tlb-and-reach",
+        "page-walk-cost",
+        "huge-pages",
+        "page-faults",
+        "page-replacement",
+        "fork-copy-on-write",
+        "context-switch-tlb",
+        "nested-paging",
+        "vm-frontier",
+        "vm-checklist"
+      ]
+    },
+    {
+      "concept": "nginx-epoll-reuseport",
+      "page": "how-the-os-talks-to-hardware",
+      "taughtBy": [
+        "privilege-levels",
+        "system-call",
+        "syscall-cost",
+        "mmio",
+        "interrupt-handling",
+        "napi",
+        "descriptor-ring",
+        "dma-remapping",
+        "driver-model",
+        "io-stack",
+        "epoll-io-uring",
+        "kernel-bypass",
+        "os-hardware-frontier",
+        "io-troubleshooting"
+      ]
+    },
+    {
+      "concept": "nginx-epoll-reuseport",
+      "page": "how-a-nic-moves-packets",
+      "taughtBy": [
+        "nic-anatomy",
+        "ethernet-frame",
+        "rx-path",
+        "pcie-per-packet",
+        "rss",
+        "flow-steering",
+        "offloads",
+        "ddio",
+        "bql",
+        "xdp",
+        "rdma-nic",
+        "ai-nic",
+        "nic-frontier",
+        "nic-checklist"
+      ]
+    },
+    {
+      "concept": "nginx-sendfile-proxy-buffering",
+      "page": "how-the-os-talks-to-hardware",
+      "taughtBy": [
+        "privilege-levels",
+        "system-call",
+        "syscall-cost",
+        "mmio",
+        "interrupt-handling",
+        "napi",
+        "descriptor-ring",
+        "dma-remapping",
+        "driver-model",
+        "io-stack",
+        "epoll-io-uring",
+        "kernel-bypass",
+        "os-hardware-frontier",
+        "io-troubleshooting"
+      ]
+    },
+    {
+      "concept": "nginx-sendfile-proxy-buffering",
+      "page": "tcp-congestion",
+      "taughtBy": [
+        "latency-bandwidth",
+        "tcp-congestion-control"
       ]
     },
     {
@@ -1328,6 +1912,336 @@
         "sas4-fec",
         "sas-frontier",
         "reading-sas-specs"
+      ]
+    },
+    {
+      "concept": "pg-shared-buffers-clock",
+      "page": "how-the-os-talks-to-hardware",
+      "taughtBy": [
+        "privilege-levels",
+        "system-call",
+        "syscall-cost",
+        "mmio",
+        "interrupt-handling",
+        "napi",
+        "descriptor-ring",
+        "dma-remapping",
+        "driver-model",
+        "io-stack",
+        "epoll-io-uring",
+        "kernel-bypass",
+        "os-hardware-frontier",
+        "io-troubleshooting"
+      ]
+    },
+    {
+      "concept": "pg-shared-buffers-clock",
+      "page": "how-cores-share-memory",
+      "taughtBy": [
+        "cache-coherence-problem",
+        "coherence-invariants",
+        "snooping-msi-mesi-moesi",
+        "directory-coherence",
+        "lost-update-race",
+        "atomic-instructions",
+        "contended-cache-line",
+        "sequential-consistency-store-buffer",
+        "tso-weak-ordering-fences",
+        "spinlock-scaling",
+        "coherence-frontier-2026",
+        "shared-data-checklist"
+      ]
+    },
+    {
+      "concept": "pg-wal-full-page-writes",
+      "page": "what-a-drive-is-made-of",
+      "taughtBy": [
+        "block-device-lba-sectors",
+        "hdd-seek-rotation-latency",
+        "smr-shingled-recording-hamr",
+        "nand-cell-levels-slc-qlc",
+        "flash-endurance-ecc-tbw",
+        "flash-translation-layer-gc",
+        "storage-interface-layer-map",
+        "ssd-vs-hdd-latency-bandwidth",
+        "storage-frontier-2026"
+      ]
+    },
+    {
+      "concept": "pg-aio-skipscan-pgvector-frontier",
+      "page": "how-the-os-talks-to-hardware",
+      "taughtBy": [
+        "privilege-levels",
+        "system-call",
+        "syscall-cost",
+        "mmio",
+        "interrupt-handling",
+        "napi",
+        "descriptor-ring",
+        "dma-remapping",
+        "driver-model",
+        "io-stack",
+        "epoll-io-uring",
+        "kernel-bypass",
+        "os-hardware-frontier",
+        "io-troubleshooting"
+      ]
+    },
+    {
+      "concept": "pg-aio-skipscan-pgvector-frontier",
+      "page": "distributed-systems",
+      "taughtBy": [
+        "quorum-replication"
+      ]
+    },
+    {
+      "concept": "pg-diagnostic-checklist",
+      "page": "what-a-drive-is-made-of",
+      "taughtBy": [
+        "block-device-lba-sectors",
+        "hdd-seek-rotation-latency",
+        "smr-shingled-recording-hamr",
+        "nand-cell-levels-slc-qlc",
+        "flash-endurance-ecc-tbw",
+        "flash-translation-layer-gc",
+        "storage-interface-layer-map",
+        "ssd-vs-hdd-latency-bandwidth",
+        "storage-frontier-2026"
+      ]
+    },
+    {
+      "concept": "pg-diagnostic-checklist",
+      "page": "how-the-os-talks-to-hardware",
+      "taughtBy": [
+        "privilege-levels",
+        "system-call",
+        "syscall-cost",
+        "mmio",
+        "interrupt-handling",
+        "napi",
+        "descriptor-ring",
+        "dma-remapping",
+        "driver-model",
+        "io-stack",
+        "epoll-io-uring",
+        "kernel-bypass",
+        "os-hardware-frontier",
+        "io-troubleshooting"
+      ]
+    },
+    {
+      "concept": "pg-diagnostic-checklist",
+      "page": "how-cores-share-memory",
+      "taughtBy": [
+        "cache-coherence-problem",
+        "coherence-invariants",
+        "snooping-msi-mesi-moesi",
+        "directory-coherence",
+        "lost-update-race",
+        "atomic-instructions",
+        "contended-cache-line",
+        "sequential-consistency-store-buffer",
+        "tso-weak-ordering-fences",
+        "spinlock-scaling",
+        "coherence-frontier-2026",
+        "shared-data-checklist"
+      ]
+    },
+    {
+      "concept": "pg-diagnostic-checklist",
+      "page": "distributed-systems",
+      "taughtBy": [
+        "quorum-replication"
+      ]
+    },
+    {
+      "concept": "react-two-phase-render-commit",
+      "page": "how-pixels-reach-a-screen",
+      "taughtBy": [
+        "framebuffer",
+        "pixel-clock",
+        "tearing-vsync",
+        "variable-refresh",
+        "display-engine",
+        "display-link",
+        "dsc-chroma",
+        "panel-rows",
+        "motion-blur",
+        "hdr-pq",
+        "display-latency",
+        "display-frontier",
+        "display-troubleshoot"
+      ]
+    },
+    {
+      "concept": "react-two-phase-render-commit",
+      "page": "how-threejs-draws-a-scene",
+      "taughtBy": [
+        "threejs-render-call",
+        "scene-graph-world-matrix",
+        "buffer-geometry",
+        "projection-depth-precision",
+        "frustum-culling-render-order",
+        "shader-program-cache",
+        "standard-material-brdf",
+        "rasterization-depth-test",
+        "mipmap-texture-filtering",
+        "shadow-mapping",
+        "draw-call-cost",
+        "raycaster-picking",
+        "quaternion-slerp",
+        "webgpu-frontier"
+      ]
+    },
+    {
+      "concept": "react-layout-vs-passive-effect",
+      "page": "how-pixels-reach-a-screen",
+      "taughtBy": [
+        "framebuffer",
+        "pixel-clock",
+        "tearing-vsync",
+        "variable-refresh",
+        "display-engine",
+        "display-link",
+        "dsc-chroma",
+        "panel-rows",
+        "motion-blur",
+        "hdr-pq",
+        "display-latency",
+        "display-frontier",
+        "display-troubleshoot"
+      ]
+    },
+    {
+      "concept": "react-lanes-scheduler",
+      "page": "how-pixels-reach-a-screen",
+      "taughtBy": [
+        "framebuffer",
+        "pixel-clock",
+        "tearing-vsync",
+        "variable-refresh",
+        "display-engine",
+        "display-link",
+        "dsc-chroma",
+        "panel-rows",
+        "motion-blur",
+        "hdr-pq",
+        "display-latency",
+        "display-frontier",
+        "display-troubleshoot"
+      ]
+    },
+    {
+      "concept": "redis-event-loop",
+      "page": "how-the-os-talks-to-hardware",
+      "taughtBy": [
+        "privilege-levels",
+        "system-call",
+        "syscall-cost",
+        "mmio",
+        "interrupt-handling",
+        "napi",
+        "descriptor-ring",
+        "dma-remapping",
+        "driver-model",
+        "io-stack",
+        "epoll-io-uring",
+        "kernel-bypass",
+        "os-hardware-frontier",
+        "io-troubleshooting"
+      ]
+    },
+    {
+      "concept": "redis-event-loop",
+      "page": "why-compute-waits-for-memory",
+      "taughtBy": [
+        "pipeline-memory-stall",
+        "memory-hierarchy-cache-walk",
+        "cache-tiling-blocking",
+        "memory-wall-littles-law",
+        "amdahl-gustafson-bus-cap",
+        "gpu-systolic-array",
+        "roofline-model",
+        "llm-inference-memory-bound",
+        "data-movement-energy-hbm",
+        "memory-wall-frontier-2026",
+        "memory-diagnostic-checklist"
+      ]
+    },
+    {
+      "concept": "redis-resp-pipelining",
+      "page": "how-a-nic-moves-packets",
+      "taughtBy": [
+        "nic-anatomy",
+        "ethernet-frame",
+        "rx-path",
+        "pcie-per-packet",
+        "rss",
+        "flow-steering",
+        "offloads",
+        "ddio",
+        "bql",
+        "xdp",
+        "rdma-nic",
+        "ai-nic",
+        "nic-frontier",
+        "nic-checklist"
+      ]
+    },
+    {
+      "concept": "redis-embstr-listpack-encodings",
+      "page": "why-compute-waits-for-memory",
+      "taughtBy": [
+        "pipeline-memory-stall",
+        "memory-hierarchy-cache-walk",
+        "cache-tiling-blocking",
+        "memory-wall-littles-law",
+        "amdahl-gustafson-bus-cap",
+        "gpu-systolic-array",
+        "roofline-model",
+        "llm-inference-memory-bound",
+        "data-movement-energy-hbm",
+        "memory-wall-frontier-2026",
+        "memory-diagnostic-checklist"
+      ]
+    },
+    {
+      "concept": "redis-io-threads",
+      "page": "how-the-os-talks-to-hardware",
+      "taughtBy": [
+        "privilege-levels",
+        "system-call",
+        "syscall-cost",
+        "mmio",
+        "interrupt-handling",
+        "napi",
+        "descriptor-ring",
+        "dma-remapping",
+        "driver-model",
+        "io-stack",
+        "epoll-io-uring",
+        "kernel-bypass",
+        "os-hardware-frontier",
+        "io-troubleshooting"
+      ]
+    },
+    {
+      "concept": "redis-bgsave-cow-aof",
+      "page": "how-virtual-memory-works",
+      "taughtBy": [
+        "why-virtual-addresses",
+        "pages-and-flat-tables",
+        "x86-64-page-walk",
+        "tlb-and-reach",
+        "page-walk-cost",
+        "huge-pages",
+        "page-faults",
+        "page-replacement",
+        "fork-copy-on-write",
+        "context-switch-tlb",
+        "nested-paging",
+        "vm-frontier",
+        "vm-checklist"
       ]
     },
     {
@@ -1673,6 +2587,151 @@
         "ssd-write-amplification-trim",
         "nvme-polling-vs-interrupts",
         "nvme-pcie6-zns-gpudirect"
+      ]
+    },
+    {
+      "concept": "v8-tiered-pipeline",
+      "page": "how-a-cpu-runs-a-program",
+      "taughtBy": [
+        "isa-contract",
+        "riscv-instruction-formats",
+        "compile-a-loop",
+        "single-cycle-datapath",
+        "clock-set-by-slowest",
+        "five-stage-pipeline",
+        "data-hazard-forwarding",
+        "control-hazard",
+        "iron-law-of-performance",
+        "cisc-risc-micro-ops",
+        "isa-frontier-2026",
+        "reading-code-speed"
+      ]
+    },
+    {
+      "concept": "v8-pointer-tagging-compression",
+      "page": "how-a-cpu-does-math",
+      "taughtBy": [
+        "ieee754-bit-layout",
+        "ulp-spacing",
+        "rounding-modes",
+        "subnormals-nan-inf",
+        "cancellation-summation",
+        "fused-multiply-add",
+        "low-precision-formats",
+        "block-scaled-formats",
+        "simd-masks",
+        "auto-vectorization",
+        "latency-throughput-frequency",
+        "sve-sme-amx",
+        "cpu-math-frontier-2026"
+      ]
+    },
+    {
+      "concept": "v8-pointer-tagging-compression",
+      "page": "how-cpu-caches-work",
+      "taughtBy": [
+        "cache-levels-why",
+        "cache-address-split",
+        "cache-associativity-3c",
+        "cache-replacement",
+        "cache-write-policy",
+        "cache-inclusion",
+        "l1-size-vipt",
+        "cache-prefetch",
+        "false-sharing",
+        "cache-latency-staircase",
+        "cache-frontier",
+        "reading-cache-specs"
+      ]
+    },
+    {
+      "concept": "v8-hidden-classes-map",
+      "page": "how-cpu-caches-work",
+      "taughtBy": [
+        "cache-levels-why",
+        "cache-address-split",
+        "cache-associativity-3c",
+        "cache-replacement",
+        "cache-write-policy",
+        "cache-inclusion",
+        "l1-size-vipt",
+        "cache-prefetch",
+        "false-sharing",
+        "cache-latency-staircase",
+        "cache-frontier",
+        "reading-cache-specs"
+      ]
+    },
+    {
+      "concept": "v8-inline-caches",
+      "page": "how-a-cpu-guesses-ahead",
+      "taughtBy": [
+        "mispredict-cost-wide-core",
+        "two-bit-counter",
+        "gshare",
+        "tage",
+        "btb-ras",
+        "superscalar-ilp",
+        "ooo-renaming",
+        "rob-precise",
+        "window-size",
+        "spectre",
+        "frontier",
+        "reading-branchy-code"
+      ]
+    },
+    {
+      "concept": "v8-ignition-bytecode",
+      "page": "how-a-cpu-runs-a-program",
+      "taughtBy": [
+        "isa-contract",
+        "riscv-instruction-formats",
+        "compile-a-loop",
+        "single-cycle-datapath",
+        "clock-set-by-slowest",
+        "five-stage-pipeline",
+        "data-hazard-forwarding",
+        "control-hazard",
+        "iron-law-of-performance",
+        "cisc-risc-micro-ops",
+        "isa-frontier-2026",
+        "reading-code-speed"
+      ]
+    },
+    {
+      "concept": "v8-deoptimization-osr",
+      "page": "how-a-cpu-guesses-ahead",
+      "taughtBy": [
+        "mispredict-cost-wide-core",
+        "two-bit-counter",
+        "gshare",
+        "tage",
+        "btb-ras",
+        "superscalar-ilp",
+        "ooo-renaming",
+        "rob-precise",
+        "window-size",
+        "spectre",
+        "frontier",
+        "reading-branchy-code"
+      ]
+    },
+    {
+      "concept": "v8-elements-kind",
+      "page": "how-cpu-caches-work",
+      "taughtBy": [
+        "cache-levels-why",
+        "cache-address-split",
+        "cache-associativity-3c",
+        "cache-replacement",
+        "cache-write-policy",
+        "cache-inclusion",
+        "l1-size-vipt",
+        "cache-prefetch",
+        "false-sharing",
+        "cache-latency-staircase",
+        "cache-frontier",
+        "reading-cache-specs"
       ]
     },
     {
@@ -3539,10 +4598,10 @@
     }
   ],
   "unknownAliasIds": [],
-  "sizeBytes": 1343921,
+  "sizeBytes": 1499186,
   "questionsBytes": 173006,
-  "combinedBytes": 1516927,
-  "indexBytes": 155399,
+  "combinedBytes": 1672192,
+  "indexBytes": 151933,
   "chunkBytes": {
     "math.nodes": 51664,
     "math.edges": 90019,
@@ -3568,8 +4627,8 @@
     "earth.nodes": 25871,
     "earth.edges": 19025,
     "earth.questions": 6822,
-    "computing.nodes": 303385,
-    "computing.edges": 193572,
+    "computing.nodes": 385307,
+    "computing.edges": 242924,
     "computing.questions": 2766,
     "society.nodes": 67881,
     "society.edges": 41022,

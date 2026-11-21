@@ -476,7 +476,10 @@ window.ESSAY_COPY.zh = {
   "site.crumb.cat": "计算与智能",
   "site.crumb.sub": "系统与安全",
   "site.bl.title": "被这些页面引用",
-  "site.bl.1": "<a href=\"../coherent-interconnects/\">芯片之间怎么共用内存</a>：<a href=\"../coherent-interconnects/#ch10\">该文第 10 章</a> → <a href=\"#ch12\">本页第 12 章</a>",
-  "site.bl.2": "<a href=\"../how-the-os-talks-to-hardware/\">操作系统是怎么和硬件说话的</a>：<a href=\"../how-the-os-talks-to-hardware/#ch6\">该文第 6 章</a> → <a href=\"#ch5\">本页第 5 章</a>；<a href=\"../how-the-os-talks-to-hardware/#ch7\">该文第 7 章</a> → <a href=\"#ch3\">本页第 3 章</a>",
-  "site.bl.3": "<a href=\"../storage-over-a-network/\">隔着网线的硬盘</a>：<a href=\"../storage-over-a-network/#ch6\">该文第 6 章</a> → <a href=\"#ch11\">本页第 11 章</a>"
+  "site.bl.1": "<a href=\"../../software/how-containers-isolate-a-process/\">容器是如何把一个进程关进沙盒的</a>：<a href=\"../../software/how-containers-isolate-a-process/#ch5\">该文第 5 章</a> → <a href=\"#ch3\">本页第 3 章</a>、<a href=\"#ch10\">本页第 10 章</a>；<a href=\"../../software/how-containers-isolate-a-process/#ch11\">该文第 11 章</a>",
+  "site.bl.2": "<a href=\"../../software/how-nginx-handles-ten-thousand-connections/\">Nginx 如何扛住上万并发</a>：<a href=\"../../software/how-nginx-handles-ten-thousand-connections/#ch3\">该文第 3 章</a> → <a href=\"#ch5\">本页第 5 章</a>；<a href=\"../../software/how-nginx-handles-ten-thousand-connections/#ch11\">该文第 11 章</a>",
+  "site.bl.3": "<a href=\"../../software/how-redis-answers-in-microseconds/\">Redis 如何在微秒级响应</a>：<a href=\"../../software/how-redis-answers-in-microseconds/#ch2\">该文第 2 章</a> → <a href=\"#ch3\">本页第 3 章</a>；<a href=\"../../software/how-redis-answers-in-microseconds/#ch11\">该文第 11 章</a>",
+  "site.bl.4": "<a href=\"../coherent-interconnects/\">芯片之间怎么共用内存</a>：<a href=\"../coherent-interconnects/#ch10\">该文第 10 章</a> → <a href=\"#ch12\">本页第 12 章</a>",
+  "site.bl.5": "<a href=\"../how-the-os-talks-to-hardware/\">操作系统是怎么和硬件说话的</a>：<a href=\"../how-the-os-talks-to-hardware/#ch6\">该文第 6 章</a> → <a href=\"#ch5\">本页第 5 章</a>；<a href=\"../how-the-os-talks-to-hardware/#ch7\">该文第 7 章</a> → <a href=\"#ch3\">本页第 3 章</a>",
+  "site.bl.6": "<a href=\"../storage-over-a-network/\">隔着网线的硬盘</a>：<a href=\"../storage-over-a-network/#ch6\">该文第 6 章</a> → <a href=\"#ch11\">本页第 11 章</a>"
 };

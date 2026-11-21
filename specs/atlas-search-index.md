@@ -52,11 +52,11 @@ code reads the same shapes as before; details are merged into those objects by `
   **2026-11-18, raised to 160,000 as a stop-gap:** importing the nine essays registered that day (how-a-chatbot-writes,
   what-a-frontier-model-takes, a-secret-in-public, what-quantum-computers-do, why-chips-are-hard, why-fusion-is-hard,
   why-batteries-hold-so-little, why-atoms-stick-together, why-one-rate-moves-everything; 107 concepts) brings the atlas
-  to 775 concepts and the index to about 154 KB, past the old limit (153,130 bytes before their edges). The 2026-11-13
-  projection was outgrown, not wrong. Raised by the team lead (Claude Code main session) as a stop-gap and reported to
-  Yangyu. **The proper fix is to compact the index** (for example, stop repeating the lesson slug in every row of an
-  essay's concepts, which costs about 25 bytes per concept), and it must be done and independently reviewed before the
-  next batch of essays is imported; do not raise the limit again instead.
+  to 775 concepts and the index to about 154 KB, past the old limit (153,130 bytes before their edges).
+  **2026-11-21, compacted to 138,397 bytes (for 789 concepts):** `scripts/build-atlas-data.cjs` now emits a unique
+  lesson-slug table `L` (`~index` for non-primary, scalar when single lesson, omitted when zero lessons) and drops the
+  6-space per-row indentation in `N`, shrinking `atlas-index.js` from 155,399 to 138,397 bytes while expanding to the
+  exact same `window.ATLAS` object. `UPFRONT_LIMIT` stays at `160,000` bytes.
 - `search/manifest.js` ≤ **30,000 bytes** and each `search/chunks/*.js` ≤ **60,000 bytes** (enforced by
   `scripts/build-search-index.cjs`, independent of `build-atlas-data.cjs`). Previously `atlas/search-index.js`
   had a single-file 200,000-byte gate (reaching 191,319 bytes on 2026-11-12). On 2026-11-13, search was

@@ -1,0 +1,22 @@
+<figure class="lab" id="lab-ch4-model">
+    <h3 data-i18n="ch4.model.title"></h3>
+    <p class="how" data-i18n-html="ch4.model.how"></p>
+    <div class="ctl">
+      <div class="seg" role="radiogroup" data-i18n-aria="ch4.ctl.pat">
+        <span class="lbl" data-i18n="ch4.ctl.pat"></span>
+        <label><input type="radio" name="c4Pat" value="thrash" checked><span data-i18n="ch4.pat.thrash"></span></label>
+        <label><input type="radio" name="c4Pat" value="batched"><span data-i18n="ch4.pat.batched"></span></label>
+        <label><input type="radio" name="c4Pat" value="contained"><span data-i18n="ch4.pat.contained"></span></label>
+      </div>
+      <label class="rng"><span data-i18n="ch4.ctl.items"></span><input type="range" id="c4Items" min="10" max="120" step="10" value="50"><output id="c4Itemso" for="c4Items"></output></label>
+      <label class="rng"><span data-i18n="ch4.ctl.tree"></span><input type="range" id="c4Tree" min="100" max="800" step="50" value="300"><output id="c4Treeo" for="c4Tree"></output></label>
+    </div>
+    <canvas class="cv" id="c4Cv" role="img" data-i18n-aria="ch4.cv.aria"></canvas>
+    <div class="read">
+      <div><span data-i18n="ch4.read.ref"></span><b id="c4Ref" class="r"></b></div>
+      <div><span data-i18n="ch4.read.ms"></span><b id="c4Ms" class="g"></b></div>
+      <div><span data-i18n="ch4.read.b60"></span><b id="c4B60" class="c"></b></div>
+      <div><span data-i18n="ch4.read.b120"></span><b id="c4B120" class="v"></b></div>
+    </div>
+    <p class="say" id="c4Say" aria-live="polite"></p>
+  </figure>

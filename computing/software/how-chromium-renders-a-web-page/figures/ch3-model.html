@@ -1,0 +1,23 @@
+<figure class="lab" id="lab-ch3-model">
+    <h3 data-i18n="ch3.model.title"></h3>
+    <p class="how" data-i18n-html="ch3.model.how"></p>
+    <div class="ctl">
+      <div class="seg" role="radiogroup" data-i18n-aria="ch3.ctl.sel">
+        <span class="lbl" data-i18n="ch3.ctl.sel"></span>
+        <label><input type="radio" name="c3Sel" value="simpleClass"><span data-i18n="ch3.sel.simple"></span></label>
+        <label><input type="radio" name="c3Sel" value="deepDesc" checked><span data-i18n="ch3.sel.deep"></span></label>
+        <label><input type="radio" name="c3Sel" value="universalTail"><span data-i18n="ch3.sel.univ"></span></label>
+      </div>
+      <label class="rng"><span data-i18n="ch3.ctl.nodes"></span><input type="range" id="c3Nodes" min="40" max="400" step="20" value="180"><output id="c3Nodeso" for="c3Nodes"></output></label>
+      <label class="rng"><span data-i18n="ch3.ctl.rules"></span><input type="range" id="c3Rules" min="50" max="500" step="50" value="250"><output id="c3Ruleso" for="c3Rules"></output></label>
+      <label class="chk"><input type="checkbox" id="c3Smart" checked><span data-i18n="ch3.ctl.smart"></span></label>
+    </div>
+    <canvas class="cv" id="c3Cv" role="img" data-i18n-aria="ch3.cv.aria"></canvas>
+    <div class="read">
+      <div><span data-i18n="ch3.read.inv"></span><b id="c3Inv" class="c"></b></div>
+      <div><span data-i18n="ch3.read.chk"></span><b id="c3Chk" class="g"></b></div>
+      <div><span data-i18n="ch3.read.blm"></span><b id="c3Blm" class="n"></b></div>
+      <div><span data-i18n="ch3.read.ms"></span><b id="c3Ms" class="r"></b></div>
+    </div>
+    <p class="say" id="c3Say" aria-live="polite"></p>
+  </figure>

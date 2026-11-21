@@ -1,0 +1,22 @@
+<figure class="lab" id="lab-ch10-model">
+  <h3 data-i18n="ch10.model.title"></h3>
+  <p class="how" data-i18n="ch10.model.how"></p>
+  <div class="ctl">
+    <label class="chk"><input type="checkbox" id="c10Comp" checked><span data-i18n="ch10.ctl.comp"></span></label>
+    <div class="seg" role="radiogroup" data-i18n-aria="ch10.ctl.what">
+      <span class="lbl" data-i18n="ch10.ctl.what"></span>
+      <label><input type="radio" name="c10What" value="parentOnly" checked><span data-i18n="ch10.w.parent"></span></label>
+      <label><input type="radio" name="c10What" value="theme"><span data-i18n="ch10.w.theme"></span></label>
+      <label><input type="radio" name="c10What" value="items"><span data-i18n="ch10.w.items"></span></label>
+    </div>
+    <label class="rng"><span data-i18n="ch10.ctl.renders"></span><input type="range" id="c10Ren" min="1" max="8" step="1" value="4"><output id="c10Reno" for="c10Ren"></output></label>
+  </div>
+  <canvas class="cv short" id="c10Cv" role="img" data-i18n-aria="ch10.cv.aria"></canvas>
+  <div class="read">
+    <div><span data-i18n="ch10.read.slots"></span><b id="c10Slots" class="v"></b></div>
+    <div><span data-i18n="ch10.read.hits"></span><b id="c10Hits" class="n"></b></div>
+    <div><span data-i18n="ch10.read.calc"></span><b id="c10Calc" class="g"></b></div>
+    <div><span data-i18n="ch10.read.bail"></span><b id="c10Bail" class="c"></b></div>
+  </div>
+  <p class="say" id="c10Say" aria-live="polite"></p>
+</figure>

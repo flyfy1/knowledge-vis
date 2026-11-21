@@ -1,0 +1,92 @@
+{
+  "slug": "how-redis-answers-in-microseconds",
+  "kind": "essay",
+  "tags": [
+    {
+      "zh": "Redis",
+      "en": "Redis"
+    },
+    {
+      "zh": "内存存储",
+      "en": "In-Memory Store"
+    },
+    {
+      "zh": "事件循环",
+      "en": "Event Loop"
+    },
+    {
+      "zh": "软件原理",
+      "en": "How Software Works"
+    },
+    {
+      "zh": "长文",
+      "en": "Long-form Essay"
+    }
+  ],
+  "category": "computing",
+  "subtopic": "software",
+  "stage": "university",
+  "path": "computing/software/how-redis-answers-in-microseconds/",
+  "created": "2026-11-21",
+  "layout": "essay",
+  "scripts": [
+    "models.js",
+    "copy.zh.js",
+    "copy.en.js",
+    "app.js"
+  ],
+  "version": "20261121a",
+  "provenanceNote": {
+    "zh": "本文由 Antigravity 从零编写，对照 Redis 8.0 原理与实测规格；中英文同步完成并已运行模型、交叉验证、版式与画布扫描检查（独立评审待做）。",
+    "en": "This essay was written from scratch with Antigravity against Redis 8.0 specifications and internals; both Chinese and English were authored together and checked with model, crosscheck, layout, and canvas-sweep tests (independent review pending)."
+  },
+  "dynamicKeys": {
+    "ch1.say": [
+      "fast",
+      "stall"
+    ],
+    "ch2.say": [
+      "seq",
+      "pipe"
+    ],
+    "ch3.say": [
+      "int",
+      "embstr",
+      "raw"
+    ],
+    "ch4.say": [
+      "idle",
+      "prog",
+      "done",
+      "stw"
+    ],
+    "ch6.say": [
+      "single",
+      "io",
+      "core"
+    ],
+    "ch7.say": [
+      "idle",
+      "uniform",
+      "skew"
+    ],
+    "ch9.say": [
+      "normal",
+      "migrating"
+    ],
+    "ch9.s.say": [
+      "none",
+      "double",
+      "shrink"
+    ]
+  },
+  "generators": [
+    {
+      "run": "tools/diagrams.cjs",
+      "writes": [
+        "figures/dg-*.html"
+      ]
+    }
+  ],
+  "status": "live"
+}

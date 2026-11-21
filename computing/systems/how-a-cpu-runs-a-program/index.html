@@ -202,7 +202,7 @@
   .cv.grid { height:auto; }
 </style>
 <link rel="stylesheet" href="../../../page-provenance.css">
-<link rel="stylesheet" href="../../../site-nav.css?v=sn-20261119a">
+<link rel="stylesheet" href="../../../site-nav.css?v=sn-20261121a">
 </head>
 <body>
 <div class="topbar">
@@ -586,10 +586,12 @@ for (int i = 0; i &lt; n; i++)
   <div class="wrap">
     <h2 data-i18n="site.bl.title">被这些页面引用</h2>
     <ul class="xref-list">
-      <li data-i18n-html="site.bl.1"><a href="../how-a-computer-boots/">电脑是怎么开机的</a>：<a href="../how-a-computer-boots/#ch2">该文第 2 章</a>；<a href="../how-a-computer-boots/#ch14">该文第 14 章</a></li>
-      <li data-i18n-html="site.bl.2"><a href="../how-a-cpu-does-math/">CPU 是怎么算小数的，又怎么一次算一排</a>：<a href="../how-a-cpu-does-math/#ch14">该文第 14 章</a></li>
-      <li data-i18n-html="site.bl.3"><a href="../how-a-cpu-guesses-ahead/">CPU 是怎么猜着往前跑的</a>：<a href="../how-a-cpu-guesses-ahead/#ch1">该文第 1 章</a> → <a href="#ch8">本页第 8 章</a>、<a href="#ch9">本页第 9 章</a>；<a href="../how-a-cpu-guesses-ahead/#ch12">该文第 12 章</a></li>
-      <li data-i18n-html="site.bl.4"><a href="../how-the-os-talks-to-hardware/">操作系统是怎么和硬件说话的</a>：<a href="../how-the-os-talks-to-hardware/#ch14">该文第 14 章</a> → <a href="#ch8">本页第 8 章</a></li>
+      <li data-i18n-html="site.bl.1"><a href="../../software/how-llvm-compiles-your-code/">LLVM 如何把源码编译成机器码</a>：→ <a href="#ch1">本页第 1 章</a>；<a href="../../software/how-llvm-compiles-your-code/#ch7">该文第 7 章</a> → <a href="#ch3">本页第 3 章</a>；<a href="../../software/how-llvm-compiles-your-code/#ch11">该文第 11 章</a></li>
+      <li data-i18n-html="site.bl.2"><a href="../../software/how-v8-runs-javascript/">V8 是怎么跑起一段 JavaScript 的</a>：<a href="../../software/how-v8-runs-javascript/#ch11">该文第 11 章</a></li>
+      <li data-i18n-html="site.bl.3"><a href="../how-a-computer-boots/">电脑是怎么开机的</a>：<a href="../how-a-computer-boots/#ch2">该文第 2 章</a>；<a href="../how-a-computer-boots/#ch14">该文第 14 章</a></li>
+      <li data-i18n-html="site.bl.4"><a href="../how-a-cpu-does-math/">CPU 是怎么算小数的，又怎么一次算一排</a>：<a href="../how-a-cpu-does-math/#ch14">该文第 14 章</a></li>
+      <li data-i18n-html="site.bl.5"><a href="../how-a-cpu-guesses-ahead/">CPU 是怎么猜着往前跑的</a>：<a href="../how-a-cpu-guesses-ahead/#ch1">该文第 1 章</a> → <a href="#ch8">本页第 8 章</a>、<a href="#ch9">本页第 9 章</a>；<a href="../how-a-cpu-guesses-ahead/#ch12">该文第 12 章</a></li>
+      <li data-i18n-html="site.bl.6"><a href="../how-the-os-talks-to-hardware/">操作系统是怎么和硬件说话的</a>：<a href="../how-the-os-talks-to-hardware/#ch14">该文第 14 章</a> → <a href="#ch8">本页第 8 章</a></li>
     </ul>
     <h2 data-i18n="site.rel.title">相关页面</h2>
     <ul class="xref-list">
@@ -603,10 +605,10 @@ for (int i = 0; i &lt; n; i++)
 
 <footer><div class="wrap" data-i18n-html="footer"><p><strong>来源。</strong>指令格式、操作码与编码：RISC-V International，《The RISC-V Instruction Set Manual, Volume I: Unprivileged Architecture》，docs.riscv.org，版本 v20260120（RV32I 2.1 版）；寄存器的 ABI 名字：RISC-V ELF psABI 的调用约定。编码用 Capstone 反汇编器逐条核对，x86-64 字节用 clang 汇编得到。数据通路、控制表、流水线、转发与冒险检测、性能铁律：Patterson 与 Hennessy，《Computer Organization and Design: The Hardware/Software Interface, RISC-V Edition》第 1、4 章。前沿事实的来源与打开日期见 BRIEF.md。</p><p><strong>模型说明。</strong>汇编器和解释器按规范实现了 RV32I 的一部分；流水线是顺序、单发射、缓存永远命中的教学模型；部件延迟是教科书示例，不是实测。页面由 AI 撰写，模型代码与测试在本页目录下。</p></div></footer>
 
-<script src="models.js?v=20261116b"></script>
-<script src="copy.zh.js?v=20261116b"></script>
-<script src="copy.en.js?v=20261116b" onerror="void 0"></script>
-<script src="app.js?v=20261116b"></script>
-<script defer src="../../../site-nav.js?v=sn-20261119a"></script>
+<script src="models.js?v=20261121a"></script>
+<script src="copy.zh.js?v=20261121a"></script>
+<script src="copy.en.js?v=20261121a" onerror="void 0"></script>
+<script src="app.js?v=20261121a"></script>
+<script defer src="../../../site-nav.js?v=sn-20261121a"></script>
 </body>
 </html>
