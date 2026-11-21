@@ -140,6 +140,35 @@ assert.equal(r['gone/content.zh.md'].primary, 'unattributed');
 assert.ok(!r['gone/content.zh.md'].derivedFrom);
 assert.match(stderr, /Derived-From gone\/copy\.zh\.js -> gone\/content\.zh\.md ignored: gone\/copy\.zh\.js is not in the parent commit/);
 
+// 8. Exact model + thinking depth parsing (primary before semicolon, script -> none, missing -> unavailable, overrides).
+write('meta/high.md', lines(3, 'hi'));
+commit(13, 'high\n\nBuilt-By: Codex (gpt-6.1-sol, thinking: medium)\nAuthorship-Impact: authored', 'meta/high.md');
+write('meta/multi.md', lines(3, 'mu'));
+commit(14, 'multi\n\nBuilt-By: Antigravity (gemini-flash-worker-agy, thinking: on, effort unavailable); planner: gemini-pro-orchestrator-neon (thinking: effort=1.00)\nAuthorship-Impact: authored', 'meta/multi.md');
+write('meta/unavail.md', lines(3, 'un'));
+commit(15, 'unavail\n\nBuilt-By: Antigravity (gemini-pro-orchestrator-neon, thinking unavailable)\nAuthorship-Impact: authored', 'meta/unavail.md');
+write('meta/ov.md', lines(3, 'ov'));
+commit(16, 'missing trailer\n\nBuilt-By: Antigravity (model unavailable)\nAuthorship-Impact: authored', 'meta/ov.md');
+const ovHash = git('rev-parse', 'HEAD').trim();
+write('authorship/overrides.json', JSON.stringify({
+  schemaVersion: 1,
+  commits: {
+    [ovHash]: { agent: 'antigravity', model: 'gemini-pro-orchestrator-neon', thinking: 'effort=1.00', impact: 'authored', source: 'unit test' }
+  },
+  files: {}
+}, null, 2));
+r = query('page/content.zh.md', 'gone/content.zh.md', 'meta/high.md', 'meta/multi.md', 'meta/unavail.md', 'meta/ov.md');
+assert.equal(r['page/content.zh.md'].created.thinking, 'unavailable', 'legacy commit without thinking defaults to unavailable');
+assert.equal(r['gone/content.zh.md'].created.thinking, 'none', 'deterministic script commit reports thinking=none');
+assert.equal(r['meta/high.md'].created.model, 'gpt-6.1-sol');
+assert.equal(r['meta/high.md'].created.thinking, 'medium');
+assert.equal(r['meta/multi.md'].created.model, 'gemini-flash-worker-agy', 'primary model before semicolon wins over planner model');
+assert.equal(r['meta/multi.md'].created.thinking, 'on, effort unavailable', 'primary thinking before semicolon wins');
+assert.equal(r['meta/unavail.md'].created.thinking, 'unavailable');
+assert.equal(r['meta/ov.md'].created.agent, 'antigravity');
+assert.equal(r['meta/ov.md'].created.model, 'gemini-pro-orchestrator-neon');
+assert.equal(r['meta/ov.md'].created.thinking, 'effort=1.00', 'overrides.json provides thinking depth');
+
 // The scratch repo is removed on success (kept on failure, or with KEEP_SCRATCH=1, for inspection).
 if (!process.env.KEEP_SCRATCH) fs.rmSync(dir, { recursive: true, force: true });
-console.log('PASS authorship Derived-From: inheritance, merge of two sources, later edits, no-trailer and no-touch cases, authored and deleted-source refusals');
+console.log('PASS authorship Derived-From & thinking: inheritance, multi-source, later edits, thinking depth parsing, overrides, refusals');

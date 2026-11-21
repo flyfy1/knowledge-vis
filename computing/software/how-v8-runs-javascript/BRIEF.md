@@ -1,6 +1,6 @@
 # BRIEF — how-v8-runs-javascript
 
-Author: Antigravity, 2026-11-21.
+Author: Antigravity (gemini-flash-worker-agy, thinking: on, effort unavailable; planner: gemini-pro-orchestrator-neon, thinking: effort=1.00), 2026-11-21.
 Status: unregistered draft (`page.json` omits `"status"`, `"languages": {"en": "stub"}` is omitted; both Chinese and English are full native prose).
 
 ## Pinned release & host binary inspected

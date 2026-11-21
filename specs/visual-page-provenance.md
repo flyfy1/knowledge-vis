@@ -166,3 +166,15 @@ How the lineage is recorded, so later promotions do the same:
 - The canonical page drops its "对照 Claude Code 版 →" link (it would compare the page with itself) and the label is
   written into the page in a separate mechanical commit once the promotion commit exists.
 - power-converters was compared and kept as the Codex edition; its label and compare link are unchanged.
+
+## Model and thinking depth fields — 2026-11-21
+
+- Per [AUTHORSHIP.md](../AUTHORSHIP.md) §3 and §7, new and updated entries in `page-provenance.json` starting 2026-11-21
+  also carry string fields `model` (exact model IDs / role split) and `thinking` (reasoning/thinking depth, or
+  `thinking unavailable` / `on, effort unavailable` if the runtime exposes thinking presence without an explicit level).
+- Legacy entries created before this update remain valid without `model` or `thinking`.
+- When present on a template page's provenance record, `provenanceLabel()` emits `data-model="…"` /
+  `data-thinking="…"` on `<details class="page-provenance">` and renders a localized summary paragraph
+  (`模型：… · 思考深度：…` / `Model: … · Thinking: …`).
+- `tests/page-provenance-core.cjs` enforces that whenever `p.model` or `p.thinking` is present in `page-provenance.json`,
+  the matching attribute and value appear in the page's static `<details class="page-provenance">` block.

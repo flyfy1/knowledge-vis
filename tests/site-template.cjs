@@ -490,6 +490,19 @@ function lessonSite() {
     ok(r.code === 0 && /^<!doctype html>\n<!-- GENERATED/.test(o) && o.includes('<header class="site-head">\n  <div class="head-main">') && o.includes('<link rel="stylesheet" href="../../../lesson-shell.css">') &&
       o.includes('\n  <a href="#step0" class="nav-step" data-nav="0" data-i18n="nav0">0 钩子</a>') && o.includes('<section class="step" id="step1" data-step="1">\n  <div class="step-inner">\n    <p class="step-kicker"') &&
       o.includes('<details class="page-provenance" data-developer="Codex"') && o.includes('<script src="../../../lesson-shell.js"></script>'), 'a native lesson builds from templates/layouts/lesson.html:\n' + r.out);
+    ok(!o.includes('data-model=') && !o.includes('data-thinking='), 'legacy provenance omits data-model and data-thinking when absent');
+    const provPath = path.join(s.root, 'page-provenance.json');
+    const prov = JSON.parse(fs.readFileSync(provPath, 'utf8'));
+    for (const p of Object.values(prov.pages || {})) {
+      p.model = 'gemini-flash-worker-agy';
+      p.thinking = 'on, effort unavailable';
+    }
+    fs.writeFileSync(provPath, JSON.stringify(prov, null, 2));
+    const rm = run('build-pages.cjs', s.d, '--root', s.root);
+    const om = fs.readFileSync(path.join(s.d, 'index.html'), 'utf8');
+    ok(rm.code === 0 && om.includes('data-model="gemini-flash-worker-agy"') && om.includes('data-thinking="on, effort unavailable"') &&
+      om.includes('模型：gemini-flash-worker-agy · 思考深度：on, effort unavailable') &&
+      om.includes('Model: gemini-flash-worker-agy · Thinking: on, effort unavailable'), 'provenance model and thinking render when present:\n' + rm.out);
   }
 }
 

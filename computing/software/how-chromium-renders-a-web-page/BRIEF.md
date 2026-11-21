@@ -1,6 +1,6 @@
 # BRIEF — how-chromium-renders-a-web-page
 
-Author: Antigravity, 2026-11-21. Task: W8 of the Software Core Principles series (`computing/software/how-chromium-renders-a-web-page/`).
+Author: Antigravity (gemini-flash-worker-agy, thinking: on, effort unavailable; planner: gemini-pro-orchestrator-neon, thinking: effort=1.00), 2026-11-21. Task: W8 of the Software Core Principles series (`computing/software/how-chromium-renders-a-web-page/`).
 Status: unregistered draft (`page.json` omits `"status"` and `"order"`, expecting the draft build warning). Complete bilingual essay (`content.zh.md` and `content.en.md` authored together; no `"languages": {"en": "stub"}`).
 
 ## Essay question

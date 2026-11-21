@@ -7,6 +7,118 @@
       "model": "model unavailable",
       "impact": "authored",
       "source": "Yangyu, 2026-11-09, in a Claude Code session (review/claude-pages-20261109): linear-transform was written by Muse"
+    },
+    "4ed3dca00eb89950386dbd8f5e313698831f24f4": {
+      "agent": "antigravity",
+      "model": "gemini-pro-orchestrator-neon",
+      "thinking": "effort=1.00 (executor: gemini-flash-worker-agy, on, effort unavailable)",
+      "impact": "authored",
+      "source": "Yangyu requested exact model and thinking depth attribution on 2026-11-21; verified directly from Antigravity coordinator and subagent transcript.jsonl logs"
+    },
+    "efb2a2615c611dd5902fda447be04a47ee06d85e": {
+      "agent": "antigravity",
+      "model": "gemini-pro-orchestrator-neon",
+      "thinking": "effort=1.00 (executor: gemini-flash-worker-agy, on, effort unavailable)",
+      "impact": "authored",
+      "source": "Yangyu requested exact model and thinking depth attribution on 2026-11-21; verified directly from Antigravity coordinator and subagent transcript.jsonl logs"
+    },
+    "0c8b221c84e573d410556cd5b906b5e866a099a6": {
+      "agent": "antigravity",
+      "model": "gemini-flash-worker-agy",
+      "thinking": "on, effort unavailable (planner: gemini-pro-orchestrator-neon, effort=1.00)",
+      "impact": "authored",
+      "source": "Yangyu requested exact model and thinking depth attribution on 2026-11-21; verified directly from Antigravity coordinator and subagent transcript.jsonl logs"
+    },
+    "9c0e8c99cbc0a61cf6f93e6e2baaf78606c3db0f": {
+      "agent": "antigravity",
+      "model": "gemini-flash-worker-agy",
+      "thinking": "on, effort unavailable (planner: gemini-pro-orchestrator-neon, effort=1.00)",
+      "impact": "authored",
+      "source": "Yangyu requested exact model and thinking depth attribution on 2026-11-21; verified directly from Antigravity coordinator and subagent transcript.jsonl logs"
+    },
+    "b26a5444d615dd594e5e9a2ff6d87ac83653e3ed": {
+      "agent": "antigravity",
+      "model": "gemini-flash-worker-agy",
+      "thinking": "on, effort unavailable (planner: gemini-pro-orchestrator-neon, effort=1.00)",
+      "impact": "authored",
+      "source": "Yangyu requested exact model and thinking depth attribution on 2026-11-21; verified directly from Antigravity coordinator and subagent transcript.jsonl logs"
+    },
+    "19f8386b0656584774b5b86a234c4b50ae40d028": {
+      "agent": "antigravity",
+      "model": "gemini-flash-worker-agy",
+      "thinking": "on, effort unavailable (planner: gemini-pro-orchestrator-neon, effort=1.00)",
+      "impact": "authored",
+      "source": "Yangyu requested exact model and thinking depth attribution on 2026-11-21; verified directly from Antigravity coordinator and subagent transcript.jsonl logs"
+    },
+    "28e950b9ece04e9901f5836eb3495059db31ff86": {
+      "agent": "antigravity",
+      "model": "gemini-flash-worker-agy",
+      "thinking": "on, effort unavailable (planner: gemini-pro-orchestrator-neon, effort=1.00)",
+      "impact": "authored",
+      "source": "Yangyu requested exact model and thinking depth attribution on 2026-11-21; verified directly from Antigravity coordinator and subagent transcript.jsonl logs"
+    },
+    "62203e84497c5b9680e1aa52f8d6a6eeb18ce27a": {
+      "agent": "antigravity",
+      "model": "gemini-flash-worker-agy",
+      "thinking": "on, effort unavailable (planner: gemini-pro-orchestrator-neon, effort=1.00)",
+      "impact": "authored",
+      "source": "Yangyu requested exact model and thinking depth attribution on 2026-11-21; verified directly from Antigravity coordinator and subagent transcript.jsonl logs"
+    },
+    "4c1b86f14b37ab7d7741c9ce7263de2f93066bd8": {
+      "agent": "antigravity",
+      "model": "gemini-flash-worker-agy",
+      "thinking": "on, effort unavailable (planner: gemini-pro-orchestrator-neon, effort=1.00)",
+      "impact": "authored",
+      "source": "Yangyu requested exact model and thinking depth attribution on 2026-11-21; verified directly from Antigravity coordinator and subagent transcript.jsonl logs"
+    },
+    "d889d9c956bf213574bd4cc98ee431e458142cf0": {
+      "agent": "antigravity",
+      "model": "gemini-flash-worker-agy",
+      "thinking": "on, effort unavailable (planner: gemini-pro-orchestrator-neon, effort=1.00)",
+      "impact": "authored",
+      "source": "Yangyu requested exact model and thinking depth attribution on 2026-11-21; verified directly from Antigravity coordinator and subagent transcript.jsonl logs"
+    },
+    "1fcc12c7348fe6cbd699a212deb1c67da833e09d": {
+      "agent": "antigravity",
+      "model": "gemini-flash-worker-agy",
+      "thinking": "on, effort unavailable (planner: gemini-pro-orchestrator-neon, effort=1.00)",
+      "impact": "authored",
+      "source": "Yangyu requested exact model and thinking depth attribution on 2026-11-21; verified directly from Antigravity coordinator and subagent transcript.jsonl logs"
+    },
+    "31631e36a124f85f019d06b75466899bd1ec54ba": {
+      "agent": "antigravity",
+      "model": "gemini-flash-worker-agy",
+      "thinking": "on, effort unavailable (planner: gemini-pro-orchestrator-neon, effort=1.00)",
+      "impact": "authored",
+      "source": "Yangyu requested exact model and thinking depth attribution on 2026-11-21; verified directly from Antigravity coordinator and subagent transcript.jsonl logs"
+    },
+    "dae92263dc53cce21e4c3c8ec753705d446ccc83": {
+      "agent": "antigravity",
+      "model": "gemini-pro-orchestrator-neon",
+      "thinking": "effort=1.00 (executor: gemini-flash-worker-agy, on, effort unavailable)",
+      "impact": "authored",
+      "source": "Yangyu requested exact model and thinking depth attribution on 2026-11-21; verified directly from Antigravity coordinator and subagent transcript.jsonl logs"
+    },
+    "00dae46d8ac55a1de76b0acd619b9d2c24a653de": {
+      "agent": "antigravity",
+      "model": "gemini-pro-orchestrator-neon",
+      "thinking": "effort=1.00 (executor: gemini-flash-worker-agy, on, effort unavailable)",
+      "impact": "mechanical",
+      "source": "Yangyu requested exact model and thinking depth attribution on 2026-11-21; verified directly from Antigravity coordinator and subagent transcript.jsonl logs"
+    },
+    "94d0084faa542b8873d33a6c0371aa7c24b5bac0": {
+      "agent": "antigravity",
+      "model": "gemini-pro-orchestrator-neon",
+      "thinking": "effort=1.00 (executor: gemini-flash-worker-agy, on, effort unavailable)",
+      "impact": "authored",
+      "source": "Yangyu requested exact model and thinking depth attribution on 2026-11-21; verified directly from Antigravity coordinator and subagent transcript.jsonl logs"
+    },
+    "625998df77cbc262ae51390ef215a043f63f0106": {
+      "agent": "antigravity",
+      "model": "gemini-pro-orchestrator-neon",
+      "thinking": "effort=1.00 (executor: gemini-flash-worker-agy, on, effort unavailable)",
+      "impact": "mechanical",
+      "source": "Yangyu requested exact model and thinking depth attribution on 2026-11-21; verified directly from Antigravity coordinator and subagent transcript.jsonl logs"
     }
   },
   "files": {}

@@ -1,6 +1,6 @@
 # BRIEF — how-containers-isolate-a-process
 
-Author: Antigravity, 2026-11-21. Task: Software Core Principles Series W9.
+Author: Antigravity (gemini-flash-worker-agy, thinking: on, effort unavailable; planner: gemini-pro-orchestrator-neon, thinking: effort=1.00), 2026-11-21. Task: Software Core Principles Series W9.
 Status: unregistered draft (`page.json` omits `"status": "live"`). Both Chinese (`content.zh.md`) and English (`content.en.md`) were authored together from scratch.
 
 ## Pinned specifications & honest host boundary

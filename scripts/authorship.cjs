@@ -42,28 +42,55 @@ function git(args) {
 }
 
 function classify(text) {
+  const head = String(text || '').split(';')[0];
+  for (const r of rules) if (r.re.test(head)) return r.id;
   for (const r of rules) if (r.re.test(text)) return r.id;
   return null;
 }
 function modelOf(text) {
+  const head = String(text || '').split(';')[0];
+  for (const m of modelRules) if (m.re.test(head)) return m.id;
   for (const m of modelRules) if (m.re.test(text)) return m.id;
   return 'unavailable';
+}
+function thinkingOf(text, agent, model) {
+  if (agent === 'script' || model === 'none') return 'none';
+  const raw = String(text || '');
+  const head = raw.split(';')[0];
+  const parseSegment = seg => {
+    if (/\bthinking\s+unavailable\b/i.test(seg)) return 'unavailable';
+    let m = /\bthinking\s*[:=]\s*([^);\n]+)/i.exec(seg);
+    if (m) return m[1].trim();
+    m = /\b(?:reasoning[-_]?effort|effort)\s*[:=]\s*([^),\s;\n]+)/i.exec(seg);
+    if (m) return m[1].trim();
+    return null;
+  };
+  return parseSegment(head) || parseSegment(raw) || 'unavailable';
 }
 
 function attribute(hash, body) {
   const short = hash.slice(0, 8);
   const o = overrides.commits[hash] || overrides.commits[short];
   const impact = (/^Authorship-Impact:\s*(\S+)/im.exec(body) || [])[1] || 'authored';
-  if (o) return { agent: o.agent, model: o.model || 'unavailable', basis: 'override', impact: o.impact || impact };
+  if (o) {
+    const agent = o.agent, model = o.model || 'unavailable';
+    return { agent, model, thinking: o.thinking || (agent === 'script' || model === 'none' ? 'none' : 'unavailable'), basis: 'override', impact: o.impact || impact };
+  }
   const built = /^Built-By:\s*(.+)$/im.exec(body);
   if (built) {
     const agent = classify(built[1]);
-    if (agent) return { agent, model: modelOf(built[1]), basis: 'built-by', impact, declared: built[1].trim() };
-    return { agent: 'unattributed', model: 'unavailable', basis: 'built-by-unrecognised', impact, declared: built[1].trim() };
+    if (agent) {
+      const model = modelOf(built[1]);
+      return { agent, model, thinking: thinkingOf(built[1], agent, model), basis: 'built-by', impact, declared: built[1].trim() };
+    }
+    return { agent: 'unattributed', model: 'unavailable', thinking: 'unavailable', basis: 'built-by-unrecognised', impact, declared: built[1].trim() };
   }
   const co = /^Co-Authored-By:\s*(.+)$/im.exec(body);
-  if (co && classify(co[1])) return { agent: classify(co[1]), model: modelOf(co[1]), basis: 'co-authored-by', impact, declared: co[1].trim() };
-  return { agent: 'unattributed', model: 'unavailable', basis: 'none', impact };
+  if (co && classify(co[1])) {
+    const agent = classify(co[1]), model = modelOf(co[1]);
+    return { agent, model, thinking: thinkingOf(co[1], agent, model), basis: 'co-authored-by', impact, declared: co[1].trim() };
+  }
+  return { agent: 'unattributed', model: 'unavailable', thinking: 'unavailable', basis: 'none', impact };
 }
 
 // Derived-From: <old> -> <new>, one pair per line; paths are repo-relative.
@@ -145,7 +172,7 @@ function build() {
         rec.derivedFrom = [...(rec.derivedFrom || []), ...d.from.map(f => ({ path: f, commit: hash.slice(0, 8), date }))];
       }
       if (!rec) {
-        rec = { created: { agent: a.agent, model: a.model, commit: hash.slice(0, 8), date }, agents: {}, mechanical: {}, last: null };
+        rec = { created: { agent: a.agent, model: a.model, thinking: a.thinking, commit: hash.slice(0, 8), date }, agents: {}, mechanical: {}, last: null };
         if (a.impact === 'mechanical') rec.created.mechanical = true;
       }
       if (from) (rec.renamedFrom = rec.renamedFrom || []).push(from);
@@ -201,7 +228,7 @@ if (args.includes('--json')) {
 }
 const { out, commits } = build();
 if (args.includes('--commits')) {
-  for (const c of commits) console.log([c.hash, c.date, c.agent, c.model, c.basis, c.impact, c.subject.slice(0, 70)].join('\t'));
+  for (const c of commits) console.log([c.hash, c.date, c.agent, c.model, c.thinking, c.basis, c.impact, c.subject.slice(0, 70)].join('\t'));
 } else if (args.includes('--write')) {
   fs.mkdirSync(path.dirname(inventoryFile), { recursive: true });
   const head = git(['rev-parse', '--short=8', 'HEAD']).trim();
@@ -225,7 +252,7 @@ if (args.includes('--commits')) {
     const r = out[rel];
     if (!r) { console.log(`${rel}: not tracked`); continue; }
     console.log(`${rel}\n  primary: ${r.primary}`);
-    if (r.created) console.log(`  created: ${r.created.agent} (${r.created.model}) ${r.created.commit} ${r.created.date}`);
+    if (r.created) console.log(`  created: ${r.created.agent} (${r.created.model}, thinking: ${r.created.thinking}) ${r.created.commit} ${r.created.date}`);
     for (const [a, s] of Object.entries(r.agents || {})) console.log(`  ${a}: ${s.commits} commits, +${s.linesAdded} lines`);
     for (const [a, s] of Object.entries(r.mechanical || {})) console.log(`  ${a} (mechanical only): ${s.commits} commits`);
     for (const d of r.derivedFrom || []) console.log(`  derived from: ${d.path} (${d.commit} ${d.date})`);

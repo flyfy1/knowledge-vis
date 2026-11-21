@@ -1,6 +1,6 @@
 # BRIEF — how-react-updates-the-dom
 
-Author: Antigravity, 2026-11-21. Task: W3 of the Software Core Principles series (`computing/software/how-react-updates-the-dom/`).
+Author: Antigravity (gemini-flash-worker-agy, thinking: on, effort unavailable; planner: gemini-pro-orchestrator-neon, thinking: effort=1.00), 2026-11-21. Task: W3 of the Software Core Principles series (`computing/software/how-react-updates-the-dom/`).
 Status: unregistered draft (`page.json` omits `"status"` and `"order"`, expecting the draft build warning). Full bilingual essay (`content.zh.md` and `content.en.md` authored together; no `"languages": {"en": "stub"}`).
 
 ## Essay question
