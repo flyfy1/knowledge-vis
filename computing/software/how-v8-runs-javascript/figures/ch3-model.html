@@ -1,0 +1,22 @@
+<figure class="lab" id="lab-ch3-model">
+  <h3 data-i18n="ch3.model.title"></h3>
+  <p class="how" data-i18n="ch3.model.how"></p>
+  <div class="ctl">
+    <div class="seg" role="radiogroup" data-i18n-aria="ch3.ctl.scen">
+      <span class="lbl" data-i18n="ch3.ctl.scen"></span>
+      <label><input type="radio" name="c3Scen" value="same_order" checked><span data-i18n="ch3.sc.same"></span></label>
+      <label><input type="radio" name="c3Scen" value="reordered"><span data-i18n="ch3.sc.reord"></span></label>
+      <label><input type="radio" name="c3Scen" value="slack_early"><span data-i18n="ch3.sc.slack1"></span></label>
+      <label><input type="radio" name="c3Scen" value="slack_done"><span data-i18n="ch3.sc.slack7"></span></label>
+      <label><input type="radio" name="c3Scen" value="delete_dict"><span data-i18n="ch3.sc.dict"></span></label>
+    </div>
+  </div>
+  <canvas class="cv" id="c3Cv" role="img" data-i18n-aria="ch3.cv.aria"></canvas>
+  <div class="read">
+    <div><span data-i18n="ch3.read.map"></span><b id="c3Map" class="g"></b></div>
+    <div><span data-i18n="ch3.read.same"></span><b id="c3Same" class="c"></b></div>
+    <div><span data-i18n="ch3.read.size"></span><b id="c3Size" class="n"></b></div>
+    <div><span data-i18n="ch3.read.slack"></span><b id="c3Slack" class="v"></b></div>
+  </div>
+  <p class="say" id="c3Say" aria-live="polite"></p>
+</figure>

@@ -1,0 +1,24 @@
+<figure class="lab" id="lab-ch8-model">
+  <h3 data-i18n="ch8.model.title"></h3>
+  <p class="how" data-i18n="ch8.model.how"></p>
+  <div class="ctl">
+    <label class="rng"><span data-i18n="ch8.ctl.alloc"></span><input type="range" id="c8Alloc" min="32" max="256" step="16" value="96"><output id="c8Alloco" for="c8Alloc"></output></label>
+    <label class="rng"><span data-i18n="ch8.ctl.surv"></span><input type="range" id="c8Surv" min="0" max="60" step="5" value="20"><output id="c8Survo" for="c8Surv"></output></label>
+    <div class="seg" role="radiogroup" data-i18n-aria="ch8.ctl.mode">
+      <span class="lbl" data-i18n="ch8.ctl.mode"></span>
+      <label><input type="radio" name="c8Mode" value="scavenger" checked><span data-i18n="ch8.mode.scav"></span></label>
+      <label><input type="radio" name="c8Mode" value="minorms"><span data-i18n="ch8.mode.minorms"></span></label>
+    </div>
+    <button type="button" class="btn pri" id="c8Step" data-i18n="ch8.ctl.step"></button>
+    <button type="button" class="btn" id="c8Major" data-i18n="ch8.ctl.major"></button>
+    <button type="button" class="btn" id="c8Reset" data-i18n="ch8.ctl.reset"></button>
+  </div>
+  <canvas class="cv" id="c8Cv" role="img" data-i18n-aria="ch8.cv.aria"></canvas>
+  <div class="read">
+    <div><span data-i18n="ch8.read.new"></span><b id="c8New" class="c"></b></div>
+    <div><span data-i18n="ch8.read.old"></span><b id="c8Old" class="v"></b></div>
+    <div><span data-i18n="ch8.read.pause"></span><b id="c8Pause" class="g"></b></div>
+    <div><span data-i18n="ch8.read.max"></span><b id="c8Max" class="r"></b></div>
+  </div>
+  <p class="say" id="c8Say" aria-live="polite"></p>
+</figure>

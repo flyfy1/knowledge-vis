@@ -1,0 +1,22 @@
+<figure class="lab" id="lab-ch9-model">
+  <h3 data-i18n="ch9.model.title"></h3>
+  <p class="how" data-i18n="ch9.model.how"></p>
+  <div class="ctl">
+    <div class="seg" role="radiogroup" data-i18n-aria="ch9.ctl.scen">
+      <span class="lbl" data-i18n="ch9.ctl.scen"></span>
+      <label><input type="radio" name="c9Scen" value="standard" checked><span data-i18n="ch9.sc.std"></span></label>
+      <label><input type="radio" name="c9Scen" value="nested"><span data-i18n="ch9.sc.nest"></span></label>
+      <label><input type="radio" name="c9Scen" value="starve"><span data-i18n="ch9.sc.starve"></span></label>
+    </div>
+    <button type="button" class="btn pri" id="c9Step" data-i18n="ch9.ctl.step"></button>
+    <button type="button" class="btn" id="c9Reset" data-i18n="ch9.ctl.reset"></button>
+  </div>
+  <canvas class="cv" id="c9Cv" role="img" data-i18n-aria="ch9.cv.aria"></canvas>
+  <div class="read">
+    <div><span data-i18n="ch9.read.phase"></span><b id="c9Phase" class="g"></b></div>
+    <div><span data-i18n="ch9.read.micro"></span><b id="c9Micro" class="c"></b></div>
+    <div><span data-i18n="ch9.read.macro"></span><b id="c9Macro" class="v"></b></div>
+    <div><span data-i18n="ch9.read.done"></span><b id="c9Done" class="n"></b></div>
+  </div>
+  <p class="say" id="c9Say" aria-live="polite"></p>
+</figure>

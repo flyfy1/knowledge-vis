@@ -1,0 +1,22 @@
+<figure class="lab" id="lab-ch6-model">
+  <h3 data-i18n="ch6.model.title"></h3>
+  <p class="how" data-i18n="ch6.model.how"></p>
+  <div class="ctl">
+    <div class="seg" role="radiogroup" data-i18n-aria="ch6.ctl.scen">
+      <span class="lbl" data-i18n="ch6.ctl.scen"></span>
+      <label><input type="radio" name="c6Scen" value="clean"><span data-i18n="ch6.sc.clean"></span></label>
+      <label><input type="radio" name="c6Scen" value="late_map" checked><span data-i18n="ch6.sc.late"></span></label>
+      <label><input type="radio" name="c6Scen" value="smi_overflow"><span data-i18n="ch6.sc.smi"></span></label>
+      <label><input type="radio" name="c6Scen" value="poly_storm"><span data-i18n="ch6.sc.storm"></span></label>
+    </div>
+    <label class="chk"><input type="checkbox" id="c6Maglev" checked><span data-i18n="ch6.ctl.maglev"></span></label>
+  </div>
+  <canvas class="cv" id="c6Cv" role="img" data-i18n-aria="ch6.cv.aria"></canvas>
+  <div class="read">
+    <div><span data-i18n="ch6.read.tier"></span><b id="c6Tier" class="g"></b></div>
+    <div><span data-i18n="ch6.read.deopts"></span><b id="c6Deopts" class="r"></b></div>
+    <div><span data-i18n="ch6.read.total"></span><b id="c6Total" class="c"></b></div>
+    <div><span data-i18n="ch6.read.overhead"></span><b id="c6Over" class="v"></b></div>
+  </div>
+  <p class="say" id="c6Say" aria-live="polite"></p>
+</figure>

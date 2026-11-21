@@ -1,0 +1,113 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "how-v8-runs-javascript",
+ "refs": [
+  {
+   "from": "hero.note",
+   "to": "how-a-cpu-runs-a-program",
+   "anchor": null
+  },
+  {
+   "from": "hero.note",
+   "to": "how-cpu-caches-work",
+   "anchor": null
+  },
+  {
+   "from": "hero.note",
+   "to": "how-a-cpu-guesses-ahead",
+   "anchor": null
+  },
+  {
+   "from": "hero.note",
+   "to": "how-a-cpu-does-math",
+   "anchor": null
+  },
+  {
+   "from": "ch2.p1",
+   "to": "how-cpu-caches-work",
+   "anchor": "ch2"
+  },
+  {
+   "from": "ch2.p1",
+   "to": "how-a-cpu-does-math",
+   "anchor": "ch1"
+  },
+  {
+   "from": "ch4.limit",
+   "to": "how-a-cpu-guesses-ahead",
+   "anchor": "ch1"
+  },
+  {
+   "from": "ch11.links",
+   "to": "how-a-cpu-runs-a-program",
+   "anchor": null
+  },
+  {
+   "from": "ch11.links",
+   "to": "how-cpu-caches-work",
+   "anchor": null
+  },
+  {
+   "from": "ch11.links",
+   "to": "how-a-cpu-guesses-ahead",
+   "anchor": null
+  },
+  {
+   "from": "ch11.links",
+   "to": "how-a-cpu-does-math",
+   "anchor": null
+  }
+ ],
+ "backlinks": [],
+ "related": [
+  "how-a-cpu-runs-a-program",
+  "how-a-cpu-does-math",
+  "how-cpu-caches-work",
+  "how-a-cpu-guesses-ahead"
+ ],
+ "bindings": [
+  "v8.ver",
+  "node.ver",
+  "ch1.fbvThresh",
+  "ch1.magOsrThresh",
+  "ch1.magThresh",
+  "ch1.tfOsrThresh",
+  "ch1.tfThresh",
+  "ch1.ignNs",
+  "ch1.spNs",
+  "ch1.magNs",
+  "ch1.tfNs",
+  "ch1.magCompileMs",
+  "ch1.tfCompileMs",
+  "ch1.coldTiered",
+  "ch1.coldAlwaysTf",
+  "ch2.smi31Max",
+  "ch2.smi32Max",
+  "ch2.heap64B",
+  "ch2.heap32B",
+  "ch2.obj2_32B",
+  "ch2.obj2_64B",
+  "ch2.heapLimitGiB",
+  "ch3.slackCalls",
+  "ch3.slackEarlyB",
+  "ch3.slackEarlySlots",
+  "ch3.slackDoneB",
+  "ch3.slackDoneSlots",
+  "ch3.dictObjB",
+  "ch4.maxPoly",
+  "ch4.monoNs",
+  "ch4.megaNs",
+  "ch5.addLen",
+  "ch5.loopLen",
+  "ch6.cleanMs",
+  "ch6.lateMs",
+  "ch7.smiArrNs",
+  "ch7.dblArrNs",
+  "ch7.holeyArrNs",
+  "ch7.dictArrNs",
+  "ch8.newSpaceKiB",
+  "ch8.oldUsedMiB",
+  "ch8.scavLoMs",
+  "ch8.scavHiMs"
+ ]
+}

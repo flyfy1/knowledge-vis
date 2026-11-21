@@ -1,0 +1,16 @@
+<figure class="lab" id="lab-ch4-model">
+  <h3 data-i18n="ch4.model.title"></h3>
+  <p class="how" data-i18n="ch4.model.how"></p>
+  <div class="ctl">
+    <label class="rng"><span data-i18n="ch4.ctl.shapes"></span><input type="range" id="c4Shapes" min="1" max="8" step="1" value="1"><output id="c4Shapeso" for="c4Shapes"></output></label>
+    <label class="rng"><span data-i18n="ch4.ctl.iters"></span><input type="range" id="c4Iters" min="50000" max="1000000" step="50000" value="200000"><output id="c4Iterso" for="c4Iters"></output></label>
+  </div>
+  <canvas class="cv" id="c4Cv" role="img" data-i18n-aria="ch4.cv.aria"></canvas>
+  <div class="read">
+    <div><span data-i18n="ch4.read.state"></span><b id="c4State" class="g"></b></div>
+    <div><span data-i18n="ch4.read.guards"></span><b id="c4Guards" class="c"></b></div>
+    <div><span data-i18n="ch4.read.ns"></span><b id="c4Ns" class="v"></b></div>
+    <div><span data-i18n="ch4.read.total"></span><b id="c4Tot" class="r"></b></div>
+  </div>
+  <p class="say" id="c4Say" aria-live="polite"></p>
+</figure>
