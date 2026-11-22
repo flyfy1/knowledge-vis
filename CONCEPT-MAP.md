@@ -3650,7 +3650,7 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 <!-- GENERATED:registry-concepts -->
 ## 页面 → 概念 → 锚点（生成，勿手改）
 
-262 个页面拥有 880 个图谱概念 · 由 scripts/build-registry.cjs 从 site-registry.json 生成（概念 = atlas/data.js 里 primary 课程是该页的节点；顺序同首页登记顺序）。登记或改动页面后重跑 `node scripts/build-registry.cjs`；不要再在本文件里手写逐页概念表（2026-11-16 起，上面的手写表保留为历史记录）。
+263 个页面拥有 888 个图谱概念 · 由 scripts/build-registry.cjs 从 site-registry.json 生成（概念 = atlas/data.js 里 primary 课程是该页的节点；顺序同首页登记顺序）。登记或改动页面后重跑 `node scripts/build-registry.cjs`；不要再在本文件里手写逐页概念表（2026-11-16 起，上面的手写表保留为历史记录）。
 
 ### 冰冻肥皂泡 · 水膜里的结晶 / Frozen Soap Bubbles · Ice in a Thin Film
 
@@ -6310,6 +6310,21 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 量子威胁：Shor、Grover 与先存后解 / The quantum threat: Shor, Grover, harvest now decrypt later | `computing/systems/a-secret-in-public/#ch8` |
 | 格、LWE 与 ML-KEM / Lattices, learning with errors and ML-KEM | `computing/systems/a-secret-in-public/#ch9` |
 | 后量子迁移的前沿（2026 年） / The post-quantum frontier (2026) | `computing/systems/a-secret-in-public/#ch10` |
+
+### 一张加密图片是怎么被解开的 / How an Encrypted Local Image Gets Decoded
+
+`computing/systems/how-to-crack-an-encrypted-image/` · essay
+
+| 概念 | 深链 |
+| --- | --- |
+| 混合加密容器与 PKCS#7 填充 / Hybrid Encrypted Container & PKCS#7 Padding | `computing/systems/how-to-crack-an-encrypted-image/#ch1` |
+| 异或自反性与魔数反推 / XOR Involution & Trailer Key Recovery | `computing/systems/how-to-crack-an-encrypted-image/#ch2` |
+| AES-ECB 与 CBC 的密文指纹 / AES-ECB vs CBC Ciphertext Fingerprints | `computing/systems/how-to-crack-an-encrypted-image/#ch3` |
+| 已知明文校验与碰撞概率 / Known-Plaintext Oracle & Collision Probability | `computing/systems/how-to-crack-an-encrypted-image/#ch4` |
+| 进程内存扫描与瞬时密钥窗口 / Process Memory Scanning & Ephemeral Key Windows | `computing/systems/how-to-crack-an-encrypted-image/#ch5` |
+| ARM64 调用约定与断点排查 / ARM64 Calling Convention & Breakpoint Triage | `computing/systems/how-to-crack-an-encrypted-image/#ch6` |
+| ARM64 ADRP 相对寻址与 ASLR / ARM64 ADRP Addressing & ASLR | `computing/systems/how-to-crack-an-encrypted-image/#ch7` |
+| sret 返回指针与 libc++ std::string 布局 / sret Return Pointer & libc++ std::string Layout | `computing/systems/how-to-crack-an-encrypted-image/#ch8` |
 
 ### 央行调一个利率，为什么所有东西的价格都跟着动 / Why One Central-Bank Rate Moves the Price of Everything
 

@@ -454,6 +454,7 @@ window.ESSAY_COPY.en = {
   "site.bl.4": "<a href=\"../how-a-cpu-does-math/\">How a CPU Does Math: Real Numbers, and Many at Once</a>: <a href=\"../how-a-cpu-does-math/#ch14\">its chapter 14</a>",
   "site.bl.5": "<a href=\"../how-a-cpu-guesses-ahead/\">How a CPU Guesses Ahead</a>: <a href=\"../how-a-cpu-guesses-ahead/#ch1\">its chapter 1</a> → <a href=\"#ch8\">this page chapter 8</a>, <a href=\"#ch9\">this page chapter 9</a>; <a href=\"../how-a-cpu-guesses-ahead/#ch12\">its chapter 12</a>",
   "site.bl.6": "<a href=\"../how-the-os-talks-to-hardware/\">How the OS Talks to Hardware</a>: <a href=\"../how-the-os-talks-to-hardware/#ch14\">its chapter 14</a> → <a href=\"#ch8\">this page chapter 8</a>",
+  "site.bl.7": "<a href=\"../how-to-crack-an-encrypted-image/\">How an Encrypted Local Image Gets Decoded</a>: <a href=\"../how-to-crack-an-encrypted-image/#ch8\">its chapter 8</a>",
   "site.rel.title": "Related pages",
   "site.rel.1": "<a href=\"../switches-that-compute/\">How a Pile of Switches Learned to Do Arithmetic</a>",
   "site.rel.2": "<a href=\"../why-compute-waits-for-memory/\">Why Compute Waits for Memory</a>",

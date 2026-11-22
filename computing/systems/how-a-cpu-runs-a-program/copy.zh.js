@@ -454,6 +454,7 @@ window.ESSAY_COPY.zh = {
   "site.bl.4": "<a href=\"../how-a-cpu-does-math/\">CPU 是怎么算小数的，又怎么一次算一排</a>：<a href=\"../how-a-cpu-does-math/#ch14\">该文第 14 章</a>",
   "site.bl.5": "<a href=\"../how-a-cpu-guesses-ahead/\">CPU 是怎么猜着往前跑的</a>：<a href=\"../how-a-cpu-guesses-ahead/#ch1\">该文第 1 章</a> → <a href=\"#ch8\">本页第 8 章</a>、<a href=\"#ch9\">本页第 9 章</a>；<a href=\"../how-a-cpu-guesses-ahead/#ch12\">该文第 12 章</a>",
   "site.bl.6": "<a href=\"../how-the-os-talks-to-hardware/\">操作系统是怎么和硬件说话的</a>：<a href=\"../how-the-os-talks-to-hardware/#ch14\">该文第 14 章</a> → <a href=\"#ch8\">本页第 8 章</a>",
+  "site.bl.7": "<a href=\"../how-to-crack-an-encrypted-image/\">一张加密图片是怎么被解开的</a>：<a href=\"../how-to-crack-an-encrypted-image/#ch8\">该文第 8 章</a>",
   "site.rel.title": "相关页面",
   "site.rel.1": "<a href=\"../switches-that-compute/\">一堆开关是怎么学会算数的</a>",
   "site.rel.2": "<a href=\"../why-compute-waits-for-memory/\">为什么计算一直在等内存</a>",

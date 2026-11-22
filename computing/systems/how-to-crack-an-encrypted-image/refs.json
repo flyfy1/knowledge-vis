@@ -1,0 +1,46 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "how-to-crack-an-encrypted-image",
+ "refs": [
+  {
+   "from": "ch8.links",
+   "to": "a-secret-in-public",
+   "anchor": null
+  },
+  {
+   "from": "ch8.links",
+   "to": "how-virtual-memory-works",
+   "anchor": null
+  },
+  {
+   "from": "ch8.links",
+   "to": "how-a-cpu-runs-a-program",
+   "anchor": null
+  }
+ ],
+ "backlinks": [],
+ "related": [
+  "a-secret-in-public",
+  "switches-that-compute",
+  "how-virtual-memory-works",
+  "how-a-cpu-runs-a-program",
+  "how-memory-talks"
+ ],
+ "bindings": [
+  "ch1.plain",
+  "ch1.dat",
+  "ch1.diff",
+  "ch1.aesPad",
+  "ch1.xorBytes",
+  "ch2.keyHex",
+  "ch4.fp3",
+  "ch4.fp16Exp",
+  "ch5.scanSec",
+  "ch5.pSinglePct",
+  "ch5.p30Pct",
+  "ch7.pc",
+  "ch7.target",
+  "ch7.delta",
+  "ch7.off"
+ ]
+}

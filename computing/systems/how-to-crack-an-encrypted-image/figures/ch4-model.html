@@ -1,0 +1,14 @@
+<figure class="lab" id="lab4">
+  <h3 data-i18n="ch4.model.title"></h3>
+  <p class="how" data-i18n="ch4.model.how"></p>
+  <div class="ctl">
+    <div class="seg" role="radiogroup" data-i18n-aria="ch4.ctl.mode"><span class="lbl" data-i18n="ch4.ctl.mode"></span><label><input type="radio" name="c4Mode" value="magic3"><span data-i18n="ch4.opt.m3"></span></label><label><input type="radio" name="c4Mode" value="magicPad"><span data-i18n="ch4.opt.mp"></span></label><label><input type="radio" name="c4Mode" value="exact16" checked><span data-i18n="ch4.opt.e16"></span></label></div>
+    <label class="rng"><span data-i18n="ch4.ctl.cand"></span><input id="c4Cand" type="range" min="10" max="1000" step="10" value="550"><output id="c4CandO"></output></label>
+  </div>
+  <div class="read">
+    <div><span data-i18n="ch4.read.bits"></span><b id="c4Bits" class="c"></b></div>
+    <div><span data-i18n="ch4.read.fp"></span><b id="c4Fp" class="g"></b></div>
+    <div><span data-i18n="ch4.read.padRisk"></span><b id="c4Risk"></b></div>
+  </div>
+  <p class="say" id="c4Say" aria-live="polite"></p>
+</figure>

@@ -1,0 +1,16 @@
+<figure class="lab" id="lab2">
+  <h3 data-i18n="ch2.model.title"></h3>
+  <p class="how" data-i18n="ch2.model.how"></p>
+  <div class="ctl">
+    <div class="seg" role="radiogroup" data-i18n-aria="ch2.ctl.fmt"><span class="lbl" data-i18n="ch2.ctl.fmt"></span><label><input type="radio" name="c2Fmt" value="jpg" checked>JPEG</label><label><input type="radio" name="c2Fmt" value="png">PNG</label><label><input type="radio" name="c2Fmt" value="gif">GIF</label></div>
+    <label class="rng"><span data-i18n="ch2.ctl.key"></span><input id="c2Key" type="range" min="1" max="255" step="1" value="25"><output id="c2KeyO"></output></label>
+  </div>
+  <div class="byte-strip" id="c2Bytes"></div>
+  <div class="read">
+    <div><span data-i18n="ch2.read.plain"></span><b id="c2Plain" class="n"></b></div>
+    <div><span data-i18n="ch2.read.cipher"></span><b id="c2Cipher" class="r"></b></div>
+    <div><span data-i18n="ch2.read.derived"></span><b id="c2Derived" class="g"></b></div>
+    <div><span data-i18n="ch2.read.restored"></span><b id="c2Restored" class="c"></b></div>
+  </div>
+  <p class="say" id="c2Say" aria-live="polite"></p>
+</figure>

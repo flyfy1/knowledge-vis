@@ -11,7 +11,7 @@ taught on B (any `lessons[]` entry). Pairs where either page teaches no atlas co
 counted. Under each pair: every link, with the concepts anchored at its two ends where there are any (`?` = none at that
 anchor; a link to the page top has no anchor).
 
-887 linked page pairs · 432 covered by an atlas edge · 14 with no concept on one side · **441 to do**.
+890 linked page pairs · 432 covered by an atlas edge · 14 with no concept on one side · **444 to do**.
 
 ## 冰冻肥皂泡 · 水膜里的结晶 / Frozen Soap Bubbles · Ice in a Thin Film → 光的反射与折射 · 拐弯的规矩 / Reflection & Refraction · How Light Bends
 
@@ -1799,6 +1799,18 @@ anchor; a link to the page top has no anchor).
 ## 当着所有人的面约定一个秘密 / Agreeing on a Secret in Plain Sight → 量子基础 · 可能性先于结果 / Quantum Basics · Possibility Before Outcome
 
 - `a-secret-in-public#ch11` → `quantum-basics`
+
+## 一张加密图片是怎么被解开的 / How an Encrypted Local Image Gets Decoded → 当着所有人的面约定一个秘密 / Agreeing on a Secret in Plain Sight
+
+- `how-to-crack-an-encrypted-image#ch8` → `a-secret-in-public`: libcpp-std-string-sret → ?
+
+## 一张加密图片是怎么被解开的 / How an Encrypted Local Image Gets Decoded → 虚拟内存是怎么工作的 / How Virtual Memory Works
+
+- `how-to-crack-an-encrypted-image#ch8` → `how-virtual-memory-works`: libcpp-std-string-sret → ?
+
+## 一张加密图片是怎么被解开的 / How an Encrypted Local Image Gets Decoded → CPU 是怎么运行一个程序的 / How a CPU Runs a Program
+
+- `how-to-crack-an-encrypted-image#ch8` → `how-a-cpu-runs-a-program`: libcpp-std-string-sret → ?
 
 ## 央行调一个利率，为什么所有东西的价格都跟着动 / Why One Central-Bank Rate Moves the Price of Everything → 复利与贴现 · 时间是钱的形状 / Compound Interest & Discounting · Time Is the Shape of Money
 

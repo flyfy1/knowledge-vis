@@ -1,0 +1,88 @@
+{
+  "slug": "how-to-crack-an-encrypted-image",
+  "path": "computing/systems/how-to-crack-an-encrypted-image/",
+  "category": "computing",
+  "subtopic": "systems",
+  "stage": "university",
+  "title": {
+    "zh": "一张加密图片是怎么被解开的",
+    "en": "How an Encrypted Local Image Gets Decoded"
+  },
+  "desc": {
+    "zh": "从磁盘上一份打不开的 .dat 字节流出发，一步步拆解混合加密容器、XOR 自反性、AES-ECB 与 CBC 破绽、已知明文校验、内存扫描时间窗、ARM64 调用约定、ADRP 寻址与 libc++ std::string 布局。八个可动手模型，全部基于真实排障过程脱敏整理。",
+    "en": "Starting from an unreadable .dat file on disk, trace hybrid encryption containers, XOR involution, AES-ECB vs CBC fingerprints, known-plaintext verification, ephemeral memory windows, ARM64 calling conventions, ADRP addressing, and libc++ std::string layout. Eight interactive models from a redacted real-world debugging session."
+  },
+  "tags": [
+    { "zh": "逆向工程", "en": "Reverse Engineering" },
+    { "zh": "密码学", "en": "Cryptography" },
+    { "zh": "ARM64", "en": "ARM64" },
+    { "zh": "系统与安全", "en": "Systems & Security" },
+    { "zh": "长文", "en": "Long-form Essay" }
+  ],
+  "concepts": [
+    {
+      "id": "hybrid-encrypted-container",
+      "anchor": "ch1",
+      "title": { "zh": "混合加密容器与 PKCS#7 填充", "en": "Hybrid Encrypted Container & PKCS#7 Padding" },
+      "desc": { "zh": "头部用 AES 锁死文件魔数、尾部用轻量 XOR 混淆的本地媒体容器布局。", "en": "A media container locking the header with AES and masking the tail with single-byte XOR." },
+      "aliases": { "zh": ["微信 dat 加密", "改后缀打不开", "混合加密", "PKCS7 填充"], "en": ["encrypted dat image", "hybrid encryption container", "PKCS7 padding"] },
+      "relatedPages": ["a-secret-in-public"]
+    },
+    {
+      "id": "xor-involution",
+      "anchor": "ch2",
+      "title": { "zh": "异或自反性与魔数反推", "en": "XOR Involution & Trailer Key Recovery" },
+      "desc": { "zh": "利用 C ⊕ P = K 与 JPEG/PNG 固定结束标记两字节还原单字节异或密钥。", "en": "Using C ⊕ P = K and fixed JPEG/PNG trailers to recover a single-byte XOR key." },
+      "aliases": { "zh": ["异或还原密钥", "FF D9", "XOR 解密"], "en": ["XOR key recovery", "JPEG trailer FF D9"] },
+      "relatedPages": ["switches-that-compute"]
+    },
+    {
+      "id": "ecb-vs-cbc-fingerprint",
+      "anchor": "ch3",
+      "title": { "zh": "AES-ECB 与 CBC 的密文指纹", "en": "AES-ECB vs CBC Ciphertext Fingerprints" },
+      "desc": { "zh": "为什么不同图片末尾填充块密文完全相同就能断定是 ECB 模式。", "en": "Why identical trailing padding ciphertext across different images proves ECB mode." },
+      "aliases": { "zh": ["ECB 破绽", "CBC 雪崩", "分组密码模式"], "en": ["ECB vs CBC", "block cipher mode fingerprint"] },
+      "relatedPages": ["a-secret-in-public"]
+    },
+    {
+      "id": "known-plaintext-oracle",
+      "anchor": "ch4",
+      "title": { "zh": "已知明文校验与碰撞概率", "en": "Known-Plaintext Oracle & Collision Probability" },
+      "desc": { "zh": "为什么明文+密文无法反推 AES 密钥，却能提供 2^-128 误报率的零假设试金石。", "en": "Why a known plaintext-ciphertext pair cannot invert AES yet provides a 2^-128 zero-assumption verifier." },
+      "aliases": { "zh": ["已知明文攻击", "误报率", "2^-128"], "en": ["known plaintext oracle", "AES verification"] },
+      "relatedPages": ["a-secret-in-public"]
+    },
+    {
+      "id": "ephemeral-memory-window",
+      "anchor": "ch5",
+      "title": { "zh": "进程内存扫描与瞬时密钥窗口", "en": "Process Memory Scanning & Ephemeral Key Windows" },
+      "desc": { "zh": "3 秒内存扫描为何几乎不可能撞中生命周期不到 1 毫秒的临时解密缓冲区。", "en": "Why a 3-second memory sweep almost never overlaps a sub-millisecond key buffer." },
+      "aliases": { "zh": ["task_for_pid", "内存扫描", "mach_vm_region"], "en": ["mach_vm_region", "ephemeral memory key"] },
+      "relatedPages": ["how-virtual-memory-works"]
+    },
+    {
+      "id": "arm64-calling-convention",
+      "anchor": "ch6",
+      "title": { "zh": "ARM64 调用约定与断点排查", "en": "ARM64 Calling Convention & Breakpoint Triage" },
+      "desc": { "zh": "在加密函数入口直接读取 x0–x4 寄存器区分系统加密库与内部代码。", "en": "Reading x0–x4 at crypto entry points to distinguish OS libraries from internal code." },
+      "aliases": { "zh": ["AAPCS64", "CCCrypt 断点", "lldb 寄存器"], "en": ["AAPCS64 registers", "lldb breakpoint"] },
+      "relatedPages": ["how-a-cpu-runs-a-program"]
+    },
+    {
+      "id": "arm64-adrp-aslr",
+      "anchor": "ch7",
+      "title": { "zh": "ARM64 ADRP 相对寻址与 ASLR", "en": "ARM64 ADRP Addressing & ASLR" },
+      "desc": { "zh": "用 4 KB 页偏移 ADRP + 12 位页内偏移 LDR 在 160 MB 机器码中定位函数。", "en": "Tracing 4 KB page ADRP + 12-bit LDR instructions across 160 MB of ARM64 code." },
+      "aliases": { "zh": ["ADRP 寻址", "ASLR 基址", "Mach-O 切片"], "en": ["ARM64 ADRP", "ASLR slide", "Fat Mach-O"] },
+      "relatedPages": ["how-virtual-memory-works", "how-a-cpu-runs-a-program"]
+    },
+    {
+      "id": "libcpp-std-string-sret",
+      "anchor": "ch8",
+      "title": { "zh": "sret 返回指针与 libc++ std::string 布局", "en": "sret Return Pointer & libc++ std::string Layout" },
+      "desc": { "zh": "通过 x8 隐式指针和第 23 字节最高位区分 SSO 内联短串与堆分配长串。", "en": "Using x8 sret and bit 7 of byte[23] to decode inline SSO versus heap std::string." },
+      "aliases": { "zh": ["std::string 布局", "SSO 短字符串优化", "sret x8"], "en": ["libc++ std::string", "SSO layout", "ARM64 sret"] },
+      "relatedPages": ["how-memory-talks"]
+    }
+  ]
+}
