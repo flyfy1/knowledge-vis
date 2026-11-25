@@ -96,7 +96,8 @@ const STR = {
     "site.bl.4": "<a href=\"../../basics/stocks-bonds/\">股票与债券 · 买到的到底是什么</a>：<a href=\"../../basics/stocks-bonds/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>",
     "site.bl.5": "<a href=\"../../derivatives/a-fair-price-for-a-bet/\">对未来的一个赌注，怎么可能有“公道价”</a>：<a href=\"../../derivatives/a-fair-price-for-a-bet/#ch12\">该文第 12 章</a>",
     "site.bl.6": "<a href=\"../fees-compounding/\">费率与复利 · 1% 的费率怎么吃掉回报</a>：<a href=\"../fees-compounding/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>",
-    "site.bl.7": "<a href=\"../interest-rates-bonds/\">利率与债券 · 利率升为什么债价跌</a>：<a href=\"../interest-rates-bonds/#step5\">该课第 5 步</a> → <a href=\"#step3\">本页第 3 步</a>"
+    "site.bl.7": "<a href=\"../interest-rates-bonds/\">利率与债券 · 利率升为什么债价跌</a>：<a href=\"../interest-rates-bonds/#step5\">该课第 5 步</a> → <a href=\"#step3\">本页第 3 步</a>",
+    "site.bl.8": "<a href=\"../what-the-yield-curve-says/\">收益率曲线在说什么</a>"
   },
   en: {
     back: "← Knowledge Index",
@@ -193,7 +194,8 @@ const STR = {
     "site.bl.4": "<a href=\"../../basics/stocks-bonds/\">Stocks & Bonds · What Do You Actually Buy</a>: <a href=\"../../basics/stocks-bonds/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>",
     "site.bl.5": "<a href=\"../../derivatives/a-fair-price-for-a-bet/\">How Can a Bet on the Future Have a Fair Price?</a>: <a href=\"../../derivatives/a-fair-price-for-a-bet/#ch12\">its chapter 12</a>",
     "site.bl.6": "<a href=\"../fees-compounding/\">Fees & Compounding · How Does a 1% Fee Eat Returns</a>: <a href=\"../fees-compounding/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>",
-    "site.bl.7": "<a href=\"../interest-rates-bonds/\">Interest Rates & Bonds · Why Do Bond Prices Fall When Rates Rise</a>: <a href=\"../interest-rates-bonds/#step5\">its step 5</a> → <a href=\"#step3\">this page step 3</a>"
+    "site.bl.7": "<a href=\"../interest-rates-bonds/\">Interest Rates & Bonds · Why Do Bond Prices Fall When Rates Rise</a>: <a href=\"../interest-rates-bonds/#step5\">its step 5</a> → <a href=\"#step3\">this page step 3</a>",
+    "site.bl.8": "<a href=\"../what-the-yield-curve-says/\">What the Yield Curve Says</a>"
   }
 };
 let currentLang = 'en';

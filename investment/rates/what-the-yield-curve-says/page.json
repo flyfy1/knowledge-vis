@@ -11,11 +11,12 @@
   "category": "investment",
   "subtopic": "rates",
   "stage": "university",
+  "status": "live",
   "path": "investment/rates/what-the-yield-curve-says/",
   "created": "2026-11-25",
   "layout": "essay",
   "scripts": ["data.js", "models.js", "copy.zh.js", "copy.en.js", "app.js"],
-  "version": "20261125a",
+  "version": "20261125b",
   "provenanceNote": {
     "zh": "本文由 Claude Code（claude-opus-5-5）从零编写，直接用 Markdown 站点模板写成；英文稿由 Claude Haiku 从中文译出；经过一次独立评审（claude-opus-5-5，2026-11-25）。",
     "en": "This essay was written from scratch with Claude Code (claude-opus-5-5), directly in the Markdown site template; the English copy was translated from the Chinese text by a Claude Haiku pass; reviewed once independently (claude-opus-5-5, 2026-11-25)."

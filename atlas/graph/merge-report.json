@@ -1,11 +1,11 @@
 {
   "counts": {
     "groups": 11,
-    "nodes": 903,
-    "edges": 1052,
+    "nodes": 912,
+    "edges": 1074,
     "trails": 14,
     "questions": 124,
-    "fragments": 235
+    "fragments": 236
   },
   "conflicts": [],
   "suspendedEdges": [],
@@ -3901,6 +3901,78 @@
       ]
     },
     {
+      "concept": "curve-builder-observational-equivalence",
+      "page": "why-one-rate-moves-everything",
+      "taughtBy": [
+        "present-value-discounting",
+        "bond-duration-convexity",
+        "yield-curve-bootstrapping",
+        "term-premium-curve-inversion",
+        "reserves-floor-system",
+        "taylor-rule-neutral-rate",
+        "new-keynesian-model",
+        "equity-duration-house-affordability",
+        "interest-parity-carry-trade",
+        "zero-lower-bound-qe",
+        "debt-dynamics-r-minus-g",
+        "central-banks-2026"
+      ]
+    },
+    {
+      "concept": "immunisation-barbell-bullet",
+      "page": "why-one-rate-moves-everything",
+      "taughtBy": [
+        "present-value-discounting",
+        "bond-duration-convexity",
+        "yield-curve-bootstrapping",
+        "term-premium-curve-inversion",
+        "reserves-floor-system",
+        "taylor-rule-neutral-rate",
+        "new-keynesian-model",
+        "equity-duration-house-affordability",
+        "interest-parity-carry-trade",
+        "zero-lower-bound-qe",
+        "debt-dynamics-r-minus-g",
+        "central-banks-2026"
+      ]
+    },
+    {
+      "concept": "inversion-decomposition",
+      "page": "why-one-rate-moves-everything",
+      "taughtBy": [
+        "present-value-discounting",
+        "bond-duration-convexity",
+        "yield-curve-bootstrapping",
+        "term-premium-curve-inversion",
+        "reserves-floor-system",
+        "taylor-rule-neutral-rate",
+        "new-keynesian-model",
+        "equity-duration-house-affordability",
+        "interest-parity-carry-trade",
+        "zero-lower-bound-qe",
+        "debt-dynamics-r-minus-g",
+        "central-banks-2026"
+      ]
+    },
+    {
+      "concept": "yield-curve-2022-2026",
+      "page": "why-one-rate-moves-everything",
+      "taughtBy": [
+        "present-value-discounting",
+        "bond-duration-convexity",
+        "yield-curve-bootstrapping",
+        "term-premium-curve-inversion",
+        "reserves-floor-system",
+        "taylor-rule-neutral-rate",
+        "new-keynesian-model",
+        "equity-duration-house-affordability",
+        "interest-parity-carry-trade",
+        "zero-lower-bound-qe",
+        "debt-dynamics-r-minus-g",
+        "central-banks-2026"
+      ]
+    },
+    {
       "concept": "nominal-vs-effective-rate",
       "page": "compound-interest",
       "taughtBy": [
@@ -4836,13 +4908,13 @@
     }
   ],
   "unknownAliasIds": [],
-  "sizeBytes": 1533006,
+  "sizeBytes": 1555370,
   "questionsBytes": 173006,
-  "combinedBytes": 1706012,
-  "indexBytes": 116838,
+  "combinedBytes": 1728376,
+  "indexBytes": 118177,
   "chunkBytes": {
     "math.nodes": 51664,
-    "math.edges": 91481,
+    "math.edges": 92439,
     "math.questions": 36438,
     "waves.nodes": 45855,
     "waves.edges": 63594,
@@ -4854,7 +4926,7 @@
     "systems.edges": 43469,
     "systems.questions": 21577,
     "measurement.nodes": 35675,
-    "measurement.edges": 65742,
+    "measurement.edges": 67358,
     "measurement.questions": 30126,
     "matter.nodes": 52717,
     "matter.edges": 19493,
@@ -4868,8 +4940,8 @@
     "computing.nodes": 389826,
     "computing.edges": 242924,
     "computing.questions": 2766,
-    "society.nodes": 80301,
-    "society.edges": 52886,
+    "society.nodes": 87359,
+    "society.edges": 64772,
     "society.questions": 3743,
     "tech.nodes": 16930,
     "tech.edges": 12509,

@@ -2705,7 +2705,7 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 <!-- GENERATED:atlas-nodes -->
 ## 三、图谱节点索引（生成，勿手改）
 
-903 个概念 · 1052 条关系 · 11 个分区 · 由 scripts/build-atlas-data.cjs --concept-map 生成。节点排序与 data.js 一致（分区序、学段序、order、id）。
+912 个概念 · 1074 条关系 · 11 个分区 · 由 scripts/build-atlas-data.cjs --concept-map 生成。节点排序与 data.js 一致（分区序、学段序、order、id）。
 
 ### 01 数学基础 / Mathematical tools
 
@@ -3584,6 +3584,7 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 拿到贷款合同时能自己算的事 / What you can work out from a loan contract | ../economics/money/where-a-mortgage-payment-goes/#ch9 | where-a-mortgage-payment-goes |
 | 孔多塞陪审团定理 / Condorcet's jury theorem | ../society/civics/same-votes-different-winner/#ch9 | same-votes-different-winner |
 | 怎样读“这个制度很公平” / How to read a claim that a system is fair | ../society/civics/same-votes-different-winner/#ch10 | same-votes-different-winner |
+| 同一条曲线，两种读法：预期和期限溢价为什么分不开 / One curve, two readings: why expectations and the term premium cannot be told apart | ../investment/rates/what-the-yield-curve-says/#ch3 | what-the-yield-curve-says |
 | 远期价格与持有成本 / Forward price and cost of carry | ../investment/derivatives/a-fair-price-for-a-bet/#ch1 | a-fair-price-for-a-bet |
 | 博弈论 / Game theory | ../math/applied/game-theory/#step0 | game-theory#step0 |
 | GDP 三面等价与增加值 / GDP Three Ways & Value Added | ../economics/macro/how-an-economy-is-measured/#ch1 | how-an-economy-is-measured |
@@ -3592,37 +3593,45 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 明天的钱今天值多少：折现 / What tomorrow's money is worth today | ../economics/money/why-one-rate-moves-everything/#ch1 | why-one-rate-moves-everything |
 | 供需均衡 / Supply & demand equilibrium | ../math/applied/supply-demand/#step0 | supply-demand#step0 |
 | 债券久期与凸性 / Bond duration and convexity | ../economics/money/why-one-rate-moves-everything/#ch2 | why-one-rate-moves-everything |
+| 持有期回报、骑乘曲线与远期利率的打平点 / Holding-period return, roll-down and the forward as break-even | ../investment/rates/what-the-yield-curve-says/#ch4 | what-the-yield-curve-says |
 | 边际：再多一点值不值 / The margin: is one more step worth it? | ../demos/scarcity-moves/#c2 | scarcity-moves |
 | 期权收益与看涨–看跌平价 / Option payoffs and put–call parity | ../investment/derivatives/a-fair-price-for-a-bet/#ch2 | a-fair-price-for-a-bet |
 | 名义与实际、链式费雪指数与替代偏差 / Nominal vs Real, Chained Fisher & Substitution Bias | ../economics/macro/how-an-economy-is-measured/#ch2 | how-an-economy-is-measured |
 | 一步二叉树：复制与风险中性概率 / One-step binomial: replication and risk-neutral probability | ../investment/derivatives/a-fair-price-for-a-bet/#ch3 | a-fair-price-for-a-bet |
 | CPI 权重、等价租金 OER 与质量调整 / CPI Weights, Owners' Equivalent Rent & Hedonic Adjustment | ../economics/macro/how-an-economy-is-measured/#ch3 | how-an-economy-is-measured |
 | 沉没成本 / Sunk cost | ../demos/scarcity-moves/#c2 | scarcity-moves |
+| ACM 与 Kim–Wright：期限溢价的两种估计 / ACM and Kim–Wright: two estimates of the term premium | ../investment/rates/what-the-yield-curve-says/#ch5 | what-the-yield-curve-says |
 | 收益率曲线、即期利率与远期利率 / Yield curve, spot and forward rates | ../economics/money/why-one-rate-moves-everything/#ch3 | why-one-rate-moves-everything |
 | 交换与比较优势 / Trade and comparative advantage | ../demos/scarcity-moves/#c3 | scarcity-moves |
 | CRR 二叉树与美式期权 / The CRR binomial tree and American options | ../investment/derivatives/a-fair-price-for-a-bet/#ch4 | a-fair-price-for-a-bet |
 | 折年率、基数效应、季节调整与数据修订 / Annualised Rates, Base Effects, Seasonal Adjustment & Revisions | ../economics/macro/how-an-economy-is-measured/#ch4 | how-an-economy-is-measured |
+| 凸性、免疫与哑铃型组合 / Convexity, immunisation and the barbell | ../investment/rates/what-the-yield-curve-says/#ch7 | what-the-yield-curve-says |
 | 预期假说、期限溢价与收益率曲线倒挂 / Expectations, term premium and yield-curve inversion | ../economics/money/why-one-rate-moves-everything/#ch4 | why-one-rate-moves-everything |
 | 几何布朗运动与波动率 / Geometric Brownian motion and volatility | ../investment/derivatives/a-fair-price-for-a-bet/#ch5 | a-fair-price-for-a-bet |
+| 曲线的三种动法：水平、斜率、曲率 / Level, slope and curvature | ../investment/rates/what-the-yield-curve-says/#ch8 | what-the-yield-curve-says |
 | 购买力平价 PPP、均值与中位数及基尼系数 / Purchasing Power Parity, Mean vs Median & Gini Coefficient | ../economics/macro/how-an-economy-is-measured/#ch5 | how-an-economy-is-measured |
 | 价格是一条信息 / Price is a piece of information | ../demos/scarcity-moves/#c4 | scarcity-moves |
 | 准备金、利率走廊与地板体系 / Reserves, the corridor and the floor system | ../economics/money/why-one-rate-moves-everything/#ch5 | why-one-rate-moves-everything |
 | 布莱克–斯科尔斯公式与方程 / The Black–Scholes formula and equation | ../investment/derivatives/a-fair-price-for-a-bet/#ch6 | a-fair-price-for-a-bet |
 | 激励 / Incentives | ../demos/scarcity-moves/#c5 | scarcity-moves |
+| 倒挂是降息预期还是期限溢价太低 / Is an inversion rate-cut expectations or a low term premium? | ../investment/rates/what-the-yield-curve-says/#ch9 | what-the-yield-curve-says |
 | U-3 与 U-6 失业率、贝弗里奇曲线与奥肯定律 / U-3 vs U-6 Unemployment, Beveridge Curve & Okun's Law | ../economics/macro/how-an-economy-is-measured/#ch6 | how-an-economy-is-measured |
 | 泰勒规则与自然利率 r* / The Taylor rule and the neutral rate r* | ../economics/money/why-one-rate-moves-everything/#ch6 | why-one-rate-moves-everything |
 | 经济周期、潜在产出与萨姆规则 / Business Cycles, Potential Output & the Sahm Rule | ../economics/macro/how-an-economy-is-measured/#ch7 | how-an-economy-is-measured |
+| 信用利差：违约概率 × 违约损失 / Credit spread: default probability × loss given default | ../investment/rates/what-the-yield-curve-says/#ch10 | what-the-yield-curve-says |
 | 希腊字母与 Delta 对冲 / The Greeks and delta hedging | ../investment/derivatives/a-fair-price-for-a-bet/#ch7 | a-fair-price-for-a-bet |
 | 市场会失灵 / Markets can fail | ../demos/scarcity-moves/#c6 | scarcity-moves |
 | 新凯恩斯模型与菲利普斯曲线 / The New Keynesian model and the Phillips curve | ../economics/money/why-one-rate-moves-everything/#ch7 | why-one-rate-moves-everything |
 | 股票久期与房贷可负担性 / Equity duration and mortgage affordability | ../economics/money/why-one-rate-moves-everything/#ch8 | why-one-rate-moves-everything |
 | 增长来自思想 / Growth comes from ideas | ../demos/scarcity-moves/#c7 | scarcity-moves |
 | 隐含波动率、微笑与肥尾 / Implied volatility, the smile and fat tails | ../investment/derivatives/a-fair-price-for-a-bet/#ch8 | a-fair-price-for-a-bet |
+| 评级、垃圾债与违约扎堆 / Ratings, junk bonds and clustered defaults | ../investment/rates/what-the-yield-curve-says/#ch11 | what-the-yield-curve-says |
 | 索洛增长核算与全要素生产率（TFP） / Solow Growth Accounting & Total Factor Productivity | ../economics/macro/how-an-economy-is-measured/#ch8 | how-an-economy-is-measured |
 | GDP 之外：家务、折旧、灾难悖论与卫星账户 / Beyond GDP: Home Production, Depreciation & Disaster Paradox | ../economics/macro/how-an-economy-is-measured/#ch9 | how-an-economy-is-measured |
 | 赫斯顿随机波动率模型 / The Heston stochastic volatility model | ../investment/derivatives/a-fair-price-for-a-bet/#ch9 | a-fair-price-for-a-bet |
 | 利率平价与套利交易 / Interest parity and the carry trade | ../economics/money/why-one-rate-moves-everything/#ch9 | why-one-rate-moves-everything |
 | 你的支出是别人的收入 / Your spending is someone else's income | ../demos/scarcity-moves/#c8 | scarcity-moves |
+| 2022–2026 年：倒挂、解除倒挂与美债收益率上涨 / 2022–2026: inversion, un-inversion and rising Treasury yields | ../investment/rates/what-the-yield-curve-says/#ch12 | what-the-yield-curve-says |
 | 前沿测量：免费数字品、GDP-B、2025 SNA 与实时预测 / Measurement Frontier: Free Digital Goods, GDP-B, 2025 SNA & Nowcasting | ../economics/macro/how-an-economy-is-measured/#ch10 | how-an-economy-is-measured |
 | 收入流向稀缺的一方 / Income flows to the scarce | ../demos/scarcity-moves/#c9 | scarcity-moves |
 | 保证金、杠杆与中央清算 / Margin, leverage and central clearing | ../investment/derivatives/a-fair-price-for-a-bet/#ch9 | a-fair-price-for-a-bet |
@@ -3670,7 +3679,7 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 <!-- GENERATED:registry-concepts -->
 ## 页面 → 概念 → 锚点（生成，勿手改）
 
-264 个页面拥有 900 个图谱概念 · 由 scripts/build-registry.cjs 从 site-registry.json 生成（概念 = atlas/data.js 里 primary 课程是该页的节点；顺序同首页登记顺序）。登记或改动页面后重跑 `node scripts/build-registry.cjs`；不要再在本文件里手写逐页概念表（2026-11-16 起，上面的手写表保留为历史记录）。
+265 个页面拥有 909 个图谱概念 · 由 scripts/build-registry.cjs 从 site-registry.json 生成（概念 = atlas/data.js 里 primary 课程是该页的节点；顺序同首页登记顺序）。登记或改动页面后重跑 `node scripts/build-registry.cjs`；不要再在本文件里手写逐页概念表（2026-11-16 起，上面的手写表保留为历史记录）。
 
 ### 冰冻肥皂泡 · 水膜里的结晶 / Frozen Soap Bubbles · Ice in a Thin Film
 
@@ -6383,6 +6392,22 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 保证金、杠杆与中央清算 / Margin, leverage and central clearing | `investment/derivatives/a-fair-price-for-a-bet/#ch9` |
 | 套期保值、基差风险与名义本金 / Hedging, basis risk and notional amounts | `investment/derivatives/a-fair-price-for-a-bet/#ch10` |
 | 衍生品市场的前沿（2026 年 11 月） / The frontier of derivatives markets (November 2026) | `investment/derivatives/a-fair-price-for-a-bet/#ch11` |
+
+### 收益率曲线在说什么 / What the Yield Curve Says
+
+`investment/rates/what-the-yield-curve-says/` · essay
+
+| 概念 | 深链 |
+| --- | --- |
+| 同一条曲线，两种读法：预期和期限溢价为什么分不开 / One curve, two readings: why expectations and the term premium cannot be told apart | `investment/rates/what-the-yield-curve-says/#ch3` |
+| 持有期回报、骑乘曲线与远期利率的打平点 / Holding-period return, roll-down and the forward as break-even | `investment/rates/what-the-yield-curve-says/#ch4` |
+| ACM 与 Kim–Wright：期限溢价的两种估计 / ACM and Kim–Wright: two estimates of the term premium | `investment/rates/what-the-yield-curve-says/#ch5` |
+| 凸性、免疫与哑铃型组合 / Convexity, immunisation and the barbell | `investment/rates/what-the-yield-curve-says/#ch7` |
+| 曲线的三种动法：水平、斜率、曲率 / Level, slope and curvature | `investment/rates/what-the-yield-curve-says/#ch8` |
+| 倒挂是降息预期还是期限溢价太低 / Is an inversion rate-cut expectations or a low term premium? | `investment/rates/what-the-yield-curve-says/#ch9` |
+| 信用利差：违约概率 × 违约损失 / Credit spread: default probability × loss given default | `investment/rates/what-the-yield-curve-says/#ch10` |
+| 评级、垃圾债与违约扎堆 / Ratings, junk bonds and clustered defaults | `investment/rates/what-the-yield-curve-says/#ch11` |
+| 2022–2026 年：倒挂、解除倒挂与美债收益率上涨 / 2022–2026: inversion, un-inversion and rising Treasury yields | `investment/rates/what-the-yield-curve-says/#ch12` |
 
 ### 核聚变为什么总是“还要三十年” / Why Fusion Is Always “Thirty Years Away”
 

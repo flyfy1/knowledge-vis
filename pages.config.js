@@ -209,6 +209,7 @@ window.KNOWLEDGE_ESSAYS = [
   "how-containers-isolate-a-process",
   "how-llvm-compiles-your-code",
   "a-fair-price-for-a-bet",
+  "what-the-yield-curve-says",
   "scarcity-moves"
 ];
 
@@ -2315,6 +2316,13 @@ window.KNOWLEDGE_PAGES = [
     desc: { zh: "没人知道一年后的股价，期权却每天有成千上万笔按差不多的价格成交。这篇从“远期价不是预测”讲起，一步步走到二叉树、几何布朗运动、布莱克–斯科尔斯公式和它的偏微分方程、希腊字母与对冲，再看它在哪里失灵：波动率微笑、肥尾、保证金与清算，最后是 2026 年 11 月的市场现状。十三个可以动手的模型，只讲数学和市场结构，不是投资建议。", en: "Nobody knows next year's share price, yet options on it trade thousands of times a day at nearly the same price. This essay starts from \"a forward price is not a forecast\" and climbs through the binomial tree, geometric Brownian motion, the Black–Scholes formula and its partial differential equation, the Greeks and hedging, then shows where it fails: the volatility smile, fat tails, margin and clearing, and the state of the market in November 2026. Thirteen hands-on models. Mathematics and market structure only; not investment advice." },
     tags: [{ zh: "期权定价", en: "Option Pricing" }, { zh: "布莱克–斯科尔斯", en: "Black–Scholes" }, { zh: "衍生品", en: "Derivatives" }, { zh: "长文", en: "Long-form Essay" }],
     category: "investment", subtopic: "derivatives", stage: "university", status: "live", path: "investment/derivatives/a-fair-price-for-a-bet/", created: "2026-11-18"
+  },
+  {
+    slug: "what-the-yield-curve-says",
+    title: { zh: "收益率曲线在说什么", en: "What the Yield Curve Says" },
+    desc: { zh: "把同一个借款人一年、两年……十年的利率连成一条线，新闻说它“倒挂了”“陡峭了”“预示衰退”。这篇从零息债券讲起，一步步拆出远期利率、预期和期限溢价，再讲久期、凸性、曲线的三种动法和倒挂的成因，接着走到公司债：违约概率、回收率、信用利差和垃圾债的违约为什么扎堆，最后是 2022–2026 年这条曲线的真实经历。十二个可以动手的模型，只讲机制，不是投资建议。", en: "Line up one borrower's one-, two- … ten-year interest rates and you get a curve the news calls “inverted”, “steepening” or “a recession signal”. Starting from zero-coupon bonds, this essay separates forward rates, expectations and the term premium, then covers duration, convexity, the three ways a curve moves and why it inverts, and moves on to corporate bonds: default probability, recovery, credit spreads and why junk-bond defaults cluster, ending with what the curve actually did in 2022–2026. Twelve hands-on models; mechanisms only, not investment advice." },
+    tags: [{ zh: "收益率曲线", en: "Yield Curve" }, { zh: "债券", en: "Bonds" }, { zh: "信用利差", en: "Credit Spreads" }, { zh: "利率", en: "Interest Rates" }, { zh: "长文", en: "Long-form Essay" }],
+    category: "investment", subtopic: "rates", stage: "university", status: "live", path: "investment/rates/what-the-yield-curve-says/", created: "2026-11-25"
   },
   {
     slug: "why-fusion-is-hard",

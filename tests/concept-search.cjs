@@ -823,6 +823,23 @@ chapters.push(
   ['套期保值', 'notional', BET + '#ch10'],
   ['永续合约', '0DTE', BET + '#ch11'],
 );
+// what-the-yield-curve-says (2026-11-25, investment/rates). 收益率曲线 / 久期 / 期限溢价 stay with why-one-rate and
+// interest-rates-bonds (TASK-econ-series §4.B); DV01 sits on bond-duration-convexity (atlas/graph/aliases.json).
+const YC = 'investment/rates/what-the-yield-curve-says/';
+chapters.push(
+  ['骑乘收益', 'roll down', YC + '#ch4'],
+  ['期限溢价怎么估计', 'ACM term premium', YC + '#ch5'],
+  ['哑铃和子弹', 'barbell vs bullet', YC + '#ch7'],
+  ['曲线变陡', 'level slope curvature', YC + '#ch8'],
+  ['倒挂一定衰退吗', 'does an inverted yield curve mean recession', YC + '#ch9'],
+  ['信用利差', 'credit spread', YC + '#ch10'],
+  ['垃圾债', 'junk bonds', YC + '#ch11'],
+  ['盈亏平衡通胀', 'breakeven inflation', YC + '#ch12'],
+);
+for (const [q, href] of [['收益率曲线', 'economics/money/why-one-rate-moves-everything/#ch3'], ['期限溢价', 'economics/money/why-one-rate-moves-everything/#ch4'], ['DV01', 'economics/money/why-one-rate-moves-everything/#ch2']]) {
+  const hit = first(q);
+  ok(hit && hit.href.startsWith(href), `"${q}" stays with ${href} (got ${hit && hit.href})`);
+}
 for (const [q, href] of [['杠杆', 'physics/mechanics/lever-pulley/'], ['volatility', 'investment/basics/risk-return/#step3'], ['what is a derivative', 'math/calculus/derivative/']]) {
   const hit = first(q);
   ok(hit && hit.href.startsWith(href), `"${q}" stays with ${href} (got ${hit && hit.href})`);

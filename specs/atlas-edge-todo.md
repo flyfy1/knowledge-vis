@@ -11,7 +11,7 @@ taught on B (any `lessons[]` entry). Pairs where either page teaches no atlas co
 counted. Under each pair: every link, with the concepts anchored at its two ends where there are any (`?` = none at that
 anchor; a link to the page top has no anchor).
 
-902 linked page pairs · 441 covered by an atlas edge · 14 with no concept on one side · **447 to do**.
+909 linked page pairs · 446 covered by an atlas edge · 14 with no concept on one side · **449 to do**.
 
 ## 冰冻肥皂泡 · 水膜里的结晶 / Frozen Soap Bubbles · Ice in a Thin Film → 光的反射与折射 · 拐弯的规矩 / Reflection & Refraction · How Light Bends
 
@@ -1856,6 +1856,15 @@ anchor; a link to the page top has no anchor).
 ## 对未来的一个赌注，怎么可能有“公道价” / How Can a Bet on the Future Have a Fair Price? → 每个月的房贷，钱到底还到哪儿去了 / Where Does Your Mortgage Payment Actually Go?
 
 - `a-fair-price-for-a-bet#ch12` → `where-a-mortgage-payment-goes`
+
+## 收益率曲线在说什么 / What the Yield Curve Says → 利率与债券 · 利率升为什么债价跌 / Interest Rates & Bonds · Why Do Bond Prices Fall When Rates Rise
+
+- `what-the-yield-curve-says` → `interest-rates-bonds`
+- `what-the-yield-curve-says#ch6` → `interest-rates-bonds#step3`: ? → interest-rates-bonds
+
+## 收益率曲线在说什么 / What the Yield Curve Says → 复利与贴现 · 时间是钱的形状 / Compound Interest & Discounting · Time Is the Shape of Money
+
+- `what-the-yield-curve-says` → `compound-interest`
 
 ## 核聚变为什么总是“还要三十年” / Why Fusion Is Always “Thirty Years Away” → 狭义相对论 · 同时性的线倾斜了 / Special Relativity · The Lines of “Now” Tilt
 

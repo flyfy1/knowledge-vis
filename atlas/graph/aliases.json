@@ -370,5 +370,9 @@
   "plate-tectonics": {
     "zh": ["地震", "地震是怎么发生的"],
     "en": ["earthquake", "earthquakes", "what causes earthquakes"]
+  },
+  "bond-duration-convexity": {
+    "zh": ["DV01", "基点价值", "PV01", "一个基点值多少钱"],
+    "en": ["DV01", "PV01", "dollar value of a basis point", "price value of a basis point"]
   }
 }

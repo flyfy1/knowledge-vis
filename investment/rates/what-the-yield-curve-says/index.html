@@ -153,6 +153,7 @@
     <p class="sub" data-i18n-html="hero.sub">一条连着十几个利率的线，<br>为什么被当成市场对未来的“天气预报”？</p>
     <p class="lead" data-i18n-html="hero.lead">打开任何一个财经网站，都能找到一张图：横轴是一年、两年、五年、十年、三十年，纵轴是美国国债在这些期限上的收益率，连起来就是<strong>收益率曲线</strong>。新闻说它“倒挂了”，说它“陡峭化”，说“十年期收益率涨到了 5%”。这篇文章只问一个问题：<strong>这条曲线上的每一个点，到底在说什么？</strong>哪一部分是市场对未来利率的预期，哪一部分是借钱给别人太久要收的补偿，哪一部分是在担心对方还不上钱？第 1–5 章把曲线拆开：零息债券、远期利率、预期和期限溢价，以及期限溢价为什么只能估。第 6–9 章讲曲线怎么动、动了谁会亏、为什么会倒挂。第 10–11 章离开国债，讲公司债多出来的那几个点。第 12 章是 2022–2026 年这条曲线的真实经历，第 13 章给出读曲线时可以问的五个问题。</p>
     <p class="note" data-i18n-html="hero.note">前置知识：一张债券的价格和收益率为什么反着走，见<a href="../../../variants/claude-code/interest-rates-bonds/">利率与债券 · 利率升为什么债价跌</a>；单笔钱怎样折现，见<a href="../../../variants/claude-code/compound-interest/">复利与贴现 · 时间是钱的形状</a>。央行怎样定短期利率、加息怎样传到经济，以及倒挂与美国衰退的完整记录，另一篇长文<a href="../../../economics/money/why-one-rate-moves-everything/">央行调一个利率，为什么所有东西的价格都跟着动</a>已经讲过，这里只在需要时链接过去。文中的数据来自美联储经济数据库（FRED）、纽约联储和 S&P Global Ratings，每一个都标了日期。<strong>这篇文章只解释机制，不构成任何投资建议，也不预测利率。</strong>文章由 AI 写成，每个模型都是教科书或研究里用的真东西，只是规模小；每章最后一段说明它省掉了什么。</p>
+    <details class="page-provenance" data-developer="Claude Code" data-edition="claude-code-what-the-yield-curve-says-20261125" data-source-revision="99352324b0621338107d712b1b1f10b7a0f38ec3" data-model="claude-opus-5-5 (English: claude-haiku-5-5)" data-thinking="thinking unavailable"><summary><span class="provenance-zh" lang="zh-CN">Claude Code 开发 · 原创版本</span><span class="provenance-en" lang="en">Developed with Claude Code · Original edition</span></summary><p><span class="provenance-zh" lang="zh-CN">本文由 Claude Code（claude-opus-5-5）从零编写，直接用 Markdown 站点模板写成；英文稿由 Claude Haiku 从中文译出；经过一次独立评审（claude-opus-5-5，2026-11-25）。</span><span class="provenance-en" lang="en">This essay was written from scratch with Claude Code (claude-opus-5-5), directly in the Markdown site template; the English copy was translated from the Chinese text by a Claude Haiku pass; reviewed once independently (claude-opus-5-5, 2026-11-25).</span></p><p><span class="provenance-zh" lang="zh-CN">模型：claude-opus-5-5 (English: claude-haiku-5-5) · 思考深度：thinking unavailable</span><span class="provenance-en" lang="en">Model: claude-opus-5-5 (English: claude-haiku-5-5) · Thinking: thinking unavailable</span></p><p><span class="provenance-zh" lang="zh-CN">范围：整篇长文从零编写：零息债券、远期利率、用预期和期限溢价搭曲线、持有期回报与骑乘、ACM 与 Kim–Wright 期限溢价、久期与 DV01、凸性与免疫、水平斜率曲率、倒挂分解、信用利差、评级与违约扎堆、2022–2026 年的曲线前沿、读一条曲线的五个问题。</span><span class="provenance-en" lang="en">Scope: Whole essay written from scratch: zero-coupon bonds, forward rates, building a curve from expectations and a term premium, holding-period return and roll-down, ACM and Kim–Wright term premia, duration and DV01, convexity and immunisation, level, slope and curvature, decomposing an inversion, credit spreads, ratings and default clustering, the curve frontier 2022–2026, five questions for reading a curve.</span></p><p>claude-code-what-the-yield-curve-says-20261125 · <a href="https://github.com/flyfy1/knowledge-vis/commit/99352324b0621338107d712b1b1f10b7a0f38ec3"><span class="provenance-zh" lang="zh-CN">源码修订</span><span class="provenance-en" lang="en">Source revision</span> · 99352324</a></p></details>
   </div>
 </header>
 
@@ -576,11 +577,11 @@
 
 <footer><div class="wrap" data-i18n-html="footer"><p><strong>数据与出处。</strong>美国国债平价收益率（DGS3MO 至 DGS30）、10 年减 3 个月（T10Y3M）、10 年减 2 年（T10Y2Y）、Kim–Wright 期限溢价（THREEFYTP10）和 ICE 美银期权调整利差（BAMLH0A0HYM2、BAMLC0A0CM、BAMLC0A4CBBB、BAMLH0A1HYBB、BAMLH0A2HYB、BAMLH0A3HYC）来自美联储经济数据库 FRED，2026 年 11 月 25 日下载。ACM 零息收益率与期限溢价来自纽约联储（Adrian, Crump & Moench, “Pricing the Term Structure with Linear Regressions”, <em>Journal of Financial Economics</em>, 2013），同日下载。违约率来自 S&P Global Ratings, <em>Default, Transition, and Recovery: 2024 Annual Global Corporate Default And Rating Transition Study</em>（2025 年 3 月 27 日），表 1 与表 24。财政部再融资声明（2026 年 11 月 4 日）来自 home.treasury.gov。每一项的网址和核对范围见本页目录下的 BRIEF.md。</p><p><strong>模型。</strong>零息定价、远期利率与持有期回报是标准的无套利算术；预期假说与期限溢价的拆分见 Campbell 与 Shiller（1991）；久期与凸性是麦考利（1938）以来的教科书公式；因子形状最早见 Litterman 与 Scheinkman（1991，对国债回报的因子分析）；Nelson 与 Siegel（1987）、Diebold 与 Li（2006）；信用利差之谜见 Huang 与 Huang（2012）；违约相关性用 Vasicek 单因子模型。所有模型都缩小了规模，参数中凡是为看清机制而设的，在各章末尾说明。</p><p><strong>关于这一页。</strong>本文由 AI 写成，只解释机制，不构成投资建议，也不预测利率或违约。</p></div></footer>
 
-<script src="data.js?v=20261125a"></script>
-<script src="models.js?v=20261125a"></script>
-<script src="copy.zh.js?v=20261125a"></script>
-<script src="copy.en.js?v=20261125a" onerror="void 0"></script>
-<script src="app.js?v=20261125a"></script>
+<script src="data.js?v=20261125b"></script>
+<script src="models.js?v=20261125b"></script>
+<script src="copy.zh.js?v=20261125b"></script>
+<script src="copy.en.js?v=20261125b" onerror="void 0"></script>
+<script src="app.js?v=20261125b"></script>
 <script defer src="../../../site-nav.js?v=sn-20261121a"></script>
 </body>
 </html>

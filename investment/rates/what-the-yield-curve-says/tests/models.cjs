@@ -176,7 +176,10 @@ for (let i = 0; i < D.acmM.y10.length; i += 37) { const s = M.split(i); near('sp
   const CJK = /[　-〿㐀-鿿＀-￯]/;
   ok('no CJK in app.js', !CJK.test(app.replace(/\/\*[\s\S]*?\*\/|\/\/.*$/gm, '')));
   ok('no CJK in models.js', !CJK.test(fs.readFileSync(path.join(DIR, 'models.js'), 'utf8')));
-  const raw = unprefill(html, Z).replace(/<!--[\s\S]*?-->/g, '');
+  // registered 2026-11-25: the provenance label rendered from page-provenance.json is bilingual by design
+  ok('page.json registry fields', ['category', 'subtopic', 'stage', 'status', 'path'].map(k => pj[k]).join() === 'investment,rates,university,live,investment/rates/what-the-yield-curve-says/');
+  ok('exactly one provenance label', (html.match(/<details class="page-provenance"/g) || []).length === 1);
+  const raw = unprefill(html, Z).replace(/<!--[\s\S]*?-->/g, '').replace(/<details class="page-provenance"[\s\S]*?<\/details>/, '');
   const left = raw.match(new RegExp('[^<>]*' + CJK.source + '[^<>]*', 'g')) || [];
   ok('no CJK in index.html beyond pre-fill and the 中 toggle', left.every(s => s.trim() === '中' || s.includes(Z['doc.title']) || s.includes(Z['doc.desc']) || /provenance|开发版本/.test(s)), left.slice(0, 3).join(' | '));
   ok('no unresolved binding', !Object.values(Z).some(v => /\{=/.test(v)));

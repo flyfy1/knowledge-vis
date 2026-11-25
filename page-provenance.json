@@ -3873,6 +3873,20 @@
       "path": "investment/derivatives/a-fair-price-for-a-bet/index.html",
       "model": "claude-fable-5-2 (closeout: claude-opus-5-5; English: claude-haiku-5-5)",
       "thinking": "thinking unavailable"
+    },
+    "what-the-yield-curve-says": {
+      "developer": "Claude Code",
+      "edition": "claude-code-what-the-yield-curve-says-20261125",
+      "kind": "original",
+      "sourceRevision": "99352324b0621338107d712b1b1f10b7a0f38ec3",
+      "scope": {
+        "zh": "整篇长文从零编写：零息债券、远期利率、用预期和期限溢价搭曲线、持有期回报与骑乘、ACM 与 Kim–Wright 期限溢价、久期与 DV01、凸性与免疫、水平斜率曲率、倒挂分解、信用利差、评级与违约扎堆、2022–2026 年的曲线前沿、读一条曲线的五个问题",
+        "en": "Whole essay written from scratch: zero-coupon bonds, forward rates, building a curve from expectations and a term premium, holding-period return and roll-down, ACM and Kim–Wright term premia, duration and DV01, convexity and immunisation, level, slope and curvature, decomposing an inversion, credit spreads, ratings and default clustering, the curve frontier 2022–2026, five questions for reading a curve"
+      },
+      "originalAuthorship": "written from scratch in zh by Claude Code (claude-opus-5-5) directly in the Markdown site template; English copy translated by Claude Code (claude-haiku-5-5); independently reviewed on 2026-11-25 by a separate Claude Code session (claude-opus-5-5), see specs/reviews/what-the-yield-curve-says-review-20261125.md",
+      "path": "investment/rates/what-the-yield-curve-says/index.html",
+      "model": "claude-opus-5-5 (English: claude-haiku-5-5)",
+      "thinking": "thinking unavailable"
     }
   },
   "exceptions": {
