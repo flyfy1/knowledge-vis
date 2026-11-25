@@ -526,6 +526,7 @@ window.ESSAY_COPY.en = {
   "site.crumb.aria": "Breadcrumb",
   "site.crumb.home": "Home",
   "site.crumb.cat": "Investment",
+  "site.crumb.sub": "Derivatives",
   "site.rel.title": "Related pages",
   "site.rel.1": "<a href=\"../../../variants/claude-code/compound-interest/\">Compound Interest & Discounting · Time Is the Shape of Money</a>",
   "site.rel.2": "<a href=\"../../../variants/claude-code/expected-value/\">Expected Value · Lotteries, Dice and Insurance on One Scale</a>",

@@ -806,6 +806,27 @@ chapters.push(
   ['OverlayFS Copy-Up', 'OverlayFS copy-up', 'computing/software/how-containers-isolate-a-process/#ch3'],
   ['SSA mem2reg', 'LLVM mem2reg', 'computing/software/how-llvm-compiles-your-code/#ch3'],
 );
+// a-fair-price-for-a-bet (2026-11-25, investment/derivatives). 杠杆 stays with physics lever-pulley, 波动率 / volatility with
+// risk-return #step3, gamma with how-pixels-reach-a-screen #ch5, "what is a derivative" with math/calculus/derivative.
+const BET = 'investment/derivatives/a-fair-price-for-a-bet/';
+chapters.push(
+  ['期货价格是不是对未来的预测', 'futures vs options', BET + '#ch1'],
+  ['看涨期权', 'put-call parity', BET + '#ch2'],
+  ['期权怎么定价', 'how are options priced', BET + '#ch3'],
+  ['二叉树', 'binomial tree', BET + '#ch4'],
+  ['几何布朗运动', 'geometric brownian motion', BET + '#ch5'],
+  ['BS 公式', 'Black-Scholes', BET + '#ch6'],
+  ['期权会归零吗', 'delta hedging', BET + '#ch7'],
+  ['VIX', 'implied volatility', BET + '#ch8'],
+  ['赫斯顿模型', 'Heston model', BET + '#ch9'],
+  ['爆仓', 'margin call', BET + '#ch9'],
+  ['套期保值', 'notional', BET + '#ch10'],
+  ['永续合约', '0DTE', BET + '#ch11'],
+);
+for (const [q, href] of [['杠杆', 'physics/mechanics/lever-pulley/'], ['volatility', 'investment/basics/risk-return/#step3'], ['what is a derivative', 'math/calculus/derivative/']]) {
+  const hit = first(q);
+  ok(hit && hit.href.startsWith(href), `"${q}" stays with ${href} (got ${hit && hit.href})`);
+}
 for (const [q, href] of [['three.js', 'demos/fable-flight/'], ['光栅化', 'computing/graphics/computer-graphics/'], ['sRGB', 'computing/systems/how-pixels-reach-a-screen/#ch1']]) {
   const hit = first(q);
   ok(hit && hit.href.startsWith(href), `"${q}" stays with ${href} (got ${hit && hit.href})`);

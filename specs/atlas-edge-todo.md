@@ -11,7 +11,7 @@ taught on B (any `lessons[]` entry). Pairs where either page teaches no atlas co
 counted. Under each pair: every link, with the concepts anchored at its two ends where there are any (`?` = none at that
 anchor; a link to the page top has no anchor).
 
-890 linked page pairs · 432 covered by an atlas edge · 14 with no concept on one side · **444 to do**.
+902 linked page pairs · 441 covered by an atlas edge · 14 with no concept on one side · **447 to do**.
 
 ## 冰冻肥皂泡 · 水膜里的结晶 / Frozen Soap Bubbles · Ice in a Thin Film → 光的反射与折射 · 拐弯的规矩 / Reflection & Refraction · How Light Bends
 
@@ -1843,6 +1843,19 @@ anchor; a link to the page top has no anchor).
 ## 央行调一个利率，为什么所有东西的价格都跟着动 / Why One Central-Bank Rate Moves the Price of Everything → 风险与回报 · 为什么风险大承诺回报高 / Risk & Return · Why Do Riskier Things Usually Promise More
 
 - `why-one-rate-moves-everything#ch13` → `risk-return`
+
+## 对未来的一个赌注，怎么可能有“公道价” / How Can a Bet on the Future Have a Fair Price? → 复利与贴现 · 时间是钱的形状 / Compound Interest & Discounting · Time Is the Shape of Money
+
+- `a-fair-price-for-a-bet` → `compound-interest`
+- `a-fair-price-for-a-bet#ch12` → `compound-interest`
+
+## 对未来的一个赌注，怎么可能有“公道价” / How Can a Bet on the Future Have a Fair Price? → 风险与回报 · 为什么风险大承诺回报高 / Risk & Return · Why Do Riskier Things Usually Promise More
+
+- `a-fair-price-for-a-bet#ch12` → `risk-return`
+
+## 对未来的一个赌注，怎么可能有“公道价” / How Can a Bet on the Future Have a Fair Price? → 每个月的房贷，钱到底还到哪儿去了 / Where Does Your Mortgage Payment Actually Go?
+
+- `a-fair-price-for-a-bet#ch12` → `where-a-mortgage-payment-goes`
 
 ## 核聚变为什么总是“还要三十年” / Why Fusion Is Always “Thirty Years Away” → 狭义相对论 · 同时性的线倾斜了 / Special Relativity · The Lines of “Now” Tilt
 

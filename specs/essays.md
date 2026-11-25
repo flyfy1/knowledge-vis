@@ -217,6 +217,7 @@ types ("为什么要打疫苗", "how does my phone know where I am"), not only t
 | how-chromium-renders-a-web-page | computing/software/how-chromium-renders-a-web-page/ | 11 (`#ch1…#ch11`) | computing | `ESSAY_BASE_URL` |
 | how-containers-isolate-a-process | computing/software/how-containers-isolate-a-process/ | 10 concepts in 11 chapters (`#ch1…#ch10`) | computing | `ESSAY_BASE_URL` |
 | how-llvm-compiles-your-code | computing/software/how-llvm-compiles-your-code/ | 10 concepts in 11 chapters (`#ch1…#ch10`) | computing | `ESSAY_BASE_URL` |
+| a-fair-price-for-a-bet | investment/derivatives/a-fair-price-for-a-bet/ | 12 concepts in 12 chapters (`#ch1…#ch11`; two at `#ch9`) | society (`--region society`, as the investment lessons) | `ESSAY_BASE_URL` |
 
 The eleven from 2026-11-11, the two food essays of 2026-11-12 and the five storage essays of 2026-11-14/15
 (what-a-drive-is-made-of, how-sata-works, how-sas-works, how-usb-drives-talk, storage-over-a-network) and the three bus essays of

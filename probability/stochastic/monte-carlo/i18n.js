@@ -161,15 +161,16 @@ const STR = {
     "site.bl.3": "<a href=\"../../../computing/ml/gradient-descent/\">梯度下降 · 摸黑下山</a>：<a href=\"../../../computing/ml/gradient-descent/#step4\">该课第 4 步</a> → <a href=\"#step2\">本页第 2 步</a>",
     "site.bl.4": "<a href=\"../../../computing/ml/llm-sampling/\">大语言模型如何逐词生成</a>：<a href=\"../../../computing/ml/llm-sampling/#step5\">该课第 5 步</a> → <a href=\"#step1\">本页第 1 步</a>",
     "site.bl.5": "<a href=\"../../../computing/ml/overfitting/\">过拟合</a>：<a href=\"../../../computing/ml/overfitting/#step5\">该课第 5 步</a> → <a href=\"#step2\">本页第 2 步</a>",
-    "site.bl.6": "<a href=\"../../../math/applied/auction-basics/\">拍卖 · 报价与真话</a>：<a href=\"../../../math/applied/auction-basics/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>",
-    "site.bl.7": "<a href=\"../../../math/arithmetic/fractions/\">分数 · 把整体切开来数</a>：<a href=\"../../../math/arithmetic/fractions/#step6\">该课第 6 步</a> → <a href=\"#step1\">本页第 1 步</a>",
-    "site.bl.8": "<a href=\"../../basics/expected-value/\">期望 · 彩票、骰子、保险放在同一台秤上</a>：<a href=\"../../basics/expected-value/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>",
-    "site.bl.9": "<a href=\"../../basics/probability-frequency/\">概率与频率 · 转得越多，越贴近概率</a>：<a href=\"../../basics/probability-frequency/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>",
-    "site.bl.10": "<a href=\"../../inference/bayes-updating/\">贝叶斯 · 先查底子，再看证据</a>：<a href=\"../../inference/bayes-updating/#step6\">该课第 6 步</a> → <a href=\"#step1\">本页第 1 步</a>",
-    "site.bl.11": "<a href=\"../../statistics/central-limit-theorem/\">中心极限定理 · 平均值总会变成钟形</a>：<a href=\"../../statistics/central-limit-theorem/#step3\">该课第 3 步</a> → <a href=\"#step2\">本页第 2 步</a>；<a href=\"../../statistics/central-limit-theorem/#step6\">该课第 6 步</a> → <a href=\"#step2\">本页第 2 步</a>",
-    "site.bl.12": "<a href=\"../bandit-arms/\">多臂老虎机 · 探索还是利用</a>：<a href=\"../bandit-arms/#step5\">该课第 5 步</a> → <a href=\"#step2\">本页第 2 步</a>",
-    "site.bl.13": "<a href=\"../poisson-process/\">泊松过程 · 随机到达的规律</a>：<a href=\"../poisson-process/#step5\">该课第 5 步</a> → <a href=\"#step1\">本页第 1 步</a>",
-    "site.bl.14": "<a href=\"../risk-pooling/\">风险池化与保险 · 一万人各摊一点</a>：<a href=\"../risk-pooling/#step5\">该课第 5 步</a> → <a href=\"#step2\">本页第 2 步</a>"
+    "site.bl.6": "<a href=\"../../../investment/derivatives/a-fair-price-for-a-bet/\">对未来的一个赌注，怎么可能有“公道价”</a>：<a href=\"../../../investment/derivatives/a-fair-price-for-a-bet/#ch5\">该文第 5 章</a>；<a href=\"../../../investment/derivatives/a-fair-price-for-a-bet/#ch12\">该文第 12 章</a>",
+    "site.bl.7": "<a href=\"../../../math/applied/auction-basics/\">拍卖 · 报价与真话</a>：<a href=\"../../../math/applied/auction-basics/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>",
+    "site.bl.8": "<a href=\"../../../math/arithmetic/fractions/\">分数 · 把整体切开来数</a>：<a href=\"../../../math/arithmetic/fractions/#step6\">该课第 6 步</a> → <a href=\"#step1\">本页第 1 步</a>",
+    "site.bl.9": "<a href=\"../../basics/expected-value/\">期望 · 彩票、骰子、保险放在同一台秤上</a>：<a href=\"../../basics/expected-value/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>",
+    "site.bl.10": "<a href=\"../../basics/probability-frequency/\">概率与频率 · 转得越多，越贴近概率</a>：<a href=\"../../basics/probability-frequency/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>",
+    "site.bl.11": "<a href=\"../../inference/bayes-updating/\">贝叶斯 · 先查底子，再看证据</a>：<a href=\"../../inference/bayes-updating/#step6\">该课第 6 步</a> → <a href=\"#step1\">本页第 1 步</a>",
+    "site.bl.12": "<a href=\"../../statistics/central-limit-theorem/\">中心极限定理 · 平均值总会变成钟形</a>：<a href=\"../../statistics/central-limit-theorem/#step3\">该课第 3 步</a> → <a href=\"#step2\">本页第 2 步</a>；<a href=\"../../statistics/central-limit-theorem/#step6\">该课第 6 步</a> → <a href=\"#step2\">本页第 2 步</a>",
+    "site.bl.13": "<a href=\"../bandit-arms/\">多臂老虎机 · 探索还是利用</a>：<a href=\"../bandit-arms/#step5\">该课第 5 步</a> → <a href=\"#step2\">本页第 2 步</a>",
+    "site.bl.14": "<a href=\"../poisson-process/\">泊松过程 · 随机到达的规律</a>：<a href=\"../poisson-process/#step5\">该课第 5 步</a> → <a href=\"#step1\">本页第 1 步</a>",
+    "site.bl.15": "<a href=\"../risk-pooling/\">风险池化与保险 · 一万人各摊一点</a>：<a href=\"../risk-pooling/#step5\">该课第 5 步</a> → <a href=\"#step2\">本页第 2 步</a>"
   },
   en: {
     back: "← Knowledge Index",
@@ -324,15 +325,16 @@ const STR = {
     "site.bl.3": "<a href=\"../../../computing/ml/gradient-descent/\">Gradient Descent · Feeling Your Way Downhill</a>: <a href=\"../../../computing/ml/gradient-descent/#step4\">its step 4</a> → <a href=\"#step2\">this page step 2</a>",
     "site.bl.4": "<a href=\"../../../computing/ml/llm-sampling/\">How an LLM Writes Word by Word</a>: <a href=\"../../../computing/ml/llm-sampling/#step5\">its step 5</a> → <a href=\"#step1\">this page step 1</a>",
     "site.bl.5": "<a href=\"../../../computing/ml/overfitting/\">Overfitting</a>: <a href=\"../../../computing/ml/overfitting/#step5\">its step 5</a> → <a href=\"#step2\">this page step 2</a>",
-    "site.bl.6": "<a href=\"../../../math/applied/auction-basics/\">Auctions · Bidding and Telling the Truth</a>: <a href=\"../../../math/applied/auction-basics/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>",
-    "site.bl.7": "<a href=\"../../../math/arithmetic/fractions/\">Fractions · Cutting the Whole to Count</a>: <a href=\"../../../math/arithmetic/fractions/#step6\">its step 6</a> → <a href=\"#step1\">this page step 1</a>",
-    "site.bl.8": "<a href=\"../../basics/expected-value/\">Expected Value · Lotteries, Dice and Insurance on One Scale</a>: <a href=\"../../basics/expected-value/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>",
-    "site.bl.9": "<a href=\"../../basics/probability-frequency/\">Probability & Frequency · The More Spins, the Closer to the Probability</a>: <a href=\"../../basics/probability-frequency/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>",
-    "site.bl.10": "<a href=\"../../inference/bayes-updating/\">Bayes · Check the Base Rate Before the Evidence</a>: <a href=\"../../inference/bayes-updating/#step6\">its step 6</a> → <a href=\"#step1\">this page step 1</a>",
-    "site.bl.11": "<a href=\"../../statistics/central-limit-theorem/\">Central Limit Theorem · Averages Always Turn Bell-Shaped</a>: <a href=\"../../statistics/central-limit-theorem/#step3\">its step 3</a> → <a href=\"#step2\">this page step 2</a>; <a href=\"../../statistics/central-limit-theorem/#step6\">its step 6</a> → <a href=\"#step2\">this page step 2</a>",
-    "site.bl.12": "<a href=\"../bandit-arms/\">Multi-Armed Bandits · Explore or Exploit</a>: <a href=\"../bandit-arms/#step5\">its step 5</a> → <a href=\"#step2\">this page step 2</a>",
-    "site.bl.13": "<a href=\"../poisson-process/\">The Poisson Process · The Pattern in Random Arrivals</a>: <a href=\"../poisson-process/#step5\">its step 5</a> → <a href=\"#step1\">this page step 1</a>",
-    "site.bl.14": "<a href=\"../risk-pooling/\">Risk Pooling & Insurance · Ten Thousand People Each Chip In</a>: <a href=\"../risk-pooling/#step5\">its step 5</a> → <a href=\"#step2\">this page step 2</a>"
+    "site.bl.6": "<a href=\"../../../investment/derivatives/a-fair-price-for-a-bet/\">How Can a Bet on the Future Have a Fair Price?</a>: <a href=\"../../../investment/derivatives/a-fair-price-for-a-bet/#ch5\">its chapter 5</a>; <a href=\"../../../investment/derivatives/a-fair-price-for-a-bet/#ch12\">its chapter 12</a>",
+    "site.bl.7": "<a href=\"../../../math/applied/auction-basics/\">Auctions · Bidding and Telling the Truth</a>: <a href=\"../../../math/applied/auction-basics/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>",
+    "site.bl.8": "<a href=\"../../../math/arithmetic/fractions/\">Fractions · Cutting the Whole to Count</a>: <a href=\"../../../math/arithmetic/fractions/#step6\">its step 6</a> → <a href=\"#step1\">this page step 1</a>",
+    "site.bl.9": "<a href=\"../../basics/expected-value/\">Expected Value · Lotteries, Dice and Insurance on One Scale</a>: <a href=\"../../basics/expected-value/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>",
+    "site.bl.10": "<a href=\"../../basics/probability-frequency/\">Probability & Frequency · The More Spins, the Closer to the Probability</a>: <a href=\"../../basics/probability-frequency/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>",
+    "site.bl.11": "<a href=\"../../inference/bayes-updating/\">Bayes · Check the Base Rate Before the Evidence</a>: <a href=\"../../inference/bayes-updating/#step6\">its step 6</a> → <a href=\"#step1\">this page step 1</a>",
+    "site.bl.12": "<a href=\"../../statistics/central-limit-theorem/\">Central Limit Theorem · Averages Always Turn Bell-Shaped</a>: <a href=\"../../statistics/central-limit-theorem/#step3\">its step 3</a> → <a href=\"#step2\">this page step 2</a>; <a href=\"../../statistics/central-limit-theorem/#step6\">its step 6</a> → <a href=\"#step2\">this page step 2</a>",
+    "site.bl.13": "<a href=\"../bandit-arms/\">Multi-Armed Bandits · Explore or Exploit</a>: <a href=\"../bandit-arms/#step5\">its step 5</a> → <a href=\"#step2\">this page step 2</a>",
+    "site.bl.14": "<a href=\"../poisson-process/\">The Poisson Process · The Pattern in Random Arrivals</a>: <a href=\"../poisson-process/#step5\">its step 5</a> → <a href=\"#step1\">this page step 1</a>",
+    "site.bl.15": "<a href=\"../risk-pooling/\">Risk Pooling & Insurance · Ten Thousand People Each Chip In</a>: <a href=\"../risk-pooling/#step5\">its step 5</a> → <a href=\"#step2\">this page step 2</a>"
   }
 };
 

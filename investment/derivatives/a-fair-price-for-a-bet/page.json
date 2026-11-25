@@ -1,10 +1,30 @@
 {
   "slug": "a-fair-price-for-a-bet",
   "kind": "essay",
+  "tags": [
+    {
+      "zh": "期权定价",
+      "en": "Option Pricing"
+    },
+    {
+      "zh": "布莱克–斯科尔斯",
+      "en": "Black–Scholes"
+    },
+    {
+      "zh": "衍生品",
+      "en": "Derivatives"
+    },
+    {
+      "zh": "长文",
+      "en": "Long-form Essay"
+    }
+  ],
   "category": "investment",
   "subtopic": "derivatives",
   "stage": "university",
+  "status": "live",
   "path": "investment/derivatives/a-fair-price-for-a-bet/",
+  "created": "2026-11-18",
   "layout": "essay",
   "scripts": [
     "data.js",
@@ -13,7 +33,7 @@
     "copy.en.js",
     "app.js"
   ],
-  "version": "20261125b",
+  "version": "20261125c",
   "provenanceNote": {
     "zh": "本文由 Claude Code（claude-fable-5-2）从零编写，直接用 Markdown 站点模板写成；英文稿由 Claude Code（Haiku）翻译；2026-11-25 由 Claude Code（claude-opus-5-5）收尾核对；同日由另一个 Claude Code（claude-opus-5-5）会话独立评审内容与来源。",
     "en": "This essay was written from scratch with Claude Code (claude-fable-5-2), directly in the Markdown site template; the English copy was translated with Claude Code (Haiku); closeout check on 2026-11-25 by Claude Code (claude-opus-5-5); independently reviewed for content and sources the same day by a separate Claude Code (claude-opus-5-5) session."

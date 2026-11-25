@@ -3858,6 +3858,20 @@
       "path": "computing/systems/how-to-crack-an-encrypted-image/index.html",
       "model": "gemini-4-neon",
       "thinking": "thinking unavailable"
+    },
+    "a-fair-price-for-a-bet": {
+      "developer": "Claude Code",
+      "edition": "claude-code-a-fair-price-for-a-bet-20261125",
+      "kind": "original",
+      "sourceRevision": "b5a862022f6f02009253c25eed22ac9a02f05cf5",
+      "scope": {
+        "zh": "整篇长文从零编写：远期价格与持有成本、期权收益与看涨–看跌平价、一步二叉树的复制与风险中性概率、CRR 二叉树与美式期权、几何布朗运动、布莱克–斯科尔斯公式与方程、希腊字母与 Delta 对冲、隐含波动率微笑与肥尾、赫斯顿随机波动率、保证金与中央清算、套期保值与基差风险、2026 年 11 月的衍生品市场前沿、读到衍生品时问的四件事",
+        "en": "Whole essay written from scratch: forward prices and cost of carry, option payoffs and put–call parity, one-step replication and risk-neutral probability, the CRR tree and American options, geometric Brownian motion, the Black–Scholes formula and equation, the Greeks and delta hedging, the implied-volatility smile and fat tails, Heston stochastic volatility, margin and central clearing, hedging and basis risk, the derivatives frontier in November 2026, four questions to ask about a derivative"
+      },
+      "originalAuthorship": "written from scratch in zh by Claude Code (claude-fable-5-2) directly in the Markdown site template, first committed 2026-11-18 as an unregistered draft (5c158c89); English copy translated by Claude Code (claude-haiku-5-5); closeout check on 2026-11-25 by Claude Code (claude-opus-5-5); independently reviewed the same day by a separate Claude Code session (claude-opus-5-5), see specs/reviews/a-fair-price-for-a-bet-review-20261125.md",
+      "path": "investment/derivatives/a-fair-price-for-a-bet/index.html",
+      "model": "claude-fable-5-2 (closeout: claude-opus-5-5; English: claude-haiku-5-5)",
+      "thinking": "thinking unavailable"
     }
   },
   "exceptions": {

@@ -97,7 +97,8 @@ const STR = {
     "site.crumb.cat": "投资",
     "site.crumb.sub": "入门",
     "site.bl.title": "被这些页面引用",
-    "site.bl.1": "<a href=\"../../atlas/\">投资知识地图</a>：→ <a href=\"#step5\">本页第 5 步</a>"
+    "site.bl.1": "<a href=\"../../atlas/\">投资知识地图</a>：→ <a href=\"#step5\">本页第 5 步</a>",
+    "site.bl.2": "<a href=\"../../derivatives/a-fair-price-for-a-bet/\">对未来的一个赌注，怎么可能有“公道价”</a>：<a href=\"../../derivatives/a-fair-price-for-a-bet/#ch8\">该文第 8 章</a>；<a href=\"../../derivatives/a-fair-price-for-a-bet/#ch12\">该文第 12 章</a>"
   },
   en: {
     back: "← Knowledge Index",
@@ -195,7 +196,8 @@ const STR = {
     "site.crumb.cat": "Investment",
     "site.crumb.sub": "Basics",
     "site.bl.title": "Linked from",
-    "site.bl.1": "<a href=\"../../atlas/\">Investment Atlas</a>: → <a href=\"#step5\">this page step 5</a>"
+    "site.bl.1": "<a href=\"../../atlas/\">Investment Atlas</a>: → <a href=\"#step5\">this page step 5</a>",
+    "site.bl.2": "<a href=\"../../derivatives/a-fair-price-for-a-bet/\">How Can a Bet on the Future Have a Fair Price?</a>: <a href=\"../../derivatives/a-fair-price-for-a-bet/#ch8\">its chapter 8</a>; <a href=\"../../derivatives/a-fair-price-for-a-bet/#ch12\">its chapter 12</a>"
   }
 };
 

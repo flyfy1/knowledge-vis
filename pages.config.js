@@ -131,7 +131,8 @@ window.KNOWLEDGE_SUBTOPICS = {
   ],
   "investment": [
     { id: "basics", name: { zh: "入门", en: "Basics" } },
-    { id: "rates", name: { zh: "利率与成本", en: "Rates & Costs" } }
+    { id: "rates", name: { zh: "利率与成本", en: "Rates & Costs" } },
+    { id: "derivatives", name: { zh: "衍生品", en: "Derivatives" } }
   ],
   "psychology": [
     { id: "cognition", name: { zh: "认知", en: "Cognition" } },
@@ -207,6 +208,7 @@ window.KNOWLEDGE_ESSAYS = [
   "how-chromium-renders-a-web-page",
   "how-containers-isolate-a-process",
   "how-llvm-compiles-your-code",
+  "a-fair-price-for-a-bet",
   "scarcity-moves"
 ];
 
@@ -2306,6 +2308,13 @@ window.KNOWLEDGE_PAGES = [
     desc: { zh: "从“明天的钱今天值多少”出发，一步步走到债券、收益率曲线、央行的准备金、泰勒规则、新凯恩斯模型、股票房价汇率、量化宽松和政府债务，最后是 2026 年底各大央行所处的位置与争论。十三个可以拖动的模型，八张示意图。", en: "Starting from “what tomorrow's money is worth today,” the essay walks through bonds, the yield curve, central-bank reserves, the Taylor rule, the New Keynesian model, stocks, houses, exchange rates, quantitative easing and government debt, and ends with where the major central banks stand at the end of 2026 and the debates still going on. Thirteen models you can drag, eight static diagrams." },
     tags: [{ zh: "货币政策", en: "Monetary Policy" }, { zh: "利率", en: "Interest Rates" }, { zh: "债券", en: "Bonds" }, { zh: "宏观经济", en: "Macroeconomics" }, { zh: "长文", en: "Long-form Essay" }],
     category: "economics", subtopic: "money", stage: "university", status: "live", path: "economics/money/why-one-rate-moves-everything/", created: "2026-11-18"
+  },
+  {
+    slug: "a-fair-price-for-a-bet",
+    title: { zh: "对未来的一个赌注，怎么可能有“公道价”", en: "How Can a Bet on the Future Have a Fair Price?" },
+    desc: { zh: "没人知道一年后的股价，期权却每天有成千上万笔按差不多的价格成交。这篇从“远期价不是预测”讲起，一步步走到二叉树、几何布朗运动、布莱克–斯科尔斯公式和它的偏微分方程、希腊字母与对冲，再看它在哪里失灵：波动率微笑、肥尾、保证金与清算，最后是 2026 年 11 月的市场现状。十三个可以动手的模型，只讲数学和市场结构，不是投资建议。", en: "Nobody knows next year's share price, yet options on it trade thousands of times a day at nearly the same price. This essay starts from \"a forward price is not a forecast\" and climbs through the binomial tree, geometric Brownian motion, the Black–Scholes formula and its partial differential equation, the Greeks and hedging, then shows where it fails: the volatility smile, fat tails, margin and clearing, and the state of the market in November 2026. Thirteen hands-on models. Mathematics and market structure only; not investment advice." },
+    tags: [{ zh: "期权定价", en: "Option Pricing" }, { zh: "布莱克–斯科尔斯", en: "Black–Scholes" }, { zh: "衍生品", en: "Derivatives" }, { zh: "长文", en: "Long-form Essay" }],
+    category: "investment", subtopic: "derivatives", stage: "university", status: "live", path: "investment/derivatives/a-fair-price-for-a-bet/", created: "2026-11-18"
   },
   {
     slug: "why-fusion-is-hard",

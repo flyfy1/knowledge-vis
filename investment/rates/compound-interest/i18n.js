@@ -94,8 +94,9 @@ const STR = {
     "site.bl.2": "<a href=\"../../../economics/money/where-money-comes-from/\">钱是从哪里来的</a>：→ <a href=\"#step3\">本页第 3 步</a>、<a href=\"#step5\">本页第 5 步</a>",
     "site.bl.3": "<a href=\"../../../economics/money/why-one-rate-moves-everything/\">央行调一个利率，为什么所有东西的价格都跟着动</a>：<a href=\"../../../economics/money/why-one-rate-moves-everything/#ch1\">该文第 1 章</a> → <a href=\"#step3\">本页第 3 步</a>；<a href=\"../../../economics/money/why-one-rate-moves-everything/#ch13\">该文第 13 章</a>",
     "site.bl.4": "<a href=\"../../basics/stocks-bonds/\">股票与债券 · 买到的到底是什么</a>：<a href=\"../../basics/stocks-bonds/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>",
-    "site.bl.5": "<a href=\"../fees-compounding/\">费率与复利 · 1% 的费率怎么吃掉回报</a>：<a href=\"../fees-compounding/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>",
-    "site.bl.6": "<a href=\"../interest-rates-bonds/\">利率与债券 · 利率升为什么债价跌</a>：<a href=\"../interest-rates-bonds/#step5\">该课第 5 步</a> → <a href=\"#step3\">本页第 3 步</a>"
+    "site.bl.5": "<a href=\"../../derivatives/a-fair-price-for-a-bet/\">对未来的一个赌注，怎么可能有“公道价”</a>：<a href=\"../../derivatives/a-fair-price-for-a-bet/#ch12\">该文第 12 章</a>",
+    "site.bl.6": "<a href=\"../fees-compounding/\">费率与复利 · 1% 的费率怎么吃掉回报</a>：<a href=\"../fees-compounding/#step5\">该课第 5 步</a> → <a href=\"#step0\">本页第 0 步</a>",
+    "site.bl.7": "<a href=\"../interest-rates-bonds/\">利率与债券 · 利率升为什么债价跌</a>：<a href=\"../interest-rates-bonds/#step5\">该课第 5 步</a> → <a href=\"#step3\">本页第 3 步</a>"
   },
   en: {
     back: "← Knowledge Index",
@@ -190,8 +191,9 @@ const STR = {
     "site.bl.2": "<a href=\"../../../economics/money/where-money-comes-from/\">Where Money Comes From</a>: → <a href=\"#step3\">this page step 3</a>, <a href=\"#step5\">this page step 5</a>",
     "site.bl.3": "<a href=\"../../../economics/money/why-one-rate-moves-everything/\">Why One Central-Bank Rate Moves the Price of Everything</a>: <a href=\"../../../economics/money/why-one-rate-moves-everything/#ch1\">its chapter 1</a> → <a href=\"#step3\">this page step 3</a>; <a href=\"../../../economics/money/why-one-rate-moves-everything/#ch13\">its chapter 13</a>",
     "site.bl.4": "<a href=\"../../basics/stocks-bonds/\">Stocks & Bonds · What Do You Actually Buy</a>: <a href=\"../../basics/stocks-bonds/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>",
-    "site.bl.5": "<a href=\"../fees-compounding/\">Fees & Compounding · How Does a 1% Fee Eat Returns</a>: <a href=\"../fees-compounding/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>",
-    "site.bl.6": "<a href=\"../interest-rates-bonds/\">Interest Rates & Bonds · Why Do Bond Prices Fall When Rates Rise</a>: <a href=\"../interest-rates-bonds/#step5\">its step 5</a> → <a href=\"#step3\">this page step 3</a>"
+    "site.bl.5": "<a href=\"../../derivatives/a-fair-price-for-a-bet/\">How Can a Bet on the Future Have a Fair Price?</a>: <a href=\"../../derivatives/a-fair-price-for-a-bet/#ch12\">its chapter 12</a>",
+    "site.bl.6": "<a href=\"../fees-compounding/\">Fees & Compounding · How Does a 1% Fee Eat Returns</a>: <a href=\"../fees-compounding/#step5\">its step 5</a> → <a href=\"#step0\">this page step 0</a>",
+    "site.bl.7": "<a href=\"../interest-rates-bonds/\">Interest Rates & Bonds · Why Do Bond Prices Fall When Rates Rise</a>: <a href=\"../interest-rates-bonds/#step5\">its step 5</a> → <a href=\"#step3\">this page step 3</a>"
   }
 };
 let currentLang = 'en';

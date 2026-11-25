@@ -2705,7 +2705,7 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 <!-- GENERATED:atlas-nodes -->
 ## 三、图谱节点索引（生成，勿手改）
 
-883 个概念 · 1029 条关系 · 11 个分区 · 由 scripts/build-atlas-data.cjs --concept-map 生成。节点排序与 data.js 一致（分区序、学段序、order、id）。
+903 个概念 · 1052 条关系 · 11 个分区 · 由 scripts/build-atlas-data.cjs --concept-map 生成。节点排序与 data.js 一致（分区序、学段序、order、id）。
 
 ### 01 数学基础 / Mathematical tools
 
@@ -3099,6 +3099,7 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 图算法 / Graph algorithms | ../computing/algorithms/graph-algorithms/#step1 | graph-algorithms#step1 |
 | 图形渲染管线 · 从坐标到像素 / The graphics pipeline · from coordinates to pixels | ../computing/graphics/computer-graphics/#step0 | computer-graphics#step0 |
 | 哈希 / Hashing | ../computing/algorithms/hashing/#step0 | hashing#step0 |
+| 混合加密容器与 PKCS#7 填充 / Hybrid Encrypted Container & PKCS#7 Padding | ../computing/systems/how-to-crack-an-encrypted-image/#ch1 | how-to-crack-an-encrypted-image |
 | 浮点数的三段位：符号、指数、尾数 / The three fields of a float: sign, exponent, significand | ../computing/systems/how-a-cpu-does-math/#ch1 | how-a-cpu-does-math |
 | 指令集架构：软件和硬件之间的合同 / The ISA: a contract between software and hardware | ../computing/systems/how-a-cpu-runs-a-program/#ch1 | how-a-cpu-runs-a-program |
 | 密钥分发问题 / The key-distribution problem | ../computing/systems/a-secret-in-public/#ch1 | a-secret-in-public |
@@ -3169,6 +3170,7 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | USB 由主机调度：微帧与批量传输上限 / USB Is Host-Scheduled: Microframes and the Bulk Ceiling | ../computing/systems/how-usb-drives-talk/#ch2 | how-usb-drives-talk |
 | USB4 路由器与隧道：4 字节包头 / USB4 Routers and Tunnels: the 4-Byte Header | ../computing/systems/how-thunderbolt-works/#ch2 | how-thunderbolt-works |
 | 指针标签、Smi 与指针压缩 / Pointer tagging, Smi & pointer compression | ../computing/software/how-v8-runs-javascript/#ch2 | how-v8-runs-javascript |
+| 异或自反性与魔数反推 / XOR Involution & Trailer Key Recovery | ../computing/systems/how-to-crack-an-encrypted-image/#ch2 | how-to-crack-an-encrypted-image |
 | 8b/10b 编码与逗号码 / 8b/10b Encoding and the Comma | ../computing/systems/how-sata-works/#ch3 | how-sata-works |
 | 几何体：顶点、索引和字节 / Geometry: vertices, indices and bytes | ../computing/software/how-threejs-draws-a-scene/#ch3 | how-threejs-draws-a-scene |
 | 相联度与三种缺失 / Associativity and the three kinds of miss | ../computing/systems/how-cpu-caches-work/#ch3 | how-cpu-caches-work |
@@ -3178,6 +3180,7 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | OverlayFS 的 Copy-Up 与白化删除 / OverlayFS copy-up and whiteout deletion | ../computing/software/how-containers-isolate-a-process/#ch3 | how-containers-isolate-a-process |
 | CXL 的三种协议和数据帧 / CXL's three protocols and flits | ../computing/systems/coherent-interconnects/#ch3 | coherent-interconnects |
 | 五个命令和时序：行命中、未命中、冲突 / Five commands and their timings: row hit, miss and conflict | ../computing/systems/how-memory-talks/#ch3 | how-memory-talks |
+| AES-ECB 与 CBC 的密文指纹 / AES-ECB vs CBC Ciphertext Fingerprints | ../computing/systems/how-to-crack-an-encrypted-image/#ch3 | how-to-crack-an-encrypted-image |
 | 纠缠与 CHSH 游戏 / Entanglement and the CHSH game | ../computing/quantum/what-quantum-computers-do/#ch3 | what-quantum-computers-do |
 | 快权重联想记忆与容量上限 / Fast-Weight Memory & Rank Capacity | ../computing/ml/how-hybrid-attention-remembers/#ch3 | how-hybrid-attention-remembers |
 | Git Tree 快照与 Merkle 子树共享 / Git tree snapshots and Merkle subtree sharing | ../computing/software/how-git-stores-history/#ch3 | how-git-stores-history |
@@ -3220,6 +3223,7 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 光纤通道的缓冲区信用与距离 / Fibre Channel buffer-to-buffer credits and distance | ../computing/systems/storage-over-a-network/#ch4 | storage-over-a-network |
 | Commit 对象与不可变提交有向无环图 / Commit objects and the immutable DAG | ../computing/software/how-git-stores-history/#ch4 | how-git-stores-history |
 | 硬件信任根：CPU 之前先醒的安全芯片 / Hardware root of trust: the security processor that wakes first | ../computing/systems/how-a-computer-boots/#ch4 | how-a-computer-boots |
+| 已知明文校验与碰撞概率 / Known-Plaintext Oracle & Collision Probability | ../computing/systems/how-to-crack-an-encrypted-image/#ch4 | how-to-crack-an-encrypted-image |
 | Pass 管线与不动点迭代化简 / Optimization pass pipeline & fixed-point iteration | ../computing/software/how-llvm-compiles-your-code/#ch4 | how-llvm-compiles-your-code |
 | 内存墙与利特尔法则 / The Memory Wall and Little's Law | ../computing/systems/why-compute-waits-for-memory/#ch4 | why-compute-waits-for-memory |
 | 设备寄存器：物理地址上的一段「假内存」 / Device registers: a stretch of pretend memory | ../computing/systems/how-the-os-talks-to-hardware/#ch4 | how-the-os-talks-to-hardware |
@@ -3258,6 +3262,7 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 64 字节一次突发与 DDR5 子通道 / 64-byte bursts and DDR5 subchannels | ../computing/systems/how-memory-talks/#ch5 | how-memory-talks |
 | 德意志–约萨算法 / The Deutsch–Jozsa algorithm | ../computing/quantum/what-quantum-computers-do/#ch5 | what-quantum-computers-do |
 | 显示引擎、合成器与颜色管线 / Display engine, compositor and colour pipeline | ../computing/systems/how-pixels-reach-a-screen/#ch5 | how-pixels-reach-a-screen |
+| 进程内存扫描与瞬时密钥窗口 / Process Memory Scanning & Ephemeral Key Windows | ../computing/systems/how-to-crack-an-encrypted-image/#ch5 | how-to-crack-an-encrypted-image |
 | 闪存为什么会坏：擦写次数、纠错码、TBW 与 DWPD / Why flash wears out: P/E cycles, ECC, TBW and DWPD | ../computing/systems/what-a-drive-is-made-of/#ch5 | what-a-drive-is-made-of |
 | 视锥体剔除和渲染顺序 / Frustum culling and render order | ../computing/software/how-threejs-draws-a-scene/#ch5 | how-threejs-draws-a-scene |
 | Gated DeltaNet 与选择性遗忘门 / Gated DeltaNet & Selective Decay | ../computing/ml/how-hybrid-attention-remembers/#ch5 | how-hybrid-attention-remembers |
@@ -3283,6 +3288,7 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | UASP：四条管道、标签和 USB 3 的流 / UASP: Four Pipes, Tags and USB 3 Streams | ../computing/systems/how-usb-drives-talk/#ch5 | how-usb-drives-talk |
 | 80 Gb/s 怎么来：PAM3 与 3+1 非对称 / Where 80 Gb/s Comes From: PAM3 and 3+1 | ../computing/systems/how-thunderbolt-works/#ch5 | how-thunderbolt-works |
 | Ignition 累加器字节码与 FeedbackVector / Ignition accumulator bytecode & FeedbackVector | ../computing/software/how-v8-runs-javascript/#ch5 | how-v8-runs-javascript |
+| ARM64 调用约定与断点排查 / ARM64 Calling Convention & Breakpoint Triage | ../computing/systems/how-to-crack-an-encrypted-image/#ch6 | how-to-crack-an-encrypted-image |
 | 原子指令：LOCK、CAS、LL/SC 与 LSE / Atomic instructions: LOCK, CAS, LL/SC and LSE | ../computing/systems/how-cores-share-memory/#ch6 | how-cores-share-memory |
 | bank 组与 tCCD_L / Bank groups and tCCD_L | ../computing/systems/how-memory-talks/#ch6 | how-memory-talks |
 | 三级各管什么：包含、排他与共享 L3 / What each level does: inclusive, exclusive and the shared L3 | ../computing/systems/how-cpu-caches-work/#ch6 | how-cpu-caches-work |
@@ -3321,6 +3327,7 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | UEFI 的阶段与 ACPI 表 / UEFI phases and the ACPI tables | ../computing/systems/how-a-computer-boots/#ch6 | how-a-computer-boots |
 | 桥接芯片：SCSI 翻译与链条上的瓶颈 / The Bridge Chip: SCSI Translation and the Bottleneck | ../computing/systems/how-usb-drives-talk/#ch6 | how-usb-drives-talk |
 | 投机优化、OSR 与去优化退回 / Speculative optimization, OSR & deoptimization bailout | ../computing/software/how-v8-runs-javascript/#ch6 | how-v8-runs-javascript |
+| ARM64 ADRP 相对寻址与 ASLR / ARM64 ADRP Addressing & ASLR | ../computing/systems/how-to-crack-an-encrypted-image/#ch7 | how-to-crack-an-encrypted-image |
 | 背向作废：几台主机共用一行 / Back-invalidate: several hosts sharing one line | ../computing/systems/coherent-interconnects/#ch7 | coherent-interconnects |
 | 签名、证书链与 TLS 握手 / Signatures, certificate chains and the TLS handshake | ../computing/systems/a-secret-in-public/#ch6 | a-secret-in-public |
 | TileManager 分块光栅化、双缓冲树与棋盘格 / TileManager tiling, OOP-R raster & checkerboarding | ../computing/software/how-chromium-renders-a-web-page/#ch7 | how-chromium-renders-a-web-page |
@@ -3372,6 +3379,7 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | Packfile 增量压缩与 .idx 扇出索引 / Packfile delta compression and .idx fanout | ../computing/software/how-git-stores-history/#ch8 | how-git-stores-history |
 | 屋顶线下的长上下文吐字加速 / Roofline Decode Speedup at Long Context | ../computing/ml/how-hybrid-attention-remembers/#ch8 | how-hybrid-attention-remembers |
 | 到今天还共用的小总线：I²C 和上拉电阻 / The Small Buses Still Shared Today: I²C and Pull-up Resistors | ../computing/systems/how-a-computer-is-wired/#ch8 | how-a-computer-is-wired |
+| sret 返回指针与 libc++ std::string 布局 / sret Return Pointer & libc++ std::string Layout | ../computing/systems/how-to-crack-an-encrypted-image/#ch8 | how-to-crack-an-encrypted-image |
 | 大模型推理的内存瓶颈 / Why LLM Inference Is Memory-Bound | ../computing/systems/why-compute-waits-for-memory/#ch8 | why-compute-waits-for-memory |
 | 活跃度分析、干涉图着色与寄存器溢出 / Liveness analysis, graph coloring & register spilling | ../computing/software/how-llvm-compiles-your-code/#ch8 | how-llvm-compiles-your-code |
 | 微调、RLHF 与 LoRA / Fine-tuning, RLHF and LoRA | ../computing/ml/what-a-frontier-model-takes/#ch7 | what-a-frontier-model-takes |
@@ -3576,6 +3584,7 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 拿到贷款合同时能自己算的事 / What you can work out from a loan contract | ../economics/money/where-a-mortgage-payment-goes/#ch9 | where-a-mortgage-payment-goes |
 | 孔多塞陪审团定理 / Condorcet's jury theorem | ../society/civics/same-votes-different-winner/#ch9 | same-votes-different-winner |
 | 怎样读“这个制度很公平” / How to read a claim that a system is fair | ../society/civics/same-votes-different-winner/#ch10 | same-votes-different-winner |
+| 远期价格与持有成本 / Forward price and cost of carry | ../investment/derivatives/a-fair-price-for-a-bet/#ch1 | a-fair-price-for-a-bet |
 | 博弈论 / Game theory | ../math/applied/game-theory/#step0 | game-theory#step0 |
 | GDP 三面等价与增加值 / GDP Three Ways & Value Added | ../economics/macro/how-an-economy-is-measured/#ch1 | how-an-economy-is-measured |
 | 机制设计与拍卖 · 报价如何改变结果 / Mechanism Design & Auctions · How Bids Change Outcomes | ../math/applied/mechanism-design/#s1 | mechanism-design |
@@ -3584,35 +3593,46 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 供需均衡 / Supply & demand equilibrium | ../math/applied/supply-demand/#step0 | supply-demand#step0 |
 | 债券久期与凸性 / Bond duration and convexity | ../economics/money/why-one-rate-moves-everything/#ch2 | why-one-rate-moves-everything |
 | 边际：再多一点值不值 / The margin: is one more step worth it? | ../demos/scarcity-moves/#c2 | scarcity-moves |
+| 期权收益与看涨–看跌平价 / Option payoffs and put–call parity | ../investment/derivatives/a-fair-price-for-a-bet/#ch2 | a-fair-price-for-a-bet |
 | 名义与实际、链式费雪指数与替代偏差 / Nominal vs Real, Chained Fisher & Substitution Bias | ../economics/macro/how-an-economy-is-measured/#ch2 | how-an-economy-is-measured |
+| 一步二叉树：复制与风险中性概率 / One-step binomial: replication and risk-neutral probability | ../investment/derivatives/a-fair-price-for-a-bet/#ch3 | a-fair-price-for-a-bet |
 | CPI 权重、等价租金 OER 与质量调整 / CPI Weights, Owners' Equivalent Rent & Hedonic Adjustment | ../economics/macro/how-an-economy-is-measured/#ch3 | how-an-economy-is-measured |
 | 沉没成本 / Sunk cost | ../demos/scarcity-moves/#c2 | scarcity-moves |
 | 收益率曲线、即期利率与远期利率 / Yield curve, spot and forward rates | ../economics/money/why-one-rate-moves-everything/#ch3 | why-one-rate-moves-everything |
 | 交换与比较优势 / Trade and comparative advantage | ../demos/scarcity-moves/#c3 | scarcity-moves |
+| CRR 二叉树与美式期权 / The CRR binomial tree and American options | ../investment/derivatives/a-fair-price-for-a-bet/#ch4 | a-fair-price-for-a-bet |
 | 折年率、基数效应、季节调整与数据修订 / Annualised Rates, Base Effects, Seasonal Adjustment & Revisions | ../economics/macro/how-an-economy-is-measured/#ch4 | how-an-economy-is-measured |
 | 预期假说、期限溢价与收益率曲线倒挂 / Expectations, term premium and yield-curve inversion | ../economics/money/why-one-rate-moves-everything/#ch4 | why-one-rate-moves-everything |
+| 几何布朗运动与波动率 / Geometric Brownian motion and volatility | ../investment/derivatives/a-fair-price-for-a-bet/#ch5 | a-fair-price-for-a-bet |
 | 购买力平价 PPP、均值与中位数及基尼系数 / Purchasing Power Parity, Mean vs Median & Gini Coefficient | ../economics/macro/how-an-economy-is-measured/#ch5 | how-an-economy-is-measured |
 | 价格是一条信息 / Price is a piece of information | ../demos/scarcity-moves/#c4 | scarcity-moves |
 | 准备金、利率走廊与地板体系 / Reserves, the corridor and the floor system | ../economics/money/why-one-rate-moves-everything/#ch5 | why-one-rate-moves-everything |
+| 布莱克–斯科尔斯公式与方程 / The Black–Scholes formula and equation | ../investment/derivatives/a-fair-price-for-a-bet/#ch6 | a-fair-price-for-a-bet |
 | 激励 / Incentives | ../demos/scarcity-moves/#c5 | scarcity-moves |
 | U-3 与 U-6 失业率、贝弗里奇曲线与奥肯定律 / U-3 vs U-6 Unemployment, Beveridge Curve & Okun's Law | ../economics/macro/how-an-economy-is-measured/#ch6 | how-an-economy-is-measured |
 | 泰勒规则与自然利率 r* / The Taylor rule and the neutral rate r* | ../economics/money/why-one-rate-moves-everything/#ch6 | why-one-rate-moves-everything |
 | 经济周期、潜在产出与萨姆规则 / Business Cycles, Potential Output & the Sahm Rule | ../economics/macro/how-an-economy-is-measured/#ch7 | how-an-economy-is-measured |
+| 希腊字母与 Delta 对冲 / The Greeks and delta hedging | ../investment/derivatives/a-fair-price-for-a-bet/#ch7 | a-fair-price-for-a-bet |
 | 市场会失灵 / Markets can fail | ../demos/scarcity-moves/#c6 | scarcity-moves |
 | 新凯恩斯模型与菲利普斯曲线 / The New Keynesian model and the Phillips curve | ../economics/money/why-one-rate-moves-everything/#ch7 | why-one-rate-moves-everything |
 | 股票久期与房贷可负担性 / Equity duration and mortgage affordability | ../economics/money/why-one-rate-moves-everything/#ch8 | why-one-rate-moves-everything |
 | 增长来自思想 / Growth comes from ideas | ../demos/scarcity-moves/#c7 | scarcity-moves |
+| 隐含波动率、微笑与肥尾 / Implied volatility, the smile and fat tails | ../investment/derivatives/a-fair-price-for-a-bet/#ch8 | a-fair-price-for-a-bet |
 | 索洛增长核算与全要素生产率（TFP） / Solow Growth Accounting & Total Factor Productivity | ../economics/macro/how-an-economy-is-measured/#ch8 | how-an-economy-is-measured |
 | GDP 之外：家务、折旧、灾难悖论与卫星账户 / Beyond GDP: Home Production, Depreciation & Disaster Paradox | ../economics/macro/how-an-economy-is-measured/#ch9 | how-an-economy-is-measured |
+| 赫斯顿随机波动率模型 / The Heston stochastic volatility model | ../investment/derivatives/a-fair-price-for-a-bet/#ch9 | a-fair-price-for-a-bet |
 | 利率平价与套利交易 / Interest parity and the carry trade | ../economics/money/why-one-rate-moves-everything/#ch9 | why-one-rate-moves-everything |
 | 你的支出是别人的收入 / Your spending is someone else's income | ../demos/scarcity-moves/#c8 | scarcity-moves |
 | 前沿测量：免费数字品、GDP-B、2025 SNA 与实时预测 / Measurement Frontier: Free Digital Goods, GDP-B, 2025 SNA & Nowcasting | ../economics/macro/how-an-economy-is-measured/#ch10 | how-an-economy-is-measured |
 | 收入流向稀缺的一方 / Income flows to the scarce | ../demos/scarcity-moves/#c9 | scarcity-moves |
+| 保证金、杠杆与中央清算 / Margin, leverage and central clearing | ../investment/derivatives/a-fair-price-for-a-bet/#ch9 | a-fair-price-for-a-bet |
 | 零利率下限、前瞻指引与量化宽松 / Zero lower bound, forward guidance and QE | ../economics/money/why-one-rate-moves-everything/#ch10 | why-one-rate-moves-everything |
 | 政府债务动态与 r − g / Government debt dynamics and r − g | ../economics/money/why-one-rate-moves-everything/#ch11 | why-one-rate-moves-everything |
+| 套期保值、基差风险与名义本金 / Hedging, basis risk and notional amounts | ../investment/derivatives/a-fair-price-for-a-bet/#ch10 | a-fair-price-for-a-bet |
 | 制度与信任 / Institutions and trust | ../demos/scarcity-moves/#c10 | scarcity-moves |
 | AI：思考的价格崩塌 / AI: the price of thinking collapses | ../demos/scarcity-moves/#c11 | scarcity-moves |
 | 2026 年底的主要央行与仍在争论的问题 / Major central banks in late 2026 and the open debates | ../economics/money/why-one-rate-moves-everything/#ch12 | why-one-rate-moves-everything |
+| 衍生品市场的前沿（2026 年 11 月） / The frontier of derivatives markets (November 2026) | ../investment/derivatives/a-fair-price-for-a-bet/#ch11 | a-fair-price-for-a-bet |
 | 工作与工资：AI 替代的是任务 / Work and wages: AI replaces tasks | ../demos/scarcity-moves/#c12 | scarcity-moves |
 | 什么变便宜，什么变贵 / What gets cheaper, what gets dearer | ../demos/scarcity-moves/#c13 | scarcity-moves |
 | AI 之后的整体预言 / A forecast for after AI | ../demos/scarcity-moves/#c14 | scarcity-moves |
@@ -3650,7 +3670,7 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 <!-- GENERATED:registry-concepts -->
 ## 页面 → 概念 → 锚点（生成，勿手改）
 
-263 个页面拥有 888 个图谱概念 · 由 scripts/build-registry.cjs 从 site-registry.json 生成（概念 = atlas/data.js 里 primary 课程是该页的节点；顺序同首页登记顺序）。登记或改动页面后重跑 `node scripts/build-registry.cjs`；不要再在本文件里手写逐页概念表（2026-11-16 起，上面的手写表保留为历史记录）。
+264 个页面拥有 900 个图谱概念 · 由 scripts/build-registry.cjs 从 site-registry.json 生成（概念 = atlas/data.js 里 primary 课程是该页的节点；顺序同首页登记顺序）。登记或改动页面后重跑 `node scripts/build-registry.cjs`；不要再在本文件里手写逐页概念表（2026-11-16 起，上面的手写表保留为历史记录）。
 
 ### 冰冻肥皂泡 · 水膜里的结晶 / Frozen Soap Bubbles · Ice in a Thin Film
 
@@ -6344,6 +6364,25 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 零利率下限、前瞻指引与量化宽松 / Zero lower bound, forward guidance and QE | `economics/money/why-one-rate-moves-everything/#ch10` |
 | 政府债务动态与 r − g / Government debt dynamics and r − g | `economics/money/why-one-rate-moves-everything/#ch11` |
 | 2026 年底的主要央行与仍在争论的问题 / Major central banks in late 2026 and the open debates | `economics/money/why-one-rate-moves-everything/#ch12` |
+
+### 对未来的一个赌注，怎么可能有“公道价” / How Can a Bet on the Future Have a Fair Price?
+
+`investment/derivatives/a-fair-price-for-a-bet/` · essay
+
+| 概念 | 深链 |
+| --- | --- |
+| 远期价格与持有成本 / Forward price and cost of carry | `investment/derivatives/a-fair-price-for-a-bet/#ch1` |
+| 期权收益与看涨–看跌平价 / Option payoffs and put–call parity | `investment/derivatives/a-fair-price-for-a-bet/#ch2` |
+| 一步二叉树：复制与风险中性概率 / One-step binomial: replication and risk-neutral probability | `investment/derivatives/a-fair-price-for-a-bet/#ch3` |
+| CRR 二叉树与美式期权 / The CRR binomial tree and American options | `investment/derivatives/a-fair-price-for-a-bet/#ch4` |
+| 几何布朗运动与波动率 / Geometric Brownian motion and volatility | `investment/derivatives/a-fair-price-for-a-bet/#ch5` |
+| 布莱克–斯科尔斯公式与方程 / The Black–Scholes formula and equation | `investment/derivatives/a-fair-price-for-a-bet/#ch6` |
+| 希腊字母与 Delta 对冲 / The Greeks and delta hedging | `investment/derivatives/a-fair-price-for-a-bet/#ch7` |
+| 隐含波动率、微笑与肥尾 / Implied volatility, the smile and fat tails | `investment/derivatives/a-fair-price-for-a-bet/#ch8` |
+| 赫斯顿随机波动率模型 / The Heston stochastic volatility model | `investment/derivatives/a-fair-price-for-a-bet/#ch9` |
+| 保证金、杠杆与中央清算 / Margin, leverage and central clearing | `investment/derivatives/a-fair-price-for-a-bet/#ch9` |
+| 套期保值、基差风险与名义本金 / Hedging, basis risk and notional amounts | `investment/derivatives/a-fair-price-for-a-bet/#ch10` |
+| 衍生品市场的前沿（2026 年 11 月） / The frontier of derivatives markets (November 2026) | `investment/derivatives/a-fair-price-for-a-bet/#ch11` |
 
 ### 核聚变为什么总是“还要三十年” / Why Fusion Is Always “Thirty Years Away”
 

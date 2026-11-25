@@ -308,7 +308,10 @@ const near = (name, got, want, tol) => ok(name, Math.abs(got - want) <= tol, `go
   for (const k of Object.keys(M.STRATS)) if (pj.dynamicKeys['ch2.say'].includes(k)) ok('strategy has a radio: ' + k, html.includes(`name="c2St" value="${k}"`));
   const code = s => s.replace(/\/\*[\s\S]*?\*\//g, '').replace(/(^|[^:'"])\/\/.*$/gm, '$1');
   for (const fn of ['app.js', 'models.js', 'bindings.cjs']) ok(fn + ': no CJK outside comments', !/[　-〿㐀-鿿＀-￯]/.test(code(fs.readFileSync(path.join(DIR, fn), 'utf8'))));
-  ok('page.json: English not declared as a stub, and not registered (status draft or absent)', !(pj.languages && pj.languages.en === 'stub') && (pj.status == null || pj.status === 'draft'));
+  ok('page.json: English not declared as a stub', !(pj.languages && pj.languages.en === 'stub'));
+  // registered 2026-11-25 (page.json carries the registry fields; no "order", so it sorts after every registered page)
+  check('page.json registry fields', ['category', 'subtopic', 'stage', 'status', 'path', 'order'].map(k => pj[k]).join(), 'investment,derivatives,university,live,investment/derivatives/a-fair-price-for-a-bet/,');
+  check('exactly one provenance label', (html.match(/<details class="page-provenance"/g) || []).length, 1);
   const R = JSON.parse(fs.readFileSync(path.join(DIR, 'REGISTRY.json'), 'utf8'));
   check('registry title = hero heading', R.title.zh, Z['hero.title'] || Z['hero.h1'] || (html.match(/<h1[^>]*>([^<]*)<\/h1>/) || [])[1]);
   check('registry desc = page desc', R.desc.zh, Z['doc.desc']);

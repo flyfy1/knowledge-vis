@@ -526,6 +526,7 @@ window.ESSAY_COPY.zh = {
   "site.crumb.aria": "页面位置",
   "site.crumb.home": "首页",
   "site.crumb.cat": "投资",
+  "site.crumb.sub": "衍生品",
   "site.rel.title": "相关页面",
   "site.rel.1": "<a href=\"../../../variants/claude-code/compound-interest/\">复利与贴现 · 时间是钱的形状</a>",
   "site.rel.2": "<a href=\"../../../variants/claude-code/expected-value/\">期望 · 彩票、骰子、保险放在同一台秤上</a>",

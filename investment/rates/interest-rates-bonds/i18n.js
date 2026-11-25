@@ -94,7 +94,8 @@ const STR = {
     "site.bl.2": "<a href=\"../../../economics/money/where-money-comes-from/\">钱是从哪里来的</a>：→ <a href=\"#step3\">本页第 3 步</a>",
     "site.bl.3": "<a href=\"../../../economics/money/why-one-rate-moves-everything/\">央行调一个利率，为什么所有东西的价格都跟着动</a>：<a href=\"../../../economics/money/why-one-rate-moves-everything/#ch2\">该文第 2 章</a> → <a href=\"#step4\">本页第 4 步</a>；<a href=\"../../../economics/money/why-one-rate-moves-everything/#ch13\">该文第 13 章</a>",
     "site.bl.4": "<a href=\"../../atlas/\">投资知识地图</a>：→ <a href=\"#step5\">本页第 5 步</a>",
-    "site.bl.5": "<a href=\"../fees-compounding/\">费率与复利 · 1% 的费率怎么吃掉回报</a>：<a href=\"../fees-compounding/#step5\">该课第 5 步</a> → <a href=\"#step1\">本页第 1 步</a>"
+    "site.bl.5": "<a href=\"../../derivatives/a-fair-price-for-a-bet/\">对未来的一个赌注，怎么可能有“公道价”</a>：<a href=\"../../derivatives/a-fair-price-for-a-bet/#ch8\">该文第 8 章</a>；<a href=\"../../derivatives/a-fair-price-for-a-bet/#ch12\">该文第 12 章</a>",
+    "site.bl.6": "<a href=\"../fees-compounding/\">费率与复利 · 1% 的费率怎么吃掉回报</a>：<a href=\"../fees-compounding/#step5\">该课第 5 步</a> → <a href=\"#step1\">本页第 1 步</a>"
   },
   en: {
     back: "← Knowledge Index",
@@ -189,7 +190,8 @@ const STR = {
     "site.bl.2": "<a href=\"../../../economics/money/where-money-comes-from/\">Where Money Comes From</a>: → <a href=\"#step3\">this page step 3</a>",
     "site.bl.3": "<a href=\"../../../economics/money/why-one-rate-moves-everything/\">Why One Central-Bank Rate Moves the Price of Everything</a>: <a href=\"../../../economics/money/why-one-rate-moves-everything/#ch2\">its chapter 2</a> → <a href=\"#step4\">this page step 4</a>; <a href=\"../../../economics/money/why-one-rate-moves-everything/#ch13\">its chapter 13</a>",
     "site.bl.4": "<a href=\"../../atlas/\">Investment Atlas</a>: → <a href=\"#step5\">this page step 5</a>",
-    "site.bl.5": "<a href=\"../fees-compounding/\">Fees & Compounding · How Does a 1% Fee Eat Returns</a>: <a href=\"../fees-compounding/#step5\">its step 5</a> → <a href=\"#step1\">this page step 1</a>"
+    "site.bl.5": "<a href=\"../../derivatives/a-fair-price-for-a-bet/\">How Can a Bet on the Future Have a Fair Price?</a>: <a href=\"../../derivatives/a-fair-price-for-a-bet/#ch8\">its chapter 8</a>; <a href=\"../../derivatives/a-fair-price-for-a-bet/#ch12\">its chapter 12</a>",
+    "site.bl.6": "<a href=\"../fees-compounding/\">Fees & Compounding · How Does a 1% Fee Eat Returns</a>: <a href=\"../fees-compounding/#step5\">its step 5</a> → <a href=\"#step1\">this page step 1</a>"
   }
 };
 

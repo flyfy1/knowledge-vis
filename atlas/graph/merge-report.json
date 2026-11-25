@@ -1,11 +1,11 @@
 {
   "counts": {
     "groups": 11,
-    "nodes": 891,
-    "edges": 1029,
+    "nodes": 903,
+    "edges": 1052,
     "trails": 14,
     "questions": 124,
-    "fragments": 234
+    "fragments": 235
   },
   "conflicts": [],
   "suspendedEdges": [],
@@ -54,6 +54,84 @@
     }
   ],
   "edgeCandidates": [
+    {
+      "concept": "forward-price-cost-of-carry",
+      "page": "compound-interest",
+      "taughtBy": [
+        "compound-interest"
+      ]
+    },
+    {
+      "concept": "binomial-replication-risk-neutral",
+      "page": "expected-value",
+      "taughtBy": [
+        "expected-value"
+      ]
+    },
+    {
+      "concept": "geometric-brownian-motion",
+      "page": "binomial-normal",
+      "taughtBy": [
+        "binomial-normal"
+      ]
+    },
+    {
+      "concept": "geometric-brownian-motion",
+      "page": "central-limit-theorem",
+      "taughtBy": [
+        "gaussian",
+        "variance"
+      ]
+    },
+    {
+      "concept": "geometric-brownian-motion",
+      "page": "monte-carlo",
+      "taughtBy": [
+        "montecarlo"
+      ]
+    },
+    {
+      "concept": "black-scholes-formula-pde",
+      "page": "derivative",
+      "taughtBy": [
+        "derivative"
+      ]
+    },
+    {
+      "concept": "implied-volatility-smile-fat-tails",
+      "page": "diversification",
+      "taughtBy": [
+        "diversification"
+      ]
+    },
+    {
+      "concept": "heston-stochastic-volatility",
+      "page": "monte-carlo",
+      "taughtBy": [
+        "montecarlo"
+      ]
+    },
+    {
+      "concept": "hedging-basis-risk-notional",
+      "page": "risk-return",
+      "taughtBy": [
+        "risk-return"
+      ]
+    },
+    {
+      "concept": "hedging-basis-risk-notional",
+      "page": "diversification",
+      "taughtBy": [
+        "diversification"
+      ]
+    },
+    {
+      "concept": "derivatives-frontier-2026",
+      "page": "interest-rates-bonds",
+      "taughtBy": [
+        "interest-rates-bonds"
+      ]
+    },
     {
       "concept": "key-distribution-problem",
       "page": "number-combinatorics",
@@ -4758,13 +4836,13 @@
     }
   ],
   "unknownAliasIds": [],
-  "sizeBytes": 1505025,
+  "sizeBytes": 1533006,
   "questionsBytes": 173006,
-  "combinedBytes": 1678031,
-  "indexBytes": 115425,
+  "combinedBytes": 1706012,
+  "indexBytes": 116838,
   "chunkBytes": {
     "math.nodes": 51664,
-    "math.edges": 90019,
+    "math.edges": 91481,
     "math.questions": 36438,
     "waves.nodes": 45855,
     "waves.edges": 63594,
@@ -4776,7 +4854,7 @@
     "systems.edges": 43469,
     "systems.questions": 21577,
     "measurement.nodes": 35675,
-    "measurement.edges": 63643,
+    "measurement.edges": 65742,
     "measurement.questions": 30126,
     "matter.nodes": 52717,
     "matter.edges": 19493,
@@ -4790,8 +4868,8 @@
     "computing.nodes": 389826,
     "computing.edges": 242924,
     "computing.questions": 2766,
-    "society.nodes": 67881,
-    "society.edges": 41022,
+    "society.nodes": 80301,
+    "society.edges": 52886,
     "society.questions": 3743,
     "tech.nodes": 16930,
     "tech.edges": 12509,

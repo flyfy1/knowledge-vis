@@ -147,12 +147,13 @@
 
 <header class="hero">
   <div class="wrap">
-    <nav class="site-nav" data-no-autolink data-i18n-aria="site.crumb.aria" aria-label="页面位置"><ol><li><a href="../../../" data-crumb="home" data-i18n="site.crumb.home">首页</a></li><li><a href="../../../?category=investment" data-crumb="cat" data-i18n="site.crumb.cat">投资</a></li></ol></nav>
+    <nav class="site-nav" data-no-autolink data-i18n-aria="site.crumb.aria" aria-label="页面位置"><ol><li><a href="../../../" data-crumb="home" data-i18n="site.crumb.home">首页</a></li><li><a href="../../../?category=investment" data-crumb="cat" data-i18n="site.crumb.cat">投资</a></li><li><a href="../../../?category=investment&amp;subtopic=derivatives" data-crumb="sub" data-i18n="site.crumb.sub">衍生品</a></li></ol></nav>
     <div class="kicker" data-i18n="hero.kicker">投资 · 衍生品 · 一篇可以动手的长文</div>
     <h1 data-i18n="hero.title">对未来的一个赌注，怎么可能有“公道价”</h1>
     <p class="sub" data-i18n-html="hero.sub">没人知道一年后的股价。<br>可是押在它上面的期权，每天按几乎一样的价格成交成千上万笔。</p>
     <p class="lead" data-i18n-html="hero.lead">你和朋友打赌明年某只股票会不会涨过 100 元。你觉得八成会，他觉得只有三成。两个人对未来的看法差这么远，这个赌注值多少钱，好像只能各说各的。可在期权市场上，同一份这样的合约，看涨的人和看跌的人报出的价格几乎一样，差别只有几分钱。这篇文章只问一个问题：<strong>一个结果谁也不知道的赌注，凭什么有一个大家都认的价格？</strong>答案分三段。第 1–4 章讲这个价格从哪来：它不是预测出来的，是用别的东西“拼”出来的。第 5–7 章把拼法推到连续的时间上，得到布莱克–斯科尔斯公式，再看卖方每天怎么按它对冲。第 8–11 章讲这套办法在哪里失灵、市场怎么补，以及 2026 年 11 月时的现状。</p>
     <p class="note" data-i18n-html="hero.note">前置知识：<a href="../../../variants/claude-code/compound-interest/">复利与贴现 · 时间是钱的形状</a>（折现）、<a href="../../../variants/claude-code/expected-value/">期望 · 彩票、骰子、保险放在同一台秤上</a>（期望）和<a href="../../../variants/claude-code/central-limit-theorem/">中心极限定理 · 平均值总会变成钟形</a>（很多小随机数加起来是钟形）。文中的每个模型都是教科书或原始论文里的真东西，只是规模小；每章最后一段说明它省掉了什么。<strong>这篇文章只解释数学和市场结构，不构成任何投资建议，文中没有任何能赚钱的策略。</strong>文章是 AI 写的。</p>
+    <details class="page-provenance" data-developer="Claude Code" data-edition="claude-code-a-fair-price-for-a-bet-20261125" data-source-revision="b5a862022f6f02009253c25eed22ac9a02f05cf5" data-model="claude-fable-5-2 (closeout: claude-opus-5-5; English: claude-haiku-5-5)" data-thinking="thinking unavailable"><summary><span class="provenance-zh" lang="zh-CN">Claude Code 开发 · 原创版本</span><span class="provenance-en" lang="en">Developed with Claude Code · Original edition</span></summary><p><span class="provenance-zh" lang="zh-CN">本文由 Claude Code（claude-fable-5-2）从零编写，直接用 Markdown 站点模板写成；英文稿由 Claude Code（Haiku）翻译；2026-11-25 由 Claude Code（claude-opus-5-5）收尾核对；同日由另一个 Claude Code（claude-opus-5-5）会话独立评审内容与来源。</span><span class="provenance-en" lang="en">This essay was written from scratch with Claude Code (claude-fable-5-2), directly in the Markdown site template; the English copy was translated with Claude Code (Haiku); closeout check on 2026-11-25 by Claude Code (claude-opus-5-5); independently reviewed for content and sources the same day by a separate Claude Code (claude-opus-5-5) session.</span></p><p><span class="provenance-zh" lang="zh-CN">模型：claude-fable-5-2 (closeout: claude-opus-5-5; English: claude-haiku-5-5) · 思考深度：thinking unavailable</span><span class="provenance-en" lang="en">Model: claude-fable-5-2 (closeout: claude-opus-5-5; English: claude-haiku-5-5) · Thinking: thinking unavailable</span></p><p><span class="provenance-zh" lang="zh-CN">范围：整篇长文从零编写：远期价格与持有成本、期权收益与看涨–看跌平价、一步二叉树的复制与风险中性概率、CRR 二叉树与美式期权、几何布朗运动、布莱克–斯科尔斯公式与方程、希腊字母与 Delta 对冲、隐含波动率微笑与肥尾、赫斯顿随机波动率、保证金与中央清算、套期保值与基差风险、2026 年 11 月的衍生品市场前沿、读到衍生品时问的四件事。</span><span class="provenance-en" lang="en">Scope: Whole essay written from scratch: forward prices and cost of carry, option payoffs and put–call parity, one-step replication and risk-neutral probability, the CRR tree and American options, geometric Brownian motion, the Black–Scholes formula and equation, the Greeks and delta hedging, the implied-volatility smile and fat tails, Heston stochastic volatility, margin and central clearing, hedging and basis risk, the derivatives frontier in November 2026, four questions to ask about a derivative.</span></p><p>claude-code-a-fair-price-for-a-bet-20261125 · <a href="https://github.com/flyfy1/knowledge-vis/commit/b5a862022f6f02009253c25eed22ac9a02f05cf5"><span class="provenance-zh" lang="zh-CN">源码修订</span><span class="provenance-en" lang="en">Source revision</span> · b5a86202</a></p></details>
   </div>
 </header>
 
@@ -547,11 +548,11 @@
 
 <footer><div class="wrap" data-i18n-html="footer"><p><strong>来源。</strong>J. C. Hull，Options, Futures, and Other Derivatives（持有成本、平价、二叉树、最小方差对冲；第 1–4、10 章）。F. Black、M. Scholes，The Pricing of Options and Corporate Liabilities，Journal of Political Economy 81(3)，1973；R. C. Merton，Theory of Rational Option Pricing，Bell Journal of Economics 4(1)，1973。J. C. Cox、S. A. Ross、M. Rubinstein，Option Pricing: A Simplified Approach，Journal of Financial Economics 7，1979。P. Wilmott、S. Howison、J. Dewynne，The Mathematics of Financial Derivatives（有限差分）。M. Kamal、E. Derman，When You Cannot Hedge Continuously，1999；R. Ahmad、P. Wilmott，Which Free Lunch Would You Like Today, Sir?，Wilmott，2005。S. L. Heston，A Closed-Form Solution for Options with Stochastic Volatility，Review of Financial Studies 6(2)，1993；R. Lord、R. Koekkoek、D. van Dijk，A comparison of biased simulation schemes for stochastic volatility models，Quantitative Finance 10(2)，2010。</p><p><strong>数据。</strong>标普 500 指数期权报价：芝加哥期权交易所（Cboe）延时行情，2026 年 11 月 17 日收盘，2026 年 11 月 18 日取得；页面只带了两个到期日各 19 个行权价的买卖报价。纳斯达克综合指数日收盘价：圣路易斯联储 FRED 数据库（序列 NASDAQCOM），1971 年 2 月 5 日至 2026 年 11 月 16 日，2026 年 11 月 18 日取得；页面只带了由它算出的直方图和相关系数。第 8、10、11 章的事实来自国际清算银行、美国期货业协会、芝加哥期权交易所、印度证券交易委员会、美国证监会、纽约联储和 Federal Reserve History；网址和打开日期见本页目录下的 BRIEF.md。</p><p><strong>模型与说明。</strong>所有模型都在浏览器里即时计算，随机数用固定种子。每个模型省掉了什么，写在各章最后一段。这篇文章只解释数学和市场结构，不构成投资建议，也不预测任何价格。它由 Claude（Anthropic 的 AI）在 2026 年 11 月写成，2026 年 11 月 25 日由另一个 Claude 模型做了一次独立评审。</p></div></footer>
 
-<script src="data.js?v=20261125b"></script>
-<script src="models.js?v=20261125b"></script>
-<script src="copy.zh.js?v=20261125b"></script>
-<script src="copy.en.js?v=20261125b" onerror="void 0"></script>
-<script src="app.js?v=20261125b"></script>
+<script src="data.js?v=20261125c"></script>
+<script src="models.js?v=20261125c"></script>
+<script src="copy.zh.js?v=20261125c"></script>
+<script src="copy.en.js?v=20261125c" onerror="void 0"></script>
+<script src="app.js?v=20261125c"></script>
 <script defer src="../../../site-nav.js?v=sn-20261121a"></script>
 </body>
 </html>
