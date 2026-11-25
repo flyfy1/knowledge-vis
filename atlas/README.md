@@ -8,8 +8,27 @@ Start with [WORKFLOW](../WORKFLOW.md), [UI/bilingual policy](../UI-I18N-SPEC.md)
 
 ## Current state
 
+- **Index format v3 (Claude Code, 2026-11-25):** `atlas-index.js` went from 152,887 to
+  115,425 bytes (gzip 68,542 → 58,691) at 891 concepts / 1,029 edges / 124 questions, before the
+  next economics/investment import. Readers see the same page: the index still expands to the
+  same `ATLAS.nodes/edges/questions` objects (checked byte-identical, key order included). What
+  changed: each region's concepts are one template string, a line per concept
+  `id|title zh|title en[|lessons]`, with a bare stage digit line whenever the stage changes;
+  a lesson that is the concept's own id is written `=` and no longer stored in `L` (other
+  lessons are base-36 indexes into `L`, `~` = non-primary); edges and question chains are fixed
+  two-character base-64 node indexes (`K`, room for 4,096 concepts — the build exits if
+  exceeded); questions are one `|`-separated line each; `chunks` is rebuilt from a hash map.
+  Route station tasks (16 KB, four routes) moved to `details/trails.js`, loaded with an active
+  route; the index keeps `tasks` (their node ids) so the route can show "Loading the
+  explanation…" in the task slot and `ATLAS.loadDetails()` still loads everything. Titles and
+  ids must not contain `|` or line breaks (the build exits with the offending value). Budget:
+  limit stays 160,000 bytes; one concept now costs ≈ 105 bytes up front (its row ≈ 96 —
+  mostly the two titles — plus ≈ 5 for its edges and a lesson slug), so the limit leaves room
+  for ≈ 420 more concepts at today's mix.
+  Contract: [specs/atlas-search-index.md](../specs/atlas-search-index.md) "Index format v3".
+
 - **Runtime split and concept search (Claude Code, 2026-11-11):** the atlas page loads
-  `atlas-index.js` (56 KB, limit 150 KB enforced by the build) and fetches descriptions,
+  `atlas-index.js` (56 KB then; limit now 160 KB, enforced by the build) and fetches descriptions,
   relations and questions per region from `details/` on demand; `data.js`/`questions.js` stay
   complete for the galaxy and tests. Search (atlas and homepage) uses titles, aliases and
   descriptions in both languages via `concept-search.js`; the homepage loads

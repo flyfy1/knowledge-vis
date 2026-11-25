@@ -4761,7 +4761,7 @@
   "sizeBytes": 1505025,
   "questionsBytes": 173006,
   "combinedBytes": 1678031,
-  "indexBytes": 152887,
+  "indexBytes": 115425,
   "chunkBytes": {
     "math.nodes": 51664,
     "math.edges": 90019,
@@ -4794,6 +4794,7 @@
     "society.edges": 41022,
     "society.questions": 3743,
     "tech.nodes": 16930,
-    "tech.edges": 12509
+    "tech.edges": 12509,
+    "trails": 16459
   }
 }

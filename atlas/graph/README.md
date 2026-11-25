@@ -26,8 +26,8 @@
   的 26 个片段的人工分区（按主题，不是按注册表分类硬推）。
 - `merge-report.json`：每次生成后写出（不部署，仅工作用）。
 - 生成物：`atlas/data.js` + `atlas/questions.js` 是完整图谱（星系页、工具、测试用）；
-  地图页只先加载 `atlas/atlas-index.js`（≤150,000 字节，生成时强制），
-  说明/关系/问题按分区放在 `atlas/details/`，按需加载；首页搜索用
+  地图页只先加载 `atlas/atlas-index.js`（≤160,000 字节，生成时强制；2026-11-25 起为紧凑格式 v3，115,425 字节，见 `specs/atlas-search-index.md`），
+  说明/关系/问题按分区放在 `atlas/details/`，路线站点任务在 `atlas/details/trails.js`，按需加载；首页搜索用
   `atlas/search-index.js`（≤200,000 字节，强制）。投资图谱仍是单个 data.js，不拆。
 
 ## 生成

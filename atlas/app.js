@@ -30,11 +30,12 @@
   const loaded = new Set(), failed = new Set(), requested = new Map();
   const part = (group,kind) => group+'.'+kind;  // chunk id: <region>.nodes|edges|questions
   const has = (group,kind) => !chunks || loaded.has(part(group,kind)) || !chunks[part(group,kind)];
-  const edgeById = new Map(D.edges.map(e => [e.id,e])), questionById = new Map((D.questions||[]).map(q => [q.id,q]));
+  const edgeById = new Map(D.edges.map(e => [e.id,e])), questionById = new Map((D.questions||[]).map(q => [q.id,q])), trailById = new Map(D.trails.map(r => [r.id,r]));
   D.addDetails = (id,payload) => {
     for (const [k,v] of Object.entries(payload.nodes||{})) if (byId.has(k)) Object.assign(byId.get(k),v);
     for (const [k,v] of Object.entries(payload.edges||{})) if (edgeById.has(k)) Object.assign(edgeById.get(k),v);
     for (const [k,v] of Object.entries(payload.questions||{})) if (questionById.has(k)) Object.assign(questionById.get(k),v);
+    for (const [k,v] of Object.entries(payload.trails||{})) if (trailById.has(k)) Object.assign(trailById.get(k),v);
     loaded.add(id);
   };
   function loadChunk(id) {
@@ -47,8 +48,10 @@
     }).catch(error => { failed.add(id); throw error; }).finally(() => requested.delete(id)));
     return requested.get(id);
   }
-  // Public for tests and tools: ATLAS.loadDetails() loads everything.
-  D.loadDetails = (regions='all',kinds=['nodes','edges','questions']) => Promise.all((regions==='all' ? D.groups.map(g => g.id) : [].concat(regions)).flatMap(g => kinds.map(k => loadChunk(part(g,k)))));
+  // Public for tests and tools: ATLAS.loadDetails() loads everything (route station tasks too).
+  D.loadDetails = (regions='all',kinds=['nodes','edges','questions']) => Promise.all((regions==='all' ? D.groups.map(g => g.id) : [].concat(regions)).flatMap(g => kinds.map(k => loadChunk(part(g,k)))).concat(regions==='all' ? [loadChunk('trails')] : []));
+  // Routes with station tasks list their task nodes as `tasks`; the task text arrives in details/trails.js.
+  const tasksPending = r => !!r && !r.stationTasks && !!(r.tasks||[]).length && !!chunks && !!chunks.trails && !loaded.has('trails');
   const described = id => { const n = byId.get(id); return !!n && has(n.group,'nodes'); };
   const ready = id => { const n = byId.get(id); return !!n && has(n.group,'nodes') && has(n.group,'edges'); };
   const questionReady = q => has(q.group,'questions');
@@ -228,8 +231,9 @@
     box.append(make('p','trail-label',`${t('route')} · ${t('routeHint')}`));
     const context=routeContext();if(context){const note=make('p','trail-context',context);note.dataset.trailContext='';box.append(note);}
     const stops=make('div','trail-stops');r.nodes.forEach((id,i)=>{
-      const e=button(`${i+1}. ${pick(byId.get(id).title)}`,()=>select(id,{clear:true,focus:true,routeFocus:!!r.stationTasks}));e.setAttribute('aria-pressed',String(id===state.node));stops.append(e);
+      const e=button(`${i+1}. ${pick(byId.get(id).title)}`,()=>select(id,{clear:true,focus:true,routeFocus:!!(r.stationTasks||r.tasks)}));e.setAttribute('aria-pressed',String(id===state.node));stops.append(e);
     });box.append(stops);
+    if(tasksPending(r)&&r.tasks.includes(state.node)){const wait=make('p','details-wait',t(failed.has('trails')?'detailsFailed':'detailsLoading'));wait.dataset.detailsWait='';box.append(wait);return;}
     const task=r.stationTasks?.find(x=>x.node===state.node);if(!task)return;
     const card=make('article','route-task');card.dataset.taskNode=task.node;
     const heading=make('h3','',pick(task.question));heading.id='route-task-title';heading.tabIndex=-1;
@@ -326,7 +330,7 @@
     const want=new Set(),node=(id,kinds)=>{const n=byId.get(id);if(n)for(const k of kinds)want.add(part(n.group,k));};
     node(state.node,['nodes','edges']);
     const route=D.trails.find(r=>r.id===state.trail);
-    if(route){for(const id of route.nodes)node(id,['nodes','edges']);for(const id of route.background||[])node(id,['nodes']);}
+    if(route){for(const id of route.nodes)node(id,['nodes','edges']);for(const id of route.background||[])node(id,['nodes']);if(tasksPending(route))want.add('trails');}
     const q=state.question&&questionById.get(state.question);if(q)want.add(part(q.group,'questions'));
     for(const e of activeEdges())if(e.reading&&e.reading.startNode)node(e.reading.startNode,['nodes']);
     if(state.view==='list')listShown.forEach(id=>node(id,['nodes']));
