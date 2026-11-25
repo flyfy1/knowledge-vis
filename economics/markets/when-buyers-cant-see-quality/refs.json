@@ -1,0 +1,217 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "when-buyers-cant-see-quality",
+ "refs": [
+  {
+   "from": "ch1.p3",
+   "to": "expected-value",
+   "anchor": "step4"
+  },
+  {
+   "from": "ch1.p3",
+   "to": "risk-return",
+   "anchor": null
+  },
+  {
+   "from": "ch2.p1",
+   "to": "risk-pooling",
+   "anchor": "step1"
+  },
+  {
+   "from": "ch2.p1",
+   "to": "risk-pooling",
+   "anchor": "step3"
+  },
+  {
+   "from": "ch2.p3",
+   "to": "risk-pooling",
+   "anchor": "step4"
+  },
+  {
+   "from": "ch3.p5",
+   "to": "scarcity-moves",
+   "anchor": "c6"
+  },
+  {
+   "from": "ch3.p5",
+   "to": "externalities",
+   "anchor": "step3"
+  },
+  {
+   "from": "ch4.p5",
+   "to": "veil-of-ignorance",
+   "anchor": "step0"
+  },
+  {
+   "from": "ch4.limit",
+   "to": "risk-pooling",
+   "anchor": "step4"
+  },
+  {
+   "from": "ch5.p2",
+   "to": "mechanism-design",
+   "anchor": "s1"
+  },
+  {
+   "from": "ch5.p2",
+   "to": "auction-basics",
+   "anchor": "step2"
+  },
+  {
+   "from": "ch6.p3",
+   "to": "bayes-updating",
+   "anchor": "step1"
+  },
+  {
+   "from": "ch6.p6",
+   "to": "prisoners-dilemma",
+   "anchor": "step3"
+  },
+  {
+   "from": "ch7.p6",
+   "to": "scarcity-moves",
+   "anchor": "c5"
+  },
+  {
+   "from": "ch7.p6",
+   "to": "where-money-comes-from",
+   "anchor": "ch3"
+  },
+  {
+   "from": "ch8.limit",
+   "to": "where-money-comes-from",
+   "anchor": "ch6"
+  },
+  {
+   "from": "ch8.limit",
+   "to": "where-a-mortgage-payment-goes",
+   "anchor": "ch7"
+  },
+  {
+   "from": "ch8.limit",
+   "to": "why-one-rate-moves-everything",
+   "anchor": null
+  },
+  {
+   "from": "ch9.p4",
+   "to": "signal-detection",
+   "anchor": "step3"
+  },
+  {
+   "from": "ch9.p4",
+   "to": "numbers-lie",
+   "anchor": "c6"
+  },
+  {
+   "from": "ch9.p4",
+   "to": "bayes-diagnostics",
+   "anchor": null
+  },
+  {
+   "from": "ch9.p5",
+   "to": "numbers-lie",
+   "anchor": "c9"
+  }
+ ],
+ "backlinks": [],
+ "related": [
+  "expected-value",
+  "risk-return",
+  "risk-pooling",
+  "scarcity-moves",
+  "externalities",
+  "veil-of-ignorance",
+  "mechanism-design",
+  "auction-basics",
+  "game-theory",
+  "bayes-updating",
+  "prisoners-dilemma",
+  "where-money-comes-from",
+  "where-a-mortgage-payment-goes",
+  "why-one-rate-moves-everything",
+  "bayes-diagnostics",
+  "signal-detection",
+  "numbers-lie"
+ ],
+ "bindings": [
+  "ch1.ev",
+  "ch1.max",
+  "ch1.rp",
+  "ch1.ratio",
+  "ch1.max1",
+  "ch1.ev20",
+  "ch1.max20",
+  "ch1.ratio20",
+  "ch3.p0",
+  "ch3.k0",
+  "ch3.p1",
+  "ch3.k1",
+  "ch3.rounds",
+  "ch3.pf",
+  "ch3.kf",
+  "ch3.gf",
+  "ch3.fix",
+  "ch3.k0lo0",
+  "ch3.r0lo0",
+  "ch4.mean",
+  "ch4.med",
+  "ch4.wtp1",
+  "ch4.p0",
+  "ch4.n0",
+  "ch4.p1",
+  "ch4.rounds",
+  "ch4.pf",
+  "ch4.nf",
+  "ch4.s1000",
+  "ch4.s1500",
+  "ch4.pr1500",
+  "ch4.s3",
+  "ch4.lo3",
+  "ch4.s5",
+  "ch4.lo5",
+  "ch5.aprem",
+  "ch5.ds",
+  "ch5.bprem",
+  "ch5.loss3",
+  "ch5.lb",
+  "ch5.cefull",
+  "ch5.cesep",
+  "ch6.a",
+  "ch6.b",
+  "ch6.hi",
+  "ch6.lo",
+  "ch6.avg",
+  "ch6.hi15",
+  "ch7.p0",
+  "ch7.prem0",
+  "ch7.bs",
+  "ch7.be",
+  "ch7.bp",
+  "ch7.bprem",
+  "ch7.ce0",
+  "ch7.ceb",
+  "ch7.cefb",
+  "ch7.efb",
+  "ch8.r1",
+  "ch8.r4",
+  "ch8.best",
+  "ch8.ret",
+  "ch8.rat",
+  "ch8.top0",
+  "ch8.ret0",
+  "ch8.pr1",
+  "ch8.pr2",
+  "ch8.pr3",
+  "ch8.pr4",
+  "ch9.q0",
+  "ch9.s0",
+  "ch9.s15",
+  "ch9.sthin",
+  "ch9.slate",
+  "ch9.qlate",
+  "ch9.ap",
+  "ch9.bad",
+  "ch9.all",
+  "ch9.caught"
+ ]
+}

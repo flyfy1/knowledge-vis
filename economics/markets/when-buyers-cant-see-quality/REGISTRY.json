@@ -1,0 +1,95 @@
+{
+  "slug": "when-buyers-cant-see-quality",
+  "path": "economics/markets/when-buyers-cant-see-quality/",
+  "category": "economics",
+  "subtopic": "markets",
+  "stage": "university",
+  "title": {
+    "zh": "看不清质量的时候：柠檬市场与保险",
+    "en": "When Buyers Can't See Quality: Lemons and Insurance"
+  },
+  "desc": {
+    "zh": "二手车市场为什么烂车多？保险为什么要免赔额、要体检？医保为什么要大家都参加？银行为什么宁可不借也不涨利率？这篇从期望和风险厌恶讲起：风险池化、柠檬市场、保险的死亡螺旋、免赔额菜单、信号、道德风险、信贷配给和信用分，八个可以动手的模型，最后是大数据定价、基因信息和医保参保规则的前沿。",
+    "en": "Why are used-car lots full of lemons? Why does insurance come with deductibles and medical exams? Why should everyone join public health insurance, and why will a bank refuse a loan rather than raise the rate? Starting from expected value and risk aversion: risk pooling, the market for lemons, the insurance death spiral, deductible menus, signalling, moral hazard, credit rationing and credit scores, with eight hands-on models, ending at the frontier of data-driven pricing, genetic information and enrolment rules."
+  },
+  "tags": [
+    { "zh": "信息经济学", "en": "Information Economics" },
+    { "zh": "保险", "en": "Insurance" },
+    { "zh": "信贷与信用分", "en": "Credit & Credit Scores" },
+    { "zh": "长文", "en": "Long-form Essay" }
+  ],
+  "concepts": [
+    {
+      "id": "certainty-equivalent-insurance",
+      "anchor": "#ch1",
+      "title": { "zh": "风险厌恶与确定性等价：为什么买平均亏钱的保险", "en": "Risk aversion and the certainty equivalent: why buy insurance that loses on average" },
+      "desc": { "zh": "怕风险的人愿意为确定多付钱，最多肯付的保费减去平均损失就是风险溢价。", "en": "A risk-averse person pays extra for certainty; the most they would pay minus the expected loss is the risk premium." },
+      "aliases": { "zh": ["风险厌恶", "确定性等价", "为什么要买保险", "保险明明亏钱为什么还买", "效用曲线", "最多愿意付多少保费"], "en": ["risk aversion", "certainty equivalent", "why buy insurance", "concave utility", "maximum premium willing to pay"] },
+      "relatedPages": ["expected-value", "risk-return"]
+    },
+    {
+      "id": "lemons-market",
+      "anchor": "#ch3",
+      "title": { "zh": "柠檬市场与逆向选择", "en": "The market for lemons and adverse selection" },
+      "desc": { "zh": "买家看不清质量只能按平均出价，好货退出，平均变差，市场一轮轮萎缩。", "en": "Buyers who cannot see quality offer the average price; good goods withdraw, the average falls and the market shrinks round by round." },
+      "aliases": { "zh": ["柠檬市场", "逆向选择", "二手车市场为什么烂车多", "信息不对称", "阿克洛夫", "劣币驱逐良币（二手车）"], "en": ["market for lemons", "lemons problem", "adverse selection", "asymmetric information", "Akerlof", "why used cars are bad"] },
+      "relatedPages": ["risk-pooling", "scarcity-moves", "externalities"]
+    },
+    {
+      "id": "insurance-death-spiral",
+      "anchor": "#ch4",
+      "title": { "zh": "保险的死亡螺旋、强制参保与核保", "en": "The insurance death spiral, mandates and underwriting" },
+      "desc": { "zh": "按平均定价赶走最健康的人，保费越涨越高；强制、补贴或按体检分档能打断它。", "en": "Average pricing drives out the healthiest and premiums climb; mandates, subsidies or underwriting classes can break the spiral." },
+      "aliases": { "zh": ["死亡螺旋", "医保为什么强制", "为什么要强制参保", "为什么体检后保费不同", "核保", "断保等待期", "医保为什么要连续参保"], "en": ["death spiral", "insurance death spiral", "individual mandate", "why is health insurance mandatory", "underwriting", "risk rating", "community rating"] },
+      "relatedPages": ["risk-pooling", "veil-of-ignorance"]
+    },
+    {
+      "id": "deductible-screening",
+      "anchor": "#ch5",
+      "title": { "zh": "免赔额菜单与筛选", "en": "Deductible menus and screening" },
+      "desc": { "zh": "全保贵、带免赔额便宜，两类人各选一份，用选择说出自己的风险；罗斯柴尔德—斯蒂格利茨模型。", "en": "Full cover at a high price and a cheap plan with a deductible let each risk type reveal itself by its choice: the Rothschild–Stiglitz model." },
+      "aliases": { "zh": ["免赔额", "保险公司为什么要免赔额", "筛选", "罗斯柴尔德斯蒂格利茨", "分离均衡", "自选合同"], "en": ["deductible", "why insurance has deductibles", "screening", "Rothschild-Stiglitz", "separating equilibrium", "self-selection"] },
+      "relatedPages": ["mechanism-design", "auction-basics"]
+    },
+    {
+      "id": "signaling",
+      "anchor": "#ch6",
+      "title": { "zh": "信号：文凭、保修、口碑与花钱证明自己", "en": "Signalling: diplomas, warranties, reputation and costly proof" },
+      "desc": { "zh": "知道得多的一方做一件冒充者做不起的事来证明自己——文凭、保修、品牌、认证、口碑；只要代价因人而异，哪怕这件事本身没用也能传递信息（斯宾塞模型）。", "en": "The better-informed side proves itself by doing something too costly to fake: diplomas, warranties, brands, certification, reputation. If the cost differs by type, even a useless act carries information (Spence)." },
+      "aliases": { "zh": ["信号传递", "信号理论", "斯宾塞", "文凭有什么用", "为什么要保修", "学历信号"], "en": ["signaling", "signalling", "Spence", "job market signaling", "education as a signal", "warranty as a signal", "reputation", "ratings and certification"] },
+      "relatedPages": ["game-theory", "bayes-updating", "prisoners-dilemma"]
+    },
+    {
+      "id": "moral-hazard",
+      "anchor": "#ch7",
+      "title": { "zh": "道德风险、自付比例与委托—代理", "en": "Moral hazard, co-payment and principal–agent" },
+      "desc": { "zh": "一方的行为另一方看不见、而后果有人兜底时，人会少小心、多冒险——保险、雇佣、存款保险、救助都是；办法是让行动者自担一部分后果（委托—代理问题）。", "en": "When one side cannot see the other's actions and someone else bears the consequences, people take less care and more risk, in insurance, employment, deposit insurance and bail-outs alike; the remedy is making the actor bear part of the outcome (the principal–agent problem)." },
+      "aliases": { "zh": ["道德风险", "共付", "自付比例", "保了险就不小心", "委托代理问题", "兰德医疗保险实验"], "en": ["moral hazard", "co-payment", "coinsurance", "copay", "principal-agent problem", "RAND health insurance experiment"] },
+      "relatedPages": ["scarcity-moves", "where-money-comes-from"]
+    },
+    {
+      "id": "credit-rationing",
+      "anchor": "#ch8",
+      "title": { "zh": "信贷配给：银行为什么不随便放贷", "en": "Credit rationing: why banks refuse rather than raise rates" },
+      "desc": { "zh": "高利率先赶走稳当的借款人，银行的期望回报会在某个利率后下降，于是宁可拒贷；斯蒂格利茨—韦斯模型。", "en": "High rates drive out safe borrowers first, so the bank's expected return can fall beyond some rate and it rations credit instead: Stiglitz–Weiss." },
+      "aliases": { "zh": ["信贷配给", "银行为什么不随便放贷", "斯蒂格利茨韦斯", "小企业贷款难", "为什么借不到钱"], "en": ["credit rationing", "Stiglitz-Weiss", "why banks ration credit", "why can't small firms borrow"] },
+      "relatedPages": ["where-money-comes-from", "where-a-mortgage-payment-goes", "why-one-rate-moves-everything"]
+    },
+    {
+      "id": "credit-score",
+      "anchor": "#ch9",
+      "title": { "zh": "信用分是怎么来的", "en": "Where a credit score comes from" },
+      "desc": { "zh": "评分卡把过去的还款记录变成违约概率和分数，银行再定门槛；没有记录本身也是信息。", "en": "A scorecard turns your repayment history into a default probability and a score, and the bank sets a cutoff; a thin file is information too." },
+      "aliases": { "zh": ["信用分", "信用分怎么来的", "信用评分", "征信", "FICO", "评分卡", "违约概率"], "en": ["credit score", "how credit scores work", "FICO score", "scorecard", "credit report", "probability of default"] },
+      "relatedPages": ["bayes-diagnostics", "signal-detection", "numbers-lie"]
+    },
+    {
+      "id": "information-pricing-frontier",
+      "anchor": "#ch10",
+      "title": { "zh": "大数据定价、基因信息与参保规则的前沿", "en": "Frontier: data-driven pricing, genetic information and enrolment rules" },
+      "desc": { "zh": "看得越清螺旋越难转、高风险者越难投保：大数据杀熟条款、欧盟 AI 法、GINA、医保断保等待期。", "en": "Seeing more stops spirals but prices out high risks: China's anti-price-discrimination rule, the EU AI Act, GINA and enrolment waiting periods." },
+      "aliases": { "zh": ["大数据杀熟", "基因检测与保险", "医保断保等待期", "AI 定价", "保险定价歧视"], "en": ["big data price discrimination", "genetic testing and insurance", "GINA", "EU AI Act insurance pricing", "algorithmic pricing"] },
+      "relatedPages": []
+    }
+  ]
+}

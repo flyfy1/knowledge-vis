@@ -1,0 +1,51 @@
+{
+  "slug": "when-buyers-cant-see-quality",
+  "kind": "essay",
+  "tags": [
+    {
+      "zh": "信息经济学",
+      "en": "Information Economics"
+    },
+    {
+      "zh": "保险",
+      "en": "Insurance"
+    },
+    {
+      "zh": "信贷与信用分",
+      "en": "Credit & Credit Scores"
+    },
+    {
+      "zh": "长文",
+      "en": "Long-form Essay"
+    }
+  ],
+  "category": "economics",
+  "subtopic": "markets",
+  "stage": "university",
+  "path": "economics/markets/when-buyers-cant-see-quality/",
+  "created": "2026-11-25",
+  "layout": "essay",
+  "scripts": [
+    "models.js",
+    "copy.zh.js",
+    "copy.en.js",
+    "app.js"
+  ],
+  "version": "20261125",
+  "provenanceNote": {
+    "zh": "本文由 Claude Code（claude-opus-5-5）从零编写，中英文同时完成；模型数字由页面代码算出并有测试钉住；独立评审待做。",
+    "en": "This essay was written from scratch with Claude Code (claude-opus-5-5), in Chinese and English together; every number comes from the page's own models and is pinned by tests; independent review pending."
+  },
+  "dynamicKeys": {
+    "ch1.say": ["neutral", "averse"],
+    "ch3.say": ["run", "dead", "full", "part"],
+    "ch4.say": ["run", "spiral", "full", "part"],
+    "ch5.plan": ["A", "B", "none"],
+    "ch5.say": ["sep", "leak", "other", "breaks"],
+    "ch6.state": ["sep", "none", "all"],
+    "ch6.say": ["sep", "none", "all"],
+    "ch7.say": ["zero", "best", "low", "high"],
+    "ch8.say": ["info", "ration", "enough", "top"],
+    "ch9.say": ["yes", "no"]
+  }
+}
