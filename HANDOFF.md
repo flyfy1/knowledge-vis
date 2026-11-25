@@ -68,6 +68,8 @@
 
 ### 2026-11-25 这一轮：经济/投资知识图谱（接手先读这一节，再读下面的总览）
 
+完整交接文档：[specs/handover-econ-graph-20261125.md](specs/handover-econ-graph-20261125.md)。
+
 Yangyu 的目标：「建立非常好的 knowledge graph」，这一轮专注经济/投资。做法：Fable 设计图谱，Opus 子 Agent 写，另一个 Opus 评审，一个登记者串行改共享文件，team lead 提交部署。Yangyu 这一轮给的规矩（对之后的轮次也适用）：
 - 「不要专注于文章的验收，主要专注于文章的内容输出；但是对于系统结构的话，该做检查还是要做检查」：不做截图矩阵、逐状态句子核对；构建 --check、模型测试、登记/图谱/搜索 --check 照做。
 - 「尽量不要用任何可能会被判断为危险的命令」：子 Agent 不用 rm / sed -i / kill / chmod / 任何 git 写；改文件用 Edit/Write。草稿 page.json 不写 status（build-registry 拒绝 "draft"）。
