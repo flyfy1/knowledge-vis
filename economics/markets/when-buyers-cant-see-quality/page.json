@@ -7,8 +7,8 @@
       "en": "Information Economics"
     },
     {
-      "zh": "保险",
-      "en": "Insurance"
+      "zh": "保险市场",
+      "en": "Insurance Markets"
     },
     {
       "zh": "信贷与信用分",
@@ -22,6 +22,7 @@
   "category": "economics",
   "subtopic": "markets",
   "stage": "university",
+  "status": "live",
   "path": "economics/markets/when-buyers-cant-see-quality/",
   "created": "2026-11-25",
   "layout": "essay",
@@ -31,10 +32,10 @@
     "copy.en.js",
     "app.js"
   ],
-  "version": "20261125",
+  "version": "20261125b",
   "provenanceNote": {
-    "zh": "本文由 Claude Code（claude-opus-5-5）从零编写，中英文同时完成；模型数字由页面代码算出并有测试钉住；独立评审待做。",
-    "en": "This essay was written from scratch with Claude Code (claude-opus-5-5), in Chinese and English together; every number comes from the page's own models and is pinned by tests; independent review pending."
+    "zh": "本文由 Claude Code（claude-opus-5-5）从零编写，中英文同时完成；模型数字由页面代码算出并有测试钉住；2026-11-25 由另一个 Claude Code（claude-opus-5-5）会话独立评审，重算了全部模型数字。",
+    "en": "This essay was written from scratch with Claude Code (claude-opus-5-5), in Chinese and English together; every number comes from the page's own models and is pinned by tests; independently reviewed on 2026-11-25 by a separate Claude Code (claude-opus-5-5) session, which re-derived every model number."
   },
   "dynamicKeys": {
     "ch1.say": ["neutral", "averse"],

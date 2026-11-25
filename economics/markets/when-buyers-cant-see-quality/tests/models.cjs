@@ -135,7 +135,11 @@ const near = (name, got, want, tol) => ok(name, Math.abs(got - want) <= tol, `go
   const { unprefill } = require(path.join(ROOT, 'scripts', 'lib', 'prefill.cjs'));
   const html = unprefill(fs.readFileSync(path.join(DIR, 'index.html'), 'utf8'), Z);
   // <title> and <meta description> carry doc.title / doc.desc, which app.js replaces on load
-  const leftover = (html.replace(/<!--[\s\S]*?-->/g, '').replace(/<title>[\s\S]*?<\/title>/, '').replace(/<meta[^>]*>/g, '').match(/[一-鿿]+/g) || []).filter(s => s !== '中');
+  // registered 2026-11-25: the provenance label rendered from page-provenance.json is bilingual by design
+  const pjReg = JSON.parse(fs.readFileSync(path.join(DIR, 'page.json'), 'utf8'));
+  ok('page.json registry fields', ['category', 'subtopic', 'stage', 'status', 'path'].map(k => pjReg[k]).join() === 'economics,markets,university,live,economics/markets/when-buyers-cant-see-quality/');
+  ok('exactly one provenance label', (html.match(/<details class="page-provenance"/g) || []).length === 1);
+  const leftover = (html.replace(/<!--[\s\S]*?-->/g, '').replace(/<details class="page-provenance"[\s\S]*?<\/details>/, '').replace(/<title>[\s\S]*?<\/title>/, '').replace(/<meta[^>]*>/g, '').match(/[一-鿿]+/g) || []).filter(s => s !== '中');
   ok('no hand-typed Chinese in index.html', leftover.length === 0, leftover.slice(0, 5).join(' '));
   const app = fs.readFileSync(path.join(DIR, 'app.js'), 'utf8');
   const used = [...app.matchAll(/t\('([a-z0-9.]+)'[,)]/gi)].map(m => m[1]).filter(k => k.includes('.') && !k.endsWith('.'));

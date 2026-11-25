@@ -11,7 +11,7 @@ taught on B (any `lessons[]` entry). Pairs where either page teaches no atlas co
 counted. Under each pair: every link, with the concepts anchored at its two ends where there are any (`?` = none at that
 anchor; a link to the page top has no anchor).
 
-909 linked page pairs · 446 covered by an atlas edge · 14 with no concept on one side · **449 to do**.
+925 linked page pairs · 459 covered by an atlas edge · 14 with no concept on one side · **452 to do**.
 
 ## 冰冻肥皂泡 · 水膜里的结晶 / Frozen Soap Bubbles · Ice in a Thin Film → 光的反射与折射 · 拐弯的规矩 / Reflection & Refraction · How Light Bends
 
@@ -1811,6 +1811,18 @@ anchor; a link to the page top has no anchor).
 ## 一张加密图片是怎么被解开的 / How an Encrypted Local Image Gets Decoded → CPU 是怎么运行一个程序的 / How a CPU Runs a Program
 
 - `how-to-crack-an-encrypted-image#ch8` → `how-a-cpu-runs-a-program`: libcpp-std-string-sret → ?
+
+## 看不清质量的时候：柠檬市场与保险 / When Buyers Can't See Quality: Lemons and Insurance → 拍卖 · 报价与真话 / Auctions · Bidding and Telling the Truth
+
+- `when-buyers-cant-see-quality#ch5` → `auction-basics#step2`: deductible-screening → auctions
+
+## 看不清质量的时候：柠檬市场与保险 / When Buyers Can't See Quality: Lemons and Insurance → 每个月的房贷，钱到底还到哪儿去了 / Where Does Your Mortgage Payment Actually Go?
+
+- `when-buyers-cant-see-quality#ch8` → `where-a-mortgage-payment-goes#ch7`: credit-rationing → apr-irr-flat-fee
+
+## 看不清质量的时候：柠檬市场与保险 / When Buyers Can't See Quality: Lemons and Insurance → 央行调一个利率，为什么所有东西的价格都跟着动 / Why One Central-Bank Rate Moves the Price of Everything
+
+- `when-buyers-cant-see-quality#ch8` → `why-one-rate-moves-everything`: credit-rationing → ?
 
 ## 央行调一个利率，为什么所有东西的价格都跟着动 / Why One Central-Bank Rate Moves the Price of Everything → 复利与贴现 · 时间是钱的形状 / Compound Interest & Discounting · Time Is the Shape of Money
 

@@ -3878,7 +3878,8 @@
       "developer": "Claude Code",
       "edition": "claude-code-what-the-yield-curve-says-20261125",
       "kind": "original",
-      "sourceRevision": "99352324b0621338107d712b1b1f10b7a0f38ec3",
+      "sourceRevision": "95e7704fa15817e65be0ea443230224d9090d9a9",
+      "previousSourceRevision": "99352324b0621338107d712b1b1f10b7a0f38ec3",
       "scope": {
         "zh": "整篇长文从零编写：零息债券、远期利率、用预期和期限溢价搭曲线、持有期回报与骑乘、ACM 与 Kim–Wright 期限溢价、久期与 DV01、凸性与免疫、水平斜率曲率、倒挂分解、信用利差、评级与违约扎堆、2022–2026 年的曲线前沿、读一条曲线的五个问题",
         "en": "Whole essay written from scratch: zero-coupon bonds, forward rates, building a curve from expectations and a term premium, holding-period return and roll-down, ACM and Kim–Wright term premia, duration and DV01, convexity and immunisation, level, slope and curvature, decomposing an inversion, credit spreads, ratings and default clustering, the curve frontier 2022–2026, five questions for reading a curve"
@@ -3886,6 +3887,20 @@
       "originalAuthorship": "written from scratch in zh by Claude Code (claude-opus-5-5) directly in the Markdown site template; English copy translated by Claude Code (claude-haiku-5-5); independently reviewed on 2026-11-25 by a separate Claude Code session (claude-opus-5-5), see specs/reviews/what-the-yield-curve-says-review-20261125.md",
       "path": "investment/rates/what-the-yield-curve-says/index.html",
       "model": "claude-opus-5-5 (English: claude-haiku-5-5)",
+      "thinking": "thinking unavailable"
+    },
+    "when-buyers-cant-see-quality": {
+      "developer": "Claude Code",
+      "edition": "claude-code-when-buyers-cant-see-quality-20261125",
+      "kind": "original",
+      "sourceRevision": "97a749859ef93d4c138a7ebbd859f779a0e8c81b",
+      "scope": {
+        "zh": "整篇长文从零编写：风险厌恶与确定性等价、风险池化、柠檬市场与逆向选择、保险的死亡螺旋与强制参保、免赔额菜单与筛选、信号、道德风险与自付比例、信贷配给、信用分、大数据定价与参保规则的前沿",
+        "en": "Whole essay written from scratch: risk aversion and the certainty equivalent, risk pooling, the market for lemons and adverse selection, the insurance death spiral and mandates, deductible menus and screening, signalling, moral hazard and co-pays, credit rationing, credit scores, the frontier of data-driven pricing and enrolment rules"
+      },
+      "originalAuthorship": "written from scratch in zh and en by Claude Code (claude-opus-5-5) directly in the Markdown site template; independently reviewed on 2026-11-25 by a separate Claude Code session (claude-opus-5-5), see specs/reviews/when-buyers-cant-see-quality-review-20261125.md",
+      "path": "economics/markets/when-buyers-cant-see-quality/index.html",
+      "model": "claude-opus-5-5",
       "thinking": "thinking unavailable"
     }
   },

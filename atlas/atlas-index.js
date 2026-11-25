@@ -16,7 +16,7 @@
     {"id":"computing","label":{"en":"Computing & AI","zh":"计算与智能"},"mark":"09"},
     {"id":"society","label":{"en":"Economy & society","zh":"经济与社会"},"mark":"10"},
     {"id":"tech","label":{"en":"Technology & devices","zh":"技术与设备"},"mark":"11"}];
-  const L = ["area-model","equation-scale","perimeter-area","symmetry-rotation","number-combinatorics","circle-angles","pythagoras","linear-functions","complex-numbers","exponents-logarithms","music-theory","linear-transform","eigenvectors","limits-epsilon","mandelbrot","trigonometry","pinhole-camera","lens","reflection-refraction","why-the-sky-is-blue","quantum-basics","frequency-response","fourier","materials-science","why-fusion-is-hard","power-converters","thermodynamics","pid-control","inverted-pendulum","lti-systems","laplace","probability-frequency","statistical-inference","titration-curves","genetics-probability","bayes-diagnostics","public-health","numbers-lie","bayes-updating","entropy","central-limit-theorem","monte-carlo","signal-detection","mass-conservation","atomic-structure","buffer-capacity","reaction-rates","chemical-equilibrium","why-fermented-tofu-tastes-good","how-soy-sauce-gets-its-flavor","acid-base-equilibrium","why-batteries-hold-so-little","why-atoms-stick-together","neuroscience-basics","population-ecology","how-vaccines-work","body-in-balance","memory-attention","day-night-rotation","why-the-planet-warms","what-is-a-black-hole","cosmology-expansion","switches-that-compute","how-a-chatbot-writes","sorting","what-a-drive-is-made-of","storage-over-a-network","how-cores-share-memory","how-cpu-caches-work","how-chromium-renders-a-web-page","how-containers-isolate-a-process","coherent-interconnects","how-memory-talks","how-pixels-reach-a-screen","how-git-stores-history","how-a-gpu-computes","computer-graphics","how-to-crack-an-encrypted-image","how-a-cpu-does-math","how-a-cpu-runs-a-program","a-secret-in-public","how-hybrid-attention-remembers","tcp-congestion","how-llvm-compiles-your-code","how-a-cpu-guesses-ahead","how-nginx-handles-ten-thousand-connections","how-a-nic-moves-packets","why-nvme-is-fast","how-pcie-works","how-postgresql-runs-a-query","why-compute-waits-for-memory","how-power-reaches-the-cpu","how-a-computer-boots","how-the-os-talks-to-hardware","what-quantum-computers-do","distributed-systems","how-react-updates-the-dom","how-redis-answers-in-microseconds","how-sas-works","how-sata-works","how-a-computer-is-wired","how-threejs-draws-a-scene","what-a-frontier-model-takes","how-thunderbolt-works","how-usb-drives-talk","how-v8-runs-javascript","how-virtual-memory-works","auction-basics","ethics-decisions","where-money-comes-from","where-a-mortgage-payment-goes","same-votes-different-winner","vowel-space","what-the-yield-curve-says","a-fair-price-for-a-bet","how-an-economy-is-measured","mechanism-design","scarcity-moves","why-one-rate-moves-everything","inside-a-phone","why-chips-are-hard"];
+  const L = ["area-model","equation-scale","perimeter-area","symmetry-rotation","number-combinatorics","circle-angles","pythagoras","linear-functions","complex-numbers","exponents-logarithms","music-theory","linear-transform","eigenvectors","limits-epsilon","mandelbrot","trigonometry","pinhole-camera","lens","reflection-refraction","why-the-sky-is-blue","quantum-basics","frequency-response","fourier","materials-science","why-fusion-is-hard","power-converters","thermodynamics","pid-control","inverted-pendulum","lti-systems","laplace","probability-frequency","statistical-inference","titration-curves","genetics-probability","bayes-diagnostics","public-health","numbers-lie","bayes-updating","entropy","central-limit-theorem","monte-carlo","signal-detection","mass-conservation","atomic-structure","buffer-capacity","reaction-rates","chemical-equilibrium","why-fermented-tofu-tastes-good","how-soy-sauce-gets-its-flavor","acid-base-equilibrium","why-batteries-hold-so-little","why-atoms-stick-together","neuroscience-basics","population-ecology","how-vaccines-work","body-in-balance","memory-attention","day-night-rotation","why-the-planet-warms","what-is-a-black-hole","cosmology-expansion","switches-that-compute","how-a-chatbot-writes","sorting","what-a-drive-is-made-of","storage-over-a-network","how-cores-share-memory","how-cpu-caches-work","how-chromium-renders-a-web-page","how-containers-isolate-a-process","coherent-interconnects","how-memory-talks","how-pixels-reach-a-screen","how-git-stores-history","how-a-gpu-computes","computer-graphics","how-to-crack-an-encrypted-image","how-a-cpu-does-math","how-a-cpu-runs-a-program","a-secret-in-public","how-hybrid-attention-remembers","tcp-congestion","how-llvm-compiles-your-code","how-a-cpu-guesses-ahead","how-nginx-handles-ten-thousand-connections","how-a-nic-moves-packets","why-nvme-is-fast","how-pcie-works","how-postgresql-runs-a-query","why-compute-waits-for-memory","how-power-reaches-the-cpu","how-a-computer-boots","how-the-os-talks-to-hardware","what-quantum-computers-do","distributed-systems","how-react-updates-the-dom","how-redis-answers-in-microseconds","how-sas-works","how-sata-works","how-a-computer-is-wired","how-threejs-draws-a-scene","what-a-frontier-model-takes","how-thunderbolt-works","how-usb-drives-talk","how-v8-runs-javascript","how-virtual-memory-works","auction-basics","ethics-decisions","where-money-comes-from","where-a-mortgage-payment-goes","same-votes-different-winner","vowel-space","when-buyers-cant-see-quality","what-the-yield-curve-says","a-fair-price-for-a-bet","how-an-economy-is-measured","mechanism-design","scarcity-moves","why-one-rate-moves-everything","inside-a-phone","why-chips-are-hard"];
   const N = {
 "math": `0
 area-model-multiplication|乘法的面积模型 · 交换律与分配律|Multiplication as area · commutative and distributive laws|0
@@ -880,94 +880,103 @@ reading-a-loan-contract|拿到贷款合同时能自己算的事|What you can wor
 condorcet-jury-theorem|孔多塞陪审团定理|Condorcet's jury theorem|33
 reading-fairness-claims|怎样读“这个制度很公平”|How to read a claim that a system is fair|33
 3
-curve-builder-observational-equivalence|同一条曲线，两种读法：预期和期限溢价为什么分不开|One curve, two readings: why expectations and the term premium cannot be told apart|35
-forward-price-cost-of-carry|远期价格与持有成本|Forward price and cost of carry|36
+certainty-equivalent-insurance|风险厌恶与确定性等价：为什么买平均亏钱的保险|Risk aversion and the certainty equivalent: why buy insurance that loses on average|35
+curve-builder-observational-equivalence|同一条曲线，两种读法：预期和期限溢价为什么分不开|One curve, two readings: why expectations and the term premium cannot be told apart|36
+forward-price-cost-of-carry|远期价格与持有成本|Forward price and cost of carry|37
 game-theory|博弈论|Game theory|=
-gdp-three-ways|GDP 三面等价与增加值|GDP Three Ways & Value Added|37
-mechanism-auction|机制设计与拍卖 · 报价如何改变结果|Mechanism Design & Auctions · How Bids Change Outcomes|38
-opportunity-cost|稀缺与机会成本|Scarcity and opportunity cost|39
-present-value-discounting|明天的钱今天值多少：折现|What tomorrow's money is worth today|3a
+gdp-three-ways|GDP 三面等价与增加值|GDP Three Ways & Value Added|38
+mechanism-auction|机制设计与拍卖 · 报价如何改变结果|Mechanism Design & Auctions · How Bids Change Outcomes|39
+opportunity-cost|稀缺与机会成本|Scarcity and opportunity cost|3a
+present-value-discounting|明天的钱今天值多少：折现|What tomorrow's money is worth today|3b
 supply-demand|供需均衡|Supply & demand equilibrium|=
-bond-duration-convexity|债券久期与凸性|Bond duration and convexity|3a
-holding-period-return-rolldown|持有期回报、骑乘曲线与远期利率的打平点|Holding-period return, roll-down and the forward as break-even|35
-marginal-thinking|边际：再多一点值不值|The margin: is one more step worth it?|39
-option-payoffs-put-call-parity|期权收益与看涨–看跌平价|Option payoffs and put–call parity|36
-price-indexes-chain-fisher|名义与实际、链式费雪指数与替代偏差|Nominal vs Real, Chained Fisher & Substitution Bias|37
-binomial-replication-risk-neutral|一步二叉树：复制与风险中性概率|One-step binomial: replication and risk-neutral probability|36
-cpi-oer-hedonic-core|CPI 权重、等价租金 OER 与质量调整|CPI Weights, Owners' Equivalent Rent & Hedonic Adjustment|37
-sunk-cost|沉没成本|Sunk cost|39
-term-premium-acm-kim-wright|ACM 与 Kim–Wright：期限溢价的两种估计|ACM and Kim–Wright: two estimates of the term premium|35
-yield-curve-bootstrapping|收益率曲线、即期利率与远期利率|Yield curve, spot and forward rates|3a
-comparative-advantage|交换与比较优势|Trade and comparative advantage|39
-crr-binomial-tree|CRR 二叉树与美式期权|The CRR binomial tree and American options|36
-growth-traps-saar-revisions|折年率、基数效应、季节调整与数据修订|Annualised Rates, Base Effects, Seasonal Adjustment & Revisions|37
-immunisation-barbell-bullet|凸性、免疫与哑铃型组合|Convexity, immunisation and the barbell|35
-term-premium-curve-inversion|预期假说、期限溢价与收益率曲线倒挂|Expectations, term premium and yield-curve inversion|3a
-geometric-brownian-motion|几何布朗运动与波动率|Geometric Brownian motion and volatility|36
-level-slope-curvature|曲线的三种动法：水平、斜率、曲率|Level, slope and curvature|35
-ppp-balassa-samuelson-gini|购买力平价 PPP、均值与中位数及基尼系数|Purchasing Power Parity, Mean vs Median & Gini Coefficient|37
-price-signal|价格是一条信息|Price is a piece of information|39
-reserves-floor-system|准备金、利率走廊与地板体系|Reserves, the corridor and the floor system|3a
-black-scholes-formula-pde|布莱克–斯科尔斯公式与方程|The Black–Scholes formula and equation|36
-incentives|激励|Incentives|39
-inversion-decomposition|倒挂是降息预期还是期限溢价太低|Is an inversion rate-cut expectations or a low term premium?|35
-labour-u3-u6-beveridge-okun|U-3 与 U-6 失业率、贝弗里奇曲线与奥肯定律|U-3 vs U-6 Unemployment, Beveridge Curve & Okun's Law|37
-taylor-rule-neutral-rate|泰勒规则与自然利率 r*|The Taylor rule and the neutral rate r*|3a
-business-cycle-sahm-potential|经济周期、潜在产出与萨姆规则|Business Cycles, Potential Output & the Sahm Rule|37
-credit-spread-triangle|信用利差：违约概率 × 违约损失|Credit spread: default probability × loss given default|35
-greeks-delta-hedging|希腊字母与 Delta 对冲|The Greeks and delta hedging|36
-market-failure|市场会失灵|Markets can fail|39
-new-keynesian-model|新凯恩斯模型与菲利普斯曲线|The New Keynesian model and the Phillips curve|3a
-equity-duration-house-affordability|股票久期与房贷可负担性|Equity duration and mortgage affordability|3a
-growth-from-ideas|增长来自思想|Growth comes from ideas|39
-implied-volatility-smile-fat-tails|隐含波动率、微笑与肥尾|Implied volatility, the smile and fat tails|36
-junk-bonds-default-clustering|评级、垃圾债与违约扎堆|Ratings, junk bonds and clustered defaults|35
-solow-growth-accounting-tfp|索洛增长核算与全要素生产率（TFP）|Solow Growth Accounting & Total Factor Productivity|37
-beyond-gdp-boundaries|GDP 之外：家务、折旧、灾难悖论与卫星账户|Beyond GDP: Home Production, Depreciation & Disaster Paradox|37
-heston-stochastic-volatility|赫斯顿随机波动率模型|The Heston stochastic volatility model|36
-interest-parity-carry-trade|利率平价与套利交易|Interest parity and the carry trade|3a
-spending-is-income|你的支出是别人的收入|Your spending is someone else's income|39
-yield-curve-2022-2026|2022–2026 年：倒挂、解除倒挂与美债收益率上涨|2022–2026: inversion, un-inversion and rising Treasury yields|35
-frontier-gdpb-2025sna-nowcasting|前沿测量：免费数字品、GDP-B、2025 SNA 与实时预测|Measurement Frontier: Free Digital Goods, GDP-B, 2025 SNA & Nowcasting|37
-income-to-the-scarce|收入流向稀缺的一方|Income flows to the scarce|39
-margin-leverage-central-clearing|保证金、杠杆与中央清算|Margin, leverage and central clearing|36
-zero-lower-bound-qe|零利率下限、前瞻指引与量化宽松|Zero lower bound, forward guidance and QE|3a
-debt-dynamics-r-minus-g|政府债务动态与 r − g|Government debt dynamics and r − g|3a
-hedging-basis-risk-notional|套期保值、基差风险与名义本金|Hedging, basis risk and notional amounts|36
-institutions-trust|制度与信任|Institutions and trust|39
-ai-cheap-thinking|AI：思考的价格崩塌|AI: the price of thinking collapses|39
-central-banks-2026|2026 年底的主要央行与仍在争论的问题|Major central banks in late 2026 and the open debates|3a
-derivatives-frontier-2026|衍生品市场的前沿（2026 年 11 月）|The frontier of derivatives markets (November 2026)|36
-ai-tasks-wages|工作与工资：AI 替代的是任务|Work and wages: AI replaces tasks|39
-relative-prices-after-ai|什么变便宜，什么变贵|What gets cheaper, what gets dearer|39
-ai-forecast|AI 之后的整体预言|A forecast for after AI|39`,
+bond-duration-convexity|债券久期与凸性|Bond duration and convexity|3b
+holding-period-return-rolldown|持有期回报、骑乘曲线与远期利率的打平点|Holding-period return, roll-down and the forward as break-even|36
+lemons-market|柠檬市场与逆向选择|The market for lemons and adverse selection|35
+marginal-thinking|边际：再多一点值不值|The margin: is one more step worth it?|3a
+option-payoffs-put-call-parity|期权收益与看涨–看跌平价|Option payoffs and put–call parity|37
+price-indexes-chain-fisher|名义与实际、链式费雪指数与替代偏差|Nominal vs Real, Chained Fisher & Substitution Bias|38
+binomial-replication-risk-neutral|一步二叉树：复制与风险中性概率|One-step binomial: replication and risk-neutral probability|37
+cpi-oer-hedonic-core|CPI 权重、等价租金 OER 与质量调整|CPI Weights, Owners' Equivalent Rent & Hedonic Adjustment|38
+insurance-death-spiral|死亡螺旋、强制参保与核保|Death spirals, mandates and underwriting|35
+sunk-cost|沉没成本|Sunk cost|3a
+term-premium-acm-kim-wright|ACM 与 Kim–Wright：期限溢价的两种估计|ACM and Kim–Wright: two estimates of the term premium|36
+yield-curve-bootstrapping|收益率曲线、即期利率与远期利率|Yield curve, spot and forward rates|3b
+comparative-advantage|交换与比较优势|Trade and comparative advantage|3a
+crr-binomial-tree|CRR 二叉树与美式期权|The CRR binomial tree and American options|37
+deductible-screening|免赔额菜单与筛选|Deductible menus and screening|35
+growth-traps-saar-revisions|折年率、基数效应、季节调整与数据修订|Annualised Rates, Base Effects, Seasonal Adjustment & Revisions|38
+immunisation-barbell-bullet|凸性、免疫与哑铃型组合|Convexity, immunisation and the barbell|36
+term-premium-curve-inversion|预期假说、期限溢价与收益率曲线倒挂|Expectations, term premium and yield-curve inversion|3b
+geometric-brownian-motion|几何布朗运动与波动率|Geometric Brownian motion and volatility|37
+level-slope-curvature|曲线的三种动法：水平、斜率、曲率|Level, slope and curvature|36
+ppp-balassa-samuelson-gini|购买力平价 PPP、均值与中位数及基尼系数|Purchasing Power Parity, Mean vs Median & Gini Coefficient|38
+price-signal|价格是一条信息|Price is a piece of information|3a
+reserves-floor-system|准备金、利率走廊与地板体系|Reserves, the corridor and the floor system|3b
+signaling|信号：文凭、保修、口碑与花钱证明自己|Signalling: diplomas, warranties, reputation and costly proof|35
+black-scholes-formula-pde|布莱克–斯科尔斯公式与方程|The Black–Scholes formula and equation|37
+incentives|激励|Incentives|3a
+inversion-decomposition|倒挂是降息预期还是期限溢价太低|Is an inversion rate-cut expectations or a low term premium?|36
+labour-u3-u6-beveridge-okun|U-3 与 U-6 失业率、贝弗里奇曲线与奥肯定律|U-3 vs U-6 Unemployment, Beveridge Curve & Okun's Law|38
+moral-hazard|道德风险、自付比例与委托—代理|Moral hazard, co-payment and principal–agent|35
+taylor-rule-neutral-rate|泰勒规则与自然利率 r*|The Taylor rule and the neutral rate r*|3b
+business-cycle-sahm-potential|经济周期、潜在产出与萨姆规则|Business Cycles, Potential Output & the Sahm Rule|38
+credit-rationing|信贷配给：银行为什么不随便放贷|Credit rationing: why banks refuse rather than raise rates|35
+credit-spread-triangle|信用利差：违约概率 × 违约损失|Credit spread: default probability × loss given default|36
+greeks-delta-hedging|希腊字母与 Delta 对冲|The Greeks and delta hedging|37
+market-failure|市场会失灵|Markets can fail|3a
+new-keynesian-model|新凯恩斯模型与菲利普斯曲线|The New Keynesian model and the Phillips curve|3b
+credit-score|信用分是怎么来的|Where a credit score comes from|35
+equity-duration-house-affordability|股票久期与房贷可负担性|Equity duration and mortgage affordability|3b
+growth-from-ideas|增长来自思想|Growth comes from ideas|3a
+implied-volatility-smile-fat-tails|隐含波动率、微笑与肥尾|Implied volatility, the smile and fat tails|37
+junk-bonds-default-clustering|评级、垃圾债与违约扎堆|Ratings, junk bonds and clustered defaults|36
+solow-growth-accounting-tfp|索洛增长核算与全要素生产率（TFP）|Solow Growth Accounting & Total Factor Productivity|38
+beyond-gdp-boundaries|GDP 之外：家务、折旧、灾难悖论与卫星账户|Beyond GDP: Home Production, Depreciation & Disaster Paradox|38
+heston-stochastic-volatility|赫斯顿随机波动率模型|The Heston stochastic volatility model|37
+information-pricing-frontier|大数据定价、基因信息与参保规则的前沿|Data-driven pricing, genetic information and enrolment rules: the frontier|35
+interest-parity-carry-trade|利率平价与套利交易|Interest parity and the carry trade|3b
+spending-is-income|你的支出是别人的收入|Your spending is someone else's income|3a
+yield-curve-2022-2026|2022–2026 年：倒挂、解除倒挂与美债收益率上涨|2022–2026: inversion, un-inversion and rising Treasury yields|36
+frontier-gdpb-2025sna-nowcasting|前沿测量：免费数字品、GDP-B、2025 SNA 与实时预测|Measurement Frontier: Free Digital Goods, GDP-B, 2025 SNA & Nowcasting|38
+income-to-the-scarce|收入流向稀缺的一方|Income flows to the scarce|3a
+margin-leverage-central-clearing|保证金、杠杆与中央清算|Margin, leverage and central clearing|37
+zero-lower-bound-qe|零利率下限、前瞻指引与量化宽松|Zero lower bound, forward guidance and QE|3b
+debt-dynamics-r-minus-g|政府债务动态与 r − g|Government debt dynamics and r − g|3b
+hedging-basis-risk-notional|套期保值、基差风险与名义本金|Hedging, basis risk and notional amounts|37
+institutions-trust|制度与信任|Institutions and trust|3a
+ai-cheap-thinking|AI：思考的价格崩塌|AI: the price of thinking collapses|3a
+central-banks-2026|2026 年底的主要央行与仍在争论的问题|Major central banks in late 2026 and the open debates|3b
+derivatives-frontier-2026|衍生品市场的前沿（2026 年 11 月）|The frontier of derivatives markets (November 2026)|37
+ai-tasks-wages|工作与工资：AI 替代的是任务|Work and wages: AI replaces tasks|3a
+relative-prices-after-ai|什么变便宜，什么变贵|What gets cheaper, what gets dearer|3a
+ai-forecast|AI 之后的整体预言|A forecast for after AI|3a`,
 "tech": `2
-gps-pseudorange-clock-bias|GPS 怎样定位：伪距与钟差|How GPS finds you: pseudoranges and clock bias|3b
-accelerometer-proof-mass|加速度计：弹簧上的检测质量|Accelerometer: a proof mass on a spring|3b
-dead-reckoning-drift|惯性导航为什么会漂|Why dead reckoning drifts|3b
-capacitive-touch-interpolation|电容触摸屏与插值定位|Capacitive touch and interpolation|3b
-shot-noise-frame-stacking|散粒噪声与多帧叠加|Shot noise and frame stacking|3b
-metamerism-rgb-subpixels|同色异谱：屏幕怎样骗过眼睛|Metamerism: how a screen fools the eye|3b
-predictive-compression-entropy|压缩：只存猜不中的部分|Compression: store only the surprise|3b
-path-loss-shannon-capacity|路径损耗与香农容量|Path loss and Shannon capacity|3b
-hamming-code|汉明码：多发三个比特改正一个错|Hamming code: three extra bits fix one error|3b
-handover-hysteresis|基站切换与迟滞|Cell handover and hysteresis|3b
-battery-internal-resistance|电池内阻：电量为什么会跳|Battery internal resistance: why the percentage jumps|3b
-measurement-signal-noise-method|看懂任何设备的三个问题|Three questions for any device|3b
+gps-pseudorange-clock-bias|GPS 怎样定位：伪距与钟差|How GPS finds you: pseudoranges and clock bias|3c
+accelerometer-proof-mass|加速度计：弹簧上的检测质量|Accelerometer: a proof mass on a spring|3c
+dead-reckoning-drift|惯性导航为什么会漂|Why dead reckoning drifts|3c
+capacitive-touch-interpolation|电容触摸屏与插值定位|Capacitive touch and interpolation|3c
+shot-noise-frame-stacking|散粒噪声与多帧叠加|Shot noise and frame stacking|3c
+metamerism-rgb-subpixels|同色异谱：屏幕怎样骗过眼睛|Metamerism: how a screen fools the eye|3c
+predictive-compression-entropy|压缩：只存猜不中的部分|Compression: store only the surprise|3c
+path-loss-shannon-capacity|路径损耗与香农容量|Path loss and Shannon capacity|3c
+hamming-code|汉明码：多发三个比特改正一个错|Hamming code: three extra bits fix one error|3c
+handover-hysteresis|基站切换与迟滞|Cell handover and hysteresis|3c
+battery-internal-resistance|电池内阻：电量为什么会跳|Battery internal resistance: why the percentage jumps|3c
+measurement-signal-noise-method|看懂任何设备的三个问题|Three questions for any device|3c
 3
-semiconductor-doping|掺杂与载流子|Doping and carriers|3c
-pn-junction|pn 结与二极管|The pn junction and diode|3c
-mosfet-subthreshold-swing|MOSFET 与亚阈值摆幅|MOSFET and subthreshold swing|3c
-dennard-scaling|登纳德缩放的终结|The end of Dennard scaling|3c
-optical-lithography-resolution|光刻分辨率|Lithographic resolution|3c
-euv-lithography|EUV 光刻|EUV lithography|3c
-process-node-density|工艺节点与晶体管密度|Process nodes and transistor density|3c
-finfet-gaa|FinFET、全环绕栅极与 CFET|FinFET, gate-all-around and CFET|3c
-interconnect-rc-delay|导线电阻与 RC 延迟|Wire resistance and RC delay|3c
-die-yield-cost|良率与晶圆成本|Yield and wafer cost|3c
-semiconductor-frontier|半导体前沿（2026）|Semiconductor frontier (2026)|3c`
+semiconductor-doping|掺杂与载流子|Doping and carriers|3d
+pn-junction|pn 结与二极管|The pn junction and diode|3d
+mosfet-subthreshold-swing|MOSFET 与亚阈值摆幅|MOSFET and subthreshold swing|3d
+dennard-scaling|登纳德缩放的终结|The end of Dennard scaling|3d
+optical-lithography-resolution|光刻分辨率|Lithographic resolution|3d
+euv-lithography|EUV 光刻|EUV lithography|3d
+process-node-density|工艺节点与晶体管密度|Process nodes and transistor density|3d
+finfet-gaa|FinFET、全环绕栅极与 CFET|FinFET, gate-all-around and CFET|3d
+interconnect-rc-delay|导线电阻与 RC 延迟|Wire resistance and RC delay|3d
+die-yield-cost|良率与晶圆成本|Yield and wafer cost|3d
+semiconductor-frontier|半导体前沿（2026）|Semiconductor frontier (2026)|3d`
   };
-  const E = "6a6H6a6K6aAg6a7e6a76422G263I2628262G262_4D4H7o65CbCeCbCjCYCb00030009Bo5i8Q958QBH3638363A4_5u2C2zCOC-COD0COCmAp852R2S2D2I2S322mDQ2m4I2s2r2s2m2s2w2s2y2s2b2s2dDdDi4x594x4z5C4x5C0X2XCw2XDF2X2v2X35D9DFDODVDODa1g1S1g4Z1g1G5D9E5DAz5E6o5E6F9e9r3-4LD4DH1m2G1n7S3G2h5z995z5dDTDQ5-Ap5-6c5-AL5-9G7q9f7q8z6cAq6c7B6c9k5F60Aq8C5G8S5GAq5G6i5G5O5G6Y7B9g7B9z6dAq6d8f6d9Z7r5F7sAp1o1m1o1n4W4X4W4Y4W4n1p1E7CBw3_273_453_3D3_413U3X9267010O5_6e7D7u8T937uAG7u8T5H5_5HBN6e7D939h9hAr9h5M020F020t4X4V4X4Y4X4Z4Y4i4i4l2T0t537v53657v8a5I0W6071616h3H263H3I6f5Y0S1O0S0m0TCQ0TCl0TCR0TCp0T2_0TCT0T35ChCo2Y2w0U4s0U17383B8V9494AH7E9i7E7w626g5J8V5J7E5J629iAt9561Au749jAR9j5Z9j6U0z0-2F5I2F0W2F2H2F2v0C4T0C0O5K610V2s0V32DADhDUDb2t2IDFDODFDJ638863AZ637n63798WBgCyD5CyDQ7F7x7x8j6h7F6hAQ6hBd965fAI98AIB2AI9x7y7o7y8R7y6h2u2Z7G82E87o0W2D0W1o0W4S0W1j0W280WDV0W0c0W180W0o0W190W2A0W0s0W2h979m976_0g0h0g5n0g0N989598BUEE98EEB2997q997x99AT7I917IAx7-BP8X9A8Y8X8Y9A8Y6MCLDaCL33030D03052732154r151O151Y1N1a646i6i8R6i7C5LBCAKAz4B4N4B4J7J9v7J9V9B9f3I393I3L659B65BY65Aa4Q4R4Q4U0h0U0hDK0h2-0h0p0h320h351h1i1h1j1h1k1h0c1h0e1h481h1E1iE31i1j1i321j193A0e0i2C4f4g3pE5242G240a284D282G434P434KBR5m040E040N667ZCPCV0D0q0X5B0X4g0X430XCz0X2x0X440X0d0X3F0X0q0XCX0YD90YDU0YCP0Y2_0YCM0Y340Y350YCVAL95AL716l7G6l9F2G2E2G4Y2G2A2G5s7L8p1q1p8a9j8a968a8y80A98bAY8b8x0v17595T4024AN9TCzDkCzD71O2F1O1Y1O1b050L5MAy5M6M81BQ81A28dBYC-0jC-Cf828U2v2Y2vDJ2v322v332v34C_DdC_D8DJDO679n676m7M8e7M9D9nAO8eAw5N676m7M6m834F4L4F4H2pDRDvDxBTAv5O798f9u8f9U8f795P2P5Q5M1P4m1P1E294e29Dv294sDVDn4d4f6n7h685D6889687068A84P4K9FAP2w2k9p725T9I5T7g5T6VDHDKDaDe2J2F2J2HDjDc1r1m1r1n1r1o0E0OCiCrCiClCiCp2x2t2x2u2xD_0F0K0aDx0a1q0a1r0a190a2A0a1Z0a1EClCsCRDaCRCl161N163C161K161D161a848k06080G0OAzBRAR5Z5U6Q4h4m4h4p6o9K0b260b0c2yDx2y2GBsBLBXAKBX6T1Q1g1Q1q5W9o5W6ADRDT0k1O0k2M0k2Q51535X7Q5X6F5X5sDKDh0l0W0l0f6A6l9r9o9rA-9HB09H9s858i6B6p7P9H7P859sAS6p7P5Y6B868WCpCbCZCs442E4446878Q9I9e9I9uAT5MATAx2K2J2K1a1k191c0uDkDn2-Db0n0g0n5Q2V2o2VDL2V352517D0C-D02NCfCo2a2b4548888w6D5-6D5G6D6d6DAI6D5L6D7Q6D7j8j91B2Br7Q7o7Q5G7Q7C7Q5K7Q5O7Q8f7Q7V7QAoD-7-5Z6U9uC17R971RE01R1X3D38102J101ECsCk2_CO2_2r2_272_De2_1Q2_2a4R0t3Q3Y3Q3VCjCrE7657S860d0Z56577T804v4z8kBs8k6_2c4N2c2G899R070C070E070L0750Bb9mBbAA170y1729170_1710171A171V170u171E8l988l7I8A9K8A8p18Dw18170o5C5a6q5a6G6q7U6qB46q9w7U9J7U8B7U8m8BAW5b665b6_CTCY6r7t6r7V7V617V957V8c7V8l9xBT9xBU9xAf6HAB6H8M6H7k9LBR9L8k5c8A7W977W9K7WAA2L0W2L0h2L463S3Z1eE31e1f1e1E9NA5D7D9192E1917191W192B302u9O9z9OA58C8h6I7A0H0U0H1A6J6a6J5z6J996J5d3E363E3H3E3C3E1Q3E453E3D3E23E0E1E0E2080O8DB59_8X9_AX9P5K9P849PBb9P7W8nAK8n7R8n8zB56hB57Z6K7t6K6H6K6u6K77AXATAXB56u6h6u8D6u7Y6u7Z5d8n5dAB090M0e2v0e0c6LA06L9Q6L6v7a8E5e6L5eBe8oB68oAY6v7a6v8o3F3LCUCX1S161S1Y414W2A4F2A2B0w0z0w0-5f6D6M8X6M9-6M75AZ5MAZA20A000A4x0A084Z4d312_318J31Dz2M2H2M2B2M2Q0I0F0I0t2d2m2d345gAv5g7S5g6wAaC25h7S5h6w5h6P1s1o1s1r462GD2Cz111Z111ED8DAD8DGD8DLD8Dc474C0J0D0J0q2NC-2N2c5i6T2e2v2e352W2Y2W2_2W322W1T2W2i3226322C322s322X322u320Y322w322x320b321Q322z322-322a322b322_322c320p3231322e32357b817bA27bBv7bBF3J3M3J3PCuDL1t1m1t1n0K0C0K0L0K0Q0K0tCgCiCgCsCgD8CgCu1T1N1U161U1X5kAeA25MA2Bv1F1K1F1GBiBn8pBs8pBi8pBE6x8F6x7c6xAc6x8q8FA36NB86N6x8q9S5l6NB98-0L0t5A5G2O5C2O0X2O5rA4Ad9TA46y7d5m8r5m6OBBBl7d9T7dBl7d8G6O6y2fCL2fDR2f2g2f2l2f0O2g2k2g2i2g2j2n4G1VDv1V4k1V1Y4t4v6P721W2H1W2B1WCX4842AfBnAfBE4z534z564z5A4z506Q6f6Q7f33DnA5A7A5BGA5Ao9UBY9U9r9UBZ9U9u9U9Z6-7s6-8d0q5R0qA68HA68IBn8I8c6_AF6_9k6_7Z6_BL1X2Q8J8s5o8M7e9R7e737eAD5p9VBEBn6R7b4b4c6S6o6S736S8-4U4V4C4EA6B1A6AiAiC41B4a1B1a0f0aA7Am8vBQ8vCH5q5z5q7t8w9Z9WAb2P0pDzD_34E2342wAjApAjBYAjC10M0w1d1e1d1s1d1f0N0O0r1O0r160r1R0r190r5n0r4U7f7v1J1L1C1M1G1H0O5B0O4r0O2U0O5Q0O5X0O0w0O0f0O1Z2iD5120z120-121P121B7161717I71Ax71BH0P0a5r5B0x190xCU131O130d3T3V3O3Q3O3TBGAu1Y1R1Y1X1YCX1Y1b727NCaCoCaCdCaCf8KAMA85cA89O8x8-738J1D1W494D494B494PCNCRCND7CNCM9Y5E9Y5o9Y5p9Y9V9Y5w575U575f1I1J1a151a1h1a1O1a131a1D8y9ND30jD3C-D3CN1u1m1u1n0B0C0B0H74BR74Bs6T9i6TAz6T74A9BjDSDh0s1O5sAW75BP759S757mDCDQDICyDIDQDIDC0R0P0R0u5t5HAA9mAB8XAB7iAB77AlAB9Z9u2h2Z7jAu7j8h7j9G7j8CAm976U6n6UAj6UBG5057507g8zAK8z9E8zBX8zA66V6-3P3X0t0S0t4T0t0r0t128-AB7kAM7k8M5v9b76Al768-9b6w5w8-778Y8NAT8NAl8N776X7i6XAB6X778_9c8_BK787l8O8_7l8O6Y786YAC5xAn5x6Y4K4M4G4I35CL352v352y352_352c3530352f353335CM35Dz0u2C0u0h0u1h0u0i0u5Q0u1k0u0n0u0c0u5nCVCx141AC37xCWCoCWCm232G3L3GADBD5y6IAo5O1E1p1E241E291E1Q1E0_1E251E1S4A347ABX7ABb7A5i7A7jDDDUDDD5DDDK2Q0fDlDh";
+  const E = "6a6H6a6K6aAg6a7e6a76422G263I2628262G262_4D4H7o65CbCeCbCjCYCb00030009Bo5i8Q958QBH3638363A4_5u2C2zCOC_COD1COCmAp852R2S2D2ICcDX2S322mDf2mDV2m4I2s2r2s2m2s2w2s2y2s2b2s2d2sDSDlDr4x594x4z5C4x5C0X2XCw2XDI2X2v2X35DBDIDTDcDTDi1g1S1g4Z1g1G5D9E5DAz5E6o5E6F9e9r3-4LD5DL1m2G1n7S3G2h5z995z5dDZDV5-Ap5-6c5-AL5-9G7q9f7q8z6cAq6c7B6c9k5F60Aq8C5G8S5GAq5G6i5G5O5G6Y7B9g7B9z6dAq6d8f6d9Z7r5F7sAp1o1m1o1n4W4X4W4Y4W4n1p1E7CBw3_273_453_3D3_413U3XCyDD9267010O5_6e7D7u8T937uAG7u8T5H5_5HBN6e7D939h9hAr9h5M020F020t4X4V4X4Y4X4Z4Y4i4i4l2T0t537v53657v8a5I0W6071616h3H263H3I6f5Y0S1O0S0m0TCQ0TCl0TCR0TCp0T2_0TCT0T35ChCo2Y2w0U4s0U17383B8V9494AH7E9i7E7w626g5J8V5J7E5J629iAt9561Au749jAR9j5Z9j6U0z0-2F5I2F0W2F2H2F2v0C4T0C0O5K610V2s0V32DCDqDaDfDbDj2t2IDIDTDIDN638863AZ637n63798WBgCzD6CzDV7F7x7x8j6h7F6hAQ6hBd965fAI98AIB2AI9x7y7o7y8R7y6h2u2ZDJDX7G82EH7o0W2D0W1o0W4S0W1j0W280WDc0W0c0W180W0o0W190W2A0W0s0W2h979m976_0g0h0g5n0g0N989598BUEN98ENB2997q997x99AT7I917IAx7-BP8X9A8Y8X8Y9A8Y6MCLDiCL33030D03052732154r151O151Y1N1a646i6i8R6i7C5LBCAKAz4B4N4B4J7J9v7J9V9B9f3I393I3L659B65BY65Aa4Q4R4Q4U0h0U0hDO0h2-0h0p0h320h351h1i1h1j1h1k1h0c1h0e1h481h1E1iEC1i1j1i321j193A0e0i2C4f4g3pEE242G240a284D282G434P434KBR5m040E040N667ZCPCV0D0q0X5B0X4g0X430XC-0X2x0X440X0d0X3F0X0q0XCX0YDB0YCy0YDb0YCP0Y2_0YCM0Y340Y350YCV0jD7AL95AL716l7G6l9F2G2E2G4Y2G2A2G5s7L8p1q1p8a9j8a968a8y80A98bAY8b8x0v17595T4024AN9TC-DtC-D91O2F1O1Y1O1b050L5MAy5M6M81BQ81A28dBYC_0jC_Cf828U2v2Y2vDN2v322v332v34D0DlD0DADNDT679n676m7M8e7M9D9nAO8eAw5N676m7M6m834F4L4F4H2pDf2pDWE2E4BTAv5O798f9u8f9U8f795P2P5Q5M1P4m1P1E294e29E2294sDcDw4d4f6n7h685D6889687068A84P4K9FAP2w2k9p725T9I5T7g5T6VDLDODiDm2J2F2J2HDUDXDsDk1r1m1r1n1r1o0E0OCiCrCiClCiCp2x2t2x2u2xE80F0KDDDn0aE40a1q0a1r0a190a2A0a1Z0a1EClDaClCsCRDiCRCl161N163C161K161D161a848k06080G0OAzBRAR5Z5U6Q4h4m4h4p6o9K0b260b0c2yE42y2GBsBLBXAKBX6T1Q1g1Q1q5W9o5W6ADWDZ0k1O0k2M0k2Q51535X7Q5X6F5X5sD7DaD7DJD7DDD7DSDODq0l0W0l0f6A6l9r9o9rA-9HB09H9s858i6B6p7P9H7P859sAS6p7P5Y6B868WCpCbCZCs442E4446878Q9I9e9I9uAT5MATAx2K2J2K1a1k191c0uDtDwDdD72-Dj0n0g0n5Q2V2o2VDP2V352517D1DJD1C_D12NCfCo2a2b4548888w6D5-6D5G6D6d6DAI6D5L6D7Q6D7j8j91B2Br7Q7o7Q5G7Q7C7Q5K7Q5O7Q8f7Q7V7QAoE77-5Z6U9uC17R971RE91R1X3D38102J101ECsCk2_CO2_2r2_272_Dm2_1Q2_2a4R0tDXDa3Q3Y3Q3VCjCrEG657S860d0Z56577T804v4z8kBs8k6_2c4N2c2G899R070C070E070L0750Bb9mBbAA170y1729170_1710171A171V170u171E8l988l7I8A9K8A8p18E318170o5C5a6q5a6G6q7U6qB46q9w7U9J7U8B7U8m8BAW5b665b6_CTCY6r7t6r7V7V617V957V8c7V8l9xBT9xBU9xAf6HAB6H8M6H7k9LBR9L8k5c8A7W977W9K7WAA2L0W2L0h2L463S3Z1eEC1e1f1e1E9NA5D9DB192E1917191W192B302u9O9z9OA58C8h6I7A0H0U0H1A6J6a6J5z6J996J5d3E363E3H3E3C3E1Q3E453E3D3E23E9EAE9EB080O8DB59_8X9_AX9P5K9P849PBb9P7W8nAK8n7R8n8zB56hB57Z6K7t6K6H6K6u6K77AXATAXB56u6h6u8D6u7Y6u7Z5d8n5dAB090M0e2v0e0c6LA06L9Q6L6v7a8E5e6L5eBe8oB68oAY6v7a6v8o3F3LCUCX1S161S1Y414W2A4F2A2B0w0z0w0-5f6D6M8X6M9-6M75AZ5MAZA20A000A4x0A084Z4d312_318J31E62M2H2M2B2M2Q0I0F0I0t2d2m2dDf2d345gAv5g7S5g6wAaC25h7S5h6w5h6P1s1o1s1r462GD3C-111Z111EDADCDADKDADPDADk474C0J0D0J0q2NC_2N2c2NDS5i6T2e2v2e352W2Y2W2_2W322W1T2W2i3226322C322s322X322u320Y322w322x320b321Q322z322-322a322b322_322c320p3231322e32357b817bA27bBv7bBF3J3M3J3PCuDP1t1m1t1n0K0C0K0L0K0Q0K0tCgCiCgCsCgDACgCu1T1N1U161U1X5kAeA25MA2Bv1F1K1F1GBiBn8pBs8pBi8pBE6x8F6x7c6xAc6x8q8FA36NB86N6x8q9S5l6NB98-0L0t5A5G2O5C2O0X2O5rA4Ad9TA46y7d5m8r5m6OBBBl7d9T7dBl7d8G6O6y2fCL2fDW2f2g2f2l2f0O2g2k2g2i2g2j2n4G1VE21V4k1V1Y4t4v6P721W2H1W2B1WCX4842AfBnAfBE4z534z564z5A4z506Q6f6Q7f33Dw33DD33D7CMCyA5A7A5BGA5Ao9UBY9U9r9UBZ9U9u9U9Z6-7s6-8d0q5R0qA68HA68IBn8I8c6_AF6_9k6_7Z6_BL1X2Q8J8s5o8M7e9R7e737eAD5p9VBEBn6R7b4b4c6S6o6S736S8-4U4V4C4EA6B1A6AiAiC41B4a1B1a0f0aA7Am8vBQ8vCH5q5z5q7t8w9Z9WAb2P0pE6E834Df34EB342wAjApAjBYAjC10M0w1d1e1d1s1d1f0N0O0r1O0r160r1R0r190r5n0r4U7f7v1J1L1C1M1G1H0O5B0O4r0O2U0O5Q0O5X0O0w0O0f0O1Z2iD6120z120-121P121B7161717I71Ax71BH0P0a5r5B0x190xCU131O130d3T3V3O3Q3O3TBGAu1Y1R1Y1X1YCX1Y1b727NCaCoCaCdCaCf8KAMA85cA89O8x8-738J1D1W494D494B494PCNCRCND9CNCM9Y5E9Y5o9Y5p9Y9V9Y5w575U575f1I1J1a151a1h1a1O1a131a1D8y9ND40jD4C_D4CN1u1m1u1n0B0C0B0H74BR74Bs6T9i6TAz6T74A9BjDYDq0s1O5sAW75BP759S757mDFDVDMCzDMDVDMDF0R0P0R0u5t5HAA9mAB8XAB7iAB77AlAB9Z9u2h2Z7jAu7j8h7j9G7j8CAm976U6n6UAj6UBG5057507g8zAK8z9E8zBX8zA66V6-3P3X0t0S0t4T0t0r0t128-AB7kAM7k8M5v9b76Al768-9b6w5w8-778Y8NAT8NAl8N776X7i6XAB6X778_9c8_BK787l8O8_7l8O6Y786YAC5xAn5x6Y4K4M4G4I35CL352v352y352_352c3530352f353335CM35E60u2C0u0h0u1h0u0i0u5Q0u1k0u0n0u0c0u5nCVDDCVCx141AC37xCWCoCWCm232G3L3GADBD5y6IAo5O1E1p1E241E291E1Q1E0_1E251E1S4A347ABX7ABb7A5i7A7jDGDbDGD6DGDO2Q0fDuDq";
   const Q = `q-averaging-leveling-0|0|平均数为什么是总数除以个数？|Why is the mean the total divided by the count?|2R2S|4
 q-bar-charts-0|0|平均数在图上到底是什么？|What is the mean on a chart?|2S32|4
 q-chicken-rabbit-0|0|不用方程怎样解鸡兔同笼？|How do you solve chickens-and-rabbits without algebra?|010O|0
@@ -1017,7 +1026,7 @@ q-sound-waves-0|1|同一个音，为什么钢琴和小提琴听起来不同？|W
 q-three-views-0|1|为什么两个视图不够，要三个？|Why are two views not enough, and why do we need three?|0R0u|0
 q-activation-energy-0|2|为什么升温能让反应快这么多？|Why does warming speed a reaction up so much?|32262_|3
 q-atmospheric-circulation-0|2|为什么赤道多雨、副热带多沙漠？|Why is the equator rainy and the subtropics desert-prone?|4V4U|7
-q-auction-basics-0|2|怎样的拍卖规则能让人说真话？|Which auction rule makes people bid truthfully?|COC-|9
+q-auction-basics-0|2|怎样的拍卖规则能让人说真话？|Which auction rule makes people bid truthfully?|COC_|9
 q-bayes-diagnostics-0|2|体检结果阳性，我真的患病的可能性有多大？|My screening test came back positive — how likely is it that I really have the disease?|2d2s|4
 q-binomial-normal-0|2|为什么扔很多次硬币，正面数像一口钟？|Why does the head count of many coin flips look like a bell?|2X2v32|4
 q-blackbody-radiation-0|2|为什么经典物理需要量子？|Why did classical physics need the quantum?|1g1S|2
@@ -1067,7 +1076,7 @@ q-decision-trees-0|3|怎样用最少的问题把两类分开？|How can two clas
 q-double-slit-0|3|为什么一个电子也会“同时”走两条缝？|Why does a single electron behave as if it takes both slits?|1N161a|1
 q-embeddings-0|3|词怎样变成可计算的向量？|How does a word become a computable vector?|0u0i2C|0
 q-entropy-0|3|一个文件最多能压缩到多小？|How small can a file possibly be compressed?|2x32|4
-q-externalities-0|3|为什么污染和过度捕捞很难靠市场自己解决？|Why are pollution and overfishing so hard for markets to fix by themselves?|0jD3C-|0
+q-externalities-0|3|为什么污染和过度捕捞很难靠市场自己解决？|Why are pollution and overfishing so hard for markets to fix by themselves?|0jD4C_|0
 q-gravitational-lensing-0|3|为什么遥远的星系会变成一个光环？|Why does a distant galaxy turn into a ring of light?|1P12|1
 q-hypothesis-testing-0|3|“p < 0.05”到底说明了什么？|What does “p < 0.05” really tell us?|2w2s32|4
 q-kinetic-theory-0|3|压强和温度从哪里来？|Where do pressure and temperature come from?|1E1Q32|1
@@ -1081,7 +1090,7 @@ q-overfitting-0|3|为什么训练得越好，新数据反而更差？|Why can be
 q-pagerank-0|3|谁被链接，谁就重要吗？|Is a page important just because it is linked to?|320p0h|0
 q-photoelectric-effect-0|3|为什么光再亮也打不出电子？|Why can bright light still fail to free electrons?|1Y1S16|1
 q-poisson-process-0|3|随机到达的事件有什么规律？|What regularities do random arrivals have?|32312_|4
-q-prisoners-dilemma-0|3|为什么合作能在自私者中存活？|How can cooperation survive among selfish players?|C-2N2c|3
+q-prisoners-dilemma-0|3|为什么合作能在自私者中存活？|How can cooperation survive among selfish players?|C_2N2c|3
 q-quantum-tunneling-0|3|粒子没有足够能量，为什么还能穿过去？|Why can a particle pass without enough energy?|161U|1
 q-recursion-divide-0|3|为什么有的递归瞬间完成，有的永远算不完？|Why do some recursions finish instantly and others never finish?|2O5C0X|3
 q-relativity-0|3|为什么光速不能被超过？|Why can’t the speed of light be exceeded?|171V|1
@@ -1092,7 +1101,7 @@ q-signal-detection-0|3|两位检测者都对了 80%，为什么分辨能力可�
 q-sorting-0|3|同一副乱牌，为什么归并排序比冒泡排序快那么多？|Given the same shuffled cards, why is merge sort so much faster than bubble sort?|5r5B|8
 q-taylor-series-0|3|为什么复杂的函数能被多项式代替？|Why can a complicated function be replaced by a polynomial?|0W0s1O|0
 q-wavelets-0|3|频率什么时候出现？|When does a frequency occur?|1O1Y1b|1`;
-  const H = {"math.nodes":"e2604c5fbd","math.edges":"dd97c95e49","math.questions":"45d6b4219d","waves.nodes":"3e3dbb94cf","waves.edges":"f057eda9c4","waves.questions":"2c8eefed10","circuits.nodes":"f670f77833","circuits.edges":"a8f469b942","circuits.questions":"f49c21c00e","systems.nodes":"25c2aa8cdd","systems.edges":"52e45f72db","systems.questions":"bd10c759fb","measurement.nodes":"f7d2927310","measurement.edges":"28a4258364","measurement.questions":"d613f677a0","matter.nodes":"25624979be","matter.edges":"746dc0bb1e","matter.questions":"c2ff191d9e","life.nodes":"667bde75bf","life.edges":"780dd3b25c","life.questions":"ca4a3c5b64","earth.nodes":"fa6bec8e4d","earth.edges":"c497dfecd2","earth.questions":"99b4186b88","computing.nodes":"f9db558142","computing.edges":"0b42d19631","computing.questions":"34b588ec95","society.nodes":"0285a16d81","society.edges":"1a1f39bf66","society.questions":"7a49ca20c7","tech.nodes":"31683931b1","tech.edges":"a7348bf836","trails":"496fe49aba"};
+  const H = {"math.nodes":"e2604c5fbd","math.edges":"b07a7218ec","math.questions":"45d6b4219d","waves.nodes":"3e3dbb94cf","waves.edges":"f057eda9c4","waves.questions":"2c8eefed10","circuits.nodes":"f670f77833","circuits.edges":"a8f469b942","circuits.questions":"f49c21c00e","systems.nodes":"25c2aa8cdd","systems.edges":"4ee3793161","systems.questions":"bd10c759fb","measurement.nodes":"b5f2372c21","measurement.edges":"727c25a890","measurement.questions":"d613f677a0","matter.nodes":"25624979be","matter.edges":"746dc0bb1e","matter.questions":"c2ff191d9e","life.nodes":"667bde75bf","life.edges":"780dd3b25c","life.questions":"ca4a3c5b64","earth.nodes":"fa6bec8e4d","earth.edges":"c497dfecd2","earth.questions":"99b4186b88","computing.nodes":"f9db558142","computing.edges":"0b42d19631","computing.questions":"34b588ec95","society.nodes":"c1e6acb3c2","society.edges":"99cb97caa0","society.questions":"7a49ca20c7","tech.nodes":"31683931b1","tech.edges":"a7348bf836","trails":"496fe49aba"};
   const ix = (s, i) => K.indexOf(s[i]) * 64 + K.indexOf(s[i + 1]);
   const pairs = s => { const a = []; for (let i = 0; i < s.length; i += 2) a.push(ix(s, i)); return a; };
   const nodes = [];

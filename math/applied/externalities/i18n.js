@@ -110,7 +110,9 @@ const STR = {
     "site.crumb.aria": "页面位置",
     "site.crumb.home": "首页",
     "site.crumb.cat": "数学基础",
-    "site.crumb.sub": "数学应用"
+    "site.crumb.sub": "数学应用",
+    "site.bl.title": "被这些页面引用",
+    "site.bl.1": "<a href=\"../../../economics/markets/when-buyers-cant-see-quality/\">看不清质量的时候：柠檬市场与保险</a>：<a href=\"../../../economics/markets/when-buyers-cant-see-quality/#ch3\">该文第 3 章</a> → <a href=\"#step3\">本页第 3 步</a>"
   },
   en: {
     back: "← Knowledge Index",
@@ -221,7 +223,9 @@ const STR = {
     "site.crumb.aria": "Breadcrumb",
     "site.crumb.home": "Home",
     "site.crumb.cat": "Mathematical Foundations",
-    "site.crumb.sub": "Applied Mathematics"
+    "site.crumb.sub": "Applied Mathematics",
+    "site.bl.title": "Linked from",
+    "site.bl.1": "<a href=\"../../../economics/markets/when-buyers-cant-see-quality/\">When Buyers Can't See Quality: Lemons and Insurance</a>: <a href=\"../../../economics/markets/when-buyers-cant-see-quality/#ch3\">its chapter 3</a> → <a href=\"#step3\">this page step 3</a>"
   }
 };
 let currentLang = 'en';

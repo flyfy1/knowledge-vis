@@ -70,5 +70,5 @@
     "stepNav": false,
     "label": "<details class=\"page-provenance\" data-developer=\"{{developer}}\" data-edition=\"{{edition}}\" data-source-revision=\"{{sourceRevision}}\"><summary><span class=\"provenance-zh\" lang=\"zh-CN\">{{developer}} 开发 · {{kind.zh}}</span><span class=\"provenance-en\" lang=\"en\">Developed with {{developer}} · {{kind.en}}</span></summary><p><span class=\"provenance-zh\" lang=\"zh-CN\">本页由 {{developer}}（claude-opus-5-5）独立编写，由 lead 会话（claude-opus-5-5）自查验收；2026-11-17 经两版对比后取代本地址上的原版。尚无人工或跨模型评审。</span><span class=\"provenance-en\" lang=\"en\">This page was written independently with {{developer}} (claude-opus-5-5) and self-checked by the lead session (claude-opus-5-5); on 2026-11-17, after comparing both versions, it replaced the earlier lesson at this address. No human or cross-model review yet.</span></p><p><span class=\"provenance-zh\" lang=\"zh-CN\">范围：{{scope.zh}}。</span><span class=\"provenance-en\" lang=\"en\">Scope: {{scope.en}}.</span></p><p>{{edition}} · <a href=\"https://github.com/flyfy1/knowledge-vis/commit/{{sourceRevision}}\"><span class=\"provenance-zh\" lang=\"zh-CN\">源码修订</span><span class=\"provenance-en\" lang=\"en\">Source revision</span> · {{short}}</a></p></details>"
   },
-  "version": "20261117a"
+  "version": "20261125a"
 }

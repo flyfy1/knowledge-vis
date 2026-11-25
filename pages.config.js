@@ -116,7 +116,8 @@ window.KNOWLEDGE_SUBTOPICS = {
   ],
   "economics": [
     { id: "money", name: { zh: "货币与银行", en: "Money & Banking" } },
-    { id: "macro", name: { zh: "宏观经济与国民核算", en: "Macroeconomics & Measurement" } }
+    { id: "macro", name: { zh: "宏观经济与国民核算", en: "Macroeconomics & Measurement" } },
+    { id: "markets", name: { zh: "市场", en: "Markets" } }
   ],
   "food": [
     { id: "flavor", name: { zh: "味道从哪来", en: "Where Flavor Comes From" } }
@@ -210,6 +211,7 @@ window.KNOWLEDGE_ESSAYS = [
   "how-llvm-compiles-your-code",
   "a-fair-price-for-a-bet",
   "what-the-yield-curve-says",
+  "when-buyers-cant-see-quality",
   "scarcity-moves"
 ];
 
@@ -2302,6 +2304,13 @@ window.KNOWLEDGE_PAGES = [
     desc: { zh: "从磁盘上一份打不开的 .dat 字节流出发，一步步拆解混合加密容器、XOR 自反性、AES-ECB 与 CBC 破绽、已知明文校验、内存扫描时间窗、ARM64 调用约定、ADRP 寻址与 libc++ std::string 布局。八个可动手模型，全部基于真实排障过程脱敏整理。", en: "Starting from an unreadable .dat file on disk, trace hybrid encryption containers, XOR involution, AES-ECB vs CBC fingerprints, known-plaintext verification, ephemeral memory windows, ARM64 calling conventions, ADRP addressing, and libc++ std::string layout. Eight interactive models from a redacted real-world debugging session." },
     tags: [{ zh: "逆向工程", en: "Reverse Engineering" }, { zh: "密码学", en: "Cryptography" }, { zh: "ARM64", en: "ARM64" }, { zh: "系统与安全", en: "Systems & Security" }, { zh: "长文", en: "Long-form Essay" }],
     category: "computing", subtopic: "systems", stage: "university", status: "live", path: "computing/systems/how-to-crack-an-encrypted-image/"
+  },
+  {
+    slug: "when-buyers-cant-see-quality",
+    title: { zh: "看不清质量的时候：柠檬市场与保险", en: "When Buyers Can't See Quality: Lemons and Insurance" },
+    desc: { zh: "二手车市场为什么烂车多？保险为什么要免赔额、要体检？医保为什么要大家都参加？银行为什么宁可不借也不涨利率？这篇从期望和风险厌恶讲起：风险池化、柠檬市场、保险的死亡螺旋、免赔额菜单、信号、道德风险、信贷配给和信用分，八个可以动手的模型，最后是大数据定价、基因信息和医保参保规则的前沿。", en: "Why are used-car lots full of lemons? Why does insurance come with deductibles and medical exams? Why should everyone join public health insurance, and why will a bank refuse a loan rather than raise the rate? Starting from expected value and risk aversion: risk pooling, the market for lemons, the insurance death spiral, deductible menus, signalling, moral hazard, credit rationing and credit scores, with eight hands-on models, ending at the frontier of data-driven pricing, genetic information and enrolment rules." },
+    tags: [{ zh: "信息经济学", en: "Information Economics" }, { zh: "保险市场", en: "Insurance Markets" }, { zh: "信贷与信用分", en: "Credit & Credit Scores" }, { zh: "长文", en: "Long-form Essay" }],
+    category: "economics", subtopic: "markets", stage: "university", status: "live", path: "economics/markets/when-buyers-cant-see-quality/", created: "2026-11-25"
   },
   {
     slug: "why-one-rate-moves-everything",

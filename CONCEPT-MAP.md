@@ -2705,7 +2705,7 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 <!-- GENERATED:atlas-nodes -->
 ## 三、图谱节点索引（生成，勿手改）
 
-912 个概念 · 1074 条关系 · 11 个分区 · 由 scripts/build-atlas-data.cjs --concept-map 生成。节点排序与 data.js 一致（分区序、学段序、order、id）。
+921 个概念 · 1100 条关系 · 11 个分区 · 由 scripts/build-atlas-data.cjs --concept-map 生成。节点排序与 data.js 一致（分区序、学段序、order、id）。
 
 ### 01 数学基础 / Mathematical tools
 
@@ -3584,6 +3584,7 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 拿到贷款合同时能自己算的事 / What you can work out from a loan contract | ../economics/money/where-a-mortgage-payment-goes/#ch9 | where-a-mortgage-payment-goes |
 | 孔多塞陪审团定理 / Condorcet's jury theorem | ../society/civics/same-votes-different-winner/#ch9 | same-votes-different-winner |
 | 怎样读“这个制度很公平” / How to read a claim that a system is fair | ../society/civics/same-votes-different-winner/#ch10 | same-votes-different-winner |
+| 风险厌恶与确定性等价：为什么买平均亏钱的保险 / Risk aversion and the certainty equivalent: why buy insurance that loses on average | ../economics/markets/when-buyers-cant-see-quality/#ch1 | when-buyers-cant-see-quality |
 | 同一条曲线，两种读法：预期和期限溢价为什么分不开 / One curve, two readings: why expectations and the term premium cannot be told apart | ../investment/rates/what-the-yield-curve-says/#ch3 | what-the-yield-curve-says |
 | 远期价格与持有成本 / Forward price and cost of carry | ../investment/derivatives/a-fair-price-for-a-bet/#ch1 | a-fair-price-for-a-bet |
 | 博弈论 / Game theory | ../math/applied/game-theory/#step0 | game-theory#step0 |
@@ -3594,16 +3595,19 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 供需均衡 / Supply & demand equilibrium | ../math/applied/supply-demand/#step0 | supply-demand#step0 |
 | 债券久期与凸性 / Bond duration and convexity | ../economics/money/why-one-rate-moves-everything/#ch2 | why-one-rate-moves-everything |
 | 持有期回报、骑乘曲线与远期利率的打平点 / Holding-period return, roll-down and the forward as break-even | ../investment/rates/what-the-yield-curve-says/#ch4 | what-the-yield-curve-says |
+| 柠檬市场与逆向选择 / The market for lemons and adverse selection | ../economics/markets/when-buyers-cant-see-quality/#ch3 | when-buyers-cant-see-quality |
 | 边际：再多一点值不值 / The margin: is one more step worth it? | ../demos/scarcity-moves/#c2 | scarcity-moves |
 | 期权收益与看涨–看跌平价 / Option payoffs and put–call parity | ../investment/derivatives/a-fair-price-for-a-bet/#ch2 | a-fair-price-for-a-bet |
 | 名义与实际、链式费雪指数与替代偏差 / Nominal vs Real, Chained Fisher & Substitution Bias | ../economics/macro/how-an-economy-is-measured/#ch2 | how-an-economy-is-measured |
 | 一步二叉树：复制与风险中性概率 / One-step binomial: replication and risk-neutral probability | ../investment/derivatives/a-fair-price-for-a-bet/#ch3 | a-fair-price-for-a-bet |
 | CPI 权重、等价租金 OER 与质量调整 / CPI Weights, Owners' Equivalent Rent & Hedonic Adjustment | ../economics/macro/how-an-economy-is-measured/#ch3 | how-an-economy-is-measured |
+| 死亡螺旋、强制参保与核保 / Death spirals, mandates and underwriting | ../economics/markets/when-buyers-cant-see-quality/#ch4 | when-buyers-cant-see-quality |
 | 沉没成本 / Sunk cost | ../demos/scarcity-moves/#c2 | scarcity-moves |
 | ACM 与 Kim–Wright：期限溢价的两种估计 / ACM and Kim–Wright: two estimates of the term premium | ../investment/rates/what-the-yield-curve-says/#ch5 | what-the-yield-curve-says |
 | 收益率曲线、即期利率与远期利率 / Yield curve, spot and forward rates | ../economics/money/why-one-rate-moves-everything/#ch3 | why-one-rate-moves-everything |
 | 交换与比较优势 / Trade and comparative advantage | ../demos/scarcity-moves/#c3 | scarcity-moves |
 | CRR 二叉树与美式期权 / The CRR binomial tree and American options | ../investment/derivatives/a-fair-price-for-a-bet/#ch4 | a-fair-price-for-a-bet |
+| 免赔额菜单与筛选 / Deductible menus and screening | ../economics/markets/when-buyers-cant-see-quality/#ch5 | when-buyers-cant-see-quality |
 | 折年率、基数效应、季节调整与数据修订 / Annualised Rates, Base Effects, Seasonal Adjustment & Revisions | ../economics/macro/how-an-economy-is-measured/#ch4 | how-an-economy-is-measured |
 | 凸性、免疫与哑铃型组合 / Convexity, immunisation and the barbell | ../investment/rates/what-the-yield-curve-says/#ch7 | what-the-yield-curve-says |
 | 预期假说、期限溢价与收益率曲线倒挂 / Expectations, term premium and yield-curve inversion | ../economics/money/why-one-rate-moves-everything/#ch4 | why-one-rate-moves-everything |
@@ -3612,16 +3616,20 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 购买力平价 PPP、均值与中位数及基尼系数 / Purchasing Power Parity, Mean vs Median & Gini Coefficient | ../economics/macro/how-an-economy-is-measured/#ch5 | how-an-economy-is-measured |
 | 价格是一条信息 / Price is a piece of information | ../demos/scarcity-moves/#c4 | scarcity-moves |
 | 准备金、利率走廊与地板体系 / Reserves, the corridor and the floor system | ../economics/money/why-one-rate-moves-everything/#ch5 | why-one-rate-moves-everything |
+| 信号：文凭、保修、口碑与花钱证明自己 / Signalling: diplomas, warranties, reputation and costly proof | ../economics/markets/when-buyers-cant-see-quality/#ch6 | when-buyers-cant-see-quality |
 | 布莱克–斯科尔斯公式与方程 / The Black–Scholes formula and equation | ../investment/derivatives/a-fair-price-for-a-bet/#ch6 | a-fair-price-for-a-bet |
 | 激励 / Incentives | ../demos/scarcity-moves/#c5 | scarcity-moves |
 | 倒挂是降息预期还是期限溢价太低 / Is an inversion rate-cut expectations or a low term premium? | ../investment/rates/what-the-yield-curve-says/#ch9 | what-the-yield-curve-says |
 | U-3 与 U-6 失业率、贝弗里奇曲线与奥肯定律 / U-3 vs U-6 Unemployment, Beveridge Curve & Okun's Law | ../economics/macro/how-an-economy-is-measured/#ch6 | how-an-economy-is-measured |
+| 道德风险、自付比例与委托—代理 / Moral hazard, co-payment and principal–agent | ../economics/markets/when-buyers-cant-see-quality/#ch7 | when-buyers-cant-see-quality |
 | 泰勒规则与自然利率 r* / The Taylor rule and the neutral rate r* | ../economics/money/why-one-rate-moves-everything/#ch6 | why-one-rate-moves-everything |
 | 经济周期、潜在产出与萨姆规则 / Business Cycles, Potential Output & the Sahm Rule | ../economics/macro/how-an-economy-is-measured/#ch7 | how-an-economy-is-measured |
+| 信贷配给：银行为什么不随便放贷 / Credit rationing: why banks refuse rather than raise rates | ../economics/markets/when-buyers-cant-see-quality/#ch8 | when-buyers-cant-see-quality |
 | 信用利差：违约概率 × 违约损失 / Credit spread: default probability × loss given default | ../investment/rates/what-the-yield-curve-says/#ch10 | what-the-yield-curve-says |
 | 希腊字母与 Delta 对冲 / The Greeks and delta hedging | ../investment/derivatives/a-fair-price-for-a-bet/#ch7 | a-fair-price-for-a-bet |
 | 市场会失灵 / Markets can fail | ../demos/scarcity-moves/#c6 | scarcity-moves |
 | 新凯恩斯模型与菲利普斯曲线 / The New Keynesian model and the Phillips curve | ../economics/money/why-one-rate-moves-everything/#ch7 | why-one-rate-moves-everything |
+| 信用分是怎么来的 / Where a credit score comes from | ../economics/markets/when-buyers-cant-see-quality/#ch9 | when-buyers-cant-see-quality |
 | 股票久期与房贷可负担性 / Equity duration and mortgage affordability | ../economics/money/why-one-rate-moves-everything/#ch8 | why-one-rate-moves-everything |
 | 增长来自思想 / Growth comes from ideas | ../demos/scarcity-moves/#c7 | scarcity-moves |
 | 隐含波动率、微笑与肥尾 / Implied volatility, the smile and fat tails | ../investment/derivatives/a-fair-price-for-a-bet/#ch8 | a-fair-price-for-a-bet |
@@ -3629,6 +3637,7 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | 索洛增长核算与全要素生产率（TFP） / Solow Growth Accounting & Total Factor Productivity | ../economics/macro/how-an-economy-is-measured/#ch8 | how-an-economy-is-measured |
 | GDP 之外：家务、折旧、灾难悖论与卫星账户 / Beyond GDP: Home Production, Depreciation & Disaster Paradox | ../economics/macro/how-an-economy-is-measured/#ch9 | how-an-economy-is-measured |
 | 赫斯顿随机波动率模型 / The Heston stochastic volatility model | ../investment/derivatives/a-fair-price-for-a-bet/#ch9 | a-fair-price-for-a-bet |
+| 大数据定价、基因信息与参保规则的前沿 / Data-driven pricing, genetic information and enrolment rules: the frontier | ../economics/markets/when-buyers-cant-see-quality/#ch10 | when-buyers-cant-see-quality |
 | 利率平价与套利交易 / Interest parity and the carry trade | ../economics/money/why-one-rate-moves-everything/#ch9 | why-one-rate-moves-everything |
 | 你的支出是别人的收入 / Your spending is someone else's income | ../demos/scarcity-moves/#c8 | scarcity-moves |
 | 2022–2026 年：倒挂、解除倒挂与美债收益率上涨 / 2022–2026: inversion, un-inversion and rising Treasury yields | ../investment/rates/what-the-yield-curve-says/#ch12 | what-the-yield-curve-says |
@@ -3679,7 +3688,7 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 <!-- GENERATED:registry-concepts -->
 ## 页面 → 概念 → 锚点（生成，勿手改）
 
-265 个页面拥有 909 个图谱概念 · 由 scripts/build-registry.cjs 从 site-registry.json 生成（概念 = atlas/data.js 里 primary 课程是该页的节点；顺序同首页登记顺序）。登记或改动页面后重跑 `node scripts/build-registry.cjs`；不要再在本文件里手写逐页概念表（2026-11-16 起，上面的手写表保留为历史记录）。
+266 个页面拥有 918 个图谱概念 · 由 scripts/build-registry.cjs 从 site-registry.json 生成（概念 = atlas/data.js 里 primary 课程是该页的节点；顺序同首页登记顺序）。登记或改动页面后重跑 `node scripts/build-registry.cjs`；不要再在本文件里手写逐页概念表（2026-11-16 起，上面的手写表保留为历史记录）。
 
 ### 冰冻肥皂泡 · 水膜里的结晶 / Frozen Soap Bubbles · Ice in a Thin Film
 
@@ -6354,6 +6363,22 @@ Khan 原文零引用，Wikidata 仅结构化数据；统一许可表见 `investm
 | ARM64 调用约定与断点排查 / ARM64 Calling Convention & Breakpoint Triage | `computing/systems/how-to-crack-an-encrypted-image/#ch6` |
 | ARM64 ADRP 相对寻址与 ASLR / ARM64 ADRP Addressing & ASLR | `computing/systems/how-to-crack-an-encrypted-image/#ch7` |
 | sret 返回指针与 libc++ std::string 布局 / sret Return Pointer & libc++ std::string Layout | `computing/systems/how-to-crack-an-encrypted-image/#ch8` |
+
+### 看不清质量的时候：柠檬市场与保险 / When Buyers Can't See Quality: Lemons and Insurance
+
+`economics/markets/when-buyers-cant-see-quality/` · essay
+
+| 概念 | 深链 |
+| --- | --- |
+| 风险厌恶与确定性等价：为什么买平均亏钱的保险 / Risk aversion and the certainty equivalent: why buy insurance that loses on average | `economics/markets/when-buyers-cant-see-quality/#ch1` |
+| 柠檬市场与逆向选择 / The market for lemons and adverse selection | `economics/markets/when-buyers-cant-see-quality/#ch3` |
+| 死亡螺旋、强制参保与核保 / Death spirals, mandates and underwriting | `economics/markets/when-buyers-cant-see-quality/#ch4` |
+| 免赔额菜单与筛选 / Deductible menus and screening | `economics/markets/when-buyers-cant-see-quality/#ch5` |
+| 信号：文凭、保修、口碑与花钱证明自己 / Signalling: diplomas, warranties, reputation and costly proof | `economics/markets/when-buyers-cant-see-quality/#ch6` |
+| 道德风险、自付比例与委托—代理 / Moral hazard, co-payment and principal–agent | `economics/markets/when-buyers-cant-see-quality/#ch7` |
+| 信贷配给：银行为什么不随便放贷 / Credit rationing: why banks refuse rather than raise rates | `economics/markets/when-buyers-cant-see-quality/#ch8` |
+| 信用分是怎么来的 / Where a credit score comes from | `economics/markets/when-buyers-cant-see-quality/#ch9` |
+| 大数据定价、基因信息与参保规则的前沿 / Data-driven pricing, genetic information and enrolment rules: the frontier | `economics/markets/when-buyers-cant-see-quality/#ch10` |
 
 ### 央行调一个利率，为什么所有东西的价格都跟着动 / Why One Central-Bank Rate Moves the Price of Everything
 

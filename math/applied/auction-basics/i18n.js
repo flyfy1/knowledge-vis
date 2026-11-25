@@ -110,7 +110,8 @@ const STR = {
     "site.crumb.cat": "数学基础",
     "site.crumb.sub": "数学应用",
     "site.bl.title": "被这些页面引用",
-    "site.bl.1": "<a href=\"../../../society/civics/same-votes-different-winner/\">同一批选票，不同的赢家 · 投票规则与公平</a>：<a href=\"../../../society/civics/same-votes-different-winner/#ch5\">该文第 5 章</a> → <a href=\"#step1\">本页第 1 步</a>；<a href=\"../../../society/civics/same-votes-different-winner/#ch10\">该文第 10 章</a> → <a href=\"#step1\">本页第 1 步</a>"
+    "site.bl.1": "<a href=\"../../../economics/markets/when-buyers-cant-see-quality/\">看不清质量的时候：柠檬市场与保险</a>：<a href=\"../../../economics/markets/when-buyers-cant-see-quality/#ch5\">该文第 5 章</a> → <a href=\"#step2\">本页第 2 步</a>",
+    "site.bl.2": "<a href=\"../../../society/civics/same-votes-different-winner/\">同一批选票，不同的赢家 · 投票规则与公平</a>：<a href=\"../../../society/civics/same-votes-different-winner/#ch5\">该文第 5 章</a> → <a href=\"#step1\">本页第 1 步</a>；<a href=\"../../../society/civics/same-votes-different-winner/#ch10\">该文第 10 章</a> → <a href=\"#step1\">本页第 1 步</a>"
   },
   en: {
     back: "← Knowledge Index",
@@ -221,7 +222,8 @@ const STR = {
     "site.crumb.cat": "Mathematical Foundations",
     "site.crumb.sub": "Applied Mathematics",
     "site.bl.title": "Linked from",
-    "site.bl.1": "<a href=\"../../../society/civics/same-votes-different-winner/\">Same Ballots, Different Winner · Voting Rules and Fairness</a>: <a href=\"../../../society/civics/same-votes-different-winner/#ch5\">its chapter 5</a> → <a href=\"#step1\">this page step 1</a>; <a href=\"../../../society/civics/same-votes-different-winner/#ch10\">its chapter 10</a> → <a href=\"#step1\">this page step 1</a>"
+    "site.bl.1": "<a href=\"../../../economics/markets/when-buyers-cant-see-quality/\">When Buyers Can't See Quality: Lemons and Insurance</a>: <a href=\"../../../economics/markets/when-buyers-cant-see-quality/#ch5\">its chapter 5</a> → <a href=\"#step2\">this page step 2</a>",
+    "site.bl.2": "<a href=\"../../../society/civics/same-votes-different-winner/\">Same Ballots, Different Winner · Voting Rules and Fairness</a>: <a href=\"../../../society/civics/same-votes-different-winner/#ch5\">its chapter 5</a> → <a href=\"#step1\">this page step 1</a>; <a href=\"../../../society/civics/same-votes-different-winner/#ch10\">its chapter 10</a> → <a href=\"#step1\">this page step 1</a>"
   }
 };
 let currentLang = 'en';

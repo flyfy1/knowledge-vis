@@ -97,7 +97,8 @@ const STRINGS = {
     "site.crumb.cat": "心理与认知",
     "site.crumb.sub": "认知",
     "site.bl.title": "被这些页面引用",
-    "site.bl.1": "<a href=\"../../../tech/devices/inside-a-phone/\">一部手机里的十个道理</a>：→ <a href=\"#step2\">本页第 2 步</a>"
+    "site.bl.1": "<a href=\"../../../economics/markets/when-buyers-cant-see-quality/\">看不清质量的时候：柠檬市场与保险</a>：<a href=\"../../../economics/markets/when-buyers-cant-see-quality/#ch9\">该文第 9 章</a> → <a href=\"#step3\">本页第 3 步</a>",
+    "site.bl.2": "<a href=\"../../../tech/devices/inside-a-phone/\">一部手机里的十个道理</a>：→ <a href=\"#step2\">本页第 2 步</a>"
   },
   en: {
     pageTitle: "Signal Detection Theory · Telling Apart vs. Willing to Say “Yes”",
@@ -193,7 +194,8 @@ const STRINGS = {
     "site.crumb.cat": "Psychology & Cognition",
     "site.crumb.sub": "Cognition",
     "site.bl.title": "Linked from",
-    "site.bl.1": "<a href=\"../../../tech/devices/inside-a-phone/\">Ten Ideas Inside One Phone</a>: → <a href=\"#step2\">this page step 2</a>"
+    "site.bl.1": "<a href=\"../../../economics/markets/when-buyers-cant-see-quality/\">When Buyers Can't See Quality: Lemons and Insurance</a>: <a href=\"../../../economics/markets/when-buyers-cant-see-quality/#ch9\">its chapter 9</a> → <a href=\"#step3\">this page step 3</a>",
+    "site.bl.2": "<a href=\"../../../tech/devices/inside-a-phone/\">Ten Ideas Inside One Phone</a>: → <a href=\"#step2\">this page step 2</a>"
   }
 };
 

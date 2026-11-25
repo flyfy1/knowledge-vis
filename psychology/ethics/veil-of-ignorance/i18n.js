@@ -86,7 +86,8 @@ const STRINGS = {
     "site.crumb.cat": "心理与认知",
     "site.crumb.sub": "伦理",
     "site.bl.title": "被这些页面引用",
-    "site.bl.1": "<a href=\"../../../society/civics/same-votes-different-winner/\">同一批选票，不同的赢家 · 投票规则与公平</a>：<a href=\"../../../society/civics/same-votes-different-winner/#ch10\">该文第 10 章</a> → <a href=\"#step0\">本页第 0 步</a>"
+    "site.bl.1": "<a href=\"../../../economics/markets/when-buyers-cant-see-quality/\">看不清质量的时候：柠檬市场与保险</a>：<a href=\"../../../economics/markets/when-buyers-cant-see-quality/#ch4\">该文第 4 章</a> → <a href=\"#step0\">本页第 0 步</a>",
+    "site.bl.2": "<a href=\"../../../society/civics/same-votes-different-winner/\">同一批选票，不同的赢家 · 投票规则与公平</a>：<a href=\"../../../society/civics/same-votes-different-winner/#ch10\">该文第 10 章</a> → <a href=\"#step0\">本页第 0 步</a>"
   },
   en: {
     pageTitle: "The Veil of Ignorance · Choosing a Society Before You Know Who You Will Be",
@@ -171,7 +172,8 @@ const STRINGS = {
     "site.crumb.cat": "Psychology & Cognition",
     "site.crumb.sub": "Ethics",
     "site.bl.title": "Linked from",
-    "site.bl.1": "<a href=\"../../../society/civics/same-votes-different-winner/\">Same Ballots, Different Winner · Voting Rules and Fairness</a>: <a href=\"../../../society/civics/same-votes-different-winner/#ch10\">its chapter 10</a> → <a href=\"#step0\">this page step 0</a>"
+    "site.bl.1": "<a href=\"../../../economics/markets/when-buyers-cant-see-quality/\">When Buyers Can't See Quality: Lemons and Insurance</a>: <a href=\"../../../economics/markets/when-buyers-cant-see-quality/#ch4\">its chapter 4</a> → <a href=\"#step0\">this page step 0</a>",
+    "site.bl.2": "<a href=\"../../../society/civics/same-votes-different-winner/\">Same Ballots, Different Winner · Voting Rules and Fairness</a>: <a href=\"../../../society/civics/same-votes-different-winner/#ch10\">its chapter 10</a> → <a href=\"#step0\">this page step 0</a>"
   }
 };
 

@@ -104,8 +104,9 @@ const STR = {
     "site.crumb.cat": "概率与统计",
     "site.crumb.sub": "概率基础",
     "site.bl.title": "被这些页面引用",
-    "site.bl.1": "<a href=\"../../../investment/derivatives/a-fair-price-for-a-bet/\">对未来的一个赌注，怎么可能有“公道价”</a>：<a href=\"../../../investment/derivatives/a-fair-price-for-a-bet/#ch12\">该文第 12 章</a>",
-    "site.bl.2": "<a href=\"../../../psychology/ethics/veil-of-ignorance/\">无知之幕 · 不知道自己会是谁时，你选哪种社会</a>：<a href=\"../../../psychology/ethics/veil-of-ignorance/#step1\">该课第 1 步</a> → <a href=\"#step0\">本页第 0 步</a>；<a href=\"../../../psychology/ethics/veil-of-ignorance/#step3\">该课第 3 步</a> → <a href=\"#step4\">本页第 4 步</a>；<a href=\"../../../psychology/ethics/veil-of-ignorance/#step5\">该课第 5 步</a> → <a href=\"#step4\">本页第 4 步</a>"
+    "site.bl.1": "<a href=\"../../../economics/markets/when-buyers-cant-see-quality/\">看不清质量的时候：柠檬市场与保险</a>：<a href=\"../../../economics/markets/when-buyers-cant-see-quality/#ch1\">该文第 1 章</a> → <a href=\"#step4\">本页第 4 步</a>",
+    "site.bl.2": "<a href=\"../../../investment/derivatives/a-fair-price-for-a-bet/\">对未来的一个赌注，怎么可能有“公道价”</a>：<a href=\"../../../investment/derivatives/a-fair-price-for-a-bet/#ch12\">该文第 12 章</a>",
+    "site.bl.3": "<a href=\"../../../psychology/ethics/veil-of-ignorance/\">无知之幕 · 不知道自己会是谁时，你选哪种社会</a>：<a href=\"../../../psychology/ethics/veil-of-ignorance/#step1\">该课第 1 步</a> → <a href=\"#step0\">本页第 0 步</a>；<a href=\"../../../psychology/ethics/veil-of-ignorance/#step3\">该课第 3 步</a> → <a href=\"#step4\">本页第 4 步</a>；<a href=\"../../../psychology/ethics/veil-of-ignorance/#step5\">该课第 5 步</a> → <a href=\"#step4\">本页第 4 步</a>"
   },
   en: {
     back: "← Knowledge Index",
@@ -210,8 +211,9 @@ const STR = {
     "site.crumb.cat": "Probability & Statistics",
     "site.crumb.sub": "Probability Basics",
     "site.bl.title": "Linked from",
-    "site.bl.1": "<a href=\"../../../investment/derivatives/a-fair-price-for-a-bet/\">How Can a Bet on the Future Have a Fair Price?</a>: <a href=\"../../../investment/derivatives/a-fair-price-for-a-bet/#ch12\">its chapter 12</a>",
-    "site.bl.2": "<a href=\"../../../psychology/ethics/veil-of-ignorance/\">The Veil of Ignorance · Choosing a Society Before You Know Who You Will Be</a>: <a href=\"../../../psychology/ethics/veil-of-ignorance/#step1\">its step 1</a> → <a href=\"#step0\">this page step 0</a>; <a href=\"../../../psychology/ethics/veil-of-ignorance/#step3\">its step 3</a> → <a href=\"#step4\">this page step 4</a>; <a href=\"../../../psychology/ethics/veil-of-ignorance/#step5\">its step 5</a> → <a href=\"#step4\">this page step 4</a>"
+    "site.bl.1": "<a href=\"../../../economics/markets/when-buyers-cant-see-quality/\">When Buyers Can't See Quality: Lemons and Insurance</a>: <a href=\"../../../economics/markets/when-buyers-cant-see-quality/#ch1\">its chapter 1</a> → <a href=\"#step4\">this page step 4</a>",
+    "site.bl.2": "<a href=\"../../../investment/derivatives/a-fair-price-for-a-bet/\">How Can a Bet on the Future Have a Fair Price?</a>: <a href=\"../../../investment/derivatives/a-fair-price-for-a-bet/#ch12\">its chapter 12</a>",
+    "site.bl.3": "<a href=\"../../../psychology/ethics/veil-of-ignorance/\">The Veil of Ignorance · Choosing a Society Before You Know Who You Will Be</a>: <a href=\"../../../psychology/ethics/veil-of-ignorance/#step1\">its step 1</a> → <a href=\"#step0\">this page step 0</a>; <a href=\"../../../psychology/ethics/veil-of-ignorance/#step3\">its step 3</a> → <a href=\"#step4\">this page step 4</a>; <a href=\"../../../psychology/ethics/veil-of-ignorance/#step5\">its step 5</a> → <a href=\"#step4\">this page step 4</a>"
   }
 };
 let currentLang = 'en';

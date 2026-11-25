@@ -92,9 +92,10 @@ const STR = {
     "site.crumb.cat": "投资",
     "site.crumb.sub": "入门",
     "site.bl.title": "被这些页面引用",
-    "site.bl.1": "<a href=\"../../../economics/money/why-one-rate-moves-everything/\">央行调一个利率，为什么所有东西的价格都跟着动</a>：<a href=\"../../../economics/money/why-one-rate-moves-everything/#ch13\">该文第 13 章</a>",
-    "site.bl.2": "<a href=\"../../atlas/\">投资知识地图</a>：→ <a href=\"#step5\">本页第 5 步</a>",
-    "site.bl.3": "<a href=\"../../derivatives/a-fair-price-for-a-bet/\">对未来的一个赌注，怎么可能有“公道价”</a>：<a href=\"../../derivatives/a-fair-price-for-a-bet/#ch12\">该文第 12 章</a>"
+    "site.bl.1": "<a href=\"../../../economics/markets/when-buyers-cant-see-quality/\">看不清质量的时候：柠檬市场与保险</a>：<a href=\"../../../economics/markets/when-buyers-cant-see-quality/#ch1\">该文第 1 章</a>",
+    "site.bl.2": "<a href=\"../../../economics/money/why-one-rate-moves-everything/\">央行调一个利率，为什么所有东西的价格都跟着动</a>：<a href=\"../../../economics/money/why-one-rate-moves-everything/#ch13\">该文第 13 章</a>",
+    "site.bl.3": "<a href=\"../../atlas/\">投资知识地图</a>：→ <a href=\"#step5\">本页第 5 步</a>",
+    "site.bl.4": "<a href=\"../../derivatives/a-fair-price-for-a-bet/\">对未来的一个赌注，怎么可能有“公道价”</a>：<a href=\"../../derivatives/a-fair-price-for-a-bet/#ch12\">该文第 12 章</a>"
   },
   en: {
     back: "← Knowledge Index",
@@ -187,9 +188,10 @@ const STR = {
     "site.crumb.cat": "Investment",
     "site.crumb.sub": "Basics",
     "site.bl.title": "Linked from",
-    "site.bl.1": "<a href=\"../../../economics/money/why-one-rate-moves-everything/\">Why One Central-Bank Rate Moves the Price of Everything</a>: <a href=\"../../../economics/money/why-one-rate-moves-everything/#ch13\">its chapter 13</a>",
-    "site.bl.2": "<a href=\"../../atlas/\">Investment Atlas</a>: → <a href=\"#step5\">this page step 5</a>",
-    "site.bl.3": "<a href=\"../../derivatives/a-fair-price-for-a-bet/\">How Can a Bet on the Future Have a Fair Price?</a>: <a href=\"../../derivatives/a-fair-price-for-a-bet/#ch12\">its chapter 12</a>"
+    "site.bl.1": "<a href=\"../../../economics/markets/when-buyers-cant-see-quality/\">When Buyers Can't See Quality: Lemons and Insurance</a>: <a href=\"../../../economics/markets/when-buyers-cant-see-quality/#ch1\">its chapter 1</a>",
+    "site.bl.2": "<a href=\"../../../economics/money/why-one-rate-moves-everything/\">Why One Central-Bank Rate Moves the Price of Everything</a>: <a href=\"../../../economics/money/why-one-rate-moves-everything/#ch13\">its chapter 13</a>",
+    "site.bl.3": "<a href=\"../../atlas/\">Investment Atlas</a>: → <a href=\"#step5\">this page step 5</a>",
+    "site.bl.4": "<a href=\"../../derivatives/a-fair-price-for-a-bet/\">How Can a Bet on the Future Have a Fair Price?</a>: <a href=\"../../derivatives/a-fair-price-for-a-bet/#ch12\">its chapter 12</a>"
   }
 };
 

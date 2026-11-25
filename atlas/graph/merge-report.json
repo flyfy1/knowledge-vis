@@ -1,11 +1,11 @@
 {
   "counts": {
     "groups": 11,
-    "nodes": 912,
-    "edges": 1074,
+    "nodes": 921,
+    "edges": 1100,
     "trails": 14,
     "questions": 124,
-    "fragments": 236
+    "fragments": 237
   },
   "conflicts": [],
   "suspendedEdges": [],
@@ -3973,6 +3973,219 @@
       ]
     },
     {
+      "concept": "certainty-equivalent-insurance",
+      "page": "expected-value",
+      "taughtBy": [
+        "expected-value"
+      ]
+    },
+    {
+      "concept": "certainty-equivalent-insurance",
+      "page": "risk-return",
+      "taughtBy": [
+        "risk-return"
+      ]
+    },
+    {
+      "concept": "lemons-market",
+      "page": "risk-pooling",
+      "taughtBy": [
+        "risk-pooling"
+      ]
+    },
+    {
+      "concept": "lemons-market",
+      "page": "scarcity-moves",
+      "taughtBy": [
+        "opportunity-cost",
+        "marginal-thinking",
+        "sunk-cost",
+        "comparative-advantage",
+        "price-signal",
+        "incentives",
+        "market-failure",
+        "growth-from-ideas",
+        "spending-is-income",
+        "income-to-the-scarce",
+        "institutions-trust",
+        "ai-cheap-thinking",
+        "ai-tasks-wages",
+        "relative-prices-after-ai",
+        "ai-forecast"
+      ]
+    },
+    {
+      "concept": "lemons-market",
+      "page": "externalities",
+      "taughtBy": [
+        "externalities"
+      ]
+    },
+    {
+      "concept": "insurance-death-spiral",
+      "page": "risk-pooling",
+      "taughtBy": [
+        "risk-pooling"
+      ]
+    },
+    {
+      "concept": "insurance-death-spiral",
+      "page": "veil-of-ignorance",
+      "taughtBy": [
+        "veil-of-ignorance"
+      ]
+    },
+    {
+      "concept": "deductible-screening",
+      "page": "mechanism-design",
+      "taughtBy": [
+        "mechanism-auction"
+      ]
+    },
+    {
+      "concept": "deductible-screening",
+      "page": "auction-basics",
+      "taughtBy": [
+        "auctions"
+      ]
+    },
+    {
+      "concept": "signaling",
+      "page": "game-theory",
+      "taughtBy": [
+        "game-theory"
+      ]
+    },
+    {
+      "concept": "signaling",
+      "page": "bayes-updating",
+      "taughtBy": [
+        "bayes",
+        "probability"
+      ]
+    },
+    {
+      "concept": "signaling",
+      "page": "prisoners-dilemma",
+      "taughtBy": [
+        "prisoners-dilemma"
+      ]
+    },
+    {
+      "concept": "moral-hazard",
+      "page": "scarcity-moves",
+      "taughtBy": [
+        "opportunity-cost",
+        "marginal-thinking",
+        "sunk-cost",
+        "comparative-advantage",
+        "price-signal",
+        "incentives",
+        "market-failure",
+        "growth-from-ideas",
+        "spending-is-income",
+        "income-to-the-scarce",
+        "institutions-trust",
+        "ai-cheap-thinking",
+        "ai-tasks-wages",
+        "relative-prices-after-ai",
+        "ai-forecast"
+      ]
+    },
+    {
+      "concept": "moral-hazard",
+      "page": "where-money-comes-from",
+      "taughtBy": [
+        "money-as-iou",
+        "loans-create-deposits",
+        "bank-run",
+        "quantity-theory-inflation",
+        "inflation-winners-losers",
+        "interest-price-of-time",
+        "loan-amortisation",
+        "monetary-transmission",
+        "purchasing-power-parity"
+      ]
+    },
+    {
+      "concept": "credit-rationing",
+      "page": "where-money-comes-from",
+      "taughtBy": [
+        "money-as-iou",
+        "loans-create-deposits",
+        "bank-run",
+        "quantity-theory-inflation",
+        "inflation-winners-losers",
+        "interest-price-of-time",
+        "loan-amortisation",
+        "monetary-transmission",
+        "purchasing-power-parity"
+      ]
+    },
+    {
+      "concept": "credit-rationing",
+      "page": "where-a-mortgage-payment-goes",
+      "taughtBy": [
+        "nominal-vs-effective-rate",
+        "annuity-payment-formula",
+        "amortisation-schedule",
+        "equal-principal-vs-equal-payment",
+        "mortgage-prepayment",
+        "floating-rate-reset",
+        "apr-irr-flat-fee",
+        "inflation-opportunity-cost-loan",
+        "reading-a-loan-contract"
+      ]
+    },
+    {
+      "concept": "credit-rationing",
+      "page": "why-one-rate-moves-everything",
+      "taughtBy": [
+        "present-value-discounting",
+        "bond-duration-convexity",
+        "yield-curve-bootstrapping",
+        "term-premium-curve-inversion",
+        "reserves-floor-system",
+        "taylor-rule-neutral-rate",
+        "new-keynesian-model",
+        "equity-duration-house-affordability",
+        "interest-parity-carry-trade",
+        "zero-lower-bound-qe",
+        "debt-dynamics-r-minus-g",
+        "central-banks-2026"
+      ]
+    },
+    {
+      "concept": "credit-score",
+      "page": "bayes-diagnostics",
+      "taughtBy": [
+        "positive-predictive-value"
+      ]
+    },
+    {
+      "concept": "credit-score",
+      "page": "signal-detection",
+      "taughtBy": [
+        "signal-detection-theory"
+      ]
+    },
+    {
+      "concept": "credit-score",
+      "page": "numbers-lie",
+      "taughtBy": [
+        "regression-to-the-mean",
+        "small-sample-variability",
+        "survivorship-bias",
+        "multiple-comparisons",
+        "simpsons-paradox",
+        "base-rate-neglect",
+        "relative-vs-absolute-risk",
+        "mean-vs-median-long-tail",
+        "goodharts-law",
+        "questions-to-ask-of-a-number"
+      ]
+    },
+    {
       "concept": "nominal-vs-effective-rate",
       "page": "compound-interest",
       "taughtBy": [
@@ -4908,13 +5121,13 @@
     }
   ],
   "unknownAliasIds": [],
-  "sizeBytes": 1555370,
+  "sizeBytes": 1579333,
   "questionsBytes": 173006,
-  "combinedBytes": 1728376,
-  "indexBytes": 118177,
+  "combinedBytes": 1752339,
+  "indexBytes": 119369,
   "chunkBytes": {
     "math.nodes": 51664,
-    "math.edges": 92439,
+    "math.edges": 93402,
     "math.questions": 36438,
     "waves.nodes": 45855,
     "waves.edges": 63594,
@@ -4923,10 +5136,10 @@
     "circuits.edges": 23342,
     "circuits.questions": 12351,
     "systems.nodes": 21522,
-    "systems.edges": 43469,
+    "systems.edges": 43981,
     "systems.questions": 21577,
-    "measurement.nodes": 35675,
-    "measurement.edges": 67358,
+    "measurement.nodes": 35651,
+    "measurement.edges": 71022,
     "measurement.questions": 30126,
     "matter.nodes": 52717,
     "matter.edges": 19493,
@@ -4940,8 +5153,8 @@
     "computing.nodes": 389826,
     "computing.edges": 242924,
     "computing.questions": 2766,
-    "society.nodes": 87359,
-    "society.edges": 64772,
+    "society.nodes": 94728,
+    "society.edges": 78184,
     "society.questions": 3743,
     "tech.nodes": 16930,
     "tech.edges": 12509,

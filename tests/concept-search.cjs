@@ -836,6 +836,25 @@ chapters.push(
   ['垃圾债', 'junk bonds', YC + '#ch11'],
   ['盈亏平衡通胀', 'breakeven inflation', YC + '#ch12'],
 );
+// when-buyers-cant-see-quality (2026-11-25, economics/markets). Reviewer's alias moves: 风险厌恶 / risk aversion from
+// risk-pooling to #ch1, 信息不对称 / 柠檬市场 from market-failure to #ch3; 保险 / insurance stay with risk-pooling.
+const LEM = 'economics/markets/when-buyers-cant-see-quality/';
+chapters.push(
+  ['风险厌恶', 'risk aversion', LEM + '#ch1'],
+  ['信息不对称', 'asymmetric information', LEM + '#ch3'],
+  ['柠檬市场', 'adverse selection', LEM + '#ch3'],
+  ['死亡螺旋', 'death spiral', LEM + '#ch4'],
+  ['免赔额', 'deductible', LEM + '#ch5'],
+  ['文凭有什么用', 'signaling', LEM + '#ch6'],
+  ['道德风险', 'moral hazard', LEM + '#ch7'],
+  ['信贷配给', 'credit rationing', LEM + '#ch8'],
+  ['信用分', 'credit score', LEM + '#ch9'],
+  ['大数据杀熟', 'genetic testing and insurance', LEM + '#ch10'],
+);
+for (const [q, href] of [['保险', 'probability/stochastic/risk-pooling/'], ['insurance', 'probability/stochastic/risk-pooling/'], ['市场失灵', 'demos/scarcity-moves/#c6'], ['违约概率', 'investment/rates/what-the-yield-curve-says/#ch10']]) {
+  const hit = first(q);
+  ok(hit && hit.href.startsWith(href), `"${q}" stays with ${href} (got ${hit && hit.href})`);
+}
 for (const [q, href] of [['收益率曲线', 'economics/money/why-one-rate-moves-everything/#ch3'], ['期限溢价', 'economics/money/why-one-rate-moves-everything/#ch4'], ['DV01', 'economics/money/why-one-rate-moves-everything/#ch2']]) {
   const hit = first(q);
   ok(hit && hit.href.startsWith(href), `"${q}" stays with ${href} (got ${hit && hit.href})`);

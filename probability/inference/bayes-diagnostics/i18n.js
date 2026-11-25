@@ -130,7 +130,8 @@ const STRINGS = {
     "site.crumb.sub": "统计推断",
     "site.bl.title": "被这些页面引用",
     "site.bl.1": "<a href=\"../../../biology/body/how-vaccines-work/\">疫苗是怎么保护人的</a>：<a href=\"../../../biology/body/how-vaccines-work/#ch8\">该文第 8 章</a>",
-    "site.bl.2": "<a href=\"../../everyday/numbers-lie/\">数字没有说谎，结论却错了</a>：→ <a href=\"#step1\">本页第 1 步</a>"
+    "site.bl.2": "<a href=\"../../../economics/markets/when-buyers-cant-see-quality/\">看不清质量的时候：柠檬市场与保险</a>：<a href=\"../../../economics/markets/when-buyers-cant-see-quality/#ch9\">该文第 9 章</a>",
+    "site.bl.3": "<a href=\"../../everyday/numbers-lie/\">数字没有说谎，结论却错了</a>：→ <a href=\"#step1\">本页第 1 步</a>"
   },
   en: {
     pageTitle: "Bayes Diagnostics · What a Positive Result Really Tells You",
@@ -258,7 +259,8 @@ const STRINGS = {
     "site.crumb.sub": "Inference",
     "site.bl.title": "Linked from",
     "site.bl.1": "<a href=\"../../../biology/body/how-vaccines-work/\">How Vaccines Protect You and the People Around You</a>: <a href=\"../../../biology/body/how-vaccines-work/#ch8\">its chapter 8</a>",
-    "site.bl.2": "<a href=\"../../everyday/numbers-lie/\">Every Number Was True, and the Conclusion Was Still Wrong</a>: → <a href=\"#step1\">this page step 1</a>"
+    "site.bl.2": "<a href=\"../../../economics/markets/when-buyers-cant-see-quality/\">When Buyers Can't See Quality: Lemons and Insurance</a>: <a href=\"../../../economics/markets/when-buyers-cant-see-quality/#ch9\">its chapter 9</a>",
+    "site.bl.3": "<a href=\"../../everyday/numbers-lie/\">Every Number Was True, and the Conclusion Was Still Wrong</a>: → <a href=\"#step1\">this page step 1</a>"
   }
 };
 

@@ -14,7 +14,7 @@
   },
   "tags": [
     { "zh": "信息经济学", "en": "Information Economics" },
-    { "zh": "保险", "en": "Insurance" },
+    { "zh": "保险市场", "en": "Insurance Markets" },
     { "zh": "信贷与信用分", "en": "Credit & Credit Scores" },
     { "zh": "长文", "en": "Long-form Essay" }
   ],
@@ -24,7 +24,7 @@
       "anchor": "#ch1",
       "title": { "zh": "风险厌恶与确定性等价：为什么买平均亏钱的保险", "en": "Risk aversion and the certainty equivalent: why buy insurance that loses on average" },
       "desc": { "zh": "怕风险的人愿意为确定多付钱，最多肯付的保费减去平均损失就是风险溢价。", "en": "A risk-averse person pays extra for certainty; the most they would pay minus the expected loss is the risk premium." },
-      "aliases": { "zh": ["风险厌恶", "确定性等价", "为什么要买保险", "保险明明亏钱为什么还买", "效用曲线", "最多愿意付多少保费"], "en": ["risk aversion", "certainty equivalent", "why buy insurance", "concave utility", "maximum premium willing to pay"] },
+      "aliases": { "zh": ["风险厌恶", "确定性等价", "为什么要买保险", "保险明明亏钱为什么还买", "效用曲线", "最多愿意付多少保费"], "en": ["risk aversion", "risk averse", "certainty equivalent", "why buy insurance", "concave utility", "maximum premium willing to pay"] },
       "relatedPages": ["expected-value", "risk-return"]
     },
     {
@@ -38,7 +38,7 @@
     {
       "id": "insurance-death-spiral",
       "anchor": "#ch4",
-      "title": { "zh": "保险的死亡螺旋、强制参保与核保", "en": "The insurance death spiral, mandates and underwriting" },
+      "title": { "zh": "死亡螺旋、强制参保与核保", "en": "Death spirals, mandates and underwriting" },
       "desc": { "zh": "按平均定价赶走最健康的人，保费越涨越高；强制、补贴或按体检分档能打断它。", "en": "Average pricing drives out the healthiest and premiums climb; mandates, subsidies or underwriting classes can break the spiral." },
       "aliases": { "zh": ["死亡螺旋", "医保为什么强制", "为什么要强制参保", "为什么体检后保费不同", "核保", "断保等待期", "医保为什么要连续参保"], "en": ["death spiral", "insurance death spiral", "individual mandate", "why is health insurance mandatory", "underwriting", "risk rating", "community rating"] },
       "relatedPages": ["risk-pooling", "veil-of-ignorance"]
@@ -80,13 +80,13 @@
       "anchor": "#ch9",
       "title": { "zh": "信用分是怎么来的", "en": "Where a credit score comes from" },
       "desc": { "zh": "评分卡把过去的还款记录变成违约概率和分数，银行再定门槛；没有记录本身也是信息。", "en": "A scorecard turns your repayment history into a default probability and a score, and the bank sets a cutoff; a thin file is information too." },
-      "aliases": { "zh": ["信用分", "信用分怎么来的", "信用评分", "征信", "FICO", "评分卡", "违约概率"], "en": ["credit score", "how credit scores work", "FICO score", "scorecard", "credit report", "probability of default"] },
+      "aliases": { "zh": ["信用分", "信用分怎么来的", "信用评分", "征信", "FICO", "评分卡", "信用分违约概率"], "en": ["credit score", "how credit scores work", "FICO score", "scorecard", "credit report", "credit score default probability"] },
       "relatedPages": ["bayes-diagnostics", "signal-detection", "numbers-lie"]
     },
     {
       "id": "information-pricing-frontier",
       "anchor": "#ch10",
-      "title": { "zh": "大数据定价、基因信息与参保规则的前沿", "en": "Frontier: data-driven pricing, genetic information and enrolment rules" },
+      "title": { "zh": "大数据定价、基因信息与参保规则的前沿", "en": "Data-driven pricing, genetic information and enrolment rules: the frontier" },
       "desc": { "zh": "看得越清螺旋越难转、高风险者越难投保：大数据杀熟条款、欧盟 AI 法、GINA、医保断保等待期。", "en": "Seeing more stops spirals but prices out high risks: China's anti-price-discrimination rule, the EU AI Act, GINA and enrolment waiting periods." },
       "aliases": { "zh": ["大数据杀熟", "基因检测与保险", "医保断保等待期", "AI 定价", "保险定价歧视"], "en": ["big data price discrimination", "genetic testing and insurance", "GINA", "EU AI Act insurance pricing", "algorithmic pricing"] },
       "relatedPages": []
