@@ -1,0 +1,50 @@
+{
+  "slug": "why-a-few-firms-win",
+  "kind": "essay",
+  "layout": "essay",
+  "scripts": [
+    "models.js",
+    "copy.zh.js",
+    "copy.en.js",
+    "app.js"
+  ],
+  "version": "20261125a",
+  "category": "economics",
+  "subtopic": "markets",
+  "stage": "university",
+  "path": "economics/markets/why-a-few-firms-win/",
+  "tags": [
+    {
+      "zh": "垄断",
+      "en": "Monopoly"
+    },
+    {
+      "zh": "反垄断",
+      "en": "Antitrust"
+    },
+    {
+      "zh": "产业组织",
+      "en": "Industrial Organization"
+    },
+    {
+      "zh": "网络效应",
+      "en": "Network Effects"
+    },
+    {
+      "zh": "平台经济",
+      "en": "Platform Economics"
+    },
+    {
+      "zh": "长文",
+      "en": "Long-form Essay"
+    }
+  ],
+  "generators": [
+    {
+      "run": "tools/diagrams.cjs",
+      "writes": [
+        "figures/dg-*.html"
+      ]
+    }
+  ]
+}

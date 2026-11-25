@@ -1,0 +1,69 @@
+{
+  "slug": "why-recessions-happen",
+  "kind": "essay",
+  "layout": "essay",
+  "scripts": [
+    "models.js",
+    "copy.zh.js",
+    "copy.en.js",
+    "app.js"
+  ],
+  "version": "20261125a",
+  "category": "economics",
+  "subtopic": "macro",
+  "stage": "university",
+  "path": "economics/macro/why-recessions-happen/",
+  "created": "2026-11-25",
+  "languages": {
+    "en": "stub"
+  },
+  "tags": [
+    {
+      "zh": "宏观经济",
+      "en": "Macroeconomics"
+    },
+    {
+      "zh": "经济周期",
+      "en": "Business Cycle"
+    },
+    {
+      "zh": "衰退",
+      "en": "Recessions"
+    },
+    {
+      "zh": "长文",
+      "en": "Long-form Essay"
+    }
+  ],
+  "dynamicKeys": {
+    "ch1.say": [
+      "fix",
+      "ind"
+    ],
+    "ch2.say": [
+      "paradox",
+      "plain"
+    ],
+    "ch3.say": [
+      "mono",
+      "damped",
+      "explosive",
+      "runaway"
+    ],
+    "ch3.lg": [
+      "mono",
+      "damped",
+      "explosive",
+      "runaway"
+    ],
+    "ch6.say": [
+      "cut",
+      "none"
+    ],
+    "ch7.say": [
+      "worse",
+      "better",
+      "none"
+    ]
+  }
+}

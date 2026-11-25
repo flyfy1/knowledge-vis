@@ -1,0 +1,165 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "random-walks",
+ "refs": [
+  {
+   "from": "ch2.p1",
+   "to": "pythagoras",
+   "anchor": null
+  },
+  {
+   "from": "ch2.p3",
+   "to": "binomial-normal",
+   "anchor": null
+  },
+  {
+   "from": "ch2.p3",
+   "to": "central-limit-theorem",
+   "anchor": "step2"
+  },
+  {
+   "from": "ch2.p3",
+   "to": "central-limit-theorem",
+   "anchor": "step3"
+  },
+  {
+   "from": "ch2.limit",
+   "to": "monte-carlo",
+   "anchor": null
+  },
+  {
+   "from": "ch2.limit",
+   "to": "risk-pooling",
+   "anchor": null
+  },
+  {
+   "from": "ch3.p2",
+   "to": "kinetic-theory",
+   "anchor": null
+  },
+  {
+   "from": "ch3.p6",
+   "to": "membrane-transport",
+   "anchor": null
+  },
+  {
+   "from": "ch4.p2",
+   "to": "exponents-logarithms",
+   "anchor": "step2"
+  },
+  {
+   "from": "ch4.p4",
+   "to": "numbers-lie",
+   "anchor": "c8"
+  },
+  {
+   "from": "ch4.p6",
+   "to": "risk-return",
+   "anchor": null
+  },
+  {
+   "from": "ch4.p6",
+   "to": "diversification",
+   "anchor": null
+  },
+  {
+   "from": "ch5.p5",
+   "to": "numbers-lie",
+   "anchor": "c8"
+  },
+  {
+   "from": "ch6.p1",
+   "to": "risk-pooling",
+   "anchor": null
+  },
+  {
+   "from": "ch6.p2",
+   "to": "markov-chains",
+   "anchor": "step5"
+  },
+  {
+   "from": "ch6.limit",
+   "to": "expected-value",
+   "anchor": null
+  }
+ ],
+ "backlinks": [],
+ "related": [
+  "binomial-normal",
+  "central-limit-theorem",
+  "markov-chains",
+  "risk-return",
+  "membrane-transport",
+  "kinetic-theory",
+  "numbers-lie",
+  "expected-value",
+  "risk-pooling",
+  "monte-carlo",
+  "gradient-descent"
+ ],
+ "bindings": [
+  "ch1.in100",
+  "ch1.in2_100",
+  "ch1.in10000",
+  "ch1.abs100",
+  "ch1.ratio",
+  "ch2.skew1",
+  "ch2.skew100",
+  "ch3.Db",
+  "ch3.Db37",
+  "ch3.rms1",
+  "ch3.t10",
+  "ch3.t1mm",
+  "ch3.t1cm",
+  "ch3.Dm",
+  "ch3.m10",
+  "ch3.m1cm",
+  "ch4.ann",
+  "ch4.daily",
+  "ch4.perYear",
+  "ch4.loss1",
+  "ch4.loss10",
+  "ch4.tStar",
+  "ch4.lossStar",
+  "ch4.med10",
+  "ch4.mean10",
+  "ch4.med10s40",
+  "ch5.n",
+  "ch5.from",
+  "ch5.to",
+  "ch5.k1",
+  "ch5.k5",
+  "ch5.k21",
+  "ch5.k63",
+  "ch5.o4",
+  "ch5.e4",
+  "ch5.r21",
+  "ch5.r63",
+  "ch5.vmin",
+  "ch5.vminDate",
+  "ch5.vmax",
+  "ch5.vmaxDate",
+  "ch5.k1n",
+  "ch5.a1",
+  "ch5.a25",
+  "ch5.shuffles",
+  "ch5.e1acf",
+  "ch5.e1vr21",
+  "ch5.e2vr21",
+  "ch5.e3vr21",
+  "ch5.e3lo21",
+  "ch5.e3acf",
+  "ch5.allvr21",
+  "ch5.allhi21",
+  "ch6.t50",
+  "ch6.b50",
+  "ch6.n50",
+  "ch6.t20",
+  "ch6.b20",
+  "ch6.nfair",
+  "ch7.merge",
+  "ch7.sig1000",
+  "ch8.o4x",
+  "ch8.m1"
+ ]
+}

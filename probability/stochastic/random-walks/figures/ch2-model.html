@@ -1,0 +1,20 @@
+<figure class="lab" id="lab2">
+  <h3 data-i18n="ch2.model.title"></h3>
+  <p class="how" data-i18n="ch2.model.how"></p>
+  <canvas class="cv" id="c2Cv" role="img" data-i18n-aria="ch2.cv.aria"></canvas>
+  <div class="ctl">
+    <div class="seg" role="radiogroup" data-i18n-aria="ch2.ctl.type"><span class="lbl" data-i18n="ch2.ctl.type"></span>
+      <label><input type="radio" name="c2Type" value="coin" checked><span data-i18n="ch2.type.coin"></span></label>
+      <label><input type="radio" name="c2Type" value="uniform"><span data-i18n="ch2.type.uniform"></span></label>
+      <label><input type="radio" name="c2Type" value="lopsided"><span data-i18n="ch2.type.lopsided"></span></label>
+    </div>
+    <label class="rng"><span data-i18n="ch2.ctl.n"></span><input id="c2N" type="range" min="0" max="9" step="1" value="7"><output id="c2NO"></output></label>
+  </div>
+  <div class="read">
+    <div><span data-i18n="ch2.read.sd"></span><b id="c2Sd" class="g"></b></div>
+    <div><span data-i18n="ch2.read.th"></span><b id="c2Th" class="c"></b></div>
+    <div><span data-i18n="ch2.read.skew"></span><b id="c2Sk" class="g"></b></div>
+    <div><span data-i18n="ch2.read.skth"></span><b id="c2SkTh" class="c"></b></div>
+  </div>
+  <p class="say" id="c2Say" aria-live="polite"></p>
+</figure>

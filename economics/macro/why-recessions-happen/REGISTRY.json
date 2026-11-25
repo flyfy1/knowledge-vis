@@ -1,0 +1,280 @@
+{
+ "slug": "why-recessions-happen",
+ "path": "economics/macro/why-recessions-happen/",
+ "category": "economics",
+ "subtopic": "macro",
+ "stage": "university",
+ "title": {
+  "zh": "经济为什么会突然少生产一截",
+  "en": "经济为什么会突然少生产一截"
+ },
+ "desc": {
+  "zh": "工厂、工人和技术都还在，订单为什么会一起消失，又为什么过一两年自己回来？从节约悖论出发，经过加速数、乘数–加速数振荡、库存牛鞭效应、四类冲击、资产负债表衰退、自动稳定器与政策时滞、领先指标的命中率，走到 2020 年以来几次“该来没来”和“来了很短”的衰退。七个可以拖动的模型，八张示意图。",
+  "en": "工厂、工人和技术都还在，订单为什么会一起消失，又为什么过一两年自己回来？从节约悖论出发，经过加速数、乘数–加速数振荡、库存牛鞭效应、四类冲击、资产负债表衰退、自动稳定器与政策时滞、领先指标的命中率，走到 2020 年以来几次“该来没来”和“来了很短”的衰退。七个可以拖动的模型，八张示意图。"
+ },
+ "tags": [
+  {
+   "zh": "宏观经济",
+   "en": "Macroeconomics"
+  },
+  {
+   "zh": "经济周期",
+   "en": "Business Cycle"
+  },
+  {
+   "zh": "衰退",
+   "en": "Recessions"
+  },
+  {
+   "zh": "长文",
+   "en": "Long-form Essay"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "paradox-of-thrift",
+   "anchor": "#ch1",
+   "title": {
+    "zh": "节约悖论：所有人一起省钱",
+    "en": "The paradox of thrift"
+   },
+   "desc": {
+    "zh": "所有人同时多存钱会让收入下降；投资跟着收入走时，存下的总额反而更少，前提是利率不动。",
+    "en": "When everyone saves more at once, income falls; if investment follows income, total saving ends lower, provided rates do not adjust."
+   },
+   "aliases": {
+    "zh": [
+     "节约悖论",
+     "大家都省钱经济会怎样",
+     "为什么不消费经济会变差",
+     "储蓄过多",
+     "消费降级会导致衰退吗"
+    ],
+    "en": [
+     "everyone saves more at once",
+     "why less spending causes recession",
+     "saving glut income falls"
+    ]
+   },
+   "relatedPages": [
+    "scarcity-moves"
+   ]
+  },
+  {
+   "id": "accelerator-principle",
+   "anchor": "#ch2",
+   "title": {
+    "zh": "加速数：投资跟着销售的变化走",
+    "en": "The accelerator principle"
+   },
+   "desc": {
+    "zh": "企业按销售的增量买机器，所以销售只是长得慢一点，设备订单就会下降，投资比消费波动大得多。",
+    "en": "Firms buy capital for the change in sales, so a mere slowdown in sales cuts equipment orders; investment swings far more than consumption."
+   },
+   "aliases": {
+    "zh": [
+     "加速原理",
+     "加速数",
+     "为什么投资波动大",
+     "设备投资为什么下降",
+     "资本支出周期"
+    ],
+    "en": [
+     "accelerator principle",
+     "why investment is so volatile",
+     "capex cycle"
+    ]
+   },
+   "relatedPages": []
+  },
+  {
+   "id": "multiplier-accelerator-cycle",
+   "anchor": "#ch3",
+   "title": {
+    "zh": "乘数–加速数：周期为什么会自己摆",
+    "en": "Why cycles oscillate: multiplier–accelerator"
+   },
+   "desc": {
+    "zh": "Samuelson 的二阶差分方程：特征根把 (c, v) 平面分成单调、阻尼振荡、发散振荡和单调发散四区；阻尼振荡加随机冲击就是不规则的周期。",
+    "en": "Samuelson's second-order difference equation: its roots split the (c, v) plane into four regions; a damped oscillator hit by random shocks gives irregular cycles."
+   },
+   "aliases": {
+    "zh": [
+     "经济周期是什么",
+     "经济为什么会周期性波动",
+     "乘数加速数模型",
+     "萨缪尔森模型",
+     "弗里施冲击传导"
+    ],
+    "en": [
+     "what is the business cycle",
+     "multiplier-accelerator model",
+     "Samuelson oscillator",
+     "Frisch impulse propagation",
+     "why does the economy oscillate"
+    ]
+   },
+   "relatedPages": [
+    "laplace",
+    "step-response",
+    "ode-phase-portraits"
+   ]
+  },
+  {
+   "id": "inventory-bullwhip-cycle",
+   "anchor": "#ch4",
+   "title": {
+    "zh": "库存周期与牛鞭效应",
+    "en": "Inventory cycles and the bullwhip effect"
+   },
+   "desc": {
+    "zh": "每一级商家按销售调库存目标，零售少卖一成，上游工厂的产量可以少三成；忽略在途货物让振荡更大。",
+    "en": "Each stage resets its stock target to recent sales, so a 10% drop at retail can become a 30% cut at the factory; ignoring the supply line adds oscillation."
+   },
+   "aliases": {
+    "zh": [
+     "库存周期",
+     "牛鞭效应",
+     "基钦周期",
+     "啤酒游戏",
+     "为什么工厂减产比销售下降多",
+     "去库存"
+    ],
+    "en": [
+     "inventory cycle",
+     "bullwhip effect",
+     "beer game",
+     "Kitchin cycle",
+     "destocking"
+    ]
+   },
+   "relatedPages": []
+  },
+  {
+   "id": "balance-sheet-recession",
+   "anchor": "#ch6",
+   "title": {
+    "zh": "资产负债表衰退：一起还债",
+    "en": "Balance-sheet recessions"
+   },
+   "desc": {
+    "zh": "资产价格下跌后，债超过上限的家庭被迫一起还债；还得快慢只改变下降的深度和长度，累计损失等于超额债务乘以乘数。",
+    "en": "After asset prices fall, over-indebted households pay down debt together; repayment speed changes depth and length, not the total loss."
+   },
+   "aliases": {
+    "zh": [
+     "资产负债表衰退",
+     "去杠杆",
+     "房价下跌为什么导致衰退",
+     "辜朝明",
+     "债务驱动的衰退"
+    ],
+    "en": [
+     "balance sheet recession",
+     "deleveraging",
+     "household debt and recessions",
+     "Richard Koo",
+     "House of Debt"
+    ]
+   },
+   "relatedPages": [
+    "where-money-comes-from"
+   ]
+  },
+  {
+   "id": "automatic-stabilisers-countercyclical-policy",
+   "anchor": "#ch7",
+   "title": {
+    "zh": "自动稳定器与政策时滞",
+    "en": "Automatic stabilisers and policy lags"
+   },
+   "desc": {
+    "zh": "税和转移支付让乘数从 1/(1−c) 降到 1/(1−c(1−τ))，当季生效；相机抉择的政策晚到太多时，会放大而不是减小波动。",
+    "en": "Taxes and transfers shrink the multiplier to 1/(1−c(1−τ)) at once; discretionary policy that arrives too late amplifies the cycle."
+   },
+   "aliases": {
+    "zh": [
+     "自动稳定器",
+     "逆周期政策",
+     "失业金为什么能稳定经济",
+     "政策时滞",
+     "刺激政策来晚了会怎样"
+    ],
+    "en": [
+     "automatic stabilizers",
+     "countercyclical policy",
+     "policy lags",
+     "long and variable lags"
+    ]
+   },
+   "relatedPages": [
+    "inverted-pendulum",
+    "tcp-congestion"
+   ]
+  },
+  {
+   "id": "leading-indicators-forecasting-record",
+   "anchor": "#ch8",
+   "title": {
+    "zh": "领先指标与衰退预测的记录",
+    "en": "Leading indicators and the forecasting record"
+   },
+   "desc": {
+    "zh": "衰退信号要按命中率、虚惊率和衰退的基础比率用贝叶斯公式评价；越早的信号虚惊越多，经济数据也没有固定周期的谱峰。",
+    "en": "Judge a recession signal by hit rate, false alarms and the base rate; earlier signals cost more false alarms, and output spectra show no fixed-period peak."
+   },
+   "aliases": {
+    "zh": [
+     "衰退能预测吗",
+     "领先指标",
+     "衰退信号准不准",
+     "康波周期靠谱吗",
+     "朱格拉周期",
+     "经济周期有规律吗"
+    ],
+    "en": [
+     "are recessions predictable",
+     "leading indicators",
+     "recession signal accuracy",
+     "Kondratiev wave",
+     "Juglar cycle"
+    ]
+   },
+   "relatedPages": [
+    "bayes-updating",
+    "numbers-lie",
+    "how-an-economy-is-measured"
+   ]
+  },
+  {
+   "id": "recession-calls-2020s",
+   "anchor": "#ch9",
+   "title": {
+    "zh": "2020 年以来的衰退与预测（前沿）",
+    "en": "Recessions and recession calls since 2020 (frontier)"
+   },
+   "desc": {
+    "zh": "2020 年两个月的衰退、2022–2024 年没来的衰退、2025 年一季度的关税负增长，以及截至 2026 年 11 月的预测者读数。",
+    "en": "The two-month 2020 recession, the 2022–24 recession that never came, the tariff-driven negative quarter of 2025, and forecasters' readings as of November 2026."
+   },
+   "aliases": {
+    "zh": [
+     "2022年为什么没有衰退",
+     "软着陆是什么",
+     "最短的衰退",
+     "衰退和萧条的区别",
+     "美国会衰退吗"
+    ],
+    "en": [
+     "why no recession in 2022",
+     "what is a soft landing",
+     "shortest recession",
+     "recession vs depression"
+    ]
+   },
+   "relatedPages": [
+    "how-an-economy-is-measured"
+   ]
+  }
+ ]
+}

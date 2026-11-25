@@ -1,0 +1,278 @@
+{
+ "slug": "how-much-risk-is-worth-taking",
+ "path": "investment/portfolio/how-much-risk-is-worth-taking/",
+ "category": "investment",
+ "subtopic": "portfolio",
+ "stage": "university",
+ "title": {
+  "zh": "多少风险值得冒",
+  "en": "How Much Risk Is Worth Taking"
+ },
+ "desc": {
+  "zh": "分散能消掉一部分风险，剩下的那部分才有人付钱。这篇从 N 只资产的风险地板讲起，推出有效前沿、无风险资产加进来之后的资本市场线和夏普比率，再说明为什么测出来的夏普比率和“最优组合”都很不可靠；然后离开一期模型：波动拖累、杠杆 ETF 为什么长期会缩水、再平衡多出来的那一点回报，以及凯利公式告诉你下多大注、又为什么没人敢用满。九个可以动手的模型，只讲机制，不是投资建议。",
+  "en": "Diversification removes part of the risk; only what is left gets paid. Starting from the risk floor of N assets, this essay derives the efficient frontier, the capital market line and the Sharpe ratio once a risk-free asset is added, then shows why measured Sharpe ratios and “optimal” portfolios are so unreliable. It then leaves the one-period world: volatility drag, why leveraged ETFs shrink over time, the small extra return from rebalancing, and the Kelly criterion, which says how much to bet and why nobody bets the full amount. Nine hands-on models; mechanisms only, not investment advice."
+ },
+ "tags": [
+  {
+   "zh": "投资组合",
+   "en": "Portfolios"
+  },
+  {
+   "zh": "夏普比率",
+   "en": "Sharpe Ratio"
+  },
+  {
+   "zh": "凯利公式",
+   "en": "Kelly Criterion"
+  },
+  {
+   "zh": "长文",
+   "en": "Long-form Essay"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "mean-variance-efficient-frontier",
+   "anchor": "#ch2",
+   "title": {
+    "zh": "均值–方差与有效前沿",
+    "en": "The mean–variance efficient frontier"
+   },
+   "desc": {
+    "zh": "给定预期回报和协方差，同样波动下回报最高的组合连成一条曲线；N 只资产的风险最终由平均协方差决定。",
+    "en": "Given expected returns and covariances, the portfolios with the highest return for each level of risk form a curve; with many assets, risk is set by average covariance."
+   },
+   "aliases": {
+    "zh": [
+     "有效前沿",
+     "有效前沿是什么",
+     "均值方差模型",
+     "马科维茨",
+     "资产配置怎么算",
+     "最小方差组合",
+     "风险的地板",
+     "分散到多少只就够了"
+    ],
+    "en": [
+     "efficient frontier",
+     "what is the efficient frontier",
+     "mean-variance optimization",
+     "Markowitz",
+     "minimum variance portfolio",
+     "how many stocks are enough"
+    ]
+   },
+   "relatedPages": [
+    "diversification",
+    "risk-return",
+    "vectors"
+   ]
+  },
+  {
+   "id": "sharpe-ratio-capital-market-line",
+   "anchor": "#ch3",
+   "title": {
+    "zh": "夏普比率与资本市场线",
+    "en": "Sharpe ratio and the capital market line"
+   },
+   "desc": {
+    "zh": "加进无风险资产后，最好的风险组合是与前沿相切的那一个；每份波动换多少超额回报就是夏普比率，它很难测准。",
+    "en": "With a risk-free asset the best risky portfolio is the tangency portfolio; excess return per unit of volatility is the Sharpe ratio, which is hard to measure precisely."
+   },
+   "aliases": {
+    "zh": [
+     "夏普比率",
+     "夏普比率是什么",
+     "夏普比率多少算好",
+     "资本市场线",
+     "切点组合",
+     "两基金分离",
+     "夏普比率标准误",
+     "回测过拟合"
+    ],
+    "en": [
+     "Sharpe ratio",
+     "what is the Sharpe ratio",
+     "what is a good Sharpe ratio",
+     "capital market line",
+     "tangency portfolio",
+     "two-fund separation",
+     "Sharpe ratio standard error",
+     "backtest overfitting"
+    ]
+   },
+   "relatedPages": [
+    "risk-return",
+    "numbers-lie"
+   ]
+  },
+  {
+   "id": "estimation-error-portfolio",
+   "anchor": "#ch6",
+   "title": {
+    "zh": "估计误差：最优组合为什么不稳",
+    "en": "Estimation error: why optimal portfolios are unstable"
+   },
+   "desc": {
+    "zh": "预期回报很难估，优化器把它的误差放大成极端权重，所以等权、最小方差、风险平价这类不依赖 μ 的做法常常不输。",
+    "en": "Expected returns are hard to estimate and optimisers amplify the error into extreme weights, so rules that ignore them (1/N, minimum variance, risk parity) often do as well."
+   },
+   "aliases": {
+    "zh": [
+     "估计误差",
+     "最优组合不稳定",
+     "误差最大化",
+     "等权组合",
+     "1/N",
+     "风险平价",
+     "风险平价是什么",
+     "收缩估计"
+    ],
+    "en": [
+     "estimation error",
+     "error maximization",
+     "1/N portfolio",
+     "naive diversification",
+     "risk parity",
+     "what is risk parity",
+     "shrinkage"
+    ]
+   },
+   "relatedPages": [
+    "numbers-lie",
+    "monte-carlo"
+   ]
+  },
+  {
+   "id": "volatility-drag-geometric-return",
+   "anchor": "#ch7",
+   "title": {
+    "zh": "波动拖累：算术平均与几何平均",
+    "en": "Volatility drag: arithmetic and geometric returns"
+   },
+   "desc": {
+    "zh": "复利增长率约为 μ − σ²/2；每天再平衡的 L 倍杠杆产品增长率是 r + L(μ − r) − L²σ²/2，所以杠杆 ETF 长期会缩水。",
+    "en": "Compound growth is about μ − σ²/2; a daily-rebalanced L× product grows at r + L(μ − r) − L²σ²/2, which is why leveraged ETFs decay."
+   },
+   "aliases": {
+    "zh": [
+     "波动拖累",
+     "几何平均回报",
+     "算术平均和几何平均",
+     "为什么杠杆ETF长期会亏",
+     "杠杆ETF损耗",
+     "涨50%跌50%",
+     "复利增长率"
+    ],
+    "en": [
+     "volatility drag",
+     "geometric mean return",
+     "arithmetic vs geometric return",
+     "why do leveraged ETFs decay",
+     "leveraged ETF decay",
+     "volatility decay"
+    ]
+   },
+   "relatedPages": [
+    "compound-interest",
+    "a-fair-price-for-a-bet",
+    "numbers-lie"
+   ]
+  },
+  {
+   "id": "rebalancing-diversification-return",
+   "anchor": "#ch8",
+   "title": {
+    "zh": "再平衡与分散收益",
+    "en": "Rebalancing and the diversification return"
+   },
+   "desc": {
+    "zh": "定期拉回固定比例，组合的复利增长率比各自的加权平均高 ½(Σwσ² − σp²)；资产增长率差得越多，这个好处越小。",
+    "en": "Rebalancing to fixed weights lifts compound growth above the weighted average by ½(Σwσ² − σp²); the gain shrinks when assets grow at different rates."
+   },
+   "aliases": {
+    "zh": [
+     "再平衡",
+     "再平衡有什么用",
+     "再平衡收益",
+     "分散收益",
+     "定期再平衡",
+     "买入持有"
+    ],
+    "en": [
+     "rebalancing",
+     "does rebalancing increase returns",
+     "rebalancing bonus",
+     "diversification return",
+     "buy and hold vs rebalancing"
+    ]
+   },
+   "relatedPages": [
+    "diversification"
+   ]
+  },
+  {
+   "id": "kelly-criterion",
+   "anchor": "#ch9",
+   "title": {
+    "zh": "凯利公式：下多大注",
+    "en": "The Kelly criterion"
+   },
+   "desc": {
+    "zh": "让长期财富增长最快的比例是 f* = (μ − r)/σ²；超过两倍就不如不冒险，μ 估错时全凯利惩罚很重，所以常用半凯利。",
+    "en": "The growth-optimal fraction is f* = (μ − r)/σ²; beyond twice that, growth falls below the risk-free rate, and with a mis-estimated μ full Kelly is punished hard, hence fractional Kelly."
+   },
+   "aliases": {
+    "zh": [
+     "凯利公式",
+     "凯利公式是什么",
+     "下注多大",
+     "仓位多大",
+     "半凯利",
+     "最优下注比例"
+    ],
+    "en": [
+     "Kelly criterion",
+     "Kelly criterion explained",
+     "optimal bet size",
+     "fractional Kelly",
+     "half Kelly",
+     "growth optimal portfolio"
+    ]
+   },
+   "relatedPages": [
+    "expected-value",
+    "exponents-logarithms"
+   ]
+  },
+  {
+   "id": "portfolio-frontier-2026",
+   "anchor": "#ch10",
+   "title": {
+    "zh": "组合研究的前沿（2026）",
+    "en": "Portfolio research frontier (2026)"
+   },
+   "desc": {
+    "zh": "因子能否复现的争论、缺乏弹性的市场假说与被动投资份额、机器学习预测回报及其反驳。",
+    "en": "The factor replication debate, the inelastic markets hypothesis and the passive share, and machine-learning return prediction and its critics."
+   },
+   "aliases": {
+    "zh": [
+     "因子复现危机",
+     "缺乏弹性的市场假说",
+     "被动投资占比",
+     "机器学习预测股票回报",
+     "复杂的好处"
+    ],
+    "en": [
+     "factor replication crisis",
+     "inelastic markets hypothesis",
+     "passive investing share",
+     "machine learning return prediction",
+     "virtue of complexity"
+    ]
+   },
+   "relatedPages": []
+  }
+ ]
+}

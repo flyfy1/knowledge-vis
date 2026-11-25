@@ -1,0 +1,177 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "can-a-country-go-bankrupt",
+ "refs": [
+  {
+   "from": "hero.note",
+   "to": "where-money-comes-from",
+   "anchor": null
+  },
+  {
+   "from": "hero.note",
+   "to": "interest-rates-bonds",
+   "anchor": null
+  },
+  {
+   "from": "hero.note",
+   "to": "why-one-rate-moves-everything",
+   "anchor": null
+  },
+  {
+   "from": "hero.note",
+   "to": "how-an-economy-is-measured",
+   "anchor": null
+  },
+  {
+   "from": "ch1.p3",
+   "to": "how-an-economy-is-measured",
+   "anchor": "ch1"
+  },
+  {
+   "from": "ch3.p1",
+   "to": "why-one-rate-moves-everything",
+   "anchor": "ch11"
+  },
+  {
+   "from": "ch3.p6",
+   "to": "why-one-rate-moves-everything",
+   "anchor": "ch11"
+  },
+  {
+   "from": "ch4.p2",
+   "to": "where-money-comes-from",
+   "anchor": "ch2"
+  },
+  {
+   "from": "ch5.p1",
+   "to": "interest-rates-bonds",
+   "anchor": null
+  },
+  {
+   "from": "ch8.p1",
+   "to": "scarcity-moves",
+   "anchor": "c8"
+  },
+  {
+   "from": "ch8.p3",
+   "to": "why-one-rate-moves-everything",
+   "anchor": "ch7"
+  },
+  {
+   "from": "ch9.d1",
+   "to": "why-one-rate-moves-everything",
+   "anchor": "ch11"
+  },
+  {
+   "from": "footer",
+   "to": "why-one-rate-moves-everything",
+   "anchor": null
+  }
+ ],
+ "backlinks": [],
+ "related": [
+  "why-one-rate-moves-everything",
+  "how-an-economy-is-measured",
+  "where-money-comes-from",
+  "interest-rates-bonds",
+  "risk-pooling",
+  "scarcity-moves"
+ ],
+ "bindings": [
+  "f.usTotal",
+  "f.usPublic",
+  "f.rec",
+  "f.out",
+  "f.def",
+  "f.int",
+  "f.prim",
+  "f.intPer100",
+  "f.def2",
+  "f.int25",
+  "f.def25",
+  "f.usAvg",
+  "f.usForeign",
+  "f.usForeignPct",
+  "f.usJapan",
+  "f.usUK",
+  "f.usChina",
+  "f.jgbTotal",
+  "f.jgbBojPct",
+  "f.jgbForeignPct",
+  "f.jgbTbForeignPct",
+  "f.grCut",
+  "f.grEfsf",
+  "f.grNew",
+  "f.grNpv",
+  "f.grZtgLow",
+  "f.grZtgHigh",
+  "f.cnEmp",
+  "f.cnInd",
+  "f.cn60",
+  "f.cn65",
+  "f.rameyLow",
+  "f.rameyHigh",
+  "f.jpGross",
+  "f.jpPeak",
+  "f.jpNetN",
+  "f.jpNetB",
+  "f.jpR",
+  "f.jpG",
+  "f.cnH23",
+  "f.cnSwap",
+  "f.cnSpecial",
+  "f.cnTotal",
+  "f.cnCentral",
+  "f.cnLocal",
+  "f.cnHidden",
+  "f.cnRatio",
+  "f.cnImf25",
+  "f.cnImf30",
+  "f.usD",
+  "f.usR",
+  "f.usG",
+  "f.cboPd",
+  "f.cbo26",
+  "f.cbo36",
+  "ch3.d30",
+  "ch3.ss",
+  "ch3.d30r5",
+  "ch3.d30eq",
+  "ch3.stab",
+  "ch3.stabAbs",
+  "ch4.infl0",
+  "ch4.avg0",
+  "ch4.ratio0",
+  "ch4.def100",
+  "ch4.def50",
+  "ch4.defEuro",
+  "ch5.value",
+  "ch5.market",
+  "ch5.sz",
+  "ch5.m5",
+  "ch6.t2025",
+  "ch6.t2050",
+  "ch6.t2050r63",
+  "ch6.t2050r65",
+  "ch6.le",
+  "ch7.n2025",
+  "ch7.n2050",
+  "ch7.g2050",
+  "ch7.share",
+  "ch8.a",
+  "ch8.k",
+  "ch8.tax",
+  "ch8.debt",
+  "ch8.ratio",
+  "ch8.be",
+  "ch8.k50",
+  "ch8.dr50",
+  "ch9.usStab",
+  "ch9.usStabAbs",
+  "ch9.usD30",
+  "ch9.usPer1",
+  "ch9.jpStab",
+  "ch9.jpStabAbs",
+  "ch9.jpStabPlus1"
+ ]
+}

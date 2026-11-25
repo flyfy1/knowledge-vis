@@ -1,0 +1,139 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "what-makes-a-stablecoin-stable",
+ "refs": [
+  {
+   "from": "hero.note",
+   "to": "where-money-comes-from",
+   "anchor": null
+  },
+  {
+   "from": "hero.note",
+   "to": "why-one-rate-moves-everything",
+   "anchor": null
+  },
+  {
+   "from": "ch1.p3",
+   "to": "where-money-comes-from",
+   "anchor": "ch2"
+  },
+  {
+   "from": "ch1.p3",
+   "to": "where-money-comes-from",
+   "anchor": "ch3"
+  },
+  {
+   "from": "ch2.p2",
+   "to": "why-one-rate-moves-everything",
+   "anchor": "ch5"
+  },
+  {
+   "from": "ch3.p1",
+   "to": "a-secret-in-public",
+   "anchor": null
+  },
+  {
+   "from": "ch3.p1",
+   "to": "distributed-systems",
+   "anchor": null
+  },
+  {
+   "from": "ch3.p1",
+   "to": "hashing",
+   "anchor": null
+  },
+  {
+   "from": "ch5.p2",
+   "to": "where-money-comes-from",
+   "anchor": "ch3"
+  },
+  {
+   "from": "ch11.links",
+   "to": "where-money-comes-from",
+   "anchor": null
+  },
+  {
+   "from": "ch11.links",
+   "to": "why-one-rate-moves-everything",
+   "anchor": null
+  },
+  {
+   "from": "ch11.links",
+   "to": "compound-interest",
+   "anchor": null
+  },
+  {
+   "from": "ch11.links",
+   "to": "a-secret-in-public",
+   "anchor": null
+  },
+  {
+   "from": "ch11.links",
+   "to": "distributed-systems",
+   "anchor": null
+  }
+ ],
+ "backlinks": [],
+ "related": [
+  "where-money-comes-from",
+  "why-one-rate-moves-everything",
+  "hashing",
+  "a-secret-in-public",
+  "distributed-systems",
+  "compound-interest"
+ ],
+ "bindings": [
+  "ch3.lo",
+  "ch3.hi",
+  "ch3.per",
+  "ch3.gap",
+  "ch3.sim",
+  "ch3.calmYears",
+  "ch3.per25",
+  "ch4.min",
+  "ch4.minShut",
+  "ch4.outShut",
+  "ch4.outOpen",
+  "ch4.outNone",
+  "ch4.hours",
+  "ch5.loss",
+  "ch5.v0",
+  "ch5.unpaid",
+  "ch5.avg",
+  "ch5.jumpy",
+  "ch5.pLiq",
+  "ch5.pHair",
+  "ch5.pJumpy",
+  "ch5.pBuf",
+  "ch5.pV0",
+  "ch5.pUnpaid",
+  "ch5.gHair",
+  "ch5.gV0",
+  "ch6.cover",
+  "ch6.depth",
+  "ch6.thr",
+  "ch6.halt",
+  "ch6.pHalt",
+  "ch6.supX",
+  "ch6.shock",
+  "ch6.h35",
+  "ch6.drop45",
+  "ch6.resHalt",
+  "ch7.best",
+  "ch7.be",
+  "ch7.shrink",
+  "ch8.mean",
+  "ch8.capped",
+  "ch8.share",
+  "ch8.ofLiq",
+  "ch8.calm",
+  "ch8.liq",
+  "ch8.med",
+  "ch8.c10",
+  "f.usdtShare",
+  "f.top2",
+  "f.billShare",
+  "f.excess",
+  "f.payShare"
+ ]
+}

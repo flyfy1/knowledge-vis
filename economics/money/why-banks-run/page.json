@@ -1,0 +1,69 @@
+{
+  "slug": "why-banks-run",
+  "kind": "essay",
+  "layout": "essay",
+  "scripts": [
+    "models.js",
+    "copy.zh.js",
+    "copy.en.js",
+    "app.js"
+  ],
+  "version": "20261125a",
+  "category": "economics",
+  "subtopic": "money",
+  "stage": "university",
+  "path": "economics/money/why-banks-run/",
+  "created": "2026-11-25",
+  "languages": {
+    "en": "stub"
+  },
+  "tags": [
+    {
+      "zh": "银行",
+      "en": "Banking"
+    },
+    {
+      "zh": "金融危机",
+      "en": "Financial Crises"
+    },
+    {
+      "zh": "存款保险",
+      "en": "Deposit Insurance"
+    },
+    {
+      "zh": "金融监管",
+      "en": "Financial Regulation"
+    },
+    {
+      "zh": "长文",
+      "en": "Long-form Essay"
+    }
+  ],
+  "dynamicKeys": {
+    "ch2.say": [
+      "ok",
+      "dead"
+    ],
+    "ch4.say": [
+      "calm",
+      "run",
+      "fund",
+      "safe"
+    ],
+    "ch4.out": [
+      "ok",
+      "fail",
+      "lolrok"
+    ],
+    "ch5.say": [
+      "ok",
+      "under",
+      "fail"
+    ],
+    "ch7.say": [
+      "pass",
+      "fail",
+      "cover"
+    ]
+  }
+}

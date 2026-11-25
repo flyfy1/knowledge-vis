@@ -1,0 +1,366 @@
+{
+ "slug": "what-a-stock-is-worth",
+ "path": "investment/basics/what-a-stock-is-worth/",
+ "category": "investment",
+ "subtopic": "basics",
+ "stage": "university",
+ "title": {
+  "zh": "一只股票值多少钱",
+  "en": "What a Stock Is Worth"
+ },
+ "desc": {
+  "zh": "同一家公司，生意几乎没变，股价一年里却能上下差三成。这篇从“一股是对未来现金的一份索取权”讲起，经过折现、戈登增长模型、市盈率和席勒市盈率、股权风险溢价、CAPM 与因子、有效市场与过度波动、主动基金为什么大多跑不赢指数，再到泡沫和 2026 年 11 月的市场集中度与 AI 投资之争。十个可以动手的模型，八张示意图；只讲道理和证据，不是投资建议。",
+  "en": "The same company, its business barely changed, can see its share price swing thirty percent in a year. Starting from “a share is a claim on future cash”, the essay works through discounting, the Gordon growth model, P/E and Shiller's CAPE, the equity risk premium, CAPM and factors, efficient markets and excess volatility, why most active funds trail the index, bubbles, and the market concentration and AI-investment debate of November 2026. Ten models you can push, eight diagrams; mechanisms and evidence only, not investment advice."
+ },
+ "tags": [
+  {
+   "zh": "股票估值",
+   "en": "Stock Valuation"
+  },
+  {
+   "zh": "现金流折现",
+   "en": "DCF"
+  },
+  {
+   "zh": "市盈率",
+   "en": "P/E Ratio"
+  },
+  {
+   "zh": "有效市场",
+   "en": "Efficient Markets"
+  },
+  {
+   "zh": "长文",
+   "en": "Long-form Essay"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "dcf-valuation",
+   "anchor": "#ch3",
+   "title": {
+    "zh": "现金流折现与戈登增长模型",
+    "en": "Discounted cash flow and the Gordon growth model"
+   },
+   "desc": {
+    "zh": "股票价值是未来给股东的现金逐年折现之和；永续增长时收成 P = D₁/(r − g)，r 靠近 g 时价格对利率极其敏感。",
+    "en": "A share is worth the discounted sum of the cash it pays owners; with perpetual growth this becomes P = D₁/(r − g), and as r nears g the price becomes extremely sensitive to rates."
+   },
+   "aliases": {
+    "zh": [
+     "现金流折现",
+     "DCF",
+     "股利折现模型",
+     "戈登增长模型",
+     "股票估值",
+     "股票怎么估值",
+     "为什么利率上升股票下跌",
+     "加息为什么股票跌",
+     "终值",
+     "永续增长率",
+     "一只股票值多少钱"
+    ],
+    "en": [
+     "discounted cash flow",
+     "DCF",
+     "dividend discount model",
+     "Gordon growth model",
+     "stock valuation",
+     "how to value a stock",
+     "why do stocks fall when rates rise",
+     "terminal value",
+     "what is a stock worth"
+    ]
+   },
+   "relatedPages": [
+    "compound-interest",
+    "why-one-rate-moves-everything",
+    "stocks-bonds",
+    "interest-rates-bonds"
+   ]
+  },
+  {
+   "id": "valuation-multiples-pe",
+   "anchor": "#ch4",
+   "title": {
+    "zh": "市盈率与反向 DCF",
+    "en": "The P/E ratio and reverse DCF"
+   },
+   "desc": {
+    "zh": "市盈率等于派息率除以 r − g；倒过来解，一个市盈率对应一个隐含的增长率或一段必须实现的高增长期。",
+    "en": "P/E equals the payout ratio over r − g; solved backwards, a P/E implies a growth rate or a stretch of fast growth that must happen."
+   },
+   "aliases": {
+    "zh": [
+     "市盈率",
+     "市盈率怎么看",
+     "PE",
+     "P/E",
+     "市盈率高好还是低好",
+     "盈利收益率",
+     "反向DCF",
+     "隐含增长率",
+     "40倍市盈率贵吗"
+    ],
+    "en": [
+     "P/E ratio",
+     "price to earnings",
+     "how to read a P/E",
+     "earnings yield",
+     "reverse DCF",
+     "implied growth",
+     "is a high P/E expensive"
+    ]
+   },
+   "relatedPages": [
+    "stocks-bonds"
+   ]
+  },
+  {
+   "id": "cape-shiller-pe",
+   "anchor": "#ch5",
+   "title": {
+    "zh": "席勒市盈率（CAPE）",
+    "en": "Shiller's cyclically adjusted P/E (CAPE)"
+   },
+   "desc": {
+    "zh": "用过去十年经通胀调整的平均利润做分母，避免衰退时当年市盈率失真；它对十年以上的回报有一定解释力，对一两年几乎没有。",
+    "en": "Dividing by ten years of inflation-adjusted earnings keeps recessions from distorting the ratio; it says something about returns over a decade or more and almost nothing about the next year or two."
+   },
+   "aliases": {
+    "zh": [
+     "席勒市盈率",
+     "CAPE",
+     "周期调整市盈率",
+     "Shiller PE",
+     "股市估值高吗",
+     "衰退时市盈率为什么很高"
+    ],
+    "en": [
+     "Shiller PE",
+     "CAPE ratio",
+     "cyclically adjusted price earnings",
+     "is the stock market expensive"
+    ]
+   },
+   "relatedPages": [
+    "where-a-mortgage-payment-goes"
+   ]
+  },
+  {
+   "id": "equity-risk-premium",
+   "anchor": "#ch6",
+   "title": {
+    "zh": "股权风险溢价",
+    "en": "The equity risk premium"
+   },
+   "desc": {
+    "zh": "要求回报 = 无风险利率 + 股权风险溢价；隐含溢价从价格和现金预期里倒解，价格越高，溢价越低。",
+    "en": "Required return = risk-free rate + equity risk premium; the implied premium is solved from prices and expected cash, and the higher the price, the lower it is."
+   },
+   "aliases": {
+    "zh": [
+     "股权风险溢价",
+     "风险溢价",
+     "ERP",
+     "隐含风险溢价",
+     "要求回报率",
+     "折现率怎么定",
+     "股权溢价之谜"
+    ],
+    "en": [
+     "equity risk premium",
+     "ERP",
+     "implied equity risk premium",
+     "required return",
+     "cost of equity",
+     "equity premium puzzle"
+    ]
+   },
+   "relatedPages": [
+    "risk-return",
+    "why-one-rate-moves-everything"
+   ]
+  },
+  {
+   "id": "capm-beta",
+   "anchor": "#ch7",
+   "title": {
+    "zh": "CAPM 与 β",
+    "en": "CAPM and beta"
+   },
+   "desc": {
+    "zh": "只有分散不掉、和市场一起动的风险才有补偿；β 由回归估出，噪音很大，而且数据里的证券市场线比理论平。",
+    "en": "Only risk that cannot be diversified away, co-movement with the market, is paid; beta comes from a noisy regression, and in the data the security market line is flatter than theory says."
+   },
+   "aliases": {
+    "zh": [
+     "CAPM",
+     "资本资产定价模型",
+     "贝塔",
+     "β系数",
+     "证券市场线",
+     "beta怎么算",
+     "系统性风险"
+    ],
+    "en": [
+     "CAPM",
+     "capital asset pricing model",
+     "beta",
+     "security market line",
+     "systematic risk",
+     "how is beta calculated"
+    ]
+   },
+   "relatedPages": [
+    "diversification",
+    "risk-return",
+    "regression-correlation"
+   ]
+  },
+  {
+   "id": "factor-models-alpha",
+   "anchor": "#ch7",
+   "title": {
+    "zh": "因子模型与 α",
+    "en": "Factor models and alpha"
+   },
+   "desc": {
+    "zh": "法玛–弗伦奇的规模、价值、盈利、投资等因子比单一 β 描述得好；因子回报在被发表后变小，许多“因子”只是多重比较。",
+    "en": "Fama–French size, value, profitability and investment factors describe returns better than beta alone; factor returns shrink after publication, and many 'factors' are multiple comparisons."
+   },
+   "aliases": {
+    "zh": [
+     "因子模型",
+     "三因子",
+     "五因子",
+     "法玛弗伦奇",
+     "阿尔法",
+     "超额收益",
+     "价值因子",
+     "小盘股效应",
+     "因子动物园"
+    ],
+    "en": [
+     "factor model",
+     "Fama French",
+     "three factor",
+     "five factor",
+     "alpha",
+     "value factor",
+     "size effect",
+     "factor zoo"
+    ]
+   },
+   "relatedPages": [
+    "numbers-lie",
+    "hypothesis-testing"
+   ]
+  },
+  {
+   "id": "efficient-markets-random-walk",
+   "anchor": "#ch8",
+   "title": {
+    "zh": "有效市场与过度波动",
+    "en": "Efficient markets and excess volatility"
+   },
+   "desc": {
+    "zh": "公开信息已在价格里，价格近似随机游走；可席勒发现价格比它代表的股息波动得还大，大部分波动来自折现率。",
+    "en": "Public information is already in the price, which moves roughly like a random walk; yet Shiller found prices swing more than the dividends they stand for, mostly because discount rates move."
+   },
+   "aliases": {
+    "zh": [
+     "有效市场",
+     "有效市场假说",
+     "EMH",
+     "随机游走",
+     "股价能预测吗",
+     "过度波动",
+     "席勒",
+     "格罗斯曼斯蒂格利茨悖论"
+    ],
+    "en": [
+     "efficient market hypothesis",
+     "EMH",
+     "random walk",
+     "can stock prices be predicted",
+     "excess volatility",
+     "Shiller",
+     "Grossman Stiglitz paradox"
+    ]
+   },
+   "relatedPages": [
+    "expected-value"
+   ]
+  },
+  {
+   "id": "active-management-arithmetic",
+   "anchor": "#ch9",
+   "title": {
+    "zh": "主动管理的算术与指数基金",
+    "en": "The arithmetic of active management and index funds"
+   },
+   "desc": {
+    "zh": "主动投资者合起来就是市场，扣费后平均一定跑输；时间越长，运气被平均掉，费用留下来，SPIVA 测到二十年约九成三的大盘基金跑输。",
+    "en": "Active investors together are the market, so after costs the average must trail; over longer horizons luck averages out and fees remain, and SPIVA measured about 93% of large-cap funds trailing over twenty years."
+   },
+   "aliases": {
+    "zh": [
+     "指数基金为什么跑赢大多数基金",
+     "主动基金跑不赢指数",
+     "指数基金",
+     "被动投资",
+     "SPIVA",
+     "基金经理能跑赢大盘吗",
+     "夏普的算术",
+     "主动管理"
+    ],
+    "en": [
+     "why index funds win",
+     "active vs passive",
+     "index fund",
+     "SPIVA",
+     "can fund managers beat the market",
+     "arithmetic of active management"
+    ]
+   },
+   "relatedPages": [
+    "fees-compounding",
+    "numbers-lie",
+    "diversification"
+   ]
+  },
+  {
+   "id": "stock-market-frontier-2026",
+   "anchor": "#ch11",
+   "title": {
+    "zh": "2026 年的估值、集中度与 AI 投资之争",
+    "en": "Valuations, concentration and the AI-investment debate in 2026"
+   },
+   "desc": {
+    "zh": "2026 年 11 月：前十大公司约占标普 500 四成、席勒市盈率约 40 倍、大型科技公司资本开支接近 7,000 亿美元；AI 股是否泡沫，可以改写成一个反向 DCF 问题。",
+    "en": "November 2026: the top ten hold about 40% of the S&P 500, CAPE is near 40 and big-tech capex nears $700 billion; whether AI stocks are a bubble can be restated as a reverse-DCF question."
+   },
+   "aliases": {
+    "zh": [
+     "AI股是不是泡沫",
+     "AI泡沫",
+     "美股集中度",
+     "七巨头",
+     "美股估值2026",
+     "AI资本开支"
+    ],
+    "en": [
+     "is AI a bubble",
+     "AI stocks bubble",
+     "market concentration",
+     "Magnificent Seven",
+     "AI capex"
+    ]
+   },
+   "relatedPages": [
+    "why-one-rate-moves-everything"
+   ]
+  }
+ ]
+}

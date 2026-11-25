@@ -1,0 +1,237 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "why-some-countries-got-rich",
+ "refs": [
+  {
+   "from": "hero.note",
+   "to": "how-an-economy-is-measured",
+   "anchor": null
+  },
+  {
+   "from": "hero.note",
+   "to": "compound-interest",
+   "anchor": null
+  },
+  {
+   "from": "hero.note",
+   "to": "scarcity-moves",
+   "anchor": null
+  },
+  {
+   "from": "ch1.p1",
+   "to": "how-an-economy-is-measured",
+   "anchor": "ch1"
+  },
+  {
+   "from": "ch1.p2",
+   "to": "compound-interest",
+   "anchor": null
+  },
+  {
+   "from": "ch1.p3",
+   "to": "exponents-logarithms",
+   "anchor": "step2"
+  },
+  {
+   "from": "ch1.limit",
+   "to": "how-an-economy-is-measured",
+   "anchor": "ch5"
+  },
+  {
+   "from": "ch3.p2",
+   "to": "ode-phase-portraits",
+   "anchor": null
+  },
+  {
+   "from": "ch4.p4",
+   "to": "numbers-lie",
+   "anchor": "c3"
+  },
+  {
+   "from": "ch4.p4",
+   "to": "regression-correlation",
+   "anchor": "step1"
+  },
+  {
+   "from": "ch5.p1",
+   "to": "how-an-economy-is-measured",
+   "anchor": "ch8"
+  },
+  {
+   "from": "ch5.limit",
+   "to": "how-an-economy-is-measured",
+   "anchor": "ch8"
+  },
+  {
+   "from": "ch6.p2",
+   "to": "scarcity-moves",
+   "anchor": "c6"
+  },
+  {
+   "from": "ch6.p2",
+   "to": "scarcity-moves",
+   "anchor": "c7"
+  },
+  {
+   "from": "ch7.p1",
+   "to": "why-chips-are-hard",
+   "anchor": "ch10"
+  },
+  {
+   "from": "ch8.p1",
+   "to": "scarcity-moves",
+   "anchor": "c10"
+  },
+  {
+   "from": "ch9.p1",
+   "to": "scarcity-moves",
+   "anchor": "c11"
+  },
+  {
+   "from": "ch9.p1",
+   "to": "scarcity-moves",
+   "anchor": "c13"
+  },
+  {
+   "from": "ch9.p1",
+   "to": "scarcity-moves",
+   "anchor": "c12"
+  }
+ ],
+ "backlinks": [],
+ "related": [
+  "how-an-economy-is-measured",
+  "compound-interest",
+  "ode-phase-portraits",
+  "scarcity-moves",
+  "why-chips-are-hard"
+ ],
+ "bindings": [
+  "ch1.kr50",
+  "ch1.tw50",
+  "ch1.kr22",
+  "ch1.tw22",
+  "ch1.ar50",
+  "ch1.ar22",
+  "ch1.krG",
+  "ch1.arG",
+  "ch1.usG",
+  "ch1.d2",
+  "ch1.x2",
+  "ch1.d7",
+  "ch1.x7",
+  "ch1.e7",
+  "ch1.e10",
+  "ch2.dbl3",
+  "ch2.dbl5",
+  "ch3.k",
+  "ch3.y",
+  "ch3.c",
+  "ch3.hl",
+  "ch4.p1",
+  "ch4.p10",
+  "ch4.p30",
+  "ch4.hl",
+  "ch4.peak",
+  "ch4.back",
+  "ch4.lvl",
+  "ch4.ng50",
+  "ch4.ng22",
+  "ch5.cn3gy",
+  "ch5.cn3cap",
+  "ch5.cn3tfp",
+  "ch5.cn4gy",
+  "ch5.cn4cap",
+  "ch5.cn4tfp",
+  "ch5.cn5gy",
+  "ch5.cn5cap",
+  "ch5.cn5tfp",
+  "ch6.g100zero",
+  "ch6.g200zero",
+  "ch6.lr1",
+  "ch6.lr3",
+  "ch6.R3",
+  "ch7.lrAll",
+  "ch7.r2All",
+  "ch7.dblAll",
+  "ch7.dropAll",
+  "ch7.cap0",
+  "ch7.cap1",
+  "ch7.p0",
+  "ch7.p1",
+  "ch7.lr1",
+  "ch7.lr3",
+  "ch8.kr50",
+  "ch8.kr22",
+  "ch8.tw22",
+  "ch8.br78",
+  "ch8.br22",
+  "ch8.cn78",
+  "ch8.cn22",
+  "ch8.ky00",
+  "ch8.ky23",
+  "ch8.kyUs00",
+  "ch8.kyUs23",
+  "ch9.exp",
+  "ch9.prof",
+  "ch9.imp",
+  "ch9.lcs",
+  "ch9.ls",
+  "ch9.save",
+  "ch9.tfp",
+  "ch9.yr",
+  "ch9.tfpHard",
+  "ch9.gdp",
+  "ch10.low",
+  "ch10.lowT",
+  "ch10.cross",
+  "ch10.end",
+  "ch10.truth",
+  "f.cnG25",
+  "f.cnGdpYuan",
+  "f.cnQ1",
+  "f.cnQ2",
+  "f.cnQ3",
+  "f.cnQ4",
+  "f.cnPcY",
+  "f.cnPcU",
+  "f.cnPop",
+  "f.cnQ326",
+  "f.cn9m",
+  "f.imfInv",
+  "f.imfMis",
+  "f.wapYear",
+  "f.wapPeak",
+  "f.wap23",
+  "f.usQ3",
+  "f.usYoY",
+  "f.bnef",
+  "f.bnefStat",
+  "f.bnefCn",
+  "f.wbEscaped",
+  "f.wbStuck",
+  "f.aceLo",
+  "f.aceHi",
+  "f.bickU",
+  "f.bickA",
+  "f.bickP",
+  "f.fred24",
+  "f.fred26",
+  "f.brynA",
+  "f.brynN",
+  "f.noyT",
+  "f.noyQ",
+  "f.peng",
+  "f.metr",
+  "f.metrE",
+  "f.metrB",
+  "f.humlum",
+  "f.brs",
+  "f.moore",
+  "f.agLo",
+  "f.agHi",
+  "f.agMid",
+  "f.gs",
+  "f.an"
+ ]
+}

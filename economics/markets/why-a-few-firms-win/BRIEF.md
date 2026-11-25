@@ -202,3 +202,109 @@ ch13 turns the ladder into five questions to ask of an antitrust headline, plus 
 - Learning curves are folded into the data chapter.
 - The ch7 negative-price branch was dropped: no slider position reaches it in this linear version, and the test enforces that every branch is reachable.
 - The ch8 chapter now distinguishes "tips from the 2× start" (δ ≈ 0.11) from "the even split is unstable" (δc ≈ 0.13). The first draft claimed tipping only above 0.13, which the model contradicted.
+
+## Closeout 2026-11-25 (template conversion, facts, figures)
+
+- Built-By: Claude Code (claude-opus-5-5, thinking unavailable), closeout agent. Verified-By: self-check only; not independently reviewed.
+- **English.** `content.en.md` started from Antigravity's (gemini-4-hydrogen) `copy.en.js` of ed19a837 (branch drafts/antigravity-essays-20261114), written for this same zh text. The closeout agent restored it here, converted it and wrote the English for every string it changed or added (desc, hero note, ch1.p1, ch1.p5, ch2.p2, ch7.p3, ch8.p2, ch8.p4, ch11.p3, ch12 legend, p1, money paragraph, cards cloud.f1/f2, models.f4/f5, cases us5.c/eu2.c/cn2.c/cn3.c, reg.title, reg.p, footer, all eight diagrams). The rest of the Antigravity English was not re-audited line by line; one embellishment was found and removed (ch8.p4 claimed search-log studies show gains on "tail queries"). Commit trailer: `Derived-From: economics/markets/why-a-few-firms-win/copy.en.js -> economics/markets/why-a-few-firms-win/content.en.md` and credit Antigravity in Built-By.
+
+### Template conversion
+- `scripts/convert-essay.cjs` needs a live page, so it was run through a scratch wrapper (`/tmp/agent-tasks/econ-graph/why-a-few-firms-win/convert-draft.cjs`) that injects this draft into the in-memory registry. Before converting, the TOC was moved to `toc.chN` keys (index.html and both copy tables), as the layout expects. Round trip: index.html byte-identical and both copy tables equal; the only mismatch was the desc, which differed between REGISTRY.json and doc.desc; content now uses the REGISTRY.json desc.
+- page.json: `layout: essay`, version 20261125a, category/subtopic/stage/path/tags, a `generators` entry for `tools/diagrams.cjs`. It has **no `status`** (the registrar adds it; build-registry rejects "draft"). The subtopic `markets` is not yet in pages.config.js.
+- Generated now (do not edit): index.html, copy.zh.js, copy.en.js, refs.json, figures/dg-*.html. Sources: content.zh.md, content.en.md, page.css, figures/ch*-*.html, tools/diagrams.cjs, models.js, app.js.
+- Tests: `tests/models.cjs` reads index.html through `scripts/lib/prefill.cjs` unprefill. `tests/browser.cjs` now expects English to exist; it also had a misspelt table-wrapper exclusion (`.tablewrap` → `.tblwrap`).
+
+### Fixed
+- **ch7 wrong comparison.** The prose said one-sided pricing earns 0.18 against 0.30. But 0.18 is the profit in a world *without* cross effects. Under the real cross effects, those prices (0.35 / 0.6) earn **0.26**. Added `platform.oneSidedActual`; the readout, the prose and the test now use it. A test checks over a 19×19 grid that the one-sided prices never beat the optimum.
+- **Wouters et al.** The page said "$985m median". That was the 2020 figure; JAMA corrected it in 2022 (328(11):1110, doi 10.1001/jama.2022.14317). The article now shows **$1,141.7m** median ($1,559.1m mean; 2018 USD; 63 of the 355 drugs approved 2009–2018; includes failed trials). Sources: https://jamanetwork.com/journals/jama/fullarticle/2762311 and https://researchonline.lse.ac.uk/id/eprint/116657.
+- **Menlo disclosure and an independent source (ch12).**
+  - The Menlo card now says, in bold, that Menlo is an Anthropic investor and that survey answers are not invoices. The footer says it too.
+  - Ramp AI Index added (new FRONTIER entries `rampAdoption`, `rampTokenSpend`; https://ramp.com/data/ai-index, read 2026-11-25). Card data from 85,000+ US businesses: in Oct 2026, 56.8% adoption, Anthropic 44.8%, OpenAI 40.6%. Token-spend shares for the week to 2026-11-15: Anthropic 58.7%, OpenAI 37.2%, xAI 2.4%, Google 1.4%, giving HHI ≈ 4837.
+  - The card's stated caveat: Ramp sees only direct payments, so purchases through cloud bills are invisible and Google is probably understated. That caveat is my inference, labelled as "很可能".
+  - Ramp's own investors were not researched. "No known investment in any model maker" means I found none, not that I checked its cap table.
+- **Symmetry.** Claims by Microsoft, Amazon, Google and Meta already carry 某方声称. The Anthropic-linked source is tagged the same way, and the independent measurement agrees on the ranking but not on the shares.
+- **Tags renamed** to the house set: 已确立 / 已演示 / 某方声称 (from 已发生 / 声称). The legend defines 已演示 as "measured or happened (measurement, ruling, fine)". The final chapter is renamed 「前沿在哪：AI 这一摞生意」.
+- **ch8.** Besiroglu et al. replication exponent confirmed: β = 0.3658, against Hoffmann's 0.2849 (arXiv HTML Table 1, https://arxiv.org/html/2404.10102). The uncited "search-log studies" sentence now cites Schäfer, Sapi & Lorincz 2018 (DIW DP 1730, abstract read: https://ideas.repec.org/p/diw/diwwpp/dp1730.html).
+- **ch11.** Bond, Hashemi, Kaplan & Zoch confirmed from the NBER w27002 abstract (https://www.nber.org/papers/w27002): with revenue rather than output elasticities, the ratio estimator carries no markup information. Published in JME 121 (2021) 1–14.
+- **ch1.**
+  - Elasticity is no longer pointed to supply-demand. It now links to 关税到底谁付 `#elasticity` (economics/trade/who-pays-a-tariff, owned by another writer, unregistered as of 2026-11-25, so the build warns "not a live page").
+  - 大数据杀熟 is now defined, and PIPL Art. 24 (in force 2021-11-01) is added. That text is from my knowledge of the statute, not re-opened.
+- **Frontier rechecks (2026-11-25).**
+  - Epic v. Apple: set for argument 2027-01-11 (docket entry 2026-11-02; https://www.supremecourt.gov/docket/docketfiles/html/public/25-1311.html), limited to the contempt question.
+  - EU AWS/Azure: preliminary view 2026-06-25 confirmed on the Commission page; no final decision found in news search as of 2026-11-25.
+  - Google ad tech: the 2026-09-02 remedies ruling is consistent with the case table.
+  - China food-delivery probe: announced 2026-01-09 (news.cn), no result found.
+- **ch12, how AI companies make money.** New paragraph (`ch12.money`) and figure 8. Mechanism only: subscriptions and tiers as self-selection price discrimination, per-token APIs, rented compute, chips. No revenue figures.
+- **Figures.** Eight static diagrams in `tools/diagrams.cjs` (generator), each with a wide and a narrow SVG and font ≥ 14:
+  - dg-cost (ch2);
+  - dg-links (ch5; 1/3/10/28 pairs);
+  - dg-platform (ch7; prices from the model);
+  - dg-loop (ch8);
+  - dg-tie (ch9);
+  - dg-interop (ch10);
+  - dg-cogs (ch11; shares 71/13/17% → 54/29/17%, estimates 1.20 → 1.57 from the model);
+  - dg-stack (ch12).
+
+  The drawing helper is adapted from a-fair-price-for-a-bet/tools/diagrams.cjs. tests/models.cjs pins the drawn numbers.
+
+### Re-derived independently (own code, no models.js: /tmp/agent-tasks/econ-graph/why-a-few-firms-win/rederive.cjs)
+- ch1: brute-force price search gives p 20 / L 0.5 / q 25 at ε 2, and p 12.5 / L 0.2 at ε 5.
+  - My numeric DWL integral was inaccurate near ε = 1.25. The closed form gives a share of 19.75–26.4%, so the prose's "20% 到 26%" stands.
+- ch2: brute force over k confirms 10 firms (+270%), 3 firms, and 1 firm.
+- ch3: Cournot by best-response iteration gives 26.67 / 14.55. The logit price by bisection gives 23.87 / 18.87.
+- ch4, free entry:
+  - S 4: Cournot 9 firms at P 15; logit 4; Bertrand 1 at P 35; welfare optimum 4; contestable price 10.51;
+  - S 16: Cournot 19.
+- ch5: roots 20% / 80%; Euler integration from 25% reaches 80%, from 15% reaches 0.
+- ch6/ch10: my own Arthur run on the same generator gives 177 of 200 tipped and 88.5 / 32 / 0 / 69.5 / 32.5 / 2%.
+  - On seeds 1001+ the results are 91 / 33.5 / 0.5 / 66 / 34 / 1%. So the pinned numbers are the seed-1 sample, robust to ±3 points.
+- ch7: a grid search for the maximum gives p1 0.144, p2 0.746, profit 0.297. This exposed the 0.18 error above.
+- ch8: RK2 integration gives 71.9% → 51.6%. Bisection gives a tipping δ of 0.112; the closed form gives δc 0.129.
+- ch9: 0.8 / −0.2 / 0.6 / 0.8; double marginalisation 47.5 / 35 / 468.75 / 625.
+- ch11: 1.569. Three-firm Cournot by best responses: 22.5 / 3333 / 703.1 → 20 / 3750 / 800.
+- ch12 HHI bounds:
+
+  | Market | HHI bounds |
+  |---|---|
+  | Cloud | 1293–1854 |
+  | Foundry | 5320–5408 |
+  | Menlo shares | 4067–4092 |
+
+  The cloud sentence now says "whether it crosses 1800 depends on the rest".
+
+### Not verified
+- Not re-opened in this pass; they rest on the 2026-11-11 check:
+  - cloud, foundry, TSMC capex and NVIDIA figures;
+  - Epoch figures;
+  - the US Google search and Meta case statuses;
+  - DMA fines;
+  - Alibaba and Meituan fines;
+  - NVIDIA/Mellanox (marked "not rechecked").
+- Ohio v. AmEx and PIPL Art. 24 are from general legal knowledge.
+- Not done, per the 2026-11-25 instruction:
+  - the per-control-state sentence read;
+  - the full screenshot matrix;
+  - the canvas sweep.
+
+  One zh desktop shot and one phone shot only.
+
+### Status at wrap-up 2026-11-25
+- **Done.**
+  - Template conversion; `build-pages.cjs <dir>` and `--check` pass. The only warnings are three links to sibling drafts that are not live yet.
+  - `tests/models.cjs`: PASS, 2052 checks. `tests/browser.cjs`: PASS, run before the last link and diagram edits; no console errors.
+  - zh and en complete (en not stubbed).
+  - 8 diagrams. The dg-platform money arrows were fixed to point into the platform after a screenshot review.
+  - Facts and Menlo/Ramp as above.
+  - Links required by specs/essay-briefs/TASK-econ-series.md:
+    - supply-demand #step2 kept alongside who-pays-a-tariff #elasticity;
+    - ch8 ↔ why-some-countries-got-rich #ch7 (Wright's law);
+    - ch12 → when-buyers-cant-see-quality #ch5 (screening). Platforms stay here; lemons and credit scores stay there.
+  - REGISTRY aliases 边际收入, 边际收益 and MR = MC added to `monopoly-pricing-lerner`.
+- **Missing or for the registrar.**
+  - page.json has no `status`. The subtopic `markets` is not in pages.config.js.
+  - The three sibling links above become checkable once those pages are registered.
+  - The proposed edges are in TASK-econ-series.md, e.g. `network-effects-critical-mass>data-feedback-loops:connection` and `data-feedback-loops>wrights-law-cost-curve:connection`.
+- **Not verified.** See "Not verified" above. In addition:
+  - the Antigravity English outside the edited keys was not audited;
+  - the browser test was not rerun after the final edits, which were the dg-platform arrows and three links.
+- **Server.** The local server on port 18886 (python http.server, started for the browser test) is still running. Under the 2026-11-25 rule I may not kill it; the lead should stop it.

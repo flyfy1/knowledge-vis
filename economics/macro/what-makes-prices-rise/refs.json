@@ -1,0 +1,240 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "what-makes-prices-rise",
+ "refs": [
+  {
+   "from": "hero.note",
+   "to": "how-an-economy-is-measured",
+   "anchor": "ch3"
+  },
+  {
+   "from": "hero.note",
+   "to": "why-one-rate-moves-everything",
+   "anchor": null
+  },
+  {
+   "from": "ch1.p1",
+   "to": "where-money-comes-from",
+   "anchor": "ch4"
+  },
+  {
+   "from": "ch1.p2",
+   "to": "where-money-comes-from",
+   "anchor": "ch2"
+  },
+  {
+   "from": "ch1.p2",
+   "to": "why-one-rate-moves-everything",
+   "anchor": "ch5"
+  },
+  {
+   "from": "ch1.limit",
+   "to": "how-an-economy-is-measured",
+   "anchor": "ch2"
+  },
+  {
+   "from": "ch2.p1",
+   "to": "supply-demand",
+   "anchor": "step0"
+  },
+  {
+   "from": "ch2.p4",
+   "to": "why-one-rate-moves-everything",
+   "anchor": "ch7"
+  },
+  {
+   "from": "ch2.limit",
+   "to": "where-money-comes-from",
+   "anchor": "ch8"
+  },
+  {
+   "from": "ch2.limit",
+   "to": "how-an-economy-is-measured",
+   "anchor": "ch7"
+  },
+  {
+   "from": "ch3.p3",
+   "to": "why-one-rate-moves-everything",
+   "anchor": "ch7"
+  },
+  {
+   "from": "ch3.limit",
+   "to": "how-an-economy-is-measured",
+   "anchor": "ch6"
+  },
+  {
+   "from": "ch4.p1",
+   "to": "bayes-updating",
+   "anchor": "step1"
+  },
+  {
+   "from": "ch4.p4",
+   "to": "why-one-rate-moves-everything",
+   "anchor": "ch7"
+  },
+  {
+   "from": "ch6.p4",
+   "to": "why-one-rate-moves-everything",
+   "anchor": "ch11"
+  },
+  {
+   "from": "ch7.p1",
+   "to": "where-money-comes-from",
+   "anchor": "ch5"
+  },
+  {
+   "from": "ch7.p2",
+   "to": "inverted-pendulum",
+   "anchor": "step2"
+  },
+  {
+   "from": "ch7.p5",
+   "to": "why-one-rate-moves-everything",
+   "anchor": "ch10"
+  },
+  {
+   "from": "ch7.p5",
+   "to": "where-a-mortgage-payment-goes",
+   "anchor": "ch6"
+  },
+  {
+   "from": "ch7.p5",
+   "to": "where-a-mortgage-payment-goes",
+   "anchor": "ch8"
+  },
+  {
+   "from": "ch10.e9",
+   "to": "why-one-rate-moves-everything",
+   "anchor": "ch12"
+  },
+  {
+   "from": "ch11.q1",
+   "to": "how-an-economy-is-measured",
+   "anchor": "ch3"
+  }
+ ],
+ "backlinks": [],
+ "related": [
+  "where-money-comes-from",
+  "why-one-rate-moves-everything",
+  "how-an-economy-is-measured",
+  "where-a-mortgage-payment-goes"
+ ],
+ "bindings": [
+  "hero.base",
+  "hero.cpi2206",
+  "hero.neg",
+  "hero.ppi",
+  "hero.cpi",
+  "ch1.qeM",
+  "ch1.qeY",
+  "ch1.qeCf",
+  "ch1.qeP",
+  "ch1.qeV",
+  "ch1.qeV0",
+  "ch1.qeV1",
+  "ch1.svM",
+  "ch1.svV",
+  "ch1.svP",
+  "ch1.rbM",
+  "ch1.rbV",
+  "ch1.rbP",
+  "ch1.allF",
+  "ch1.allV",
+  "ch1.allP",
+  "ch1.allCf",
+  "ch2.sPi1",
+  "ch2.sY1",
+  "ch2.sLowT",
+  "ch2.sLow",
+  "ch2.sYs",
+  "ch2.fPi1",
+  "ch2.fPT",
+  "ch2.dPi1",
+  "ch2.dY1",
+  "ch2.bPi1",
+  "ch2.bY1",
+  "ch3.s60",
+  "ch3.s70",
+  "ch3.s84",
+  "ch3.s20",
+  "ch3.hot10",
+  "ch3.hot20",
+  "ch3.hot06",
+  "ch3.hot1",
+  "ch3.oil0",
+  "ch3.oil8",
+  "ch3.nrou",
+  "ch4.cpi80",
+  "ch4.m80",
+  "ch4.e82",
+  "ch4.cpi22",
+  "ch4.m22",
+  "ch4.e22",
+  "ch4.c0n",
+  "ch4.c0py",
+  "ch4.c2py",
+  "ch4.c6n",
+  "ch4.c6py",
+  "ch4.cpi83",
+  "ch4.u82",
+  "ch4.m25",
+  "ch4.cpi25",
+  "ch4.e25",
+  "ch5.p1",
+  "ch5.p8",
+  "ch5.spiral8",
+  "ch5.stuck8",
+  "ch5.om1",
+  "ch6.jorda",
+  "ch6.max",
+  "ch6.mo4",
+  "ch6.ss4",
+  "ch6.ss2",
+  "ch6.h10",
+  "ch6.h15",
+  "ch7.cpi",
+  "ch7.pa",
+  "ch7.b4",
+  "ch7.b10",
+  "ch7.rr",
+  "ch7.ref",
+  "ch7.f10",
+  "ch7.ngdp",
+  "ch7.rgdp",
+  "ch7.burden",
+  "ch7.dti",
+  "ch8.jpAvg",
+  "ch8.jpNeg",
+  "ch8.jp22",
+  "ch8.jp23",
+  "ch8.jp24",
+  "ch8.jp25",
+  "ch8.cn23",
+  "ch8.cn24",
+  "ch8.cn25",
+  "ch8.ppi23",
+  "ch8.ppi24",
+  "ch8.ppi25",
+  "ch8.chPi1",
+  "ch8.chPT",
+  "ch8.chFull",
+  "ch8.brent",
+  "ch8.turn",
+  "ch8.core",
+  "ch8.cnWb",
+  "c.mining",
+  "c.raw",
+  "c.proc",
+  "c.cons",
+  "c.cpi",
+  "c.core",
+  "ch10.gap",
+  "ch10.coreGap",
+  "ch10.fedGoods",
+  "ch10.fedCore",
+  "ch10.us",
+  "ch10.usCore",
+  "ch10.e10"
+ ]
+}

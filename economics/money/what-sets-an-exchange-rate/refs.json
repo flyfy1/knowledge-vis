@@ -1,0 +1,192 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "what-sets-an-exchange-rate",
+ "refs": [
+  {
+   "from": "hero.note",
+   "to": "why-one-rate-moves-everything",
+   "anchor": null
+  },
+  {
+   "from": "hero.note",
+   "to": "where-money-comes-from",
+   "anchor": null
+  },
+  {
+   "from": "ch1.p2",
+   "to": "why-one-rate-moves-everything",
+   "anchor": "ch9"
+  },
+  {
+   "from": "ch1.p2",
+   "to": "where-money-comes-from",
+   "anchor": "ch9"
+  },
+  {
+   "from": "ch1.p2",
+   "to": "how-an-economy-is-measured",
+   "anchor": "ch5"
+  },
+  {
+   "from": "ch2.p1",
+   "to": "where-money-comes-from",
+   "anchor": "ch9"
+  },
+  {
+   "from": "ch2.p3",
+   "to": "how-an-economy-is-measured",
+   "anchor": "ch5"
+  },
+  {
+   "from": "ch4.p2",
+   "to": "why-one-rate-moves-everything",
+   "anchor": "ch9"
+  },
+  {
+   "from": "ch5.p1",
+   "to": "where-money-comes-from",
+   "anchor": "ch4"
+  },
+  {
+   "from": "ch5.p4",
+   "to": "why-one-rate-moves-everything",
+   "anchor": "ch5"
+  },
+  {
+   "from": "ch5.p4",
+   "to": "why-one-rate-moves-everything",
+   "anchor": "ch6"
+  },
+  {
+   "from": "ch7.p3",
+   "to": "why-one-rate-moves-everything",
+   "anchor": "ch5"
+  },
+  {
+   "from": "ch7.p3",
+   "to": "why-one-rate-moves-everything",
+   "anchor": "ch6"
+  },
+  {
+   "from": "ch7.p3",
+   "to": "why-one-rate-moves-everything",
+   "anchor": "ch10"
+  },
+  {
+   "from": "ch8.p5",
+   "to": "where-money-comes-from",
+   "anchor": "ch3"
+  },
+  {
+   "from": "ch8.p5",
+   "to": "game-theory",
+   "anchor": null
+  }
+ ],
+ "backlinks": [],
+ "related": [
+  "how-an-economy-is-measured",
+  "why-one-rate-moves-everything",
+  "where-money-comes-from",
+  "game-theory"
+ ],
+ "bindings": [
+  "ch1.sBase",
+  "ch1.sAll",
+  "ch1.sLow",
+  "ch1.sBuy",
+  "ch2.cnPpp",
+  "ch2.cnEx",
+  "ch2.cnUsd",
+  "ch2.cnRaw",
+  "ch2.cnAdj",
+  "ch2.jpnAdj",
+  "ch2.cheRaw",
+  "ch2.indRaw",
+  "ch2.logSlope",
+  "ch2.logR2",
+  "ch2.under",
+  "ch2.nRich",
+  "ch2.nPoor",
+  "ch2.richMed",
+  "ch2.poorMed",
+  "ch2.slope10k",
+  "ch2.r2",
+  "ch3.qDef",
+  "ch3.beDef",
+  "ch4.f12",
+  "ch4.pts12",
+  "ch4.prem12",
+  "ch4.hedged",
+  "ch4.diff",
+  "ch5.jumpDef",
+  "ch5.iDef",
+  "ch5.halfDef",
+  "ch5.jumpFast",
+  "ch6.beDef",
+  "ch6.meanDef",
+  "ch6.medDef",
+  "ch6.loseDef",
+  "ch6.mean5",
+  "ch6.med5",
+  "ch6.lose5",
+  "ch6.wipe5",
+  "ch6.ykCarry",
+  "ch6.ykHi",
+  "ch6.ykLo",
+  "ch6.nikkei",
+  "ch6.ykMove",
+  "ch6.ykLoss5",
+  "ch6.ykYears",
+  "ch7.fxFloat",
+  "ch8.naiveDef",
+  "ch8.tDef",
+  "ch8.runDef",
+  "ch8.shareDef",
+  "ch8.naive4",
+  "ch8.t4",
+  "ch8.share4",
+  "ch9.nwDef",
+  "ch9.levDef",
+  "ch9.starDef",
+  "ch9.nw100",
+  "ch10.edge95",
+  "ch10.gap95",
+  "ch10.dev2015",
+  "ch11.finDef",
+  "ch11.finM08",
+  "ch11.finM11",
+  "ch11.tip",
+  "f.coferUsd",
+  "f.coferUsdPrev",
+  "f.coferEur",
+  "f.coferCny",
+  "f.coferCnyPrev",
+  "f.coferTotal",
+  "f.swiftCny",
+  "f.swiftCny20",
+  "f.tfCny",
+  "f.bisDaily",
+  "f.bisDaily22",
+  "f.bisUsd",
+  "f.bisUsd22",
+  "f.bisCny",
+  "f.bisCny22",
+  "f.dxyLo",
+  "f.dxyHi",
+  "f.dxySince",
+  "f.fedLo",
+  "f.fedHi",
+  "f.boj",
+  "f.pboc",
+  "f.fix",
+  "f.fixEst",
+  "f.fixPips",
+  "f.fixPct",
+  "f.spot",
+  "f.res14",
+  "f.res17",
+  "f.res26",
+  "f.cips"
+ ]
+}

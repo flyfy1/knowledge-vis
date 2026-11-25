@@ -1,0 +1,11 @@
+<figure class="lab">
+    <h3 data-i18n="ch2.model.title"></h3>
+    <p class="how" data-i18n-html="ch2.model.how"></p>
+    <canvas class="cv" id="aCv" role="img" data-i18n-aria="ch2.model.aria"></canvas>
+    <div class="legend"><span><i style="background:var(--red)"></i><span data-i18n="ch2.leg.pi"></span></span><span><i style="background:var(--cyan)"></i><span data-i18n="ch2.leg.y"></span></span><span style="color:var(--mute)"><i class="dash"></i><span data-i18n="ch2.leg.base"></span></span></div>
+    <div class="ctl"><div class="seg" role="radiogroup" data-i18n-aria="ch2.ctl.kind"><span class="lbl" data-i18n="ch2.ctl.kind"></span><label><input type="radio" name="aK" value="demand"><span data-i18n="ch2.kind.demand"></span></label><label><input type="radio" name="aK" value="supply" checked><span data-i18n="ch2.kind.supply"></span></label><label><input type="radio" name="aK" value="both"><span data-i18n="ch2.kind.both"></span></label><label><input type="radio" name="aK" value="china"><span data-i18n="ch2.kind.china"></span></label></div></div>
+    <div class="ctl"><label class="rng"><span data-i18n="ch2.ctl.alpha"></span><input type="range" id="aA" min="0.2" max="2" step="0.1" value="0.5"><output id="aAo"></output></label><label class="rng"><span data-i18n="ch2.ctl.pol"></span><input type="range" id="aP" min="0" max="1" step="0.05" value="0"><output id="aPo"></output></label></div>
+    <div class="ctl"><button type="button" class="b" id="aRe" data-i18n="common.replay"></button></div>
+    <div class="read"><div><b class="r" id="aPi1"></b><span data-i18n="ch2.read.pi1"></span></div><div><b class="c" id="aY1"></b><span data-i18n="ch2.read.y1"></span></div><div><b class="g" id="aPT"></b><span data-i18n="ch2.read.pT"></span></div><div><b class="" id="aYS"></b><span data-i18n="ch2.read.ySum"></span></div></div>
+    <p class="say" id="ch2Say" aria-live="polite"></p>
+  </figure>

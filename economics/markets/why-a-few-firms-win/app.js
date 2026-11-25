@@ -361,7 +361,7 @@ function histogram(c, f, leads, tipCol) {
       put('#tsA1o', fmt(a1, 2)); put('#tsA2o', fmt(a2, 2));
       put('#tsP1', fmt(r.p1, 2)); put('#tsP2', fmt(r.p2, 2));
       put('#tsN', mode === 'duo' ? t('ch7.unit.half') : t('ch7.unit.pair', { a: fmt(r.n1, 2), b: fmt(r.n2, 2) }));
-      put('#tsPr', mode === 'duo' ? '—' : t('ch7.unit.prof', { a: fmt(r.profit, 2), b: fmt(P.oneSided().profit, 2) }));
+      put('#tsPr', mode === 'duo' ? '—' : t('ch7.unit.prof', { a: fmt(r.profit, 2), b: fmt(P.oneSidedActual(a1, a2).profit, 2) }));
       const v = { p1: fmt(r.p1, 2), p2: fmt(r.p2, 2), f: fmt(r.f1, 1), a1: fmt(a1, 2), a2: fmt(a2, 2) };
       let key;
       if (mode === 'duo') { v.note = t('ch7.note.none', { t: fmt(P.t) }); key = 'ch7.say.duo'; }
@@ -525,7 +525,9 @@ function buildTables() {
   { const b = hb(Fr.cloud.shares); cards.push(['cloud', [t('ch12.card.cloud.f1', { asOf: fq(Fr.cloud.asOf), size: usd(Fr.cloud.marketBn), g: fmt(Fr.cloud.growthPct), s1: fmt(Fr.cloud.shares[0]), s2: fmt(Fr.cloud.shares[1]), s3: fmt(Fr.cloud.shares[2]), src: 'Synergy Research', lo: fmt(b.lo), hi: fmt(b.hi), rest: fmt(b.rest) }), t('ch12.card.cloud.f2'), t('ch12.card.cloud.mech')]]); }
   { const b = hb(Fr.enterpriseApi.shares); cards.push(['models', [t('ch12.card.models.f1', { g: fmt(Fr.trainingCostGrowth.perYear, 1), lo: fmt(Fr.trainingCostGrowth.lo, 1), hi: fmt(Fr.trainingCostGrowth.hi, 1) }),
     t('ch12.card.models.f2', { lo: fmt(Fr.inferencePriceFall.lo), hi: fmt(Fr.inferencePriceFall.hi) }), t('ch12.card.models.f3', { m: fmt(Fr.openGapMonths.months) }),
-    t('ch12.card.models.f4', { s1: fmt(Fr.enterpriseApi.shares[0]), s2: fmt(Fr.enterpriseApi.shares[1]), s3: fmt(Fr.enterpriseApi.shares[2]), lo: fmt(b.lo), hi: fmt(b.hi), os: fmt(Fr.enterpriseApi.openSpendPct), ot: fmt(Fr.enterpriseApi.openTokenPct) }), t('ch12.card.models.mech')]]); }
+    t('ch12.card.models.f4', { s1: fmt(Fr.enterpriseApi.shares[0]), s2: fmt(Fr.enterpriseApi.shares[1]), s3: fmt(Fr.enterpriseApi.shares[2]), lo: fmt(b.lo), hi: fmt(b.hi), os: fmt(Fr.enterpriseApi.openSpendPct), ot: fmt(Fr.enterpriseApi.openTokenPct) }),
+    t('ch12.card.models.f5', (() => { const R = Fr.rampAdoption, K = Fr.rampTokenSpend, h = hb(K.shares); return { all: fmt(R.allPct, 1), a: fmt(R.anthropicPct, 1), o: fmt(R.openaiPct, 1), k1: fmt(K.shares[0], 1), k2: fmt(K.shares[1], 1), k3: fmt(K.shares[2], 1), k4: fmt(K.shares[3], 1), h: fmt(h.lo) }; })()),
+    t('ch12.card.models.mech')]]); }
   cards.push(['apps', [t('ch12.card.apps.f1'), t('ch12.card.apps.f2'), t('ch12.card.apps.mech')]]);
   const se = document.getElementById('stack');
   if (se) se.innerHTML = cards.map(([k, ps]) => `<div class="card"><h4>${t(`ch12.card.${k}.title`)}</h4>${ps.map(p => `<p>${p}</p>`).join('')}</div>`).join('');

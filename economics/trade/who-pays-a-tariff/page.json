@@ -1,0 +1,116 @@
+{
+  "slug": "who-pays-a-tariff",
+  "kind": "essay",
+  "category": "economics",
+  "subtopic": "trade",
+  "stage": "university",
+  "path": "economics/trade/who-pays-a-tariff/",
+  "layout": "essay",
+  "scripts": [
+    "models.js",
+    "copy.zh.js",
+    "copy.en.js",
+    "app.js"
+  ],
+  "version": "20261125a",
+  "languages": {
+    "en": "stub"
+  },
+  "provenanceNote": {
+    "zh": "本文由 Claude Code 从零编写，直接用 Markdown 站点模板写成；英文稿待翻译；尚未经过独立评审。",
+    "en": "This essay was written from scratch with Claude Code, directly in the Markdown site template; the English copy is pending; not yet independently reviewed."
+  },
+  "tags": [
+    {
+      "zh": "国际贸易",
+      "en": "International Trade"
+    },
+    {
+      "zh": "关税",
+      "en": "Tariffs"
+    },
+    {
+      "zh": "弹性",
+      "en": "Elasticity"
+    },
+    {
+      "zh": "比较优势",
+      "en": "Comparative Advantage"
+    },
+    {
+      "zh": "出口管制",
+      "en": "Export Controls"
+    },
+    {
+      "zh": "长文",
+      "en": "Long-form Essay"
+    }
+  ],
+  "created": "2026-11-25",
+  "dynamicKeys": {
+    "elasticity.say": [
+      "inelastic",
+      "elastic",
+      "unit",
+      "zero"
+    ],
+    "ch2.say": [
+      "small",
+      "buyer",
+      "seller",
+      "even",
+      "zero"
+    ],
+    "ch3.say": [
+      "small",
+      "gain",
+      "loss",
+      "block",
+      "zero"
+    ],
+    "ch4.say": [
+      "both",
+      "edgeE",
+      "edgeP",
+      "same"
+    ],
+    "ch5.say": [
+      "deficit",
+      "surplus",
+      "balanced",
+      "shock0",
+      "shock1",
+      "shock2"
+    ],
+    "ch6.say": [
+      "main",
+      "psi0",
+      "psi1",
+      "zero"
+    ],
+    "ch7.say": [
+      "early",
+      "mid",
+      "late",
+      "none"
+    ],
+    "ch8.say": [
+      "main",
+      "full",
+      "part",
+      "over"
+    ],
+    "ch6.t.say": [
+      "pd",
+      "inf"
+    ]
+  },
+  "generators": [
+    {
+      "run": "tools/diagrams.cjs",
+      "writes": [
+        "figures/dg-*.html"
+      ]
+    }
+  ]
+}

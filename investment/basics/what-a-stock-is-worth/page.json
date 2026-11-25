@@ -1,0 +1,26 @@
+{
+  "slug": "what-a-stock-is-worth",
+  "kind": "essay",
+  "category": "investment",
+  "subtopic": "basics",
+  "stage": "university",
+  "path": "investment/basics/what-a-stock-is-worth/",
+  "layout": "essay",
+  "scripts": ["models.js", "copy.zh.js", "copy.en.js", "app.js"],
+  "version": "20261125a",
+  "languages": {"en": "stub"},
+  "provenanceNote": {
+    "zh": "本文由 Claude Code（claude-opus-5-5）从零编写，直接用 Markdown 站点模板写成；英文稿待翻译；尚未经过独立评审。",
+    "en": "This essay was written from scratch with Claude Code (claude-opus-5-5), directly in the Markdown site template; the English translation is pending; not yet independently reviewed."
+  },
+  "tags": [
+    {"zh": "股票估值", "en": "Stock Valuation"},
+    {"zh": "现金流折现", "en": "DCF"},
+    {"zh": "市盈率", "en": "P/E Ratio"},
+    {"zh": "有效市场", "en": "Efficient Markets"},
+    {"zh": "长文", "en": "Long-form Essay"}
+  ],
+  "dynamicKeys": {
+    "ch7.ind": ["power", "food", "drugs", "software", "auto", "semi"]
+  }
+}

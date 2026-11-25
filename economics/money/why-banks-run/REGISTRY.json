@@ -1,0 +1,249 @@
+{
+ "slug": "why-banks-run",
+ "path": "economics/money/why-banks-run/",
+ "category": "economics",
+ "subtopic": "money",
+ "stage": "university",
+ "title": {
+  "zh": "银行为什么会挤兑",
+  "en": "银行为什么会挤兑"
+ },
+ "desc": {
+  "zh": "银行会倒闭吗？存款保险的 50 万是怎么回事？硅谷银行没做坏账，为什么两天就倒了？从银行的资产负债表、短借长贷和杠杆的算术出发，经过“缺现金”与“资不抵债”的区别、Diamond–Dybvig 挤兑博弈、利率上升怎样掏空债券组合、甩卖与传染、影子银行与 2008 年，走到存款保险、最后贷款人和巴塞尔 III，以及 2026 年底的私募信贷与稳定币。四个可以拖动的模型，九张示意图。",
+  "en": "银行会倒闭吗？存款保险的 50 万是怎么回事？硅谷银行没做坏账，为什么两天就倒了？从银行的资产负债表、短借长贷和杠杆的算术出发，经过“缺现金”与“资不抵债”的区别、Diamond–Dybvig 挤兑博弈、利率上升怎样掏空债券组合、甩卖与传染、影子银行与 2008 年，走到存款保险、最后贷款人和巴塞尔 III，以及 2026 年底的私募信贷与稳定币。四个可以拖动的模型，九张示意图。"
+ },
+ "tags": [
+  {
+   "zh": "银行",
+   "en": "Banking"
+  },
+  {
+   "zh": "金融危机",
+   "en": "Financial Crises"
+  },
+  {
+   "zh": "存款保险",
+   "en": "Deposit Insurance"
+  },
+  {
+   "zh": "金融监管",
+   "en": "Financial Regulation"
+  },
+  {
+   "zh": "长文",
+   "en": "Long-form Essay"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "maturity-liquidity-transformation",
+   "title": {
+    "zh": "期限转换、流动性与偿付能力",
+    "en": "Maturity transformation, liquidity and solvency"
+   },
+   "desc": {
+    "zh": "银行借短贷长；缺现金（流动性不足）和资不抵债（偿付能力不足）是两回事，却会互相转化。",
+    "en": "Banks borrow short and lend long; being short of cash and being insolvent are different problems that turn into each other."
+   },
+   "aliases": {
+    "zh": [
+     "借短贷长",
+     "期限错配",
+     "期限转换",
+     "流动性不足",
+     "资不抵债",
+     "流动性和偿付能力",
+     "缺现金还是资不抵债"
+    ],
+    "en": [
+     "maturity transformation",
+     "maturity mismatch",
+     "borrow short lend long",
+     "illiquid versus insolvent",
+     "liquidity versus solvency risk"
+    ]
+   },
+   "anchor": "#ch1",
+   "relatedPages": [
+    "where-money-comes-from"
+   ]
+  },
+  {
+   "id": "leverage-balance-sheet",
+   "title": {
+    "zh": "杠杆与股本垫子",
+    "en": "Leverage and the equity cushion"
+   },
+   "desc": {
+    "zh": "杠杆 L 倍时资产跌 1/L 股本就归零，亏损后为恢复杠杆必须大量卖资产。",
+    "en": "At leverage L a fall of 1/L in assets wipes out equity, and restoring leverage after a loss forces large asset sales."
+   },
+   "aliases": {
+    "zh": [
+     "杠杆",
+     "杠杆率",
+     "银行杠杆",
+     "股本垫子",
+     "30倍杠杆",
+     "雷曼兄弟杠杆",
+     "去杠杆"
+    ],
+    "en": [
+     "leverage",
+     "leverage ratio",
+     "bank leverage",
+     "equity cushion",
+     "deleveraging",
+     "Lehman leverage"
+    ]
+   },
+   "anchor": "#ch2",
+   "relatedPages": [
+    "stocks-bonds",
+    "risk-return"
+   ]
+  },
+  {
+   "id": "bank-run-diamond-dybvig",
+   "title": {
+    "zh": "Diamond–Dybvig 挤兑博弈：两个均衡",
+    "en": "The Diamond–Dybvig run game: two equilibria"
+   },
+   "desc": {
+    "zh": "挤兑是协调博弈：同一家健康银行既可能没事也可能被挤垮，存款保险和最后贷款人能去掉坏均衡。",
+    "en": "A run is a coordination game: the same sound bank can survive or fail, and deposit insurance or a lender of last resort removes the bad equilibrium."
+   },
+   "aliases": {
+    "zh": [
+     "银行为什么会倒",
+     "挤兑是怎么发生的",
+     "挤兑博弈",
+     "多重均衡",
+     "协调博弈",
+     "自我实现的恐慌",
+     "暂停兑付"
+    ],
+    "en": [
+     "why do banks fail",
+     "how bank runs happen",
+     "bank run game",
+     "multiple equilibria",
+     "coordination game",
+     "self-fulfilling panic",
+     "suspension of convertibility"
+    ]
+   },
+   "anchor": "#ch4",
+   "relatedPages": [
+    "where-money-comes-from",
+    "game-theory",
+    "prisoners-dilemma"
+   ]
+  },
+  {
+   "id": "interest-rate-risk-banking-book",
+   "title": {
+    "zh": "银行账簿的利率风险：未实现亏损与未保险存款",
+    "en": "Interest-rate risk in the banking book: unrealised losses and uninsured deposits"
+   },
+   "desc": {
+    "zh": "利率上升让银行持有的长期债券市价下跌，未实现亏损一旦超过股本、遇上未保险存款挤兑，就成了真亏损（硅谷银行 2023）。",
+    "en": "Rising rates cut the market value of a bank's long bonds; once unrealised losses exceed equity and uninsured depositors run, they become real (SVB, 2023)."
+   },
+   "aliases": {
+    "zh": [
+     "利率风险",
+     "未实现亏损",
+     "持有至到期",
+     "浮亏",
+     "硅谷银行倒闭",
+     "加息银行亏损",
+     "未保险存款"
+    ],
+    "en": [
+     "interest rate risk in the banking book",
+     "unrealized losses",
+     "held to maturity securities",
+     "SVB collapse",
+     "uninsured deposits",
+     "rate hikes bank losses"
+    ]
+   },
+   "anchor": "#ch5",
+   "relatedPages": [
+    "why-one-rate-moves-everything",
+    "interest-rates-bonds"
+   ]
+  },
+  {
+   "id": "capital-requirements-lender-of-last-resort",
+   "title": {
+    "zh": "存款保险、最后贷款人与资本规则",
+    "en": "Deposit insurance, the lender of last resort and capital rules"
+   },
+   "desc": {
+    "zh": "存款保险（中国 50 万元、美国 25 万美元）、Bagehot 原则、巴塞尔 III 资本与流动性覆盖率，以及它们的代价：道德风险与大而不倒。",
+    "en": "Deposit insurance (CNY 500,000; US$250,000), Bagehot's rule, Basel III capital and the LCR, and their costs: moral hazard and too big to fail."
+   },
+   "aliases": {
+    "zh": [
+     "存款保险 50 万",
+     "存款保险条例",
+     "最后贷款人原则",
+     "白芝浩原则",
+     "巴塞尔III",
+     "资本充足率",
+     "流动性覆盖率",
+     "LCR",
+     "大而不倒",
+     "银行救助"
+    ],
+    "en": [
+     "deposit insurance limit",
+     "FDIC 250000",
+     "Bagehot rule",
+     "lender of last resort principle",
+     "Basel III",
+     "capital requirements",
+     "liquidity coverage ratio",
+     "too big to fail",
+     "bank bailout"
+    ]
+   },
+   "anchor": "#ch7",
+   "relatedPages": [
+    "where-money-comes-from",
+    "why-one-rate-moves-everything"
+   ]
+  },
+  {
+   "id": "bank-runs-frontier-2026",
+   "title": {
+    "zh": "2026 年底的银行与挤兑风险",
+    "en": "Banks and run risk at the end of 2026"
+   },
+   "desc": {
+    "zh": "2023 年倒闭潮之后：社交媒体速度的挤兑、2026 年的小银行倒闭、私募信贷和稳定币，按已确立/已演示/各方说法分开。",
+    "en": "After the 2023 failures: social-media-speed runs, small 2026 failures, private credit and stablecoins, split into established, demonstrated and claimed."
+   },
+   "aliases": {
+    "zh": [
+     "私募信贷风险",
+     "社交媒体挤兑",
+     "2026 银行倒闭",
+     "瑞士信贷 AT1",
+     "金融稳定报告"
+    ],
+    "en": [
+     "private credit risk",
+     "social media bank run",
+     "bank failures 2026",
+     "Credit Suisse AT1",
+     "financial stability report 2026"
+    ]
+   },
+   "anchor": "#ch8",
+   "relatedPages": []
+  }
+ ]
+}

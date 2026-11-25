@@ -1,0 +1,311 @@
+{
+  "slug": "what-makes-a-stablecoin-stable",
+  "path": "economics/money/what-makes-a-stablecoin-stable/",
+  "category": "economics",
+  "subtopic": "money",
+  "stage": "university",
+  "title": {
+    "zh": "稳定币、数字人民币和“新钱”",
+    "en": "Stablecoins, CBDCs and New Kinds of Money"
+  },
+  "desc": {
+    "zh": "一枚稳定币凭什么值 1 美元？从“什么东西算钱”和钱的几层讲起，到比特币为什么难当记账单位、储备型稳定币怎样靠套利守住锚、挤兑怎样打断它、UST 的死亡螺旋、发行人怎样靠国债利息赚钱、数字人民币和支付宝有什么不同，再到美国 GENIUS 法案、欧盟 MiCA 和香港《稳定币条例》，最后是 2026 年 11 月的现状。六个可以动手的模型，只讲机制，不是投资建议。",
+    "en": "What makes a stablecoin worth exactly one dollar? From what counts as money and its tiers, settlement and cross-border payments, why bitcoin is a poor unit of account, how reserve-backed stablecoins hold their peg through arbitrage, how runs break it, the UST death spiral and how issuers earn from Treasury bills, to how the e-CNY differs from Alipay, the US GENIUS Act, EU MiCA and Hong Kong's Stablecoins Ordinance, and where things stand in November 2026. Six hands-on models; mechanisms only, not investment advice."
+  },
+  "tags": [
+    {
+      "zh": "货币",
+      "en": "Money"
+    },
+    {
+      "zh": "稳定币",
+      "en": "Stablecoins"
+    },
+    {
+      "zh": "央行数字货币",
+      "en": "CBDC"
+    },
+    {
+      "zh": "支付与结算",
+      "en": "Payments & Settlement"
+    },
+    {
+      "zh": "长文",
+      "en": "Long-form Essay"
+    }
+  ],
+  "concepts": [
+    {
+      "id": "money-hierarchy-settlement",
+      "anchor": "#ch1",
+      "title": {
+        "zh": "钱的层级：谁欠你的",
+        "en": "The hierarchy of money: whose IOU it is"
+      },
+      "desc": {
+        "zh": "现金、银行存款、支付宝余额和稳定币分别是谁的欠条，每一层怎样承诺按面值换成上一层。",
+        "en": "Cash, bank deposits, payment-app balances and stablecoins are each someone's IOU, promising par conversion into the tier above."
+      },
+      "aliases": {
+        "zh": [
+          "钱的层级",
+          "货币的层次",
+          "钱的三种职能",
+          "货币的单一性",
+          "支付宝余额是谁的钱",
+          "备付金",
+          "什么东西算钱"
+        ],
+        "en": [
+          "hierarchy of money",
+          "money hierarchy",
+          "functions of money",
+          "singleness of money",
+          "what counts as money"
+        ]
+      },
+      "relatedPages": [
+        "where-money-comes-from",
+        "why-one-rate-moves-everything"
+      ]
+    },
+    {
+      "id": "payment-rails-settlement-finality",
+      "anchor": "#ch2",
+      "title": {
+        "zh": "支付清算与结算最终性",
+        "en": "Payment rails and settlement finality"
+      },
+      "desc": {
+        "zh": "一笔付款要在央行货币上结清才算完成；跨境汇款要经过代理行链条，所以又慢又贵。",
+        "en": "A payment is final only when settled in central-bank money; cross-border payments pass through correspondent chains, hence slow and costly."
+      },
+      "aliases": {
+        "zh": [
+          "结算最终性",
+          "实时全额结算",
+          "净额结算",
+          "跨境汇款为什么又慢又贵",
+          "代理行",
+          "跨行转账怎么结算",
+          "汇款手续费"
+        ],
+        "en": [
+          "settlement finality",
+          "RTGS",
+          "net settlement",
+          "correspondent banking",
+          "why are international transfers slow",
+          "remittance cost"
+        ]
+      },
+      "relatedPages": [
+        "why-one-rate-moves-everything",
+        "hashing"
+      ]
+    },
+    {
+      "id": "bitcoin-unit-of-account",
+      "anchor": "#ch3",
+      "title": {
+        "zh": "比特币是货币吗：记账单位的检验",
+        "en": "Is bitcoin money? The unit-of-account test"
+      },
+      "desc": {
+        "zh": "用一种波动率为 σ 的单位标价，容忍偏离 a 时每年要改价 σ²/a² 次。",
+        "en": "Pricing in a unit with volatility σ and tolerance a means repricing about σ²/a² times a year."
+      },
+      "aliases": {
+        "zh": [
+          "比特币是货币吗",
+          "比特币能当钱吗",
+          "记账单位",
+          "稳定币和比特币的区别",
+          "为什么需要稳定币"
+        ],
+        "en": [
+          "is bitcoin money",
+          "unit of account",
+          "stablecoin vs bitcoin",
+          "why stablecoins exist"
+        ]
+      },
+      "relatedPages": [
+        "a-secret-in-public",
+        "distributed-systems",
+        "hashing"
+      ]
+    },
+    {
+      "id": "stablecoin-peg-reserves",
+      "anchor": "#ch4",
+      "title": {
+        "zh": "稳定币怎样保持 1 美元：储备、赎回与套利",
+        "en": "How a stablecoin keeps its peg: reserves, redemption and arbitrage"
+      },
+      "desc": {
+        "zh": "储备型稳定币是一家窄银行：按面值申购赎回，套利把市场价关在成本带里；发行人靠储备的国债利息赚钱。",
+        "en": "A reserve-backed stablecoin is a narrow bank: par mint and redemption plus arbitrage hold the market price in a cost band; the issuer earns the T-bill interest."
+      },
+      "aliases": {
+        "zh": [
+          "稳定币是什么",
+          "稳定币",
+          "USDT怎么保持1美元",
+          "USDC",
+          "稳定币怎么保持锚定",
+          "稳定币怎么赚钱",
+          "窄银行",
+          "铸造和赎回",
+          "稳定币发行人利润"
+        ],
+        "en": [
+          "what is a stablecoin",
+          "how does a stablecoin keep its peg",
+          "stablecoin peg",
+          "narrow bank",
+          "how do stablecoin issuers make money",
+          "stablecoin reserves"
+        ]
+      },
+      "relatedPages": [
+        "where-money-comes-from",
+        "compound-interest"
+      ]
+    },
+    {
+      "id": "stablecoin-run-depeg",
+      "anchor": "#ch5",
+      "title": {
+        "zh": "脱锚与挤兑：储备、流动性和算法螺旋",
+        "en": "Depegs and runs: reserves, liquidity and the algorithmic spiral"
+      },
+      "desc": {
+        "zh": "先来先得按面值赎回时，储备的窟窿或急卖折价都会引发挤兑；没有储备的算法稳定币覆盖率低于 1/d − 1 时会螺旋归零。",
+        "en": "With first-come par redemption, a hole in reserves or a fire-sale haircut can trigger a run; an algorithmic coin spirals to zero when coverage is below 1/d − 1."
+      },
+      "aliases": {
+        "zh": [
+          "稳定币会崩吗",
+          "稳定币脱锚",
+          "USDC脱锚",
+          "硅谷银行USDC",
+          "UST崩盘",
+          "Luna崩盘",
+          "算法稳定币",
+          "死亡螺旋",
+          "USDT安全吗"
+        ],
+        "en": [
+          "stablecoin depeg",
+          "can stablecoins collapse",
+          "USDC SVB",
+          "why did Terra collapse",
+          "UST Luna collapse",
+          "algorithmic stablecoin",
+          "death spiral"
+        ]
+      },
+      "relatedPages": [
+        "where-money-comes-from"
+      ]
+    },
+    {
+      "id": "cbdc-design",
+      "anchor": "#ch8",
+      "title": {
+        "zh": "央行数字货币的设计：数字人民币和数字欧元",
+        "en": "CBDC design: the e-CNY and the digital euro"
+      },
+      "desc": {
+        "zh": "零售与批发、双层运营、可控匿名、持有上限和计息，以及它们对银行存款的影响。",
+        "en": "Retail or wholesale, two-tier distribution, controllable anonymity, holding caps and remuneration, and what they do to bank funding."
+      },
+      "aliases": {
+        "zh": [
+          "央行数字货币",
+          "数字人民币",
+          "数字人民币和支付宝有什么区别",
+          "e-CNY",
+          "数字欧元",
+          "可控匿名",
+          "持有上限",
+          "金融脱媒",
+          "数字人民币计息"
+        ],
+        "en": [
+          "CBDC",
+          "central bank digital currency",
+          "e-CNY",
+          "digital yuan",
+          "digital euro",
+          "holding limit",
+          "disintermediation",
+          "CBDC vs bank deposits"
+        ]
+      },
+      "relatedPages": [
+        "where-money-comes-from"
+      ]
+    },
+    {
+      "id": "stablecoin-regulation-2025",
+      "anchor": "#ch9",
+      "title": {
+        "zh": "稳定币的法律：GENIUS 法案、MiCA 和香港《稳定币条例》",
+        "en": "Stablecoin law: the GENIUS Act, MiCA and Hong Kong's Stablecoins Ordinance"
+      },
+      "desc": {
+        "zh": "三地规则都要求 1 比 1 的高流动性储备、按面值赎回、禁止向持有人付息；生效日期与首批牌照。",
+        "en": "All three require 1:1 liquid reserves, par redemption and no interest to holders; their dates and first licences."
+      },
+      "aliases": {
+        "zh": [
+          "GENIUS法案",
+          "GENIUS Act",
+          "MiCA",
+          "香港稳定币条例",
+          "稳定币监管",
+          "稳定币牌照",
+          "稳定币法律"
+        ],
+        "en": [
+          "GENIUS Act",
+          "MiCA stablecoin",
+          "Hong Kong Stablecoins Ordinance",
+          "stablecoin regulation",
+          "stablecoin licence"
+        ]
+      },
+      "relatedPages": []
+    },
+    {
+      "id": "stablecoin-frontier-2026",
+      "anchor": "#ch10",
+      "title": {
+        "zh": "稳定币和央行数字货币的现状：2026 年 11 月",
+        "en": "Stablecoins and CBDCs in November 2026"
+      },
+      "desc": {
+        "zh": "规模、国债持有、跨境使用、数字人民币和数字欧元的进展，每条带日期并分为确立、测量和声称。",
+        "en": "Supply, Treasury holdings, cross-border use and CBDC progress, each dated and labelled established, measured or claimed."
+      },
+      "aliases": {
+        "zh": [
+          "稳定币规模",
+          "稳定币市值",
+          "稳定币持有多少美债",
+          "稳定币跨境支付",
+          "Tether储备"
+        ],
+        "en": [
+          "stablecoin market cap",
+          "stablecoin treasury holdings",
+          "stablecoin cross-border payments",
+          "Tether reserves"
+        ]
+      },
+      "relatedPages": []
+    }
+  ]
+}

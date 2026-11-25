@@ -1,0 +1,100 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "why-recessions-happen",
+ "refs": [
+  {
+   "from": "hero.note",
+   "to": "scarcity-moves",
+   "anchor": "c8"
+  },
+  {
+   "from": "hero.note",
+   "to": "how-an-economy-is-measured",
+   "anchor": "ch7"
+  },
+  {
+   "from": "hero.note",
+   "to": "why-one-rate-moves-everything",
+   "anchor": "ch6"
+  },
+  {
+   "from": "ch1.p1",
+   "to": "scarcity-moves",
+   "anchor": "c8"
+  },
+  {
+   "from": "ch1.limit",
+   "to": "why-one-rate-moves-everything",
+   "anchor": "ch10"
+  },
+  {
+   "from": "ch3.p2",
+   "to": "laplace",
+   "anchor": "step4"
+  },
+  {
+   "from": "ch3.p2",
+   "to": "step-response",
+   "anchor": null
+  },
+  {
+   "from": "ch5.p2",
+   "to": "why-one-rate-moves-everything",
+   "anchor": "ch7"
+  },
+  {
+   "from": "ch6.limit",
+   "to": "where-money-comes-from",
+   "anchor": "ch3"
+  },
+  {
+   "from": "ch7.limit",
+   "to": "inverted-pendulum",
+   "anchor": "step2"
+  },
+  {
+   "from": "ch7.limit",
+   "to": "tcp-congestion",
+   "anchor": null
+  },
+  {
+   "from": "ch8.p1",
+   "to": "numbers-lie",
+   "anchor": "c6"
+  },
+  {
+   "from": "ch8.p1",
+   "to": "bayes-updating",
+   "anchor": null
+  },
+  {
+   "from": "ch8.p2",
+   "to": "how-an-economy-is-measured",
+   "anchor": "ch7"
+  },
+  {
+   "from": "ch9.e3",
+   "to": "how-an-economy-is-measured",
+   "anchor": "ch7"
+  },
+  {
+   "from": "ch9.e8",
+   "to": "how-an-economy-is-measured",
+   "anchor": "ch10"
+  }
+ ],
+ "backlinks": [],
+ "related": [
+  "scarcity-moves",
+  "laplace",
+  "step-response",
+  "ode-phase-portraits",
+  "where-money-comes-from",
+  "inverted-pendulum",
+  "tcp-congestion",
+  "bayes-updating",
+  "numbers-lie",
+  "how-an-economy-is-measured"
+ ],
+ "bindings": []
+}

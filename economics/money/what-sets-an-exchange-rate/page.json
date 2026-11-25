@@ -1,0 +1,151 @@
+{
+  "slug": "what-sets-an-exchange-rate",
+  "kind": "essay",
+  "layout": "essay",
+  "scripts": [
+    "models.js",
+    "copy.zh.js",
+    "copy.en.js",
+    "app.js"
+  ],
+  "version": "20261125a",
+  "category": "economics",
+  "subtopic": "money",
+  "stage": "university",
+  "path": "economics/money/what-sets-an-exchange-rate/",
+  "created": "2026-11-25",
+  "languages": {
+    "en": "stub"
+  },
+  "provenanceNote": {
+    "zh": "本文由 Claude Code（claude-opus-5-5）从零编写，直接用 Markdown 站点模板写成；英文稿待翻译；尚未经过独立评审。",
+    "en": "This essay was written from scratch with Claude Code (claude-opus-5-5), directly in the Markdown site template; the English copy is pending; not yet independently reviewed."
+  },
+  "tags": [
+    {
+      "zh": "汇率",
+      "en": "Exchange Rates"
+    },
+    {
+      "zh": "国际金融",
+      "en": "International Finance"
+    },
+    {
+      "zh": "人民币",
+      "en": "Renminbi"
+    },
+    {
+      "zh": "美元",
+      "en": "US Dollar"
+    },
+    {
+      "zh": "货币危机",
+      "en": "Currency Crises"
+    },
+    {
+      "zh": "长文",
+      "en": "Long-form Essay"
+    }
+  ],
+  "dynamicKeys": {
+    "ch1.say": [
+      "base",
+      "buy",
+      "sell"
+    ],
+    "ch2.say": [
+      "under",
+      "over"
+    ],
+    "ch2.why": [
+      "rich",
+      "poor",
+      "cheap"
+    ],
+    "ch2.c": [
+      "CHN",
+      "JPN",
+      "CHE",
+      "IND",
+      "EUZ",
+      "GBR"
+    ],
+    "ch3.say": [
+      "down",
+      "up",
+      "flat"
+    ],
+    "ch4.say": [
+      "disc",
+      "prem",
+      "zero"
+    ],
+    "ch5.say": [
+      "over",
+      "fast"
+    ],
+    "ch6.say": [
+      "safe",
+      "skew",
+      "ruin"
+    ],
+    "ch7.say": [
+      "peg",
+      "float",
+      "ctrl",
+      "mid"
+    ],
+    "ch7.lost": [
+      "policy",
+      "fixed",
+      "open",
+      "part"
+    ],
+    "ch8.say": [
+      "early",
+      "now",
+      "none"
+    ],
+    "ch9.say": [
+      "hit",
+      "hedged",
+      "none"
+    ],
+    "ch10.say": [
+      "free",
+      "pinned",
+      "flat"
+    ],
+    "ch11.say": [
+      "high",
+      "low",
+      "unique"
+    ],
+    "ch12.cur": [
+      "usd",
+      "eur",
+      "jpy",
+      "cny"
+    ],
+    "ch12.m": [
+      "cofer",
+      "swift",
+      "tf",
+      "bis"
+    ],
+    "ch4.t": [
+      "1",
+      "3",
+      "6",
+      "12"
+    ]
+  },
+  "generators": [
+    {
+      "run": "tools/diagrams.cjs",
+      "writes": [
+        "figures/dg-*.html"
+      ]
+    }
+  ]
+}

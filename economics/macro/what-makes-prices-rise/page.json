@@ -1,0 +1,38 @@
+{
+  "slug": "what-makes-prices-rise",
+  "kind": "essay",
+  "layout": "essay",
+  "scripts": [
+    "data.js",
+    "models.js",
+    "copy.zh.js",
+    "copy.en.js",
+    "app.js"
+  ],
+  "version": "20261125a",
+  "category": "economics",
+  "subtopic": "macro",
+  "stage": "university",
+  "path": "economics/macro/what-makes-prices-rise/",
+  "created": "2026-11-25",
+  "languages": {
+    "en": "stub"
+  },
+  "tags": [
+    { "zh": "宏观经济", "en": "Macroeconomics" },
+    { "zh": "通胀", "en": "Inflation" },
+    { "zh": "通缩", "en": "Deflation" },
+    { "zh": "菲利普斯曲线", "en": "Phillips Curve" },
+    { "zh": "长文", "en": "Long-form Essay" }
+  ],
+  "dynamicKeys": {
+    "ch1.say": ["fall", "rise", "flat", "bad"],
+    "ch1.cv": ["m", "v", "y", "p", "cf"],
+    "ch2.say": ["demand", "supply", "both", "china"],
+    "ch3.read": ["hot1", "hot2", "hot3", "cool1", "cool2", "cool3"],
+    "ch3.d.say": ["e60", "e70", "e84", "e20"],
+    "ch5.say": ["fade", "stuck", "spiral"],
+    "ch6.say": ["zero", "low", "near", "hyper", "slow"],
+    "ch7.say": ["paid", "spiral", "grow", "shrink"]
+  }
+}

@@ -1,0 +1,359 @@
+{
+  "slug": "what-sets-an-exchange-rate",
+  "path": "economics/money/what-sets-an-exchange-rate/",
+  "category": "economics",
+  "categoryName": {
+    "zh": "经济与金钱",
+    "en": "Economics & Money"
+  },
+  "subtopic": "money",
+  "subtopicName": {
+    "zh": "货币与银行",
+    "en": "Money & Banking"
+  },
+  "stage": "university",
+  "title": {
+    "zh": "汇率是谁定的",
+    "en": "汇率是谁定的"
+  },
+  "desc": {
+    "zh": "人民币为什么升值、贬值？美元为什么强？从“汇率是一种价格”出发，经过巨无霸指数和购买力平价、实际汇率、利率平价与远期、汇率超调、套息交易和它的崩盘、不可能三角、用储备守汇率、外币债、人民币中间价，走到美元为什么占主导和 2026 年底“去美元化”的证据。十二个可以拖动的模型，九张示意图，前沿事实都标了日期和出处。",
+    "en": "人民币为什么升值、贬值？美元为什么强？从“汇率是一种价格”出发，经过巨无霸指数和购买力平价、实际汇率、利率平价与远期、汇率超调、套息交易和它的崩盘、不可能三角、用储备守汇率、外币债、人民币中间价，走到美元为什么占主导和 2026 年底“去美元化”的证据。十二个可以拖动的模型，九张示意图，前沿事实都标了日期和出处。"
+  },
+  "tags": [
+    {
+      "zh": "汇率",
+      "en": "Exchange Rates"
+    },
+    {
+      "zh": "国际金融",
+      "en": "International Finance"
+    },
+    {
+      "zh": "人民币",
+      "en": "Renminbi"
+    },
+    {
+      "zh": "美元",
+      "en": "US Dollar"
+    },
+    {
+      "zh": "货币危机",
+      "en": "Currency Crises"
+    },
+    {
+      "zh": "长文",
+      "en": "Long-form Essay"
+    }
+  ],
+  "relatedPages": [
+    "where-money-comes-from",
+    "why-one-rate-moves-everything",
+    "how-an-economy-is-measured",
+    "game-theory"
+  ],
+  "concepts": [
+    {
+      "id": "balance-of-payments",
+      "title": {
+        "zh": "国际收支与外汇市场的供求",
+        "en": "The balance of payments and the FX market"
+      },
+      "desc": {
+        "zh": "汇率是外汇市场上买卖双方对上的价格；经常账户顺差 = 私人资本净流出 + 储备增加，多出来的外币总得有人拿着。",
+        "en": "The exchange rate is the price that clears the currency market; current-account surplus = private net capital outflow + reserve accumulation."
+      },
+      "aliases": {
+        "zh": [
+          "汇率由什么决定",
+          "汇率是谁定的",
+          "国际收支",
+          "国际收支平衡表",
+          "结汇和购汇",
+          "出口商结汇",
+          "顺差为什么人民币不涨",
+          "美元兑人民币怎么看",
+          "人民币升值是数字变大还是变小"
+        ],
+        "en": [
+          "what sets an exchange rate",
+          "who sets the exchange rate",
+          "balance of payments",
+          "current account and capital account",
+          "why doesn't a trade surplus strengthen the currency",
+          "how to read a currency quote"
+        ]
+      },
+      "anchor": "#ch1",
+      "relatedPages": [
+        "who-pays-a-tariff",
+        "how-an-economy-is-measured"
+      ]
+    },
+    {
+      "id": "exchange-rate-overshooting",
+      "title": {
+        "zh": "汇率超调（多恩布什模型）",
+        "en": "Exchange-rate overshooting (Dornbusch)"
+      },
+      "desc": {
+        "zh": "物价调整慢、汇率调整快：一次货币扩张后，汇率当下贬值 Δm(1 + 1/(λθ))，超过长期的 Δm，再随利差慢慢升回。",
+        "en": "Prices are sticky and the exchange rate is not: after a money expansion the currency falls Δm(1 + 1/(λθ)) at once, past its long-run Δm, then recovers."
+      },
+      "aliases": {
+        "zh": [
+          "汇率超调",
+          "多恩布什模型",
+          "汇率为什么波动这么大",
+          "降息后汇率为什么先大跌",
+          "延迟超调"
+        ],
+        "en": [
+          "exchange rate overshooting",
+          "Dornbusch model",
+          "why are exchange rates so volatile",
+          "delayed overshooting"
+        ]
+      },
+      "anchor": "#ch5",
+      "relatedPages": [
+        "why-one-rate-moves-everything",
+        "where-money-comes-from"
+      ]
+    },
+    {
+      "id": "trilemma-exchange-rate-regimes",
+      "title": {
+        "zh": "不可能三角与汇率制度",
+        "en": "The trilemma and exchange-rate regimes"
+      },
+      "desc": {
+        "zh": "固定汇率、资本自由流动、独立货币政策最多三选二；选哪两样决定外国加息时由利率、汇率还是资本管制承担冲击。",
+        "en": "A fixed rate, free capital flows and independent monetary policy: pick at most two; the choice decides whether rates, the currency or capital controls absorb a foreign shock."
+      },
+      "aliases": {
+        "zh": [
+          "不可能三角",
+          "三元悖论",
+          "蒙代尔不可能三角",
+          "汇率制度",
+          "联系汇率",
+          "港币为什么跟美元挂钩",
+          "固定汇率和浮动汇率",
+          "资本管制",
+          "美联储加息为什么影响其他国家",
+          "全球金融周期"
+        ],
+        "en": [
+          "impossible trinity",
+          "trilemma",
+          "Mundell-Fleming trilemma",
+          "exchange rate regimes",
+          "fixed vs floating exchange rate",
+          "Hong Kong dollar peg",
+          "capital controls",
+          "global financial cycle"
+        ]
+      },
+      "anchor": "#ch7",
+      "relatedPages": [
+        "why-one-rate-moves-everything",
+        "who-pays-a-tariff"
+      ]
+    },
+    {
+      "id": "currency-crisis-speculative-attack",
+      "title": {
+        "zh": "货币危机与投机攻击",
+        "en": "Currency crises and speculative attacks"
+      },
+      "desc": {
+        "zh": "用储备守一个被看贬的汇率，攻击会在储备还剩 αμ 时一次性到来（T = R₀/μ − α）；守一个被看涨的汇率则没有储备上限。",
+        "en": "Defending a peg the market expects to fall, the attack comes while αμ of reserves remain (T = R₀/μ − α); defending against appreciation has no reserve limit."
+      },
+      "aliases": {
+        "zh": [
+          "货币危机",
+          "投机攻击",
+          "外汇储备够不够",
+          "用外汇储备守汇率",
+          "汇率保卫战",
+          "第一代货币危机模型",
+          "索罗斯狙击英镑",
+          "亚洲金融危机",
+          "瑞士央行放弃汇率下限",
+          "货币局制度"
+        ],
+        "en": [
+          "currency crisis",
+          "speculative attack",
+          "defending a currency peg",
+          "Krugman 1979 model",
+          "Black Wednesday",
+          "Asian financial crisis",
+          "currency board",
+          "why pegs break"
+        ]
+      },
+      "anchor": "#ch8",
+      "relatedPages": [
+        "where-money-comes-from",
+        "game-theory"
+      ]
+    },
+    {
+      "id": "foreign-currency-debt-balance-sheet",
+      "title": {
+        "zh": "外币债与资产负债表效应",
+        "en": "Foreign-currency debt and balance-sheet effects"
+      },
+      "desc": {
+        "zh": "收入是本币、债务是美元，本币一贬值净资产就缩水；币种错配让“汇率守不住”和“债还不上”变成同一件事。",
+        "en": "With home-currency income and dollar debt, a depreciation shrinks net worth; currency mismatch turns a falling currency into a debt crisis."
+      },
+      "aliases": {
+        "zh": [
+          "外币债",
+          "美元债务",
+          "币种错配",
+          "原罪",
+          "贬值为什么会引发危机",
+          "第三代货币危机模型",
+          "资产负债表效应",
+          "新兴市场美元债"
+        ],
+        "en": [
+          "foreign currency debt",
+          "currency mismatch",
+          "original sin",
+          "balance sheet effect",
+          "dollar debt emerging markets",
+          "third generation currency crisis"
+        ]
+      },
+      "anchor": "#ch9",
+      "relatedPages": [
+        "can-a-country-go-bankrupt"
+      ]
+    },
+    {
+      "id": "rmb-fixing-managed-float",
+      "title": {
+        "zh": "人民币中间价与有管理的浮动",
+        "en": "The renminbi fixing and the managed float"
+      },
+      "desc": {
+        "zh": "中间价参考收盘价、一篮子货币和逆周期因子，即期只能在中间价 ±2% 内成交；中间价顶不顶市场，决定压力变成汇率波动还是央行买卖。",
+        "en": "The daily fixing references the close, a basket and a counter-cyclical factor; spot trades within ±2%; leaning against the market turns pressure into official buying or selling."
+      },
+      "aliases": {
+        "zh": [
+          "人民币中间价",
+          "中间价怎么定",
+          "逆周期因子",
+          "811汇改",
+          "人民币为什么贬值",
+          "人民币为什么升值",
+          "人民币破7",
+          "在岸离岸人民币",
+          "CNH和CNY的区别",
+          "换汇额度",
+          "5万美元额度",
+          "外汇管制"
+        ],
+        "en": [
+          "renminbi fixing",
+          "yuan midpoint",
+          "counter-cyclical factor",
+          "August 2015 devaluation",
+          "why is the yuan falling",
+          "why is the yuan rising",
+          "CNY vs CNH",
+          "China FX quota",
+          "managed float"
+        ]
+      },
+      "anchor": "#ch10",
+      "relatedPages": [
+        "why-one-rate-moves-everything"
+      ]
+    },
+    {
+      "id": "reserve-currency-dollar",
+      "title": {
+        "zh": "美元为什么是世界货币",
+        "en": "Why the dollar is the world's currency"
+      },
+      "desc": {
+        "zh": "美元的主导来自计价、借贷、安全资产和美联储互换额度的相互加强；在协调博弈里，主导货币对手要好得多才能被取代，越过临界点后转换很快。",
+        "en": "Dollar dominance comes from invoicing, borrowing, safe assets and Fed swap lines reinforcing each other; in a coordination game a rival must be much better to displace it, and the switch is fast past the tipping point."
+      },
+      "aliases": {
+        "zh": [
+          "美元霸权",
+          "美元为什么强",
+          "美元为什么是世界货币",
+          "储备货币",
+          "美元计价",
+          "主导货币范式",
+          "美元互换额度",
+          "过高特权",
+          "特里芬难题",
+          "危机时美元为什么升值"
+        ],
+        "en": [
+          "dollar dominance",
+          "why is the dollar strong",
+          "reserve currency",
+          "dominant currency paradigm",
+          "dollar invoicing",
+          "Fed swap lines",
+          "exorbitant privilege",
+          "Triffin dilemma"
+        ]
+      },
+      "anchor": "#ch11",
+      "relatedPages": [
+        "game-theory"
+      ]
+    },
+    {
+      "id": "dollar-rmb-dedollarisation-2026",
+      "title": {
+        "zh": "2026 年底的美元、人民币和去美元化证据",
+        "en": "The dollar, the renminbi and de-dollarisation evidence in late 2026"
+      },
+      "desc": {
+        "zh": "IMF 储备、Swift 支付、贸易融资和 BIS 外汇交易四把尺子量出的币种份额，2025 年美元走弱，人民币中间价与储备，以及金砖支付等去美元化说法的现状（2026-11-25 核对）。",
+        "en": "Currency shares by reserves, payments, trade finance and FX turnover; the weak dollar of 2025; the renminbi fixing and reserves; and the status of de-dollarisation claims such as BRICS payments (checked 2026-11-25)."
+      },
+      "aliases": {
+        "zh": [
+          "去美元化",
+          "美元储备占比",
+          "人民币国际化",
+          "人民币国际化程度",
+          "金砖支付",
+          "BRICS Pay",
+          "CIPS",
+          "SWIFT人民币份额",
+          "2025年美元为什么跌",
+          "外汇储备币种构成"
+        ],
+        "en": [
+          "de-dollarisation",
+          "dollar share of reserves",
+          "renminbi internationalisation",
+          "BRICS payment system",
+          "COFER",
+          "SWIFT RMB tracker",
+          "why did the dollar fall in 2025"
+        ]
+      },
+      "anchor": "#ch12",
+      "relatedPages": [
+        "why-one-rate-moves-everything"
+      ]
+    }
+  ]
+}

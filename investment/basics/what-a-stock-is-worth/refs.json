@@ -1,0 +1,227 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "what-a-stock-is-worth",
+ "refs": [
+  {
+   "from": "hero.note",
+   "to": "compound-interest",
+   "anchor": null
+  },
+  {
+   "from": "hero.note",
+   "to": "risk-return",
+   "anchor": null
+  },
+  {
+   "from": "hero.note",
+   "to": "diversification",
+   "anchor": null
+  },
+  {
+   "from": "hero.note",
+   "to": "why-one-rate-moves-everything",
+   "anchor": null
+  },
+  {
+   "from": "ch1.p3",
+   "to": "stocks-bonds",
+   "anchor": null
+  },
+  {
+   "from": "ch2.p1",
+   "to": "compound-interest",
+   "anchor": null
+  },
+  {
+   "from": "ch2.p1",
+   "to": "why-one-rate-moves-everything",
+   "anchor": "ch1"
+  },
+  {
+   "from": "ch3.p5",
+   "to": "why-one-rate-moves-everything",
+   "anchor": "ch8"
+  },
+  {
+   "from": "ch5.p4",
+   "to": "where-a-mortgage-payment-goes",
+   "anchor": "ch8"
+  },
+  {
+   "from": "ch5.p4",
+   "to": "why-one-rate-moves-everything",
+   "anchor": "ch4"
+  },
+  {
+   "from": "ch7.p1",
+   "to": "diversification",
+   "anchor": null
+  },
+  {
+   "from": "ch7.p4",
+   "to": "regression-correlation",
+   "anchor": null
+  },
+  {
+   "from": "ch7.p7",
+   "to": "numbers-lie",
+   "anchor": "c4"
+  },
+  {
+   "from": "ch7.p7",
+   "to": "hypothesis-testing",
+   "anchor": null
+  },
+  {
+   "from": "ch9.p6",
+   "to": "numbers-lie",
+   "anchor": null
+  },
+  {
+   "from": "ch9.p6",
+   "to": "numbers-lie",
+   "anchor": "c3"
+  },
+  {
+   "from": "ch9.p6",
+   "to": "numbers-lie",
+   "anchor": "c1"
+  },
+  {
+   "from": "ch9.p6",
+   "to": "numbers-lie",
+   "anchor": "c2"
+  },
+  {
+   "from": "ch9.p7",
+   "to": "fees-compounding",
+   "anchor": null
+  },
+  {
+   "from": "ch12.links",
+   "to": "compound-interest",
+   "anchor": null
+  },
+  {
+   "from": "ch12.links",
+   "to": "interest-rates-bonds",
+   "anchor": null
+  },
+  {
+   "from": "ch12.links",
+   "to": "stocks-bonds",
+   "anchor": null
+  },
+  {
+   "from": "ch12.links",
+   "to": "risk-return",
+   "anchor": null
+  },
+  {
+   "from": "ch12.links",
+   "to": "diversification",
+   "anchor": null
+  },
+  {
+   "from": "ch12.links",
+   "to": "fees-compounding",
+   "anchor": null
+  },
+  {
+   "from": "ch12.links",
+   "to": "expected-value",
+   "anchor": null
+  },
+  {
+   "from": "ch12.links",
+   "to": "why-one-rate-moves-everything",
+   "anchor": null
+  }
+ ],
+ "backlinks": [],
+ "related": [
+  "compound-interest",
+  "why-one-rate-moves-everything",
+  "stocks-bonds",
+  "interest-rates-bonds",
+  "where-a-mortgage-payment-goes",
+  "risk-return",
+  "diversification",
+  "regression-correlation",
+  "numbers-lie",
+  "hypothesis-testing",
+  "expected-value",
+  "fees-compounding"
+ ],
+ "bindings": [
+  "ch2.P",
+  "ch2.s10",
+  "ch2.s30",
+  "ch2.half",
+  "ch3.P",
+  "ch3.p1",
+  "ch3.chg",
+  "ch3.P6",
+  "ch3.chg6",
+  "ch3.P7",
+  "ch3.chg7",
+  "ch3.chg2",
+  "ch3.dur",
+  "ch4.ey40",
+  "ch4.g20",
+  "ch4.g40",
+  "ch4.pm",
+  "ch4.N",
+  "ch4.N15",
+  "ch5.trHi",
+  "ch5.capeLo",
+  "ch5.capeHi",
+  "ch6.erp",
+  "ch6.erpDown",
+  "ch6.erpUp",
+  "ch7.power",
+  "ch7.semi",
+  "ch7.se",
+  "ch7.lo",
+  "ch7.hi",
+  "ch8.ratioR",
+  "ch8.ratio95",
+  "ch8.cross",
+  "ch9.cf1",
+  "ch9.cf20",
+  "ch9.cf20b",
+  "ch9.alive",
+  "ch9.sim20",
+  "ch9.surv",
+  "ch10.grow",
+  "ch10.life",
+  "f.spiva1",
+  "f.spiva3",
+  "f.spiva5",
+  "f.spiva10",
+  "f.spiva15",
+  "f.spiva20",
+  "f.spivaPrev",
+  "f.spivaSurv",
+  "f.spivaN",
+  "f.spivaRisk",
+  "f.ret500",
+  "f.retFund",
+  "f.erpNov",
+  "f.erpJan",
+  "f.tbond",
+  "f.top10",
+  "f.top10e",
+  "f.top10peak",
+  "f.top10lo",
+  "f.top10hi",
+  "f.capeNow",
+  "f.cape1999",
+  "f.capeEy",
+  "f.nqPeak",
+  "f.nqTrough",
+  "f.nqDrop",
+  "f.mpOos",
+  "f.mpPost"
+ ]
+}

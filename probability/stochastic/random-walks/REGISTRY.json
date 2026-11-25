@@ -1,0 +1,208 @@
+{
+  "slug": "random-walks",
+  "path": "probability/stochastic/random-walks/",
+  "category": "probability",
+  "subtopic": "stochastic",
+  "stage": "university",
+  "title": {
+    "zh": "随机游走与布朗运动",
+    "en": "Random Walks and Brownian Motion"
+  },
+  "desc": {
+    "zh": "抛硬币走路的人平均哪儿也不去，却离起点越来越远，距离按步数的平方根长。从这一条出发，讲方差为什么相加、爱因斯坦和佩兰怎样用花粉旁的小颗粒数出分子、股价的几何布朗运动和年化波动率 σ√T、真实指数在哪里不像随机游走，再到赌徒破产、期权定价和 AI 扩散模型。八个可以动手的模型，只讲数学和证据，不是投资建议。",
+    "en": "A walker who flips a coin for every step goes nowhere on average, yet drifts ever further from the start, by the square root of the number of steps. From that one fact: why variances add, how Einstein and Perrin counted molecules from jiggling grains, geometric Brownian motion and annualised volatility σ√T, where a real index stops looking like a random walk, and on to gambler's ruin, option pricing and AI diffusion models. Eight hands-on models; mathematics and evidence only, not investment advice."
+  },
+  "tags": [
+    {
+      "zh": "概率与统计",
+      "en": "Probability & Statistics"
+    },
+    {
+      "zh": "随机过程",
+      "en": "Stochastic Processes"
+    },
+    {
+      "zh": "长文",
+      "en": "Long-form Essay"
+    }
+  ],
+  "concepts": [
+    {
+      "id": "random-walk-sqrt-t",
+      "anchor": "ch2",
+      "title": {
+        "zh": "随机游走与 √t 定律",
+        "en": "Random Walks and the √t Law"
+      },
+      "desc": {
+        "zh": "抛硬币走 n 步，平均位置是 0，均方根距离是 √n；方差相加、标准差不相加，所以风险按时间的平方根增长。",
+        "en": "After n fair steps the mean position is 0 and the RMS distance is √n; variances add and standard deviations do not, so risk grows with the square root of time."
+      },
+      "aliases": {
+        "zh": [
+          "随机游走",
+          "随机游走是什么",
+          "醉汉走路",
+          "为什么波动随根号t增长",
+          "方差相加",
+          "平方根定律",
+          "风险随时间怎么变"
+        ],
+        "en": [
+          "random walk",
+          "what is a random walk",
+          "drunkard's walk",
+          "why volatility scales with square root of time",
+          "variances add",
+          "square root of time rule"
+        ]
+      },
+      "relatedPages": [
+        "binomial-normal",
+        "central-limit-theorem",
+        "markov-chains",
+        "risk-return"
+      ]
+    },
+    {
+      "id": "brownian-motion-diffusion",
+      "anchor": "ch3",
+      "title": {
+        "zh": "布朗运动与扩散",
+        "en": "Brownian Motion and Diffusion"
+      },
+      "desc": {
+        "zh": "随机游走的连续极限：爱因斯坦 1905 年的 ⟨x²⟩ = 2Dt、斯托克斯–爱因斯坦关系、扩散方程，佩兰由此数出阿伏伽德罗常数；巴舍利耶 1900 年把同样的数学用在价格上。",
+        "en": "The continuous limit of a random walk: Einstein's 1905 ⟨x²⟩ = 2Dt, the Stokes–Einstein relation and the diffusion equation, from which Perrin counted Avogadro's number; Bachelier used the same mathematics for prices in 1900."
+      },
+      "aliases": {
+        "zh": [
+          "布朗运动",
+          "扩散",
+          "扩散系数",
+          "扩散方程",
+          "爱因斯坦 布朗运动",
+          "佩兰实验",
+          "墨水为什么会散开"
+        ],
+        "en": [
+          "brownian motion",
+          "diffusion",
+          "diffusion coefficient",
+          "diffusion equation",
+          "Einstein 1905 Brownian",
+          "Stokes-Einstein",
+          "Perrin experiment"
+        ]
+      },
+      "relatedPages": [
+        "membrane-transport",
+        "kinetic-theory"
+      ]
+    },
+    {
+      "id": "fat-tails-levy-stable",
+      "anchor": "ch5",
+      "title": {
+        "zh": "肥尾与稳定分布：方差不够用的时候",
+        "en": "Fat Tails and Stable Laws: When Variance Is Not Enough"
+      },
+      "desc": {
+        "zh": "幂律尾巴的指数低于 2 时方差无穷、√t 规则和中心极限定理失效；纳斯达克日回报的尾部指数约为 3，峰度随期限加长而下降。",
+        "en": "With a power-law tail exponent below 2 the variance is infinite and the √t rule and the CLT break; NASDAQ daily returns have a tail exponent near 3, and kurtosis falls as the horizon grows."
+      },
+      "aliases": {
+        "zh": [
+          "肥尾",
+          "厚尾",
+          "稳定分布",
+          "列维分布",
+          "幂律尾巴",
+          "股价是随机游走吗",
+          "波动率聚集",
+          "方差比检验",
+          "黑天鹅"
+        ],
+        "en": [
+          "fat tails",
+          "heavy tails",
+          "stable distribution",
+          "Levy stable",
+          "power law tails",
+          "are stock prices a random walk",
+          "volatility clustering",
+          "variance ratio test"
+        ]
+      },
+      "relatedPages": [
+        "numbers-lie",
+        "central-limit-theorem"
+      ]
+    },
+    {
+      "id": "gamblers-ruin-first-passage",
+      "anchor": "ch6",
+      "title": {
+        "zh": "赌徒破产与首次到达",
+        "en": "Gambler's Ruin and First Passage"
+      },
+      "desc": {
+        "zh": "公平赌局走过距离 d 平均要 d² 局，成功概率是 i/N；不利的赌局里玩得越多越确定地输，大注少局反而更好。",
+        "en": "A fair walk needs d² steps on average to cover distance d and succeeds with probability i/N; in an unfavourable game more play means surer ruin, and bold play beats timid play."
+      },
+      "aliases": {
+        "zh": [
+          "赌徒破产",
+          "首次到达",
+          "为什么久赌必输",
+          "孤注一掷",
+          "破产概率"
+        ],
+        "en": [
+          "gambler's ruin",
+          "first passage time",
+          "hitting time",
+          "bold play",
+          "why the house always wins"
+        ]
+      },
+      "relatedPages": [
+        "markov-chains",
+        "expected-value",
+        "risk-pooling"
+      ]
+    },
+    {
+      "id": "diffusion-models-forward-process",
+      "anchor": "ch7",
+      "title": {
+        "zh": "AI 扩散模型的加噪过程",
+        "en": "The Noising Process of AI Diffusion Models"
+      },
+      "desc": {
+        "zh": "DDPM 的前向过程把数据一步步缩小、加噪，是一个固定的随机游走；生成靠神经网络学会反向去噪。",
+        "en": "The DDPM forward process shrinks the data and adds noise step by step, a fixed random walk; generation comes from a network that learns to reverse it."
+      },
+      "aliases": {
+        "zh": [
+          "扩散模型",
+          "扩散模型原理",
+          "DDPM",
+          "加噪去噪",
+          "AI 画图原理"
+        ],
+        "en": [
+          "diffusion model",
+          "how diffusion models work",
+          "DDPM",
+          "forward noising process",
+          "denoising diffusion"
+        ]
+      },
+      "relatedPages": [
+        "monte-carlo",
+        "gradient-descent"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "slug": "why-some-countries-got-rich",
+  "kind": "essay",
+  "layout": "essay",
+  "scripts": [
+    "data.js",
+    "models.js",
+    "copy.zh.js",
+    "copy.en.js",
+    "app.js"
+  ],
+  "version": "20261125a",
+  "category": "economics",
+  "subtopic": "growth",
+  "stage": "university",
+  "path": "economics/growth/why-some-countries-got-rich/",
+  "created": "2026-11-25",
+  "languages": {
+    "en": "stub"
+  },
+  "provenanceNote": {
+    "zh": "本文由 Claude Code（claude-opus-5-5）从零编写，直接用 Markdown 站点模板写成；英文稿待翻译；尚未经过独立评审。",
+    "en": "This essay was written from scratch with Claude Code (claude-opus-5-5), directly in the Markdown site template; the English copy is pending; not yet independently reviewed."
+  },
+  "tags": [
+    {
+      "zh": "经济增长",
+      "en": "Economic Growth"
+    },
+    {
+      "zh": "生产率",
+      "en": "Productivity"
+    },
+    {
+      "zh": "索洛模型",
+      "en": "Solow Model"
+    },
+    {
+      "zh": "学习曲线",
+      "en": "Learning Curves"
+    },
+    {
+      "zh": "AI 与经济",
+      "en": "AI & the Economy"
+    },
+    {
+      "zh": "长文",
+      "en": "Long-form Essay"
+    }
+  ],
+  "dynamicKeys": {
+    "ch2.say": [
+      "low",
+      "high"
+    ],
+    "ch3.say": [
+      "below",
+      "gold",
+      "above"
+    ],
+    "ch6.say": [
+      "zero",
+      "grow"
+    ],
+    "ch11.say": [
+      "tfp",
+      "lp"
+    ],
+    "ch5.cv": [
+      "cap",
+      "lab",
+      "hc",
+      "tfp",
+      "pwt"
+    ],
+    "ch5.c": [
+      "CN",
+      "KR",
+      "JP"
+    ],
+    "ch9.cv": [
+      "all",
+      "exp",
+      "imp",
+      "tfp"
+    ],
+    "ch11.e": [
+      "acemoglu",
+      "aghion",
+      "goldman",
+      "anthropic"
+    ],
+    "ch1.c": [
+      "jp",
+      "kr",
+      "tw",
+      "cn",
+      "ar",
+      "br",
+      "in",
+      "ng"
+    ],
+    "ch8.c": [
+      "jp",
+      "kr",
+      "tw",
+      "cn",
+      "my",
+      "th",
+      "mx",
+      "br",
+      "ar"
+    ]
+  }
+}

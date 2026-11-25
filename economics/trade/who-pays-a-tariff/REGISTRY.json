@@ -1,0 +1,259 @@
+{
+  "slug": "who-pays-a-tariff",
+  "path": "economics/trade/who-pays-a-tariff/",
+  "category": "economics",
+  "subtopic": "trade",
+  "stage": "university",
+  "title": {
+    "zh": "关税到底谁付",
+    "en": "Who Pays a Tariff"
+  },
+  "desc": {
+    "zh": "关税的钱由进口商交给海关，最后却不一定是他出。这篇从需求弹性讲起，用可以拖动的模型讲关税负担怎么在买卖双方之间分、国家的账本上谁得谁失、比较优势为什么让双方都得利、贸易逆差为什么等于储蓄减投资，再讲汇率抵消、报复、贸易改道和出口管制，最后整理 2018 年以来关于“谁付了关税”的实证研究，截至 2026 年 11 月。九个可以动手的模型，只讲模型和证据，不替任何一方表态。",
+    "en": "A tariff is paid to customs by the importer, but that is not who ends up bearing it. Nine hands-on models, from elasticity and tariff incidence to comparative advantage, S − I = CA, exchange-rate offsets, retaliation, trade diversion and export controls, ending with the evidence on who paid the 2018–19 and 2025 US tariffs, as of November 2026. Models and evidence only; no position on any policy."
+  },
+  "tags": [
+    {
+      "zh": "国际贸易",
+      "en": "International Trade"
+    },
+    {
+      "zh": "关税",
+      "en": "Tariffs"
+    },
+    {
+      "zh": "弹性",
+      "en": "Elasticity"
+    },
+    {
+      "zh": "比较优势",
+      "en": "Comparative Advantage"
+    },
+    {
+      "zh": "出口管制",
+      "en": "Export Controls"
+    },
+    {
+      "zh": "长文",
+      "en": "Long-form Essay"
+    }
+  ],
+  "relatedPages": [
+    "supply-demand",
+    "scarcity-moves",
+    "how-an-economy-is-measured",
+    "why-chips-are-hard",
+    "where-money-comes-from",
+    "why-one-rate-moves-everything",
+    "prisoners-dilemma",
+    "externalities",
+    "regression-correlation"
+  ],
+  "concepts": [
+    {
+      "id": "tariff-incidence-pass-through",
+      "anchor": "#ch2",
+      "title": {
+        "zh": "关税归宿：楔子怎么分",
+        "en": "Tariff incidence"
+      },
+      "desc": {
+        "zh": "关税在买卖价之间打进楔子，买方承担的份额由两边弹性决定，与谁去海关交钱无关。",
+        "en": "A tariff drives a wedge between buyer and seller prices; the buyer's share depends on the two elasticities, not on who pays customs."
+      },
+      "aliases": {
+        "zh": [
+          "关税谁出",
+          "关税是谁付的",
+          "关税谁买单",
+          "关税转嫁",
+          "加关税物价会涨吗",
+          "关税是谁交的"
+        ],
+        "en": [
+          "who pays tariffs",
+          "tariff pass-through",
+          "tariff incidence",
+          "do tariffs raise prices"
+        ]
+      },
+      "relatedPages": [
+        "supply-demand"
+      ]
+    },
+    {
+      "id": "tariff-welfare-accounting",
+      "anchor": "#ch3",
+      "title": {
+        "zh": "关税福利账本与最优关税",
+        "en": "Tariff welfare and the optimal tariff"
+      },
+      "desc": {
+        "zh": "关税让买方受损、本国厂商和政府受益，小国净损失；大国存在最优关税，但好处来自外国更大的损失。",
+        "en": "Buyers lose, home producers and the treasury gain; a small country loses on net, a large one has an optimal tariff paid for by a larger foreign loss."
+      },
+      "aliases": {
+        "zh": [
+          "关税的全国账本",
+          "最优关税",
+          "贸易条件",
+          "关税对国家好不好"
+        ],
+        "en": [
+          "optimal tariff",
+          "terms of trade",
+          "is a tariff good for a country",
+          "tariff welfare"
+        ]
+      },
+      "relatedPages": []
+    },
+    {
+      "id": "saving-investment-current-account",
+      "anchor": "#ch5",
+      "title": {
+        "zh": "S − I = CA：逆差是储蓄减投资",
+        "en": "S − I = CA"
+      },
+      "desc": {
+        "zh": "经常账户差额在定义上等于储蓄减投资；不改变储蓄和投资的政策改不了总逆差。",
+        "en": "The current account equals saving minus investment by definition; a policy that leaves both unchanged cannot change the overall deficit."
+      },
+      "aliases": {
+        "zh": [
+          "贸易逆差是坏事吗",
+          "贸易逆差是亏钱吗",
+          "贸易逆差",
+          "经常账户",
+          "双赤字",
+          "关税能减少逆差吗"
+        ],
+        "en": [
+          "is a trade deficit bad",
+          "trade deficit",
+          "current account",
+          "twin deficits",
+          "can tariffs reduce the trade deficit"
+        ]
+      },
+      "relatedPages": [
+        "how-an-economy-is-measured"
+      ]
+    },
+    {
+      "id": "tariff-offsets-currency-retaliation-diversion",
+      "anchor": "#ch6",
+      "title": {
+        "zh": "汇率抵消、贸易改道与报复",
+        "en": "Exchange-rate offset, trade diversion and retaliation"
+      },
+      "desc": {
+        "zh": "被征税国货币贬值抵掉部分涨价，进口改从第三国来，双方都征最优关税会陷入囚徒困境。",
+        "en": "The target's currency offsets part of a tariff, imports divert to third countries, and mutual optimal tariffs are a prisoner's dilemma."
+      },
+      "aliases": {
+        "zh": [
+          "贸易战",
+          "汇率和关税",
+          "贸易改道",
+          "转口贸易",
+          "转运",
+          "报复关税"
+        ],
+        "en": [
+          "trade war",
+          "exchange rates and tariffs",
+          "trade diversion",
+          "transshipment",
+          "retaliatory tariffs"
+        ]
+      },
+      "relatedPages": [
+        "where-money-comes-from"
+      ]
+    },
+    {
+      "id": "export-controls-chokepoints",
+      "anchor": "#ch7",
+      "title": {
+        "zh": "出口管制与卡脖子点",
+        "en": "Export controls and chokepoints"
+      },
+      "desc": {
+        "zh": "供应高度集中时限制出口短期冲击大，替代出现后武器变钝；稀土与先进芯片是两个例子。",
+        "en": "When supply is concentrated an export ban bites hard at first and blunts as substitutes appear; rare earths and advanced chips are the examples."
+      },
+      "aliases": {
+        "zh": [
+          "出口管制",
+          "卡脖子",
+          "稀土",
+          "稀土出口管制",
+          "芯片出口管制",
+          "为什么全球化在退潮"
+        ],
+        "en": [
+          "export controls",
+          "chokepoints",
+          "rare earths",
+          "chip export controls",
+          "why is globalisation retreating"
+        ]
+      },
+      "relatedPages": [
+        "why-chips-are-hard"
+      ]
+    },
+    {
+      "id": "measuring-tariff-pass-through",
+      "anchor": "#ch8",
+      "title": {
+        "zh": "转嫁率与双重差分",
+        "en": "Measuring pass-through"
+      },
+      "desc": {
+        "zh": "用加税和未加税商品的差异估计转嫁率；边境转嫁和零售转嫁是两个不同的数。",
+        "en": "Pass-through is estimated against untaxed goods (difference-in-differences); border and retail pass-through are different numbers."
+      },
+      "aliases": {
+        "zh": [
+          "关税转嫁率",
+          "双重差分",
+          "关税转嫁到消费者了吗"
+        ],
+        "en": [
+          "measuring tariff pass-through",
+          "difference in differences",
+          "did tariffs pass through to consumers"
+        ]
+      },
+      "relatedPages": []
+    },
+    {
+      "id": "tariff-evidence-frontier-2026",
+      "anchor": "#ch9",
+      "title": {
+        "zh": "关税实证前沿（2026）",
+        "en": "Tariff evidence frontier (2026)"
+      },
+      "desc": {
+        "zh": "2018–19 年美国关税几乎全部由美国承担；2025 年关税的转嫁估计多在八九成以上，也有研究认为外国吸收近半。",
+        "en": "The 2018–19 US tariffs fell almost wholly on US buyers; 2025 estimates mostly find 80–94% border pass-through, one finds foreign exporters absorbed nearly half."
+      },
+      "aliases": {
+        "zh": [
+          "2025 年关税谁付的",
+          "美国关税最新研究",
+          "IEEPA 关税判决",
+          "关税实证研究"
+        ],
+        "en": [
+          "who paid the 2025 tariffs",
+          "tariff research 2026",
+          "IEEPA tariff ruling"
+        ]
+      },
+      "relatedPages": []
+    }
+  ]
+}

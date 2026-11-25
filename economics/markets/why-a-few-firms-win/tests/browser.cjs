@@ -41,7 +41,7 @@ const show = async (page, sel, ms = 350) => { await page.$eval(sel, e => e.scrol
   for (const lang of ['zh', 'en']) for (const width of [1280, 390, 320]) {
     const page = await open(browser, width, { lang });
     const tag = `${lang} ${width}`;
-    ok(await page.evaluate(() => document.documentElement.lang) === 'zh-CN', `${tag}: html lang should follow the text shown (zh-CN while there is no copy.en.js)`);
+    ok(await page.evaluate(() => document.documentElement.lang) === (lang === 'en' ? 'en' : 'zh-CN'), `${tag}: html lang should follow the text shown`); // English copy exists since 2026-11-25
     ok(JSON.stringify(await page.$$eval('#langToggle button', bs => bs.map(b => b.textContent.trim()))) === '["中","EN"]', `${tag}: toggle should read 中 | EN`);
     ok(await page.$eval(`#langToggle [data-lang=${lang}]`, e => e.getAttribute('aria-pressed')) === 'true', `${tag}: chosen language button pressed`);
     for (const fig of await page.$$('figure')) { await fig.evaluate(e => e.scrollIntoView({ block: 'center' })); await page.waitForTimeout(250); }
@@ -52,7 +52,7 @@ const show = async (page, sel, ms = 350) => { await page.$eval(sel, e => e.scrol
     ok(!clipped.length, `${tag}: clipped text: ${clipped.join(', ')}`);
     const over = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
     ok(over <= 0, `${tag}: horizontal overflow ${over}px`);
-    const wide = await page.evaluate(() => [...document.querySelectorAll('main *')].filter(e => { const r = e.getBoundingClientRect(); return r.width && (r.right > innerWidth + 1 || r.left < -1) && !e.closest('.tablewrap'); }).slice(0, 5).map(e => e.tagName + '#' + e.id + '.' + e.className));
+    const wide = await page.evaluate(() => [...document.querySelectorAll('main *')].filter(e => { const r = e.getBoundingClientRect(); return r.width && (r.right > innerWidth + 1 || r.left < -1) && !e.closest('.tblwrap'); }) /* tables scroll inside .tblwrap (was misspelt .tablewrap) */.slice(0, 5).map(e => e.tagName + '#' + e.id + '.' + e.className));
     ok(!wide.length, `${tag}: elements outside the viewport: ${wide.join(', ')}`);
     const small = await page.evaluate(() => {
       const out = [], boxOf = e => (e.matches('input[type=checkbox],input[type=radio]') ? e.closest('label') : e).getBoundingClientRect();
@@ -62,7 +62,7 @@ const show = async (page, sel, ms = 350) => { await page.$eval(sel, e => e.scrol
     const raw = await page.evaluate(() => { const out = []; const w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
       for (let n; (n = w.nextNode());) { const s = n.textContent.trim(); if (/^(ch\d+|hero|nav|toc|common)\.[\w.]+$/.test(s) || /\{\w+\}/.test(s)) out.push(s.slice(0, 40)); } return out.slice(0, 5); });
     ok(!raw.length, `${tag}: raw keys or placeholders visible: ${raw.join(' | ')}`);
-    ok(/[一-鿿]/.test(await page.title()), `${tag}: Chinese <title>`);
+    ok(lang === 'en' ? !/[一-鿿]/.test(await page.title()) : /[一-鿿]/.test(await page.title()), `${tag}: <title> in the language shown`);
     ok(!page.__errors().length, `${tag}: errors: ${page.__errors().join(' | ')}`);
     await page.close();
   }

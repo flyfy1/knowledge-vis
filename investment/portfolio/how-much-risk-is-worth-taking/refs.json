@@ -1,0 +1,184 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "how-much-risk-is-worth-taking",
+ "refs": [
+  {
+   "from": "hero.note",
+   "to": "central-limit-theorem",
+   "anchor": "step3"
+  },
+  {
+   "from": "hero.note",
+   "to": "diversification",
+   "anchor": null
+  },
+  {
+   "from": "hero.note",
+   "to": "risk-return",
+   "anchor": "step3"
+  },
+  {
+   "from": "ch1.p1",
+   "to": "diversification",
+   "anchor": "step1"
+  },
+  {
+   "from": "ch1.p1",
+   "to": "diversification",
+   "anchor": "step2"
+  },
+  {
+   "from": "ch1.p4",
+   "to": "risk-pooling",
+   "anchor": null
+  },
+  {
+   "from": "ch3.p5",
+   "to": "why-one-rate-moves-everything",
+   "anchor": null
+  },
+  {
+   "from": "ch3.limit",
+   "to": "a-fair-price-for-a-bet",
+   "anchor": "ch8"
+  },
+  {
+   "from": "ch4.p2",
+   "to": "numbers-lie",
+   "anchor": "c2"
+  },
+  {
+   "from": "ch4.p5",
+   "to": "numbers-lie",
+   "anchor": "c4"
+  },
+  {
+   "from": "ch5.p4",
+   "to": "regression-correlation",
+   "anchor": null
+  },
+  {
+   "from": "ch7.p2",
+   "to": "a-fair-price-for-a-bet",
+   "anchor": "ch5"
+  },
+  {
+   "from": "ch7.p2",
+   "to": "numbers-lie",
+   "anchor": "c8"
+  },
+  {
+   "from": "ch9.p1",
+   "to": "exponents-logarithms",
+   "anchor": null
+  },
+  {
+   "from": "ch9.p1",
+   "to": "expected-value",
+   "anchor": null
+  }
+ ],
+ "backlinks": [],
+ "related": [
+  "diversification",
+  "risk-return",
+  "vectors",
+  "numbers-lie",
+  "monte-carlo",
+  "compound-interest",
+  "a-fair-price-for-a-bet",
+  "expected-value",
+  "exponents-logarithms"
+ ],
+ "bindings": [
+  "ch1.v1",
+  "ch1.v10",
+  "ch1.fl",
+  "ch1.off10",
+  "ch1.cov10",
+  "ch1.n10",
+  "ch1.n10b",
+  "ch1.flb",
+  "ch2.gv",
+  "ch2.gm",
+  "ch2.v7",
+  "ch2.save",
+  "ch2.w7a",
+  "ch2.w7b",
+  "ch2.w7c",
+  "ch2.w7d",
+  "ch2.ugv",
+  "ch2.ugc",
+  "ch3.tm",
+  "ch3.ts",
+  "ch3.sr",
+  "ch3.w0",
+  "ch3.w1",
+  "ch3.w2",
+  "ch3.w3",
+  "ch3.sr1",
+  "ch3.sr2",
+  "ch3.cm16",
+  "ch3.m50",
+  "ch3.s50",
+  "ch3.w0rf1",
+  "ch3.srrf1",
+  "ch4.se",
+  "ch4.lo",
+  "ch4.hi",
+  "ch4.neg",
+  "ch4.t01",
+  "ch4.k20",
+  "ch4.k20sim",
+  "ch4.k100",
+  "ch5.b0",
+  "ch5.b1",
+  "ch5.b2",
+  "ch5.b3",
+  "ch5.ex",
+  "ch6.p0",
+  "ch6.p1",
+  "ch6.q0",
+  "ch6.q1",
+  "ch6.se10",
+  "ch6.t16",
+  "ch6.e10",
+  "ch6.e100",
+  "ch6.ek10",
+  "ch6.opt",
+  "ch6.eq",
+  "ch6.iv",
+  "ch6.gmv",
+  "ch6.lo10",
+  "ch6.hi10",
+  "ch7.g1",
+  "ch7.g2",
+  "ch7.g3",
+  "ch7.a3",
+  "ch7.mean3",
+  "ch7.med3",
+  "ch7.below3",
+  "ch8.dr",
+  "ch8.dr5",
+  "ch8.vol",
+  "ch8.ga",
+  "ch8.grb",
+  "ch8.gbh",
+  "ch8.win",
+  "ch9.f",
+  "ch9.g",
+  "ch9.gh",
+  "ch9.vol",
+  "ch9.volh",
+  "ch9.f10",
+  "ch9.g10",
+  "ch9.f12",
+  "ch9.g12",
+  "ch9.gh12",
+  "ch9.cg",
+  "ch9.cg40",
+  "ch9.cmed",
+  "ch9.cmed40",
+  "ch9.cruin40"
+ ]
+}

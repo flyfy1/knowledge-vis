@@ -1,0 +1,71 @@
+{
+  "slug": "why-some-countries-got-rich",
+  "path": "economics/growth/why-some-countries-got-rich/",
+  "category": "economics",
+  "subtopic": "growth",
+  "subtopicName": { "zh": "增长", "en": "Growth" },
+  "stage": "university",
+  "title": { "zh": "为什么有的国家富", "en": "为什么有的国家富" },
+  "desc": {
+    "zh": "1950 年韩国比阿根廷穷得多，七十年后反过来了。一个国家怎样变富？从人均产出和 70 法则出发，经过生产函数、索洛模型与收敛、增长核算和全要素生产率、罗默的“想法”、光伏的学习曲线、东亚和中国的追赶与中等收入陷阱，走到 AI 能把生产率提高多少：任务模型、J 曲线和最早的实证证据。十一个可以拖动的模型，九张示意图，真实数据来自 Maddison、宾大世界表和 IRENA。",
+    "en": "1950 年韩国比阿根廷穷得多，七十年后反过来了。一个国家怎样变富？从人均产出和 70 法则出发，经过生产函数、索洛模型与收敛、增长核算和全要素生产率、罗默的“想法”、光伏的学习曲线、东亚和中国的追赶与中等收入陷阱，走到 AI 能把生产率提高多少：任务模型、J 曲线和最早的实证证据。十一个可以拖动的模型，九张示意图，真实数据来自 Maddison、宾大世界表和 IRENA。"
+  },
+  "tags": [
+    { "zh": "经济增长", "en": "Economic Growth" },
+    { "zh": "生产率", "en": "Productivity" },
+    { "zh": "索洛模型", "en": "Solow Model" },
+    { "zh": "学习曲线", "en": "Learning Curves" },
+    { "zh": "AI 与经济", "en": "AI & the Economy" },
+    { "zh": "长文", "en": "Long-form Essay" }
+  ],
+  "concepts": [
+    {
+      "id": "solow-steady-state-convergence",
+      "anchor": "#ch3",
+      "title": { "zh": "索洛模型：稳态、收敛与资本的极限", "en": "Solow Model: Steady State, Convergence and the Limits of Capital" },
+      "desc": { "zh": "储蓄、折旧和人口增长决定稳态；资本边际报酬递减让增长在稳态停下，穷国离稳态远所以长得快（条件收敛），提高储蓄率只换来一次性的台阶。", "en": "Saving, depreciation and population growth set the steady state; diminishing returns stop growth there, poor economies far from it grow faster (conditional convergence), and a higher saving rate buys only a one-off step." },
+      "aliases": { "zh": ["索洛模型", "稳态", "收敛", "条件收敛", "边际报酬递减", "生产函数", "柯布道格拉斯", "黄金律储蓄率", "为什么光靠投资不能一直增长", "储蓄率越高越好吗", "70法则", "翻倍时间", "人均产出"], "en": ["solow model", "steady state", "convergence", "conditional convergence", "diminishing returns to capital", "cobb douglas production function", "golden rule saving rate", "rule of 70", "doubling time", "why can't investment alone sustain growth", "output per worker"] },
+      "relatedPages": ["how-an-economy-is-measured", "compound-interest", "ode-phase-portraits"]
+    },
+    {
+      "id": "ideas-nonrival-increasing-returns",
+      "anchor": "#ch6",
+      "title": { "zh": "想法的非竞争性与半内生增长", "en": "Non-rival Ideas and Semi-endogenous Growth" },
+      "desc": { "zh": "想法可以同时给所有人用，带来规模报酬递增；Jones 模型里技术进步取决于研究者人数，想法越来越难找时，要越来越多的研究者才能维持增长。", "en": "Ideas can be used by everyone at once, giving increasing returns; in the Jones model technical progress depends on the number of researchers, and as ideas get harder to find it takes ever more of them to keep growth constant." },
+      "aliases": { "zh": ["罗默", "内生增长", "非竞争性", "规模报酬递增", "想法越来越难找", "研发和增长", "琼斯模型", "半内生增长", "技术进步从哪来"], "en": ["romer", "endogenous growth", "non-rival ideas", "nonrivalry", "increasing returns", "are ideas getting harder to find", "semi-endogenous growth", "jones model", "where does technological progress come from"] },
+      "relatedPages": ["scarcity-moves"]
+    },
+    {
+      "id": "wrights-law-cost-curve",
+      "anchor": "#ch7",
+      "title": { "zh": "赖特定律：累计产量翻倍，成本降一截", "en": "Wright's Law: Each Doubling of Output Cuts Cost" },
+      "desc": { "zh": "单位成本随累计产量按幂律下降，在双对数图上是一条直线；用 1975–2025 年真实数据拟合，光伏组件的学习率约 24%，并随时期变化；电池价格走在类似的曲线上。", "en": "Unit cost falls as a power of cumulative output, a straight line on a log-log plot; fitted on real 1975–2025 data, solar modules show a learning rate of about 24% that varies by period; battery prices follow a similar curve." },
+      "aliases": { "zh": ["赖特定律", "学习曲线", "学习率", "经验曲线", "为什么光伏变便宜了", "光伏组件价格", "电池为什么越来越便宜", "斯旺森定律"], "en": ["wright's law", "wrights law", "learning curve", "learning rate", "experience curve", "why did solar get cheap", "solar module prices", "why are batteries getting cheaper", "swanson's law"] },
+      "relatedPages": ["why-chips-are-hard"]
+    },
+    {
+      "id": "demographics-dependency-growth",
+      "anchor": "#ch8",
+      "title": { "zh": "人口与增长：劳动年龄人口见顶以后", "en": "Demographics and Growth: After the Working-Age Peak" },
+      "desc": { "zh": "劳动人数的增长是增长核算里的一项；中国 15–64 岁人口 2015 年见顶（联合国口径），劳动贡献在 2010 年以后转负，和资本回报递减、TFP 放缓一起解释增速下行。", "en": "Labour-force growth is one term of growth accounting; China's population aged 15–64 peaked in 2015 (UN definition) and the labour contribution turned negative after 2010, which together with diminishing returns and slower TFP explains the slowdown." },
+      "aliases": { "zh": ["人口红利", "劳动年龄人口", "人口老龄化和增长", "中国为什么增速放缓", "中国增速放缓", "人口减少对经济的影响"], "en": ["demographic dividend", "working-age population", "ageing and growth", "why is china's growth slowing", "china slowdown", "population decline and the economy"] },
+      "relatedPages": ["how-an-economy-is-measured"]
+    },
+    {
+      "id": "institutions-growth-evidence",
+      "anchor": "#ch8",
+      "title": { "zh": "制度、追赶与中等收入陷阱", "en": "Institutions, Catch-up and the Middle-Income Trap" },
+      "desc": { "zh": "落后国家能借用技术，但真正追上来的很少；Maddison 数据里的追赶轨迹、世界银行 2024 年的中等收入陷阱、制度研究的证据和它的识别难题，以及对中国放缓的几种读法。", "en": "Laggards can borrow technology, yet few catch up: catch-up paths in the Maddison data, the World Bank's 2024 middle-income trap, the evidence on institutions and its identification problems, and competing readings of China's slowdown." },
+      "aliases": { "zh": ["中等收入陷阱", "追赶", "东亚奇迹", "制度与增长", "为什么有的国家富有的国家穷", "亚洲奇迹的神话", "3i战略"], "en": ["middle income trap", "catch-up growth", "east asian miracle", "institutions and growth", "why are some countries rich and others poor", "myth of asia's miracle", "3i strategy"] },
+      "relatedPages": ["scarcity-moves", "how-an-economy-is-measured"]
+    },
+    {
+      "id": "ai-productivity-frontier",
+      "anchor": "#ch9",
+      "title": { "zh": "AI 能把生产率提高多少：任务模型、J 曲线与证据", "en": "How Much Can AI Raise Productivity: Task Models, the J-Curve and the Evidence" },
+      "desc": { "zh": "哈尔滕定理下的 Acemoglu 任务算术（十年 TFP 约 0.66%），生产率 J 曲线，2023–2026 年的实验和宏观证据，以及把各家估计换算到同一尺度后相差十几倍的原因。", "en": "Acemoglu's task arithmetic under Hulten's theorem (about 0.66% TFP over ten years), the productivity J-curve, the 2023–2026 experimental and macro evidence, and why estimates on one basis differ more than tenfold." },
+      "aliases": { "zh": ["AI会提高生产率吗", "AI 生产率", "人工智能对经济增长的影响", "哈尔滕定理", "生产率J曲线", "索洛悖论", "Acemoglu AI 估计", "AI 能让GDP涨多少"], "en": ["will ai boost productivity", "ai productivity", "ai and economic growth", "hulten's theorem", "productivity j-curve", "solow paradox", "acemoglu simple macroeconomics of ai", "how much will ai raise gdp"] },
+      "relatedPages": ["scarcity-moves"]
+    }
+  ]
+}

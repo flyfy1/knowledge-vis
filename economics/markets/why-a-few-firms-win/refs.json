@@ -1,0 +1,30 @@
+{
+ "_generated": "by scripts/build-pages.cjs; do not edit",
+ "page": "why-a-few-firms-win",
+ "refs": [
+  {
+   "from": "ch1.p1",
+   "to": "scarcity-moves",
+   "anchor": "c2"
+  },
+  {
+   "from": "ch1.p1",
+   "to": "supply-demand",
+   "anchor": "step2"
+  },
+  {
+   "from": "ch3.p2",
+   "to": "game-theory",
+   "anchor": "step2"
+  }
+ ],
+ "backlinks": [],
+ "related": [
+  "supply-demand",
+  "scarcity-moves",
+  "game-theory",
+  "prisoners-dilemma",
+  "externalities"
+ ],
+ "bindings": []
+}

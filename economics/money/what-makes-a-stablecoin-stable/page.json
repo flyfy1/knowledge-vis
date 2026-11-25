@@ -1,0 +1,32 @@
+{
+  "slug": "what-makes-a-stablecoin-stable",
+  "kind": "essay",
+  "category": "economics",
+  "subtopic": "money",
+  "stage": "university",
+  "path": "economics/money/what-makes-a-stablecoin-stable/",
+  "tags": [
+    { "zh": "货币", "en": "Money" },
+    { "zh": "稳定币", "en": "Stablecoins" },
+    { "zh": "央行数字货币", "en": "CBDC" },
+    { "zh": "支付与结算", "en": "Payments & Settlement" },
+    { "zh": "长文", "en": "Long-form Essay" }
+  ],
+  "created": "2026-11-25",
+  "layout": "essay",
+  "scripts": ["models.js", "copy.zh.js", "copy.en.js", "app.js"],
+  "version": "20261125a",
+  "languages": { "en": "stub" },
+  "provenanceNote": {
+    "zh": "本文由 Claude Code（claude-opus-5-5）从零编写，直接用 Markdown 站点模板写成；英文稿待翻译；尚未经过独立评审。",
+    "en": "This essay was written from scratch with Claude Code (claude-opus-5-5), directly in the Markdown site template; the English copy is pending translation; not yet independently reviewed."
+  },
+  "dynamicKeys": {
+    "ch3.say": ["calm", "some", "often"],
+    "ch4.say": ["held", "shut", "none"],
+    "ch5.say": ["calm", "partial", "all", "default"],
+    "ch6.say": ["safe", "spiral", "saved"],
+    "ch7.say": ["low", "mid", "high", "loss"],
+    "ch8.say": ["ok", "tight", "short", "bank"]
+  }
+}

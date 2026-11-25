@@ -1,0 +1,66 @@
+{
+  "slug": "can-a-country-go-bankrupt",
+  "kind": "essay",
+  "layout": "essay",
+  "scripts": [
+    "models.js",
+    "copy.zh.js",
+    "copy.en.js",
+    "app.js"
+  ],
+  "version": "20261125a",
+  "category": "economics",
+  "subtopic": "public-finance",
+  "stage": "university",
+  "path": "economics/public-finance/can-a-country-go-bankrupt/",
+  "created": "2026-11-25",
+  "languages": {
+    "en": "stub"
+  },
+  "tags": [
+    {
+      "zh": "公共财政",
+      "en": "Public Finance"
+    },
+    {
+      "zh": "国债",
+      "en": "Government Debt"
+    },
+    {
+      "zh": "养老金",
+      "en": "Pensions"
+    },
+    {
+      "zh": "宏观经济",
+      "en": "Macroeconomics"
+    },
+    {
+      "zh": "长文",
+      "en": "Long-form Essay"
+    }
+  ],
+  "dynamicKeys": {
+    "ch3.say": [
+      "conv",
+      "explode",
+      "shrink",
+      "drift",
+      "flat"
+    ],
+    "ch4.say": [
+      "default",
+      "inflate",
+      "mild",
+      "buffer",
+      "calm"
+    ],
+    "ch8.say": [
+      "down",
+      "up"
+    ],
+    "ch9.say": [
+      "us",
+      "jp"
+    ]
+  }
+}

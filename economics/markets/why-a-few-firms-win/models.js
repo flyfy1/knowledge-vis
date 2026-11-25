@@ -213,6 +213,14 @@
     oneSided(o = {}) { // the same platform pricing each side as if the other did not exist (α = 0)
       return this.monopoly(0, 0, o);
     },
+    // what those one-sided prices actually earn once the cross effects are there (participation solved with α):
+    // n1 = v1 + α1 n2 − p1, n2 = v2 + α2 n1 − p2. Review 2026-11-25: the page used to compare oneSided().profit,
+    // which is the profit in a world without cross effects, with the two-sided optimum.
+    oneSidedActual(a1, a2, o = {}) {
+      const v1 = o.v1 ?? this.v1, v2 = o.v2 ?? this.v2, one = this.oneSided(o), D = 1 - a1 * a2;
+      const n1 = ((v1 - one.p1) + a1 * (v2 - one.p2)) / D, n2 = ((v2 - one.p2) + a2 * (v1 - one.p1)) / D;
+      return { p1: one.p1, p2: one.p2, n1, n2, profit: (one.p1 - this.f1) * n1 + (one.p2 - this.f2) * n2 };
+    },
     duopoly(a1, a2) { const p1 = this.f1 + this.t - a2, p2 = this.f2 + this.t - a1; return { p1, p2, f1: this.f1, f2: this.f2, n1: 0.5, n2: 0.5 }; }
   };
 
@@ -323,7 +331,7 @@
    * figure refers to, the date it was checked, and its source (full citations in BRIEF.md, "Facts that will go stale").
    * kind: 'measured' = an analyst's or company's reported figure; 'claim' = from a party with an interest. */
   const FRONTIER = {
-    checked: '2026-11-11',
+    checked: '2026-11-11', rechecked: '2026-11-25', // rechecked: the items listed in BRIEF.md, closeout 2026-11-25
     cloud: { asOf: '2026-Q3', shares: [26, 19, 16], names: ['Amazon', 'Microsoft', 'Google'], marketBn: 167.7, growthPct: 55, kind: 'measured',
       source: 'Synergy Research Group / TechInsights, 2026-10-30' },
     foundry: { asOf: '2026-Q2', shares: [72.5, 5.9, 5.4], names: ['TSMC', 'Samsung', 'SMIC'], top10Bn: 53.49, kind: 'measured',
@@ -336,6 +344,11 @@
     openGapMonths: { months: 4, asOf: '2026-05', kind: 'measured', source: 'Epoch AI data insight, 2026-05-29' },
     enterpriseApi: { asOf: '2026-09', shares: [55, 31, 9], names: ['Anthropic', 'OpenAI', 'Google'], openSpendPct: 4, openTokenPct: 19, kind: 'claim',
       source: 'Menlo Ventures, "2026: The State of Enterprise AI", 2026-11-03 (survey of ~400 US enterprises; Menlo is an Anthropic investor)' },
+    // independent of the model makers as far as is known (a corporate-card company); measured from its customers' payments
+    rampAdoption: { asOf: '2026-10', allPct: 56.8, anthropicPct: 44.8, openaiPct: 40.6, kind: 'measured',
+      source: 'Ramp AI Index (card and bill-pay data of 85,000+ US businesses), data through 2026-10, read 2026-11-25' },
+    rampTokenSpend: { asOf: 'week to 2026-11-15', shares: [58.7, 37.2, 2.4, 1.4], names: ['Anthropic', 'OpenAI', 'xAI', 'Google'], kind: 'measured',
+      source: 'Ramp AI Index, share of token spend among businesses on Ramp, week ending 2026-11-15, read 2026-11-25' },
     hhiThreshold: { highly: 1800, delta: 100, source: 'US 2023 Merger Guidelines (kept in force 2025-02-18)' }
   };
 

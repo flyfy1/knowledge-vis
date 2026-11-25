@@ -1,0 +1,98 @@
+{
+  "slug": "what-makes-prices-rise",
+  "path": "economics/macro/what-makes-prices-rise/",
+  "category": "economics",
+  "subtopic": "macro",
+  "stage": "university",
+  "title": { "zh": "物价为什么会涨，又为什么会跌", "en": "What Makes Prices Rise, and Fall" },
+  "desc": {
+    "zh": "通胀和通缩是怎么来的：印钱为什么时灵时不灵，需求拉动和成本推动，菲利普斯曲线和预期，工资物价螺旋，财政与铸币税，债务通缩，日本和中国的低通胀，恶性通胀，以及 2021–2026 年两轮通胀的分解证据。六个可以拖动的模型和三张真实数据图。",
+    "en": "Where inflation and deflation come from: why printing money sometimes moves prices and sometimes does not, demand-pull and cost-push, the Phillips curve and expectations, wage–price spirals, deficits and seigniorage, debt deflation, low inflation in Japan and China, hyperinflation, and the evidence that decomposes the 2021–2026 inflations. Six models to drag and three charts of real data."
+  },
+  "tags": [
+    { "zh": "宏观经济", "en": "Macroeconomics" },
+    { "zh": "通胀", "en": "Inflation" },
+    { "zh": "通缩", "en": "Deflation" },
+    { "zh": "菲利普斯曲线", "en": "Phillips Curve" },
+    { "zh": "长文", "en": "Long-form Essay" }
+  ],
+  "concepts": [
+    {
+      "id": "aggregate-demand-supply-shocks",
+      "title": { "zh": "需求拉动与成本推动：两种通胀", "en": "Demand-pull and cost-push: two kinds of inflation" },
+      "desc": { "zh": "物价和产出同向走是需求冲击，反向走是供给冲击；需求冲击能被政策抵消，供给冲击只能在通胀和产出之间取舍。", "en": "Prices and output moving together signal a demand shock, moving apart a supply shock; policy can offset the first but only trade off inflation against output in the second." },
+      "aliases": {
+        "zh": ["通胀是怎么来的", "需求拉动型通胀", "成本推动型通胀", "总需求总供给", "AD-AS", "滞胀", "供给冲击", "需求冲击", "能源涨价为什么会通胀", "为什么2021年美国通胀那么高", "相对价格和通胀的区别"],
+        "en": ["what causes inflation", "demand-pull inflation", "cost-push inflation", "aggregate demand aggregate supply", "ad-as model", "stagflation", "supply shock", "demand shock", "why was inflation so high in 2021"]
+      },
+      "anchor": "#ch2",
+      "relatedPages": ["where-money-comes-from", "why-one-rate-moves-everything", "how-an-economy-is-measured"]
+    },
+    {
+      "id": "phillips-curve-slope-evidence",
+      "title": { "zh": "菲利普斯曲线的斜率：变平、移动和弯曲的证据", "en": "The Phillips curve's slope: evidence that it flattened, shifted and bends" },
+      "desc": { "zh": "美国 1960–2025 年失业率与通胀的关系在四个年代给出四种斜率；附加预期的菲利普斯曲线解释了它为什么会整条移动，2021 年后它是否变陡仍有争议。", "en": "US unemployment and inflation give four different slopes in four eras since 1960; the expectations-augmented curve explains why it shifts, and whether it steepened after 2021 is still debated." },
+      "aliases": {
+        "zh": ["菲利普斯曲线", "菲利普斯曲线变平", "失业率和通胀的关系", "附加预期的菲利普斯曲线", "加速论", "自然失业率", "NAIRU", "非线性菲利普斯曲线"],
+        "en": ["phillips curve", "flat phillips curve", "unemployment and inflation", "expectations-augmented phillips curve", "accelerationist", "natural rate of unemployment", "nairu", "nonlinear phillips curve"]
+      },
+      "anchor": "#ch3",
+      "relatedPages": ["why-one-rate-moves-everything", "how-an-economy-is-measured"]
+    },
+    {
+      "id": "inflation-expectations-anchoring",
+      "title": { "zh": "通胀预期：锚住与松动", "en": "Inflation expectations: anchored and de-anchored" },
+      "desc": { "zh": "人们对未来通胀的预期会通过工资和定价变成真的；1970 年代预期松动，2021–2023 年长期预期基本被锚住，可信度决定压通胀的代价。", "en": "Expected inflation becomes real through wages and price-setting; expectations came loose in the 1970s but long-run expectations stayed anchored in 2021–2023, and credibility sets the cost of disinflation." },
+      "aliases": {
+        "zh": ["通胀预期", "预期管理", "预期被锚定", "预期脱锚", "沃尔克", "1970年代大通胀", "家庭通胀预期", "长期通胀预期"],
+        "en": ["inflation expectations", "anchored expectations", "de-anchored expectations", "volcker disinflation", "great inflation 1970s", "michigan inflation expectations", "long-run inflation expectations"]
+      },
+      "anchor": "#ch4",
+      "relatedPages": ["why-one-rate-moves-everything", "what-the-yield-curve-says"]
+    },
+    {
+      "id": "wage-price-spiral-disinflation",
+      "title": { "zh": "工资–物价螺旋与压通胀的代价", "en": "Wage–price spirals and the cost of disinflation" },
+      "desc": { "zh": "能源冲击后工资追物价只会延长通胀、补不回实际工资；预期锚住时螺旋通常自己停下，牺牲率取决于可信度。", "en": "After an energy shock, wages chasing prices prolong inflation without restoring real wages; with anchored expectations spirals usually stop, and the sacrifice ratio depends on credibility." },
+      "aliases": {
+        "zh": ["工资物价螺旋", "工资推动通胀", "实际工资下降", "牺牲率", "压通胀要多少失业", "冲突型通胀", "工资指数化"],
+        "en": ["wage-price spiral", "wage push inflation", "real wage loss", "sacrifice ratio", "cost of disinflation", "conflict inflation", "wage indexation"]
+      },
+      "anchor": "#ch5",
+      "relatedPages": ["where-money-comes-from"]
+    },
+    {
+      "id": "deflation-debt-deflation",
+      "title": { "zh": "通缩与债务通缩：日本与中国", "en": "Deflation and debt deflation: Japan and China" },
+      "desc": { "zh": "物价下跌让固定数字的债更重，费雪的债务–通缩循环可以自我加速；日本 1990 年代以来和中国 2023–2025 年是两段长期低通胀，原因有几种并存的解释。", "en": "Falling prices make fixed nominal debt heavier and Fisher's debt-deflation loop can feed on itself; Japan since the 1990s and China in 2023–2025 are two long low-inflation episodes with competing explanations." },
+      "aliases": {
+        "zh": ["通缩为什么可怕", "通货紧缩", "债务通缩", "费雪债务通缩", "日本失去的三十年", "日本通缩", "中国CPI为什么低", "中国PPI为什么是负的", "产能过剩和物价", "大萧条物价下跌"],
+        "en": ["why is deflation bad", "deflation", "debt deflation", "fisher debt deflation", "japan lost decades", "japan deflation", "why is china cpi low", "china negative ppi", "great depression deflation"]
+      },
+      "anchor": "#ch7",
+      "relatedPages": ["where-money-comes-from", "why-one-rate-moves-everything", "where-a-mortgage-payment-goes"]
+    },
+    {
+      "id": "hyperinflation-seigniorage",
+      "title": { "zh": "铸币税与恶性通胀", "en": "Seigniorage and hyperinflation" },
+      "desc": { "zh": "印钱填赤字是一种以通胀为税率的税，它有上限；赤字超过上限，通胀就没有稳定的位置，德国 1923 年、津巴布韦 2008 年都是靠财政改革加新货币锚才结束的。", "en": "Printing money to cover a deficit is a tax with inflation as its rate, and it has a ceiling; above it inflation has no resting point, and Germany in 1923 and Zimbabwe in 2008 ended only with fiscal reform plus a new monetary anchor." },
+      "aliases": {
+        "zh": ["印钱一定通胀吗", "恶性通胀", "铸币税", "通胀税", "津巴布韦通胀", "魏玛德国通胀", "财政赤字货币化", "不愉快的货币主义算术"],
+        "en": ["does printing money cause inflation", "hyperinflation", "seigniorage", "inflation tax", "zimbabwe hyperinflation", "weimar hyperinflation", "monetising the deficit", "unpleasant monetarist arithmetic"]
+      },
+      "anchor": "#ch9",
+      "relatedPages": ["where-money-comes-from", "why-one-rate-moves-everything"]
+    },
+    {
+      "id": "inflation-decomposition-2021-2026",
+      "title": { "zh": "2021–2026 年通胀的分解证据", "en": "Decomposing the 2021–2026 inflations" },
+      "desc": { "zh": "Bernanke–Blanchard、Shapiro 的需求/供给分解、财政估计，以及 2025 年关税与 2026 年能源冲击的价格证据，各自的结论和分歧。", "en": "Bernanke–Blanchard, Shapiro's demand/supply split, fiscal estimates, and price evidence from the 2025 tariffs and the 2026 energy shock: what each finds and where they disagree." },
+      "aliases": {
+        "zh": ["2022年通胀的原因", "通胀分解", "伯南克布兰查德", "供给驱动通胀", "需求驱动通胀", "2026年能源冲击", "利润推动通胀"],
+        "en": ["what caused 2022 inflation", "inflation decomposition", "bernanke blanchard", "supply-driven inflation", "demand-driven inflation", "2026 energy shock", "greedflation"]
+      },
+      "anchor": "#ch10",
+      "relatedPages": ["why-one-rate-moves-everything", "who-pays-a-tariff"]
+    }
+  ]
+}

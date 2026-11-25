@@ -1,0 +1,35 @@
+{
+  "slug": "random-walks",
+  "kind": "essay",
+  "category": "probability",
+  "subtopic": "stochastic",
+  "stage": "university",
+  "path": "probability/stochastic/random-walks/",
+  "tags": [
+    { "zh": "概率与统计", "en": "Probability & Statistics" },
+    { "zh": "随机过程", "en": "Stochastic Processes" },
+    { "zh": "长文", "en": "Long-form Essay" }
+  ],
+  "layout": "essay",
+  "scripts": [
+    "data.js",
+    "models.js",
+    "copy.zh.js",
+    "copy.en.js",
+    "app.js"
+  ],
+  "version": "20261125a",
+  "provenanceNote": {
+    "zh": "本文由 Claude Code（claude-opus-5-5）从零编写，直接用 Markdown 站点模板写成；指数数据来自圣路易斯联储 FRED，所有数字由页面模型算出并经脚本核对。",
+    "en": "This essay was written from scratch by Claude Code (claude-opus-5-5), directly in the Markdown site template; index data from the St. Louis Fed's FRED; every number is computed by the page's own models and checked by script."
+  },
+  "dynamicKeys": {
+    "ch4.say": ["noise", "drift", "neg"],
+    "ch5.q": ["1", "5", "21", "63"],
+    "ch5.v.era": ["all", "e1", "e2", "e3"],
+    "ch5.v.say": ["above", "below", "inside"],
+    "ch6.say": ["unfav", "fair", "fav"],
+    "ch7.say": ["two", "one"],
+    "ch7.peaks": ["two", "one"]
+  }
+}

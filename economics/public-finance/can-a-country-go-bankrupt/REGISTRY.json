@@ -1,0 +1,264 @@
+{
+ "slug": "can-a-country-go-bankrupt",
+ "path": "economics/public-finance/can-a-country-go-bankrupt/",
+ "category": "economics",
+ "subtopic": "public-finance",
+ "stage": "university",
+ "title": {
+  "zh": "国家会破产吗",
+  "en": "国家会破产吗"
+ },
+ "desc": {
+  "zh": "美国欠了四十万亿美元，日本的债是 GDP 的两倍，养老金据说要发不出来了。一个国家到底会不会像公司那样破产？从家庭账和国家账的区别出发，经过赤字与债务、r − g 债务方程、本币与外币债、希腊阿根廷斯里兰卡的违约、现收现付养老金与延迟退休、财政乘数，走到 2026 年底美国、日本和中国的债务读数。七个可以拖动的模型，九张示意图。",
+  "en": "美国欠了四十万亿美元，日本的债是 GDP 的两倍，养老金据说要发不出来了。一个国家到底会不会像公司那样破产？从家庭账和国家账的区别出发，经过赤字与债务、r − g 债务方程、本币与外币债、希腊阿根廷斯里兰卡的违约、现收现付养老金与延迟退休、财政乘数，走到 2026 年底美国、日本和中国的债务读数。七个可以拖动的模型，九张示意图。"
+ },
+ "tags": [
+  {
+   "zh": "公共财政",
+   "en": "Public Finance"
+  },
+  {
+   "zh": "国债",
+   "en": "Government Debt"
+  },
+  {
+   "zh": "养老金",
+   "en": "Pensions"
+  },
+  {
+   "zh": "宏观经济",
+   "en": "Macroeconomics"
+  },
+  {
+   "zh": "长文",
+   "en": "Long-form Essay"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "deficit-primary-balance",
+   "anchor": "#ch2",
+   "title": {
+    "zh": "赤字、债务与基本收支",
+    "en": "Deficits, debt and the primary balance"
+   },
+   "desc": {
+    "zh": "赤字是流量、债务是存量；扣掉利息的基本收支才是政府当年的选择。",
+    "en": "A deficit is a flow and debt a stock; the primary balance, net of interest, is the year's policy choice."
+   },
+   "aliases": {
+    "zh": [
+     "财政赤字",
+     "赤字和债务的区别",
+     "基本赤字",
+     "国债是什么",
+     "国家和家庭的账有什么不同",
+     "国家欠钱还得起吗",
+     "借新还旧"
+    ],
+    "en": [
+     "budget deficit",
+     "national debt",
+     "primary deficit",
+     "deficit vs debt",
+     "what is government debt"
+    ]
+   },
+   "relatedPages": [
+    "why-one-rate-moves-everything",
+    "how-an-economy-is-measured"
+   ]
+  },
+  {
+   "id": "public-debt-holders-currency",
+   "anchor": "#ch4",
+   "title": {
+    "zh": "本币债与外币债：谁持有国债",
+    "en": "Own-currency vs foreign-currency debt"
+   },
+   "desc": {
+    "zh": "用自己能发行的货币借债不会被迫违约但可能通胀；外币债用完储备就违约。",
+    "en": "Debt in a currency the state issues need not be defaulted on but may be inflated away; foreign-currency debt defaults when reserves run out."
+   },
+   "aliases": {
+    "zh": [
+     "美国国债会出问题吗",
+     "谁持有美国国债",
+     "日本负债那么高为什么没事",
+     "印钱还债",
+     "原罪",
+     "外币债"
+    ],
+    "en": [
+     "is US debt a problem",
+     "who holds US debt",
+     "why is Japan's debt not a problem",
+     "original sin",
+     "foreign currency debt",
+     "can a country print money to pay debt"
+    ]
+   },
+   "relatedPages": [
+    "where-money-comes-from",
+    "why-one-rate-moves-everything"
+   ]
+  },
+  {
+   "id": "sovereign-default-restructuring",
+   "anchor": "#ch5",
+   "title": {
+    "zh": "主权违约与债务重组",
+    "en": "Sovereign default and restructuring"
+   },
+   "desc": {
+    "zh": "国家违约是一场谈判：面值减记、延期降息，现值损失远大于面值折扣；希腊、阿根廷、斯里兰卡。",
+    "en": "A sovereign default is a negotiation: face cuts, longer maturities and lower coupons, with present-value losses far above the face cut; Greece, Argentina, Sri Lanka."
+   },
+   "aliases": {
+    "zh": [
+     "主权违约",
+     "国家违约",
+     "国家会破产吗",
+     "希腊债务危机",
+     "阿根廷违约",
+     "斯里兰卡违约",
+     "债务减记"
+    ],
+    "en": [
+     "sovereign default",
+     "can a country default",
+     "can a country go bankrupt",
+     "Greek debt crisis",
+     "Argentina default",
+     "haircut"
+    ]
+   },
+   "relatedPages": [
+    "interest-rates-bonds"
+   ]
+  },
+  {
+   "id": "pension-paygo-dependency",
+   "anchor": "#ch6",
+   "title": {
+    "zh": "现收现付养老金与抚养比",
+    "en": "Pay-as-you-go pensions and the dependency ratio"
+   },
+   "desc": {
+    "zh": "缴费率 = 替代率 × 抚养比；现收现付没有会被花光的池子，只有三个数里哪个要变。",
+    "en": "Contribution rate = replacement rate × dependency ratio; a pay-as-you-go system has no pot to run dry, only three numbers one of which must move."
+   },
+   "aliases": {
+    "zh": [
+     "养老金会不会发完",
+     "养老金发不出来",
+     "现收现付",
+     "抚养比",
+     "替代率",
+     "社保缴费率"
+    ],
+    "en": [
+     "will pensions run out",
+     "pay as you go pension",
+     "dependency ratio",
+     "replacement rate"
+    ]
+   },
+   "relatedPages": [
+    "risk-pooling"
+   ]
+  },
+  {
+   "id": "retirement-age-levers",
+   "anchor": "#ch7",
+   "title": {
+    "zh": "延迟退休这根杠杆",
+    "en": "The retirement-age lever"
+   },
+   "desc": {
+    "zh": "推迟退休同时减少领钱的人、增加交钱的人；中国 2025 年起 15 年内男职工 60→63 岁。",
+    "en": "Raising the retirement age cuts retirees and adds contributors at once; China moves men from 60 to 63 over 15 years from 2025."
+   },
+   "aliases": {
+    "zh": [
+     "延迟退休",
+     "渐进式延迟退休",
+     "退休年龄",
+     "最低缴费年限",
+     "弹性退休"
+    ],
+    "en": [
+     "raising the retirement age",
+     "China retirement age reform",
+     "delayed retirement"
+    ]
+   },
+   "relatedPages": [
+    "how-an-economy-is-measured"
+   ]
+  },
+  {
+   "id": "fiscal-multiplier",
+   "anchor": "#ch8",
+   "title": {
+    "zh": "财政乘数",
+    "en": "The fiscal multiplier"
+   },
+   "desc": {
+    "zh": "政府多花一块钱一轮轮变成收入，漏出决定乘数；实证多在 0.6–1，乘数够大时刺激当年的债务比例会降。",
+    "en": "Extra spending becomes income round after round; leakages set the multiplier, empirical estimates mostly 0.6–1, and a large enough multiplier lowers the debt ratio in the stimulus year."
+   },
+   "aliases": {
+    "zh": [
+     "财政乘数",
+     "乘数效应",
+     "财政刺激有用吗",
+     "政府花钱能拉动经济吗"
+    ],
+    "en": [
+     "fiscal multiplier",
+     "multiplier effect",
+     "does fiscal stimulus work",
+     "government spending multiplier"
+    ]
+   },
+   "relatedPages": [
+    "scarcity-moves",
+    "why-one-rate-moves-everything"
+   ]
+  },
+  {
+   "id": "public-debt-2026-frontier",
+   "anchor": "#ch9",
+   "title": {
+    "zh": "2026 年的国债读数：美国、日本、中国",
+    "en": "Public debt in 2026: US, Japan, China"
+   },
+   "desc": {
+    "zh": "美国利息超过国防，日本靠 r 远低于 g，中国把隐性债换成显性债；数据与 CBO/IMF 预测分开列。",
+    "en": "US interest above defence, Japan carried by r far below g, China swapping hidden debt into official debt; data kept apart from CBO and IMF projections."
+   },
+   "aliases": {
+    "zh": [
+     "美国利息超过国防",
+     "美国国债多少",
+     "中国地方政府债务",
+     "地方融资平台",
+     "城投债",
+     "化债",
+     "隐性债务"
+    ],
+    "en": [
+     "US interest vs defense spending",
+     "how much is US debt",
+     "China local government debt",
+     "LGFV",
+     "hidden debt"
+    ]
+   },
+   "relatedPages": [
+    "why-one-rate-moves-everything"
+   ]
+  }
+ ]
+}
