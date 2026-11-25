@@ -1,6 +1,6 @@
 # HANDOFF.md — 开工前先读
 
-最后更新：2026-11-20，软件原理系列 W1（Three.js 长文）由登记者（Claude Code，claude-opus-5-5）在 `main` 上登记，team lead 已推送并部署到 `f38ea31b`（总览「已完成」里一条）。之前 2026-11-19，默认版本开关（Claude Code 平行版作为默认版本，未推送、未部署；总览「已完成」里一条）。之前 2026-11-18 登记者（Claude Code，claude-opus-5-5）登记了 9 篇已评审长文（未推送、未部署），更新了「总览」「2026-11-18 这一轮」「未上线」和「等 Yangyu 决定」；未解决的问题汇总在 [specs/essays-status-20261119.md](specs/essays-status-20261119.md)。之前 team lead 加了「2026-11-18 这一轮」和「总览」两节。之前的逐条更新记录见 git log HANDOFF.md。
+最后更新：2026-11-25，经济/投资知识图谱一轮收尾（team lead，claude-opus-5-5），见第二部分第一节。之前 2026-11-20，软件原理系列 W1（Three.js 长文）由登记者（Claude Code，claude-opus-5-5）在 `main` 上登记，team lead 已推送并部署到 `f38ea31b`（总览「已完成」里一条）。之前 2026-11-19，默认版本开关（Claude Code 平行版作为默认版本，未推送、未部署；总览「已完成」里一条）。之前 2026-11-18 登记者（Claude Code，claude-opus-5-5）登记了 9 篇已评审长文（未推送、未部署），更新了「总览」「2026-11-18 这一轮」「未上线」和「等 Yangyu 决定」；未解决的问题汇总在 [specs/essays-status-20261119.md](specs/essays-status-20261119.md)。之前 team lead 加了「2026-11-18 这一轮」和「总览」两节。之前的逐条更新记录见 git log HANDOFF.md。
 
 这份文件有两部分：
 
@@ -65,6 +65,29 @@
 ---
 
 ## 第二部分：现状
+
+### 2026-11-25 这一轮：经济/投资知识图谱（接手先读这一节，再读下面的总览）
+
+Yangyu 的目标：「建立非常好的 knowledge graph」，这一轮专注经济/投资。做法：Fable 设计图谱，Opus 子 Agent 写，另一个 Opus 评审，一个登记者串行改共享文件，team lead 提交部署。Yangyu 这一轮给的规矩（对之后的轮次也适用）：
+- 「不要专注于文章的验收，主要专注于文章的内容输出；但是对于系统结构的话，该做检查还是要做检查」：不做截图矩阵、逐状态句子核对；构建 --check、模型测试、登记/图谱/搜索 --check 照做。
+- 「尽量不要用任何可能会被判断为危险的命令」：子 Agent 不用 rm / sed -i / kill / chmod / 任何 git 写；改文件用 Edit/Write。草稿 page.json 不写 status（build-registry 拒绝 "draft"）。
+
+**计划**：[specs/essay-briefs/TASK-econ-series.md](specs/essay-briefs/TASK-econ-series.md)（Fable）——181 个概念的地图、学习路线、A–K 各篇的概念归属附录、下一批 N1–N8 任务书、§5.1 现有经济页之间 57 条缺失的边（30 个经济概念没有任何边，why-one-rate 和 scarcity-moves 是孤岛）。
+
+**已上线 / 已在 main**：
+- 图谱首屏索引压缩到 115,425 字节（格式 v3，e1bb2b41，已部署）。
+- a-fair-price-for-a-bet 已登记（新子主题 investment/derivatives，162af1f5、94c635a7）。
+- what-the-yield-curve-says（99352324）、when-buyers-cant-see-quality（97a74985）已评审；登记见本轮最后的提交。
+
+**草稿分支 `drafts/econ-20261125`（c6720449，已推送，未部署）**：15 页，均未评审。主工作区里同样是未跟踪文件（why-a-few-firms-win 是已跟踪文件的未提交修改）。每页 BRIEF.md 末尾有「Status at wrap-up 2026-11-25」。
+- 中文完成、等翻译+评审：can-a-country-go-bankrupt、who-pays-a-tariff、why-some-countries-got-rich、why-banks-run、what-sets-an-exchange-rate、what-makes-a-stablecoin-stable（没开过浏览器）、what-makes-prices-rise（没开过浏览器）、why-recessions-happen（没开过浏览器）、what-a-stock-is-worth。
+- 中英都有、等评审：random-walks、why-a-few-firms-win（已转模板，英文由 Antigravity 译本改来，提交需 Derived-From）。
+- 未完成：how-much-risk-is-worth-taking（正文完，缺 app.js 和图）、where-wages-come-from 与 where-taxes-fall（只有模型和测试，没正文；wages 的两个模型参数要先修）、how-a-crisis-spreads（只有 BRIEF）。
+
+**下一步（按顺序）**：草稿翻译 → 独立评审 → 登记（概念、别名、边按 TASK-econ-series §4）→ 部署；登记时把草稿间的纯文本链接改成 `[[...]]`；§5.1 的 57 条边（登记者已有笔记在 /tmp/agent-tasks/econ-graph/registrar/，重启会丢）；N6–N8 未开写。
+- 待定的别名归属：「风险厌恶」→ certainty-equivalent-insurance、「信息不对称/柠檬市场」→ lemons-market（柠檬那篇登记时处理）；「节俭悖论/衰退」从 spending-is-income 移到 why-recessions-happen；SVB 别名移到 why-banks-run 的利率风险概念；税负归宿一组在 tariff 与 where-taxes-fall 之间要定；「影子银行」在 why-banks-run 与 how-a-crisis-spreads 之间要定；随机游走/布朗运动别名从 a-fair-price-for-a-bet ch5 移到 random-walks。
+- 已知注意点：market-failure 的四个别名（信息不对称、柠檬市场等）是在生成的 `atlas/graph/lessons/scarcity-moves.json` 里手删的；重新导入 scarcity-moves 会把它们带回来，与 lemons-market 打平，导入后要再删一次（或改 demos/scarcity-moves/REGISTRY.json 本身）。a-fair-price-for-a-bet 的 browser.cjs 在登记后报了一个 Node 错误，没查。
+- 已知小问题：atlas/tests/browser.cjs 卡在 power-converters、kepler-orbits 两处旧锚点；who-pays-a-tariff 目录有个多余的 page.css.tmp、why-banks-run 有两个无引用的 figures/ch6-model.html、ch8-model.html，要用 `git rm`/手动清掉。
 
 ### 总览：现在到哪了（2026-11-18，接手先读这一节）
 
