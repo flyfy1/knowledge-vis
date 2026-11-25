@@ -142,3 +142,110 @@ units and all dates are literals in content.zh.md, pinned against `FRONTIER` in 
   equations or finite differences, none on futures and margin, none on the normal distribution's tails as such.
   The essay explains each from scratch and links compound-interest, expected-value, central-limit-theorem,
   exponents-logarithms, binomial-normal, monte-carlo, derivative, interest-rates-bonds, diversification, risk-return.
+
+## Closeout 2026-11-25 (Claude Code, claude-opus-5-5)
+
+Before this pass: Chinese done, Haiku English done (the "Chinese only / stub" wording at the top of this file is
+historical), not reviewed. Still not independently reviewed and not registered.
+
+### Fixed
+
+- **ch7, wrong claim**: "μ, whatever it is set to, does not change this result" (the seller's mean P&L when realised ≠
+  priced volatility). An independent Python simulation (scratch dir, own RNG, 3,000 paths × 252 rebalances) gives, for
+  realised 10%: +3.99 (μ 0), +3.90 (μ 4%), +3.06 (μ 15%), +1.95 (μ 30%); realised 30%: −4.02, −4.02, −3.89, −3.49. μ
+  changes the size, not the sign; at realised = priced vol the mean stays ≈ 0 for every μ. Prose (zh/en) and the
+  chapter's limits paragraph now say that and that the bound numbers depend on μ = 4%.
+- **ch9 live sentence, false branch**: when |iv80 − iv120| < 1 point the lab said "both wings are above the middle: a
+  smile" even when they were not (grid of ρ −0.9…0.9 × ξ 0.15…1.0, seed 1: eight states, e.g. ρ 0, ξ 0.15 →
+  20.4 / 20.0 / 20.0; ρ −0.1, ξ 0.15 → 20.6 / 20.0 / 19.8). New branch `ch9.say.small` ("the wings differ by less
+  than 1 point; the shape is hidden by Monte Carlo error"); app.js condition split; browser.cjs drives it (ρ 0, ξ 0.15).
+- **ch11 d2, unsupported attribution**: "FIA attributes the fall to India's regulatory tightening". The FIA page
+  (opened 2026-11-25) does not mention India; it says most of the fall came from equity contracts (−48.8%, 185.0 →
+  94.8 bn). Now says that (FRONTIER.fia2025.equityChgPct, binding f.fiaEqChg) and that the page names no cause.
+- **ch10, Bryzgalova–Pavlova–Sikorskaya**: "most of the loss is on the bid–ask spread" is not in the abstract (LBS
+  Research Online record, opened 2026-11-25). The abstract says retail favour cheaper weekly options with an average
+  bid–ask spread of 12.6% and lose money on average; the prose now says exactly that.
+- **LTCM 元/yuan**: "每 1 元资本对应 30 元债务" / "30 yuan of debt per 1 yuan" → 美元 / US dollars (Federal Reserve
+  History: "about $30 in debt for every $1 of capital" at end-1997; −44% in August; fourteen firms, $3.625 bn).
+- **ch11 e2**: the plain-text title of why-one-rate-moves-everything (now live) is a link `[[why-one-rate-moves-everything]]`.
+- **English**: "7.0 times of the formula price" → "7.0 times the formula price" (both ch8 smile sentences); tails
+  sentences reworded ("… such days; the data has N, X times as many"); singular units (new `u.*.one` keys, chosen in
+  `t()` when v is 1: "once", "1 day", "1 year" instead of "1 times", "1 days"); "A {n}-step tree"; "Rebalancing {n}× a
+  year"; "Margin calls over 120 days: {n}"; the closeout sentence no longer runs a capitalised clause after a colon.
+- Generic example amounts stay in "yuan" in English (the running example is a fictional stock; zh says 元); only
+  real-world amounts (LTCM, AIG, BIS) are in US dollars. A reviewer may prefer a neutral unit; that would be a
+  page-wide change and was not made.
+- page.json: provenance note names the authoring model, the Haiku translation and this closeout; version
+  20261125a; `"status": "draft"` per the 2026-11-25 round's rule (COMMON.md). Note: `build-registry.cjs --check`
+  rejects `"draft"` ("leave it out while the page is a draft") — same as the other drafts of this round; the registrar
+  flips it to live. tests/models.cjs now accepts status absent or "draft". Rebuild also picked up site-template drift
+  (site-nav.css key).
+
+### Verified (independently re-derived, scratch scripts in /tmp/agent-tasks/econ-graph/a-fair-price/)
+
+Plain Python, no code shared with models.js: forward 104.08 / gap 5.92; BS C 9.93, P 6.00, C − P 3.92; one-step
+q 60.2%, B 38.43, price 11.57, naive 15.37 / 5.76; CRR 3 / 50 / 500 steps 10.54 / 9.89 / 9.92 (errors 0.073, −0.040,
+−0.020, −0.010 at N 25, 50, 100, 200: halving per doubling, so "1/N" and "doubling halves the gap" hold), European /
+American put 6.00 / 6.40; Hull's examples (one-step p 0.6523, f 0.633; 42/40 → 4.76 / 0.81; five-step American put
+4.49); N(d1) 0.618, 61.79 / 51.87; Γ 0.0191, vega 0.38/pt, Θ 0.016/day; explicit-scheme bound Nt ≥ σ²M² + 1 →
+145 / 2,305; hedging sd 3.27 / 0.95 / 0.44 at n 4 / 52 / 252 (page 3.12 / 0.95 / 0.44 on 1,500 paths), wrong-vol
+means −3.98 / +3.89 (page −3.98 / +3.86, theory 3.98 / 3.90 — note V(σi) − V(σr) = 3.83 / 3.75 is *not* the right
+reference; the page's Γ-integral quadrature is); SPX parity forward 7,360 / 7,432, my Black-76 IVs within 0.13 vol
+points of Cboe's for moneyness 0.72–1.12, ATM 20.2%, 90% put 31.3%, price ratio 7.05 (March: 2.33); tails sd 1.28%,
+5σ expected 0.008 vs 43 observed, 1987 z −9.48, log10 p −20.9; Heston by characteristic function (own code)
+25.4 / 19.0 / 14.5% at 80 / 100 / 120 against the page's Monte Carlo 25.5 / 19.1 / 14.5%; Broadie–Kaya case
+6.8061 reproduced; margin closeout 82.5% and "closed and ended above 100" 30.5% on 20,000 own paths (page 82% / 29%
+on 400); netting 560 / 140 / 20; min-variance cuts 56% / 29%, risk back to unhedged at 2h*.
+
+Sources reopened 2026-11-25: Federal Reserve History LTCM (all four figures confirmed); FIA ETD volume December 2025
+(totals confirmed; India attribution not there, fixed); SEC Treasury clearing implementation page (last updated
+2026-11-05: dates still 2026-12-31 / 2027-06-30; a September 2025 Uyeda statement said no further extensions were
+intended); arXiv:2605.21696 (Zernikov, 20 May 2026: under-hedging relative to BS Δ, better in most of 2015–2023,
+fragile in 2022 and 2023 — the page's summary matches; it mentions 2022 only, which is fine); BPS abstract (fixed).
+CryptoQuant 61.8 tn: secondary coverage says 61.8, CryptoQuant's own post reportedly 61.7; CryptoQuant page returned
+403. Left as 声称 with the existing "not verified" wording.
+
+### Still not verified
+
+- BIS end-2025 OTC figures: the BIS release was not found (otc_hy2605 404; the BIS "latest" commentary is still
+  end-June 2025); the ISDA PDF returned 403. Page keeps saying "only ISDA's summary".
+- "India has been the largest index-options market by contracts": not checked against an exchange table.
+- SEBI figures, Cboe 0DTE figures, BIS end-June 2025, AIG, 1987 DJIA: not reopened this pass (opened 2026-11-18).
+- Rubinstein (1994) attribution, Dim–Eraker–Vilkov and Brogaard–Han–Won: not reopened.
+- Haiku translator model id is not recorded anywhere; the provenance note says "Haiku".
+
+### Checks run
+
+`node scripts/build-pages.cjs investment/derivatives/a-fair-price-for-a-bet` and `--check` (OK); tests/models.cjs;
+tests/browser.cjs (zh and en, 1280 / 390 / 320, screenshots in the scratch dir, looked at: diagrams, labs 8, 9, 9m);
+tests/canvas-text-overlap.cjs --sweep (first run: 36 findings, all English at 320 px — the ch8 tails x-axis label
+and the ch10 lower chart's y-axis label ran outside the canvas; both labels shortened, "Daily return (standard
+deviations) →" and "↑ Revenue std. dev. (yuan)"; the sweep was not rerun after the fix, per the 2026-11-25 instruction
+to drop acceptance polish — rerun it at review). Final: build --check OK, models.cjs 1688/1688, browser.cjs 197/197
+(zh + en, three widths, no console errors, includes the new ch9.say.small branch).
+- Hedging sd at n = 4: page 3.12 (1,500 paths, seed 1) against my 3.27 (8,000 paths) and Kamal–Derman 3.38; within
+  sampling error of a fat-tailed P&L, but the prose number is a single seeded draw.
+
+## Independent review 2026-11-25
+
+Verified-By: Claude Code (claude-opus-5-5), a separate session from the writer and the closeout; scope: content,
+equations, sourced facts in ch8/10/11, English wording. Full record:
+specs/reviews/a-fair-price-for-a-bet-review-20261125.md.
+
+New sources opened 2026-11-25 (add to the table above when the registrar touches it):
+- SEBI study PDF https://www.sebi.gov.in/sebi_data/attachdocs/aug-2026/1787233601328.pdf (text extracted): n = 78.6
+  lakh, 87.7% loss-makers FY26, 0.5% profitable / 65.6% loss-making in all five years FY22–FY26, 97% predominantly
+  options buyers. All confirmed.
+- FIA MarketVoice, K. Hyde, 2026-02-26, https://www.fia.org/marketvoice/articles/global-etd-trading-fell-2025-india-crackdown-hits-options-volume:
+  decline "overwhelmingly concentrated in Indian equity index options", attributed to SEBI rule changes. The ch11 d2
+  attribution is restored with this source.
+- WFE 2025 data via FOW (2026-02-27), https://www.fow.com/insights/derivatives-trading-volume-decrease-in-2025-wfe-data:
+  stock-index options 38.7% of all derivatives contracts, 88.9% of them on NSE. Supports "India is the largest
+  index-options market by contracts" (now stated with this figure).
+- Cboe, State of the Options Industry Q2 2026: ADV 72.8 mn (+19%); 0DTE "up 46.2% year-to-date to more than 20 million
+  contracts a day" — year-to-date, not Q2; prose corrected.
+- Cboe July 2026 volume release (search summary): 0DTE 66.2% of SPX volume, record. Confirmed.
+- SEC Treasury clearing implementation page and Uyeda statement of 2026-08-07: dates 2026-12-31 / 2027-06-30 unchanged.
+- ISDA "Key Trends … Second Half of 2025" (search summary only; PDF not opened): 844.6 tn / 22.8 tn. BIS's own
+  end-2025 release still not found; page keeps "only ISDA's summary".
+- CryptoQuant FY2025 review page: 403. Secondary coverage gives 61.7 and 61.8 tn (spot 18.6 tn); prose now says so.

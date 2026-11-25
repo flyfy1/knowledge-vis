@@ -19,6 +19,12 @@ u.money: {v} yuan
 u.steps: {v} steps
 u.times: {v} times
 u.shares: {v} shares
+u.yr.one: 1 year
+u.mo.one: 1 month
+u.day.one: 1 day
+u.steps.one: 1 step
+u.times.one: once
+u.shares.one: 1 share
 u.none: none
 u.every: about once every {v} years
 u.everyDays: about once every {v} trading days
@@ -33,7 +39,7 @@ opt.call: call option
 kicker: Investment · Derivatives · A hands-on essay
 :::
 
-Nobody knows the share price a year from now.<br>Yet contracts that bet on it trade tens of millions of times a day at nearly the same price. {.sub}
+Nobody knows the share price a year from now.<br>Yet options on it change hands thousands of times a day at nearly the same price. {.sub}
 
 You and a friend bet on whether a certain stock will rise above 100 yuan next year. You think the odds are 80%, and he thinks only 30%. The two of you see the future so differently that the bet seems to be worth whatever each of you says. But in the options market, a contract like this is quoted at almost the same price by the buyer who expects a rise and the seller who expects a fall; the difference is only a few cents. This essay asks just one question: **how can a bet whose outcome nobody knows have a price everyone accepts?** The answer has three parts. Chapters 1–4 explain where this price comes from: it is not predicted, but assembled from other things. Chapters 5–7 push the assembly into continuous time, arrive at the Black–Scholes formula, and show how a seller hedges with it every day. Chapters 8–11 cover where this approach fails, how the market has responded, and the state of things in November 2026. {.lead}
 
@@ -45,7 +51,7 @@ Prerequisites: [[compound-interest]] (discounting), [[expected-value]] (expectat
 toc: Forward price is not a forecast
 :::
 
-A contract to buy or sell at a price fixed today, one year from now, does not depend on anyone's view of what will happen in that year. Its price equals today's price plus the net cost of holding the item for a year; otherwise someone could make money without taking any risk. {.law}
+The price of a contract to buy or sell in a year's time, at a price fixed today, does not depend on anyone's view of what will happen in that year. Its price equals today's price plus the net cost of holding the item for a year; otherwise someone could make money without taking any risk. {.law}
 
 A bakery fears that flour will rise in price next year, and a farm fears that wheat will fall in price next year. Today they sign a contract: in a year, the farm delivers wheat at 2,600 yuan a ton, the bakery pays that price, and the market price at that time does not matter. Such a contract is called a **forward**; the standardised version traded on an exchange, with gains and losses settled every day, is a **futures** contract. It is the simplest derivative: it has no value of its own, and its value is derived from the price of something else (wheat).
 
@@ -265,7 +271,7 @@ cv.x: Number of steps N →
 cv.y: ↑ Price (yuan)
 cv.bs: Formula (European)
 cv.aria: Line chart: the binomial tree price converges in a zigzag to the formula price as the number of steps increases
-say.eu: A tree of {n} steps gives {tree} yuan; the formula gives {bs} yuan; the difference is {diff} yuan. Doubling the steps roughly halves the gap.
+say.eu: A {n}-step tree gives {tree} yuan; the formula gives {bs} yuan; the difference is {diff} yuan. Doubling the steps roughly halves the gap.
 say.amPut: The American put on a {n}-step tree is worth {tree} yuan, {early} yuan more than the European put on the same tree. There is no ready formula for this part; it has to be computed on a tree (or with another numerical method).
 say.amCall: The American call on a non-dividend stock on a {n}-step tree is worth {tree} yuan, exactly the same as the European call: the right to exercise early is worth nothing.
 :::
@@ -286,7 +292,7 @@ A drunk takes one random step left or right every second. After 100 steps he is 
 
 On the tree, the stock price is multiplied by u or d at each step. Take logarithms, and each step adds or subtracts σ√Δt, which is exactly a random walk. After N steps, the log price is the sum of N independent small random numbers. [[binomial-normal]] and [[central-limit-theorem]] showed that such sums tend toward a normal distribution. So when N is large, ln(S<sub>T</sub>/S<sub>0</sub>) is normally distributed with standard deviation σ√T. This limit is called **geometric Brownian motion**. "Brownian motion" is the continuous limit of the random walk; "geometric" means that it acts on percentage changes (logarithms), so the price never becomes negative.
 
-σ is the **volatility**: the standard deviation of the log return over one year. σ = 20% means that after a year the stock has about a two-thirds chance of lying within 20% either side of the median. For another horizon, multiply by the square root of time: one trading day (1/252 of a year) gives {=ch5.day}, one month gives {=ch5.month}, and four years gives {=ch5.y4}, not 80%.
+σ is the **volatility**: the standard deviation of the log return over one year. σ = 20% means that after a year the log return has about a two-thirds chance of lying within 0.2 either side of the median; in price terms, between about 0.82 and 1.22 times the median. For another horizon, multiply by the square root of time: one trading day (1/252 of a year) gives {=ch5.day}, one month gives {=ch5.month}, and four years gives {=ch5.y4}, not 80%.
 
 ::: lab ch5-model
 model.title: Thirty possible paths
@@ -349,7 +355,7 @@ st: New point = weighted sum of the three below
 edge: Edge values known
 :::
 
-A computer solves this equation much as it solves the tree (Figure 5): it works backward from expiry across the grid. The most direct method is called the **explicit scheme**, in which each new point is a weighted sum of three old points. It has one flaw: if the time step is too large, some weights become negative, errors are amplified at every step, and the result blows up. The **Crank–Nicolson scheme** solves a system of linear equations at each step and is stable at any step size.
+A computer solves this equation much as it solves the tree (Figure 5): it works backward from expiry across the grid. The most direct method is called the **explicit scheme**, in which each new point is a weighted sum of three old points. It has one flaw: if the time step is too large, some weights become negative, errors are amplified at every step, and the result blows up. The **Crank–Nicolson scheme** solves a system of linear equations at each step and does not blow up at any step size (with very large steps it leaves small wiggles near the corner, but they are not amplified).
 
 ::: lab ch6-model
 model.title: Watch the corner spread out
@@ -398,7 +404,7 @@ How to hedge depends on how sensitive the option's value is to each input. These
 {.gl}
 - **Δ (Delta)** = ∂V/∂S = {=ch7.delta}. If the stock rises 1 yuan, the option rises by about {=ch7.delta} yuan. It is also the number of shares in the replicating portfolio. {#g1}
 - **Γ (Gamma)** = ∂²V/∂S² = {=ch7.gamma}. If the stock rises 1 yuan, Δ rises by this much. The larger Γ, the more often the hedge must be adjusted. {#g2}
-- **Vega** = ∂V/∂σ. If volatility is 1 percentage point higher, the option costs {=ch7.vega1} yuan more. Vega is not a Greek letter, but everyone calls it that. {#g3}
+- **Vega** = ∂V/∂σ. If volatility is 1 percentage point higher, the option costs {=ch7.vega1} yuan more. Vega is not a Greek letter, but it is counted among the Greeks all the same. {#g3}
 - **Θ (Theta)** = ∂V/∂t. With nothing else changing, the option loses {=ch7.thetaDay} yuan per day. {#g4}
 
 ::: lab ch7-model
@@ -427,7 +433,7 @@ say.theta: Stock at {s} yuan, {t} left: with nothing else changing, the option l
 Γ and Θ are a pair. Compare the terms in the equation: once directional risk is hedged, the holder loses a little each day through Θ and gains a little from the stock's actual moves through Γ. If the actual volatility equals σ, the two average out. That is what the equation says.
 
 ::: diagram dg-loop keys=dg.loop
-cap: Figure 6 The seller's hedging loop. When the stock rises, Δ grows and more shares must be bought; when it falls, some must be sold. The seller always buys high and sells low, losing a little on each turn. Over many turns, in the ideal case, these losses add up to exactly the premium received at the start. Schematic.
+cap: Figure 6 The seller's hedging loop. When the stock rises, Δ grows and more shares must be bought; when it falls, some must be sold. The seller always buys high and sells low, losing a little on each turn. In the ideal case the premium received at the start is exactly enough to run the loop to the end: at expiry the shares held minus the loan equal the payoff owed to the buyer. Schematic.
 aria: Diagram: selling an option collects the premium; buy Δ shares; the stock moves and Δ changes; buy or sell shares to restore Δ; the cycle repeats until expiry, when the payoff is paid and the position closed
 b1: Sell option, collect premium
 b2: Buy Δ shares
@@ -455,16 +461,16 @@ cv.y: ↑ Number of paths
 cv.zero: Zero profit and loss
 cv.mean: Mean profit and loss
 cv.aria: Histogram: the distribution of the seller's profit and loss at expiry after hedging
-say.fair: Real volatility equals the 20% used in pricing. With {n} rebalances, the mean profit and loss is {mean} yuan (statistical error ±{se} yuan), with a standard deviation of {sd} yuan, which is {rel} of the premium. Multiply the number of rebalances by 4 and the standard deviation roughly halves.
+say.fair: Real volatility equals the 20% used in pricing. Rebalancing {n}× a year, the mean profit and loss is {mean} yuan (statistical error ±{se} yuan), with a standard deviation of {sd} yuan, which is {rel} of the premium. Multiply the number of rebalances by 4 and the standard deviation roughly halves.
 say.calm: Real volatility is only {r}, below the 20% used in pricing: the seller earns {mean} yuan on average (theoretical {theory} yuan). The market is calmer than the seller assumed when setting the price, so buying high and selling low costs less than the premium received.
 say.wild: Real volatility is {r}, above the 20% used in pricing: the seller loses {loss} yuan on average (theoretical {theory} yuan). No amount of rebalancing helps; more frequent rebalancing narrows the distribution but does not change its centre.
 :::
 
 Two results. First, with real volatility equal to 20%, rebalancing 4 times a year gives a standard deviation of profit and loss of {=ch7.sd4} yuan; 52 times gives {=ch7.sd52} yuan; 252 times gives {=ch7.sd252} yuan, which is only {=ch7.rel252} of the premium. The standard deviation shrinks roughly as 1/√n, and the mean stays near 0. This is what replication looks like in practice: the {=ch6.C} yuan is not a forecast of the option's payoff; it is the cost of hedging with Δ over a year.
 
-Second, drag the real volatility to 30% and the seller's average loss is {=ch7.loss30} yuan; drag it to 10% and the average gain is {=ch7.gain10} yuan. The average growth rate μ, whatever it is set to, does not change this result. The seller bears exactly one risk: that real volatility differs from the volatility used in pricing. That is why traders say that **options trade volatility**. A buyer of an option is betting that future volatility will be larger than the price implies; a seller bets that it will be smaller. Whether the stock rises or falls does not matter to either side once the position is hedged.
+Second, drag the real volatility to 30% and the seller's average loss is {=ch7.loss30} yuan; drag it to 10% and the average gain is {=ch7.gain10} yuan. The stock's average growth rate μ can change the size of this number (it decides how long the stock spends near the strike, where Γ is large), but not its sign; and when real volatility is 20%, the mean profit and loss stays near 0 whatever μ is. The seller bears exactly one risk: that real volatility differs from the volatility used in pricing. That is why traders say that **options trade volatility**. A buyer of an option is betting that future volatility will be larger than the price implies; a seller bets that it will be smaller. Whether the stock rises or falls does not matter to either side once the position is hedged.
 
-This simulation has no transaction costs or bid–ask spreads, no price jumps, and constant volatility along each path. In reality, the more often you rebalance, the higher the trading costs, so there is no such thing as infinitely frequent hedging. Once the price jumps (Chapter 8), Δ cannot be adjusted in time, and the loss is one-off. The simulation uses μ = 4%; with other values, discrete rebalancing introduces a small bias, which gets smaller the more often you rebalance. {.take}
+This simulation has no transaction costs or bid–ask spreads, no price jumps, and constant volatility along each path. In reality, the more often you rebalance, the higher the trading costs, so there is no such thing as infinitely frequent hedging. Once the price jumps (Chapter 8), Δ cannot be adjusted in time, and the loss is one-off. The simulation uses μ = 4% (equal to the interest rate), and the figures in the second result depend on that choice. When real volatility equals the pricing volatility, another μ only adds a small bias from discrete rebalancing, which gets smaller the more often you rebalance. {.take}
 
 ## Where It Breaks Down {#ch8}
 
@@ -495,14 +501,14 @@ cv.y: ↑ Implied volatility
 cv.pts: Inverted from market quotes
 cv.flat: The formula's world: a flat line
 cv.aria: Scatter plot: implied volatility of S&P 500 index options against strike, higher on the left and lower on the right
-say.below: Strike {k} points, {off} below the forward: the market price of this {opt} is {mkt} points, with implied volatility {iv}. Plugging in the at-the-money {atm} gives only {flat} points. The market price is <em>{ratio}</em> of the formula price.
-say.above: Strike {k} points, {off} above the forward: the market price of this {opt} is {mkt} points, with implied volatility {iv}. Plugging in the at-the-money {atm} gives {flat} points; the market price is {ratio} of that.
+say.below: Strike {k} points, {off} below the forward: the market price of this {opt} is {mkt} points, with implied volatility {iv}. Plugging in the at-the-money {atm} gives only {flat} points. The market price is <em>{ratio}</em> the formula price.
+say.above: Strike {k} points, {off} above the forward: the market price of this {opt} is {mkt} points, with implied volatility {iv}. Plugging in the at-the-money {atm} gives {flat} points; the market price is {ratio} that.
 say.atm: Strike {k} points, almost exactly the forward: implied volatility {iv}, which is the at-the-money level. Drag left to see how much more expensive the put that protects against a crash is.
 :::
 
 The chart is not flat; it is higher on the left. In the December expiry group, the at-the-money implied volatility is {=ch8.atm}, and that of the put with a strike 10% below the forward is {=ch8.p90}. Put in price terms: this put's market price is {=ch8.ratio} times the price from plugging the at-the-money volatility into the formula. This shape is called a **volatility smile**. On stock indices it is lopsided, and it is also called a **skew**. Researchers have recorded that before the October 1987 crash the effect was barely visible on US index options, and that it has persisted since (Rubinstein, 1994).
 
-The forward price of {=ch1.fDec} points shown on the chart uses no interest-rate or dividend data; it is read off the option prices. By the parity of Chapter 2, C − P plotted against the strike is a straight line; where it crosses zero is the forward price, and its slope is the discount factor. Parity does not depend on a model, so this step still holds where the smile exists.
+The forward price of {=ch1.fDec} points shown on the chart uses no interest-rate or dividend data; it is read off the option prices. By the parity of Chapter 2, C − P plotted against the strike is a straight line; where it crosses zero is the forward price, and its slope is minus the discount factor (each point higher in strike lowers C − P by e<sup>−rT</sup> points). Parity does not depend on a model, so this step still holds where the smile exists.
 
 What does the smile say? Cheap puts that protect against a crash sell for several times the formula price, which shows that both buyers and sellers think a large fall is much more likely than a normal distribution gives. The historical data show why they think so.
 
@@ -515,7 +521,7 @@ read.obs: Days observed
 read.exp: Normal distribution predicts
 read.ratio: Observed ÷ predicted
 read.freq: Under a normal distribution
-cv.x: Daily return (multiples of standard deviation) →
+cv.x: Daily return (standard deviations) →
 cv.y: ↑ Days (log scale)
 cv.normal: Normal distribution
 cv.data: Observed
@@ -525,15 +531,15 @@ cv.abs: Size of returns
 cv.raw: Returns themselves
 cv.aria: Histogram: the distribution of the index's daily returns on a logarithmic vertical axis, with a normal curve; the two tails lie far above the normal curve
 cv.aaria: Line chart: autocorrelation of returns and of their sizes against the gap in trading days
-say.some: A one-day move beyond {k} standard deviations ({pct}): the normal distribution predicts {exp} days; {obs} days were observed, which is {ratio}.
-say.none: A one-day move beyond {k} standard deviations ({pct}): the normal distribution predicts {exp} days, which is {freq}; over {yrs} years, {obs} days were observed.
+say.some: A one-day move beyond {k} standard deviations ({pct}): the normal distribution predicts {exp} such days; the data has {obs}, {ratio} as many.
+say.none: A one-day move beyond {k} standard deviations ({pct}): the normal distribution predicts {exp} such days, which is {freq}; the data has {obs} in {yrs} years.
 :::
 
 From {=ch8.from} to {=ch8.to}, across {=ch8.n} trading days of the Nasdaq Composite, the standard deviation of daily returns was {=ch8.sd}. For days beyond 5 standard deviations, the normal distribution predicts {=ch8.exp5} days, while {=ch8.obs5} were observed. The kurtosis of the distribution is {=ch8.kurt}; a normal distribution has 3. This is called **fat tails**. On 19 October 1987 the index fell {=ch8.oct19}, which is {=ch8.z87} standard deviations; under a normal distribution, a day like that has a probability of about 1 in 10 to the power {=ch8.log87}. On the same day the Dow Jones Industrial Average fell {=f.djia87}. The largest single-day fall in the sample was {=ch8.worstPct}, on 16 March 2020.
 
 The lower chart shows another assumption that fails. The correlation between a return and the next day's return is only {=ch8.acfRaw1}, close to zero, so the direction is hard to predict. But the correlation between the sizes of returns one day apart is {=ch8.acfAbs1}, and it is still {=ch8.acfAbs20} twenty days apart: a large move is often followed by more large moves. This is called **volatility clustering**. In geometric Brownian motion σ is constant, so both lines should hug zero.
 
-Two famous episodes record the cost of model failure. **Long-Term Capital Management (LTCM)** had Merton and Scholes among its partners. At the end of 1997 it held about {=f.ltcmLev} yuan of debt for every 1 yuan of capital. After Russia defaulted in August 1998, spreads across markets moved against it all at once, and in a single month it lost {=f.ltcmAug} of its equity. On 23 September, {=f.ltcmFirms} banks and brokers injected about 3.6 billion US dollars and took it over. Its positions looked diversified on historical data, but in the crisis things that had been uncorrelated moved together (see the correlation discussed in [[diversification]]). **In 2008**, American International Group (AIG) sold large amounts of credit default swaps, guaranteeing bonds linked to mortgages. This is equivalent to selling deep out-of-the-money puts: steady premium income in calm times, and a total payout when things go wrong. On 16 September 2008 the New York Fed lent it up to 85 billion US dollars.
+Two famous episodes record the cost of model failure. **Long-Term Capital Management (LTCM)** had Merton and Scholes among its partners. At the end of 1997 it held about {=f.ltcmLev} US dollars of debt for every US dollar of capital. After Russia defaulted in August 1998, spreads across markets moved against it all at once, and in a single month it lost {=f.ltcmAug} of its equity. On 23 September, {=f.ltcmFirms} banks and brokers injected about 3.6 billion US dollars and took it over. Its positions looked diversified on historical data, but in the crisis things that had been uncorrelated moved together (see the correlation discussed in [[diversification]]). **In 2008**, American International Group (AIG) sold large amounts of credit default swaps, guaranteeing bonds linked to mortgages. This is equivalent to selling deep out-of-the-money puts: steady premium income in calm times, and a total payout when things go wrong. On 16 September 2008 the New York Fed lent it up to 85 billion US dollars.
 
 The implied volatilities here are inverted from midpoint prices; deep out-of-the-money options have wide bid–ask spreads, which the bars show. The return data come from one index (the Nasdaq Composite, from the FRED database of the St. Louis Fed). The numbers would differ for other indices and periods, but fat tails and clustering appear in all the major stock indices. I was unable to obtain long-run daily data for the S&P 500 from a public source, so it is not used. {.take}
 
@@ -569,6 +575,7 @@ cv.aria: Scatter plot: implied volatility from Monte Carlo under the Heston mode
 say.left: ρ = {rho}: the implied volatility at strike 80 is {lo}, and at 120 it is {hi}, {skew} higher on the left. When the stock falls, volatility rises, so low-strike options get dearer: the same direction as the real data in the last chapter.
 say.right: ρ = {rho}: the implied volatility at strike 80 is {lo}, and at 120 it is {hi}, {skew} higher on the right. When the stock rises, volatility rises, so high-strike options get dearer. Some commodity options have this shape.
 say.sym: ρ = {rho}: both wings are above the middle (80 is {lo}, 100 is {atm}, 120 is {hi}): a smile. It comes from the randomness of volatility itself; currency options often have this shape.
+say.small: ρ = {rho}: 80 is {lo}, 100 is {atm}, 120 is {hi}; the two wings differ by less than 1 percentage point. With ξ this small and ρ near 0, the shape is hidden by the Monte Carlo's statistical error: it cannot be told whether it is a skew or a smile.
 say.flat: ξ is very small: volatility barely moves at random, and the implied volatilities at all three strikes sit near {atm}, back to Black–Scholes.
 :::
 
@@ -598,10 +605,10 @@ cv.price: Price − 100
 cv.eq: Account balance
 cv.call: Margin call
 cv.aria: Line chart: futures price changes and the margin account balance, with margin calls and forced closeouts marked
-say.closed: On day {d} the account balance fell below the maintenance margin with no money to top it up, so the position was forcibly closed out at a loss of {loss} yuan, which is {frac} of the initial margin of {im} yuan. The price later reached {end} yuan: {after}
+say.closed: On day {d} the account balance fell below the maintenance margin with no money to top it up, so the position was forcibly closed out at a loss of {loss} yuan, which is {frac} of the initial margin of {im} yuan. The price later reached {end} yuan. {after}
 after.up: Had you been able to hold to the end, the trade would have made money, but you were no longer in the market.
 after.down: Holding to the end would have lost even more.
-say.calls: Over 120 days, {n} margin calls were received and {paid} yuan was topped up in total; the final profit or loss is {out} yuan. The price moved {raw} yuan in the end. With or without leverage the gain or loss is the same amount, but you had to be able to produce these {paid} yuan along the way.
+say.calls: Margin calls over 120 days: {n}, with {paid} yuan topped up in total; the final profit or loss is {out} yuan. The price moved {raw} yuan in the end. With or without leverage the gain or loss is the same amount, but you had to be able to produce these {paid} yuan along the way.
 say.quiet: Over 120 days the account balance never fell below the maintenance margin. The price moved {raw} yuan in the end; that is your profit or loss, which is {frac} of the {im} yuan of margin.
 :::
 
@@ -650,7 +657,7 @@ cv.y: ↑ Count
 cv.raw: Unhedged
 cv.hed: Hedged
 cv.cx: Hedge ratio h →
-cv.cy: ↑ Standard deviation of revenue (yuan)
+cv.cy: ↑ Revenue std. dev. (yuan)
 cv.aria: Histogram: the distribution of the farm's revenue before and after hedging
 cv.caria: Line chart: the standard deviation of revenue against the hedge ratio, lowest at the optimal ratio
 say.under: Hedge ratio {h}: the standard deviation falls from {sd0} yuan to {sd} yuan, a reduction of {cut}. The optimal {hs} has not yet been reached; selling more futures would reduce it further.
@@ -672,7 +679,7 @@ n: Notional {=f.bisNotional} trillion US dollars
 g: Gross market value {=f.bisGmv} trillion US dollars
 :::
 
-Evidence on retail outcomes is direct. By number of contracts traded, India has in recent years been the largest index-options market in the world. The Securities and Exchange Board of India (SEBI), in a study published in August 2026, tracked the profits and losses of about 7.86 million individual traders in equity derivatives over the financial year 2025–26: {=f.sebiLoss} of them lost money after transaction costs. Across the three earlier financial years, 2021–22 to 2023–24, the combined figure was {=f.sebiLoss3}. Among those who took part in all five financial years, only {=f.sebiWin5} made money every year, and {=f.sebiLose5} lost money every year. About {=f.sebiBuyers} of individual traders mainly bought options. US academic research (Bryzgalova, Pavlova and Sikorskaya, Journal of Finance, 2023) also finds that retail investors favour very short-dated options and on average lose money, most of it on the bid–ask spread. These studies describe aggregates, not a forecast for any individual's result.
+Evidence on retail outcomes is direct. By number of contracts traded, India is the largest index-options market in the world: according to the World Federation of Exchanges (WFE), 88.9% of the world's stock-index option contracts in 2025 traded on the National Stock Exchange of India. The Securities and Exchange Board of India (SEBI), in a study published in August 2026, tracked the profits and losses of about 7.86 million individual traders in equity derivatives over the financial year 2025–26: {=f.sebiLoss} of them lost money after transaction costs. Across the three earlier financial years, 2021–22 to 2023–24, the combined figure was {=f.sebiLoss3}. Among those who took part in all five financial years, only {=f.sebiWin5} made money every year, and {=f.sebiLose5} lost money every year. About {=f.sebiBuyers} of individual traders mainly bought options. US academic research (Bryzgalova, Pavlova and Sikorskaya, Journal of Finance, 2023) also finds that retail investors favour cheap weekly options, whose bid–ask spread averages 12.6% of the price, and that on average they lose money. These studies describe aggregates, not a forecast for any individual's result.
 
 The statistics in this section show only what happened. Chapters 7 and 8 give two mechanical reasons why. Buying an option means paying Θ every day, and only real volatility above the volatility implied in the price can make that back. For short-dated, deep out-of-the-money options, the bid–ask spread is a large share of the price. The hedging model takes spot and futures prices to be jointly normal, with a constant correlation; in a crisis correlations jump, which is the lesson of LTCM. {.take}
 
@@ -690,15 +697,15 @@ The figures in this chapter will go stale. Each entry is followed by the date it
 
 {.fl}
 - <span class="tag h">Established</span>The no-arbitrage pricing framework (replication, risk-neutral pricing, Black–Scholes–Merton) is textbook material and has not been overturned since 1973. What has been revised is its assumptions about the stock-price process (Chapters 8 and 9). {#e1}
-- <span class="tag h">Established</span>LIBOR has been retired: the US-dollar LIBOR panel ceased publication on 30 June 2023. US-dollar interest-rate derivatives now mainly reference the Secured Overnight Financing Rate (SOFR), which stood at {=f.sofr} on 16 November 2026. About {=f.irdShare} of global notional is in interest-rate derivatives (BIS, end-June 2025), so this change of benchmark rewrites the largest block of the whole market. How interest rates themselves move all kinds of prices is covered in another long essay, "Why One Central Bank Rate Moves Everything." {#e2}
-- <span class="tag h">Established</span>Central clearing of US Treasuries: in December 2023 the US Securities and Exchange Commission adopted a rule requiring eligible Treasury cash and repo transactions to be cleared through a clearing house. On 25 February 2025 it extended the compliance dates by a year: 31 December 2026 for cash and 30 June 2027 for repo. These are the dates I found when writing; I did not confirm on the SEC's pages whether they have been changed again since. {#e3}
+- <span class="tag h">Established</span>LIBOR has been retired: the US-dollar LIBOR panel ceased publication on 30 June 2023. US-dollar interest-rate derivatives now mainly reference the Secured Overnight Financing Rate (SOFR), which stood at {=f.sofr} on 16 November 2026. About {=f.irdShare} of global notional is in interest-rate derivatives (BIS, end-June 2025), so this change of benchmark rewrites the largest block of the whole market. How interest rates themselves move all kinds of prices: see [[why-one-rate-moves-everything]]. {#e2}
+- <span class="tag h">Established</span>Central clearing of US Treasuries: in December 2023 the US Securities and Exchange Commission adopted a rule requiring eligible Treasury cash and repo transactions to be cleared through a clearing house. On 25 February 2025 it extended the compliance dates by a year: 31 December 2026 for cash and 30 June 2027 for repo. A statement by SEC Commissioner Uyeda on 7 August 2026 still works towards these two dates; they have not been pushed back again. {#e3}
 
 ### Measured or demonstrated {#h.dem .sub3}
 
 {.fl}
 - <span class="tag m">Measured</span>The size of the OTC market (BIS): at the end of June 2025 the notional amount was {=f.bisNotional} trillion US dollars, up {=f.bisYoy} on a year earlier, and the gross market value was {=f.bisGmv} trillion US dollars. The International Swaps and Derivatives Association (ISDA), in its summary of the BIS data for end-2025, gives {=f.bisDecNotional} trillion and {=f.bisDecGmv} trillion US dollars; I have seen these figures only as ISDA's summary. The BIS triennial survey shows that OTC interest-rate derivatives turnover in April 2025 was {=f.triIrd} trillion US dollars a day. {#d1}
-- <span class="tag m">Measured</span>Exchange volumes by number of contracts (Futures Industry Association, FIA): in 2025 global exchange-traded derivatives volume was 119.29 billion contracts, down {=f.fiaChg} from 2024. Options accounted for 88.65 billion, down {=f.fiaOptChg}; futures for 30.64 billion, up {=f.fiaFutChg}. FIA attributes the fall to India's regulatory tightening of retail index-options trading. Contract counts are not amounts of money: an Indian contract is small in value. {#d2}
-- <span class="tag m">Measured</span>Same-day expiries (0DTE): according to Cboe data, in July 2026 {=f.zeroShare} of S&P 500 index option volume expired the same day, the highest monthly share Cboe has published. In the second quarter of 2026, US-listed options averaged 72.8 million contracts a day, of which more than 20 million were same-day expiries. As Chapter 7 showed, the closer to expiry, the larger Γ: the value of these contracts is extremely sensitive to the index in the last few hours. {#d3}
+- <span class="tag m">Measured</span>Exchange volumes by number of contracts (Futures Industry Association, FIA): in 2025 global exchange-traded derivatives volume was 119.29 billion contracts, down {=f.fiaChg} from 2024. Options accounted for 88.65 billion, down {=f.fiaOptChg}; futures for 30.64 billion, up {=f.fiaFutChg}. FIA's statistics page says most of the fall came from equity contracts (down {=f.fiaEqChg} for the year); an FIA analysis of 26 February 2026 adds that the decline was overwhelmingly concentrated in Indian equity-index options, after the Securities and Exchange Board of India tightened its rules (larger minimum contract sizes, limits on weekly expiries, premiums collected upfront). Contract counts are not amounts of money: an Indian index-option contract, for example, is small in value. {#d2}
+- <span class="tag m">Measured</span>Same-day expiries (0DTE): according to Cboe data, in July 2026 {=f.zeroShare} of S&P 500 index option volume expired the same day, the highest monthly share Cboe has published. In the second quarter of 2026, US-listed options averaged 72.8 million contracts a day; same-day expiries have averaged more than 20 million a day so far this year. As Chapter 7 showed, the closer to expiry, the larger Γ: the value of these contracts is extremely sensitive to the index in the last few hours. {#d3}
 - <span class="tag m">Measured</span>Retail outcomes: see the SEBI study of August 2026 in Chapter 10. {#d4}
 - <span class="tag m">Demonstrated</span>Perpetual futures: the most heavily traded derivatives in cryptocurrency markets have no expiry date. The arbitrage of Chapter 1 ties futures to spot by requiring the futures price to equal the spot price at expiry. A perpetual has no expiry, so it uses a **funding rate** instead: every few hours, when the contract price is above spot, longs pay shorts, and when it is below, shorts pay longs (Figure 9). He, Manela, Ross and von Wachter (arXiv:2212.06888, latest version 17 September 2026) derive a no-arbitrage price under frictionless assumptions, and find that actual prices deviate from it more in crypto markets than in traditional FX markets, and that the deviation has shrunk over time. {#d5}
 - <span class="tag m">Demonstrated</span>Deep hedging: Bühler, Gonon, Teichmann and Wood (2018, arXiv:1802.03042) proposed not deriving Δ at all, but having a neural network learn how to hedge directly in simulated markets with transaction costs, and demonstrated it on markets generated by the Heston model. It sidesteps precisely the assumptions listed at the end of Chapter 7. Papers as recent as 2026 still test it on real S&P 500 index-option data. For example, Zernikov (arXiv:2605.21696, May 2026) reports that learned strategies usually hedge somewhat less than the Black–Scholes Δ and do better over most periods from 2015 to 2023, but are not stable in a year such as 2022. {#d6}
@@ -719,9 +726,9 @@ noexp: No expiry date
 ### Claimed by one side, and still contested {#h.claim .sub3}
 
 {.fl}
-- <span class="tag l">Contested</span>Do same-day expiries amplify volatility? The concern rests on the loop in Figure 6: if market makers are net sellers of these options, then when the index moves they must keep buying and selling, and Γ is at its largest in the final hours. The Cboe, which earns fees from these trades and is an interested party, said in a May 2025 report that buying and selling are balanced, that market makers' net hedging volume is at most {=f.mmGamma} of S&P 500 daily trading, and estimated retail's share of such trades at {=f.retailLo} to {=f.retailHi}. Academic findings disagree. The paper by Dim, Eraker and Vilkov finds no evidence that Γ in these options raises index volatility; the paper by Brogaard, Han and Won reports that the trading volume of these options goes with higher volatility. I have read only secondary summaries of these two papers, not the papers themselves. No accident has been widely accepted as caused by them to date, which does not prove that they cannot cause one. {#c1}
-- <span class="tag l">Claimed</span>The size of the perpetual market: the data provider CryptoQuant states that global crypto perpetual-futures volume was about 61.8 trillion US dollars in 2025, far more than spot. Such figures come from exchanges' self-reported volumes; there are no regulatory statistics against which to check them, and I have not verified them. {#c2}
-- <span class="tag l">Unresolved</span>The clearing house concentrates risk in one place. When it calls for more margin under stress, could that force members to sell and amplify the volatility? Regulators have debated this since the March 2020 and 2022 UK pension episodes. Whether a hedge learned by a neural network can be trusted in market conditions it has never seen is open, and so is how complex a volatility model should be. None of these has a settled answer. {#c3}
+- <span class="tag l">Contested</span>Do same-day expiries amplify volatility? The concern rests on the loop in Figure 6: if market makers are net sellers of these options, then when the index moves they must keep buying and selling, and Γ is at its largest in the final hours. Cboe, which earns fees from these trades and is an interested party, said in a May 2025 report that buying and selling are balanced, that market makers' net hedging volume is at most {=f.mmGamma} of S&P 500 daily trading, and estimated retail's share of such trades at {=f.retailLo} to {=f.retailHi}. Academic findings disagree. The paper by Dim, Eraker and Vilkov finds no evidence that Γ in these options raises index volatility; the paper by Brogaard, Han and Won reports that the trading volume of these options goes with higher volatility. I have read only secondary summaries of these two papers, not the papers themselves. No accident has been widely accepted as caused by them to date, which does not prove that they cannot cause one. {#c1}
+- <span class="tag l">Claimed</span>The size of the perpetual market: the data provider CryptoQuant states that global crypto perpetual-futures volume was about 61.8 trillion US dollars in 2025 (reports quote 61.7 or 61.8 trillion), against about 18.6 trillion for spot. Such figures come from exchanges' self-reported volumes; there are no regulatory statistics against which to check them, and I have not verified them. {#c2}
+- <span class="tag l">Unresolved</span>The clearing house concentrates risk in one place. When it calls for more margin under stress, could that force members to sell and amplify the volatility? Regulators have debated this since the March 2020 market turmoil and the 2022 UK pension-fund crisis. Whether a hedge learned by a neural network can be trusted in market conditions it has never seen is open, and so is how complex a volatility model should be. None of these has a settled answer. {#c3}
 
 Read this chapter with the date of each item in view. It contains no forecast of prices or of the direction of markets, and I am not in a position to make one. {.take}
 
@@ -750,5 +757,5 @@ Related pages: [[compound-interest]] (discounting), [[expected-value]] (expectat
 
 **Data.** S&P 500 index option quotes: Cboe delayed quotes, close of 17 November 2026, obtained 18 November 2026. The page carries only the bid and ask quotes for 19 strikes at each of two expiries. Nasdaq Composite daily closes: St. Louis Fed FRED database (series NASDAQCOM), 5 February 1971 to 16 November 2026, obtained 18 November 2026. The page carries only the histogram and the correlations computed from it. The facts in Chapters 8, 10 and 11 come from the Bank for International Settlements, the Futures Industry Association, the Chicago Board Options Exchange, the Securities and Exchange Board of India, the US Securities and Exchange Commission, the New York Fed and Federal Reserve History. URLs and opening dates are in BRIEF.md in this page's directory.
 
-**Models and notes.** All models are computed instantly in the browser, with random numbers from fixed seeds. What each model leaves out is written in the last paragraph of its chapter. This essay explains only mathematics and market structure. It is not investment advice and it forecasts no prices. Claude (Anthropic's AI) wrote it in November 2026; it has not yet been independently reviewed.
+**Models and notes.** All models are computed instantly in the browser, with random numbers from fixed seeds. What each model leaves out is written in the last paragraph of its chapter. This essay explains only mathematics and market structure. It is not investment advice and it forecasts no prices. Claude (Anthropic's AI) wrote it in November 2026; another Claude model reviewed it independently on 25 November 2026.
 :::

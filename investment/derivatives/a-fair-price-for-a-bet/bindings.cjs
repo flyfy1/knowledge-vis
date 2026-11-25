@@ -73,7 +73,7 @@ module.exports = M => {
   b['f.bisNotional'] = f(X.bisOtc.notionalTn, 0); b['f.bisGmv'] = f(X.bisOtc.gmvTn, 1); b['f.gmvPct'] = pct(X.bisOtc.gmvTn / X.bisOtc.notionalTn, 1);
   b['f.bisYoy'] = X.bisOtc.yoyNotionalPct + '%'; b['f.irdShare'] = X.bisOtc.irdSharePct + '%';
   b['f.bisDecNotional'] = f(X.bisOtcDec.notionalTn, 1); b['f.bisDecGmv'] = f(X.bisOtcDec.gmvTn, 1); b['f.triIrd'] = f(X.triennial.irdDailyTn, 1);
-  b['f.fiaChg'] = f(-X.fia2025.totalChgPct, 1) + '%'; b['f.fiaOptChg'] = f(-X.fia2025.optionsChgPct, 1) + '%'; b['f.fiaFutChg'] = f(X.fia2025.futuresChgPct, 1) + '%';
+  b['f.fiaChg'] = f(-X.fia2025.totalChgPct, 1) + '%'; b['f.fiaOptChg'] = f(-X.fia2025.optionsChgPct, 1) + '%'; b['f.fiaFutChg'] = f(X.fia2025.futuresChgPct, 1) + '%'; b['f.fiaEqChg'] = f(-X.fia2025.equityChgPct, 1) + '%';
   b['f.zeroShare'] = f(X.spx0dte.sharePct, 1) + '%'; b['f.mmGamma'] = f(X.cboe0dte.mmGammaPct, 1) + '%'; b['f.retailLo'] = X.cboe0dte.retailLo + '%'; b['f.retailHi'] = X.cboe0dte.retailHi + '%';
   b['f.sebiLoss'] = f(X.sebi.fy26LossPct, 1) + '%'; b['f.sebiLoss3'] = X.sebi.fy22to24LossPct + '%'; b['f.sebiWin5'] = f(X.sebi.fiveYearProfitPct, 1) + '%'; b['f.sebiLose5'] = f(X.sebi.fiveYearLossPct, 1) + '%'; b['f.sebiBuyers'] = X.sebi.buyersPct + '%';
   b['f.sofr'] = f(X.sofr.pct, 2) + '%'; b['f.djia87'] = f(X.crash87.djiaPct, 1) + '%';

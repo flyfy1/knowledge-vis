@@ -449,7 +449,7 @@
     bisOtc: { date: '2025-06', notionalTn: 846, gmvTn: 21.8, yoyNotionalPct: 16, irdSharePct: 79, fxTn: 155, published: '2025-12-08', src: 'BIS, OTC derivatives statistics at end-June 2025' },
     bisOtcDec: { date: '2025-12', notionalTn: 844.6, gmvTn: 22.8, src: 'ISDA summary (2026-07-09) of BIS data; BIS page not opened' },
     triennial: { date: '2025-04', irdDailyTn: 7.9, fxDailyTn: 9.6, published: '2025-09-30', src: 'BIS Triennial Central Bank Survey 2025' },
-    fia2025: { totalBn: 119.29, futuresBn: 30.64, optionsBn: 88.65, totalChgPct: -42.2, optionsChgPct: -50.3, futuresChgPct: 8.6, published: '2026-01-12', src: 'FIA, ETD volume December 2025' },
+    fia2025: { totalBn: 119.29, futuresBn: 30.64, optionsBn: 88.65, totalChgPct: -42.2, optionsChgPct: -50.3, futuresChgPct: 8.6, equityChgPct: -48.8, published: '2026-01-12', src: 'FIA, ETD volume December 2025' },
     usOptions: { date: '2026-Q2', advMn: 72.8, yoyPct: 19, zeroDteMn: 20, zeroDteYtdPct: 46.2, published: '2026-07-21', src: 'Cboe, State of the Options Industry Q2 2026' },
     spx0dte: { date: '2026-07', sharePct: 66.2, published: '2026-08-05', src: 'Cboe Global Markets, trading volume for July 2026' },
     cboe0dte: { date: '2025-05-02', mmGammaPct: 0.2, retailLo: 50, retailHi: 60, src: 'Cboe, 0DTEs Decoded (M. Xu)' },

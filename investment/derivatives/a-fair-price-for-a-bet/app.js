@@ -27,6 +27,7 @@ const hasLang = l => !!COPY[l] && !(l === 'en' && enStub);
 const effLang = () => (hasLang(lang) ? lang : 'zh');
 function t(key, vars) {
   const L = effLang();
+  if (vars && String(vars.v) === '1' && COPY[L] && COPY[L][key + '.one'] != null) key += '.one'; // singular unit ("1 day", "once")
   let s = (COPY[L] && COPY[L][key] != null) ? COPY[L][key] : (COPY.zh && COPY.zh[key] != null ? COPY.zh[key] : key);
   if (vars) s = s.replace(/\{(\w+)\}/g, (m, k) => vars[k] != null ? vars[k] : m);
   return s;
@@ -418,7 +419,7 @@ const narrow = w => w < 420;
     out('c9Rho', M.signed(rho, 1, effLang())); out('c9Xi', fmt(xi, 2));
     put('#c9Lo', P(lo)); put('#c9Atm', P(at)); put('#c9Hi', P(hi)); put('#c9Sk', isFinite(skew) ? t('u.pt', { v: M.signed(skew * 100, 1, effLang()) }) : '—');
     const v = { rho: M.signed(rho, 1, effLang()), lo: P(lo), hi: P(hi), atm: P(at), skew: t('u.pt', { v: fmt(Math.abs(skew) * 100, 1) }) };
-    putHTML('#c9Say', t(xi <= 0.1 ? 'ch9.say.flat' : (lo > at + 0.003 && hi > at + 0.003) || !(Math.abs(skew) >= 0.01) ? 'ch9.say.sym' : skew > 0 ? 'ch9.say.left' : 'ch9.say.right', v));
+    putHTML('#c9Say', t(xi <= 0.1 ? 'ch9.say.flat' : (lo > at + 0.003 && hi > at + 0.003) ? 'ch9.say.sym' : !(Math.abs(skew) >= 0.01) ? 'ch9.say.small' : skew > 0 ? 'ch9.say.left' : 'ch9.say.right', v));
     sim.dirty = true;
   }
   const sim = reg(cv, { draw() {

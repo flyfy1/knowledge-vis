@@ -239,6 +239,7 @@ function diagramCheck() {
     await says(page, 'c9Say', 'ch9.say.left', T);
     await setRange(page, 'c9Rho', 0.7); await says(page, 'c9Say', 'ch9.say.right', T);
     await setRange(page, 'c9Rho', 0); await says(page, 'c9Say', 'ch9.say.sym', T);
+    await setRange(page, 'c9Xi', 0.15); await says(page, 'c9Say', 'ch9.say.small', T);
     await setRange(page, 'c9Xi', 0.05); await says(page, 'c9Say', 'ch9.say.flat', T);
     await setRange(page, 'c9Xi', 0.5); await setRange(page, 'c9Rho', -0.7); await click(page, '#c9New'); await says(page, 'c9Say', 'ch9.say.left', T);
     await says(page, 'c9mSay', 'ch9.m.say.closed', T);
