@@ -1,0 +1,38 @@
+{
+  "slug": "what-the-yield-curve-says",
+  "kind": "essay",
+  "tags": [
+    { "zh": "收益率曲线", "en": "Yield Curve" },
+    { "zh": "债券", "en": "Bonds" },
+    { "zh": "信用利差", "en": "Credit Spreads" },
+    { "zh": "利率", "en": "Interest Rates" },
+    { "zh": "长文", "en": "Long-form Essay" }
+  ],
+  "category": "investment",
+  "subtopic": "rates",
+  "stage": "university",
+  "path": "investment/rates/what-the-yield-curve-says/",
+  "created": "2026-11-25",
+  "layout": "essay",
+  "scripts": ["data.js", "models.js", "copy.zh.js", "copy.en.js", "app.js"],
+  "version": "20261125a",
+  "provenanceNote": {
+    "zh": "本文由 Claude Code（claude-opus-5-5）从零编写，直接用 Markdown 站点模板写成；英文稿由 Claude Haiku 从中文译出；经过一次独立评审（claude-opus-5-5，2026-11-25）。",
+    "en": "This essay was written from scratch with Claude Code (claude-opus-5-5), directly in the Markdown site template; the English copy was translated from the Chinese text by a Claude Haiku pass; reviewed once independently (claude-opus-5-5, 2026-11-25)."
+  },
+  "dynamicKeys": {
+    "ch1.say": ["zero", "below", "above"],
+    "ch2.say": ["lend", "borrow", "none"],
+    "ch3.say": ["inv", "up", "flat"],
+    "ch4.say": ["same", "fwd", "shift"],
+    "ch5.say": ["neg", "pos"],
+    "ch6.say": ["big", "small"],
+    "ch7.say": ["twistLose", "twistWin", "none", "par"],
+    "ch8.say": ["good", "bad"],
+    "ch9.say": ["inv.exp", "inv.tp", "up.exp", "up.tp"],
+    "ch11.say": ["thin", "fat"]
+  },
+  "generators": [
+    { "run": "tools/diagrams.cjs", "writes": ["figures/dg-*.html"] }
+  ]
+}
